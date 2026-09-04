@@ -142,6 +142,23 @@ indicial `c₀² + (q−1)c₀ + (q−1) = 0`). **None is a discrete subgroup of
 so the count measures irregular-singularity work, not uniformisation. Same family
 as `sasaki`-the-surname: check what hits ARE before reading a count as coverage.
 
+## TRAP — "held" is not "held in full", and `references.ts` records the page count
+
+2026-09-04. `[thurston1978]` is registered with `library: { docId: "thurston",
+pages: 33, sections: 22 }`. **That is Chapters 1-2 of a ~370-page book.** Measured
+inside the held copy: `gluing equation` **0**, `hyperbolization` **0**,
+`figure-eight` **0**. Against **113 citers**, several with explicit Ch. 4 locators
+(`shared-denominator-cusp-holonomy.lean:91` "§4.5 (gluing equations)";
+`ManifoldVolumeBridge.lean:112` "Ch. 4"). The attribution is right; the holding is
+partial, so **path 5 for the cited topic never lands in the cited directory** —
+the exact failure path 5 exists to prevent, wearing a green light.
+
+**Check `library.pages` against the locator before treating a hit as coverage**,
+and grep the held copy for the cited phrase rather than for the author.
+
+Three cheap discriminators (held-vs-registered; held-but-UNregistered;
+a `-- Ref:` key resolving to nothing) — `library-and-staleness-traps.md`.
+
 ## TRAP — grep the claim SHAPE, not only the topic
 
 Four conflations reached durable artifacts in one session (2026-08-15), each
@@ -235,13 +252,12 @@ these open, and add a row whenever a sweep settles one.
 | library size | `git ls-tree -r --name-only origin/main -- library/ \| cut -d/ -f2 \| sort -u \| wc -l` | **536 dirs** (was recorded 332 — that figure was low, not merely old) | 2026-08-30 |
 | docs with `ocr/` | same, filtered to `/ocr/` | 25 dirs; 11 single-section; 10 of those <15 % sections/ocr bytes | 2026-08-30 |
 | INDEX.md briefs | `wc -l library/INDEX.md` | 320 briefs, ~14k tokens | 2026-08 |
-| duplicate works | `docs/audits/library-duplicate-ledger.json` | 19 works held more than once | 2026-08 |
+| duplicate works | ledger = `docs/audits/library-duplicate-ledger.json`; machine marks = `grep -rl duplicate_of library/*/sections/ \| cut -d/ -f2 \| sort -u \| wc -l` | **ledger 4** (hand-adjudicated DETECTOR MISSES only) vs **23 dirs** front-matter-marked. The old "19 works" conflated the two. | 2026-09-04 |
 
 ---
 
 ## Session log — one line per sweep. Prune this, never the TRAPs.
 - 2026-09-03 · `qou-brng` six-strand non-trace invariant · open as a class, linking-data subclass closed scope-(b) · `resolved-topics.md`.
-- 2026-09-03 · `qou-q9ih` D1-b NZ->(Q,W) dictionary · **open on all six paths**; NZ *input* side already implemented (`one_loop_torsion.py`, Route-74/75 probes) — reuse, do not rebuild. The 2026-09-02 Markov/Ocneanu span-rank entry moved to [`resolved-topics.md`](resolved-topics.md) (it was past line 200).
 - 2026-09-04 · `qou-xlw1` contact-distribution rank / dim 7 / `J` on `ker Θ` · **both `ker Θ` ranks are DERIVED (scope-(b) contradiction); no 7-manifold; `J` on `ker Θ` is present in 7 prose sites and in NO Lean** · detail in `resolved-topics.md`. TRAP: the site count (2 vs 9) answers the rank question backwards — count CONSUMERS, not assertions.
-- 2026-09-03 · `qou-zrx2` classical-floor closed form · **already derived, and I declared it open**; path 3 held it. See the two-halves TRAP above.
 - 2026-09-04 · `qou-xlw1` hyperbolic volume as a QOU structure · **I claimed it was 'imported, not QOU' and that Mathlib+library held nothing — WRONG on all three.** ~180 QOU .lean files; VC numerically CONFIRMED for 4₁. Weakest link is a TYPE (`BlochWignerD : ℝ → ℝ` vs the corpus's own proof that D vanishes on ℝ). Bring's ℍ²↔H³ link genuinely open, 0 beans. Detail in `resolved-topics.md`.
+- 2026-09-04 · `qou-8lxd` CITATION-gap inventory for the hyperbolic-volume/eightfold arc · 15 beans, `docs/audits/2026-09-04-citation-gap-inventory.md`; **held-but-partial and held-but-unregistered are two new classes** — detail in `resolved-topics.md`.

@@ -292,3 +292,58 @@ Audit: `docs/audits/2026-09-04-how-the-hyperbolic-volume-could-arise-from-qou.md
 - **Smallest honest Lean:** NOT Gauss–Bonnet arithmetic (already T0, re-deriving
   is the trap). Best target is the **re-typing** above; next is `qou-idvt`'s live
   T1–T4 Lobachevsky/concavity ladder (in-progress — do not re-scope).
+
+## 2026-09-04 — the CITATION gap on the hyperbolic-volume / eightfold arc (epic `qou-8lxd`)
+
+Audit: `docs/audits/2026-09-04-citation-gap-inventory.md`. 15 beans, all parented
+to `qou-8lxd`. Answers most "is X sourced?" questions on this arc without a sweep.
+
+**Held and clean (H) — do not re-check:** Kashaev 1997 (`arxiv-q-alg-9601025v2`,
+73 citers) and 1995; Ohtsuki 2016 (`104171-qt-83`); Andersen-Hansen 2006
+(`arxiv-math-0506456v1`); **Neumann-Zagier 1985** — held 3x (one work), registered
+with `alternates`, cited in 63 files, duplication recorded in front-matter AND
+`references.ts` AND by INDEX.md giving the copies no row; **Fulton-Harris 1991** —
+registered w/ ISBN+DOI, `verified-clean`, NOT held (fine: textbooks are registered
+without PDFs), and the FS trichotomy enters Lean as a **parameter**
+(`fs : ℕ → FSType`, `Sym2GateFSTrichotomy.lean:103`), not an assertion;
+**Woronowicz 3D left-covariant calculus** — `woronowicz1987-twisted-su2` IS cited
+(`brings-is-qou-proof.md:11,15`, `connection-su2.ts`). *That last one I nearly
+filed as uncited off the sibling block; check the PROOF block before the
+VERIFICATION block.*
+
+**Not held (U), named works:** Murakami-Murakami 2001 Acta 186 (**63 citers**,
+the single highest-leverage upload); every Woronowicz differential-calculus paper
+(`library/` has **0** files containing the phrase "differential calculus");
+Bryant 1987 / Hitchin 2000 (generic-3-form `G₂` — `baez2002` is cited there and
+does **not** contain it); Butruille 2005 / Gray / Fernandez-Gray; and the whole
+**CR/contact/Sasakian layer — 0 held AND 0 registered across 828 `references.ts`
+entries**, against 34 `content/` files and 10 blocks with no `cites` field at all.
+Cheapest adequate CR source is **Blair** (Darboux, `dim = 2n+1`), not Boyer-Galicki.
+
+**No reference key exists at all for:** Riemann-Hurwitz, Gauss-Bonnet. Both are
+used as arithmetic (`CoveringDegreeRamification.lean:88-91` says outright it is
+"a definition encoding Riemann-Hurwitz ... not a proof"). Held sources exist for
+both — cheapest fix cites the already-registered `s40879-023-00706-0`
+(Braden-Disney-Hogg, *Bring's curve: old and new*).
+
+**Riera-Rodriguez §2** (the (2,4,5) triangle group, `B = Δ/Γ`, `[Γ*:Γ]=120` ⇒ the
+corpus's unsourced **240**) is still uncited at `EmCouplingBringZeroMode.lean`.
+Existing beans `qou-3q4q`/`qou-fkmt` cover *other* sections of the same paper —
+and both name the `duplicate_of` copy rather than `pjm-v154-n1-p09-s`.
+
+**CORRECTION I OWE:** my 2026-09-04 audit called the duplicate ledger
+"under-counting" for omitting the Riera pair. Wrong framing — the ledger holds
+**4 hand-adjudicated DETECTOR MISSES**; machine-detected duplicates live in
+section front-matter (**23 dirs**) and in `references.ts` `alternates`. The Riera
+pair is in both. Nothing under-counts.
+
+**Second correction:** `grep -c '\bsorry\b'` reports 1-4 in five arc Lean files and
+**every match is the string "sorry-free" in prose** or a commented-out instance.
+The arc is sorry-free. Had it not been, the zero-`-- Ref:` finding would be an
+AGENTS.md §1 violation instead of a gap that *falls through* §1 — which is the
+whole point of bean `qou-3o59`.
+
+**Unmeasured, worth a bean if wanted:** a systematic `library/<docId>` ↔
+`references.ts library.docId` reconciliation. 828 entries / 394 with docId / 576
+dirs / 23 duplicates — the residual is **not** 182 and was never measured.
+`library/0803219` was found incidentally.
