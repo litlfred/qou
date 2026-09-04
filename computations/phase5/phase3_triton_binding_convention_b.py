@@ -80,6 +80,19 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
+# Raise the compute precision BEFORE any module-scope mpf is built.
+#
+# `AME_2020_BINDING_MEV` below is `mp.mpf("...")` of exact decimals, added when
+# the float literals were excised under NO FLOAT64 EVER. Built at mpmath's
+# default 15 dps those strings carry ~15 digits — barely better than the
+# float64 they replaced, so the excision would have been cosmetic. Caught by
+# `computations/never_raises_dps_audit.py`, which flagged this file as a NEW
+# offender with 5 constructions the moment the literals became mpf (bean
+# `qou-j6gb`); its advice is exactly this — "fix AT THE SOURCE: call the
+# idempotent set_compute_dps() at module scope".
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+
 from hecke_core import E_0_CALIBRATION_MEV  # noqa: E402
 # NOTE: `binding_from_frobenius_pairing` is the Phase-5 EXPLORATORY
 # binding entry point (line 2991-2992 of the original hecke_core.py
