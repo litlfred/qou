@@ -229,3 +229,69 @@ corpus-grep second. Reversed, path 1 (`grep -rln ysn docs/audits/`) returns
 that audit as its first hit and the whole detour is unnecessary — and the
 detour was the cheap half; the expensive half was writing a "next step" into a
 bean and a PR body for work already done.
+
+## THIRD CORRECTION, same day: the precision thread above describes a path this input NEVER TAKES
+
+Both precision sections above rest on one unstated premise — that the 958 s was
+spent in the Python `entry['ysn']` loop. **It was not.** I inferred the
+execution path from wall-clock time instead of instrumenting the dispatch.
+
+`atom_character_raw` calls `_lp_kernel_steps` FIRST and returns early on
+success; the Python `entry['ysn']` accumulation is only the FALLBACK:
+
+    _ks = _lp_kernel_steps(entry['partition'], [...])
+    if _ks:
+        _tr, _ln = _ks[-1]
+        return (float(_tr), float(_ln), int(dim))      # <- kernel path, returns
+    for kkk in range(A):                               # <- fallback, never reached
+
+Measured by wrapping `_lp_kernel_steps` in a spy, `Z=1, N=1`, across the whole
+dimension range of the partition table:
+
+    dim     1  (2,)                 total    0.00s   kernel    0.00s   KERNEL
+    dim    14  (4, 3)               total    0.00s   kernel    0.00s   KERNEL
+    dim    70  (3, 2, 2, 1)         total    0.03s   kernel    0.03s   KERNEL
+    dim   300  (4, 4, 1, 1)         total    0.48s   kernel    0.48s   KERNEL
+    dim  1540  (5, 3, 1, 1, 1)      total   18.09s   kernel   17.78s   KERNEL
+    dim  1540  (5, 2, 2, 1, 1)      total   28.67s   kernel   28.65s   KERNEL
+    dim  2310  (5, 3, 2, 1)         total   90.65s   kernel   90.64s   KERNEL
+    dim  2310  (4, 3, 2, 1, 1)      total   49.01s   kernel   49.00s   KERNEL
+
+**8 of 8 served, with essentially 100 % of wall time inside the kernel**
+(90.65 total against 90.64 in-kernel). The kernel builds its own
+`seminormal_matrices_mpfr` -- the braid-satisfying family -- at MPFR precision
+with coefficients crossing as decimal strings.
+
+**So three claims I pushed today are void for this path:**
+
+  1. "the COO mpmath accumulation is doing float64 arithmetic slowly" -- the
+     COO path does not run.
+  2. the 193/193 float64 census of `entry['ysn']` -- correct as a measurement,
+     but of the FALLBACK.
+  3. the ambient `mp.dps = 15` ceiling -- likewise about the untaken path.
+
+**The census is not worthless, it is MIS-SCOPED.** `pyhecke_native` cannot be
+`pip install`ed and a container without it is the DEFAULT (AGENTS.md, project
+structure). With `_HAS_LP_KERNEL = False` the fallback runs, and then the
+float64 non-representation matrices ARE what computes. So the census describes
+the bare-container path exactly, and says nothing about a container that has
+the extension. State which one you mean.
+
+**What survives, and one thing that improves:**
+
+  * Term 3 terminates: 958.5 s, both halves `mpf`, reproducing
+    `1.87663410614414` from an independent run. UNTOUCHED by all of this.
+  * The cost is real and is now LOCALISED: it is Rust kernel time dominated by
+    the largest partitions (dim 2310 at 49-91 s each, 193 entries). That is a
+    better answer than "Python mpmath is slow" -- the remaining performance
+    work is inside the kernel, not in porting Python to Rust, which is done.
+
+**BLOCKER 3 ABOVE IS STALE.** It reads "Python-mpmath performance wall in BOTH
+term 1 and term 3 -- term 3 untouched". Term 3 IS wired to the kernel and IS
+served: `815b2a46a08` (2026-09-03, "wire the Rust kernel into both loops")
+postdates this bean by three days. Do not use blocker 3 to justify a port.
+
+**Method note, because this is the second instance today.** I inferred the
+execution path from wall-clock time; earlier I inferred precision from a
+`repr`. Both are the same error -- reading a proxy instead of the object. The
+spy that settled this costs three lines and ran in under two minutes.
