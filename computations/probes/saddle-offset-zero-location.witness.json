@@ -1,8 +1,8 @@
 {
   "engine": "fractions-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T23:04:36.728450+00:00",
-  "commitSha": "f06c8703148486e0376a6bc22cca223e497b74a0",
+  "computedAt": "2026-09-04T20:58:15.527924+00:00",
+  "commitSha": "8bb2791e8fbe739456414de1437fb0c87ffe11f6",
   "assertions": [
     {
       "name": "qstar_truncation_stable_at_quadratic_balance",
@@ -38,11 +38,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "allPassedBasis": "assertions",
+  "durationMs": 6,
+  "durationMsBaseline": "builder-construction",
   "computation": "saddle-offset-zero-location",
   "scriptFile": "saddle_offset_zero_location_probe.py",
-  "scriptHash": "a4343c17f50f",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "dd1f7d95a333",
+  "scriptCommitSha": "8bb2791e8fbe739456414de1437fb0c87ffe11f6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,7 +59,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [

@@ -22,7 +22,7 @@ sys.path.insert(0, os.path.join(HERE, "..", "substrate"))
 
 import mpmath as mp  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
 
 # Before importing the reducer, not after (bean `qou-j6gb`, NO-FLOAT64): this
 # probe never raised working precision at all, so it ran at mpmath's default
@@ -107,9 +107,15 @@ def _emit_witness(ratios, spread, mr):
         "name": "rho-binding-constancy",
         "probe": True,
         "substrate": {"q0": Q0, "q0_pin": "muon (computations-layer canonical)"},
-        "ratios_B_over_trM": {k: float(v) for k, v in ratios.items()},
-        "relative_spread": float(spread),
-        "t_he3_mirror_mismatch": (float(mr) if mr is not None else None),
+        # `fmt`, not `float()` (bean `qou-j6gb`, NO-FLOAT64). Every one of these
+        # is an mpf carried at compute precision all the way from
+        # `global_wedderburn_sum_q_hecke_seminormal`; `float()` threw ~50 of
+        # those digits away at the very last step, and the raw-float64 gate
+        # names all five. `fmt` serialises the mpf as a decimal string, so the
+        # witness records what was actually computed.
+        "ratios_B_over_trM": {k: fmt(v) for k, v in ratios.items()},
+        "relative_spread": fmt(spread),
+        "t_he3_mirror_mismatch": (fmt(mr) if mr is not None else None),
         "witness": {"scriptCommitSha": sha, "scriptHash": script_hash,
                     "producer": "computations/probes/rho_binding_constancy_probe.py"},
     }

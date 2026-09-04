@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T23:04:35.791500+00:00",
-  "commitSha": "f06c8703148486e0376a6bc22cca223e497b74a0",
+  "computedAt": "2026-09-04T20:57:34.554981+00:00",
+  "commitSha": "8bb2791e8fbe739456414de1437fb0c87ffe11f6",
   "assertions": [
     {
       "name": "ratios computed for all 3 atoms",
@@ -12,11 +12,13 @@
     }
   ],
   "allPassed": true,
+  "allPassedBasis": "assertions",
   "durationMs": 0,
+  "durationMsBaseline": "builder-construction",
   "computation": "rho-binding-constancy",
   "scriptFile": "rho_binding_constancy_probe.py",
-  "scriptHash": "99c141489d07",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "5e09875025d3",
+  "scriptCommitSha": "8bb2791e8fbe739456414de1437fb0c87ffe11f6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [
@@ -47,15 +49,15 @@
     "q0_pin": "muon (computations-layer canonical)"
   },
   "ratios_B_over_trM": {
-    "D": 3.867651861723058,
-    "T": 36.988431482763964,
-    "He3": 19.115126534809143
+    "D": "3.86765186172305908105758242259135703628057197780280477555027",
+    "T": "36.9884314827639771721304517215997778755910509358794493516530",
+    "He3": "19.1151265348091538438428151822426349488543193737388300959534"
   },
-  "relative_spread": 1.6568339885606598,
-  "t_he3_mirror_mismatch": 0.6371540622203117,
+  "relative_spread": "1.65683398856065984110079916228041151993649428331900776550662",
+  "t_he3_mirror_mismatch": "0.637154062220311496889700941754051099084048324790296009197754",
   "witness": {
-    "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
-    "scriptHash": "99c141489d07",
+    "scriptCommitSha": "8bb2791e8fbe739456414de1437fb0c87ffe11f6",
+    "scriptHash": "5e09875025d3",
     "producer": "computations/probes/rho_binding_constancy_probe.py"
   },
   "q0Anchor": "proton",

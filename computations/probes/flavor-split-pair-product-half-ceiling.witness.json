@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T20:31:04.694348+00:00",
-  "commitSha": "fa25498fec56c7b3e80b1f539c01dbe57be3ef81",
+  "computedAt": "2026-09-04T20:58:01.048934+00:00",
+  "commitSha": "8bb2791e8fbe739456414de1437fb0c87ffe11f6",
   "assertions": [
     {
       "name": "flavor_split_pair_product_half_ceiling",
@@ -14,11 +14,13 @@
     }
   ],
   "allPassed": true,
+  "allPassedBasis": "assertions",
   "durationMs": 10,
+  "durationMsBaseline": "builder-construction",
   "computation": "flavor-split-pair-product-half-ceiling",
   "scriptFile": "flavor_split_pair_product_half_ceiling_probe.py",
-  "scriptHash": "e92923f7fc39",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "1343f21de78f",
+  "scriptCommitSha": "8bb2791e8fbe739456414de1437fb0c87ffe11f6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +35,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [
@@ -43,8 +45,8 @@
   },
   "description": "Flavor-split second-order coefficient alpha ≈ 0.929254 EXCLUDES the positive-weight multiplicative pair-product mechanism: for any positive weights s_k with Σs_k=leading, α=(Σ_{k<l}s_k s_l)/(Σs_k)² is MAXIMIZED at equal split, value (m-1)/(2m) < 1/2, and unequal weighting lowers it — so α>1/2 cannot arise from such a product (Lean-proved invariant QOU.FlavorDressing.pairSum_lt_half_sq: 2·Σ_{k<l}s_k s_l < (Σs)²). Sharpens the partial-derivation audit Part 2a (equal-split-only; 'swapped pair dominates' moves α the wrong way). α remains UNDERIVED; the derivation must live on the self-energy/geometric side (α=1), not pair-count. scope-(b) exclusion; no fit; nothing wired; L2 unchanged (2/7).",
   "data": {
-    "alpha_target_proton": "0.92948913398539878549797776941",
-    "alpha_target_muon": "0.92925292541598847328998544981",
+    "alpha_target_proton": "0.929489133985398796745154146917",
+    "alpha_target_muon": "0.929252925415988544786149028677",
     "alpha_gt_half": true,
     "pair_product_sup_ratio": "0.5",
     "positive_pair_product_excluded": true,
@@ -53,8 +55,8 @@
   },
   "q0Anchor": "comparison",
   "q0Values": {
-    "muon": "1.109978595642739040982860387885011732578277587890625",
-    "proton": "1.109978582751380837834176418255083262920379638671875"
+    "muon": "1.109978595642739046681795129380001752700065561029000",
+    "proton": "1.109978582751380807591669095610768879874499121873600"
   },
   "q0AnchorReason": "alpha_target evaluated at both pins on purpose (anchor-robustness of the > 1/2 exclusion); the proton (default) leg is the scored one"
 }
