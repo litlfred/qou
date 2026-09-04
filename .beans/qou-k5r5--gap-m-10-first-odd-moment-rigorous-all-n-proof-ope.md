@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-04T07:39:42Z
+updated_at: 2026-09-04T10:38:53Z
 ---
 
 
@@ -897,3 +897,46 @@ everything on 'settled' (spread < 5%). 'Have I pinned r?' and 'is r = 1?' are di
 only the second decides the project; rho_delta -> 1 requires the tail to APPROACH 1, so a tail whose
 minimum is 1.46 excludes it whatever the spread. Fixed to answer Q1 from the tail MINIMUM. Same shape
 as da-arity-conflation: a claim about a family tested as a claim about a point.
+
+
+2026-09-04 (branch claude/m1-k5r5-variance-polynomiality-2026-09-04): V_A HAS NO POLYNOMIAL CLOSED
+FORM -- the shortcut is closed. V_W does, exactly.
+
+WHY CHECKED: #6602 narrowed the work to a rigorous finite-n bound on delta_A. A polynomial V_A(n)
+would give delta_A EXACTLY at every n and close the n>=79 tail outright, so formalize-first says try
+the closed form before the analysis.
+
+THE OBJECTS, named (from stats() in _constant_C_landscape.py; the epic's names are opaque):
+  A = Sum_cells |c|      first ABSOLUTE moment of the content distribution (c = j-i). NOT shifted-symmetric.
+  D = Sum_u d_u^2        d_u = #cells of content u; squared diagonal multiplicities. NOT shifted-symmetric.
+  W = Sum_cells c^2 - C(n,2)   second moment, recentred. IS shifted-symmetric.
+
+MEASURED (_variance_polynomiality.py, exact Fraction over every partition, n=2..30, NO float64):
+  V_W  EXACT polynomial, degree 3   (reproduces all 25 held-out n)
+  P    NONE (deg <= 10)
+  V_A  NONE (deg <= 10)
+  V_D  NONE (deg <= 10)
+Corroborated by the denominators: V_A(12) = 339037063642199/29628426240000, and by n=30 the
+denominator is ~2.7e56. A polynomial in n over Q has bounded denominators.
+
+THE CONTROL IS WHAT MAKES THE NEGATIVE WORTH ANYTHING. Sum c^2 IS shifted-symmetric so V_W should be
+polynomial, and it is, through the SAME fitter and pipeline. Had V_W read NONE the script would be
+broken and no verdict quotable. (Detector-blindness taxonomy is 26 rows; an unvalidated negative is
+the failure mode.) Method: exact Lagrange through the FIRST d+1 points, evaluated on the REMAINING
+ones -- reproducing your own interpolation nodes proves nothing.
+
+SMALL POSITIVE: V_W = Var(Sum c^2) = n(n-1)(n-2)/3 = 2*C(n,3), checked exactly at all 29 n. Since
+rho_P = P/sqrt(V_A V_W), ONE of rho_P's three ingredients carries NO finite-n error. Only P and V_A
+do. Simplifies the target; does not close it. Classical for a shifted-symmetric weight -- confirmed,
+not claimed as new.
+
+WHAT THE NEGATIVE DOES NOT SETTLE: rules out a polynomial in n of degree <=10 over n<=30. Does NOT
+rule out another shape (poly over falling factorial, harmonic-augmented, two-term recursion). The
+corpus tried several such shapes FOR M_1 and found none (2026-08-21-antidiagonal-reformulation:
+poly_4 and n^2 H_n + poly_3 both fail); this does not repeat or extend them to V_A.
+
+CORPUS-GREP: the non-polynomiality MECHANISM for the covariance family M_k is already held
+(2026-07-25-A2-odd-moment-structure: even k both weights shifted-symmetric => M_2j exact polynomial;
+odd weight not => M_2j+1 non-polynomial). Those are about M_k. V_A = Var(Sum|c|) is a DIFFERENT
+object and nothing measured it -- which is why it was run rather than inferred. The analogy held;
+that it would was not evidence.
