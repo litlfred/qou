@@ -3,11 +3,11 @@
   "name": "witness-float64-padding-audit",
   "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
   "data": {
-    "occurrences": 16,
-    "distinct_values": 14,
-    "files": 6,
-    "live_files": 1,
-    "new_not_baselined": 4,
+    "occurrences": 22,
+    "distinct_values": 18,
+    "files": 7,
+    "live_files": 2,
+    "new_not_baselined": 10,
     "rows": [
       {
         "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
@@ -104,15 +104,51 @@
         "field": "q0Values.proton",
         "value": "1.109978582751380837834176418255083262920379638671875",
         "real_value": "1.1099785827513808"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[0]",
+        "value": "0.074450296843839289251398838587192585691809654235840",
+        "real_value": "0.07445029684383929"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[1]",
+        "value": "0.045614806238223573608969729775708401575684547424316",
+        "real_value": "0.045614806238223574"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[2]",
+        "value": "0.045614806238223573608969729775708401575684547424316",
+        "real_value": "0.045614806238223574"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[3]",
+        "value": "0.027947646098913536683028269180795177817344665527344",
+        "real_value": "0.027947646098913537"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[4]",
+        "value": "0.027947646098913536683028269180795177817344665527344",
+        "real_value": "0.027947646098913537"
+      },
+      {
+        "file": "computations/qbeta/qbeta-markov-trace-norm-probe.witness.json",
+        "field": "data.x_L2_vs_x_M_at_q0.x_L2[5]",
+        "value": "0.051457549482297221254967212189512792974710464477539",
+        "real_value": "0.05145754948229722"
       }
     ]
   },
   "scriptFile": "witness_float64_padding_audit.py",
   "scriptHash": "33874b7f4e46",
   "scriptCommitSha": "4611001329651246dd319b800ca69f5460a47c2c",
-  "commitSha": "414fdf9117a1c3f1c7449520a2bc07c9d18efabc",
+  "commitSha": "e68347cc12a78663fd200ce6a64f80ec29b1c1db",
   "engine": "python",
-  "computedAt": "2026-09-04T10:46:32.035830+00:00",
+  "computedAt": "2026-09-04T21:57:11.356284+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

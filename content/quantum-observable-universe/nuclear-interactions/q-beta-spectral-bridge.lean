@@ -294,10 +294,38 @@ class BorromeanQuark where
   forms_agree : Q_beta_A = Q_beta_B
 
 -- Ref: [manuscript] prop:q-beta-spectral-bridge
-/-- **Conditional theorem (AGENTS.md §3b-cond).**  Conditional on
-    `[BorromeanQuark]`, the two presentations of the free-neutron
-    Q-value agree.  Derived from the class field `forms_agree` — not a
-    `sorry`-projection of an unrelated conclusion. -/
+/-- **A BARE PROJECTION — this theorem derives nothing.**  Its conclusion
+    `Q_beta_A = Q_beta_B` is *character-for-character* the class field
+    `forms_agree`, so it restates its own hypothesis.
+
+    **Disclosure added 2026-09-04** per bean `qou-pqmw` (78 bare projections,
+    tracked with triage pending; this is the entry at this file).  The
+    previous docstring defended the projection as *"Derived from the class
+    field `forms_agree` — not a `sorry`-projection of an unrelated
+    conclusion."*  That answers the wrong objection, as
+    [`2026-08-09-inhabitation-is-a-weak-discriminator.md`](../../../docs/audits/2026-08-09-inhabitation-is-a-weak-discriminator.md)
+    §"Two shapes worth singling out" sets out: the §3b-cond item-5 complaint
+    is not that the conclusion is *unrelated* to the field but that it is
+    **identical** to it.  That audit adjudicated this declaration `genuine`
+    in `docs/audits/lean-vacuity-review-ledger.json`.
+
+    **What is and is not the defect here.**  The class above is honest —
+    content-bearing, and uninhabited, which per §3b-tax is the correct state
+    for an open conjecture.  Only this wrapper is the defect, and it is a
+    disclosure defect rather than a mathematical one: nothing false is
+    asserted, but a reader scanning for `[inst : …]`-conditional results
+    would count this as one.
+
+    **The file's real content is elsewhere and is unconditional:**
+    `q_beta_spectral_bridge` above proves the polynomial bridge identity, the
+    leading-order ratio identity, and the first-order remainder — with no
+    class hypothesis at all.  Cite that, not this.
+
+    Closing the wrapper properly needs the class to relate `Q_beta_A` and
+    `Q_beta_B` to the file's `(h, z)` forms, so that agreement *derives*
+    something — exact agreement would force `z = 1` via the ratio identity.
+    That changes what the block claims and is an authorial call, not a
+    cleanup; it is left open rather than guessed at. -/
 theorem q_beta_spectral_conditional [inst : BorromeanQuark] :
     inst.Q_beta_A = inst.Q_beta_B :=
   inst.forms_agree
