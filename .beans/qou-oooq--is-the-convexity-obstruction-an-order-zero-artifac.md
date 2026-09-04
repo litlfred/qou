@@ -140,10 +140,56 @@ falsifiable claim than we had.
       flips it: the convexity gap is `O(h^2)` and the colour term is `O(h^4)`,
       so `-log` wins in the resummation and loses type by type.
 
-- [ ] **Next, and it is now a narrow question.** Does a type-4 LP in the
-      existing LP/SDP cost-vector basis actually produce a valley of stability
-      and a sane asymmetry energy? Only the SIGN obstruction has been cleared.
-      Given how many repairs this arc has buried, that distinction should be
-      held firmly — clearing a sign is not producing a number.
-- [ ] Check whether type 4 also survives `qou-bygw`'s ordering ambiguity, which
-      is untouched by any of this and is independently blocking.
+- [x] **Answered, and better than expected — but at type TWO, not four.**
+      `the_asymmetry_term_lives_at_vassiliev_type_two_probe` (5/5).
+
+      **The closed form.** For the chain trace as a product of bond factors,
+      verified symbolically for every `A = 3..10` and every `Z`:
+
+          c_2 / c_0  =  (N - Z)^2 / 2  +  (5 - A)/8
+
+      Read as `-alpha c_2/c_0` this is `-alpha(N-Z)^2/2 + alpha A/8 - 5alpha/8`:
+      a **volume-like term linear in A** and an **asymmetry term quadratic in
+      N-Z**, both with the SEMF's sign and functional form, out of one Vassiliev
+      coefficient, with no fitting.
+
+      **The mechanism, which explains the whole arc.** For `P = prod_i f_i` with
+      all `f_i(0) = z0`,
+
+          c_2 = z0^(A-2) sum_i f_i''  +  z0^(A-3) sum_{i<j} f_i' f_j'
+
+      The second term is a sum over PAIRS of bonds — a convolution — hence
+      quadratic in the bond counts, hence quadratic in `N - Z`. **`-log` is
+      exactly the operation that destroys it**: it turns the product into a sum
+      so the cross term never appears. Verified directly: the additive `L`'s
+      type-2 piece is LINEAR in `Z` (all second differences vanish).
+
+      So the standing verdict — "no valley of stability for any q" — was right
+      AND is now explained. The quadratic a valley needs is a pair-convolution
+      term, and the logarithm removes it. The term was never absent from the
+      algebra; it was absent from the logarithm. Type 2 is also what
+      `vassiliev-filtration-mass-tower` itself calls "the first mass-
+      discriminating framing correction".
+
+      **What is wrong with it, plainly.** Magnitudes: volume-like `alpha/8 =
+      0.5232` MeV/nucleon against SEMF `a_V ~ 15.8`, off by 30x. The asymmetry
+      is `alpha/2 = 2.093` MeV per `(N-Z)^2` with **no `1/A`**, where SEMF needs
+      `-a_A(N-Z)^2/A`; it crosses SEMF's coefficient near `A ~ 11`, which is a
+      crossing and not an agreement. All-pairs is worse, not better: its
+      quadratic coefficient is `C(A/2,2) ~ A^2/8`. And the sign convention
+      (binding as `-c_2`) is assumed, not derived — `c_2/c_0` is MINIMISED at
+      `N = Z`.
+
+      Compare `qou-xwur`, where the isospin/partition route gave only
+      `-alpha log[2T+1]_q`, logarithmic in `T`, collapsing at `A = 20` for that
+      reason. This is the quadratic that route could not reach.
+- [ ] Check whether the type-2 result survives `qou-bygw`'s ordering ambiguity.
+      The chain is safe (it is a genuine connected sum, so the factor product IS
+      the trace), but the all-pairs number here uses the NAIVE factor product,
+      and the true all-pairs trace is not well defined until a bond ordering is
+      fixed. So the all-pairs half of this finding is provisional.
+- [ ] Decide the sign convention: does the framework read binding as `-c_2` or
+      `+c_2`? Everything above hangs on it and nothing in the corpus settles it.
+- [ ] The missing `1/A` is now the single concrete obstacle between this and a
+      SEMF-shaped asymmetry term. Worth asking where a `1/A` could come from —
+      the `c_0` normalisation, the Wenzl weights, or not at all.
