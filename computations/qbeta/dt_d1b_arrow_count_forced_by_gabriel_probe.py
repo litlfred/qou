@@ -1,65 +1,87 @@
 #!/usr/bin/env python3
 """dt_d1b_arrow_count_forced_by_gabriel_probe.py — qou-q9ih D1-b, the arrows.
 
-The node question closed positively: `C_irr = [trace field : Q]`, a single
-Galois orbit (`dt_d1b_connection_count_galois_orbit_hypothesis_probe`, 7/7).
-That left the **arrow** question, and this probe answers it — not by searching
-quivers against the target, which is the fit D1-a already showed cuts nothing,
-but by a counting argument that leaves no freedom.
+🛑 THIS PROBE CORRECTS ITS OWN FIRST VERSION. An earlier draft concluded
+"the arrow count is FORCED to 0 or 1". **That answered the wrong question**, and
+the file name is left as-is only so the correction is findable from the commit
+that introduced the error. Read the correction section before the result.
 
-═══ THE LEVER ═══
+═══ THE LEVER (this part is sound and is kept) ═══
 
-Arrows are not free once the spectrum is finite. For an **acyclic** quiver with
-`W = 0`, **Gabriel's theorem** says:
+For an **acyclic** quiver with `W = 0`, **Gabriel's theorem**: finite
+representation type <=> the underlying graph is a disjoint union of
+simply-laced Dynkin diagrams (ADE), and then
 
-    finite representation type  <=>  the underlying graph is a disjoint union
-                                     of simply-laced Dynkin diagrams (ADE),
-
-and then the indecomposables are exactly the positive roots, so
-
-    #indecomposables = #positive roots of that root system.
+    #indecomposables = #positive roots.
 
 Every ADE diagram is a **tree**, so a rank-`V` union with `k` components has
-exactly `V - k` edges. **The arrow count is therefore determined by the Dynkin
-type, and the Dynkin type is determined by (rank, #positive roots).**
+exactly `V - k` edges. **Arrows are therefore a function of the Dynkin type, and
+the type of `(rank, #positive roots)`.** The enumeration at a given rank is
+finite and exhaustive, so a target is hit by exactly one type or by none — there
+is nothing to tune, and this is not a search against the target.
 
-We now know the rank — it is the node count, which the companion probe made
-arithmetic. And the corpus supplies the spectrum size. So the pair pins the
-type, and the type pins the arrows. Nothing is fitted: the enumeration of ADE
-types at a given rank is finite and exhaustive, and either a target is hit by
-exactly one type or by none.
+═══ 🛑 THE CORRECTION: I FED IT THE WRONG PAIRS ═══
 
-═══ THE ASSUMPTION CHAIN, because the result is conditional on it ═══
+The first version read the corpus target `(4,3)` as **two knots' total spectra**
+— 4_1 with 3, 5_2 with 4 — and set `rank = C_irr` per knot from the merged
+Galois-orbit result. On those pairs every answer is unique and the arrow count
+comes out 0 or 1.
 
-  (A1) `W = 0`. This is the corpus's own M2 finding (`AomegaM2BPSCohomology`,
-       lean-direct exit 0): the Davison-Meinhardt plethystic log is trivial and
-       a potential-free abelianized quiver already realizes the target.
-  (A2) The quiver is **acyclic**. An assumption. Gabriel needs it.
-  (A3) The BPS spectrum is **finite**. The load-bearing one — it is what makes
-       Gabriel's criterion bite. An infinite spectrum means non-Dynkin and
-       nothing below is forced.
-  (A4) Simply-laced. Gabriel covers quivers; B/C/F/G need valued quivers, so
-       they are excluded rather than overlooked.
-  (A5) The DT count the corpus records IS the number of indecomposables (the
-       finite-chamber BPS count).
+**The bean says otherwise, in as many words:**
 
-If any of (A2), (A3), (A5) fails, this probe says nothing. They are stated so a
-reader can attack the right one.
+    Target object (post-pruning): **(Q, W, ray+, ray-)** — quiver with potential
+    plus TWO stability rays, ray-wise DT counts (4,3), bar split (7,1).
 
-═══ WHAT IS MEASURED ═══
+So `(4,3)` are **ray-wise counts of ONE quiver**, its bar-conjugate ray pair —
+not two knots' totals. The numerical coincidence that `C(4_1) = 3` and
+`C(5_2) = 4` is what made the misreading available, and I took it.
 
-Exhaustive ADE enumeration at ranks 2-5, exact positive-root counts. Then the
-`(rank, spectrum)` pairs the corpus actually supplies. Two node readings, since
-the corpus does not settle whether the abelian connection is a node:
+**Two things break under the correct reading**, and the second is the one that
+kills the headline:
 
-    reading                       4_1              5_2
-    abelian IS a node       V=3, spectrum 3   V=4, spectrum 4
-    abelian is NOT a node   V=2, spectrum 3   V=3, spectrum 4
+  1. A stable object has a definite slope, so the two rays' stable sets are
+     **disjoint** and the total is `>= 4 + 3 = 7`, not 3 or 4.
+  2. **`rank` is no longer the per-knot node count at all.** The target is ONE
+     quiver spanning the pair, so the merged `C_irr = [trace field : Q]` result
+     — which is per knot — **does not pin its `V`**. The chain "rank = node
+     count" was broken from the start under this reading.
 
-Nothing here is a fit. The enumeration is complete and the arithmetic is exact
-integer arithmetic; no floats, no search over a target.
+═══ WHAT THE CORRECTED READING ACTUALLY GIVES ═══
 
-Scope-(a); nothing wired. Bean qou-q9ih (route D1-b).
+Constraints, not an answer:
+
+  * `V >= 4`, because a ray carrying 4 needs `V >= 4` (the per-ray ceiling `V`,
+    measured in the merged `dt_d1c_hecke_block_vertex_bound_probe`);
+  * total `>= 7`.
+
+If the spectrum is exactly the two rays (total = 7):
+
+    rank 4   A1+A3            arrows 2
+    rank 5   A1+A2+A2         arrows 2
+    rank 6   A1+A1+A1+A1+A2   arrows 1
+    rank 7   A1 x7            arrows 0
+
+**So the arrow count is NOT forced.** It is 2 at ranks 4-5, 1 at rank 6, 0 at
+rank 7. **`V` must be pinned first**, and nothing in the corpus pins it — that
+is the honest state of the arrow question, and it is a constraint table rather
+than the resolution the first version claimed.
+
+The two-knot reading is still computed below, and still comes out unique, but it
+is now labelled for what it is: **the answer to a question the corpus did not
+ask.**
+
+═══ THE ASSUMPTION CHAIN ═══
+
+  (A1) `W = 0` — the corpus's M2 finding (`AomegaM2BPSCohomology`).
+  (A2) acyclic — assumed; Gabriel requires it.
+  (A3) finite spectrum — load-bearing; infinite means non-Dynkin, nothing forced.
+  (A4) simply-laced — B/C/F/G need valued quivers, excluded not overlooked.
+  (A5) the recorded DT count is the indecomposable count. **This is the one that
+       was wrong, and it was flagged as the one to check first in the version
+       that got it wrong.**
+
+Exact integer arithmetic; no floats. Scope-(a); nothing wired; no fit.
+Bean qou-q9ih (route D1-b).
 """
 from __future__ import annotations
 
@@ -127,29 +149,34 @@ def describe(union):
 
 def main() -> int:
     print("=" * 78)
-    print(" D1-b — the arrow count, forced by Gabriel rather than fitted")
+    print(" D1-b — the arrow count: CORRECTING my own first version")
     print("=" * 78)
 
     wb = WitnessBuilder("dt-d1b-arrow-count-forced-by-gabriel",
                         engine="exact-integer-ade-enumeration")
     wb.set_description(
-        "qou-q9ih D1-b, the arrow question. Answered by a counting argument "
-        "rather than by searching quivers against the target (the fit D1-a "
-        "showed cuts nothing). For an acyclic quiver with W=0, Gabriel's "
-        "theorem says finite representation type <=> simply-laced Dynkin, and "
-        "then #indecomposables = #positive roots. Every ADE diagram is a TREE, "
-        "so a rank-V union with k components has exactly V-k edges: the arrow "
-        "count is determined by the Dynkin type, and the type by (rank, "
-        "#positive roots). The rank is the node count, which the companion "
-        "probe made arithmetic; the corpus supplies the spectrum size. "
-        "Exhaustive ADE enumeration at ranks 2-5, exact integer arithmetic. "
-        "Both node readings are carried, since the corpus does not settle "
-        "whether the abelian connection is a node. CONDITIONAL on a stated "
-        "chain: W=0 (the corpus's M2 finding), acyclicity, FINITE spectrum "
-        "(the load-bearing one), simply-lacedness, and that the recorded DT "
-        "count is the indecomposable count. If the spectrum is infinite, "
-        "Gabriel does not bite and nothing here is forced. Scope-(a); nothing "
-        "wired; no fit."
+        "qou-q9ih D1-b, the arrow question -- and this probe CORRECTS ITS OWN "
+        "FIRST VERSION, which concluded 'the arrow count is FORCED to 0 or 1'. "
+        "That answered the wrong question. The Gabriel lever is sound and is "
+        "kept: for an acyclic quiver with W=0, finite type <=> simply-laced "
+        "Dynkin, #indecomposables = #positive roots, and every ADE diagram is a "
+        "TREE so a rank-V union with k components has V-k edges. What was wrong "
+        "is which (rank, spectrum) pairs it was fed. The first version read the "
+        "target (4,3) as TWO KNOTS' total spectra with rank = the per-knot "
+        "C_irr. The bean says otherwise in as many words: 'Target object: "
+        "(Q, W, ray+, ray-) -- quiver with potential plus TWO stability rays, "
+        "ray-wise DT counts (4,3)'. So (4,3) are ray-wise counts of ONE quiver, "
+        "and the coincidence C(4_1)=3, C(5_2)=4 is what made the misreading "
+        "available. Two things break: stable objects have a definite slope so "
+        "the ray sets are DISJOINT and the total is >= 7; and rank is no longer "
+        "the per-knot node count at all, so the merged C_irr result does not "
+        "pin V. Corrected result: V >= 4 and total >= 7, and if the spectrum is "
+        "exactly the two rays then arrows = 2 at ranks 4-5, 1 at rank 6, 0 at "
+        "rank 7. THE ARROW COUNT IS NOT FORCED -- V must be pinned first and "
+        "nothing in the corpus pins it. A constraint table, not a resolution. "
+        "The two-knot reading is still computed and still unique, labelled as "
+        "the answer to a question the corpus did not ask. Exact integers; no "
+        "floats. Scope-(a); nothing wired; no fit."
     )
     wb.set_content_block("prop:phi-b-unitary-bar-odd")
 
@@ -226,33 +253,45 @@ def main() -> int:
     a_node = {k: v["arrows"] for k, v in results["abelian_IS_a_node"].items()}
     not_node = {k: v["arrows"]
                 for k, v in results["abelian_is_NOT_a_node"].items()}
-    check(set(a_node.values()) == {0},
-          "if_the_abelian_connection_IS_a_node_there_are_ZERO_arrows",
-          f"4_1 -> A1+A1+A1 and 5_2 -> A1+A1+A1+A1, arrows {a_node}. This is "
-          "exactly the potential-free ABELIANIZED quiver the corpus's M2 "
-          "result said already realizes the target — reached here from "
-          "Gabriel rather than from the plethystic log, which is an "
-          "independent route to the same object")
-    check(set(not_node.values()) == {1},
-          "if_it_is_NOT_a_node_there_is_EXACTLY_ONE_arrow",
-          f"4_1 -> A2 and 5_2 -> A1+A2, arrows {not_node}. Both knots land on "
-          "one arrow, so the two readings are each internally consistent "
-          "across the two knots rather than one working and one not")
+    check(set(a_node.values()) == {0} and set(not_node.values()) == {1},
+          "the_TWO_KNOT_reading_is_unique_but_answers_the_WRONG_QUESTION",
+          f"abelian-is-a-node -> {a_node}, abelian-is-not -> {not_node}: both "
+          "unique. Kept because the calculation is correct, LABELLED because "
+          "the corpus's target is not two knots' totals")
 
-    check(True, "SO_THE_ARROW_QUESTION_IS_ANSWERED_conditionally",
-          "the arrow count is FORCED to 0 or 1 by (rank, spectrum) alone, and "
-          "which of the two depends only on whether the abelian connection is "
-          "a node. That is a much smaller open question than 'what are the "
-          "arrows', and it is a question about a CONVENTION the corpus already "
-          "has an opinion about, not about new mathematics")
+    # ---------------- the corrected reading: ONE quiver, two rays ----------
+    print("\n  \u2500\u2500 CORRECTED reading: ONE quiver, rays carrying 4 and 3 "
+          "\u2500\u2500")
+    print("     stable objects have a definite slope -> the ray sets are")
+    print("     DISJOINT -> total >= 4+3 = 7;  and a ray carrying 4 needs V >= 4")
+    corrected = {}
+    for V in range(4, 9):
+        hits = [u for u in unions_of_rank(V)
+                if sum(n_positive_roots(t, n) for t, n in u) == 7]
+        for u in hits:
+            corrected[str(V)] = {"type": describe(u), "arrows": V - len(u)}
+            print(f"     rank {V}: {describe(u):18s} arrows = {V - len(u)}")
+    arrow_set = sorted({v["arrows"] for v in corrected.values()})
+    check(len(arrow_set) > 1,
+          "CORRECTED_the_arrow_count_is_NOT_FORCED",
+          f"with total = 7 the arrow count is {arrow_set} across ranks 4-7: "
+          + "; ".join(f"rank {k} = {v['type']} ({v['arrows']} arrows)"
+                      for k, v in sorted(corrected.items()))
+          + ". V must be pinned first, and nothing in the corpus pins it")
 
-    check(True, "WHAT_WOULD_BREAK_THIS",
-          "(A3) finiteness is load-bearing: an infinite BPS spectrum means "
-          "non-Dynkin and nothing is forced. (A2) acyclicity is assumed. (A5) "
-          "the recorded DT count must be the indecomposable count rather than "
-          "a per-ray count — if the corpus's (4,3) are counts at two rays of "
-          "ONE quiver, the total is >= 7 and rank 4 A1+A3 (7 roots, 2 arrows) "
-          "becomes the candidate instead. That reading is NOT tested here")
+    check(True, "and_the_MERGED_node_result_does_NOT_pin_V",
+          "C_irr = [trace field : Q] is a PER-KNOT count; the target is ONE "
+          "quiver spanning the bar-conjugate ray pair, so its V is a different "
+          "quantity. The chain 'rank = node count' was broken from the start "
+          "under the corpus's reading — that is the substantive half of the "
+          "error, not the arithmetic")
+
+    check(True, "HOW_THE_ERROR_HAPPENED_and_it_was_flagged_by_its_own_author",
+          "the first version listed (A5) 'the recorded DT count is the "
+          "indecomposable count' as an assumption AND named it the first thing "
+          "to check before building on the result. It was wrong, and checking "
+          "it took one grep of the bean. Flagging a weak assumption is not the "
+          "same as testing it")
 
     wb.add_data("ade_table", table)
     wb.add_data("solutions", results)
