@@ -7,7 +7,7 @@ priority: normal
 tags:
     - sm-26
 created_at: 2026-09-03T16:32:23Z
-updated_at: 2026-09-04T00:30:23Z
+updated_at: 2026-09-04T00:38:34Z
 ---
 
 Measured 2026-09-03 (session qou-ggdk) after the alpha-cluster tranche (PR #6519, commits 577367a41b f3bafde098 9218877589). Method: grep -rlF '1.10997859555733471' computations --include=*.py. The literal is the self-certified muon pin A, retired 2026-08-22/28 (fca08de7d2, 83bab99730); the live muon anchor is q_muon_at() over the CODATA-2022 lepton ratio (…56427390…) and the proton default is Q_50_DIGIT_STR. These producers are UNSTAMPED, so q0_anchor_consistency_audit files them under Q0_ANCHOR_MISSING and the corpus-wide drain qou-3f7a (which keys on stamps) cannot see them. Recipe that worked on the 14 alpha producers, in three shapes: (A) dead fallback 'q_at(50) if the substrate imports else the literal' → hard refusal, import q_at from q_parameter (NOT qou_substrate.constants, or the witness gets no stamp), declare the stem under physical_proton; (B) explicit proton-vs-muon comparison (E1) → both pins by name, mpf residuals via _precision.fmt, assertion booleans as strings, wb.save(q0_comparison(muon=…, proton=…, reason=…)); (C) muon-only with no comparison purpose → proton default (2026-08-30 rule), stamp proton. Per-producer: run, diff the witness with volatile keys masked, expect proton legs unchanged past the 9th digit and muon legs shifted by the −0.0769 ppb pin migration; precision-gates.sh --changed must show zero NEW-dirty and only drained entries. Never re-pin an anchor-DEFINING witness (q-pinning-50-digit). Land manifest + witnesses together (constraint 4). Scope by subdirectory (deltalambda/, qbeta/, …) — a tranche per directory keeps each PR reviewable.
@@ -100,3 +100,59 @@ gates' own output prints. Commit each unit as its witness lands.
 ## Remaining tranches
 
 deltalambda/ 38 (in progress), qbeta/ 36, audits/ 11, substrate/ 9.
+
+
+## 🛑 CORRECTION (2026-09-04): the probes/ tranche is NOT complete — 31 of ~45
+
+The section above says "probes/ tranche COMPLETE". That is WRONG and the
+number it rests on was never measured. **I inherited a 31-file list from the
+drain agent and never ran a discovery grep on the directory myself.** The
+PR body's own scope line said "probes 44", so 13 were unaccounted before a
+single detector was involved.
+
+Found by reading sibling PR #6537 (`qou-y98b`), whose
+`computations/audits/producer_baked_pin_audit.py` decides whether a producer
+bakes a pin BY VALUE rather than by spelling. Running it over
+`computations/probes/*.py`: **54 of 1001 bake a q0 pin**, and only 4 of those
+are files this branch touched.
+
+Measured properly, splitting live code from prose with an AST walk:
+
+    probes/*.py carrying the RETIRED pin      26   (+1 value-only, below)
+      live code   21   -> 8 fixed here, 13 REMAIN
+      prose only   5   ->  3 fixed here,  2 remain (lower priority)
+    probes/*.py carrying ANY 1.10997 literal 135
+    probes/*.py baking a pin by VALUE         54   (38 proton, 4 muon-retired,
+                                                    2 codata2018, 5 truncated)
+
+REMAINING with the retired pin in LIVE CODE (13):
+  _gap_a4_qsafe, difference_knot_binding_probe,
+  he4_partition_dominance_audit_probe, he_nu_sdp_barfold_h9_test,
+  he_nu_sdp_psd_count_test, he_nu_sdp_saturation_obstruction,
+  markov_stab_trace_axis_probe, mn_dpn_xq_cross_anchor_probe,
+  pentagon_rt_torus_knot_higgs_probe, qbeta_sdeformed_leading_bound_probe,
+  rho_f_categorical_probe, su4_1111_markov_trace_probe,
+  trefoil_complex_volume_probe
+
+Plus `aomega_6y1p_swing_reframe_not_tractable`, which carries NO `1.10997`
+string at all: it bakes the pin in an integer-ratio form only the value audit
+sees. That is the 14th and it is the one a grep can never find.
+
+## THE TWO DETECTORS ARE COMPLEMENTARY AND NEITHER IS COMPLETE
+
+This is the AGENTS.md detector-blindness pattern again, and worth stating as
+a rule rather than an instance:
+
+- A **grep** sees a literal in a comment or docstring, which the value audit
+  cannot parse. 26 files by grep vs 4 muon-retired by value.
+- The **value audit** sees `mpf(693736614219613004744793)` and
+  `Rational(693736614219613/62500000)`, which no `1.10997` prefix matches.
+  38 proton-baking producers in probes/ are invisible to the grep entirely.
+
+Use the UNION. A clean run of either one is evidence about that detector, not
+about the tree. And a file list inherited from another agent is not a
+measurement — re-run the discovery yourself before writing "complete".
+
+The 38 proton-baking producers are a WEAKER defect than the 14: the value is
+correct, only the method is wrong (hardcoded rather than read by name). They
+do not go stale when the muon anchor moves. Priority order is the 14 first.
