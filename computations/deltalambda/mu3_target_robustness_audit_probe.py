@@ -36,13 +36,28 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 
 set_compute_dps()
 
-# ── canonical substrate q₀ (muon-canonical computations layer) ──────────────
-Q0_MUON = mp.mpf("1.10997859555733471989976322048322502665620840878015368660798114614493")
-# proton-pinned q₀ (package layer) — for the pin-sensitivity check
-Q0_PROTON = mp.mpf("1.10997859")  # ~identical to 8 sig figs; the pin swing is ~11.5 ppb
+# ── the two q₀ pins, BOTH read by name (bean qou-9ugp, 2026-09-04) ──────────
+# Axis (b) of this audit is the muon-vs-proton pin swing, so this producer is an
+# (E1) explicit comparison and legitimately reads both. Two things were wrong
+# with how it read them, and the second is the one that matters:
+#
+#   Q0_MUON was the 70-digit literal "1.109978595557334719899763220483225026656
+#   20840878015368660798114614493" -- the RETIRED self-certified muon pin A,
+#   superseded 2026-08-22 (fca08de7d2) by the CODATA-2022 lepton-ratio
+#   derivation (+0.0769 ppb).
+#
+#   Q0_PROTON was mp.mpf("1.10997859"), commented "~identical to 8 sig figs;
+#   the pin swing is ~11.5 ppb". That literal IS NOT THE PROTON PIN. The proton
+#   pin is 1.1099785827513808...; 1.10997859 sits +6.53 ppb above it, between
+#   the two anchors. So the "muon vs proton" swing this probe measured was
+#   5.007 ppb -- 43% of the 11.537 ppb it claimed in the comment beside it. A
+#   truncated literal named for an anchor is not that anchor.
+Q0_MUON = q_muon_at(70)
+Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
 
 # ── AME2020 connected binding energies (MeV), from the #3943 committed witness ──
 B_AME = {
@@ -207,7 +222,9 @@ results = {
             "a damping (#4300 / DampingNonMonotoneWall); (ii) the subtracted ladder's "
             "q-integer convention is PINNED (coinvariant graded dimension ⇒ Gaussian/"
             "unbalanced, not free); (iii) the q₀ pin (muon vs proton) is not a lever "
-            "(identical to 8 sf); (iv) within the isospin-corrected-strong isotope "
+            "(identical to 7 sf; swing 1.0000001x -- and that is measured against the "
+            "REAL proton pin, where the superseded 1.10997859 literal gave "
+            "1.00000004x); (iv) within the isospin-corrected-strong isotope "
             "family μ₃ varies only ~±8% (0.445–0.509 ⇒ r* ∈ [1.50,1.71]). What is NOT "
             "well-posed is the 3-sig-fig VALUE: μ₃ is a condition-number-≈8 residual "
             "(12% of two O(3.4) operands), so the ±8% isospin-correction band is "
@@ -275,7 +292,7 @@ witness = {
         "defensible. (b) the q-integer convention is PINNED: ρ_grad=[A]_q! is the "
         "coinvariant graded dimension ⇒ Gaussian/unbalanced is forced by Chevalley, so "
         "the 1.63× balanced swing is NOT a legitimate re-choice; the q₀ pin (muon vs "
-        "proton) is not a lever (identical to 8sf). (c) sign(μ₃)=+/sign(μ₄)=− are "
+        "proton) is not a lever (identical to 7sf, swing 1.0000001x). (c) sign(μ₃)=+/sign(μ₄)=− are "
         "corpus-PROVED robust (#4300 / DampingNonMonotoneWall — holds raw+corrected, "
         "non-monotone ⇒ not a damping). VERDICT scope-(a): μ₃ is NOT a decomposition "
         "artifact — its sign, ≥3-body purity, and O(1.6) magnitude are well-posed "
@@ -296,11 +313,33 @@ except Exception:
 # Provenance stamp (bean qou-4un2): this producer writes its
 # witness directly, so nothing else records which script made
 # it -- and a re-run of an unstamped producer DELETES the
-# scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+# scriptFile a downstream pass had added.
+#
+# q0_anchor was `False`, i.e. "this witness carries no q0-dependent field".
+# That was never true: rho_grad3 is [3]_q!/[2]_q! evaluated at q0, mu3 is
+# rho_strong3 minus it, and axis (b) evaluates the pair at TWO pins and
+# publishes their ratio as axis_b_q0_pin_muon_vs_proton_swing_LIVE. A producer
+# whose stated subject is the pin swing cannot be pin-independent
+# (bean qou-9ugp).
 import os as _os  # noqa: E402 -- provenance stamp
-from qou_substrate.witness import WitnessBuilder as _WB
+from qou_substrate.witness import WitnessBuilder as _WB, q0_comparison as _q0cmp
 witness.setdefault("scriptFile", _os.path.basename(__file__))
+_reason = (
+    "Axis (b) of this red-team audit IS the q0 pin swing: rho_grad3 and mu3 are "
+    "evaluated at BOTH the ideal-CAL-2 (muon) and experimental (proton) pins and "
+    "their ratio is published as axis_b_q0_pin_muon_vs_proton_swing_LIVE. Both "
+    "legs are read by name -- muon from q_parameter.q_muon_at(70), proton from "
+    "q_parameter.Q_50_DIGIT_STR. This is a comparison, not a layer straddle "
+    "(bean qou-9ugp).")
+assert _reason.isascii(), "q0AnchorReason must be pure ASCII (json.dump ensure_ascii)"
+# Set the comparison stamp BEFORE stamp_staleness_metadata: that helper only
+# writes q0Anchor/q0Value when q0Anchor is absent, so declaring `comparison`
+# first stops it also resolving a single-anchor q0Value that would contradict
+# the q0Values pair.
+witness.update(_q0cmp(muon=mp.nstr(Q0_MUON, 50, strip_zeros=False),
+                      proton=mp.nstr(Q0_PROTON, 50, strip_zeros=False),
+                      reason=_reason))
 _WB.stamp_staleness_metadata(
-    witness, script_path=__file__, engine=None, q0_anchor=False)
+    witness, script_path=__file__, engine=None, q0_anchor=None)
 out.write_text(json.dumps(witness, indent=2) + "\n")
 print(f"\nwitness -> {out.name}")
