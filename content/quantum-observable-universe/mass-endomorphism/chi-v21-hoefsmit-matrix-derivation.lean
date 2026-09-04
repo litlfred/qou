@@ -47,11 +47,35 @@ We work at the SCALAR level (trace-of-product), avoiding the full
 and determinant of each generator and their products, which factor
 via the Hecke quadratic. -/
 
-/-- The Hoefsmit `d_1` diagonal entry: `q³ / (q² + 1)`. -/
-noncomputable def hoefsmit_v21_d1 (q : ℝ) : ℝ := q^3 / (q^2 + 1)
+/-- The Hoefsmit `d_1` diagonal entry — the `(0,0)` entry of `σ_1`:
+    `-q⁻¹ / (q² + 1)`.
 
-/-- The Hoefsmit `d_2` diagonal entry: `-q⁻¹ / (q² + 1)`. -/
-noncomputable def hoefsmit_v21_d2 (q : ℝ) : ℝ := -q⁻¹ / (q^2 + 1)
+    **CORRECTED 2026-09-04 (bean `qou-18b6`): `d_1` and `d_2` were
+    transposed.** They read `d_1 = q³/(q²+1)`, `d_2 = -q⁻¹/(q²+1)`, which
+    with this file's `σ_0 = diag(q, -q⁻¹)` does **not** satisfy the braid
+    relation `σ_0 σ_1 σ_0 = σ_1 σ_0 σ_1` — so the pair was not a
+    representation of `B_3` at all, and every trace computed from it was
+    of something that does not exist.
+
+    Nothing in the file could detect it, and that is the point: `b² =
+    d_1·d_2 + 1`, `d_1 + d_2 = q - q⁻¹` and `det = -1` are all **symmetric
+    in `d_1, d_2`**, so `hoefsmit_v21_b_sq_rational`, `hoefsmit_v21_sigma1_trace`
+    and the Hecke quadratic hold verbatim under the transposition. Only a
+    relation involving `σ_0` and `σ_1` *together* separates them, which is
+    why `hoefsmit_v21_braid_relation` below is now stated.
+
+    Two independent confirmations of the corrected assignment: solving
+    `{trace = q - q⁻¹, det = -1, braid}` for `(d_1, d_2, b)` returns this
+    one (up to the sign of `b`, and the degenerate `b = 0`); and at `q = 1`
+    it gives `σ_1 = !![-1/2, √3/2; √3/2, 1/2]`, the classical Young
+    orthogonal form of `s_2` on the 2-dimensional representation of `S_3`.
+    The transposed version gave `+1/2` in the `(0,0)` slot. -/
+noncomputable def hoefsmit_v21_d1 (q : ℝ) : ℝ := -q⁻¹ / (q^2 + 1)
+
+/-- The Hoefsmit `d_2` diagonal entry — the `(1,1)` entry of `σ_1`:
+    `q³ / (q² + 1)`. See `hoefsmit_v21_d1` for why this is not the other
+    way round. -/
+noncomputable def hoefsmit_v21_d2 (q : ℝ) : ℝ := q^3 / (q^2 + 1)
 
 /-- The Hoefsmit off-diagonal coupling squared:
     `b² = d_1 · d_2 + 1 = (q⁴ + q² + 1) / (q² + 1)²`. -/
@@ -193,6 +217,33 @@ noncomputable def sigma1_v21_legacy (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
 noncomputable def sigma1_v21 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   sigma1_v21_legacy q
 
+open Matrix in
+/-- **The braid relation `σ_0 σ_1 σ_0 = σ_1 σ_0 σ_1` on `V_(2,1)`** — stated
+    for the generic Tier-2 form with the off-diagonal `b` a free parameter
+    constrained only by `b² = d_1 d_2 + 1`.
+
+    This is the relation the file did not have, and its absence is what let a
+    transposed `(d_1, d_2)` stand: trace, determinant and the Hecke quadratic
+    are each **symmetric** in `d_1, d_2`, so all three hold for the wrong
+    matrix. The braid relation couples `σ_0` and `σ_1`, and it is the
+    cheapest statement that does. See `hoefsmit_v21_d1`.
+
+    Note it needs no hypothesis on `b` beyond the quadratic — in particular
+    no `0 ≤ b²` and no square root — so it holds over any field, which is
+    the Tier-2 point. -/
+theorem hoefsmit_v21_braid_relation (q b : ℝ) (hq : q ≠ 0)
+    (hb : b ^ 2 = hoefsmit_v21_d1 q * hoefsmit_v21_d2 q + 1) :
+    sigma0_v21 q * sigma1_v21_gen (hoefsmit_v21_d1 q) (hoefsmit_v21_d2 q) b
+        * sigma0_v21 q
+      = sigma1_v21_gen (hoefsmit_v21_d1 q) (hoefsmit_v21_d2 q) b
+        * sigma0_v21 q
+        * sigma1_v21_gen (hoefsmit_v21_d1 q) (hoefsmit_v21_d2 q) b := by
+  have hq2 : (q ^ 2 + 1 : ℝ) ≠ 0 := by positivity
+  unfold sigma0_v21 sigma1_v21_gen hoefsmit_v21_d1 hoefsmit_v21_d2 at *
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [Matrix.mul_fin_two] <;> field_simp at hb ⊢ <;> nlinarith [hb, sq_nonneg q]
+
 /-- Typed-crossing variant. -/
 inductive TypedCrossingV21 : Type
   | sig    : TypedCrossingV21  -- σ
@@ -241,6 +292,7 @@ noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
 -- Ref: [manuscript] empirical sympy verification in
 --   computations/probe_per_wedderburn_block_ck.py
 --   (q_character_on_braid_word + sympy.cancel + sympy.factor)
+set_option maxHeartbeats 4000000 in
 /-- **Full V_(2,1) Hoefsmit matrix-product trace identity.**
     The trace of the matrix product on the canonical typed-B_3
     word for β_n minus β_p equals the closed form
@@ -250,40 +302,53 @@ noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
     + `sympy.cancel` + `sympy.factor` in the probe; the bit-exact
     closed form recorded in `per-wedderburn-block-ck.witness.json`.
 
-    **STATED, NOT PROVED** (AGENTS.md §"Zero-sorry default",
-    state-and-queue). This is the piece the file's §Status already
-    declares deferred, and the tactic script that stood here did not
-    prove it — it merely could not be seen to fail, because it hit the
-    200 000-heartbeat `whnf` timeout first. Raised to 4 000 000 it
-    completes elaboration in 28 s and reports the real failure:
+    **PROVED sorry-free 2026-09-04** (bean `qou-18b6`). Two things had to
+    happen, in this order, and the first was not what the file expected.
 
-        rewrite failed: Did not find an occurrence of the pattern
-          √(hoefsmit_v21_b_sq q) ^ 2
+    **It was FALSE until the same day.** Until the `d_1`/`d_2` transposition
+    was fixed (see `hoefsmit_v21_d1`), these matrices gave
 
-    i.e. `ring_nf` had already normalised the square away, so the
-    `rw [h_sqrt]` step never applied.
+        chi_n - chi_p = -(q-1)(q+1)(q⁴+1)(q²-q+1)(q²+q+1) / (4q⁵)
 
-    **How far the proof does get**, recorded so the next attempt does
-    not start from nothing. With `b := √(hoefsmit_v21_b_sq q)` set
-    before unfolding, `simp only [List.foldl, Matrix.trace_fin_two]`
-    followed by `field_simp` reduces the goal to a polynomial identity
-    in `q` and `b` modulo the single quadratic relation
+    which is the right-hand side below times `(q⁴+q²+1)/q²`. The note that
+    stood here — "the claim is exactly the one sympy verifies" — was not true
+    of *these definitions*, and no proof existed to be found. The closed form
+    itself was never in doubt: at `q = 1+ε` it reproduces the ε-coefficients
+    in `_deprecated/per-wedderburn-block-ck.witness.json` exactly, while the
+    transposed matrices do not.
 
-        b² = (q⁴ + q² + 1) / (q² + 1)²
+    **The proof, and the two things that make it go through.** Expand with
+    `simp only` over the definitions and `List.foldl_cons`, then
+    `Matrix.mul_fin_two` folds the eleven factors into one `!![_,_;_,_]`.
+    Then:
 
-    (`hoefsmit_v21_b_sq_rational`). What is missing is the elimination
-    step: `nlinarith` does not close it, and `linear_combination`
-    needs the polynomial coefficient of that relation, which is not
-    guessable by hand at degree 11. The tractable route is the one the
-    `@[deprecated]` notice on `sigma1_v21_legacy` already names —
-    restate over `sigma1_v21_gen d1 d2 b` with `b² = d1·d2 + 1` as an
-    explicit hypothesis (Tier 2), so the identity becomes a polynomial
-    one in a free `b` and the relation can be applied by `ring`-level
-    rewriting rather than by search.
+    * **Project with `Matrix.trace_fin_two_of`, not `Matrix.trace_fin_two`.**
+      The former rewrites `trace !![a,b;c,d]` straight to `a + d`; the latter
+      leaves `M 0 0 + M 1 1` as *applications*, which blocks everything after
+      it. This is the whole difference between a goal that closes and one
+      that does not, and it is invisible from the two lemma names.
+    * **Only then generalise the square root.** `Real.sqrt (hoefsmit_v21_b_sq q)`
+      becomes a free `b` carrying `b² = (q⁴+q²+1)/(q²+1)²`; `ring_nf`
+      normalises, and `rw [hb4, hb2]` eliminates `b` entirely — `b⁴` first,
+      since `rw [hb2]` cannot see inside it. `field_simp; ring` finishes.
 
-    Tracked as bean `qou-18b6`. Do NOT close this by weakening the
-    statement or by assuming it as a class field — the claim is exactly
-    the one sympy verifies. -/
+    **Why no `linear_combination` certificate is needed, contrary to the
+    earlier note.** Only EVEN powers of `b` reach the trace: each index-1
+    factor is symmetric with off-diagonal `b`, so a path from a diagonal slot
+    back to itself takes an even number of off-diagonal steps. Odd powers do
+    occur — `b³` appears 20 times in the normalised matrix — but only in the
+    OFF-diagonal entries, which the trace discards. Projecting first is what
+    makes the substitution `b² ↦ …` sufficient on its own.
+
+    **Measured dead end, recorded so it is not re-walked.** With
+    `Matrix.trace_fin_two` instead, the goal stays as index applications,
+    `field_simp` runs on the un-projected expression and **exhausts
+    2 000 000 heartbeats**. Per the trap this file already carries, the
+    heartbeat bump was applied first, so that is a real exhaustion and not a
+    default-budget timeout.
+
+    The statement is unchanged from when it carried the `sorry`; only the
+    matrices it is about were corrected. Bean `qou-18b6`. -/
 -- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation §"matrix-product trace"
 -- Ref: [manuscript] empirical sympy verification in
 --   computations/probe_per_wedderburn_block_ck.py
@@ -293,8 +358,33 @@ theorem chi_v21_matrix_trace_identity (q : ℝ) (hq : q ≠ 0) :
     chi_v21_on_word q beta_n_word_v21
       - chi_v21_on_word q beta_p_word_v21
       = chi_V21_difference_factored q := by
-  -- Ref: [manuscript] rem:chi-v21-hoefsmit-matrix-derivation; bean `qou-18b6`
-  sorry
+  have hqq : (q ^ 2 + 1 : ℝ) ≠ 0 := by positivity
+  have hnn : (0:ℝ) ≤ hoefsmit_v21_b_sq q := by
+    rw [hoefsmit_v21_b_sq_rational q hq]; positivity
+  have hb2 : Real.sqrt (hoefsmit_v21_b_sq q) ^ 2
+      = (q ^ 4 + q ^ 2 + 1) / (q ^ 2 + 1) ^ 2 := by
+    rw [Real.sq_sqrt hnn, hoefsmit_v21_b_sq_rational q hq]
+  have hif : ∀ A B : Matrix (Fin 2) (Fin 2) ℝ,
+      (if (1 : Fin 2) = 0 then A else B) = B := by
+    intro A B; norm_num
+  have hsm : ∀ c : ℝ, c • (1 : Matrix (Fin 2) (Fin 2) ℝ) = !![c, 0; 0, c] := by
+    intro c; ext i j; fin_cases i <;> fin_cases j <;> simp [Matrix.one_apply]
+  have hsub : ∀ a b c d e f g h : ℝ,
+      (!![a, b; c, d] : Matrix (Fin 2) (Fin 2) ℝ) - !![e, f; g, h]
+        = !![a - e, b - f; c - g, d - h] := by
+    intro a b c d e f g h; ext i j; fin_cases i <;> fin_cases j <;> simp
+  simp only [chi_v21_on_word, beta_n_word_v21, beta_p_word_v21, crossing_to_matrix,
+    sigma1_v21, sigma1_v21_legacy, sigma0_v21, hoefsmit_v21_d1, hoefsmit_v21_d2,
+    chi_V21_difference_factored, List.foldl_cons, List.foldl_nil,
+    if_true, hif, one_mul]
+  simp only [hsm, hsub, Matrix.mul_fin_two, Matrix.trace_fin_two_of]
+  generalize Real.sqrt (hoefsmit_v21_b_sq q) = b at hb2 ⊢
+  have hb4 : b ^ 4 = ((q ^ 4 + q ^ 2 + 1) / (q ^ 2 + 1) ^ 2) ^ 2 := by
+    rw [show (4:ℕ) = 2 * 2 from rfl, pow_mul, hb2]
+  ring_nf
+  rw [hb4, hb2]
+  field_simp
+  ring
 
 /-! ## u = q² coordinate: sqrt-free trace identity
 
@@ -351,24 +441,24 @@ theorem chi_v21_closed_form_u_coord (q : ℝ) :
 
 /-! ## Status
 
-**V_(2,1) is closed at the scalar / rational-function level:**
+**V_(2,1) is closed, including the matrix-product trace.**
 
-- `chi_V21_difference_factored_eq_polynomial`: factored ↔ polynomial
-- `chi_V21_laurent_decomposition`: explicit Laurent decomposition
-- `chi_V21_difference_at_{one,two}`: numerical cross-checks
+- `hoefsmit_v21_braid_relation` — the representation is genuine (this is the
+  guard that a transposed `(d_1, d_2)` fails; trace, determinant, `b²` and the
+  Hecke quadratic are all symmetric in `d_1, d_2` and cannot see it).
+- `chi_v21_matrix_trace_identity` — the 11-crossing typed-B_3 matrix-product
+  trace difference equals the closed form. **Proved sorry-free 2026-09-04**;
+  it was a `sorry` over a FALSE statement until the transposition was fixed
+  the same day.
+- `chi_V21_difference_factored_eq_polynomial`, `chi_V21_laurent_decomposition`,
+  `chi_V21_difference_at_{one,two}` — the rational-function layer.
 
-The **substantive content** — that the matrix-product trace of the
-canonical 11-crossing typed-B_3 word on the Hoefsmit V_(2,1) action
-equals this specific rational function — is **empirically verified
-via sympy** in `probe_per_wedderburn_block_ck.py`. A full Lean
-matrix-product derivation requires the chapter Hoefsmit σ_0, σ_1
-to be imported (currently chapter-block isolated) plus the exact
-word order from `atomic_braid_to_crossings`, both of which are
-larger infrastructure lifts deferred to a follow-up PR.
+Every theorem in this file is sorry-free, and `#print axioms` on both new
+results is `[propext, Classical.choice, Quot.sound]`.
 
-The Hecke-quadratic-derived scalar identities (`hoefsmit_v21_sigma0_trace`,
-`hoefsmit_v21_sigma1_trace`) are proved sorry-free and provide the
-foundation for the eventual matrix-derivation closure.
+The empirical sympy corroboration remains what it was: the closed form
+reproduces the ε-coefficients recorded for λ = (2,1) at `q = 1+ε`. It is now a
+cross-check on a proved identity rather than the identity's only support.
 -/
 
 end QOU.BraidKnot

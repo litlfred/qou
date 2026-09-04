@@ -3,8 +3,9 @@
 title: 'ROAST: the q-deformation is NET-NEGATIVE on binding — derived asymmetry +2(q0-1)(N-Z) has the wrong sign (data wants ~-0.15), and layout-free bond counting (A-1) beats every isospin-resolved variant'
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-04T07:07:35Z
-updated_at: 2026-09-04T07:07:35Z
+updated_at: 2026-09-04T12:31:38Z
 ---
 
 Measured 2026-09-04 on 2548 AME nuclides with MEASURED binding energies
@@ -87,3 +88,6 @@ Their caveat is worth carrying: `L` is spinless and the real distinction is the
 from unbound — but that does not excuse the ORDER, which comes from the
 averaging convention and would survive into a spin-resolved theory keeping the
 same letter.
+
+
+## 2026-09-04 (qou-hfjc) — the wrong-signed asymmetry has a derived explanation: it is the writhe factor nu^e of the UN-normalised trace. The forced link-invariant normalisation (nu = q⁻², mu = [2]_q, both from the two Markov moves) gives every single-crossing bond the weight q/(q²+1), so κ_derived = 0 identically and the law is pure bond counting — the shape this bean measured as empirically best (p5–p95 1.1809, reproduced to 5 figures). Lean sorry-free; see docs/audits/2026-09-04-forced-link-normalisation-bond-counting.md.

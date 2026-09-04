@@ -149,8 +149,13 @@ def main():
 
         results.append({
             "name": name,
+            "pdg_key": pdg_key,
             "crossings": n_cross,
             "n_extra": n_extra,
+            # fmt, not the bare value: these are mpf and a raw float in a
+            # witness is what the raw-float64 ratchet counts. `pdg_val` may be
+            # None for a meson with no PDG entry, so it is only formatted when
+            # present rather than stringified unconditionally.
             "tr_M": fmt(tr),
             "ratio_to_pion": fmt(ratio),
             "m_pred_MeV": fmt(m_pred),
@@ -200,15 +205,21 @@ def main():
                 abs(shape_character(word_n, q, shape) - want)
                 <= rel_tol * abs(want))
     w.add_assertion("one_dim_block_characters_scale_as_q_pow_n",
-                    computed=scaling_ok, expected=scaling_checked, tolerance=0,
+                    computed=scaling_ok, expected=scaling_checked, tolerance="0",
                     source="For each meson row, χ_(3) scales by q^n and "
                            "χ_(1,1,1) by (-q⁻¹)^n under n extra σ₁ crossings "
                            "— the Hoefsmit eigenvalue structure the mass "
                            "ratios are read off, checked to 1e-40 relative in "
                            "exact mpmath arithmetic.")
     w.add_data("kaon_prediction", {
+        # Keyed on the ROW NAME, not on a float equality against `pdg["K±"]`.
+        # That comparison broke the moment the payload was serialized — the
+        # row's `m_PDG_MeV` became a formatted string while `pdg["K±"]` stayed
+        # an mpf, so `next()` matched nothing and raised StopIteration. An
+        # identity test on a name survives a change of representation; an
+        # equality test on a formatted number does not.
         "m_pred_MeV": next(r["m_pred_MeV"] for r in results
-                           if r["m_PDG_MeV"] == fmt(pdg["K±"])),
+                           if r["pdg_key"] == "K±"),
         "m_PDG_MeV": fmt(pdg["K±"]),
         "note": "structural ratio from character growth, not a fit; there is "
                 "no independent expected value for the prediction itself",

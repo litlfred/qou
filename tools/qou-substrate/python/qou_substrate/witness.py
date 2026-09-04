@@ -1820,6 +1820,25 @@ class WitnessBuilder:
                 "(q0_anchor=False): no q0-dependent field in this witness",
             )
             return payload
+        if q0_anchor is True:
+            # `False` MEANS something here — "this witness carries no
+            # q0-dependent field, stamp `independent`" — and that makes `True`
+            # look like its complement. It is not: there is no anchor called
+            # True, so it fell through to the string path and stamped the
+            # boolean, after which `q0_anchor_consistency_audit` could not map
+            # it to a pin and could not check that witness at all.
+            #
+            # Found in `markov_bond_rule_forces_pairwise_probe`, whose comment
+            # one line above the call says exactly what was meant — "the bond
+            # factors ARE evaluated at the proton pin" — so the author knew the
+            # anchor and the API offered a spelling that silently discarded it.
+            # Refusing beats stamping something unusable.
+            raise ValueError(
+                "q0_anchor=True has no meaning. Pass the anchor itself "
+                "('muon' / 'proton' / 'ambiguous' / 'independent' / "
+                "'comparison'), or None to resolve it, or False to declare "
+                "this witness q0-independent."
+            )
         if q0_anchor is None:
             # PAYLOAD FIRST (bean qou-aj91): the pin the payload's own q₀ shows
             # it was computed at beats the one the manifest/env would have

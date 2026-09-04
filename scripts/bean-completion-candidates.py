@@ -95,6 +95,7 @@ USAGE
 from __future__ import annotations
 
 import argparse
+import functools
 import collections
 import datetime
 import pathlib
@@ -107,7 +108,85 @@ _DONE = re.compile(
     r"^(fix|fixes|fixed|close[sd]?|resolve[sd]?|complete[sd]?|drain|repair)\b"
     r"|\b(CLOSED|RESOLVED|COMPLETE|FIXED|drained|discharged)\b", re.I)
 _ORDER = {"high": 0, "medium": 1, "low": 2}
-_ACTIVE_HOURS = 12  # a bean named by a commit this recently is presumed CLAIMED
+_ACTIVE_HOURS = 12  # a bean named by a commit this recently MAY be claimed — see _landed
+
+
+@functools.lru_cache(maxsize=None)
+def _landed(sha: str) -> bool:
+    """Is this commit already an ancestor of origin/main?
+
+    WHY THIS EXISTS. The `[ACTIVE]` flag was purely AGE-based and told the
+    reader "presume CLAIMED, do not take". Age alone cannot tell a sibling
+    HOLDING a bean from a sibling who FINISHED it, and the two want opposite
+    actions: an in-flight branch should be left alone, while a landed one is
+    at least FREE to take.
+
+    🛑 LANDED IS A "WHERE", NOT A "WHAT" -- and this docstring got that wrong
+    first. It read "landed work is precisely the bean most worth taking,
+    because closing it is all that is left". That is an unsupported claim
+    about the WORK, and it is false often enough to mislead: `_landed` tests
+    only whether one COMMIT is an ancestor of origin/main. In a repo running
+    ~40 commits/hour, LANDED is close to "someone touched this recently and
+    their touch merged".
+
+    Measured 2026-09-04, three LANDED bodies grepped for closure language:
+
+        qou-6gf9   1 NOT CLOSED  1 not proved  2 open     1 still OPEN
+        qou-k5r5   1 NOT DONE    1 NOT closed  1 NOT done  2 NOT proved
+        qou-w3eg   1 NOT proved  2 OPEN        1 STILL OPEN 7 open
+
+    All three are open research; a sibling PR (#6663) was actively working
+    qou-6gf9 at the time. The agent that wrote the retracted sentence then
+    repeated it in chat as "the LANDED beans are now a real, readable queue"
+    and had to retract that too. The question "is the work done?" is the
+    DEFAULT mode's, at a measured precision of 2 in 12 -- LANDED does not
+    answer it and must not be printed as though it does.
+
+    Measured 2026-09-04: `qou-9iwt` was flagged `[ACTIVE — commit 10h ago;
+    presume CLAIMED, do not take]` on the strength of `1d75dfd31c3`, which was
+    already MERGED TO MAIN. The flag suppressed the one bean whose work was
+    demonstrably done. The session took it anyway and found two further defects
+    the merged commit had not covered — so the flag would have cost that, and
+    would have done it silently.
+    """
+    return subprocess.run(["git", "merge-base", "--is-ancestor", sha, "origin/main"],
+                          capture_output=True).returncode == 0
+
+
+_SHA = re.compile(r"[0-9a-f]{40}")
+
+
+def newest_activity(entries, now):
+    """(age_hours, sha, landed) for the newest commit naming a bean, or None.
+
+    Factored out because BOTH modes need it and one of them got it wrong in a
+    way no reader would see. `--active` unpacked the whole `(sha, iso, subj)`
+    tuple and was correct; the default mode took `max()` over the TIMESTAMPS
+    ALONE and then indexed `[0]` into the result — so it handed `_landed()` the
+    single character `'2'` (the leading digit of an ISO date). `git merge-base
+    --is-ancestor 2 origin/main` resolves nothing, returns non-zero, and
+    `_landed` therefore answered False for EVERY bean. The `[IN FLIGHT — not on
+    main]` flag was unconditionally on.
+
+    Measured 2026-09-04 on the real tree: `qou-keu7`, `qou-f8lit` and `qou-cite`
+    were all flagged "not on main" while their commits (`10eec50ef93`,
+    `a28e4406490`, `f86729562a7`) had been verified on main the same hour. That
+    is the exact failure `_landed` was added to fix, reproduced one function
+    away in the same change that fixed it.
+
+    The `_SHA` guard raises instead of silently answering False, because a
+    False here is indistinguishable from a real in-flight commit.
+    """
+    newest = max(entries, key=lambda c: c[1], default=None)
+    if not newest:
+        return None
+    sha, iso = newest[0], newest[1]
+    if not _SHA.fullmatch(sha):
+        raise ValueError(
+            f"newest_activity expected a 40-hex sha, got {sha!r} — a caller is "
+            "indexing into a max() taken over the wrong field")
+    age_h = (now - datetime.datetime.fromisoformat(iso)).total_seconds() / 3600
+    return age_h, sha, _landed(sha)
 
 
 def load_beans(root: pathlib.Path) -> dict:
@@ -130,10 +209,31 @@ def load_beans(root: pathlib.Path) -> dict:
 
 
 def any_commits(since: str) -> dict:
+    """Every commit naming a bean — ALL REFS, not just merged history.
+
+    `--all` is load-bearing and asymmetric with `done_commits` below, which
+    deliberately stays on merged history. The two ask different questions:
+
+      * done_commits — "has this bean's work LANDED?"  Only main can answer
+        that, so an unmerged branch must NOT count.
+      * any_commits  — "is a sibling WORKING on this?"  Only an UNMERGED
+        branch can answer that, and a bare `git log` cannot see one.
+
+    Measured 2026-09-04: a bare `git log` saw 500 commits in the last 12 h and
+    `git log --all` saw 550, of which **50 were not on origin/main**. So the
+    `[ACTIVE]` flag — which exists precisely to say "a live session holds this,
+    do not take it" — was reading a population that BY CONSTRUCTION contains no
+    in-flight work, and every bean it flagged was therefore landed. The flag was
+    not merely imprecise; it could not be right.
+
+    Note for a shallow clone: unfetched remote branches are invisible to `--all`
+    too, so a clean IN FLIGHT bucket is weaker evidence than it looks. Fetch
+    first if the answer matters.
+    """
     """bean id -> [(sha, iso, subject)], ANY commit naming it. For the
     active-ownership signal, which does not care what the commit says."""
     log = subprocess.run(
-        ["git", "log", f"--since={since}", "--format=%H%x01%cI%x01%s"],
+        ["git", "log", "--all", f"--since={since}", "--format=%H%x01%cI%x01%s"],
         capture_output=True, text=True).stdout.splitlines()
     out = collections.defaultdict(list)
     for line in log:
@@ -164,6 +264,55 @@ def done_commits(since: str) -> dict:
     return hits
 
 
+def _selftest() -> int:
+    """Exercise `newest_activity` in both directions and on the shipped bug.
+
+    The bug this guards was invisible to every test that only asked "does the
+    script run": it produced a plausible flag on every row, and a reader could
+    not tell an always-on flag from a genuinely busy tree.
+    """
+    now = datetime.datetime.now(datetime.timezone.utc)
+    fails = []
+
+    def check(name, cond):
+        print(f"  {'ok  ' if cond else 'FAIL'}  {name}")
+        if not cond:
+            fails.append(name)
+
+    # origin/main's own tip is, by definition, an ancestor of origin/main.
+    tip = subprocess.run(["git", "rev-parse", "origin/main"],
+                         capture_output=True, text=True).stdout.strip()
+    iso = now.isoformat()
+    check("empty entries -> None", newest_activity([], now) is None)
+
+    if _SHA.fullmatch(tip):
+        got = newest_activity([(tip, iso, "tip")], now)
+        check("origin/main tip reads LANDED", got is not None and got[2] is True)
+        # A sha that cannot resolve must read NOT landed — the other direction,
+        # which the old code answered correctly only by accident.
+        dead = "0" * 40
+        got = newest_activity([(dead, iso, "dead")], now)
+        check("unresolvable sha reads NOT landed", got is not None and got[2] is False)
+        # Newest wins, not first.
+        older = (now - datetime.timedelta(hours=5)).isoformat()
+        got = newest_activity([(dead, older, "old"), (tip, iso, "new")], now)
+        check("picks the NEWEST entry", got is not None and got[1] == tip)
+    else:
+        check("origin/main resolves (skipped: no origin/main)", True)
+
+    # The shipped bug: max() over timestamps alone, then [0]. Must RAISE, not
+    # silently answer False.
+    raised = False
+    try:
+        newest_activity([(iso[0], iso, "bug")], now)
+    except ValueError:
+        raised = True
+    check("single-char sha RAISES instead of answering False", raised)
+
+    print(f"\n{len(fails)} failure(s)")
+    return 1 if fails else 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -172,7 +321,13 @@ def main() -> int:
                     help="instead: list open beans with a commit in the last "
                          f"{_ACTIVE_HOURS}h — presumed CLAIMED by a live session")
     ap.add_argument("--since", default="2026-06-01", help="git log window (default 2026-06-01)")
+    ap.add_argument("--selftest", action="store_true",
+                    help="check newest_activity against both directions of the "
+                         "landed test, plus the shape bug that shipped once")
     a = ap.parse_args()
+
+    if a.selftest:
+        return _selftest()
 
     root = pathlib.Path(subprocess.run(["git", "rev-parse", "--show-toplevel"],
                                        capture_output=True, text=True).stdout.strip())
@@ -193,15 +348,27 @@ def main() -> int:
             if age_h < _ACTIVE_HOURS:
                 act.append((age_h, bid, b, newest))
         act.sort()
-        print(f"Open beans with a commit in the last {_ACTIVE_HOURS}h — "
-              f"presume CLAIMED by a live session, do NOT take: {len(act)}\n")
+        inflight = [x for x in act if not _landed(x[3][0])]
+        landed   = [x for x in act if _landed(x[3][0])]
+        print(f"Open beans with a commit in the last {_ACTIVE_HOURS}h: {len(act)}")
+        print(f"  IN FLIGHT (not on origin/main) — presume CLAIMED, do NOT take: {len(inflight)}")
+        print(f"  LANDED (already on origin/main) — nobody holds it, so it is FREE "
+              f"to take: {len(landed)}")
+        print("  LANDED says NOTHING about whether the WORK is done — only that one "
+              "commit\n  naming the bean has merged. Read the body. See _landed().\n")
+        act = inflight + landed
         for age_h, bid, b, (sha, iso, subj) in act:
-            print(f"  {bid}  ({b['priority']}, {b['status']}, last commit {age_h:.0f}h ago)")
+            state = "IN FLIGHT — do NOT take" if not _landed(sha) else "LANDED — free to take"
+            print(f"  {bid}  ({b['priority']}, {b['status']}, last commit {age_h:.0f}h ago)  [{state}]")
             print(f"    bean : {b['title'][:100]}")
             print(f"    last : {sha[:11]} {subj[:100]}")
-        print("\nThis signal asks only WHEN, never WHAT, so none of the four semantic "
-              "failure\nclasses below apply to it. AGENTS.md permits overlapping only "
-              "open-outcome\nresearch — never work that has one right answer.")
+        print("\nThis signal asks WHEN and WHERE, never WHAT, so none of the four "
+              "semantic\nfailure classes below apply to it. WHERE is load-bearing: age "
+              "alone cannot\ntell a sibling HOLDING a bean from one who FINISHED it, and "
+              "those want opposite\nactions. Measured 2026-09-04 — qou-9iwt was flagged "
+              "CLAIMED on a commit already\nMERGED to main, suppressing the one bean whose "
+              "work was demonstrably done.\nAGENTS.md permits overlapping only open-outcome "
+              "research — never work that has\none right answer.")
         return 0
 
     rows = []
@@ -226,11 +393,11 @@ def main() -> int:
           f"updated_at ({sum(1 for r in rows if r[0]=='high')} high priority).\n")
     for pri, bid, b, (sha, iso, subj, ambig) in shown:
         flag = "  [!! subject names >1 bean — the verb may govern another]" if ambig else ""
-        newest = max((c[1] for c in allc.get(bid, [])), default=None)
-        if newest:
-            age_h = (now - datetime.datetime.fromisoformat(newest)).total_seconds() / 3600
-            if age_h < _ACTIVE_HOURS:
-                flag += (f"  [ACTIVE — commit {age_h:.0f}h ago; presume CLAIMED, "
+        act = newest_activity(allc.get(bid, []), now)
+        if act:
+            age_h, _sha, landed = act
+            if age_h < _ACTIVE_HOURS and not landed:
+                flag += (f"  [IN FLIGHT — commit {age_h:.0f}h ago, not on main; presume CLAIMED, "
                          f"do not take]")
         print(f"  {bid}  ({pri}, last updated {b['updated'][:10]}){flag}")
         print(f"    bean : {b['title'][:100]}")

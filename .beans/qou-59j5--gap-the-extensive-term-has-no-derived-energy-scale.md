@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-08-31T04:13:26Z
-updated_at: 2026-08-31T04:29:11Z
+updated_at: 2026-09-04T12:31:39Z
 ---
 
 
@@ -228,3 +228,6 @@ alone above at 3.259.
 
 This is the surviving half of `qou-2pnv` (derive-or-retract): the DERIVE half
 landed 2026-09-04, the SCALE did not.
+
+
+## 2026-09-04 (qou-hfjc) — re-measured on the normalised (bond-counting) law: median AME/B_norm = 2.8213 over 2548 nuclides, i.e. the data want ε ≈ 8.25 MeV per bond against the derived E_0·ln[2]_q = 2.924 MeV. The 2.656 on the un-normalised law becomes 2.82 here. Target, not criterion.
