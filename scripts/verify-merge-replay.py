@@ -36,6 +36,26 @@ Patch-id is the right invariant, but it is not magic; know its two edges:
     -- its patch-id changes and this reports it MISSING. That is the intended
     behaviour: a commit that landed with different content did not replay, and
     the resolution deserves a human look.
+  * `git patch-id` hashes CONTEXT LINES, not just the changed ones. So a commit
+    whose content replayed byte-identically still gets a different patch-id if a
+    sibling edited the same file between the branch point and the merge -- the
+    rebase lands the same hunk against different surrounding text. Measured
+    2026-09-04 on PR #6604: two commits reported MISSING, both present on main
+    with identical content (`detector-precision-measured.md` hashed
+    `03da6cb8b11f8e8f` on both sides), because siblings `a8b6e60348a` and
+    `1d059668c13` had edited `corpus-grepper/MEMORY.md` in between.
+
+    Those are reported as a THIRD class, `context-drift`: a commit with the same
+    SUBJECT was found in the merge range. That is deliberately weaker evidence
+    than a patch-id match and is never folded into `replayed` -- a subject match
+    says a commit by that name landed, not that its content is the same. Verify
+    the content by hand before believing it.
+
+EXIT CODES
+----------
+    0  every commit replayed by patch-id
+    1  at least one commit is genuinely MISSING -- no patch-id and no subject
+    2  no missing, but at least one context-drift needing a content check
 
 USAGE
 -----
@@ -99,7 +119,22 @@ def index(shas: list[str]) -> tuple[dict[str, str], list[str]]:
     return by_pid, empty
 
 
-def verify(branch: str, merged: str, window: int = 40, quiet: bool = False) -> int:
+def classify(
+    unmatched: list[tuple[str, str]], main_subjects: set[str]
+) -> tuple[list[tuple[str, str]], list[tuple[str, str]]]:
+    """Split patch-id misses into (missing, context_drift) by subject presence.
+
+    Pure, so the selftest can exercise the real classifier rather than a copy of
+    it. A subject match is deliberately weak evidence -- it says a commit by that
+    name landed, not that its content is the same -- so it gets its own class and
+    is never returned as replayed.
+    """
+    drifted = [(s, subj) for s, subj in unmatched if subj in main_subjects]
+    missing = [(s, subj) for s, subj in unmatched if subj not in main_subjects]
+    return missing, drifted
+
+
+def verify(branch: str, merged: str, window: int = 40, quiet: bool = False) -> tuple[int, int]:
     base = git("merge-base", branch, "origin/main").strip()
     if not base:
         raise SystemExit(f"no merge-base between {branch} and origin/main")
@@ -107,7 +142,7 @@ def verify(branch: str, merged: str, window: int = 40, quiet: bool = False) -> i
     branch_shas = commits(f"{base}..{branch}")
     if not branch_shas:
         print(f"  {branch}: no commits ahead of merge-base — nothing to verify")
-        return 0
+        return 0, 0
 
     # Window on main must be wide enough to contain the replayed range. Use the
     # branch commit count plus headroom for siblings that landed alongside.
@@ -115,19 +150,33 @@ def verify(branch: str, merged: str, window: int = 40, quiet: bool = False) -> i
     main_by_pid, _ = index(commits(f"{merged}~{span}..{merged}"))
     branch_by_pid, branch_empty = index(branch_shas)
 
-    missing = [(s, subject(s)) for p, s in branch_by_pid.items() if p not in main_by_pid]
+    unmatched = [(s, subject(s)) for p, s in branch_by_pid.items() if p not in main_by_pid]
+
+    # Fallback for the context-line edge: a patch-id miss is not yet a drop.
+    # Look for the same SUBJECT in the merge range; a commit that landed under
+    # its own subject did replay, with different context. Weaker than patch-id,
+    # so it is reported as its own class and never counted as replayed.
+    main_subjects = {
+        subject(s) for s in commits(f"{merged}~{span}..{merged}")
+    }
+    missing, drifted = classify(unmatched, main_subjects)
 
     if not quiet:
         print(f"  branch commits : {len(branch_shas)}")
-        print(f"  replayed       : {len(branch_by_pid) - len(missing)}")
+        print(f"  replayed       : {len(branch_by_pid) - len(unmatched)}")
         if branch_empty:
             print(f"  empty diff     : {len(branch_empty)} (no patch-id; not counted as replayed)")
             for s in branch_empty:
                 print(f"      - {s[:11]}  {subject(s)}")
+        if drifted:
+            print(f"  context-drift  : {len(drifted)} (subject found on main, patch-id differs)")
+            for s, subj in drifted:
+                print(f"      ?  {s[:11]}  {subj[:70]}")
+            print("      VERIFY THE CONTENT of these — a subject match is not a content match.")
         print(f"  MISSING        : {len(missing)}")
         for s, subj in missing:
             print(f"      !! {s[:11]}  {subj[:70]}")
-    return len(missing)
+    return len(missing), len(drifted)
 
 
 def selftest() -> int:
@@ -165,9 +214,22 @@ def selftest() -> int:
     ok_taut = taut.strip() == ""
     print(f"  `git diff main <merged-head>` -> {'EMPTY (passes — sees nothing)' if ok_taut else 'non-empty'}")
 
+    # The context-drift classifier, on the same dropped commit. Two cases, and
+    # the second is the one that matters: a commit whose subject IS on main must
+    # NOT be reported as a drop (that was the #6604 false positive), and must NOT
+    # be silently absorbed into `replayed` either.
+    subj = subject(dropped_sha)
+    m_no, d_no = classify([(dropped_sha, subj)], set())
+    m_yes, d_yes = classify([(dropped_sha, subj)], {subj})
+    ok_drift = (len(m_no), len(d_no), len(m_yes), len(d_yes)) == (1, 0, 0, 1)
+    print(f"  context-drift split -> {'CORRECT' if ok_drift else 'WRONG'} "
+          f"(subject absent: {len(m_no)} missing/{len(d_no)} drift; "
+          f"present: {len(m_yes)} missing/{len(d_yes)} drift)")
+
     print()
-    if ok_real and ok_taut:
-        print("  PASS — the patch-id check detects the drop; the diff check reports a free pass.")
+    if ok_real and ok_taut and ok_drift:
+        print("  PASS — the patch-id check detects the drop; the diff check reports a free pass;")
+        print("         a subject-only match is classed as drift, neither dropped nor replayed.")
         return 0
     print("  FAIL — selftest did not behave as specified; do not trust this checker.")
     return 1
@@ -190,11 +252,15 @@ def main() -> int:
         ap.error("--branch and --merged are both required (or use --selftest)")
 
     print(f"Verifying {a.branch} -> {a.merged[:11]}")
-    n = verify(a.branch, a.merged, a.window)
+    n, drift = verify(a.branch, a.merged, a.window)
     print()
     if n:
         print(f"RESULT: {n} commit(s) did NOT replay. Investigate before treating the merge as complete.")
         return 1
+    if drift:
+        print(f"RESULT: no drops, but {drift} commit(s) matched only by subject "
+              f"(context drift). Check their content on main before signing off.")
+        return 2
     print("RESULT: every commit replayed.")
     return 0
 
