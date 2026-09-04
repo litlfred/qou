@@ -166,10 +166,38 @@ branch adds one, and upstream removed one. The block upstream removed is
 `binds_no_carrier`. Neither its `.ts` nor its `.lean` was touched by those 21
 commits, so what changed is a *carrier* in its cone.
 
-**That is as far as this was measured.** `binds_no_carrier` is a candidate set,
-not a violation count — a block that became legitimately unconditional lands
-there too — so this is not yet a claim that anything is unsound. The three
-readings and the one-command next step are in bean `qou-y4v0`.
+**Diagnosed the same day, and it is not a regression** (bean `qou-y4v0`,
+closed). The block's `lean.ref` resolves into
+`lean/QOU/BraidsKnots/ReebBundleComplementEqualsVolume.lean`, which at the
+witness's own commit declared **`class MassVolumeFactorization`** and no longer
+does. The conversion is commit `be967ae9f9`, whose message states the reason:
+that class carried `markov_trace : ℝ`, `jsj_volume_sum : ℝ` and
+`factorization_identity : markov_trace = jsj_volume_sum`, i.e. **both reals
+chosen by the instance** — precisely the §3b-cond **item 5** self-assuming
+projection. So the class the block was binding should never have existed, its
+removal is correct, and the block leaving `binds_cone_class` is the detector
+correctly dropping a **false positive**.
+
+**Two corrections to the paragraph above, both mine.** The carrier did change,
+but **not in the 21-commit window** — `be967ae9f9` is dated 2026-09-03 and is an
+ancestor of both ends, reaching the branch through an earlier merge. I inferred
+the window from when I happened to re-measure rather than establishing it;
+`git merge-base --is-ancestor` against both ends settles it in two commands. And
+of the three readings offered, reading 1 (a real defect in the block) is
+**excluded**.
+
+**The finding worth keeping is about this audit, not that block: it is blind to
+item 5.** The script measures item 2 — does the block bind a class from its own
+cone — and says nothing about whether that class carries the block's own
+conclusion. A block can therefore sit in `binds_cone_class`, the bucket that
+reads as "item 2 not refuted", while being an item-5 violation, and at least one
+of the original 9 demonstrably was. **So `binds_cone_class` is an upper bound
+too**, exactly as the script's header already says of `binds_no_carrier`. Both
+ends of the split over-count in their own direction. Folding an item-5 check in
+is the obvious next step and is not done here.
+
+The other three moves in the same re-measurement (`binds_other_carrier`
+72 → 69) were **not** investigated; do not assume the same cause.
 
 The general lesson is the one this document already argues, now with a second
 instance: **a bucket count is evidence about the detector and the tree
