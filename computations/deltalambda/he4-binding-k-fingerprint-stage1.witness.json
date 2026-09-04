@@ -1,140 +1,146 @@
 {
-  "computation": "he4-binding-k-fingerprint-stage1",
-  "description": "A=4 extension of the canonical binding-K search, stage 1 (trace fingerprint), unblocked by the in-sandbox pyhecke-native build. cp = 4 Borromean nucleons at offsets {0,3,6,9}; K over {σ3,σ6,σ9}^{±1} len≤3; fingerprint vs the certified 77/77 canonical 4He trace. Exact GP q-Laurent + 50-dps evaluation (no float in the eval path). Stage 2 (PSD+LP) remaining. Scope-(a); no fit; nothing wired.",
-  "audit_only": true,
-  "computedAt": "2026-07-18T19:19:18.362546+00:00",
-  "engine": "pyhecke_native(GP)+mpmath",
-  "dps": 50,
-  "target_canonical_trace": "0.055358426266783106465",
-  "cp_trace_no_binding": "0.89307385932774589288",
-  "n_candidates": 186,
-  "L_max": 3,
-  "generators": [
+ "computation": "he4-binding-k-fingerprint-stage1",
+ "description": "A=4 extension of the canonical binding-K search, stage 1 (trace fingerprint), unblocked by the in-sandbox pyhecke-native build. cp = 4 Borromean nucleons at offsets {0,3,6,9}; K over {\u03c33,\u03c36,\u03c39}^{\u00b11} len\u22643; fingerprint vs the certified 77/77 canonical 4He trace. Exact GP q-Laurent + 50-dps evaluation (no float in the eval path). Stage 2 (PSD+LP) remaining. Scope-(a); no fit; nothing wired.",
+ "audit_only": true,
+ "computedAt": "2026-09-04T01:31:24.043034+00:00",
+ "engine": "pyhecke_native(GP)+mpmath",
+ "dps": 50,
+ "target_canonical_trace": "0.16097414544240738183",
+ "cp_trace_no_binding": "0.90540033019518634354",
+ "n_candidates": 186,
+ "L_max": 3,
+ "generators": [
+  3,
+  -3,
+  6,
+  -6,
+  9,
+  -9
+ ],
+ "top10": [
+  {
+   "K_word": [
     3,
+    6,
+    -9
+   ],
+   "tr_M": "0.1458983071527361",
+   "abs_delta": "0.015075838",
+   "rel_delta": "0.0936538"
+  },
+  {
+   "K_word": [
+    3,
+    -9,
+    6
+   ],
+   "tr_M": "0.1458983071527361",
+   "abs_delta": "0.015075838",
+   "rel_delta": "0.0936538"
+  },
+  {
+   "K_word": [
     -3,
     6,
-    -6,
+    9
+   ],
+   "tr_M": "0.1458983071527361",
+   "abs_delta": "0.015075838",
+   "rel_delta": "0.0936538"
+  },
+  {
+   "K_word": [
+    -3,
     9,
+    6
+   ],
+   "tr_M": "0.1458983071527361",
+   "abs_delta": "0.015075838",
+   "rel_delta": "0.0936538"
+  },
+  {
+   "K_word": [
+    6,
+    3,
     -9
-  ],
-  "top10": [
-    {
-      "K_word": [
-        3,
-        -6,
-        9
-      ],
-      "tr_M": "0.0634900512741141",
-      "abs_delta": "0.008131625",
-      "rel_delta": "0.14689"
-    },
-    {
-      "K_word": [
-        3,
-        9,
-        -6
-      ],
-      "tr_M": "0.0634900512741141",
-      "abs_delta": "0.008131625",
-      "rel_delta": "0.14689"
-    },
-    {
-      "K_word": [
-        -6,
-        3,
-        9
-      ],
-      "tr_M": "0.0634900512741141",
-      "abs_delta": "0.008131625",
-      "rel_delta": "0.14689"
-    },
-    {
-      "K_word": [
-        -6,
-        9,
-        3
-      ],
-      "tr_M": "0.0634900512741141",
-      "abs_delta": "0.008131625",
-      "rel_delta": "0.14689"
-    },
-    {
-      "K_word": [
-        9,
-        3,
-        -6
-      ],
-      "tr_M": "0.0634900512741141",
-      "abs_delta": "0.008131625",
-      "rel_delta": "0.14689"
-    },
-    {
-      "K_word": [
-        9,
-        -6,
-        3
-      ],
-      "tr_M": "0.0634900512741141",
-      "abs_delta": "0.008131625",
-      "rel_delta": "0.14689"
-    },
-    {
-      "K_word": [
-        3,
-        6,
-        -9
-      ],
-      "tr_M": "0.06350631304714029",
-      "abs_delta": "0.0081478868",
-      "rel_delta": "0.147184"
-    },
-    {
-      "K_word": [
-        3,
-        -9,
-        6
-      ],
-      "tr_M": "0.06350631304714029",
-      "abs_delta": "0.0081478868",
-      "rel_delta": "0.147184"
-    },
-    {
-      "K_word": [
-        -3,
-        6,
-        9
-      ],
-      "tr_M": "0.06350631304714029",
-      "abs_delta": "0.0081478868",
-      "rel_delta": "0.147184"
-    },
-    {
-      "K_word": [
-        -3,
-        9,
-        6
-      ],
-      "tr_M": "0.06350631304714029",
-      "abs_delta": "0.0081478868",
-      "rel_delta": "0.147184"
-    }
-  ],
-  "verdict": "A=4 STAGE-1 fingerprint (canonical A≤3 rule, zero new freedom): best plain inter-nucleon K = [3, -6, 9] with tr_M = 0.0634900512741 vs canonical target 0.0553584262668 (rel Δ = 0.1469). Candidates ranked by Markov-trace fingerprint ONLY — stage 2 (per-block PSD + operator-selection LP) not run (H12 matrices impractical in-sandbox); plain-vs-averaged interface convention flagged. A fingerprint hit is a CANDIDATE for the 4He binding link, not an identification. No AME input; no fit; nothing wired. Scope-(a).",
-  "scope": "(a) — stage-1 fingerprint only; stage-2 PSD/LP + convention reconciliation open",
-  "assertions": [
-    {
-      "label": "canonical target loaded from certified combiner",
-      "passed": true
-    },
-    {
-      "label": "enumeration completed over full pruned candidate set",
-      "passed": true
-    }
-  ],
-  "allPassed": true,
-  "scriptHash": "36bb911b3bb4",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "durationMs": 0,
-  "scriptFile": "he4_binding_k_fingerprint_stage1_probe.py"
+   ],
+   "tr_M": "0.1458983071527361",
+   "abs_delta": "0.015075838",
+   "rel_delta": "0.0936538"
+  },
+  {
+   "K_word": [
+    6,
+    -3,
+    9
+   ],
+   "tr_M": "0.1458983071527361",
+   "abs_delta": "0.015075838",
+   "rel_delta": "0.0936538"
+  },
+  {
+   "K_word": [
+    6,
+    9,
+    -3
+   ],
+   "tr_M": "0.1458983071527361",
+   "abs_delta": "0.015075838",
+   "rel_delta": "0.0936538"
+  },
+  {
+   "K_word": [
+    6,
+    -9,
+    3
+   ],
+   "tr_M": "0.1458983071527361",
+   "abs_delta": "0.015075838",
+   "rel_delta": "0.0936538"
+  },
+  {
+   "K_word": [
+    9,
+    -3,
+    6
+   ],
+   "tr_M": "0.1458983071527361",
+   "abs_delta": "0.015075838",
+   "rel_delta": "0.0936538"
+  },
+  {
+   "K_word": [
+    9,
+    6,
+    -3
+   ],
+   "tr_M": "0.1458983071527361",
+   "abs_delta": "0.015075838",
+   "rel_delta": "0.0936538"
+  }
+ ],
+ "verdict": "A=4 STAGE-1 fingerprint (canonical A\u22643 rule, zero new freedom): best plain inter-nucleon K = [3, 6, -9] with tr_M = 0.145898307153 vs canonical target 0.160974145442 (rel \u0394 = 0.09365). Candidates ranked by Markov-trace fingerprint ONLY \u2014 stage 2 (per-block PSD + operator-selection LP) not run (H12 matrices impractical in-sandbox); plain-vs-averaged interface convention flagged. A fingerprint hit is a CANDIDATE for the 4He binding link, not an identification. No AME input; no fit; nothing wired. Scope-(a).",
+ "scope": "(a) \u2014 stage-1 fingerprint only; stage-2 PSD/LP + convention reconciliation open",
+ "assertions": [
+  {
+   "label": "canonical target loaded from certified combiner",
+   "passed": true
+  },
+  {
+   "label": "enumeration completed over full pruned candidate set",
+   "passed": true
+  }
+ ],
+ "allPassed": true,
+ "scriptFile": "he4_binding_k_fingerprint_stage1_probe.py",
+ "q0Anchor": "ambiguous",
+ "q0AnchorReason": "q0_anchor was declared False ('no q0-dependent field'). Untrue: the characters are evaluated as chi = sum c_e * q0**e, so every published number is a function of q0. Stamped `ambiguous` rather than `proton` because this quantity STRADDLES layers: chi and the canonical tr_M target (canonical-tr-m-via-chi-cache.witness.json) are at the proton pin, while the Wenzl weights y_lambda come from wenzl-y-lambda-h12.witness.json, whose data.q0 is the CODATA-2018 MUON derivation 1.109978595554180575281594... The pin actually used for chi is in parameters.q0 below. Closing the straddle needs wenzl-y-lambda-h12 re-pinned, which has ten in-repo consumers (bean qou-9ugp).",
+ "parameters": {
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "q0_y_lambda_upstream": "wenzl-y-lambda-h12.witness.json data.q0 (CODATA-2018 muon derivation)"
+ },
+ "scriptHash": "343a4abfbd59",
+ "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+ "commitSha": "3bb54db0643314a240bd798083583b4c474a79a6",
+ "durationMs": 0
 }
