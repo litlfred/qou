@@ -1,11 +1,11 @@
 ---
 # qou-xjh4
 title: 'GAP: q-Beta eigenphase alpha has no branch-3 derivation (KZ/Kohno-Drinfeld holonomy)'
-status: todo
+status: scrapped
 type: task
 priority: normal
 created_at: 2026-09-03T15:12:34Z
-updated_at: 2026-09-03T15:13:08Z
+updated_at: 2026-09-04T02:34:19Z
 ---
 
 THE GAP. The eigenphase `alpha = (z-1)h/2` on V_(2,1) of H_3(q) is asserted
@@ -58,3 +58,54 @@ for one. Per qbeta_ladder_required_phase_probe.py the required phase is pinned
 to a window of half-width ~1.1e-5 rad and z_D sits ~1.19e-2 rad away, so under
 D the FUNCTIONAL FORM has to change -- that is a constraint on branch 3, not
 just on the value.
+
+🛑 SCRAPPED 2026-09-04, the same day I opened it. THIS BEAN IS WRONG, and the
+error is mine.
+
+WHAT IT CLAIMED: that branch 3 (KZ / Kohno-Drinfeld holonomy) is "the only
+remaining option" for deriving alpha, and "NOT attempted, by anyone".
+
+WHAT IS TRUE: the Kohno-Drinfeld form is EXCLUDED, and was already excluded four
+days before I wrote this. QOU/QBeta/HolonomySpectrumSignObstruction.lean landed
+2026-08-31 (4471ee72ce, 6 theorems, sorry-free), with a 6/6 probe and the audit
+docs/audits/2026-08-31-qbeta-holonomy-spectrum-sign-obstruction.md. It excludes
+EVERY holonomy whose generator has real spectrum:
+
+  - residue-independent step: a real generator eigenvalue a gives character
+    (e^a + e^-a)/2 = cosh a >= 1 for EVERY real a, so a q-dependent residue only
+    changes which a occurs.
+  - the required correction factor is 0.998399, BELOW 1 -- wrong side, not merely
+    off.
+  - at the KD value itself, matching P exp(h t/2) to the Hecke eigenvalues
+    {q, -q^-1} forces hbar = 2 ln q; q0 > 1 is real, so the generator is
+    HYPERBOLIC (det A = -(ln q0)^2 < 0) and gives 1.005448.
+  - the whole obstruction is (x-1)^2 >= 0. No analysis, no transcendence.
+
+WHAT ACTUALLY SURVIVES, and it is owned elsewhere: not "find a connection" but
+"find one whose generator is ELLIPTIC at real q" -- det A > 0, spectrum +-i*theta,
+theta = 0.0565947 -- so the imaginarity is the thing that has to be sourced, and
+the corpus names conj:im-q-physical-role as the candidate. Recorded as tier-0
+condition D0 on the D1-D6 acceptance test. LIVE TRACKERS: qou-pdix and qou-cds1.
+Do not re-open this bean; work those.
+
+SCOPE, as the audit states it: it does NOT show no connection exists, does NOT
+derive alpha, and adjudicates no convention.
+
+HOW I GOT IT WRONG -- the mechanism, which is the reusable part. I read
+EigenphaseCarrierVacuity.lean's §3 trichotomy, which says branch 3 is "the only
+one that could be contentful", and treated it as authoritative. That file was
+written BEFORE the obstruction landed and was never updated. I then propagated
+"branch 3 is where a derivation must live" into THREE further places in PR #6507
+(the content block's Lean docstring, its .ts authorNote, and the vacuity review
+ledger) before opening this bean as a fourth.
+
+I did not run the corpus-grep checklist. Paths 1-4 find the obstruction
+IMMEDIATELY -- docs/audits/, content/ (the .lean itself), computations/ (probe +
+witness) and docs/coordination/ all hit on "kohno|knizhnik|zamolodchikov". The
+checklist exists for exactly this and I skipped it because a sibling file sounded
+definitive.
+
+AGENTS.md already records the general form of this ("a sibling's bean is not a
+primary source"); this is the same trap one file over -- a sibling's LEAN FILE is
+not a primary source either. All four propagated sites are corrected in the
+follow-up branch.

@@ -184,7 +184,41 @@ gives a three-way split with only one contentful branch:
 Branch 3 is the Kohno–Drinfeld / KZ picture, and the corpus's canonical chain
 already invokes exactly that shape ("Yekutieli non-abelian Stokes").  This file
 does **not** carry out that construction; it establishes that it is the only
-place a derivation of `α` can live. -/
+place a derivation of `α` can live.
+
+**🛑 §3 IS SUPERSEDED IN ITS KOHNO–DRINFELD FORM — added 2026-09-04 (bean
+`qou-xjh4`).**  The paragraph above is the text as written, kept because the
+trichotomy's *structure* still stands and branches 1 and 2 are unaffected.  What
+is no longer true is "branch 3 is the only place a derivation can live" read as
+an endorsement of the Kohno–Drinfeld route: `QOU.QBeta.HolonomySpectrumSignObstruction`
+(2026-08-31, `4471ee72ce`, 6 theorems, sorry-free, beans `qou-pdix` / `qou-cds1`)
+**excludes every holonomy whose generator has real spectrum, Kohno–Drinfeld
+included.**
+
+The step is residue-independent, which is why it reaches the whole class rather
+than one candidate: a real generator eigenvalue `a` gives character
+`(eᵃ + e⁻ᵃ)/2 = cosh a ≥ 1` for *every* real `a`, so a `q`-dependent residue only
+changes which `a` occurs.  The required correction factor is `0.998399` — below
+1, hence unreachable.  At the Kohno–Drinfeld value itself, matching the braiding
+`P exp(ħt/2)` to the Hecke eigenvalues `{q, −q⁻¹}` forces `ħ = 2 ln q`; `q₀ > 1`
+is real, so that generator is **hyperbolic** (`det A = −(ln q₀)² < 0`) and gives
+`1.005448` against the required `0.998399`.  The whole obstruction is
+`(x−1)² ≥ 0`.
+
+**Surviving ask, materially narrower:** not "find a connection" but "find one
+whose generator is **elliptic** at real `q`" — `det A > 0`, spectrum `±iθ`,
+`θ = 0.0565947` — so the imaginarity has to be sourced, and the corpus names
+`conj:im-q-physical-role` as the candidate.  Recorded as tier-0 condition **D0**
+on `qou-pdix`'s D1–D6 acceptance test.
+
+Two things this does **not** say, matching the audit's own scope: it does not
+show that no connection exists, and it does not derive `α`.
+
+Recorded here because this file is cited as the authority on the trichotomy —
+`nuclear-interactions/q-beta-cos-resummation.lean` quoted §3 on 2026-09-04 and
+propagated "branch 3 is where a derivation must live" into three further places
+before the obstruction was noticed.  A file that others cite has to carry its own
+supersessions. -/
 
 /-- The rotation `exp(αJ)`, `J² = −I`, written out. -/
 noncomputable def rotationOfPhase (a : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
