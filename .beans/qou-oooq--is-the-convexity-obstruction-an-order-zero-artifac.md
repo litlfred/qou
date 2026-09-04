@@ -190,6 +190,38 @@ falsifiable claim than we had.
       fixed. So the all-pairs half of this finding is provisional.
 - [ ] Decide the sign convention: does the framework read binding as `-c_2` or
       `+c_2`? Everything above hangs on it and nothing in the corpus settles it.
-- [ ] The missing `1/A` is now the single concrete obstacle between this and a
-      SEMF-shaped asymmetry term. Worth asking where a `1/A` could come from —
-      the `c_0` normalisation, the Wenzl weights, or not at all.
+- [x] **The `1/A` is not the obstacle; the SCALE COUNT is.** Split to
+      `qou-eqwg`. One overall `alpha` cannot fit both terms: scaling by the
+      `30.2x` that fixes the volume overshoots the asymmetry by 22x at `A = 8`,
+      55x at `A = 20`, 154x at `A = 56`, worsening with `A` because the model's
+      asymmetry is `A`-independent. There is no `alpha` making this a SEMF.
+- [ ] Sign convention split to `qou-zlra`. The probe reads binding as
+      `-alpha c_2/c_0`; the corpus's `tr_M = c_0 + c_1 h + c_2 h^2 + ...` with
+      higher terms "added" as refinements suggests `+`, under which symmetric
+      nuclei become LEAST bound. That is a falsification, not a caveat.
+
+## Roast of the type-two result (2026-09-04, same session that produced it)
+
+**The `(N-Z)^2` symmetry is the criticised convention wearing a new hat.**
+Measured: `z(-h) = z(h) - h` exactly, so `f_nn(h) = f_pp(-h)` — the pp and nn
+factors are `h`-mirrors, which IS the `sigma <-> sigma^-1` exchange. And
+`f_pn - midpoint(f_pp, f_nn) = h^4(2-h)/48`, so pn is the midpoint to third
+order. Together those two facts FORCE `c_2` to be symmetric under `Z <-> N`. So
+the vertex sitting at `N = Z` is not evidence for the model — it is the p/n
+labelling convention plus the averaging convention of `qou-mu1h`, reappearing as
+a symmetry. The same convention criticised for making pn non-extremal is what
+makes the type-two term look SEMF-shaped.
+
+**"Right functional form" is one bit.** Any symmetric quadratic in `Z` is
+`(N-Z)^2` plus a constant, and `c_2` of a product of `A-1` factors is
+generically quadratic in the counts. The only real content is that the vertex
+sits at `N = Z`, and the previous paragraph says where that came from.
+
+**The volume claim is weaker still.** `+A/8` is a term linear in `A`, and every
+extensive quantity is linear in `A`. Calling it "the volume term with the right
+sign and form" is close to vacuous.
+
+**Pattern.** This session proposed M1 block-resolve, M4 partition channel, R1
+saturation, the tower, and now type two. Each was announced with some enthusiasm
+and each has been walked back or heavily caveated. Consistently finding "the
+right shape" and never a number is itself a finding about the method.
