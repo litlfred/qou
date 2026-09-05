@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-05T08:53:53Z
+updated_at: 2026-09-05T08:59:03Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -757,3 +757,35 @@ The probe now carries `check_shared_ray()` demonstrating this; claim 3's wording
 3. Compose with `hypVolume_chimney_wedgeAt` and `lob_sum_eq_reflected`.
 
 **Known unresolved sub-obligation**, found while drafting (2): the chord condition for `W_α` does **not** follow from `wedgeAt_lt_chord_next`/`_prev` applied to `W_sub` — the required `ψ'` comes out negative under both. The needed fact is `⟨w, u_{θ_s − β}⟩ < R cos α` for `w ∈ wedgeAt R θ_s (α+β)`, which is true (the max over the closed wedge is attained at a vertex, giving exactly `R cos α`) but has no existing helper. That is the real remaining work in step A1.
+
+
+## The chord gap named above is CLOSED — `wedgeAt_lt_chord_shift` (2026-09-05)
+
+Two sorry-free declarations, lean-direct exit 0, `[propext, Classical.choice, Quot.sound]`:
+
+- `wedgeAt_lt_chord_shift` — for `w ∈ wedgeAt R θ ψ` and `0 ≤ δ ≤ ψ`: `⟨w, u_{θ−δ}⟩ < R cos(ψ−δ)`
+- `wedgeAt_sub_lt_chord_alpha` — the instance the obtuse case needs
+
+This is exactly the obligation the previous entry recorded as the real remaining work. `wedgeAt_lt_chord_next`/`_prev` place a wedge under its **neighbours'** chords (directions `θ ± ψ ± ψ'`); the obtuse case needs the chord of a **sub-angle of the wedge's own**, at `θ − δ`, and solving `θ − ψ − ψ' = θ − δ` forces `ψ' = δ − ψ ≤ 0` while both existing lemmas require `0 < ψ'`.
+
+**The certificate is the same shape as theirs and simpler.** With `S = ⟨w,u_θ⟩`, `P = ⟨w,v_{θ−ψ}⟩`:
+
+    cos ψ · (R cos(ψ−δ) − ⟨w,u_{θ−δ}⟩) = cos(ψ−δ)·(R cos ψ − S) + P·sin δ
+
+Both right summands non-negative (first strictly): the wedge's own chord bound, and `wedgeAt_lower` times a non-negative sine. **Predicted from the derivation and confirmed by the proof — it closes by `ring`**, no Pythagorean rewrite, which `wedgeAt_lt_chord_next`/`_prev` both need.
+
+The corollary discharges non-vacuity rather than leaving it implicit: `W_sub` has half-angle `π−γ = α+β`, and `t+2γ+α = (t+γ+π)−β`, so it is the shift at `δ = β` with bound `R cos α` — exactly `W_α`'s chord. Both hypotheses free (`α+β < π/2` from `γ` obtuse; `0 ≤ β ≤ α+β` from `α > 0`).
+
+### Step A1 inventory — what is now in hand vs still open
+
+| input | status |
+|---|---|
+| covering relation `perp_sign_relation` | **in hand** — already acuteness-free on `main`; obtuse `+ + −` pattern proved |
+| disjointness of the surviving pair | **in hand** — `disjoint_wedgeAt_obtuse_pair` |
+| chord bound for `W_α` | **in hand** — `wedgeAt_sub_lt_chord_alpha` |
+| chord bound for `W_β` | *not yet stated* — the mirror instance (`δ = α` on the other side); expected to be the same lemma with signs mirrored, but **untested** |
+| the a.e. set identity itself | **open** |
+| the null-set obligation via `volume_perpLine` | **open** |
+| composition with `hypVolume_chimney_wedgeAt` + `lob_sum_eq_reflected` | **open** |
+
+Nothing here asserts anything about a volume. `idealTet_eq_chimney`'s acuteness remains a set equality outside the whole argument.
