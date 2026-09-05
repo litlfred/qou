@@ -285,3 +285,46 @@ measured here is present at every `A` and was not accounted for.
 float64-solved `q_parameter.Q` (~16 digits). Downstream agreements floor at
 ~1e-16 for that reason alone; use `q_at(55)` when the question is whether an
 identity is exact.
+
+
+### SETTLED, and it is a measurement rather than an authoring call
+
+The paragraph above left "which word is correct" as a judgement for the owner.
+It is not — it is checkable against Lean, and the check is decisive.
+
+The mass law's Borromean factor has a **Lean-proved closed form**
+(`BorromeanMarkovTrace.lean`, consumed by
+`m_p_substrate_identity_50dps.trM_borromean`), independent of both word
+builders:
+
+    |tr_M(β_Bor, q)| = (4 + h² − 3h⁴ − h⁶) / (h² + 4)
+
+Evaluated at the proton pin and compared against both candidate intra-nucleon
+confinement words:
+
+| word | `|tr_M|` | vs the Lean closed form |
+|---|---|---|
+| `(σ₀σ₁⁻¹)³` **interleaved** | 0.9985621638367872659512131 | **7.0e-61** |
+| `σ₀³σ₁⁻³` **grouped** | 0.1800645395355010983036299 | **0.82** |
+
+So the **interleaved** ordering *is* `β_Bor` — the Borromean braid the
+framework's own mass law names — verified against Lean to the arithmetic
+floor. The grouped ordering is a different object, 82 % away.
+
+`atom_braid_word_3A` — the canonical route feeding `tr_m_atom_zn` →
+`binding_canonical` → the binding surface — uses the **grouped** one.
+
+**Scope, stated tightly, because the temptation here is to over-read it.**
+This does **NOT** show that any binding number is wrong. Binding is not the
+mass identity; whether `binding_canonical` needs `β_Bor` at all is a separate
+question this probe does not answer, and the closed form reaches the mass law
+without passing through either word builder. What is established is narrower
+and still worth acting on: **two production constructions of "the nucleon's
+intra-nucleon braid" disagree, and exactly one of them is the Borromean object
+the framework elsewhere treats as canonical.**
+
+The next measurement, named precisely: does anything downstream of
+`atom_braid_word_3A` depend on its intra-nucleon block *being* `β_Bor`? If yes,
+the grouped ordering is a defect with a computed blast radius. If no, the two
+are simply different objects with different jobs and the only fix owed is a
+docstring on each saying so.
