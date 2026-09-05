@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-05T08:03:48Z
+updated_at: 2026-09-05T09:08:29Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -643,3 +643,45 @@ three; the probe's numbers are authoritative, always.
 
 Probe `computations/probes/eps_eq_decomposition_from_monotonicity_probe.py`, 5/5,
 idempotent, integer arithmetic throughout.
+
+
+## 2026-09-05 — tier 1 is a THEOREM, and the path linking graph comes with it
+
+`EpsEqFromMonotonicity.lean` left tier 1 assumed, saying it needed "the
+strand-permutation bookkeeping of a monotone word formalised … a substantially larger
+object than anything in this arc". **That was wrong about the size.** It is two one-line
+recursions.
+
+**The argument.** Generator `g` moves only positions `g`, `g+1`, and a monotone word
+runs them ascending — so when run `R_g` begins, **position `g+1` still holds strand
+`g+1`**, untouched. Every crossing of that run is therefore between one *fixed* strand
+pair `(pStart g, g+1)`. An even run restores the pair, an odd run swaps it, so the
+closure permutation is `∏_{e_g odd} σ_g` and its cycles are the maximal consecutive
+blocks of odd-exponent generators. Hence: an **odd** run crosses two strands of the
+**same** component (self-crossings, invisible to linking); an **even** run crosses
+**adjacent** components.
+
+New sorry-free `QOU/Mass/MonotoneWordComponentStructure.lean`. Every tier-1 fact is a
+reading of one theorem, `components_differ_iff_even`: even run length is
+`even_of_components_differ`; one generator per component pair is
+`distinct_even_generators_distinct_pairs`; generator order matching component order is
+`compIdx_mono`.
+
+**It also derives what the whole arc assumed.** `linking_only_between_adjacent` proves
+that only consecutive components can be linked — i.e. the `P_μ` path shape, which
+`PathCarrier` takes as a *hypothesis* and which this arc has carried as a **measurement**
+across 7 isotopes and both crossing-resolution branches since the carrier was derived.
+
+**Five predictions, measured before the Lean was written: 414/414** (400 random monotone
+words + the carrier's 14 branch-isotope pairs) — inter-component crossings only at even
+runs · components are strand intervals · linking graph is exactly the path · `μ = 1 +
+#even runs` · every even run is wholly inter-component.
+
+**The honest remainder, one level lower:** that `pStart`/`compIdx` really describe a
+monotone closure's positions and cycles. That needs braid words and cycle decomposition
+as Lean objects; the probe stands in for it.
+
+Both sibling docstrings corrected in place — `EpsEqFromMonotonicity`'s "still assumed"
+section and `OneSeparatedComponentSufficesForMilnorVanishing`'s `PathCarrier` note.
+
+Probe `computations/probes/monotone_word_component_structure_probe.py`, 6/6, idempotent.
