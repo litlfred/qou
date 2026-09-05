@@ -556,7 +556,10 @@ def binding_observe_last(Z: int, N: int, *, dps: int = 50):
     returned as full-precision decimal strings.
     """
     import mpmath as mp
-    from reduced_block_kernel import chi_all_lambda_reduced_block
+    # Monotone -> the O(A) block transfer; non-monotone -> the general-word
+    # kernel. The atom word became non-monotone on 2026-09-05 (`7db032fb48`),
+    # which the transfer correctly refuses; bean `qou-wdij`.
+    from chi_general_word import chi_all_lambda_any
     from wedderburn_jones_markov import y_lambda_at
     from hecke_characters import specht_dim
 
@@ -572,9 +575,9 @@ def binding_observe_last(Z: int, N: int, *, dps: int = 50):
         return mp.acos(r) if abs(r) <= 1 else mp.acosh(abs(r))
 
     y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, q0).items()}
-    chi_atom = chi_all_lambda_reduced_block(
+    chi_atom = chi_all_lambda_any(
         atom_braid_word_3A(Z, N, include_inter=True), n)
-    chi_free = chi_all_lambda_reduced_block(
+    chi_free = chi_all_lambda_any(
         atom_braid_word_3A(Z, N, include_inter=False), n)
     parts = list(y.keys())
     tr_atom = mp.fsum(y[l] * chi_atom.get(l, mp.mpf(0)) for l in parts)
