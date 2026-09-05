@@ -1,0 +1,184 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0707.2003v2",
+ "source": {
+  "file": "0707.2003v2.pdf",
+  "sha256": "0b8fe37aabeee412467f3f45b6af8a534c98a0da25ea47c6d914dd2c4b1b0203",
+  "bytes": 178276,
+  "pages": 20,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0707.2003",
+   "version": "2",
+   "primary_class": "math.AG",
+   "stamp_date": "7 Aug 2007"
+  },
+  "doi": null,
+  "title": "A geometric model for Hochschild homology of Soergel bimodules BEN WEBSTER GEORDIE WILLIAMSON School of Mathematics Mathematisches Institut Institute for Advanced Study der Universit\u00e4t Freiburg",
+  "authors_raw": null,
+  "title_lines": [
+   "A geometric model for Hochschild",
+   "homology of Soergel bimodules",
+   "BEN WEBSTER GEORDIE WILLIAMSON",
+   "School of Mathematics Mathematisches Institut",
+   "Institute for Advanced Study der Universit\u00e4t Freiburg"
+  ],
+  "abstract": "An important step in the calculation of the triply graded lin k homology theory of Khovanov and Rozansky is the determinati on of the Hochschild homology of Soergel bimodules for SL(n). W e present a ge- ometric model for this Hochschild homology for any simple gr oup G, as equivariant intersection homology of B\u00d7 B -orbit closures in G. W e show that, in type A these orbit closures are equivariantly forma l for the conju- gation T -action. W e use this fact to show that in the case where the cor re- sponding orbit closure is smooth, this Hochschild homology is an exterior algebra over a polynomial ring on generators whose degree is explicitly determined by the geometry of the orbit closure, and describ e its Hilbert series, proving a conjecture of Jacob Rasmussen.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181026135328-04'00'",
+   "Creator": "dvips(k) 5.95a Copyright 2005 Radical Eye Software",
+   "Title": "arXiv:0707.2003v2  [math.AG]  7 Aug 2007"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 5,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Knot homology and Soergel bimodules",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The equivariant derived category and dg-modules",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Hochschild homology and dg-algebras",
+   "page": 12,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The geometry of Bott-Samelson bimodules",
+   "page": 14,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Equivariant formality",
+   "page": 15,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 19,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 7015,
+   "n_words": 1273
+  },
+  {
+   "id": "sec-001-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1055,
+   "n_words": 171
+  },
+  {
+   "id": "sec-002-2-knot-homology-and-soergel-bimodules",
+   "number": "2",
+   "title": "Knot homology and Soergel bimodules",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3162,
+   "n_words": 595
+  },
+  {
+   "id": "sec-003-3-the-equivariant-derived-category-and-dg-module",
+   "number": "3",
+   "title": "The equivariant derived category and dg-modules",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 12,
+   "n_chars": 10112,
+   "n_words": 1814
+  },
+  {
+   "id": "sec-004-4-hochschild-homology-and-dg-algebras",
+   "number": "4",
+   "title": "Hochschild homology and dg-algebras",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 2164,
+   "n_words": 391
+  },
+  {
+   "id": "sec-005-5-the-geometry-of-bott-samelson-bimodules",
+   "number": "5",
+   "title": "The geometry of Bott-Samelson bimodules",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2970,
+   "n_words": 534
+  },
+  {
+   "id": "sec-006-6-equivariant-formality",
+   "number": "6",
+   "title": "Equivariant formality",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 7171,
+   "n_words": 1422
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2237,
+   "n_words": 350
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 8,
+  "chars_total": 35886
+ }
+}
