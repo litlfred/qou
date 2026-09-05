@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T12:23:07Z
-updated_at: 2026-09-05T12:23:40Z
+updated_at: 2026-09-05T12:52:48Z
 ---
 
 ## Finding, measured 2026-09-05 — `probes/beta_ew_weight_is_not_markov_probe.py` (4/4)
@@ -68,3 +68,43 @@ candidates move; under (a) they are replaced entirely.
 **Not fixed here, deliberately** — picking among (a)/(b)/(c) changes a
 physics-facing cot(theta_W) search and is not mine to decide from the naming
 alone.
+
+
+## Corpus-grep found the corpus had ALREADY ADJUDICATED this (same day, later)
+
+My (a)/(b)/(c) framing is SUPERSEDED.
+`appendix-standard-model/sm-params-gauge-couplings.md` already rules that the
+(3,2,1) block 'carries no states' at N=2 and that 'every route from such a block
+to a physical number is either a Markov trace, which the row cap sends to zero,
+or a spectrum, which has no states to act on'. It also states the resulting
+cot(theta_W) ~ 1.8208 'must not be cited as a framework accuracy result' — its
+witness records the ansatz as neither supported at 1e-3 nor falsified at 1e-2,
+and the residual factor was selected as the closest of **74** candidates.
+
+So the question was never which weight; it is whether the block is in the
+carrier. **The Molien migration is moot for these files and was NOT done** —
+migrating would move a physics-facing number inside a construction the paper has
+already placed outside the carrier.
+
+## Done
+
+Documentation only, no production number moves:
+- both consumer files carry a docstring note (not a Markov trace; block
+  unoccupied at N=2; deliberately not migrated; what stays open);
+- user-visible labels no longer say 'Markov trace';
+- audit doc `docs/audits/2026-09-05-beta-ew-321-weight-and-the-row-cap.md`.
+
+## Spun out
+
+`qou-yk03` — the N=3 second-trace route, with its first measurement attached.
+
+## A DEFECT IN MY OWN qou-oots AUDIT, found by this work
+
+`w_lambda_family_consumer_audit.py` reported the Molien blast radius as
+**4 of 36**. It is at least **5**. `close_321_weinberg_gap.py` builds
+`w_lam = d_q_lam ** 2 / fact_n` — the identical superseded weight — and my
+classifier filed it **NAME-ONLY** ('token present, no construction') because the
+pattern expected `dim_q**2` and the variable is named `d_q_lam`; the `_lam`
+suffix defeated the match. NAME-ONLY is a LOWER BOUND on 'computes no weight',
+exactly as that audit's own limits section says, and this is the first measured
+instance. Do not quote the 4; re-derive it.
