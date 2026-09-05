@@ -1,0 +1,128 @@
+{
+  "name": "qbeta-admissible-line-exhausts-the-choice",
+  "description": "Enumerates the functional-choice space for Q_beta = |eps(Delta)|*E0. The normalised admissible traces of H_3(q) form a ONE-PARAMETER line phi_beta = (1-2b)*chi_(3) + b*chi_(2,1); the value map onto both candidate Delta is affine with slope b - 2a, which is exactly the scalar-mod-radical residual and has no root at any q > 1. So the map is SURJECTIVE: every target is hit by exactly one beta. Two points of the line are Markov (z = q at beta = 0, z_D at beta = q^2/(q^2+1)^2), giving +12.470 % / -43.157 % on Delta_S and +39.324 % / -15.451 % on Delta_L; the beta reproducing CODATA is neither. Relaxing from Markov traces to general admissible traces therefore buys one free parameter and no content. The published 0.17 % sits at z = 1, whose chi_(1^3) coefficient is nonzero.",
+  "assertions": [
+    {
+      "name": "markov_trace_decomposes_uniquely_in_the_character_basis",
+      "passed": true,
+      "detail": "6 equations, 3 unknowns -- a unique consistent solution is itself the check that tr_M is a trace"
+    },
+    {
+      "name": "admissibility_numerator_is_exactly_the_known_quadratic",
+      "passed": true,
+      "detail": "chi_(1^3) coefficient numerator = q**2*(-q + z)*(-q**3 + q**2*z + z) = q^2*(z - q)*((q^2+1)z - q^3) identically -- the admissibility condition N(q,z) = 0 of the 2026-08-29 audit, re-derived here from the character decomposition rather than assumed"
+    },
+    {
+      "name": "exactly_two_admissible_markov_points",
+      "passed": true,
+      "detail": "admissible z = [q, q**3/(q**2 + 1)] -- and z = 1 is NOT among them (C at z=1 is q**2*(q - 1)*(q**3 - q**2 - 1)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)) != 0)"
+    },
+    {
+      "name": "z_equals_one_is_inadmissible",
+      "passed": true,
+      "detail": "C(1) = q**2*(q - 1)*(q**3 - q**2 - 1)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1)), nonzero for q > 1 -- the published closed form's functional leaks into the (1^3) block that the GNS/TL quotient kills"
+    },
+    {
+      "name": "the_normalised_admissible_family_is_ONE_parameter",
+      "passed": true,
+      "detail": "phi_beta(1) = (1-2b)*chi_(3)(1) + b*chi_(2,1)(1) = (1-2b) + 2b = 1 for every beta -- so after normalisation the admissible trace space is a LINE, parameterised by beta"
+    },
+    {
+      "name": "the_two_markov_points_sit_at_beta_0_and_beta_D",
+      "passed": true,
+      "detail": "z = q  ->  beta = 0 (the augmentation, chi_(3) itself); z = z_D  ->  beta = q**2/(q**2 + 1)**2"
+    },
+    {
+      "name": "markov_points_are_normalised_so_they_lie_ON_the_line",
+      "passed": true,
+      "detail": "a + 2b = 1 at both admissible z, so both Markov points are already normalised -- the line is the right ambient family"
+    },
+    {
+      "name": "value_map_is_affine_in_beta_with_slope_b_minus_2a",
+      "passed": true,
+      "detail": "phi_beta(Delta) = chi_(3)(Delta) + beta*(chi_(2,1) - 2*chi_(3))(Delta) -- affine in beta, verified on the coordinate vector"
+    },
+    {
+      "name": "slope_is_nonzero_for_both_elements_at_every_q_greater_1",
+      "passed": true,
+      "detail": "the slope is exactly the scalar-mod-radical residual b - 2a, whose only positive root is the degenerate q = 1 -- so on the physical branch EVERY value is reachable by exactly one beta"
+    },
+    {
+      "name": "beta_star_is_NEITHER_markov_point_for_either_element",
+      "passed": true,
+      "detail": "the 4 beta values reproducing CODATA (two sign branches x two elements) are all distinct from beta = 0 (z = q) and beta = 0.247297886748 (z = z_D) -- so NO admissible Markov trace reproduces the Q-value on either candidate element"
+    },
+    {
+      "name": "EVERY_target_is_hit_by_exactly_one_beta_so_the_family_is_a_fit",
+      "passed": true,
+      "detail": "solving phi_beta(Delta) = t for a SYMBOLIC target t gives exactly one beta on each element ({'Delta_S': 1, 'Delta_L': 1}) -- 'some other admissible functional works' is true but empty: one parameter, one anchor, zero predictive content. Removing the parameter needs functional-independence, which both elements fail at every q > 1"
+    },
+    {
+      "name": "the_published_value_sits_at_the_inadmissible_z_equals_1",
+      "passed": true,
+      "detail": "tr_M(z=1)(Delta_S) is 0.16775687 % from CODATA -- the published 0.17 %, reproduced here from the character decomposition rather than from the closed form"
+    }
+  ],
+  "markov_trace_in_character_basis": {
+    "chi_3": "(q*z + 1)*(q**3*z + q*z + 1)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))",
+    "chi_21": "q*(q - z)*(q*z + 1)/((q**2 - q + 1)*(q**2 + q + 1))",
+    "chi_111": "-q**2*(q - z)*(-q**3 + q**2*z + z)/((q**2 + 1)*(q**2 - q + 1)*(q**2 + q + 1))"
+  },
+  "admissible_z_roots": [
+    "q",
+    "q**3/(q**2 + 1)"
+  ],
+  "beta_at_z_D_symbolic": "q**2/(q**2 + 1)**2",
+  "target_T": "0.1868936675566543413712045",
+  "beta_at_z_D": "0.2472978867480345984062206",
+  "elements": [
+    {
+      "element": "Delta_S",
+      "chi_3": "-0.21019934990050293657",
+      "chi_21": "0.0",
+      "slope": "0.42039869980100587314",
+      "value_at_z_q": "-0.21019934990050293657",
+      "value_at_z_D": "-0.10623563984809279089",
+      "pct_z_q": "12.47002247",
+      "pct_z_D": "-43.15717529",
+      "beta_star_plus": "0.94456290574904191815",
+      "beta_star_minus": "0.055437094250958081849"
+    },
+    {
+      "element": "Delta_L",
+      "chi_3": "-0.26038764179012080207",
+      "chi_21": "-0.10681445765157804962",
+      "slope": "0.41396082592866355452",
+      "value_at_z_q": "-0.26038764179012080207",
+      "value_at_z_D": "-0.15801600434149129806",
+      "pct_z_q": "39.32395099",
+      "pct_z_D": "-15.45138666",
+      "beta_star_plus": "1.080491875875843366",
+      "beta_star_minus": "0.17753847617970359477"
+    }
+  ],
+  "caveats": [
+    "Admissibility here means annihilating the (1^3) block, i.e. the GNS/TL quotient under convention D. The line is the normalised trace space of that quotient, not of H_3(q).",
+    "Surjectivity is a statement about the FAMILY, not an endorsement: a beta chosen to hit the anchor is a fit with one parameter and one datum, which is why beta* is reported and not adopted.",
+    "Delta_L's characters are extracted by inverting its two admissible Markov evaluations rather than from a coordinate vector; the extraction is calibrated by reproducing chi_(2,1)(Delta_S) = 0 in the sibling probe.",
+    "Nothing here is wired to production. The bean's decision is unchanged by this probe -- it closes an option, it does not pick one."
+  ],
+  "related": [
+    "QOU.QBeta.AdmissibleAgreement.agreement_determines_class",
+    "computations/qbeta/qbeta_option_e_forced_class_probe.py",
+    "computations/qbeta/qbeta_published_form_is_the_inadmissible_z1_probe.py",
+    "computations/qbeta/qbeta_admissible_functional_hierarchy_probe.py",
+    "docs/audits/2026-09-05-qbeta-functional-decision-options.md"
+  ],
+  "source": "bean qou-99qc (closing enumeration)",
+  "scriptFile": "qbeta_admissible_line_exhausts_the_choice_probe.py",
+  "scriptHash": "0caa0756deef",
+  "scriptCommitSha": "unknown",
+  "commitSha": "dd24012b50573d407a5f3121a658cc2973846794",
+  "engine": "python+sympy",
+  "computedAt": "2026-09-05T07:52:35.367443+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "The character decomposition, the admissibility roots and the surjectivity argument are exact over Q(q) and pin-free; q0 enters only to evaluate T = Q_codata/E0 and print the comparison cells."
+}
