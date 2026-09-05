@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-05T06:55:45Z
+updated_at: 2026-09-05T07:07:40Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -290,3 +290,34 @@ NOT ESTABLISHED: n=9 only (gated at n=6); the four stragglers rest on ONE kernel
 independent second route BY CONSTRUCTION (positivity holds, as it must); nothing BOUNDS
 anything; 'pointwise holds off hooks' is a statement about this census, not a theorem,
 and one size cannot separate it from an n=9 coincidence. scope-(a). Nothing wired.
+
+## 2026-09-05 — the hook crosses level-MAX to level-MIN, at b=4 at BOTH sizes (#6748)
+
+SHARPENS #6729, which said 'the obstruction is the hook family'. Ranking each hook
+inside its own level on the COMPLETE n=9 census:
+  b=2 rank 1/2 MAXIMUM | b=3 rank 1/3 MAXIMUM | b=4 rank 5/5 MINIMUM
+  b=5 rank 6/6 MINIMUM | b=6 rank 7/7 MINIMUM | b=7 rank 4/4 MINIMUM
+The hook is the TOP of its level at small b and the BOTTOM at large b, crossing between
+b=3 and b=4 — exactly where #6677 found the hook/two-row ratio crossing 1.
+
+n=12 CONFIRMS THE LOCATION. Hook vs two-row per-dim:
+  b=2 50708.093 > 43907.244  hook could still be max
+  b=3 28688.965 > 25677.635  hook could still be max
+  b=4 13057.703 < 15754.936  HOOK IS NOT THE LEVEL MAX
+Same crossover b=4 while n grew from 9 to 12. So the rank crossover is a real feature,
+not an n=9 coincidence — which is the one thing #6729's hook-exclusion result could not
+distinguish.
+
+⇒ FOUR observations recorded separately across this arc are ONE fact: the hook column
+decays faster than every other family. 'Sits low', 'is the pointwise obstruction',
+'crosses the two-row at b=4', and 'is 15x/72x below the level max at large b' are all
+this.
+
+ASYMMETRY THAT MAKES n=12 AFFORDABLE AT ALL, and the probe states it per row: refuting
+'hook is the level MAX' needs ONE shape above it (cheap); establishing 'hook is the level
+MIN' needs the whole level (Sum dim^2 = 12!, ~1e11 ops even sparse — permanently out of
+reach). So n=12 confirms the crossover LOCATION and says nothing about minimality there.
+
+Limits: n=9 ranks exact (complete census); n=12 decides maximality only; b=1 excluded
+from the n=12 comparison since (n-1,1) IS both shapes. Nothing BOUNDS anything.
+scope-(a). Nothing wired.
