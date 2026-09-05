@@ -78,6 +78,7 @@ import subprocess
 import sys
 import time
 from pathlib import Path
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import mpmath as mp
 import sympy as sp
@@ -267,7 +268,15 @@ def main() -> int:
     }
 
     out = os.path.join(HERE, "qbeta-d-frame-eigenphase-bar-parity.witness.json")
-    with open(out, "w", encoding="utf-8") as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w", encoding="utf-8") as f:
         # Provenance stamp (bean qou-4un2): this producer writes its
         # witness directly, so nothing else records which script made
         # it -- and a re-run of an unstamped producer DELETES the
@@ -278,6 +287,7 @@ def main() -> int:
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(witness, f, indent=2)
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print(f"witness -> {out}")
     print(f"allPassed: {all_passed}  ({int((time.monotonic() - t0) * 1000)} ms)")
     return 0 if all_passed else 1

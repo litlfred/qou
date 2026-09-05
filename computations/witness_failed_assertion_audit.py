@@ -54,6 +54,7 @@ Measured instance (2026-08-24, bean `qou-nmza`).
     id_trace_matches_binding_canonical  computed≈0  tolerance=1e-9  passed=true
 
 from 2026-06-11. Its `data.atom_traces.id` was `0.055358425349822354`. The
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 `binding-canonical.witness.json` it names as its reference was recomputed
 2026-08-22 under convention D and reads `0.16097414544240738…`. So the
 assertion had been advertising agreement at 1e-9 while the two disagreed by
@@ -283,7 +284,15 @@ def main(argv: list[str]) -> int:
             "count": total_files,
             "witnesses": {k: v["count"] for k, v in sorted(found.items())},
         }
-        with open(BASELINE, "w", encoding="utf-8") as fh:
+        # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+        # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+        # dump runs, so any exception in between leaves the committed witness
+        # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+        # in one `producer_importability_audit` run. `os.replace` is atomic on
+        # POSIX within a filesystem, hence a SIBLING temp file.
+        _wpath_sidu = BASELINE
+        _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+        with open(_wtmp_sidu, "w", encoding="utf-8") as fh:
             # Provenance stamp (bean qou-4un2): this producer writes its
             # witness directly, so nothing else records which script made
             # it -- and a re-run of an unstamped producer DELETES the
@@ -295,6 +304,7 @@ def main(argv: list[str]) -> int:
                 payload, script_path=__file__, engine=None, q0_anchor=False)
             json.dump(payload, fh, indent=2, sort_keys=True)
             fh.write("\n")
+        _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
         print(f"wrote baseline: {total_files} witnesses, "
               f"{total_asserts} failed assertion(s)")
         return 0

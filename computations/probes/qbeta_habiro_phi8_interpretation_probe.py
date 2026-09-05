@@ -77,6 +77,7 @@ import sys
 import time
 from datetime import datetime, timezone
 from typing import Any
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 import mpmath as mp
 import sympy as sp
@@ -440,8 +441,17 @@ def main() -> dict[str, Any]:
         out["durationMs"] = _dm
     out["scriptFile"] = os.path.basename(__file__)
     witness_path = os.path.join(here, "qbeta-habiro-phi8-interpretation.witness.json")
-    with open(witness_path, "w") as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = witness_path
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as f:
         json.dump(to_jsonable(out), f, indent=2, sort_keys=False)
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     log(f"Witness written: {witness_path}")
     log(f"Total time: {out['durationMs']} ms")
     return out

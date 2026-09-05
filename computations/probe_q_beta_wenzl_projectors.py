@@ -17,6 +17,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent,
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 mp.dps = 200
 
@@ -93,9 +94,18 @@ def main():
     from witness_base import WitnessBuilder  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
     witness["scriptFile"] = Path(__file__).name
-    with open(HERE / "q-beta-c3-wenzl-decomposition.witness.json", "w") as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = HERE / "q-beta-c3-wenzl-decomposition.witness.json"
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as f:
         json.dump(witness, f, indent=2)
 
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     return 0
 
 if __name__ == "__main__":

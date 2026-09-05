@@ -78,6 +78,7 @@ from hecke_characters import (  # noqa: E402
     standard_young_tableaux,
 )
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 Q0 = mp.mpf(_Q0_RESOLVED)
 H = Q0 - 1 / Q0
@@ -472,13 +473,22 @@ def pairing_for_word(gens, n_strands, log_prefix="", a_baseline_sign=None, worke
     ckpt_fh = None
     if checkpoint:
         if os.path.exists(checkpoint):
-            with open(checkpoint) as fh:
+            # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+            # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+            # dump runs, so any exception in between leaves the committed witness
+            # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+            # in one `producer_importability_audit` run. `os.replace` is atomic on
+            # POSIX within a filesystem, hence a SIBLING temp file.
+            _wpath_sidu = checkpoint
+            _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+            with open(_wtmp_sidu) as fh:
                 for line in fh:
                     line = line.strip()
                     if not line:
                         continue
                     rec = json.loads(line)
                     rows_by_shape[tuple(rec["lambda"])] = rec
+            _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
             print(f"{log_prefix}  resumed: {len(rows_by_shape)}/{len(parts)} partitions "
                   f"already in {os.path.basename(checkpoint)}", flush=True)
         ckpt_fh = open(checkpoint, "a")
@@ -682,10 +692,19 @@ def run_he4(workers=1, checkpoint=None):
     from qou_substrate.witness import WitnessBuilder as _WB
     _WB.stamp_staleness_metadata(witness, script_path=__file__, engine=None, q0_anchor=None)
     out = os.path.join(os.path.dirname(__file__), "he4-magnus-omega2-sign.witness.json")
-    with open(out, "w", encoding="utf-8") as fh:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w", encoding="utf-8") as fh:
         json.dump(witness, fh, indent=1)
         fh.write("\n")
 
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print(f"\nq0={mp.nstr(Q0,17)}  ⁴He word: {mult}  ({len(gens)} crossings, 12 strands, H₁₂)")
     print(f"P_control (ρ=I, must be 0) = {mp.nstr(P_ctrl,6)} -> vanishes: {ctrl_ok}")
     print(f"P_total(A=4) = {mp.nstr(P_total,8)}   sign = {P_sign:+d}   (per-partition {npos}+ / {nneg}-)")

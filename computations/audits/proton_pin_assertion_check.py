@@ -76,6 +76,7 @@ import sys
 import tempfile
 import time
 from pathlib import Path
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parent.parent
@@ -226,10 +227,19 @@ def _atomic_write(path: Path, data: bytes) -> None:
     """A kill during this must not strand the recovery it enables."""
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
-    with open(tmp, "wb") as fh:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = tmp
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "wb") as fh:
         fh.write(data)
         fh.flush()
         os.fsync(fh.fileno())
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     os.replace(tmp, path)
 
 

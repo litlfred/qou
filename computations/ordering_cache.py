@@ -21,6 +21,7 @@ import json
 import hashlib
 from pathlib import Path
 from typing import Optional
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 CACHE_FILE = Path(__file__).parent / "ordering-cache.json"
 
@@ -35,11 +36,20 @@ def _load_cache() -> dict:
 
 
 def _save_cache(cache: dict):
-    with open(CACHE_FILE, "w") as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = CACHE_FILE
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as f:
         json.dump(cache, f, indent=2, sort_keys=True)
         f.write("\n")
 
 
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 def _key(Z: int, N: int) -> str:
     return f"{Z},{N}"
 

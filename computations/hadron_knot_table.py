@@ -58,6 +58,7 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 # ordering. See docs/audits/2026-06-16-gram-q-approximation-audit.md.
 set_compute_dps()
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 _Q0 = mp.mpf(Q_50_DIGIT_STR)
 _QI0 = 1 / _Q0
 _HA0 = _Q0 - _QI0
@@ -353,8 +354,17 @@ def _ckpt_load():
     if not _CKPT_PATH or not _os.path.exists(_CKPT_PATH):
         return {}
     try:
-        with open(_CKPT_PATH, encoding="utf-8") as fh:
+        # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+        # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+        # dump runs, so any exception in between leaves the committed witness
+        # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+        # in one `producer_importability_audit` run. `os.replace` is atomic on
+        # POSIX within a filesystem, hence a SIBLING temp file.
+        _wpath_sidu = _CKPT_PATH
+        _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+        with open(_wtmp_sidu, encoding="utf-8") as fh:
             blob = _json.load(fh)
+        _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     except (OSError, ValueError) as exc:
         print(f"  [checkpoint] unreadable ({exc}); starting fresh", flush=True)
         return {}
@@ -372,9 +382,18 @@ def _ckpt_save(cache):
         return
     tmp = _CKPT_PATH + ".tmp"
     _os.makedirs(_os.path.dirname(_os.path.abspath(_CKPT_PATH)), exist_ok=True)
-    with open(tmp, "w", encoding="utf-8") as fh:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = tmp
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w", encoding="utf-8") as fh:
         _json.dump({"key": _ckpt_key(),
                     "atoms": {k: _ckpt_enc(v) for k, v in cache.items()}}, fh)
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     _os.replace(tmp, _CKPT_PATH)
 
 

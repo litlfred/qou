@@ -355,14 +355,23 @@ witness = {
 }
 
 from witness_base import WitnessBuilder  # noqa: E402 — P30 staleness triple
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__)  # scriptHash/scriptCommitSha
 witness["scriptFile"] = Path(__file__).name
 out_path = Path(__file__).resolve().parent / "nf-qvalues.witness.json"
-with open(out_path, "w") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial. `os.replace` is atomic on POSIX within a
+# filesystem, hence a SIBLING temp file.
+_wpath_sidu = out_path
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as f:
     # `default=str` renders an mpf at full precision. Without it this
     # hand-rolled dump raises "Object of type mpf is not JSON
     # serializable" now that the CODATA constants are mpf; it is the
     # same serialization the canonical WitnessBuilder path uses
     # (qou_substrate/witness.py).
     json.dump(witness, f, indent=2, default=str)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"\nWitness → {out_path.name}")

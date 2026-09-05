@@ -45,6 +45,7 @@ import sympy as sp
 import kazhdan_lusztig as KL
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
@@ -221,8 +222,17 @@ def main():
     from witness_base import WitnessBuilder  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
     witness["scriptFile"] = _os.path.basename(__file__)
-    with open(out, "w", encoding="utf-8") as fh:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w", encoding="utf-8") as fh:
         json.dump(witness, fh, indent=2, default=str)
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print(f"\nWitness: {out.name}  allPassed={witness['allPassed']}  ({time.time()-t0:.0f}s)")
 
 if __name__ == '__main__':

@@ -50,6 +50,7 @@ observable_real_part_zero = bool(sp.simplify(re_part_real_eta) == 0)
 
 # numeric: the two real observables are NOT ζ₄-related (rotate gives 0 real part)
 from _precision import set_compute_dps  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 set_compute_dps()
 q0 = mp.mpf(C.Q) if hasattr(C, "Q") else mp.mpf("1.10998")
 eta0 = mp.log(q0)
@@ -114,10 +115,19 @@ from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
 witness["scriptFile"] = os.path.basename(__file__)
 out = os.path.join(os.path.dirname(__file__), "frakV-zeta4-fibre-vs-observable-probe.witness.json")
-with open(out, "w", encoding="utf-8") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = out
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2)
     f.write("\n")
 
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"(1) observable-level Re(ζ₄-rotate) = {re_part_real_eta}  (degenerate: {observable_real_part_zero})")
 print(f"    numeric Re at q₀ = {results['observable_level']['Re(zeta4_rotate)_numeric_at_q0']}")
 print(f"(2) fibre ζ₄ moderator exact: {mod_ok};  Φ₄(ζ₄)=0: {phi4_zeta4}")

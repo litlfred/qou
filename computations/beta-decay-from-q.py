@@ -43,6 +43,7 @@ from q_parameter import (Q as q, Q_INV as qi, HBAR_Q as hbar_q,
                          HBAR_Q_SQ as hbar_q_sq)
 # CODATA-2022 electron mass — centralised registry (bean 46ke)
 from codata_constants import M_E_MEV, M_E_MEV_ERR  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 # ── Electron mass from crossing energy ───────────────────────────
 # The electron is trefoil T_{2,3} with 3 crossings.
@@ -165,7 +166,15 @@ out_path = Path(__file__).parent / "beta-decay-from-q.witness.json"
 # emptied by a single `producer_importability_audit` run.
 from qou_substrate.witness import WitnessBuilder as _WB
 import os as _os  # noqa: E402 -- provenance stamp
-with open(out_path, "w") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = out_path
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as f:
     # Provenance stamp (bean qou-4un2): this producer writes its
     # witness directly, so nothing else records which script made
     # it -- and a re-run of an unstamped producer DELETES the
@@ -175,6 +184,7 @@ with open(out_path, "w") as f:
         witness, script_path=__file__, engine=None, q0_anchor=None)
     json.dump(witness, f, indent=2)
 
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"Witness written to {out_path}")
 print(f"\nKey results:")
 print(f"  q = {q}")

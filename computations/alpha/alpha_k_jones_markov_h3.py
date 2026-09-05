@@ -49,6 +49,7 @@ from hecke_characters import build_seminormal_matrices, dim_q, qfac, q_int
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 # CAL-1: m_e from codata_constants registry (P31-triage Phase A).
 from codata_constants import M_E_MEV as m_e
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip
 h_amp = Q0 - QI
@@ -219,6 +220,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 WitnessBuilder.stamp_staleness_metadata(out, script_path=__file__, engine="mpmath")
 out["scriptFile"] = Path(__file__).name
 out_path = Path(__file__).parent / "alpha-k-jones-markov-h3.witness.json"
-with open(out_path, "w") as fp:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = out_path
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as fp:
     json.dump(out, fp, indent=2)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"\nWitness: {out_path}")

@@ -8,6 +8,7 @@ WHY THIS EXISTS
 `9d52483f5`, so every builder-based producer stamps itself on its next run. The
 ~1100 stamped witnesses in the corpus got there that way, and an unstamped one
 from a builder producer is merely stale — regeneration fixes it.
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 **A producer that hand-rolls `json.dump` never reaches `build()`, so it never
 stamps, and re-running it never will.** That is the one unstamped class
@@ -72,8 +73,17 @@ USAGE
     from _witness_q0_stamp import stamp_q0
     ...
     stamp_q0(witness, __file__)          # mutates in place, before json.dump
-    with open(out, "w") as fh:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as fh:
         json.dump(witness, fh, indent=1)
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 """
 
 from __future__ import annotations

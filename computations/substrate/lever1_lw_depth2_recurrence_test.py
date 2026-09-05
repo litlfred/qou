@@ -33,6 +33,7 @@ tau_seed = sp.cancel((LW[1] + LW[3]) / LW[2])        # solved from n=2,3,4
 tau_cf = sp.cancel(3*(3*q**4 + 8*q**2 + 3) / (4*q*(q+1)**2))
 
 from _precision import set_compute_dps  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 set_compute_dps()
 q0 = mp.mpf(C.Q_MP) if hasattr(C, "Q_MP") else mp.mpf(str(C.Q))
 def ev(e): return mp.mpf(str(sp.N(e.subs(q, q0), 40)))
@@ -105,10 +106,19 @@ from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
 witness["scriptFile"] = os.path.basename(__file__)
 out = os.path.join(os.path.dirname(__file__), "lever1-lw-depth2-recurrence-test.witness.json")
-with open(out, "w", encoding="utf-8") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = out
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2)
     f.write("\n")
 
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 for c in range(1, 7): print(f"  lw({c}) = {results['lw'][c]}")
 print(f"\n  tau_seed = {results['tau_seed_n234']}  (closed form {results['tau_closed_form']})")
 print(f"  tau windows: {results['tau_windows']}")

@@ -27,6 +27,7 @@ NO float64 anywhere: mpmath at 50 dps, integers where exact.
 """
 import json, os, sys, time
 from mpmath import mp, mpf, log, power, nstr
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 mp.dps = 50
 KAPPA = mpf(128) / (225 * mp.pi ** 2)
@@ -220,11 +221,20 @@ def main():
     }
     wit = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                        "m1-kappa-correction-exponent.witness.json")
-    with open(wit, "w") as fh:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = wit
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as fh:
         out["q0Anchor"] = "independent"
         out["q0AnchorReason"] = "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: M_1 correction exponent: what order must the effective bound actually prove?."
         json.dump(out, fh, indent=1)
         fh.write("\n")
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print(json.dumps(out, indent=1))
     for c in checks:
         print(("  PASS  " if c["pass"] else "  FAIL  ") + c["name"] + " -- " + c["detail"])

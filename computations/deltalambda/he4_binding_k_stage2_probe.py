@@ -73,6 +73,7 @@ import os
 import sys
 import time
 from pathlib import Path
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 # The self-imposed `os.environ.setdefault("QOU_Q0_ANCHOR", "ideal")`
 # that stood here was REMOVED 2026-08-30 (bean `qou-aj91`). It forced
@@ -296,12 +297,21 @@ def main() -> int:
         for i in range(0, len(todo), LEGA_CHUNK):
             grp = todo[i:i + LEGA_CHUNK]
             res = pn.chi_lambdas_braid_mpfr([list(l) for l in grp], w, q_str, 50)
-            with open(legA_prog, "a") as _pf:
+            # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+            # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+            # dump runs, so any exception in between leaves the committed witness
+            # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+            # in one `producer_importability_audit` run. `os.replace` is atomic on
+            # POSIX within a filesystem, hence a SIBLING temp file.
+            _wpath_sidu = legA_prog
+            _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+            with open(_wtmp_sidu, "a") as _pf:
                 for lam, chi in zip(grp, res):
                     branch_chi[br][lam] = mp.mpf(chi)
                     _pf.write(json.dumps({"nf": len(K_kinds), "st": _stamp,
                                           "br": br, "lam": list(lam),
                                           "chi": chi}) + "\n")
+            _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
             print(f"  branch {br:+d}: {len(branch_chi[br])}/{len(shapes_t)} "
                   f"chars at {time.time()-t0:.0f}s", flush=True)
     for lam in shapes_t:
@@ -484,8 +494,17 @@ def main() -> int:
             "psd_within_tol": bool(mn >= -1e-9),
             "near_zero_flagged": bool(abs(mn) < NEAR_ZERO_FLAG),
         })
-        with open(legB_prog, "a") as _pf:  # resume checkpoint
+        # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+        # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+        # dump runs, so any exception in between leaves the committed witness
+        # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+        # in one `producer_importability_audit` run. `os.replace` is atomic on
+        # POSIX within a filesystem, hence a SIBLING temp file.
+        _wpath_sidu = legB_prog
+        _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+        with open(_wtmp_sidu, "a") as _pf:  # resume checkpoint
             _pf.write(json.dumps({**per_block[-1], "st": _stamp}) + "\n")
+        _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
         done_d2 += dim * dim
         el = time.time() - t0
         print(f"  λ={str(lam):26s} d={dim:5d}  min_eig={mn:+.3e}  "

@@ -20,6 +20,7 @@ Verified: Burnside identity Σ (f^λ)² = n! for S_2 through S_20.
 
 import json, time, math
 from pathlib import Path
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 HERE = Path(__file__).resolve().parent
 
@@ -94,6 +95,15 @@ from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
 # Payload carries a top-level `assertions` mapping → stamp (not wrap_legacy) preserves it.
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
 witness["scriptFile"] = _os.path.basename(__file__)
-with open(HERE / "delta-lambda-dim-weight-proof.witness.json", "w", encoding="utf-8") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = HERE / "delta-lambda-dim-weight-proof.witness.json"
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2, default=str)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"\nWitness: delta-lambda-dim-weight-proof.witness.json")

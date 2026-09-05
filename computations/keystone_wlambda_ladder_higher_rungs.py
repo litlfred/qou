@@ -35,6 +35,7 @@ from fractions import Fraction
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from keystone_wlambda_defect_coeff_ladder import exact_ladder  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 
 def poly_degree(values):
@@ -168,9 +169,18 @@ def main():
     witness["scriptFile"] = os.path.basename(__file__)
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                        "wlambda-ladder-higher-rungs.witness.json")
-    with open(out, "w", encoding="utf-8") as fh:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w", encoding="utf-8") as fh:
         json.dump(witness, fh, indent=2)
         fh.write("\n")
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print(f"\nwrote {out}")
 
 

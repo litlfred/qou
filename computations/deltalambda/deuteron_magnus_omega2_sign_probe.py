@@ -74,6 +74,7 @@ mp.mp.dps = 140
 
 from hecke_characters import build_seminormal_matrices_mp  # noqa: E402
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 Q0 = mp.mpf(_Q0_RESOLVED)
 H = Q0 - 1 / Q0
@@ -300,10 +301,19 @@ def main() -> None:
     _WB.stamp_staleness_metadata(witness, script_path=__file__, engine=None, q0_anchor=None)
 
     out = os.path.join(os.path.dirname(__file__), "deuteron-magnus-omega2-sign.witness.json")
-    with open(out, "w", encoding="utf-8") as fh:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w", encoding="utf-8") as fh:
         json.dump(witness, fh, indent=1)
         fh.write("\n")
 
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print(f"q0={mp.nstr(Q0,17)}  h={mp.nstr(H,6)}  word: {mult}  ({len(gens)} crossings)")
     print(f"{'λ':>16} {'dim':>4} {'y_λ':>12} {'tr(ρΩ₂)':>16} {'tr(Ω₂) ctrl':>14}")
     for r in rows:

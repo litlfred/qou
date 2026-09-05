@@ -37,6 +37,7 @@ import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_polynomial import expose_polynomial  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 
 # Symbolic q
@@ -236,8 +237,17 @@ def main():
         "precision": "symbolic_q",
         "truncation_eps": 0.0,
     }
-    with open(out_path, "w") as fp:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out_path
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as fp:
         json.dump(full, fp, indent=2, default=str)
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print(f"\nWitness: {out_path}")
 
 

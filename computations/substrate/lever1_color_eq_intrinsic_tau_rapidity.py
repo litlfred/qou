@@ -31,6 +31,7 @@ set_compute_dps()  # q₀ is READ from the canonical source, never typed here. I
 # quantity", and the 2026-08-07 owner directive that all production code
 # defaults to the experimental/proton anchor). Bean qou-bdkx.
 from q_parameter import Q_MP as Q0  # noqa: E402 — canonical proton-pinned q₀
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 def pr(q):
     s = mp.sqrt(q)
@@ -156,9 +157,18 @@ from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
 witness["scriptFile"] = os.path.basename(__file__)
 out = os.path.join(os.path.dirname(__file__), "lever1-color-eq-intrinsic-tau-rapidity.witness.json")
-with open(out, "w", encoding="utf-8") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = out
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2, default=str)
 
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 for r in (r1, r0):
     print(f"[{r['label']}] j={r['j_curve']} (kleinj {r['j_from_tau_kleinj']}, ok={r['j_validates']})")
     print(f"    tau_E={r['tau_E']}  Im={r['Im_tau_E']}")

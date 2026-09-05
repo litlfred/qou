@@ -57,6 +57,7 @@ from qbeta_h4_route_a_gate_probe import (  # noqa: E402
 from qbeta_h4_midword_criterion_screen import (  # noqa: E402
     build_candidates, inv,
 )
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 NS = 8  # series order for the calibration algebra
 
@@ -259,9 +260,17 @@ def main() -> int:
     witness["scriptFile"] = os.path.basename(__file__)
     witness["durationMs"] = int((time.monotonic() - t0) * 1000)
     out = HERE / "qbeta-h4-screen-calibration-verify.witness.json"
-    with open(out, "w", encoding="utf-8") as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial. `os.replace` is atomic on POSIX within a
+    # filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w", encoding="utf-8") as f:
         json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
         f.write("\n")
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print(f"\n  allPassed: {witness['allPassed']}")
     print(f"  Witness: {out.name}   ({time.monotonic() - t0:.1f}s wall)")
     return 0

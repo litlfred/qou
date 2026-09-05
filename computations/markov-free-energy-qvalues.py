@@ -43,6 +43,7 @@ from mpmath import mp
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q, Q_INV as qi, HA as h, LN_Q
 from experimental_constants import M_E_MEV, Q_TRITIUM_MEV, Q_NEUTRON_MEV
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 z = q**3 / (q**2 + 1)
 ln_q = LN_Q  # ln(q₀) ≈ 0.1044
@@ -470,6 +471,15 @@ from witness_base import WitnessBuilder  # noqa: E402 — P30 staleness triple
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__)  # scriptHash/scriptCommitSha
 witness["scriptFile"] = Path(__file__).name
 witness_path = Path(__file__).parent / 'markov-free-energy-qvalues.witness.json'
-with open(witness_path, 'w') as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = witness_path
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, 'w') as f:
     json.dump(witness, f, indent=2, default=str)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"\nWitness: {witness_path.name}")

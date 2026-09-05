@@ -39,6 +39,7 @@ from q_parameter import q_at
 # Centralized PDG inputs (Gemini review on PR #515): pull g_A + uncertainty
 # from experimental_constants rather than hardcoding here.
 from experimental_constants import G_A_PDG, G_A_PDG_ERR
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 DPS = 1000
 # Format with up to 5 decimal places to match the original 5-figure literal,
@@ -226,7 +227,15 @@ def main() -> None:
             "falsifiable prediction for g_A's next decimal.")}
 
     out_path = Path(__file__).parent / "gt-matrix-pslq-probe.witness.json"
-    with open(out_path, "w", encoding="utf-8") as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out_path
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w", encoding="utf-8") as f:
         # Provenance stamp (bean qou-4un2): this producer writes its
         # witness directly, so nothing else records which script made
         # it -- and a re-run of an unstamped producer DELETES the
@@ -237,6 +246,7 @@ def main() -> None:
         _WB.stamp_staleness_metadata(
             out, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(out, f, indent=2)
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print(f"\nWitness: {out_path}\nCandidate clean closures: {len(candidates)}")
     for c in candidates:
         nr = c["nearest_rational"]

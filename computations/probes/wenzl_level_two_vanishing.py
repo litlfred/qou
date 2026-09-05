@@ -28,6 +28,7 @@ import math
 from itertools import count
 
 import sympy as sp
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 q = sp.symbols("q", positive=True)
 Q = q**2
@@ -195,6 +196,15 @@ print("3. corank = n! - Catalan(n) from the >= 3-row blocks, n=3..8 OK")
 print("   ", [c["sum_dim_sq_ge3rows"] for c in cor])
 
 out = "computations/probes/wenzl-level-two-vanishing.json"
-with open(out, "w") as fh:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = out
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as fh:
     json.dump(report, fh, indent=2, sort_keys=True)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"\nwrote {out}")

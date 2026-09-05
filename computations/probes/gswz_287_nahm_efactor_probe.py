@@ -67,6 +67,7 @@ import sys
 import tempfile
 
 import itertools
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -276,9 +277,15 @@ witness = {
         "(GZ (8.7) c > 1) needing unprinted data"
     ),
 }
-with open(
-    os.path.join(HERE, "gswz_287_nahm_efactor.witness.json"), "w"
-) as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = os.path.join(HERE, "gswz_287_nahm_efactor.witness.json")
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as f:
     # Provenance stamp (bean qou-4un2): this producer writes its
     # witness directly, so nothing else records which script made
     # it -- and a re-run of an unstamped producer DELETES the
@@ -290,4 +297,5 @@ with open(
         witness, script_path=__file__, engine=None, q0_anchor=False)
     json.dump(witness, f, indent=1)
 
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 sys.exit(0 if npass == len(checks) else 1)

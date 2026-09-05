@@ -60,6 +60,7 @@ from fractions import Fraction
 from functools import lru_cache  # memoises _f_skew (bean qou-9ay6)
 import numpy as np
 import mpmath as _mp  # mpf-safe sqrt/exp (bean qou-9ay6, NO-FLOAT64)
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 # NO FLOAT64 — owner directive, excised 2026-08-31 (bean `qou-9ay6`).
 #
@@ -2524,7 +2525,15 @@ def unified_iterative_correction_jet(Z, N, jet_max,
         total += total_at_j
 
         if wpath is not None:
-            with open(wpath, 'w') as f:
+            # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+            # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+            # dump runs, so any exception in between leaves the committed witness
+            # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+            # in one `producer_importability_audit` run. `os.replace` is atomic on
+            # POSIX within a filesystem, hence a SIBLING temp file.
+            _wpath_sidu = wpath
+            _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+            with open(_wtmp_sidu, 'w') as f:
                 _json.dump({
                     'Z': Z, 'N': N, 'jet': j,
                     'k_cap': k_cap,
@@ -2536,6 +2545,7 @@ def unified_iterative_correction_jet(Z, N, jet_max,
                     'total_MeV': total_at_j,
                 }, f, indent=2, default=float)
 
+            _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     return total, per_jet
 
 

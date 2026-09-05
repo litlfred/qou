@@ -41,6 +41,7 @@ from lr_fusion_self_conj_test import (
     lr_decomposition,
     is_subdiagram,
 )
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 
 # Magic ladder + Bring shell index mapping
@@ -248,8 +249,16 @@ def main(argv: List[str]) -> int:
         print(f"Empirical speedup (Δi rule alone): {speedup:.2f}×")
 
     # Save report
-    with open("optimised_magic_verifier_report.json", "w") as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial. `os.replace` is atomic on POSIX within a
+    # filesystem, hence a SIBLING temp file.
+    _wpath_sidu = "optimised_magic_verifier_report.json"
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as f:
         json.dump(results, f, indent=2)
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print()
     print("Full report saved to optimised_magic_verifier_report.json")
 

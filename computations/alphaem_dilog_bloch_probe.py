@@ -17,6 +17,7 @@ import json
 from mpmath import mp, mpf, pi, polylog, im, arg, log, sqrt, e, mpc, expjpi, fabs
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 set_compute_dps()
 
 def D(z):
@@ -95,8 +96,17 @@ witness["scriptFile"] = _os.path.basename(__file__)
 # computations/computations/… whenever this ran from inside computations/.
 _OUT = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)),
                      "alphaem-dilog-bloch-probe.witness.json")
-with open(_OUT, "w") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = _OUT
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as f:
     json.dump(witness, f, indent=2)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print("VERDICT:", verdict)
 print("\nsingle-pi signature:", json.dumps(signature, indent=2))
 print("\nany clean rational multiple?",

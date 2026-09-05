@@ -42,6 +42,7 @@ for _p in (_C, os.path.join(_C, "hecke"), os.path.join(_C, "substrate")):
     sys.path.insert(0, _p)
 from hecke_characters import partitions_of, dim_q, qfac  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 KMAX = 10
 
@@ -197,8 +198,17 @@ def main() -> int:
     WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
     witness["scriptFile"] = os.path.basename(__file__)
     out = os.path.join(_HERE, "wlambda-wstd-growth-bound.witness.json")
-    with open(out, "w") as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as f:
         json.dump(witness, f, indent=2)
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print("witness ->", out)
     return 0 if all_ok else 1
 

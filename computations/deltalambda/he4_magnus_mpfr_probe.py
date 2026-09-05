@@ -42,6 +42,7 @@ from he4_magnus_omega2_sign_sparse_probe import (  # noqa: E402
     _dim_estimate,
     _Q0_RESOLVED,
 )
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 Q0 = mpfr(_Q0_RESOLVED)
 H = Q0 - 1 / Q0
@@ -379,8 +380,16 @@ def run_he4(workers, checkpoint):
     except Exception:
         pass
     out = os.path.join(os.path.dirname(__file__), "he4-magnus-omega2-sign.witness.json")
-    with open(out, "w") as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial. `os.replace` is atomic on POSIX within a
+    # filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as f:
         json.dump(witness, f, indent=1); f.write("\n")
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print(f"\nP(A=4) = {_fmt_decimal(P,10)}   sign={P_sign:+d}   (per-partition {npos}+/{nneg}-)")
     print(f"control (must be 0) = {_fmt_decimal(C,6)} -> {ctrl_ok}")
     print(f"sign-vs-A: A2=-1 A3=-1 A4={P_sign:+d}")

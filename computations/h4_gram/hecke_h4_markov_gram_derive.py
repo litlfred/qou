@@ -22,6 +22,7 @@ from pathlib import Path
 
 import sympy as sp
 from sympy.polys.matrices import DomainMatrix
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 T0 = time.time()
 def log(msg):
@@ -151,8 +152,17 @@ sym_bad = [(i, j) for i in range(24) for j in range(i + 1, 24)
 assert not sym_bad, f"Gram NOT symmetric at {sym_bad[:5]}"
 log("G4 is symmetric (all 276 off-diagonal pairs) — gram_symm confirmed symbolically")
 
-with open(HERE / "gram_h4_matrix.json", "w") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = HERE / "gram_h4_matrix.json"
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as f:
     json.dump([[str(G[i][j]) for j in range(24)] for i in range(24)], f, indent=1)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 log("wrote gram_h4_matrix.json")
 
 # ---------------------------------------------------------------------------
@@ -238,7 +248,15 @@ detA = sp.factor(sp.sympify(data["det_A_factored"]))
 ratio2 = sp.factor(sp.cancel(ratio / detA**2))
 log(f"  c(q) / det_A^2 = {ratio2}")
 
-with open(HERE / "gram_h4_det.json", "w") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = HERE / "gram_h4_det.json"
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as f:
     json.dump({
         "detG_zh_expanded_nterms": len(sp.Add.make_args(detG)),
         "detG_zh_factored": str(detG_f),
@@ -250,4 +268,5 @@ with open(HERE / "gram_h4_det.json", "w") as f:
         "det_A_factored_json": str(detA),
         "numeric_check": {"z": "5/2", "h": "7/3", "det": str(num1)},
     }, f, indent=1)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 log("wrote gram_h4_det.json — DONE")

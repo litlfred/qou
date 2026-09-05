@@ -44,6 +44,7 @@ from joint_tower_sdp_solver import REGISTRY as REGISTRY_PHASE_3A
 from joint_tower_sdp_solver import solve_per_atom
 from q_parameter import Q as Q_FLOAT
 from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 # Substrate parameter q_0 (canonical witnessed value, ~1.10998).
 q_0_NUMERIC = Q_FLOAT
@@ -371,8 +372,17 @@ def main():
     from witness_base import WitnessBuilder  # noqa: E402
     WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
     witness["scriptFile"] = Path(__file__).name
-    with open(out_path, "w") as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out_path
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as f:
         json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print(f"\n→ wrote {out_path}")
     print(f"  atoms: {witness['summary']['n_atoms']}, "
           f"cvxpy-checked: {witness['summary']['checked_via_cvxpy']}, "

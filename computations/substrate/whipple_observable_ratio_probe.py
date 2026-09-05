@@ -24,6 +24,7 @@ import os
 import mpmath as mp
 
 from _precision import set_compute_dps  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 set_compute_dps()
 HALF = mp.mpf(1) / 2
 
@@ -217,10 +218,19 @@ from witness_base import WitnessBuilder  # noqa: E402
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="mpmath")
 witness["scriptFile"] = os.path.basename(__file__)
 out = os.path.join(here, "whipple-observable-ratio-probe.witness.json")
-with open(out, "w", encoding="utf-8") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = out
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2, ensure_ascii=False)
     f.write("\n")
 
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print("per_d:")
 for d, r in per_d.items():
     print(f"  d={d}: {r}")

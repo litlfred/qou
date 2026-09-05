@@ -70,6 +70,7 @@ from experimental_constants import M_E_MEV, KAPPA
 # the exact sympy coefficient over Q(q) at the exact rational anchor and
 # returns an mpmath mpf.  float() remains permissible for DISPLAY only.
 import mpmath as _mp
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 _mp.mp.dps = 60          # 50-digit serialization needs headroom
 _Q_EXACT = sp.Rational(Q_50_DIGIT_STR)
 
@@ -579,7 +580,15 @@ out = Path(__file__).resolve().parent / "free-neutron-decay.witness.json"
 # emptied by a single `producer_importability_audit` run.
 import os as _os  # noqa: E402 -- provenance stamp
 from qou_substrate.witness import WitnessBuilder as _WB
-with open(out, "w") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = out
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as f:
     # Provenance stamp (bean qou-4un2): this producer writes its
     # witness directly, so nothing else records which script made
     # it -- and a re-run of an unstamped producer DELETES the
@@ -594,4 +603,5 @@ with open(out, "w") as f:
     # ensure_ascii=False: the braid relations are written with real
     # sigma/subscript glyphs and the corpus stores them readable.
     json.dump(witness, f, indent=2, default=str, ensure_ascii=False)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"\nWitness: {out} (commit: {SHA[:8]})")

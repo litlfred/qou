@@ -73,6 +73,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__))))
 from wlambda_covariance_epic_M1_A1_sigmah_in_free_cumulants import (  # noqa: E402
     partitions, transition_atoms, free_cumulants, sigma_h,
 )
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 KMAX = 8
 
@@ -219,9 +220,17 @@ def main() -> int:
     w["durationMs"] = int((time.time() - t0) * 1000)
     out = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                        "a1-sigma-h-not-polynomial.witness.json")
-    with open(out, "w") as fh:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial. `os.replace` is atomic on POSIX within a
+    # filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as fh:
         json.dump(w, fh, indent=2)
         fh.write("\n")
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     nf = sum(1 for a in A if not a["passed"])
     for a in A:
         if not a["passed"]:

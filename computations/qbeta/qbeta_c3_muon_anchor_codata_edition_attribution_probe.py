@@ -78,6 +78,7 @@ import json
 import os
 import subprocess
 import sys
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 import time
 from pathlib import Path
 
@@ -503,7 +504,15 @@ def main() -> int:
     # is not importable from a bare producer context, which is how 22 witnesses were
     # emptied by a single `producer_importability_audit` run.
     from qou_substrate.witness import WitnessBuilder as _WB
-    with open(out, "w") as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as f:
         witness.setdefault("scriptFile", os.path.basename(__file__))
         # The anchor is DECLARED, not resolved: this witness is about the
         # difference between anchors, so letting the resolver pick one would
@@ -514,6 +523,7 @@ def main() -> int:
             q0_value=mp.nstr(q_mu_22, 30))
         json.dump(witness, f, indent=2)
         f.write("\n")
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print(f"\n  witness -> {out.relative_to(ROOT)}")
     return 0 if all_passed else 1
 

@@ -73,6 +73,7 @@ def has_root_at_1(expr):
 higher_all_vanish_at_q1 = all(has_root_at_1(L[m]) for m in range(3, MMAX + 1))
 
 from _precision import set_compute_dps  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 set_compute_dps()
 q0 = mp.mpf(C.Q_MP) if hasattr(C, "Q_MP") else mp.mpf(str(C.Q))
 
@@ -140,10 +141,19 @@ from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
 witness["scriptFile"] = os.path.basename(__file__)
 out = os.path.join(os.path.dirname(__file__), "lever1-binding-habiro-qexponential.witness.json")
-with open(out, "w", encoding="utf-8") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = out
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2)
     f.write("\n")
 
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"\n  classical limit exp(x+x²/2)? {classical_ok}   log truncates at z²? {truncates_at_2}")
 print(f"  higher L_(≥3) all vanish at q=1 (carry q-1)? {higher_all_vanish_at_q1}")
 for m in range(1, MMAX + 1):

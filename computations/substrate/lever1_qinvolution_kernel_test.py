@@ -45,6 +45,7 @@ from qou_substrate import constants as C
 # Replaces the formerly inline qint_sym/qfact/partitions/hooks/dim_q/S — same symbolic results,
 # lru_cache-memoised. The probe-specific qint_asym (Gaussian convention) stays local below.
 from young_qdim import q, qint, qfact, S  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 
 def qint_asym(k):
@@ -237,10 +238,19 @@ from witness_base import WitnessBuilder  # noqa: E402 — P30 rollup (bean cmiy)
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
 witness["scriptFile"] = os.path.basename(__file__)
 out = os.path.join(os.path.dirname(__file__), "lever1-qinvolution-kernel-test.witness.json")
-with open(out, "w", encoding="utf-8") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = out
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w", encoding="utf-8") as f:
     json.dump(witness, f, indent=2)
     f.write("\n")
 
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"q=1 limit = involution numbers? {q1_ok}")
 for m in range(0, MMAX + 1):
     print(f"  S({m}) @q0 = {results['S_at_q0'][m]}")

@@ -321,7 +321,15 @@ witness_out = os.path.join(SCRIPT_DIR, "beta-decay-energy-scale.witness.json")
 # emptied by a single `producer_importability_audit` run.
 import os as _os  # noqa: E402 -- provenance stamp
 from qou_substrate.witness import WitnessBuilder as _WB
-with open(witness_out, "w") as f:
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial. `os.replace` is atomic on POSIX within a
+# filesystem, hence a SIBLING temp file.
+_wpath_sidu = witness_out
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as f:
     # Provenance stamp (bean qou-4un2): this producer writes its
     # witness directly, so nothing else records which script made
     # it -- and a re-run of an unstamped producer DELETES the
@@ -335,4 +343,5 @@ with open(witness_out, "w") as f:
     # same serialization the canonical WitnessBuilder path uses
     # (qou_substrate/witness.py).
     json.dump(output, f, indent=2, default=str)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"\n✓ Witness written to {witness_out}")

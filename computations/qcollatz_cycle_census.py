@@ -14,6 +14,7 @@ returns).  No rational functions; exact throughout.
 """
 import sys, json
 from itertools import product
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 TWO = {1: 1, 0: 1}          # q + 1
 THREE = {2: 1, 1: 1, 0: 1}  # q^2 + q + 1
@@ -214,5 +215,15 @@ if __name__ == '__main__':
     print("primitive NON-POSITIVE cycles:")
     for c in r['primitive_nonpositive_cycles']:
         print(f"  period {c['period']:>2}  word={c['word']:<20} P0 = {c['P0']}")
-    with open('qcollatz_census.json', 'w') as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = 'qcollatz_census.json'
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, 'w') as f:
         json.dump(r, f, indent=2)
+
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)

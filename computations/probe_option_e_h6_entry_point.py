@@ -61,6 +61,7 @@ import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules mo
 
 import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 set_compute_dps()
 
@@ -197,9 +198,18 @@ _sys.path.insert(0, _os.path.join(_d, "substrate"))
 from witness_base import WitnessBuilder  # noqa: E402
 WitnessBuilder.stamp_staleness_metadata(out, script_path=__file__, engine="mpmath")
 out["scriptFile"] = _os.path.basename(__file__)
-with open(out_path, "w") as fp:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = out_path
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as fp:
     json.dump(out, fp, indent=2)
 
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print("Phase 2 H_6 entry-point probe complete")
 print("=" * 60)
 print(f"  Inputs: option-e-phase1-gram-h6.witness.json")

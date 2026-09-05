@@ -44,6 +44,7 @@ from pathlib import Path
 from mpmath import mp, mpf, fabs, catalan
 
 from _precision import set_compute_dps  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
@@ -150,6 +151,15 @@ _sys.path.insert(0, str(HERE.parent / "substrate"))
 from witness_base import WitnessBuilder  # noqa: E402
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
 witness["scriptFile"] = Path(__file__).name
-with open(HERE / "kaon-pion-ratio-7-8.witness.json", "w") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = HERE / "kaon-pion-ratio-7-8.witness.json"
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as f:
     json.dump(witness, f, indent=2, default=str)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"\nWitness: kaon-pion-ratio-7-8.witness.json")

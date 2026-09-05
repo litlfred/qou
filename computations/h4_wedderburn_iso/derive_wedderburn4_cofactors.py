@@ -58,6 +58,7 @@ def log(msg):
 # clone not at that exact path. A sys.path insert of a missing directory raises
 # NOTHING, so the failure was silent until an unrelated-looking import died.
 from pathlib import Path as _Path
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 _QOU_ROOT = _Path(__file__).resolve().parents[2]
 DATA = str(_QOU_ROOT / "computations" / "h4_wedderburn"
            / "hecke-h4-wedderburn-seminormal.data.json")
@@ -516,8 +517,17 @@ out['goals'] = goals
 out['matinv_left_entry_cofactors'] = matinv_left
 out['matinv_right_entry_cofactors'] = matinv_right
 out['lean_formulas'] = lean_formulas
-with open(OUT, 'w') as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = OUT
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, 'w') as f:
     json.dump(out, f, indent=1)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 log(f"wrote {OUT}")
 log(f"TOTAL: {len(goals)} goals, all residuals exactly zero; "
     f"{out['counts']['with_cofactors']} need cofactors, "

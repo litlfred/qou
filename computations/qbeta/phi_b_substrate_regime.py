@@ -76,6 +76,7 @@ for _p in (os.path.join(_ROOT, "computations"),
         sys.path.insert(0, _p)
 
 from phi_b_evaluator import log_phi_b, phi_b, phi_b_double_product  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 
 def _repo_head_sha():
@@ -281,7 +282,15 @@ def main() -> int:
     # emptied by a single `producer_importability_audit` run.
     from qou_substrate.witness import WitnessBuilder as _WB
     import os as _os  # noqa: E402 -- provenance stamp
-    with open(out, "w") as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as f:
         # Provenance stamp (bean qou-4un2): this producer writes its
         # witness directly, so nothing else records which script made
         # it -- and a re-run of an unstamped producer DELETES the
@@ -291,6 +300,7 @@ def main() -> int:
             witness, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(witness, f, indent=2)
 
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print("\nVERDICT:", verdict)
     print("witness ->", out)
     return 0 if all_passed else 1

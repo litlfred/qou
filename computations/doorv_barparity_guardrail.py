@@ -68,6 +68,7 @@ from typing import Sequence
 from mpmath import mp, mpf
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 try:  # P30 provenance stamp; optional so a bare container still runs
     from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
@@ -332,10 +333,19 @@ def main() -> None:
             "the producer performs no q0-dependent computation "
             "(zero q_parameter / q_at / Q_50_DIGIT references)"),
     )
-    with open(out, "w") as fh:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = out
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, "w") as fh:
         json.dump(witness, fh, indent=2)
         fh.write("\n")
 
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     ok = result["structural_confirmation"]
     print(f"[doorv-barparity-guardrail] structural_confirmation = {ok}")
     for row in result["per_q"]:

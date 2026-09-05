@@ -1,3 +1,4 @@
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """
 Witness staleness — the THIRD direction: imported-module drift.
@@ -413,7 +414,15 @@ def main() -> int:
     # not be acted on.
     if "--json" in sys.argv:
         _out = sys.argv[sys.argv.index("--json") + 1]
-        with open(_out, "w", encoding="utf-8") as _f:
+        # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+        # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+        # dump runs, so any exception in between leaves the committed witness
+        # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+        # in one `producer_importability_audit` run. `os.replace` is atomic on
+        # POSIX within a filesystem, hence a SIBLING temp file.
+        _wpath_sidu = _out
+        _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+        with open(_wtmp_sidu, "w", encoding="utf-8") as _f:
             json.dump([{"witness": r["witness"],
                         "producer": r["producer"],
                         "newest_dep": r["newest_dep"],
@@ -422,6 +431,7 @@ def main() -> int:
                         "n_substantive_movers": r.get("n_substantive_movers"),
                         "provenance_only": r.get("provenance_only")}
                        for r in stale], _f, indent=2)
+        _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
         print(f"\n  full population written to {_out} ({len(stale):,} rows)")
 
     return 0

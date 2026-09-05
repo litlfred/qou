@@ -39,6 +39,7 @@ Exploratory research probe (NOT canonical production).
 """
 import sys, json, importlib.util
 from pathlib import Path  # witness path must be FILE-relative, not cwd-relative
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 try:  # P30 provenance stamp; optional so a bare container still runs
     from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
@@ -162,7 +163,15 @@ if __name__ == '__main__':
                         'Exploratory research probe (NOT canonical production).'),
         'result': r,
     }
-    with open(Path(__file__).with_name('qcollatz_backward_tree_structure_probe.witness.json'), 'w') as f:
+    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+    # dump runs, so any exception in between leaves the committed witness
+    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+    # in one `producer_importability_audit` run. `os.replace` is atomic on
+    # POSIX within a filesystem, hence a SIBLING temp file.
+    _wpath_sidu = Path(__file__).with_name('qcollatz_backward_tree_structure_probe.witness.json')
+    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, 'w') as f:
         w["q0Anchor"] = "independent"
         # P30: add the staleness provenance (scriptHash / commitSha /
         # engine) that a hand-rolled dump cannot get from build().
@@ -172,4 +181,5 @@ if __name__ == '__main__':
             w, script_path=__file__, engine="python")
         w["q0AnchorReason"] = "No substrate pin enters this computation: neither the producer nor its transitive import cone inside computations/ references q_at, q_muon_at, Q_50_DIGIT_STR, q_parameter or resolve_q0_anchor outside comments (AST import-cone walk, 2026-09-03). The probe computes: Structure of the q-Collatz backward tree at a primitive cube root of unity."
         json.dump(w, f, indent=2)
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     print("wrote qcollatz_backward_tree_structure_probe.witness.json")

@@ -1,3 +1,4 @@
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 #!/usr/bin/env python3
 """qou-buxs: is the Delta_lambda sign an isospin grading? YES on the physical
 stratum, NO in the SU(4) frame -- and the frame is the whole question.
@@ -418,8 +419,17 @@ def main():
     except Exception as exc:                       # pragma: no cover
         import json
         out = os.path.join(COMP, "probes", "delta-lambda-sign-vs-su4-isospin.witness.json")
-        with open(out, "w") as fh:
+        # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+        # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+        # dump runs, so any exception in between leaves the committed witness
+        # empty or partial -- the shape that emptied 22 witnesses to zero bytes
+        # in one `producer_importability_audit` run. `os.replace` is atomic on
+        # POSIX within a filesystem, hence a SIBLING temp file.
+        _wpath_sidu = out
+        _wtmp_sidu = str(_wpath_sidu) + ".tmp"
+        with open(_wtmp_sidu, "w") as fh:
             json.dump(payload, fh, indent=2)
+        _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
         print(f"witness (bare, WitnessBuilder unavailable: {exc}) ->", out)
 
     print("\n  VERDICT: " + payload["result"]["verdict"].split(" IN THE SU(4) FRAME")[0])

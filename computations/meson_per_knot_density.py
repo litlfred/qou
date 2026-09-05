@@ -67,6 +67,7 @@ M_N  = M_N_MEV_VALIDATION
 # muon-anchored Hecke energy m_p = 2·(m_μ·F_Bor − 6·m_e), routed
 # through the canonical_mass facade.
 from canonical_mass import proton_mass_mev  # noqa: E402
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 m_p_pred = mpf(str(proton_mass_mev()))
 geom_baryon = m_p_pred / m_e  # dimensionless factor m_p/m_e (was Vol/ℏ_q²·λ_A)
@@ -214,6 +215,15 @@ _sys.path.insert(0, str(HERE / "substrate"))
 from witness_base import WitnessBuilder  # noqa: E402
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
 witness["scriptFile"] = Path(__file__).name
-with open(HERE / "meson-per-knot-density.witness.json", "w") as f:
+# Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
+# `os.replace` it into position. `open(..., "w")` TRUNCATES before the
+# dump runs, so any exception in between leaves the committed witness
+# empty or partial -- the shape that emptied 22 witnesses to zero bytes
+# in one `producer_importability_audit` run. `os.replace` is atomic on
+# POSIX within a filesystem, hence a SIBLING temp file.
+_wpath_sidu = HERE / "meson-per-knot-density.witness.json"
+_wtmp_sidu = str(_wpath_sidu) + ".tmp"
+with open(_wtmp_sidu, "w") as f:
     json.dump(witness, f, indent=2, default=str)
+_os_sidu.replace(_wtmp_sidu, _wpath_sidu)
 print(f"Witness: meson-per-knot-density.witness.json")
