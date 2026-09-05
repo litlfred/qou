@@ -400,7 +400,7 @@ E_0_CONVENTIONS: dict[str, dict] = {
         "hecke_level": "H_{3A} (atom-level: H_6 D, H_9 T/³He, H_12 ⁴He)",
         "strand_count": "3·A (whole atom braid)",
         "derivation": (
-            "Calibration to CAL-3 𝔇_π(n) directly. Sets the operator "
+            "Calibration to CAL-3 P_avg^π(n) directly. Sets the operator "
             "Δ_NF ≡ 1 in cat-units; canonical for "
             "`hecke_core._canon` style chains where the operator "
             "difference |tr_M(W_free)| - |tr_M(W_atom)| is "

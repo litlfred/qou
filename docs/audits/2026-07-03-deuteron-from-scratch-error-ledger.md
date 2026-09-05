@@ -1,5 +1,11 @@
 # 2026-07-03 — Deuteron (D) canonical mass + binding from scratch: per-stage error ledger
 
+> **Notation note.** This document predates the 2026-09-05 calibration rename and uses
+> the superseded symbols `𝔇_β` (CAL-2) and/or `𝔇_π` (CAL-3). Those are now
+> `P_skew^β` (the bar-skew β-channel) and `P_avg^π` (the bar-even π-channel); the
+> `𝔇` family is reserved for genuine decay rates (`𝔇_n`, `𝔇_μ`, `𝔇_K` = ℏ/τ).
+> The analysis below is left as the record of what was analysed at the time.
+
 **Date:** 2026-07-03 · **Branch:** `claude/d-mass-binding-canonical-aj98ux` · **PR:** [#3266](https://github.com/litlfred/qou/pull/3266) · **Bean:** `cexx` (session milestone)
 
 ## Goal (owner request, 2026-07-03)

@@ -50,7 +50,7 @@ input) via the symbolic single-wrap closed form:
                                                   ≈ 0.7836 MeV
                                               (vs CODATA 0.7823; 0.168% err)
 
-(uses CAL-1 m_e and CAL-2 q_0 only; CAL-3 𝔇_π is the OUTPUT)
+(uses CAL-1 m_e and CAL-2 q_0 only; CAL-3 P_avg^π is the OUTPUT)
 
 The +1.31 keV residual is the brane-tower truncation residual at
 N=0; exact tower-summed E_0 closes it (Workplan 2 Phase 2).

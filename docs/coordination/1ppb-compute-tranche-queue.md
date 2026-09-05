@@ -44,7 +44,7 @@
 ## Anti-patterns (do NOT do)
 
 1. Do not introduce a 7th-ansatz fit for `λ_scale` against m_p — that's the CAL-4 violation we're trying to close, not perpetuate (per `lambda-scale-qdilog-tower-direct.md` brief §Anti-patterns).
-2. Do not introduce any new calibration constants. CAL-1 (m_e), CAL-2 (q_0 via m_μ/m_e), CAL-3 (𝔇_π) are the only allowed inputs.
+2. Do not introduce any new calibration constants. CAL-1 (m_e), CAL-2 (q_0 via m_μ/m_e), CAL-3 (P_avg^π) are the only allowed inputs.
 3. Do not use float64 in production paths — MPFR ≥ 50 dps per AGENTS.md `compute-author`.
 4. Do not silently squash on merge — `merge_method: "merge"` (merge-commit) is the standing default per #881.
 5. Do not duplicate work that sibling PRs are doing. Coordinate first.

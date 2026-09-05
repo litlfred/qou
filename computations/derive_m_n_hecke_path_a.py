@@ -191,7 +191,7 @@ def main() -> int:
             "of the six-term unified mass formula. NO FITTING per "
             "owner directive 2026-05-10. Neutron-side counterpart of "
             "derive_m_p_hecke_path_a.py.  Honors the three-calibration "
-            "discipline (CAL-1 m_e, CAL-2 q_0, CAL-3 𝔇_π) — no "
+            "discipline (CAL-1 m_e, CAL-2 q_0, CAL-3 P_avg^π) — no "
             "CODATA m_n consumed.  The derived value will not match "
             "CODATA m_n (~939.6 MeV) until the T2/T3/T5/T6 R&D closes."
         ),

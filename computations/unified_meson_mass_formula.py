@@ -46,7 +46,7 @@ def main():
     h = q - 1/q
 
     from codata_constants import M_PI_PM_MEV_VALIDATION, M_K_PM_MEV_VALIDATION  # noqa: E402
-    m_pi = M_PI_PM_MEV_VALIDATION  # CAL-3: 𝔇_π → m_π
+    m_pi = M_PI_PM_MEV_VALIDATION  # CAL-3: P_avg^π → m_π
 
     print("=" * 70)
     print("  Unified meson mass formula")

@@ -1,5 +1,11 @@
 # CAL-3 anchoring of c_3 — provable structure + (null) impact on the mass/binding tables
 
+> **Notation note.** This document predates the 2026-09-05 calibration rename and uses
+> the superseded symbols `𝔇_β` (CAL-2) and/or `𝔇_π` (CAL-3). Those are now
+> `P_skew^β` (the bar-skew β-channel) and `P_avg^π` (the bar-even π-channel); the
+> `𝔇` family is reserved for genuine decay rates (`𝔇_n`, `𝔇_μ`, `𝔇_K` = ℏ/τ).
+> The analysis below is left as the record of what was analysed at the time.
+
 **Date:** 2026-07-07 · **Axis:** Q_β c_3 / z→c_k f-map keystone · **Tier:** proved-lean + audit
 · **Discipline:** no fit, no c_k value, nothing wired, no tier change. "Sorry-free ≠ derived" (registry §1) applies throughout.
 

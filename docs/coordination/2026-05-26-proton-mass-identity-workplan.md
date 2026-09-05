@@ -44,7 +44,7 @@ These can NOT be closed in-PR; flagged for follow-ups:
 
 - CAL-1 (m_e): unchanged
 - CAL-2 (m_μ/m_e or equivalently q_0): unchanged
-- CAL-3 (𝔇_π): unchanged (already derived to 6 ppb via N=3 ladder; my session does NOT improve this)
+- CAL-3 (P_avg^π): unchanged (already derived to 6 ppb via N=3 ladder; my session does NOT improve this)
 
 Session's contribution: m_p direct from CAL-1 + CAL-2 + q_0 at 0.24 ppm, with the structural integers 2 and 12 partially identified (2 = dim V_(2,1); 12 = empirical near-integer pending categorical origin).
 
