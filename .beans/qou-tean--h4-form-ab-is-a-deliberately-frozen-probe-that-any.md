@@ -1,11 +1,11 @@
 ---
 # qou-tean
 title: h4-form-AB is a deliberately frozen probe that any run silently overwrites
-status: todo
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-23T23:11:17Z
-updated_at: 2026-08-24T12:45:00Z
+updated_at: 2026-09-05T09:20:59Z
 ---
 
 ## The question this started as, and why it dissolved
@@ -115,3 +115,31 @@ producer unaffected (exit 0); witness diff is exactly ONE line.
 **Left unfixed deliberately:** the header inversion (attributes the frozen MUON
 literal to `q_at()`). Offered as a fourth item, not selected — recorded in the
 audit doc rather than silently changed.
+
+
+---
+
+## CLOSED 2026-09-05 — all three mechanisms verified live on `main` `262ee53eeea`
+
+The body already recorded "RESOLVED (PR #5638)"; this is the independent
+re-verification, and the status was still `todo`.
+
+1. **`preserved` enforced in `WitnessBuilder.save()`** —
+   `tools/qou-substrate/python/qou_substrate/witness.py:2179-2205`. The comment
+   names this bean and the docstring sentence it replaces; a run against an
+   existing witness carrying `"preserved": true` **raises**, and an overwrite
+   must re-declare the freeze (`witness.setdefault("preserved", True)`). It sits
+   at `save()`, the single point every producer's output passes through, so it
+   protects any witness that opts in — not just this one.
+2. **Audit doc** `docs/audits/2026-08-24-h4-form-ab-frozen-record.md` present
+   (3763 B) — the numbers in prose, in a directory no harness writes to.
+3. **`--force` on the producer** —
+   `computations/h4_form_AB_cross_anchor_stability.py:97-109`, documented as
+   "the LOCAL half of the freeze (bean qou-tean)".
+
+**The one item left open was left open deliberately, by the owner, not by
+oversight.** The header inversion — the file attributing the frozen *muon*
+literal `1.1099785955573347…` to `q_at()`, which returns the *proton*
+`1.10997858275138…` — was offered as a fourth option and **not selected**;
+it is recorded in the audit doc rather than silently changed. Nothing here is
+waiting on an agent.
