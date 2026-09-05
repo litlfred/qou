@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:21Z
-updated_at: 2026-09-05T08:02:44Z
+updated_at: 2026-09-05T08:17:17Z
 ---
 
 ## The claim
@@ -116,3 +116,51 @@ This is one more argument for the sweep in "Open work" item 1: the file was
 **not** in the 305, because it is new. A new file importing a stale module
 inherits the staleness without appearing in any drift count keyed on changed
 sources.
+
+## SWEEP RESULT 2026-09-05 — 261 content-block files, ZERO red
+
+Ran `scripts/lean-content-sweep.sh` over every content-block `.lean` sibling
+carrying `import QOU`, against a shadow tree with the whole dirty library cone
+rebuilt from source.
+
+    library cone rebuilt from source   129 / 129  clean
+    content-block targets swept        261
+    genuinely red                        0
+
+The single red the first run reported was the sweep's own two bugs, not a
+finding: the target filter pruned a package's library TREE but not its ROOT
+module, and `LEAN_PATH` carried only the qou package, so `QOU.lean`'s
+`import UGB` failed as `unknown module prefix`. Both fixed; `QOU.lean` compiles
+clean. `unknown module prefix` appears in exactly one of the 262 logs, so the
+path gap could not have affected any other target — no full re-run needed.
+
+## What this changes about the bean
+
+**The prior was wrong, and in the reassuring direction.** I expected more than
+one red, on the reasoning that `descartes-knot-eigenbasis.lean` had no special
+property. The measurement says the opposite: it was the only one. So the
+`NotRootOfUnity` retype was the sole recent library signature change whose
+content-block consumers were missed, and the exposure this bean describes is
+real but has been realised **once**, not systematically.
+
+That is a statement about **today's tree**, not about the mechanism. Nothing
+prevents the next signature change from doing the same thing — the structural
+gap (no lake target, no `.qa.json` Lean criterion, no CI on 261 files) is
+untouched by this result.
+
+## What is still open
+
+1. **Reseed `lake-cache/qou-v4-24-0`.** The snapshot is ~6 days behind; 129
+   modules had to be rebuilt to make one sweep honest. A reseed collapses that
+   to zero until the next drift.
+2. **Sibling packages are not covered.** The shadow rebuild walks the qou
+   package only. `QOU.lean`'s UGB import resolved against UGB's prebuilt
+   oleans, so that one green is snapshot-conditional.
+3. **Wire the sweep to something.** A verifier nobody runs is what produced
+   this bean. Cheapest honest option is a documented pre-merge step for PRs
+   touching `content/**/*.lean`; CI is unavailable (auto-triggers disabled
+   repo-wide, owner directive 2026-06-30).
+4. **AGENTS.md §"VERIFY a single file with lean-direct"** still presents
+   `lean`-direct against the restored cache as verification with no caveat
+   that the cache ages. That wording is what I followed for seven merged PRs.
+   Changing it is an owner call, not mine.
