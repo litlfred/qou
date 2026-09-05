@@ -2072,6 +2072,36 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   Most survivors compute the RIGHT value under the WRONG name — e.g. `VOL41 = 2*mp.clsin(2, mp.pi/3)` is `2·Cl₂(π/3) = 2.0299` ✓ annotated `# Vol(4₁) = 2Λ(π/3)` ✗. So a grep for the bad *name* does not imply a bad *number*; check the arithmetic beside it before "fixing" a value.)
 - **Q_β** (the CAL-2 proxy):  `Q_β = ℏ/𝔇_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA) — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π. 𝔇_β **is** CAL-2; because the modulus is overdetermined and pinned most precisely by m_μ/m_e, Q_β reproduced from q₀ is a 0.17% **cross-check**, not a fourth input.
 
+  > **🛑 SCOPING NOTE (2026-09-05) — the route that produces this number is
+  > under review; the number is unchanged and nothing here is enacted.**
+  > Solving the published closed form against the ansatz shape
+  > `|tr_M^z(Δ_S)|·E₀` gives **`z = 1`**, which is **not** an admissible Markov
+  > parameter under convention D — the admissible roots are `z = q` and
+  > `z_D = q³/(q²+1)`, and `z = 1` leaves the `χ_(1³)` coefficient
+  > `c(1) = q²(q−1)(q³−q²−1)/… ≠ 0`, so it does not annihilate the block the
+  > GNS/TL quotient kills (`ConventionDAdmissibleRoots.lean`, sorry-free; PRs
+  > #6722 / #6763, both routes independent).
+  >
+  > **§NO FITTING, EXCEPT CAL-1/2/3 above counts this as selection against the
+  > target** — it names *a branch* chosen because it reproduces the measured
+  > value, and states that accuracy is not evidence of correctness. So the
+  > 0.17 % is not a point in this route's favour under the directive.
+  >
+  > **The two derived alternatives, neither adopted:** `z = q` (the
+  > augmentation) gives `0.8798906` MeV, **+12.470 %**; `z_D` gives
+  > `0.4447004` MeV, **−43.157 %**, against CODATA `0.7823334` MeV. Choosing
+  > between *them* by residual is the same defect one level down and is equally
+  > forbidden — the choice turns on what `ε` **means** in `Q_β = |ε(Δ)|·E₀`,
+  > which is bean `qou-99qc` and is an owner call.
+  >
+  > **Until it is made, cite this number with its scope**: it is a recorded
+  > cross-check whose functional is inadmissible under the canonical
+  > convention, not a derived prediction. Do **not** quote the 0.17 % as
+  > evidence for the framework, and do **not** replace it on your own
+  > initiative — that picks the option. Full enumeration:
+  > [`docs/audits/2026-09-05-qbeta-functional-decision-options.md`](docs/audits/2026-09-05-qbeta-functional-decision-options.md)
+  > §6.
+
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
 > **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.017 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28 — the figure read "0.06 ppb" until 2026-08-21; the live CODATA table, `qou_substrate.constants.MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)`, carries the tighter value), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
