@@ -317,6 +317,17 @@ def main():
         })
         print(f"  [{'PASS' if passed else 'FAIL'}] {name}: {computed}")
 
+    def skip(name, reason):
+        # A gate whose INPUT is legitimately absent (e.g. a witness field that
+        # was float64-drained to null) is UNAVAILABLE, not failing. Record it as
+        # skipped so it neither crashes nor silently flips allPassed (qou-xyk3).
+        assertions.append({
+            "name": name, "passed": None, "skipped": True,
+            "computed": None, "expected": None, "tolerance": None,
+            "source": reason,
+        })
+        print(f"  [SKIP] {name}: {reason}")
+
     # ---- Gate 0: operator transcription vs actual colored Jones ----------
     print("\nGate 0 — operator transcription (recurrence on J_41(N;q), q=1.3):")
     op_checks, worst = verify_operator_transcription()
@@ -355,17 +366,29 @@ def main():
          abs(c3_mu - mp.mpf("-2.021615577060006120530024970029644566094740817719")) < mp.mpf("1e-12"),
          n8(c3_mu), "-2.0216156", 1e-12,
          "q-beta-operator-valued-N3.witness.json c_3_empirical_additive")
+    # The extracted c_k in this witness were nulled by the qou-p77d float64
+    # drain (df84635376), and the c_k ladder is convention-C / cds1-gated, so
+    # they must NOT be silently repopulated. When they are null this cross-check
+    # is UNAVAILABLE — skip it rather than crash on mp.mpf(None) (bean qou-xyk3).
     ext_path = COMP / "qbeta" / "qbeta-decay-sdp-extended-ck.witness.json"
     with open(ext_path, encoding="utf-8") as fh:
         ext = json.load(fh)["data"]["c_k_extracted_50dps"]
-    worst_ext = max(
-        abs(anchors["muon"]["c_emp"][k] - mp.mpf(ext[f"c_{k}"]))
-        / abs(mp.mpf(ext[f"c_{k}"])) for k in range(2, 8))
-    gate("muon_c2_c7_match_extended_ck_witness_2026_07_07",
-         worst_ext < mp.mpf("1e-9"), float(worst_ext), 0.0, 1e-9,
-         "qbeta-decay-sdp-extended-ck.witness.json c_k_extracted_50dps "
-         "(authoritative current extraction, computed at the pinning-witness "
-         "q0 = the computations-layer muon value)")
+    ext_ck = {k: ext.get(f"c_{k}") for k in range(2, 8)}
+    if any(v is None for v in ext_ck.values()):
+        skip("muon_c2_c7_match_extended_ck_witness_2026_07_07",
+             "qbeta-decay-sdp-extended-ck.witness.json c_k_extracted_50dps is "
+             "null (float64-drained per qou-p77d / df84635376; the c_k ladder is "
+             "convention-C / cds1-gated and must not be repopulated) — cross-check "
+             "unavailable, not a failure (bean qou-xyk3)")
+    else:
+        worst_ext = max(
+            abs(anchors["muon"]["c_emp"][k] - mp.mpf(ext_ck[k]))
+            / abs(mp.mpf(ext_ck[k])) for k in range(2, 8))
+        gate("muon_c2_c7_match_extended_ck_witness_2026_07_07",
+             worst_ext < mp.mpf("1e-9"), float(worst_ext), 0.0, 1e-9,
+             "qbeta-decay-sdp-extended-ck.witness.json c_k_extracted_50dps "
+             "(authoritative current extraction, computed at the pinning-witness "
+             "q0 = the computations-layer muon value)")
     gate("c3_cross_anchor_swing_near_2p4pct",
          mp.mpf("1.5") < swings[3] < mp.mpf("3.5"), float(swings[3]), 2.4, 1.1,
          "registry: c_3 swings ~2.4-2.9% proton<->muon")
@@ -569,7 +592,10 @@ def main():
         },
         "durationMs": int((time.monotonic() - t0) * 1000),
     }
-    witness["allPassed"] = all(a["passed"] for a in assertions)
+    # Skipped gates (input legitimately absent) are excluded — they are
+    # unavailable, not passing and not failing (qou-xyk3).
+    witness["allPassed"] = all(
+        a["passed"] for a in assertions if not a.get("skipped"))
 
     out = HERE / "qbeta-ck-qholonomic-recurrence-test.witness.json"
     with open(out, "w") as f:
