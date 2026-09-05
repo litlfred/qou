@@ -2,7 +2,14 @@
 
 **Date:** 2026-09-05
 **Beans:** follow-on from `qou-tsnp` (the dead-lean-pointer sweep, PR #6787)
-**Status:** decision brief. **Nothing here is applied.**
+**Status:** 🟢 **RULED AND APPLIED** — the author ruled *"a and b"*. The brief below is
+kept **unedited**, so the options and costings the ruling was made against stay legible;
+§Resolution at the end records what was applied.
+
+**Read §Resolution before acting on the numbers below.** Option (b) was priced at
+"twelve per-name judgements, realistically a day"; measured, it was **one rename**. Both
+narrowings were measurements, not judgement calls, and the brief's own worked example
+generalised further than the brief realised.
 
 ---
 
