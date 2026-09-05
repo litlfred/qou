@@ -291,3 +291,56 @@ output would convert a real signal — six drifts and one changed derivation —
 into a green suite that asserts nothing. The mirror should be regenerated from
 its source, or the tests should be pointed at the computations layer.
 
+
+## 2026-09-05 — the mirror item resolves better than "do not hand-patch"
+
+The open item read: "The gate is not mirrored into the vendored
+`qou-mass/src/qou_mass/_internal/witness_base.py`. **Recommendation: do NOT
+hand-patch it** ... It should pick the gate up by re-vendoring."
+
+Both halves are now settled, and the first one dissolves.
+
+### The gate needs no mirroring at all
+
+`qou-mass/src/qou_mass/_internal/witness_base.py` is **82 lines** and is a
+SHIM, not a copy — it bootstraps `tools/qou-substrate/python/` onto `sys.path`
+and re-exports `qou_substrate.witness`, the real 3114-line module. So it
+already carries the error-row gate, the atomic write (`qou-sidu`) and every
+other guard, by delegation rather than duplication. `grep` for
+`_check_error_rows` in the vendored file returns 0 not because the gate is
+missing but because there is no implementation there to find.
+
+My "not mirrored" framing assumed a full copy. It is the one file in that tree
+that cannot drift on this axis.
+
+(The standalone-shipping question is separate and untouched: outside the repo
+the shim needs `qou_substrate` installed. That is packaging, not gating.)
+
+### Re-vendoring is a supported operation, and I ran it
+
+`scripts/sync-qou-mass-vendor.py` exists precisely for this, with
+`--check` / `--apply` / `--list`, and its docstring records that on 2026-08-15
+all 14 vendored modules had drifted ("the copies are simply behind", one by a
+whole generation).
+
+    --check  ->  DRIFTED from source (7): 3 modules + 4 witness JSON
+                 markov_trace_recursive, q_parameter, tr_m_wenzl_bridge_mpfr
+    --apply  ->  regenerated 49 modules
+    --check  ->  in sync (49 modules, 25 witness JSON, 122 package-data)
+
+Repo suites unaffected: 64 + 145 pass.
+
+### The 7 mirror test failures are NOT drift
+
+Measured before and after the re-vendor: **7 failed, 13 passed, unchanged**.
+So the earlier disposition holds and is now evidence-backed rather than
+inferred — those failures live in `qou-mass/tests/`'s own hardcoded expected
+values (proton 938.783 vs 938.272, and the 4He method string moving from L1 to
+`L3-α-cluster`), not in the vendored copies. Re-vendoring was the right thing
+to do and does not touch them.
+
+- [x] Mirror the gate — VOID. The vendored file is a shim; it delegates.
+- [x] Re-vendor rather than hand-patch — done, 7 drifted items resynced.
+- [ ] The 7 mirror test failures still want an owner decision: point the tests
+      at the computations layer, or regenerate their expectations from it.
+      Still do NOT hand-patch the constants.
