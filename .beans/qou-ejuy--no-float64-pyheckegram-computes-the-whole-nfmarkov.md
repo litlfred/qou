@@ -77,3 +77,71 @@ Scope, in order:
 4. Identify the consumers before changing anything. `nf_tr` / `nf_net` are
    library entry points; this is the "find the callers first" discipline that
    `qou-fop2` needed and did not have.
+
+## 2026-09-05 — the gating question is ANSWERED, and it is not what this bean assumed
+
+Scope item 1 asked whether `pyhecke.gram` is meant to be the f64 fast path.
+**It is, explicitly, and it already ships the mpf counterparts.** So this bean
+is a CONSUMER fix, not a library fix, and the title above is wrong in its
+implication that gram.py is defective.
+
+`gram.py` carries this immediately below the import (bean `qou-jtbo`):
+
+    ⚠ `q0`, `qi`, `h` above are the **float64** path. They are deliberately
+    bit-stable — `constants.py` says "Don't change them — downstream f64
+    callers depend on stability" — so they are correct for existing witness
+    scripts and must not be converted.
+    ...
+    **The mpf counterparts already exist in this module** — use them:
+        h_mp(dps=50)   z_mp(dps=50)   tr_m_mp(dps=50)   gram_matrix_mp(dps=50)
+
+So converting `z`, `h` and `TR_M` — scope item 2 as originally written —
+would be **wrong**, and would break the f64 callers the module promises
+stability to. Struck.
+
+### The full mp path that already exists
+
+    pyhecke.gram    z_mp, h_mp, tr_m_mp, hm_mp, _nf_of_word_mp,
+                    gram_matrix_mp, radical_mp, gram_inverse_mp,
+                    gram_quotient_solve_mp
+    pyhecke.atom    build_nucleon_nf_mp(quarks, dps=50)
+    computations/compound_shift_nf.py:189
+                    build_atom_nf_mp(Z, N, dps=50)
+
+### So the defect is where scope item 1 guessed
+
+`hadron_knot_table` imports `build_atom_nf`, `nf_tr`, `nf_net` (f64) and
+`check_frobenius` (f64 `G @ x`), while taking `B_MeV` from the MPFR kernel —
+and publishes both in one row. That is a witness mixing two precisions, and it
+is also the whole of `qou-3uvs`: the LP_stable predicate's `-1e-10` tolerance
+sits 25 orders below one float64 ulp at fe56 precisely because `G @ x` is f64.
+Moving the table to `build_atom_nf_mp` + `tr_m_mp` + `gram_matrix_mp` fixes
+both beans at once.
+
+### Not done in this session, deliberately
+
+The `qou-uiut` regeneration was in flight when this was established. Swapping
+an unverified `build_atom_nf_mp` for `build_atom_nf` mid-run would have meant
+restarting a 4.6-hour job on the assumption that the two agree — and they need
+to be shown to agree first, on the light atoms, where `build_atom_nf` is cheap
+and trustworthy. The current run still lands a strictly better artifact than
+what is committed: faithful serialization, `B_MeV` at 60 real digits, and `Gx`
+recorded so the stability verdicts become auditable.
+
+### Revised scope
+
+1. [x] Establish whether gram.py is the f64 fast path. IT IS.
+2. [ ] ~~Convert z, h, TR_M to mpf~~ — STRUCK. Would break the f64 callers
+       the module guarantees stability to.
+3. [ ] Show `build_atom_nf_mp(Z, N, 50)` agrees with `build_atom_nf(Z, N)` on
+       the light atoms to f64 tolerance. If it does not, that disagreement is
+       the finding and everything below waits on it.
+4. [ ] Move `hadron_knot_table` to the mp path: `build_atom_nf_mp`,
+       `tr_m_mp()` for the trace, `gram_matrix_mp()` in `check_frobenius`.
+       Then drop the `dps=17` cap on `ln_abs_tr` (bean `qou-uiut`) — the input
+       will finally deserve the full width.
+5. [ ] Re-run and diff. tr_M, net, nf and every LP_stable verdict move; that
+       is the point, and `qou-3uvs`'s noise floor goes away with it.
+6. [ ] Find the OTHER f64-path consumers before declaring this done. `nf_tr`
+       and `check_frobenius` are library entry points and this table is
+       unlikely to be the only caller mixing precisions.

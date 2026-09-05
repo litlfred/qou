@@ -82,11 +82,36 @@ witness stays at its full 1363 bytes instead of going to 0.
 
 ## Not fixed, and worth a decision
 
-- [ ] The write is still **non-atomic**. Hoisting removes the known raiser but
-      not the class: a crash during `json.dump` still leaves a partial file.
-      The robust form is write-to-temp + `os.replace`, which is atomic on
-      POSIX. That is a larger mechanical change across the same 228 sites and
-      should be its own pass.
+- [x] The write is now **atomic**, in two commits. `WitnessBuilder.save()`
+      first — one block covering every producer that goes through it — then
+      374 direct-writing producers that bypass it. Each writes to a SIBLING
+      temp file and `os.replace`s it into position (sibling, because
+      `os.replace` is atomic on POSIX only within one filesystem).
+
+      Demonstrated A/B on the library fix, under a `json.dump` that writes a
+      partial object and then raises:
+
+          new pattern:  raised, witness INTACT     56 -> 56 bytes, no debris
+          old pattern:  raised, witness CORRUPTED  31 -> 12 bytes
+
+      The producer pass took three attempts, and the corrections are worth
+      recording because each was found by checking rather than by assuming:
+
+        1. 270 sites, regex on `open(path, "w")`.
+        2. My "0 missed" verification was itself broken — its pattern did not
+           match the common `as f:` form. A line-based recheck found 84 real
+           misses: pass 1's regex required `"w")` immediately, so it skipped
+           every `open(path, "w", encoding="utf-8")` and every multi-line
+           `open()`. A paren-matching scan got 98 more.
+        3. Inserting the `os` import after the last line starting with
+           `import`/`from` landed INSIDE a multi-line `from x import (` list
+           and broke 15 files. `ast.parse` caught all 15 and none was written;
+           AST-based placement fixed 13, and the last was a false positive —
+           a `with open(...)` inside a string literal in
+           `witness_provenance_audit.py`'s test fixtures.
+
+      Final: 374 files atomic, 0 syntax errors tree-wide, 0 genuine sites
+      left.
 - [ ] **An audit should not be able to mutate the corpus it audits.**
       Importing arbitrary producers to test importability is inherently
       side-effecting; the probes' missing `__main__` guards are what let it
