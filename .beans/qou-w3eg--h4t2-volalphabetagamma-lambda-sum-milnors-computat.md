@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-04T13:27:37Z
+updated_at: 2026-09-05T06:08:49Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -525,3 +525,33 @@ So the two routes both require a real build:
 (b) Λ θ = Im cLiTwoExt(e^{iθ}): needs cLiTwo analyticity extended from ball(1/2,1/2) (all the corpus proves) to a nbhd of the upper unit circle (θ∈(0,π), e^{iθ}≠1, avoids the [1,∞) cut).
 
 Recommend (a) when a session with a live LSP picks this up: it closes step 1 AND is reusable. Steps 2 (base integral analytic in angles) and 3 (identity theorem) remain after.
+
+
+## 🛑 STEP 1 IS CLOSED — and my two prior measurements above were BOTH wrong (2026-09-05, session lean-qa-backlog)
+
+**The claim.** `Λ` is real-analytic on `(0, π)`, sorry-free, `[propext, Classical.choice, Quot.sound]`:
+- `QOU.Archimedean.analyticAt_Lob {t} (h0 : 0 < t) (hπ : t < π) : AnalyticAt ℝ Lob t`
+- `QOU.Archimedean.analyticOnNhd_Lob : AnalyticOnNhd ℝ Lob (Ioo 0 π)`
+
+New file `QOU/Archimedean/LobAnalytic.lean`; lean-direct exit 0 against the real import cone.
+
+**The evidence, and what I got wrong.** The note directly above recommended route (a) — build the ~100-line antiderivative-of-analytic Mathlib filler — because it measured route (b) as "needs cLiTwo analyticity extended from `ball(1/2,1/2)` to a nbhd of the upper unit circle". **That measurement was scoped to the wrong file.** `ComplexDilogBridge.lean` is indeed only local, but the corpus already carries the global statement in a *different* file:
+
+- `QOU.MathlibExt.analyticOnNhd_cLiTwoExt` (`QOU/MathlibExt/ComplexDilogarithmDeriv.lean:248`) — analytic on **all** of `notCut = ℂ ∖ [1,∞)`, proved holomorphic⇒analytic via `DifferentiableOn.analyticOnNhd` + `isOpen_notCut`.
+- `QOU.Knot.Kummer.exp_mem_notCut` (`KummerDilogHalf.lean:121`) — the punctured unit circle is inside `notCut`.
+- `QOU.Knot.Kummer.im_cLiTwoExt_exp` (`:188`) — `Im cLiTwoExt(e^{iθ}) = Cl₂(θ)` on `(0,2π)`.
+
+So route (b) is a **composition**, ~45 lines, not an extension build: on `(0,π)`, `Λ t = Cl₂(2t)/2 = Im cLiTwoExt(e^{2it})/2`, and the RHS is `Im ∘ cLiTwoExt ∘ exp ∘ (ℝ-linear)`, transported by `AnalyticAt.congr`. Route (a) was never needed.
+
+**Both earlier notes in this bean are superseded**, in opposite ways: the first ("step 1 genuinely multi-session") undercounted what the corpus held; the second ("confirmed Mathlib-gap keystone") repeated that undercount after a grep that searched Mathlib and `ComplexDilogBridge` but not `MathlibExt/ComplexDilogarithmDeriv`. The generalisable lesson is the corpus-grep one: **a clean grep of the file you expect the result in is not evidence the corpus lacks it.**
+
+**Implications.**
+- Step 1 is off the critical path. `LobachevskyDerivativeAnalytic.lean` (step 1a, PR #6621) is still a correct standalone `Λ'` statement but is no longer needed for the obtuse route; its header said "step 1 is not closed here … Mathlib has no antiderivative lemma", which is now misleading, and is corrected in the same PR.
+- The antiderivative-of-analytic Mathlib filler is **not** built and is no longer recommended as this bean's keystone. It would still be reusable infra if some other item wants it — but nothing here does.
+- The obtuse ideal-tetrahedron volume identity is **NOT** proved. Nothing about the volume is asserted.
+
+**Still open — the real remaining core:**
+- **Step 2** — the base integral real-analytic in the angles `(α, β)`. Differentiation under the integral sign; this is now the genuine multi-session item.
+- **Step 3** — glue acute → whole open simplex with Mathlib's identity theorem (`AnalyticOnNhd.eqOn_of_preconnected_of_eventuallyEq` family). Cheap *given* steps 1+2, but needs the preconnectedness of the open simplex.
+
+**Infra note (durable, cost me ~40 min).** `.lake/build/lib/lean/QOU/MathlibExt/ComplexDilogarithmSlit.olean` in the restored cache was **truncated** (192,512 B; correct is 279,688 B). Symptom: `lean` on anything importing it exits **139 (segfault) with zero output** — not a type error, no diagnostics, and it poisons the whole downstream cone (Kummer, dilog-deriv). Fix: recompile that one olean directly; the entire chain then imports clean.

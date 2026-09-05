@@ -94,6 +94,33 @@ Reporting "11 broken modules on main" was one step away and would have been
 wrong. Triage: `df` first, then olean size against a sibling, then rebuild the
 suspect from source. **Never conclude a module is broken from exit 139 alone.**
 
+### 4a. The truncation can be IN THE RESTORED CACHE — and `df` is then clean
+
+Second mechanism, measured 2026-09-05 (bean `qou-w3eg`). Same signature —
+**exit 139, zero output, sub-second** — but this container's disk was *fine*
+and no local build had run. The bad olean came down from
+`lake-cache/qou-v4-24-0` itself:
+`QOU/MathlibExt/ComplexDilogarithmSlit.olean` restored at **192,512 B**;
+recompiling the same source at the same commit gives **279,688 B**.
+
+Three things this changes about the §4 triage:
+
+1. **`df` first is the wrong first step here** — it comes back clean and reads
+   as an all-clear. If disk is fine and you still get 139, suspect the restore,
+   not the source.
+2. **Size-against-a-sibling does not fire.** 192 KB is unremarkable next to its
+   neighbours; only the *same module recompiled* exposes it. The decisive test
+   is `lean <src> -o <that exact olean path>` and comparing bytes before/after.
+3. **One bad olean poisons its whole downstream cone**, and the failures point
+   at the *consumers*, not the culprit. Here `KummerDilogHalf`,
+   `ComplexDilogarithmDeriv` and my new file all segfaulted while each of their
+   own sources was clean. **Bisect the import cone depth-first to the deepest
+   module that fails with all its own dependencies passing** — that one is the
+   culprit; recompiling it alone repaired all four.
+
+Consequence for the seeds: a cache branch is not self-verifying, so a 139 on a
+freshly restored tree is a cache defect until proven otherwise.
+
 ## 5. Disk is the binding constraint, and `df` lies about it
 
 `df` shows 252 G nominal; the real limit is a per-session quota near 38 G. A
