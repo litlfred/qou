@@ -18,7 +18,7 @@ comparable with the sibling probes):
 
 | | monotone | non-monotone |
 |---|---|---|
-| **tier 1 — braid-word facts, still ASSUMED** | | |
+| **tier 1 — braid-word facts, now PROVED in `MonotoneWordComponentStructure.lean`** | | |
 | all `hub`↔`x` crossings sit in ONE generator's run | 596/596 | 56/78 |
 | all `hub`↔`y` crossings sit in ONE generator's run | 596/596 | 58/78 |
 | the two generators differ | 596/596 | 37/78 |
@@ -53,13 +53,24 @@ length and its length being `2|lk|` are measured facts feeding this.
 `eps_eq_of_blocks` composes them: block structure plus the two signed sums equalling the
 linking numbers gives `ε_{x,y} = u * v`, which is `ChainTriple.eps_eq`.
 
-**What is still ASSUMED, stated plainly.** The three braid-word facts in the table's top
-half — one generator per component pair, generators in ascending order matching
-component order, run length `2|lk|`. Deriving *those* needs the strand-permutation
-bookkeeping of a monotone word formalised (positions, runs, who passes under whom),
-which is a substantially larger object than anything in this arc and is not attempted.
-They are recorded as hypotheses `hA`, `hB`, `hsum` of `eps_eq_of_blocks`, so a reader
-can see exactly what is bought and what is borrowed.
+**What was assumed here is now PROVED next door. CLOSED 2026-09-05.** This said tier 1
+— one generator per component pair, generators in ascending order matching component
+order, run length `2|lk|` — needed "the strand-permutation bookkeeping of a monotone
+word formalised … a substantially larger object than anything in this arc". That turned
+out to be wrong about the size. `MonotoneWordComponentStructure.lean` does it in two
+one-line recursions: generator `g` moves only positions `g`, `g+1` and runs ascend, so
+when run `R_g` begins position `g+1` **still holds strand `g+1`** — every crossing of
+that run is between one fixed strand pair. An even run restores the pair, an odd run
+swaps it; the closure permutation is `∏_{e_g odd} σ_g`, so odd runs cross within one
+component and even runs cross **adjacent** ones. Each tier-1 fact is a reading of the
+single theorem `components_differ_iff_even`.
+
+What is *still* not formalised is one level lower: that those two recursions really
+describe a monotone closure's strand positions and cycles. That needs braid words and
+cycle decomposition as Lean objects; 414/414 measured predictions stand in for it.
+
+The hypotheses `hA`, `hB`, `hsum` of `eps_eq_of_blocks` remain explicit, so what is
+bought and what is borrowed stays visible at the point of use.
 
 **The gain is real but should not be overstated.** `eps_eq` was one hypothesis about a
 Magnus coefficient; it is now a theorem given three hypotheses about a braid word. The
