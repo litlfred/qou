@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-05T07:26:09Z
+updated_at: 2026-09-05T08:03:48Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -602,3 +602,44 @@ The stale "what would close it" paragraph in
 
 Probe `computations/probes/chain_triple_magnus_coefficient_is_the_product_probe.py`,
 5/5, idempotent, integer arithmetic throughout.
+
+
+## 2026-09-05 — `eps_eq` derived: eight sharper facts replace one opaque one
+
+The chain closure rested on `ChainTriple.eps_eq` as a bare measured hypothesis. It is
+now a **theorem given three braid-word hypotheses**, and the arithmetic that makes
+`gcd u v | u·v` applicable is machine-checked.
+
+**Decomposition, measured 596/596 monotone (62 carrier both branches + 534 random), all
+degrading off monotone (78):**
+
+*Tier 1 — braid-word facts, still assumed:* each pair crosses at ONE generator (56/78,
+58/78) · the two generators differ (37/78) · `g_x < g_y ⟺ x < y` (36/78) · runs have
+even length (40/78) · run length is exactly `2|lk|` (30/78).
+
+*Tier 2 — consequences, consumed by the Lean:* signed sum of each far component's
+letters in `λ_hub` equals its linking number (51/78, 53/78) · each block contiguous
+(56/78, 67/78) · blocks disjoint with `x` before `y` (18/78).
+
+**Proved** in `QOU/Mass/EpsEqFromMonotonicity.lean` (sorry-free, 0 errors):
+`epsCoeff_append_of_blocks` — a block-split word has `ε_{x,y} = (Σ block A)(Σ block B)`
+and `ε_{y,x} = 0`. That is the whole arithmetic of `eps_eq`, and it is a statement about
+**lists**, no topology. `eps_eq_of_blocks` composes it to `ε = u·v`.
+`carrier_shape_gives_four` depends on **no axioms at all**.
+
+**Still assumed:** tier 1. Deriving it needs the strand-permutation bookkeeping of a
+monotone word formalised — positions, runs, who passes under whom — a substantially
+larger object than anything in this arc. Named as borrowed in the hypotheses `hA`, `hB`,
+`hsum` rather than elided.
+
+**Do not overstate the gain.** `eps_eq` was one hypothesis about a Magnus coefficient;
+it is now a theorem given three about a braid word. The part that could have been subtly
+wrong is checked; the combinatorics of which strand is where is not.
+
+**Third instance of the same figure trap.** A scratch run against a *per-arm* RNG gave
+`32/78` for the `2|lk|` row; the probe (one RNG consumed sequentially, matching the
+merged siblings) gives **30/78**. After #6679's `251/2080` and #6726's "0 of 71" this is
+three; the probe's numbers are authoritative, always.
+
+Probe `computations/probes/eps_eq_decomposition_from_monotonicity_probe.py`, 5/5,
+idempotent, integer arithmetic throughout.
