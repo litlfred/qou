@@ -62,3 +62,64 @@ shape, so the term is still missing, just less badly.
 
 Successor to the shape agenda in
 `docs/audits/2026-09-05-binding-law-arc-synthesis.md` §6 item 1-2.
+
+---
+
+## 2026-09-05 (later) — SWAP REFUTED. The branch is selected; the REASON is not.
+
+Instruction was to adopt the swap if the data holds. **It does not**
+(`qbeta_bar_branch_refuted_probe.py`, 6/6), for two independent reasons, and the
+charge test comes back weak.
+
+### 1. The swap destroys the upper bound
+
+The tower ruling made the law one-sided — an upper bound for 2547 of 2548 — and
+that has a physical reason: every SEMF correction SUBTRACTS from the volume term,
+so a law omitting all of them belongs above the data.
+
+    branch        exceeding B <= 3.E_0.S   (measured / all)
+    as built            1 / 2548              1 / 3554
+    BAR-SWAPPED       845 / 2548           1018 / 3554
+
+Band medians show why: swapped, the `A = 40-160` bands sit ABOVE 1 (1.028, 1.021,
+0.994); as-built stays below throughout (0.860 -> 0.961 -> ... -> 0.796). The
+swap moves the law INTO the data rather than above it — the wrong side for a law
+with only negative corrections outstanding.
+
+### 2. And it redistributes shape error rather than removing it
+
+    branch        (N-Z)^2/A^2   A^(-1/3)   Z^2/A^(4/3)
+    as built        -0.804       -0.178      -0.044
+    BAR-SWAPPED     -0.493       -0.376      -0.068
+
+It halves the ASYMMETRY correlation and more than DOUBLES the SURFACE one. The
+p5-p95 gain (1.225 -> 1.166) is real but bought by moving error between channels,
+not out of the law. That is what a one-bit reparameterisation does; it is not
+what a missing term looks like.
+
+### 3. The charge test — selects the corpus branch, proves little
+
+`sigma^2 = h.sigma + 1` has eigenvalues `{+q, -1/q}` (solved). Sign-matching
+`u = +2/3 -> +q`, `d = -1/3 -> -1/q` reproduces the corpus assignment. **Weak, on
+two counts I state because they cut against it:** one bit agreeing with one bit
+happens half the time by chance; and in `V (x) V` the eigenvalue `+q` belongs to
+the SYMMETRIC part and `-q^-1` to the ANTISYMMETRIC part, so the sign encodes
+pairing statistics, not charge — reading it as a charge sign is a category slip,
+and the magnitudes do not corroborate (`q^2 = 1.2321` vs charge ratio `2`).
+
+## THE OBLIGATION THIS BEAN NOW CARRIES
+
+The branch is **selected** — by §1, a structural property of the whole table. It
+is not **derived**. Nothing in the framework says why the algebra assigns
+`u -> +q` rather than `d -> +q`; the corpus asserts it
+(`meson-to-proton-via-borromean.md`) and every downstream number inherits it.
+
+**This bean stays open on exactly that:** derive the flavour-to-eigenvalue
+assignment, or record it explicitly as a convention with the bound as its only
+current justification. Candidates unevaluated: the Borromean proton construction,
+the `net` values' own derivation, colour-antisymmetry of the quark wavefunction
+(the physically natural one, since the eigenvalue sign IS a statistics label).
+
+**And the symmetry energy is still missing.** `corr = -0.804` stands, the swap is
+refuted, `qou-ubsl`'s SU(4) route stays structurally forbidden. The dominant
+residual shape has no source — that is unchanged by this round.
