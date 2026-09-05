@@ -380,3 +380,33 @@ shapes (no longer resolves / derives / bundle built / gate / constructor /
 carrier unidentified / parametrised-and-documented). Recommend closing it, or
 re-scoping it to "re-run `scripts/pqmw-queue-recheck.py` after the next
 carrier-shape change".
+
+## 2026-09-05 — these entries left the COUNTED defect set, silently
+
+Measured while refreshing the corpus audit witness (PR #6878). Declarations of this bean (2 of the 7: mass_anchor_stable_forward, mass_direction_sanity_forward) stopped being counted in `total_defects` on 2026-09-04 —
+**not** because anything was fixed.
+
+`total_defects` is raw hits minus exempt, and the audit promotes an exempt
+candidate to *counted* only while the review ledger carries a `genuine` verdict
+for it. `total_promoted_from_exempt` fell **26 → 19** between the 2026-09-04
+witness and a fresh run on current main; those 7 are the whole of the gap, and
+they make the headline drop (91 → 73) look like 18 fixes when only **11**
+declarations actually resolved.
+
+All 7 went `genuine` → `needs-agent` at one commit, `cf8c365203`, whose subject
+is *"20 content-free carriers adjudicated `genuine`"* and whose body reports
+only its gain (`needs-agent 58 → 38`). It ran a ledger re-seed, which resets any
+entry whose `file_sha` no longer matches — so the reset may have been correct
+when it happened. The `evidence` and `disposition` paragraphs survived; only the
+verdict field cleared.
+
+**What this means for this bean specifically:** its declarations are unchanged
+(ledger `file_sha` matches disk today) and still carry the defect, but a reader
+of the audit number will not see them. They are exempt-pending-triage, which is
+where this bean already places them — the new fact is that the metric no longer
+counts them, so "the number went down" is not evidence this bean shrank.
+
+Not re-adjudicated here: these belong to this bean's disclosure recipe, not to
+a ledger-verdict pass, and flipping the verdicts back would pre-empt that.
+
+This bean holds 2 of the 7: mass_anchor_stable_forward, mass_direction_sanity_forward. The other rows of the 7 sit in  (ConfinementPhaseStratification_open) and / (whitehead_volume_conjecture).
