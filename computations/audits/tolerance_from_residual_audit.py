@@ -429,6 +429,43 @@ class _AssignIndex:
         return seen
 
 
+def _reaches_subtraction(ident: str, index: "_AssignIndex", depth: int = 4) -> bool:
+    """Does `ident` trace back to an expression containing a SUBTRACTION?
+
+    A residual IS a difference. A PROPAGATED UNCERTAINTY is not — it is
+    `sqrt((a*b)**2 + (c*d)**2)` over experimental error bars, and it mentions
+    the measured quantities for the same reason the residual does, which is why
+    name-plus-reachability cannot separate the two.
+
+    Found by running this audit on a fix made with it: after
+    `mass-from-q-symbolic:599` was given an independent `expected`, it was still
+    reported BLOCKING, because its tolerance `borromean_mass_MeV_err` is
+    residual-named and reaches both sides. It is a 1-sigma propagated
+    uncertainty and entirely correct. Requiring a subtraction in the provenance
+    keeps the `qou-tol0` positive (`delta = M_derived - M_obs`) and drops this
+    class.
+    """
+    seen: set[str] = set()
+    frontier = {ident}
+    for _ in range(depth):
+        nxt: set[str] = set()
+        for name in frontier:
+            for rhs in index.by_name.get(name, []):
+                for n in ast.walk(rhs):
+                    if isinstance(n, ast.BinOp) and isinstance(n.op, ast.Sub):
+                        return True
+                    if isinstance(n, ast.UnaryOp) and isinstance(n.op, ast.USub):
+                        return True
+                for got in _idents(rhs):
+                    if got not in seen:
+                        seen.add(got)
+                        nxt.add(got)
+        frontier = nxt
+        if not frontier:
+            break
+    return False
+
+
 def _call_args(call: ast.Call) -> dict[str, ast.AST]:
     """Map add_assertion's positional+keyword arguments onto parameter names."""
     order = ["name", "computed", "expected", "tolerance", "unit", "source"]
@@ -526,7 +563,12 @@ def scan_file(path: Path) -> list[dict]:
         dataflow: list[str] = []
         for ident in residual_named:
             reach = index.resolve(ident) - _STOP
-            if (reach & comp_leaves) and (reach & exp_leaves):
+            if not ((reach & comp_leaves) and (reach & exp_leaves)):
+                continue
+            # A residual is a DIFFERENCE. Without this gate an error-propagation
+            # formula over the same quantities is indistinguishable from the
+            # residual over them — see `_reaches_subtraction`.
+            if _reaches_subtraction(ident, index):
                 dataflow.append(ident)
 
         if dataflow:
