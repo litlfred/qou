@@ -1,0 +1,128 @@
+{
+  "computation": "skein-normalisation-two-conventions",
+  "description": "The corpus runs TWO Skein normalisations. AGENTS.md \u00a77a (STRICT) mandates the Hecke-generator form L_+ - L_- = (q - 1/q) L_0, so the single-crossing amplitude is h_1 = q - 1/q. Seven content blocks across five chapters instead write the framed/Jones form q[L_+] - q^-1[L_-] = (q^(1/2) - q^(-1/2))[L_0], amplitude s = h_(1/2). They are NOT rescalings of one another (the L_+ : L_- weights are 1:1 against q:q^-1). The bridge is exact and already half-recorded in the corpus: h_1 = s(q^(1/2)+q^(-1/2)), hence h_1^2 = [2]_q^2 - 4 = s^2([2]_q + 2), ratio [2]_q + 2 = 4.0108995061 at the proton pin. That bridge factor is bar-EVEN, so bar-parity arguments are blind to the choice while every magnitude is not. prf:trace-ratio-observable takes the vertex amplitude in (J) while the weak-vertex trace is computed in H_3(q) with h = q - 1/q, i.e. (H) -- so one rate mixes the two. Under (H) throughout, qou-xql6's substitution factor is 32.2624 rather than 129.4051; the qou-ix74 scope-(a) negative survives either way. ANSWERS the open question of qou-q2l7: the {1/2,1/2} exponent pair is FORCED, by convention (J).",
+  "convention": {
+    "hecke_h": "q - 1/q (\u00a77a, convention H)",
+    "markov_z": "q**3/(q**2+1) (D)",
+    "anchor": "proton pin (Q_50_DIGIT_STR); identities exact in q"
+  },
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "relations": {
+    "H_agents_7a_strict": "L_+ - L_-  =  (q - 1/q) L_0",
+    "H_amplitude": "h_1 = q - 1/q",
+    "J_eight_content_blocks": "q [L_+] - q^-1 [L_-]  =  (q^(1/2) - q^(-1/2)) [L_0]",
+    "J_amplitude": "s = q^(1/2) - q^(-1/2) = h_(1/2)",
+    "L_plus_to_L_minus_weight_ratio": {
+      "H": "1",
+      "J": "q**2"
+    },
+    "inequivalent": true
+  },
+  "bridge": {
+    "identity": "h_1 = s * (q**(1/2) + q**(-1/2))",
+    "squared": "h_1**2 = [2]_q**2 - 4 = s**2 * ([2]_q + 2)",
+    "s_squared": "s**2 = [2]_q - 2",
+    "ratio_exact": "[2]_q + 2",
+    "ratio_at_q0": "4.0108968667071222998",
+    "bridge_factor_bar_parity": "EVEN (bar-invariant); s itself is bar-ODD",
+    "corpus_already_states_the_factorisation": "braids-and-knots/bar-involution-c5-algebraic-identities.md line 1"
+  },
+  "consequence_for_the_beta_rate": {
+    "vertex_amplitude_taken_in": "J (prf:trace-ratio-observable: skein_amp = q^(1/2) - q^(-1/2))",
+    "weak_vertex_trace_computed_in": "H (H_3(q) Hecke relation, h = q - 1/q)",
+    "substitution_factor_J_amplitude": "129.40510740356669955",
+    "substitution_factor_H_amplitude": "32.263384401056933328",
+    "qou_ix74_verdict": "SURVIVES under either -- 32x and 129x are both far too large for a 10-17 % correction"
+  },
+  "convention_J_surface": {
+    "listed": [
+      "predicted-spectra/beta-decay-skein-properties.md",
+      "braids-and-knots/feynman-eigenbasis.md",
+      "brings-surface/embeddability-closure-spectral-filter.md",
+      "climax-volume-mass/skein-crossing-asymmetry.md",
+      "climax-volume-mass/skein-crossing-asymmetry-prop.md",
+      "information-theory/skein-turing-machine.md",
+      "knots-particles-confinement/crossing-energy.md",
+      "appendix-transfer-matrices/tm-notation-table1-data.md"
+    ],
+    "live": [
+      "predicted-spectra/beta-decay-skein-properties.md",
+      "braids-and-knots/feynman-eigenbasis.md",
+      "brings-surface/embeddability-closure-spectral-filter.md",
+      "climax-volume-mass/skein-crossing-asymmetry.md",
+      "climax-volume-mass/skein-crossing-asymmetry-prop.md",
+      "information-theory/skein-turing-machine.md",
+      "knots-particles-confinement/crossing-energy.md",
+      "appendix-transfer-matrices/tm-notation-table1-data.md"
+    ],
+    "live_count": 8
+  },
+  "answers": "qou-q2l7's open remainder -- the {1/2,1/2} exponent pair of the decay coupling is FORCED by convention (J), not chosen ad hoc",
+  "scope": "MEASUREMENT plus an AUTHOR DECISION not taken here. Measured: the two relations, their inequivalence, the exact bridge, the surface, the consequence. NOT decided: whether the rate is restated in (H) to match \u00a77a, or \u00a77a records (J) as the physics-sector convention. Both are coherent; either rewrites eight content blocks or a STRICT section. No identity here depends on the choice.",
+  "lean": [
+    "QOU.Braiding.WeakVertexT35.sSq_eq_twoQ_sub_two",
+    "QOU.Braiding.SkeinNormalisation.no_rescaling_of_skein_weights",
+    "QOU.Braiding.SkeinNormalisation.hOne_eq_sSqrt_mul_barEven",
+    "QOU.Braiding.SkeinNormalisation.hOneSq_eq_twoQ_sq_sub_four",
+    "QOU.Braiding.SkeinNormalisation.hOneSq_eq_sSq_mul_twoQ_add_two"
+  ],
+  "reference_blocks": [
+    "prf:hadron-half-life",
+    "prop:trace-ratio-observable",
+    "prf:trace-ratio-observable",
+    "def:beta-decay-skein",
+    "rem:bar-involution-c5-algebraic-identities"
+  ],
+  "assertions": [
+    {
+      "name": "bridge_factor_is_the_bar_invariant_one",
+      "passed": true,
+      "note": "h_1 = s * (q^(1/2) + q^(-1/2)) exactly -- the corpus already states this factorisation in bar-involution-c5-algebraic-identities"
+    },
+    {
+      "name": "s_squared_is_two_q_minus_two",
+      "passed": true,
+      "note": "s^2 = [2]_q - 2 (already Lean: sSq_eq_twoQ_sub_two)"
+    },
+    {
+      "name": "h1_squared_is_two_q_squared_minus_four",
+      "passed": true,
+      "note": "h_1^2 = [2]_q^2 - 4 = s^2([2]_q + 2): the \u00a77a amplitude squared is the (J) one times a bar-INVARIANT factor"
+    },
+    {
+      "name": "the_two_relations_are_not_rescalings",
+      "passed": true,
+      "note": "(H) weights L_+ : L_- as 1 : 1; (J) as q : q^-1, ratio q^2. No overall factor relates them, so these are different skein presentations rather than one relation written twice"
+    },
+    {
+      "name": "bridge_factor_is_bar_invariant",
+      "passed": true,
+      "note": "q^(1/2)+q^(-1/2) is bar-EVEN while s is bar-ODD, so bar-parity arguments cannot see the convention choice -- only magnitudes can"
+    },
+    {
+      "name": "ratio_at_proton_pin_is_two_q_plus_two",
+      "passed": true,
+      "note": "h_1^2/s^2 = [2]_q + 2 = 4.0108995061 at the proton pin"
+    },
+    {
+      "name": "substitution_factor_moves_but_verdict_does_not",
+      "passed": true,
+      "note": "|W|^2/h_1^2 = 32.2624 against |W|^2/s^2 = 129.4051. Both are far too large to be the 10-17 % correction of qou-ix74, so that scope-(a) negative survives under either convention"
+    },
+    {
+      "name": "convention_J_surface_is_multi_chapter_not_one_block",
+      "passed": true,
+      "note": "8 of 8 listed blocks still carry the sqrt-q amplitude, across five chapters -- a corpus-wide split, not a single-block slip"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "666aedc35bd5",
+  "scriptCommitSha": "3d4764ebc6c8ef8ce5242f5500bf236466e4c13b",
+  "commitSha": "04d2f58ccab08d6c2d780318aaeef369926e3632",
+  "engine": "sympy+mpmath",
+  "computedAt": "2026-09-05T11:33:33.317209+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "markov/skein_normalisation_two_conventions_audit.py"
+}

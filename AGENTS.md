@@ -1123,6 +1123,55 @@ ephemeral.
    Skill authors updating skill docs should refer to this rule
    rather than restating the policy in their own words.
 
+8a. **Draft → ready: SPACED RETRY ONLY. Never close-and-reopen a
+   PR to get past it** (owner ruling, 2026-09-05). Flipping a draft
+   PR to ready goes through GitHub's GraphQL API, which needs a
+   node-ID lookup, and that lookup is the thing being rate-limited
+   on this repo's shared token. So `mcp__github__update_pull_request`
+   with `draft: false` fails — often for hours — with
+
+       Failed to find pull request: API rate limit already exceeded
+       for user ID 662242
+
+   while every REST path (title, body, state, create, merge, and all
+   reads) keeps working. **Retry the same `draft: false` call, spaced
+   out — typically off a `send_later` check-in — until it lands.**
+
+   **Do NOT close the draft and create a replacement PR for the same
+   head.** It works, which is exactly why it keeps getting
+   reinvented: this session did it three times (#6526 → #6579,
+   #6649 → #6674, #6723 → #6753) before the owner ruled against it.
+   What it costs is not the API call but the record — the review
+   threads, the Copilot request, the comment history and the PR
+   number in every commit message, bean and coordination ledger that
+   already cites it all stay on the abandoned PR, and a reader who
+   follows that number lands on something marked "closed without
+   merging" when the work in fact merged. The agent-harness PR rules
+   independently forbid close-and-reopen; this ruling extends that to
+   the undraft case, which those rules do not name.
+
+   **Two measured traps when retrying.**
+
+   - **The error is not evidence the call did nothing.** A sibling
+     session measured (2026-09-05) that `update_pull_request` calls
+     which set `title` / `body` *alongside* `draft: false` returned
+     that same rate-limit error and **the title and body writes
+     landed anyway** — only the draft flip was dropped. Always
+     confirm with `pull_request_read` before re-sending a mutation,
+     or you will write it twice.
+   - **Retry `draft: false` ALONE.** Bundling other fields makes the
+     partial-success case above harder to read, and none of them need
+     the limiter.
+
+   **The fix that avoids the problem entirely: open the PR non-draft
+   in the first place** where the work is already verified.
+   `create_pull_request` takes `draft` as a plain REST field, so
+   `draft: false` at creation never touches the limiter. Rule 2 of
+   this section asks for the PR immediately, at the first commit,
+   which is usually before verification — so a draft is still the
+   right default for a tranche that is about to grow. It is the wrong
+   default for a PR you are opening at the end of the work.
+
 9. **Never delete closed/merged feature branches** (owner
    directive, 2026-06-12). Do not run `git push origin --delete
    <branch>`, do not enable auto-delete-on-merge, and do not offer
@@ -4059,22 +4108,42 @@ export interface AuthorNote {
 
 `BlockBase.authorNotes?: AuthorNote[]`.
 
-> **🛑 "every block kind accepts it" is FALSE, and the field is dropped in
-> silence (measured 2026-08-30).** This line read *"every block kind accepts
-> it (builders pass through via `Omit<XBlock, "kind">`)"*. Four content-block
-> kinds — **`prose`, `table`, `equation`, `diagram`** — have zod schemas
-> declared as standalone `z.object({...})` rather than
-> `BlockBaseSchema.extend({...})`, so they restate a *subset* of the base
-> fields and `authorNotes` is not among them. Zod strips unknown keys, so a
-> note written on one of those blocks validates clean and **vanishes**.
+> **✅ LIVE STATE (verified 2026-09-05): all four kinds accept every base
+> field. `authorNotes` on a `prose` / `table` / `equation` / `diagram` block
+> WORKS — write it.** The rest of this box is the history of a defect that is
+> now closed in the product; read it for the mechanism, not for the state.
 >
-> **🛑 The `authorNotes` half of this is FIXED, and the standing advice at the
-> bottom was inverted. RE-MEASURED 2026-09-03.** The paragraph below listed
-> six dropped fields, five of them `authorNotes`, and closed by telling agents
-> **not** to put an author note on those four kinds. `folio-assistant`
-> **granted `authorNotes` to all four on 2026-08-24** (bean
-> `folio-assistant-5nle`), so following that advice now suppresses a field
-> that works.
+> Verified by **parse**, not by grep: `ProseSchema` / `EquationSchema` /
+> `DiagramSchema` / `TableSchema` each `safeParse` a block carrying
+> `authorNotes`, `defines`, `cites` and `computation` and **retain** every one.
+> The fix is `folio-assistant` **`a117daa`** (2026-09-03, *"Four block kinds
+> restated BlockBase instead of extending it"*), confirmed an ancestor of that
+> repo's `main`.
+>
+> **🛑 Why this box opened for months with the opposite claim, and why the
+> ordering matters.** The two paragraphs that used to lead were a 🛑 asserting
+> *"every block kind accepts it is FALSE, and the field is dropped in
+> silence"*, retracted nine lines below. An agent reading top-down met the
+> false claim first and stopped — the same *heading-contradicts-its-own-body*
+> defect this document already had to fix once, in the Phase-4 merge-gate
+> table. **The live state now leads; the history follows.** Superseded text,
+> kept because the mechanism is still worth reading: four content-block kinds
+> had zod schemas declared as standalone `z.object({...})` rather than
+> `BlockBaseSchema.extend({...})`, so they restated a *subset* of the base
+> fields; a zod object is non-strict, so a note written on one of those blocks
+> validated clean and **vanished**. `folio-assistant` granted `authorNotes` to
+> all four by hand on 2026-08-24 (bean `folio-assistant-5nle`), which fixed
+> that one field and left the mechanism — see the structural note below.
+>
+> **🛑 And the "fixed" rows in the table below were written AHEAD of the
+> evidence.** That table is dated 2026-09-03 and states its basis as
+> `folio-assistant` `93e476b`. `93e476b` is dated **2026-08-31** and does
+> **not** contain `a117daa` — so at the moment those rows were written, the
+> fix they call *"fixed — folio-assistant#164"* had not landed. The rows are
+> true **today**, and this line is not a retraction of them; it is a note that
+> they were forward-looking claims about an unmerged PR, which is precisely
+> the *"fixed on a branch, not in the product"* move that bean `qou-3v8h`
+> refused to close on. State what has landed, or say it has not.
 >
 > **This document could not have known, and that is the reusable lesson: the
 > validator you ran is the validator in the clone.** The count that produced
@@ -4144,10 +4213,29 @@ export interface AuthorNote {
 > [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh) and
 > check the clone is not behind before trusting a clean validate.
 >
-> **The fix is in `folio-assistant`, not here** — those four schemas should
-> extend `BlockBaseSchema` like the other six. Until they do, do **not** put
-> an author note on a `prose`, `table`, `equation` or `diagram` block: it will
-> be accepted and lost.
+> **The fix was in `folio-assistant`, not here, and it has LANDED** — all four
+> schemas now extend `BlockBaseSchema` like the other eleven (`a117daa`, on
+> that repo's `main`). The advice this paragraph used to give — *"do not put an
+> author note on a `prose`, `table`, `equation` or `diagram` block"* — is
+> **withdrawn and inverted**: write the note, it is kept. Verified by parse on
+> 2026-09-05, and locked upstream by two regression tests
+> (`scripts/tests/block-base-fields.test.ts`, which fails when any block schema
+> falls behind the base, and `scripts/tests/schema-ts-zod-parity.test.ts`), so
+> the next field cannot be forgotten one kind at a time the way `defines`,
+> `cites`, `simulator` and `computation` were.
+>
+> **The one thing that still bites is the CLONE, not the schema.** Everything
+> above is a statement about `folio-assistant` `main`; your validator is the
+> validator in *your* checkout. Measured this session: a qou tree validated
+> against a clone **169 commits behind** reported all six of these fields as
+> dropped — a defect that no longer exists. Before quoting any figure from this
+> box, or filing anything from a validate run, refresh and say what you ran
+> against:
+>
+> ```sh
+> bash scripts/setup-folio-assistant.sh
+> git -C folio-assistant fetch origin main && git -C folio-assistant log --oneline -1
+> ```
 
 **Render behavior**: SKIPPED by default in the LaTeX render
 (clean publication voice). Set environment variable
@@ -4848,6 +4936,70 @@ is ~2 min vs a 40-min `lake build` storm. If a stray `lake build` already
 dropped the olean count (`find .lake/packages/mathlib -name '*.olean' | wc -l` ≪ 2919),
 re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 [`lean-environment-setup.md` §"VERIFY a single file with lean-direct"](.claude/skills/local/lean-environment-setup.md#verify-a-single-file-with-lean-direct).
+
+> **🛑 A BARE `lean` IS A WEAKER CHECK THAN `lake build` — pass
+> `-DautoImplicit=false` (measured 2026-09-05, bean `qou-56qy`).** `lean`
+> invoked directly does **not** read the lakefile, so it does not apply its
+> `[leanOptions]`. `autoImplicit` defaults **true** in `lean` and is set
+> **false** in both the root and paper lakefiles, and with it on Lean silently
+> auto-binds an unbound identifier as an implicit argument rather than erroring.
+> Same file, same `LEAN_PATH`, on `QOU/MassTheory/AtomWordShadow.lean`:
+>
+> ```
+> lean                        ->  exit 0,  0 errors
+> lean -DautoImplicit=false   ->  exit 1,  6 errors      (lake agrees: 20)
+> ```
+>
+> That file was **red on `main`**, and it was called clean by a bare
+> `lean`-direct run *and* by both sweep scripts before they were fixed. Pass
+> `-s 65536` too, mirroring the paper lakefile's `moreLeanArgs`: one generated
+> module overflows the default elaboration stack and aborts as a bare `exit 134`
+> with no source error. So the recipe above is
+> `lean -DautoImplicit=false -s 65536 <file>`, never bare `lean`.
+>
+> **This is the sharper of the two defects on this line.** The snapshot problem
+> below makes a green *go stale*; this one makes a green *wrong from the start*,
+> on any tree, however fresh.
+
+> **🛑 `exit 0` here is a claim about the SNAPSHOT, not about the library
+> source (measured 2026-09-05, bean `qou-56qy`).** The restored cache is a
+> point-in-time tree. When a library signature moves after it was taken, a file
+> calling the old signature compiles clean *and* is red against the source it
+> names — both at once, with no signal. Realised, not hypothetical:
+> `descartesWtrace` recorded `lean`-direct `exit 0` and **landed on `main`
+> red**, because the cache was built 2026-08-30 while `794c34897d7`
+> (2026-09-03) retyped `SeminormalRep.wtrace`'s genericity hypothesis and
+> ported the seven consumers *inside* the package. The library half was done
+> correctly; a content-block sibling was simply not in it (#6751).
+>
+> **So on a branch that touches `.lean`, run the sweep rather than bare
+> `lean`-direct.** Each builds a shadow tree, rebuilds from source only the
+> modules whose own olean predates their own last source commit, and compiles
+> against that — never invoking `lake`, so the restored cache is not evicted:
+>
+> ```bash
+> scripts/lean-content-sweep.sh [file.lean ...]   # content-block siblings
+> scripts/lean-library-sweep.py                   # library dirty closure
+> ```
+>
+> Whole corpus 2026-09-05: 261 content blocks and 74 dirty library modules,
+> **0 red**; library sweep 122 s, content sweep ~50 min (pass the changed files,
+> and `SHADOW=`/`--shadow` to reuse the ~2.3 GB shadow). Wired into
+> `/prepare-merge` §4 and `prepare-merge-auto` Phases 1 and 4.
+>
+> **Two limits — do not write either out of a PR.** The dirty closure is
+> computed against *this* container's olean tree, so a result is
+> **container-scoped**: two sessions measured the same dependency as stale and
+> as current, and both were right. And neither script sweeps the **UGB** or
+> **Fred2005** packages.
+>
+> **A source-change count is the wrong population.** Six of those 74 have no
+> olean at all — a *new* file inherits its dependencies' staleness without ever
+> appearing in a drift count keyed on changed sources. Use the closure.
+>
+> This block is an owner-reviewable wording change to the repo's primary
+> verification guidance, added on the evidence above; revert the wording if you
+> disagree — the measurement stands either way.
 
 > **STRICT — route, don't give up, and prefer a sub-agent.** On **any**
 > Lean env/tool failure (LSP "no valid project path", `leansearch` SSL

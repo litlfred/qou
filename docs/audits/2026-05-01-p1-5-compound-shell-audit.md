@@ -5,7 +5,7 @@
 **Conclusion**: 🟢 **No new calibration leak found.** The three
 suspect blocks all derive their numerical content from the three
 declared calibrations of
-[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)
+[`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)
 ($H^0 = m_e$, $H^1 = m_\mu/m_e \to q_0$, $H^2 = Q_\beta$).
 
 ## Per-block findings

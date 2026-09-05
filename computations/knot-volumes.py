@@ -27,6 +27,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from codata_table import codata  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+# This producer hand-builds its assertion payload and `json.dump`s it, so
+# `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
+# reached, and a re-run would re-emit the float literals and undo PR #5910's
+# drain for this file alone. `_tol` routes each DECLARED tolerance through
+# that guard; it returns a COMPUTED one unchanged, so those stay floats and
+# stay counted by the raw-float64 ratchet. Bean qou-9tqx.
+from qou_substrate.witness import declared_tolerance as _tol  # noqa: E402
 
 try:
     import snappy
@@ -43,7 +50,7 @@ KNOT_REGISTRY = [
         "name": "Vol(0_1) — unknot (neutrino)",
         "manifold": "0_1",
         "expected": 0.0,
-        "tolerance": 1e-10,
+        "tolerance": _tol(1e-10),
         "source": "Trivial knot",
         "unit": "volume",
         "particle": "neutrino",
@@ -52,7 +59,7 @@ KNOT_REGISTRY = [
         "name": "Vol(3_1) — trefoil (electron)",
         "manifold": "3_1",
         "expected": 0.0,
-        "tolerance": 1e-10,
+        "tolerance": _tol(1e-10),
         "source": "Torus knot (non-hyperbolic)",
         "unit": "volume",
         "particle": "electron",
@@ -74,7 +81,7 @@ KNOT_REGISTRY = [
         "name": "Vol(4_1) — figure-eight (Higgs field / mass mechanism)",
         "manifold": "4_1",
         "expected": 2.02988321281931,
-        "tolerance": 1e-10,
+        "tolerance": _tol(1e-10),
         "source": "OEIS A091518, 2·Cl₂(π/3) = 6Λ(π/3)",
         "unit": "volume",
         "particle": "higgs",
@@ -94,7 +101,7 @@ KNOT_REGISTRY = [
         "name": "Vol(5_1) — cinquefoil T(2,5) (muon; torus knot, Vol_hyp=0)",
         "manifold": "5_1",
         "expected": 0.0,
-        "tolerance": 1e-10,
+        "tolerance": _tol(1e-10),
         "source": "Torus knot (non-hyperbolic)",
         "unit": "volume",
         "particle": "muon",
@@ -103,7 +110,7 @@ KNOT_REGISTRY = [
         "name": "Vol(5_2) — three-twist (strange quark)",
         "manifold": "5_2",
         "expected": 2.82812208832975,
-        "tolerance": 1e-10,
+        "tolerance": _tol(1e-10),
         "source": "SnapPy census",
         "unit": "volume",
         "particle": "strange",
@@ -112,7 +119,7 @@ KNOT_REGISTRY = [
         "name": "Vol(7_1) — septafoil (tau T_{2,7})",
         "manifold": "7_1",
         "expected": 0.0,
-        "tolerance": 1e-10,
+        "tolerance": _tol(1e-10),
         "source": "Torus knot (non-hyperbolic)",
         "unit": "volume",
         "particle": "tau",
@@ -124,7 +131,7 @@ LINK_REGISTRY = [
         "name": "Vol(L2a1) — Hopf link (strong force)",
         "manifold": "L2a1",
         "expected": 0.0,
-        "tolerance": 1e-6,  # torus link; SnapPy returns small numerical noise
+        "tolerance": _tol(1e-6),  # torus link; SnapPy returns small numerical noise
         "source": "Torus link (non-hyperbolic)",
         "unit": "volume",
         "particle": "strong_force",
@@ -133,7 +140,7 @@ LINK_REGISTRY = [
         "name": "Vol(L6a4) — Borromean rings (nucleon)",
         "manifold": "L6a4",
         "expected": 7.32772475341775,
-        "tolerance": 1e-10,
+        "tolerance": _tol(1e-10),
         "source": "8·G (Catalan's constant), OEIS A006752",
         "unit": "volume",
         "particle": "nucleon",
@@ -161,21 +168,21 @@ MASS_ASSERTIONS = [
         # one file over. Bean qou-bdkx.
         "name": "m_μ/m_e (CODATA 2022)",
         "expected": float(codata("muon-electron mass ratio").value),
-        "tolerance": 0.0000001,
+        "tolerance": _tol(0.0000001),
         "source": "CODATA 2022 (NIST allascii.txt, muon-electron mass ratio)",
         "unit": "dimensionless",
     },
     {
         "name": "substrate q from Vol(4_1) and m_μ/m_e",
         "expected": 1.10997,
-        "tolerance": 0.001,
+        "tolerance": _tol(0.001),
         "source": "QOU derivation (Ch11)",
         "unit": "dimensionless",
     },
     {
         "name": "ℏ_q = 1 - 1/q",
         "expected": 0.09905,
-        "tolerance": 0.001,
+        "tolerance": _tol(0.001),
         "source": "QOU definition (Ch1)",
         "unit": "dimensionless",
     },

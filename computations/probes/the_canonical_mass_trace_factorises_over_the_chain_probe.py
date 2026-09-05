@@ -141,7 +141,24 @@ ARC = {
 
 
 def canonical_word(Z, N):
-    return [(1, DVAL[k], g) for g, k in atom_canonical_crossings(Z, N)]
+    """The GROUPED chain word, named explicitly since 2026-09-05.
+
+    The per-generator factorisation this probe measures — `tr_M(∏ p_i(σ_i)) =
+    ∏_i tr_2(p_i)` — requires each generator's letters to be CONTIGUOUS, which
+    is a property of the word's assembly rather than of the chain topology.
+    `atom_braid_word_3A` now defaults to the Borromean `(σ_0 σ_1^-1)^3` intra
+    core, which interleaves them and does not satisfy the identity (it misses
+    by 2.8x at A=2 rising to 13.3x at A=4). So this probe asks for the word
+    whose property it is testing.
+
+    Nothing measured here changes as a result. The bond constants, `L_pp +
+    L_nn`, the 31 % figure and the offset inversion are all log-RATIO
+    quantities, which are invariant under the intra ordering to ~1e-60 —
+    proved in `QOU.Mass.IntraOrdering.chainRatio_eq_of_intra`, measured in
+    `the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`.
+    """
+    return [(1, DVAL[k], g)
+            for g, k in atom_canonical_crossings(Z, N, intra_order="grouped")]
 
 
 def two_strand():
@@ -215,7 +232,9 @@ def main() -> int:
               f"   |rel diff| {float(rel):.2e}   ({time.time() - t0:.1f}s)")  # float64-ok: display only — value computed in mpfr/mpf, floated for printing
         if name == "2H":
             for g in sorted(by_gen):
-                kinds = [k for gg, k in atom_canonical_crossings(Z, N) if gg == g]
+                kinds = [k for gg, k in
+                         atom_canonical_crossings(Z, N, intra_order="grouped")
+                         if gg == g]
                 print(f"        gen {g}: {len(by_gen[g])} letters  tr_2 = {fmt(tr2(by_gen[g], wp, wm, lp, lm), 24)}"
                       f"   [{', '.join(kinds)}]")
     check("tr_M(atom) = prod_i tr_2(p_i(sigma)) for A = 2, 3, 4 below 1e-55", worst < mpfr("1e-55"))

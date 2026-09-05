@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-08-28T19:38:53Z
+updated_at: 2026-09-05T06:15:00Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -424,3 +424,425 @@ string. Pinned as an assertion in the probe so it cannot recur silently.
 Nothing in the convention-fee pricing (items 1 and 3, the colour-blind
 crossing and the muon pin) is affected; those stand. Scope-(a): nothing wired,
 no content block edited.
+
+
+## 2026-09-05 — the PUBLISHED closed form is the z = 1 cell. The question is no longer "which was meant".
+
+Probe: `computations/qbeta/qbeta_published_form_is_the_inadmissible_z1_probe.py`
+(15/15, exact sympy over ℚ(q); the pin enters only at readout).
+
+This bean has asked, since 2026-08-26, *"which functional is `eps` MEANT to be
+in the Q_β ansatz?"* — treating it as an open reading of an ansatz. **The
+framework's published headline closed form already answers it**, and nothing in
+the corpus had said so.
+
+AGENTS.md's canonical-derivation cheat sheet publishes
+
+    Q_β = m_e · |q² − 2q − 1| · (q + 1) / (2q³)
+
+Set that against the ansatz shape `Q_β = |tr_M^z(Δ_S)| · E₀`, `E₀ = m_e/(q(q−1))`,
+using the affine trace from
+[`2026-08-29-delta-fork-at-admissible-parameters.md`](../docs/audits/2026-08-29-delta-fork-at-admissible-parameters.md),
+and **solve for `z`**:
+
+| branch | solved `z` | admissible? |
+|---|---|---|
+| positive | **`z = 1`** | **no** |
+| negative | `z = h − 1 = q − 1 − 1/q` | **no** |
+
+Neither is a root of the `(1³)` weight numerator `N(q,z) = (z−q)((q²+1)z − q³)`,
+whose only roots are `z = q` (the augmentation) and `z_D = q³/(q²+1)`.
+
+So the published form is **not neutral** between the two candidate functionals.
+It commits to the coordinate sum `net`, and that is precisely the functional
+convention D forbids. Verified two ways: the identity `|epsNPq|·E₀ = published`
+is exact over ℚ(q) on **both** sides of the silver ratio (so it is not an
+artifact of a sign branch), and it agrees to `0.0` at 60 dps at the pin.
+
+**Calibration, run before concluding.** My affine trace reproduces this bean's
+own published grid — `+0.168 %`, `+12.470 %`, `−43.157 %` — to within
+`2.4e-4` pp across all three cells. Had it not, the trace would have been wrong
+and the identity worthless.
+
+### What this changes, and what it does not
+
+- **It does not** show the published Q_β value is wrong *as arithmetic*. It is
+  exact and reproduces to 50 digits.
+- **It does not** adjudicate which functional *should* be used. That is still
+  yours.
+- **It does** convert the question from *"which ε was meant?"* — a question
+  about intent, which nobody can settle by measurement — into a concrete
+  either/or about a number the framework already publishes:
+
+  **either** keep the published headline value, which is produced by a
+  functional that does not descend to the algebra the corpus's own GNS proof
+  says the theory lives in;
+  **or** adopt an admissible functional and accept its error: `+12.470 %`
+  (augmentation) or `−43.157 %` (Markov at `z_D`).
+
+  Every route between those two is now closed by measurement, not by search:
+  the convex combination (rank-3 exclusion, scope-(b), above), the base
+  correction (`qbeta-d-frame-admissible-base-correction-search`: no
+  parameter-free admissible correction, and its `√(1−h)` near-match was
+  diagnosed as the forbidden `z = 1` returning), and bracketing (a property of
+  **both** elements, so evidence for neither).
+
+### 🛑 A naming defect found and fixed on the way: supergolden, not plastic
+
+`ConventionDAdmissibleRoots.lean` scopes `one_not_root` to `q³ − q² − 1 < 0`
+and calls that bound *"the plastic number ≈ 1.4656"* — at lines 40, 108 and
+123 — and the 2026-08-29 audit repeats it.
+
+**1.4656 is the SUPERGOLDEN ratio**, the root of `x³ = x² + 1` (OEIS A092526).
+The **plastic number** is `≈ 1.32472`, the root of `x³ = x + 1` (A060006). A
+different constant.
+
+The **value quoted was always right**, which is why no grep for a wrong *number*
+would ever have found it — the same shape as the Λ-vs-Cl₂ guard AGENTS.md
+records. **Nothing proved is affected**: the Lean hypothesis is the inequality
+`q³ − q² − 1 < 0`, never the name, so this is a docstring correction.
+
+Corrected at 4 sites (3 Lean docstrings + the audit line). The `hplastic`
+binder name is left alone — it is a local binder, and renaming it is a code
+change for no gain. **Eight other "plastic" hits in the Lean tree are correct
+and were deliberately not swept**: `FiveTwoOhtsukiBridge` and
+`FiveTwoComplexPentagon` are about `u³ = u + 1`, which genuinely *is* the
+plastic number.
+
+Verified: `lean`-direct on `ConventionDAdmissibleRoots.lean` exits **0** with no
+diagnostics both **before** and **after** the edit, against the real import cone.
+
+Scope-(a) on the physics; the inadmissibility is scope-(b) with the root
+computation as the cited invariant. Nothing wired, no content block edited, no
+`c_k` proposed.
+
+
+## 2026-09-05 (2) — "closed at two" is closed in ONE class. The hierarchy, measured.
+
+Owner asked, on the two admissible options: *"what are options for admissible?
+others?"*
+
+Probe: `computations/qbeta/qbeta_admissible_functional_hierarchy_probe.py`
+(13/13, exact sympy over ℚ(q); every dimension computed, none asserted).
+
+This bean says the admissible set is **"closed at two elements"**. That is true
+and it is closed **within the one-parameter Markov family `tr_M^z`** — it comes
+from solving `y_(1³)(z) = 0`, a quadratic. It was never a statement about every
+functional that descends. Measured across three nested classes:
+
+| class | admissible subspace |
+|---|---|
+| all linear functionals on `H₃(q)` | **5 of 6** dimensions |
+| **trace** functionals (`φ(ab) = φ(ba)`) | **2 of 3** |
+| Markov traces `tr_M^z` | **2 points** — `z = q`, `z = z_D` |
+
+The `(1³)` ideal is computed as the common `(−1/q)`-eigenspace of both
+generators (dim 1, so admissibility is exactly one linear condition), not
+quoted.
+
+### The load-bearing result: relaxing the class adds NO new direction
+
+    rank{aug, tr_M(z_D)}                        = 2
+    rank{aug, tr_M(z_D), χ_(3), χ_(2,1)}        = 2      ← equal
+
+**The two Markov points already SPAN the admissible trace space.** So going
+from "Markov trace" to "any trace" buys only the *line through the two you
+already have* — which is precisely the one-parameter fit this bean refuses. It
+does not widen the honest options.
+
+Going further, to **all linear functionals**, does add three dimensions. But a
+non-trace functional is not a Markov trace, and the trace property is what
+connects the functional to knot invariants at all. That is the trade, stated
+rather than taken.
+
+Control included: `net` sits outside the admissible trace space
+(`rank{aug, tr_D, net} = 3`), reproducing this bean's rank-3 exclusion from a
+different construction — the character basis rather than the covector one.
+
+### And `w*` is the fit in closed form, not a derivation
+
+`Δ` is supported on `{γ, σ₀, σ₁}`, so `tr_M^z(Δ) = h²/2 − h·z` is **affine in
+`z`** — which is *why* a weight always exists. Matching any target is then
+interpolation of the parameter:
+
+    w* = (1 − z_D)/(q − z_D) = −(q³ − q² − 1)/q      (= this bean's w*, verified)
+
+So `w*` is just where the inadmissible `z = 1` sits between the two admissible
+roots. A restatement of one-equation-one-unknown.
+
+**A near-miss worth recording.** `w*` carries the factor `q³ − q² − 1`, and so
+does `N(q,1) = (q−1)(q³−q²−1)` — the admissibility numerator at the
+inadmissible point. That looked like structure. It is a **shared cause**, not
+independent evidence: both quantities measure how far `z = 1` is from being a
+root, so the same polynomial must appear in both. Recorded because the
+coincidence is attractive and would support a "the weight is forced" reading
+that the algebra does not license.
+
+**Answer to the question as asked: no, there are no other honest options.** The
+two remain the two; everything between them is a fit; everything outside them
+costs the trace property.
+
+Scope-(a); nothing wired, no content block edited, no `c_k` proposed.
+
+
+## 2026-09-05 (3) — DECISION DOCUMENT: the seven options, costed
+
+Owner: *"Do a deep analysis of all the options. Include the pros and cons
+downstream impacts recommendations."*
+
+[`docs/audits/2026-09-05-qbeta-functional-decision-options.md`](../docs/audits/2026-09-05-qbeta-functional-decision-options.md).
+
+The two existing audits state the *finding*; neither enumerates what can be
+**done**. That gap is what this fills. Seven options, each with what it means /
+costs / risks / commits to, plus the downstream map and a recommendation.
+
+Two facts established here that change how the whole thing reads:
+
+- **The 0.17 % is not a fit.** The ansatz appears in audit docs from
+  **2026-05-01**; convention D was ruled **2026-08-15**. The number predates
+  the constraint that excludes its functional by ~3.5 months. *(Chronology from
+  authored filename dates — `git log` dates are rebase-rewritten here and are
+  not a valid signal. I tried `git log -S` first and it returned the landing
+  commit, not the authoring one.)*
+- **No calibration moves under any option.** AGENTS.md: Q_β is a
+  *"cross-check, not a fourth input"*. q₀, m_e, m_π, the mass channel and the
+  binding channel are all untouched whichever way this goes. That makes the
+  decision far lower-stakes than the +0.168 % vs +12.470 % gap suggests.
+
+And **one hope killed**: passing to the TL quotient does *not* collapse `Δ_S`
+and `Δ_L` into one class — the augmentation is admissible and separates them
+(+12.470 % vs +39.324 %). **The functional question and the element question
+are independent**; settling either leaves the other open.
+
+**Recommendation (judgement, not finding): Option A** — keep the published
+value, disclose the inadmissibility, and reclassify it as a pre-D / C-frame
+conditional result, exactly as the `c_k` ladder is already handled. It is the
+only option that describes the situation accurately, the blast radius is near
+zero, and it forecloses nothing. Explicitly **not** recommended: adopting the
+augmentation or the `z_D` trace, which replace a correct-but-inadmissible
+number with an admissible-but-wrong one.
+
+Option G (drop the trace condition) is listed but **struck**, not weighed:
+without the trace property the value depends on the braid word rather than the
+link, so the element ambiguity becomes permanent rather than open.
+
+Scope-(a); nothing wired, no content block edited, no `c_k` proposed.
+## 2026-09-05 (4) — OPTION E, formalize-first: the requirement is "scalar mod radical", and Δ_S provably fails it
+
+Owner: *"formalize first!!! E"*.
+
+Lean: `QOU/QBeta/AdmissibleAgreementDeterminesClass.lean` — **5 theorems, 0
+sorries, `lean`-direct exit 0** against the real import cone.
+Probe: `computations/qbeta/qbeta_option_e_forced_class_probe.py` (9/9, exact
+sympy over ℚ(q); the pin enters only at readout).
+
+### The narrowing, stated before computing
+
+Option E is a trap attacked numerically: a functional on `H₃(q)` is surjective,
+so a free `Δ` reproduces **any** target and the "derivation" is a six-parameter
+fit against one anchor. Two structural facts remove all six:
+
+- an admissible trace sees `Δ` only through `(χ_(3)(Δ), χ_(2,1)(Δ))` — 6 → 2;
+- **both** candidate functionals are *normalised* (`ε(1) = 1`). Measured
+  symbolically: `tr_M(z_D) = α·χ_(3) + β·χ_(2,1)` with
+  `α = (q⁴+1)/(q²+1)²`, `β = q²/(q²+1)²`, and **`α + 2β = 1` exactly**. Since
+  `χ_(3)(1) = 1` and `χ_(2,1)(1) = dim V_(2,1) = 2`, that line *is* the
+  normalised admissible family — **one** parameter, not two.
+
+### The sharp theorem, and it is better than what I set out to prove
+
+I began with a 2×2 system ("two functionals agreeing pins the class"). The
+numbers then showed `(1−α)/β = 2` **exactly, for all q** — and 2 is
+`dim V_(2,1)`. That upgrades the result:
+
+> **`normalised_agreement_iff_scalar`** (sorry-free): writing `a = χ_(3)(x)`,
+> `b = χ_(2,1)(x)`, a normalised admissible trace gives `(1−2β)a + βb`. This is
+> independent of `β` — i.e. **every** normalised admissible trace agrees, not
+> merely the two named — **iff `b = 2a`**.
+
+`b = 2a` says `χ_λ(x)/dim V_λ` is equal across both surviving blocks, which is
+exactly **"`x` is a scalar modulo the radical"** (for `x = c·1`,
+`χ_λ(x) = c·dim V_λ`). So the requirement is not an arbitrary extra condition
+invented to close a gap — it is the statement that `Δ` is central-scalar in the
+quotient the theory lives in, and it fixes the common value to `χ_(3)(Δ)`.
+
+### And Δ_S fails it identically — scope-(b), invariant cited
+
+    chi_(2,1)(Delta_S) = 0          exactly over Q(q)
+    chi_(3)(Delta_S)   = (1-q^4)/(2q^2)  != 0
+
+**`Δ_S` is supported, modulo the radical, entirely in the trivial block.** So
+`b = 2a` fails identically and **no** admissible functional makes the Q-value
+independent of the choice.
+
+Two consequences worth keeping:
+
+1. **The +12.470 % and −43.157 % cells are not two independent estimates.**
+   Verified exactly: `tr_M(z_D)(Δ_S) = α·aug(Δ_S)`. They are *one* number
+   rescaled by `α ≈ 0.5054`. The apparent "bracket" on `Δ_S` is an artifact of
+   that single scaling, which weakens the bracket framing further than
+   `2026-08-29` already did.
+2. **The forced class is `χ_(3) = T`, `χ_(2,1) = 2T`** with `T = Q_codata/E₀ =
+   0.1868936675566543…`. `Δ_S` is `+12.470 %` off in the first coordinate
+   (calibration: this *must* equal the known augmentation cell, and does) and
+   **−100 %** off in the second.
+
+### What this does NOT establish
+
+- **Functional-independence is POSITED.** It is not a theorem of the framework
+  that a physical quantity must survive swapping the augmentation for the Markov
+  trace, any more than an operator's trace must equal its determinant. What the
+  formalisation buys is that the requirement is now *precise and falsifiable* —
+  "scalar modulo the radical" — rather than a vague appeal.
+- **No element realising the forced class is exhibited**, and none is claimed to
+  exist among legitimate braid-word differences. That is the next step and it is
+  where Option E either closes or dies.
+- `Δ_L` is untouched here; `qou-avt5`'s finding that `Δ_S ≠ Δ_L` stands.
+
+Nothing wired, no content block edited, no `c_k` proposed.
+
+### Extension, same day — BOTH candidate elements are excluded for every physical q
+
+The Δ_L row was extracted from the two admissible evaluations rather than a
+coordinate vector (`tr_M` at `z = q` **is** `χ_(3)`; at `z_D` it is
+`α·χ_(3) + β·χ_(2,1)`, so `χ_(2,1)` follows by inversion). Calibrated: that
+route reproduces `χ_(2,1)(Δ_S) = 0`, matching the direct covector computation.
+
+| element | `b − 2a` | positive real roots | any with `q > 1`? |
+|---|---|---|---|
+| `Δ_S` | `(q−1)(q+1)(q²+1)/q²` | `1` | **no** |
+| `Δ_L` | `(q−1)(q+1)(2q⁶+3q⁴+2q²−1)/(4q³)` | `0.5632`, `1` | **no** |
+
+**Neither element is scalar modulo the radical at any `q > 1`.** Scope-(b), and
+the invariant is cited: a polynomial with no root in the physical regime.
+
+**And the `q = 1` root is degenerate, not a solution.** At `h = 0` the proton and
+neutron words *coincide* — `σ₀(σ₁ − h/2) → σ₀σ₁ ← (σ₀ − h/2)(σ₁ − h)` — so
+`Δ → 0` and the condition holds only as `0 = 0`. Both residuals carry the factor
+`(q−1)(q+1) = q·h` for exactly that reason. Do **not** read the shared `h` factor
+as "the condition is nearly satisfied": it is the statement that the whole
+difference vanishes classically.
+
+**What this does not say.** It excludes the two candidates, not the route: `b −
+2a` is surjective over general elements, so there is no general obstruction. A
+third element could satisfy the condition. What is now known is that neither
+element the corpus currently has does, for any physical `q`.
+
+### Closing enumeration, same day — the choice is a LINE, and it is surjective
+
+`qbeta_admissible_line_exhausts_the_choice_probe.py` (12/12). The bean's
+question is *"which functional evaluates Δ"*. The answer is that **the Q-value
+cannot determine it**, because the candidates form a one-parameter family whose
+value map is affine and onto.
+
+Decomposing the Markov trace in the character basis of `H₃(q)` — derived here,
+not assumed — gives
+
+```
+tr_M(z) = a(z)·χ_(3) + b(z)·χ_(2,1) + c(z)·χ_(1³)
+c(z) numerator = q²·(z − q)·((q²+1)z − q³)
+```
+
+so the admissibility condition `N(q,z) = 0` of the 2026-08-29 audit **falls out
+of the decomposition** rather than being posited, and `c(1) = q²(q−1)(q³−q²−1)/…
+≠ 0` re-derives the `z = 1` inadmissibility of PR #6722 from a second route.
+
+Normalising `φ(1) = 1` collapses the admissible trace space to the line
+`φ_β = (1−2β)·χ_(3) + β·χ_(2,1)` — because `χ_(3)(1) = 1` and `χ_(2,1)(1) = 2`.
+Both Markov points already lie on it: `z = q` at `β = 0`, `z_D` at
+`β = q²/(q²+1)² ≈ 0.24730`.
+
+On any element the value map is affine with slope exactly the scalar-mod-radical
+residual:
+
+```
+φ_β(Δ) = χ_(3)(Δ) + β·( χ_(2,1)(Δ) − 2·χ_(3)(Δ) )
+```
+
+and that slope has **no root at any `q > 1`** (previous section), so the map is
+**surjective**: solving `φ_β(Δ) = t` for a *symbolic* target `t` returns exactly
+one `β`, on both elements.
+
+| | `β` | `Δ_S` | `Δ_L` |
+|---|---|---|---|
+| `z = q` (augmentation) | `0` | **+12.470 %** | **+39.324 %** |
+| `z = z_D` | `0.24730` | **−43.157 %** | **−15.451 %** |
+| hits CODATA | — | `0.055437` | `0.177538` |
+
+All four published grid cells are **reproduced from the character route**, which
+is the calibration that makes the rest of the table trustworthy; and the
+CODATA-hitting `β` is neither Markov point, on either element.
+
+**So the four doors are now all enumerated:**
+
+| door | what it costs | outcome |
+|---|---|---|
+| Markov **and** admissible | nothing — no free parameter | two points only: +12.470 % / −43.157 % |
+| Markov, drop admissible | one parameter (`z`), fitted | `z = 1` exactly, and it is outside the TL quotient (#6722) |
+| admissible, drop Markov | one parameter (`β`), fitted | reachable at `β* ≈ 0.0554`, with no independent characterisation |
+| **neither choice matters** (functional-independence) | no parameter | impossible on both candidate elements at every `q > 1` |
+
+**The consequence for the decision.** "Maybe some *other* admissible functional
+works" is *true and empty* — one parameter fitted to one anchor has no
+predictive content, and it is the same fit the published form already is, moved
+from `z` to `β`. The only door that removes the parameter without an anchor is
+functional-independence, and it is closed for the elements the corpus has. The
+recommendation in
+`docs/audits/2026-09-05-qbeta-functional-decision-options.md` (Option A — keep,
+disclose, reclassify) is unchanged by this; what changes is that the option
+space is now known to be exhausted rather than merely unexplored.
+
+Nothing wired. No content block edited.
+
+### 🟥 The 2026-09-05 anti-fitting directive eliminates `z = 1` — my Option A recommendation is WITHDRAWN
+
+`AGENTS.md` gained **§NO FITTING, EXCEPT CAL-1/2/3** on `main` in `af1368d43ed`,
+dated today, after the analysis above was written. It decides most of this bean,
+against what I recommended.
+
+Two of its clauses are directly on point:
+
+> **Selection against the target.** Choosing an *object* — a knot from a census,
+> a partition, a truncation order, **a branch** — because the choice reproduces
+> the measured value. No continuous parameter is tuned and it is still a fit.
+
+> **Accuracy is not evidence of correctness here, and a more accurate fitted
+> route is worth LESS than a less accurate derived one.**
+
+`z = 1` is precisely a **branch** of the Markov family, sitting outside the
+admissible set (`c(1) = q²(q−1)(q³−q²−1)/… ≠ 0`, so it does not annihilate the
+`(1³)` block the GNS/TL quotient kills), and its entire case is that it lands at
+0.17 %. Under the directive that case is not merely weak — it is the fit
+signature itself.
+
+**So Option A (keep the published number, disclose, reclassify as pre-D
+conditional) is withdrawn.** My argument for it was that the 0.17 % predates the
+convention-D ruling by ~3.5 months and so was not fitted *when written*. That
+does not survive the directive, which asks whether the number the paper
+**publishes today** comes from a derived route — not whether its author was
+fitting at the time. It does not.
+
+**What survives is the two derived options**, and the directive explicitly
+forbids choosing between them by accuracy:
+
+| functional | `β` | Q_β | vs CODATA `0.7823334` MeV |
+|---|---|---|---|
+| `z = 1` (published) | *not on the admissible line* | `0.7836458` | **+0.168 %** — **eliminated** |
+| `z = q`, the augmentation | `0` | `0.8798906` | **+12.470 %** |
+| `z_D = q³/(q²+1)`, the convention-D Markov trace | `q²/(q²+1)²` | `0.4447004` | **−43.157 %** |
+
+Choosing `z = q` over `z_D` *because* 12 % beats 43 % would be the same defect
+one level down. The choice has to come from what `ε` **means** in
+`Q_β = |ε(Δ)|·E₀`, and the corpus carries two functionals under that name — the
+augmentation (an algebra map, `σ ↦ q`) and the coordinate sum
+`net`/`epsNPq` — which is this bean's original question and is unchanged.
+
+**Agent reading, marked as judgement, not a finding:** if `ε` is the *Markov
+trace* in the canonical convention then the 2026-08-15 ruling names `z_D`, and
+the answer is **−43.157 %**; if `ε` is the *augmentation* the answer is
+**+12.470 %**. Nothing measured this session distinguishes them — the directive
+removes one option, it does not pick between the remaining two.
+
+**Not enacted.** Changing the published number touches ~8 content blocks and the
+`AGENTS.md` canonical-chain cheat-sheet line (`Q_β … ≈ 0.784 MeV (0.17 %)`), and
+which of the two derived values replaces it is the owner's call.

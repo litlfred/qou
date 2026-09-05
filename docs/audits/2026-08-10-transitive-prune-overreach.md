@@ -168,7 +168,7 @@ reachable again, and **785 remain unreachable across 335 blocks** —
 | 2 | `thm:generation-completeness` | yes |
 | 2 | `rem:epistemic-status-of-calibrations` |  |
 | 2 | `rem:feynman-qou-comparison` |  |
-| 2 | `prop:three-calibration-discipline` |  |
+| 2 | `def:three-calibration-discipline` |  |
 | 2 | `prop:magic-numbers-from-q` | yes |
 | 2 | `rem:townsend-biot-savart-strain` | yes |
 | 2 | `rem:hyperbolic-overlap-saturation` |  |
@@ -1365,7 +1365,7 @@ reachable again, and **785 remain unreachable across 335 blocks** —
 - `thm:wedderburn-mass-formula`
 - `def:algebraic-quantum-volume`
 
-### `prop:three-calibration-discipline`
+### `def:three-calibration-discipline`
 
 - `def:categorical-action`
 - `thm:jones-markov-trace`

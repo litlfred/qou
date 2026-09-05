@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-05T05:45:22Z
-updated_at: 2026-09-05T05:59:21Z
+updated_at: 2026-09-05T09:07:16Z
 ---
 
 Owner "merge then the |W|² table-wiring compute tranche" (2026-09-05). Follow-on to qou-egvf (closed form) and qou-4x7c (content correction).
@@ -27,3 +27,24 @@ Three findings, on branch `claude/weak-vertex-table-wiring-2026-09-05`.
 Plus: Table 4 of ex:hadron-half-life-verification (the '< 3 %' Skein-Coulomb table) has NO producer anywhere — zero hits on its six values. Recorded, not edited.
 
 STILL OPEN: what the correct coupling normalisation is (W/W(1)? W against the trefoil trace? a different object?) — a derivation question, deliberately not guessed.
+
+
+## 🛑 Superseded magnitude — the power was s⁴, not s² (2026-09-05, bean qou-xql6)
+
+Every `1.19e4` / `10⁴` / "four orders of magnitude" figure in this bean is high by
+`1/s² = 91.7694991484`. `substitutionRateFactor` was
+`(weakVertexTrace q)² / (sSq q)²`, and **`sSq` is already `s²`** — `sSq_eq` even
+says `q + q⁻¹ − 2` — so it computed `|W|²/s⁴`. The rate carries `s²` exactly once:
+`prf:trace-ratio-observable` gives `|ℳ_q|² = |skein_amp|²·|tr(par)/tr(dau)|²` with
+`skein_amp = q^{1/2} − q^{−1/2}`, *"the Skein amplitude at the beta-decay vertex"*,
+and nothing else in the rate carries an `s`.
+
+    |W|²/s⁴ = 11875.4418937      as recorded
+    |W|²/s² =   129.405107404    the rate's actual power
+
+**The verdict is unchanged.** At 129× the substituted half-lives land at 0.8–0.9 %
+of observed — ~110× too short, where a 10–17 % shortening was wanted. So this
+stays a scope-(a) negative; only "four orders of magnitude" is withdrawn, in
+favour of "two orders, ~129×".
+
+Producer `computations/markov/beta_rate_skein_power_audit.py` (9/9).

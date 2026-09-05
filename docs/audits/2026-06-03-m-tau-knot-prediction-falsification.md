@@ -149,7 +149,7 @@ honest outcome.
 
 - [`rem:calibration-inputs`](../../content/quantum-observable-universe/observations/calibration-inputs.md) — canonical 3-CAL remark
 - [`rem:epistemic-status-of-calibrations`](../../content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md) — unified epistemic accounting
-- [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md) — $H^0$/$H^1$/$H^2$ mapping
+- [`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md) — $H^0$/$H^1$/$H^2$ mapping
 - [`-cal-2-cohomological-vs-calibration-critique.md`](-cal-2-cohomological-vs-calibration-critique.md) §F5 — driver question
 - Compute script + witness:
   [`m_tau_knot_prediction.py`](../../computations/m_tau_knot_prediction.py),

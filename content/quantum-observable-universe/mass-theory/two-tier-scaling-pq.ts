@@ -7,7 +7,7 @@ export default remark({
   interprets: "rem:calibration-inputs",
   uses: [
     "prop:three-calibration-inputs",
-    "prop:three-calibration-discipline",
+    "def:three-calibration-discipline",
     "prop:markov-trace-axiomatic-closed-form",
     "rem:kashaev-volume-density",
   ],

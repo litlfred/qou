@@ -39,6 +39,36 @@ Execute the full `/prepare-merge` skill (rebase, integrate, one-voice,
 Lean build, final rebase, request reviews). All steps must succeed
 before proceeding.
 
+**🛑 If the branch touches any `.lean`, the Lean step is a SWEEP, not bare
+`lean`-direct.** `/prepare-merge` §4 carries the reasoning; the short version is
+that `lean`-direct against the restored olean cache verifies against a
+**snapshot**, so a library signature that moved afterwards leaves the file green
+and broken at once. That is not hypothetical — `descartesWtrace` recorded
+`exit 0` and landed on `main` red (#6751).
+
+```bash
+scripts/lean-content-sweep.sh <changed content-block .lean ...>   # or no args
+scripts/lean-library-sweep.py                                     # dirty closure
+```
+
+Both rebuild from source only the modules whose own olean predates their own
+last source commit, and never invoke `lake`, so the restored cache is not
+evicted. Library sweep is 122 s on a 74-module closure; the content sweep is
+~50 min for all 261, so pass the changed files when you have them and
+`SHADOW=<dir>` to reuse the shadow.
+
+**Record which one ran, in the PR, in these words** — this is the Phase-4
+verification gate's evidence and the distinction it turns on:
+
+- *"`lean-library-sweep.py`: N/N dirty modules rebuilt from source, exit 0"* —
+  source-verified.
+- *"`lean`-direct against the restored cache, exit 0"* — snapshot-conditional.
+  Say so, and say why the sweep was not run.
+
+A sweep result is **container-scoped** (the dirty closure is computed against
+this container's olean tree) and does **not** cover the UGB or Fred2005
+packages. Do not write either limit out of the PR. Bean `qou-56qy`.
+
 **Sidecar conflicts during the rebase.** Resolve `content/**/*.qa.json`
 to either side as usual for the **script** entries, then restore the
 other side's **agent** entries mechanically:
@@ -218,13 +248,21 @@ After all review comments are resolved (or the user has answered
 all escalated questions):
 
 1. Run `bun run scripts/run-validate.ts content/<paper>` one final time.
-2. Check CI status via `mcp__github__pull_request_read get_check_runs`.
-3. If all green: merge via `mcp__github__merge_pull_request` with
+2. **If the branch touches any `.lean`, the sweep from Phase 1 must have run on
+   the FINAL head, and its result must be in the PR.** A sweep on an earlier
+   commit is not evidence about what is being merged — the final rebase in
+   `/prepare-merge` §5 moves the branch onto a `main` whose library may have
+   shifted underneath it, which is the exact mechanism this gate exists for.
+   Re-run it after that rebase, not before.
+3. Check CI status via `mcp__github__pull_request_read get_check_runs`.
+   Expect `total_count: 0` — auto-triggers are disabled repo-wide, so this
+   returns nothing and is **not** a gate. Never read it as green.
+4. If all green: merge via `mcp__github__merge_pull_request` with
    `merge_method: "rebase"` (default per AGENTS.md §"Branch + PR
    workflow" rule 8 — replays the structured commits onto `main`
    linearly, no merge commit). Rule 8 is authoritative.
-4. **CRITICAL:** DO NOT DELETE THE BRANCH EVER! If using the GitHub CLI, DO NOT pass `--delete-branch`. If using the GitHub API, ensure the branch is preserved.
-5. Report the merge SHA + URL.
+5. **CRITICAL:** DO NOT DELETE THE BRANCH EVER! If using the GitHub CLI, DO NOT pass `--delete-branch`. If using the GitHub API, ensure the branch is preserved.
+6. Report the merge SHA + URL.
 
 ### Phase 5: Post-merge verification, then coordination
 

@@ -18,7 +18,9 @@ import QOU.QuantumObservableUniverse.CategoricalFoundations
 # QOU.CategoricalQExtDeriv
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/CategoricalQExtDeriv.lean (monolithic)
+Source: content/quantum-observable-universe/lean/QOU/CategoricalQExtDeriv.lean (monolithic).
+That file no longer exists — the library was split, and `CategoricalQExtDeriv` now lives at
+  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean
 
 **Ground ring**: `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over ℤ).
 Part of the formal proof chain. The parameter `q` is the canonical

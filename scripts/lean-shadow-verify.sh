@@ -47,15 +47,41 @@ set -uo pipefail
 
 ROOT=$(git rev-parse --show-toplevel)
 PKG="$ROOT/content/quantum-observable-universe/lean"
-OLEANS="$PKG/.lake/build/lib/lean"
 export PATH="$HOME/.elan/bin:$PATH"
 
+# A bare `lean` does NOT apply the lakefile's [leanOptions].  That is not
+# cosmetic: `autoImplicit` defaults TRUE in `lean` and is set FALSE in both
+# lakefiles, so bare lean-direct silently auto-binds unbound identifiers that
+# Lake rejects.  Measured 2026-09-05 on QOU/MassTheory/AtomWordShadow.lean,
+# same file and same LEAN_PATH: `lean` exit 0 / 0 errors,
+# `lean -DautoImplicit=false` exit 1 / 6 errors.  `-s 65536` mirrors the paper
+# lakefile's moreLeanArgs.  Bean `qou-56qy`.
+LEAN_OPTS="${LEAN_OPTS:--DautoImplicit=false -s 65536}"
+
 [ $# -ge 1 ] || { echo "usage: $0 <file.lean> [...]" >&2; exit 2; }
-[ -d "$OLEANS/QOU" ] || {
-  echo "no restored olean tree at $OLEANS/QOU — restore lake-cache first" >&2
-  echo "(AGENTS.md §'Agents building Lean in a sandbox')" >&2
+
+# WHERE THE QOU OLEANS ARE depends on how the tree was built, and the two
+# locations are not interchangeable.  A per-paper `cd $PKG && lake build` writes
+# under $PKG/.lake; the `lake-cache/qou-<slug>` restore documented in AGENTS.md
+# §"Agents building Lean in a sandbox" seeds the ROOT workspace at $ROOT/.lake.
+# Measured 2026-09-05 on a correctly-restored container: 2442 QOU oleans at the
+# root, 0 at the per-paper path.  Hardcoding the per-paper path therefore made
+# this script exit 2 on exactly the tree it exists to verify against.
+# $OLEANS may be set to override.
+if [ -z "${OLEANS:-}" ]; then
+  for cand in "$PKG/.lake/build/lib/lean" "$ROOT/.lake/build/lib/lean"; do
+    [ -d "$cand/QOU" ] && { OLEANS="$cand"; break; }
+  done
+fi
+[ -n "${OLEANS:-}" ] && [ -d "$OLEANS/QOU" ] || {
+  echo "no restored olean tree with a QOU/ dir — looked in:" >&2
+  echo "  $PKG/.lake/build/lib/lean" >&2
+  echo "  $ROOT/.lake/build/lib/lean" >&2
+  echo "restore lake-cache first (AGENTS.md §'Agents building Lean in a sandbox')," >&2
+  echo "or set OLEANS=<dir containing QOU/>" >&2
   exit 2
 }
+echo "olean tree: $OLEANS"
 
 KEEP=1
 if [ -z "${SHADOW:-}" ]; then
@@ -69,7 +95,12 @@ if [ ! -d "$SHADOW/QOU" ]; then
   cp -a "$OLEANS/QOU" "$SHADOW/QOU"
 fi
 
-LP="$SHADOW:$(ls -d "$ROOT"/.lake/packages/*/.lake/build/lib/lean | tr '\n' ':')$OLEANS"
+# Every paper package's build dir, not just qou's: a file may import across
+# packages (`content/.../lean/QOU.lean` imports `UGB`), and a missing entry
+# shows up as `unknown module prefix`, which reads exactly like a real error.
+SIBLINGS=$(ls -d "$ROOT"/content/*/lean/.lake/build/lib/lean 2>/dev/null |
+             grep -v "^$OLEANS\$" | tr '\n' ':')
+LP="$SHADOW:$(ls -d "$ROOT"/.lake/packages/*/.lake/build/lib/lean | tr '\n' ':')$SIBLINGS$OLEANS"
 
 ORDER=$(OLEANS="$OLEANS" ROOT="$ROOT" python3 - "$@" <<'PY'
 import os, re, pathlib, subprocess, sys
@@ -151,7 +182,7 @@ for m in $ORDER; do
   src="$PKG/${m//./\/}.lean"
   out="$SHADOW/${m//./\/}.olean"
   mkdir -p "$(dirname "$out")"
-  if ! (cd "$PKG" && LEAN_PATH="$LP" lean "${src#$PKG/}" -o "$out") > "$SHADOW/.rb.log" 2>&1; then
+  if ! (cd "$PKG" && LEAN_PATH="$LP" lean $LEAN_OPTS "${src#$PKG/}" -o "$out") > "$SHADOW/.rb.log" 2>&1; then
     echo "REBUILD FAILED [$i/$n] $m"
     grep -v '^note:' "$SHADOW/.rb.log" | head -30
     exit 1
@@ -159,10 +190,18 @@ for m in $ORDER; do
   printf '  [%d/%d] %s\n' "$i" "$n" "$m"
 done
 
+if [ -n "${REBUILD_ONLY:-}" ]; then
+  # Prepare the shadow and stop.  `scripts/lean-content-sweep.sh` uses this to
+  # build one shadow for the union cone of many targets, then runs `lean` on
+  # them in parallel itself.
+  echo "LEAN_PATH=$LP"
+  exit 0
+fi
+
 rc=0
 for f in "$@"; do
   echo "--- $f"
-  LEAN_PATH="$LP" lean "$f" 2>&1 | grep -v '^note:'
+  LEAN_PATH="$LP" lean $LEAN_OPTS "$f" 2>&1 | grep -v '^note:'
   s=${PIPESTATUS[0]}
   echo "EXIT=$s"
   [ "$s" -eq 0 ] || rc=1

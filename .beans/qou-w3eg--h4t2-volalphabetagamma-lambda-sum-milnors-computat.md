@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-04T13:27:37Z
+updated_at: 2026-09-05T09:03:40Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -525,3 +525,307 @@ So the two routes both require a real build:
 (b) Λ θ = Im cLiTwoExt(e^{iθ}): needs cLiTwo analyticity extended from ball(1/2,1/2) (all the corpus proves) to a nbhd of the upper unit circle (θ∈(0,π), e^{iθ}≠1, avoids the [1,∞) cut).
 
 Recommend (a) when a session with a live LSP picks this up: it closes step 1 AND is reusable. Steps 2 (base integral analytic in angles) and 3 (identity theorem) remain after.
+
+
+## 🛑 STEP 1 IS CLOSED — and my two prior measurements above were BOTH wrong (2026-09-05, session lean-qa-backlog)
+
+**The claim.** `Λ` is real-analytic on `(0, π)`, sorry-free, `[propext, Classical.choice, Quot.sound]`:
+- `QOU.Archimedean.analyticAt_Lob {t} (h0 : 0 < t) (hπ : t < π) : AnalyticAt ℝ Lob t`
+- `QOU.Archimedean.analyticOnNhd_Lob : AnalyticOnNhd ℝ Lob (Ioo 0 π)`
+
+New file `QOU/Archimedean/LobAnalytic.lean`; lean-direct exit 0 against the real import cone.
+
+**The evidence, and what I got wrong.** The note directly above recommended route (a) — build the ~100-line antiderivative-of-analytic Mathlib filler — because it measured route (b) as "needs cLiTwo analyticity extended from `ball(1/2,1/2)` to a nbhd of the upper unit circle". **That measurement was scoped to the wrong file.** `ComplexDilogBridge.lean` is indeed only local, but the corpus already carries the global statement in a *different* file:
+
+- `QOU.MathlibExt.analyticOnNhd_cLiTwoExt` (`QOU/MathlibExt/ComplexDilogarithmDeriv.lean:248`) — analytic on **all** of `notCut = ℂ ∖ [1,∞)`, proved holomorphic⇒analytic via `DifferentiableOn.analyticOnNhd` + `isOpen_notCut`.
+- `QOU.Knot.Kummer.exp_mem_notCut` (`KummerDilogHalf.lean:121`) — the punctured unit circle is inside `notCut`.
+- `QOU.Knot.Kummer.im_cLiTwoExt_exp` (`:188`) — `Im cLiTwoExt(e^{iθ}) = Cl₂(θ)` on `(0,2π)`.
+
+So route (b) is a **composition**, ~45 lines, not an extension build: on `(0,π)`, `Λ t = Cl₂(2t)/2 = Im cLiTwoExt(e^{2it})/2`, and the RHS is `Im ∘ cLiTwoExt ∘ exp ∘ (ℝ-linear)`, transported by `AnalyticAt.congr`. Route (a) was never needed.
+
+**Both earlier notes in this bean are superseded**, in opposite ways: the first ("step 1 genuinely multi-session") undercounted what the corpus held; the second ("confirmed Mathlib-gap keystone") repeated that undercount after a grep that searched Mathlib and `ComplexDilogBridge` but not `MathlibExt/ComplexDilogarithmDeriv`. The generalisable lesson is the corpus-grep one: **a clean grep of the file you expect the result in is not evidence the corpus lacks it.**
+
+**Implications.**
+- Step 1 is off the critical path. `LobachevskyDerivativeAnalytic.lean` (step 1a, PR #6621) is still a correct standalone `Λ'` statement but is no longer needed for the obtuse route; its header said "step 1 is not closed here … Mathlib has no antiderivative lemma", which is now misleading, and is corrected in the same PR.
+- The antiderivative-of-analytic Mathlib filler is **not** built and is no longer recommended as this bean's keystone. It would still be reusable infra if some other item wants it — but nothing here does.
+- The obtuse ideal-tetrahedron volume identity is **NOT** proved. Nothing about the volume is asserted.
+
+**Still open — the real remaining core:**
+- **Step 2** — the base integral real-analytic in the angles `(α, β)`. Differentiation under the integral sign; this is now the genuine multi-session item.
+- **Step 3** — glue acute → whole open simplex with Mathlib's identity theorem (`AnalyticOnNhd.eqOn_of_preconnected_of_eventuallyEq` family). Cheap *given* steps 1+2, but needs the preconnectedness of the open simplex.
+
+**Infra note (durable, cost me ~40 min).** `.lake/build/lib/lean/QOU/MathlibExt/ComplexDilogarithmSlit.olean` in the restored cache was **truncated** (192,512 B; correct is 279,688 B). Symptom: `lean` on anything importing it exits **139 (segfault) with zero output** — not a type error, no diagnostics, and it poisons the whole downstream cone (Kummer, dilog-deriv). Fix: recompile that one olean directly; the entire chain then imports clean.
+
+
+## 🛑 STEP 2 AS THIS BEAN STATES IT IS MIS-SCOPED — and step 3 is nearly free (2026-09-05, session lean-qa-backlog)
+
+Corpus-grep over all six paths (path 0 `corpus_search` was DOWN — `paper-assistant` MCP `ENOENT` — so every absence below is grep-scoped only, not graph-scoped).
+
+### The finding: the technique named in step 2 does not apply to the object named in step 2
+
+This bean says step 2 is *"the base integral real-analytic in the angles `(α,β)`"*, to be done by differentiation under the integral sign. Measured against the corpus's own formulation, that does not fit:
+
+`QOU/Archimedean/HyperbolicVolumeFubini.lean:275`, `hypVolume_chimney_of_ae_lt`:
+
+```lean
+hypVolume (chimney T R)
+  = ∫⁻ w in T, ENNReal.ofReal (1 / (2 * (R^2 - w.1^2 - w.2^2)))
+```
+
+**The angles enter ONLY through the domain `T = inscribedTriangle R t α β γ`. The integrand is parameter-free, and the value is `ℝ≥0∞`.** Consequences:
+
+- Mathlib's entire parametric-integral family — 7 lemmas in `Analysis/Calculus/ParametricIntegral.lean` plus 4 `intervalIntegral` wrappers — **requires the parameter in the integrand over a fixed measure space.** There is no Mathlib lemma for regularity of `p ↦ μ(T p)`. The nearest shelf is the Jacobian change-of-variables family (`Jacobian.lean:1097`), which is the *technique for moving the parameter into the integrand*, not the result.
+- **There is no statable target.** `grep "hypVolume.*toReal|toReal.*hypVolume"` over the whole non-`.lake` corpus returns **zero**. `AnalyticAt ℝ` of an `ℝ≥0∞`-valued function is not a statement. Before step 2 can be *stated*, someone must define `V(α,β) := (hypVolume …).toReal` and prove finiteness across the whole simplex — and the only finiteness input in the tree, `Lob_nonneg_of_lt_pi_div_two` (`OrthoschemeWedgePair.lean:204`), is itself acute-only.
+- The corpus's one genuinely *parametric* integral, `integral_orthoscheme` (`OrthoschemeBaseIntegral.lean:260`), has `ψ` in both the limit and the integrand — the right shape — but is `ψ < π/2`-only and **cannot** be the continuation carrier: for `ψ > π/2`, `cos²φ − cos²ψ` changes sign inside the range and the `log` is undefined. The one usable parametric integral is exactly the piece that dies at the obtuse boundary.
+
+### The technique is NOT a Mathlib gap — do not re-measure it as one
+
+The corpus already runs the complete route end to end, sorry-free, in `QOU/MathlibExt/` (bean `qou-clx8`, completed): `hasDerivAt_cLiTwoExt` (`ComplexDilogarithmDeriv.lean:149`, via `intervalIntegral.hasDerivAt_integral_of_dominated_loc_of_deriv_le`) → `differentiableOn_cLiTwoExt` (`:240`) → `analyticOnNhd_cLiTwoExt` (`:248`) → identity theorem (`ComplexDilogarithmUnique.lean:85` `starConvex_zero_notCut` → `:108` `isPreconnected_notCut` → `:124/:151`). Mathlib carries an independent worked template of the identical four-step pattern in `Probability/Moments/ComplexMGF.lean:165,173,180,277`. **The gap is the object's shape, not the machinery.**
+
+### LANDED: the RHS half of steps 2+3 is now closed
+
+`QOU/Archimedean/TetVolAnalytic.lean` (new), lean-direct exit 0, all four `[propext, Classical.choice, Quot.sound]`, no sorry:
+
+- `isOpen_tetSimplex` — was genuinely absent (zero hits under any spelling)
+- `isPreconnected_tetSimplex` — one line from the already-proved `convex_tetSimplex`
+- `analyticAt_tetVol` / `analyticOnNhd_tetVol` — `analyticOnNhd_Lob` composed onto `tetVol (α,β) = Λ(α)+Λ(β)+Λ(π−α−β)`
+
+This gives `analyticAt_Lob` its first consumers. **It is the identity's RHS only** — `tetVol` is *defined* as the Λ-sum (`volChart`'s own docstring: "A definition, not the geometric volume"). The LHS stays open.
+
+**Duplicate definitions, unresolved:** `tetVol`/`tetSimplex` (`IdealTetrahedronVolumeConcave.lean:75,80`, namespace `QOU.Archimedean`) and `volChart`/`angleSimplex` (`IdealTetrahedronVolumeConcavity.lean:69,76`, namespace `…IdealTetrahedronConcavity`) are **syntactically identical bodies**. I proved for the former. Someone should pick a canonical one; I did not, to keep this change minimal.
+
+### 🛑 A FOURTH acuteness gate this bean's plan does not mention at all
+
+`idealTet_eq_chimney` (`IdealTetEqChimney.lean:169`) — the geometric identification `idealTetrahedron P₁ P₂ P₃ = chimney (inscribedTriangle 1 t α β γ) 1` — carries `hα : α < π/2`, `hβ`, `hγ` at `:171`, and its three face lemmas at `:50,78,130` do the same. Mirrored in `MostowIdealTetVolume.region_eq_chimney`, stated only for acute triples. Also `inscribedTriangle_vertex_incidence` (`OrthoschemeTiling.lean:475`), the anchor pinning the half-plane-intersection *definition* to the triangle with those three vertices, is acute-hypothesised.
+
+**So steps 1+2+3 complete would give "the base integral over `inscribedTriangle` equals the Λ-sum on the whole simplex" and still NOT "the obtuse ideal tetrahedron's volume is the Λ-sum".** The region-equals-chimney bridge is a **set equality**, which analytic continuation cannot touch. That is a second continuation problem the three-step plan does not account for.
+
+### 🛑 RE-SCOPING THE SIGNED-SUBDIVISION FORECLOSURE (line ~482)
+
+This bean states *"The signed-subdivision route is NOT needed and should not be attempted"*. Under the AGENTS.md (a)/(b) rule that is **scope-(b) language with only scope-(a) support**: its whole basis is that Milnor offers analytic continuation as an alternative, which is a fact about Milnor's paper, not a proved invariant about this formalization. **Re-scoped to (a):** *the signed-subdivision argument is not the only available route, and the analytic route avoids its sign convention.* No invariant forbids it.
+
+Measured, the signed route now looks **cheaper**, not dearer: `lob_sum_eq_reflected` (`IdealTetObtuseReduction.lean:82`, sorry-free, PR #6045) already gives the Λ-side signed form with all arguments in `(0,π/2]`; the geometric side needs one further a.e. set identity of exactly the kind `milnorWedges_ae_eq_inscribedTriangle` (`OrthoschemeTiling.lean:402`) already is, reusing `chordHalfplane`, `wedgeAt`, `rotL`, `perp_sign_relation` and the `Measure.addHaar_submodule` null-line trick — all in the tree. Whereas the analytic route needs an object (real-analyticity of a domain-parametrised 2-D `lintegral`) that exists nowhere in Mathlib or the corpus, **and** still leaves gate 4 standing.
+
+Note also that `IdealTetObtuseReduction.lean`'s header is stale — it still names "signed geometry" as the remaining step, written before this bean's analytic-continuation recommendation.
+
+### What Milnor actually says (library path 5)
+
+Milnor 1982 is held (`library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-004-18-john-milnor.md`, pp. 10–12; second copy correctly `duplicate_of`-marked). The obtuse handling is **one parenthesis**, verbatim: *"(The case of an obtuse angle can be handled by a similar argument, or by analytic continuation.)"* He does not say in what variable he continues, over what domain, or what the LHS is as an analytic function. **This bean's three-step route is a reconstruction of that parenthesis, not something Milnor states** — and step 2 is where the reconstruction meets the corpus's formulation and does not fit.
+
+**Thurston Ch. 7 is NOT held** — the held copy is Chapters 1–2 (22 sections); `Chapter 7. Computation of volume` appears only as a table-of-contents line in `sec-000-introduction.md:81-82`. Ratcliffe is in neither `library/` nor `uploads/`.
+
+**Two held sources nobody on this arc has read**, both on point: `library/arxiv-1010.5321v3/` (Horváth, *Formulas on hyperbolic volume* — has a Lobachevsky-function section with the same reflection toolkit) and **`library/arxiv-math-0502543v2/` (Rivin, *Continuity of volumes*)**, which proves regularity of hyperbolic polytope volume as a function of the dihedral angles **via the Schläfli differential formula** — a third route to the LHS that this bean does not consider, from a paper the corpus already cites Rivin for elsewhere (`QOU/Knot/RivinConcavity.lean`).
+
+### Recommended next step (my judgement, not a finding)
+
+Do **not** open a session on step 2 as written. Instead **cost the three LHS carriers first** (half a session, versus a multi-session build against an ill-fitting technique):
+
+1. **Change of variables** mapping a fixed reference triangle onto `inscribedTriangle α β γ` (`Jacobian.lean:1097`) — converts domain-dependence into integrand-dependence, after which the `ComplexDilogarithmDeriv` template applies verbatim.
+2. **A polar form of the full triangle valid for obtuse** — `milnor_subdivision_obtuse_scope_probe.py` already does exactly this numerically with ray-clipping (obtuse agreement ~1e-17, *better* than the acute ~2e-15), and the corpus has the polar machinery for the orthoscheme (`mem_orthoBase_polar`, `integral_radial`, `OrthoschemePolarReduction.lean:79,139`). Caveat: that probe implements its own ray-clipped triangle, not the Lean `inscribedTriangle`, so it is evidence the *identity* is true, not that the Lean *definition* is the right triangle when obtuse.
+3. **Rivin's Schläfli route** from the held `arxiv-math-0502543v2`.
+
+And put the signed route back on the table alongside them, per the re-scoping above.
+
+
+## The polar route and the signed-subdivision route are the SAME route (2026-09-05, probe 21/21)
+
+The note above lists candidate LHS carriers (1) change of variables, (2) "a polar form of the full triangle valid for obtuse", (3) Rivin/Schläfli — and separately re-scopes the signed-subdivision foreclosure. **(2) and the signed route are one route.** Measured, not argued: [`computations/milnor_polar_signed_equivalence_probe.py`](computations/milnor_polar_signed_equivalence_probe.py), 21/21, mpmath 50 dps, no float64, no witness, anchor-free.
+
+**1. `integral_orthoscheme` IS the polar radial reduction of the base integral — it is not an independent construction.** Integrating the corpus base integrand `1/(2(R²−x²−y²))` radially out to `chordHalfplane R θ ψ`, whose boundary is `r(φ) = R·cos ψ / cos(φ−θ)`, gives in closed form
+
+    −(1/4)·log((cos²φ − cos²ψ)/cos²φ)
+
+which is **exactly** `integral_orthoscheme`'s integrand (`OrthoschemeBaseIntegral.lean:260`). Agreement with numeric quadrature of the Cartesian integrand: ~1e-52 across 12 `(ψ,φ)` samples. And `∫₀^ψ` of it reproduces `Lob ψ / 2` with difference **exactly 0.0** at ψ = π/6, π/4, π/3, 5π/12, 11π/24.
+
+**2. `ψ < π/2` is the chord-offset sign condition, nothing more.** `r(φ) > 0` iff the offset `R·cos ψ > 0` iff `ψ < π/2`. At π/2 the offset is zero — the chord passes through the circumcentre. Past it the offset is negative: the circumcentre is on the **far** side and the radial ray never reaches the chord in the positive direction.
+
+**So `integral_orthoscheme`'s `hψ : ψ < π/2` is not a technical convenience and not wedge-disjointness** (which is what the acute hypothesis is usually attributed to elsewhere in this arc). It is "the circumcentre lies on the inner side of this chord" — the same geometric fact as "the circumcentre leaves the triangle when an angle is obtuse", which is precisely what forces one piece of Milnor's subdivision to enter with a minus sign.
+
+**Consequence.** The polar route cannot be pushed past π/2 without reintroducing exactly the sign the signed route makes explicit. Milnor's minus sign and the polar route's `cos ψ < 0` are one phenomenon in two vocabularies. Effort on either is effort on both — which removes (2) as a *distinct* option and further strengthens the (b)→(a) re-scoping above: the signed route is not a route the analytic one lets you avoid.
+
+Scope-(a) structural observation. **Asserts nothing about the obtuse volume identity**, which remains open.
+
+**Live options are therefore two, not four:** (A) the signed/polar route, whose Λ-side is already proved (`lob_sum_eq_reflected`, all arguments in `(0,π/2]`) and whose geometric side needs one a.e. set identity of the `milnorWedges_ae_eq_inscribedTriangle` kind; (B) change of variables moving the angle dependence into the integrand (Mathlib `Jacobian.lean:1097`), after which the `ComplexDilogarithmDeriv` template applies — but note the integrand is singular at the circle (vertices lie on it), so the dominating function needed for the dominated-convergence step must control that boundary, and corpus finiteness input is acute-only. Rivin/Schläfli (`library/arxiv-math-0502543v2`) remains unread and uncosted.
+
+**Neither closes the case**: `idealTet_eq_chimney`'s `α,β,γ < π/2` is a set equality outside both.
+
+
+## The obtuse decomposition target is FIXED — and the obvious approach is dead (2026-09-05)
+
+Option (A)'s remaining step was "one a.e. set identity of the `milnorWedges_ae_eq_inscribedTriangle` kind". [`computations/milnor_obtuse_wedge_decomposition_probe.py`](computations/milnor_obtuse_wedge_decomposition_probe.py) fixes *which* identity, and kills the obvious guess first. mpmath 40 dps, no float64, no witness, anchor-free.
+
+### 🛑 `wedgeAt` at an obtuse half-angle is NOT "the wedge with a minus sign"
+
+Its body (`OrthoschemeRotation.lean:153`) is `{w | ⟨w,u⟩ < R cos p ∧ |⟨w,v⟩| < ⟨w,u⟩·tan p}`. For `p > π/2`, `tan p < 0`, so the second conjunct **forces `⟨w,u⟩ < 0`**, and the first is then unbounded below. Measured: members at `|w| = 2, 10, 100, 1000` for `p = 7π/12, 2π/3, 3π/4`, and the near-side point at `|w| = 0.1` correctly excluded.
+
+So the obtuse `wedgeAt` is an **unbounded region opening away from the circumcentre**, not the isoceles triangle its docstring describes. Substituting an obtuse angle into the existing definition gives a *different, infinite set*. **The acute hypotheses throughout the wedge machinery are structural, not technical** — worth knowing before writing Lean rather than after.
+
+### The decomposition that does hold
+
+With `γ` obtuse the circumcentre lies outside, across the `γ`-chord. The replacement for the degenerate `γ`-wedge is the wedge in the **opposite direction** with the **acute** half-angle `π − γ = α + β`, and it is **subtracted**:
+
+    inscribedTriangle R t α β γ
+      =ᵐ  ( wedgeAt R (t+2γ+α) α  ∪  wedgeAt R (t+2γ+2α+β) β )
+            \  wedgeAt R (t+γ+π) (π−γ)
+
+**Zero mismatches over ~117,000 tested grid points** — 121×121 grids over `[−1.2,1.2]²`, 4 obtuse triples (`γ` = 120°, 120°, 135°, 129°) at 2 rotations, excluding points within 1e-12 of any defining line (the identity is a.e. only).
+
+### Why this makes option (A) bounded
+
+Every half-angle on the right — `α`, `β`, `π−γ` — is **acute** when `γ` is obtuse. That is the *set-level* analogue of `lob_sum_eq_reflected` (`IdealTetObtuseReduction.lean:82`), which already records exactly this on the Λ side and is already proved. So:
+
+- the existing acute wedge machinery (`hypVolume_chimney_wedgeAt`, which needs `ψ < π/2`) applies to **all three pieces unchanged**;
+- **the minus sign lives in the set algebra**, not in any new integral;
+- no new analytic object is required — which is the contrast with option (B), whose dominating function must still tame the boundary singularity at the circle.
+
+### Remaining work for option (A), now concretely stated
+
+1. The a.e. set identity above, in Lean. Reuses `chordHalfplane`, `wedgeAt`, `rotL`, and the `Measure.addHaar_submodule` null-line trick already used by `milnorWedges_ae_eq_inscribedTriangle`.
+2. A measure-subtraction step: `volume (X \ Y) = volume X − volume Y` needs `Y ⊆ X` and `volume Y ≠ ⊤`, so the containment `wedgeAt R (t+γ+π) (π−γ) ⊆ W_α ∪ W_β` has to be proved too (the probe confirms it pointwise but does not prove it).
+3. Composition with the acute `hypVolume_chimney_wedgeAt` and `lob_sum_eq_reflected` to land `Λ(α)+Λ(β)+Λ(γ)`.
+
+**Still does not close the case:** `idealTet_eq_chimney`'s `α,β,γ < π/2` (`IdealTetEqChimney.lean:169`) is a set equality outside all of this, and remains untouched.
+
+
+## Milnor's minus sign is already inside the corpus's algebra — `perp_sign_relation` needs no acuteness (2026-09-05)
+
+Landed in `ObtuseWedgeDegenerate.lean` (sorry-free, lean-direct exit 0, `[propext, Classical.choice, Quot.sound]`): `sin_two_mul_neg_of_obtuse`, `acute_of_obtuse_third`, `perp_coeff_signs_of_obtuse`.
+
+**The finding is about a theorem already on `main`.** `perp_sign_relation` (`OrthoschemeTiling.lean`) carries the single linear relation among the three edge functionals, with coefficients `sin 2α, sin 2β, sin 2γ`. **Verified by reading its signature — its only hypothesis is `hsum : α + β + γ = π`. No acuteness.** So the relation holds *verbatim* in the obtuse case.
+
+What acuteness buys is only the **positivity** of those coefficients, and the theorem's own docstring says so: *"all POSITIVE for acute angles. That positivity is the whole covering argument."*
+
+So **the obtuse case does not need a new relation** — it needs the existing one run against a different sign pattern, now pinned down: exactly one coefficient turns negative, and it is `sin 2γ`. That lone minus is Milnor's.
+
+### The same boundary, three times, always as a sign
+
+This arc has now hit `π/2` in three structurally independent places, and each time it is a **sign flip**, not a difficulty:
+
+| where | what flips at `π/2` |
+|---|---|
+| `integral_orthoscheme`'s `hψ : ψ < π/2` | the chord offset `R cos ψ` changes sign — circumcentre crosses the chord |
+| `wedgeAt` at obtuse `ψ` | `tan ψ < 0`, so the wedge moves to the far side of the apex |
+| `perp_sign_relation`'s third coefficient | `sin 2γ < 0` |
+
+They are one phenomenon in three vocabularies. That is why the signed route keeps measuring cheaper: the corpus's machinery is *already* sign-aware; only its *hypotheses* are acute.
+
+### Measure-subtraction hypotheses confirmed, and claim 2 shown non-vacuous
+
+Claim 3 of [`milnor_obtuse_wedge_decomposition_probe.py`](computations/milnor_obtuse_wedge_decomposition_probe.py), over 19,881-point grids × 4 obtuse triples × 2 rotations:
+
+- `W_α ∩ W_β = ∅` — overlap 0 everywhere
+- `W_sub ⊆ W_α ∪ W_β` — 0 points outside everywhere
+- **`W_sub` NONEMPTY** — 923–1088 points, comparable to `|W_α|`, `|W_β|`
+
+The last one is the check that mattered and I had not run it: claim 2 asserts `T = (W_α ∪ W_β) \ W_sub`, which would pass **vacuously** if `W_sub` were empty, meaning something entirely different (no subtraction, no minus sign). It is not empty.
+
+**A grid artifact recorded so it is not misread as a failure.** At `t = 0` the defining lines are axis-aligned and a symmetric grid lands many points exactly on them; every membership test is a strict `<`, so `|W_α ∪ W_β| − |W_sub|` overshoots `|T|` by ~40. At `t = π/5` essentially nothing is on a line and the counts agree **exactly** (945/945, 690/690, 452/452, 514/514). Only the off-line reading is meaningful — the identity is a.e.
+
+### Remaining for option (A)
+
+1. The a.e. set identity in Lean — model on `milnorWedges_ae_eq_inscribedTriangle` (two containments + `Measure.addHaar_submodule` via `volume_perpLine`). The covering half can now reuse `perp_sign_relation` unchanged with the `+ + −` pattern.
+2. `W_sub ⊆ W_α ∪ W_β` and `Disjoint W_α W_β` as Lean lemmas (both measured; `disjoint_wedgeAt_adjacent` needs acute half-angles, and here all of `α`, `β`, `π−γ` are acute, so it should apply directly).
+3. Compose with `hypVolume_chimney_wedgeAt` and `lob_sum_eq_reflected`.
+
+**Unchanged:** `idealTet_eq_chimney`'s `α,β,γ < π/2` is a set equality outside all of this and still blocks the volume claim.
+
+
+## 🛑 CORRECTION — the containment is A.E., not strict (2026-09-05)
+
+Two entries above I wrote *"`W_sub ⊆ W_α ∪ W_β` — 0 points outside everywhere"* as though it were a strict set containment. **It is not, and the probe structurally could not have told me.**
+
+`W_α` and `W_β` meet along the ray `φ = t + 2γ + 2α` — `W_α`'s upper edge *is* `W_β`'s lower edge, which is precisely the adjacency condition `θ₁+ψ₁ = θ₂−ψ₂` that makes `disjoint_wedgeAt_obtuse_pair` go through. Both wedges are **open**, so a point on that ray is in **neither**. Points of `W_sub` lie on it. So `W_sub \ (W_α ∪ W_β)` is nonempty but **null**, and the Lean obligation is
+
+    W_sub \ (W_α ∪ W_β)  ⊆  {w | perp_{t+2γ+2α}(w) = 0}
+
+discharged by `volume_perpLine` — the same shape `milnorWedges_ae_eq_inscribedTriangle` already uses — **not** a strict containment.
+
+**Why the probe missed it, which is the part worth keeping.** The exceptional set is a measure-zero ray, so a rectangular grid misses it except by coincidence. And the coincidence is **undecidable numerically**: on the ray the wedge residual `|⟨w,v⟩| − ⟨w,u⟩·tan ψ` is *exactly* zero in exact arithmetic, so at any working precision it is noise at the precision floor — measured **~1e-62 at 60 dps**, with `W_α`'s coming out negative and `W_β`'s positive purely by rounding. Treating that sign as membership is the NO-FLOAT64 error one level up: agreement at the floor of the arithmetic is not evidence about the mathematics.
+
+**What settled it was the proof, not a measurement** — `disjoint_wedgeAt_obtuse_pair` says the two wedges are disjoint, so no point is in both; on the ray both residuals vanish, so the point is in neither. A proved lemma outranking a probe, in the direction that costs me a claim.
+
+The probe now carries `check_shared_ray()` demonstrating this; claim 3's wording is corrected; the header documents claims 3 and 4 (it previously described only 1 and 2).
+
+### Landed alongside
+
+`disjoint_wedgeAt_obtuse_pair` (sorry-free) — the first cash-out of the `π−γ` reformulation. `disjoint_wedgeAt_adjacent` demands `0 < ψᵢ < π/2` of **both** wedges, which is why it was unavailable to the obtuse case as originally framed; recast with the acute `α`, `β` it applies **verbatim**, adjacency closing by `ring`.
+
+### Remaining for option (A), restated with the correction
+
+1. The a.e. set identity. Covering half can reuse `perp_sign_relation` unchanged with the `+ + −` pattern.
+2. The **null-set** obligation above (not a containment), via `volume_perpLine`.
+3. Compose with `hypVolume_chimney_wedgeAt` and `lob_sum_eq_reflected`.
+
+**Known unresolved sub-obligation**, found while drafting (2): the chord condition for `W_α` does **not** follow from `wedgeAt_lt_chord_next`/`_prev` applied to `W_sub` — the required `ψ'` comes out negative under both. The needed fact is `⟨w, u_{θ_s − β}⟩ < R cos α` for `w ∈ wedgeAt R θ_s (α+β)`, which is true (the max over the closed wedge is attained at a vertex, giving exactly `R cos α`) but has no existing helper. That is the real remaining work in step A1.
+
+
+## The chord gap named above is CLOSED — `wedgeAt_lt_chord_shift` (2026-09-05)
+
+Two sorry-free declarations, lean-direct exit 0, `[propext, Classical.choice, Quot.sound]`:
+
+- `wedgeAt_lt_chord_shift` — for `w ∈ wedgeAt R θ ψ` and `0 ≤ δ ≤ ψ`: `⟨w, u_{θ−δ}⟩ < R cos(ψ−δ)`
+- `wedgeAt_sub_lt_chord_alpha` — the instance the obtuse case needs
+
+This is exactly the obligation the previous entry recorded as the real remaining work. `wedgeAt_lt_chord_next`/`_prev` place a wedge under its **neighbours'** chords (directions `θ ± ψ ± ψ'`); the obtuse case needs the chord of a **sub-angle of the wedge's own**, at `θ − δ`, and solving `θ − ψ − ψ' = θ − δ` forces `ψ' = δ − ψ ≤ 0` while both existing lemmas require `0 < ψ'`.
+
+**The certificate is the same shape as theirs and simpler.** With `S = ⟨w,u_θ⟩`, `P = ⟨w,v_{θ−ψ}⟩`:
+
+    cos ψ · (R cos(ψ−δ) − ⟨w,u_{θ−δ}⟩) = cos(ψ−δ)·(R cos ψ − S) + P·sin δ
+
+Both right summands non-negative (first strictly): the wedge's own chord bound, and `wedgeAt_lower` times a non-negative sine. **Predicted from the derivation and confirmed by the proof — it closes by `ring`**, no Pythagorean rewrite, which `wedgeAt_lt_chord_next`/`_prev` both need.
+
+The corollary discharges non-vacuity rather than leaving it implicit: `W_sub` has half-angle `π−γ = α+β`, and `t+2γ+α = (t+γ+π)−β`, so it is the shift at `δ = β` with bound `R cos α` — exactly `W_α`'s chord. Both hypotheses free (`α+β < π/2` from `γ` obtuse; `0 ≤ β ≤ α+β` from `α > 0`).
+
+### Step A1 inventory — what is now in hand vs still open
+
+| input | status |
+|---|---|
+| covering relation `perp_sign_relation` | **in hand** — already acuteness-free on `main`; obtuse `+ + −` pattern proved |
+| disjointness of the surviving pair | **in hand** — `disjoint_wedgeAt_obtuse_pair` |
+| chord bound for `W_α` | **in hand** — `wedgeAt_sub_lt_chord_alpha` |
+| chord bound for `W_β` | *not yet stated* — the mirror instance (`δ = α` on the other side); expected to be the same lemma with signs mirrored, but **untested** |
+| the a.e. set identity itself | **open** |
+| the null-set obligation via `volume_perpLine` | **open** |
+| composition with `hypVolume_chimney_wedgeAt` + `lob_sum_eq_reflected` | **open** |
+
+Nothing here asserts anything about a volume. `idealTet_eq_chimney`'s acuteness remains a set equality outside the whole argument.
+
+
+## Step A1's covering half is COMPLETE; the identity needs a SECOND null set (2026-09-05)
+
+### Landed
+
+`wedgeAt_lt_chord_shift'` + `wedgeAt_sub_lt_chord_beta` (sorry-free, no linter warnings). The previous entry listed the `W_β` mirror as "expected symmetric but untested". **Derived, not rewritten** — and the reason is worth keeping: the two shifts consume *different* edge bounds, so neither follows from the other. `wedgeAt_lt_chord_shift` uses `wedgeAt_lower`; the mirror uses `wedgeAt_upper`:
+
+    cos ψ · (R cos(ψ−δ) − ⟨w,u_{θ+δ}⟩) = cos(ψ−δ)·(R cos ψ − S) + (−⟨w,v_{θ+ψ}⟩)·sin δ
+
+The symmetry is a symmetry of the **statements**, not a derivation between them.
+
+So the covering half's inputs are all in hand: `perp_sign_relation` (acuteness-free), `disjoint_wedgeAt_obtuse_pair`, and both chord bounds.
+
+### 🛑 The identity is harder than the inventory suggested — a SECOND exceptional set
+
+Working out the `RHS ⊆ T` direction before building it (rather than after):
+
+Take `w ∈ W_α` with `w ∉ W_sub`. Two of the three triangle chords are free — `W_α`'s own is `hw.1`, and `W_β`'s comes from `wedgeAt_lt_chord_next` at `ψ' = β`. **The `γ`-chord is not**, and cannot be: `γ` is obtuse so `R cos γ < 0`, while every existing chord helper requires `ψ' < π/2`.
+
+Worse, `W_α ⊄ chordHalfplane R (t+γ) γ`. A point of `W_α` near the origin has `⟨w,u_{t+γ}⟩ ≈ 0`, which is **not** `< R cos γ < 0`. Such points are in `W_α` but not in `T` — and they are exactly what the subtraction removes, since `W_sub` is the near-origin wedge. Consistent, but it means the `γ`-chord must be extracted *from* `w ∉ W_sub`, not proved independently.
+
+That works, via a two-step route:
+
+1. **Cone containment.** `W_α`'s angular sector `[t+2γ, t+2γ+2α]` sits inside `W_sub`'s `[t+2γ, t+2π]` (the gap is `2β ≥ 0`). So for `w ∈ W_α`, `w ∈ W_sub` **iff** `W_sub`'s chord condition holds.
+2. `W_sub`'s chord condition is `⟨w,u_{t+γ+π}⟩ < R cos(π−γ)`, i.e. **exactly** `⟨w,u_{t+γ}⟩ > R cos γ` — the strict complement of the triangle's `γ`-chord. So `w ∉ W_sub` gives `⟨w,u_{t+γ}⟩ ≤ R cos γ`.
+
+**`≤`, not `<`.** The equality case is the `γ`-chord line itself, which is null — so the identity carries a **second** exceptional set beyond the shared ray already recorded: the line `⟨w,u_{t+γ}⟩ = R cos γ`. Both are null, and this matches the acute proof's shape (it spends three `volume_perpLine` null sets), but the earlier inventory listed only one.
+
+**Open sub-step, not yet proved:** the cone containment in (1). Wedge-cone membership is `perp_{θ−ψ} > 0 ∧ perp_{θ+ψ} < 0`; for `w ∈ W_α` the first is immediate (`W_α`'s lower edge *is* `t+2γ`, `W_sub`'s lower edge), but the second needs `perp_t < 0` while `wedgeAt_upper` on `W_α` only supplies `perp_{t+2γ+2α} = perp_{t−2β} < 0`. Those differ by `2β`. There is no corpus lemma for cone-containment of coapical wedges; that is the next concrete thing to build.
+
+### Revised remaining work for A1
+
+| item | status |
+|---|---|
+| both chord bounds, disjointness, covering relation | **done** |
+| coapical cone containment `W_α`, `W_β` ⊆ cone(`W_sub`) | **open** — no corpus precedent, needs the `perp_t < 0` step |
+| `γ`-chord from `w ∉ W_sub` (gives `≤`) | reduces to the above |
+| the a.e. identity, over **two** null sets (shared ray + `γ`-chord line) | open |
+| composition with `hypVolume_chimney_wedgeAt` + `lob_sum_eq_reflected` | open |

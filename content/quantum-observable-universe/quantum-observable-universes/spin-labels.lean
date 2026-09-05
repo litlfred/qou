@@ -19,7 +19,9 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 # QOU.SpinLabels
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/SpinLabels.lean (monolithic)
+Source: content/quantum-observable-universe/lean/QOU/SpinLabels.lean (monolithic).
+That file no longer exists — the library was split, and `SpinLabels` now lives at
+  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Structures.lean
 -/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory

@@ -81,7 +81,7 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
   discipline was implicit; making it explicit lets every audit
   flag a fourth input as a hard failure.
 - **D**: ✅ **Landed** as
-  [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)
+  [`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)
   (`.ts` + `.md` + `.lean`), wired into the observations chapter
   manifest under `sec:substrate-consistency`.
 - **B**: blocked nothing.
@@ -95,7 +95,7 @@ Each task lists: **(W)hy** the gap matters, **(D)eliverable**,
 ### P1.1 — Substrate parameter $q_0$ — recast as $H^1$ cross-check
 
 - **W**: SUB-1, post-correction. $q_0$ is **the** $H^1$ calibration
-  per [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md);
+  per [`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md);
   the lepton ratio $m_\mu/m_e$ supplies its value. Within $H^1$,
   the ratio is itself overdetermined by $\alpha_{\mathrm{EM}}^{-1}$
   and tritium $t_{1/2}$ (consistency window).
@@ -642,7 +642,7 @@ Reference example for the canonical late-substitution pattern:
 
 | Order | Task | Result |
 |------:|------|--------|
-| 1 | **P0.4** Three-calibration-discipline block | ✅ landed (`prop:three-calibration-discipline` aligned to $H^0/H^1/H^2$) |
+| 1 | **P0.4** Three-calibration-discipline block | ✅ landed (`def:three-calibration-discipline` aligned to $H^0/H^1/H^2$) |
 | 2 | **§2·F + P1.6** Neutrino correction | ✅ landed (NU-1 withdrawn; ν = unknot, $J_\nu = 1$, bare mass 0) |
 | 3 | **P1.5** Compound-shell / atlas / light-isotopes audit | ✅ landed (no AME fit; SHELL-1 cleared) |
 | 4 | **P0.3** JSJ algebraic reformulation (main side) | ✅ landed (`phi-q-tower-jsj-bridge` adds *Algebraic-side statement* via $J^\bullet$-stratification) |

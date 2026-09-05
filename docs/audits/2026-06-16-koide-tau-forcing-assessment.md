@@ -64,7 +64,7 @@ A genuine QOU derivation of Koide would require three categorical ingredients, e
 
 **None of the three is present.** Therefore $Q=\tfrac23$ is not produced by QOU structure;
 solving it for $m_\tau$ **imports** an external relation. Under
-[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)
+[`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)
 that is a **CAL-4** — a hard audit failure — because $m_\tau$ would then rest on
 $(m_e,m_\mu,\text{external }2/3)$ rather than on $(m_e,Q_\beta,m_\pi)$ alone.
 

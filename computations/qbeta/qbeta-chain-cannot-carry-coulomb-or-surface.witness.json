@@ -1,0 +1,131 @@
+{
+  "computation": "qbeta-chain-cannot-carry-coulomb-or-surface",
+  "assertions": [
+    {
+      "name": "at_lead_the_chain_misses_over_97_percent_of_proton_pairs",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "2/Z captured -- 2.44 % at Z = 82. qou-nial's sum-vs-product as combinatorics: a path's edge count is LINEAR, Coulomb needs QUADRATIC, so no letter or scale can make a Z^2 term from Z-1 edges"
+    },
+    {
+      "name": "a_paths_degree_deficit_is_constant_not_A_to_the_two_thirds",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so no A^(2/3) piece can arise from the edge count of a path, for any letters. Coulomb and surface are ONE defect: a 1-D chain where the physics is a saturating 3-D packing"
+    },
+    {
+      "name": "raw_all_pairs_differs_from_the_chain_by_a_factor_of_tens",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "65x, not the 0.6 % I reported. Renormalising all-pairs to A-1 bonds threw away exactly the quadratic growth that distinguishes it, so that test could not have seen the effect. The claim 'the bond GRAPH is not where the error lives' is WITHDRAWN -- it is exactly where it lives. The ORDERING half (segregated vs alternating, both chains) is unaffected"
+    },
+    {
+      "name": "coulombs_joint_contribution_is_not_negligible",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "it spans 67 % in B, against the marginal correlation of -0.044 this arc read as 'essentially absent'. Marginal correlations conflate collinear shapes -- heavy nuclei have large Z, large N-Z and large A together"
+    },
+    {
+      "name": "the_ranking_is_three_to_one_point_eight_to_one_not_eighteen_to_four_to_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the asymmetry is still largest, but far less lopsidedly than the marginals suggested"
+    },
+    {
+      "name": "the_three_SEMF_shapes_jointly_explain_over_ninety_percent",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the missing physics is not exotic and not unidentified -- it is the liquid-drop corrections in their standard forms, and two of the three follow from one structural fact about the edge set"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "E_0_MeV": "4.2274833556290305503",
+    "E_0_form": "tower-summed (owner ruling 2026-09-05)",
+    "strands_per_nucleon": 3,
+    "note": "the regression is a DIAGNOSTIC, never adopted as a law -- fitting three SEMF coefficients would reproduce the SEMF and prove nothing"
+  },
+  "data": {
+    "n_measured": 2548,
+    "coulomb_capture": [
+      {
+        "Z": 2,
+        "pairs": 1,
+        "chain_bonds": 1,
+        "captured_pct": "100.0"
+      },
+      {
+        "Z": 8,
+        "pairs": 28,
+        "chain_bonds": 7,
+        "captured_pct": "25.0"
+      },
+      {
+        "Z": 20,
+        "pairs": 190,
+        "chain_bonds": 19,
+        "captured_pct": "10.0"
+      },
+      {
+        "Z": 26,
+        "pairs": 325,
+        "chain_bonds": 25,
+        "captured_pct": "7.69231"
+      },
+      {
+        "Z": 50,
+        "pairs": 1225,
+        "chain_bonds": 49,
+        "captured_pct": "4.0"
+      },
+      {
+        "Z": 82,
+        "pairs": 3321,
+        "chain_bonds": 81,
+        "captured_pct": "2.43902"
+      }
+    ],
+    "edge_sets": {
+      "chain": {
+        "median": "0.8864136224",
+        "p5_p95": "1.224972733"
+      },
+      "all-pairs": {
+        "median": "0.01355804021",
+        "p5_p95": "9.886386274"
+      }
+    },
+    "median_ratio_chain_over_allpairs": "65.37918524",
+    "joint_regression": {
+      "(N-Z)^2/A^2": {
+        "coeff": "-3.437926186",
+        "span_log": "1.527967194",
+        "span_pct_B": "360.87985"
+      },
+      "A^(-1/3)": {
+        "coeff": "-1.456000315",
+        "span_log": "0.9303563891",
+        "span_pct_B": "153.54126"
+      },
+      "Z^2/A^(4/3)": {
+        "coeff": "-0.07448304436",
+        "span_log": "0.512175242",
+        "span_pct_B": "66.891755"
+      }
+    },
+    "joint_R2": "0.9265690231"
+  },
+  "provenance": {
+    "headSha": "7adb05491f39297b15cfb4cc93f3a4212dae1b42",
+    "producer": "computations/qbeta/qbeta_chain_cannot_carry_coulomb_or_surface_probe.py",
+    "elapsed_s": 0.637
+  }
+}

@@ -1,11 +1,11 @@
 ---
 # qou-p7it
 title: 'Four block schemas restate BlockBase instead of extending it; five qou manifest fields silently dropped (PR #6501 / folio-assistant#164)'
-status: in-progress
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-03T20:35:52Z
-updated_at: 2026-09-03T20:36:28Z
+updated_at: 2026-09-05T09:00:15Z
 ---
 
 ## Two defects, one shared cause
@@ -93,3 +93,26 @@ still exactly its base `e7f5f55`, so that CI ran on the current merge ref.
 ## Status
 
 Both open and `mergeable_state: clean`, waiting only on merge permission.
+
+
+## Coordination note (not a claim on this bean) — 2026-09-05
+
+Leaving this bean to its owner; recording one measurement it depends on.
+
+**The folio-assistant half has LANDED.** `a117daa` (2026-09-03, *"Four block
+kinds restated BlockBase instead of extending it"*) is confirmed an ancestor of
+folio-assistant `origin/main`, along with `affcec4`. Verified by parse rather
+than grep: `ProseSchema`/`EquationSchema`/`DiagramSchema`/`TableSchema` each
+retain `authorNotes`, `defines`, `cites` and `computation` on `safeParse`.
+
+**The qou half has landed too**: 0 top-level `is_mathematics`/`probe`/
+`consumers` remain in `content/` (the 7 residual grep hits are `consumers:`
+nested inside `computation:`, which is declared and correct).
+
+So if this bean's scope is exactly *"the four schemas + the five invented
+fields"*, both halves are now in the product and it is closeable on evidence —
+but that is its owner's call, not mine.
+
+`qou-3v8h` and `qou-eu0r` are closed with the full evidence. This session's
+change was to **AGENTS.md 4d only**: the box led with the retracted claim and
+closed by telling agents not to use a field that works.

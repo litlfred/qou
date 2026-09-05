@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T06:49:09.550086+00:00",
-  "commitSha": "8a5ecf2d7cf4e82fc9245a979b16d8ba643201d4",
+  "computedAt": "2026-09-05T07:46:18.567047+00:00",
+  "commitSha": "5581d089576c181598f5ad344c7a4af8b787581e",
   "assertions": [
     {
       "name": "every character ratio lies in (0,1), so B = -alpha log R is positive",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 6,
   "computation": "the_character_ratio_derivation_path_is_the_bond_model_probe",
   "scriptFile": "the_character_ratio_derivation_path_is_the_bond_model_probe.py",
-  "scriptHash": "0b054a1acf27",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "27f4a0c35e56",
+  "scriptCommitSha": "30e3094b68fd4ceec87ab9307e31d9628fb0b836",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,7 +54,7 @@
     "character_ratio_3H": "2051356404486497689268500",
     "character_ratio_3He": "3113863120725956524128884",
     "character_ratio_4He": "1256841528952662694138785",
-    "max_R_minus_exp_minus_L": "1.556e-61"
+    "max_R_minus_exp_minus_L": "3.112e-61"
   },
   "caveats": [
     "Nucleon level only. prf:confined-knot-binding names quark, nucleon and nuclear-jet levels; the exact engine has words for one of them.",

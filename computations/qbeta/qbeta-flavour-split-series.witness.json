@@ -1,0 +1,79 @@
+{
+  "computation": "qbeta-flavour-split-series",
+  "assertions": [
+    {
+      "name": "the_tail_identity_holds_numerically",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "proved in QOU/Hecke/GeometricTailBound.lean as tail_eq"
+    },
+    {
+      "name": "summing_every_remaining_term_buys_under_one_percent_of_the_gap",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "K = 323, so the full sum closes 1/323 of what is missing. summing_cannot_close proves the general form: when K > 1 the FULL geometric sum still falls short"
+    },
+    {
+      "name": "the_required_exponent_is_not_an_integer",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "k = 2.8822, so no geometric series in hbar_q with an integer exponent reproduces the measured split"
+    },
+    {
+      "name": "no_power_admits_unit_coefficient",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the posited form takes c = 1 at k = 3, where 1.3146 is needed -- it supplies 76 %, and no other power is closer to a clean value"
+    },
+    {
+      "name": "the_posited_form_makes_three_underived_claims",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "c1 = 0, c2 = 0, c3 = 1 -- and the measurement in C says c3 is 1.3146, so even granting the two vanishings the third is wrong"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 40,
+    "hbar_q": "0.09908171604425850783917712",
+    "delta_leading": "0.001375710807027096008551109",
+    "delta_CODATA": "0.0013774699",
+    "lean": "QOU/Hecke/GeometricTailBound.lean"
+  },
+  "data": {
+    "C_true": "1.00127867932993",
+    "tail": "9.47073672330851e-7",
+    "gap_after_two_terms": "0.000305975649311886",
+    "K_gap_over_tail": "323.074812711",
+    "required_geometric_exponent": "2.88224566348287",
+    "required_coefficients": [
+      {
+        "power": 1,
+        "required_coefficient": "0.0129053006042"
+      },
+      {
+        "power": 2,
+        "required_coefficient": "0.130249062283"
+      },
+      {
+        "power": 3,
+        "required_coefficient": "1.31456203509"
+      },
+      {
+        "power": 4,
+        "required_coefficient": "13.2674532454"
+      }
+    ]
+  },
+  "provenance": {
+    "headSha": "7adb05491f39297b15cfb4cc93f3a4212dae1b42",
+    "producer": "computations/qbeta/qbeta_flavour_split_series_probe.py",
+    "elapsed_s": 0.007
+  }
+}

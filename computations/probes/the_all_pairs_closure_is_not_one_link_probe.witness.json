@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T02:11:50.055261+00:00",
-  "commitSha": "8fcdf463f641e17158a9e4f8d917a3dd7e22bcbf",
+  "computedAt": "2026-09-05T09:41:03.358868+00:00",
+  "commitSha": "1b025339adaa6e57c8f0c45f48cd715c0bdd8802",
   "assertions": [
     {
       "name": "the chain is exactly additive — defect below 1e-55, so it IS a connected sum",
@@ -84,11 +84,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 8,
   "computation": "the_all_pairs_closure_is_not_one_link_probe",
   "scriptFile": "the_all_pairs_closure_is_not_one_link_probe.py",
-  "scriptHash": "58608c1d5099",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "36b5804bd049",
+  "scriptCommitSha": "bd5939d54c330dc1ddc76a2acbb042f2a322ab22",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

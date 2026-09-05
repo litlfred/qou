@@ -1,11 +1,11 @@
 ---
 # qou-eu0r
 title: Schema silently drops authorNotes on prose/table/equation/diagram
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-30T09:26:51Z
-updated_at: 2026-08-30T09:26:51Z
+updated_at: 2026-09-05T07:23:40Z
 ---
 
 AGENTS.md §4d said `authorNotes` is on `BlockBase` and *"every block kind
@@ -68,3 +68,18 @@ the six fields above take effect rather than being dropped.
 
 Until then: do **not** put an author note on a `prose`, `table`, `equation` or
 `diagram` block. Recorded in AGENTS.md §4d.
+
+
+## CLOSED 2026-09-05 — duplicate of `qou-3v8h`, and the underlying defect is fixed
+
+`qou-bstl` identified this and `qou-3v8h` as **the same defect filed twice,
+four days apart**, and noted the title-Jaccard duplicate detector missed the
+pair at 0.375 because one says *"authorNotes is silently dropped on ..."* and
+the other *"Schema silently drops authorNotes on ..."* — same defect,
+different verbs.
+
+The defect is now fixed in the product: folio-assistant `a117daa` (2026-09-03)
+makes all four kinds extend `BlockBaseSchema`, confirmed an ancestor of that
+repo's `main` and verified by parse (all of `authorNotes`/`defines`/`cites`/
+`computation` retained on all four). Full evidence, the five invented-field
+names, and the AGENTS.md 4d correction are recorded in `qou-3v8h`.

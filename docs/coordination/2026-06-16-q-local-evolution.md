@@ -37,7 +37,7 @@
 ## Follow-ups (tracked, not done here)
 
 1. **Prose migration** of the calibration basis (muon→proton, Q_β→m_π)
-   in `prop:three-calibration-discipline` + ripples
+   in `def:three-calibration-discipline` + ripples
    (`prop:three-calibration-inputs`, Wedderburn-count prop, SDP
    `m_π`-independence). Owner-confirm before rewriting scholarly prose.
 2. **Route 2a/2b** paper blocks (germ-commutator = q-curvature prop;

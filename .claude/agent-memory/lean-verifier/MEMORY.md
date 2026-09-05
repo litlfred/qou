@@ -97,6 +97,16 @@ oleans written in ten minutes **zero** were QOU/UGB/Fred2005. Guard:
 `[ -f "$ROOT/.lake/RESTORED-NO-TRACES" ] && echo "restored — do NOT lake build"`.
 (The marker is absent in some containers; its absence is NOT proof of traces.)
 
+**And there are TWO mathlib trees, so the guard can read clean and still be
+worthless** (measured 2026-09-05). `lake build` run from
+`content/<paper>/lean/` builds *that* directory's own
+`.lake/packages/mathlib` — a near-empty second copy, no marker — while
+`scripts/lean-direct-env.sh` puts the **repo-root** `.lake/packages/mathlib`
+(5.4 G, marker present) on `LEAN_PATH`. So it does not evict the restore; it
+burns 40 min and +1.4 G on an 88 %-full disk rebuilding a tree nothing verifies
+against, and would not have finished. Same file, `lean`-direct: **5.0 s**.
+Check `du -sh` on both before believing a `lake build` is doing what you want.
+
 ## STABLE — cache shortcuts and hazards → `restore-shortcuts.md`
 
 Before fetching 1.6 GB, check whether a **leaked `/tmp/tmp.*`** already IS the
@@ -288,8 +298,13 @@ block's sidecar (128 files for one block) — revert all but yours.
 2. **A partial `LEAN_PATH` overlay shadows the whole namespace** — the first
    root holding a `QOU/` dir wins. Use a complete `cp -al` mirror, `rm -f`-ing
    each olean before rebuilding it (else you truncate the shared inode).
-3. **Disk-full builds write truncated oleans that segfault**: exit 139, zero
-   errors, 0–1 s. Olean SIZE is not a test (50–226 KB inside a normal range).
+3. **Truncated oleans segfault**: exit 139, zero errors, 0–1 s. Olean SIZE is
+   not a test (50–226 KB inside a normal range). Two causes: a disk-full local
+   build, **and the restored cache itself** — so a clean `df` does NOT clear it
+   (measured 2026-09-05, `ComplexDilogarithmSlit` 192,512 vs 279,688 B on a
+   healthy disk). One bad olean segfaults its whole downstream cone while every
+   consumer's source is clean; bisect to the deepest module whose own deps all
+   pass, recompile that one. Harness §4a.
 4. **Most cone failures are the harness** (8 measured, 1 real). `object file …
    does not exist` usually = a non-cone dependency with no olean; `ls` it.
    Decisive test: re-run against main's own oleans with your changes off the path.

@@ -74,6 +74,13 @@ KAPPA = mp.sqrt(3) / 4                       # A-poly cusp modulus |a₂|, τ = 
 # resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
 # proton unless for an explicit reason ... otherwise pin proton").
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
+# This producer hand-builds its assertion payload and `json.dump`s it, so
+# `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
+# reached, and a re-run would re-emit the float literals and undo PR #5910's
+# drain for this file alone. `_tol` routes each DECLARED tolerance through
+# that guard; it returns a COMPUTED one unchanged, so those stay floats and
+# stay counted by the raw-float64 ratchet. Bean qou-9tqx.
+from qou_substrate.witness import declared_tolerance as _tol  # noqa: E402
 
 Q0 = mp.mpf(_Q0_RESOLVED)
 RE_U = mp.log(Q0)                            # derived real boost, meridian-holonomy-boost.md
@@ -101,7 +108,7 @@ def main() -> int:
     print(f"     leading cap κ·(ln q₀)² = {mp.nstr(cap, 12)}  (= G1 real-boost value)")
     assertions.append({
         "name": "leading_cap_equals_real_boost_value",
-        "computed": float(cap), "expected": 0.004714, "tolerance": 1e-5,
+        "computed": float(cap), "expected": 0.004714, "tolerance": _tol(1e-5),
         "passed": bool(abs(cap - mp.mpf("0.004714")) < 1e-5),
         "source": "κ·(ln q₀)² = the pure-boost Im 𝔙₄₁ (G1), the leading upper bound"})
 
@@ -116,13 +123,13 @@ def main() -> int:
           f"{mu_unreachable}")
     assertions.append({
         "name": "muon_exceeds_leading_cap",
-        "computed": float(ratio_mu), "expected": 2.054, "tolerance": 1e-2,
+        "computed": float(ratio_mu), "expected": 2.054, "tolerance": _tol(1e-2),
         "passed": bool(mu_unreachable and ratio_mu > 2.0),
         "source": "S_μ = 2.054 × κ(ln q₀)² > cap ⇒ required Im²u < 0 ⇒ "
                   "unreachable by leading form for any real spin"})
     assertions.append({
         "name": "muon_required_im2_negative",
-        "computed": float(need_im2_mu), "expected": -0.01147, "tolerance": 1e-4,
+        "computed": float(need_im2_mu), "expected": -0.01147, "tolerance": _tol(1e-4),
         "passed": bool(need_im2_mu < 0),
         "source": "Im²u = Re²u − S_μ/κ < 0 (impossible): muon magnitude is NOT a "
                   "spin datum; needs O(u⁴) NZ tail or enlarged Re u"})
@@ -136,7 +143,7 @@ def main() -> int:
     print(f"     ⇒ the sign flip IS realizable by the spin part (diagonal crossed)")
     assertions.append({
         "name": "proton_signflip_spin_exists",
-        "computed": float(need_im2_pr), "expected": 0.10201, "tolerance": 1e-4,
+        "computed": float(need_im2_pr), "expected": 0.10201, "tolerance": _tol(1e-4),
         "passed": bool(pr_spin_exists),
         "source": "Im²u = Re²u − S_p/κ > 0 ⇒ a real spin part reproduces S_p<0 "
                   "(the sign flip is a spin datum, open bean qou-fook)"})

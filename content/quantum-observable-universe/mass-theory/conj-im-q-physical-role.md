@@ -17,7 +17,7 @@ evaluation at $q_0$ — and all three remain open on the **fibre**,
 where $q$ is a formal variable and $\mathrm{Im}(q)$ is
 unconstrained. The conjecture is therefore restated as a
 fibre-level question; the archimedean findings are recorded in
-[Reality of $\mathfrak{Q}_\beta$ at the substrate](#qbeta-reality)
+the section *Reality of $\mathfrak{Q}_\beta$ at the substrate*
 below.*
 
 ## Exclusions for Im(q)
@@ -28,7 +28,7 @@ Per [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:
 - An observable in the current framework (mass formula uses $|\cdot|$)
 - Equal to $\mathrm{Im}(\mathrm{tr}_M(\rho(\beta)))$ — Im(q) is a parameter; Im(tr_M) is the value induced
 
-## Reality of $\mathfrak{Q}_\beta$ at the substrate {#qbeta-reality}
+## Reality of $\mathfrak{Q}_\beta$ at the substrate
 
 The framework does possess an $\mathrm{Im}(q)$-sensitive observable, which
 the opening paragraph's "not currently in the framework" did not anticipate:

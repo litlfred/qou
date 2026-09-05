@@ -55,7 +55,7 @@ AME_MASS_MEV = {
 }
 
 # m_e calibration (CODATA 2018) — H^0 input per
-# prop:three-calibration-discipline.
+# def:three-calibration-discipline.
 M_E_MEV = 0.51099895000
 
 ATOMS = [
@@ -128,7 +128,7 @@ witness = {
     "generated": datetime.now(timezone.utc).isoformat(),
     "q_0": str(q0),
     "m_e_mev": M_E_MEV,
-    "calibration_discipline": "prop:three-calibration-discipline (H^0 = m_e)",
+    "calibration_discipline": "def:three-calibration-discipline (H^0 = m_e)",
     "atoms": results,
     "mean_calibration_over_me": mean_ratio,
     "calibration_spread_percent": spread,
