@@ -1,4 +1,6 @@
 import QOU.IwahoriHecke.RMatrixSl2
+import QOU.MassTheory.PiTensorMonomialBasis
+import Mathlib.LinearAlgebra.Matrix.ToLin
 
 /-!
 # Embedding a braiding into a larger tensor product
@@ -63,6 +65,7 @@ ring is commutative.
 namespace QOU.IwahoriHecke.TensorEmbed
 
 open QOU.MathlibExt.SkeinRelation QOU.IwahoriHecke.RMatrix
+open scoped TensorProduct
 
 variable {R : Type*} [CommRing R]
 
@@ -749,6 +752,33 @@ noncomputable def heckeActionN (hqi : q * qi = 1) :
       = strandBraid q qi a :=
   QOU.IwahoriHecke.Balanced.liftBalanced_sigma hqi _ _ _ coxA_symm a
 
+/-! ### On the genuine `PiTensorProduct`
+
+The action above lives in the coordinate model `V^{⊗n} = ((Fin n → Fin 2) → R)`.
+`QOU.MassTheory.monoEquiv` identifies that with `⨂[R] _ : Fin n, (Fin 2 → R)` — the
+monomial basis Mathlib does not supply — so the action transports along it. -/
+
+/-- **The Hecke action on the genuine tensor power.** `H_{m+1}(q)` acting on
+`⨂[R] _ : Fin (m+1), (Fin 2 → R)` by `R`-linear endomorphisms, obtained from
+`heckeActionN` by reading matrices as linear maps and conjugating along `monoEquiv`.
+
+Both steps are algebra *equivalences*, so nothing is lost: this is the same action, stated
+about the object the corpus's other tensor-power results (`TensorPowerTrace`,
+`WeightedPermutationCharacter`) are stated about. -/
+noncomputable def heckeActionTensor (hqi : q * qi = 1) :
+    QOU.IwahoriHecke.Balanced.BalancedHecke (coxA m) q →ₐ[R]
+      Module.End R (⨂[R] _ : Fin (m + 1), (Fin 2 → R)) :=
+  AlgHom.comp
+    (AlgEquiv.toAlgHom
+      ((QOU.MassTheory.monoEquiv (R := R) (α := Fin (m + 1)) (κ := Fin 2)).symm.algConj R))
+    (AlgHom.comp (AlgEquiv.toAlgHom Matrix.toLinAlgEquiv') (heckeActionN q qi hqi))
+
+@[simp] theorem heckeActionTensor_sigma (hqi : q * qi = 1) (a : Fin m) :
+    heckeActionTensor q qi hqi (QOU.IwahoriHecke.Balanced.sigma (coxA m) q qi a)
+      = ((QOU.MassTheory.monoEquiv (R := R) (α := Fin (m + 1)) (κ := Fin 2)).symm.algConj R)
+          (Matrix.toLinAlgEquiv' (strandBraid q qi a)) := by
+  simp [heckeActionTensor]
+
 end Action
 
 /-! ## What `heckeActionN` does NOT say
@@ -764,15 +794,13 @@ none of them follows from what is here:
    `Ř = q Σ_i E_ii⊗E_ii + Σ_{i≠j} E_ji⊗E_ij + (q − q⁻¹) Σ_{i<j} E_ii⊗E_jj`
    satisfies the same relations for any linearly ordered fibre; only `sl₂` is done, because
    `Fin 2` is the fibre every consumer in this corpus uses.
-3. **The coordinate model, not `PiTensorProduct`.** This works in
-   `V^{⊗n} = ((Fin n → Fin 2) → R)`. `QOU.MassTheory.PiTensorMonomialBasis` identifies that
-   with the genuine `⨂[R] _ : Fin n, (Fin 2 → R)` via `monoEquiv`, but `heckeActionN` has
-   **not** been transported along it, so there is no statement here about `PiTensorProduct`.
-4. **No trace.** The `q`-deformed character of
+3. **No trace.** The `q`-deformed character of
    `QOU.MassTheory.WeightedPermutationCharacter` is the trace-weight half of quantum
    Schur–Weyl; nothing here connects the braiding to it, and the Markov trace on `H_n(q)` is
    still `opaque` in `QOU.IwahoriHecke.MarkovTrace`.
 
-Item 3 is bookkeeping. Items 1, 2 and 4 are mathematics. -/
+All three are mathematics. The one item on this list that was mere bookkeeping — that the
+action lived in the coordinate model rather than on `PiTensorProduct` — is closed by
+`heckeActionTensor`. -/
 
 end QOU.IwahoriHecke.TensorEmbed
