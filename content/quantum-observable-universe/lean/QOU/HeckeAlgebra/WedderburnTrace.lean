@@ -226,4 +226,90 @@ theorem markovTraceOnWedderburn_eq_traceFunctional (x : WedderburnDecomposition 
       = traceFunctional (fun lam => JonesMarkovCoefficient lam QSubstrate.q_0) x := by
   rw [wenzlBridge]; rfl
 
+/-! ## The room, stated as a theorem rather than asserted
+
+The section above says the information a three-coefficient derivation needs "is
+present in the block and destroyed by taking its trace". That was an assertion.
+Here it is a theorem: whenever a block has dimension at least 2 there are
+**distinct** decompositions on which *every* block trace agrees — so every
+trace-factoring functional, the Markov trace included, takes the same value on
+both. The witness is an off-diagonal matrix unit, which is traceless.
+
+So the trace is not merely one-dimensional per partition (previous section); it
+is genuinely lossy, and the lost directions are where a derivation reading the
+block rather than its trace would live.
+
+**One thing this does not formalise.** Instantiating it at `λ = (2,1) ⊢ 3` needs
+`2 ≤ f^{(2,1)}`. That value is `2` by the hook length formula, but no
+declaration in this corpus computes `seminormalDim` at a named partition — a
+grep for one returns nothing. The theorem is therefore stated with the bound as
+a hypothesis, and the `(2,1)` reading of it is conditional on a classical fact
+this corpus has not written down. Closing that is a small, self-contained piece
+of work and is not attempted here.
+-/
+
+/-- The decomposition carrying a single matrix on block `lam`, zero elsewhere. -/
+noncomputable def blockAt (lam : Nat.Partition n)
+    (A : Matrix (Fin (seminormalDim lam)) (Fin (seminormalDim lam)) ℝ) :
+    WedderburnDecomposition n := by
+  classical
+  exact fun mu => if h : mu = lam then h ▸ A else 0
+
+@[simp] theorem blockAt_self (lam : Nat.Partition n) (A) :
+    blockAt lam A lam = A := by classical simp [blockAt]
+
+@[simp] theorem blockAt_of_ne {lam mu : Nat.Partition n} (h : mu ≠ lam) (A) :
+    blockAt lam A mu = 0 := by classical simp [blockAt, h]
+
+/-- **The block traces do not separate decompositions.** Whenever a block has
+dimension at least 2 there are distinct decompositions with *every* block trace
+equal — so every trace-factoring functional, the Markov trace included, takes the
+same value on both. The witness is an off-diagonal matrix unit, which is
+traceless. -/
+theorem trace_does_not_separate (lam : Nat.Partition n)
+    (h2 : 2 ≤ seminormalDim lam) :
+    ∃ x y : WedderburnDecomposition n, x ≠ y ∧
+      ∀ mu : Nat.Partition n, (x mu).trace = (y mu).trace := by
+  classical
+  have h0 : (0 : ℕ) < seminormalDim lam := lt_of_lt_of_le (by norm_num) h2
+  have h1 : (1 : ℕ) < seminormalDim lam := lt_of_lt_of_le (by norm_num) h2
+  set i : Fin (seminormalDim lam) := ⟨0, h0⟩ with hi
+  set j : Fin (seminormalDim lam) := ⟨1, h1⟩ with hj
+  have hij : i ≠ j := by simp [hi, hj, Fin.ext_iff]
+  refine ⟨blockAt lam 0, blockAt lam (Matrix.single i j 1), ?_, ?_⟩
+  · intro hcon
+    have := congrFun hcon lam
+    rw [blockAt_self, blockAt_self] at this
+    have hentry := congrFun (congrFun this i) j
+    simp [Matrix.single] at hentry
+  · intro mu
+    rcases eq_or_ne mu lam with rfl | hne
+    · rw [blockAt_self, blockAt_self, Matrix.trace_zero]
+      have hempty : (Finset.univ.filter
+          (fun x : Fin (seminormalDim mu) => i = x ∧ j = x)) = ∅ := by
+        refine Finset.filter_eq_empty_iff.mpr ?_
+        rintro x - ⟨rfl, hjx⟩
+        exact hij hjx.symm
+      simp [Matrix.trace, Matrix.diag, Matrix.single, hempty]
+    · rw [blockAt_of_ne hne, blockAt_of_ne hne]
+
+/-- **Every trace-factoring functional is blind to it.** The Markov trace
+included — which is the point, since that is the functional the `(2,1)` clause
+routes through. -/
+theorem exists_indistinguishable_by_every_traceFunctional
+    (lam : Nat.Partition n) (h2 : 2 ≤ seminormalDim lam) :
+    ∃ x y : WedderburnDecomposition n, x ≠ y ∧
+      (∀ c : Nat.Partition n → ℝ, traceFunctional c x = traceFunctional c y) ∧
+      markovTraceOnWedderburn x = markovTraceOnWedderburn y := by
+  classical
+  obtain ⟨x, y, hne, htr⟩ := trace_does_not_separate lam h2
+  have hall : ∀ c : Nat.Partition n → ℝ, traceFunctional c x = traceFunctional c y := by
+    intro c
+    unfold traceFunctional
+    exact Finset.sum_congr rfl fun mu _ => by rw [htr mu]
+  refine ⟨x, y, hne, hall, ?_⟩
+  rw [markovTraceOnWedderburn_eq_traceFunctional,
+      markovTraceOnWedderburn_eq_traceFunctional]
+  exact hall _
+
 end QOU.HeckeAlgebra.WedderburnTrace
