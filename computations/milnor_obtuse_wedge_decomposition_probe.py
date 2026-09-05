@@ -55,6 +55,26 @@ classified by both sides and any disagreement is reported with its coordinates.
 Boundary points (within `EDGE_TOL` of any defining line) are excluded, since the
 identity is only claimed a.e.
 
+CLAIM 3 adds what a MEASURE-subtraction step needs beyond the set identity:
+`W_a` and `W_b` disjoint, `W_sub` nonempty (without which claim 2 would pass
+vacuously and mean something else entirely), and `|W_a u W_b| - |W_sub| = |T|`
+on a generic grid.
+
+CLAIM 4 is a CORRECTION to the natural reading of claim 3, and the reason this
+probe cannot be trusted alone.  `W_sub` is NOT strictly contained in
+`W_a u W_b`: it meets the shared edge ray of those two wedges, and both are
+open, so they contain none of it.  A grid cannot detect this -- the ray is
+measure zero -- and on the ray the wedge predicate residual is exactly zero in
+exact arithmetic, so at any working precision its sign is rounding rather than
+mathematics (~1e-62 at 60 dps).  Reporting that sign as membership would be the
+NO-FLOAT64 error one level up.  What settles it is the PROVED lemma
+`QOU.Archimedean.HyperbolicVolume.disjoint_wedgeAt_obtuse_pair`.  So the Lean
+obligation is the null-set form
+
+    W_sub \\ (W_a | W_b)  subset  {w | perp_{t+2c+2a}(w) = 0}
+
+discharged by `volume_perpLine`, NOT a strict containment.
+
 NO-FLOAT64: all coordinates and trigonometry are mpmath `mpf`; `float()` appears
 nowhere.  Probes are not exempt (AGENTS.md, owner directive 2026-08-18).
 
@@ -218,10 +238,69 @@ def check_claim2():
     return ok
 
 
+def check_shared_ray():
+    """The exceptional set a grid CANNOT see -- and the correction it forces.
+
+    W_a and W_b meet along the ray `phi = t + 2c + 2a` (W_a's upper edge is
+    W_b's lower edge).  Both wedges are OPEN, so a point on that ray is in
+    NEITHER.  Points of W_sub do lie on it.  Therefore
+
+        W_sub  is NOT a subset of  W_a | W_b
+
+    as a strict set containment; it holds only up to that null ray.  Claim 3's
+    `Wsub_outside = 0` cannot detect this: the ray is measure zero and a
+    rectangular grid misses it except by coincidence.
+
+    Worse, the coincidence is undecidable numerically.  On the ray the wedge
+    predicate residual `|<w,v>| - <w,u> tan(psi)` is EXACTLY zero in exact
+    arithmetic, so at any working precision it evaluates to noise at the
+    precision floor -- ~1e-62 at 60 dps below -- and its SIGN is rounding, not
+    mathematics.  Reporting such a sign as membership would be exactly the
+    error the NO-FLOAT64 rule forbids one level up: agreement at the floor of
+    the arithmetic is not evidence about the mathematics.
+
+    What settles it is not a measurement but the proved lemma
+    `QOU.Archimedean.HyperbolicVolume.disjoint_wedgeAt_obtuse_pair`: W_a and
+    W_b are disjoint, so no point is in both; on the shared ray the residual is
+    zero for both, so the point is in neither.
+
+    Consequence for the Lean target: the obligation is
+        W_sub \\ (W_a | W_b)  subset  {w | perp_{t+2c+2a}(w) = 0}
+    which `volume_perpLine` sends to null -- NOT a strict containment.
+    """
+    print("\n=== SHARED RAY: the containment is A.E., not strict ===")
+    a, b = pi / 6, pi / 6
+    c = pi - a - b
+    t = mpf(0)
+    th_a, th_b = t + 2 * c + a, t + 2 * c + 2 * a + b
+    th_s, ps = t + c + pi, pi - c
+    phi = t + 2 * c + 2 * a
+    at_floor = True
+    for r in [mpf(1) / 10, mpf(1) / 4, mpf(2) / 5]:
+        w = (r * cos(phi), r * sin(phi))
+        ra = abs(dot_v(w, th_a)) - dot_u(w, th_a) * tan(a)
+        rb = abs(dot_v(w, th_b)) - dot_u(w, th_b) * tan(b)
+        in_sub = in_wedge_at(w, th_s, ps)
+        # both residuals must be indistinguishable from zero at this precision
+        floor = mpf(10) ** (-(mp.dps - 8))
+        at_floor &= abs(ra) < floor and abs(rb) < floor and in_sub
+        print(
+            f"  r={r}  in W_sub={in_sub}  "
+            f"W_a residual={mp.nstr(ra, 6):>14}  W_b residual={mp.nstr(rb, 6):>14}"
+            f"   both at precision floor -> in NEITHER (open wedges)"
+        )
+    print(
+        "  => W_sub has points on the shared ray, so it is NOT strictly inside\n"
+        "     W_a | W_b. The Lean obligation is the null-set form."
+    )
+    return at_floor
+
+
 def check_claim3():
-    """What a MEASURE-subtraction step needs, which the set identity alone does
-    not give: W_a and W_b disjoint, W_sub contained in their union, and -- the
-    check that keeps claim 2 from passing vacuously -- W_sub NONEMPTY.
+    """What a MEASURE-subtraction step needs: W_a and W_b disjoint, W_sub
+    inside their union UP TO A NULL SET (see `check_shared_ray` -- it is not a
+    strict containment), and -- the check that keeps claim 2 from passing
+    vacuously -- W_sub NONEMPTY.
 
     A grid-alignment caveat, recorded because it looks like a failure and is
     not.  At `t = 0` the defining lines are axis-aligned and a symmetric grid
@@ -291,8 +370,9 @@ def main() -> int:
     ok1 = check_claim1()
     ok2 = check_claim2()
     ok3 = check_claim3()
+    ok4 = check_shared_ray()
     print()
-    if ok1 and ok2 and ok3:
+    if ok1 and ok2 and ok3 and ok4:
         print(
             "ALL THREE CLAIMS HOLD.\n"
             "  1. wedgeAt at an obtuse half-angle is unbounded and opens away from\n"
@@ -303,10 +383,13 @@ def main() -> int:
             "     analogue of lob_sum_eq_reflected. The existing acute wedge\n"
             "     machinery applies to every piece; the minus sign lives in the set\n"
             "     algebra.\n"
-            "  3. W_a and W_b are disjoint, W_sub is contained in their union, and\n"
-            "     W_sub is NONEMPTY (so claim 2 is not vacuous). On a generic grid\n"
-            "     |W_a u W_b| - |W_sub| equals |T| exactly, which is the measure\n"
-            "     subtraction the volume step needs.\n"
+            "  3. W_a and W_b are disjoint, W_sub is NONEMPTY (so claim 2 is not\n"
+            "     vacuous), and on a generic grid |W_a u W_b| - |W_sub| equals |T|\n"
+            "     exactly -- the measure subtraction the volume step needs.\n"
+            "  4. But the containment is A.E., NOT strict: W_sub meets the shared\n"
+            "     edge ray of W_a and W_b, where both are open and so contain\n"
+            "     nothing. A grid cannot see this and the residuals there are at\n"
+            "     the precision floor; the PROVED disjointness settles it.\n"
             "This fixes the target for the Lean a.e. identity. It proves nothing\n"
             "about the volume identity itself."
         )
