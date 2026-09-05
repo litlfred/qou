@@ -153,6 +153,14 @@ requirement on the margin side if that route is taken anyway (empirical envelope
 certified exhaustively). That is a recommendation from a reach measurement, not a proof that the
 margin route is dead — see the scope note above.
 
+> **Updated after the sections below.** The recommendation above stands and sharpens. `P > N` is now
+> (i) a statement about a set **cut out by an inequality in four integers** (§"An exact criterion"),
+> and (ii) implied by a **single scalar comparison `Q < P`** between two edge sums of the same shape
+> over the same measure (§"A second Cauchy–Schwarz"), which holds at every n ≤ 20 with **2.24×**
+> headroom and costs no more than the first relaxation did. Two shortcuts are also **gone**: the
+> negative mass does not localize at small `|g|`, and the negative edge set is **closed under
+> reversal**, so reverse-pairing cannot cancel it.
+
 ## `P > N` in local form — and a false corpus claim found on the way
 
 With `P > N` established as the target, the natural question is whether it is *edge-wise* true: if
@@ -293,6 +301,78 @@ localize any bound to a few edge shapes. **It does not.**
 `|g| ≤ 2` carries only ~35 % at n = 22, the largest single bucket is `|g| = 3`, and `|g|` runs to 5.
 The pairing explains it: `g = 3` is admitted on `g = 2`'s condition with a bigger term, so the mass is
 not monotone in `|g|` and there is no small-`|g|` truncation to lean on.
+
+## A second Cauchy–Schwarz — on the edge measure, and it lands on reachable objects
+
+The reach finding above (§"The reach") left the arc in an awkward place: the *first* relaxation is
+tight but aimed at `V_A`, which the machinery does not reach. So aim it somewhere else. Probe:
+[`…_edge_cauchy_schwarz.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_edge_cauchy_schwarz.py),
+exit 0, exact `Fraction` over every partition to n = 20, NO float64.
+
+The identity writes **both** halves of `M₁` over the *same* edge set with the *same* non-negative
+weight `dμ := π(λ)·J(λ,λ*)·(|u|+|v|)`. With `g = |u|−|v|` and `δ = d_u − d_v`:
+
+$$
+P \;=\; \sum_{\text{edges}} d\mu\; g^{2},
+\qquad
+N \;=\; \sum_{\text{edges}} d\mu\; g\,(2-2\delta).
+$$
+
+`P`'s integrand is a **square** — that is the corpus's Fact A in one line. `N`'s is not, which is
+exactly why Fact B is false. Cauchy–Schwarz **on this measure** gives `N ≤ √(P·Q)` with
+`Q := Σ dμ (2−2δ)²`, hence
+
+> **`Q < P` ⟹ `N < P` ⟹ `M₁ > 0`** — a sufficient condition in two edge sums of the *same shape*
+> over the *same measure*, needing neither `V_A` nor `V_D`.
+
+**It holds, with room.**
+
+| n | `P` | `N` | `Q` | `P/Q` | `N/√(PQ)` | surviving |
+|---|---|---|---|---|---|---|
+| 12 | 69.4457 | 40.7125 | 30.6504 | 2.26573 | 0.882443 | 0.811242 |
+| 15 | 128.605 | 77.7392 | 57.6412 | **2.23112** | 0.902912 | 0.835662 |
+| 20 | 270.777 | 165.473 | 119.736 | 2.26145 | 0.918987 | 0.861475 |
+
+`Q < P` at **every** n in 4…20, with `P/Q ∈ [2.231, 2.266]` over n ≥ 12 — **2.24× of headroom**, not
+a hair. The surviving margin `(P − √(PQ))/(P − N)` rises monotonically **0.811 → 0.861**, so this
+relaxation costs about the **same** as the first one (`[0.786, 0.852]`, §"Measured" above) while
+landing on objects the identity reaches. That is the whole point of the move: the cost is a wash and
+the target changes from intractable to attackable.
+
+**Shape, not endpoints.** `P/Q` is **U-shaped** — it falls to a minimum `2.23112` at n = 15 and rises
+for the entire second half. My first pass classified it by comparing the last value to the first and
+printed *"falling"*, which is the one reading a reader actually cares about (is the ratio heading
+toward 1?) and it is wrong about the tail. The classifier now reports argmin/argmax.
+
+### Proved here: the negative edge set is closed under reversal
+
+The chain is reversible with `w(λ,λ*) = f^λ f^{λ*}/(n+1)!`, manifestly symmetric. Reading an edge from
+the other end sends
+
+$$
+g \mapsto -g, \qquad \delta \mapsto 2-\delta, \qquad k := g+2\delta-2 \;\mapsto\; -k,
+$$
+
+because removing the box at `u` drops `d_u` by one while adding at `v` raises `d_v` by one. So the term
+`g·k·(|u|+|v|)` and the weight are **both invariant**, and a negative edge's reverse is negative too —
+never positive.
+
+> Cancelling each negative edge against its own reverse — the most natural pairing/injection argument,
+> and the one the census could only argue against from mass fractions — **cannot work.** This is
+> **scope-(b)** for that pairing: a proved invariant forbids it. It stays **scope-(a)** for pairing in
+> general; a different injection is untested here.
+
+### Controls
+
+Three, and the probe quotes no verdict if any fails. All **PASS**:
+
+1. `P` and `N` rebuilt from the edge sums equal `Cov(A,W)` and `−Cov(D,W)` **exactly** at every n —
+   computed independently from the Plancherel measure, not from the chain.
+2. `N ≤ √(PQ)` at every n. It is Cauchy–Schwarz, so a failure here would be a bug in me, not a finding.
+3. The reversal identities `w' = w`, `g' = −g`, `δ' = 2−δ`, term invariant — at **every edge**.
+
+**Sufficient, never necessary.** A failure of `Q < P` would say nothing about `M₁ > 0`, which is
+positive throughout. Window n ≤ 20 against a requirement of n ≥ 79; nothing here is a bound.
 
 ## Cross-references
 
