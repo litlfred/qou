@@ -627,3 +627,76 @@ without the trace property the value depends on the braid word rather than the
 link, so the element ambiguity becomes permanent rather than open.
 
 Scope-(a); nothing wired, no content block edited, no `c_k` proposed.
+## 2026-09-05 (4) — OPTION E, formalize-first: the requirement is "scalar mod radical", and Δ_S provably fails it
+
+Owner: *"formalize first!!! E"*.
+
+Lean: `QOU/QBeta/AdmissibleAgreementDeterminesClass.lean` — **5 theorems, 0
+sorries, `lean`-direct exit 0** against the real import cone.
+Probe: `computations/qbeta/qbeta_option_e_forced_class_probe.py` (9/9, exact
+sympy over ℚ(q); the pin enters only at readout).
+
+### The narrowing, stated before computing
+
+Option E is a trap attacked numerically: a functional on `H₃(q)` is surjective,
+so a free `Δ` reproduces **any** target and the "derivation" is a six-parameter
+fit against one anchor. Two structural facts remove all six:
+
+- an admissible trace sees `Δ` only through `(χ_(3)(Δ), χ_(2,1)(Δ))` — 6 → 2;
+- **both** candidate functionals are *normalised* (`ε(1) = 1`). Measured
+  symbolically: `tr_M(z_D) = α·χ_(3) + β·χ_(2,1)` with
+  `α = (q⁴+1)/(q²+1)²`, `β = q²/(q²+1)²`, and **`α + 2β = 1` exactly**. Since
+  `χ_(3)(1) = 1` and `χ_(2,1)(1) = dim V_(2,1) = 2`, that line *is* the
+  normalised admissible family — **one** parameter, not two.
+
+### The sharp theorem, and it is better than what I set out to prove
+
+I began with a 2×2 system ("two functionals agreeing pins the class"). The
+numbers then showed `(1−α)/β = 2` **exactly, for all q** — and 2 is
+`dim V_(2,1)`. That upgrades the result:
+
+> **`normalised_agreement_iff_scalar`** (sorry-free): writing `a = χ_(3)(x)`,
+> `b = χ_(2,1)(x)`, a normalised admissible trace gives `(1−2β)a + βb`. This is
+> independent of `β` — i.e. **every** normalised admissible trace agrees, not
+> merely the two named — **iff `b = 2a`**.
+
+`b = 2a` says `χ_λ(x)/dim V_λ` is equal across both surviving blocks, which is
+exactly **"`x` is a scalar modulo the radical"** (for `x = c·1`,
+`χ_λ(x) = c·dim V_λ`). So the requirement is not an arbitrary extra condition
+invented to close a gap — it is the statement that `Δ` is central-scalar in the
+quotient the theory lives in, and it fixes the common value to `χ_(3)(Δ)`.
+
+### And Δ_S fails it identically — scope-(b), invariant cited
+
+    chi_(2,1)(Delta_S) = 0          exactly over Q(q)
+    chi_(3)(Delta_S)   = (1-q^4)/(2q^2)  != 0
+
+**`Δ_S` is supported, modulo the radical, entirely in the trivial block.** So
+`b = 2a` fails identically and **no** admissible functional makes the Q-value
+independent of the choice.
+
+Two consequences worth keeping:
+
+1. **The +12.470 % and −43.157 % cells are not two independent estimates.**
+   Verified exactly: `tr_M(z_D)(Δ_S) = α·aug(Δ_S)`. They are *one* number
+   rescaled by `α ≈ 0.5054`. The apparent "bracket" on `Δ_S` is an artifact of
+   that single scaling, which weakens the bracket framing further than
+   `2026-08-29` already did.
+2. **The forced class is `χ_(3) = T`, `χ_(2,1) = 2T`** with `T = Q_codata/E₀ =
+   0.1868936675566543…`. `Δ_S` is `+12.470 %` off in the first coordinate
+   (calibration: this *must* equal the known augmentation cell, and does) and
+   **−100 %** off in the second.
+
+### What this does NOT establish
+
+- **Functional-independence is POSITED.** It is not a theorem of the framework
+  that a physical quantity must survive swapping the augmentation for the Markov
+  trace, any more than an operator's trace must equal its determinant. What the
+  formalisation buys is that the requirement is now *precise and falsifiable* —
+  "scalar modulo the radical" — rather than a vague appeal.
+- **No element realising the forced class is exhibited**, and none is claimed to
+  exist among legitimate braid-word differences. That is the next step and it is
+  where Option E either closes or dies.
+- `Δ_L` is untouched here; `qou-avt5`'s finding that `Δ_S ≠ Δ_L` stands.
+
+Nothing wired, no content block edited, no `c_k` proposed.
