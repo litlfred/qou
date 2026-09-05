@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-09-05T07:11:44Z
+updated_at: 2026-09-05T07:21:38Z
 ---
 
 OPENED 2026-09-05. Route E's ONE surviving branch, now a named held construction
@@ -99,3 +99,81 @@ connection / component" returns ZERO library hits; "Ptolemy" /
 bean ptlm — which had the answer, the second source AND the tractability fact —
 was found only by the .beans/ grep (checklist path 6), not by any content or
 library search.
+
+
+## 🛑 STEP 1 DONE 2026-09-05 — and it corrects THIS BEAN twice, plus a near-miss of mine
+
+Step 1 was "read the papers, confirm the Groebner feasibility claim actually
+says what ptlm reports". Done. Three findings, two of which weaken what this
+bean asserted above.
+
+### (i) MY OWN NEAR-MISS — a zero-hit grep I nearly reported as a finding
+
+I grepped both held Ptolemy papers for "Groebner|Gr.bner" and got ZERO hits, in
+sections AND ocr, and was about to report that the claim is unverifiable from
+the held text. FALSE. The extractor renders the umlaut as `Gr¨ obner` —
+diacritic split off with a SPACE INSERTED — so no naive pattern matches.
+
+Bean ptlm records hitting this EXACT trap and being "one step from recording
+'the citation is misattributed'". I read the first 45 lines of ptlm, acted, and
+walked into the same wall it had already documented forty lines further down.
+
+RULE, restated because I proved it needs restating: a zero-hit grep over
+PDF-extracted text is NOT evidence of absence. Search a diacritic-free
+substring ("bner", "impractical") before concluding a source is silent.
+
+### (ii) THE CLAIM IS REAL — verbatim, 1207.6711 section 1.3
+
+  "For the Ptolemy varieties exact computations are possible for n = 2 even when
+   there are many simplices, and there are often several components of
+   representations besides the geometric one. We should point out that while
+   Groebner basis computations are feasible for the Ptolemy varieties even for
+   many simplices, they are usually impractical for the gluing equations even
+   when the cusp equations are added. However, the monomial map mu can be used
+   to obtain shapes from Ptolemy coordinates."
+
+"often several components of representations BESIDES THE GEOMETRIC ONE" is the
+full sentence; the truncated form quoted higher in this bean lost the operative
+clause.
+
+### (iii) 🛑 THE FEASIBILITY IS STATED FOR n = 2. THIS TRANCHE NEEDS n = 3.
+
+Read it again: "exact computations are possible for **n = 2**". The paper does
+NOT claim n = 3 is feasible. Higher in this bean I wrote that the computation
+"is not a research programme; it is a Groebner basis over Q on a variety
+designed to be computable" — that is the n = 2 statement applied to an n = 3
+task, and it is the same ambient-vs-instance slip this whole arc keeps
+correcting, committed by me while writing the bean that corrects it.
+
+### (iv) 🛑 AND IT IS NOT RUNNABLE IN THIS CONTAINER — ptlm MEASURED THIS
+
+Both papers use MAGMA for the primary decomposition (1207.6711 section 14;
+1507.03238's Algorithm Step 3 is "compute the primary decomposition of the
+reduced Ptolemy variety"). ptlm tested the tooling directly on 2026-08-10:
+
+  snappy.Manifold("4_1").ptolemy_variety(2, obstruction_class=0)   builds fine
+  .retrieve_solutions()  -> RuntimeError, 403 Forbidden: the precomputed
+                            database at ptolemy.unhyperbolic.org is
+                            NETWORK-BLOCKED by the agent proxy
+  .compute_solutions()   -> ValueError: could not find the Magma executable
+
+So the blocker is not compute time; it is two missing capabilities, both
+already measured. This bean as first written did not carry that, and would have
+sent the next agent to rediscover it.
+
+### WHAT THIS TRANCHE ACTUALLY NEEDS NOW
+
+  1. A primary-decomposition backend that is neither Magma nor the blocked
+     database. Candidates, in order of plausibility: Singular via Sage (is Sage
+     present? ptlm notes find_field already needs it and Route 75 hand-rolled
+     around that), sympy.groebner (available, but n = 3 Borromean may not
+     terminate), or an exact linear-algebra route that avoids full primary
+     decomposition altogether.
+  2. Confirmation that n = 3 is tractable AT ALL for a 8-tetrahedron
+     complement — the paper's feasibility sentence does not cover it.
+  3. Only then the character-reality read.
+
+Step (1) is the real gate and it is an INFRASTRUCTURE question, not a
+mathematical one. Until it is answered this tranche cannot start, and saying so
+is the honest state rather than opening a computation that will fail the same
+way ptlm's did.
