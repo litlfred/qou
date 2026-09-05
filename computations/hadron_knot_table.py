@@ -233,6 +233,21 @@ def compute_atom(name, Z, N, quarks=None):
         "ln_abs_tr": (fmt(mp.log(abs(tr)), dps=17)
                       if abs(tr) > mp.mpf("1e-300") else None),
         "frobenius_stable": stable,
+        # Record the EVIDENCE, not just the verdict (bean `qou-3uvs`).
+        # `check_frobenius` returns `(stable, Gx, violations)` and this
+        # function already unpacked all three, then published only the
+        # boolean — so a False verdict could not be audited without re-running
+        # a 4.6-hour table.
+        #
+        # It needs auditing here specifically. The test is `Gx[i] < -1e-10`, a
+        # FIXED absolute tolerance, on a float64 product whose magnitude runs
+        # from 1e1 (o16) to 1e31 (fe56). At fe56's scale one float64 ulp is
+        # ~2.5e+15, twenty-five orders ABOVE the threshold, so a `Gx` entry
+        # whose true value is 0 can land at -1e+15 from cancellation alone and
+        # register as a violation. With these recorded, a reader can see
+        # whether a violation is genuinely large or sits in the noise.
+        "Gx": [fmt(float(v)) for v in Gx],
+        "frobenius_violations": [[nm, fmt(float(val))] for nm, val in violations],
         "knot_type": knot_name,
         "B_MeV": fmt(B),
         # Per-generator traced volumes (mass-tower formula, sum 1 + 3)
