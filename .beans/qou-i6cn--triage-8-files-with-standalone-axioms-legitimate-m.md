@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T14:57:07Z
-updated_at: 2026-09-05T18:00:32Z
+updated_at: 2026-09-05T18:05:22Z
 ---
 
 
@@ -275,3 +275,56 @@ over three undefined symbols, correctly wired.
 `WeierstrassProjection` (1, Lang — bean says "defect, fixed", but the axiom is
 still present, so re-read), `ParallelogramContour` (1, Ahlfors), `SDP` (1,
 Todd), `SDPRankEquality`/`SDPRealUniqueness` (1 each, AHO).
+
+
+## `weierstrass_diff_eq_axiom` — legitimate, and I misread this bean
+
+This bean records it as *"Defect, fixed (PR #4774) — was provable from nothing"*,
+yet the axiom is still present. I flagged that as a contradiction and offered
+two explanations — "the fix re-cited it, or the record is wrong". **Both wrong.**
+The fix was a **restatement**. The old form was
+
+    ∀ (g2 g3 : R_q) (z : ℂ), z ≠ 0 →
+      ∃ (wp_deriv wp_val : ℂ), wp_deriv ^ 2 = 4 * wp_val ^ 3 - ...
+
+— an existential over two FREE complex numbers that never mentioned
+`weierstrassProjection`, hence a theorem over ℂ (take `wp_val := 0`). The
+current form quantifies over the **named primitives** `weierstrassProjection`
+and `weierstrassProjectionDeriv`, so it is genuinely unproved and correctly
+cited (Lang Thm VI.3.6). **Legitimate Mathlib-gap — and the exemplar of the
+right fix.**
+
+Note the through-line: *quantify over the named primitive* is exactly what
+`aeon_recycling` lacked. The corpus already held the correct repair pattern.
+
+## NEGATIVE RESULT: the `aeon_recycling` shape is a one-off, not a class
+
+I tried three mechanical detectors for "an axiom that does not mention the
+object it claims to constrain". **All three produced only false positives on
+the live corpus**, while each caught a synthetic reconstruction of
+`aeon_recycling`:
+
+| shape | live flags | why they were false |
+|---|---|---|
+| axiom mentions no FILE-LOCAL symbol | 2 | symbols were IMPORTED (`SDPPrimal`, `RealStrictComplementarityPair`) — and this shape would have MISSED `aeon_recycling` itself, whose two symbols are file-local |
+| explicit binder absent from the CONCLUSION | 2 | conclusion was about an *implicit* variable (`D = 0`); and an ASCII-only identifier regex never extracted `ω₁ ω₂ z₀ w` |
+| binder never used AFTER its binder group | 3 | named **hypotheses** (`horient`, `hw`, `h_slater`, `h_feas`) are normally never referenced again in Lean |
+
+Not shipped. Three shapes, 0 true positives across 18 axioms, so the useful
+conclusion is the negative one: **no other axiom in the corpus has this
+shape**, and it does not warrant a guard. Recording the three dead ends so
+nobody spends the afternoon again — this is the detector-blindness pattern
+AGENTS.md already catalogues, one level up.
+
+## Tally after this pass
+
+- **18 axioms / 12 files** (was 19/13; `aeon_recycling` removed).
+- **All 4 `[manuscript]`-only axioms READ.** 1 removed vacuous, 2 legitimate
+  (citations corrected), 1 (`evenPower_necessary_for_blockPosSemidef`) is a
+  QOU conjecture rather than a Mathlib gap — inert, zero consumers, left as a
+  framed choice.
+- **`weierstrass_diff_eq_axiom` re-read and cleared.**
+- Remaining unread: 13, all with published citations — `IwahoriHeckeAPI` (3),
+  `Hoefsmit` (2), `HeckeAlgebra/MarkovTrace` (2), `Hecke/MarkovTrace` (1),
+  `Formal` (1), `ParallelogramContour` (1), `SDP` (1), `SDPRankEquality` (1),
+  `SDPRealUniqueness` (1).
