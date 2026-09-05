@@ -87,3 +87,44 @@ a ratio of two float64 values of the same magnitude keeps ~16 digits.
 The STABILITY VERDICT claim does not, for ca40 and fe56. It should have been
 stated as "the predicate reports unstable, at a scale where the predicate
 cannot resolve its own threshold".
+
+## 2026-09-05 — RESOLVED in the hadron table (pending its regeneration)
+
+Both halves are addressed, and by the same change that closed `qou-ejuy`
+step 4 — moving the table onto the mp path.
+
+**Scope 1 (record the evidence)** — done earlier: `Gx` and
+`frobenius_violations` are in every row, landed before the regeneration so the
+run produces an auditable artifact rather than another bare boolean. They now
+serialize at full mp width (the first version passed them through `float()`,
+which would have re-narrowed exactly the values that make a verdict
+checkable).
+
+**Scope 2 (scale-aware tolerance)** — done. `hadron_knot_table` now has its own
+`check_frobenius_mp`, using
+
+    scale = max(|Gx_i|, 1)          # never LOOSER than the original
+    tol   = -(1e-10 * scale)
+
+1e-10 RELATIVE reproduces the f64 test exactly wherever ‖Gx‖∞ ≤ 1 — the regime
+where the absolute form was meaningful — and scales with the quantity where it
+was not. Floored at 1 so it can never be more permissive than what it replaces.
+
+Deliberately NOT tightened to 1e-30 merely because mpf can carry it: that would
+smuggle a NEW SCIENTIFIC THRESHOLD in under a precision change, which is the
+same class of error as the `-h/2` convention hiding inside a "precision mirror"
+(`qou-ejuy`).
+
+**Scope 3 (the float64 product)** — gone. `check_frobenius_mp` contracts
+`gram_matrix_mp(50)` against an mpf NF, so the noise floor that made this bean
+necessary no longer exists: measured on deuterium, `Gx[0]` now reads
+`0.404396338473143412297181623713549507554654248186911141780400`.
+
+`pyhecke.atom.check_frobenius` is UNCHANGED and still f64. That is deliberate —
+it is on the bit-stable path other callers depend on (bean `qou-jtbo`). The mp
+variant lives in the consumer.
+
+- [ ] Land the regenerated witness and re-read the four LP_stable verdicts.
+      They are computed honestly for the first time; whether ca40 and fe56 are
+      genuinely unstable is now an answerable question rather than a noise
+      reading, and the recorded `Gx` says which.

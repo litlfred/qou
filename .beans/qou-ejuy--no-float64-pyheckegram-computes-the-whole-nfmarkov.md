@@ -160,10 +160,23 @@ recorded so the stability verdicts become auditable.
        Had this step been skipped, moving `hadron_knot_table` to the mp path
        would have shifted the physics by 7e-4 while looking like a clean
        NO-FLOAT64 upgrade.
-4. [ ] Move `hadron_knot_table` to the mp path: `build_atom_nf_mp`,
-       `tr_m_mp()` for the trace, `gram_matrix_mp()` in `check_frobenius`.
-       Then drop the `dps=17` cap on `ln_abs_tr` (bean `qou-uiut`) — the input
-       will finally deserve the full width.
+4. [x] Moved. `build_atom_nf_mp` / `build_nucleon_nf_mp` for the NF,
+       `tr_m_mp(50)` for the trace, and a local `check_frobenius_mp` over
+       `gram_matrix_mp(50)` (local, not in the library: the f64
+       `check_frobenius` is on the bit-stable path other callers rely on).
+       The `dps=17` cap on `ln_abs_tr` is dropped and the `float()` in the `Gx`
+       serialization is gone. Measured on deuterium, every field now carries 60
+       real digits:
+
+           tr_M       0.404396338473143412297181623713549507554654248186911…
+           net        1.15453793492571046672735243477077542992790931074548…
+           B_MeV      -7.2711025986821821719155043668348962979451059325080…
+           Gx[0]      0.404396338473143412297181623713549507554654248186911…
+
+       Sanity: the mp `tr_M` agrees with the committed f64 value to ~9 digits
+       (0.404396338473… vs 0.404396337968…, ~5e-10 apart) — the f64 path's
+       accumulated rounding through the NF multiplications, which is exactly
+       what this removes.
 5. [ ] Re-run and diff. tr_M, net, nf and every LP_stable verdict move; that
        is the point, and `qou-3uvs`'s noise floor goes away with it.
 6. [ ] Find the OTHER f64-path consumers before declaring this done. `nf_tr`
