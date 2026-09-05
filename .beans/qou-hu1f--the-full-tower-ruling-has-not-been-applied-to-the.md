@@ -498,3 +498,56 @@ word satisfies that criterion — **at the wrong level**. The nucleons are still
 strung on a chain, blocks still overlap in one strand, and `L` is unchanged to
 `~1e-60`. So the Borromean structure is intra-nucleon and buys no many-body
 binding. Recorded in the block, not overstated.
+
+## FORMALISED (2026-09-05): `QOU.Mass.IntraOrderingInvariance`, sorry-free
+
+Owner: "prove assertions in lean." Twelve theorems, all
+`[propext, Classical.choice, Quot.sound]` — no `sorryAx`.
+
+The load-bearing one is **`chainRatio_eq_of_intra`**: given the connected-sum
+input (`tr_M(W_atom) = F · ∏ᵢ(z+dᵢ)`, `tr_M(W_free) = F`), two orderings with
+intra factors `F₁` and `F₂` give the *same* ratio — and **no hypothesis relates
+`F₁` to `F₂`**. That is the point. The measured factors are `14×` apart, and the
+invariance still holds, because it is cancellation rather than a near-miss. Then
+`L_chain_eq_sum_of_intra` / `L_chain_indep_of_intra` carry it to `L` via
+`ChainTraceFactor.neg_log_prod`.
+
+The other half: `chainDiff_scales` proves `F₁(1−P) = (F₁/F₂)·F₂(1−P)`, so
+`binding_canonical`'s difference route scales exactly by the intra ratio, and
+`chainDiff_ne` proves it genuinely differs when `F₁ ≠ F₂` and `P ≠ 1`.
+
+**`grouped_ne_borromean`** settles that the two words are different objects
+without appealing to `q₀` at all: at `q = 1`, where `h = 0` and both are
+elementary, the per-generator product is `1/4` and the Borromean closed form
+(reused from `QOU.BraidsAndKnots.BorromeanMarkovTrace`) is `1`. So the `82 %`
+gap is not a deformation artefact.
+
+### The definitions are pinned to the engine, which is the part that could have been fake
+
+A Lean proof about `groupedConfinement` is worth nothing unless that definition
+IS `tr_M(σ₀³σ₁⁻³)`. Probe §7 checks both against the 200-bit engine:
+
+    groupedConfinement    Lean def 0.1800645395355010983036   rel 1.4e-59
+    borromeanConfinement  Lean def 0.9985621638367872659512   rel 5.0e-60
+
+So the theorems are about the measured words, not lookalike expressions.
+
+### Scope, stated tightly
+
+Connected-sum multiplicativity is **assumed, not proved** — same as
+`ChainTraceFactor`, which says so too. This file proves everything that follows
+from it, and nothing about whether the bond model is *right*: `B = α L` remains
+the open interpretation of `rem:bond-log-ratio-is-a-free-energy`.
+
+### Toolchain note for whoever builds this next
+
+`lake exe cache get` **cannot run in this container**: the elan toolchain ships
+without `libleancpp`/`libLean`, so linking the `cache` executable fails with
+`/usr/bin/ld: cannot find -lleancpp`. Mathlib had to be built from source (3089
+jobs, ~50 min). Nothing is wrong with the repo; budget for it or fix the
+toolchain image.
+
+`QOU.lean` now imports the new module, which also brings
+`QOU.Mass.ChainTraceFactor` under the umbrella — nothing had imported it, so it
+was invisible to every import-walking tool (blueprint, doc-gen) despite being
+compiled by the `globs` target.

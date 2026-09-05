@@ -123,7 +123,23 @@ What *moves* is every
 $14.3\times$ at $^4$He when the block is rebuilt as $\beta_{\mathrm{Bor}}$,
 carrying the difference-based
 $B = Q_\beta\bigl(\mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{atom}})\bigr)$
-route with it by the same factor. Measured in
+route with it by the same factor.
+
+`QOU.Mass.IntraOrderingInvariance` (sorry-free) proves the split. Given the
+connected-sum input — $\mathrm{tr}_M(W_{\text{atom}}) = F \prod_i (z + d_i)$ and
+$\mathrm{tr}_M(W_{\text{free}}) = F$ — the ratio is
+$\prod_i (z+d_i)$ for **any** intra factor $F \neq 0$, so two orderings with
+factors $F_1, F_2$ give the same ratio with *no hypothesis relating them*
+(`chainRatio_eq_of_intra`), and hence the same $L$
+(`L_chain_indep_of_intra`, `L_chain_eq_sum_of_intra`). The invariance is
+cancellation, not coincidence. The difference route instead satisfies
+$F_1(1-P) = (F_1/F_2)\,F_2(1-P)$ (`chainDiff_scales`) and genuinely differs
+whenever $F_1 \neq F_2$ and $P \neq 1$ (`chainDiff_ne`). And the two
+confinement words are different objects: at $q = 1$, where both are elementary,
+the per-generator product is $1/4$ and the Borromean closed form is $1$
+(`grouped_ne_borromean`), so the $82\,\%$ gap at $q_0$ is not a deformation
+artefact. Not formalised, as ever, is the connected-sum multiplicativity itself.
+Measured in
 `the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`; which
 word is $\beta_{\mathrm{Bor}}$ is measured in
 `nf_vs_canonical_word_order_probe.py`.
