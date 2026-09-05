@@ -53,6 +53,10 @@ Kernel-live re-runs of the figures that had no provenance:
 |---|---|---|---|---|
 | ³H | 3 | **−7.742121347136118** | −7.742 | reproduces |
 | ³He | 3 | **−7.45619950551758** | −7.456 | reproduces |
+| ⁴He | 4 | **−6.828594293148849** | −6.829 | reproduces |
+
+**All three reproduce.** Every figure that had no provenance is confirmed
+kernel-live.
 
 So the caution was procedurally right — they genuinely could not be verified, and
 the 17.29 % kernel/fallback split made the risk real — but the **substance is
@@ -67,7 +71,7 @@ They do not. They are:
 | −7.271 | A=2 | ²H (A=2) |
 | −7.742 | A=3 | ³H (A=3) |
 | −7.456 | A=4 | **³He — also A=3** |
-| −6.829 | A=5 | presumably ⁴He (A=4) |
+| −6.829 | A=5 | **⁴He (A=4)** — confirmed by re-measurement |
 
 **There was never an A = 5 point.** The four atoms are ²H, ³H, ³He, ⁴He —
 A = 2, 3, **3**, 4 — the *same five atoms* as the gated-size list
