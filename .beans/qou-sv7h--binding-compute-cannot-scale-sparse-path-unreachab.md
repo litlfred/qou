@@ -755,3 +755,43 @@ the real inputs at the dim it names; what is NOT established is why.
 behind step 4 was "the dense path is slow", the live target is step 2 (export
 `dense_dense_mul_mpfr` via PyO3) — a measured >=24x, against a branch that is
 already winning 2.1x over the alternative it was to be replaced by.
+
+
+## Step 2's stated payoff does not hold for the accumulator — RE-SCOPED (2026-09-05)
+
+Step 2 is *"Export `dense_dense_mul_mpfr` via PyO3, route `_matmul_dim` + the
+COO accumulator through it (>=24x, on top of 1). **This is what makes higher
+isotopes reachable.**"* The `>=24x` is not disputed here. The **reachability
+claim is**, and it is measured rather than argued.
+
+`_matmul_dim` call counts, instrumented, `pyhecke_native` 0.9.0 present:
+
+    unified_iterative_correction(1,1,k=7), kernel ON      0 calls
+    unified_iterative_correction(1,1,k=7), kernel OFF  1025 calls
+    atom_character_raw (4,2) dim 9,        kernel ON      0 calls
+    _contrib_single_partition,             kernel ON     25 calls
+
+**Two of the three consumers never reach `_matmul_dim` in the configuration
+step 2 targets.** `unified_iterative_correction` short-circuits on
+`s['kernel_steps']`, and `atom_character_raw` has its own Rust
+LP-accumulator path (its own comment, "Same recurrence, same rescale") — so
+both take the Rust route and the dense matmul is dead in production.
+
+**And the fallback cannot be helped by this at all.** The 1025 calls happen
+precisely when `pyhecke_native` is unavailable — and
+`dense_dense_mul_mpfr` lives in that same extension. Exporting a function
+from a library whose absence defines the fallback path does not speed that
+path up. This is self-defeating as stated, not merely optional.
+
+**What step 2 would actually buy** is `_contrib_single_partition` — the one
+live consumer at 25 calls per partition — and through it
+`unified_iterative_correction_jet` and `conjugate_pair_cross_term`. That may
+well be worth doing; it is simply not the accumulator, and it is not what
+makes higher isotopes reachable.
+
+**Scope, per the refuted/ruled-out discipline: this is (a), a scope-limited
+negative.** The `>=24x` measurement stands, the PyO3 export remains a
+legitimate piece of work, and nothing here excludes it. What is refuted is
+the specific claim that routing `_matmul_dim` through it unblocks the
+isotope table. The isotope-table bottleneck is whatever the Rust kernel
+itself costs, which this did not measure.
