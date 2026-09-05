@@ -229,9 +229,49 @@ content sum, moving 12.9x across row 5 (peak at [8,4]) -- so the monotonicity
 above is a real fact about the weight, in which the q^c factor dominates a
 non-monotone correction, and not an identity read off a closed form.
 
-WHAT IS STILL OPEN, after the reduction, the tie correction and the margin
-measurement: WHY those three partitions carry an out-of-order character for
-those atoms and not for others.  Five identified pairs on three named
+TWO MORE CANDIDATE EXPLANATIONS TESTED, BOTH REFUTED -- and one CAUTION that
+is worth more than either.
+
+The clean structural story would be |chi| = dim x (slowly varying factor), i.e.
+the NORMALISED character |chi|/dim roughly constant, or at least monotone.  It
+is neither.  |chi|/dim is not monotone in dim in FOUR of the six rows, and it
+varies enormously within a single row:
+
+    row  n    max |chi|/dim         min |chi|/dim          range
+      0  3    1.382  at   [3]       0.9039  at  [2,1]      1.53x
+      1  3    1.122  at   [3]       0.8504  at  [2,1]      1.32x
+      2  6    1.560  at   [6]       0.1860  at  [4,2]      8.38x
+      3  9    1.577  at   [9]       0.1054  at  [5,4]     14.97x
+      4  9    2.394  at   [9]       0.1833  at  [5,4]     13.06x
+      5 12    2.420  at  [12]       0.0733  at  [7,5]     33.00x
+
+A 33x swing in the normalised character is far more than the dimension ordering
+can absorb, and THAT is what produces the inversions.  So the answer to "why is
+the dim link only 89.6 %" is not a better notion of dimension -- it is that the
+normalised character is not close to constant at all.
+
+    🛑 CAUTION, and it invalidates an argument a reader is likely to reach for:
+    THE CLASSICAL CHARACTER BOUND DOES NOT HOLD HERE.  For any finite group,
+    |chi^lambda(g)| <= chi^lambda(1) = dim, so |chi|/dim <= 1 always.  Measured
+    here it is VIOLATED in 6 of 6 rows -- always at the one-row partition [n],
+    where dim = 1 and |chi| runs 1.122 to 2.420.
+
+    Two readings are consistent with that and this probe does not separate
+    them: these are Hecke characters at q_0 > 1, where the classical bound
+    simply does not apply; or the witness's `chi_lambda` field carries a
+    normalisation that is not a bare character.  Either way, do NOT reason from
+    |chi| <= dim anywhere in this corpus.  Asserted below so the fact stays
+    visible.
+
+Where the discordant partition sits in that picture: it is the argmin of
+|chi|/dim in two of the three cases ([4,2] at n=6, [7,5] at n=12) and the
+SECOND smallest in the third ([7,2] at n=9 row 3, behind [5,4]).  Reported as
+measured; two of three is not a law and no mechanism is invented here to make
+it one.
+
+WHAT IS STILL OPEN, after the reduction, the tie correction, the margin
+measurement and these two refutations: WHY those three partitions carry an
+out-of-order character for those atoms and not for others.  Five identified pairs on three named
 partitions -- not a percentage -- and n = 6 is no longer part of it, having
 been an artifact of the tie rather than a fact about the mathematics.
 
@@ -355,7 +395,7 @@ def main() -> int:
     print(f"=== does the character move O3''s argmin? — {len(rows)} rows ===",
           flush=True)
 
-    out, by_n, tails, chain, margins = [], {}, {}, [], []
+    out, by_n, tails, chain, margins, norm_stats = [], {}, {}, [], [], []
     agree = 0
     fact_max = mp.mpf(0)
     for idx, r in enumerate(rows):
@@ -387,6 +427,20 @@ def main() -> int:
         # SYT counts stay exact ints; only w and chi are mpf.
         cs = [p["content_sum"] for p in surv]
         dim = [f_lambda(tuple(p["partition"])) for p in surv]
+
+        # The normalised character.  Classically |chi|/dim <= 1 for ANY finite
+        # group; that bound does not survive here, and the spread is what the
+        # dim-vs-|chi| link is really up against.
+        norm = [c / d for c, d in zip(c_vals, dim)]
+        by_dim = sorted(zip(dim, norm))
+        norm_stats.append({
+            "n": n, "row": idx,
+            "max": fmt(max(norm)), "min": fmt(min(norm)),
+            "range": fmt(max(norm) / min(norm)),
+            "exceeds_classical_bound": max(norm) > 1,
+            "monotone_in_dim": all(by_dim[i][1] > by_dim[i + 1][1]
+                                   for i in range(len(by_dim) - 1)),
+        })
         cw, dw, tw_ = concordant(cs, w_vals)
         cc, dc, tc_ = concordant(cs, c_vals)
         cd, dd, td_ = concordant(cs, dim)
@@ -528,6 +582,25 @@ def main() -> int:
           "; ".join(f"dims {list(d)} -> concordant {sorted(v)}"
                     for d, v in split.items()) or "no split found")
 
+    # THE NORMALISED CHARACTER.  Both of these are refutations, kept as
+    # assertions so a later row that behaved differently would say so.
+    check("the CLASSICAL character bound |chi| <= dim is VIOLATED on every row "
+          "— so these are not classical S_n characters and no argument in this "
+          "corpus may assume that bound",
+          all(m["exceeds_classical_bound"] for m in norm_stats),
+          "max |chi|/dim per row: "
+          + ", ".join(mp.nstr(mp.mpf(m["max"]), 5) for m in norm_stats)
+          + " — always at the one-row partition [n], where dim = 1")
+
+    nonmono = [m for m in norm_stats if not m["monotone_in_dim"]]
+    check("|chi|/dim is NOT monotone in dim — so 'character = dimension times a "
+          "slowly varying factor' is refuted, and no better notion of dimension "
+          "repairs the 89.6% link",
+          len(nonmono) >= len(norm_stats) // 2,
+          f"{len(nonmono)}/{len(norm_stats)} rows non-monotone; |chi|/dim spans "
+          + ", ".join(mp.nstr(mp.mpf(m["range"]), 4) + "x" for m in norm_stats)
+          + " within a row")
+
     # THE MARGIN.  The 6/6 agreement is a measurement, not a law with room to
     # spare, and these two checks are what keep it from being quoted as one.
     worst = max(mp.mpf(m["margin"]) for m in margins)
@@ -643,7 +716,15 @@ def main() -> int:
         "thin win. So argmin(t)==argmin(w) in 6/6 is a MEASUREMENT, not a "
         "structural law with room to spare, and must not be quoted as one; an "
         "earlier version of this probe called the selection 'stable rather than "
-        "noise', which was too strong and is corrected. CONSEQUENCE: PR #6752's "
+        "noise', which was too strong and is corrected. TWO MORE CANDIDATE "
+        "explanations for the imperfect dim link are REFUTED here: |chi|/dim is "
+        "NOT monotone in dim (4/6 rows) and spans up to 33x within one row, so "
+        "'character = dimension x slowly varying factor' fails and no better "
+        "notion of dimension repairs it. CAUTION: the CLASSICAL bound "
+        "|chi| <= dim is VIOLATED in 6/6 rows (max |chi|/dim = 1.12 to 2.42, "
+        "always at the one-row partition [n] where dim=1) -- these are not "
+        "classical S_n characters, and no argument in this corpus may assume "
+        "that bound. CONSEQUENCE: PR #6752's "
         "reading of the selection as 'which Wedderburn blocks the bound state "
         "saturates' is WRONG and is corrected; the pricing result (y_0* nonzero "
         "and atom-dependent, where the full LP has y_0* = 0 identically) STANDS."
@@ -654,6 +735,7 @@ def main() -> int:
     w.add_data("rows", out)
     w.add_data("content_sum_reduction", chain)
     w.add_data("selection_margin", margins)
+    w.add_data("normalised_character", norm_stats)
     for name, ok in CHECKS:
         w.add_assertion(name, computed="1" if ok else "0", expected="1",
                         tolerance="0",

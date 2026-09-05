@@ -587,3 +587,47 @@ partitions carry an out-of-order character for those atoms.  The margin is what
 makes it a live question rather than an academic one — the discordant partitions
 are exactly where a character runs against the weight ordering, and the ordering
 only survives by 1.2x–2.1x.
+
+## 2026-09-05 (fourth) — two more candidate explanations refuted, and a caution
+## that outlives both
+
+Chasing WHY `[4,2]` (n=6), `[7,2]` (n=9) and `[7,5]` (n=12) invert.  The clean
+structural story would be `|chi| = dim x (slowly varying factor)`, i.e. the
+NORMALISED character `|chi|/dim` roughly constant or at least monotone.  It is
+neither.
+
+    row  n    max |chi|/dim         min |chi|/dim          range
+      0  3    1.382  at   [3]       0.9039  at  [2,1]      1.53x
+      1  3    1.122  at   [3]       0.8504  at  [2,1]      1.32x
+      2  6    1.560  at   [6]       0.1860  at  [4,2]      8.38x
+      3  9    1.577  at   [9]       0.1054  at  [5,4]     14.97x
+      4  9    2.394  at   [9]       0.1833  at  [5,4]     13.06x
+      5 12    2.420  at  [12]       0.0733  at  [7,5]     33.00x
+
+Non-monotone in dim in **four of six rows**, and a **33x** swing within one row
+— far more than the dimension ordering can absorb.  So the answer to "why is the
+dim link only 89.6 %" is **not a better notion of dimension**; the normalised
+character is simply not close to constant.  With the q-dimension refutation
+recorded above, that is two candidate repairs closed.
+
+**🛑 CAUTION, worth more than either refutation: THE CLASSICAL CHARACTER BOUND
+DOES NOT HOLD HERE.**  For any finite group `|chi^lambda(g)| <= chi^lambda(1) =
+dim`, so `|chi|/dim <= 1` always.  Measured here it is **violated in 6 of 6
+rows** — always at the one-row partition `[n]`, where `dim = 1` and `|chi|` runs
+**1.122 to 2.420**.
+
+Two readings are consistent and this probe does not separate them: these are
+Hecke characters at `q_0 > 1`, where the classical bound does not apply; or the
+witness's `chi_lambda` field carries a normalisation that is not a bare
+character.  **Either way, do not reason from `|chi| <= dim` anywhere in this
+corpus.**  Asserted in the probe so it stays visible.
+
+Where the discordant partition sits: it is the **argmin** of `|chi|/dim` in two
+of three cases (`[4,2]` at n=6, `[7,5]` at n=12) and the **second** smallest in
+the third (`[7,2]` at n=9 row 3, behind `[5,4]`).  Two of three is not a law and
+no mechanism is invented here to make it one.
+
+**Open, and now well-characterised rather than merely named:** the inversions
+are driven by the normalised character's variation, which is large (up to 33x)
+and not ordered by dimension.  Why it dips where it does — at those three
+(partition, atom) pairs — is unanswered.  Two obvious repairs are closed.
