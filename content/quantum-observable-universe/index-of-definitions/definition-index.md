@@ -1038,7 +1038,7 @@
 |-------|-------|---------|------|
 | [conj:dilogarithm-archimedean-limit](#conj:dilogarithm-archimedean-limit) | $(1{-}q)\,\log\Phi_n(x; q) \to \mathrm{Li}_2(x)$ under $\tau_{\mathrm{arch}}$ | Ch 12 | `qou:QOU.QPochhammer.ArchimedeanLimit` |
 | [conj:electroweak-higgs-torus-link-triplet](#conj:electroweak-higgs-torus-link-triplet) | $(W^\pm, Z, H) \leftrightarrow (T(2,4), T(2,6), T(2,8))$ — non-Bring even-twist 2-component torus-link triplet | Ch 8 | `qou:QOU.ParticleInteractions.EWHiggsTorusLinkTriplet` |
-| [conj:cp-violation-spectral-form](#conj:cp-violation-spectral-form) | $\delta_{\mathrm{CP}}$ as imaginary part of the alternating-block character | Ch 15 | `qou:QOU.Observations.cp_violation_spectral_form` |
+| [conj:cp-violation-spectral-form](#conj:cp-violation-spectral-form) | $\delta_{\mathrm{CP}}$ as imaginary part of the alternating-block character | Ch 15 | `qou:QOU.Observations.CPViolationSpectralForm` |
 | [conj:qou-p-neq-np](#conj:qou-p-neq-np) | $\mathrm{P} \neq \mathrm{NP}$ at non-torsion $q \in \mathbb{G}_m$ | Ch 20 | `qou:QOU.Information.QouPNeqNp` |
 | [conj:q-geometric-langlands](#conj:q-geometric-langlands) | $q$-Geometric Langlands correspondence | Ch 22 | `qou:QOU.QGeometricLanglands.QGeometricLanglandsConjecture` |
 | [conj:q-oper-hecke](#conj:q-oper-hecke) | $q$-Opers are $q$-Hecke eigensheaves | Ch 22 | `qou:QOU.QGeometricLanglands.q_oper_hecke` |

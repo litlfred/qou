@@ -34,16 +34,25 @@ the next run's left strand is `g+1`; an odd run swaps them so it is carried over
 `crossing_pair_of_run` puts the two together: **run `g` crosses exactly the strands
 `(pStart e g, g+1)`**. That is the sentence tier 1 was resting on.
 
-**What is still NOT proved, and it is now precisely one thing.** That `compIdx` counts
-components — i.e. that the cycles of the closure permutation `∏_{e_g odd} σ_g` are the
-maximal consecutive blocks of odd-exponent generators. That needs the cycle
-decomposition of a product of ascending adjacent transpositions, which is a genuinely
-separate piece of combinatorics and is not attempted here. It is measured, not assumed
-silently: `monotone_word_component_structure_probe.py` checks it as P2 (components are
-consecutive strand intervals) and P4 (`μ = 1 + #{g : e_g even}`), **414/414**.
+**That last gap is now closed too (2026-09-05).** This said `compIdx` counting
+components was "not attempted here" and would need "the cycle decomposition of a product
+of ascending adjacent transpositions". It needs no such thing.
+`MonotoneWordCycleStructure.lean` gets it from the lemmas above: with `π = posAfter e N`,
 
-So the chain now reads: `pStart` **proved** to model the word; `compIdx` **measured** to
-model the cycles; everything above them proved from those two.
+    e i odd   →  π i = i + 1        (`posAfter_of_odd`, from `posAfter_stab` + this file)
+    e i even  →  π i = pStart e i   (`posAfter_of_even`, from `posAfter_self` above)
+
+so `π` is the **cyclic shift on each `compIdx` class**, and both inclusions drop out —
+`compIdx_posAfter` puts every cycle inside a class, and the odd steps traverse a class
+upward so every class sits inside a cycle. Cycles **are** the classes.
+
+**What remains is the modelling step itself**, one level below everything here: that
+`posAfter` *is* a monotone braid word's position map and that the closure's components
+*are* its cycles. "Braid word" and "closure" are not Lean objects anywhere in this arc,
+so that is a definition rather than a theorem. It is measured: the companion probe checks
+that this recursion reproduces `analyse`'s `perm` array **exactly**, 414/414 — entry for
+entry, not merely agreeing on the component partition, which a reimplementation could do
+by sharing an assumption.
 
 **A modelling caveat worth stating.** `posAfter` is defined on all of `ℕ`, with no bound
 `n`, and the closure is not modelled at all — this file is about the *braid*, not its

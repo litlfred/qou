@@ -259,19 +259,47 @@ def wedderburn_decomposition_generic
 
 /-! ## Central primitive idempotents and JM elements -/
 
+/-! ### 🛑 `jucysMurphy` and `centralIdempotent` must stay `opaque`
+
+Both were `noncomputable def … := Classical.ofNonempty` with their index
+argument named `_k` / `_lam`, i.e. **discarded**.  A `def` that discards its
+index is *definitionally constant* in it, so `centralIdempotent H [1]` and
+`centralIdempotent H [2]` were the same term — and combined with
+`centralIdempotent_orthogonal_axiom` that PROVES every central idempotent is
+zero:
+
+    e * e = e            (λ = μ)
+    e * e = 0            (λ ≠ μ, same term)
+    ⟹ e = 0
+
+Machine-checked before the fix: the derivation compiled, depending on exactly
+`[propext, Classical.choice, centralIdempotent_orthogonal_axiom]`.  With every
+`e_λ = 0` the other two axioms became trivially true (`0` commutes;
+`star 0 = 0`), so the whole idempotent API asserted nothing.
+
+It was **not** an inconsistency: `wedderburn_decomposition_generic` quantifies
+existentially over a *fresh* `e` and never plugs in `centralIdempotent`, so no
+`0 = 1` is derivable.  And nothing outside this file consumed it —
+`ExplicitCentralIdempotent.lean` defines its own, separate `centralIdempotent`.
+
+`opaque` removes the collapse: after the change the derivation fails with
+*"`H.centralIdempotent a` is not definitionally equal to `H.centralIdempotent b`"*.
+**Do not revert either declaration to `def`** without re-checking that.
+Bean `qou-i6cn`. -/
+
 /-- The **Jucys–Murphy element** `J_k` of `H_n(q)`. Definition uses
     the formula `J_k = q^{1-k} Σ_{i < k} σ_{i, k}` from
-    `prop:jucys-murphy-central-elements-qou`. Placeholder. -/
-noncomputable def jucysMurphy
-    (H : IwahoriHeckeAlgebra n R q h_unit) (_k : Fin n) : H.carrier :=
-  Classical.ofNonempty
+    `prop:jucys-murphy-central-elements-qou`.  Opaque, not a placeholder
+    `def` — see the note above. -/
+noncomputable opaque jucysMurphy
+    (H : IwahoriHeckeAlgebra n R q h_unit) (k : Fin n) : H.carrier
 
 /-- The **central primitive idempotent** `e_λ` for partition
     `λ ⊢ n`. Constructed via Lagrange interpolation in JM elements
-    per `prop:explicit-central-idempotent`. Placeholder. -/
-noncomputable def centralIdempotent
-    (H : IwahoriHeckeAlgebra n R q h_unit) (_lam : List ℕ) : H.carrier :=
-  Classical.ofNonempty
+    per `prop:explicit-central-idempotent`.  Opaque, not a placeholder
+    `def` — see the note above. -/
+noncomputable opaque centralIdempotent
+    (H : IwahoriHeckeAlgebra n R q h_unit) (lam : List ℕ) : H.carrier
 
 /-- **External axiom (Murphy 1981; Dipper–James 1986):**
 

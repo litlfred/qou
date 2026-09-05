@@ -88,3 +88,46 @@ grep returns nothing. The theorem therefore carries the bound as a hypothesis,
 and the `(2,1)` reading is conditional on a classical fact this corpus has not
 written down. Small and self-contained; deliberately not attempted here rather
 than assumed.
+
+## Gap closed 2026-09-05: `seminormalDim` at named partitions
+
+The two sections above both flagged the same hole — the `(2,1)` reading of their
+theorems rested on `f^{(2,1)} = 2`, classical but **not** a fact this corpus had
+in Lean. `QOU/HeckeAlgebra/SeminormalDimSmall.lean` closes it.
+
+**Why it needed a route, not a `decide`.** `seminormalDim` unfolds to
+`numStandardYoungTableaux (partitionShape ·)` — a `Nat.card` over a structure of
+tableaux; nothing reduces. The computable route is the Frame–Robinson–Thrall
+hook-length formula: `QOU.Mathlib.dimSYT_eq_dimHLF` proves **pointwise** that
+`dimSYT p = dimHLF (p.parts.sort (· ≥ ·))`, and `dimHLF l = (sz l)! / prodHooks l`
+is ordinary arithmetic on a list. Measured before relying on it:
+`dimSYT_eq_dimHLF` is `[propext, Classical.choice, Quot.sound]`.
+
+**One obstacle after that.** `Multiset.sort` is a `Quot.liftOn`, so `decide` gets
+stuck on `p.parts.sort (· ≥ ·)` even for a literal partition. `sort_eq_list`
+routes around it: a sorted list is determined by its multiset, so the sort is
+pinned by uniqueness of sorted permutations rather than by evaluation. That lemma
+is `[propext, Quot.sound]` — it does not even need `Classical.choice`.
+
+| λ | `f^λ` | why |
+|---|---|---|
+| `(2,1) ⊢ 3` | 2 | the clause's partition |
+| `(2,2) ⊢ 4` | 2 | the Wigner shape — the `n = 4` isospin menu singleton |
+| `(1,1) ⊢ 2` | 1 | the charge shape |
+
+`trace_does_not_separate_p21` and `indistinguishable_p21` now hold
+**unconditionally**. All eight declarations: `[propext, Classical.choice,
+Quot.sound]`.
+
+**The boundary is recorded as a theorem, not left implicit.**
+`not_two_le_seminormalDim_p11` proves `¬ (2 ≤ f^{(1,1)})`. At the charge shape the
+block is `M₁(ℝ)`, the trace loses nothing, and every result in this bean says
+**nothing** there. That limit is easy to forget once the `(2,1)` instances read
+unconditionally, so it is stated rather than assumed.
+
+The general theorems keep the bound as a hypothesis, which is the right shape —
+they are about any block of dimension ≥ 2, and `(2,1)` is one instance.
+
+Surfaces updated: the `WedderburnTrace.lean` docstring and the reader-facing
+block, both of which said the value was not formalised; and the probe, with two
+new assertions pinning the dimension fact and the boundary case. Probe 14/14.

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-05T17:04:08Z
+updated_at: 2026-09-05T18:59:27Z
 ---
 
 **RESCOPED 2026-09-05 (owner: "rescope and continue"), after PR #6822. Read this header, not the historical one below it.**
@@ -552,3 +552,35 @@ days, and cheaper than the corrections.
 STILL OPEN: whether the k=4 attribution is 'k=4', 'the arriving shape', or 'the square end' -- two
 steps cannot separate them; the A=4->5 step discriminates and comes free from the running A=5
 sector job.
+
+## 2026-09-05 — cross-arc: a sibling proved WHY a trace-based decay statement is fragile
+
+Sibling bean `qou-v7ms` (merged `082b7d9f3c` / `0c24e1d8a3`, session 016hQePZ) proves in Lean,
+sorry-free, in `QOU/HeckeAlgebra/WedderburnTrace.lean`:
+
+  * `traceFunctional_supported_apply` — a trace functional supported at ONE lambda IS
+    `c_lambda * trace(x lambda)`: one coefficient against one number.
+  * `markovTraceOnWedderburn_eq_traceFunctional` — the Markov trace IS such a functional, with
+    `c = y_lambda(q0)`, so the result bites the actual object, not an abstract family.
+  * Its stated consequence: `f^(2,1) = 2`, so that block is `M_2(R)` -- FOUR real dimensions, of
+    which the trace reads ONE. "The information the clause wants is present in the block and
+    destroyed by taking its trace. A derivation that reads the block rather than its trace is not
+    blocked by anything here."
+
+**Why this matters to o6ov.** This whole arc measures `tr_lambda(rho Omega_2^P)` -- one number per
+block, out of `(f^lambda)^2`. The sibling's theorem is about a different question (the (2,1)
+clause's three coefficients), so this is a THEMATIC connection and not a logical implication: it does
+not prove anything about b-decay. What it does supply is a proved reason to expect trace-based decay
+statements to be fragile, which is what this arc measured from the other end -- irrep 0/4, sector
+2/4, y-weighted failing at A=4.
+
+**And the obvious response has already been tried here, with the same outcome.** "Read the block,
+not the trace" is exactly the Frobenius route: `tr_lambda(X*X) = ||X||_F^2` is a different
+functional of the same block, measured in #6754 and in the chain probe. Its envelope
+`max_{b(lambda)=b} tr(X*X)/dim` DOES decrease monotonically for rho_bare and does NOT for the true
+Hecke element (peaks at b=3, total range 2.41x against rho_bare's 1427x, #6822). So moving from the
+trace to a norm of the same block did not rescue the decay for the correct rho.
+
+**Not duplicating.** The sibling's Lean is about trace functionals at a single partition; nothing
+here re-derives or extends it. Recorded so the next agent on o6ov meets the structural reason
+alongside this arc's measurements, rather than rediscovering the connection.

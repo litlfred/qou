@@ -239,13 +239,19 @@ So the trace is not merely one-dimensional per partition (previous section); it
 is genuinely lossy, and the lost directions are where a derivation reading the
 block rather than its trace would live.
 
-**One thing this does not formalise.** Instantiating it at `λ = (2,1) ⊢ 3` needs
-`2 ≤ f^{(2,1)}`. That value is `2` by the hook length formula, but no
-declaration in this corpus computes `seminormalDim` at a named partition — a
-grep for one returns nothing. The theorem is therefore stated with the bound as
-a hypothesis, and the `(2,1)` reading of it is conditional on a classical fact
-this corpus has not written down. Closing that is a small, self-contained piece
-of work and is not attempted here.
+**The `(2,1)` instance — gap closed 2026-09-05.** Instantiating this needs
+`2 ≤ f^{(2,1)}`. When first written, no declaration in this corpus computed
+`seminormalDim` at a named partition, so the `(2,1)` reading was conditional on
+a classical fact the Lean side could not supply.
+`QOU/HeckeAlgebra/SeminormalDimSmall.lean` now supplies it — `f^{(2,1)} = 2` via
+the Frame–Robinson–Thrall hook-length formula (`QOU.Mathlib.dimSYT_eq_dimHLF`,
+pointwise and axiom-clean) — and carries `trace_does_not_separate_p21` and
+`indistinguishable_p21` unconditionally.
+
+The theorems here keep the bound as a hypothesis, which is the right shape: they
+are about any block of dimension ≥ 2, and `(2,1)` is one instance. Note the
+boundary is real — `f^{(1,1)} = 1`, also proved there, so at the charge shape the
+block *is* its trace and these results say nothing.
 -/
 
 /-- The decomposition carrying a single matrix on block `lam`, zero elsewhere. -/

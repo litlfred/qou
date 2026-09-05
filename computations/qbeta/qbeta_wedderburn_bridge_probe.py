@@ -94,6 +94,12 @@ localised at (2,1). And it says where the room is: f^{(2,1)} = 2, so the block
 is M_2(R) -- FOUR real dimensions, of which the trace reads one. The wanted
 information is present in the block and destroyed by tracing it.
 
+f^{(2,1)} = 2 was prose when that was written -- classical, but not a fact this
+corpus had in Lean. `QOU/HeckeAlgebra/SeminormalDimSmall.lean` now proves it via
+the Frame-Robinson-Thrall hook-length formula, so the (2,1) instances hold
+unconditionally. It also proves f^{(1,1)} = 1, which is the boundary: at the
+charge shape the block IS its trace and none of these results apply.
+
 *** WHAT WAS DONE ABOUT IT ***
 
 `unified-iterative-correction-proof.md`'s `(2,1)` clause is annotated as an OPEN
@@ -301,6 +307,21 @@ def main() -> int:
               note="the ROOM is a theorem too, not only the no-go: distinct "
                    "decompositions with every block trace equal, so every "
                    "trace-factoring functional is blind to the difference")
+    sd = ROOT / ("content/quantum-observable-universe/lean/QOU/HeckeAlgebra/"
+                 "SeminormalDimSmall.lean")
+    sdflat = " ".join(sd.read_text().split()) if sd.exists() else ""
+    ok &= chk("the_21_dimension_fact_is_formalised",
+              "theorem seminormalDim_p21" in sdflat
+              and "theorem trace_does_not_separate_p21" in sdflat, True,
+              note="f^{(2,1)}=2 was prose when the no-go was written. Proved "
+                   "via the hook-length formula, so the (2,1) instances are "
+                   "unconditional rather than resting on a classical value the "
+                   "corpus had not written down")
+    ok &= chk("and_the_boundary_case_is_recorded_too",
+              "not_two_le_seminormalDim_p11" in sdflat, True,
+              note="f^{(1,1)}=1, so at the charge shape the block IS its trace "
+                   "and these results say NOTHING. Recorded as a theorem so the "
+                   "limit of the no-go is visible rather than assumed")
     ok &= chk("and_the_block_is_wider_than_its_trace",
               "destroyed by taking its trace" in wtflat, True,
               note="f^{(2,1)}=2 so the block is M_2(R), four dimensions to the "

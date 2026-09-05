@@ -857,11 +857,54 @@ function binderCarriers(sig: string): Map<string, string> {
  * needing real unification is NOT reported, so this under-counts rather than
  * over-counts.
  */
+/**
+ * Head-symbol aliases introduced by a file-local eta-expanded `abbrev`.
+ *
+ * `abbrev qIntSym (q : ℝ) (m : ℤ) : ℝ := QOU.QInteger.qIntBalZ q m` makes
+ * `qIntSym q m` and `QOU.QInteger.qIntBalZ q m` the SAME term — an `abbrev` is
+ * reducible, so a projection whose field type spells the qualified head still
+ * typechecks against a conclusion that spells the alias. The character-exact
+ * comparison below then reports no match, and a verbatim self-assuming
+ * projection escapes.
+ *
+ * Measured instance: `QOU.BraidKnot.volume_perturbation` is
+ * `:= ctx.perturbation_formula` — one field, returned verbatim — and was the
+ * one member of bean `qou-octr`'s eight that this detector did not report,
+ * solely because the class field says `QOU.QInteger.qIntBalZ` where the
+ * theorem says `qIntSym`.
+ *
+ * Deliberately narrow: only an `abbrev` whose body is a dotted head applied to
+ * its own binders, in order, is an alias. Anything else needs real unification
+ * and stays out, per this detector's under-count-rather-than-over-count rule.
+ */
+function fileHeadAliases(decls: Decl[]): Map<string, string> {
+  const out = new Map<string, string>();
+  for (const d of decls) {
+    if (!/^(noncomputable\s+)?abbrev\b/.test(d.kind)) continue;
+    const binders: string[] = [];
+    for (const m of d.sig.matchAll(/\(([^():]+):[^()]*\)/g)) {
+      for (const n of m[1].trim().split(/\s+/)) if (n) binders.push(n);
+    }
+    if (binders.length === 0) continue;
+    const body = d.body.trim().replace(/\s+/g, " ");
+    const head = "([A-Za-z_][\\w'\\.]*)";
+    const re = new RegExp(
+      "^" + head + "\\s+" + binders.map((b) => b.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("\\s+") + "$",
+    );
+    const m = body.match(re);
+    if (!m) continue;
+    if (!m[1].includes(".")) continue; // an unqualified head is not an alias worth normalising
+    out.set(m[1], d.name);
+  }
+  return out;
+}
+
 function projectionTypeMatchesConclusion(
   d: Decl,
   carriers: Map<string, Decl>,
   variable: string,
   fields: string[],
+  aliases: Map<string, string>,
 ): boolean {
   const carrierName = binderCarriers(d.sig).get(variable);
   if (!carrierName) return false;
@@ -881,7 +924,15 @@ function projectionTypeMatchesConclusion(
   }
   const types = fields.map((f) => table.get(f));
   if (types.some((t) => t === undefined)) return false;
-  const ws = (s: string) => s.replace(/\s+/g, " ").trim();
+  const ws = (s: string) => {
+    let t = s.replace(/\s+/g, " ").trim();
+    // Normalise reducible `abbrev` aliases so a field spelling the qualified
+    // head matches a conclusion spelling the alias (see `fileHeadAliases`).
+    for (const [head, alias] of aliases) {
+      t = t.split(head).join(alias);
+    }
+    return t;
+  };
   const concl = conclusionTypeAscription(d.sig);
   if (!concl) return false;
   const nc = ws(concl.replace(new RegExp(`\\b${variable}\\.`, "g"), ""));
@@ -898,6 +949,7 @@ function projectionTypeMatchesConclusion(
 function detectSelfAssuming(
   d: Decl,
   carriers: Map<string, Decl>,
+  aliases: Map<string, string> = new Map(),
 ): Hit | undefined {
   const provable = PROVABLE_KINDS.test(d.kind);
   // A Prop-valued `def` is a disguised provable claim (§1a def-disguised); it
@@ -948,7 +1000,7 @@ function detectSelfAssuming(
     const projVar = body.match(/([a-z][\w']*)\.[A-Za-z_][\w']*/)?.[1];
     if (
       projVar &&
-      projectionTypeMatchesConclusion(d, carriers, projVar, [field])
+      projectionTypeMatchesConclusion(d, carriers, projVar, [field], aliases)
     ) {
       const h = mk(d, "proof-no-self-assuming-projection", pat, true);
       h.exempt_reason =
@@ -2623,6 +2675,10 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
   // needs the file's `class`/`structure` declarations by name. Same-file only —
   // a carrier declared elsewhere yields no match, which keeps the test
   // conservative rather than guessing.
+  // Reducible `abbrev` head aliases, so the self-assuming type-match test is
+  // not defeated by a field and a conclusion spelling the same term two ways.
+  const headAliases = fileHeadAliases(decls);
+
   const carrierDecls = new Map<string, Decl>(
     decls
       .filter((x) => /^(class|structure)\b/.test(x.kind))
@@ -2655,7 +2711,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
         "docstring asserts a provable claim (Theorem/Lemma/Proposition) while the Lean concludes `True` — a genuine vacuity defect, not an honest open conjecture";
     }
     push(tt);
-    push(detectSelfAssuming(d, carrierDecls));
+    push(detectSelfAssuming(d, carrierDecls, headAliases));
     push(detectBinderEcho(d, origLines));
     push(detectTrivialExistential(d, origLines));
     push(detectDocstringSorryMismatch(d, doc, fileHasSorryCode));

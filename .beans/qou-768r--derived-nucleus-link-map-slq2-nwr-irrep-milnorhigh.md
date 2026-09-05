@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-05T17:46:34Z
+updated_at: 2026-09-05T19:08:51Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -722,3 +722,43 @@ the cycles · everything above them proved from those two.
 Verified against the dependency compiled **from source** (`lean -o` into a scratch
 LEAN_PATH), not against a restored olean — this is the first file in the arc to import a
 QOU module, so the per-module cache staleness on main would otherwise reach it.
+
+
+## 2026-09-05 — `compIdx` closed: the chain is proved end to end from the braid word
+
+The last gap. `MonotoneWordPositionTracking` said `compIdx` counting components was "not
+attempted" and would need "the cycle decomposition of a product of ascending adjacent
+transpositions". **It needs no such thing** — the lemmas already proved give it.
+
+**The closed form.** With `π = posAfter e N` the closure permutation, for `i < N`:
+
+| `e i` | `π i` | stays in class because |
+|---|---|---|
+| **odd** | `i + 1` | `compIdx (i+1) = compIdx i` — an odd run adds 0 |
+| **even** | `pStart e i` | `compIdx_pStart`, proved in #6775 |
+
+So `π` is the **cyclic shift on each `compIdx` class**. Both inclusions drop out:
+`compIdx_posAfter` puts every cycle inside one class; inside a class every step is odd
+(`step_within_class`), so a class is traversed upward and closed by the even step at its
+top — `pStart e i` being the class minimum (`pStart_le`, `lt_compIdx_of_lt_pStart`).
+**Cycles = classes**, which is what `compIdx` was assumed to compute.
+
+New sorry-free `QOU/Mass/MonotoneWordCycleStructure.lean`, 9 declarations.
+
+**Five predictions, 414/414** (400 random monotone words + the carrier's 14
+branch-isotope pairs). The load-bearing one is **E**: the Lean's `posAfter` recursion,
+transcribed into the probe, reproduces `analyse`'s `perm` array **exactly** — entry for
+entry. That is what stands in for the one step this arc never formalises, and agreeing on
+the permutation is strictly stronger than agreeing on the component partition, which a
+reimplementation could do by sharing an assumption.
+
+**The chain is now proved end to end from the braid word:**
+`posAfter` models positions → `compIdx` counts components → tier 1 of `eps_eq` → `eps_eq`
+→ `μ̄ = 0` on every triple of the derived carrier.
+
+**The remaining floor, and it is a definition not a gap in an argument:** that `posAfter`
+*is* a monotone braid word's position map and the closure's components *are* its cycles.
+"Braid word" and "closure" are not Lean objects anywhere in this arc. Named as such in
+every file of the chain, and measured 414/414.
+
+Both sibling docstrings corrected in place.
