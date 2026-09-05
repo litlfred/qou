@@ -27,9 +27,9 @@ dispute.
 
 ## The stated obstacle is not the live one
 
-`docs/canonical-derivation-cheat-sheet.md`, lines 134 and 490: **`𝔇_β`, the
-neutron β-decay width, IS CAL-2** — one of the three calibration inputs — and
-`Q_β = ℏ/𝔇_β` has the closed form `m_e·|q₀² − 2q₀ − 1|(q₀ + 1)/(2q₀³)` in real
+`docs/canonical-derivation-cheat-sheet.md`, lines 134 and 490: **`P_skew^β`, the
+neutron β-sector bar-skew channel, IS CAL-2** — one of the three calibration inputs — and
+`Q_β = P_skew^β (the channel’s measured energy)` has the closed form `m_e·|q₀² − 2q₀ − 1|(q₀ + 1)/(2q₀³)` in real
 `q₀`. The framework's decay sector is not a gap awaiting a categorical formula;
 it is a calibration, and it is real.
 
@@ -43,7 +43,7 @@ it is a calibration, and it is real.
 `two_width_mechanisms_are_independent` is the finding: on a **real** spectrum, B
 gives `Γ = 0` identically while A gives a nonzero width. Measured, the framework
 sits in exactly that configuration — `Q_β = 0.783645827374621213` MeV at
-`Im q₀ = 0`, so `𝔇_β = ℏ/Q_β = 8.39935509011e-22 ≠ 0`. These are not two
+`Im q₀ = 0`, so `P_skew^β = ℏ/Q_β = 8.39935509011e-22 ≠ 0`. These are not two
 descriptions of one thing.
 
 ## Scope — (a), and the Lean says so
@@ -87,7 +87,7 @@ theorem hecke_spectrum_real_iff {x y : ℝ} (hq : x ^ 2 + y ^ 2 ≠ 0) :
 
 /-- **Mechanism A — a width from a reciprocal real energy.** `𝔇 = ℏ/Q` is
 nonzero whenever `ℏ` and `Q` are, and needs nothing complex. This is what the
-framework does: `𝔇_β = ℏ/Q_β` with `Q_β` real at real `q₀`. -/
+framework does: `P_skew^β = ℏ/Q_β` with `Q_β` real at real `q₀`. -/
 theorem reciprocal_width_ne_zero {hbar Q : ℝ} (hh : hbar ≠ 0) (hQ : Q ≠ 0) :
     hbar / Q ≠ 0 := div_ne_zero hh hQ
 

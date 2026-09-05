@@ -15,11 +15,11 @@ session): `κ_(2,1)(q_0) ≈ 0.00228` (anchor-rigid), `S ≈ −908` (proton) / 
 (muon), and the entire c_3 cross-anchor swing (2.42 %) lives in `S`, not `κ`.
 
 **This file proves what is provable about that structure; it does NOT close the
-keystone.** The open, un-formalized content is the identification `S = g(𝔇_π)` —
+keystone.** The open, un-formalized content is the identification `S = g(P_avg^π)` —
 that `S` is fixed by the CAL-3 datum (the pion/meson scale) rather than read off
 Q_β. That link is a conjecture; per the anti-laundering discipline (§"Conditional-
 proved ≠ premise-established") it is deliberately **not** axiomatised as a Lean
-class here — doing so would be vacuous (any `S` is trivially `g(𝔇_π)` for some
+class here — doing so would be vacuous (any `S` is trivially `g(P_avg^π)` for some
 `g`). The genuine open question is cross-anchor rigidity of a single categorical
 `g`, which no Lean scaffold establishes.
 
@@ -81,8 +81,8 @@ theorem c3_swing_factorization [Field R] (κa κb Sa Sb : R)
 /-- **`S` is the single archimedean leak (not derived).** The identity
     `S = c_3^odd / κ_(2,1)(q_0)` merely *defines* `S`; it carries no content until
     `S` is fixed independently. The open keystone is the identification of `S`
-    with a CAL-3-class quantity `g(𝔇_π)` — deliberately not axiomatised (a class
-    `S = g 𝔇_π` is vacuously satisfiable; the real content is cross-anchor
+    with a CAL-3-class quantity `g(P_avg^π)` — deliberately not axiomatised (a class
+    `S = g P_avg^π` is vacuously satisfiable; the real content is cross-anchor
     rigidity of a single categorical `g`, which is unproved). This lemma records
     only the trivial well-definedness of the defining ratio. -/
 theorem S_welldefined [Field R] (c3odd κ : R) (hκ : κ ≠ 0) :

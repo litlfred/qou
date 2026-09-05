@@ -12,7 +12,7 @@ are the three real degrees of freedom of the Bring Hodge structure
 
 * `m_e` — the **scale** of the rank-2 `W`-Hodge plane (`h^0` prefactor);
 * `q_0` — the **modulus** of that plane (`SL₂` trace `2cosh θ`); the
-  canonical CAL-2 observable is the neutron β-decay width `𝔇_β`
+  canonical CAL-2 observable is the neutron β-sector bar-skew channel `P_skew^β`
   (order `h^2`), pinned numerically through its most precise proxy, the
   lepton ratio `m_μ/m_e` (which dimensionalises to `Vol(4_1)`). In the
   Physical-Observations layer `q_0` may instead be anchored on the
@@ -22,7 +22,7 @@ are the three real degrees of freedom of the Bring Hodge structure
   *orthogonal* class independent of `(m_e, q_0)` because the Hopf-link
   complement has zero hyperbolic volume.
 
-`Q_β = ℏ/𝔇_β` is the **measured proxy for CAL-2** (`𝔇_β`); because the
+`Q_β = P_skew^β (the channel’s measured energy)` is the **measured proxy for CAL-2** (`P_skew^β`); because the
 modulus is overdetermined and pinned most precisely by `m_μ/m_e`, the
 substrate identity `Q_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³)` makes it a 0.17%
 cross-check, not a separate primitive calibration factor; for the baryon
@@ -81,13 +81,13 @@ structure HadronicState where
 
     - `m_e` is the **scale** of the rank-2 `W`-Hodge plane.
     - `q_0` is the **modulus** of that plane; the canonical CAL-2
-      observable is the neutron β-decay width `𝔇_β`, pinned through
+      observable is the neutron β-sector bar-skew channel `P_skew^β`, pinned through
       its proxy `m_μ/m_e`.
     - `m_π` is the proxy for the **scale** of the `Vol(Hopf)=0` meson
-      sector (CAL-3 `𝔇_π`) — an orthogonal class independent of
+      sector (CAL-3 `P_avg^π`) — an orthogonal class independent of
       `(m_e, q_0)`.
 
-    `Q_β = ℏ/𝔇_β` is the **CAL-2 proxy**, reproduced from `m_e` and
+    `Q_β = P_skew^β (the channel’s measured energy)` is the **CAL-2 proxy**, reproduced from `m_e` and
     `q_0` as a cross-check, not an independent input. A **fourth**
     dimensional input would violate the cohomological alignment and is
     a hard audit failure. -/
