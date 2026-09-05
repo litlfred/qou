@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-30T13:40:13Z
-updated_at: 2026-09-05T03:16:19Z
+updated_at: 2026-09-05T05:54:33Z
 ---
 
 `computations/hadron-knot-table.witness.json` disagrees with its own producer
@@ -305,3 +305,55 @@ proceed, because its matrices are known-defective on that path. A `_path_bridge`
 **Method note worth keeping:** the 24× runtime gap identified the cause; the
 value gap alone did not. When two runs of one function disagree, **compare their
 wall times before theorising about the physics.**
+
+
+---
+
+## CLOSED 2026-09-05 — both paths reproduced in one container; diagnosis confirmed
+
+Rebuilt `pyhecke-native` from source (`maturin build --release`, **52 s**),
+installed it, and re-ran the identical call. Exports went **58 → 59**, the one
+added name being `lp_accumulator_step_traces_mpfr` — the exact function the
+guard tests for.
+
+    _HAS_LP_KERNEL = True                    <- was False before the rebuild
+    q_parameter.Q  = 1.1099785827513808      <- proton, unchanged
+    binding_energy(1,1) = -7.271102124876717      840.8 s
+
+| path | `binding_energy(1,1)` | elapsed |
+|---|---|---|
+| kernel live (this container, after rebuild) | **−7.271102124876717** | **840.8 s** |
+| `qou-sv7h` (independent, different container) | −7.271102125 | 942.3 s |
+| Python fallback (this container, stale wheel) | −8.52811254141235 | 22,606.7 s |
+
+`round(−7.271102124876717, 9) == −7.271102125` — **exact agreement with the
+sibling to every digit they reported**, from a separate container and a
+separately built wheel. The diagnosis is closed:
+
+- **value gap  17.29 %** (1.2570104165 MeV absolute)
+- **runtime gap 26.9×**
+
+Both numbers are now reproduced side by side under one q₀, one commit, one
+container, with the ONLY variable being whether the wheel carries the kernel.
+Nothing else is left to attribute it to — not the anchor (refuted above), not
+tree drift, not the harness.
+
+**Consequences that stand:**
+
+1. **−8.5281 and my four-atom `tr_M` table are fallback-path artefacts** —
+   computed on a matrix family the repo's own audit proves is not a
+   representation of H_n(q). They are not the framework's numbers. The SIGN
+   survives (both paths negative against AME +2.224566), and `qou-sv7h`'s
+   A-independence result is on the correct path throughout.
+2. **`hadron-knot-table.witness.json` cannot be correctly regenerated in a
+   default container.** The guard picks the fallback silently, so a regeneration
+   attempt produces a plausible-looking witness from the wrong object. This is
+   the practical blocker on this bean, and it is upstream of the `Q0_FLIP` and
+   of the anchor-classification question entirely.
+3. The audibility fix landed (PR #6706): a once-per-process stderr warning from
+   `binding_energy` / `unified_iterative_correction`. **Not** a refusal — that
+   is `qou-sv7h`'s and the owner's call.
+
+**Prerequisite for anyone picking this up:** rebuild the wheel FIRST and assert
+`_HAS_LP_KERNEL` before trusting any binding number. 52 s, against 6+ hours
+spent on a number that was never the framework's.
