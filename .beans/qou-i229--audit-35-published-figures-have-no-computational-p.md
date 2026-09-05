@@ -540,10 +540,124 @@ partition, so a partition that swallows real findings fails loudly.
 **Report is now 12 blocks / 58 asserted figures**, with 21 quoted-only listed
 separately.
 
-- [ ] Triage the remaining 12. Cheapest first: `prop:markov-trace-recursive-
-      reducer` (2 figures, 1 witness) and `prop:em-coupling-projection` (6/7
-      unmatched against its single witness — a near-total miss, so the likely
-      finding is that the block's producer is not the witness naming it).
+## TRIAGE 2: `prop:em-coupling-projection` — the BLOCK is right, the POINTER is wrong
+
+Probe: `the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.py`
+(14/14). The checker's hardest row — 6 of 7 figures unmatched — and a near-total
+miss turned out to be the signature of a misdirected pointer, not a stale table.
+That reading is now in the checker's docstring so the next near-total miss is
+read the same way.
+
+**The block is correct.** Every figure reproduces at the proton pin from
+`alpha_em_form_comparison_probe.py`, the producer the table names *in its own
+prose*, and the table's claim that all rows use the proton pin is accurate.
+
+    em_coupling_projection_probe.py     declared contentBlock, computed 1 of 7 rows
+    alpha_em_form_comparison_probe.py   computed the other 6, emitted NO witness
+
+Machine-readable provenance covering **14 %** of the block. **Fixed**: the real
+producer now emits a witness declaring the block, carrying both pins, all four
+registered `α_EM` forms, the residual-ownership analysis, and the three
+intermediates the table publishes but nothing exposed (`δ_CS = 0.00155060213`,
+the superseded order-2 truncation, the CODATA-2022 input). **Row closed, 6/7 →
+0/7**; report now **11 blocks / 52 asserted**.
+
+### Two label defects in the claiming witness — fixed, no number touched
+
+1. `q0Value` and `q0Anchor` correctly said **proton**; four prose sites in the
+   producer and three in its witness said "**muon-anchored**".
+2. `CODATA_ALPHA_INV = 137.035999206` is the **Morel et al. (2020) Rb-87 recoil**
+   measurement — cited under that name in `sec:fine-structure-data` — not a
+   CODATA adjustment. Four sites called it CODATA. The block's table compares
+   against CODATA 2022 = `137.035999177(21)`, a different quantity.
+
+Both **numerically inert**: Rb-87 vs CODATA 2022 is `2.1e-10` relative against a
+`5e-3` tolerance and a `1.55e-3` measured error. Nothing about the verdict moves,
+which is exactly why they survived. Same shape as `df13e845cee`'s *"the defect
+was the label"*. Two further warnings the regeneration surfaced and did not get
+committed as-is: a raw `float64` entering the witness (now carried as `mpf`), and
+a downgraded `mpmath` record (1.4.1 restored rather than committing the weaker
+provenance).
+
+**The probe asserts the fixed invariant, not the defect.** A probe that asserts a
+defect goes red the moment the fix lands — the `muon_pin_three_values_probe.py`
+failure this bean already records. Recorded here because I nearly repeated it.
+
+### Cross-block: one quantity, two pins, one retired
+
+    prop:em-coupling-projection       136.823209      proton  (136.823208853583)
+    prop:em-coupling-bring-zero-mode  136.823219654   RETIRED (136.823219654561)
+                                                      live muon: 136.823219729273
+
+New: this bean already had the retired pin in `bring-zero-mode`, but not that a
+**sibling block publishes the same quantity at the production pin**. The two
+disagree on one number in the 11th digit — so it is not only stale against the
+substrate, it is internally inconsistent across the corpus. Strengthens the
+refresh case.
+
+### A hazard found by accident, measured, and deliberately not patched
+
+`136.823219654` is a **truncation** of `136.823219654561`, which *rounds* to
+`…655` — it misses my own checker's half-ulp window by 1.12 half-ulps. So a
+truncated publication is rejected even against its own producer. Measured across
+the whole report, **truncation explains 0 of the asserted unmatched figures**, so
+the window is left alone: widening an acceptance test that rescues nothing while
+admitting new false negatives is a net loss. Documented in the script so it is
+not rediscovered.
+
+## TRIAGE 3: same pattern again — and then measured instead of guessed
+
+`prop:markov-trace-recursive-reducer` is the identical shape. Its two figures —
+proton `tr_M(σ₁⁷σ₂⁴) = 1.884319…`, neutron `tr_M(σ₁⁶σ₂⁴σ₁⁻¹) = 1.464034…` — are
+richly produced by `markov_trace_recursive.py`, whose witness carries **both**
+and declared **no** `contentBlock` at all. The block's pointer sat instead on
+`probe_markov_trace_recursive_reducer.py`, which *verifies* that the reducer
+agrees with the canonical seminormal engine and carries no trace value. **Fixed**
+(one declaration); row closed. Report now **10 blocks / 50 asserted**, from 15/79.
+
+### THE PATTERN IS THE FINDING: the pointer is on the VERIFIER, not the producer
+
+Two for two is an anecdote, so it was worth measuring rather than extrapolating.
+Indexing every number in all **3277 live witnesses** and asking, for each asserted
+-unmatched figure, whether *any other* witness carries it:
+
+    40 of 50 asserted-unmatched figures (80 %) ARE produced somewhere in the
+    repo — by a witness other than the one declaring their block.
+
+So the dominant defect this checker surfaces is not stale content and not missing
+computation. It is that **`contentBlock` tends to be attached to verification
+probes rather than to producers.** A verifier shows two engines agree; a producer
+computes the numbers a block prints. When the pointer lands on the verifier, the
+block's actual figures have no declared provenance — and nothing notices, because
+the verifier's own assertions pass.
+
+### THE NEGATIVE CONTROL, WITHOUT WHICH THAT NUMBER IS WORTHLESS
+
+Matching 50 figures against a pool of **271 665** distinct witness values will
+find coincidences. This bean has recorded two lossy-metric errors already today,
+so the floor was measured rather than assumed: perturb each published figure's
+last digit — same magnitude, same decimal count, fabricated — and re-run.
+
+    REAL published figures matched somewhere : 80.0 %
+    FABRICATED (last digit changed)          : 10.8 %   (40 draws, range 4–18 %)
+
+**7.4× the coincidence floor**, so the aggregate finding holds. But ~5 of the 50
+matches are expected to be spurious, and they will concentrate in the
+low-precision figures — `rem:atom-mass-full-hecke`'s `0.000001` and `0.000002`
+carry one significant figure and are almost certainly among them. **The aggregate
+is sound; individual carrier attributions are not**, and no row should be closed
+on this evidence alone.
+
+- [ ] Triage the remaining 10 by finding each block's real producer and declaring
+      it. `prop:sl2-prolongation-recurrence` (8/8 produced elsewhere) and
+      `prop:confined-knot-binding` (6/6) are the cleanest instances of the
+      pattern; `prop:q-beta-spectral-bridge` (12 asserted, only 7 found) is the
+      one whose figures are genuinely least accounted for, and it is already
+      known to diverge from its producer by 21 %.
+- [ ] Consider whether `contentBlock`-on-a-verifier is worth its own check. The
+      signature is mechanical: a witness declaring a block whose assertions are
+      all engine-agreement comparisons and whose data carries none of the block's
+      figures.
 
 ## VINTAGE LABELS: `206.7682830` is CODATA **2018** and two blocks call it 2022
 

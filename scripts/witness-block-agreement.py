@@ -79,7 +79,23 @@ TWO FURTHER FALSE-POSITIVE CLASSES WORTH KNOWING BEFORE READING A ROW
 2. **A block's producer need not be the witness naming it.** A quantity may be
    computed by a sibling declaring a different block, or in Lean, and the block
    still publishes it correctly. Several of `prop:confined-knot-binding`'s rows
-   are that.
+   are that. `prop:em-coupling-projection` was the extreme case — 6 of 7 rows
+   unmatched, because the `contentBlock` pointer sat on a producer computing one
+   of them while the producer of the other six emitted no witness at all. Read a
+   near-total miss as a misdirected pointer before reading it as a stale table.
+
+A THIRD HAZARD, MEASURED AND DELIBERATELY NOT PATCHED
+------------------------------------------------------
+`rounds_to` rejects a **truncated** publication. `em-coupling-bring-zero-mode`
+publishes `136.823219654` for a producer value of `136.823219654561`, which
+*rounds* to `…655`; it misses the half-ulp window by 1.12 half-ulps. A
+truncation-aware window would be `[c, c + 10^-k)` instead.
+
+**Measured across the whole report, truncation explains 0 of the asserted
+unmatched figures**, so the window is left alone. Widening an acceptance test
+that rescues nothing while admitting new false negatives is a net loss. Recorded
+because the hazard is real and the next person to see a near-miss should not have
+to rediscover it.
 
     python3 scripts/witness-block-agreement.py            # report
     python3 scripts/witness-block-agreement.py --selftest # detector only
