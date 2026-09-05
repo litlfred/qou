@@ -28,12 +28,12 @@
       },
       {
         "file": "computations/fr_pullback_k3_test.py",
-        "line": 415,
+        "line": 421,
         "kind": "serialized",
         "detail": "fmt(<float64-tainted>)",
         "source": "\"max_over_min\": fmt(mom),",
         "taint_name": "mom",
-        "taint_origin_line": 408,
+        "taint_origin_line": 414,
         "taint_origin_source": "mom = rmax / rmin if rmin > 0 else float(\"inf\")",
         "class": "CANDIDATE"
       },
@@ -97,9 +97,9 @@
   "scriptFile": "mpf_mixed_arithmetic_audit.py",
   "scriptHash": "26ce5b951fe5",
   "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "39513e014e83045879b6da03c47551c781eda73a",
+  "commitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "engine": "python",
-  "computedAt": "2026-09-05T12:26:10.730421+00:00",
+  "computedAt": "2026-09-05T18:14:26.778769+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

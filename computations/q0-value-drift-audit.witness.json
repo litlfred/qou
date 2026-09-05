@@ -5061,13 +5061,6 @@
       },
       {
         "file": "computations/chi-deuteron-h6-at-q0-50dps.witness.json",
-        "field": "q_0_50dps",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.61406020773339
-      },
-      {
-        "file": "computations/chi-deuteron-h6-at-q0-50dps.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
@@ -5184,13 +5177,6 @@
         "value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
         "class": "canonical",
         "ppb_vs_canonical": 0.0
-      },
-      {
-        "file": "computations/chi-helium-3-h9-at-q0-50dps.witness.json",
-        "field": "q_0_50dps",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/chi-helium-3-h9-at-q0-50dps.witness.json",
@@ -5425,13 +5411,6 @@
       },
       {
         "file": "computations/chi-tritium-h9-at-q0-50dps.witness.json",
-        "field": "q_0_50dps",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.61406020773339
-      },
-      {
-        "file": "computations/chi-tritium-h9-at-q0-50dps.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
@@ -5531,9 +5510,9 @@
       {
         "file": "computations/chirality-weighted-3body-cluster.witness.json",
         "field": "parameters.q_0",
-        "value": "1.1099785827513808",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
-        "ppb_vs_canonical": -11.614060214572863
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/chirality-weighted-3body-cluster.witness.json",
@@ -7118,13 +7097,6 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
-        "file": "computations/deltalambda/s5so3-geometric-wlambda-a4-helium.witness.json",
-        "field": "q0Value",
-        "value": "1.1099785827513808075916690956107688798744991218736",
-        "class": "proton-pin",
-        "ppb_vs_canonical": -11.61406020773339
-      },
-      {
         "file": "computations/deltalambda/s5so3-geometric-wlambda-borromean-lift.witness.json",
         "field": "parameters.q0",
         "value": "1.1099785827513808",
@@ -7158,6 +7130,13 @@
         "value": "1.1099785827513808076",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.614060207725885
+      },
+      {
+        "file": "computations/deltalambda/sigma1cubed-seifert-surface-term.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/deltalambda/t25-cinquefoil-deltalambda-sign.witness.json",
@@ -7914,6 +7893,13 @@
         "value": "1.10997858275",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.615304202524902
+      },
+      {
+        "file": "computations/generation-count-t29-truncation.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
       },
       {
         "file": "computations/geom-leading-alt-q-locality-probe.witness.json",
@@ -14629,6 +14615,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/probes/tritium-8-11-jones-markov-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/probes/trm-proton-five-values-census.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -17618,6 +17611,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/signed-crossing-feasibility.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/sinh-bar-antisymmetric-partner.witness.json",
         "field": "parameters.q_0_50dps",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -18924,9 +18924,9 @@
   "scriptFile": "q0_value_drift_audit.py",
   "scriptHash": "d1e66a3b0067",
   "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "39513e014e83045879b6da03c47551c781eda73a",
+  "commitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "engine": "python",
-  "computedAt": "2026-09-05T12:24:48.682079+00:00",
+  "computedAt": "2026-09-05T18:13:02.039740+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

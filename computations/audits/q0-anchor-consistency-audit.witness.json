@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T12:18:26.746231+00:00",
-  "commitSha": "39513e014e83045879b6da03c47551c781eda73a",
+  "computedAt": "2026-09-05T18:11:41.766583+00:00",
+  "commitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 7,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "e2847c7a461e",
@@ -36,8 +36,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "mpmath": "1.4.1",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
     "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
@@ -50,15 +53,15 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded). Q0_ANCHOR_UNRECOGNISED is an anchor label that maps to no pin, so NO comparison was made — also CI-failing, because 'could not check' is not green, but not a flip and counted apart from one.",
   "data": {
     "counts": {
-      "Q0_OK": 1392,
+      "Q0_OK": 1395,
       "Q0_AMBIGUOUS": 6,
       "Q0_AMBIGUOUS_NO_REASON": 13,
-      "Q0_INDEPENDENT": 127,
+      "Q0_INDEPENDENT": 132,
       "Q0_INDEPENDENT_NO_REASON": 3,
       "Q0_COMPARISON": 30,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1564,
+      "Q0_ANCHOR_MISSING": 1556,
       "Q0_VALUE_MISSING": 17,
       "Q0_AUDIT_EXEMPT": 86,
       "Q0_PARSE_ERROR": 0,
@@ -673,10 +676,6 @@
           "detail": ""
         },
         {
-          "witness": "binding-row-length-stratification.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "binding-sdp-bondgraph-degenerate.witness.json",
           "detail": ""
         },
@@ -1093,10 +1092,6 @@
           "detail": ""
         },
         {
-          "witness": "a3-units-consistency.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "a4-brunnian-deficit-closed-form.witness.json",
           "detail": ""
         },
@@ -1310,10 +1305,6 @@
         },
         {
           "witness": "saturating-shared-channel.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "sigma1cubed-seifert-surface-term.witness.json",
           "detail": ""
         },
         {
@@ -1662,10 +1653,6 @@
         },
         {
           "witness": "gb-writhe-normalised-readout.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "generation-count-t29-truncation.witness.json",
           "detail": ""
         },
         {
@@ -2630,10 +2617,6 @@
         },
         {
           "witness": "option-e-deuteron-delta-lambda-probe-v2.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "option-e-deuteron-delta-lambda-probe.witness.json",
           "detail": ""
         },
         {
@@ -4162,10 +4145,6 @@
         },
         {
           "witness": "total_curvature_is_the_computable_half_probe.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "tritium-8-11-jones-markov-probe.witness.json",
           "detail": ""
         },
         {
@@ -5857,10 +5836,6 @@
           "detail": ""
         },
         {
-          "witness": "signed-crossing-feasibility.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "six-fifths-deviation-h4-correction-probe.witness.json",
           "detail": ""
         },
@@ -6178,10 +6153,6 @@
         },
         {
           "witness": "two-quark-hopf-vs-borromean-sdp.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "two-row-vs-higher-row-binding-split.witness.json",
           "detail": ""
         },
         {
@@ -7979,15 +7950,15 @@
           "detail": ""
         },
         {
-          "witness": "s5so3-geometric-wlambda-a4-helium.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "s5so3-geometric-wlambda-borromean-lift.witness.json",
           "detail": ""
         },
         {
           "witness": "s5so3-wlambda-borromean-lift.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "sigma1cubed-seifert-surface-term.witness.json",
           "detail": ""
         },
         {
@@ -8236,6 +8207,10 @@
         },
         {
           "witness": "gap-a1-binding-k-sdp-feasibility.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "generation-count-t29-truncation.witness.json",
           "detail": ""
         },
         {
@@ -10447,6 +10422,10 @@
           "detail": ""
         },
         {
+          "witness": "tritium-8-11-jones-markov-probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "trm-proton-five-values-census.witness.json",
           "detail": ""
         },
@@ -11483,6 +11462,10 @@
           "detail": ""
         },
         {
+          "witness": "signed-crossing-feasibility.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "sinh-bar-antisymmetric-partner.witness.json",
           "detail": ""
         },
@@ -11929,6 +11912,10 @@
           "detail": ""
         },
         {
+          "witness": "binding-row-length-stratification.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "delta-lambda-binding-full-evaluation.witness.json",
           "detail": ""
         },
@@ -11938,6 +11925,10 @@
         },
         {
           "witness": "a3-mirror-selection.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "a3-units-consistency.witness.json",
           "detail": ""
         },
         {
@@ -12029,6 +12020,10 @@
           "detail": ""
         },
         {
+          "witness": "s5so3-geometric-wlambda-a4-helium.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "wn-tower-domain.witness.json",
           "detail": ""
         },
@@ -12102,6 +12097,10 @@
         },
         {
           "witness": "option-e-a4-full-reconciliation.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "option-e-deuteron-delta-lambda-probe.witness.json",
           "detail": ""
         },
         {
@@ -12398,6 +12397,10 @@
         },
         {
           "witness": "toffoli-lp-stability.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "two-row-vs-higher-row-binding-split.witness.json",
           "detail": ""
         },
         {

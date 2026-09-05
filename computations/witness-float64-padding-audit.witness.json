@@ -3,11 +3,11 @@
   "name": "witness-float64-padding-audit",
   "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
   "data": {
-    "occurrences": 23,
+    "occurrences": 25,
     "distinct_values": 19,
-    "files": 8,
-    "live_files": 3,
-    "new_not_baselined": 11,
+    "files": 10,
+    "live_files": 5,
+    "new_not_baselined": 13,
     "rows": [
       {
         "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
@@ -82,10 +82,22 @@
         "real_value": "0.51099895"
       },
       {
-        "file": "computations/codata-truncation-audit.witness.json",
-        "field": "findings[932].literal",
-        "value": "8.4817962000000015621026250300928950309753417968750000000000",
-        "real_value": "8.481796200000002"
+        "file": "computations/binding-block-multiplicative.witness.json",
+        "field": "parameters.Q_beta_CAL3_MeV",
+        "value": "0.78233340930999994977668166029616259038448333740234375",
+        "real_value": "0.78233340931"
+      },
+      {
+        "file": "computations/binding-via-interface-knot.witness.json",
+        "field": "parameters.Q_beta_CAL3_MeV",
+        "value": "0.78233340930999994977668166029616259038448333740234375",
+        "real_value": "0.78233340931"
+      },
+      {
+        "file": "computations/d-from-scratch.witness.json",
+        "field": "parameters.Q_beta_n_MeV",
+        "value": "0.78233340930999994977668166029616259038448333740234375",
+        "real_value": "0.78233340931"
       },
       {
         "file": "computations/probes/flavor-split-pair-product-half-ceiling.witness.json",
@@ -152,9 +164,9 @@
   "scriptFile": "witness_float64_padding_audit.py",
   "scriptHash": "33874b7f4e46",
   "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "39513e014e83045879b6da03c47551c781eda73a",
+  "commitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "engine": "python",
-  "computedAt": "2026-09-05T12:24:05.984240+00:00",
+  "computedAt": "2026-09-05T18:12:09.303659+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

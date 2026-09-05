@@ -3,8 +3,8 @@
   "name": "witness-raw-float64-audit",
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
-    "dirty_witnesses": 1019,
-    "total_fields": 33786,
+    "dirty_witnesses": 1018,
+    "total_fields": 33738,
     "lp_dual_carved_out_fields": 379,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 129,
@@ -107,14 +107,14 @@
     "baseline_fields": 35251,
     "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 196
+    "drained_files": 204
   },
   "scriptFile": "witness_raw_float64_audit.py",
   "scriptHash": "9eb501eed27a",
   "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "b9820887e14ccab5e899b8556db25caa2fba0d68",
+  "commitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "engine": "python",
-  "computedAt": "2026-09-05T12:28:38.831279+00:00",
+  "computedAt": "2026-09-05T18:16:59.523577+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

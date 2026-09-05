@@ -1,10 +1,10 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T18:03:22.242179+00:00",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-29T04:24:32.598106+00:00",
   "computation": "qbeta-sdeformed-leading-bound",
   "scriptFile": "qbeta_sdeformed_leading_bound_probe.py",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "commitSha": "81f9832e2f9a05922ec175646733e69a0dd72b71",
   "contentBlock": "conj:binding-qbeta-complex-volume",
   "discipline": "scope-(a) magnitude insufficiency of the LEADING NZ form (invariant Im\u00b2u\u22650, \u03ba>0); NOT a scope-(b) exclusion of the channel identity S=Im \ud835\udd19_q (the full quantum complex volume carries the O(u\u2074) tail dropped here). Not a derivation of S = Q_\u03b2/E\u2080 (CAL-2 input; Subgoal-2 open). Anti-fit: \u03ba=\u221a3/4 and Re u=ln q\u2080 derived (A-poly cusp modulus; meridian-holonomy boost); S_\u03bc, S_p cited measurements; no coefficient tuned; no keystone instance fabricated; S not axiomatized; no c_k wired.",
   "description": "Leading-form magnitude bound Im \ud835\udd19\u2084\u2081 \u2264 \u03ba\u00b7Re\u00b2u decouples the open u(q\u2080) into two orthogonal sub-obstructions: muon magnitude (unreachable by leading form + real spin, needs O(u\u2074) tail/enlarged Re u) and proton sign flip (a spin datum). Companion Lean FigureEightComplexVolume.imV\u2084\u2081_le_cuspModulus_reSq / _leading_unreachable_of_lt.",
@@ -32,7 +32,7 @@
       "name": "leading_cap_equals_real_boost_value",
       "computed": 0.00471420318729446,
       "expected": 0.004714,
-      "tolerance": 1e-05,
+      "tolerance": "1e-05",
       "passed": true,
       "source": "\u03ba\u00b7(ln q\u2080)\u00b2 = the pure-boost Im \ud835\udd19\u2084\u2081 (G1), the leading upper bound"
     },
@@ -40,7 +40,7 @@
       "name": "muon_exceeds_leading_cap",
       "computed": 2.054001411330169,
       "expected": 2.054,
-      "tolerance": 0.01,
+      "tolerance": "0.01",
       "passed": true,
       "source": "S_\u03bc = 2.054 \u00d7 \u03ba(ln q\u2080)\u00b2 > cap \u21d2 required Im\u00b2u < 0 \u21d2 unreachable by leading form for any real spin"
     },
@@ -48,7 +48,7 @@
       "name": "muon_required_im2_negative",
       "computed": -0.011474898521434858,
       "expected": -0.01147,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "passed": true,
       "source": "Im\u00b2u = Re\u00b2u \u2212 S_\u03bc/\u03ba < 0 (impossible): muon magnitude is NOT a spin datum; needs O(u\u2074) NZ tail or enlarged Re u"
     },
@@ -56,7 +56,7 @@
       "name": "proton_signflip_spin_exists",
       "computed": 0.10201447438899759,
       "expected": 0.10201,
-      "tolerance": 0.0001,
+      "tolerance": "0.0001",
       "passed": true,
       "source": "Im\u00b2u = Re\u00b2u \u2212 S_p/\u03ba > 0 \u21d2 a real spin part reproduces S_p<0 (the sign flip is a spin datum, open bean qou-fook)"
     },
@@ -70,10 +70,11 @@
     }
   ],
   "allPassed": true,
-  "durationSeconds": 0.000302,
-  "scriptHash": "eef633193252",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "durationSeconds": 0.000778,
+  "scriptHash": "2e9655db9b24",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
   "durationMs": 0,
   "q0Anchor": "proton",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

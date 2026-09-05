@@ -164,7 +164,7 @@
       },
       {
         "file": "computations/probes/can_the_substrate_carry_a_fractional_twist_probe.py",
-        "line": 317,
+        "line": 318,
         "class": "advisory-cast",
         "arg": "float(...)",
         "source": "need_virt = B_DEUT / mp.mpf(float(r_close))",
@@ -294,10 +294,10 @@
   },
   "scriptFile": "mpf_float_source_audit.py",
   "scriptHash": "f7049acdce0a",
-  "scriptCommitSha": "a663b4f838286530c5d04a1c63e3eab872f190a6",
-  "commitSha": "e68347cc12a78663fd200ce6a64f80ec29b1c1db",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "commitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "engine": "python",
-  "computedAt": "2026-09-04T21:56:49.225349+00:00",
+  "computedAt": "2026-09-05T18:11:53.922594+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
