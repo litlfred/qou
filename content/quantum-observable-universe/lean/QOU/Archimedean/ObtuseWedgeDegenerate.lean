@@ -295,4 +295,104 @@ theorem wedgeAt_sub_lt_chord_beta {R t α β γ : ℝ}
   have hbound : π - γ - α = β := by linarith
   rwa [hbound] at h
 
+/-! ### Coapical cone containment, via a general three-angle `perp` relation
+
+The `RHS ⊆ T` direction needs the `γ`-chord, which cannot be proved directly
+(`γ` obtuse puts `R cos γ < 0`, outside every chord helper's range) and must be
+extracted from `w ∉ W_sub` instead.  That in turn needs `W_α`'s cone to sit
+inside `W_sub`'s, i.e. `perp_t(w) < 0` for `w ∈ W_α` — while `wedgeAt_upper`
+supplies only `perp_{t+2γ+2α}(w) < 0`, an angle `2β` away.
+
+`perp_sign_relation` is the special case of the identity below at the triangle's
+own three angles.  Stated generally, it closes the gap: any THREE perp
+functionals on the plane satisfy one linear relation, and here two of the three
+coefficients are positive with known signs on their functionals. -/
+
+/-- **The three-angle `perp` relation.**  Three linear functionals on a
+two-dimensional space satisfy one relation; written at directions
+`φ − p`, `φ`, `φ + q` its coefficients are `sin q`, `−sin(p+q)`, `sin p`.
+`perp_sign_relation` is this identity at the triangle's own angles. -/
+theorem perp_three_angle_relation (φ p q : ℝ) (w : ℝ × ℝ) :
+    Real.sin q * (-(w.1 * Real.sin (φ - p)) + w.2 * Real.cos (φ - p))
+      - Real.sin (p + q) * (-(w.1 * Real.sin φ) + w.2 * Real.cos φ)
+      + Real.sin p * (-(w.1 * Real.sin (φ + q)) + w.2 * Real.cos (φ + q)) = 0 := by
+  simp only [Real.sin_sub, Real.cos_sub, Real.sin_add, Real.cos_add]
+  ring
+
+/-- **`W_α` lies inside `W_sub`'s cone** — the upper-edge half, which is the
+part `wedgeAt_upper` cannot reach.
+
+For `w ∈ wedgeAt R (t+2γ+α) α` the wedge's own edges give
+`perp_{t+2γ} > 0` (lower) and `perp_{t+2γ+2α} < 0` (upper).  `W_sub`'s upper
+edge sits at `t + 2π`, a further `2β` on.  The three-angle relation at
+`φ = t+2γ+2α`, `p = 2α`, `q = 2β` reads
+
+    sin(2α)·perp_{t+2π} = sin(2α+2β)·perp_{t+2γ+2α} − sin(2β)·perp_{t+2γ},
+
+whose right side is (positive)·(negative) − (positive)·(positive) < 0.  All
+three sines are positive because `α`, `β` and `α+β` are acute — which is exactly
+what `γ` obtuse buys. -/
+theorem wedgeAt_alpha_perp_upper_of_obtuse {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π) :
+    ∀ w ∈ wedgeAt R (t + 2 * γ + α) α,
+      -(w.1 * Real.sin (t + 2 * π)) + w.2 * Real.cos (t + 2 * π) < 0 := by
+  intro w hw
+  obtain ⟨hα, hβ⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
+  have hπ : 0 < π := Real.pi_pos
+  have hs2α : 0 < Real.sin (2 * α) :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+  have hs2β : 0 < Real.sin (2 * β) :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+  have hs2αβ : 0 < Real.sin (2 * α + 2 * β) :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+  -- the wedge's own two edges
+  have hlo : 0 < -(w.1 * Real.sin (t + 2 * γ)) + w.2 * Real.cos (t + 2 * γ) := by
+    have h := wedgeAt_lower hα0 hα w hw
+    rwa [show t + 2 * γ + α - α = t + 2 * γ by ring] at h
+  have hup : -(w.1 * Real.sin (t + 2 * γ + 2 * α))
+      + w.2 * Real.cos (t + 2 * γ + 2 * α) < 0 := by
+    have h := wedgeAt_upper hα0 hα w hw
+    rwa [show t + 2 * γ + α + α = t + 2 * γ + 2 * α by ring] at h
+  -- the relation at φ = t+2γ+2α, p = 2α, q = 2β
+  have hrel := perp_three_angle_relation (t + 2 * γ + 2 * α) (2 * α) (2 * β) w
+  rw [show t + 2 * γ + 2 * α - 2 * α = t + 2 * γ by ring,
+    show t + 2 * γ + 2 * α + 2 * β = t + 2 * π by linarith] at hrel
+  nlinarith [mul_pos hs2αβ (neg_pos.mpr hup), mul_pos hs2β hlo]
+
+/-- **`W_β` lies inside `W_sub`'s cone** — here it is the LOWER-edge half that
+needs work, the mirror of the `W_α` case.
+
+`W_β = wedgeAt R (t+2γ+2α+β) β` has upper edge at `t+2γ+2α+2β = t+2π`, which is
+already `W_sub`'s upper edge, so that half is free.  Its lower edge is at
+`t+2γ+2α`, an angle `2α` short of `W_sub`'s lower edge `t+2γ`.  The SAME
+three-angle relation supplies the gap, rearranged:
+
+    sin(2β)·perp_{t+2γ} = sin(2α+2β)·perp_{t+2γ+2α} − sin(2α)·perp_{t+2π},
+
+now (positive)·(positive) − (positive)·(negative) > 0. -/
+theorem wedgeAt_beta_perp_lower_of_obtuse {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π) :
+    ∀ w ∈ wedgeAt R (t + 2 * γ + 2 * α + β) β,
+      0 < -(w.1 * Real.sin (t + 2 * γ)) + w.2 * Real.cos (t + 2 * γ) := by
+  intro w hw
+  obtain ⟨hα, hβ⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
+  have hπ : 0 < π := Real.pi_pos
+  have hs2α : 0 < Real.sin (2 * α) :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+  have hs2β : 0 < Real.sin (2 * β) :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+  have hs2αβ : 0 < Real.sin (2 * α + 2 * β) :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+  have hlo : 0 < -(w.1 * Real.sin (t + 2 * γ + 2 * α))
+      + w.2 * Real.cos (t + 2 * γ + 2 * α) := by
+    have h := wedgeAt_lower hβ0 hβ w hw
+    rwa [show t + 2 * γ + 2 * α + β - β = t + 2 * γ + 2 * α by ring] at h
+  have hup : -(w.1 * Real.sin (t + 2 * π)) + w.2 * Real.cos (t + 2 * π) < 0 := by
+    have h := wedgeAt_upper hβ0 hβ w hw
+    rwa [show t + 2 * γ + 2 * α + β + β = t + 2 * π by linarith] at h
+  have hrel := perp_three_angle_relation (t + 2 * γ + 2 * α) (2 * α) (2 * β) w
+  rw [show t + 2 * γ + 2 * α - 2 * α = t + 2 * γ by ring,
+    show t + 2 * γ + 2 * α + 2 * β = t + 2 * π by linarith] at hrel
+  nlinarith [mul_pos hs2αβ hlo, mul_pos hs2α (neg_pos.mpr hup)]
+
 end QOU.Archimedean.HyperbolicVolume
