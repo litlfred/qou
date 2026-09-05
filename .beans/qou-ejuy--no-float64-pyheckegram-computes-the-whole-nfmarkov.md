@@ -179,6 +179,47 @@ recorded so the stability verdicts become auditable.
        what this removes.
 5. [ ] Re-run and diff. tr_M, net, nf and every LP_stable verdict move; that
        is the point, and `qou-3uvs`'s noise floor goes away with it.
-6. [ ] Find the OTHER f64-path consumers before declaring this done. `nf_tr`
-       and `check_frobenius` are library entry points and this table is
-       unlikely to be the only caller mixing precisions.
+6. [~] The other f64-path consumers, enumerated. `nf_tr` / `check_frobenius` /
+       `build_atom_nf` / `TR_M` are library entry points and the hadron table
+       was not the only caller. Witness-EMITTING producers still wholly on the
+       f64 path (zero mp-path references):
+
+           computations/universal-ilp.py                  nf_tr, check_frobenius,
+                                                          build_atom_nf
+           computations/h2o_bond_angle_shift_phi1.py      float(nf_tr(...))
+           computations/gram-matrix-dual.py               TR_M, z, G_PINV, RADICAL
+           computations/aK_via_lp_dual_hecke_basis.py     pyhecke.gram imports
+
+       `computations/confinement_lp_braid_gram_probe.py` also uses `nf_tr` but
+       emits no witness, so it publishes nothing and is out of scope.
+
+       **These are CANDIDATES, not established defects.** Being on the f64 path
+       is only wrong where a producer MIXES precisions (as the hadron table did,
+       publishing a float64 `tr_M` beside an MPFR `B_MeV`) or claims precision
+       it does not have. A producer that is honestly and wholly f64 is fine —
+       `gram.py` guarantees that path deliberately. Each needs the same
+       treatment the table got, in this order: does it mix? does its mp twin
+       AGREE (the `qou-ejuy` p-n lesson)? only then migrate and regenerate.
+
+  6a. [x] `computations/qbeta/qbeta_decay_functional_unification_protium_probe.py`
+       — DONE, and it is the clearest case, because the probe had diagnosed
+       itself. It computed proton and neutron with `build_nucleon_nf_mp` but
+       protium with the f64 `build_atom_nf`, and said so:
+
+           `build_atom_nf` has NO correct mpf route [...] So protium stays
+           float64 and is labelled, not laundered through `mp.mpf(str(...))`.
+           [...] d_b subtracts the float64 protium, so it carries a ~1e-16
+           floor NO MATTER WHAT dps this file runs at.
+
+       Exactly right when written, and exactly the honest way to handle it.
+       The premise is what changed: `build_atom_nf_mp` IS a correct mpf route
+       at the true q_0 now that its p-n convention is fixed. Verified for
+       protium specifically — 2.17e-16 against the f64 builder — rather than
+       inferred from the multi-nucleon agreement, since A=1 exercises the pe
+       crossing and not the inter-nucleon one. The 1e-16 floor under every
+       `d_b`-derived conclusion is gone.
+
+       - [ ] Regenerate its witness (deferred: the `qou-uiut` table run holds
+             the checkout). Worth reading the result rather than rubber-
+             stamping it: a near-match that was previously floor-limited could
+             now be seen to be either real or not.
