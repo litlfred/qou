@@ -434,6 +434,85 @@ theorem buildChains_eq_foldl (config : NuclearConfig) :
   | [_] => rfl
   | _ :: _ :: _ => rfl
 
+/-- `mapIdx` over a mapped `range` is a `map` of the two composed. -/
+theorem mapIdx_map_range {α β : Type} (n : ℕ) (f : ℕ → α) (g : ℕ → α → β) :
+    ((List.range n).map f).mapIdx g = (List.range n).map (fun j => g j (f j)) := by
+  apply List.ext_getElem
+  · simp
+  · intro i h1 h2; simp [List.getElem_mapIdx]
+
+/-- In-range `take` peel, with the partial accessor `config[m]!` resolved. -/
+theorem take_succ_of_lt (config : NuclearConfig) (m : ℕ) (h : m < config.length) :
+    config.take (m + 1) = config.take m ++ [config[m]!] := by
+  rw [List.take_succ]
+  congr 1
+  rw [List.getElem?_eq_getElem h]
+  simp [getElem!_pos, h]
+
+/-- The chain list after `buildChains` has folded the first `m` nucleons:
+    chain `j` is the ordered `crossingMatrix` product over the nucleons
+    strictly between `j` and `m`. -/
+noncomputable def chainsUpTo (config : NuclearConfig) (m : ℕ) : List TMatrix :=
+  (List.range (m - 1)).map (fun j =>
+    (((config.take m).drop (j + 1)).map (fun nk => crossingMatrix (config[j]!) nk)).prod)
+
+/-- One fold step on `chainsUpTo`: every existing chain gains the new
+    nucleon's crossing, and one new chain is appended. -/
+theorem chainsUpTo_succ (config : NuclearConfig) (m' : ℕ) (h : m' + 1 < config.length) :
+    chainsUpTo config (m' + 2) =
+      (chainsUpTo config (m' + 1)).mapIdx
+        (fun j Mj => Mj * crossingMatrix (config[j]!) (config[m' + 1]!))
+      ++ [crossingMatrix (config[m']!) (config[m' + 1]!)] := by
+  have hlen : (config.take (m' + 1)).length = m' + 1 := by
+    rw [List.length_take]; omega
+  simp only [chainsUpTo, Nat.add_sub_cancel, mapIdx_map_range]
+  rw [show m' + 2 - 1 = m' + 1 from rfl,
+    take_succ_of_lt config (m' + 1) h, List.range_succ, List.map_append]
+  congr 1
+  · apply List.map_congr_left
+    intro j hj
+    rw [List.mem_range] at hj
+    rw [List.drop_append_of_le_length (by omega), List.map_append, List.prod_append]
+    simp
+  · have hd : (List.take (m' + 1) config ++ [config[m' + 1]!]).drop (m' + 1)
+        = [config[m' + 1]!] := by
+      rw [List.drop_append_of_le_length (by omega), List.drop_eq_nil_of_le (by omega),
+        List.nil_append]
+    simp only [List.map_cons, List.map_nil, hd, List.prod_cons, List.prod_nil, mul_one]
+
+/-- **The accumulator invariant.**  Folding a prefix of length `m` leaves the
+    counter at `m` and the chain list at `chainsUpTo config m`. -/
+theorem foldl_take (config : NuclearConfig) :
+    ∀ m, m ≤ config.length →
+      (config.take m).foldl (buildStep config) ([], 0) = (chainsUpTo config m, m) := by
+  intro m
+  induction m with
+  | zero => intro _; simp [chainsUpTo]
+  | succ m ih =>
+    intro hm
+    have hmlt : m < config.length := Nat.lt_of_lt_of_le (Nat.lt_succ_self m) hm
+    rw [take_succ_of_lt config m hmlt, List.foldl_append, ih (Nat.le_of_lt hmlt)]
+    match m with
+    | 0 => simp [buildStep, chainsUpTo]
+    | m' + 1 =>
+      rw [show m' + 1 + 1 = m' + 2 from rfl, chainsUpTo_succ config m' hmlt]
+      simp [buildStep, extendChain]
+
+/-- **The right-hand side of `MatrixChainEqBuildChains`.**  Chain `j` of
+    `buildChains` is the ordered `crossingMatrix` product over the nucleons
+    after `j`. -/
+theorem buildChains_get (config : NuclearConfig) (j : ℕ) (hj : j + 1 < config.length) :
+    (buildChains config).get! j =
+      ((config.drop (j + 1)).map (fun nk => crossingMatrix (config[j]!) nk)).prod := by
+  rw [buildChains_eq_foldl]
+  have h := foldl_take config config.length (le_refl _)
+  rw [List.take_length] at h
+  rw [h]
+  simp only [chainsUpTo, List.take_length]
+  rw [List.get!_eq_getElem!, getElem!_pos]
+  · simp
+  · simpa using by omega
+
 /-- **foldl/foldr bridge — typeclass (Pattern 4).**
 
     The universal claim
@@ -464,36 +543,49 @@ theorem buildChains_eq_foldl (config : NuclearConfig) :
       does not: it relocates the *accumulator*, leaving list order alone,
       which is not the operation needed here.  Corrected there too.
 
-    **The residual gap is `buildChains` ALONE, and it is not about folds.**
-    `matrixChain_chainCrossings` above discharges the entire left-hand side:
-    the class is now equivalent to
-    `(buildChains config).get! j = ((config.drop (j+1)).map (crossingMatrix
-    config[j]!)).prod`, with no matrix algebra left in it at all.
-    `buildChains_eq_foldl` above removes the three-arm case split (the `[]`
-    and `[_]` arms are redundant — the fold already returns `[]` for both), so
-    what is left is the accumulator invariant alone.
-    `buildChains` (`TransferMatrix.lean:223`) is an index-tracking `foldl`
-    over the configuration carrying a `(List TMatrix × ℕ)` accumulator, which
-    at each step `mapIdx`-extends every existing chain via `extendChain` and
-    appends one new chain, guarded by `if k = 0`, reading nucleons with
-    `get!`.  Relating `(buildChains config).get! j` to
-    `chainCrossings config j` is a structural induction on the configuration
-    with index bookkeeping over a partial accessor — no Mathlib list lemma
-    states it, and none is the missing piece.  That is the work, and it is
-    **not done here.** -/
+    **THE GAP IS CLOSED (2026-09-05).  This class is proved and has an
+    instance — `instMatrixChainEqBuildChains` below.**  It is kept as the
+    record of the route, not because anything is still assumed.
+
+    The two halves, each sorry-free and neither needing an instance:
+
+    * **Left** — `matrixChain_chainCrossings`: `matrixChain (chainCrossings
+      config j)` is the ordered `crossingMatrix` product over the nucleons
+      after `j`.  Built from `matrixChain_eq_prod` (the reversal) and
+      `crossingMatrix_eq` (the coefficients).
+    * **Right** — `buildChains_get`: chain `j` of `buildChains` is *the same
+      product*.  Built from `buildChains_eq_foldl` (the `[]` / `[_]` arms are
+      redundant, so no case split survives) and `foldl_take` (the accumulator
+      invariant, by induction on the prefix length via `chainsUpTo_succ`).
+
+    Nothing new was needed from Mathlib at any point. -/
 class MatrixChainEqBuildChains (config : NuclearConfig) (j : ℕ)
     (_hj : j + 1 < config.length) : Prop where
   /-- foldl and foldr agree on the commutative chain product. -/
   eq : matrixChain (chainCrossings config j) =
        (buildChains config).get! j
 
-/-- Per-instance form — **this restates its own hypothesis.**
+/-- **The statement, unconditionally.**  No class hypothesis, no instance,
+    no `sorry`.  Both sides are the ordered `crossingMatrix` product over the
+    nucleons after `j`. -/
+theorem matrixChain_eq_buildChains_unconditional
+    (config : NuclearConfig) (j : ℕ) (hj : j + 1 < config.length) :
+    matrixChain (chainCrossings config j) = (buildChains config).get! j := by
+  rw [matrixChain_chainCrossings, buildChains_get config j hj]
 
-    The conclusion is character-for-character the class field `eq`, so the
-    declaration derives nothing; it exists to give callers the equality
-    without naming the instance.  The content, and the reason no instance is
-    supplied, are in `MatrixChainEqBuildChains` above.  Disclosure added
-    2026-09-05 per bean `qou-pqmw`. -/
+/-- The conjecture class is inhabited — it was never more than a placeholder
+    for the theorem above. -/
+instance instMatrixChainEqBuildChains (config : NuclearConfig) (j : ℕ)
+    (hj : j + 1 < config.length) : MatrixChainEqBuildChains config j hj :=
+  ⟨matrixChain_eq_buildChains_unconditional config j hj⟩
+
+/-- Per-instance form, kept for compatibility.
+
+    **The name is now a misnomer and the disclosure it used to carry is
+    withdrawn**: this is no longer an axiom pass-through, because the class
+    is proved (`instMatrixChainEqBuildChains`).  Prefer
+    `matrixChain_eq_buildChains_unconditional`.  Retained so that any caller
+    written against the conditional API keeps working. -/
 theorem matrixChain_eq_buildChains_axiom (config : NuclearConfig) (j : ℕ)
     (hj : j + 1 < config.length)
     [hi : MatrixChainEqBuildChains config j hj] :
@@ -507,42 +599,23 @@ theorem matrixChain_eq_buildChains_axiom (config : NuclearConfig) (j : ℕ)
     This is the bridge between the abstract crossing-sequence formulation
     and the concrete inductive chain construction in TransferMatrix.lean.
 
-    **Proof structure (v1.1):**
-    After the scaling fix (v1.1), `transferMatrix c d = crossingMatrix(nj, nk)`
-    for each crossing.  The remaining challenge is that `matrixChain` folds
-    right (last element leftmost) while `buildChains` uses `foldl` (first
-    element leftmost).  Since all transfer matrices commute
-    (`transferMatrix_comm` from HeckeRep.lean), the products are equal. -/
+    **PROVED 2026-09-05 — the class hypothesis is gone.**  This declaration
+    used to carry `[MatrixChainEqBuildChains config j hj]` and pass straight
+    through to that class's field.  It no longer does: both sides are shown
+    to be the ordered `crossingMatrix` product over the nucleons after `j`.
+
+    The old four-step proof sketch that stood here was right about step 1
+    (`crossingMatrix_eq`) and wrong about the rest.  There was no
+    `foldl`-versus-`foldr` obstacle: `matrixChain` *reverses* its list, which
+    `matrixChain_eq_prod` handles via `List.Perm.prod_eq'`, and the real work
+    was the `buildChains` accumulator invariant (`foldl_take`). -/
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
 theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
-    (hj : j + 1 < config.length)
-    [MatrixChainEqBuildChains config j hj] :
+    (hj : j + 1 < config.length) :
     matrixChain (chainCrossings config j) =
-    (buildChains config).get! j := by
-  -- Both compute ∏_{k > j} crossingMatrix(config[j], config[k]).
-  -- After scaling fix (v1.1), transferMatrix(c, d) = crossingMatrix for each pair.
-  -- matrixChain folds right: T_last * (... * (T_{j+2} * T_{j+1}))
-  -- buildChains uses foldl: T_{j+1} * T_{j+2} * ... * T_last
-  -- These are equal because all transfer matrices commute
-  -- (transferMatrix_comm from HeckeRep.lean).
-  --
-  -- Full proof:
-  -- 1. Show each (c, d) in chainCrossings gives transferMatrix c d =
-  --    crossingMatrix (config[j]!) (config[k]!)  [by cases on vertexType]
-  -- 2. Show matrixChain seq = List.foldl (fun M cd => transferMatrix cd.1 cd.2 * M) 1 seq
-  --    [by transferMatrix_comm + induction]
-  -- 3. Show List.foldl over chainCrossings = List.foldl over buildChains' crossings
-  --    [by induction on config, unfolding both foldl definitions]
-  -- 4. Combine 2 and 3 to get the result.
-  --
-  -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-  -- Pass-through via foldl/foldr bridge axiom: both sides compute
-  -- products of the same transfer matrices in different association
-  -- orders; transferMatrix_comm gives commutativity, so the products
-  -- are equal.  Axiomatised until the List.foldl/foldr bridge is
-  -- chased through Mathlib.
-  exact matrixChain_eq_buildChains_axiom config j hj
-  -- Ref: [leitner2026] §9/transfer-matrix-correspondence
+    (buildChains config).get! j :=
+  matrixChain_eq_buildChains_unconditional config j hj
+
 
 -- ════════════════════════════════════════════════════════════════
 -- §8  Corollary: optimal NF count from transfer matrix structure
