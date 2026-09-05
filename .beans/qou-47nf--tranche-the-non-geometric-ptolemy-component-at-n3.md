@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-09-05T15:53:13Z
+updated_at: 2026-09-05T16:16:20Z
 ---
 
 OPENED 2026-09-05. Route E's ONE surviving branch, now a named held construction
@@ -643,3 +643,59 @@ variety in any of classes 1-13 is automatically complex type. The question is "i
 ideal proper", not "decompose the variety".
 
 Ptolemy database host still returns 000; the allowlist has not taken effect.
+
+
+## 2026-09-05 (evening) — THE BORROMEAN QUESTION IS ANSWERED (mod p)
+
+### (xxxi) L6a4 carries complex-type PGL(3,C) representations — THREE classes, not one
+
+Route: FKR-reduce (28 -> 11-13 vars), then generic hyperplane slicing, then msolve over
+F_32003. The manifold is the one the mass construction uses, not the 4_1 proxy.
+
+  class  H2_class (Z/3)                          trivial?  verdict
+  0      [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]       YES       (geometric lives here)
+  1      [0,0,0,0,1,0,2,0,0,0,0,0,0,1,0,0]       no        dim 5, DEGREE 18 (full RUR)
+  2      [0,0,1,2,0,0,0,0,0,0,1,0,0,0,0,0]       no        positive dim (>= 7)
+  3      [0,0,1,2,1,0,2,0,0,0,1,0,0,1,0,0]       no        positive dim (>= 7)
+
+All three are NON-EMPTY and NON-TRIVIAL. By the obstruction argument (duality negates
+the class; arithmetic core lean-verified), nothing in a non-trivial class is self-dual,
+so every representation in all three families is COMPLEX TYPE.
+
+Three independent classes matters: one could be an artifact of my reduction; three
+behaving consistently, with class 1 fully resolved, is not.
+
+### (xxxii) The slicing ladder — the validation, and the msolve output key
+
+  c1, 1-4 slices   [1,12,-1,[]]  + "The ideal has positive dimension"
+  c1, 5 slices     [0,[32003,12,18,...RUR...]]   dim 0, degree 18
+  c1, 6-7 slices   [-1]                          empty (over-sliced)
+
+Each generic hyperplane drops dimension by one, so dim = 5. The ladder could not arise
+from a broken pipeline. MSOLVE OUTPUT KEY, verified in both directions with -v 1:
+    [0, [...]]        zero-dimensional, RUR follows
+    [1, n, -1, []]    POSITIVE DIMENSION (a refusal marker, NOT empty)
+    [-1]              empty
+The middle one is a trap: -1 reads like "dimension of the empty set". It is not.
+Run with -v 1 and READ THE LOG; without -v 1 the log is 0 bytes and says nothing.
+
+### (xxxiii) TWO BUGS OF MINE, both caught by external checks not by re-reading
+
+1. I reported class 1 EMPTY off [1,12,-1,[]]. It is positive-dimensional. Caught by the
+   monitor surfacing the log line I had not read.
+2. First slicing run reported empty at 1, 2, 3 slices -- impossible for a proper ideal by
+   the Nullstellensatz. That impossibility prompted the check: slice.py re-joined lines
+   with ",\n" when the .ms lines already ended in ",", giving 17 double commas and
+   malformed input. A mathematically impossible result is a bug signal, not a finding.
+
+### (xxxiv) STILL OPEN
+
+  * CHAR 0. Everything above is mod 32003. Every Singular over-Q run died on resources
+    (EXIT=137/124). A char-0 msolve on the 5-sliced system is running -- that is the one
+    that would establish non-emptiness over C and yield actual algebraic numbers.
+  * NO EXPLICIT CHARACTER YET. The complex-type conclusion rests on the obstruction
+    argument, whose two topological inputs are GGZ citations carried as hypotheses. A
+    direct chi(g) vs chi(g^-1) test on a char-0 solution would be independent evidence,
+    of the same kind already held for 4_1.
+  * Classes 4-13 reduced (9 of 13 done); not yet solved.
+  * Degree 18 counts a generic linear section, NOT representations.
