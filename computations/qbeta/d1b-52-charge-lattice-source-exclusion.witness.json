@@ -1,0 +1,197 @@
+{
+  "engine": "exact-integer-seifert-determinant-plus-corpus-grep",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T08:25:48.164090+00:00",
+  "commitSha": "113c2e68746c3989bed2277bcd4eddfcfd489a43",
+  "assertions": [
+    {
+      "name": "both_sources_held",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "physrevd108106023 (double twist knots) and arxiv-1707.02991v1 (KRSS) both have ingested section text, so the corpus-grep path 5 can see them"
+    },
+    {
+      "name": "determinant_routine_calibrated",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "|det(V+V^T)| from exact integer Seifert matrices reproduces all 8 independently-known determinants; the routine is measuring what it claims to before it is used on anything"
+    },
+    {
+      "name": "family_formula_confirmed",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the paper's eq (5) Alexander form gives det = |Delta(-1)| = 1+4pm; all five of its own named (p,m) assignments reproduce their measured determinants exactly, from a formula fitted to none of them"
+    },
+    {
+      "name": "family_is_one_mod_four",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "det = 1+4pm is congruent to 1 mod 4 for EVERY positive p,m -- so this rules out the entire two-parameter family, not merely the finitely many members the paper tabulates"
+    },
+    {
+      "name": "five_two_structurally_excluded",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "det(5_2) = 7 == 3 (mod 4) while every K(p,-m) has det == 1 (mod 4). SCOPE (b): a proved invariant (determinant mod 4) excludes the whole family, not a search that came up empty. 3_1 (3) and 7_2 (11) fall the same way, matching the paper's worked twist-knot list being 4_1/6_1/8_1 and never the odd-index twist knots"
+    },
+    {
+      "name": "krss_covers_trefoil_only",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "8 'trefoil' hits and 0 '5_2' hits in arxiv-1707.02991v1 section text; the correspondence paper works one explicit example and it is not this knot"
+    },
+    {
+      "name": "symmetric_vs_antisymmetric_guard",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "both held sources state in their own words that their quivers are SYMMETRIC; eq (98) is ANTISYMMETRIC. So the rung's target is not merely unsourced -- the obvious source would be the wrong object even if it existed"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 23,
+  "computation": "d1b-52-charge-lattice-source-exclusion",
+  "scriptFile": "d1b_52_charge_lattice_source_exclusion_probe.py",
+  "scriptHash": "27d0c3f30ff9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/d1b_52_charge_lattice_source_exclusion_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/d1b_52_charge_lattice_source_exclusion_probe.py"
+  },
+  "description": "qou-rutm. The rung asked for a charge lattice for the 5_2 flavour. ANSWER: it is NOT sourceable from the held knots-quivers literature, and the exclusion is STRUCTURAL rather than a failed search. The corpus holds two knots-quivers sources: KRSS (arxiv-1707.02991v1), which works the trefoil only, and Singh et al. (physrevd108106023), which gives explicit symmetric quiver matrices for the double twist family K(p,-m). That family's Alexander polynomial is Delta = 1 - pm*(1-x)^2/x (its eq (5)), so det = |Delta(-1)| = 1+4pm == 1 (mod 4) for every positive p,m. det(5_2) = 7 == 3 (mod 4), so 5_2 is in no member of the family -- SCOPE (b), invariant cited (determinant mod 4), excluding the whole two-parameter family rather than the tabulated members. The formula is confirmed by the paper's own five named (p,m) assignments, all reproduced exactly. GUARD: both sources build SYMMETRIC quivers and eq (98) is ANTISYMMETRIC, so a sourced 5_2 quiver would be the wrong object anyway.",
+  "data": {
+    "sources_held": {
+      "physrevd108106023": true,
+      "arxiv-1707.02991v1": true
+    },
+    "determinants_measured": {
+      "3_1": 3,
+      "4_1": 5,
+      "5_2": 7,
+      "6_1": 9,
+      "7_2": 11,
+      "8_1": 13,
+      "8_3": 17,
+      "10_3": 25
+    },
+    "determinant_calibration": {
+      "method": "|det(V + V^T)| with V an exact integer Seifert matrix from spherogram, determinant by Fraction-based elimination",
+      "known_values": {
+        "3_1": 3,
+        "4_1": 5,
+        "5_2": 7,
+        "6_1": 9,
+        "7_2": 11,
+        "8_1": 13,
+        "8_3": 17,
+        "10_3": 25
+      },
+      "matches": 8,
+      "of": 8,
+      "why_calibrated_first": "the routine is verified against independently known values BEFORE any conclusion rests on it"
+    },
+    "family": {
+      "parametrisation": "K(p,-m), positive integers p,m",
+      "alexander_form": "Delta(x) = 1 - p*m*(1-x)^2/x   [paper eq (5)]",
+      "determinant_form": "det = |Delta(-1)| = 1 + 4*p*m",
+      "named_assignments": {
+        "4_1": {
+          "p": 1,
+          "m": 1,
+          "predicted_det": 5,
+          "measured_det": 5
+        },
+        "6_1": {
+          "p": 2,
+          "m": 1,
+          "predicted_det": 9,
+          "measured_det": 9
+        },
+        "8_1": {
+          "p": 3,
+          "m": 1,
+          "predicted_det": 13,
+          "measured_det": 13
+        },
+        "8_3": {
+          "p": 2,
+          "m": 2,
+          "predicted_det": 17,
+          "measured_det": 17
+        },
+        "10_3": {
+          "p": 3,
+          "m": 2,
+          "predicted_det": 25,
+          "measured_det": 25
+        }
+      },
+      "residue_class": "1 (mod 4), for every positive p,m"
+    },
+    "exclusion": {
+      "knot": "5_2",
+      "determinant": 7,
+      "residue_mod_4": 3,
+      "family_residue_mod_4": 1,
+      "verdict": "5_2 is not K(p,-m) for any positive integers p,m",
+      "scope": "(b) structural exclusion",
+      "invariant_cited": "knot determinant mod 4",
+      "why_b_and_not_a": "the argument rules out the entire two-parameter family from an invariant, not the finitely many members that happen to be tabulated",
+      "also_excluded": {
+        "3_1": 3,
+        "7_2": 11
+      },
+      "consistency_check": "the paper's worked twist-knot list is 4_1/6_1/8_1 (dets 5/9/13, all 1 mod 4) and never the odd-index twist knots -- exactly what this predicts"
+    },
+    "guard_symmetric_vs_antisymmetric": {
+      "held_sources_build": "SYMMETRIC quivers (both say so in their own words)",
+      "ggm_eq_98_is": "ANTISYMMETRIC",
+      "consequence": "a sourced 5_2 quiver would not be eq (98); the two are different objects, not two presentations of one",
+      "failure_class": "matching an object by shape rather than by structure -- the class that produced the merged 'eq (98) is rank 3' error (a matrix SIZE read as a RANK), corrected in #6643"
+    },
+    "what_this_does_not_settle": {
+      "not_claimed": "that no 5_2 quiver exists anywhere in the literature",
+      "measured_scope": "the two knots-quivers documents THIS corpus holds",
+      "disconfirmation": "an explicit 5_2 quiver matrix from any source would settle the sourcing question -- but C7 stands regardless, since it would still be symmetric",
+      "open": "whether the A_omega/Route-C programme needs a charge lattice at all once eq (98)'s radical is known to be the mirror-symmetric direction (#6676)"
+    },
+    "scope": {
+      "tier": "one scope-(b) exclusion (C5) + calibration (C2) + corpus measurement (C1, C6, C7)",
+      "arithmetic": "exact integers and Fractions; no floats",
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  }
+}
