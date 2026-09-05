@@ -49,10 +49,10 @@ The block is unusually well-specified, and all three of its structural claims ar
 
 The braid-word type `B`, the map `P`, the writhe `w`, and the `q`-datum are **caller
 parameters**, per the rule recorded in
-`QOU/AlgebraicSubstrate/ConditionalClasses.lean` after its own retraction: *"an `∃` over
-a quantity you get to pick cannot be false, while a `∀` about a quantity the caller
-supplies can."* So the class is refutable, and that is discharged below rather than
-asserted.
+`QOU/AlgebraicSubstrate/ConditionalClasses.lean` after its own retraction — an `∃` over
+a quantity the class itself chooses cannot be false, whereas a `∀` about a quantity the
+caller supplies can be. So the class is refutable, and that is discharged below rather
+than asserted.
 
 ## What is DERIVED rather than axiomatised
 
