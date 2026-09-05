@@ -1,11 +1,11 @@
 ---
 # qou-p7it
 title: 'Four block schemas restate BlockBase instead of extending it; five qou manifest fields silently dropped (PR #6501 / folio-assistant#164)'
-status: in-progress
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-03T20:35:52Z
-updated_at: 2026-09-05T07:24:09Z
+updated_at: 2026-09-05T09:00:15Z
 ---
 
 ## Two defects, one shared cause
