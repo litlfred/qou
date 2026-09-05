@@ -179,7 +179,7 @@ recorded so the stability verdicts become auditable.
        what this removes.
 5. [ ] Re-run and diff. tr_M, net, nf and every LP_stable verdict move; that
        is the point, and `qou-3uvs`'s noise floor goes away with it.
-6. [~] The other f64-path consumers, enumerated. `nf_tr` / `check_frobenius` /
+6. [x] The other f64-path consumers, enumerated AND assessed. `nf_tr` / `check_frobenius` /
        `build_atom_nf` / `TR_M` are library entry points and the hadron table
        was not the only caller. Witness-EMITTING producers still wholly on the
        f64 path (zero mp-path references):
@@ -223,3 +223,56 @@ recorded so the stability verdicts become auditable.
              the checkout). Worth reading the result rather than rubber-
              stamping it: a near-match that was previously floor-limited could
              now be seen to be either real or not.
+
+
+## 2026-09-05 — step 6 assessed: 4 candidates, 1 real
+
+Applied the bean's own criterion — being on the f64 path is only wrong where a
+producer MIXES precisions or claims precision it lacks.
+
+**Honestly f64, NOT defects (2).** Neither imports mpmath at all, so there is
+no mixing and nothing claims more than it has:
+
+    computations/universal-ilp.py                12 f64-gram uses, 0 mpmath
+    computations/h2o_bond_angle_shift_phi1.py     4 f64-gram uses, 0 mpmath
+
+**Deliberate, documented mixer, NOT a defect (1).**
+`computations/gram-matrix-dual.py` mixes on purpose and says so at each
+boundary — f64 only where it feeds a numpy printout (`_rad_hat`), mpf where the
+value is exact in closed form. It also already caught and fixed the laundering
+this bean is about:
+
+    The comment above says this line makes the witness carry "the exact value
+    rather than a 16-digit shadow of it". It did NOT: `q0` is the f64 constant,
+    so `mp.mpf(str(q0))` laundered ~16 significant digits into a value that only
+    LOOKS 50-digit. Read the high-precision name; ...
+
+and it declines to add the f64 radical to the witness rather than widen its
+baseline ("adding them would have made it 130, and widening the baseline to
+absorb a value that has a closed form is exactly the move AGENTS.md forbids").
+Its 124-field NO-FLOAT64 baseline covers the honest f64 numpy Gram work.
+
+**CONFIRMED, same class as the hadron table (1).**
+`computations/aK_via_lp_dual_hecke_basis.py`. It does everything right on its
+own side — `set_compute_dps()`, `Q = mp.mpf(_Q50_PROTON)` read by name,
+`load_tr_M` returning mpf from a 50-dps decimal string, and a comment recording
+that a `float(mp.mpf(...))` cast "was THE textbook L1 precision destroyer". Then
+at `solve_atom_lp`:
+
+    t = np.asarray(TR_M, dtype=float)          # f64 Markov weights
+    G = gram_matrix()                          # f64 Gram
+    n_target = tr_M_atom                       # mpf, 50 dps
+    result = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
+
+The solver is pinned to **clarabel-MPFR at 50 dps** — and two of its three
+inputs carry ~16 digits. The solve's precision is bounded by its data, not by
+the solver, and `"t_i": float(t[i])` publishes the f64 weights. Exactly the
+hadron table's defect: MPFR machinery fed float64.
+
+The fix is the same and the parts exist (`tr_m_mp(50)`, `gram_matrix_mp(50)`).
+Not applied here — it needs its own agreement check before the switch (the
+`qou-ejuy` p-n lesson) and a regeneration, and the table run holds the checkout.
+
+- [ ] Migrate `aK_via_lp_dual_hecke_basis.py` to `tr_m_mp` / `gram_matrix_mp`,
+      verify agreement first, then regenerate. Expect the LP result to MOVE:
+      that is the point, and it is the one case here where it should.
