@@ -402,19 +402,32 @@ Both are framed with evidence, options, defaults and blast radius in
 [`docs/audits/2026-09-05-four-decisions-from-the-carrier-queue.md`](../docs/audits/2026-09-05-four-decisions-from-the-carrier-queue.md)
 (PR #6740).
 
-### One defect found, flagged not fixed — it is in two ALREADY-MERGED PRs
+### One defect found — it was in FOUR merged PRs, not two, and it is now fixed
 
-`voice-scholarly-default`'s `SECOND_PERSON_RE` matches **"you get"**, and it
-scans Lean docstrings. #6683 and #6728 each quote `ConditionalClasses.lean`'s
-rule verbatim, so each contains that string; both read `pass` **only because
-their sidecars are stale**. Measured on `spin-from-so3-fiber` (#6683): the
-criterion's recorded verdict is `2026-07-19T17:19:09Z` against lean hash
-`01a66001ac03`, while the live hash is `dc3554e7761d` — a verdict about a file
-that predates the repair it is supposedly clearing. `p-from-braid-mirror` (#6728)
-is the same shape. **Both would fail on re-sweep.** #6741 paraphrased instead and
-is clean.
+`voice-scholarly-default`'s `SECOND_PERSON_RE`
+([`qa-checkers-voice.ts:873`](../folio-assistant/content/pipeline/qa-checkers-voice.ts))
+lists `get` in its `you (?:can|…|get|…)` alternation, and the criterion reads
+Lean docstrings when a `.lean` is present (`qa-criteria-registry.ts:177`,
+`also_invalidated_by: ["lean"]`). Every carrier that quoted
+`ConditionalClasses.lean`'s design rule **verbatim** therefore contains a
+matching string, and each read `pass` **only because its sidecar predates the
+repair**. Measured on `spin-from-so3-fiber` (#6683): recorded lean hash
+`01a66001ac03` against a live `dc3554e7761d`; `p-from-braid-mirror` (#6728),
+`828d9508850d` against `8c59ae7dbda4`.
 
-This is the general hazard, not a one-off: **a stale sidecar reads exactly like a
-pass**, so a QA sweep run against a file the sidecar predates certifies nothing.
-The block-level fix is to paraphrase the quote in both files and re-sweep;
-recorded here rather than done, because it edits two merged PRs' content.
+**The count needed correcting, and the correction is the point.** #6741's report
+named **two** siblings. Re-measured by running the actual regex over every
+sidecar'd content-block `.lean` in the tree — rather than over the two files
+named — the answer is **four**: #6683, #6728, #6734 (`kashaev-…`) and #6737
+(`mirror-3d-3d-…`). #6671 and #6731 never carried the quote; #6741 paraphrased.
+A report naming instances is not a measurement of the population, even when the
+instances it names are real.
+
+**Fixed** on the decision-brief branch under the adjacent-bug rule: all four
+paraphrase the rule instead of quoting it, the regex now returns **0** hits
+across sidecar'd content Lean, and all four verify `lean`-direct **exit 0**.
+
+The general hazard stands and is not fixed by this: **a stale sidecar reads
+exactly like a pass**, so a sweep against a file its sidecar predates certifies
+nothing. Four criteria-clean verdicts here were about files that no longer
+existed in that form.

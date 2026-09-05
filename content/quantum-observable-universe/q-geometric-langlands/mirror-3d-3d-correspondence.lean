@@ -42,9 +42,9 @@ partition function's **four-loop perturbative coefficient matches the framework'
 Markov-trace `h⁴` coefficient, `−3/4`**.
 
 Both coefficient families are **caller parameters**, per the rule recorded in
-`QOU/AlgebraicSubstrate/ConditionalClasses.lean` after its own retraction (*"an `∃` over a
-quantity you get to pick cannot be false, while a `∀` about a quantity the caller supplies
-can"*), so the class is refutable — discharged below rather than asserted.
+`QOU/AlgebraicSubstrate/ConditionalClasses.lean` after its own retraction — an `∃` over a
+quantity the class itself chooses cannot be false, whereas a `∀` about a quantity the
+caller supplies can be — so the class is refutable, discharged below rather than asserted.
 
 **Consistency, deliberately:** `−3/4` here is the *same* number D10's carrier constrains as
 `h_fourth_eq : levelCoeff 2 = -3/4`

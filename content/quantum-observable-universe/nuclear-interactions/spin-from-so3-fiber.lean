@@ -45,9 +45,9 @@ The block names its own missing object in one sentence:
 So the carrier takes that map as a **parameter** — `levelCoeff : ℕ → ℝ`, sending a
 spherical-harmonic level to the coefficient it contributes — and constrains it at the two
 places the block gives values. Following the design rule recorded in
-`QOU/AlgebraicSubstrate/ConditionalClasses.lean` after its own retraction (*"an `∃` over a
-quantity you get to pick cannot be false, while a `∀` about a quantity the caller supplies
-can"*), the map is supplied by the caller, so the class **is refutable** — the constant-zero
+`QOU/AlgebraicSubstrate/ConditionalClasses.lean` after its own retraction — an `∃` over a
+quantity the class itself chooses cannot be false, whereas a `∀` about a quantity the
+caller supplies can be — the map is supplied by the caller, so the class **is refutable**: the constant-zero
 map falsifies it, and that is discharged below rather than asserted.
 
 Indexing: `levelCoeff n` is the coefficient of `h^(2n)`, so `levelCoeff 1` is the `h²`
