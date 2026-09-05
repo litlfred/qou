@@ -71,6 +71,8 @@ import argparse
 import json
 import math
 import sys
+
+import mpmath as mp
 from math import comb
 from pathlib import Path
 
@@ -301,9 +303,18 @@ def _electron_binding_mev_ame_fit(Z):
 
 
 def _constants():
-    # NO FLOAT64 (owner directive): source the 50-dps q0, form E0 exactly,
-    # and cast ONCE at the boundary. `q_parameter.Q` is the f64 value; doing
-    # `me / (q0 * (q0 - 1))` in f64 threw away digits E0 is entitled to.
+    # NO FLOAT64 (owner directive): source the 50-dps q0 and form E0 exactly.
+    # `q_parameter.Q` is the f64 value; doing `me / (q0 * (q0 - 1))` in f64
+    # threw away digits E0 is entitled to.
+    #
+    # The `float()` casts that used to sit on the return are GONE (bean
+    # `qou-4ohh`). Their comment said "cast ONCE at the boundary", but the
+    # boundary moved: `_disp` is the display boundary now, and its docstring
+    # states the invariant this function was violating — "every computed
+    # quantity stays mpf upstream and nothing that reaches a witness passes
+    # through this function". Casting here formed E0 at 60 dps and then threw
+    # 43 of those digits away before a single consumer saw it, which is the
+    # f64 collapse `_bond_type_L`'s docstring already names as forbidden.
     import mpmath as _mp
     from q_parameter import Q_50_DIGIT_STR as _Q50
     from codata_constants import M_E_MEV as me
@@ -311,7 +322,7 @@ def _constants():
         q0x = _mp.mpf(str(_Q50))
         mex = _mp.mpf(str(me))
         e0x = mex / (q0x * (q0x - 1))
-    return float(mex), float(q0x), float(e0x)        # me, q0, E0
+    return mex, q0x, e0x                             # me, q0, E0 — all mpf
 
 
 def _bond_type_L():
@@ -438,7 +449,14 @@ def _bond_type_L():
         de = {"pp": _mp.mpf(1), "nn": _mp.mpf(-1),
               "pn": 2 * (_mp.mpf(1) / 2 - dx / 4) - 1}
         lw = _mp.log(1 - hx)
-        return {k: float(-_mp.log(zx + v) - de[k] / 2 * lw) for k, v in d.items()}
+        # mpf, NOT float (bean `qou-4ohh`). The docstring above says "the values
+        # are now mpmath end to end"; until this `float()` was removed that was
+        # true of the BODY and false of the RETURN, so every consumer of these
+        # bond constants — B_sym, and through it the chain-vs-exact residual
+        # this module reports — was back at f64 one line later. The docstring
+        # and the internals agreed with each other and both were wrong about
+        # what came out.
+        return {k: -_mp.log(zx + v) - de[k] / 2 * lw for k, v in d.items()}
 
 
 def _chain_writhe_shift(Z, N, alpha):
@@ -477,7 +495,11 @@ def _chain_writhe_shift(Z, N, alpha):
         n_de = (max(Z - 1, 0) * _mp.mpf(1)
                 + (de_pn if (Z >= 1 and N >= 1) else _mp.mpf(0))
                 + max(N - 1, 0) * _mp.mpf(-1))
-        return float(-_mp.mpf(str(alpha)) * _mp.log(1 - hx) / 2 * n_de)
+        # mpf, not float (bean `qou-4ohh`) — same defect as `_bond_type_L`'s
+        # return: computed at working precision, then downcast one line later.
+        # This term is ADDED to the exact-trace side of the chain-vs-exact
+        # residual, so an f64 return put a floor under that residual by itself.
+        return -_mp.mpf(str(alpha)) * _mp.log(1 - hx) / 2 * n_de
 
 
 def _nucleon_msym(alpha):
@@ -490,9 +512,12 @@ def _nucleon_msym(alpha):
     quantity differenced to give B_sym = m_sym_atom − m_sym_free. It is NOT the
     physical nucleon rest mass — for that see `_nucleon_mass_canonical`."""
     from tr_m_atom_via_transfer import tr_m_atom_zn
-    tp = float(tr_m_atom_zn(1, 0, dps=50)[1])   # A=1 → no interfaces → atom==free
-    tn = float(tr_m_atom_zn(0, 1, dps=50)[1])
-    return -alpha * math.log(tp), -alpha * math.log(tn)
+    import mpmath as _mp
+    # The traces arrive as 50-dps mpf; they used to be float()'d here and fed to
+    # math.log, discarding 33 digits before the logarithm (bean `qou-4ohh`).
+    tp = tr_m_atom_zn(1, 0, dps=50)[1]          # A=1 → no interfaces → atom==free
+    tn = tr_m_atom_zn(0, 1, dps=50)[1]
+    return -alpha * _mp.log(tp), -alpha * _mp.log(tn)
 
 
 def _nucleon_mass_canonical(me, q0):
@@ -559,11 +584,11 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   (no exact trace needed). B_lin = α·s = α(1 − e^{−B_sym/α}) saturates at α
     #   (s < 1), so it under-binds increasingly with A. Leading term: B_lin ≈ B_sym
     #   for small L (B_sym = α(s + s²/2 + …)).
-    B_lin = alpha * (1.0 - math.exp(-B_sym / alpha)) if alpha else 0.0
+    B_lin = alpha * (1 - mp.exp(-B_sym / alpha)) if alpha else mp.mpf(0)
     
     # Explicit h^4 = (q_0 - q_0^{-1})^4 modification applied to the raw trace B_lin 
     # scaled by the topological exponent (10A-5), to observe jet-order scaling.
-    h4 = (q0 - 1.0/q0)**4
+    h4 = (q0 - 1/q0)**4
     B_tetra = B_lin * (q0 ** (10*A - 5)) * h4
     m_tetra = m_sym_free - B_tetra
 
@@ -575,8 +600,8 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   components (cheap, all A); tr_atom = tr_free·exp(−B_sym/α) from the
     #   closed-form chain. ZERO AME / CODATA beyond the CAL-1 m_e unit (in α)
     #   and CAL-2 q₀. Higher Φ_q tower levels (B_can_tower) add O(ℏ_q²)/level.
-    tr_free_val = math.exp(-m_sym_free / alpha) if alpha else None
-    tr_atom_val = (tr_free_val * math.exp(-B_sym / alpha)
+    tr_free_val = mp.exp(-m_sym_free / alpha) if alpha else None
+    tr_atom_val = (tr_free_val * mp.exp(-B_sym / alpha)
                    if (alpha and tr_free_val is not None) else None)
     B_can0 = (alpha * (tr_free_val - tr_atom_val)
               if tr_free_val is not None else None)
@@ -591,14 +616,30 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
         B_can_bor = None
     # ---- exact p(3A) trace (capped) — VALIDATOR of the chain + the bar-
     #   involution entanglement split. Computed only when n=3A ≤ max_strands;
-    #   |chain − exact| ≈ 1e-13.
+    #   |chain − exact| ≈ 2e-49, i.e. the 50-dps serialization floor.
+    #
+    #   That figure read "≈ 1e-13" until 2026-09-05 and the printed value was
+    #   8.9e-16 — BOTH were artifacts, not measurements (bean `qou-4ohh`). Three
+    #   f64 downcasts sat on this path (`_constants`' return, `_bond_type_L`'s
+    #   return, `_chain_writhe_shift`'s return, plus `float(ta), float(tf)`
+    #   before the logarithm), so the residual could not be smaller than f64
+    #   epsilon on quantities of order 1-30 MeV whatever the mathematics did.
+    #   With them removed the residual is 2.1e-49 / 4.3e-50 / 5.3e-50 at
+    #   2H/3H/3He and every other column of this dashboard is BYTE-IDENTICAL.
+    #
+    #   Note 3H printed exactly `0.0e+00` before. That was not agreement — it
+    #   was the difference underflowing below f64 resolution, which is the
+    #   failure mode AGENTS.md names: a float64 agreement reported as exact is
+    #   the floor of the arithmetic, not evidence about the mathematics. The
+    #   chain really does reproduce the exact p(3A) trace; that claim is now
+    #   supported by a measurement instead of by noise.
     B_sym_exact = chain_resid = None
     E_retained = E_emitted = E_multilink = B_sym_ent = None
     S_val = NUCLEAR_SPINS.get(name, 0.0)
     lam = get_ground_state_partition(Z, N, S_val)
     if lam:
         w_lam = W_lambda_float(q0, lam)
-        E_gate = alpha * math.log(1.0 / w_lam)
+        E_gate = alpha * mp.log(1 / w_lam)
         c_lam = (bame / E_gate) if bame else None
     else:
         lam, w_lam, E_gate, c_lam = None, None, None, None
@@ -613,7 +654,7 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   B/A. Valid for ALL A (no W_λ≥1 breakdown); tracks ¹²C/¹⁶O to ~1–5%. The
     #   residual (light over-binding, magic dips) is the surface/Coulomb/shell
     #   structure — the open part. Probe: probes/su4_occupancy_binding_probe.py.
-    a_V = alpha * math.log(1.0 / W_lambda_float(q0, (1, 1, 1)))   # DEPRECATED postdiction coeff (not derived — see banner)
+    a_V = alpha * mp.log(1 / W_lambda_float(q0, (1, 1, 1)))   # DEPRECATED postdiction coeff (not derived — see banner)
     B_vol = A * a_V
     # ---- E_C: the EM-sector Coulomb energy (bean 754x). Standard uniform-sphere
     #   E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3); the strong B-forms above carry NO EM
@@ -629,8 +670,13 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
         from tr_m_atom_via_transfer import tr_m_atom_zn
         import mpmath as _mp
         ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
-        ta, tf = float(ta), float(tf)
-        B_sym_exact = alpha * math.log(tf / ta)
+        # `ta, tf = float(ta), float(tf)` used to sit here (bean `qou-4ohh`).
+        # It collapsed two 50-dps traces to f64 immediately before the
+        # logarithm, which put a ~1e-16 floor under `chain_resid` below — the
+        # residual this check exists to measure. That is the same
+        # `math.log(float(tf)/float(ta))` collapse `_bond_type_L`'s docstring
+        # names as forbidden by the owner directive.
+        B_sym_exact = alpha * mp.log(tf / ta)
         # WRITHE-COMMENSURABILITY (fixed 2026-08-15). `_bond_type_L` applies the
         # Lean-proved writhe normalisation L_XY -> L_XY - (delta_e/2)*ln(1-h)
         # (owner directive 2026-08-09, QOU/QBeta/WritheNormalisation.lean), and
