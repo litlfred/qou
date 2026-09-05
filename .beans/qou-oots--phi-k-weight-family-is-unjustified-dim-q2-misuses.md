@@ -452,3 +452,46 @@ at. At mpmath's default 15 it truncates by 5.98e-18 — LARGER than the 1e-18
 tolerance of the assertion comparing against it. It passed only because an
 earlier import had already raised dps. Held as a string now;
 module_const_precision_audit --strict goes LOSSY 1 -> 0.
+
+## 2026-09-05 — the alpha_EM triage is CLOSED; two of three need no change
+
+Closing the loop the previous entry left open.
+
+`alpha_em_b2_canonical_scale_ratio_probe.py` — NOT AFFECTED, the
+counter-example. It tabulates y_lambda and w_wedderburn side by side under
+explicit labels and its own comment already states the distinction correctly
+("tr(1)=1 for the canonical Markov trace: sum_lam y_lam * f^lam = 1. (NOT
+sum_lam w_lam -- that equals 1 only at q=1 ...)"). The mislabel found in the B2
+scalar probe is SPECIFIC TO THAT FILE, not general to the axis. Worth stating,
+because the natural inference from "three alpha_EM files are affected" is that
+the axis is uniformly sloppy, and it is not.
+
+`alpha_5_jucys_murphy_central.py` — AFFECTED IN PRINCIPLE, IMMATERIAL IN FACT.
+Its headline compares SUM_{lam |- 3A, ht=6} w_lam c_5(lam) across A = 2,3,4
+with w = dim_q^2/[n]_q!; since n = 3A that is a cross-atom metric at three
+different n, i.e. exactly this bean's own R2 scope-(b) exclusion. Measured
+(probes/alpha5_jm_crossatom_budget_probe.py, 2/2): the height-6 partial budget
+B_6(A) spreads 222x across those A, and alpha_5(A) = B_6(A) * <c_5>_A
+factorises exactly (1e-40), so a raw spread cannot separate "c_5 moved" from
+"the budget moved".
+
+BUT the producer's conclusion is a NEGATIVE reached by all three of its routes:
+
+    NORMALIZED by [3A]_q!   rel spread   482.16 %
+    RAW                     rel spread    83.163894
+    partial self-normalised rel spread  1327.18 %
+    VERDICT: strongly atom-dependent (mechanism orthogonal to JM-central)
+
+including the self-normalised route R2 admits. So the weight-family choice can
+neither rescue nor overturn it, and the Molien ruling requires no change to this
+file. I was heading for a distortion finding; the measurement says the result is
+robust, and the smaller claim is the one recorded.
+
+Verified against the producer rather than modelled on it: the probe reproduces
+its printed raw alpha_5 (5.608246e-04 / 1.978017e+00 / 1.645002e+02) and its
+partial-norm c_5 (0.4704417 / 42.94229) at q0.
+
+STANDING SCORE for the 11 of 37: 1 file carries a genuine mislabel with a
+-42.23 % Molien move (alpha_em_b2_scalar_c_probe, and its c is not a delivered
+number anyway); 1 is affected in principle but route-invariant; 1 is a correct
+labelled two-arm tabulation. The remaining 8 are NOT triaged.
