@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-09-05T07:21:38Z
+updated_at: 2026-09-05T07:42:48Z
 ---
 
 OPENED 2026-09-05. Route E's ONE surviving branch, now a named held construction
@@ -177,3 +177,61 @@ Step (1) is the real gate and it is an INFRASTRUCTURE question, not a
 mathematical one. Until it is answered this tranche cannot start, and saying so
 is the honest state rather than opening a computation that will fail the same
 way ptlm's did.
+
+
+## 🟢 THE INFRASTRUCTURE BLOCKER IS CLEARED 2026-09-05 — and it was cheap
+
+Step (1) of the three above ("a primary-decomposition backend that is neither
+Magma nor the blocked database") is ANSWERED. What ptlm measured as blocking on
+2026-08-10 was two missing capabilities; both are now present.
+
+  BEFORE (measured this session, before any install)
+    sage / Singular / magma / gp / maxima   ALL absent
+    sage, pysingular, galois, flint         ALL absent as python modules
+    snappy                                  absent
+    sympy 1.14.0                            the only algebra backend
+
+  AFTER
+    Singular 4.3.2   sudo apt-get install -y --no-install-recommends singular
+                     43 MB. primdecGTZ VERIFIED working on a test ideal:
+                     split x*(y-1), x*z into components (x) and (z, y-1).
+    snappy 3.3.2     python3 -m pip install snappy
+                     Vol(4_1) = 2.0298832128 — matches the corpus's canonical
+                     2*Cl_2(pi/3) exactly, so the install is sane.
+
+BOTH INSTALLERS WERE ALREADY IN folio-assistant AND NOBODY HAD RUN THEM:
+scripts/setup-singular.sh and scripts/setup-sage.sh (plus scripts/sage-mcp.sh).
+The provisioning existed the whole time. ptlm recorded the blocker correctly and
+did not check whether the sibling repo shipped a fix for it.
+
+SINGULAR, NOT SAGE, DELIBERATELY. setup-sage.sh's real path is a ~2 GB Docker
+image (native Sage needs Python <= 3.12; this container is 3.11 so native might
+work, but the script defaults to Docker). Free disk was 659 MB at decision time
+and 154 MB after the snappy install alone — a 2 GB pull would have wedged the
+container, which had ALREADY happened once this session at 120K free. Singular
+is the direct backend for the one operation needed and cost 43 MB.
+
+DISK IS THE REAL CONSTRAINT ON THIS TRANCHE, not compute. snappy took free from
+582 MB to 154 MB. Reclaim before any large run: rm -rf /root/.cache/pip
+~/.cache/pip recovered it to 266 MB.
+
+## THE VARIETY BUILDS AT n = 3 — the n=2/n=3 gap above is narrower than feared
+
+  snappy.Manifold('L6a4')            Borromean rings, 8 tets, 3 cusps,
+                                     vol 7.32772475342
+  .ptolemy_variety(2, obstruction_class=0)   11 eqns, 8 vars   (instant)
+  .ptolemy_variety(3, obstruction_class=0)   38 eqns, 32 vars  (instant)
+
+So CONSTRUCTION at n = 3 is free. The paper's "n = 2" feasibility sentence is
+about the exact SOLVING, not the building, and the distinction matters: the open
+question is now specifically whether primdecGTZ terminates on 38 quadrics in 32
+unknowns, which is being measured now rather than assumed either way.
+
+The equations are clean Ptolemy relations, e.g.
+  - c_0012_0*c_1011_0 + c_0012_0*c_1101_0 + c_0111_0*c_1002_0
+
+NOT YET IMPOSED, and it must be before any component is called a
+representation: the Ptolemy variety requires all c != 0, and snappy's own
+convention adds a normalisation. The raw ideal is what was handed to Singular;
+saturation by the coordinate product is a further step and its absence means a
+component found now could be a degenerate locus rather than a representation.
