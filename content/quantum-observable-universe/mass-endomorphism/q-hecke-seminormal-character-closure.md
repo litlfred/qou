@@ -21,53 +21,66 @@ Two layers have to be got right, and each has a natural wrong answer:
 
 ## Numerical verification
 
-| Atom | $|\mathrm{tr}_M|$ canonical | partition-sum ($q$-Hecke) | Relative error |
-|---|---:|---:|---:|
-| Proton | $1.06530622859$ | $1.06530622859$ | $3.96 \times 10^{-15}$ |
-| Neutron | $0.92323329717$ | $0.92323329717$ | $4.21 \times 10^{-15}$ |
-| Deuteron | $0.38828647155$ | $0.38828647155$ | $7.01 \times 10^{-15}$ |
-| Tritium | $0.10405211868$ | $0.10405211868$ | $1.07 \times 10^{-14}$ |
-| ${}^3$He | $0.20654085856$ | $0.20654085856$ | $1.03 \times 10^{-14}$ |
+| Atom | $|\mathrm{tr}_M|$ (convention **D**, muon pin) |
+|---|---:|
+| Proton | $1.14575978232$ |
+| Neutron | $0.98774375682$ |
+| Deuteron | $0.57517232973$ |
+| Tritium | $0.22931014615$ |
+| ${}^3$He | $0.40376713691$ |
 
-> **⚠ This table is in the EXCISED convention C** (measured 2026-09-05,
-> `qou-i229`; probe
-> `the_character_closure_block_and_a_lean_file_publish_convention_c_probe.py`,
-> 5/5). The canonical Hoefsmit + Wenzl bridge witness computes these same five
-> atoms by **this block's own stated method**, $\sum_\lambda y_\lambda
-> \chi_\lambda$, and agrees with none of them:
+> **Migrated C → D, 2026-09-05** (`qou-i229` → `qou-46ab`, owner-approved:
+> *"refresh and migrate"*). Source: the canonical Hoefsmit + Wenzl bridge witness
+> `atomic-tr-m-mpfr-50dps.witness.json`, which computes these five atoms by this
+> block's own stated method $\sum_\lambda y_\lambda \chi_\lambda$ at
+> `q0Anchor: muon`.
 >
-> | atom | published | canonical bridge | ratio |
+> | atom | was (convention C) | now (convention D) | ratio |
 > |---|---:|---:|---:|
-> | Proton | $1.06530622859$ | $1.14575969245730087$ | $1.0755$ |
-> | Neutron | $0.92323329717$ | $0.98774368811580957$ | $1.0699$ |
-> | Deuteron | $0.38828647155$ | $0.57517224391777187$ | $1.4813$ |
-> | Tritium | $0.10405211868$ | $0.22931010210455651$ | $2.2038$ |
-> | ${}^3$He | $0.20654085856$ | $0.40376703685142817$ | $1.9549$ |
+> | Proton | $1.06530622859$ | $1.14575978232$ | $1.0755$ |
+> | Neutron | $0.92323329717$ | $0.98774375682$ | $1.0699$ |
+> | Deuteron | $0.38828647155$ | $0.57517232973$ | $1.4813$ |
+> | Tritium | $0.10405211868$ | $0.22931014615$ | $2.2038$ |
+> | ${}^3$He | $0.20654085856$ | $0.40376713691$ | $1.9549$ |
 >
-> The proton ratio is the signature `qou-46ab` established to 50 digits:
+> The proton ratio is `qou-46ab`'s signature, established there to 50 digits:
 > C-frame $1.0653062286131670594$ against D-frame $1.1457597822878355047$,
 > $|D-C|/C = 0.0755215$.
 >
-> **The "relative error" column below is agreement between two *C-frame* paths.**
-> Two paths agreeing tells you nothing about which convention both are in, and
-> that column has been read as a verification of the table. It is not one.
+> **The anchor is unchanged.** The C table was muon-anchored — its per-atom
+> $D/C$ ratios match `qou-46ab`'s convention ratio at the muon pin to 8 digits
+> and at the proton pin only to 7 — so this is a convention migration, not a
+> re-anchoring. The muon pin used is the live one, the same target as the
+> `q₀` refresh in this pass.
 >
-> **Not recomputed.** Migrating to convention D is `qou-46ab`'s scoped job: it
-> moves all five published figures by 7–120 %, and
-> [`MarkovPeelH3.lean`](../lean/QOU/Interactions/MarkovPeelH3.lean) carries the
-> same C value and must move in the same pass. Labelled rather than changed, the
-> precedent `df13e845cee` set.
->
-> `qou-46ab`'s own sweep could not see this block: it scanned for the literal
-> `1.06530622861316`, and this table renders the same quantity as
-> `1.06530622859`.
+> **The two-column form is withdrawn, not recomputed.** The table used to print
+> $|\mathrm{tr}_M|$ *canonical* against *partition-sum* with a $\sim 10^{-15}$
+> "relative error", and that column read as a verification of the values. It was
+> not: it was the agreement of **two C-frame paths**, which says nothing about
+> which convention both are in. The character-closure identity is
+> convention-independent and the declaring probe verifies it on abstract braids,
+> so the two paths agree under D as well — but **that agreement has not been
+> re-measured at these five nuclei**, because the second path is `markov_peel`,
+> whose proton and neutron entries `qou-46ab` deliberately removed as unreliable
+> (`canonical_tr_m_three_path_comparison.py`). Printing a residual nobody has
+> measured would repeat the defect this migration is fixing.
 
 ## Production paths
 
-The canonical values are rigorously evaluated via formal trace definitions. All
-three paths agree at the precision floor of their respective layers — **within
-convention C**; see the box above. The declaring witness,
-`q-hecke-seminormal-character-closure-probe`, verifies the character-closure
-identity on five **abstract** $B_3$ braids (identity, $\sigma_1$, the Coxeter
-element, the figure-8, the full twist) and contains no nucleon, so it is a
-structural verifier of the identity and not the producer of this table.
+The values above come from the canonical Hoefsmit + Wenzl bridge,
+`atomic-tr-m-mpfr-50dps.witness.json`, under the production convention **D**.
+
+The earlier claim that "all three paths agree at the precision floor of their
+respective layers" is **withdrawn as stated**: that agreement was measured
+within convention C, and `canonical_tr_m_three_path_comparison.py` records that
+the three paths do *not* all agree under D — `pyhecke` SW disagrees by orders of
+magnitude and the legacy path by ~15 % — while `markov_peel`'s proton and
+neutron entries were deliberately removed as unreliable (`qou-46ab`). What holds
+is the narrower statement the block actually needs: bridge ≡ `markov_peel` where
+both are recorded.
+
+The declaring witness, `q-hecke-seminormal-character-closure-probe`, verifies the
+character-closure identity on five **abstract** $B_3$ braids (identity,
+$\sigma_1$, the Coxeter element, the figure-8, the full twist) and contains no
+nucleon, so it is a structural verifier of the identity — which is
+convention-independent — and not the producer of this table.

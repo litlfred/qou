@@ -1090,6 +1090,77 @@ AGENTS.md both forbid. Two consequences, both found and fixed:
 
 Report **5 blocks / 24 asserted**, from 15/79.
 
+## ✅ THE MIGRATIONS ARE DONE (2026-09-05, owner-approved: "refresh and migrate")
+
+Two channels, both C → D, both executing rulings already on the books.
+
+### `qou-cds1` — the `qbeta-decay` channel
+
+`prop:q-beta-spectral-bridge` *defined* `z := 1/(√q + 1/√q)` — convention C,
+excised 2026-08-09. Now `z = q³/(q²+1)`. **The table was migrated from its
+producer, not by hand**: every value now comes from
+`q-beta-spectral-bridge.witness.json`, which has computed D all along. That is
+the 21 % divergence this bean measured, closed.
+
+**Both axes were already ruled.** The table was on muon pin A; the producer is on
+the **proton** pin, migrated 2026-08-29 under `qou-cds3` with the authorisation
+recorded there (AGENTS.md §"q₀ anchor convention": *"we want proton unless for an
+explicit reason … fix all, even if not visible"*). So the block had simply not
+followed either ruling.
+
+What moved: `𝔔_β^A` essentially unchanged at `0.7836` MeV; `𝔔_β^B` `0.8324 →
+0.8234`; the A/B disagreement **improves** `0.0487 → 0.0398` MeV against the same
+`h²E₀ = 0.183` bound; the bridge ratio `1.898 → 1.566`, the `1/z` term following
+the convention.
+
+### `qou-46ab` — the `tr_M` class. Written up in that bean.
+
+Five nuclei migrated from the canonical bridge witness at the block's **own**
+muon anchor (established from the per-atom `D/C` ratios), plus **five**
+convention-C residues in `MarkovPeelH3.lean` — including the `z` field docstring,
+which stated the excised convention as the *definition* in a formal artifact.
+
+### 🛑 THE SELFTEST WENT RED BECAUSE I FIXED ITS KNOWN POSITIVE
+
+`witness-block-agreement`'s selftest asserted `prop:q-beta-spectral-bridge` is
+flagged on the convention-C `z`. Migrating the channel removed that figure, and
+the selftest failed — **the third time today** that "assert the defect" produced
+a check that fails on success.
+
+Re-pointed rather than deleted, because a detector with no known positive can
+report a whole class clean and mean nothing. The replacement is chosen to be
+**stable by design** rather than merely unfixed: `prop:frobenius-gram-matrix`'s
+convention-C determinant `0.18920521914403668`, published deliberately as a
+labelled comparison, 17 significant figures, and a row this bean has decided
+*must stay open* because closing it would mean computing an excised convention.
+
+### THE REMAINING C SURFACE — MEASURED, AND DELIBERATELY NOT SWEPT
+
+Scanning `content/` for the C spelling finds **65 unlabelled hits**, and that
+number is **wrong as a migration target**. Most are legitimate uses of
+`q^{1/2}+q^{-1/2}` that have nothing to do with the trace convention: the
+factorisation `h = (q^{1/2}-q^{-1/2})(q^{1/2}+q^{-1/2})`, Wenzl's positivity
+condition `q^{1/2}+q^{-1/2} > 2`, the `e_-` idempotent normalisation, Kauffman's
+`δ = -(q^{1/2}+q^{-1/2})`. Sweeping on that string would corrupt a dozen correct
+derivations — exactly what `qou-46ab`'s "DO NOT SWEEP" and AGENTS.md warn about.
+
+Narrowing to actual **definitions of `z`** in the C form: **22 live, 8 already
+labelled.** And the 22 still needs reading, because several *name* C in order to
+contrast it — `convention-d-kills-antisymmetriser`,
+`markov-trace-frobenius-selection-proof`, `markov-z-reconciliation`,
+`rem-qstar-decay-sector-q0`, `h3-markov-wenzl-weights-context` — which is correct
+content, not a defect. Two more are the labelling boxes written in this very
+pass, which the "historical" heuristic missed on phrasing.
+
+**So the honest remaining surface is well under 22 and needs per-site reading.**
+It is a third scope neither `qou-cds1` (the qbeta channel) nor `qou-46ab` (the
+`tr_M` class) covers, and it is left open rather than swept.
+
+- [ ] Scope a third migration bean for the residual `z`-definition sites, with
+      the discriminator stated up front: *does this site define `z`, or name C to
+      contrast it?* The string alone cannot tell them apart, and a count that
+      does not make the distinction (65) is 3× the real one.
+
 - [ ] Five blocks left, and at least two should NOT be closed here:
       `prop:em-coupling-bring-zero-mode` (3, awaiting the refresh) and
       `rem:atom-mass-full-hecke` (2, the 0–2-sig-fig class where the method has

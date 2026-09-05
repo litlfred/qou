@@ -103,10 +103,108 @@ of magnitude**, and word-for-word the claim this bean already disproved at
 moves five published figures by 7–120 % — the Lean declaration must move in the
 same pass or the two diverge further.
 
-- [ ] Add `content/` and `lean/` to the triage scope; the 31 covers neither.
-- [ ] Re-derive the count with a rounding-aware match rather than a literal.
-- [ ] The two sites above are confirmed bucket (c) — live, undeclared, and one
-      of them formal.
+### ✅ BOTH SITES MIGRATED C → D (2026-09-05, owner-approved: "refresh and migrate")
+
+Source: the canonical Hoefsmit + Wenzl bridge witness
+`atomic-tr-m-mpfr-50dps.witness.json`, `q0Anchor: muon`, live pin.
+
+    atom       was (C)          now (D)          ratio
+    proton     1.06530622859    1.14575978232    1.0755
+    neutron    0.92323329717    0.98774375682    1.0699
+    deuteron   0.38828647155    0.57517232973    1.4813
+    tritium    0.10405211868    0.22931014615    2.2038
+    3He        0.20654085856    0.40376713691    1.9549
+
+**The anchor is unchanged.** The C table's per-atom `D/C` ratios match this
+bean's convention ratio at the **muon** pin to 8 digits and at the proton pin
+only to 7, so the table was muon-anchored and this is a convention migration,
+not a re-anchoring. The muon pin used is the live one — the same target as the
+`q₀` refresh in the same pass, so the two land consistently.
+
+**The two-column form is withdrawn rather than recomputed.** That table printed
+*canonical* against *partition-sum* with a `~1e-15` "relative error" that read as
+a verification. It was the agreement of **two C-frame paths**, which says nothing
+about which convention both are in. The identity is convention-independent so the
+paths agree under D too, but that has **not been re-measured** at these five
+nuclei — the second path is `markov_peel`, whose proton and neutron entries this
+bean deliberately removed as unreliable. Printing an unmeasured residual would
+repeat the defect being fixed.
+
+### `MarkovPeelH3.lean` — FIVE convention-C residues, not one
+
+The false agreement claim was the one I found first. Reading the whole file for
+the migration turned up four more, and one of them is load-bearing:
+
+    the `z` field docstring     `z = 1/(q^{1/2} + q^{-1/2})`   <- C AS THE DEFINITION
+    the symbolic ring relation  `z⁻¹ − q^{1/2} − q^{-1/2}`     <- C in the quotient
+    `trH3` docstring            "cross-check ... to <= 4e-16"  <- the same false claim
+    open-item note              "tr_M(proton)|q0 ~ 1.0653"     <- the C value
+    the cross-check comment     +1.065306228592389333...       <- found earlier
+
+The `z` docstring is the serious one: a **live definition in a formal artifact**
+stating the excised convention as what `z` *is*. All five corrected; the
+structural point that D needs no `√q` is now recorded at the ring relation, since
+that is one of the reasons D is production.
+
+Edits are **comment/docstring only** — 0 declaration lines touched, verified
+against the diff. `lake` is not on PATH in this container so the file was not
+re-typechecked; with no code line changed there is nothing to break, but that is
+an argument, not a check.
+
+### This bean's four hardcoded producer references are ALREADY DRAINED
+
+Re-measured today: `skein_proton_canonical.py`, `rho_f_categorical_probe.py` and
+`canonical_tr_m_three_path_comparison.py` carry the literal **zero** times, and
+`markov_weights_symbolic.py`'s single remaining hit is the annotated historical
+note from the 2026-08-30 fix. So the `computations/` side was already done; what
+remained was `content/` and `lean/`, which the scan could not see.
+
+### 🛑 BLOCKER FOUND EN ROUTE: `atomic_tr_m_mpfr_50dps.py` DOES NOT REPRODUCE ITS OWN WITNESS
+
+Trying to close the loop properly — declare the bridge producer for the block it
+produces, then regenerate — surfaced something worse than a missing declaration.
+
+**Re-running the producer gives completely different numbers:**
+
+    atom      committed witness        re-run today
+    proton    1.14575978231523894      0.62932842249489294
+    neutron   0.98774375682050346      0.47513351767415624
+
+Not a pin shift, not a convention shift — the ratios are not even constant
+(1.8206, 2.0789). The script is **unchanged since the witness was generated**
+(`scriptCommitSha` `fca08de7d29a` is its last commit), so the difference is a
+dependency, not the code.
+
+**Not the kernel**: `--method hoefsmit-python` gives the same `0.629328422`.
+**Probably not my `pyhecke_native` rebuild** either — I rebuilt it earlier today
+(`825fe60e51bf0442` in this witness, `e87a23f8d6fd6732` now), but
+`markov_trace_recursive.py` re-ran against the rebuilt native with **identical
+numeric output**, so the rebuild does not move numbers in general.
+
+**The committed values are the corroborated ones, not the re-run.**
+`he4_witness_convention_attribution_probe.py`, run today, independently computes
+D-frame proton `1.1457596924573008697` at the proton pin — matching
+`atomic-tr-m-mpfr-50dps-proton.witness.json` to `1.4e-49`. Two independent
+sources agree; the `0.6293` matches nothing.
+
+**So the migration stands** (its target is independently confirmed) and the
+declaration is **reverted**: declaring a producer means being able to regenerate
+its witness, and regenerating this one would commit 46 lines of changed values
+that no other source supports.
+
+- [x] The two content/Lean sites are migrated.
+- [ ] **Diagnose why `atomic_tr_m_mpfr_50dps.py` no longer reproduces.** A
+      producer that silently returns different numbers than its committed
+      witness is worse than a stale figure: every downstream comparison against
+      that witness is checking against something the code can no longer make.
+      This is a third provenance failure mode alongside "pointer on the verifier"
+      and "witness transcribes rather than computes".
+- [ ] Once it reproduces, declare `prop:q-hecke-seminormal-character-closure` on
+      it — it IS that block's producer, computing those five atoms by the block's
+      own stated method.
+- [ ] Re-derive the "31 files" with a rounding-aware match rather than a literal,
+      with `content/` and `lean/` in scope. The count as it stands is a floor
+      that undercounts by construction.
 
 ## DO NOT SWEEP
 
