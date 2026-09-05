@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T20:54:48Z
-updated_at: 2026-09-05T07:48:03Z
+updated_at: 2026-09-05T08:56:47Z
 ---
 
 ## What is true
@@ -155,3 +155,64 @@ unmeasured rather than clean.
 
 2026-09-05 on `58ab6f8563`: 3226 scanned, LIVE-DIRTY 1 (now 0), LATENT 24,
 NO-TOLERANCE 1, UNRESOLVED 7.
+
+
+---
+
+## CLOSED at source, not at the artifact — #6760
+
+The fix is **not** the migration to `add_assertion` I originally proposed
+(which would have restructured 24 producers' witness payloads). It is one line
+per site: route each declared tolerance through
+`qou_substrate.witness.declared_tolerance`, a new public wrapper on the guard.
+That changes no witness structure, no number, and **no artifact** — the
+artifacts already carry these strings from #5910. It makes each producer
+*agree* with its own committed witness, so a re-run becomes a no-op instead of
+a re-dirtying.
+
+**Nine producers, 44 sites.** Verified against the artifacts rather than
+asserted: for all **52 assertions** across the nine, the value the rewritten
+source would emit is already the value on disk — **52 OK, 0 mismatch**.
+
+## TRAP — three of this bean's own numbers were wrong the same way
+
+| | this bean claimed | measured |
+|---|---|---|
+| LIVE-DIRTY | 8 | **1** |
+| "reverted drains" | 10 | **3** (7 are computed tolerances the guard refuses *by design*) |
+| LATENT (the audit's first run) | 24 | **8** |
+
+One root cause: **asking "is it a float" instead of "would the guard change
+it".** `0`, `0.0`, and values already serialized as strings all match the
+shape and are not defects. Two of the 24 were producers *already fixed at
+source* and still being reported.
+
+The audit imports `_tolerance_literal` and asks the guard's own question — in
+pass 1. It did **not** in pass 2, because pass 2 was carried over unrewritten
+from this bean's grep. **The defect survived inside the tool written to fix
+it.** Both halves now import the guard.
+
+## TRAP — `UNRESOLVED` is not a clean bill, and it hid a real producer
+
+The resolver required the witness path to be **quoted** in the source.
+`knot-volumes.py` names its output only in its docstring, unquoted, and writes
+to `computations/substrate/` which the stem convention cannot reach. So a
+genuine latent producer with **11 sites** sat under a "tool limit" verdict.
+Relaxed to unquoted paths; the path must still exist on disk, so it cannot
+invent a candidate. Four `UNRESOLVED` remain and are triaged in the docstring
+as not-work: three self-test fixtures whose floats *are* the case under test,
+and one that writes to stdout.
+
+## STILL OPEN (own class, not this bean)
+
+`weight_factor_audit.py:160` carries `"tolerance_at_n12": 0.05` — a declared
+threshold under a **different key name**, invisible to the guard, to the drain
+and to every audit here. Renaming a payload key to satisfy an audit would
+break its consumers.
+
+## BASELINE (2026-09-05, `ac084287a0`)
+
+    PYTHONPATH=computations:tools/qou-substrate/python \
+      python3 computations/audits/tolerance_guard_bypass_audit.py --strict
+
+  -> exit 0; 3240 witnesses scanned; LIVE-DIRTY 0; LATENT 0; UNRESOLVED 4.
