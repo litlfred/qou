@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:21Z
-updated_at: 2026-09-05T12:29:09Z
+updated_at: 2026-09-05T13:00:02Z
 ---
 
 ## The claim
@@ -390,3 +390,54 @@ Fred2005: 1 module, clean.
 * `lean-content-sweep.sh` sweeps all 938.
 
 Sibling-package library result: **UGB 21 ok / 1 red (fixed), Fred2005 1 ok.**
+
+
+## THE 938-FILE SWEEP: 14 red, 8 of them never previously reachable
+
+First run of the widened sweep over the real population.
+
+    swept   938
+    RED      14   =  6 already fixed on #6811  +  8 NEW
+
+The 8 new ones are all in the 675 the old `^import QOU` filter could not reach,
+and all 8 are the same class — verified by running each under both regimes
+rather than assumed:
+
+    file                              autoImplicit=ON   autoImplicit=OFF
+    frobenius-antipode-lean-stub          exit 0            exit 1
+    ns-regular-qou                        exit 0            exit 1
+    glossary-descent                      exit 0            exit 1
+    markov-trace-recursive-reducer        exit 0            exit 1
+    conj-atom-braid-exterior-algebra      exit 0            exit 1
+    reeb-bundle                           exit 0            exit 1
+    braiding-induced-ordering             exit 0            exit 1
+    q-heat-equation                       exit 0            exit 1
+
+### The two that show what the class actually costs
+
+`glossary/glossary-descent.lean` and `fluid-dynamics/ns-regular-qou.lean` have
+**no imports at all**, so `ℕ`, `ℝ` and `ℤ` were auto-bound as arbitrary types.
+
+`ns-regular-qou` is self-refuting, and worth quoting because the author was
+explicitly guarding against exactly this: *"We therefore carry the Euler
+characteristic `chi` as data and encode NS-regularity as its genuine defining
+property `chi = 0` (**not a `: True` placeholder**)."* The intent is right and
+the guard failed one level down — `chi : ℤ` where `ℤ` is an auto-bound variable
+is no more contentful than the `: True` it was written to avoid.
+
+### Fixes
+
+Four missing imports (`Mathlib.Data.Nat.Basic`, `Mathlib.Data.Real.Basic` ×2,
+`Mathlib.Data.Int.Basic`), one missing `universe u`, two missing value binders
+(`{α : Type*}`, `{Z N : ℕ}`), one `_q` → `q` typo where the parameter is `q`.
+
+`reeb-bundle` needed a judgement rather than a typo fix, and its own note asked
+for it: *"full Reeb-bundle formalization is pending the ExceptionalDivisor
+structure (Ch 6 §2)"*. That structure **exists** —
+`QOU/ArchimedeanUniverse.lean:104`, as `ExceptionalDivisor (M : Type*)`. So the
+fix imports it, carries its parameter (`ReebBundle (M : Type*) (q : ℝ)`), and
+names it fully qualified: the file is inside `namespace QOU` while the structure
+is in `QOU.ArchimedeanUniverse`, so the bare name still does not resolve — the
+import alone left it red, which the sweep caught.
+
+All 8 verified exit 0.

@@ -1,3 +1,4 @@
+import Mathlib.Data.Nat.Basic
 /-!
 # QOU.DescentData — Glossary: descent
 

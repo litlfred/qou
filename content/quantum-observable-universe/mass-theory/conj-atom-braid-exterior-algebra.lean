@@ -140,7 +140,7 @@ theorem binomial_sum_pow_two (n_star : ℕ) :
     This is the closure check: the conjectured filtration-shape
     distribution is internally consistent — its grade-wise sum matches
     the total dim claimed. -/
-theorem filtration_shape_sum_eq_total_dim
+theorem filtration_shape_sum_eq_total_dim {Z N : ℕ}
     [h : AtomBraidExteriorAlgebraStructure Z N]
     (hn : h.n_star = 3 * (Z + N) - Z)
     (hd : h.total_dim = 2 ^ (3 * (Z + N) - Z)) :
