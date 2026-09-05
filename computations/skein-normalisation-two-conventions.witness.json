@@ -10,7 +10,7 @@
   "relations": {
     "H_agents_7a_strict": "L_+ - L_-  =  (q - 1/q) L_0",
     "H_amplitude": "h_1 = q - 1/q",
-    "J_seven_content_blocks": "q [L_+] - q^-1 [L_-]  =  (q^(1/2) - q^(-1/2)) [L_0]",
+    "J_eight_content_blocks": "q [L_+] - q^-1 [L_-]  =  (q^(1/2) - q^(-1/2)) [L_0]",
     "J_amplitude": "s = q^(1/2) - q^(-1/2) = h_(1/2)",
     "L_plus_to_L_minus_weight_ratio": {
       "H": "1",
@@ -116,11 +116,11 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "0ea8045427b7",
-  "scriptCommitSha": "4d33e62e9fb54c80215432d88a4342a733219d17",
-  "commitSha": "4d33e62e9fb54c80215432d88a4342a733219d17",
+  "scriptHash": "666aedc35bd5",
+  "scriptCommitSha": "3d4764ebc6c8ef8ce5242f5500bf236466e4c13b",
+  "commitSha": "04d2f58ccab08d6c2d780318aaeef369926e3632",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-09-05T10:06:31.098973+00:00",
+  "computedAt": "2026-09-05T11:33:33.317209+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
