@@ -3,7 +3,20 @@
 **Date:** 2026-09-05 · **Bean:** `qou-tpdg` · **PR:** #6827 ·
 **Script:** `scripts/lean-library-sweep.py`
 
-## The mechanism, which is the reusable part
+## The mechanism — ALREADY DOCUMENTED in the corpus; I re-derived it
+
+**🛑 Credit first, because I initially wrote this up as a discovery and it is
+not one.** Line 27 of `scripts/lean-shadow-verify.sh` already states the rule:
+
+> *"Lean resolves a module from the first `LEAN_PATH` root holding that package
+> directory, so the shadow must be complete, not a sparse overlay"*
+
+So the mechanism was known and written down, two lines from the code I was
+editing. My empty-shadow experiment tested a question that comment already
+answers, and my three-way measurement below **confirms a documented fact rather
+than establishing a new one**. What is genuinely new is the quantification, and
+the fact that the *Python* sweep carries no equivalent comment — which is why it
+was re-derived there rather than read.
 
 **Lean commits to the first `LEAN_PATH` root that contains the module's
 top-level namespace directory, and never consults a later root for anything
@@ -97,6 +110,23 @@ quote either.
 
 The `AGENTS.md` `lean`-direct recipe is **not** edited on this branch — the
 overlay-masking trap is recorded above and left for the author, since changing
-the primary Lean verification guidance is not a change to make in passing. The
-sibling `scripts/lean-content-sweep.sh` was not audited for the same
-`LEAN_PATH` defect.
+the primary Lean verification guidance is not a change to make in passing.
+
+**The sibling gate WAS audited, and carried the same pair.**
+`scripts/lean-content-sweep.sh` delegates its entire `LEAN_PATH` and shadow
+construction to `scripts/lean-shadow-verify.sh`, which had both defects —
+root-only package glob, and a real `cp -a` — plus two of its own:
+
+- **the documented `SHADOW=<dir>` reuse path never created its directory**
+  (`$SHADOW` was only made by `mktemp -d` in the *unset* branch), so the
+  advertised form failed on first use with `cp: cannot create directory`;
+- **my own fix to the glob reintroduced the bug it fixed.** I wrote
+  `ls -d <paper-pattern> <root-pattern>`, and **`ls` sorts its arguments** —
+  `$ROOT/.lake/…` sorts before `$ROOT/content/…`, so the broken root tree came
+  back *first* and Mathlib still resolved against it. Replaced with a loop;
+  shell glob expansion keeps patterns in written order. The original was safe
+  only because it had a single pattern.
+
+Verified: `SHADOW=<dir> lean-shadow-verify.sh QOU/Braiding/SkeinNormalisation.lean`
+→ **exit 0**, both dirty cone modules rebuilt, and the real tree's 2660 files
+**identical in inode, size and mtime** before/after.
