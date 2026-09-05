@@ -6,11 +6,47 @@ THE FINDING (bean qou-7o7h).  The textbook q-Plancherel weight
 
     w(lambda) = dim_q(lambda)^2 / [n]_q!
 
-is a probability measure at q = 1 and in the *asymmetric* q-integer
-convention.  It is NOT one in the **balanced** convention
-([k] = (q^k - q^-k)/(q - q^-1)), which is what this corpus's
-make_qdim / dim_q family uses.  The defect is not small and it is not
-constant: c_n = Sum_lambda dim_q^2/[n]_q! runs
+is a probability measure at q = 1 -- and at q = 1 ONLY.
+
+CORRECTED 2026-09-05.  This docstring first said it is also a measure
+"in the *asymmetric* q-integer convention", i.e. that the failure was a
+convention artifact.  That was WRONG and is retracted.  Measured at the
+proton q0, mp.dps = 60, with a q -> 1 control returning exactly 1.0 in
+both conventions (so both implementations are sound):
+
+    n     balanced [k]=(q^k-q^-k)/(q-q^-1)     asymmetric [k]=(q^k-1)/(q-1)
+    3            0.987440229774                      0.914969211488
+    4            0.982165323836                      0.882874426585
+    5            0.982224148283                      0.868254573821
+    6            0.991079523637                      0.874641716553
+    9            1.11092313496                       1.04636760337
+   12            1.51713321377                       1.6902849181
+
+The asymmetric convention is FURTHER from 1 at five of those six n
+(n = 9 is the exception).  So the defect is STRUCTURAL, not a
+convention artifact: the q-deformation breaks the Burnside identity
+Sum_lambda (f^lambda)^2 = n! that made the classical form a measure at
+all, and no choice of q-integer convention restores it.
+
+WHAT THE CORRECT q-DEFORMATION LOOKS LIKE (and it is already in the
+corpus, Lean-proved unconditional for all n and all q > 1):
+
+    Sum_{lambda |- n} f^lambda * q^{-kappa_lambda} * dim_q(lambda)
+        = [n]_q!
+    -- QOU/MathlibExt/NormalizedSumUnconditional.lean:45-50
+       (molienSum_eq_qFactorial, axioms clean, no sorryAx)
+
+i.e. the right q-lift of Sum (f^lambda)^2 = n! replaces ONE factor with
+a quantum dimension, not both.  dim_q^2 is a misuse of dim_q where one
+dim_q and one f^lambda belong -- at generic q, H_n(q) ~= C[S_n], so the
+Wedderburn BLOCK DIMENSIONS are the classical f^lambda; dim_q is a
+QUANTUM dimension, a different object.  The same statement appears in
+the held literature as Feray-Meliot's q-Plancherel measure
+M_{n,q}(lambda) = D_lambda(q)*dim(lambda)/{n!}_q, which sums to 1
+exactly at every n (library/arxiv-1001.2180v2, sec-006-13-tools.md).
+
+The defect is not small and it is not constant: c_n = Sum_lambda
+dim_q^2/[n]_q! runs
 
     n =  6 (A=2):  0.991...      n =  9 (A=3):  1.111...
     n = 12 (A=4):  1.517...
@@ -52,12 +88,37 @@ identity.  (I also first tested the law with the factor INVERTED —
 dividing by c_n instead of multiplying — got 1.290 against a recorded
 1.8217, and nearly wrote the whole mechanism off as coincidence.)
 
-WHAT THIS PROBE DOES NOT CLAIM.  It says nothing about which
-normalization is *right* for the physics.  Self-normalizing is defensible
-because it is a probability measure by construction and is
-convention-independent; whether the depth-stratified functional should
-be weighted by a probability measure at all is a separate question this
-does not touch.  The claim here is narrower and firmer: the two choices
+WHAT THE SELF-NORMALIZED FORM ACTUALLY IS (upgraded 2026-09-05).  It is
+not merely "normalized by construction", which is the weak defence this
+docstring first gave.  dim_q^2/Sum_mu dim_q^2 = d_q^2/D^2 is the
+**Reshetikhin-Turaev / Verlinde Plancherel measure** of a modular tensor
+category, with D^2 = Sum_lambda d_q^2 the total quantum dimension
+squared.  The corpus derived that D^2 -- not [n]_q! -- is the
+geometrically forced normalizer: an index/partition function is a trace
+over a Hilbert space and is normalized by that space's total dimension,
+and [n]_q! is merely the q = 1 value of D^2
+(docs/audits/2026-06-20-keystone-wlambda-beasley-witten-localization.md,
+citing Beasley-Witten Seifert-CS localization, hep-th/0503126).  It is
+Lean-proved sorry-free that the two differ by a single lambda-INDEPENDENT
+global factor (QOU/BraidKnot/WLambdaNormalizationInvariance.lean:
+wPlanch_eq_global_factor, ratio_invariant), which is the same statement
+this probe measures numerically as the c_n scaling law.
+
+WHAT IT STILL DOES NOT CLAIM.  That d_q^2 is the right NUMERATOR.  Being
+a probability measure does not make it the right weight, and bean
+qou-sf1t states the point sharply: normalizing a family by its own sum
+gives total mass one BY CONSTRUCTION and is "NOT evidence that
+Sum_lambda d_q(lambda)^2 is the canonical normaliser for the Ocneanu
+weights".  Whether Phi_k should instead carry the Molien weight
+f^lambda * dim_q(lambda) (exactly normalized, Lean-proved) or the Markov
+weights y_lambda (Sum_lambda y_lambda f^lambda = 1, the corpus's
+canonical Frobenius pairing) is OPEN -- bean qou-mnsr.  Note a corpus
+ruling against a naive swap to y_lambda: y_lambda is signed and
+row-capped where d_q^2/[n]_q! is conjugation-symmetric, and
+2026-06-16-keystone-plancherel-target-clarification.md says "do not
+bridge them".
+
+The claim here is narrower and firmer than any of that: the two choices
 differ by a KNOWN, n-DEPENDENT factor, so figures computed under one are
 not comparable to figures computed under the other, and the corpus
 currently contains both.
