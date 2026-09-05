@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-05T07:07:40Z
+updated_at: 2026-09-05T07:16:32Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -321,3 +321,46 @@ reach). So n=12 confirms the crossover LOCATION and says nothing about minimalit
 Limits: n=9 ranks exact (complete census); n=12 decides maximality only; b=1 excluded
 from the n=12 comparison since (n-1,1) IS both shapes. Nothing BOUNDS anything.
 scope-(a). Nothing wired.
+
+## 2026-09-05 — the chain CLOSES end-to-end, and the majorant route cannot carry the SIZE
+
+COMPOSED, first time end-to-end against the actual signed trace:
+  |tr_λ(ρΩ₂^P)| ≤ Σ|eig(M_λ)| ≤ √(dim_λ·tr_λ(X*X)) ≤ dim_λ·√(E(b))
+Both links hold on all 30 shapes; composed bound strictly decreasing:
+  b=1 68.6922 > 58.977 > 40.8807 > 31.3242 > 24.6086 > 14.5453 > b=7 5.6175
+That IS the arc's target — a derived per-dim bound on the ORIGINAL signed trace that
+falls with b, no fit anywhere. AND IT IS MUCH LESS THAN IT SOUNDS.
+
+TIGHTNESS, the actual result:
+                          b=1      b=7     falls by
+  composed bound √E(b)   68.69    5.62     12.2x
+  actual |tr|/dim env    33.65    0.178    189x
+  actual worst shape     33.65    0.0142(b=6)  2360x
+⇒ THE BOUND CAPTURES 12x OF A 189x EFFECT. Slack per link:
+  link 1 (spectrum→Frobenius): 2.041x at (8,1) b=1  …  550.2x at (3,2,1^4) b=6
+  link 2 (shape→level envelope): 1.0x … 8.513x
+Link 2 is fine — replacing a shape by its level max costs ≤8.5x, the price of wanting a
+bound in b alone. LINK 1 IS WHERE THE BOUND DIES, and its looseness GROWS with b.
+
+WHAT IT MEANS. Link 1 is |tr X| ≤ √(dim·||X||_F²): it replaces a signed trace by a norm,
+discarding all eigenvalue cancellation. That discarded cancellation is the DOMINANT part
+of the effect at large b. So the majorant route — the strategy since #6556 — establishes
+the SHAPE of the decay and structurally CANNOT carry its SIZE. It cannot be repaired by
+tightening links 2/3; link 1 alone accounts for the loss.
+
+CORRECTS MY OWN #6556 FRAMING. There I compared conjugate pairs, found the majorant
+decaying 213x vs 1.4x in the input norm, and wrote the decay is 'overwhelmingly
+output-spectrum collapse, not phase cancellation'. First half STANDS (E falls 149x
+per-dim). 'Overwhelmingly' was TOO STRONG: there IS substantial trace-level cancellation
+on top, reaching 550x. Not a contradiction — #6556 compared a majorant between
+conjugates, this compares a signed trace against its OWN majorant — but this is the first
+time that comparison has been made across a complete census, which is why it only becomes
+visible now.
+
+SETTLES: the b-decay of the signed trace is real, derived, monotone on complete data.
+DOES NOT SETTLE: any quantitative claim — 550x slack cannot support a numerical statement
+about the row-truncation error, which is what this bean wants it for.
+REDIRECTS: a quantitatively useful bound must KEEP THE SIGN INFORMATION.
+
+Limits: complete n=9 only, this atom word; the two exact-zero endpoints excluded; nothing
+proved for general n. scope-(a). Nothing wired.
