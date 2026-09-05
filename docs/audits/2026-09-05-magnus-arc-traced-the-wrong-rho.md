@@ -136,10 +136,56 @@ stated target:**
   constant number of terms. That is a constant-factor win, not a complexity class, and it still needs
   the tail bound the arc has not got.
 
-**That is the load-bearing finding of this document.** The arc's remaining rate work is not worthless,
-but it is worth much less than the bean's framing implies, and it is aimed at a different grading than
-the bean's stated purpose. Before more effort goes into the rate, that framing should be corrected in
-the bean itself.
+### The bean's rigor gap is closed, and the closing text is in the probe that opened it
+
+I then read the probe the bean came from,
+[`magnus_sign_row_truncation_probe.py`](../../computations/deltalambda/magnus_sign_row_truncation_probe.py).
+It states its own gap precisely:
+
+> **RIGOR GAP (honest).** *Truncation gives the sign only with a TAIL BOUND: the `y_λ` are known
+> exactly, but a rigorous sign needs `Σ_{λ excluded} |y_λ tr(ρ_λ Ω₂_λ)| < |P_truncated|`, i.e. a bound
+> on `|tr(ρ_λ Ω₂_λ)|` for the excluded high-row λ. … Until it is [proved], this is a high-confidence
+> heuristic sign, not a theorem.*
+
+**Under convention D every excluded high-row λ has `y_λ = 0`, so that sum is identically zero and the
+inequality holds trivially.** The bound on `|tr(ρ_λ Ω₂_λ)|` the bean was created to prove is not
+needed: it is multiplied by zero.
+
+Its own concentration table is the C-frame twin of this:
+
+| rows(λ) | probe (convention C) | convention D |
+|---|---|---|
+| 1 (trivial) | 0 | 0 |
+| 2-row | 91.0 % | **100 %** |
+| 3-row | 8.1 % | **0** |
+| ≥4-row | < 0.9 % | **0** |
+
+**And this resolves the 86 % discrepancy.** That figure is this probe's *"reflection rep (n−1,1)
+alone: 56 % (A=2) → 86 % (A=3) → 92 % (A=4)"* — a **convention-C** measurement, as its `y_λ` are the C
+values `(0.4153958, 0.2809296, 0.0227449)` against D's `(0.5054042, 0.2472979, 0)`. My 73.50 % is the
+D-frame value of the same quantity. **I have not isolated how much of 86 → 73.5 is the C→D weight
+change versus the 2026-09-05 word-ordering fix**, and both are live candidates; what is settled is that
+86 % is C-frame and should not be quoted as current.
+
+## Verdict
+
+**The bean's stated purpose is already satisfied — by an owner ruling, not by a theorem.** `qou-o6ov`
+exists to make a heuristic row-truncation rigorous. Convention D (2026-08-09) made the row truncation
+*exact*, which closes the rigor gap as the originating probe itself defines it. The bean has been
+worked for a week — a dozen PRs today alone — against a premise that a ruling had already dissolved
+three weeks earlier, and nothing in the arc noticed, including me, until I went looking for a
+different bug.
+
+What survives as genuine open mathematics, with its status downgraded:
+
+- **`|tr(ρ_λ Ω₂_λ)|` decay in `b` across the ≤2-row column** is still an unproved statement and still
+  interesting. It is no longer a blocker for the truncation, for poly-size, or for the sign — it is a
+  question about a `⌊n/2⌋+1`-term sum that production has no need to shorten.
+- It is also, per the census above, **false in the envelope form for the true element**, so what
+  survives is narrower than what the arc was pursuing.
+
+The arc's remaining rate work is aimed at a different grading than the bean's purpose *and* at a
+purpose that no longer needs it. That should be corrected in the bean before more effort goes in.
 
 ## What this means for the bean, stated carefully
 
@@ -195,7 +241,11 @@ transpose-asymmetric. That is structural — only the 263.16× figure is ρ_bare
   read the specific production consumer of `P(A) = Σ_λ y_λ tr(ρ_λ Ω₂_λ)` to confirm it truncates in
   `b` at all — it may keep all `⌊n/2⌋+1` terms, in which case there is no approximation anywhere and
   the rate question is moot rather than merely smaller.
-- **The 86 % ↔ 70.5/73.5 % gap is unresolved** and I have not determined its cause.
+- **The 86 % is identified as convention-C but not fully decomposed** — I have not isolated how much
+  of 86 → 73.5 is the C→D weight change and how much is the word-ordering fix.
+- **"The rigor gap is closed" is an argument, not a re-run of production.** It rests on `y_λ = 0` off
+  ≤2 rows (measured, n ≤ 12) plus the probe's own statement of its gap. If some consumer applies the
+  truncation to a differently-weighted sum, that consumer still needs a bound.
 - **Which ρ the bean *should* be about is not settled here.** I have measured that the two differ and
   which statements hold for which. Whether the row truncation in production consumes the Hecke element
   or a braid is a question about the consumer, not about this census.
