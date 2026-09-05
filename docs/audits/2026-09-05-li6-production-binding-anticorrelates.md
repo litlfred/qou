@@ -23,14 +23,22 @@ Two production points, both kernel-live, both by the same call:
 
 | A | atom | `binding_energy` | AME2020 | B/A predicted | B/A AME |
 |---|---|---|---|---|---|
-| 2 | ²H | **−7.2711** | +2.225 | −3.636 | +1.112 |
-| 6 | ⁶Li | **−3.0650** | +31.994 | −0.511 | +5.332 |
+| 2 | ²H | **−7.2711** | +2.2245662 | −3.636 | +1.112 |
+| 6 | ⁶Li | **−3.0650** | +31.9939872 | −0.511 | +5.332 |
+
+> AME figures read from the **vendored** AME2020 table via
+> `codata_constants.ame_binding_mev(Z, A)`, not typed. The short literals
+> `2.225` / `31.994` used in the first version of this doc are the hand-typed
+> kind that `ame_2020_binding_energies.py` was written to retire — six of its
+> nine predecessors disagreed with the publication table by up to 63 eV, against
+> an AME uncertainty on B(⁴He) of 0.8 eV. The correction is far below anything
+> claimed here, and is made because the habit is the defect.
 
 - **The sign is negative at A = 6 as well.** Consistent with the Pass-2 gate
   mechanism, which forces `B < 0` for any nucleus.
 - **The magnitude moves in the OPPOSITE direction to AME.** Predicted `|B|`
   *falls* 7.2711 → 3.0650 (×0.42) across the same span over which AME binding
-  *rises* 2.225 → 31.994 (×14.4). Per nucleon the divergence is sharper:
+  *rises* 2.2245662 → 31.9939872 (×14.4). Per nucleon the divergence is sharper:
   predicted `|B|/A` falls ×7.1 while AME's rises ×4.8.
 
 So the defect is not only a sign error on a roughly right magnitude. Over the
@@ -78,10 +86,16 @@ offered as evidence about *which partitions carry the sign*, which is invariant
 to that truncation. But the two disagree about a **trend**, not merely a scale,
 and that is outside what the truncation argument covers. Recorded as open.
 
-Note also that the gated-set size at A = 6 is **15**, the largest in the series
-(`[15, 9, 9, 10, 15]` for ²H/³H/⁴He and ⁶Li), so the production magnitude falls
-where the gate admits the *most* partitions. Any account of the A-dependence has
-to explain that.
+Note also that the gated-set size at A = 6 is **15**, the largest recorded, so
+the production magnitude falls where the gate admits the *most* partitions. Any
+account of the A-dependence has to explain that.
+
+> **🛑 And `[15, 9, 9, 10, 15]` is NOT "across A = 2..6", which is how PR #6752
+> described it.** It is **per atom** — ²H, ³H, ³He, ⁴He, ⁶Li — so its A values
+> are **2, 3, 3, 4, 6**: it double-counts A = 3 and contains **no A = 5 entry at
+> all**. The corpus's own gated-set data therefore has a hole exactly at the A
+> the plateau claim needed, which is a second reason that claim could not have
+> been checked against it.
 
 ## Reproduction
 
