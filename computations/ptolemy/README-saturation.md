@@ -60,3 +60,34 @@ that the reduction was unsound. Saturation restores soundness while keeping the 
 **Singular halts gracefully at a `ulimit`** (`halt 14`, exit 14) rather than taking the
 container down, so capping a speculative run is cheap insurance. msolve does not -- it
 segfaults.
+
+## 🛑 `sat()` returns an IDEAL, not a list — `sat(I, v)[1]` silently destroys the ideal
+
+Measured in this Singular:
+
+    typeof(sat(I,x)) = ideal
+    sat(I,x)[1]: 1 gens -> z          # [1] takes the FIRST GENERATOR
+
+So `I = sat(I, v)[1]` does **not** extract the saturated ideal. It extracts that ideal's
+first generator, collapsing an 18-generator ideal to a principal one on the first step.
+The correct form is bare:
+
+    I = sat(I, v);          # verified: sat((xy,xz,yz), x) = (y,z), the x-axis
+
+**What it cost.** The first saturated run on L6a4 class 1 exited 0 and printed
+
+    saturated by all 12 vars in 1799 sec | GB 1 | dim 11
+    NON-EMPTY after saturation -> genuine points EXIST
+
+Every part of that is an artifact. `GB 1` is the collapse; `dim 11` is a hypersurface in
+12-space; and "NON-EMPTY" describes a principal ideal built by discarding 17 of 18
+generators, not the saturated Ptolemy ideal.
+
+**How it was caught -- arithmetic, not an error message.** Saturation can only SHRINK a
+variety, and slicing had already put the unsaturated one at dim 5 (5 slices -> dim 0
+degree 18; 6, 8, 11 slices -> empty, re-confirmed on the current file). A saturated
+dimension of 11 is therefore impossible. Nothing failed loudly: exit 0, confident sentence.
+
+**Check the return type before indexing a library function.** One `typeof` call would have
+prevented this, and the failure mode is silent -- an ideal that is a valid ideal, just not
+the one you asked for.
