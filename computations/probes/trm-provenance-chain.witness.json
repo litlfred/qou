@@ -1,0 +1,119 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T17:45:14.063635+00:00",
+  "commitSha": "9dd7d7833ddb6daeda8f543bfcb265b651036ab0",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "trm-provenance-chain",
+  "scriptFile": "trm_provenance_chain_probe.py",
+  "scriptHash": "2f95bd279803",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/trm_provenance_chain_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/trm_provenance_chain_probe.py"
+  },
+  "description": "Provenance of the +48.1039 % tr_M_atom move recorded in bean qou-brkp item 2. The option_e probe copies tr_M_at_q0 verbatim from the chi witness (line 129); the chi witness moved in 7e4d1aa6d0 because fcf629cf41, 33 s earlier, switched _Y_LAMBDA_DEFAULT in tr_m_wenzl_bridge_mpfr.py -- and both y_lambda tables had been REGENERATED the same day, moving weight mass onto the <=2-row partitions. A weight-table regeneration, not a pin swap, not a convention swap. Every chi_lambda and every provenance field (scriptHash, q0Anchor, q0Value, dps) is byte-identical across the move, which is why scriptHash-keyed staleness cannot see it.",
+  "checks": [
+    {
+      "check": "copy/deuteron",
+      "pass": true,
+      "detail": "option_e tr_M == chi tr_M_at_q0 verbatim: 0.5751722439177718708265... vs 0.5751722439177718708265..."
+    },
+    {
+      "check": "copy/tritium",
+      "pass": true,
+      "detail": "option_e tr_M == chi tr_M_at_q0 verbatim: 0.2293101021045565073320... vs 0.2293101021045565073320..."
+    },
+    {
+      "check": "copy/helium-3",
+      "pass": true,
+      "detail": "option_e tr_M == chi tr_M_at_q0 verbatim: 0.4037670368514281703686... vs 0.4037670368514281703686..."
+    },
+    {
+      "check": "selfconsistent/deuteron",
+      "pass": true,
+      "detail": "|sum y*chi - tr_M|/|tr_M| = 1.51559e-50"
+    },
+    {
+      "check": "selfconsistent/tritium",
+      "pass": true,
+      "detail": "|sum y*chi - tr_M|/|tr_M| = 8.99332e-51"
+    },
+    {
+      "check": "selfconsistent/helium-3",
+      "pass": true,
+      "detail": "|sum y*chi - tr_M|/|tr_M| = 1.51848e-51"
+    },
+    {
+      "check": "current/deuteron",
+      "pass": true,
+      "detail": "max |y_chi - y_default| = 6.77599e-51 at (6,) (n=6)"
+    },
+    {
+      "check": "current/tritium",
+      "pass": true,
+      "detail": "max |y_chi - y_default| = 6.9148e-52 at (7, 2) (n=9)"
+    },
+    {
+      "check": "current/helium-3",
+      "pass": true,
+      "detail": "max |y_chi - y_default| = 6.9148e-52 at (7, 2) (n=9)"
+    },
+    {
+      "check": "vanishing/default",
+      "pass": true,
+      "detail": "largest |y| on a >=3-row partition = 3.92387e-72 at ('4', (2, 1, 1))"
+    },
+    {
+      "check": "vanishing/ideal",
+      "pass": true,
+      "detail": "largest |y| on a >=3-row partition = 0.0 at None"
+    }
+  ],
+  "checks_passed": 11,
+  "checks_total": 11,
+  "move": {
+    "from": "0.38835714119779098941649346949090499349342765669823",
+    "to": "0.57517224391777187082653534398618088915249435289286",
+    "pct": "48.10394425703005525929125114",
+    "atom": "deuteron",
+    "chi_commit": "7e4d1aa6d0",
+    "trigger_commit": "fcf629cf41",
+    "trigger_gap_seconds": 33,
+    "option_e_pickup_commit": "a0ee2ac5e9",
+    "option_e_lag_days": 13
+  },
+  "y_lambda_n6_ratio_by_partition": {
+    "[3, 3]": "1.07102505",
+    "[4, 2]": "1.14268671",
+    "[5, 1]": "1.33907814",
+    "[6]": "1.94844848"
+  },
+  "classification": "y_lambda weight-table regeneration",
+  "ruled_out": [
+    "mu-p pin swap (11.5 ppb, three orders too small)",
+    "convention C->D (z identical either side of the move)",
+    "precision change (dps = 50 both sides)",
+    "producer source change (scriptHash c36a8a393fcd both sides)"
+  ]
+}
