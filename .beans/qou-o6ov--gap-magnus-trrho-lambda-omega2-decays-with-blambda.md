@@ -1,12 +1,50 @@
 ---
 # qou-o6ov
-title: 'GAP: Magnus tr(rho_lambda Omega2) decays with b(lambda) -- prove it'
+title: 'RESEARCH: does |tr(rho_lambda Omega2^P)|/dim decay in b across the <=2-row column? (NOT a truncation blocker)'
 status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-05T10:22:52Z
+updated_at: 2026-09-05T15:31:03Z
 ---
+
+**RESCOPED 2026-09-05 (owner: "rescope and continue"), after PR #6822. Read this header, not the historical one below it.**
+
+**This is OPEN MATHEMATICS, not infrastructure. It blocks nothing.** The original framing --
+"upgrades the poly-size row-truncation from heuristic to a rigorous error bound" -- is DEAD:
+convention D (owner ruling 2026-08-09) sets y_lambda = 0 for l(lambda) > 2, so the excluded
+high-row terms in this bean own rigor gap are multiplied by ZERO and the row truncation is
+already exact. Measured n=3..12: the nonzero-y count is exactly floor(n/2)+1, i.e. LINEAR.
+Corroborated at atom_bond_dimension_measure.py:94. Full argument: PR #6822 +
+docs/audits/2026-09-05-magnus-arc-traced-the-wrong-rho.md.
+
+**THE RESCOPED QUESTION.** Under D the entire sum runs over <=2-row shapes (n-k, k), where
+b = k. So the two-row column is no longer one handle among several -- it is the WHOLE object.
+Does |tr_{(n-k,k)}(rho Omega2^P)|/dim decay in k?
+
+**Two corrections that any attempt must carry:**
+
+1. **rho is the HECKE element, not a braid.** atom_braid_word_3A returns triples (c, d, g)
+   denoting c*sigma_g + d*1. The whole prior arc used [int(t[2]) for t in ...], a bare sigma_g,
+   which at A=3 is the wrong operator for 19 of 35 letters (54%). Every pre-#6822 number in
+   this bean is for the positive braid, NOT the atom.
+2. **The old headline figures are convention-C.** "86->92%" is
+   magnus_sign_row_truncation_probe.py convention-C reflection-rep share; the D-frame value at
+   A=3 is 73.50%. Do not quote 86%.
+
+**What is measured for the TRUE element, n=9, dps 65 (#6822):** the y-weighted mass is monotone
+decreasing in b and b=1 carries 73.50% (better than the braid 70.45%). But the full-census
+envelope is NOT decreasing (peaks at b=3) and its total range is only 2.41x against the braid
+1427x -- so the surviving claim must be stated on the <=2-row column, not the full census.
+
+**Live handle:** the two-row reduction tr_{(n-k,k)}(g) = tr_{W_k}(g) - tr_{W_{k-1}}(g) via
+U_q(sl_2) Schur-Weyl is EXACT for Omega2^P (verified ~1e-139, A=2,3) and is a character identity,
+so it holds for any algebra element g -- rho_true included. That is the tool for the rescoped
+question.
+
+---
+
+HISTORICAL HEADER (superseded above; retained as the record of the original framing):
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
 
