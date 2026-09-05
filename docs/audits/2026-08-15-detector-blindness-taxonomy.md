@@ -14,7 +14,7 @@ form**, and thereby being unable to see the same fact expressed in a different
 form. The blind spot is never a missing case in a list. It is the shape of the
 question.
 
-## The thirty-two
+## The thirty-three
 
 | # | detector keyed on | blind to | exposed by |
 |---|---|---|---|
@@ -50,6 +50,39 @@ question.
 | 30 | a **numeric proxy for a structural fact** — `duality_gap != 0` taken to mean "a solve happened" | (a) producers that build dual-shaped records with **no solver call at all**, whose non-zero gap comes from elsewhere; (b) **closed-form duals** whose gap is 0 *by construction*, so x* is correctly absent | wrong on **6 of 9**: four no-solver producers, plus `sigma_f_electron_shell_chain` (27 records) which writes `"duality_gap": "0"  # closed-form => exact strong duality` and never calls a solver. Only the PRODUCER SOURCE decides (qou-dke6) |
 | 31 | the **primal's arity** — a vector `x_star` assumed | an **SDP**, whose primal is the MATRIX `X_star`; a vector `x_star` is correctly absent | `gap_a1_binding_k_sdp_feasibility` → `solve_psd_operator_selection_sdp` (qou-dke6) |
 | 32 | the **threshold's discrimination** — a ratio criterion assumed to separate two classes | a **cliff**, where the count measures where the threshold was placed rather than the corpus — and the criterion misses its own confirmed positive | `lp_floor_valued_objective_audit.py`: 62 flagged at fraction 0.96, **7 at 0.98**; and the one producer PROVED floor-valued by a `prec_bits` sweep ranks **59 of 146**. Shipped as a ranking and a recorded NEGATIVE, not a detector (qou-sof3) |
+| 33 | the **write path** — the guard is installed at one of an API's several entry points | a producer using any of the others, however careful elsewhere. `WitnessBuilder` has **three** routes into the anchor vocabulary and the guard sits on one: `stamp_staleness_metadata(payload, q0_anchor=…)` is guarded; `save(extra)` is a bare `witness.update(extra)` with no validation; `wrap_legacy(payload)` carries the payload's keys through `_extra_top_level` and, per its own docstring, emits them "verbatim by `build()`" | the one live off-vocabulary producer travels the **third** route: `codata_corpus_literal_scan.py:816` sets `"q0Anchor": "not-applicable"` in a payload, so neither the existing guard nor a `save(extra)` fix could ever warn about it. Offered by the #6696 sibling (bean `qou-3ral`), which also corrected its own "two entry points" to three; structure verified here, counts NOT — see below (qou-3ral) |
+
+### 33 — offered by a sibling, taken here to avoid a conflict on the count line (2026-09-04)
+
+Row 33 is **not** this branch's finding. The #6696 sibling (bean `qou-3ral`)
+measured it, checked it against all 32 existing rows, named row 21 as the
+near-miss and explained why it differs — row 21 is one measured mpmath-vs-sympy
+site where a caller *cannot invoke* a helper, whereas this is a second and
+third entry point that **bypasses** the helper entirely — and then offered it
+rather than adding it, because this PR holds the file and a second PR touching
+the count line would conflict on exactly the line being maintained. Taken on
+those terms; the finding is theirs.
+
+**What was verified here, and what was not.** AGENTS.md is explicit that a
+sibling's bean is not a primary source, so the structural claim was checked
+against `tools/qou-substrate/python/qou_substrate/witness.py` directly:
+
+- `stamp_staleness_metadata` takes `q0_anchor` — the guarded route. ✓
+- `save(self, extra)` is `if extra: witness.update(extra)`. A bare update, no
+  validation. ✓
+- `wrap_legacy(payload)`'s own docstring states the keys land in
+  `_extra_top_level` and are "emitted verbatim by `build()`". ✓
+- `codata_corpus_literal_scan.py:816` carries `"q0Anchor": "not-applicable"`
+  in a payload. ✓
+
+**The COUNTS were not reproduced and are deliberately absent from the row.**
+The sibling reports 152 `wrap_legacy` callers of which 22 set `q0Anchor`,
+measured at `6a9c2c44fb9`; a file-level grep here gives **280 and 26**. The
+methods differ — a file mentioning `wrap_legacy` in a comment is not a caller,
+so 280 is an upper bound — and the discrepancy is unresolved. Per this page's
+own standing advice, re-measure and state the method rather than quoting either
+figure. **The structural claim is what makes the row; the counts only
+illustrate it.**
 
 ### 27-32 — added 2026-09-04 (beans `qou-dke6`, `qou-sof3`), and ALL SIX blinded ONE detector
 

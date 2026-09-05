@@ -2586,7 +2586,7 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **thirty-two** rows, and they split FIVE ways — only the first
+>   catalogues **thirty-three** rows, and they split SIX ways — only the first
 >   group is about conventions at all:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
@@ -2622,6 +2622,13 @@ Do not regress either.
 >     105 → 56 and 84 → 44 → 15 → 3 → 0, **every one making the problem
 >     smaller**, and one of them nearly reached the owner as a contract change
 >     that would have turned 29 correct records into violations.
+>   - **33** — `qou-3ral`, and it is its own group: the guard is installed on
+>     one of an API's several **write paths**. `WitnessBuilder` has three
+>     routes into the anchor vocabulary — `stamp_staleness_metadata`
+>     (guarded), `save(extra)` (a bare `witness.update`), and `wrap_legacy`
+>     (payload keys emitted verbatim by `build()`) — and the one live
+>     off-vocabulary producer travels the third. Not about data shape at all,
+>     which is why it is not in the 27-32 family.
 >
 >   Several were found *by* detectors written to catch the previous blind spot —
 >   row 26 in the output of the audit that introduced it. Quote the split, not
