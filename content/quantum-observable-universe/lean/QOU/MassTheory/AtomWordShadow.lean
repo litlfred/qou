@@ -230,7 +230,7 @@ omit [DecidableEq α] [Fintype α] in
 omit [DecidableEq α] [Fintype α] in
 /-- **The free word's shadow is a fresh chain.** Each block's right endpoint `3k+1`
 exceeds every index used by the earlier blocks. -/
-theorem fresh_freeIdx (hx : ∀ i j, i < 3 * A → j < 3 * A → x i = x j → i = j) :
+theorem fresh_freeIdx {A : ℕ} (hx : ∀ i j, i < 3 * A → j < 3 * A → x i = x j → i = j) :
     Fresh (toPairs x (freeIdx A)) := by
   induction A with
   | zero => exact Fresh.nil
@@ -250,7 +250,7 @@ omit [DecidableEq α] [Fintype α] in
 /-- **The atom word's shadow is a fresh chain.** The right endpoints run
 `1, 3, 4, 6, 7, 9, 10, …`, strictly increasing, so each is fresh — which is exactly
 why every interface *merges* rather than splits. -/
-theorem fresh_atomIdx (hx : ∀ i j, i < 3 * A → j < 3 * A → x i = x j → i = j) :
+theorem fresh_atomIdx {A : ℕ} (hx : ∀ i j, i < 3 * A → j < 3 * A → x i = x j → i = j) :
     Fresh (toPairs x (atomIdx A)) := by
   induction A using atomIdx.induct with
   | case1 => exact Fresh.nil
@@ -281,7 +281,7 @@ theorem fresh_atomIdx (hx : ∀ i j, i < 3 * A → j < 3 * A → x i = x j → i
 
 /-- **`hfree`, PROVED from the shadow.** The free word leaves `2A` orbits on `3A`
 strands: `A` disjoint blocks, each costing one. -/
-theorem orbitCount_freeShadow (hcard : Fintype.card α = 3 * A)
+theorem orbitCount_freeShadow {A : ℕ} (hcard : Fintype.card α = 3 * A)
     (hx : ∀ i j, i < 3 * A → j < 3 * A → x i = x j → i = j) :
     orbitCount (freshProd (toPairs x (freeIdx A))) = 2 * A := by
   rw [orbitCount_freshProd (fresh_freeIdx x hx), hcard, toPairs_length, freeIdx_length]

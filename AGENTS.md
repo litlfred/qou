@@ -4937,6 +4937,30 @@ dropped the olean count (`find .lake/packages/mathlib -name '*.olean' | wc -l` �
 re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 [`lean-environment-setup.md` §"VERIFY a single file with lean-direct"](.claude/skills/local/lean-environment-setup.md#verify-a-single-file-with-lean-direct).
 
+> **🛑 A BARE `lean` IS A WEAKER CHECK THAN `lake build` — pass
+> `-DautoImplicit=false` (measured 2026-09-05, bean `qou-56qy`).** `lean`
+> invoked directly does **not** read the lakefile, so it does not apply its
+> `[leanOptions]`. `autoImplicit` defaults **true** in `lean` and is set
+> **false** in both the root and paper lakefiles, and with it on Lean silently
+> auto-binds an unbound identifier as an implicit argument rather than erroring.
+> Same file, same `LEAN_PATH`, on `QOU/MassTheory/AtomWordShadow.lean`:
+>
+> ```
+> lean                        ->  exit 0,  0 errors
+> lean -DautoImplicit=false   ->  exit 1,  6 errors      (lake agrees: 20)
+> ```
+>
+> That file was **red on `main`**, and it was called clean by a bare
+> `lean`-direct run *and* by both sweep scripts before they were fixed. Pass
+> `-s 65536` too, mirroring the paper lakefile's `moreLeanArgs`: one generated
+> module overflows the default elaboration stack and aborts as a bare `exit 134`
+> with no source error. So the recipe above is
+> `lean -DautoImplicit=false -s 65536 <file>`, never bare `lean`.
+>
+> **This is the sharper of the two defects on this line.** The snapshot problem
+> below makes a green *go stale*; this one makes a green *wrong from the start*,
+> on any tree, however fresh.
+
 > **🛑 `exit 0` here is a claim about the SNAPSHOT, not about the library
 > source (measured 2026-09-05, bean `qou-56qy`).** The restored cache is a
 > point-in-time tree. When a library signature moves after it was taken, a file
