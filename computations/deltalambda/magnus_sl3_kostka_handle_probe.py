@@ -340,6 +340,55 @@ def main():
             new = "" if (hook_or_2row or d <= DIM_CAP) else "NEW — no prior handle"
             print(f"    {str(lam):<16} {d:>4}   {b:>4}   {mp.nstr(chi[lam],10):>16}  "
                   f"{mp.nstr(chi[lam]/d,8):>13}   {new}")
+
+        # ---- LEVEL COMPLETENESS AND THE ENVELOPE ----
+        # The envelope max_{b(λ)=b} per-dim is the one global monotone form that survived #6587,
+        # and every prior measurement of it was over a DIM-CAPPED subset of each level — which can
+        # only understate a maximum. Adding the ≤3-row shapes to the hooks completes some levels
+        # outright. A level's envelope is reported ONLY when the level is complete: a max over a
+        # subset is a lower bound on the max, not the max, and printing it as one is how a capped
+        # measurement gets quoted as a fact.
+        ngen_h = max(gens) + 1
+        sV_h, _ = reflection_generators(n, ngen_h, q)
+        L_h = len(gens)
+        known = dict(chi)
+        for bb in range(n):                                   # hooks, via the Burau closed form
+            hk = tuple([n - bb] + [1] * bb)
+            known.setdefault(hk, burau_closed_form(bb, gens, q, ngen_h, sV_h, L_h))
+        all_shapes = {}
+        for lam in partitions_maxlen(n, n):
+            all_shapes.setdefault(sum(lam) - lam[0], []).append(lam)
+        print("\n     b   level size   known   COMPLETE?   envelope max per-dim   attained by")
+        env = []
+        for bb in sorted(all_shapes):
+            lv = all_shapes[bb]
+            have = [l for l in lv if l in known]
+            complete = len(have) == len(lv)
+            if have:
+                best = max(have, key=lambda l: known[l] / base.block_structure(l)[1])
+                bv = known[best] / base.block_structure(best)[1]
+            miss = [l for l in lv if l not in known]
+            if complete and have and bv > 0:
+                env.append((bb, bv))
+                print(f"    {bb:>2}   {len(lv):>10}   {len(have):>5}   YES         "
+                      f"{mp.nstr(bv,8):>18}   {best}")
+            elif complete:
+                # COMPLETE but excluded from the envelope: Ω₂^P vanishes identically on a 1-dim
+                # rep, so b=0 and b=n−1 are exact zeros. Say that, rather than printing "no" under
+                # COMPLETE? beside "missing 0", which reads as a coverage gap that does not exist.
+                print(f"    {bb:>2}   {len(lv):>10}   {len(have):>5}   YES         "
+                      f"{'(exact zero)':>18}   endpoint — Ω₂^P ≡ 0 on a 1-dim rep; excluded")
+            else:
+                print(f"    {bb:>2}   {len(lv):>10}   {len(have):>5}   no          "
+                      f"{'(not reported)':>18}   missing {len(miss)}: {miss[:3]}"
+                      f"{' …' if len(miss) > 3 else ''}")
+        mono = all(env[i + 1][1] < env[i][1] for i in range(len(env) - 1))
+        if len(env) > 1:
+            print(f"\n  envelope over the {len(env)} COMPLETE level(s) b = "
+                  f"{[b for b, _ in env]} strictly decreasing?  {'YES ✓' if mono else 'NO'}")
+            print("      " + " > ".join(mp.nstr(v, 7) for _b, v in env))
+            print("  These are the first complete levels in this arc — every earlier envelope was a")
+            print("  max over a dim-capped subset, which can only UNDERSTATE a level maximum.")
         print()
 
 
