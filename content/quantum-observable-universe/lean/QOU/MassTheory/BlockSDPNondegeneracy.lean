@@ -45,6 +45,39 @@ that removes the degeneracy, and that dropping it brings the degeneracy back.
   from `Φ_λ ⪰ 0`, so the results above are about block traces and not about an
   abstract non-negative vector invented for the proof.
 
+## The positivity hypothesis is MEASURED on the real program, not derived
+
+`obj_pos_of_pos_weights` takes `∀ λ, 0 < y λ` as a hypothesis, and the real
+program's objective coefficient is **not** the Markov weight alone — it is
+`t_λ = w_λ · χ^λ(W_atom)` (see `computations/aK_via_lp_dual_full.py`). A
+character can be negative, so positivity of `t_λ` does not follow from
+positivity of `w_λ`.
+
+Measured over every row of the committed `a-K-via-lp-dual-full.witness.json`
+(n = 3, 3, 6, 9, 9, 12): **no surviving block carries a negative objective
+coefficient**, in any row. The one negative character at `n = 3`,
+`χ^{(1,1,1)} = −0.7392`, sits on the block whose weight vanishes, so the product
+is exactly `0` rather than negative. Survivor counts are **2, 2, 4, 5, 5, 7** —
+matching the `≤ 2`-row prediction of `sdp_o3prime_weight_positivity_probe`
+exactly, from an independent producer.
+
+**So the hypothesis holds wherever it has been checked, and it is a statement
+about the ATOM, not a structural fact.** A braid word whose character went
+negative on a surviving block would falsify it and the non-degeneracy result
+would not apply. Whoever implements the O3′ compute should assert
+`t_λ > 0` on survivors per atom rather than assume it — the theorem below is
+conditional on exactly that.
+
+Reproduce:
+
+```sh
+python3 -c "import json;from mpmath import mp;mp.dps=25;\
+d=json.load(open('computations/a-K-via-lp-dual-full.witness.json'));\
+print([sum(1 for p in r['per_partition'] \
+  if mp.mpf(p['y_lambda'])!=0 and mp.mpf(p['contribution'])<0) \
+  for r in d['data']['rows']])"
+```
+
 ## What is NOT proved here
 
 **That O3′ selects a distinguished operator.**  It does not follow, and the
