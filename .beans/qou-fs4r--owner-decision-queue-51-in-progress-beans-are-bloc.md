@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T10:28:57Z
-updated_at: 2026-09-05T07:31:43Z
+updated_at: 2026-09-05T07:53:36Z
 ---
 
 ## Owner ruled 2026-09-05: triage + propose a default, owner vetoes (Q2 option 3)
@@ -73,3 +73,47 @@ Class A veto list: 9h6x qou-agvb qou-jvav qou-pwut qou-7yj0 qou-52i4 qou-58zw
 qou-9xla qou-qflp qou-r765
 
 Pass 3: options for the 19 Class B.
+
+
+## Pass 3 (2026-09-05) — the 19 Class B collapse to 7 clusters; one already has its answer measured
+
+**CLUSTER 1 retires FOUR asks with one ruling** — `qou-goc9`, `qou-im4m`, `t7qv`,
+and Q4 of the 2026-09-05 analysis are the SAME question: chain (`A-1`) vs
+all-pairs (`C(A,2)`) inter-nucleon topology.
+
+**`t7qv` RESULT 4 already measured it** (AME read-only, no fit):
+
+    model              2H/3He             3H/3He
+    chain (adjacent)   0.50000 (+73.5%)   1.17024 (+6.5%)
+    all pairs          0.40361 (+40.0%)   1.20327 (+9.5%)
+    EXPERIMENT         0.28823            1.09896
+
+**But `t7qv` RESULT 5 says NEITHER IS RIGHT**: solving each ratio for one
+distance-2 weight gives `f = +2.030134` (A-scaling) against `f = -0.696951`
+(mirror) — inconsistent, one negative, **a one-parameter falloff refuted
+outright**. So all-pairs is the better of two topologies that are both wrong, and
+quoting RESULT 4 without RESULT 5 turns a preference between refuted options into
+a result.
+
+What this needs is not "pick one" but a ruling on **whether the two builders may
+keep disagreeing silently** — one reaches the paper (`demand-stability.ts` ->
+all-pairs), the other the binding numbers (`binding_canonical` -> chain).
+
+**CLUSTER 2 — `qou-1jw9` should LEAVE the veto queue.** It reports a **fourth
+calibration**: `0.6870125 x 27.2961432 x 0.2387911 = 4.478000 eV`, H2's measured
+bond energy, where the same witness's `H2_cross_check` records the uncalibrated
+`18.75279 eV` and `4.478/18.753 = 0.23879` exactly. Under the standing NO FITTING
+EXCEPT CAL-1/2/3 directive that is a discipline violation to adjudicate, not a
+preference. Two riders: `E_hartree_eV` is +0.31% off CODATA (so not the Hartree),
+and the witness contradicts its own content block on which of sigma/pi carries the
+largest |V|.
+
+Remaining clusters: 3 convention-D spend (`qou-cds1`, `qou-2tuv`); 4 Lean
+class/axiom shape (`qou-t7mt`, `qou-w1g8`, `qou-octr` — the last PROVES 8 of 8
+context-class sorries unclosable in current form, so not optional); 5 notation
+(`qou-d7h1`, cheapest); 6 `qou-aemx` (its own later entry withdraws its earlier
+"nothing argues for one"); 7 seven one-offs, of which **`gm4q` is decision-ready**
+with a full options doc and recommendation already written.
+
+**The queue is now drained to decisions.** Nothing further is triageable without
+owner rulings.
