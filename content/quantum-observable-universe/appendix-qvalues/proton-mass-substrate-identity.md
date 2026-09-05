@@ -2,7 +2,7 @@
 
 *Let $q_0 \approx 1.10978$ be the substrate parameter, $m_e$ the
 electron mass (CAL-1), $m_\mu$ the muon mass (derived from CAL-2
-$\mathfrak{D}_\beta$), and let $F_{\mathrm{Bor}}$ denote the
+$P_{\mathrm{skew}}^{\beta}$), and let $F_{\mathrm{Bor}}$ denote the
 Borromean categorical observable
 ([`def:f-bor-borromean-observable`](../braids-and-knots/f-bor-borromean-observable.md)).
 Then the proton mass satisfies the approximate substrate identity*
