@@ -993,3 +993,59 @@ a conclusion — the bisect item stands.
 
 - [x] Excise the 391 raw float64 fields — done in code.
 - [ ] Land the regenerated witness (run in progress, ~4.6 h).
+
+## 2026-09-05 — the regeneration was STRUCTURALLY impossible; disk-backed memo fixes it
+
+Three container reclaims in one session made something clear that retrying
+would never have surfaced: **this witness could not be regenerated at all** in
+an ephemeral container, and the reason is arithmetic, not luck.
+
+Per-atom wall times, from the last full run's own `per_atom_wall_seconds`:
+
+    n14   34 min      si28   90 min
+    o16   41 min      ca40  159 min
+    ne20  55 min      fe56  276 min        total ~11 h
+
+The per-atom checkpoint saves only after an atom COMPLETES, so fe56 needs 4.6
+hours uninterrupted. Each reclaim restarted the in-flight atom from zero, and
+the producer correctly refuses to write a partial witness — so nothing landed,
+and nothing ever would have.
+
+Note this also corrects a figure I had been repeating: "4.6 h" is fe56 ALONE,
+not the table. The table is ~11 h.
+
+### The fix
+
+A disk-backed memo at the Rust boundary — where the time goes, and where the
+inputs are already fully serialised, so whatever crosses the ABI is the key.
+Opt-in via `QOU_KERNEL_MEMO=<dir>`, matching `QOU_HKT_CHECKPOINT`; a cache with
+a subtly incomplete key returns wrong numbers silently, which is worse than
+slow.
+
+Key: the compiled kernel's content hash (a rebuilt wheel must MISS — a stale
+one demonstrably diverged at q0 earlier in this campaign), `dps`, `q_str` at
+that dps, the partition, the exact serialised `(c, d, gen)` strings, and the
+segment lengths for the prefix kernel.
+
+Values are exact `_mpf_` limbs, never decimal strings. Rebuilding them needs
+the mantissa coerced back to `MPZ` — mpmath asserts `type(man) == MPZ` and MPZ
+is `gmpy2.mpz` here, so a plain int from JSON fails outright. **`_ckpt_dec` in
+`hadron_knot_table` rebuilds mpf the same way and carries the same latent
+bug**; it has not fired only because the row shape it stores does not exercise
+its mpf branch.
+
+### Measured, not asserted
+
+    deuterium, cold      143.9 s
+    deuterium, warm        2.2 s      67x
+    values                 BIT-IDENTICAL   (the only acceptable result)
+    size                   3.2 MB / 579 entries for deuterium alone
+
+And the load-bearing property — that entries are written PER PARTITION, during
+an atom, not at the end — verified directly: while tritium was still running,
+the entry count went **932 -> 1116 over 60 seconds**. So an interrupted heavy
+atom resumes at the partition it reached.
+
+- [x] Make the heavy atoms survivable across reclaims.
+- [ ] Land the regenerated witness. Now feasible: each reclaim costs one
+      partition, so the table accumulates across restarts instead of resetting.
