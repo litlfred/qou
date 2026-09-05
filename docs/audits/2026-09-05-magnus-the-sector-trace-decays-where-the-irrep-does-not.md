@@ -65,6 +65,36 @@ Signs are load-bearing here and nowhere else in this arc: the partial sum needs 
 `tr_{(n−j,j)}`, which alternate for the true element (A=4: `− + − − + +`) while the bare element's are
 essentially one sign. The reframing cannot be tested from `|tr|` data.
 
+## The Temperley–Lieb framing is NOT new — I checked before writing it up
+
+The ≤2-row restriction has a name: `H_n(q)` acting on `(ℂ²)^⊗n` factors through Temperley–Lieb, so
+convention D's row cap *is* the TL quotient, and the sector traces are TL sector traces. I was about
+to record that as a structural reframing. **The corpus already holds it**, and the corpus-grep is
+what stopped me:
+
+- [`2026-08-10-convention-d-ylambda-root-and-derivation.md:152`](2026-08-10-convention-d-ylambda-root-and-derivation.md)
+  states the **`H_n/rad = TL_n` identification** directly, and scopes it honestly: it is
+  **measured** (`qou-8iru`, n = 2…7, residual `1.34e-51`) **rather than proved for general `n`**.
+- The Lean pinning of `z_D` lives in `QOU/QBeta/TemperleyLiebTower.lean`, section
+  `ConventionPinning`.
+
+So the TL connection is prior work, not a finding of this document, and anything built on it
+inherits that "measured, not proved for general `n`" scope.
+
+**What my measurement does add is an independent confirmation of the corpus's `y_λ` formula.** That
+audit gives `y_λ = [n−2k+1]_q / [2]_q^n` under convention D. The `[2]_q^n` cancels in a ratio of
+adjacent shapes, predicting exactly
+
+```
+y_k / y_{k+1}  =  [n−2k+1]_q / [n−2k−1]_q
+```
+
+which is what the ≤2-row column probe measures against the actual cached weights and confirms to
+**1e-50** at A = 2, 3, 4, 5. That is a check of the corpus formula against independently-served
+`y_λ` values, not a restatement of it — the failure mode the same audit warns about two sections
+earlier (*"Verify a closed form against a quantity derived independently of it, never against your
+own restatement"*).
+
 ## What this changes
 
 **The arc's non-monotonicity looks like a difference artifact, not a failure of decay.** The natural
