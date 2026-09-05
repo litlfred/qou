@@ -1,0 +1,178 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1608.07234v3",
+ "source": {
+  "file": "1608.07234v3.pdf",
+  "sha256": "311730670d2fdcb75f76fa40c3fb76ad8d3a0415e88ac2d9d50af4d0f84a4ff6",
+  "bytes": 1062408,
+  "pages": 87,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1608.07234",
+   "version": "3",
+   "primary_class": "math.NT",
+   "stamp_date": "29 Jan 2019"
+  },
+  "doi": null,
+  "title": "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC GROUPS AKSHAY VENKA TESH",
+  "authors_raw": null,
+  "title_lines": [
+   "DERIVED HECKE ALGEBRA AND COHOMOLOGY OF ARITHMETIC",
+   "GROUPS",
+   "AKSHAY VENKA TESH"
+  ],
+  "abstract": "We describe a graded extension of the usual Hecke algebra: i t acts in a graded fashion on the cohomology of an arithmetic group \u0393 . Under favorable conditions, the cohomology is freely generated in a single degree over this g raded Hecke algebra. From this construction we extract an action of certainp-adic Galois cohomology groups on H \u02da p\u0393 , Qpq, and formulate the central conjecture: the motivic Q-lattice inside these Galois cohomology groups preserves H \u02da p\u0393 , Qq.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20190130204224-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Derived Hecke algebra",
+   "page": 11,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Torus localization and Satake isomorphism",
+   "page": 21,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Iwahori-Hecke algebra",
+   "page": 26,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The trivial representation",
+   "page": 31,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Setup for patching",
+   "page": 39,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Patching and the derived Hecke algebra",
+   "page": 50,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "The reciprocity law",
+   "page": 55,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Some very poor evidence for the main conjecture: Tori and the trivial representation",
+   "page": 74,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Remedial algebra",
+   "page": 76,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B.  Koszul algebra; other odds and ends",
+   "page": 82,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Index of symbols and important notation",
+   "page": 85,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 86,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 11,
+   "n_chars": 30677,
+   "n_words": 5591
+  },
+  {
+   "id": "sec-001-2-derived-hecke-algebra",
+   "number": "2",
+   "title": "Derived Hecke algebra",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 85,
+   "n_chars": 202975,
+   "n_words": 38712
+  },
+  {
+   "id": "sec-002-index-of-symbols-and-important-notation",
+   "number": null,
+   "title": "Index of symbols and important notation",
+   "level": 1,
+   "page_start": 85,
+   "page_end": 86,
+   "n_chars": 1037,
+   "n_words": 258
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 86,
+   "page_end": 87,
+   "n_chars": 6187,
+   "n_words": 913
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "sections": 4,
+  "chars_total": 240876
+ }
+}
