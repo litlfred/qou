@@ -2715,6 +2715,43 @@ def free_nucleon_frobenius_norm_sq(Z, N, k_cap=None):
 
     TODO: proper tensor-product decomposition via H_3(q)^⊗A restriction.
     For now: ||W_free||² ≈ Σ_λ w_λ · 1 = 1 (Wedderburn trace identity).
+
+    IT DOES NOT RETURN 1, and the gap is large (bean `qou-fop2`). Measured on
+    the default Rust path:
+
+        D    1.988392799
+        T    0.991042245
+        He3  0.869097004
+
+    Not 1, not mutually consistent, and D is off by essentially a factor of
+    two. This is NOT the `qou-8w8v` rescaling bug: `max_ln` is 0 for all three
+    here, so the `exp(-2·max_ln)` correction applied below is exactly 1 and
+    these numbers are the same before and after that fix.
+
+    The cause is the formula, not the arithmetic. What is computed is
+
+        Σ_λ w_λ · (χ_λ(W_free) / d_λ)²
+
+    which collapses to `Σ_λ w_λ = 1` only when `χ_λ(W_free)/d_λ = 1` for every
+    λ — that is, only when W_free is the IDENTITY braid. It is not: "free"
+    drops the INTER-nucleon crossings and keeps the INTRA-nucleon ones, so each
+    nucleon still contributes a non-trivial 3-strand braid whose character is
+    not its dimension. This function therefore implements neither the
+    decomposition its TODO describes nor the constant-1 approximation the
+    paragraph above settles for — it returns a third thing.
+
+    Nothing calls it. `free_nucleon_frobenius_norm_sq` has no callers anywhere
+    in the repo, and `atom_frobenius_norm_sq`'s only caller is this function,
+    so the pair is dead and the discrepancy moves no published number.
+    `binding_from_frobenius_pairing` — despite the name — goes through
+    `atom_markov_trace`, not through these. The 2026-05-24 canonical audit
+    already lists this function as EXPLORATORY.
+
+    Left in place rather than repaired or deleted: repairing means real work on
+    the H_3(q)^⊗A restriction with no consumer to serve, and deleting is a
+    separate call from fixing a docstring. What is fixed here is the trap — the
+    claim "≈ 1" was all a reader had, and T at 0.991 and He3 at 0.869 both look
+    close enough to 1 to pass a glance. Only D at 1.988 gives it away.
     """
     # Apply `max_ln`, do not discard it (bean `qou-8w8v`). This line was
     #     norm_sq, _, _ = atom_frobenius_norm_sq(...)

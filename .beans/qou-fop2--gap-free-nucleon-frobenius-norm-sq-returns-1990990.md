@@ -76,3 +76,51 @@ intended answer is exactly 1, a wrong value still looks like an answer.
 
 Do NOT "fix" this by adjusting a tolerance or by normalising the result to 1;
 the discrepancy is the information.
+
+## 2026-09-05 — the blocking question is answered: there are NO consumers
+
+Scope item 4 said "find the consumers first — the value feeds the Frobenius
+pairing route, so changing it moves published numbers." That premise is wrong,
+and checking it was the right first move.
+
+Resolved by call site, not by `grep -rl`:
+
+* `free_nucleon_frobenius_norm_sq` — **no callers anywhere in the repo.** The
+  only textual hits are this bean, `qou-8w8v`, and the 2026-05-24 canonical
+  audit.
+* `atom_frobenius_norm_sq` — exactly one caller, and it is
+  `free_nucleon_frobenius_norm_sq`. So the pair is dead as a unit.
+* `binding_from_frobenius_pairing`, despite the name, does **not** use either.
+  It goes through `atom_markov_trace` (two calls, `include_inter` True and
+  False). The name is what made the premise plausible.
+* No dynamic access: no `getattr` on either name, no string reference.
+* `docs/audits/2026-05-24-hecke-core-canonical-audit.md` already classifies
+  this function **EXPLORATORY**, describing it as a single-line wrapper whose
+  docstring "acknowledges it's an 'empirical simpler form' with TODO for proper
+  decomposition."
+
+So the 1.988 / 0.991 / 0.869 discrepancy is real but **inert**: it moves no
+published number, and there is no witness to regenerate.
+
+### What was done instead
+
+Not the decomposition, and not deletion. The decomposition is real work on the
+H_3(q)^⊗A restriction with no consumer to serve; deletion is a separate call
+from fixing a docstring, and an existing audit already tracks the function as
+exploratory.
+
+What was fixed is the **trap**. The docstring's only claim was "||W_free||² ≈
+Σ_λ w_λ · 1 = 1", and T at 0.991 and He3 at 0.869 both look close enough to 1
+to survive a glance — only D at 1.988 gives it away. The docstring now carries
+the three measured values, the reason (the sum collapses to Σ_λ w_λ only if
+W_free is the identity braid, which it is not, since "free" drops the inter-
+nucleon crossings and keeps the intra-nucleon ones), the fact that it is
+neither of the two things its own prose describes, and the fact that nothing
+calls it.
+
+### Status
+
+Left OPEN, downgraded. The mathematical gap stands and the scope items 1-3 are
+unchanged, but nothing is blocked on it and nothing is at risk from it. Anyone
+picking it up now starts from a documented function rather than a misleading
+one, and can change the return value freely — there is no consumer to break.
