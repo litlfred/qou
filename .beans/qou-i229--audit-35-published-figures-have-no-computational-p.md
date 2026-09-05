@@ -414,3 +414,62 @@ sentence corrected.
       nothing checks that the block's numbers are the witness's. That is
       mechanically checkable and would have caught this, the transfer-matrix
       readout, and the retired-`q₀` figures.
+
+## WHICH z? — ANSWERED BY RULING, and it retracts my last turn
+
+Analysis: [`docs/audits/2026-09-05-which-z-does-the-qbeta-spectral-bridge-intend.md`](../docs/audits/2026-09-05-which-z-does-the-qbeta-spectral-bridge-intend.md).
+
+**Answer: D, `q³/(q²+1)`.** The two values are not rival readings of one
+definition — they are the corpus's two registered trace conventions, and one is
+excised:
+
+    C   1/(q^1/2 + q^-1/2)   0.49932033418…   EXCISED 2026-08-09
+    D   q^3/(q^2+1)          0.61268803714…   PRODUCTION
+
+`rem:markov-z-reconciliation` names `1/(√q+1/√q)` as convention C explicitly, and
+the trace-convention registry's channel table records `qbeta-decay` definitional
+= **D** per the owner ruling of 2026-08-15 ("convention D is convention. excise
+convention C"), with C **structurally excluded**. Status:
+**agreed-migration-pending**, bean **`qou-cds1`**.
+
+### 🛑 Retraction
+
+I wrote that "for once the compute has drifted from the stated definition rather
+than content lagging compute". **Backwards.** The compute migrated to the ruled
+convention; the proposition was left behind. Ordinary C→D content lag — the
+`qou-5pgl` class. I treated the proposition as the definition of record without
+checking whether its convention was current, which is the one question the
+registry exists to answer.
+
+The producer is in fact *ahead* of the registry's own row, which still lists
+production as C for this channel (naming `qbeta_utils.markov_parameter`,
+`qbeta_ck_sseries_exact_rational`, `ZBarParity.lean` — not the spectral-bridge
+witness).
+
+### There is a structural argument as well as the ruling
+
+In D: `z₋ = 1/(q(q²+1))`, `z·z₋ = 1/[2]_q²`, framing ratio `a² = q⁴` — a
+monomial, which is what makes D the `sl₂` point. C's `z₋` mixes half-integer and
+integer powers in one unfactorable numerator. The reconciliation block's own
+phrase: *"not convention C being invalid; it is convention C being
+structureless."*
+
+### Recommendation
+
+**Migrate to D — but inside `qou-cds1`, not as a one-off.** This block is one
+member of a scoped multi-block migration; moving it alone leaves the channel
+half-migrated, the registry row wrong, and three named production files still on
+C. The `𝔔_β` MeV figures shift ~0.05 MeV, which wants checking rather than
+assuming.
+
+**Done now, the safe half:** the proposition is *labelled* — it states that its
+`z` is convention C, that D is ruled, and that migration is tracked. Precedent:
+`df13e845cee` labelled the `q₀` pins rather than recomputing them, and that is
+what let this sweep identify them at all. Labelling an out-of-date convention is
+cheap and reversible; migrating one block of a tracked migration is neither.
+
+- [x] Which `z` does the proposition intend — **D, by ruling.**
+- [ ] `qou-cds1` owns the migration; this block is a member.
+- [ ] The **pin** rides along and is a separate axis: producer on proton, table
+      on muon pin A. A pass that fixes `z` and leaves the pin straddling gives a
+      table right in convention and wrong in anchor.

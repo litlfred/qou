@@ -29,7 +29,17 @@
 > Each side reproduces its own numbers exactly, so this is **two different
 > computations**, not drift: the bridge ratio differs by $21.2\,\%$.
 >
-> **This table matches its own proposition and the producer does not.**
+> **Which side is stale: the table, not the producer.** An earlier version of
+> this note said the producer had drifted from the stated definition. That is
+> **backwards and withdrawn.** The proposition's
+> $z = 1/(\sqrt q + 1/\sqrt q)$ is convention **C**, *excised* by the owner
+> ruling of 2026-08-09; the producer's $q^3/(q^2+1)$ is convention **D**, which
+> the registry records as the definitional convention for `qbeta-decay` per the
+> ruling of 2026-08-15. So the producer moved to the ruled convention and the
+> proposition was left behind — the ordinary C→D content lag, not its inverse.
+> Migration tracked as `qou-cds1`.
+>
+> The table does faithfully follow its proposition:
 > [`prop:q-beta-spectral-bridge`](#prop:q-beta-spectral-bridge) *defines*
 > $z := 1/(\sqrt q + 1/\sqrt q)$, which is what these values use;
 > `q_beta_spectral_bridge_witness.py` computes $q^3/(q^2+1)$ instead — and
