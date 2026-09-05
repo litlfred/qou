@@ -1,25 +1,34 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:03:21.705205+00:00",
-  "commitSha": "1fb143089dfc0513c03acf935a9953a97a115433",
+  "computedAt": "2026-09-05T08:26:48.511016+00:00",
+  "commitSha": "ecc3bc6c3fd7fe6301e30bc26a3499e233606c60",
   "assertions": [
     {
-      "name": "rust_kernel_loaded",
-      "computed": 77.0,
+      "name": "partition_count_is_p_3A_atom",
+      "computed": 77,
       "expected": 77,
       "passed": true,
       "tolerance": 0,
       "unit": "partition count",
-      "source": "pyhecke_native.partitions_of(3A)"
+      "source": "independent p(3A) = p(12); kernel is pyhecke_native.partitions_of(3A)"
+    },
+    {
+      "name": "partition_count_is_p_3A_free",
+      "computed": 77,
+      "expected": 77,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "partition count",
+      "source": "independent p(3A) = p(12); kernel is pyhecke_native.partitions_of(3A)"
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 7,
   "computation": "atom-chi-rust-4he",
   "scriptFile": "compute_atom_chi_rust.py",
-  "scriptHash": "45d51b9cc954",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "2aada48dea9c",
+  "scriptCommitSha": "7aed1ddd4ae6c795e6b8f2f1902c59d44285f42f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +38,19 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/compute_atom_chi_rust.py",
+      "4He"
+    ],
+    "reproduce": "python3 -u computations/compute_atom_chi_rust.py 4He"
   },
   "description": "Full H_12 chi^λ(β_K) for 4He (Z=2, N=2), both atom (include_inter=True) and free (include_inter=False) configs. precision=mpfr: MPFR (default) routes through chi_cd_mpfr → pyhecke_native.chi_lambda_all_partitions_mpfr at 50 dps (canonical tier; the color-weighted p-n crossing is expanded by linearity); --f64 is the preview tier only (owner ruling 2026-06-09: no f64 on the canonical path). Consumed by binding_depth_stratified_rust.py.",
   "data": {
@@ -392,7 +412,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": "1.3324670695047317581719299734538231951319133898681"
+          "chi_lambda": "1.3324670695047317581719299734538231951319133898682"
         },
         {
           "partition": [
@@ -403,7 +423,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-6.1493408410039581656739678815748871446717776464090"
+          "chi_lambda": "-6.1493408410039581656739678815748871446717776464091"
         },
         {
           "partition": [
@@ -494,7 +514,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": "9.6630100901536107308302288866704632500616889695986"
+          "chi_lambda": "9.6630100901536107308302288866704632500616889695985"
         },
         {
           "partition": [
@@ -505,7 +525,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-4.7115015162602493987941454597573410856684087312348"
+          "chi_lambda": "-4.7115015162602493987941454597573410856684087312351"
         },
         {
           "partition": [
@@ -900,7 +920,7 @@
           "chi_lambda": "-0.45571189511342336867929902753175422954183424974700"
         }
       ],
-      "compute_time_sec": 1109.2363858222961,
+      "compute_time_sec": 876.6219711303711,
       "Z": 2,
       "N": 2,
       "A": 4,
@@ -1173,7 +1193,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "532.26390734569385307344345076726294286328451841451"
+          "chi_lambda": "532.26390734569385307344345076726294286328451841452"
         },
         {
           "partition": [
@@ -1424,7 +1444,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "749.77500717565303790565346618405758084321047858524"
+          "chi_lambda": "749.77500717565303790565346618405758084321047858525"
         },
         {
           "partition": [
@@ -1775,7 +1795,7 @@
           "chi_lambda": "0.45327484851005246915458324454474401323357546961197"
         }
       ],
-      "compute_time_sec": 489.1412093639374,
+      "compute_time_sec": 391.9449391365051,
       "Z": 2,
       "N": 2,
       "A": 4,
