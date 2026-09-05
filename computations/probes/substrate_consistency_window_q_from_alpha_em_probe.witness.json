@@ -1,0 +1,64 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T13:10:35.847207+00:00",
+  "commitSha": "f9b4565ad070b40b0559484cd9437ffab960d613",
+  "assertions": [
+    {
+      "name": "both published figures are the correct roundings of the bare-form inversion at their CODATA vintage — the numbers were right, only unwitnessed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the quoted 1.1e-10 shift is correct",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "but it is FIVE orders below the quoted uncertainty, not six — the block said six and is corrected",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "substrate_consistency_window_q_from_alpha_em_probe",
+  "scriptFile": "substrate_consistency_window_q_from_alpha_em_probe.py",
+  "scriptHash": "0d8417958845",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/substrate_consistency_window_q_from_alpha_em_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/substrate_consistency_window_q_from_alpha_em_probe.py"
+  },
+  "description": "Triages the two q-from-alpha_EM figures in tbl:substrate-consistency-window-table1-data, flagged by the unsourced-published-figures sweep as having no producer anywhere in the repo (every alpha_EM inversion module is deprecated, and the block's .ts cites nothing computational). Inverting the bare form alpha^-1 = q [9]_q [10]_q at 40 dps: CODATA 2018 (137.035999084) gives q = 1.11023043770666 and CODATA 2022 (137.035999177) gives q = 1.11023043781657, whose roundings are exactly the published 1.11023043771 and 1.11023043782. The quoted 1.1e-10 shift is also correct (measured 1.0991e-10). One overstatement corrected: that shift is FIVE orders below the quoted +-0.00002, not six. Verdict: correct but unwitnessed; the fix is to record the producer, not to change the numbers. These are NOT q0 -- they are the electromagnetic determination of q, and the bare form gives ~136.82 at q0, the gap being the Chern-Simons dressing.",
+  "data": {
+    "alpha_inv_codata_2018": "137.035999084",
+    "q_from_bare_alpha_2018": "1.1102304377066609878",
+    "alpha_inv_codata_2022": "137.035999177",
+    "q_from_bare_alpha_2022": "1.1102304378165714836",
+    "shift_2018_to_2022": "1.099104958e-10",
+    "orders_below_quoted_uncertainty": "5.25999"
+  },
+  "caveats": [
+    "Says nothing about whether the bare form is the right model of alpha_EM; that is rem:em-coupling-chern-simons and rem:alpha-em-derivation-open-problems, explicitly open.",
+    "These q values are NOT the substrate anchor q0 and are not meant to equal it. The block does not claim they do."
+  ]
+}

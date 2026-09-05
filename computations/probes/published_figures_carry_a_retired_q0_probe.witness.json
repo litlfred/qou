@@ -1,0 +1,88 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T13:13:58.673694+00:00",
+  "commitSha": "f9b4565ad070b40b0559484cd9437ffab960d613",
+  "assertions": [
+    {
+      "name": "the retired value is distinct from both live anchors",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "and lies BETWEEN them, so digit-counting does not settle it — only a computation does",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "for EVERY one of the four figures the RETIRED q0 is the closest match by relative error — one retired constant, four figures, two blocks",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "q [9]_q [10]_q separates the three candidates by 3+ significant figures — the quantum integers amplify the difference",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "published_figures_carry_a_retired_q0_probe",
+  "scriptFile": "published_figures_carry_a_retired_q0_probe.py",
+  "scriptHash": "511602cb654d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/published_figures_carry_a_retired_q0_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/published_figures_carry_a_retired_q0_probe.py"
+  },
+  "description": "Four published figures in hecke-log-decomposition-table-data and em-coupling-bring-zero-mode are computed from q0 = 1.1099785955541805752815940796095093779932822799587, which appears in eight computations/_deprecated/ witnesses and one deprecated script and nowhere live. It is neither live anchor (proton 1.10997858275..., muon 1.10997859564...) and lies between them. The sharpest discriminator is q [9]_q [10]_q, published 136.823219654: the retired q0 gives 136.823219654561, matching all 12 published digits, while muon gives 136.823219729273 (9 sig figs) and proton 136.823208853583 (8). The other three figures agree with the retired value to 10-11 digits and with neither live anchor. NOT recomputed: the proton/muon choice is owner-gated. This also corrects the sweep's own Q1 -- 'no deprecated-only provenance' tested literal decimal strings, and a figure derived from a retired constant inherits provenance without carrying its digits.",
+  "data": {
+    "q0_retired": "1.1099785955541805752815940796095093779932822799587",
+    "q0_proton_live": "1.1099785827513808075916690956107688798744991218736",
+    "q0_muon_live": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+    "published_1+q_0": "2.10997859556",
+    "block_1+q_0": "hecke-log-decomposition-table-data",
+    "1+q_0_at_proton": "2.10997858275138",
+    "1+q_0_at_muon": "2.10997859564274",
+    "1+q_0_at_RETIRED": "2.10997859555418",
+    "published_log(1+q_0)": "0.74667780313",
+    "block_log(1+q_0)": "hecke-log-decomposition-table-data",
+    "log(1+q_0)_at_proton": "0.746677797081664",
+    "log(1+q_0)_at_muon": "0.746677803191375",
+    "log(1+q_0)_at_RETIRED": "0.746677803149403",
+    "published_log(1/hbar_q)": "2.31181024982",
+    "block_log(1/hbar_q)": "hecke-log-decomposition-table-data",
+    "log(1/hbar_q)_at_proton": "2.31181035472636",
+    "log(1/hbar_q)_at_muon": "2.31181024912344",
+    "log(1/hbar_q)_at_RETIRED": "2.31181024984889",
+    "published_q9_q10_q": "136.823219654",
+    "block_q9_q10_q": "em-coupling-bring-zero-mode",
+    "q9_q10_q_at_proton": "136.823208853583",
+    "q9_q10_q_at_muon": "136.823219729273",
+    "q9_q10_q_at_RETIRED": "136.823219654561"
+  },
+  "caveats": [
+    "The figures are NOT recomputed and no anchor is chosen for these blocks. q_parameter.py: the corpus is genuinely mixed, a blanket flip is wrong, and the default is owner-gated.",
+    "No claim about the other 28 unsourced figures in qou-i229 — the same derived-provenance test should be run on them and has not been.",
+    "No claim that the retired q0 was wrong when these tables were written."
+  ]
+}

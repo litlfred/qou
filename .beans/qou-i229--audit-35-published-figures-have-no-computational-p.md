@@ -73,3 +73,66 @@ not delete it.**
 - [ ] Consider whether the tool should become a gate once the list is drained.
       It should NOT while the list stands — a gate red at 35 on arrival, with a
       known false-positive class in it, is one nobody can adopt.
+
+## TRIAGE ROUND 1 (2026-09-05): 35 -> 32, and category (b) EXISTS after all
+
+Two entries closed and a real defect found. Probes:
+`substrate_consistency_window_q_from_alpha_em_probe.py` (3/3),
+`published_figures_carry_a_retired_q0_probe.py` (4/4).
+
+### (c) correct but unwitnessed — CLOSED, worked example
+
+`1.11023043771` / `1.11023043782` in `substrate-consistency-window-table1-data`.
+Every `alpha_EM`-inversion module in the tree is deprecated and the block's `.ts`
+cites nothing computational, so this looked like the stale case. It is not:
+inverting the bare form `alpha^-1 = q[9]_q[10]_q` at 40 dps gives
+`1.11023043770666` (CODATA 2018) and `1.11023043781657` (2022) — the published
+figures are the correct roundings, and the quoted `1.1e-10` shift is right too.
+**Correct, derived, merely unwitnessed.** Producer now recorded.
+
+One overstatement corrected en route: the block called that shift "six orders of
+magnitude below the ±0.00002"; it is `1.82e5`, i.e. **five**.
+
+### (b) STALE — FOUND, and it is four figures across two blocks
+
+I wrote "of which none has yet been found". Wrong within the hour.
+
+    q0_retired = 1.1099785955541805752815940796095093779932822799587
+
+lives in eight `computations/_deprecated/` witnesses and one deprecated script,
+**nowhere live**, and is neither anchor — proton `1.10997858275…`, muon
+`1.10997859564…` — sitting *between* them, which is why nothing looked wrong.
+
+    block                                figure           published        retired q0 gives
+    hecke-log-decomposition-table-data   1 + q_0          2.10997859556    2.10997859555418
+    hecke-log-decomposition-table-data   log(1 + q_0)     0.74667780313    0.746677803149403
+    hecke-log-decomposition-table-data   log(1/hbar_q)    2.31181024982    2.31181024984889
+    em-coupling-bring-zero-mode          q[9]_q[10]_q     136.823219654    136.823219654561
+
+`q[9]_q[10]_q` is decisive — the quantum integers amplify, so the retired value
+matches 11 significant figures against muon's 9 and proton's 7. On all four the
+retired value is closest **by relative error**.
+
+**Not recomputed.** The proton/muon choice is owner-gated (`q_parameter.py`:
+"genuinely MIXED", "a blanket flip is WRONG", "do NOT change this default").
+Both live values are tabulated in the block caveats; the substitution waits for a
+ruling.
+
+### 🛑 THIS CORRECTS THE SWEEP'S OWN HEADLINE
+
+The bean above reports "Question 1: deprecated provenance — answered **NO**".
+That answer tested for the literal decimal **string**, and is true at that level.
+It is **misleading as read**: a figure that is a *function* of a retired constant
+inherits its provenance without ever carrying its digits. Four such figures were
+sitting in the corpus while the sweep reported the class clean.
+
+So the string-level test is much weaker than its phrasing suggested, and the
+derived-level question is **open, not answered**. The method that works is the
+one used here: take a published figure, guess the closed form from its own
+caption, and solve for the `q0` that reproduces it.
+
+- [ ] Run the derived-provenance test on the remaining 28. Cheap per figure where
+      the caption gives the closed form (`1 + q_0`, `log(1/hbar_q)`, …), and most
+      of them do.
+- [ ] Owner ruling: which anchor do `hecke-log-decomposition-table-data` and
+      `em-coupling-bring-zero-mode` take? Then substitute.
