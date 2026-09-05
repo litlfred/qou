@@ -431,3 +431,49 @@ The general hazard stands and is not fixed by this: **a stale sidecar reads
 exactly like a pass**, so a sweep against a file its sidecar predates certifies
 nothing. Four criteria-clean verdicts here were about files that no longer
 existed in that form.
+
+## 2026-09-05 (ruled) — D11 closed, and TWO MORE mis-refs found in the same shape
+
+The author ruled *"do as recommended"* on the four-decision brief. D11 — the one item this
+bean had left as an author decision — is **closed**, and applying the ruling turned up two
+further instances of the same defect that were not in this bean's list of twelve.
+
+**D11 is closed, but not the way the brief described.** The library carrier this bean
+called *"substantive, 2 real fields"* was **uninhabitable**: both content fields quantified
+over all reals with no hypothesis, so `E_gate = E_0·log(1/W_λ)` at `E_gate := 1, E_0 := 0`
+forces `1 = 0`, and `¬ Nonempty WignerSU4FromSpinIsospin` was provable (`lean`-direct,
+exit 0). **That is a worse defect than the `holds : Prop` stub it was to replace** — a
+vacuous carrier makes a conditional theorem conditional on *nothing*; an uninhabitable one
+makes it **vacuously true**, which reads as *proved*. Both were repaired: stub deleted,
+file moved to `QOU/BraidsAndKnots/` so decl path matches file path, and the class
+re-stated on caller-supplied parameters.
+
+**New shape for this bean's taxonomy: `_satisfiable` as well as `_refutable`.** Every
+repair in this queue discharged refutability. D11 shows that is only half the check —
+*"no instance is provided"* and *"no instance could exist"* are indistinguishable from
+outside, and this carrier was the second while reading as the first. Carriers should
+discharge **both** directions.
+
+**Two more mis-refs, found by decision 4.** `quantum-langlands-dual` and
+`reverse-limit-q-to-infinity` each carry a `holds : Prop` stub **shadowing** a substantive
+library carrier via §0a candidate-1 — `QOU.Conjectures.QuantumLanglandsDual` (4 fields) and
+`QOU.IwahoriHecke.TypeA.ReverseLimitQToInfinity` (a proved identity **with an instance**).
+Neither is on this bean's list of twelve, because that list was built from carriers
+*verified to have no library decl under the ref leaf* — and here the leaf names differ from
+the ref's namespace, exactly the D11 blind spot. Both stubs deleted; the Langlands ref
+repointed.
+
+**So the shadow class is bigger than the three this bean has recorded** (`TFromTraceCyclicity`,
+D11, and the four from the 18 → 16 → 12 correction). The mis-ref is a *sibling* defect to
+`holds : Prop`, not a subcase, and no detector in this bean's history looks for it: the
+`free-prop-field-audit` finds the vacuous class and says nothing about whether a real one
+exists elsewhere under a different name. Worth a bean of its own if the pattern recurs.
+
+### Method note — a cached `fail` prints as absent
+
+`qa-sweep`'s summary line counts only criteria **evaluated in that run**. Measured: a second
+sweep of `p-from-braid-mirror` printed `0 critical, 0 major, 0 minor` while its sidecar held
+`detangler-no-forward-ref` as `fail`/major from an earlier run. **A false clean**, and it
+would have gone into a PR body as "all seven blocks clean". Read the sidecar entry, not the
+summary. Same lesson as the stale sidecars one entry up, one level higher: the artifact that
+reports the verdict is not the verdict.
