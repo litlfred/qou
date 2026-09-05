@@ -1,7 +1,7 @@
-import { proposition } from "../../schema/builders";
+import { definition } from "../../schema/builders";
 
-export default proposition({
-  label: "prop:three-calibration-discipline",
+export default definition({
+  label: "def:three-calibration-discipline",
   title:
     "Three-calibration discipline ($m_e$, $m_\\mu$, $m_\\pi$) aligned to (co)homological data",
   tags: [

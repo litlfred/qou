@@ -58,7 +58,7 @@ def _default_q0() -> sp.Rational:
         return sp.Rational(str(Q0_FLOAT))
     except ImportError:
         # Fallback to the canonical 50-digit pinning. Per
-        # `prop:three-calibration-discipline`, q_0 is the H^1
+        # `def:three-calibration-discipline`, q_0 is the H^1
         # calibration; this value is not a fit but the resolution
         # of the lepton-ratio constraint at 50dp.
         return sp.Rational(Q_50_DIGIT_STR)

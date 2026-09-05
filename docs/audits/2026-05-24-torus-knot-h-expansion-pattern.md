@@ -249,7 +249,7 @@ In the three-avatars language: the algebraic form (6) is the `ℤ[q, q^{-1}]` / 
 
 ## Pre-Archimedean / Archimedean counting (CAL-1 / CAL-2 / CAL-3 layering)
 
-The fact that the structural identity (6) and its derived forms (P_m, Q_m, the q-tanh) live in `ℤ[q, q^{-1}]` and `ℚ(q)` — entirely PARAMETER-FREE — has a clean implication for the framework's 3-calibration discipline (per AGENTS.md `prop:three-calibration-discipline`):
+The fact that the structural identity (6) and its derived forms (P_m, Q_m, the q-tanh) live in `ℤ[q, q^{-1}]` and `ℚ(q)` — entirely PARAMETER-FREE — has a clean implication for the framework's 3-calibration discipline (per AGENTS.md `def:three-calibration-discipline`):
 
 | layer | object | calibration inputs |
 |---|---|---|

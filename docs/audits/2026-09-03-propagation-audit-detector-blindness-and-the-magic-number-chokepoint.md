@@ -69,7 +69,7 @@ listing it in `uses[]`. Every one of the 17 paths ends:
 Two representative full paths:
 
 ```
-prop:three-calibration-discipline
+def:three-calibration-discipline
   -> prop:calibration-cohomology-alignment
   -> prop:prolonged-periods-fixed-depth
   -> prop:binding-genfun-qdifference

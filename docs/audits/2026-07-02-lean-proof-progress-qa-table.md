@@ -623,7 +623,7 @@ A `sorry` is acceptable only with a bibliographic `-- Ref:` citation on or just 
 | `prop:substrate-consistency-window` | `compute-prop-has-consumer`, `compute-prop-has-probe`, `da-lean-narrative-divergence`, `da-referee-verdict`, `proof-statement-integrity` |
 | `ex:terminal-resolution-cz` | `da-lean-narrative-divergence`, `da-referee-verdict`, `da-reproducibility` |
 | `prf:terminal-resolution` | `compute-witness-exists`, `da-lean-narrative-divergence`, `da-referee-verdict`, `da-reproducibility` |
-| `prop:three-calibration-discipline` | `proof-no-self-assuming-projection`, `proof-no-unused-hypotheses` |
+| `def:three-calibration-discipline` | `proof-no-self-assuming-projection`, `proof-no-unused-hypotheses` |
 | `rem:tritium-qvalue-audit` | `compute-witness-exists` |
 | `rem:w-boson-mass-discrepancy` | `da-lean-narrative-divergence`, `da-physical-implausibility`, `da-referee-verdict`, `da-reproducibility` |
 
