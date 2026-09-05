@@ -115,14 +115,19 @@ fi
 # shows up as `unknown module prefix`, which reads exactly like a real error.
 SIBLINGS=$(ls -d "$ROOT"/content/*/lean/.lake/build/lib/lean 2>/dev/null |
              grep -v "^$OLEANS\$" | tr '\n' ':')
-# BOTH package locations, paper-level first.  The root Lake workspace has
+# BOTH package locations, PAPER FIRST.  The root Lake workspace has
 # `.lake/packages/` and each paper package has its own
-# `content/*/lean/.lake/packages/` -- and the documented sandbox restore
-# (AGENTS.md §"Mathlib cache 403 fallback") populates the PAPER one.  Measured
-# on this container: the ROOT tree had a 0-byte `Mathlib/Tactic.olean` and no
-# `Mathlib/Data/Real/Basic.olean` at all (1212 oleans against the paper tree's
-# 3477), so globbing only the root makes every Mathlib-importing module fail
-# with "invalid header" / "does not exist".  Bean `qou-tpdg`.
+# `content/*/lean/.lake/packages/`; the documented sandbox restore
+# (AGENTS.md §"Mathlib cache 403 fallback") fills the PAPER one, so that is the
+# tree it GUARANTEES.
+#
+# The root tree is not reliably broken -- it is not reliably POPULATED, which is
+# worse for a gate.  Measured on two containers: on one, root held a 0-byte
+# `Mathlib/Tactic.olean`, no `Mathlib/Data/Real/Basic.olean` and 1212 oleans, so
+# every Mathlib-importing module failed with "invalid header" / "does not
+# exist".  On another, root was a 6990-olean SUPERSET with both files
+# byte-identical and the same code was fine.  Globbing the root alone makes this
+# correct by luck of environment.  Bean `qou-tpdg`.
 # Build this with a LOOP, not `ls -d <pat1> <pat2>`: `ls` SORTS its arguments,
 # so it reorders the two patterns ("$ROOT/.lake/..." sorts before
 # "$ROOT/content/...") and the root tree would win the pinning above -- which is

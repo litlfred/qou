@@ -53,7 +53,7 @@ safety in the recipe. A file importing a QOU module absent from the overlay
 fails with `does not exist` even though the module is on disk — and an agent
 reading that would reasonably conclude the corpus is broken.
 
-## Defect 1 — the sweep globbed a Mathlib tree the documented restore does not fill
+## Defect 1 — the sweep globbed a Mathlib tree the documented restore does not GUARANTEE
 
 `LEAN_PATH` was built from `ROOT/.lake/packages/*` plus each paper's own
 **build output**, and never each paper's `.lake/packages/`. The documented
@@ -69,6 +69,32 @@ Every Mathlib-importing module therefore failed with `invalid header` or
 `does not exist`, and the sweep reported **22 REDs about its own environment**,
 formatted identically to real findings. Fix: glob both package locations,
 paper-level first.
+
+> **🛑 CORRECTED on review — my claim was one container generalised into a
+> universal.** The scripts' author measured the same two files on *their*
+> container and the ROOT tree is **fine** there:
+>
+> | | `Mathlib/Tactic.olean` | `Mathlib/Data/Real/Basic.olean` | oleans |
+> |---|---|---|---|
+> | **ROOT**, their container | 68 040 B | 785 328 B | **6990** |
+> | **PAPER**, their container | 68 040 B | 785 328 B | 3477 |
+>
+> Byte-identical, and the root is a *superset*. That is why their sweeps
+> returned real findings rather than 22 environment-REDs, and why they never
+> hit this.
+>
+> **So "the root tree is broken" is FALSE as a general claim** — it was true of
+> this container only. The defensible statement is **"the root tree is not
+> *guaranteed* to be populated"**: `AGENTS.md` §"Mathlib cache 403 fallback"
+> fills the **paper** tree, so that is the one the documented restore
+> guarantees. Globbing the root alone makes the gate's correctness
+> environment-dependent *by luck*, which is not a gate — and that argument
+> holds on both containers, where mine held on one.
+>
+> The fix is unchanged and still right; only its justification needed
+> narrowing. Recorded because this is the absence-of-evidence discipline
+> failing in the other direction: I measured one environment and wrote a
+> universal.
 
 ## Defect 2 — the 2.3 GB shadow made the sweep unrunnable
 

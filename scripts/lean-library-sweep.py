@@ -269,15 +269,21 @@ def sweep_one(args) -> int:
                     if p != oleans]
         # Dependency olean roots, in the order Lean should search them.
         #
-        # BOTH package locations are included deliberately.  The root Lake
-        # workspace has `.lake/packages/`, and each paper package has its own
-        # `<paper>/lean/.lake/packages/` — and the documented sandbox restore
-        # (AGENTS.md §"Mathlib cache 403 fallback") populates the PAPER one.
-        # Globbing only the root gave a tree with a 0-byte `Mathlib/Tactic.olean`
-        # and no `Mathlib/Data/Real/Basic.olean` at all (1212 oleans against the
-        # paper tree's 3477), so every Mathlib-importing module failed with
-        # "invalid header" / "does not exist" and the sweep reported 22 REDs
-        # that were entirely about its own environment.  Bean `qou-tpdg`.
+        # BOTH package locations are included deliberately, PAPER FIRST.  The
+        # root Lake workspace has `.lake/packages/` and each paper package has
+        # its own `<paper>/lean/.lake/packages/`; the documented sandbox restore
+        # (AGENTS.md §"Mathlib cache 403 fallback") fills the PAPER one, so that
+        # is the tree it GUARANTEES.
+        #
+        # The root tree is not reliably broken -- it is not reliably POPULATED,
+        # which is worse for a gate.  Measured on two containers: on one, root
+        # held a 0-byte `Mathlib/Tactic.olean`, no `Mathlib/Data/Real/Basic.olean`
+        # and 1212 oleans, so every Mathlib-importing module failed with
+        # "invalid header" / "does not exist" and this sweep reported 22 REDs
+        # that were entirely about its own environment.  On another, root was a
+        # 6990-olean SUPERSET of the paper tree with both files byte-identical,
+        # and the same code was fine.  Globbing the root alone therefore makes
+        # this gate correct by luck of environment.  Bean `qou-tpdg`.
         pkg_roots = ([str(p) for p in ROOT.glob("content/*/lean/.lake/packages/*/.lake/build/lib/lean")]
                      + [str(p) for p in ROOT.glob(".lake/packages/*/.lake/build/lib/lean")])
         lean_path = ":".join([str(shadow)] + pkg_roots + siblings + [str(oleans)])
