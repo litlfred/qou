@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-05T07:18:08Z
+updated_at: 2026-09-05T08:56:43Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -175,3 +175,45 @@ sign. Quote the invariance, not the table.
 the accumulator at all, the sign cannot be traced to anything in the seminormal
 family — the free-choice candidates worth checking are the ones OUTSIDE it (the
 LP objective's ordering, an orientation, a `w_0` convention).
+
+
+## Step 3 done — and the builder was float64 in three places, not one (2026-09-05, PR #6794)
+
+I had recorded the remaining defect as "the builder is still float64
+(`math.sqrt`, `1.0` literals, no `mp.dps`)" and framed leaving it as a
+deliberate ordering choice. Both were wrong: NO-FLOAT64 makes it a defect, not
+a deferred nicety, and the description named only the smallest of three.
+
+| defect | evidence |
+|---|---|
+| `Q`/`Q_INV`/`HA` from `q_parameter` are Python **floats** — float64 from the INPUTS | `type(qp.Q).__name__ == 'float'` |
+| `mp.dps` is **15** on a bare import — float64's significand, so mpf without raising it buys nothing | `mp.dps == 15` after import |
+| **124 of 193** ysn entries (64 %, max dim 2310) were `scipy` `csr_matrix` — float64 by construction, kernels reject `dtype=object` | measured over `_PARTITION_TABLE` |
+
+Fixed: exact twins `Q_MP`/`Q_INV_MP`/`HA_MP`, `mp.sqrt`, and
+`mp.workdps(_precision.COMPUTE_DPS)` (70, read not hardcoded, restores the
+caller's dps on exit). `_ExactCOO` replaces `csr_matrix` — deliberately not a
+scipy type so `issparse` is False for it and no consumer can route it into
+float64 BLAS.
+
+The consumer dispatch moved with it: all three accumulators keyed on the
+RUNNING matrix's dtype, which starts as `np.eye` (float64), so an exact sigma
+would have sent the first crossing into a scipy call that raises. They key on
+sigma now, and the COO accumulator is `dtype=object` rather than
+`zeros_like(M_run)`.
+
+**Verified.** Against the closed form derived in `qou-4m9u`
+(`-1/(q(q^2+1))` at rho = -2): **9.5e-52**, was ~1e-16. Braid audit exit 0
+with the Python rows at `4.0e-50 / 3.2e-50` against Rust's `1.2e-50 / 2.0e-50`
+— previously `1.49e-16 / 1.52e-16`.
+
+**A hypothesis of mine, REFUTED.** I proposed that main's "17.3 % off at
+deuterium" banner was the sparse path, since the 1e-14 merged in #6708 came
+from k = 4,5,6 which carry zero sparse partitions. Measured at k = 7 (2 sparse)
+and k = 8 (12 sparse): rel **1.7e-14** and **8.9e-15** — same order. The
+float64 defect does NOT account for 17.3 %.
+
+**Still open, and not mine to close without measuring:** that banner's *braid*
+claim is stale (#6708 fixed it; the audit exits 0), so it tells a user their
+numbers are invalid when they are not. The 17.3 % half compares fallback
+against kernel — a different comparison from the one above, unrun here.
