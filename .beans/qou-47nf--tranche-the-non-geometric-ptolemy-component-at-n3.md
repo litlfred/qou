@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-09-05T16:44:59Z
+updated_at: 2026-09-05T19:26:04Z
 ---
 
 OPENED 2026-09-05. Route E's ONE surviving branch, now a named held construction
@@ -757,3 +757,73 @@ u, or use Singular's sat(). Note the ORIGINAL non-zero condition already asserts
 Ptolemy coordinate is invertible -- the reduction evidently destroyed that constraint
 rather than preserving it, which is itself worth understanding before trusting the
 technique again.
+
+
+## 2026-09-05 (night) — RESOLVED: the Borromean rings DO carry complex-type reps, with a witness
+
+### (xl) The result, and what makes it reportable this time
+
+msolve on the SATURATED class-1 system (12 vars + u, 18 eqs + saturation), char 32003:
+
+    Dimension of quotient: 4
+    [0, [32003, 13, 4, [...], [1, [[4, [30342,592,8722,2516,1]], [0,[1]], ...
+
+Zero-dimensional, DEGREE 4, full RUR — monic t^4 + 2516t^3 + 8722t^2 + 592t + 30342,
+factoring into two quadratics, so the points live in GF(p^2).
+
+THE ROUND TRIP — the check the first attempt failed:
+
+    28 coordinates lifted
+    original equations FAILING: 0 of 34
+    zero coordinates: NONE
+
+A point lifted through all 16 substitutions satisfies EVERY original Ptolemy equation
+exactly in GF(32003^2), with no coordinate zero. This morning's 18 points all failed this,
+one coordinate reaching 2.75e+471.
+
+Class 1 is NON-TRIVIAL (H2_class [0,0,0,0,1,0,2,0,0,0,0,0,0,1,0,0], entries 1 and 2 in
+Z/3). By the obstruction argument, nothing in a non-trivial class is self-dual. So L6a4 —
+the manifold the mass construction uses — carries complex-type PGL(3,C) representations.
+
+### (xli) The two runs together: the junk WAS the shortcut
+
+    unsaturated   dim 5, degree 18   almost entirely the spurious {A = 0} locus
+    saturated     dim 0, degree 4    the genuine points
+
+Saturation removed a five-dimensional spurious component and left four honest solutions.
+That is why the WRONG answer took 4 minutes and the RIGHT one took hours: removing the
+degenerate locus removes the easy place for the solver to land. "Saturate and re-run" is
+not a cheap repair; expect the sound version to be dramatically harder.
+
+### (xlii) THE ENGINE MATTERS MORE THAN I ASSUMED
+
+    Singular std, unsaturated c1     timed out at 39 min
+    msolve,       unsaturated c1     ~4 min, full RUR
+    Singular std/sat, saturated      halt 1 + timeout at 3-8 GB (six runs)
+    msolve,       saturated          SOLVES
+
+I routed every saturation attempt through Singular because sat() lives there — and let
+that pull the SOLVING there too. Six failed runs were failing on the engine, not the
+mathematics. The u-equation formulation (I + u*prod(vars) - 1) needs no sat() at all and
+goes straight to msolve. Do that first next time.
+
+### (xliii) TWO SILENT BUGS, both caught by impossible arithmetic
+
+    numer() adding {A=0}       printed dim 5 degree 18 over Q   -> lift blew to 1e471
+    sat(I,v)[1] taking gen 1   printed GB 1 dim 11 NON-EMPTY    -> dim cannot grow
+
+Neither tool errored; both exited 0 with a confident sentence. The calibration that should
+have caught the first (4_1) PASSED under the broken reduction, because 4_1's solutions
+avoid the spurious locus and because I only ever tested that the guard ACCEPTS good
+points. test_guard_rejects_spurious.py now pins the rejecting direction.
+
+### (xliv) CAVEATS still attached
+
+  * MOD 32003. Proper mod p => proper over Q unless p is bad => non-empty over C by the
+    Nullstellensatz. Strong, not a proof. Char-0 run in flight.
+  * Degree 4 is the mod-p count; over C it may differ.
+  * The obstruction argument's two topological inputs are GGZ results carried as
+    HYPOTHESES. Only its Z/3 arithmetic is lean-verified.
+  * Complex type is the NECESSARY condition the Sym^2 gate demands, NOT sufficient.
+    Nothing here connects these representations to the eightfold's N=3 problem.
+  * Classes 2-13 unsolved (c2 segfaulted on msolve's internal ceiling).
