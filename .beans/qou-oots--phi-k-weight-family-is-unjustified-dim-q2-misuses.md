@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-09-05T06:35:54Z
+updated_at: 2026-09-05T08:12:25Z
 ---
 
 ## 2026-09-05 — requirement derivation + prune + discriminator (in-progress; the CHOICE is open, the PRUNE is not)
@@ -100,3 +100,54 @@ substitute a good argument for a derivation. What would close it, in order:
   (c) more than four nuclei; max/min over n in {6,9,9,12} cannot resolve 1.1%.
 PRACTICAL OUTPUT: no k=3 knot conclusion should be quoted without naming the
 weight family it was computed under.
+
+## 2026-09-05 (second session, parallel) — ROUTE 1 of §7, measured: the `V^{⊗n}` share is a THIRD measure, and at `dim V = 2` it is NULL on depth 3
+
+**Probe:** `computations/probes/schur_weyl_share_is_a_third_measure_probe.py`, 6/6, exit 0, mpmath 50 dps, zero builtin-float coercions, no witness. Reached independently of the requirements/discriminator work — this is §7 route 1, which that pass did not attempt.
+
+### F1 — §2's identification is CONFIRMED, independently
+
+The Molien family sums to **exactly 1** at n = 2..7 (check A), and the change of variables closes analytically: with `[k]_Q = (Q^k−1)/(Q−1) = q^{k−1}[k]_q` at `Q = q²`, `Σ_cells h = n(λ)+n(λ′)+n` and `κ_λ = n(λ′)−n(λ)`,
+
+    M_{n,Q}(λ) = Q^{b(λ)} f^λ / Π[h]_Q = f^λ q^{−κ_λ} / Π[h]_q
+
+which is the Molien family. So **Molien = Féray–Méliot q-Plancherel** stands on two independent legs now.
+
+### F2 — but the Molien family is NOT the `V^{⊗n}` share
+
+§7 says *"if that object is `V^{⊗n}` … the share is `f^λ d_q(λ)/[n]_q!`-shaped (Molien) and the question is closed."* **"Shaped" is right; "is Molien" is wrong.** Two different measures, each normalised on its own index set (checks A and B both return exactly 1), so neither is a mis-normalisation of the other:
+
+| | weight | index set | normaliser |
+|---|---|---|---|
+| **`V^{⊗n}` share** | `f^λ · d_q^{SU(N)}(λ)`, `d_q^{SU(N)} = Π[N+c]_q/[h]_q` | λ with **≤ N rows** | `[N]_q^n` |
+| **Molien** | `f^λ · q^{−κ_λ} · d_q^{hook}(λ)`, `d_q^{hook} = [n]_q!/Π[h]_q` | **all** λ | `[n]_q!` |
+
+Pairwise max per-λ deviation at N=3, n=6: share↔Molien **0.2716**, share↔Plancherel **0.2206**, Molien↔Plancherel **0.0623** (check E). Three distinct measures.
+
+### F3 — the one that bites: at N = 2 the module share is EXACTLY zero on depth ≥ 3
+
+Mass on partitions with ≥ 3 rows (check C):
+
+| | n=3 | n=6 | n=9 |
+|---|---|---|---|
+| `V^{⊗n}` share, **N=2** | **0.0** | **0.0** | **0.0** |
+| `V^{⊗n}` share, N=3 | 0.035464334084 | 0.306778844906 | 0.602339318062 |
+| Molien (all λ) | 0.223435033655 | 0.902265160825 | 0.997608919308 |
+
+because `[N+c]_q = [0]_q = 0` at the cell of content `−N`. The corpus asserts the state space is `V^{⊗3A}` with **`dim V = 2`** (`content/…/nuclear-interactions/per-nucleon-channel-decomposition.md:13` for `V^{⊗3A}`; `computations/state_space_natural_three_sym2_gate.py:8-17` for `dim V = 2` "by the Descartes condition"). Under that reading the module-share measure **vanishes identically on the depth-3 stratum, so Φ₃ ≡ 0 by this bean's own R1** (`phi_eq_zero_of_weights_vanish`).
+
+**So route 1 at N = 2 does not select between the survivors — it excludes the module-share reading for Φ₃**, by exactly the row-cap invariant R1 uses to retire `y_λ`. The route survives only at **N ≥ 3**.
+
+### F4 — the second horn is mis-specified, and the missing candidate is classical Plancherel
+
+`End(V^{⊗n})` is not a rival state space: under q-Schur–Weyl `H_n(q) ≅ End_{U_q sl_N}(V^{⊗n})` (Jimbo) it is the **operator algebra of the same pair**, which the corpus states in Lean (`QOU/MassEndomorphism/MassLeftMulEndomorphism.lean`, `QSchurWeyl.lean:11`). Its block share is `dim M_{f^λ}/dim H_n(q) = (f^λ)²/n!` — **classical Plancherel, the candidate §7 does not list**. It sums to 1 by Burnside at every n (check D) and is **q-independent**, which is its own objection for a substrate observable but is not the row-cap one.
+
+And **Féray–Méliot §6.1 states this pairing outright**, in the paper §2 already cites — `library/arxiv-1001.2180v2/sections/sec-023-61-decomposition-of-tensor-representations.md`: the module gives the *Schur-Weyl measure* `f^λ·dim U_λ/N^n`, *"the same construction with the regular representation gives rise to the Plancherel measure"*, and *"the Schur-Weyl measure charges only the Young diagrams whose lengths are smaller than N"* — F3, in the literature's own words. The term **"Schur-Weyl measure" appears nowhere outside `library/`** (0 hits in `content/`, `docs/`, `computations/`, `.beans/`).
+
+### What route 1 now turns on
+
+**Only `N`.** Not which of two families — which `N` the nucleus is a state at. At N=2 the module reading is excluded for Φ₃; at N=3 it is live and gives a measure that is neither survivor. Note `content/…/mass-theory/schur-weyl-mass-decomposition.md:19` records the corpus keeping λ with rows beyond 3, and the atom's strand count is itself disputed in-corpus (`H_{A+Z}` in `atomic-braid.md:2` vs `H_{3A}` in `schur-weyl-mass-decomposition.md:1` and `hecke/hecke_3a_weights.py:5`), with no block reconciling them.
+
+### Not established
+
+Which family Φ_k should use. Route 1 is **narrowed and partly excluded, not completed**. `d_q²/D²` is the share of neither object here — it is the RT/Verlinde weight of the `S²×S¹` Hilbert space, a third carrier again.
