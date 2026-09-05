@@ -1123,6 +1123,55 @@ ephemeral.
    Skill authors updating skill docs should refer to this rule
    rather than restating the policy in their own words.
 
+8a. **Draft → ready: SPACED RETRY ONLY. Never close-and-reopen a
+   PR to get past it** (owner ruling, 2026-09-05). Flipping a draft
+   PR to ready goes through GitHub's GraphQL API, which needs a
+   node-ID lookup, and that lookup is the thing being rate-limited
+   on this repo's shared token. So `mcp__github__update_pull_request`
+   with `draft: false` fails — often for hours — with
+
+       Failed to find pull request: API rate limit already exceeded
+       for user ID 662242
+
+   while every REST path (title, body, state, create, merge, and all
+   reads) keeps working. **Retry the same `draft: false` call, spaced
+   out — typically off a `send_later` check-in — until it lands.**
+
+   **Do NOT close the draft and create a replacement PR for the same
+   head.** It works, which is exactly why it keeps getting
+   reinvented: this session did it three times (#6526 → #6579,
+   #6649 → #6674, #6723 → #6753) before the owner ruled against it.
+   What it costs is not the API call but the record — the review
+   threads, the Copilot request, the comment history and the PR
+   number in every commit message, bean and coordination ledger that
+   already cites it all stay on the abandoned PR, and a reader who
+   follows that number lands on something marked "closed without
+   merging" when the work in fact merged. The agent-harness PR rules
+   independently forbid close-and-reopen; this ruling extends that to
+   the undraft case, which those rules do not name.
+
+   **Two measured traps when retrying.**
+
+   - **The error is not evidence the call did nothing.** A sibling
+     session measured (2026-09-05) that `update_pull_request` calls
+     which set `title` / `body` *alongside* `draft: false` returned
+     that same rate-limit error and **the title and body writes
+     landed anyway** — only the draft flip was dropped. Always
+     confirm with `pull_request_read` before re-sending a mutation,
+     or you will write it twice.
+   - **Retry `draft: false` ALONE.** Bundling other fields makes the
+     partial-success case above harder to read, and none of them need
+     the limiter.
+
+   **The fix that avoids the problem entirely: open the PR non-draft
+   in the first place** where the work is already verified.
+   `create_pull_request` takes `draft` as a plain REST field, so
+   `draft: false` at creation never touches the limiter. Rule 2 of
+   this section asks for the PR immediately, at the first commit,
+   which is usually before verification — so a draft is still the
+   right default for a tranche that is about to grow. It is the wrong
+   default for a PR you are opening at the end of the work.
+
 9. **Never delete closed/merged feature branches** (owner
    directive, 2026-06-12). Do not run `git push origin --delete
    <branch>`, do not enable auto-delete-on-merge, and do not offer
