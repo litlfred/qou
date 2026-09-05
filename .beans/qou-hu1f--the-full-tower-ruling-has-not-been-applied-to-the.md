@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T20:54:56Z
-updated_at: 2026-09-04T21:09:29Z
+updated_at: 2026-09-05T08:01:57Z
 ---
 
 Audit: [`2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`](../docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md)
@@ -328,3 +328,48 @@ The next measurement, named precisely: does anything downstream of
 the grouped ordering is a defect with a computed blast radius. If no, the two
 are simply different objects with different jobs and the only fix owed is a
 docstring on each saying so.
+
+## 2026-09-05 — ANSWERED, and my own framing above is RETRACTED
+
+**Probe:** `computations/probes/atom_intra_block_is_not_a_braid_probe.py`, 5/5, exit 0, mpmath at 60 dps, no float64, emits no witness.
+
+### What I got wrong
+
+The section above asks *"does anything downstream of `atom_braid_word_3A` depend on its intra-nucleon block **being** β_Bor?"* and offers exactly two candidates — interleaved `(σ₀σ₁⁻¹)³` and grouped `σ₀³σ₁⁻³` — asserting that **"`atom_braid_word_3A` … uses the grouped one"** at 0.82 from the Lean closed form.
+
+**That is false. The production block is neither.** Measured (proton, `include_inter=False`):
+
+| | letters | of which non-braid | `|tr_M|` | rel vs Lean `(4+h²−3h⁴−h⁶)/(h²+4)` |
+|---|---|---|---|---|
+| **REAL production block** | **11** | **2 averaged** | 1.145759692457300869689082 | **0.147409** |
+| interleaved `(σ₀σ₁⁻¹)³` = β_Bor | 6 | 0 | 0.9985621638367872659512131 | 9.06872e-72 |
+| grouped `σ₀³σ₁⁻³` | 6 | 0 | 0.1800645395355010983036299 | 0.819676 |
+
+So the corrected numbers are **11 letters, 2 averaged, 14.7 %** — not 6 letters and 82 %.
+
+### Why the question was malformed
+
+Two of the block's eleven letters are **averaged**: `σ − (h/2)·1 = (σ + σ⁻¹)/2`, which is **provably outside the image of ρ : B_n → H_n(q)**. The block is therefore **not a braid at all**, so it is not β_Bor and *cannot be* — not "is a different braid", but "is not a braid". The dichotomy the question was built on does not exist.
+
+**And this is documented in the producer's own docstring**, which I did not read before writing the claim. `mass_at_3A_proper.atom_braid_word_3A` opens with **"⚠ NAME IS A MISNOMER — this does NOT return a braid word"**, states "the returned object lies in `H_n(q)` and is **NOT** in the image of `rho`", and gives the exact count: `2A + 1` averaged letters, two per nucleon from its two `ud` pairs plus one per interface. Measured `navg = 2` for one nucleon — the docstring's own arithmetic.
+
+This is the same defect recorded **one day earlier, by me, in the commit message of the probe that established it**: *a source-reading of a word ordering is not evidence about the word.* I wrote that lesson down and then re-committed the error in the next paragraph of the same bean, because I read the construction instead of instrumenting the object.
+
+### The answer to the question as asked
+
+**Nothing downstream can depend on it, because the two routes are DISJOINT.** The mass law reaches β_Bor through the Lean-proved closed form and never through the word builder:
+
+    canonical_mass → m_p_substrate_identity_50dps.F_Bor
+                   → _h4_substrate.trM_borromean_closed(q) = (4+h²−3h⁴−h⁶)/(h²+4)
+
+All three of those files contain **zero** occurrences of `atom_braid_word_3A` (asserted by check 4, by reading them). The word builder feeds the *other* route — `tr_m_atom_zn` → `binding_canonical`, and `derived_masses`' `M(𝔥) = ρ·[|tr_M(T_w)| + tower(T_w) + tr_M(C_dim_q)]` with `T_w = atom_braid_word_3A(Z,N)`.
+
+So the disposition the bean named for the no-dependency branch is the right one: **the two are different objects with different jobs**, and what is owed is a docstring — except that `atom_braid_word_3A` already carries it, and it was the *bean* that needed correcting, not the code.
+
+### What this does NOT establish
+
+Not that the 14.7 % gap is acceptable, and not that the binding route *should* consume a non-braid object. Both are live and untouched here. Note in particular that the averaging is exactly what makes the object non-topological: by the producer's own docstring `tr_M` of it is a weighted sum of `2^(2A+1)` link invariants (32 for ²H), so **no volume, crossing number or genus may be read off it** — and all 32 branch closures for ²H were measured non-hyperbolic, `Vol = 0`.
+
+### Contamination — where the wrong figures went
+
+The "grouped / 0.82 / two competing braid words" framing is in: this bean (above, now corrected here); the body of **PR #6712**, merged to `main` as `58ab6f8563`; and my chat report of that PR. It did **not** reach any audit doc, content block, Lean file or witness — the probe committed in #6712 (`nf_vs_canonical_word_order_probe.py`) measures word-ORDER sensitivity and its five checks are unaffected; it never claims the production block is a braid.
