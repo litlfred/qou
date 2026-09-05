@@ -104,6 +104,7 @@ sys.path.insert(0, str(TOOLS))
 
 from pyhecke.gram import (  # noqa: E402
     NF_BASIS, NF_NAMES, TR_M, gram_matrix,
+    tr_m_mp_strings, gram_matrix_mp_strings,
 )
 
 
@@ -170,9 +171,32 @@ def solve_atom_lp(atom: str) -> dict:
     N = 0 if atom == "proton" else 1
     n = 3
     tr_M_atom = load_tr_M(atom, n)
-    t = np.asarray(TR_M, dtype=float)
-    G = gram_matrix()
-    n_target = tr_M_atom
+    # Decimal STRINGS, not np.ndarray and not mpf (beans `qou-ejuy`,
+    # `qou-t0rf`). `solve_operator_selection_lp` is pinned to clarabel-MPFR at
+    # 50 dps below, and it decides how to marshal its inputs like this:
+    #
+    #     if isinstance(t, np.ndarray) or not isinstance(t[0], str):
+    #         t = np.asarray(t, dtype=float)      # -> repr(float(x))
+    #
+    # so an ndarray entered as float64 and the MPFR solve was bounded by ~16
+    # digits of data rather than by its own precision. `n_target` was already
+    # an mpf and survived, which is what made the mix easy to miss.
+    #
+    # Note it is the STRING branch that preserves precision, not merely a
+    # non-float one: passing `tr_m_mp(50)` (a list of mpf) fails
+    # `isinstance(t[0], str)` and lands in the SAME float64 branch, so the
+    # obvious "use the mp variant" fix would have looked correct and changed
+    # nothing. `gram.py` provides these two for precisely this boundary.
+    t = tr_m_mp_strings(50)
+    G = gram_matrix_mp_strings(50)
+    # A STRING here too, for the same reason as `t` and `G` above. The
+    # solver's marshaller is
+    #     def _s(x): return x if isinstance(x, str) else repr(float(x))
+    # so an mpf `n_target` is narrowed to float64 even when `t` and `G` reach
+    # the solver intact. Migrating only the matrices would have left the LP's
+    # TARGET at ~16 digits while everything around it carried 50 — a half-done
+    # fix that reads as a whole one.
+    n_target = fmt(tr_M_atom)
 
     # Pin clarabel-MPFR (50 dps). This was `backend="scipy"`, pinned for
     # byte-determinism. Measured 2026-08-23: clarabel-MPFR is byte-
@@ -190,7 +214,9 @@ def solve_atom_lp(atom: str) -> dict:
             "index": i,
             "name": name,
             "word": list(NF_BASIS[i]),
-            "t_i": float(t[i]),
+            # `t` is a decimal string now, so `float()` would re-narrow
+            # exactly the value the string boundary above preserves.
+            "t_i": t[i],
             "dominant_block": lam,
             "self_conjugate": sc,
             "x_star": result.x_star[i],

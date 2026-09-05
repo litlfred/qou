@@ -273,6 +273,39 @@ The fix is the same and the parts exist (`tr_m_mp(50)`, `gram_matrix_mp(50)`).
 Not applied here — it needs its own agreement check before the switch (the
 `qou-ejuy` p-n lesson) and a regeneration, and the table run holds the checkout.
 
-- [ ] Migrate `aK_via_lp_dual_hecke_basis.py` to `tr_m_mp` / `gram_matrix_mp`,
-      verify agreement first, then regenerate. Expect the LP result to MOVE:
-      that is the point, and it is the one case here where it should.
+- [x] Migrated `aK_via_lp_dual_hecke_basis.py` — but NOT to `tr_m_mp` /
+      `gram_matrix_mp` as this item originally said, because that would not
+      have worked. `solve_operator_selection_lp` marshals its inputs like this:
+
+          if isinstance(t, np.ndarray) or not isinstance(t[0], str):
+              t = np.asarray(t, dtype=float)        # -> repr(float(x))
+          ...
+          def _s(x): return x if isinstance(x, str) else repr(float(x))
+
+      It is the **string** branch that preserves precision, not merely a
+      non-ndarray one. Passing `tr_m_mp(50)` — a list of mpf — fails
+      `isinstance(t[0], str)` and lands in the SAME float64 branch, so the
+      obvious "use the mp variant" fix would have looked correct and changed
+      nothing at all. `gram.py` ships `tr_m_mp_strings()` /
+      `gram_matrix_mp_strings()` for exactly this boundary, and those are what
+      it uses now.
+
+      `n_target` needed the same treatment and is the half-done-fix trap: it
+      was already an mpf and so LOOKED fine, but `_s` narrows an mpf just as
+      readily as an ndarray. Migrating only `t` and `G` would have left the
+      LP's target at ~16 digits while everything around it carried 50. It is
+      `fmt(tr_M_atom)` now, and it is only ever passed to the solver — no
+      downstream arithmetic — so a string is safe there.
+
+      Agreement checked first, per this bean's own lesson: `TR_M` vs
+      `tr_m_mp(50)` differ by 5.42e-17 and `gram_matrix()` vs
+      `gram_matrix_mp(50)` by 2.08e-16 — float64 rounding, no hidden
+      convention difference like the `-h/2` one in `build_atom_nf_mp`.
+
+      `"t_i": float(t[i])` in the emitted row is now `t[i]` — the string —
+      since `float()` there would re-narrow precisely what the boundary
+      preserves.
+
+- [ ] Regenerate `a-K-via-lp-dual-hecke-basis.witness.json`. Deferred: the
+      `qou-uiut` table run holds the checkout. Expect the LP result to MOVE —
+      that is the point, and this is the one case in step 6 where it should.
