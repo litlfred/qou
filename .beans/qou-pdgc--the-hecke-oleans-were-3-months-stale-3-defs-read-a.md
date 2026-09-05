@@ -85,3 +85,51 @@ Rebuilding the other 931 stale modules. That is a long compute job with its own
 failures to triage (the 37-module figure above suggests some will not build),
 and it should be a deliberate campaign rather than a side effect of this change.
 The audit makes the backlog visible and ranked; nothing here consumes it.
+
+## Partial drain, 2026-09-05 — 798 modules attempted, 798 ok
+
+Ran `scripts/lean-direct-cone.sh --all -k -j3` for ~1h40m. Report preserved at
+`docs/audits/2026-09-05-lean-corpus-build-survey.tsv`.
+
+| | |
+|---|---|
+| attempted | **798** of 2669 (30 %) |
+| `ok` | **798** |
+| errors | **0** |
+| `blocked` | 0 |
+
+**Stopped deliberately, not by failure.** The rate fell from ~7 modules/min to
+~1.6/min as it moved into heavier modules — extrapolating, the remaining 1871
+would take 20+ hours, which is not a sensible way to confirm what 798
+consecutive passes already indicate, especially while it was blocking a
+higher-value check (`qou-yos9`).
+
+## The sample is biased, and the bias runs the wrong way for the conclusion
+
+`lean_cone_build.py` walks in **topological order**, so the first 798 are the
+**shallowest** modules — fewest QOU dependencies. Confirmed by the head of the
+report: it starts `QOU.scratch_matrix`, `QOU.qou_canonical_action`,
+`QOU.variational_equations`, which are alphabetically last, so this is dependency
+order and not a name sweep. Deep modules have strictly more ways to fail, and the
+corpus's known "37 modules silently stopped compiling" (from the 2026-04-25 CI
+failure) concerns exactly the kind of module not yet reached — nothing under
+`QOU/Mathlib/Schensted*` was touched, for instance.
+
+**So this does not license "the corpus compiles".** What it licenses is narrower
+and still useful:
+
+- For the shallowest 30 %, the never-built and stale populations measured in
+  `qou-pdgc` are a **cold cache**, not broken files. Zero of 798 was a source
+  defect.
+- The falsifier set when this started — "near-100 % ok means it is compute, not
+  repair; stop rather than burn hours" — fired in that direction for this slice,
+  and the run was stopped on it as planned.
+- A full answer needs the remaining 1871, and specifically the deep ones. That is
+  a compute campaign, still not consumed here.
+
+## What the drain did buy, beyond the number
+
+Rebuilding oleans in dependency order repaired the class of defect this bean was
+opened for. 15 modules were already refreshed by targeted cone runs earlier in the
+session; this added ~780 more. Any `#print axioms` taken against those now reads
+source rather than a months-old cache.
