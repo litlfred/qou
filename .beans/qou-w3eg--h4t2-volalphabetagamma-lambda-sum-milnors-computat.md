@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-05T07:31:45Z
+updated_at: 2026-09-05T07:43:18Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -648,3 +648,40 @@ Scope-(a) structural observation. **Asserts nothing about the obtuse volume iden
 **Live options are therefore two, not four:** (A) the signed/polar route, whose Λ-side is already proved (`lob_sum_eq_reflected`, all arguments in `(0,π/2]`) and whose geometric side needs one a.e. set identity of the `milnorWedges_ae_eq_inscribedTriangle` kind; (B) change of variables moving the angle dependence into the integrand (Mathlib `Jacobian.lean:1097`), after which the `ComplexDilogarithmDeriv` template applies — but note the integrand is singular at the circle (vertices lie on it), so the dominating function needed for the dominated-convergence step must control that boundary, and corpus finiteness input is acute-only. Rivin/Schläfli (`library/arxiv-math-0502543v2`) remains unread and uncosted.
 
 **Neither closes the case**: `idealTet_eq_chimney`'s `α,β,γ < π/2` is a set equality outside both.
+
+
+## The obtuse decomposition target is FIXED — and the obvious approach is dead (2026-09-05)
+
+Option (A)'s remaining step was "one a.e. set identity of the `milnorWedges_ae_eq_inscribedTriangle` kind". [`computations/milnor_obtuse_wedge_decomposition_probe.py`](computations/milnor_obtuse_wedge_decomposition_probe.py) fixes *which* identity, and kills the obvious guess first. mpmath 40 dps, no float64, no witness, anchor-free.
+
+### 🛑 `wedgeAt` at an obtuse half-angle is NOT "the wedge with a minus sign"
+
+Its body (`OrthoschemeRotation.lean:153`) is `{w | ⟨w,u⟩ < R cos p ∧ |⟨w,v⟩| < ⟨w,u⟩·tan p}`. For `p > π/2`, `tan p < 0`, so the second conjunct **forces `⟨w,u⟩ < 0`**, and the first is then unbounded below. Measured: members at `|w| = 2, 10, 100, 1000` for `p = 7π/12, 2π/3, 3π/4`, and the near-side point at `|w| = 0.1` correctly excluded.
+
+So the obtuse `wedgeAt` is an **unbounded region opening away from the circumcentre**, not the isoceles triangle its docstring describes. Substituting an obtuse angle into the existing definition gives a *different, infinite set*. **The acute hypotheses throughout the wedge machinery are structural, not technical** — worth knowing before writing Lean rather than after.
+
+### The decomposition that does hold
+
+With `γ` obtuse the circumcentre lies outside, across the `γ`-chord. The replacement for the degenerate `γ`-wedge is the wedge in the **opposite direction** with the **acute** half-angle `π − γ = α + β`, and it is **subtracted**:
+
+    inscribedTriangle R t α β γ
+      =ᵐ  ( wedgeAt R (t+2γ+α) α  ∪  wedgeAt R (t+2γ+2α+β) β )
+            \  wedgeAt R (t+γ+π) (π−γ)
+
+**Zero mismatches over ~117,000 tested grid points** — 121×121 grids over `[−1.2,1.2]²`, 4 obtuse triples (`γ` = 120°, 120°, 135°, 129°) at 2 rotations, excluding points within 1e-12 of any defining line (the identity is a.e. only).
+
+### Why this makes option (A) bounded
+
+Every half-angle on the right — `α`, `β`, `π−γ` — is **acute** when `γ` is obtuse. That is the *set-level* analogue of `lob_sum_eq_reflected` (`IdealTetObtuseReduction.lean:82`), which already records exactly this on the Λ side and is already proved. So:
+
+- the existing acute wedge machinery (`hypVolume_chimney_wedgeAt`, which needs `ψ < π/2`) applies to **all three pieces unchanged**;
+- **the minus sign lives in the set algebra**, not in any new integral;
+- no new analytic object is required — which is the contrast with option (B), whose dominating function must still tame the boundary singularity at the circle.
+
+### Remaining work for option (A), now concretely stated
+
+1. The a.e. set identity above, in Lean. Reuses `chordHalfplane`, `wedgeAt`, `rotL`, and the `Measure.addHaar_submodule` null-line trick already used by `milnorWedges_ae_eq_inscribedTriangle`.
+2. A measure-subtraction step: `volume (X \ Y) = volume X − volume Y` needs `Y ⊆ X` and `volume Y ≠ ⊤`, so the containment `wedgeAt R (t+γ+π) (π−γ) ⊆ W_α ∪ W_β` has to be proved too (the probe confirms it pointwise but does not prove it).
+3. Composition with the acute `hypVolume_chimney_wedgeAt` and `lob_sum_eq_reflected` to land `Λ(α)+Λ(β)+Λ(γ)`.
+
+**Still does not close the case:** `idealTet_eq_chimney`'s `α,β,γ < π/2` (`IdealTetEqChimney.lean:169`) is a set equality outside all of this, and remains untouched.
