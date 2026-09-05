@@ -27,12 +27,20 @@ class SchurWeylSetup (R : Type*) (q : R) (n : ℕ) where
   V : Type*
   /-- The Tannaka–Krein Hopf algebra `H = Aut⊗(τ)`. -/
   H : Type*
-  /-- The Hecke-algebra carrier `H_n(R, q)`, realised as the
-      centraliser `End_H(V^{⊗n})`. -/
+  /-- The Hecke-algebra carrier `H_n(R, q)`, whose image in `End_H(V^{⊗n})`
+      is the centraliser.  Note the two are the *same* only when `N ≥ n`;
+      see `centraliser_unit` below. -/
   HeckeAlg : Type*
-  /-- The centraliser isomorphism `H_n(R, q) ≅ End_H(V^{⊗n})` provides,
+  /-- The centraliser **surjection** `H_n(R, q) ↠ End_H(V^{⊗n})` provides,
       in particular, a designated centraliser element (the image of `1`)
-      — concrete witness that the carrier is inhabited. -/
+      — concrete witness that the carrier is inhabited.
+
+      It is a surjection, not an isomorphism, unless `N ≥ n` (`N = dim V`):
+      below that its kernel is the span of the blocks with more than `N`
+      rows.  This framework runs at `N = 2` with `n = 3A`, where the image
+      is `TL_n(q)` of dimension `Catalan(n)` against `dim H_n = n!`.  The
+      inhabitedness witness is unaffected — the image of `1` exists either
+      way — so nothing below this line changes. -/
   centraliser_unit : HeckeAlg
   -- Ref: Schur–Weyl duality, Tannaka–Krein reconstruction
 
