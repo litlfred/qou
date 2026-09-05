@@ -91,3 +91,13 @@ same letter.
 
 
 ## 2026-09-04 (qou-hfjc) — the wrong-signed asymmetry has a derived explanation: it is the writhe factor nu^e of the UN-normalised trace. The forced link-invariant normalisation (nu = q⁻², mu = [2]_q, both from the two Markov moves) gives every single-crossing bond the weight q/(q²+1), so κ_derived = 0 identically and the law is pure bond counting — the shape this bean measured as empirically best (p5–p95 1.1809, reproduced to 5 figures). Lean sorry-free; see docs/audits/2026-09-04-forced-link-normalisation-bond-counting.md.
+
+## 2026-09-05 — synthesis landed
+
+`docs/audits/2026-09-05-binding-law-arc-synthesis.md` §6 item 2 carries this
+bean's result: the derived isospin asymmetry has the wrong sign and layout-free
+bond counting beats every isospin-resolved variant. Recorded there alongside the
+route the corpus has already CLOSED for the symmetry energy (`qou-ubsl`: the
+`l(lambda) > 2` row cap gives SU(4) labels zero weight), which is why the
+dominant missing term has no obvious algebraic source. That is the honest
+headline of what remains.
