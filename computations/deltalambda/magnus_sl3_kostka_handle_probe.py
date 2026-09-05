@@ -93,6 +93,11 @@ def pad(lam, ln):
     return tuple(lam) + (0,) * (ln - len(lam))
 
 
+def conjugate_shape(lam):
+    """λ' — the transpose partition."""
+    return tuple(sum(1 for p in lam if p > j) for j in range(lam[0]))
+
+
 def horizontal_strips(lam, size):
     """All ν ⊆ λ with λ/ν a horizontal strip of the given size (interlacing λ_i ≥ ν_i ≥ λ_{i+1})."""
     ln = len(lam)
@@ -176,6 +181,35 @@ def sparse_gen_k(n, i, q, states, index):
     return cols
 
 
+def conjugate_gens(cols, q, D):
+    """φ(σ_i) = (q−q⁻¹)·I − σ_i, the bar-automorphism generator-wise.
+
+    WHY THIS GIVES THE TRANSPOSED SHAPES. H_n(q) carries the automorphism φ: σ_i ↦ −σ_i⁻¹.
+    It IS an automorphism: from σ_i² = (q−q⁻¹)σ_i + 1, multiplying by σ_i⁻² gives
+    σ_i⁻² = 1 + (q−q⁻¹)σ_i⁻¹, so τ_i = −σ_i⁻¹ satisfies τ_i² = (q−q⁻¹)τ_i + 1 — the same
+    Hecke relation — and the braid relations are preserved. It exchanges the two 1-dim reps
+    (σ_i ↦ q and σ_i ↦ −q⁻¹), i.e. λ=(n) ↔ λ=(1ⁿ), and in general χ_{λ'}(a) = χ_λ(φ(a)).
+
+    So running the ≤3-ROW inversion on the φ-transformed generators yields the ≤3-COLUMN
+    characters of the original element — no new machinery, and the same cost.
+
+    φ commutes with the word-reversal anti-involution * (both fix each generator up to a scalar
+    and a constant), so φ(X*X) = φ(X)*φ(X): the transformed run computes a genuine positive
+    majorant of the transformed element, not a signed quantity.
+
+    Crucially σ_i⁻¹ = σ_i − (q−q⁻¹) is again 2-sparse per column, so the kernel is unchanged.
+    """
+    qq = q - 1 / q
+    out = []
+    for col in range(D):
+        d = {}
+        for row, c in cols[col]:
+            d[row] = d.get(row, mp.mpf(0)) - c
+        d[col] = d.get(col, mp.mpf(0)) + qq
+        out.append(tuple((r, c) for r, c in d.items() if c != 0))
+    return out
+
+
 def apply_gen(cols, v, D):
     w = [mp.mpf(0)] * D
     for col in range(D):
@@ -186,13 +220,19 @@ def apply_gen(cols, v, D):
     return w
 
 
-def sector_majorant_k(n, mu, gens, q):
-    """tr_{W_μ}(X* X) = ‖X|_{W_μ}‖_F² for X = ρ·Ω₂^P, column by column (Ř symmetric — gated below)."""
-    _assert_dps(f"sector_majorant_k(mu={mu})")
+def sector_majorant_k(n, mu, gens, q, conj=False):
+    """tr_{W_μ}(X* X) = ‖X|_{W_μ}‖_F² for X = ρ·Ω₂^P, column by column.
+
+    conj=True applies φ: σ_i ↦ −σ_i⁻¹ to every generator first, which turns the ≤3-ROW answer
+    into the ≤3-COLUMN answer for the untransformed element (see conjugate_gens).
+    """
+    _assert_dps(f"sector_majorant_k(mu={mu}, conj={conj})")
     states, index = weight_states(n, mu)
     D = len(states)
     ngen = max(gens) + 1
     G = [sparse_gen_k(n, i, q, states, index) for i in range(ngen)]
+    if conj:
+        G = [conjugate_gens(g, q, D) for g in G]
     c = 4 / (q + 1 / q) ** 2
     rev = list(reversed(gens))
     total = mp.mpf(0)
@@ -214,14 +254,14 @@ def sector_majorant_k(n, mu, gens, q):
     return total, D
 
 
-def chi_by_kostka(n, k, gens, q, verbose=False):
+def chi_by_kostka(n, k, gens, q, verbose=False, conj=False):
     """Every χ_λ(X*X) with ≤ k rows, by inverting tr_{W_μ} = Σ_λ K_{λμ}·χ_λ in dominance order."""
     shapes = partitions_maxlen(n, k)                       # both the λ and the μ index set
     order = sorted(shapes, key=lambda s: pad(s, k), reverse=True)   # dominance-compatible
     K = {(l, m): kostka(l, m) for l in order for m in order}
     tr = {}
     for m in order:
-        val, D = sector_majorant_k(n, m, gens, q)
+        val, D = sector_majorant_k(n, m, gens, q, conj=conj)
         tr[m] = val
         if verbose:
             print(f"      tr_W{m} done (dim {D})", flush=True)
@@ -254,7 +294,7 @@ def kostka_dimension_check(n, k):
     return worst
 
 
-def gate(A, k, q):
+def gate(A, k, q, conj=False):
     """n=6 is a COMPLETE gate: every ≤3-row shape checkable 3 ways. Returns (worst_rel, rows)."""
     n = 3 * A
     Z, N = A // 2, A - A // 2
@@ -262,10 +302,14 @@ def gate(A, k, q):
     ngen = max(gens) + 1
     L = len(gens)
     sV, _ = reflection_generators(n, ngen, q)
-    chi, _K, order = chi_by_kostka(n, k, gens, q)
+    chi, _K, order = chi_by_kostka(n, k, gens, q, conj=conj)
     worst = mp.mpf(0)
     rows = []
-    for lam in order:
+    for key in order:
+        # conj=True computes χ_{λ'}, so `chi` is still keyed by the ≤3-ROW shape while every
+        # reference must be evaluated at its TRANSPOSE. Keeping the two names distinct: reusing
+        # one for both silently looks up the wrong character.
+        lam = conjugate_shape(key) if conj else key
         refs = {}
         _pg, d = base.block_structure(lam)
         if d <= DIM_CAP:
@@ -279,7 +323,7 @@ def gate(A, k, q):
             hi, _dW, _as = _sl2_sector(n, kk, gens, q)
             lo = (_sl2_sector(n, kk - 1, gens, q)[0] if kk > 0 else mp.mpf(0))
             refs["sl2"] = mp.re(hi) - mp.re(lo)
-        got = chi[lam]
+        got = chi[key]
         for nm, ref in refs.items():
             den = abs(ref) if abs(ref) > mp.mpf(10) ** -40 else mp.mpf(1)
             worst = max(worst, abs(got - ref) / den)
@@ -293,6 +337,8 @@ def main():
     ap.add_argument("--k", type=int, default=3)
     ap.add_argument("--dps", type=int, default=65)
     ap.add_argument("--verbose", action="store_true")
+    ap.add_argument("--conjugate", action="store_true",
+                    help="apply phi: sigma_i -> -sigma_i^-1, giving the <=k-COLUMN shapes instead")
     args = ap.parse_args()
     global _WANT_DPS
     _WANT_DPS = args.dps
@@ -313,7 +359,7 @@ def main():
 
     # --- gate 2: n=6, every shape three independent ways ---
     print(f"\n  [gate] A=2 (n=6): every ≤{args.k}-row shape vs seminormal / Burau / sl_2")
-    worst, rows = gate(2, args.k, q)
+    worst, rows = gate(2, args.k, q, conj=args.conjugate)
     for lam, d, got, refs in rows:
         print(f"    {str(lam):<12} dim {d:>3}  χ_λ(X*X) = {mp.nstr(got,10):>16}   checked vs {refs}")
     ok = worst < mp.mpf(10) ** -(args.dps // 2)
@@ -331,7 +377,11 @@ def main():
         Z, N = A // 2, A - A // 2
         gens = [int(t[2]) for t in atom_braid_word_3A(Z, N)]
         print(f"[sl{args.k}] A={A} (n={n}) — every λ with ≤ {args.k} rows")
-        chi, _K, order = chi_by_kostka(n, args.k, gens, q, verbose=args.verbose)
+        chi, _K, order = chi_by_kostka(n, args.k, gens, q, verbose=args.verbose,
+                                       conj=args.conjugate)
+        if args.conjugate:
+            chi = {conjugate_shape(l): v for l, v in chi.items()}
+            order = [conjugate_shape(l) for l in order]
         print("     λ                dim    b(λ)   χ_λ(X*X)          per-dim        new?")
         for lam in sorted(order, key=lambda s: sum(s) - s[0]):
             _pg, d = base.block_structure(lam)
