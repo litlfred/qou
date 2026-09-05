@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-09-05T16:16:20Z
+updated_at: 2026-09-05T16:44:59Z
 ---
 
 OPENED 2026-09-05. Route E's ONE surviving branch, now a named held construction
@@ -699,3 +699,61 @@ Run with -v 1 and READ THE LOG; without -v 1 the log is 0 bytes and says nothing
     of the same kind already held for 4_1.
   * Classes 4-13 reduced (9 of 13 done); not yet solved.
   * Degree 18 counts a generic linear section, NOT representations.
+
+
+## 2026-09-05 (late) — 🛑 RETRACTION: the L6a4 non-emptiness result is NOT established
+
+### (xxxv) The FKR reduction as I implemented it is NOT solution-faithful
+
+The substitution q -> numer(q.subs(x, -B/A)) MULTIPLIES THROUGH BY A POWER OF A, which
+ADDS the locus {A = 0} to the variety. Unless the ideal is saturated by A, the reduced
+system is a SUPERSET of the true image, not a faithful presentation.
+
+Measured on L6a4 class 1: 4 of the 16 substitutions divide by a non-constant expression.
+
+  step  0  x0  = num/(x1*x10*x11*...*x9)      -- ALL 26 other coordinates
+  step 13  x19 = num/(x1*x4)
+  step 14  x23 = num/(x2*x4)
+  step 15  x11 = num/(x2*x4*x8)
+
+And ALL 18 roots of the degree-18 RUR lift to points where those denominators vanish
+(x0 reaches 2.75e+471). So the 5-fold slice landed ENTIRELY on spurious locus.
+
+### (xxxvi) WHAT IS RETRACTED
+
+  RETRACTED  "L6a4 class 1 is non-empty"            -- true of the REDUCED system only
+  RETRACTED  "the Borromean rings carry complex-type PGL(3,C) representations"
+  RESCOPED   "dim 5, degree 18, over Q"             -- describes the reduced system,
+                                                       on what appears to be a spurious
+                                                       component
+
+The mod-p and char-0 computations were correct as computations. What was wrong was my
+inference from them to the ORIGINAL variety.
+
+### (xxxvii) WHAT SURVIVES
+
+  * The 4_1 result. Computed on the UNREDUCED 7-variable system, exact, and independently
+    reproduced twice. Untouched.
+  * The obstruction argument (non-trivial class => not self-dual), arithmetic core
+    lean-verified.
+  * FKR affine-unit elimination as a TECHNIQUE -- but it must saturate.
+
+### (xxxviii) THE LESSON — a calibration that PASSES is not proof of soundness
+
+The 4_1 calibration passed at every stage: same solution count, same characters, clean
+lift. It did not cover this failure mode, because on 4_1 the slice happened to land on a
+GENUINE component. The defect only appears when a slice lands on spurious locus, which
+4_1 never exercised.
+
+The failure was caught by an INDEPENDENT DOWNSTREAM CHECK -- the lift blowing up to
+1e471 -- not by the calibration. Three times today an external consistency check caught
+what re-reading my own reasoning did not: the msolve log line, the Nullstellensatz, and
+now the lift residual.
+
+### (xxxix) THE FIX
+
+Saturate. Either add u * (product of all denominators A_i) - 1 = 0 with a fresh variable
+u, or use Singular's sat(). Note the ORIGINAL non-zero condition already asserts every
+Ptolemy coordinate is invertible -- the reduction evidently destroyed that constraint
+rather than preserving it, which is itself worth understanding before trusting the
+technique again.
