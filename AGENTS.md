@@ -4888,6 +4888,46 @@ dropped the olean count (`find .lake/packages/mathlib -name '*.olean' | wc -l` �
 re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 [`lean-environment-setup.md` §"VERIFY a single file with lean-direct"](.claude/skills/local/lean-environment-setup.md#verify-a-single-file-with-lean-direct).
 
+> **🛑 `exit 0` here is a claim about the SNAPSHOT, not about the library
+> source (measured 2026-09-05, bean `qou-56qy`).** The restored cache is a
+> point-in-time tree. When a library signature moves after it was taken, a file
+> calling the old signature compiles clean *and* is red against the source it
+> names — both at once, with no signal. Realised, not hypothetical:
+> `descartesWtrace` recorded `lean`-direct `exit 0` and **landed on `main`
+> red**, because the cache was built 2026-08-30 while `794c34897d7`
+> (2026-09-03) retyped `SeminormalRep.wtrace`'s genericity hypothesis and
+> ported the seven consumers *inside* the package. The library half was done
+> correctly; a content-block sibling was simply not in it (#6751).
+>
+> **So on a branch that touches `.lean`, run the sweep rather than bare
+> `lean`-direct.** Each builds a shadow tree, rebuilds from source only the
+> modules whose own olean predates their own last source commit, and compiles
+> against that — never invoking `lake`, so the restored cache is not evicted:
+>
+> ```bash
+> scripts/lean-content-sweep.sh [file.lean ...]   # content-block siblings
+> scripts/lean-library-sweep.py                   # library dirty closure
+> ```
+>
+> Whole corpus 2026-09-05: 261 content blocks and 74 dirty library modules,
+> **0 red**; library sweep 122 s, content sweep ~50 min (pass the changed files,
+> and `SHADOW=`/`--shadow` to reuse the ~2.3 GB shadow). Wired into
+> `/prepare-merge` §4 and `prepare-merge-auto` Phases 1 and 4.
+>
+> **Two limits — do not write either out of a PR.** The dirty closure is
+> computed against *this* container's olean tree, so a result is
+> **container-scoped**: two sessions measured the same dependency as stale and
+> as current, and both were right. And neither script sweeps the **UGB** or
+> **Fred2005** packages.
+>
+> **A source-change count is the wrong population.** Six of those 74 have no
+> olean at all — a *new* file inherits its dependencies' staleness without ever
+> appearing in a drift count keyed on changed sources. Use the closure.
+>
+> This block is an owner-reviewable wording change to the repo's primary
+> verification guidance, added on the evidence above; revert the wording if you
+> disagree — the measurement stands either way.
+
 > **STRICT — route, don't give up, and prefer a sub-agent.** On **any**
 > Lean env/tool failure (LSP "no valid project path", `leansearch` SSL
 > error, cache `get` 403, `elan toolchain install` SSL / "failed to parse
