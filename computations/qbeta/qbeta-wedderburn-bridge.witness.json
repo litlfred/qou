@@ -2,32 +2,46 @@
   "computation": "qbeta-wedderburn-bridge",
   "assertions": [
     {
-      "name": "the_only_embedding_is_declared_opaque",
+      "name": "the_opaque_declaration_is_deleted",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "note": "QOU/HeckeAlgebra/Wedderburn.lean. It read 'Using `axiom` keeps the embedding opaque pending concrete construction' and had no body. Deleted 2026-09-05, bean qou-kp2z. Counts DECLARATION lines, not occurrences of the string: the note left where it stood quotes the signature it retired, and a retirement note naming its subject must not read as the subject still being there"
+    },
+    {
+      "name": "no_term_level_use_of_the_name_remains",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "scans every non-.lake Lean source with COMMENTS STRIPPED. An earlier version of this check filtered on a leading backtick instead, which counted every doc mention as a use -- including the retirement note itself. Stripping is the only version that would actually catch a real use"
+    },
+    {
+      "name": "the_construction_defines_the_assembly_unconditionally",
       "computed": true,
       "expected": true,
       "passed": true,
-      "note": "QOU/HeckeAlgebra/Wedderburn.lean. The file's own words: 'Using `axiom` keeps the embedding opaque pending concrete construction.' There is no body"
+      "note": "an ordinary def on Sigma lam, Fin (f^lam) x Fin (f^lam) -- no side condition, no opaque"
     },
     {
-      "name": "and_the_file_says_so_itself",
+      "name": "and_proves_it_injective",
       "computed": true,
       "expected": true,
       "passed": true,
-      "note": "quoted verbatim in the block annotation; matched after whitespace normalisation because the source wraps mid-phrase"
+      "note": "so it is not the zero map. This answers the objection the deleted docstring raised: a stub returning 0 would contradict the Markov-trace structure. The objection was to a stub; the answer is a construction"
     },
     {
-      "name": "the_signature_takes_a_decomposition_and_returns_one_matrix",
+      "name": "the_rsk_step_is_isolated_as_a_named_hypothesis",
       "computed": true,
       "expected": true,
       "passed": true,
-      "note": "blocks IN, ONE matrix OUT. The clause needs the opposite -- one block's scalar C_{(2,1)} split into three coefficients. Wrong direction and wrong arity"
+      "note": "Sigma_lam (f^lam)^2 = n! is a HYPOTHESIS on the Fin (n!) landing, discharged by nothing here -- not an assumption folded into the definition"
     },
     {
-      "name": "opaque_makes_it_an_axiom_not_a_definition",
-      "computed": 1,
-      "expected": 1,
+      "name": "the_signature_still_takes_a_decomposition_and_returns_one_matrix",
+      "computed": true,
+      "expected": true,
       "passed": true,
-      "note": "`opaque` is irreducible AND shows up in #print axioms, unlike a `def`. Recorded as a measurement rather than a theorem -- see the docstring on why no Lean theorem accompanies this"
+      "note": "blocks IN, ONE matrix OUT -- the SAME direction and arity the opaque had. The clause needs the opposite: one block's scalar C_{(2,1)} split into three coefficients. Building the map changed its status, not its shape. THIS is the fact that carries the conclusion"
     },
     {
       "name": "the_sibling_wedderburn_objects_are_weights_and_dimensions",
@@ -37,31 +51,43 @@
       "note": "none is a map of algebras. So the bridge is unavailable on BOTH readings: this object is opaque and mis-shaped, and anything else is undefined in the corpus"
     },
     {
-      "name": "the_block_clause_is_now_marked_an_open_obligation",
+      "name": "the_block_clause_is_still_marked_an_open_obligation",
       "computed": true,
       "expected": true,
       "passed": true,
       "note": "unified-iterative-correction-proof.md's (2,1) clause is ANNOTATED, not deleted -- the claim may well be true, it is simply unsupported, and a reader should not take it as derived"
+    },
+    {
+      "name": "and_says_which_of_its_three_reasons_survived",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the opaque and the fourth-axiom reasons are retired; the shape objection is not. A reader must not read 'the embedding was built' as 'the clause was discharged'"
     }
   ],
   "allPassed": true,
   "parameters": {
     "lean_source": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean",
     "block": "content/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md",
-    "axiom_footprint": "[propext, Classical.choice, Quot.sound, QOU.HeckeAlgebra.Wedderburn.wedderburnEmbed]",
-    "note": "documentary + mechanical measurement; no Lean theorem is offered, and the docstring says why"
+    "construction": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/WedderburnConstruction.lean",
+    "axiom_footprint_before_2026_09_05": "[propext, Classical.choice, Quot.sound, QOU.HeckeAlgebra.Wedderburn.wedderburnEmbed]",
+    "axiom_footprint_now": "[propext, Classical.choice, Quot.sound]",
+    "note": "documentary + mechanical measurement; no Lean theorem is offered, and the docstring says why. Two of the three original facts are retired by construction (beans qou-usol, qou-kp2z); the shape objection stands and is what keeps the (2,1) clause an open obligation"
   },
   "data": {
     "declaration_lines": [
-      "- `wedderburnEmbed` — embed `WedderburnDecomposition n` into",
-      "- `wedderburnEmbed_posSemidef` — block-diagonal-of-PSD-blocks",
-      "opaque wedderburnEmbed : ∀ {n : ℕ}, WedderburnDecomposition n →"
+      "(unconditional, injective) and `wedderburnEmbedOf` (the same map",
+      "`opaque wedderburnEmbed` stood here until 2026-09-05 and is gone;",
+      "(This list previously also advertised `wedderburnEmbed_posSemidef`",
+      "deleting it in favour of `wedderburnEmbedOf` is the clean",
+      "`opaque wedderburnEmbed : ∀ {n}, WedderburnDecomposition n →",
+      "real thing (`blockDiagonal`, and `wedderburnEmbedOf` for the"
     ],
-    "signature": "opaque wedderburnEmbed : ∀ {n : ℕ}, WedderburnDecomposition n → Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ end QOU.HeckeAlgebra.Wedderburn"
+    "signature": "noncomputable def wedderburnEmbedOf {n : ℕ} (h : RSKDimIdentity n) (x : WedderburnDecomposition n) : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ := Matrix.reindex (regIndexEquiv h) (regIndexEquiv h) (blockDiagonal x) /-- And it is injective, so it deserves the name \"embedding\". -/ theorem wedderburnEmbedOf_injective {n"
   },
   "provenance": {
-    "headSha": "74a11ad874c23506ac53725592818460d001a686",
+    "headSha": "7e75622bdfcee90084ae5af644ed9df33778f003",
     "producer": "computations/qbeta/qbeta_wedderburn_bridge_probe.py",
-    "elapsed_s": 0.004
+    "elapsed_s": 5.796
   }
 }

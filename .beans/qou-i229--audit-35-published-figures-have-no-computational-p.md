@@ -414,3 +414,335 @@ sentence corrected.
       nothing checks that the block's numbers are the witness's. That is
       mechanically checkable and would have caught this, the transfer-matrix
       readout, and the retired-`q₀` figures.
+
+## WHICH z? — ANSWERED BY RULING, and it retracts my last turn
+
+Analysis: [`docs/audits/2026-09-05-which-z-does-the-qbeta-spectral-bridge-intend.md`](../docs/audits/2026-09-05-which-z-does-the-qbeta-spectral-bridge-intend.md).
+
+**Answer: D, `q³/(q²+1)`.** The two values are not rival readings of one
+definition — they are the corpus's two registered trace conventions, and one is
+excised:
+
+    C   1/(q^1/2 + q^-1/2)   0.49932033418…   EXCISED 2026-08-09
+    D   q^3/(q^2+1)          0.61268803714…   PRODUCTION
+
+`rem:markov-z-reconciliation` names `1/(√q+1/√q)` as convention C explicitly, and
+the trace-convention registry's channel table records `qbeta-decay` definitional
+= **D** per the owner ruling of 2026-08-15 ("convention D is convention. excise
+convention C"), with C **structurally excluded**. Status:
+**agreed-migration-pending**, bean **`qou-cds1`**.
+
+### 🛑 Retraction
+
+I wrote that "for once the compute has drifted from the stated definition rather
+than content lagging compute". **Backwards.** The compute migrated to the ruled
+convention; the proposition was left behind. Ordinary C→D content lag — the
+`qou-5pgl` class. I treated the proposition as the definition of record without
+checking whether its convention was current, which is the one question the
+registry exists to answer.
+
+The producer is in fact *ahead* of the registry's own row, which still lists
+production as C for this channel (naming `qbeta_utils.markov_parameter`,
+`qbeta_ck_sseries_exact_rational`, `ZBarParity.lean` — not the spectral-bridge
+witness).
+
+### There is a structural argument as well as the ruling
+
+In D: `z₋ = 1/(q(q²+1))`, `z·z₋ = 1/[2]_q²`, framing ratio `a² = q⁴` — a
+monomial, which is what makes D the `sl₂` point. C's `z₋` mixes half-integer and
+integer powers in one unfactorable numerator. The reconciliation block's own
+phrase: *"not convention C being invalid; it is convention C being
+structureless."*
+
+### Recommendation
+
+**Migrate to D — but inside `qou-cds1`, not as a one-off.** This block is one
+member of a scoped multi-block migration; moving it alone leaves the channel
+half-migrated, the registry row wrong, and three named production files still on
+C. The `𝔔_β` MeV figures shift ~0.05 MeV, which wants checking rather than
+assuming.
+
+**Done now, the safe half:** the proposition is *labelled* — it states that its
+`z` is convention C, that D is ruled, and that migration is tracked. Precedent:
+`df13e845cee` labelled the `q₀` pins rather than recomputing them, and that is
+what let this sweep identify them at all. Labelling an out-of-date convention is
+cheap and reversible; migrating one block of a tracked migration is neither.
+
+- [x] Which `z` does the proposition intend — **D, by ruling.**
+- [ ] `qou-cds1` owns the migration; this block is a member.
+- [ ] The **pin** rides along and is a separate axis: producer on proton, table
+      on muon pin A. A pass that fixes `z` and leaves the pin straddling gives a
+      table right in convention and wrong in anchor.
+
+## THE STRUCTURAL GAP IS NOW CHECKABLE — `scripts/witness-block-agreement.py`
+
+Every defect this bean has found is one shape: **a correction lands in compute
+while a block keeps the old value, and nothing walks that boundary.** The
+transfer-matrix readout, the six retired-`q₀` figures, the 21 % `z` divergence.
+The unsourced-figure sweep only caught them because those figures had *no*
+provenance at all; a stale figure that still matches *some* producer stays
+invisible to it.
+
+The sharper question is available and nobody was asking it: a witness already
+declares `contentBlock`, naming the block it is evidence for, and **nothing
+checks that the block's numbers are that witness's numbers.** A producer's
+assertions compare it against itself, so they stay green while publication and
+producer drift apart — which is exactly why CI was green on a 21 % divergence.
+
+New diagnostic, selftested against the known positive (`prop:q-beta-spectral-
+bridge` must flag on `0.4993203340335613`, the figure measured to diverge; a
+detector that cannot see that can see nothing). Scope: 3274 live witnesses, 799
+declaring `contentBlock`, 231 distinct blocks.
+
+**Result: 15 blocks publish 79 figures their declared witness does not carry.**
+
+**Wired into nothing**, same as the companion and for the same reason — a gate
+red on arrival with known false positives in it is one nobody adopts. Two such
+classes are documented in the script and must be read before any row is acted on:
+decimals are not significant figures (a `0.000001` residual column is admitted at
+one sig fig and the test has no resolving power — `rem:atom-mass-full-hecke` is
+entirely this, the same floor that made two 9-digit figures indeterminate in
+round 2); and a block's producer need not be the witness naming it.
+
+### 🛑 TRIAGE 1 RETRACTS MY OWN FRAMING, AND FIXES THE CHECKER
+
+I wrote above that `prop:markov-pair-z2` "publishes **both** `z` values … the
+same C/D question as the bridge". **Wrong.** That block's line 5 states
+`z = q³/(q²+1)` (**convention D**) outright — it is already migrated. Its two
+flagged figures are not its `z` at all: they sit inside a retraction blockquote
+*as the conflated pair being warned about* (`1/δ = [2]_q⁻¹ = 0.4972905456`
+against the excised `z_C = 0.4993203342`, a 0.4 % confusion, bean `qou-98g5`).
+I should have noticed the arithmetic before writing it down — 0.4 % is not the
+21 % that separates C from D, and that alone rules out the reading.
+
+**The error was the checker's, and it generalises.** A block that quotes a wrong
+value *in order to retract it* is indistinguishable from one that publishes it.
+This corpus retracts in Markdown blockquotes, so that class is measurable:
+**21 of the 79 unmatched figures occur only on `>` lines**, and three blocks are
+entirely that —
+
+    thm:markov-trace-factorization    7/7   the deprecated transfer-matrix readout
+    prop:wedderburn-weight-canonical  8/8   y_λ values printed to show a premise FAILS
+    prop:markov-pair-z2               5/5   the 1/δ vs z_C conflation it warns about
+
+Unpartitioned, the checker was loudest on exactly the blocks where someone did
+the right thing and documented a correction — including **my own** retraction
+table from earlier today. A diagnostic that penalises the discipline the corpus
+runs on gets ignored, deservedly.
+
+**Partitioned, not dropped.** Blockquote is a proxy for retraction, not a
+synonym: `calibration-inputs` publishes the live CODATA `206.7682827` inside a
+callout, so a blanket exclusion would blind the checker to any stale figure
+living in a note — the same failure as reading "no resolving power" as "clean".
+The selftest now also requires the known positive to land in the **asserted**
+partition, so a partition that swallows real findings fails loudly.
+
+**Report is now 12 blocks / 58 asserted figures**, with 21 quoted-only listed
+separately.
+
+## TRIAGE 2: `prop:em-coupling-projection` — the BLOCK is right, the POINTER is wrong
+
+Probe: `the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.py`
+(14/14). The checker's hardest row — 6 of 7 figures unmatched — and a near-total
+miss turned out to be the signature of a misdirected pointer, not a stale table.
+That reading is now in the checker's docstring so the next near-total miss is
+read the same way.
+
+**The block is correct.** Every figure reproduces at the proton pin from
+`alpha_em_form_comparison_probe.py`, the producer the table names *in its own
+prose*, and the table's claim that all rows use the proton pin is accurate.
+
+    em_coupling_projection_probe.py     declared contentBlock, computed 1 of 7 rows
+    alpha_em_form_comparison_probe.py   computed the other 6, emitted NO witness
+
+Machine-readable provenance covering **14 %** of the block. **Fixed**: the real
+producer now emits a witness declaring the block, carrying both pins, all four
+registered `α_EM` forms, the residual-ownership analysis, and the three
+intermediates the table publishes but nothing exposed (`δ_CS = 0.00155060213`,
+the superseded order-2 truncation, the CODATA-2022 input). **Row closed, 6/7 →
+0/7**; report now **11 blocks / 52 asserted**.
+
+### Two label defects in the claiming witness — fixed, no number touched
+
+1. `q0Value` and `q0Anchor` correctly said **proton**; four prose sites in the
+   producer and three in its witness said "**muon-anchored**".
+2. `CODATA_ALPHA_INV = 137.035999206` is the **Morel et al. (2020) Rb-87 recoil**
+   measurement — cited under that name in `sec:fine-structure-data` — not a
+   CODATA adjustment. Four sites called it CODATA. The block's table compares
+   against CODATA 2022 = `137.035999177(21)`, a different quantity.
+
+Both **numerically inert**: Rb-87 vs CODATA 2022 is `2.1e-10` relative against a
+`5e-3` tolerance and a `1.55e-3` measured error. Nothing about the verdict moves,
+which is exactly why they survived. Same shape as `df13e845cee`'s *"the defect
+was the label"*. Two further warnings the regeneration surfaced and did not get
+committed as-is: a raw `float64` entering the witness (now carried as `mpf`), and
+a downgraded `mpmath` record (1.4.1 restored rather than committing the weaker
+provenance).
+
+**The probe asserts the fixed invariant, not the defect.** A probe that asserts a
+defect goes red the moment the fix lands — the `muon_pin_three_values_probe.py`
+failure this bean already records. Recorded here because I nearly repeated it.
+
+### Cross-block: one quantity, two pins, one retired
+
+    prop:em-coupling-projection       136.823209      proton  (136.823208853583)
+    prop:em-coupling-bring-zero-mode  136.823219654   RETIRED (136.823219654561)
+                                                      live muon: 136.823219729273
+
+New: this bean already had the retired pin in `bring-zero-mode`, but not that a
+**sibling block publishes the same quantity at the production pin**. The two
+disagree on one number in the 11th digit — so it is not only stale against the
+substrate, it is internally inconsistent across the corpus. Strengthens the
+refresh case.
+
+### A hazard found by accident, measured, and deliberately not patched
+
+`136.823219654` is a **truncation** of `136.823219654561`, which *rounds* to
+`…655` — it misses my own checker's half-ulp window by 1.12 half-ulps. So a
+truncated publication is rejected even against its own producer. Measured across
+the whole report, **truncation explains 0 of the asserted unmatched figures**, so
+the window is left alone: widening an acceptance test that rescues nothing while
+admitting new false negatives is a net loss. Documented in the script so it is
+not rediscovered.
+
+## TRIAGE 3: same pattern again — and then measured instead of guessed
+
+`prop:markov-trace-recursive-reducer` is the identical shape. Its two figures —
+proton `tr_M(σ₁⁷σ₂⁴) = 1.884319…`, neutron `tr_M(σ₁⁶σ₂⁴σ₁⁻¹) = 1.464034…` — are
+richly produced by `markov_trace_recursive.py`, whose witness carries **both**
+and declared **no** `contentBlock` at all. The block's pointer sat instead on
+`probe_markov_trace_recursive_reducer.py`, which *verifies* that the reducer
+agrees with the canonical seminormal engine and carries no trace value. **Fixed**
+(one declaration); row closed. Report now **10 blocks / 50 asserted**, from 15/79.
+
+### THE PATTERN IS THE FINDING: the pointer is on the VERIFIER, not the producer
+
+Two for two is an anecdote, so it was worth measuring rather than extrapolating.
+Indexing every number in all **3277 live witnesses** and asking, for each asserted
+-unmatched figure, whether *any other* witness carries it:
+
+    40 of 50 asserted-unmatched figures (80 %) ARE produced somewhere in the
+    repo — by a witness other than the one declaring their block.
+
+So the dominant defect this checker surfaces is not stale content and not missing
+computation. It is that **`contentBlock` tends to be attached to verification
+probes rather than to producers.** A verifier shows two engines agree; a producer
+computes the numbers a block prints. When the pointer lands on the verifier, the
+block's actual figures have no declared provenance — and nothing notices, because
+the verifier's own assertions pass.
+
+### THE NEGATIVE CONTROL, WITHOUT WHICH THAT NUMBER IS WORTHLESS
+
+Matching 50 figures against a pool of **271 665** distinct witness values will
+find coincidences. This bean has recorded two lossy-metric errors already today,
+so the floor was measured rather than assumed: perturb each published figure's
+last digit — same magnitude, same decimal count, fabricated — and re-run.
+
+    REAL published figures matched somewhere : 80.0 %
+    FABRICATED (last digit changed)          : 10.8 %   (40 draws, range 4–18 %)
+
+**7.4× the coincidence floor**, so the aggregate finding holds. But ~5 of the 50
+matches are expected to be spurious, and they will concentrate in the
+low-precision figures — `rem:atom-mass-full-hecke`'s `0.000001` and `0.000002`
+carry one significant figure and are almost certainly among them. **The aggregate
+is sound; individual carrier attributions are not**, and no row should be closed
+on this evidence alone.
+
+### 🛑 THE CHECKER ITSELF PARSED FLOAT64 — in a repo that forbids it by gate
+
+Chasing an anomaly in the floor measurement found a defect in my own tool.
+`rounds_to` parsed both the published figure and the witness values with
+`float()`. At 15+ significant digits, float64 spacing (~1.1e-16 near 0.5) is
+comparable to the ±0.5-ulp acceptance window, so **the window stops
+discriminating at exactly the precision this corpus cares most about**:
+`0.508229789376739` matched **31 of 60** fabricated perturbations. Switched to
+exact `Decimal` (prec 80). Measured effect: the 12+ floor drops 11.4 % → 8.8 %,
+and two spurious matches disappear from the report.
+
+Embarrassing, but the interesting part is that the *rest* of the elevation is
+real, and it is a property of the corpus rather than of the tool.
+
+### THE FLOOR IS NOT A NUMBER, IT IS A CURVE — and it inverts at the top
+
+    sig figs     floor       reading
+    0-2         100.0 %      ZERO information. Every fabricated value matches.
+    6-8           5.4 %      a match is real evidence
+    9-11          2.7 %      strongest discrimination available
+    12+           8.8 %      RISES AGAIN
+
+The rise is not an artifact. The fabricated hits concentrate on the corpus's
+**load-bearing constants** — `w₋ = 0.247297886748035` (14/60), the `q₀` pins
+`1.109978595554181` and `…557335` (10 and 9), `z_C = 0.4993203340335613` (9),
+`0.508229789376739` (30) — which the repo carries at many precisions and in many
+registered variants. A perturbed digit lands on a *real neighbouring variant of
+the same constant*.
+
+**So for exactly the figures that matter most, "it matches something in the repo"
+is the weakest evidence available.** Attribution there has to come from reading
+the producer. This also retro-justifies the 0-2 prediction: `rem:atom-mass-full-
+hecke`'s `0.000001`/`0.000002` sit in the 100 % bucket and should never have been
+counted.
+
+### WORKLIST: candidate producers, ranked by COVERAGE not by figure count
+
+One witness carrying k of a block's n figures is much stronger than k scattered
+per-figure hits. Ranked that way, with declared witnesses excluded:
+
+    block                                     coverage  candidate
+    prop:sl2-prolongation-recurrence            8/8     binding-recurrence-spectral-bridge
+                                                8/8     sw-period-lw-sl2-qbessel-probe
+    prop:q-hecke-seminormal-character-closure   5/5     laurentq-a5-ceiling-measure
+                                                5/5     rho-k-leading-order-verification
+                                                5/5     witness-float64-padding-audit
+    prop:q-beta-spectral-bridge                6/12     the_qbeta_bridge_..._different_z_probe
+    prop:confined-knot-binding                  3/6     deuteron-fpn-wlambda-wiring / a-K-via-lp-dual
+    prop:frobenius-gram-matrix                  3/5     qbeta-c3-barodd-knot-operator-gram
+    conj:im-q-physical-role                     3/4     qbeta-imq-reality-locus
+    prop:em-coupling-bring-zero-mode            2/3     published_figures_carry_a_retired_q0_probe
+    prop:alpha-em-categorical-trace-ratio       1/4     -- nothing covers it --
+    rem:atom-mass-full-hecke                    2/2     (0-2 sig figs: MEANINGLESS)
+    rem:beta-decay-energy-scale                 1/1     weak
+
+**Do not auto-declare from this table.** Two reasons, both measured. First, the
+three-way 5/5 tie on `q-hecke-seminormal-character-closure` falsifies the
+independence assumption behind any p-value here — and one of those three is
+`witness-float64-padding-audit`, an **aggregator** that carries numbers without
+producing them, which is a distinct false-positive class the coverage score
+cannot see. Second, several blocks' figures are the load-bearing constants above,
+where the floor is worst.
+
+- [ ] `prop:sl2-prolongation-recurrence` is the strongest candidate (8/8, twice
+      over) and the right next one to read.
+- [ ] `prop:alpha-em-categorical-trace-ratio` is the one to look at hardest:
+      **nothing in 3277 witnesses covers more than 1 of its 4 figures.** That is
+      the signature of a genuinely unproduced figure rather than a misplaced
+      pointer — the opposite finding from the last two blocks.
+- [ ] Consider whether `contentBlock`-on-a-verifier deserves its own check. The
+      signature is mechanical: a witness declaring a block whose assertions are
+      all engine-agreement comparisons and whose data carries none of the block's
+      figures.
+
+## VINTAGE LABELS: `206.7682830` is CODATA **2018** and two blocks call it 2022
+
+Found by the checker above. The literal survives in six content files. The
+compute side is **governed** — all three hits under `computations/` are annotated
+historical comments under an existing gate — and content is not.
+`epistemic-status-of-calibrations.ts` already records *"The prose said
+`206.7682830`, which is CODATA 2018"*; two other blocks published it **labelled
+CODATA 2022**. Live value `206.7682827 ± 0.0000046`; discrepancy `1.451 ppb` =
+`0.065σ`.
+
+Corrected the labels, **not the values**:
+
+    figure-8-muon-mass-cross-check            (CODATA 2022) -> (CODATA 2018)
+    substrate-consistency-window-table1-data  | CODATA 2022 | -> | CODATA 2018 |
+    calibration-inputs                        noted; value deliberately unchanged
+
+`calibration-inputs` is the one that must not be substituted: that row **is**
+CAL-2, so replacing it moves `q₀` and everything derived from it — the tracked
+refresh above, not a labelling fix.
+
+- [ ] The remaining three (`knot-volumes-verification-table2-data`,
+      `conj-im-q-physical-role`, and the `witness-substitution-audit.ts` fixture)
+      need reading rather than relabelling — check whether each is asserting a
+      vintage or merely quoting one.

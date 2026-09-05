@@ -360,12 +360,33 @@ WORSE than that arm's own baseline. The paper's structural 6_1 naming is
 untouched either way: it comes from the GB-filtration route, which carries no
 weight family (qou-9b50), and the verdict string now says so.
 
-**Blast radius, measured (option C):** 4 of 36 live `w_lambda`-referencing
-files, two of which are comparison harnesses. `w_lambda` is a NAME shared by
-different objects; counting the name was the wrong measurement. The one real
-non-harness consumer besides the k=3 test is
-`beta_ew_delta_I_321_and_wedderburn.py`, whose six candidates are same-n ratios
-— invariant under dim_q^2/[n]_q! -> dim_q^2/D^2, NOT invariant under Molien.
+**Blast radius, measured (option C):** ~~4 of 36~~ **11 of 37** live
+`w_lambda`-referencing files. `w_lambda` is a NAME shared by different objects;
+counting the name was the wrong measurement — but so was my replacement for it.
+
+**SUPERSEDED 2026-09-05 (PR #6840).** The 4 was an undercount by a factor of
+~2.75, and the sentence it supported — "the one real non-harness consumer
+besides the k=3 test is `beta_ew_delta_I_321_and_wedderburn.py`" — is FALSE.
+Seven files build `dim_q(...)^2 / q_factorial(...)` and NONE was visible to the
+regex, which required the literal token `dim_q`/`d_q` immediately followed by
+`**`. The seven spellings that defeated it: `dim_q_num(...)`, `q_dimension(...)`,
+`_q_dimension(...)`, `d_q_lam`, `dq[l]`, a single-letter `d`, and — the one that
+matters — `dim_q(part) ** 2`, i.e. a CALL to `dim_q` itself, since `dim_?q\w*`
+cannot cross a `(`. The detector could only ever match a VARIABLE named dim_q,
+never a call to the function it is named after.
+
+Repaired by resolving each operand back through the file's assignments to the
+FUNCTION that produced it (`cached_accessor_shape_audit.py` precedent); both
+passes retained, buckets are their union, `--selftest` pins the known miss.
+
+**Three of the seven are on the alpha_EM axis** — `alpha_5_jucys_murphy_central`,
+`alpha_em_b2_scalar_c_probe`, `alpha_em_b2_canonical_scale_ratio_probe` — an
+axis the 4-of-36 figure hid completely. Whether the Molien ruling moves a
+physics-facing number there is NOT triaged.
+
+The claim about `beta_ew_delta_I_321_and_wedderburn.py` itself still stands: its
+six candidates are same-n ratios — invariant under dim_q^2/[n]_q! ->
+dim_q^2/D^2, NOT invariant under Molien.
 
 **Four errors of mine on this bean, all caught by tooling not by me:** scaling
 law tested inverted; `(f^lam)^a d_q^b` predicted to normalise at (1,1) when it
@@ -390,3 +411,87 @@ second leg under my exact-rational result, and their F2/F3/F4 are why the
 `V^{n}` share and classical `(f^lam)^2/n!` are recorded here as further
 measures rather than as arms. So: their measurement stands, its 'not closed'
 verdict was accurate as of its merge, and the ruling superseded it.
+
+## 2026-09-05 — the alpha_EM axis, triaged (PR #6840)
+
+The corrected blast radius exposed three alpha_EM files the 4-of-36 figure had
+hidden. That axis is the one that matters: the corpus's ONE scoreable L2 result
+(m_K/m_pi) is alpha_em-conditional.
+
+`probes/alpha_em_b2_weight_family_triage_probe.py` (2/2, 50 dps, no float64).
+`alpha_em_b2_scalar_c_probe.py` pins the B2 scalar c on w_(4,1)(q0) and its own
+verdict calls that 'the canonical MARKOV normalization'. At lambda=(4,1), n=5:
+
+    Plancherel  d_q^2/[5]_q!        = 0.12862000417524688333   what it COMPUTES
+    Molien      f^l q^-k d_q/[5]_q! = 0.07429973308938433194   canonical
+    Markov      y_(4,1) at N=2      = 0.12498539716794710592   what it CALLS it
+
+The identification is MEASURED, not inferred from the source shape: the
+assertion reproduces the consumer's printed value to 22 digits at 1e-18.
+
+MOLIEN MOVES THIS AXIS BY -42.23 %, AND NO CANCELLATION IS AVAILABLE. This
+bean's own result — that a lambda-independent rescale drops out of a same-n
+ratio, which is why dim_q^2/[n]_q! -> dim_q^2/D^2 is a no-op for the beta_EW
+consumers — DOES NOT REACH HERE. That consumer normalises on a SINGLE
+partition, so there is no ratio for anything to cancel from, and Molien's
+q^{-kappa} is lambda-dependent besides. Do not carry the beta_EW invariance
+result across to this axis; it is scoped to same-n ratios.
+
+The Markov row is the quiet one: 2.83 % from Plancherel, close enough that the
+mislabel would never be caught by eye. Presumably how it survived.
+
+NOT a claim that c is wrong: c = (Markov norm)/(Hodge polarization norm) and the
+Hodge denominator (Braden-Northover period polarization of Jac(Bring)) is openly
+unsupplied, so c is not a delivered number. THE OTHER TWO alpha_EM FILES ARE NOT
+TRIAGED.
+
+A precision defect of mine, caught by the gate before commit: the probe first
+held its comparison constant as a module-level mp.mpf of a 20-digit literal,
+which is evaluated at import when mp.dps is whatever the import order left it
+at. At mpmath's default 15 it truncates by 5.98e-18 — LARGER than the 1e-18
+tolerance of the assertion comparing against it. It passed only because an
+earlier import had already raised dps. Held as a string now;
+module_const_precision_audit --strict goes LOSSY 1 -> 0.
+
+## 2026-09-05 — the alpha_EM triage is CLOSED; two of three need no change
+
+Closing the loop the previous entry left open.
+
+`alpha_em_b2_canonical_scale_ratio_probe.py` — NOT AFFECTED, the
+counter-example. It tabulates y_lambda and w_wedderburn side by side under
+explicit labels and its own comment already states the distinction correctly
+("tr(1)=1 for the canonical Markov trace: sum_lam y_lam * f^lam = 1. (NOT
+sum_lam w_lam -- that equals 1 only at q=1 ...)"). The mislabel found in the B2
+scalar probe is SPECIFIC TO THAT FILE, not general to the axis. Worth stating,
+because the natural inference from "three alpha_EM files are affected" is that
+the axis is uniformly sloppy, and it is not.
+
+`alpha_5_jucys_murphy_central.py` — AFFECTED IN PRINCIPLE, IMMATERIAL IN FACT.
+Its headline compares SUM_{lam |- 3A, ht=6} w_lam c_5(lam) across A = 2,3,4
+with w = dim_q^2/[n]_q!; since n = 3A that is a cross-atom metric at three
+different n, i.e. exactly this bean's own R2 scope-(b) exclusion. Measured
+(probes/alpha5_jm_crossatom_budget_probe.py, 2/2): the height-6 partial budget
+B_6(A) spreads 222x across those A, and alpha_5(A) = B_6(A) * <c_5>_A
+factorises exactly (1e-40), so a raw spread cannot separate "c_5 moved" from
+"the budget moved".
+
+BUT the producer's conclusion is a NEGATIVE reached by all three of its routes:
+
+    NORMALIZED by [3A]_q!   rel spread   482.16 %
+    RAW                     rel spread    83.163894
+    partial self-normalised rel spread  1327.18 %
+    VERDICT: strongly atom-dependent (mechanism orthogonal to JM-central)
+
+including the self-normalised route R2 admits. So the weight-family choice can
+neither rescue nor overturn it, and the Molien ruling requires no change to this
+file. I was heading for a distortion finding; the measurement says the result is
+robust, and the smaller claim is the one recorded.
+
+Verified against the producer rather than modelled on it: the probe reproduces
+its printed raw alpha_5 (5.608246e-04 / 1.978017e+00 / 1.645002e+02) and its
+partial-norm c_5 (0.4704417 / 42.94229) at q0.
+
+STANDING SCORE for the 11 of 37: 1 file carries a genuine mislabel with a
+-42.23 % Molien move (alpha_em_b2_scalar_c_probe, and its c is not a delivered
+number anyway); 1 is affected in principle but route-invariant; 1 is a correct
+labelled two-arm tabulation. The remaining 8 are NOT triaged.

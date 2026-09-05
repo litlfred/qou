@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-05T14:30:00Z
+updated_at: 2026-09-05T16:15:00Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -795,3 +795,27 @@ that is the theorem's hypothesis and characters can in principle go negative).
 
 **This raises the value of the O3′ compute**: authorised as a type fix, it may
 also be a selection principle.
+
+## 🛑 CORRECTION to the O3′ selection claim — it is ATOM-INDEPENDENT (PR #6841)
+
+#6752 merged reading O3′'s selection as *"which Wedderburn blocks the bound
+state actually saturates"*. **Wrong.**
+
+`t_λ = w_λ · χ^λ(W_atom)`: `w_λ` depends only on the partition and `q`, and is
+identical for every atom at a given `n`; `χ^λ` carries all atom-dependence.
+**argmin(`t`) = argmin(`w`) in 6 of 6 rows** — the character never moves the
+selection. Two atoms at `n = 3` and two at `n = 9` give the **same block** with
+**different prices** (0.4470/0.4206; 0.01655/0.02879).
+
+- **Pricing STANDS**: `y_0*` nonzero and atom-dependent, where the full LP has
+  `y_0* = 0` identically. That is the defect O3′ was chosen to repair.
+- **Selection is a function of `n` alone** — same block for proton, neutron and
+  every other atom at that `n`.
+
+**My explanation was refuted by the same probe.** Spread dominance (`w` varies
+more than `χ`) holds at `n = 6` and **fails at `n = 9`** — χ-spread 6.448×/6.712×
+against w-spread 5.915× — and the argmin is unmoved anyway. The probe now
+asserts the *refutation*; the mechanism is **open**, and no replacement guess is
+offered for six rows.
+
+Probe `o3prime_selection_is_atom_independent` 4/4.

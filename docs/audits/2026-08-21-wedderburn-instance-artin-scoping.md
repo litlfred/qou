@@ -182,8 +182,11 @@ Three distinct objects share the `WedderburnDecomp*` name:
    typeclass search. Tracked: `qou-6dzi`.
 3. `QOU.HeckeAlgebra.Wedderburn.WedderburnDecomposition` —
    `QOU/HeckeAlgebra/Wedderburn.lean:68`. Not a class:
-   `abbrev … : Type := ∀ (lam : Nat.Partition n), Matrix …`. Carries
-   `axiom wedderburnEmbed` at `:110`.
+   `abbrev … : Type := ∀ (lam : Nat.Partition n), Matrix …`. Carried
+   `axiom wedderburnEmbed` at `:110` **when this audit was written**; that
+   declaration was deleted on 2026-09-05 (bean `qou-kp2z`) after
+   `QOU/HeckeAlgebra/WedderburnConstruction.lean` replaced it with a real
+   construction. The rest of this item stands as measured.
 
 This finding was cited to the branch as bean `qou-h56b`, **which does not
 exist** (`beans show` → "bean not found"; grep over `.beans/` for

@@ -108,3 +108,35 @@ pattern expected `dim_q**2` and the variable is named `d_q_lam`; the `_lam`
 suffix defeated the match. NAME-ONLY is a LOWER BOUND on 'computes no weight',
 exactly as that audit's own limits section says, and this is the first measured
 instance. Do not quote the 4; re-derive it.
+
+## RE-DERIVED 2026-09-05 (PR #6840): it is 11 of 37, and 'at least 5' was far
+## too generous
+
+Measured with a detector keyed on PROVENANCE — what each operand was assigned
+FROM — rather than on the local variable's spelling. SEVEN files build
+`dim_q(...)^2 / q_factorial(...)` and NONE was visible to the regex:
+
+    dim_q_num(...)  ** 2   call: '(' stops \w*
+    q_dimension(...)** 2   word order — no 'dim_q' substring at all
+    _q_dimension(...)**2   word order + leading underscore
+    d_q_lam         ** 2   suffix after d_q — the instance found above
+    dq[l]           ** 2   subscript between the name and **
+    d               ** 2   single-letter local, from dim_q_via_hooks
+    dim_q(part)     ** 2   a CALL to dim_q itself
+
+The last is the actual defect and it reframes the diagnosis above. `dim_?q\w*`
+cannot cross a '(', so the pattern could only ever match a VARIABLE named dim_q,
+never a CALL to the function it is named after — the ordinary spelling, not an
+exotic alias. So '_lam suffix' is right about its own instance and WRONG as a
+characterisation: the detector was not too narrow, it was looking at the wrong
+syntactic category.
+
+THREE OF THE SEVEN ARE ON THE alpha_EM AXIS (alpha_5_jucys_murphy_central,
+alpha_em_b2_scalar_c_probe, alpha_em_b2_canonical_scale_ratio_probe) — hidden
+entirely by the 4-of-36 figure. NOT triaged whether Molien moves a
+physics-facing number there.
+
+Also fixed: the evidence field was sorted(...)[:8] and `q_factorial` sorts NINTH
+in its own provenance set, so the witness recorded a provenance list not
+containing the name that decided the match — a true positive reading as a false
+one.

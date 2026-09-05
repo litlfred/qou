@@ -377,3 +377,72 @@ corrected in `augu`).
 This bean's title stays accurate for `H₃` — `y₀* = 0` *is* forced there by the
 radical. But anyone reading it as the explanation of a zero dual elsewhere will
 go looking for a radical that need not exist.
+
+## 2026-09-05 — the content decision was taken (O2 + O3'), and the reading it
+## produced was WRONG and is corrected
+
+Owner picked **O2** (fix the documentation) and **O3'** (re-pose the program on
+the radical quotient) from
+`docs/proposals/2026-09-05-operator-selection-objective-replacement.md`.  Both
+landed.  Three PRs, and the second corrects the first.
+
+**#6752 — O2 + O3'.**  Six documentation sites said the shadow price is what
+the operator-selection LP assigns; it is not, and `lp_shadow_price` is a closed
+form (`y_λ = w_λ/d_λ − 1/[k]_q!`) that solves no program.  Corrected in
+`prop:mass-coefficient-shadow-price`, `knot-operator-energy`,
+`unified-iterative-correction.lean` (docstring only, body byte-identical) and
+three sites in `hecke_core_legacy.py`.  No number moved.  O3' itself: Lean
+`BlockSDPNondegeneracy.lean`, 5 declarations sorry-free; compute 5/5 with
+`y_0*` **nonzero on every row** (0.4470 / 0.4206 / 0.0643 / 0.0165 / 0.0288 /
+0.0047) where the full NF-indexed LP has `y_0* ~ 1e-47`.  **That repair is
+real and stands** — it is the defect this bean was filed for.
+
+Also corrected there: §3.1 of the proposal claimed "there is no
+partition-indexed LP anywhere in the corpus".  False —
+`computations/aK_via_lp_dual_full.py` poses exactly that (`len(y_star)` =
+3/11/30 at n = 3/6/9 = `p(n)`), and lines 231-258 of it had **already** said
+the LP needs re-posing on the two-row quotient.  Cause: I surveyed `content/`
+and skipped corpus-grep paths 3 (`computations/`) and 6 (`.beans/`).  O3' is
+recorded as S7, i.e. as prior art, not as new.
+
+**#6841 — the reading of the selection is REFUTED.**  #6752 read the O3'
+optimum's support as "which Wedderburn blocks the bound state actually
+saturates" — the corpus's own physical framing.  It does not mean that.  The
+objective factors `t_λ = w_λ · χ^λ(W_atom)` into an atom-INDEPENDENT weight and
+an atom-dependent character, and measured over all six committed rows
+`argmin(t) == argmin(w)` **every time**: the character never moves the
+selection.  Corroborated directly — the witness holds two atoms at n = 3 and
+two at n = 9, and same n gives the **same block** with a **different price**.
+So the price is atom-dependent and the block is not; at fixed n every bound
+state gets the same block.
+
+My first explanation for that was **spread dominance** and this probe
+**refutes it**: chi-spread *exceeds* w-spread at n = 9 (6.448× and 6.712×
+against 5.915×) and the argmin is unmoved anyway.
+
+**#6847 — the mechanism, measured.**  `w` and `χ` are systematically
+**anti-correlated**.  Concordant pairs per row: 0/1, 0/1, 1/6, 2/10, 1/10,
+5/21 — aggregate **9/49 = 18 %** against 24.5 expected.  Exact
+distribution-free tail (enumerate `k!`, `k ≤ 7`, returned as a `Fraction`):
+one row per distinct n, least extreme within each group, **343/518400 ≈
+6.6e-4**.  The all-six product 343/24883200 ≈ 1.4e-5 is recorded beside it as
+the anti-conservative figure, since rows 0/1 and 3/4 share an n and two atoms'
+characters there are plausibly correlated.
+
+Consequence: the product is **flattened** relative to `w` on every row
+(t-spread < w-spread, 1.26×–1.93×), never amplified — a large character lands
+preferentially on a small weight and partly cancels it.  So chi-spread
+exceeding w-spread cannot overturn the argmin: `χ` is a partial cancellation of
+the very ordering it would have to reverse, not an independent perturbation.
+The cancellation is **incomplete** (t-spread 1.35×–10.2×), so `w`'s ordering
+survives into `t` — which is why the selection is stable rather than noise.
+`|t| = w·|χ|` is checked in-probe at 3.9e-50 relative, not assumed.
+
+**Still open:** *why* the anti-correlation holds — measured over six rows and
+four n, not derived.  Structural property of the Markov weight against the
+Hecke character, or an artifact of which partitions survive the radical
+quotient?  Not settled.
+
+**Not done, and a separate decision:** wiring O3' into `hecke_core_legacy`.
+It recomputes every binding number in the corpus, so it is its own change with
+its own gate — not a follow-on to these three.

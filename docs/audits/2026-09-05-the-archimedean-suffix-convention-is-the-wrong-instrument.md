@@ -85,16 +85,40 @@ declaration a tidy name and closed the ticket.
   (`lean`-direct exit 0, no `sorryAx`). The caveat is struck rather than deleted so the
   sequence stays visible: when written, the claim rested on shape; it no longer does.
 
-  **And proving them found a defect class the shape argument could not have.** The
-  weaker-form count is **not** two, as this document anticipated — it is **four**, and
-  the fourth is a different kind of defect:
+  **And proving them found a defect class the shape argument could not have.** ~~The
+  weaker-form count is not two — it is four.~~ 🛑 **That count was wrong, and the
+  correction is mine: it is TWO live defects, not four.** See
+  [`2026-09-05-two-of-the-four-junk-points-are-unreachable-probe.lean`](2026-09-05-two-of-the-four-junk-points-are-unreachable-probe.lean),
+  `lean`-direct exit 0.
 
-  | pair | junk point | why |
-  |---|---|---|
-  | `speedOfLight` | `q = 1` | dropped invertibility; Lean's `1/0 = 0` |
-  | `operationalEntropy` | `q = 0` | dropped invertibility |
-  | `informationBandwidth` | `q = 1` | dropped invertibility — **at classicality, where the bandwidth is meant to diverge** |
-  | `gravitationalConstant` | `q = 1/2` | **not** a dropped hypothesis — a worse algebraic *route* |
+  `QOU.ArchimedeanSubstrateField` carries `field_ge_one : ∀ p, 1 ≤ field p`, and every
+  twin in `MathConstants.lean` evaluates at `sp.field p`. So **`q ≥ 1` always**, and a
+  junk point at `q < 1` cannot be reached through the library's own API:
+
+  | pair | junk point | reachable under `1 ≤ q`? | verdict |
+  |---|---|---|---|
+  | `speedOfLight` | `q = 1` | **yes** | **live defect** |
+  | `informationBandwidth` | `q = 1` | **yes** — and nothing constrains `q` there at all | **live defect** |
+  | `operationalEntropy` | `q = 0` | no | latent only |
+  | `gravitationalConstant`'s `S_cell` | `q = 1/2` | no | latent only |
+
+  **How I got it wrong:** I computed the junk points from the definitions correctly and
+  then reported all four as defects **without reading the type's axioms**. That is the
+  claim-shape discipline this corpus already states — resolve the symbols and check what
+  is actually quantified over. A junk value at an argument the type forbids is
+  unreachable code, not a defect.
+
+  **What survives is sharper than what I claimed.** `q = 1` is not merely permitted by
+  `1 ≤ q`, it is its *boundary*, and `SubstrateParameter.lean`'s own docstring names it
+  *"the classical limit"*. `speedOfLight`'s docstring says it *"diverges at classicality
+  (q → 1)"*. It returns **`0`** there. A live defect at a distinguished, named point of
+  the model beats four generic ones.
+
+  The `gravitationalConstant` route finding still stands **as an observation about the
+  expression**: the library's `S_cell = η·ℏ²/(1 − ℏ²)` equals the sibling's `u²/q³`
+  (`cellEntropy_arch_eq_simple`) while carrying a singularity at `q = 1/2` that is an
+  artifact of how it was written. It is simply not *reachable*, so it is a latent
+  fragility rather than a bug.
 
   The last one is the find, and nothing about the naming or the wall would have
   surfaced it. The library computes `S_cell = η·ℏ²/(1 − ℏ²)`; the sibling computes
