@@ -28,6 +28,23 @@ magnitude. No fit beyond the single reference-scale calibration.
 
 Usage:
     python3 wlambda_level_selection_kA_probe.py
+
+NORMALIZATION (2026-09-05, bean qou-uk8o). w_std(k) now uses the SELF-NORMALIZED
+q-Plancherel weight d_q^2 / Sigma_mu d_q^2. The textbook d_q^2/[k]_q! is a
+probability measure at q = 1 only; at q_0 it sums to c_k = 0.9874 .. 1.1782
+over k = 3..10, so every level carried a different factor while this probe
+inverts the whole table against B_AME ratios anchored at k = 3 -- a comparison
+ACROSS k, where c_k does not cancel.
+
+Both assertions still pass and the ordering of the four candidate forms is
+unchanged; every R^2 moves up slightly:
+
+    k ~ log(bond count)  0.8912 -> 0.8966
+    k ~ log A            0.8633 -> 0.8695
+    k ~ A (mass)         0.6721 -> 0.6807
+    k ~ bond count       0.4853 -> 0.4939
+
+k_implied span 3.00->8.52 becomes 3.00->8.61 (still x2.9 against A's x8).
 """
 import datetime
 import hashlib
@@ -46,6 +63,12 @@ for _p in (_COMP, os.path.join(_COMP, "hecke"), os.path.join(_COMP, "substrate")
 
 from hecke_characters import partitions_of, dim_q, qfac  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+import mpmath as mp  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
+
+set_compute_dps()
+Q0_MP = mp.mpf(Q_50_DIGIT_STR)   # same proton pin as Q0_PROTON, at compute dps
 
 KMAX = 10
 
@@ -83,12 +106,56 @@ def count_syt_skew(lam, mu):
     return count
 
 
-def w_std_of_k(k):
-    nfac = qfac(k, Q0_PROTON)
-    s = 0.0
+def _q_int(m, q):
+    """[m]_q = (q^m - q^-m)/(q - q^-1), balanced convention, in mpmath."""
+    return (q ** m - q ** (-m)) / (q - 1 / q)
+
+
+def _q_fact(m, q):
+    r = mp.mpf(1)
+    for j in range(1, m + 1):
+        r *= _q_int(j, q)
+    return r
+
+
+def _dim_q(lam, q):
+    """d_q(lambda) = [n]_q!/prod_cells [h]_q, in mpmath (local: the shared
+    hecke_characters.dim_q returns a builtin float)."""
+    num = _q_fact(sum(lam), q)
+    den = mp.mpf(1)
+    for r, row in enumerate(lam):
+        for c in range(row):
+            arm = row - c - 1
+            leg = sum(1 for rr in range(r + 1, len(lam)) if lam[rr] > c)
+            den *= _q_int(arm + leg + 1, q)
+    return num / den
+
+
+def normalization_c(k):
+    """c_k = Sigma_{lambda |- k} d_q(lambda)^2/[k]_q!, the amount by which the
+    textbook q-Plancherel weight fails to be a probability measure at q_0.
+
+    0.9874 / 0.9822 / 0.9822 / 0.9911 / 1.0124 / 1.0506 / 1.1109 / 1.1782 at
+    k = 3..10 (docs/audits/2026-09-04-plancherel-convention-gap.md). It varies
+    with k, so an unnormalized w_std(k) carries a DIFFERENT factor at every
+    level -- and this probe inverts the whole k-table against B_AME ratios
+    anchored at k = 3, which is a comparison ACROSS k. Bean qou-uk8o.
+    """
+    nfac = _q_fact(k, Q0_MP)
+    return sum((_dim_q(lam, Q0_MP) ** 2 / nfac for lam in partitions_of(k)),
+               mp.mpf(0))
+
+
+def w_std_of_k(k, self_normalized=True):
+    """Sigma_{lambda |- k, lambda >= (2,1)} W_lambda * mult_(2,1), with
+    W_lambda self-normalized to a probability measure (pass False for the
+    historical d_q^2/[k]_q! form)."""
+    nfac = _q_fact(k, Q0_MP)
+    denom = normalization_c(k) if self_normalized else mp.mpf(1)
+    s = mp.mpf(0)
     for lam in partitions_of(k):
         if contains(lam, (2, 1)):
-            s += (dim_q(lam, Q0_PROTON) ** 2 / nfac) * count_syt_skew(lam, (2, 1))
+            s += (_dim_q(lam, Q0_MP) ** 2 / nfac / denom) * count_syt_skew(lam, (2, 1))
     return s
 
 
@@ -96,15 +163,17 @@ def invert_wstd(table, ks, target):
     if target <= 0:
         return None
     if target < table[0]:
-        # log-linear extrapolation below k=3 using the first two points
-        return ks[0] + (math.log(target) - math.log(table[0])) / \
-            (math.log(table[1]) - math.log(table[0]))
+        # log-linear extrapolation below k=3 using the first two points.
+        # mp.log, not math.log: the table is mpf now and math.log would coerce
+        # every entry through binary64.
+        return ks[0] + (mp.log(target) - mp.log(table[0])) / \
+            (mp.log(table[1]) - mp.log(table[0]))
     if target > table[-1]:
         return None
     for i in range(1, len(table)):
         if table[i] >= target:
             lo, hi = table[i - 1], table[i]
-            frac = (math.log(target) - math.log(lo)) / (math.log(hi) - math.log(lo))
+            frac = (mp.log(target) - mp.log(lo)) / (mp.log(hi) - mp.log(lo))
             return ks[i - 1] + frac
     return None
 
@@ -130,14 +199,14 @@ def main() -> int:
     table = [w_std_of_k(k) for k in ks]
     print("w_std(k) (exact branching):")
     for k, w in zip(ks, table):
-        print(f"  k={k:<3} w_std={w:.6f}")
+        print(f"  k={k:<3} w_std={float(w):.6f}  (c_k={float(normalization_c(k)):.6f})")
     ratios = [table[i] / table[i - 1] for i in range(1, len(table))]
-    print(f"  successive ratios: {[round(r,3) for r in ratios]} (increasing "
+    print(f"  successive ratios: {[round(float(r),3) for r in ratios]} (increasing "
           f"-> super-geometric)\n")
 
     refname, refA, refB = NUCLEI[0]           # 2H — lightest
     w_ref = table[0]                          # k(2H) := 3
-    print(f"reference = {refname} (B={refB} MeV) calibrated to w_std(k=3)={w_ref:.4f}\n")
+    print(f"reference = {refname} (B={refB} MeV) calibrated to w_std(k=3)={float(w_ref):.4f}\n")
     print(f"{'nucleus':<8}{'A':<4}{'bonds':<7}{'B_AME':<9}{'k_implied':<11}"
           f"{'logA':<8}{'log(bonds)':<11}")
     rows = {}
@@ -147,10 +216,10 @@ def main() -> int:
         target = w_ref * B / refB
         ki = invert_wstd(table, ks, target)
         rows[name] = dict(A=A, bonds=nb, B=B,
-                          k_implied=(round(ki, 4) if ki is not None else None))
+                          k_implied=(fmt(ki) if ki is not None else None))
         s = f"{name:<8}{A:<4}{nb:<7}{B:<9}"
         if ki is not None:
-            s += f"{ki:<11.4f}{math.log(A):<8.4f}{math.log(nb):<11.4f}"
+            s += f"{float(ki):<11.4f}{math.log(A):<8.4f}{math.log(nb):<11.4f}"
             kimp.append(ki); As.append(A); logAs.append(math.log(A))
             bonds.append(nb); logbonds.append(math.log(nb))
         else:
@@ -225,8 +294,18 @@ def main() -> int:
         "generated": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "assertions": assertions,
         "allPassed": all_ok,
-        "result": {"w_std_table": {str(k): w for k, w in zip(ks, table)},
-                   "nuclei": rows, "R2_by_form": r2, "best_form": best,
+        "result": {"w_std_table": {str(k): fmt(w) for k, w in zip(ks, table)},
+                   "normalization_c_k": {str(k): fmt(normalization_c(k)) for k in ks},
+                   "weight_convention": (
+                       "W_lambda = d_q^2 / Sigma_mu d_q^2 (SELF-NORMALIZED "
+                       "q-Plancherel). The textbook d_q^2/[k]_q! is a "
+                       "probability measure at q=1 only; at q_0 it sums to "
+                       "c_k, recorded above, which varies with k -- and this "
+                       "probe compares w_std ACROSS k, so c_k does not "
+                       "cancel. Bean qou-uk8o; "
+                       "docs/audits/2026-09-04-plancherel-convention-gap.md"),
+                   "nuclei": rows, "R2_by_form": {k: fmt(v) for k, v in r2.items()},
+                   "best_form": best,
                    "verdict": verdict},
         "context": {
             "builds_on": "wlambda_jet_tower_connected_probe.py (w_std super-geometric)",

@@ -75,3 +75,24 @@ hand.
 residual and the remaining freedom are both ~1 %, which is the same structural
 situation `qou-59j5` flagged at 33 % — two orders of magnitude smaller, but not
 gone.
+
+## OWNER RULING 2026-09-05 — brane-tower axioms preferred
+
+`E_0 = m_e.c_q^2.hbar_q/(1 - hbar_q^2) = 4.227483` MeV (tower-summed), not the
+single-Planck-tick `4.185981`. The last ~1 % scale freedom is closed.
+
+**Consequence, measured** (`qbeta_tower_ruling_bound_probe.py`, 6/6): the law
+becomes ONE-SIDED. Nuclides whose measured binding exceeds `3.E_0.S` drop from
+**10 to 1** of 2548, so under the ruling the additive law is an **upper bound on
+nuclear binding for 2547 of 2548 measured nuclides**, saturated at the iron peak
+to 0.6 % (Fe-54 0.9941, Ni-56 0.9938, Ni-58 0.9930, Co-55 0.9918).
+
+The sign is right structurally: every SEMF correction SUBTRACTS from the volume
+term, so a law omitting all of them belongs above the data. `E_0^(N=0)` sat below
+the peak and let ten nuclides climb over it — the wrong position for this shape.
+
+The sole exception is **4He at 1.0758** — the corpus's own most-worked anomaly
+(19 open beans on the magic surplus: `qou-ooqh`, `qou-foh0`, `w5tg`, `qou-3wvl`,
+`qou-guyb`). This is a STRUCTURAL argument, not a proximity one: boundedness is a
+property of the whole table and cannot be tuned by moving a scale 0.99 % toward
+one point.

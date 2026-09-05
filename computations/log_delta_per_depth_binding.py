@@ -31,7 +31,7 @@ Ref: docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
+from _precision import fmt, set_compute_dps  # noqa: E402 — dps must rise before module constants
 import ast
 import json
 import sys
@@ -92,6 +92,64 @@ def q_factorial(n):
     return r
 
 
+def _hooks(lam):
+    """Hook lengths of every cell of `lam` (arm + leg + 1)."""
+    out = []
+    for r, row in enumerate(lam):
+        for c in range(row):
+            arm = row - c - 1
+            leg = sum(1 for rr in range(r + 1, len(lam)) if lam[rr] > c)
+            out.append(arm + leg + 1)
+    return out
+
+
+def dim_q(lam):
+    """d_q(λ) = [n]_q! / ∏_cells [h]_q — the *quantum* dimension.
+
+    NOT the classical Specht dimension f^λ = n!/∏h, which is what the χ
+    witnesses carry in their `dim` field.
+    """
+    d = q_factorial(sum(lam))
+    for h in _hooks(lam):
+        d /= q_int(h)
+    return d
+
+
+# ── weight forms (bean qou-uk8o, 2026-09-05) ────────────────────────────────
+# `f2_over_qfact` is what this producer has always computed. Its historical
+# spelling was `w = dim_q ** 2 / qfact` with `dim_q` bound to the χ witness's
+# `dim` field — which is the CLASSICAL f^λ, so the name was wrong and the
+# object is (f^λ)²/[n]_q!. It is not a probability measure: Σ_λ (f^λ)² = n!
+# exactly, so it sums to n!/[n]_q! = 0.98029937 / 0.85832883 / 0.61193301 /
+# 0.32612477 at n = 3 / 6 / 9 / 12. Φ_k is linear in the weights, so each
+# atom's B_pred is scaled by a DIFFERENT factor spanning 3.0x — which cancels
+# from any ratio at one n and does not cancel from the cross-atom max/min this
+# producer is scored on. Same defect class as
+# docs/audits/2026-09-04-plancherel-convention-gap.md, different constant:
+# that audit's c_n = Σ d_q²/[n]_q! runs 0.99/1.11/1.52 and *increases* with n.
+# The two `_selfnorm` forms are measures at every n by construction.
+WEIGHT_FORMS = ("f2_over_qfact", "f2_selfnorm", "dq2_selfnorm", "identity")
+
+
+def _weight_map(parts, n, w_form):
+    """Per-partition weight list for `w_form`, self-normalized where named."""
+    if w_form == "identity":
+        return [mp.mpf(1) for _ in parts]
+    if w_form == "f2_over_qfact":
+        qfact = q_factorial(n)
+        return [mp.mpf(p["dim"]) ** 2 / qfact for p in parts]
+    if w_form == "f2_selfnorm":
+        raw = [mp.mpf(p["dim"]) ** 2 for p in parts]
+    elif w_form == "dq2_selfnorm":
+        raw = [dim_q(p["partition"]) ** 2 for p in parts]
+    else:
+        raise ValueError(w_form)
+    tot = sum(raw, mp.mpf(0))
+    if tot == 0:
+        raise ZeroDivisionError(f"{w_form}: weight total is zero at n={n}")
+    return [r / tot for r in raw]
+
+
 def load_chi(sp):
     w = json.loads((HERE / CHI_FILES[sp]).read_text())
     n = int(w["n_strands"])
@@ -99,6 +157,7 @@ def load_chi(sp):
     for p in w["by_partition"]:
         lam = p["partition"] if isinstance(p["partition"], list) else ast.literal_eval(p["partition"])
         parts.append({
+            "partition": tuple(lam),   # needed by the dq2_selfnorm weight form
             "depth": len(lam) - 1,
             "dim": int(p["dim"]),
             "chi": mp.mpf(p["chi_lambda"]),
@@ -106,24 +165,23 @@ def load_chi(sp):
     return n, parts
 
 
-def phi_k(parts, n, k):
-    """Φ_k(β) with paper-prescribed ~w_λ = dim_q² / [n]_q!"""
+def phi_k(parts, n, k, w_form="f2_over_qfact"):
+    """Φ_k(β) under the chosen weight form (see WEIGHT_FORMS)."""
     total = mp.mpf(0)
-    qfact = q_factorial(n)
-    for p in parts:
+    weights = _weight_map(parts, n, w_form)
+    for p, w in zip(parts, weights):
         if p["depth"] != k: continue
-        chi = p["chi"]; dim_q = mp.mpf(p["dim"])
-        f = mp.fabs(chi) * dim_q
+        chi = p["chi"]; f_lam = mp.mpf(p["dim"])
+        f = mp.fabs(chi) * f_lam
         if f < mp.mpf("1e-30"): continue
-        w = dim_q ** 2 / qfact
         total += w * mp.log(f)
     return total
 
 
-def per_species_phi(sp):
+def per_species_phi(sp, w_form="f2_over_qfact"):
     """Return (n, {k: Φ_k}) for species."""
     n, parts = load_chi(sp)
-    return n, {k: phi_k(parts, n, k) for k in range(n)}
+    return n, {k: phi_k(parts, n, k, w_form) for k in range(n)}
 
 
 def main() -> int:
@@ -134,24 +192,33 @@ def main() -> int:
         "[m^(k)_K - Z·m^(k)_p - N·m^(k)_n] with paper-prescribed ~w_λ."
     )
 
-    # Compute Φ_k per species per depth
-    phi_data = {}
+    # Compute Φ_k per species per depth, per weight form
+    phi_by_form = {}
     n_per_sp = {}
-    for sp in ("p", "n", "D", "T", "3He", "4He"):
-        n, phis = per_species_phi(sp)
-        phi_data[sp] = phis
-        n_per_sp[sp] = n
+    for w_form in WEIGHT_FORMS:
+        phi_data = {}
+        for sp in ("p", "n", "D", "T", "3He", "4He"):
+            n, phis = per_species_phi(sp, w_form)
+            phi_data[sp] = phis
+            n_per_sp[sp] = n
+        phi_by_form[w_form] = phi_data
 
     builder.add_data("phi_k_per_species", {
-        sp: {str(k): str(v) for k, v in phis.items()}
-        for sp, phis in phi_data.items()
+        w_form: {sp: {str(k): str(v) for k, v in phis.items()}
+                 for sp, phis in pd.items()}
+        for w_form, pd in phi_by_form.items()
     })
     builder.add_data("n_per_species", n_per_sp)
 
-    # Per-depth binding subtraction
-    print(f"{'atom':<6} {'n':>3} {'B_pred':>16} {'B_AME':>10} {'|B_pred/B_AME|':>16}")
-    results = {}
-    for atom in ("D", "T", "3He", "4He"):
+    all_results = {}
+    all_summary = {}
+    for w_form in WEIGHT_FORMS:
+      phi_data = phi_by_form[w_form]
+      print(f"\n[{w_form}]")
+      # Per-depth binding subtraction
+      print(f"{'atom':<6} {'n':>3} {'B_pred':>16} {'B_AME':>10} {'|B_pred/B_AME|':>16}")
+      results = {}
+      for atom in ("D", "T", "3He", "4He"):
         Z, N = ZN[atom]
         n_atom = n_per_sp[atom]
         # Per-depth binding: for each k available in atom, subtract Z·proton + N·neutron at same k
@@ -181,44 +248,66 @@ def main() -> int:
             "B_pred": str(B_pred),
             "B_pred_sign": "+" if B_pred > 0 else "-",
             "B_AME": str(B_emp),
-            "abs_ratio": float(ratio),
+            # mpf -> output-precision string: float() here wrote a binary64
+            # value into the witness (NO-FLOAT64 discipline).
+            "abs_ratio": fmt(ratio),
             "per_depth": per_depth_contribs,
         }
         print(f"  {atom:<6} {n_atom:>3} {float(B_pred):>16.6f} {float(B_emp):>10.4f} {float(ratio):>16.6f}")
 
-    builder.add_data("per_depth_binding_results", results)
+      # Variance
+      abs_ratios = [mp.mpf(r["abs_ratio"]) for r in results.values()]
+      rmin, rmax = min(abs_ratios), max(abs_ratios)
+      mom = rmax / rmin if rmin > 0 else mp.inf
+      # T/³He/⁴He alone. Under the self-normalized forms the deuteron is the
+      # sole outlier, and one max/min over all four hides that — it reads as
+      # broad scatter when it is a tight cluster plus one miss. Derived
+      # statistic only; the verdict cut-offs below are deliberately left at
+      # their historical values rather than re-tuned to the new baseline.
+      hv = [mp.mpf(results[a]["abs_ratio"]) for a in ("T", "3He", "4He")]
+      mom_hv = max(hv) / min(hv) if min(hv) > 0 else mp.inf
+      signs_consistent = all(mp.mpf(r["B_pred"]) > 0 for r in results.values())
+
+      if mom < 1.05:
+        verdict = f"PASS — max/min = {float(mom):.3f} < 1.05 (universal categorical c)"
+      elif mom < 1.5:
+        verdict = f"STRONG — max/min = {float(mom):.3f} (under 1.5×)"
+      elif mom < 2.0:
+        verdict = f"GOOD — max/min = {float(mom):.3f} (better than full-mass-subtract 3.96×)"
+      elif mom < 3.96:
+        verdict = f"IMPROVES — max/min = {float(mom):.3f} (better than full-mass-subtract 3.96×)"
+      else:
+        verdict = f"NO IMPROVEMENT — max/min = {float(mom):.3f} (≥ 3.96×)"
+      print(f"  max/min = {float(mom):.4f}   (T/³He/⁴He only: {float(mom_hv):.4f})")
+      print(f"  Verdict: {verdict}")
+      print(f"  All B_pred > 0 (correct binding sign): {signs_consistent}")
+
+      all_results[w_form] = results
+      all_summary[w_form] = {
+          "max_over_min": fmt(mom),
+          "max_over_min_heavy_three_no_deuteron": fmt(mom_hv),
+          "verdict": verdict,
+          "all_signs_correct": signs_consistent,
+      }
+
+    builder.add_data("per_depth_binding_results", all_results)
     builder.add_data("canonical_status", "canonical-with-empirical-assignment")
-
-    # Variance
-    abs_ratios = [r["abs_ratio"] for r in results.values()]
-    rmin, rmax = min(abs_ratios), max(abs_ratios)
-    mom = rmax / rmin if rmin > 0 else float("inf")
-    builder.add_data("max_over_min", float(mom))
-
-    if mom < 1.05:
-        verdict = f"PASS — max/min = {mom:.3f} < 1.05 (universal categorical c)"
-    elif mom < 1.5:
-        verdict = f"STRONG — max/min = {mom:.3f} (under 1.5×)"
-    elif mom < 2.0:
-        verdict = f"GOOD — max/min = {mom:.3f} (better than full-mass-subtract 3.96×)"
-    elif mom < 3.96:
-        verdict = f"IMPROVES — max/min = {mom:.3f} (better than full-mass-subtract 3.96×)"
-    else:
-        verdict = f"NO IMPROVEMENT — max/min = {mom:.3f} (≥ 3.96×)"
-    builder.add_data("verdict", verdict)
-    print(f"\n  max/min = {mom:.4f}")
-    print(f"  Verdict: {verdict}")
-
-    # Sign check
-    signs_consistent = all(mp.mpf(r["B_pred"]) > 0 for r in results.values())
-    builder.add_data("all_signs_correct", signs_consistent)
-    print(f"  All B_pred > 0 (correct binding sign): {signs_consistent}")
+    builder.add_data("variance_summary", all_summary)
+    # Headline keys kept at the historical (as-published) form so downstream
+    # readers do not silently switch normalization; the self-normalized
+    # figures sit beside them in variance_summary. Bean qou-uk8o.
+    builder.add_data("max_over_min", all_summary["f2_over_qfact"]["max_over_min"])
+    builder.add_data("verdict", all_summary["f2_over_qfact"]["verdict"])
+    builder.add_data("all_signs_correct",
+                     all_summary["f2_over_qfact"]["all_signs_correct"])
 
     builder.add_assertion(
         "data_loaded",
         computed=B_AME["D"],
-        expected=2.22456607,
-        tolerance=1e-10,
+        # mpf, not a float literal: a binary64 `expected` is a raw-float64
+        # field in the witness and cannot represent the value it asserts.
+        expected=mp.mpf("2.22456607"),
+        tolerance=mp.mpf("1e-10"),
         unit="B(D) MeV",
         source="AME 2020",
     )

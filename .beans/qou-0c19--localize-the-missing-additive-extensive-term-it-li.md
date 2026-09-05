@@ -178,3 +178,12 @@ and `b -> b^3` is not exact). Both are larger constructions.
 of a colour-complete interface, and the missing scale factor against the peak
 `B/A` is 3.0075. Same 3 — a restatement, not a derivation. `E_0` is still CAL-1
 and `qou-59j5`'s normaliser family still spans 1.33x.
+
+## 2026-09-05 — synthesis landed; this bean is the surviving mechanism gap
+
+The arc is written up at
+`docs/audits/2026-09-05-binding-law-arc-synthesis.md`. This bean is §6 item 4:
+the factor of 3 is the strand count, `tr_M` cooperates exactly, and no strand
+ordering carries the colour tube. Both escape routes remain named and untaken —
+drop contiguity (intra-nucleon crossings become conjugated braids), or drop
+single-generator couplings (and `b -> b^3` stops being exact).
