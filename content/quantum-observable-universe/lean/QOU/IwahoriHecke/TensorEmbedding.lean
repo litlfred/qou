@@ -40,8 +40,16 @@ sites, adjacent or not; `embedPairHom` is its algebra-map packaging; and
 > for every `n`, and every pair of distinct sites `i ≠ j` of `V^{⊗n}`, the embedded
 > R-matrix satisfies `Ř_{ij}² = (q − qi) Ř_{ij} + 1`.
 
-Its engine is `sum_collapse`: a `2^n`-term sum whose summand is supported on the states
-agreeing with `a` off `{i, j}` is a 4-term sum over the assignments to those sites.
+and `braidAt_commute` is the second defining family at general `n`:
+
+> braidings at **disjoint** pairs of sites commute — `σ_i σ_j = σ_j σ_i` for `|i − j| ≥ 2`.
+
+The engine for both is `sum_collapse`: a `2^n`-term sum whose summand is supported on the
+states agreeing with `a` off `{i, j}` is a 4-term sum over the assignments to those sites.
+Far commutation needs no second collapse — `sum_collapse` is applied once to each side and
+both reduce to the same four-index normal form
+(`embedPair_mul_apply_of_disjoint`), which is symmetric in the two pairs because the base
+ring is commutative.
 
 -- Ref: [jimbo1986]; [manuscript] bean qou-k4oq
 -/
@@ -387,32 +395,113 @@ theorem braidAt_sub_inv (hij : i ≠ j) (hqi : q * qi = 1)
     braidAt q qi i j - S = algebraMap R _ (q - qi) :=
   sub_inv_eq (isHeckeGenerator_braidAt q qi hij hqi) hS
 
+/-! ### Far commutation at general `n`
+
+The second defining family, in the site-indexed model: braidings at **disjoint** pairs of
+sites commute. No new collapse lemma is needed — `sum_collapse` is applied once to each
+side and both reduce to the same four-index normal form, which is symmetric in the two
+pairs because the base ring is commutative. -/
+
+variable {k l : Fin n}
+
+/-- After updating `a` at sites `i, j`, agreement with `b` off `{k,l}` splits into the two
+window values matching `b` and agreement off all four sites. -/
+private theorem agree_update_iff (hij : i ≠ j) (hki : k ≠ i) (hkj : k ≠ j)
+    (hli : l ≠ i) (hlj : l ≠ j) (a b : Fin n → Fin 2) (x : Fin 2 × Fin 2) :
+    (∀ m, m ≠ k → m ≠ l → Function.update (Function.update a i x.1) j x.2 m = b m)
+      ↔ (x = (b i, b j) ∧ ∀ m, m ≠ i → m ≠ j → m ≠ k → m ≠ l → a m = b m) := by
+  constructor
+  · intro h
+    refine ⟨Prod.ext ?_ ?_, fun m hmi hmj hmk hml => ?_⟩
+    · rw [← update_left hij a x]; exact h i (Ne.symm hki) (Ne.symm hli)
+    · rw [← update_right a x]; exact h j (Ne.symm hkj) (Ne.symm hlj)
+    · rw [update_agrees a x m hmi hmj]; exact h m hmk hml
+  · rintro ⟨rfl, h3⟩ m hmk hml
+    by_cases hmi : m = i
+    · subst hmi; exact update_left hij a _
+    · by_cases hmj : m = j
+      · subst hmj; exact update_right a _
+      · rw [← update_agrees a _ m hmi hmj]; exact h3 m hmi hmj hmk hml
+
+/-- **The four-index normal form.** A product of braidings at two disjoint pairs of sites
+has one entry per pair, gated by agreement off all four sites. -/
+private theorem embedPair_mul_apply_of_disjoint (hij : i ≠ j) (hki : k ≠ i) (hkj : k ≠ j)
+    (hli : l ≠ i) (hlj : l ≠ j)
+    (M N : Matrix (Fin 2 × Fin 2) (Fin 2 × Fin 2) R) (a b : Fin n → Fin 2) :
+    (embedPair i j M * embedPair k l N) a b
+      = if (∀ m, m ≠ i → m ≠ j → m ≠ k → m ≠ l → a m = b m)
+        then M (a i, a j) (b i, b j) * N (a k, a l) (b k, b l) else 0 := by
+  classical
+  rw [Matrix.mul_apply,
+    sum_collapse hij a (fun c => embedPair i j M a c * embedPair k l N c b)
+      (fun c hc => by dsimp only; rw [embedPair_apply, if_neg hc, zero_mul])]
+  have hval : ∀ x : Fin 2 × Fin 2,
+      embedPair i j M a (Function.update (Function.update a i x.1) j x.2)
+          * embedPair k l N (Function.update (Function.update a i x.1) j x.2) b
+        = M (a i, a j) x
+          * (if (x = (b i, b j) ∧ ∀ m, m ≠ i → m ≠ j → m ≠ k → m ≠ l → a m = b m)
+             then N (a k, a l) (b k, b l) else 0) := by
+    intro x
+    rw [embedPair_apply_update hij, embedPair_apply,
+      ← update_agrees a x k hki hkj, ← update_agrees a x l hli hlj]
+    simp only [agree_update_iff hij hki hkj hli hlj]
+  rw [Finset.sum_congr rfl (fun x _ => hval x)]
+  by_cases hP : ∀ m, m ≠ i → m ≠ j → m ≠ k → m ≠ l → a m = b m
+  · rw [if_pos hP]
+    simp only [eq_true hP, and_true, mul_ite, mul_zero]
+    simp
+  · rw [if_neg hP]
+    simp [hP]
+
+/-- **Far commutation.** Braidings at disjoint pairs of sites commute, at any `n`. This is
+the defining relation `σ_i σ_j = σ_j σ_i` for `|i − j| ≥ 2`, in the site-indexed model. -/
+theorem embedPair_commute (hij : i ≠ j) (hkl : k ≠ l) (hki : k ≠ i) (hkj : k ≠ j)
+    (hli : l ≠ i) (hlj : l ≠ j) (M N : Matrix (Fin 2 × Fin 2) (Fin 2 × Fin 2) R) :
+    embedPair i j M * embedPair k l N = embedPair k l N * embedPair i j M := by
+  ext a b
+  rw [embedPair_mul_apply_of_disjoint hij hki hkj hli hlj,
+    embedPair_mul_apply_of_disjoint hkl (Ne.symm hki) (Ne.symm hli)
+      (Ne.symm hkj) (Ne.symm hlj)]
+  by_cases h : ∀ m, m ≠ i → m ≠ j → m ≠ k → m ≠ l → a m = b m
+  · rw [if_pos h, if_pos (fun m h1 h2 h3 h4 => h m h3 h4 h1 h2), mul_comm]
+  · rw [if_neg h, if_neg (fun hc => h (fun m h1 h2 h3 h4 => hc m h3 h4 h1 h2))]
+
+/-- **The braidings at disjoint site pairs commute** — far commutation for `Ř` itself. -/
+theorem braidAt_commute (hij : i ≠ j) (hkl : k ≠ l) (hki : k ≠ i) (hkj : k ≠ j)
+    (hli : l ≠ i) (hlj : l ≠ j) :
+    braidAt q qi i j * braidAt q qi k l = braidAt q qi k l * braidAt q qi i j :=
+  embedPair_commute hij hkl hki hkj hli hlj _ _
+
 end Sites
 
 /-! ## What is still missing for a literal `H_n(q) → End(V^{⊗n})`
 
-`isHeckeGenerator_braidAt` gives the **quadratic** relation at every `n` and every pair of
-distinct sites. The other two defining families are **not** proved in the site-indexed
-model, and without them there is no algebra map out of `H_n(q)`:
+Two of the three defining families now hold in the site-indexed model at general `n`:
 
-* **far commutation** `Ř_{ij} Ř_{kl} = Ř_{kl} Ř_{ij}` for `{i,j} ∩ {k,l} = ∅` — proved
-  above in the `σ × ρ` model (`tensorId_commute_idTensor`) but not transported to sites;
-* **the braid relation** `Ř_{i,i+1} Ř_{i+1,i+2} Ř_{i,i+1} = …` — proved above at three
-  factors (`yangBaxter`, and `yangBaxter_tensorId` with a spectator) but likewise not
-  transported.
+* the **quadratic** — `isHeckeGenerator_braidAt`, every `n`, every `i ≠ j`;
+* **far commutation** — `braidAt_commute`, every `n`, disjoint pairs.
 
-Both need `sum_collapse` over **more than two** sites: four for far commutation, three for
-the braid relation. The generalisation to fix is
+The **braid relation** `Ř_{ij} Ř_{jk} Ř_{ij} = Ř_{jk} Ř_{ij} Ř_{jk}` is **not** proved at
+sites. It holds at three factors (`yangBaxter`) and survives an abstract spectator
+(`yangBaxter_tensorId`), but neither is transported to `Fin n → Fin 2`, so there is still
+no algebra map out of `H_n(q)` for `n > 3`.
+
+Why that one is harder than far commutation: the two pairs there are **disjoint**, so each
+factor's window survives the other's update untouched and one application of `sum_collapse`
+per side suffices. The braid relation's three factors **overlap** in the site `j`, so the
+intermediate states range over three sites at once and the product does not factor. It
+needs a genuine three-site collapse:
 
     sitesEquiv (s : Finset (Fin n)) (a : Fin n → Fin 2) :
         (s → Fin 2) ≃ {c : Fin n → Fin 2 // ∀ k ∉ s, a k = c k}
 
-with `toFun x k = if h : k ∈ s then x ⟨k, h⟩ else a k`. Note this is **easier** than
-`pairEquiv` above, not harder: the `dite` form needs no `Function.update` juggling and no
+with `toFun x k = if h : k ∈ s then x ⟨k, h⟩ else a k`. That form is **easier** than
+`pairEquiv` above, not harder: the `dite` needs no `Function.update` juggling and no
 `i ≠ j` side condition, because membership in `s` already separates the cases. `pairEquiv`
-should be re-derived from it rather than kept as a special case.
+should be re-derived from it rather than kept as a special case. The remaining step after
+that is the reindex `({i,j,k} → Fin 2) ≃ Fin 2 × Fin 2 × Fin 2` carrying `yangBaxter` over.
 
-Until that lands, do **not** describe this file as giving a Hecke action on `V^{⊗n}`. It
-gives one relation of three at general `n`, and all three at three factors. -/
+Until that lands, do **not** describe this file as giving a Hecke action on `V^{⊗n}`: it
+gives two relations of three at general `n`, and all three at three factors. -/
 
 end QOU.IwahoriHecke.TensorEmbed
