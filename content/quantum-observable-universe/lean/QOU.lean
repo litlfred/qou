@@ -1440,6 +1440,12 @@ import QOU.Hecke.GeometricTailBound
 -- edge set the corpus has built (chain d=2, max-contact deltahedra d=5, close
 -- packing d=12) is degree-bounded, so none of them can carry it.
 import QOU.Hecke.BoundedDegreeCoulomb
+-- `SymmetrySignAmGm`: a bond sum is additive in `L = -log b`, so its symmetry
+-- term compares `b_pn` against the GEOMETRIC mean of `b_pp`, `b_nn` -- while the
+-- construction delivers an ARITHMETIC (convex) one.  AM >= GM, so the sign is
+-- backwards structurally.  The crossing weight is `1/(q^2+1)`, which is `1/2`
+-- only at `q = 1`; the corpus sits at `1/2 + delta_flavour/4`, 11.7 % above it.
+import QOU.Hecke.SymmetrySignAmGm
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
 
