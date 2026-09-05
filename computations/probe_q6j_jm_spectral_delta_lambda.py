@@ -40,6 +40,7 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 set_compute_dps()
 HERE = Path(__file__).parent
@@ -49,7 +50,7 @@ AME_B = {
     "deuteron": mp.mpf("2.2245662"),
     "tritium": mp.mpf("8.4818"),
     "helium-3": mp.mpf("7.7180"),
-    "helium-4": mp.mpf("28.29566"),
+    "helium-4": AME_B_HE4_MEV_VALIDATION,
 }
 CHI_CACHE = {
     "deuteron": "chi-deuteron-h6-at-q0-50dps.witness.json",

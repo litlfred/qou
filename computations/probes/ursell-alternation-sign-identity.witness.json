@@ -1,6 +1,6 @@
 {
   "schema": "witness/v1",
-  "computedAt": "2026-08-30T12:37:31.255387+00:00",
+  "computedAt": "2026-09-05T18:03:26.930154+00:00",
   "description": "The corpus's 3-body cumulant is exactly minus the classical third Ursell function under the Boltzmann identification g = f - 1. The classical Ursell functions ALTERNATE in the repulsive class, (-1)^(n-1) phi^T_n >= 0, while the corpus carries a uniform minus at n=2 and n=3. The uniform minus is correct at n=2 and inverts the physical sign at n=3, so MayerThreeBodySign's b3 < 0 is a missing (-1)^(n-1) rather than a physical obstruction. The identity is low-order: it does not extend to n=4 under either sign.",
   "q0_pin": "proton",
   "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -50,7 +50,7 @@
         "mu_pn": "0.50822978937673896258",
         "mu_in_unit_interval": true,
         "B_2H_MeV": "2.833162572",
-        "B_2H_over_AME": "1.273579913",
+        "B_2H_over_AME": "1.273579798",
         "v_eq_B_over_alpha": "0.67682159238634338966",
         "v_positive": true,
         "exp_minus_v_equals_mu": true
@@ -61,7 +61,7 @@
         "mu_pn": "0.3948620864139681634",
         "mu_in_unit_interval": true,
         "B_2H_MeV": "3.88969225844",
-        "B_2H_over_AME": "1.748517355",
+        "B_2H_over_AME": "1.748517198",
         "v_eq_B_over_alpha": "0.92921872336654878368",
         "v_positive": true,
         "exp_minus_v_equals_mu": true
@@ -78,12 +78,12 @@
       "b3_corpus_W_units": "-0.39193078659470569867",
       "b3_corpus_equals_minus_phi3": true,
       "b3_alternating_W_units": "0.39193078659470569867",
-      "MeV_per_W_unit": "5.7436026081157689443",
-      "b3_alternating_MeV": "2.2510946880862165033",
-      "ame_b3_isospin_avg_MeV": "1.4262225",
-      "ame_b3_triton_MeV": "1.8081",
-      "ratio_to_isospin_avg": "1.57836150256",
-      "ratio_to_triton": "1.24500563469"
+      "MeV_per_W_unit": "5.7436031244953781009",
+      "b3_alternating_MeV": "2.2510948904712829015",
+      "ame_b3_isospin_avg_MeV": "1.42622016",
+      "ame_b3_triton_MeV": "1.8080976",
+      "ratio_to_isospin_avg": "1.57836423408",
+      "ratio_to_triton": "1.2450073992"
     },
     "probe2_typing_f_pn": {
       "f_pn": "0.50822978937673896258",
@@ -94,12 +94,12 @@
       "b3_corpus_W_units": "-0.60658512545108528488",
       "b3_corpus_equals_minus_phi3": true,
       "b3_alternating_W_units": "0.60658512545108528488",
-      "MeV_per_W_unit": "4.5235883588406537",
-      "b3_alternating_MeV": "2.7439414121364269233",
-      "ame_b3_isospin_avg_MeV": "1.4262225",
-      "ame_b3_triton_MeV": "1.8081",
-      "ratio_to_isospin_avg": "1.9239223979",
-      "ratio_to_triton": "1.51758277315"
+      "MeV_per_W_unit": "4.5235887655346658211",
+      "b3_alternating_MeV": "2.7439416588309652859",
+      "ame_b3_isospin_avg_MeV": "1.42622016",
+      "ame_b3_triton_MeV": "1.8080976",
+      "ratio_to_isospin_avg": "1.92392572745",
+      "ratio_to_triton": "1.51758492397"
     }
   },
   "assertions": [
@@ -138,9 +138,9 @@
   "lean": "QOU/MassTheory/MayerThreeBodySign.lean, QOU/Mass/PairwiseCumulantVanishing.lean",
   "bean": "qou-rwhv",
   "allPassed": true,
-  "scriptHash": "c3084895f017",
-  "scriptCommitSha": "d2897baaa5d7951dc086a6e5f8ab9aeb46a78432",
-  "commitSha": "fcc65c13805d7fae0f9490f8598582e19cb5d65c",
+  "scriptHash": "3492d77a682c",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",

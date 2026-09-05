@@ -1,50 +1,31 @@
 {
   "engine": "python-stdlib",
-  "computedAt": "2026-09-05T17:38:52.046889+00:00",
+  "computedAt": "2026-09-05T18:08:33.231299+00:00",
   "computation": "codata-truncation-audit",
   "scriptFile": "codata_truncation_audit.py",
   "description": "Hand-typed CODATA/substrate constants that are a short prefix of the canonical value, and so compute a different number. Separates that class from exact duplication, which is qou-46ke's original and much larger scope. Canonical values are read from codata_constants / q_parameter at run time, never typed here.",
   "min_shared_digits": 6,
-  "truncated_total": 222,
-  "truncated_files": 197,
-  "divergent_total": 316,
-  "divergent_files": 204,
+  "truncated_total": 97,
+  "truncated_files": 85,
+  "divergent_total": 93,
+  "divergent_files": 73,
   "rounded_total": 11,
   "rounded_files": 10,
-  "blocking_total": 549,
+  "blocking_total": 201,
   "by_constant": {
-    "B_2H": 137,
-    "B_4He": 107,
-    "m_e": 31,
+    "m_e": 14,
     "q0": 62,
-    "B_3H": 61,
-    "m_p": 20,
-    "m_n": 8,
-    "B_3He": 63,
     "q0_muon": 57,
+    "B_2H": 23,
+    "B_3H": 6,
+    "B_4He": 17,
+    "B_3He": 9,
+    "m_p": 9,
     "m_mu": 2,
-    "B_6Li": 1
+    "m_n": 2
   },
   "exact_duplicates": 211,
   "findings": [
-    {
-      "file": "computations/a4_interface_kl_subpath_closure.py",
-      "line": 50,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/a4_interface_kl_subpath_closure.py",
-      "line": 51,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
     {
       "file": "computations/a4_interface_trace_integration_all.py",
       "line": 33,
@@ -55,31 +36,13 @@
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
-      "file": "computations/a4_option_e_color_tube_closure.py",
-      "line": 46,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/alpha/alpha_k_jones_markov_h12.py",
-      "line": 236,
+      "line": 237,
       "constant": "m_e",
       "literal": "0.510998950",
       "canonical": "0.51099895069",
       "verdict": "TRUNCATED",
       "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/alpha/alpha_k_jones_markov_h12.py",
-      "line": 238,
-      "constant": "B_4He",
-      "literal": "28.2956912",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/alpha_em_channel_split_loop_measure_probe.py",
@@ -98,78 +61,6 @@
       "canonical": "1.1099785827513808075916690956107688798744991218736",
       "verdict": "ROUNDED",
       "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/atomic_chirality_residue.py",
-      "line": 136,
-      "constant": "B_2H",
-      "literal": "2.22456612",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/atomic_chirality_residue.py",
-      "line": 137,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/audits/canonical_a_k_magnitude_audit.py",
-      "line": 101,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/audits/canonical_a_k_magnitude_audit.py",
-      "line": 102,
-      "constant": "m_n",
-      "literal": "939.56542052",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/audits/canonical_a_k_magnitude_audit.py",
-      "line": 110,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/audits/canonical_a_k_magnitude_audit.py",
-      "line": 111,
-      "constant": "B_3H",
-      "literal": "8.481793",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/audits/canonical_a_k_magnitude_audit.py",
-      "line": 112,
-      "constant": "B_3He",
-      "literal": "7.718041",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/audits/canonical_a_k_magnitude_audit.py",
-      "line": 113,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/audits/muon_pin_migration_stage1_inventory.py",
@@ -244,42 +135,6 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/bar_pairing_binding_observable.py",
-      "line": 85,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/bar_pairing_binding_observable.py",
-      "line": 86,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/bar_pairing_binding_observable.py",
-      "line": 87,
-      "constant": "B_3He",
-      "literal": "7.718041",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/bar_pairing_binding_observable.py",
-      "line": 88,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/binding_alpha_shift_witness.py",
       "line": 55,
       "constant": "B_2H",
@@ -305,69 +160,6 @@
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_block_multiplicative.py",
-      "line": 101,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_block_multiplicative.py",
-      "line": 103,
-      "constant": "B_3He",
-      "literal": "7.7180428",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_block_multiplicative.py",
-      "line": 104,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_bring_enhancement_compare.py",
-      "line": 52,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_bring_enhancement_compare.py",
-      "line": 53,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_bring_enhancement_compare.py",
-      "line": 55,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_depth_stratified.py",
-      "line": 284,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
       "file": "computations/binding_depth_stratified_knot_weighted.py",
@@ -404,87 +196,6 @@
       "canonical": "2.2245662",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_edge_set_selection.py",
-      "line": 57,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_edge_set_selection.py",
-      "line": 58,
-      "constant": "B_4He",
-      "literal": "28.295661",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_fewbody_bondcount.py",
-      "line": 72,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_fewbody_bondcount.py",
-      "line": 73,
-      "constant": "B_4He",
-      "literal": "28.295661",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_k_solver.py",
-      "line": 130,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_k_solver.py",
-      "line": 142,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_ladder_catalog.py",
-      "line": 99,
-      "constant": "B_2H",
-      "literal": "2.22456612",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_ladder_catalog.py",
-      "line": 100,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_ladder_catalog.py",
-      "line": 102,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/binding_n3_forcing_probe.py",
@@ -532,60 +243,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/binding_via_interface_knot.py",
-      "line": 367,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_wn_derive_or_refute.py",
-      "line": 100,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_wn_derive_or_refute.py",
-      "line": 101,
-      "constant": "B_4He",
-      "literal": "28.295661",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_wn_multianchor_tower_refute.py",
-      "line": 77,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_wn_multianchor_tower_refute.py",
-      "line": 78,
-      "constant": "B_4He",
-      "literal": "28.295661",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/borromean_binding_recompute.py",
-      "line": 91,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/brng_hbarq2_saturation_genericity_probe.py",
       "line": 30,
       "constant": "q0",
@@ -613,24 +270,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/canonical_tower.py",
-      "line": 707,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/canonical_tower.py",
-      "line": 708,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/catalan_binding.py",
       "line": 136,
       "constant": "B_3He",
@@ -647,15 +286,6 @@
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/charge_slambda_reeb_phase_crack.py",
-      "line": 86,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
     },
     {
       "file": "computations/compound_binding_via_differences.py",
@@ -719,87 +349,6 @@
       "canonical": "1.1099785827513808075916690956107688798744991218736",
       "verdict": "ROUNDED",
       "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/d_from_scratch.py",
-      "line": 205,
-      "constant": "B_2H",
-      "literal": "2.22456612",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_binding_full_evaluation.py",
-      "line": 27,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_binding_full_evaluation.py",
-      "line": 27,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_borromean_ascaling.py",
-      "line": 36,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_cancellation_ascaling_probe.py",
-      "line": 121,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_cancellation_ascaling_probe.py",
-      "line": 122,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_cancellation_ascaling_probe.py",
-      "line": 123,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_cancellation_ascaling_probe.py",
-      "line": 124,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_categorical_verification.py",
-      "line": 74,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
       "file": "computations/delta_lambda_full_variance_phase5e_1.py",
@@ -892,285 +441,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/delta_lambda_multi_atom_crosscheck.py",
-      "line": 84,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_qdim_route_probe.py",
-      "line": 134,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_qdim_route_probe.py",
-      "line": 135,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_qdim_route_probe.py",
-      "line": 136,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_qdim_route_probe.py",
-      "line": 137,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_shape_probe.py",
-      "line": 153,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_shape_probe.py",
-      "line": 153,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/a3_units_consistency_probe.py",
-      "line": 78,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/a4_interface_magnitude_one_scalar_gate.py",
-      "line": 123,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/b4_multiplicative_cumulant_probe.py",
-      "line": 91,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/b4_multiplicative_cumulant_probe.py",
-      "line": 91,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/b4_multiplicative_cumulant_probe.py",
-      "line": 92,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/b4_multiplicative_cumulant_probe.py",
-      "line": 92,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/cumulant_mev_cluster_expansion_probe.py",
-      "line": 101,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/cumulant_mev_cluster_expansion_probe.py",
-      "line": 112,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_bareven_b4_magnitude_probe.py",
-      "line": 193,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_bareven_b4_magnitude_probe.py",
-      "line": 196,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_demazure_subcrystal_magnitude_probe.py",
-      "line": 152,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_demazure_subcrystal_magnitude_probe.py",
-      "line": 155,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_extensivity_gap_synthesis_probe.py",
-      "line": 45,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_extensivity_gap_synthesis_probe.py",
-      "line": 45,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_icosahedral_smatrix_magnitude_probe.py",
-      "line": 90,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_icosahedral_smatrix_magnitude_probe.py",
-      "line": 91,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_jet_filtration_magnitude_probe.py",
-      "line": 161,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_jet_filtration_magnitude_probe.py",
-      "line": 164,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_k4_complete_graph_collective_magnitude_probe.py",
-      "line": 103,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_k4_complete_graph_collective_magnitude_probe.py",
-      "line": 106,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_perpair_bond_magnitude_derive_probe.py",
-      "line": 82,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_perpair_bond_magnitude_derive_probe.py",
-      "line": 85,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_saturation_det_ceiling_probe.py",
-      "line": 99,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_saturation_det_ceiling_probe.py",
-      "line": 102,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/deltalambda/mu3_target_robustness_audit_probe.py",
       "line": 64,
       "constant": "B_2H",
@@ -1187,51 +457,6 @@
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py",
-      "line": 94,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py",
-      "line": 95,
-      "constant": "B_4He",
-      "literal": "28.295662",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/perknot_pn_bond_mayer_grounding_probe.py",
-      "line": 73,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/s5so3_geometric_wlambda_a4_helium_probe.py",
-      "line": 70,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/sigma1cubed_seifert_surface_term_probe.py",
-      "line": 71,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
       "file": "computations/deuteron_real_sdp.py",
@@ -1288,60 +513,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/fr_pullback_k3_test.py",
-      "line": 65,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/fr_pullback_k3_test.py",
-      "line": 67,
-      "constant": "B_3He",
-      "literal": "7.7180428",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/fr_pullback_k3_test.py",
-      "line": 68,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/fr_pullback_k3_test.py",
-      "line": 514,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/from_scratch/derive_t_h5.py",
-      "line": 100,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/gap_a1_binding_k_sdp_feasibility.py",
-      "line": 76,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
       "file": "computations/gap_a3_deuteron_A_D_overshoot.py",
       "line": 52,
       "constant": "q0_muon",
@@ -1358,33 +529,6 @@
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "DIVERGENT",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/generation_count_t29_truncation_probe.py",
-      "line": 78,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/h4_habiro_closure.py",
-      "line": 28,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/habiro/habiro_exact_mass_endomorphism.py",
-      "line": 280,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
     },
     {
       "file": "computations/habiro/habiro_interpolate_cross_validator.py",
@@ -1441,186 +585,6 @@
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
-      "file": "computations/lepton_linear_readout_rigidity.py",
-      "line": 97,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/lepton_net_to_mass_bridge_exclusion.py",
-      "line": 105,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/lepton_tower_bend_screening.py",
-      "line": 74,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/lepton_tower_core.py",
-      "line": 65,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/log_delta_categorical_derivation.py",
-      "line": 75,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_categorical_derivation.py",
-      "line": 76,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_categorical_derivation.py",
-      "line": 77,
-      "constant": "B_3He",
-      "literal": "7.7180428",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_categorical_derivation.py",
-      "line": 78,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_categorical_derivation.py",
-      "line": 228,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_full_mass_subtract.py",
-      "line": 81,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_full_mass_subtract.py",
-      "line": 82,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_full_mass_subtract.py",
-      "line": 83,
-      "constant": "B_3He",
-      "literal": "7.7180428",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_full_mass_subtract.py",
-      "line": 84,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_full_mass_subtract.py",
-      "line": 329,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_per_depth_binding.py",
-      "line": 66,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_per_depth_binding.py",
-      "line": 67,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_per_depth_binding.py",
-      "line": 68,
-      "constant": "B_3He",
-      "literal": "7.7180428",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_per_depth_binding.py",
-      "line": 69,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/log_delta_per_depth_binding.py",
-      "line": 309,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/magic_A_formula.py",
-      "line": 72,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/markov/peel_anchor_identification_probe.py",
       "line": 111,
       "constant": "q0",
@@ -1637,24 +601,6 @@
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "TRUNCATED",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/mass_at_3A_proper.py",
-      "line": 1238,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/mass_at_3A_proper.py",
-      "line": 1239,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/mass_formula_6term.py",
@@ -1693,60 +639,6 @@
       "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
     },
     {
-      "file": "computations/meson/binding_cut_entropy_derived_weightings_probe.py",
-      "line": 157,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/meson/colour_derived_interface_probe.py",
-      "line": 175,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/meson/interface_candidate_screen_probe.py",
-      "line": 173,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/meson/satellite_cable_escapes_the_bound_probe.py",
-      "line": 186,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/meson/two_remaining_fronts_probe.py",
-      "line": 220,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/meson/two_remaining_fronts_probe.py",
-      "line": 222,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
       "file": "computations/meson_h6_typed_trace.py",
       "line": 45,
       "constant": "q0_muon",
@@ -1774,33 +666,6 @@
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
-      "file": "computations/multi_level_jet_sum.py",
-      "line": 155,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/multi_level_jet_sum.py",
-      "line": 156,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/multiterm_cost_deuteron_hopf_probe.py",
-      "line": 34,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
       "file": "computations/neutrino_mass_volume_exclusion.py",
       "line": 36,
       "constant": "m_p",
@@ -1808,150 +673,6 @@
       "canonical": "938.27208943",
       "verdict": "TRUNCATED",
       "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_a4_full_reconciliation.py",
-      "line": 41,
-      "constant": "B_4He",
-      "literal": "28.295660",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_canonical_reeb_v5.py",
-      "line": 61,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_canonical_reeb_v5.py",
-      "line": 62,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_deuteron_delta_lambda_probe_v2.py",
-      "line": 81,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_deuteron_param_free_residual.py",
-      "line": 39,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_multi_isotope_delta_lambda_probe_v3.py",
-      "line": 77,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_multi_isotope_delta_lambda_probe_v3.py",
-      "line": 78,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_probe1_derive_1plusq_over_2.py",
-      "line": 54,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_q_reeb_phase_probe_v4.py",
-      "line": 44,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_q_reeb_phase_probe_v4.py",
-      "line": 45,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_v6_combined_canonical.py",
-      "line": 61,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_v6_combined_canonical.py",
-      "line": 61,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_v7_involution_aware.py",
-      "line": 61,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_v7_involution_aware.py",
-      "line": 61,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_v8_hecke_involution_isospin_mirror.py",
-      "line": 58,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/option_e_v9_all_symmetries.py",
-      "line": 55,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
     },
     {
       "file": "computations/per_atom_audit_witnesses.py",
@@ -2017,87 +738,6 @@
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
-      "file": "computations/phase5/phase3_triton_binding_convention_b.py",
-      "line": 101,
-      "constant": "B_2H",
-      "literal": "2.22456612",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/phase5/phase3_triton_binding_convention_b.py",
-      "line": 102,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/phase5/phase3_triton_binding_convention_b.py",
-      "line": 104,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/phase5/phase3c_a5_a7_knot_volume_targets.py",
-      "line": 70,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/phase5/phase3c_a5_a7_knot_volume_targets.py",
-      "line": 72,
-      "constant": "B_3He",
-      "literal": "7.718041",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/phase5/phase3c_a5_a7_knot_volume_targets.py",
-      "line": 73,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/phase5/phase3c_a5_a7_knot_volume_targets.py",
-      "line": 160,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/phase5/phase3c_a5_a7_knot_volume_targets.py",
-      "line": 161,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/phase5/phase3c_a5_a7_knot_volume_targets.py",
-      "line": 163,
-      "constant": "B_3He",
-      "literal": "7.718041",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probe_9b_perlambda_brane_tower.py",
       "line": 101,
       "constant": "B_4He",
@@ -2108,219 +748,30 @@
     },
     {
       "file": "computations/probe_kappa_excess_convention_resolution.py",
-      "line": 72,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probe_kappa_excess_convention_resolution.py",
-      "line": 74,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/probe_kappa_mirror_split_shell_test.py",
-      "line": 116,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probe_kappa_mirror_split_shell_test.py",
-      "line": 118,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/probe_kappa_normaliser_index_rule.py",
-      "line": 69,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probe_kappa_normaliser_index_rule.py",
-      "line": 71,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/probe_q6j_jm_spectral_delta_lambda.py",
-      "line": 52,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probe_q_beta_wenzl_projectors.py",
-      "line": 31,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/probe_qbeta_form.py",
-      "line": 30,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/probe_volume_wedderburn_delta_lambda.py",
-      "line": 60,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/adding_crossings_cannot_break_the_degeneracy_probe.py",
-      "line": 129,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/adjacent_vs_full_probe.py",
-      "line": 308,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/adjacent_vs_full_probe.py",
-      "line": 309,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/aggregator_convexity_divided_difference_probe.py",
       "line": 73,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
+      "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/probes/aggregator_convexity_divided_difference_probe.py",
-      "line": 74,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/aggregator_convexity_divided_difference_probe.py",
-      "line": 75,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/aggregator_convexity_divided_difference_probe.py",
-      "line": 76,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/aggregator_family_exclusion_probe.py",
-      "line": 65,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
+      "file": "computations/probe_kappa_mirror_split_shell_test.py",
+      "line": 119,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
+      "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/probes/aggregator_family_exclusion_probe.py",
-      "line": 66,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/aggregator_family_exclusion_probe.py",
-      "line": 67,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/aggregator_family_exclusion_probe.py",
-      "line": 68,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/alpha_residual_gb_jet_bodyorder_probe.py",
-      "line": 174,
-      "constant": "B_2H",
-      "literal": "2.22456637",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/alpha_residual_gb_jet_bodyorder_probe.py",
-      "line": 174,
-      "constant": "B_3H",
-      "literal": "8.48179663",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/alpha_residual_gb_jet_bodyorder_probe.py",
-      "line": 175,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
+      "file": "computations/probe_kappa_normaliser_index_rule.py",
+      "line": 70,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
+      "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/probes/aomega_o2_stokes_to_observable_mechanism.py",
@@ -2330,51 +781,6 @@
       "canonical": "1.1099785827513808075916690956107688798744991218736",
       "verdict": "TRUNCATED",
       "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/b3_charge_decomposition_a3_probe.py",
-      "line": 105,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/b3_charge_decomposition_a3_probe.py",
-      "line": 105,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/b3_charge_decomposition_a3_probe.py",
-      "line": 106,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/b4_1four_pairtype_magnitude_profile.py",
-      "line": 62,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/b4_1four_pairtype_magnitude_profile.py",
-      "line": 63,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/probes/b4_1four_reeb_flow_magnitude.py",
@@ -2431,215 +837,8 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/probes/b4_iceil_norm_ceiling_probe.py",
-      "line": 77,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/b4_value_cumulant_target_probe.py",
-      "line": 72,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/b4_value_cumulant_target_probe.py",
-      "line": 72,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/binding_additive_linked_cluster_probe.py",
-      "line": 50,
-      "constant": "q0",
-      "literal": "1.10997858275138080759166909561076887987449912187357763605672",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/binding_additive_linked_cluster_probe.py",
-      "line": 59,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_additive_linked_cluster_probe.py",
-      "line": 59,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_additive_linked_cluster_probe.py",
-      "line": 60,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_additive_linked_cluster_probe.py",
-      "line": 60,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_chain_floor_corrected_probe.py",
-      "line": 144,
-      "constant": "B_2H",
-      "literal": "2.22456637",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_chain_floor_corrected_probe.py",
-      "line": 144,
-      "constant": "B_3H",
-      "literal": "8.48179663",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_chain_floor_corrected_probe.py",
-      "line": 145,
-      "constant": "B_4He",
-      "literal": "28.29561",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_cluster_operator_vs_mayer_probe.py",
-      "line": 50,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_cluster_operator_vs_mayer_probe.py",
-      "line": 50,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_cluster_operator_vs_mayer_probe.py",
-      "line": 50,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_energy_scale_probe.py",
       "line": 56,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_mayer_linked_cluster_probe.py",
-      "line": 54,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_mayer_linked_cluster_probe.py",
-      "line": 54,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_mayer_linked_cluster_probe.py",
-      "line": 55,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_mayer_linked_cluster_probe.py",
-      "line": 55,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",
-      "line": 79,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",
-      "line": 80,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",
-      "line": 81,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_qgaussian_ell1_ceiling_measurement.py",
-      "line": 82,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_triangle_3body_cluster_probe.py",
-      "line": 65,
       "constant": "q0",
       "literal": "1.10997858275138080759166909561076887987449912187357763605672",
       "canonical": "1.1099785827513808075916690956107688798744991218736",
@@ -2648,48 +847,12 @@
     },
     {
       "file": "computations/probes/binding_triangle_3body_cluster_probe.py",
-      "line": 87,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_triangle_3body_cluster_probe.py",
-      "line": 88,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
+      "line": 70,
+      "constant": "q0",
+      "literal": "1.10997858275138080759166909561076887987449912187357763605672",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
       "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_triangle_3body_cluster_probe.py",
-      "line": 88,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/block_transposition_lift_probe.py",
-      "line": 426,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/borromean_per_lambda_fr_probe.py",
-      "line": 91,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
+      "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/probes/bring_color_weighted_base_scale_probe.py",
@@ -2701,294 +864,6 @@
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
-      "file": "computations/probes/can_the_substrate_carry_a_fractional_twist_probe.py",
-      "line": 174,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/channel_asymmetry_crossing_budget_bound_probe.py",
-      "line": 124,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/channel_asymmetry_letter_family_bound_probe.py",
-      "line": 208,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/chirality_topology_binding_probe.py",
-      "line": 64,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/chirality_topology_binding_probe.py",
-      "line": 64,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/chirality_topology_binding_probe.py",
-      "line": 65,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/chirality_topology_binding_probe.py",
-      "line": 65,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/chirality_weighted_3body_cluster_probe.py",
-      "line": 50,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/chirality_weighted_3body_cluster_probe.py",
-      "line": 50,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/chirality_weighted_3body_cluster_probe.py",
-      "line": 115,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/coefficient_quantisation_reachability_probe.py",
-      "line": 92,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/deuteron_fpn_wlambda_wiring.py",
-      "line": 75,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/deuteron_trefoil_writhe_interface_probe.py",
-      "line": 101,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/difference_knot_binding_probe.py",
-      "line": 78,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/difference_knot_binding_probe.py",
-      "line": 78,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/difference_knot_binding_probe.py",
-      "line": 78,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/difference_knot_binding_probe.py",
-      "line": 78,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/dynamic_pn_occupancy_probe.py",
-      "line": 104,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/dynamic_pn_occupancy_probe.py",
-      "line": 106,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/dynamic_pn_occupancy_probe.py",
-      "line": 107,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/eigenvalue_channel_binding_criterion_probe.py",
-      "line": 143,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/eigenvalue_channel_binding_criterion_probe.py",
-      "line": 270,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/flavor_split_3strand_derivation_probe.py",
-      "line": 60,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/flavor_split_3strand_derivation_probe.py",
-      "line": 61,
-      "constant": "m_n",
-      "literal": "939.56542052",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/flavor_split_alpha_bond_dilog_probe.py",
-      "line": 48,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/flavor_split_alpha_dilog_expansion_probe.py",
-      "line": 50,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/flavor_split_alpha_qbeta_amplification_probe.py",
-      "line": 40,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/flavor_split_geometric_closure_probe.py",
-      "line": 43,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/flavor_split_partial_derivation_probe.py",
-      "line": 76,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/flavor_split_partial_derivation_probe.py",
-      "line": 77,
-      "constant": "m_n",
-      "literal": "939.56542052",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/four_body_term_and_the_h12_collapse_probe.py",
-      "line": 214,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/four_body_term_and_the_h12_collapse_probe.py",
-      "line": 214,
-      "constant": "B_4He",
-      "literal": "28.295661",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/framing_spin_orbit_magic_probe.py",
       "line": 76,
       "constant": "q0",
@@ -2998,134 +873,8 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/probes/frobenius_gram_delta_lambda_probe.py",
-      "line": 60,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/frobenius_gram_delta_lambda_probe.py",
-      "line": 60,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/geometric_saturation_and_labelling_probe.py",
-      "line": 155,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/hbar_q_order_of_binding_observables_probe.py",
-      "line": 165,
-      "constant": "B_2H",
-      "literal": "2.22456637",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/hbar_q_order_of_binding_observables_probe.py",
-      "line": 348,
-      "constant": "B_4He",
-      "literal": "28.29561",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he3_brane_tower_structural_gap.py",
-      "line": 84,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he3_brane_tower_structural_gap.py",
-      "line": 84,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he3_brane_tower_structural_gap.py",
-      "line": 84,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he4_9_3_trace_dominant_correction_probe.py",
-      "line": 136,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he4_body_order_shortfall_location_probe.py",
-      "line": 87,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he4_body_order_shortfall_location_probe.py",
-      "line": 88,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he4_body_order_shortfall_location_probe.py",
-      "line": 89,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he4_body_order_shortfall_location_probe.py",
-      "line": 90,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he4_channel_split_categorical_constraint_probe.py",
-      "line": 100,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/he4_nu_sdp_binding_arbiter.py",
-      "line": 25,
+      "line": 26,
       "constant": "m_e",
       "literal": "0.51099895",
       "canonical": "0.51099895069",
@@ -3133,130 +882,13 @@
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
-      "file": "computations/probes/he4_nu_sdp_binding_arbiter.py",
-      "line": 28,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he4_qreeb_phase_falsification_probe.py",
-      "line": 55,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he4_qreeb_phase_falsification_probe.py",
-      "line": 56,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he4_rho_f_bar_symmetric_audit_probe.py",
-      "line": 105,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/hecke_channel_binding_probe.py",
-      "line": 89,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/hecke_channel_binding_probe.py",
-      "line": 161,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/hecke_channel_binding_probe.py",
-      "line": 161,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/hecke_channel_binding_probe.py",
-      "line": 162,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/hecke_channel_binding_probe.py",
-      "line": 162,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/interface_4body_assembly_probe.py",
-      "line": 45,
+      "line": 51,
       "constant": "q0",
       "literal": "1.10997858275138080759166909561076887987449912187357763605672",
       "canonical": "1.1099785827513808075916690956107688798744991218736",
       "verdict": "DIVERGENT",
       "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/interface_4body_assembly_probe.py",
-      "line": 60,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/interface_4body_assembly_probe.py",
-      "line": 60,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/interface_4body_assembly_probe.py",
-      "line": 61,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/interface_4body_assembly_probe.py",
-      "line": 61,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/probes/interface_factor_categorical_derivation_probe.py",
@@ -3277,60 +909,6 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/probes/interface_operator_pairwise_ceiling_probe.py",
-      "line": 78,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/interface_operator_pairwise_ceiling_probe.py",
-      "line": 79,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/interface_operator_pairwise_ceiling_probe.py",
-      "line": 80,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/interface_operator_pairwise_ceiling_probe.py",
-      "line": 81,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/isospin_channel_R_is_one_everywhere_probe.py",
-      "line": 237,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/isospin_grading_restores_the_sign_probe.py",
-      "line": 149,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/keystone_colored_sigma235_wrt.py",
       "line": 73,
       "constant": "q0",
@@ -3349,78 +927,6 @@
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
-      "file": "computations/probes/level_three_colour_channel_probe.py",
-      "line": 154,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/lifting_the_isospin_grading_to_six_strands_probe.py",
-      "line": 135,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/light_series_open_loop_decomposition.py",
-      "line": 63,
-      "constant": "B_3H",
-      "literal": "8.4817977",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/light_series_open_loop_decomposition.py",
-      "line": 65,
-      "constant": "B_4He",
-      "literal": "28.295662",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/magic_a_truncation_overclaim_correction_probe.py",
-      "line": 38,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/mayer_threebody_sign_threshold_probe.py",
-      "line": 63,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/mayer_threebody_sign_threshold_probe.py",
-      "line": 63,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/mayer_threebody_sign_threshold_probe.py",
-      "line": 63,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/metallic_silver_coincidence_weighting_probe.py",
       "line": 181,
       "constant": "q0_muon",
@@ -3428,60 +934,6 @@
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "DIVERGENT",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/probes/mirror_pair_coulomb_sign_correction.py",
-      "line": 86,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/mirror_pair_coulomb_sign_correction.py",
-      "line": 86,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/mixed_cluster_count_probe.py",
-      "line": 140,
-      "constant": "B_2H",
-      "literal": "2.22456637",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/mixed_cluster_count_probe.py",
-      "line": 140,
-      "constant": "B_3H",
-      "literal": "8.48179663",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/mixed_cluster_count_probe.py",
-      "line": 141,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/mixed_cluster_count_probe.py",
-      "line": 142,
-      "constant": "B_6Li",
-      "literal": "31.99392",
-      "canonical": "31.9939872",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_LI6_MEV_VALIDATION"
     },
     {
       "file": "computations/probes/nf_channel_exact_repair_options_probe.py",
@@ -3493,87 +945,6 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/probes/option_e_deuteron_delta_lambda_probe.py",
-      "line": 115,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/option_e_v9_bar_symmetric_test_probe.py",
-      "line": 120,
-      "constant": "B_3H",
-      "literal": "8.4817983",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/option_e_v9_bar_symmetric_test_probe.py",
-      "line": 121,
-      "constant": "B_3He",
-      "literal": "7.7180428",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/pair_layer_isospin_parity_probe.py",
-      "line": 101,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/pair_layer_isospin_parity_probe.py",
-      "line": 101,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/pair_locality_shortfall_probe.py",
-      "line": 73,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/pair_locality_shortfall_probe.py",
-      "line": 74,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/pair_locality_shortfall_probe.py",
-      "line": 75,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/pair_locality_shortfall_probe.py",
-      "line": 76,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/pairwise_magnitude_gap_probe.py",
       "line": 40,
       "constant": "B_2H",
@@ -3581,33 +952,6 @@
       "canonical": "2.2245662",
       "verdict": "TRUNCATED",
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/phi_k_weight_family_discriminator.py",
-      "line": 268,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/phi_k_weight_family_discriminator.py",
-      "line": 270,
-      "constant": "B_3He",
-      "literal": "7.7180428",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/phi_k_weight_family_discriminator.py",
-      "line": 271,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/probes/probe_mup_dressing_attribution.py",
@@ -3682,15 +1026,6 @@
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
-      "file": "computations/probes/qbeta_sdeformed_leading_bound_probe.py",
-      "line": 87,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
       "file": "computations/probes/quark_volume_provenance_probe.py",
       "line": 61,
       "constant": "q0_muon",
@@ -3698,186 +1033,6 @@
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "ROUNDED",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/probes/reeb_5g_unit_anchor_scan.py",
-      "line": 45,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/reeb_g_structural_identity_probe.py",
-      "line": 71,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/regular_rep_modulus_spread_probe.py",
-      "line": 343,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/rho_binding_constancy_probe.py",
-      "line": 38,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/rho_f_vol_binding_dashboard.py",
-      "line": 82,
-      "constant": "m_p",
-      "literal": "938.2720894273",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/rho_f_vol_binding_dashboard.py",
-      "line": 83,
-      "constant": "m_n",
-      "literal": "939.5654227645",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/signed_crossing_feasibility_probe.py",
-      "line": 84,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/signed_crossing_feasibility_probe.py",
-      "line": 85,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/signed_crossing_feasibility_probe.py",
-      "line": 86,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/signed_crossing_feasibility_probe.py",
-      "line": 87,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/stacked_unbinding_family_exclusion_probe.py",
-      "line": 142,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/su4_1111_markov_trace_probe.py",
-      "line": 102,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/su4_1111_markov_trace_probe.py",
-      "line": 102,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/su4_connected_1111_magnitude_probe.py",
-      "line": 67,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/su4_connected_1111_magnitude_probe.py",
-      "line": 67,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/the_hull_exit_is_a_fractional_twist_probe.py",
-      "line": 147,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/three_body_term_has_the_wrong_sign_probe.py",
-      "line": 197,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/three_body_term_has_the_wrong_sign_probe.py",
-      "line": 197,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/three_body_term_has_the_wrong_sign_probe.py",
-      "line": 197,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/three_body_term_has_the_wrong_sign_probe.py",
-      "line": 197,
-      "constant": "B_4He",
-      "literal": "28.295661",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/probes/tower_e0_pole_conditioning_probe.py",
@@ -3907,15 +1062,6 @@
       "use_instead": "codata_constants.M_P_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/tritium_8_11_jones_markov_probe.py",
-      "line": 93,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/two_nucleon_linking_matrix_channel_blind_probe.py",
       "line": 175,
       "constant": "B_2H",
@@ -3923,60 +1069,6 @@
       "canonical": "2.2245662",
       "verdict": "TRUNCATED",
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/ursell_alternation_sign_identity_probe.py",
-      "line": 123,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/ursell_alternation_sign_identity_probe.py",
-      "line": 123,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/ursell_alternation_sign_identity_probe.py",
-      "line": 123,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/yardstick_free_phase_binding_probe.py",
-      "line": 47,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/yardstick_free_phase_binding_probe.py",
-      "line": 48,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/yardstick_free_phase_binding_probe.py",
-      "line": 49,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/q0_provenance_audit.py",
@@ -3995,24 +1087,6 @@
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "DIVERGENT",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/q_beta_complex_q_test1_phaseA.py",
-      "line": 53,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/q_beta_complex_q_test1_phaseA_v2.py",
-      "line": 48,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
     },
     {
       "file": "computations/qbeta/c3_w2_c1_qborel_singularity.py",
@@ -4537,24 +1611,6 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/qbeta_habiro_probe.py",
-      "line": 29,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/qbeta_habiro_sweep.py",
-      "line": 29,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
       "file": "computations/r5_full_canonical_knot_solver.py",
       "line": 102,
       "constant": "B_2H",
@@ -4562,42 +1618,6 @@
       "canonical": "2.2245662",
       "verdict": "TRUNCATED",
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/rho_k_counit_defect_form.py",
-      "line": 56,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/rho_k_counit_defect_form.py",
-      "line": 56,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/rho_k_counit_isotope_systematics.py",
-      "line": 39,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/rho_k_counit_isotope_systematics.py",
-      "line": 39,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/run_jones_markov_atlas_all_atoms.py",
@@ -4625,33 +1645,6 @@
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "DIVERGENT",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/substrate/binding_manybody_series.py",
-      "line": 42,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/substrate/binding_manybody_series.py",
-      "line": 43,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/substrate/experimental_constants.py",
-      "line": 96,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
     },
     {
       "file": "computations/substrate/lever1_descartes_eq_qfamily_geometry.py",
@@ -4706,69 +1699,6 @@
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "ROUNDED",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/sweeps/binding_q_target_sweep.py",
-      "line": 56,
-      "constant": "B_2H",
-      "literal": "2.22456612",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/sweeps/binding_q_target_sweep.py",
-      "line": 56,
-      "constant": "B_2H",
-      "literal": "2.22456612",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/sweeps/binding_q_target_sweep.py",
-      "line": 57,
-      "constant": "B_3H",
-      "literal": "8.48179800",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/sweeps/binding_q_target_sweep.py",
-      "line": 59,
-      "constant": "B_4He",
-      "literal": "28.29569127",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/sweeps/light_isotope_sweep.py",
-      "line": 257,
-      "constant": "B_4He",
-      "literal": "28.29569",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/sweeps/low_isotope_binding_sweep.py",
-      "line": 83,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/sweeps/low_isotope_binding_sweep.py",
-      "line": 94,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/sweeps/paper_six_term_isotope_sweep.py",
@@ -4870,33 +1800,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/unified_lift.py",
-      "line": 222,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/w3_closeability_audit.py",
-      "line": 58,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/w3_closeability_audit.py",
-      "line": 59,
-      "constant": "B_4He",
-      "literal": "28.295661",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/wedderburn_beta3_provenance_probe.py",
       "line": 102,
       "constant": "q0_muon",
@@ -4907,34 +1810,7 @@
     },
     {
       "file": "computations/wedderburn_mass_table_convention_d.py",
-      "line": 69,
-      "constant": "m_e",
-      "literal": "0.51099895",
-      "canonical": "0.51099895069",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/wedderburn_mass_table_convention_d.py",
-      "line": 69,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/wedderburn_mass_table_convention_d.py",
-      "line": 69,
-      "constant": "m_n",
-      "literal": "939.56542052",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/wedderburn_mass_table_z1_20.py",
-      "line": 106,
+      "line": 70,
       "constant": "m_e",
       "literal": "0.51099895",
       "canonical": "0.51099895069",
@@ -4944,20 +1820,11 @@
     {
       "file": "computations/wedderburn_mass_table_z1_20.py",
       "line": 107,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/wedderburn_mass_table_z1_20.py",
-      "line": 108,
-      "constant": "m_n",
-      "literal": "939.56542052",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
+      "constant": "m_e",
+      "literal": "0.51099895",
+      "canonical": "0.51099895069",
+      "verdict": "TRUNCATED",
+      "use_instead": "codata_constants.M_E_MEV"
     },
     {
       "file": "computations/witness_raw_float64_audit.py",
@@ -4969,9 +1836,9 @@
       "use_instead": "codata_constants.M_P_MEV_VALIDATION"
     }
   ],
-  "scriptHash": "94d4e7b4b365",
-  "scriptCommitSha": "b9820887e14ccab5e899b8556db25caa2fba0d68",
-  "commitSha": "e91a54c792d4b5e9a908250026e9cc136ecb4b1a",
+  "scriptHash": "85246c287fa0",
+  "scriptCommitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

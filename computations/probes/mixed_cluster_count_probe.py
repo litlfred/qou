@@ -129,6 +129,12 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 mp.mp.dps = 30
 
@@ -137,9 +143,9 @@ A_D = {2: mp.mpf("1.0"), 3: mp.mpf("1.3370"), 4: mp.mpf("2.5328"),
        5: mp.mpf("5.3761"), 6: mp.mpf("13.5598")}
 
 # (Z, N, B_AME in MeV). AME2020.
-ISO = {"D": (1, 1, mp.mpf("2.22456637")), "T": (1, 2, mp.mpf("8.48179663")),
-       "3He": (2, 1, mp.mpf("7.71805")), "4He": (2, 2, mp.mpf("28.29566")),
-       "6Li": (3, 3, mp.mpf("31.99392"))}
+ISO = {"D": (1, 1, AME_B_DEUTERON_MEV_VALIDATION), "T": (1, 2, AME_B_TRITIUM_MEV_VALIDATION),
+       "3He": (2, 1, mp.mpf("7.71805")), "4He": (2, 2, AME_B_HE4_MEV_VALIDATION),
+       "6Li": (3, 3, AME_B_LI6_MEV_VALIDATION)}
 
 E_ANCHOR = ISO["D"][2]   # B(D); M_2(D)·a_D^(2) = 1, so this is the single anchor
 

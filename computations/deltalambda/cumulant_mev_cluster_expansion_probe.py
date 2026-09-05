@@ -82,6 +82,10 @@ set_compute_dps()
 # comparison or (E2) the ideal CAL-1/2/3 mathematical layer. This is neither
 # -- it is a sole-anchor probe that happened to be muon-named.
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 Q0_STR = _Q0_RESOLVED
 E_UNIT_STR = "0.995940"                   # corpus deuteron anchor (the ONE open; provenance §2e)
@@ -98,7 +102,7 @@ def main() -> int:
     # V1 -- deuteron PAIR-ORDER (linear) form, corpus ladder shape
     ladder = 1 - x / 10 + 3 * x ** 2 / 200
     B_deut_pair = mp.sqrt(5) * E_unit * ladder
-    B_AME_2H = mp.mpf("2.224566")
+    B_AME_2H = AME_B_DEUTERON_MEV_VALIDATION
     v1_match = abs(B_deut_pair - B_AME_2H) < mp.mpf("1e-5")
 
     # V2 -- category error: pair-order linear (5g) vs 4-body cumulant (log, ~g^2)
@@ -109,7 +113,7 @@ def main() -> int:
     ratio_5g_b2 = five_g / b2_cumulant
 
     # V3 -- 4He cluster structure (pair-additive baseline + many-body remainder)
-    B_AME_4He = mp.mpf("28.295673")
+    B_AME_4He = AME_B_HE4_MEV_VALIDATION
     pair_bonds_4He = 6                    # C(4,2)
     pair_additive = pair_bonds_4He * B_AME_2H
     many_body_remainder = B_AME_4He - pair_additive

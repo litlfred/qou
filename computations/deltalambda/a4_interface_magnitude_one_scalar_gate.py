@@ -109,6 +109,7 @@ import mpmath as mp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 set_compute_dps(50)
 
@@ -120,7 +121,7 @@ LEAN = ("content/quantum-observable-universe/lean/QOU/MassTheory/"
 TARGETS = {
     "b4_1four_connected_cumulant": mp.mpf("9.243"),
     "mu4_simplex_residual_abs": mp.mpf("4.591048"),
-    "B_4He_AME": mp.mpf("28.29566"),
+    "B_4He_AME": AME_B_HE4_MEV_VALIDATION,
 }
 
 

@@ -92,6 +92,10 @@ mp.mp.dps = 60
 # comparison or (E2) the ideal CAL-1/2/3 mathematical layer. This is neither
 # -- it is a sole-anchor probe that happened to be muon-named.
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 Q0_STR = _Q0_RESOLVED
 
@@ -190,10 +194,10 @@ def main() -> int:
 
     # ---- 2. isospin-corrected STRONG rho targets (from #3990 E_C) -------------
     # AME2020 binding energies (MeV) and the deuteron reference.
-    BD = mp.mpf("2.224566")
+    BD = AME_B_DEUTERON_MEV_VALIDATION
     B3H = mp.mpf("8.481821")
     B3He = mp.mpf("7.718058")
-    B4 = mp.mpf("28.295673")
+    B4 = AME_B_HE4_MEV_VALIDATION
     rho3H, rho3He, rho4 = B3H / BD, B3He / BD, B4 / BD
     # Lean #3986: strong 3H/3He split = 0 exactly => the entire 3H-3He difference is EM.
     # 3H (Z=1) has NO proton pair => E_C(3H)=0 => strong(A=3) = B(3H) exactly.

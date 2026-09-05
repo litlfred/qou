@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T01:06:48.624742+00:00",
-  "commitSha": "fcd77aeae157d80bf40973ac9a405d32293fad36",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T17:59:18.142075+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "object_is_bruhat_subsum_graded_dim",
@@ -48,7 +48,7 @@
     },
     {
       "name": "best_member_joint_relative_miss",
-      "computed": "0.142914665995",
+      "computed": "0.142914275546",
       "expected": "0.1429147",
       "passed": true,
       "tolerance": "1e-6",
@@ -56,7 +56,7 @@
     },
     {
       "name": "a3_family_floor_relative_miss",
-      "computed": "0.123470229368",
+      "computed": "0.123470150563",
       "expected": "0.1234702",
       "passed": true,
       "tolerance": "1e-6",
@@ -67,8 +67,8 @@
   "durationMs": 0,
   "computation": "deltalambda-demazure-subcrystal-magnitude",
   "scriptFile": "deltalambda_demazure_subcrystal_magnitude_probe.py",
-  "scriptHash": "ef5417711edb",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "83aefc484cc8",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -80,7 +80,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "5df83fbc24b06f8a"
@@ -99,9 +99,9 @@
   },
   "data": {
     "strong_targets": {
-      "rho_strong_3": "3.8127981",
-      "rho_strong_4": "13.031575",
-      "data_step_A3_to_A4": "3.4178507",
+      "rho_strong_3": "3.8127977",
+      "rho_strong_4": "13.031569",
+      "data_step_A3_to_A4": "3.4178494",
       "construction": "AME2020 + Lean #3986/#3990 Coulomb premise"
     },
     "object": "rho_dem(A)=W^dem_A/W^dem_2 = prod_{k=3..A}[t_k+1]_q, t_k in {0..k-1}: coset-chain Demazure sub-crystal graded dim (Bruhat-prefix sub-sum of [A]_q!); NON-determinant; deuteron W2=[2]_q kept full (saturated reference)",
@@ -109,7 +109,7 @@
     "forward_test_rows": [
       {
         "A": 3,
-        "target": 3.8127980918525233,
+        "target": 3.8127977490622667,
         "family_max_rho_grad": 3.342031036918145,
         "all_truncations": {
           "0": 1.0,
@@ -119,7 +119,7 @@
       },
       {
         "A": 4,
-        "target": 13.03157458024245,
+        "target": 13.031568643662583,
         "det_cap": 6.0,
         "bracket_lo_droptop": 11.16917145172417,
         "bracket_hi_full": 15.739572135410121,
@@ -141,14 +141,14 @@
     ],
     "A4_bracket": {
       "lower_droptop_[3][3]": "11.169171",
-      "target": "13.031575",
+      "target": "13.031569",
       "upper_full_[3][4]": "15.739572",
       "pr4012_lower_det_cap": 6,
       "note": "lower bracket rises 6 -> 11.17 (tightening)"
     },
     "A3_obstruction": {
       "family_max_[3]_q0": "3.342031",
-      "target": "3.8127981",
+      "target": "3.8127977",
       "classical_ceiling_3!/2!": 3,
       "note": "whole Demazure family <= full graded dim, which already undershoots; damping monotone the WRONG way for A=3"
     },

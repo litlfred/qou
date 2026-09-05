@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T14:48:07.436963+00:00",
-  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
+  "computedAt": "2026-09-05T18:02:13.522376+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 94,
+  "durationMs": 202,
   "computation": "delta-lambda-l1-ceiling-sign-prune",
   "scriptFile": "delta_lambda_l1_ceiling_sign_prune.py",
   "scriptHash": "10e8d1b53d57",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,7 +22,15 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_l1_ceiling_sign_prune.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_l1_ceiling_sign_prune.py"
   },
   "description": "ℓ¹-ceiling sign-only prune for the per-block binding closure B/m_e = Σ_λ y_λ χ^λ Δ_λ with the proven Δ_λ = sgn(w_0^{S_λ'})·dim_λ (PR #2416). For every sign reassignment s_λ∈{±1}, |Σ s_λ y_λ χ^λ dim_λ| ≤ ‖c‖₁ (triangle inequality). Measured ‖c‖₁/|target| ∈ [0.36,0.59] < 1 for D/T/³He/⁴He ⟹ (b) STRUCTURAL: no sign/chirality-only re-derivation closes the binding deficit; a magnitude-adding ingredient is necessary. Magnitude-side mirror of the PROBE-4 KL-positivity prune. Pure ℓ¹ arithmetic on canonical y_λ + χ^λ witnesses (no recompute) — env-skew-immune.",
   "invariant": "triangle/ell1: |Σ_λ s_λ a_λ| ≤ Σ_λ |a_λ| for all s_λ∈{±1}",
@@ -35,33 +43,33 @@
   "source_witnesses": {
     "y_lambda": {
       "file": "y-lambda-at-q0.witness.json",
-      "scriptHash": "b88ffe51a43d",
-      "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
-      "computedAt": "2026-08-10T19:03:52.564561+00:00"
+      "scriptHash": "3f1bf04589e5",
+      "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+      "computedAt": "2026-08-30T14:11:10.092560+00:00"
     },
     "chi_D": {
       "file": "atom-chi-rust-d.witness.json",
       "scriptHash": "45d51b9cc954",
-      "scriptCommitSha": "e13a68f98b0431ccfa5b467dfcddc0cb3e07c233",
-      "computedAt": "2026-06-10T01:07:39.776523+00:00"
+      "scriptCommitSha": "399ff7c799682b4371e7f4cfaaf604f5c9324ed9",
+      "computedAt": "2026-08-19T19:44:11.498117+00:00"
     },
     "chi_T": {
       "file": "atom-chi-rust-t.witness.json",
       "scriptHash": "45d51b9cc954",
-      "scriptCommitSha": "e13a68f98b0431ccfa5b467dfcddc0cb3e07c233",
-      "computedAt": "2026-06-10T01:08:55.601477+00:00"
+      "scriptCommitSha": "399ff7c799682b4371e7f4cfaaf604f5c9324ed9",
+      "computedAt": "2026-08-19T19:44:13.036780+00:00"
     },
     "chi_3He": {
       "file": "atom-chi-rust-3he.witness.json",
       "scriptHash": "45d51b9cc954",
-      "scriptCommitSha": "e13a68f98b0431ccfa5b467dfcddc0cb3e07c233",
-      "computedAt": "2026-06-10T01:08:56.878241+00:00"
+      "scriptCommitSha": "399ff7c799682b4371e7f4cfaaf604f5c9324ed9",
+      "computedAt": "2026-08-19T19:44:14.533496+00:00"
     },
     "chi_4He": {
       "file": "atom-chi-rust-4he.witness.json",
       "scriptHash": "45d51b9cc954",
-      "scriptCommitSha": "37d8b19d366f1dac2804e35af06276c91d7edac8",
-      "computedAt": "2026-06-10T01:39:36.635667+00:00"
+      "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+      "computedAt": "2026-08-23T17:03:21.705205+00:00"
     }
   },
   "data": {
@@ -73,13 +81,13 @@
         "A": 2,
         "B_AME_MeV": 2.224566,
         "target_units_m_e": -4.353367060727183,
-        "net_sum_units_m_e": -0.7174453364014862,
-        "l1_ceiling_units_m_e": 2.464604356614619,
-        "pos_sum": 0.8735795101065663,
-        "neg_sum": -1.5910248465080525,
-        "net_over_target": 0.16480239924488352,
-        "l1_ceiling_over_target": 0.5661375028190097,
-        "net_over_l1_survival": -0.2910995975788054
+        "net_sum_units_m_e": -0.717445421638373,
+        "l1_ceiling_units_m_e": 2.464603894931472,
+        "pos_sum": 0.8735792366465496,
+        "neg_sum": -1.5910246582849226,
+        "net_over_target": 0.16480241882441485,
+        "l1_ceiling_over_target": 0.5661373967670409,
+        "net_over_l1_survival": -0.2910996866935981
       },
       {
         "atom": "T",
@@ -88,13 +96,13 @@
         "A": 3,
         "B_AME_MeV": 8.481798,
         "target_units_m_e": -16.59846461239707,
-        "net_sum_units_m_e": -2.475140379723055,
-        "l1_ceiling_units_m_e": 5.982292162949675,
-        "pos_sum": 1.7535758916133102,
-        "neg_sum": -4.228716271336365,
-        "net_over_target": 0.1491186346160247,
-        "l1_ceiling_over_target": 0.36041238166580886,
-        "net_over_l1_survival": -0.41374448326887514
+        "net_sum_units_m_e": -2.475140298348442,
+        "l1_ceiling_units_m_e": 5.982291283806395,
+        "pos_sum": 1.7535754927289764,
+        "neg_sum": -4.228715791077418,
+        "net_over_target": 0.14911862971348616,
+        "l1_ceiling_over_target": 0.3604123287004714,
+        "net_over_l1_survival": -0.41374453046919624
       },
       {
         "atom": "3He",
@@ -103,13 +111,13 @@
         "A": 3,
         "B_AME_MeV": 7.718043,
         "target_units_m_e": -15.103833363216019,
-        "net_sum_units_m_e": -3.0789913352714784,
-        "l1_ceiling_units_m_e": 10.459258290599942,
-        "pos_sum": 3.6901334776642325,
-        "neg_sum": -6.7691248129357104,
-        "net_over_target": 0.2038549592827259,
-        "l1_ceiling_over_target": 0.6924903128282979,
-        "net_over_l1_survival": -0.2943795104513924
+        "net_sum_units_m_e": -3.078991223188681,
+        "l1_ceiling_units_m_e": 10.45925670879273,
+        "pos_sum": 3.6901327428020236,
+        "neg_sum": -6.769123965990706,
+        "net_over_target": 0.20385495186190797,
+        "l1_ceiling_over_target": 0.6924902080994403,
+        "net_over_l1_survival": -0.2943795442557865
       },
       {
         "atom": "4He",
@@ -118,19 +126,19 @@
         "A": 4,
         "B_AME_MeV": 28.295673,
         "target_units_m_e": -55.37325069218333,
-        "net_sum_units_m_e": -0.19093766565789583,
-        "l1_ceiling_units_m_e": 24.002871758921078,
-        "pos_sum": 11.905967046631591,
-        "neg_sum": -12.09690471228949,
-        "net_over_target": 0.0034481931848160253,
-        "l1_ceiling_over_target": 0.4334741316227151,
-        "net_over_l1_survival": -0.007954784226472009
+        "net_sum_units_m_e": -0.1909377696151161,
+        "l1_ceiling_units_m_e": 24.002868229074803,
+        "pos_sum": 11.905965229729842,
+        "neg_sum": -12.096902999344959,
+        "net_over_target": 0.0034481950622066242,
+        "l1_ceiling_over_target": 0.43347406787629905,
+        "net_over_l1_survival": -0.007954789727330677
       }
     ],
     "all_isotopes_l1_ceiling_below_target": true,
     "l1_ceiling_over_target_range": [
-      0.36041238166580886,
-      0.6924903128282979
+      0.3604123287004714,
+      0.6924902080994403
     ]
   },
   "q0Anchor": "proton",

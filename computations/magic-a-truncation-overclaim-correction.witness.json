@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:25:33.644852+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T18:00:54.546680+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "magicA_gap_is_5pct87",
-      "computed": "5.86663",
+      "computed": "5.86668",
       "expected": "5.87",
       "passed": true,
       "tolerance": "0.02",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 19,
   "computation": "magic-a-truncation-overclaim-correction",
   "scriptFile": "magic_a_truncation_overclaim_correction_probe.py",
-  "scriptHash": "939fbe7a4aa6",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "299651f1af51",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,10 +38,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -57,7 +57,7 @@
   },
   "data": {
     "magicA_formula_MeV": "29.95567728",
-    "magicA_err_pct": "5.86663",
+    "magicA_err_pct": "5.86668",
     "jet_sum_physical_n_le_4_MeV": "2.488442869",
     "jet_sum_partials": {
       "4": "2.488442869",

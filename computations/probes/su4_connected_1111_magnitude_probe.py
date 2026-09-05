@@ -60,11 +60,15 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
 # AME2020 total nuclear binding (MeV), matching the ceiling probe.
-AME = {"D": mpf("2.224566"), "4He": mpf("28.295673"), "6Li": mpf("31.994564")}
+AME = {"D": AME_B_DEUTERON_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION, "6Li": mpf("31.994564")}
 
 
 def bond_factor(a, b, z, h, fpn):

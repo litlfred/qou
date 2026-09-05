@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-08-29T10:57:05.576254+00:00",
+  "computedAt": "2026-09-05T18:03:24.739828+00:00",
   "computation": "su4-connected-1111-magnitude",
   "scriptFile": "su4_connected_1111_magnitude_probe.py",
   "description": "PROBE 2 magnitude leg: the single connected 4-body [1^4] SU(4)-supermultiplet interface operator, realized as the irreducible connected (Ursell/Mayer) A-body cluster b_A^c of the canonical zero-fit interface graph (g_ij=1\u2212f_ij; f_pp=z, f_nn=z\u2212h, f_pn=z\u2212h(\u00bd\u2212\u03b4/4)), gated by SU(4) dim C(4,A). Tests whether it supplies the measured 2.097\u00d7 super-pairwise excess at \u2074He and vanishes at \u2076Li (C(4,6)=0). Audit-only, no fit, single operator.",
@@ -28,7 +28,7 @@
         "b_pair_2body": "2.950765066995752961927203294614302032213907148506620963939807957716167",
         "conn_over_pair": "0.3978451670870438345495128031299763968342729681107577807493818933546613",
         "gated_conn_abs": "1.173947621113537431714733219454625806771961481650049273809160811710669",
-        "super_pairwise_needed": "2.097462370540429204087006411176329847112476055675100933129349373856993"
+        "super_pairwise_needed": "2.097461396225705107485246013498616828007682643939610265185871251859723"
       },
       "6Li": {
         "A": 6,
@@ -37,12 +37,12 @@
         "b_pair_2body": "7.37698456911747577351559727681058690833664661826956395644381818521942",
         "conn_over_pair": "1.378576368064768504746021923629510724804875572545496578814320772118495",
         "gated_conn_abs": "0.0",
-        "super_pairwise_needed": "0.9466520269599937534626883223143827047418128671265864687340937620218719"
+        "super_pairwise_needed": "0.9466519418510833546628006441964357257413493392879584665077325204005723"
       }
     },
     "he4_delivered_enhancement": 1.3978451670870438,
-    "he4_needed_enhancement": 2.097462370540429,
-    "he4_delivered_over_needed": 0.6664458856188571,
+    "he4_needed_enhancement": 2.097461396225705,
+    "he4_delivered_over_needed": 0.6664461951969215,
     "verdict": "PARTIAL",
     "verdict_note": "PARTIAL / scope-(a): the connected [1^4] cluster is right-KIND (irreducible 4-body), right-LOCALITY (A=6 vanishing supplied by the PROVED gate C(4,6)=0 \u2014 the ungated cluster overshoots to 10.17, so the gate is load-bearing), and right-ORDER at A=4 (\u00d71.398 delivered vs \u00d72.097 needed, 67%). It does NOT close the magnitude parameter-free: the exact value is convention-dependent (\u03a3g-normalization hidden DOF). Does NOT exclude the ingredient; constrains the magnitude. The DIRECT (un-normalized) reading is |b4c|=1.174 vs 2.097, i.e. 44% off, reported because the normalized figure flatters it."
   },
@@ -68,9 +68,9 @@
     "locality_witness": "probes/su4-supermultiplet-locality.witness.json",
     "scoping": "docs/scope/2026-07-05-gap-a4-interface-operator-attack-scoping.md \u00a73"
   },
-  "scriptHash": "298446fbb7a3",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
-  "commitSha": "9c8f246b1d93ad04a0b6769db0956a6fbfda6554",
+  "scriptHash": "f875e906667e",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

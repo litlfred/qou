@@ -262,13 +262,18 @@ def weight_family(name: str, shapes: list[tuple[int, ...]],
 # against the committed witness, and diagnosable only because the fourth row
 # (6_1) agreed to 3e-16: T is the argmin for the other three and is not for
 # 6_1, so the defect had to be in `B_AME["T"]` and nowhere else.
-from codata_constants import AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402,
+)
 
 B_AME = {
-    "D": mp.mpf("2.22456607"),
+    "D": AME_B_DEUTERON_MEV_VALIDATION,
     "T": mp.mpf(str(AME_B_TRITIUM_MEV_VALIDATION)),
-    "3He": mp.mpf("7.7180428"),
-    "4He": mp.mpf("28.295674"),
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
 CANDIDATE_KNOTS_CONWAY = {

@@ -40,6 +40,11 @@ _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from q_parameter import Q_MP  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
@@ -81,7 +86,7 @@ VHAT: dict[str, list[str]] = {
     ],
 }
 Z_N = {"deuteron": (1, 1), "tritium": (1, 2), "helium3": (2, 1)}
-B_AME = {"deuteron": 2.224566, "tritium": 8.481798, "helium3": 7.718043}
+B_AME = {"deuteron": AME_B_DEUTERON_MEV_VALIDATION, "tritium": AME_B_TRITIUM_MEV_VALIDATION, "helium3": AME_B_HE3_MEV_VALIDATION}
 NEAR_POLE = mp.mpf("0.9")  # |V̂| above this = proton/near-pole generator
 
 

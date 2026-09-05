@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:23:33.788376+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T18:00:50.288400+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "geometric_closed_form_differs_only_at_hbar6",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 16,
   "computation": "flavor-split-geometric-closure-probe",
   "scriptFile": "flavor_split_geometric_closure_probe.py",
-  "scriptHash": "4a2a8cd407c8",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "3ff00ac1b418",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,10 +29,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -50,13 +50,13 @@
     "subleading_1_plus_hbar3": "0.001377048965992554505397569588173216836723974815154796535592272745263871",
     "geometric_closed_1_over_1_minus_hbar3": "0.001377050268892040581787438136692477677603364544539283169190295245090577",
     "rel_closed_vs_trunc": "0.0000009461533454892659555400523550820808342344339682516602253478930478909367",
-    "err_trunc_vs_codata": "0.0003056130192094909175901676013596720872478950942699398363853353339122936",
-    "err_closed_vs_codata": "0.0003046671550207822017697608430729547699043841676287841158087716429063527",
-    "codata_dmn_over_mn": "0.001377469938739402966833940655129743326134232810903099235092864918057108",
+    "err_trunc_vs_codata": "0.0003056123431063325575286356008329950233625599127362406229087622269862533",
+    "err_closed_vs_codata": "0.0003046664789169841444430506113555509003195194711817812878235409665182081",
+    "codata_dmn_over_mn": "0.001377469937807806483322034140136445153879725269299139935201410631516285",
     "geometric_closes_gap": false,
-    "C_true_codata_over_leading": "1.001278707489482061191485579149752694111327559207008719675861036622146",
-    "ratio_Ctrue_minus_1_over_hbar3": "1.31459098486421040558957962943058275203366569029173430844318388063927",
-    "fraction_of_correction_supplied_by_1plus_hbar3": "0.7606928782516291007492980779956303258157012337543833053822972237460782"
+    "C_true_codata_over_leading": "1.001278706812307411727851769881554421289120334389691005006727707353614",
+    "ratio_Ctrue_minus_1_over_hbar3": "1.314590288686471019663022758079754263487344961785057552700240247789118",
+    "fraction_of_correction_supplied_by_1plus_hbar3": "0.7606932810976358800500247584706067691816199372528047119227628452262616"
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

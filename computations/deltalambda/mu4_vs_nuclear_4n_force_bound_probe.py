@@ -88,11 +88,15 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
-B_D = mp.mpf("2.224566")       # deuteron binding, MeV (AME2020)
-B_4HE = mp.mpf("28.295662")    # 4He binding, MeV (AME2020)
+B_D = AME_B_DEUTERON_MEV_VALIDATION       # deuteron binding, MeV (AME2020)
+B_4HE = AME_B_HE4_MEV_VALIDATION    # 4He binding, MeV (AME2020)
 MU3 = mp.mpf("0.4707689")      # corpus residual-simplex 3-body coeff (B(D) units)
 MU4 = mp.mpf("-4.591048")      # corpus residual-simplex 4-body coeff (B(D) units)
 S4 = mp.mpf("3.7804")          # rho_strong's own 4-body simplex coeff

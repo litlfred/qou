@@ -118,6 +118,10 @@ for _p in (_COMP, os.path.join(_ROOT, "tools", "qou-substrate", "python")):
 # this file emits -- so the frozen literal was reaching five further witnesses
 # that carry no literal of their own.
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 Q0_STR = _Q0_RESOLVED
 
@@ -158,10 +162,10 @@ def main() -> int:
 
     # -- isospin-corrected STRONG targets (identical construction to the sibling
     #    bareven / coulomb-mirror probes, from AME2020 + the #3986/#3990 premise) --
-    BD = mp.mpf("2.224566")        # deuteron binding (A=2 reference)
+    BD = AME_B_DEUTERON_MEV_VALIDATION        # deuteron binding (A=2 reference)
     B3H = mp.mpf("8.481821")       # ³H (Z=1: Coulomb-free ⇒ pure strong)
     B3He = mp.mpf("7.718058")      # ³He
-    B4 = mp.mpf("28.295673")       # ⁴He
+    B4 = AME_B_HE4_MEV_VALIDATION       # ⁴He
     EC3He = B3H - B3He             # Lean #3986: strong ³H/³He split = 0 ⇒ split is all Coulomb
     EC4 = EC3He * (mp.mpf(3) / 4) ** (mp.mpf(1) / 3)   # #3990: pp-Coulomb, radius ~ A^{1/3}
     rho_strong_3 = B3H / BD                            # ≈ 3.813

@@ -39,6 +39,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import M_E_MEV
 
 
 def main() -> int:
@@ -50,7 +51,7 @@ def main() -> int:
     # raised above, so the closed form is exact (bean qou-ckbv).
     cal2_target = M_MU_OVER_M_E           # m_μ / m_e
     cal3_target = mp.mpf("0.78233341")            # Q_β(n) MeV
-    m_e = mp.mpf("0.51099895000")                 # m_e MeV
+    m_e = M_E_MEV                 # m_e MeV
 
     def cal2_observable(q):
         """|m_μ/m_e (q)| = Vol(4_1) · |q|² / |q-1|² under modulus projection."""

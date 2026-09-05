@@ -575,22 +575,44 @@ def main(argv: list[str] | None = None) -> int:
     # truncation blocks immediately. The baseline DRAINS, never grows: adding
     # to it to go green is the move this whole gate exists to prevent.
     bl_path = HERE / "codata-truncation-baseline.json"
-    key = lambda r: f"{r['file']}:{r['line']}:{r['literal']}"  # noqa: E731
+    # Key on (file, literal) and COUNT -- never on the line number. A line
+    # number is unstable under any edit: draining one finding inserts an
+    # import and shifts every finding below it, so a line-keyed baseline
+    # reports unchanged findings as NEW. Measured: the first drain pass
+    # "added" 10 entries that way, all of them pre-existing findings that had
+    # simply moved down the file. A ratchet that cries wolf on every edit is
+    # one people learn to re-baseline past, which is how a baseline grows.
+    #
+    # Counting keeps it honest in the other direction: a SECOND copy of an
+    # already-baselined literal in the same file still raises the count and
+    # still blocks.
+    key = lambda r: f"{r['file']}::{r['literal']}"  # noqa: E731
     if args.write_baseline:
+        counts: dict[str, int] = {}
+        for r in rows:
+            counts[key(r)] = counts.get(key(r), 0) + 1
         bl_path.write_text(json.dumps(
-            {"_comment": "Pre-existing reference-literal findings. DRAINS, "
-                         "never grows. Never add an entry to go green — fix "
-                         "at the call site by importing from the registry.",
-             "entries": sorted(key(r) for r in rows)}, indent=2) + "\n")
+            {"_comment": "Pre-existing reference-literal findings, as "
+                         "<file>::<literal> -> count. DRAINS, never grows. "
+                         "Never add an entry to go green — fix at the call "
+                         "site by importing from the registry.",
+             "counts": dict(sorted(counts.items()))}, indent=2) + "\n")
         print(f"\nbaseline written: {len(rows)} entries -> {bl_path.name}")
         return 0
     if args.baseline:
         try:
-            known = set(json.loads(bl_path.read_text())["entries"])
+            known = json.loads(bl_path.read_text())["counts"]
         except (OSError, ValueError, KeyError):
-            known = set()
-        new_rows = [r for r in rows if key(r) not in known]
-        print(f"\n  RATCHET: {len(known)} baselined, {len(new_rows)} NEW")
+            known = {}
+        seen: dict[str, int] = {}
+        new_rows = []
+        for r in rows:
+            k = key(r)
+            seen[k] = seen.get(k, 0) + 1
+            if seen[k] > known.get(k, 0):
+                new_rows.append(r)
+        print(f"\n  RATCHET: {sum(known.values())} baselined, "
+              f"{len(new_rows)} NEW")
         if new_rows:
             print("  NEW findings — fix at the call site, do NOT baseline:")
             for r in new_rows[:20]:

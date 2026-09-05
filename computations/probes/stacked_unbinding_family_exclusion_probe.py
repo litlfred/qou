@@ -135,11 +135,12 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 mp.mp.dps = 60
 
 NAT_1S0 = mp.mpf("0.10")      # pp / nn virtual state, MeV (magnitude)
-AME_D = mp.mpf("2.224566")    # deuteron, MeV
+AME_D = AME_B_DEUTERON_MEV_VALIDATION    # deuteron, MeV
 
 
 def fmt(x, n=10):

@@ -120,6 +120,7 @@ import numpy as np  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from nucleus_real_sdp import load_cost  # noqa: E402
 from q_parameter import q_at  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -132,7 +133,7 @@ _Q = q_at(mp.mp.dps)
 LQ = float(mp.log(_Q))
 WORD = [3, 2, 1, 4, 3, 2, 5, 4, 3]      # block swap {0,1,2} <-> {3,4,5}
 R_QCD = 2
-R_NUC = 2.224566 / 0.066
+R_NUC = AME_B_DEUTERON_MEV_VALIDATION / 0.066
 
 
 def perm_of(word, n=6):

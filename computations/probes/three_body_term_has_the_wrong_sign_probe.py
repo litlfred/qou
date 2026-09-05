@@ -173,7 +173,13 @@ import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 import numpy as np  # noqa: E402
 
-from codata_constants import M_E_MEV as _ME  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV as _ME  # noqa: E402,
+)
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from nucleus_real_sdp import load_cost  # noqa: E402
 from pyhecke.atom import D_PN  # noqa: E402
@@ -194,7 +200,7 @@ _ME_M = _ME if isinstance(_ME, mp.mpf) else mp.mpf(str(_ME))
 ALPHA = float(_ME_M / (_Q * (_Q - 1)))
 B_P = (0.0, 0.5, 0.5)
 B_N = (0.5, 0.5, 1.0)
-AME = {"2H": 2.224566, "3H": 8.481798, "3He": 7.718043, "4He": 28.295661}
+AME = {"2H": AME_B_DEUTERON_MEV_VALIDATION, "3H": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 ORDERS = ("ppp", "ppn", "npp", "pnp", "pnn", "nnp", "npn", "nnn")
 
 

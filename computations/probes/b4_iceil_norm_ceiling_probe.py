@@ -59,6 +59,7 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
         sys.path.insert(0, _p)
 
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 COMP = str(_COMP)
 
@@ -74,7 +75,7 @@ def main() -> int:
     m_e = mp.mpf("0.51099895069")
     E0 = m_e / (q * (q - 1))
     B_D = mp.mpf("2.22452")
-    B_AME_he4 = mp.mpf("28.29567")
+    B_AME_he4 = AME_B_HE4_MEV_VALIDATION
     best_pw_ratio = mp.mpf("6.079")           # sup over pairwise models, ceiling witness
     W_free = mp.mpf("0.163383")               # free nucleon (1,1,1) Plancherel weight
 

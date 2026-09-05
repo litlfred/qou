@@ -64,6 +64,7 @@ from chi_sym_alt_closed_form import (
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 
 M_E = M_E_MEV
@@ -254,7 +255,7 @@ if __name__ == "__main__":
         ("D",   1, 1,  2.22457),
         ("T",   1, 2,  8.48180),
         ("3He", 2, 1,  7.71806),
-        ("4He", 2, 2, 28.29569),
+        ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION),
     ]
     print(f"{'iso':>5} {'A':>3}  {'|tr_free|':>14} {'|tr_atom|':>14} "
           f"{'B_pred (MeV)':>12} {'B_AME':>8} {'err%':>8} "

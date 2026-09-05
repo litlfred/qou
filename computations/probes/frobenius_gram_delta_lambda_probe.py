@@ -50,14 +50,18 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 from mpmath import mp, mpf, fabs, sqrt  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import (
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    M_E_MEV  # noqa: E402,
+)
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 from gram_transfer_quadratic import gram_norm_zn  # noqa: E402
 
 m_e = mpf(str(M_E_MEV))
 COMP = str(_COMP)
 
-B_AME = {"D": mpf("2.22452"), "T": mpf("8.48180"), "3He": mpf("7.71804"), "4He": mpf("28.29567")}
+B_AME = {"D": mpf("2.22452"), "T": mpf("8.48180"), "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 FILES = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
          "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}

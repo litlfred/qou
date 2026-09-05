@@ -32,6 +32,10 @@ for _p_qp in (_Path_qp(__file__).resolve().parent,
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 
 def fmt(x):
@@ -47,8 +51,8 @@ Q0_STR = Q_50_DIGIT_STR
 set_compute_dps()
 
 M_E_MEV = mpf("0.51099895069")
-B_D_AME = mpf("2.224566")  # MeV
-B_4HE_AME = mpf("28.29566") # MeV
+B_D_AME = AME_B_DEUTERON_MEV_VALIDATION  # MeV
+B_4HE_AME = AME_B_HE4_MEV_VALIDATION # MeV
 
 def conjugate(lam):
     return [sum(1 for x in lam if x >= i) for i in range(1, lam[0] + 1)]

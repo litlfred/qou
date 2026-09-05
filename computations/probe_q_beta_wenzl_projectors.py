@@ -17,6 +17,7 @@ for _p_qp in (_Path_qp(__file__).resolve().parent,
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import M_E_MEV
 
 mp.dps = 200
 
@@ -28,7 +29,7 @@ def main():
 
     Q_PIN = _pb.witness_path("q-pinning-200-digit.witness.json", HERE)
     q = mp.mpf(Q_50_DIGIT_STR)
-    m_e = mp.mpf("0.51099895000")
+    m_e = M_E_MEV
     Q_AME = mp.mpf(M_N_MEV_VALIDATION) - mp.mpf(M_P_MEV_VALIDATION) - m_e
     Q_A = m_e * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
 

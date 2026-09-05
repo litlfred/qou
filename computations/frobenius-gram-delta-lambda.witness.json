@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T03:25:00.022350+00:00",
-  "commitSha": "4f6818390285716ab5b58c6d1ec966ddae917a77",
+  "computedAt": "2026-09-05T18:00:50.490174+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "frobenius_variants_preserve_binding_sign",
@@ -21,8 +21,8 @@
   "durationMs": 0,
   "computation": "frobenius-gram-delta-lambda",
   "scriptFile": "frobenius_gram_delta_lambda_probe.py",
-  "scriptHash": "fd124339c930",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "771867065e9f",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,7 +34,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "5df83fbc24b06f8a"
@@ -135,7 +135,7 @@
         }
       },
       "3He": {
-        "target_minus_B_over_me": "-15.10382749",
+        "target_minus_B_over_me": "-15.10383008",
         "n": 9,
         "variants": {
           "ref_trM  Σ y·dχ": {
@@ -177,7 +177,7 @@
         }
       },
       "4He": {
-        "target_minus_B_over_me": "-55.37324482",
+        "target_minus_B_over_me": "-55.37322995",
         "n": 12,
         "variants": {
           "ref_trM  Σ y·dχ": {

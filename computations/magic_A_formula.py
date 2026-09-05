@@ -50,7 +50,10 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 set_compute_dps()  # before the constants are multiplied together, not after
 
 # CODATA 2022
-from codata_constants import M_E_MEV  # noqa: E402 — CODATA-2022 full precision (mpf)
+from codata_constants import (
+    AME_B_HE4_MEV_VALIDATION,
+    M_E_MEV  # noqa: E402 — CODATA-2022 full precision (mpf,
+)
 
 # Catalan's constant + Vol(L6a4) = Vol(Borromean rings) = 8G now
 # imported from the canonical knot_volumes module (mpmath 50dps source).
@@ -69,7 +72,7 @@ from knot_volumes import (  # noqa: E402
 
 # AME2020 reference values for verification
 AME_BA_MEV = {
-    (2, 2): mp.mpf("28.295674"),  # ⁴He doubly magic (Z=2, N=2)
+    (2, 2): AME_B_HE4_MEV_VALIDATION,  # ⁴He doubly magic (Z=2, N=2)
     # Other doubly-magic: (8,8)=¹⁶O 127.62; (20,20)=⁴⁰Ca 342.05; (20,28)=⁴⁸Ca; (82,126)=²⁰⁸Pb
     # These are NOT magic-A in the framework — they use recursive-on-4He.
 }

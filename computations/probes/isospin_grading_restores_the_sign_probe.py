@@ -125,7 +125,10 @@ import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 import numpy as np  # noqa: E402
 
-from codata_constants import M_E_MEV as _ME  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    M_E_MEV as _ME  # noqa: E402,
+)
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from pyhecke.constants import pn_interface_offset  # noqa: E402
 from q_parameter import q_at  # noqa: E402
@@ -146,7 +149,7 @@ _H = _Q - 1 / _Q
 _D = pn_interface_offset(q_at(mp.mp.dps))
 _MEM = _ME if isinstance(_ME, mp.mpf) else mp.mpf(str(_ME))
 ALPHA = _MEM / (_Q * (_Q - 1))
-B_DEUT = mp.mpf("2.224566")        # AME
+B_DEUT = AME_B_DEUTERON_MEV_VALIDATION        # AME
 B_VIRT = mp.mpf("0.066")           # np 1S0 virtual state, ~66 keV (approximate)
 
 

@@ -86,6 +86,7 @@ from pyhecke.gram import h as _h_f  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
 from q_parameter import HA_MP, Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 set_compute_dps()
 mp.mp.dps = max(mp.mp.dps, 40)
@@ -183,7 +184,7 @@ def main() -> int:
         cab_atom += w * c
 
     max_u, max_c, min_c = max(uncabled), max(cabled), min(cabled)
-    need = mp.sqrt(mp.mpf("2.224566"))
+    need = mp.sqrt(AME_B_DEUTERON_MEV_VALIDATION)
     ratio_c, ratio_u = max_c / need, max_u / need
     norm12 = mp.fsum(weights(12)[l] * hook_dim(l) for l in two_row(12))
     norm6 = mp.fsum(weights(6)[l] * hook_dim(l) for l in two_row(6))
