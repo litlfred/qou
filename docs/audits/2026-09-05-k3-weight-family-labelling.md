@@ -103,12 +103,20 @@ figure; (b) dated historical record; (c) not a k=3 weight-weighted claim.
 
 | | class (a) | class (b) | class (c) |
 |---|---|---|---|
-| distinct files | **15** | 7 | 12 |
-| **fixed this pass** | **7 files / 12 sites** | — | — |
-| already compliant, no action | 3 files | — | — |
-| **deferred to producer owners** | **7 producer/witness pairs** | — | — |
+| **items** | **17** | 7 | 12 |
+| **fixed this pass** | **7 files / 14 edit sites** | — | — |
+| already compliant, no action | 3 | — | — |
+| **deferred to producer owners** | **7 producer+witness pairs** | — | — |
 | left as record | — | 7 files | — |
 | excluded | — | — | 12 files |
+
+The 14 edit sites are: the conjecture statement + its new follow-on note (2);
+three docstrings in `DepthStratifiedFrobeniusReciprocity.lean` (module,
+`knot_label`, `chirality_ideal_4_1`); three in
+`DepthStratifiedFrobeniusReciprocityVariance.lean` (module + both theorems); the
+registry `.md` paragraph + its new blockquote (2); the registry `.json`
+`consequence_for_readers` + its new key (2); one blockquote in
+`1ppb-categorical-chain.md`; one amendment in `.beans/yfvb`.
 
 **Why the seven `computations/` hits were not edited.** A docstring-only edit
 drifts the producer's `scriptHash` while leaving its payload byte-identical,

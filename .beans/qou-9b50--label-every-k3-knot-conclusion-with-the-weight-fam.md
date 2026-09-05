@@ -14,8 +14,11 @@ SWEPT content/ (.md + .ts), docs/audits/, docs/coordination/, computations/
 (docstrings + witness description/verdict), .beans/, .lean for k=3 / FR-pullback
 knot conclusions and the variance figures (1.82 / 1.55 / 1.5015 / 1.05 / 1.19).
 
-COUNTS: class (a) live claims 15 files -- 7 files / 12 sites FIXED, 3 already
-compliant, 7 producer+witness pairs DEFERRED (see below). class (b) dated
+COUNTS (corrected): class (a) 17 items -- 7 files / 14 edit sites FIXED, 3
+already compliant, 7 producer+witness pairs DEFERRED (see below). The first
+pass of this line said "15 files / 12 sites"; both were undercounts of my own
+edits (the two-per-file registry .md/.json edits and the second content-block
+site were each counted once). class (b) dated
 records 7 files, left as records. class (c) excluded 12 files, each with a
 stated reason (complete graph K3, algebraic K_3(C), bound variable K3, a Python
 multiplication `K_3*len(...)`, 6_1 braid-index/cusp geometry, a Numdam URL).
