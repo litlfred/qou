@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-05T20:14:39Z
+updated_at: 2026-09-05T20:24:35Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -955,3 +955,53 @@ so the statement is not even well posed until that is decided; (ii) prove the
 hook-length product equals `abstractSchurElement`; (iii) Tits deformation for
 the converse. Expect more gaps of the `xchange` kind — Mathlib has neither
 symmetric-algebra theory nor deformation theory.
+
+
+### 2026-09-05 — option 3 step (i) RESOLVED by measurement: `X = 0`, normalisation `(1−Q)^n`
+
+I flagged pinning `X` as possibly needing an owner ruling. It did not — the
+corpus answers it, and reading `WenzlSchurElement.lean` rather than inferring
+from the name turned up a **convention clash** I had been about to walk into.
+
+**The clash.** In this corpus `schurElement Q X` feeds
+`jonesMarkovCoeff Q X lam = schurElement / wenzlNormalisation`, documented as
+the **Jones–Markov coefficient `y_λ`** — i.e. a *weight* of the **Markov**
+trace. Geck–Pfeiffer's Schur element is a *reciprocal* weight of the
+**canonical** trace (`τ = Σ (1/s_λ) χ_λ`). So the two names denote
+reciprocal-flavoured objects **of two different traces**, and "τ's weights are
+`1/s_λ`" cannot be read off the names — which is exactly how I had been
+stating the remaining fact.
+
+**What pins X.** The content factors `(1 − X·Q^{c(x)})` are precisely what
+distinguishes the Markov trace from `τ`; they vanish identically at `X = 0`.
+Candidate: `c_λ = (1 − Q)^n · schurElement(Q, 0, λ)`.
+
+**Measured exactly**, [`computations/hecke/tau_weights_vs_wenzl_schur_probe.py`](computations/hecke/tau_weights_vs_wenzl_schur_probe.py)
+— sympy symbolic in `Q` throughout, no float anywhere; `probe-float64-guard
+--strict` clean:
+
+| tier | what | result |
+|---|---|---|
+| 1 | `Σ_λ f_λ c_λ = 1` (τ(1)=1), `n = 1…8` | **PASS**, all eight |
+| 2 | per-block weights at `n = 2` | **MATCH**, both |
+| 2 | per-block weights at `n = 3` | **MATCH**, all three |
+
+Tier 2 is the evidence: it builds the regular representation of `H_n(q)` in the
+`T_w` basis **from the corpus's own `σ_mul_Tw` structure constants**, reads the
+character table off it, solves `Σ_λ c_λ χ_λ(T_w) = δ_{w,1}`, and compares each
+weight. At `n = 3`, e.g. `c_{(2,1)} = Q/(Q²+Q+1)` from both sides.
+
+**Tier 1 is NOT independent evidence and the probe says so in its own output.**
+It is implied by the Macdonald hook telescope the corpus already carries, so it
+corroborates the *normalisation* and says nothing per-block.
+
+**Scope, stated as a scope-(a) limit.** Tier 2 stops at `n = 3` because the
+character table is recoverable from `χ_reg`, `χ_triv`, `χ_sign` alone only up to
+`n = 3` (at `n = 4` the dims are 1,3,2,3,1 and that trick no longer isolates
+them). So this **pins the statement option 3 must prove; it does not prove it**
+for general `n`.
+
+**Option 3 remaining:** (ii) prove `c_λ = (1−Q)^n · schurElement(Q,0,λ)` in Lean
+for all `n` — now a precise target rather than an ill-posed one; (iii) Tits
+deformation for the converse direction. `SchurElementCriterion` keeps no
+instance.
