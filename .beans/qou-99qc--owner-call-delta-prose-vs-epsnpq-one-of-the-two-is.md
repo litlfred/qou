@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-08-28T19:38:53Z
+updated_at: 2026-09-05T06:15:00Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -424,3 +424,94 @@ string. Pinned as an assertion in the probe so it cannot recur silently.
 Nothing in the convention-fee pricing (items 1 and 3, the colour-blind
 crossing and the muon pin) is affected; those stand. Scope-(a): nothing wired,
 no content block edited.
+
+
+## 2026-09-05 — the PUBLISHED closed form is the z = 1 cell. The question is no longer "which was meant".
+
+Probe: `computations/qbeta/qbeta_published_form_is_the_inadmissible_z1_probe.py`
+(15/15, exact sympy over ℚ(q); the pin enters only at readout).
+
+This bean has asked, since 2026-08-26, *"which functional is `eps` MEANT to be
+in the Q_β ansatz?"* — treating it as an open reading of an ansatz. **The
+framework's published headline closed form already answers it**, and nothing in
+the corpus had said so.
+
+AGENTS.md's canonical-derivation cheat sheet publishes
+
+    Q_β = m_e · |q² − 2q − 1| · (q + 1) / (2q³)
+
+Set that against the ansatz shape `Q_β = |tr_M^z(Δ_S)| · E₀`, `E₀ = m_e/(q(q−1))`,
+using the affine trace from
+[`2026-08-29-delta-fork-at-admissible-parameters.md`](../docs/audits/2026-08-29-delta-fork-at-admissible-parameters.md),
+and **solve for `z`**:
+
+| branch | solved `z` | admissible? |
+|---|---|---|
+| positive | **`z = 1`** | **no** |
+| negative | `z = h − 1 = q − 1 − 1/q` | **no** |
+
+Neither is a root of the `(1³)` weight numerator `N(q,z) = (z−q)((q²+1)z − q³)`,
+whose only roots are `z = q` (the augmentation) and `z_D = q³/(q²+1)`.
+
+So the published form is **not neutral** between the two candidate functionals.
+It commits to the coordinate sum `net`, and that is precisely the functional
+convention D forbids. Verified two ways: the identity `|epsNPq|·E₀ = published`
+is exact over ℚ(q) on **both** sides of the silver ratio (so it is not an
+artifact of a sign branch), and it agrees to `0.0` at 60 dps at the pin.
+
+**Calibration, run before concluding.** My affine trace reproduces this bean's
+own published grid — `+0.168 %`, `+12.470 %`, `−43.157 %` — to within
+`2.4e-4` pp across all three cells. Had it not, the trace would have been wrong
+and the identity worthless.
+
+### What this changes, and what it does not
+
+- **It does not** show the published Q_β value is wrong *as arithmetic*. It is
+  exact and reproduces to 50 digits.
+- **It does not** adjudicate which functional *should* be used. That is still
+  yours.
+- **It does** convert the question from *"which ε was meant?"* — a question
+  about intent, which nobody can settle by measurement — into a concrete
+  either/or about a number the framework already publishes:
+
+  **either** keep the published headline value, which is produced by a
+  functional that does not descend to the algebra the corpus's own GNS proof
+  says the theory lives in;
+  **or** adopt an admissible functional and accept its error: `+12.470 %`
+  (augmentation) or `−43.157 %` (Markov at `z_D`).
+
+  Every route between those two is now closed by measurement, not by search:
+  the convex combination (rank-3 exclusion, scope-(b), above), the base
+  correction (`qbeta-d-frame-admissible-base-correction-search`: no
+  parameter-free admissible correction, and its `√(1−h)` near-match was
+  diagnosed as the forbidden `z = 1` returning), and bracketing (a property of
+  **both** elements, so evidence for neither).
+
+### 🛑 A naming defect found and fixed on the way: supergolden, not plastic
+
+`ConventionDAdmissibleRoots.lean` scopes `one_not_root` to `q³ − q² − 1 < 0`
+and calls that bound *"the plastic number ≈ 1.4656"* — at lines 40, 108 and
+123 — and the 2026-08-29 audit repeats it.
+
+**1.4656 is the SUPERGOLDEN ratio**, the root of `x³ = x² + 1` (OEIS A092526).
+The **plastic number** is `≈ 1.32472`, the root of `x³ = x + 1` (A060006). A
+different constant.
+
+The **value quoted was always right**, which is why no grep for a wrong *number*
+would ever have found it — the same shape as the Λ-vs-Cl₂ guard AGENTS.md
+records. **Nothing proved is affected**: the Lean hypothesis is the inequality
+`q³ − q² − 1 < 0`, never the name, so this is a docstring correction.
+
+Corrected at 4 sites (3 Lean docstrings + the audit line). The `hplastic`
+binder name is left alone — it is a local binder, and renaming it is a code
+change for no gain. **Eight other "plastic" hits in the Lean tree are correct
+and were deliberately not swept**: `FiveTwoOhtsukiBridge` and
+`FiveTwoComplexPentagon` are about `u³ = u + 1`, which genuinely *is* the
+plastic number.
+
+Verified: `lean`-direct on `ConventionDAdmissibleRoots.lean` exits **0** with no
+diagnostics both **before** and **after** the edit, against the real import cone.
+
+Scope-(a) on the physics; the inadmissibility is scope-(b) with the root
+computation as the cited invariant. Nothing wired, no content block edited, no
+`c_k` proposed.
