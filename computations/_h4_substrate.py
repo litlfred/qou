@@ -33,6 +33,7 @@ ALPHA_EM = mp.mpf(1) / mp.mpf(repr(_ec.ALPHA_EM_INV))
 
 def trM_borromean_closed(q):
     """Lean-proved closed form: tr_M(β_Bor, q) = (4+h²−3h⁴−h⁶)/(h²+4)."""
+    # convention D — verified by EVALUATION at q0, not by reading: computations/audits/borromean_convention_by_evaluation.py
     h = q - 1 / q
     h2 = h * h
     return (4 + h2 - 3 * h2 ** 2 - h2 ** 3) / (h2 + 4)

@@ -183,6 +183,7 @@ def markov_trace_borromean_via_jones(q):
     Ref: [kassel2008] Kassel & Turaev, "Braid Groups" §4.5;
          Lean-proved `trM_borromean` closed form.
     """
+    # convention D — verified by EVALUATION at q0, not by reading: computations/audits/borromean_convention_by_evaluation.py
     V_q = jones_borromean(q)
     norm = (q + mpf(1) / q) ** 2  # = [2]_q² (Kauffman-Jones standard)
     return V_q / norm

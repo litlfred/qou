@@ -121,6 +121,7 @@ def tr_M_borromean_closed_form(h: mp.mpf) -> mp.mpf:
     the exact symbolic series-division coefficients agree with the
     direct closed-form evaluation at small h.
     """
+    # convention D — verified by EVALUATION at q0, not by reading: computations/audits/borromean_convention_by_evaluation.py
     return (4 + h ** 2 - 3 * h ** 4 - h ** 6) / (h ** 2 + 4)
 
 
