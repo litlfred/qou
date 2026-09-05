@@ -50,7 +50,7 @@ question.
 | 30 | a **numeric proxy for a structural fact** — `duality_gap != 0` taken to mean "a solve happened" | (a) producers that build dual-shaped records with **no solver call at all**, whose non-zero gap comes from elsewhere; (b) **closed-form duals** whose gap is 0 *by construction*, so x* is correctly absent | wrong on **6 of 9**: four no-solver producers, plus `sigma_f_electron_shell_chain` (27 records) which writes `"duality_gap": "0"  # closed-form => exact strong duality` and never calls a solver. Only the PRODUCER SOURCE decides (qou-dke6) |
 | 31 | the **primal's arity** — a vector `x_star` assumed | an **SDP**, whose primal is the MATRIX `X_star`; a vector `x_star` is correctly absent | `gap_a1_binding_k_sdp_feasibility` → `solve_psd_operator_selection_sdp` (qou-dke6) |
 | 32 | the **threshold's discrimination** — a ratio criterion assumed to separate two classes | a **cliff**, where the count measures where the threshold was placed rather than the corpus — and the criterion misses its own confirmed positive | `lp_floor_valued_objective_audit.py`: 62 flagged at fraction 0.96, **7 at 0.98**; and the one producer PROVED floor-valued by a `prec_bits` sweep ranks **59 of 146**. Shipped as a ranking and a recorded NEGATIVE, not a detector (qou-sof3) |
-| 33 | the **write path** — the guard is installed at one of an API's several entry points | a producer using any of the others, however careful elsewhere. `WitnessBuilder` has **three** routes into the anchor vocabulary and the guard sits on one: `stamp_staleness_metadata(payload, q0_anchor=…)` is guarded; `save(extra)` is a bare `witness.update(extra)` with no validation; `wrap_legacy(payload)` carries the payload's keys through `_extra_top_level` and, per its own docstring, emits them "verbatim by `build()`" | the one live off-vocabulary producer travels the **third** route: `codata_corpus_literal_scan.py:816` sets `"q0Anchor": "not-applicable"` in a payload, so neither the existing guard nor a `save(extra)` fix could ever warn about it. Offered by the #6696 sibling (bean `qou-3ral`), which also corrected its own "two entry points" to three; structure verified here, counts NOT — see below (qou-3ral) |
+| 33 | the **write path** — the guard is installed at one of an API's several entry points | a producer using any of the others, however careful elsewhere. `WitnessBuilder` has **three** routes into the anchor vocabulary and the guard sits on one: `stamp_staleness_metadata(payload, q0_anchor=…)` is guarded; `save(extra)` is a bare `witness.update(extra)` with no validation; `wrap_legacy(payload)` carries the payload's keys through `_extra_top_level` and, per its own docstring, emits them "verbatim by `build()`" | the one live off-vocabulary producer travels the **third** route: `codata_corpus_literal_scan.py:816` sets `"q0Anchor": "not-applicable"` in a payload, so neither the existing guard nor a `save(extra)` fix could ever warn about it. Offered by the #6696 sibling (bean `qou-3ral`), which also corrected its own "two entry points" to three; structure verified here, counts measured independently at 256/25 against the sibling's 152/22 and NOT reconciled — see below (qou-3ral) |
 
 ### 33 — offered by a sibling, taken here to avoid a conflict on the count line (2026-09-04)
 
@@ -75,14 +75,32 @@ against `tools/qou-substrate/python/qou_substrate/witness.py` directly:
 - `codata_corpus_literal_scan.py:816` carries `"q0Anchor": "not-applicable"`
   in a payload. ✓
 
-**The COUNTS were not reproduced and are deliberately absent from the row.**
-The sibling reports 152 `wrap_legacy` callers of which 22 set `q0Anchor`,
-measured at `6a9c2c44fb9`; a file-level grep here gives **280 and 26**. The
-methods differ — a file mentioning `wrap_legacy` in a comment is not a caller,
-so 280 is an upper bound — and the discrepancy is unresolved. Per this page's
-own standing advice, re-measure and state the method rather than quoting either
-figure. **The structural claim is what makes the row; the counts only
-illustrate it.**
+**The COUNTS still do not reconcile, and the row now carries MINE with the
+method attached.** The sibling reports **152** `wrap_legacy` callers of which
+**22** set `q0Anchor`, measured at `6a9c2c44fb9`. Measuring here:
+
+    files under computations/ MENTIONING wrap_legacy      280
+    of those, an actual call `wrap_legacy(`               256   <- 24 are comment-only
+    of THOSE, setting "q0Anchor"                           25
+
+    same three numbers re-measured AT 6a9c2c44fb9         256 / 25  (identical)
+
+So the gap is **not** drift — their commit gives the same figure as current
+main — and not comment-mentions, which account for 24 of a 104-file difference.
+Nor is it directory scoping: `computations/*.py` top-level only gives 123/4,
+and excluding `probes/` and `audits/` gives 184/12. None is 152/22.
+
+One asymmetry points at the answer without settling it: their set is both
+*smaller* and *richer* in `q0Anchor` — 22/152 is 14.5 %, 25/256 is 9.8 % — so
+it is a more specific filter than a subdirectory, plausibly witness-emitting
+producers only. Their figure may well be the more meaningful denominator; it is
+simply not reconstructible from what was published.
+
+**Quote the method, not the number.** The command behind 256/25 is
+`grep -rlE '(^|[^a-z_])wrap_legacy\(' --include=*.py computations/`, minus
+`_deprecated`, intersected with `"q0Anchor"`. **The structural claim is what
+makes the row; the counts only illustrate it, and this is the third figure on
+this page whose two independent measurements disagree.**
 
 ### 27-32 — added 2026-09-04 (beans `qou-dke6`, `qou-sof3`), and ALL SIX blinded ONE detector
 
