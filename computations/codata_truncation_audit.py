@@ -79,7 +79,15 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 
 
-def _canon_str(v) -> str:
+def _q_muon_live():
+    """The muon pin as today's CODATA implies it, via the live derivation."""
+    from qou_substrate.constants import q_muon_at
+    return q_muon_at(90)  # 90 dps so 70 rendered digits are all REAL — rendering
+    # 70 from a 60-dps value exposed ~10 digits of noise that shifted with
+    # ambient precision (…0457699990 vs …0457580704).
+
+
+def _canon_str(v, digits: int = 50) -> str:
     """Full-precision decimal for a registry constant.
 
     ``str(mpf)`` renders at the AMBIENT ``mp.dps``, which is mpmath's default
@@ -98,8 +106,8 @@ def _canon_str(v) -> str:
     being padded out to 50 digits of binary noise.
     """
     from mpmath import mp as _mp
-    with _mp.workdps(60):
-        return _mp.nstr(v, 50, strip_zeros=True)
+    with _mp.workdps(digits + 30):
+        return _mp.nstr(v, digits, strip_zeros=True)
 
 # name -> (canonical value read from the registry, the constant to use instead)
 CANON: dict[str, tuple[str, str]] = {
@@ -117,6 +125,33 @@ CANON: dict[str, tuple[str, str]] = {
     # 78 such occurrences on main. classify() picks the NEAREST canonical, so
     # a muon literal now resolves against the muon anchor.
     "q0_muon": (Q_MUON_50_DIGIT_STR, "q_parameter.Q_MUON_50_DIGIT_STR"),
+    # THE MUON PIN HAS TWO LEGITIMATE VALUES, and this gate knew one.
+    #
+    # qou_substrate.constants documents three live muon strings and is explicit
+    # that the split is deliberate: Q_MUON_50_DIGIT_STR is FROZEN so a witness
+    # stays reproducible against its own history, while `q_muon_at()` RE-DERIVES
+    # from MASS_RATIO_MU_E_STR and therefore moves with CODATA. They differ by
+    # 0.0769 ppb. Both are correct, for different callers.
+    #
+    # Carrying only the frozen one made this gate score every literal written
+    # against the LIVE derivation as DIVERGENT — i.e. as wrong — when it is the
+    # value today's CODATA implies. Measured: of 125 q0 findings, 6 are exact
+    # prefixes of the live value and 3 more sit within 1.3e-8 of it.
+    #
+    # The 17-digit ancestor (1.1099785955541805…, 336 files) is deliberately
+    # NOT added. constants.py names it as the defect population — "a literal
+    # cannot drift from a source it does not have; these had none" — so it must
+    # keep failing. Legitimising it here would silence the very thing the muon
+    # pin's named home was created to expose.
+    # digits=70, not the default 50: q_muon_at(60) carries 70 significant
+    # digits, and rendering it at 50 leaves the CANONICAL truncated — so the
+    # full literal fails the prefix test and the gate scores the live pin
+    # WRONG. The default stays 50 because m_e and the AME constants are built
+    # from short decimal strings and grow binary noise past it
+    # (0.51099895069 -> 0.510998950690000...565443472 at 60), which would make
+    # the canonical a value no author ever typed. One rule cannot serve both;
+    # the precision is a property of each constant, so it is stated per row.
+    "q0_muon_live": (_canon_str(_q_muon_live(), 70), "q_parameter.q_muon_at()"),
     # AME2020 binding energies. The registry reads these from
     # qou-mass/src/qou_mass/data/ame2020.json at run time; a script that types
     # them instead is the same defect one dataset over, and was invisible here
@@ -431,6 +466,22 @@ def _selftest() -> int:
         ("1.1099785955573347", "TRUNCATED",
          "the retired MUON pin — a second anchor, not a botched proton q0; "
          "48 occurrences were scored DIVERGENT before it had a CANON row"),
+        # Read the row itself, never a re-render: building this fixture with
+        # _canon_str(...) at the DEFAULT 50 digits while the row holds 70 made
+        # it a 50-digit prefix, which classify() correctly called TRUNCATED —
+        # so the fixture failed on a working classifier. A fixture that
+        # re-derives its own expected value can disagree with the table it is
+        # meant to pin.
+        (CANON["q0_muon_live"][0], "EXACT",
+         "the LIVE muon derivation q_muon_at() — a second legitimate pin, "
+         "0.0769 ppb from the frozen one; scored DIVERGENT before it had a row"),
+        (CANON["q0_muon_live"][0][:52], "TRUNCATED",
+         "a 50-digit copy of the live muon pin is SHORT, not wrong — the "
+         "distinction the frozen/live split exists to keep straight"),
+        ("1.1099785955541805", "DIVERGENT",
+         "the 17-digit ancestor, 336 files — constants.py names it THE DEFECT "
+         "population, so it must keep failing; legitimising it would silence "
+         "what the muon pin's named home exists to expose"),
         ("28.295673", "DIVERGENT",
          "binding_manybody_series.py:43 — agrees to 6 digits then diverges; "
          "a prefix-only classifier scores this CLEAN"),
