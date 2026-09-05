@@ -1,11 +1,11 @@
 ---
 # qou-zovy
 title: 'ROUTE F: drain the three-depth notation collision in the notation register'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T20:42:09Z
-updated_at: 2026-09-04T23:31:50Z
+updated_at: 2026-09-05T05:49:04Z
 ---
 
 ROUTE F of epic qou-2q85. Cheap hygiene, worth doing regardless of which route is chosen, and it is the direct countermeasure to an error class that produced SEVEN corrections in one session.

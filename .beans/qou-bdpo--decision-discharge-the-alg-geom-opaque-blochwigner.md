@@ -1,11 +1,11 @@
 ---
 # qou-bdpo
 title: 'DECISION: discharge the alg-geom opaque BlochWignerD with the corpus''s concrete BlochWigner_lob'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T09:05:59Z
-updated_at: 2026-09-04T12:16:53Z
+updated_at: 2026-09-05T05:49:04Z
 ---
 
 OPEN, for the author. Now that BlochWignerD is typed UpperHalfPlane -> R (qou-rj44), the opaque can be discharged as
