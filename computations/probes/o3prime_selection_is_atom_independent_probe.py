@@ -259,9 +259,26 @@ normalised character is not close to constant at all.
     Two readings are consistent with that and this probe does not separate
     them: these are Hecke characters at q_0 > 1, where the classical bound
     simply does not apply; or the witness's `chi_lambda` field carries a
-    normalisation that is not a bare character.  Either way, do NOT reason from
-    |chi| <= dim anywhere in this corpus.  Asserted below so the fact stays
-    visible.
+    normalisation that is not a bare character.  Either way, do not reason from
+    |chi| <= dim about THIS field.  Asserted below so the fact stays visible.
+
+    🛑 NOT A NEW FINDING, and my first version of this note over-claimed it as
+    one -- caught by the corpus-grep, not by me.  It said "no argument in this
+    corpus may assume that bound", which asserts something about the whole
+    corpus that I had not checked.  Checked now:
+    `computations/deltalambda/magnus_fs_transpose_prune_probe.py` already
+    measures a normalised quantity |tr_lambda|/dim_lambda reaching **29.0** at
+    (8,1) -- an order of magnitude past anything here -- and already handles it
+    correctly, scoping Feray-Sniady as "a true theorem about a different regime
+    (q = 1, single permutation)".  So the corpus knows the q=1 bound does not
+    transfer, and this is corroboration from a second direction rather than a
+    warning it needed.
+
+    Do NOT conflate the two quantities: that probe's |tr_lambda|/dim_lambda is
+    a normalised trace of a fixed operator, this one's |chi|/dim is the
+    character of an atom's braid word.  At n = 9 they read 29.0 and 0.468/0.821
+    for the same partition (8,1).  Both exceed 1 somewhere; they are not the
+    same object and neither number checks the other.
 
 Where the discordant partition sits in that picture: it is the argmin of
 |chi|/dim in two of the three cases ([4,2] at n=6, [7,5] at n=12) and the
@@ -585,8 +602,10 @@ def main() -> int:
     # THE NORMALISED CHARACTER.  Both of these are refutations, kept as
     # assertions so a later row that behaved differently would say so.
     check("the CLASSICAL character bound |chi| <= dim is VIOLATED on every row "
-          "— so these are not classical S_n characters and no argument in this "
-          "corpus may assume that bound",
+          "— so this witness's chi_lambda is not a classical S_n character. "
+          "Corroborates magnus_fs_transpose_prune_probe, which measures a "
+          "different normalised quantity up to 29.0 and already scopes "
+          "Feray-Sniady to q=1",
           all(m["exceeds_classical_bound"] for m in norm_stats),
           "max |chi|/dim per row: "
           + ", ".join(mp.nstr(mp.mpf(m["max"]), 5) for m in norm_stats)
@@ -722,9 +741,10 @@ def main() -> int:
         "'character = dimension x slowly varying factor' fails and no better "
         "notion of dimension repairs it. CAUTION: the CLASSICAL bound "
         "|chi| <= dim is VIOLATED in 6/6 rows (max |chi|/dim = 1.12 to 2.42, "
-        "always at the one-row partition [n] where dim=1) -- these are not "
-        "classical S_n characters, and no argument in this corpus may assume "
-        "that bound. CONSEQUENCE: PR #6752's "
+        "always at the one-row partition [n] where dim=1) -- so this field is "
+        "not a classical S_n character. NOT a new corpus finding, and my first "
+        "wording over-claimed it as one: magnus_fs_transpose_prune_probe already "
+        "measures a DIFFERENT normalised quantity reaching 29.0 and already scopes Feray-Sniady to q=1. CONSEQUENCE: PR #6752's "
         "reading of the selection as 'which Wedderburn blocks the bound state "
         "saturates' is WRONG and is corrected; the pricing result (y_0* nonzero "
         "and atom-dependent, where the full LP has y_0* = 0 identically) STANDS."

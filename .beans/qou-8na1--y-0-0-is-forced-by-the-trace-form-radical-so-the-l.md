@@ -631,3 +631,28 @@ no mechanism is invented here to make it one.
 are driven by the normalised character's variation, which is large (up to 33x)
 and not ordered by dimension.  Why it dips where it does — at those three
 (partition, atom) pairs — is unanswered.  Two obvious repairs are closed.
+
+### Correction to the entry above, same session — the caution was over-claimed
+
+The note above first read *"no argument in this corpus may assume that bound"*.
+That asserts something about the **whole corpus** which I had not checked, and
+the corpus-grep checklist caught it — I ran the grep only because the caution
+was about to become durable prose.
+
+Checked: `computations/deltalambda/magnus_fs_transpose_prune_probe.py`
+(bean `qou-o6ov`) already measures a normalised quantity
+`|tr_lambda|/dim_lambda` reaching **29.0** at `(8,1)` — an order of magnitude
+past anything in the a-K witness — and already handles it correctly, scoping
+Féray–Śniady as *"a true theorem about a different regime (q = 1, single
+permutation)"*.  So the corpus **already knows** the q=1 bound does not
+transfer.  My measurement is **corroboration from a second direction**, not a
+warning the corpus needed.
+
+Two quantities, do not conflate: that probe's `|tr_lambda|/dim_lambda` is a
+normalised trace of a fixed operator; this one's `|chi|/dim` is the character of
+an atom's braid word.  At n = 9 they read **29.0** and **0.468 / 0.821** for the
+same partition `(8,1)`.  Both exceed 1 somewhere; they are different objects and
+neither checks the other.
+
+The scoped claim that survives: **this witness's `chi_lambda` field is not a
+classical `S_n` character**, measured 6/6.
