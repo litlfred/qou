@@ -123,6 +123,47 @@ One leaked `/tmp/tmp.*` survived thirteen days and drove the container to
 command fails, including the `rm`. Keep `trap 'rm -f "$TGZ"' EXIT INT TERM`.
 `df` lies: ~252G nominal at 100% with ~38G used = a per-session quota near 38G.
 
+## STABLE — UGB is NOT in the qou cache; build it lean-direct in ~4 min (2026-09-05)
+
+`lake-cache/qou-v4-24-0` carries Mathlib + QOU oleans and **no UGB**, so `lean`
+on anything doing `import QOU` dies at `unknown module prefix 'UGB'` —
+`QOU/PhotonThreading.lean` imports `UGB.GrobnerShirshov.HeckeGS`. Verified as a
+two-sided control 2026-09-05: UGB dir on `LEAN_PATH` → exit 0; off it → exit 1
+with that exact error.
+
+**Do not `lake build` the ugb package to fix this.** It has no `.lake/` at all,
+so Lake would clone and build Mathlib from source (~3.3 GB) — infeasible at the
+674 MB free this container had. All three manifests (root / qou / ugb) pin the
+same mathlib rev `f897ebcf72cd`, so the restored oleans serve UGB directly.
+
+Recipe: topologically order the 29 modules (`UGB.lean` + 28 under `UGB/`) by
+their `import UGB.` lines, then from `content/unital-groebner-bases/lean`
+`lean -o .lake/build/lib/lean/<M>.olean -i …ilean <M>.lean` with `LEAN_PATH` =
+that output dir + every `.lake/packages/*/.lake/build/lib/lean` under BOTH the
+repo root and `content/quantum-observable-universe/lean`. **29/29 exit 0, ~4 min
+total, 31 MB** — 1-5 s each except `GrobnerShirshov.HeckeCompletion` at 170 s.
+Preserved (plain `tar`, untraced, restore-only-for-lean-direct) on
+**`lake-cache/ugb-v4-24-0`**, single 11 MB blob `addon-oleans.tgz`, no chunking:
+
+    git fetch --depth=1 origin lake-cache/ugb-v4-24-0
+    git show FETCH_HEAD:addon-oleans.tgz > "$T" && tar xzf "$T" -C "$ROOT"
+
+`HeckeGS` and `HeckeCompletion` are **not reachable from `UGB.lean`** — the
+lakefile widens `globs` for exactly that reason; a root-only build misses the
+whole Hecke GS development including the `hecke_is_gs_basis` refutation.
+
+**`import QOU` costs 7m27s COLD, 11.5 s warm — `user` was 3.7 s both times.**
+Textbook cold-page-cache (§TRAP above): do not read the 7 minutes as a rebuild.
+
+## TRAP — seed a cache branch with git PLUMBING, never a checkout
+
+Seeding from a mid-merge working branch must not touch the index or worktree.
+`git hash-object -w` each payload → `git mktree` → `git commit-tree` (no `-p`,
+that is what makes it an orphan) → `git update-ref refs/heads/lake-cache/<x>` →
+`git push origin refs/heads/…:refs/heads/…`. Measured 2026-09-05: `git status`
+stayed at 0 lines throughout. A `git checkout --orphan` would have stashed or
+clobbered the in-flight merge.
+
 ## TRAP — seeding route depends on how you built
 
 `lake build` output → `scripts/lean-olean-cache-seed.sh`. `lean`-direct output
