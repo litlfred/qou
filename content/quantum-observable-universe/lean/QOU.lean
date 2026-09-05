@@ -1463,6 +1463,12 @@ import QOU.Hecke.ChannelRangeGrowthClass
 -- by the unstated assumption that `w` carries no `q`.  `w_1` is the geometric
 -- mean (zero symmetry term); `k > 1` is the SEMF-signed region.
 import QOU.Hecke.BarWeightFamily
+-- `SelfConjugateRowCap`: self-conjugacy forces `ell(lambda) = lambda_1`, so the
+-- fibre-dimension cap `ell <= 2` leaves exactly THREE self-conjugate shapes --
+-- (1), (2,1), (2,2), all of size <= 4, and none at any level >= 5.  Relevant
+-- because `mass-theory`'s Wigner energy `-Delta_W . T(T+1)/A` is built from
+-- self-conjugate shadow prices at k = 4 and k = 5.
+import QOU.Hecke.SelfConjugateRowCap
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
 

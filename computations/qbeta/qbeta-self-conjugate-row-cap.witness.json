@@ -1,0 +1,225 @@
+{
+  "computation": "qbeta-self-conjugate-row-cap",
+  "assertions": [
+    {
+      "name": "exactly_three_self_conjugate_shapes_survive_the_row_cap",
+      "computed": [
+        [
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "expected": [
+        [
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "passed": true,
+      "note": "self-conjugacy forces ell(lambda) = lambda_1, so ell <= 2 puts the whole diagram in a 2x2 box. Lean: selfConj_two_row_enum"
+    },
+    {
+      "name": "and_all_of_them_have_at_most_four_cells",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "note": "so a mechanism resting on self-conjugate shadow prices has NOTHING to draw on above k = 4. Lean: selfConj_two_row_size_le_four"
+    },
+    {
+      "name": "all_three_have_content_sum_zero",
+      "computed": [
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0
+      ],
+      "passed": true,
+      "note": "c(lambda) = 0 is the isospin-sensitive class in figure-eight-branching-rule-proof.md's scaling rule (positive -> volume, negative -> charge, zero -> T(T+1)/A^p). So the survivors are all of the right TYPE; there are just three of them"
+    },
+    {
+      "name": "the_k5_wigner_shape_has_three_rows",
+      "computed": [
+        2,
+        3
+      ],
+      "expected": [
+        2,
+        3
+      ],
+      "passed": true,
+      "note": "(2,2) survives, (3,1,1) does not. Both are self-conjugate with c = 0, so the row cap is the ONLY thing separating them"
+    },
+    {
+      "name": "none_survive_at_any_level_five_or_above",
+      "computed": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "passed": true,
+      "note": "there are 2 self-conjugate partitions at n = 8 and 3 at n = 12; every one of them has three or more rows"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "n_max": 30,
+    "row_cap": "l(lambda) > 2 => y_lambda = 0 (convention D, QOU/Hecke/RowCap.lean)",
+    "lean": "QOU/Hecke/SelfConjugateRowCap.lean",
+    "note": "TENSION, not refutation: whether y_lambda = 0 forces C_lambda = 0 is NOT established and is not assumed anywhere here"
+  },
+  "data": {
+    "survivors": [
+      {
+        "n": 1,
+        "lambda": [
+          1
+        ],
+        "ell": 1,
+        "content_sum": 0
+      },
+      {
+        "n": 3,
+        "lambda": [
+          2,
+          1
+        ],
+        "ell": 2,
+        "content_sum": 0
+      },
+      {
+        "n": 4,
+        "lambda": [
+          2,
+          2
+        ],
+        "ell": 2,
+        "content_sum": 0
+      }
+    ],
+    "named_wigner_shapes": [
+      {
+        "lambda": [
+          2,
+          2
+        ],
+        "k": 4,
+        "self_conjugate": true,
+        "ell": 2,
+        "content_sum": 0,
+        "fate": "SURVIVES"
+      },
+      {
+        "lambda": [
+          3,
+          1,
+          1
+        ],
+        "k": 5,
+        "self_conjugate": true,
+        "ell": 3,
+        "content_sum": 0,
+        "fate": "y_lambda = 0 (ell > 2)"
+      }
+    ],
+    "census_by_level": [
+      {
+        "n": 1,
+        "self_conjugate": 1,
+        "surviving": 1
+      },
+      {
+        "n": 2,
+        "self_conjugate": 0,
+        "surviving": 0
+      },
+      {
+        "n": 3,
+        "self_conjugate": 1,
+        "surviving": 1
+      },
+      {
+        "n": 4,
+        "self_conjugate": 1,
+        "surviving": 1
+      },
+      {
+        "n": 5,
+        "self_conjugate": 1,
+        "surviving": 0
+      },
+      {
+        "n": 6,
+        "self_conjugate": 1,
+        "surviving": 0
+      },
+      {
+        "n": 7,
+        "self_conjugate": 1,
+        "surviving": 0
+      },
+      {
+        "n": 8,
+        "self_conjugate": 2,
+        "surviving": 0
+      },
+      {
+        "n": 9,
+        "self_conjugate": 2,
+        "surviving": 0
+      },
+      {
+        "n": 10,
+        "self_conjugate": 2,
+        "surviving": 0
+      },
+      {
+        "n": 11,
+        "self_conjugate": 2,
+        "surviving": 0
+      },
+      {
+        "n": 12,
+        "self_conjugate": 3,
+        "surviving": 0
+      }
+    ]
+  },
+  "provenance": {
+    "headSha": "cd2b7eaa62c8c82e6e141b828d5813f1f92abee7",
+    "producer": "computations/qbeta/qbeta_self_conjugate_row_cap_probe.py",
+    "elapsed_s": 0.2
+  }
+}
