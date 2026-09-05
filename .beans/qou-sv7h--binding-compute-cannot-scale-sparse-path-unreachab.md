@@ -1,11 +1,11 @@
 ---
 # qou-sv7h
 title: 'Binding compute cannot scale: sparse path unreachable, zero Rust, float64 straddle'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-08-30T15:42:47Z
+updated_at: 2026-09-05T06:36:07Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -77,3 +77,31 @@ Partition set is FIXED (193 at k<=11, dims 1..2310; 37s just to materialise) --
 it does not grow with A. Crossings grow O(A^2). Cost ~ A^2 * sum_lambda f(dim),
 f = dim^3 today, dim*nnz after fix 1. Relative to deuterium: Li-7 ~5x,
 O-16 ~17x, Fe-56 ~144x.
+
+
+---
+
+## CLAIMED 2026-09-05 — branch claude/rag-document-ingestion-options-orasrw
+
+Taking the SIGN question specifically, on owner direction. The prior session
+(`session_01Cb9sX3NisBDY4WN4z5wJL4`) last committed 2026-09-03; this bean is
+still `todo`, so this is a claim on an unclaimed item rather than a takeover.
+
+**Scope I am taking:** why `unified_iterative_correction` is negative. Its own
+commit `815b2a46a0` says "nothing here says WHY the sign is wrong -- that is the
+physics question this measurement opens and does not answer."
+
+**Scope I am NOT taking**, so it stays available: 6Li / A>=6, which
+`aaa2ef9c51` names as the discriminating measurement for the extensive term's
+SHAPE. That is a different question from the sign and ~5x deuterium's cost.
+
+**Route:** formalize-first, per AGENTS.md STRICT — locate where the sign is
+DETERMINED in term 1 and ask whether it is forced, rather than scanning. The
+strongest existing evidence that it is structural is this bean's own: the
+accumulator is negative on BOTH matrix families (old braid-violating: -0.0319
+at k=4 to -2.1955 at k=8; corrected: -0.0896 to -2.0200), so it survives a
+change of the underlying representation.
+
+**Falsifier stated in advance:** if the sign traces to a free choice — an
+orientation, a w_0 convention, an ordering of the LP objective — then it is not
+structural and this framing is wrong.
