@@ -101,7 +101,8 @@
         "witness": "computations/probe-plancherel-convention-gap.witness.json",
         "audit": "docs/audits/2026-09-04-plancherel-convention-gap.md",
         "bean": "qou-7o7h",
-        "consequence_for_readers": "figures computed under this form are not comparable to self-normalized figures; the corpus contains both. fr_pullback_k3_test.py uses this form; fr_pullback_borromean_h3a_test.py was migrated to self-normalized."
+        "consequence_for_readers": "figures computed under this form are not comparable to self-normalized figures; the corpus contains both. fr_pullback_borromean_h3a_test.py was migrated to self-normalized 2026-09-03; fr_pullback_k3_test.py FOLLOWED on 2026-09-04 (it now calls selfnorm_denominator), so its committed 1.82x/1.5015x figures are the PRE-migration textbook run and its live output is d_q^2/D^2. Name the family when quoting either.",
+        "k3_ranking_is_family_dependent": "the k=3 FR knot ranking is NOT invariant across weight families: d_q^2/[n]_q! ranks 4_1 best, d_q^2/D^2 ranks 6_1 best, the Molien weight f^lambda q^{-kappa} d_q/[n]_q! ranks 5_2 best, and y_lambda makes the depth-3 stratum identically zero (SU(N) row cap) so the test is vacuous. Which family Phi_k requires is OPEN (bean qou-oots). Measured: docs/audits/2026-09-05-phi-k-weight-family.md; labelling sweep: docs/audits/2026-09-05-k3-weight-family-labelling.md (bean qou-9b50)."
       }
     },
     {
