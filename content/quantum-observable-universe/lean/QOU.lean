@@ -1428,6 +1428,12 @@ import QOU.Hecke.RowCap
 import QOU.Hecke.CrossingConvexity
 import QOU.Hecke.BindingExtensivity
 import QOU.Hecke.LayoutConflict
+-- `GeometricTailBound` answers "why only the leading order?" for the flavour
+-- split: `(1 + h_q^3)` is the first two terms of `1/(1 - h_q^3)`, and summing
+-- the whole tail moves the value by `x^2/(1-x)` -- 323x smaller than the gap it
+-- would have to close.  Pure ordered-field algebra; the measurement enters only
+-- as the hypothesis `K > 1`.
+import QOU.Hecke.GeometricTailBound
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
 

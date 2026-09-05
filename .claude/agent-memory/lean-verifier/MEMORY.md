@@ -97,6 +97,16 @@ oleans written in ten minutes **zero** were QOU/UGB/Fred2005. Guard:
 `[ -f "$ROOT/.lake/RESTORED-NO-TRACES" ] && echo "restored — do NOT lake build"`.
 (The marker is absent in some containers; its absence is NOT proof of traces.)
 
+**And there are TWO mathlib trees, so the guard can read clean and still be
+worthless** (measured 2026-09-05). `lake build` run from
+`content/<paper>/lean/` builds *that* directory's own
+`.lake/packages/mathlib` — a near-empty second copy, no marker — while
+`scripts/lean-direct-env.sh` puts the **repo-root** `.lake/packages/mathlib`
+(5.4 G, marker present) on `LEAN_PATH`. So it does not evict the restore; it
+burns 40 min and +1.4 G on an 88 %-full disk rebuilding a tree nothing verifies
+against, and would not have finished. Same file, `lean`-direct: **5.0 s**.
+Check `du -sh` on both before believing a `lake build` is doing what you want.
+
 ## STABLE — cache shortcuts and hazards → `restore-shortcuts.md`
 
 Before fetching 1.6 GB, check whether a **leaked `/tmp/tmp.*`** already IS the
