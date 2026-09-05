@@ -24,7 +24,27 @@ namespace QOU.Information
 
 /-- **Speed of light** at a point p ∈ M.
     c_q(p) = 1 / (q(p) - 1).
-    Diverges at classicality (q → 1), vanishes in the deep-quantum regime (q → ∞).
+    Vanishes in the deep-quantum regime (q → ∞).
+
+    **🛑 Carries content only for `q > 1`.** The docstring used to say this
+    "diverges at classicality (q → 1)". As a statement about the mathematics that
+    is right; as a statement about *this declaration* it is false, and in the
+    direction that matters. `ArchimedeanSubstrateField` requires `1 ≤ q`, so
+    `q = 1` is not excluded — it is the **boundary** of the bound and the point
+    the structure's own docstring names "the classical limit". There
+    `sp.field p - 1 = 0`, and Lean's `1/0 = 0`, so this returns **`0`**: the
+    numerically smallest possible value at exactly the point the prose says it
+    blows up.
+
+    Recorded as `speedOfLight_junk_at_classicality` below rather than left to a
+    reader to discover. Every consumer in this file already hypothesises
+    `q > 1`, so nothing downstream depends on the junk value.
+
+    The content-block sibling avoids this by construction: it takes the unit
+    `d : kˣ` with `↑d = q − 1`, so at classicality the term cannot be formed at
+    all. Reconciling the two is tracked separately; see
+    `docs/audits/2026-09-05-the-archimedean-suffix-convention-is-the-wrong-instrument.md`.
+
     Label: def:information-speed-of-light -/
 noncomputable def speedOfLight {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : ℝ :=
@@ -125,6 +145,23 @@ theorem speedOfLight_positive {M : Type*} (sp : ArchimedeanSubstrateField M)
   unfold speedOfLight
   apply div_pos one_pos
   linarith
+
+/-- **At classicality this declaration returns `0`, not a divergence.**
+
+    `ArchimedeanSubstrateField` bounds `1 ≤ q`, so `q = 1` is permitted — it is the
+    boundary of that bound, and the structure names it the classical limit. There the
+    denominator is `0` and Lean's `1/0 = 0`.
+
+    Stated as a theorem so the junk value is discoverable from the declaration itself
+    rather than only from a reader's arithmetic, and so that `speedOfLight_positive`'s
+    `q > 1` hypothesis reads as **load-bearing** rather than incidental: it is exactly
+    the hypothesis that excludes this point. -/
+theorem speedOfLight_junk_at_classicality {M : Type*} (sp : ArchimedeanSubstrateField M)
+    (p : M) (hq : sp.field p = 1) :
+    speedOfLight sp p = 0 := by
+  unfold speedOfLight
+  rw [hq]
+  norm_num
 
 /-- The operational entropy approaches 1 as q → 1.
     At q = 1 exactly, η_q = (2·1 - 1) / 1^3 = 1. -/

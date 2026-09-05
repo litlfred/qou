@@ -28,9 +28,26 @@ namespace QOU.Information
 
 /-- The information bandwidth per Planck time:
     `𝓑(q) = q · η_q / (q − 1)²` (where `η_q` is the entropy
-    function, abstracted here as a parameter). -/
+    function, abstracted here as a parameter).
+
+    **Unguarded signature.** `q` is a bare `ℝ` here, so `informationBandwidth 1 η`
+    is a legal call and returns `0` (Lean's `x/0 = 0`) at exactly the classical
+    limit where the bandwidth is meant to blow up — see
+    `informationBandwidth_junk_at_one`. Every *intended* use goes through
+    `PBandwidthContext`, which carries `q_gt_one : 1 < q` and so excludes the
+    point; the exposure is in the signature, not in any current consumer. Noted
+    rather than fixed because tightening the signature would change a public
+    declaration's type for a defect nothing currently reaches. -/
 noncomputable def informationBandwidth (q : ℝ) (η_q : ℝ) : ℝ :=
   q * η_q / (q - 1) ^ 2
+
+/-- **The unguarded point.** A direct call at `q = 1` returns `0`. Recorded so the
+    gap between this bare signature and `PBandwidthContext.q_gt_one` is visible at
+    the declaration. -/
+theorem informationBandwidth_junk_at_one (η_q : ℝ) :
+    informationBandwidth 1 η_q = 0 := by
+  unfold informationBandwidth
+  norm_num
 
 /-- Abstract context for the P-time-iff-bandwidth claim.
 
