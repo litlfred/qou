@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Wigner $\\mathrm{SU}(4) = \\mathrm{SU}(2)_S \\times \\mathrm{SU}(2)_I$ as the categorical source for nuclear-shell binding",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.WignerSu4FromSpinIsospin",
+    ref: "qou:QOU.BraidsAndKnots.WignerSU4FromSpinIsospin",
     validation: "not_checked",
   },
   uses: [
