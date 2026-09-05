@@ -194,3 +194,43 @@ All sorry-free, `#print axioms` clean:
 - `PartitionOfComposition` (#6691) — `colLen_ofComposition`: a composition's column
   lengths are its part counts, so no sorted-list reasoning is needed downstream.
 - `GarnirShape` (#6691) — `garnirShape_lexGt`.
+
+## Update 2026-09-05 — 3.9's two named inputs are now both in the corpus, sorry-free
+
+The section above ends by saying `D_μ` exists generically (`IsMinRep` /
+`exists_minRep` in `CoxeterParabolicCoset`) but that the **composition-indexed** form
+Mathas' 3.9 actually uses had not been checked. It is now built, concretely for
+`S_n` and `Composition (n+1)`, on branch `claude/mathas-coset-completeness-2026-09-05`:
+
+| Mathas | statement | declaration | status |
+|---|---|---|---|
+| **3.3** | `D_μ` meets each right coset of `S_μ` in exactly one element, and `ℓ(v·d) = ℓ(v) + ℓ(d)` there | `CompositionCosetExists.existsUnique_isDistinguished_mem_coset`, `CompositionMinimal.length_mul_eq_add_of_isDistinguished` | **proved, sorry-free** |
+| **3.4** | `M^μ = x_μ H` is free on `{x_μ T_d : d ∈ D_μ}` | `CompositionCosetSum.repr_xComp_mul_Tw`, `.linearIndependent_xComp_mul_Tw` | **proved, sorry-free** |
+
+`repr_xComp_mul_Tw` is the concrete form worth quoting: **in the `T_w` basis the
+coordinates of `x_μ T_e` are the indicator function of the coset `e·S_μ`** — every
+coordinate `0` or `1`, and `q` does not appear. Freeness is then disjointness of
+cosets plus `TwBasis.basisTwOfField`.
+
+### Two orientation traps, both measured rather than guessed
+
+1. **`sortPerm`** (the conjugating `d` of 3.9) is length-additive on one side only.
+   Measured exhaustively: the orientation now in `CompositionYoung` is additive
+   1955/1955; its inverse fails 522/1955
+   ([`sortperm_length_additive_probe.py`](../../computations/hecke/sortperm_length_additive_probe.py)).
+2. **`Tw_mul_Tw` is flipped** (`T_v · T_w = T_{w·v}`), so `x_μ · T_e` lands on a
+   **left** coset while `IsDistinguished` is the **right**-coset notion. The two meet
+   through `ℓ(x) = ℓ(x⁻¹)`, so the correct hypothesis is `IsDistinguishedL c e :=
+   IsDistinguished c e⁻¹`, and Prop 3.3 transports with no second argument
+   (`existsUnique_isDistinguishedL`). An agent that skips this gets a length
+   hypothesis that is simply false.
+
+### What is still open on the chain
+
+Unchanged, and now sharper: **Lemma 3.9 itself**. Its algebraic engine is
+`CompositionIntertwine.Tw_sortPerm_mul_xComp` (`T_d · x_μ = x_ν · T_d`, sorry-free) and
+its two structural inputs are the table above. What is *not* in the corpus is the
+bridge from **row-standard `μ`-tableaux to coset representatives** — Mathas' `d(t)` for
+a *composition*-shaped tableau — without which "`m_{st}` is an `R`-combination of
+`m_{uv}`" cannot even be stated. That is the next thing to build, and it is combinatorial
+rather than algebraic.
