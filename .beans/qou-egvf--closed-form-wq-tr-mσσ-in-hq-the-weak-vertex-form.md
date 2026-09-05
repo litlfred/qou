@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T12:58:15Z
-updated_at: 2026-09-04T13:16:39Z
+updated_at: 2026-09-05T05:58:02Z
 ---
 
 Follow-on to qou-jk6k's one-level-down GAP. Exact result (sympy, convention D: h = q − 1/q, z = q³/(q²+1), Ocneanu basis values [1,z,z,z²,z²,hz²+z]):
@@ -30,3 +30,7 @@ Still open (owner): whether to replace 0.7036 / '11 % reduction' in obs:hadron-h
 
 
 PR #6664 opened 2026-09-04 (lean 41f39732ceb, audit fc1cf16306a, producer c1ee4cf0aa1). Precision gates: red rows all pre-existing corpus baselines, none naming the new files. Waiting on owner merge permission; the content-block correction (0.7036 → 1.1875 + item 2 of the Fermi remark) is the framed follow-on decision, not done here.
+
+
+## CORRECTION (2026-09-05, qou-ix74)
+The provenance line above is wrong: 0.7036 is NOT from the deprecated t35-full-calculation.py. It is hecke_division._trace_word's former z^{len} rule (Markov rotation without the Hecke relation) at z_C = 0.70355; the same rule at z_D gives 0.96844 = the 2026-08-29 t35-weak-vertex witness. Engine fixed in qou-ix74; see docs/audits/2026-09-05-weak-vertex-substitution-scale-and-engine-defect.md §3.

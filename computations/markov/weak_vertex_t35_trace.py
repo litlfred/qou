@@ -31,13 +31,15 @@ content/quantum-observable-universe/lean/QOU/Braiding/WeakVertexT35TraceClosedFo
 FINDING, NOT EDITED HERE.  obs:hadron-half-life-verification publishes
 W(q₀) ≈ 0.7036 ("computed exactly").  At the proton pin the convention-D
 value is ≈ 1.18748 and the convention-C value (z = √q/(q+1), excised) is
-≈ 0.9063; neither reproduces 0.7036.  That figure descends from the deprecated
-convention-C hecke_division pipeline (computations/_deprecated/
-t35-full-calculation.py, (σ₃σ₄)⁵ on 5 strands) and was not reproduced this
-session.  This is a published-value change for the content block and needs
-an owner pass — same posture as the figure-8 0.182 → 0.280 case in
-markov_trace_canonical.py.  The convention-C number below is a deliberate,
-labelled comparison, not a live value.
+≈ 0.9063; neither Ocneanu trace reproduces 0.7036.  PROVENANCE IDENTIFIED
+2026-09-05 (bean qou-ix74; this docstring first blamed the deprecated
+t35-full-calculation.py, which was wrong): the live hecke_division engine's
+former _trace_word applied the Markov rotation without the Hecke relation,
+which collapses to Σ_w c_w z^{|w|} over the reduced word — 0.70355 at z_C
+(the published figure) and 0.96844 at z_D (the value t35-weak-vertex.witness.json
+carried from 2026-08-29).  The engine now delegates to the canonical recursion.
+The content was corrected in PR #6689 (bean qou-4x7c).  The convention-C
+number below is a deliberate, labelled comparison, not a live value.
 
 Precision: sympy-exact throughout; the numerical evaluations are mpmath at
 60 dps from the exact closed form and from the exact tr_M_word expression
@@ -158,8 +160,8 @@ def main() -> int:
                     and abs(W_C - mp.mpf("0.7036")) > mp.mpf("0.01")),
          "note": "FINDING: obs:hadron-half-life-verification's W(q0) ≈ 0.7036 is "
                  "neither the D value (~1.1875) nor the C value (~0.9063); it "
-                 "descends from the deprecated hecke_division pipeline. Content "
-                 "not edited; owner pass needed (bean qou-egvf)."},
+                 "is hecke_division's former z^{len} trace rule at z_C (bean "
+                 "qou-ix74); content corrected in PR #6689 (bean qou-4x7c)."},
     ]
 
     n50 = lambda x: mp.nstr(x, 50, strip_zeros=False)  # noqa: E731
@@ -206,10 +208,11 @@ def main() -> int:
         "published_value_finding": {
             "block": "obs:hadron-half-life-verification",
             "published_W_q0": "0.7036",
-            "provenance": "computations/_deprecated/t35-full-calculation.py "
-                          "(convention-C hecke_division, (σ₃σ₄)^5 on 5 strands)",
-            "status": "NOT reproduced by either convention; content NOT edited; "
-                      "owner pass needed",
+            "provenance": "hecke_division._trace_word's former z^{len} rule (Markov "
+                          "rotation without the Hecke relation) at z_C = sqrt(q)/(q+1): "
+                          "0.70355; the same rule at z_D gave 0.96844 (bean qou-ix74)",
+            "status": "reproduced by neither convention's Ocneanu trace; content "
+                      "corrected in PR #6689 (bean qou-4x7c)",
         },
         "lean": "QOU.Braiding.WeakVertexT35.weakVertexTrace_eq",
         "reference_blocks": ["rem:hadron-half-life-fermi", "prop:hadron-half-life",
