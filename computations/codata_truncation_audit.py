@@ -408,7 +408,11 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--strict", action="store_true",
                     help="exit 1 if any TRUNCATED or DIVERGENT literal "
                          "is present")
-    ap.add_argument("--selftest", action="store_true",
+    # The harness in scripts/precision-gates.sh invokes `--self-test`
+    # (hyphenated). A gate whose flag does not match is reported as a
+    # self-test FAILURE, which is how this one entered the array red.
+    ap.add_argument("--self-test", "--selftest", dest="selftest",
+                    action="store_true",
                     help="verify the classifier still detects each verdict")
     ap.add_argument("--baseline", action="store_true",
                     help="ratchet mode: exit 1 only on findings absent from "
