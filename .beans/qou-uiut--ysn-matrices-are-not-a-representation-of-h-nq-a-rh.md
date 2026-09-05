@@ -1234,3 +1234,24 @@ retains. One of main's call sites auto-merged OUTSIDE the hunks and referenced
 `_is_sparse_sigma`, whose definition did not survive — caught by the parity
 tests going 64-pass to 18-fail, and aliased rather than renamed so a future
 merge does not re-conflict.
+
+### 2026-09-05 — second main merge (45 commits), and the witness loose end sized
+
+One conflict, in `unified_iterative_correction`'s signature/docstring: this
+branch added `use_rust=None`, main corrected the name (owner ruling, PR #6752 —
+"The weights y_λ are not LP duals"). Both wanted; kept both. Ran the AST
+dangling-name scan proactively this time rather than after a test failure —
+clean. 64 + 145 tests pass, and every atom replays byte-identical (b11 in 3.17 s
+against 111.63 s cold).
+
+**The 7 witnesses resolved by taking one side in the previous merge need less
+than I implied.** Checked their producers: the only change this branch made to
+any of them is the atomic-write transform (`_wpath_sidu` / `os.replace`), which
+alters HOW the file is written, not what is in it. `wlambda_jet_tower_connected`
+and `t35-weak-vertex` carry it; `borromean-axial-coupling` and
+`mass-from-q-symbolic` do not and auto-merged cleanly with main's producer.
+
+So those witnesses are value-consistent with the producers that wrote them.
+They want regeneration for PROVENANCE freshness — scriptHash, scriptCommitSha —
+not for correctness, which is a much weaker claim than "they need regenerating"
+and the honest one.
