@@ -2558,7 +2558,22 @@ def _check_producer_takeover(existing: object, witness: dict,
 _EPHEMERAL_META_FIELDS = frozenset({
     "commitSha", "scriptCommitSha", "computedAt", "durationMs",
     "durationSeconds", "duration_sec",
-    "environment", "elapsed_seconds", "elapsed_sec",
+    # `elapsed_s` declared 2026-09-05 (owner ruling, bean `qou-m549`). It is
+    # the same quantity as `elapsed_sec` under a shorter spelling — every live
+    # site is a wall-clock duration, seven of them written as
+    # `round(time.monotonic() - t0, 3)` in a `provenance` block — and its
+    # absence here made the raw-float64 ratchet read each one as a payload
+    # float. Seven such reds surfaced in two days (two within ten hours)
+    # before it was declared.
+    #
+    # This is the ONE-HALF case the comment in
+    # `computations/witness_raw_float64_audit.py::_ephemeral_timing_fields`
+    # warns about, in its easy direction: that carve-out is a SUBSTRING TEST
+    # over this set (`"dur" in n or "elapsed" in n`), so `elapsed_s` becomes
+    # visible to the ratchet the moment it is named here, with no second edit.
+    # `wall_sec` — also in the corpus, also a duration — would need BOTH
+    # halves and is deliberately NOT added blind; see `qou-ywee`.
+    "environment", "elapsed_seconds", "elapsed_sec", "elapsed_s",
 })
 
 
