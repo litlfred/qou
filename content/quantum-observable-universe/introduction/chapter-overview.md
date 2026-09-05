@@ -58,7 +58,7 @@ The geometric term $\mathrm{Geom}(K) = \mathrm{Vol}(K)/\hbar_q^{2}$ acts safely 
 **Part III: Physical Realization.**
 [*Predicted Particle Spectra*](#chap:predicted-spectra) systematically assigns fundamental fermions to specific knots, rigorously constructing mesons, nucleons, and the atomic shell structure strictly from algebraic necessity.
 
-[*Physical Observations*](#chap:observations) formally pins the framework against measured reality. Exactly three weak-sector inputs calibrate the three degrees of freedom of $H^1 = 2W$: the scale ($m_e$), the modulus ($\mathfrak{D}_\beta$), and the orthogonal class ($\mathfrak{D}_\pi$). The muon anchor pins the substrate to $q_0 \approx 1.1100$. These strict inputs predict atomic masses, the fine-structure constant ($1/\alpha_{\mathrm{EM}} \approx 137.0359$), and the exact proton and neutron masses without empirical nuclear tuning.
+[*Physical Observations*](#chap:observations) formally pins the framework against measured reality. Exactly three weak-sector inputs calibrate the three degrees of freedom of $H^1 = 2W$: the scale ($m_e$), the modulus ($P_{\mathrm{skew}}^{\beta}$), and the orthogonal class ($P_{\mathrm{avg}}^{\pi}$). The muon anchor pins the substrate to $q_0 \approx 1.1100$. These strict inputs predict atomic masses, the fine-structure constant ($1/\alpha_{\mathrm{EM}} \approx 137.0359$), and the exact proton and neutron masses without empirical nuclear tuning.
 
 [*Molecular Construction from Nucleon Braids*](#chap:molecular-construction) and [*Organic Chemistry from Hopf Chains*](#chap:organic-chemistry) rigorously extend the formalism to molecular chemistry. Water's $104.5^\circ$ bond angle emerges identically from topological relaxation. Benzene's ring closure strictly derives from the $T(2,6)$ Alexander polynomial, predicting its empirical closure barrier purely from knot invariants.
 
@@ -76,4 +76,4 @@ The geometric term $\mathrm{Geom}(K) = \mathrm{Vol}(K)/\hbar_q^{2}$ acts safely 
 The [Glossary](#chap:glossary), [Knot-Periodic Table](#app:knot-periodic-table), and [Index of Definitions](#app:index-definitions) supply the formal reference data. This paper's hardest results strictly unite behind the obstruction class $\kappa_n \in H^2(S, B)$. The $q$-deformed millennium problems—Navier–Stokes, Yang–Mills, P vs NP, Riemann, BSD—all precisely reduce to the vanishing of this single class.
 
 **Calibration.**
-The framework requires **exactly three** calibration inputs—$m_e$, $\mathfrak{D}_\beta$, and $\mathfrak{D}_\pi$—to fix the state space's cohomology. Every other physical mass, binding energy, and coupling acts strictly as a zero-parameter prediction.
+The framework requires **exactly three** calibration inputs—$m_e$, $P_{\mathrm{skew}}^{\beta}$, and $P_{\mathrm{avg}}^{\pi}$—to fix the state space's cohomology. Every other physical mass, binding energy, and coupling acts strictly as a zero-parameter prediction.

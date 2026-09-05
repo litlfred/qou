@@ -1,23 +1,23 @@
 | ID | Canonical observable | canonical proxy | What it fixes | DOF of $H^1 = 2W$ |
 |----|-----------|-------------|--------------|-------------------|
 | **CAL-1** | $m_\mathfrak{e}$ (leptonic mass scale, order $h^0$) | electron mass (Penning trap) | the dimensional unit | $W$-plane scale |
-| **CAL-2** | $\mathfrak{D}_\beta$ (neutron $\beta$-decay width, order $h^2$) | $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$; the modulus is overdetermined, pinned most precisely by $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | substrate $q_0$ | $W$-plane modulus |
-| **CAL-3** | $\mathfrak{D}_\pi$ (pion decay width, order $h^3$) | charged-pion mass $m_\pi$ (PDG); independent of $(m_\mathfrak{e}, q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | meson scale | orthogonal class |
+| **CAL-2** | $P_{\mathrm{skew}}^{\beta}$ (neutron $\beta$-decay width, order $h^2$) | $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta}$; the modulus is overdetermined, pinned most precisely by $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | substrate $q_0$ | $W$-plane modulus |
+| **CAL-3** | $P_{\mathrm{avg}}^{\pi}$ (pion-sector bar-even channel, order $h^3$) | charged-pion mass $m_\pi$ (PDG); independent of $(m_\mathfrak{e}, q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | meson scale | orthogonal class |
 
 All three are the three real degrees of freedom of the single $H^1 = 2W$
 (rank-2 $W$-plane scale + modulus, plus one orthogonal class: $2+1=3$),
 **not** three distinct degrees $H^0/H^1/H^2$.
 
 The three canonical inputs are **weak-sector observables** — a leptonic
-mass scale and two decay widths $(m_\mathfrak{e}, \mathfrak{D}_\beta,
-\mathfrak{D}_\pi)$, entering at successive orders $h^0, h^2, h^3$. They
+mass scale and two bar-parity channels $(m_\mathfrak{e}, P_{\mathrm{skew}}^{\beta},
+P_{\mathrm{avg}}^{\pi})$, entering at successive orders $h^0, h^2, h^3$. They
 are read off their most precisely measured **proxies** — the masses
 $m_\mathfrak{e}$, $m_\pi$ and the $Q$-value $\mathfrak{Q}_\beta =
-\hbar/\mathfrak{D}_\beta$. $m_\mathfrak{e}$ sets the unit, so the
+\hbar/P_{\mathrm{skew}}^{\beta}$. $m_\mathfrak{e}$ sets the unit, so the
 (dimensionless) modulus $q_0$ is pinned by the ratio $m_\mu/m_\mathfrak{e}$
 — the most precise anchor for CAL-2.
 
-$\mathfrak{Q}_\beta$ is the **measured proxy for CAL-2** ($\mathfrak{D}_\beta$),
+$\mathfrak{Q}_\beta$ is the **measured proxy for CAL-2** ($P_{\mathrm{skew}}^{\beta}$),
 the bar-odd $\sinh$ partner of the bar-even $\cosh$ meson scale $m_\pi$;
 it is **not** a fourth calibration. Because the modulus is overdetermined,
 $\mathfrak{Q}_\beta$ and the lepton ratio $m_\mu/m_\mathfrak{e}$ are
@@ -93,9 +93,9 @@ The calibration map is:
 
 | Wedderburn block | Calibration | Role |
 |------------------|-------------|------|
-| $\mathrm{alt}$ ($\lambda = (1^3)$) | CAL-2: $\mathfrak{D}_\beta$ (proxy $m_\mu/m_e$) $\mapsto q_0$ | Sets the deformation scale (alt is the "antisymmetric" / antimatter channel; $q_0 = 1$ collapses it). |
+| $\mathrm{alt}$ ($\lambda = (1^3)$) | CAL-2: $P_{\mathrm{skew}}^{\beta}$ (proxy $m_\mu/m_e$) $\mapsto q_0$ | Sets the deformation scale (alt is the "antisymmetric" / antimatter channel; $q_0 = 1$ collapses it). |
 | $\mathrm{std}$ ($\lambda = (2,1)$) | CAL-1: $m_e$ | Sets the leptonic mass quantum (std is the 2-dimensional "matter" channel where $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$). |
-| $\mathrm{sym}$ ($\lambda = (3)$) | CAL-3: $\mathfrak{D}_\pi$ (proxy $m_{\pi^{\pm}}$) | Sets the chiral / Goldstone scale (sym is the "all crossings positive" / hadronic channel). The pion mass is the pseudo-Goldstone boson of broken chiral $\mathrm{SU}(2)_A$; its mass encodes the chiral condensate $\langle\bar{q}q\rangle^{1/3} \approx 240\;\mathrm{MeV}$ which is absent from $(m_e, q_0)$. $\mathfrak{Q}_\beta(n)$ is the **measured proxy for CAL-2** ($\mathfrak{D}_\beta$); when $q_0$ is pinned by the alternative anchor $m_\mu/m_e$, the relation $\mathfrak{Q}_\beta = m_e \lvert q_0^2 - 2q_0 - 1\rvert(q_0+1)/(2q_0^3) \approx 0.784\;\mathrm{MeV}$ (0.17% miss) makes it a cross-check on the same modulus, not a fourth input. |
+| $\mathrm{sym}$ ($\lambda = (3)$) | CAL-3: $P_{\mathrm{avg}}^{\pi}$ (proxy $m_{\pi^{\pm}}$) | Sets the chiral / Goldstone scale (sym is the "all crossings positive" / hadronic channel). The pion mass is the pseudo-Goldstone boson of broken chiral $\mathrm{SU}(2)_A$; its mass encodes the chiral condensate $\langle\bar{q}q\rangle^{1/3} \approx 240\;\mathrm{MeV}$ which is absent from $(m_e, q_0)$. $\mathfrak{Q}_\beta(n)$ is the **measured proxy for CAL-2** ($P_{\mathrm{skew}}^{\beta}$); when $q_0$ is pinned by the alternative anchor $m_\mu/m_e$, the relation $\mathfrak{Q}_\beta = m_e \lvert q_0^2 - 2q_0 - 1\rvert(q_0+1)/(2q_0^3) \approx 0.784\;\mathrm{MeV}$ (0.17% miss) makes it a cross-check on the same modulus, not a fourth input. |
 
 This is the meaning of "aligned to (co)homology": the three
 calibrations correspond bijectively to the three irreducible

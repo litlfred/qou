@@ -14,12 +14,12 @@ widths, entering at successive orders $h^0$, $h^2$, $h^3$ — and they
 are not chosen freely: they match, one for one, the three real
 degrees of freedom of the state space's first cohomology.  The
 leptonic mass scale ($m_e$) sets the unit, the *scale* of that
-cohomology; the neutron $\beta$-decay width ($\mathfrak{D}_\beta$)
+cohomology; the neutron $\beta$-decay width ($P_{\mathrm{skew}}^{\beta}$)
 fixes the substrate parameter $q_0$, its *modulus*; and the pion
-decay width ($\mathfrak{D}_\pi$) fixes the one remaining *orthogonal*
+decay width ($P_{\mathrm{avg}}^{\pi}$) fixes the one remaining *orthogonal*
 class, the meson sector whose Hopf-link complement has zero volume.
 Each is read off its most precisely measured proxy — $m_e$, the
-$Q$-value $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$, and the
+$Q$-value $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta}$, and the
 pion mass $m_\pi$; the modulus is overdetermined, so it is pinned
 numerically by the lepton ratio $m_\mu/m_e$ through the Skein
 relation $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$.  Every other

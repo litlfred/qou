@@ -38,7 +38,7 @@ deriving DecidableEq, Repr
 /-- The calibration each sector's scale anchors to (CAL index 1–3):
 strong binding is priced in `E₀ = m_e/(q₀(q₀−1))` off CAL-1/CAL-2; the
 electromagnetic Hartree scale is `α_EM²·m_e c²` off CAL-1 with the derived
-`α_EM`; the weak sector is CAL-2 itself (`𝔇_β`, proxy `m_μ/m_e`). -/
+`α_EM`; the weak sector is CAL-2 itself (`P_skew^β`, proxy `m_μ/m_e`). -/
 def calAnchor : Sector → Nat
   | .strong => 2
   | .electromagnetic => 1
@@ -61,7 +61,7 @@ compute/Lean carriers). -/
 def couplingObject : Sector → String
   | .strong => "Borromean Markov trace tr_M(β_Bor) / confinement SDP duals"
   | .electromagnetic => "α_EM⁻¹ = q₀·[9]_q·[10]_q × CS tower (pyhecke.alpha_em_inv_mp)"
-  | .weak => "bar-odd channel: Q_β Kashiwara b², decay widths 𝔇_β"
+  | .weak => "bar-odd channel: Q_β Kashiwara b², decay widths P_skew^β"
 
 /-- Weak is the unique sector whose established parity is bar-odd. -/
 theorem weak_unique_bar_odd :

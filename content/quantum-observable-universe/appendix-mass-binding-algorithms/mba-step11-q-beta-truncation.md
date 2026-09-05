@@ -8,7 +8,7 @@ $N$ chosen by the target precision.*
 
 - *Decay channel (parent isotope $A \to$ daughter $A'$).*
 - *Substrate $q_0$, electron mass $m_e$ (CAL-1, CAL-2).*
-- *Pion decay width (CAL-3) for $\mathfrak{D}_\pi$.*
+- *Pion decay width (CAL-3) for $P_{\mathrm{avg}}^{\pi}$.*
 - *Target precision $\varepsilon \in \mathbb{R}_{> 0}$ → truncation
   order $N \geq \lceil \log_{10}(1/\varepsilon) / 2.07 \rceil - 1$.*
 
