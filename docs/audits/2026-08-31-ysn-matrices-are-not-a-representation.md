@@ -360,9 +360,19 @@ corroboration of convention D.
 **Stands: the fix is worth landing.** Not for the binding numbers — those move
 by `1e-14` — but because the detector is red on `main`, because the object is
 wrong, and because any consumer that uses the matrices rather than their traces
-would be wrong. `q_sweep_sdp_atom` in
-[`sdp_cross_channel.py`](../../computations/sdp_cross_channel.py) imports
-`_build_ysn_matrices` directly and has **not** been assessed here.
+would be wrong.
+
+**The one such consumer is dead code, measured.** `q_sweep_sdp_atom` in
+[`sdp_cross_channel.py`](../../computations/sdp_cross_channel.py) is the only
+importer of `_build_ysn_matrices` outside `hecke_core_legacy` itself, and it
+uses the matrices rather than their traces — so it is the single place where
+this defect could have moved a number. It is **defined at line 394 and called
+nowhere**: a repo-wide grep returns its own `def`, and otherwise only the three
+places this session wrote *about* it (two beans and this paragraph). No witness
+references it. So no recorded number in the corpus came from the braid-violating
+family through this path either, and the fix makes it correct before anyone
+calls it. That is a grep, not a run — it establishes there is no caller, not
+that the function would be right if there were.
 
 **`qou-i7ju` is unblocked.** `hadron_knot_table.py` reaches the matrices only
 through `binding_energy`, which is fully kernel-served. Regenerating
