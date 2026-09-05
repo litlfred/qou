@@ -52,9 +52,16 @@ names, whenever that route is linear, factors through the Markov trace,
 and is localised at $(2,1)$.  It also says where the room is, which is
 the more useful half: $f^{(2,1)} = 2$, so the block is $M_2(\mathbb{R})$
 — **four** real dimensions, of which the trace reads one.  The
-information wanted is present in the block and destroyed by tracing it.
-A derivation reading the block rather than its trace is not blocked by
-any of this.  So the clause is still an open obligation, not a
+information wanted is present in the block and destroyed by tracing it
+— itself now a theorem (`trace_does_not_separate`,
+`exists_indistinguishable_by_every_traceFunctional`): whenever a block
+has dimension at least $2$ there are **distinct** decompositions on
+which every block trace agrees, so every trace-factoring functional,
+the Markov trace included, takes the same value on both.  Instantiating
+that at $(2,1)$ needs $f^{(2,1)} = 2$, which is classical but is *not*
+a formalised fact in this corpus, so the Lean statement carries the
+bound as a hypothesis.  A derivation reading the block rather than its
+trace is not blocked by any of this.  So the clause is still an open obligation, not a
 derivation; for higher
 partitions it adds the form-factor, $pn$-correlation, and
 ${[3,2,1]}$ pn-invisible corrections.

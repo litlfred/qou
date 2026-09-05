@@ -72,6 +72,13 @@
       "note": "the shape objection is no longer only prose. Under linearity -- already assumed for the Markov trace -- three trace-factoring functionals at one partition are dependent"
     },
     {
+      "name": "the_trace_is_provably_lossy",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the ROOM is a theorem too, not only the no-go: distinct decompositions with every block trace equal, so every trace-factoring functional is blind to the difference"
+    },
+    {
       "name": "and_the_block_is_wider_than_its_trace",
       "computed": true,
       "expected": true,
@@ -100,8 +107,8 @@
     "signature": "noncomputable def wedderburnEmbedOf {n : ℕ} (h : RSKDimIdentity n) (x : WedderburnDecomposition n) : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ := Matrix.reindex (regIndexEquiv h) (regIndexEquiv h) (blockDiagonal x) /-- And it is injective, so it deserves the name \"embedding\". -/ theorem wedderburnEmbedOf_injective {n"
   },
   "provenance": {
-    "headSha": "74c151ae5411f5df8b2e4f7a157edd32d9404008",
+    "headSha": "04cd80601974961e6ced887dd50e70856d8d1878",
     "producer": "computations/qbeta/qbeta_wedderburn_bridge_probe.py",
-    "elapsed_s": 15.05
+    "elapsed_s": 4.959
   }
 }

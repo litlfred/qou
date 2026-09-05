@@ -288,6 +288,11 @@ def main() -> int:
               note="the shape objection is no longer only prose. Under "
                    "linearity -- already assumed for the Markov trace -- three "
                    "trace-factoring functionals at one partition are dependent")
+    ok &= chk("the_trace_is_provably_lossy",
+              "theorem trace_does_not_separate" in wtflat, True,
+              note="the ROOM is a theorem too, not only the no-go: distinct "
+                   "decompositions with every block trace equal, so every "
+                   "trace-factoring functional is blind to the difference")
     ok &= chk("and_the_block_is_wider_than_its_trace",
               "destroyed by taking its trace" in wtflat, True,
               note="f^{(2,1)}=2 so the block is M_2(R), four dimensions to the "

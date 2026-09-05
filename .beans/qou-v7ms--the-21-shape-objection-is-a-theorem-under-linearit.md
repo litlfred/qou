@@ -63,3 +63,28 @@ The reader-facing block `unified-iterative-correction-proof.md` (it must not rea
 as the clause being refuted), and the probe — whose "no Lean theorem" section is
 replaced by the theorem, with two new assertions pinning both the no-go and the
 statement of where the room is. Probe 11/11.
+
+## Follow-up landed in the same arc: the room is a theorem too
+
+The first pass asserted that the wanted information "is present in the block and
+destroyed by taking its trace". That was prose. It is now proved:
+
+- `blockAt` — the decomposition carrying one matrix on block `lam`, zero elsewhere.
+- `trace_does_not_separate` — whenever `2 ≤ f^λ` there are **distinct**
+  decompositions with *every* block trace equal. Witness: an off-diagonal matrix
+  unit, which is traceless.
+- `exists_indistinguishable_by_every_traceFunctional` — hence every
+  trace-factoring functional, `markovTraceOnWedderburn` included, takes the same
+  value on both.
+
+So the trace is not merely one-dimensional per partition; it is genuinely lossy,
+and the lost directions are exactly where a block-reading derivation would live.
+All three: `[propext, Classical.choice, Quot.sound]`.
+
+**Gap flagged, not papered over.** Instantiating this at `λ = (2,1) ⊢ 3` needs
+`2 ≤ f^{(2,1)}`. That value is 2 by the hook length formula, but **no
+declaration in this corpus computes `seminormalDim` at a named partition** — a
+grep returns nothing. The theorem therefore carries the bound as a hypothesis,
+and the `(2,1)` reading is conditional on a classical fact this corpus has not
+written down. Small and self-contained; deliberately not attempted here rather
+than assumed.
