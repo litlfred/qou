@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-02T21:46:09.177790+00:00",
-  "commitSha": "e3e4302fa037bd83883d5de0912062abbc1efef5",
+  "computedAt": "2026-09-05T07:59:04.946763+00:00",
+  "commitSha": "11fd7c3c11231cc8162f1099a3f5ee35cf0efbfd",
   "assertions": [
     {
       "name": "table2_N=0_reproduces_at_muon_pin_with_a_PLUS_sign",
@@ -209,11 +209,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 84,
   "computation": "qbeta-precision-ladder-n5",
   "scriptFile": "qbeta_precision_ladder_n5.py",
   "scriptHash": "809055d9e50e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6252ad10c3360e0e8d6a07c23bda79fd275df478",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -228,7 +228,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -283,5 +283,7 @@
     "c5_sdp_extracted": "-1.22290000000000000000000000000000000000000000000000000000000",
     "corrected_headline_muon_ppm": "0.00713393664139533734366747321112833652086929876447809796346755",
     "corrected_headline_proton_ppm": "0.0377074898557493246572264919369599095480546980362305028253361"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
