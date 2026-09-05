@@ -1255,3 +1255,26 @@ So those witnesses are value-consistent with the producers that wrote them.
 They want regeneration for PROVENANCE freshness — scriptHash, scriptCommitSha —
 not for correctness, which is a much weaker claim than "they need regenerating"
 and the honest one.
+
+### 2026-09-05 — memo disk footprint checked (not a risk), and where the run stands
+
+Checked before it could become a problem, since the container has a fixed disk
+allowance (`df`: 4.9 G available, 88 % used) and the memo grows with every atom.
+
+    du -sh   .work/kernel-memo   ->  32 MB
+    sum of file sizes            ->   1.9 MB over 12 atoms
+
+The 16x gap is block padding: 7814 entries, each a small JSON file taking a
+4 KB minimum block. So the apparent size is mostly filesystem overhead rather
+than data.
+
+Projection: entry COUNT is roughly per-partition and does not grow much with A,
+while entry SIZE does (an entry holds one trace per step, so fe56's are ~28x
+deuterium's). That lands the finished memo in the low hundreds of MB, well
+inside the allowance. **No sharding needed.** Revisit only if `df` tightens —
+the cheap fix would be packing many entries per file to reclaim the 16x.
+
+Run state: 12 atoms cached (through c12), c14 in flight. c14 is A=14, and n14
+at the same A took 34 min in the last full run, so it is simply a big atom
+rather than stuck — the memo grew 7612 -> 7814 entries during the last window,
+which is preserved work.
