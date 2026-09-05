@@ -587,7 +587,7 @@ Full sweep results — 558 blocks, sorted by verdict (WIRED → PROBE-ONLY → N
 | `prop:term6-binding-density` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:term6-binding-density at q0; emit witness with contentBlock="prop:term6-binding-density". |
 | `prop:terminal-resolution` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:terminal-resolution at q0; emit witness with contentBlock="prop:terminal-resolution". |
 | `prop:terms-2-6-higher-operations` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:terms-2-6-higher-operations at q0; emit witness with contentBlock="prop:terms-2-6-higher-operations". |
-| `prop:three-calibration-discipline` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:three-calibration-discipline at q0; emit witness with contentBlock="prop:three-calibration-discipline". |
+| `def:three-calibration-discipline` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising def:three-calibration-discipline at q0; emit witness with contentBlock="def:three-calibration-discipline". |
 | `prop:three-parameters-wedderburn` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:three-parameters-wedderburn at q0; emit witness with contentBlock="prop:three-parameters-wedderburn". |
 | `prop:thurston-volume-additivity` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:thurston-volume-additivity at q0; emit witness with contentBlock="prop:thurston-volume-additivity". |
 | `prop:toffoli-lp-stability` | proposition | NOT-WIRED | I1 | Write probe_*.py exercising prop:toffoli-lp-stability at q0; emit witness with contentBlock="prop:toffoli-lp-stability". |

@@ -883,7 +883,7 @@
 | [prop:benzene-threading-emergence](#prop:benzene-threading-emergence) | Threading link $T(2,6)$ emerges as the LP-optimal $\pi$ configuration | Ch 16 | `qou:QOU.Molecular.benzene_threading_emergence` |
 | [prop:three-parameters-wedderburn](#prop:three-parameters-wedderburn) | Three calibration parameters from Wedderburn-Artin decomposition of $H_3(q)$ | Ch 12 | `qou:QOU.BraidKnot.three_parameters_wedderburn` |
 | [prop:nuclear-operator-regimes](#prop:nuclear-operator-regimes) | Three operator regimes for nuclear binding | Ch 10 | `qou:QOU.Interactions.nuclearOperatorRegimes` |
-| [prop:three-calibration-discipline](#prop:three-calibration-discipline) | Three-calibration discipline ($m_e$, $m_\mu$, $m_\pi$) aligned to (co)homological data | Ch 15 | `qou:QOU.Observations.threeCalibrationDiscipline` |
+| [def:three-calibration-discipline](#def:three-calibration-discipline) | Three-calibration discipline ($m_e$, $m_\mu$, $m_\pi$) aligned to (co)homological data | Ch 15 | `qou:QOU.Observations.threeCalibrationDiscipline` |
 | [prop:thurston-volume-additivity](#prop:thurston-volume-additivity) | Thurston additivity of hyperbolic volume over ideal tetrahedra | Ch 12 | `qou:QOU.ParticleInteractions.thurstonVolumeAdditivity` |
 | [prop:topological-mass-formula-algebraic](#prop:topological-mass-formula-algebraic) | Topological mass formula (algebraic, $\mathbb{Q}(q)$-side) | Ch 12 | `qou:QOU.Torsion.AlgebraicMassFormula` |
 | [prop:topological-mass-formula](#prop:topological-mass-formula) | Topological mass formula (Archimedean) | Ch 12 | `qou:QOU.Torsion.ArchimedeanMassFormula` |

@@ -26,7 +26,7 @@ $\mathbb{Q}(q_0)$ scaled by **categorically exactly three**
 external calibration inputs — $m_e$ ($H^0$, mass scale),
 $m_\mu / m_e$ ($H^1$, fixes $q_0$), and $Q_\beta$ ($H^2$, weak
 sector) — aligned to three (co)homological degrees. See
-[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md).
+[`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md).
 Anything else (a fourth dimensional input, or an Archimedean
 input as a derivation source) is a wall violation and is flagged.
 
@@ -99,7 +99,7 @@ remove the fit.
 The QOU framework allows **categorically exactly three** external
 calibration inputs, aligning to three distinct (co)homological
 degrees of the substrate sheaf
-([`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)):
+([`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)):
 
 | ID | Calibration | (Co)homology | Role |
 |----|-------------|--------------|------|
@@ -110,7 +110,7 @@ degrees of the substrate sheaf
 🟢 **Status.** This is the *declared, honest* calibration budget.
 The earlier "one calibration" framing of this audit was wrong;
 the corrected discipline is now codified in
-[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md).
+[`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md).
 Any **fourth** external input is a hard audit failure.
 
 ### §2·B — Tier-2: substrate parameter $q_0$ classification
@@ -124,7 +124,7 @@ $H^1$ calibration — not a separate fit.
 
 | ID | Quantity | Status |
 |----|----------|--------|
-| **SUB-1** | $q_0 = 1.10998\ldots$ | 🟢 The $H^1$ calibration of [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md). The earlier "second calibration" framing has been retired by §2·A. |
+| **SUB-1** | $q_0 = 1.10998\ldots$ | 🟢 The $H^1$ calibration of [`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md). The earlier "second calibration" framing has been retired by §2·A. |
 
 🟢 **Action.** None on the calibration-discipline side. A
 nice-to-have follow-up (workplan **P3.x**, was P1.1(a)) is to close
@@ -269,7 +269,7 @@ the Markov-trace pipeline — only from vacuum drag.
 
 | ID | Status |
 |----|--------|
-| **SHELL-1** | 🟢 The "calibration" in the block name is the $H^2$ calibration $E_0 = Q_\beta = 0.782$ MeV — the third entry of [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md). Shell binding values are *derived* from chain Q-values + level-3 shadow prices, not fitted. Block language updated to reference the three-calibration discipline; no fourth calibration introduced. |
+| **SHELL-1** | 🟢 The "calibration" in the block name is the $H^2$ calibration $E_0 = Q_\beta = 0.782$ MeV — the third entry of [`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md). Shell binding values are *derived* from chain Q-values + level-3 shadow prices, not fitted. Block language updated to reference the three-calibration discipline; no fourth calibration introduced. |
 
 ### §2·H — `recursive-atom-knot-atlas` parameters
 
@@ -480,7 +480,7 @@ prediction at level $A$ requires:
    via cherry-picked Wenzl-bridge content. NU-1 resolved (neutrino
    = unknot = 0 mass). SHELL-1 resolved. The three approved
    calibrations (CAL-0 / CAL-1 / CAL-2) named in
-   `prop:three-calibration-discipline`; all numerical
+   `def:three-calibration-discipline`; all numerical
    predictions cite it.
 10. ❌ Magic-number derivation from Bring (currently asserted but
     not derived).

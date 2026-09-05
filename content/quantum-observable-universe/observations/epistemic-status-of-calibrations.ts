@@ -4,10 +4,10 @@ export default remark({
   label: "rem:epistemic-status-of-calibrations",
   title:
     "Epistemic status of CAL-1, CAL-2, CAL-3 — what is genuinely derived vs what is pinned",
-  interprets: "prop:three-calibration-discipline",
+  interprets: "def:three-calibration-discipline",
   uses: [
     "prop:three-calibration-inputs",
-    "prop:three-calibration-discipline",
+    "def:three-calibration-discipline",
     "prop:self-dual-higgs-real-volume",
     "rem:qstar-decay-sector-q0",
   ],

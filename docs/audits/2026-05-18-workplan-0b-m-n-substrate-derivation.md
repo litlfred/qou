@@ -36,7 +36,7 @@ separate calibration).
    3 → 9 calibration over-count.  Your M_N derivation closes one
    slice of that.
 3. **Three-calibration discipline** —
-   [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)
+   [`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)
    states the framework target: every observable factors as
    $m_e^a \cdot Q_\beta^c \cdot \hat{\mathcal{O}}(q_0)$.  M_N must
    factor this way too.

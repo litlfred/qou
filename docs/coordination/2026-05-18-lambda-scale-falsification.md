@@ -32,7 +32,7 @@
 4. **Transcendental ansätze:** Bloch-Wigner, Clausen Cl_2(π/k), ζ(3), Vol(4_1), Vol(B_3) basis — no integer relation.
 5. **Single-knot K_p search:** no standard hyperbolic 3-manifold has Vol = 18.03 within 0.28% (closest: 9·Vol(4_1) at +1.35%).
 
-**Canonical implication:** the framework's `prop:three-calibration-discipline` forbids CAL-4 baryon anchor (Option A from R&D 4 audit). Option B (single-knot K_p) is empirically ruled out. **Option C (treat as numerical coincidence)** is the only consistent path.
+**Canonical implication:** the framework's `def:three-calibration-discipline` forbids CAL-4 baryon anchor (Option A from R&D 4 audit). Option B (single-knot K_p) is empirically ruled out. **Option C (treat as numerical coincidence)** is the only consistent path.
 
 ### PR #690 (sibling, OPEN)
 

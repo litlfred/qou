@@ -1,6 +1,6 @@
 {
   "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
-  "generated": "2026-09-05T07:20:35.590Z",
+  "generated": "2026-09-05T08:22:46.125Z",
   "total_blocks": 3526,
   "blocks_failed_to_load": 0,
   "failed_to_load": [],
@@ -173,7 +173,7 @@
     "conj:yang-mills-mass-gap",
     "conj:z-eq-n-rho-correction"
   ],
-  "provable_blocks_touching_conjecture": 162,
+  "provable_blocks_touching_conjecture": 161,
   "violators": [
     {
       "label": "prop:bar-parity-split",
@@ -562,21 +562,6 @@
         "conj:crystal-graph-realization"
       ],
       "file": "content/quantum-observable-universe/mass-theory/sl2-prolongation-recurrence.ts"
-    },
-    {
-      "label": "prop:three-calibration-discipline",
-      "kind": "proposition",
-      "conj": [
-        "conj:binding-manybody-eq-jet-filtration",
-        "conj:magic-numbers-bring",
-        "conj:diagrammatic-double-magic-lr-fusion",
-        "conj:gs-residue-at-root-existence",
-        "conj:gs-graded-markov-trace-existence",
-        "conj:magic-numbers-from-q",
-        "conj:confinement-grading-correspondence",
-        "conj:crystal-graph-realization"
-      ],
-      "file": "content/quantum-observable-universe/observations/three-calibration-discipline.ts"
     },
     {
       "label": "prop:two-filtration-bridge-general",

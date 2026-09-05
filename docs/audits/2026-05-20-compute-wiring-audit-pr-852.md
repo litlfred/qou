@@ -61,7 +61,7 @@ These are explicit *ansatz probes*, not production:
 | `branch_phase_fit_to_mass_tower.py` | docstring reference only (in `rho_prefactor_structural_verifier.py`); not invoked |
 | `schrodinger_color_falsifiability_fit.py` | explicit `_fit` suffix; standalone probe |
 
-The discipline is **"no fitting in the production mass pipeline"**, not "no fits anywhere ever". Falsifiability probes that test an ansatz and emit an audit-only witness are an allowed pattern under `prop:three-calibration-discipline`.
+The discipline is **"no fitting in the production mass pipeline"**, not "no fits anywhere ever". Falsifiability probes that test an ansatz and emit an audit-only witness are an allowed pattern under `def:three-calibration-discipline`.
 
 ## §6. LP/SDP solvers — canonical infra ✅
 
