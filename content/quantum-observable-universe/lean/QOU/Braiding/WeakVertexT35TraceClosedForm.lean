@@ -55,10 +55,15 @@ Wedderburn route, and pins the result to a published invariant.
 ## Value at the substrate
 
 At the proton pin `q₀ ≈ 1.10998`, `W(q₀) ≈ 1.18748` (`weakVertexTrace_near_q0`).  The value
-`≈ 0.7036` published in `obs:hadron-half-life-verification` is reproduced by neither convention
-(D: `1.1875`; C, `z = √q/(q+1)`: `0.9063`); it descends from the deprecated convention-C
-`hecke_division` pipeline (`computations/_deprecated/t35-full-calculation.py`).  That is a
-published-value change and is recorded, not edited, here — bean `qou-egvf`.
+`≈ 0.7036` published in `obs:hadron-half-life-verification` is reproduced by neither convention's
+Ocneanu trace (D: `1.1875`; C, `z = √q/(q+1)`: `0.9063`).  Its source — identified 2026-09-05,
+bean `qou-ix74`, after this header first attributed it to the deprecated
+`t35-full-calculation.py`, which was wrong — is the live `hecke_division` engine's former trace
+rule: the Markov rotation applied without the Hecke relation, which collapses to
+`Σ_w c_w z^{|w|}` over the reduced word and gives `0.70355` at `z_C` and `0.96844` at `z_D`
+(the latter is what `t35-weak-vertex.witness.json` carried from 2026-08-29).  The engine now
+delegates to the canonical recursion and returns this file's value.  The content was corrected in
+PR #6689 (bean `qou-4x7c`).
 
 Numerical provenance: `computations/markov/weak_vertex_t35_trace.py` (canonical `tr_M_word`,
 sympy-exact and `mpmath` at the proton pin).

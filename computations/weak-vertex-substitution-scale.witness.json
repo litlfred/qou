@@ -1,0 +1,145 @@
+{
+  "computation": "weak-vertex-substitution-scale",
+  "description": "Wiring |W|\u00b2 in place of s\u00b2 into the beta-decay rate multiplies every rate by |W(q0)|\u00b2/s\u2074(q0) \u2248 1.19e4 (half-lives by 8.4e-5): the prescribed substitution is a scope-(a) negative, not the 10\u201317 % heavy-nucleus correction attributed to it. Also fixes the provenance of the two stale W values: both are hecke_division's former z^{len} trace rule, at z_C (0.7036, the published figure) and z_D (0.9684, the 2026-08-29 witness). Table 4 of ex:hadron-half-life-verification has no producer.",
+  "convention": {
+    "markov_z": "q**3/(q**2+1) (D)",
+    "hecke_h": "q - 1/q",
+    "anchor": "proton pin (Q_50_DIGIT_STR)"
+  },
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "W_q0": "1.1874806131459626461071158300792049240880255765818",
+  "s_sq_q0": "0.010896866707122299752491978091862815889240748484137",
+  "factor_W2_over_s4_q0": "11875.441893676302628203164574429518277238602657260",
+  "halflife_scale_s4_over_W2_q0": "0.000084207392781947934789783946073840028714613900072350",
+  "factor_closed_form": "q**6*(q**12 + q**8 - 1)**2/((q - 1)**4*(q**2 + 1)**4)",
+  "nuclei": [
+    {
+      "nucleus": "3H",
+      "unit": "yr",
+      "t_old_lean_pred": "13.0",
+      "t_obs_nndc": "12.32",
+      "old_over_obs": "1.0551948",
+      "t_new_substituted": "0.0010946961",
+      "new_over_obs": "8.8855203e-5"
+    },
+    {
+      "nucleus": "14C",
+      "unit": "yr",
+      "t_old_lean_pred": "6800",
+      "t_obs_nndc": "5730",
+      "old_over_obs": "1.1867365",
+      "t_new_substituted": "0.57261027",
+      "new_over_obs": "9.9931984e-5"
+    },
+    {
+      "nucleus": "60Co",
+      "unit": "yr",
+      "t_old_lean_pred": "6.2",
+      "t_obs_nndc": "5.2714",
+      "old_over_obs": "1.1761581",
+      "t_new_substituted": "0.00052208584",
+      "new_over_obs": "9.904121e-5"
+    },
+    {
+      "nucleus": "90Sr",
+      "unit": "yr",
+      "t_old_lean_pred": "32.0",
+      "t_obs_nndc": "28.79",
+      "old_over_obs": "1.111497",
+      "t_new_substituted": "0.0026946366",
+      "new_over_obs": "9.3596268e-5"
+    },
+    {
+      "nucleus": "137Cs",
+      "unit": "yr",
+      "t_old_lean_pred": "33.0",
+      "t_obs_nndc": "30.17",
+      "old_over_obs": "1.0938018",
+      "t_new_substituted": "0.002778844",
+      "new_over_obs": "9.2106197e-5"
+    },
+    {
+      "nucleus": "210Bi",
+      "unit": "d",
+      "t_old_lean_pred": "5.8",
+      "t_obs_nndc": "5.012",
+      "old_over_obs": "1.1572227",
+      "t_new_substituted": "0.00048840288",
+      "new_over_obs": "9.7446704e-5"
+    }
+  ],
+  "table4_published_unreproduced": {
+    "3H": "12.28",
+    "14C": "5896",
+    "60Co": "5.308",
+    "90Sr": "28.92",
+    "137Cs": "30.26",
+    "210Bi": "5.022"
+  },
+  "provenance": {
+    "reduced_terms_of_sigma01_pow5": {
+      "s1s2s1": "0.474958218980",
+      "s2s1": "1.13884304528",
+      "s1s2": "0.138843045282",
+      "s1": "0.236871351652",
+      "s2": "0.236871351652",
+      "1": "0.0893226497293"
+    },
+    "buggy_z_len_rule_at_zC": "0.703553724645",
+    "buggy_z_len_rule_at_zD": "0.968443380711",
+    "patched_engine_zD": "1.18748061314596",
+    "note": "correction to docs/audits/2026-09-04-weak-vertex-t35-trace-closed-form.md, which attributed 0.7036 to the deprecated t35-full-calculation.py"
+  },
+  "lean": [
+    "QOU.Braiding.WeakVertexT35.substitutionRateFactor_eq",
+    "QOU.Braiding.WeakVertexT35.substitutionRateFactor_gt_ten_thousand",
+    "QOU.Braiding.WeakVertexT35.substitutionRateFactor_lt_twenty_thousand"
+  ],
+  "reference_blocks": [
+    "prf:hadron-half-life",
+    "rem:hadron-half-life-fermi",
+    "ex:hadron-half-life-verification"
+  ],
+  "assertions": [
+    {
+      "name": "factor_closed_form_matches",
+      "passed": true,
+      "note": "|W|\u00b2/s\u2074 = q^6 (q^12+q^8-1)^2 / ((q^2+1)^4 (q-1)^4), exactly"
+    },
+    {
+      "name": "factor_between_1e4_and_2e4_at_proton_pin",
+      "passed": true,
+      "note": "the Lean bounds substitutionRateFactor_gt_ten_thousand / _lt_twenty_thousand"
+    },
+    {
+      "name": "substitution_is_not_a_10_to_17_percent_correction",
+      "passed": true,
+      "note": "SCOPE-(a) NEGATIVE: every substituted half-life lands below 0.1 % of observed"
+    },
+    {
+      "name": "published_0_7036_is_buggy_rule_at_zC",
+      "passed": true,
+      "note": "\u03a3 c_w z_C^{|w|} over the reduced (\u03c3\u2080\u03c3\u2081)^5 \u2014 provenance of the published value"
+    },
+    {
+      "name": "witness_0_9684_is_buggy_rule_at_zD",
+      "passed": true,
+      "note": "\u03a3 c_w z_D^{|w|} \u2014 provenance of t35-weak-vertex.witness.json (2026-08-29)"
+    },
+    {
+      "name": "patched_engine_matches_closed_form",
+      "passed": true,
+      "note": "hecke_division.markov_trace now delegates to the canonical recursion (float64 engine, 1e-12 tolerance)"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "31c8a640b635",
+  "scriptCommitSha": "unknown",
+  "commitSha": "868820902aa742950d0564a80e9c522ccdafcf2c",
+  "engine": "sympy+mpmath",
+  "computedAt": "2026-09-05T05:54:22.842044+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "markov/weak_vertex_substitution_scale_probe.py"
+}
