@@ -418,7 +418,106 @@ stale sentences: a bean states urgency at the top, the situation moves, and
 nothing updates the claim.
 
 **The reusable rule: a bean is a lead, never a finding.** It earns the same
-treatment AGENTS.md already prescribes for a source file's `## Status` note —
+treatment AGENTS.md already prescribes for a source file's `## DRAINED 2026-09-05 — what is actually left, with a proposed default for each
+
+Per the standing instruction (*"triage + propose a default for each, owner vetoes
+rather than chooses"*). Every item below is what survives after nine
+already-answered items and four misclassifications were removed. **The no-op for
+every one of them is safe**: nothing breaks if you say nothing, the beans stay as
+they are, and the audits keep reporting what they report.
+
+### D1 — Cluster 1. May the two nucleon-word builders keep disagreeing?
+**Beans:** `qou-goc9` · `qou-im4m` · `t7qv` · `qou-48is` (merged in 2026-09-05).
+
+`atom_braid_word_3A` builds a **linear chain** (`A−1` interfaces, `12A−1`
+letters, no electrons — the nucleus) and feeds `binding_canonical`.
+`build_atom_nf` builds **all pairs** (`11A + C(A,2) + Z`, + `Z` electron
+crossings — the atom) and feeds `demand-stability.ts`, which reaches the paper.
+They model different objects and disagree silently.
+
+`t7qv` RESULT 4 measured all-pairs as roughly halving the A-scaling error
+(2H/3He +40.0 % against the chain's +73.5 %) at ~3 points on the mirror — **but
+RESULT 5 refutes a one-parameter falloff outright** (`f = +2.030` from A-scaling
+against `f = −0.697` from the mirror, one of them negative). So all-pairs is the
+better of two topologies that are **both wrong**, and quoting RESULT 4 without
+RESULT 5 sells a preference between refuted options as a result.
+
+Two Lean exclusions bound it further: `QOU.Mass.CoordinationSaturation` refutes
+the complete graph `C(A,2)` structurally (unbounded `B/A`), and
+`ChainBondOrderDependence.orderIndependent_iff` excludes the linear chain (a
+nucleus has no arrangement).
+
+**Proposed default — disclose, do not pick.** Neither builder is correct, so
+selecting one would be choosing between refuted models. Add a docstring to each
+naming what it models (nucleus vs atom), what it is refuted by, and which
+consumers it feeds; leave both live. *Costs:* two docstrings, no numbers move.
+*Risks:* none — it is disclosure. *Commits to:* nothing; the topology question
+stays open under `qou-brng`. *Veto if* you want one builder retired now.
+
+### D2 — Cluster 3a. Authorise the convention-D re-derivation of the `c_k` ladder?
+**Bean:** `qou-cds1` (its own words: *"still needs the owner's go"*).
+
+The whole `c_k` ladder is convention-C-frame, and a z-swap is **invalid** —
+`QOU.QBeta.decayLadder_zC_threeRow_ne_zero` makes the C ladder and the mass
+channel's three-row forcing mutually exclusive. So this is a real re-derivation,
+a long compute, and detached computes do not survive session idle in this
+environment.
+
+**Proposed default — do not authorise yet; state the C-conditionality instead.**
+Every `c_k` conclusion is already marked C-conditional in AGENTS.md, and nothing
+downstream is blocked on the D value today. *Costs:* nothing now. *Risks:* the
+C-conditional label has to be honoured in every future `c_k` claim. *Commits to:*
+nothing. *Veto if* you want the compute started — it is the kind of run that
+wants a dedicated session, not an idle pass.
+
+### D3 — Cluster 3b. May the binding channel use CAL-3 as an acknowledged anchor?
+**Bean:** `qou-2tuv`.
+
+The part that is **not** a preference: two scales are live in one table on
+different channels today. `qou-zloi` already settled that the cause is *not* the
+Markov convention (`markov_param_eq_half_h`, sorry-free), so the C→D cascade is
+the wrong thing to chase here.
+
+**Proposed default — no new anchor; fix the table's two-scale straddle.** Under
+🟥 NO FITTING, adding an acknowledged anchor to a channel is exactly the move the
+directive exists to stop, whatever it is called. *Costs:* the straddle fix, which
+is bounded. *Risks:* the binding channel stays less accurate. *Commits to:*
+keeping the three-calibration discipline intact. *Veto if* you read CAL-3 as
+already covering this channel.
+
+### D4 — `gm4q`. Adopt Option B (the additive binding law), or say why not?
+Already ships its own options doc with a recommendation
+([`2026-09-04-binding-law-options-decision-frame.md`](../audits/2026-09-04-binding-law-options-decision-frame.md),
+probe 10/10). Nothing to re-frame — the ask is a yes/no on that document.
+
+**Proposed default — adopt Option B**, since the additive law is what the four
+sorry-free extensive-term exclusions point at (`CoordinationSaturation`,
+`ChainBondOrderDependence`, `BodyOrderRecurrenceDepth`, `MayerThreeBodySign`).
+*Veto if* the decision frame's own caveats change your reading.
+
+### D5 — `qou-c66b`. Is `Q_β` a counterexample to the conjecture's stated obstacle?
+`conj:im-q-physical-role` says *"the mass formula projects away Im(q) via `|·|`,
+so **no mass observable** can detect Im(q)"*. Measured: in
+`Q_β/m_e = |q² − 2q − 1|·(q+1)/(2q³)` the modulus wraps **one** factor, so the
+projection is not total.
+
+**But the two claims may not collide**, and that is the framing call: `Q_β` is a
+decay Q-value, not a mass observable, so the block's sentence can be literally
+true while the bean's measurement is also true.
+
+**Proposed default — amend the block to say so explicitly** rather than treating
+either as refuted: record that `Q_β` is Im-sensitive and that this is consistent
+with the obstacle because it is not a mass observable — which *strengthens*
+candidate (iii), whose test was listed as needing exactly this. *Costs:* one
+paragraph. *Risks:* none numeric. *Veto if* you read `Q_β` as a mass observable.
+
+### D6 — the ten Class A defaults, still awaiting veto
+`9h6x` · `qou-agvb` · `qou-jvav` · `qou-pwut` · `qou-7yj0` · `qou-52i4` ·
+`qou-58zw` · `qou-9xla` · `qou-qflp` · `qou-r765`. Each has its proposed default
+recorded in pass 1 above. Unvetoed, they proceed as written.
+
+## Status
+` note —
 the corpus is the source of truth, and the corpus here means the live code, the
 live witness, and the block's `computation:` link, not its prose.
 
