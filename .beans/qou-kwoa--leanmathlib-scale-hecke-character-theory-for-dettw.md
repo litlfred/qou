@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-05T08:38:12Z
+updated_at: 2026-09-05T09:06:02Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -878,3 +878,38 @@ Wedderburn weights are `1/s_λ` for the Wenzl `schurElement`. That identificatio
 is where `q` enters and is where the Schur elements do their work. Plus, for the
 converse direction, Tits deformation. `SchurElementCriterion` still has **no
 instance**, and the `heckeWedderburn` shortcut is still refused in the file.
+
+
+### 2026-09-05 — option 2 under way (owner picked 2 **and** 3)
+
+Two bricks landed, both needed before an abstract Schur element is even
+*definable*.
+
+**`tau_mul_comm` (`15c28feb2a`)** — τ is a **trace**. Falls out of the structure
+constants: swapping `v,w` in `δ_{w,v⁻¹}q^{ℓ(v)}` gives `δ_{v,w⁻¹}q^{ℓ(w)}`, equal
+because `w = v⁻¹ ↔ v = w⁻¹` and `ℓ(v⁻¹) = ℓ(v)`. Extended off the basis with
+`LinearMap.ext_basis` on `(x,y) ↦ τ(xy)` against its flip. Not available before
+the identity.
+
+**`QOU/MathlibExt/TraceIsWeighted.lean` (`4d0e8a3468`)** — 8 declarations. Proves
+what `WeightedTraceGram`'s docstring had only **asserted** as motivation:
+
+> a linear `t` on `∏_i M_{d_i}(K)` with `t(xy) = t(yx)` is exactly
+> `weightedTrace c`, with `c i = t(E^{(i)}_{aa})` for any diagonal unit.
+
+Two matrix-unit identities, both *consequences* of the trace property:
+`E_ab = E_aa E_ab` with `E_ab E_aa = 0` for `b ≠ a` (kills off-diagonal units);
+`E_aa = E_ab E_ba` and `E_bb = E_ba E_ab` (a trace is **constant** on a block's
+diagonal units). The second is the load-bearing one: it is what makes "τ's
+weight on block λ" well defined independently of the chosen unit, hence what
+makes `1/c_λ` a definable object.
+
+Also: `weightedTraceₗ` (bundled as a `LinearMap` so `Basis.ext` applies) and
+`blockUnitBasis` (the matrix units **are** a basis, indexed by the same
+`Σ i, J i × J i` that `weightedGram` uses).
+
+**Next in option 2:** transport `eq_weightedTrace` along the Wedderburn
+equivalence to get τ's block weights `c_λ` for `H_n(q)`, define the abstract
+Schur element `s_λ := 1/c_λ`, and state the vanishing criterion on those. Then
+option 3: pin `X`, identify Wenzl's `schurElement Q X` with `s_λ`, and build
+Tits deformation for the criterion's forward direction.
