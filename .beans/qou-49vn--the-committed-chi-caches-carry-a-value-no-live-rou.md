@@ -345,3 +345,87 @@ different partition sets land on the same relative offset to that precision.
 That is the sharp open question, and it is the one worth chasing — a structured
 per-λ error whose y-weighted relative residue is atom-invariant points at a
 specific defect shape in the Rust composite path.
+
+---
+
+## ✅ LOCALISED — the Rust kernel drops the p–n interface colour weighting
+
+The remaining puzzle (why the relative offset is atom-invariant to 17 digits) is
+answered, and the two kernels' braid words are the same **except at exactly one
+crossing**.
+
+### The measurement
+
+Decoding both wire formats to `(generator, crossing_type)` — Rust's
+`[sign, gen+1]` pairs against the Hoefsmit `(c, d, gen_idx)` triples, mapping
+`d = 0 → σ`, `d = −h → σ⁻¹`, `d = −h/2 → averaged`, with `h = q − q⁻¹`:
+
+| atom | word length | positions where the two disagree |
+|---|---|---|
+| proton | 11 | **none** |
+| neutron | 11 | **none** |
+| deuteron | 23 | **{11}** |
+| tritium | 35 | **{11}** |
+| ³He | 35 | **{23}** |
+
+**Exactly one crossing, once per composite atom, never for a single nucleon.**
+That is the "one scalar applied once, composite-only" signature, found.
+
+At that position the Python path carries a shift that is **not** `h/2`:
+
+    h/2                     = 0.104530149397819657715423106565
+    Python shift at that pos = 0.104458247769726289017834066290
+    ratio                   = 0.999312144596486452   (rel 6.87855e-4)
+
+Rust encodes the same position as crossing **type 0 = plain averaged**, i.e. it
+uses `h/2` and loses the modification.
+
+### What that shift is
+
+It is the **p–n interface colour weighting**.
+[`mass_at_3A_proper.py:532`](computations/mass_at_3A_proper.py) states *"The p-n
+interface is color-weighted by default (owner directive…)"*, and line 454
+defaults `pn_convention: str = "bring_color_weighted"` — owner ruling **R3**,
+`bring_color_weighted` canonical (2026-08-15). A single nucleon has no p–n
+interface, which is exactly why p and n agree at `1e-18` while every composite
+differs by the same fixed factor regardless of A, Z, N.
+
+### The verdict this supports
+
+**The Rust `hecke-canonical-chi` kernel does not implement the p–n interface
+colour weighting**; it substitutes a plain averaged crossing. Therefore:
+
+- `0.1519683392…` (markov peel, Hoefsmit+Wenzl bridge, `--fresh` chi producer)
+  is the **colour-weighted** value — consistent with the witness's own declared
+  `convention: colour-weighted-averaged-crossing` and with R3;
+- `0.1519468395…` (Rust) is the **un-colour-weighted** value;
+- and the committed cache's `0.5751722439…` is neither, being superseded on the
+  y_λ axis as well (see the top of this bean).
+
+So the canonical live deuteron trace is **`0.15196833920423160759…`**, and both
+the committed `chi-*-at-q0-50dps` family and the Rust kernel are wrong, for two
+*different* reasons.
+
+**One step not verified:** that the specific value `0.104458247769726289…` is
+what `bring_color_weighted` prescribes, as opposed to some other modification at
+the same position. The position (p–n interface), the default
+(`bring_color_weighted`), the source comment and the A/Z/N-invariance all point
+one way; the arithmetic tying that number to the colour-weight formula was not
+re-derived here.
+
+### Revised next steps
+
+1. **Fix the Rust kernel** to honour the p–n interface colour weighting, or
+   document `hecke-canonical-chi` as un-colour-weighted and stop using it as an
+   arbiter for composites. It currently reports a convention it does not
+   implement.
+2. **Then** regenerate the `chi-*-at-q0-50dps` family — the blast radius is every
+   reader of those witnesses, `option_e_multi_isotope_delta_lambda_probe_v3`
+   included.
+3. Re-run `qou-r9dv`'s three-method certification; the "three independent
+   methods, exact to every digit" of 2026-08-23 cannot hold across a
+   `1.41475e-4` kernel split.
+4. Separately: `atom_braid_word_3A` builds `h` from a **float64** — the word
+   carries `mpf('-0.20906029879563932')`, `2.19e-17` relative from the 50-dps
+   `h`. Far too small to be this defect, but it is a NO-FLOAT64 leak on the
+   canonical path and wants its own fix.
