@@ -55,8 +55,8 @@ authoritative** — the corpus is.
    the path most often skipped and the one that most often holds the answer.
 
 ## STABLE — the library: read [`library-and-staleness-traps.md`](library-and-staleness-traps.md)
-
-Three tiers (`INDEX.md` -> `summary.json` -> `sections/`) plus the fourth (`ocr/`), with the counts and the commands. Moved there 2026-09-03 to stay under the 200-line cap; the traps below stay here because they are what gets skipped.
+Three tiers (`INDEX.md` -> `summary.json` -> `sections/`) plus the fourth (`ocr/`),
+with counts and commands. The traps below stay here — they are what gets skipped.
 
 ## TRAP — for some docs `sections/` is BOILERPLATE; the text is in `ocr/`
 
@@ -129,6 +129,36 @@ it sorry-free. I had matched the bean on **topic** and cited it on **agreement**
 without reading it. A bean cited in support is a bean you must have read to the
 end; its title tells you the subject, never the verdict.
 
+## TRAP — two ways a `content/` grep lies about coverage (2026-09-04)
+
+**1. Vendored Mathlib sits UNDER `content/`.** `content/quantum-observable-universe/lean/.lake/packages/mathlib/`.
+A `find content` list is 20,472 files; excluding `/.lake/` it is **12,427** — every
+naive `content/` count inflated ~65 %, and `hyperbolic metric` / `uniformizer` /
+`Poincare` return Mathlib docstrings as corpus hits. **Filter `/\.lake/` first.**
+
+**2. `Fuchsian` here is an ODE homonym.** All six `content/` hits are the Fuchsian
+**singular point** of the C1 difference equation (`C1FuchsianExponents.lean`,
+indicial `c₀² + (q−1)c₀ + (q−1) = 0`). **None is a discrete subgroup of `PSL₂(ℝ)`** —
+so the count measures irregular-singularity work, not uniformisation. Same family
+as `sasaki`-the-surname: check what hits ARE before reading a count as coverage.
+
+## TRAP — "held" is not "held in full", and `references.ts` records the page count
+
+2026-09-04. `[thurston1978]` is registered with `library: { docId: "thurston",
+pages: 33, sections: 22 }`. **That is Chapters 1-2 of a ~370-page book.** Measured
+inside the held copy: `gluing equation` **0**, `hyperbolization` **0**,
+`figure-eight` **0**. Against **113 citers**, several with explicit Ch. 4 locators
+(`shared-denominator-cusp-holonomy.lean:91` "§4.5 (gluing equations)";
+`ManifoldVolumeBridge.lean:112` "Ch. 4"). The attribution is right; the holding is
+partial, so **path 5 for the cited topic never lands in the cited directory** —
+the exact failure path 5 exists to prevent, wearing a green light.
+
+**Check `library.pages` against the locator before treating a hit as coverage**,
+and grep the held copy for the cited phrase rather than for the author.
+
+Three cheap discriminators (held-vs-registered; held-but-UNregistered;
+a `-- Ref:` key resolving to nothing) — `library-and-staleness-traps.md`.
+
 ## TRAP — grep the claim SHAPE, not only the topic
 
 Four conflations reached durable artifacts in one session (2026-08-15), each
@@ -150,10 +180,8 @@ Criterion `da-arity-conflation` in
 examples and why a machine checker cannot do this.
 
 ## TRAP — `beans create` is not idempotent
-
-Run the exact-title existence check before every create; an unguarded
-re-run once produced 14,688 duplicates. Detail:
-`library-and-staleness-traps.md`.
+Exact-title check before every create; an unguarded re-run made 14,688
+duplicates and corrupted a later corpus-grep. Detail: `library-and-staleness-traps.md`.
 
 ## TRAP — an inherited "X is unavailable" is HALF a measurement
 
@@ -286,7 +314,7 @@ these open, and add a row whenever a sweep settles one.
 | library size | `git ls-tree -r --name-only origin/main -- library/ \| cut -d/ -f2 \| sort -u \| wc -l` | **536 dirs** (was recorded 332 — that figure was low, not merely old) | 2026-08-30 |
 | docs with `ocr/` | same, filtered to `/ocr/` | 25 dirs; 11 single-section; 10 of those <15 % sections/ocr bytes | 2026-08-30 |
 | INDEX.md briefs | `wc -l library/INDEX.md` | 320 briefs, ~14k tokens | 2026-08 |
-| duplicate works | `docs/audits/library-duplicate-ledger.json` | 19 works held more than once | 2026-08 |
+| duplicate works | ledger = `docs/audits/library-duplicate-ledger.json`; machine marks = `grep -rl duplicate_of library/*/sections/ \| cut -d/ -f2 \| sort -u \| wc -l` | **ledger 4** (hand-adjudicated DETECTOR MISSES only) vs **23 dirs** front-matter-marked. The old "19 works" conflated the two. | 2026-09-04 |
 
 ---
 
@@ -296,3 +324,7 @@ these open, and add a row whenever a sweep settles one.
 - 2026-09-03 · `qou-q9ih` D1-b NZ->(Q,W) dictionary · **open on all six paths**; NZ *input* side already implemented (`one_loop_torsion.py`, Route-74/75 probes) — reuse, do not rebuild. The 2026-09-02 Markov/Ocneanu span-rank entry moved to [`resolved-topics.md`](resolved-topics.md) (it was past line 200).
 - 2026-09-03 · `qou-zrx2` classical-floor closed form · **already derived, and I declared it open** · path 3 (`computations/probes/`) held the derivation, the Lean, and the corrected `derivation_chain` entry. Duplicate probe deleted, refutation retracted — see the TRAP above.
 - 2026-09-04 · detector precision · three text heuristics built and measured (2/12, 1/8, bad-both-ways) · **the file is now 253 lines vs the 200-line convention; it was 234 before this entry** (I first wrote 246 here — a PREDICTED number, not a measured one, in the file whose own TRAPs are about exactly that; corrected in the next commit) — the sanctioned prune (this log) is 5 lines, so the cap cannot be met by pruning it; a future session should split a STABLE section into a sibling.
+- 2026-09-04 · `qou-xlw1` contact-distribution rank / dim 7 / `J` on `ker Θ` · **both `ker Θ` ranks are DERIVED (scope-(b) contradiction); no 7-manifold; `J` on `ker Θ` is present in 7 prose sites and in NO Lean** · detail in `resolved-topics.md`. TRAP: the site count (2 vs 9) answers the rank question backwards — count CONSUMERS, not assertions.
+- 2026-09-04 · `qou-xlw1` hyperbolic volume as a QOU structure · **I claimed it was 'imported, not QOU' and that Mathlib+library held nothing — WRONG on all three.** ~180 QOU .lean files; VC numerically CONFIRMED for 4₁. Weakest link is a TYPE (`BlochWignerD : ℝ → ℝ` vs the corpus's own proof that D vanishes on ℝ). Bring's ℍ²↔H³ link genuinely open, 0 beans. Detail in `resolved-topics.md`.
+- 2026-09-04 · `qou-8lxd` CITATION-gap inventory for the hyperbolic-volume/eightfold arc · 15 beans, `docs/audits/2026-09-04-citation-gap-inventory.md`; **held-but-partial and held-but-unregistered are two new classes** — detail in `resolved-topics.md`.
+- 2026-09-04 · **merge note** · this log was resolved as a UNION at the 183-commit merge into `claude/lean-prove-assertions-2026-09-04`; the duplicate `qou-brng` line was dropped in favour of main's wording. The line-count figure in the entry above is therefore stale-low — re-measure before quoting it, and the STABLE-section split it asks for is now more urgent, not less.
