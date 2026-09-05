@@ -318,3 +318,16 @@ quota mid-rebuild and leave a 1.5G `.git/objects/pack/tmp_pack_*` that
 between your rebuild and your push: the same session then found the base
 file of its own new module restructured on `main` (a class removed) — re-run
 the diff at check-in time, not once.
+
+## BASELINE — seed-closure library rebuild, 2026-09-05 (re-measure, do not quote)
+
+`main` `60d79979ed`, seed `19e299946a`, `tools/full_rebuild.sh` over the
+seed-commit closure: **1,497 of 2,600 modules, 13,940 s (3 h 52 min)**, of
+which the 22 `Archimedean/PauliWitness/*` at the end took ~30 min total (not
+10 min each this time — they had been rebuilt earlier in the day) and the
+`Machinery/HeckeH4*` block maps ~85 min for one hundred modules. Result:
+**1,495 green; 1 real red** (`ParticleInteractions/silver_ratio_beta_decay_null`,
+3 proof errors, bean `qou-4a7a`); 1 false red from a missing `UGB` path (fixed
+in the script). So the library on that `main` is green except one module.
+Command to reproduce is the recipe above; expect ~4 h on this box.
+
