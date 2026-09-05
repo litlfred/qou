@@ -850,6 +850,36 @@ def _tolerance_literal(t: Any) -> "Optional[str]":
     return s
 
 
+def declared_tolerance(t: Any) -> Any:
+    """`t` as `Assertion.to_dict` would serialize it — for HAND-BUILT payloads.
+
+    `_tolerance_literal` runs inside `Assertion.to_dict`, so it is reached only
+    by a producer that constructs an `Assertion`. A producer that hand-builds
+    its assertion dicts and `json.dump`s them (many do — they import
+    `WitnessBuilder` only for the provenance stamp) never reaches the guard, so
+    PR #5910's drain of 1232 declared tolerances to strings is undone for that
+    file on its next re-run, one file at a time and invisibly.
+
+    Call this at such a site instead of typing the literal:
+
+        "tolerance": declared_tolerance(1e-9),   # -> "1e-09"
+        "tolerance": declared_tolerance(0.0),    # -> 0.0, unchanged by design
+
+    Two properties are the point. It returns the value UNCHANGED when the guard
+    declines — an integral tolerance, or a computed one carrying more than
+    `_TOLERANCE_LITERAL_MAX_SIG` significant digits — so a call site never has
+    to know which case it is in, and a genuinely computed tolerance stays a
+    float and stays counted by the raw-float64 ratchet. And it IMPORTS the rule
+    rather than restating it: the alternative in the corpus is to hand-copy the
+    guard's output string into the source, which is correct today and drifts
+    silently the moment the rule changes.
+
+    Audit: `computations/audits/tolerance_guard_bypass_audit.py`. Bean qou-9tqx.
+    """
+    literal = _tolerance_literal(t)
+    return t if literal is None else literal
+
+
 class Assertion:
     """A single named claim with computed vs expected values."""
 

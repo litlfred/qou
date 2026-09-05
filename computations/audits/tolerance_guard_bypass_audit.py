@@ -70,10 +70,17 @@ measuring its own assumptions instead of the corpus — caught here in its own
 first run.
 
   LATENT       the committed witness carries string tolerances (drained, clean)
-               but the producer source still holds a float literal. The next
-               re-run of this producer re-dirties the file. This is the
-               population the bean is about, and it is invisible to any check
-               that reads only artifacts.
+               but the producer source still holds a float literal THE GUARD
+               WOULD CHANGE. The next re-run of this producer re-dirties the
+               file. This is the population the bean is about, and it is
+               invisible to any check that reads only artifacts.
+
+               The capitalised clause is load-bearing and was absent from the
+               first version: this pass used the bean's shape match while pass 1
+               imported the guard, and reported **24 where the guard would
+               change 8**. Fifteen of the 24 were `0`/`0.0` or values already
+               serialized as strings — two of them producers that had *already
+               been fixed at source*. See `_source_would_change`.
 
   NO-TOLERANCE the witness resolves and carries no `tolerance` key at all. The
                source match is a docstring, a self-test fixture, or a dict that
@@ -122,6 +129,7 @@ the gate red on a tree that is clean.
 from __future__ import annotations
 
 import argparse
+import ast
 import json
 import re
 import sys
@@ -142,9 +150,48 @@ except ImportError as exc:  # pragma: no cover - environment, not logic
           file=sys.stderr)
     raise SystemExit(2) from exc
 
-# A float-literal tolerance in Python source. Deliberately the bean's own
-# pattern, so the two measurements are comparable rather than merely different.
-SRC_TOL = re.compile(r'"tolerance":\s*[0-9]')
+# The literal token following a `"tolerance":` key in Python source. NOT the
+# bean's `\s*[0-9]` shape test — see `_source_would_change` for why that test
+# over-counts by 3x, and why this script committed that very error in this pass
+# while fixing it in the other.
+SRC_TOL = re.compile(r'"tolerance":\s*([^,}\n]+)')
+
+
+def _source_would_change(py: Path) -> list[tuple[int, object]]:
+    """Sites in `py` where adopting the guard WOULD change the emitted value.
+
+    Pass 1 imports `_tolerance_literal` and asks the guard's own question. This
+    pass did not, and used the bean's `"tolerance":\\s*[0-9]` shape match — so
+    it counted every site whose text starts with a digit, including the two
+    populations the guard deliberately leaves alone:
+
+      - `0`, `0.0` — integral, exact in binary64, ~200 committed values that
+        would churn for no gate benefit;
+      - a value already serialized as a string (`"1e-08"`, `mp.nstr(TOL, 5)`).
+
+    Measured on the 24 this pass reported: **8** would change, 15 were already
+    guard-clean and 1 was a non-literal expression that evaluates to a string.
+    Two of the 15 (`qbeta_ck_basis_constrained_pslq`, `wlambda_q0_continuation`)
+    had *already been fixed at source*, and this pass was still reporting them.
+
+    A shape match and the guard's predicate are different questions; asking the
+    first and reporting the second is the same defect the module docstring
+    records for pass 1, arrived at independently in the half that was not
+    rewritten. Both halves now import the guard.
+    """
+    try:
+        text = py.read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return []
+    hits: list[tuple[int, object]] = []
+    for m in SRC_TOL.finditer(text):
+        try:
+            value = ast.literal_eval(m.group(1).strip())
+        except (ValueError, SyntaxError):
+            continue  # an expression, not a literal — pass 1 sees its output
+        if isinstance(value, (int, float)) and _tolerance_literal(value) is not None:
+            hits.append((text.count("\n", 0, m.start()) + 1, value))
+    return hits
 
 
 def _iter_tolerances(obj):
@@ -196,11 +243,14 @@ def main() -> int:
                     help="exit 1 if any committed witness carries a float tolerance")
     args = ap.parse_args()
 
-    sources = sorted(
-        p for p in COMPUTATIONS.rglob("*.py")
-        if "_deprecated" not in p.parts and SRC_TOL.search(
-            p.read_text(encoding="utf-8", errors="replace"))
-    )
+    src_sites: dict[Path, list[tuple[int, object]]] = {}
+    for p in sorted(COMPUTATIONS.rglob("*.py")):
+        if "_deprecated" in p.parts:
+            continue
+        sites = _source_would_change(p)
+        if sites:
+            src_sites[p] = sites
+    sources = list(src_sites)
 
     rel = lambda p: p.relative_to(ROOT)  # noqa: E731
 
@@ -246,7 +296,7 @@ def main() -> int:
     print("=" * 78)
     print(f"  PASS 1  committed witnesses scanned          : {scanned}")
     print(f"          LIVE-DIRTY (guard WOULD stringify)   : {len(live_dirty)}")
-    print(f"  PASS 2  source files matching the pattern    : {len(sources)}")
+    print(f"  PASS 2  sources the guard WOULD change       : {len(sources)}")
     print(f"          LATENT (clean now; a re-run re-dirties): {len(latent)}")
     print(f"          NO-TOLERANCE (docstring/fixture)     : {len(no_tolerance)}")
     print(f"          UNRESOLVED (tool limit, not a verdict): {len(unresolved)}")
@@ -263,7 +313,9 @@ def main() -> int:
         print("    (a hazard about a future run, not a defect on disk today —")
         print("     never fails --strict, and must not be reported as one)")
         for py, ws in latent:
+            sites = ", ".join(f"L{ln}={v!r}" for ln, v in src_sites[py])
             print(f"  {rel(py)}  ->  {', '.join(str(rel(w)) for w in ws)}")
+            print(f"      {sites}")
 
     if unresolved:
         print("\n--- UNRESOLVED: no committed witness found. NOT a clean bill. ---")
