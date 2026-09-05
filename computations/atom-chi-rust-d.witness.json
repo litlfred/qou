@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T08:05:19.085466+00:00",
-  "commitSha": "09356fb4a91da7fed2ebc5f3fbf21f5a22c1efc2",
+  "computedAt": "2026-09-05T08:59:42.076675+00:00",
+  "commitSha": "5260ae449e979aa7cbc7e20610948c0c65019c53",
   "assertions": [
     {
       "name": "partition_count_is_p_3A_atom",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 10,
   "computation": "atom-chi-rust-d",
   "scriptFile": "compute_atom_chi_rust.py",
-  "scriptHash": "2aada48dea9c",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "256c48b588d2",
+  "scriptCommitSha": "5260ae449e979aa7cbc7e20610948c0c65019c53",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -160,7 +160,7 @@
           "chi_lambda": "-0.67687668343293797886250168375128986008721472052128"
         }
       ],
-      "compute_time_sec": 0.01943206787109375,
+      "compute_time_sec": 0.0033044815063476562,
       "Z": 1,
       "N": 1,
       "A": 2,
@@ -275,7 +275,7 @@
           "chi_lambda": "0.67325689637021355145356370093896784636070092139872"
         }
       ],
-      "compute_time_sec": 0.0019311904907226562,
+      "compute_time_sec": 0.001268625259399414,
       "Z": 1,
       "N": 1,
       "A": 2,
