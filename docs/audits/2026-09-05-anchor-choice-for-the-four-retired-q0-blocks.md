@@ -159,3 +159,96 @@ ruling on it is explicit ("do NOT change this default"). Filed in `qou-i229`.
 It is the smallest change, it is the corpus's own already-made decision reaching
 content, and it treats a data refresh as a data refresh rather than as an
 opening to re-decide a convention.
+
+---
+
+# Addendum: commit archaeology on `em-coupling-bring-zero-mode`
+
+Requested after the analysis above. It settles the one question I left open, and
+corrects two things I got wrong.
+
+## The ambiguity was not one — the block declares its pin
+
+`em-coupling-bring-zero-mode.md:26` reads
+
+> Evaluation at $q_0 = 1.109978595554181\ldots$ **(muon pin, 16 dps)** using
+> 60 dps precision yields:
+
+**It says muon.** I raised this block as "the one genuine ambiguity" by reasoning
+from its directory (`predicted-spectra/` → Physical-Observations → proton)
+without reading its own label. The answer was on the line above the table.
+Directory placement is a weaker signal than a declaration, and I should have
+checked the second before invoking the first.
+
+`df13e845cee` (2026-08-21, *"content(q0): label the pins honestly"*) put that
+label there, and its message states the identification independently:
+
+> "solving CAL-2 for CODATA-2018 `m_μ/m_e` gives `1.1099785955541805753...`,
+> which is that value to 16 digits. … **The defect was the label.**"
+
+That is digit-for-digit the value I re-derived. Two independent derivations, one
+result — so the provenance finding is confirmed rather than merely mine.
+
+## There are THREE muon values, and this is already a filed question
+
+`qou-po7i` catalogued them (probe
+`computations/audits/muon_pin_three_values_probe.py`):
+
+    A  canonical q-pinning   1.1099785955573347...   FROZEN
+    B  in the witnesses      1.1099785955541805...   "the REVERTED derivation's value"
+    C  q_muon_at() live      1.1099785956427390...   drifts with CODATA
+
+    B-A = -0.0028 ppb    C-A = 0.0769 ppb    C-B = 0.0798 ppb
+
+**The published figures carry B.** And `qou-po7i` closes with *"Needs a ruling on
+which of A and C a 'muon-anchored' quantity uses"* — so "refresh to the current
+muon anchor" was not the simple instruction I made it sound like: it presupposed
+a ruling that was already open.
+
+### But that ruling is now moot — A and C have converged
+
+Re-running the probe today:
+
+    A canonical pin (q-pinning-50-digit) : 1.1099785956427390466817951293
+    B committed in probe witnesses       : <not found>
+    C q_muon_at() live derivation        : 1.1099785956427390466817951293
+
+`A == C`, and the canonical muon witness
+(`qou-mass/src/qou_mass/q-pinning-50-digit.witness.json`) carries exactly that
+value. The three-way split has collapsed to **one live muon value**, and B — the
+published one — is the only outlier, `0.0798 ppb` away.
+
+So the A-vs-C ruling `qou-po7i` asked for no longer needs making, and Option A
+becomes unambiguous: refresh to `1.1099785956427390466817951293`, which is now
+both the canonical pin and the live derivation.
+
+**Side effect worth flagging, not fixed here:** that probe now FAILS
+(`allPassed: False`, B `<not found>`) because it asserts a three-way split that
+no longer exists. Its failure is *informative* — it is how the convergence
+surfaced — but a permanently-red probe decays into noise. It belongs to
+`qou-po7i` and should be re-pointed by whoever owns that bean, not silently
+rewritten here.
+
+## A figure in the record is wrong, and it is small but load-bearing
+
+`df13e845cee`'s message, repeated in `qou-q0lp` and in
+`docs/audits/2026-06-24-q0-layer-migration-scope.md`, says the published value
+
+> "sits **0.0028 ppb** from the current muon pin and 11.53 ppb from the proton
+> pin"
+
+The proton figure is exactly right — I measure `11.53 ppb` independently. The
+muon figure is not: `0.0028 ppb` is `B−A`, the gap to the *frozen* pin A, while
+the gap to the current pin is `C−B = 0.0798 ppb`, **28× larger**. The number is
+real; its attribution is wrong.
+
+It matters mildly rather than gravely: at `0.0798 ppb` nothing physical moves
+either. But that sentence is the stated justification for *labelling rather than
+refreshing*, and it understates the gap it is justifying by a factor of 28.
+
+## Revised recommendation
+
+**Option A for all four blocks, including `em-coupling-bring-zero-mode`.** The
+block declares the muon pin; the competing muon values have converged; the
+refresh target is `1.1099785956427390466817951293`. No ambiguity remains, and
+nothing physical moves — this is the 2026-08-15 CODATA fix reaching content.
