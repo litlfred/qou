@@ -303,3 +303,49 @@ Nothing physical moves; this is the 2026-08-15 CODATA fix reaching content.
       converged state.
 - [ ] The `0.0028 ppb` attribution should be corrected where it is durable
       (`qou-q0lp`, the 2026-06-24 audit).
+
+## REFRESH ATTEMPTED AND REVERTED (2026-09-05) — the unit is the block, not the figure
+
+Acting on my own recommendation, I substituted the six figures at the converged
+muon pin, then **reverted**. Addendum 2 in the audit doc.
+
+**Why: each table carries `q₀`-derived SIBLINGS the sweep never flagged**, because
+the sweep only looks for figures with *no provenance* and these have some:
+
+    block                      flagged figure        un-flagged sibling      sibling pin
+    hecke-log-decomposition    1+q0, log(1+q0), …    hbar_q, h               B
+    q-beta-form-a-n1           1 + hbar_q^2          hbar_q 0.099081726435699 B
+    q-beta-spectral-bridge     h^2                   h 0.2090603219955937    A
+
+Refreshing only the flagged ones leaves `1 + ℏ_q²` at the new pin beside an `ℏ_q`
+at the old one **in the same table** — worse than the stale value, because the
+reader can no longer recompute one column from another.
+
+### NEW DEFECT: `q-beta-spectral-bridge` was already internally inconsistent
+
+    prose q_0   1.109978595557335   = pin A exactly
+    h           0.2090603219955937  = pin A
+    h^2         0.04370621823290131 = pin B
+
+**Its `h` and `h²` are at different `q₀`.** `h² ≠ (h)²` as published; the table
+does not close on itself, and that predates today. Refreshing `h²` alone would
+have made it three-way mixed, which is how I found it.
+
+This also revises "all six figures carry B": five do, but this block's prose pin
+and `h` carry **A** while its `h²` carries **B** — it straddles two muon vintages
+internally.
+
+### And the pin string is stale in six MORE blocks
+
+`1.109978595554181` also appears in `delta-skein-substrate-identity`,
+`knot-particle-dictionary`, `g-q-closed-form`, `flavor-split-substrate-proof`,
+`physics-names-knot-operations`, `particle-nf-table` — residue of
+`df13e845cee`'s labelling pass, which labelled 22 sites and refreshed none.
+**Not touched**: their siblings are at the old pin, so changing the quoted pin
+alone would make them say something false.
+
+- [ ] Refresh **per block, all `q₀`-derived quantities together**. Needs each
+      block's derived set identified by reading, not grepping.
+- [ ] Resolve `q-beta-spectral-bridge`'s A/B straddle FIRST — refreshing a table
+      that does not close on itself buries the inconsistency.
+- [ ] The six pin-string blocks are the same job, one level out.
