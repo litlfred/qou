@@ -136,20 +136,42 @@ structure BlockMatch (c c' : Composition n) where
   size : ∀ i, c'.blocksFun i = c.blocksFun (toEquiv i)
 
 /-- **The permutation carrying `c'`'s blocks onto `c`'s**, order-preservingly inside
-each block. -/
+each block: read a position in `c'`'s block coordinates, rename the block along the
+matching, write it back in `c`'s.
+
+🛑 **The direction here is load-bearing, and it is not the one to guess.** Either
+`d` or `d⁻¹` transports the blocks, so the subgroup conjugacy is indifferent to which
+is named `sortPerm`; the *Hecke* side is not. Mathas' `d` must be **minimal-length in
+its coset** — `ℓ(v·d) = ℓ(v) + ℓ(d)` for `v` in the Young subgroup, i.e. `d ∈ D_μ` —
+because that is what makes `T_v T_d = T_{vd}` and hence what the intertwining
+`T_d · x_μ = x_ν · T_d` runs on.
+
+Measured exhaustively over every (composition, composition, size-preserving matching)
+triple for `n = 2..6` — 1955 triples, exact integer arithmetic — in
+[`sortperm_length_additive_probe.py`](../../../../../computations/hecke/sortperm_length_additive_probe.py):
+
+    this orientation           1955 / 1955
+    its inverse                1433 / 1955   — 522 failures
+
+The smallest failure needs no machine: `c = (1,2)`, `c' = (2,1)`, `π = (1,0)` gives
+the inverse `(2,0,1)` of length 2, and `v = swap(1,2)` of length 1 has `v·(2,0,1) =
+(1,0,2)` of length 1, against `1 + 2`. **An earlier version of this file defined
+`sortPerm` as that inverse**; the probe caught it before anything was built on it. -/
 def sortPerm {c c' : Composition n} (m : BlockMatch c c') : Perm (Fin n) :=
-  (c'.blocksFinEquiv.symm.trans
-    ((Equiv.sigmaCongr m.toEquiv fun i => finCongr (m.size i)).trans c.blocksFinEquiv)).symm
+  c'.blocksFinEquiv.symm.trans
+    ((Equiv.sigmaCongr m.toEquiv fun i => finCongr (m.size i)).trans c.blocksFinEquiv)
 
 /-- **`sortPerm` satisfies exactly the hypothesis `youngOfComp_conj` takes on trust.**
 
-`c.index` transported by `d` is `c'`'s block function with its blocks renamed along
-the matching — which is what "`d` permutes the rows" means. -/
-theorem smul_index_sortPerm {c c' : Composition n} (m : BlockMatch c c') :
-    sortPerm m • c.index = m.toEquiv ∘ c'.index := by
+`c.index` transported by `d⁻¹` is `c'`'s block function with its blocks renamed along
+the matching — which is what "`d` permutes the rows" means.  The inverse appears
+because `sortPerm` is oriented for the Hecke side (see its docstring); the subgroup
+statement is the same either way, read through `MulAut.conj` of one or the other. -/
+theorem inv_smul_index_sortPerm {c c' : Composition n} (m : BlockMatch c c') :
+    (sortPerm m)⁻¹ • c.index = m.toEquiv ∘ c'.index := by
   funext l
-  show c.index ((sortPerm m).symm l) = m.toEquiv (c'.index l)
-  simp only [sortPerm, Equiv.symm_symm, Equiv.trans_apply]
+  show c.index (((sortPerm m)⁻¹).symm l) = m.toEquiv (c'.index l)
+  simp only [sortPerm, Equiv.Perm.inv_def, Equiv.symm_symm, Equiv.trans_apply]
   exact c.index_embedding _ _
 
 /-- **Lemma 3.9's conjugation step, with the conjugator supplied.**
@@ -157,8 +179,8 @@ theorem smul_index_sortPerm {c c' : Composition n} (m : BlockMatch c c') :
 Combining the criterion with the construction: a block matching alone gives the
 conjugacy, no `d` required from the caller. -/
 theorem youngOfComp_conj_of_blockMatch {c c' : Composition n} (m : BlockMatch c c') :
-    youngOfComp c' = (youngOfComp c).map (MulAut.conj (sortPerm m)).toMonoidHom :=
-  youngOfComp_conj (sortPerm m) m.toEquiv.injective (smul_index_sortPerm m)
+    youngOfComp c' = (youngOfComp c).map (MulAut.conj (sortPerm m)⁻¹).toMonoidHom :=
+  youngOfComp_conj _ m.toEquiv.injective (inv_smul_index_sortPerm m)
 
 /-! ## Non-vacuity
 
