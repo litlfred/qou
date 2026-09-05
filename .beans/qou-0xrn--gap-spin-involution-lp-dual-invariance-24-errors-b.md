@@ -1,11 +1,11 @@
 ---
 # qou-0xrn
 title: 'GAP: spin-involution-lp-dual-invariance (24 errors) blocked by a SUPERSEDED self-assuming sibling class'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T02:43:55Z
-updated_at: 2026-09-04T02:44:35Z
+updated_at: 2026-09-05T06:20:57Z
 ---
 
 The 24-error outlier of the sibling sweep (`qou-e7xv`). NOT 24 defects — 19
