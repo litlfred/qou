@@ -610,3 +610,91 @@ Verified after the rename: old key absent; `cumulative_ungated_MeV == raw_total_
 ## The #7160 path-sum is NOT a route past this wall (2026-09-08, qou-hxz4)
 
 Measured on the words `unified_iterative_correction` actually hands the kernel (captured by instrumenting `_lp_kernel_steps`): for every atom D/T/³He/⁴He/⁵Li and every k = 3..11 the word is a single seminormal segment covering all k−1 generators (generator index cycles `g mod (k−1)` through every letter), no cyclic rotation is multi-segment, and the T_w-support of the element lies in no 2-block parabolic product (k ≤ 7, rotations k ≤ 5) — so no Hecke-relation rewriting is level-local either. On such a word `chi_lambda_path_sum` degenerates to the O(L·dim²) direct seminormal trace in mpmath: 23–40× SLOWER than `lp_accumulator_step_traces_mpfr` at k = 6..8, while agreeing with it to 8.6e-50. The remaining cost is the kernel's O(L·dim²) at dims ≤ 2310 — steps 2–4 above stay the live plan. A level-local binding word would be the 3A-strand `atom_braid_word_3A` element, i.e. a different producer with different numbers (owner decision, framed in qou-hxz4). Probe `computations/probes/uic_word_level_locality_probe.py` (11/11); audit `docs/audits/2026-09-08-binding-word-not-level-local.md`.
+## The exactness stopped at the builder — PR #6807 (2026-09-05)
+
+#6794 made `_build_ysn_matrices` exact and I wrote step 3 up as done. It was
+not: the *consumers* threw the exactness away twice, and the second one is a
+defect I had walked past twice in this same file.
+
+**1. Ambient `mp.dps`.** mpmath rounds every operation to the ambient
+precision, which is **15** on a bare import — float64's significand. So an
+exact input multiplied in `unified_iterative_correction` is a float64
+computation. Measured on one sigma entry:
+
+| | |
+|---|---|
+| builder entry, significand bits | **167** (float64 has 53) |
+| `v*v` at ambient dps 15 | **53** |
+| `v*v` inside `workdps(COMPUTE_DPS=70)` | **234** |
+| relative difference per operation | 2.5722e-17 |
+
+**2. The log layer.** `math.log`, `float(np.trace(M))`,
+`float(np.max(np.abs(M)))` and `0.0` seeds narrowed every step back to 53 bits
+on top of matrices carrying 167. `_trace_dim` no longer casts (all three other
+call sites already cast at their own boundary). The accumulation now reaches
+the public boundary carrying **236 significand bits** where it carried 53.
+
+**Neither half is sufficient alone, and that is the finding worth keeping.**
+Switching `atom_character_raw`'s `math.log` to `mp.log` FIRST moved nothing —
+`0.00e+00` on four partitions — because at dps 15 the two agree. The type
+change buys nothing without the precision context, and the context buys
+nothing while the log narrows. I measured the type change alone, saw zeros,
+and nearly recorded "no effect".
+
+A/B against a real `origin/main` worktree, `_HAS_LP_KERNEL = False`:
+
+    atom_character_raw (3,2,1)   -0.019884149989698813 -> -0.01988414998969862   9.77e-15
+    atom_character_raw (3,3)        0.6073914694654984 ->   0.6073914694654982   3.66e-16
+    atom_character_raw (4,2)       -0.7237754619142504 ->  -0.7237754619142498   7.67e-16
+    atom_character_raw (4,2,1)     -0.8256259468119244 ->  -0.8256259468119246   2.69e-16
+    unified_iterative k=5          -0.7335499391635036 ->  -0.7335499391634975   8.32e-15
+    unified_iterative k=6          -1.3656848170878857 ->  -1.36568481708788     4.23e-15
+    unified_iterative k=7          -2.0200008149814717 ->  -2.020000814981466    2.86e-15
+
+**Retracting my own first A/B**: I ran it with `git stash`, which does not undo
+an already-made commit, so its "main" column was the post-fix tree and it
+reported `0.00e+00` on six of seven rows. A stash is not a baseline.
+
+## The stale fallback banner is corrected — and only half of it could be
+
+`_warn_if_kernel_absent` told every reader the fallback family "VIOLATES the
+braid relation ... not a representation of H_n(q)". **False since #6708**;
+`ysn_braid_relation_audit.py` exits 0. The banner was asserting a retired
+defect in the one place a reader meets it cold.
+
+**The 17.3 % is re-scoped, not deleted.** It was measured against the
+*pre-#6708* fallback — the braid-violating family, i.e. the mechanism it was
+attributed to and which no longer exists. Whether a gap remains AT
+`binding_energy(1,1)` is **unmeasured**: that arm is 6.3 h and was not re-run.
+
+What was re-measured, both arms live (`pyhecke_native` IS available in this
+container — `_HAS_LP_KERNEL = True`), on the accumulator inside it:
+
+    k=4   -0.08955968305895066  vs  -0.08955968305895066   0.000e+00
+    k=5   -0.7335499391634975   vs  -0.7335499391634975    0.000e+00
+    k=6   -1.36568481708788     vs  -1.36568481708788      0.000e+00
+    k=7   -2.020000814981466    vs  -2.020000814981466     0.000e+00
+    k=8   -3.295330502259572    vs  -3.2953305022595725    1.348e-16
+    k=9   -4.813650493402828    vs  -4.813650493402828     0.000e+00
+
+Speed is the surviving reason to prefer the kernel: 56x at k=8, 48x at k=9 —
+on the accumulator, NOT the banner's 24x on `binding_energy`. Different
+quantities; do not quote one as the other. Production is k_max = 11 and
+neither arm was run to it.
+
+**Do not read the agreement as proof the families are interchangeable.**
+`ysn_trace_blindness_probe.py` proves the trace cannot see a braid defect at
+all, so trace agreement is weak evidence about matrices. It is the braid
+audit that establishes the fallback is a representation.
+
+## Two of the bean's own six findings are now stale
+
+- **Finding 1** (the `if s['sparse'] and not exact_chain:` guard) is **already
+  fixed on `main`** by a prior session; `exact_chain` survives only in a
+  comment. The "order of work" list still has it as step 1.
+- **The scipy sparse-BLAS branch is now DEAD CODE.** Since #6794 the partition
+  table holds **69 tuple + 124 `_ExactCOO` carriers and zero `csr_matrix`**, so
+  `_sigma_is_exact` is always true: measured **276 dispatch decisions at k=8,
+  0 to scipy**. Both `else: Msig = sig_sparse.T.dot(M_run.T).T` arms are
+  unreachable. Not removed here — that is a separate change and this branch is
+  already four commits of precision work.
