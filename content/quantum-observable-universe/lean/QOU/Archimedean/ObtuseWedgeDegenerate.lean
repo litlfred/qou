@@ -43,7 +43,7 @@
   -- Ref: [milnor1982] https://doi.org/10.1090/S0273-0979-1982-14958-8
   -- Ref: [manuscript] bean qou-w3eg (H4-5 obtuse)
 -/
-import QOU.Archimedean.OrthoschemeLambdaSum
+import QOU.Archimedean.OrthoschemeTiling
 
 namespace QOU.Archimedean.HyperbolicVolume
 
@@ -394,5 +394,76 @@ theorem wedgeAt_beta_perp_lower_of_obtuse {R t α β γ : ℝ}
   rw [show t + 2 * γ + 2 * α - 2 * α = t + 2 * γ by ring,
     show t + 2 * γ + 2 * α + 2 * β = t + 2 * π by linarith] at hrel
   nlinarith [mul_pos hs2αβ hlo, mul_pos hs2α (neg_pos.mpr hup)]
+
+/-! ### The `γ`-chord, extracted from `w ∉ W_sub`
+
+The triangle's third chord cannot be proved for a point of `W_α` or `W_β`
+directly: `γ` obtuse puts `R cos γ < 0`, outside every chord helper's range, and
+in fact `W_α ⊄ chordHalfplane R (t+γ) γ` — points of `W_α` near the circumcentre
+have `⟨w,u_{t+γ}⟩ ≈ 0`, which is not `< R cos γ < 0`.  Those points are exactly
+the ones the subtraction removes.
+
+The key observation is that `W_sub`'s chord condition is the **strict
+complement** of the triangle's `γ`-chord.  Since `θ_s = t+γ+π` and
+`ψ_s = π−γ`, that condition reads `−⟨w,u_{t+γ}⟩ < −R cos γ`, i.e.
+`⟨w,u_{t+γ}⟩ > R cos γ`.  So a point already inside `W_sub`'s CONE fails to be
+in `W_sub` exactly when the `γ`-chord holds — with `≤` rather than `<`, the
+equality case being the chord line itself, which is null. -/
+
+/-- **The `γ`-chord from non-membership in `W_sub`.**  Given the two cone
+conditions, `w ∉ W_sub` forces the triangle's `γ`-chord inequality, non-strictly.
+The `≤` is sharp: `w` on the chord line lies in neither side, which is why the
+decomposition is an a.e. identity and not a set equality. -/
+theorem gamma_chord_of_notMem_sub {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π)
+    {w : ℝ × ℝ}
+    (hlo : 0 < -(w.1 * Real.sin (t + 2 * γ)) + w.2 * Real.cos (t + 2 * γ))
+    (hup : -(w.1 * Real.sin (t + 2 * π)) + w.2 * Real.cos (t + 2 * π) < 0)
+    (hnot : w ∉ wedgeAt R (t + γ + π) (π - γ)) :
+    w.1 * Real.cos (t + γ) + w.2 * Real.sin (t + γ) ≤ R * Real.cos γ := by
+  by_contra hcon
+  push_neg at hcon
+  refine hnot (mem_wedgeAt_of_halfplanes (R := R) (θ := t + γ + π) (ψ := π - γ)
+    (by linarith) (by linarith) ?_ ?_ ?_)
+  · -- W_sub's chord is the strict complement of the triangle's γ-chord
+    have hc : Real.cos (t + γ + π) = -Real.cos (t + γ) := by
+      simp [Real.cos_add]
+    have hs : Real.sin (t + γ + π) = -Real.sin (t + γ) := by
+      simp [Real.sin_add]
+    have hcψ : Real.cos (π - γ) = -Real.cos γ := by simp [Real.cos_pi_sub]
+    rw [hc, hs, hcψ]
+    linarith
+  · rwa [show t + γ + π + (π - γ) = t + 2 * π by ring]
+  · rwa [show t + γ + π - (π - γ) = t + 2 * γ by ring]
+
+/-- **The `γ`-chord for a point of `W_α` outside `W_sub`.**  Both cone
+conditions come from `W_α` itself: the lower edge is shared with `W_sub`, and
+the upper is `wedgeAt_alpha_perp_upper_of_obtuse`. -/
+theorem gamma_chord_of_mem_alpha {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π)
+    {w : ℝ × ℝ} (hw : w ∈ wedgeAt R (t + 2 * γ + α) α)
+    (hnot : w ∉ wedgeAt R (t + γ + π) (π - γ)) :
+    w.1 * Real.cos (t + γ) + w.2 * Real.sin (t + γ) ≤ R * Real.cos γ := by
+  obtain ⟨hα, -⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
+  have hlo : 0 < -(w.1 * Real.sin (t + 2 * γ)) + w.2 * Real.cos (t + 2 * γ) := by
+    have h := wedgeAt_lower hα0 hα w hw
+    rwa [show t + 2 * γ + α - α = t + 2 * γ by ring] at h
+  exact gamma_chord_of_notMem_sub hα0 hβ0 hγ hsum hlo
+    (wedgeAt_alpha_perp_upper_of_obtuse hα0 hβ0 hγ hsum w hw) hnot
+
+/-- **The `γ`-chord for a point of `W_β` outside `W_sub`.**  Mirror: the upper
+edge is shared with `W_sub`, and the lower is
+`wedgeAt_beta_perp_lower_of_obtuse`. -/
+theorem gamma_chord_of_mem_beta {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π)
+    {w : ℝ × ℝ} (hw : w ∈ wedgeAt R (t + 2 * γ + 2 * α + β) β)
+    (hnot : w ∉ wedgeAt R (t + γ + π) (π - γ)) :
+    w.1 * Real.cos (t + γ) + w.2 * Real.sin (t + γ) ≤ R * Real.cos γ := by
+  obtain ⟨-, hβ⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
+  have hup : -(w.1 * Real.sin (t + 2 * π)) + w.2 * Real.cos (t + 2 * π) < 0 := by
+    have h := wedgeAt_upper hβ0 hβ w hw
+    rwa [show t + 2 * γ + 2 * α + β + β = t + 2 * π by linarith] at h
+  exact gamma_chord_of_notMem_sub hα0 hβ0 hγ hsum
+    (wedgeAt_beta_perp_lower_of_obtuse hα0 hβ0 hγ hsum w hw) hup hnot
 
 end QOU.Archimedean.HyperbolicVolume
