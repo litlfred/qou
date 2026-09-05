@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T18:12:11Z
-updated_at: 2026-09-05T19:13:28Z
+updated_at: 2026-09-05T19:17:13Z
 ---
 
 ## Measured, not assumed (branch claude/atom-trace-nonmonotone-regression-2026-09-05)
@@ -141,3 +141,44 @@ measured to have spread EXACTLY 0.0, or use a tolerance above 1e-48.
 **Risk.** The Hoefsmit off-diagonal sign/normalisation convention must match
 this codebase's `_alpha_beta` / `D(delta)`; getting it wrong gives a plausible
 wrong number rather than an error. The oracle is what catches that.
+
+## Refinement of the design above — the window boundary is NOT clean, and I wrote it as if it were
+
+Working the construction further, two corrections to my own note above.
+
+**1. The off-diagonal element needs no square root, which makes this cheaper
+than it looks.** The 2x2 seminormal block on {T, T'} has diagonal `D(delta)`
+and `D(-delta)`. Its trace is forced: `D(delta) + D(-delta) = h` exactly (put
+`x = q^-2delta`; `1/(1-x) + 1/(1-1/x) = 1`), and its determinant is `-1` since
+the eigenvalues are `q` and `-q^-1`. So `B*B' = D(delta)*D(-delta) + 1`. The
+ORTHOGONAL form takes `B = B' = sqrt(...)`; the SEMINORMAL (row) form takes
+`B = 1, B' = D(delta)*D(-delta) + 1`. A character is a trace and is invariant
+under that similarity, so the asymmetric split is admissible and **keeps
+everything in the ring — no sqrt, no extension field.**
+
+**2. The window is NOT self-contained, and my `s_3k -> s_3k+3` phrasing above
+implies it is.** Generator `g` modifies chain level `g+1`, but its matrix
+element depends on levels `g+1` AND `g+2`. So window k (gens `3k-1, 3k, 3k+1`)
+modifies levels `3k, 3k+1, 3k+2` while its LAST generator reads level
+`3k+3` — which is modified by the NEXT window's first generator. The windows
+are coupled at the seam.
+
+That is not fatal, and it is in fact already handled in the monotone code: the
+state `(shape, c)` carries the content of the last box added, which IS the seam
+variable, and `alpha*D(c_other - c_this) + beta` is how the forward dependence
+is passed. **What is new under interleaving is that an off-diagonal move can
+change the identity of the seam box mid-window**, which the diagonal-only
+version never has to represent. So the window transition must be keyed on, and
+must emit, the seam box — not merely a shape.
+
+**Consequence for the estimate.** This is not a localised patch to
+`get_h3_transitions`; it is a re-derivation of what that function computes, with
+a larger state. Still `d_lambda`-free and still `O(A)` — the segment space stays
+bounded by the addable corners — but it is a careful multi-hour build whose
+failure mode is a plausible wrong number rather than an exception. The oracle
+(`chi_all_lambda_general` at A=1/2/3) is what makes it safe to attempt, and it
+should be wired as a test BEFORE the implementation, not after.
+
+Recorded rather than started: the estimate changed once already while I was
+writing it down, which is the signal to hand the priority call over rather than
+spend the hours on my own read of it.
