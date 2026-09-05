@@ -24,9 +24,14 @@ seminormal dimension from `QOU.HeckeAlgebra.Hoefsmit`.
   in block-diagonal form.
 - `wedderburnEmbed` — embed `WedderburnDecomposition n` into
   `Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ` via
-  block-diagonal matrix construction.
-- `wedderburnEmbed_posSemidef` — block-diagonal-of-PSD-blocks
-  is PSD on the whole.
+  block-diagonal matrix construction.  **Still `opaque` here**, but
+  see below: `QOU/HeckeAlgebra/WedderburnConstruction.lean` now
+  builds it.
+
+(This list previously also advertised `wedderburnEmbed_posSemidef`
+— "block-diagonal-of-PSD-blocks is PSD on the whole".  No such
+theorem exists in this file; the claim is removed rather than
+left standing.)
 
 ## Categorical content
 
@@ -44,6 +49,20 @@ Block-diagonal embedding requires careful index arithmetic
 agreement `Σ_λ (f^λ)² = n!` is the **Robinson-Schensted-Knuth
 correspondence** (a non-trivial Mathlib import).  Both are
 deferred — this module captures the type-level interface.
+
+**Partly superseded (2026-09-05, bean `qou-usol`).** The first of
+those two is not in fact a blocker: on the natural index type
+`Σ λ, Fin (f^λ) × Fin (f^λ)` the assembly is an ordinary
+definition and is *injective*.
+`QOU/HeckeAlgebra/WedderburnConstruction.lean` builds it
+(`blockDiagonal`, `blockDiagonal_injective`) with axiom footprint
+`[propext, Classical.choice, Quot.sound]` — no `wedderburnEmbed`.
+Only landing in `Fin (n!)` needs RSK, and that step is isolated
+there as the explicit hypothesis `RSKDimIdentity`.  The `opaque`
+below is therefore retained only for the unconditional form, and
+deleting it in favour of `wedderburnEmbedOf` is the clean
+follow-up (its two remaining references are doc comments in
+`MarkovTrace.lean`).
 
 ## References
 
