@@ -1,0 +1,58 @@
+{
+  "probe": "qbeta_fibre_projection_and_rou_sublocus_probe",
+  "bean": "qou-cds1",
+  "corrects": "my own merged #6875 (0102df44d2) -- its N = 5 / N = 4 used a form valid only on the real axis",
+  "question": "does the framework have a fibre-compute-then-project mechanism, and what does it select?",
+  "answer": "the projection is the modulus on Delta(net), already in the block, and it is PARTIAL (E_0 unprojected) -- which is the whole source of the reality condition. Partial selects the SIXTH roots; full selects nothing. And all three reality-admissible phases are degenerate, so the root-of-unity sublocus is EMPTY.",
+  "scope": "(a) for the reality arithmetic; the degeneracy exclusion is exact and theta-independent. Does NOT close route 5: |q| = 1 is more than its roots of unity, and a full projection remains available at the price of selecting nothing.",
+  "written_vs_definition_gap": {
+    "real q=1.1": "0.0",
+    "q=e^(i/3)": "2.4072132337744674",
+    "q=e^(i pi/3)": "1.1860578654784908"
+  },
+  "partial_projection_zero_set": "phi in {pi/3, pi, 5pi/3} (sixth roots)",
+  "degeneracy": {
+    "pi/3": [
+      "b^2 = 0 (V_(2,1) coupling vanishes)"
+    ],
+    "pi": [
+      "h = 0 (substrate degenerates)"
+    ],
+    "5pi/3": [
+      "b^2 = 0 (V_(2,1) coupling vanishes)"
+    ]
+  },
+  "theta_required": "0.056617300794061032363",
+  "pi_over_3_over_theta": "18.496069867506741093",
+  "q0": "1.1099785827513808076",
+  "q0_pin": "proton (q_at)",
+  "dps": 50,
+  "assertions": [
+    {
+      "name": "written_form_is_archimedean_only",
+      "passed": true,
+      "detail": "the written |q^2-2q-1|(q+1)/(2q^3) matches the block's |Delta(net)|*E_0 on the real axis (gap 0) and NOT off it (gap 2.407 at q = e^(i/3)) -- it follows only via |q^2-1| = (q-1)(q+1), which needs q real > 1. #6875's N = 5 / N = 4 are artifacts of that simplification."
+    },
+    {
+      "name": "partial_projection_selects_sixth_roots",
+      "passed": true,
+      "detail": "with the block's own partial projection, Q_beta is real on |q| = 1 iff sin phi (2 cos phi - 1) = 0, i.e. phi in {pi/3, pi, 5pi/3} -- the sixth roots, not the fifth (#6875 reading A) or the fourth (reading B)"
+    },
+    {
+      "name": "full_projection_selects_nothing",
+      "passed": true,
+      "detail": "|Delta(net) * E_0| is real for EVERY q, so a full projection imposes no condition and selects no N. The projection question and the N question are therefore the SAME question. Adopting the full projection because it admits the required phase would be fitting the mechanism to the target; named here and not taken."
+    },
+    {
+      "name": "every_admissible_phase_is_degenerate_so_the_sublocus_is_EMPTY",
+      "passed": true,
+      "detail": "pi/3 and 5pi/3 kill the Hoefsmit coupling (q^4+q^2+1 = 0 identically at a primitive 6th root, since q^6-1 = (q^2-1)(q^4+q^2+1)); pi kills h. So reality admits exactly three phases and non-degeneracy excludes all three -- there is NO admissible root of unity on the fibre locus, a fact established before theta is mentioned."
+    },
+    {
+      "name": "theta_is_not_the_binding_constraint",
+      "passed": true,
+      "detail": "the required phase sits 18.5x below the nearest reality-admissible phase, but that is not the binding fact: the admissible set is empty on degeneracy grounds alone."
+    }
+  ],
+  "allPassed": true
+}
