@@ -37,11 +37,15 @@ which is exactly the `indexPerm` of `TensorTraceCharacter`. So the `q = 1` chara
 `(card κ)^{c(σ)}` proved there in the concrete model is a statement about the genuine
 tensor power, transported along `monoEquiv`.
 
-🛑 **What is still not here.** A `LinearMap.trace` statement phrased directly over `⨂`
-would additionally need `Module.Free`/`Module.Finite` instances for the tensor power
-(obtainable by transporting along `monoEquiv`) and the identification of that trace
-with the matrix trace. The mathematical content is settled by the two results above;
-that packaging is not done, and is not claimed.
+**DONE, same day:** `QOU.MassTheory.TensorPowerTrace` supplies exactly that — the
+`Module.Free`/`Module.Finite` instances transported along `monoEquiv`, and
+`trace_tensorPerm : LinearMap.trace R (⨂[R] _ : α, (κ → R)) (tensorPerm σ) =
+(card κ) ^ orbitCount σ`. So the character is now stated with `LinearMap.trace` over
+the tensor power itself.
+
+🛑 **What is still not here**, and is a different order of problem: quantum
+Schur–Weyl at `q ≠ 1`. Bean `qou-mpq5` scoped that as a multi-week gap and refused to
+fake it; nothing in this arc bears on it.
 
 -- Ref: [manuscript] bean qou-uinl; the monomial basis of a tensor power is classical.
 -/
