@@ -4059,22 +4059,42 @@ export interface AuthorNote {
 
 `BlockBase.authorNotes?: AuthorNote[]`.
 
-> **🛑 "every block kind accepts it" is FALSE, and the field is dropped in
-> silence (measured 2026-08-30).** This line read *"every block kind accepts
-> it (builders pass through via `Omit<XBlock, "kind">`)"*. Four content-block
-> kinds — **`prose`, `table`, `equation`, `diagram`** — have zod schemas
-> declared as standalone `z.object({...})` rather than
-> `BlockBaseSchema.extend({...})`, so they restate a *subset* of the base
-> fields and `authorNotes` is not among them. Zod strips unknown keys, so a
-> note written on one of those blocks validates clean and **vanishes**.
+> **✅ LIVE STATE (verified 2026-09-05): all four kinds accept every base
+> field. `authorNotes` on a `prose` / `table` / `equation` / `diagram` block
+> WORKS — write it.** The rest of this box is the history of a defect that is
+> now closed in the product; read it for the mechanism, not for the state.
 >
-> **🛑 The `authorNotes` half of this is FIXED, and the standing advice at the
-> bottom was inverted. RE-MEASURED 2026-09-03.** The paragraph below listed
-> six dropped fields, five of them `authorNotes`, and closed by telling agents
-> **not** to put an author note on those four kinds. `folio-assistant`
-> **granted `authorNotes` to all four on 2026-08-24** (bean
-> `folio-assistant-5nle`), so following that advice now suppresses a field
-> that works.
+> Verified by **parse**, not by grep: `ProseSchema` / `EquationSchema` /
+> `DiagramSchema` / `TableSchema` each `safeParse` a block carrying
+> `authorNotes`, `defines`, `cites` and `computation` and **retain** every one.
+> The fix is `folio-assistant` **`a117daa`** (2026-09-03, *"Four block kinds
+> restated BlockBase instead of extending it"*), confirmed an ancestor of that
+> repo's `main`.
+>
+> **🛑 Why this box opened for months with the opposite claim, and why the
+> ordering matters.** The two paragraphs that used to lead were a 🛑 asserting
+> *"every block kind accepts it is FALSE, and the field is dropped in
+> silence"*, retracted nine lines below. An agent reading top-down met the
+> false claim first and stopped — the same *heading-contradicts-its-own-body*
+> defect this document already had to fix once, in the Phase-4 merge-gate
+> table. **The live state now leads; the history follows.** Superseded text,
+> kept because the mechanism is still worth reading: four content-block kinds
+> had zod schemas declared as standalone `z.object({...})` rather than
+> `BlockBaseSchema.extend({...})`, so they restated a *subset* of the base
+> fields; a zod object is non-strict, so a note written on one of those blocks
+> validated clean and **vanished**. `folio-assistant` granted `authorNotes` to
+> all four by hand on 2026-08-24 (bean `folio-assistant-5nle`), which fixed
+> that one field and left the mechanism — see the structural note below.
+>
+> **🛑 And the "fixed" rows in the table below were written AHEAD of the
+> evidence.** That table is dated 2026-09-03 and states its basis as
+> `folio-assistant` `93e476b`. `93e476b` is dated **2026-08-31** and does
+> **not** contain `a117daa` — so at the moment those rows were written, the
+> fix they call *"fixed — folio-assistant#164"* had not landed. The rows are
+> true **today**, and this line is not a retraction of them; it is a note that
+> they were forward-looking claims about an unmerged PR, which is precisely
+> the *"fixed on a branch, not in the product"* move that bean `qou-3v8h`
+> refused to close on. State what has landed, or say it has not.
 >
 > **This document could not have known, and that is the reusable lesson: the
 > validator you ran is the validator in the clone.** The count that produced
@@ -4144,10 +4164,29 @@ export interface AuthorNote {
 > [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh) and
 > check the clone is not behind before trusting a clean validate.
 >
-> **The fix is in `folio-assistant`, not here** — those four schemas should
-> extend `BlockBaseSchema` like the other six. Until they do, do **not** put
-> an author note on a `prose`, `table`, `equation` or `diagram` block: it will
-> be accepted and lost.
+> **The fix was in `folio-assistant`, not here, and it has LANDED** — all four
+> schemas now extend `BlockBaseSchema` like the other eleven (`a117daa`, on
+> that repo's `main`). The advice this paragraph used to give — *"do not put an
+> author note on a `prose`, `table`, `equation` or `diagram` block"* — is
+> **withdrawn and inverted**: write the note, it is kept. Verified by parse on
+> 2026-09-05, and locked upstream by two regression tests
+> (`scripts/tests/block-base-fields.test.ts`, which fails when any block schema
+> falls behind the base, and `scripts/tests/schema-ts-zod-parity.test.ts`), so
+> the next field cannot be forgotten one kind at a time the way `defines`,
+> `cites`, `simulator` and `computation` were.
+>
+> **The one thing that still bites is the CLONE, not the schema.** Everything
+> above is a statement about `folio-assistant` `main`; your validator is the
+> validator in *your* checkout. Measured this session: a qou tree validated
+> against a clone **169 commits behind** reported all six of these fields as
+> dropped — a defect that no longer exists. Before quoting any figure from this
+> box, or filing anything from a validate run, refresh and say what you ran
+> against:
+>
+> ```sh
+> bash scripts/setup-folio-assistant.sh
+> git -C folio-assistant fetch origin main && git -C folio-assistant log --oneline -1
+> ```
 
 **Render behavior**: SKIPPED by default in the LaTeX render
 (clean publication voice). Set environment variable

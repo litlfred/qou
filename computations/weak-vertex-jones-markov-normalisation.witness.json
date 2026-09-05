@@ -1,0 +1,259 @@
+{
+  "computation": "weak-vertex-jones-markov-normalisation",
+  "description": "The weak-vertex trace's normalisation is the Jones-Markov relation: tr_M(closure of beta) = q^(2e)*V(q^-2)/[2]_q^(n-1), verified against the canonical engine on eight torus knots at n = 2,3,4,5. For T(3,5) this gives W = q^20*V(q^-2)/[2]_q^2, so the canonically-normalised coupling is J - 1 with J = V(q^-2) \u2014 no free constant, because V(1) = 1 and V'(1) = 0 for every knot. It factors as J - 1 = -h_4*h_6/q^10, a product of two q-differences at the two Jones exponents, which is why it vanishes to second order with leading coefficient -(2*4)(2*6) = -96. The beta-decay coupling is the same shape at half scale, s^2 = h_(1/2)^2, leading coefficient 1. So the leading ratio is exactly -96, which derives the ORDER of the 1.19e4 substitution factor of qou-ix74 (96^2 = 9216) while confirming no constant relates them: the ratio runs to -37.09 at q0.",
+  "convention": {
+    "markov_z": "q**3/(q**2+1) (D)",
+    "hecke_h": "q - 1/q",
+    "jones_variable": "t = q**-2",
+    "anchor": "proton pin (Q_50_DIGIT_STR); identities exact in q"
+  },
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "normalisation_rule": "tr_M(closure of beta) = q**(2*e) * V(q**-2) / [2]_q**(n-1)",
+  "normalisation_rule_checks": [
+    {
+      "knot": "T(2,3)",
+      "braid_index": 2,
+      "exponent_sum": 3,
+      "word": "(s1)^3",
+      "jones": "-t**4 + t**3 + t",
+      "jones_at_one": "1",
+      "jones_prime_at_one": "0",
+      "trace": "(q**6 + q**2 - 1)/(q*(q**2 + 1))",
+      "matches_q2e_V_over_two_q_pow": true
+    },
+    {
+      "knot": "T(2,5)",
+      "braid_index": 2,
+      "exponent_sum": 5,
+      "word": "(s1)^5",
+      "jones": "-t**7 + t**6 - t**5 + t**4 + t**2",
+      "jones_at_one": "1",
+      "jones_prime_at_one": "0",
+      "trace": "(q**10 + q**6 - q**4 + q**2 - 1)/(q**3*(q**2 + 1))",
+      "matches_q2e_V_over_two_q_pow": true
+    },
+    {
+      "knot": "T(2,7)",
+      "braid_index": 2,
+      "exponent_sum": 7,
+      "word": "(s1)^7",
+      "jones": "-t**10 + t**9 - t**8 + t**7 - t**6 + t**5 + t**3",
+      "jones_at_one": "1",
+      "jones_prime_at_one": "0",
+      "trace": "(q**14 + q**10 - q**8 + q**6 - q**4 + q**2 - 1)/(q**5*(q**2 + 1))",
+      "matches_q2e_V_over_two_q_pow": true
+    },
+    {
+      "knot": "T(3,4)",
+      "braid_index": 3,
+      "exponent_sum": 8,
+      "word": "(s1s2)^4",
+      "jones": "-t**8 + t**5 + t**3",
+      "jones_at_one": "1",
+      "jones_prime_at_one": "0",
+      "trace": "q**2*(q**10 + q**6 - 1)/(q**2 + 1)**2",
+      "matches_q2e_V_over_two_q_pow": true
+    },
+    {
+      "knot": "T(3,5)",
+      "braid_index": 3,
+      "exponent_sum": 10,
+      "word": "(s1s2)^5",
+      "jones": "-t**10 + t**6 + t**4",
+      "jones_at_one": "1",
+      "jones_prime_at_one": "0",
+      "trace": "q**2*(q**12 + q**8 - 1)/(q**2 + 1)**2",
+      "matches_q2e_V_over_two_q_pow": true
+    },
+    {
+      "knot": "T(3,7)",
+      "braid_index": 3,
+      "exponent_sum": 14,
+      "word": "(s1s2)^7",
+      "jones": "-t**14 + t**8 + t**6",
+      "jones_at_one": "1",
+      "jones_prime_at_one": "0",
+      "trace": "q**2*(q**16 + q**12 - 1)/(q**2 + 1)**2",
+      "matches_q2e_V_over_two_q_pow": true
+    },
+    {
+      "knot": "T(4,3)",
+      "braid_index": 4,
+      "exponent_sum": 9,
+      "word": "(s1s2s3)^3",
+      "jones": "-t**8 + t**5 + t**3",
+      "jones_at_one": "1",
+      "jones_prime_at_one": "0",
+      "trace": "q**5*(q**10 + q**6 - 1)/(q**2 + 1)**3",
+      "matches_q2e_V_over_two_q_pow": true
+    },
+    {
+      "knot": "T(5,3)",
+      "braid_index": 5,
+      "exponent_sum": 12,
+      "word": "(s1s2s3s4)^3",
+      "jones": "-t**10 + t**6 + t**4",
+      "jones_at_one": "1",
+      "jones_prime_at_one": "0",
+      "trace": "q**8*(q**12 + q**8 - 1)/(q**2 + 1)**4",
+      "matches_q2e_V_over_two_q_pow": true
+    }
+  ],
+  "weak_vertex": {
+    "knot": "T(3,5)",
+    "braid_word": "(s1 s2)^5",
+    "braid_index": 3,
+    "exponent_sum": 10,
+    "jones": "t**4 + t**6 - t**10",
+    "J_at_q": "q**(-8) + q**(-12) - 1/q**20",
+    "trace_closed_form": "q**2*(q**12 + q**8 - 1)/(q**2 + 1)**2",
+    "numerator": "q**12 + q**8 - 1",
+    "W_at_q0": "1.1874806131459626461071158300792049240880255765818",
+    "W_at_one": "1/4"
+  },
+  "coupling_factorisation": {
+    "identity": "J - 1 == -h_4*h_6/q**10   with h_k := q**k - q**-k",
+    "jones_exponents": [
+      4,
+      6
+    ],
+    "framing": "q**-10",
+    "h_k_prime_at_one": "2*k",
+    "leading_coefficient": "-96",
+    "J_second_derivative_at_one": "-192",
+    "J_minus_one_at_q0": "-0.40418128376765787568996803918173354330317761349481"
+  },
+  "decay_coupling": {
+    "identity": "s**2 == (q**(1/2) - q**(-1/2))**2 == h_(1/2)**2",
+    "exponents": [
+      "1/2",
+      "1/2"
+    ],
+    "leading_coefficient": "1",
+    "s_sq_at_q0": "0.010896866707122299752491978091862815889240748484137",
+    "honest_limit": "a Jones exponent is an integer, so s^2 is a FORMAL half-scale analogue and not itself any knot's V - 1"
+  },
+  "ratio": {
+    "closed_form": "-(q + 1)**2*(q**2 + 1)**2*(q**4 + 1)*(q**2 - q + 1)*(q**2 + q + 1)*(q**4 - q**2 + 1)/q**19",
+    "cyclotomic_form": "-G_8(q)*G_12(q)/q**19   with G_n(q) = 1+q+...+q**(n-1)",
+    "cyclotomic_identity": "q**19*(J-1) == -s**2*G_8(q)*G_12(q)",
+    "G_8_at_one": "8",
+    "G_12_at_one": "12",
+    "limit_at_one": "-96 = -(2*4)*(2*6)",
+    "at_q0": "-37.091513976534281628",
+    "at_rational_points": {
+      "11/10": "-39.985597311445880170",
+      "3/2": "-5.7214496383196363852",
+      "2": "-1.9917011260986328125"
+    },
+    "runs": true
+  },
+  "order_of_substitution_factor": {
+    "measured_W_sq_over_s_pow_four_at_q0": "11875.441893676302628",
+    "derived_leading_square": "96**2 = 9216",
+    "overshoot_measured_over_derived": "1.2885679138103626984",
+    "qou_ix74_rate_factor": "1.19e4",
+    "verdict": "the derived leading square predicts the substitution factor's ORDER; the residual overshoot 1.2885679138 is REPORTED, not absorbed into a chosen tolerance (no-fitting directive 2026-09-05: a window sized to contain its own miss is a fit)"
+  },
+  "scope": "POSITIVE derivation of the normalisation (the framing and rank factors are read off the braid word; the offset and vanishing order of J - 1 are topological) and of the ORDER of the coupling gap. NOT a rescaling constant \u2014 the ratio provably runs, consistent with the scope-(b) exclusion in qou-pfh7.",
+  "lean": [
+    "QOU.Braiding.WeakVertexT35.jonesT35",
+    "QOU.Braiding.WeakVertexT35.weakVertexTrace_eq_jones_markov",
+    "QOU.Braiding.WeakVertexT35.jonesT35_sub_one_eq_qdiff_product",
+    "QOU.Braiding.WeakVertexT35.sSq_eq_qdiff_half_sq",
+    "QOU.Braiding.WeakVertexT35.hasDerivAt_qDiff_one",
+    "QOU.Braiding.WeakVertexT35.jonesT35_sub_one_mul_pow",
+    "QOU.Braiding.WeakVertexT35.jones_dev_eq_sSq_mul_geom",
+    "QOU.Braiding.WeakVertexT35.couplingRatio_one",
+    "QOU.Braiding.WeakVertexT35.couplingRatio_near_q0",
+    "QOU.Braiding.WeakVertexT35.substitutionRateFactor_overshoot_of_leading_square"
+  ],
+  "reference_blocks": [
+    "prop:hadron-half-life",
+    "prf:hadron-half-life",
+    "rem:hadron-half-life-fermi"
+  ],
+  "related_beans": [
+    "qou-egvf (closed form)",
+    "qou-4x7c (content)",
+    "qou-ix74 (10^4 negative)",
+    "qou-pfh7 (family exclusion)"
+  ],
+  "assertions": [
+    {
+      "name": "normalisation_rule_holds_on_eight_torus_knots",
+      "passed": true,
+      "note": "tr_M(closure) = q^(2e)*V(q^-2)/[2]_q^(n-1) verified against markov_trace_canonical for n = 2,3,4,5 incl. mirror pairs"
+    },
+    {
+      "name": "every_jones_has_V_one_equals_one_and_V_prime_one_zero",
+      "passed": true,
+      "note": "the offset and the vanishing order of J - 1 are topological, not chosen \u2014 this is what fixes the normalisation"
+    },
+    {
+      "name": "weak_vertex_trace_is_jones_over_two_q_squared",
+      "passed": true,
+      "note": "W = q^20 * V_{T(3,5)}(q^-2) / [2]_q^2 with e = 10, n = 3"
+    },
+    {
+      "name": "numerator_is_q20_times_jones",
+      "passed": true,
+      "note": "W*[2]_q^2 = q^12 + q^8 - 1 = q^20 * J"
+    },
+    {
+      "name": "jones_deviation_is_product_of_two_q_differences",
+      "passed": true,
+      "note": "J - 1 = -h_4*h_6/q^10 exactly; exponents 4 and 6 are the Jones exponents of T(3,5), q^-10 is the framing"
+    },
+    {
+      "name": "q_difference_derivative_at_one_is_two_k",
+      "passed": true,
+      "note": "h_k'(1) = 2k, so a product of two of them vanishes to second order with leading coefficient (2k1)(2k2)"
+    },
+    {
+      "name": "jones_deviation_leading_coefficient_is_minus_ninety_six",
+      "passed": true,
+      "note": "-(2*4)(2*6) = -96, J''(1) = -192 \u2014 derived from the exponents"
+    },
+    {
+      "name": "jones_deviation_is_polynomial_after_framing",
+      "passed": true,
+      "note": "q^20*(J-1) = -(q^8-1)(q^12-1): the same fact with no negative powers, and the form the (q-1)^2 factor is read off"
+    },
+    {
+      "name": "ratio_has_exact_cyclotomic_closed_form",
+      "passed": true,
+      "note": "q^19*(J-1) = -s^2*G_8*G_12, so (J-1)/s^2 = -G_8*G_12/q^19 EXACTLY \u2014 the ratio and its running, with no limit taken"
+    },
+    {
+      "name": "cyclotomic_cofactors_at_one_are_the_jones_exponents",
+      "passed": true,
+      "note": "G_8(1) = 8, G_12(1) = 12, so the ratio at q = 1 is -8*12 = -96 \u2014 the Jones exponents themselves, doubled by h_k'(1) = 2k"
+    },
+    {
+      "name": "decay_coupling_is_half_scale_q_difference_squared",
+      "passed": true,
+      "note": "s^2 = h_(1/2)^2 exactly; leading coefficient (2*(1/2))^2 = 1"
+    },
+    {
+      "name": "leading_ratio_is_minus_ninety_six_but_ratio_runs",
+      "passed": true,
+      "note": "(J-1)/s^2 -> -96 at q=1 and -37.09 at q0: the framing q^-10 suppresses it, so no CONSTANT relates the two couplings (consistent with the qou-pfh7 exclusion, and explains it)"
+    },
+    {
+      "name": "leading_square_overshoot_is_measured_not_bracketed",
+      "passed": true,
+      "note": "the derived leading square 96^2 = 9216 against the measured |W(q0)|^2/s(q0)^4 = 11875.4418936763: the overshoot is 1.2885679138, REPORTED rather than bracketed by a chosen window"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "def342fae879",
+  "scriptCommitSha": "0724b46ba10f2bd5fa697c73c18abe06ea87a597",
+  "commitSha": "21654c703fc71674a4f1880ad8aca675ad9efdf5",
+  "engine": "sympy+mpmath",
+  "computedAt": "2026-09-05T07:58:22.267456+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "markov/weak_vertex_jones_markov_normalisation.py"
+}
