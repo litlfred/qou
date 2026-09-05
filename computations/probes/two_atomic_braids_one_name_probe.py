@@ -18,9 +18,15 @@ constructions:
 word production builds, at every A (check 1). The proton's word needs 3 strands
 and A+Z gives 2; iron-56 needs 168 and A+Z gives 82.
 
-WHY IT MATTERS: 12 content blocks cite `def:atomic-braid`, and six of them are
-in `mass-theory/` and `mass-endomorphism/` -- the chapters whose compute is
-3A. `wedderburn-mass-formula.md` states `A ∈ H_{A+Z}(q)` and links
+WHY IT MATTERS: 24 content blocks cite `def:atomic-braid`, and seven of them
+are in `mass-theory/` and `mass-endomorphism/` -- the chapters whose compute is
+3A. (This docstring said "12 ... six" until 2026-09-05, contradicting check 4
+of this same file, which counts them. The 12 was a TRUNCATED grep; the audit
+doc was corrected and the docstring was not, which is the stale-figure-survives-
+in-another-carrier class AGENTS.md records. Check 4 is the authority: it
+substring-matches `def:atomic-braid` over every .md and .ts under the paper, so
+it cannot miss a citation to a spelling variant of a call the way a shaped
+regex can.) `wedderburn-mass-formula.md` states `A ∈ H_{A+Z}(q)` and links
 `#def:atomic-braid` while sitting in the chapter that traces the 3A object.
 Both objects are written `A` (script A) and both are called "the atomic braid".
 
