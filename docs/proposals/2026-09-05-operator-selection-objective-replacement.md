@@ -288,15 +288,43 @@ finding say the feasible geometry does not distinguish `𝓑₃`, and re-posing 
 program does not touch that. The honest expectation is that O3′ fixes the **type
 error** and leaves selection open.
 
-## 9. What would still falsify O3′
+## 9. O3′ FALSIFIER RUN — not falsified
 
-The quotient argument above is analytic and rests on `y_λ > 0` for every
-surviving partition. That is measured only at **n = 3**, where the surviving set
-is `{(3), (2,1)}`. At larger `n` the SU(2) rule kills every partition with ≥ 3
-rows, and whether the survivors all carry **strictly** positive weight at the
-proton pin is **not measured here**. If some surviving `y_λ` is zero or negative
-at some `n`, the same degeneracy returns one level up. That is the next cheap
-check, and it should be run before any content lands.
+The check §7 left open — *is every surviving weight strictly positive at n > 3?*
+— was run. Probe:
+[`computations/probes/sdp_o3prime_weight_positivity_probe.py`](../../computations/probes/sdp_o3prime_weight_positivity_probe.py), 5/5.
+
+| n | partitions | > 2 rows | all zero | ≤ 2 rows | all > 0 | min surviving `y_λ` |
+|---|---|---|---|---|---|---|
+| 3 | 3 | 1 | ✓ | 2 | ✓ | 0.2472978867 |
+| 6 | 11 | 7 | ✓ | 4 | ✓ | 0.0151238101 |
+| 9 | 30 | 25 | ✓ | 5 | ✓ | 0.003740086277 |
+| 12 | 77 | 70 | ✓ | 7 | ✓ | 0.0002287296319 |
+
+At every `n` from 3 to 12: the > 2-row partitions vanish **exactly**, every
+survivor is **strictly positive**, and `Σ_λ y_λ f^λ = 1` throughout.
+
+**Both halves are provable, and the measurement agrees with the proofs.** The
+vanishing is structural — `schur_principal_sym`'s own note: for a shape with
+more than `N` rows the cell `(N+1, 1)` has content `−N`, so the numerator picks
+up `[N + (−N)]_q = [0]_q = 0`. The positivity likewise: for a ≤ 2-row shape the
+minimum content is `−1`, so every numerator factor is `[m]_q` with `m ≥ 1` and
+every hook is `≥ 1`, both positive at `q > 1`.
+
+**Cross-validation, and it is the strong part.** At `n = 3` the hook-content
+product formula gives `(3) 0.50540422650393`, `(2,1) 0.24729788674803`,
+`(1,1,1) 0` — matching **to all 14 digits** the weights the O3 falsifier solved
+*independently*, by linear system from the six Markov basis traces. Two
+unrelated routes, same answer.
+
+**One numerical caveat, not structural.** The minimum surviving weight decays by
+a factor **0.2473 per +2 in n** (0.2473 at n = 3 → 0.000229 at n = 12). It stays
+strictly positive, but a program solved in float64 at large `n` would eventually
+be unable to distinguish it from zero. The accumulator's `k_max = 11` sits at
+**9.2e-4**, comfortable; anything reaching `n ≳ 30` would need care.
+
+**So O3′ stands.** Both falsifiers this proposal wrote for itself have now been
+run: one killed bare O3 and produced O3′, the other cleared O3′.
 
 ## 10. What is not claimed
 
