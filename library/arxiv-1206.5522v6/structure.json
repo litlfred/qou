@@ -1,0 +1,301 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1206.5522v6",
+ "source": {
+  "file": "1206.5522v6.pdf",
+  "sha256": "6e992242435b5e9fba57ab43673ab0235e60afa2cd6c31976e50d659e41da839",
+  "bytes": 502092,
+  "pages": 37,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1206.5522",
+   "version": "6",
+   "primary_class": "math.AT",
+   "stamp_date": "23 Jun 2024"
+  },
+  "doi": null,
+  "title": "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS",
+  "authors_raw": "DAVID AYALA & JOHN FRANCIS",
+  "title_lines": [
+   "FACTORIZATION HOMOLOGY OF TOPOLOGICAL MANIFOLDS"
+  ],
+  "abstract": "Factorization homology theories of topological manifolds , after Beilinson, Drinfeld and Lurie, are homology-type theories for topological n-manifolds whose coe\ufb03cient systems are n-disk algebras or n-disk stacks. In this work we prove a precise formulation of t his idea, giving an axiomatic characterization of factorization homology wit h coe\ufb03cients in n-disk algebras in terms of a generalization of the Eilenberg\u2013Steenrod axioms for si ngular homology. Each such theory gives rise to a kind of topological quantum \ufb01eld theory, for w hich observables can be de\ufb01ned on general n-manifolds and not only closed n-manifolds. For n-disk algebra coe\ufb03cients, these \ufb01eld theories are characterized by the condition that globa l observables are determined by local observables in a strong sense. Our axiomatic point of view ha s a number of applications. In particular, we give a concise proof of the nonabelian Poinca r\u00b4 e duality of Salvatore, Segal, and Lurie. W e present some essential classes of calculations of factorization homology, such as for free n-disk algebras and enveloping algebras of Lie algebras, sev eral of which have a conceptual meaning in terms of Koszul duality.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20240624205233-04'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "B-framed disks and manifolds",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "B-framings",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Disks",
+   "page": 9,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Manifolds with boundary",
+   "page": 11,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Localizing with respect to isotopy equivalences",
+   "page": 12,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Homology theories for topological manifolds",
+   "page": 14,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Disk algebras",
+   "page": 14,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Factorization homology over oriented 1-manifolds with boundary",
+   "page": 17,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Homology theories",
+   "page": 18,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Pushforward",
+   "page": 19,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Homology theories",
+   "page": 23,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Nonabelian Poincar\u00e9 duality",
+   "page": 26,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Commutative algebras, free algebras, and Lie algebras",
+   "page": 28,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Factorization homology with coefficients in commutative algebras",
+   "page": 28,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Factorization homology with coefficients in free n-disk algebras",
+   "page": 31,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Factorization homology from Lie algebras",
+   "page": 35,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 20222,
+   "n_words": 3305
+  },
+  {
+   "id": "sec-001-2-b-framed-disks-and-manifolds",
+   "number": "2",
+   "title": "B-framed disks and manifolds",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 70,
+   "n_words": 12
+  },
+  {
+   "id": "sec-002-21-b-framings",
+   "number": "2.1",
+   "title": "B-framings",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 6715,
+   "n_words": 1107
+  },
+  {
+   "id": "sec-003-22-disks",
+   "number": "2.2",
+   "title": "Disks",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 6565,
+   "n_words": 1171
+  },
+  {
+   "id": "sec-004-23-manifolds-with-boundary",
+   "number": "2.3",
+   "title": "Manifolds with boundary",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1812,
+   "n_words": 328
+  },
+  {
+   "id": "sec-005-24-localizing-with-respect-to-isotopy-equivalenc",
+   "number": "2.4",
+   "title": "Localizing with respect to isotopy equivalences",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 6586,
+   "n_words": 1183
+  },
+  {
+   "id": "sec-006-3-homology-theories-for-topological-manifolds",
+   "number": "3",
+   "title": "Homology theories for topological manifolds",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 363,
+   "n_words": 59
+  },
+  {
+   "id": "sec-007-31-disk-algebras",
+   "number": "3.1",
+   "title": "Disk algebras",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 9316,
+   "n_words": 1659
+  },
+  {
+   "id": "sec-008-33-homology-theories",
+   "number": "3.3",
+   "title": "Homology theories",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 3278,
+   "n_words": 600
+  },
+  {
+   "id": "sec-009-34-pushforward",
+   "number": "3.4",
+   "title": "Pushforward",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 9633,
+   "n_words": 1789
+  },
+  {
+   "id": "sec-010-35-homology-theories",
+   "number": "3.5",
+   "title": "Homology theories",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 28,
+   "n_chars": 17878,
+   "n_words": 3210
+  },
+  {
+   "id": "sec-011-5-commutative-algebras-free-algebras-and-lie-alg",
+   "number": "5",
+   "title": "Commutative algebras, free algebras, and Lie algebras",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 36,
+   "n_chars": 22812,
+   "n_words": 4190
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 7610,
+   "n_words": 1077
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "sections": 13,
+  "chars_total": 112860
+ }
+}

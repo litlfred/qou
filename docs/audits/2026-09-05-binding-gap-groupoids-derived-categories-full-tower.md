@@ -864,6 +864,28 @@ The "held nothing on factorization homology / Ben-Zvi" statement in §3.2 is sup
 table. **Nothing in §§5–7 changes:** the prunes come before the reading, and the reading is now
 possible.
 
+### 8c. Second addendum: twenty more (owner upload `a7d6a3b5`) — §8 is now held in full except the two books and Pirashvili
+
+All ingested with `references.ts` joins (`--check` clean; the array loads; no duplicate ids):
+
+| §8 row | doc-id | work |
+|---|---|---|
+| 8 | `arxiv-1206.5522v6` | Ayala–Francis, *Factorization homology of topological manifolds* |
+| 11 | `arxiv-1608.07308v1` | Gorsky–Neguț–Rasmussen, *Flag Hilbert schemes…* |
+| 13 | `arxiv-1305.7175v4` | Ben-Zvi–Nadler, *Nonlinear traces* |
+| 15 | `arxiv-math-0505056v2` | Khovanov–Rozansky, *Matrix factorizations and link homology II* |
+| 16 | `arxiv-1608.03227v4` | Oblomkov–Rozansky (title parsed as a date by `pdf-structure`; supplied by hand in `references.ts`) |
+| 18 (paper) | `arxiv-0905.0488v5` | Yekutieli, *Twisted deformation quantization of algebraic varieties* — full paper; the survey is `arxiv-0801.3233v4` |
+| 20 | `arxiv-math-0004133v1` | Baez–Dolan, *From finite sets to Feynman diagrams* (0 extractor candidates — expository) |
+| 21 | `arxiv-0810.2361v2`, `arxiv-math-0601458v1` | Morton ×2 |
+| 22 | `arxiv-math-0006057v2` | Nikshych–Vainerman survey |
+| 23 | `arxiv-math-9909027v1` | Jones, *Planar algebras I* (122 pp) |
+| 27 | `arxiv-0710.4310v2` | Martins–Picken — **arXiv id now verified from the PDF**; the §9 "unverified" flag is closed |
+| §4.3 derived half | `arxiv-1610.09640v4` (459 pp, 852 candidates), `arxiv-1412.4229v4`, `arxiv-1312.6411v4`, `arxiv-math-9804005v3`, `arxiv-1010.4386v5`, `arxiv-1606.01832v3`, `arxiv-2002.04901v5` | Yekutieli: *Derived Categories*; squaring; duality and tilting; (with Zhang) Auslander dualizing complexes; completion/torsion; flatness and completion; weak proregularity |
+| C-list | `arxiv-math-9805116v3` | Böhm–Nill–Szlachányi, *Weak Hopf algebras I* |
+
+**Not held from §8 after this:** row 14 (Rouquier, `math/0409593`), 24–26 (Venkatesh; Bezrukavnikov–Finkelberg; Habiro cyclotomic completions), 28 (Pirashvili, no arXiv), 29–30 (the Costello–Gwilliam and Beilinson–Drinfeld books), and the C-list items. None blocks a route. **Every Yekutieli work named in §4.3 is now held**, so the "read the 2021 overview instead of the four derived papers" advice in route F is moot — the papers are here; the judgement that the derived half carries no trace-on-a-tower theorem stands until someone reads them against that question.
+
 ## 9. Verification limits and hygiene items found on the way
 
 - **Direct `arxiv.org` fetch is proxy-blocked** for both `curl` and `WebFetch` this session; every

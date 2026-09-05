@@ -1,0 +1,268 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0905.0488v5",
+ "source": {
+  "file": "0905.0488v5.pdf",
+  "sha256": "fcf8dee7cd3849b945dd5a85e4ae2cc19f5a36730f236f997c4bb6f545e6d0fe",
+  "bytes": 1085919,
+  "pages": 50,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0905.0488",
+   "version": "5",
+   "primary_class": "math.AG",
+   "stamp_date": "5 Sep 2014"
+  },
+  "doi": null,
+  "title": "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI",
+  "authors_raw": "Dedicated to Rina Yekutieli, my Mother, on her 80th Birthday",
+  "title_lines": [
+   "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC",
+   "VARIETIES",
+   "AMNON YEKUTIELI"
+  ],
+  "abstract": "Let X be a smooth algebraic variety over a \ufb01eldK containing the real numbers. We introduce the notion of twisted associative (resp. Pois- son) deformation of the structure sheafOX. These are stack-like versions of usual deformations. We prove that there is atwisted quantizationoperation from twisted Poisson deformations to twisted associative deformations, which is canonical and bijective on gauge equivalence classes. This result extends work of Kontsevich, and our own earlier work, on deformation quantization of algebraic varieties.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20181107143734Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Background on Crossed Groupoids and Stacks",
+   "page": 11,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Deformations of Sheaves of Rings",
+   "page": 15,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "DG Lie Algebras and Deformations of Affine Varieties",
+   "page": 19,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Twisted Objects in a Stack of Crossed Groupoids",
+   "page": 21,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Combinatorial Descent Data",
+   "page": 25,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Geometric Descent Data and Decomposition",
+   "page": 28,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Total Trivialization of Twisted Deformations",
+   "page": 33,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Lie Descent Data",
+   "page": 36,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "From Lie Descent to Geometric Descent",
+   "page": 39,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Cosimplicial Formality",
+   "page": 42,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Twisted Quantization",
+   "page": 45,
+   "source": "outline",
+   "number": "11"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 48,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 11,
+   "n_chars": 33597,
+   "n_words": 5258
+  },
+  {
+   "id": "sec-001-1-background-on-crossed-groupoids-and-stacks",
+   "number": "1",
+   "title": "Background on Crossed Groupoids and Stacks",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 15,
+   "n_chars": 11129,
+   "n_words": 1816
+  },
+  {
+   "id": "sec-002-2-deformations-of-sheaves-of-rings",
+   "number": "2",
+   "title": "Deformations of Sheaves of Rings",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 19,
+   "n_chars": 10817,
+   "n_words": 1629
+  },
+  {
+   "id": "sec-003-3-dg-lie-algebras-and-deformations-of-affine-var",
+   "number": "3",
+   "title": "DG Lie Algebras and Deformations of Affine Varieties",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 5922,
+   "n_words": 929
+  },
+  {
+   "id": "sec-004-4-twisted-objects-in-a-stack-of-crossed-groupoid",
+   "number": "4",
+   "title": "Twisted Objects in a Stack of Crossed Groupoids",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 10496,
+   "n_words": 1721
+  },
+  {
+   "id": "sec-005-5-combinatorial-descent-data",
+   "number": "5",
+   "title": "Combinatorial Descent Data",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 5362,
+   "n_words": 857
+  },
+  {
+   "id": "sec-006-6-geometric-descent-data-and-decomposition",
+   "number": "6",
+   "title": "Geometric Descent Data and Decomposition",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 33,
+   "n_chars": 14760,
+   "n_words": 2426
+  },
+  {
+   "id": "sec-007-7-total-trivialization-of-twisted-deformations",
+   "number": "7",
+   "title": "Total Trivialization of Twisted Deformations",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 7210,
+   "n_words": 1197
+  },
+  {
+   "id": "sec-008-8-lie-descent-data",
+   "number": "8",
+   "title": "Lie Descent Data",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 39,
+   "n_chars": 9948,
+   "n_words": 1614
+  },
+  {
+   "id": "sec-009-9-from-lie-descent-to-geometric-descent",
+   "number": "9",
+   "title": "From Lie Descent to Geometric Descent",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 42,
+   "n_chars": 6890,
+   "n_words": 1152
+  },
+  {
+   "id": "sec-010-10-cosimplicial-formality",
+   "number": "10",
+   "title": "Cosimplicial Formality",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 45,
+   "n_chars": 8314,
+   "n_words": 1294
+  },
+  {
+   "id": "sec-011-11-twisted-quantization",
+   "number": "11",
+   "title": "Twisted Quantization",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 48,
+   "n_chars": 9936,
+   "n_words": 1523
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 6307,
+   "n_words": 862
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "sections": 13,
+  "chars_total": 140688
+ }
+}

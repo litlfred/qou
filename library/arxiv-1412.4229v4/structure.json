@@ -1,0 +1,189 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1412.4229v4",
+ "source": {
+  "file": "1412.4229v4.pdf",
+  "sha256": "248d6a1e28a76a9477bc5e26d48ff2c418574c8d4812f6d54002f23e76b37738",
+  "bytes": 777925,
+  "pages": 44,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1412.4229",
+   "version": "4",
+   "primary_class": "math.KT",
+   "stamp_date": "24 Oct 2015"
+  },
+  "doi": null,
+  "title": "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI",
+  "authors_raw": null,
+  "title_lines": [
+   "THE SQUARING OPERATION FOR COMMUTATIVE DG RINGS",
+   "AMNON YEKUTIELI"
+  ],
+  "abstract": "Let A \u2192 B be a homomorphism of commutative rings. Thesquar- ing operationis a functorSqB/Afrom the derived categoryD(B) of complexes of B-modules into itself. This operation is needed for the de\ufb01nition ofrigid complexes(inthesenseofVandenBergh), thatinturnleadstoanewapproach to Grothendieck duality for rings, schemes and even DM stacks. In our paper with J.J. Zhang from 2008 we introduced the squaring oper- ation, and explored some of its properties. Unfortunately some of the proofs in that paper had severe gaps in them. In the present paper we reproduce the construction of the squaring opera- tion. This is done in a more general context than in the \ufb01rst paper: here we consider a homomorphism A \u2192 B of commutative DG rings. Our \ufb01rst main result is thatthe square SqB/A(M ) of a DG B-module M is independent of the resolutions used to present it. Our second main result is onthe trace func- toriality of the squaring operation. We give precise statements and complete correct proofs. In a subsequent paper we will reproduce the remaining parts of the 2008 paper that require \ufb01xing. This will allow us to proceed with the other papers, mentioned in the bibliography, on the rigid approach to Grothendieck duality. The proofs of the main results require a substantial amount of foundational work on commutative and noncommutative DG rings, including a study of semi-free DG rings, their lifting properties, and their homotopies. This part of the paper could be of independent interest.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20180916010016Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Some Facts on DG Rings and Modules",
+   "page": 7,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Resolutions of DG Modules",
+   "page": 12,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Central Pairs of DG Rings and their Resolutions",
+   "page": 16,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "DG Ring Homotopies",
+   "page": 23,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Pairs of DG Modules, Compound Resolutions, and Rectangles",
+   "page": 26,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The Rectangle Operation",
+   "page": 32,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "The Squaring Operation",
+   "page": 38,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 12,
+   "n_chars": 28667,
+   "n_words": 4871
+  },
+  {
+   "id": "sec-001-2-resolutions-of-dg-modules",
+   "number": "2",
+   "title": "Resolutions of DG Modules",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 8673,
+   "n_words": 1379
+  },
+  {
+   "id": "sec-002-3-central-pairs-of-dg-rings-and-their-resolution",
+   "number": "3",
+   "title": "Central Pairs of DG Rings and their Resolutions",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 23,
+   "n_chars": 19441,
+   "n_words": 3281
+  },
+  {
+   "id": "sec-003-4-dg-ring-homotopies",
+   "number": "4",
+   "title": "DG Ring Homotopies",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 7565,
+   "n_words": 1248
+  },
+  {
+   "id": "sec-004-5-pairs-of-dg-modules-compound-resolutions-and-r",
+   "number": "5",
+   "title": "Pairs of DG Modules, Compound Resolutions, and Rectangles",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 32,
+   "n_chars": 12704,
+   "n_words": 2365
+  },
+  {
+   "id": "sec-005-6-the-rectangle-operation",
+   "number": "6",
+   "title": "The Rectangle Operation",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 37,
+   "n_chars": 8247,
+   "n_words": 1407
+  },
+  {
+   "id": "sec-006-7-the-squaring-operation",
+   "number": "7",
+   "title": "The Squaring Operation",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 43,
+   "n_chars": 14096,
+   "n_words": 2423
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 3613,
+   "n_words": 486
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 8,
+  "chars_total": 103006
+ }
+}
