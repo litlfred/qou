@@ -86,42 +86,80 @@ theorem sortPerm_strictMono_within {c c' : Composition n} (m : BlockMatch c c')
   rw [Fin.lt_def, coe_sortPerm, coe_sortPerm, hidx]
   omega
 
+/-! ## Mathas' `D_μ`, and Proposition 3.3's length half in full generality
+
+Everything above is stated for `sortPerm`, but its proof used only **one** property of
+that permutation: it never inverts two labels that land in the *same* block.  Mathas
+calls the permutations with that property `D_μ` and defines them tableau-side —
+
+> `D_μ = { d ∈ S_n | t^μ d is row standard }`.  Then `D_μ` is a complete set of right
+> coset representatives of `S_μ` in `S_n`.  Moreover, if `w ∈ S_μ` and `d ∈ D_μ` then
+> `ℓ(wd) = ℓ(w) + ℓ(d)` and `T_{wd} = T_w T_d`.  *(Proposition 3.3)*
+
+— and "`t^μ d` is row standard" is exactly that condition, since the rows of `t^μ` are
+the blocks of `μ` in order.  Defining `D_μ` by the condition rather than by the tableau
+keeps this file free of tableau machinery, and gives Prop 3.3's length half for every
+`d`, not just the block-sorting one.
+-/
+
+/-- **Mathas' `D_μ`**: the permutations that never invert two labels landing in the same
+block of `c`.
+
+Tableau-side this is "`t^μ d` is row standard"; stated here as the order condition it
+amounts to, since the rows of `t^μ` are `c`'s blocks in order. -/
+def IsDistinguished (c : Composition n) (d : Perm (Fin n)) : Prop :=
+  ∀ a b : Fin n, c.index (d a) = c.index (d b) → a < b → d a < d b
+
+/-- `sortPerm` is distinguished — which is why the specialised proofs above worked. -/
+theorem sortPerm_isDistinguished {c c' : Composition n} (m : BlockMatch c c') :
+    IsDistinguished c (sortPerm m) := by
+  intro a b hidx hab
+  refine sortPerm_strictMono_within m a b ?_ hab
+  rw [index_sortPerm, index_sortPerm] at hidx
+  exact m.toEquiv.injective hidx
+
+/-- **Proposition 3.3, length half.**  `ℓ(w·d) = ℓ(w) + ℓ(d)` for `w ∈ S_μ` and any
+`d ∈ D_μ`.
+
+This is what gives `T_{wd} = T_w T_d` through `TwBasis.Tw_mul_Tw`, and it is the fact
+Mathas' whole coset bookkeeping runs on.  `length_mul_sortPerm_eq_add` is the `d =
+sortPerm` case. -/
+theorem length_mul_eq_add_of_isDistinguished {c : Composition (n + 1)}
+    {d : Perm (Fin (n + 1))} (hd : IsDistinguished c d)
+    {w : Perm (Fin (n + 1))} (hw : w ∈ youngOfComp c) :
+    (permCoxeterSystem n).length (w * d)
+      = (permCoxeterSystem n).length w + (permCoxeterSystem n).length d := by
+  rw [length_mul_eq_add_iff]
+  intro p hp
+  rw [mem_invSet] at hp ⊢
+  obtain ⟨hlt, hinv⟩ := hp
+  refine ⟨hlt, ?_⟩
+  -- the two images sit in different blocks: inside one block `d` cannot invert
+  have hne : c.index (d p.1) ≠ c.index (d p.2) := fun heq =>
+    absurd (hd p.1 p.2 heq hlt) (by omega)
+  have hblock : c.index (d p.2) < c.index (d p.1) := by
+    rcases lt_trichotomy (c.index (d p.2)) (c.index (d p.1)) with h | h | h
+    · exact h
+    · exact absurd h.symm hne
+    · exact absurd (lt_of_index_lt c h) (by omega)
+  show w (d p.2) < w (d p.1)
+  refine lt_of_index_lt c ?_
+  rw [index_apply_of_mem hw, index_apply_of_mem hw]
+  exact hblock
+
 /-- **`sortPerm` is minimal-length in its coset** — Mathas' `d ∈ D_μ` — given that it
 is increasing inside each block of `c'`.
 
-**Unconditional.**  The within-block monotonicity it needs is
-`sortPerm_strictMono_within` above, and the inversion-set criterion it runs on
-(#6444) is itself unconditional — so this does not rest on the exchange condition
-Mathlib lacks.
+**Unconditional**, and now a one-line corollary of Proposition 3.3 above: the only
+property of `sortPerm` it ever used is that it is distinguished.
 
 The conclusion is what `T_v T_d = T_{vd}` needs, and hence what the intertwining
 `T_d · x_μ = x_ν · T_d` runs on. -/
 theorem length_mul_sortPerm_eq_add {c c' : Composition (n + 1)} (m : BlockMatch c c')
     {v : Perm (Fin (n + 1))} (hv : v ∈ youngOfComp c) :
     (permCoxeterSystem n).length (v * sortPerm m)
-      = (permCoxeterSystem n).length v + (permCoxeterSystem n).length (sortPerm m) := by
-  rw [length_mul_eq_add_iff]
-  intro p hp
-  rw [mem_invSet] at hp ⊢
-  obtain ⟨hlt, hinv⟩ := hp
-  refine ⟨hlt, ?_⟩
-  -- the two images sit in *different* blocks: within one block `sortPerm` increases
-  have hne : c.index (sortPerm m p.1) ≠ c.index (sortPerm m p.2) := by
-    intro heq
-    rw [index_sortPerm, index_sortPerm] at heq
-    exact absurd (sortPerm_strictMono_within m p.1 p.2 (m.toEquiv.injective heq) hlt)
-      (by omega)
-  -- so the block indices are ordered the same way as the images
-  have hblock : c.index (sortPerm m p.2) < c.index (sortPerm m p.1) := by
-    rcases lt_trichotomy (c.index (sortPerm m p.2)) (c.index (sortPerm m p.1)) with h | h | h
-    · exact h
-    · exact absurd h.symm hne
-    · exact absurd (lt_of_index_lt c h) (by omega)
-  -- and `v` cannot move a label out of its block
-  show v (sortPerm m p.2) < v (sortPerm m p.1)
-  refine lt_of_index_lt c ?_
-  rw [index_apply_of_mem hv, index_apply_of_mem hv]
-  exact hblock
+      = (permCoxeterSystem n).length v + (permCoxeterSystem n).length (sortPerm m) :=
+  length_mul_eq_add_of_isDistinguished (sortPerm_isDistinguished m) hv
 
 /-! ## The mirror: `ℓ(d · w) = ℓ(d) + ℓ(w)`
 
