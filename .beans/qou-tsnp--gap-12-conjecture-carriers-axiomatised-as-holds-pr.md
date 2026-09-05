@@ -349,3 +349,72 @@ the same each time: **a carrier known to be repaired must not come back as
 unrepaired.**
 
 Full detail: `docs/audits/2026-09-05-qou-tsnp-queue-is-five-and-five-parsers-were-wrong.md`.
+
+## 2026-09-05 (final) — all five open carriers repaired; what is left is two author decisions
+
+The five from the re-measurement above are closed. Each in the prescribed shape:
+content encoded as **caller-supplied parameters** (per `ConditionalClasses.lean`'s
+own rule — *"an `∃` over a quantity you get to pick cannot be false, while a `∀`
+about a quantity the caller supplies can"*), refutability **discharged as a
+theorem** rather than claimed in a docstring, and **no instance** provided.
+
+| carrier | PR | encoded | derived | left unstated, and what must grow first |
+|---|---|---|---|---|
+| `PFromBraidMirror` | #6728 | `involutive`, `writhe_neg`, `fixes_q` — the third is what separates `P` from bar | `p_fixed_point_writhe_zero` | `bar = P·C·T`; needs one braid-word type carrying `P`, `C`, `T` at once |
+| `DimMasterPentagon` | #6731 | master identity + specialisation | the transport | — |
+| `KashaevDensityEqualsSdpMultiplicity` | #6734 | the prefactor identity | — | the density half; said plainly rather than fabricated |
+| `Mirror3d3dCorrespondence` | #6737 | `four_loop_matches`, `borromean_h4 = −3/4` | `mirror3d3d_four_loop_value` | a 3d `N=2` partition-function type with a loop-order expansion |
+| `TypeBFoldingCpt` | #6741 | `fold_reverses`, `foldAct_involutive`, `stable_iff_fixed`, `anti_iff_moved` | **four** theorems, incl. `typeBFold_no_global_chirality_grading` | `CPT = C⊗P⊗T` (same missing object #6728 names); the type-`B`-*specifically* label needs a root-system/Cartan type |
+
+Three properties of this batch worth keeping:
+
+1. **Two carriers independently named the same missing object.** #6728 and #6741
+   both stopped at `bar = P·C·T` / `CPT = C⊗P⊗T` for the same reason — no single
+   type carries `C`, `P`, `T` and the fold action simultaneously. Two agents
+   reaching the same boundary from different blocks is evidence the boundary is
+   real, not a convenience.
+2. **#6741 re-derives a corpus result from its own repaired fields.**
+   `typeBFold_no_global_chirality_grading` entails
+   `StandardModel.Chirality.stable_matter_and_global_chirality_incompatible`.
+   That is the strongest available check that a repaired carrier asserts enough:
+   it now implies a known non-trivial fact about its own subject, and with the
+   sign the right way round.
+3. **The D11 lesson was applied prospectively, twice.** A library-twin check ran
+   before #6737 and #6741 and came back empty for the first; for the second it
+   came back **non-empty** — `QOU.BraidKnot.SymmetricCrystalPairProduction`
+   already carries the bar-invariance leg — so that leg was deliberately **not**
+   restated. D11's failure mode (a second carrier competing with a real one) was
+   avoided by design rather than caught after the fact.
+
+**Seven dead pointers dropped across the batch** — `lean/QOU/…/<Carrier>.lean`
+"(file pending)" headers naming files that do not exist, plus one `.md` section
+reference with no such section. This rot is systematic in the queue, not
+incidental; a carrier repair should grep its own header before trusting it.
+
+### What remains — both are author decisions, neither is repair work
+
+- **D11 `WignerSu4FromSpinIsospin` ref repoint** (the mis-ref above). Zero
+  consumers of either class, so the no-op is safe and cheap.
+- **The 2026-08-23 wiring decision** (`UNPINNED-EMPTY` as a ledger criterion,
+  which turns `--check-ledger` red corpus-wide until ~77 carriers are read).
+
+Both are framed with evidence, options, defaults and blast radius in
+[`docs/audits/2026-09-05-four-decisions-from-the-carrier-queue.md`](../docs/audits/2026-09-05-four-decisions-from-the-carrier-queue.md)
+(PR #6740).
+
+### One defect found, flagged not fixed — it is in two ALREADY-MERGED PRs
+
+`voice-scholarly-default`'s `SECOND_PERSON_RE` matches **"you get"**, and it
+scans Lean docstrings. #6683 and #6728 each quote `ConditionalClasses.lean`'s
+rule verbatim, so each contains that string; both read `pass` **only because
+their sidecars are stale**. Measured on `spin-from-so3-fiber` (#6683): the
+criterion's recorded verdict is `2026-07-19T17:19:09Z` against lean hash
+`01a66001ac03`, while the live hash is `dc3554e7761d` — a verdict about a file
+that predates the repair it is supposedly clearing. `p-from-braid-mirror` (#6728)
+is the same shape. **Both would fail on re-sweep.** #6741 paraphrased instead and
+is clean.
+
+This is the general hazard, not a one-off: **a stale sidecar reads exactly like a
+pass**, so a QA sweep run against a file the sidecar predates certifies nothing.
+The block-level fix is to paraphrase the quote in both files and re-sweep;
+recorded here rather than done, because it edits two merged PRs' content.
