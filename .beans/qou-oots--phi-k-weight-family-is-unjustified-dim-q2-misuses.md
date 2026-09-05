@@ -239,3 +239,53 @@ The `N ≥ n` condition is stated in a **held but uncited** source — `library/
 - **`wedderburn_jones_markov.py` contradicts itself inside one function.** `:355-359` says the `y_λ` path replaces the 2-variable Schur *because* the latter vanishes for >2 rows — implying `y_λ` does not. `:385-395`, same function, says `y_λ` is *"EXACTLY zero for every λ with ≥ 3 rows"*. The docstring is convention-C-era; the body is D.
 - **Strand count still unreconciled, with a third site.** `H_{A+Z}` at `atomic-braid.md:2` **and `wedderburn-mass-formula.md:2`** (same chapter as the `3A` claim) against `H_{3A}` at `schur-weyl-mass-decomposition.md:1` and `hecke_3a_weights.py:5`. Does not affect this answer — `N = dim V` is independent of `n`.
 - **`markov-trace-frobenius-selection.md:19` calls the fibre-trace premise open** while `TraceBlindSector.lean:26-30` argues it is resolved. Two live positions; they agree on `N = 2` either way, since the volume-axiom route does not go through it.
+## 2026-09-05 (later) — the two survivors are now separable, on grounding
+
+Two new measurements, both in exact rational arithmetic, both with their own
+witness:
+
+**(1) Molien IS the literature's q-Plancherel measure — now exact, not sampled.**
+`probes/molien_feray_meliot_bridge_probe.py` (5/5). The bean already recorded
+this identification 'exact in Q(q), n=2,3,4,5'. It is now verified for EVERY
+partition of n=1..9 (96 of them) as equality of rationals, plus the two
+identities that make the kappa exponent forced rather than chosen
+(`sum h = n(lam)+n(lam')+n`, `kappa = n(lam')-n(lam)`, both over n<=10), plus
+Feray-Meliot's duality `M_{n,1/Q}(lam') = M_{n,Q}(lam)` over n<=9 — which is
+what lets their q<1 theorems reach the substrate's Q = q0^2 ~ 1.232.
+`prop:q-plancherel-asymptotic-skeleton` is rehomed onto it (`qou-j7ef`, PR #6771).
+
+**(2) Only Molien is a measure BY IDENTITY.**
+`probes/plancherel_deformation_uniqueness_probe.py` (3/3). Of the three
+numerators in the corpus, over [n]_q!, exactly one sums to 1:
+
+    (f^lam)^2             -> n!/[n]_q!, falls 0.980 -> 0.326 over n=3..12
+    f^lam q^{-kappa} d_q  -> 1, exactly, every n, every q
+    d_q^2                 -> rises 0.987 -> 1.517 over the same range
+
+The two failures go in OPPOSITE directions in n, so no single rescaling repairs
+both. And the kappa exponent is forced UP TO CONJUGATION: over c in [-3,3],
+exactly c = -1 and c = +1 normalise `f^lam q^{c kappa} d_q`, and those two are
+one measure on transposed diagrams (conjugation fixes f^lam and the hook
+multiset and negates kappa — verified over all partitions of n<=9). I predicted
+a unique exponent; the measurement gave two, and the second turned out to be the
+same rows-vs-columns duality as in (1), reached from a different direction.
+
+**WHAT THIS DOES AND DOES NOT SETTLE.** It does NOT add a fourth requirement:
+R2 asks only for an n-independent normaliser and BOTH survivors satisfy it, so
+both remain legitimate probability measures and the choice is still not forced
+by the requirement set. What it separates is HOW each earns normalisation —
+Molien by a Lean-proved identity for all n and all q>1, `d_q^2/D^2` by dividing
+by whatever makes the sum 1 — and Molien additionally carries a literature
+asymptotic theorem (LLN for row lengths + CLT at scale sqrt(n)) that
+`d_q^2/D^2` has none of.
+
+**MY RECOMMENDATION (judgement, not a finding): Molien.** Normalised by a
+theorem rather than by construction, externally grounded, and its kappa is
+forced. The cost is that it CHANGES THE k=3 ANSWER — the FR-variance route
+names 5_2 under Molien and 6_1 under `d_q^2/D^2`. The paper's structural 6_1
+naming comes from the GB-filtration route and carries no weight family at all
+(`qou-9b50`), so it is untouched either way; but the FR route's agreement with
+it is not.
+
+**STILL OPEN, and it is the author's call**, because wiring a family into the
+production Phi_k moves physics-facing numbers and the choice is not derived.
