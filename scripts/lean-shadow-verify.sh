@@ -64,11 +64,6 @@ if [ -z "${SHADOW:-}" ]; then
   trap 'rm -rf "$SHADOW"' EXIT INT TERM
 fi
 
-# The build time of the snapshot: the newest olean in the tree.
-BUILT=$(find "$OLEANS/QOU" -name '*.olean' -printf '%T@\n' | sort -rn | head -1)
-BUILT_ISO=$(date -u -d "@${BUILT%.*}" +'%Y-%m-%d %H:%M:%S')
-echo "olean snapshot built: $BUILT_ISO UTC"
-
 if [ ! -d "$SHADOW/QOU" ]; then
   echo "copying olean tree into shadow ($SHADOW) ..."
   cp -a "$OLEANS/QOU" "$SHADOW/QOU"
@@ -76,23 +71,43 @@ fi
 
 LP="$SHADOW:$(ls -d "$ROOT"/.lake/packages/*/.lake/build/lib/lean | tr '\n' ':')$OLEANS"
 
-ORDER=$(BUILT_ISO="$BUILT_ISO" ROOT="$ROOT" python3 - "$@" <<'PY'
+ORDER=$(OLEANS="$OLEANS" ROOT="$ROOT" python3 - "$@" <<'PY'
 import os, re, pathlib, subprocess, sys
 root = pathlib.Path(os.environ["ROOT"])
 pkg = root / "content/quantum-observable-universe/lean"
+oleans = pathlib.Path(os.environ["OLEANS"])
 mod2path = {}
 for p in pkg.glob("QOU/**/*.lean"):
     mod2path[str(p.relative_to(pkg).with_suffix("")).replace("/", ".")] = p
 imports = {m: [i for i in re.findall(r"^import\s+(\S+)", p.read_text(), re.M) if i in mod2path]
            for m, p in mod2path.items()}
 
-out = subprocess.run(
-    ["git", "log", f"--since={os.environ['BUILT_ISO']}", "--name-only", "--format=", "--",
-     str(pkg / "QOU")], cwd=root, capture_output=True, text=True).stdout.split()
-changed = {str(pathlib.Path(c).relative_to("content/quantum-observable-universe/lean")
-                 .with_suffix("")).replace("/", ".")
-           for c in out if c.endswith(".lean")}
-changed &= set(mod2path)
+# Staleness is PER MODULE, not against one snapshot date.  The restored tree is
+# mixed-age (oleans carry the mtime of whichever build wrote them), so taking
+# the newest olean as "the" build time silently declares older modules current.
+# Compare each module's own olean mtime against the commit date of its source.
+# Source mtimes are useless here — a fresh clone stamps every file with the
+# checkout time — so the source side comes from git, in one pass.
+lastcommit, ts = {}, None
+log = subprocess.run(["git", "log", "--format=%ct", "--name-only", "--",
+                      str(pkg / "QOU")], cwd=root, capture_output=True, text=True).stdout
+for line in log.splitlines():
+    if not line:
+        continue
+    if line.isdigit():
+        ts = int(line)
+    elif line.endswith(".lean"):
+        lastcommit.setdefault(line, ts)   # log is newest-first, so first wins
+
+changed = set()
+for m, p in mod2path.items():
+    o = oleans / (m.replace(".", "/") + ".olean")
+    if not o.exists():
+        changed.add(m)                     # never built
+        continue
+    c = lastcommit.get(str(p.relative_to(root)))
+    if c is None or c > o.stat().st_mtime:
+        changed.add(m)
 
 # import cone of the targets
 cone, stack = set(), []
