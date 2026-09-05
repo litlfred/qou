@@ -54,6 +54,17 @@ import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor
 
+# The lakefile's [leanOptions] are NOT applied by a bare `lean` invocation, and
+# the difference is not cosmetic: `autoImplicit` defaults to TRUE in `lean` and
+# is set FALSE here, so bare lean-direct silently auto-binds unbound identifiers
+# that Lake correctly rejects.  Measured 2026-09-05 on
+# QOU/MassTheory/AtomWordShadow.lean, same file and same LEAN_PATH:
+#     lean                        -> exit 0, 0 errors
+#     lean -DautoImplicit=false   -> exit 1, 6 errors
+# `-s 65536` mirrors the paper lakefile's `moreLeanArgs` (one generated module
+# overflows the default elaboration stack and aborts with a bare exit 134).
+LEAN_OPTS = ["-DautoImplicit=false", "-s", "65536"]
+
 ROOT = pathlib.Path(
     subprocess.run(["git", "rev-parse", "--show-toplevel"],
                    capture_output=True, text=True, check=True).stdout.strip())
@@ -206,7 +217,7 @@ def main() -> int:
             src = PKG / (m.replace(".", "/") + ".lean")
             out = shadow / (m.replace(".", "/") + ".olean")
             out.parent.mkdir(parents=True, exist_ok=True)
-            r = subprocess.run(["lean", str(src.relative_to(PKG)), "-o", str(out)],
+            r = subprocess.run(["lean", *LEAN_OPTS, str(src.relative_to(PKG)), "-o", str(out)],
                                cwd=PKG, env=env, capture_output=True, text=True,
                                timeout=1800)
             return m, r.returncode, (r.stdout + r.stderr)

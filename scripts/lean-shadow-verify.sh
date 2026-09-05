@@ -49,6 +49,15 @@ ROOT=$(git rev-parse --show-toplevel)
 PKG="$ROOT/content/quantum-observable-universe/lean"
 export PATH="$HOME/.elan/bin:$PATH"
 
+# A bare `lean` does NOT apply the lakefile's [leanOptions].  That is not
+# cosmetic: `autoImplicit` defaults TRUE in `lean` and is set FALSE in both
+# lakefiles, so bare lean-direct silently auto-binds unbound identifiers that
+# Lake rejects.  Measured 2026-09-05 on QOU/MassTheory/AtomWordShadow.lean,
+# same file and same LEAN_PATH: `lean` exit 0 / 0 errors,
+# `lean -DautoImplicit=false` exit 1 / 6 errors.  `-s 65536` mirrors the paper
+# lakefile's moreLeanArgs.  Bean `qou-56qy`.
+LEAN_OPTS="${LEAN_OPTS:--DautoImplicit=false -s 65536}"
+
 [ $# -ge 1 ] || { echo "usage: $0 <file.lean> [...]" >&2; exit 2; }
 
 # WHERE THE QOU OLEANS ARE depends on how the tree was built, and the two
@@ -173,7 +182,7 @@ for m in $ORDER; do
   src="$PKG/${m//./\/}.lean"
   out="$SHADOW/${m//./\/}.olean"
   mkdir -p "$(dirname "$out")"
-  if ! (cd "$PKG" && LEAN_PATH="$LP" lean "${src#$PKG/}" -o "$out") > "$SHADOW/.rb.log" 2>&1; then
+  if ! (cd "$PKG" && LEAN_PATH="$LP" lean $LEAN_OPTS "${src#$PKG/}" -o "$out") > "$SHADOW/.rb.log" 2>&1; then
     echo "REBUILD FAILED [$i/$n] $m"
     grep -v '^note:' "$SHADOW/.rb.log" | head -30
     exit 1
@@ -192,7 +201,7 @@ fi
 rc=0
 for f in "$@"; do
   echo "--- $f"
-  LEAN_PATH="$LP" lean "$f" 2>&1 | grep -v '^note:'
+  LEAN_PATH="$LP" lean $LEAN_OPTS "$f" 2>&1 | grep -v '^note:'
   s=${PIPESTATUS[0]}
   echo "EXIT=$s"
   [ "$s" -eq 0 ] || rc=1
