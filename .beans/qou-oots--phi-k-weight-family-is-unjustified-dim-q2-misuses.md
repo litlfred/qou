@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-09-05T09:27:34Z
+updated_at: 2026-09-05T11:18:56Z
 ---
 
 ## 2026-09-05 — requirement derivation + prune + discriminator (in-progress; the CHOICE is open, the PRUNE is not)
@@ -550,3 +550,47 @@ class as everything else in this thread.
 
 NOT FIXED, separate defect: additive_wedderburn_volumes is float64 throughout
 (a, b = 0.0, 1.0) on a path ending at a CODATA comparison.
+
+## 2026-09-05 (later still) — 🛑 RETRACTION: my "TL constraint" was a scope error the audit already names
+
+**Probe:** `computations/probes/phi_k_is_not_a_trace_probe.py`, 4/4, exit 0, zero builtin-float coercions, no witness.
+
+### What I claimed, merged in #6806
+
+> *"Any weight family consistent with the corpus's canonical trace must vanish on `ker(H_n ↠ TL_n)` … no candidate currently on the table satisfies the corpus's own consistency requirement."*
+
+### Why it is wrong — three ways, any one sufficient
+
+1. **The Φ_k audit names this as the error it exists to block.** Its **R3** row reads: *"no Markov property is required — **Φ is not a trace** … it removes the reason to want `y_λ` and **blocks a scope error**."* My constraint is exactly that scope error.
+2. **Φ_k is not linear on the algebra.** `Φ_k(β) = Σ_{λ: depth k} w_λ·log(|χ^λ(β)|·d_q(λ))` — a log-weighted sum over one stratum. `tr_M = Σ_λ y_λ χ^λ` is a linear functional on `H_n(q)`. A kernel argument about which *algebra elements* act as zero says nothing about which *partitions* a separate functional may weight.
+3. **It annihilates its own subject.** Imposed, it forces `w_λ = 0` on every λ with ≥3 rows — every stratum of depth ≥ 2 — so `Φ_k ≡ 0` for **all** `k ≥ 2` by the audit's own R1. A requirement that forbids the object being constructed is a reductio.
+
+### And the "fifth measure" I endorsed FAILS R1
+
+§4 named the TL share `(f^λ)²/C_n` over `ℓ(λ) ≤ 2` as *"the one candidate that clears the constraint"*. It clears it by being zero off the two-row cap — precisely what R1 retires `y_λ` for. Measured per stratum:
+
+| n | d0 | d1 | d2 | d3 | … |
+|---|---|---|---|---|---|
+| 4 | 0.07143 | 0.9286 | **0.0** | **0.0** | |
+| 9 | 0.0002057 | **0.9998** | **0.0** | **0.0** | all 0.0 |
+
+**My proposed solution was the degenerate case.**
+
+### Molien — the ruling's answer — satisfies R1 and R2 on exactly those strata
+
+| n | d0 | d1 | d2 | d3 | d4 |
+|---|---|---|---|---|---|
+| 6 | 0.0002492 | 0.09749 | 0.4683 | **0.3487** | 0.07958 |
+| 9 | 3.941e-8 | 0.002391 | 0.1115 | **0.3916** | 0.3446 |
+
+Nonzero on every depth ≥ 2 stratum — peaking on **depth 3, the chirality channel** — and total mass exactly 1 at n = 3…9 (R2). The owner ruling *"molien. do the two arm reporting"* is unopposed by anything I measured.
+
+### What survives from #6806
+
+§1 (`N = 2`, four corpus witnesses — the question that audit was written to settle), §2 (the TL/Catalan arithmetic and the six kernel dimensions), §3 (the depth off-by-one and the `N = 3`-is-also-null measurement), and the follow-on §4c/§4d defects. **Only §4's constraint and its endorsed measure are withdrawn.**
+
+### Contamination
+
+The same claim was sent to sibling PR #6771 (comment 5550892514) as *"three of your four rows violate it"*. Corrected there. It reached no content block, no Lean file, no witness — the sibling's `qou-oots` closure was reached independently and does not rest on it.
+
+**This is the third error of mine in this arc** — after the depth off-by-one and the wrong-algebra F4 — and it is the same shape as both: a correct local measurement carried into a frame it does not license.
