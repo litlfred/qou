@@ -583,3 +583,47 @@ two remain the two; everything between them is a fit; everything outside them
 costs the trace property.
 
 Scope-(a); nothing wired, no content block edited, no `c_k` proposed.
+
+
+## 2026-09-05 (3) — DECISION DOCUMENT: the seven options, costed
+
+Owner: *"Do a deep analysis of all the options. Include the pros and cons
+downstream impacts recommendations."*
+
+[`docs/audits/2026-09-05-qbeta-functional-decision-options.md`](../docs/audits/2026-09-05-qbeta-functional-decision-options.md).
+
+The two existing audits state the *finding*; neither enumerates what can be
+**done**. That gap is what this fills. Seven options, each with what it means /
+costs / risks / commits to, plus the downstream map and a recommendation.
+
+Two facts established here that change how the whole thing reads:
+
+- **The 0.17 % is not a fit.** The ansatz appears in audit docs from
+  **2026-05-01**; convention D was ruled **2026-08-15**. The number predates
+  the constraint that excludes its functional by ~3.5 months. *(Chronology from
+  authored filename dates — `git log` dates are rebase-rewritten here and are
+  not a valid signal. I tried `git log -S` first and it returned the landing
+  commit, not the authoring one.)*
+- **No calibration moves under any option.** AGENTS.md: Q_β is a
+  *"cross-check, not a fourth input"*. q₀, m_e, m_π, the mass channel and the
+  binding channel are all untouched whichever way this goes. That makes the
+  decision far lower-stakes than the +0.168 % vs +12.470 % gap suggests.
+
+And **one hope killed**: passing to the TL quotient does *not* collapse `Δ_S`
+and `Δ_L` into one class — the augmentation is admissible and separates them
+(+12.470 % vs +39.324 %). **The functional question and the element question
+are independent**; settling either leaves the other open.
+
+**Recommendation (judgement, not finding): Option A** — keep the published
+value, disclose the inadmissibility, and reclassify it as a pre-D / C-frame
+conditional result, exactly as the `c_k` ladder is already handled. It is the
+only option that describes the situation accurately, the blast radius is near
+zero, and it forecloses nothing. Explicitly **not** recommended: adopting the
+augmentation or the `z_D` trace, which replace a correct-but-inadmissible
+number with an admissible-but-wrong one.
+
+Option G (drop the trace condition) is listed but **struck**, not weighed:
+without the trace property the value depends on the braid word rather than the
+link, so the element ambiguity becomes permanent rather than open.
+
+Scope-(a); nothing wired, no content block edited, no `c_k` proposed.
