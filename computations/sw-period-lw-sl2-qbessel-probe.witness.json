@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T15:05:32.275046+00:00",
-  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
+  "computedAt": "2026-09-05T17:30:46.746164+00:00",
+  "commitSha": "cc965c91dd849b858b477fc0d0e172ac8f67f0fa",
   "assertions": [
     {
       "name": "sl2_depth2_diverges_from_lw_by_n6",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 20,
+  "durationMs": 18,
   "computation": "sw-period-lw-sl2-qbessel-probe",
   "scriptFile": "sw_period_lw_sl2_qbessel_probe.py",
-  "scriptHash": "db4a55db8760",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "d06e9467f89c",
+  "scriptCommitSha": "d645877e7ca70b97951bcd1ea443a07b2fbb5b39",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,9 +38,19 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
+  "invocation": {
+    "argv": [
+      "computations/sw_period_lw_sl2_qbessel_probe.py"
+    ],
+    "reproduce": "python3 -u computations/sw_period_lw_sl2_qbessel_probe.py"
+  },
+  "description": "Prolonged SW periods a_D^(n) = (1/n) * sum_{lambda |- n} dim_q V_lambda against the depth-2 SL2 recurrence a_{n+2} = tau*a_{n+1} - a_n at the proton pin. Produces the table prop:sl2-prolongation-recurrence publishes: the two series agree at n=4 by construction (tau is that row rearranged, so it is not a test) and diverge from n=6, reaching -52.21 % by n=8. The closed form grows super-exponentially while any det=1 depth-2 recurrence grows geometrically, so the depth-2 form is an n<=4 effective germ and the true prolongation kernel is of q-Bessel class.",
+  "contentBlock": "prop:sl2-prolongation-recurrence",
   "auditOnly": "docs/audits/2026-06-25-sw-jet-prolongation-explicit-and-fork.md",
   "parameters": {
     "q_0": "1.1099785827513808075916690956107688798744991218736"

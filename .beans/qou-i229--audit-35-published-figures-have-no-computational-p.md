@@ -711,12 +711,89 @@ producing them, which is a distinct false-positive class the coverage score
 cannot see. Second, several blocks' figures are the load-bearing constants above,
 where the floor is worst.
 
-- [ ] `prop:sl2-prolongation-recurrence` is the strongest candidate (8/8, twice
-      over) and the right next one to read.
-- [ ] `prop:alpha-em-categorical-trace-ratio` is the one to look at hardest:
-      **nothing in 3277 witnesses covers more than 1 of its 4 figures.** That is
-      the signature of a genuinely unproduced figure rather than a misplaced
-      pointer — the opposite finding from the last two blocks.
+## TRIAGE 4: `prop:alpha-em-categorical-trace-ratio` — TWO BLOCKS PUBLISH THE TWO SIDES OF ONE IDENTITY AT DIFFERENT PINS
+
+Probe: `two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py`
+(6/6). Taken first *because* nothing in 3277 witnesses covered more than 1 of its
+4 figures — the signature of an unproduced figure rather than a misplaced
+pointer. It was, and the reason is worse than either.
+
+**The block proves an exact identity and then disagrees with itself across
+blocks.** It states
+
+    α_EM = h²/(q·δ_q(T_2,9)·δ_q(T_3,5)) = 1/(q [9]_q [10]_q)
+
+which holds at **any** `q` — `δ_q(T_2,9) = h[9]_q` and `δ_q(T_3,5) = h[10]_q`
+cancel the `h²` — verified to `1e-53` at every registered pin. It is algebra, not
+agreement. It then cites `prop:em-coupling-projection` for the right-hand side:
+
+    side                        block                 pin      α_EM × 10³
+    h²/(q δ₉ δ₁₀)               this block            MUON     7.30870098
+    1/(q[9]_q[10]_q)            em-coupling-projection PROTON   7.30870156
+
+**A `7.94e-8` disagreement between two quantities the corpus has proved equal.**
+Sharper than the `em-coupling-bring-zero-mode` cross-block finding: there two
+blocks merely published the same quantity, here one *derives from and cites* the
+other. They cannot both be right.
+
+### The pin determination is unambiguous; the vintage is not, and is not guessed
+
+Rounding test against every registered `q₀`, on all four table figures:
+
+    proton      0/4   DECISIVELY EXCLUDED (residuals 1.0e-7 to 1.5e-7)
+    muon live   4/4
+    retired     4/4
+    frozen A    4/4
+
+The muon family is certain. **The vintage cannot be determined**: the three
+variants differ by `7.98e-11` relative, the sharpest published figure carries 9
+significant digits, and separating them needs ~12. Stated explicitly in probe,
+witness caveat and block, because this bean has twice recorded that "no resolving
+power" and "clean" look identical in a results table.
+
+### Why the sweep found no carrier — and a false provenance sentence
+
+The block cited `delta-q-decoration.witness.json` with *"The witness assertion
+validates this match."* That witness declares a **different** block
+(`def:delta-q-decoration`), carries Markov-trace machinery rather than any of
+these four quantities, and is anchored `q0Anchor: proton`. It validates nothing
+here and disagrees on the pin. So the live compute for this quantity follows the
+sibling onto proton, and no carrier exists anywhere — exactly what the
+coverage sweep saw. Sentence corrected; **labelled, not recomputed**, since
+choosing between the two blocks is the anchor ruling, not a substitution.
+
+Report now **9 blocks / 46 asserted**, from 15/79.
+
+- [ ] **Owner: this one needs a ruling more than the others.** Elsewhere a stale
+      pin is a data-refresh question; here two blocks publish the two sides of a
+      proven identity and one of them must move.
+## TRIAGE 5: `prop:sl2-prolongation-recurrence` — the pattern a third time
+
+The coverage worklist was right. Both 8/8 candidates carry **all nine** of the
+block's figures — both columns of its table — which at the 9–10 sig-fig floor
+(2.7 % per figure) is ~1e-14, not coincidence.
+
+Distinguishing producer from sibling took reading, not scoring:
+`sw_period_lw_sl2_qbessel_probe.py` carries `period_table_n2_to_n8` — literally
+the block's table — and its two assertions are the block's two claims
+(`sl2_depth2_diverges_from_lw_by_n6`, `lw_growth_ratio_exceeds_sl2_lambda_plus`).
+`binding_recurrence_spectral_bridge_probe.py` shares the sequence but is about
+the spectral bridge (λ₊, det). **Both declared no `contentBlock`**; the block's
+pointer sat on `unified_tau_odd_partner_solve.py`, which solves for τ and carries
+none of the sequence. Declared the producer, and filled in its **null
+description** while there. Row closed.
+
+Worth noting the block itself is sound: its table exists to show the depth-2
+recurrence *fails* (−52.21 % by n=8), and the n=4 row is true by construction
+because τ is that row rearranged — which the block already says.
+
+Report now **8 blocks / 38 asserted**, from 15/79.
+
+- [ ] Six blocks left. `prop:q-beta-spectral-bridge` (12 asserted, best coverage
+      6/12) is the largest and is already known to diverge 21 % from its
+      producer — it belongs with `qou-cds1` rather than here.
+      `prop:confined-knot-binding` and `prop:frobenius-gram-matrix` (3/6, 3/5)
+      are the next readable ones.
 - [ ] Consider whether `contentBlock`-on-a-verifier deserves its own check. The
       signature is mechanical: a witness declaring a block whose assertions are
       all engine-agreement comparisons and whose data carries none of the block's
