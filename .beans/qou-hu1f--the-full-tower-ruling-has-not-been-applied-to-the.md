@@ -628,3 +628,66 @@ production blocks differing by `6.38×` at `A = 1`. What changes is the *story
 about the residual*: it was never evidence for the ordering, because it was
 never a pure ordering effect. The ordering finding rests on the Lean closed
 form, which is untouched by any of this.
+
+## GATED (2026-09-05): `scripts/word-provenance-gate.py`
+
+Three instances of the same error on one bean in two days, one of them green in
+CI — that is a gate, not another bean note. Owner: "add the gate."
+
+**What it catches.** A hardcoded braid word — a list of 2- or 3-tuple crossing
+letters, including `+`/`*` forms — assigned to a name, in a file that also
+references a word producer or a Markov-trace entry point. Escape hatch
+`# word-literal-ok: <reason>`, which may head a multi-line provenance note.
+
+**The mechanism is the annotation, not the detection.** Writing down *why* a
+literal is trustworthy is the moment the author looks for the electron. An
+annotation reading "transcribed from `<producer>`" is the defect restated, and
+the gate's message says so.
+
+### Validated against the real defect, not a mock
+
+Run against the actual committed `nf_vs_canonical_word_order_probe.py` at
+`08cb80478a9`, it flags `nf_seq` at line 182. **The gate would have caught the
+thing that shipped green.**
+
+### Precision: 151 -> 20, by narrowing three times
+
+The first predicate fired on every isotope table in the corpus (`(Z, N)` pairs,
+`("2H", 1, 1)` rows, decay tables). A gate at 151 hits, mostly noise, is one
+nobody can adopt. Narrowed to three routes — word-ish NAME, crossing-string
+VOCABULARY, `(c, d, gen)` SHAPE in a file naming a trace — with a `tabular`
+exclusion for literals carrying non-crossing strings. Every surviving hit is a
+genuine word literal.
+
+### The self-test caught me twice, which is the point of having one
+
+- The escape hatch silently did not work for a marker heading a multi-line
+  comment block — the shape a real provenance note takes. Found because my own
+  annotation failed to suppress its hit.
+- **The first negative control did not discriminate.** Deleting the whole NAME
+  route left the self-test green, because the known positive `nf_seq` was also
+  caught by the crossing-string route. A self-test with one known positive
+  proves only that *something* matches. Now each route has its own positive, and
+  all five negative controls (disable NAME / TOKEN / SHAPE / detection / the
+  tabular exclusion) fail the self-test as they must.
+- The self-test count is derived, not written down: a hardcoded `4/4` was wrong
+  within an hour, which is the same stale-literal failure the gate is about.
+
+### Wiring, and why it is not blocking on the whole tree
+
+`.github/workflows/word-provenance-gate.yml` is **diff-scoped and blocking**,
+exactly as `probe-float64-gate.yml` is and for the same reason. It stops the
+number growing.
+
+`scripts/precision-gates.sh` carries it **advisory**, red at 20, to keep the
+backlog visible. Those 20 are essentially all legitimate first-principles
+constructions (`(σ₀σ₁⁻¹)³` and friends) that need a one-line annotation — and
+they are deliberately **not** bulk-annotated here: writing "trustworthy
+because…" for a file I have not read is the same defect the gate catches. Drain
+per file, by whoever owns it. Two are annotated, in the probe I actually worked.
+
+### What it does not reach
+
+Prose. Instances 1 and 2 were sentences in a bean and a docstring, and no static
+check touches those. The gate narrows the class; the rule still stands — **if
+you state what word a producer emits, you must have called it.**
