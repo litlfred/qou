@@ -7225,3 +7225,45 @@ move the 10.5 % conclusion, and reconciling it belongs with that probe's owner.
 **(a).** Convention C. Not a claim that the swing gate is wrong — its cancellation
 derivation is sound and its use as the primary filter stands. Only that its
 tolerance should be **±0.0052**, not zero.
+
+---
+
+## Route 5, projection: the mechanism is PARTIAL, and it retracts my own #6875 (2026-09-05)
+
+Probe: `computations/qbeta/qbeta_fibre_projection_and_rou_sublocus_probe.py` (5/5).
+Audit: `docs/audits/2026-09-05-cds1-projection-and-rou-sublocus.md`.
+
+**Retraction first.** #6875 derived `N = 5` (modulus kept) / `N = 4` (analytic
+continuation) from the reality of `Q_A/m_e = |q²−2q−1|(q+1)/(2q³)` on `|q| = 1`.
+**That form holds only on the real axis** — it follows from the block's own
+`|Δ(net)|·E_0` only via `|q²−1| = (q−1)(q+1)`, which needs `q` real `> 1`.
+Measured gap: `0` at `q = 1.1`, **2.407** at `q = e^{i/3}`, **1.186** at
+`q = e^{iπ/3}`. Both `N` values are withdrawn.
+
+**The mechanism was already in the corpus.** `neutron-qvalue-symbolic` writes
+`𝔔_β = |Δ(net)| · E_0` — the projection *is* the modulus, and it is applied to
+`Δ(net)` alone, with `E_0 = m_e/(q(q−1))` unprojected. That partiality is the
+entire source of the reality condition:
+
+    𝔔_β real on |q|=1  ⟺  Im[q²−q] = sin φ (2 cos φ − 1) = 0
+                       ⟺  φ ∈ {π/3, π, 5π/3}    — the SIXTH roots
+
+A **full** projection `|Δ(net)·E_0|` is real for every `q` and selects nothing.
+**So the projection question and the N question are one question.** Taking the
+full projection *because* it admits the required phase would be fitting the
+mechanism to the target — named, not taken.
+
+**The root-of-unity sublocus is EMPTY**, on grounds independent of `θ`:
+`π/3` and `5π/3` are primitive 6th roots, where `q⁶−1 = (q²−1)(q⁴+q²+1)` forces
+`q⁴+q²+1 = 0` and so Hoefsmit `b² = (q⁴+q²+1)/(q²+1)² = 0` — `V_{(2,1)}`
+decouples; `φ = π` gives `h = q − 1/q = 0`. Verified numerically (4.139e-41 at
+40 dps) and exactly (`expand_complex` → 0); `sympy.simplify` alone reports a
+**false** non-degeneracy here.
+
+`θ` is not the binding constraint: it sits 18.496× below `π/3`, but the
+emptiness is established before `θ` is mentioned.
+
+**Scope (a)** for the reality arithmetic; the degeneracy exclusion is exact.
+**Route 5 is not closed** — `|q| = 1` is much more than its roots of unity, and
+the full projection stays structurally available at the price of selecting
+nothing.
