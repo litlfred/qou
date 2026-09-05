@@ -1,0 +1,143 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T09:06:36.680770+00:00",
+  "commitSha": "90a2022c7f08988b230880f5d1a619bd1d57526c",
+  "assertions": [
+    {
+      "name": "P1_inter_crossings_only_at_even_runs",
+      "computed": "414",
+      "expected": "414",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "words",
+      "source": "over 14 carrier branch-isotope pairs and 400 random monotone words."
+    },
+    {
+      "name": "P2_components_are_strand_intervals",
+      "computed": "414",
+      "expected": "414",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "words",
+      "source": "over 14 carrier branch-isotope pairs and 400 random monotone words."
+    },
+    {
+      "name": "P3_linking_graph_is_exactly_the_path",
+      "computed": "414",
+      "expected": "414",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "words",
+      "source": "over 14 carrier branch-isotope pairs and 400 random monotone words."
+    },
+    {
+      "name": "P4_mu_eq_one_plus_even_run_count",
+      "computed": "414",
+      "expected": "414",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "words",
+      "source": "over 14 carrier branch-isotope pairs and 400 random monotone words."
+    },
+    {
+      "name": "P5_every_even_run_is_wholly_inter_component",
+      "computed": "414",
+      "expected": "414",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "words",
+      "source": "over 14 carrier branch-isotope pairs and 400 random monotone words."
+    },
+    {
+      "name": "ALL_FIVE_predictions_hold_on_EVERY_word",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "stated as its own assertion so a partial failure cannot hide behind four passing rows."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "monotone-word-component-structure",
+  "scriptFile": "monotone_word_component_structure_probe.py",
+  "scriptHash": "427b972c0a02",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/monotone_word_component_structure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/monotone_word_component_structure_probe.py"
+  },
+  "description": "EXPLORATORY. Closes the tier-1 gap EpsEqFromMonotonicity.lean left open, and derives the path linking graph the carrier arc has assumed throughout. ARGUMENT: in a monotone word generator g moves only positions g, g+1, and every earlier run touched only positions < g+1 -- so when run R_g begins position g+1 still holds strand g+1, and every crossing of that run is between ONE fixed strand pair. The run restores the pair when e_g is even and swaps it when odd, so the closure permutation is the product of sigma_g over odd runs and its cycles are the maximal consecutive odd blocks. Hence an ODD run crosses two strands of the SAME component and an EVEN run crosses ADJACENT components. Five predictions follow and all hold on every monotone word measured: inter-component crossings only at even runs; components are strand intervals; the linking graph is EXACTLY the path; mu = 1 + #even runs; every even run is wholly inter-component. Tier 1's five facts are now readings of one Lean statement (components_differ_iff_even), and P3 is linking_only_between_adjacent -- the P_mu hypothesis of PathCarrier, proved. STILL NOT FORMALISED: that the two recursions pStart/compIdx really model a monotone closure; that needs braid words and cycle decomposition as Lean objects, and this probe stands in for it. Scope (a) for the measurement; the Lean theorems are unconditional. Nothing wired.",
+  "auditOnly": "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md",
+  "data": {
+    "the_argument": {
+      "why_one_pair_per_run": "generator g moves only positions g, g+1, and runs are ascending, so nothing has yet touched position g+1 when R_g begins -- it still holds strand g+1",
+      "the_recursion": "pStart 0 = 0; pStart (g+1) = g+1 if e_g even else pStart g. An even run restores the pair, an odd run swaps it",
+      "the_permutation": "product of sigma_g over {g : e_g odd}; its cycles are the maximal consecutive blocks of odd-exponent generators",
+      "the_dichotomy": "odd run -> both strands in ONE component (self-crossings, invisible to linking); even run -> ADJACENT components"
+    },
+    "measured": {
+      "carrier": {
+        "words": 14,
+        "P1_inter_crossings_only_at_even_runs": 14,
+        "P2_components_are_strand_intervals": 14,
+        "P3_linking_graph_is_exactly_the_path": 14,
+        "P4_mu_eq_one_plus_even_run_count": 14,
+        "P5_every_even_run_is_wholly_inter_component": 14
+      },
+      "random_monotone": {
+        "words": 400,
+        "P1_inter_crossings_only_at_even_runs": 400,
+        "P2_components_are_strand_intervals": 400,
+        "P3_linking_graph_is_exactly_the_path": 400,
+        "P4_mu_eq_one_plus_even_run_count": 400,
+        "P5_every_even_run_is_wholly_inter_component": 400
+      },
+      "combined": {
+        "P1_inter_crossings_only_at_even_runs": 414,
+        "P2_components_are_strand_intervals": 414,
+        "P3_linking_graph_is_exactly_the_path": 414,
+        "P4_mu_eq_one_plus_even_run_count": 414,
+        "P5_every_even_run_is_wholly_inter_component": 414
+      },
+      "words": 414
+    },
+    "what_tier_1_becomes": {
+      "even_run_length": "even_of_components_differ",
+      "one_generator_per_component_pair": "distinct_even_generators_distinct_pairs",
+      "generator_order_matches_component_order": "compIdx_mono",
+      "all_from": "the single statement components_differ_iff_even -- the two strands of run g differ in component exactly when e_g is even, and then by exactly one"
+    },
+    "what_it_also_derives": {
+      "P3_is_the_path_hypothesis": "PathCarrier in OneSeparatedComponentSufficesForMilnorVanishing.lean assumes lk vanishes off consecutive components; linking_only_between_adjacent proves it for every monotone word",
+      "why_that_matters": "the P_mu shape has been carried as a MEASUREMENT since the carrier was derived -- 7 isotopes, both branches -- and it is a theorem"
+    },
+    "still_not_formalised": {
+      "the_remainder": "that pStart and compIdx describe a monotone braid closure's strand positions and cycles",
+      "what_it_would_need": "braid words, position permutations and cycle decomposition as Lean objects",
+      "what_stands_in_for_it": "this probe: the recursions' predictions checked against `analyse`, the same routine every other probe in this arc uses"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "reads no q0. Inputs are monotone braid words and their closures' permutation cycles and integer linking numbers. No substrate pin is evaluated on any path."
+}
