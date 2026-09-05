@@ -47,7 +47,7 @@ from pyhecke.gram import (
 )
 from hecke_engine import HeckeEngine, HeckeRational
 from witness_base import WitnessBuilder
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 # ── q0 canonical per-generator volumes (mpmath, true substrate) ──────────
 # Use the TRUE substrate q0, not the legacy 111/100 (~2e-4 off). The
@@ -188,14 +188,23 @@ def compute_atom(name, Z, N, quarks=None):
     B = binding_energy(Z, N)
 
     # Compact NF: only non-zero coefficients with basis names
+    # `fmt`, not `round(val, 12)` (bean `qou-uiut`, NO-FLOAT64). `round()` on
+    # an mpf returns a Python float, so every NF coefficient reached the
+    # witness as float64 — 12 decimals of a value the pipeline carried at 50
+    # dps. The threshold stays a magnitude test on the mpf; only the
+    # SERIALIZATION changes.
     nf_compact = {}
     for i, (bname, val) in enumerate(zip(NF_NAMES, nf)):
-        if abs(val) > 1e-15:
-            nf_compact[bname] = round(val, 12)
+        if abs(val) > mp.mpf("1e-15"):
+            nf_compact[bname] = fmt(val)
 
     # Per-generator traced volumes + cross-channel (mass-tower sum 3)
     ordering, V_list, cross_sum, delta_xchan = compute_per_generator_volumes(Z, N)
-    V_rounded = [round(float(v), 12) for v in V_list]  # compute mpf@q0; serialize float
+    # The comment here used to read "compute mpf@q0; serialize float", which
+    # is an accurate description of the defect (bean `qou-uiut`): the volumes
+    # are computed as mpf at q0 and were then narrowed to float64 on the way
+    # out. Serialized at output precision now.
+    V_rounded = [fmt(v) for v in V_list]
 
     return {
         "name": name,
@@ -204,17 +213,18 @@ def compute_atom(name, Z, N, quarks=None):
         "A": Z + N,
         "nf": nf_compact,
         "n_terms": len(nf_compact),
-        "tr_M": round(float(tr), 12),
-        "net": round(float(net), 12),
-        "ln_abs_tr": round(mp.log(abs(tr)), 12) if abs(tr) > 1e-300 else None,
+        "tr_M": fmt(tr),
+        "net": fmt(net),
+        "ln_abs_tr": (fmt(mp.log(abs(tr)))
+                      if abs(tr) > mp.mpf("1e-300") else None),
         "frobenius_stable": stable,
         "knot_type": knot_name,
-        "B_MeV": round(B, 4),
+        "B_MeV": fmt(B),
         # Per-generator traced volumes (mass-tower formula, sum 1 + 3)
         "ordering": ordering,
         "V_per_gen": V_rounded,
-        "cross_channel_sum": round(cross_sum, 12),
-        "delta_xchan_MeV": round(delta_xchan, 6),
+        "cross_channel_sum": fmt(cross_sum),
+        "delta_xchan_MeV": fmt(delta_xchan),
     }
 
 
@@ -260,10 +270,16 @@ _atom_secs = {}
 # this table has already carried wrong numbers once (the YSN matrices were not
 # a representation of H_n(q) until bean `qou-uiut`).
 #
-# mpf values are stored as their exact `_mpf_` limbs, not as decimal strings:
-# `round(mp.log(abs(tr)), 12)` and friends in `compute_atom` return mpf, and a
-# decimal round-trip would quietly reduce their precision on resume. Verified
+# mpf values are stored as their exact `_mpf_` limbs, not as decimal strings.
+# A decimal round-trip would quietly reduce their precision on resume, and the
+# checkpoint holds INTERMEDIATE values, not just the serialized row. Verified
 # exact round-trip for 1/7, -1e-300, 0, log(3)/9 and a rounded mpf.
+#
+# The example this used to cite -- `round(mp.log(abs(tr)), 12)` in
+# `compute_atom` -- is gone: those sites now serialize with `fmt` at output
+# precision instead of rounding (bean `qou-uiut`), so the row itself carries
+# decimal STRINGS. That does not change the rule for this encoder, which still
+# sees mpf anywhere a checkpointed value is an intermediate.
 import hashlib as _hashlib
 import json as _json
 import os as _os
@@ -370,12 +386,16 @@ for name, Z, N, quarks in ATOMS:
         _ckpt[name] = r
         _ckpt_save(_ckpt)           # after EVERY atom, not at the end
     results.append(r)
+    # `float(...)` for the console only (bean `qou-uiut`). The row fields are
+    # decimal STRINGS now — serialized at output precision rather than rounded
+    # to float64 — and a str has no `:.6f`. Parsing back for a fixed-width
+    # column is presentation, not a value: nothing here reaches the witness.
     print(
         f"{name:>12} {r['A']:>3} "
-        f"{r['tr_M']:>14.6f} "
-        f"{r['B_MeV']:>10.4f} "
-        f"{r['cross_channel_sum']:>+11.6f} "
-        f"{r['delta_xchan_MeV']:>+10.4f} "
+        f"{float(r['tr_M']):>14.6f} "
+        f"{float(r['B_MeV']):>10.4f} "
+        f"{float(r['cross_channel_sum']):>+11.6f} "
+        f"{float(r['delta_xchan_MeV']):>+10.4f} "
         f"{'OK' if r['frobenius_stable'] else 'FAIL':>5}"
         f"{_atom_secs[name]:>9.2f}s",
         flush=True,
