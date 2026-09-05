@@ -1,10 +1,11 @@
 ---
 # qou-hey2
 title: 'GAP: feynman-eigenbasis.md:29 claims balanced HOMFLY skein IS the braiding characteristic equation — false, nonzero Hecke residual; 11 blocks carry Form B'
-status: in-progress
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T13:04:58Z
-updated_at: 2026-08-22T03:15:00Z
+updated_at: 2026-09-05T18:17:48Z
 ---
 
 
@@ -81,3 +82,59 @@ One clean identity worth keeping either way: `s² = q + q⁻¹ − 2` exactly
 convention C (`z_C = (q^{1/2}+q^{−1/2})⁻¹`). Whether the skein convention
 and the Markov convention share a root is not established here — but they
 should probably be decided together rather than separately.
+
+
+## Superseded on the convention question; the ONE claim that is false regardless is fixed (2026-09-05)
+
+**Corpus-grep first, and it landed on a sibling working this today.**
+[`docs/audits/2026-09-05-two-skein-normalisations-are-live.md`](../docs/audits/2026-09-05-two-skein-normalisations-are-live.md)
+(bean `qou-8bxv`) covers the spread question with a producer (8/8), a witness
+and sorry-free Lean, and does it better than this bean does. It **proves** the
+two relations are not rescalings of one another (`no_rescaling_of_skein_weights`
+— the weight ratio on `(L₊ : L₋)` is `1` in (H) and `q²` in (J), and no constant
+`c` in `[L] ↦ c[L]` fixes that except at `q² = 1`), gives the exact bridge
+`h₁ = s·(q^{1/2} + q^{-1/2})` with `h₁²/s² = [2]_q + 2 = 4.0108968667` at the
+proton pin, explains why bar-parity could not see the split (the cofactor is
+bar-**even**), and traces a live consequence into the β-decay rate. Its verdict
+on (H)-vs-(J) is the same as this bean's — an author decision touching a STRICT
+rule — and it is now the carrier. **Do not duplicate it.**
+
+Re-measured here for the record, same criterion as this bean's 2026-08-22 pass
+(`q^{1/2} - q^{-1/2}` plus all of `L_+`, `L_-`, `L_0`): **38 → 48** files carry
+the half-power string, **17 → 20** state a skein relation in Form B. The
+problem grew by three in fourteen days. `qou-8bxv`'s narrower "**8 live content
+blocks in five chapters**" is the better number — mine counts `docs/`, an
+archive file, and Lean.
+
+## 🛑 This bean's ARGUMENT is retracted. Its conclusion is not.
+
+The table above evaluates Form B on σ's two Hecke eigenvalues and reports
+`0 = 0.1044` on the antisymmetric channel. **That is not evidence about Form B**,
+because Form B is not an operator identity in `H_n(q)` — it is a relation among
+the *invariants* `[L_±], [L_0]` of three links. Plugging eigenvalues into it
+tests a claim nobody makes. This is exactly the arity conflation AGENTS.md
+§"Grep the claim SHAPE, not only the topic" describes: two statements sharing
+symbols while quantifying over different objects.
+
+**What IS false is the identification**, and it is false whichever convention
+wins. `braids-and-knots/feynman-eigenbasis.md:29` said the displayed Form B
+relation *"is simply the characteristic equation of the braiding `c_{V,V}`
+evaluated under the categorical trace."* Tracing the characteristic equation
+gives `m(L₊) − m(L₋) = (q − q⁻¹)·m(L₀)` — Form **A** at invariant level. The
+`q^{±1}` weights are the **writhe/framing correction** (`L₊` and `L₋` differ in
+writhe by two), which is a further step, not "simply" the traced characteristic
+equation.
+
+**Measured: exactly 1 of the 20 files carries that identification.** The other
+19 write Form B as a relation among invariants, which is correct as written and
+must **not** be swept — replacing them with Form A would make them
+framing-incorrect. So this bean's implied action ("normalise ~17 sites; moves
+published numbers by 0.136 %") collapses to **one sentence in one file, and no
+number moves**.
+
+Fixed in place, citing `qou-8bxv`'s audit for the non-rescaling result.
+`detangler-no-forward-ref` (major) on that block is **pre-existing** — present
+in the committed sidecar at HEAD before this edit.
+
+**Remaining on this bean: nothing that is not `qou-8bxv`'s.** Closing as
+superseded.
