@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-05T08:59:03Z
+updated_at: 2026-09-05T09:03:40Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -789,3 +789,43 @@ The corollary discharges non-vacuity rather than leaving it implicit: `W_sub` ha
 | composition with `hypVolume_chimney_wedgeAt` + `lob_sum_eq_reflected` | **open** |
 
 Nothing here asserts anything about a volume. `idealTet_eq_chimney`'s acuteness remains a set equality outside the whole argument.
+
+
+## Step A1's covering half is COMPLETE; the identity needs a SECOND null set (2026-09-05)
+
+### Landed
+
+`wedgeAt_lt_chord_shift'` + `wedgeAt_sub_lt_chord_beta` (sorry-free, no linter warnings). The previous entry listed the `W_β` mirror as "expected symmetric but untested". **Derived, not rewritten** — and the reason is worth keeping: the two shifts consume *different* edge bounds, so neither follows from the other. `wedgeAt_lt_chord_shift` uses `wedgeAt_lower`; the mirror uses `wedgeAt_upper`:
+
+    cos ψ · (R cos(ψ−δ) − ⟨w,u_{θ+δ}⟩) = cos(ψ−δ)·(R cos ψ − S) + (−⟨w,v_{θ+ψ}⟩)·sin δ
+
+The symmetry is a symmetry of the **statements**, not a derivation between them.
+
+So the covering half's inputs are all in hand: `perp_sign_relation` (acuteness-free), `disjoint_wedgeAt_obtuse_pair`, and both chord bounds.
+
+### 🛑 The identity is harder than the inventory suggested — a SECOND exceptional set
+
+Working out the `RHS ⊆ T` direction before building it (rather than after):
+
+Take `w ∈ W_α` with `w ∉ W_sub`. Two of the three triangle chords are free — `W_α`'s own is `hw.1`, and `W_β`'s comes from `wedgeAt_lt_chord_next` at `ψ' = β`. **The `γ`-chord is not**, and cannot be: `γ` is obtuse so `R cos γ < 0`, while every existing chord helper requires `ψ' < π/2`.
+
+Worse, `W_α ⊄ chordHalfplane R (t+γ) γ`. A point of `W_α` near the origin has `⟨w,u_{t+γ}⟩ ≈ 0`, which is **not** `< R cos γ < 0`. Such points are in `W_α` but not in `T` — and they are exactly what the subtraction removes, since `W_sub` is the near-origin wedge. Consistent, but it means the `γ`-chord must be extracted *from* `w ∉ W_sub`, not proved independently.
+
+That works, via a two-step route:
+
+1. **Cone containment.** `W_α`'s angular sector `[t+2γ, t+2γ+2α]` sits inside `W_sub`'s `[t+2γ, t+2π]` (the gap is `2β ≥ 0`). So for `w ∈ W_α`, `w ∈ W_sub` **iff** `W_sub`'s chord condition holds.
+2. `W_sub`'s chord condition is `⟨w,u_{t+γ+π}⟩ < R cos(π−γ)`, i.e. **exactly** `⟨w,u_{t+γ}⟩ > R cos γ` — the strict complement of the triangle's `γ`-chord. So `w ∉ W_sub` gives `⟨w,u_{t+γ}⟩ ≤ R cos γ`.
+
+**`≤`, not `<`.** The equality case is the `γ`-chord line itself, which is null — so the identity carries a **second** exceptional set beyond the shared ray already recorded: the line `⟨w,u_{t+γ}⟩ = R cos γ`. Both are null, and this matches the acute proof's shape (it spends three `volume_perpLine` null sets), but the earlier inventory listed only one.
+
+**Open sub-step, not yet proved:** the cone containment in (1). Wedge-cone membership is `perp_{θ−ψ} > 0 ∧ perp_{θ+ψ} < 0`; for `w ∈ W_α` the first is immediate (`W_α`'s lower edge *is* `t+2γ`, `W_sub`'s lower edge), but the second needs `perp_t < 0` while `wedgeAt_upper` on `W_α` only supplies `perp_{t+2γ+2α} = perp_{t−2β} < 0`. Those differ by `2β`. There is no corpus lemma for cone-containment of coapical wedges; that is the next concrete thing to build.
+
+### Revised remaining work for A1
+
+| item | status |
+|---|---|
+| both chord bounds, disjointness, covering relation | **done** |
+| coapical cone containment `W_α`, `W_β` ⊆ cone(`W_sub`) | **open** — no corpus precedent, needs the `perp_t < 0` step |
+| `γ`-chord from `w ∉ W_sub` (gives `≤`) | reduces to the above |
+| the a.e. identity, over **two** null sets (shared ray + `γ`-chord line) | open |
+| composition with `hypVolume_chimney_wedgeAt` + `lob_sum_eq_reflected` | open |
