@@ -66,7 +66,7 @@ The derivation consumes three substrate quantities:
 | $q_0$ | input (via $m_\mu/m_e$) | **CAL-2** |
 | $\mathrm{Vol}(\mathcal{B}_3)$ | Thurston topological invariant | — |
 
-The identity predicts $\Delta S(n - p)$ from CAL-1, CAL-2, and a topological invariant. CAL-2 is overdetermined: its modulus is pinned here through the mass proxy $m_\mu/m_e$, so the empirical decay-width proxy $\mathfrak{Q}_\beta$ is not a further input but a consistency cross-check on the same calibration. CAL-3 ($P_{\mathrm{avg}}^{\pi}$, proxy $m_\pi$) does not enter at all.
+The identity predicts $\Delta S(n - p)$ from CAL-1, CAL-2, and a topological invariant. CAL-2 is overdetermined: its modulus is pinned here through the mass proxy $m_\mu/m_e$, so the empirical $Q$-value proxy $\mathfrak{Q}_\beta$ is not a further input but a consistency cross-check on the same calibration. CAL-3 ($P_{\mathrm{avg}}^{\pi}$, proxy $m_\pi$) does not enter at all.
 
 ## Scope
 

@@ -14,7 +14,7 @@ widths, entering at successive orders $h^0$, $h^2$, $h^3$ — and they
 are not chosen freely: they match, one for one, the three real
 degrees of freedom of the state space's first cohomology.  The
 leptonic mass scale ($m_e$) sets the unit, the *scale* of that
-cohomology; the neutron $\beta$-decay width ($P_{\mathrm{skew}}^{\beta}$)
+cohomology; the neutron $\beta$-sector bar-skew channel ($P_{\mathrm{skew}}^{\beta}$)
 fixes the substrate parameter $q_0$, its *modulus*; and the pion
 decay width ($P_{\mathrm{avg}}^{\pi}$) fixes the one remaining *orthogonal*
 class, the meson sector whose Hopf-link complement has zero volume.

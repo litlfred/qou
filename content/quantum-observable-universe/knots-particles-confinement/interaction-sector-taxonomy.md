@@ -5,7 +5,7 @@
 |---|---|---|---|---|
 | strong | binding $\mathfrak{E}_{\mathrm{bind}}$, volume | even (cosh channel) | $E_0 = m_e/(q_0(q_0-1))$ | Borromean Markov trace $\mathrm{tr}_M(\beta_{\mathrm{Bor}})$; confinement-SDP duals |
 | electromagnetic | Coulomb energy, Hartree scale | provably **no pure channel** (mixed at coupling and observable level) | $E_h = \alpha_{EM}^2\, m_e c^2$ | $\alpha_{EM}^{-1} = q_0\,[9]_q\,[10]_q$ dressed by the Chern–Simons tower |
-| weak | $\mathfrak{Q}_\beta$, decay widths $P_{\mathrm{skew}}^{\beta}$ | odd (sinh channel) | CAL-2 ($P_{\mathrm{skew}}^{\beta}$, proxy $m_\mu/m_e$) | bar-odd channel of the complex volume |
+| weak | $\mathfrak{Q}_\beta$, bar-skew channel $P_{\mathrm{skew}}^{\beta}$ | odd (sinh channel) | CAL-2 ($P_{\mathrm{skew}}^{\beta}$, proxy $m_\mu/m_e$) | bar-odd channel of the complex volume |
 
 *Processes* are not sectors: a [fusion process](#def:fusion-process) is a strand-balanced rearrangement inside the strong sector, while β-decay moves proton number on the subject side and is thereby routed to the weak sector. The bar-even and bar-odd channels are intertwined by the bar involution itself — the rotation between the two channel recurrences of [the binding–$Q_\beta$ complex volume conjecture](#conj:binding-qbeta-complex-volume) — so the taxonomy's parity column is a statement about where each sector's observable lives, not a wall between algebras.
 

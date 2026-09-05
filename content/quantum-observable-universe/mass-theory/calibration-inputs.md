@@ -5,7 +5,7 @@ The QOU framework requires exactly three calibration inputs from experiment: the
 | Input (proxy) | CAL | Canonical observable | What it fixes | Rel. precision |
 |-------|:--:|-------|--------------|:-:|
 | $m_e = 0.51099895000 \pm 0.00000000015$ MeV | CAL-1 | $m_e$ (leptonic mass scale) | the MeV unit + cohomological period | $2.9 \times 10^{-10}$ |
-| $m_\mu / m_e = 206.7682830 \pm 0.0000045$ | CAL-2 | $P_{\mathrm{skew}}^{\beta}$ ($n$ $\beta$-decay width) | substrate $q_0$ ($W$-plane modulus) | $2.2 \times 10^{-8}$ |
+| $m_\mu / m_e = 206.7682830 \pm 0.0000045$ | CAL-2 | $P_{\mathrm{skew}}^{\beta}$ ($n$ $\beta$-sector bar-skew channel) | substrate $q_0$ ($W$-plane modulus) | $2.2 \times 10^{-8}$ |
 | $m_\pi = 139.57039 \pm 0.00018$ MeV | CAL-3 | $P_{\mathrm{avg}}^{\pi}$ (pion-sector bar-even channel) | orthogonal meson scale ($\mathrm{Vol}(\mathrm{Hopf})=0$) | $1.3 \times 10^{-6}$ |
 
 > **CAL-2 cross-check (not a separate input).** The free-neutron

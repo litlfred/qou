@@ -70,7 +70,7 @@ export default remark({
     {
       kind: "refined-framing",
       date: "2026-06-26",
-      body: "**Supersedes the 2026-06-16 note above (owner ruling 2026-06-26, PR #2866).** Canonical mathematical triple is the weak-sector decay widths `(m_e, $\\mathfrak{D}$_β, $\\mathfrak{D}$_π)`, NOT three masses. CAL-3 = `$\\mathfrak{D}$_π` (proxy `m_π`); CAL-2 = `$\\mathfrak{D}$_β` (proxy `m_μ/m_e`). `$\\mathfrak{Q}$_β = ℏ/$\\mathfrak{D}$_β` is the **CAL-2 proxy**, not 'derived, not a calibration' — the §\"CAL-3\" section's epistemic assessment (can q₀ reproduce `$\\mathfrak{Q}$_β`?) stands, but the label is corrected.",
+      body: "**Supersedes the 2026-06-16 note above (owner ruling 2026-06-26, PR #2866).** Canonical mathematical triple is the weak-sector bar-parity channels `(m_e, P_skew^β, P_avg^π)`, NOT three masses. CAL-3 = `P_avg^π` (proxy `m_π`); CAL-2 = `P_skew^β` (proxy `m_μ/m_e`). `$\\mathfrak{Q}$_β = ℏ/P_skew^β` is the **CAL-2 proxy**, not 'derived, not a calibration' — the §\"CAL-3\" section's epistemic assessment (can q₀ reproduce `$\\mathfrak{Q}$_β`?) stands, but the label is corrected.",
       see: "https://github.com/litlfred/qou/pull/2866",
     },
   ],

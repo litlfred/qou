@@ -1,7 +1,7 @@
 | ID | Canonical observable | canonical proxy | What it fixes | DOF of $H^1 = 2W$ |
 |----|-----------|-------------|--------------|-------------------|
 | **CAL-1** | $m_\mathfrak{e}$ (leptonic mass scale, order $h^0$) | electron mass (Penning trap) | the dimensional unit | $W$-plane scale |
-| **CAL-2** | $P_{\mathrm{skew}}^{\beta}$ (neutron $\beta$-decay width, order $h^2$) | $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta}$; the modulus is overdetermined, pinned most precisely by $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | substrate $q_0$ | $W$-plane modulus |
+| **CAL-2** | $P_{\mathrm{skew}}^{\beta}$ (neutron $\beta$-sector bar-skew channel, order $h^2$) | $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta}$; the modulus is overdetermined, pinned most precisely by $m_\mu/m_\mathfrak{e} = \mathrm{Vol}(4_1)/\hbar_q^2$, $\hbar_q = 1-q_0^{-1}$ | substrate $q_0$ | $W$-plane modulus |
 | **CAL-3** | $P_{\mathrm{avg}}^{\pi}$ (pion-sector bar-even channel, order $h^3$) | charged-pion mass $m_\pi$ (PDG); independent of $(m_\mathfrak{e}, q_0)$ via $\mathrm{Vol}(\mathrm{Hopf})=0$ | meson scale | orthogonal class |
 
 All three are the three real degrees of freedom of the single $H^1 = 2W$

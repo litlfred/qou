@@ -5,7 +5,7 @@ The three calibration inputs are independent physical measurements. Each is asso
 | Anchor | Observable | Jet order | Measurement |
 |--------|-----------|-----------|-------------|
 | **CAL-1** | $m_\mathfrak{e}$ | $h^0$ | electron mass (Penning trap) |
-| **CAL-2** | $P_{\mathrm{skew}}^{\beta}$ | $h^2$ | neutron $\beta$-decay width ($\tau_n = \hbar / P_{\mathrm{skew}}^{\beta}$) |
+| **CAL-2** | $P_{\mathrm{skew}}^{\beta}$ | $h^2$ | neutron $\beta$-sector bar-skew channel ($\tau_n = \hbar / P_{\mathrm{skew}}^{\beta}$) |
 | **CAL-3** | $P_{\mathrm{avg}}^{\pi}$ | $h^3$ | pion-sector bar-even channel ($\tau_\pi = \hbar / P_{\mathrm{avg}}^{\pi}$) |
 
 CAL-2 determines $\mathfrak{Q}_\beta = m_n - m_p - m_\mathfrak{e}$ from the neutron lifetime. This fixes $q_0$ via the substrate identity. CAL-3 determines $m_\pi$ from the pion lifetime. This fixes the meson mass scale. All other masses (proton, neutron, muon, kaon, $\ldots$) are derived from these three inputs.
