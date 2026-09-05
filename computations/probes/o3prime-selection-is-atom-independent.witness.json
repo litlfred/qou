@@ -1,0 +1,181 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T16:02:32.485672+00:00",
+  "commitSha": "f7a61e2738f5aee73f36acac4f28ed1be07c1b95",
+  "assertions": [
+    {
+      "name": "argmin(t) == argmin(w) on EVERY row — the character never moves the selection",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "same n, different atoms -> SAME selected block",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "same n, different atoms -> DIFFERENT price, so the price IS atom-dependent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "the spread-dominance explanation is REFUTED — chi-spread exceeds w-spread on at least one row and the argmin is unmoved anyway, so the mechanism is NOT that w varies more",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "o3prime-selection-is-atom-independent",
+  "scriptFile": "o3prime_selection_is_atom_independent_probe.py",
+  "scriptHash": "ad55f92f27ff",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/o3prime_selection_is_atom_independent_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/o3prime_selection_is_atom_independent_probe.py"
+  },
+  "description": "O3' selects a block, but NOT the bound state's block. The objective t_lambda = w_lambda * chi^lambda(W_atom) factors into an atom-INDEPENDENT weight and an atom-dependent character; measured over all six committed rows, argmin(t) == argmin(w) every time, so the character never moves the selection. Two atoms at n=3 and two at n=9 give the SAME block with DIFFERENT prices. Mechanism UNEXPLAINED: the obvious spread-dominance account is refuted here -- chi-spread exceeds w-spread at n=9 and the argmin is unmoved anyway. CONSEQUENCE: PR #6752's reading of the selection as 'which Wedderburn blocks the bound state saturates' is WRONG and is corrected; the pricing result (y_0* nonzero and atom-dependent, where the full LP has y_0* = 0 identically) STANDS.",
+  "auditOnly": "docs/proposals/2026-09-05-operator-selection-objective-replacement.md",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "rows": [
+      {
+        "row": 0,
+        "n": 3,
+        "n_survivors": 2,
+        "argmin_t": [
+          2,
+          1
+        ],
+        "argmin_w": [
+          2,
+          1
+        ],
+        "same": true,
+        "price_t_min": "0.447041147540400587771436992037792948784743520699240000000000",
+        "w_spread": "2.04370620853252198940201933567738830976821396071355264058991",
+        "chi_spread": "1.30756622297248205680748597396195312460234823982928591930392"
+      },
+      {
+        "row": 1,
+        "n": 3,
+        "n_survivors": 2,
+        "argmin_t": [
+          2,
+          1
+        ],
+        "argmin_w": [
+          2,
+          1
+        ],
+        "same": true,
+        "price_t_min": "0.420626157889027901602133437403681247873588972216950000000000",
+        "w_spread": "2.04370620853252198940201933567738830976821396071355264058991",
+        "chi_spread": "1.51579918540911917373288165531250354705804885976872865548949"
+      },
+      {
+        "row": 2,
+        "n": 6,
+        "n_survivors": 4,
+        "argmin_t": [
+          3,
+          3
+        ],
+        "argmin_w": [
+          3,
+          3
+        ],
+        "same": true,
+        "price_t_min": "0.0642671492247627779306976063673960466406916920881960000000000",
+        "w_spread": "7.62534203713249695670141762989255924623136986209968659424281",
+        "chi_spread": "2.72420232408119342931414331528234407502873592696028852469690"
+      },
+      {
+        "row": 3,
+        "n": 9,
+        "n_survivors": 5,
+        "argmin_t": [
+          5,
+          4
+        ],
+        "argmin_w": [
+          5,
+          4
+        ],
+        "same": true,
+        "price_t_min": "0.0165496952235817501471613735182095199614535874747440000000000",
+        "w_spread": "5.91491061780669391433300152304207723128163811452297267925466",
+        "chi_spread": "6.44841296446525448749773431742111758846258237824116536865259"
+      },
+      {
+        "row": 4,
+        "n": 9,
+        "n_survivors": 5,
+        "argmin_t": [
+          5,
+          4
+        ],
+        "argmin_w": [
+          5,
+          4
+        ],
+        "same": true,
+        "price_t_min": "0.0287868485647897792091917840246165924121303225890690000000000",
+        "w_spread": "5.91491061780669391433300152304207723128163811452297267925466",
+        "chi_spread": "6.71217860580942750332159089142339097107971147153433161603573"
+      },
+      {
+        "row": 5,
+        "n": 12,
+        "n_survivors": 7,
+        "argmin_t": [
+          6,
+          6
+        ],
+        "argmin_w": [
+          6,
+          6
+        ],
+        "same": true,
+        "price_t_min": "0.00468272098229808284404533996797918912262545157841530000000000",
+        "w_spread": "17.3381908741281979106997363104612820819989018846402185507023",
+        "chi_spread": "12.5081165415982580163716185083112314327356605748342489827545"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
