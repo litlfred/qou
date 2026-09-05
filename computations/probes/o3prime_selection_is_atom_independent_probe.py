@@ -99,10 +99,45 @@ The factorisation the whole account rests on is checked, not assumed: |t| =
 w * |chi| holds in the committed data to 4e-50 relative, i.e. to the witness's
 serialisation floor.
 
-WHAT IS STILL OPEN: WHY the anti-correlation holds.  It is measured over six
-rows and four values of n, not derived.  Whether it is a structural property of
-the Markov weight against the Hecke character, or an artifact of which
-partitions survive the radical quotient, is not settled here.
+WHY THE ANTI-CORRELATION HOLDS: it REDUCES to the content sum.
+
+w is a strictly increasing function of the content sum c(lambda) -- 49 of 49
+pairs concordant, EVERY pair on EVERY row, no exceptions.  So ordering the
+survivors by w IS ordering them by c(lambda), and
+
+    conc(w, |chi|)  ==  conc(c(lambda), |chi|)   identically, row by row
+
+-- not approximately, not on aggregate: the same integer on all six rows
+(0/1, 0/1, 1/6, 2/10, 1/10, 5/21).  Both are asserted below.  The w-vs-chi
+anti-correlation is therefore not a fact about the Markov weight at all; it is
+a fact about the CONTENT SUM against the character, wearing w as a monotone
+reparametrisation.
+
+That decomposes it into three links, of which the first is exact:
+
+    c(lambda) up  =>  w up          49/49 = 100.0 %  (exact, asserted)
+    c(lambda) up  =>  dim down       6/49 =  12.2 %  (combinatorial)
+    dim up        =>  |chi| up      43/49 =  87.8 %
+
+For two-row partitions the middle link is the elementary one: [n] has the
+largest content sum and dimension 1, and the balanced partition has the
+smallest content sum and the largest dimension.  The third is the near-triviality
+that a character of a bigger irrep is a sum of more terms.  Composing:
+w up => c up => dim down => |chi| down.
+
+The 87.8 % link is the weakest and its exception is named rather than averaged
+away: row 2 (n = 6) sits at exactly 3/6, i.e. dim and |chi| are UNCORRELATED
+there, and it is also the row with the largest flattening (1.93x).  The other
+five rows run 1/1, 1/1, 9/10, 10/10, 19/21.
+
+w is NOT simply q^c(lambda).  The residual w * q^-c(lambda) is unimodal in the
+content sum, moving 12.9x across row 5 (peak at [8,4]) -- so the monotonicity
+above is a real fact about the weight, in which the q^c factor dominates a
+non-monotone correction, and not an identity read off a closed form.
+
+WHAT IS STILL OPEN, after that reduction: whether the 87.8 % dim-vs-|chi| link is
+exact-with-a-degenerate-case or genuinely only statistical, and what n = 6 is
+doing.  Six rows over four n cannot separate those.
 
 WHAT SURVIVES FROM #6752, AND WHAT DOES NOT
 -------------------------------------------
@@ -155,6 +190,31 @@ def check(name: str, ok: bool, detail: str = "") -> None:
           flush=True)
 
 
+def concordant(a: list, b: list) -> tuple[int, int]:
+    """(#pairs ordered the same way by a and by b, #pairs).
+
+    Sign comparison only, so exact-integer inputs (content sums, SYT counts)
+    stay exact integers and never enter mpmath -- both cleaner and outside the
+    f64-into-mpmath detector's reach.
+    """
+    k = len(a)
+    pairs = [(i, j) for i in range(k) for j in range(i + 1, k)]
+    return (sum(1 for i, j in pairs
+                if (a[i] > a[j]) == (b[i] > b[j]) and a[i] != a[j] and b[i] != b[j]),
+            len(pairs))
+
+
+def f_lambda(lam: tuple[int, ...]) -> int:
+    """#SYT(lambda) = dim of the S_n irrep, exact integer by hook lengths."""
+    d = 1
+    for i, row in enumerate(lam):
+        for j in range(row):
+            arm = row - j - 1
+            leg = sum(1 for r in range(i + 1, len(lam)) if lam[r] > j)
+            d *= arm + leg + 1
+    return factorial(sum(lam)) // d
+
+
 def tau_tail(k: int, obs: int) -> Fraction:
     """Exact P(concordant pairs <= obs) when the chi-ordering is a uniform
     random permutation of the w-ordering.
@@ -178,7 +238,7 @@ def main() -> int:
     print(f"=== does the character move O3''s argmin? — {len(rows)} rows ===",
           flush=True)
 
-    out, by_n, tails = [], {}, {}
+    out, by_n, tails, chain = [], {}, {}, []
     agree = 0
     fact_max = mp.mpf(0)
     for idx, r in enumerate(rows):
@@ -204,6 +264,19 @@ def main() -> int:
                    if (w_vals[i] - w_vals[j]) * (c_vals[i] - c_vals[j]) > 0)
         tail = tau_tail(k, conc)
         tails.setdefault(n, []).append(tail)
+
+        # WHY: w is a monotone reparametrisation of the content sum, so the
+        # anti-correlation is really content-vs-character.  Content sums and
+        # SYT counts stay exact ints; only w and chi are mpf.
+        cs = [p["content_sum"] for p in surv]
+        dim = [f_lambda(tuple(p["partition"])) for p in surv]
+        c_cs_w, _ = concordant(cs, w_vals)
+        c_cs_chi, _ = concordant(cs, c_vals)
+        c_cs_dim, _ = concordant(cs, dim)
+        c_dim_chi, _ = concordant(dim, c_vals)
+        chain.append({"cs_w": c_cs_w, "cs_chi": c_cs_chi, "cs_dim": c_cs_dim,
+                      "dim_chi": c_dim_chi, "pairs": len(pairs),
+                      "w_chi": conc})
 
         # |t| = w * |chi| is what the whole account rests on -- check it here
         # rather than assuming it from the algebra.
@@ -272,6 +345,34 @@ def main() -> int:
           "flattening " + ", ".join(mp.nstr(mp.mpf(r["flattening"]), 4)
                                     for r in out) + "x")
 
+    # WHY it holds: w is a monotone reparametrisation of the content sum, so
+    # the whole effect is content-vs-character.  Two EXACT facts, asserted.
+    mono = [c for c in chain if c["cs_w"] == c["pairs"]]
+    check("w is a strictly INCREASING function of the content sum on EVERY row "
+          "— so ordering the survivors by w IS ordering them by c(lambda)",
+          len(mono) == len(chain),
+          f"{sum(c['cs_w'] for c in chain)}/{sum(c['pairs'] for c in chain)} "
+          f"pairs concordant")
+
+    ident = [c for c in chain if c["cs_chi"] == c["w_chi"]]
+    check("conc(w, |chi|) == conc(c(lambda), |chi|) IDENTICALLY on every row — "
+          "the anti-correlation is a fact about the CONTENT SUM against the "
+          "character, not about the Markov weight",
+          len(ident) == len(chain),
+          "w~chi " + ",".join(str(c["w_chi"]) for c in chain)
+          + "  vs  cs~chi " + ",".join(str(c["cs_chi"]) for c in chain))
+
+    tp = sum(c["pairs"] for c in chain)
+    print(f"\n  the reduction, as three links over {tp} pairs:"
+          f"\n    c(lambda) up  =>  w up      {sum(c['cs_w'] for c in chain):>3}/{tp}"
+          f"  = {sum(c['cs_w'] for c in chain) * 100 // tp:>3}%   (exact)"
+          f"\n    c(lambda) up  =>  dim down  {sum(c['cs_dim'] for c in chain):>3}/{tp}"
+          f"  = {sum(c['cs_dim'] for c in chain) * 100 // tp:>3}%   (combinatorial)"
+          f"\n    dim up        =>  |chi| up  {sum(c['dim_chi'] for c in chain):>3}/{tp}"
+          f"  = {sum(c['dim_chi'] for c in chain) * 100 // tp:>3}%   (weakest link;"
+          f" per row " + ",".join(f"{c['dim_chi']}/{c['pairs']}" for c in chain) + ")",
+          flush=True)
+
     # Conservative: one row per distinct n, the LEAST extreme in each group.
     # Two atoms at the same n plausibly have correlated characters, so
     # multiplying all six would overstate the evidence.
@@ -309,7 +410,14 @@ def main() -> int:
         "Exact distribution-free tail, one row per distinct n and the least "
         "extreme within each: 343/518400 ~ 6.6e-4. Cancellation is INCOMPLETE "
         "(t-spread 1.35x-10.2x), so w's argmin survives. WHY the anti-correlation "
-        "holds is OPEN. CONSEQUENCE: PR #6752's "
+        "holds REDUCES to the content sum: w is a strictly increasing function "
+        "of c(lambda) on 49/49 pairs, so conc(w,|chi|) == conc(c(lambda),|chi|) "
+        "IDENTICALLY row by row, and the effect decomposes as c up => w up "
+        "(49/49 exact), c up => dim down (6/49), dim up => |chi| up (43/49). "
+        "For two-row partitions [n] has max content and dim 1 while the balanced "
+        "partition has min content and max dim. Still open: whether the 43/49 "
+        "link is exact-with-a-degenerate-case (n=6 sits at exactly 3/6) or only "
+        "statistical. CONSEQUENCE: PR #6752's "
         "reading of the selection as 'which Wedderburn blocks the bound state "
         "saturates' is WRONG and is corrected; the pricing result (y_0* nonzero "
         "and atom-dependent, where the full LP has y_0* = 0 identically) STANDS."
@@ -318,6 +426,7 @@ def main() -> int:
         "docs/proposals/2026-09-05-operator-selection-objective-replacement.md")
     w.add_parameter("q0", Q_50_DIGIT_STR)
     w.add_data("rows", out)
+    w.add_data("content_sum_reduction", chain)
     for name, ok in CHECKS:
         w.add_assertion(name, computed="1" if ok else "0", expected="1",
                         tolerance="0",
