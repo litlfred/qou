@@ -55,8 +55,17 @@ construction does not model and has no strands for.
 
 ## 3. Blast radius
 
-**24 content blocks cite `def:atomic-braid`; 7 of them are in the mass
-chapters** (check 4):
+**19 content blocks cite `def:atomic-braid`; 5 of them are in the mass
+chapters** (check 4).
+
+> **🛑 CORRECTED 2026-09-05 — this read "24 blocks; 7 of them", which are the
+> FILE counts.** A block is a `.ts`/`.md` pair sharing one stem, so a block
+> citing the definition in both its manifest and its prose is two files.
+> Measured: **24 files (10 `.md` + 14 `.ts`) over 19 blocks**; in the mass
+> chapters **7 files over 5 blocks**. The file figures are correct as files and
+> were reported as blocks. Check 4 now prints both and asserts they differ, so
+> the unit cannot silently drift again. (This is the second unit/count defect
+> in this same probe — the first was a truncated grep reporting 12.)
 
 - `mass-endomorphism/atomic-mass-gb-nf.md`
 - `mass-theory/active-set-trace-concentration.ts`
@@ -101,18 +110,49 @@ name and one symbol**, and the fix is naming: the 3A object needs its own label
 Table 1 are then content worth keeping, not an error.
 
 **(b) `def:atomic-braid` is superseded** by the 3A construction. Then it needs
-retiring, and its 24 citations rehoming.
+retiring, and its citations — 19 blocks, 24 files — rehoming.
 
-The evidence does not settle which: (a) is supported by the electron rows being
-specific and physically motivated rather than vestigial; (b) by nothing in
-`computations/` ever having built the `A+Z` object. What *is* settled is that
-the status quo — both under one name, cited across chapters — cannot be right
-under either reading.
+The evidence does not settle which. (a) is supported by the electron rows being
+specific and physically motivated rather than vestigial.
+
+> **🛑 THE EVIDENCE I GAVE FOR (b) IS FALSE — corrected 2026-09-05.** This
+> paragraph read *"(b) by nothing in `computations/` ever having built the
+> `A+Z` object."* Measured, that is wrong:
+> **[`computations/_deprecated/atom_braid_electron.py`](../../computations/_deprecated/atom_braid_electron.py)
+> builds exactly this object**, and its own docstring says so —
+>
+> > *"ATOMIC BRAID: electrons included in the `H_{A+Z}(q)` braid. The nuclear
+> > braid `H_A(q)` uses A nucleon strands. This script adds Z electron strands,
+> > creating `H_{A+Z}(q)` with crossing coefficients …"*
+>
+> — with **all six pair types**, including the three electronic ones the
+> definition specifies (`pe → α_EM mixed`, `ne → trivial`, `ee → α_EM
+> repulsion`), and `α = α_EM` derived from `q₀`. A committed witness
+> (`p2-5-symbolic-q-audit.witness.json`) references it. So the A+Z object was
+> **built and then deprecated**, which is a different claim from *never built*
+> and only one of the two was measured. Check 5 now asserts it.
+>
+> **Which way this cuts is not obvious, and I am not going to pretend it is.**
+> Deprecation is evidence the corpus *moved off* the object, which reads
+> toward (b). Its existence with the full electronic pair table is evidence the
+> object is real and specified, which reads toward (a). What is now certain is
+> that "(a) requires building something new" is false — a prior implementation
+> exists to start from.
+
+**And the fork is not two-way.** A third strand convention is live in
+`computations/`: [`electron_sigma_f_chain.py`](../../computations/electron_sigma_f_chain.py)
+uses `n_target = 3A + Z` — three quark strands per nucleon **plus** Z electrons —
+which is neither the definition's `A+Z` nor production's `3A` (check 6, 1 live
+producer, `_deprecated/` excluded). Any renaming that assumes two objects will
+leave this one unnamed.
+
+What *is* settled is that the status quo — two objects under one name, cited
+across chapters — cannot be right under any of these readings.
 
 ## 6. Not established
 
 - **That either object is wrong.** Only that they are different and share a name.
-- **That the 7 mass-chapter citations are load-bearing.** They cite the
+- **That the 5 mass-chapter citing blocks are load-bearing.** They cite the
   definition; whether any of them *depends* on the `A+Z` strand count for a
   result was not measured.
 - **Which of `\mathcal{A}`'s two meanings the notation register intends.** The
