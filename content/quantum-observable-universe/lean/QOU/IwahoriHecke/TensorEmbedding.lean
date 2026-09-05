@@ -787,9 +787,30 @@ The three relations and the action are proved at every `n`. Four things are stil
 none of them follows from what is here:
 
 1. **Nothing about the image.** `heckeActionN` is an algebra map. That it is *surjective
-   onto the commutant* of the quantum-group action — which is the Schur–Weyl statement
-   proper, the reason one wants this map — is not proved. Neither is injectivity, which
-   would need the `T_w` basis (`QOU.IwahoriHecke.Tw`, still open on Matsumoto).
+   onto the commutant* of the quantum-group action — the Schur–Weyl statement proper, and
+   the reason one wants this map — is **not proved here**.
+
+   🛑 **And injectivity is not an open question: at this fibre it is FALSE.** An earlier
+   version of this note said injectivity "would need the `T_w` basis
+   (`QOU.IwahoriHecke.Tw`, still open on Matsumoto)", which framed it as a theorem awaiting
+   machinery. `q`-Schur–Weyl `H_n(q) → End_{U_q𝔰𝔩_N}(V^{⊗n})` is injective only when
+   `N ≥ n`, and item 2 fixes `N = 2`. So for `n ≥ 3` the map has a kernel — spanned by the
+   blocks with more than two rows, i.e. `ker(H_n ↠ TL_n)`, of dimension `n! − Catalan(n)`:
+   `1, 10, 78, 588, 4611, 38890` at `n = 3 … 8`. `heckeActionN` is therefore already
+   non-injective at `m = 2`, and so was the `H₃(q)` action of `RMatrixSl2`.
+
+   Matsumoto would buy the *basis* of `H_n(q)`, which is worth having; it cannot make a map
+   with a nontrivial kernel injective, so it is not what stands between this file and
+   injectivity. Note also that at `N = 2` "surjective onto the commutant" and "not
+   injective" are two faces of one fact, the image being `TL_n(q)`.
+
+   **None of that is proved here either** — it is the standard statement, and the corpus
+   records the same kernel dimensions at
+   [`wedderburn_jones_markov.py`](../../../../computations/wedderburn_jones_markov.py) off
+   the sorry-free `QOU.QBeta.WenzlWeight.conventionD_weight_eq_zero_iff`. Recorded because
+   the earlier wording pointed future work at the wrong obstruction. Raised by a sibling
+   session on PR #6817; the kernel dimensions were re-derived here from the hook-length
+   formula before the correction was made.
 2. **Fibre `Fin 2` only.** The general `gl_k` R-matrix
    `Ř = q Σ_i E_ii⊗E_ii + Σ_{i≠j} E_ji⊗E_ij + (q − q⁻¹) Σ_{i<j} E_ii⊗E_jj`
    satisfies the same relations for any linearly ordered fibre; only `sl₂` is done, because
