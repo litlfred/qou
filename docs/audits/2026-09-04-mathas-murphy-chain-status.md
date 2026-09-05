@@ -277,3 +277,32 @@ contains exactly one row-standard composition tableau.** What is left is the tab
 
 **So "the next node is combinatorial rather than algebraic" overstates it too.** Both
 halves of that sentence were written from an absence I had not measured.
+
+## Where 3.9 actually stops, and why — the `T_d⁻¹` obstruction
+
+`CompositionIdeal.exists_xComp_swap` proves `a · x_μ · b = (a T_d⁻¹) · x_ν · (T_d b)`, and
+its commit called that **sharper** than Mathas' *`R`-combination*. That is true in one
+direction and **false in the other**, and the difference is the whole remaining problem:
+
+- **Stronger as a statement about ideals.** `T_d` is a unit, so `H x_μ H = H x_ν H`
+  — equality, not containment, and one term rather than a combination.
+- **Weaker as a statement about the Murphy basis.** Nothing there says `a T_d⁻¹` and
+  `T_d b` are again of Murphy form `T*_{d(u)}`, `T_{d(v)}`.
+
+They generally are not, for an exact reason rather than a suspicion: **`T_w⁻¹ ≠ T_{w⁻¹}`.**
+At a simple reflection `s` is an involution, so `T_{s⁻¹} = T_s` — while the quadratic
+relation forces the *algebra* inverse over two basis elements,
+
+    σ⁻¹ = q⁻¹·T_s − q⁻¹(q−1)·T_1      (`CompositionIdeal.inv_Tw_sw_expansion`, proved)
+
+Iterated along a reduced word for `d`, `T_d⁻¹` generically meets up to `2^ℓ(d)` basis
+elements. **That spread is Mathas' `R`-combination.** So the two statements never
+conflicted: his combination lives at the *basis* level and collapses to a single term
+exactly when one stops requiring the coefficients to be Murphy-shaped.
+
+**So the remaining step is not vocabulary.** Reaching 3.9 as stated means expanding
+`T_d⁻¹` in the `T`-basis and showing the surviving terms are indexed by row-standard
+`ν`-tableaux — a triangularity argument, and genuinely the next piece of mathematics on
+this chain. The estimate in the update above (*"vocabulary over a proved fact"*) applies
+to Prop 3.3's tableau restatement, which is done (`existsUnique_rowStandard`), and **not**
+to this.
