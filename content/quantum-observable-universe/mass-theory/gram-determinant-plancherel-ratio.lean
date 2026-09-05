@@ -60,9 +60,28 @@ noncomputable def gramKappa (n : ℕ)
     theorem about it.
 
     Left in place rather than restated because supplying that term is a design
-    decision in this arc's owner's hands, not a mechanical repair. No detector
-    flags this: it is `∃ x, x = a`, not `True`, so the trivial-true and
-    self-assuming-projection criteria both miss it. Recorded as a blind spot. -/
+    decision in this arc's owner's hands, not a mechanical repair.
+
+    **Correction (2026-09-05).** This said "no detector flags this", and that
+    was wrong — I asserted an absence without running the corpus-grep
+    checklist. `∃ x, x = e := ⟨e, rfl⟩` is a NAMED class with a DEDICATED
+    detector since 2026-08-07: `scripts/lean-vacuous-existential-audit.py`,
+    written up in `docs/audits/2026-08-07-lean-vacuous-existential-audit.md`
+    (17 found, and the ten then-live have since been drained).
+
+    What is true is narrower and sharper. That detector could not see THIS
+    declaration because its bound-variable pattern was `[A-Za-z_][A-Za-z0-9_']*`
+    — ASCII-only — and this one binds `κ`. So it reported `0 candidates in 0
+    files`, which reads as a clean corpus. Widening the pattern to Unicode on
+    the same tree the same day reports **8 in 3 files**, every one bound to a
+    Greek name. Nothing had been drained; they had never been seen. The
+    detector is fixed and now carries a `--self-test` so a future narrowing
+    cannot report zero silently.
+
+    The live audit (`content/pipeline/lean-vacuity-axiom-audit.ts`) still does
+    not flag this, and that part is correct as stated: its nearest criterion,
+    `proof-no-unused-hypothesis-rfl`, needs an UNUSED binder, and every binder
+    here is consumed by `gramKappa n q_factorial n_factorial cs cw`. -/
 -- Ref: [manuscript] §5/gram-determinant-plancherel-ratio
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
