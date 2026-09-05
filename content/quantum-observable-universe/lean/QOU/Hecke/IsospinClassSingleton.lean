@@ -108,4 +108,69 @@ the one self-conjugate shadow price `QOU/Hecke/SelfConjugateRowCap.lean` leaves
 standing. -/
 theorem two_two_survives_row_cap : ([2, 2] : List ℕ).length ≤ 2 := by decide
 
+/-! ## The charge-type class under the row cap is also a singleton
+
+The same question for `c(λ) < 0`. For a two-row shape `(a,b)` with `b ≤ a`,
+summing contents row by row gives `2·c(a,b) = a(a-1) + b(b-3)`, and that is
+negative for exactly one pair.
+
+`(1,1)` at `n = 2` is therefore the **unique** charge-type shape the row cap
+admits — so "charge-type at its level" forces a partition just as "isospin-type
+at the quartet level" does. The selection principle transfers.
+
+**What does not transfer is the number.** `m_e·H_q((1,1)) = m_e[2]_q = 1.0276`
+MeV against `a_C ≈ 0.711` — 44 % off — while the corpus uses
+`λ_C = h[6]_q·m_e = 0.68244` (−4 %), which is not `m_e·H_q(λ)` for any partition
+with `n ≤ 14`. Measured in
+`computations/qbeta/qbeta_charge_class_singleton_probe.py`, where the same sweep
+finds that **six of the seven coefficients** in
+`mass-formula-regime-switching-table1-data` are not hook products at all: they
+carry integer prefactors, a bare `h = q - 1/q`, or a quotient, none of which a
+product of `[h]_q` yields. Only `δ_S = [2]_q²[3]_q = H_q((2,2))` matches.
+
+That is worth stating carefully. `unified-iterative-correction-proof.md` asserts
+`C_λ = m_e·H_q(λ)` as "the universal constant determined by the partition
+algebra", without restriction to a family — yet its own `(2,1) ⊢ 3` clause says
+the volume/surface/Coulomb coefficients arise "through their image under the
+Wedderburn embedding", an unspecified transformation. So the two cannot both be
+read at face value, and **the bridge between them is unspecified rather than
+contradicted**. Recorded as a gap, not a refutation. Bean `qou-orjl`.
+-/
+
+/-- Twice the content sum of the two-row shape `(a, b)`, kept doubled so the
+statement stays in `ℤ` with no division: `2·c(a,b) = a(a-1) + b(b-3)`. -/
+def contentDoubled (a b : ℕ) : ℤ := (a : ℤ) * ((a : ℤ) - 1) + (b : ℤ) * ((b : ℤ) - 3)
+
+/-- `b(b-3) ≥ -2` for every natural `b`, since `(b-1)(b-2) ≥ 0` over the
+integers. This is what stops the second row from ever dragging the content sum
+below `-2`. -/
+theorem two_le_row_two_content (b : ℕ) : (-2 : ℤ) ≤ (b : ℤ) * ((b : ℤ) - 3) := by
+  rcases le_or_gt (b : ℤ) 1 with h | h
+  · nlinarith [Int.natCast_nonneg b]
+  · have : (2 : ℤ) ≤ (b : ℤ) := by omega
+    nlinarith
+
+/-- With two or more columns in the first row the content sum is already
+nonnegative, because `a(a-1) ≥ 2` outweighs the second row's floor of `-2`. -/
+theorem contentDoubled_nonneg_of_two_le {a b : ℕ} (ha : 2 ≤ a) :
+    0 ≤ contentDoubled a b := by
+  have h1 : (2 : ℤ) ≤ (a : ℤ) := by exact_mod_cast ha
+  have h2 := two_le_row_two_content b
+  have h3 : (2 : ℤ) ≤ (a : ℤ) * ((a : ℤ) - 1) := by nlinarith
+  simp only [contentDoubled]
+  linarith
+
+/-- **The charge-type class the row cap admits is the singleton `{(1,1)}`.**
+Among two-row shapes, `c(λ) < 0` holds for `(1,1)` and nothing else. -/
+theorem contentDoubled_neg_iff {a b : ℕ} (hab : b ≤ a) :
+    contentDoubled a b < 0 ↔ (a = 1 ∧ b = 1) := by
+  constructor
+  · intro h
+    have ha : a < 2 := by
+      by_contra hc
+      exact absurd h (not_lt.mpr (contentDoubled_nonneg_of_two_le (by omega)))
+    interval_cases a <;> interval_cases b <;> simp_all [contentDoubled]
+  · rintro ⟨rfl, rfl⟩
+    norm_num [contentDoubled]
+
 end QOU.Hecke.IsospinClassSingleton
