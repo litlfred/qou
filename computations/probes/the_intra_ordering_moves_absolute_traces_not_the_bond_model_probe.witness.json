@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T08:57:10.536305+00:00",
-  "commitSha": "c128450e5d9f1480a9cf2e243dbd94c14e91266f",
+  "computedAt": "2026-09-05T17:37:08.116542+00:00",
+  "commitSha": "f1e4e39fb38388fac6756dbaeef1d2ec77928673",
   "assertions": [
     {
       "name": "the INTERLEAVED word is beta_Bor (Lean closed form, rel < 1e-40)",
@@ -84,11 +84,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 7,
   "computation": "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe",
   "scriptFile": "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py",
-  "scriptHash": "bcc859f38847",
-  "scriptCommitSha": "86050abd6c838804bb57a18df9382306076fa4b7",
+  "scriptHash": "3bfe18b0e932",
+  "scriptCommitSha": "deb9ff5728f5c94ecbf587ade751d69e1c35d07f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -100,7 +100,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -110,22 +113,22 @@
   },
   "description": "Measures the consequence of the qou-hu1f intra-ordering finding. On the canonical chain the character ratio R_nucleon = tr_M(W_atom)/tr_M(W_free) is identical under the grouped and interleaved orderings to ~1e-60 at A = 2, 3, 4, and equals prod_i (z + d_i) under both, because connected-sum multiplicativity is blind to letter order inside a block. So L and the bond constants cannot move. Absolute traces do move: R_quark falls by 3.785x (2H), 7.868x (3H), 6.891x (3He), 14.325x (4He) when the intra block is rebuilt as beta_Bor, and binding_canonical's Delta_tr = R_quark (1 - prod(z+d)) moves by the same factor. The per-generator factorisation form stated in rem:canonical-trace-factorises-over-chain holds only for the grouped word (3e-59 vs a 2.8x-13.3x failure), though the arc's conclusion rests on connected sum and survives. The unblocked two-level character ratio gives 2H +254.53 %, 3H +74.49 %, 3He +53.87 %, 4He -33.60 %: it does not work, and is worse than the grouped word below A = 4. No fitting.",
   "data": {
-    "R_nucleon_2H": "5082297893767389625779958",
-    "R_quark_interleaved_2H": "2990150171846400767021604",
-    "R_quark_grouped_2H": "1131716904322210082731308",
-    "B_two_level_interleaved_2H": "78867366369280996506",
-    "R_nucleon_3H": "2051356404486497689268500",
-    "R_quark_interleaved_3H": "1420720567973047974704986",
-    "R_quark_grouped_3H": "1117846228978226577328341",
-    "B_two_level_interleaved_3H": "14799557059356893746",
-    "R_nucleon_3He": "3113863120725956524128884",
-    "R_quark_interleaved_3He": "1881786429994887792634790",
-    "R_quark_grouped_3He": "1296675612244944017737899",
-    "B_two_level_interleaved_3He": "11875982906946668451",
-    "R_nucleon_4He": "1256841528952662694138785",
-    "R_quark_interleaved_4He": "8940998050193060038204757",
-    "R_quark_grouped_4He": "1280783151528646410636338",
-    "B_two_level_interleaved_4He": "18788803329375462546"
+    "R_nucleon_2H": "0.5082297893767389625779958",
+    "R_quark_interleaved_2H": "0.2990150171846400767021604",
+    "R_quark_grouped_2H": "1.131716904322210082731308",
+    "B_two_level_interleaved_2H": "7.8867366369280996506",
+    "R_nucleon_3H": "0.2051356404486497689268500",
+    "R_quark_interleaved_3H": "0.1420720567973047974704986",
+    "R_quark_grouped_3H": "1.117846228978226577328341",
+    "B_two_level_interleaved_3H": "14.799557059356893746",
+    "R_nucleon_3He": "0.3113863120725956524128884",
+    "R_quark_interleaved_3He": "0.1881786429994887792634790",
+    "R_quark_grouped_3He": "1.296675612244944017737899",
+    "B_two_level_interleaved_3He": "11.875982906946668451",
+    "R_nucleon_4He": "0.1256841528952662694138785",
+    "R_quark_interleaved_4He": "0.08940998050193060038204757",
+    "R_quark_grouped_4He": "1.280783151528646410636338",
+    "B_two_level_interleaved_4He": "18.788803329375462546"
   },
   "caveats": [
     "Chain word only. The all-pairs variant is a different object and is retired as ill-posed (qou-bygw); its ratio invariance is NOT tested here.",

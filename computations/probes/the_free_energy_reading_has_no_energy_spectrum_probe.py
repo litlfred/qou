@@ -288,10 +288,10 @@ def main() -> int:
             "nearly cancel, summing to h*delta/2 = 1.4380325618674e-4 exactly.")
         for nm, d in BONDS:
             wb.add_data(f"minus_block_factor_{nm}",
-                        gmpy2.digits(lam_m + d, 10, 25)[0])
+                        s(lam_m + d, 25))
             wb.add_data(f"total_factor_{nm}",
-                        gmpy2.digits(wp * (lam_p + d) + wm * (lam_m + d), 10, 25)[0])
-        wb.add_data("pn_block_sum_eq_h_delta_over_2", gmpy2.digits(ssum, 10, 25)[0])
+                        s(wp * (lam_p + d) + wm * (lam_m + d), 25))
+        wb.add_data("pn_block_sum_eq_h_delta_over_2", s(ssum, 25))
         for name, ok in checks:
             wb.add_assertion(name=name, computed=str(int(ok)), expected="1")
         wb.add_caveat(

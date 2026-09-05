@@ -301,6 +301,10 @@ def main() -> int:
         from witness_base import WitnessBuilder  # noqa: E402
 
         wb = WitnessBuilder(Path(__file__).stem, engine="python")
+        # Declared 2026-09-05 (qou-i229). This probe IS the producer
+        # `prop:confined-knot-binding` names in its own text, but declared no
+        # contentBlock, so nothing could check the block against it.
+        wb.set_content_block("prop:confined-knot-binding")
         wb.set_description(
             "Evaluates the nuclear-jet level, the third of the three levels "
             "prf:confined-knot-binding names. It is defined by jet-filtered-knot-factor "
@@ -319,9 +323,23 @@ def main() -> int:
             "claim; both jet blocks are Conjectures and neither is retracted.")
         for nm, v in ndist.items():
             wb.add_data(f"distinct_jones_{nm}", str(v))
-        wb.add_data("pn_letter_under_y", gmpy2.digits(mk, 10, 25)[0])
-        wb.add_data("pn_letter_under_wtilde", gmpy2.digits(jt, 10, 25)[0])
-        wb.add_data("sum_wtilde_H3", gmpy2.digits(sw, 10, 25)[0])
+        wb.add_data("pn_letter_under_y", s(mk, 25))
+        wb.add_data("pn_letter_under_wtilde", s(jt, 25))
+        wb.add_data("sum_wtilde_H3", s(sw, 25))
+        # Added 2026-09-05 (qou-i229). This probe computed the H_3 weight table
+        # and PRINTED it, and `prop:confined-knot-binding` publishes all six of
+        # its entries -- but the witness recorded only the two pn-letter values,
+        # so four published figures had no provenance. My own gap, from the same
+        # day, and the same class this bean recorded for 1.064088425325:
+        # witness the figure, do not delete it.
+        wb.add_data("h3_weight_table", {
+            str(p): {
+                "y_lambda_conventionD": s(y.get(p, mpfr(0)), 25),
+                "w_tilde_lambda": s(wt[p], 25),
+            }
+            for p in [(3,), (2, 1), (1, 1, 1)]
+        })
+        wb.add_data("sum_dim_times_y_H3", s(tr1, 25))
         for name, ok in checks:
             wb.add_assertion(name=name, computed=str(int(ok)), expected="1")
         wb.add_caveat(

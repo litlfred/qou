@@ -789,11 +789,67 @@ because τ is that row rearranged — which the block already says.
 
 Report now **8 blocks / 38 asserted**, from 15/79.
 
-- [ ] Six blocks left. `prop:q-beta-spectral-bridge` (12 asserted, best coverage
-      6/12) is the largest and is already known to diverge 21 % from its
-      producer — it belongs with `qou-cds1` rather than here.
-      `prop:confined-knot-binding` and `prop:frobenius-gram-matrix` (3/6, 3/5)
-      are the next readable ones.
+## TRIAGE 6: `prop:confined-knot-binding` — MY OWN witnesses were writing numbers without decimal points
+
+The checker turned on my own work from earlier today and found something worse
+than a missing declaration.
+
+`the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py` is the producer
+the block names in its own text. It declared **no `contentBlock`**, and its
+witness recorded only two of the six figures the block publishes — the `H₃`
+weight table was computed, printed, and then dropped. Ordinary, and the fix is
+the one this bean established with `1.064088425325`: *witness the figure, do not
+delete it.*
+
+**But adding the table did not close the row**, which is how the real defect
+surfaced.
+
+### `gmpy2.digits()` returns a BARE MANTISSA, and I fed it straight into witnesses
+
+    published            0.5054042265039308...
+    witness recorded     5054042265039308031875587      <- no decimal point
+
+Every numeric field in those witnesses was **numerically unusable** — not wrong
+digits, but wrong magnitude by an unknown power of ten, invisible to a reader and
+to every downstream tool. **21 sites across 4 probes**, all mine, all from today:
+
+    the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py   12
+    the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py          6
+    the_free_energy_reading_has_no_energy_spectrum_probe.py                 3
+    the_character_ratio_derivation_path_is_the_bond_model_probe.py          1
+
+Two of those probes **already had** the `s()` formatter I wrote earlier the same
+day for precisely this trap (the one that briefly made `[3]_q! = 6.12` read as
+`0.612`) — and the witness-emission path bypassed it. I fixed the display and
+left the serialisation. The other two never got `s()` at all, so my note that I
+had "added it to every affected probe" was wrong.
+
+All 21 sites now route through `s()`; all four probes re-run green (3/3, 8/8,
+8/8, 13/13). Row closed. Report **7 blocks / 32 asserted**, from 15/79.
+
+### Scanned for it corpus-wide — and it is only mine
+
+Signature: a pure-digit string of length ≥ 15 in a witness `data` field. Across
+**3282 live witnesses**: 6 files, 73 fields, and **every one is a legitimate
+large integer** — rational numerators, LCM denominators, `n!` costs, state-pair
+counts, Taylor coefficients scaled by `2^(3A)`. No other mangled `mpfr` exists.
+So no gate is warranted; the defect was mine and is gone.
+
+### The reason this matters beyond the fix
+
+The two figures that *appeared* to be witnessed before — `0.508229789376739` and
+`0.000071511999729` — matched only because they appear in the witness's
+**description prose**. The structured data carried neither. A checker reading
+`data` alone would have called the block unwitnessed; one reading the whole file,
+as this one does, called it witnessed on the strength of a sentence. Both
+readings are defensible and they disagree, which is worth knowing before anyone
+promotes this checker to a gate.
+
+- [ ] Five blocks left. `prop:q-beta-spectral-bridge` (12 asserted, best coverage
+      6/12) is the largest and is already known to diverge 21 % from its producer
+      — it belongs to `qou-cds1`, not here. `prop:frobenius-gram-matrix` (3/5)
+      and `prop:q-hecke-seminormal-character-closure` (5/5, but three rival
+      candidates including an aggregator) are the next readable ones.
 - [ ] Consider whether `contentBlock`-on-a-verifier deserves its own check. The
       signature is mechanical: a witness declaring a block whose assertions are
       all engine-agreement comparisons and whose data carries none of the block's

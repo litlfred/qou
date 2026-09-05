@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T09:44:13.981783+00:00",
-  "commitSha": "1b025339adaa6e57c8f0c45f48cd715c0bdd8802",
+  "computedAt": "2026-09-05T17:37:35.109152+00:00",
+  "commitSha": "f1e4e39fb38388fac6756dbaeef1d2ec77928673",
   "assertions": [
     {
       "name": "at A = 2 the quotient braid closes to the UNKNOT (J = 1) for every bond type and both averaged resolutions — the jet level multiplies the knot factor by 1, i.e. contributes nothing",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "the_nuclear_jet_level_is_the_retired_all_pairs_object_probe",
   "scriptFile": "the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py",
-  "scriptHash": "e31b35d42469",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "30bd662e9d7c",
+  "scriptCommitSha": "075d093b31a774e43a27b4c9f1dda101e5c5de25",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -79,13 +82,29 @@
     "reproduce": "python3 -u computations/probes/the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py"
   },
   "description": "Evaluates the nuclear-jet level, the third of the three levels prf:confined-knot-binding names. It is defined by jet-filtered-knot-factor (word: the Jones polynomial of the nuclear quotient braid on the A(A-1)/2 inter-nucleon crossings) and jet-convergence-classical-limit (weights w~_lambda = d_q(lambda)^2/[n]_q!). At A = 2 the quotient braid closes to the unknot, J = 1, for every bond type and both resolutions of the averaged pn letter, so the level contributes exactly 1. At A >= 3 the pair multiset does not determine the word: 4 distinct Jones polynomials over 12 orderings at A = 3, 30 over 1440 at A = 4, so a(Z,N) = J is not a function of (Z,N). And the weights are a different family from the Markov trace the quark and nucleon levels use: convention D excludes (1,1,1) with y = 0 while w~ charges it at 0.1634, sum dim*y = 1 but sum w~ = 0.98744, and on the single pn letter y gives 0.508229789376739 against w~'s 0.000071511999729, a factor of 7105. The three-level product is therefore not evaluable as specified. No binding claim; both jet blocks are Conjectures and neither is retracted.",
+  "contentBlock": "prop:confined-knot-binding",
   "data": {
     "distinct_jones_3H": "4",
     "distinct_jones_3He": "4",
     "distinct_jones_4He": "30",
-    "pn_letter_under_y": "5082297893767389625779958",
-    "pn_letter_under_wtilde": "7151199972886608769020041",
-    "sum_wtilde_H3": "9874402297736877291178752"
+    "pn_letter_under_y": "0.5082297893767389625779958",
+    "pn_letter_under_wtilde": "0.00007151199972886608769020041",
+    "sum_wtilde_H3": "0.9874402297736877291178752",
+    "h3_weight_table": {
+      "(3,)": {
+        "y_lambda_conventionD": "0.5054042265039308031875587",
+        "w_tilde_lambda": "0.1633832280562573910406787"
+      },
+      "(2, 1)": {
+        "y_lambda_conventionD": "0.2472978867480345984062206",
+        "w_tilde_lambda": "0.6606737736611729470365179"
+      },
+      "(1, 1, 1)": {
+        "y_lambda_conventionD": "0.0",
+        "w_tilde_lambda": "0.1633832280562573910406787"
+      }
+    },
+    "sum_dim_times_y_H3": "1.000000000000000000000000"
   },
   "caveats": [
     "Both source blocks are labelled Conjecture. Neither is retracted here; the probe reports what they specify and what a well-posed reformulation would have to supply.",

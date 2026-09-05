@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T12:54:16.949058+00:00",
-  "commitSha": "d3af948286f9e79d2104711f2341ed72589f0c8f",
+  "computedAt": "2026-09-05T17:36:58.959262+00:00",
+  "commitSha": "f1e4e39fb38388fac6756dbaeef1d2ec77928673",
   "assertions": [
     {
       "name": "the (1,1) block's factor lambda_- + d is NEGATIVE for every bond — the state sum is signed, not a partition function",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "the_free_energy_reading_has_no_energy_spectrum_probe",
   "scriptFile": "the_free_energy_reading_has_no_energy_spectrum_probe.py",
-  "scriptHash": "56da7a08f332",
-  "scriptCommitSha": "a792f064ebbe76e5e439f5674200e01cbd5b257f",
+  "scriptHash": "655eda6d7089",
+  "scriptCommitSha": "bdf98d7704391b0b62cb685c63e74e31079b2b15",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,7 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -80,13 +83,13 @@
   },
   "description": "Asks the prior question behind rem:bond-log-ratio-is-a-free-energy's open claim that B = alpha L is the binding energy. A free energy is -kT log Z with Z a sum of POSITIVE Boltzmann factors, and that positivity is what makes F a Legendre transform with an internal energy and an entropy. Measured at 200 bits: the (1,1) block's factor lambda_- + d = -1/q + d is NEGATIVE for all three bonds (-0.900918283956, -1.005376531725, -1.109978582751), while the total z + d stays positive because the (2) block outweighs it. Positivity would need d > 1/q, and the algebra's letters satisfy -h <= d <= 0, so the required offset is on the other side of zero from all of them -- for every q > 0, since 1/q > 0 always. Hence no real E_- has exp(-E_-) = lambda_- + d, the (1,1) block has no energy, and there is no U or S for alpha L to be. L itself is untouched and no number moves; what fails is the identification. Also recorded: the pn factors nearly cancel, summing to h*delta/2 = 1.4380325618674e-4 exactly.",
   "data": {
-    "minus_block_factor_pp": "-9009182839557414921608229",
-    "total_factor_pp": "6126880371464652515958299",
-    "minus_block_factor_pn": "-1005376531725467781178657",
-    "total_factor_pn": "5082297893767389625779958",
-    "minus_block_factor_nn": "-1109978582751380807591669",
-    "total_factor_nn": "4036277383508259361649837",
-    "pn_block_sum_eq_h_delta_over_2": "1438032561867373951780805"
+    "minus_block_factor_pp": "-0.9009182839557414921608229",
+    "total_factor_pp": "0.6126880371464652515958299",
+    "minus_block_factor_pn": "-1.005376531725467781178657",
+    "total_factor_pn": "0.5082297893767389625779958",
+    "minus_block_factor_nn": "-1.109978582751380807591669",
+    "total_factor_nn": "0.4036277383508259361649837",
+    "pn_block_sum_eq_h_delta_over_2": "0.0001438032561867373951780805"
   },
   "caveats": [
     "Nothing is retracted. L remains a correct, exactly computable, convention-D canonical quantity in all 80 files that compute it; the free-energy DESCRIPTION is also correct, since signed free energies over quasi-probabilities are legitimate objects.",
