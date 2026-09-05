@@ -8,7 +8,7 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T00:05:00Z
-updated_at: 2026-09-05T09:00:43Z
+updated_at: 2026-09-05T09:08:08Z
 ---
 
 Four provable declarations assert nothing about the objects they name, and two
@@ -203,3 +203,57 @@ so, in a header note I had not read:
 So it is honestly labelled, deliberately left, and blocked on a derivation that
 does not exist. Restating it would be papering over exactly what that note
 refuses to paper over. Leave it.
+
+
+## 2026-09-05 — item 1 `LevelSufficiency`: the defect is FIXED; its successor is already queued
+
+Checked because this bean's own note said item 1 "needs the `markovTrace`
+definition looked at, not just the theorem". It has been.
+
+**The content-block file this item names no longer exists.**
+`knots-particles-confinement/level-sufficiency.lean` is gone; the block keeps
+its `.ts`/`.md` and its `lean.ref` now points at
+`qou:QOU.BraidKnot.LevelSufficiency` in the library tree — the §0a
+"no shadowing stubs" shape.
+
+**The definitional defect is repaired.** This bean's sharpest point was that
+`markovTrace P q = markovTrace P' q := rfl` means *"`markovTrace` is
+definitionally independent of its particle argument, which is a defect in the
+definition, not just the theorem"*. The live definition is
+
+```lean
+class HasMarkovTrace (P : ConfinedParticle) (q : R_q) where
+  value : R_q
+
+noncomputable def markovTrace (P : ConfinedParticle) (q : R_q)
+    [h : HasMarkovTrace P q] : R_q := h.value
+```
+
+so the value is now keyed on `(P, q)` through an instance and the `rfl` proof is
+impossible. The hypotheses moved onto a §3b class `LevelSufficient` carrying
+`trace_eq` as a field.
+
+**Its successor is a self-assuming projection — and is ALREADY COUNTED.**
+
+```lean
+def LevelSufficiency … [hi : LevelSufficient P P' q h_unfold h_cover] :
+    markovTrace P q = markovTrace P' q := hi.trace_eq
+```
+
+`docs/audits/2026-06-17-lean-vacuity-axiom-audit.json` flags it
+`proof-no-self-assuming-projection` / `field-projection`, **severity critical**,
+at line 112 — one of the 34 in that category. So it belongs to whoever drains
+that queue, exactly as this bean ruled for `delta_max_numerical_scale`. Do not
+re-work item 1. The file is also candid about it in its own docstring
+("**Assumed, not derived here** — the body projects `LevelSufficient.trace_eq`").
+
+**Two of my own errors while checking this, both worth the reader's caution.**
+
+1. I first reported the corpus audit had **0 hits** for this declaration. It has
+   one. My script queried `d['findings']`; the data lives under `d['flagged']`,
+   and `.get('findings') or []` turned a wrong key into a confident zero.
+2. On seeing `def` rather than `theorem` I hypothesised it escapes the detector
+   as the §1a `theorem → def` disguise. **It does not** — `detectSelfAssuming`
+   has an `isDefProof` arm that opts Prop-valued `def`s in (`PROP_CONCLUSION`
+   includes `=`), added because "36/99 placeholder-canonical projections are
+   `def`-kind". This declaration is precisely what that arm was written for.
