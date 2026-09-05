@@ -373,3 +373,89 @@ Not that the 14.7 % gap is acceptable, and not that the binding route *should* c
 ### Contamination — where the wrong figures went
 
 The "grouped / 0.82 / two competing braid words" framing is in: this bean (above, now corrected here); the body of **PR #6712**, merged to `main` as `58ab6f8563`; and my chat report of that PR. It did **not** reach any audit doc, content block, Lean file or witness — the probe committed in #6712 (`nf_vs_canonical_word_order_probe.py`) measures word-ORDER sensitivity and its five checks are unaffected; it never claims the production block is a braid.
+
+## Reconciling the two sections above (2026-09-05, at rebase)
+
+Both sections landed the same day from different sessions and they **agree on
+every number**; the clash is one of naming, and the retraction is right about it.
+
+The retraction's `|tr_M| = 1.145759692457300869689082` for the real production
+block is *exactly* the `R_quark grouped` proton figure the blast-radius section
+below measures (`1.1457596924573008697`). Same object, same engine, same value.
+
+**What the retraction correctly kills:** the phrase "`atom_braid_word_3A` uses
+the grouped one", where "the grouped one" meant the six-letter `σ₀³σ₁⁻³` at
+`|tr_M| = 0.18`. The production block is **eleven** letters, two of them
+averaged, so it is not a braid at all and cannot be `β_Bor` or any other braid.
+`0.82` was never the production block's distance from the closed form; `0.147`
+is.
+
+**What survives, and is a different claim:** the six confinement letters *inside*
+that eleven-letter block were laid down in the grouped arrangement — three `σ₀`
+first, three `σ₁⁻¹` seven letters later — rather than alternating. The two
+arrangements give production blocks differing by `3.785×` to `14.325×`, measured
+against `atom_braid_word_3A` itself (probe §2 rebuilds both and reproduces the
+production trace to `1e-60` under each). That is a real difference in a real
+object, and it is what the owner ruled on.
+
+**So the correct statement of the fix is narrower than "emits `β_Bor`":** the
+confinement *core* is now ordered as `(σ₀σ₁⁻¹)³`. The block around it still
+carries two averaged letters and is still not a braid — the producer's own
+"⚠ NAME IS A MISNOMER" docstring stands unchanged and unchallenged. Anywhere the
+2026-09-05 ordering work said the function "emits `β_Bor`", read "has a
+`β_Bor`-ordered confinement core"; the code docstrings have been corrected to
+say so.
+
+## The named next measurement: RAN (2026-09-05). The blast radius is a clean split.
+
+The previous section asked: *"does anything downstream of `atom_braid_word_3A`
+depend on its intra-nucleon block being `β_Bor`?"* Measured in
+`the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py` (9/9),
+whose grouped rebuild reproduces `atom_braid_word_3A`'s own trace to `1e-60`.
+
+**Answer: log-ratio routes are provably immune; difference routes scale by a
+computable factor.**
+
+### Immune — and it is a theorem-shaped reason, not a coincidence
+
+On the chain, `R_nucleon = tr_M(W_atom)/tr_M(W_free)` is identical under the two
+orderings to `~1e-60` at `A = 2, 3, 4`, and equals `∏ᵢ(z + dᵢ)` under both.
+Connected-sum multiplicativity does not see letter order inside a summand, so
+the interface factors survive any reordering of the intra block. `L`, the three
+bond constants, `rem:bond-log-ratio-is-a-free-energy` and the whole binding arc
+computed as a log-ratio **cannot move**.
+
+### Moves — by exactly `R_quark`
+
+    atom   R_quark grouped   R_quark interleaved   factor
+    2H     1.131716904322    0.299015017185         3.785
+    3H     1.117846228978    0.142072056797         7.868
+    3He    1.296675612245    0.188178642999         6.891
+    4He    1.280783151529    0.089409980502        14.325
+
+`binding_canonical` computes `B = Q_β·(tr_M(W_free) − tr_M(W_atom))` — a
+**difference**. Both terms carry the same intra factor, so
+`Δtr = R_quark·(1 − ∏(z+d))` and that route is *exactly proportional* to
+`R_quark`: it would fall by the factors above. Verified numerically, same column.
+
+### A third thing the measurement turned up, unprompted
+
+`rem:canonical-trace-factorises-over-chain` states the per-generator form
+`tr_M(∏ᵢ pᵢ(σᵢ)) = ∏ᵢ[w₊pᵢ(q) + w₋pᵢ(−1/q)]`. **That form assumes the grouped
+ordering** — it needs each generator's letters contiguous. Grouped factorises to
+`~3e-59`; interleaved fails by `2.8×` (`A=2`) to `13.3×` (`A=4`).
+
+The arc's **conclusion** is unaffected: it rests on connected sum, which
+survives (measured above). Only the stated identity is ordering-specific. A
+caveat section has been added to the block saying so. `QOU.Mass.ChainTraceFactor`
+proves the factor algebra and never claims an intra ordering, so the Lean is
+untouched.
+
+### What is NOT decided here
+
+Whether `atom_braid_word_3A` should be changed to interleave. That is a
+685-call-site edit that moves every absolute trace in the corpus by `3.8×`–`14.3×`,
+and it needs an owner ruling, not a probe. This measurement is the thing that had
+to come first: it establishes that the fix is *bounded* (one multiplicative
+factor per atom, in closed form) and that the log-ratio surface is not at risk
+either way.

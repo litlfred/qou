@@ -79,6 +79,36 @@ The quantity $L$ itself is a free-energy difference over the Markov state
 sum; that it is the binding energy is a separate and open claim, recorded in
 [the free-energy reading](#rem:bond-log-ratio-is-a-free-energy).
 
+## The stated form assumes the grouped intra ordering; the conclusion does not
+
+Writing the word as $\prod_i p_i(\sigma_i)$ — one polynomial per generator —
+requires each generator's letters to be **contiguous**. That is a property of
+how the word is assembled, not of the chain topology. The corpus's live builder
+`atom_braid_word_3A` does assemble it that way (all of the $\sigma_0$ chain,
+then all of the $\sigma_1$ chain), which is why the identity measures exact
+above. The **interleaved** intra word $(\sigma_0\sigma_1^{-1})^3$ — the
+Borromean braid $\beta_{\mathrm{Bor}}$ the mass law names, identified against
+its Lean closed form to $5\times10^{-60}$ — carries the same letter multiset in
+a different order and does **not** satisfy the per-generator form: it fails by
+$2.8\times$ at $A = 2$, rising to $13.3\times$ at $A = 4$.
+
+**Nothing above is retracted by that.** The load-bearing step is connected-sum
+multiplicativity, which is blind to letter order inside a summand, and it is
+measured to survive interleaving exactly:
+$\mathrm{tr}_M(\text{chain}) = \prod_k \mathrm{tr}_M(\text{intra}_k)\prod_i(z+d_i)$.
+So the interface factors, the three bond constants and $L$ itself are
+**identical under both orderings** — to $\sim 10^{-60}$ at $A = 2, 3, 4$ — and
+the "no many-body binding" conclusion holds for either word. What is
+ordering-specific is the stronger per-generator statement. What *moves* is every
+**absolute** trace: the intra factor falls by $3.8\times$ at $^2$H to
+$14.3\times$ at $^4$He when the block is rebuilt as $\beta_{\mathrm{Bor}}$,
+carrying the difference-based
+$B = Q_\beta\bigl(\mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{atom}})\bigr)$
+route with it by the same factor. Measured in
+`the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`; which
+word is $\beta_{\mathrm{Bor}}$ is measured in
+`nf_vs_canonical_word_order_probe.py`.
+
 ## What is formalised, what is checked, what is cited
 
 `QOU.Mass.ChainTraceFactor` (sorry-free) proves the factor algebra: the
