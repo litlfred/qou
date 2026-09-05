@@ -244,4 +244,55 @@ theorem wedgeAt_sub_lt_chord_alpha {R t α β γ : ℝ}
   have hbound : π - γ - β = α := by linarith
   rwa [hbound] at h
 
+/-- **The mirror shift**, in the `+δ` direction.  Same bound `R cos(ψ − δ)`,
+but the positive quantity in the certificate is now `−⟨w,v_{θ+ψ}⟩`, supplied by
+`wedgeAt_upper`, where `wedgeAt_lt_chord_shift` used `wedgeAt_lower`:
+
+  cos ψ · (R cos(ψ−δ) − ⟨w,u_{θ+δ}⟩)
+      = cos(ψ−δ) · (R cos ψ − S)  +  (−⟨w,v_{θ+ψ}⟩) · sin δ
+
+Derived rather than assumed from symmetry — the two lemmas consume *different*
+edge bounds, so neither follows from the other by a rewrite. -/
+theorem wedgeAt_lt_chord_shift' {R θ ψ δ : ℝ}
+    (hψ0 : 0 < ψ) (hψ : ψ < π / 2) (hδ0 : 0 ≤ δ) (hδ : δ ≤ ψ) :
+    ∀ w ∈ wedgeAt R θ ψ,
+      w.1 * Real.cos (θ + δ) + w.2 * Real.sin (θ + δ) < R * Real.cos (ψ - δ) := by
+  intro w hw
+  have hπ : 0 < π := Real.pi_pos
+  have hcψ : 0 < Real.cos ψ := Real.cos_pos_of_mem_Ioo ⟨by linarith, hψ⟩
+  have hcψ' : 0 < Real.cos (ψ - δ) :=
+    Real.cos_pos_of_mem_Ioo ⟨by linarith, by linarith⟩
+  have hsδ : 0 ≤ Real.sin δ :=
+    Real.sin_nonneg_of_nonneg_of_le_pi hδ0 (by linarith)
+  have hQ : 0 < -(-(w.1 * Real.sin (θ + ψ)) + w.2 * Real.cos (θ + ψ)) := by
+    have := wedgeAt_upper hψ0 hψ w hw; linarith
+  have hG : 0 < R * Real.cos ψ - (w.1 * Real.cos θ + w.2 * Real.sin θ) := by
+    have := hw.1; linarith
+  have key :
+      Real.cos ψ * (R * Real.cos (ψ - δ)
+          - (w.1 * Real.cos (θ + δ) + w.2 * Real.sin (θ + δ)))
+        = Real.cos (ψ - δ) * (R * Real.cos ψ - (w.1 * Real.cos θ + w.2 * Real.sin θ))
+          + (-(-(w.1 * Real.sin (θ + ψ)) + w.2 * Real.cos (θ + ψ))) * Real.sin δ := by
+    simp only [Real.sin_add, Real.cos_add, Real.cos_sub]
+    ring
+  nlinarith [mul_pos hcψ' hG, mul_nonneg hQ.le hsδ]
+
+/-- **The `W_β` companion of `wedgeAt_sub_lt_chord_alpha`.**
+`t + 2γ + 2α + β = (t+γ+π) + α` because `γ = π − α − β`, so this is the mirror
+shift at `δ = α`, with bound `R cos((α+β) − α) = R cos β` — exactly `W_β`'s
+chord.  Together the two corollaries say `W_sub` lies under BOTH surviving
+wedges' chords. -/
+theorem wedgeAt_sub_lt_chord_beta {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π) :
+    ∀ w ∈ wedgeAt R (t + γ + π) (π - γ),
+      w.1 * Real.cos (t + 2 * γ + 2 * α + β)
+        + w.2 * Real.sin (t + 2 * γ + 2 * α + β) < R * Real.cos β := by
+  intro w hw
+  have hdir : t + 2 * γ + 2 * α + β = (t + γ + π) + α := by linarith
+  have h := wedgeAt_lt_chord_shift' (R := R) (θ := t + γ + π) (ψ := π - γ) (δ := α)
+    (by linarith) (by linarith) hα0.le (by linarith) w hw
+  rw [hdir]
+  have hbound : π - γ - α = β := by linarith
+  rwa [hbound] at h
+
 end QOU.Archimedean.HyperbolicVolume
