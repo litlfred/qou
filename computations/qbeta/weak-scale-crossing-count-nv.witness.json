@@ -1,0 +1,59 @@
+{
+  "schema": "qou-probe/v1",
+  "name": "weak-scale-crossing-count-nv",
+  "description": "Corrects my #6704 claim that the corpus lacks a decay RATE: prop:hadron-half-life states one and its coupling W(q) is derived in closed form (checks 1-3). What is open is the rate's SCALE -- the weak-scale crossing count N_v = 3v/m_e, which is q-independent and, read as a crossing count, must be a positive integer (checks 4-6).",
+  "q0_anchor": "physical_proton",
+  "q0Value": "1.1099785827513808076",
+  "inputs": {
+    "m_e_MeV": "0.51099895069(16)  CODATA 2022",
+    "G_F_GeV^-2": "1.1663787(6)e-5  CODATA 2022"
+  },
+  "results": {
+    "W_q0": "1.18748061314596264610711583008",
+    "W_1": "0.25",
+    "v_GeV": "246.21965079413737805",
+    "N_v": "1445519.5091594682784",
+    "N_v_sigma": "0.371797062205",
+    "N_v_nearest_integer": "1445520.0",
+    "N_v_offset_from_integer": "0.490840531722",
+    "N_v_offset_in_sigma": "1.32018399718",
+    "significance_ceiling_sigma": "1.34481966327",
+    "fraction_of_ceiling_attained": "0.981681063443",
+    "G_F_rel_now_ppm": "0.51441269",
+    "G_F_rel_needed_for_3sigma_ppm": "0.2305976",
+    "G_F_tightening_factor_needed": "2.2307807"
+  },
+  "scope": "(a) scope-limited. Nothing here derives N_v or refutes any route to it; the integrality check is a necessary condition on the corpus's own crossing-count reading, tested against experiment alone.",
+  "checks": [
+    {
+      "name": "W_two_spellings_agree",
+      "pass": true,
+      "detail": "|closed - Wedderburn| = 1.55575e-61 at 60 dps"
+    },
+    {
+      "name": "W_at_q0_matches_corpus_quote_to_4sf",
+      "pass": true,
+      "detail": "W(q_0) = 1.18748061314596, corpus quotes 1.1875, rel 1.633e-5"
+    },
+    {
+      "name": "W_at_one_is_one_quarter",
+      "pass": true,
+      "detail": "W(1) = 0.25; the classical vanishing of the rate is carried by Q -> 0, NOT by the vertex factor"
+    },
+    {
+      "name": "N_v_is_q_independent",
+      "pass": true,
+      "detail": "mu_0 and E_x cancel between v = N_v E_x mu_0 and m_e = 3 E_x mu_0, so N_v = 3 v/m_e = 1445519.509159468 carries no anchor and no Markov-parameter convention"
+    },
+    {
+      "name": "N_v_integrality_measured",
+      "pass": true,
+      "detail": "N_v = 1445519.509159468 +/- 0.3718; nearest integer 1445520.0, offset 0.490841 = 1.32 sigma. Consistent with integrality -- so the experimental precision does NOT refute the crossing-count reading, and does not confirm it either: the resolution is coarser than the spacing between candidate integers is meaningful."
+    },
+    {
+      "name": "integrality_test_ceiling_is_below_two_sigma",
+      "pass": true,
+      "detail": "an integrality test is bounded by (1/2)/sigma = 1.34482 sigma here, so NO value of N_v could be declared non-integral at 2 sigma from CODATA 2022. The measured 1.32 sigma is 98.17% of that ceiling -- i.e. N_v sits essentially as far from an integer as it is possible to sit, and the test still says nothing. G_F's 0.5144 ppm is the sole limiting input (m_e contributes 0.31 ppb); a 3-sigma test needs 0.2306 ppm, a 2.2308x tightening."
+    }
+  ]
+}
