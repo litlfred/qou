@@ -133,6 +133,26 @@ ATOMS = [
     ("fe56",     26, 30, None),
 ]
 
+# Frozen roster the committed witness is expected to cover.  `_save_witness`
+# compares `ATOMS` against this so that TRUNCATING `ATOMS` cannot produce a
+# witness claiming `complete: true` — bean `qou-i7ju` warns in as many words
+# that "truncating the ATOMS list would produce a different witness, not a
+# regenerated one", and a coverage block keyed on `len(ATOMS)` alone would
+# report a 2-atom run as complete.  Measured: it did, before this was added.
+#
+# THIS MUST BE A LITERAL, not `[a[0] for a in ATOMS]`.  Derived from `ATOMS` it
+# is a comparison of a list to itself: truncating `ATOMS` truncates the
+# "canonical" roster with it and the check passes vacuously.  That is the same
+# self-comparison defect this file's own comment block records for the removed
+# `tr_M` assertion (`computed=r["tr_M"], expected=r["tr_M"]`, bean `qou-26f2`),
+# and the first version of this guard reproduced it — caught by testing the
+# guard against a truncated copy rather than trusting it.
+CANONICAL_ATOM_ROSTER = [
+    "proton", "neutron", "protium", "deuterium", "tritium", "he3", "he4",
+    "li6", "li7", "be9", "b11", "c12", "c14", "n14", "o16", "ne20",
+    "si28", "ca40", "fe56",
+]
+
 
 def compute_per_generator_volumes(Z, N):
     """Per-generator full traced volumes V̂_i^full and cross-channel.
@@ -212,6 +232,115 @@ def compute_atom(name, Z, N, quarks=None):
 
 # ── Main ─────────────────────────────────────────────────────────
 
+def _save_witness(results):
+    """Write the witness from the atoms computed SO FAR.
+
+    CHECKPOINTED (2026-09-05, bean `qou-i7ju` route 2).  This used to run
+    once, after all 19 atoms — so a run that did not reach the end produced
+    **nothing**, and since the table takes many hours (deuterium ~20 min,
+    tritium ~26 min, and rising with A) no agent container could ever
+    refresh it.  That is why `hadron-knot-table.witness.json` sat stale on
+    `main`: not because the numbers were hard, but because partial progress
+    was discarded.
+
+    Calling this after every atom makes a bounded run refresh the rows it
+    reached.  The cost is negligible against the per-atom compute.
+
+    A partial witness is a DIFFERENT artifact from a complete one and is
+    labelled as such: `coverage` records exactly which atoms are present and
+    which are missing, and the description opens with PARTIAL/COMPLETE.  A
+    reader — human or audit — can never mistake one for the other, and no
+    assertion is made about an atom that was not computed.
+
+    `coverage` records the ROSTER, not just a count, because "complete" here
+    can only ever mean *reached the end of the configured `ATOMS`* — and this
+    bean's own warning is that "truncating the `ATOMS` list would produce a
+    different witness, not a regenerated one".  A truncated roster would
+    otherwise report `complete: true` off two atoms.  Recording the names, and
+    checking them against the canonical roster, makes that visible instead.
+    """
+    computed_names = [r["name"] for r in results]
+    roster = [a[0] for a in ATOMS]
+    missing = [n for n in roster if n not in computed_names]
+    reached_end = len(results) == len(ATOMS)
+    roster_is_canonical = roster == CANONICAL_ATOM_ROSTER
+    # "complete" means the canonical table, not merely the configured one.
+    complete = reached_end and roster_is_canonical
+    total_terms = sum(r["n_terms"] for r in results)
+    if complete:
+        status = "COMPLETE"
+    elif not roster_is_canonical:
+        status = (f"NON-CANONICAL ROSTER — {len(results)}/{len(roster)} of a "
+                  f"{len(roster)}-atom list, not the canonical "
+                  f"{len(CANONICAL_ATOM_ROSTER)}")
+    else:
+        status = f"PARTIAL — {len(results)}/{len(ATOMS)} atoms"
+
+    w = WitnessBuilder("hadron-knot-table", engine="python")
+    w.set_description(
+        f"[{status}] Hadron-level knot decomposition table in the H₃(q) NF "
+        f"basis. Each atom is 6 coefficients (vs thousands at quark level). "
+        f"Also records per-generator traced volumes V_i and cross-channel "
+        f"z²·Σ ln|V_iV_{{i+1}}| for the mass-endomorphism-tower formula's "
+        f"third sum."
+        + ("" if complete else
+           f" THIS IS A PARTIAL RUN: {len(missing)} atoms were not reached "
+           f"and are absent from `atoms` — see `coverage`. Values present are "
+           f"fully computed; nothing is extrapolated.")
+    )
+    w.set_content_block("rem:hadron-level-knot-table")
+    w.add_parameter("q", Q)
+    w.add_parameter("basis", NF_NAMES)
+    w.add_parameter("z_markov", _z)
+    w.add_parameter("z_squared", _Z2)
+    w.add_parameter("n_atoms_expected", len(ATOMS))
+    w.add_parameter("n_atoms_computed", len(results))
+    w.add_parameter("total_nf_entries", total_terms)
+
+    # Assertions: LP stability, over the computed atoms only.
+    for r in results:
+        # The `tr_M(<atom>)` assertion that stood here read
+        # `computed=r["tr_M"], expected=r["tr_M"]` under
+        # `source="hecke_core.build_atom_nf -> nf_tr"` — it advertised a check
+        # against a named producer while comparing the value to itself, so it
+        # passed for any number the producer returned (bean `qou-26f2`).
+        #
+        # Removed rather than repaired, because there is nothing to repair it
+        # TO: each `tr_M` has one derivation route, so no assertion over it can
+        # fail, and `w.add_data("atoms", results)` below already records every
+        # one of these values with full precision. The assertion was
+        # contributing a guaranteed pass to `allPassed` and nothing else;
+        # deleting it loses no information and removes a claim never made.
+        #
+        # The LP-stability assertion below is the model: `computed` is the
+        # measured predicate and `expected=1` is fixed, so it can fail.
+        # LP stability assertion: all atoms must be Frobenius-stable
+        # (gluon-dressed nucleons satisfy Gx ≥ 0). Catches missing operators.
+        if r["A"] >= 2:
+            w.add_assertion(
+                f"LP_stable({r['name']})",
+                computed=1 if r["frobenius_stable"] else 0,
+                expected=1,
+                tolerance=0,
+                unit="bool",
+                source="hecke_core.check_frobenius (Gx ≥ 0)",
+            )
+
+    w.add_data("coverage", {
+        "complete": complete,
+        "reached_end_of_configured_roster": reached_end,
+        "roster_is_canonical": roster_is_canonical,
+        "atoms_expected": len(roster),
+        "atoms_canonical": len(CANONICAL_ATOM_ROSTER),
+        "atoms_computed": len(results),
+        "roster": roster,
+        "computed": computed_names,
+        "missing": missing,
+    })
+    w.add_data("atoms", results)
+    w.save()
+
+
 results = []
 print(f"Hadron-level knot table ({len(ATOMS)} atoms)")
 print(f"q = {Q:.10f}, basis = {{γ, σ₀, σ₁, L₊, L₋, e⁻}}")
@@ -230,56 +359,8 @@ for name, Z, N, quarks in ATOMS:
         f"{r['delta_xchan_MeV']:>+10.4f} "
         f"{'OK' if r['frobenius_stable'] else 'FAIL':>5}"
     )
+    # Checkpoint: a killed run keeps the rows it reached (bean `qou-i7ju`).
+    _save_witness(results)
 
-total_terms = sum(r["n_terms"] for r in results)
-print(f"\nTotal NF entries: {total_terms} (vs 21,694 quark-level)")
-
-# ── Witness ──────────────────────────────────────────────────────
-
-w = WitnessBuilder("hadron-knot-table", engine="python")
-w.set_description(
-    f"Hadron-level knot decomposition table for {len(ATOMS)} atoms in the "
-    f"H₃(q) NF basis. Each atom is 6 coefficients (vs thousands at "
-    f"quark level). Now also records per-generator traced volumes V_i "
-    f"and cross-channel z²·Σ ln|V_iV_{{i+1}}| for the mass-endomorphism-tower "
-    f"formula's third sum."
-)
-w.set_content_block("rem:hadron-level-knot-table")
-w.add_parameter("q", Q)
-w.add_parameter("basis", NF_NAMES)
-w.add_parameter("z_markov", _z)
-w.add_parameter("z_squared", _Z2)
-w.add_parameter("n_atoms", len(ATOMS))
-w.add_parameter("total_nf_entries", total_terms)
-
-# Assertions: check key traces AND LP stability
-for r in results:
-    # The `tr_M(<atom>)` assertion that stood here read
-    # `computed=r["tr_M"], expected=r["tr_M"]` under
-    # `source="hecke_core.build_atom_nf -> nf_tr"` — it advertised a check
-    # against a named producer while comparing the value to itself, so it
-    # passed for any number the producer returned (bean `qou-26f2`).
-    #
-    # Removed rather than repaired, because there is nothing to repair it TO:
-    # each `tr_M` has one derivation route, so no assertion over it can fail,
-    # and `w.add_data("atoms", results)` below already records every one of
-    # these values with full precision. The assertion was contributing a
-    # guaranteed pass to `allPassed` and nothing else; deleting it loses no
-    # information and removes a claim that was never made.
-    #
-    # The LP-stability assertion below is the model: `computed` is the measured
-    # predicate and `expected=1` is fixed, so it can fail.
-    # LP stability assertion: all atoms must be Frobenius-stable
-    # (gluon-dressed nucleons satisfy Gx ≥ 0). Catches missing operators.
-    if r["A"] >= 2:
-        w.add_assertion(
-            f"LP_stable({r['name']})",
-            computed=1 if r["frobenius_stable"] else 0,
-            expected=1,
-            tolerance=0,
-            unit="bool",
-            source="hecke_core.check_frobenius (Gx ≥ 0)",
-        )
-
-w.add_data("atoms", results)
-w.save()
+print(f"\nTotal NF entries: {sum(r['n_terms'] for r in results)} "
+      f"(vs 21,694 quark-level)")
