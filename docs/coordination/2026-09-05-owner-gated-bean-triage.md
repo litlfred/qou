@@ -87,9 +87,74 @@ in a veto queue at all. Verifying it is the first item of pass 2.
 
 ---
 
+## Pass 2 — the remaining 9, and a pattern
+
+### 🛑 Four more are FALSE POSITIVES — the ask was already answered, inside the bean
+
+This is the pass-2 headline, and it is the same shape as the 18 historical-only
+hits: **a bean says it needs the owner, then resolves the question further down and
+never updates the line at the top.** A keyword scan reads the stale sentence.
+
+| bean | the stated ask | why it is not pending |
+|---|---|---|
+| `qou-zzwm` | *"either the dashboard records the frame it inherited, or the ladder is re-derived under D"* | **the first branch was taken.** Verified live: `per-observable-100x-status.witness.json` now carries `convention_frame_qbeta`, `reproducible_under_canonical_convention`, and explicit text naming the C frame and the 2026-08-15 ruling. The figures are no longer published bare. Live remainder is `qou-cds1`, already its own bean. |
+| `qou-zdz5` | Λ vs Cl₂ wrong forms, 54 sites | the bean's own text: *"a name is not revising a finding, so no ruling was needed. **Had** any site carried a wrong value feeding a conclusion, that **would have been** the owner's call."* Conditional, and the condition was **not met**. |
+| `qou-52i4` | the `would_shrink()` guard blocking a cache reseed | *"the 4459-vs-7268 obstacle predicted above is **not actually enforced**"* — the guard is skipped because the incumbent branch records no counts. Moot. |
+| `qou-e9pp` | a producer requesting the muon anchor that `q_parameter` refuses | **answered by the owner ruling of 2026-08-30**: proton unless (E1) an explicit proton-vs-muon comparison or (E2) the ideal CAL-1/2/3 layer. This producer is neither. |
+
+**So of 33 "pending", 4 were already decided.** Combined with the 18
+historical-only, **22 of the original 81 were noise from the same root cause** —
+a stale sentence outliving the work that answered it.
+
+### Class A additions — default proposed, veto to change
+
+| bean | the ask | **DEFAULT** |
+|---|---|---|
+| `qou-58zw` | 11 witnesses: regenerate (destroys recorded analysis, **including a retraction**) vs restore producing code from history | **restore the producing code; do not regenerate.** The conservative choice preserves evidence; a regenerated witness cannot be un-regenerated |
+| `qou-9xla` | 178 actionable sites; the bean says *"should probably be sequenced, not swept"* | **no-op now** — do not start; a sweep of that size needs its own sequencing plan first |
+| `qou-qflp` | 74 witnesses at a value that is neither canonical pin | **no new bulk action; fold into `qou-3f7a`**, which already scopes exactly this drain. AGENTS.md warns specifically against bulk re-pinning |
+| `qou-r765` | a two-line signature change to classes predating the work | **do not change the signature.** It is one rung; wait for a rung that needs it |
+
+### Class B additions — physics or claim change, NO DEFAULT
+
+| bean | why it is not defaultable |
+|---|---|
+| `dgpc` | bundles a **`status: "verified"` downgrade** on two blocks with an AME re-point. Downgrading a verified block is a claim change |
+| `qou-octr` | *"adding the missing hypotheses to each context class — a claim change"*. Its own words |
+
+---
+
+## Where the 33 landed
+
+| class | count | meaning |
+|---|---:|---|
+| **A — default proposed** | **10** | veto any you want changed; silence applies them |
+| **B — NO DEFAULT** | **19** | physics / convention / claim change; options in pass 3 |
+| **C — not actually pending** | **6** | 2 from pass 1, 4 from pass 2; default is to close or reclassify |
+
+**Class A, the full veto list:** `9h6x` `qou-agvb` `qou-jvav` `qou-pwut`
+`qou-7yj0` `qou-52i4` `qou-58zw` `qou-9xla` `qou-qflp` `qou-r765`
+
+**Class C, proposed closed:** `qou-gwe9` `qou-324i` `qou-zzwm` `qou-zdz5`
+`qou-52i4`(guard half) `qou-e9pp`
+
+---
+
+## The finding that outlives this triage
+
+**22 of 81 apparent owner-asks were stale sentences, not open questions** — 18
+citing a past ruling, 4 answered inside their own bean. The queue was ~27 %
+noise, and every one of those would have cost a round-trip to a physically-
+disabled author.
+
+The cheap fix is a convention, not a tool: **when a bean answers its own owner-ask,
+edit the asking sentence** rather than appending the answer below it. A grep sees
+the first sentence.
+
 ## Status
 
-- **Pass 1** — 33 pending identified and split; 6 Class A defaults proposed, 17
-  Class B held back, 2 Class C proposed for closure, 10 unclassified.
-- **Pass 2** — options for each Class B; verify `qou-zzwm`; classify the
-  remaining 10.
+- **Pass 1** — 33 pending identified and split from 18 historical.
+- **Pass 2** — remaining 9 classified; 4 more false positives found; A/B/C totals above.
+- **Pass 3** — options for the 19 Class B. Two are already before the owner:
+  `qou-goc9` is the same question as today's Q4, and `qou-cds1` is
+  authorisation-to-spend.
