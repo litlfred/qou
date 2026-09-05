@@ -57,7 +57,6 @@ no c_k wired, no axiomatization, nothing wired to any dashboard / Q_β ladder.
 from __future__ import annotations
 
 import importlib.util
-import math
 import sys
 from fractions import Fraction as Fr
 from pathlib import Path
@@ -101,11 +100,21 @@ INV_Q0 = mp.mpf(1) / Q0
 
 # Bar-odd Q_β correction coefficient (KNOWN near-match, NOT to be fitted here):
 # c_3 = −2 = J_Hopf(q=1), the cross-anchor-swinging near-match (CLAUDE.md).
-C3_QBETA = -2.0
+C3_QBETA = mp.mpf(-2)
 
 
 def _coeff(series, k):
     return series[k] if k < len(series) else Fr(0)
+
+
+def _mpf(fr):
+    """Exact `Fraction` -> `mpf` at the CURRENT working precision.
+
+    Numerator over denominator, not `mpf(str(fr))`: both are exact here (mpmath
+    does parse "3/7"), but this one cannot be broken by a change in Fraction's
+    repr and does not round-trip through text.
+    """
+    return mp.mpf(fr.numerator) / fr.denominator
 
 
 def build_offset_series():
@@ -121,14 +130,37 @@ def build_offset_series():
 
 
 def poly_eval(coeffs, q, order):
-    return sum(float(_coeff(coeffs, k)) * q ** k for k in range(order + 1))
+    # mpf, not float (bean `qou-qxsf`, NO-FLOAT64). The offset series is built
+    # in EXACT Fractions by `build_offset_series`; this evaluator was the point
+    # where all of that exactness was thrown away, and everything downstream --
+    # the root q*, the spread, both radius estimates -- inherited float64 from
+    # here. `q` arrives as an mpf, so the whole polynomial is now mpf.
+    acc = mp.mpf(0)
+    for k in range(order + 1):
+        acc += _mpf(_coeff(coeffs, k)) * q ** k
+    return acc
 
 
-def smallest_pos_root(coeffs, order, lo=1e-4, hi=0.15):
+def smallest_pos_root(coeffs, order, lo=None, hi=None):
     """Bisect for the smallest positive real root of the order-N truncation in
-    (lo, hi). Returns None if no sign change (root outside the window)."""
+    (lo, hi). Returns None if no sign change (root outside the window).
+
+    All-mpf (bean `qou-qxsf`, NO-FLOAT64). Two things changed besides the type:
+
+    * The bisection ran a fixed 100 iterations. In float64 that was ~47 more
+      than the 53 bits could hold -- harmless but pointless. In mpf it would be
+      the opposite mistake: 100 halvings give ~30 decimal digits of a root the
+      surrounding computation carries at 70. The count is now taken from the
+      live precision, so the root is resolved to it rather than to a constant
+      chosen for a type this function no longer uses.
+    * `prev_f2` was assigned and never read. Removed; `prev_f = fm` on the next
+      line was already doing the work.
+    """
+    lo = mp.mpf("1e-4") if lo is None else mp.mpf(lo)
+    hi = mp.mpf("0.15") if hi is None else mp.mpf(hi)
     f = lambda q: poly_eval(coeffs, q, order)
     N = 4000
+    half = mp.mpf(1) / 2
     prev_q, prev_f = lo, f(lo)
     for i in range(1, N + 1):
         q = lo + (hi - lo) * i / N
@@ -137,15 +169,15 @@ def smallest_pos_root(coeffs, order, lo=1e-4, hi=0.15):
             return prev_q
         if prev_f * fq < 0:
             a, b = prev_q, q
-            for _ in range(100):
-                m = 0.5 * (a + b)
+            for _ in range(mp.mp.prec + 8):
+                m = half * (a + b)
                 fm = f(m)
                 if prev_f * fm <= 0:
                     b = m
                 else:
-                    a, prev_f2 = m, fm
+                    a = m
                     prev_f = fm
-            return 0.5 * (a + b)
+            return half * (a + b)
         prev_q, prev_f = q, fq
     return None
 
@@ -170,12 +202,12 @@ def main() -> int:
         else:
             print(f"     N={N:>2}:  (no root in (0,0.15))")
     # quadratic-balance prediction 1 − 9q − 28q² = 0
-    q_quad = (-9.0 + math.sqrt(81.0 + 4.0 * 28.0)) / (2.0 * 28.0)
+    q_quad = (mp.mpf(-9) + mp.sqrt(mp.mpf(193))) / mp.mpf(56)
     r18 = roots[ORD]
     stable = (r18 is not None and abs(r18 - q_quad) < 0.01)
     # spread across N>=3 (where the quadratic term is present)
     vals = [roots[N] for N in range(3, ORD + 1) if roots[N] is not None]
-    spread = (max(vals) - min(vals)) if vals else float("nan")
+    spread = (max(vals) - min(vals)) if vals else mp.nan
     print(f"\n     quadratic balance 1−9q−28q²=0  →  q_quad = (−9+√193)/56 = "
           f"{q_quad:.6f}")
     print(f"     q*({ORD}) = {r18:.6f}   |q*−q_quad| = {abs(r18-q_quad):.2e}   "
@@ -183,9 +215,10 @@ def main() -> int:
     print(f"     E1 (truncation-stable ~q_quad)?  {stable}")
 
     # radius-of-convergence estimate (root test |a_n|^(−1/n))
-    tail = [abs(float(_coeff(o, k))) for k in range(1, ORD + 1)]
-    root_test = [t ** (-1.0 / k) for k, t in enumerate(tail, start=1) if t > 0]
-    R_est = root_test[-1] if root_test else float("nan")
+    tail = [abs(_mpf(_coeff(o, k))) for k in range(1, ORD + 1)]
+    root_test = [t ** (mp.mpf(-1) / k)
+                 for k, t in enumerate(tail, start=1) if t > 0]
+    R_est = root_test[-1] if root_test else mp.nan
     print(f"     radius-of-convergence estimate (root test, last term): "
           f"R ≈ {R_est:.4f}")
 
@@ -202,7 +235,7 @@ def main() -> int:
     }
     matches = {}
     for name, val in cands.items():
-        rel = abs(r18 - val) / abs(val) if val != 0 else float("inf")
+        rel = abs(r18 - val) / abs(val) if val != 0 else mp.inf
         hit = rel < 0.01
         matches[name] = {"value": val, "rel_err_vs_qstar": rel, "match_1pct": hit}
         print(f"     q* vs {name:<20} = {val:.6f}   rel.err = {rel:6.2%}"
@@ -233,7 +266,7 @@ def main() -> int:
     print(f"     ⇒ the offset series CANNOT be evaluated at q₀ — c_3 hook via "
           f"direct q₀ evaluation is INACCESSIBLE.")
     # honest c_3 note (NO fit): the only q→0 offset datum is o(0)=1; c_3=−2.
-    o0 = float(_coeff(o, 0))
+    o0 = _mpf(_coeff(o, 0))
     print(f"     [honest, no fit] q→0 offset datum o(0) = {o0}; Q_β c_3 = "
           f"{C3_QBETA}.  o(0)/c_3 = {o0/C3_QBETA:+.4f} — no clean/derived "
           f"relation; NOT wired.")
@@ -251,14 +284,17 @@ def main() -> int:
     # Φ side; hence no direct Borel-level offset↔c_3 identity.
     print("\n[Q3-refined] Borel structure — geometric (convergent, resummed "
           "side) vs factorial (divergent Φ / c_3 side):")
-    an = [abs(float(_coeff(o, k))) for k in range(1, ORD + 1)]
+    an = [abs(_mpf(_coeff(o, k))) for k in range(1, ORD + 1)]
     # geometric model: log|a_n| ≈ α + β n  → slope β = −log R (finite radius R)
     # factorial model: log|a_n| ≈ α + n log n  (Gevrey-1, Borel domain, R=0)
-    import statistics
     ns = list(range(1, ORD + 1))
-    logs = [math.log(a) if a > 0 else 0.0 for a in an]
+    logs = [mp.log(a) if a > 0 else mp.mpf(0) for a in an]
     nz = [(n, l) for n, l, a in zip(ns, logs, an) if a > 0]
-    n_v = [n for n, _ in nz]
+    # mpf, not int (bean `qou-qxsf`): `linfit` computes `sum(xs) / len(xs)`,
+    # and a list of Python ints makes that a float division -- which would put
+    # float64 straight back into the geometric fit, and so into R_geo, after
+    # everything upstream had been converted.
+    n_v = [mp.mpf(n) for n, _ in nz]
     l_v = [l for _, l in nz]
 
     def linfit(xs, ys):
@@ -275,9 +311,9 @@ def main() -> int:
         return a, b, r2
 
     a_geo, b_geo, r2_geo = linfit(n_v, l_v)            # log|a| ~ a + b n
-    xfac = [n * math.log(n) if n > 1 else 0.0 for n in n_v]
+    xfac = [n * mp.log(n) if n > 1 else mp.mpf(0) for n in n_v]
     a_fac, b_fac, r2_fac = linfit(xfac, l_v)           # log|a| ~ a + b (n ln n)
-    R_geo = math.exp(-b_geo) if b_geo != 0 else float("inf")
+    R_geo = mp.exp(-b_geo) if b_geo != 0 else mp.inf
     geometric_wins = r2_geo >= r2_fac
     print(f"     geometric fit  log|a_n| ~ {a_geo:.2f} + {b_geo:.3f}·n     "
           f"R²={r2_geo:.4f}  ⇒ radius R≈{R_geo:.3f}")
@@ -467,24 +503,31 @@ def main() -> int:
         "discipline": "no fit; no c_k wired; no axiomatization; scope-(a); "
                       "avoids all qou-fk19 red-flags"})
     wb.add_data("verdict", verdict)
+    # int predicates, not 1.0/0.0 floats (bean `qou-qxsf`). Three of these
+    # assertions are BOOLEANS -- "did any substrate candidate match", "do the
+    # partial sums diverge" -- and encoding them as float64 put seven raw
+    # float64 fields into the witness for quantities that have no decimals at
+    # all. Promoting them to mpf would have cleared the gate while claiming 70
+    # digits of a yes/no; an int says what they are. `computed` on the first is
+    # a real measurement and IS mpf.
     wb.add_assertion(
         "qstar_truncation_stable_at_quadratic_balance",
-        computed=abs(r18 - q_quad), expected=0.0, tolerance=0.01,
+        computed=abs(r18 - q_quad), expected=0, tolerance=0.01,
         source="q*(18) matches the 1−9q−28q²=0 root (−9+√193)/56 within 0.01; "
                "spread over N≥3 is O(1e-3)")
     wb.add_assertion(
         "qstar_is_not_a_substrate_quantity",
-        computed=0.0 if any_substrate_match else 1.0, expected=1.0, tolerance=0.5,
+        computed=0 if any_substrate_match else 1, expected=1, tolerance=0.5,
         source="q* misses q₀−1, ℏ_q, ℏ_q², 1/q₀, radius all by ≫1% "
                "(locked before compute)")
     wb.add_assertion(
         "offset_inaccessible_at_q0_no_c3_relation",
-        computed=1.0 if diverges else 0.0, expected=1.0, tolerance=0.5,
+        computed=1 if diverges else 0, expected=1, tolerance=0.5,
         source="partial sums o_N(q₀) diverge (q₀≫R, q₀>1); c_3 hook via q₀ "
                "evaluation impossible; no derived o↔c_3 relation; not wired")
     wb.add_assertion(
         "offset_not_bar_covariant_q1_vanishing_only_trivial",
-        computed=1.0 if e4_confirmed else 0.0, expected=1.0, tolerance=0.5,
+        computed=1 if e4_confirmed else 0, expected=1, tolerance=0.5,
         source="o(0)=1≠0 ⇒ o is not f(q)−f(q⁻¹); its q=1 vanishing is not "
                "delivered by the bar-fixed-point argument (that gives the "
                "trivial vanishing of a genuine bar-odd object, a different "
