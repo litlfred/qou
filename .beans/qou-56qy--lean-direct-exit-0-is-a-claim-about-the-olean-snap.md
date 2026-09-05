@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:21Z
-updated_at: 2026-09-05T09:08:22Z
+updated_at: 2026-09-05T09:38:23Z
 ---
 
 ## The claim
@@ -298,3 +298,48 @@ does not fix the untraced root mathlib that makes the closure non-empty in the
 first place. Left undone deliberately; needs a container with a real
 mathlib build, or the parallel-build producer that writes
 `/tmp/parbuild_built.txt`.
+
+
+## THE SIX CONTENT-BLOCK VACUITIES — found, fixed (2026-09-05)
+
+Re-running the content sweep under `-DautoImplicit=false` turned **261 swept /
+0 red** into **261 swept / 6 red**. All six are the same defect class, and none
+of them broke a build — nothing compiles content-block `.lean` files — so they
+are **semantic** defects: declarations that mean less than they say.
+
+| file | symptom | cause |
+|---|---|---|
+| `knots-particles-confinement/stable-atom` | `Unknown identifier AtomKnot` | real `AtomKnot` is in `QOU/ParticleInteractions/AtomKnot.lean`, never imported |
+| `knots-particles-confinement/unstable-atom` | same | same |
+| `information-theory/hydrogen-partition-function` | `Unknown identifier q` | `boltzmann_ground_state (β hbar : ℝ)` never bound `q`; its own sibling at line 61 does |
+| `quantum-observable-universes/qou-exists-axiom-1` | `unknown universe level v` ×2 | `.{u, v}` applied with neither level declared |
+| `quantum-observable-universes/qou-exists-axiom-3` | same ×1 | same |
+| `quantum-observable-universes/substrate-parameter-exists` | `v` ×2, then `WeightDecomposition` / `CategoricalReeb` unknown | `universe u` declared, `v` used by `[Category.{v} C]`; the two "unknown identifiers" are a cascade from the killed structure definitions |
+
+### The evidence that these were real, not imposed strictness
+
+Content blocks sit outside the Lake package, so no lakefile governs them and
+`-DautoImplicit=false` could have been a scoping error on my part. It was not.
+`#check` on the same structure, one import apart:
+
+    fixed        StableAtom : (R : Type u_1) → [CommRing R] → Type u_1
+    old regime   StableAtom : (R : Type u_1) → [CommRing R] → Type (max u_1 u_2)
+
+That `u_2` is the auto-bound `AtomKnot`. The field documented *"The atom-knot"*
+held an element of **an arbitrary type**. This is the vacuity class of
+AGENTS.md §1a, invisible to every checker in the repo because bare `lean`
+accepted it.
+
+### The redeclaration question, answered by the file itself
+
+I flagged `substrate-parameter-exists` as possibly needing a judgement about
+redeclare-vs-import, since `WeightDecomposition` and `CategoricalReeb` also
+exist in their own files. Its own docstring settles it — *"Mirror of
+`weight-decomposition.lean`'s `WeightDecomposition`"* — so the local copies are
+deliberate and the fix is the missing `universe v`, nothing structural.
+
+### Fixes and verification
+
+Two missing imports, one missing value binder, three missing universe
+declarations. Verified 6/6 exit 0 under the corrected options, then the whole
+261 re-swept.

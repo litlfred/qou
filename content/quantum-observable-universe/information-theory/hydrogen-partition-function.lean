@@ -64,7 +64,7 @@ theorem sq_ne_one_of_gt_one (q : ℝ) (hq : q > 1) : q ^ 2 ≠ 1 := by
 
 /-- **Boltzmann factor at j = 0**: exp(-β · J²(0) · ℏ_q) = exp(0) = 1.
     Since J²(0) = 0, the exponent vanishes. -/
-theorem boltzmann_ground_state (β hbar : ℝ) :
+theorem boltzmann_ground_state (q β hbar : ℝ) :
     Real.exp (-β * qAngularMomentum q 0 * hbar) = 1 := by
   rw [qAngularMomentum_zero]
   simp
