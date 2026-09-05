@@ -1,4 +1,4 @@
-## Proof sketch
+## Homogeneity of the chain
 
 Induction along the 19-link derivation chain. At each step:
 
@@ -47,12 +47,14 @@ energy units. The composite functional is therefore
 $\mathfrak{m}(X) = m_e^a m_\pi^c \cdot Q_X(q_0)$ with
 $Q_X \in \mathbb{Q}(q_0)$ and $a, c \in \mathbb{Z}_{\geq 0}$.
 
-The proposition is **conditional** on the chain being realised.
+The discipline is a **structural assumption**, not a derived result — its
+content is the class field `mass_factorisation` of
+`qou:QOU.Observations.ThreeCalibrationDiscipline`. What the walk above shows is
+that the assumption is **consistent with** the chain as far as the chain is
+realised.
 Remaining open conjectures along the chain
 ([mass-endomorphism](#conj:mass-endomorphism),
 [phi-q-tower-jsj-bridge](#rem:phi-q-tower-jsj-bridge))
 do not affect the dimensional-discipline statement: every step
 that *is* realised respects $m_e^a m_\pi^c \cdot \mathbb{Q}(q_0)$
 homogeneity, and any future closure of the chain inherits this.
-
-∎
