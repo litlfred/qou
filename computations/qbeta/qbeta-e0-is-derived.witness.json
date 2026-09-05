@@ -1,0 +1,79 @@
+{
+  "computation": "qbeta-e0-is-derived",
+  "assertions": [
+    {
+      "name": "the_planck_form_and_the_closed_form_are_the_same_number",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "q(q-1) is c_q^-2 . hbar_q^-1 -- a product of two constants that exist anyway, so the shape has a home. qou-59j5's 'E_0 is CAL-1, a calibration not a derivation' is a MISLABEL: m_e is CAL-1, q0 is fixed by CAL-2, and E_0 consumes no further calibration"
+    },
+    {
+      "name": "a_proton_proton_bond_is_exactly_one_markov_reduction",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so B = E_0 x (number of reduction steps) is the framework's own reading of the additive law, reached independently from the trace side. That is WHY the law is extensive"
+    },
+    {
+      "name": "the_span_between_the_two_derived_forms_is_the_stated_truncation_bound",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the two forms differ by exactly hbar_q^2/(1-hbar_q^2), which is the bound rem:energy-scale-planck states for the N=0 residual"
+    },
+    {
+      "name": "the_two_derived_forms_BRACKET_the_measured_peak",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "-0.248 % and +0.741 %. Neither is chosen here; the corpus's binding pipeline uses N=0 and that is why it is reported first, not because it lands closer"
+    },
+    {
+      "name": "the_residual_and_the_remaining_freedom_are_both_about_one_percent",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the same structural situation qou-59j5 flagged at 33 % -- a freedom comparable to the discrepancy -- two orders of magnitude smaller, but NOT gone. Deciding N=0 vs tower-summed from the axioms is the successor question"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "m_e_MeV": "0.51099895069",
+    "c_q": "9.0926794561502453911",
+    "hbar_q": "0.099081716044258507839",
+    "loop_value": "[2]_q (pinned, qou-xf14)",
+    "strands_per_nucleon": 3,
+    "peak_B_over_A_MeV": "8.794555",
+    "source_block": "rem:energy-scale-planck"
+  },
+  "data": {
+    "E_0_planck_form": "4.1859813632944758969",
+    "E_0_closed_form": "4.1859813632944758969",
+    "E_0_tower_summed": "4.2274833556290305503",
+    "truncation_bound": "0.00991451913724993",
+    "forms_vs_peak": [
+      {
+        "form": "E_0^(N=0)",
+        "E_0_MeV": "4.18598136329448",
+        "MeV_per_nucleon": "8.77273894129",
+        "over_peak": "0.9975193675",
+        "pct": "-0.248063"
+      },
+      {
+        "form": "E_0^full",
+        "E_0_MeV": "4.22748335562903",
+        "MeV_per_nucleon": "8.85971642941",
+        "over_peak": "1.007409292",
+        "pct": "0.740929"
+      }
+    ]
+  },
+  "provenance": {
+    "headSha": "b13b489182416c8d8f714685734f3d769fce548f",
+    "producer": "computations/qbeta/qbeta_e0_is_derived_probe.py",
+    "elapsed_s": 0.004
+  }
+}
