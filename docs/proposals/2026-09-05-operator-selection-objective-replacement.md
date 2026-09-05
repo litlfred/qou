@@ -411,6 +411,81 @@ which has not been started.
 
 ---
 
+## 9c. 🛑 O3′ APPEARS TO SELECT — correcting my own §8 recommendation
+
+§8 says *"do not start O3′ expecting it to fix the sign … the honest expectation
+is that O3′ fixes the **type error** and leaves selection open."* The first half
+stands. **The second half looks wrong, and it is cheap to check.**
+
+**The reduction.** Under the natural lift of the scalar per-block coefficient to
+a matrix — `T_λ = t_λ · I`, which is what makes the existing scalar program a
+special case of the block SDP — the O3′ program
+
+```
+min  Σ_λ ⟨T_λ, Φ_λ⟩   s.t.   Σ_λ tr(Φ_λ) = n_target,   Φ_λ ⪰ 0   (λ surviving)
+```
+
+reduces to a **scalar LP in the traces**, `min Σ_λ t_λ τ_λ` s.t. `Σ τ_λ =
+n_target`, `τ_λ ≥ 0`. Its optimum puts all trace on `argmin_λ t_λ`. **That is a
+selection, provided the argmin is unique.**
+
+**Measured** over every row of `a-K-via-lp-dual-full.witness.json`, restricted
+to surviving blocks (`w_λ ≠ 0`):
+
+| row | n | survivors | argmin block | `t_min` | gap to runner-up | unique |
+|---|---|---|---|---|---|---|
+| 0 | 3 | 2 | (2,1) | 0.4470411475 | 56.3 % | yes |
+| 1 | 3 | 2 | (2,1) | 0.4206261579 | 34.8 % | yes |
+| 2 | 6 | 4 | (3,3) | 0.06426714922 | 19.9 % | yes |
+| 3 | 9 | 5 | (5,4) | 0.01654969522 | 110.8 % | yes |
+| 4 | 9 | 5 | (5,4) | 0.02878684856 | 84.0 % | yes |
+| 5 | 12 | 7 | (6,6) | 0.004682720982 | 104.9 % | yes |
+
+**Unique in all six, by a wide margin** — the smallest gap is 19.9 %, so this is
+not a near-tie that numerical noise could flip.
+
+**What is selected, precisely, and what is not.** The **block** (the support) is
+determined; the **operator** is not — any `Φ_λ ⪰ 0` on that block with the right
+trace is optimal, so a `d_λ × d_λ` family remains. That is weaker than "selects
+`Φ*`" and stronger than "selects nothing", and it is exactly the content the
+corpus's own physical reading asks for: *"the active demand channels identify
+which Wedderburn blocks the bound state actually saturates"* (AGENTS.md,
+§LP/SDP duals).
+
+**This does not contradict S4.** S4 excludes a linear objective selecting `𝓑₃`,
+an **operator**, on the NF-indexed polyhedron where `𝓑₃` is relative-interior.
+Block selection on the quotient is a different question, and O3′ answering it
+does **not** deliver `𝓑₃` — S4's exclusion stands at the operator level.
+
+**Observed pattern, offered as an observation and not a claim:** the selected
+block is the **near-square two-row partition** at every n — (2,1), (3,3), (5,4),
+(6,6). Six points is not enough to assert a rule; it is enough to say what to
+test first.
+
+### Caveats that keep this honest
+
+- **It is the reduction that was measured, not a solver run.** No SDP was
+  solved. The measurement is `argmin t_λ` over committed data; the claim that
+  this *is* the optimum rests on the reduction above and on
+  `obj_pos_of_pos_weights`.
+- **The lift `T_λ = t_λ·I` is an assumption**, the natural one, and a different
+  lift (a genuinely matrix-valued `T_λ`) need not reduce this way. Whoever
+  builds the compute should state which lift they implement.
+- **`t_λ > 0` on survivors is measured, not derived** — see the note in
+  `BlockSDPNondegeneracy.lean`.
+
+Reproduce:
+
+```sh
+python3 -c "import json;from mpmath import mp;mp.dps=30;\
+d=json.load(open('computations/a-K-via-lp-dual-full.witness.json'));\
+[print(sorted([(p['partition'],mp.nstr(mp.mpf(p['contribution']),10)) \
+  for p in r['per_partition'] if mp.mpf(p['y_lambda'])!=0], \
+  key=lambda t:mp.mpf(t[1]))[:2]) for r in d['data']['rows']]"
+```
+
+---
+
 ## 10. What is not claimed
 
 That O3′ **selects** `𝓑₃` or anything else. The scope-(b) exclusion (no linear
