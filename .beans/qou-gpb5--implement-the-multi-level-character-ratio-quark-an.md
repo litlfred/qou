@@ -213,3 +213,94 @@ useful question.
       specification names are now computed; the third has no word, and if it
       turns out to have none, "the specification names a level the framework
       cannot evaluate" is the finding.
+
+## THE NUCLEAR-JET LEVEL: ANSWERED (2026-09-05). All three levels are now accounted for.
+
+Probe: `the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py`, 8/8.
+
+### It HAS a word — and I nearly filed "it has none"
+
+Grepping the corpus for "nuclear jet" returns exactly **one** sentence, the one
+in `confined-knot-binding` that names the three levels. On that evidence the
+finding this bean predicted — "the specification names a level the framework
+cannot evaluate" — looked confirmed.
+
+It is defined, in two blocks sitting **immediately after** `confined-knot-binding`
+in the same section, under a name the phrase does not contain:
+
+- `conj:jet-filtered-knot-factor` gives the **word**: `a(Z,N)` is the Jones
+  polynomial of the *nuclear quotient braid*, which "tracks exclusively the
+  `A(A-1)/2` inter-nucleon crossings, suppressing internal nucleon structure".
+- `conj:jet-convergence-classical-limit` gives the **weights**:
+  `W_λ = d_q(λ)²/[3]_q!`, exact at `k = 3`.
+
+One more grep spelling and I would have published the wrong finding. Recording
+that because it is the same blind-spelling failure `qou-5pgl` warns about, and
+the search that found it was structural (read the section's block list) rather
+than lexical.
+
+### Obstruction 1 — the word is the retired all-pairs object
+
+`A(A-1)/2` crossings is a **multiset**; a link needs a **word**, and
+non-adjacent pairs need bands that do not commute with what they span.
+Enumerated on the quotient braid itself (`A` strands, not the `3A`-strand word),
+over every pair ordering and both resolutions of the averaged `pn` letter:
+
+    3H    A=3    12 orderings  ->   4 distinct Jones polynomials
+    3He   A=3    12 orderings  ->   4 distinct
+    4He   A=4  1440 orderings  ->  30 distinct
+
+So `a(Z,N) = J_β̄(q)` is **not a function of `(Z,N)`**. This is `qou-bygw`
+exactly, arriving as the *definition* of the third level.
+
+### Obstruction 2 — the weights are a different family from the other two levels
+
+Quark and nucleon are Markov traces: `y_λ`, convention D, `≤ 2` rows only. The
+jet blocks specify `w̃_λ = d_q(λ)²/[n]_q!` over **all** partitions. On `H_3`:
+
+    λ           y_λ (D)                w̃_λ
+    (3)         0.505404226503931      0.163383228056257
+    (2,1)       0.247297886748035      0.660673773661173
+    (1,1,1)     0                      0.163383228056257
+
+`Σ dim·y = 1` exactly; `Σ w̃ = 0.98744`. The `(1,1,1)` row is structural —
+convention D is the `sl₂` point of the Ocneanu family, so `y_λ = 0` beyond two
+rows, while `w̃` is a ratio of positive quantum integers. **The jet measure
+charges a block the Markov trace annihilates.**
+
+Corroborated by the corpus, not just by me: `prop:wedderburn-weight-canonical`
+tabulates `y^D(q₀) = 0.24729789` against `w̃(q₀) = 0.66067377` at `(2,1)` — the
+same two numbers — and states they are distinct families on every stratum.
+
+### And they disagree qualitatively about the pn bond
+
+    tr_M(σ + d_pn) under y   = 0.508229789376738963   (= z + d_pn)
+    the same letter under w̃  = 0.000071511999728866   — 7107x smaller
+
+`w̃` weights the two `H_2` blocks equally and `d_pn` is their midpoint up to `δ`,
+so the `pn` letter is `w̃`'s **near-null vector**: `w̃·(h + 2d_pn) = w̃·h·δ/2`.
+The `pn` bond is the one the binding arc turns on, and the two families do not
+agree on whether it is `0.51` or `0.00007`.
+
+### Where the level IS evaluable, it contributes 1
+
+At `A = 2`, `A(A-1)/2 = A-1 = 1`: one crossing on two strands, no ordering to
+choose. Its closure is the **unknot**, `J = 1`, for every bond type and both
+averaged resolutions. So the jet level multiplies the deuteron's knot factor by
+exactly `1`.
+
+- [x] The nuclear-jet level. **It has a word; the three-level product is not
+      evaluable as specified.** Two independent obstructions, either sufficient.
+
+### What this closes, and what it does not
+
+`prf:confined-knot-binding`'s multi-level product is closed as a *derivation*:
+it cannot be evaluated as written. Combined with the earlier result that the
+two-level product misses badly (`2H +254.53 %`, `4He −33.60 %`), the
+character-ratio route does not produce binding.
+
+Not retracted: both jet blocks are **Conjectures**, and a conjecture may be
+reformulated on a well-posed word in a stated convention. This bean now says
+precisely what such a reformulation must supply — a rule fixing the word rather
+than its crossing content, and one trace family across all three levels. Caveats
+added to `conj:jet-filtered-knot-factor` and `prop:confined-knot-binding`.
