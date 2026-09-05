@@ -2,11 +2,28 @@
 """The intra-nucleon ordering: what it moves, what it cannot move, and the
 multi-level character ratio it unblocks (`qou-gpb5`, after `qou-hu1f`).
 
-`qou-hu1f` settled WHICH ordering is correct — the interleaved
-`(sigma_0 sigma_1^-1)^3` is `beta_Bor`, verified against the Lean closed form
-(`nf_vs_canonical_word_order_probe`). It left the consequence unmeasured:
-`atom_braid_word_3A` — the live canonical route — uses the grouped
-`sigma_0^3 sigma_1^-3`, so the question is what in the corpus actually moves.
+`qou-hu1f` settled WHICH ordering of the CONFINEMENT CORE is correct — the
+alternating `(sigma_0 sigma_1^-1)^3` is `beta_Bor`, verified against the Lean
+closed form (`nf_vs_canonical_word_order_probe`). It left the consequence
+unmeasured: `atom_braid_word_3A` laid that core down grouped, so the question is
+what in the corpus actually moves.
+
+TERMS, because this bean's own history shows how easy they are to get wrong
+---------------------------------------------------------------------------
+"Grouped" and "alternating" name the arrangement of the six confinement letters
+INSIDE each nucleon's eleven-letter intra block — NOT the block itself. The
+block is not `beta_Bor` under either arrangement and **cannot be**: two of its
+eleven letters are averaged (`sigma - (h/2).1`), outside the image of
+`rho : B_n -> H_n(q)`, so it is not a braid at all. That is
+`atom_braid_word_3A`'s own "NAME IS A MISNOMER" docstring, and
+`atom_intra_block_is_not_a_braid_probe`. One proton, measured:
+
+    grouped block        1.145759692457300870
+    alternating block    0.629328402202921918
+    bare beta_Bor        0.998562163836787266   (six letters, no quark pairs)
+
+Three distinct objects, none of which was expected to equal another. What
+changed on 2026-09-05 is the order of six letters inside the first two.
 
 **The answer is a clean split, and both halves are measurements.**
 
@@ -227,8 +244,10 @@ def main() -> int:
     grpd = [g for _c, _d, g in atom_braid_word_3A(1, 1, intra_order="grouped")][:6]
     print(f"    default            first 6 generators: {dflt}")
     print(f"    intra_order=grouped first 6 generators: {grpd}")
-    check("atom_braid_word_3A now emits the ALTERNATING confinement core "
-          "(sigma_0 sigma_1^-1)^3 by default", dflt == [0, 1, 0, 1, 0, 1])
+    check("atom_braid_word_3A now lays the confinement core down ALTERNATING, "
+          "(sigma_0 sigma_1^-1)^3 -- the CORE, not the 11-letter block, which "
+          "carries two averaged letters and is not a braid at all",
+          dflt == [0, 1, 0, 1, 0, 1])
     check("and intra_order='grouped' still reaches the pre-2026-09-05 word, so "
           "every published absolute number stays reproducible",
           grpd == [0, 0, 0, 0, 0, 0])

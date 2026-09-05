@@ -86,41 +86,51 @@ requires each generator's letters to be **contiguous**. That is a property of
 how the word is assembled, not of the chain topology. The corpus's live builder
 `atom_braid_word_3A` does assemble it that way (all of the $\sigma_0$ chain,
 then all of the $\sigma_1$ chain), which is why the identity measures exact
-above. The **interleaved** intra word $(\sigma_0\sigma_1^{-1})^3$ — the
-Borromean braid $\beta_{\mathrm{Bor}}$ the mass law names, identified against
-its Lean closed form to $5\times10^{-60}$ — carries the same letter multiset in
-a different order and does **not** satisfy the per-generator form: it fails by
-$2.8\times$ at $A = 2$, rising to $13.3\times$ at $A = 4$.
+above. Since 2026-09-05 the live builder instead lays each nucleon's six
+**confinement letters** down alternating, as the $(\sigma_0\sigma_1^{-1})^3$ its
+own source comment always named — the Borromean braid $\beta_{\mathrm{Bor}}$,
+identified against its Lean closed form to $5\times10^{-60}$. Same letter
+multiset, different order, and it does **not** satisfy the per-generator form:
+that fails by $2.8\times$ at $A = 2$, rising to $13.3\times$ at $A = 4$.
+
+*A distinction worth keeping, because this arc's bean once lost it.* Grouped and
+alternating describe the arrangement of six letters **inside** the eleven-letter
+intra block, not the block itself. That block is not $\beta_{\mathrm{Bor}}$
+under either arrangement and cannot be: two of its eleven letters are averaged,
+$\sigma - (h/2)\cdot 1$, which is outside the image of
+$\rho : B_n \to H_n(q)$, so it is not a braid at all and has no single closure to
+name. One proton: $1.145759692457300870$ grouped, $0.629328402202921918$
+alternating, against $0.998562163836787266$ for the bare six-letter
+$\beta_{\mathrm{Bor}}$ — three distinct objects.
 
 **Nothing above is retracted by that.** The load-bearing step is connected-sum
 multiplicativity, which is blind to letter order inside a summand, and it is
-measured to survive interleaving exactly:
+measured to survive the reordering exactly:
 $\mathrm{tr}_M(\text{chain}) = \prod_k \mathrm{tr}_M(\text{intra}_k)\prod_i(z+d_i)$.
 So the interface factors, the three bond constants and $L$ itself are
 **identical under both orderings** — to $\sim 10^{-60}$ at $A = 2, 3, 4$ — and
 the "no many-body binding" conclusion holds for either word. What is
-The same caveat applies one level up, to the [chain
-form](#prop:canonical-closure-torus-chain) itself: "every generator occurs in
-exactly one contiguous run", so that the closure is a linear connected sum of
-$(2,k)$ torus links, is again a property of the assembly. Under
-$\beta_{\mathrm{Bor}}$ each nucleon's block is the **Borromean rings** — prime,
-non-split, not a torus link — rather than two separate runs. The
-*inter*-nucleon structure is a chain either way, since consecutive blocks
-overlap in one strand, which is why the interface factors and $L$ survive
-untouched.
+ordering-specific is the stronger per-generator statement.
 
-That is worth stating plainly, because this arc's own criterion for where
-many-body binding could live is "a closure that fails to be composite —
-non-split, prime, with the kind of irreducibly multi-component linking the
-Borromean rings have". Under the corrected word the nucleon block *is* exactly
-that. It does not rescue the binding gap: the measurement is that
-$L$ is unchanged to $\sim 10^{-60}$, so the Borromean structure sits **inside**
-each nucleon and the nucleons are still strung on a chain. The criterion is
-satisfied at the wrong level.
+The same caveat applies one level up, to the [chain
+form](#prop:canonical-closure-torus-chain): "every generator occurs in exactly
+one contiguous run", so that the closure is a linear connected sum of $(2,k)$
+torus links, is again a property of the assembly. With the confinement core
+alternating, a nucleon's letters no longer form two runs, so that reading of the
+block lapses. It is tempting to go further and say the block therefore satisfies
+this arc's own criterion for where many-body binding could live — "a closure
+that fails to be composite, non-split, prime, with the kind of irreducibly
+multi-component linking the Borromean rings have" — but that would be
+unsupported twice over: the block is a weighted sum of branch closures rather
+than one link, and containing $\beta_{\mathrm{Bor}}$ as a subword is not the
+same as being prime. What is actually measured is only that
+$L$ is unchanged to $\sim 10^{-60}$: the reordering happens **inside** each
+nucleon, the nucleons remain strung on a chain, and no many-body binding
+appears anywhere.
 
 What *moves* is every
 **absolute** trace: the intra factor falls by $3.8\times$ at $^2$H to
-$14.3\times$ at $^4$He when the block is rebuilt as $\beta_{\mathrm{Bor}}$,
+$14.3\times$ at $^4$He when the confinement core is relaid alternating,
 carrying the difference-based
 $B = Q_\beta\bigl(\mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{atom}})\bigr)$
 route with it by the same factor.

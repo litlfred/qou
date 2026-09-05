@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T07:56:40.541102+00:00",
-  "commitSha": "cc61ef15611fd38f52513988e0223eba3258c222",
+  "computedAt": "2026-09-05T08:57:10.536305+00:00",
+  "commitSha": "c128450e5d9f1480a9cf2e243dbd94c14e91266f",
   "assertions": [
     {
       "name": "the INTERLEAVED word is beta_Bor (Lean closed form, rel < 1e-40)",
@@ -23,7 +23,7 @@
       "passed": true
     },
     {
-      "name": "atom_braid_word_3A now emits the ALTERNATING confinement core (sigma_0 sigma_1^-1)^3 by default",
+      "name": "atom_braid_word_3A now lays the confinement core down ALTERNATING, (sigma_0 sigma_1^-1)^3 -- the CORE, not the 11-letter block, which carries two averaged letters and is not a braid at all",
       "computed": "1",
       "expected": "1",
       "passed": true
@@ -87,8 +87,8 @@
   "durationMs": 5,
   "computation": "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe",
   "scriptFile": "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py",
-  "scriptHash": "3c948de4bf65",
-  "scriptCommitSha": "cc61ef15611fd38f52513988e0223eba3258c222",
+  "scriptHash": "bcc859f38847",
+  "scriptCommitSha": "86050abd6c838804bb57a18df9382306076fa4b7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

@@ -568,10 +568,16 @@ def nucleon_word_letters(quarks, *, q=None, intra_order: str = "borromean",
 
     `intra_order`:
 
-      * `"borromean"` (**default**) — `(σ₀σ₁⁻¹)³`, then the three quark-pair
-        crossings, then the two gluon `σ₀`. This is `β_Bor`, and it is what
+      * `"borromean"` (**default**) — the confinement core laid down as
+        `(σ₀σ₁⁻¹)³`, then the three quark-pair crossings, then the two gluon
+        `σ₀`. The CORE is `β_Bor`, which is what
         `quark-antiquark-production-reduction` means by three quarks "confined
-        by the Borromean braid `B₃`".
+        by the Borromean braid `B₃`". The returned eleven-letter word is **not**
+        `β_Bor` and not a braid: two of its letters are averaged
+        (`σ − (h/2)·1`), outside the image of `ρ : B_n → H_n(q)`. Measured
+        `|tr_M|` for one proton: `1.145759692457300870` grouped,
+        `0.629328402202921918` alternating, against `0.998562163836787266` for
+        the bare six-letter `β_Bor` — three distinct objects.
       * `"grouped"` — the pre-2026-09-05 assembly, all of `g0` then all of
         `g1`. Kept so the legacy word stays reachable, for comparison and for
         reproducing published absolute traces. It is NOT `β_Bor`.

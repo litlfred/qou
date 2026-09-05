@@ -551,3 +551,80 @@ toolchain image.
 `QOU.Mass.ChainTraceFactor` under the umbrella — nothing had imported it, so it
 was invisible to every import-walking tool (blueprint, doc-gen) despite being
 compiled by the `globs` target.
+
+## Overclaim corrected at rebase (2026-09-05) — the retraction was right, and it caught me too
+
+The 2026-09-05 ordering work said `atom_braid_word_3A` "emits `β_Bor`" and that
+"each nucleon's block **is** the Borromean rings". Both are wrong, in exactly the
+way the retraction section above names, and they are corrected in the code
+docstrings, the probe docstring and the content block.
+
+- The block is **eleven** letters, two of them averaged, hence not a braid and
+  not `β_Bor` under any arrangement. Only its six-letter confinement **core**
+  changed order.
+- "The block is the Borromean rings" was worse than loose: a block with averaged
+  letters has no single closure at all — `tr_M` of it is a weighted sum of
+  branch closures — so there is no link to identify.
+- The follow-on claim that the corrected block therefore satisfies this arc's
+  "non-split, prime, irreducibly multi-component" criterion is **withdrawn**. It
+  fails twice: a weighted sum of closures is not one link, and containing
+  `β_Bor` as a subword is not being prime. What is measured is only that `L` is
+  unchanged to `~1e-60`.
+
+The measurements were never affected — probe §2 rebuilds both arrangements and
+reproduces `atom_braid_word_3A`'s own trace to `1e-60` under each, and the
+retraction's `1.145759692457300869689082` is the same number as this bean's
+`R_quark grouped` proton. It was the *prose* that outran them, which is the
+identical failure the retraction records one section up. Twice in one day on one
+bean is the signal: **do not name an object from how it was constructed.**
+
+## 🛑 THE 5.045e-4 RESIDUAL WAS A COINCIDENCE — this bean's founding number is retracted
+
+Found at rebase, because fixing the ordering made
+`nf_vs_canonical_word_order_probe` go **3/5**. The failure was correct and the
+probe was wrong.
+
+**This bean concluded "the A=1 residual IS the word order". Withdrawn.**
+Decomposed at 200 bits:
+
+    grouped intra, no electron   (pre-fix canonical)  1.1457596924573008697
+    interleaved intra + electron (the NF route)       1.1463376906350050736
+      -> rel 5.044672e-04                             the "known residual"
+
+    grouped intra + electron                          1.5534762115753358114
+      -> ordering alone, electron held fixed:  6.38x
+    interleaved intra, no electron (canonical now)    0.6293284022029219182
+      -> electron alone, ordering held fixed:  0.82
+
+`build_atom_nf` adds `Z` electron crossings on gen 1; `atom_braid_word_3A`
+deliberately does not — it is the **nucleus**. So the two routes differed by
+**both** the ordering and the electron, and two large unrelated discrepancies
+landed within `5e-4` of each other. `build_atom_nf_mp(1,0)` is now verified to
+be exactly `atom_braid_word_3A(1,0)` plus one `σ₁⁻¹`, to `1e-40` — 25 digits
+agreeing, so this is identification, not a fit.
+
+The ordering fix removed one term and exposed the other at full size. That is
+why the probe went red, and the red was informative.
+
+### How it survived a day: a hardcoded transcription
+
+Check 4 compared the canonical word against a **hardcoded** `nf_seq` literal
+transcribed from `build_atom_nf`'s source — and that transcription omitted the
+electron. So it asserted "same multiset, different order" against a word whose
+trace it does not reproduce. Nobody noticed because the two errors cancelled
+into a plausible-looking `5e-4`.
+
+**Third instance on this bean of the same error class** — naming an object from
+how it was constructed rather than instrumenting it. The first two are recorded
+above; this one had been passing CI. The rule that keeps failing to stick:
+*if a probe prints a word, it must have obtained that word from the producer,
+not from reading the producer.* Both checks are now measurements, 5/5.
+
+### What is NOT retracted
+
+The ordering finding itself. `(σ₀σ₁⁻¹)³` is still `β_Bor` to `7e-61`, the
+grouped arrangement is still `82 %` away, and the two arrangements still give
+production blocks differing by `6.38×` at `A = 1`. What changes is the *story
+about the residual*: it was never evidence for the ordering, because it was
+never a pure ordering effect. The ordering finding rests on the Lean closed
+form, which is untouched by any of this.

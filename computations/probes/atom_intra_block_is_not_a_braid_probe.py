@@ -181,11 +181,26 @@ def main() -> int:
         print(f"    {nm:38s} {mp.nstr(v, 25):28s} rel {mp.nstr(g, 6)}")
     # interleaved reproduces the Lean form at the arithmetic floor
     ok3a = gap_bor < mp.mpf("1e-50")
-    # the production block is ~14.7 %, NOT the 82 % the bean claimed
-    ok3b = mp.mpf("0.14") < gap_block < mp.mpf("0.16")
+    # The production block is neither six-letter candidate. This check used to
+    # pin ~14.7 %, which was the figure while the confinement core was laid down
+    # GROUPED. The 2026-09-05 owner ruling (bean `qou-hu1f`) relaid that core
+    # alternating, moving the block from 1.1457596924573008697 to
+    # 0.6293284022029219182, i.e. 14.7 % -> 37.0 %.
+    #
+    # The check's POINT is unchanged, and is in fact sharper now: the block is
+    # not `beta_Bor` under EITHER core ordering, because it is not a braid at
+    # all. So the assertion is the ordering-INDEPENDENT one -- a wide gap either
+    # way -- with both measured figures recorded rather than one frozen in.
+    #
+    #     core grouped (pre-2026-09-05)   1.1457596924573008697   rel 0.147409
+    #     core alternating (current)      0.6293284022029219182   rel 0.369765
+    #     bare beta_Bor                   0.9985621638367872660   rel 9.1e-72
+    ok3b = mp.mpf("0.05") < gap_block < mp.mpf("0.75")
     checks.append(("interleaved IS beta_Bor (Lean closed form)", ok3a,
                    f"rel {mp.nstr(gap_bor, 6)}"))
-    checks.append(("production block is ~14.7% off, not 82%", ok3b,
+    checks.append(("production block is far from beta_Bor under EITHER core "
+                   "ordering (0.147 grouped, 0.370 alternating) -- it is not a "
+                   "braid, so it cannot be beta_Bor", ok3b,
                    f"rel {mp.nstr(gap_block, 6)}"))
 
     # ---- 4. the mass-law route never touches the word builder ------------

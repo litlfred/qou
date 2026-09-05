@@ -455,13 +455,22 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
                          q=None, allow_float64: bool = False):
     """Full 3A-strand word as a list of (c, d, gen_idx) triples.
 
-    ⚠ INTRA ORDERING CHANGED 2026-09-05 (bean `qou-hu1f`; owner ruling). This
-    function used to emit each nucleon's intra letters as all of the `σ₀` chain
-    followed by all of the `σ₁` chain, i.e. `σ₀³σ₁⁻³`. `σ₀` and `σ₁` are
-    adjacent and do not commute, so that is a different element of `H₃(q)` from
-    the `(σ₀σ₁⁻¹)³` its own source comment names — and only the interleaved one
-    is `β_Bor`, matched to `5e-60` against the Lean closed form
-    `(4 + h² − 3h⁴ − h⁶)/(h² + 4)`. The default is now `β_Bor`.
+    ⚠ INTRA ORDERING CHANGED 2026-09-05 (bean `qou-hu1f`; owner ruling). Each
+    nucleon's **confinement core** — the six letters `nucleon_gen_chains`
+    comments as `(σ₀·σ₁⁻¹)³` — used to be laid down grouped, three `σ₀` and then,
+    seven letters later, three `σ₁⁻¹`. `σ₀` and `σ₁` are adjacent and do not
+    commute, so that is a different element of `H₃(q)` from the alternating word
+    the comment names, and only the alternating one is `β_Bor` (matched to
+    `5e-60` against the Lean closed form `(4 + h² − 3h⁴ − h⁶)/(h² + 4)`). The
+    core is now alternating.
+
+    **This does NOT make the returned block `β_Bor`, or a braid.** The block is
+    eleven letters per nucleon, two of them averaged (`σ − (h/2)·1`), which is
+    outside the image of `ρ : B_n → H_n(q)` — see the MISNOMER note below, which
+    is unchanged and still governs. Its `|tr_M|` is `1.145759692457300870`
+    grouped and `0.629328402202921918` alternating, against `0.998562163836787266`
+    for the bare six-letter `β_Bor`; none of the three coincide and none was
+    expected to. Only the ordering of six letters inside the block changed.
 
     **What moved and what could not.** Log-ratio quantities could not move:
     `tr_M(W_atom)/tr_M(W_free)` is identical under both orderings to `~1e-60`
