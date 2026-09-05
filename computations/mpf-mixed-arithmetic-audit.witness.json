@@ -3,13 +3,12 @@
   "name": "mpf-mixed-arithmetic-audit",
   "description": "Static detection of arithmetic mixing an mpmath value with a float64-sourced one. Sits between the value-level padding ratchet (blind once a float64 is multiplied by anything exact) and the construction-level mpf(<float>) gate (blind because no mpf() call is involved). Advisory: high-recall candidates for agent verdict.",
   "data": {
-    "candidates": 7,
+    "candidates": 6,
     "marked": 10,
-    "files": 5,
+    "files": 4,
     "baseline": 3,
     "by_file": {
       "computations/borromean-axial-coupling.py": 1,
-      "computations/fr_pullback_k3_test.py": 1,
       "computations/probes/schur_weyl_share_is_a_third_measure_probe.py": 1,
       "computations/qbeta/qbeta_habiro_taylor_investigation.py": 3,
       "computations/qbeta/qbeta_symbolic_sdp_strict_complementarity.py": 1
@@ -27,24 +26,13 @@
         "class": "CANDIDATE"
       },
       {
-        "file": "computations/fr_pullback_k3_test.py",
-        "line": 421,
-        "kind": "serialized",
-        "detail": "fmt(<float64-tainted>)",
-        "source": "\"max_over_min\": fmt(mom),",
-        "taint_name": "mom",
-        "taint_origin_line": 414,
-        "taint_origin_source": "mom = rmax / rmin if rmin > 0 else float(\"inf\")",
-        "class": "CANDIDATE"
-      },
-      {
         "file": "computations/probes/schur_weyl_share_is_a_third_measure_probe.py",
-        "line": 229,
+        "line": 256,
         "kind": "printed",
         "detail": "nstr(<float64-tainted>, 22)",
         "source": "print(f\"    n={n}  sum = {mp.nstr(tot, 22)}  (Burnside; q-INDEPENDENT)\")",
         "taint_name": "tot",
-        "taint_origin_line": 226,
+        "taint_origin_line": 253,
         "taint_origin_source": "tot = mp.fsum(mp.mpf(f_lambda(l)) ** 2 for l in L) / mp.mpf(math.factorial(n))",
         "class": "CANDIDATE"
       },
@@ -97,9 +85,9 @@
   "scriptFile": "mpf_mixed_arithmetic_audit.py",
   "scriptHash": "26ce5b951fe5",
   "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
+  "commitSha": "2afaaf54fc0a8dd3b93ba75fa4fc88799cf45287",
   "engine": "python",
-  "computedAt": "2026-09-05T18:14:26.778769+00:00",
+  "computedAt": "2026-09-05T18:56:45.544825+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
