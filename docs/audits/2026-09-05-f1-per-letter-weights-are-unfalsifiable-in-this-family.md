@@ -147,3 +147,59 @@ word, or exhaustive enumeration on a smaller nucleus), not more random sampling.
   invariant while the value varies, which is directly observed.
 - The extremality is the speculative half and is labelled as such.
 - Scope-(a) throughout.
+
+---
+
+# 🛑 The word default moved under this work — and it leaves a red on `main`
+
+Rebasing this branch onto `main` **failed the selftest**, which is what the gate
+exists for. Cause: **`7db032fb48` (`qou-hu1f`, 2026-09-05)** changed
+`atom_canonical_crossings`'s default `intra_order` from `"grouped"` to
+`"borromean"`.
+
+## What moves and what does not — measured, not assumed
+
+That commit's docstring states *"Log-RATIO consumers need no change: the ratio is
+invariant."* Tested across pn / pp / ⁴He:
+
+    quantity            grouped (old)            borromean (new)     invariant
+    f₁/f₀               37/2, 21, 37             1/2, 3, 1              NO
+    c₁  (Δtr order 1)   37/16, 19/8, 259/128     1/16, 1/8, 7/128       NO
+    c₀  (the floor)     1/8, 1/8, 7/128          unchanged              YES
+    L0  (log-ratio)     2, 2, 8                  unchanged              YES
+    L1  (log-ratio)     0, −2, 0                 unchanged              YES
+
+**The claim is correct and now verified — but it does not cover a DIFFERENCE.**
+`Δtr = tr_free − tr_atom` is a difference, not a ratio, so the entire `c_k`
+family is convention-dependent while `L0`/`L1` are not.
+
+## Consequences, split by what they hit
+
+- **The log-ratio results survive intact.** `L0 = (A−1)·log 2` and
+  `L1 = 2(i_nn − i_pp)` are ratio quantities and are invariant under the change.
+  Nothing in that arc needs revisiting.
+- **The `c_k` numbers are grouped-word values.** `c₁ = 259/128`, `c₂`, `c₃` and
+  everything derived from them are correct *for the grouped word* and are no
+  longer what `main`'s default produces. They are not wrong; they are
+  convention-scoped, and were not labelled as such because the convention did
+  not exist when they were measured.
+- **This module now PINS `intra_order`** rather than inheriting a default that
+  can move underneath it (`INTRA_ORDER = "grouped"`, matching the `RECORDED`
+  table it gates against).
+
+## A red on `main` that is not this branch's
+
+`c1_leading_coefficient_derived_probe.py` does **not** pin `intra_order`, so on
+`main` it now computes against the borromean word while its own `RECORDED` table
+holds grouped values. Run on `main`, verified rather than inferred:
+
+    c1 = 1/8   (recorded 19/8:  False)   pp
+    c1 = 1/16  (recorded 37/16: False)   pn
+    c1 = 0     (recorded 9/4:   False)   nn
+
+so its `series_order_one_equals_the_six_recorded_rationals_exactly` assertion
+fails. **This is `qou-pdg9`'s producer and `qou-hu1f`'s change; it is not fixed
+here.** The fix is one keyword — pin `intra_order="grouped"` at the two
+`atom_canonical_crossings` calls, or re-derive `RECORDED` under borromean — but
+which of those is right is a question about what the `c₁` result *means*, and
+that belongs to its owner.
