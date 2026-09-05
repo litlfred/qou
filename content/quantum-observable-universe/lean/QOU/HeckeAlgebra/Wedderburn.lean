@@ -22,11 +22,13 @@ seminormal dimension from `QOU.HeckeAlgebra.Hoefsmit`.
 - `WedderburnDecomposition n` — the indexed family
   `Π λ ⊢ n, WedderburnBlock λ` representing an element of `H_n(q)`
   in block-diagonal form.
-- `wedderburnEmbed` — embed `WedderburnDecomposition n` into
-  `Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ` via
-  block-diagonal matrix construction.  **Still `opaque` here**, but
-  see below: `QOU/HeckeAlgebra/WedderburnConstruction.lean` now
-  builds it.
+The embedding itself is **not** in this module.  It lives in
+`QOU/HeckeAlgebra/WedderburnConstruction.lean` as `blockDiagonal`
+(unconditional, injective) and `wedderburnEmbedOf` (the same map
+reindexed to `Fin (heckeDim n)`, given RSK as a hypothesis).  An
+`opaque wedderburnEmbed` stood here until 2026-09-05 and is gone;
+see the note where it was declared for why deletion and not
+deprecation.
 
 (This list previously also advertised `wedderburnEmbed_posSemidef`
 — "block-diagonal-of-PSD-blocks is PSD on the whole".  No such
@@ -50,16 +52,16 @@ agreement `Σ_λ (f^λ)² = n!` is the **Robinson-Schensted-Knuth
 correspondence** (a non-trivial Mathlib import).  Both are
 deferred — this module captures the type-level interface.
 
-**Partly superseded (2026-09-05, bean `qou-usol`).** The first of
-those two is not in fact a blocker: on the natural index type
-`Σ λ, Fin (f^λ) × Fin (f^λ)` the assembly is an ordinary
+**Superseded in part (2026-09-05, beans `qou-usol`, `qou-kp2z`).**
+The first of those two is not in fact a blocker: on the natural
+index type `Σ λ, Fin (f^λ) × Fin (f^λ)` the assembly is an ordinary
 definition and is *injective*.
 `QOU/HeckeAlgebra/WedderburnConstruction.lean` builds it
 (`blockDiagonal`, `blockDiagonal_injective`) with axiom footprint
-`[propext, Classical.choice, Quot.sound]` — no `wedderburnEmbed`.
-Only landing in `Fin (n!)` needs RSK, and that step is isolated
-there as the explicit hypothesis `RSKDimIdentity`.  The `opaque`
-below is therefore retained only for the unconditional form, and
+`[propext, Classical.choice, Quot.sound]`.  Only landing in
+`Fin (n!)` needs RSK, and that step is isolated there as the
+explicit hypothesis `RSKDimIdentity`.  The `opaque` that used to
+stand below has been deleted, so what remains open here is
 deleting it in favour of `wedderburnEmbedOf` is the clean
 follow-up (its two remaining references are doc comments in
 `MarkovTrace.lean`).
@@ -109,24 +111,41 @@ theorem PosSemidef.add
   intro lam
   exact (hx lam).add (hy lam)
 
-/-- **Wedderburn embedding** into the global matrix algebra.
-    Takes a per-block decomposition `⊕_λ M_{f^λ}(ℝ)` (total
-    vector-space dimension `Σ_λ (f^λ)²` per Robinson-Schensted-
-    Knuth) and assembles a block-diagonal matrix of dimension
-    `heckeDim n = n!`.  The dimension identity `Σ_λ (f^λ)² = n!`
-    is the RSK bijection — which we don't have at the Lean
-    type level yet, so the embedding is axiomatised.
+/-! ### The embedding: retired from this file (2026-09-05, bean `qou-kp2z`)
 
-    **Axiomatised** (per Gemini review): a stub returning `0`
-    would be logically inconsistent with the categorical
-    Markov-trace structure (which asserts non-zero traces for
-    non-zero per-block elements via the Wenzl bridge —
-    non-zero in general for non-zero x) combined with
-    `markovTrace_zero` (the trace of zero is zero).  Using
-    `axiom` keeps the embedding opaque pending concrete
-    construction. -/
+`opaque wedderburnEmbed : ∀ {n}, WedderburnDecomposition n →
+Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ` stood here.  It is
+deleted; `QOU/HeckeAlgebra/WedderburnConstruction.lean` carries the
+real thing (`blockDiagonal`, and `wedderburnEmbedOf` for the
+`Fin (heckeDim n)` landing).
+
+Why it is a deletion rather than a deprecation: `opaque` is not a
+free notation.  It is irreducible *and* it reports in
+`#print axioms`, so every declaration routed through it read as
+axiom-bearing by this corpus's own standard.  Measured on merged
+`main` at 7e75622 before removal, nothing routed through it at all:
+the sole term-level occurrence of the name in the whole Lean tree
+was the declaration itself, and `wenzlBridge` — whose module doc
+described the identity in terms of it — is in fact stated over
+`markovTraceOnWedderburn`.  So the axiom was being paid for by
+nobody, which is the cheapest possible case and also the easiest
+one to leave standing forever.
+
+Its docstring carried an argument worth answering rather than
+discarding.  Per a Gemini review it held that the embedding could
+not simply be *defined*, because a stub returning `0` would
+contradict the Markov-trace structure (non-zero traces for
+non-zero blocks via the Wenzl bridge) together with
+`markovTrace_zero`.  That objection is met, not dodged:
+`blockDiagonal` is not a stub, and `blockDiagonal_injective` shows
+it is not the zero map — a non-zero decomposition has a non-zero
+image.  The objection was to a stub; the answer is a construction.
+
+The dimension identity `Σ_λ (f^λ)² = n!` (RSK) is still not
+available here, and is not silently assumed: it is the named
+hypothesis `RSKDimIdentity` in the construction module, discharged
+by nothing in this corpus.
+-/
 -- Ref: [wedderburn1908] https://doi.org/10.1112/plms/s2-6.1.77 (Wedderburn decomposition ⊕_λ M_{f^λ}; Σ_λ(f^λ)²=n! via RSK, [fulton1997])
-opaque wedderburnEmbed : ∀ {n : ℕ}, WedderburnDecomposition n →
-    Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ
 
 end QOU.HeckeAlgebra.Wedderburn
