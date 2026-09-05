@@ -375,6 +375,42 @@ be unable to distinguish it from zero. The accumulator's `k_max = 11` sits at
 **So O3′ stands.** Both falsifiers this proposal wrote for itself have now been
 run: one killed bare O3 and produced O3′, the other cleared O3′.
 
+## 9b. OWNER RULING 2026-09-05 — O2 and O3′ both chosen; O2 applied, O3′ begun
+
+The author picked **1 and 2** from the options put to them: O2 (fix the
+documentation) and O3′ (re-pose as the block SDP on the radical quotient).
+O1/O4/O5 not chosen.
+
+**O2 is applied.** Six sites, no number moved. The corrected statement is that
+`y_0 = 1/[k]_q!` is `min_λ(w_λ/d_λ)` — a weight normalisation — and not the
+dual of any normalisation constraint; the actual net-constraint dual of
+`prop:operator-selection-lp` is identically zero. Two content blocks
+(`mass-coefficient-shadow-price`, `knot-operator-energy`), one Lean docstring,
+three sites in `hecke_core_legacy.py`. Content validate exit 0; `lean`-direct
+exit 0. `shell-closure-stability.md` carries the same *shape* of claim about the
+**confinement** LP and was deliberately left — that is a different program and
+deciding it is a measurement, not a doc fix.
+
+**O3′ is begun, formalize-first.**
+[`QOU/MassTheory/BlockSDPNondegeneracy.lean`](../../content/quantum-observable-universe/lean/QOU/MassTheory/BlockSDPNondegeneracy.lean)
+— five declarations, `lean`-direct exit 0, `#print axioms` clean on all five
+(`propext, Classical.choice, Quot.sound`; no `sorryAx`):
+
+| declaration | what it settles |
+|---|---|
+| `obj_pos_of_pos_weights` | On the quotient, **every** feasible point has strictly positive objective — no zero-objective ray, so no degenerate optimum. |
+| `exists_zero_obj_of_zero_weight` | The O3 falsifier as a theorem: **one** vanishing weight suffices to restore the degeneracy at any target. The positivity hypothesis is load-bearing. |
+| `feasible_smul` | The value is homogeneous of degree one in `n_target` — the property the LP provably lacks. |
+| `trace_nonneg_of_posSemidef` | The bridge from `Φ_λ ⪰ 0`, built on the corpus's own `QOU.MathlibExt.PosSemidefTraceZero`. |
+
+**Still not proved, and the file says so:** that O3′ *selects*. S4 is untouched
+by re-posing. Non-degeneracy buys a well-defined optimal value that responds to
+the target; uniqueness of the minimiser stays open. The remaining O3′ work is
+the compute — re-posing the actual program on the quotient and recomputing —
+which has not been started.
+
+---
+
 ## 10. What is not claimed
 
 That O3′ **selects** `𝓑₃` or anything else. The scope-(b) exclusion (no linear

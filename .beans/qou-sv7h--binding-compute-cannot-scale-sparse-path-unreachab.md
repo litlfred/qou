@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-05T08:05:00Z
+updated_at: 2026-09-05T09:20:00Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -253,3 +253,58 @@ the feasible geometry still does not distinguish `B_3`, so selection stays open.
 - Step 3 (the float64 builder) — untouched by this session.
 - 6Li / A>=6 for the extensive term's SHAPE (`qou-brng`) — a run is in flight
   but that is a different question from the sign.
+
+## Owner ruling 2026-09-05 — O2 + O3′ chosen; O2 done, O3′ formalized
+
+Author picked **1 and 2**: fix the documentation, and re-pose as the block SDP
+on the radical quotient.
+
+**O2 applied, six sites, no number moved.** The false claim was that
+`y_0 = 1/[k]_q!` is "the dual variable of the normalisation constraint". It is
+`min_λ(w_λ/d_λ)`, a weight normalisation; and the real net-constraint dual of
+`prop:operator-selection-lp` is identically zero. Corrected in
+`mass-coefficient-shadow-price.{md,ts}`, `knot-operator-energy.md`,
+`unified-iterative-correction.lean` (docstring only), and three sites in
+`hecke_core_legacy.py` — one of which additionally claimed the LP assigns
+"unique invariants" to the partition basis, false twice over (NF-indexed, and a
+positive-dimensional minimiser face). Content validate exit 0; `lean`-direct
+exit 0. `shell-closure-stability.md` makes the same shape of claim about the
+**confinement** LP and was left alone: different program, and settling it is a
+measurement rather than a doc fix.
+
+**O3′ begun formalize-first** — `QOU/MassTheory/BlockSDPNondegeneracy.lean`,
+5 declarations, `lean`-direct exit 0, `#print axioms` clean on all five (no
+`sorryAx`). `obj_pos_of_pos_weights`: on the quotient every feasible point has
+strictly positive objective, so no degenerate ray.
+`exists_zero_obj_of_zero_weight`: one vanishing weight restores the degeneracy
+at any target — the falsifier as a theorem. `feasible_smul`: the value is
+homogeneous of degree one in `n_target`, the property the LP lacks. **Not
+proved: that O3′ selects.** The compute half of O3′ is not started.
+
+## 🛑 My A-independence claim is UNVERIFIED, and ⁶Li is anti-correlated
+
+`binding_energy(3,3)` with `_HAS_LP_KERNEL` asserted, 4039.8 s:
+**B_pred = −3.065019520558719** against AME **+31.994**.
+
+Against the only other production figure I measured myself (²H, kernel live,
+−7.271102124876717): predicted `|B|` **falls ×0.42** while AME binding **rises
+×14.4**. Per nucleon, predicted `|B|/A` falls ×7.1 against AME's ×4.8 rise. The
+prediction is **anti-correlated** with its target, not merely sign-flipped. The
+sign is negative at A = 6 too, consistent with the gate.
+
+**The four-point plateau I quoted in PR #6752 (−7.271 / −7.742 / −7.456 /
+−6.829) has provenance for ONE of its four figures.** A fixed-string grep for
+the other three across `*.md`, `*.json`, `*.py` returns nothing anywhere in the
+tree; they came from conversation context. Kernel-vs-fallback differ by 17.29 %
+on the same atom, so an unverified figure could be either. Marked unverified,
+not retracted. If the plateau is real, ⁶Li breaks it (2.4× smaller than the
+smallest of the four) — deciding that needs A = 3,4,5 re-measured kernel-live,
+~2 h, claimed separately.
+
+Second tension, open: the k_max = 6 reconstruction does **not** show the A = 6
+drop (⁶Li is second *largest* there at −1.0770), and the gated-set size at
+A = 6 is **15**, the largest in the series. Production magnitude falls where the
+gate admits the most partitions. The truncation argument covers absolute scale,
+not a reversed trend.
+
+Audit: `docs/audits/2026-09-05-li6-production-binding-anticorrelates.md`.
