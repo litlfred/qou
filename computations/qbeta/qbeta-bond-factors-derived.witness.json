@@ -151,14 +151,15 @@
     "independent_check": "r_previous - t_p.z simplifies to 0, and r_previous was derived from different words in a separate computation. Two independent derivations agreeing symbolically is the strongest available check that neither is an expansion artefact.",
     "scope": "Scope-(a). This derives the CONSTANTS of a form whose structure was established and validated earlier (held-out 3He and 4He at 7.5e-16). It does not say the binding law is right — how far Delta_tr is from B remains open."
   },
-  "gitCommit": "bf7a14aae94d5fa61d0d48ee3db4cef190d8d20c",
+  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "durationMs": 0,
   "scriptFile": "qbeta_bond_factors_derived_probe.py",
-  "scriptHash": "87c98290f733",
-  "scriptCommitSha": "unknown",
-  "commitSha": "bf7a14aae94d5fa61d0d48ee3db4cef190d8d20c",
+  "scriptHash": "7ab3851d4ef7",
+  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-09-03T20:28:38.228354+00:00",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "computedAt": "2026-09-04T12:31:54.776962+00:00",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
 }

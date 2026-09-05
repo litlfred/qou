@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T10:42:33Z
-updated_at: 2026-09-04T13:52:46Z
+updated_at: 2026-09-04T22:06:39Z
 ---
 
 Parent: `conj:im-q-physical-role`. Reached from `qou-pdix` route 5 (the elliptic
@@ -230,3 +230,185 @@ there. And this is not a demotion of chirality: it says the chirality content
 the conjecture went looking for in `Im q` is already in the corpus at real `q`,
 as `P_skew`, which `rem:im-q-vs-p-skew` says is *"kept then discarded"* by the
 canonical `P_avg` projection.
+
+
+---
+
+## 2026-09-04 (third) — CANDIDATE (iii): the stated obstacle is not the live one
+
+Branch `claude/imq-decay-width-mechanism-2026-09-04`. Probe
+`computations/qbeta/imq_decay_width_mechanism_probe.py` (5/5), Lean
+`QOU/QBeta/ImQDecayWidthMechanism.lean` (lean-direct exit 0, 6 theorems, no
+sorryAx).
+
+### Its premise is correct, and I verified it rather than assuming it
+
+The Hecke generator satisfies `(σ − q)(σ + q⁻¹) = 0`, spectrum `{q, −q⁻¹}`, and
+`Im(−q⁻¹) = y/(x²+y²)` vanishes **exactly** where `y` does — no extra locus. So
+`Im q ≠ 0` really is precisely the non-Hermitian deformation (iii) describes.
+
+### The stated obstacle — *"needs a categorical formula for Γ"* — is wrong
+
+`docs/canonical-derivation-cheat-sheet.md` lines 134 and 490: **`𝔇_β`, the
+neutron β-decay width, IS CAL-2** — one of the three calibration inputs — with
+`Q_β = ℏ/𝔇_β` and the closed form `m_e|q₀²−2q₀−1|(q₀+1)/(2q₀³)` in real `q₀`.
+The decay sector is not a gap; it is a calibration, and it is real.
+
+### Two mechanisms, and the framework uses the other one
+
+| | width from | needs |
+|---|---|---|
+| **A** framework's | `𝔇 = ℏ/Q`, the **reciprocal** of a real energy | nothing complex |
+| **B** candidate (iii)'s | `E = E₀ − iΓ/2`, the **imaginary part** | complex `q` |
+
+On a real spectrum **B gives `Γ = 0` identically while A gives a nonzero
+width**, and the framework sits in exactly that configuration: `Q_β =
+0.783645827374621213` MeV at `Im q₀ = 0`, so `𝔇_β = 8.39935509011e-22 ≠ 0`.
+They are not two descriptions of one thing.
+
+### 🛑 Scope (a), and the Lean says so
+
+`imaginary_mechanism_does_produce_a_width` is in the file deliberately:
+mechanism B works fine when `Im E ≠ 0`. **Nothing here excludes `Im q` from
+encoding a resonance width.** The burden is *relocated*: to keep (iii) alive one
+must exhibit a `Γ` — W, Z, top, or a hadronic resonance — that mechanism A
+demonstrably **fails** to produce. Sharper than the conjecture's own question,
+and **left open**.
+
+Second place the burden is owed: `AGENTS.md` §7b item 3 gives the corpus another
+real-`q` account of exactly those states — unstable intermediaries as **Demazure
+sub-crystals**, *"without ad-hoc decay machinery"*. Not verified numerically.
+
+### 🛑 A units question in the corpus's own naming — reported, not resolved
+
+`𝔇_β` is called a **width** (energy) while `Q_β = ℏ/𝔇_β ≈ 0.784 MeV` is also an
+energy; `ℏ/(energy)` is a **time**. Both cannot hold. Either `𝔇_β` is a lifetime
+and "width" is loose, or an `ℏ`-convention is implicit. It does not affect the
+argument, which needs only that the two are reciprocal and `Q_β` real — but it
+is the author's naming, so it is flagged and left alone. **Author's call.**
+
+### All three candidates, after three PRs
+
+| candidate | archimedean status | scope |
+|---|---|---|
+| (i) chirality | **closed** | (b) |
+| (ii) phase dual to CAL-2 | **closed** on its whole Apollonius circle | (b) |
+| (iii) non-Hermitian | **narrowed** — premise right, obstacle misidentified, burden relocated | (a) |
+
+All three scoped to the **archimedean evaluation**. The **fibre** is untouched
+throughout and is where the Kashaev regime lives.
+
+
+---
+
+## 2026-09-04 (fourth) — the conjecture block itself, retargeted to the fibre (owner picked A + B)
+
+Branch `claude/imq-conjecture-retarget-fibre-2026-09-04`. The three earlier PRs
+deliberately left the block untouched because editing it is a verdict on the
+author's conjecture; the owner has now chosen both the scope note (A) and the
+fibre retarget (B), so they land as one edit.
+
+**What changed in `conj-im-q-physical-role.md`:**
+
+1. **Opening** — the catalogue no longer says "open work". All three candidates
+   are settled at `q_0` and all three stay open on the fibre, so the conjecture
+   is restated as a fibre-level question.
+2. **New section** `Reality of $\mathfrak{Q}_\beta$ at the substrate` — the
+   three conclusions with scope and Lean carrier, plus why `Q_β` is the
+   Im-sensitive observable the opening paragraph did not anticipate.
+3. **Each candidate's `Testable`** retargeted to the fibre, keeping the
+   superseded archimedean form visible rather than deleting it.
+4. **Obstacles** — two of the three stated requirements were satisfied by
+   observables *already in the corpus*; what survives is one obstacle and it is
+   at the fibre.
+5. 🛑 **`Default value: Im(q) = 0`** — this said *"**NOT structurally forced** …
+   a convention pending an Im-sensitive measurement"*. That is now **false at
+   the archimedean layer**: `im_qbeta_zero_iff_e2` derives it, and the
+   measurement it was waiting for is `Q_β` itself. Split by layer — forced at
+   `q_0`, not forced on the fibre. **This is the correction the block most
+   needed**; left alone it would have kept asserting the opposite of a merged
+   theorem.
+
+**Candidate (ii) states its own closure condition** — *"if only real solutions
+exist, candidate (ii) is closed"* — and that is exactly what #6639 proved. Quoted
+in the block.
+
+**QA.** `qa-sweep` clean of anything I introduced. One catch worth recording: my
+first heading was `## Archimedean status`, which tripped `voice-status-section`
+— a status label in prose, the §4d violation. Renamed to a noun phrase naming
+the mathematics. `trap-nonspeakable` and `trap-superlative` fail both before and
+after and are **pre-existing on main**, not mine; verified by diffing the
+sidecar against `origin/main` rather than by reading the post-edit state alone.
+
+**A measurement slip of my own, caught mid-check:** my first before/after
+comparison read `status`/`verdict` but not `result`, and reported *zero*
+failures on both sides against a true 2-and-3. Two scripts of mine disagreed and
+the wrong one looked cleaner — the same field-name-assumption class as the
+detector-blindness taxonomy's rows 22/25/26.
+
+
+---
+
+## 2026-09-04 (fifth) — 🛑 RETRACTION: `𝔇_β` is not a decay width, and (iii) returns to OPEN
+
+Branch `claude/frakd-beta-is-not-a-decay-width-2026-09-04`. Probe
+`computations/qbeta/frakd_beta_is_not_a_decay_width_probe.py` (5/5). This is the
+owner-selected follow-up **D** — *exhibit a `Γ` the reciprocal mechanism fails to
+produce* — and the exhibit turned out to be the neutron's own, which retracts an
+interpretive claim I landed in **#6687** and repeated in **#6700**.
+
+### What I claimed
+
+That (iii) was narrowed because *"the framework's one canonical decay width
+`𝔇_β` IS CAL-2, obtained at real `q₀`, so decay needs no `Im(q)`"*.
+
+### Why it is wrong
+
+The corpus asserts both that `𝔇_β` is the neutron β-decay **width** and that
+`𝔔_β = ℏ/𝔇_β ≈ 0.784 MeV` is a **Q-value**
+(`epistemic-status-of-calibrations.md:3`,
+`three-calibration-discipline-discussion.md:7`, cheat sheet `:134`, `:490`).
+A width and a lifetime are reciprocal **by definition**, so:
+
+| reading | consequence |
+|---|---|
+| `𝔇_β := Γ_n` | `ℏ/𝔇_β = τ_n = 878.4 s` — a **time**, not 0.784 MeV |
+| `𝔇_β := ℏ/𝔔_β` | `= 8.3993551e-22 s`, **24.0194 orders** from `τ_n` |
+
+Equivalently `Γ_n = ℏ/τ_n = 7.4933055e-19 eV` sits **24.02 orders** below
+`𝔔_β = 783645.83 eV`.
+
+**`𝔔_β` and `Γ_n` are independent properties of one decay, not reciprocals**: a
+Q-value is fixed by mass differences alone; a width also needs the coupling and
+the phase-space integral. The framework computes the **energy release**, not the
+**rate**.
+
+### What stands and what does not
+
+- **Stands** — `𝔔_β` as a CAL-2 proxy, reproduced to **0.16819 %** (matching the
+  documented 0.17 %). Untouched.
+- **Stands** — all the Lean of #6687. It is about two width *mechanisms* and is
+  pure mathematics; nothing in it is affected.
+- **Retracted** — the step from *"`𝔇_β` is CAL-2"* to *"the framework has a
+  categorical decay width"*. **Candidate (iii) returns to OPEN**, with its
+  obstacle sharpened: the missing object is not a decay observable but
+  specifically the **rate**.
+
+### 🛑 And a silent no-op in #6700 that I only found now
+
+Of the seven edits #6700's body claims, **six landed and one did not**: the
+Obstacles rewrite. My `str.replace` searched for `$\lvert\cdot\rvert$` where the
+file has `$|\cdot|$`, so it matched nothing and I never verified. The PR body
+describes a change that is not in the diff. Fixed here, and every replacement in
+this pass is now verified as it is applied rather than afterwards.
+
+By luck the un-replaced original text says *"(iii) needs a categorical formula
+for decay widths Γ"* — which the retraction above makes **correct again**.
+
+### Candidate status
+
+| candidate | status | scope |
+|---|---|---|
+| (i) chirality | closed at `q₀` | (b) |
+| (ii) phase dual to CAL-2 | closed at `q₀` | (b) |
+| (iii) non-Hermitian | **OPEN** — obstacle stands, now sharpened to *the rate* | (a) |

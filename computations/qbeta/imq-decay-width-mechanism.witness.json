@@ -1,0 +1,50 @@
+{
+  "description": "conj:im-q-physical-role candidate (iii) presupposes a width comes from Im(E) of a non-Hermitian eigenvalue. The framework's one canonical decay observable, D_beta, IS CAL-2 and comes from hbar/Q_beta with Q_beta real at real q_0 -- a width from the RECIPROCAL of a real energy. On a real spectrum the Im(E) mechanism gives exactly zero while the reciprocal one does not, so they are independent mechanisms and the framework uses the one that needs no Im(q). Scope (a): this relocates (iii)'s burden, it does not exclude Im(q) from encoding a width.",
+  "engine": "sympy (exact) + mpmath 50 dps; no float64",
+  "q0Anchor": "proton",
+  "q0AnchorReason": "AGENTS.md 2026-08-07 owner directive: proton is the default for all new compute; neither a proton-vs-muon comparison nor an ideal-CAL statement",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "data": {
+    "candidate_iii_premise": "complex q with |q| != 1 breaks unitarity; non-Hermitian operators describe open systems",
+    "premise_verdict": "CORRECT -- verified: the Hecke spectrum {q, -1/q} is real iff Im q = 0, so Im q != 0 is exactly that deformation",
+    "stated_obstacle": "(iii) needs a categorical formula for decay widths Gamma",
+    "stated_obstacle_verdict": "NOT the live obstacle -- D_beta (neutron beta-decay width) IS CAL-2, cheat-sheet lines 134 and 490",
+    "mechanism_A": "D = hbar/Q with Q real -- width from a RECIPROCAL real energy",
+    "mechanism_B": "E = E_0 - i Gamma/2 -- width from an IMAGINARY eigenvalue part",
+    "Q_beta_MeV": "0.78364582737462121307",
+    "D_beta_from_reciprocal": "8.3993550901068262909e-22",
+    "im_q0": "0 exactly",
+    "gamma_from_mechanism_B_on_real_spectrum": "0 identically",
+    "scope": "(a) scope-limited. It does NOT prove Im q cannot encode a resonance width. It shows the framework's existing decay sector does not need it, which relocates the burden: to keep (iii) alive one must exhibit a Gamma -- W, Z, top, or a hadronic resonance -- that mechanism A demonstrably FAILS to produce. That is left open.",
+    "second_real_q_account_not_verified_here": "AGENTS.md 7b item 3 gives the corpus a second real-q account of exactly the states (iii) names: unstable intermediaries as DEMAZURE SUB-CRYSTALS, whose non-symmetric Macdonald evaluation under the Markov trace reproduces a short-lived state 'without ad-hoc decay machinery'. Recorded as the second place the burden must be discharged; NOT verified numerically here.",
+    "units_question_reported_not_resolved": "D_beta is called a WIDTH (energy) while Q_beta = hbar/D_beta with Q_beta ~ 0.784 MeV is also an energy; hbar/(energy) is a TIME, so both cannot hold. Either D_beta is a lifetime and 'width' is loose, or an hbar-convention is implicit. It does not affect the argument, which needs only that the two are reciprocal and Q_beta is real. Author's naming, author's call."
+  },
+  "assertions": [
+    {
+      "name": "hecke_spectrum_real_iff_im_q_zero",
+      "passed": true,
+      "detail": "the pair {q, -1/q} from (sigma-q)(sigma+1/q)=0 is real iff Im q = 0 -- candidate (iii)'s unitarity premise, and it is CORRECT"
+    },
+    {
+      "name": "framework_already_has_a_categorical_decay_width",
+      "passed": true,
+      "detail": "D_beta (neutron beta-decay width) IS CAL-2, one of the three calibration inputs -- cheat-sheet lines 134 and 490. The stated obstacle '(iii) needs a categorical formula for Gamma' is not the live obstacle."
+    },
+    {
+      "name": "mechanism_A_gives_a_nonzero_width_at_real_q0",
+      "passed": true,
+      "detail": "D_beta = hbar/Q_beta = 8.39935509011e-22 from Q_beta = 0.783645827374621 MeV, computed at REAL q_0 with Im q_0 = 0"
+    },
+    {
+      "name": "mechanism_B_gives_exactly_zero_on_a_real_spectrum",
+      "passed": true,
+      "detail": "Gamma = -2 Im(E) vanishes identically when the spectrum is real, so the two mechanisms are not two descriptions of one thing"
+    },
+    {
+      "name": "the_two_mechanisms_are_independent",
+      "passed": true,
+      "detail": "the framework sits in the configuration where A is nonzero and B is zero -- so its width is a reciprocal real energy, not an imaginary one"
+    }
+  ],
+  "allPassed": true
+}

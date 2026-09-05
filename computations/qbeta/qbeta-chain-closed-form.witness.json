@@ -162,14 +162,15 @@
     "consequence": "The closed form REFUTES qou-n9qf's headline. Delta_tr(A) = t_p(t_p^(A-1) - r^(A-1)) is asymptotically exponential, not linear: Delta_tr/A runs 0.254 at A=2 to 5.777 at A=40. The four calibration atoms sat in a shallow region, and t_p > 1 > t_n keeps near-symmetric light nuclei there. The measurement stands; the word 'extensive' is withdrawn.",
     "scope": "Sections 2-4 are for a HOMOGENEOUS pure-proton chain. Real atoms mix p and n, so their p-p, p-n and n-n interfaces need a multi-state transfer matrix, which is not derived here. Section 1 does hold for real atoms."
   },
-  "gitCommit": "ab26fb0b2b343044795aae1062d55f5804489374",
+  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "durationMs": 0,
   "scriptFile": "qbeta_chain_closed_form_probe.py",
-  "scriptHash": "2fb8ff6484c0",
-  "scriptCommitSha": "ab26fb0b2b343044795aae1062d55f5804489374",
-  "commitSha": "ab26fb0b2b343044795aae1062d55f5804489374",
+  "scriptHash": "2df2ddecbb96",
+  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "engine": "mpmath+sympy",
-  "computedAt": "2026-09-03T16:24:14.083419+00:00",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "computedAt": "2026-09-04T12:31:55.560533+00:00",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
 }

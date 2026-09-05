@@ -644,3 +644,58 @@ def test_engine_default_is_unchanged_by_the_None_sentinel(tmp_path):
     w.WitnessBuilder.stamp_staleness_metadata(
         payload, script_path=str(script), q0_anchor=False)
     assert payload["engine"] == "python"
+
+
+def test_unmappable_anchor_warns_but_still_stamps(capsys):
+    """An anchor outside the five-token vocabulary WARNS and is still written.
+
+    Warn, not raise, and the trade is deliberate: stamping happens at the END
+    of a producer, and several here run for tens of minutes. Raising would
+    discard the whole compute to correct a label. The repo settled this same
+    question once already in the same direction —
+    `scripts/precommit-precision-warn.sh` was offered as a blocking hook and
+    the owner declined it (2026-08-25).
+
+    The value is stamped VERBATIM, unchanged, so the guard cannot silently
+    guess a token the producer did not choose — and
+    `test_only_False_suppresses_not_any_falsy_value` above keeps passing.
+    """
+    payload = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python",
+        q0_anchor="proton (experimental pin)",
+    )
+    assert payload["q0Anchor"] == "proton (experimental pin)"
+    assert "not one of" in capsys.readouterr().err
+
+
+def test_valid_tokens_and_False_do_not_warn(capsys):
+    """The five tokens and `False` are silent — a warning nobody can silence
+    by writing correct code is a warning that gets learned as noise."""
+    for token in w.Q0_ANCHOR_VOCABULARY:
+        payload = {"parameters": {"q0": _MUON}}
+        w.WitnessBuilder.stamp_staleness_metadata(
+            payload, script_path=_UNLISTED, engine="python", q0_anchor=token)
+        assert capsys.readouterr().err == "", token
+
+    payload = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=False)
+    assert payload["q0Anchor"] == "independent"
+    assert capsys.readouterr().err == ""
+
+
+def test_bool_True_is_not_a_documented_anchor_and_warns(capsys):
+    """`q0_anchor=True` reads as "yes, it has an anchor" and is not a case.
+
+    Only `False` is special-cased (`is False`), so `True` falls through to the
+    explicit branch and is stamped as the literal `True` — which the anchor
+    audit cannot map. This is not hypothetical: it reached `main` in
+    `markov_bond_rule_forces_pairwise_probe` (bean qou-eggf), beside a comment
+    that already said the correct answer was `proton`.
+    """
+    payload = {"parameters": {"q0": _MUON}}
+    w.WitnessBuilder.stamp_staleness_metadata(
+        payload, script_path=_UNLISTED, engine="python", q0_anchor=True)
+    assert payload["q0Anchor"] is True
+    assert "not one of" in capsys.readouterr().err

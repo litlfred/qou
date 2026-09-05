@@ -4,13 +4,12 @@
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
     "dirty_witnesses": 1032,
-    "total_fields": 33998,
-    "lp_dual_carved_out_fields": 394,
+    "total_fields": 33982,
+    "lp_dual_carved_out_fields": 379,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 129,
       "computations/a-K-via-lp-dual-hecke-basis.witness.json": 10,
       "computations/binding-sdp-bondgraph-degenerate.witness.json": 27,
-      "computations/borromean-axial-coupling.witness.json": 15,
       "computations/co-bond-order-active-set.witness.json": 3,
       "computations/deuteron-from-scratch-ledger.witness.json": 6,
       "computations/deuteron-real-sdp.witness.json": 13,
@@ -37,7 +36,7 @@
       "y0_star",
       "y_star"
     ],
-    "ephemeral_duration_carved_out_fields": 42,
+    "ephemeral_duration_carved_out_fields": 45,
     "ephemeral_duration_carved_out_by_file": {
       "computations/derived-chi-catalogue-sweep.witness.json": 6,
       "computations/per-irrep-pole-atom-crystal.witness.json": 6,
@@ -46,10 +45,12 @@
       "computations/atom-braid-active-partitions.witness.json": 3,
       "computations/optimised-magic-verifier.witness.json": 3,
       "computations/tr-m-jones-markov-cross-check.witness.json": 3,
+      "computations/probes/bpp-higher-a-sparse.witness.json": 2,
       "computations/a_operator/A-operator-extract-general.witness.json": 1,
       "computations/atom-nf-symbolic-D.witness.json": 1,
       "computations/atomic-tr-m-helium4.witness.json": 1,
       "computations/chi-lambda-he4-full-partition-table.witness.json": 1,
+      "computations/deltalambda/b1-kappa-window-extension.witness.json": 1,
       "computations/deltalambda/he4-binding-k-stage2.witness.json": 1,
       "computations/deltalambda/he4-stage2-ranking-seminormal-xcheck.witness.json": 1,
       "computations/option-e-probe1-derive-1plusq-over-2.witness.json": 1,
@@ -85,15 +86,15 @@
     "baseline_files": 1093,
     "baseline_fields": 35251,
     "new_not_baselined": 8,
-    "regressed": 0,
-    "drained_files": 189
+    "regressed": 1,
+    "drained_files": 190
   },
   "scriptFile": "witness_raw_float64_audit.py",
   "scriptHash": "9eb501eed27a",
   "scriptCommitSha": "d1bc358ade1369639d19fd60f10e64ad7e7886d3",
-  "commitSha": "d8f882b372aeb6ed9cf1aea338c08b73f71bd82a",
+  "commitSha": "e68347cc12a78663fd200ce6a64f80ec29b1c1db",
   "engine": "python",
-  "computedAt": "2026-09-04T12:19:27.087869+00:00",
+  "computedAt": "2026-09-04T21:59:39.310042+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
