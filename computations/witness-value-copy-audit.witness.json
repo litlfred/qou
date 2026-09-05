@@ -6566,9 +6566,10 @@
       "sig_digits": 51,
       "spread": "NARROW",
       "witnesses": [
-        "computations/codata-truncation-audit.witness.json"
+        "computations/codata-truncation-audit.witness.json",
+        "computations/witness-value-copy-audit.witness.json"
       ],
-      "witness_count": 1,
+      "witness_count": 2,
       "deprecated_source": false
     },
     {
@@ -7951,7 +7952,7 @@
         "computations/audits/muon-pin-three-values.witness.json",
         "computations/audits/q0-anchor-consistency-audit.witness.json"
       ],
-      "witness_count": 66,
+      "witness_count": 67,
       "deprecated_source": false
     },
     {
@@ -7976,9 +7977,10 @@
       "sig_digits": 12,
       "spread": "NARROW",
       "witnesses": [
-        "computations/probes/published_figures_carry_a_retired_q0_probe.witness.json"
+        "computations/probes/published_figures_carry_a_retired_q0_probe.witness.json",
+        "computations/witness-value-copy-audit.witness.json"
       ],
-      "witness_count": 1,
+      "witness_count": 2,
       "deprecated_source": false
     },
     {
@@ -7988,9 +7990,10 @@
       "sig_digits": 52,
       "spread": "NARROW",
       "witnesses": [
-        "computations/codata-truncation-audit.witness.json"
+        "computations/codata-truncation-audit.witness.json",
+        "computations/witness-value-copy-audit.witness.json"
       ],
-      "witness_count": 1,
+      "witness_count": 2,
       "deprecated_source": false
     },
     {
@@ -8000,9 +8003,10 @@
       "sig_digits": 16,
       "spread": "NARROW",
       "witnesses": [
-        "computations/probes/published_figures_carry_a_retired_q0_probe.witness.json"
+        "computations/probes/published_figures_carry_a_retired_q0_probe.witness.json",
+        "computations/witness-value-copy-audit.witness.json"
       ],
-      "witness_count": 1,
+      "witness_count": 2,
       "deprecated_source": false
     },
     {
@@ -8066,9 +8070,10 @@
       "sig_digits": 52,
       "spread": "NARROW",
       "witnesses": [
-        "computations/codata-truncation-audit.witness.json"
+        "computations/codata-truncation-audit.witness.json",
+        "computations/witness-value-copy-audit.witness.json"
       ],
-      "witness_count": 1,
+      "witness_count": 2,
       "deprecated_source": false
     },
     {
@@ -8138,9 +8143,10 @@
       "sig_digits": 59,
       "spread": "NARROW",
       "witnesses": [
-        "computations/codata-truncation-audit.witness.json"
+        "computations/codata-truncation-audit.witness.json",
+        "computations/witness-value-copy-audit.witness.json"
       ],
-      "witness_count": 1,
+      "witness_count": 2,
       "deprecated_source": false
     },
     {

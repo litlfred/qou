@@ -1,6 +1,6 @@
 {
   "engine": "python-stdlib",
-  "computedAt": "2026-09-05T18:41:20.658664+00:00",
+  "computedAt": "2026-09-05T18:43:00.427683+00:00",
   "computation": "codata-truncation-audit",
   "scriptFile": "codata_truncation_audit.py",
   "description": "Hand-typed CODATA/substrate constants that are a short prefix of the canonical value, and so compute a different number. Separates that class from exact duplication, which is qou-46ke's original and much larger scope. Canonical values are read from codata_constants / q_parameter at run time, never typed here.",
@@ -1892,7 +1892,7 @@
   ],
   "scriptHash": "85246c287fa0",
   "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
-  "commitSha": "8c80435863a0fd87472c8fd07ed198e8c3ba6ad7",
+  "commitSha": "d88b7ebb5cdb05038044068b836e09c2627e948d",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
