@@ -469,3 +469,65 @@ The fact itself (exact in ℚ(q), 18/18, plus `y_0_eq_zero_of_radical` in Lean)
 is unchanged and remains this bean's durable contribution.
 
 Nothing left to adjudicate. Closing.
+## 2026-09-05 (second) — the mechanism reduces to the CONTENT SUM, and my own
+## reduction carried a tie defect
+
+Two further findings, the second correcting the first.
+
+**The reduction (#6847, merged `620794f52b`).**  `w` is a strictly increasing
+function of the content sum `c(lambda)` — **49/49 pairs, every pair on every
+row, zero ties**.  So ordering the survivors by `w` IS ordering them by
+`c(lambda)`, and
+
+    conc(w, |chi|)  ==  conc(c(lambda), |chi|)
+
+**identically** row by row: `0,0,1,2,1,5` against `0,0,1,2,1,5`.  The
+anti-correlation is therefore not a fact about the Markov weight at all — it is
+content-vs-character, with `w` wearing it as a monotone reparametrisation.  Note
+`w` is NOT simply `q^c`: the residual `w·q^-c` is unimodal and moves 12.9x across
+n=12, so the `q^c` factor dominates a non-monotone correction.
+
+**The tie defect, mine, in that same PR.**  `concordant()` returned
+`(concordant, ALL pairs)`, so a pair TIED in one variable landed in the
+denominator and never the numerator — silently read as discordant.  There is
+exactly **one** tie in the whole sample, in `dim`: at n = 6, `[5,1]` and `[3,3]`
+both have `f^lambda = 5`.  It sits in precisely the row #6847 then reported as
+the anomaly.  Corrected:
+
+    dim -> |chi|     43/49 = 87.8 %   ->   43/48 = 89.6 %
+    c(lambda) -> dim  6/49 = 12.2 %   ->    6/48 = 12.5 %
+    row 2 (n=6)        3/6 = 50 %     ->     3/5 = 60 %
+
+So #6847's "n = 6 is UNCORRELATED there" is **wrong** — it is weakly positive,
+and n=6 is not an anomaly at all, just the weakest row on five pairs.  Per row
+the link runs 1/1, 1/1, 3/5, 9/10, 10/10, 19/21: never anti-correlated anywhere.
+
+**What the defect did NOT touch, and why that was not luck.**  The two EXACT
+claims involve only `c(lambda)`, `w` and `|chi|` — all three tie-free on every
+row.  Only the two REPORTED-not-asserted `dim` ratios moved.  #6847 deliberately
+asserted just the exact links and reported the rest as measurements, and that is
+the reason a sampling defect could land without invalidating a claim.
+Tie-freeness of `c(lambda)`/`w`/`|chi|` is **now asserted**, which is the guard
+that would have caught this.
+
+**SETTLED NEGATIVELY: the dim -> |chi| link is STATISTICAL, not structural.**
+#6847 left open whether it is exact-with-a-degenerate-case or only statistical.
+The corpus already contained the answer: rows 3 and 4 are two atoms at n = 9 with
+the **identical dimension multiset** {1, 8, 27, 42, 48}, and they disagree —
+
+    row 4  |chi| = 2.394, 6.568, 7.569, 7.697, 16.067   monotone in dim, 10/10
+    row 3  |chi| = 1.577, 3.741, 3.191, 4.425, 10.169   [7,2] out of order, 9/10
+
+A partition-only law cannot return two answers for the same partitions, so there
+is **no exact structural statement of this link to be found**.  Asserted.
+
+The five discordant pairs sit on just three partitions — `[4,2]` at n=6 (two),
+`[7,2]` at n=9 (one), `[7,5]` at n=12 (two) — each the LARGER-dimension member
+carrying an out-of-order character.  Not a near-zero and not a sign flip: every
+character in every row is positive, and `[7,2]`'s 3.191 sits mid-range in a row
+spanning 1.577 to 10.169.
+
+**Now open, and it is a smaller question than before:** WHY those three
+partitions carry an out-of-order character for those atoms and not for others.
+Five identified pairs on three named partitions — not a percentage, and n=6 is
+no longer part of it.

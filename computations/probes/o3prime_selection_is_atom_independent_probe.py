@@ -115,9 +115,9 @@ reparametrisation.
 
 That decomposes it into three links, of which the first is exact:
 
-    c(lambda) up  =>  w up          49/49 = 100.0 %  (exact, asserted)
-    c(lambda) up  =>  dim down       6/49 =  12.2 %  (combinatorial)
-    dim up        =>  |chi| up      43/49 =  87.8 %
+    c(lambda) up  =>  w up          49/49 = 100.0 %  (exact, asserted; 0 ties)
+    c(lambda) up  =>  dim down       6/48 =  12.5 %  (combinatorial, 1 tie)
+    dim up        =>  |chi| up      43/48 =  89.6 %  (statistical -- see below)
 
 For two-row partitions the middle link is the elementary one: [n] has the
 largest content sum and dimension 1, and the balanced partition has the
@@ -125,19 +125,62 @@ smallest content sum and the largest dimension.  The third is the near-trivialit
 that a character of a bigger irrep is a sum of more terms.  Composing:
 w up => c up => dim down => |chi| down.
 
-The 87.8 % link is the weakest and its exception is named rather than averaged
-away: row 2 (n = 6) sits at exactly 3/6, i.e. dim and |chi| are UNCORRELATED
-there, and it is also the row with the largest flattening (1.93x).  The other
-five rows run 1/1, 1/1, 9/10, 10/10, 19/21.
+    🛑 CORRECTED.  These two denominators read 49 until the tie below was
+    found, and the n = 6 row was described as "exactly 3/6, i.e. dim and |chi|
+    are UNCORRELATED there".  Both were wrong, and both were mine.
+
+THE TIE, AND WHAT IT COST
+
+`concordant` originally returned (concordant, ALL pairs), so a pair TIED in one
+variable was counted in the denominator and never in the numerator -- silently
+read as discordant.  There is exactly one tie in the whole sample and it is in
+dim: at n = 6, [5,1] and [3,3] BOTH have f^lambda = 5.  It sits in precisely
+the row that was then reported as the anomaly.
+
+Corrected, ties excluded from the denominator:
+
+    row 2 (n = 6)  dim vs |chi|  =  3/5 = 60 %,  NOT 3/6 = 50 %
+
+so dim and |chi| are weakly POSITIVELY correlated at n = 6, not uncorrelated.
+Per row the link runs 1/1, 1/1, 3/5, 9/10, 10/10, 19/21 -- weakest at n = 6 on
+five pairs, never anti-correlated anywhere.
+
+WHAT THE DEFECT DID NOT TOUCH, and why.  The two EXACT claims -- w strictly
+increasing in c(lambda), and conc(w,|chi|) == conc(c(lambda),|chi|) -- involve
+only c(lambda), w and |chi|, and all three are TIE-FREE on every row.  That is
+now asserted rather than assumed, which is the guard that would have caught
+this.  Only the two REPORTED-not-asserted dim ratios moved, which is the one
+place a sampling defect could land without invalidating a claim.
+
+THE 89.6 % LINK IS STATISTICAL, NOT STRUCTURAL -- settled, negatively.
+
+The open question was whether that link is exact-with-a-degenerate-case or only
+statistical.  It is only statistical, and the corpus already contains the
+proof: rows 3 and 4 are two atoms at n = 9 with the IDENTICAL dimension
+multiset {1, 8, 27, 42, 48}, and they disagree --
+
+    row 4   |chi| = 2.394, 6.568, 7.569, 7.697, 16.067   monotone in dim, 10/10
+    row 3   |chi| = 1.577, 3.741, 3.191, 4.425, 10.169   [7,2] out of order, 9/10
+
+A partition-only law cannot return two answers for the same partitions, so no
+exact structural statement of this link exists to be found.  Asserted below.
+
+The five discordant pairs are not scattered either: they sit on just three
+partitions -- [4,2] at n = 6 (two pairs), [7,2] at n = 9 (one), [7,5] at n = 12
+(two) -- each the LARGER-dimension member of its pair carrying an out-of-order
+character.  Not a near-zero, and not a sign flip: every character in every row
+is positive, and [7,2]'s 3.191 sits mid-range in a row spanning 1.577 to 10.169.
 
 w is NOT simply q^c(lambda).  The residual w * q^-c(lambda) is unimodal in the
 content sum, moving 12.9x across row 5 (peak at [8,4]) -- so the monotonicity
 above is a real fact about the weight, in which the q^c factor dominates a
 non-monotone correction, and not an identity read off a closed form.
 
-WHAT IS STILL OPEN, after that reduction: whether the 87.8 % dim-vs-|chi| link is
-exact-with-a-degenerate-case or genuinely only statistical, and what n = 6 is
-doing.  Six rows over four n cannot separate those.
+WHAT IS STILL OPEN, after that reduction and this correction: WHY those three
+partitions carry an out-of-order character for those atoms and not for others.
+That is now a question about five identified pairs on three named partitions,
+not about a percentage -- and n = 6 is no longer part of it, having been an
+artifact of the tie above rather than a fact about the mathematics.
 
 WHAT SURVIVES FROM #6752, AND WHAT DOES NOT
 -------------------------------------------
@@ -190,18 +233,31 @@ def check(name: str, ok: bool, detail: str = "") -> None:
           flush=True)
 
 
-def concordant(a: list, b: list) -> tuple[int, int]:
-    """(#pairs ordered the same way by a and by b, #pairs).
+def concordant(a: list, b: list) -> tuple[int, int, int]:
+    """(concordant, discordant, TIED) pairs.  The three sum to C(k,2).
+
+    Ties are returned SEPARATELY and never folded into either side.  The first
+    version of this returned (concordant, all_pairs), which silently counted a
+    tied pair as not-concordant and so DEFLATED every ratio containing a tie --
+    see the correction in the docstring.  A tied pair carries no ordering
+    information in either direction; the denominator for a concordance ratio is
+    C + D, not C + D + T.
 
     Sign comparison only, so exact-integer inputs (content sums, SYT counts)
     stay exact integers and never enter mpmath -- both cleaner and outside the
     f64-into-mpmath detector's reach.
     """
     k = len(a)
-    pairs = [(i, j) for i in range(k) for j in range(i + 1, k)]
-    return (sum(1 for i, j in pairs
-                if (a[i] > a[j]) == (b[i] > b[j]) and a[i] != a[j] and b[i] != b[j]),
-            len(pairs))
+    c = d = t = 0
+    for i in range(k):
+        for j in range(i + 1, k):
+            if a[i] == a[j] or b[i] == b[j]:
+                t += 1
+            elif (a[i] > a[j]) == (b[i] > b[j]):
+                c += 1
+            else:
+                d += 1
+    return c, d, t
 
 
 def f_lambda(lam: tuple[int, ...]) -> int:
@@ -270,13 +326,16 @@ def main() -> int:
         # SYT counts stay exact ints; only w and chi are mpf.
         cs = [p["content_sum"] for p in surv]
         dim = [f_lambda(tuple(p["partition"])) for p in surv]
-        c_cs_w, _ = concordant(cs, w_vals)
-        c_cs_chi, _ = concordant(cs, c_vals)
-        c_cs_dim, _ = concordant(cs, dim)
-        c_dim_chi, _ = concordant(dim, c_vals)
-        chain.append({"cs_w": c_cs_w, "cs_chi": c_cs_chi, "cs_dim": c_cs_dim,
-                      "dim_chi": c_dim_chi, "pairs": len(pairs),
-                      "w_chi": conc})
+        cw, dw, tw_ = concordant(cs, w_vals)
+        cc, dc, tc_ = concordant(cs, c_vals)
+        cd, dd, td_ = concordant(cs, dim)
+        cx, dx, tx_ = concordant(dim, c_vals)
+        chain.append({"cs_w": cw, "cs_chi": cc, "cs_dim": cd, "dim_chi": cx,
+                      "cs_dim_disc": dd, "dim_chi_disc": dx,
+                      "cs_dim_tied": td_, "dim_chi_tied": tx_,
+                      "tie_free_cs_w": tw_ == 0, "tie_free_cs_chi": tc_ == 0,
+                      "dims": sorted(dim), "n": n,
+                      "pairs": len(pairs), "w_chi": conc})
 
         # |t| = w * |chi| is what the whole account rests on -- check it here
         # rather than assuming it from the algebra.
@@ -362,15 +421,44 @@ def main() -> int:
           "w~chi " + ",".join(str(c["w_chi"]) for c in chain)
           + "  vs  cs~chi " + ",".join(str(c["cs_chi"]) for c in chain))
 
+    # The guard that makes the two exact checks above sound, and that would
+    # have caught the tie defect this probe's docstring records.
+    check("content sums, w and |chi| are TIE-FREE on every row — which is what "
+          "lets the two exact claims above be read as strict orderings",
+          all(c["tie_free_cs_w"] and c["tie_free_cs_chi"] for c in chain),
+          "the ONLY tie in the sample is in dim: [5,1] and [3,3] both have "
+          "f^lambda = 5 at n = 6")
+
+    # DIM ties exist, so its ratios are reported over C+D, never over C+D+T.
+    same_dims = {}
+    for c in chain:
+        same_dims.setdefault(tuple(c["dims"]), []).append(c["dim_chi"])
+    split = {d: v for d, v in same_dims.items() if len(set(v)) > 1}
+    check("the dim -> |chi| link is STATISTICAL, not structural — two atoms "
+          "sharing an identical dimension multiset disagree on it, which no "
+          "partition-only law could do",
+          len(split) > 0,
+          "; ".join(f"dims {list(d)} -> concordant {sorted(v)}"
+                    for d, v in split.items()) or "no split found")
+
     tp = sum(c["pairs"] for c in chain)
-    print(f"\n  the reduction, as three links over {tp} pairs:"
-          f"\n    c(lambda) up  =>  w up      {sum(c['cs_w'] for c in chain):>3}/{tp}"
-          f"  = {sum(c['cs_w'] for c in chain) * 100 // tp:>3}%   (exact)"
-          f"\n    c(lambda) up  =>  dim down  {sum(c['cs_dim'] for c in chain):>3}/{tp}"
-          f"  = {sum(c['cs_dim'] for c in chain) * 100 // tp:>3}%   (combinatorial)"
-          f"\n    dim up        =>  |chi| up  {sum(c['dim_chi'] for c in chain):>3}/{tp}"
-          f"  = {sum(c['dim_chi'] for c in chain) * 100 // tp:>3}%   (weakest link;"
-          f" per row " + ",".join(f"{c['dim_chi']}/{c['pairs']}" for c in chain) + ")",
+    cw = sum(c["cs_w"] for c in chain)
+    cd, dd = (sum(c["cs_dim"] for c in chain), sum(c["cs_dim_disc"] for c in chain))
+    cx, dx = (sum(c["dim_chi"] for c in chain), sum(c["dim_chi_disc"] for c in chain))
+    print(f"\n  the reduction, as three links (ratios over CONCORDANT+DISCORDANT,"
+          f" ties excluded):"
+          f"\n    c(lambda) up  =>  w up      {cw:>3}/{tp}  = 100.0%   (exact, 0 ties)"
+          f"\n    c(lambda) up  =>  dim down  {cd:>3}/{cd + dd}  ="
+          f" {Fraction(cd * 1000, cd + dd).__round__() / 10:>5}%"
+          f"   (combinatorial, 1 tie excluded)"
+          f"\n    dim up        =>  |chi| up  {cx:>3}/{cx + dx}  ="
+          f" {Fraction(cx * 1000, cx + dx).__round__() / 10:>5}%"
+          f"   (statistical; per row "
+          + ",".join(f"{c['dim_chi']}/{c['dim_chi'] + c['dim_chi_disc']}"
+                     for c in chain) + ")"
+          f"\n    the {dx} discordant pairs sit on just three partitions —"
+          f" [4,2] at n=6, [7,2] at n=9, [7,5] at n=12 — each the LARGER-dim"
+          f" member with an out-of-order character.",
           flush=True)
 
     # Conservative: one row per distinct n, the LEAST extreme in each group.
@@ -413,11 +501,19 @@ def main() -> int:
         "holds REDUCES to the content sum: w is a strictly increasing function "
         "of c(lambda) on 49/49 pairs, so conc(w,|chi|) == conc(c(lambda),|chi|) "
         "IDENTICALLY row by row, and the effect decomposes as c up => w up "
-        "(49/49 exact), c up => dim down (6/49), dim up => |chi| up (43/49). "
-        "For two-row partitions [n] has max content and dim 1 while the balanced "
-        "partition has min content and max dim. Still open: whether the 43/49 "
-        "link is exact-with-a-degenerate-case (n=6 sits at exactly 3/6) or only "
-        "statistical. CONSEQUENCE: PR #6752's "
+        "(49/49 exact, 0 ties), c up => dim down (6/48), dim up => |chi| up "
+        "(43/48 = 89.6%). For two-row partitions [n] has max content and dim 1 "
+        "while the balanced partition has min content and max dim. CORRECTED "
+        "here: those last two denominators read 49 and n=6 was called "
+        "'uncorrelated at 3/6' -- a tie ([5,1] and [3,3] both have f^lambda = 5 "
+        "at n=6, the only tie in the sample) was being counted as discordant; "
+        "n=6 is 3/5 = 60%, weakly POSITIVE. The two exact claims are untouched "
+        "because c(lambda), w and |chi| are tie-free, now asserted. SETTLED "
+        "NEGATIVELY: the dim->|chi| link is STATISTICAL, not structural -- rows "
+        "3 and 4 are two atoms at n=9 with the identical dimension multiset "
+        "{1,8,27,42,48} and disagree (10/10 vs 9/10), which no partition-only "
+        "law could do. The 5 discordant pairs sit on three partitions: [4,2] at "
+        "n=6, [7,2] at n=9, [7,5] at n=12. CONSEQUENCE: PR #6752's "
         "reading of the selection as 'which Wedderburn blocks the bound state "
         "saturates' is WRONG and is corrected; the pricing result (y_0* nonzero "
         "and atom-dependent, where the full LP has y_0* = 0 identically) STANDS."
