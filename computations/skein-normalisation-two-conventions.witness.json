@@ -58,9 +58,10 @@
     "live_count": 8
   },
   "answers": "qou-q2l7's open remainder -- the {1/2,1/2} exponent pair of the decay coupling is FORCED by convention (J), not chosen ad hoc",
-  "scope": "MEASUREMENT plus an AUTHOR DECISION not taken here. Measured: the two relations, their inequivalence, the exact bridge, the surface, the consequence. NOT decided: whether the rate is restated in (H) to match \u00a77a, or \u00a77a records (J) as the physics-sector convention. Both are coherent; either rewrites seven content blocks or a STRICT section. No identity here depends on the choice.",
+  "scope": "MEASUREMENT plus an AUTHOR DECISION not taken here. Measured: the two relations, their inequivalence, the exact bridge, the surface, the consequence. NOT decided: whether the rate is restated in (H) to match \u00a77a, or \u00a77a records (J) as the physics-sector convention. Both are coherent; either rewrites eight content blocks or a STRICT section. No identity here depends on the choice.",
   "lean": [
     "QOU.Braiding.WeakVertexT35.sSq_eq_twoQ_sub_two",
+    "QOU.Braiding.SkeinNormalisation.no_rescaling_of_skein_weights",
     "QOU.Braiding.SkeinNormalisation.hOne_eq_sSqrt_mul_barEven",
     "QOU.Braiding.SkeinNormalisation.hOneSq_eq_twoQ_sq_sub_four",
     "QOU.Braiding.SkeinNormalisation.hOneSq_eq_sSq_mul_twoQ_add_two"
@@ -109,17 +110,17 @@
       "note": "|W|^2/h_1^2 = 32.2624 against |W|^2/s^2 = 129.4051. Both are far too large to be the 10-17 % correction of qou-ix74, so that scope-(a) negative survives under either convention"
     },
     {
-      "name": "convention_J_surface_is_seven_or_more_blocks",
+      "name": "convention_J_surface_is_multi_chapter_not_one_block",
       "passed": true,
       "note": "8 of 8 listed blocks still carry the sqrt-q amplitude, across five chapters -- a corpus-wide split, not a single-block slip"
     }
   ],
   "allPassed": true,
-  "scriptHash": "f28e5a116e7b",
-  "scriptCommitSha": "unknown",
-  "commitSha": "23caae66f856ced65f70b6a5e2cf880d6372d161",
+  "scriptHash": "0ea8045427b7",
+  "scriptCommitSha": "4d33e62e9fb54c80215432d88a4342a733219d17",
+  "commitSha": "4d33e62e9fb54c80215432d88a4342a733219d17",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-09-05T09:53:14.430479+00:00",
+  "computedAt": "2026-09-05T10:06:31.098973+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
