@@ -210,7 +210,23 @@ further defects ride along: `E_hartree_eV = 27.296143` vs CODATA `27.211386`
 (**+0.31 %**, so not the Hartree), and the witness **contradicts its own content
 block** on which of σ/π carries the largest `|V|`.
 
-**This should leave the veto queue and be decided on its merits.**
+**🛑 CORRECTION, same session — I over-escalated this, and it is the third time.**
+
+Verified rather than read, the way `qou-zzwm` should have taught me the first time:
+
+- the producer `co-molecular-binding.py` is in **`_deprecated/`**;
+- its witness is **absent from the tree** — the block's own prose says so;
+- the content block's machine-readable `computation:` link points to a
+  **different, live** producer (`co_bond_order_active_set.py`), not this one;
+- and the block **already documents the `4.478 / 18.753` ratio in its own prose**,
+  as a caveat, at `co-triple-bond-energy.md:29`.
+
+So it is a **disclosed, deprecated artifact**, not a live undisclosed fit. The
+NO-FITTING directive is not being violated in the live chain.
+
+**What is actually left** is a content call of ordinary size: should a block keep
+quoting a number derived from a retired, calibrated producer whose witness no
+longer exists? That is Class B, and it is **not** the urgent escalation I made it.
 
 ---
 
@@ -256,6 +272,22 @@ half-life prefactor) · `qou-imkb` (what "Model B" means) · `qou-r4ya`
 (Friedrichs-vs-Krein framing) · `dgpc` (a `status: "verified"` downgrade)
 
 ---
+
+## 🛑 The meta-finding: I made the same error the beans make
+
+Three times this triage I escalated on a bean's own words and the check deflated
+it — `qou-zzwm` (already fixed), `qou-zdz5` (conditional, condition unmet), and now
+`qou-1jw9` (deprecated and disclosed). That is the **same root cause** as the 22
+stale sentences: a bean states urgency at the top, the situation moves, and
+nothing updates the claim.
+
+**The reusable rule: a bean is a lead, never a finding.** It earns the same
+treatment AGENTS.md already prescribes for a source file's `## Status` note —
+the corpus is the source of truth, and the corpus here means the live code, the
+live witness, and the block's `computation:` link, not its prose.
+
+I applied that rule to my own claims all session and kept suspending it for
+someone else's bean.
 
 ## What pass 3 changes
 
