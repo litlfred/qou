@@ -293,3 +293,55 @@ candidate resolutions, neither tested:
 top 5) and re-do Fact A against it, then check whether the y-weighted residual
 actually reproduces `1.41474643e-4`. If it does not, Fact B's constancy needs
 re-deriving before anything is concluded from it.
+
+### 🛑 The "tension" above is RESOLVED — and it was my arithmetic, not the data
+
+The section immediately above asked whether Fact A (non-uniform per-λ χ
+differences) and Fact B (a constant weighted-total ratio) could both be true.
+**They can, and the check is one line I had not run:**
+
+    sum_λ y_λ · (rust_χ_λ − fresh_χ_λ)  =  −2.14996665599e-5
+    observed  rust_total − peel_total   =  −2.1499666559943e-5
+
+Exact agreement. The per-λ differences **do** reproduce the total difference;
+there was never a contradiction. I recorded a tension that a weighted sum
+dissolves, having compared per-λ ratios by eye and never summed them.
+
+Full per-λ table (all 11, not the top 5 — obtained by calling the binary
+directly rather than through `compute_tr_m`, which returns only
+`top5_contributions`): `rust/fresh` spans **0.999819 to 1.002563**, spread
+`2.744e-3`, both signs; absolute `rust − fresh` runs `6.5e-6` to `2.0e-4`. The
+four λ with non-vanishing `y_λ` carry it: `(6,)` `−1.115e-4 × 0.1153`, `(5,1)`
+`−5.19e-5 × 0.0790`, `(4,2)` `−5.94e-5 × 0.0460`, `(3,3)` `−1.19e-4 × 0.0151`.
+
+### Where that leaves the two candidate values
+
+**Two independent routes against one.** The markov peel and the Hoefsmit+Wenzl
+bridge are distinct algorithms and agree at `1e-51` on the single nucleons; the
+`--fresh` chi producer is a third script agreeing with the peel to 49 digits.
+Rust is the outlier, disagreeing per-λ at ~1e-4.
+
+This is **evidential balance, not a verdict** — two-against-one is not proof,
+and the right comparison is against an exact symbolic evaluation, which none of
+these three is. But it inverts the earlier prior: the Rust kernel is the
+*likelier* one to be wrong, not the peel.
+
+Note the spec sends **both** `q` (f64, `1.1099785827513808`) and `q_str` (the
+50-digit string), and the binary echoes only the f64 `q` at top level while
+reporting `precision_dps: 50` per term. **A wrong-`q` explanation does not
+survive arithmetic**: a 1e-17 error in `q` propagates to ~1e-16 in χ, twelve
+orders below the observed 1e-4. So the per-λ differences are structured, not
+precision noise, and which of `q`/`q_str` the kernel consumes is worth
+confirming but cannot be the cause.
+
+### The ONE thing still unexplained
+
+The **relative** total difference is `1.41474643e-4` for the deuteron (n=6, 11
+partitions), tritium and ³He (n=9, 30 partitions) — identical to **17
+significant figures**. Now that the per-λ differences are known to be
+non-uniform and to sum correctly, the cross-atom constancy of the *ratio* is
+the remaining puzzle: nothing here explains why differently-weighted sums over
+different partition sets land on the same relative offset to that precision.
+That is the sharp open question, and it is the one worth chasing — a structured
+per-λ error whose y-weighted relative residue is atom-invariant points at a
+specific defect shape in the Rust composite path.
