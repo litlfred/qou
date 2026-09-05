@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-09-05T07:42:48Z
+updated_at: 2026-09-05T08:18:56Z
 ---
 
 OPENED 2026-09-05. Route E's ONE surviving branch, now a named held construction
@@ -235,3 +235,84 @@ representation: the Ptolemy variety requires all c != 0, and snappy's own
 convention adds a normalisation. The raw ideal is what was handed to Singular;
 saturation by the coordinate product is a further step and its absence means a
 component found now could be a degenerate locus rather than a representation.
+
+
+## 🛑 TWO RETRACTIONS AND A HARD WALL 2026-09-05
+
+### (v) RETRACTED — the "resurgence second access route" is SL(2), not PGL(3)
+
+Higher in this bean I recorded resurgence as a SECOND ACCESS ROUTE to a
+non-geometric PGL(3,C) representation, citing arxiv-2007.10190v2 as indexing
+trans-series sectors by "the geometric representation, its conjugate and the
+real". Both intersection papers are now READ and that reading is WRONG.
+
+Garoufalidis-Gu-Marino, arxiv-2007.10190v2 and arxiv-2012.00062v3, are SL(2,C)
+Chern-Simons throughout. Their own labelling, verbatim:
+
+  "The labeling set P = {sigma_1, sigma_2}, where sigma_1 corresponds to the
+   geometric representation of the 4_1 and sigma_2 to the complex conjugate of
+   the geometric representation."
+
+Two saddles for 4_1, three for 5_2. "Non-geometric" THERE means the trivial or
+conjugate SL(2) connection — a DIFFERENT OBJECT from a non-geometric PGL(3)
+component. So the resurgence route does not reach n = 3 at all.
+
+THE TRAP THAT CAUSED IT, worth recording because a grep walks straight into it:
+both papers contain SL(3, Z[q,1/q]) and PSL(3, Z[q,x]) — and that is the SIZE OF
+THE STOKES MATRIX, not the gauge group. 4_1's q-holonomic module has RANK 2 and
+three flat connections, so the Stokes data is 3x3. Likewise "I_41 has rank 2" is
+the module's rank. A grep for "SL(3" finds these papers and means something else.
+
+What IS real and worth keeping: the singularity positions are "dictated by the
+values of the complex Chern-Simons function on the set of flat connections", so
+Borel singularities ARE indexed by character-variety components — the structural
+idea is sound, at SL(2). For 4_1 the real-axis singularities sit at
+iota_pm = pm V/pi with V = Vol(4_1) = 2.02988, and the Stokes matrices M_R(q)
+have integer-coefficient q-series entries conjecturally solving a linear
+q-difference equation.
+
+### (vi) B_3 AT n = 3 IS OUT OF REACH BY DIRECT GROEBNER — two algorithms, one wall
+
+  primdecGTZ, saturated, mod 32003   OOM-killed 11m15, exit 137
+  minAssGTZ,  saturated, mod 32003   OOM-killed 11m11, exit 137
+  primdecGTZ, raw, over Q            killed at my own 4m00 timeout
+  primdecGTZ, raw, mod 32003         killed at my own 4m26 timeout
+
+14 GB available (free -g: total 15, available 14). Switching from full primary
+decomposition to minimal associated primes bought NOTHING — same wall, same
+time — which localises the bottleneck to THE GROEBNER BASIS ITSELF, not the
+decomposition on top of it. The finite field also bought nothing on the raw
+ideal, so it is not coefficient arithmetic either. It is the geometry: 8
+tetrahedra at n = 3 is 39 quadrics in 33 unknowns.
+
+Do NOT simply re-run with a longer timeout. The budget was 2400 s and neither
+run reached it; both died on memory at ~11 min.
+
+### (vii) THE OWNER UPLOADED THE ANSWER — a346fb8cc6, 2026-09-05T08:15Z
+
+Six PDFs to uploads/. Four bear directly on this tranche:
+
+  1307.6697v2  Falbel, Koseleff, Rouillier, "Representations of fundamental
+               groups of 3-manifolds into PGL(3,C): EXACT COMPUTATIONS IN LOW
+               COMPLEXITY". Targets exactly this object and this obstruction.
+               Rouillier is the Rational Univariate Representation author — a
+               fundamentally different method from primdecGTZ, and it exists
+               BECAUSE full primary decomposition does not scale. READ THIS
+               BEFORE SPENDING MORE COMPUTE.
+  1401.5542v1  GGZ, "The Ptolemy field of 3-manifold-representations" — the
+               number field of a component, i.e. the Q(sqrt-3) vs Q(sqrt-7)
+               split this tranche computed by hand on 4_1.
+  1111.2828v2  Garoufalidis-THURSTON-Zickert, "The complex volume of
+               SL(n,C)-representations". The paper I MIS-ATTRIBUTED GGZ's
+               gluing-equations work to. Both are now held, so the distinction
+               is checkable rather than a thing to remember.
+  2104.07437v4 Gu-Marino, "Peacock patterns and new integer invariants in
+               topological string theory".
+
+  1207.6711v1 is a duplicate of a library copy; 2404.02087v1 (Sahai, "Extreme
+  plasmons") is unrelated to this arc.
+
+🛑 ALL SIX ARE IN uploads/, WHICH CORPUS-GREP PATH 5 CANNOT SEE — it searches
+library/ only. Until migrate-uploads-to-library.py runs they are invisible to
+every "has the corpus got this?" check. uploads/ currently holds 28 PDFs, a
+backlog, and disk is at 169 MB, so a blind bulk ingest is not safe.
