@@ -1,0 +1,76 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T16:03:35.825791+00:00",
+  "commitSha": "5836970a39670cbc5e1034ddf22e01bf7811eb1b",
+  "assertions": [
+    {
+      "name": "consumer_reported_value_is_the_plancherel_weight",
+      "computed": "0.128620004175246883333850815092202792411807409687254426278001",
+      "expected": "0.128620004175246883330000000000000000000000000000000000000000",
+      "passed": true,
+      "tolerance": "1e-18",
+      "unit": "dimensionless",
+      "source": "alpha_em_b2_scalar_c_probe.py stdout reports w_(4,1)(q0) = 0.12862000417524688333 and its source builds _q_dimension(shape,q)**2/_q_factorial(sum(shape),q). Recomputing d_q^2/[5]_q! independently here confirms the consumer's number IS the Plancherel-family weight -- which is what the corrected audit claims and what its own verdict string denies by calling it Markov."
+    },
+    {
+      "name": "molien_move_on_this_axis_exceeds_one_percent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "|molien/plancherel - 1| = 0.422331436188186430685356308989002433427434880257603283011851 at lambda=[4, 1]. The threshold is a legibility floor, not a physical scale: it asserts only that the qou-oots family choice is not a rounding effect on the alpha_EM axis. The actual move is ~42%."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "alpha-em-b2-weight-family-triage",
+  "scriptFile": "alpha_em_b2_weight_family_triage_probe.py",
+  "scriptHash": "377e7ff2dd09",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/alpha_em_b2_weight_family_triage_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/alpha_em_b2_weight_family_triage_probe.py"
+  },
+  "description": "Bean qou-oots. Triages the weight family under the alpha_EM B2 scalar c. alpha_em_b2_scalar_c_probe.py pins on d_q^2/[5]_q! at lambda=(4,1) and its verdict calls that 'the canonical MARKOV normalization' -- but d_q^2/[n]_q! is the PLANCHEREL-family (historical Wedderburn) weight, while the Markov weight is the Ocneanu y_lambda. This probe evaluates all three families at that one partition and reports the ratios, so the size of the qou-oots family choice on this axis is on the record. The consumer uses a SINGLE partition's weight as an absolute normalisation, not a same-n ratio, so the cancellation that makes dim_q^2/[n]_q! -> dim_q^2/D^2 a no-op for the beta_EW consumers is NOT available here. NOT a claim that c is wrong: c = (Markov norm)/(Hodge polarization norm) and the Hodge denominator is openly unsupplied, so c is not a delivered number.",
+  "parameters": {
+    "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "lambda": "[4, 1]"
+  },
+  "data": {
+    "weights_at_lambda": {
+      "dim_q": "4.10968241120794116176056878909633024336432807858642359237101",
+      "q_factorial_5": "131.313084844715976925905521152984679036044403168962905961520",
+      "f_lambda": 4,
+      "kappa_contentSum": 5,
+      "plancherel_dimq2_over_qfact": "0.128620004175246883333850815092202792411807409687254426278001",
+      "molien": "0.0742997330893843319404657962776211455775663905279793485894763",
+      "markov_ocneanu_y_at_N2": "0.124985397167947105924239785178792543024398133334607421097077"
+    },
+    "family_change_factors": {
+      "molien_over_plancherel": "0.577668563811813569314643691010997566572565119742396716988149",
+      "molien_over_plancherel_pct_move": "-42.2331436188186430685356308989002433427434880257603283011851",
+      "markov_over_plancherel": "0.971741510734616636785911497595958098874798431318656094453280",
+      "note": "molien/plancherel = f^lam * q^{-kappa} / d_q at this lambda, since both carry the same 1/[n]_q!. The move is NOT small and does NOT cancel: this consumer normalises on ONE partition, so there is no same-n ratio for a lambda-independent factor to drop out of, and Molien's q^{-kappa} is lambda-dependent besides. The Markov row is the family the consumer's verdict NAMES; it is a third, different number, which is the point."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
