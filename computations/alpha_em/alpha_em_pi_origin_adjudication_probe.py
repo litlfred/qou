@@ -130,6 +130,13 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+# This producer hand-builds its assertion payload and `json.dump`s it, so
+# `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
+# reached, and a re-run would re-emit the float literals and undo PR #5910's
+# drain for this file alone. `_tol` routes each DECLARED tolerance through
+# that guard; it returns a COMPUTED one unchanged, so those stay floats and
+# stay counted by the raw-float64 ratchet. Bean qou-9tqx.
+from qou_substrate.witness import declared_tolerance as _tol  # noqa: E402
 
 set_compute_dps()
 
@@ -356,40 +363,40 @@ def main() -> int:
     assertions = [
         {"name": "control_zero_mode_2_over_3pi",
          "computed": float(zero_mode), "expected": float(2 / (3 * mp.pi)),
-         "passed": abs(zero_mode - 2 / (3 * mp.pi)) < mp.mpf("1e-30"), "tolerance": 1e-25,
+         "passed": abs(zero_mode - 2 / (3 * mp.pi)) < mp.mpf("1e-30"), "tolerance": _tol(1e-25),
          "source": "DERIVED zero-mode b1/Area = 8/(12pi) = 2/(3pi); Area = 4pi(g-1) = 12pi (Gauss-Bonnet 2pi.chi, chi=-6)"},
         {"name": "control_zeta_delta1_zero_equals_minus_b1",
          "computed": float(zeta_delta1_0), "expected": float(-B1),
-         "passed": abs(zeta_delta1_0 - (-B1)) < mp.mpf("1e-30"), "tolerance": 1e-25,
+         "passed": abs(zeta_delta1_0 - (-B1)) < mp.mpf("1e-30"), "tolerance": _tol(1e-25),
          "source": "zeta_{Delta1}(0) = b1.zeta_Lambda(0) = -b1 (rank-independent Epstein zeta(0)=-1; #3834 area-free count)"},
         {"name": "control_zeta_S1_prime_det_equals_L2",
          "computed": float(mp.e ** (-zeta_S1_zero_and_prime(mp.mpf(2))[1])), "expected": 4.0,
          "passed": abs(mp.e ** (-zeta_S1_zero_and_prime(mp.mpf(2))[1]) - 4) < mp.mpf("1e-20"),
-         "tolerance": 1e-18,
+         "tolerance": _tol(1e-18),
          "source": "zeta'_{S1}(0) machinery: det'(-d2/dx2)_{S1_{L=2}} = L^2 = 4 (the 2pi cancels in the det value)"},
         {"name": "candidate2_gaussian_pi_power_is_minus_b1_over_2_not_minus_1",
          "computed": float(p2), "expected": float(-B1) / 2,
-         "passed": abs(p2 - (-B1) / 2) < mp.mpf("1e-9") and not c2_is_minus1, "tolerance": 1e-6,
+         "passed": abs(p2 - (-B1) / 2) < mp.mpf("1e-9") and not c2_is_minus1, "tolerance": _tol(1e-6),
          "source": "(2pi)-Gaussian per-mode: pi-power -b1/2 = -4, NOT -1 => EXCLUDED (derived, wrong power)"},
         {"name": "candidate3_heatkernel_pi_power_is_minus_1",
          "computed": float(p3_hk), "expected": -1.0,
-         "passed": bool(c3_is_minus1 and c3_derived), "tolerance": 1e-9,
+         "passed": bool(c3_is_minus1 and c3_derived), "tolerance": _tol(1e-9),
          "source": "4pi heat-kernel proper-time determinant (4pi.s)^{-d/2}|_{d=2} = 1/(4pi): pi-power -1, DERIVED"},
         {"name": "candidate3_momentum_route_pi_power_is_minus_2_not_the_determinant",
          "computed": float(p3_mom), "expected": -2.0,
-         "passed": abs(p3_mom - (-2)) < mp.mpf("1e-9"), "tolerance": 1e-6,
+         "passed": abs(p3_mom - (-2)) < mp.mpf("1e-9"), "tolerance": _tol(1e-6),
          "source": "momentum-space (2pi)^{-d}|_{d=2} = 1/(4pi^2): pi-power -2 (pi^2 reading) -- NOT the determinant normalization"},
         {"name": "candidate1_dilog_pi_power_is_plus2_or_0_not_minus_1",
          "computed": float(p1_rogers), "expected": 2.0,
-         "passed": bool((not c1_is_minus1) and rogers_ok), "tolerance": 1e-9,
+         "passed": bool((not c1_is_minus1) and rogers_ok), "tolerance": _tol(1e-9),
          "source": "Rogers L(z)=rational.pi^2 (pi-power +2), Bloch-Wigner D(z)=O(1) (pi-power 0); bare 1/pi only via CONJECTURAL higher-Bloch regulator"},
         {"name": "exactly_one_derived_candidate_gives_pi_power_minus_1",
          "computed": float(len(derived_minus1)), "expected": 1.0,
-         "passed": len(derived_minus1) == 1, "tolerance": 0.5,
+         "passed": len(derived_minus1) == 1, "tolerance": _tol(0.5),
          "source": "decision rule: only candidate 3 (heat-kernel) yields a DERIVED pi-power -1 => 1/pi ORIGIN closes to it; (2) gives -4, (1) gives +2/0"},
         {"name": "per_loop_pi_distinct_from_zero_mode_gauss_bonnet_pi",
          "computed": float(topological_factor), "expected": 1.5,
-         "passed": abs(topological_factor - mp.mpf("1.5")) < mp.mpf("1e-25"), "tolerance": 1e-20,
+         "passed": abs(topological_factor - mp.mpf("1.5")) < mp.mpf("1e-25"), "tolerance": _tol(1e-20),
          "source": "per-loop pi (bare 4pi) != zero-mode pi (dressed Area 12pi); SAME heat-kernel mechanism, separated by Area/(pi.b1)=2(g-1)/g=3/2 -- a DISTINCT pi-value, not the same Gauss-Bonnet pi"},
     ]
     all_passed = all(a["passed"] for a in assertions) and ok_all
