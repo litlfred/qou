@@ -29,17 +29,30 @@ is where it breaks. Three findings, in order of how much they cost the route:
        Each sums to 1 on its own index set (checks A and B), so neither is a
        mis-normalisation of the other. Same shape, different object.
 
-  (F3) The one that bites. At N = 2 the V^(x)n share is EXACTLY ZERO on every
-       partition with 3 or more rows (check C), because [N + c]_q = [0]_q = 0
-       at the cell of content -N. So under the corpus's own reading of the
-       state space -- V^{3A} with dim V = 2 -- the module-share measure
-       vanishes identically on the depth-3 stratum, and Phi_3 == 0 by the
-       audit's OWN R1 (`phi_eq_zero_of_weights_vanish`).
+  (F3) At N = 2 the V^(x)n share is EXACTLY ZERO on every partition with 3 or
+       more rows (check C), because [N + c]_q = [0]_q = 0 at the cell of
+       content -N. That measurement stands.
 
-       That is the same row-cap invariant R1 uses to retire y_lambda, applied
-       to the object route 1 proposes to derive the measure FROM. So route 1
-       at N = 2 does not select between the two survivors; it excludes the
-       module-share reading for Phi_3. The route survives only at N >= 3.
+       *** CORRECTED 2026-09-05 -- THE STRATUM NAME AND THE CONCLUSION WERE
+       *** BOTH WRONG, AND BOTH WERE MINE. See
+       *** computations/probes/which_n_the_nucleus_is_a_state_at_probe.py.
+       ***
+       *** (a) ">= 3 rows" is NOT the depth-3 stratum. The phi-k audit defines
+       ***     "depth k means k+1 rows" (2026-09-05-phi-k-weight-family.md:104),
+       ***     so >= 3 rows is depth >= 2, and depth 3 is EXACTLY 4 rows. The
+       ***     numbers below are correct for what they measure; only the name
+       ***     was wrong.
+       *** (b) Because of (a), the claim that route 1 "survives only at N >= 3"
+       ***     is FALSE. On the real depth-3 stratum, N = 3 gives 0.0 as well --
+       ***     both caps sit below 4 rows. Which N the nucleus is a state at
+       ***     does NOT decide Phi_3. The phi-k audit had already said this at
+       ***     its lines 107-108; I quoted the paragraph above it and did not
+       ***     carry the sentence that answered the question.
+       ***
+       *** N is settled independently: it is 2, by the convention-D ruling of
+       *** 2026-08-15. The >= 3-row blocks are ker(H_n -> TL_n) and
+       *** TL_n = End_{U_q sl_2}(V^(x)n), so the corpus's canonical trace
+       *** already factors through the N=2 module's endomorphism algebra.
 
 WHY THE ALGEBRA IS THE SAME OBJECT, NOT A COMPETING ONE
     The audit's sec 7 offers `End(V^(x)n)` as the other horn. Under q-Schur-Weyl
@@ -197,7 +210,9 @@ def main() -> int:
     checks.append(("V^(x)n share is normalised too", okB, "sum == 1"))
 
     # ---- C. THE ONE THAT BITES: N=2 share is null on depth >= 3 ----------
-    print("[C] mass on partitions with >= 3 rows (the depth-3 stratum)")
+    print("[C] mass on partitions with >= 3 rows == DEPTH >= 2")
+    print("    (NOT the depth-3 stratum -- depth k means k+1 rows, so depth 3 is 4 rows;")
+    print("     see which_n_the_nucleus_is_a_state_at_probe.py, which corrects this)")
     rows3 = {}
     for N in (2, 3):
         for n in (3, 6, 9):
@@ -213,9 +228,9 @@ def main() -> int:
     okC2 = all(rows3[(3, n)] > mp.mpf("0.03") for n in (3, 6, 9))
     print(f"    -> N=2 share is EXACTLY zero on depth>=3: {okC1}")
     print(f"    -> N=3 share is nonzero there:            {okC2}")
-    checks.append(("N=2 module share is null on depth>=3", okC1,
+    checks.append(("N=2 module share is null on >=3 rows (depth>=2)", okC1,
                    "row cap [N+c]_q = [0]_q = 0"))
-    checks.append(("N=3 module share is NOT null there", okC2,
+    checks.append(("N=3 module share is NOT null on >=3 rows", okC2,
                    f"{mp.nstr(rows3[(3,6)], 8)} at n=6"))
 
     # ---- D. the audit's missing third candidate: classical Plancherel ----
