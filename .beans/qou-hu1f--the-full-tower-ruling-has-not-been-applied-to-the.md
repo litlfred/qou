@@ -471,10 +471,27 @@ figures moved once already today on a witness that predates a ruling, and moving
 them again before the ordering question is settled for that quantity would
 compound rather than fix.
 
-- [ ] Enumerate the 57 witnesses by `computedAt` and regenerate those predating
-      the ruling. The count of genuinely stale ones is a subset — some producers
-      may not reach the intra-word core at all — and that subset is the number
-      worth quoting, not 57.
+### Date-partitioned (2026-09-05)
+
+    witnesses referencing atom_braid_word_3A (live)   57
+      computed BEFORE the ruling                      56   <- candidate stale
+      computed on/after                                1
+      no computedAt                                    0
+
+Oldest run to 2026-05-09, so this is not a recent-drift problem — it is the whole
+history of the function's consumers.
+
+**56 is an UPPER BOUND, not the answer.** A witness referencing the function is
+only stale if the intra-word core actually reaches a value it records: a producer
+may call it for a crossing count, at a size where the core is degenerate, or pass
+`intra_order` explicitly. Confirming each means re-running its producer and
+diffing — which is the job, and which is why the number to act on is smaller than
+56 and cannot be got at by grep.
+
+- [ ] Re-run the 56 and diff. Mechanical but not cheap; worth doing as one
+      tracked pass rather than opportunistically, because a half-regenerated set
+      is harder to reason about than an un-regenerated one — the same lesson the
+      `q₀` refresh learned about per-block completeness.
 - [ ] Decide whether `intra_order` should have defaulted at all. A
       behaviour-changing default across 339 callers is invisible by construction;
       an explicit-argument-required signature would have surfaced all 332 at
