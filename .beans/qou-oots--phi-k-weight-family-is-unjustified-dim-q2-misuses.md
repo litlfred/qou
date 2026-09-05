@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-09-05T09:20:26Z
+updated_at: 2026-09-05T09:27:34Z
 ---
 
 ## 2026-09-05 — requirement derivation + prune + discriminator (in-progress; the CHOICE is open, the PRUNE is not)
@@ -205,3 +205,37 @@ So the honest statement is **stronger** than "open": *no candidate on the table 
 ### Corrections landed on the merged artifacts
 
 `schur_weyl_share_is_a_third_measure_probe.py` (label + header, still 6/6) and `docs/audits/2026-09-05-schur-weyl-share-is-a-third-measure.md` (correction banner, F3 row, §0 conclusion, §3 caption and closing, §8 open item). F1, F2 and F4 are unaffected — none depends on the depth labelling.
+
+### 2026-09-05 addendum — the corpus-grep: `N = 2` is DERIVED and was closed a month ago, plus a second error of mine
+
+A six-path corpus-grep (path 0 unavailable — `paper-assistant` MCP `ENOENT`, so greps only) strengthens the answer well past "ruled" and finds one more defect in my merged note.
+
+**It is derived, sorry-free, from a framework axiom — and the same axiom excludes `N = 3`.** `VolumeConstraintForcesFibreTwo.lean` (0 sorries), from condition (v) of `def:quantum-observable-universe` (`ε : Λ²V → 𝟙`, `dim Λ²V = C(N,2)`):
+
+    theorem exteriorSquareDim_eq_one_iff (N : ℕ) : exteriorSquareDim N = 1 ↔ N = 2   -- :151
+    theorem exteriorSquareDim_three_ne_one  : exteriorSquareDim 3 ≠ 1 := by decide    -- :168
+
+Second route: convention D inverts to Wenzl level `r = 2` on the nose, and `2026-08-16-su-r-level-tower-gap-map.md:57-61` identifies **fibre dimension `N` = Wenzl level `r`**.
+
+**It was closed 2026-08-07.** Bean **`qou-fvzm`** is `completed`: *"CLOSED FOR GOOD 2026-08-07 by main commit `f92a8b15` 'N = 2 is LOCKED IN for the mass pipeline'."* Commit verified: `f92a8b1500`. Its mechanism note is the sharpest statement of why: `χ_λ` are **N-independent**, so all N-dependence sits in the weights, and *"'row cap kills the singlet' and 'Ocneanu weight vanishes' are ONE fact"*. It also records that moving to `N = 3` would **re-weight surviving channels**, not merely add blocks — `y_(2,1)/y_(3) = q[2]_q[N−1]_q/[N+2]_q`.
+
+**The conflation I was entertaining is named in the corpus.** `eightfold-intro.md:26`: *"because we have set `n = 3` and would like `N = 3`. **Setting `n = 3` does not make `N = 3`.**"* And colour does not change the fibre: the canonical `bring_color_weighted` path runs `z_D = q³/(q²+1)` and applies colour as a **δ-perturbation on the p–n interface** (`closed_form_tau_M.py:305-307`); the only `N = 3` fibre in `computations/` is a probe fixture.
+
+### 🛑 A SECOND error in my merged note: F4 computes the share of the wrong algebra
+
+F4 says horn 2's `End(V^{⊗n})` has block share `(f^λ)²/n!`. **At `N = 2` that is `H_n`, which is not the operator algebra of the pair.** `q`-Schur–Weyl is an isomorphism only for `N ≥ n`; at `N = 2`, `n = 3A` the map `H_n(q) ↠ TL_n(q)` is surjective with kernel `n! − C_n`. The correct share is `(f^λ)²/C_n` over `ℓ(λ) ≤ 2` — exactly what check C of the new probe computes.
+
+**The bare `≅` is a live corpus defect in three further places**: `notation-collisions.md:153`, `MassLeftMulEndomorphism.lean:20` (*"literally an endomorphism of `V^⊗ⁿ`"*), `wenzl-bridge-applicability-qou.lean:33`. Self-contradicted by `TraceBlindSector.lean:11` (`TL_n(q) = End_{U_q(sl₂)}(V^{⊗n})`) and by `wedderburn_jones_markov.py:388`'s own kernel dimensions. Two sites get it right: `QSchurWeyl.lean:11` (*"the **image of**"*) and `RowCap.lean:48-56` (*"a number read off `S^λ` for `ℓ(λ) > N` is a number about the algebra, not about the carrier"*).
+
+The `N ≥ n` condition is stated in a **held but uncited** source — `library/black-samson-phd2010sp` pp. 30-31: *"For `d ≤ n`, `π_d` is injective. In the sequel we will be concerned with the other extreme, where `π_d` is **far from injective**"*, at `(m|n) = (2|0)` = Jones = `N = 2`. That is this framework at `d = 3A ≫ 2`. Zero citations outside `library/`.
+
+### Two sourcing errors of mine, corrected
+
+- **Descartes does not force `dim V = 2`.** I cited `state_space_natural_three_sym2_gate.py:8-17`'s *"by the Descartes condition"*. The corpus forbids that: `schur-weyl-eightfold.md:53` (*"compatible with but does not uniquely force"*) and `2026-08-04-ocneanu-trace-parameter-audit.md:114` (***"Do not claim `N = 2` is forced by the Descartes condition"***).
+- **`schur-weyl-mass-decomposition.md` does not keep λ with rows beyond 3.** Second-hand and wrong. It is **line 18**, about an approximation discarding *"rows longer than 3"* = `λ₁ > 3`, part **size** — its own examples `(3A−1,1)` and `(3A−2,2)` are two-row partitions. Not the row cap, and no live producer runs it.
+
+### Further corpus defects found, reported not fixed
+
+- **`wedderburn_jones_markov.py` contradicts itself inside one function.** `:355-359` says the `y_λ` path replaces the 2-variable Schur *because* the latter vanishes for >2 rows — implying `y_λ` does not. `:385-395`, same function, says `y_λ` is *"EXACTLY zero for every λ with ≥ 3 rows"*. The docstring is convention-C-era; the body is D.
+- **Strand count still unreconciled, with a third site.** `H_{A+Z}` at `atomic-braid.md:2` **and `wedderburn-mass-formula.md:2`** (same chapter as the `3A` claim) against `H_{3A}` at `schur-weyl-mass-decomposition.md:1` and `hecke_3a_weights.py:5`. Does not affect this answer — `N = dim V` is independent of `n`.
+- **`markov-trace-frobenius-selection.md:19` calls the fibre-trace premise open** while `TraceBlindSector.lean:26-30` argues it is resolved. Two live positions; they agree on `N = 2` either way, since the volume-axiom route does not go through it.
