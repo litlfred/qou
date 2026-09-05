@@ -102,6 +102,21 @@ statement it makes.
 
 ### And even granting N = 3, two further gates stay shut
 
+> **CORRECTION, from sibling #6826, verified here before merging.** An earlier
+> version of §5 below listed the `End(V^{⊗n})` share as the classical
+> `(f^λ)²/n!`, which I took from #6768's coordination comment. **That is wrong
+> at N = 2.** There `End_{U_q𝔰𝔩₂}(V^{⊗n}) = TL_n(q)`, whose block share is
+> `(f^λ)²/Catalan(n)` supported on `ℓ(λ) ≤ 2` — q-Schur–Weyl is a *surjection*
+> at `N < n`, with kernel `n! − Catalan(n)`. Verified independently:
+> `Σ_{ℓ(λ)≤2} (f^λ)² = Catalan(n)` exactly at n = 3, 4, 6, 9, 12
+> (5, 14, 132, 4862, 208012), while the sum over *all* λ is `n!`.
+>
+> **This strengthens Side B rather than weakening it.** Both horns of the
+> eightfold audit's route 1 — the module share and the operator share — are
+> supported on `ℓ(λ) ≤ 2` at N = 2 and are therefore *exactly zero* on every
+> stratum of depth ≥ 2. The route collapses at the settled N, and #6826 records
+> that as a scope-(b) exclusion with the invariant cited.
+
 1. **Flavour vs colour is not separable by any object-level gate.**
    `FlavourColourDiscriminator.no_object_gate_separates` is scope-(b) with the
    invariant named: the colour triple (the `ℂ³` of
