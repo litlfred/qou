@@ -44,7 +44,11 @@ from pyhecke.gram import (
     nf_tr,
     nf_net,
     NF_NAMES,
+    tr_m_mp,
+    gram_matrix_mp,
 )
+from pyhecke.atom import build_nucleon_nf_mp
+from compound_shift_nf import build_atom_nf_mp
 from hecke_engine import HeckeEngine, HeckeRational
 from witness_base import WitnessBuilder
 from _precision import set_compute_dps, fmt  # noqa: E402
@@ -174,17 +178,79 @@ def compute_per_generator_volumes(Z, N):
     return ordering, V_list, cross_sum, delta_xchan
 
 
+_MP_DPS = 50
+
+#: Relative Frobenius tolerance (beans `qou-3uvs`, `qou-ejuy`).
+#:
+#: The f64 `check_frobenius` in `pyhecke.atom` tests `Gx[i] < -1e-10`, a FIXED
+#: ABSOLUTE tolerance, against values whose magnitude runs from 1e1 at o16 to
+#: 1e31 at fe56. One float64 ulp at fe56's scale is ~2.5e+15 — twenty-five
+#: orders ABOVE that threshold — so a `Gx` entry whose true value is 0 could
+#: land at -1e+15 from cancellation alone and register as a violation. The
+#: verdict was below its own noise floor for ca40 and fe56.
+#:
+#: 1e-10 RELATIVE reproduces the old test exactly wherever ‖Gx‖∞ ≤ 1, which is
+#: the regime where the absolute form was meaningful, and scales with the
+#: quantity everywhere it was not. Deliberately NOT tightened to something like
+#: 1e-30 just because mpf could carry it: that would be a new scientific
+#: threshold smuggled in under a precision change.
+_FROB_REL_TOL = mp.mpf("1e-10")
+
+_TR_M_MP = None
+_G_MP = None
+
+
+def _mp_tables():
+    """`(tr_m_mp, gram_matrix_mp)` at `_MP_DPS`, built once."""
+    global _TR_M_MP, _G_MP
+    if _TR_M_MP is None:
+        _TR_M_MP = tr_m_mp(_MP_DPS)
+        _G_MP = gram_matrix_mp(_MP_DPS)
+    return _TR_M_MP, _G_MP
+
+
+def check_frobenius_mp(nf, G_mp):
+    """Frobenius positivity G·x >= 0 in mpf, with a SCALE-AWARE tolerance.
+
+    The mp counterpart of `pyhecke.atom.check_frobenius`, kept HERE rather
+    than in the library: that function is on the deliberately bit-stable f64
+    path (`gram.py`, bean `qou-jtbo`) and other callers depend on it being
+    exactly what it is.
+    """
+    Gx = [sum(G_mp[i][j] * nf[j] for j in range(6)) for i in range(6)]
+    scale = max((abs(v) for v in Gx), default=mp.mpf(0))
+    if scale < 1:
+        scale = mp.mpf(1)          # never LOOSER than the original absolute test
+    tol = -(_FROB_REL_TOL * scale)
+    violations = [(NF_NAMES[i], Gx[i]) for i in range(6) if Gx[i] < tol]
+    return len(violations) == 0, Gx, violations
+
+
 def compute_atom(name, Z, N, quarks=None):
     """Compute hadron-level NF for one atom."""
+    # mp path throughout (beans `qou-ejuy`, `qou-3uvs`). This read
+    # `build_atom_nf` / `nf_tr` / `nf_net` / `check_frobenius`, all of which
+    # are on `pyhecke.gram`'s deliberately bit-stable FLOAT64 path — so the
+    # row mixed two precisions, publishing a float64 `tr_M` beside a `B_MeV`
+    # that came through the MPFR kernel. The mpf counterparts already existed
+    # and the module says to use them.
+    #
+    # `build_atom_nf_mp` was NOT a drop-in until this session: it used `-h/2`
+    # for the inter-nucleon p-n crossing where the canonical builder uses the
+    # colour-weighted `D_PN`, a 6.88e-4 difference in convention rather than
+    # precision. Fixed under `qou-ejuy`, and the two now agree to 1e-16..1e-15
+    # over deuterium..c12 — verified BEFORE this switch, because a silent 7e-4
+    # shift would have looked exactly like a clean precision upgrade.
+    TRmp, G_mp = _mp_tables()
     if quarks:
         quark_list = list(quarks.replace("u", "u").replace("d", "d"))
-        nf = build_nucleon_nf(quark_list)
+        nf = build_nucleon_nf_mp(quark_list, _MP_DPS)
     else:
-        nf = build_atom_nf(Z, N)
+        nf = build_atom_nf_mp(Z, N, _MP_DPS)
 
-    tr = nf_tr(nf)
-    net = nf_net(nf)
-    stable, Gx, violations = check_frobenius(nf)
+    tr = sum(nf[i] * TRmp[i] for i in range(6))
+    net = sum(nf)
+    stable, Gx, violations = check_frobenius_mp(nf, G_mp)
     alpha_knot, knot_name, is_hyp = classify_nuclear_knot(Z, N)
     B = binding_energy(Z, N)
 
@@ -231,7 +297,11 @@ def compute_atom(name, Z, N, quarks=None):
         # the physics. Publishing them would be manufactured precision of
         # exactly the kind the float64-padding ratchet exists to catch. When
         # `qou-ejuy` makes `tr` a real mpf, drop the override.
-        "ln_abs_tr": (fmt(mp.log(abs(tr)), dps=17)
+        # Full width again (bean `qou-uiut`): the `dps=17` cap was there
+        # because `tr` was a float64 and `mp.log` would have manufactured 43
+        # digits describing its binary64 rounding. `tr` is an mpf now, so the
+        # digits are real.
+        "ln_abs_tr": (fmt(mp.log(abs(tr)))
                       if abs(tr) > mp.mpf("1e-300") else None),
         "frobenius_stable": stable,
         # Record the EVIDENCE, not just the verdict (bean `qou-3uvs`).
@@ -247,8 +317,13 @@ def compute_atom(name, Z, N, quarks=None):
         # whose true value is 0 can land at -1e+15 from cancellation alone and
         # register as a violation. With these recorded, a reader can see
         # whether a violation is genuinely large or sits in the noise.
-        "Gx": [fmt(float(v)) for v in Gx],
-        "frobenius_violations": [[nm, fmt(float(val))] for nm, val in violations],
+        # No `float()` (beans `qou-ejuy`, `qou-uiut`): `Gx` comes from
+        # `check_frobenius_mp` as mpf now, and re-narrowing it here would
+        # discard the precision the migration exists to gain — and with it the
+        # ability to see whether a violation is real or noise, which is the
+        # whole reason these are recorded.
+        "Gx": [fmt(v) for v in Gx],
+        "frobenius_violations": [[nm, fmt(val)] for nm, val in violations],
         "knot_type": knot_name,
         "B_MeV": fmt(B),
         # Per-generator traced volumes (mass-tower formula, sum 1 + 3)
