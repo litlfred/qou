@@ -75,3 +75,48 @@ have to reproduce a hook/two-row relation that *changes sign* at an interior `b`
 - **`mp.mp.dps` is global mutable state.** Every probe here sets it at module scope, so dps must be
   set *after* all imports; the `_assert_dps` guard (#6710) caught a live instance and refused to
   compute rather than return numbers at an unrequested precision.
+
+---
+
+## 🛑 CORRECTION (same day): the split does NOT transfer to bound tightness
+
+The section *"Why the split is actionable, not just descriptive"* above says a bound can handle
+hooks exactly and *"make a uniform statement about everything else, where pointwise monotonicity
+holds"*. That sentence infers a claim about **bound tightness** from three measurements about
+**ordering**. They are different properties, and the tightness data — already measured in #6754,
+and available when the paragraph was written — says the inference runs the wrong way.
+
+Splitting #6754's link-1 slack (`bound / actual`) by family over the complete n=9 census:
+
+| family | slack range | median |
+|---|---|---|
+| hooks (7 shapes) | 2.04 – 81.57 | **21.53** |
+| non-hooks (21 shapes) | 6.10 – **550.20** | **71.01** |
+
+The five worst shapes are all non-hooks: `(3,2,1⁴)` 550.2×, `(4,3,2)` 307.1×, `(4,3,1,1)` 295.3×,
+`(5,2,2)` 186.3×, `(3,3,1,1,1)` 99.5×.
+
+**So hooks are the family that breaks the ORDERING and are simultaneously the BEST-BOUNDED family;
+non-hooks are well-ordered and badly bounded** — 3.3× worse at the median, 6.7× at the maximum.
+"Handle hooks separately and everything else is uniform" gets the difficulty exactly backwards for
+the purpose the bean actually needs.
+
+### What survives, and what does not
+
+- **SURVIVES:** the three measurements really do isolate the hook family, and the mechanism (the
+  hook column decays fastest, which forces all three signatures) is unaffected. Hooks having a
+  closed form is still a genuine asset.
+- **DOES NOT SURVIVE:** the inference that the split makes a *bound* tractable. The split localises
+  where **monotonicity in `b`** fails. It says nothing about where the **norm relaxation** is loose,
+  and the measurement shows the two are close to anti-correlated.
+
+### Why the two come apart
+
+The slack is `√(dim·‖X‖_F²) / |tr|`, dominated by how far the eigenvalue moduli are from equal and
+by how much the trace cancels. The hook's spectrum collapses uniformly (`Σ|eig|/dim` falls 213×),
+which keeps Cauchy–Schwarz relatively honest; the fat non-hook shapes retain a spread spectrum with
+a nearly-vanishing trace — `(3,2,1⁴)` has `|tr|/dim = 0.0142` against a bound of 7.84 — which is the
+worst case for a norm bound. Nothing about `b`-ordering predicts that.
+
+**Consequence for the arc:** the sub-problem is not "bound the off-hook family uniformly". It is
+still the one #6754 identified — the norm relaxation itself — and the hook split does not reduce it.
