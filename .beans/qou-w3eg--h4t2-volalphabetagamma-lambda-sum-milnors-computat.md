@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-05T07:43:18Z
+updated_at: 2026-09-05T08:43:01Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -685,3 +685,46 @@ Every half-angle on the right — `α`, `β`, `π−γ` — is **acute** when `�
 3. Composition with the acute `hypVolume_chimney_wedgeAt` and `lob_sum_eq_reflected` to land `Λ(α)+Λ(β)+Λ(γ)`.
 
 **Still does not close the case:** `idealTet_eq_chimney`'s `α,β,γ < π/2` (`IdealTetEqChimney.lean:169`) is a set equality outside all of this, and remains untouched.
+
+
+## Milnor's minus sign is already inside the corpus's algebra — `perp_sign_relation` needs no acuteness (2026-09-05)
+
+Landed in `ObtuseWedgeDegenerate.lean` (sorry-free, lean-direct exit 0, `[propext, Classical.choice, Quot.sound]`): `sin_two_mul_neg_of_obtuse`, `acute_of_obtuse_third`, `perp_coeff_signs_of_obtuse`.
+
+**The finding is about a theorem already on `main`.** `perp_sign_relation` (`OrthoschemeTiling.lean`) carries the single linear relation among the three edge functionals, with coefficients `sin 2α, sin 2β, sin 2γ`. **Verified by reading its signature — its only hypothesis is `hsum : α + β + γ = π`. No acuteness.** So the relation holds *verbatim* in the obtuse case.
+
+What acuteness buys is only the **positivity** of those coefficients, and the theorem's own docstring says so: *"all POSITIVE for acute angles. That positivity is the whole covering argument."*
+
+So **the obtuse case does not need a new relation** — it needs the existing one run against a different sign pattern, now pinned down: exactly one coefficient turns negative, and it is `sin 2γ`. That lone minus is Milnor's.
+
+### The same boundary, three times, always as a sign
+
+This arc has now hit `π/2` in three structurally independent places, and each time it is a **sign flip**, not a difficulty:
+
+| where | what flips at `π/2` |
+|---|---|
+| `integral_orthoscheme`'s `hψ : ψ < π/2` | the chord offset `R cos ψ` changes sign — circumcentre crosses the chord |
+| `wedgeAt` at obtuse `ψ` | `tan ψ < 0`, so the wedge moves to the far side of the apex |
+| `perp_sign_relation`'s third coefficient | `sin 2γ < 0` |
+
+They are one phenomenon in three vocabularies. That is why the signed route keeps measuring cheaper: the corpus's machinery is *already* sign-aware; only its *hypotheses* are acute.
+
+### Measure-subtraction hypotheses confirmed, and claim 2 shown non-vacuous
+
+Claim 3 of [`milnor_obtuse_wedge_decomposition_probe.py`](computations/milnor_obtuse_wedge_decomposition_probe.py), over 19,881-point grids × 4 obtuse triples × 2 rotations:
+
+- `W_α ∩ W_β = ∅` — overlap 0 everywhere
+- `W_sub ⊆ W_α ∪ W_β` — 0 points outside everywhere
+- **`W_sub` NONEMPTY** — 923–1088 points, comparable to `|W_α|`, `|W_β|`
+
+The last one is the check that mattered and I had not run it: claim 2 asserts `T = (W_α ∪ W_β) \ W_sub`, which would pass **vacuously** if `W_sub` were empty, meaning something entirely different (no subtraction, no minus sign). It is not empty.
+
+**A grid artifact recorded so it is not misread as a failure.** At `t = 0` the defining lines are axis-aligned and a symmetric grid lands many points exactly on them; every membership test is a strict `<`, so `|W_α ∪ W_β| − |W_sub|` overshoots `|T|` by ~40. At `t = π/5` essentially nothing is on a line and the counts agree **exactly** (945/945, 690/690, 452/452, 514/514). Only the off-line reading is meaningful — the identity is a.e.
+
+### Remaining for option (A)
+
+1. The a.e. set identity in Lean — model on `milnorWedges_ae_eq_inscribedTriangle` (two containments + `Measure.addHaar_submodule` via `volume_perpLine`). The covering half can now reuse `perp_sign_relation` unchanged with the `+ + −` pattern.
+2. `W_sub ⊆ W_α ∪ W_β` and `Disjoint W_α W_β` as Lean lemmas (both measured; `disjoint_wedgeAt_adjacent` needs acute half-angles, and here all of `α`, `β`, `π−γ` are acute, so it should apply directly).
+3. Compose with `hypVolume_chimney_wedgeAt` and `lob_sum_eq_reflected`.
+
+**Unchanged:** `idealTet_eq_chimney`'s `α,β,γ < π/2` is a set equality outside all of this and still blocks the volume claim.
