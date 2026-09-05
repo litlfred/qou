@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-05T08:33:27Z
-updated_at: 2026-09-05T08:34:10Z
+updated_at: 2026-09-05T08:43:11Z
 ---
 
 ## What was found
@@ -97,3 +97,21 @@ here — it is content work across three files and wants its own branch.
 Two further specifics worth carrying into that work: `cp_violation_spectral_form`
 is declared a `theorem` while its own docstring calls it a **Conjecture**, and
 its `[ComplexSubstrate]` binder is unused.
+
+
+## 2026-09-05 — the ∀-prefixed shape is BOUNDED at one (measured)
+
+The write-up above records a ninth instance the fixed detector still could not
+see, its conclusion opening with `∀`. Measured over the same 3606 files with a
+standalone probe before changing anything: **exactly one** such instance
+corpus-wide, and it is that same already-known declaration. There is no hidden
+reservoir behind this shape.
+
+Wired into the detector anyway (`strip_forall`, one `∀` group, findings carry
+`forall_prefixed`), on the grounds that a documented blind spot nobody closes
+becomes a permanent one — and the measurement is what makes it safe to wire,
+since nothing unexpected lands with it. Live scan **8 → 9 in 3 files**;
+self-test 10 → 13 fixtures, 13/13.
+
+So the drain queue is **9**, not 8, and the count is now complete for both
+shapes rather than open-ended.
