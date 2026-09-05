@@ -1,11 +1,11 @@
 ---
 # qou-4ohh
 title: mass_binding_dashboard computes in float64 — and its own accuracy claim is the f64 floor
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-09-05T06:32:21Z
-updated_at: 2026-09-05T06:33:13Z
+updated_at: 2026-09-05T19:40:56Z
 ---
 
 MEASURED 2026-09-05 (compute-precision-auditor subagent) while producing the
@@ -106,3 +106,61 @@ docstring explicitly retracts.
 
 Read-only run; the tree was left clean and nothing was committed. The float64
 drain of mass_binding_dashboard.py is the actionable item and is NOT done.
+
+## DEFECT 1 + DEFECT 2 FIXED — PR #6881 (stacked on #6864)
+
+**The retraction landed, and it made the claim stronger exactly as this bean
+predicted.**
+
+FOUR f64 downcasts sat on the chain-vs-exact path, not one:
+
+    _constants()            returned float(mex), float(q0x), float(e0x)
+    _bond_type_L()          returned float(...) per bond
+    _chain_writhe_shift()   returned float(...)
+    exact-trace branch      did ta, tf = float(ta), float(tf) before math.log
+
+**Why it survived, which is the reusable part.** The file was MID-migration,
+not un-migrated. `_disp` already existed as the display boundary with the
+invariant spelled out in its docstring. And `_bond_type_L`'s own docstring
+already claimed *'the values are now mpmath end to end — the old body did
+math.log(float(tf)/float(ta)), an f64 collapse the owner directive forbids'*.
+That was true of the BODY and false of the RETURN: mpmath throughout, downcast
+one line later. **The docstring and the internals agreed with each other and
+both were wrong about what came out of the function.**
+
+MEASURED, before/after, 2H/3H/3He at --max-strands 9:
+
+    headline max|d|   8.9e-16  ->  2.1e-49 MeV
+    2H                4.4e-16  ->  2.1e-49
+    3H                0.0e+00  ->  4.3e-50
+    3He               8.9e-16  ->  5.3e-50
+
+Rendered dashboard diff is **12 lines** — the residual column and its headline.
+Every other number byte-identical, so purely precision; no value moved.
+
+**3H printed exactly `0.0e+00` before.** Not agreement — the difference
+underflowing below f64 resolution. A perfect zero from an f64 subtraction of two
+~8 MeV quantities is the signature, not the result. Worth remembering as a
+detector: an exact 0.0 residual in a float pipeline is evidence of underflow,
+not of identity.
+
+The stale in-source comment claiming `|chain − exact| ≈ 1e-13` is corrected to
+the measured 2e-49 in the same commit.
+
+## What this does NOT fix
+
+The dashboard still cannot complete at 4He and above (~21 min, then hours) —
+that is the general-word kernel's d_lambda cost from `qou-wdij`, not a float64
+issue. So this fixes the arithmetic of a producer that remains capacity-limited
+above A=3.
+
+## Still open on this bean
+
+`canonical_mass.py:51` `_from_witness()` does
+`float(preds['m_p_MeV']), float(preds['m_n_MeV'])`. MEASURED: the witness
+carries **25** significant digits and float() keeps ~17, a relative loss of
+**5.7e-17 (m_p) / 6.0e-17 (m_n)**. Correcting my own earlier framing — that is
+~8 digits lost, not ~34, and it sits INSIDE the 1 ppQ (1e-15) L1 target rather
+than breaking it. It is still a NO-FLOAT64 defect and still a hard ceiling on
+55 consumers, but it is not urgent and a return-type change across 55 call sites
+is not a small fix. Deliberately not bundled into #6881.
