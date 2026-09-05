@@ -34,11 +34,14 @@ this braiding, and the limit is checked here rather than assumed.
   has the same quadratic for any linearly ordered index type; only `Fin 2` is done here,
   because `Fin 2` is the fibre every consumer in this corpus uses (`weighted_character_two`,
   `trace_permMatrixOf_two`, `ClassicalTraceFloor`'s `2^{c(σ)}`).
-* **The quadratic only.** The braid relation (Yang–Baxter) `Ř₁Ř₂Ř₁ = Ř₂Ř₁Ř₂` on `V^{⊗3}`
-  is *not* proved here. Both are needed before
-  `QOU.IwahoriHecke.Balanced.liftBalanced` produces an actual algebra map
-  `H_n(q) → End(V^{⊗n})`, and only one of the two is in hand. `IsHeckeGenerator` alone is
-  a statement about a single operator; do not read it as a Hecke *action*.
+* **`n = 3` only.** Both relations are proved — the quadratic (`isHeckeGenerator_rCheck`)
+  and Yang–Baxter (`yangBaxter`) — and `heckeAction` feeds them to
+  `QOU.IwahoriHecke.Balanced.liftBalanced` to produce an actual algebra map
+  `H₃(q) → End(V^{⊗3})`. General `n` needs the embedding of a two-site operator at each
+  position `i` of `V^{⊗n}`, which is not built here.
+* **Nothing is claimed about the image.** `heckeAction` is an algebra map; that it is
+  *surjective onto the commutant* of the quantum-group action — the Schur–Weyl statement
+  proper — is not proved and does not follow from anything here.
 
 -- Ref: [jimbo1986] Jimbo, "A q-difference analogue of U(g) and the Yang-Baxter equation"
 -- Ref: [manuscript] AGENTS.md §7a; bean qou-k4oq
@@ -166,5 +169,83 @@ theorem yangBaxter (hqi : q * qi = 1) :
       Prod.ext_iff]
   all_goals try ring
   all_goals first | linear_combination (q - qi) * hqi | linear_combination (qi - q) * hqi
+
+/-! ## The Hecke action on `V^{⊗3}`
+
+With both relations in hand, `QOU.IwahoriHecke.Balanced.liftBalanced` turns them into an
+actual algebra map out of `H₃(q)`. This is the point of the whole file: `IsHeckeGenerator`
+and `yangBaxter` are statements about operators; what quantum Schur-Weyl needs is an
+*action*, and this is it. -/
+
+set_option maxHeartbeats 1000000 in
+/-- The embedded braiding `Ř₁` satisfies the §7a quadratic. -/
+theorem rc1_sq (hqi : q * qi = 1) :
+    rc1 q qi * rc1 q qi = (q - qi) • rc1 q qi + 1 := by
+  ext a b
+  fin_cases a <;> fin_cases b <;>
+    simp [rc1, rCheck, Matrix.mul_apply, Fintype.sum_prod_type, Fin.sum_univ_two,
+      Prod.ext_iff]
+  all_goals try ring
+  all_goals linear_combination hqi
+
+set_option maxHeartbeats 1000000 in
+/-- The embedded braiding `Ř₂` satisfies the §7a quadratic. -/
+theorem rc2_sq (hqi : q * qi = 1) :
+    rc2 q qi * rc2 q qi = (q - qi) • rc2 q qi + 1 := by
+  ext a b
+  fin_cases a <;> fin_cases b <;>
+    simp [rc2, rCheck, Matrix.mul_apply, Fintype.sum_prod_type, Fin.sum_univ_two,
+      Prod.ext_iff]
+  all_goals try ring
+  all_goals linear_combination hqi
+
+theorem isHeckeGenerator_rc1 (hqi : q * qi = 1) : IsHeckeGenerator q qi (rc1 q qi) := by
+  show rc1 q qi * rc1 q qi = algebraMap R _ (q - qi) * rc1 q qi + 1
+  rw [Algebra.algebraMap_eq_smul_one, smul_mul_assoc, one_mul]
+  exact rc1_sq q qi hqi
+
+theorem isHeckeGenerator_rc2 (hqi : q * qi = 1) : IsHeckeGenerator q qi (rc2 q qi) := by
+  show rc2 q qi * rc2 q qi = algebraMap R _ (q - qi) * rc2 q qi + 1
+  rw [Algebra.algebraMap_eq_smul_one, smul_mul_assoc, one_mul]
+  exact rc2_sq q qi hqi
+
+/-- The type-`A₂` Coxeter matrix on the two generators of `H₃(q)`: the generators braid
+(`m = 3`) and neither commutes with the other. -/
+def coxA2 : Fin 2 → Fin 2 → ℕ := fun i j => if i = j then 1 else 3
+
+theorem coxA2_symm : ∀ i j, coxA2 i j = coxA2 j i := by decide
+
+/-- **The Hecke action of `H₃(q)` on `V^{⊗3}`.**
+
+An honest algebra map, not a class: `σ₀ ↦ Ř₁`, `σ₁ ↦ Ř₂`, with the §7a quadratic and the
+braid relation discharged by `isHeckeGenerator_rc1`/`rc2` and `yangBaxter`. This is the
+braiding half of quantum Schur-Weyl at `n = 3`, realised. -/
+noncomputable def heckeAction (hqi : q * qi = 1) :
+    QOU.IwahoriHecke.Balanced.BalancedHecke coxA2 q →ₐ[R]
+      Matrix (Fin 2 × Fin 2 × Fin 2) (Fin 2 × Fin 2 × Fin 2) R :=
+  QOU.IwahoriHecke.Balanced.liftBalanced hqi ![rc1 q qi, rc2 q qi]
+    (fun i => by fin_cases i
+                 · simpa using isHeckeGenerator_rc1 q qi hqi
+                 · simpa using isHeckeGenerator_rc2 q qi hqi)
+    (fun i j => by
+      have hy : rc1 q qi * (rc2 q qi * rc1 q qi) = rc2 q qi * (rc1 q qi * rc2 q qi) := by
+        rw [← mul_assoc, ← mul_assoc]; exact yangBaxter q qi hqi
+      fin_cases i <;> fin_cases j <;>
+        simp [coxA2] <;>
+        first
+          | rfl
+          | exact hy
+          | exact hy.symm)
+    coxA2_symm
+
+@[simp] theorem heckeAction_sigma_zero (hqi : q * qi = 1) :
+    heckeAction q qi hqi (QOU.IwahoriHecke.Balanced.sigma coxA2 q qi 0) = rc1 q qi := by
+  simpa using QOU.IwahoriHecke.Balanced.liftBalanced_sigma (M := coxA2) hqi
+    ![rc1 q qi, rc2 q qi] _ _ coxA2_symm 0
+
+@[simp] theorem heckeAction_sigma_one (hqi : q * qi = 1) :
+    heckeAction q qi hqi (QOU.IwahoriHecke.Balanced.sigma coxA2 q qi 1) = rc2 q qi := by
+  simpa using QOU.IwahoriHecke.Balanced.liftBalanced_sigma (M := coxA2) hqi
+    ![rc1 q qi, rc2 q qi] _ _ coxA2_symm 1
 
 end QOU.IwahoriHecke.RMatrix
