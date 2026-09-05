@@ -82,3 +82,22 @@ because they are not of the form at all.
 `contentDoubled_neg_iff`. Kept in `ℤ` with the content doubled so no division
 enters. `lean`-direct exit 0, no warnings.
 `computations/qbeta/qbeta_charge_class_singleton_probe.py` (5/5, 30 dps).
+
+
+## 2026-09-05 (later) — the bridge is unavailable, and mechanically so
+
+`qou-qb7p`. The "image under the Wedderburn embedding" this bean recorded as an
+unspecified gap turns out to be worse than unspecified:
+
+- the corpus's only formalised embedding, `wedderburnEmbed`, is declared
+  `opaque` — "keeps the embedding opaque pending concrete construction";
+- it registers as a **fourth axiom** in `#print axioms`, beside `propext`,
+  `Classical.choice` and `Quot.sound`, so anything routed through it is not
+  axiom-clean by this corpus's own standard;
+- its type assembles blocks into one matrix; the clause needs one block's scalar
+  split into three coefficients — wrong direction and wrong arity;
+- and no other `wedderburn*` object is a map of algebras.
+
+The `(2,1)` clause is now annotated as an open obligation. So the six
+coefficients this bean found are not hook products have **no derivation at all**
+pending a construction of the embedding.
