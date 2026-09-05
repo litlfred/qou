@@ -72,6 +72,8 @@ from pathlib import Path
 
 import mpmath as mp
 
+from qou_substrate.witness import WitnessBuilder as _WB  # noqa: E402 -- provenance stamp
+
 HERE = Path(__file__).resolve().parent
 sys.path[:0] = [str(HERE), str(HERE.parent)]
 
@@ -177,7 +179,7 @@ def main() -> int:
     print("=" * 74)
 
     out = HERE / "pair-skein-mass-bar-parity.witness.json"
-    out.write_text(json.dumps({
+    _payload = {
         "schema": "qou-probe/v1",
         "name": "pair-skein-mass-bar-parity",
         "description":
@@ -186,7 +188,10 @@ def main() -> int:
             "is FORCED, not a sign slip: the bar-odd bridge s would make the mirror of a mass "
             "negative, and would make S_ab diverge at q=1 where the corpus requires Q -> 0 and "
             "decay to cease.",
-        "q0_anchor": "physical_proton",
+        "q0Anchor": "proton",
+        "q0AnchorReason":
+            "AGENTS.md 2026-08-07 owner directive: proton is the default for all new "
+            "compute. Load-bearing here, not inert: q0 enters the evaluated quantities.",
         "q0Value": mp.nstr(q0, 20),
         "verdict": "(R3) deliberate symmetrising normalisation -- S_ab is a mass, not an amplitude",
         "scope": "(b) structural exclusion of the odd bridge IN THIS FORMULA, on two proved "
@@ -195,7 +200,13 @@ def main() -> int:
                  "elsewhere -- that is #6820's separate question and is untouched.",
         "source": "content/quantum-observable-universe/predicted-spectra/hadron-half-life-proof.md:37",
         "checks": checks,
-    }, indent=2) + "\n")
+    }
+    _WB.stamp_staleness_metadata(
+        _payload, script_path=__file__, q0_anchor="proton",
+        q0_anchor_reason=_payload["q0AnchorReason"],
+        q0_value=_payload["q0Value"],
+    )
+    out.write_text(json.dumps(_payload, indent=2) + "\n")
     print(f"\nwitness -> {out}")
     return 0 if n == len(checks) else 1
 

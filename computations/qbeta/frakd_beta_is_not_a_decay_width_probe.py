@@ -101,6 +101,8 @@ from pathlib import Path
 
 import mpmath as mp
 
+from qou_substrate.witness import WitnessBuilder as _WB  # noqa: E402 -- provenance stamp
+
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 sys.path[:0] = [str(HERE), str(HERE.parent)]
@@ -261,6 +263,10 @@ def main() -> int:
         "assertions": assertions,
         "allPassed": ok,
     }
+    _WB.stamp_staleness_metadata(
+        w, script_path=__file__, q0_anchor="proton",
+        q0_anchor_reason=w["q0AnchorReason"], q0_value=w["q0Value"],
+    )
     out.write_text(json.dumps(w, indent=2) + "\n")
     print(f"\n  witness -> {out.relative_to(ROOT)}")
     return 0 if ok else 1
