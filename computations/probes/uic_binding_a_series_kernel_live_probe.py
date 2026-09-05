@@ -43,6 +43,7 @@ and claims nothing about theirs.
 """
 from __future__ import annotations
 
+import json
 import sys
 import time
 from pathlib import Path
@@ -77,8 +78,6 @@ def check(name: str, ok: bool, detail: str = "") -> None:
 # 63 eV, against an AME uncertainty on B(4He) of 0.8 eV.  A first draft of this
 # probe hardcoded seven values and EVERY ONE was wrong -- 5He by 158.7 keV.
 ATOMS = [
-    (1, 2, "3H"),
-    (2, 1, "3He"),
     (2, 2, "4He"),
     (2, 3, "5He"),
     (3, 2, "5Li"),
@@ -88,8 +87,16 @@ ATOMS = [
 # emitted series is complete; flagged so a reader can tell them from this run.
 PRIOR = [
     (1, 1, "2H", "-7.271102124876717"),
+    (1, 2, "3H", "-7.742121347136118"),
+    (2, 1, "3He", "-7.45619950551758"),
     (3, 3, "6Li", "-3.065019520558719"),
 ]
+
+# Per-atom checkpoint.  A container restart killed the first run of this probe
+# mid-4He and cost ~40 min; 3H and 3He survived only because they had been
+# flushed to a log.  Each completed row is now appended here as it lands, so a
+# restart costs the in-flight atom and nothing else.
+CKPT = Path("/tmp/a_series_checkpoint.jsonl")
 
 
 def main() -> int:
@@ -124,6 +131,11 @@ def main() -> int:
             "measured_here": True,
         }
         rows.append(row)
+        try:
+            with CKPT.open("a") as fh:
+                fh.write(json.dumps(row) + "\n")
+        except OSError as exc:   # a failed checkpoint must not lose the run
+            print(f"  (checkpoint write failed: {exc})", flush=True)
         print(f"  [{time.strftime('%H:%M:%S')}] {label}  A={A}  B_pred={B!r}  "
               f"AME={ame}  ({dt:.1f}s)", flush=True)
 
