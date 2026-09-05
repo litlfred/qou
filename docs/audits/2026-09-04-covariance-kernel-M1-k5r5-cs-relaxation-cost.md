@@ -262,6 +262,38 @@ Over `n ≥ 6` the range is [22.0, 112.0], but that is small-`n` noise: over **`
 > bound the weight the criterion admits, rather than enumerate. **It bounds nothing yet**, and a
 > ratio settling near 55 over `n ≤ 22` is not evidence about `n ≥ 79`.
 
+### The integer form, and why the two sides are not mirror images
+
+`d_u − d_v` is an **integer**, so the half-integer thresholds collapse:
+
+| | negative ⟺ |
+|---|---|
+| `g > 0` | `d_u − d_v ≤ −⌊g/2⌋` |
+| `g < 0` | `d_u − d_v ≥ 2 + ⌊\|g\|/2⌋` |
+
+Also verified at every edge. Two consequences. The `g > 0` thresholds **pair** — `g = 2` and `g = 3`
+both need `≤ −1`; `g = 4` and `g = 5` both need `≤ −2` — so the larger *odd* `g` inherits the smaller
+even `g`'s admission condition while carrying a strictly larger `|Δω₃|`. And the two sides are **not**
+mirror images: `−⌊g/2⌋` against `2 + ⌊|g|/2⌋`. That `+2` is the same `−2` in `ΔD` that broke the WLOG
+swap, and **it bit a second time** in this probe as an off-by-one on *even* `|g|` only — the odd cases
+agreed, so a spot check would have passed. Twice from one asymmetry is why both forms are machine-checked
+rather than argued.
+
+### Where the negative mass lives — my hypothesis was wrong
+
+The profile was measured to test whether the negative mass concentrates at small `|g|`, which would
+localize any bound to a few edge shapes. **It does not.**
+
+| n | `\|g\|=1` | `\|g\|=2` | `\|g\|=3` |
+|---|---|---|---|
+| 12 | 42.9 % / 20 | 5.5 % / 4 | 51.7 % / 12 |
+| 16 | 38.2 % / 84 | 3.5 % / 16 | 57.9 % / 56 |
+| 22 | 30.2 % / 448 | 4.4 % / 100 | 46.8 % / 364 |
+
+`|g| ≤ 2` carries only ~35 % at n = 22, the largest single bucket is `|g| = 3`, and `|g|` runs to 5.
+The pairing explains it: `g = 3` is admitted on `g = 2`'s condition with a bigger term, so the mass is
+not monotone in `|g|` and there is no small-`|g|` truncation to lean on.
+
 ## Cross-references
 
 - The sharper reduction being priced: [`…-fulman-exchangeable-pair-reduction.md`](2026-08-21-covariance-kernel-M1-fulman-exchangeable-pair-reduction.md)

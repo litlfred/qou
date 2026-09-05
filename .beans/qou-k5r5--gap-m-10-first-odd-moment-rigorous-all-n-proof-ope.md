@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-05T07:22:44Z
+updated_at: 2026-09-05T07:36:01Z
 ---
 
 
@@ -1082,3 +1082,26 @@ WHAT THIS BUYS: P > N was a weighted sum over an ENUMERATED set; it is now a set
 INEQUALITY in four integers, three of which (u, v, d_u) are read off one partition. That is the shape
 a finite-n bound can use -- bound the weight the criterion admits rather than enumerate. It bounds
 NOTHING yet, and a ratio settling near 55 over n<=22 is not evidence about n>=79.
+
+
+2026-09-05 (same branch, cont'd): THE INTEGER FORM, AND MY LOCALIZATION HYPOTHESIS IS REFUTED.
+
+INTEGER FORM (verified at every edge to n=22, alongside the signed-g form). d_u - d_v is an INTEGER,
+so the half-integer thresholds collapse:
+    g > 0 :  negative <=>  d_u - d_v <= -floor(g/2)
+    g < 0 :  negative <=>  d_u - d_v >= 2 + floor(|g|/2)
+NOT mirror images. That +2 vs -floor is the SAME -2 in Delta(D) that broke the WLOG swap, and it BIT
+A SECOND TIME in this probe as an off-by-one on EVEN |g| only -- the odd cases agreed, so a spot
+check would have passed. Twice from one asymmetry; both forms are machine-checked, not argued.
+
+THE g>0 THRESHOLDS PAIR: g=2 and g=3 both need <= -1; g=4 and g=5 both need <= -2. So the larger ODD
+g inherits the smaller even g's admission condition while carrying a strictly larger |Delta W|.
+
+HYPOTHESIS REFUTED. The profile was measured to test whether the negative mass concentrates at small
+|g| (which would localise a bound to a few edge shapes). IT DOES NOT:
+    n=12  |g|=1 42.9%/20   |g|=2 5.5%/4    |g|=3 51.7%/12
+    n=16  |g|=1 38.2%/84   |g|=2 3.5%/16   |g|=3 57.9%/56
+    n=22  |g|=1 30.2%/448  |g|=2 4.4%/100  |g|=3 46.8%/364
+|g|<=2 carries only ~35% at n=22; the LARGEST bucket is |g|=3; |g| runs to 5. The pairing is why --
+g=3 is admitted on g=2's condition with a bigger term, so the mass is NOT monotone in |g| and there
+is no small-|g| truncation to lean on. A bound must handle the whole admitted set.

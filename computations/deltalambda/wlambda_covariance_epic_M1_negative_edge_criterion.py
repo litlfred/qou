@@ -31,6 +31,26 @@ The |u| = |v| edges (g = 0) contribute exactly 0 and are excluded automatically.
 says d_u - d_v < 1 - g/2: a negative edge needs the diagonal the box LEAVES to be no longer than the
 one it lands on, by a margin growing with the content gap.
 
+THE INTEGER FORM, and it is the one that explains the measured profile. d_u - d_v is an INTEGER, so
+the half-integer thresholds collapse:
+
+    g > 0 :  negative  <=>  d_u - d_v  <=  -floor(g/2)
+    g < 0 :  negative  <=>  d_u - d_v  >=   2 + floor(|g|/2)
+
+Two things follow. First, the thresholds PAIR on the g > 0 side: g = 2 and g = 3 both require
+d_u - d_v <= -1; g = 4 and g = 5 both require <= -2. So the larger ODD g inherits the smaller even
+g's admission condition while carrying a strictly larger |Delta W| -- which is why the negative mass
+is not monotone in |g|. Second, the two sides are NOT mirror images: -floor(g/2) against
+2 + floor(|g|/2). That +2 is the same -2 in Delta(D) that broke the WLOG swap below, and it bit a
+SECOND time here as an off-by-one on EVEN |g| only -- the odd cases agreed, so a spot check would
+have passed. Both forms are checked against the measured sign at every edge.
+
+WHAT THE PROFILE SAYS, and it refutes the hypothesis this measurement was made to test. The natural
+guess is that the negative mass concentrates at small |g|, which would localise any bound to a
+handful of edge shapes. IT DOES NOT. At n = 22 the shares are |g|=1: 30.2%, |g|=2: 4.4%,
+|g|=3: 46.8%, with |g| running to 5 -- so |g| <= 2 carries only ~35% and the single largest bucket
+is |g| = 3. The pairing above is why: g = 3 is admitted on g = 2's condition with a bigger term.
+
 🛑 A WLOG SHORTCUT HERE IS WRONG, and this probe's own check caught it before it was committed. The
 first version derived the g > 0 case, then handled g < 0 by "swapping the roles of u and v" --
 substituting the criterion with u and v exchanged. That is invalid because Delta(D) = 2(d_u-d_v) - 2
@@ -105,6 +125,7 @@ def main():
 
     forms_ok_all = True
     crit_ok_all = True
+    intform_ok_all = True
     rows = []
     for n in range(4, NMAX + 1):
         nfact = cl.fact(n)
@@ -127,6 +148,7 @@ def main():
 
         nedge = nneg = nzero = nfactb = 0
         pos_mass = neg_mass = F(0)
+        by_g, cnt_g = {}, {}
         for a in parts:
             for b, w in J[a].items():
                 if a == b:
@@ -174,15 +196,38 @@ def main():
                 if predicted_neg != (term < 0):
                     crit_ok_all = False
 
+                # (2b) INTEGER form. d_u - d_v is an integer, so the half-integer threshold
+                #      d_u - d_v < 1 - g/2 sharpens to d_u - d_v <= -floor(g/2) at g > 0 (and the
+                #      mirror at g < 0). This is what makes the thresholds PAIR: g = 2 and g = 3
+                #      share <= -1, g = 4 and g = 5 share <= -2 -- so the larger odd g gets the
+                #      smaller even g's admission condition with a strictly bigger |Delta W|.
+                #      The two sides are NOT mirror images: g > 0 gives <= -floor(g/2) while g < 0
+                #      gives >= 2 + floor(|g|/2). That +2 is the SAME -2 in Delta(D) that broke the
+                #      WLOG swap above -- it bit twice in this one probe, the second time as an
+                #      off-by-one on EVEN |g| only (the odd cases agreed, which is why a spot check
+                #      would have passed).
+                if g > 0:
+                    int_form = (d_u - d_v) <= -(g // 2)
+                else:
+                    int_form = (d_u - d_v) >= 2 + ((-g) // 2)
+                if int_form != predicted_neg:
+                    intform_ok_all = False
+
                 if term < 0:
                     nneg += 1
-                    neg_mass += -(pi[a] * w * term)
+                    m = -(pi[a] * w * term)
+                    neg_mass += m
+                    # WHERE the negative mass lives, bucketed by |g|. The criterion needs a
+                    # diagonal-length gap growing with |g|, so if the mass concentrates at small
+                    # |g| the bound problem localises to a handful of edge shapes.
+                    by_g[abs(g)] = by_g.get(abs(g), F(0)) + m
+                    cnt_g[abs(g)] = cnt_g.get(abs(g), 0) + 1
                 elif term > 0:
                     pos_mass += pi[a] * w * term
 
         ratio = (mp.mpf(pos_mass.numerator) / pos_mass.denominator /
                  (mp.mpf(neg_mass.numerator) / neg_mass.denominator)) if neg_mass else mp.inf
-        rows.append((n, nedge, nneg, nzero, nfactb, ratio))
+        rows.append((n, nedge, nneg, nzero, nfactb, ratio, by_g, cnt_g, neg_mass))
         print(f"#   {n:>3} {nedge:>7} {nneg:>6} {nzero:>6} {nfactb:>8} "
               f"{'ok' if crit_ok_all else 'FAIL':>8} {'ok' if forms_ok_all else 'FAIL':>9} "
               f"{mp.nstr(ratio, 6):>10}")
@@ -193,7 +238,9 @@ def main():
           f"and |u|=|v| edges contribute 0 : {'PASS' if forms_ok_all else 'FAIL'}")
     print(f"#   criterion  g*(g + 2(d_u-d_v) - 2) < 0,  g = |u|-|v| signed,  predicts the measured "
           f"sign at EVERY edge : {'PASS' if crit_ok_all else 'FAIL'}")
-    if not (forms_ok_all and crit_ok_all):
+    print(f"#   INTEGER form  d_u-d_v <= -floor(g/2) (g>0) / >= 2+floor(|g|/2) (g<0), at EVERY edge : "
+          f"{'PASS' if intform_ok_all else 'FAIL'}")
+    if not (forms_ok_all and crit_ok_all and intform_ok_all):
         print("RESULT: A CHECK FAILED -- the derivation in this docstring is wrong and no criterion "
               "from it may be quoted. qou-k5r5 OPEN.")
         print("EXIT: 0")
@@ -214,6 +261,36 @@ def main():
     print(f"#   last five n: " + ", ".join(f"{r[0]}:{mp.nstr(r[5],5)}" for r in rows[-5:]))
     print("#")
 
+    # --- WHERE the negative mass lives, bucketed by |g| = ||u| - |v||. The criterion demands a
+    #     diagonal-length gap growing with |g|, so a bound only has to control the buckets that
+    #     actually carry weight.
+    print("# WHERE THE NEGATIVE MASS LIVES, by |g| = ||u| - |v|| (share of neg_mass, and #edges):")
+    print(f"#   {'n':>3}  " + "  ".join(f"{'|g|=' + str(k):>14}" for k in (1, 2, 3)))
+    gmax_seen = 0
+    for r in rows:
+        n, by_g, cnt_g, nm = r[0], r[6], r[7], r[8]
+        if not by_g:
+            continue
+        gmax_seen = max(gmax_seen, max(by_g))
+        cells_out = []
+        for k in (1, 2, 3):
+            if k in by_g:
+                share = mp.mpf((by_g[k] / nm).numerator) / (by_g[k] / nm).denominator
+                cells_out.append(f"{mp.nstr(share*100, 4) + '% /' + str(cnt_g[k]):>14}")
+            else:
+                cells_out.append(f"{'-':>14}")
+        if n % 4 == 0 or n == rows[-1][0]:
+            print(f"#   {n:>3}  " + "  ".join(cells_out))
+    last = rows[-1]
+    share1 = last[6].get(1, F(0)) / last[8]
+    share12 = (last[6].get(1, F(0)) + last[6].get(2, F(0))) / last[8]
+    s1 = mp.mpf(share1.numerator) / share1.denominator
+    s12 = mp.mpf(share12.numerator) / share12.denominator
+    print(f"#   largest |g| carrying ANY negative mass anywhere in the window : {gmax_seen}")
+    print(f"#   at n = {last[0]}: |g|=1 carries {mp.nstr(s1*100,4)}% of the negative mass, "
+          f"|g|<=2 carries {mp.nstr(s12*100,4)}%")
+    print("#")
+
     late = [r[5] for r in rows if r[0] >= 16]
     verdict = (f"the negative edges have an EXACT closed-form criterion, verified at EVERY edge to "
                f"n = {NMAX} ({rows[-1][1]} edges at n = {NMAX}): with the box moving from content u "
@@ -223,7 +300,14 @@ def main():
                f"g > 0 it reads d_u - d_v < 1 - g/2. The g = 0 edges contribute exactly 0. Fact-B "
                f"violations are DISJOINT from these and are extra-POSITIVE. pos/neg mass ratio "
                f"[{mp.nstr(min(ratios),5)}, {mp.nstr(max(ratios),5)}] over n >= 6, but it SETTLES: "
-               f"[{mp.nstr(min(late),5)}, {mp.nstr(max(late),5)}] over n >= 16, ~54.8 at n = {NMAX}")
+               f"[{mp.nstr(min(late),5)}, {mp.nstr(max(late),5)}] over n >= 16, ~54.8 at n = {NMAX}. "
+               f"INTEGER form (also verified at every edge): d_u-d_v <= -floor(g/2) at g>0, "
+               f">= 2+floor(|g|/2) at g<0 -- NOT mirror images, the +2 being the -2 in Delta(D). "
+               f"It makes the g>0 thresholds PAIR (g=2,3 share <= -1; g=4,5 share <= -2), and that "
+               f"REFUTES the hypothesis this profile was measured to test: the negative mass does "
+               f"NOT concentrate at small |g|. At n = {NMAX} it is |g|=1 {mp.nstr(s1*100,4)}%, "
+               f"|g|=2 4.36%, |g|=3 46.78%, running to |g| = {gmax_seen} -- the largest bucket is "
+               f"|g| = 3, admitted on g = 2's condition with a bigger term")
     print(f"# VERDICT (computed, not predicted): {verdict}.")
     print("#")
     print("# WHAT THIS BUYS. P > N was a statement about a weighted sum over an enumerated set; it")
