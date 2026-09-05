@@ -111,7 +111,7 @@ Consuming blocks recorded in the witness: `prf:hadron-half-life`,
 `prop:trace-ratio-observable`, `prf:trace-ratio-observable`,
 `def:beta-decay-skein`, `rem:bar-involution-c5-algebraic-identities`.
 
-## A THIRD weighting, found and deliberately NOT resolved here
+## A THIRD weighting — flagged here, RESOLVED by PR #6823
 
 `prf:hadron-half-life` item 4 carries a pair Skein mass formula
 
@@ -122,12 +122,46 @@ the **bar-even** cofactor $q^{1/2} + q^{-1/2}$, **not** the bar-odd bridge
 $s = q^{1/2} - q^{-1/2}$ that (J) would put there. So it is neither (H) nor (J)
 as stated above.
 
-**This is flagged, not measured.** Three readings are open and this audit does
-not choose between them: it is a third normalisation; it is a sign slip for $s$;
-or the denominator is a deliberately different (symmetrising rather than
-skein) normalisation for a mass rather than an amplitude. Deciding it needs the
-derivation of $\mathcal{S}_{ab}$, which is not in scope here. Recorded so the
-next agent does not read the two-convention framing above as exhaustive.
+**Flagged here; RESOLVED by PR #6823 the same day — reading (R3), and the
+bar-even denominator is FORCED.** This audit offered three readings without
+choosing (a third normalisation; a sign slip for $s$; or a deliberate
+symmetrising normalisation because $\mathcal{S}_{ab}$ is a mass and not an
+amplitude). The sibling branch answered it with two structural arguments,
+neither numerical, and the third reading is the right one:
+
+1. **Bar-covariance.** A mass must map to a mass under $q \mapsto q^{-1}$. With
+   the **even** denominator, $\mathcal{S}_{ab}(1/q) = +\mathcal{S}_{ba}(q)$ —
+   the bar involution *exchanges the constituents*, which is what a mirror
+   should do. With the odd bridge $s$ it is
+   $\mathcal{S}_{ab}(1/q) = -\mathcal{S}_{ba}(q)$: the mirror of a mass is a
+   **negative** mass ($6.1844009 \to -6.1844009$ at the proton $q_0$, 60 dps).
+2. **The classical limit, which is fatal to the sign-slip reading.** The even
+   denominator gives $\mathcal{S}_{ab} \to (\mu_a + \mu_b)/2$ and the self-pair
+   $\mathcal{S}_{aa} \to \mu_a$ exactly. The odd bridge puts a non-vanishing
+   numerator over a vanishing denominator and **diverges** as
+   $(\mu_a+\mu_b)/(q-1)$. That contradicts a statement the corpus already
+   makes — `hadron-half-life-fermi.md` has beta decay *ceasing* at $q = 1$,
+   whereas under the odd bridge $Q$ diverges and $f(Q) \propto Q^5$ blows up.
+   So adopting the sign-slip reading would break an existing claim.
+3. **Corroborating role split.** The corpus puts bar-**odd** $s$ in the
+   *numerator* of amplitudes (correctly $\to 0$ at $q=1$) and the bar-**even**
+   cofactor in the *denominator* of masses: bar-odd where vanishing is wanted,
+   bar-even where finiteness is wanted.
+
+**Scope (b)** — a structural exclusion of the odd bridge *in this formula*, on
+two proved invariants (finiteness of the $q \to 1$ limit; sign-preservation of
+a mass under the bar involution). It says **nothing** about which Skein
+normalisation is canonical elsewhere, so the (H)/(J) split above and item 1's
+silent substitution are untouched. Probe
+`computations/qbeta/pair_skein_mass_bar_parity_probe.py` (5/5), landing on
+PR #6823.
+
+**What that changes for this audit:** the pair Skein mass formula is *not* a
+third live convention. It is a mass-sector normalisation whose bar-even
+denominator is forced, sitting alongside (H) and (J) rather than adding to the
+split. So the two-convention framing above **is** exhaustive for skein
+*amplitudes* — which is the opposite of what this section originally warned,
+and is a stronger result than the flag it replaces.
 
 ## What is NOT decided
 

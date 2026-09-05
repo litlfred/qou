@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-05T09:51:36Z
-updated_at: 2026-09-05T10:21:17Z
+updated_at: 2026-09-05T11:42:34Z
 ---
 
 ## 2026-09-05 — measured, Lean-carried, PR #6820
@@ -75,3 +75,45 @@ two-convention framing is not read as exhaustive.
 Restate the rate in (H) to match §7a, or amend §7a to record (J) as the
 physics-sector convention. Nothing measured forces either. No content block and
 no AGENTS.md line edited on this branch.
+
+
+## 2026-09-05 — the third weighting is RESOLVED (by #6823, not by me)
+
+I flagged `prf:hadron-half-life` item 4's pair Skein mass
+`S_ab = (q*mu_a + q^-1*mu_b)/(q^(1/2)+q^(-1/2))` as a possible THIRD weighting
+with three readings open. The #6823 sibling answered it the same day and the
+answer is **scope (b)**: the bar-even denominator is **FORCED**, on two proved
+invariants, neither numerical.
+
+1. **Bar-covariance.** Even denominator: `S_ab(1/q) = +S_ba(q)` — the bar
+   involution exchanges the constituents. Odd bridge `s`:
+   `S_ab(1/q) = -S_ba(q)`, i.e. the mirror of a mass is a NEGATIVE mass
+   (6.1844009 -> -6.1844009 at the proton q0, 60 dps).
+2. **Classical limit — fatal to the sign-slip reading.** Even gives
+   `S_ab -> (mu_a+mu_b)/2` and `S_aa -> mu_a` exactly. Odd DIVERGES as
+   `(mu_a+mu_b)/(q-1)`, contradicting `hadron-half-life-fermi.md`'s own stated
+   limit (beta decay CEASES at q=1); with `f(Q) ~ Q^5` the rate would blow up.
+   Adopting it would break an existing corpus claim.
+3. **Corroborating role split.** Bar-ODD `s` in amplitude NUMERATORS (-> 0 at
+   q=1); bar-EVEN cofactor in mass DENOMINATORS (finiteness).
+
+Probe `computations/qbeta/pair_skein_mass_bar_parity_probe.py` (5/5), on #6823.
+
+**Net effect on my finding: it STRENGTHENS it.** The pair Skein mass is not a
+third live convention — it is a mass-sector normalisation whose denominator is
+forced, sitting alongside (H) and (J) rather than adding to the split. So the
+two-convention framing IS exhaustive for skein AMPLITUDES, which is the
+opposite of what my audit section originally warned. Folded into the audit doc
+with attribution; #6823 confirmed my items 1 and 3 unchanged.
+
+## Also caught on the rebase re-verification (my own defect)
+
+I renamed the witness key `J_seven_content_blocks` -> `J_eight_content_blocks`
+in the producer and did NOT re-run it, so the committed witness carried a key
+the producer no longer emits plus a stale `scriptHash` (0ea8045427b7 vs the
+live 666aedc35bd5). Regenerated, 8/8, no substantive field moved.
+
+And my first `lean`-direct exit 0 on this file did NOT count: it was a BARE
+`lean` run, and `autoImplicit` defaults true in `lean` while the lakefile sets
+it false (AGENTS.md, `qou-56qy`). Re-verified the whole four-file QOU cone with
+`lean -DautoImplicit=false -s 65536`: all four EXIT=0, zero diagnostic bytes.
