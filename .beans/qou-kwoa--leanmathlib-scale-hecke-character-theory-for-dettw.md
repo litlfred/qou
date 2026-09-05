@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-04T20:53:08Z
+updated_at: 2026-09-05T07:46:30Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -724,3 +724,66 @@ head constant Equiv.Perm. Cost a build cycle; not obvious from the error text.
 3. 0 < d_lambda — small; discharges twGram_det_ne_zero_of_blocks's hypothesis.
 4. Small characteristic — unreachable by this route.
 5. The square root Q = q^2 — low priority, never bites.
+
+
+### 2026-09-05 — increment 2: `τ` exists, and my own blocker claim was wrong
+
+**Commit `e0f192c5e6`** on `claude/p-neq-np-gaps-n8dxxl`, PR #6758.
+`QOU/MathlibExt/InvMonomialDet.lean` + `QOU/Hecke/TauSymmetrizing.lean`, 11
+declarations, all `[propext, Classical.choice, Quot.sound]`, `lean`-direct
+exit 0 with no warnings.
+
+**CORRECTION of the previous increment's docstring (mine, one day old).**
+#6758 recorded that Mathlib has no symmetric-algebra theory — measured, and
+still true — and inferred from that that constructing the canonical
+symmetrizing trace `τ` would require building that theory first. **The
+inference does not follow.** `τ` is the `T_1`-coordinate in the `T_w` basis,
+and `basisTwOfField` already supplies the basis:
+
+    tau := (basisTwOfField K q n).coord 1
+
+`τ(T_w) = δ_{w,1}` then falls out of `Module.Basis.repr_self`. So the first of
+the two "open facts" named in #6758 is **closed**. Absence of a library is
+evidence about the library, not about the construction — the same shape as the
+`det_blockDiagonal'` retraction earlier in this arc.
+
+**What is genuinely open, narrower and newly legible.** The structure-constant
+identity
+
+    τ(T_v · T_w) = δ_{w, v⁻¹} · q^{ℓ(v)}
+
+— this is what makes the Gram monomial, and it is the whole remaining content.
+`QOU.Hecke.TwBasis.σ_mul_Tw` is the **full** structure-constant table (up and
+down cases in one identity), so the induction is available in principle. It
+does **not** close on `ℓ(v)` alone: `τ(σ_i · z) = q · [T_{s_i}-coefficient of
+z]`, a different coordinate. Geck–Pfeiffer 8.1.1 inducts on `ℓ(v) + ℓ(w)`
+instead, using a common descent `s` to write
+`T_v T_w = (q−1)·T_{vs}T_w + q·T_{vs}T_{sw}` — both terms of smaller total
+length, so the recursion closes on `τ` alone. Still missing: the descent
+decomposition in this corpus's handedness (`T_v T_w = T_{wv}`, **not**
+`T_{vw}` — `TwMul` docstring says this is the representation's handedness, not
+a typo), and the exchange fact supplying a common descent.
+
+**Proved outright:** `tau_Tw_mul_Tw_of_length_add` — the identity on its
+length-additive locus. Worth noting *why that is weak evidence*: on that locus
+`w = v⁻¹` forces `ℓ(w)+ℓ(v) = ℓ(1) = 0`, so `q^{ℓ(v)} = q^0 = 1` and the locus
+never exercises the `q`-powers at all. It is a consistency check, not a
+partial proof.
+
+**Proved conditionally:** `tauGram_det_of_structure_constants` and
+`tauGram_det_ne_zero_of_structure_constants` take the identity as an explicit
+**hypothesis** — never an axiom, never a `sorry`. Discharging it later makes
+both unconditional with no change to either proof.
+
+**Scope of the non-vanishing, stated so it is not over-read.** `det(τ-Gram) ≠ 0`
+for all `q ≠ 0` is **not** semisimplicity — that is false at roots of unity. It
+says `H_n(q)` is a *symmetric Frobenius* algebra, true for every `q ≠ 0`.
+Combined with #6758's `weightedGram_det_ne_zero_iff` at weights `1/s_λ` it
+would give **one** direction of the criterion: some `s_λ = 0` ⟹ not split
+semisimple. The converse (Tits deformation) is a separate argument, not here.
+
+`SchurElementCriterion` remains a cited class with **no instance**.
+
+**Remaining fact 2, unchanged:** that `τ`'s weights are `1/s_λ` for the Wenzl
+`schurElement` in `WenzlSchurElement.lean`. That identification is where `q`
+enters and is where the Schur elements do their work.
