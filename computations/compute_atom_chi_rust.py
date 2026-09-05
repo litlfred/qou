@@ -121,6 +121,22 @@ def compute_atom_chi(Z: int, N: int, *, include_inter: bool = True,
     }
 
 
+def _partition_count(n: int) -> int:
+    """Number of integer partitions of `n`, computed here.
+
+    Deliberately NOT read back from the kernel whose output it checks: the
+    point of the assertion is that the kernel returned p(3A), and taking p
+    from the same kernel would restate its answer instead of testing it.
+    Standard partition DP, exact integer arithmetic, no float anywhere.
+    """
+    dp = [0] * (n + 1)
+    dp[0] = 1
+    for k in range(1, n + 1):
+        for i in range(k, n + 1):
+            dp[i] += dp[i - k]
+    return dp[n]
+
+
 def main() -> int:
     pos = [a for a in sys.argv[1:] if not a.startswith("--")]
     # Canonical tier (MPFR) is the DEFAULT; --f64 opts into the preview
@@ -161,14 +177,29 @@ def main() -> int:
     builder.add_data("precision", precision)
     builder.add_data("canonical_status", "canonical-with-empirical-assignment")
 
-    builder.add_assertion(
-        "rust_kernel_loaded",
-        computed=float(data_atom["n_partitions"]),
-        expected=data_atom["n_partitions"],
-        tolerance=0,
-        unit="partition count",
-        source="pyhecke_native.partitions_of(3A)",
-    )
+    # The assertion this replaces compared `float(data_atom["n_partitions"])`
+    # to `data_atom["n_partitions"]` — the same subscript, one wrapped in
+    # float(). The residual was identically zero and no value could fail it;
+    # the `float()` is also what hid it from the raw-AST tautology census,
+    # which compares the two arguments syntactically. Bean `qou-t0wm`;
+    # detector `computations/audits/tolerance_from_residual_audit.py`.
+    #
+    # Its `source` field already named the checkable claim —
+    # "pyhecke_native.partitions_of(3A)" — so assert THAT: the kernel returned
+    # p(3A) partitions, with p computed here rather than taken from the kernel.
+    # Verified against the four committed witnesses before wiring: d 11 = p(6),
+    # t 30 = p(9), 3he 30 = p(9), 4he 77 = p(12).
+    n_expected = _partition_count(3 * (Z + N))
+    for _cfg, _d in (("atom", data_atom), ("free", data_free)):
+        builder.add_assertion(
+            f"partition_count_is_p_3A_{_cfg}",
+            computed=_d["n_partitions"],
+            expected=n_expected,
+            tolerance=0,
+            unit="partition count",
+            source=f"independent p(3A) = p({3 * (Z + N)}); kernel is "
+                   "pyhecke_native.partitions_of(3A)",
+        )
 
     builder.save()
     print(f"✓ Witness saved.")
