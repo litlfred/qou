@@ -78,3 +78,78 @@ interpretation in the six exposition blocks and wherever a probe compares
       correct free energy. The block also records that the corpus's working
       binding route is a different one — the Layer-1 canonical `|tr_M(q_0)|`
       table, reaching -0.16 % to +5.87 % on D, T, 3He and 4He.
+
+## ANSWERED (2026-09-05): the free-energy reading cannot supply the identification, and the reason is prior to every miss
+
+Probe: `the_free_energy_reading_has_no_energy_spectrum_probe.py`, 6/6.
+Lean: `QOU.Mass.FreeEnergyReadingIsSigned`, 11 theorems, sorry-free.
+
+This bean asked "whether `L` is a binding channel at all", and the evidence so
+far was three **misses** — the `A=2` ordering, no valley of stability, `31 %` at
+`4He`. Misses are evidence about a formula. There is a prior fact about the
+*reading*, and it is an identity in `q`, not a measurement at `q₀`.
+
+### The state sum has a negative summand, always
+
+A free energy is `-kT log Z` with `Z` a sum of **positive** Boltzmann factors.
+That positivity is what makes `F` a Legendre transform, hence what gives it a `U`
+and an `S` at all. Here the two `H₂` blocks carry eigenvalues `q` and `-q⁻¹`:
+
+    bond    lambda_+ + d         lambda_- + d          z + d
+    pp    1.10997858275138   **-0.90091828395574**   0.61268803714647
+    pn    1.00552033498165   **-1.00537653172547**   0.50822978937674
+    nn    0.90091828395574   **-1.10997858275138**   0.40362773835083
+
+**Every `lambda_- + d` is negative.** Positivity would need `d > 1/q > 0`, and
+the algebra's letters are `d ∈ {0, -h/2, d_pn, -h}`, all `≤ 0` — so the required
+offset is not merely outside the range, it is **on the other side of zero from
+all of it**, for every `q > 0`. Same shape as "no interface offset can close the
+gap", and general in `q` rather than pinned at `q₀`.
+
+Hence no real `E_-` has `exp(-E_-) = -q⁻¹ + d`: `exp` is positive and the factor
+is not. **The `(1,1)` block has no energy.** So there is no `U` and no `S` for
+`alpha L` to be or to differ from, and the step "this free energy is the binding
+energy" has nothing to stand on. The three misses are downstream of this, not
+independent of it.
+
+### This bean's expensive option is not needed, exactly as it predicted
+
+The bean already recorded "retiring the INTERPRETATION is not retiring the
+QUANTITY", and the algebra makes that precise: the total `z + d` stays positive
+because the `(2)` block outweighs the `(1,1)` block, so `L` is real, exact and
+convention-D canonical in all 80 files. **No number moves.** The free-energy
+*description* is also correct — the block already says "a signed observable over
+a quasi-probability", which is a legitimate object. What goes is the sentence
+after it.
+
+### Scope, stated tightly
+
+This does NOT show `alpha L` is not the binding energy by some other route. It
+shows the reading that motivated the identification cannot supply it. The claim
+stays open as a claim; what is settled is that this is not the reason for it.
+
+### A conditional corollary I am NOT asserting
+
+If one grants `kT = alpha` (the only temperature candidate, since `L` is
+dimensionless "in units of `kT`" and `B = alpha L`) and applies Gibbs-Helmholtz
+along the `q`-curve, the internal energy comes out ~0: `4He` gives `U = -0.0395`
+against `F = 8.6817`, i.e. the whole thing is `-TS`. **My own objection: varying
+`q` changes the block eigenvalues as well as the scale, so `q` is not a pure
+temperature and this is not the textbook identity.** Recorded as indicative, kept
+out of the probe's checks and the block. The finding needs no temperature.
+
+### A detail the algebra hands over
+
+For `pn` the two block factors nearly cancel:
+`(λ₊+d) + (λ₋+d) = h + 2d_pn = h·δ/2 = 1.4380325618674e-4` exactly. The interface
+the binding arc turns on is the near-null vector of the **unweighted** block sum
+and survives in `z+d` only because `w₊ ≠ w₋`. The same letter is the near-null
+vector of the `w̃` family the nuclear-jet level uses (`qou-gpb5`) — same algebra,
+two different weight families, one distinguished letter.
+
+- [x] Whether `L` is a binding channel at all — **the free-energy reading is not
+      the channel, and cannot be.** `L` and every number from it stand.
+- [ ] Decide the fate of `B_sym` and the `t7qv` / `qou-brng` arc's numbers.
+      Unchanged by this: those numbers are `L`-derived and `L` is untouched; what
+      needs revisiting is any prose calling them binding energies *because* `L`
+      is a free energy.
