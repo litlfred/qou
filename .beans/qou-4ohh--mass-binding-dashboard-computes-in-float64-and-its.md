@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-05T06:32:21Z
-updated_at: 2026-09-05T19:40:56Z
+updated_at: 2026-09-05T19:49:55Z
 ---
 
 MEASURED 2026-09-05 (compute-precision-auditor subagent) while producing the
@@ -164,3 +164,50 @@ carries **25** significant digits and float() keeps ~17, a relative loss of
 than breaking it. It is still a NO-FLOAT64 defect and still a hard ceiling on
 55 consumers, but it is not urgent and a return-type change across 55 call sites
 is not a small fix. Deliberately not bundled into #6881.
+
+## Gate attribution (control run) + a detector blind spot the fix exposed
+
+**Attribution: my change introduces ZERO new gate failures.** `precision-gates.sh
+--changed` on the parent commit (the regression branch, WITHOUT the dashboard
+change) returns a RED list identical gate-for-gate and in the same order to the
+one on my branch:
+
+    RED: q0-anchor flip  q0-anchor refill ratchet  import-time dps ratchet
+         never-raises-dps ratchet  float64-padding ratchet  q0-value drift
+         ratchet  CODATA stale-edition  hardcoded braid word (self-test)
+         mixed mpf/f64 -> serializer
+
+Same ADVISORY line too. These gates are **corpus-wide audits, not diff-scoped** —
+`--changed` gates whether they RUN, not what they report. `F64_CAST` reports
+**105 files / 188 sites** on the parent. None of it is mine.
+
+## 🛑 The blind spot: NO gate could see the defect I just fixed
+
+**Measured: `mass_binding_dashboard` appears ZERO times in the entire 22 KB
+control output**, across all **23** tiers that ran — while carrying four
+`float(<mpf>)` downcasts that put a 1e-16 floor under its own printed accuracy
+claim.
+
+The reason is structural, and the F64_CAST tier states it in its own note:
+
+> *"The tier localises where a double ENTERS A COMPUTATION."*
+
+Every float64 tier is about f64 **entering** — `mpf(<float>) source`,
+`f64-into-mpmath`, `raw-float64 ratchet`, `float64-padding ratchet`,
+`mixed mpf/f64 -> serializer`. **None covers `float(<mpf>)` — precision
+LEAVING.** Yet that is the more damaging direction: `float(Q)` where `Q` is
+already f64 loses nothing, whereas `float(mpf_50dps)` destroys 33 digits.
+
+Compounding it: this dashboard **emits no witness**, it prints. So every
+witness-keyed tier is structurally blind to it as well. That is precisely the
+case AGENTS.md's "PROBES ARE NOT EXEMPT" directive is about — a printed
+conclusion is an ARGUMENT that gets copied into beans, audit docs and PR bodies,
+where nothing re-derives it. Here the printed argument was `8.9e-16`, and it was
+noise.
+
+**Proposed tier (not implemented here):** flag `float(x)` where `x` is
+statically an mpf/high-precision value and the result reaches arithmetic rather
+than an f-string. The existing `_disp` pattern is the sanctioned exception and
+gives the discriminator — a downcast at the display boundary is fine, one in a
+value position is not. Candidate row for
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md` (34 rows).
