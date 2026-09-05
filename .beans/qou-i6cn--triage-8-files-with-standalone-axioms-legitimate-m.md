@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T14:57:07Z
-updated_at: 2026-09-05T18:19:41Z
+updated_at: 2026-09-05T18:21:49Z
 ---
 
 
@@ -384,3 +384,57 @@ Validated: on the pre-fix tree it flags `centralIdempotent` under all three
 axioms; on the live tree, **0**. This is the first detector this session that
 both self-tests positive AND reports a meaningful zero — the previous four
 shapes each produced only false positives.
+
+
+## Hoefsmit (2) and HeckeAlgebra/MarkovTrace (2) — all four LEGITIMATE
+
+- `HoefsmitMatrix_hecke_relation`, `HoefsmitMatrix_braid_relation` — constrain
+  `HoefsmitMatrix`, which is **`opaque`**, so no collapse is possible. Real
+  content (Hecke quadratic `T² = (q−1)T + q` in T-form, plus the braid
+  relation), cited to Hoefsmit 1974. Mathlib has no Iwahori–Hecke seminormal
+  form. The T-form choice is deliberate and reasoned (F_p compatibility —
+  integer coefficients in q, where the σ-form's `q^{1/2}` forces `ℚ(q^{1/2})`).
+- `JonesMarkovCoefficient_sum_eq_one` (Wenzl 1988 Lemma 3.2) — constrains a
+  real `def` equal to `wenzlClosedForm` by `rfl`, over `partitions_as_finset =
+  Finset.univ` (legitimate; Mathlib supplies `Fintype (Nat.Partition n)`).
+- `MarkovTrace_markov_axiom` (Jones 1985) — `heckeStab` is `opaque`; the
+  `markovParameter` is a named constant, not `∀`-bound.
+
+## 🛑 THE COLLAPSE CLASS HAS THREE INSTANCES, AND THE CORPUS ALREADY KNEW
+
+`MarkovTrace.lean` documents, at the axiom I was reading to clear it, the
+**exact failure mode I found twice today** — and it was found first:
+
+> **The `z` used to be a `∀`-bound variable, which made this axiom collapse the
+> Markov trace to zero.** … hence `markovTrace n x = 0` for *every* `n` and
+> *every* `x`. The corpus stayed consistent … but `tr_M`, the central object of
+> the mass chain, was pinned to the zero function. Bean `qou-ck1f`.
+
+So the class is:
+
+| instance | mechanism | status |
+|---|---|---|
+| `MarkovTrace_markov_axiom` | `∀`-bound `z` ⟹ `tr_M ≡ 0` | found earlier, `qou-ck1f`, fixed |
+| `centralIdempotent` | index-discarding `def` ⟹ `e_λ ≡ 0` | found today, fixed |
+| `aeon_recycling` | conclusion independent of argument | found today, removed |
+
+**My "one-off, not a class" call was wrong twice over.** Not only did I find a
+second instance by reading two turns later — a THIRD was already documented in
+the corpus, in a file on my own remaining-to-read list, with its own bean. I
+declared a negative result from three failed detectors **without running the
+corpus-grep checklist on the claim**, which is exactly what AGENTS.md requires
+before declaring anything open, closed or absent. Detector silence is not
+corpus silence.
+
+Note the three mechanisms are all different (binder scope / discarded index /
+argument-independent conclusion) and share only the *consequence*: an axiom
+that pins its object to a trivial value while reading as substantive content.
+That is why no single syntactic detector finds them, and why
+`lean-constant-def-under-axiom-audit.py` is scoped to one mechanism and says so.
+
+## Tally
+
+**12 of 18 axioms read. 3 defects found and fixed.** Remaining 6, all
+published-citation: `Hecke/MarkovTrace` (Jones), `Formal` (Geck–Pfeiffer),
+`ParallelogramContour` (Ahlfors), `SDP` (Todd), `SDPRankEquality` (AHO),
+`SDPRealUniqueness` (AHO).
