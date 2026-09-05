@@ -76,6 +76,25 @@ symmetrizing trace of [geckpfeiffer2000] differ only in `c`. -/
 def weightedTrace (c : ι → K) (x : ∀ i, Matrix (J i) (J i) K) : K :=
   ∑ i, c i * (x i).trace
 
+/-- **The matrix unit `E_ab` of block `i`, as an element of the product.**
+
+The declared return type is load-bearing: written inline, `Pi.single i (Matrix.single a b 1)`
+elaborates against the WRONG family — Lean infers `ι → J _ → K` rather than the dependent
+`∀ j, Matrix (J j) (J j) K` and reports an application type mismatch. Naming it fixes the
+family once. -/
+def blockUnit (i : ι) (a b : J i) : ∀ j, Matrix (J j) (J j) K :=
+  Pi.single i (Matrix.single a b (1 : K))
+
+omit [Fintype ι] [∀ i, Fintype (J i)] in
+@[simp] theorem blockUnit_self (i : ι) (a b : J i) :
+    blockUnit (K := K) i a b i = Matrix.single a b (1 : K) :=
+  Pi.single_eq_same _ _
+
+omit [Fintype ι] [∀ i, Fintype (J i)] in
+@[simp] theorem blockUnit_of_ne (i : ι) (a b : J i) {j : ι} (h : j ≠ i) :
+    blockUnit (K := K) i a b j = 0 :=
+  Pi.single_eq_of_ne h _
+
 /-- **The matrix-unit product rule**: `tr(E_ab · E_a'b') = δ_{b,a'} δ_{a,b'}`.
 
 The whole Gram computation is this one identity; it is why the Gram is a permutation matrix
@@ -93,9 +112,7 @@ theorem trace_single_mul_single {J' : Type*} [Fintype J'] [DecidableEq J'] (a b 
 def weightedGram (c : ι → K) :
     Matrix ((i : ι) × (J i × J i)) ((i : ι) × (J i × J i)) K :=
   Matrix.of fun p q =>
-    weightedTrace c
-      (Pi.single p.1 (Matrix.single p.2.1 p.2.2 (1 : K)) *
-        Pi.single q.1 (Matrix.single q.2.1 q.2.2 (1 : K)))
+    weightedTrace c (blockUnit p.1 p.2.1 p.2.2 * blockUnit q.1 q.2.1 q.2.2)
 
 /-- **Different blocks are orthogonal**: the product of matrix units from different factors is
 zero in every coordinate. -/
@@ -103,20 +120,17 @@ theorem weightedGram_apply_of_ne (c : ι → K) (p q : (i : ι) × (J i × J i))
     weightedGram c p q = 0 := by
   refine Finset.sum_eq_zero fun i _ => ?_
   rcases eq_or_ne i p.1 with rfl | hip
-  · rw [Pi.mul_apply, Pi.single_eq_of_ne h, mul_zero]
-    simp
-  · rw [Pi.mul_apply, Pi.single_eq_of_ne hip, zero_mul]
-    simp
+  · rw [Pi.mul_apply, blockUnit_of_ne _ _ _ h, mul_zero, Matrix.trace_zero, mul_zero]
+  · rw [Pi.mul_apply, blockUnit_of_ne _ _ _ hip, zero_mul, Matrix.trace_zero, mul_zero]
 
 /-- **The diagonal block is the weight times the transpose permutation.** -/
 theorem weightedGram_apply_same (c : ι → K) (i : ι) (a b a' b' : J i) :
     weightedGram c ⟨i, (a, b)⟩ ⟨i, (a', b')⟩
       = c i * (if (b, a) = (a', b') then 1 else 0) := by
   rw [weightedGram, Matrix.of_apply, weightedTrace, Finset.sum_eq_single i]
-  · rw [Pi.mul_apply, Pi.single_eq_same, Pi.single_eq_same, trace_single_mul_single]
+  · rw [Pi.mul_apply, blockUnit_self, blockUnit_self, trace_single_mul_single]
   · intro j _ hji
-    rw [Pi.mul_apply, Pi.single_eq_of_ne hji, zero_mul]
-    simp
+    rw [Pi.mul_apply, blockUnit_of_ne _ _ _ hji, zero_mul, Matrix.trace_zero, mul_zero]
   · intro h
     exact absurd (Finset.mem_univ i) h
 
@@ -128,13 +142,13 @@ evaluated in closed form by `QOU.MathlibExt.sign_prodComm` as `(-1)^(d_λ(d_λ-1
 With `c_λ = 1/s_λ` this is the determinant identity of [geckpfeiffer2000] Thm 7.2.6 for a
 split semisimple algebra; with `c_λ = d_λ` it is the regular-trace case already merged. -/
 theorem weightedGram_det (c : ι → K) :
-    (weightedGram c).det
-      = ∏ i : ι, ((-1 : K) ^ (Fintype.card (J i) * (Fintype.card (J i) - 1) / 2))
+    (weightedGram (J := J) c).det
+      = ∏ i : ι, (Equiv.Perm.sign (Equiv.prodComm (J i) (J i)) : K)
           * c i ^ (Fintype.card (J i) * Fintype.card (J i)) := by
   classical
   haveI : LinearOrder ι :=
     LinearOrder.lift' (Fintype.equivFin ι) (Fintype.equivFin ι).injective
-  rw [det_eq_prod_of_offDiagonal_eq_zero _ (weightedGram_apply_of_ne c)]
+  rw [det_eq_prod_of_offDiagonal_eq_zero _ (weightedGram_apply_of_ne (J := J) c)]
   refine Finset.prod_congr rfl fun i _ => ?_
   have hblock : (Matrix.of fun a b : J i × J i => weightedGram c ⟨i, a⟩ ⟨i, b⟩)
       = (c i • (1 : Matrix (J i × J i) (J i × J i) K)).submatrix
@@ -144,8 +158,22 @@ theorem weightedGram_det (c : ι → K) :
     obtain ⟨b₁, b₂⟩ := b
     rw [Matrix.of_apply, weightedGram_apply_same]
     simp [Matrix.submatrix_apply, Matrix.one_apply, Equiv.prodComm]
-  rw [hblock, Matrix.det_permute, Matrix.det_smul, Matrix.det_one, mul_one, Fintype.card_prod,
-    ← sign_prodComm]
+  rw [hblock, Matrix.det_permute, Matrix.det_smul, Matrix.det_one, mul_one, Fintype.card_prod]
+
+/-- **The determinant with the sign evaluated**: `∏_λ (-1)^(d_λ(d_λ-1)/2) · c_λ^(d_λ²)`.
+
+`weightedGram_det` leaves the sign as the signature of the transpose involution, matching the
+style of `QOU.MathlibExt.regTraceGram_pi_matrix_det`; `QOU.MathlibExt.sign_prodComm` evaluates
+it. The two are separated because the signature is an equation in `ℤˣ` while the determinant
+lives in `K`, so the substitution is a cast step rather than a rewrite. -/
+theorem weightedGram_det_explicit (c : ι → K) :
+    (weightedGram (J := J) c).det
+      = ∏ i : ι, ((-1 : K) ^ (Fintype.card (J i) * (Fintype.card (J i) - 1) / 2))
+          * c i ^ (Fintype.card (J i) * Fintype.card (J i)) := by
+  rw [weightedGram_det (J := J)]
+  refine Finset.prod_congr rfl fun i _ => ?_
+  congr 1
+  rw [sign_prodComm]
   push_cast
   ring
 
@@ -159,15 +187,17 @@ Schur element is nonzero* — [geckpfeiffer2000] Thm 7.2.6.
 **It is not yet an instance of that class**, and must not be made one: see the module
 docstring for the two algebra-specific facts still missing. -/
 theorem weightedGram_det_ne_zero_iff (c : ι → K) [∀ i, Nonempty (J i)] :
-    (weightedGram c).det ≠ 0 ↔ ∀ i, c i ≠ 0 := by
-  rw [weightedGram_det, Finset.prod_ne_zero_iff]
+    (weightedGram (J := J) c).det ≠ 0 ↔ ∀ i, c i ≠ 0 := by
+  rw [weightedGram_det (J := J), Finset.prod_ne_zero_iff]
   simp only [Finset.mem_univ, forall_const]
   refine forall_congr' fun i => ?_
   constructor
   · intro h hc
     exact h (by rw [hc, zero_pow (by positivity), mul_zero])
   · intro hc
-    exact mul_ne_zero (pow_ne_zero _ (by norm_num)) (pow_ne_zero _ hc)
+    refine mul_ne_zero ?_ (pow_ne_zero _ hc)
+    rcases Int.units_eq_one_or (Equiv.Perm.sign (Equiv.prodComm (J i) (J i))) with h | h <;>
+      simp [h]
 
 /-- **The regular trace is the `c_λ = d_λ` case.**
 
@@ -180,7 +210,7 @@ theorem weightedTrace_card_eq_regTraceForm
       = regTraceForm K (∀ i, Matrix (J i) (J i) K) x 1 := by
   rw [regTraceForm_pi, weightedTrace]
   refine Finset.sum_congr rfl fun i _ => ?_
-  rw [regTraceForm_matrix, mul_one]
+  rw [Pi.one_apply, regTraceForm_matrix, mul_one]
 
 end Weighted
 
