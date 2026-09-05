@@ -1,0 +1,156 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1103.1035v4",
+ "source": {
+  "file": "1103.1035v4.pdf",
+  "sha256": "dd5c4660e1d08ea1abdcd646c885842b0d5c4c68567b44133dc7b5a6c52bed2a",
+  "bytes": 551505,
+  "pages": 31,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1103.1035",
+   "version": "4",
+   "primary_class": "math.QA",
+   "stamp_date": "10 Feb 2012"
+  },
+  "doi": null,
+  "title": "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS AMNON YEKUTIELI",
+  "authors_raw": null,
+  "title_lines": [
+   "MC ELEMENTS IN PRONILPOTENT DGLIE ALGEBRAS",
+   "AMNON YEKUTIELI"
+  ],
+  "abstract": "Consider a pronilpotent DG (differential graded) Lie algebra over a \ufb01eld of characteristic 0. In the \ufb01rst part of the paper we introduce the reduced Deligne groupoid associated to this DG Lie algebra. We prove that a DG Lie quasi- isomorphism between two such algebras induces an equivalence between the corresponding reduced Deligne groupoids. This extends the famous result of Goldman-Millson (attributed to Deligne) to the unbounded pronilpotent case. In the second part of the paper we consider the Deligne 2-groupoid. We show it exists under more relaxed assumptions than known before (the DG Lie algebra is either nilpotent or of quasi quantum type). We prove that a DG Lie quasi- isomorphism between such DG Lie algebras induces a weak equivalence between the corresponding Deligne 2-groupoids. In the third part of the paper we prove that an L-in\ufb01nity quasi-isomorphism between pronilpotent DG Lie algebras induces a bijection between the sets of gauge equivalence classes of Maurer-Cartan elements. This extends a result of Kontsevich and others to the pronilpotent case.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20211102214912Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Some Facts about DG Lie Algebras",
+   "page": 4,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Reduced Deligne Groupoid",
+   "page": 7,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "DG Lie Quasi-isomorphisms \u2013 Nilpotent Algebras",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "DG Lie Quasi-isomorphisms \u2013 Pronilpotent Algebras",
+   "page": 14,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Some Facts on 2-Groupoids",
+   "page": 18,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The Deligne 2-Groupoid",
+   "page": 21,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "L Morphisms and Coalgebras",
+   "page": 24,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "L Quasi-isomorphisms between Pronilpotent Algebras",
+   "page": 26,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 9,
+   "n_chars": 17375,
+   "n_words": 3472
+  },
+  {
+   "id": "sec-001-2-the-reduced-deligne-groupoid",
+   "number": "2",
+   "title": "The Reduced Deligne Groupoid",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 23,
+   "n_chars": 29235,
+   "n_words": 5823
+  },
+  {
+   "id": "sec-002-6-the-deligne-2-groupoid",
+   "number": "6",
+   "title": "The Deligne 2-Groupoid",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 31,
+   "n_chars": 14211,
+   "n_words": 2705
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 2071,
+   "n_words": 295
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 4,
+  "chars_total": 62892
+ }
+}

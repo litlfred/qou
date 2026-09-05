@@ -1,0 +1,347 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-9804005v3",
+ "source_sha256": "62d069533bb97a00",
+ "brief": "RINGS WITH AUSLANDER DUALIZING COMPLEXES — A ring with an Auslander dualizing complex is a generalizati on of an Auslander-Gorenstein ring.",
+ "extended": "**RINGS WITH AUSLANDER DUALIZING COMPLEXES**\n\n*AMNON YEKUTIELI AND JAMES J. ZHANG*\n\n39 pp, 65 sections.\n\n**Abstract.** A ring with an Auslander dualizing complex is a generalizati on of an Auslander-Gorenstein ring. W e show that many results w hich hold for Auslander-Gorenstein rings also hold in the more general se tting. On the other hand we give criteria for existence of Auslander duali zing complexes which show these occur quite frequently. The most powerful tool we use is the Local Duality Theorem for connected graded algebras over a ﬁeld. Filtrations allow the transfer of results to non- graded algebras. W e also prove some results of a categorical nature, most nota bly the func- toriality of rigid dualizing complexes.\n\n**Outline.** 2 AMNON YEKUTIELI AND JAMES J. ZHANG; 2.15 It follows that if the algebra A has an A; 1 Dualizing complexes; 4 AMNON YEKUTIELI AND JAMES J. ZHANG; 3.1 We now give a complete proof of [SZ] Lemma; 3 The existence of an Auslander rigid dualizin; 6 AMNON YEKUTIELI AND JAMES J. ZHANG; 2 The functors D and D◦ determine a duality, i; 2 Immediate from part 1, together with the fac; 1 For every nonzero A-module M there is a nonz; 1 There is a function d : SpecA → Z such that; 8 AMNON YEKUTIELI AND JAMES J. ZHANG; 1 There are functions d,r : SpecA → Z, with r ; 3 A is catenary, and (if A ⁄= 0) its Krull dim; 2 Auslander Dualizing Complexes; 2 Choose a ∈ q − p, so in the exact sequence; 4 Pick a prime ideal p ⊂A. Since Rp is a duali; 10 AMNON YEKUTIELI AND JAMES J. ZHANG\n\n**Extracted claims (proposals, not verified).**\n- Theorem: and the No-Holes Theorem for Bass numbers (see [Jo1] Th eorems 3.2, 4.5,\n- Theorem 0.1: Assume A is a normally separated ﬁltered k-algebra such that grA\n- Theorem 0.2: Assume A is a noetherian k-algebra with an Auslander dualizing\n- Theorem 0.3: Let A be an Auslander-Gorenstein noetherian k-algebra. Assume\n- Theorem 0.4: AssumeA is a ﬁltered k-algebra\n- Theorem 0.5: Let A be a noetherian k-algebra. A rigid dualizing complex RA",
+ "tokens": {
+  "brief": 34,
+  "extended": 502
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-215-it-follows-that-if-the-algebra-a-has-an-ausl",
+   "title": "It follows that if the algebra A has an Auslander dualizing complex then the",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-1-dualizing-complexes",
+   "title": "Dualizing complexes",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-4-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-31-we-now-give-a-complete-proof-of-sz-lemma-61ii",
+   "title": "We now give a complete proof of [SZ] Lemma 6.1(ii) using Auslander d ualizing",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-3-the-existence-of-an-auslander-rigid-dualizing",
+   "title": "The existence of an Auslander rigid dualizing complex is transferre d to related",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-006-6-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-007-2-the-functors-d-and-d-determine-a-duality-ie-an",
+   "title": "The functors D and D◦ determine a duality, i.e., an anti-equivalence, of",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-008-2-immediate-from-part-1-together-with-the-fact-t",
+   "title": "Immediate from part 1, together with the fact that M ∈ Db(ModA) implies",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-009-1-for-every-nonzero-a-module-m-there-is-a-nonzer",
+   "title": "For every nonzero A-module M there is a nonzero submodule N ⊂M which",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-010-1-there-is-a-function-d-speca-z-such-that",
+   "title": "There is a function d : SpecA → Z such that",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-011-8-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-012-1-there-are-functions-dr-speca-z-with-r-1-and-co",
+   "title": "There are functions d,r : SpecA → Z, with r ≥ 1 and constant on connected",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-013-3-a-is-catenary-and-if-a-0-its-krull-dimension-i",
+   "title": "A is catenary, and (if A ⁄= 0) its Krull dimension is",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-014-2-auslander-dualizing-complexes",
+   "title": "Auslander Dualizing Complexes",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-015-2-choose-a-q-p-so-in-the-exact-sequence",
+   "title": "Choose a ∈ q − p, so in the exact sequence",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-016-4-pick-a-prime-ideal-p-a-since-rp-is-a-dualizing",
+   "title": "Pick a prime ideal p ⊂A. Since Rp is a dualizing complex in D(Mod(Ap ⊗B◦",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-017-10-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-018-2-a-module-m-is-called-dim--essentially-pure-if",
+   "title": "A module M is called dim -essentially pure if M contains an essential sub-",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-019-3-a-module-m-is-called-dim--critical-if-m-0-and",
+   "title": "A module M is called dim -critical if M ⁄= 0, and dim M/M ′ < dimM for",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-020-2-given-a-module-m-let-γ-mqdimm-m-be-the-largest",
+   "title": "Given a module M let Γ Mq(dim)M ⊂ M be the largest submodule M ′ ⊂ M",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-021-12-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-022-2-cf-bj-theorem-13-and-lev-the",
+   "title": "(cf. [Bj] Theorem 1.3 and [Lev] The-",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-023-1-ext-n",
+   "title": "Ext −n",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-024-2-for-each-p-extp",
+   "title": "For each p, Ext−p",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-025-3-for-each-p-there-is-an-exact-sequence",
+   "title": "For each p there is an exact sequence",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-026-2-take-n-ext-p",
+   "title": "Take N := Ext −p",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-027-14-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-028-1-letm-be-a-ﬁnitely-generated-dim-purea-module-a",
+   "title": "LetM be a ﬁnitely generated dim-pureA-module, and let I := AnnA(M ). If",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-029-2-leti-be-an-ideal-of-a-such-that-ai-is-dim-pure",
+   "title": "LetI be an ideal of A such that A/I is dim-pure and let q be a prime ideal of",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-030-16-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-031-3-rigid-dualizing-complexes",
+   "title": "Rigid Dualizing Complexes",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-032-18-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-033-1-letc-be-any-k-algebra-then-for-m-dmodb-c-there",
+   "title": "LetC be any k-algebra. Then for M ∈ D(Mod(B ⊗C◦)) there is a functorial",
+   "pages": "18-20"
+  },
+  {
+   "id": "sec-034-20-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-035-4-dualizing-complexes-over-graded-algebras",
+   "title": "Dualizing Complexes over Graded Algebras",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-036-22-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-037-1-there-is-a-functorial-isomorphism",
+   "title": "There is a functorial isomorphism",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-038-2-there-is-a-morphism-trba-rb-ra-in-dgrmodae-whi",
+   "title": "There is a morphism TrB/A : RB → RA in D(GrModAe), which satisﬁes",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-039-24-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-040-5-supposea-b-is-surjective-if-a-is-graded-auslan",
+   "title": "SupposeA →B is surjective. If A is graded Auslander Kdim-Macaulay, then",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-041-1-let-a-b-be-graded-ideals-if-the-quotient-algeb",
+   "title": "Let a, b be graded ideals. If the quotient algebras A/a and A/b are graded",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-042-2-let-a-be-a-nilpotent-graded-ideal-of-a-if-aa-i",
+   "title": "Let a be a nilpotent graded ideal of A. If A/a is graded Auslander (resp. and",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-043-3-if-for-every-minimal-graded-prime-ideal-p-the",
+   "title": "If for every minimal graded prime ideal p the quotient algebra A/p is graded",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-044-3-let-p1-pm-be-the-minimal-prime-ideals-of-a-the",
+   "title": "Let p1,... , pm be the minimal prime ideals of A. Then ( ∏",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-045-5-graded-algebras-with-some-commutativity-hypoth",
+   "title": "Graded Algebras with Some Commutativity Hypothesis",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-046-26-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-047-28-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-048-3-assume-b-is-graded-gkdim-macaulay-since-atn-is",
+   "title": "Assume B is graded GKdim-Macaulay. Since A/(tn) is graded GKdim-Macaulay",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-049-1-we-say-two-graded-a-modulesm-andn-are-similar",
+   "title": "We say two graded A-modulesM andN are similar if there are isomorphisms",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-050-2-the-algebra-a-satisﬁes-the-similar-submodule-c",
+   "title": "The algebra A satisﬁes the similar submodule condition if every nonzero, m-",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-051-2-a-is-graded-kdim--and-gkdim-macaulay-more-prec",
+   "title": "A is graded Kdim- and GKdim-Macaulay. More precisely",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-052-30-amnon-yekutieli-and-james-j-zhang",
+   "title": "AMNON YEKUTIELI AND JAMES J. ZHANG",
+   "pages": "30-30"
+  },
+  {
+   "id": "sec-053-6-noetherian-connected-filtrations",
+   "title": "Noetherian Connected Filtrations",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-054-1-if-a-has-a-balanced-dualizing-complex-r-then",
+   "title": "If ˜A has a balanced dualizing complex ˜R then",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-055-3-suppose-r-is-graded-auslander-if-r-is-graded-g",
+   "title": "Suppose ˜R is graded Auslander. If ˜R is graded GKdim-Macaulay then R is",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-056-3-there-is-a-functorial-isomorphism",
+   "title": "There is a functorial isomorphism",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-057-2-there-is-a-functorial-morphism-ψ-πr-homgr",
+   "title": "There is a functorial morphism ψ : πR Homgr",
+   "pages": "32-32"
+  },
+  {
+   "id": "sec-058-2-let-m-be-a-t-torsion-free-ﬁnitely-generated-gr",
+   "title": "Let ˜M be a t-torsion-free ﬁnitely generated graded ˜A-module. We claim that",
+   "pages": "32-33"
+  },
+  {
+   "id": "sec-059-3-by-the-proof-of-part-2-given-a-ﬁnitely-generat",
+   "title": "By the proof of part 2, given a ﬁnitely generated A-moduleM one has CdimR;AM",
+   "pages": "33-33"
+  },
+  {
+   "id": "sec-060-1-if-a-has-a-balanced-dualizing-complex-r-then-a",
+   "title": "If ¯A has a balanced dualizing complex ¯R, then A has a rigid dualizing complex",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-061-2-the-rigid-dualizing-complex-of-a-is-r-aσn-wher",
+   "title": "The rigid dualizing complex of A is R =Aσ[n] wheren is an integer and σ is",
+   "pages": "35-35"
+  },
+  {
+   "id": "sec-062-3-if-grfa-is-graded-auslander-resp-and-graded-gk",
+   "title": "If grFA is graded Auslander (resp. and graded GKdim-Macaulay), then A is",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-063-4-it-follows-from-theorem-617-and-proposition-39",
+   "title": "It follows from Theorem 6.17 and Proposition 3.9(1) that",
+   "pages": "36-38"
+  },
+  {
+   "id": "sec-064-references",
+   "title": "References",
+   "pages": "38-39"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

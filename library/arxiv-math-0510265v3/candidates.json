@@ -1,0 +1,152 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0510265v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "548a0eece08bd967c0f4f44754210f765a970010d14e5ad97917668c7d9476a5",
+  "file": "0510265v3.pdf"
+ },
+ "provenance": {
+  "title": "Triply-graded link homology and Hochschild homology of Soergel bimodules Mikhail Khovanov",
+  "authors": "October 14, 2005",
+  "arxiv": {
+   "id": "math/0510265",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "28 May 2006"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "example": 2,
+   "proposition": 4,
+   "theorem": 1,
+   "lemma": 1,
+   "remark": 1
+  },
+  "formalization_candidates": 6
+ },
+ "candidates": [
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "m = 2 . Let y = x1 \u2212 x2. Then R = Q[y], R 1 = Q[y2] and",
+   "section_file": "sections/sec-000-abstract.md",
+   "section_title": "Abstract",
+   "pages": "1-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1",
+   "name": null,
+   "statement": "If braid words \u03c3 and ~\u03c3 represent the same element of the",
+   "section_file": "sections/sec-000-abstract.md",
+   "section_title": "Abstract",
+   "pages": "1-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "Up to an overall shift in the grading, HHH(\u03c3) is an invariant",
+   "section_file": "sections/sec-000-abstract.md",
+   "section_title": "Abstract",
+   "pages": "1-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "The \ufb01rst rm elements on the above list constitute a regular se-",
+   "section_file": "sections/sec-002-1-r-over-the-subalgebra-r.md",
+   "section_title": "R\u2032 over the subalgebra R\u2032",
+   "pages": "8-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2",
+   "name": null,
+   "statement": "The Hecke algebra has a basis {C \u2032",
+   "section_file": "sections/sec-002-1-r-over-the-subalgebra-r.md",
+   "section_title": "R\u2032 over the subalgebra R\u2032",
+   "pages": "8-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3",
+   "name": null,
+   "statement": "Coe\ufb03cients of polynomials Py,w are nonnegative integers.",
+   "section_file": "sections/sec-002-1-r-over-the-subalgebra-r.md",
+   "section_title": "R\u2032 over the subalgebra R\u2032",
+   "pages": "8-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4",
+   "name": null,
+   "statement": "There are isomorphisms of graded R-bimodules",
+   "section_file": "sections/sec-002-1-r-over-the-subalgebra-r.md",
+   "section_title": "R\u2032 over the subalgebra R\u2032",
+   "pages": "8-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "when m = 2, the \ufb02ag variety is P1 and G acts on P1 \u00d7 P1 with",
+   "section_file": "sections/sec-002-1-r-over-the-subalgebra-r.md",
+   "section_title": "R\u2032 over the subalgebra R\u2032",
+   "pages": "8-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "A similar algorithm to compute the sl(2) link homology was",
+   "section_file": "sections/sec-002-1-r-over-the-subalgebra-r.md",
+   "section_title": "R\u2032 over the subalgebra R\u2032",
+   "pages": "8-17",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

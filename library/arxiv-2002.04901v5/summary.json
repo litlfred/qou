@@ -1,0 +1,31 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2002.04901v5",
+ "source_sha256": "f1320c4b87229215",
+ "brief": "WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS — 2 sections: Introduction; Idealistic Derived Completion and",
+ "extended": "**WEAK PROREGULARITY, DERIVED COMPLETION, ADIC FLATNESS**\n\n*AND PRISMS*\n\n20 pp, 2 sections.\n\n**Outline.** 0 Introduction; 1 Idealistic Derived Completion and Torsion\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.2: Let𝐴 be a commutative ring, let𝒂 be a ﬁnite sequence in𝐴, and leta\u0012 𝐴\n- Theorem 0.3: Let 𝐴 be a commutative ring, leta be a weakly proregular ideal in𝐴, and\n- Theorem 0.4: If 𝐴 is a commutative noetherian ring,a is an ideal in𝐴, and b𝑀 is an\n- Theorem 0.5: Let𝐴 be a commutative ring, and let𝑎𝑏 2 𝐴. Assume that𝑎 is a regular\n- Theorem 0.6: Let𝐴 be a commutative ring and leta\u0012 𝐴 be an ideal. The following two\n- Theorem 0.7: Suppose„𝐴𝐼”isabounded 𝑝-adicprism. Thentheideal a :=𝐼‚„𝑝”\u0012𝐴",
+ "tokens": {
+  "brief": 28,
+  "extended": 179
+ },
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-001-1-idealistic-derived-completion-and-torsion",
+   "title": "Idealistic Derived Completion and Torsion",
+   "pages": "5-20"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

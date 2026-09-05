@@ -1,0 +1,596 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0710.4310v2",
+ "source": {
+  "file": "0710.4310v2.pdf",
+  "sha256": "9a7757f998b7f6808f05324c7f3e26e9270a6c32a40846f450fe7c357f84b1ed",
+  "bytes": 459991,
+  "pages": 46,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0710.4310",
+   "version": "2",
+   "primary_class": "math.DG",
+   "stamp_date": "20 Jul 2008"
+  },
+  "doi": null,
+  "title": "On Two-Dimensional Holonomy Jo\u00e3o Faria Martins Centro de Matem\u00e1tica da Universidade do Porto",
+  "authors_raw": "Rua do Campo Alegre, 687, 4169-007 Porto, Portugal",
+  "title_lines": [
+   "On Two-Dimensional Holonomy",
+   "Jo\u00e3o Faria Martins",
+   "Centro de Matem\u00e1tica da Universidade do Porto"
+  ],
+  "abstract": "We de\ufb01ne the thin fundamental categorical group P2(M, \u2217) of a based smooth manifold ( M, \u2217) as the categorical group whose objects are rank-1 homotopy classes of based loops on M , and whose morphisms are rank- 2 homotopy classes of homotopies between based loops on M . Here two maps are rank- n homotopic, when the rank of the di\ufb00erential of the homo- topy between them equals n. Let C(G) be a Lie categorical group coming from a Lie crossed module G = (\u2202 : E \u2192 G, \u22b2). We construct categorical holonomies, de\ufb01ned to be smooth morphisms P2(M, \u2217) \u2192 C (G), by using a notion of categorical connections, being a pair ( \u03c9, m), where \u03c9 is a con- nection 1-form on P , a principal G bundle over M , and m is a 2-form on P with values in the Lie algebra of E, with the pair ( \u03c9, m) satisfying suit- able conditions. As a further result, we are able to de\ufb01ne Wil son spheres in this context.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181113224203-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Resum\u00e9 of results and notation from the theory of principal fibre bundles",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Connections on principal fibre bundles",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Curvature",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Parallel transport",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The dependence of the parallel transport on a smooth family of curves - the Ambrose-Singer theorem",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Crossed modules",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Crossed modules and categorical groups",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The thin fundamental categorical group of a manifold",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "1-Tracks",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2-Tracks",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Horizontal and vertical compositions of 2-tracks",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Definition of the thin fundamental categorical group of a smooth manifold",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The thin fundamental crossed module of a smooth manifold",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Two exact sequences",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Two-dimensional holonomies",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Categorical connections",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The 2-curvature 3-form of a G-categorical connection",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Algebraic preliminaries",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The 2-structure equation",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The 2-Bianchi identity",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Local form of a categorical connection",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Categorical holonomy",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Definition of a holonomy.",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Definition of a categorical holonomy",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Categorical connections and categorical connection holonomies",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Defining a categorical holonomy from a categorical connection",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A well-known lemma",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The dependence of the surface holonomy on a smooth family of surfaces",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Re-scaling",
+   "page": 33,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Verification of the axioms for a categorical holonomy",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2-Bundles",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Wilson Spheres",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The dependence of a categorical connection holonomy on the elements of the fibre",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The dependence of a categorical connection holonomy on the point in the principal bundle",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Associating 2-holonomies to embedded spheres",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix: Technical Lemmas",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-preliminaries",
+   "number": null,
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2095,
+   "n_words": 480
+  },
+  {
+   "id": "sec-001-curvature",
+   "number": null,
+   "title": "Curvature",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 992,
+   "n_words": 190
+  },
+  {
+   "id": "sec-002-parallel-transport",
+   "number": null,
+   "title": "Parallel transport",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 667,
+   "n_words": 143
+  },
+  {
+   "id": "sec-003-the-dependence-of-the-parallel-transport-on-a-sm",
+   "number": null,
+   "title": "The dependence of the parallel transport on a smooth family of curves - the Ambrose-Singer theorem",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 3959,
+   "n_words": 917
+  },
+  {
+   "id": "sec-004-crossed-modules",
+   "number": null,
+   "title": "Crossed modules",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 4408,
+   "n_words": 980
+  },
+  {
+   "id": "sec-005-crossed-modules-and-categorical-groups",
+   "number": null,
+   "title": "Crossed modules and categorical groups",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1975,
+   "n_words": 403
+  },
+  {
+   "id": "sec-006-the-thin-fundamental-categorical-group-of-a-mani",
+   "number": null,
+   "title": "The thin fundamental categorical group of a manifold",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 3021,
+   "n_words": 687
+  },
+  {
+   "id": "sec-007-1-tracks",
+   "number": null,
+   "title": "1-Tracks",
+   "level": 3,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1420,
+   "n_words": 314
+  },
+  {
+   "id": "sec-008-2-tracks",
+   "number": null,
+   "title": "2-Tracks",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 82,
+   "n_words": 18
+  },
+  {
+   "id": "sec-009-horizontal-and-vertical-compositions-of-2-tracks",
+   "number": null,
+   "title": "Horizontal and vertical compositions of 2-tracks",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2463,
+   "n_words": 467
+  },
+  {
+   "id": "sec-010-the-thin-fundamental-crossed-module-of-a-smooth",
+   "number": null,
+   "title": "The thin fundamental crossed module of a smooth manifold",
+   "level": 3,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1309,
+   "n_words": 279
+  },
+  {
+   "id": "sec-011-two-exact-sequences",
+   "number": null,
+   "title": "Two exact sequences",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2428,
+   "n_words": 517
+  },
+  {
+   "id": "sec-012-two-dimensional-holonomies",
+   "number": null,
+   "title": "Two-dimensional holonomies",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-013-categorical-connections",
+   "number": null,
+   "title": "Categorical connections",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1567,
+   "n_words": 345
+  },
+  {
+   "id": "sec-014-the-2-curvature-3-form-of-a-g-categorical-connec",
+   "number": null,
+   "title": "The 2-curvature 3-form of a G-categorical connection",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 437,
+   "n_words": 88
+  },
+  {
+   "id": "sec-015-algebraic-preliminaries",
+   "number": null,
+   "title": "Algebraic preliminaries",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1297,
+   "n_words": 276
+  },
+  {
+   "id": "sec-016-the-2-structure-equation",
+   "number": null,
+   "title": "The 2-structure equation",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1323,
+   "n_words": 272
+  },
+  {
+   "id": "sec-017-the-2-bianchi-identity",
+   "number": null,
+   "title": "The 2-Bianchi identity",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1098,
+   "n_words": 248
+  },
+  {
+   "id": "sec-018-local-form-of-a-categorical-connection",
+   "number": null,
+   "title": "Local form of a categorical connection",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 4655,
+   "n_words": 961
+  },
+  {
+   "id": "sec-019-categorical-holonomy",
+   "number": null,
+   "title": "Categorical holonomy",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 4848,
+   "n_words": 1009
+  },
+  {
+   "id": "sec-020-categorical-connections-and-categorical-connecti",
+   "number": null,
+   "title": "Categorical connections and categorical connection holonomies",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 27,
+   "n_chars": 4133,
+   "n_words": 870
+  },
+  {
+   "id": "sec-021-a-well-known-lemma",
+   "number": null,
+   "title": "A well-known lemma",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 994,
+   "n_words": 245
+  },
+  {
+   "id": "sec-022-the-dependence-of-the-surface-holonomy-on-a-smoo",
+   "number": null,
+   "title": "The dependence of the surface holonomy on a smooth family of surfaces",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 33,
+   "n_chars": 9022,
+   "n_words": 2225
+  },
+  {
+   "id": "sec-023-re-scaling",
+   "number": null,
+   "title": "Re-scaling",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 37,
+   "n_chars": 6268,
+   "n_words": 1557
+  },
+  {
+   "id": "sec-024-2-bundles",
+   "number": null,
+   "title": "2-Bundles",
+   "level": 3,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 4555,
+   "n_words": 868
+  },
+  {
+   "id": "sec-025-wilson-spheres",
+   "number": null,
+   "title": "Wilson Spheres",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 357,
+   "n_words": 77
+  },
+  {
+   "id": "sec-026-the-dependence-of-a-categorical-connection-holon",
+   "number": null,
+   "title": "The dependence of a categorical connection holonomy on the elements of the fibre",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 3486,
+   "n_words": 792
+  },
+  {
+   "id": "sec-027-associating-2-holonomies-to-embedded-spheres",
+   "number": null,
+   "title": "Associating 2-holonomies to embedded spheres",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 3806,
+   "n_words": 782
+  },
+  {
+   "id": "sec-028-appendix-technical-lemmas",
+   "number": null,
+   "title": "Appendix: Technical Lemmas",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 46,
+   "n_chars": 9364,
+   "n_words": 1891
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 37,
+  "sections": 29,
+  "chars_total": 82029
+ }
+}

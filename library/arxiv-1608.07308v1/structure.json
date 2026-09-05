@@ -1,0 +1,1183 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1608.07308v1",
+ "source": {
+  "file": "1608.07308v1.pdf",
+  "sha256": "bcc3b6f1a91a55c69f942671faad7718a32f464f1b347e172b82260c04743dd5",
+  "bytes": 1234603,
+  "pages": 77,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1608.07308",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "25 Aug 2016"
+  },
+  "doi": null,
+  "title": "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND KHOV ANOV-ROZANSKY HOMOLOGY",
+  "authors_raw": "EUGENE GORSKY, ANDREI NEGUT, , AND JACOB RASMUSSEN",
+  "title_lines": [
+   "FLAG HILBERT SCHEMES, COLORED PROJECTORS AND",
+   "KHOV ANOV-ROZANSKY HOMOLOGY"
+  ],
+  "abstract": "We construct a categori\ufb01cation of the maximal commutative subalgebra of the type A Hecke algebra. Speci\ufb01cally, we propose a monoidal functor from the (symmetric) monoidal category of coherent sheaves on the \ufb02ag Hilbert scheme to the (non-symmetric) monoidal cat- egory of Soergel bimodules. The adjoint of this functor allows one to match the Hochschild homology of any braid with the Euler characteristic of a sheaf on the \ufb02ag Hilbert scheme. The categori\ufb01ed Jones-Wenzl projectors studied by Abel, Elias and Hogancamp are idempotents in the category of Soergel bimodules, and they correspond to the renormalized Koszul complexes of the torus \ufb01xed points on the \ufb02ag Hilbert scheme. As a consequence, we conjecture that the endomorphism algebras of the categori\ufb01ed projectors correspond to the dg algebras of functions on af\ufb01ne charts of the \ufb02ag Hilbert schemes. We de\ufb01ne a family of differentials dN on these dg algebras and conjecture that their homology matches that of the glN projectors, generalizing earlier conjectures of the \ufb01rst and third authors with Oblomkov and Shende. 1. I NTRODUCTION 1.1. It has been slightly more than ten years since Khovanov and Rozansky de\ufb01ned a triply- graded homology theory HHH categorifying the HOMFLY-PT polynomial [41]. We have learned a lot about the structure of this invariant in the intervening time, but there is much that remains mysterious. In [27], the third author conjectured a relation between HHH of the (n,n + 1) torus knot and the q,t -Catalan numbers studied by Haiman and Garsia [26, 34]. A key feature of this conjecture is that it relates HHH(T (n,n + 1)) to the cohomology of a particular sheaf on the Hilbert scheme of n points in C2. This idea was developed further in [32], and later in [30], which identi\ufb01ed the sheaves which should correspond to arbitrary torus knotsT (m,n ). This paper grew out of our attempts to understand whether HHH of any closed n-strand braid in the solid torus can be described as the cohomology of some elem",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20160829001521Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "1.1.",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "1.2.",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "1.3.",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "1.4.",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "1.5.",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "1.6.",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "1.7.",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "1.8.",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "1.9.",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "1.10.",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "1.11.",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The flag Hilbert scheme",
+   "page": 10,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Definition",
+   "page": 10,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The matrix presentation",
+   "page": 11,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "DG schemes",
+   "page": 12,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Explicit matrices",
+   "page": 13,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Projective tower construction",
+   "page": 15,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Proving Theorem ??",
+   "page": 17,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "The dg scheme",
+   "page": 18,
+   "source": "outline",
+   "number": "2.7"
+  },
+  {
+   "level": 2,
+   "title": "Serre duality",
+   "page": 19,
+   "source": "outline",
+   "number": "2.8"
+  },
+  {
+   "level": 1,
+   "title": "The Hecke algebra and Soergel category",
+   "page": 19,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Hecke algebra",
+   "page": 19,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The braid group",
+   "page": 20,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Soergel bimodules",
+   "page": 21,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "From Rouquier complexes to Khovanov-Rozansky homology",
+   "page": 22,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "The trace functor",
+   "page": 23,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "The main conjectures",
+   "page": 24,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 2,
+   "title": "3.7.",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "En as an explicit braid",
+   "page": 26,
+   "source": "outline",
+   "number": "3.8"
+  },
+  {
+   "level": 2,
+   "title": "Geometric Markov invariance",
+   "page": 27,
+   "source": "outline",
+   "number": "3.9"
+  },
+  {
+   "level": 2,
+   "title": "Correspondences",
+   "page": 30,
+   "source": "outline",
+   "number": "3.10"
+  },
+  {
+   "level": 2,
+   "title": "Mirror braids",
+   "page": 30,
+   "source": "outline",
+   "number": "3.11"
+  },
+  {
+   "level": 2,
+   "title": "Some remarks on support",
+   "page": 31,
+   "source": "outline",
+   "number": "3.12"
+  },
+  {
+   "level": 1,
+   "title": "Categories and schemes",
+   "page": 32,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Motivation: maps to projective space",
+   "page": 32,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Notations for categories",
+   "page": 34,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Categories over schemes",
+   "page": 35,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "The affine case",
+   "page": 36,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "The projective case",
+   "page": 37,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 2,
+   "title": "The relative case",
+   "page": 38,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 2,
+   "title": "Projective dimension one",
+   "page": 40,
+   "source": "outline",
+   "number": "4.7"
+  },
+  {
+   "level": 2,
+   "title": "Deducing Conjecture ?? from Conjecture ??",
+   "page": 41,
+   "source": "outline",
+   "number": "4.8"
+  },
+  {
+   "level": 2,
+   "title": "Invertible objects in monoidal categories",
+   "page": 42,
+   "source": "outline",
+   "number": "4.9"
+  },
+  {
+   "level": 1,
+   "title": "Example: the case of two strands",
+   "page": 42,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The geometry of FHilb2",
+   "page": 42,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Cohomology of sheaves on FHilb2",
+   "page": 43,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Soergel bimodules for n=2",
+   "page": 44,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Proj construction",
+   "page": 45,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Sheaves for two-strand braids",
+   "page": 47,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 1,
+   "title": "Example: the case of three strands",
+   "page": 48,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The geometry of FHilb3",
+   "page": 48,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Torus braids",
+   "page": 49,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "The longest word",
+   "page": 50,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "The figure eight knot",
+   "page": 50,
+   "source": "outline",
+   "number": "6.4"
+  },
+  {
+   "level": 1,
+   "title": "Categorical idempotents and equivariant localization",
+   "page": 52,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Categories over equivariant schemes",
+   "page": 52,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Categorical diagonalization",
+   "page": 53,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Eigenobjects",
+   "page": 53,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 2,
+   "title": "The geometric realization over a fixed base",
+   "page": 54,
+   "source": "outline",
+   "number": "7.4"
+  },
+  {
+   "level": 2,
+   "title": "The relative case",
+   "page": 57,
+   "source": "outline",
+   "number": "7.5"
+  },
+  {
+   "level": 1,
+   "title": "Local charts and fixed points of FHilbn",
+   "page": 58,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Affine charts for Hilbert schemes",
+   "page": 58,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 2,
+   "title": "Affine charts for flag Hilbert schemes",
+   "page": 59,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 2,
+   "title": "Defining the charts",
+   "page": 59,
+   "source": "outline",
+   "number": "8.3"
+  },
+  {
+   "level": 2,
+   "title": "The special coefficients",
+   "page": 61,
+   "source": "outline",
+   "number": "8.4"
+  },
+  {
+   "level": 2,
+   "title": "Explicit local coordinates",
+   "page": 62,
+   "source": "outline",
+   "number": "8.5"
+  },
+  {
+   "level": 2,
+   "title": "Examples",
+   "page": 64,
+   "source": "outline",
+   "number": "8.6"
+  },
+  {
+   "level": 2,
+   "title": "Poincare series",
+   "page": 66,
+   "source": "outline",
+   "number": "8.7"
+  },
+  {
+   "level": 1,
+   "title": "Differentials and glN homology",
+   "page": 67,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Spectral sequence for glN homology",
+   "page": 67,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Sections and schemes",
+   "page": 68,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 2,
+   "title": "The commutative tower",
+   "page": 69,
+   "source": "outline",
+   "number": "9.3"
+  },
+  {
+   "level": 2,
+   "title": "Differentials in affine charts",
+   "page": 70,
+   "source": "outline",
+   "number": "9.4"
+  },
+  {
+   "level": 1,
+   "title": "Appendix",
+   "page": 71,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Dg algebras",
+   "page": 71,
+   "source": "outline",
+   "number": "10.1"
+  },
+  {
+   "level": 2,
+   "title": "Symmetric and exterior algebras",
+   "page": 72,
+   "source": "outline",
+   "number": "10.2"
+  },
+  {
+   "level": 2,
+   "title": "Affine dg schemes",
+   "page": 73,
+   "source": "outline",
+   "number": "10.3"
+  },
+  {
+   "level": 2,
+   "title": "Projective dg bundles",
+   "page": 74,
+   "source": "outline",
+   "number": "10.4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 75,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-11",
+   "number": null,
+   "title": "1.1.",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1807,
+   "n_words": 307
+  },
+  {
+   "id": "sec-001-12",
+   "number": null,
+   "title": "1.2.",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1603,
+   "n_words": 285
+  },
+  {
+   "id": "sec-002-13",
+   "number": null,
+   "title": "1.3.",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 3157,
+   "n_words": 522
+  },
+  {
+   "id": "sec-003-14",
+   "number": null,
+   "title": "1.4.",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 2189,
+   "n_words": 397
+  },
+  {
+   "id": "sec-004-15",
+   "number": null,
+   "title": "1.5.",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1734,
+   "n_words": 280
+  },
+  {
+   "id": "sec-005-16",
+   "number": null,
+   "title": "1.6.",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3429,
+   "n_words": 560
+  },
+  {
+   "id": "sec-006-17",
+   "number": null,
+   "title": "1.7.",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 162,
+   "n_words": 24
+  },
+  {
+   "id": "sec-007-18",
+   "number": null,
+   "title": "1.8.",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2015,
+   "n_words": 339
+  },
+  {
+   "id": "sec-008-19",
+   "number": null,
+   "title": "1.9.",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 489,
+   "n_words": 86
+  },
+  {
+   "id": "sec-009-110",
+   "number": null,
+   "title": "1.10.",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 380,
+   "n_words": 52
+  },
+  {
+   "id": "sec-010-111",
+   "number": null,
+   "title": "1.11.",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 5400,
+   "n_words": 920
+  },
+  {
+   "id": "sec-011-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2965,
+   "n_words": 516
+  },
+  {
+   "id": "sec-012-22-the-matrix-presentation",
+   "number": "2.2",
+   "title": "The matrix presentation",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 3055,
+   "n_words": 530
+  },
+  {
+   "id": "sec-013-23-dg-schemes",
+   "number": "2.3",
+   "title": "DG schemes",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1917,
+   "n_words": 340
+  },
+  {
+   "id": "sec-014-24-explicit-matrices",
+   "number": "2.4",
+   "title": "Explicit matrices",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 3863,
+   "n_words": 800
+  },
+  {
+   "id": "sec-015-25-projective-tower-construction",
+   "number": "2.5",
+   "title": "Projective tower construction",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 6050,
+   "n_words": 1122
+  },
+  {
+   "id": "sec-016-27-the-dg-scheme",
+   "number": "2.7",
+   "title": "The dg scheme",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2262,
+   "n_words": 381
+  },
+  {
+   "id": "sec-017-28-serre-duality",
+   "number": "2.8",
+   "title": "Serre duality",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 1158,
+   "n_words": 193
+  },
+  {
+   "id": "sec-018-31-the-hecke-algebra",
+   "number": "3.1",
+   "title": "The Hecke algebra",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2247,
+   "n_words": 399
+  },
+  {
+   "id": "sec-019-32-the-braid-group",
+   "number": "3.2",
+   "title": "The braid group",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2079,
+   "n_words": 347
+  },
+  {
+   "id": "sec-020-33-soergel-bimodules",
+   "number": "3.3",
+   "title": "Soergel bimodules",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1580,
+   "n_words": 250
+  },
+  {
+   "id": "sec-021-34-from-rouquier-complexes-to-khovanov-rozansky",
+   "number": "3.4",
+   "title": "From Rouquier complexes to Khovanov-Rozansky homology",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2653,
+   "n_words": 421
+  },
+  {
+   "id": "sec-022-35-the-trace-functor",
+   "number": "3.5",
+   "title": "The trace functor",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1793,
+   "n_words": 288
+  },
+  {
+   "id": "sec-023-36-the-main-conjectures",
+   "number": "3.6",
+   "title": "The main conjectures",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 2910,
+   "n_words": 501
+  },
+  {
+   "id": "sec-024-37",
+   "number": null,
+   "title": "3.7.",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 1138,
+   "n_words": 176
+  },
+  {
+   "id": "sec-025-38-en-as-an-explicit-braid",
+   "number": "3.8",
+   "title": "En as an explicit braid",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1410,
+   "n_words": 229
+  },
+  {
+   "id": "sec-026-39-geometric-markov-invariance",
+   "number": "3.9",
+   "title": "Geometric Markov invariance",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 4574,
+   "n_words": 820
+  },
+  {
+   "id": "sec-027-310-correspondences",
+   "number": "3.10",
+   "title": "Correspondences",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 30,
+   "n_chars": 905,
+   "n_words": 132
+  },
+  {
+   "id": "sec-028-311-mirror-braids",
+   "number": "3.11",
+   "title": "Mirror braids",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 1234,
+   "n_words": 197
+  },
+  {
+   "id": "sec-029-312-some-remarks-on-support",
+   "number": "3.12",
+   "title": "Some remarks on support",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 4507,
+   "n_words": 754
+  },
+  {
+   "id": "sec-030-41-motivation-maps-to-projective-space",
+   "number": "4.1",
+   "title": "Motivation: maps to projective space",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 2389,
+   "n_words": 424
+  },
+  {
+   "id": "sec-031-42-notations-for-categories",
+   "number": "4.2",
+   "title": "Notations for categories",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 2848,
+   "n_words": 481
+  },
+  {
+   "id": "sec-032-43-categories-over-schemes",
+   "number": "4.3",
+   "title": "Categories over schemes",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 3475,
+   "n_words": 615
+  },
+  {
+   "id": "sec-033-45-the-projective-case",
+   "number": "4.5",
+   "title": "The projective case",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 3001,
+   "n_words": 527
+  },
+  {
+   "id": "sec-034-46-the-relative-case",
+   "number": "4.6",
+   "title": "The relative case",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 40,
+   "n_chars": 2883,
+   "n_words": 512
+  },
+  {
+   "id": "sec-035-47-projective-dimension-one",
+   "number": "4.7",
+   "title": "Projective dimension one",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 4577,
+   "n_words": 793
+  },
+  {
+   "id": "sec-036-49-invertible-objects-in-monoidal-categories",
+   "number": "4.9",
+   "title": "Invertible objects in monoidal categories",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 644,
+   "n_words": 92
+  },
+  {
+   "id": "sec-037-51-the-geometry-of-fhilb2",
+   "number": "5.1",
+   "title": "The geometry of FHilb2",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 1670,
+   "n_words": 309
+  },
+  {
+   "id": "sec-038-52-cohomology-of-sheaves-on-fhilb2",
+   "number": "5.2",
+   "title": "Cohomology of sheaves on FHilb2",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 3968,
+   "n_words": 746
+  },
+  {
+   "id": "sec-039-54-proj-construction",
+   "number": "5.4",
+   "title": "Proj construction",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 47,
+   "n_chars": 2474,
+   "n_words": 488
+  },
+  {
+   "id": "sec-040-55-sheaves-for-two-strand-braids",
+   "number": "5.5",
+   "title": "Sheaves for two-strand braids",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 49,
+   "n_chars": 4713,
+   "n_words": 913
+  },
+  {
+   "id": "sec-041-62-torus-braids",
+   "number": "6.2",
+   "title": "Torus braids",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 50,
+   "n_chars": 2977,
+   "n_words": 534
+  },
+  {
+   "id": "sec-042-63-the-longest-word",
+   "number": "6.3",
+   "title": "The longest word",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 52,
+   "n_chars": 3195,
+   "n_words": 561
+  },
+  {
+   "id": "sec-043-71-categories-over-equivariant-schemes",
+   "number": "7.1",
+   "title": "Categories over equivariant schemes",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 53,
+   "n_chars": 2024,
+   "n_words": 367
+  },
+  {
+   "id": "sec-044-72-categorical-diagonalization",
+   "number": "7.2",
+   "title": "Categorical diagonalization",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 1465,
+   "n_words": 254
+  },
+  {
+   "id": "sec-045-73-eigenobjects",
+   "number": "7.3",
+   "title": "Eigenobjects",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 57,
+   "n_chars": 7454,
+   "n_words": 1326
+  },
+  {
+   "id": "sec-046-75-the-relative-case",
+   "number": "7.5",
+   "title": "The relative case",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 62,
+   "n_chars": 9752,
+   "n_words": 1785
+  },
+  {
+   "id": "sec-047-85-explicit-local-coordinates",
+   "number": "8.5",
+   "title": "Explicit local coordinates",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 64,
+   "n_chars": 4878,
+   "n_words": 926
+  },
+  {
+   "id": "sec-048-86-examples",
+   "number": "8.6",
+   "title": "Examples",
+   "level": 2,
+   "page_start": 64,
+   "page_end": 66,
+   "n_chars": 2378,
+   "n_words": 502
+  },
+  {
+   "id": "sec-049-87-poincare-series",
+   "number": "8.7",
+   "title": "Poincare series",
+   "level": 2,
+   "page_start": 66,
+   "page_end": 67,
+   "n_chars": 3697,
+   "n_words": 668
+  },
+  {
+   "id": "sec-050-91-spectral-sequence-for-gln-homology",
+   "number": "9.1",
+   "title": "Spectral sequence for glN homology",
+   "level": 2,
+   "page_start": 67,
+   "page_end": 68,
+   "n_chars": 2241,
+   "n_words": 355
+  },
+  {
+   "id": "sec-051-92-sections-and-schemes",
+   "number": "9.2",
+   "title": "Sections and schemes",
+   "level": 2,
+   "page_start": 68,
+   "page_end": 69,
+   "n_chars": 1772,
+   "n_words": 305
+  },
+  {
+   "id": "sec-052-93-the-commutative-tower",
+   "number": "9.3",
+   "title": "The commutative tower",
+   "level": 2,
+   "page_start": 69,
+   "page_end": 71,
+   "n_chars": 4562,
+   "n_words": 793
+  },
+  {
+   "id": "sec-053-101-dg-algebras",
+   "number": "10.1",
+   "title": "Dg algebras",
+   "level": 2,
+   "page_start": 71,
+   "page_end": 72,
+   "n_chars": 2653,
+   "n_words": 443
+  },
+  {
+   "id": "sec-054-102-symmetric-and-exterior-algebras",
+   "number": "10.2",
+   "title": "Symmetric and exterior algebras",
+   "level": 2,
+   "page_start": 72,
+   "page_end": 74,
+   "n_chars": 4554,
+   "n_words": 775
+  },
+  {
+   "id": "sec-055-104-projective-dg-bundles",
+   "number": "10.4",
+   "title": "Projective dg bundles",
+   "level": 2,
+   "page_start": 74,
+   "page_end": 75,
+   "n_chars": 2603,
+   "n_words": 465
+  },
+  {
+   "id": "sec-056-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 77,
+   "n_chars": 6647,
+   "n_words": 1005
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 81,
+  "sections": 57,
+  "chars_total": 166159
+ }
+}

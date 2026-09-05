@@ -1,0 +1,131 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1109.1919v3",
+ "source": {
+  "file": "1109.1919v3.pdf",
+  "sha256": "2b634edddf2320474b4564dc74eb35972264f5590cef16cfa400ad5f56d52dcb",
+  "bytes": 554216,
+  "pages": 13,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1109.1919",
+   "version": "3",
+   "primary_class": "math.KT",
+   "stamp_date": "1 May 2014"
+  },
+  "doi": null,
+  "title": "COMBINATORIAL DESCENT DATA FOR GERBES AMNON YEKUTIELI",
+  "authors_raw": null,
+  "title_lines": [
+   "COMBINATORIAL DESCENT DATA FOR GERBES",
+   "AMNON YEKUTIELI"
+  ],
+  "abstract": "We consider descent data in cosimplicial crossed groupoids. This is a combinatorial abstraction of the descent data for gerbes in algebraic geom- etry. The main result is this: a weak equivalence between cosimplicial crossed groupoids induces a bijection on gauge equivalence classes of descent data. 0. Introduction For a cosimplicial crossed groupoidG ={Gp}p\u2208N we denote byDesc(G) the set of gauge equivalence classes of descent data. The purpose of this note is to prove: Theorem 0.1(Equivalence). Let \u03a6 : G\u2192H be a weak equivalence between cosim- plicial crossed groupoids. Then the function Desc(\u03a6) : Desc(G)\u2192Desc(H) is bijective. The various notions involved are recalled or de\ufb01ned in Section 1. The theorem is repeated as Theorem 2.4 in Section 2, and proved there. Connections with other papers, and several remarks, are in Section 3. Theorem 0.1 plays a crucial role in the new version of our paper [Ye1] on twisted deformation quantization of algebraic varieties. This is explained in Remark 3.2. Acknowledgments. I wish to thank Matan Prezma, Ronald Brown, Sharon Hol- lander, Vladimir Hinich, Behrang Noohi and Lawrence Breen for useful discussions. 1. Combinatorial Descent Data We begin with a quick review of cosimplicial theory. Let\u2206 denote the simplex category. The set of objects of\u2206 is the setN of natural numbers. Givenp,q\u2208N, the morphisms\u03b1:p\u2192q in \u2206 are order preserving functions \u03b1:{0,...,p}\u2192{0,...,q}. We denote this set of morphisms by\u2206 q p. An element of \u2206 q p may be thought of as a sequencei = (i0,...,i p) of integers with 0\u2264i0 \u2264\u00b7\u00b7\u00b7\u2264ip \u2264q. We call \u2206 q :={\u2206 q p}p\u2208N the q-dimensional combinatorial simplex, and an elementi\u2208\u2206 q p is ap-dimensional face of\u2206 q. Let C be some category. A cosimplicial object in C is a functorC : \u2206 \u2192C. We shall usually writeC p := C(p) \u2208Ob(C), and leave the morphisms C(\u03b1) : C(p)\u2192C(q), for\u03b1\u2208\u2206 q p, implicit. Thus we shall refer to the cosimplicial object C as{C p}p\u2208N. The category of cosimplicial objects inC, where the morphisms are natural tr",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20181020091836Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Combinatorial Descent Data",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Main Theorem",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Some Remarks",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-combinatorial-descent-data",
+   "number": "1",
+   "title": "Combinatorial Descent Data",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 326,
+   "n_words": 48
+  },
+  {
+   "id": "sec-001-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 7996,
+   "n_words": 1278
+  },
+  {
+   "id": "sec-002-2-the-main-theorem",
+   "number": "2",
+   "title": "The Main Theorem",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 10,
+   "n_chars": 10223,
+   "n_words": 1616
+  },
+  {
+   "id": "sec-003-3-some-remarks",
+   "number": "3",
+   "title": "Some Remarks",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 7817,
+   "n_words": 1225
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2814,
+   "n_words": 381
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 5,
+  "chars_total": 29176
+ }
+}

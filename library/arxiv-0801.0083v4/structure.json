@@ -1,0 +1,179 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0801.0083v4",
+ "source": {
+  "file": "0801.0083v4.pdf",
+  "sha256": "8e38b9e56d2467095ccd08f0b61a1ae8b7d08cd2a46a52e8b20afcf84e3c8ba4",
+  "bytes": 419302,
+  "pages": 36,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0801.0083",
+   "version": "4",
+   "primary_class": "math.AG",
+   "stamp_date": "18 Feb 2010"
+  },
+  "doi": null,
+  "title": "CENTRAL EXTENSIONS OF GERBES AMNON YEKUTIELI",
+  "authors_raw": null,
+  "title_lines": [
+   "CENTRAL EXTENSIONS OF GERBES",
+   "AMNON YEKUTIELI"
+  ],
+  "abstract": "W e introduce the notion of central extension of gerbes on a to po- logical space X. W e show that there are obstruction classes to lifting objec ts and isomorphisms in a central extension. W e also discuss pro nilpotent gerbes. These results are used in the paper [Ye] to study twisted defo rmation quanti- zation on algebraic varieties.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210722013854-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Recalling some Facts on 2-Categories",
+   "page": 3,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Prestacks on a Topological Space",
+   "page": 8,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Extensions of Gerbes",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Obstruction Classes",
+   "page": 19,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Sufficient Conditions for Existence of Obstruction Classes",
+   "page": 25,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Pronilpotent Gerbes",
+   "page": 29,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Fake Global Objects of Gerbes",
+   "page": 33,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 8,
+   "n_chars": 16650,
+   "n_words": 3337
+  },
+  {
+   "id": "sec-001-2-prestacks-on-a-topological-space",
+   "number": "2",
+   "title": "Prestacks on a Topological Space",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 7223,
+   "n_words": 1558
+  },
+  {
+   "id": "sec-002-3-extensions-of-gerbes",
+   "number": "3",
+   "title": "Extensions of Gerbes",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 19,
+   "n_chars": 19597,
+   "n_words": 4175
+  },
+  {
+   "id": "sec-003-4-obstruction-classes",
+   "number": "4",
+   "title": "Obstruction Classes",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 25,
+   "n_chars": 12450,
+   "n_words": 2693
+  },
+  {
+   "id": "sec-004-5-sufficient-conditions-for-existence-of-obstruc",
+   "number": "5",
+   "title": "Sufficient Conditions for Existence of Obstruction Classes",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 29,
+   "n_chars": 8359,
+   "n_words": 1739
+  },
+  {
+   "id": "sec-005-6-pronilpotent-gerbes",
+   "number": "6",
+   "title": "Pronilpotent Gerbes",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 36,
+   "n_chars": 17707,
+   "n_words": 3537
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 1740,
+   "n_words": 250
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 7,
+  "chars_total": 83726
+ }
+}
