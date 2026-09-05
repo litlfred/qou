@@ -21,6 +21,10 @@ LaTeX label: `lem:qou-exists-axiom-3`
 - [manuscript] §1 Quantum Observable Universe, Axiom 3
 -/
 
+-- `QuantumObservableUniverse` is universe-carrying (AGENTS.md §7d U2);
+-- both levels must be named before `.{u, v}` can be applied to it.
+universe u v
+
 open scoped CategoryTheory CategoryTheory.MonoidalCategory
 
 namespace QOU.QuantumObservableUniverse

@@ -59,6 +59,12 @@ from fractions import Fraction
 import numpy as np
 
 from q_parameter import Q as q0, Q_INV as qi, HA as h, q_int, E_CROSS
+# EXACT twins of q0/qi/h.  The float64 names above stay for the many
+# call sites that are display or float-domain; the seminormal builder
+# uses ONLY these (AGENTS.md: never compute in float).
+from q_parameter import Q_MP as _Q_MP, Q_INV_MP as _QI_MP, HA_MP as _H_MP
+from mpmath import mp as _mp, mpf as _mp_mpf_type
+
 
 # pyhecke bootstrap (mirrors hecke_core.py) — note `_os` and `_sys`
 # are already imported above unconditionally; this block only fixes
@@ -286,16 +292,45 @@ def q_resolvent_weight(partition, s=None):
 
 
 def lp_shadow_price(partition):
-    """LP-dual shadow price y_λ for the Frobenius positivity constraint
-    of partition λ in the operator-selection LP at level k = |λ|.
+    """Per-partition weight y_λ used by the binding accumulator at level
+    k = |λ|.  NAMED for the LP shadow price; it is not one.
 
-    From prop:mass-coefficient-shadow-price:
+        y_λ = w_λ / d_λ − y_0,   y_0 = min_λ (w_λ / d_λ) = 1/[k]_q!
 
-        y_λ = w_λ / d_λ − y_0
+    with d_λ = dim(λ), the classical dimension (number of standard Young
+    tableaux).
 
-    where y_0 = min_λ (w_λ / d_λ) = 1/[k]_q! is the dual variable of the
-    normalisation constraint 1ᵀx = n_target, and d_λ = dim(λ) is the
-    classical dimension (number of standard Young tableaux).
+    CORRECTED 2026-09-05 (owner ruling; PR #6752).  This docstring said y_0
+    "is the dual variable of the normalisation constraint 1ᵀx = n_target".
+    That is false, in two independent ways:
+
+      * This function solves no program.  It evaluates a closed form.  The
+        subtrahend 1/[k]_q! is exactly min_λ(w_λ/d_λ) — a normalisation of
+        the weights, not a dual variable of anything.
+
+      * The actual net-constraint dual of prop:operator-selection-lp is
+        IDENTICALLY ZERO, for every n_target, at every n and q.  The NF
+        basis contains the identity, so the first Frobenius row IS the
+        objective vector; the program minimises t·x subject to t·x ≥ 0, so
+        its optimal value is 0 and strong duality forces y_0* = 0.  Proved
+        in the content block (commit 6b7d2ec4a8) and in Lean
+        (`y_0_eq_zero_of_radical`); confirmed by every committed solve.
+        Measured here, y_0 runs 0.497 at k=2 to 1.56e-4 at k=7 — never 0,
+        so it cannot be that dual under any reading.
+
+    What the term DOES do, measured at k = 2..7: subtracting min_λ(w_λ/d_λ)
+    zeroes exactly the two one-dimensional blocks (k) and (1^k) — the
+    trivial and sign representations — and nothing else.  Note those are
+    precisely the blocks where a SCALAR dual would be well-typed at all;
+    for d_λ > 1 the Frobenius dual is a d_λ × d_λ matrix.  It is also not
+    needed for non-negativity: w_λ/d_λ > 0 already.
+
+    Consumers should read this as a weighting choice with a measured
+    effect, not as a priced constraint.  The replacement program is
+    tracked as O3′ (block SDP on the radical quotient); nothing here is
+    changed by that work.
+    See docs/proposals/2026-09-05-operator-selection-objective-replacement.md
+    and beans qou-sv7h / qou-8na1.
 
     The shadow price y_λ multiplies the categorical scale C_λ = m_e ·
     H_q(λ) to produce a per-partition binding contribution
@@ -310,7 +345,9 @@ def lp_shadow_price(partition):
     d = partition_dimension(partition)
     # y_0 is the smallest of w_λ/d_λ across all partitions of k.
     # For the trivial (n) partition (sym): w = 1/[n]_q!, d = 1.
-    # So y_0 = 1/[n]_q! (the LP normalisation dual).
+    # So y_0 = 1/[n]_q!.  NOT the LP normalisation dual — that one is
+    # identically 0 (see this function's docstring).  It is a weight
+    # normalisation whose measured effect is to zero (k) and (1^k).
     y_0 = 1.0 / q_factorial(k)
     return w / d - y_0
 
@@ -511,7 +548,7 @@ DELTA_22 = H_Q_22 * M_E_MEV                       # = [3]·[2]²·m_e ≈ 6.29 M
 _n4_fac_22 = q_int(2) * q_int(3) * q_int(4)       # [4]_q!
 D_Q_22 = _n4_fac_22 / H_Q_22                       # d_q((2,2)) = [4]_q!/H_q ≈ 2.044
 W_22 = D_Q_22**2 / _n4_fac_22                      # w_{(2,2)} = d_q²/[4]_q! ≈ 0.166
-Y_22 = lp_shadow_price((2, 2))                     # LP-dual shadow price of (2,2)
+Y_22 = lp_shadow_price((2, 2))                     # per-partition weight of (2,2)
 
 
 def _q_exp(x, n_terms=20):
@@ -995,7 +1032,70 @@ def _swap_tab(tab, a, b):
     return new
 
 
+class _ExactCOO:
+    """A sparse sigma whose entries are EXACT (`mpmath.mpf`), not float64.
+
+    scipy's sparse containers are float64 by construction and their kernels
+    reject `dtype=object`, so an exact seminormal family cannot be carried in
+    a `csr_matrix` at all.  This holds the same COO triple the consumers
+    already densify against, with `mpf` values.
+
+    Deliberately NOT a scipy type: `scipy.sparse.issparse` must return False
+    for it, so a consumer cannot route it into a float64 BLAS call.
+    """
+
+    __slots__ = ("row", "col", "data", "shape")
+
+    def __init__(self, row, col, data, shape):
+        self.row, self.col, self.data, self.shape = row, col, data, shape
+
+    def tocoo(self):
+        return self
+
+    @property
+    def nnz(self):
+        return len(self.data)
+
+
+def _is_sparse_sigma(x):
+    """True for either sparse carrier — scipy float64, or `_ExactCOO`."""
+    if isinstance(x, _ExactCOO):
+        return True
+    try:
+        from scipy.sparse import issparse
+    except ImportError:
+        return False
+    return issparse(x)
+
+
+def _sigma_is_exact(x):
+    """True when sigma carries mpf, so the caller must NOT use float64 BLAS.
+
+    The dispatch in the accumulators keys on the RUNNING matrix's dtype, which
+    starts as `np.eye` (float64); on an exact sigma that sends the very first
+    crossing into a scipy call that raises.  Key on sigma instead.
+    """
+    if isinstance(x, _ExactCOO):
+        return True
+    return isinstance(x, tuple) and bool(x) and isinstance(x[0][0], _mp_mpf_type)
+
+
 def _build_ysn_matrices(partition, sparse_threshold=32):
+    """Exact seminormal matrices, computed at the canonical working precision.
+
+    Thin wrapper: the arithmetic below is `mpf`, but mpmath rounds every
+    operation to the AMBIENT `mp.dps`, which is **15** in a bare import of
+    this module -- exactly float64's significand.  Carrying mpf at dps 15
+    would buy nothing (the `mp.dps` no-op defect).  `_precision.COMPUTE_DPS`
+    is the corpus-wide value; `workdps` restores the caller's setting on exit,
+    so importing this module still sets no global precision.
+    """
+    from _precision import COMPUTE_DPS as _CDPS
+    with _mp.workdps(_CDPS):
+        return _build_ysn_matrices_exact(partition, sparse_threshold)
+
+
+def _build_ysn_matrices_exact(partition, sparse_threshold=32):
     """Build YSN matrices for σ_1, …, σ_{n-1} of the given partition.
 
     For dim ≥ sparse_threshold, returns scipy.sparse.csr_matrix objects
@@ -1023,7 +1123,7 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
         if use_sparse:
             rows, cols, vals = [], [], []
         else:
-            M = [[0.0] * dim for _ in range(dim)]
+            M = [[_mp.mpf(0)] * dim for _ in range(dim)]
         processed = set()
         for i, T in enumerate(tabs):
             if i in processed:
@@ -1043,24 +1143,24 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
                     break
             if same_row:
                 if use_sparse:
-                    rows.append(i); cols.append(i); vals.append(q0)
+                    rows.append(i); cols.append(i); vals.append(_Q_MP)
                 else:
-                    M[i][i] = q0
+                    M[i][i] = _Q_MP
                 processed.add(i)
             elif same_col:
                 if use_sparse:
-                    rows.append(i); cols.append(i); vals.append(-qi)
+                    rows.append(i); cols.append(i); vals.append(-_QI_MP)
                 else:
-                    M[i][i] = -qi
+                    M[i][i] = -_QI_MP
                 processed.add(i)
             else:
                 T_swapped = _swap_tab(T, k, k + 1)
                 if T_swapped is None:
                     if use_sparse:
                         rows.append(i); cols.append(i)
-                        vals.append(q0 if rho > 0 else -qi)
+                        vals.append(_Q_MP if rho > 0 else -_QI_MP)
                     else:
-                        M[i][i] = q0 if rho > 0 else -qi
+                        M[i][i] = _Q_MP if rho > 0 else -_QI_MP
                     processed.add(i)
                     continue
                 key = tuple(tuple(r) for r in T_swapped)
@@ -1068,9 +1168,9 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
                 if j is None:
                     if use_sparse:
                         rows.append(i); cols.append(i)
-                        vals.append(q0 if rho > 0 else -qi)
+                        vals.append(_Q_MP if rho > 0 else -_QI_MP)
                     else:
-                        M[i][i] = q0 if rho > 0 else -qi
+                        M[i][i] = _Q_MP if rho > 0 else -_QI_MP
                     processed.add(i)
                     continue
                 # Hoefsmit/Young seminormal diagonal entry at axial
@@ -1086,11 +1186,14 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
                 # -1/(q(q^2+1)), the value qou-4m9u derived symbolically; at
                 # rho = +2 it is q^3/(q^2+1) = z_D, the convention-D Markov
                 # parameter.
-                a_rho = h / (1.0 - q0 ** (-2 * rho))
-                a_neg = h - a_rho
+                # EXACT throughout: _H_MP / _Q_MP are mpf, so a_rho, a_neg,
+                # bsq and off are mpf.  `math.sqrt` is float64 and would
+                # truncate `off` to 53 bits -- use mp.sqrt.
+                a_rho = _H_MP / (_mp.mpf(1) - _Q_MP ** (-2 * rho))
+                a_neg = _H_MP - a_rho
                 # det = -1  =>  b^2 = a(h-a) + 1.  This was already correct.
-                bsq = a_rho * a_neg + 1.0
-                off = math.sqrt(abs(bsq)) * (1.0 if bsq > 0 else -1.0)
+                bsq = a_rho * a_neg + _mp.mpf(1)
+                off = _mp.sqrt(abs(bsq)) * (_mp.mpf(1) if bsq > 0 else _mp.mpf(-1))
                 if use_sparse:
                     rows.extend([i, j, i, j])
                     cols.extend([i, j, j, i])
@@ -1103,7 +1206,8 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
                 processed.add(i)
                 processed.add(j)
         if use_sparse:
-            matrices.append(csr_matrix((vals, (rows, cols)), shape=(dim, dim)))
+            # `csr_matrix` is float64 and cannot hold these mpf values.
+            matrices.append(_ExactCOO(rows, cols, vals, (dim, dim)))
         else:
             matrices.append(tuple(tuple(row) for row in M))
     return matrices
@@ -1376,7 +1480,11 @@ def _q_gaussian_character_approx(entry, n_crossings_at_step, step_idx):
 def unified_iterative_correction(Z, N, return_per_step=False,
                                  k_max=K_PARTITION_MAX,
                                  k_exact=K_PARTITION_MAX):
-    """Unified iterative correction via LP-dual shadow prices.
+    """Unified iterative correction over per-partition weights.
+
+    NAMING CORRECTED 2026-09-05 (owner ruling; PR #6752).  This read
+    "via LP-dual shadow prices".  The weights y_λ are not LP duals —
+    see `lp_shadow_price` above for the two independent reasons.
 
     A SINGLE consistent algorithm — no special cases for any A.
     Starts at A = 1 and accumulates a per-step contribution from
@@ -1390,11 +1498,15 @@ def unified_iterative_correction(Z, N, return_per_step=False,
       • H_q(λ) = ∏_{x∈λ} [h_x(λ)]_q is the q-hook product (the
         categorical scale C_λ = m_e · H_q(λ) generalises the (2,2)
         derivation of [3]·[2]² · m_e to every λ);
-      • y_λ = w_λ/d_λ − 1/[k]_q! is the LP-dual shadow price of the
-        Frobenius positivity constraint of λ
-        (prop:mass-coefficient-shadow-price); shadow prices are the
-        unique invariants that the operator-selection LP assigns to
-        the partition basis;
+      • y_λ = w_λ/d_λ − 1/[k]_q! is a closed-form per-partition
+        weight, named for prop:mass-coefficient-shadow-price but not
+        computed from any program.  The clause that stood here —
+        "shadow prices are the unique invariants that the
+        operator-selection LP assigns to the partition basis" — is
+        false twice over: that LP indexes its constraints by NF basis
+        element (n! of them, not p(n)), and its minimiser set is a
+        POSITIVE-DIMENSIONAL face, so it assigns nothing uniquely.
+        Proved in the content block, commit 6b7d2ec4a8;
       • M_λ^{(0..step)} is the running YSN matrix product across
         all steps so far, embedded into the Hecke generators
         σ_1, …, σ_{k-1} of H_k(q) (cyclic generator index keeps the
@@ -1507,7 +1619,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     state = []
     for e in active:
         first = e['ysn'][0]
-        sparse_sigmas = _issparse(first)
+        sparse_sigmas = _is_sparse_sigma(first)
         dim = first.shape[0] if sparse_sigmas else len(first)
         if sparse_sigmas:
             # Running M is dense for fast sparse-× -dense multiplication
@@ -1623,7 +1735,12 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                     # precision the mpf exists to carry (AGENTS.md: never
                     # compute in float). The densified σ is cached per
                     # generator, so the COO decomposition is done once per generator.
-                    if isinstance(M_run, np.ndarray) and M_run.dtype == object:
+                    # Dispatch on SIGMA, not on M_run: M_run starts as
+                    # np.eye (float64), so keying on it would send the FIRST
+                    # crossing of an exact sigma into a scipy float64 call.
+                    if (_sigma_is_exact(sig_sparse)
+                            or (isinstance(M_run, np.ndarray)
+                                and M_run.dtype == object)):
                         # Keep the SPARSITY, lose only the BLAS. Densifying σ
                         # and doing `M_run @ sig_d` is O(dim³) in object
                         # arithmetic and does not finish — measured, >10 min on
@@ -1636,7 +1753,8 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                             coo = (m.row, m.col, m.data)
                             _sig_coo[gen] = coo
                         rows_i, cols_j, vals = coo
-                        Msig = np.zeros_like(M_run)
+                        # object dtype: a float64 Msig would truncate mpf.
+                        Msig = np.zeros(M_run.shape, dtype=object)
                         for i, j, v in zip(rows_i, cols_j, vals):
                             Msig[:, j] += M_run[:, i] * v
                     else:
@@ -1815,7 +1933,7 @@ def atom_character_raw(Z, N, entry, include_inter=True):
     sigmas = entry['ysn']
     n_gens = entry['n_gens']
     first = sigmas[0]
-    sparse_sigmas = _issparse(first)
+    sparse_sigmas = _is_sparse_sigma(first)
     dim = first.shape[0] if sparse_sigmas else len(first)
     M = np.eye(dim) if sparse_sigmas else _identity(dim)
     log_norm = 0.0
@@ -1854,14 +1972,18 @@ def atom_character_raw(Z, N, entry, include_inter=True):
             _sig_coo = {}
             for c, d, gen in chain:
                 sig_sparse = sigmas[gen]
-                if isinstance(M_run, np.ndarray) and M_run.dtype == object:
+                # Dispatch on SIGMA, not on M_run -- see note above.
+                if (_sigma_is_exact(sig_sparse)
+                        or (isinstance(M_run, np.ndarray)
+                            and M_run.dtype == object)):
                     coo = _sig_coo.get(gen)
                     if coo is None:
                         _m = sig_sparse.tocoo()
                         coo = (_m.row, _m.col, _m.data)
                         _sig_coo[gen] = coo
                     rows_i, cols_j, vals = coo
-                    Msig = np.zeros_like(M_run)
+                    # object dtype: a float64 Msig would truncate mpf.
+                    Msig = np.zeros(M_run.shape, dtype=object)
                     for i, j, v in zip(rows_i, cols_j, vals):
                         Msig[:, j] += M_run[:, i] * v
                 else:
@@ -1915,7 +2037,7 @@ def _contrib_single_partition(Z, N, entry):
     sigmas = entry['ysn']
     n_gens = entry['n_gens']
     first = sigmas[0]
-    sparse_sigmas = _issparse(first)
+    sparse_sigmas = _is_sparse_sigma(first)
     dim = first.shape[0] if sparse_sigmas else len(first)
 
     if sparse_sigmas:
@@ -1954,14 +2076,18 @@ def _contrib_single_partition(Z, N, entry):
             _sig_coo = {}
             for c, d, gen in chain:
                 sig_sparse = sigmas[gen]
-                if isinstance(M_run, np.ndarray) and M_run.dtype == object:
+                # Dispatch on SIGMA, not on M_run -- see note above.
+                if (_sigma_is_exact(sig_sparse)
+                        or (isinstance(M_run, np.ndarray)
+                            and M_run.dtype == object)):
                     coo = _sig_coo.get(gen)
                     if coo is None:
                         _m = sig_sparse.tocoo()
                         coo = (_m.row, _m.col, _m.data)
                         _sig_coo[gen] = coo
                     rows_i, cols_j, vals = coo
-                    Msig = np.zeros_like(M_run)
+                    # object dtype: a float64 Msig would truncate mpf.
+                    Msig = np.zeros(M_run.shape, dtype=object)
                     for i, j, v in zip(rows_i, cols_j, vals):
                         Msig[:, j] += M_run[:, i] * v
                 else:

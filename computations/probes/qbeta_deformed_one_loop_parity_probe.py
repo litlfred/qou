@@ -60,6 +60,13 @@ import os
 import subprocess
 from datetime import datetime, timezone
 from mpmath import mp, mpf, mpc, log, exp, sqrt, pi, polylog, im, re, arg, fabs, nstr
+# This producer hand-builds its assertion payload and `json.dump`s it, so
+# `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
+# reached, and a re-run would re-emit the float literals and undo PR #5910's
+# drain for this file alone. `_tol` routes each DECLARED tolerance through
+# that guard; it returns a COMPUTED one unchanged, so those stay floats and
+# stay counted by the raw-float64 ratchet. Bean qou-9tqx.
+from qou_substrate.witness import declared_tolerance as _tol  # noqa: E402
 
 mp.dps = 60
 
@@ -484,7 +491,7 @@ def main():
     assertions = [
         {"name": "u0_one_loop_equals_pm_sqrt_minus3_over_2",
          "computed": float(dev), "expected": 0.0,
-         "passed": bool(dev < mpf("1e-50")), "tolerance": 1e-50,
+         "passed": bool(dev < mpf("1e-50")), "tolerance": _tol(1e-50),
          "source": "DG 1-loop at the complete structure (Garoufalidis-Sabo "
                    "formula); validates datum + conventions"},
         {"name": "apolynomial_residual_on_branch",
@@ -492,7 +499,7 @@ def main():
          "expected": 0.0,
          "passed": bool(all(mpf(p["apoly_residual_plus"]) < mpf("1e-55")
                             for p in pairs)),
-         "tolerance": 1e-55,
+         "tolerance": _tol(1e-55),
          "source": "deformed shapes lie on the CCGLS A-polynomial branch "
                    "(primary convention cross-check)"},
         {"name": "vol_is_even_in_u",
@@ -500,7 +507,7 @@ def main():
          "expected": 0.0,
          "passed": bool(all(mpf(p["vol_asymmetry"]) < mpf("1e-55")
                             for p in pairs)),
-         "tolerance": 1e-55,
+         "tolerance": _tol(1e-55),
          "source": "NZ85 volume evenness (control channel)"},
         {"name": "tau_has_genuine_odd_part",
          "computed": float(max_odd), "expected": 1.0,
@@ -511,7 +518,7 @@ def main():
          "computed": float(mpf(out["even_core"]["max_abs_odd_of_exp_minus_u_tau"])),
          "expected": 0.0,
          "passed": bool(out["even_core"]["verified"]),
-         "tolerance": 1e-40,
+         "tolerance": _tol(1e-40),
          "source": "e^{-u} tau(u) even to ~1e-61 on all rays: "
                    "tau(u) = e^u * tau_even(u), odd part = sinh(u)*tau_even(u)"},
         {"name": "odd_factor_flattening_irreducible",
@@ -519,7 +526,7 @@ def main():
          "expected": 0.0,
          "passed": bool(mpf(out["flattening_dependence"]["max_identity_dev"])
                         < mpf("1e-50")),
-         "tolerance": 1e-50,
+         "tolerance": _tol(1e-50),
          "source": "flattening kernel-shift multiplies tau by -e^{-2u} = "
                    "-M^{-4}; parity class M^{+-2} x even is invariant"},
     ]

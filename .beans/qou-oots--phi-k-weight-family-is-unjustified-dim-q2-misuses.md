@@ -1,11 +1,11 @@
 ---
 # qou-oots
 title: 'Phi_k weight family is unjustified: dim_q^2 misuses a quantum dimension where f^lambda*dim_q (Molien, Lean-proved exactly normalized) or y_lambda (Markov, canonical Frobenius pairing) may belong'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-09-05T08:12:25Z
+updated_at: 2026-09-05T09:27:34Z
 ---
 
 ## 2026-09-05 — requirement derivation + prune + discriminator (in-progress; the CHOICE is open, the PRUNE is not)
@@ -151,3 +151,347 @@ And **Féray–Méliot §6.1 states this pairing outright**, in the paper §2 al
 ### Not established
 
 Which family Φ_k should use. Route 1 is **narrowed and partly excluded, not completed**. `d_q²/D²` is the share of neither object here — it is the RT/Verlinde weight of the `S²×S¹` Hilbert space, a third carrier again.
+
+## 2026-09-05 (later) — SETTLED: `N = 2`. And my own "route 1 turns on which N" is RETRACTED.
+
+**Probe:** `computations/probes/which_n_the_nucleus_is_a_state_at_probe.py`, 9/9, exit 0, mpmath 50 dps, zero builtin-float coercions, no witness.
+**Audit:** `docs/audits/2026-09-05-which-n-the-nucleus-is-a-state-at.md`.
+
+### The answer: `N = 2` — and it was already recorded, four ways
+
+Not derived here; it follows from the **convention-D owner ruling of 2026-08-15**.
+
+1. `wedderburn_jones_markov.py:177` — `_y_su_n(n, mp.mpf(str(q_val)), 2)`. The third argument **is** `N`.
+2. `wedderburn_jones_markov.py:129-133` — *"D's weights are the **SU(2) quantum dimensions** … The defining difference is the row cap: `y_λ = 0` for `ℓ(λ) > 2`"*.
+3. `wedderburn_jones_markov.py:386-391` — the vanishing blocks *"span `ker(H_n ↠ TL_n)`, of dimension `n! − Catalan(n)` (1, 10, 78, 588, 4611, 38890 at n = 3..8)"*, citing sorry-free `QOU.QBeta.WenzlWeight.conventionD_weight_eq_zero_iff`.
+4. **`docs/audits/2026-09-05-phi-k-weight-family.md:105` — *"Production is `N = 2` (convention D)"*.** Stated outright, in the very audit whose §7 I was answering.
+
+### The chain, verified independently (check A)
+
+`Σ_{ℓ(λ)≤2} (f^λ)² = Catalan(n) = dim TL_n`, and `n! − C_n` reproduces **all six** of the corpus's kernel dimensions exactly (5/5/6/1, 14/14/24/10, 42/42/120/78, 132/132/720/588, 429/429/5040/4611, 1430/1430/40320/38890). So:
+
+    H_n(q) ↠ TL_n(q) ≅ End_{U_q sl_2}(V^{⊗n})
+
+and convention D zeroes `y_λ` **precisely on the kernel**. The canonical trace does not merely tolerate `N = 2` — it is **defined on the `N = 2` quotient**. Horn 1 of §7 is the corpus's actual position, structurally rather than in prose; horn 2 is not a rival, because `TL_n` **is** that endomorphism algebra.
+
+### 🛑 RETRACTION — two errors, both mine, both merged in #6768
+
+**(a) Depth is off by one.** The Φ_k audit defines *"Depth `k` means `k+1` rows"* (line 104). So depth 3 is **exactly 4 rows**, and "≥ 3 rows" — what my probe measured — is **depth ≥ 2**. The numbers were right; the stratum name was not.
+
+**(b) The conclusion drawn from it is false.** On the real depth-3 stratum (exactly 4 rows), `N = 3` gives **0.0** too:
+
+| n | #λ depth 3 | N=2 | N=3 | N=4 | Molien | Plancherel |
+|---|---|---|---|---|---|---|
+| 4 | 1 | **0.0** | **0.0** | 0.003505637 | 0.074351 | 0.04166667 |
+| 6 | 2 | **0.0** | **0.0** | 0.03376524 | 0.348728 | 0.2513889 |
+| 9 | 6 | **0.0** | **0.0** | 0.1496872 | 0.3916401 | 0.4614446 |
+
+Both caps sit below 4 rows. The first `N` that does not is **4**, which nothing in the corpus proposes. At `n = 3` (proton, A=1) the stratum is **empty** — no 4-row partition of 3 — so Φ₃ has no index set there at all, for any `N` and any family.
+
+**And the Φ_k audit had already said this**, lines 107-108: *"at `N = 3` the cap still lands on depth ≥ 3, so **`k = 3` is vacuous under `y_λ` at both the mass (`N = 2`) and colour (`N = 3`) readings**."* I quoted the paragraph immediately above that sentence and did not carry the sentence itself.
+
+### What route 1 DOES establish — a constraint that eliminates every current candidate
+
+Any family consistent with the canonical trace must **vanish on `ker(H_n ↠ TL_n)`**, i.e. on every λ with ≥ 3 rows. Measured, **both survivors fail it**: Molien carries 0.223 / 0.902 / 0.998 there at n = 3/6/9; unrestricted classical Plancherel is nonzero at every depth-3 row above; `d_q²/D²` fails unless `D²` is restricted to ≤ 2 rows.
+
+So the honest statement is **stronger** than "open": *no candidate on the table satisfies the corpus's own consistency requirement.* The one that does (check C) is the properly-scoped horn-2 share, `(f^λ)²/C_n` over `ℓ(λ) ≤ 2` — normalised exactly (1.0 at n = 4, 6, 8), zero off the cap by construction, a **fifth** measure. **Not endorsed** — it inherits classical Plancherel's q-independence objection; it is named as the only candidate clearing the constraint.
+
+### Not established
+
+- **Φ₁ / Φ₂ are NOT excluded.** Depth 0 and 1 are inside the cap and carry **all** the N=2 mass (check D: 1.0 at n = 3, 6, 9). The exclusion is specific to `k ≥ 2`.
+- Which family Φ_k should use. Narrowed by a constraint, not selected.
+- Anything about the colour sector — `N = 3` appears only as the tested alternative, and it fails the same way.
+
+### Corrections landed on the merged artifacts
+
+`schur_weyl_share_is_a_third_measure_probe.py` (label + header, still 6/6) and `docs/audits/2026-09-05-schur-weyl-share-is-a-third-measure.md` (correction banner, F3 row, §0 conclusion, §3 caption and closing, §8 open item). F1, F2 and F4 are unaffected — none depends on the depth labelling.
+
+### 2026-09-05 addendum — the corpus-grep: `N = 2` is DERIVED and was closed a month ago, plus a second error of mine
+
+A six-path corpus-grep (path 0 unavailable — `paper-assistant` MCP `ENOENT`, so greps only) strengthens the answer well past "ruled" and finds one more defect in my merged note.
+
+**It is derived, sorry-free, from a framework axiom — and the same axiom excludes `N = 3`.** `VolumeConstraintForcesFibreTwo.lean` (0 sorries), from condition (v) of `def:quantum-observable-universe` (`ε : Λ²V → 𝟙`, `dim Λ²V = C(N,2)`):
+
+    theorem exteriorSquareDim_eq_one_iff (N : ℕ) : exteriorSquareDim N = 1 ↔ N = 2   -- :151
+    theorem exteriorSquareDim_three_ne_one  : exteriorSquareDim 3 ≠ 1 := by decide    -- :168
+
+Second route: convention D inverts to Wenzl level `r = 2` on the nose, and `2026-08-16-su-r-level-tower-gap-map.md:57-61` identifies **fibre dimension `N` = Wenzl level `r`**.
+
+**It was closed 2026-08-07.** Bean **`qou-fvzm`** is `completed`: *"CLOSED FOR GOOD 2026-08-07 by main commit `f92a8b15` 'N = 2 is LOCKED IN for the mass pipeline'."* Commit verified: `f92a8b1500`. Its mechanism note is the sharpest statement of why: `χ_λ` are **N-independent**, so all N-dependence sits in the weights, and *"'row cap kills the singlet' and 'Ocneanu weight vanishes' are ONE fact"*. It also records that moving to `N = 3` would **re-weight surviving channels**, not merely add blocks — `y_(2,1)/y_(3) = q[2]_q[N−1]_q/[N+2]_q`.
+
+**The conflation I was entertaining is named in the corpus.** `eightfold-intro.md:26`: *"because we have set `n = 3` and would like `N = 3`. **Setting `n = 3` does not make `N = 3`.**"* And colour does not change the fibre: the canonical `bring_color_weighted` path runs `z_D = q³/(q²+1)` and applies colour as a **δ-perturbation on the p–n interface** (`closed_form_tau_M.py:305-307`); the only `N = 3` fibre in `computations/` is a probe fixture.
+
+### 🛑 A SECOND error in my merged note: F4 computes the share of the wrong algebra
+
+F4 says horn 2's `End(V^{⊗n})` has block share `(f^λ)²/n!`. **At `N = 2` that is `H_n`, which is not the operator algebra of the pair.** `q`-Schur–Weyl is an isomorphism only for `N ≥ n`; at `N = 2`, `n = 3A` the map `H_n(q) ↠ TL_n(q)` is surjective with kernel `n! − C_n`. The correct share is `(f^λ)²/C_n` over `ℓ(λ) ≤ 2` — exactly what check C of the new probe computes.
+
+**The bare `≅` is a live corpus defect in three further places**: `notation-collisions.md:153`, `MassLeftMulEndomorphism.lean:20` (*"literally an endomorphism of `V^⊗ⁿ`"*), `wenzl-bridge-applicability-qou.lean:33`. Self-contradicted by `TraceBlindSector.lean:11` (`TL_n(q) = End_{U_q(sl₂)}(V^{⊗n})`) and by `wedderburn_jones_markov.py:388`'s own kernel dimensions. Two sites get it right: `QSchurWeyl.lean:11` (*"the **image of**"*) and `RowCap.lean:48-56` (*"a number read off `S^λ` for `ℓ(λ) > N` is a number about the algebra, not about the carrier"*).
+
+The `N ≥ n` condition is stated in a **held but uncited** source — `library/black-samson-phd2010sp` pp. 30-31: *"For `d ≤ n`, `π_d` is injective. In the sequel we will be concerned with the other extreme, where `π_d` is **far from injective**"*, at `(m|n) = (2|0)` = Jones = `N = 2`. That is this framework at `d = 3A ≫ 2`. Zero citations outside `library/`.
+
+### Two sourcing errors of mine, corrected
+
+- **Descartes does not force `dim V = 2`.** I cited `state_space_natural_three_sym2_gate.py:8-17`'s *"by the Descartes condition"*. The corpus forbids that: `schur-weyl-eightfold.md:53` (*"compatible with but does not uniquely force"*) and `2026-08-04-ocneanu-trace-parameter-audit.md:114` (***"Do not claim `N = 2` is forced by the Descartes condition"***).
+- **`schur-weyl-mass-decomposition.md` does not keep λ with rows beyond 3.** Second-hand and wrong. It is **line 18**, about an approximation discarding *"rows longer than 3"* = `λ₁ > 3`, part **size** — its own examples `(3A−1,1)` and `(3A−2,2)` are two-row partitions. Not the row cap, and no live producer runs it.
+
+### Further corpus defects found, reported not fixed
+
+- **`wedderburn_jones_markov.py` contradicts itself inside one function.** `:355-359` says the `y_λ` path replaces the 2-variable Schur *because* the latter vanishes for >2 rows — implying `y_λ` does not. `:385-395`, same function, says `y_λ` is *"EXACTLY zero for every λ with ≥ 3 rows"*. The docstring is convention-C-era; the body is D.
+- **Strand count still unreconciled, with a third site.** `H_{A+Z}` at `atomic-braid.md:2` **and `wedderburn-mass-formula.md:2`** (same chapter as the `3A` claim) against `H_{3A}` at `schur-weyl-mass-decomposition.md:1` and `hecke_3a_weights.py:5`. Does not affect this answer — `N = dim V` is independent of `n`.
+- **`markov-trace-frobenius-selection.md:19` calls the fibre-trace premise open** while `TraceBlindSector.lean:26-30` argues it is resolved. Two live positions; they agree on `N = 2` either way, since the volume-axiom route does not go through it.
+## 2026-09-05 (later) — the two survivors are now separable, on grounding
+
+Two new measurements, both in exact rational arithmetic, both with their own
+witness:
+
+**(1) Molien IS the literature's q-Plancherel measure — now exact, not sampled.**
+`probes/molien_feray_meliot_bridge_probe.py` (5/5). The bean already recorded
+this identification 'exact in Q(q), n=2,3,4,5'. It is now verified for EVERY
+partition of n=1..9 (96 of them) as equality of rationals, plus the two
+identities that make the kappa exponent forced rather than chosen
+(`sum h = n(lam)+n(lam')+n`, `kappa = n(lam')-n(lam)`, both over n<=10), plus
+Feray-Meliot's duality `M_{n,1/Q}(lam') = M_{n,Q}(lam)` over n<=9 — which is
+what lets their q<1 theorems reach the substrate's Q = q0^2 ~ 1.232.
+`prop:q-plancherel-asymptotic-skeleton` is rehomed onto it (`qou-j7ef`, PR #6771).
+
+**(2) Only Molien is a measure BY IDENTITY.**
+`probes/plancherel_deformation_uniqueness_probe.py` (3/3). Of the three
+numerators in the corpus, over [n]_q!, exactly one sums to 1:
+
+    (f^lam)^2             -> n!/[n]_q!, falls 0.980 -> 0.326 over n=3..12
+    f^lam q^{-kappa} d_q  -> 1, exactly, every n, every q
+    d_q^2                 -> rises 0.987 -> 1.517 over the same range
+
+The two failures go in OPPOSITE directions in n, so no single rescaling repairs
+both. And the kappa exponent is forced UP TO CONJUGATION: over c in [-3,3],
+exactly c = -1 and c = +1 normalise `f^lam q^{c kappa} d_q`, and those two are
+one measure on transposed diagrams (conjugation fixes f^lam and the hook
+multiset and negates kappa — verified over all partitions of n<=9). I predicted
+a unique exponent; the measurement gave two, and the second turned out to be the
+same rows-vs-columns duality as in (1), reached from a different direction.
+
+**WHAT THIS DOES AND DOES NOT SETTLE.** It does NOT add a fourth requirement:
+R2 asks only for an n-independent normaliser and BOTH survivors satisfy it, so
+both remain legitimate probability measures and the choice is still not forced
+by the requirement set. What it separates is HOW each earns normalisation —
+Molien by a Lean-proved identity for all n and all q>1, `d_q^2/D^2` by dividing
+by whatever makes the sum 1 — and Molien additionally carries a literature
+asymptotic theorem (LLN for row lengths + CLT at scale sqrt(n)) that
+`d_q^2/D^2` has none of.
+
+**MY RECOMMENDATION (judgement, not a finding): Molien.** Normalised by a
+theorem rather than by construction, externally grounded, and its kappa is
+forced. The cost is that it CHANGES THE k=3 ANSWER — the FR-variance route
+names 5_2 under Molien and 6_1 under `d_q^2/D^2`. The paper's structural 6_1
+naming comes from the GB-filtration route and carries no weight family at all
+(`qou-9b50`), so it is untouched either way; but the FR route's agreement with
+it is not.
+
+**STILL OPEN, and it is the author's call**, because wiring a family into the
+production Phi_k moves physics-facing numbers and the choice is not derived.
+
+
+## 2026-09-05 — coordination from #6768, INDEPENDENTLY VERIFIED here
+
+A sibling agent working route 1 posted findings on #6771. I re-checked every
+checkable one rather than relaying them; all hold.
+
+- **FM §6.1 states the Schur-Weyl measure outright** —
+  `library/arxiv-1001.2180v2/sections/sec-023-...:68`: *'the Schur-Weyl measure
+  charges only the Young diagrams whose lengths are smaller than N'*. Neither of
+  us had opened that section; I had grepped sec-002/004/021 only.
+- **'Schur-Weyl measure' has 0 hits outside `library/`** (content, docs,
+  computations, .beans). Verified.
+- **`library/arxiv-1009.4034v1`** (Meliot, *Kerov's CLT for Schur-Weyl
+  measures*) is held and greppable, **0 citations in references.ts**. Verified.
+  Available source, not yet used — deliberately NOT added as a reference entry,
+  since an entry nothing cites is noise.
+- **The row cap zeroes the `V^{n}` share at N=2** — verified and STRONGER than
+  reported: `SU(N) qdim(lam) = 0 IFF lam has more than N rows`, an iff, over
+  every partition of n=1..9 at N=2 and N=3. Total `SUM f^lam*qdim` over lam
+  with >2 rows is exactly 0.0 at n=3,6,9.
+
+**TWO MORE MEASURES EXIST and my four-family table was implicitly exhaustive.**
+Corrected in the #6771 body. Neither is a production path, which the four are:
+  - `V^{n}` Schur-Weyl share: `f^lam * prod[N+c]_q/[h]_q`, index set = lam with
+    <= N rows, normaliser `[N]_q^n`. Different index set AND normaliser, so it
+    is NOT a rescaling of Molien.
+  - classical `(f^lam)^2/n!` via `End(V^{n})`. Normalised by Burnside at every
+    n — but **q-INDEPENDENT**, which is an objection to it as a Phi_k weight,
+    not a feature: it can carry no substrate dependence into the functional.
+    Flagged back to #6768.
+
+**WHAT I HAVE THAT ROUTE 1 DOES NOT.** #6768 frames it as *'route 1 now turns on
+one thing only: which N the nucleus is a state at'*. True of route 1, but the N
+question and the family question are not independent downstream — measured, the
+ratio `w_Molien/w_dimq2` at q0 normalised to its own mean spreads
+**1.87x at n=3, 22.9x at n=6, 1831x at n=9**, monotone row-to-column (that is
+`q^{-kappa}`, extremal on those shapes). Since n = 3A, n=9 is A=3. Picking the
+wrong family at the n where the physics lives is a 10^3 error, so selecting a
+module reading does not make the family choice a detail. Both stay live.
+
+
+## 2026-09-05 — CLOSED. Owner ruling: Molien canonical, two-arm reporting.
+
+**Ruling:** *'molien. do the two arm reporting'*. Molien
+`f^lam q^{-kappa} dim_q/[n]_q!` is the canonical Phi_k weight; `dim_q^2/D^2`
+is retained as a LABELLED comparison arm, not a fallback.
+
+**Delivered:**
+- `fr_pullback_k3_test.py` — base measure is now a parameter
+  (`base_weights(by_partition, family)`) threaded through the FR pullback, the
+  uniform precompute and both binding functions; the pipeline runs twice and
+  reports both arms plus a cross-arm comparison. The FR redistribution RULE is
+  family-agnostic and unchanged between arms — the two were previously
+  conflated in one hard-coded expression, which is the ambiguity this bean was
+  about.
+- `prop:plancherel-term-7-formulation` — Phi_k defined over Molien, title
+  updated, both arms and their disagreement stated in the block itself.
+
+**THE ARMS DISAGREE, which is why one number would have been an overclaim:**
+
+    family              baseline   best knot   best m/m   vs baseline
+    molien  CANONICAL     1.5489       5_2       1.2169      +21.4%
+    dimq2_selfnorm        1.0660       6_1       1.0478       +1.7%
+
+Under the canonical arm the FR MECHANISM gets substantially stronger support
+(+21.4% vs +1.7%) while the paper's 6_1 gets NONE — 6_1 lands at 1.6068x,
+WORSE than that arm's own baseline. The paper's structural 6_1 naming is
+untouched either way: it comes from the GB-filtration route, which carries no
+weight family (qou-9b50), and the verdict string now says so.
+
+**Blast radius, measured (option C):** ~~4 of 36~~ **11 of 37** live
+`w_lambda`-referencing files. `w_lambda` is a NAME shared by different objects;
+counting the name was the wrong measurement — but so was my replacement for it.
+
+**SUPERSEDED 2026-09-05 (PR #6840).** The 4 was an undercount by a factor of
+~2.75, and the sentence it supported — "the one real non-harness consumer
+besides the k=3 test is `beta_ew_delta_I_321_and_wedderburn.py`" — is FALSE.
+Seven files build `dim_q(...)^2 / q_factorial(...)` and NONE was visible to the
+regex, which required the literal token `dim_q`/`d_q` immediately followed by
+`**`. The seven spellings that defeated it: `dim_q_num(...)`, `q_dimension(...)`,
+`_q_dimension(...)`, `d_q_lam`, `dq[l]`, a single-letter `d`, and — the one that
+matters — `dim_q(part) ** 2`, i.e. a CALL to `dim_q` itself, since `dim_?q\w*`
+cannot cross a `(`. The detector could only ever match a VARIABLE named dim_q,
+never a call to the function it is named after.
+
+Repaired by resolving each operand back through the file's assignments to the
+FUNCTION that produced it (`cached_accessor_shape_audit.py` precedent); both
+passes retained, buckets are their union, `--selftest` pins the known miss.
+
+**Three of the seven are on the alpha_EM axis** — `alpha_5_jucys_murphy_central`,
+`alpha_em_b2_scalar_c_probe`, `alpha_em_b2_canonical_scale_ratio_probe` — an
+axis the 4-of-36 figure hid completely. Whether the Molien ruling moves a
+physics-facing number there is NOT triaged.
+
+The claim about `beta_ew_delta_I_321_and_wedderburn.py` itself still stands: its
+six candidates are same-n ratios — invariant under dim_q^2/[n]_q! ->
+dim_q^2/D^2, NOT invariant under Molien.
+
+**Four errors of mine on this bean, all caught by tooling not by me:** scaling
+law tested inverted; `(f^lam)^a d_q^b` predicted to normalise at (1,1) when it
+gives 0.457 (I had dropped q^{-kappa}); nearly recorded beta_EW as invariant
+under the whole choice; and a dated ruling banner in prose plus a JS
+string-concatenation bug that broke the manifest. All recorded at the point
+where the next reader would repeat them.
+
+
+### Reconciliation with the parallel route-1 pass (#6768, merged 08:52Z)
+
+That pass reported *'Not established: which family Phi_k should use. Narrowed
+and partly excluded, not closed.'* **That was correct and is not contradicted
+here.** Route 1 asks which object the nucleus is a state in, and it genuinely
+does not select between the two survivors — at N=2 it excludes the module-share
+reading altogether, by the same row-cap invariant R1 uses to retire y_lambda.
+
+What closes this bean is not route 1 but the **owner ruling**, which came
+after that merge and answers the family question directly. Their F1
+(Molien = Feray-Meliot, reached by change of variables) is an independent
+second leg under my exact-rational result, and their F2/F3/F4 are why the
+`V^{n}` share and classical `(f^lam)^2/n!` are recorded here as further
+measures rather than as arms. So: their measurement stands, its 'not closed'
+verdict was accurate as of its merge, and the ruling superseded it.
+
+## 2026-09-05 — the alpha_EM axis, triaged (PR #6840)
+
+The corrected blast radius exposed three alpha_EM files the 4-of-36 figure had
+hidden. That axis is the one that matters: the corpus's ONE scoreable L2 result
+(m_K/m_pi) is alpha_em-conditional.
+
+`probes/alpha_em_b2_weight_family_triage_probe.py` (2/2, 50 dps, no float64).
+`alpha_em_b2_scalar_c_probe.py` pins the B2 scalar c on w_(4,1)(q0) and its own
+verdict calls that 'the canonical MARKOV normalization'. At lambda=(4,1), n=5:
+
+    Plancherel  d_q^2/[5]_q!        = 0.12862000417524688333   what it COMPUTES
+    Molien      f^l q^-k d_q/[5]_q! = 0.07429973308938433194   canonical
+    Markov      y_(4,1) at N=2      = 0.12498539716794710592   what it CALLS it
+
+The identification is MEASURED, not inferred from the source shape: the
+assertion reproduces the consumer's printed value to 22 digits at 1e-18.
+
+MOLIEN MOVES THIS AXIS BY -42.23 %, AND NO CANCELLATION IS AVAILABLE. This
+bean's own result — that a lambda-independent rescale drops out of a same-n
+ratio, which is why dim_q^2/[n]_q! -> dim_q^2/D^2 is a no-op for the beta_EW
+consumers — DOES NOT REACH HERE. That consumer normalises on a SINGLE
+partition, so there is no ratio for anything to cancel from, and Molien's
+q^{-kappa} is lambda-dependent besides. Do not carry the beta_EW invariance
+result across to this axis; it is scoped to same-n ratios.
+
+The Markov row is the quiet one: 2.83 % from Plancherel, close enough that the
+mislabel would never be caught by eye. Presumably how it survived.
+
+NOT a claim that c is wrong: c = (Markov norm)/(Hodge polarization norm) and the
+Hodge denominator (Braden-Northover period polarization of Jac(Bring)) is openly
+unsupplied, so c is not a delivered number. THE OTHER TWO alpha_EM FILES ARE NOT
+TRIAGED.
+
+A precision defect of mine, caught by the gate before commit: the probe first
+held its comparison constant as a module-level mp.mpf of a 20-digit literal,
+which is evaluated at import when mp.dps is whatever the import order left it
+at. At mpmath's default 15 it truncates by 5.98e-18 — LARGER than the 1e-18
+tolerance of the assertion comparing against it. It passed only because an
+earlier import had already raised dps. Held as a string now;
+module_const_precision_audit --strict goes LOSSY 1 -> 0.
+
+## 2026-09-05 — the alpha_EM triage is CLOSED; two of three need no change
+
+Closing the loop the previous entry left open.
+
+`alpha_em_b2_canonical_scale_ratio_probe.py` — NOT AFFECTED, the
+counter-example. It tabulates y_lambda and w_wedderburn side by side under
+explicit labels and its own comment already states the distinction correctly
+("tr(1)=1 for the canonical Markov trace: sum_lam y_lam * f^lam = 1. (NOT
+sum_lam w_lam -- that equals 1 only at q=1 ...)"). The mislabel found in the B2
+scalar probe is SPECIFIC TO THAT FILE, not general to the axis. Worth stating,
+because the natural inference from "three alpha_EM files are affected" is that
+the axis is uniformly sloppy, and it is not.
+
+`alpha_5_jucys_murphy_central.py` — AFFECTED IN PRINCIPLE, IMMATERIAL IN FACT.
+Its headline compares SUM_{lam |- 3A, ht=6} w_lam c_5(lam) across A = 2,3,4
+with w = dim_q^2/[n]_q!; since n = 3A that is a cross-atom metric at three
+different n, i.e. exactly this bean's own R2 scope-(b) exclusion. Measured
+(probes/alpha5_jm_crossatom_budget_probe.py, 2/2): the height-6 partial budget
+B_6(A) spreads 222x across those A, and alpha_5(A) = B_6(A) * <c_5>_A
+factorises exactly (1e-40), so a raw spread cannot separate "c_5 moved" from
+"the budget moved".
+
+BUT the producer's conclusion is a NEGATIVE reached by all three of its routes:
+
+    NORMALIZED by [3A]_q!   rel spread   482.16 %
+    RAW                     rel spread    83.163894
+    partial self-normalised rel spread  1327.18 %
+    VERDICT: strongly atom-dependent (mechanism orthogonal to JM-central)
+
+including the self-normalised route R2 admits. So the weight-family choice can
+neither rescue nor overturn it, and the Molien ruling requires no change to this
+file. I was heading for a distortion finding; the measurement says the result is
+robust, and the smaller claim is the one recorded.
+
+Verified against the producer rather than modelled on it: the probe reproduces
+its printed raw alpha_5 (5.608246e-04 / 1.978017e+00 / 1.645002e+02) and its
+partial-norm c_5 (0.4704417 / 42.94229) at q0.
+
+STANDING SCORE for the 11 of 37: 1 file carries a genuine mislabel with a
+-42.23 % Molien move (alpha_em_b2_scalar_c_probe, and its c is not a delivered
+number anyway); 1 is affected in principle but route-invariant; 1 is a correct
+labelled two-arm tabulation. The remaining 8 are NOT triaged.

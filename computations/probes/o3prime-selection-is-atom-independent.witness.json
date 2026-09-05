@@ -1,0 +1,293 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T16:49:20.793983+00:00",
+  "commitSha": "439df9de278ac6142d4cab8357ee3b02079d1ff5",
+  "assertions": [
+    {
+      "name": "argmin(t) == argmin(w) on EVERY row — the character never moves the selection",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "same n, different atoms -> SAME selected block",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "same n, different atoms -> DIFFERENT price, so the price IS atom-dependent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "the spread-dominance explanation is REFUTED — chi-spread exceeds w-spread on at least one row and the argmin is unmoved anyway, so the mechanism is NOT that w varies more",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "w and chi are ANTI-correlated on EVERY row — concordant pairs fall below the independent expectation of half, so a large character lands preferentially on a small weight",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "the product is FLATTENED relative to w on EVERY row — chi partly CANCELS the weight ordering rather than adding to it, and the cancellation is incomplete, so w's argmin survives into t",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "w is a strictly INCREASING function of the content sum on EVERY row — so ordering the survivors by w IS ordering them by c(lambda)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "conc(w, |chi|) == conc(c(lambda), |chi|) IDENTICALLY on every row — the anti-correlation is a fact about the CONTENT SUM against the character, not about the Markov weight",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "o3prime-selection-is-atom-independent",
+  "scriptFile": "o3prime_selection_is_atom_independent_probe.py",
+  "scriptHash": "66a551627e81",
+  "scriptCommitSha": "4a9c4bfebdf5f328fd4454c60bae8dd5bd8dcbb5",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/o3prime_selection_is_atom_independent_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/o3prime_selection_is_atom_independent_probe.py"
+  },
+  "description": "O3' selects a block, but NOT the bound state's block. The objective t_lambda = w_lambda * chi^lambda(W_atom) factors into an atom-INDEPENDENT weight and an atom-dependent character; measured over all six committed rows, argmin(t) == argmin(w) every time, so the character never moves the selection. Two atoms at n=3 and two at n=9 give the SAME block with DIFFERENT prices. Mechanism UNEXPLAINED: the first spread-dominance account is refuted here -- chi-spread exceeds w-spread at n=9 and the argmin is unmoved anyway. THE MECHANISM THAT DOES hold is an ANTI-CORRELATION between w and chi: concordant partition pairs are 9/49 = 18% against 24.5 expected, so a large character lands preferentially on a small weight and the product is FLATTENED relative to w on every row (never amplified) -- chi is a partial cancellation of the ordering it would have to reverse, not an independent perturbation. Exact distribution-free tail, one row per distinct n and the least extreme within each: 343/518400 ~ 6.6e-4. Cancellation is INCOMPLETE (t-spread 1.35x-10.2x), so w's argmin survives. WHY the anti-correlation holds REDUCES to the content sum: w is a strictly increasing function of c(lambda) on 49/49 pairs, so conc(w,|chi|) == conc(c(lambda),|chi|) IDENTICALLY row by row, and the effect decomposes as c up => w up (49/49 exact), c up => dim down (6/49), dim up => |chi| up (43/49). For two-row partitions [n] has max content and dim 1 while the balanced partition has min content and max dim. Still open: whether the 43/49 link is exact-with-a-degenerate-case (n=6 sits at exactly 3/6) or only statistical. CONSEQUENCE: PR #6752's reading of the selection as 'which Wedderburn blocks the bound state saturates' is WRONG and is corrected; the pricing result (y_0* nonzero and atom-dependent, where the full LP has y_0* = 0 identically) STANDS.",
+  "auditOnly": "docs/proposals/2026-09-05-operator-selection-objective-replacement.md",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "rows": [
+      {
+        "row": 0,
+        "n": 3,
+        "n_survivors": 2,
+        "argmin_t": [
+          2,
+          1
+        ],
+        "argmin_w": [
+          2,
+          1
+        ],
+        "same": true,
+        "price_t_min": "0.447041147540400587771436992037792948784743520699240000000000",
+        "w_spread": "2.04370620853252198940201933567738830976821396071355264058991",
+        "chi_spread": "1.30756622297248205680748597396195312460234823982928591930392",
+        "t_spread": "1.56298485891336160490615301714282984103438884083101955897329",
+        "flattening": "1.30756622297248205680748597396195312460234823982930000845455",
+        "n_pairs": 1,
+        "concordant": 0,
+        "tau_tail": "1/2"
+      },
+      {
+        "row": 1,
+        "n": 3,
+        "n_survivors": 2,
+        "argmin_t": [
+          2,
+          1
+        ],
+        "argmin_w": [
+          2,
+          1
+        ],
+        "same": true,
+        "price_t_min": "0.420626157889027901602133437403681247873588972216950000000000",
+        "w_spread": "2.04370620853252198940201933567738830976821396071355264058991",
+        "chi_spread": "1.51579918540911917373288165531250354705804885976872865548949",
+        "t_spread": "1.34826976304312960689234439179813355430964938459176338730253",
+        "flattening": "1.51579918540911917373288165531250354705804885976874819151560",
+        "n_pairs": 1,
+        "concordant": 0,
+        "tau_tail": "1/2"
+      },
+      {
+        "row": 2,
+        "n": 6,
+        "n_survivors": 4,
+        "argmin_t": [
+          3,
+          3
+        ],
+        "argmin_w": [
+          3,
+          3
+        ],
+        "same": true,
+        "price_t_min": "0.0642671492247627779306976063673960466406916920881960000000000",
+        "w_spread": "7.62534203713249695670141762989255924623136986209968659424281",
+        "chi_spread": "2.72420232408119342931414331528234407502873592696028852469690",
+        "t_spread": "3.95128437304913122410764432724260982704426624474022499131537",
+        "flattening": "1.92983883649157985125210684067005983726779300099521528426051",
+        "n_pairs": 6,
+        "concordant": 1,
+        "tau_tail": "1/6"
+      },
+      {
+        "row": 3,
+        "n": 9,
+        "n_survivors": 5,
+        "argmin_t": [
+          5,
+          4
+        ],
+        "argmin_w": [
+          5,
+          4
+        ],
+        "same": true,
+        "price_t_min": "0.0165496952235817501471613735182095199614535874747440000000000",
+        "w_spread": "5.91491061780669391433300152304207723128163811452297267925466",
+        "chi_spread": "6.44841296446525448749773431742111758846258237824116536865259",
+        "t_spread": "4.69646393667336623351250277120973930946914634969629054149565",
+        "flattening": "1.25943916477646515619051073910861145717756190897381931067501",
+        "n_pairs": 10,
+        "concordant": 2,
+        "tau_tail": "7/60"
+      },
+      {
+        "row": 4,
+        "n": 9,
+        "n_survivors": 5,
+        "argmin_t": [
+          5,
+          4
+        ],
+        "argmin_w": [
+          5,
+          4
+        ],
+        "same": true,
+        "price_t_min": "0.0287868485647897792091917840246165924121303225890690000000000",
+        "w_spread": "5.91491061780669391433300152304207723128163811452297267925466",
+        "chi_spread": "6.71217860580942750332159089142339097107971147153433161603573",
+        "t_spread": "4.26614809026825241968223552365536103635087282288406526921587",
+        "flattening": "1.38647569016638811889328258858918342741944695727270302371653",
+        "n_pairs": 10,
+        "concordant": 1,
+        "tau_tail": "1/24"
+      },
+      {
+        "row": 5,
+        "n": 12,
+        "n_survivors": 7,
+        "argmin_t": [
+          6,
+          6
+        ],
+        "argmin_w": [
+          6,
+          6
+        ],
+        "same": true,
+        "price_t_min": "0.00468272098229808284404533996797918912262545157841530000000000",
+        "w_spread": "17.3381908741281979106997363104612820819989018846402185507023",
+        "chi_spread": "12.5081165415982580163716185083112314327356605748342489827545",
+        "t_spread": "10.1812107569147621680780513406449263979897616529773536025327",
+        "flattening": "1.70295962711042368977503713298477142012325207932588277515669",
+        "n_pairs": 21,
+        "concordant": 5,
+        "tau_tail": "49/720"
+      }
+    ],
+    "content_sum_reduction": [
+      {
+        "cs_w": 1,
+        "cs_chi": 0,
+        "cs_dim": 0,
+        "dim_chi": 1,
+        "pairs": 1,
+        "w_chi": 0
+      },
+      {
+        "cs_w": 1,
+        "cs_chi": 0,
+        "cs_dim": 0,
+        "dim_chi": 1,
+        "pairs": 1,
+        "w_chi": 0
+      },
+      {
+        "cs_w": 6,
+        "cs_chi": 1,
+        "cs_dim": 1,
+        "dim_chi": 3,
+        "pairs": 6,
+        "w_chi": 1
+      },
+      {
+        "cs_w": 10,
+        "cs_chi": 2,
+        "cs_dim": 1,
+        "dim_chi": 9,
+        "pairs": 10,
+        "w_chi": 2
+      },
+      {
+        "cs_w": 10,
+        "cs_chi": 1,
+        "cs_dim": 1,
+        "dim_chi": 10,
+        "pairs": 10,
+        "w_chi": 1
+      },
+      {
+        "cs_w": 21,
+        "cs_chi": 5,
+        "cs_dim": 3,
+        "dim_chi": 19,
+        "pairs": 21,
+        "w_chi": 5
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

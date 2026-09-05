@@ -48,17 +48,23 @@ shift $((OPTIND - 1))
 if [ $# -gt 0 ]; then
   TARGETS=("$@")
 else
-  # Content-block siblings only.  Two things that are NOT content blocks and
-  # must not be swept as if they were:
-  #   * anything under a package's library tree (`content/*/lean/<Lib>/**`);
-  #   * the package ROOT module itself (`content/*/lean/<Lib>.lean`) — it is
-  #     the Lake library aggregator.  Excluding the tree but not the root is
-  #     the bug this comment exists to prevent: on the first run `QOU.lean`
-  #     was the sweep's only "red", and it was neither a content block nor
-  #     broken.
+  # EVERY content-block .lean — everything under `content/` that is NOT inside a
+  # package's `lean/` tree.  That prune drops both the library modules
+  # (`content/*/lean/<Lib>/**`) and the package ROOT module
+  # (`content/*/lean/<Lib>.lean`, the Lake aggregator); excluding the tree but
+  # not the root was an earlier bug, in which `QOU.lean` was the sweep's only
+  # "red" and was neither a content block nor broken.
+  #
+  #
+  # The filter was `grep -l '^import QOU'`, which reads as "the files that depend
+  # on the library" and is the wrong population: measured 2026-09-05 there are
+  # 938 content-block .lean files and that filter reached 263 of them.  The other
+  # 675 import only Mathlib — they are still content blocks, still compiled by
+  # nothing else in the repo, and still able to carry the auto-implicit vacuity
+  # class this sweep exists to catch.  A 28%-coverage sweep reporting "0 red"
+  # is the kind of green this whole bean is about.
   mapfile -t TARGETS < <(
-    find content -path '*/lean/*' -prune -o -name '*.lean' -print0 |
-      xargs -0 grep -l '^import QOU' | sort)
+    find content -path '*/lean/*' -prune -o -name '*.lean' -print | sort)
 fi
 [ "${#TARGETS[@]}" -gt 0 ] || { echo "no targets" >&2; exit 2; }
 echo "targets: ${#TARGETS[@]}"
@@ -77,11 +83,15 @@ fi
 export LEAN_PATH="${LPLINE#LEAN_PATH=}"
 export PATH="$HOME/.elan/bin:$PATH"
 export OUT
+# See scripts/lean-shadow-verify.sh: a bare `lean` does NOT apply the
+# lakefile's [leanOptions], and `autoImplicit` differs (lean: true,
+# lakefile: false), which makes bare lean-direct a WEAKER check than Lake.
+export LEAN_OPTS="${LEAN_OPTS:--DautoImplicit=false -s 65536}"
 
 one() {
   f="$1"
   log="$OUT/$(echo "$f" | tr '/' '_').log"
-  timeout 900 lean "$f" > "$log" 2>&1
+  timeout 900 lean $LEAN_OPTS "$f" > "$log" 2>&1
   s=$?
   n=$(grep -c ': error:' "$log" 2>/dev/null || true)
   printf '%s\t%s\t%s\n' "$s" "$n" "$f"

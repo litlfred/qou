@@ -45,7 +45,7 @@ Categorical-chain reading of the $c_k$ coefficients from [`prop:q-beta-categoric
 | 1 | $b$ | Hoefsmit off-diagonal coupling on $V_{(2,1)}$ — Kashiwara $\tilde f_1$ |
 | 2 | $b^2$ | Kashiwara $\tilde f_1^\dagger \tilde f_1$ return amplitude |
 | 3 | $-2 = J_{\text{Hopf}}(q{=}1)$ | classical-limit Jones polynomial of the Hopf-link substructure |
-| 4 | $b^2 + \tfrac{1}{2}$ | Kashiwara + half-Hopf mixed |
+| 4 | $c_3 \cdot b^4 = -2b^4$ | multiplicative Jones $\times$ Kashiwara mixing |
 
 ## Resolving the ambiguity: fitted versus categorical reading
 

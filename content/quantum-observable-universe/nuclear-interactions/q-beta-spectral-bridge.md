@@ -26,3 +26,24 @@ $$
   \cdot \Bigl(1 + \tfrac{(z-1)\,h}{2} + O(h^2)\Bigr).
 $$
 *The remainder at depth $N$ in the brane-tower truncation decays exponentially.*
+
+> **⚠ The `z` defined above is convention C, which is excised** (labelled
+> 2026-09-05, `qou-i229`). $z := 1/(\sqrt q + 1/\sqrt q) = 0.4993\ldots$ is
+> convention **C** of the
+> [trace-convention registry](../../../docs/coordination/trace-convention-registry.md),
+> there marked *EXCISED 2026-08-09*
+> ([reconciliation](#rem:markov-z-reconciliation)). For the `qbeta-decay`
+> channel the registry records the **definitional** convention as **D**,
+> $z_{\mathrm{D}} = q^3/(q^2+1) = 0.6127\ldots$, per the owner ruling of
+> 2026-08-15 (*"convention D is convention. excise convention C"*), with C
+> **structurally excluded** — in D the loop values satisfy
+> $z\,z_- = 1/[2]_q^2$ and the framing ratio is the monomial $a = q^2$, while C
+> admits no such factorisation.
+>
+> **Not migrated here.** The channel's migration is scoped and tracked as
+> `qou-cds1`; this block is one of its members, and moving it alone would leave
+> the channel half-migrated. Labelled rather than recomputed, the same move
+> `df13e845cee` made for the $q_0$ pins. The consequence is visible: the
+> $\mathfrak{Q}_\beta$ figures shift by $\sim 0.05$ MeV between conventions.
+> Analysis: [`docs/audits/2026-09-05-which-z-does-the-qbeta-spectral-bridge-intend.md`](../../../docs/audits/2026-09-05-which-z-does-the-qbeta-spectral-bridge-intend.md).
+

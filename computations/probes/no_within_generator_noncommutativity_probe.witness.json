@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T20:45:37.333227+00:00",
-  "commitSha": "46a986c80459be1485ff0513ab926d4e187b61ed",
+  "computedAt": "2026-09-05T12:57:06.551665+00:00",
+  "commitSha": "d3af948286f9e79d2104711f2341ed72589f0c8f",
   "assertions": [
     {
       "name": "the live readout reproduces the proved single-crossing bond factor z + d",
@@ -12,6 +12,12 @@
     },
     {
       "name": "the deprecated readout does NOT — this is the error behind the retracted test",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "on all three interface letters the live readout equals z + d and the deprecated one misses by more than 0.1 — the table published as the correction to thm:markov-trace-factorization",
       "computed": "1",
       "expected": "1",
       "passed": true
@@ -42,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 36,
+  "durationMs": 17,
   "computation": "no_within_generator_noncommutativity_probe",
   "scriptFile": "no_within_generator_noncommutativity_probe.py",
-  "scriptHash": "2a4df2653319",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "538325905f5a",
+  "scriptCommitSha": "572819bc13e459dd5153ba3f929973c446b035e2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -71,7 +77,16 @@
     "live_readout": "z*M[1][0] + M[1][1] = z*beta + alpha",
     "single_crossing_vhat": "z + d",
     "commutator": "0",
-    "multiplicativity_defect_at_z": "(q**4 + q**2 + 1)/(q**4 + 2*q**2 + 1)"
+    "multiplicativity_defect_at_z": "(q**4 + q**2 + 1)/(q**4 + 2*q**2 + 1)",
+    "bond_factor_pp": "0.6126880371464652515958299",
+    "deprecated_readout_pp": "1.128088744114353785593152",
+    "live_readout_pp": "0.6126880371464652515958299",
+    "bond_factor_nn": "0.4036277383508259361649837",
+    "deprecated_readout_nn": "1.000000000000000000000000",
+    "live_readout_nn": "0.4036277383508259361649837",
+    "bond_factor_pn": "0.5082297893767389625779958",
+    "deprecated_readout_pn": "1.064088425324561054006668",
+    "live_readout_pn": "0.5082297893767389625779958"
   },
   "caveats": [
     "Says nothing about the all-pairs word, whose band generators span several generators and genuinely fail to commute — that is qou-bygw, untouched and still blocked on a modelling decision.",

@@ -1,0 +1,135 @@
+{
+  "computation": "qbeta-full-range-bond-sum",
+  "assertions": [
+    {
+      "name": "closed_form_pair_counts_match_brute_force",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "min(Z,d,N,A-d) for the p-n census is the step that could quietly be wrong; this is the control that says it is not"
+    },
+    {
+      "name": "full_range_over_binds_relative_to_contact",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the implied scale moves by 1.90427x. The contact chain already over-binds at 0.886, so this was the expected direction and is NOT the test -- see section 2"
+    },
+    {
+      "name": "full_range_moves_p5_p95_down_but_the_full_spread_UP",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "p5-p95 1.224972733 -> 1.207270092 (1.445 % better) but full 10.18150685 -> 10.70821279 (5.173 % worse). One measure improving marginally while the widest worsens is redistribution, not repair"
+    },
+    {
+      "name": "and_layout_free_bond_counting_still_beats_both",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "layout-free (A-1) scores p5-p95 1.180845597, full 8.173443606 -- better than full range on BOTH. Restoring the range does not recover what the isospin-resolved letters cost in the first place (qou-q7ga)"
+    },
+    {
+      "name": "the_range_extension_moves_the_LIGHT_end_not_the_heavy_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "scale-normalised median shifts 6.9354 % in A=2-20 against -0.545835 % in the heaviest bin. Light nuclei have few pairs, so extending the range changes them most in relative terms -- and they are where the tails of the distribution live"
+    },
+    {
+      "name": "full_range_washes_out_the_layout_difference",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "segregated-vs-alternating p5-p95 gap 0.4589 % at contact, -0.03037 % at full range. Once every pair contributes, the ORDER of the nucleons stops mattering -- an independent route to qou-48is's finding"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "L_pp": "0.4898993842551349",
+    "L_pn": "0.6768215923863434",
+    "L_nn": "0.9072622655332129",
+    "weight": "L_type . b_type^(d-1)",
+    "identification": "mu = -ln b -- a MODELLING CHOICE, not derived; the same b that suppresses the trace per bond is taken to set the range",
+    "layout": "segregated chain p^Z n^N"
+  },
+  "data": {
+    "n_measured": 2548,
+    "median_ratio_contact": "11.2418965053",
+    "median_ratio_full_range": "5.90352319191",
+    "scale_shift": "1.904269051",
+    "spreads": {
+      "segregated chain, contact": {
+        "p25_p75": "1.095302555",
+        "p5_p95": "1.224972733",
+        "full": "10.18150685"
+      },
+      "segregated chain, FULL RANGE": {
+        "p25_p75": "1.095120684",
+        "p5_p95": "1.207270092",
+        "full": "10.70821279"
+      },
+      "alternating chain, contact": {
+        "p25_p75": "1.096878707",
+        "p5_p95": "1.230594564",
+        "full": "10.39972464"
+      },
+      "alternating chain, FULL RANGE": {
+        "p25_p75": "1.094197642",
+        "p5_p95": "1.206903405",
+        "full": "10.95107432"
+      },
+      "layout-free (A-1)": {
+        "p25_p75": "1.084254599",
+        "p5_p95": "1.180845597",
+        "full": "8.173443606"
+      }
+    },
+    "by_mass_bin": [
+      {
+        "A_range": "2-20",
+        "n": 101,
+        "contact_norm": "0.82724826",
+        "full_norm": "0.88462126",
+        "shift_pct": "6.9354"
+      },
+      {
+        "A_range": "21-60",
+        "n": 334,
+        "contact_norm": "1.0702518",
+        "full_norm": "1.0674854",
+        "shift_pct": "-0.258486"
+      },
+      {
+        "A_range": "61-120",
+        "n": 667,
+        "contact_norm": "1.0591572",
+        "full_norm": "1.0488993",
+        "shift_pct": "-0.968492"
+      },
+      {
+        "A_range": "121-180",
+        "n": 764,
+        "contact_norm": "0.99791052",
+        "full_norm": "0.99303964",
+        "shift_pct": "-0.488108"
+      },
+      {
+        "A_range": "181-300",
+        "n": 682,
+        "contact_norm": "0.94030099",
+        "full_norm": "0.93516851",
+        "shift_pct": "-0.545835"
+      }
+    ],
+    "layout_gap_pct_contact": "0.45893519",
+    "layout_gap_pct_full_range": "-0.030373236"
+  },
+  "provenance": {
+    "headSha": "d9a5f6886412d37a51e1426d74f13ec4dd2569cc",
+    "producer": "computations/qbeta/qbeta_full_range_bond_sum_probe.py",
+    "elapsed_s": 14.53
+  }
+}

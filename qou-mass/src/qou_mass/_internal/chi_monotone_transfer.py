@@ -105,14 +105,13 @@ def word_to_mpfr(word, q: "mp.mpf"):
     """
     h = q - 1 / q
     symbolic = _is_symbolic(q)
-    # The float below is a TEMPLATE CLASSIFIER, not a computation (d is rebuilt
-    # from `q` at full dps just below), but it is what refused a sympy `q` and
-    # blocked every symbolic evaluation of the trace — see bean `qou-j320`. A
-    # symbolic word already carries its `d` EXACTLY at the requested `q`, so
-    # there is nothing to re-identify and nothing to re-lift: pass it through.
-    # The numeric path below is untouched.
-    h_f = None if symbolic else float(h)
-    color_deltas = None  # lazy: the live color-weight δ conventions
+    # The floats below are a TEMPLATE CLASSIFIER, not a computation (d is
+    # rebuilt from `q` at full dps just below), but that classifier is what
+    # refused a sympy `q` and blocked every symbolic evaluation of the trace —
+    # see bean `qou-j320`. A symbolic word already carries its `d` EXACTLY at
+    # the requested `q`, so there is nothing to re-identify and nothing to
+    # re-lift: pass it through. The numeric path below is untouched.
+    templates = None  # lazy: (d_mpf, float) for every live crossing template
     out = []
     for c, d, g in word:
         if symbolic:
@@ -121,31 +120,47 @@ def word_to_mpfr(word, q: "mp.mpf"):
         cf, df = float(c), float(d)
         if abs(cf - 1.0) > _TOL:
             raise ValueError(f"unsupported crossing c={c} at gen={g} (expect c=1)")
-        if abs(df) < _TOL:
-            d_mp = mp.mpf(0)
-        elif abs(df + h_f) < _TOL:
-            d_mp = -h
-        elif abs(df + h_f / 2) < _TOL:
-            d_mp = -h / 2
-        else:
-            # Color-weighted p-n crossing `−h·(½ − δ/4)`. The word may have been
-            # built under either live δ convention: the canonical single source
-            # `_avg_color_delta()` (q=None / q₀ words — now `flavor_split_leading`
-            # after the 2026-06-29 flavor-split de-wire) or `flavor_split_*(q)`
-            # for q-parameterised words. Re-identify against all live conventions
-            # and rebuild d at full dps from whichever matches; raise only if
-            # NONE does, so genuine convention drift still fails loudly.
-            if color_deltas is None:
-                color_deltas = _color_weight_deltas(q)
-            d_mp = next(
-                (-(h * (mp.mpf("0.5") - dlt / 4)) for dlt in color_deltas
-                 if abs(float(-(h * (mp.mpf("0.5") - dlt / 4))) - df) <= _TOL),
-                None)
-            if d_mp is None:
-                raise ValueError(
-                    f"unrecognised crossing (c={c}, d={d}) at gen={g}; expected "
-                    "σ / σ⁻¹ / averaged / color-weighted p-n")
+        # NEAREST template, not the first one within `_TOL` (bean `qou-v1cp`).
+        # The templates are 0, −h, −h/2 and the color-weighted
+        # `−h·(½ − δ/4)` under each live δ convention — all four SCALE WITH
+        # `h = q − q⁻¹ = 2·sinh(η)`, which → 0 as q → 1, while `_TOL` is
+        # ABSOLUTE. Once |h| < _TOL every template sits within _TOL of every
+        # crossing, so an ordered first-match test sorted the whole word into
+        # whichever bucket it tested first — `d_mp = mp.mpf(0)` — silently.
+        #
+        # Measured before this fix, on tr_M(pp) vs tr_M(nn) at 90 dps: correct
+        # at η = 1e-9, exactly equal (flavour gone) at η = 1e-10, with the
+        # count of distinct lifted `d` falling 3 → 2 → 1 precisely where h/2
+        # and then h cross 1e-9. No raise, no warning, plausible numbers.
+        #
+        # Nearest-match is scale-free and changes NOTHING where the templates
+        # are separated by more than _TOL (production q₀ has |h| ≈ 0.21 and a
+        # minimum separation of ~7.5e-5, four orders above _TOL). The accept /
+        # reject set is unchanged too: this still raises exactly when no
+        # template lies within _TOL, so genuine convention drift fails loudly.
+        if templates is None:
+            templates = [(v, float(v)) for v in _d_templates(q, h)]
+        d_mp, best_f = min(templates, key=lambda t: abs(df - t[1]))
+        if abs(df - best_f) > _TOL:
+            raise ValueError(
+                f"unrecognised crossing (c={c}, d={d}) at gen={g}; expected "
+                "σ / σ⁻¹ / averaged / color-weighted p-n")
         out.append((d_mp, g))
+    return out
+
+
+def _d_templates(q: "mp.mpf", h: "mp.mpf"):
+    """Every `d` a recognised atom-word crossing may carry, at full dps.
+
+    σ (0), σ⁻¹ (−h), averaged (−h/2), and the color-weighted p-n
+    `−h·(½ − δ/4)` under each live δ convention. Note every entry but the
+    first is proportional to `h`, which is why `word_to_mpfr` classifies by
+    nearest template rather than by an absolute threshold — see the comment
+    there.
+    """
+    out = [mp.mpf(0), -h, -h / 2]
+    for dlt in _color_weight_deltas(q):
+        out.append(-(h * (mp.mpf("0.5") - dlt / 4)))
     return out
 
 

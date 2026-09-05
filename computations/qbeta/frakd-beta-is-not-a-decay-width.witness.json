@@ -1,6 +1,6 @@
 {
   "description": "CAL-2 is named the neutron beta-decay WIDTH D_beta, and the corpus asserts Q_beta = hbar/D_beta with Q_beta a 0.784 MeV Q-value. Both cannot hold: if D_beta is the width then hbar/D_beta is the LIFETIME (878.4 s), and if D_beta := hbar/Q_beta then it is 24 orders of magnitude from that lifetime. The framework computes the decay's ENERGY RELEASE, not its RATE. This RETRACTS the interpretive claim of PR #6687/#6700 that candidate (iii)'s obstacle was already satisfied; (iii) returns to open.",
-  "engine": "mpmath 50 dps; no float64",
+  "engine": "python",
   "q0Anchor": "proton",
   "q0AnchorReason": "AGENTS.md 2026-08-07 owner directive: proton is the default for all new compute",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
@@ -53,8 +53,13 @@
     {
       "name": "pr_6687_interpretive_claim_is_retracted",
       "passed": true,
-      "detail": "the Lean and arithmetic of #6687 stand (two width MECHANISMS, pure mathematics); the step from 'D_beta is CAL-2' to 'the framework has a categorical decay width' does not. Candidate (iii) returns to OPEN."
+      "detail": "the Lean and arithmetic of #6687 stand (two width MECHANISMS, pure mathematics); the step from 'D_beta is CAL-2' to 'the framework has a categorical decay width' does not. Candidate (iii) returns to OPEN. CORRECTED 2026-09-05: this probe ALSO concluded that the corpus has no rate at all. It does -- prop:hadron-half-life, with a derived T_{3,5} Markov-trace coupling. What is open is the rate's SCALE (the weak-scale crossing count N_v), not its shape. (iii) still returns to OPEN, but re-scoped: the corpus's rate is real at real q, so it exhibits a width needing no Im(q). See weak_scale_crossing_count_nv_probe.py."
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "scriptHash": "d5f720d40d41",
+  "scriptCommitSha": "96ce754cf64c979120cd37c20981d306ea383c32",
+  "commitSha": "63e0861ea45ec158843d550724018fece30d0f8b",
+  "computedAt": "2026-09-05T11:52:07.976515+00:00",
+  "durationMs": 0
 }

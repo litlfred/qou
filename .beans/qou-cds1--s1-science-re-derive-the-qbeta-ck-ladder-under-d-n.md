@@ -6686,3 +6686,542 @@ result would be *declared*, so it should be right before then.
 Convention note, so it is not misread: the C form sits 1.28e-6 from the
 requirement, the D form 6.02e-4, ~470× further. Consistent with the ladder having
 been **built** in C; **not** evidence for C, which is excised.
+## 2026-08-31, S1 — the gate inventory is EXHAUSTED. Do not run the sweep.
+
+Probe: `computations/qbeta/qbeta_d_gate_inventory_is_exhausted_probe.py`, **10/10**,
+exact sympy.
+
+PR #6282 named three gates on a candidate D-frame Habiro generator `rho` and
+retracted two of them in its own commits. This closes the third — the one I
+recorded as surviving.
+
+    gate                     verdict
+    -----------------------  ---------------------------------------------------
+    bar-parity               FILTER, not a selector: every symmetric q-integer is
+                             bar-invariant, so it admits the whole family (#6282)
+    Hankel c_2*c_4 = c_3^2   VACUOUS for rank-1: c_3 = rho*c_2, c_4 = rho^2*c_2,
+                             so it holds IDENTICALLY for every rho (#6282)
+    C-limit reduction        VACUOUS: see below (THIS ENTRY)
+
+### Why the C-limit gate is vacuous
+
+The gate asks that the D ladder reduce to the C ladder where the conventions
+agree, i.e. where `z_C = sqrt(q)/(q+1)` equals `z_D = q^3/(q^2+1)`. Solved
+exactly: **the only positive real solution is `q = 1`.** Away from it they
+diverge immediately (`q = 1.11`: `z_C = 0.499320` vs `z_D = 0.612710`).
+
+And `q = 1` is exactly where the ladder is degenerate:
+
+    hbar_q(1) = 0      u(1) = 0        h(1) = 0
+    Vhat_D(1) = 1      alpha_D(1) = 0  X(1) = u*Vhat_D = 0
+
+so every rung factor `1 + c_k X^k` is 1, the whole product is 1 **for symbolic
+`rho` and symbolic `c_2`**, and the sibling's derived N=1 factor
+`M = cos(a_D - h^2/4)cos(h^2/4)` is 1 as well. The ladder collapses to the bare
+`Q_A` for **every** candidate. The gate is satisfied by all of them.
+
+### Consequence for S1 — this is a prune, not a setback
+
+**All three named conditions admit every candidate.** They do not rank
+candidates; they are satisfied identically. So a wider sweep against these gates
+cannot select a generator no matter how many candidates it enumerates.
+
+This is the formalize-first discipline applied to my own proposed search: the
+structural argument says **do not run the scan**. That is the rule's whole
+purpose — "too much time is lost chasing numerical rainbows that a one-line
+structural argument would have eliminated up front" — and the rainbow here was
+mine, proposed at the end of #6282 ("search for a bar-INVARIANT single
+generator, test any candidate against the Hankel condition, check its weights").
+Two of those three gates I had already retracted; this closes the third, so that
+proposed next move is now fully withdrawn.
+
+Scope **(a)**: a scope-limited negative about the three gates identified so far,
+NOT a claim that no gate exists.
+
+### What S1 actually needs
+
+An **external structural input**, not more candidates. Not asserted here as
+available — naming routes is the next step, and each needs the corpus-grep
+before it is called open or novel.
+
+## 2026-09-02, S1 — the Wenzl c_3 candidate: a fit that misses, formalized as `rfl`
+
+Probe: `computations/qbeta/qbeta_wenzl_c3_candidate_audit_probe.py`, **6/6**.
+
+Found by the corpus-grep for an external structural input (the previous entry's
+stated next step). `docs/coordination/2026-06-13-qbeta-habiro-element-ledger.md`
+records a candidate for `c_3` and marks it "Structural decomposition identified.
+Proceeding to formal derivation." It is a **worked instance of the
+gate-exhaustion finding**, which is why it belongs here rather than as a
+separate defect.
+
+### What the ledger says, verbatim
+
+    "Swept q-deformed fractions against the empirical c_3 = -2.06249 from
+     Kashiwara truncation."
+    "Finding: The residual EXACTLY matches -2 - (3/2) W_4(q), where
+     W_4(q) = 1/[4]_q! is the alternating Wenzl weight."
+
+The selection method is a **sweep against an empirically extracted target** —
+a fit, by its own wording.
+
+### "Exactly matches" does not hold
+
+    [4]_q!                    25.1536370049
+    W_4 = 1/[4]_q!             0.0397556822422
+    candidate -2-(3/2)W_4     -2.05963352336
+
+      vs ledger's own target        -2.06249          0.1385 %
+      vs live extracted, proton     -2.0693425728     0.4692 %
+      vs live extracted, muon       -2.0202002328     1.952  %
+
+Not exact against **any** of them — including the target it was swept to.
+
+### The promised formal derivation is `X = X`
+
+`content/quantum-observable-universe/lean/QOU/BraidKnot/QBetaWenzlDecomposition.lean`:
+
+```lean
+noncomputable def q_beta_c3_wenzl_coefficient (q : ℝ) : ℝ :=
+  -2 - (3/2 : ℝ) * wenzlAltWeight 4 q
+
+theorem q_beta_c3_wenzl_decomposition_exact {q : ℝ} :
+  q_beta_c3_wenzl_coefficient q = -2 - (3/2 : ℝ) * wenzlAltWeight 4 q := by
+  rfl
+```
+
+The theorem unfolds the definition and proves it equals itself. Its docstring
+says *"Here we formally assert the Wenzl weight identity for the c_3 scalar"* —
+it asserts nothing. This is `X = X := rfl`, banned by AGENTS.md §"No trivial
+trues, no tautologies, no laundering" rule 5; and the definition's own docstring
+says the value was *"Empirically identified"*. **Sorry-free is not derived.**
+Nothing in that file connects the Wenzl weight to `c_3`.
+
+### Why this belongs to the gate-exhaustion entry
+
+`W_4` is built from symmetric q-integers, so it is **bar-invariant** — verified
+symbolically, as is the whole candidate. It therefore **passes the parity gate**,
+and would pass the Hankel and C-limit gates too, since those hold identically.
+
+That is the previous entry instantiated: a candidate with a categorical story,
+clearing every named gate, and still a fit that misses by 0.47 % against the
+live value.
+
+### Reconstruction-independence, stated because one finding is weaker
+
+Findings above are independent of how this probe rebuilds the ladder: the
+0.1385 % is two stated numbers compared, the `rfl` is read off the file, the
+bar-invariance is symbolic. A **fourth** check — that no pin reproduces the
+ledger's headline `-0.0005 ppm` (closest reconstruction 0.00738 ppm away) —
+**does** depend on the reconstruction, and is recorded as the weakest of the
+four. Same caution as table 3 in `qou-54g5`.
+
+### Scope
+
+**(a).** NOT a claim that the Wenzl weight is the wrong object, that `1/[4]_q!`
+plays no role, or that the ledger's categorical reasoning is wrong. Only that
+**this identification is unestablished**: not exact, selected by fitting, not
+derived by the Lean written for it.
+
+**What would establish it:** derive `c_3` FROM the H_4 Wenzl projector — the
+route the ledger says produced `1/[4]_q!` in the m_n−m_p split — with Lean
+deriving the coefficient rather than restating it. Not attempted here.
+
+## 2026-09-02, S1 — WHY parity cannot select: the bar-fixed subfield is Q([2]_q)
+
+Probe: `computations/qbeta/qbeta_bar_fixed_field_is_q_of_two_probe.py`, **19/19**,
+exact sympy. This upgrades the gate-exhaustion entry from an empirical
+observation to a structural one, and supplies the reason.
+
+### First, a CORRECTION to PR #6282's own wording
+
+That PR said D's bar action is a multiplicative grading, `bar(x)/x = q^w`.
+Measured, the ratio is **`±q^w`** — there is a Z/2 sign alongside the Z weight,
+and the sign is not a curiosity:
+
+    q        +q^-2         b          +q^0
+    h        -q^0    <--   z_D        +q^-4
+    hbar_q   -q^1    <--   u          +q^2
+    h^2      +q^0          Vhat_D     +q^-2
+                           u*Vhat_D   +q^0
+
+**`h`, the ladder's primary ingredient, is bar-ANTI-invariant of weight 0.** Its
+square is invariant, which is the only reason `u = b*hbar^2` came out clean —
+the sign squares away. The pure-Z-grading statement is right about `u` and
+`Vhat_D` by accident of their even degree in `h`, and I generalised from those
+two cases.
+
+### The reason parity cannot select
+
+Bar-invariance is exactly membership in the fixed field, and that field is
+`Q(s)` with `s = q + 1/q = [2]_q`:
+
+- `bar(s) = s`;
+- `q` satisfies `q^2 - s*q + 1 = 0` over `Q(s)`, so `[Q(q) : Q(s)] = 2`;
+- `1/q` is the other root, and bar exchanges them, so bar is a nontrivial
+  `Q(s)`-automorphism;
+- hence by Galois for a degree-2 extension, **`Fix(bar) = Q(s)` exactly**.
+
+And every symmetric q-integer is a Chebyshev polynomial in `s` — verified n=1..8,
+and it is the recurrence `U_k = s*U_{k-1} - U_{k-2}`, not a coincidence about
+small n:
+
+    [1] = 1              [2] = s            [3] = s^2 - 1
+    [4] = s^3 - 2s       [5] = s^4 - 3s^2 + 1
+    [6] = s^5 - 4s^3 + 3s                   [7] = s^6 - 5s^4 + 6s^2 - 1
+
+so they all lie in `Z[s] ⊂ Q(s)`. The ladder's own ingredients sit there too:
+`h^2 = s^2 - 4`, and `b = sqrt([3]_q)/[2]_q = sqrt(s^2-1)/s` in the quadratic
+extension `Q(s)[sqrt(s^2-1)]`.
+
+**CONSEQUENCE.** "`rho` is bar-invariant" is the single condition "`rho` lies in
+an index-2 subfield" — and an index-2 subfield of `Q(q)` is still an
+infinite-dimensional Q-vector space. A condition whose solution set is an entire
+function field cannot select one element of it.
+
+That is why the parity filter admitted `[2]_q … [5]_q` in #6282 and will admit
+every further one: **they are polynomials in `[2]_q`, and `Q([2]_q)` IS the
+fixed field.** No sharpening of parity-type reasoning helps, because there is
+nothing left to sharpen.
+
+So the gate inventory being exhausted is a *structural fact*, not a gap in the
+search — the three gates are consequences of, or weaker than, membership in
+`Q(s)`.
+
+### Scope, stated carefully because half of this is (b)
+
+- **(b) STRUCTURAL** for the narrow claim: `Fix(bar) = Q(s)` is Galois for a
+  degree-2 extension, and the Chebyshev identity is a recurrence. Neither is a
+  numerical observation.
+- **(a) scope-limited** for the consequence: it says **parity** cannot select the
+  generator, NOT that the generator is unselectable. An input that is not a
+  parity condition — a degree bound, an anchor-independent functional equation,
+  a derivation from the H_4 Wenzl projector — is untouched by this.
+
+### Next, and deliberately not done here
+
+Formalise `Fix(bar) = Q(s)` and `[n]_q = U_{n-1}([2]_q)` in Lean. The corpus
+carries bar-invariance lemmas for individual `quantumInt` values; the general
+statement is what is missing. That is the honest thing to prove — and it is
+worth more than any further candidate testing, since it is the theorem that
+makes candidate testing pointless.
+
+### CORRECTION to the entry above — I had the Lean inventory backwards
+
+The previous entry closes with: *"The corpus carries bar-invariance lemmas for
+individual `quantumInt` values; the general statement is what is missing."*
+**Both halves are wrong, and in opposite directions.** I wrote it without
+grepping, immediately after an entry whose whole subject is a claim asserted
+without checking.
+
+**What IS present** — `content/quantum-observable-universe/braids-and-knots/bar-involution.lean`,
+sorry-free, generic over `[CommRing R] [BarInvolution R]`:
+
+    IsBarSymmetric / IsBarAntiSymmetric        (both, as first-class predicates)
+    barSymmetricProjection / barSkewProjection + `decompose`
+    IsBarSymmetric.add / .mul / .neg
+    IsBarAntiSymmetric.add / .neg
+    IsBarSymmetric.of_mul_antisym
+    IsBarAntiSymmetric.of_sym_mul
+    IsBarAntiSymmetric.pow_two_mul  /  .pow_two_mul_add_one
+
+So the **general** bar-grading algebra is already there — including the Z/2 half.
+`IsBarAntiSymmetric.pow_two_mul` is exactly the "the sign squares away" fact I
+observed for `u = b*hbar_q^2`. My correction to #6282's wording stands (that PR
+did drop the sign), but I should not have implied the corpus was unaware of it:
+it carries the anti-symmetric half as a first-class notion.
+
+**What is ABSENT**: `quantumInt` bar-invariance, at all. Not per-n, not general —
+grepped for `IsBarSymmetric (quantumInt`, `quantumInt_bar`, `bar_quantumInt`,
+and for `quantumInt` near `bar`: nothing. And no `[n]_q = U_{n-1}([2]_q)`; the
+Chebyshev material in the corpus (`brings-surface/genus-filtration-ideal.lean`)
+is about Seifert genus and is unrelated.
+
+So the inventory is the reverse of what I wrote: **the abstract layer is
+present, the concrete instantiation is missing.**
+
+### Which makes the Lean target sharper, not vaguer
+
+The missing bridge is one lemma, and it connects two things that already exist:
+
+    theorem quantumInt_barSymmetric (n : N) (q : R) : IsBarSymmetric (quantumInt n q)
+
+with the Chebyshev identity `quantumInt n q = U (n-1) (quantumInt 2 q)` as the
+natural route (induction on the recurrence `U_k = s U_{k-1} - U_{k-2}`, with
+`IsBarSymmetric.add` / `.mul` / `.neg` discharging the step — all already proved).
+
+That is a better target than the field-theoretic `Fix(bar) = Q(s)`, which needs
+Mathlib `IntermediateField` / `fixedField` machinery. The lemma above delivers
+the load-bearing half of the S1 finding — *every symmetric q-integer passes the
+parity filter, for all n* — inside the corpus's own existing abstractions.
+
+Not attempted here.
+
+## 2026-09-02, S1 — LEAN: every symmetric q-integer is bar-symmetric, for all n
+
+`content/quantum-observable-universe/lean/QOU/BraidKnot/QuantumIntBarSymmetric.lean`
+— `lean`-direct **exit 0**, no errors, no warnings; `#print axioms` on all seven
+declarations gives `[propext, Classical.choice, Quot.sound]`, **no `sorryAx`**.
+
+This makes the S1 negative permanent. The empirical observation was that the
+parity filter admits `[2]_q … [5]_q`; this proves it admits `[n]_q` for **every**
+`n`, so no candidate generator built from symmetric q-integers can ever be
+distinguished from another by bar-parity.
+
+    theorem quantumInt_isCPEven {q : R}
+        (hbarq : BarInvolution.bar q = q⁻¹) (hden : q - q⁻¹ ≠ 0) (n : ℕ) :
+        IsCPEven (quantumInt n q)
+
+The proof needs neither the Chebyshev identity nor any field theory: numerator
+`qⁿ - q⁻ⁿ` and denominator `q - q⁻¹` are each bar-**anti**-symmetric, and the two
+signs cancel in the quotient. Supporting lemmas `bar_zero'`, `bar_neg'`,
+`bar_sub'`, `bar_inv'`, `bar_inv_eq` are derived from the four class axioms
+(`bar_involutive`, `bar_add`, `bar_mul`, `bar_one`) — the class has no `bar_zero`
+or `bar_inv` field, so both are proved rather than assumed.
+
+**Base ring (§7c):** generic `{R : Type*} [Field R]`, `Field` only because
+`[n]_q` needs `q⁻¹`. No ordering, no `Real.sqrt`, no archimedean construct, no
+numerical `q₀`. Pre-archimedean.
+
+### Where it had to live, and why that is a finding
+
+The ring-level bar algebra I cited two entries ago —
+`braids-and-knots/bar-involution.lean`, 321 lines, sorry-free, carrying
+`IsBarSymmetric`/`IsBarAntiSymmetric` and the closure lemmas — **is outside the
+Lake library glob** (`globs = ["QOU", "QOU.+"]`; that file is under
+`braids-and-knots/`, not `QOU/`) and **is imported by nothing**. The only
+reference to it anywhere is a docstring mention in `ThetaQcdFramingCp.lean`.
+
+So my "PRESENT" in the correction entry was true of the *source* and false of the
+*module*: the algebra is proved but unreachable from any library file. That is a
+third correction to my own inventory, and it is the one that changed what could
+be built.
+
+It also cites `bar-symmetric-three-layer-synthesis.lean` as the file it
+"intentionally duplicates during the transition, once both blocks land on main".
+**That file does not exist.** The transition its header describes cannot complete
+as written.
+
+**What is reachable, and is a better home anyway:**
+`QOU/StandardModel/ThetaQcdFramingCp.lean` declares an in-library
+`BarInvolution` + `IsCPEven`, with a docstring saying it is declared locally
+"so this file is verifiable stand-alone by `lean`-direct without depending on
+whether the content-block sibling is compiled". Someone hit this exact problem
+and solved it locally. It also already carries `bar_qpow`
+(`bar (qⁿ) = (qⁿ)⁻¹`), which is precisely the helper this proof needs.
+
+### Verification, and two process notes
+
+`lean`-direct against the real import cone (a genuine Lake build here — 3399
+traces against 3393 mathlib oleans, so not a restored no-trace cache and
+`lake build` was never at risk). Compiled with `-o` to produce an olean, then a
+separate importing file for `#print axioms`, because bare `lean` writes no olean.
+
+Two of my own errors, both caught before any claim: I wrote `linarith` into a
+proof over a generic `CommRing` and a nonsense `▸` term, and I read `EXIT=0`
+off `head` rather than off `lean` on the first run — the same wrong-exit-code
+trap recorded earlier in this bean. The first real run then failed on two
+Mathlib argument-order mismatches, fixed with `linear_combination` and an
+explicit `calc` rather than by guessing further lemma names.
+
+## 2026-09-02, S1 — I re-derived a result the corpus already has. Credit + a small correction.
+
+Working the "what non-parity input could select ρ?" question, I computed the
+experimental error bar on `c_3` and was about to record it as an S1 finding.
+**The corpus already has it**, and the corpus-grep caught me one step before
+writing it up.
+
+[`mass-theory/rem-qstar-decay-sector-q0.md:43`](../content/quantum-observable-universe/mass-theory/rem-qstar-decay-sector-q0.md)
+states it exactly:
+
+> "The extractor amplifies the experimental Q_β uncertainty by `1/u³`, giving
+> `σ(c_3) = σ(Q_β)/(Q_N2 u³) ≈ ±1.262` — about 61 % of `|c_3|`. Against that
+> band, `c_3`'s proximity to `−Vol(4_1)` is 0.031σ at the proton pin and 0.008σ
+> at the muon. These are not close agreements in the evidential sense; they are
+> the absence of a measurement, since every candidate constant in
+> `[0.807, 3.331]` agrees at least as well."
+
+Same mechanism, same conclusion, and it goes further than I had (the admissible
+interval, and the `32×`/`130×` sharpening a decisive measurement would need).
+**Not my finding.** Recorded here because it is directly load-bearing for S1 and
+belongs in this bean's chain of reasoning, not because it is new.
+
+### What it means for S1, combined with the parity result
+
+Two independent closures now sit on the generator:
+
+- **Parity cannot select it** — `Fix(bar) = Q([2]_q)`, an infinite-dimensional
+  family, now Lean-proved for all `[n]_q` (this bean, above).
+- **The data cannot select it either** — `c_3 = −2.069 ± 1.38` is a 67 %
+  uncertainty, so `−2`, the Wenzl `−2.0596`, and `−(b²+1/2) = −1.2527` all sit
+  **inside 0.6σ** of the extracted value and of each other.
+
+So the "3.47 % gap" between `−2` and the extracted `c_3` that this corpus has
+flip-flopped over six times is **0.05σ**. It is not a near-match to be explained;
+it is a quantity with no measurement behind it.
+
+Only the superseded `+12.87` is excluded, at **10.8σ** — an independent
+confirmation of the `c_5`-slot direction settled in `qou-54g5`, from a completely
+different argument.
+
+### One correction to the block's number, in the direction that strengthens it
+
+The block's `±1.262` corresponds to the **neutron-mass-alone** uncertainty:
+
+    sigma source                          sigma(Q_beta)   sigma(c_3)   % of |c_3|
+    full quadrature (Q_NEUTRON_MEV_ERR)      6.66408e-7      1.37865      66.62 %
+    neutron mass alone (M_N_MEV_ERR)              6.0e-7      1.24126      59.98 %
+    proton alone                                  2.9e-7     0.599943      28.99 %
+    electron alone                               1.6e-10   0.000331003      0.016 %
+
+But `Q_β = m_n − m_p − m_e`, and `qou_substrate.constants` defines
+`Q_NEUTRON_MEV_ERR` as the quadrature sum of all three — the proton term alone
+contributes 29 %, which is not negligible. So the correct bar is **±1.379
+(66.6 %)**, and the block's is understated by ~9 %.
+
+That makes the block's own argument **stronger**, not weaker: the admissible
+interval widens, so even more candidates are indistinguishable. Not fixed here —
+it is a one-number edit in another chapter's block, and it belongs with whoever
+owns that block rather than riding on an S1 branch.
+
+## 2026-09-03, S1 — the two c_3 bands are the SAME sigma, 100x apart. Do not conflate them.
+
+Probe: `computations/qbeta/qbeta_c3_two_bands_are_the_l2_factor_probe.py`, **8/8**.
+Reviewing what landed on main and the live sibling PRs, two bands for the same
+number are now in the corpus:
+
+    (1) EXPERIMENTAL   rem-qstar-decay-sector-q0.md:43
+        sigma_exp(c_3) = sigma(Q_beta)/(Q_N2 u^3) = +/- 1.262    (61 % of |c_3|)
+        "the absence of a measurement ... every candidate constant in
+         [0.807, 3.331] agrees at least as well"
+
+    (2) L2 TOLERANCE   PR #6353, relayed by #6342
+        c_3 = -2.0693425728 +/- 0.01262                          (0.61 %)
+        "c_3 = -2 = J_Hopf(q=1) is 5.495x outside"
+
+**`band(1)/band(2) = 100.0` exactly** — band (2) is band (1) scaled by the L2
+goal's own factor (`sigma_pred <= sigma_exp/100`). Verified to the digit,
+including that #6353's `5.495x` reproduces specifically from the *neutron-only*
+sigma; under the quadrature sigma it is `5.03x`.
+
+### Both are true, and the same gap sits on opposite sides of them
+
+    |c_3 - (-2)| = 0.0693426
+      vs band (1)   0.055 sigma   INSIDE    experimentally indistinguishable
+      vs band (2)   5.495 x       OUTSIDE   misses the L2 goal by 5.5x
+
+**`5.495x outside` is NOT evidence against `c_3 = -2`.** That candidate sits
+0.055σ from the extracted value; nothing in the data disfavours it. The 5.495x
+says only that *if* `-2` holds, Q_β's L2 goal is missed by 5.5×. A statement
+about the **goal**, not the candidate.
+
+Reading it the other way is exactly the trap AGENTS.md's own `c_k` banner
+records — *"a quantity differing only by normalisation, mistaken for a
+discrepancy"* — one normalisation over. Flagging it because the two bands were
+recorded days apart, by different sessions, and the `5.495x` phrasing reads as a
+refutation on its own.
+
+### The consequence, which is the substantive part
+
+**A derived `c_3` that meets the L2 tolerance could not be validated against
+Q_β at all.** It would be a number claimed to 0.61 % inside a quantity the
+experiment pins to 61 %. The measurement cannot separate a correct derivation
+from a wrong one landing anywhere in `[0.807, 3.331]`.
+
+So Q_β's L2 target sits **two orders of magnitude beyond current experimental
+reach on this parameter**. Consequences, both concrete:
+
+1. A derived `c_3` has to be justified **structurally**. Empirical agreement
+   with Q_β is available to every candidate in that interval and therefore
+   discriminates nothing — including agreement claimed by a future derivation.
+2. The experimental route is quantified, not hopeless: the source block gives
+   **32×** (proton pin) / **130×** (muon pin) sharpening of the neutron
+   Q-value as what would make this parameter testable.
+
+This composes with the two closures already in this bean — parity cannot select
+the generator (`Fix(bar) = Q([2]_q)`, Lean-proved for all `[n]_q`), and the data
+cannot either. The third leg is now explicit: **even a successful derivation
+could not be checked here.**
+
+### Scope and coordination
+
+**Scope (a).** Not a claim that `c_3 = -2` is right, nor that the L2 goal is
+unreachable.
+
+**Coordination.** Band (2) is #6353's, reached independently and **first**;
+#6342 relays it. This entry adds only the *relation* between the bands and its
+consequence. It takes **no position** on #6342's entry-9 `|c_4| <= 1.4816`
+threshold, which is that PR's result and is not re-derived here.
+
+## 2026-09-03, S1 — "RESOLVED" overstates the swing: it carries ±0.0052 from the muon pin
+
+Probe: `computations/qbeta/qbeta_c3_derivative_vs_value_precision_probe.py`,
+**7/7**.
+
+**Most of what I set out to find was already in the corpus, and my corpus-grep
+missed it because I searched `AGENTS.md docs/audits/ content/` and skipped
+`computations/` — path 3 of the checklist.** There are ~55 `qbeta_c3_*` probes.
+Recording what is theirs before what is mine:
+
+- **The 1/u³ amplification and the value bar are `qbeta_c3_experimental_uncertainty_probe.py`'s**:
+  gain `1.618e6`, `σ(c_3) = 1.16`, *"-2 is inside 1 sigma"*. Same mechanism I
+  re-derived, same conclusion.
+- **The common-mode cancellation is `qbeta_c3_swing_gate_probe.py`'s**, and it
+  goes further than I did: it *derives* the cancellation by perturbing `Q_β`
+  rather than asserting it, and already uses the swing as the **primary resolved
+  filter on candidate `u(q₀)` maps**, replacing a conditional diagonal gate.
+
+### What survives, and it bears on that live gate
+
+That probe calls the swing **RESOLVED** on the grounds that the CAL-3 error is
+common-mode — and **does not propagate the pin uncertainty** (grepped:
+no `MASS_RATIO_MU_E_ERR`, no `dq/dr`, no pin σ anywhere in it).
+
+That is exactly the gap my own first pass had. Propagating it:
+
+    sigma(swing) from Q_beta   (common-mode, cancels)   +/- 8.33e-7
+    sigma(swing) from muon pin (does NOT cancel)        +/- 5.21e-3   <- 6255x larger
+    total                                               +/- 5.21e-3
+
+    swing        = -0.049482266
+    significance = 9.4936 sigma
+
+**The swing is significant but not exact.** It carries a **10.5 %** bar. A gate
+keyed on ΔS must allow that tolerance; a tighter one rejects correct candidates.
+
+The 9.4936σ independently reproduces the **9.5σ** μ–p substrate tension AGENTS.md
+documents, from the Q_β side rather than the m_μ side — which is what convinced
+me the corrected number is right rather than a third error.
+
+### Two errors of mine, in opposite directions, before that
+
+1. Propagating only `Q_β` gives *"the swing is 59,400σ"* — wrong by four orders,
+   and it would have passed every gate in this repo.
+2. My first hand-fix applied the 22.2 ppb **directly to q**, giving *"0.53σ, not
+   significant"* — also wrong, because the ratio→q₀ map **compresses** by ~18×
+   (`dq/dr = −2.95e-4`).
+
+### The one consequence worth carrying forward
+
+    quantity      value          sigma        relative     limited by
+    c_3           -2.0693        +/- 1.379      67 %       Q_beta^exp
+    dc_3/dq        3838405.9     +/- 4.04e5     10.5 %     m_mu/m_e
+
+**"Improve the measurement" is two programmes.** Sharpening `Q_β` (the 32× / 130×
+in `rem-qstar-decay-sector-q0`) buys the **value** and almost nothing for the
+derivative; sharpening `m_μ/m_e` buys the **derivative** and nothing for the
+value. The derivative's *value* is the corpus's three ways over (my fourth route
+agrees to ~1e-6); the **error bar** is what was missing.
+
+### Note on a small numeric difference, not chased
+
+The swing-gate probe records `ΔS = 0.0491423421` (its O2 value); I get
+`0.049482266`, 0.7 % apart. Different extraction paths (its `S_leak` carries a
+`Vol(4₁)` that cancels in the swing). Flagged, not reconciled — it does not
+move the 10.5 % conclusion, and reconciling it belongs with that probe's owner.
+
+### Scope
+
+**(a).** Convention C. Not a claim that the swing gate is wrong — its cancellation
+derivation is sound and its use as the primary filter stands. Only that its
+tolerance should be **±0.0052**, not zero.

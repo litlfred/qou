@@ -66,8 +66,31 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from hoefsmit_symbolic import dim_q  # noqa: E402
 
+from qou_substrate.witness import _tolerance_literal  # noqa: E402
+
 mp.mp.dps = 60
 Q_MP = mp.mpf(Q_50_DIGIT_STR)
+
+#: Declared threshold for check C1. Carried NUMERICALLY here because the
+#: comparison below needs a number, and serialized through the guard because
+#: the payload needs a literal.
+#:
+#: Why both, rather than just writing `1e-12` in the dict: this producer's
+#: check rows are assertion-SHAPED (`{check, n, computed, expected, tolerance,
+#: passed}`) but live in the DATA payload, not in `assertions[]`. So
+#: `Assertion.to_dict` — which is where `_tolerance_literal` runs — never sees
+#: them, and PR #5910's drain of this file was an artifact edit that any re-run
+#: would silently undo. It had already been undone: `weight-factor-audit`
+#: carried 11 raw `1e-12` on main while every other witness in the corpus was
+#: clean (bean qou-9tqx).
+#:
+#: `_tolerance_literal` is imported, never restated, so this cannot drift from
+#: the rule it implements — the same reason `normalize_assertion_tolerance.py`
+#: imports it. It returns `None` for a computed value (>5 significant digits)
+#: and for an integral one, so `or` falls back to the number in exactly the
+#: cases the guard declines to touch.
+C1_TOL = 1e-12
+C1_TOL_LITERAL = _tolerance_literal(C1_TOL) or C1_TOL
 
 
 # ── Helpers ──────────────────────────────────────────────────────
@@ -131,8 +154,8 @@ def check_C1(n: int) -> dict:
         "n": n,
         "computed": ratio,
         "expected": 1.0,
-        "tolerance": 1e-12,
-        "passed": abs(ratio - 1.0) < 1e-12,
+        "tolerance": C1_TOL_LITERAL,
+        "passed": abs(ratio - 1.0) < C1_TOL,
     }
 
 

@@ -3,8 +3,8 @@
   "name": "witness-raw-float64-audit",
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
-    "dirty_witnesses": 1018,
-    "total_fields": 33738,
+    "dirty_witnesses": 1017,
+    "total_fields": 33725,
     "lp_dual_carved_out_fields": 379,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 129,
@@ -36,7 +36,7 @@
       "y0_star",
       "y_star"
     ],
-    "ephemeral_duration_carved_out_fields": 83,
+    "ephemeral_duration_carved_out_fields": 90,
     "ephemeral_duration_carved_out_by_file": {
       "computations/atom-mass-derived.witness.json": 10,
       "computations/derived-chi-catalogue-sweep.witness.json": 6,
@@ -62,22 +62,29 @@
       "computations/probes/qbeta-sdeformed-leading-bound.witness.json": 1,
       "computations/probes/sdeformed-channel-signflip.witness.json": 1,
       "computations/qbeta/qbeta-asymmetry-sign-is-a-bar-branch.witness.json": 1,
+      "computations/qbeta/qbeta-averaging-index-k.witness.json": 1,
       "computations/qbeta/qbeta-bar-branch-refuted.witness.json": 1,
+      "computations/qbeta/qbeta-bar-weight-family.witness.json": 1,
       "computations/qbeta/qbeta-binding-law-options.witness.json": 1,
       "computations/qbeta/qbeta-bounded-degree-cannot-carry-coulomb.witness.json": 1,
       "computations/qbeta/qbeta-chain-cannot-carry-coulomb-or-surface.witness.json": 1,
       "computations/qbeta/qbeta-channel-range-growth-class.witness.json": 1,
+      "computations/qbeta/qbeta-charge-class-singleton.witness.json": 1,
       "computations/qbeta/qbeta-colour-does-not-license-the-asymmetry.witness.json": 1,
       "computations/qbeta/qbeta-disjoint-support-factorisation.witness.json": 1,
       "computations/qbeta/qbeta-e0-is-derived.witness.json": 1,
       "computations/qbeta/qbeta-flavour-split-series.witness.json": 1,
+      "computations/qbeta/qbeta-full-range-bond-sum.witness.json": 1,
       "computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json": 1,
+      "computations/qbeta/qbeta-isospin-class-singleton.witness.json": 1,
       "computations/qbeta/qbeta-layout-conflict.witness.json": 1,
       "computations/qbeta/qbeta-loop-value-pinned.witness.json": 1,
+      "computations/qbeta/qbeta-self-conjugate-row-cap.witness.json": 1,
       "computations/qbeta/qbeta-strand-multiplicity.witness.json": 1,
       "computations/qbeta/qbeta-symmetry-sign-is-am-gm-locked.witness.json": 1,
       "computations/qbeta/qbeta-tower-log-z-and-roast.witness.json": 1,
-      "computations/qbeta/qbeta-tower-ruling-bound.witness.json": 1
+      "computations/qbeta/qbeta-tower-ruling-bound.witness.json": 1,
+      "computations/qbeta/qbeta-wedderburn-bridge.witness.json": 1
     },
     "ephemeral_duration_field_names": [
       "durationMs",
@@ -107,14 +114,14 @@
     "baseline_fields": 35251,
     "new_not_baselined": 0,
     "regressed": 0,
-    "drained_files": 204
+    "drained_files": 207
   },
   "scriptFile": "witness_raw_float64_audit.py",
   "scriptHash": "9eb501eed27a",
   "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
+  "commitSha": "8c80435863a0fd87472c8fd07ed198e8c3ba6ad7",
   "engine": "python",
-  "computedAt": "2026-09-05T18:16:59.523577+00:00",
+  "computedAt": "2026-09-05T18:42:07.935548+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

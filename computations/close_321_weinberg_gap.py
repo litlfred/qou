@@ -91,6 +91,52 @@ References:
   - witness beta-ew-delta-I-conjugate-pairing.witness.json
   - witness beta-ew-delta-I-321-and-wedderburn.witness.json
   - conj:weinberg-angle-categorical
+
+⚠ WEIGHT AND NAME — CORRECTED 2026-09-05 (bean `qou-wapd`). Read before
+quoting any number from this file.
+
+1. THE AGGREGATE BELOW IS NOT A MARKOV TRACE, despite the label. It is
+   SUM_lam w_lam chi^lam with the PLANCHEREL-family weight
+   w_lam = dim_q^2/[n]_q!. The canonical Frobenius pairing of this
+   framework is tr_M = SUM_lam y_lam chi_lam with the OCNEANU weights,
+   and the two are different objects, not two conventions:
+
+     - a Markov trace is NORMALISED, tr_M(1) = 1. Measured at n=6, q0,
+       50 dps: SUM y_lam chi^lam(1) = 1.000000...  while
+       SUM (dim_q^2/[n]_q!) chi^lam(1) = 11.13944754035206007.
+     - they do not share a support. At n=6, y_lam is EXACTLY ZERO on 7
+       of the 11 partitions (every lambda with > 2 rows) while the
+       weight used here is nonzero on all 11.
+
+   Producer: `probes/beta_ew_weight_is_not_markov_probe.py`.
+
+2. THE (3,2,1) BLOCK CARRIES NO STATES AT N = 2. l((3,2,1)) = 3 and the
+   Schur-Weyl row cap gives dim V_lam = 0 whenever l(lam) > N; the fibre
+   is the fundamental of SU_q(2), so N = 2 and y_(3,2,1) = 0 exactly.
+   The corpus adjudicates the consequence in
+   `content/quantum-observable-universe/appendix-standard-model/`
+   `sm-params-gauge-couplings.md`: "Every route from such a block to a
+   physical number is either a Markov trace, which the row cap sends to
+   zero, or a spectrum, which has no states to act on." The cot(theta_W)
+   figure this file family produces is therefore computed OUTSIDE the
+   carrier, and that appendix states it "must not be cited as a
+   framework accuracy result".
+
+3. NOT MIGRATED to the Molien weight made canonical for Phi_k on
+   2026-09-05 (bean `qou-oots`), deliberately: migrating would move a
+   physics-facing number in a construction the paper has already placed
+   outside the carrier. The six candidate readings here are same-n
+   ratios, so they are invariant under dim_q^2/[n]_q! -> dim_q^2/D^2
+   (same numerator) but NOT under Molien, whose numerator is
+   lambda-dependent.
+
+4. WHAT IS NOT SETTLED: at N = 3 the block IS occupied
+   (y_(3,2,1) = 0.0103939752433) and a genuine Markov trace exists —
+   measured, tr_M(beta_EW Delta_I) = 2.90062956640672874659 at N=3
+   against 4.83789085692050323822 at N=2
+   (`probes/beta_ew_n3_second_trace_probe.py`). Whether the EW sector
+   belongs on an N = 3 second trace is open; the corpus's own preferred
+   lever is elsewhere (the Milnor triple linking mu-bar_123).
 """
 from __future__ import annotations
 
@@ -314,7 +360,8 @@ def path_a_signed_wedderburn(q0, q0_float, word, cot_codata, wb):
     sc_sum = sum(r["pair_sum"] for r in rows if r["self_conjugate"])
 
     print()
-    print(f"  Σ pair_sum (= Markov trace) = {pair_sum_total:.6f}")
+    print(f"  Σ pair_sum (Plancherel-weighted, NOT the Markov trace; "
+          f"see docstring) = {pair_sum_total:.6f}")
     print(f"  Σ pair_sum [sign +1 groups]  = {pos_sum:.6f}  "
           f"({len(pos_groups)} groups)")
     print(f"  Σ pair_sum [sign -1 groups]  = {neg_sum:.6f}  "

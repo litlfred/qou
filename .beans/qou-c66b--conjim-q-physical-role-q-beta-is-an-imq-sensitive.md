@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T10:42:33Z
-updated_at: 2026-09-05T07:46:14Z
+updated_at: 2026-09-05T12:02:58Z
 ---
 
 Parent: `conj:im-q-physical-role`. Reached from `qou-pdix` route 5 (the elliptic
@@ -471,3 +471,69 @@ up later.
 
 Whether any Demazure incompleteness measure at tower depth `n ~ 9–36`
 reproduces the ordering Z < τ < π < μ < n.
+
+
+---
+
+**2026-09-05 — CORRECTION to my own #6704 claim (PR #6823).**
+
+#6704 closed with *"the missing object is not 'a decay observable' (the corpus
+has one) but specifically **the rate**."* **Wrong.** `prop:hadron-half-life`
+states a categorical decay rate
+
+    Gamma_beta = |W(q)|^2 mu_0/(2 pi^3) * [2]_q * |M_q|^2 * f(Q),  f(Q) ~ Q^5
+
+whose coupling is derived in closed form as the canonical Markov trace of the
+T_{3,5} braid word in H_3(q): `W(q) = q^2(q^12+q^8-1)/(q^2+1)^2`. Verified at
+60 dps — two spellings agree to 1.6e-61, `W(q_0) = 1.1874806131` (corpus quotes
+1.1875), `W(1) = 1/4` exactly. See also bean `qou-egvf`, which had already
+derived this closed form; I re-derived it without finding that bean first.
+
+**What is actually open is the rate's SCALE, not its shape.** The weak-scale
+crossing count `N_v` in `v = N_v E_x mu_0` is undetermined, so `G_F` enters
+numerically from experiment — stated already in the `all_six_agree` docstring,
+in `hadron-half-life-verification` Table 1, and in
+`_deprecated/t35-transfer-matrix.py:281`.
+
+**Measured** (`weak_scale_crossing_count_nv_probe.py`, 6/6): since
+`m_e = 3 E_x mu_0`, both `E_x` and `mu_0` cancel and
+
+    N_v = 3 v / m_e = 1445519.509159 +/- 0.372     (q-independent)
+
+Read as a crossing count it must be a positive integer; it sits 0.4908 away,
+1.320 sigma. **The test cannot reach 2 sigma at CODATA-2022 precision** — an
+integrality test is bounded by (1/2)/sigma = 1.345 sigma, and the measurement
+is 98.2 % of that ceiling. `G_F` at 0.514 ppm is the sole limiting input; a
+3-sigma test needs 0.231 ppm, a 2.23x tightening.
+
+**Candidate (iii) stays OPEN, re-scoped AGAINST the candidate.** Every factor
+of the rate is real for real q, so the framework produces a width with no
+Im(q) anywhere. (iii) now needs a reason a width should require Im(q) when the
+framework's own does not. Scope (a). The 24.019-order arithmetic refuting
+`Gamma = hbar/Q_beta` is untouched.
+
+
+## Provenance fix (push `d07f3aaaff`, 2026-09-05)
+
+All three probes this arc added were **bare producers** — no `scriptHash`,
+`commitSha` or `computedAt` — because they hand-rolled witness JSON instead of
+using `WitnessBuilder`. Two also wrote `"q0_anchor": "physical_proton"` against
+the corpus vocabulary `"q0Anchor": "proton"`.
+
+Measured over 3586 committed witnesses: `q0Anchor` **1625**, `q0_anchor` **3** —
+and **2 of those 3 were mine**, added by this PR (1 before). The 143 audit
+read-sites use `q0Anchor`, so the snake spelling is invisible to the ratchet and
+counts as missing.
+
+Fixed at the producer via `stamp_staleness_metadata` (guarded route; NOT
+`wrap_legacy`, which per `qou-3ral` emits payload keys verbatim). All numbers
+IDENTICAL to the git baseline; `scriptHash` now matches live on all three; no
+sibling witnesses written.
+
+**Did NOT apply `q0_anchor=False`** despite this PR's q-independence headline:
+the nv probe's checks 1-3 evaluate W(q0), so the anchor is load-bearing. The
+q-independence belongs to the quantity, not the witness.
+
+Found by acting on a self-correction #6820 posted about its own branch.
+Adjacent existing beans (no duplicate opened): `qou-xm91`, `qou-eggf`.
+Third instance on main, not mine: `qou-vtlj`.

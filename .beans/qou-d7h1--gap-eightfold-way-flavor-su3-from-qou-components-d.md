@@ -55,8 +55,34 @@ no z at all -- they build the 9-element colour-pair weight tensor W.
 z_C solves z_r = z_C at r = 2.5995 (no integer). **z_3 appears NOWHERE outside
 one probe** (ocneanu_param_from_fibre_dimension.py, nothing imports it) and one
 audit comparison table.
-Grep warning: the literal 0.44930482320583087 in many witnesses is h_q, NOT
-z_3 (0.449304809090...) -- they differ at the 8th decimal.
+Grep warning [CORRECTED 2026-09-05, bean qou-yk03 -- SEE BELOW, the original
+named the wrong quantity]: the literal 0.44930482320583087 in many witnesses
+is h_q, NOT z_3 (0.449304809090...) -- they differ at the 8th decimal.
+
+CORRECTION. That literal is z_3 AT THE MUON ANCHOR, not h_q. Measured at
+65 dps (probes/z3_muon_pin_vs_hq_misidentification_probe.py, 2/2):
+
+    z_3 @ muon    0.4493048233034703126034   rel 2.17e-10  <- the literal
+    z_3 @ proton  0.4493048090902078605552   rel 3.14e-8
+    h_q = q-1/q   0.2090602987956393154308   rel 0.535     <- 53 % away
+
+h_q is not a near miss; it is off by a FACTOR OF TWO, so 'they differ at the
+8th decimal' is not a small slip inside a true statement -- the quantities are
+not comparable. The 2.17e-10 on the muon row is the literal's own 17-digit
+truncation.
+
+The real content is MORE SERIOUS IN KIND and SMALLER IN EXTENT. These are not
+two lookalike quantities; they are ONE quantity, z_3 = q^3/[3]_q, at the two
+substrate anchors. The 3.14e-8 gap is the mu-p tension through z_3. That is a
+LAYER STRADDLE, which AGENTS.md calls a defect regardless of size -- and the
+warning as written tells an agent a muon-pinned value needs NO anchor check,
+inverting the 2026-08-07 proton-by-default directive.
+
+EXTENT: ZERO live producers. Five files carry the literal -- three under
+computations/_deprecated/, and the other two are this bean and
+docs/audits/2026-08-16-colour-level-and-tln-compute.md, i.e. the two sites
+carrying the misidentification itself. The correct proton value appears in 21
+files. A documentation correction, not a drain; nothing computed is wrong.
 
 **bring_color_weighted implies NO level.** It is a per-bond scalar over the
 A-1 nearest-neighbour bonds: p-p -> z, n-n -> z-h, p-n -> z-h(1/2-delta/4).

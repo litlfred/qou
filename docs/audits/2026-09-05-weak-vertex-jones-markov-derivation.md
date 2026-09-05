@@ -154,32 +154,44 @@ Lean: `geomCofactor`, `geomCofactor_one`, `geomCofactor_mul`,
 
 ## 5. What this settles
 
-**The order of the `1.19·10⁴` substitution factor is derived, and the residual is
-reported.** A coupling carrying the trace's Jones content sits `≈ 10²` above `s²`,
-so its square sits `≈ 10⁴` above `s⁴`, with `96² = 9216` the leading constant.
-Against the measured `|W(q₀)|²/s(q₀)⁴ = 11875.4418936763`, the **overshoot is**
-
-```
-|W(q₀)|²/s(q₀)⁴ / 96²  =  1.2885679138…
-```
-
-and that measured number is what the Lean brackets, to three decimals
-(`substitutionRateFactor_overshoot_of_leading_square`). The overshoot is nonzero
-because `couplingRatio` runs from `−96` to `−37.09` on the way to `q₀`; it is the
-size of what the leading term misses.
-
-> **The first form of this claim is WITHDRAWN, and the reason is a directive that
-> landed on `main` while this branch was open.** It read `96² < |W(q₀)|²/s(q₀)⁴ <
-> 2·96²` — "good to within a factor of two" — and the PR body defended the
-> two-sided form as "the honest limit, not a decoration". That defence was wrong
-> on its own terms: the `2` is round *only because the measurement fits under
-> it*. Nothing derives it. The 🟥 **NO FITTING, EXCEPT CAL-1/2/3** directive
-> (owner, 2026-09-05) names this exact move — *"a tolerance sized to its own
-> miss is a fit"*, and *"selection against the target"* covers a discrete choice
-> with no continuous parameter tuned. So the window is replaced by the ratio it
-> was hiding. Nothing about the derivation changed; the number that was rounded
-> away is now on the record, and `1.2885679138` is something the next agent can
-> attack.
+> ### 🛑 RETRACTED the same day — the order claim, in both of its forms
+>
+> This section claimed the *order* of the `1.19·10⁴` substitution factor was
+> **derived**, first as `96² < |W|²/s⁴ < 2·96²` and then (after the no-fitting
+> correction) as the measured overshoot `1.2885679138`. **Both are withdrawn**,
+> and this is a retraction, not a re-scoping. Bean `qou-xql6`; producer
+> [`beta_rate_skein_power_audit.py`](../../computations/markov/beta_rate_skein_power_audit.py)
+> (9/9).
+>
+> **(i) The comparison was a category error.** `−96` is the classical value of
+> `(J − 1)/s²`, a ratio whose **numerator vanishes**: `J(1) = 1` because
+> `V_K(1) = 1` for every knot. The substitution factor's numerator does not
+> vanish — `W(1) = 1/4` is the Markov rank factor. So
+>
+> ```
+> lim_{q→1} (J−1)/s² = −96      lim_{q→1} |W|²/s² = +∞      lim_{q→1} |W|²/s⁴ = +∞
+> ```
+>
+> The substitution factor has **no leading constant**, so there was nothing for
+> `−96` to be the order of. The two ratios differ by the framing `q²⁰/[2]_q²` and
+> by the `−1` offset.
+>
+> **(ii) The power was wrong.** `sSq` *is* `s²`, so the merged
+> `substitutionRateFactor = W²/(sSq)²` computed `|W|²/s⁴`, while the rate carries
+> `s²` exactly once — `prf:trace-ratio-observable`:
+> `|ℳ_q|² = |skein_amp|²·|tr(par)/tr(dau)|²` with `skein_amp = q^{1/2} − q^{−1/2}`,
+> *"the Skein amplitude at the beta-decay vertex"*. The factor is
+> **`129.405107404`**, not `11875.44`; high by `1/s² = 91.77×`.
+>
+> **What survives:** §1–§4 in full — the Jones–Markov relation on eight torus
+> knots, `J − 1 = −h₄h₆/q¹⁰`, `(J−1)/s² = −G₈G₁₂/q¹⁹`, `couplingRatio(1) = −96`.
+> Only the bridge to the decay rate is gone. The `qou-ix74` negative also
+> survives at `129×`, which still cannot be a 10–17 % correction.
+>
+> **The lesson worth more than the number:** the earlier fix on this very
+> paragraph replaced a chosen tolerance with a measured ratio — an improvement in
+> *how the number was reported* that did nothing to check whether it was the
+> *right* number. It was not.
 
 **It produces no rescaling constant, and cannot.** `couplingRatio` is a
 non-constant rational function (`couplingRatio_not_constant`, and

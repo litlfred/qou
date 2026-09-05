@@ -46,6 +46,7 @@ def tr_M_borromean_closed_form(q) -> mpc:
        tr_M = (4 + h² - 3h⁴ - h⁶) / (h² + 4)
     where h = q - q⁻¹.
     Works for complex q (e.g., root-of-unity)."""
+    # convention D — verified by EVALUATION at q0, not by reading: computations/audits/borromean_convention_by_evaluation.py
     h = hpos(q)
     h2 = h ** 2
     return (4 + h2 - 3 * h ** 4 - h ** 6) / (h2 + 4)

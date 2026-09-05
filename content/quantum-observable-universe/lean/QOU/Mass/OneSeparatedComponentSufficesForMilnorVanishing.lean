@@ -159,7 +159,16 @@ instance (i j : ℕ) : Decidable (Adjacent i j) := by
 
 /-- The path carrier: `lk` vanishes off consecutive pairs. Stated in the direction
 actually used — non-adjacent implies unlinked — so nothing below silently requires more
-than the measurement supports. -/
+than the measurement supports.
+
+**This hypothesis is no longer a measurement (2026-09-05).**
+`MonotoneWordComponentStructure.linking_only_between_adjacent` proves it for every
+monotone word: a run crossing two distinct components puts them at `compIdx g` and
+`compIdx g + 1`, so only consecutive components can be linked. The `P_μ` shape was
+carried as a measured fact across this whole arc — 7 isotopes, both crossing-resolution
+branches — and it is a theorem. Kept as a structure field because the consumers below
+take a carrier as given; it is now an *instantiable* hypothesis rather than an assumed
+one. -/
 structure PathCarrier extends Summands where
   /-- non-consecutive components are unlinked -/
   lk_zero_of_not_adjacent : ∀ i j, ¬ Adjacent i j → lk i j = 0

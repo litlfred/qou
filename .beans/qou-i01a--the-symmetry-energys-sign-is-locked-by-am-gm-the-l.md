@@ -151,3 +151,20 @@ I not tested off the classical points.
 rule with `p < 0` gives the SEMF sign; `p >= 0` cannot. `p < 0` is a TARGET to
 check a derivation AGAINST, never a criterion to search ON, and nothing here
 adopts the harmonic mean.
+
+
+## 2026-09-05 (later) — the open half is ANSWERED: bar symmetry does not pin w
+
+"Derive the averaging rule" resolves to: **it cannot be, from its own stated
+justification.** Bar invariance of `f_pn = w.b_pp + (1-w).b_nn` reduces to
+`wbar = 1 - w` — one equation — and the family `w_k = q^-k/[2]_{q^k}` satisfies
+it for every `k`. The corpus's `1/2` is the `k = 0` member; what pins it is the
+unstated assumption that `w` carries no `q`.
+
+`delta(w_k)` vanishes at exactly `k = 1` (the geometric mean, `w_1 = 1/(q^2+1)`)
+and is odd about it, so `k = 0`'s exact mirror is `k = 2`. The SEMF sign is the
+region `k > 1`. Full detail and artifacts: `qou-79wa`.
+
+**So this bean's "derive the averaging rule, not w" is discharged**, and the
+residual is one scalar `k` with a derived admissible region rather than an
+open-ended convention question.

@@ -330,13 +330,32 @@ surface the duplicates in step 6) saves a full review cycle.
            LeanSearchClient; do
     LP="$LP:$PWD/.lake/packages/$p/.lake/build/lib/lean"
   done
-  LEAN_PATH="$LP" lean path/to/Changed.lean      # exit 0 = checks, sorry-free
+  # -DautoImplicit=false is NOT optional — see the note below.
+  LEAN_PATH="$LP" lean -DautoImplicit=false -s 65536 path/to/Changed.lean
   ```
 
   Then `#print axioms` on the new declarations to confirm no `sorryAx`. Say in
   the PR that this is what you ran and why.
 
-- **🛑 BUT `lean`-direct against a restored cache verifies against a SNAPSHOT,
+- **🛑 A BARE `lean` DOES NOT APPLY THE LAKEFILE'S `[leanOptions]`, so it is a
+  strictly WEAKER check than Lake — always pass `-DautoImplicit=false`.**
+  `autoImplicit` defaults to **true** in `lean` and is set **false** in both the
+  root and paper lakefiles. With it on, Lean silently auto-binds an unbound
+  identifier as an implicit argument instead of erroring, so a file Lake rejects
+  can pass `lean`-direct. Measured 2026-09-05 on
+  `QOU/MassTheory/AtomWordShadow.lean`, same file, same `LEAN_PATH`:
+
+  ```
+  lean                        ->  exit 0,  0 errors
+  lean -DautoImplicit=false   ->  exit 1,  6 errors      (lake agrees: 20)
+  ```
+
+  That file was **red on `main`** and three sweeps called it clean. Also pass
+  `-s 65536`, mirroring the paper lakefile's `moreLeanArgs`: one generated module
+  overflows the default elaboration stack and aborts as a bare `exit 134` with no
+  source error. The sweep scripts below now pass both.
+
+- **🛑 AND `lean`-direct against a restored cache verifies against a SNAPSHOT,
   and `exit 0` from it is a claim about that snapshot — not about the library
   source your file names.** This is the gate's own blind spot and it has been
   realised: `descartesWtrace` recorded `lean`-direct `exit 0` and **landed on
@@ -416,8 +435,39 @@ surface the duplicates in step 6) saves a full review cycle.
 ## 4a. Mirror-drift gate (BLOCKING on growth)
 
 ```sh
-bun run <folio-assistant>/scripts/check-mirror-drift.ts --package qou --baseline 35
+python3 scripts/mirror-drift-audit.py --baseline
 ```
+
+> **🛑 The command this section used to name did not exist (corrected 2026-09-05).**
+> It read `bun run <folio-assistant>/scripts/check-mirror-drift.ts --package qou
+> --baseline 35`. Measured: **no such file**, not in this repo and not in the
+> `folio-assistant` clone — so for as long as that line stood, this "BLOCKING"
+> gate could only ever error out, and a section that names a missing script is
+> worse than no section, because it reads as covered.
+>
+> The one audit that sounds adjacent,
+> [`scripts/lean-duplicate-fqn-audit.py`](../../scripts/lean-duplicate-fqn-audit.py),
+> does **not** substitute: its own SCOPE note says it walks the library tree only
+> and that *"a clean run here is not evidence that a name is unambiguous in the
+> corpus."*
+>
+> The replacement, [`scripts/mirror-drift-audit.py`](../../scripts/mirror-drift-audit.py),
+> is the missing half — it reuses that script's parser (so the namespace-stack and
+> comment-stripping calibration is not re-litigated) and measures the sibling
+> surface. Baseline: [`docs/audits/mirror-drift-baseline.json`](../../docs/audits/mirror-drift-baseline.json).
+>
+> **Read the baseline before acting on a hit.** Two things it records that the
+> table below does not:
+> - **A faithful live mirror is NOT a defect.** This gate is on *drift*; a
+>   `definition` block is *required* to carry a sibling (§3), so deleting a
+>   faithful mirror breaks that requirement. Of 12 live shadows, **7** are
+>   actionable.
+> - **Do not assume the library is canonical.** Across the 163 substantive drifts,
+>   **91 have the library edited more recently and 70 the sibling** — and recency
+>   is not canonicality. `QOU.Information.speedOfLight` has the *library* edited
+>   later while the *sibling* is the §7c-compliant one (generic base ring,
+>   division-free, defining relation discharged as a theorem). Every
+>   reconciliation requires reading both sides.
 
 A green Lean build does not mean the checkers looked at the code it compiled.
 Content-block `.lean` siblings compile standalone and cannot import one another,

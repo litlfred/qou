@@ -73,6 +73,13 @@ import subprocess
 from datetime import datetime, timezone
 from decimal import Decimal, getcontext
 from pathlib import Path
+# This producer hand-builds its assertion payload and `json.dump`s it, so
+# `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
+# reached, and a re-run would re-emit the float literals and undo PR #5910's
+# drain for this file alone. `_tol` routes each DECLARED tolerance through
+# that guard; it returns a COMPUTED one unchanged, so those stay floats and
+# stay counted by the raw-float64 ratchet. Bean qou-9tqx.
+from qou_substrate.witness import declared_tolerance as _tol  # noqa: E402
 
 getcontext().prec = 60
 
@@ -124,7 +131,7 @@ def main() -> int:
             "computed": float(flip_resid),
             "expected": 0.0,
             "passed": flip_resid < Decimal("1e-30"),
-            "tolerance": 1e-30,
+            "tolerance": _tol(1e-30),
             "source": "ω(β⁻¹,q,p) = −ω(β,p,q) on committed block products "
             "(probe↔Lean BarOddAntisymOffDiagonal.omega_iota_odd tie)",
         }
@@ -155,7 +162,7 @@ def main() -> int:
             "computed": float(max_dev),
             "expected": 0.0,
             "passed": max_dev < Decimal("1e-12"),
-            "tolerance": 1e-12,
+            "tolerance": _tol(1e-12),
             "source": "N_odd = ½(N − Nᵀ): the committed antisymmetric assembly "
             "IS the block home of the ι-odd off-diagonal contraction",
         }
@@ -181,7 +188,7 @@ def main() -> int:
             "computed": float(barodd_swing),
             "expected": 0.0,
             "passed": barodd_swing < Decimal("1e-4"),  # << c₃'s 3.47e-2
-            "tolerance": 1e-4,
+            "tolerance": _tol(1e-4),
             "source": "|Im Ẑ_odd(proton) − Im Ẑ_odd(muon)| / |Im Ẑ_odd(muon)| "
             "from committed A1 two-anchor data — the bar-odd HOME swing",
         }

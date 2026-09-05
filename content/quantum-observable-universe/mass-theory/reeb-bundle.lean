@@ -1,6 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Data.Real.Basic
+import QOU.ArchimedeanUniverse
 /-
   Reeb bundle over the exceptional divisor.
 
@@ -25,17 +26,19 @@ namespace QOU
 /-- The Reeb bundle over an exceptional divisor 𝒮_p.
     This is the Hopf fibration S³ → S² ≅ 𝒮_p equipped with
     the q-Reeb vector field as connection. -/
-structure ReebBundle (q : ℝ) where
+structure ReebBundle (M : Type*) (q : ℝ) where
   /-- The exceptional divisor (base space) -/
-  base : ExceptionalDivisor
+  base : QOU.ArchimedeanUniverse.ExceptionalDivisor M
   /-- The substrate parameter controlling the connection holonomy -/
   substrate : q > 1
   /-- The holonomy of the Reeb connection around a fibre generator
       equals exp(2πi / [2]_q) where [2]_q = q + q⁻¹ -/
   holonomy : ℝ := Real.exp (2 * Real.pi / (q + q⁻¹))
 
--- Note: full Reeb-bundle formalization is pending the
--- ExceptionalDivisor structure (Ch 6 §2); tracked as a TodoItem.
+-- The note that once stood here said the formalisation was "pending the
+-- ExceptionalDivisor structure (Ch 6 §2)".  That structure exists —
+-- `QOU/ArchimedeanUniverse.lean` — and is now imported, so `base` is typed by it
+-- rather than by an auto-bound variable.
 -- Ref: [manuscript] Ch 6 §2
 
 end QOU

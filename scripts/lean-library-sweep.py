@@ -54,10 +54,39 @@ import tempfile
 import time
 from concurrent.futures import ThreadPoolExecutor
 
+# The lakefile's [leanOptions] are NOT applied by a bare `lean` invocation, and
+# the difference is not cosmetic: `autoImplicit` defaults to TRUE in `lean` and
+# is set FALSE here, so bare lean-direct silently auto-binds unbound identifiers
+# that Lake correctly rejects.  Measured 2026-09-05 on
+# QOU/MassTheory/AtomWordShadow.lean, same file and same LEAN_PATH:
+#     lean                        -> exit 0, 0 errors
+#     lean -DautoImplicit=false   -> exit 1, 6 errors
+# `-s 65536` mirrors the paper lakefile's `moreLeanArgs` (one generated module
+# overflows the default elaboration stack and aborts with a bare exit 134).
+LEAN_OPTS = ["-DautoImplicit=false", "-s", "65536"]
+
 ROOT = pathlib.Path(
     subprocess.run(["git", "rev-parse", "--show-toplevel"],
                    capture_output=True, text=True, check=True).stdout.strip())
-PKG = ROOT / "content/quantum-observable-universe/lean"
+PKG = ROOT / "content/quantum-observable-universe/lean"   # default; see packages()
+LIB = "QOU"
+
+
+def packages() -> list[tuple[pathlib.Path, str]]:
+    """Every paper package: (lean dir, library name).
+
+    Discovered, not hardcoded — a package is a `content/*/lean/` holding a
+    lakefile and a top-level `<Lib>.lean` root module whose stem names the
+    library (`QOU`, `UGB`, `Fred2005`).  Sweeping only the first of the three
+    was the gap this closes: UGB and Fred2005 were covered by nothing.
+    """
+    out = []
+    for lakefile in sorted(ROOT.glob("content/*/lean/lakefile.toml")):
+        d = lakefile.parent
+        for root_mod in sorted(d.glob("*.lean")):
+            if (d / root_mod.stem).is_dir():
+                out.append((d, root_mod.stem))
+    return out
 
 
 def find_oleans() -> pathlib.Path:
@@ -70,15 +99,15 @@ def find_oleans() -> pathlib.Path:
     cands = [pathlib.Path(env)] if env else [
         PKG / ".lake/build/lib/lean", ROOT / ".lake/build/lib/lean"]
     for c in cands:
-        if (c / "QOU").is_dir():
+        if (c / LIB).is_dir():
             return c
-    sys.exit(f"no olean tree with a QOU/ dir; looked in: "
+    sys.exit(f"no olean tree with a {LIB}/ dir; looked in: "
              f"{', '.join(str(c) for c in cands)}")
 
 
 def load_graph() -> tuple[dict, dict]:
     mod2path = {str(p.relative_to(PKG).with_suffix("")).replace("/", "."): p
-                for p in PKG.glob("QOU/**/*.lean")}
+                for p in PKG.glob(f"{LIB}/**/*.lean")}
     imports = {}
     for m, p in mod2path.items():
         imports[m] = [i for i in re.findall(r"^import\s+(\S+)", p.read_text(), re.M)
@@ -89,7 +118,7 @@ def load_graph() -> tuple[dict, dict]:
 def last_commit_times() -> dict[str, int]:
     """Repo-relative path -> unix time of its most recent commit, in one pass."""
     out = subprocess.run(
-        ["git", "log", "--format=%ct", "--name-only", "--", str(PKG / "QOU")],
+        ["git", "log", "--format=%ct", "--name-only", "--", str(PKG / LIB)],
         cwd=ROOT, capture_output=True, text=True).stdout
     times, ts = {}, None
     for line in out.splitlines():
@@ -149,14 +178,44 @@ def layers(need, imports):
     return out
 
 
+def lib_slug() -> str:
+    return LIB.lower()
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--shadow")
     ap.add_argument("--jobs", type=int, default=3)
     ap.add_argument("--limit", type=int, default=0,
                     help="stop after N modules (for a smoke test)")
+    ap.add_argument("--package", action="append", metavar="LIB",
+                    help="library name (QOU, UGB, Fred2005); repeatable, "
+                         "default all discovered")
     args = ap.parse_args()
 
+    global PKG, LIB
+    todo_pkgs = packages()
+    if args.package:
+        want = set(args.package)
+        todo_pkgs = [(d, l) for d, l in todo_pkgs if l in want]
+        missing = want - {l for _, l in todo_pkgs}
+        if missing:
+            sys.exit(f"unknown package(s): {', '.join(sorted(missing))}; "
+                     f"have {', '.join(l for _, l in packages())}")
+    if not todo_pkgs:
+        sys.exit("no paper packages discovered under content/*/lean/")
+
+    rc = 0
+    for i, (pkg_dir, lib) in enumerate(todo_pkgs):
+        if i:
+            print()
+        print(f"########## {lib}  ({pkg_dir.relative_to(ROOT)})")
+        PKG, LIB = pkg_dir, lib
+        rc |= sweep_one(args)
+    return rc
+
+
+def sweep_one(args) -> int:
     oleans = find_oleans()
     print(f"olean tree: {oleans}")
     mod2path, imports = load_graph()
@@ -172,11 +231,15 @@ def main() -> int:
         return 0
 
     keep = bool(args.shadow)
-    shadow = pathlib.Path(args.shadow) if keep else pathlib.Path(tempfile.mkdtemp())
+    # Per-library subdirectory: LEAN_PATH resolves a module from the first root
+    # holding that package dir, so two libraries must not share one shadow root.
+    shadow = (pathlib.Path(args.shadow) / lib_slug() if keep
+              else pathlib.Path(tempfile.mkdtemp()))
+    shadow.mkdir(parents=True, exist_ok=True)
     try:
-        if not (shadow / "QOU").is_dir():
-            print(f"copying olean tree into shadow ({shadow}) ...")
-            shutil.copytree(oleans / "QOU", shadow / "QOU")
+        if not (shadow / LIB).is_dir():
+            print(f"copying {LIB} olean tree into shadow ({shadow}) ...")
+            shutil.copytree(oleans / LIB, shadow / LIB)
 
         siblings = [str(p) for p in ROOT.glob("content/*/lean/.lake/build/lib/lean")
                     if p != oleans]
@@ -206,7 +269,7 @@ def main() -> int:
             src = PKG / (m.replace(".", "/") + ".lean")
             out = shadow / (m.replace(".", "/") + ".olean")
             out.parent.mkdir(parents=True, exist_ok=True)
-            r = subprocess.run(["lean", str(src.relative_to(PKG)), "-o", str(out)],
+            r = subprocess.run(["lean", *LEAN_OPTS, str(src.relative_to(PKG)), "-o", str(out)],
                                cwd=PKG, env=env, capture_output=True, text=True,
                                timeout=1800)
             return m, r.returncode, (r.stdout + r.stderr)

@@ -86,3 +86,59 @@ is the binding energy" is marked open. The all-pairs extension is a separate
 matter and is retired for a separate reason: its bond multiset does not
 determine a braid word at all
 ([the ordering ambiguity](#prop:canonical-closure-torus-chain)).
+
+## Why the reading cannot supply the identification — prior to all three misses
+
+The three bullets above are evidence about a formula. There is a prior fact
+about the *reading*, and it is an identity in $q$ rather than a measurement at
+$q_0$.
+
+A free energy is $F = -kT\log Z$ with $Z = \sum_i e^{-E_i/kT}$. Every summand of
+a partition function is a **positive** Boltzmann factor, and that positivity is
+not decoration: it is what makes $F$ a Legendre transform, hence what gives it an
+internal energy and an entropy at all. This state sum has two summands, carrying
+the $\sigma$-eigenvalues $q$ on $(2)$ and $-q^{-1}$ on $(1,1)$:
+
+$$
+  \mathrm{tr}_2(\sigma + d) \;=\; w_+\,(q + d) \;+\; w_-\,(-q^{-1} + d).
+$$
+
+**The second is negative, for every bond.** At $q_0$:
+
+| bond | $\lambda_+ + d$ | $\lambda_- + d$ | $z + d$ |
+|---|---:|---:|---:|
+| $pp$ | $1.10997858275138$ | $\mathbf{-0.90091828395574}$ | $0.61268803714647$ |
+| $pn$ | $1.00552033498165$ | $\mathbf{-1.00537653172547}$ | $0.50822978937674$ |
+| $nn$ | $0.90091828395574$ | $\mathbf{-1.10997858275138}$ | $0.40362773835083$ |
+
+and no letter the algebra has repairs it at any $q$. Positivity needs
+$d > q^{-1} > 0$, while the interface letters are
+$d \in \{0, -h/2, d_{pn}, -h\}$, all non-positive — so the required offset is not
+merely outside the available range, it is **on the other side of zero from all of
+it**, for every $q > 0$. Hence no real $E_-$ satisfies
+$e^{-E_-} = -q^{-1} + d$, and the $(1,1)$ block has no energy.
+
+So there is no $U$ and no $S$ for $\alpha L$ to be, or to differ from. **The
+free-energy reading does not supply the step to a binding energy, and could not
+have.** The three misses are downstream of that, not independent of it.
+
+Nothing is retracted and no number moves — which is the other half of the same
+algebra. The total $z + d$ stays positive because the $(2)$ block outweighs the
+$(1,1)$ block, so $L$ is real, exact and canonical wherever it appears, and the
+free-energy *description* is correct as this block states it: a free energy of a
+signed observable over a quasi-probability. What goes is the sentence after it.
+Whether $\alpha L$ is a binding energy for some *other* reason is untouched and
+still open; what is settled is that this reading is not the reason.
+
+A detail the algebra hands over: for $pn$ the two block factors nearly cancel,
+$(\lambda_+ + d_{pn}) + (\lambda_- + d_{pn}) = h + 2d_{pn} = h\delta/2 =
+1.4380325618674\times10^{-4}$ exactly. The interface the binding arc turns on is
+the near-null vector of the unweighted block sum, and survives in $z+d$ only
+because $w_+ \neq w_-$.
+
+`QOU.Mass.FreeEnergyReadingIsSigned` (sorry-free) proves the general statements:
+`minusSummand_neg`, `no_real_energy_for_minus_block`,
+`positivity_would_need_d_gt_inv_q`, `admissible_letters_nonpos`, the
+positive-but-signed pairing at each of the three letters, and
+`pn_blockSum_eq_h_delta_half`. Measured at $q_0$ in
+`the_free_energy_reading_has_no_energy_spectrum_probe.py`.

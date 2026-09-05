@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:21Z
-updated_at: 2026-09-05T08:40:24Z
+updated_at: 2026-09-05T13:00:02Z
 ---
 
 ## The claim
@@ -230,3 +230,214 @@ Two things to carry:
   **0** on a log holding 20 real errors. (The sweep scripts are unaffected —
   they invoke `lean` directly, which uses the second form, and they decide red
   by exit code rather than by grep.)
+
+
+## 🛑 THE BIGGER DEFECT — a bare `lean` is a WEAKER check than `lake build` (2026-09-05)
+
+Everything above concerns a green going **stale**. This one makes a green
+**wrong from the start**, on any tree however fresh, and it invalidated all three
+of my own scripts plus this repo's documented verification recipe.
+
+`lean` invoked directly does **not** read the lakefile, so it does not apply its
+`[leanOptions]`. `autoImplicit` defaults **true** in `lean` and is set **false**
+in both the root and paper lakefiles. With it on, Lean silently auto-binds an
+unbound identifier as an implicit argument instead of erroring.
+
+Measured on `QOU/MassTheory/AtomWordShadow.lean` — same file, same `LEAN_PATH`,
+one flag apart:
+
+    lean                        ->  exit 0,  0 errors
+    lean -DautoImplicit=false   ->  exit 1,  6 errors
+    lake build (per-paper)      ->  exit 1, 20 errors
+
+**That file was RED on `main`** and was called clean by: a bare `lean`-direct
+run, the content sweep, and the library sweep — three independent "verifications"
+that all shared one wrong assumption.
+
+### How it was found, which is the part worth keeping
+
+Not by any detector. By trying to **reseed the olean cache**: the seeder refused,
+which forced a real per-paper `lake build`, which failed on a file I had
+personally verified `exit 0` an hour earlier. **The contradiction between two
+tools is what exposed it** — neither tool alone could have.
+
+### Fixed
+
+* `lean-shadow-verify.sh`, `lean-content-sweep.sh`, `lean-library-sweep.py` all
+  pass `-DautoImplicit=false -s 65536` (the latter mirroring the paper
+  lakefile's `moreLeanArgs`; one generated module overflows the default
+  elaboration stack and aborts as a bare `exit 134` with no source error).
+* `AGENTS.md` and `/prepare-merge` §4 corrected — the documented recipe was bare
+  `lean`.
+* `AtomWordShadow.lean` fixed: `fresh_freeIdx`, `fresh_atomIdx` and
+  `orbitCount_freeShadow` never bound `A`. The sibling declaration
+  `orbitCount_atomShadow` in the same file already had `{A : ℕ}`, so the fix is
+  that binder on the other three.
+* Re-run with the fix: library sweep **1 RED + 4 skipped**, matching lake
+  exactly — then **73/73 ok** after the repair.
+
+### RESEED: BLOCKED, and this is why
+
+You cannot seed a cache from a tree that does not build. Beyond that, this
+container cannot produce a valid seed at all:
+
+    root .lake/packages/mathlib   6990 oleans,    0 traces   <- restored, untraced
+    per-paper .lake/packages      3734 oleans, 3746 traces   <- genuinely built
+    per-paper QOU build           2642 oleans, 2642 traces
+
+`lean-olean-cache-seed.sh` collects from the **workspace root** and refuses at
+`n_ml=0` (it seeds only *freshly rebuilt* mathlib oleans, tracked in
+`/tmp/parbuild_built.txt`, which does not exist here). Its own message is right:
+force-pushing a mathlib-less branch would make the next agent's restore count
+~0 mathlib oleans and conclude Lean is unavailable. **Do not use
+`SEED_ALLOW_NO_MATHLIB=1` from a container in this state.**
+
+`SEED_PAPER=1` is the sanctioned narrow path and is viable *here* — the
+per-paper tree is fully traced — but it reseeds only the paper oleans, so it
+does not fix the untraced root mathlib that makes the closure non-empty in the
+first place. Left undone deliberately; needs a container with a real
+mathlib build, or the parallel-build producer that writes
+`/tmp/parbuild_built.txt`.
+
+
+## THE SIX CONTENT-BLOCK VACUITIES — found, fixed (2026-09-05)
+
+Re-running the content sweep under `-DautoImplicit=false` turned **261 swept /
+0 red** into **261 swept / 6 red**. All six are the same defect class, and none
+of them broke a build — nothing compiles content-block `.lean` files — so they
+are **semantic** defects: declarations that mean less than they say.
+
+| file | symptom | cause |
+|---|---|---|
+| `knots-particles-confinement/stable-atom` | `Unknown identifier AtomKnot` | real `AtomKnot` is in `QOU/ParticleInteractions/AtomKnot.lean`, never imported |
+| `knots-particles-confinement/unstable-atom` | same | same |
+| `information-theory/hydrogen-partition-function` | `Unknown identifier q` | `boltzmann_ground_state (β hbar : ℝ)` never bound `q`; its own sibling at line 61 does |
+| `quantum-observable-universes/qou-exists-axiom-1` | `unknown universe level v` ×2 | `.{u, v}` applied with neither level declared |
+| `quantum-observable-universes/qou-exists-axiom-3` | same ×1 | same |
+| `quantum-observable-universes/substrate-parameter-exists` | `v` ×2, then `WeightDecomposition` / `CategoricalReeb` unknown | `universe u` declared, `v` used by `[Category.{v} C]`; the two "unknown identifiers" are a cascade from the killed structure definitions |
+
+### The evidence that these were real, not imposed strictness
+
+Content blocks sit outside the Lake package, so no lakefile governs them and
+`-DautoImplicit=false` could have been a scoping error on my part. It was not.
+`#check` on the same structure, one import apart:
+
+    fixed        StableAtom : (R : Type u_1) → [CommRing R] → Type u_1
+    old regime   StableAtom : (R : Type u_1) → [CommRing R] → Type (max u_1 u_2)
+
+That `u_2` is the auto-bound `AtomKnot`. The field documented *"The atom-knot"*
+held an element of **an arbitrary type**. This is the vacuity class of
+AGENTS.md §1a, invisible to every checker in the repo because bare `lean`
+accepted it.
+
+### The redeclaration question, answered by the file itself
+
+I flagged `substrate-parameter-exists` as possibly needing a judgement about
+redeclare-vs-import, since `WeightDecomposition` and `CategoricalReeb` also
+exist in their own files. Its own docstring settles it — *"Mirror of
+`weight-decomposition.lean`'s `WeightDecomposition`"* — so the local copies are
+deliberate and the fix is the missing `universe v`, nothing structural.
+
+### Fixes and verification
+
+Two missing imports, one missing value binder, three missing universe
+declarations. Verified 6/6 exit 0 under the corrected options, then the whole
+261 re-swept.
+
+## THE SWEEP WAS AIMED AT 28% OF ITS TARGET (2026-09-05)
+
+Extending the sweeps to the sibling packages turned up something bigger than
+the sibling packages.
+
+`lean-content-sweep.sh` selected targets with `grep -l "^import QOU"`. That reads
+as *"the content blocks that depend on the library"* and is the wrong population:
+
+    content-block .lean files, total          938
+    reached by the import filter              263
+    never swept at all                        675
+
+The 675 import only Mathlib. They are still content blocks, still compiled by
+nothing else in the repo, and still able to carry the auto-implicit vacuity class
+the sweep exists to catch. **So "261/261, 0 red" was a claim about 28% of the
+population** — the same shape of false green this bean is about, in the tool
+written to prevent it. Filter widened to every `.lean` under `content/` outside a
+package `lean/` tree.
+
+## UGB: 997 errors, one cause
+
+`UGB/GrobnerShirshov/HeckeCompletion.lean` — `variable {n : ℕ}` at line 14981 is
+scoped inside `namespace CornerCriterion`, whose `end` at 15078 closes it. Lines
+15128-18779 (~3700) use `n` as `HeckeGen n`, `0 < n`, `heckeOrder n` and nothing
+rebinds it. Under `autoImplicit = false` none of it elaborates: **997
+`Unknown identifier n`**, capped at 100 by `maxErrors` until re-run with
+`-DmaxErrors=100000`.
+
+One `variable {n : ℕ}` after the `end`, matching the three namespaces above it
+(11420, 13951, 14981): **997 -> 0**.
+
+**UGB and Fred2005 both set `autoImplicit = false` in their own lakefiles**, so
+this is their regime, not strictness imported from QOU. Checked before reporting.
+
+Fred2005: 1 module, clean.
+
+## Both sweeps now cover all three packages
+
+* `lean-library-sweep.py` takes `--package` and otherwise **discovers** packages
+  from `content/*/lean/lakefile.toml` + a top-level `<Lib>.lean` with a matching
+  directory, so a fourth paper needs no edit. Per-library shadow subdirectory,
+  since `LEAN_PATH` resolves a module from the first root holding that package
+  dir and two libraries must not share one root.
+* `lean-content-sweep.sh` sweeps all 938.
+
+Sibling-package library result: **UGB 21 ok / 1 red (fixed), Fred2005 1 ok.**
+
+
+## THE 938-FILE SWEEP: 14 red, 8 of them never previously reachable
+
+First run of the widened sweep over the real population.
+
+    swept   938
+    RED      14   =  6 already fixed on #6811  +  8 NEW
+
+The 8 new ones are all in the 675 the old `^import QOU` filter could not reach,
+and all 8 are the same class — verified by running each under both regimes
+rather than assumed:
+
+    file                              autoImplicit=ON   autoImplicit=OFF
+    frobenius-antipode-lean-stub          exit 0            exit 1
+    ns-regular-qou                        exit 0            exit 1
+    glossary-descent                      exit 0            exit 1
+    markov-trace-recursive-reducer        exit 0            exit 1
+    conj-atom-braid-exterior-algebra      exit 0            exit 1
+    reeb-bundle                           exit 0            exit 1
+    braiding-induced-ordering             exit 0            exit 1
+    q-heat-equation                       exit 0            exit 1
+
+### The two that show what the class actually costs
+
+`glossary/glossary-descent.lean` and `fluid-dynamics/ns-regular-qou.lean` have
+**no imports at all**, so `ℕ`, `ℝ` and `ℤ` were auto-bound as arbitrary types.
+
+`ns-regular-qou` is self-refuting, and worth quoting because the author was
+explicitly guarding against exactly this: *"We therefore carry the Euler
+characteristic `chi` as data and encode NS-regularity as its genuine defining
+property `chi = 0` (**not a `: True` placeholder**)."* The intent is right and
+the guard failed one level down — `chi : ℤ` where `ℤ` is an auto-bound variable
+is no more contentful than the `: True` it was written to avoid.
+
+### Fixes
+
+Four missing imports (`Mathlib.Data.Nat.Basic`, `Mathlib.Data.Real.Basic` ×2,
+`Mathlib.Data.Int.Basic`), one missing `universe u`, two missing value binders
+(`{α : Type*}`, `{Z N : ℕ}`), one `_q` → `q` typo where the parameter is `q`.
+
+`reeb-bundle` needed a judgement rather than a typo fix, and its own note asked
+for it: *"full Reeb-bundle formalization is pending the ExceptionalDivisor
+structure (Ch 6 §2)"*. That structure **exists** —
+`QOU/ArchimedeanUniverse.lean:104`, as `ExceptionalDivisor (M : Type*)`. So the
+fix imports it, carries its parameter (`ReebBundle (M : Type*) (q : ℝ)`), and
+names it fully qualified: the file is inside `namespace QOU` while the structure
+is in `QOU.ArchimedeanUniverse`, so the bare name still does not resolve — the
+import alone left it red, which the sweep caught.
+
+All 8 verified exit 0.

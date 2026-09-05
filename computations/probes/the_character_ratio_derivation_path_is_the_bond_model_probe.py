@@ -121,6 +121,19 @@ def words(Z, N):
     return full, free
 
 
+def s(v, n=20):
+    """Decimal string with the point in the right place. `gmpy2.digits` returns
+    a BARE MANTISSA, so `0.5054...` serialises as `5054...` -- unreadable for
+    magnitude and, in a witness, numerically unusable downstream. Added
+    2026-09-05 (qou-i229) after `witness-block-agreement` found four published
+    figures unmatched against the very probe that computes them."""
+    m, e, _ = gmpy2.digits(mpfr(v), 10, n)
+    neg = m.startswith("-")
+    m = m.lstrip("-")
+    body = ("0." + "0" * (-e) + m) if e <= 0 else (m[:e] + "." + m[e:])
+    return ("-" if neg else "") + body
+
+
 def main() -> int:
     checks: list[tuple[str, bool]] = []
 
@@ -207,7 +220,7 @@ def main() -> int:
             "quark and nuclear-jet levels the specification also names would push B up, "
             "which is a direction and not a prediction. No binding claim.")
         for nm, v in R.items():
-            wb.add_data(f"character_ratio_{nm}", gmpy2.digits(v, 10, 25)[0])
+            wb.add_data(f"character_ratio_{nm}", s(v, 25))
         wb.add_data("max_R_minus_exp_minus_L", f"{float(worst):.3e}")  # float64-ok: display only
         for name, ok in checks:
             wb.add_assertion(name=name, computed=str(int(ok)), expected="1")

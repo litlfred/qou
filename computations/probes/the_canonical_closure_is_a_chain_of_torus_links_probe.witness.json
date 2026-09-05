@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T15:50:40.282904+00:00",
-  "commitSha": "375e0fbbd2782c97235bce75e075f31442b5f636",
+  "computedAt": "2026-09-05T07:48:48.763047+00:00",
+  "commitSha": "5581d089576c181598f5ad344c7a4af8b787581e",
   "assertions": [
     {
       "name": "every canonical word (A = 2..12, both branches) is a chain form after free reduction",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 61,
+  "durationMs": 5,
   "computation": "the_canonical_closure_is_a_chain_of_torus_links_probe",
   "scriptFile": "the_canonical_closure_is_a_chain_of_torus_links_probe.py",
-  "scriptHash": "ca7d86a5f3e9",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4becc8018ef0",
+  "scriptCommitSha": "618ab2907262f492560fa4c0b54533ffa7a9f79e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

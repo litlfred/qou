@@ -181,6 +181,19 @@ import QOU.MathlibExt.LaurentTwoValuation
 -- candidate on every D∞ element checked, given the out-of-cone counterexample.
 import QOU.AppendixSurreals.collatz_vtwo_cycle_descent
 import QOU.HeckeAlgebra
+-- `WedderburnConstruction` builds the block-diagonal embedding that
+-- `QOU/HeckeAlgebra/Wedderburn.lean` had left `opaque`.  On the natural index
+-- `Sigma lam, Fin (f^lam) x Fin (f^lam)` the assembly is an ordinary def and is
+-- injective, with footprint [propext, Classical.choice, Quot.sound].  Only
+-- landing in `Fin (n!)` needs the RSK identity, which is isolated there as the
+-- explicit hypothesis `RSKDimIdentity` (bean qou-usol).  The `opaque` it
+-- replaced was deleted on 2026-09-05 (bean qou-kp2z); nothing had consumed it.
+import QOU.HeckeAlgebra.WedderburnConstruction
+-- `WedderburnTrace` compares the two traces on that embedding: the regular one
+-- weights each block by `f^lam` (`blockDiagonal_trace`), the Markov one by
+-- `y_lam(q_0)`, and the difference is entirely in the coefficients.  Sharp: they
+-- agree on every decomposition only if the coefficients agree (bean qou-kp2z).
+import QOU.HeckeAlgebra.WedderburnTrace
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding
@@ -239,6 +252,10 @@ import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry
 import QOU.MassDerivation
+-- Also brings QOU.Mass.ChainTraceFactor under the umbrella; nothing had
+-- imported it, so it was invisible to blueprint/doc-gen import walks.
+import QOU.Mass.IntraOrderingInvariance
+import QOU.Mass.FreeEnergyReadingIsSigned
 import QOU.MassTheory.MarginalRatioExtensivity
 import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.NeutronProtonEMSign
@@ -1453,6 +1470,24 @@ import QOU.Hecke.SymmetrySignAmGm
 -- only `mu = 0` gives `Theta(n^2)`.  Also `L_pp + L_nn = 2 log [2]_q`, so the
 -- three rates carry one constraint and one free parameter.
 import QOU.Hecke.ChannelRangeGrowthClass
+-- `BarWeightFamily`: bar invariance of the p-n interface reduces to
+-- `wbar = 1 - w`, ONE equation -- and the family `w_k = q^-k/[2]_{q^k}` meets it
+-- for every `k`.  The corpus's averaging rule is the `k = 0` member, pinned only
+-- by the unstated assumption that `w` carries no `q`.  `w_1` is the geometric
+-- mean (zero symmetry term); `k > 1` is the SEMF-signed region.
+import QOU.Hecke.BarWeightFamily
+-- `SelfConjugateRowCap`: self-conjugacy forces `ell(lambda) = lambda_1`, so the
+-- fibre-dimension cap `ell <= 2` leaves exactly THREE self-conjugate shapes --
+-- (1), (2,1), (2,2), all of size <= 4, and none at any level >= 5.  Relevant
+-- because `mass-theory`'s Wigner energy `-Delta_W . T(T+1)/A` is built from
+-- self-conjugate shadow prices at k = 4 and k = 5.
+import QOU.Hecke.SelfConjugateRowCap
+-- `IsospinClassSingleton`: `mass-coefficient-shadow-price-proof`'s own rule makes
+-- `c(lambda) = 0` the ISOSPIN-type scaling class.  At the quartet level `n = 4`
+-- that class has exactly ONE member, `(2,2)` -- so the Wigner coefficient is
+-- selected rather than drawn from a menu, which is the one row of
+-- `mass-formula-regime-switching-table1-data` its fit-shape QA note does not bite.
+import QOU.Hecke.IsospinClassSingleton
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
 

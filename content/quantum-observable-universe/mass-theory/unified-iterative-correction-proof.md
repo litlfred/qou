@@ -13,7 +13,56 @@ For $\lambda = (2,2) \vdash 4$ this recovers the dedicated Wigner
 identity ([prop:wigner-np-pairing](#prop:wigner-np-pairing)):
 $H_q((2,2)) = [3]_q \cdot [2]_q^2$; for $\lambda = (2,1) \vdash 3$
 it reproduces the volume / surface / Coulomb decomposition
-through their image under the Wedderburn embedding; for higher
+through their image under the Wedderburn embedding — a step this
+proof does **not** discharge, and which the corpus still cannot
+supply.
+
+*Updated 2026-09-05 (bean `qou-kp2z`).*  Bean `qou-qb7p` gave three
+reasons the corpus could not supply this step.  Two of them have since
+been removed and one has not, so the clause remains an open obligation
+for a narrower reason than before.  **Removed:** the only formalised
+embedding was `QOU.HeckeAlgebra.Wedderburn.wedderburnEmbed`, declared
+`opaque` ("keeps the embedding opaque pending concrete construction")
+and registering as a fourth axiom beside `propext`, `Classical.choice`
+and `Quot.sound` in any `#print axioms` that reached it.  It is now a
+real construction — `QOU.HeckeAlgebra.Wedderburn.blockDiagonal`, with
+footprint exactly those three — and the `opaque` has been deleted.
+**Not removed, and decisive here:** the shape objection is untouched.
+The constructed map has the *same* type
+$\bigoplus_\lambda M_{f^\lambda} \to M_{n!}$, assembling blocks into
+one matrix rather than splitting one block's scalar $C_{(2,1)}$ into
+three coefficients; building it changed its status, not its direction
+or its arity.  The landing in $M_{n!}$ is additionally conditional on
+the RSK identity $\sum_\lambda (f^\lambda)^2 = n!$, carried as the
+named hypothesis `RSKDimIdentity` and discharged by nothing here.
+
+That objection is now a **theorem**, not a remark
+(`QOU/HeckeAlgebra/WedderburnTrace.lean`).  The naive form — "three
+independent coefficients cannot come from one scalar" — is false, since
+one real encodes three set-theoretically.  Under **linearity**, which
+this corpus already assumes for the Markov trace, it is true: that trace
+factors through the block *traces*, so a functional of that form
+supported at a single $\lambda$ is exactly $c_\lambda \cdot
+\operatorname{tr}(x_\lambda)$ — one coefficient against one number — and
+any three such are linearly dependent, with an explicit witness
+(`three_supported_traceFunctionals_dependent`).
+
+This does not make the clause false; it rules out the route the clause
+names, whenever that route is linear, factors through the Markov trace,
+and is localised at $(2,1)$.  It also says where the room is, which is
+the more useful half: $f^{(2,1)} = 2$, so the block is $M_2(\mathbb{R})$
+— **four** real dimensions, of which the trace reads one.  The
+information wanted is present in the block and destroyed by tracing it
+— itself now a theorem (`trace_does_not_separate`,
+`exists_indistinguishable_by_every_traceFunctional`): whenever a block
+has dimension at least $2$ there are **distinct** decompositions on
+which every block trace agrees, so every trace-factoring functional,
+the Markov trace included, takes the same value on both.  Instantiating
+that at $(2,1)$ needs $f^{(2,1)} = 2$, which is classical but is *not*
+a formalised fact in this corpus, so the Lean statement carries the
+bound as a hypothesis.  A derivation reading the block rather than its
+trace is not blocked by any of this.  So the clause is still an open obligation, not a
+derivation; for higher
 partitions it adds the form-factor, $pn$-correlation, and
 ${[3,2,1]}$ pn-invisible corrections.
 
@@ -43,12 +92,18 @@ The three legacy mechanisms specialise:
   (1 - h^2)^2$):* the $A = 3, 4$ slices of the LP-dual
   accumulator, where the $(2,1)$ and $(3,1)$ contributions
   reproduce the figure-eight and Borromean amphicheiral factors;
-- *Wigner energy ($k \geq 5$, dedicated
-  $-\Delta_W \cdot T(T+1)/A$):* the $k = 4, 5$ self-conjugate
-  shadow prices ($\lambda = (2,2)$ and $(3,1,1)$), which
-  vanish on isolated $pn$ crossings (extremal cancellation,
+- *Wigner energy ($k = 4$, dedicated
+  $-\Delta_W \cdot T(T+1)/A$):* the $k = 4$ self-conjugate
+  shadow price $\lambda = (2,2)$, which
+  vanishes on isolated $pn$ crossings (extremal cancellation,
   [prop:confined-knot-binding](#prop:confined-knot-binding))
-  but are nonzero on collective $pn$ patterns.
+  but is nonzero on collective $pn$ patterns.  Under convention D
+  no self-conjugate partition beyond $k = 4$ can contribute:
+  self-conjugacy forces $\ell(\lambda) = \lambda_1$, so the row cap
+  $\ell(\lambda) \leq 2$ admits only $(1)$, $(2,1)$ and $(2,2)$, and a
+  block with $\tilde w_\lambda = 0$ has $C_\lambda = 0$ and hence
+  $u_\lambda^* = 0$ at every $(Z, N)$ — the vanishing is upstream of the
+  scaling function, so no $S_\lambda$ restores it.
 
 $\square$
 

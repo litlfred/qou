@@ -1,0 +1,149 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T07:35:12.575598+00:00",
+  "commitSha": "e5c5f332e470b56fa516e5c81d21df6dadcde5cf",
+  "assertions": [
+    {
+      "name": "molien_eq_feray_meliot_at_Q_eq_q_squared",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "Mol_n(lam) == M_{n,q^2}(lam) exactly (Fraction arithmetic) for all 96 partitions of n=1..9 at q=7/5"
+    },
+    {
+      "name": "hook_sum_identity",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "sum_x h(x) = n(lam) + n(lam') + n, all partitions n=1..10 -- the first of the two facts that make T1 structural rather than coincidental at the tested points"
+    },
+    {
+      "name": "content_sum_eq_conjugate_defect",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "contentSum(lam) = n(lam') - n(lam), all partitions n=1..10 -- so the corpus's kappa is exactly the exponent Q = q^2 forces, not a chosen convention"
+    },
+    {
+      "name": "both_families_sum_to_one_at_q0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "sum_lam = 1 to 1e-40 for BOTH families at n = 3,4,5,6,9,12 and q0 > 1 (the Lean molienSum_eq_qFactorial and Feray-Meliot Definition 1 are the same theorem)"
+    },
+    {
+      "name": "wedderburn_weight_is_a_different_family",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "max per-partition relative deviation of dim_q^2/[n]_q! from the Molien family is 977.956825640096871430551377399727630523736170750388309712613 over n<=12 -- the two are not one normalisation apart, so the feray2010 citation cannot be moved between them by rescaling"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 190,
+  "computation": "molien-feray-meliot-bridge",
+  "scriptFile": "molien_feray_meliot_bridge_probe.py",
+  "scriptHash": "e98c7c5f03b7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/molien_feray_meliot_bridge_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/molien_feray_meliot_bridge_probe.py"
+  },
+  "description": "Establishes that the corpus's Molien/fake-degree weight f^lam*q^{-contentSum}*dim_q/[n]_q! IS Feray-Meliot's q-Plancherel measure M_{n,Q} under Q = q^2 -- an exact identity, not an approximation, verified in exact rational arithmetic for every partition of n = 1..9 (bean qou-j7ef). Consequence: the feray2010 citation in prop:q-plancherel-asymptotic-skeleton clause 2 transfers to the Molien family verbatim, while it does NOT transfer to the dim_q^2/[n]_q! family the block currently pushes forward: those two disagree per-partition by a relative 978 at n=12. NOTE the skeleton block records that separation as 12.6, which is M evaluated at Q = q0 rather than at the bridge argument Q = q0^2; both are measured in T5 and the earlier figure is correct about its own quantity, just not about the distance to the family the corpus holds. The kappa exponent is FORCED by the substitution (via the hook identity sum h = n(lam)+n(lam')+n and contentSum = n(lam')-n(lam), both verified independently) rather than being a convention choice.",
+  "parameters": {
+    "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "bridge_substitution": "Q = q^2"
+  },
+  "data": {
+    "T1_exact_identity": {
+      "q_rational": "7/5",
+      "Q_rational": "49/25",
+      "n_range": "1..9",
+      "partitions_checked": 96,
+      "arithmetic": "fractions.Fraction (exact)",
+      "first_mismatch": null
+    },
+    "T4_normalisation_at_q0": {
+      "3": {
+        "molien": "1.00000000000000000000000000000000000000000000000000000000000",
+        "feray_meliot": "1.00000000000000000000000000000000000000000000000000000000000"
+      },
+      "4": {
+        "molien": "1.00000000000000000000000000000000000000000000000000000000000",
+        "feray_meliot": "1.00000000000000000000000000000000000000000000000000000000000"
+      },
+      "5": {
+        "molien": "1.00000000000000000000000000000000000000000000000000000000000",
+        "feray_meliot": "1.00000000000000000000000000000000000000000000000000000000000"
+      },
+      "6": {
+        "molien": "1.00000000000000000000000000000000000000000000000000000000000",
+        "feray_meliot": "1.00000000000000000000000000000000000000000000000000000000000"
+      },
+      "9": {
+        "molien": "1.00000000000000000000000000000000000000000000000000000000000",
+        "feray_meliot": "1.00000000000000000000000000000000000000000000000000000000000"
+      },
+      "12": {
+        "molien": "1.00000000000000000000000000000000000000000000000000000000000",
+        "feray_meliot": "1.00000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "T5_separation_from_wedderburn_weight": {
+      "note": "Two columns because the argument matters. `..._Q_eq_q_squared` is the distance from w_lambda to the family the corpus actually holds (the Molien weight, = M at Q = q^2 by T1). `..._Q_eq_q` is the distance to M evaluated at the raw Definition-1 argument Q = q, which is the column prop:q-plancherel-asymptotic-skeleton currently quotes. Both are real quantities; only the first answers 'can the feray2010 citation be moved onto w_lambda by rescaling'.",
+      "per_n": {
+        "3": {
+          "sum_w_lambda": "0.987440229773687729117875218675544503499448071254574486458660",
+          "max_rel_dev_w_vs_molien_Q_eq_q_squared": "0.367551836951385187966724029909361000711097520772846471426931",
+          "max_rel_dev_w_vs_feray_meliot_at_Q_eq_q": "0.157534352541068598749592424315878405127117739054282200044641"
+        },
+        "4": {
+          "sum_w_lambda": "0.982165323835610783872076092737614714004675076537133119662281",
+          "max_rel_dev_w_vs_molien_Q_eq_q_squared": "0.870198026749108017999330883898209914098494807644173060116209",
+          "max_rel_dev_w_vs_feray_meliot_at_Q_eq_q": "0.320292572441137919884106499333460806254512225513892348062816"
+        },
+        "5": {
+          "sum_w_lambda": "0.982224148283254053452615576237827417930881915033038669575642",
+          "max_rel_dev_w_vs_molien_Q_eq_q_squared": "1.83887317250766638137278904418573560704794500488893965212583",
+          "max_rel_dev_w_vs_feray_meliot_at_Q_eq_q": "0.574995149849495229020195250378120851730857788718826746001694"
+        },
+        "6": {
+          "sum_w_lambda": "0.991079523637350140711333719064374092128516167076231641854768",
+          "max_rel_dev_w_vs_molien_Q_eq_q_squared": "3.78320490856174864899067153889987045762729107224651251354871",
+          "max_rel_dev_w_vs_feray_meliot_at_Q_eq_q": "0.950825400321134446662725829687401098475902938930307966173014"
+        },
+        "9": {
+          "sum_w_lambda": "1.11092313495739793519940970273453586672159312269210466822371",
+          "max_rel_dev_w_vs_molien_Q_eq_q_squared": "41.7883526626660372854986974416419427644808341209010233677336",
+          "max_rel_dev_w_vs_feray_meliot_at_Q_eq_q": "3.53387527314568210900565129654219822483213927828965161088229"
+        },
+        "12": {
+          "sum_w_lambda": "1.51713321376785876032235615304042149175999670547850299782971",
+          "max_rel_dev_w_vs_molien_Q_eq_q_squared": "977.956825640096871430551377399727630523736170750388309712613",
+          "max_rel_dev_w_vs_feray_meliot_at_Q_eq_q": "12.5953746169718564300074756211623447242791133462649948897467"
+        }
+      }
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

@@ -298,8 +298,13 @@ block's sidecar (128 files for one block) — revert all but yours.
 2. **A partial `LEAN_PATH` overlay shadows the whole namespace** — the first
    root holding a `QOU/` dir wins. Use a complete `cp -al` mirror, `rm -f`-ing
    each olean before rebuilding it (else you truncate the shared inode).
-3. **Disk-full builds write truncated oleans that segfault**: exit 139, zero
-   errors, 0–1 s. Olean SIZE is not a test (50–226 KB inside a normal range).
+3. **Truncated oleans segfault**: exit 139, zero errors, 0–1 s. Olean SIZE is
+   not a test (50–226 KB inside a normal range). Two causes: a disk-full local
+   build, **and the restored cache itself** — so a clean `df` does NOT clear it
+   (measured 2026-09-05, `ComplexDilogarithmSlit` 192,512 vs 279,688 B on a
+   healthy disk). One bad olean segfaults its whole downstream cone while every
+   consumer's source is clean; bisect to the deepest module whose own deps all
+   pass, recompile that one. Harness §4a.
 4. **Most cone failures are the harness** (8 measured, 1 real). `object file …
    does not exist` usually = a non-cone dependency with no olean; `ls` it.
    Decisive test: re-run against main's own oleans with your changes off the path.

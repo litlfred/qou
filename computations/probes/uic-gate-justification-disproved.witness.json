@@ -1,0 +1,150 @@
+{
+  "engine": "python+mpmath+rust",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T07:24:33.411338+00:00",
+  "commitSha": "20c0dd08f5a1e8cd3d21cfa8e137fe7bf00312e3",
+  "assertions": [
+    {
+      "name": "the y_0 the code uses is never 0, so it is not the proved dual",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_gate_justification_disproved_probe"
+    },
+    {
+      "name": "its only effect is to zero exactly 2 partitions per level",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_gate_justification_disproved_probe"
+    },
+    {
+      "name": "w/d > 0 already, so the shift is not needed for y_lambda >= 0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_gate_justification_disproved_probe"
+    },
+    {
+      "name": "the proved y_0* does NOT flip the sign -- still negative everywhere",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_gate_justification_disproved_probe"
+    },
+    {
+      "name": "it makes the sign MORE negative, not less",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_gate_justification_disproved_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "uic-gate-justification-disproved",
+  "scriptFile": "uic_gate_justification_disproved_probe.py",
+  "scriptHash": "9b64a892f635",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/uic_gate_justification_disproved_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/uic_gate_justification_disproved_probe.py"
+  },
+  "description": "Gap qou-sv7h: connects the proved degeneracy of prop:operator-selection-lp (commit 6b7d2ec4a8: optimum identically 0, y_0* = 0, minimiser set a positive-dimensional face) to hecke_core_legacy, which still reads the LP the old way. lp_shadow_price's y_0 = 1/[k]_q! is not the proved dual (0); its only effect is to zero the (k) and (1^k) partitions at every level. Substituting the proved y_0* = 0 does NOT repair the sign -- it makes it more negative -- so the gate, not the weighting, is the mechanism.",
+  "auditOnly": "docs/audits/2026-09-05-uic-gate-justification-disproved.md",
+  "data": {
+    "y0_per_level": [
+      {
+        "k": 2,
+        "y0_used": "0.497290545604915663233835914939757556019595813768556059346352",
+        "y0_proved": "0",
+        "n_zeroed": 2,
+        "n_partitions": 2
+      },
+      {
+        "k": 3,
+        "y0_used": "0.163383228056257440865708530468734627450906351153857930799704",
+        "y0_proved": "0",
+        "n_zeroed": 2,
+        "n_partitions": 3
+      },
+      {
+        "k": 4,
+        "y0_used": "0.0397556822421796073296698783493647981969686527861505780495828",
+        "y0_proved": "0",
+        "n_zeroed": 2,
+        "n_partitions": 5
+      },
+      {
+        "k": 5,
+        "y0_used": "0.00761538731027869867749607371756674477643008707311255713833762",
+        "y0_proved": "0",
+        "n_zeroed": 2,
+        "n_partitions": 7
+      },
+      {
+        "k": 6,
+        "y0_used": "0.00119212336908621824399449793687362895134699810451019925019295",
+        "y0_proved": "0",
+        "n_zeroed": 2,
+        "n_partitions": 11
+      },
+      {
+        "k": 7,
+        "y0_used": "0.000156337035542934792376452619026610014577217614323265720802901",
+        "y0_proved": "0",
+        "n_zeroed": 2,
+        "n_partitions": 15
+      }
+    ],
+    "gated_sum_asis_vs_proved": [
+      {
+        "atom": "2H",
+        "A": 2,
+        "as_is": "-1.36568481708788027734298877477531935336285597854871963014210",
+        "with_proved_y0": "-1.60919444579400942916529548074936113765532462871031069417005"
+      },
+      {
+        "atom": "3H",
+        "A": 3,
+        "as_is": "-0.970408945618667555955615249086707331905884622230539681193669",
+        "with_proved_y0": "-1.21415970954254717461415157396626742936509859011331455635192"
+      },
+      {
+        "atom": "4He",
+        "A": 4,
+        "as_is": "-0.802091711635766065547999516570786965083947724598770591685197",
+        "with_proved_y0": "-0.909536816763070327512061050856471583196339302965018740955008"
+      },
+      {
+        "atom": "6Li",
+        "A": 6,
+        "as_is": "-1.07697056503999882623817655094833650856525652773982186586923",
+        "with_proved_y0": "-1.60653034864444933438694723300434402330268724562174012036016"
+      }
+    ]
+  }
+}

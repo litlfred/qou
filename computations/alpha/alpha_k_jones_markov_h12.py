@@ -107,6 +107,7 @@ N_STRANDS = 12
 
 # Closed-form Borromean Markov trace (from pm_qm_pythagorean_identity.py)
 def tr_M_borromean(h_val):
+    # convention D — verified by EVALUATION at q0, not by reading: computations/audits/borromean_convention_by_evaluation.py
     h2 = h_val * h_val
     h4 = h2 * h2
     h6 = h4 * h2

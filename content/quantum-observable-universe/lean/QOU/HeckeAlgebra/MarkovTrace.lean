@@ -22,8 +22,23 @@ needed by the QOU mass formula `M = ρ · m_e · |tr_M(T_w)|`:
 
 - `MarkovProperty` — axiomatised cyclicity / Markov-axiom property
 - `JonesMarkovCoefficient λ q` — `y_λ(q)` central coefficients
-- `wenzlBridge` — the categorical identity
-  `markovTrace n (wedderburnEmbed x) = Σ_λ y_λ(q_0) · trace (x λ)`
+- `wenzlBridge` — `markovTraceOnWedderburn x = Σ_λ y_λ(q_0) · trace (x λ)`.
+
+  This list used to advertise that identity as
+  `markovTrace n (wedderburnEmbed x) = Σ_λ y_λ(q_0) · trace (x λ)`,
+  which overstates it in two ways and is corrected here (2026-09-05,
+  bean `qou-kp2z`).  The theorem's left-hand side is
+  `markovTraceOnWedderburn`, whose *definition* is that very sum, so
+  `wenzlBridge` is proved by `rfl` — it unfolds a definition rather
+  than connecting two independently-given quantities.  And it never
+  mentioned `wedderburnEmbed`: nothing in this module did, outside
+  this sentence.  Relating a trace on the assembled matrix algebra to
+  the block sum is genuine content, and it is now proved — in
+  `QOU/HeckeAlgebra/WedderburnTrace.lean`, over the constructed
+  `blockDiagonal`.  What is still **not** proved is that identity with
+  `markovTrace` itself on the left: `markovTrace` is `opaque` in
+  `QOU/HeckeAlgebra/Common.lean`, so connecting it to either sum
+  remains open.
 
 ## Categorical content
 
@@ -108,8 +123,11 @@ axiom JonesMarkovCoefficient_sum_eq_one :
 
     An `opaque` definition is a datum: it adds nothing to the assumption surface
     (no `axiom`), it merely declines to say what the operation is. The concrete
-    multiplication is the matrix algebra under `wedderburnEmbed`, via the Hoefsmit
-    representation in `QOU.HeckeAlgebra.Hoefsmit`.
+    multiplication is the matrix algebra under the Wedderburn embedding
+    (`QOU.HeckeAlgebra.Wedderburn.blockDiagonal`, and `wedderburnEmbedOf` for
+    the `Fin (heckeDim n)` landing), via the Hoefsmit representation in
+    `QOU.HeckeAlgebra.Hoefsmit`.  This pointed at `wedderburnEmbed` until that
+    `opaque` was deleted on 2026-09-05; the target is now a real construction.
 
     Kept — unlike the cyclicity axiom that used to accompany it, see below —
     because `markov_axioms_vacuous_of_weight_zero` needs a multiplication to state

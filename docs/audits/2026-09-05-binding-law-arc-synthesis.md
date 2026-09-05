@@ -280,6 +280,23 @@ threshold down and the construction does not follow. At `q₀` the threshold is
 endpoints `δ(w=0) = +2 log q₀`, `δ(w=1) = −2 log q₀` are exactly `qou-y2np`'s bar
 branch, so that "one bit" is two points of a continuum whose crossing is derived.
 
+> 🛑 **SECOND SUPERSESSION, 2026-09-05 — and this one says the corpus already
+> HAS the term.** `mass-theory` carries the Wigner energy `−Δ_W · T(T+1)/A`,
+> built from **self-conjugate** shadow prices
+> (`unified-iterative-correction-proof.md`; the general rule is in
+> `figure-eight-branching-rule-proof.md` — self-conjugate partitions contribute
+> the isospin Casimir terms `T(T+1)/A`, `T(T+1)(T+2)/A²`). So the symmetry
+> energy has a derived route, in the **mass** channel; the binding arc was
+> searching the wrong one.
+>
+> There is a tension with this arc's own row cap, and it is stated as a tension:
+> self-conjugacy forces `ℓ(λ) = λ₁`, so `ℓ ≤ 2` leaves **exactly three**
+> self-conjugate shapes — `(1)`, `(2,1)`, `(2,2)`, all of size ≤ 4, **none at any
+> level ≥ 5**. Of the two the mechanism names, `(2,2)` survives and `(3,1,1)`
+> (`ℓ = 3`) has zero Markov weight. **Whether `y_λ = 0` forces the shadow price
+> `C_λ = 0` is NOT established** and is not assumed — `QOU/Hecke/SelfConjugateRowCap.lean`
+> proves only the enumeration. Bean `qou-a5jk`.
+
 So the headline is stronger than "nothing found": a repair must move **one**
 quantity — the convex weight `w` below `1/(q²+1)` — and nothing about the graph,
 the layout, the scale or a re-derivation of `q` can substitute for it.
