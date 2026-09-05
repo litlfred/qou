@@ -2,8 +2,13 @@
 
 **Date:** 2026-09-05
 **Beans:** `qou-tsnp`, `qou-hprp`
-**Status:** decision brief. **Nothing here is applied.** Each item is a choice for the
-author, with the evidence, the options, and a recommendation marked as agent judgement.
+**Status:** 🟢 **RULED AND APPLIED.** The author ruled *"do as recommended"*, and all four
+recommendations are implemented. The brief below is kept **as written**, unedited, so the
+options and costings the ruling was made against stay legible; what was applied, and what
+that turned up, is recorded in §Resolution at the end.
+
+Read §Resolution before acting on anything below — three of the four items were **more than
+the brief measured**, and one recommendation's premise turned out to be wrong.
 
 ---
 
@@ -365,3 +370,153 @@ physics content, so it is a good candidate to delegate.
 
 None of the four blocks anything. Decisions 2 and 3 are about what the paper claims;
 decision 1 is about what a reference resolves to; decision 4 is hygiene.
+
+---
+
+# Resolution — ruled 2026-09-05, all four applied
+
+The author ruled **"do as recommended"**. Each recommendation was applied. The brief above
+is unedited; this section records what actually happened, and it is longer than a
+confirmation because three of the four items were larger than the brief measured.
+
+| # | recommended | applied | what the brief did not know |
+|---|---|---|---|
+| 1 | (a) follow the `TFromTraceCyclicity` precedent | ✔ + a repair the brief did not anticipate | the "substantive" carrier was **uninhabitable** |
+| 2 | (a) delete the ²H row, state the two-point base | ✔ | the two survivors are *both* `2` |
+| 3 | (a) restate dimensionless, else (b) | ✔ (a) | the old row was **dimensionally incoherent** too |
+| 4 | (a) sweep by hand, not by script | ✔ | the two live ones are **mis-refs**, not header rot |
+
+## Decision 1 — the recommendation was right; its premise was not
+
+The brief described the library carrier as **substantive**, with "2 real fields", and framed
+the choice as *which of two carriers the block should point at*. That framing understated
+the problem, and in a direction that matters.
+
+Both content-bearing fields quantified over **all reals with no hypothesis relating them**:
+
+```lean
+dynamic_capacity_from_plancherel_weight (A Z N : ℕ) (S W_lam E_gate E_0 : ℝ) :
+  E_gate = E_0 * Real.log (1 / W_lam)
+```
+
+Instantiated at `E_gate := 1`, `E_0 := 0`, that gives `1 = 0`. So
+`¬ Nonempty WignerSU4FromSpinIsospin` was **provable** — verified `lean`-direct, exit 0 —
+and the class had **no instance at all**.
+
+**That is a worse defect than the stub's, not a better one.** A vacuous carrier makes a
+`[C]`-conditional theorem conditional on *nothing*; an uninhabitable one makes it
+**vacuously true**, which reads as *proved*. Repointing the block at it as-is would have
+traded a visible defect for an invisible one.
+
+Applied: the move the brief recommended (file to `QOU/BraidsAndKnots/` so the declaration
+path matches the file path and §0a candidate-2 resolves, namespace aligned, stub deleted,
+`QOU.lean` import updated, ref's `Su4` corrected to `SU4`) **plus** the repair the rest of
+this queue uses — `E_0` and the families `W`/`E_gate`/`B_AME`/`c` are caller-supplied
+parameters, the occupancy-via-Plancherel composition is *derived* rather than stated as a
+third field, and the three unstatable SU(4) properties keep their labelled `opaque marker`
+fields.
+
+**Both directions are now discharged as theorems**, and the second is the lesson:
+`wignerSU4FromSpinIsospin_refutable` (the class *can* be false) and
+`wignerSU4FromSpinIsospin_satisfiable` (an instance *can* exist). The satisfiability
+theorem exists because **"no instance is provided" and "no instance could exist" are
+indistinguishable from outside**, and this carrier spent its life being the second while
+reading as the first.
+
+## Decision 2 — applied, with the cost stated
+
+The ²H row is deleted and the base restated as two points. One thing worth adding to the
+brief's reasoning: **both surviving rows read `2`.** The advertised pattern was `1, 2, 2`,
+so *all* of its variation came from the row now removed — the remaining evidence is two
+instances of the same value. The `## Status of the density prefactor` section was migrated
+to `authorNotes` per §4d, carrying the caveat.
+
+## Decision 3 — (a), and for a second reason the brief missed
+
+A dimensionless restatement does exist, so (a) rather than (b). The row now pairs
+`Z_{T[B₃]}(q₀)` with the dimensionless Borromean dressing
+`F_B = |tr_M(β_B)|·[3]_q!/q³`.
+
+The brief argued only from the 2026-08-11 absolute-mass ruling. There is a second,
+independent reason the old row could not stand: **a partition function is a pure number and
+`m_p` is carried in MeV**, so `m_p ↔ Z_{T[B₃]}(q₀)` was never dimensionally coherent. The
+ruling and the dimensional analysis agree, which is worth noting because it means the row
+would have needed fixing even without the ruling.
+
+What is deliberately *not* claimed: which normalisation of `Z_{T[B₃]}` matches `F_B` is
+open, and the block now says so rather than implying a match has been made.
+
+## Decision 4 — "by hand, not by script" is what found the real problem
+
+The brief scoped this as **rot**: seven headers advertising files that do not exist, fixable
+by replacing a dead sentence. Re-measured on the current head, four had already been fixed
+in passing and one is fixed in an unmerged PR, leaving two live.
+
+**Both turned out to be D11-shaped mis-refs, not header rot.** `quantum-langlands-dual` and
+`reverse-limit-q-to-infinity` each carry a `holds : Prop` stub that **shadows** a
+substantive library carrier through §0a candidate-1:
+
+| block | shadowing stub | real carrier |
+|---|---|---|
+| `quantum-langlands-dual` | `holds : Prop` | `QOU.Conjectures.QuantumLanglandsDual` — 4 fields incl. `dualParam_involutive` |
+| `reverse-limit-q-to-infinity` | `holds : Prop` | `QOU.IwahoriHecke.TypeA.ReverseLimitQToInfinity` — a proved structural identity, **with an instance** |
+
+And each header was wrong in **four** ways at once, not one: a library file that does not
+exist; a `.md` *"Lean axiomatisation (sketch)"* section that does not exist either
+(`quantum-langlands-dual.md` has **no `##` headings at all**); a `-- Ref:` naming a
+`braids-and-knots/` path when neither block lives there; and, for `reverse-limit`, an
+explicit claim to satisfy a ref whose namespace it does not share.
+
+Applied: both stubs deleted per §0a *"No shadowing stubs (STRICT)"*, and the Langlands ref
+repointed to `qou:QOU.Conjectures.QuantumLanglandsDual`, where declaration path already
+matches file path.
+
+**A script would have fixed the sentence and left the shadow.** That is the whole content of
+the recommendation's "by hand" clause, and it paid for itself on both files.
+
+## What applying the four turned up: 1 critical + 4 major + 1 minor, all reading `pass`
+
+Refreshing the sidecars on the seven touched blocks surfaced six findings that had been
+invisible because **a stale sidecar is indistinguishable from a clean one**:
+
+- **`wall-side-correct` [critical] ×2** — `mirror-3d-3d` and `spin-from-so3-fiber` both
+  declared coefficients over `ℝ` in categorical chapters, on the reasoning that the
+  coefficients "are real perturbative data". Nothing in either file is archimedean.
+  Generalised to `[DivisionRing R]` and `[Field R] [CharZero R]` respectively, with
+  refutability witnesses at `ℚ`. **The `CharZero` is a real hypothesis the `ℝ` statement was
+  hiding**: `field_simp` cannot clear the `4⁻¹` without `4 ≠ 0`, so the Family A closed form
+  is *false in characteristic 2*. Stating it over `ℝ` concealed a genuine mathematical
+  condition.
+- **`wall-side-correct` [critical] ×1** — `wigner-su4`, where `Real.log` *is* genuinely
+  required by `E_gate = E₀·ln(1/W_λ)`. Here the §4d route applies instead: an `authorNotes`
+  note acknowledging and bounding the specialisation.
+- **`voice-scholarly-default` [major] ×3** — `LECTURER_OPENER_RE` matching `So the` at a
+  line start, including on **wrapped continuation lines mid-sentence**. Two pre-existing,
+  one in the library file `TypeA.lean`.
+- **`cite-named-theorem` [minor]** — Langlands duality named with no inline citation;
+  `frenkel-reshetikhin1998` was already in `cites[]` but not in the prose.
+
+## Still open, and it is not clean
+
+`p-from-braid-mirror` carries **`detangler-no-forward-ref` [major]**: it `uses`
+`prop:chirality-writhe-ribbon-derivation` at manifest position 618 from position 367.
+Resolving it means reordering a chapter — an editorial decision with cascade risk, not an
+adjacent bug — so it is left, deliberately and visibly.
+
+## 🛑 The method note, which outlives all four decisions
+
+**`qa-sweep`'s summary line counts only the criteria evaluated in that run, so a cached
+`fail` prints as absent.** Measured directly: the second sweep of `p-from-braid-mirror`
+reported
+
+```
+findings: 0 critical, 0 major, 0 minor; needs-agent: 29
+```
+
+while its sidecar held `detangler-no-forward-ref` as `fail`/`major`, timestamped from an
+earlier run. **A false clean.** Had that reading been trusted, this document would state
+that all seven blocks are clean, and it would be wrong.
+
+The check is to read the sidecar entry, not the summary — which is the same lesson as the
+stale sidecars themselves, one level up: *the artifact that reports the verdict is not the
+verdict.*
