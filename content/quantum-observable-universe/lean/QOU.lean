@@ -1456,6 +1456,12 @@ import QOU.Hecke.SymmetrySignAmGm
 -- only `mu = 0` gives `Theta(n^2)`.  Also `L_pp + L_nn = 2 log [2]_q`, so the
 -- three rates carry one constraint and one free parameter.
 import QOU.Hecke.ChannelRangeGrowthClass
+-- `BarWeightFamily`: bar invariance of the p-n interface reduces to
+-- `wbar = 1 - w`, ONE equation -- and the family `w_k = q^-k/[2]_{q^k}` meets it
+-- for every `k`.  The corpus's averaging rule is the `k = 0` member, pinned only
+-- by the unstated assumption that `w` carries no `q`.  `w_1` is the geometric
+-- mean (zero symmetry term); `k > 1` is the SEMF-signed region.
+import QOU.Hecke.BarWeightFamily
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
 
