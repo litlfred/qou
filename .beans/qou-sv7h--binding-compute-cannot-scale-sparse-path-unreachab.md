@@ -105,3 +105,29 @@ change of the underlying representation.
 **Falsifier stated in advance:** if the sign traces to a free choice — an
 orientation, a w_0 convention, an ordering of the LP objective — then it is not
 structural and this framing is wrong.
+
+## Step 2 answered 2026-09-05 (qou-0wqd / PR #6708) — nothing moves; step 3 is what is left
+
+Step 2 was "wire the correct family in, then re-run the binding numbers and
+report what moved". Measured: `1e-14`, not the 71-221 % the step-2 first-half
+table predicted. The correct family is now in
+`hecke_core_legacy._build_ysn_matrices` (`a_rho = h/(1 - q^(-2 rho))`, braid
+defect `0.7315 -> 7.5e-17`, `ysn_braid_relation_audit.py` exit 0).
+
+Two independent reasons the accumulator could not move:
+
+1. **The kernel bypasses the Python family entirely.**
+   `_lp_kernel_steps(partition, chains)` takes the partition SHAPE, not
+   `entry['ysn']`, so Rust rebuilds its own braid-satisfying family; both
+   consumers early-return on it. 193 calls, 193 served.
+2. **The consumers take traces, and the trace cannot see the defect.**
+   `Tr(ABA) - Tr(BAB) = Tr(B) - Tr(A) = 0` from the quadratic relation alone, in
+   any dimension. Established at MPFR in
+   `computations/audits/ysn_trace_blindness_probe.py` (9/9): legacy MATRIX braid
+   defect `0.731514`, legacy TRACE braid defect `6.68e-52`.
+
+**Step 3 (performance / precision) is now the live item**, and it is joined by a
+consumer this arc has not assessed: `q_sweep_sdp_atom` in
+`sdp_cross_channel.py` imports `_build_ysn_matrices` directly and uses the
+matrices, not their traces — so it is the one place where the defect could have
+had a numerical consequence, and nobody has measured it.
