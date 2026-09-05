@@ -411,7 +411,38 @@ which has not been started.
 
 ---
 
+## 9d. 🛑 CORRECTION TO §9c — the selection is ATOM-INDEPENDENT (PR #6841)
+
+§9c below reads O3′'s selection as the corpus's physical framing — *"which
+Wedderburn blocks the bound state actually saturates"*. **That reading is
+wrong.** Measured after #6752 merged:
+
+The objective factors as `t_λ = w_λ · χ^λ(W_atom)`, where `w_λ` depends only on
+the partition and `q` — identical for every atom at a given `n` — and `χ^λ` is
+where all atom-dependence lives. **argmin(`t`) = argmin(`w`) in 6 of 6 rows**:
+the character never moves the selection. Corroborated directly: two atoms at
+`n = 3` and two at `n = 9` give the **same block** with **different prices**.
+
+- **The pricing result STANDS.** `y_0*` is nonzero and atom-dependent, where the
+  full LP has `y_0* = 0` identically. That was the defect O3′ repairs.
+- **The selection is a function of `n` alone.** At fixed `n` it is the same block
+  for the proton, the neutron and every other atom, so it is not "the block
+  *this* bound state saturates".
+
+**And the obvious explanation is refuted too.** Spread dominance (`w` varies more
+than `χ`) holds at `n = 6` and **fails at `n = 9`**, where χ-spread 6.448×/6.712×
+exceeds w-spread 5.915× and the argmin is unmoved anyway. The mechanism is left
+**open**; the probe asserts the refutation rather than a replacement guess.
+
+Probe: `computations/probes/o3prime_selection_is_atom_independent_probe.py`, 4/4.
+
+---
+
 ## 9c. 🛑 O3′ APPEARS TO SELECT — correcting my own §8 recommendation
+
+> **Superseded in part by §9d above**: the selection is real but
+> **atom-independent**, so the physical reading in this section is withdrawn.
+> The pricing result and the uniqueness measurement below are unaffected.
 
 §8 says *"do not start O3′ expecting it to fix the sign … the honest expectation
 is that O3′ fixes the **type error** and leaves selection open."* The first half
