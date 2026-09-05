@@ -278,7 +278,7 @@ structure StrictComplementarityPair (sdp : SDPPrimal n R ι)
     SDP strict-complementarity uniqueness over a `LinearOrderedField`.**
 
     For a SDPPrimal with strict complementarity, the primal optimal
-    is unique.  Proof reduces (per the §3b-cond §5.5.4 pattern) to
+    is unique.  Proof reduces (per the AGENTS.md §3b-cond pattern) to
     the kernel-uniqueness step requiring Slater's strict feasibility
     + Mathlib's SDP rank-deficiency theorem (open Mathlib gap). -/
 -- Ref: [boyd-vandenberghe-2004] §5.5
