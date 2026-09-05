@@ -89,3 +89,21 @@ registered in `QOU.lean`: 7 decls. The four enumeration theorems depend only on
 checks (`selfConj_two_one`, `selfConj_two_two`, `not_selfConj_three_one`) depend
 on **no axioms at all**. `lean`-direct exit 0.
 `computations/qbeta/qbeta_self_conjugate_row_cap_probe.py` (5/5).
+
+
+## 2026-09-05 (later) — SUCCESSOR ANSWERED: yes, and the mechanism is capped at k = 4
+
+`qou-w06d`. The implication this bean left open holds, and it was already a
+class field: `mass-coefficient-shadow-price.lean` carries
+`C_eq : C lam = w lam * (h * 1/2)` and `factor : uStar lam = C lam * S lam`, so
+`w~ = 0 -> C = 0 -> uStar = 0` in two rewrites. No `S_lambda` can rescue a
+zeroed block; the vanishing is upstream of the nuclear datum.
+
+Joined with this bean's enumeration (`no_selfConj_two_row_of_five_le`): a
+self-conjugate partition of `n >= 5` has `l > 2`, hence prices nothing. **Of the
+two Wigner shadow prices, `(2,2)` survives and `(3,1,1)` does not — and neither
+does any self-conjugate shape at any higher level.**
+
+So the branch this bean posed is resolved in favour of the first arm: the Wigner
+mechanism is capped at `k = 4`. The live question is now whether `(2,2)` alone
+reproduces `-Delta_W . T(T+1)/A`.

@@ -103,4 +103,23 @@ theorem selfConj_two_two : conjTwoRow 2 2 = [2, 2] := by decide
 cap biting. Included as the smallest concrete failure. -/
 theorem not_selfConj_three_one : conjTwoRow 3 1 ≠ [3, 1] := by decide
 
+/-- **No self-conjugate two-row shape has five or more cells.** The
+contrapositive of `selfConj_two_row_size_le_four`, and the form the consequence
+is actually used in: a self-conjugate partition of `n ≥ 5` necessarily has
+`ℓ(λ) > 2`, hence `y_λ = 0` under convention D.
+
+The rest of the chain lives in the content sibling
+`content/quantum-observable-universe/mass-theory/mass-coefficient-shadow-price.lean`,
+which the library tree cannot import (siblings sit outside the package globs):
+`shadow_price_eq_zero_of_weight_eq_zero` proves `w̃_λ = 0 → u*_λ = 0` from the
+class field `C_eq : C λ = w̃_λ · h·⅟2`. Joined, they say **the Wigner mechanism
+contributes nothing above `k = 4`** — only `λ = (2,2)` is left.
+
+Bean `qou-w06d`; answers the successor `qou-a5jk` opened. -/
+theorem no_selfConj_two_row_of_five_le {a b : ℕ} (hb : 1 ≤ b) (hab : b ≤ a)
+    (hn : 5 ≤ a + b) : conjTwoRow a b ≠ [a, b] := by
+  intro hsc
+  have := selfConj_two_row_size_le_four hb hab hsc
+  omega
+
 end QOU.Hecke.SelfConjugateRowCap
