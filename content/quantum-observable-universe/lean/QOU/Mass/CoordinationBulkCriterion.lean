@@ -62,19 +62,65 @@ The satisfying case is exactly the one `CoordinationSurfaceDeficit` assumed:
 hypothesis `θ = 2/3` lives.
 
 **This is why the question is prior to the amplitude.** #6761 asked what fixes the fractional
-degree loss `1 − k'/k` and measured its answer generic (67.9 % of the plausible window). But no
-value of that ratio matters until an edge set satisfies `HasBulk`, and no edge set derived in this
-corpus does.
+degree loss `1 − k'/k` and measured its answer generic (67.9 % of the plausible window). No value
+of that ratio matters until an edge set satisfies `HasBulk`.
+
+## What is new here, and what the corpus already had
+
+A corpus-grep (six paths; path 0 unavailable, so grep-open not graph-open) puts four prior results
+between this file and a claim of novelty. Each is cited so a reader does not have to find it.
+
+* **The general affine object already has a Lean `def`.**
+  `QOU.Mass.AffineCountMultiplicityWindow.mu (α β A : R) : R := α * A + β` is the same object over
+  a generic field, used there for *cumulants*, never for a surface exponent. `affineBondCount` is
+  therefore a second definition of it, and the two should be reconciled if either grows consumers.
+  That file's own scope note — *"the window below is stated for a general affine multiplicity and
+  is **instantiated at nothing**"* — describes exactly the step this file takes.
+* **The chain half of Part 2 is already closed in prose, twice.**
+  `computations/qbeta/qbeta_chain_cannot_carry_coulomb_or_surface_probe.py` §2 states it verbatim:
+  *"In a path every interior vertex has degree exactly 2 and the two endpoints have degree 1 — a
+  deficit of `2`, **independent of `A`**. No `A^(2/3)` piece can arise from the edge count of a
+  path, for any letters."* Restated in `docs/audits/2026-09-05-binding-law-arc-synthesis.md`. So
+  `boundedSurface_not_hasBulk` **formalises an argument the corpus already carries**; it does not
+  discover it. Neither prior site has Lean.
+* **The deltahedron half is my own prose from #6780**, whose header already said a convex
+  deltahedron *"is `d = 3` geometrically while having no bulk at all"*. `linearSurface_not_hasBulk`
+  promotes that objection to a decidable `Prop`. That is worth doing and it is not a new finding.
+* **`AffineCountIsNotASurfaceTerm` is a one-instance result**, and its generalisation over
+  *invariants* was already made informally: `computations/probes/every_seifert_invariant_is_affine_probe.py`
+  records scope-(b) for any Seifert invariant of the canonical closure *"via
+  `QOU.Mass.AffineCountIsNotASurfaceTerm`'s strictly-monotone ratio, which applies verbatim to each
+  affine invariant"* — measured on six nuclei, target fixed at `A^(2/3)`, never written as a
+  theorem.
+
+**What is new** is accordingly narrow and worth stating precisely: arbitrary `(α, β)` against
+**every** `p ≠ 1` rather than one count against one target; the deltahedron instantiation in Lean;
+and `HasBulk` itself, which a full grep finds nowhere in the corpus in any wording — neither the
+conjunction, nor `Tendsto (A_surf A / A) atTop (nhds 0)` in any Lean file.
 
 ## Scope
 
 * **Proved:** the affine identity and its exclusion of every `p ≠ 1`; both derived edge sets are
   affine; the three `HasBulk` verdicts (constant fails, linear fails, sublinear power succeeds).
 * **NOT proved, and this is the open item:** that the substrate cannot emit a non-affine
-  coordination object. This file gives the criterion and disqualifies the two candidates that
-  exist; it does not survey the space of edge sets the substrate could emit. Reaching a scope-(b)
-  exclusion would need an argument that *every* edge set the braid word can express is affine,
-  which is not attempted here.
+  coordination object. Reaching a scope-(b) exclusion would need an argument that *every* edge set
+  the braid word can express is affine, which is not attempted here — and the corpus already
+  carries two scope-(a) negatives pointing the same way, which must be cited rather than
+  re-derived: `every_seifert_invariant_is_affine_probe.py` (*"the framework's nuclear encoding has
+  no surface … a surface term must come from geometry the encoding does not currently carry"*,
+  measured at six `A`) and `computations/substrate/nf_inter_nucleon_is_a_count_not_a_graph_probe.py`
+  (a **stronger** negative on one layer: the NF encoding expresses a bond *count* by type and no
+  graph at all, since two different graphs with the same type counts give a bit-identical vector).
+* **🛑 The enumeration of derived edge sets is EMPIRICAL, so "no derived edge set has a bulk" is
+  scope-(a) and is stated here only for the AFFINE ones.** The corpus keeps its own list at
+  `QOU.Hecke.BoundedDegreeCoulomb`, and it is longer than two. Beyond the chain and the deltahedron
+  there is at least **max-contact sphere packing** (`computations/binding_edge_set_selection.py`),
+  whose contact numbers for `A ≥ 5` are case-by-case geometry, are **not the deltahedron family in
+  general**, and are **not known to be affine** — so this file does not cover it, and says so rather
+  than letting the conclusion overreach. There is also the degree-capped count
+  `f_k(A) = A·min(A−1,k)/2` (`QOU.Mass.SaturationInvisibleToCumulants`), which is piecewise and so
+  not affine on `ℝ`, though Part 2 does reach it. **The honest claim is about affine edge sets, not
+  about every edge set the corpus derives.**
 * **Relation to `QOU.Mass.AffineCountIsNotASurfaceTerm`:** that file excludes one specific affine
   count (`12A − 1`, a crossing count) against one specific target (`c·A^(2/3)`), by monotonicity
   of the ratio. This is the same conclusion reached in the **exponent** variable and for an
