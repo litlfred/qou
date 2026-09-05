@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-05T12:02:04Z
-updated_at: 2026-09-05T18:29:34Z
+updated_at: 2026-09-05T19:53:16Z
 ---
 
 ## 2026-09-05 — detector extended, wired, calibrated (branch claude/precision-truncation-audit-sidecar-r5vjkx)
@@ -87,3 +87,38 @@ window 4). Left for a hand pass rather than shipping an indefensible number.
 - ~70 touched producers carry stale scriptHashes.
 - 23 files skipped by the drain's parse guard; 11 reverted as unreachable.
 - Both audits scan `computations/` only — not `tools/`, not `qou-mass/`.
+
+
+## 2026-09-05 — the q0/muon triage RESOLVED by measurement (PR #6885)
+
+I had left this as "needs an owner ruling on which muon value is canonical".
+That question was premature: `qou_substrate/constants.py` already answers it,
+and the answer is that TWO values are legitimate.
+
+- `Q_MUON_50_DIGIT_STR` — FROZEN by design, so a witness stays reproducible
+  against its own history.
+- `q_muon_at()` — RE-DERIVES from MASS_RATIO_MU_E_STR, moves with CODATA.
+- They differ by 0.0769 ppb. Both correct, for different callers.
+
+The gate carried only the frozen one, so literals written against the live
+derivation scored DIVERGENT (wrong) when they are what today's CODATA implies.
+Of 125 q0 findings, 77 are exact prefixes of one of four legitimate values
+(41 proton / 17 frozen / 13 ancestor / 6 live). Adding the live row:
+TRUNCATED 97 -> 102, DIVERGENT 99 -> 93.
+
+**The 17-digit ancestor is deliberately NOT legitimised** — constants.py names
+it as the defect population (336 files, "a literal cannot drift from a source
+it does not have"). Pinned as DIVERGENT by fixture.
+
+### My own errors this pass, all caught before landing
+1. First framed it as "the canonical is stale" — WRONG, retracted. Frozen by
+   design, documented as such.
+2. `_canon_str` fixed at 50 digits truncated the 70-digit live canonical —
+   the THIRD silently-short canonical in this gate's history. A round-trip
+   rule fixed that and broke the other end (M_E_MEV -> 110 digits of binary
+   noise). Precision is now stated per row.
+3. Rendering 70 digits from a 60-dps value exposed ~10 digits of noise that
+   moved with ambient precision. Now derived at 90 dps, and it reproduces
+   q-pinning-50-digit.witness.json to all 70 digits exactly.
+4. The EXACT fixture re-derived its expected value and so disagreed with the
+   row it existed to pin. It now READS the CANON row.
