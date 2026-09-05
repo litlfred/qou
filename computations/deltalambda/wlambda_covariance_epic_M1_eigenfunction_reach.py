@@ -167,7 +167,28 @@ def main():
         if not (verdicts["W"] and betas["W"] == beta_W_expected):
             control_ok = False
 
-        rows.append((n, stochastic, betas["W"], beta_W_expected, verdicts, constant))
+        # --- Does the identity actually DELIVER P and N? The reach table says W is an eigenfunction,
+        #     which is what LICENSES the identity; it does not check that the identity is right.
+        #     That check is the load-bearing one, because "P and N are exact local per-edge sums" is
+        #     the whole reason for preferring P > N. Verify it exactly rather than cite it:
+        #         Cov(f, W) = E_pi[(f - f*)(W - W*)] / (2 (1 - beta_3)),   1 - beta_3 = 3/(n+1).
+        pi = {p: F(dim[p] * dim[p], nfact) for p in parts}
+        exact_cov = {}
+        edge_cov = {}
+        for name, which in (("A", 0), ("D", 1)):
+            Ef = sum(pi[p] * st[p][which] for p in parts)
+            EW = sum(pi[p] * st[p][2] for p in parts)
+            exact_cov[name] = sum(pi[p] * st[p][which] * st[p][2] for p in parts) - Ef * EW
+            edge_cov[name] = sum(
+                pi[p] * w * (st[p][which] - st[q][which]) * (st[p][2] - st[q][2])
+                for p in parts for q, w in J[p].items()
+            ) / (2 * (1 - beta_W_expected))
+        identity_ok = all(exact_cov[k] == edge_cov[k] for k in ("A", "D"))
+        if not identity_ok:
+            control_ok = False
+
+        rows.append((n, stochastic, betas["W"], beta_W_expected, verdicts, constant,
+                     identity_ok, exact_cov, edge_cov))
         mark = lambda k: ("YES*" if verdicts[k] and constant[k]
                           else "YES" if verdicts[k] else "no")
         print(f"#   {n:>3} {'YES' if stochastic else 'NO':>12} "
@@ -178,11 +199,25 @@ def main():
     print("#     stochastic chain (beta = 1) and carries NO reachability information.")
     print("#")
 
+    print("# THE IDENTITY ITSELF, verified rather than cited -- this is the load-bearing check,")
+    print("#   because 'P and N are exact local per-edge sums' is the whole reason to prefer")
+    print("#   P > N. For f in {A, D}, the direct Plancherel covariance is compared EXACTLY against")
+    print("#   the edge sum  E_pi[(f-f*)(W-W*)] / (2(1-beta_3)):")
+    idw = all(r[6] for r in rows)
+    print(f"#   Cov(f, W) == edge sum, exactly, at every n = 3..{NMAX}, for BOTH f = A and f = D : "
+          f"{'PASS' if idw else 'FAIL'}")
+    n_show = rows[len(rows) // 2]
+    print(f"#   e.g. n = {n_show[0]}:  P = Cov(A,W) = {n_show[7]['A']}")
+    print(f"#                     edge sum = {n_show[8]['A']}")
+    print(f"#                N = -Cov(D,W) = {-n_show[7]['D']}")
+    print("#")
+
     print("# POSITIVE CONTROL. W is KNOWN (corpus 2026-08-21) to be an eigenfunction with")
     print("#   beta_3 = (n-2)/(n+1). If this chain does not reproduce that EXACTLY, the chain is")
     print("#   wrong and no verdict about A or D here may be quoted.")
     if control_ok:
-        print("#   PASSED: J is row-stochastic at every n, and beta(W) = (n-2)/(n+1) exactly.")
+        print("#   PASSED: J is row-stochastic at every n, beta(W) = (n-2)/(n+1) exactly, AND the")
+        print("#   exchangeable-pair identity reproduces both covariances exactly.")
     else:
         print("#   FAILED. Fix the chain before reading anything below.")
         print("RESULT: CONTROL FAILED -- the up-down chain is not reproducing the known beta_3; no "
