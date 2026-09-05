@@ -41,6 +41,12 @@ and `6b7d2ec4a8`:
 | S4 | **No linear objective selects `𝓑₃`.** It is relative-interior (all six constraints strictly slack), and a linear functional minimised at a relative-interior point is constant on the polyhedron. | **scope-(b) structural exclusion** |
 | S5 | Minimum-norm and maximum-min-slack both fail — the uniform point beats `𝓑₃` on both. | measured |
 | S6 | The six-term mass formula does **not** run on the LP. Its coefficients come from the chirality/writhe/ribbon route in closed form (`C_[3,2,1] = [2][4][6]h / (2[3]³[5])`). The shadow-price reading is a parallel interpretation, not the derivation. | measured |
+| S7 | **The two-row re-posing is already named in the corpus, by the partition-indexed LP itself.** `aK_via_lp_dual_full.py:231-258`: *"under convention D the `ℓ(λ) ≥ 3` blocks vanish identically, so this LP needs re-posing on the two-row quotient"* — and it deliberately does **not** repair it, emitting `null` rather than "manufacture an `a_K` the data does not support". Bean `qou-u2jg`; consequence tracked on `qou-8na1`. | stated, not done |
+
+**S7 is why O3′ below is not a new idea.** It is the same re-posing, reached
+from the SDP side by a falsifier rather than from the `a_K` side by a guard —
+an independent arrival at a route the corpus had already named and declined to
+take unilaterally. Cite it; do not present the quotient as novel.
 
 **S4 is the load-bearing one for this decision**: it forecloses the entire class
 "keep the LP, change the linear objective". S6 is what bounds the blast radius —
@@ -50,19 +56,52 @@ the numbers survive; the *reading* is what fails.
 
 ## 3. What is newly measured here — an index-set mismatch, and a type error
 
-### 3.1 There is no partition-indexed LP
+### 3.1 The LP the proposition NAMES is not partition-indexed — but a partition-indexed one does exist elsewhere
 
-Both programs index their Frobenius positivity constraints by **NF basis
-element**:
+> **🛑 CORRECTED 2026-09-05, before this proposal was acted on.** This section
+> was headed *"There is no partition-indexed LP"* and asserted that the object
+> the gate takes a dual of *"is not in either program"*, extended to the whole
+> corpus. **That is false, and it failed for the documented reason: I surveyed
+> `content/` and did not run the corpus-grep checklist over `computations/`
+> (path 3) or `.beans/` (path 6).** Both hold the counter-example. What
+> survives is a narrower claim, stated below.
+
+The two *content-block* programs index their Frobenius positivity constraints
+by **NF basis element**:
 
 - `prop:operator-selection-lp`: `Σ_j G_ij x_j ≥ 0 ∀ i ∈ {1..d}`, `d = n!`
 - `prop:confinement-lp`: the same, `i ∈ {1..6}` for `H₃(q)`
 
-But `prop:mass-coefficient-shadow-price` claims the dual of *"the corresponding
-**partition's** Frobenius positivity constraint"*, and `lp_shadow_price(partition)`
-and the Pass-2 gate are both **per-partition**. At `n = 3` that is **6
-constraints against 3 partitions**. The object the gate takes a dual of is not
-in either program.
+`prop:mass-coefficient-shadow-price` claims the dual of *"the corresponding
+**partition's** Frobenius positivity constraint in the nuclear operator
+selection LP"*, and `lp_shadow_price(partition)` and the Pass-2 gate are both
+**per-partition**. At `n = 3` that is **6 constraints against 3 partitions**.
+So the LP the proposition *names* cannot supply the object it claims.
+
+**A partition-indexed LP does exist, in compute, and the proposition does not
+cite it.** [`computations/aK_via_lp_dual_full.py`](../../computations/aK_via_lp_dual_full.py)
+poses exactly the program the proposition needs — its own header states it:
+
+```
+Basis: Wedderburn projectors {π_λ : λ ⊢ n}
+t_λ     = w_λ · χ^λ(W_atom)
+G_λλ'   = w_λ · δ_λλ'            (block-diagonal Frobenius Gram)
+n_target = |tr_M(W_atom)|
+```
+
+Its committed witness `a-K-via-lp-dual-full.witness.json` carries per-partition
+duals (`per_partition[i].u_lambda_star`), and `len(y_star)` is **3 / 11 / 30**
+at `n = 3 / 6 / 9` — exactly `p(n)`, not `n!`. At `H₃`, proton:
+`y*_[3] = y*_[2,1] = 1.0`, `y*_[1,1,1] = 0`.
+
+**So the corrected finding is an ambiguity, not an absence**, and it is still
+substantive: two inequivalent programs in this corpus are both called "the
+operator-selection LP", one indexed by `n!` basis elements and one by `p(n)`
+partitions; `prop:mass-coefficient-shadow-price` cites the first by label while
+making a claim only the second could support; and nothing reconciles them.
+`hecke_core_legacy.lp_shadow_price` — the function the binding gate actually
+calls — implements **neither**: it returns `w_λ/d_λ − 1/[k]_q!` in closed form
+and solves no program at all.
 
 ### 3.2 The natural bridge makes it a *matrix*, not a scalar
 
@@ -266,6 +305,16 @@ partitions with **nonzero Markov weight** (≤ 2 rows, for SU(2)). There every
 `y_λ > 0`, so PSD feasibility forces `Σ_λ y_λ tr(Φ_λ) ≥ 0` with equality only at
 `Φ = 0`, which the net constraint excludes. The degeneracy is gone by
 construction, and no new object is needed — the quotient is already built.
+
+**Not novel — see S7.** `aK_via_lp_dual_full.py` states this exact repair in its
+own source and declines to apply it. What the falsifier adds is *why* the
+quotient is the right cut rather than one convenient one: the degenerate ray is
+not merely "a block with zero weight", it is the q-antisymmetriser radical
+matched to 6.4e-51, so quotienting by the radical is the canonical move and not
+a choice. The two arrivals also disagree about nothing, which is worth stating:
+`aK_via_lp_dual_full`'s LP has `G = diag(w_λ)`, so a zero weight makes its Gram
+**singular**, and the SDP's zero-objective PSD ray is the same fact in the dual
+picture.
 
 ## 8. Recommendation — my judgement, not a finding
 
