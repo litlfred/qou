@@ -1,11 +1,11 @@
 ---
 # qou-ah2l
 title: trSummand from seminormalRepFin — the general-n rep is PROVED, so this is small
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T10:41:57Z
-updated_at: 2026-09-04T20:55:11Z
+updated_at: 2026-09-05T06:09:16Z
 ---
 
 Split out of `qou-t5ve` once the corpus-grep established that the general-`n`
