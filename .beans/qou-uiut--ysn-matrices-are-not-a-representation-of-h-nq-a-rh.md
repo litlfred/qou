@@ -1208,3 +1208,29 @@ So the position across four turns settles as:
     mechanism            proven (bit-identical, per-partition writes)
     coverage             98 % at li6 (14.5 s warm vs 681.7 s cold)
     RESUMPTION           proven here: 35.6 s for an atom killed mid-flight
+
+### 2026-09-05 — main merged (619 commits); the memo made it nearly free
+
+The merge touched `hecke_core_legacy.py`, which the checkpoint key hashes, so
+all 10 cached atoms were invalidated. The MEMO is not keyed on Python source —
+only on the compiled kernel hash, q₀, dps and the serialised factors — so it
+survived, and the atoms replayed warm:
+
+    deuterium 10.5 s   li6 1.1 s   li7 1.5 s   be9 1.7 s
+
+against 145 s / 682 s / 228 s / 36 s when they were computed. Before the memo
+this merge would have cost the whole prefix again.
+
+**Every value is byte-identical to pre-merge**, which is the check that matters:
+it confirms the 12-hunk resolution in `hecke_core_legacy.py` took the side the
+artifacts were computed against. b11 has since landed (11 atoms).
+
+`origin/main` had independently migrated the same YSN builder — `_ExactCOO` +
+`_sigma_is_exact` where this branch has `_CooMPF` + `_msig_object_safe`. Took
+this branch's for all 12 hunks: it is internally consistent (mixing would leave
+`_Q_MP` undefined), module-wide mpf rather than keeping f64 names "for display
+or float-domain call sites", and it drops the float64 BLAS fallback main's
+retains. One of main's call sites auto-merged OUTSIDE the hunks and referenced
+`_is_sparse_sigma`, whose definition did not survive — caught by the parity
+tests going 64-pass to 18-fail, and aliased rather than renamed so a future
+merge does not re-conflict.
