@@ -572,6 +572,13 @@ witness = {
 # tool resolving producer-from-witness therefore re-ran the wrong script.
 witness["scriptFile"] = Path(__file__).name
 out = Path(__file__).resolve().parent / "free-neutron-decay.witness.json"
+# Imported BEFORE `open(..., "w")`, and it must stay there (bean `qou-sidu`):
+# opening for write TRUNCATES immediately, so an import that raises inside the
+# `with` block closes the file EMPTY and destroys the witness. `qou_substrate`
+# is not importable from a bare producer context, which is how 22 witnesses were
+# emptied by a single `producer_importability_audit` run.
+import os as _os  # noqa: E402 -- provenance stamp
+from qou_substrate.witness import WitnessBuilder as _WB
 with open(out, "w") as f:
     # Provenance stamp (bean qou-4un2): this producer writes its
     # witness directly, so nothing else records which script made
@@ -581,8 +588,6 @@ with open(out, "w") as f:
     # MERGE NOTE: main and this branch fixed the SAME qou-4un2 defect from
     # different directions and BOTH halves are kept -- main's staleness/q0
     # stamp, this branch's `auditOnly` above and ensure_ascii=False below.
-    import os as _os  # noqa: E402 -- provenance stamp
-    from qou_substrate.witness import WitnessBuilder as _WB
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     _WB.stamp_staleness_metadata(
         witness, script_path=__file__, engine=None, q0_anchor=None)

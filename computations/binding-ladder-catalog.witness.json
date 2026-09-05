@@ -1,7 +1,7 @@
 {
   "computation": "binding-ladder-catalog",
   "description": "29b: Per-isotope binding catalog with ladder corrections. For each light isotope, leading order via mass_table_ppb / cross-fork best knot identification, then ladder correction \u03b1\u00b7m_e\u00b7|(q;q)_r|.  Tests universality of \u03b1 across isotopes at fixed rank.",
-  "timestamp_utc": "2026-08-30T12:52:19.573959+00:00",
+  "timestamp_utc": "2026-09-05T06:06:58.848980+00:00",
   "isotopes": [
     {
       "iso": "D",
@@ -266,10 +266,10 @@
   ],
   "scriptFile": "binding_ladder_catalog.py",
   "scriptHash": "0807b92d78aa",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "f23968bae65dc062af16c96f351abcf2fd532061",
+  "scriptCommitSha": "2b74577a65d62d7768ffd77547a7bdc534aa6f19",
+  "commitSha": "aaebee29d331cabb635680d16e85a6850254f7d1",
   "engine": "python",
-  "computedAt": "2026-08-30T12:52:19.679090+00:00",
+  "computedAt": "2026-09-05T06:06:58.898630+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

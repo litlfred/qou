@@ -3,7 +3,7 @@
  "probe": "gswz_287_nahm_efactor_probe",
  "engine": "python3-int-exact",
  "scriptFile": "gswz_287_nahm_efactor_probe.py",
- "commitSha": "e0a80473c04a9d839faa605a6bcb44655f472c98",
+ "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
  "beans": [
   "qou-xx9f",
   "qou-9p9y"
@@ -37,8 +37,8 @@
  },
  "scope": "scope-(a): the Nahm-argument shifted-tail E-factor (Li_0 on {zeta_6^t z_1, zeta_6^t z_2}, structural weights, both signs) ALONE and AS-IS does not reproduce the (287) h^1 mismatch \u2014 third argument-class excluded on digits, with a planted-candidate sensitivity control proving the scanner detects true matches. POSITIVE results: the Nahm saddle (1-z)^3 = z^2 has K-rational root exactly z_1 = 1-alpha^2; the mismatch has the exact (1+x)^a structure at h^2 (B_3 = 0 E-signature); the h^3 residual mu_3 is pinned mod 5. Remaining candidates: the f_5 fibre reading, or Bernoulli-weighted mixed arguments (GZ (8.7) c > 1) needing unprinted data",
  "scriptHash": "37a6490d4eeb",
- "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
- "computedAt": "2026-08-30T17:33:05.249796+00:00",
+ "scriptCommitSha": "54cc67782192df3cd813676817b731d7abcaa5d4",
+ "computedAt": "2026-09-05T06:14:11.592904+00:00",
  "durationMs": 0,
  "q0Anchor": "independent",
  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

@@ -497,8 +497,13 @@ def main() -> int:
     }
 
     out = HERE / "qbeta-c3-muon-anchor-codata-edition-attribution.witness.json"
+    # Imported BEFORE `open(..., "w")`, and it must stay there (bean `qou-sidu`):
+    # opening for write TRUNCATES immediately, so an import that raises inside the
+    # `with` block closes the file EMPTY and destroys the witness. `qou_substrate`
+    # is not importable from a bare producer context, which is how 22 witnesses were
+    # emptied by a single `producer_importability_audit` run.
+    from qou_substrate.witness import WitnessBuilder as _WB
     with open(out, "w") as f:
-        from qou_substrate.witness import WitnessBuilder as _WB
         witness.setdefault("scriptFile", os.path.basename(__file__))
         # The anchor is DECLARED, not resolved: this witness is about the
         # difference between anchors, so letting the resolver pick one would

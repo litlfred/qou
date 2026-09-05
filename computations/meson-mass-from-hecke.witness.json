@@ -1,7 +1,7 @@
 {
   "engine": "python",
   "engineVersion": "50dps",
-  "computedAt": "2026-08-25T03:00:16.107659+00:00",
+  "computedAt": "2026-09-05T06:11:53.657319+00:00",
   "computation": "meson-mass-from-hecke",
   "scriptFile": "meson_mass_from_hecke.py",
   "description": "Systematic probe of pion and kaon mass predictions following the same generic structure as the leptonic (CAL-2: m_\u03bc/m_e = Vol(4_1)/\u210f_q\u00b2) and hadronic (Q_\u03b2 = m_e\u00b7|q\u00b2-2q-1|\u00b7(q+1)/(2q\u00b3)) derivation instances. Tests 10+ candidate formulas for absolute m_\u03c0 and ratio m_K/m_\u03c0.",
@@ -119,7 +119,7 @@
   "q0Anchor": "ambiguous",
   "q0AnchorReason": "Derives q0 = 1/(1 - sqrt(Vol(4_1)/(m_mu/m_e))) from the registry ratio rather than reading an anchor, so no manifest entry describes it. The result, 1.10997859564273904668, is value C of qou-khac -- which the owner RULED canonical for the muon anchor on 2026-08-22 (PR #5500, 'A --> CODATA 2022'). This is ambiguous only transitionally: main's anchor witness still holds A, so a 'muon' stamp would read as a Q0_FLIP until #5500 lands. Revisit then; the correct label at that point is 'muon'.",
   "scriptHash": "43de8e3c5b1f",
-  "scriptCommitSha": "2c10b9f30cd2fc0c1c3a60cb236bc6c3d3e14828",
-  "commitSha": "7bcdd6e995995e4605439291bd9313105096ba32",
+  "scriptCommitSha": "4649f472091de343e4f513d0ed581b0e6b30b6e5",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
   "durationMs": 0
 }

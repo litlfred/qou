@@ -2,11 +2,11 @@
   "computation": "qbeta_perlambda_collapse_cancellation",
   "description": "S2 core: does the coherent Σ_λ collapse cancel per-λ n-p content? (Q_β residue-A, PR #1895 follow-up)",
   "discipline": "mechanism test at production q₀; canonical χ^λ; Plancherel + canonical-Wenzl weightings; no fit; c_3 cal-anchored; nothing wired",
-  "proton_total": 0.7022506773529951,
-  "neutron_total": 0.5963964111256351,
-  "coherent_abs": 0.10585426622735994,
-  "observe_last_sum_abs": 0.10585426622736,
-  "cancellation_ratio_plancherel": 0.9999999999999994,
+  "proton_total": 0.7022506773529945,
+  "neutron_total": 0.5963964111256347,
+  "coherent_abs": 0.10585426622735983,
+  "observe_last_sum_abs": 0.10585426622735984,
+  "cancellation_ratio_plancherel": 0.9999999999999999,
   "canonical": {
     "q0": 1.1099785827513808,
     "canonical_ratio": 1.0,
@@ -18,13 +18,13 @@
         3
       ],
       "dim": 1,
-      "chi_p": 1.3824944633925964,
-      "chi_n": 1.1221068216024748,
-      "contrib_p": 0.22587640819898583,
-      "contrib_n": 0.1833334347373593,
-      "delta_contrib": -0.042542973461626526,
+      "chi_p": 1.3824944633925929,
+      "chi_n": 1.1221068216024719,
+      "contrib_p": 0.22587640819898525,
+      "contrib_n": 0.18333343473735883,
+      "delta_contrib": -0.042542973461626415,
       "y_wenzl": 0.5054042265039308,
-      "delta_contrib_canonical": -0.13160101469011903
+      "delta_contrib_canonical": -0.1316010146901187
     },
     {
       "partition": [
@@ -32,10 +32,10 @@
         1
       ],
       "dim": 2,
-      "chi_p": 1.8077030637786233,
-      "chi_n": 1.7008886061270443,
-      "contrib_p": 0.5971510024027434,
-      "contrib_n": 0.5618662469936233,
+      "chi_p": 1.8077030637786218,
+      "chi_n": 1.7008886061270427,
+      "contrib_p": 0.597151002402743,
+      "contrib_n": 0.5618662469936229,
       "delta_contrib": -0.03528475540912013,
       "y_wenzl": 0.2472978867480346,
       "delta_contrib_canonical": -0.02641498965137293
@@ -47,21 +47,21 @@
         1
       ],
       "dim": 1,
-      "chi_p": -0.7392235707764773,
-      "chi_n": -0.9107622145530773,
-      "contrib_p": -0.12077673324873414,
-      "contrib_n": -0.14880327060534748,
-      "delta_contrib": -0.02802653735661334,
+      "chi_p": -0.7392235707764748,
+      "chi_n": -0.9107622145530745,
+      "contrib_p": -0.12077673324873374,
+      "contrib_n": -0.14880327060534704,
+      "delta_contrib": -0.0280265373566133,
       "y_wenzl": 5.165555585570765e-52,
-      "delta_contrib_canonical": -8.860923995014498e-53
+      "delta_contrib_canonical": -8.860923995014481e-53
     }
   ],
   "verdict": "S2 REFUTED — NO cancellation (Plancherel ratio 1.000, canonical-Wenzl 1.000). All per-λ n-p contributions are SAME sign (Δχ^λ<0 every block; all y_λ>0) ⇒ coherent = incoherent; observe-last recovers nothing. The c_3 order gap is NOT a collapse artifact ⇒ amplification is the genuine f-map / anchor-dependent brane-tower level (consistent with #1887). Owner-confirmed collapse-cancellation hypothesis (PR #1895) is the NEGATIVE branch it anticipated.",
   "scriptHash": "9715f5bd9380",
   "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
-  "commitSha": "389c49b89251dc5d5206dbd482bd9b0ab6581d5b",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
   "engine": "python",
-  "computedAt": "2026-08-10T02:00:41.484662+00:00",
+  "computedAt": "2026-09-05T06:19:42.809234+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

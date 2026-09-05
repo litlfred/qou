@@ -3,7 +3,7 @@
   "engine": "python",
   "auditOnly": "docs/audits/2026-05-05-nv-categorical-impasse.md",
   "computation": "t35-weak-vertex",
-  "timestamp": "2026-08-28T20:12:07.874290+00:00",
+  "timestamp": "2026-09-05T06:23:27.161389+00:00",
   "description": "T_{3,5} weak vertex form factor W(q) = tr_Markov((\u03c3\u2081\u03c3\u2082)\u2075) in H\u2083(q). The torus knot T_{3,5} with 10 crossings mediates the weak force. Beta decay inserts T_{3,5} at the converting quark; the 10 crossings partition into electron (3) + neutrino (0) + re-reduction (7).",
   "parameters": {
     "q": 1.1099785827513808,
@@ -118,5 +118,12 @@
       "old_ratio": 1.1552274541101357,
       "new_ratio": 0.0001462589018406344
     }
-  ]
+  ],
+  "scriptHash": "a14001e04cde",
+  "scriptCommitSha": "07d770562504da5354ea152463ef3ae0d32d043b",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
+  "computedAt": "2026-09-05T06:23:27.317226+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

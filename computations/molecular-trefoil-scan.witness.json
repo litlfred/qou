@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T06:19:01.561510+00:00",
-  "commitSha": "23924bf73163c27977800788b758fbd1cac82f48",
+  "computedAt": "2026-09-05T06:12:02.775752+00:00",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
   "assertions": [
     {
       "name": "H₂",
-      "computed": 4.2,
+      "computed": "4.2",
       "expected": 4.478,
       "passed": true,
       "tolerance": "1.3434",
@@ -14,7 +14,7 @@
     },
     {
       "name": "CO",
-      "computed": 10.5,
+      "computed": "10.5",
       "expected": 11.09,
       "passed": true,
       "tolerance": "3.327",
@@ -22,7 +22,7 @@
     },
     {
       "name": "CO₂",
-      "computed": 14.0,
+      "computed": "14.0",
       "expected": 16.56,
       "passed": true,
       "tolerance": 4.967999999999999,
@@ -30,7 +30,7 @@
     },
     {
       "name": "CH₄",
-      "computed": 16.9,
+      "computed": "16.9",
       "expected": 17.9,
       "passed": true,
       "tolerance": 5.369999999999999,
@@ -38,7 +38,7 @@
     },
     {
       "name": "C₆H₆",
-      "computed": 56.9,
+      "computed": "56.9",
       "expected": 57.4,
       "passed": true,
       "tolerance": "17.22",
@@ -46,11 +46,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "allPassedBasis": "assertions",
+  "durationMs": 9,
+  "durationMsBaseline": "builder-construction",
   "computation": "molecular-trefoil-scan",
   "scriptFile": "molecular-trefoil-scan.py",
   "scriptHash": "aff731465625",
-  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -62,9 +64,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "8cc0313c6de5e844"
   },
   "invocation": {
     "argv": [
@@ -85,44 +88,44 @@
     },
     "bond_CH": {
       "k_trefoils": 6,
-      "E_eV": 4.210562831105764
+      "E_eV": 4.210562831105767
     },
     "bond_CC": {
       "k_trefoils": 5,
-      "E_eV": 3.5107183729876987
+      "E_eV": 3.5107183729876996
     },
     "bond_CO": {
       "k_trefoils": 5,
-      "E_eV": 3.510713332893634
+      "E_eV": 3.510713332893624
     },
     "bond_OH": {
       "k_trefoils": 7,
-      "E_eV": 4.914673396715656
+      "E_eV": 4.9146733967156635
     },
     "molecules": [
       {
         "name": "H₂",
-        "pred_eV": "4.20689772859354",
+        "pred_eV": "4.2068977285935376819934426422733105636748110768573",
         "obs_eV": 4.478
       },
       {
         "name": "CO",
-        "pred_eV": "10.532138998951",
+        "pred_eV": "10.532138998951030041572247885509361285730611436887",
         "obs_eV": 11.09
       },
       {
         "name": "CO₂",
-        "pred_eV": "14.0428515369135",
+        "pred_eV": "14.042851536913553048850796057078509592423795721012",
         "obs_eV": 16.56
       },
       {
         "name": "CH₄",
-        "pred_eV": "16.851164004368",
+        "pred_eV": "16.851164004368027849211473004593604971738436094109",
         "obs_eV": 17.9
       },
       {
         "name": "C₆H₆",
-        "pred_eV": "56.8735487244408",
+        "pred_eV": "56.873548724440843364432342730668534527006871797668",
         "obs_eV": 57.4
       }
     ]

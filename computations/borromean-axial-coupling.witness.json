@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-24T17:00:39.759812+00:00",
-  "commitSha": "785333b50d803d0708d936e5bee95b6379259206",
+  "computedAt": "2026-09-05T06:07:10.533688+00:00",
+  "commitSha": "aaebee29d331cabb635680d16e85a6850254f7d1",
   "assertions": [
     {
       "name": "g_A",
@@ -30,11 +30,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "allPassedBasis": "assertions",
+  "durationMs": 9,
+  "durationMsBaseline": "builder-construction",
   "computation": "borromean-axial-coupling",
   "scriptFile": "borromean-axial-coupling.py",
-  "scriptHash": "9e202b78b7c5",
-  "scriptCommitSha": "99a0598a63a0c22d8c367c5d1f1d8da9998da146",
+  "scriptHash": "a983d741a425",
+  "scriptCommitSha": "e5177adffbb4210ff87a053d400eb13b1d47f6f7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +51,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "fe19077ea17b978d"
+    "pyhecke_native_build": "8cc0313c6de5e844"
   },
   "invocation": {
     "argv": [
@@ -245,11 +247,11 @@
     "upstream_witness_hashes": [
       {
         "path": "gram-matrix-dual.witness.json",
-        "sha256": "abc330747d472d5c1565e05829a4f3b68520cee21af0e111a4a820534e5c8e3f",
-        "size_bytes": 5606,
-        "commitSha": "04f32c489a876c69c9b6498dd4fa5d35f140dede",
-        "scriptCommitSha": "be59f0137635bf8e9cf97739281ab9d05209444a",
-        "computedAt": "2026-08-23T20:30:03.311813+00:00"
+        "sha256": "063115152c28939bfd0742535b20007868b16fd0d4d57b660354ae9de4aeb007",
+        "size_bytes": 5685,
+        "commitSha": "aaebee29d331cabb635680d16e85a6850254f7d1",
+        "scriptCommitSha": "dda6147096dfc140280de3eb57d44810d5404cc1",
+        "computedAt": "2026-09-05T05:59:40.404855+00:00"
       }
     ]
   },

@@ -1,15 +1,17 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-03T00:43:05.339216+00:00",
-  "commitSha": "7826c3d95daac3d608286c8e05212f986dc1e61e",
+  "computedAt": "2026-09-05T06:23:19.695307+00:00",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 474,
+  "allPassedBasis": "vacuous",
+  "durationMs": 529,
+  "durationMsBaseline": "caller",
   "computation": "z2bn-prolongation-qdifference-constraint",
   "scriptFile": "z2bn_prolongation_qdifference_constraint.py",
   "scriptHash": "122a1f9fb498",
-  "scriptCommitSha": "7826c3d95daac3d608286c8e05212f986dc1e61e",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,8 +20,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "8cc0313c6de5e844"
+  },
+  "invocation": {
+    "argv": [
+      "computations/substrate/z2bn_prolongation_qdifference_constraint.py"
+    ],
+    "reproduce": "python3 -u computations/substrate/z2bn_prolongation_qdifference_constraint.py"
   },
   "description": "z2bn lever-1 τ-derivation second probe: rigorous q-type-consistency constraint that the λ_SW prolongation operator must be q-difference, not a classical jet.",
   "color_cubic": "X^3+(z+1)X^2+(z^2+z+1)X+(z^3+z^2+z+1) (q-free)",

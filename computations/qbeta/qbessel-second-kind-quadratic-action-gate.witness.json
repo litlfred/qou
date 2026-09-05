@@ -77,10 +77,12 @@
   "allPassed": true,
   "verdict": "GATE RESULT (formalize-first; no fit; nothing wired). The Hahn-Exton q-Bessel 2nd-kind solution g2(w)=w^{-nu} sum d_k w^k is (A) a genuine 2nd solution of the (☆) q-difference equation, (B) independent of g1 with a q-Abel Casoratian D(w)=const*w^{-nu} -- so its normalization is SUBSTRATE-FIXED, adding NO fitted per-block knob (NOT a 7th Delta_lambda ansatz), and (C) SINGULAR ~ w^{-nu} at the substrate origin (the classical Neumann Y_nu ~ x^{-nu}). Because the on-shell binding sum is built from REGULAR-rep Markov matrix coefficients, regularity at the origin EXCLUDES the 2nd-kind solution from the on-shell trace (the same regularity that excludes Y_nu from E_q(2)/SU_q(2) matrix coefficients): the 2nd-kind 'quadratic action' correction is IDENTICALLY ZERO on-shell. It is non-trivial ONLY off-shell, in the q-Bessel Green's function / resolvent G ~ g1(x_<) g2(x_>)/D(x) sourced by the linear -w term of (☆). This PRUNES the qbk2 search: no on-shell binding scan is warranted; any continuation must be an off-shell resolvent with an explicit source. Bar sector: g1 carries both bar parities via Jacobi-Anger; the 2nd-kind enters off-shell paired with g1 through the Casoratian, so it does not define a new independent bar sector. TIERED: (A)(B)(C) PROVED; the off-shell-only conclusion is a structural deduction, not a fit; c_k / Delta_lambda stay cal-anchored.",
   "scriptHash": "6d5b7bd86bb3",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
   "engine": "python",
-  "computedAt": "2026-07-18T17:46:14.823056+00:00",
+  "computedAt": "2026-09-05T06:17:43.230973+00:00",
   "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "qbessel_second_kind_quadratic_action_gate.py"
 }

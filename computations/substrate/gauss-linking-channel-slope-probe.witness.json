@@ -36,10 +36,12 @@
   "allPassed": true,
   "verdict": "THE g = sin(theta) MAGNITUDE IS LINKING GEOMETRY (derived): for a slope-z curve pair on a torus, linking number per unit arc length in exchange-cycle units equals z/sqrt(1+z^2) = g EXACTLY, independent of the torus geometry (symbolic), with the topological input Lk = n verified by direct Gauss integration (n = 1,2,3 to <1e-3). Composed with SS2d (tangent = Markov weight) and D1 (z = canonical Markov parameter), the reeb-flow chain's residual CWF postulate REDUCES TO A UNITS CONVENTION (arc length in exchange-cycle units). Remaining 2H opens: that convention, the D1 deformation choice, and E_unit. SCOPE (a): structural; nothing wired; no observable evaluated.",
   "scriptHash": "ed2cc00e52a5",
-  "scriptCommitSha": "6c6eac62fcf667b0e345a8c472b49e4c7492bb70",
-  "commitSha": "6c6eac62fcf667b0e345a8c472b49e4c7492bb70",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
   "engine": "sympy+numpy",
-  "computedAt": "2026-07-07T08:40:14.605480+00:00",
+  "computedAt": "2026-09-05T06:21:09.697761+00:00",
   "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "gauss_linking_channel_slope_probe.py"
 }

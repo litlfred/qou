@@ -1,10 +1,11 @@
 ---
 # qou-qxsf
 title: 'PRODUCER FIX: saddle_offset_zero_location_probe.py computes its whole numeric core in float64'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-09-04T20:59:25Z
-updated_at: 2026-09-04T20:59:25Z
+updated_at: 2026-09-05T05:48:39Z
 ---
 
 

@@ -28,11 +28,13 @@
   "allPassed": true,
   "verdict": "THE ALTERNATING (HYPERBOLIC-ANCHOR) TOWER IS THE MODULUS-DEFORMED COLOR ROTATION: tr rho(sigma_1 sigma_2^{-1}) = 1 - q^2 - q^{-2} (bar-even, det 1), equal to the rigid zeta_3 value -1 at q = 1 and deforming with the modulus; the tower obeys the same mu = 1/2 Chebyshev degree flow, elliptic for q^2 + q^{-2} < 3 with the exact parabolic boundary at q = phi (phi^2 = phi + 1 — a spectral-transition point of the trace polynomial, NOT a fitted anchor; cf. #3444). The figure-eight (k = 2, lepton anchor) and Borromean (k = 3, nucleon carrier) sit at consecutive integer windings of this deformed rotation — the nucleon IS a lattice point, k = 3, matching its torus-link shadow on the rigid direction. SCOPE (a): structural; no observable evaluated; nothing wired.",
   "scriptHash": "3d6f3e486bb8",
-  "scriptCommitSha": "unknown",
-  "commitSha": "e2341f53c1484370f4f4a29461471369b73ca992",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
   "engine": "sympy",
-  "computedAt": "2026-07-07T02:53:41.175061+00:00",
+  "computedAt": "2026-09-05T06:20:46.267060+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "alternating_tower_borromean_winding_probe.py"
 }

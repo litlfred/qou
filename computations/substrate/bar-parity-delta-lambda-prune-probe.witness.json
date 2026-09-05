@@ -26,11 +26,13 @@
   "allPassed": true,
   "verdict": "BAR-PARITY SELECTION RULE GROUNDED AND APPLIED (audit-only): the binding/mixing ladder is bar-even, q-dimensions are bar-even, Hecke characters obey the TWISTED parity chi_lambda(w;q^-1) = (-1)^l(w) chi_lambda'(w;q) (verified via explicit Hoefsmit reps for all H_2/H_3 irreps, words to length 3), and content sums are conjugation-odd. Consequences: content-linear kernels are bar-odd -> pruned; lambda<->lambda'-asymmetric Frobenius-cost kernels are pruned unless the asymmetry routes to the weak sector; dim_q-built kernels pass parity (their failures were numerical, unchanged). SCOPE (a): this prunes KERNEL PARITY CLASSES for future candidates; it does not re-litigate any recorded numerical refutation and proposes no new ansatz (Delta_lambda gate respected).",
   "scriptHash": "5ad6298e2a65",
-  "scriptCommitSha": "unknown",
-  "commitSha": "f0e63af38f8f343b03c9a5de17fb0fc93b3ea8cb",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
   "engine": "sympy",
-  "computedAt": "2026-07-06T23:01:29.498820+00:00",
+  "computedAt": "2026-09-05T06:20:48.038399+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "bar_parity_delta_lambda_prune_probe.py"
 }

@@ -1,10 +1,10 @@
 {
   "computation": "option-e-h6-entry-point",
   "description": "Phase 2 entry-point structural cross-check at H_6 / deuteron scope. Consumes option-e-phase1-gram-h6.witness.json from PR #1697. NOT a fit; NOT a derivation; reads canonical Hoefsmit-seminormal witness data and exposes per-block structural quantities for ledger PROBE 1 (#1707, derive (1+q)/2) and ledger PROBE 4 (#1516, Kashiwara-crystal-coefficient angle).",
-  "timestamp_utc": "2026-08-29T15:23:23.226907+00:00",
+  "timestamp_utc": "2026-09-05T06:12:53.803156+00:00",
   "inputs": {
     "h6_gram_witness": "option-e-phase1-gram-h6.witness.json",
-    "h6_gram_witness_commit_sha": "2098a2da8cd3b3d466344a7f2fdd9ceeac3fa98f"
+    "h6_gram_witness_commit_sha": "6e771d6f7ceeb28afd4dd5e1f8296c8c3e031834"
   },
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
   "half_one_plus_q_0": "1.0549892913756904037958345478053844399372495609368",
@@ -178,9 +178,9 @@
       "partition": "6",
       "dim": 1,
       "w0_diagonal": [
-        "4.783204908561749"
+        "4.7832049085617486489906715388998704576272910722465"
       ],
-      "diagonal_sum": "4.783204908561749",
+      "diagonal_sum": "4.7832049085617486489906715388998704576272910722465",
       "chi_lambda_w0_witness": "4.7832049085617486489906715388998704576272910722465"
     },
     {
@@ -333,9 +333,9 @@
       "partition": "1_1_1_1_1_1",
       "dim": 1,
       "w0_diagonal": [
-        "-0.2090648465028206"
+        "-0.20906484650282059480726691240166445996863994244912"
       ],
-      "diagonal_sum": "-0.2090648465028206",
+      "diagonal_sum": "-0.20906484650282059480726691240166445996863994244912",
       "chi_lambda_w0_witness": "-0.20906484650282059480726691240166445996863994244912"
     }
   ],
@@ -345,10 +345,10 @@
     "Open: derive the n^w_\u03bb coefficients (Kazhdan-Lusztig multiplicities) and verify against probe-1's empirical \u0394_\u03bb(D) under bar-invariance."
   ],
   "scriptHash": "7f194c2695c7",
-  "scriptCommitSha": "ccf3593ce4e37dcef821df2f0513377fe0e307fd",
-  "commitSha": "2098a2da8cd3b3d466344a7f2fdd9ceeac3fa98f",
+  "scriptCommitSha": "6e08f1f57059c2b0eae4f51f6829ff1bedbcc63c",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
   "engine": "mpmath",
-  "computedAt": "2026-08-29T15:23:23.268210+00:00",
+  "computedAt": "2026-09-05T06:12:53.888858+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",

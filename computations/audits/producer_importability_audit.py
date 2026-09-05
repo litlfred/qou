@@ -246,6 +246,23 @@ def main() -> int:
     print(f"\n  top causes: {dict(causes.most_common(8))}")
 
     wb = WitnessBuilder("producer-importability-audit", engine="python")
+    # Declare the collected import failures as the RESULT (bean `qou-qe81`).
+    # The error-row gate demotes any witness carrying "<SomeError>: <message>"
+    # values to allPassed: false, because that shape is what a producer emits
+    # when it swallowed its own breakage and published green anyway. This audit
+    # is the one measured case where the opposite holds: the import failures
+    # ARE the finding, and a run that collected none would be the empty result,
+    # not the healthy one.
+    #
+    # Declared in the witness (top-level `expectErrors`) rather than through an
+    # environment variable, so the file itself says why it carries exception
+    # text and a reader can disagree with the claim.
+    wb.expect_errors(
+        "The payload IS the collected failures: this audit imports every "
+        "witness producer and records the ImportError/ModuleNotFoundError of "
+        "each one that cannot be imported. Those strings are its findings, not "
+        "its own breakage - a run collecting zero errors is the empty result. "
+        "The two assertions below carry the actual pass/fail verdict.")
     wb.set_description(
         "Detects committed witnesses whose PRODUCER cannot be imported, so the "
         "witness can never be refreshed and no staleness mechanism sees it. "

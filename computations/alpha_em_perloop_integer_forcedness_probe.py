@@ -179,14 +179,19 @@ def main():
     }
     out = os.path.join(os.path.dirname(__file__),
                        "alpha-em-perloop-integer-forcedness.witness.json")
+    # Imported BEFORE `open(..., "w")`, and it must stay there (bean `qou-sidu`):
+    # opening for write TRUNCATES immediately, so an import that raises inside the
+    # `with` block closes the file EMPTY and destroys the witness. `qou_substrate`
+    # is not importable from a bare producer context, which is how 22 witnesses were
+    # emptied by a single `producer_importability_audit` run.
+    from qou_substrate.witness import WitnessBuilder as _WB, apply_q0_comparison
+    import os as _os  # noqa: E402 -- provenance stamp
     with open(out, "w") as f:
         # Provenance stamp (bean qou-4un2): this producer writes its
         # witness directly, so nothing else records which script made
         # it -- and a re-run of an unstamped producer DELETES the
         # scriptFile a downstream pass had added. This producer reads BOTH pins on purpose
         # (it was wrongly declared q0-independent until 2026-09-03, bean qou-4bef).
-        from qou_substrate.witness import WitnessBuilder as _WB, apply_q0_comparison
-        import os as _os  # noqa: E402 -- provenance stamp
         witness.setdefault("scriptFile", _os.path.basename(__file__))
         apply_q0_comparison(witness,
             muon=ANCHORS["muon"], proton=ANCHORS["proton"],

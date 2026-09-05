@@ -1,15 +1,17 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T20:18:30.165941+00:00",
-  "commitSha": "acf5d779bd55b61669ee70b1980d78b63f6a6fe3",
+  "computedAt": "2026-09-05T06:00:37.939812+00:00",
+  "commitSha": "aaebee29d331cabb635680d16e85a6850254f7d1",
   "assertions": [],
   "allPassed": true,
+  "allPassedBasis": "vacuous",
   "durationMs": 9,
+  "durationMsBaseline": "builder-construction",
   "computation": "intermediate-knot-detection",
   "scriptFile": "intermediate_knot_detection.py",
   "scriptHash": "3dd3853fd2c4",
-  "scriptCommitSha": "c2d3978ec59b26beb3677d95d37524673309b899",
+  "scriptCommitSha": "22a1b067651c39376b39a1bff5df8ab9e77c7e45",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +26,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "8cc0313c6de5e844"
   },
   "invocation": {
     "argv": [

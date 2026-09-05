@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T08:57:59.682814+00:00",
-  "commitSha": "267d8689ee26e0ac60a1c77db9e70e43d1fe0325",
+  "computedAt": "2026-09-05T06:06:46.952640+00:00",
+  "commitSha": "aaebee29d331cabb635680d16e85a6850254f7d1",
   "assertions": [
     {
       "name": "γ e⁻ pair count",
@@ -70,11 +70,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "allPassedBasis": "assertions",
+  "durationMs": 6,
+  "durationMsBaseline": "builder-construction",
   "computation": "basis-knot-tables",
   "scriptFile": "basis_knot_tables.py",
   "scriptHash": "86a36a242b72",
-  "scriptCommitSha": "1c932d7dda9622addb2a55da178386662383acaf",
+  "scriptCommitSha": "064eff1240d3692e5199181c79b9f6027a7a9c55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,7 +91,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "8cc0313c6de5e844"
   },
   "invocation": {
     "argv": [

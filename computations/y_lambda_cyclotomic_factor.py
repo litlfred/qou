@@ -176,14 +176,19 @@ for n in [2, 3, 4]:
 
 # Save witness
 out_path = Path(__file__).parent / "y-lambda-cyclotomic-factor.witness.json"
+# Imported BEFORE `open(..., "w")`, and it must stay there (bean `qou-sidu`):
+# opening for write TRUNCATES immediately, so an import that raises inside the
+# `with` block closes the file EMPTY and destroys the witness. `qou_substrate`
+# is not importable from a bare producer context, which is how 22 witnesses were
+# emptied by a single `producer_importability_audit` run.
+import os as _os  # noqa: E402 -- provenance stamp
+from qou_substrate.witness import WitnessBuilder as _WB
 with open(out_path, "w") as fp:
     # Provenance stamp (bean qou-f1rs): the witness dict was built
     # INLINE at the write below, so there was nothing to stamp. It
     # is bound to a name here so this producer records which script
     # wrote it -- a re-run of an unstamped producer DELETES the
     # scriptFile a downstream pass had added. resolve and stamp the q0 anchor.
-    import os as _os  # noqa: E402 -- provenance stamp
-    from qou_substrate.witness import WitnessBuilder as _WB
     _prov_payload = {
         "computation": "y-lambda-cyclotomic-factor",
         "description": (

@@ -57,11 +57,13 @@
   "allPassed": true,
   "verdict": "MECHANISM-INGREDIENTS-PROVEN. The exp(kη)=cosh±sinh grading, h=2sinhη (bar-odd), [2]_q=2coshη (bar-even), χ^(2,1)(σ_1)=h (pure sinh, growth channel), torus pure-cosh, and the coherent-vs-observe-last gap are all exact. OPEN (heavy per-λ probe): whether the ACTUAL c_3 cancellation occurs depends on the real Wenzl weights y_λ and the proton↔neutron character difference — and the cancellation is a rotation((1-dim))-vs-growth((2,1)) effect, NOT a 1-dim transpose-pair effect (both 1-dim reps are rotation channels).",
   "scriptHash": "8be40c4ed96c",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
   "engine": "sympy",
-  "computedAt": "2026-07-18T17:46:25.276190+00:00",
+  "computedAt": "2026-09-05T06:18:29.155768+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "qbeta_coherent_collapse_sinh_cosh.py"
 }

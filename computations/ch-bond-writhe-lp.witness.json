@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:19:51.430650+00:00",
-  "commitSha": "2f5868a2c69c25eb0fece57bdd8123c2a09382eb",
+  "computedAt": "2026-09-05T06:07:25.026987+00:00",
+  "commitSha": "aaebee29d331cabb635680d16e85a6850254f7d1",
   "assertions": [
     {
       "name": "H₂ positive binding",
@@ -41,11 +41,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "allPassedBasis": "assertions",
+  "durationMs": 9,
+  "durationMsBaseline": "builder-construction",
   "computation": "ch-bond-writhe-lp",
   "scriptFile": "ch-bond-writhe-lp.py",
   "scriptHash": "602a81d1f48e",
-  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+  "scriptCommitSha": "22a1b067651c39376b39a1bff5df8ab9e77c7e45",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,7 +62,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "8cc0313c6de5e844"
   },
   "invocation": {
     "argv": [
@@ -79,25 +81,25 @@
       "n": 2,
       "writhe": -2,
       "ops": "σ₁⁻¹,σ₁⁻¹",
-      "E_eV": 3.1996273226028817
+      "E_eV": 3.1996273226028826
     },
     "bond_C-H": {
       "n": 1,
       "writhe": -1,
       "ops": "σ₀⁻¹",
-      "E_eV": 0.485619458850115
+      "E_eV": 0.48561945885011565
     },
     "bond_C-O": {
       "n": 1,
       "writhe": -1,
       "ops": "σ₁⁻¹",
-      "E_eV": 0.9939291075437694
+      "E_eV": 0.99392910754377
     },
     "bond_C-C": {
       "n": 1,
       "writhe": -1,
       "ops": "σ₁⁻¹",
-      "E_eV": 1.0979142048156163
+      "E_eV": 1.097914204815616
     },
     "bond_O-H": {
       "n": 1,
@@ -108,27 +110,27 @@
     "molecules": [
       {
         "name": "H₂",
-        "pred_eV": "3.19962732260288",
+        "pred_eV": "3.1996273226028824160719891395774450254638392743053",
         "obs_eV": 4.478
       },
       {
         "name": "CO",
-        "pred_eV": "2.98178732263131",
+        "pred_eV": "2.9817873226313098867649425730607174312549774838014",
         "obs_eV": 11.09
       },
       {
         "name": "CO₂",
-        "pred_eV": "3.97571643017508",
+        "pred_eV": "3.9757164301750798490199234307476232416733033117353",
         "obs_eV": 16.56
       },
       {
         "name": "CH₄",
-        "pred_eV": "1.94247783540046",
+        "pred_eV": "1.9424778354004626626354286486498166979783765289254",
         "obs_eV": 17.9
       },
       {
         "name": "C₆H₆",
-        "pred_eV": "12.7949445964412",
+        "pred_eV": "12.794944596441238992230062392137155929220712899274",
         "obs_eV": 57.4
       }
     ]

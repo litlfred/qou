@@ -86,11 +86,13 @@
   "allPassed": true,
   "verdict": "SYMBOLIC-EXACT STRUCTURAL IDENTITY (GRID-VERIFIED, NOT ONE-POINT). The a-independent Whipple toroidal constant c(nu,mu) := P^{-mu}_{nu-1/2}(coth a) / (sqrt(sinh a) * Q^{nu}_{mu-1/2}(cosh a)) has closed form c(nu,mu) = sqrt(2/pi) * exp(-i*pi*nu) / Gamma(nu+mu+1/2). Both Gamma-shift laws c(nu,mu+1)/c(nu,mu)=+1/(nu+mu+1/2) and c(nu+1,mu)/c(nu,mu)=-1/(nu+mu+1/2) hold to ~1e-40 across a grid of 8 generic (nu,mu) points (non-integer AND non-half-integer); solving the two first-order recurrences forces c = C*e^{-i*pi*nu}/Gamma(nu+mu+1/2), and the (nu,mu)-independent constant is grid-identified as C = sqrt(2/pi) (imaginary part numerically zero). The derived closed form matches the direct 60-dps compute to ~1e-40 on a 10-point extended grid. SCOPE: this promotes assertion (5) of whipple_rotation_involution_probe from one-point discovery to a grid-verified exact identity for the CONSTANT; the full rotation_step <-> Whipple IDENTIFICATION (audit S9, conjecture class WhippleRotationIntertwining) stays an OPEN LEAD — proving the constant's Gamma-structure does NOT prove the categorical identification. Nothing here wires to production or touches an observable.",
   "scriptHash": "2bf206bf61b2",
-  "scriptCommitSha": "9d008c50f09b9f6743b2523c94e1c3d35ececb2b",
-  "commitSha": "e4a3a91280715d1127eeb00c683d46bd209ee59c",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
   "engine": "mpmath",
-  "computedAt": "2026-07-13T10:45:03.984788+00:00",
+  "computedAt": "2026-09-05T06:23:13.416129+00:00",
   "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "whipple_gamma_constant_gridverify.py"
 }

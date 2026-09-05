@@ -373,13 +373,18 @@ def main():
             "results": [asdict(r) for r in results],
         }
         out = Path(_HERE_W.parent / "hecke-engine.witness.json")
+        # Imported BEFORE `open(..., "w")`, and it must stay there (bean `qou-sidu`):
+        # opening for write TRUNCATES immediately, so an import that raises inside the
+        # `with` block closes the file EMPTY and destroys the witness. `qou_substrate`
+        # is not importable from a bare producer context, which is how 22 witnesses were
+        # emptied by a single `producer_importability_audit` run.
+        import os as _os  # noqa: E402 -- provenance stamp
+        from qou_substrate.witness import WitnessBuilder as _WB
         with open(out, "w") as f:
             # Provenance stamp (bean qou-4un2): this producer writes its
             # witness directly, so nothing else records which script made
             # it -- and a re-run of an unstamped producer DELETES the
             # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
-            import os as _os  # noqa: E402 -- provenance stamp
-            from qou_substrate.witness import WitnessBuilder as _WB
             witness.setdefault("scriptFile", _os.path.basename(__file__))
             _WB.stamp_staleness_metadata(
                 witness, script_path=__file__, engine=None, q0_anchor=False)

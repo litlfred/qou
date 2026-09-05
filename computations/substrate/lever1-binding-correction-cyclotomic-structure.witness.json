@@ -1,15 +1,17 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-21T22:05:39.893603+00:00",
-  "commitSha": "dae5529271403c2a8beef93cfc3a02cc2ec86385",
+  "computedAt": "2026-09-05T06:21:19.740074+00:00",
+  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
   "assertions": [],
   "allPassed": true,
+  "allPassedBasis": "vacuous",
   "durationMs": 0,
+  "durationMsBaseline": "builder-construction",
   "computation": "lever1-binding-correction-cyclotomic-structure",
   "scriptFile": "lever1_binding_correction_cyclotomic_structure.py",
   "scriptHash": "eef210a00155",
-  "scriptCommitSha": "6a36fefb981b89f057038817750b47a58e5e02df",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,7 +25,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "8cc0313c6de5e844"
+  },
+  "invocation": {
+    "argv": [
+      "computations/substrate/lever1_binding_correction_cyclotomic_structure.py"
+    ],
+    "reproduce": "python3 -u computations/substrate/lever1_binding_correction_cyclotomic_structure.py"
   },
   "description": "Lever-1 binding correction tower D(m): exact cyclotomic (Habiro) factorization — Φ_d root-of-unity vanishing rule + non-cyclotomic core growth.",
   "$schema": "https://litlfred.github.io/qou/witness-schema/v1.json",

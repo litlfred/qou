@@ -1,7 +1,7 @@
 {
   "engine": "python3/mpmath",
   "engineVersion": "50dps",
-  "computedAt": "2026-09-04T03:24:58.950044+00:00",
+  "computedAt": "2026-09-05T06:07:48.897138+00:00",
   "computation": "delta-lambda-binding-full-evaluation",
   "scriptFile": "delta_lambda_binding_full_evaluation.py",
   "description": "Full numerical evaluation of the \u0394_\u03bb binding formula B(K) = m_e \u00d7 |\u03a3 y_\u03bb \u00b7 \u03c7^\u03bb(\u03b2_K) \u00b7 sgn(w_0^{S_{\u03bb prime}}) \u00b7 f^\u03bb| for D, T, \u00b3He, \u2074He. Zero free parameters. All factors: y_\u03bb (Wenzl), \u03c7^\u03bb (Hoefsmit+interface), sgn (Macdonald), f^\u03bb (hook-length).",
@@ -67,8 +67,8 @@
   ],
   "allPassed": true,
   "scriptHash": "6da619aed511",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
-  "commitSha": "4f6818390285716ab5b58c6d1ec966ddae917a77",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "aaebee29d331cabb635680d16e85a6850254f7d1",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

@@ -503,8 +503,13 @@ def main() -> int:
         "durationMs": int((time.monotonic() - t0) * 1000),
     }
     out_p = HERE / "qbeta-row-cap-sweep-of-physical-numbers.witness.json"
+    # Imported BEFORE `open(..., "w")`, and it must stay there (bean `qou-sidu`):
+    # opening for write TRUNCATES immediately, so an import that raises inside the
+    # `with` block closes the file EMPTY and destroys the witness. `qou_substrate`
+    # is not importable from a bare producer context, which is how 22 witnesses were
+    # emptied by a single `producer_importability_audit` run.
+    from qou_substrate.witness import WitnessBuilder as _WB
     with open(out_p, "w") as f:
-        from qou_substrate.witness import WitnessBuilder as _WB
         witness.setdefault("scriptFile", os.path.basename(__file__))
         _WB.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
         # ensure_ascii=False: the corpus convention is UTF-8 witnesses, and

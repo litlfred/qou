@@ -1,9 +1,6 @@
 {
-  "scriptFile": "beta-decay-from-q.py",
-  "engine": "python",
-  "auditOnly": "docs/audits/categorical-vs-fitted-q-decay-ba.md",
   "computation": "beta-decay-from-q",
-  "timestamp": "2026-08-23T21:00:12.032964+00:00",
+  "timestamp": "2026-09-05T06:06:47.736730+00:00",
   "description": "Verification that beta decay half-lives depend on q and \u03bc\u2080 alone. All standard-physics constants (G_F, m_e) decompose into q-dependent factors times the single dimensional scale \u03bc\u2080.",
   "substrate_parameter": {
     "q": 1.1099785827513808,
@@ -34,14 +31,14 @@
   },
   "G_F_decomposition": {
     "G_F_standard": 1.1663788e-11,
-    "v_weak_MeV": 246219.64023926202,
-    "N_v_crossing_count": 1445519.4471933409,
+    "v_weak_MeV": 246219.64023926205,
+    "N_v_crossing_count": 1445519.447193341,
     "note": "G_F = 1/(\u221a2 v\u00b2) where v = N_v \u00b7 E_\u00d7 \u00b7 \u03bc\u2080. N_v is the effective crossing count of the weak scale \u2014 a topological invariant to be derived from the brane tower structure. OPEN COMPUTATION."
   },
   "rate_scale_check": {
     "G_F2_m_e5_standard": 7.64363011131291e-26,
-    "243_Ecross_mu0_over_2Nv4": 7.643630111312916e-26,
-    "ratio": 1.0000000000000007,
+    "243_Ecross_mu0_over_2Nv4": 7.643630111312912e-26,
+    "ratio": 1.0000000000000002,
     "note": "These should agree exactly (algebraic identity)."
   },
   "sensitivity": {
@@ -110,5 +107,14 @@
     "g_A from Borromean Skein algebra (target: 1.27)",
     "C_geom from Hopf(trefoil, Borromean) trace (target: 14.25)",
     "\u03bb_shell from alpha-particle sub-link binding"
-  ]
+  ],
+  "scriptFile": "beta-decay-from-q.py",
+  "scriptHash": "a959e30754e2",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "aaebee29d331cabb635680d16e85a6850254f7d1",
+  "engine": "python",
+  "computedAt": "2026-09-05T06:06:47.863571+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

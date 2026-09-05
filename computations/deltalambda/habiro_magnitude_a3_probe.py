@@ -168,13 +168,18 @@ witness = {
 }
 witness["allPassed"] = all(a["passed"] for a in witness["assertions"])
 out = os.path.join(here, "habiro-magnitude-a3.witness.json")
+# Imported BEFORE `open(..., "w")`, and it must stay there (bean `qou-sidu`):
+# opening for write TRUNCATES immediately, so an import that raises inside the
+# `with` block closes the file EMPTY and destroys the witness. `qou_substrate`
+# is not importable from a bare producer context, which is how 22 witnesses were
+# emptied by a single `producer_importability_audit` run.
+from qou_substrate.witness import WitnessBuilder as _WB
+import os as _os  # noqa: E402 -- provenance stamp
 with open(out, "w") as f:
     # Provenance stamp (bean qou-4un2): this producer writes its
     # witness directly, so nothing else records which script made
     # it -- and a re-run of an unstamped producer DELETES the
     # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
-    from qou_substrate.witness import WitnessBuilder as _WB
-    import os as _os  # noqa: E402 -- provenance stamp
     witness.setdefault("scriptFile", _os.path.basename(__file__))
     # q0_anchor was `False`, i.e. "this witness carries no q0-dependent field".
     # Untrue: this producer reads q0 and records it, so the false declaration
