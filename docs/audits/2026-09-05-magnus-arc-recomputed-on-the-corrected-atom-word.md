@@ -52,6 +52,18 @@ All at `n=9`, dps 65, complete 30-shape census, `q₀` unchanged.
 | envelope `√E(b)`, `b=1` | — | **64.4015** |
 | link-1 slack range | 2.04 – 550× | **2.221 – 1217×** |
 | worst-slack shape | `(3,2,1⁴)` | **`(5,2,1,1)`** |
+| pointwise violations | 6 | **4** |
+
+The envelope `E(b)` itself, complete at every level:
+
+```
+b=1  4147.5518  (8,1)     b=2  2527.9007  (7,1,1)   b=3  955.31763  (6,1,1,1)
+b=4  495.69802  (5,4)     b=5  265.95412  (4,4,1)   b=6  62.579996  (3,3,3)
+b=7  2.9063514  (2,2,2,2,1)
+```
+
+Note which shape attains each level maximum: the hook does at `b=1,2,3` and never again — the same
+`b=4` crossing as the majorant ranking, read off a different quantity.
 
 ## What survives
 
@@ -68,6 +80,12 @@ links ✓ across all 30 shapes.
 `√(tr(X*X)/dim)`, the hook is its level's **maximum** at `b=2,3` and its **minimum** at `b=4,5,6,7`.
 That the crossing lands on the same interior `b` under a different operator is the strongest single
 piece of evidence the arc has that the hook split is structural rather than incidental.
+
+**4a. Pointwise monotonicity is still refuted, and still refuted only by hooks.** The count drops
+6 → **4**, but the structure is exact: **4 of 4** violations have a hook on the low side, **0** on the
+high, and **0** involve no hook at all. So pointwise monotonicity still holds once hooks are excluded.
+All four are one shape or its neighbours — `(5,1⁴)` under `(4,4,1)`, and `(4,1⁵)` under each of
+`(3,3,3)`, `(3,3,2,1)`, `(3,3,1,1,1)`.
 
 **4. The hook κ column is still U-shaped** — 0.8834, 0.3204, 0.04976, 0.02365, 0.08988, 0.15743,
 0.72353. The minimum moves `b=5 → b=4`; the shape does not.
