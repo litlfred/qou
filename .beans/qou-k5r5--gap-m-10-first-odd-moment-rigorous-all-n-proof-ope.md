@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-05T08:54:35Z
+updated_at: 2026-09-05T10:34:39Z
 ---
 
 
@@ -1147,3 +1147,49 @@ sqrt(PQ)` at every n; the reversal identities at every edge.
 target is a finite-n proof of `Q < P` -- both sides are explicit edge sums in `(g, delta)` over
 the Plancherel-weighted up-down chain, so this is where the Kerov-CLT-adjacent analysis should
 now be aimed.
+
+
+### 2026-09-05 — the CS relaxation is CLEANER but not EASIER (PR #6825)
+
+Probe `computations/deltalambda/wlambda_covariance_epic_M1_pq_pointwise_census.py`.
+
+**Question settled BEFORE building on #6651's recommendation:** is `Q < P` pointwise nearly-true
+(per-edge argument + thin exceptional set) or aggregate-only (needs the joint law of `(g, delta)`
+under Plancherel)? Those need different proofs.
+
+**Integrand factors, no case split.** With `Delta(A) = g`, `Delta(D) = 2 delta - 2`:
+
+    g^2 - (2 - 2 delta)^2 = k (2g - k),   k := g + 2 delta - 2 = Delta(Sum h)
+
+So a `P-Q` edge is negative iff `k(2g-k) < 0` -- the SAME `k` as the `M_1` census (`g*k < 0`),
+tested differently. The two negative sets are NOT nested in either direction.
+
+**MEASURED: AGGREGATE.** Over `n >= 12`, negative-edge fraction 10.3-11.2 %, pos/neg MASS ratio
+**[20.33, 26.74]**. Not thin -- no per-edge argument closes it.
+
+**And WORSE than what it was meant to simplify.** `M_1`'s own census, computed on the SAME edge set
+over the SAME window (not cited from a differently-windowed figure), is **[41.51, 56.32]** -- about
+2x more favourable. So the relaxation bought a cleaner STATEMENT
+(`Q < P` is `E_nu[Delta(D)^2] < E_nu[Delta(A)^2]`, two second moments of one measure, no `V_A`) and
+NOT an easier problem. **My #6651 recommendation is weakened by its own follow-up**: `Q < P` stays
+the better-SHAPED target, not a locally-closeable one.
+
+Cross-check: the `M_1` figure here (41.5-56.3 over `n >= 12`) reproduces #6651's 44.1-56.3 over
+`n >= 16` on a wider window.
+
+**STRUCTURAL, and it is the one locally-priceable piece.** At `g = 0` the `P-Q` integrand is
+`-(2-2delta)^2 <= 0` for EVERY such edge, while `M_1`'s `g*k` vanishes identically there. The
+`|u| = |v|` edges contribute nothing to `M_1` and carry **11.55 %** of `P-Q`'s negative mass at
+`n = 20`. Cut out by `g = 0, delta != 1` -- no inequality to solve.
+
+Negative mass sits toward the **bulk**: mean `|u|+|v|` = 6.656 negative vs 9.025 positive at n=20.
+
+**Controls, all PASS, no verdict without them:** `P` == `Cov(A,W)` from the Plancherel measure with
+no edges (independent yardstick; `Q` has NO such yardstick and the module says so rather than
+faking one); per-edge terms sum to `P-Q` exactly; criterion matches sign at every edge; term
+reversal-invariant (so reverse-pairing cannot cancel this set either).
+
+**Still OPEN.** Sufficient never necessary. Window `n <= 20` vs requirement `n >= 79`. Both routes
+(`M_1 > 0` directly, and `Q < P`) now need the same thing: control of the joint distribution of
+`(g, delta)` under Plancherel. That is the Kerov-CLT-adjacent analysis, and it is where the next
+attempt should aim -- with the `g = 0` family priced separately as the one closed-form piece.
