@@ -37,6 +37,20 @@ HONESTY (STRICT): nothing here proves the exchange property; every
 conditional theorem carries it as an explicit hypothesis. No class
 instance is declared; nothing wired; `1/(8π)` stays phase-4.
 
+🛑 BUT THE CORPUS DOES PROVE IT — cross-reference added 2026-09-05.
+The paragraph above is true of THIS FILE and is easy to read as "the
+hypothesis is open". It is not: `QOU.Machinery.CoxeterParabolic.rightExchange`,
+in `CoxeterReflectionCocycle.lean` (merged #4102), proves
+`RightExchangeProp cs` for EVERY Coxeter system, sorry-free — that file's
+own header says so ("the parabolic-coset file's exchange hypothesis,
+discharged"). So `length_minRep_mul_wordProd` is conditional only in its
+statement, and a consumer discharges it by supplying `rightExchange`.
+
+Recorded because a reader who stops at this header concludes the generic
+lifting lemma is unusable and goes looking for a way around it. One did,
+on 2026-09-05, and wrote the wrong conclusion into
+`docs/audits/2026-09-04-mathas-murphy-chain-status.md` before catching it.
+
 Base ring: none — pure Coxeter combinatorics (§7c not applicable).
 
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2

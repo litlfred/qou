@@ -104,7 +104,32 @@ returns **`IsReduced` machinery only — zero hits on "exch" and zero on "delet"
 the gap is current, not stale, and `length_minRep_mul_wordProd` is rightly
 conditional. **Do not go looking for `CoxeterSystem.exchange`; it is not there.**
 
-### But type A does not need it
+### 🛑 CORRECTION (same day): the CORPUS proves exchange, so the lifting lemma is NOT blocked
+
+The measurement above is right about **Mathlib** and the conclusion I drew from it is
+wrong. `QOU.Machinery.CoxeterParabolic.rightExchange` — in
+[`CoxeterReflectionCocycle.lean`](../../content/quantum-observable-universe/lean/QOU/Machinery/CoxeterReflectionCocycle.lean),
+merged #4102 — **proves `RightExchangeProp cs` for every Coxeter system**, sorry-free
+(`#print axioms`: `[propext, Classical.choice, Quot.sound]`, verified, as is
+`strong_exchange` and `length_minRep_mul_wordProd` itself).
+
+So `length_minRep_mul_wordProd` is **conditional only in its statement**: the
+hypothesis is discharged elsewhere in this repo, and the generic Bourbaki lifting
+lemma is fully available to anyone who wants it. Read the row above as "carries the
+hypothesis", not "is blocked".
+
+**How I got it wrong, and it is this document's own subject.**
+`CoxeterParabolicCoset.lean`'s header calls the gap "the audited upstream gap" and
+says *"nothing here proves the exchange property"* — both true **of that file** — and
+I read it, measured Mathlib, and stopped. The sentence that would have redirected me
+is in a *different* file. That is the same stale-pointer failure this arc opened with
+(`HeckeCellular` claiming the pairing argument was open when `HeckeMurphy` had proved
+it), and I walked into it while writing the document that records it.
+
+A cross-reference has been added to `CoxeterParabolicCoset.lean` so the next reader is
+not told only half of it.
+
+### Type A does not need it either — but that is now a preference, not a necessity
 
 The generic lifting lemma is blocked; the **type-A** length-additivity criterion is
 not. `QOU.Hecke.LengthAdditive.length_mul_eq_add_iff` (#6444, merged `a2edbcffb7`,
@@ -112,10 +137,12 @@ sorry-free) gives, for `Perm (Fin (n+1))`,
 
     ℓ(u·v) = ℓ(u) + ℓ(v)   ↔   invSet v ⊆ invSet (u·v)
 
-**unconditionally**, by inversion sets rather than by exchange. The Murphy basis is a
-type-A statement, so the exchange gap is not on its critical path — a route around it
-already exists inside this same arc, and `exists_garnir_length_additive` (#6598) is
-built on it.
+**unconditionally**, by inversion sets rather than by exchange. Given the correction
+above there is no gap to route around; what remains true is that the type-A route is
+**lighter** — it needs no reflection-cocycle machinery and no `IsReduced` residue — and
+it is what this arc's results are actually built on
+(`CompositionMinimal.length_mul_eq_add_of_isDistinguished`,
+`exists_garnir_length_additive` #6598). That is a design choice, not a necessity.
 
 ## 🛑 Lemma 3.9's conjugation step is FREE — do not build it
 
