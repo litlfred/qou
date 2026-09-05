@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T06:21:10Z
-updated_at: 2026-09-05T06:36:10Z
+updated_at: 2026-09-05T06:48:36Z
 ---
 
 Found 2026-09-05 while closing out the `qou-tol0` root cause. That bean's own
@@ -116,3 +116,46 @@ research, not a mechanical substitution.
 | `compute_atom_chi_rust:164`, `channel_asymmetry…:204` | self-reports; renaming suffices. The first needs the rust kernel to re-run |
 
 Detector count: **7 → 6 blocking**.
+
+
+---
+
+## Final state of this tranche (PR #6732)
+
+**Detector: 7 → 4 blocking.** Three fixed, two left open with a measurement,
+and one was never a defect.
+
+| producer:line | outcome |
+|---|---|
+| `yekutieli_borromean_h2_extraction:216` | **fixed** — 2 falsifiable assertions; one FAILS at 121 %; raw-float64 1 → 0 |
+| `mass-from-q-symbolic:568` | **fixed** — independent route via `Vol/(1−1/q)²` recomputed from `q` |
+| `mass-from-q-symbolic:577` | **fixed** — same; and it exposed the false positive below |
+| `confined_knot_binding:289` | **open** — `y_λ` ruled out by measurement; needs the intended source for `W_ALT` |
+| `confined_knot_binding:308` | **open** — same shape |
+| `compute_atom_chi_rust:164` | **open** — self-report; needs the rust kernel to re-run |
+| `channel_asymmetry…:204` | **open** — self-report; renaming suffices |
+
+## A false positive in my own dataflow tier, found by using the audit on a fix made with it
+
+After `mass-from-q-symbolic:599` got an independent `expected`, it was **still**
+blocking: `borromean_mass_MeV_err` is residual-named and reaches both sides. It
+is a 1σ **propagated uncertainty**,
+`sqrt((ratio_err·m_e)² + (ratio·m_e_err)²)`, and correct. An error-propagation
+formula mentions the measured quantities for the same reason the residual does.
+
+Discriminator: **a residual is a difference**. `_reaches_subtraction` requires a
+`Sub` in the provenance — keeps the `qou-tol0` positive, drops this class.
+
+**The general lesson outranks the instance.** The audit doc had claimed the
+provable tiers were 7-for-7 and the name tier 0-for-4. Both true as counts on
+`main`; but the dataflow half had fired on **nothing** there, and I read that
+zero as soundness. **A tier that has never fired has been measured for recall
+and not at all for precision.** Recorded as taxonomy row 34.
+
+## Also fixed: the self-test was self-defeating
+
+It pinned the two provable shapes to the live files that motivated them, and
+went red the moment the first was **fixed**. A calibration that a successful
+drain breaks is measuring the corpus, not the detector. Both are synthetic
+fixtures now; only the git-history one stays live, durable because it is a
+fixed sha.
