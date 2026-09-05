@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-04T12:25:27Z
+updated_at: 2026-09-05T06:05:08Z
 ---
 
 
@@ -970,3 +970,42 @@ refuses to print a cost figure if either fails.
 
 DOES NOT CLOSE EITHER ROUTE. Both still need a rigorous finite-n argument -- delta_A for the margin,
 P > N for Fulman. Window n<=40 against a requirement of n>=79; nothing here is a bound.
+
+
+2026-09-05 (same branch claude/m1-k5r5-cs-relaxation-cost-2026-09-04, BEFORE merge): I WITHDRAW my
+own inference from the CS-cost measurement. Tightness is not tractability, and the machinery reaches
+P > N, not the margin.
+
+WHAT #6651 MEASURED, and it STANDS: the CS relaxation keeps >= 78.6% of the true margin
+(rho_D in [0.8782, 0.9203] over n>=16), i.e. costs at most 1.27x.
+WHAT I INFERRED FROM IT, and it does NOT follow: 'the margin route is the right target'. Those are
+two different claims and only the first was measured.
+
+THE REACH (_eigenfunction_reach.py, exact Fractions, n=3..12, NO float64, exit 0). The Fulman
+identity is NOT a general covariance formula:
+    Cov(f,g) = E_pi[(f-f*)(g-g*)]/(2(1-beta))   valid ONLY when J g = beta g
+so it computes the covariance of ANY f against an EIGENFUNCTION g of the up-down chain. Measured,
+quantified over the FAMILY (every non-degenerate n):
+    W : eigenfunction at every n, beta_3 = (n-2)/(n+1) EXACT  => Cov(.,W) reachable => P AND N reachable
+    A : eigenfunction at NO non-degenerate n                  => V_A = Cov(A,A) NOT reachable
+    D : eigenfunction at NO non-degenerate n (constant, hence vacuously one, at n=3 only) => V_D NOT reachable
+CONTROL PASSED: J row-stochastic at every n and beta(W) reproduces the corpus's 2026-08-21 value
+exactly, so a negative on A is a fact about A, not about my chain.
+
+CROSS-CHECK FROM AN INDEPENDENT DIRECTION: #6627 found V_W an exact polynomial n(n-1)(n-2)/3 while
+V_A, V_D and P are not polynomial at all. Same boundary from the other side -- the one object with a
+closed form is the one whose statistic is the eigenfunction. Two measurements, one split.
+
+CONSEQUENCE: the margin route's ONE remaining object (V_A) is the one the named machinery does not
+reach AND the one with no polynomial closed form. P > N's two objects are both exact local per-edge
+sums with manifest signs. RECOMMENDED NEXT TARGET CHANGES FROM delta_A TO P > N.
+
+SCOPE (a), NOT (b): this says the NAMED IDENTITY does not apply to V_A. It does NOT exclude V_A -- a
+spectral decomposition of A in the chain's eigenbasis, or a different chain for which A IS an
+eigenfunction, are both untested.
+
+QUANTIFIER BUG IN MY OWN PROBE, caught before commit: the first run reported 'D is an eigenfunction
+=> V_D reachable' on the strength of n=3 ALONE, where D == 3 is CONSTANT and a constant is trivially
+an eigenfunction of any stochastic chain (beta=1). I used any(n) where reachability is a claim about
+the FAMILY and needs every(n) with constants excluded. Second quantifier slip of this arc -- #6602
+had the mirror (testing a family claim at a point).
