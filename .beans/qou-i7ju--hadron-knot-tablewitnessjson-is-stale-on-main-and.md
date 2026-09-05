@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-30T13:40:13Z
-updated_at: 2026-09-05T05:54:33Z
+updated_at: 2026-09-05T05:57:11Z
 ---
 
 `computations/hadron-knot-table.witness.json` disagrees with its own producer
@@ -357,3 +357,49 @@ tree drift, not the harness.
 **Prerequisite for anyone picking this up:** rebuild the wheel FIRST and assert
 `_HAS_LP_KERNEL` before trusting any binding number. 52 s, against 6+ hours
 spent on a number that was never the framework's.
+
+
+---
+
+## DO NOT REGENERATE — the standing instruction still holds, and I am not overriding it
+
+I now have a working kernel in this container, which is exactly the capability
+this bean's route 1 ("run it where it can finish") was waiting on. **I am
+deliberately not regenerating the witness.** Two reasons from the history,
+neither of them mine:
+
+**1. The sibling's instruction is explicit and current.** `096f0d89b9` said
+regeneration "must NOT proceed until step 2" (wire the correct matrices in) —
+and step 2 *has* since happened, in `815b2a46a0`, so that precondition is
+satisfied and it would be easy to read the gate as lifted. But the LATER commit
+`7b8625230c`, written after the wiring, replaces it:
+
+> No witness regenerated, and **hadron-knot-table.witness.json should stay
+> untouched while the sign is wrong.**
+
+The sign is still wrong at all four atoms they have measured. So the gate is not
+lifted; it was re-stated on stronger grounds. Regenerating now would record
+19 atoms of a quantity known to have the wrong sign, at ~840 s per bound atom
+and rising as A², and it would *look* like progress.
+
+**2. The committed witness is already invalid on three independent axes**, and
+this was recorded a year of sessions ago — `da645cf0f3`, 2026-08-23:
+
+> the existing witness is stale on three separate axes anyway (**muon q₀,
+> convention C, older script**)
+
+plus the `Q0_FLIP` on the retired pin, plus the `tr_M` drift this bean measured.
+So "is it also on braid-violating matrices?" is a *fifth* axis, and I did not
+establish it: the June-era source is outside this shallow clone (oldest fetched
+commit 2026-08-15), and the marginal value of a fifth invalidity proof on an
+already-invalid artifact is close to zero. **Recorded as unmeasured rather than
+guessed** — the witness predates both the braid-relation discovery (2026-08-31)
+and the convention-D ruling, so the presumption is unfavourable, but a
+presumption is not a measurement.
+
+**What "unblocked" actually means now.** This bean's route 1 was
+capability-blocked; it is now *correctness*-blocked, which is a different and
+better-defined state. The order is: sign first (`qou-sv7h`, and they hold it),
+then anchor classification (`qou-bypn` — proton under the 2026-08-30 ruling),
+then regenerate. Not the reverse. A run costing ~840 s per bound atom is cheap
+compared with publishing 19 wrong-signed numbers that look freshly computed.
