@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T14:57:07Z
-updated_at: 2026-09-05T17:50:46Z
+updated_at: 2026-09-05T18:00:32Z
 ---
 
 
@@ -206,3 +206,72 @@ carrier cannot be written either, because any statement about an *abstract*
 is not a "should have been a class" case.
 
 Zero consumers; nothing downstream changed.
+
+
+## All four `[manuscript]`-only axioms now read (2026-09-05)
+
+| axiom | verdict |
+|---|---|
+| `aeon_recycling` | **VACUOUS — removed** (PR #6859) |
+| `affine_slater_rigidity` | **legitimate Mathlib-gap** — citation corrected |
+| `slater_strict_complementarity_kernel_axiom` | **legitimate Mathlib-gap** — citation corrected |
+| `evenPower_necessary_for_blockPosSemidef` | **QOU conjecture, not a Mathlib gap** — see below |
+| `b1_holds_at_row` | **honest conditional bookkeeping** — but uninterpreted |
+
+### The two SDP axioms: legitimate, wrong section number
+
+Both assert a published convex-optimization theorem and `SDPRankEquality`
+carries PROVEN sub-instances for the positive-definite case. But **the two
+files contradicted each other on the citation**, and one contradicted itself.
+`SDPRealUniqueness.lean` had already diagnosed it in its `-- Ref:` lines —
+*"Boyd's §5.5.4 is 'Mechanics interpretation of KKT', which doesn't cover
+this"* — and never drained the same stale number from its own prose.
+11 sites across 3 files corrected; authority is Alizadeh-Haeberly-Overton
+(1997) §3, with B-V §5.5.2 for the definition of strict complementarity.
+`SDP.lean` additionally read *"the §3b-cond §5.5.4 pattern"*, conflating an
+AGENTS.md section with a book section.
+
+### `evenPower_necessary_for_blockPosSemidef` — the one that fails the discriminator
+
+Its ref is `[manuscript] Ch. braid-knot, prop:operator-selection-lp
+(... binding-k-solver.witness.json)` — a QOU proposition backed by **numerics**,
+which is this bean's laundering class, not the Mathlib-gap class.
+
+The file argues it is *"an honest `axiom`"* because the necessity direction
+"needs the algebra-evaluation map the header lists as an open Lean port". That
+is fair about the EFFORT and does not answer the discriminator: effort is not
+provenance.
+
+**Not vacuous, though — and that distinction matters.** Unlike `aeon_recycling`,
+it mentions `w` on both sides and states a real implication. What it cannot do
+is fire: `braidWordEval` is `opaque`, so `(braidWordEval n w).PosSemidef` is
+underivable for any concrete `w`. **Zero code consumers** (two prose mentions
+in `HopfBindingK.lean`). So it is inert, and there is no urgency.
+
+Per this bean's own rule the honest state would be a §3b-tax content-bearing
+carrier with no instance. NOT done here: it would delete a name the file
+deliberately defends, and the axiom is inert either way. Left as a framed
+choice for the author.
+
+### `b1_holds_at_row` — honest, and worth one caveat
+
+Genuinely well-built: explicitly a conjecture, **conditional** on two named
+external inputs (`BlochSuslinRegulator`, `VanDerVeenVolumeConjecture`) threaded
+as real hypotheses, with `b1_hyperbolic_rows` *derived* from it rather than
+assumed. Zero consumers.
+
+The caveat: all three symbols are `opaque`, so the structure is uninterpreted.
+The docstring claims *"It is falsifiable: it says something about the named
+`B1HoldsAt` at each named row, rather than about an arbitrary numeral."* That is
+right about FORM; with `B1HoldsAt` opaque it is not falsifiable in CONTENT.
+Do not cite `b1_hyperbolic_rows` as an established result — it is bookkeeping
+over three undefined symbols, correctly wired.
+
+### Remaining
+
+14 axioms with published citations, unread: `IwahoriHeckeAPI` (3, Dipper-James
++ Murphy ×2), `Hoefsmit` (2), `HeckeAlgebra/MarkovTrace` (2, Wenzl + Jones),
+`Hecke/MarkovTrace` (1, Jones), `Formal` (1, Geck-Pfeiffer),
+`WeierstrassProjection` (1, Lang — bean says "defect, fixed", but the axiom is
+still present, so re-read), `ParallelogramContour` (1, Ahlfors), `SDP` (1,
+Todd), `SDPRankEquality`/`SDPRealUniqueness` (1 each, AHO).
