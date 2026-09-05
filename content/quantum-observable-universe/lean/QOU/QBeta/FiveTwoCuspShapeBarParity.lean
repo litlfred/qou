@@ -62,16 +62,34 @@ a cubic field rather than in `ℚ` plus `√−3`.
 
 `lean`-direct **exit 0**, sorry-free, on all 19 declarations of this file
 (16 theorems + 3 definitions) — **this file as written, compiled against its
-real `import QOU.QBeta.BarParityZeta4Swap`**, on the restored root Lake
-workspace (`lake-cache/qou-v4-24-0`, 6172 oleans).
+real `import QOU.QBeta.BarParityZeta4Swap`, itself rebuilt from current source
+into a shadow directory placed first on `LEAN_PATH`.**
 
-An earlier revision of this note said the opposite: it recorded that only a
-standalone transcription had been checked, because the container's partial olean
-set lacked `Mathlib.Tactic`. That was true when written and is now superseded —
-the cache restore closed it. **The reason the restore had appeared to fail is
-worth keeping:** the cache seeds the **root** workspace at `<repo>/.lake`, and I
-was checking `content/quantum-observable-universe/lean/.lake`, so a restore that
-had in fact written 6172 oleans read as "delivered nothing".
+**The shadow rebuild is the load-bearing half, and a plain restored-cache run
+would NOT have been evidence.** The restored root workspace
+(`lake-cache/qou-v4-24-0`, 6172 oleans) is **mixed-age**: each olean carries the
+mtime of whichever build wrote it, so staleness is per module, not per tree.
+Measured for this file's one QOU dependency:
+
+    BarParityZeta4Swap.olean   mtime  2026-08-08
+    BarParityZeta4Swap.lean    commit 2026-08-28   <- 20 days newer
+
+So an `exit 0` against the restored cache alone says the file agrees with a
+three-week-old *binary*, not with the library source it declares an import of.
+That is exactly the `descartesWtrace` failure a sibling landed on main the same
+day (`d3b96a29f0`) — verified green against a six-day-old olean, red against
+source. Rebuilding the dependency first (exit 0 from current source) and putting
+that fresh olean ahead of the cache on `LEAN_PATH` is what closes it.
+
+Two things this cost, worth keeping so the next reader does not repeat them.
+The cache seeds the **root** workspace at `<repo>/.lake`, not
+`content/quantum-observable-universe/lean/.lake` — checking the per-paper path
+makes a restore that wrote 6172 oleans read as "delivered nothing". And
+[`scripts/lean-shadow-verify.sh`](../../../../../scripts/lean-shadow-verify.sh),
+the guard script for precisely this, cannot be used here: it hardcodes
+`OLEANS="$PKG/.lake/build/lib/lean"` (the per-paper path) with no override, so it
+exits 2 on a root-restored tree. The shadow build above was therefore done by
+hand.
 
 **Lean caught a false theorem here**, which is why the characteristic hypothesis
 exists: `shape52A_not_shape52B` was first stated over a general field and is
