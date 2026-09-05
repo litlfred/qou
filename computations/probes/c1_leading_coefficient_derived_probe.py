@@ -308,11 +308,41 @@ def y_lambda_series(n: int, P: int) -> tuple[dict, list]:
     return out, bad
 
 
+# --- intra-nucleon ordering: PINNED, and it must stay pinned ---------------
+#
+# `atom_canonical_crossings` changed its DEFAULT from "grouped" to "borromean"
+# on 2026-09-05 (`7db032fb48`, bean `qou-hu1f`), which silently changed every
+# number this probe asserts:  c1(4He) 259/128 -> 7/128, and likewise pp, pn, nn,
+# T, 3He.  The probe did not pin the ordering, so it inherited the new default
+# and began FAILING its own `RECORDED` table on `main`.
+#
+# The pin is "grouped" rather than a re-derivation of RECORDED, because the
+# recorded values ARE grouped-word values and are grouped-specific by
+# construction:
+#
+#   * `QOU.MassTheory.PairwiseChainLeadingOrder` carries the same six values as
+#     Lean DEFINITIONS, derived by `c1_from_letters` -- a PER-LETTER derivation.
+#   * `the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe`
+#     measures that per-generator/per-letter factorisation is grouped-specific:
+#     grouped factorises to ~3e-59, interleaved fails by 2.8x to 13.3x.
+#   * That same probe measures the split this sits on: log-RATIO quantities are
+#     ordering-invariant (~1e-60); ABSOLUTE traces and DIFFERENCES are not, and
+#     `Delta_tr = R_quark . (1 - prod_i (z + d_i))` is exactly proportional to
+#     the intra factor.  `c1` is a difference coefficient, so it moves.
+#
+# So this is not "make the test pass": unpinned, the probe computes an object
+# its own assertions are not about.  Whether `c1` SHOULD be re-derived under
+# the Borromean word is a real and separate question -- it would desynchronise
+# this probe from the merged Lean definitions and move published numbers, so it
+# belongs to `qou-pdg9` / `qou-hu1f`, not to a red-fix.
+_INTRA_ORDER = "grouped"
+
 def tr_M_series(Z: int, N: int, include_inter: bool, P: int, *,
                 colour_weighted: bool = True, log=None) -> Ser:
     n = 3 * (Z + N)
     q = Ser.eps(P)
-    crossings = atom_canonical_crossings(Z, N, include_inter=include_inter)
+    crossings = atom_canonical_crossings(Z, N, include_inter=include_inter,
+                                         intra_order=_INTRA_ORDER)
     facs = factors_for(crossings, q, colour_weighted=colour_weighted)
     ys, _ = y_lambda_series(n, P)
     tot = Ser.const(0)
@@ -328,7 +358,8 @@ def tr_M_series(Z: int, N: int, include_inter: bool, P: int, *,
 def tr_M_fraction(Z: int, N: int, include_inter: bool, qv: F) -> F:
     """Exact Fraction Markov trace at rational qv (Part A's pipeline, no series)."""
     n = 3 * (Z + N)
-    crossings = atom_canonical_crossings(Z, N, include_inter=include_inter)
+    crossings = atom_canonical_crossings(Z, N, include_inter=include_inter,
+                                         intra_order=_INTRA_ORDER)
     facs = factors_for(crossings, qv, colour_weighted=True)
     y = y_lambda_at(n)
     tot = F(0)
@@ -370,7 +401,8 @@ def cycles_of_product(gens: list[int], n: int) -> int:
 def star(Z: int, N: int, include_inter: bool) -> tuple[F, int, dict]:
     """[★] for one word: 2^{-n} Σ_ℓ w_ℓ 2^{c(σ^{(ℓ)})}; also c(σ) and a tally."""
     n = 3 * (Z + N)
-    crossings = atom_canonical_crossings(Z, N, include_inter=include_inter)
+    crossings = atom_canonical_crossings(Z, N, include_inter=include_inter,
+                                         intra_order=_INTRA_ORDER)
     missing = set(k for _, k in crossings) - set(W_OF)
     if missing:
         raise ValueError(f"ctype(s) {sorted(missing)} have no first-order weight here")
