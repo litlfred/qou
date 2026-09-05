@@ -3,8 +3,23 @@ import QOU.BraidKnot.QBetaKeystoneInteraction
 
 namespace QOU.BraidKnot
 
-/-- The delta_q invariant trace difference for the T_{3,5} beta-decay interaction. -/
-noncomputable def delta_q (w : ℤ) (q : ℝ) : ℝ := q^(w : ℤ) - q^(-w : ℤ)
+/-- The antisymmetric writhe trace difference `q^w − q^(−w)` for the `T_{3,5}`
+beta-decay interaction.
+
+**Renamed from `delta_q` on 2026-09-05, because that name meant two unrelated
+things.** `QOU.BraidKnot.delta_q` was declared here as this **real-valued**
+function of a writhe and `q`, and *also* in the content-block sibling
+`mass-theory/delta-q-decoration.lean` as a **`Type`** — the Δ_q decoration
+indexed by a strand count `n`, carried by `DeltaQDecorationConjecture`. Not a
+drifted copy of one object: two different objects sharing a fully-qualified
+name, which is the `markovZ` overload class AGENTS.md records.
+
+That block's `lean.ref` names the shared FQN, so every per-block checker aimed
+at it resolved to the sibling (§0a candidate 1) — correctly, as it happens,
+since the decoration is what that block is about. The collision was on this
+side, and this declaration had **zero consumers**, so the rename lands here.
+Detector: `scripts/mirror-drift-audit.py`. -/
+noncomputable def deltaQWrithe (w : ℤ) (q : ℝ) : ℝ := q^(w : ℤ) - q^(-w : ℤ)
 
 /-- 
   The NA-Stokes Taylor series coefficients for the interaction ratio:

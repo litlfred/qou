@@ -202,3 +202,82 @@ visible.
 
 If you want only one: **(a)**. The measurement not existing is the part that lets this
 grow.
+
+---
+
+# Resolution — ruled 2026-09-05: (a) and (b), and (b) shrank twice under measurement
+
+The author ruled **"a and b"**. Both applied. The brief above is unedited; what
+follows is what applying it actually found, because **(b) turned out to be one
+item, not twelve**, and each narrowing was a measurement rather than a judgement
+call.
+
+## (a) — the instrument, applied
+
+[`scripts/mirror-drift-audit.py`](../../scripts/mirror-drift-audit.py), self-testing,
+reusing `lean-duplicate-fqn-audit.py`'s parser so its four measured false-positive
+classes are not re-litigated. Baseline
+[`docs/audits/mirror-drift-baseline.json`](mirror-drift-baseline.json). The
+`prepare-merge` §4a gate now names it instead of the nonexistent
+`check-mirror-drift.ts`.
+
+## (b) — 12 → 7 → 1
+
+**12 → 7. A faithful live mirror is not a defect.** Five of the twelve are
+byte-faithful. §4a gates *drift*, and AGENTS.md §3 *requires* a `definition` block
+to carry a `.lean` sibling — so deleting a faithful mirror would break the very
+rule that put it there. Verified for the three `Particles.lean` mirrors
+(`qConnection`, `qExtDeriv`, `qLieBracket`): sibling and library agree, and each
+sibling's companion `*_classical` theorem is *also* present in the library at
+`QuantumObservableUniverse/Propositions.lean`. Nothing to reconcile.
+
+**7 → 1. Six of the seven drifts are §7c wall-pairs, and the checker is already
+reading the right one.** The brief's own worked example generalised further than
+the brief realised. In six of the seven, the sibling is the **generic, §7c-compliant**
+statement and the library is an older **archimedean `ℝ`** one:
+
+| FQN | sibling | library |
+|---|---|---|
+| `Information.speedOfLight` | `(d : kˣ) : k`, division-free, + `speedOfLight_mul` | `(sp) (p) : ℝ` |
+| `Information.operationalEntropy` | `{k} [CommRing k] (q : kˣ) : k` | `(sp) (p) : ℝ` |
+| `Information.gravitationalConstant` | `(q u : Rˣ) : Rˣ` | `(sp) (p) : ℝ` |
+| `Information.informationBandwidth` | `{R} [CommRing R] (q η : R) (u : Rˣ)` | `(q η_q : ℝ) : ℝ` |
+| `qReebVectorField` | over `R_q = ℤ[q,q⁻¹]` | `(sp) (p) : ℝ` |
+| `Interactions.…IsAlgebraicallyPrime` | abstracted over the span predicate | fixed `q : ℝ` |
+
+**So the "misdirection" framing does not apply to these six.** The block's `lean.ref`
+resolves to the sibling, and the sibling is the current, wall-correct statement —
+the checker is auditing the right artifact. What remains is a naming ambiguity
+(one name, two wall-sides), which is real but is **not** what this gate is for, and
+fixing it would mean inventing a corpus-wide archimedean-suffix convention across
+five library declarations in a chapter nobody asked to restructure. Left, and
+recorded here rather than done.
+
+**The 1 that was a genuine defect: `QOU.BraidKnot.delta_q`.** Not drift at all —
+**two unrelated objects sharing a fully-qualified name**:
+
+```lean
+-- sibling, mass-theory/delta-q-decoration.lean:47   -- a TYPE
+def delta_q (n : ℕ) [hi : DeltaQDecorationConjecture] : Type := hi.delta_q_map n
+
+-- library, QOU/BraidKnot/QBetaCategoricalAction.lean:7   -- a REAL NUMBER
+noncomputable def delta_q (w : ℤ) (q : ℝ) : ℝ := q^(w : ℤ) - q^(-w : ℤ)
+```
+
+A `Type` indexed by strand count against an `ℝ`-valued function of writhe and `q`.
+This is the `markovZ` overload class, not a mirror. The library side had **zero**
+consumers, so the rename landed there: `delta_q → deltaQWrithe`, with the collision
+recorded in its docstring. `lean`-direct **exit 0**; audit LIVE **12 → 11**, drifted
+**164 → 163**, and the ratchet reports it drained.
+
+## What this says about the brief above
+
+The brief priced (b) at "twelve per-name judgements, realistically a day". Measured,
+it was **one rename**. The error was keying "actionable" on *drift* rather than on
+*whether the drift misdirects* — a faithful mirror does not, and a drift whose
+sibling is the better statement does not either. That is the same shape as the
+sweep in #6787, where 48 "dead pointers" contained zero rot: **a population counted
+by symptom overstates the work by roughly an order of magnitude.**
+
+The remaining 11 live shadows stay in the baseline as a visible, ratcheted debt —
+which is what (a) was for.
