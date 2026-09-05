@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T07:37:09Z
-updated_at: 2026-09-04T07:37:47Z
+updated_at: 2026-09-05T08:09:17Z
 ---
 
 
@@ -310,3 +310,44 @@ shape as the session's other misreads — a true statement with no power, mistak
 for evidence.
 
 Probe: `d1b_null_direction_is_mirror_symmetric_probe.py`, 7/7.
+
+
+## (n) 5₂ cusp shapes in bar-parity — MERGED (#6776, superseding #6694), d6b138d8ef
+
+The rung named by #6676. Result is a **negative and that is the substance**:
+5₂ has three ideal tetrahedra with `z₁ = z₃ ≠ z₂` (exactly), both shapes cubic
+with *different* minimal polynomials `z³−2z²+3z−1` (A) and `z³−2z²+z−1` (B),
+both of discriminant −23 and signature (1,1) — one cubic field, two generators.
+The (1,1) independently reproduces what `dt_d1b_trace_field_bar_grading_probe`
+got by Sturm counting.
+
+Both cubics are irreducible over ℚ, so **neither shape has rational `barEven`**.
+4₁'s `barEven ω = 1` IS rational, and that rationality is exactly what makes its
+bar-even coordinate the anchor-stable `−Vol(4₁)` part. **So the 4₁ bar-parity
+story does not transcribe** — 5₂'s split lands in a cubic field, not in ℚ + √−3.
+
+Recorded but NOT claimed: B's bar-even coordinate is literally `Φ₆(z) = z²−z+1`,
+the polynomial whose vanishing defines the 4₁ shape. Two lines from
+`z⁻¹ = (z−1)²`. No interpretation attached.
+
+Guard recorded in the probe (C7): the shapes are (A,B,A) and eq (98)'s radical
+is (a,a,c) — both "two equal, one different". **Not the same fact.** Different
+index sets, no map between them, and the equal pair sits at different positions
+({1,3} vs {1,2}). Matching shape is not matching structure.
+
+**Lean caught a false theorem.** `shape52A_not_shape52B` was stated over a
+general field and is FALSE in characteristic 2, where both cubics collapse to
+`z³+z+1`. It now carries `(2 : R) ≠ 0`, and the collapse is recorded as a
+theorem (`shape52_cubics_agree_in_char_two`), not a footnote.
+
+**The verification had to be redone, and this is the reusable part.** The first
+`lean`-direct exit 0 was against the restored cache, which is MIXED-AGE: this
+file's one dependency olean was dated 2026-08-08 against a source last committed
+2026-08-28 — 20 days stale. Same class as the `descartesWtrace` red that landed
+on main the same day (`d3b96a29f0`). The merge was withheld and the file
+re-verified by rebuilding that dependency from current source into a shadow
+placed first on LEAN_PATH. **The mathematics did not move; the evidence did.**
+
+Note for staleness accounting: this file is NEW, so it is in none of the 305
+changed-since-snapshot modules `qou-56qy` counts. A new file inheriting a stale
+import is invisible to any drift measure keyed on changed sources.
