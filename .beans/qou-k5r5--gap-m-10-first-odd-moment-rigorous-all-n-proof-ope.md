@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-05T07:36:01Z
+updated_at: 2026-09-05T08:54:35Z
 ---
 
 
@@ -1105,3 +1105,45 @@ HYPOTHESIS REFUTED. The profile was measured to test whether the negative mass c
 |g|<=2 carries only ~35% at n=22; the LARGEST bucket is |g|=3; |g| runs to 5. The pairing is why --
 g=3 is admitted on g=2's condition with a bigger term, so the mass is NOT monotone in |g| and there
 is no small-|g| truncation to lean on. A bound must handle the whole admitted set.
+
+
+### 2026-09-05 — a SECOND Cauchy-Schwarz, on the EDGE measure; and reverse-pairing is EXCLUDED
+
+Probe `computations/deltalambda/wlambda_covariance_epic_M1_edge_cauchy_schwarz.py` (PR #6651).
+
+**The move.** The Fulman identity writes BOTH halves of `M_1 = P - N` over the same edge set with
+the same non-negative weight `dmu = pi(lam) J(lam,lam*) (|u|+|v|)`, with `g = |u|-|v|`,
+`delta = d_u - d_v`:
+
+    P = Sum dmu g^2                 (a SQUARE -- this is Fact A in one line)
+    N = Sum dmu g(2 - 2 delta)      (not a square -- which is why Fact B is false)
+
+Cauchy-Schwarz on THAT measure: `N <= sqrt(P Q)`, `Q := Sum dmu (2-2 delta)^2`. So
+
+    Q < P  =>  N < P  =>  M_1 > 0
+
+-- a sufficient condition in two edge sums of the same shape over the same measure, needing
+NEITHER `V_A` NOR `V_D`, the two objects the reach probe showed the identity does not reach.
+
+**MEASURED: it holds, with room.** `Q < P` at every n in 4..20; `P/Q` in [2.231, 2.266] over
+n >= 12 -- 2.24x headroom. Surviving margin `(P - sqrt(PQ))/(P - N)` rises monotonically
+0.811 -> 0.861, i.e. the SAME cost as the first relaxation ([0.786, 0.852]) on a reachable
+target. `P/Q` is U-SHAPED: min 2.23112 at n = 15, rising for the whole second half. (I first
+classified it by endpoints and printed "falling", which is wrong about the tail and is exactly
+the reading a reader cares about.)
+
+**PROVED, and it closes a route.** The chain is reversible with `w = f^lam f^lam*/(n+1)!`.
+Reading an edge from the other end sends `g -> -g` and `delta -> 2 - delta`, hence `k -> -k`, so
+the term `g k (|u|+|v|)` and the weight are BOTH invariant: the negative edge set is CLOSED UNDER
+REVERSAL. Cancelling each negative edge against its own reverse CANNOT work. scope-(b) for that
+pairing (an invariant forbids it); scope-(a) for pairing in general.
+
+**Controls, all PASS, and no verdict is quoted without them:** `P`/`N` rebuilt from the edge sums
+equal `Cov(A,W)` / `-Cov(D,W)` exactly at every n (independent Plancherel computation); `N <=
+sqrt(PQ)` at every n; the reversal identities at every edge.
+
+**Still OPEN, and sufficient is not necessary.** A failure of `Q < P` would say nothing about
+`M_1 > 0`. Window n <= 20 against a requirement of n >= 79; nothing here is a bound. The live
+target is a finite-n proof of `Q < P` -- both sides are explicit edge sums in `(g, delta)` over
+the Plancherel-weighted up-down chain, so this is where the Kerov-CLT-adjacent analysis should
+now be aimed.
