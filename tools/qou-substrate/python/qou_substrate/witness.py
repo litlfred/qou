@@ -2647,9 +2647,36 @@ class WitnessBuilder:
         _check_error_rows(witness, out_path.name, _error_row_paths)
         _check_environment_regression(witness, existing, out_path.name)
 
-        with open(out_path, "w", encoding="utf-8") as f:
-            json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
-            f.write("\n")
+        # ATOMIC: serialize to a sibling temp file, then `os.replace` (bean
+        # `qou-sidu`). This was
+        #     with open(out_path, "w", ...) as f:
+        #         json.dump(witness, f, ...)
+        # and `open(..., "w")` TRUNCATES BEFORE the dump runs, so any exception
+        # between the two — a value whose `__str__` raises under `default=str`,
+        # a full disk, an interrupt — closes the file having written nothing
+        # and destroys a committed witness. That is not hypothetical: the same
+        # shape, with an import in the gap, emptied 22 witnesses to zero bytes
+        # in a single `producer_importability_audit` run (bean `qou-sidu`).
+        #
+        # `os.replace` is atomic on POSIX when source and destination are on
+        # the same filesystem, which is why the temp file is a SIBLING of the
+        # target rather than in a temp dir. A reader either sees the whole old
+        # witness or the whole new one, never a truncated file.
+        #
+        # The dump is fully materialised before anything touches `out_path`.
+        tmp_path = out_path.with_name(out_path.name + ".tmp")
+        try:
+            with open(tmp_path, "w", encoding="utf-8") as f:
+                json.dump(witness, f, indent=2, ensure_ascii=False, default=str)
+                f.write("\n")
+            os.replace(tmp_path, out_path)
+        except BaseException:
+            # Leave no debris, and do not mask the original exception.
+            try:
+                os.unlink(tmp_path)
+            except OSError:
+                pass
+            raise
 
         print(f"✓ Witness: {out_path.name}  "
               f"({len(self.assertions)} assertions, "
