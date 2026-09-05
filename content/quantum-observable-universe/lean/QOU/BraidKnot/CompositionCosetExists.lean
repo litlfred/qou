@@ -144,4 +144,48 @@ theorem exists_shorter_of_not_isDistinguished {c : Composition (n + 1)}
   · exact absurd hup (by omega)
   · simpa [sw] using Nat.lt_of_succ_le (le_of_eq hdown)
 
+/-! ## Proposition 3.3, assembled
+
+Existence by induction on length: a non-distinguished element is strictly shortened
+inside `S_μ`, so descending must halt, and it can only halt at a distinguished one.
+With `CompositionCoset.isDistinguished_unique` that is Mathas' statement in full —
+`D_μ` meets every right coset of `S_μ` **exactly once**.
+-/
+
+/-- **Existence**: every right coset of `S_μ` contains a distinguished element. -/
+theorem exists_isDistinguished_mem_coset (c : Composition (n + 1))
+    (w : Perm (Fin (n + 1))) :
+    ∃ d, IsDistinguished c d ∧ d * w⁻¹ ∈ youngOfComp c := by
+  generalize hk : (permCoxeterSystem n).length w = k
+  induction k using Nat.strong_induction_on generalizing w with
+  | _ k ih =>
+    by_cases hd : IsDistinguished c w
+    · exact ⟨w, hd, by simp⟩
+    · obtain ⟨v, hv, hlt⟩ := exists_shorter_of_not_isDistinguished hd
+      obtain ⟨d, hdd, hdm⟩ := ih _ (hk ▸ hlt) (v * w) rfl
+      refine ⟨d, hdd, ?_⟩
+      have hrw : d * w⁻¹ = (d * (v * w)⁻¹) * v := by group
+      rw [hrw]
+      exact mul_mem hdm hv
+
+/-- **Mathas, Proposition 3.3** — the transversal statement.
+
+`D_μ` is a complete set of right coset representatives of `S_μ` in `S_n`: every coset
+contains a distinguished element, and only one.
+
+The length half — `ℓ(w·d) = ℓ(w) + ℓ(d)` for `w ∈ S_μ`, `d ∈ D_μ`, which is what gives
+`T_{wd} = T_w T_d` — is
+`CompositionMinimal.length_mul_eq_add_of_isDistinguished`. -/
+theorem existsUnique_isDistinguished_mem_coset (c : Composition (n + 1))
+    (w : Perm (Fin (n + 1))) :
+    ∃! d, IsDistinguished c d ∧ d * w⁻¹ ∈ youngOfComp c := by
+  obtain ⟨d, hdd, hdm⟩ := exists_isDistinguished_mem_coset c w
+  refine ⟨d, ⟨hdd, hdm⟩, ?_⟩
+  rintro e ⟨hed, hem⟩
+  refine QOU.BraidKnot.CompositionCoset.isDistinguished_unique hed hdd ?_
+  -- `d · e⁻¹ = (d · w⁻¹) · (e · w⁻¹)⁻¹`, a product of two members of `S_μ`
+  have hrw : d * e⁻¹ = (d * w⁻¹) * (e * w⁻¹)⁻¹ := by group
+  rw [hrw]
+  exact mul_mem hdm (inv_mem hem)
+
 end QOU.BraidKnot.CompositionCosetExists
