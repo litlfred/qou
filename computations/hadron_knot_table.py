@@ -213,9 +213,24 @@ def compute_atom(name, Z, N, quarks=None):
         "A": Z + N,
         "nf": nf_compact,
         "n_terms": len(nf_compact),
+        # `tr` and `net` come out of `pyhecke.gram.nf_tr` / `nf_net` as
+        # FLOAT64, not mpf, and `fmt` renders a float via `str()` — so these
+        # two carry ~17 significant digits and say so, rather than being padded
+        # out to 60. The source of that is `pyhecke.gram`, whose `z`, `h` and
+        # `TR_M` are Python floats / a float64 numpy array; excising it is a
+        # library change with a wide blast radius and is tracked separately
+        # (bean `qou-ejuy`). What changed here is only that the narrowing is no
+        # longer done a SECOND time by `round(float(...), 12)` on the way out.
         "tr_M": fmt(tr),
         "net": fmt(net),
-        "ln_abs_tr": (fmt(mp.log(abs(tr)))
+        # 17 dps DELIBERATELY, not the default 60 (bean `qou-uiut`). `mp.log`
+        # promotes its float64 argument to mpf and will happily return 60 true
+        # digits — but they are 60 digits of the logarithm of a value that only
+        # HAS ~17, so digits 18-60 describe the binary64 rounding of `tr`, not
+        # the physics. Publishing them would be manufactured precision of
+        # exactly the kind the float64-padding ratchet exists to catch. When
+        # `qou-ejuy` makes `tr` a real mpf, drop the override.
+        "ln_abs_tr": (fmt(mp.log(abs(tr)), dps=17)
                       if abs(tr) > mp.mpf("1e-300") else None),
         "frobenius_stable": stable,
         "knot_type": knot_name,
