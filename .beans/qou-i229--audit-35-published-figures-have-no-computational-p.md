@@ -180,3 +180,67 @@ not about those figures' provenance, and it is deliberately not dressed up as
       `q-beta` bridge quantities above, `E_{0,N=1} = 4.22707538`.
 - [ ] Owner ruling: which anchor do the **four** affected blocks take? Then
       substitute all six figures at once.
+
+## ANCHOR ANALYSIS (2026-09-05): the question was mis-framed, and correcting it collapses most of it
+
+Full write-up:
+[`docs/audits/2026-09-05-anchor-choice-for-the-four-retired-q0-blocks.md`](../docs/audits/2026-09-05-anchor-choice-for-the-four-retired-q0-blocks.md).
+
+**I called this an owner-gated proton-vs-muon decision. It is not.** The six
+figures carry the **CODATA-2018 vintage of the MUON anchor** — the anchor the
+two-layer convention already says canonical blocks should use. Verified by
+inverting the CAL-2 pin `m_μ/m_e = Vol(4₁)/ℏ_q²`:
+
+    m_mu/m_e = 206.7682830  (CODATA 2018)  ->  q0 = 1.1099785955541805753   <- published
+    m_mu/m_e = 206.7682827  (CODATA 2022)  ->  q0 = 1.1099785956427390467   <- live muon
+
+The first matches the published constant **to twenty digits**. So the choice is
+which *vintage*, not which anchor.
+
+### It is collateral of a known, already-fixed defect
+
+`qou_substrate/codata.py`: `206.7682830` was carried under a "CODATA 2022"
+comment **across 138 sites**, fixed 2026-08-15 by reading the NIST table instead
+of transcribing it. **That fix reached `computations/` and `tools/` and not
+`content/`.** Same shape as today's transfer-matrix readout: correction lands in
+compute, block keeps the old value, nothing walks between them. The discrepancy
+is `1.451 ppb` = `0.065σ` — physically nothing, which is why it survived.
+
+### The corpus already rules on three of the four
+
+`q0_anchor_manifest.json` tags **six of its nineteen `ideal_muon` producers as
+`qbeta_*`**, and two of the four blocks are Q_β blocks. Sharper still: **Q_β *is*
+the CAL-2 proxy**, and CAL-2 is what the muon pin pins — anchoring a Q_β table on
+proton makes it a prediction from a prediction and folds in the μ–p tension.
+
+### Magnitudes
+
+`q0` moves `7.98e-11` refreshing the vintage, `1.15e-8` switching to proton —
+**145× larger**. About 11 published digits survive the refresh; ~8 survive the
+switch. Nothing physical moves either way.
+
+### The one I would not decide alone
+
+`em-coupling-bring-zero-mode` sits under `predicted-spectra/`, which the
+two-layer rule reads as Physical-Observations → proton; but its quantity is
+`q[9]_q[10]_q`, the *bare* coupling, a derivation input. Placement and content
+point opposite ways and no manifest entry covers it. **Genuinely ambiguous — a
+question about what that block is for.**
+
+### Recommendation
+
+Refresh the three canonical blocks to the current muon anchor; ask on
+`em-coupling-bring-zero-mode`. Treating a data refresh as an occasion to
+re-decide a convention is how conventions drift.
+
+- [ ] Owner: confirm the refresh, and rule on `em-coupling-bring-zero-mode`.
+- [ ] **Stale comment found en route**, not changed: `q_parameter.py` says the
+      corpus is "genuinely MIXED (279 proton + 455 muon)"; the manifest now reads
+      **906 proton / 19 muon / 15 ambiguous**. Misleading to anyone reasoning
+      about balance from it. Left alone because that file is anchor-selection
+      machinery under an explicit "do NOT change this default".
+- [ ] **The real gap neither gate covers:** both defects found today are a
+      correction landing in code while a block keeps the old value. Nothing walks
+      that boundary. The unsourced-figure sweep found this one only because the
+      figures had no provenance at all — a stale figure that still matches *some*
+      producer stays invisible.
