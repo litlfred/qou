@@ -78,19 +78,27 @@ normalisation is not a free constant to be found, it is fixed by topology.
    off one rational function; nothing here is a limit or a numerical fit.  This
    is the form the Lean carries, which is why it stays over a generic field.
 
-6. WHAT THIS DOES AND DOES NOT SETTLE.  It DERIVES the ORDER of the 1.19e4
-   substitution factor measured in qou-ix74: a coupling carrying the trace's
-   Jones content sits ~10^2 above s^2, so its square sits ~10^4 above s^4, with
-   96^2 = 9216 the leading constant against the measured |W(q0)|^2/s(q0)^4 =
-   11875.4418936763 -- an overshoot of exactly 1.2885679138, which is REPORTED
-   rather than absorbed into a tolerance.  (A two-sided "within a factor of two"
-   bracket was the first form of this claim and is WITHDRAWN: the factor is round
-   only because the measurement fits under it, i.e. a window chosen against the
-   target, which the no-fitting directive of 2026-09-05 names as a fit even when
-   no continuous parameter is tuned.)  It does NOT produce a rescaling constant, and it CANNOT: the ratio
-   runs (-96 at q = 1, -37.09 at q0) because the framing q^-10 and the larger
-   exponents suppress it away from q = 1.  That is consistent with qou-pfh7's
-   exclusion and now explains it rather than merely measuring it.
+6. WHAT THIS DOES AND DOES NOT SETTLE.
+   🛑 RETRACTED 2026-09-05 (bean qou-xql6).  This section claimed the ORDER of the
+   substitution factor measured in qou-ix74 was DERIVED -- "96^2 = 9216 against the
+   measured |W(q0)|^2/s(q0)^4 = 11875.4418936763 -- an overshoot of exactly
+   1.2885679138".  Both halves are wrong.
+
+   (i) THE COMPARISON IS A CATEGORY ERROR.  -96 is the classical value of
+   (J-1)/s^2, in which the NUMERATOR vanishes: J(1) = 1 because V_K(1) = 1 for
+   every knot.  The substitution factor's numerator does not vanish -- W(1) = 1/4
+   is the Markov rank factor -- so |W|^2/s^k diverges as q -> 1 for every k >= 1
+   and has NO leading constant.  There was nothing for -96 to be the order of.
+
+   (ii) THE POWER WAS WRONG.  sSq/S_SQ is already s^2, so |W|^2/S_SQ^2 is |W|^2/s^4,
+   while the rate carries s^2 exactly once (prf:trace-ratio-observable:
+   |M_q|^2 = |skein_amp|^2 * |tr ratio|^2, skein_amp = q^(1/2) - q^(-1/2)).  The
+   factor is 129.405107404, not 11875.4418936763.
+
+   So this producer derives the NORMALISATION and nothing about the rate's
+   magnitude.  Every identity in sections 1-5 is untouched and re-verified.  The
+   qou-ix74 scope-(a) negative also survives at the corrected magnitude: 129x
+   still cannot be a 10-17 % correction.
 
    HONEST LIMIT.  s^2 = h_(1/2)^2 is a formal HALF-SCALE analogue, not itself a
    Jones deviation: its exponents are 1/2, and a Jones exponent is an integer,
@@ -245,11 +253,16 @@ def main() -> int:
          "note": "(J-1)/s^2 -> -96 at q=1 and -37.09 at q0: the framing q^-10 "
                  "suppresses it, so no CONSTANT relates the two couplings "
                  "(consistent with the qou-pfh7 exclusion, and explains it)"},
-        {"name": "leading_square_overshoot_is_measured_not_bracketed",
-         "passed": mp.mpf("1.288") < f(W ** 2 / S_SQ ** 2) / mp.mpf(96) ** 2 < mp.mpf("1.289"),
-         "note": "the derived leading square 96^2 = 9216 against the measured "
-                 "|W(q0)|^2/s(q0)^4 = 11875.4418936763: the overshoot is "
-                 "1.2885679138, REPORTED rather than bracketed by a chosen window"},
+        {"name": "order_claim_retracted_substitution_factor_diverges",
+         "passed": sp.limit(sp.cancel(W ** 2 / S_SQ), q, 1) == sp.oo
+                   and sp.nsimplify(W.subs(q, 1)) == sp.Rational(1, 4),
+         "note": "RETRACTED (bean qou-xql6): this producer claimed the ORDER of the "
+                 "substitution factor was derived, 96^2 = 9216 against |W|^2/s^4 = "
+                 "11875. |W|^2/s^k DIVERGES as q->1 for k >= 1 because W(1) = 1/4 "
+                 "!= 0, so it has no leading constant; -96 is the leading value of "
+                 "(J-1)/s^2, whose numerator vanishes since V_K(1) = 1 for every "
+                 "knot. Two different ratios. Also the power was s^2, not s^4, so "
+                 "the factor is 129.405107404"},
     ]
 
     witness = {
@@ -312,19 +325,27 @@ def main() -> int:
             "runs": True,
         },
         "order_of_substitution_factor": {
-            "measured_W_sq_over_s_pow_four_at_q0": n(f(W ** 2 / S_SQ ** 2), 20),
-            "derived_leading_square": "96**2 = 9216",
-            "overshoot_measured_over_derived": n(f(W ** 2 / S_SQ ** 2) / mp.mpf(96) ** 2, 20),
-            "qou_ix74_rate_factor": "1.19e4",
-            "verdict": ("the derived leading square predicts the substitution factor's "
-                        "ORDER; the residual overshoot 1.2885679138 is REPORTED, not "
-                        "absorbed into a chosen tolerance (no-fitting directive "
-                        "2026-09-05: a window sized to contain its own miss is a fit)"),
+            "status": "RETRACTED 2026-09-05 (bean qou-xql6)",
+            "withdrawn_claim": ("the ORDER of the substitution factor is derived: "
+                                "96**2 = 9216 against |W|**2/s**4 = 11875.44"),
+            "why_it_fails": ("|W|**2/s**k diverges as q->1 for every k >= 1 "
+                             "(W(1) = 1/4 != 0, s**2(1) = 0), so there is no leading "
+                             "constant; -96 is the leading value of (J-1)/s**2, a "
+                             "DIFFERENT ratio whose numerator vanishes because "
+                             "V_K(1) = 1 for every knot"),
+            "and_the_power_was_wrong": ("the rate carries s**2 once "
+                                        "(prf:trace-ratio-observable), so the factor "
+                                        "is 129.405107404, not 11875.4418936763"),
+            "what_survives": ("every exact identity in this witness: the Jones-Markov "
+                              "relation on eight torus knots, J - 1 = -h_4*h_6/q**10, "
+                              "the cyclotomic ratio -G_8*G_12/q**19, and its classical "
+                              "value -96"),
         },
         "scope": ("POSITIVE derivation of the normalisation (the framing and rank "
                   "factors are read off the braid word; the offset and vanishing "
-                  "order of J - 1 are topological) and of the ORDER of the "
-                  "coupling gap. NOT a rescaling constant — the ratio provably "
+                  "order of J - 1 are topological). It does NOT derive the order of "
+                  "the decay-rate substitution factor -- that claim is retracted, "
+                  "see order_of_substitution_factor. NOT a rescaling constant — the ratio provably "
                   "runs, consistent with the scope-(b) exclusion in qou-pfh7."),
         "lean": ["QOU.Braiding.WeakVertexT35.jonesT35",
                  "QOU.Braiding.WeakVertexT35.weakVertexTrace_eq_jones_markov",
@@ -335,7 +356,7 @@ def main() -> int:
                  "QOU.Braiding.WeakVertexT35.jones_dev_eq_sSq_mul_geom",
                  "QOU.Braiding.WeakVertexT35.couplingRatio_one",
                  "QOU.Braiding.WeakVertexT35.couplingRatio_near_q0",
-                 "QOU.Braiding.WeakVertexT35.substitutionRateFactor_overshoot_of_leading_square"],
+                 "QOU.Braiding.WeakVertexT35.substitutionRateFactor_has_no_classical_leading_value"],
         "reference_blocks": ["prop:hadron-half-life", "prf:hadron-half-life",
                              "rem:hadron-half-life-fermi"],
         "related_beans": ["qou-egvf (closed form)", "qou-4x7c (content)",

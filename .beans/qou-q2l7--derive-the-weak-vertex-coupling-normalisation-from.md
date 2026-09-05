@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-09-05T07:21:24Z
-updated_at: 2026-09-05T07:52:20Z
+updated_at: 2026-09-05T09:07:16Z
 ---
 
 ## Result — the normalisation is the Jones–Markov relation, and it is DERIVED
@@ -103,3 +103,29 @@ number to three decimals; the witness carries it as
 `order_of_substitution_factor.overshoot_measured_over_derived`. The derivation is
 unchanged — only the reporting, and the number that was rounded away is now
 attackable.
+
+
+## 🛑 RETRACTED the same day: the "order derived" claim (bean qou-xql6)
+
+This bean claimed the *order* of the substitution factor was **derived** — first
+`96² < |W|²/s⁴ < 2·96²`, then the measured overshoot `1.2885679138`. **Both are
+withdrawn, and this is a retraction, not a re-scoping.**
+
+**(i) Category error.** `−96` is the classical value of `(J−1)/s²`, whose
+*numerator* vanishes (`J(1) = 1`, since `V_K(1) = 1` for every knot). The
+substitution factor's numerator does not: `W(1) = 1/4` is the Markov rank factor.
+So `|W|²/s^k → +∞` as `q → 1` for every `k ≥ 1` — no leading constant exists, and
+there was nothing for `−96` to be the order of.
+
+**(ii) Wrong power.** `sSq` is already `s²`; the rate carries `s²` once. The factor
+is `129.405107404`, not `11875.44`.
+
+**Everything mathematical in this bean survives** and is re-verified in
+`beta_rate_skein_power_audit.py` (9/9): the Jones–Markov relation on eight torus
+knots, `J − 1 = −h₄h₆/q¹⁰`, `(J−1)/s² = −G₈G₁₂/q¹⁹`, `couplingRatio(1) = −96`.
+Only the bridge from `−96` to the decay rate is gone.
+
+**The lesson.** This bean's last act was to withdraw a "within a factor of two"
+window for being chosen against the target, and replace it with a measured ratio.
+That improved how the number was *reported* and did nothing to check whether it
+was the *right* number. It was not.

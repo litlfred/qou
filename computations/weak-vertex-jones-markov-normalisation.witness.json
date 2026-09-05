@@ -149,13 +149,13 @@
     "runs": true
   },
   "order_of_substitution_factor": {
-    "measured_W_sq_over_s_pow_four_at_q0": "11875.441893676302628",
-    "derived_leading_square": "96**2 = 9216",
-    "overshoot_measured_over_derived": "1.2885679138103626984",
-    "qou_ix74_rate_factor": "1.19e4",
-    "verdict": "the derived leading square predicts the substitution factor's ORDER; the residual overshoot 1.2885679138 is REPORTED, not absorbed into a chosen tolerance (no-fitting directive 2026-09-05: a window sized to contain its own miss is a fit)"
+    "status": "RETRACTED 2026-09-05 (bean qou-xql6)",
+    "withdrawn_claim": "the ORDER of the substitution factor is derived: 96**2 = 9216 against |W|**2/s**4 = 11875.44",
+    "why_it_fails": "|W|**2/s**k diverges as q->1 for every k >= 1 (W(1) = 1/4 != 0, s**2(1) = 0), so there is no leading constant; -96 is the leading value of (J-1)/s**2, a DIFFERENT ratio whose numerator vanishes because V_K(1) = 1 for every knot",
+    "and_the_power_was_wrong": "the rate carries s**2 once (prf:trace-ratio-observable), so the factor is 129.405107404, not 11875.4418936763",
+    "what_survives": "every exact identity in this witness: the Jones-Markov relation on eight torus knots, J - 1 = -h_4*h_6/q**10, the cyclotomic ratio -G_8*G_12/q**19, and its classical value -96"
   },
-  "scope": "POSITIVE derivation of the normalisation (the framing and rank factors are read off the braid word; the offset and vanishing order of J - 1 are topological) and of the ORDER of the coupling gap. NOT a rescaling constant \u2014 the ratio provably runs, consistent with the scope-(b) exclusion in qou-pfh7.",
+  "scope": "POSITIVE derivation of the normalisation (the framing and rank factors are read off the braid word; the offset and vanishing order of J - 1 are topological). It does NOT derive the order of the decay-rate substitution factor -- that claim is retracted, see order_of_substitution_factor. NOT a rescaling constant \u2014 the ratio provably runs, consistent with the scope-(b) exclusion in qou-pfh7.",
   "lean": [
     "QOU.Braiding.WeakVertexT35.jonesT35",
     "QOU.Braiding.WeakVertexT35.weakVertexTrace_eq_jones_markov",
@@ -166,7 +166,7 @@
     "QOU.Braiding.WeakVertexT35.jones_dev_eq_sSq_mul_geom",
     "QOU.Braiding.WeakVertexT35.couplingRatio_one",
     "QOU.Braiding.WeakVertexT35.couplingRatio_near_q0",
-    "QOU.Braiding.WeakVertexT35.substitutionRateFactor_overshoot_of_leading_square"
+    "QOU.Braiding.WeakVertexT35.substitutionRateFactor_has_no_classical_leading_value"
   ],
   "reference_blocks": [
     "prop:hadron-half-life",
@@ -241,17 +241,17 @@
       "note": "(J-1)/s^2 -> -96 at q=1 and -37.09 at q0: the framing q^-10 suppresses it, so no CONSTANT relates the two couplings (consistent with the qou-pfh7 exclusion, and explains it)"
     },
     {
-      "name": "leading_square_overshoot_is_measured_not_bracketed",
+      "name": "order_claim_retracted_substitution_factor_diverges",
       "passed": true,
-      "note": "the derived leading square 96^2 = 9216 against the measured |W(q0)|^2/s(q0)^4 = 11875.4418936763: the overshoot is 1.2885679138, REPORTED rather than bracketed by a chosen window"
+      "note": "RETRACTED (bean qou-xql6): this producer claimed the ORDER of the substitution factor was derived, 96^2 = 9216 against |W|^2/s^4 = 11875. |W|^2/s^k DIVERGES as q->1 for k >= 1 because W(1) = 1/4 != 0, so it has no leading constant; -96 is the leading value of (J-1)/s^2, whose numerator vanishes since V_K(1) = 1 for every knot. Two different ratios. Also the power was s^2, not s^4, so the factor is 129.405107404"
     }
   ],
   "allPassed": true,
-  "scriptHash": "def342fae879",
-  "scriptCommitSha": "0724b46ba10f2bd5fa697c73c18abe06ea87a597",
-  "commitSha": "21654c703fc71674a4f1880ad8aca675ad9efdf5",
+  "scriptHash": "605c10f31b26",
+  "scriptCommitSha": "c1a61ec8b2a3a7da7b7a24256494c7cff1e8f54f",
+  "commitSha": "4b3096d0677fa4e4dfe1f66cec240ffb02058795",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-09-05T07:58:22.267456+00:00",
+  "computedAt": "2026-09-05T09:03:38.561354+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

@@ -6,7 +6,11 @@ order-matched W-candidate onto it.
 
 WHAT THIS SETTLES (bean qou-pfh7; owner: "coupling renorm", 2026-09-05).
 qou-ix74 showed that substituting |W|² for s² in the beta-decay rate multiplies
-every rate by 1.19e4, and left open what normalisation relates the two.  Two
+every rate by 129.4 -- the figure read 1.19e4 until 2026-09-05, when the wrong
+power was found (bean qou-xql6: S_SQ is already s^2 and was squared again; the
+rate carries s^2 once, per prf:trace-ratio-observable) -- and left open what
+normalisation relates the two.  The exclusion below is a statement about the
+CANDIDATE FAMILY's functional form and does not depend on that magnitude.  Two
 results here, one positive and one negative; neither fits a coefficient.
 
 1. POSITIVE — s² is not an arbitrary amplitude.  Exactly, over any field:
