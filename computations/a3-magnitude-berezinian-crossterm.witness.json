@@ -1,7 +1,7 @@
 {
   "computation": "a3-magnitude-berezinian-crossterm",
   "scriptFile": "a3_magnitude_berezinian_crossterm_probe.py",
-  "computedAt": "2026-09-04T04:20:40.561723+00:00",
+  "computedAt": "2026-09-05T23:00:27.408164+00:00",
   "engine": "python-float (demonstration; no high-precision needed \u2014 structural, 0 free params)",
   "free_parameters": 0,
   "inputs": {
@@ -121,10 +121,10 @@
   "lean": "QOU.QBeta.SuperBerezinianA3Magnitude.crossTerm_magnitude_surjective (sorry-free)",
   "wired": false,
   "notes": "\u03bc3/c3 never inverted to derive a substrate constant; DEMONSTRATES the free-parameter structure, does not fit-to-close. Closure needs the DM-cubic-derived off-block (qou-jqof).",
-  "scriptHash": "e1239db262b0",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
-  "commitSha": "f4d031de71efdb0eff9ff827cf194fafc88f44eb",
+  "scriptHash": "30c75b70393f",
+  "scriptCommitSha": "ca508def881897ebce9db24ddef4933b7bae1c1f",
+  "commitSha": "f65b536d1492a11fb84e2228776d594a6577b80e",
   "durationMs": 0,
-  "q0Anchor": "independent",
-  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
