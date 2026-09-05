@@ -72,8 +72,10 @@ is the (J)-admissible parameter of the Hecke algebra at the variable `sqrt q`,
 NOT at `q`.  So a site spelling `z_C(q_0)` is using a correctly-normalised
 parameter for the algebra at the WRONG specialisation point, which is why the
 corpus is right that such a site is not repairable by substitution
-(`qou-cxjq`, `qou-lp5d`, `qou-pmkh`, and eight `blocked_on_rederivation` rows
-of the trace-convention registry).  The interpretation SUPPORTS the excision
+(`qou-cxjq`, `qou-lp5d`, `qou-pmkh`, and the 13 `blocked_on_rederivation`
+entries -- 12 distinct files -- of the trace-convention registry, whose own note
+says they "cannot be migrated by substituting z_D, because the substitution
+changes the site's asserted RESULT").  The interpretation SUPPORTS the excision
 and sharpens its reason; it does not soften it.
 
 TWO ARITY GAPS, stated because a reader will otherwise collide with an
@@ -414,8 +416,9 @@ def main() -> int:
             "parameter of the algebra at the variable sqrt q, not at q, so a "
             "z_C site is correctly normalised for the WRONG specialisation "
             "point. This is why such sites are not repairable by substitution "
-            "(qou-cxjq, qou-lp5d, qou-pmkh, and eight blocked_on_rederivation "
-            "rows of the trace-convention registry).",
+            "(qou-cxjq, qou-lp5d, qou-pmkh, and the 13 blocked_on_rederivation "
+            "entries -- 12 distinct files -- of the trace-convention "
+            "registry).",
             "Two arity gaps are checked, not asserted: "
             "no_kernel_instantiation_is_conventionD quantifies no rescaling "
             "factor, and no_rescaling_of_skein_weights binds one constant on "
