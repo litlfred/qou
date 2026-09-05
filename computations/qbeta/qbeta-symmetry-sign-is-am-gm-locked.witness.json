@@ -63,6 +63,62 @@
       "expected": true,
       "passed": true,
       "note": "qou-y2np's bar branch is the w=0 / w=1 pair of this convex family. Its 'one bit' is two points on a continuum whose crossing 1/(q^2+1) is derived -- which is the finer object"
+    },
+    {
+      "name": "the_convention_reproduces_the_corpus_closed_form_exactly",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the degree-10 numerator over 12q^5(q^2+1) IS z - h(1/2-d/4). So w is not a free parameter anywhere in the corpus"
+    },
+    {
+      "name": "w_is_forced_to_one_half_plus_flavour_over_four",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "solving z - h(1/2-d/4) = w.z + (1-w)(z-h) gives (1-w)h = h(1/2-d/4) identically. Lean: weight_of_convention. So 'derive w' reduces entirely to deriving the flat 1/2"
+    },
+    {
+      "name": "the_miss_splits_as_deformation_plus_flavour",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "Lean: weight_miss"
+    },
+    {
+      "name": "and_the_miss_is_the_flat_half_not_the_derived_flavour_split",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "ratio 151.14181. The ONE derived ingredient in w is 151x too small to matter; the entire miss is an undeformed average sitting in a deformed algebra"
+    },
+    {
+      "name": "power_mean_delta_is_odd_under_p_to_minus_p",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "M_p . M_-p = b_pp.b_nn = GM^2 for every p, so delta(-p) = -delta(p). The convention sits at p = +1; its exact mirror is the harmonic mean. Lean: harmonic_mul_arithmetic and delta_harmonic_eq_neg_delta_arithmetic for p = +/-1"
+    },
+    {
+      "name": "the_sign_is_right_exactly_when_p_is_negative",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "M_p is increasing in p and M_0 is the geometric mean, so the SEMF sign needs a mean STRICTLY BELOW geometric -- where no average with p >= 0 can go"
+    },
+    {
+      "name": "the_three_classical_means_have_closed_two_q_forms",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "with [2]_x = x + 1/x. Lean: arithmetic_pinned, harmonic_pinned; AM.HM = GM^2 closes the triple"
+    },
+    {
+      "name": "the_weight_ladder_is_a_coincidence_of_the_three_classical_means",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "it fails at every non-classical p tested -- 0.55089 vs 0.55198 at p=2. Recorded so nobody re-derives it as structure; the near-pattern is exactly what the anti-fit discipline is for"
     }
   ],
   "allPassed": true,
@@ -161,11 +217,84 @@
         "threshold": "0.307692307692",
         "delta_at_half": "-0.298044859487"
       }
+    ],
+    "f_pn_from_convention": "0.50822978937673896258",
+    "miss_deformation_part": "0.051981855026205072838",
+    "miss_flavour_part": "0.00034392770175677400214",
+    "miss_ratio": "151.141809051",
+    "power_mean_sweep": [
+      {
+        "p": "3",
+        "M_p": "0.52880951064437",
+        "delta": "-0.06145381962131"
+      },
+      {
+        "p": "2",
+        "M_p": "0.51879763975398",
+        "delta": "-0.042339448910622"
+      },
+      {
+        "p": "1",
+        "M_p": "0.50815788774865",
+        "delta": "-0.021617747856193"
+      },
+      {
+        "p": "0.5",
+        "M_p": "0.50272421667678",
+        "delta": "-0.010867288668457"
+      },
+      {
+        "p": "0",
+        "M_p": "0.49729054560492",
+        "delta": "0.0"
+      },
+      {
+        "p": "-0.5",
+        "M_p": "0.49191560411149",
+        "delta": "0.010867288668457"
+      },
+      {
+        "p": "-1",
+        "M_p": "0.48665560982172",
+        "delta": "0.021617747856193"
+      },
+      {
+        "p": "-2",
+        "M_p": "0.47667504205553",
+        "delta": "0.042339448910622"
+      },
+      {
+        "p": "-3",
+        "M_p": "0.46765022521379",
+        "delta": "0.06145381962131"
+      }
+    ],
+    "failed_weight_ladder": [
+      {
+        "p": "2",
+        "actual": "0.550893221078",
+        "ladder_prediction": "0.551981855026"
+      },
+      {
+        "p": "0.5",
+        "actual": "0.474009072487",
+        "ladder_prediction": "0.473938459933"
+      },
+      {
+        "p": "-2",
+        "actual": "0.349407822171",
+        "ladder_prediction": "0.348408015991"
+      },
+      {
+        "p": "-3",
+        "actual": "0.306239334928",
+        "ladder_prediction": "0.30264676075"
+      }
     ]
   },
   "provenance": {
-    "headSha": "6bfbf0b533aeae4f31996a710d9ae1824cbc9895",
+    "headSha": "592eddbfe30f39fd5289176721866b39490ca39d",
     "producer": "computations/qbeta/qbeta_symmetry_sign_is_am_gm_locked_probe.py",
-    "elapsed_s": 0.005
+    "elapsed_s": 0.009
   }
 }

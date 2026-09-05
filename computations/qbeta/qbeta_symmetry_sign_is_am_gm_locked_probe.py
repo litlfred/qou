@@ -50,6 +50,36 @@ end of this convex family, and the sign flips at `w = 1/(q^2+1)` in between. So
 `qou-y2np`'s "one bit" is one point on a continuum, and the continuum has a
 derived crossing.
 
+*** AND w ITSELF IS DERIVED — FROM THE CONVENTION, AND NOTHING ELSE ***
+
+`f_pn = z - h(1/2 - d/4)` (bring_color_weighted) reproduces the corpus's
+degree-10 closed form for `b_pn` to **0.0 at 40 dps**, and solving
+`f_pn = w.f_pp + (1-w).f_nn` gives `(1-w)h = h(1/2 - d/4)` identically. So `w` is
+not a free parameter: "derive w" reduces entirely to deriving the flat `1/2` in
+`sigma_avg = (sigma + sigma^-1)/2`.
+
+And that flat half is the WHOLE miss:
+
+    w - w* = (q^2-1)/(2(q^2+1)) + d/4
+             ^^^^^^^^^^^^^^^^^^   ^^^
+             0.0519819            0.000344      ratio 151.1
+
+The one derived ingredient in `w` (the flavour split) is 151x too small to
+matter. The miss is an undeformed average sitting in a deformed algebra.
+
+*** WHICH MEANS COULD WORK: EXACTLY THOSE BELOW THE GEOMETRIC ***
+
+`M_p . M_-p = b_pp.b_nn = GM^2` for every `p`, so `delta(-p) = -delta(p)`: the
+convention at `p = +1` has the harmonic mean at `p = -1` as its EXACT mirror,
+`-0.0216177` against `+0.0216177`. Since `M_p` increases in `p` and `M_0` is
+geometric, the SEMF sign needs `p < 0` -- strictly below the geometric mean,
+where no average with `p >= 0` can go. All three classical means have clean
+forms: `AM = [2]_{q^2}/(2[2]_q)`, `GM = 1/[2]_q`, `HM = 2/([2]_q[2]_{q^2})`.
+
+⚠ Their weights `1/2`, `q^-1/[2]_q`, `q^-2/[2]_{q^2}` LOOK like a ladder
+`q^-k/[2]_{q^k}`. **They are not** -- 0.55089 vs 0.55198 at `p = 2`, and it
+fails at every non-classical `p` tested. Recorded so nobody re-derives it.
+
 *** WHAT THIS DOES NOT CLAIM ***
 
 The POWER. Turning `E_pn` into the SEMF's `(N-Z)^2/A` needs a well-mixed
@@ -213,7 +243,118 @@ def main() -> int:
 
     print()
     print("=" * 78)
-    print("6. WHAT IS CLOSED")
+    print("6. DERIVING w — IT IS FORCED BY THE AVERAGING CONVENTION")
+    print("=" * 78)
+    Z_M = Q0**3/(Q0**2 + 1)          # H is the module-level Hecke h
+    flav_lead = (Q0 - 1)**2*(1 - Q0**-4)/3
+    f_pn_conv = Z_M - H*(mp.mpf(1)/2 - flav_lead/4)
+    print("    f_pp = z              (positive crossing, Markov axiom)")
+    print("    f_nn = z - h          (negative crossing, Hecke skein)")
+    print("    f_pn = z - h(1/2 - d/4)   (bring_color_weighted, default 2026-06-01)")
+    print()
+    print(f"    f_pn from the convention = {mp.nstr(f_pn_conv, 18)}")
+    print(f"    b_pn corpus closed form  = {mp.nstr(B_PN, 18)}")
+    print(f"    difference               = {mp.nstr(f_pn_conv - B_PN, 5)}")
+    ok &= chk("the_convention_reproduces_the_corpus_closed_form_exactly",
+              abs(f_pn_conv - B_PN) < TOL, True,
+              note="the degree-10 numerator over 12q^5(q^2+1) IS z - h(1/2-d/4). "
+                   "So w is not a free parameter anywhere in the corpus")
+    ok &= chk("w_is_forced_to_one_half_plus_flavour_over_four",
+              abs(w - (mp.mpf(1)/2 + flav_lead/4)) < TOL, True,
+              note="solving z - h(1/2-d/4) = w.z + (1-w)(z-h) gives (1-w)h = "
+                   "h(1/2-d/4) identically. Lean: weight_of_convention. So "
+                   "'derive w' reduces entirely to deriving the flat 1/2")
+
+    print()
+    print("=" * 78)
+    print("7. AND THE FLAT HALF IS THE WHOLE MISS")
+    print("=" * 78)
+    deform = (Q0**2 - 1)/(2*(Q0**2 + 1))
+    print(f"    w - w*                      = {mp.nstr(w - thr, 18)}")
+    print(f"    (q^2-1)/(2(q^2+1)) + d/4    = {mp.nstr(deform + flav_lead/4, 18)}")
+    print(f"      deformation part          = {mp.nstr(deform, 14)}")
+    print(f"      flavour part d/4          = {mp.nstr(flav_lead/4, 14)}")
+    print(f"      ratio                     = {mp.nstr(deform/(flav_lead/4), 8)}")
+    ok &= chk("the_miss_splits_as_deformation_plus_flavour",
+              abs((w - thr) - (deform + flav_lead/4)) < TOL, True,
+              note="Lean: weight_miss")
+    ok &= chk("and_the_miss_is_the_flat_half_not_the_derived_flavour_split",
+              deform/(flav_lead/4) > 100, True,
+              note=f"ratio {mp.nstr(deform/(flav_lead/4), 8)}. The ONE derived "
+                   "ingredient in w is 151x too small to matter; the entire "
+                   "miss is an undeformed average sitting in a deformed algebra")
+
+    print()
+    print("=" * 78)
+    print("8. WHICH MEANS CAN WORK: EXACTLY THOSE BELOW THE GEOMETRIC")
+    print("=" * 78)
+    two_q2 = Q0**2 + Q0**-2
+
+    def power_mean(pp):
+        pp = mp.mpf(pp)
+        return mp.sqrt(B_PP*B_NN) if pp == 0 else ((B_PP**pp + B_NN**pp)/2)**(1/pp)
+
+    print(f"    {'p':>6}{'M_p':>20}{'delta':>20}   sign")
+    pm = []
+    for pp in (3, 2, 1, mp.mpf("0.5"), 0, mp.mpf("-0.5"), -1, -2, -3):
+        m = power_mean(pp)
+        d_ = -mp.log(m) + (mp.log(B_PP) + mp.log(B_NN))/2
+        pm.append({"p": str(pp), "M_p": mp.nstr(m, 14), "delta": mp.nstr(d_, 14)})
+        print(f"    {str(pp):>6}{mp.nstr(m, 16):>20}{mp.nstr(d_, 16):>20}   "
+              f"{'SEMF' if d_ > 0 else ('zero' if d_ == 0 else 'wrong')}")
+
+    def d_of(m):
+        return -mp.log(m) + (mp.log(B_PP) + mp.log(B_NN))/2
+
+    odd = all(abs(d_of(power_mean(pp)) + d_of(power_mean(-pp))) < TOL
+              for pp in (mp.mpf("0.5"), 1, 2, 3))
+    ok &= chk("power_mean_delta_is_odd_under_p_to_minus_p", odd, True,
+              note="M_p . M_-p = b_pp.b_nn = GM^2 for every p, so delta(-p) = "
+                   "-delta(p). The convention sits at p = +1; its exact mirror "
+                   "is the harmonic mean. Lean: harmonic_mul_arithmetic and "
+                   "delta_harmonic_eq_neg_delta_arithmetic for p = +/-1")
+    ok &= chk("the_sign_is_right_exactly_when_p_is_negative",
+              all((mp.mpf(r["delta"]) > 0) == (mp.mpf(r["p"]) < 0)
+                  for r in pm if mp.mpf(r["p"]) != 0), True,
+              note="M_p is increasing in p and M_0 is the geometric mean, so "
+                   "the SEMF sign needs a mean STRICTLY BELOW geometric -- "
+                   "where no average with p >= 0 can go")
+
+    AM_, GM_, HM_ = (B_PP + B_NN)/2, mp.sqrt(B_PP*B_NN), 2*B_PP*B_NN/(B_PP + B_NN)
+    print()
+    print(f"    AM = [2]_q^2/(2[2]_q)      = {mp.nstr(two_q2/(2*TWO_Q), 16)}")
+    print(f"    GM = 1/[2]_q               = {mp.nstr(1/TWO_Q, 16)}")
+    print(f"    HM = 2/([2]_q [2]_q^2)     = {mp.nstr(2/(TWO_Q*two_q2), 16)}")
+    ok &= chk("the_three_classical_means_have_closed_two_q_forms",
+              bool(abs(AM_ - two_q2/(2*TWO_Q)) < TOL and abs(GM_ - 1/TWO_Q) < TOL
+                   and abs(HM_ - 2/(TWO_Q*two_q2)) < TOL), True,
+              note="with [2]_x = x + 1/x. Lean: arithmetic_pinned, "
+                   "harmonic_pinned; AM.HM = GM^2 closes the triple")
+
+    print()
+    print("    ⚠ AND A PATTERN THAT IS NOT ONE:")
+    print("      w(AM) = 1/2, w(GM) = q^-1/[2]_q, w(HM) = q^-2/[2]_q^2 look like")
+    print("      a ladder q^-k/[2]_{q^k}. Tested off the classical points:")
+    ladder = []
+    for pp in (2, mp.mpf("0.5"), -2, -3):
+        k = 1 - mp.mpf(pp)
+        pred = Q0**(-k)/(Q0**k + Q0**-k)
+        act = (power_mean(pp) - B_NN)/(B_PP - B_NN)
+        ladder.append({"p": str(pp), "actual": mp.nstr(act, 12),
+                       "ladder_prediction": mp.nstr(pred, 12)})
+        print(f"        p={str(pp):>5}  actual {mp.nstr(act, 10):>14}   "
+              f"ladder says {mp.nstr(pred, 10):>14}")
+    ok &= chk("the_weight_ladder_is_a_coincidence_of_the_three_classical_means",
+              all(abs(mp.mpf(r["actual"]) - mp.mpf(r["ladder_prediction"]))
+                  > mp.mpf("1e-6") for r in ladder), True,
+              note="it fails at every non-classical p tested -- 0.55089 vs "
+                   "0.55198 at p=2. Recorded so nobody re-derives it as "
+                   "structure; the near-pattern is exactly what the anti-fit "
+                   "discipline is for")
+
+    print()
+    print("=" * 78)
+    print("9. WHAT IS CLOSED")
     print("=" * 78)
     print("  The synthesis audit called the symmetry energy 'a named gap with NO")
     print("  available route'. There IS a route -- the p-n interface count -- and")
@@ -245,7 +386,13 @@ def main() -> int:
                  "weight_over_threshold": mp.nstr(w/thr, 12),
                  "delta_at_corpus_weight": mp.nstr(delta_of(w), 20),
                  "delta_sweep_in_w": sweep,
-                 "threshold_sweep_in_q": qsweep},
+                 "threshold_sweep_in_q": qsweep,
+                 "f_pn_from_convention": mp.nstr(f_pn_conv, 20),
+                 "miss_deformation_part": mp.nstr(deform, 20),
+                 "miss_flavour_part": mp.nstr(flav_lead/4, 20),
+                 "miss_ratio": mp.nstr(deform/(flav_lead/4), 12),
+                 "power_mean_sweep": pm,
+                 "failed_weight_ladder": ladder},
         "provenance": {"headSha": _head_sha(),
                        "producer": "computations/qbeta/qbeta_symmetry_sign_is_am_gm_locked_probe.py",
                        "elapsed_s": round(time.monotonic() - t0, 3)},
