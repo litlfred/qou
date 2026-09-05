@@ -1446,6 +1446,13 @@ import QOU.Hecke.BoundedDegreeCoulomb
 -- backwards structurally.  The crossing weight is `1/(q^2+1)`, which is `1/2`
 -- only at `q = 1`; the corpus sits at `1/2 + delta_flavour/4`, 11.7 % above it.
 import QOU.Hecke.SymmetrySignAmGm
+-- `ChannelRangeGrowthClass`: adding a bond MULTIPLIES the trace by `b < 1`, so
+-- the native falloff is `b^d(i,j) = exp(-mu.d(i,j))` -- Yukawa in graph
+-- distance.  That puts weak / strong / EM on one axis (the mediator mass) and
+-- separates them by GROWTH CLASS: every `mu > 0` gives an extensive pair sum,
+-- only `mu = 0` gives `Theta(n^2)`.  Also `L_pp + L_nn = 2 log [2]_q`, so the
+-- three rates carry one constraint and one free parameter.
+import QOU.Hecke.ChannelRangeGrowthClass
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
 

@@ -151,3 +151,80 @@ Landed on all four surfaces: this bean, the Lean docstring, the probe (with two
 new assertions pinning the 1587 %/73.1 % crossing so it cannot drift into a
 docstring-only figure), and the synthesis audit. Corrects the framing shipped in
 PR #6783 — the theorem and every number in it stand unchanged.
+
+## 2026-09-05 (owner) — the three channels, their decay rates, and the options
+
+*"There are several channels — EM, strong, weak. They each have their own decay
+rate, potentially visible in the perturbation theory. Those three rates are not
+necessarily independent, so we need to be careful."*
+
+Right on both counts, and the framework makes both precise.
+
+**The native falloff is Yukawa.** Adding a bond MULTIPLIES the Markov trace by
+`b < 1`, so `b^d(i,j) = exp(-mu.d(i,j))` with `mu = -ln b`: exponential in graph
+distance. That puts the three channels on one axis, the mediator mass:
+
+| channel | mediator | mu | pair sum over n sites |
+|---|---|---:|---|
+| weak | W, 80.4 GeV | 407 /fm | O(n) |
+| strong | pion, 139.6 MeV | 0.707 /fm | O(n) |
+| EM | photon, **massless** | 0 | **Theta(n^2)** |
+
+**So Coulomb is not "a longer-range bond" — it is the massless boundary**, a
+different growth class. Every `q`-derived rate is strictly positive because
+`b < 1`, so no choice of letters reaches it. Analytic twin of this bean's
+degree-side theorem.
+
+## The rates carry ONE constraint and one free parameter
+
+`b_pp.b_nn = 1/[2]_q^2` is an identity, so
+
+    L_pp + L_nn = 2 ln[2]_q      EXACTLY   (0.489899 + 0.907262 = 1.397162)
+
+and `L_pn` sits between them by the averaging convention. Three rates, one
+constraint, one free parameter `q`. Scale-free consequence: the RANGE ratios
+`lambda_pp : lambda_pn : lambda_nn = 1.8519 : 1.3405 : 1` are derived with no
+length scale — the p-p channel is 1.85x longer-ranged than n-n.
+
+## A false alarm, recorded so nobody raises it
+
+The per-site sum is `sum_k |S_k| exp(-mu k)`. For a TREE at bounded degree `d`,
+`|S_k| <= d(d-1)^(k-1)` and convergence needs `mu > ln(d-1)`. Against the corpus
+letters that looks alarming — only `L_nn` clears `ln 2` at `d = 3`, and **none**
+of the three clears `ln(d-1)` at `d >= 4`. **A nuclear packing is not a tree:**
+in R^3 the shells grow polynomially (`~k^2`) and every `mu > 0` converges.
+Nothing follows from the tree row, and it is pinned as an assertion so it is not
+re-raised.
+
+## What DOES follow: the range-1 truncation is not self-consistent
+
+On the fcc shell counts `10k^2+2` (12, 42, 92, 162, ...) the framework's own
+decay reaches
+
+| letter | b | effective sites | vs 12 contacts |
+|---|---:|---:|---:|
+| pp | 0.612688 | **173.23** | **14.44x** |
+| pn | 0.508230 | 66.52 | 5.54x |
+| nn | 0.403628 | 28.06 | 2.34x |
+
+Truncating at range 1 discards ~93 % of the p-p weight the same framework's
+decay rate supplies.
+
+## The options, ranked by cost
+
+**(a) Sum `b^d(i,j)` over ALL pairs at the derived letters.** No new parameter —
+it is the letters the corpus already has, applied at their own range. Fixes a
+14x self-inconsistency and is the strong channel done properly. **Does not touch
+Coulomb**: the per-site sum stays finite, so the constant moves 14x and the
+growth class does not.
+
+**(b) A separate `mu = 0` channel for EM.** A different growth class cannot be a
+bond letter; it has to enter as its own term. That is the honest shape of the
+Coulomb repair.
+
+**(c) Re-tuning any letter.** Excluded twice over: the rates carry one
+constraint, and no positive `mu` reaches quadratic growth.
+
+Artifacts: `QOU/Hecke/ChannelRangeGrowthClass.lean` (5 decls, axiom-clean,
+`lean`-direct exit 0) and
+`computations/qbeta/qbeta_channel_range_growth_class_probe.py` (7/7).
