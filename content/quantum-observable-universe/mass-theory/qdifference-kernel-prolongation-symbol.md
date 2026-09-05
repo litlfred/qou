@@ -203,9 +203,15 @@ local monodromy, not fitted numerically.
 > solutions would make a sheet $q$-holonomic, which together with D-finiteness
 > forces rationality (Bézivin, Ramis; Schäfke–Singer). So a rational
 > $q$-connection on the $z$-line with the sheets as flat sections does not
-> exist — scope (b), the cited theorem being the invariant — and the
-> prolongation, if it is a $q$-difference operator at all, is local at the
-> ramification point or has non-rational coefficients.
+> exist — scope (b), the cited theorem being the invariant. Localising at the
+> ramification point does not evade this. In the local coordinate $t$, with
+> $z = z_{c} + t^{2}$, the sheets are power series algebraic over $K(t)$ and so
+> still D-finite; and they are still not rational, because $t^{2} = z - z_{c}$
+> makes $K(t)/K(z)$ quadratic while an irreducible cubic has no root of degree
+> at most two (`QOU.Mass.IrreducibleCubicNoQuadraticRoot`, sorry-free). The
+> same theorem therefore excludes the local $q$-dilation as well, and what
+> survives is an operator whose coefficients are not rational in a coordinate,
+> or one defined on the curve rather than on a coordinate line.
 >
 > Two earlier readings of the same kernel took $\sigma$ to be a shift in the
 > $t$-exponent of a single jet — the unit $t$-shift with $x = q^{e}$, or the
