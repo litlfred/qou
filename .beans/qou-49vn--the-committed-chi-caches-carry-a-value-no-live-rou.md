@@ -116,3 +116,84 @@ current answer"*), in the same session in which I wrote that entry.
    certification needs re-running.
 4. **Do not mass-regenerate.** One atom, with the Rust kernel present, decided
    first.
+
+---
+
+## Confound 1 REMOVED — Rust kernel built and re-run (2026-09-05, same day)
+
+`cargo build --release --bin hecke-canonical-chi` succeeds in this container in
+**39 s** (7 warnings, no errors). Re-running
+`QOU_Q0_ANCHOR=proton python3 computations/atomic_tr_m_mpfr_50dps.py --anchor
+proton` with the binary present:
+
+| atom | `[rust]` | `[peel]` | rel \|rust−peel\|/peel |
+|---|---|---|---|
+| proton   | `0.62932840220292191709…` | `0.62932840220292191816…` | **1.702e-18** |
+| neutron  | `0.47513351715568221158…` | `0.47513351715568221250…` | **1.936e-18** |
+| deuteron | `0.15194683953767166429…` | `0.15196833920423160759…` | **1.41475e-4** |
+| tritium  | `0.02913991921797892047…` | `0.02914404236097206535…` | **1.41475e-4** |
+| ³He      | `0.05858796377036033442…` | `0.05859625365443638021…` | **1.41475e-4** |
+
+### What this settles
+
+**`0.5751722439…` is reproduced by NO live route.** Not Rust, not markov-peel,
+not `--fresh` chi. Three routes all land in the `0.1519…` neighbourhood. The
+committed `chi-*-at-q0-50dps` values are cache-carried and superseded. The
+earlier proton/neutron observations were **not** a fallback artifact — the Rust
+kernel gives `0.6293…`/`0.4751…` too, so the committed 2026-08-19 arbiter values
+`1.1457…`/`0.9877…` are genuinely superseded as well.
+
+### 🛑 A stale BASELINE in a source comment — I read it as corroboration
+
+`computations/canonical_tr_m_via_rust.py:68-70` states:
+
+    # Measured after the fix, with the binary built from tools/hecke-engine:
+    #   tr_M(p, q_0) = 1.14575969245730086935241774516176649113
+    #   tr_M(n, q_0) = 0.98774368811580957144294046174148798302
+
+Today, same binary path, same anchor: `0.62932840220292191709…` and
+`0.47513351715568221158…`. **That comment is stale**, and I cited it as evidence
+the committed values were the Rust ones. Third instance this session of the same
+error class — a stored number read as a current answer, this time wearing the
+words *"Measured after the fix, with the binary built"*, which is exactly the
+phrasing that makes it look like a live check.
+
+### What it does NOT settle, and the sharp new finding
+
+Rust and peel **disagree on every composite atom** by
+
+    rust/peel = 0.999858525356843903463281614406   (deuteron)
+                0.999858525356843896710241513022   (tritium)
+                0.999858525356843898527910951336   (³He)
+
+— **one shared multiplicative constant, agreeing to 17 significant figures**
+(spread across atoms `6.75e-18`, i.e. the kernels' own precision floor), while
+the two single nucleons agree at `~1.7e-18`.
+
+That shape is informative: the discrepancy is **atom-independent and does not
+accumulate with A**, over different braid words and different partition sets. It
+is therefore **one shared step in the composite path** implemented differently in
+the two kernels — not drift, not accumulation, not a per-atom construction
+difference. `1 − 0.9998585253568439 = 1.41474643e-4`.
+
+**No identification of that constant is attempted here**, deliberately: fitting
+a formula to a single measured ratio is exactly the move the anti-fit discipline
+forbids. It is recorded as a structural signature for whoever localises it.
+
+The discrepancy is **1.4e-4 relative — eleven orders above the 1 ppQ (1e-15) L1
+target**, so it is not a precision artifact and both kernels cannot be right.
+
+### Revised next steps
+
+1. **Localise the shared factor.** Diff the composite path: `hecke_canonical_
+   chi.rs` / `wenzl_lr.rs` against the Python markov-peel. The single-nucleon
+   agreement at 1e-18 means the divergence is in what the composite path does
+   *once*, not per crossing. Possible neighbour: bean `qou-1qsw` (three
+   inconsistent `pyhecke.atom` nucleon constructions) — same class, different
+   magnitude, not established as the same cause.
+2. **Only then** decide which value is canonical and whether the
+   `chi-*-at-q0-50dps` family should be regenerated.
+3. **Still do not mass-regenerate.** One atom, decided, first.
+4. `d151898dd6` (*"pin-specific numerical chi caches — 5/6 atoms certified
+   1 ppQ"*) claims a certification that a 1.4e-4 kernel split would fail. Read
+   it: it may already name this.
