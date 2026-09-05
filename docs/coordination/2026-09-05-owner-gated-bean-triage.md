@@ -274,12 +274,53 @@ register accepts for `\zeta(s)` vs `\zeta_n`. **Proposed, not applied** (a regis
 change is a convention claim): one line in `notation-collisions.md` recording it,
 so a future sweep does not "correct" those 3 sites into `_c` or `_f`.
 
-### CLUSTER 6 — a construction choice with a falsifiable side. `qou-aemx`
+### CLUSTER 6 — `qou-aemx`. ✅ **Checked for staleness: it is GENUINELY OPEN, and well framed.**
 
-Two rival α_EM constructions, `45·[3]_q` vs `q·[9]_q·[10]_q`. The bean's own later
-entry **withdraws** its earlier "nothing in the corpus argues for one" and finds
-the `8` is structural. Worth re-reading before deciding — it may have moved
-further than its header says.
+I flagged this as possibly stale. **It is not** — and that matters, because five
+other items were, and the run of them was starting to read as "the queue is
+noise". It is not. This one moved *sharper*, not resolved.
+
+**What advanced.** The bean's own later entry withdraws its earlier *"nothing in
+the corpus argues for one prefactor"* and finds an exact identity:
+`8 = Vol(𝓑₃)/G` — the Borromean rings `L6a4`, this framework's **nucleon** knot,
+`Vol = 2·V_oct = 8G`, machine-checked to 30 digits, residual exactly 0. Already
+load-bearing in the nucleon row of `fundamental-knots-operator-basis` and in the
+binding scale `α = m_e·8G`. The live `.lean` carried the **weaker** reading
+(`dim su(3) = gluon octet`, self-described as post-hoc) while the corpus held the
+exact one and did not cite it.
+
+**What that does NOT settle**, per the bean's own four points:
+
+1. the identity fixes the `8`, **not the power of `q`** multiplying it — `Vol/G`
+   and `q²·Vol/G` are not excluded;
+2. **the cross-sector gap, load-bearing and unaddressed**: why should a *nucleon*
+   knot's volume set a coefficient in an *electromagnetic* coupling? The bean
+   pursued this and reports it "does not close; it sharpens" — the identity is
+   **not generic**, holding for only 2 of 9 corpus/standard hyperbolic knots;
+3. **genericity unmoved**: κ ∈ [8.474, 9.265] still admits the integer 9 at
+   33 ppb, so `8q` is *in range, not forced*;
+4. a chronology the bean initially missed: `45·[3]_q` **replaced**
+   `q·[9]_q·[10]_q` (which had needed an unidentifiable `1.6`), and the latter was
+   then revived with a derived Gram κ. **Production compute uses the superseded
+   prefactor.**
+
+**The decision, stated plainly:** does the revival supersede the supersession —
+i.e. does `q·[9]_q·[10]_q` with a derived Gram κ reinstate over `45·[3]_q`?
+
+| option | what it means | cost | risk | commits to |
+|---|---|---|---|---|
+| **a. Reinstate `q·[9]_q·[10]_q`** | production moves to the revived form | producer + witness + the `.lean` docstring | the cross-sector gap is *unexplained*, and κ's range admits 9 — reinstating on an unexplained identity is the numerology shape the anti-fit discipline guards against | an EM coefficient set by a nucleon volume, with no mechanism |
+| **b. Keep `45·[3]_q`** | status quo; production keeps the later form | zero | leaves the `.lean` citing the weaker of two available readings | nothing |
+| **c. Neither, until the cross-sector gap closes** | record both, wire neither as canonical | small — a scope note on the `.lean` | slower | nothing; keeps the question honest |
+
+**My recommendation, marked as judgement: (c).** The `8` identity is real and
+exact, but a *nucleon* volume setting an *electromagnetic* coefficient with no
+mechanism, holding for only 2 of 9 knots, and against a κ range that admits the
+integer 9 — that is a coincidence with a good number, not a derivation. Under the
+standing NO-FITTING directive, "accuracy is not evidence of correctness here".
+
+**Default if you say nothing:** (b), the status quo — production keeps
+`45·[3]_q` and nothing moves.
 
 ### CLUSTER 7 — one-off content/model calls
 
