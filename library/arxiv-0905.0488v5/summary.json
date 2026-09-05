@@ -1,0 +1,87 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0905.0488v5",
+ "source_sha256": "fcf8dee7cd3849b9",
+ "brief": "TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI — Let X be a smooth algebraic variety over a ﬁeldK containing the real numbers.",
+ "extended": "**TWISTED DEFORMATION QUANTIZATION OF ALGEBRAIC VARIETIES AMNON YEKUTIELI**\n\n*Dedicated to Rina Yekutieli, my Mother, on her 80th Birthday*\n\n50 pp, 13 sections.\n\n**Abstract.** Let X be a smooth algebraic variety over a ﬁeldK containing the real numbers. We introduce the notion of twisted associative (resp. Pois- son) deformation of the structure sheafOX. These are stack-like versions of usual deformations. We prove that there is atwisted quantizationoperation from twisted Poisson deformations to twisted associative deformations, which is canonical and bijective on gauge equivalence classes. This result extends work of Kontsevich, and our own earlier work, on deformation quantization of algebraic varieties.\n\n**Outline.** 0 Introduction; 1 Background on Crossed Groupoids and Stacks; 2 Deformations of Sheaves of Rings; 3 DG Lie Algebras and Deformations of Affine V; 4 Twisted Objects in a Stack of Crossed Groupo; 5 Combinatorial Descent Data; 6 Geometric Descent Data and Decomposition; 7 Total Trivialization of Twisted Deformations; 8 Lie Descent Data; 9 From Lie Descent to Geometric Descent; 10 Cosimplicial Formality; 11 Twisted Quantization; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.4.1: Let K be a ﬁeld of characteristic0, X\n- Theorem 0.6.1: Let Ψ : g→h be a cosimplicialL∞\n- Theorem 0.7.1: Let K be a ﬁeld of characteristic0, X a smooth\n- Theorem 9.9: for the precise statement.\n- Theorem 0.2: ]. As a consequence we obtain the next theorem, which is repeated,\n- Theorem 0.9.1: Assume the ﬁeldK contains R. LetX",
+ "tokens": {
+  "brief": 37,
+  "extended": 390
+ },
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "title": "Introduction",
+   "pages": "1-11"
+  },
+  {
+   "id": "sec-001-1-background-on-crossed-groupoids-and-stacks",
+   "title": "Background on Crossed Groupoids and Stacks",
+   "pages": "11-15"
+  },
+  {
+   "id": "sec-002-2-deformations-of-sheaves-of-rings",
+   "title": "Deformations of Sheaves of Rings",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-003-3-dg-lie-algebras-and-deformations-of-affine-var",
+   "title": "DG Lie Algebras and Deformations of Affine Varieties",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-004-4-twisted-objects-in-a-stack-of-crossed-groupoid",
+   "title": "Twisted Objects in a Stack of Crossed Groupoids",
+   "pages": "21-25"
+  },
+  {
+   "id": "sec-005-5-combinatorial-descent-data",
+   "title": "Combinatorial Descent Data",
+   "pages": "25-28"
+  },
+  {
+   "id": "sec-006-6-geometric-descent-data-and-decomposition",
+   "title": "Geometric Descent Data and Decomposition",
+   "pages": "28-33"
+  },
+  {
+   "id": "sec-007-7-total-trivialization-of-twisted-deformations",
+   "title": "Total Trivialization of Twisted Deformations",
+   "pages": "33-36"
+  },
+  {
+   "id": "sec-008-8-lie-descent-data",
+   "title": "Lie Descent Data",
+   "pages": "36-39"
+  },
+  {
+   "id": "sec-009-9-from-lie-descent-to-geometric-descent",
+   "title": "From Lie Descent to Geometric Descent",
+   "pages": "39-42"
+  },
+  {
+   "id": "sec-010-10-cosimplicial-formality",
+   "title": "Cosimplicial Formality",
+   "pages": "42-45"
+  },
+  {
+   "id": "sec-011-11-twisted-quantization",
+   "title": "Twisted Quantization",
+   "pages": "45-48"
+  },
+  {
+   "id": "sec-012-references",
+   "title": "References",
+   "pages": "48-50"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

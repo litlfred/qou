@@ -1,0 +1,277 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0006057v2",
+ "source_sha256": "c881434fe9f4b04f",
+ "brief": "FINITE QUANTUM GROUPOIDS AND THEIR APPLICA TIONS — W e give a survey of the theory of ﬁnite quantum groupoids (wea k Hopf algebras), including foundations of the theory and app lications to ﬁnite",
+ "extended": "**FINITE QUANTUM GROUPOIDS AND THEIR APPLICA TIONS**\n\n*DMITRI NIKSHYCH AND LEONID VAINERMAN*\n\n44 pp, 51 sections.\n\n**Abstract.** W e give a survey of the theory of ﬁnite quantum groupoids (wea k Hopf algebras), including foundations of the theory and app lications to ﬁnite depth subfactors, dynamical deformations of quantum group s, and invariants of knots and 3-manifolds.\n\n**Outline.** 2 Definitions and Examples; 2.1 Deﬁnition of the quantum groupoid. By quan; 4 DMITRI NIKSHYCH AND LEONID V AINERMAN; 2.2 Counital maps and subalgebras. The linear ; 2.3 Properties of the antipode. The properties; 6 DMITRI NIKSHYCH AND LEONID V AINERMAN; 2.4 The dual quantum groupoid. The set of axio; 2.5 Examples : groupoid algebras and their dua; 8 DMITRI NIKSHYCH AND LEONID V AINERMAN; 2.6 Examples : quantum transformation groupoid; 2.7 Examples : T emperley-Lieb algebras. It wa; 2.8 Other versions of a quantum groupoid. Here; 10 DMITRI NIKSHYCH AND LEONID V AINERMAN; 3 Integrals and semisimplicity; 3.2 Hopf modules. Since a quantum groupoid H i; 12 DMITRI NIKSHYCH AND LEONID V AINERMAN; 3.3 Maschke’s Theorem. The existence of left i; 4 Actions and smash products\n\n**Extracted claims (proposals, not verified).**\n- Theorem 3.2.5: LetM be a right H-Hopf module and\n- Theorem 3.3.1: LetH be a ﬁnite quantum groupoid, then the fol-\n- Theorem 4.3.1: The map α : (A#H)# ˆH → End(A#H)A deﬁned\n- Theorem 7.2.2: LetH be a ﬁnite quantum groupoid over an alge-\n- Theorem 7.3.1: ([BNSz], 4.5) In a C∗-quantum groupoid the Haar integral h ex-\n- Theorem 8.2.3: With the above operations B becomes a biconnectedC∗-quantum",
+ "tokens": {
+  "brief": 48,
+  "extended": 402
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-definitions-and-examples",
+   "title": "Definitions and Examples",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-001-21-deﬁnition-of-the-quantum-groupoid-by-quantum",
+   "title": "Deﬁnition of the quantum groupoid. By quantum groupoids or weak Hopf",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-4-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-22-counital-maps-and-subalgebras-the-linear-maps",
+   "title": "Counital maps and subalgebras. The linear maps deﬁned in (3) and (4)",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-23-properties-of-the-antipode-the-properties-of",
+   "title": "Properties of the antipode. The properties of the antipode of a quantum",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-6-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-006-24-the-dual-quantum-groupoid-the-set-of-axioms-o",
+   "title": "The dual quantum groupoid. The set of axioms of Deﬁnition 2.1.1 is self-",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-007-25-examples-groupoid-algebras-and-their-duals-as",
+   "title": "Examples : groupoid algebras and their duals. As group algebras and",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-008-8-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-009-26-examples-quantum-transformation-groupoids-it",
+   "title": "Examples : quantum transformation groupoids. It is known that any",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-010-27-examples-t-emperley-lieb-algebras-it-was-show",
+   "title": "Examples : T emperley-Lieb algebras. It was shown in [NV3] (see Section",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-011-28-other-versions-of-a-quantum-groupoid-here-we",
+   "title": "Other versions of a quantum groupoid. Here we brieﬂy discuss several",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-012-10-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-013-3-integrals-and-semisimplicity",
+   "title": "Integrals and semisimplicity",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-014-32-hopf-modules-since-a-quantum-groupoid-h-is-bo",
+   "title": "Hopf modules. Since a quantum groupoid H is both algebra and coalgebra,",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-015-12-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-016-33-maschkes-theorem-the-existence-of-left-integr",
+   "title": "Maschke’s Theorem. The existence of left integrals in quantum groupoids",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-017-4-actions-and-smash-products",
+   "title": "Actions and smash products",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-018-42-smash-products-let-a-be-an-h-module-algebra-t",
+   "title": "Smash products. Let A be an H-module algebra, then a smash product",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-019-14-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-020-43-duality-for-actions-an-analogue-of-the-blattn",
+   "title": "Duality for actions. An analogue of the Blattner-Montgomery duality the-",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-021-5-representation-category-of-a-quantum-groupoid",
+   "title": "Representation category of a quantum groupoid",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-022-51-deﬁnition-of-rep-h-for-a-quantum-groupoid-h-l",
+   "title": "Deﬁnition of Rep (H). For a quantum groupoid H let Rep(H) be the cat-",
+   "pages": "14-16"
+  },
+  {
+   "id": "sec-023-16-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-024-18-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-025-53-the-drinfeld-double-to-deﬁne-the-drinfeld-dou",
+   "title": "The Drinfeld double. To deﬁne the Drinfeld double D(H) of a quantum",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-026-20-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-027-55-t-owards-modular-categories-in-rt-a-general-m",
+   "title": "T owards modular categories. In [RT] a general method of constructing",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-028-22-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-029-6-twisting-and-dynamical-quantum-groups",
+   "title": "Twisting and dynamical quantum groups",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-030-61-twisting-of-quantum-groupoids-we-describe-the",
+   "title": "Twisting of quantum groupoids. We describe the procedure of construct-",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-031-24-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-032-62-dynamical-twists-of-hopf-algebras-we-describe",
+   "title": "Dynamical twists of Hopf algebras. We describe a method of construct-",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-033-63-dynamical-twists-for-uqg-at-roots-of-1-suppos",
+   "title": "Dynamical twists for Uq(g) at roots of 1. Suppose that g is a simple Lie",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-034-26-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-035-21-λrj-λ-establishes-a-homomorphism-between-dj-h",
+   "title": "(λ)RJ (λ), establishes a homomorphism between DJ =H ∗op",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-036-7-semisimple-and-c-quantum-groupoids",
+   "title": "Semisimple and C∗-quantum groupoids",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-037-28-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-038-72-existence-of-the-haar-integral-given-a-dual-b",
+   "title": "Existence of the Haar integral. Given a dual bases {fi} and {ξi} of H",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-039-73-c-quantum-groupoids-deﬁnition-711-and-the-uni",
+   "title": "C∗-quantum groupoids. Deﬁnition 7.1.1 and the uniqueness of the unit,",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-040-30-dmitri-nikshych-and-leonid-v-ainerman",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-041-74-c-quantum-groupoids-and-unitary-modular-categ",
+   "title": "C∗-quantum groupoids and unitary modular categories. To deﬁne the",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-042-8-c-quantum-groupoids-and-subfactors-the-depth-2",
+   "title": "C∗-quantum groupoids and subfactors : the depth 2 case",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-043-81-actions-of-c-quantum-groupoids-on-von-neumann",
+   "title": "Actions of C∗-quantum groupoids on von Neumann algebras. Let a",
+   "pages": "32-34"
+  },
+  {
+   "id": "sec-044-1-e2b-using-equation",
+   "title": "(e2b)). Using Equation",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-045-83-action-on-a-subfactor-equation-73-suggests-th",
+   "title": "Action on a subfactor. Equation (73) suggests the following deﬁnition of",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-046-9-c-quantum-groupoids-and-subfactors-the-finite",
+   "title": "C∗-quantum groupoids and subfactors : the finite depth case",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-047-91-a-galois-correspondence-the-following-simple",
+   "title": "A Galois correspondence. The following simple observation gives a natural",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-048-92-bimodule-categories-here-we-establish-an-equi",
+   "title": "Bimodule categories. Here we establish an equivalence between the ten-",
+   "pages": "38-41"
+  },
+  {
+   "id": "sec-049-93-principal-graphs-the-principal-graph-of-a-sub",
+   "title": "Principal graphs. The principal graph of a subfactor N ⊂ M is deﬁned",
+   "pages": "41-42"
+  },
+  {
+   "id": "sec-050-references",
+   "title": "References",
+   "pages": "42-44"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

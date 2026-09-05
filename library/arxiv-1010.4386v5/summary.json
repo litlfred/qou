@@ -1,0 +1,67 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1010.4386v5",
+ "source_sha256": "168226dbb5a479ed",
+ "brief": "ON THE HOMOLOGY OF COMPLETION AND TORSION — Let A be a commutative ring, and a a weakly proregular ideal in A.",
+ "extended": "**ON THE HOMOLOGY OF COMPLETION AND TORSION**\n\n*MARCO PORTA, LIRAN SHAUL AND AMNON YEKUTIELI*\n\n33 pp, 9 sections.\n\n**Abstract.** Let A be a commutative ring, and a a weakly proregular ideal in A. This includes the noetherian case: if A is noetherian then any ideal in it is weakly proregular; but there are other interesting e xamples. In this paper we prove the MGM equivalence , which is an equivalence between the category of cohomologically a-adically complete complexes and the category of cohomologically a-torsion complexes . These are triangulated subcategories of the derived category of A-modules. Our work extends earlier work by Alonso- Jeremias-Lipman, Schenzel and Dwyer-Greenlees.\n\n**Outline.** 0 Introduction; 1 Preliminaries on Homological Algebra; 2 The Derived Completion and Torsion Functors; 3 Koszul Complexes and Weak Proregularity; 4 The Telescope Complex; 5 Permanence of Weak Proregularity; 6 MGM Equivalence; 7 Derived Localization; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.1: LetA be a commutative ring, and a a weakly\n- Theorem 0.2: LetA be a commutative ring, let a be a weakly proregular sequence\n- Theorem 0.4: Let A be a commutative ring, a a weakly proregular sequence in\n- Theorem 3.24: Let a be a ﬁnite sequence in a ring A. The following conditions\n- Theorem 3.34: IfA is noetherian, then every ﬁnite sequence in A is weakly proreg-\n- Theorem 4.21: LetA be any ring, let a be a weakly proregular sequence in A, and",
+ "tokens": {
+  "brief": 27,
+  "extended": 370
+ },
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-1-preliminaries-on-homological-algebra",
+   "title": "Preliminaries on Homological Algebra",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-002-2-the-derived-completion-and-torsion-functors",
+   "title": "The Derived Completion and Torsion Functors",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-003-3-koszul-complexes-and-weak-proregularity",
+   "title": "Koszul Complexes and Weak Proregularity",
+   "pages": "10-16"
+  },
+  {
+   "id": "sec-004-4-the-telescope-complex",
+   "title": "The Telescope Complex",
+   "pages": "16-22"
+  },
+  {
+   "id": "sec-005-5-permanence-of-weak-proregularity",
+   "title": "Permanence of Weak Proregularity",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-006-6-mgm-equivalence",
+   "title": "MGM Equivalence",
+   "pages": "24-28"
+  },
+  {
+   "id": "sec-007-7-derived-localization",
+   "title": "Derived Localization",
+   "pages": "28-32"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "32-33"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

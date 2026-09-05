@@ -1,0 +1,591 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-9909027v1",
+ "source": {
+  "file": "9909027v1.pdf",
+  "sha256": "e6cd544cdc141d3b7307b26452bc7b7ebe56768300982208f377fca04b6062e8",
+  "bytes": 803201,
+  "pages": 122,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/9909027",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "4 Sep 1999"
+  },
+  "doi": null,
+  "title": "Planar Algebras, I V. F. R. Jones \u2217 Department of Mathematics University of California",
+  "authors_raw": "Berkeley, California 94720\u20133840",
+  "title_lines": [
+   "Planar Algebras, I",
+   "V. F. R. Jones \u2217",
+   "Department of Mathematics",
+   "University of California"
+  ],
+  "abstract": "We introduce a notion of planar algebra, the simplest exampl e of which is a vector space of tensors, closed under planar contr actions. A planar algebra with suitable positivity properties produ ces a \ufb01nite index subfactor of a II 1 factor, and vice versa. 0. Introduction At \ufb01rst glance there is nothing planar about a subfactor. A fa ctor M is a unital \u2217-algebra of bounded linear operators on a Hilbert space, wit h trivial centre and closed in the topology of pointwise convergence. The factor M is of type II 1 if it admits a (normalized) trace, a linear function tr: M \u2192 C with tr(ab) = tr(ba) and tr(1) = 1. In [J1] we de\ufb01ned the notion of index [M : N] for II 1 factors N \u2282 M. The most surprising result of [J1] was that [ M : N] is \u201cquantized\u201d \u2014 to be precise, if [ M : N] < 4 there is an integer n \u2265 3 with [ M : N] = 4 cos 2 \u03c0/n. This led to a surge of interest in subfactors and the major theorems of Pimsner, Popa and Ocneanu ([PP],[Po1] ,[O1]). These results turn around a \u201cstandard invariant\u201d for \ufb01nite index s ubfactors, also known variously as the \u201ctower of relative commutants\u201d, the \u201c paragroup\u201d, or the \u201c \u03bb-lattice\u201d. In favorable cases the standard invariant allow s one to recon- struct the subfactor, and both the paragroup and \u03bb-lattice approaches give \u2217Research supported in part by NSF Grant DMS93\u201322675, the Mar sden fund UOA520, and the Swiss National Science Foundation. 1",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126161759-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/9909027v1  [math.QA]  4 Sep 1999"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "F. R. Jones \u2217",
+   "page": 1,
+   "source": "inferred",
+   "number": "V"
+  },
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(which we will call P0 and P1,1 later on). Linear maps between tensor",
+   "page": 4,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Multiplication, which is the following tangle (illustra ted for k =5)",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Annular tangles: ones with only one internal disc, e.g.,",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The Formalism",
+   "page": 13,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 27,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Choose a diagram for L and add a parallel double L\u2032 of L to the left of L",
+   "page": 35,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "(w\u2217 is w written backwards) satis\ufb01es alt( w1w\u2217",
+   "page": 44,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(n+\u2212n\u2212)+ 1",
+   "page": 47,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(n\u2202",
+   "page": 47,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(#(black regions) \u2212 #(boxes)) + 1",
+   "page": 47,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Binunitaries",
+   "page": 54,
+   "source": "inferred",
+   "number": "2.11"
+  },
+  {
+   "level": 1,
+   "title": "(for some element S)",
+   "page": 63,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(1 \u2212 e1). Since",
+   "page": 66,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "General Structure Theory",
+   "page": 67,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Algebra structure, Markov trace",
+   "page": 67,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Duality",
+   "page": 74,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Reduction and cabling",
+   "page": 77,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Tensor product",
+   "page": 79,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Free product",
+   "page": 80,
+   "source": "inferred",
+   "number": "3.5"
+  },
+  {
+   "level": 2,
+   "title": "Fusion algebra",
+   "page": 81,
+   "source": "inferred",
+   "number": "3.6"
+  },
+  {
+   "level": 1,
+   "title": "Planar algebras and subfactors",
+   "page": 81,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Some facts about subfactors",
+   "page": 81,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 3,
+   "title": "Recall that the subfactor is called extremal if the normalized traces on",
+   "page": 82,
+   "source": "inferred",
+   "number": "4.1.6"
+  },
+  {
+   "level": 3,
+   "title": "By standard convex averaging procedures on L2(Mk), given a \ufb01nite",
+   "page": 82,
+   "source": "inferred",
+   "number": "4.1.7"
+  },
+  {
+   "level": 2,
+   "title": "Subfactors give planar algebras",
+   "page": 92,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 3,
+   "title": "To see this observe that the conditional expectatio n EpN : pM p \u2192 pN",
+   "page": 114,
+   "source": "inferred",
+   "number": "4.1.10"
+  },
+  {
+   "level": 2,
+   "title": "Planar algebras give subfactors",
+   "page": 115,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 118,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Subfactors, World Scienti\ufb01c,",
+   "page": 119,
+   "source": "inferred",
+   "number": "2"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-v-f-r-jones",
+   "number": "V",
+   "title": "F. R. Jones \u2217",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 82,
+   "n_words": 9
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 257,
+   "n_words": 45
+  },
+  {
+   "id": "sec-002-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 5082,
+   "n_words": 995
+  },
+  {
+   "id": "sec-003-0-which-we-will-call-p0-and-p11-later-on-linear",
+   "number": "0",
+   "title": "(which we will call P0 and P1,1 later on). Linear maps between tensor",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4534,
+   "n_words": 875
+  },
+  {
+   "id": "sec-004-1-multiplication-which-is-the-following-tangle-i",
+   "number": "1",
+   "title": "Multiplication, which is the following tangle (illustra ted for k =5)",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 11,
+   "n_words": 5
+  },
+  {
+   "id": "sec-005-2-annular-tangles-ones-with-only-one-internal-di",
+   "number": "2",
+   "title": "Annular tangles: ones with only one internal disc, e.g.,",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 13,
+   "n_chars": 14173,
+   "n_words": 2539
+  },
+  {
+   "id": "sec-006-1-the-formalism",
+   "number": "1",
+   "title": "The Formalism",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 27,
+   "n_chars": 22851,
+   "n_words": 4731
+  },
+  {
+   "id": "sec-007-2-examples",
+   "number": "2",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 35,
+   "n_chars": 10534,
+   "n_words": 2182
+  },
+  {
+   "id": "sec-008-l-choose-a-diagram-for-l-and-add-a-parallel-doub",
+   "number": "L",
+   "title": "Choose a diagram for L and add a parallel double L\u2032 of L to the left of L",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 44,
+   "n_chars": 12649,
+   "n_words": 2711
+  },
+  {
+   "id": "sec-009-2-w-is-w-written-backwards-satis\ufb01es-alt-w1w",
+   "number": "2",
+   "title": "(w\u2217 is w written backwards) satis\ufb01es alt( w1w\u2217",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 47,
+   "n_chars": 5763,
+   "n_words": 1229
+  },
+  {
+   "id": "sec-010-2-nn-1",
+   "number": "2",
+   "title": "(n+\u2212n\u2212)+ 1",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-4-n",
+   "number": "4",
+   "title": "(n\u2202",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 47,
+   "n_chars": 1420,
+   "n_words": 283
+  },
+  {
+   "id": "sec-012-2-black-regions-boxes-1",
+   "number": "2",
+   "title": "(#(black regions) \u2212 #(boxes)) + 1",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 54,
+   "n_chars": 9360,
+   "n_words": 1921
+  },
+  {
+   "id": "sec-013-211-binunitaries",
+   "number": "2.11",
+   "title": "Binunitaries",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 63,
+   "n_chars": 11109,
+   "n_words": 2107
+  },
+  {
+   "id": "sec-014-1-for-some-element-s",
+   "number": "1",
+   "title": "(for some element S)",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 66,
+   "n_chars": 4848,
+   "n_words": 986
+  },
+  {
+   "id": "sec-015-2-1-e1-since",
+   "number": "2",
+   "title": "(1 \u2212 e1). Since",
+   "level": 1,
+   "page_start": 66,
+   "page_end": 67,
+   "n_chars": 2374,
+   "n_words": 472
+  },
+  {
+   "id": "sec-016-3-general-structure-theory",
+   "number": "3",
+   "title": "General Structure Theory",
+   "level": 1,
+   "page_start": 67,
+   "page_end": 67,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-017-31-algebra-structure-markov-trace",
+   "number": "3.1",
+   "title": "Algebra structure, Markov trace",
+   "level": 2,
+   "page_start": 67,
+   "page_end": 74,
+   "n_chars": 11332,
+   "n_words": 2323
+  },
+  {
+   "id": "sec-018-32-duality",
+   "number": "3.2",
+   "title": "Duality",
+   "level": 2,
+   "page_start": 74,
+   "page_end": 77,
+   "n_chars": 4232,
+   "n_words": 863
+  },
+  {
+   "id": "sec-019-33-reduction-and-cabling",
+   "number": "3.3",
+   "title": "Reduction and cabling",
+   "level": 2,
+   "page_start": 77,
+   "page_end": 79,
+   "n_chars": 2846,
+   "n_words": 589
+  },
+  {
+   "id": "sec-020-34-tensor-product",
+   "number": "3.4",
+   "title": "Tensor product",
+   "level": 2,
+   "page_start": 79,
+   "page_end": 80,
+   "n_chars": 2240,
+   "n_words": 511
+  },
+  {
+   "id": "sec-021-35-free-product",
+   "number": "3.5",
+   "title": "Free product",
+   "level": 2,
+   "page_start": 80,
+   "page_end": 81,
+   "n_chars": 1077,
+   "n_words": 231
+  },
+  {
+   "id": "sec-022-36-fusion-algebra",
+   "number": "3.6",
+   "title": "Fusion algebra",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 81,
+   "n_chars": 263,
+   "n_words": 53
+  },
+  {
+   "id": "sec-023-4-planar-algebras-and-subfactors",
+   "number": "4",
+   "title": "Planar algebras and subfactors",
+   "level": 1,
+   "page_start": 81,
+   "page_end": 81,
+   "n_chars": 243,
+   "n_words": 44
+  },
+  {
+   "id": "sec-024-41-some-facts-about-subfactors",
+   "number": "4.1",
+   "title": "Some facts about subfactors",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 82,
+   "n_chars": 532,
+   "n_words": 142
+  },
+  {
+   "id": "sec-025-416-recall-that-the-subfactor-is-called-extremal",
+   "number": "4.1.6",
+   "title": "Recall that the subfactor is called extremal if the normalized traces on",
+   "level": 3,
+   "page_start": 82,
+   "page_end": 82,
+   "n_chars": 148,
+   "n_words": 39
+  },
+  {
+   "id": "sec-026-417-by-standard-convex-averaging-procedures-on-l",
+   "number": "4.1.7",
+   "title": "By standard convex averaging procedures on L2(Mk), given a \ufb01nite",
+   "level": 3,
+   "page_start": 82,
+   "page_end": 92,
+   "n_chars": 11524,
+   "n_words": 2738
+  },
+  {
+   "id": "sec-027-42-subfactors-give-planar-algebras",
+   "number": "4.2",
+   "title": "Subfactors give planar algebras",
+   "level": 2,
+   "page_start": 92,
+   "page_end": 114,
+   "n_chars": 28107,
+   "n_words": 6063
+  },
+  {
+   "id": "sec-028-4110-to-see-this-observe-that-the-conditional-ex",
+   "number": "4.1.10",
+   "title": "To see this observe that the conditional expectatio n EpN : pM p \u2192 pN",
+   "level": 3,
+   "page_start": 114,
+   "page_end": 115,
+   "n_chars": 1652,
+   "n_words": 387
+  },
+  {
+   "id": "sec-029-43-planar-algebras-give-subfactors",
+   "number": "4.3",
+   "title": "Planar algebras give subfactors",
+   "level": 2,
+   "page_start": 115,
+   "page_end": 118,
+   "n_chars": 2507,
+   "n_words": 545
+  },
+  {
+   "id": "sec-030-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 118,
+   "page_end": 119,
+   "n_chars": 2524,
+   "n_words": 384
+  },
+  {
+   "id": "sec-031-2-subfactors-world-scienti\ufb01c",
+   "number": "2",
+   "title": "Subfactors, World Scienti\ufb01c,",
+   "level": 1,
+   "page_start": 119,
+   "page_end": 122,
+   "n_chars": 3813,
+   "n_words": 574
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 32,
+  "sections": 32,
+  "chars_total": 178087
+ }
+}

@@ -1,0 +1,182 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1606.01832v3",
+ "source": {
+  "file": "1606.01832v3.pdf",
+  "sha256": "da982c95b9674382ace91cf6773aabb7ed0ba16e526d933f69128296347deeed",
+  "bytes": 560483,
+  "pages": 21,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1606.01832",
+   "version": "3",
+   "primary_class": "math.AC",
+   "stamp_date": "6 Sep 2017"
+  },
+  "doi": null,
+  "title": "FLATNESS AND COMPLETION REVISITED AMNON YEKUTIELI",
+  "authors_raw": null,
+  "title_lines": [
+   "FLATNESS AND COMPLETION REVISITED",
+   "AMNON YEKUTIELI"
+  ],
+  "abstract": "We continue investigating the interaction between \ufb02atness and a- adic completion for in\ufb01nitely generated A-modules. Here A is a commutative ring and a is a \ufb01nitely generated ideal in it. We introduce the concept of a-adic \ufb02atness , which is weaker than \ufb02atness. We prove that a-adic \ufb02atness is preserved under completion when the ideal a is weakly proregular. We also prove that when A is noetherian, a-adic \ufb02atness coincides with \ufb02atness (for complete modules). An example is worked out of a non-noetherian ring A, with a weakly proregular ideal a, for which the completion \u02c6A is not \ufb02at. We also study a-adic systems , and prove that if the ideal a is \ufb01nitely generated, then the limit of every a-adic system is a complete module.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20181105131031Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.17",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "a-Adic Systems",
+   "page": 4,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Free Resolutions of a-Adic Systems",
+   "page": 7,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "a-Adic Flatness",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Weakly Proregular Ideals",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Modules of Decaying Functions",
+   "page": 14,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The Non-Noetherian Example",
+   "page": 18,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7390,
+   "n_words": 1313
+  },
+  {
+   "id": "sec-001-1-a-adic-systems",
+   "number": "1",
+   "title": "a-Adic Systems",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 6922,
+   "n_words": 1201
+  },
+  {
+   "id": "sec-002-2-free-resolutions-of-a-adic-systems",
+   "number": "2",
+   "title": "Free Resolutions of a-Adic Systems",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 5146,
+   "n_words": 982
+  },
+  {
+   "id": "sec-003-3-a-adic-flatness",
+   "number": "3",
+   "title": "a-Adic Flatness",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 7157,
+   "n_words": 1329
+  },
+  {
+   "id": "sec-004-4-weakly-proregular-ideals",
+   "number": "4",
+   "title": "Weakly Proregular Ideals",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 5153,
+   "n_words": 939
+  },
+  {
+   "id": "sec-005-5-modules-of-decaying-functions",
+   "number": "5",
+   "title": "Modules of Decaying Functions",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 8352,
+   "n_words": 1520
+  },
+  {
+   "id": "sec-006-6-the-non-noetherian-example",
+   "number": "6",
+   "title": "The Non-Noetherian Example",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3863,
+   "n_words": 735
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2724,
+   "n_words": 361
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 8,
+  "chars_total": 46707
+ }
+}
