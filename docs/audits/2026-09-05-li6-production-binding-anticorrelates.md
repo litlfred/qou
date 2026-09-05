@@ -45,6 +45,37 @@ So the defect is not only a sign error on a roughly right magnitude. Over the
 two points that can be verified here, the prediction is **anti-correlated** with
 the observable it is meant to reproduce.
 
+## RE-MEASURED 2026-09-05: two of the three unverified figures reproduce EXACTLY
+
+Kernel-live re-runs of the figures that had no provenance:
+
+| atom | A | re-measured (kernel-live) | the unverified figure | verdict |
+|---|---|---|---|---|
+| ³H | 3 | **−7.742121347136118** | −7.742 | reproduces |
+| ³He | 3 | **−7.45619950551758** | −7.456 | reproduces |
+
+So the caution was procedurally right — they genuinely could not be verified, and
+the 17.29 % kernel/fallback split made the risk real — but the **substance is
+confirmed**, not overturned. The series was kernel-live after all.
+
+**And the pattern identifies what the series actually was, correcting my own
+framing a third time.** I described the four figures as spanning "A = 2..5".
+They do not. They are:
+
+| figure | I called it | it is |
+|---|---|---|
+| −7.271 | A=2 | ²H (A=2) |
+| −7.742 | A=3 | ³H (A=3) |
+| −7.456 | A=4 | **³He — also A=3** |
+| −6.829 | A=5 | presumably ⁴He (A=4) |
+
+**There was never an A = 5 point.** The four atoms are ²H, ³H, ³He, ⁴He —
+A = 2, 3, **3**, 4 — the *same five atoms* as the gated-size list
+`[15, 9, 9, 10, 15]` minus ⁶Li. I mislabelled both the same way, because they
+are the same set. The "plateau" therefore spans A = 2..4 on four atoms, and the
+jump to ⁶Li at −3.065 crosses an A = 5 that **nothing in the corpus has ever
+measured**. That is what the ⁵He and ⁵Li runs are for.
+
 ## 🛑 What it does NOT establish, and a claim of mine it scopes
 
 PR #6752 states, of the A-independence: *"The sibling measured −7.271 / −7.742 /
