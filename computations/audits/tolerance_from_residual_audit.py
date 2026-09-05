@@ -658,20 +658,36 @@ def selftest() -> int:
             print(f"  FAIL  known positive NOT blocking — got {tiers}")
             ok = False
 
-    # Both PROVABLE shapes, each pinned to the live case that motivated it.
-    for rel, line, shape in (
-        ("computations/yekutieli_borromean_h2_extraction.py", 216, "triangle-bound"),
-        ("computations/mass-from-q-symbolic.py", 577, "identical-after-substitution"),
-    ):
-        f = REPO / rel
-        if not f.exists():
-            print(f"  SKIP  {rel} absent")
-            continue
-        got = [h for h in scan_file(f) if h["line"] == line]
+    # Both PROVABLE shapes, pinned to SYNTHETIC fixtures rather than to live
+    # files. The first version of this self-test pinned them to
+    # `yekutieli_borromean_h2_extraction.py:216` and
+    # `mass-from-q-symbolic.py:577` — the two cases that motivated them — and
+    # then went red the moment the first of those was FIXED. A calibration
+    # that a successful drain breaks is measuring the corpus, not the
+    # detector. Cite the rule; re-measure the instance.
+    fixtures = {
+        "triangle-bound": (
+            "kappa_computed",
+            'w.add_assertion("kappa_computed", computed=kappa, expected=-G,\n'
+            '                tolerance=max(abs(float(kappa)), abs(float(G))) * 2)\n',
+        ),
+        "identical-after-substitution": (
+            "mass_in_MeV",
+            "ratio = VOL / HBAR_SQ\n"
+            "mass_MeV = ratio * M_E\n"
+            'w.add_assertion("mass_in_MeV", computed=mass_MeV,\n'
+            "                expected=ratio * M_E, tolerance=mass_err)\n",
+        ),
+    }
+    for shape, (name, src) in fixtures.items():
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d) / "fixture.py"
+            f.write_text(src, encoding="utf-8")
+            got = [h for h in scan_file(f) if h["assertion"].strip("\"'") == name]
         if got and got[0]["tier"] == "blocking" and got[0]["shape"] == shape:
-            print(f"  PASS  {shape} still fires at {rel}:{line}")
+            print(f"  PASS  {shape} fires on its fixture")
         else:
-            print(f"  FAIL  {shape} lost at {rel}:{line} — got "
+            print(f"  FAIL  {shape} lost — got "
                   f"{[(h['tier'], h['shape']) for h in got] or 'nothing'}")
             ok = False
 

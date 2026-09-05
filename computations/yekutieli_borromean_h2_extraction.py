@@ -38,7 +38,7 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps()
@@ -213,13 +213,47 @@ def main() -> int:
     w.add_parameter("kappa_minus_G_diff", mp.nstr(diff_vs_G, 15))
     w.add_parameter("kappa_over_minus_G", mp.nstr(ratio_vs_G, 15))
 
+    # The assertion this replaces was `computed=kappa, expected=-G,
+    # tolerance=max(|kappa|,|G|)*2`. That bound is a THEOREM, not a threshold:
+    # |c - e| <= |c| + |e| <= 2*max(|c|,|e|) for all real values, so it passed
+    # for every possible kappa and reported `allPassed: true` while kappa
+    # (0.1875) and its expected value (-0.9159...) did not even share a sign.
+    # It was also this witness's ONLY raw-float64 field, because
+    # max(abs(float(...)), ...) computes in float64 — one expression carrying
+    # both defects. Bean `qou-t0wm`; audit
+    # docs/audits/2026-09-05-tolerance-that-bounds-its-own-residual.md.
+    #
+    # Strings in, per the drained convention (qou-t0rf): `passed` coerces with
+    # float() either way, but the witness then records the mpmath value rather
+    # than a float64 shadow of it.
+    kappa_exact = mp.mpf(3) / 16
+
+    # What the run actually establishes. `mpmath.identify(kappa) = (3/16)` was
+    # already being PRINTED by this producer and asserted nowhere; verified
+    # here as exact rather than as a PSLQ guess — kappa - 3/16 is 0.0 at
+    # dps = 30, 50 and 80 alike. Falsifiable: a change to the Jones polynomial
+    # or to the Markov trace breaks it.
     w.add_assertion(
-        "kappa_computed",
-        computed=kappa,
-        expected=-G,
-        tolerance=max(abs(float(kappa)), abs(float(G))) * 2,
+        "kappa_is_three_sixteenths",
+        computed=fmt(kappa),
+        expected=fmt(kappa_exact),
+        tolerance="1e-40",
         unit="h² coefficient",
-        source="d²(tr_M(Borromean))/dh² / 2 vs −G",
+        source="d²(tr_M(Borromean))/dh² / 2; exact at dps 30/50/80",
+    )
+
+    # The Yekutieli claim itself, stated so it CAN fail — and it does, by 121 %.
+    # AGENTS.md asks for the honest negative explicitly; a red assertion here is
+    # the correct state, not something to tune away. SCOPE (a): this braid's h²
+    # coefficient, computed this way, is not -G. Nothing here excludes the
+    # Catalan constant from some other route into the framework.
+    w.add_assertion(
+        "yekutieli_kappa_equals_minus_G",
+        computed=fmt(kappa),
+        expected=fmt(-G),
+        tolerance="1e-40",
+        unit="h² coefficient",
+        source="Yekutieli conjecture: κ = −G (Catalan) = −Vol(𝓑₃)/8",
     )
 
     out = w.save()
