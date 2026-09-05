@@ -594,3 +594,24 @@ Nonzero on every depth ≥ 2 stratum — peaking on **depth 3, the chirality cha
 The same claim was sent to sibling PR #6771 (comment 5550892514) as *"three of your four rows violate it"*. Corrected there. It reached no content block, no Lean file, no witness — the sibling's `qou-oots` closure was reached independently and does not rest on it.
 
 **This is the third error of mine in this arc** — after the depth off-by-one and the wrong-algebra F4 — and it is the same shape as both: a correct local measurement carried into a frame it does not license.
+
+### Route 1 is closed, and the answer is a negative (2026-09-05, same branch)
+
+The retraction above left route 1 of the Φ_k audit §7 standing. It is now closed — measured, not argued — and it closes the *opposite* way to how §7 anticipates.
+
+§7 poses route 1 as a fork: name the object the nucleus is a state in, and the measure follows (`V^{⊗n}` ⇒ Molien-shaped; `End(V^{⊗n})` ⇒ `d_q²/D²`-shaped). At the settled `N = 2` **both horns are supported on `ℓ(λ) ≤ 2` and are exactly zero on every stratum of depth ≥ 2**:
+
+| n | A | Σ h1 | h1 d≥2 | Σ h2 | h2 d≥2 | Σ Molien | Molien d≥2 |
+|---|---|---|---|---|---|---|---|
+| 3 | 1 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.223435 |
+| 6 | 2 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.902265 |
+| 9 | 3 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.997609 |
+| 12 | 4 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.999985 |
+
+h1 = `f^λ d_q^{SU(2)}(λ)/[2]_q^n` (dies at `[2+(−2)]_q = [0]_q = 0`); h2 = `(f^λ)²/Catalan(n)` over `ℓ(λ) ≤ 2` (TL_n *has* no wider blocks). By R1 each gives `Φ_k ≡ 0` for k ≥ 2. **Scope-(b)**, row cap cited.
+
+**The fork was real** — max per-λ gap 0.305/0.205/0.206/0.217 at n = 3/6/9/12 — so §7 was sound at general `N`; it is the `N = 2` ruling, which post-dates it, that collapses it.
+
+**Not a derivation of Molien.** Molien passes R1 where both horns fail it, and the owner ruled it canonical. That is *why the ruling was needed* — the route the audit ranked most decisive cannot answer — not a substitute for one. Routes 2 and 3 stay live.
+
+Probe `computations/probes/route_1_is_degenerate_at_n_two_probe.py` (5/5); audit §4e.
