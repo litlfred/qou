@@ -73,3 +73,22 @@ proof-no-trivial-type-mismatch,lean-import-after-content` **0 defect
 candidates**; `--check-ledger` clean (so no ledger verdict is required — the
 gate fires only on a flagged candidate). Library file `lean`-direct exit 0,
 `no_selfConj_two_row_of_five_le` on `[propext, Quot.sound]` only.
+
+
+## 2026-09-05 (later) — SUCCESSOR ANSWERED: (2,2) alone is what is already used
+
+`qou-ld2a`. The IMPLEMENTED Wigner term
+(`derived-mass-formula-light-isotopes.md`) is already `(2,2)`-only:
+
+    Delta_W = -m_e . H_q((2,2)) . min(Z,N)/A
+
+so the row cap leaves it untouched. **What carries `(3,1,1)` is the `T(T+1)/A`
+form in `unified-iterative-correction-proof.md`**, whose `k = 5` half this bean
+showed prices nothing. Concrete follow-up: that block should be re-stated over
+`k = 4` alone, or its `k = 5` term dropped.
+
+And the selection is tighter than "it survives": at the quartet level `n = 4`
+the isospin-type class (`c(lambda) = 0`, the corpus's own rule) contains
+**exactly one** partition out of five — `(2,2)`. So the Wigner coefficient is
+forced, not drawn from a menu, which answers the fit-shape QA objection on that
+one row.

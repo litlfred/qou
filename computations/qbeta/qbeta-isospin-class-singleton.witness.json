@@ -1,0 +1,404 @@
+{
+  "computation": "qbeta-isospin-class-singleton",
+  "assertions": [
+    {
+      "name": "p_of_four_is_five",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "note": "the completeness the Lean file deliberately does NOT prove -- `decide` there runs over an explicit list, and this is what says the list is all of them"
+    },
+    {
+      "name": "the_isospin_class_at_level_four_is_a_singleton",
+      "computed": [
+        [
+          2,
+          2
+        ]
+      ],
+      "expected": [
+        [
+          2,
+          2
+        ]
+      ],
+      "passed": true,
+      "note": "say 'isospin-type' (the corpus's own c(lambda) = 0 rule) and 'quartet' (n = 4) and the partition is FORCED. The fit-shape objection to this family does not bite on this row, because the menu has one item. Lean: isospin_class_of_four_is_singleton"
+    },
+    {
+      "name": "the_row_cap_empties_the_isospin_class_above_level_four",
+      "computed": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "expected": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "passed": true,
+      "note": "c = 0 AND ell <= 2 is a singleton at n = 1, 3, 4 and empty at every n >= 5. So the isospin-type contributions convention D allows are exactly three, and only (2,2) sits at the quartet level"
+    },
+    {
+      "name": "and_every_c_zero_shape_is_self_conjugate",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "measured to n = 14, not proved: c(lambda') = -c(lambda) gives self-conjugate => c = 0; the converse is observed here, not established"
+    },
+    {
+      "name": "the_hook_product_closed_form_holds",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "H_q((2,2)) = [3]_q[2]_q^2 and [3]_q = [2]_q^2 - 1, so the whole coefficient is a polynomial in the loop value alone"
+    },
+    {
+      "name": "the_value_matches_the_one_already_in_the_corpus",
+      "computed": "6.2893",
+      "expected": "6.2893",
+      "passed": true,
+      "note": "pn-bond-cannot-be-extremal.md records 6.2894; this is NOT a new number and is NOT offered as evidence. The QA note on mass-formula-regime-switching-table1-data calls this family 'the shape a fit takes' -- correctly. What section 1 adds is that THIS row's menu is a singleton"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 40,
+    "n_max": 14,
+    "m_e_MeV": "0.51099895069",
+    "delta_W_empirical_MeV": "6.3",
+    "delta_W_provenance": "EXTERNAL, Satula-Nazarewicz 1997 Phys. Lett. B 407 103; reported with the corpus's own fit-shape caveat, NOT offered as evidence",
+    "lean": "QOU/Hecke/IsospinClassSingleton.lean"
+  },
+  "data": {
+    "level_four": [
+      {
+        "lambda": [
+          4
+        ],
+        "c": 6,
+        "ell": 1,
+        "class": "volume"
+      },
+      {
+        "lambda": [
+          3,
+          1
+        ],
+        "c": 2,
+        "ell": 2,
+        "class": "volume"
+      },
+      {
+        "lambda": [
+          2,
+          2
+        ],
+        "c": 0,
+        "ell": 2,
+        "class": "ISOSPIN"
+      },
+      {
+        "lambda": [
+          2,
+          1,
+          1
+        ],
+        "c": -2,
+        "ell": 3,
+        "class": "charge"
+      },
+      {
+        "lambda": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "c": -6,
+        "ell": 4,
+        "class": "charge"
+      }
+    ],
+    "census": [
+      {
+        "n": 1,
+        "partitions": 1,
+        "c_zero": 1,
+        "c_zero_two_row": 1,
+        "shapes": [
+          [
+            1
+          ]
+        ]
+      },
+      {
+        "n": 2,
+        "partitions": 2,
+        "c_zero": 0,
+        "c_zero_two_row": 0,
+        "shapes": []
+      },
+      {
+        "n": 3,
+        "partitions": 3,
+        "c_zero": 1,
+        "c_zero_two_row": 1,
+        "shapes": [
+          [
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "n": 4,
+        "partitions": 5,
+        "c_zero": 1,
+        "c_zero_two_row": 1,
+        "shapes": [
+          [
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "n": 5,
+        "partitions": 7,
+        "c_zero": 1,
+        "c_zero_two_row": 0,
+        "shapes": [
+          [
+            3,
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "n": 6,
+        "partitions": 11,
+        "c_zero": 1,
+        "c_zero_two_row": 0,
+        "shapes": [
+          [
+            3,
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "n": 7,
+        "partitions": 15,
+        "c_zero": 1,
+        "c_zero_two_row": 0,
+        "shapes": [
+          [
+            4,
+            1,
+            1,
+            1
+          ]
+        ]
+      },
+      {
+        "n": 8,
+        "partitions": 22,
+        "c_zero": 2,
+        "c_zero_two_row": 0,
+        "shapes": [
+          [
+            4,
+            2,
+            1,
+            1
+          ],
+          [
+            3,
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "n": 9,
+        "partitions": 30,
+        "c_zero": 2,
+        "c_zero_two_row": 0,
+        "shapes": [
+          [
+            5,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            3,
+            3,
+            3
+          ]
+        ]
+      },
+      {
+        "n": 10,
+        "partitions": 42,
+        "c_zero": 2,
+        "c_zero_two_row": 0,
+        "shapes": [
+          [
+            5,
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            4,
+            3,
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "n": 11,
+        "partitions": 56,
+        "c_zero": 2,
+        "c_zero_two_row": 0,
+        "shapes": [
+          [
+            6,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            4,
+            3,
+            3,
+            1
+          ]
+        ]
+      },
+      {
+        "n": 12,
+        "partitions": 77,
+        "c_zero": 3,
+        "c_zero_two_row": 0,
+        "shapes": [
+          [
+            6,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            5,
+            3,
+            2,
+            1,
+            1
+          ],
+          [
+            4,
+            4,
+            2,
+            2
+          ]
+        ]
+      },
+      {
+        "n": 13,
+        "partitions": 101,
+        "c_zero": 3,
+        "c_zero_two_row": 0,
+        "shapes": [
+          [
+            7,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            5,
+            3,
+            3,
+            1,
+            1
+          ],
+          [
+            4,
+            4,
+            3,
+            2
+          ]
+        ]
+      },
+      {
+        "n": 14,
+        "partitions": 135,
+        "c_zero": 3,
+        "c_zero_two_row": 0,
+        "shapes": [
+          [
+            7,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            6,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            5,
+            4,
+            2,
+            2,
+            1
+          ]
+        ]
+      }
+    ],
+    "H_q_two_two": "12.307853692391942224",
+    "m_e_H_q_MeV": "6.2893003220583245126"
+  },
+  "provenance": {
+    "headSha": "6a3a356d9acef6aacfc4c289ebfa52788e04011f",
+    "producer": "computations/qbeta/qbeta_isospin_class_singleton_probe.py",
+    "elapsed_s": 0.095
+  }
+}
