@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T16:49:20.793983+00:00",
-  "commitSha": "439df9de278ac6142d4cab8357ee3b02079d1ff5",
+  "computedAt": "2026-09-05T17:26:04.262127+00:00",
+  "commitSha": "620794f52bb4c1e9c5ff65cbbb154821106fe3fe",
   "assertions": [
     {
       "name": "argmin(t) == argmin(w) on EVERY row — the character never moves the selection",
@@ -67,14 +67,30 @@
       "passed": true,
       "tolerance": "0",
       "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "content sums, w and |chi| are TIE-FREE on every row — which is what lets the two exact claims above be read as strict orderings",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "the dim -> |chi| link is STATISTICAL, not structural — two atoms sharing an identical dimension multiset disagree on it, which no partition-only law could do",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "o3prime-selection-is-atom-independent",
   "scriptFile": "o3prime_selection_is_atom_independent_probe.py",
-  "scriptHash": "66a551627e81",
-  "scriptCommitSha": "4a9c4bfebdf5f328fd4454c60bae8dd5bd8dcbb5",
+  "scriptHash": "f81394bb37a9",
+  "scriptCommitSha": "620794f52bb4c1e9c5ff65cbbb154821106fe3fe",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -97,7 +113,7 @@
     ],
     "reproduce": "python3 -u computations/probes/o3prime_selection_is_atom_independent_probe.py"
   },
-  "description": "O3' selects a block, but NOT the bound state's block. The objective t_lambda = w_lambda * chi^lambda(W_atom) factors into an atom-INDEPENDENT weight and an atom-dependent character; measured over all six committed rows, argmin(t) == argmin(w) every time, so the character never moves the selection. Two atoms at n=3 and two at n=9 give the SAME block with DIFFERENT prices. Mechanism UNEXPLAINED: the first spread-dominance account is refuted here -- chi-spread exceeds w-spread at n=9 and the argmin is unmoved anyway. THE MECHANISM THAT DOES hold is an ANTI-CORRELATION between w and chi: concordant partition pairs are 9/49 = 18% against 24.5 expected, so a large character lands preferentially on a small weight and the product is FLATTENED relative to w on every row (never amplified) -- chi is a partial cancellation of the ordering it would have to reverse, not an independent perturbation. Exact distribution-free tail, one row per distinct n and the least extreme within each: 343/518400 ~ 6.6e-4. Cancellation is INCOMPLETE (t-spread 1.35x-10.2x), so w's argmin survives. WHY the anti-correlation holds REDUCES to the content sum: w is a strictly increasing function of c(lambda) on 49/49 pairs, so conc(w,|chi|) == conc(c(lambda),|chi|) IDENTICALLY row by row, and the effect decomposes as c up => w up (49/49 exact), c up => dim down (6/49), dim up => |chi| up (43/49). For two-row partitions [n] has max content and dim 1 while the balanced partition has min content and max dim. Still open: whether the 43/49 link is exact-with-a-degenerate-case (n=6 sits at exactly 3/6) or only statistical. CONSEQUENCE: PR #6752's reading of the selection as 'which Wedderburn blocks the bound state saturates' is WRONG and is corrected; the pricing result (y_0* nonzero and atom-dependent, where the full LP has y_0* = 0 identically) STANDS.",
+  "description": "O3' selects a block, but NOT the bound state's block. The objective t_lambda = w_lambda * chi^lambda(W_atom) factors into an atom-INDEPENDENT weight and an atom-dependent character; measured over all six committed rows, argmin(t) == argmin(w) every time, so the character never moves the selection. Two atoms at n=3 and two at n=9 give the SAME block with DIFFERENT prices. Mechanism UNEXPLAINED: the first spread-dominance account is refuted here -- chi-spread exceeds w-spread at n=9 and the argmin is unmoved anyway. THE MECHANISM THAT DOES hold is an ANTI-CORRELATION between w and chi: concordant partition pairs are 9/49 = 18% against 24.5 expected, so a large character lands preferentially on a small weight and the product is FLATTENED relative to w on every row (never amplified) -- chi is a partial cancellation of the ordering it would have to reverse, not an independent perturbation. Exact distribution-free tail, one row per distinct n and the least extreme within each: 343/518400 ~ 6.6e-4. Cancellation is INCOMPLETE (t-spread 1.35x-10.2x), so w's argmin survives. WHY the anti-correlation holds REDUCES to the content sum: w is a strictly increasing function of c(lambda) on 49/49 pairs, so conc(w,|chi|) == conc(c(lambda),|chi|) IDENTICALLY row by row, and the effect decomposes as c up => w up (49/49 exact, 0 ties), c up => dim down (6/48), dim up => |chi| up (43/48 = 89.6%). For two-row partitions [n] has max content and dim 1 while the balanced partition has min content and max dim. CORRECTED here: those last two denominators read 49 and n=6 was called 'uncorrelated at 3/6' -- a tie ([5,1] and [3,3] both have f^lambda = 5 at n=6, the only tie in the sample) was being counted as discordant; n=6 is 3/5 = 60%, weakly POSITIVE. The two exact claims are untouched because c(lambda), w and |chi| are tie-free, now asserted. SETTLED NEGATIVELY: the dim->|chi| link is STATISTICAL, not structural -- rows 3 and 4 are two atoms at n=9 with the identical dimension multiset {1,8,27,42,48} and disagree (10/10 vs 9/10), which no partition-only law could do. The 5 discordant pairs sit on three partitions: [4,2] at n=6, [7,2] at n=9, [7,5] at n=12. CONSEQUENCE: PR #6752's reading of the selection as 'which Wedderburn blocks the bound state saturates' is WRONG and is corrected; the pricing result (y_0* nonzero and atom-dependent, where the full LP has y_0* = 0 identically) STANDS.",
   "auditOnly": "docs/proposals/2026-09-05-operator-selection-objective-replacement.md",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736"
@@ -243,6 +259,17 @@
         "cs_chi": 0,
         "cs_dim": 0,
         "dim_chi": 1,
+        "cs_dim_disc": 1,
+        "dim_chi_disc": 0,
+        "cs_dim_tied": 0,
+        "dim_chi_tied": 0,
+        "tie_free_cs_w": true,
+        "tie_free_cs_chi": true,
+        "dims": [
+          1,
+          2
+        ],
+        "n": 3,
         "pairs": 1,
         "w_chi": 0
       },
@@ -251,6 +278,17 @@
         "cs_chi": 0,
         "cs_dim": 0,
         "dim_chi": 1,
+        "cs_dim_disc": 1,
+        "dim_chi_disc": 0,
+        "cs_dim_tied": 0,
+        "dim_chi_tied": 0,
+        "tie_free_cs_w": true,
+        "tie_free_cs_chi": true,
+        "dims": [
+          1,
+          2
+        ],
+        "n": 3,
         "pairs": 1,
         "w_chi": 0
       },
@@ -259,6 +297,19 @@
         "cs_chi": 1,
         "cs_dim": 1,
         "dim_chi": 3,
+        "cs_dim_disc": 4,
+        "dim_chi_disc": 2,
+        "cs_dim_tied": 1,
+        "dim_chi_tied": 1,
+        "tie_free_cs_w": true,
+        "tie_free_cs_chi": true,
+        "dims": [
+          1,
+          5,
+          5,
+          9
+        ],
+        "n": 6,
         "pairs": 6,
         "w_chi": 1
       },
@@ -267,6 +318,20 @@
         "cs_chi": 2,
         "cs_dim": 1,
         "dim_chi": 9,
+        "cs_dim_disc": 9,
+        "dim_chi_disc": 1,
+        "cs_dim_tied": 0,
+        "dim_chi_tied": 0,
+        "tie_free_cs_w": true,
+        "tie_free_cs_chi": true,
+        "dims": [
+          1,
+          8,
+          27,
+          42,
+          48
+        ],
+        "n": 9,
         "pairs": 10,
         "w_chi": 2
       },
@@ -275,6 +340,20 @@
         "cs_chi": 1,
         "cs_dim": 1,
         "dim_chi": 10,
+        "cs_dim_disc": 9,
+        "dim_chi_disc": 0,
+        "cs_dim_tied": 0,
+        "dim_chi_tied": 0,
+        "tie_free_cs_w": true,
+        "tie_free_cs_chi": true,
+        "dims": [
+          1,
+          8,
+          27,
+          42,
+          48
+        ],
+        "n": 9,
         "pairs": 10,
         "w_chi": 1
       },
@@ -283,6 +362,22 @@
         "cs_chi": 5,
         "cs_dim": 3,
         "dim_chi": 19,
+        "cs_dim_disc": 18,
+        "dim_chi_disc": 2,
+        "cs_dim_tied": 0,
+        "dim_chi_tied": 0,
+        "tie_free_cs_w": true,
+        "tie_free_cs_chi": true,
+        "dims": [
+          1,
+          11,
+          54,
+          132,
+          154,
+          275,
+          297
+        ],
+        "n": 12,
         "pairs": 21,
         "w_chi": 5
       }
