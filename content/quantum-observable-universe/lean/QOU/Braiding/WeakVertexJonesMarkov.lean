@@ -66,12 +66,20 @@ why the whole derivation stays over `{K : Type*} [Field K]`.
 
 ## Scope
 
-This is a **positive derivation** of the normalisation and of the *order* of the
-`≈ 1.19·10⁴` substitution factor of `substitutionRateFactor` (a coupling carrying
-the trace's Jones content sits `≈ 10²` above `s²`, so its square sits `≈ 10⁴`
-above `s⁴`, with `96² = 9216` against the measured `1.1875·10⁴`). It produces no
-rescaling **constant** and cannot: `couplingRatio` is a non-constant rational
-function, consistent with `no_constant_rescaling`.
+This is a **positive derivation of the normalisation.** It produces no rescaling
+**constant** and cannot: `couplingRatio` is a non-constant rational function,
+consistent with `no_constant_rescaling`.
+
+**🛑 It does NOT derive the order of the decay-rate substitution factor, and this
+docstring claimed it did until 2026-09-05 (bean `qou-xql6`).** The withdrawn claim
+read `96² = 9216` against `substitutionRateFactor`. `−96` is the classical value of
+`(J − 1)/s²`, whose *numerator* vanishes (`V_K(1) = 1` for every knot); the
+substitution factor's does not (`W(1) = 1/4`), so `|W|²/s^k` diverges as `q → 1`
+and has no leading constant for `−96` to be. Separately the power was wrong: `sSq`
+*is* `s²`, so the merged factor was `|W|²/s⁴` where the rate carries `s²` once —
+`129.405107404`, not `11875.44`. See
+`substitutionRateFactor_has_no_classical_leading_value`. **Every identity below is
+untouched**; only the bridge to the rate is gone.
 
 **Honest limit.** `s² = h_{1/2}²` is a *formal* half-scale analogue, not itself a
 Jones deviation — a Jones exponent is an integer, so no knot's `V − 1` equals
