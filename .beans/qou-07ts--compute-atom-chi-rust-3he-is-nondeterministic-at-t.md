@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-05T08:33:29Z
-updated_at: 2026-09-05T17:39:16Z
+updated_at: 2026-09-05T19:08:25Z
 ---
 
 Found 2026-09-05 while doing attribution for `qou-t0wm` on PR #6772 — running
@@ -136,3 +136,36 @@ Establishing that costs 21 minutes per sample and has not been spent.
 reproducibility checker) gets more valuable, not less — the affected set is at
 least two producers' worth of output, and the checker's eleven-script scope
 still reaches neither.
+
+## Extension from qou-wdij (PR #6864) — 3H wobbles too, and the trace does not
+
+Re-measured the SAME kernel function through a DIFFERENT entry path
+(`chi_general_word.chi_all_lambda_general` -> `pyhecke_native.chi_lambda_all_partitions_mpfr`,
+i.e. not via `compute_atom_chi_rust`), 8 runs each, sha256 over the 50-digit chi
+strings:
+
+    3He   4 distinct fingerprints in 8    <- reproduces this bean exactly
+    3H    2 distinct fingerprints in 8    <- this bean recorded T as STABLE
+
+So the finding is **not specific to 3He or to that producer**. 3H shows it too,
+just more rarely — a 1-in-8 event is easy to miss in a smaller sample, which is
+presumably why D and T read as stable here. Reported as an extension on more
+draws, not a contradiction.
+
+**Magnitude, which this bean did not quantify:**
+
+    max |d chi| across 8 runs   1.00229e-50   (~1 ulp at 50 dps)
+    max relative                7.46451e-50
+    spread in tr_M              EXACTLY 0.0
+
+The per-partition characters wobble at the last serialized digit; the
+y_lambda-weighted trace **does not move at all**. That sharpens this bean's
+'does not threaten L1 or any physics claim' from an order-of-magnitude argument
+into a measured zero at the observable level — while leaving the attribution
+damage exactly as stated, since it is the per-chi strings a witness diff compares.
+
+Standing checks now live in
+`computations/probes/nonmonotone_atom_trace_kernel_route_probe.py` (19/19):
+the wobble stays ~1 ulp, and it does not reach tr_M. Deliberately NOT a
+fingerprint-count assertion — the wobble is stochastic (2 in 8 vs 4 in 8), so
+asserting 'unstable' would itself be flaky.
