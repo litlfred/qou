@@ -886,6 +886,15 @@ All ingested with `references.ts` joins (`--check` clean; the array loads; no du
 
 **Not held from §8 after this:** row 14 (Rouquier, `math/0409593`), 24–26 (Venkatesh; Bezrukavnikov–Finkelberg; Habiro cyclotomic completions), 28 (Pirashvili, no arXiv), 29–30 (the Costello–Gwilliam and Beilinson–Drinfeld books), and the C-list items. None blocks a route. **Every Yekutieli work named in §4.3 is now held**, so the "read the 2021 overview instead of the four derived papers" advice in route F is moot — the papers are here; the judgement that the derived half carries no trace-on-a-tower theorem stands until someone reads them against that question.
 
+### 8d. Third addendum: the last four arXiv items (owner upload `783c4cf4`) — §8 is now held in full except Pirashvili and the two books
+
+`arxiv-math-0209324v1` Habiro, *Cyclotomic completions of polynomial rings* (row 26; route B's ring);
+`arxiv-math-0409593v1` Rouquier, *Categorification of sl₂ and braid groups* (row 14; the Rouquier complexes);
+`arxiv-0707.3799v3` Bezrukavnikov–Finkelberg, *Equivariant Satake category and Kostant–Whittaker reduction* (row 25);
+`arxiv-1608.07234v3` Venkatesh, *Derived Hecke algebra and cohomology of arithmetic groups* (row 24).
+All with `references.ts` joins, sync clean. **Remaining unheld from §8:** Pirashvili (no arXiv),
+Costello–Gwilliam, Beilinson–Drinfeld — books; nothing on the list blocks any route.
+
 ## 9. Verification limits and hygiene items found on the way
 
 - **Direct `arxiv.org` fetch is proxy-blocked** for both `curl` and `WebFetch` this session; every
