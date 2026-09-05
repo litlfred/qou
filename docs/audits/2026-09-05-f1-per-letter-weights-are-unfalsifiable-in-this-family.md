@@ -1,92 +1,92 @@
-# `f₁/f₀` reduces to two per-letter weights — one derivable, and the reduction is unfalsifiable here
+# `f₁/f₀` is NOT a per-letter functional — the hypothesis is built, tested, and REFUTED
 
-**Attempts** the step named as highest-value by the `L1` audit: derive
-`f₁/f₀ = (21Z + 16N)/2`, the single remaining empirical input in that chain.
+**Attempted** the step named highest-value by the `L1` audit: derive
+`f₁/f₀ = (21Z + 16N)/2`. Reached a per-letter reduction, established that
+`(Z,N)` data **cannot test it**, built the entry point that can, and the test
+**refutes it**. Beans `qou-brng` / `qou-pdg9`.
 
-**Partial, with a structural negative that matters more than the partial.** The
-coefficient reduces to two per-letter weights, one of which now has a candidate
-derivation. But the reduction **cannot be tested by any `(Z,N)` data**, and I
-came close to reporting the automatic check as confirmation.
-Beans `qou-brng` / `qou-pdg9`.
+## 🛑 HEADLINE: the per-letter reduction is false
 
-## Where 21 and 16 come from
+An earlier revision of this document proposed
+`f₁/f₀ = 2n₊ − n₋/2` and called it a reduction of two per-nucleon constants to
+two per-letter weights. **That is refuted.** It is a coincidence of the cone the
+`(Z,N)` family spans, not a per-letter law.
 
-Not a mystery — the probe says so at
-[`c1_leading_coefficient_derived_probe.py:554`](../../computations/probes/c1_leading_coefficient_derived_probe.py):
+## Two errors of mine, in order
 
-    # proton 6σ+3σ⁻¹ → 21, neutron 5σ+4σ⁻¹ → 16
+**Error 1 — I read the census off a comment instead of the word.** The probe's
+line 554 says *"proton 6σ+3σ⁻¹ → 21, neutron 5σ+4σ⁻¹ → 16"*, and I took the
+census to be two-dimensional. Measured from
+`atom_canonical_crossings` directly, the free word for one proton is **11
+letters: 6 σ, 3 σ⁻¹, and 2 `averaged`** — a *third* letter type the comment does
+not mention. So the system is 2 equations in **three** unknowns:
 
-They are the **nucleon letter census**. Solving
+    6w₊ + 3w₋ + 2w_a = 21
+    5w₊ + 4w₋ + 2w_a = 16   ⟹   w₊ = 4 − 2w_a/9,  w₋ = −1 − 2w_a/9
 
-    6·w₊ + 3·w₋ = 21          (proton)
-    5·w₊ + 4·w₋ = 16          (neutron)
+a **one-parameter family**. My reported `(2, −½)` is the `w_a = 0` member. `w_a = 0`
+is what the probe's `W_OF` uses — but that is for the `[★]` *permutation*
+formula, a different formula from this log-derivative, so importing it here was
+unjustified.
 
-gives `w₊ = 4`, `w₋ = −1`, i.e. after the overall ½,
+**Error 2 — the six-case agreement was never evidence**, which the previous
+revision did get right and is worth keeping: every `(Z,N)` has census
+`Z·(6,3,2) + N·(5,4,2)`, so all six lie in the cone spanned by the two nucleon
+words that fixed the weights. A linear functional agreeing on two generators
+agrees on their whole cone identically. **No `(Z,N)` at any A can test it.**
 
-    f₁/f₀ = 2·n₊ − n₋/2 ,   n₊ = 6Z + 5N ,  n₋ = 3Z + 4N
+## The entry point, and the test
 
-which reproduces all six recorded values (21, 37/2, 16, 53/2, 29, 37).
+`tr_M_series(Z, N, …)` builds `crossings` and never uses `Z`, `N` again — the
+word is the only channel — so a word-level entry point is a wrapper, not a
+rewrite:
+[`computations/probes/word_level_trace_entry_point.py`](../../computations/probes/word_level_trace_entry_point.py).
+It does not modify the probe (that is `qou-pdg9`'s); it imports its internals.
+Its `_selftest` **gates on reproducing the `(Z,N)` route exactly** — 37/2, 21,
+16 — and passes, so the tool is validated before it is trusted.
 
-## 🛑 The six-case agreement is AUTOMATIC — it is not evidence
+Taking the `pn` free word, census `(n₊, n₋, n_a) = (11, 7, 4)`, `f₁/f₀ = 37/2`,
+and deleting one letter of each type — which moves the census **off the cone**:
 
-Two unknowns were solved from two equations. Every case then has census
+    word                census       f₁/f₀     Δ        per-letter predicts
+    base (pn)           (11, 7, 4)    37/2      —        —
+    drop one averaged   (11, 7, 3)    19/2     −9         0
+    drop one σ          (10, 7, 4)     9      −19/2      −2
+    drop one σ⁻¹        (11, 6, 4)    16       −5/2      +½
 
-    (n₊, n₋) = Z·(6,3) + N·(5,4)
+**All three predictions fail.** And the failure is not a bad choice of `w_a`:
+back-solving the three deltas gives `(w₊, w₋, w_a) = (19/2, 5/2, 9)`, which then
+gives `6(19/2) + 3(5/2) + 2(9) = 165/2 ≠ 21`. **No assignment of fixed
+per-letter weights reproduces both the nucleon values and the deltas.**
 
-so **every `(Z,N)` lies in the cone spanned by the two nucleon words that fixed
-the weights.** A linear functional agreeing on two generators agrees on every
-non-negative combination of them, identically.
+So `f₁/f₀` is a function of the **word**, not of its letter census. The
+coefficients `21` and `16` are properties of the two specific nucleon words, and
+the linear-in-`(Z,N)` form of `f₁/f₀` follows from the words being concatenated,
+not from any per-letter additivity.
 
-**Consequence, and it is the main finding here: the per-letter hypothesis is
-unfalsifiable within this family.** More `(Z,N)` cannot over-determine it — not
-A = 5, not A = 6, not the A = 2..20 range the probe already asserts. Any effort
-spent extending `(Z,N)` to "confirm" it buys exactly nothing.
+## What survives
 
-This is worth stating plainly because the six-row table *looks* like
-confirmation, and I nearly filed it as such.
+- **`f₁/f₀ = (21Z + 16N)/2` itself is untouched** — it is the probe's verified
+  result over A = 2..20 and nothing here bears on it. Only my proposed
+  *explanation* of it is refuted.
+- **The `L1` chain is unaffected in truth-value** and still rests on `f₁/f₀` as
+  an empirical input. This attempt to remove that dependence failed.
+- **The unfalsifiability observation stands** and is now doubly worth recording:
+  it is what motivated building the entry point instead of running more `(Z,N)`.
 
-## What the reduction is, stated at its true strength
+## The convention note, kept because it is still true
 
-It is a **reparameterisation**: two per-nucleon constants (21, 16) → two
-per-letter constants (2, −½) plus additivity of `log tr_free` over letters. That
-is a real gain in economy and it makes the next question sharper — *why these
-two weights?* — but it is not new evidence, and it does not derive `f₁/f₀`.
-
-## One weight has a candidate derivation; the other does not
-
-With the convention-D Markov parameter `z = q³/(q²+1)`:
-
-    d/dq log z |_{q=1} = 2          ← exactly the σ weight
-    bar partner z(1/q):  −2         ← NOT the σ⁻¹ weight, which is −½
-
-So the σ half has a plausible origin in the Markov parameter's logarithmic
-derivative at `q = 1`. **The σ⁻¹ half remains unexplained** — the obvious bar
-partner gives the wrong value, off by a factor of 4 and not merely in sign.
-
-## A trap checked rather than assumed
-
-The weights invite the reading `2 = 1/z(1)` and `−½ = −z(1)`, since `z(1) = ½`.
-**That is not evidence for convention D**, because
-
-    convention D  z = q³/(q²+1)      z(1) = 1/2
-    convention C  z = √q/(q+1)       z(1) = 1/2
-
-`z(1) = ½` in **both**. The quantity that *does* discriminate is the derivative
-— `2` for D against `0` for C — and that one genuinely favours D, but only for
-the σ weight.
-
-## What would settle it
-
-A braid word whose census lies **outside the cone** spanned by `(6,3)` and
-`(5,4)`. The current probe cannot express one: `tr_M_series(Z, N, …)` is
-parameterised by nucleon counts, not by a word, so every input it accepts is in
-the cone by construction. Testing the per-letter hypothesis needs a
-word-level trace entry point that does not currently exist.
+The weights invited reading `2 = 1/z(1)`, `−½ = −z(1)` since `z(1) = ½`. That was
+never evidence for convention D: `z(1) = ½` in **both** C and D. The derivative
+*does* discriminate — `d/dq log z|₁ = 2` for D against `0` for C. With the
+per-letter reading refuted, this is now an observation in search of an object
+rather than support for a weight.
 
 ## Scope
 
-- **`f₁/f₀` is NOT derived.** The chain from `L1` still rests on it.
-- The reduction is exact algebra on the six recorded values; no new compute was
-  run for it.
-- The `d/dq log z` computation is symbolic (sympy) at `q = 1`, both conventions.
-- Scope-(a): about the expansion of a computational object, not the physics.
+- The refutation is exact-`Fraction` arithmetic on four words at `P = 3`, `n = 6`.
+- Deleting a letter changes the word's algebra, not merely its census — which is
+  precisely the point: the hypothesis under test was that only the census
+  matters.
+- **Not a claim that no closed form exists** for `f₁/f₀`; only that a
+  fixed-per-letter-weight functional is not it. Scope-(a).
