@@ -109,6 +109,37 @@ def _depth_split_ok(s: str) -> bool:
     return True
 
 
+def strip_forall(concl: str):
+    """Strip one leading `∀ <binders> ,` at depth 0, or return None.
+
+    `∀ τ_x, ∃ y, y = τ_x * z` is the same vacuity as `∃ y, y = e`: the
+    universal quantifier ranges over a statement that is true for every
+    instantiation anyway. `EXISTS_EQ` is anchored at `^∃`, so this shape was
+    outside it however wide the bound-variable pattern got.
+
+    MEASURED before wiring, on 3606 files: **exactly one** instance
+    (`MarkovTraceAxioms_implies_disjoint_stabilisation`), and it was already
+    known — found by reading, not by scanning. So this arm buys no new
+    findings today; it closes a documented blind spot so the shape cannot
+    become a permanent one. Bean `qou-ekga`.
+
+    One `∀` group only, deliberately: nested `∀ … , ∀ … , ∃ …` is not attested
+    here, and each extra stripping level widens what can be mistaken for a
+    binder comma."""
+    s = concl.strip()
+    if not s.startswith("∀"):
+        return None
+    depth = 0
+    for i, c in enumerate(s):
+        if c in "(⟨[{":
+            depth += 1
+        elif c in ")⟩]}":
+            depth -= 1
+        elif c == "," and depth == 0:
+            return s[i + 1:].strip()
+    return None
+
+
 def split_conclusion(sig: str):
     """Return the conclusion: text after the FIRST top-level `:` in the
     signature. Binders `(h : T)` / `{x : T}` / `[C]` are always bracketed,
@@ -145,8 +176,15 @@ def analyze(path: Path):
             continue
         concl_n = norm(concl)
         em = EXISTS_EQ.match(concl_n)
+        forall_prefixed = False
         if not em:
-            continue
+            inner = strip_forall(concl_n)
+            if inner is None:
+                continue
+            em = EXISTS_EQ.match(inner)
+            if not em:
+                continue
+            forall_prefixed = True
         rhs = em.group("rhs").strip()
         if not _depth_split_ok(rhs):
             continue
@@ -166,6 +204,7 @@ def analyze(path: Path):
             "rhs": norm(rhs)[:120],
             "proof": proof[:80],
             "rfl_witness": rfl_witness,
+            "forall_prefixed": forall_prefixed,
         })
     return out
 
@@ -188,6 +227,10 @@ SELF_TEST = [
     ("∃ x, e = x", False, "reversed orientation — read by hand"),
     ("∃ x y, x = e", False, "two binders; the extra witness may matter"),
     ("∃ x : ℝ, y = e", False, "equation LHS is not the bound variable"),
+    ("∀ τ_x : R, ∃ τ_s : R, τ_s = τ_x * markovZax u", True,
+     "∀-prefixed — same vacuity, outside the ^∃ anchor"),
+    ("∀ x, ∃ y, y = e ∧ P y", False, "∀-prefixed, conjunct may carry content"),
+    ("∀ x : ℝ, f x = g x", False, "∀ over a real equation — not an existential"),
 ]
 
 
@@ -198,7 +241,11 @@ def _flags(concl: str) -> bool:
     asserted the pipeline's behaviour while exercising only the regex FAILED
     on its own two negative fixtures when first written — recorded because it
     is the same error the fixtures exist to catch, one stage up."""
-    m = EXISTS_EQ.match(norm(concl))
+    c = norm(concl)
+    m = EXISTS_EQ.match(c)
+    if not m:
+        inner = strip_forall(c)
+        m = EXISTS_EQ.match(inner) if inner is not None else None
     return bool(m) and _depth_split_ok(m.group("rhs").strip())
 
 
@@ -256,6 +303,8 @@ def main(argv):
               f"in {len(set(f['file'] for f in findings))} files\n")
         for f in findings:
             flag = "rfl-witness" if f["rfl_witness"] else "other-proof"
+            if f.get("forall_prefixed"):
+                flag += ", ∀-prefixed"
             print(f"{f['file']}:{f['line']}  [{flag}]")
             print(f"    {f['kind']} {f['name']} : ∃ {f['bound_var']}, "
                   f"{f['bound_var']} = {f['rhs']}")
