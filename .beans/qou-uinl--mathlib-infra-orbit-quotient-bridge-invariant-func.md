@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T06:17:38Z
-updated_at: 2026-09-05T06:25:35Z
+updated_at: 2026-09-05T06:52:10Z
 ---
 
 DONE 2026-09-05, sorry-free, lean-direct exit 0 in 3.0 s, zero warnings, #print
@@ -45,3 +45,30 @@ formalisation was genuinely absent, not duplicated.
 
 SMOKE TESTS in-file (a direction error would otherwise be invisible): sigma = 1 gives
 |beta|^|alpha|; a transposition gives |beta|^(|alpha|-1).
+
+
+TENSOR-POWER WRAPPER (user request 2026-09-05) — staged, and STAGE 2 IS BLOCKED ON A
+MEASURED MATHLIB GAP.
+
+MEASURED: Mathlib/LinearAlgebra/PiTensorProduct.lean contains ZERO occurrences of
+'Basis'. There is no basis for the Pi tensor power anywhere in Mathlib, and no
+finrank lemma for it either. So a literal 'LinearMap.trace of PiTensorProduct.reindex'
+statement cannot be written without first CONSTRUCTING that basis, which is itself a
+Mathlib-scale contribution (it is presumably why Mathlib lacks it).
+
+WHAT MATHLIB DOES GIVE, and it is the key step:
+  Matrix.trace_permutation : trace (sigma.permMatrix R) = (Function.fixedPoints sigma).ncard
+  PiTensorProduct.reindex (e : iota1 =~ iota2)   -- the action exists, just no basis
+
+STAGE 1 (doable, is the wrapper's real content): in the concrete free-module model
+V = (kappa -> R), so V^{tensor alpha} = ((alpha -> kappa) -> R), sigma acts on the
+monomial basis by index precomposition f |-> f o sigma. That is a PERMUTATION MATRIX,
+so trace_permutation gives trace = #fixed points, the fixed points ARE the invariant
+functions, and orbitCount_invariant_functions gives (card kappa)^orbitCount sigma.
+A genuine trace theorem, fully proved.
+
+STAGE 2 (attempt): construct ⨂[R] i : alpha, (kappa -> R) ≃ₗ ((alpha -> kappa) -> R)
+via PiTensorProduct.lift on the multilinear map v |-> (fun f => prod_i v i (f i)),
+with inverse g |-> sum_f g f • tprod (single (f i) 1) and PiTensorProduct.induction_on
+for one direction. This IS the missing basis in the special case needed.
+DO NOT fake stage 2 with a sorry or an axiomatised structure if it does not close.
