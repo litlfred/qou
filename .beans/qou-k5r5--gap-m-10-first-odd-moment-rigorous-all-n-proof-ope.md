@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-05T06:05:08Z
+updated_at: 2026-09-05T06:33:13Z
 ---
 
 
@@ -1009,3 +1009,37 @@ QUANTIFIER BUG IN MY OWN PROBE, caught before commit: the first run reported 'D 
 an eigenfunction of any stochastic chain (beta=1). I used any(n) where reachability is a claim about
 the FAMILY and needs every(n) with constants excluded. Second quantifier slip of this arc -- #6602
 had the mirror (testing a family claim at a point).
+
+
+2026-09-05 (same branch, cont'd): P > N IN LOCAL FORM -- and FACT B OF THE 2026-08-21 AUDIT IS FALSE.
+
+FINDING 1 -- CORPUS CORRECTION. docs/audits/2026-08-21-covariance-kernel-M1-fulman-exchangeable-pair-
+reduction.md states Fact B as 'Delta(Sum D^2)*Delta(omega_3) <= 0 on every single-box edge (100% of
+the signed edge weight is discordant; verified n<=13)'. IT FAILS FIRST AT n = 10, and again at n=11,
+12 (16, 24, 36 violating ordered edges). Hand-verified counterexample:
+    lam* = (5,4,1) -> lam = (5,5), joined in the chain via mu = (5,5,1)
+    Sum D^2 : 16 -> 18   omega_3 : -5 -> 0   =>  product = (+2)(+5) = +10 > 0.
+WHY THE STATED REASON FAILS: 'larger |content| => shorter diagonal => Sum D^2 decreases' describes
+the EQUILIBRIUM SHAPE, not the actual diagonal lengths of a given lambda. Landing a box on a diagonal
+of current length d raises its square by 2d+1 whatever the content is; here the box leaves a length-1
+diagonal (1->0) and lands on another length-1 one (1->4), net +2.
+WHAT SURVIVES: N >= 0 is NOT refuted (positive at every n measured); M_1 = P - N is an identity and
+verified exactly; Fact A HOLDS, re-verified at every edge to n=12 (beyond the original's n<=8). Only
+the PER-EDGE argument for N's sign fails, so 'both signs manifest edge by edge' is true of P and
+false of N at n >= 10. Correction applied in place to the 2026-08-21 audit.
+
+FINDING 2 -- THE GAP DOES NOT CLOSE HERE. If Delta(Sum h)*Delta(omega_3) >= 0 edge-wise, M_1 > 0
+would follow for all n immediately. Measured: edge-wise non-negative only for n < 6 (too few edges to
+exhibit one) and NEVER after, no recovery through n=12. So M_1 > 0 does NOT follow from per-edge
+signs. What must be bounded is the POS/NEG MASS RATIO, measured in [22.0, 112.0] over n >= 6, against
+threshold 1. Negative edges are ~7-17% of all edges -- a substantial fraction, not a thin exceptional
+set, which ARGUES AGAINST a pairing/injection argument over them and FOR bounding the ratio directly
+(a reading of the census, not a proof that pairing cannot work).
+
+SELF-CHECK gating every figure: the census reconstructs M_1 exactly from (pos_mass - neg_mass)/
+(2(1-beta_3)) against a direct partition sum -- PASS at every n.
+
+THIRD SMALL-n QUANTIFIER TRAP OF THIS ARC, caught before commit: any(n) over the whole table reports
+'a non-negative n exists' on the strength of n=3,4,5 where the chain is too small to HAVE a negative
+edge. Now reported as a threshold (where it starts failing, whether it recovers). Prior two: #6602
+tested a family claim at a point; the reach probe counted a CONSTANT statistic as an eigenfunction.

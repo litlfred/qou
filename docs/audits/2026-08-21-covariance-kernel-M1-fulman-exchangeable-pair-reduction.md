@@ -34,12 +34,36 @@ positivity to `n≤50`, the picture is fully coherent across two independent met
    of content `c_a` ↔ `c_r`),
    > `Δ(Σ|c|)·Δω₃ = (|c_r|−|c_a|)²(|c_r|+|c_a|) ≥ 0`  (elementary; verified all edges n≤8),
    hence **`P := Cov(Σ|c|, ω₃) ≥ 0`** — a per-edge (Harris/FKG-type) certificate.
-5. **Fact B — the diagonal-length piece is manifestly non-positive.** On every single-box edge,
-   `Δ(ΣD²)·Δω₃ ≤ 0` (100 % of the signed edge weight is discordant; verified n≤13): moving a box to
+5. **Fact B — the diagonal-length piece is manifestly non-positive.** ~~On every single-box edge,
+   `Δ(ΣD²)·Δω₃ ≤ 0` (100 % of the signed edge weight is discordant; verified n≤13)~~: moving a box to
    a diagonal of larger `|content|` (nearer the diagram edge, hence shorter) *decreases* `ΣD²`.
    Hence **`Cov(ΣD², ω₃) ≤ 0`**, i.e. `N := −Cov(ΣD², ω₃) ≥ 0`.
-6. Therefore **`M₁ = P − N`, with `P ≥ 0` and `N ≥ 0` both per-edge manifest.** This is exactly the
-   "±cancellation, ratio → −0.62" seen in the raw data — now resolved into two cleanly-signed pieces.
+
+   > **🛑 FACT B IS FALSE AS STATED — corrected 2026-09-05, with an explicit hand-verified
+   > counterexample.** `Δ(ΣD²)·Δω₃ ≤ 0` does **not** hold on every single-box edge. It fails first at
+   > **n = 10**, and again at n = 11 and 12 (16, 24 and 36 violating ordered edges respectively):
+   >
+   > > `λ* = (5,4,1) → λ = (5,5)`, joined in the chain via `μ = (5,5,1)`.
+   > > `ΣD²: 16 → 18` and `ω₃: −5 → 0`, so `Δ(ΣD²)·Δω₃ = (+2)(+5) = +10 > 0`.
+   >
+   > The "100 % of the signed edge weight is discordant" clause fails with it — that edge carries
+   > positive weight. **Why the stated reason does not work:** *larger `|content|` ⟹ shorter
+   > diagonal* describes the **equilibrium shape**, not the actual diagonal lengths of a given `λ`.
+   > Landing a box on a diagonal of current length `d` raises its square by `2d+1` whatever the
+   > content is; here the box leaves a length-1 diagonal (`1 → 0`) and lands on another length-1 one
+   > (`1 → 4`), a net **+2**.
+   >
+   > **What survives, and it is most of this audit.** `N ≥ 0` is **not** refuted — it is positive at
+   > every `n` measured (see the table in #6651). The **identity** `M₁ = P − N` is verified exactly
+   > and is untouched. Fact A (`Δ(Σ|c|)·Δω₃ ≥ 0`) **holds**, re-verified independently at every edge
+   > to n = 12, beyond this audit's own n ≤ 8. What fails is only the **per-edge argument for `N`'s
+   > sign**, so item 6's "both per-edge manifest" is true of `P` and false of `N` at `n ≥ 10`.
+   >
+   > Measured by [`…_edge_sign_census.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_edge_sign_census.py),
+   > whose every figure is gated on exactly reconstructing `M₁` from the census (PASS).
+6. Therefore **`M₁ = P − N`, with `P ≥ 0` per-edge manifest and `N ≥ 0` measured but *not* per-edge
+   manifest for `n ≥ 10`** (see the correction to Fact B above; this line originally read "both
+   per-edge manifest"). This is exactly the "±cancellation, ratio → −0.62" seen in the raw data.
 
 ## Cross-method agreement (IO leading order ↔ Fulman edge split)
 
