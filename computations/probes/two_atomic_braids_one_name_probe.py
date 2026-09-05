@@ -18,15 +18,32 @@ constructions:
 word production builds, at every A (check 1). The proton's word needs 3 strands
 and A+Z gives 2; iron-56 needs 168 and A+Z gives 82.
 
-WHY IT MATTERS: 24 content blocks cite `def:atomic-braid`, and seven of them
-are in `mass-theory/` and `mass-endomorphism/` -- the chapters whose compute is
-3A. (This docstring said "12 ... six" until 2026-09-05, contradicting check 4
-of this same file, which counts them. The 12 was a TRUNCATED grep; the audit
-doc was corrected and the docstring was not, which is the stale-figure-survives-
-in-another-carrier class AGENTS.md records. Check 4 is the authority: it
-substring-matches `def:atomic-braid` over every .md and .ts under the paper, so
-it cannot miss a citation to a spelling variant of a call the way a shaped
-regex can.) `wedderburn-mass-formula.md` states `A ∈ H_{A+Z}(q)` and links
+WHY IT MATTERS: 19 content BLOCKS cite `def:atomic-braid` -- 24 files, since a
+block's `.ts` and `.md` each count -- and FIVE of those blocks are in
+`mass-theory/` and `mass-endomorphism/`, the chapters whose compute is 3A.
+
+    Two figures in this docstring have been wrong, both mine, and the second is
+    the more interesting:
+      * "12 ... six" (until 2026-09-05) was a TRUNCATED grep. Check 4 counts
+        them and said 24; the audit doc was corrected and this carrier was not.
+      * "24 ... seven" (same day) was the right measurement under the WRONG
+        UNIT -- those are FILE counts reported as blocks. A `.ts`/`.md` pair is
+        one block; 24 files are 19 blocks, and 7 mass files are 5 mass blocks.
+    Check 4 now prints files and blocks separately and asserts they differ, so
+    the unit cannot drift silently a third time.
+
+TWO FINDINGS THAT CHANGE THE DECISION (checks 5 and 6, added 2026-09-05)
+    (5) The A+Z object HAS been built. `computations/_deprecated/
+        atom_braid_electron.py` implements `H_{A+Z}(q)` with all six pair
+        types including the three electronic ones (pe / ne / ee), and a
+        committed witness references it. The first draft of the audit gave
+        "nothing in computations/ ever built it" as the evidence for retiring
+        the definition; that is FALSE. Built-then-deprecated and never-built
+        are different claims and only one was measured.
+    (6) The fork is not two-way. `electron_sigma_f_chain.py` (LIVE, not
+        deprecated) uses a THIRD strand count, `n_target = 3A + Z` -- three
+        quark strands per nucleon plus Z electrons. Any rename that assumes
+        two objects leaves this one unnamed. `wedderburn-mass-formula.md` states `A ∈ H_{A+Z}(q)` and links
 `#def:atomic-braid` while sitting in the chapter that traces the 3A object.
 Both objects are written `A` (script A) and both are called "the atomic braid".
 
@@ -62,6 +79,7 @@ Run:
 from __future__ import annotations
 
 import inspect
+import re
 import pathlib
 import sys
 
@@ -113,18 +131,68 @@ def main() -> int:
     checks.append(("the definition specifies electron interactions", len(e_rows) == 3,
                    "pe / ne / ee -- content 3A has nowhere to put"))
 
-    # ---- 4. blast radius: who cites the definition ------------------------
-    cites = sorted(
-        str(p.relative_to(REPO))
-        for p in (REPO / "content/quantum-observable-universe").rglob("*")
+    # ---- 4. blast radius: FILES vs BLOCKS, which are not the same number --
+    #        A block is a `.ts`/`.md`/(`.lean`) triple sharing one stem, so a
+    #        block citing the definition in BOTH its manifest and its prose is
+    #        two files. Counting files and calling them blocks double-counts.
+    #        This check reports both; the earlier draft reported 24/7 as
+    #        "blocks", which are the FILE figures.
+    cite_files = sorted(
+        p for p in (REPO / "content/quantum-observable-universe").rglob("*")
         if p.suffix in (".md", ".ts") and "def:atomic-braid" in p.read_text(errors="ignore")
     )
-    mass = [c for c in cites if "/mass-theory/" in c or "/mass-endomorphism/" in c]
-    print(f"[4] blocks citing def:atomic-braid: {len(cites)}; of those in mass chapters: {len(mass)}")
-    for c in mass:
-        print(f"      {c}")
-    checks.append(("the definition is cited from the mass chapters", len(mass) > 0,
-                   f"{len(mass)} of {len(cites)}"))
+    cite_blocks = sorted({p.with_suffix("") for p in cite_files})
+    md = sum(1 for p in cite_files if p.suffix == ".md")
+    ts = sum(1 for p in cite_files if p.suffix == ".ts")
+
+    def _in_mass(x) -> bool:
+        s = str(x)
+        return "/mass-theory/" in s or "/mass-endomorphism/" in s
+
+    mass_files = [p for p in cite_files if _in_mass(p)]
+    mass_blocks = [b for b in cite_blocks if _in_mass(b)]
+    print(f"[4] citing def:atomic-braid -- FILES {len(cite_files)} "
+          f"(.md {md} / .ts {ts})  ->  BLOCKS {len(cite_blocks)}")
+    print(f"    in the mass chapters -- FILES {len(mass_files)} "
+          f" ->  BLOCKS {len(mass_blocks)}")
+    for b in mass_blocks:
+        print(f"      {b.relative_to(REPO)}")
+    checks.append(("the definition is cited from the mass chapters, and the "
+                   "block count is reported as blocks (not files)",
+                   len(mass_blocks) > 0 and len(cite_blocks) < len(cite_files),
+                   f"{len(mass_blocks)} blocks of {len(cite_blocks)}; "
+                   f"{len(mass_files)} files of {len(cite_files)}"))
+
+    # ---- 5. the A+Z object WAS built -- the "never built" claim is false ---
+    #        This retracts the first draft's evidence for option (b).
+    az = REPO / "computations/_deprecated/atom_braid_electron.py"
+    az_src = az.read_text(errors="ignore") if az.exists() else ""
+    az_rows = [r for r in ("pe ", "ne ", "ee ") if r in az_src]
+    print(f"[5] computations/_deprecated/atom_braid_electron.py exists: {az.exists()}")
+    if az.exists():
+        print(f"    docstring names H_{{A+Z}}(q): "
+              f"{'H_{A+Z}(q)' in az_src}; electronic pair rows present: {az_rows}")
+    checks.append(("the A+Z object HAS been built (deprecated), with all three "
+                   "electronic pair types -- 'nothing ever built it' is FALSE",
+                   az.exists() and "H_{A+Z}(q)" in az_src and len(az_rows) == 3,
+                   f"{az.name}, rows {az_rows}"))
+
+    # ---- 6. and there is a THIRD live convention: 3A + Z -------------------
+    third = sorted(
+        str(p.relative_to(REPO))
+        for p in (REPO / "computations").rglob("*.py")
+        # exclude THIS file: it carries the pattern in order to search for it,
+        # so a naive scan reports itself as a third-convention producer.
+        if "_deprecated" not in str(p)
+        and p.resolve() != pathlib.Path(__file__).resolve()
+        and re.search(r"3\s*\*?\s*A\s*\+\s*Z", p.read_text(errors="ignore"))
+    )
+    print(f"[6] LIVE producers using a THIRD strand count 3A + Z: {len(third)}")
+    for f in third:
+        print(f"      {f}")
+    checks.append(("the corpus carries a third live strand convention 3A+Z, so "
+                   "the fork is not two-way", len(third) > 0,
+                   ", ".join(third) or "none"))
 
     print()
     n_ok = sum(1 for _, ok, _ in checks if ok)
