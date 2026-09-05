@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:23:28Z
-updated_at: 2026-08-16T12:56:04Z
+updated_at: 2026-09-05T18:06:52Z
 ---
 
 
@@ -164,3 +164,37 @@ remaining half of this bean — is expressible.
 axiomatised existence claim with no proof obligation and no checker firing — it
 is not a refactor, it is asserting more. That is exactly why it is the owner's
 decision and not an idle-drain.
+
+
+## The prerequisite question has an answer, and it is in the paper (measured 2026-09-05)
+
+This bean holds the completeness half (`Σ p_b = 𝟙`) behind a question it states
+as *"does the paper's R-linear phrasing already imply it? … Do not add the
+instance without settling that."* Settled, by reading the two blocks it names:
+
+1. **`def:quantum-universe` item 1 ASSERTS it.** *"an $R$-linear braided
+   [monoidal category](#def:rigid-monoidal-category) $\mathbf{C}$ over a
+   commutative ring $R$"*. So $R$-linearity is an **axiom of every quantum
+   universe**, not merely a predicate the corpus defines somewhere. This is the
+   discriminator: a defined-but-unasserted predicate would leave the question
+   genuinely open, and it is not one.
+2. **`def:rigid-monoidal-category:31` DEFINES it as Preadditive plus an
+   $R$-action.** *"We say $\mathbf{C}$ is $R$-linear for a commutative ring $R$
+   … if every hom-set is an $R$-module and composition is $R$-bilinear."* An
+   $R$-module is in particular an `AddCommGroup`; $R$-bilinear composition is in
+   particular biadditive. That is Mathlib's `Preadditive` verbatim — and
+   `CategoryTheory.Linear R C` is *declared* `[Preadditive C]`, so the
+   implication is the library's own, not an argument of mine.
+
+**So adding `[Preadditive C]` to the Lean `QuantumUniverse` does not change what
+a quantum universe IS.** The Lean is currently *weaker* than the paper; the fix
+is claim-**alignment**, not a claim change, and the caveat this bean raised
+against it does not apply.
+
+Reclassifying accordingly: this is agent-actionable Lean work under the paper's
+existing axiom, not an owner ruling. It stays open as *work*, and comes off the
+owner-gated queue.
+
+What is still true and worth keeping: the two gaps cost differently
+(orthogonality needed only `HasZeroMorphisms` and is DONE), and the axiom's name
+still promises more than its type delivers until completeness lands.

@@ -240,13 +240,67 @@ whether the binding channel may use CAL-3 as an acknowledged anchor — and flag
 that **two scales are live in one table on different channels today**, which is
 the part that is not a preference.
 
-### CLUSTER 4 — Lean class/axiom shape. `qou-t7mt` · `qou-w1g8` · `qou-octr`
+### ~~CLUSTER 4 — Lean class/axiom shape. `qou-t7mt` · `qou-w1g8` · `qou-octr`~~ ✅ **RESOLVED 2026-09-05 — none of the three needs an owner ruling**
 
-All three are *"change a class signature / add missing hypotheses"*, which is a
-**claim change**. `qou-octr` proves 8 of 8 context-class sorries are **unclosable**
-in their current form, so this cluster is not optional work — the current forms
-cannot be discharged. `qou-w1g8` carries a specific recommendation
-(`[CommRing R]`, `IsUnit` over `≠ 0`, `End(𝟙) ≅ R` as an explicit field).
+**🛑 The paragraph this replaces was mine and was wrong on its central claim.**
+It read: *"All three are 'change a class signature / add missing hypotheses',
+which is a **claim change**. `qou-octr` proves 8 of 8 context-class sorries are
+**unclosable** in their current form, so this cluster is not optional work — the
+current forms cannot be discharged."* I quoted that "8 of 8" three times in
+reports before checking it. Checked, all three deflate:
+
+**`qou-octr` — scope discharged; the sorries do not exist.** All eight
+declarations are **sorry-free today**. The naive check disagrees, in the
+direction that misleads: `grep '\bsorry\b'` over the eight returns **21 hits
+and zero are proof terms** — every one is inside a docstring or comment, in
+prose *about* `sorry`, because these files argue at length about why a `sorry`
+would be unsound. Tool: [`scripts/lean-sorry-count.py`](../../scripts/lean-sorry-count.py)
+(strips nested block and line comments, prints `real / raw`, exits 1 on a real
+one). Two of the eight also read "decl not found" on a first pass — one a
+`timeout 30` recursive grep silently expiring, one a rename the bean itself
+records.
+
+They were fixed two ways, and only four honestly:
+
+| | decls | how |
+|---|---|---|
+| **derived** | `mass_categorical_descent`, `finite_cascade_depth_of_cutoff`, `neutron_proton_splitting`, `skein_mass_from_linking` | splitting a finite sum along a decidable centre predicate; logs of a dissipation cutoff; pinned numerics with the exact-equality conjunct demoted to a tolerance per §7ab; demotion to a named `Prop` with a derived specialisation and a standing counterexample |
+| **projected** | `volume_perturbation`, `parity_regime_selection`, `lp_dual_stability`, `confinement_frobenius_reciprocity` | each conclusion conjunct is verbatim one class field; proof term is `ctx.field` or `⟨ctx.f₁, …⟩` |
+
+The second group is this bean's own defect **inverted** — it diagnosed *"the
+class carries too little"*, and the fix moved four classes to carrying *exactly
+the conclusion* (§3b-cond item 5). But per §3b a **disclosed** projection is
+compliant and the undisclosed population is already epic `qou-5p7n`; measured,
+`parity_regime_selection` discloses, `volume_perturbation` half-discloses, and
+`lp_dual_stability` / `confinement_frobenius_reciprocity` carry none — those two
+belong in that epic's bare bucket, not here.
+
+*One* genuinely new thing came out of it: `proof-no-self-assuming-projection`
+**could not see `volume_perturbation`**, the cleanest projection of the four,
+because the class field spells `QOU.QInteger.qIntBalZ` while the theorem spells
+`qIntSym`, a file-local reducible `abbrev` for that head. Closed by
+`fileHeadAliases` in `content/pipeline/lean-vacuity-axiom-audit.ts`; whole-corpus
+before/after is exactly one new hit and no other line changed.
+
+**`qou-t7mt` — its Option 1 was already applied, in full.**
+`frobenius-hopf-substrate.md` now opens *"Let $\mathbf{C}$ be a **monoidal**
+category"*, states axiom 4 via `coev` + both snake identities with no `A^\vee`,
+and says in axiom 5 that `(ev, coev)` *"exhibits $A$ as its own dual"*. Line 21
+carries the bean's own argument (*"Duals are required of $A$ only, not of
+$\mathbf{C}$"*). The single surviving `A^\vee` is at line 23 and is the
+**disclosure of the change**, not a residue.
+
+**`qou-w1g8` — its prerequisite question is answered by the paper.** The bean
+holds `Σ p_b = 𝟙` behind *"does the paper's R-linear phrasing already imply
+Preadditive?"*. `def:quantum-universe` item 1 **asserts** *"an $R$-linear braided
+monoidal category $\mathbf{C}$ over a commutative ring $R$"* — an axiom, not a
+defined-but-unasserted predicate — and `def:rigid-monoidal-category:31` defines
+$R$-linear as *"every hom-set is an $R$-module and composition is
+$R$-bilinear"*, which is Mathlib `Preadditive` plus an $R$-action
+(`CategoryTheory.Linear R C` is *declared* `[Preadditive C]`). So adding the
+instance does not change what a quantum universe is — the Lean is weaker than
+the paper and the fix is claim-**alignment**. Agent-actionable; off the
+owner-gated queue, still open as work.
 
 ### ~~CLUSTER 5 — notation. `qou-d7h1`~~ ✅ **RESOLVED 2026-09-05 — already ruled, no decision needed**
 
@@ -364,6 +418,13 @@ someone else's bean.
 
 - **Pass 1** — 33 pending split from 18 historical-only.
 - **Pass 2** — 4 more false positives; A/B/C = 10 / 19 / 6.
+- **Pass 4 (2026-09-05)** — Cluster 4 RESOLVED: all three beans deflate on
+  checking. `qou-octr`'s scope is discharged (its eight sorries no longer
+  exist; the naive grep says 21 and every one is prose), `qou-t7mt`'s Option 1
+  was already applied in full, and `qou-w1g8`'s prerequisite question is
+  answered by `def:quantum-universe` axiom 1. That takes the already-answered
+  count from five to **eight**, and Clusters 5, 4 and 6 are now closed —
+  leaving **1, 3 and 7** genuinely open.
 - **Pass 3** — the 19 collapse to 7 clusters; `t7qv` already carries Cluster 1's
   measurement; `qou-1jw9` escalated out of the queue.
 - **Remaining** — nothing further is triageable without your rulings. The queue is
