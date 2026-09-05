@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T01:43:06Z
-updated_at: 2026-09-05T07:14:22Z
+updated_at: 2026-09-05T08:12:57Z
 ---
 
 
@@ -163,3 +163,9 @@ NOT pruned: non-rational coefficients, operators on Sigma rather than the base, 
 The route-1 entry above ends by saying the LOCAL q-dilation t -> mu t at a branch point is not pruned because the theorem does not apply there. That is wrong: the reason given concerned power-series coefficients, the theorem concerns rational ones. In the local coordinate the sheets are still algebraic over K(t) hence D-finite, and still not rational (t^2 = z - z_c makes K(t)/K(z) quadratic, and an irreducible cubic has no root of degree <= 2 — QOU.Mass.IrreducibleCubicNoQuadraticRoot, sorry-free). So a rational q-dilation is excluded in the local chart as well.
 
 Route 1 is now excluded in BOTH coordinates. Routes 2 (root-of-unity fibre monodromy) and 3 (RSZ / Sauloy local framework) remain, and route 3 now has to supply an operator whose coefficients are NOT rational in a coordinate — a sharper requirement than the earlier entry implied. Audit: docs/audits/2026-09-05-w1-local-qdilation-also-excluded-correction.md.
+
+## Route 1 closed on Sigma too (2026-09-05, bean qou-lmnq, PR #6769)
+
+The 2026-09-04 entry above closed route 1 in the base and local COORDINATES, by the coefficient field. It left an operator on Sigma itself untouched. That is now closed for the dilation: no nontrivial z -> lambda z lifts to an automorphism of Sigma at all, because such a lift would permute the six finite branch points and hence satisfy D(lambda z) = c D(z), whose constant and linear coefficients force c = 1 then lambda = 1 (Lean QOU.Mass.DilationBranchLocusRigidity, sorry-free). Holds for every lambda including roots of unity, so it is complementary to Bezivin-Ramis rather than dependent on it.
+
+Route 1 is therefore closed in all three charts. ROUTE 2 (root-of-unity FIBRE monodromy) is untouched — it acts on the fibre, not the z-line — and is now the live route; route 3 (RSZ/Sauloy framework import) likewise.
