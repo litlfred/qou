@@ -1,9 +1,9 @@
 /-
-  Bar-parity energy decomposition — the 𝔇 (decay-width) reinterpretation.
+  Bar-parity energy decomposition — the bar-skew reinterpretation.
 
   Every binding energy splits under the bar involution σ (the substrate
   q ↦ q⁻¹) into a bar-EVEN "retained" channel (cosh — binding proper) and a
-  bar-ODD "emitted" channel (sinh — the radiated γγ̄ / decay-width 𝔇 sector).
+  bar-ODD "emitted" channel (sinh — the radiated γγ̄ / bar-skew sector P_skew).
   This is the complex-volume 𝔙 = Vol + i·CS shape read at the energy level,
   and it is exactly the split the mass-binding dashboard already tabulates as
   the `retained E` / `emitted E` columns.
@@ -60,7 +60,7 @@ theorem map_invOf_two : σ (⅟(2 : R)) = ⅟(2 : R) := by
 /-- Bar-even ("retained", cosh) projection `(E + σE)/2`. -/
 def evenPart (E : R) : R := (E + σ E) * ⅟(2 : R)
 
-/-- Bar-odd ("emitted", sinh — the decay-width 𝔇 channel) projection
+/-- Bar-odd ("emitted", sinh — the bar-skew channel P_skew) projection
     `(E − σE)/2`. -/
 def oddPart (E : R) : R := (E - σ E) * ⅟(2 : R)
 
@@ -92,7 +92,7 @@ theorem even_add_odd (E : R) :
   unfold evenPart oddPart
   linear_combination E * h
 
-/-- **Pure-binding criterion.** The emitted (decay-width) channel vanishes iff
+/-- **Pure-binding criterion.** The emitted (bar-skew) channel vanishes iff
     `E` is bar-even: a nucleus radiates no γγ̄ / carries no 𝔇 channel exactly
     when its binding is purely retained. -/
 theorem oddPart_eq_zero_iff_barEven (E : R) :
@@ -107,7 +107,7 @@ theorem oddPart_eq_zero_iff_barEven (E : R) :
     exact (sub_eq_zero.mp h2).symm
   · intro h; rw [h]; ring
 
-/-- **The 𝔇 reinterpretation.** If the deuteron unit is a decay-width energy
+/-- **The 𝔇 reinterpretation.** If the deuteron unit is a bar-odd energy
     `E_unit = U` with `U` bar-odd (`σ U = -U` — the width datum `ℏ/𝔇` lives in
     the emitted/sinh sector), then `E_unit` equals its own emitted part and
     has zero retained part: it is a *purely decay-channel* energy. -/

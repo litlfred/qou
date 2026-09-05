@@ -9,7 +9,7 @@ constrained by:
 
 1. **Dimensional analysis.** The modulus $q_0$ is pinned canonical by
    the dimensionless ratio $m_\mu/m_e$ (the most precise proxy for CAL-2,
-   $\mathfrak{D}_\beta$); two dimensional proxies ($m_e$, $m_\pi$) pin the
+   $P_{\mathrm{skew}}^{\beta}$); two dimensional proxies ($m_e$, $m_\pi$) pin the
    leptonic mass scale and the meson scale. The hadronic energy scale
    $\mathfrak{E}_0$ is **derived** from $m_e$ and $q_0$; $\mathfrak{Q}_\beta$
    is the CAL-2 proxy and, once $q_0$ is pinned by $m_\mu/m_e$, a

@@ -7,8 +7,8 @@
   nothing archimedean, no ordering, no numeric literals beyond ring 0):
 
     * `CalClass` — the three calibration classes of the canonical triple
-      (CAL-1 = m_e W-plane scale, CAL-2 = 𝔇_β / q₀ W-plane modulus
-      (dimensionless), CAL-3 = 𝔇_π / m_π orthogonal meson class).  The
+      (CAL-1 = m_e W-plane scale, CAL-2 = P_skew^β / q₀ W-plane modulus
+      (dimensionless), CAL-3 = P_avg^π / m_π orthogonal meson class).  The
       count-alignment of the triple with the three H¹(Bring) degrees of
       freedom is `QOU.Mass.calibrations_eq_cohomology` (content block
       `mass-theory/calibration-cohomology-alignment`); this file needs only
@@ -56,10 +56,10 @@ namespace QOU.Mass.BondChannelClassSelection
 inductive CalClass : Type
   /-- CAL-1: the leptonic mass scale `m_e` — the W-plane *scale*. -/
   | cal1
-  /-- CAL-2: the β-decay width `𝔇_β`, numerically pinned via `m_μ/m_e` — the
+  /-- CAL-2: the β-decay width `P_skew^β`, numerically pinned via `m_μ/m_e` — the
       W-plane *modulus* `q₀`, a dimensionless quantity. -/
   | cal2
-  /-- CAL-3: the pion decay width `𝔇_π` / meson scale `m_π` — the
+  /-- CAL-3: the pion-sector bar-even channel `P_avg^π` / meson scale `m_π` — the
       cohomologically orthogonal `Vol(Hopf) = 0` class. -/
   | cal3
   deriving DecidableEq

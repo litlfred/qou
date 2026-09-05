@@ -22,7 +22,7 @@ $$
 $$
 
 with $a + b \in \{0, 1\}$ (dimensionless, mass-scale, or energy-scale
-output) and $q_0$ fixed by CAL-2 ($\mathfrak{D}_\beta$, pinned
+output) and $q_0$ fixed by CAL-2 ($P_{\mathrm{skew}}^{\beta}$, pinned
 canonical through its proxy $m_\mu/m_e$). The two dimensional
 bridges to MeV are the proxy scales $m_e$ and $m_\pi$; the derived
 hadronic energy scale $\mathfrak{E}_0 = m_e/(q_0(q_0-1))$ and the CAL-2

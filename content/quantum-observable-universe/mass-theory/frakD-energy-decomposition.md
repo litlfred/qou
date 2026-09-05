@@ -9,20 +9,20 @@ $$
 
 *with the retained part bar-even ($\sigma$-fixed) and the emitted part
 bar-odd ($\sigma$-negated). The emitted (bar-odd, $\sinh$) channel is the
-decay-width $\mathfrak{D}$ sector; it vanishes iff $E$ is purely retained.*
+bar-skew sector $P_{\mathrm{skew}}$; it vanishes iff $E$ is purely retained.*
 
-## The $\mathfrak{D}$ reinterpretation of $E_{\text{unit}}$
+## The bar-skew reinterpretation of $E_{\text{unit}}$
 
 This is the energy-level form of the complex-volume split
 $\mathfrak{V} = \mathrm{Vol} + i\,\mathrm{CS}$: the retained part is the
 binding-proper (cosh) channel, the emitted part is the radiated
-$\gamma\bar\gamma$ / decay-width (sinh) channel. Reading the deuteron law
+$\gamma\bar\gamma$ / bar-skew (sinh) channel. Reading the deuteron law
 $B({}^2\mathrm{H}) = 5g \cdot E_{\text{unit}}$ through this split makes the
-"$E_{\text{unit}} = \hbar/\mathfrak{D}$" reinterpretation precise: *if* the
-unit is a decay-width energy (bar-odd), then it is its own emitted part with
+"$E_{\text{unit}} \in P_{\mathrm{skew}}$" reinterpretation precise: *if* the
+unit is a bar-odd energy, then it is its own emitted part with
 zero retained part — a purely decay-channel energy
 (`frakD_is_pure_emitted`). This keeps $E_{\text{unit}}$ inside the three
-calibrations (the width $\mathfrak{D}$ is the CAL-2 datum), rather than a
+calibrations (the bar-skew channel $P_{\mathrm{skew}}^{\beta}$ is the CAL-2 datum), rather than a
 fourth calibration.
 
 One caveat stands: whether the deuteron binding actually carries this bar-odd

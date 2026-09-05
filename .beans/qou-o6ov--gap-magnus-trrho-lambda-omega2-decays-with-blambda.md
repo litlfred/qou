@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-04T20:54:57Z
+updated_at: 2026-09-05T06:09:44Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -158,3 +158,42 @@ form. Nothing here BOUNDS anything; the closed forms compute the trace of X*X, t
 do not majorize it. At b=n−1 the Burau form returns −1.7e-141, roundoff at dps 140
 against a true zero, excluded from the monotonicity check rather than clamped.
 scope-(a). Nothing wired.
+
+## 2026-09-05 — A=4 settles it: the crossing is INTERIOR, not a boundary artifact (#6710 kernel)
+
+#6677 left this open: hook(b) vs two-row(b) reverses, but at both sizes then measured
+the reversal sat at b = ⌊n/2⌋, which is ALSO the last b with a two-row shape. Two
+readings fit two points — (i) BOUNDARY, the column just ends; (ii) INTERIOR, the
+curves genuinely cross. A=4 separates them.
+
+A=4 (n=12), ⌊n/2⌋ = 6, ratio hook/two-row per-dim:
+  b=1  62105.983 / 62105.983  = 1.0        (same shape — forced, the cross-check)
+  b=2  50708.093 / 43907.244  = 1.154891
+  b=3  28688.965 / 25677.635  = 1.117274
+  b=4  13057.703 / 15754.936  = 0.8288007  ← CROSSES
+Crosses at b=4, STRICTLY before b=6. Reading (i) is REFUTED — the two-row column
+continues to b=5,6, so its boundary cannot explain a crossing at b=4. k=5,6 were
+never computed; the k=4 result already decides it.
+
+CROSSING POINT vs ⌊n/2⌋ across all three sizes — the divergence IS the result:
+  n= 6: crosses at b=3, ⌊n/2⌋=3  agree
+  n= 9: crosses at b=4, ⌊n/2⌋=4  agree
+  n=12: crosses at b=4, ⌊n/2⌋=6  DIVERGE
+
+OBSERVATION, sample size 3, recorded as observation not law: over n=6,9,12 the
+crossing sits at b=3,4,4 while n doubles — roughly CONSTANT in b, not proportional
+to n (fractions 0.50, 0.44, 0.33). Second pattern same caveat: the ratio peak (always
+at b=2) shrinks — 1.689, 1.245, 1.155 — so the columns converge as n grows. Whether
+the crossing is asymptotically constant is OPEN; three sizes cannot settle it.
+
+CONSEQUENCE FOR THE ARC. #6669: five of seventeen statistics come within one inversion,
+all failing on the same hook-vs-two-row pair. #6677: the relation reverses. This closes
+the remaining escape — the reversal is NOT an edge artifact a statistic could be excused
+from reproducing. Any ordering statistic must reproduce a hook/two-row relation that
+CHANGES SIGN at an interior b that does NOT track n. That is why hunting an eighth
+diagram statistic is the wrong next move.
+
+Limits: A=2,3,4; A=4 computed to k=4 only (k=5,6 not run, not evidence). The sparse
+kernel is gated at A=2/A=3 against the dense implementation (9.09e-66, 1.92e-65, every
+k); same algorithm at A=4 is an argument, not a measurement at that size. Nothing here
+BOUNDS anything. scope-(a). Nothing wired.

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-30T13:40:13Z
-updated_at: 2026-09-04T14:00:37Z
+updated_at: 2026-09-05T05:57:11Z
 ---
 
 `computations/hadron-knot-table.witness.json` disagrees with its own producer
@@ -139,3 +139,267 @@ muon to close the flip would spend the whole 19-atom budget producing a witness
 at the anchor the ruling says is wrong, and constraint 4 (manifest and witness
 land together) then requires the same run again. The flip should not be closed
 before the classification is.
+
+
+---
+
+## RETRACTION 2026-09-04 — "nobody had got past A=2" is FALSE
+
+The update immediately above says the deuterium row is *"new — nobody had it,
+because nobody had got past A=2."* **That is wrong.** It is in this bean, in
+`qou-bypn`, and in the body of PR #6678, which is now merged to `main`.
+
+`qou-sv7h` got there first and went further. Two commits, both dated
+2026-09-03, both **already in the tree my run used**:
+
+- `815b2a46a0` — wires the Rust LP-accumulator kernel into
+  `unified_iterative_correction` and `atom_character_raw`; `binding_energy`
+  runs end to end for the first time. **deuterium `B_pred = -7.271102125 MeV`
+  in 942.3 s**, wrong sign against AME `+2.224566`.
+- `7b8625230c` — **tritium too**: `-7.742121347` against AME `+8.481796`.
+
+So the corpus already had the sign, at two atoms, before my run.
+
+**And their reading of it is better than mine.** I reported the sign. They
+report the *shape*, which is the informative part: from A=2 to A=3 the
+prediction moves `-7.271 → -7.742` (**6.5 %**) while experimental binding moves
+`2.225 → 8.482` (**+281 %**). The accumulator is nearly **A-independent** where
+real binding grows roughly linearly in A. A sign flip therefore does not supply
+what is missing — whatever is missing is **extensive in A**, which lands exactly
+on the standing open problem in AGENTS.md (the super-pairwise additive extensive
+object the six Δ_λ ansätze failed to produce, with the pairwise cap
+`exchangeDet_pow_two_le_four`). They also establish the sign was **already
+negative before** their correction, so it is not "the fix broke the physics" —
+the accumulator has been wrong-signed all along and nobody could see it because
+the function could not complete.
+
+What survives from my run: the four-atom `tr_M` drift table, and the
+independent corroboration of this bean's `tr_M(protium) = 1.1463376906350053`.
+
+## What the retraction UNCOVERS — a 17.3 % gap on identical code
+
+Setting the two deuterium numbers side by side is worth more than either alone:
+
+| run | stem | anchor | `binding_energy(1,1)` |
+|---|---|---|---|
+| `qou-sv7h` | standalone | **proton** (default) | **−7.271102125** |
+| mine, via `hadron_knot_table` | `hadron_knot_table` | **muon** (`ideal_muon`) | **−8.5281** |
+
+**17.3 % apart, and the code was identical.** Measured, not assumed:
+
+- `git log 7b8625230c..6238f50999 --` over `hecke_core_legacy.py`,
+  `hadron_knot_table.py`, `tools/pyhecke-native/`, `tools/hecke-engine/`,
+  `tools/pyhecke/` is **empty** — no change to any part of the binding path
+  between their measurement and my run-time base.
+- `pyhecke_native` **0.9.0 present**, so both took the Rust kernel path, not
+  the Python fallback.
+- `hadron_knot_table.compute_atom` is `B = binding_energy(Z, N)` with **no
+  additional terms** — we measured the same quantity.
+
+The one difference I can name is the **anchor**: `q_parameter` resolves it from
+`sys.argv[0]`'s stem, `hadron_knot_table` is listed `ideal_muon`, and any
+other stem gets proton.
+
+**If that is the cause it is a serious finding**, because the two pins differ by
+**11.6 ppb** and the outputs differ by 17.3 % — an amplification of order
+**1.5e7**. That would make every number out of this accumulator
+anchor-dominated, and it is consistent with `qou-sv7h`'s own finding that
+`hecke_core_legacy.py:1604`'s `math.log(abs(tr_run))` narrows to **float64
+inside the loop**, upstream of any cast.
+
+**NOT ESTABLISHED — this is a hypothesis with the alternatives named, not a
+result.** Untested alternatives: their harness may differ from a bare
+`binding_energy(1,1)` call in some way their commit does not state; and their
+`B_pred` may be reported at a different point in the accumulation than
+`compute_atom`'s `B`. The decisive test is one ~15-minute run of
+`binding_energy(1,1)` from a non-`ideal_muon` stem: reproducing −7.2711
+confirms the anchor, reproducing −8.5281 refutes it and points at the harness.
+That run is in flight; **do not quote the amplification figure until it lands.**
+
+
+---
+
+## RESOLVED 2026-09-05 — the anchor hypothesis is REFUTED. It is a stale extension build.
+
+The decisive run landed. **My hypothesis was wrong and the amplification figure
+is dead — do not quote it.**
+
+    stem = deuteron_pin_sensitivity_diag  (not in ideal_muon -> PROTON)
+    q_parameter.Q       = 1.1099785827513808
+    binding_energy(1,1) = -8.52811254141235
+    elapsed             = 22606.7 s
+
+Proton gives **−8.5281**, the same as my muon run via `hadron_knot_table`. So the
+q0 pin does **not** move this number, the accumulator is **not**
+anchor-dominated, and the "11.6 ppb in, 17.3 % out, ~1.5e7 amplification"
+speculation in the previous section is **retracted in full**.
+
+### The real cause, and the error that hid it
+
+The runtime is the tell I should have read first: **22,606.7 s against
+`qou-sv7h`'s 942.3 s for the same call — 24×.** We were not running the same
+code path.
+
+`pyhecke_native` **0.9.0 is installed and imports fine**, and I checked exactly
+that and concluded the Rust kernel was in use. **The guard does not test the
+module, it tests a function:**
+
+    _HAS_LP_KERNEL = hasattr(_PHN, "lp_accumulator_step_traces_mpfr")
+
+and that attribute is **ABSENT** from the installed 0.9.0 (58 exported names;
+this is not among them). So `_HAS_LP_KERNEL` is False and both of my runs took
+the **Python fallback**. *"The extension imports"* is not *"the kernel is
+available"* — that is the whole error.
+
+### Why the fallback's number should not be trusted at all
+
+The fallback builds its matrices at line 1207 via `_build_ysn_matrices`. The
+repo's own gate, `computations/audits/ysn_braid_relation_audit.py`, run today:
+
+> the Python YSN family satisfies the QUADRATIC relation but **VIOLATES the
+> BRAID relation**. It is therefore **not a representation of H_n(q)**, and
+> products of these matrices are **not Markov traces of braids**. Everything
+> `unified_iterative_correction` / `binding_energy` computes from them inherits
+> this. The Rust `seminormal_matrices_mpfr` family satisfies all three relations
+> at 50 dps and is the correct object.
+
+So **−8.5281 is computed on matrices that are provably not a representation of
+the Hecke algebra.** `qou-sv7h`'s −7.271102125 is the one computed on matrices
+that are. My four-atom `tr_M` table above inherits the same defect and should be
+read as fallback-path values, not as the framework's numbers.
+
+**What survives:** the SIGN. Both paths are negative (−8.5281 and −7.2711)
+against AME **+2.224566**, so "wrong-signed" does not depend on which path ran.
+`qou-sv7h`'s A-independence finding is on the correct path and is untouched.
+
+### Why the kernel gate could not catch this
+
+`lp_accumulator_kernel_gate.py` says so itself: *"Both sides use the SAME (Rust
+MPFR) seminormal matrices. That is the whole point."* It holds the matrices
+fixed and verifies the **recurrence** to 7.09e-48. The 17.3 % gap is not in the
+recurrence — it is in **which matrices go into it**, which that gate deliberately
+does not vary. Its 7.09e-48 is correct and is not evidence about the end-to-end
+number.
+
+### The systemic problem — this is silent, and it is the corpus's default
+
+`pyhecke-native` is **not on PyPI** (404; its wheel workflow is
+`workflow_dispatch`-only with no publish step — AGENTS.md §Project structure).
+The kernel *is* in the Rust source (`src/lib.rs:941`, registered at `:1957`);
+only the installed 0.9.0 wheel predates it. So in a default container:
+
+- the guard silently selects the fallback — **no error, no warning**;
+- the run is **24× slower**;
+- and the number it produces comes from a **non-representation** matrix family.
+
+Anyone regenerating `hadron-knot-table.witness.json` — or any binding number —
+without a locally built wheel gets that silently. That is a reproducibility
+hazard for the whole binding path, not just this witness.
+
+**Suggested guard (not applied here — it belongs to `qou-sv7h`'s arc):** when
+`_HAS_LP_KERNEL` is False, `binding_energy` should say so loudly rather than
+proceed, because its matrices are known-defective on that path. A `_path_bridge`
+-style refusal, or at minimum a stderr warning naming
+`ysn_braid_relation_audit.py`.
+
+**Method note worth keeping:** the 24× runtime gap identified the cause; the
+value gap alone did not. When two runs of one function disagree, **compare their
+wall times before theorising about the physics.**
+
+
+---
+
+## CLOSED 2026-09-05 — both paths reproduced in one container; diagnosis confirmed
+
+Rebuilt `pyhecke-native` from source (`maturin build --release`, **52 s**),
+installed it, and re-ran the identical call. Exports went **58 → 59**, the one
+added name being `lp_accumulator_step_traces_mpfr` — the exact function the
+guard tests for.
+
+    _HAS_LP_KERNEL = True                    <- was False before the rebuild
+    q_parameter.Q  = 1.1099785827513808      <- proton, unchanged
+    binding_energy(1,1) = -7.271102124876717      840.8 s
+
+| path | `binding_energy(1,1)` | elapsed |
+|---|---|---|
+| kernel live (this container, after rebuild) | **−7.271102124876717** | **840.8 s** |
+| `qou-sv7h` (independent, different container) | −7.271102125 | 942.3 s |
+| Python fallback (this container, stale wheel) | −8.52811254141235 | 22,606.7 s |
+
+`round(−7.271102124876717, 9) == −7.271102125` — **exact agreement with the
+sibling to every digit they reported**, from a separate container and a
+separately built wheel. The diagnosis is closed:
+
+- **value gap  17.29 %** (1.2570104165 MeV absolute)
+- **runtime gap 26.9×**
+
+Both numbers are now reproduced side by side under one q₀, one commit, one
+container, with the ONLY variable being whether the wheel carries the kernel.
+Nothing else is left to attribute it to — not the anchor (refuted above), not
+tree drift, not the harness.
+
+**Consequences that stand:**
+
+1. **−8.5281 and my four-atom `tr_M` table are fallback-path artefacts** —
+   computed on a matrix family the repo's own audit proves is not a
+   representation of H_n(q). They are not the framework's numbers. The SIGN
+   survives (both paths negative against AME +2.224566), and `qou-sv7h`'s
+   A-independence result is on the correct path throughout.
+2. **`hadron-knot-table.witness.json` cannot be correctly regenerated in a
+   default container.** The guard picks the fallback silently, so a regeneration
+   attempt produces a plausible-looking witness from the wrong object. This is
+   the practical blocker on this bean, and it is upstream of the `Q0_FLIP` and
+   of the anchor-classification question entirely.
+3. The audibility fix landed (PR #6706): a once-per-process stderr warning from
+   `binding_energy` / `unified_iterative_correction`. **Not** a refusal — that
+   is `qou-sv7h`'s and the owner's call.
+
+**Prerequisite for anyone picking this up:** rebuild the wheel FIRST and assert
+`_HAS_LP_KERNEL` before trusting any binding number. 52 s, against 6+ hours
+spent on a number that was never the framework's.
+
+
+---
+
+## DO NOT REGENERATE — the standing instruction still holds, and I am not overriding it
+
+I now have a working kernel in this container, which is exactly the capability
+this bean's route 1 ("run it where it can finish") was waiting on. **I am
+deliberately not regenerating the witness.** Two reasons from the history,
+neither of them mine:
+
+**1. The sibling's instruction is explicit and current.** `096f0d89b9` said
+regeneration "must NOT proceed until step 2" (wire the correct matrices in) —
+and step 2 *has* since happened, in `815b2a46a0`, so that precondition is
+satisfied and it would be easy to read the gate as lifted. But the LATER commit
+`7b8625230c`, written after the wiring, replaces it:
+
+> No witness regenerated, and **hadron-knot-table.witness.json should stay
+> untouched while the sign is wrong.**
+
+The sign is still wrong at all four atoms they have measured. So the gate is not
+lifted; it was re-stated on stronger grounds. Regenerating now would record
+19 atoms of a quantity known to have the wrong sign, at ~840 s per bound atom
+and rising as A², and it would *look* like progress.
+
+**2. The committed witness is already invalid on three independent axes**, and
+this was recorded a year of sessions ago — `da645cf0f3`, 2026-08-23:
+
+> the existing witness is stale on three separate axes anyway (**muon q₀,
+> convention C, older script**)
+
+plus the `Q0_FLIP` on the retired pin, plus the `tr_M` drift this bean measured.
+So "is it also on braid-violating matrices?" is a *fifth* axis, and I did not
+establish it: the June-era source is outside this shallow clone (oldest fetched
+commit 2026-08-15), and the marginal value of a fifth invalidity proof on an
+already-invalid artifact is close to zero. **Recorded as unmeasured rather than
+guessed** — the witness predates both the braid-relation discovery (2026-08-31)
+and the convention-D ruling, so the presumption is unfavourable, but a
+presumption is not a measurement.
+
+**What "unblocked" actually means now.** This bean's route 1 was
+capability-blocked; it is now *correctness*-blocked, which is a different and
+better-defined state. The order is: sign first (`qou-sv7h`, and they hold it),
+then anchor classification (`qou-bypn` — proton under the 2026-08-30 ruling),
+then regenerate. Not the reverse. A run costing ~840 s per bound atom is cheap
+compared with publishing 19 wrong-signed numbers that look freshly computed.

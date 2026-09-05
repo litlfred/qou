@@ -57,12 +57,12 @@ $-2\,\mathrm{Im}\,E$: on a real spectrum the second vanishes identically while
 the first does not. That much is arithmetic and is scope (a), not (b).
 
 What it does **not** establish is that the framework realises the first
-mechanism. CAL-2 is named the neutron $\beta$-decay width $\mathfrak{D}_\beta$,
+mechanism. CAL-2 is named the neutron $\beta$-sector bar-skew channel $P_{\mathrm{skew}}^{\beta}$,
 and the corpus relates it to the CAL-2 proxy by
-$\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$; but a width and a lifetime are
-reciprocal by definition, so if $\mathfrak{D}_\beta$ is the width then
-$\hbar/\mathfrak{D}_\beta$ is the neutron lifetime, $878.4\;\mathrm{s}$, and not
-an energy. Defining $\mathfrak{D}_\beta := \hbar/\mathfrak{Q}_\beta$ instead is
+$\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta}$; but a width and a lifetime are
+reciprocal by definition, so if $P_{\mathrm{skew}}^{\beta}$ is the width then
+$P_{\mathrm{skew}}^{\beta}$ is the neutron lifetime, $878.4\;\mathrm{s}$, and not
+an energy. Defining $P_{\mathrm{skew}}^{\beta} := \hbar/\mathfrak{Q}_\beta$ instead is
 dimensionally consistent but gives $8.40 \times 10^{-22}\;\mathrm{s}$, which is
 $24.02$ orders of magnitude from that lifetime. Equivalently the neutron's
 actual width $\Gamma_n = \hbar/\tau_n = 7.49 \times 10^{-19}\;\mathrm{eV}$ sits

@@ -1,11 +1,11 @@
 ---
 # qou-m549
 title: 'Raw-float64 ratchet is RED on main: 5 witnesses, drained at the producer (PR #6453)'
-status: in-progress
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-03T20:35:04Z
-updated_at: 2026-09-05T05:53:27Z
+updated_at: 2026-09-05T06:13:12Z
 ---
 
 ## Measured, and re-measured after main took 55 commits
@@ -321,3 +321,56 @@ is absent in this container).
 
 The seven producer renames stay — `elapsed_sec` is the longer-standing
 spelling. The declaration is what stops the EIGHTH site being a red.
+
+
+## MERGED — 2026-09-05, `87b8d0d693` (PR #6453)
+
+Rebase-merged on the owner's explicit instruction. All 15 commits replayed
+(`verify-merge-replay.py`, patch-id based: 15/15, MISSING 0). Branch NOT
+deleted, per AGENTS.md rule 9.
+
+**Gate on merged `main`: NEW 0 / REGRESSED 0 / exit 0.** `main` had been red
+at twelve consecutive heads over ~50 hours.
+
+### The eighth site — the ruling earned its keep the same day
+
+The final rebase picked up 13 new `main` commits, and one of them brought
+`computations/qbeta/qbeta-loop-value-pinned.witness.json` carrying
+`/provenance/elapsed_s = 0.407`. That is the **eighth** site of the class,
+and the **first to arrive after the declaration landed**. It was absorbed
+with no producer edit at all — where sites one through seven each cost a
+rename.
+
+This is the datum my original objection lacked. I argued against declaring
+on a count (~14 unexamined sites) I had never measured; the real count was
+5, all wall-clock, all examined — which removed the objection's premise.
+What actually settles it is the **rate**: seven in two days, an eighth
+within the day of the ruling.
+
+### TRAP — a raw float count is NOT the ratchet's metric
+
+Caught while writing the merge rationale, and worth recording because the
+mistake was one keystroke from being published as a verification.
+
+Counting non-integral floats in the five renamed witnesses gives **1 each,
+on the branch, after the fix**. That looks like the drain failed. It did
+not: the rename moves the number under a field name the gate *excuses by
+design* — the float is still in the artifact. The ratchet applies
+`lp_dual` and `ephemeral_duration` carve-outs before counting; a naive
+`isinstance(v, float)` walk applies neither.
+
+So a raw count answers exactly one question — *did a sibling drain this
+file?* — and answers nothing about redness. Use it for supersession checks
+(where it is the right tool, and caught three superseded commits on this
+branch); never quote it as a gate result.
+
+### Left open, deliberately
+
+- `qou-9tqx` — #5910's tolerance drain is artifact-level and structurally
+  undoable: 26 of 33 producers hand-build their witness, so each re-run
+  re-emits its float. Ten already reverted; two fixed here, **eight open**.
+  Migrating 26 producers is its own tranche.
+- `qou-ywee` — `wall_sec` is also a wall-clock duration in this corpus and
+  is deliberately NOT declared. It needs BOTH halves of the two-half trap
+  (the mask entry AND the substring test, which `"dur"`/`"elapsed"` do not
+  reach), so declaring it blind would be a no-op that reads as a fix.

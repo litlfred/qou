@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T22:01:59Z
-updated_at: 2026-09-04T22:02:31Z
+updated_at: 2026-09-05T06:04:38Z
 ---
 
 Successor to qou-qro1 (OrbitCount.lean, merged as a08dce2497). That bean proved
@@ -45,3 +45,35 @@ do not repeat it as established until it does.
 NO MAGNITUDE IS CLAIMED. E_0 is a calibration, not a derivation (qou-59j5), and
 #6611 leaves 'E_0 is 2.656x below the best single scale' open. (A-1)*log 2 is a
 SHAPE claim, scale-free in the same sense the mirror-sign test of qou-z4ba was.
+
+
+LEAN HALF DONE 2026-09-05, PR #6716, sorry-free. BOTH hfree and hmerge follow from
+ONE lemma: orbitDefect_freshProd -- a list of transpositions whose right endpoints
+are each FRESH (never an endpoint of an earlier letter) has orbit defect exactly its
+length. Each step is orbitDefect_swap_mul_of_not_sameCycle from qou-qro1; its
+not-SameCycle hypothesis comes free because a fresh endpoint is still a FIXED POINT
+of everything applied before it.
+
+THE MEASUREMENT THAT MADE IT EASY, and it was not what I predicted. I expected to
+have to model the intra-nucleon chain (sigma_0 sigma_1^-1)^3 plus quark pairs. In
+fact each block's ELEVEN letters collapse to ONE transposition, swap(3k, 3k+1) --
+the same one for every k, proton or neutron. So the whole shadow is 2A-1
+transpositions in word order:
+    swap 0 1,  then for k = 1..A-1:  swap(3k-1, 3k), swap(3k, 3k+1)
+whose right endpoints run 1, 3, 4, 6, 7, 9, 10, ... strictly increasing. Freshness
+is then immediate, and it is exactly WHY every interface merges rather than splits.
+
+WHAT IS AND IS NOT CLOSED. Lean does not know what the producer returns, so the
+corollaries read 'IF the shadow is this list, THEN the counts are 2A and A+1' --
+the same epistemic shape as ClassicalTraceFloor's own hypotheses. The gain is that
+TWO NUMERICAL hypotheses become ONE STRUCTURAL one about the word's letters, which
+is far more directly checkable against the producer than a tabulated count. It is
+NOT a formalisation of atom_braid_word_3A, and the file says so.
+
+TRAP FOR THE NEXT AGENT. freeIdx/atomIdx are a TRANSCRIPTION of a measured pattern.
+A transcription slip yields TRUE theorems about the WRONG word, and nothing in the
+Lean would notice. Four 'example ... := rfl' anchors now pin them to the measured
+sequences so a drift fails the build. If you extend the pattern, extend the anchors.
+
+STILL OPEN, unchanged: the Schur-Weyl leg tr = 2^(c-n) (ClassicalTraceFloor step 1,
+assumed as a published theorem because Mathlib has no Schur-Weyl duality).

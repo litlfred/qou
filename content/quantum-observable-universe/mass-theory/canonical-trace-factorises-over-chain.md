@@ -75,6 +75,10 @@ letters supply $d \in \{0, -h/2, d_{pn}, -h\}$, so $d/h \in [-1, 0]$: the
 required offset is $2.43\times$ more negative than the most negative letter
 that exists. No interface offset can close the gap.
 
+The quantity $L$ itself is a free-energy difference over the Markov state
+sum; that it is the binding energy is a separate and open claim, recorded in
+[the free-energy reading](#rem:bond-log-ratio-is-a-free-energy).
+
 ## What is formalised, what is checked, what is cited
 
 `QOU.Mass.ChainTraceFactor` (sorry-free) proves the factor algebra: the

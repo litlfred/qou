@@ -15,15 +15,15 @@ for a categorical function `g` of a single calibration datum `𝔇`":
 
 - `no_anchor_invariant_realizes_swing` — the proved invariant: if the datum is
   **anchor-invariant** (`𝔇` takes the same value at the proton and muon anchors,
-  as every fixed CAL constant does — `𝔇_β`, `𝔇_π`, `m_π`, …), then any pure
+  as every fixed CAL constant does — `P_skew^β`, `P_avg^π`, `m_π`, …), then any pure
   function `g ∘ 𝔇` is **constant across anchors**, so it cannot equal a target
   `S` that **differs** between anchors. Hence `S` is not a pure function of any
   single anchor-invariant CAL datum. This is a **scope-(b) structural exclusion**
   of the *pure-function* form, citing this invariant.
 - `S_bar_odd_of_ratio` — the parity fact: `S = Q_β/E₀` with `Q_β` bar-odd
-  (`σ Q_β = −Q_β`, the sinh/CAL-2 = 𝔇_β partner) and `E₀` bar-even
+  (`σ Q_β = −Q_β`, the sinh/CAL-2 = P_skew^β partner) and `E₀` bar-even
   (`σ E₀ = E₀`, the cosh/CAL-3 unit) is **bar-odd** (`σ S = −S`). So `S`'s CAL
-  content is 𝔇_β (bar-odd, CAL-2), NOT 𝔇_π — refining the "`g(𝔇_π)`" label.
+  content is P_skew^β (bar-odd, CAL-2), NOT P_avg^π — refining the "`g(P_avg^π)`" label.
 
 **What is NOT excluded (scope-(a), still open).** The invariant excludes only the
 *pure-function-of-one-anchor-invariant-datum* form. It does **not** exclude an
@@ -46,7 +46,7 @@ If a candidate `g : D → R` is fed a datum `datum : A → D` that is *constant*
 across two anchors (`datum a = datum a'`), then `g ∘ datum` is constant across
 those anchors; so a target `S : A → R` with `S a ≠ S a'` is **not** realized by
 `g ∘ datum` at every anchor. Applied to `S = Q_β/E₀` (which swings: proton vs
-muon) and any fixed CAL datum `𝔇` (`𝔇_β`, `𝔇_π`, `m_π`, all anchor-invariant):
+muon) and any fixed CAL datum `𝔇` (`P_skew^β`, `P_avg^π`, `m_π`, all anchor-invariant):
 `S` is not a pure function of a single anchor-invariant calibration datum. -/
 theorem no_anchor_invariant_realizes_swing
     (g : D → R) (datum : A → D) (S : A → R) (a a' : A)
@@ -57,7 +57,7 @@ theorem no_anchor_invariant_realizes_swing
   rw [h a, hdatum, ← h a']
 
 /-- **`S = Q_β/E₀` is bar-odd.** With `Q_β` bar-odd (`σ Q_β = −Q_β`, the sinh /
-CAL-2 = 𝔇_β partner) and `E₀` bar-even (`σ E₀ = E₀`, the cosh / CAL-3 unit),
+CAL-2 = P_skew^β partner) and `E₀` bar-even (`σ E₀ = E₀`, the cosh / CAL-3 unit),
 their product form `Q_β · E₀⁻¹`… — stated multiplicatively as `S · E₀ = Q_β`
 to avoid an inverse, the honest content is: `σ (Q_β) = −Q_β` forces `S` bar-odd.
 Here we record the clean product version: if `S` satisfies `σ S = ε·S` and
