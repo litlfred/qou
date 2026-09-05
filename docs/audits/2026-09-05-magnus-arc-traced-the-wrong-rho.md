@@ -64,6 +64,54 @@ hook is level-**MIN** at `b=2`, level-**MAX** at `b=3, 5, 6, 7`, and 3rd of 5 at
 and roughly the opposite of the clean level-max → level-min pattern at `b=4` that ρ_bare shows and
 that three independent measurements had agreed on.
 
+## But the PRACTICAL claim survives — and is slightly better
+
+`|tr|/dim` is **not** the quantity the row truncation depends on. The bean's operational statement is
+about the y-weighted mass `|c_λ| = y_λ·|tr(ρ_λ Ω₂)|`, which weights by `y_λ` and by `dim_λ` — both of
+which `|tr|/dim` discards. Measured under both elements, convention D:
+
+| b | λ | `y_λ` | share ρ_bare | share ρ_true |
+|---|---|---|---|---|
+| 0 | (9) | 0.02212228 | 0.0 % | 0.0 % |
+| 1 | (8,1) | 0.01663817 | 70.452 % | **73.499 %** |
+| 2 | (7,2) | 0.01188126 | 21.998 % | 17.675 % |
+| 3 | (6,3) | 0.007643638 | 7.0228 % | 5.4949 % |
+| 4 | (5,4) | 0.003740086 | 0.52712 % | 3.3304 % |
+
+**Monotone decreasing in `b` under BOTH elements**, and `b=1` carries *more* mass under the true
+element (73.5 %) than under the one the arc measured (70.5 %). So the defect above does **not** break
+the truncation — it breaks the theorem the arc was trying to prove *about* it.
+
+**One figure does not reconcile and I am not going to paper over it.** The bean records *"b=1
+reflection rep 86→92 % for A=3→4"*; I measure **70.45 % (bare) / 73.50 % (true)** at A=3. The gap is
+unexplained. Candidates, none verified: the 86 % predates the 2026-09-05 word-ordering fix; it was
+computed under convention C (where `y_λ ≠ 0` for `ℓ(λ) > 2`, so the denominator has more terms); or
+`|c_λ|` was normalised differently. Worth settling before the 86 % is quoted again.
+
+## The bigger thing this exposes: the sum is already linear
+
+Under **convention D** (canonical since the 2026-08-09 owner ruling), `y_λ = 0` for `ℓ(λ) > 2`. So
+the sum `Σ_λ y_λ tr(ρ_λ Ω₂)` runs over ≤2-row partitions only. Measured, n = 3…12:
+
+| n | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| partitions `p(n)` | 3 | 5 | 7 | 11 | 15 | 22 | 30 | 42 | 56 | 77 |
+| **nonzero `y_λ`** | 2 | 3 | 3 | 4 | 4 | 5 | **5** | 6 | 6 | **7** |
+| `⌊n/2⌋+1` | 2 | 3 | 3 | 4 | 4 | 5 | 5 | 6 | 6 | 7 |
+
+**Exactly `⌊n/2⌋+1` at every n tested — linear, not exponential.** At n=9 that is 5 terms of 30; at
+n=12, 7 of 77.
+
+The bean exists to *"upgrade the poly-size row-truncation from heuristic to a rigorous error bound"*.
+If the sum being truncated is this one, **the row cap already makes it linear, with no b-decay theorem
+required** — the poly-size property the bean wants to establish would be a consequence of convention
+D rather than of anything about `b`.
+
+**I am not claiming this dissolves the bean, because I have not established which sum the production
+truncation is of.** That is a question about the consumer, not about this census, and it is the one
+thing that would decide whether the remaining `b`-decay work is load-bearing or redundant. It should
+be answered before more effort goes into the rate.
+
 ## What this means for the bean, stated carefully
 
 `qou-o6ov` is a **GAP** bean whose purpose is *"upgrades the poly-size row-truncation from heuristic
@@ -77,6 +125,12 @@ braid on the same generator sequence it holds cleanly, over 1427×.
 
 So the arc's twelve PRs measured a real and fairly strong property of a real object. It is not the
 object the bean names.
+
+**Read together with the two sections above, the arc's position is:** the theorem it was proving is
+false for the right element; the practical claim that motivated the theorem is true for the right
+element; and the poly-size property that motivated the practical claim may follow from the convention-D
+row cap without either. That is three levels of "the thing above it did not need this", and the honest
+next step is to check the consumer before proving anything further.
 
 ## What is NOT affected, and it is the part that was formalized
 
@@ -103,10 +157,13 @@ transpose-asymmetric. That is structural — only the 263.16× figure is ρ_bare
 
 - **n=9 only, one q₀.** The counterexample `E(1) < E(3)` refutes monotonicity *at this size for this
   element*; it says nothing about large `n`.
-- **This does not say the truncation is wrong.** The practical claim in the bean is about the
-  y-weighted mass `|c_λ| = y_λ·|tr(ρ_λ Ω₂)|` concentrating at `b=1` (86–92 %), which is a **different
-  quantity** from `|tr|/dim` — it weights by `y_λ` and by `dim_λ`, both of which `|tr|/dim` discards.
-  That is measured separately below.
+- **The truncation is not wrong** — measured above, it survives and improves. The defect breaks the
+  theorem, not the practice.
+- **The `⌊n/2⌋+1` count is measured at n ≤ 12, not proved**, and it is a statement about `y_λ` under
+  convention D, not about any other sum in the corpus.
+- **Which sum production truncates is NOT established here**, and it is what decides whether the
+  b-decay work is load-bearing. I have not read the consumer.
+- **The 86 % ↔ 70.5/73.5 % gap is unresolved** and I have not determined its cause.
 - **Which ρ the bean *should* be about is not settled here.** I have measured that the two differ and
   which statements hold for which. Whether the row truncation in production consumes the Hecke element
   or a braid is a question about the consumer, not about this census.
