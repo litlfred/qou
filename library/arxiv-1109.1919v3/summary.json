@@ -1,0 +1,47 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1109.1919v3",
+ "source_sha256": "2b634edddf232047",
+ "brief": "COMBINATORIAL DESCENT DATA FOR GERBES AMNON YEKUTIELI — We consider descent data in cosimplicial crossed groupoids.",
+ "extended": "**COMBINATORIAL DESCENT DATA FOR GERBES AMNON YEKUTIELI**\n\n13 pp, 5 sections.\n\n**Abstract.** We consider descent data in cosimplicial crossed groupoids. This is a combinatorial abstraction of the descent data for gerbes in algebraic geom- etry. The main result is this: a weak equivalence between cosimplicial crossed groupoids induces a bijection on gauge equivalence classes of descent data. 0. Introduction For a cosimplicial crossed groupoidG ={Gp}p∈N we denote byDesc(G) the set of gauge equivalence classes of descent data. The purpose of this note is to prove: Theorem 0.1(Equivalence). Let Φ : G→H be a weak equivalence between cosim- plicial crossed groupoids. Then the function Desc(Φ) : Desc(G)→Desc(H) is bijective. The various notions involved are recalled or deﬁned in Section 1. The theorem is repeated as Theorem 2.4 in Section 2, and proved there. Connections with other papers, and several remarks, are in Section 3.\n\n**Outline.** 1 Combinatorial Descent Data; 0 Introduction; 2 The Main Theorem; 3 Some Remarks; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.1: Let Φ : G→H be a weak equivalence between cosim-\n- Theorem 0.1: plays a crucial role in the new version of our paper [Ye1] on twisted\n- Theorem 2.4: Let Φ : G→H be a weak equivalence between cosim-\n- Theorem 0.1: can be given a shorter proof using Breen’s diagram calculus.\n- Theorem 0.1: signiﬁcantly (see next remark). The proof given in [Pr] uses methods\n- Theorem 0.1: The result of Prezma extends Jardine’s corresponding result for (or-",
+ "tokens": {
+  "brief": 28,
+  "extended": 386
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-combinatorial-descent-data",
+   "title": "Combinatorial Descent Data",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-0-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-002-2-the-main-theorem",
+   "title": "The Main Theorem",
+   "pages": "5-10"
+  },
+  {
+   "id": "sec-003-3-some-remarks",
+   "title": "Some Remarks",
+   "pages": "10-12"
+  },
+  {
+   "id": "sec-004-references",
+   "title": "References",
+   "pages": "12-13"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
