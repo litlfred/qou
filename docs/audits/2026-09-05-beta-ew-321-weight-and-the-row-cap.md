@@ -197,5 +197,33 @@ instance is the audit author's own.
 > `c = (Markov norm)/(Hodge polarization norm)` and that the Hodge denominator —
 > the Braden–Northover period polarization of `Jac(Bring)` — is not supplied, so
 > `c` is not a delivered number. What is measured is the size of the family
-> choice on its numerator, and a mislabel in its verdict string. The other two
-> α_EM files are **not** triaged.
+> choice on its numerator, and a mislabel in its verdict string.
+>
+> **The other two α_EM files are now triaged too, and neither needs a change.**
+>
+> `alpha_em_b2_canonical_scale_ratio_probe.py` is the **counter-example**: it
+> tabulates `y_λ` and `w_wedderburn` side by side under explicit labels, and
+> its own comment already states the distinction correctly — *"tr(1)=1 for the
+> canonical Markov trace: `sum_lam y_lam * f^lam = 1`. (NOT `sum_lam w_lam` —
+> that equals 1 only at q=1; the Wedderburn weight `w_lam` is a distinct corpus
+> normalization, reported as-is.)"* So the mislabel is specific to the B2
+> scalar probe, **not** general to the axis.
+>
+> `alpha_5_jucys_murphy_central.py` is **affected in principle, immaterial in
+> fact**. Its headline compares `Σ_{λ ⊢ 3A, ht=6} w_λ c_5(λ)` across A = 2,3,4
+> with `w = dim_q²/[n]_q!` — and since `n = 3A` that is a cross-atom metric at
+> three different `n`, the use `AGENTS.md` and `qou-oots` R2 both exclude
+> scope-(b). Measured
+> ([`alpha5_jm_crossatom_budget_probe.py`](../../computations/probes/alpha5_jm_crossatom_budget_probe.py),
+> 2/2): the height-6 partial budget `B_6(A)` spreads **222×** across those A,
+> and `α_5(A) = B_6(A)·⟨c_5⟩_A` factorises exactly (to 1e-40), so a raw spread
+> genuinely cannot separate *"c_5 moved"* from *"the budget moved"*.
+>
+> **But the conclusion is route-invariant and is a negative.** The producer's
+> own three routes give relative spreads of **482.16 %** (normalised by
+> `[3A]_q!`), **83.16** (raw) and **1327.18 %** (self-normalised — the route R2
+> admits), and its verdict is *"strongly atom-dependent (mechanism orthogonal
+> to JM-central)"*. The weight-family choice can neither rescue nor overturn a
+> negative all three routes agree on, so the Molien ruling requires no change
+> here. I was heading for a distortion finding; the measurement says the result
+> is robust.
