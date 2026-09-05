@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T20:45:37.333227+00:00",
-  "commitSha": "46a986c80459be1485ff0513ab926d4e187b61ed",
+  "computedAt": "2026-09-05T12:31:30.854993+00:00",
+  "commitSha": "00748304b7b49e7e55ae89f2a2312b87d11a5cdd",
   "assertions": [
     {
       "name": "the live readout reproduces the proved single-crossing bond factor z + d",
@@ -12,6 +12,12 @@
     },
     {
       "name": "the deprecated readout does NOT — this is the error behind the retracted test",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "on all three interface letters the live readout equals z + d and the deprecated one misses by more than 0.1 — the table published as the correction to thm:markov-trace-factorization",
       "computed": "1",
       "expected": "1",
       "passed": true
@@ -42,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 36,
+  "durationMs": 18,
   "computation": "no_within_generator_noncommutativity_probe",
   "scriptFile": "no_within_generator_noncommutativity_probe.py",
-  "scriptHash": "2a4df2653319",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "566098d3f2d9",
+  "scriptCommitSha": "6bd90cf0143401b8e544daaca5735fe4b2dab997",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

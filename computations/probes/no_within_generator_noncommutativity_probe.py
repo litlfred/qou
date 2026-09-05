@@ -94,9 +94,15 @@ sys.path.insert(0, str(COMP / "substrate"))
 import _path_bridge  # noqa: F401,E402
 
 import sympy as sp  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR as _Q50  # noqa: E402
 import gmpy2  # noqa: E402
 
 import _exact_trace_engine as E  # noqa: E402
+
+
+def _delta(qv):
+    """The substrate flavour split, in the same closed form the engine uses."""
+    return (qv - 1) ** 2 * (1 - qv ** (-4)) / 3
 
 
 def main() -> int:
@@ -130,6 +136,33 @@ def main() -> int:
           sp.simplify(live - (z + d)) == 0)
     check("the deprecated readout does NOT — this is the error behind the retracted test",
           sp.simplify(dep - (z + d)) != 0)
+
+    # §1b added 2026-09-05: the three bonds numerically, because
+    # `thm:markov-trace-factorization` PUBLISHED the deprecated readout as
+    # `z*(M)_11 + (M)_21` and the block now carries this table as its
+    # correction. Published figures need a witness, not an ad-hoc run.
+    print("\n    the three interface letters at q0 (the block's correction table):")
+    print(f"    {'bond':>5} {'z + d':>18} {'deprecated':>18} {'live':>18}")
+    q0 = sp.Float(_Q50, 30)
+    hv = q0 - 1 / q0
+    dvals = (("pp", sp.Integer(0)), ("nn", -hv),
+             ("pn", -hv * (1 - _delta(q0) / 2) / 2))
+    ok_tab = True
+    for nm, dv in dvals:
+        Mi = S + dv * sp.eye(2)
+        # `z` is a free symbol in this probe (the checks above are identities
+        # in z and d); the numeric table needs the substrate value.
+        sub = {q: q0, z: q0 ** 3 / (q0 ** 2 + 1), h: hv, d: dv}
+        want = sp.N((z + d).subs(sub), 25)
+        got_live = sp.N(vhat(Mi).subs(sub), 25)
+        got_dep = sp.N(vhat_deprecated(Mi).subs(sub), 25)
+        ok_tab &= abs(got_live - want) < sp.Float("1e-20")
+        ok_tab &= abs(got_dep - want) > sp.Float("0.1")
+        print(f"    {nm:>5} {float(want):18.12f} {float(got_dep):18.12f} "  # float64-ok: display only
+              f"{float(got_live):18.12f}")  # float64-ok: display only
+    check("on all three interface letters the live readout equals z + d and the "
+          "deprecated one misses by more than 0.1 — the table published as the "
+          "correction to thm:markov-trace-factorization", ok_tab)
 
     print("\n" + "=" * 74)
     print("§2  THE QUESTION IS EMPTY: NO WITHIN-GENERATOR NON-COMMUTATIVITY")

@@ -153,3 +153,59 @@ two different weight families, one distinguished letter.
       Unchanged by this: those numbers are `L`-derived and `L` is untouched; what
       needs revisiting is any prose calling them binding energies *because* `L`
       is a free energy.
+
+## The prose sweep: DONE, and it found a defect en route (2026-09-05)
+
+The remaining item was "decide the fate of `B_sym` and the `t7qv`/`qou-brng`
+numbers". Scoped by finding every block that co-occurs "free energy" and
+"binding", then reading each rather than bulk-editing.
+
+### The sweep's actual finding: less to fix than expected
+
+- **`QOU.BraidKnot.BsymLinearChain` needs nothing but a naming note.** `L : Bond
+  → R` is an abstract parameter over a generic ring; every theorem is a statement
+  about sums of whatever `L` is. Its line 8 already said `B_sym = α·ln(tr_free/
+  tr_atom)` is "a definition + empirical claim". That hedge is now backed by a
+  result. **No number recomputes** — the `t7qv`/`qou-brng` figures are `L`-derived
+  and `L` stands.
+- **`rem:markov-trace-gibbs-free-energy` is the one block that makes the
+  inference**, and it makes it explicitly: the Markov trace "occupies the
+  partition function slot", "energy and information appear Legendre-dual". It was
+  already careful about ONE prerequisite — reading `E_0` as a finite temperature
+  "requires naming the dynamics ... which the framework does not supply" — and
+  silent about the second. Positivity is the second, and it fails. Caveat added.
+- **`brunnian-binding-channel` deliberately left alone.** Its "free energy" is
+  `log` of a multiplicative amplitude via the archimedean functor `τ = log`,
+  separately proved (`QOU.Mass.ArchimedeanTraceBridge`, sorry-free). Different
+  usage; my result does not bite there and asserting it would be the overreach
+  this session has been correcting.
+- `mba-step03-markov-trace` mentions only a witness filename. Nothing to do.
+
+### A separate defect found while reading: a PUBLISHED WRONG READOUT
+
+`thm:markov-trace-factorization` published
+
+    Vhat_i(q) = z * (M_i)_11 + (M_i)_21
+
+which is the readout of the **deprecated**
+`computations/_deprecated/transfer_matrix_symbolic.py`, not the live one.
+Measured against the Lean-proved `twoStrandTrace_eq` on a one-crossing matrix:
+
+    bond      z + d        published        corrected (z*(M)_21 + (M)_22)
+    pp    0.612688037146  1.128088744114   0.612688037146
+    nn    0.403627738351  1.000000000000   0.403627738351
+    pn    0.508229789377  1.064088425325   0.508229789377
+
+The corrected readout reproduces `z + d` exactly; the published one misses every
+bond and is not even monotone in `d`. The factorisation statement itself is
+unaffected — what was wrong is the recipe for reading `(a_i, b_i)` off `M_i`.
+
+**This is the same readout that produced `1.128089` in a retracted test earlier
+in this arc**, already documented as a trap in
+`no_within_generator_noncommutativity_probe.py`. The trap was recorded in a probe
+and left standing in a theorem block. Fixed, and the block's correction table is
+now witnessed by that probe (new §1b, 7/7) rather than resting on an ad-hoc run —
+a published figure needs a check behind it.
+
+- [x] Decide the fate of `B_sym` and the `t7qv`/`qou-brng` numbers. **Nothing
+      recomputes; only the word "binding" was on loan, and it is now annotated.**
