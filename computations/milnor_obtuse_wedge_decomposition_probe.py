@@ -218,13 +218,83 @@ def check_claim2():
     return ok
 
 
+def check_claim3():
+    """What a MEASURE-subtraction step needs, which the set identity alone does
+    not give: W_a and W_b disjoint, W_sub contained in their union, and -- the
+    check that keeps claim 2 from passing vacuously -- W_sub NONEMPTY.
+
+    A grid-alignment caveat, recorded because it looks like a failure and is
+    not.  At `t = 0` the defining lines are axis-aligned and a symmetric grid
+    puts many points exactly ON them; the strict `<` in every membership test
+    then classifies those boundary points in a way the counts below cannot
+    reconcile, so `|W_a u W_b| - |W_sub|` overshoots `|T|` by ~40 points.  At
+    `t = pi/5` essentially no grid point is on a line and the identity is exact.
+    Only the OFF-LINE reading is meaningful -- the identity is a.e. -- so this
+    check reports both and requires exactness only where the grid is generic.
+    """
+    print("\n=== CLAIM 3: disjointness, containment, and NON-VACUITY ===")
+    ok = True
+    triples = [
+        (pi / 6, pi / 6, pi * 2 / 3),
+        (pi / 12, pi / 4, pi * 2 / 3),
+        (pi / 8, pi / 8, pi * 3 / 4),
+        (pi / 5, pi / 12, pi * 43 / 60),
+    ]
+    N = 141
+    for t_num, t_den in [(0, 1), (1, 5)]:
+        t = pi * t_num / t_den
+        generic_grid = t_num != 0
+        for (a, b, c) in triples:
+            th_a, th_b = t + 2 * c + a, t + 2 * c + 2 * a + b
+            th_s, ps = t + c + pi, pi - c
+            n_a = n_b = n_s = n_t = n_union = 0
+            overlap = outside = 0
+            for i in range(N):
+                x = mpf(-15) / 10 + (mpf(30) / 10) * i / (N - 1)
+                for j in range(N):
+                    y = mpf(-15) / 10 + (mpf(30) / 10) * j / (N - 1)
+                    w = (x, y)
+                    ia = in_wedge_at(w, th_a, a)
+                    ib = in_wedge_at(w, th_b, b)
+                    isb = in_wedge_at(w, th_s, ps)
+                    n_a += ia
+                    n_b += ib
+                    n_s += isb
+                    n_union += ia or ib
+                    n_t += in_inscribed_triangle(w, t, a, b, c)
+                    if ia and ib:
+                        overlap += 1
+                    if isb and not (ia or ib):
+                        outside += 1
+            nonempty = n_s > 0
+            counts_match = (n_union - n_s) == n_t
+            # disjointness and containment are required always; the count
+            # identity only on a generic (non-axis-aligned) grid.
+            good = overlap == 0 and outside == 0 and nonempty and (
+                counts_match or not generic_grid
+            )
+            ok &= good
+            note = "" if (counts_match or not generic_grid) else "  COUNT MISMATCH"
+            if not counts_match and not generic_grid:
+                note = "  (count skew: axis-aligned grid, boundary points -- expected)"
+            print(
+                f"  t={t_num}pi/{t_den} c={mp.nstr(c * 180 / pi, 5):>7}deg  "
+                f"|Wa|={n_a:<5} |Wb|={n_b:<5} |Wsub|={n_s:<5} "
+                f"WaandWb={overlap:<3} Wsub_outside={outside:<3} "
+                f"|WaUWb|-|Wsub|={n_union - n_s:<5} |T|={n_t:<5} "
+                f"{'OK' if good else 'FAIL'}{note}"
+            )
+    return ok
+
+
 def main() -> int:
     ok1 = check_claim1()
     ok2 = check_claim2()
+    ok3 = check_claim3()
     print()
-    if ok1 and ok2:
+    if ok1 and ok2 and ok3:
         print(
-            "BOTH CLAIMS HOLD.\n"
+            "ALL THREE CLAIMS HOLD.\n"
             "  1. wedgeAt at an obtuse half-angle is unbounded and opens away from\n"
             "     the circumcentre -- so the obtuse case cannot be obtained by\n"
             "     substituting an obtuse angle into the existing wedge.\n"
@@ -233,6 +303,10 @@ def main() -> int:
             "     analogue of lob_sum_eq_reflected. The existing acute wedge\n"
             "     machinery applies to every piece; the minus sign lives in the set\n"
             "     algebra.\n"
+            "  3. W_a and W_b are disjoint, W_sub is contained in their union, and\n"
+            "     W_sub is NONEMPTY (so claim 2 is not vacuous). On a generic grid\n"
+            "     |W_a u W_b| - |W_sub| equals |T| exactly, which is the measure\n"
+            "     subtraction the volume step needs.\n"
             "This fixes the target for the Lean a.e. identity. It proves nothing\n"
             "about the volume identity itself."
         )
