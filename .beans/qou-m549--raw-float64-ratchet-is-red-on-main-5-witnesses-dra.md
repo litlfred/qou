@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-09-03T20:35:04Z
-updated_at: 2026-09-05T05:41:33Z
+updated_at: 2026-09-05T05:53:27Z
 ---
 
 ## Measured, and re-measured after main took 55 commits
@@ -288,3 +288,36 @@ corrected.
 Recorded because a contamination list is the half of a correction that gets
 dropped, and I had just written a rule-shaped note saying so while getting my
 own list wrong in the direction of over-claiming.
+
+
+## RESOLVED 2026-09-05 — owner ruled "declare it"
+
+Declared `elapsed_s` in `qou_substrate.witness._EPHEMERAL_META_FIELDS`
+(`10fa6a5257`). ONE edit sufficed: `EPHEMERAL_TIMING_FIELDS` is derived by a
+SUBSTRING TEST (`"dur"` or `"elapsed"`) over that mask, and `elapsed_s`
+contains `"elapsed"`, so the ratchet picked it up with no second edit. This is
+the EASY half of the two-half trap that function's own comment documents —
+`wall_sec` contains neither substring and would need both halves; NOT added
+(`qou-ywee`).
+
+STABLE. It turns no red green, and the arithmetic closes:
+
+    before (stashed)  NEW 0 / REGRESSED 0 / exit 0
+    after             NEW 0 / REGRESSED 0 / exit 0
+    total_fields      33968 -> 33946  (-22)
+    ephemeral carved     50 ->    72  (+22)
+    drained_files       190 ->   192  (+2)
+
+Same shape as the 2026-08-24 integral-float reclassification; report it as a
+reclassification, never as draining.
+
+Blast radius checked: the mask also drives `_strip_ephemeral_fields`
+(substantive-equality) and `_check_producer_takeover` (dropped-field guard).
+A changed wall clock now reads as neither a substantive diff nor a dropped
+field — correct for a duration, and exactly how `elapsed_sec` already behaves.
+`qou_mass._internal.witness_base` IMPORTS the mask rather than restating it,
+so the mirror-sync test passes with no second edit (asserted by hand; pytest
+is absent in this container).
+
+The seven producer renames stay — `elapsed_sec` is the longer-standing
+spelling. The declaration is what stops the EIGHTH site being a red.
