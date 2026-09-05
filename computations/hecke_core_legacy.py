@@ -2945,30 +2945,38 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
     """
     A = Z + N
     if A <= 1:
-        return 0.0
+        # mpf, not 0.0 (bean `qou-uiut`): now that the main return is an mpf,
+        # a float here would make a caller's type depend on A -- the exact
+        # branch-dependent-type trap `qou-9ay6` closed elsewhere in this file.
+        return _MPF_ZERO
     B = unified_iterative_correction(Z, N)
     if sdp:
         sdp_contrib, _ = sdp_cross_channel_contribution(Z, N)
         B += sdp_contrib
     if frobenius:
         B += binding_from_frobenius_pairing(Z, N)
-    # Public contract is a float, and has always been. The Rust kernel makes the
-    # accumulator carry mpf internally, and an mpf reaching a witness raises
-    # `TypeError: Object of type mpf is not JSON serializable` at
-    # `hadron_knot_table.py`'s `round(B, 4)` (Copilot, #6427 — verified).
+    # mpf, not float (bean `qou-uiut`). This used to be `return float(B)`, and
+    # BOTH reasons given for the cast have since stopped being true:
     #
-    # The cast belongs HERE, not at the kernel boundary as suggested: coercing
-    # the kernel's output would discard the 50-dps the kernel exists to carry,
-    # through the whole accumulation. Casting at the public return keeps the
-    # precision everywhere it can still be used.
+    # 1. "an mpf reaching a witness raises TypeError: Object of type mpf is not
+    #    JSON serializable at `hadron_knot_table.py`'s `round(B, 4)`"
+    #    (Copilot, #6427). That call site is `fmt(B)` now, which serializes an
+    #    mpf to a decimal string natively. The TypeError cannot occur.
     #
-    # It costs nothing measurable either way: `log_cur = s['log_norm'] +
-    # math.log(abs(tr_run))` already narrows to float64 INSIDE the accumulator
-    # (math.log returns a Python float whatever it is handed), so this path is
-    # float64-limited well upstream of here. That narrowing is a real,
-    # PRE-EXISTING precision defect and is tracked separately — it is not
-    # introduced, or fixed, by this cast.
-    return float(B)
+    # 2. "it costs nothing measurable either way: `log_cur = s['log_norm'] +
+    #    math.log(abs(tr_run))` already narrows to float64 INSIDE the
+    #    accumulator, so this path is float64-limited well upstream."
+    #    `math` was excised from this module under NO-FLOAT64 (bean
+    #    `qou-9ay6`); the accumulator uses `_mp.log`, and the name `math`
+    #    survives only in comments. The upstream narrowing that made the cast
+    #    free is gone, so the cast now costs the full 50 dps the MPFR kernel
+    #    exists to produce -- on the binding energy, which is this function's
+    #    entire output.
+    #
+    # Callers checked by call site, not by name search: exactly one live
+    # caller, `hadron_knot_table.py:188`, and it hands the value to `fmt`.
+    # The other two are under `computations/_deprecated/`.
+    return B
 
 
 def q_value_beta(Z_parent, N_parent):
