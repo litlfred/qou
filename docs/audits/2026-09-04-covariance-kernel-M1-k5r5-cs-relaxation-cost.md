@@ -79,6 +79,18 @@ non-degenerate `n`, not any single one:
 2026-08-21, verified there to `n ≤ 13`). This probe's chain reproduces that **exactly** at every `n`,
 and `J` is row-stochastic throughout — so a negative on `A` is a fact about `A`, not about the chain.
 
+**The identity itself is verified, not cited — and it is the load-bearing check.** "`P` and `N` are
+exact local per-edge sums" is the entire reason to prefer `P > N`, and the eigenfunction table only
+establishes what *licenses* the identity, not that it is right. So for `f ∈ {A, D}` the probe
+compares the direct Plancherel covariance against the edge sum:
+
+> `Cov(f, W) == E_π[(f − f*)(W − W*)] / (2(1 − β₃))` — **exact agreement at every `n = 3…12`, for
+> both `f`.**
+
+At `n = 8`: `P = Cov(A,W) = 1022/45`, edge sum `= 1022/45`, `N = −Cov(D,W) = 578/45`. `1022/45 =
+22.7111` also reproduces the `P(8)` entry of the table above, which was computed independently by the
+other probe — two separate routes to the same rational.
+
 **Cross-check, from an independent direction.** #6627 found `V_W` an exact polynomial
 `n(n−1)(n−2)/3` while `V_A`, `V_D` and `P` are not polynomial at all. That is the same boundary seen
 from the other side: **the one object with a closed form is the one whose statistic is the
