@@ -33,7 +33,7 @@ on amphichirality, not on the Milnor invariant.  It is a property of the map
 Route E is not refuted; its **cheap** construction is.  A surviving `ρ₃` must
 lie in the `PGL(3,ℂ)` character variety **away from the image of `PGL(2,ℂ)`** —
 a genuine higher-Teichmüller deformation (Fock–Goncharov coordinates, the
-Garoufalidis–Thurston–Zickert gluing equations of `library/arxiv-1207.6711v1`),
+Garoufalidis–Goerner–Zickert gluing equations of `library/arxiv-1207.6711v1`),
 not the composite above.  That is a sharper obligation than "exhibit `ρ₃` with
 `ρ₃ ≇ ρ̄₃`": it says *where* to look and, more usefully, where not to.
 

@@ -42,7 +42,7 @@ amphichirality, not on the Milnor invariant. It is a property of the map
 
 What survives: a `ρ₃` in the `PGL(3,ℂ)` character variety **away from the image
 of `PGL(2,ℂ)`** — a genuine higher-Teichmüller deformation (Fock–Goncharov;
-the Garoufalidis–Thurston–Zickert gluing equations of
+the Garoufalidis–Goerner–Zickert gluing equations of
 `library/arxiv-1207.6711v1`). That is a sharper obligation than the one it
 replaces: it says where *not* to look.
 
@@ -158,7 +158,7 @@ construction, and nobody has built one."* **Both are too pessimistic. It earns
 its cost now.**
 
 **The construction is in the literature and the corpus holds the paper.**
-`library/arxiv-1207.6711v1` (Garoufalidis–Thurston–Zickert) — already identified
+`library/arxiv-1207.6711v1` (Garoufalidis–Goerner–Zickert) — already identified
 as the one substantive rank-2 holding — states it: *"there are often several
 components of representations."* Its **Ptolemy variety** parametrises
 **boundary-unipotent** `PGL(n,ℂ)` representations, and the geometric one is a

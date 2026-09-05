@@ -85,7 +85,7 @@ and reads it as *35 held sources for the rank-2 route*. Re-measured
 |---|---|---|
 | `library/` dirs matching "quantum Teichmüller" | 35 | the **rank-1** (`PGL(2,ℂ)`) quantisation the corpus already uses — Baseilhac–Benedetti, state integrals, Faddeev dilogarithm |
 | `library/*/sections/` dirs matching Fock–Goncharov (case-insensitive, hyphen or space) | **4** | `arxiv-1204.4824v2`, `arxiv-1207.6711v1`, `arxiv-2304.12545v1`, `hyperbolicandneumann` |
-| of those, on-point for `PGL(n,ℂ)` | **1** | `arxiv-1207.6711v1` = Garoufalidis–Thurston–Zickert, *Gluing equations for `PGL(n,ℂ)`-representations of 3-manifolds* — 109 occurrences of `PGL(n, C)`; the other three mention it once each |
+| of those, on-point for `PGL(n,ℂ)` | **1** | `arxiv-1207.6711v1` = Garoufalidis–Goerner–Zickert, *Gluing equations for `PGL(n,ℂ)`-representations of 3-manifolds* — 109 occurrences of `PGL(n, C)`; the other three mention it once each |
 
 So the held body is for the rank-1 machinery, and the rank-2 route has **one**
 substantive held source, not thirty-five. The count in `qou-960k` was not wrong;
