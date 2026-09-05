@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T06:21:10Z
-updated_at: 2026-09-05T06:21:49Z
+updated_at: 2026-09-05T06:36:10Z
 ---
 
 Found 2026-09-05 while closing out the `qou-tol0` root cause. That bean's own
@@ -68,3 +68,51 @@ Fix at the producer, and expect one to go RED — that is the honest outcome:
 ## Do NOT widen anything
 
 The audit exits 1 on any blocking hit. The fix is always at the assertion.
+
+
+---
+
+## 2026-09-05: one fixed, and a measured NEGATIVE on the next one
+
+**`yekutieli_borromean_h2_extraction:216` — FIXED** (`cc28f268fb`). Two
+falsifiable assertions replace the unfalsifiable one:
+
+- `kappa_is_three_sixteenths` **passes** — κ = 3/16, verified exact
+  (`κ − 3/16 = 0.0` at dps 30, 50 **and** 80, so not a PSLQ guess). The
+  producer was already *printing* `mpmath.identify(κ) = (3/16)` to stdout and
+  asserting nothing about it.
+- `yekutieli_kappa_equals_minus_G` **fails**, at 121 %. `allPassed` is now
+  false, which is the correct state.
+
+Bonus: `max(abs(float(κ)), abs(float(G))) * 2` computes in float64, so that one
+expression was **both** the tautology and this witness's only raw-float64
+field. Draining it took the witness 1 → 0.
+
+### `confined_knot_binding:289` — do NOT wire `y_λ` in. Measured.
+
+The obvious repair for `W_sym equals W_alt` is to derive the two weights
+independently from the corpus's canonical Markov weights. **That is a category
+error and the numbers say so.** At the proton q₀:
+
+    y_lambda_at(3, q0) = {(3,): 0.5054042265, (2,1): 0.2472978867, (1,1,1): 0.0}
+
+`y_λ[(1,1,1)] = 0` — the alternating block is killed by the SU(2) truncation at
+N = 2 — whereas `W_ALT = q²/(q⁴+4q²+1)` is nonzero. **`W_λ` and `y_λ` are
+different objects sharing a subscript**, exactly the "shared type is not shared
+instance" trap. Anyone repairing this assertion must first establish what
+`W_SYM`/`W_ALT` are *meant* to be derived from; it is not `y_λ`.
+
+So this one is left open deliberately rather than closed by guess. The two
+constants are `q2 / denom_w` **on both lines** (42 and 44), so any repair is
+research, not a mechanical substitution.
+
+### Remaining, with dispositions
+
+| producer:line | disposition |
+|---|---|
+| `confined_knot_binding:289` | **open** — needs the intended independent source for `W_ALT`; `y_λ` ruled out above |
+| `confined_knot_binding:308` | same shape; `expected` restates `V_pn_exact`'s definition |
+| `mass-from-q-symbolic:568,577` | candidate: turn each into an explicitly-labelled **regression pin** against a recorded literal. That catches drift in `VOL_BORROMEAN` / `HBAR_Q_SQ0`, which is real value — but it must be NAMED a regression pin, never "verifies the mass formula", or it launders a definition into a derivation |
+| `compute_atom_chi_rust:164`, `channel_asymmetry…:204` | self-reports; renaming suffices. The first needs the rust kernel to re-run |
+
+Detector count: **7 → 6 blocking**.
