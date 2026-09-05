@@ -137,8 +137,9 @@ theorem RealStrongDualityPair.dualSlack_mul_feasible_eq_zero
     step is encapsulated in `slater_strict_complementarity_kernel_axiom`
     pending Mathlib's finite-dimensional Slater + SDP rank-deficiency
     library. -/
-/-- **External axiom (Boyd-Vandenberghe 2004 §5.5.4 / Alizadeh-Haeberly-
-    Overton 1997 §3): Slater + strict complementarity implies
+/-- **External axiom (Alizadeh-Haeberly-Overton 1997 §3; strict
+    complementarity defined in Boyd-Vandenberghe 2004 §5.5.2): Slater +
+    strict complementarity implies
     optimal-face uniqueness.**
 
     Under the standard conditions
@@ -254,7 +255,7 @@ theorem real_strict_complementarity_unique
   -- deficiency theorem for the SDP optimal face: under Slater +
   -- strict complementarity, the optimal face is a single point.
   --
-  -- Concretely (Boyd-Vandenberghe §5.5.4):
+  -- Concretely (Alizadeh-Haeberly-Overton 1997 §3):
   --   * S = T - Σ_{i ∈ active} ystar_i · A_i (since inactive ystar_i = 0)
   --   * Both Φ' and Φstar lie in the optimal face
   --       F = {Φ ⪰ 0 : tr(A_i Φ) = b_i ∀i, S · Φ = 0}
@@ -262,7 +263,7 @@ theorem real_strict_complementarity_unique
   --   * Slater ⟹ this is 0 ⟹ F is a single point ⟹ Φ' = Φstar
   --
   -- Discharge the final kernel-uniqueness step via the cited
-  -- external axiom (Boyd-Vandenberghe §5.5.4); the remaining
+  -- external axiom (Alizadeh-Haeberly-Overton 1997 §3); the remaining
   -- pieces are constructed above.
   exact slater_strict_complementarity_kernel_axiom sc h_feas h_obj
     h_constraint_diff h_S_diff h_diff_S
@@ -392,7 +393,7 @@ theorem real_strict_complementarity_unique_of_active_empty_and_cost_posDef
 /-! ## §3.06  Slater + Strict-Complementarity Uniqueness Class
                   (§3b conditional-class axiomatisation)
 
-The general kernel-uniqueness step (Boyd-Vandenberghe §5.5.4) —
+The general kernel-uniqueness step (Alizadeh-Haeberly-Overton 1997 §3) —
 that under Slater + strict complementarity the SDP optimum is
 unique — is genuinely multi-week Mathlib SDP-rank-deficiency
 work.  Per AGENTS.md §3b conditional-class pattern, we
@@ -413,8 +414,8 @@ Concrete instances:
     asserts that, for the given primal SDP `sdp` and strict-
     complementarity certificate `sc`, the primal optimum
     `sc.Φstar` is unique among feasible matrices with matching
-    objective.  This is the categorical content of Boyd-
-    Vandenberghe §5.5.4.
+    objective.  This is the categorical content of
+    Alizadeh-Haeberly-Overton 1997 §3.
 
     Per §3b conditional-class pattern, this class is the
     Lean-typed bookkeeping for the multi-week Mathlib SDP-
@@ -629,7 +630,7 @@ theorem ofSlater_proven
       rw [Matrix.mul_sub, Matrix.trace_sub]
       rw [h_feas.2 i, sc.primal_feas.2 i]
       ring
-    -- Step 5: invoke the rank-uniqueness axiom (Boyd-Vandenberghe §5.5.4).
+    -- Step 5: invoke the rank-uniqueness axiom (Alizadeh-Haeberly-Overton 1997 §3).
     -- This is the single Mathlib gap; everything else is now closed.
     exact SDPRankUniqueness sdp sc h_slater h_feas h_S_diff h_constraint_diff
 
