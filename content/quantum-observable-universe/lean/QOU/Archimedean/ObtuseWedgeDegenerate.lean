@@ -97,4 +97,54 @@ theorem origin_notMem_wedgeAt_of_obtuse {R θ ψ : ℝ} (h1 : π / 2 < ψ) (h2 :
   have := wedgeAt_inner_neg_of_obtuse h1 h2 hmem
   simp at this
 
+/-! ### Where Milnor's sign enters the corpus's own algebra
+
+`QOU.Archimedean.HyperbolicVolume.perp_sign_relation` (`OrthoschemeTiling.lean`)
+states the single linear relation among the three edge functionals, with
+coefficients `sin 2α`, `sin 2β`, `sin 2γ`.  **It is proved from `α + β + γ = π`
+alone — it carries no acuteness hypothesis** — so it holds verbatim in the
+obtuse case.  What acuteness buys is only the *positivity* of those three
+coefficients, and its docstring says so: "all POSITIVE for acute angles.  That
+positivity is the whole covering argument."
+
+The lemmas below locate the failure exactly: when `γ` is obtuse the relation is
+unchanged and **exactly one coefficient turns negative**.  So the obtuse case
+does not need a new relation, only a covering argument run against a different
+sign pattern — and that lone minus is Milnor's. -/
+
+/-- **`sin 2γ < 0` for an obtuse `γ`.**  `sin (2γ) = 2 sin γ cos γ` with
+`sin γ > 0` and `cos γ < 0` on `(π/2, π)`. -/
+theorem sin_two_mul_neg_of_obtuse {γ : ℝ} (h1 : π / 2 < γ) (h2 : γ < π) :
+    Real.sin (2 * γ) < 0 := by
+  rw [Real.sin_two_mul]
+  have hs : 0 < Real.sin γ :=
+    Real.sin_pos_of_pos_of_lt_pi (by linarith [Real.pi_pos]) h2
+  have hc : Real.cos γ < 0 :=
+    Real.cos_neg_of_pi_div_two_lt_of_lt h1 (by linarith [Real.pi_pos])
+  nlinarith [hs, hc]
+
+/-- **In an obtuse admissible triple the other two angles are acute.**
+`γ > π/2` and `α + β + γ = π` with `β > 0` force `α < π/2`, and symmetrically.
+(The corpus already records the `at_most_one_obtuse` half in
+`IdealTetObtuseReduction`; this is the quantitative form the sign argument
+needs.) -/
+theorem acute_of_obtuse_third {α β γ : ℝ} (hα0 : 0 < α) (hβ0 : 0 < β)
+    (hγ : π / 2 < γ) (hsum : α + β + γ = π) :
+    α < π / 2 ∧ β < π / 2 := by
+  constructor <;> linarith
+
+/-- **The obtuse sign pattern of `perp_sign_relation`'s coefficients: `+ + −`.**
+
+The relation itself is unchanged (it needs only `α + β + γ = π`); when `γ` is
+obtuse exactly one of its three coefficients is negative.  This is the precise
+point at which the acute covering argument stops applying, and the precise
+origin of the minus sign in Milnor's subdivision. -/
+theorem perp_coeff_signs_of_obtuse {α β γ : ℝ} (hα0 : 0 < α) (hβ0 : 0 < β)
+    (hγ : π / 2 < γ) (hsum : α + β + γ = π) :
+    0 < Real.sin (2 * α) ∧ 0 < Real.sin (2 * β) ∧ Real.sin (2 * γ) < 0 := by
+  obtain ⟨hα, hβ⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
+  refine ⟨?_, ?_, sin_two_mul_neg_of_obtuse hγ (by linarith)⟩
+  · exact Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+  · exact Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+
 end QOU.Archimedean.HyperbolicVolume
