@@ -178,6 +178,41 @@ def main():
     print("\n  Read the ratio column, not the ✓ marks: a conclusion that holds under both elements")
     print("  is about the b-grading; one that holds under only one is about the letter coefficients.")
 
+    # ---- the quantity the bean's PRACTICAL claim is about -------------------------------------
+    # The bean's operational statement is "b=1 is 86-92 % of the mass", where the mass is
+    # |c_λ| = y_λ·|tr(ρ_λ Ω₂)| -- the y-WEIGHTED trace, not |tr|/dim. That is what the row
+    # truncation actually drops, so it has to be measured separately, and under convention D
+    # (y_λ = 0 for ℓ(λ) > 2) it has far fewer terms than the census above.
+    from wedderburn_jones_markov import y_lambda_at  # noqa: E402
+    yl = y_lambda_at(n, q)
+    print(f"\n  y-WEIGHTED MASS |c_λ| = y_λ·|tr_λ|, convention D (y_λ = 0 for ℓ(λ) > 2):")
+    mass_b, mass_t = {}, {}
+    shown = []
+    for b, lam, dim, ab, at in rows:
+        y = yl.get(lam)
+        if y is None:
+            continue
+        y = abs(mp.mpf(str(y)))
+        if y == 0:
+            continue
+        cb, ct = y * ab * dim, y * at * dim
+        mass_b[b] = mass_b.get(b, mp.mpf(0)) + cb
+        mass_t[b] = mass_t.get(b, mp.mpf(0)) + ct
+        shown.append((b, lam, y, cb, ct))
+    tb = sum(mass_b.values())
+    tt = sum(mass_t.values())
+    print(f"  {'b':>3}  {'λ':<12}{'y_λ':>14}{'|c_λ| BARE':>16}{'|c_λ| TRUE':>16}")
+    for b, lam, y, cb, ct in shown:
+        print(f"  {b:>3}  {str(lam):<12}{mp.nstr(y, 7):>14}{mp.nstr(cb, 7):>16}{mp.nstr(ct, 7):>16}")
+    print(f"\n  {len(shown)} shapes carry nonzero y_λ, of {len(rows)} in the census.")
+    print(f"  {'b':>3}{'share BARE':>14}{'share TRUE':>14}")
+    for b in sorted(mass_t):
+        sb = 100 * mass_b[b] / tb if tb > 0 else mp.mpf(0)
+        st = 100 * mass_t[b] / tt if tt > 0 else mp.mpf(0)
+        print(f"  {b:>3}{mp.nstr(sb, 5) + ' %':>14}{mp.nstr(st, 5) + ' %':>14}")
+    print("\n  This is the truncation claim. The census above is a different quantity, and the two")
+    print("  can disagree — |tr|/dim ignores both y_λ and dim_λ, which is what the sum weights by.")
+
 
 if __name__ == "__main__":
     main()
