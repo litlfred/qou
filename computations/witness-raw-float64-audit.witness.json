@@ -36,7 +36,7 @@
       "y0_star",
       "y_star"
     ],
-    "ephemeral_duration_carved_out_fields": 73,
+    "ephemeral_duration_carved_out_fields": 74,
     "ephemeral_duration_carved_out_by_file": {
       "computations/atom-mass-derived.witness.json": 10,
       "computations/derived-chi-catalogue-sweep.witness.json": 6,
@@ -63,6 +63,7 @@
       "computations/probes/sdeformed-channel-signflip.witness.json": 1,
       "computations/qbeta/qbeta-binding-law-options.witness.json": 1,
       "computations/qbeta/qbeta-disjoint-support-factorisation.witness.json": 1,
+      "computations/qbeta/qbeta-e0-is-derived.witness.json": 1,
       "computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json": 1,
       "computations/qbeta/qbeta-layout-conflict.witness.json": 1,
       "computations/qbeta/qbeta-loop-value-pinned.witness.json": 1,
@@ -102,9 +103,9 @@
   "scriptFile": "witness_raw_float64_audit.py",
   "scriptHash": "9eb501eed27a",
   "scriptCommitSha": "d1bc358ade1369639d19fd60f10e64ad7e7886d3",
-  "commitSha": "5682a4360eefa2cbfb4afb6fd7694a5dc44b88b9",
+  "commitSha": "dce691d2173c17fad20769fcacbffdafec1bc020",
   "engine": "python",
-  "computedAt": "2026-09-05T06:09:43.186034+00:00",
+  "computedAt": "2026-09-05T06:29:51.530151+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
