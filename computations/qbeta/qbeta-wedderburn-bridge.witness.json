@@ -13,7 +13,7 @@
       "computed": [],
       "expected": [],
       "passed": true,
-      "note": "scans every non-.lake Lean source with COMMENTS STRIPPED. An earlier version of this check filtered on a leading backtick instead, which counted every doc mention as a use -- including the retirement note itself. Stripping is the only version that would actually catch a real use"
+      "note": "scans every non-.lake Lean source with COMMENTS STRIPPED, for the BARE name. Two earlier versions were wrong in opposite directions: filtering on a leading backtick counted every doc mention as a use (including the retirement note), and a plain substring test would flag the legitimate wedderburnEmbedOf / wedderburnEmbedTotal. Widened deliberately when qou-yos9 added the latter -- the gate means 'the retired opaque has no consumers', not 'no identifier starts with these letters'"
     },
     {
       "name": "the_construction_defines_the_assembly_unconditionally",
@@ -107,8 +107,8 @@
     "signature": "noncomputable def wedderburnEmbedOf {n : ℕ} (h : RSKDimIdentity n) (x : WedderburnDecomposition n) : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ := Matrix.reindex (regIndexEquiv h) (regIndexEquiv h) (blockDiagonal x) /-- And it is injective, so it deserves the name \"embedding\". -/ theorem wedderburnEmbedOf_injective {n"
   },
   "provenance": {
-    "headSha": "04cd80601974961e6ced887dd50e70856d8d1878",
+    "headSha": "50a79d4c9893b32b454250e981c8983f0157e38f",
     "producer": "computations/qbeta/qbeta_wedderburn_bridge_probe.py",
-    "elapsed_s": 4.959
+    "elapsed_s": 5.232
   }
 }

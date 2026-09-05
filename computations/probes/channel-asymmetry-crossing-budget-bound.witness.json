@@ -1,14 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15 + mpmath 1.3.0",
-  "computedAt": "2026-09-05T18:00:45.034132+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "computedAt": "2026-09-05T19:09:36.530002+00:00",
+  "commitSha": "e902faa9b8c75be037d34c7eb11527f2801c68e6",
   "assertions": [
     {
       "name": "budget_is_s_squared",
       "computed": "9",
       "expected": "9",
-      "passed": true
+      "passed": true,
+      "source": "s = STRANDS_PER_NUCLEON = 3, forced by H2 (qou-gwr9); budget = s^2 = Delta_{3,3}"
     },
     {
       "name": "ceiling_matches_reported_delta33_ceiling",
@@ -33,8 +34,8 @@
   "durationMs": 2,
   "computation": "channel-asymmetry-crossing-budget-bound",
   "scriptFile": "channel_asymmetry_crossing_budget_bound_probe.py",
-  "scriptHash": "dc8eac740d45",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "208389460a30",
+  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

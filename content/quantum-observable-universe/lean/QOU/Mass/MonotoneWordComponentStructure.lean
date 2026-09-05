@@ -50,13 +50,23 @@ linking graph is exactly the path; `μ = 1 + #{g : e_g even}`; and every even ru
 crossings are all inter-component. See
 `computations/probes/monotone_word_component_structure_probe.py`.
 
-**What is still not formalised.** The step from *"a monotone braid word"* to the two
-recursions below — that `pStart` and `compIdx` really do describe the strand positions
-and the closure's cycles. That is the definition-chasing part: it needs braid words,
-position permutations and cycle decomposition as Lean objects, and it is not attempted.
-What is proved is everything that follows **once those two functions are granted**,
-which is where all the content of tier 1 actually lives. The recursions are stated so
-that a reader can check them against `analyse` in the probe by eye.
+**What is still not formalised — narrowed 2026-09-05 to exactly one thing.** This said
+neither recursion was modelled. The **`pStart` half is now proved**, in
+`MonotoneWordPositionTracking.lean`: `posAfter_of_le` shows every position at or beyond
+`g+1` is untouched after `g` runs (this is where *ascending order* is used — run `h < g`
+moves only positions `h, h+1 ≤ g`), hence `posAfter_succ_self` — position `g+1` still
+holds strand `g+1` when `R_g` begins — and `posAfter_self`, that position `g` holds
+`pStart e g`. `crossing_pair_of_run` is the sentence this file rests on, as a theorem.
+
+What remains is the **`compIdx` half**: that the cycles of `∏_{e_g odd} σ_g` are the
+maximal consecutive blocks of odd-exponent generators. That is the cycle decomposition
+of a product of ascending adjacent transpositions — a genuinely separate piece of
+combinatorics, and not attempted. It is measured rather than assumed silently: the
+companion probe checks it as **P2** (components are consecutive strand intervals) and
+**P4** (`μ = 1 + #{g : e_g even}`), 414/414.
+
+So the chain reads: `pStart` **proved** to model the word, `compIdx` **measured** to
+model the cycles, and everything above them proved from those two.
 
 SCOPE — the theorems are unconditional. The claim that `pStart`/`compIdx` model a
 monotone closure is **scope-(a)**, 414/414.

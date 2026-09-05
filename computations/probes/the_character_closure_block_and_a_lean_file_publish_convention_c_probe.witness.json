@@ -1,0 +1,118 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T19:04:46.079909+00:00",
+  "commitSha": "4062a354b940fac0679567bc5bba3bb6b09190f2",
+  "assertions": [
+    {
+      "name": "the declaring probe's five tests are abstract B_3 braids — no nucleon appears, so it structurally cannot carry the block's table",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the canonical bridge — which computes these five atoms by the block's OWN stated method, sum_lambda y_lambda chi_lambda — agrees with none of them",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the block's proton ratio matches qou-46ab's measured C-to-D gap, so the table is the C frame",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the Lean file carries the C-frame value and claims 4e-16 agreement with a witness it is 7e-2 from",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the block's table and the scanned literal are different strings for the same C-frame quantity, so no literal scan can bridge them — which is why a sweep aimed at exactly these sites returned zero",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "the_character_closure_block_and_a_lean_file_publish_convention_c_probe",
+  "scriptFile": "the_character_closure_block_and_a_lean_file_publish_convention_c_probe.py",
+  "scriptHash": "5b0c636d1da6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_character_closure_block_and_a_lean_file_publish_convention_c_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_character_closure_block_and_a_lean_file_publish_convention_c_probe.py"
+  },
+  "description": "prop:q-hecke-seminormal-character-closure publishes a five-nucleon trace table in the EXCISED convention C. The canonical Hoefsmit+Wenzl bridge witness computes those same five atoms by the block's own stated method (sum_lambda y_lambda chi_lambda) and agrees with none of them: proton 1.0755x, neutron 1.0699x, deuteron 1.4813x, tritium 2.2038x, 3He 1.9549x. The proton ratio is the signature qou-46ab proved to 50 digits (C-frame 1.0653062286131670594, D-frame 1.1457597822878355047, |D-C|/C = 0.0755215). The block's own 'relative error ~1e-15' column is agreement between two C-frame paths, which says nothing about which convention both are in. The same C value is live in QOU/Interactions/MarkovPeelH3.lean, claiming it 'matches Hoefsmit + Wenzl bridge witness atomic-tr-m-mpfr-50dps.witness.json to ~4e-16' when that witness gives 1.1457597823152389404 -- a 7.02e-2 gap, wrong by 14 orders of magnitude, and word-for-word the class qou-46ab fixed at canonical_tr_m_three_path_comparison.py:104. qou-46ab's sweep could not see either site: three renderings of one C-frame quantity share the prefix 1.0653062286 and diverge after it (scanned ...61316, block ...59, Lean ...592389333), and a literal scan matches none of the others -- so a sweep whose purpose was to find these returned zero for content and Lean. The block's declaring witness is a structural verifier over five ABSTRACT B_3 braids and cannot carry a nucleon table. NOTHING IS RECOMPUTED: the migration belongs to qou-46ab and moves five published figures by 7-120 %. qou-i229.",
+  "contentBlock": "prop:q-hecke-seminormal-character-closure",
+  "data": {
+    "canonical_bridge_vs_block_ratio": {
+      "proton": {
+        "canonical_bridge_D": "1.1457596924573008697",
+        "ratio_D_over_published_C": "1.0755214"
+      },
+      "neutron": {
+        "canonical_bridge_D": "0.98774368811580957163",
+        "ratio_D_over_published_C": "1.0698744"
+      },
+      "deuteron": {
+        "canonical_bridge_D": "0.57517224391777187083",
+        "ratio_D_over_published_C": "1.481309"
+      },
+      "tritium": {
+        "canonical_bridge_D": "0.22931010210455650733",
+        "ratio_D_over_published_C": "2.2038004"
+      },
+      "helium-3": {
+        "canonical_bridge_D": "0.40376703685142817037",
+        "ratio_D_over_published_C": "1.9549015"
+      }
+    },
+    "convention_attribution": {
+      "c_frame_proton": "1.0653062286131670594",
+      "d_frame_proton": "1.1457597822878355047",
+      "gap_over_C": "0.075521528",
+      "gap_over_D": "0.070218518",
+      "source": "qou-46ab via he4_witness_convention_attribution_probe.py"
+    },
+    "lean_false_agreement_claim": {
+      "file": "QOU/Interactions/MarkovPeelH3.lean",
+      "states_suffix_after_1.0653062286": "92389333",
+      "claims_agreement_with": "atomic-tr-m-mpfr-50dps.witness.json",
+      "claimed_gap": "4e-16",
+      "actual_gap": "0.070218518"
+    },
+    "why_the_literal_scan_missed_it": {
+      "common_prefix": "1.0653062286",
+      "scanned_suffix": "1316",
+      "block_suffix": "9",
+      "lean_suffix": "92389333",
+      "note": "same C-frame quantity, three renderings; a literal scan matches none of the others"
+    }
+  },
+  "caveats": [
+    "NOTHING IS RECOMPUTED. Migrating this table to convention D is qou-46ab's scoped job; it moves five published figures by 7-120 % and needs the Lean declaration moved in the same pass or the two diverge further. Both sites are LABELLED, the precedent df13e845cee set.",
+    "No claim about the 11th-digit residual between the block's rendering (...59) and qou-46ab's C-frame (...61) -- that is 2e-11, a separate and much smaller question than the 7.55 % convention gap, and it is not diagnosed here.",
+    "No claim that the character-closure identity is wrong. It is not; the declaring probe verifies it correctly on abstract braids and it holds in either convention."
+  ]
+}

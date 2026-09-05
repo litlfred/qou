@@ -23,9 +23,27 @@ witness `markov-peel-atomic-tr-m.witness.json`):
 
 Direct numerical cross-check at q₀:
   proton  = b₀·γ + b₁·σ₀ + b₂·σ₁ + b₃·L₊ + b₄·L₋ + b₅·e⁻
-       tr_M(proton)|q₀ = +1.065306228592389333… (matches Hoefsmit
-       + Wenzl bridge witness `atomic-tr-m-mpfr-50dps.witness.json`
-       to ~4·10⁻¹⁶).
+       tr_M(proton)|q₀ = +1.065306228592389333…
+
+  ⚠ CONVENTION C, and the agreement claim that stood here was FALSE.
+  Corrected 2026-09-05 (`qou-i229`, feeding `qou-46ab`). This comment read
+  "(matches Hoefsmit + Wenzl bridge witness
+  `atomic-tr-m-mpfr-50dps.witness.json` to ~4·10⁻¹⁶)". That witness gives
+  1.1457597823152389404; the gap is 7.02·10⁻², **not** 4·10⁻¹⁶ — wrong by
+  fourteen orders of magnitude. It is word-for-word the class `qou-46ab`
+  found and fixed at `canonical_tr_m_three_path_comparison.py:104`
+  ("matches bridge to all digits" → "now provably FALSE"), which survived
+  here because that bean scanned the literal `1.06530622861316` while this
+  file renders the same quantity as `1.065306228592389333`.
+
+  `qou-46ab` attributes the value to 50 digits:
+       C-frame  1.0653062286131670594
+       D-frame  1.1457597822878355047     |D−C|/C = 0.0755215
+
+  The VALUE IS NOT CHANGED here. Migration to convention D is `qou-46ab`'s
+  scoped job and must move this declaration together with
+  `prop:q-hecke-seminormal-character-closure`, which publishes the same
+  C-frame table, or the two diverge further.
 
 ## Scope vs the abstract `MarkovTrace` typeclass
 

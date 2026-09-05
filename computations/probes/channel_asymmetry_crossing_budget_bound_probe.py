@@ -202,8 +202,22 @@ def main() -> int:
         engine_version=f"python {platform.python_version()} + mpmath {mp.__version__}",
         output_dir=str(_HERE), start_time=t0,
     )
+    # This compared `str(c_inter)` to `str(s * s)` while `c_inter = s * s` is
+    # its own definition four lines up — a tautology, not a check (bean
+    # `qou-t0wm`). Pinned to the literal instead, matching how the sibling
+    # assertion below writes `expected="9"`.
+    #
+    # BE CLEAR ABOUT WHAT CARRIES THE FALSIFIABILITY: it is the PIN, not the
+    # enumeration. `len(_inter_pairs)` is s^2 by construction and is here only
+    # to exercise the pair-set the budget is a count OF. What can actually
+    # fail is `STRANDS_PER_NUCLEON` moving off the value H2 forces (qou-gwr9)
+    # without this bound being revisited — which is the regression that
+    # matters, since every conclusion below rides on c_inter = 9.
+    _inter_pairs = [(_i, _j) for _i in range(s) for _j in range(s)]
     wb.add_assertion("budget_is_s_squared",
-                     computed=str(c_inter), expected=str(s * s))
+                     computed=str(len(_inter_pairs)), expected="9",
+                     source="s = STRANDS_PER_NUCLEON = 3, forced by H2 "
+                            "(qou-gwr9); budget = s^2 = Delta_{3,3}")
     wb.add_assertion("ceiling_matches_reported_delta33_ceiling",
                      computed=str(int(r_max)), expected="9")
     wb.add_assertion("nature_exceeds_budget",

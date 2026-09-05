@@ -29,6 +29,45 @@ Two layers have to be got right, and each has a natural wrong answer:
 | Tritium | $0.10405211868$ | $0.10405211868$ | $1.07 \times 10^{-14}$ |
 | ${}^3$He | $0.20654085856$ | $0.20654085856$ | $1.03 \times 10^{-14}$ |
 
+> **⚠ This table is in the EXCISED convention C** (measured 2026-09-05,
+> `qou-i229`; probe
+> `the_character_closure_block_and_a_lean_file_publish_convention_c_probe.py`,
+> 5/5). The canonical Hoefsmit + Wenzl bridge witness computes these same five
+> atoms by **this block's own stated method**, $\sum_\lambda y_\lambda
+> \chi_\lambda$, and agrees with none of them:
+>
+> | atom | published | canonical bridge | ratio |
+> |---|---:|---:|---:|
+> | Proton | $1.06530622859$ | $1.14575969245730087$ | $1.0755$ |
+> | Neutron | $0.92323329717$ | $0.98774368811580957$ | $1.0699$ |
+> | Deuteron | $0.38828647155$ | $0.57517224391777187$ | $1.4813$ |
+> | Tritium | $0.10405211868$ | $0.22931010210455651$ | $2.2038$ |
+> | ${}^3$He | $0.20654085856$ | $0.40376703685142817$ | $1.9549$ |
+>
+> The proton ratio is the signature `qou-46ab` established to 50 digits:
+> C-frame $1.0653062286131670594$ against D-frame $1.1457597822878355047$,
+> $|D-C|/C = 0.0755215$.
+>
+> **The "relative error" column below is agreement between two *C-frame* paths.**
+> Two paths agreeing tells you nothing about which convention both are in, and
+> that column has been read as a verification of the table. It is not one.
+>
+> **Not recomputed.** Migrating to convention D is `qou-46ab`'s scoped job: it
+> moves all five published figures by 7–120 %, and
+> [`MarkovPeelH3.lean`](../lean/QOU/Interactions/MarkovPeelH3.lean) carries the
+> same C value and must move in the same pass. Labelled rather than changed, the
+> precedent `df13e845cee` set.
+>
+> `qou-46ab`'s own sweep could not see this block: it scanned for the literal
+> `1.06530622861316`, and this table renders the same quantity as
+> `1.06530622859`.
+
 ## Production paths
 
-The canonical values are rigorously evaluated via formal trace definitions. All three paths agree at the precision floor of their respective layers.
+The canonical values are rigorously evaluated via formal trace definitions. All
+three paths agree at the precision floor of their respective layers — **within
+convention C**; see the box above. The declaring witness,
+`q-hecke-seminormal-character-closure-probe`, verifies the character-closure
+identity on five **abstract** $B_3$ braids (identity, $\sigma_1$, the Coxeter
+element, the figure-8, the full twist) and contains no nucleon, so it is a
+structural verifier of the identity and not the producer of this table.

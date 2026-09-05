@@ -59,6 +59,55 @@ The 31 have NOT been triaged. Expected buckets:
 Only (c) is confirmed, and only for those four. Do NOT report "31 stale
 files"; report "31 carry the value, 4 confirmed hardcoded as live references."
 
+## 🛑 THE LITERAL SCAN MISSED CONTENT AND LEAN ENTIRELY (2026-09-05, from `qou-i229`)
+
+Probe: `the_character_closure_block_and_a_lean_file_publish_convention_c_probe.py`
+(5/5). Found by `scripts/witness-block-agreement.py`, not by any scan for this
+value.
+
+**The "31 files" count is a floor, and it undercounts by construction.** This
+bean scanned for the literal `1.06530622861316`. Two live sites carry the same
+C-frame quantity under different renderings and matched **zero times**:
+
+    site                                             renders it as
+    prop:q-hecke-seminormal-character-closure        1.06530622859
+    QOU/Interactions/MarkovPeelH3.lean               1.065306228592389333
+    (this bean scanned for)                          1.06530622861316
+
+A literal scan cannot bridge three renderings of one number. This is the rounding
+lesson `qou-i229` opened with, arriving from the other side: there it inflated a
+count fourfold, here it silently zeroed one. **Anything relying on that 31 should
+be re-derived with a rounding-aware match, and `content/` and `lean/` belong in
+scope — the bean's own buckets (a)/(b)/(c) are all about `computations/`.**
+
+### Both sites are the class this bean already fixed once
+
+`prop:q-hecke-seminormal-character-closure` publishes the C-frame table for all
+five nuclei. The canonical Hoefsmit + Wenzl bridge computes those same atoms by
+the block's **own stated method** (`Σ_λ y_λ χ_λ`) and agrees with none:
+
+    proton 1.0755x   neutron 1.0699x   deuteron 1.4813x
+    tritium 2.2038x  ³He 1.9549x
+
+The proton ratio is this bean's own `0.0755215` signature. The block's *"relative
+error ~1e-15"* column is agreement between **two C-frame paths**, which says
+nothing about which convention both are in — and it reads as a verification.
+
+`MarkovPeelH3.lean` states the C value and claims it *"matches Hoefsmit + Wenzl
+bridge witness `atomic-tr-m-mpfr-50dps.witness.json` to ~4·10⁻¹⁶"*. That witness
+gives `1.1457597823152389404`; the gap is `7.02e-2`, **wrong by fourteen orders
+of magnitude**, and word-for-word the claim this bean already disproved at
+`canonical_tr_m_three_path_comparison.py:104`.
+
+**Nothing recomputed.** Both sites labelled; migration is this bean's, and it
+moves five published figures by 7–120 % — the Lean declaration must move in the
+same pass or the two diverge further.
+
+- [ ] Add `content/` and `lean/` to the triage scope; the 31 covers neither.
+- [ ] Re-derive the count with a rounding-aware match rather than a literal.
+- [ ] The two sites above are confirmed bucket (c) — live, undeclared, and one
+      of them formal.
+
 ## DO NOT SWEEP
 
 AGENTS.md is explicit that a corpus-wide sweep must not be launched off a

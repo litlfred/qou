@@ -900,12 +900,68 @@ Report **7 blocks / 31 asserted**, from 15/79.
       computing an excised convention, which is the wrong direction; the honest
       resolution is that the checker cannot distinguish "unproduced" from
       "unproducible by policy".
-- [ ] Four blocks left beyond that. `prop:q-beta-spectral-bridge` (12 asserted)
-      is the largest and belongs to `qou-cds1`, not here — migrating it alone
-      half-migrates the channel. `prop:q-hecke-seminormal-character-closure`
-      (5/5, three rival candidates **including the aggregator**) is the next
-      readable one, and its candidate list is precisely the case where the
-      coverage score cannot be trusted.
+## TRIAGE 8: `prop:q-hecke-seminormal-character-closure` — the largest divergence in this bean, and it feeds `qou-46ab`
+
+Probe: `the_character_closure_block_and_a_lean_file_publish_convention_c_probe.py`
+(5/5). Written up in `qou-46ab`, which owns the migration.
+
+**All three top-scoring candidates were wrong, in three different ways** — the
+case the checker's docstring says scoring cannot settle:
+
+    laurentq-a5-ceiling-measure        5/5   a WALLTIME BENCHMARK
+    rho-k-leading-order-verification   5/5   scriptFile literally reads
+                                             "(deferred — producer not in
+                                             computations/ tree)"
+    witness-float64-padding-audit      5/5   the AGGREGATOR
+
+Reading beat scoring, and found something larger than a pointer problem.
+
+**The table is the excised convention C**, by 7 % to 120 %. The canonical
+Hoefsmit + Wenzl bridge computes these same five atoms by the block's *own stated
+method* and agrees with none of them; the proton ratio is `qou-46ab`'s own
+`0.0755215` C→D signature. **The block's "relative error ~1e-15" column is
+agreement between two C-frame paths** — which says nothing about which convention
+both are in, and reads as a verification. Largest divergence this bean has found;
+previous record was the 21 % `z` gap.
+
+The same C value is live in **Lean** (`MarkovPeelH3.lean`), claiming 4e-16
+agreement with a witness it is 7e-2 from — word-for-word the claim `qou-46ab`
+already disproved in `computations/`.
+
+**`qou-46ab`'s literal scan could not see either site**: it scanned
+`1.06530622861316`; the block renders `…859` and Lean `…592389333`. Zero matches
+in a sweep whose whole purpose was to find them. Both sites labelled, nothing
+recomputed — the migration is `qou-46ab`'s.
+
+### 🛑 I HIT THE TRANSCRIPTION TRAP THREE TIMES, ONE COMMIT AFTER DOCUMENTING IT
+
+Closing this row, my own probe closed it three separate ways without producing
+anything: the block's figures in a `data` field, then in the witness
+**description prose**, then as a **prefix** of the Lean value I was quoting as
+evidence. Each time the row closed and the figures still had no producer.
+
+Fixed by recording renderings as **suffixes after a shared prefix**, which
+carries the finding (three renderings of one quantity) without creating a
+matchable literal. Effect: the report went **26 → 31** asserted once the
+transcription came out — my own closures had been hiding five figures.
+
+That the author of the warning walked into it three times in twenty minutes is
+the strongest evidence that the weakness is structural, not a lapse. It should
+be read as a design limit of any checker of this shape: **matching a block's
+numbers against text that mentions them cannot distinguish evidence from echo.**
+A version reading only computed `data` fields, and only from producers, would be
+stricter — and would also have called `prop:confined-knot-binding` unwitnessed
+when its two figures sat in prose.
+
+Report **7 blocks / 31 asserted** (honest), from 15/79.
+
+- [ ] Six blocks left. `prop:q-beta-spectral-bridge` (12 asserted) is the largest
+      and belongs to `qou-cds1` — migrating it alone half-migrates the channel.
+      `conj:im-q-physical-role` (4) and `prop:em-coupling-bring-zero-mode` (3)
+      are the next readable ones.
+- [ ] **Worth considering before any gate**: a `data`-only, producer-only variant
+      of the checker. Stricter and immune to the echo problem, at the cost of
+      flagging blocks whose provenance genuinely lives in prose.
 - [ ] Consider whether `contentBlock`-on-a-verifier deserves its own check. The
       signature is mechanical: a witness declaring a block whose assertions are
       all engine-agreement comparisons and whose data carries none of the block's
