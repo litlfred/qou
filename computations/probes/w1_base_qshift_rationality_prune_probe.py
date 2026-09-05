@@ -179,19 +179,49 @@ def section2():
 # ----------------------------------------------------------------------------
 # series of the sheet through X(0) = -1, exact rationals
 # ----------------------------------------------------------------------------
+def _mul_trunc(a, b, m):
+    """Product of two coefficient lists, truncated to degree m."""
+    out = [sp.Integer(0)] * (m + 1)
+    for i, ai in enumerate(a):
+        if ai == 0 or i > m:
+            continue
+        for j, bj in enumerate(b):
+            if i + j > m:
+                break
+            if bj != 0:
+                out[i + j] += ai * bj
+    return out
+
+
+def _P_of_series(s, m):
+    """Coefficient list of P(S(z), z) truncated to degree m, S given by list s."""
+    s2 = _mul_trunc(s, s, m)
+    s3 = _mul_trunc(s2, s, m)
+    out = [sp.Integer(0)] * (m + 1)
+    for k in range(m + 1):
+        out[k] += s3[k]                                        # S^3
+        out[k] += s2[k] + (s2[k - 1] if k >= 1 else 0)         # (z+1) S^2
+        out[k] += (s[k] + (s[k - 1] if k >= 1 else 0)
+                   + (s[k - 2] if k >= 2 else 0))              # (z^2+z+1) S
+    for k, c in ((0, 1), (1, 1), (2, 1), (3, 1)):              # z^3+z^2+z+1
+        if k <= m:
+            out[k] += c
+    return out
+
+
 def sheet_series(N):
-    """Coefficients x_0..x_N of the sheet X(z) = -1 + sum x_n z^n (a simple root at z=0)."""
+    """Coefficients x_0..x_N of the sheet X(z) = -1 + sum x_n z^n (a simple root at z=0).
+
+    Truncated coefficient-list arithmetic — O(N^2) per step rather than expanding the
+    full cubic in a growing polynomial, which is what makes N ~ 70 cheap."""
     x = [sp.Integer(-1)]
     PX0 = PX.subs({X: -1, z: 0})
     assert PX0 != 0
     for n in range(1, N + 1):
-        S = sum(x[i] * z**i for i in range(n))
-        val = sp.Poly(sp.expand(P.subs(X, S)), z).coeff_monomial(z**n)
+        val = _P_of_series(x + [sp.Integer(0)], n)[n]
         x.append(sp.Rational(-val, PX0))
-    S = sum(x[i] * z**i for i in range(N + 1))
-    resid = sp.Poly(sp.expand(P.subs(X, S)), z)
-    low = [resid.coeff_monomial(z**n) for n in range(N + 1)]
-    assert all(c == 0 for c in low), low
+    resid = _P_of_series(x, N)
+    assert all(c == 0 for c in resid), resid[:8]
     return x
 
 
@@ -214,6 +244,38 @@ def search_relation(shifted, order, D, N):
     return M.nullspace()
 
 
+# Large primes for the mod-p rank bound below. A rational dependency among integer
+# columns can be scaled to an integer one of content 1, which stays nonzero mod p;
+# so FULL COLUMN RANK mod p implies full column rank over Q. Exact, and far cheaper
+# than rational Gaussian elimination on entries of size q^(3N).
+_PRIMES = (2147483647, 2147483629)
+
+
+def _full_column_rank_mod_p(M, p):
+    """True iff the exact rational matrix M has full column rank mod p (after
+    clearing denominators row-wise, which does not change the rank)."""
+    rows = []
+    for i in range(M.shape[0]):
+        entries = [sp.Rational(M[i, j]) for j in range(M.shape[1])]
+        den = sp.lcm([e.q for e in entries]) if entries else 1
+        rows.append([int(e * den) % p for e in entries])
+    ncols = M.shape[1]
+    piv = 0
+    for c in range(ncols):
+        r = next((i for i in range(piv, len(rows)) if rows[i][c] % p), None)
+        if r is None:
+            return False                      # column c has no pivot -> rank deficient
+        rows[piv], rows[r] = rows[r], rows[piv]
+        inv = pow(rows[piv][c], p - 2, p)
+        rows[piv] = [(v * inv) % p for v in rows[piv]]
+        for i in range(len(rows)):
+            if i != piv and rows[i][c]:
+                f = rows[i][c]
+                rows[i] = [(a - f * b) % p for a, b in zip(rows[i], rows[piv])]
+        piv += 1
+    return True
+
+
 def section3(x):
     print(HR)
     print('3  q-holonomic search on the sheet X(0) = -1: sum_{k<=3} c_k(z) X(q^k z) = 0 ?')
@@ -230,15 +292,18 @@ def section3(x):
             print(f'  q = {qv}, order<=3, deg<={D}: nullspace dim = {len(ns)}')
     # Symbolic q, via rank: rank over Q(q) >= rank at any rational specialisation, so
     # FULL COLUMN RANK at one specialisation already excludes a relation over Q(q) (an
-    # identity in q). Exact rational arithmetic; no symbolic elimination needed.
+    # identity in q). The rank itself is certified mod p (see _full_column_rank_mod_p):
+    # full column rank mod p implies full column rank over Q, so this is exact, and it
+    # avoids rational elimination on entries of size q^(3N).
     for D in (2, 4, 6):
         nunk = 4 * (D + 1)
         full = []
         for qv in (sp.Rational(17, 5), sp.Rational(7, 3)):
             shifted = [[x[n] * qv**(k * n) for n in range(N + 1)] for k in range(4)]
-            full.append(_rows(shifted, 3, D, N).rank() == nunk)
+            M = _rows(shifted, 3, D, N)
+            full.append(all(_full_column_rank_mod_p(M, p) for p in _PRIMES))
         results[('symbolic q (rank)', D)] = 0 if all(full) else 1
-        print(f'  symbolic q, order<=3, deg<={D}: full column rank ({nunk}) at '
+        print(f'  symbolic q, order<=3, deg<={D}: full column rank ({nunk}) mod p at '
               f'q = 17/5, 7/3: {full} -> relation over Q(q) excluded: {all(full)}')
     ok = all(v == 0 for v in results.values())
     print(f'  SECTION 3 VERDICT no q-difference relation in any tested (order,degree): {ok}')
@@ -294,7 +359,11 @@ def section4(x, ode):
 def main():
     ok1 = section1()
     ode, order = section2()
-    N = 40
+    # N must leave the section-4 differential control enough equations: that search has
+    # (order+1)(D+1) unknowns with D the largest ODE coefficient degree, against N-order
+    # usable rows (the top `order` coefficients of a truncated series are not exact).
+    Dode = max(sp.Poly(pk, z).degree() for pk in ode if pk != 0)
+    N = max(70, (order + 1) * (Dode + 1) + order + 8)
     x = sheet_series(N)
     print(f'  sheet through X(0) = -1: x_0..x_6 = {x[:7]} (exact Q, verified to z^{N})')
     ok3 = section3(x)

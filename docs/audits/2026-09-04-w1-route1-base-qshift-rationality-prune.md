@@ -72,24 +72,42 @@ exactly on the branch locus (plus apparent singularities at `z = ±1` and the ro
 singular, as the jet-pole picture of `qou-xufp` says.
 
 §3 searches, on the sheet through `X(0) = −1` (`x₀..x₆ = −1, −1/2, 0, −5/16, 5/32,
-5/128, 5/256`, exact, verified through `z⁴⁰`), for `Σ_{k≤3} c_k(z) X(qᵏz) = 0` with
+5/128, 5/256`, exact, verified through `z⁷⁰`), for `Σ_{k≤3} c_k(z) X(qᵏz) = 0` with
 `deg c_k ≤ D`:
 
 | test | result |
 |---|---|
-| `q ∈ {11/10, 2, 3/2}`, `D ∈ {2, 4, 6}`, 41 equations | nullspace dimension **0** in all nine cases |
+| `q ∈ {11/10, 2, 3/2}`, `D ∈ {2, 4, 6}`, 71 equations | nullspace dimension **0** in all nine cases |
 | symbolic `q`, `D ∈ {2, 4, 6}` | full column rank (`12 / 20 / 28`) at `q = 17/5` and `7/3`, so **no relation over `ℚ(q)`** either |
 
-The symbolic verdict uses rank rather than symbolic elimination: the rank over
-`ℚ(q)` is at least the rank at any rational specialisation, so full column rank at
-one specialisation excludes a relation over `ℚ(q)`. (The first version of the probe
-ran sympy's nullspace over `ℚ(q)` directly and did not finish `D = 1` in ten
-minutes; the rank form is exact and takes seconds.)
+The symbolic verdict uses rank rather than symbolic elimination, and the rank itself
+is certified mod `p`. Both steps are exact and each is worth stating separately.
+The rank over `ℚ(q)` is at least the rank at any rational specialisation, so full
+column rank at one specialisation excludes a relation over `ℚ(q)`; and a rational
+dependency among integer columns scales to an integer one of content 1, which stays
+nonzero mod `p`, so full column rank mod `p` implies full column rank over `ℚ`.
+
+Both detours were forced by cost, and the second only became visible once the first
+was in place. Sympy's nullspace over `ℚ(q)` did not finish `D = 1` in ten minutes,
+which is why the specialisation argument is used at all; rational Gaussian
+elimination on the specialised matrix then ran **15 CPU-minutes without finishing
+`D = 6`**, because the entries carry `q^{3N}` — at `q = 17/5` and `N = 70` that is a
+150-digit rational per entry. Two primes near `2³¹` reduce the whole `§3` rank block
+to well under a second. The section is exact either way; only the second form is
+runnable.
 
 §4 runs two controls through the same searcher: the differential search on the same
-series **finds** an ODE proportional to §2's, and the q-search on `1/(1−z)` **finds**
-`(1−z) f(z) − (1−qz) f(qz) = 0`. So the null result of §3 is a property of the sheet,
-not of the searcher.
+series **finds** a one-dimensional nullspace, and its ODE is proportional to §2's
+(checked by cross-ratios, not by eye); and the q-search on `1/(1−z)` **finds**
+`−(z−1) f(z) + (qz−1) f(qz) = 0`, which is that function's first-order q-equation.
+So the null result of §3 is a property of the sheet, not of the searcher.
+
+The series length is set by this control rather than by §3: the §2 ODE has degree 11,
+so the differential search carries `4 × 12 = 48` unknowns and needs more rows than a
+40-term series leaves once the top `order` coefficients — not exact in a truncated
+series — are dropped. The probe computes the needed length from the ODE it just
+found, and builds the series by truncated coefficient-list convolution rather than by
+expanding the full cubic, which is what makes `N = 70` cheap.
 
 §3–§4 are **corroboration**: a finite search excludes only the orders and degrees it
 tests. The exclusion of *all* orders and degrees is the theorem.
