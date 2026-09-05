@@ -151,10 +151,126 @@ The cheap fix is a convention, not a tool: **when a bean answers its own owner-a
 edit the asking sentence** rather than appending the answer below it. A grep sees
 the first sentence.
 
+## Pass 3 — the 19 Class B collapse to 7 questions, and one already has its answer measured
+
+The point of this pass is **not** 19 write-ups. It is that several beans are the
+same question wearing different names, and one of them already carries the
+measurement the others are waiting for.
+
+---
+
+### 🔴 CLUSTER 1 — the inter-nucleon interface topology. **FOUR beans, ONE question, and the data already exists.**
+
+**Beans:** `qou-goc9` · `qou-im4m` · `t7qv` · plus **Q4 of today's analysis**.
+
+**The question:** does a nucleus wire its nucleons as a **linear chain** (`A−1`
+interfaces, what `atom_braid_word_3A` builds) or **all pairs** (`C(A,2)`, what
+`build_atom_nf` / `atom_gen_chains` build)?
+
+**`t7qv` RESULT 4 already measured it** (AME read-only, no fit):
+
+| model | 2H/3He | 3H/3He |
+|---|---|---|
+| chain (adjacent) | 0.50000 (+73.5 %) | 1.17024 (+6.5 %) |
+| **all pairs** | **0.40361 (+40.0 %)** | 1.20327 (+9.5 %) |
+| EXPERIMENT | 0.28823 | 1.09896 |
+
+All-pairs nearly **halves** the A-scaling error and costs ~3 points on the mirror.
+
+**🛑 And `t7qv` RESULT 5 says NEITHER IS RIGHT.** Solving each ratio for a single
+distance-2 weight gives `f = +2.030134` from A-scaling and `f = −0.696951` from
+the mirror — wildly inconsistent, one negative. **A one-parameter falloff is
+refuted outright.** Per-type rates would be 2 unknowns against 2 ratios: exactly
+determined, i.e. a fit with zero predictive content at this size.
+
+**So the honest statement is: all-pairs is the better of two topologies that are
+both wrong.** Anyone quoting RESULT 4 without RESULT 5 is quoting a preference
+between refuted options as if it were a result.
+
+**What this cluster needs from you** is not "pick one". It is a ruling on
+**whether the two builders may keep disagreeing** while the real topology is
+open. Today they do, silently, and one of them reaches the paper
+(`demand-stability.ts` → all-pairs) while the other reaches the binding numbers
+(`binding_canonical` → chain).
+
+---
+
+### 🔴 CLUSTER 2 — `qou-1jw9` is not a preference. It reports a **fourth calibration**.
+
+Flagging this the way `qou-zzwm` was flagged, and this one **survived the check**.
+
+The bean reports a molecular-observable calibration: `0.687012518457808 ×
+27.296143240836667 × 0.23879110765149733 = 4.478000 eV`, H₂'s **measured** bond
+energy — where the same witness's own `H2_cross_check` records the uncalibrated
+`18.75279 eV` (4.19× too large), and `4.478 / 18.753 = 0.23879` **exactly**.
+
+Under the standing **🟥 NO FITTING, EXCEPT CAL-1/2/3** directive that is not a
+judgement call about taste — it is a discipline violation to adjudicate. Two
+further defects ride along: `E_hartree_eV = 27.296143` vs CODATA `27.211386`
+(**+0.31 %**, so not the Hartree), and the witness **contradicts its own content
+block** on which of σ/π carries the largest `|V|`.
+
+**This should leave the veto queue and be decided on its merits.**
+
+---
+
+### CLUSTER 3 — convention-D re-derivation. `qou-cds1` · `qou-2tuv`
+
+Not judgements so much as **authorisation to spend** plus one scope call.
+`qou-cds1` says in its own words *"still needs the owner's go: the actual D-frame
+re-derivation"* — a large compute, and the 2026-08-30 bar-weight prune established
+the obstruction is the **offset, not z**, so a z-swap is invalid. `qou-2tuv` asks
+whether the binding channel may use CAL-3 as an acknowledged anchor — and flags
+that **two scales are live in one table on different channels today**, which is
+the part that is not a preference.
+
+### CLUSTER 4 — Lean class/axiom shape. `qou-t7mt` · `qou-w1g8` · `qou-octr`
+
+All three are *"change a class signature / add missing hypotheses"*, which is a
+**claim change**. `qou-octr` proves 8 of 8 context-class sorries are **unclosable**
+in their current form, so this cluster is not optional work — the current forms
+cannot be discharged. `qou-w1g8` carries a specific recommendation
+(`[CommRing R]`, `IsUnit` over `≠ 0`, `End(𝟙) ≅ R` as an explicit field).
+
+### CLUSTER 5 — notation. `qou-d7h1`
+
+`SU(3)_C` vs `SU(3)_F` collision. Blocks the flavour-SU(3) work from even being
+*stated* unambiguously. Cheapest of the 19; pure convention, no numbers move.
+
+### CLUSTER 6 — a construction choice with a falsifiable side. `qou-aemx`
+
+Two rival α_EM constructions, `45·[3]_q` vs `q·[9]_q·[10]_q`. The bean's own later
+entry **withdraws** its earlier "nothing in the corpus argues for one" and finds
+the `8` is structural. Worth re-reading before deciding — it may have moved
+further than its header says.
+
+### CLUSTER 7 — one-off content/model calls
+
+`gm4q` (**already has a full options doc with a recommendation**:
+`docs/audits/2026-09-04-binding-law-options-decision-frame.md`, probe 10/10 — the
+ask is "adopt Option B, the additive law, or say why not") · `qou-48is` (ordering:
+the **rename** is free and honest, the **fix** moves witnesses) · `qou-8na1`
+(content consequence of `y₀* = 0`) · `qou-c66b` (edit the conjecture block) ·
+`qou-hey2` (normalising a convention moves published numbers; 0.136 % inside the
+half-life prefactor) · `qou-imkb` (what "Model B" means) · `qou-r4ya`
+(Friedrichs-vs-Krein framing) · `dgpc` (a `status: "verified"` downgrade)
+
+---
+
+## What pass 3 changes
+
+- **19 beans → 7 clusters.** Cluster 1 alone retires four asks with one ruling.
+- **Two items should leave the veto queue entirely**: `qou-1jw9` (a fourth
+  calibration — a discipline question, not a preference) and Cluster 1's core
+  (a measured result exists; what is missing is a ruling on the *inconsistency*).
+- **`gm4q` is decision-ready** — options, pros/cons and a recommendation already
+  written up in its own audit doc.
+
 ## Status
 
-- **Pass 1** — 33 pending identified and split from 18 historical.
-- **Pass 2** — remaining 9 classified; 4 more false positives found; A/B/C totals above.
-- **Pass 3** — options for the 19 Class B. Two are already before the owner:
-  `qou-goc9` is the same question as today's Q4, and `qou-cds1` is
-  authorisation-to-spend.
+- **Pass 1** — 33 pending split from 18 historical-only.
+- **Pass 2** — 4 more false positives; A/B/C = 10 / 19 / 6.
+- **Pass 3** — the 19 collapse to 7 clusters; `t7qv` already carries Cluster 1's
+  measurement; `qou-1jw9` escalated out of the queue.
+- **Remaining** — nothing further is triageable without your rulings. The queue is
+  drained to decisions.
