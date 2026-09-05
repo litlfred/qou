@@ -1,0 +1,288 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-04T22:09:38.908270+00:00",
+  "commitSha": "af6e3e40fa884db62247e33ea3162b7e2f44b105",
+  "assertions": [
+    {
+      "name": "the_all_positive_arm_DOES_carry_nonzero_mubar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "2 of 188 spanning insertions, at Delta = 2 with mubar = 1. This is the merged probe's own arm, which is what makes it a correction rather than a new measurement."
+    },
+    {
+      "name": "Delta_zero_is_never_reached_in_ANY_sign_pattern",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "insertions",
+      "source": "over 3008 spanning insertions. Confirms and extends 16-fold the merged probe's MEASURED claim -- it is the inference drawn from it, not the measurement, that fails."
+    },
+    {
+      "name": "the_join_is_sign_independent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "distinct span3 counts",
+      "source": "all 16 sign patterns give the identical spanning count, because the insertion's permutation is a 3-cycle regardless of signs."
+    },
+    {
+      "name": "CONTROL_A_unperturbed_carrier_gives_NO_nonzero_mubar",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "294 triples over the same 4 isotopes, reproducing #6634's null through this harness. Without it the nonzero counts above would be indistinguishable from a harness artifact."
+    },
+    {
+      "name": "CONTROL_B_scanner_reports_nonzero_on_the_Borromean_link",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "the second direction of the same guard: a scanner that never reports nonzero would pass control A trivially."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "mixed-sign-cyclic-square-does-reopen-milnor",
+  "scriptFile": "mixed_sign_cyclic_square_does_reopen_milnor_probe.py",
+  "scriptHash": "0e2c23e7e78f",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/mixed_sign_cyclic_square_does_reopen_milnor_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/mixed_sign_cyclic_square_does_reopen_milnor_probe.py"
+  },
+  "description": "EXPLORATORY. CORRECTS THE FRAMING of my own merged probe cyclic_square_does_not_reopen_milnor_probe.py (#6634). That probe measured that the cyclic-square insertion never drives all three pairwise linking numbers to zero -- confirmed here, 0 of 3008 spanning cases across all 16 inserted-sign patterns -- and inferred from it that route 3's conclusion survives, on the grounds that Delta != 0 makes mubar 'not a genuine integer'. That conflates 'not an integer' with 'no obstruction': mubar lives in Z/Delta and a NONZERO RESIDUE is still a nonvanishing invariant. It never computed mubar. Computing it: 563 of 3008 spanning triples carry nonzero mubar (Delta=2: 5, Delta=3: 187, Delta=4: 371) -- and 2 of those are in that probe's OWN all-positive arm, at Delta = 2 with mubar = 1, which is precisely the one bit route 3's stated Delta = 2 residual is about. The probe's title therefore over-claims against its own scope note, which says plainly that the Delta = 2 triples are untouched. STRUCTURAL HALF: the join is sign-independent -- span3 is 188 for every one of the 16 patterns, identically, because the insertion's permutation is a 3-cycle whatever the signs; signs move only the linking VALUES. This does NOT refute route 3 or its Lean, both of which concern the UNPERTURBED carrier at Delta = 0 (control A re-measures that null: 294 triples, 0 nonzero). Scope (a): one insertion shape, one base branch, sampled positions, 4 isotopes. Nothing wired.",
+  "auditOnly": "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md",
+  "data": {
+    "what_is_being_corrected": {
+      "target": "computations/probes/cyclic_square_does_not_reopen_milnor_probe.py (#6634, 046296ff06)",
+      "its_measurement_CONFIRMED": "the insertion spans 3 components in 188 of 694 all-positive insertions and never drives all three pairwise linking numbers to zero -- reproduced here through a second, independently written analyse()",
+      "its_inference_REFUTED": "'Delta != 0, so mubar is not a genuine integer there anyway' does not give 'no obstruction'. mubar lives in Z/Delta; a nonzero residue is a nonvanishing invariant, and Delta = 2 with mubar = 1 IS route 3's one bit",
+      "it_never_computed_mubar": true,
+      "its_own_scope_note_was_right": "that probe's witness already says 'the Delta = 2 one-bit triples are untouched'. The scope note is accurate; the title and headline are not"
+    },
+    "measured": {
+      "insertions_tested": 11104,
+      "spanning_three_components": 3008,
+      "with_all_three_linking_zero": 0,
+      "delta_histogram": {
+        "1": 2259,
+        "2": 5,
+        "3": 373,
+        "4": 371
+      },
+      "nonzero_mubar_by_delta": {
+        "2": 5,
+        "3": 187,
+        "4": 371
+      },
+      "nonzero_mubar_total": 563,
+      "per_sign_pattern": {
+        "(1, 1, 1, 1)": {
+          "span3": 188,
+          "nonzero": 2
+        },
+        "(1, 1, 1, -1)": {
+          "span3": 188,
+          "nonzero": 108
+        },
+        "(1, 1, -1, 1)": {
+          "span3": 188,
+          "nonzero": 1
+        },
+        "(1, 1, -1, -1)": {
+          "span3": 188,
+          "nonzero": 186
+        },
+        "(1, -1, 1, 1)": {
+          "span3": 188,
+          "nonzero": 0
+        },
+        "(1, -1, 1, -1)": {
+          "span3": 188,
+          "nonzero": 0
+        },
+        "(1, -1, -1, 1)": {
+          "span3": 188,
+          "nonzero": 0
+        },
+        "(1, -1, -1, -1)": {
+          "span3": 188,
+          "nonzero": 0
+        },
+        "(-1, 1, 1, 1)": {
+          "span3": 188,
+          "nonzero": 78
+        },
+        "(-1, 1, 1, -1)": {
+          "span3": 188,
+          "nonzero": 2
+        },
+        "(-1, 1, -1, 1)": {
+          "span3": 188,
+          "nonzero": 186
+        },
+        "(-1, 1, -1, -1)": {
+          "span3": 188,
+          "nonzero": 0
+        },
+        "(-1, -1, 1, 1)": {
+          "span3": 188,
+          "nonzero": 0
+        },
+        "(-1, -1, 1, -1)": {
+          "span3": 188,
+          "nonzero": 0
+        },
+        "(-1, -1, -1, 1)": {
+          "span3": 188,
+          "nonzero": 0
+        },
+        "(-1, -1, -1, -1)": {
+          "span3": 188,
+          "nonzero": 0
+        }
+      },
+      "all_positive_nonzero_cases": [
+        {
+          "isotope": "4He",
+          "insert_position": 25,
+          "generator": 5,
+          "pairwise_lk": [
+            0,
+            -2,
+            0
+          ],
+          "Delta": 2,
+          "mubar": 1
+        },
+        {
+          "isotope": "8Be",
+          "insert_position": 77,
+          "generator": 17,
+          "pairwise_lk": [
+            0,
+            0,
+            -2
+          ],
+          "Delta": 2,
+          "mubar": 1
+        }
+      ]
+    },
+    "the_all_positive_arm": {
+      "why_it_matters": "this is the arm the merged probe itself tested, so these are a correction rather than a new regime",
+      "spanning": 188,
+      "nonzero_mubar": 2,
+      "cases": [
+        {
+          "isotope": "4He",
+          "insert_position": 25,
+          "generator": 5,
+          "pairwise_lk": [
+            0,
+            -2,
+            0
+          ],
+          "Delta": 2,
+          "mubar": 1
+        },
+        {
+          "isotope": "8Be",
+          "insert_position": 77,
+          "generator": 17,
+          "pairwise_lk": [
+            0,
+            0,
+            -2
+          ],
+          "Delta": 2,
+          "mubar": 1
+        }
+      ]
+    },
+    "the_join_is_sign_independent": {
+      "span3_per_pattern_distinct_values": [
+        188
+      ],
+      "reason": "the insertion's permutation s_m s_{m+1} s_m s_{m+1} is a 3-cycle on {m, m+1, m+2} for every sign choice, so WHICH components are joined cannot depend on the signs -- only the linking VALUES can move",
+      "consequence": "Delta = 0 is unreachable in every pattern (the merged probe's measured claim, extended 16-fold) while mubar is nonzero in 563 cases (its inferred claim, which fails)"
+    },
+    "control_A_unperturbed_reproduces_the_merged_null": {
+      "rows": [
+        {
+          "isotope": "4He",
+          "components": 5,
+          "triples": 10,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "6Li",
+          "components": 7,
+          "triples": 35,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "8Be",
+          "components": 9,
+          "triples": 84,
+          "nonzero_mubar": 0
+        },
+        {
+          "isotope": "10B",
+          "components": 11,
+          "triples": 165,
+          "nonzero_mubar": 0
+        }
+      ],
+      "triples": 294,
+      "nonzero_mubar": 0
+    },
+    "control_B_borromean": {
+      "components": 3,
+      "Delta": 0,
+      "mubar": -2,
+      "nonzero": true,
+      "note": "the merged module records the single eps_01(lambda_2) = -1; the full symmetrised mubar here is -2. What this control establishes is NONZERO, not a canonical normalisation"
+    },
+    "why_the_naive_longitude_readoff_is_legitimate": {
+      "objection": "Milnor's mubar_ijk = eps_ij(lambda_k) needs the 0-framed longitude; reading one off a braid word gives a longitude differing by a power of the meridian m_k",
+      "answer": "that ambiguity contributes only h_k terms to the Magnus expansion, so the coefficient of h_i h_j with i, j, k distinct is framing-independent"
+    },
+    "what_this_does_NOT_do": {
+      "route_3": "NOT refuted. Route 3 and MilnorTriplesAreDefinedExactlyWhereTheyVanish.lean are about the UNPERTURBED carrier at Delta = 0; control A re-measures that null",
+      "the_lean": "unchanged -- no hypothesis of it is touched",
+      "other_non_monotone_words": "NOT tested. One shape only -- the one #6561 singles out as the sole non-monotone shape yielding a Markov-trace cross term",
+      "base_branch": "all-sigma^-1 only. The base sign is not varied; the residual being closed here is the INSERTED signs"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "reads no q0. Inputs are braid words, their closures' permutation cycles, integer linking numbers and degree-2 Magnus coefficients. No substrate pin is evaluated on any path."
+}

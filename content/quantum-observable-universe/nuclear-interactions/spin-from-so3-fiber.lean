@@ -1,30 +1,132 @@
-/-!
-# QOU.BraidsAndKnots.SpinFromSO3Fiber — conjectural sibling stub
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Ring
+import Mathlib.Tactic.NormNum
 
-**Sibling-resolution stub** for content block
+/-!
+# QOU.BraidsAndKnots.SpinFromSo3Fiber — the D10 conjecture carrier
+
+**Sibling-resolution carrier** for content block
 [`conj:spin-from-so3-fiber`](spin-from-so3-fiber.md): *D10 spin SU(2)_S*.
 
-The §3b-cond class axiomatisation lives at
-[`../lean/QOU/BraidsAndKnots/SpinFromSO3Fiber.lean`](../lean/QOU/BraidsAndKnots/SpinFromSO3Fiber.lean)
-under the `qou` Lake package (file pending; class structure
-sketched in the `.md` "Lean axiomatisation (sketch)" section).
-The class instance is the **conjectural witness** (sorry =
-conjecture per AGENTS.md §3b), not a missing proof; downstream
-theorems take `[SpinFromSO3Fiber]` as an explicit `[Instance]`
-hypothesis.
+**No instance is provided** — the honest open state for a conjecture (AGENTS.md §3b).
 
-This stub satisfies the lean-ref sibling-resolution rule
-(AGENTS.md §0a step 1) for the `.ts` manifest's
-`lean.ref = "qou:QOU.BraidsAndKnots.SpinFromSO3Fiber"`.
+## 2026-09-04 — this carrier used to assert nothing
 
--- Ref: [manuscript] quantum-observable-universe/braids-and-knots/spin-from-so3-fiber.ts
+It read, in full:
+
+```lean
+class SpinFromSo3Fiber where
+  holds : Prop
+```
+
+A field typed `: Prop` has the *universe* of propositions as its type, so an instance
+supplies a proposition rather than a proof of one: `⟨True⟩` discharges the class, and
+every `[SpinFromSo3Fiber]`-conditional theorem was conditional on nothing.
+
+**The defect class is known, and this is not a new finding.** Bean `qou-tsnp` —
+*"GAP: 12 conjecture carriers axiomatised as `holds : Prop` assert nothing"* — lists
+this very carrier among its twelve, and
+[`docs/audits/2026-08-23-free-prop-field-census.md`](../../../docs/audits/2026-08-23-free-prop-field-census.md)
+(PR #5562) is the corpus-wide census, with a re-runnable detector at
+[`scripts/free-prop-field-audit.py`](../../../scripts/free-prop-field-audit.py). What is
+new here is the **repair**, following that bean's own prescription: *"replace `holds :
+Prop` with fields that encode the conjecture's content — parameter-quantified statements
+in the shape of the claim."* D9 (`IsospinFromCanonicalBowtie`) was closed the same way;
+this is the second of the twelve.
+
+## What is encoded, and why this shape
+
+The block names its own missing object in one sentence:
+
+> The missing object is a functor from the `S₅`/`SO(3)` level `ℓ` to a Wedderburn
+> coefficient of the 3-strand `H₃` trace.
+
+So the carrier takes that map as a **parameter** — `levelCoeff : ℕ → ℝ`, sending a
+spherical-harmonic level to the coefficient it contributes — and constrains it at the two
+places the block gives values. Following the design rule recorded in
+`QOU/AlgebraicSubstrate/ConditionalClasses.lean` after its own retraction (*"an `∃` over a
+quantity you get to pick cannot be false, while a `∀` about a quantity the caller supplies
+can"*), the map is supplied by the caller, so the class **is refutable** — the constant-zero
+map falsifies it, and that is discharged below rather than asserted.
+
+Indexing: `levelCoeff n` is the coefficient of `h^(2n)`, so `levelCoeff 1` is the `h²`
+coefficient and `levelCoeff 2` the `h⁴` one. The block's two values:
+
+* the Borromean Markov trace's exact closed form has **`h² = 0`**;
+* its first non-trivial coefficient is **`h⁴ = −3/4`**, the load-bearing gap.
+
+## What is NOT encoded
+
+**The construction of the functor itself.** The block asserts spin `SU(2)_S` *arises as*
+the continuous lift of `SO(3)` via `S₅ → A₅ ≅ I ⊂ SO(3)`, and that extending to continuous
+`SO(3)` is what populates `ℓ = 2, 3, 4, …`. Stating that needs a spherical-harmonic-level
+type and an `H₃` Wedderburn-coefficient type related by an actual functor; the corpus
+carries the *fibre map* (`BringFiberAction`, inhabited by `bringFiberAction_icosahedral`
+with the icosahedral Reeb map) but not the level → coefficient bridge. Inventing those
+types here would encode a different claim than the block makes.
+
+This is exactly the case `qou-tsnp`'s guard describes — *"if a conjecture's claim cannot
+yet be stated against existing types … the honest outcome is to say so and leave the
+carrier, noting what type must grow first."* The claim is **partly** statable, so the
+statable part is stated and the rest is named: **what must grow first is a type for the
+`S₅`/`SO(3)` level indexed against `H₃`'s Wedderburn blocks.**
+
+**NOT claimed:** that `h⁴ = −3/4` is derived here. It is the block's stated structural
+value of the Borromean Markov trace; carrying it as a class field is the §3b conjecture
+pattern, not a derivation (AGENTS.md §"Axiomatization is NOT a Proof").
+
+**Archimedean.** Stated over `ℝ`: the coefficients are real and the block sits on the
+archimedean side of the wall, so §7c's generic-`R` default does not apply.
+
+-- Ref: [manuscript] quantum-observable-universe/nuclear-interactions/spin-from-so3-fiber.ts
 -/
 
 namespace QOU.BraidsAndKnots
 
-/-- **CONJECTURE.** Spin $\\mathrm{SU}(2)_S$ from full $\\mathrm{SO}(3)$ fiber action on color-sheet rotations -/
-class SpinFromSo3Fiber where
-  holds : Prop
-  -- Ref: [manuscript] conj:spin-from-so3-fiber
+/-- **The Family A linking weight, in closed form.** The block states
+`(3q² + 4 + 3q⁻²)/4 = 5/2 + (3/4)h²` with `h = q - q⁻¹`, and that it *terminates* at `h²`.
+
+This is an identity, not a conjecture, so it is a **theorem** rather than a class field —
+the part of the block that can be discharged is discharged. It is what makes "Family A
+terminates at `h²`" a statement about the truncation rather than about the algebra. -/
+theorem familyA_linking_weight_closed_form (q : ℝ) (hq : q ≠ 0) :
+    (3 * q ^ 2 + 4 + 3 * q⁻¹ ^ 2) / 4
+      = 5 / 2 + (3 / 4) * (q - q⁻¹) ^ 2 := by
+  field_simp
+  ring
+
+/-- **CONJECTURE (D10).** Spin `SU(2)_S` as the continuous `SO(3)` lift on the three colour
+sheets, via the `S₅ → A₅ ≅ I ⊂ SO(3)` icosahedral embedding on Bring's quintic.
+
+`levelCoeff` is the block's own named missing object — the map from spherical-harmonic
+level to the Wedderburn coefficient it contributes to the 3-strand `H₃` trace, with
+`levelCoeff n` the coefficient of `h^(2n)`. It is supplied by the **caller**, so the class
+is false for maps that do not take the block's values (see the refutability theorem below).
+
+**No instance is provided.** Downstream results consume this as `[SpinFromSo3Fiber f]` and
+are genuinely conditional on it.
+
+-- Ref: [manuscript] conj:spin-from-so3-fiber -/
+class SpinFromSo3Fiber (levelCoeff : ℕ → ℝ) : Prop where
+  /-- The Borromean Markov trace's exact closed form has **`h² = 0`** — the `ℓ = 1` level
+  contributes nothing, which is why the `S₃`-truncated Family A weight (ending at `h²`)
+  cannot see the structure. -/
+  h_squared_vanishes : levelCoeff 1 = 0
+  /-- The **first non-trivial** coefficient is `h⁴ = −3/4`, supplied by `ℓ = 2`. This is the
+  load-bearing `h⁴` closure gap the block names. -/
+  h_fourth_eq : levelCoeff 2 = -3 / 4
+
+/-- The class is **refutable**, which the previous `holds : Prop` carrier was not: the
+constant-zero map satisfies `h_squared_vanishes` and fails `h_fourth_eq`.
+
+Stated as a theorem rather than left to the docstring because "the carrier asserts
+something" is precisely the property that was missing, and a reader should see it
+discharged rather than take the prose's word. -/
+theorem spinFromSo3Fiber_refutable :
+    ¬ SpinFromSo3Fiber (fun _ => 0) := by
+  intro hc
+  have h := hc.h_fourth_eq
+  norm_num at h
 
 end QOU.BraidsAndKnots

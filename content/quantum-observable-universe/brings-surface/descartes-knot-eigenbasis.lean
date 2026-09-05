@@ -5,6 +5,8 @@ import Mathlib.Data.Matrix.Basic
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Tactic
 import QOU.SchurWeyl.HoefsmitRep
+import QOU.SchurWeyl.GenericParameter
+import QOU.SchurWeyl.MarkovTraceInstance
 
 
 /-!
@@ -100,10 +102,31 @@ Jones values* those two theorems name — not about the framework's ability to
 separate summands. Bean `qou-qhs3`;
 `computations/descartes_n3_channel_separation_probe.py`.
 
-What genuinely remains is constructing `DescartesMarkovTrace.trSummand` from
-those Hoefsmit values instead of leaving it free data, for general `n`. That
-is a formalisation of the seminormal representation — `n = 3` is done here —
-and not a further open question about the mathematics.
+## …and the trace itself already exists too. `DescartesMarkovTrace` is superseded
+
+The paragraph that stood here said the remaining work was "constructing
+`DescartesMarkovTrace.trSummand` from those Hoefsmit values … a formalisation
+of the seminormal representation". **Wrong again, and in the same direction.**
+`QOU.SchurWeyl.SeminormalRep.wtrace` is the whole object, proved:
+
+    wtrace q hq0 hq2 n : Hecke ℝ q q⁻¹ n →ₗ[ℝ] ℝ
+      x ↦ ∑_{ν ⊢ n+1} ocneanuWeight q (q³/(q²+1)) ν · tr(ρ_ν(x))
+
+with `wtrace_cyclic`, `wtrace_one = 1`, `wtrace_incl`, and `wtrace_markov` —
+the Markov property at exactly `z_D = q³/(q²+1)`, convention D.
+
+`descartesWtrace` below is that trace at a Descartes parameter;
+`descartes_notRootOfUnity` is what makes it available, and it is the one piece
+that was genuinely missing (`0 < q` and `q ≠ 1` over `ℝ` already give
+`qᵐ ≠ 1` for every `m > 0`).
+
+**So the structure `DescartesMarkovTrace` is superseded.** It is weaker in
+three ways, each stated in the note beside its declaration: the element type
+is `ℝ` rather than the Hecke algebra, the λ-sum carries no Ocneanu weights,
+and `z` is inert — `descartesMarkovTrace_z_arbitrary` proves that every
+non-zero real is the `z` of some instance, so the field constrains nothing.
+Retiring it in favour of `descartesWtrace` is a refactor of this file's
+remaining structures and both theorems, and is **not** done here.
 
 ## References
 
@@ -289,6 +312,132 @@ structure DescartesMarkovTrace (D : DescartesData) where
   -- Ref: [jones1987] §3, character non-vanishing
   summand_detection : ∀ (n i : ℕ), i < n / 2 + 1 →
     ∃ (x : ℝ), trSummand n i x ≠ 0
+
+/-! ## `DescartesMarkovTrace` is superseded by `QOU.SchurWeyl.wtrace`
+
+The structure above is named for the Markov trace and **does not contain the
+Markov condition.** `z` occurs in its own declaration and in `z_ne_zero`, and
+nowhere else: nothing relates it to `tr`, so `tr(x·σₙ) = z·tr(x)` is not
+stated. `descartesMarkovTrace_z_arbitrary` below makes that machine-checked —
+every non-zero real is the `z` of some instance, so the field carries no
+information at all.
+
+`QOU.SchurWeyl.wtrace` is the object this wanted to be, and it is already
+proved:
+
+    wtrace q hq0 hq2 n : Hecke ℝ q q⁻¹ n →ₗ[ℝ] ℝ
+      x ↦ ∑_{ν ⊢ n+1} ocneanuWeight q (q³/(q²+1)) ν · tr(ρ_ν(x))
+
+with `wtrace_cyclic`, `wtrace_one = 1`, `wtrace_incl`, and — the field this
+structure lacks — `wtrace_markov`, the Markov property at exactly
+`z = q³/(q²+1)`, which is `z_D`, the convention made canonical by the owner
+ruling of 2026-08-15.
+
+Three differences, each in the library's favour:
+
+1. **The element type.** `tr : ℕ → ℝ → ℝ` above encodes a Hecke algebra
+   element as *a real number*; `wtrace` is a linear functional on
+   `Hecke ℝ q q⁻¹ n`. This is why the structure cannot state the Markov
+   condition: with `x : ℝ` there is no `x · σₙ` to write.
+2. **The weights.** The λ-sum above is unweighted; the real decomposition
+   carries the Ocneanu weights `ocneanuWeight q z_D ν`. At `z_D` those
+   weights *vanish* on every diagram of three or more rows
+   (`ocneanuWeight_conventionD_eq_zero_of_three_rows`), which is what
+   restricts the sum to the two-row `SU_q(2)` summands — for free, rather
+   than by the `i < ⌊n/2⌋+1` index bound imposed by hand above.
+3. **`z`.** Free here; there, the Markov parameter, appearing in the
+   conclusion of `wtrace_markov`.
+
+`descartes_wtrace_markov` below is the bridge: a Descartes universe satisfies
+the library's genericity hypotheses, so the real Markov trace applies to it.
+-/
+
+/-- **A Descartes parameter is not a root of unity.**
+
+    `DescartesData` gives `0 < q` and `q ≠ 1`; over `ℝ` that is already the
+    library's `NotRootOfUnity`, since a positive real with `qᵐ = 1` for some
+    `m > 0` must be `1`. This is the hypothesis `wtrace` needs, so every
+    Descartes universe admits the genuine Markov trace. -/
+theorem descartes_notRootOfUnity (D : DescartesData) :
+    QOU.SchurWeyl.GenericParameter.NotRootOfUnity D.q := by
+  intro m hm hpow
+  rcases lt_trichotomy D.q 1 with h | h | h
+  · exact absurd hpow (by
+      have : D.q ^ m < 1 := pow_lt_one₀ D.q_pos.le h hm.ne'
+      exact this.ne)
+  · exact D.q_ne_one h
+  · exact absurd hpow (by
+      have : 1 < D.q ^ m := one_lt_pow₀ h hm.ne'
+      exact this.ne')
+
+/-- The genericity the library's weight lemmas ask for, in the `q²` form. -/
+theorem descartes_notRootOfUnity_sq (D : DescartesData) :
+    ∀ i : ℕ, 0 < i → (D.q ^ 2 : ℝ) ^ i ≠ 1 := by
+  intro i hi
+  rw [← pow_mul]
+  exact descartes_notRootOfUnity D (2 * i) (by omega)
+
+/-- `q² + 1 ≠ 0` over `ℝ`. -/
+theorem descartes_sq_add_one_ne_zero (D : DescartesData) : (D.q ^ 2 + 1 : ℝ) ≠ 0 := by
+  positivity
+
+/-- `q² ≠ 1` — the exact genericity `wtrace` asks for. -/
+theorem descartes_sq_ne_one (D : DescartesData) : (D.q ^ 2 : ℝ) ≠ 1 :=
+  descartes_notRootOfUnity D 2 (by omega)
+
+/-- **The Markov trace of a Descartes universe** — the real one.
+
+    `QOU.SchurWeyl.SeminormalRep.wtrace` at the Descartes parameter, available
+    because `descartes_sq_ne_one` discharges its genericity hypothesis. It is
+    a linear functional on the actual Hecke algebra, its λ-sum carries the
+    Ocneanu weights, and it satisfies the Markov property at `z_D` — the three
+    things `DescartesMarkovTrace` above lacks. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def descartesWtrace (D : DescartesData) (n : ℕ) :
+    QOU.SchurWeyl.Hecke ℝ D.q D.q⁻¹ n →ₗ[ℝ] ℝ :=
+  QOU.SchurWeyl.SeminormalRep.wtrace D.q D.q_ne_zero (descartes_sq_ne_one D) n
+
+/-- **The Markov property holds for every Descartes universe**:
+    `tr(ι y · σₙ) = z_D · tr(y)` with `z_D = q³/(q²+1)`.
+
+    This is the property `DescartesMarkovTrace` is named for and does not
+    contain. Nothing is assumed here — the library proves it, and the
+    Descartes hypotheses discharge what it asks for. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+theorem descartesWtrace_markov (D : DescartesData) (n : ℕ)
+    (y : QOU.SchurWeyl.Hecke ℝ D.q D.q⁻¹ n) :
+    descartesWtrace D (n + 1)
+        (QOU.SchurWeyl.HeckeInclusion.heckeIncl ℝ D.q D.q⁻¹ n y
+          * QOU.SchurWeyl.Hecke.σ ℝ D.q D.q⁻¹ (n + 1) (Fin.last n))
+      = (D.q ^ 3 / (D.q ^ 2 + 1)) * descartesWtrace D n y :=
+  QOU.SchurWeyl.SeminormalRep.wtrace_markov D.q D.q_ne_zero (descartes_sq_ne_one D)
+    (descartes_sq_add_one_ne_zero D) (descartes_notRootOfUnity_sq D) n y
+
+/-- **`DescartesMarkovTrace.z` carries no information**: every non-zero real is
+    the `z` of some instance.
+
+    Machine-checked demonstration of the supersession note above. `z` occurs in
+    its own declaration and in `z_ne_zero` and nowhere else, so it is not the
+    Markov parameter of anything — the structure never relates it to `tr`.
+    Contrast `descartesWtrace_markov`, where `z_D = q³/(q²+1)` appears in the
+    conclusion because it is forced.
+
+    Recorded as a theorem so a later reader cannot mistake the field for a
+    constraint, and so re-introducing a free `z` after a repair fails against a
+    standing counterexample. -/
+theorem descartesMarkovTrace_z_arbitrary (D : DescartesData) (z : ℝ) (hz : z ≠ 0) :
+    ∃ mt : DescartesMarkovTrace D, mt.z = z := by
+  refine ⟨{ z := z, z_ne_zero := hz
+            tr := fun n x => (n / 2 + 1 : ℕ) * x
+            tr_one_ne_zero := ?_
+            trSummand := fun _ _ x => x
+            tr_eq_sum_summands := ?_
+            summand_detection := fun _ _ _ => ⟨1, one_ne_zero⟩ }, rfl⟩
+  · intro n _
+    have : (0 : ℝ) < ((n / 2 + 1 : ℕ) : ℝ) := by positivity
+    simpa using this.ne'
+  · intro n x
+    simp [Finset.sum_const, nsmul_eq_mul, mul_comm]
 
 /-! ## Main Instantiation Theorem -/
 

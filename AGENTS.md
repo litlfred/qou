@@ -2586,7 +2586,7 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **twenty-six** rows, and they split FOUR ways — only the first
+>   catalogues **thirty-three** rows, and they split SIX ways — only the first
 >   group is about conventions at all:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
@@ -2606,6 +2606,29 @@ Do not regress either.
 >     as a keyword argument, because that key is an identifier. 25 could not see
 >     a literal reaching an assertion through a **list slot** two hundred lines
 >     up. Two different audits, two days apart, same assumption.
+>   - **27-32** — `qou-dke6` / `qou-sof3`, and unlike every group above these
+>     are **six blind spots in ONE detector**, found one at a time while it was
+>     used. All six are about the SHAPE of the data around the fields, never
+>     the fields themselves: a hoisted **wrapper** (54 of 241 matches, each
+>     solve counted twice and the hoisted copy manufacturing a phantom
+>     "no primal"), a **column-wise aggregate** whose `y0_star` is a list not a
+>     scalar, a **prefixed key** (`lp_x_star_str`) reported as absent while the
+>     record carried two primals, a **numeric proxy for a structural fact**
+>     (`duality_gap != 0` taken to mean a solve happened — wrong on 6 of 9,
+>     since a closed-form dual's gap is 0 by construction and four producers
+>     never call a solver at all), an **SDP matrix primal** where a vector was
+>     assumed, and a **threshold cliff** (62 flagged at 0.96, 7 at 0.98, with
+>     the one confirmed positive ranking 59 of 146). The corrections ran
+>     105 → 56 and 84 → 44 → 15 → 3 → 0, **every one making the problem
+>     smaller**, and one of them nearly reached the owner as a contract change
+>     that would have turned 29 correct records into violations.
+>   - **33** — `qou-3ral`, and it is its own group: the guard is installed on
+>     one of an API's several **write paths**. `WitnessBuilder` has three
+>     routes into the anchor vocabulary — `stamp_staleness_metadata`
+>     (guarded), `save(extra)` (a bare `witness.update`), and `wrap_legacy`
+>     (payload keys emitted verbatim by `build()`) — and the one live
+>     off-vocabulary producer travels the third. Not about data shape at all,
+>     which is why it is not in the 27-32 family.
 >
 >   Several were found *by* detectors written to catch the previous blind spot —
 >   row 26 in the output of the audit that introduced it. Quote the split, not

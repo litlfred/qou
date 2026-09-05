@@ -107,3 +107,33 @@ the block to be coherent, and that is a producer re-run, not a wording change.
 - `computations/markov/weak_vertex_t35_trace.py` → `computations/weak-vertex-t35-trace.witness.json`
   (proton pin, `q0Value` stamped; convention D; the C number is a labelled comparison).
 - Lean: `QOU.Braiding.WeakVertexT35.*`, verified `lean`-direct against the paper's olean tree.
+
+---
+
+## CORRECTION (2026-09-05, bean `qou-ix74`) — the provenance of `0.7036` was mis-attributed above
+
+§"The published value" says the number's source is the **deprecated** convention-C
+pipeline `computations/_deprecated/t35-full-calculation.py`. **That was wrong, and it
+was a guess from file names rather than a measurement.** The number is reproduced by
+the **live** engine `computations/hecke/hecke_division.py`: its former `_trace_word`
+applied only the Markov rotation `tr(x·σ_top) = z·tr(x)` and never the Hecke relation,
+which collapses to `Σ_w c_w z^{|w|}` over the (correctly) reduced word. Measured on the
+reducer's own output for `(σ₀σ₁)⁵`:
+
+| Markov parameter | `Σ c_w z^{|w|}` | where it was published |
+|---|---|---|
+| `z_C = √q/(q+1)` | **0.70355** | `ex:hadron-half-life-verification` ("≈ 0.7036") |
+| `z_D = q³/(q²+1)` | **0.96844** | `computations/t35-weak-vertex.witness.json` (2026-08-29) |
+
+So both stale values are one defect at two parameters, and the "(σ₃σ₄)⁵ on 5 strands"
+detail was irrelevant. The engine is fixed (it now delegates to
+`markov_trace_canonical.tr_M_word`), `t35-weak-vertex.witness.json` now carries
+`1.18748`, and the identification is asserted in
+`computations/weak-vertex-substitution-scale.witness.json`. Full record:
+[`2026-09-05-weak-vertex-substitution-scale-and-engine-defect.md`](2026-09-05-weak-vertex-substitution-scale-and-engine-defect.md).
+
+**Where the wrong attribution was repeated** (all corrected in the same tranche, except the
+immutable PR bodies): the header of `WeakVertexT35TraceClosedForm.lean`, the docstring and
+`published_value_finding.provenance` of `weak_vertex_t35_trace.py` and its witness, the status
+author note on `ex:hadron-half-life-verification` (#6689), beans `qou-egvf` / `qou-4x7c`, and
+the bodies of PRs #6664 and #6689.

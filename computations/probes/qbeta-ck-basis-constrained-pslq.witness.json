@@ -1,10 +1,10 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T12:19:55.588987+00:00",
+  "computedAt": "2026-09-04T22:21:17.405265+00:00",
   "computation": "qbeta-ck-basis-constrained-pslq",
   "scriptFile": "qbeta_ck_basis_constrained_pslq.py",
-  "commitSha": "d8f882b372aeb6ed9cf1aea338c08b73f71bd82a",
+  "commitSha": "e9f956591268a61f454b60f781a60f18f497f767",
   "description": "PROBE 4 (2026-07-11 avenues audit \u00a73.D): basis-constrained PSLQ for the empirical Q_\u03b2 ladder coefficients c_3/c_4 against the arithmetic-dictated basis {1, \u221a3, \u03c0\u00b2, Vol(4\u2081), \u03b6(3)} (4\u2081 trace field \u211a(\u221a\u22123)). Two-stage formalize-first: STAGE 1 is a mandatory entropy audit of the ACTUAL effective precision of the empirical coefficients, traced through the extraction chain c_3 = (Q_CODATA/Q_N2 \u2212 1)/u\u00b3, which amplifies the relative Q_\u03b2 error by 1/u\u00b3 \u2248 1.6e6 (c_4: 1/u\u2074 \u2248 1.9e8). STAGE 2 (PSLQ) runs only if the effective digits exceed the PSLQ entropy bound D > n\u00b7log10(2H) + margin (PR #1805 discipline). No c_k value proposed; nothing wired.",
   "precisionMetadata": {
     "compute_dps": 60
@@ -114,7 +114,7 @@
       "computed": 972.3619589513947,
       "expected": 0.0,
       "passed": false,
-      "tolerance": 1e-08,
+      "tolerance": "1e-08",
       "source": "same chain + same Q_codata + same q0 as qbeta-ck-cache.witness.json (cache prints Q_codata rounded to 0.78233341)"
     },
     {
@@ -133,8 +133,8 @@
     "conclusion": "ENTROPY-BLOCKED: the empirical c_3 carries at most ~2 reliable digits per anchor (c_4: zero) because the extraction divides the Q_\u03b2 experimental error by u\u00b3 (\u00d71.6e6) / u\u2074 (\u00d71.9e8); even the minimal 4-term H\u2264100 basis needs ~9.2 digits. PSLQ was NOT run \u2014 any relation it returned would be lattice noise. The coefficients remain empirical under the arithmetic basis; no value proposed, nothing wired. Closing this avenue requires either sigma(Q_\u03b2) improved by ~9 orders of magnitude or a canonical (non-extracted) high-precision c_3 producer \u2014 i.e. the open keystone F(q) itself."
   },
   "allPassed": false,
-  "scriptHash": "fcc8916a9237",
-  "scriptCommitSha": "c734c0d74f79af290c563298370727e46771d405",
+  "scriptHash": "9ead6ab81ab0",
+  "scriptCommitSha": "a1c617a444ce4451df61a4f640bd6c96d9b3f7e6",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

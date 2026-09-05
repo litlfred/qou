@@ -34,8 +34,8 @@
   "published_value_finding": {
     "block": "obs:hadron-half-life-verification",
     "published_W_q0": "0.7036",
-    "provenance": "computations/_deprecated/t35-full-calculation.py (convention-C hecke_division, (\u03c3\u2083\u03c3\u2084)^5 on 5 strands)",
-    "status": "NOT reproduced by either convention; content NOT edited; owner pass needed"
+    "provenance": "hecke_division._trace_word's former z^{len} rule (Markov rotation without the Hecke relation) at z_C = sqrt(q)/(q+1): 0.70355; the same rule at z_D gave 0.96844 (bean qou-ix74)",
+    "status": "reproduced by neither convention's Ocneanu trace; content corrected in PR #6689 (bean qou-4x7c)"
   },
   "lean": "QOU.Braiding.WeakVertexT35.weakVertexTrace_eq",
   "reference_blocks": [
@@ -88,15 +88,15 @@
     {
       "name": "published_0_7036_not_reproduced_by_either_convention",
       "passed": true,
-      "note": "FINDING: obs:hadron-half-life-verification's W(q0) \u2248 0.7036 is neither the D value (~1.1875) nor the C value (~0.9063); it descends from the deprecated hecke_division pipeline. Content not edited; owner pass needed (bean qou-egvf)."
+      "note": "FINDING: obs:hadron-half-life-verification's W(q0) \u2248 0.7036 is neither the D value (~1.1875) nor the C value (~0.9063); it is hecke_division's former z^{len} trace rule at z_C (bean qou-ix74); content corrected in PR #6689 (bean qou-4x7c)."
     }
   ],
   "allPassed": true,
-  "scriptHash": "f8c6553d4e3e",
-  "scriptCommitSha": "unknown",
-  "commitSha": "d5b4e87f4c56d47886952c030e8692c0934031b2",
+  "scriptHash": "f20e5c0c89a3",
+  "scriptCommitSha": "eb9eb3f12631471523874c9d23a021d8a86ed93b",
+  "commitSha": "868820902aa742950d0564a80e9c522ccdafcf2c",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-09-04T13:06:55.684976+00:00",
+  "computedAt": "2026-09-05T05:57:45.981366+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
