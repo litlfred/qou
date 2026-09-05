@@ -19,18 +19,18 @@ ideal I = x22*x24 - x22*x25 + x22 - x24*x9 + x24 + x25*x9,
  x1^3*x22*x24*x9 + x1^3*x22*x25*x8*x9 - x1^2*x2^2*x24*x9^2 - x1^2*x2^2*x25*x8*x9^2 - x1^2*x2*x22*x24*x9 - x1^2*x2*x22*x25*x8*x9 + x1^2*x2*x24*x9^2 + x1^2*x2*x25*x8*x9^2 + x1^2*x22*x24*x3 + x1^2*x22*x25*x3*x8 - x1^2*x22*x26*x8*x9 - x1^2*x24*x3*x9 - x1^2*x25*x3*x8*x9 + x1*x2^2*x22*x24*x4*x8 + x1*x2^2*x22*x24*x4 - x1*x2^2*x24*x4*x8*x9 + x1*x2^2*x24*x4*x8 - x1*x2^2*x24*x4*x9 + x1*x2^2*x26*x8*x9^2 + x1*x2*x22*x26*x8*x9 - x1*x2*x26*x8*x9^2 - x1*x22*x26*x3*x8 - x1*x24*x7*x9 - x1*x25*x7*x8*x9 + x1*x26*x3*x8*x9 + x2^2*x26*x4*x8*x9 + x26*x7*x8*x9,
  x27^2 + x27 + 1;
 int t0 = timer;
-I = sat(I, x1)[1];
-I = sat(I, x2)[1];
-I = sat(I, x22)[1];
-I = sat(I, x24)[1];
-I = sat(I, x25)[1];
-I = sat(I, x26)[1];
-I = sat(I, x27)[1];
-I = sat(I, x3)[1];
-I = sat(I, x4)[1];
-I = sat(I, x7)[1];
-I = sat(I, x8)[1];
-I = sat(I, x9)[1];
+I = sat(I, x1);
+I = sat(I, x2);
+I = sat(I, x22);
+I = sat(I, x24);
+I = sat(I, x25);
+I = sat(I, x26);
+I = sat(I, x27);
+I = sat(I, x3);
+I = sat(I, x4);
+I = sat(I, x7);
+I = sat(I, x8);
+I = sat(I, x9);
 ideal G = std(I);
 printf("saturated by all 12 vars in %s sec | GB %s | dim %s", timer-t0, size(G), dim(G));
 if (size(G)==1 && G[1]==1) { printf("EMPTY after saturation -> class 1 has NO genuine points"); } else { printf("NON-EMPTY after saturation -> genuine points EXIST"); }
