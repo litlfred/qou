@@ -99,7 +99,26 @@ $\mathrm{tr}_M(\text{chain}) = \prod_k \mathrm{tr}_M(\text{intra}_k)\prod_i(z+d_
 So the interface factors, the three bond constants and $L$ itself are
 **identical under both orderings** — to $\sim 10^{-60}$ at $A = 2, 3, 4$ — and
 the "no many-body binding" conclusion holds for either word. What is
-ordering-specific is the stronger per-generator statement. What *moves* is every
+The same caveat applies one level up, to the [chain
+form](#prop:canonical-closure-torus-chain) itself: "every generator occurs in
+exactly one contiguous run", so that the closure is a linear connected sum of
+$(2,k)$ torus links, is again a property of the assembly. Under
+$\beta_{\mathrm{Bor}}$ each nucleon's block is the **Borromean rings** — prime,
+non-split, not a torus link — rather than two separate runs. The
+*inter*-nucleon structure is a chain either way, since consecutive blocks
+overlap in one strand, which is why the interface factors and $L$ survive
+untouched.
+
+That is worth stating plainly, because this arc's own criterion for where
+many-body binding could live is "a closure that fails to be composite —
+non-split, prime, with the kind of irreducibly multi-component linking the
+Borromean rings have". Under the corrected word the nucleon block *is* exactly
+that. It does not rescue the binding gap: the measurement is that
+$L$ is unchanged to $\sim 10^{-60}$, so the Borromean structure sits **inside**
+each nucleon and the nucleons are still strung on a chain. The criterion is
+satisfied at the wrong level.
+
+What *moves* is every
 **absolute** trace: the intra factor falls by $3.8\times$ at $^2$H to
 $14.3\times$ at $^4$He when the block is rebuilt as $\beta_{\mathrm{Bor}}$,
 carrying the difference-based

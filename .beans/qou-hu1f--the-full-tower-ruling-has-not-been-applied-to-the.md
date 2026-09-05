@@ -459,3 +459,42 @@ and it needs an owner ruling, not a probe. This measurement is the thing that ha
 to come first: it establishes that the fix is *bounded* (one multiplicative
 factor per atom, in closed form) and that the log-ratio surface is not at risk
 either way.
+
+## FIXED (2026-09-05, owner ruling: "fix atom_braid_word_3A now")
+
+`atom_braid_word_3A` now emits `β_Bor` by default. The change is in
+`pyhecke.atom.nucleon_word_letters` — a new WORD-level builder, because
+`nucleon_gen_chains` returns the letters bucketed by generator and therefore
+*structurally cannot* express an interleaving; that is why the bug survived a
+comment (`# B₃ confinement: (σ₀·σ₁⁻¹)³`) sitting directly above the code that
+contradicted it. `intra_order="grouped"` reaches the pre-2026-09-05 word, so
+every published absolute number stays reproducible (verified to `6e-23`, the
+precision of the literal I compared against).
+
+### What the change did to the live suite, measured rather than assumed
+
+- `the_character_ratio_derivation_path_is_the_bond_model_probe` — **numbers
+  bit-identical**: `0.508229789376739`, `0.205135640448650`,
+  `0.311386312072596`, `0.125684152895266`. A live confirmation of the
+  invariance on production code, not a rebuild of it.
+- `the_canonical_mass_trace_factorises_over_the_chain_probe` — 2 of 7 checks
+  went red exactly as predicted (the per-generator factorisation and the Jones
+  product); the bond constants, `L_pp + L_nn`, the 31 % figure and the offset
+  inversion did not move. Both red checks are properties of the GROUPED word,
+  so the probe now asks for it by name. Back to 7/7.
+- `the_canonical_closure_is_a_chain_of_torus_links_probe` — same story, 5/5.
+- float64 gate: **0 new hits** (26 pre-existing in `mass_at_3A_proper.py`,
+  identical count at HEAD; not touched).
+
+### A sharper fact the fix surfaced, which is not just bookkeeping
+
+The chain form — "every generator in exactly one contiguous run", hence a
+linear connected sum of `(2,k)` torus links — is *also* grouped-specific. Under
+`β_Bor` each nucleon's block is the **Borromean rings**: prime, non-split, not a
+torus link. This arc's own stated criterion for where many-body binding could
+live is "a closure that fails to be composite — non-split, prime, with the kind
+of irreducibly multi-component linking the Borromean rings have". The corrected
+word satisfies that criterion — **at the wrong level**. The nucleons are still
+strung on a chain, blocks still overlap in one strand, and `L` is unchanged to
+`~1e-60`. So the Borromean structure is intra-nucleon and buys no many-body
+binding. Recorded in the block, not overstated.

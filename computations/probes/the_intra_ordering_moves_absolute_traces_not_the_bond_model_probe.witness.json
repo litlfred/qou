@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T07:29:46.455094+00:00",
-  "commitSha": "90f63558840eec3abbb4a02b9bc815173dbbd7fa",
+  "computedAt": "2026-09-05T07:42:51.791550+00:00",
+  "commitSha": "5581d089576c181598f5ad344c7a4af8b787581e",
   "assertions": [
     {
       "name": "the INTERLEAVED word is beta_Bor (Lean closed form, rel < 1e-40)",
@@ -17,7 +17,19 @@
       "passed": true
     },
     {
-      "name": "the grouped rebuild reproduces atom_braid_word_3A's trace to 1e-40 — so every comparison below is against production",
+      "name": "both rebuilds reproduce atom_braid_word_3A's own trace to 1e-40 under the matching intra_order — every comparison below is against production",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "atom_braid_word_3A now emits the ALTERNATING confinement core (sigma_0 sigma_1^-1)^3 by default",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "and intra_order='grouped' still reaches the pre-2026-09-05 word, so every published absolute number stays reproducible",
       "computed": "1",
       "expected": "1",
       "passed": true
@@ -60,11 +72,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 6,
   "computation": "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe",
   "scriptFile": "the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py",
-  "scriptHash": "6330266b3015",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6bf378897327",
+  "scriptCommitSha": "5581d089576c181598f5ad344c7a4af8b787581e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

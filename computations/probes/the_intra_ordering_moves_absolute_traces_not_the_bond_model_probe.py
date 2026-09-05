@@ -201,20 +201,37 @@ def main() -> int:
           rel["grou"] > mpfr("0.5"))
 
     print("\n" + "=" * 76)
-    print("§2  THE GROUPED RECONSTRUCTION IS THE PRODUCTION WORD, NOT A MODEL")
+    print("§2  BOTH RECONSTRUCTIONS ARE THE PRODUCTION WORD, NOT A MODEL")
     print("=" * 76)
     ok_prod = True
     for order, Z, N, nm, _a in ISO:
         n = 3 * (Z + N)
-        prod = E.trM(n, [(1, mpfr(str(d)), g)
-                         for _c, d, g in atom_braid_word_3A(Z, N, include_inter=True)])
-        mine = E.trM(n, chain(order, n_group, True))
-        r = abs(prod - mine) / abs(prod)
-        ok_prod &= r < TOL
-        print(f"    {nm:>5}  atom_braid_word_3A {gmpy2.digits(prod, 10, 20)[0]}   "
-              f"rebuilt {gmpy2.digits(mine, 10, 20)[0]}   rel {f(r):.2e}")
-    check("the grouped rebuild reproduces atom_braid_word_3A's trace to 1e-40 — "
-          "so every comparison below is against production", ok_prod)
+        for builder, io in ((n_group, "grouped"), (n_inter, "borromean")):
+            prod = E.trM(n, [(1, mpfr(str(d)), g) for _c, d, g in
+                             atom_braid_word_3A(Z, N, include_inter=True,
+                                                intra_order=io)])
+            mine = E.trM(n, chain(order, builder, True))
+            r = abs(prod - mine) / abs(prod)
+            ok_prod &= r < TOL
+            print(f"    {nm:>5} {io:>10}  atom_braid_word_3A "
+                  f"{gmpy2.digits(prod, 10, 20)[0]}   rebuilt "
+                  f"{gmpy2.digits(mine, 10, 20)[0]}   rel {f(r):.2e}")
+    check("both rebuilds reproduce atom_braid_word_3A's own trace to 1e-40 under "
+          "the matching intra_order — every comparison below is against production",
+          ok_prod)
+
+    print("\n" + "=" * 76)
+    print("§2b THE PRODUCTION DEFAULT IS NOW beta_Bor (owner ruling, 2026-09-05)")
+    print("=" * 76)
+    dflt = [g for _c, _d, g in atom_braid_word_3A(1, 1)][:6]
+    grpd = [g for _c, _d, g in atom_braid_word_3A(1, 1, intra_order="grouped")][:6]
+    print(f"    default            first 6 generators: {dflt}")
+    print(f"    intra_order=grouped first 6 generators: {grpd}")
+    check("atom_braid_word_3A now emits the ALTERNATING confinement core "
+          "(sigma_0 sigma_1^-1)^3 by default", dflt == [0, 1, 0, 1, 0, 1])
+    check("and intra_order='grouped' still reaches the pre-2026-09-05 word, so "
+          "every published absolute number stays reproducible",
+          grpd == [0, 0, 0, 0, 0, 0])
 
     print("\n" + "=" * 76)
     print("§3  WHAT CANNOT MOVE: R_nucleon, AND IT IS prod(z + d) UNDER BOTH")
