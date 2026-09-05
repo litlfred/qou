@@ -218,6 +218,39 @@ account of the A-dependence has to explain that.
 > the plateau claim needed, which is a second reason that claim could not have
 > been checked against it.
 
+## Post-merge regression: #6794 does NOT move these numbers
+
+A sibling landed the exact-`mpf` seminormal builder (PR #6794) while this series
+was being measured, so **every point above was computed before that fix**. Its
+change is mostly to `_build_ysn_matrices`, which the kernel path bypasses — but
+it also alters the consumer dispatch in `unified_iterative_correction`,
+`atom_character_raw` and `_contrib_single_partition`, and `binding_energy` sums
+all three. That cannot be settled from the call graph, so it was measured.
+
+Re-ran ²H against the recorded pre-merge kernel-live value:
+
+```
+2H post-merge B_pred=-7.271102124876717  (855.4s)
+2H pre-merge  B_pred=-7.271102124876717
+MOVED: False
+```
+
+**Bit-identical.** The series stands as recorded.
+
+Two caveats on how far that generalises. It is **one atom**, ²H — though the
+result is not a lucky spot check: with the kernel live, `_lp_kernel_steps`
+serves the accumulator and the Python sigma family is never consumed, which is
+the mechanism that predicts no movement, and the measurement confirms it. And it
+says nothing about the **fallback** path, which is exactly what #6794 fixed and
+is where its own verification (9.5e-52, was ~1e-16) lives. The two results are
+complementary: their fix makes the fallback exact; this shows the kernel path
+was already unaffected by the defect.
+
+This also corroborates their independent finding that **the float64 defect does
+not account for the 17.29 % kernel-vs-fallback gap** — measured on their side at
+k = 7 and k = 8 (rel 1.7e-14, 8.9e-15), and from this side by the gap surviving
+the fix untouched.
+
 ## Precision: these figures are float64, and the source says so
 
 `binding_energy` ends `return float(B)`, and its own comment records why that
