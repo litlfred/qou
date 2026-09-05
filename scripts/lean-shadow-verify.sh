@@ -47,15 +47,32 @@ set -uo pipefail
 
 ROOT=$(git rev-parse --show-toplevel)
 PKG="$ROOT/content/quantum-observable-universe/lean"
-OLEANS="$PKG/.lake/build/lib/lean"
 export PATH="$HOME/.elan/bin:$PATH"
 
 [ $# -ge 1 ] || { echo "usage: $0 <file.lean> [...]" >&2; exit 2; }
-[ -d "$OLEANS/QOU" ] || {
-  echo "no restored olean tree at $OLEANS/QOU — restore lake-cache first" >&2
-  echo "(AGENTS.md §'Agents building Lean in a sandbox')" >&2
+
+# WHERE THE QOU OLEANS ARE depends on how the tree was built, and the two
+# locations are not interchangeable.  A per-paper `cd $PKG && lake build` writes
+# under $PKG/.lake; the `lake-cache/qou-<slug>` restore documented in AGENTS.md
+# §"Agents building Lean in a sandbox" seeds the ROOT workspace at $ROOT/.lake.
+# Measured 2026-09-05 on a correctly-restored container: 2442 QOU oleans at the
+# root, 0 at the per-paper path.  Hardcoding the per-paper path therefore made
+# this script exit 2 on exactly the tree it exists to verify against.
+# $OLEANS may be set to override.
+if [ -z "${OLEANS:-}" ]; then
+  for cand in "$PKG/.lake/build/lib/lean" "$ROOT/.lake/build/lib/lean"; do
+    [ -d "$cand/QOU" ] && { OLEANS="$cand"; break; }
+  done
+fi
+[ -n "${OLEANS:-}" ] && [ -d "$OLEANS/QOU" ] || {
+  echo "no restored olean tree with a QOU/ dir — looked in:" >&2
+  echo "  $PKG/.lake/build/lib/lean" >&2
+  echo "  $ROOT/.lake/build/lib/lean" >&2
+  echo "restore lake-cache first (AGENTS.md §'Agents building Lean in a sandbox')," >&2
+  echo "or set OLEANS=<dir containing QOU/>" >&2
   exit 2
 }
+echo "olean tree: $OLEANS"
 
 KEEP=1
 if [ -z "${SHADOW:-}" ]; then
