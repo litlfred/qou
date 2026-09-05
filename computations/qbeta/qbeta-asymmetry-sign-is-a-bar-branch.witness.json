@@ -1,0 +1,90 @@
+{
+  "computation": "qbeta-asymmetry-sign-is-a-bar-branch",
+  "assertions": [
+    {
+      "name": "the_splitting_is_exactly_two_log_q_symbolically",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so S = (A-2)ln[2]_q + (-ln b_pn) + 2 ln(q).(N-Z), and the coefficient is positive for ONE reason: q0 > 1"
+    },
+    {
+      "name": "bar_leaves_the_loop_invariant_and_swaps_the_two_pure_bonds",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "[2]_q is bar-invariant, b_pp <-> b_nn swap. One bit, tracing to the Hecke eigenvalue assignment u <-> +q, d <-> -q^-1"
+    },
+    {
+      "name": "the_swapped_branch_beats_the_built_one_on_spread_and_correlation",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "1.166 vs 1.225, and corr -0.493 vs -0.804 -- nearly halved"
+    },
+    {
+      "name": "and_it_is_the_first_isospin_structure_in_this_arc_to_beat_bond_counting",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "which REVERSES qou-q7ga's conclusion: the q-deformation is net-negative on the branch the corpus took and net-POSITIVE on the other one"
+    },
+    {
+      "name": "the_Q_beta_magnitude_is_sign_blind",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the swap exchanges net(n) and net(p), flipping Delta(net)'s sign and changing |Delta(net)| not at all -- so the Q_beta magnitude does not constrain the bit"
+    },
+    {
+      "name": "and_the_mass_ordering_is_imposed_not_derived_from_the_sign",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "m_n = m_p + Q_beta + m_e puts the neutron above the proton by construction, so the neutron-heavier fact does not constrain it either. Neither half of the beta-decay sector pins the branch"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "E_0_MeV": "4.2274833556290305503",
+    "E_0_form": "tower-summed (owner ruling 2026-09-05)",
+    "strands_per_nucleon": 3,
+    "net_n": "0.81083",
+    "net_p": "0.99913",
+    "source": "qou-mass/src/qou_mass/data/ame2020.json"
+  },
+  "data": {
+    "n_measured": 2548,
+    "asymmetry_coefficient_exact": "2*log(q)",
+    "asymmetry_coefficient_at_q0": "0.208681440639039",
+    "superseded_first_order_value": "0.219957165502762",
+    "laws": [
+      {
+        "law": "as built     p-p = sigma",
+        "p5_p95": "1.224972733",
+        "full": "10.18150685",
+        "corr": "-0.8037854111"
+      },
+      {
+        "law": "BAR-SWAPPED  p-p = sigma^-1",
+        "p5_p95": "1.166334348",
+        "full": "7.365006054",
+        "corr": "-0.4928811821"
+      },
+      {
+        "law": "no asymmetry (count only)",
+        "p5_p95": "1.180541315",
+        "full": "8.207744338",
+        "corr": "-0.6968558068"
+      }
+    ],
+    "delta_net": "-0.1883"
+  },
+  "provenance": {
+    "headSha": "c8489afd25d30f5a901f3dd0d1e8eeb0799dab1f",
+    "producer": "computations/qbeta/qbeta_asymmetry_sign_is_a_bar_branch_probe.py",
+    "elapsed_s": 0.772
+  }
+}
