@@ -1,4 +1,11 @@
-# Covariance-kernel epic (`qou-x631`) — M₁>0 `qou-k5r5`: the Cauchy–Schwarz relaxation is cheap (≥78.6 % of the true margin), so the margin route is the right one
+# Covariance-kernel epic (`qou-x631`) — M₁>0 `qou-k5r5`: the Cauchy–Schwarz relaxation is cheap (≥78.6 % of the true margin) — but tightness is not tractability, and the machinery reaches `P > N`, not the margin
+
+> **Withdrawn inference, corrected before merge (same branch, §Reach below).** This audit's first
+> version was titled *"…so the margin route is the right one"* and concluded exactly that. **The
+> measurement stands; the inference does not.** "The relaxation is tight" and "the resulting bound is
+> tractable" are different claims, and only the first was measured. The Fulman identity is keyed to
+> an **eigenfunction** of the up-down chain, and `A` is not one — so the identity reaches `P` and `N`
+> but **not** `V_A`, which is the margin route's one remaining object. See §The reach.
 
 **Date:** 2026-09-04 · **Branch:** `claude/m1-k5r5-cs-relaxation-cost-2026-09-04` ·
 **Tier:** measurement + independent re-verification of a 2026-08-21 corpus reduction · **Epic:** `qou-x631`; gap `qou-k5r5`.
@@ -42,9 +49,61 @@ certifies.
 > `n` — so at `n ≥ 79` it should be cheaper still, which is the conservative direction for the
 > extrapolation.
 
-**The margin route is therefore the right target, and sharpening `δ_A` is well spent.** It was not
-obvious in advance: had `ρ_D` come out near 0.5, four PRs would have been paying a 2× premium
-avoidable by working `P > N` directly.
+It was not obvious in advance: had `ρ_D` come out near 0.5, four PRs would have been paying a 2×
+premium avoidable by working `P > N` directly.
+
+*(This paragraph first continued "**the margin route is therefore the right target**". That does not
+follow from a tightness measurement — see the next section, which withdraws it.)*
+
+## The reach — tightness is not tractability, and only `W` is an eigenfunction
+
+The Fulman identity is not a general covariance formula. It reads
+
+> `Cov(f, g) = E_π[(f − f*)(g − g*)] / (2(1 − β))`, valid **when `J g = β g`**
+
+— it computes the covariance of *any* `f` against an **eigenfunction** `g` of the up-down chain `J`.
+The corpus's reduction takes `g = ω₃ = W`, which is why `P` and `N` come out as local per-edge sums.
+`V_A = Cov(A, A)` would need **`A` itself** to be an eigenfunction.
+
+Measured ([`…_eigenfunction_reach.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_eigenfunction_reach.py),
+exit 0, exact `Fraction`, `n = 3…12`, NO float64), quantified over the **family** — every
+non-degenerate `n`, not any single one:
+
+| statistic | eigenfunction at every n | consequence |
+|---|---|---|
+| `W` | **YES**, `β₃ = (n−2)/(n+1)` exactly | `Cov(·, W)` reachable ⟹ **`P` and `N` both reachable** |
+| `A` | **NO** — at no non-degenerate `n` | `V_A = Cov(A,A)` **not** reachable by this identity |
+| `D` | **NO** — constant (hence vacuously one) at `n = 3` only | `V_D` **not** reachable either |
+
+**Positive control.** `W` is *known* to be an eigenfunction with `β₃ = (n−2)/(n+1)` (corpus,
+2026-08-21, verified there to `n ≤ 13`). This probe's chain reproduces that **exactly** at every `n`,
+and `J` is row-stochastic throughout — so a negative on `A` is a fact about `A`, not about the chain.
+
+**Cross-check, from an independent direction.** #6627 found `V_W` an exact polynomial
+`n(n−1)(n−2)/3` while `V_A`, `V_D` and `P` are not polynomial at all. That is the same boundary seen
+from the other side: **the one object with a closed form is the one whose statistic is the
+eigenfunction.** Two independent measurements, one split.
+
+> **So the two routes are not symmetric in tractability.** `P > N` needs only covariances against
+> `W` — both reachable, both local per-edge sums with manifest signs. The margin route needs `V_A`,
+> which the named machinery does not reach and which #6627 showed has no polynomial closed form
+> either. **#6651's tightness measurement stands; its inference that the margin route is the right
+> target is withdrawn.**
+
+**Scope — (a), not (b).** This says the *named identity* does not apply to `V_A`. It does **not**
+exclude `V_A`: a spectral decomposition of `A` in the chain's eigenbasis, or a different chain for
+which `A` is an eigenfunction, are both untested here. What it settles is where the roadmap's own
+tool points.
+
+### A quantifier bug in this probe, caught before commit
+
+The first run reported *"D is an eigenfunction ⟹ `V_D` reachable"* on the strength of **n = 3
+alone**, where `D ≡ 3` is **constant** — and a constant is trivially an eigenfunction of any
+stochastic chain (`β = 1`), carrying no information. The summary used `any(n)` where reachability is
+a claim about the **family**, so it needs `every(n)`, with constants excluded. Fixed to quantify over
+non-degenerate `n` and to mark the constant case explicitly (`YES*` in the table). Same shape as the
+`da-arity-conflation` class, and the second quantifier slip of this arc — #6602 had the mirror of it,
+testing a family claim at a point.
 
 ## The corpus's reduction, independently re-verified
 
@@ -67,10 +126,20 @@ It prices the relaxation; it closes neither route. Both still need a rigorous fi
 
 ## Status of `qou-k5r5`
 
-Gap **OPEN**, target unchanged and now *justified* rather than merely chosen: a rigorous finite-`n`
-bound on `δ_A` at `C ≤ m_∞√79 = 2.6681` (empirical envelope 0.0580; `n ≤ 78` certified exhaustively).
-What this adds is that the route carrying that target forfeits at most ~21 % of the true margin, so
-the 40.5× headroom measured in #6576 is not being spent on a detour.
+Gap **OPEN**. Two things are now known that were not, and they point in opposite directions:
+
+- **The CS relaxation is cheap** — it forfeits at most ~21 % of the true margin, so the 40.5×
+  headroom measured in #6576 is not being spent on a detour. Whichever route runs, this is not
+  where the budget goes.
+- **But the machinery reaches `P > N`, not the margin.** `V_A` is neither an eigenfunction covariance
+  (this PR) nor a polynomial in `n` (#6627), while `P` and `N` are both exact local per-edge sums
+  with manifest signs.
+
+**So the recommended next target changes from `δ_A` to `P > N`** — the necessary-and-sufficient form,
+whose two objects are the ones the roadmap's own tool can compute. `C ≤ m_∞√79 = 2.6681` remains the
+requirement on the margin side if that route is taken anyway (empirical envelope 0.0580; `n ≤ 78`
+certified exhaustively). That is a recommendation from a reach measurement, not a proof that the
+margin route is dead — see the scope note above.
 
 ## Cross-references
 
