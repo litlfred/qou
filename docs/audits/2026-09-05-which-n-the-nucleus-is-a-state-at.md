@@ -115,7 +115,57 @@ did not carry the sentence itself.
 
 ---
 
-## 4. What route 1 *does* establish — a constraint, not a selection
+## 4. ~~What route 1 *does* establish — a constraint, not a selection~~ 🛑 RETRACTED
+
+> **🛑 THIS WHOLE SECTION IS WITHDRAWN (2026-09-05, same day). It was mine, and
+> it is a scope error the Φ_k audit already names.** Probe:
+> [`phi_k_is_not_a_trace_probe.py`](../../computations/probes/phi_k_is_not_a_trace_probe.py) — 4/4, exit 0.
+>
+> **The error.** The section imposes: *"any weight family consistent with the
+> corpus's canonical trace must vanish on `ker(H_n ↠ TL_n)`"*, and concludes
+> *"no candidate currently on the table satisfies the corpus's own consistency
+> requirement."* **Φ_k is not a trace, so no such requirement exists.** Three
+> independent reasons, any one sufficient:
+>
+> 1. **The Φ_k audit names this exact error as the one it exists to block.** Its
+>    requirement **R3** reads, in the verdict table:
+>    *"no Markov property is required — **Φ is not a trace** … it removes the
+>    reason to want `y_λ` and **blocks a scope error**."*
+> 2. **Φ_k is not linear on the algebra.** It is
+>    `Φ_k(β) = Σ_{λ: depth k} w_λ · log(|χ^λ(β)|·d_q(λ))` — a log-weighted sum
+>    over one depth stratum. `tr_M = Σ_λ y_λ χ^λ` is a linear functional on
+>    `H_n(q)`. A kernel argument about which *algebra elements* act as zero on
+>    `V^{⊗n}` says nothing about which *partitions* a separate functional may
+>    weight.
+> 3. **The constraint annihilates its own subject.** Imposed, it forces
+>    `w_λ = 0` on every λ with ≥ 3 rows — every stratum of depth ≥ 2 — so
+>    `Φ_k ≡ 0` for **all** `k ≥ 2` by the audit's own R1. A requirement that
+>    forbids the object being constructed is a reductio, not a finding.
+>
+> **And the "fifth measure" this section endorsed fails R1.** It named the TL
+> share `(f^λ)²/C_n` over `ℓ(λ) ≤ 2` as *"the one candidate that clears the
+> constraint"*. It clears it by being zero off the two-row cap — which is
+> precisely what R1 retires `y_λ` for. Measured (check B): it puts **0.9998 of
+> its mass on depth 1 and exactly 0.0 on every stratum of depth ≥ 2** at n = 9.
+> My proposed solution was the degenerate case.
+>
+> **What the ruling says.** After this audit merged, the owner ruled
+> *"molien. do the two arm reporting"* — **Molien canonical** for Φ_k, with
+> `d_q²/D²` retained as a labelled comparison arm (bean `qou-oots`, closed).
+> Check C confirms Molien is **nonzero on every depth ≥ 2 stratum** (0.3916 on
+> depth 3 at n = 9, the chirality channel) and check D that its total mass is
+> exactly 1 at n = 3…9 — so it satisfies R1 and R2 on exactly the strata this
+> withdrawn section excluded it for. **This retraction does not re-open the
+> family question; it removes a wrong argument against the ruling's answer.**
+>
+> **What survives in this note, untouched:** §1 (`N = 2` and its four corpus
+> witnesses — the question this audit was written to settle), §2 (the
+> TL/Catalan arithmetic), §3 (the depth off-by-one and the `N = 3`-is-also-null
+> measurement). Only §4's constraint and its endorsed measure are withdrawn.
+
+**Superseded text follows, kept as the record of the error.**
+
+### ~~What route 1 does establish~~
 
 Any weight family consistent with the corpus's canonical trace must **vanish on
 `ker(H_n ↠ TL_n)`**, i.e. on every λ with ≥ 3 rows. That is not a preference; it
@@ -253,10 +303,11 @@ are `ker(H_n ↠ TL_n)`, verified arithmetically. Depth 3 is vacuous at `N = 2`
 and `N = 3` alike, and empty at `n = 3`. Both surviving Φ_k candidates put mass
 on the kernel.
 
-**Scope-(b) structural exclusion of Φ₃ as an observable** — not "Φ₃ performs
-badly" but "the stratum it integrates over lies in the kernel of the map to the
-state space" — resting on sorry-free
-`QOU.QBeta.WenzlWeight.conventionD_weight_eq_zero_iff`, not on these numbers.
+~~**Scope-(b) structural exclusion of Φ₃ as an observable**~~ — **WITHDRAWN with
+§4.** The Lean theorem cited is real and says what it says about `y_λ`; what was
+wrong was inferring from it a constraint on Φ_k's *own* weight family. Φ₃ is
+vacuous **under `y_λ`** (which is R1's finding, not mine) and is **not** vacuous
+under Molien, the canonical family.
 
 **NOT established.**
 
