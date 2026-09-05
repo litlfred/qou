@@ -48,8 +48,16 @@ shift $((OPTIND - 1))
 if [ $# -gt 0 ]; then
   TARGETS=("$@")
 else
+  # Content-block siblings only.  Two things that are NOT content blocks and
+  # must not be swept as if they were:
+  #   * anything under a package's library tree (`content/*/lean/<Lib>/**`);
+  #   * the package ROOT module itself (`content/*/lean/<Lib>.lean`) — it is
+  #     the Lake library aggregator.  Excluding the tree but not the root is
+  #     the bug this comment exists to prevent: on the first run `QOU.lean`
+  #     was the sweep's only "red", and it was neither a content block nor
+  #     broken.
   mapfile -t TARGETS < <(
-    find content -name '*.lean' -not -path '*/lean/QOU/*' -print0 |
+    find content -path '*/lean/*' -prune -o -name '*.lean' -print0 |
       xargs -0 grep -l '^import QOU' | sort)
 fi
 [ "${#TARGETS[@]}" -gt 0 ] || { echo "no targets" >&2; exit 2; }

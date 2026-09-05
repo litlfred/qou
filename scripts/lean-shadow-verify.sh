@@ -86,7 +86,12 @@ if [ ! -d "$SHADOW/QOU" ]; then
   cp -a "$OLEANS/QOU" "$SHADOW/QOU"
 fi
 
-LP="$SHADOW:$(ls -d "$ROOT"/.lake/packages/*/.lake/build/lib/lean | tr '\n' ':')$OLEANS"
+# Every paper package's build dir, not just qou's: a file may import across
+# packages (`content/.../lean/QOU.lean` imports `UGB`), and a missing entry
+# shows up as `unknown module prefix`, which reads exactly like a real error.
+SIBLINGS=$(ls -d "$ROOT"/content/*/lean/.lake/build/lib/lean 2>/dev/null |
+             grep -v "^$OLEANS\$" | tr '\n' ':')
+LP="$SHADOW:$(ls -d "$ROOT"/.lake/packages/*/.lake/build/lib/lean | tr '\n' ':')$SIBLINGS$OLEANS"
 
 ORDER=$(OLEANS="$OLEANS" ROOT="$ROOT" python3 - "$@" <<'PY'
 import os, re, pathlib, subprocess, sys
