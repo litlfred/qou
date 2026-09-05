@@ -1999,18 +1999,6 @@ export const references: Reference[] = [
     URL: "https://arxiv.org/abs/math/9909027",
   }),
   ref({
-    id: "habiro2004-cyclotomic-completions",
-    type: "article-journal",
-    title: "Cyclotomic completions of polynomial rings",
-    author: [
-      { family: "Habiro", given: "Kazuo" },
-    ],
-    "container-title": "Publications of the RIMS",
-    issued: { "date-parts": [[2004]] },
-    note: "arXiv:math/0209324. PDF library//0209324v1.pdf (ingested 2026-09-05, owner upload 783c4cf4). The Habiro ring as the cyclotomic completion of Z[q]; the arithmetic nerve gluing the root-of-unity tower (route B).",
-    URL: "https://arxiv.org/abs/math/0209324",
-  }),
-  ref({
     id: "rouquier2006-categorification-braid-groups",
     library: {
       docId: "arxiv-math-0409593v1",

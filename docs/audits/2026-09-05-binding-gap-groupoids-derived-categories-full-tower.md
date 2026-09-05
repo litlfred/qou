@@ -888,7 +888,7 @@ All ingested with `references.ts` joins (`--check` clean; the array loads; no du
 
 ### 8d. Third addendum: the last four arXiv items (owner upload `783c4cf4`) — §8 is now held in full except Pirashvili and the two books
 
-`arxiv-math-0209324v1` Habiro, *Cyclotomic completions of polynomial rings* (row 26; route B's ring);
+~~`arxiv-math-0209324v1` Habiro~~ — **was ALREADY HELD** (`library/arxiv-math-0209324v1`, ref `habiro2004cyclotomic`); the "not held" in §8 row 26 and §8b/§8c was a lexical miss of mine (the INDEX row carries the title, not the author, and I grepped the author). The owner's re-upload was byte-identical and was dropped rather than ingested twice;
 `arxiv-math-0409593v1` Rouquier, *Categorification of sl₂ and braid groups* (row 14; the Rouquier complexes);
 `arxiv-0707.3799v3` Bezrukavnikov–Finkelberg, *Equivariant Satake category and Kostant–Whittaker reduction* (row 25);
 `arxiv-1608.07234v3` Venkatesh, *Derived Hecke algebra and cohomology of arithmetic groups* (row 24).
