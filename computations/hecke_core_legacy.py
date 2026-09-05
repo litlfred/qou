@@ -344,9 +344,21 @@ def _count_syts_by_12_relation(partition):
 
     CLOSED FORM (replaced a factorial enumeration, 2026-09-05, bean
     `qou-i7ju` / `qou-r4w5`).  This used to enumerate every SYT of shape λ
-    — f^λ of them — to obtain these counts, which is why the hadron-knot
-    table could not finish: the atoms use n = 3A strands, so ⁷Li is n = 21
-    where one partition carries 1e7+ tableaux.
+    — f^λ of them — to obtain these counts.
+
+    WHERE THIS ACTUALLY HELPS, measured (and it is NOT the low-A atoms —
+    do not read this as unblocking the table on its own):
+
+        atom        A   n=3A   partitions   total SYTs enumerated   max f^λ
+        deuterium   2      6           11                      76        16
+        ⁴He         4     12           77                 140,152     7,700
+        ⁷Li         7     21          792     119,952,692,896  1,118,939,184
+
+    The old enumeration over ALL partitions of n = 6 costs 0.0002 s, so
+    deuterium is untouched by this change and its cost lies elsewhere
+    (`qou-r4w5`, `qou-sv7h`).  At n = 21 it is 1.2e11 tableaux — not slow
+    but impossible.  This removes an ABSOLUTE wall at high A; it is
+    necessary, not sufficient, for the 19-atom table to finish.
 
     Two facts make the enumeration unnecessary, both verified exhaustively
     against the old code on every partition of n = 1..10 (138 partitions,
