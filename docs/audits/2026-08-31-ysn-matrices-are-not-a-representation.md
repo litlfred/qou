@@ -379,6 +379,34 @@ through `binding_energy`, which is fully kernel-served. Regenerating
 `hadron-knot-table.witness.json` was gated on step 2 of the corrected priority;
 step 2 is now measured and the answer is "nothing moves".
 
-**Untouched, deliberately.** The builder is still float64 (`math.sqrt`, `1.0`
-literals, no `mp.dps`). Representation first, precision third — that is this
-document's own ordering, and the precision half is `qou-sv7h` step 3.
+**🛑 "Untouched, deliberately" was the wrong frame, and it is retracted
+(2026-09-05).** This paragraph read: *"The builder is still float64
+(`math.sqrt`, `1.0` literals, no `mp.dps`). Representation first, precision
+third — that is this document's own ordering, and the precision half is
+`qou-sv7h` step 3."* That presents a live NO-FLOAT64 violation as a deliberate
+scope choice. The corpus has no "correct-but-imprecise" state for a
+`computations/` producer; float64 there is a defect, and an ordering between
+two defects is not a licence to leave the second one standing.
+
+**And the float64 was worse than the sentence describes.** It named
+`math.sqrt` and the literals. Measured: `Q`, `Q_INV` and `HA` imported from
+`q_parameter` are Python **floats**, so the family was float64 from its
+*inputs*; `mp.dps` is **15** in a bare import of `hecke_core_legacy`, exactly
+float64's significand, so carrying `mpf` without raising it would have bought
+nothing; and **124 of 193** ysn entries (64 %, max dim 2310) were `scipy`
+`csr_matrix`, which is float64 by construction and whose kernels reject
+`dtype=object`. Three defects, one named.
+
+**Consequence for the section above.** The `1e-14` figure in *"What it
+moves — measured"* was obtained at `k_exact = 4, 5, 6`. Those truncations
+carry **zero** sparse partitions — the threshold is `dim >= 32`, first reached
+at `k = 7` — so that sample never touched the 124 entries where float64 σ
+values met `mpf` coefficients. It measured the dense path only, and its scope
+should be read as such.
+
+**Now fixed.** The builder computes in `mpf` inside
+`mp.workdps(_precision.COMPUTE_DPS)`, and the sparse carrier is `_ExactCOO`
+rather than `csr_matrix`. Against the closed form this document derived
+symbolically (`-1/(q(q²+1))` at `ρ = -2`): **9.5e-52**, was ~1e-16. The audit's
+Python rows moved from `1.49e-16 / 1.52e-16` into the Rust MPFR reference's own
+precision class, `4.0e-50 / 3.2e-50` against `1.2e-50 / 2.0e-50`.
