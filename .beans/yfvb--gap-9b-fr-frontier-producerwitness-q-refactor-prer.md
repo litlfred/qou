@@ -44,6 +44,17 @@ cross-checks).
 - Compute unblocked (wheel builds + imports).
 - k3 FR result is scientifically sound (partial FR support: 4_1 best 1.55×, paper's
   6_1 NOT best) — the variance ratios are q₀-insensitive at the 11.5 ppb level.
+  **AMENDED 2026-09-05 (qou-9b50): that line is family-relative and must not be
+  read as a knot identification.** "4_1 best 1.55×" is the ranking under the
+  textbook weight w_λ = dim_q²/[n]_q!. The k=3 ranking is NOT weight-family-
+  invariant: dim_q²/[n]_q! ranks 4_1 best; the self-normalised dim_q²/Σ_μ dim_q²
+  ranks 6_1 best (so "paper's 6_1 NOT best" reverses under it); the Molien weight
+  f^λ q^{−κ_λ} dim_q(λ)/[n]_q! ranks 5_2 best; and under y_λ the depth-3 stratum
+  is identically zero (SU(N) row cap), so the test is vacuous. Which family Φ_k
+  requires is OPEN (qou-oots). The q₀-insensitivity claim is unaffected — it is a
+  statement about the anchor, not the weight.
+  Ref: docs/audits/2026-09-05-phi-k-weight-family.md,
+       docs/audits/2026-09-05-k3-weight-family-labelling.md
 - κ-leg asymptote formalized sorry-free (`QOU/Mass/KappaWritheAsymptote.lean`, PR #3404).
 
 **Order:** do Prereq 1 (owner sign-off) → Prereq 2 driver → run A≤4 → commit muon witness.
