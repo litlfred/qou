@@ -1,6 +1,7 @@
 import QOU.Archimedean.TransferMatrix
 import QOU.Archimedean.OptimalNF
 import QOU.Archimedean.HeckeRep
+import QOU.MathlibExt
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 import Mathlib.Tactic.Ring
 
@@ -298,6 +299,40 @@ noncomputable def chainCrossings (config : NuclearConfig) (j : ℕ) : CrossingSe
     | .nn => (2 * w_plus_t v, 2 * w_zero_t v)
     | .pn => (w_plus_t v, w_zero_t v)
 
+/-- `matrixChain` is the **reversed** product of its per-crossing transfer
+    matrices.
+
+    Immediate from the defining recursion `matrixChain ((c,d) :: rest) =
+    matrixChain rest * transferMatrix c d`, which puts the *first* crossing
+    of the sequence *rightmost* in the product. -/
+theorem matrixChain_eq_reverse_prod (seq : CrossingSeq) :
+    matrixChain seq =
+      (seq.map (fun cd => transferMatrix cd.1 cd.2)).reverse.prod := by
+  induction seq with
+  | nil => simp [matrixChain]
+  | cons hd tl ih =>
+    obtain ⟨c, d⟩ := hd
+    simp [matrixChain, ih, List.reverse_cons, List.prod_append]
+
+/-- **The reversal is harmless: `matrixChain` is the forward product.**
+
+    Proved, sorry-free, depending on no class instance: `transferMatrix_comm`
+    (a theorem since 2026-06-07) makes any two transfer matrices commute, so
+    `QOU.MathlibExt.prod_reverse_eq_of_pairwise_commute` removes the reversal
+    introduced by the recursion.
+
+    This is the whole of the "different association order" half of
+    `MatrixChainEqBuildChains`, and it is **not** conditional on anything.
+    What remains open there is a different question entirely — see that
+    class's docstring. -/
+theorem matrixChain_eq_prod (seq : CrossingSeq) :
+    matrixChain seq = (seq.map (fun cd => transferMatrix cd.1 cd.2)).prod := by
+  rw [matrixChain_eq_reverse_prod]
+  exact QOU.MathlibExt.prod_reverse_eq_of_pairwise_commute _
+    (List.pairwise_map.mpr
+      (QOU.MathlibExt.pairwise_of_forall seq
+        (fun a b => transferMatrix_comm a.1 a.2 b.1 b.2)))
+
 /-- **foldl/foldr bridge — typeclass (Pattern 4).**
 
     The universal claim
@@ -306,26 +341,38 @@ noncomputable def chainCrossings (config : NuclearConfig) (j : ℕ) : CrossingSe
     `foldr` agree), and callers witness the equality for the specific
     `(config, j)` pair they use.
 
-    **Mathlib pointer corrected 2026-09-05.** This said *"the Mathlib lemma
-    `List.foldl_eq_foldr_of_comm` is not yet available"*.  No lemma of that
-    name exists, and naming a non-existent one makes the gap look wider than
-    it is.  Two real lemmas sit next to it in
-    `Mathlib/Data/List/Basic.lean`:
+    **The fold-direction framing was wrong twice; corrected 2026-09-05
+    (second pass, measured).**
 
-    * `List.foldl_eq_foldr [Std.Commutative f] [Std.Associative f]` (:802) —
-      the clean statement, but `Std.Commutative` demands `∀ a b, f a b = f b a`
-      for the *operation*.  Matrix multiplication is not commutative, and the
-      claim here is only that *these particular* transfer matrices commute
-      pairwise, so this does not apply.
-    * `List.foldl_eq_foldr'` (:822) — needs only right-commutativity,
-      `∀ a b c, f (f a b) c = f (f a c) b`, which is weaker and may well hold
-      here; but it concludes `foldl f a l = foldr (flip f) a l`, with the
-      `flip`.
+    The original text cited `List.foldl_eq_foldr_of_comm` as *"not yet
+    available"*.  No lemma of that name exists.  The first correction, made
+    the same day, replaced it with *"what is missing is a pointwise-commuting
+    variant without the `flip`"*.  **That was also wrong**, and in the more
+    expensive direction: it left a closeable sub-problem looking open and
+    still mislocated the real one.
 
-    So the gap is real and is **narrower than "no lemma exists"**: what is
-    missing is a pointwise-commuting variant without the `flip`, or an
-    argument that the `flip` is harmless for this fold.  Closing it is Lean
-    work on the `matrixChain` / `buildChains` fold shapes, not a citation. -/
+    What is actually true, now proved above:
+
+    * `matrixChain` has **no fold-direction problem**.  Its recursion
+      reverses the list, and reversal under pairwise commutation is
+      `List.Perm.prod_eq'` + `List.reverse_perm` — both already in Mathlib.
+      `matrixChain_eq_prod` discharges it outright, sorry-free, with no
+      instance and no `flip`.
+    * `QOU.MathlibExt` §3a's `foldl_eq_foldr_of_commute_init` was
+      documented as discharging this class "after some rearrangement".  It
+      does not: it relocates the *accumulator*, leaving list order alone,
+      which is not the operation needed here.  Corrected there too.
+
+    **The residual gap is `buildChains`, and it is not about folds.**
+    `buildChains` (`TransferMatrix.lean:223`) is an index-tracking `foldl`
+    over the configuration carrying a `(List TMatrix × ℕ)` accumulator, which
+    at each step `mapIdx`-extends every existing chain via `extendChain` and
+    appends one new chain, guarded by `if k = 0`, reading nucleons with
+    `get!`.  Relating `(buildChains config).get! j` to
+    `chainCrossings config j` is a structural induction on the configuration
+    with index bookkeeping over a partial accessor — no Mathlib list lemma
+    states it, and none is the missing piece.  That is the work, and it is
+    **not done here.** -/
 class MatrixChainEqBuildChains (config : NuclearConfig) (j : ℕ)
     (_hj : j + 1 < config.length) : Prop where
   /-- foldl and foldr agree on the commutative chain product. -/

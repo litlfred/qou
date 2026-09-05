@@ -15,6 +15,7 @@ until they land, callers in `QOU.*` use the local versions.
 - §1 List sort identities (sum / product preserved by `insertionSort`)
 - §2 Foldl-as-product for commutative monoids
 - §3 Permutation-invariance of foldl/foldr over commutative ops
+- §3b Reversal-invariance of products under `Pairwise Commute`
 - §4 `Real.rpow` numerical helpers (sqrt bridge for half-powers)
 
 Each lemma has a `-- TODO upstream:` comment.
@@ -119,9 +120,21 @@ theorem List.commute_init_prod {α : Type*} [Monoid α]
     iff `init` commutes with `xs.prod`, which is exactly the
     `Commute init x for all x` hypothesis (via `commute_init_prod`).
 
-    This discharges `MatrixChainEqBuildChains` (after some
-    rearrangement) since `transferMatrix_comm` gives the
-    pairwise-commute property. -/
+    **CORRECTION 2026-09-05: this does NOT discharge
+    `MatrixChainEqBuildChains`.**  The sentence removed here claimed it did
+    "after some rearrangement".  It does not, and the reason is structural
+    rather than a missing rearrangement: this lemma moves the *initial
+    accumulator* from one end of the product to the other and leaves the
+    list order alone (both sides are `init * xs.prod` / `xs.prod * init`).
+    `matrixChain` does not have an accumulator problem — it **reverses the
+    list** (`matrixChain (x :: l) = matrixChain l * f x`, so
+    `matrixChain seq = (seq.map f).reverse.prod`).  The lemma that applies
+    is `prod_reverse_eq_of_pairwise_commute` in §3b, and the residual gap
+    at that call site is not about folds at all — see
+    `QOU.TMCorrespondence.MatrixChainEqBuildChains`.
+
+    The lemma itself is correct and is kept; only its claimed consequence
+    was wrong. -/
 theorem foldl_eq_foldr_of_commute_init {α : Type*} [Monoid α]
     (xs : List α) (init : α) (h : ∀ x ∈ xs, Commute init x) :
     xs.foldl (· * ·) init = xs.foldr (· * ·) init := by
@@ -146,6 +159,47 @@ theorem prod_eq_of_perm {α : Type*} [CommMonoid α]
 theorem prod_reverse_eq {α : Type*} [CommMonoid α] (xs : List α) :
     xs.reverse.prod = xs.prod :=
   (xs.reverse_perm).prod_eq
+
+/-! ### §3b  Reversal-invariance WITHOUT commutativity of the operation
+
+    `prod_reverse_eq` above needs a `CommMonoid`.  The matrices this
+    formalisation actually reverses (`QOU.TMCorrespondence.matrixChain`)
+    live in `Matrix (Fin 2) (Fin 2) R_t`, which is **not** commutative —
+    only the *specific* transfer matrices in play commute pairwise
+    (`QOU.Archimedean.transferMatrix_comm`).  The lemmas below are the
+    `Pairwise Commute` strengthening that case needs. -/
+
+/-- A `Pairwise` relation that holds for *every* pair holds along any list. -/
+theorem pairwise_of_forall {α : Type*} {R : α → α → Prop} (xs : List α)
+    (h : ∀ a b, R a b) : xs.Pairwise R := by
+  induction xs with
+  | nil => exact List.Pairwise.nil
+  | cons hd tl ih => exact List.Pairwise.cons (fun b _ => h hd b) ih
+
+/-- **Reversing a list does not change its product when the list's own
+    elements commute pairwise** — the non-commutative-monoid form of
+    `prod_reverse_eq`.
+
+    Note this needs nothing new from Mathlib: `List.Perm.prod_eq'`
+    (`Mathlib/Algebra/BigOperators/Group/List/Lemmas.lean:56`) already
+    takes exactly a `Pairwise Commute` hypothesis, and `List.reverse_perm`
+    supplies the permutation.  Recorded here because the QOU call site had
+    been looking for a `foldl`/`foldr` bridge lemma instead, which is a
+    different (and, for that call site, unnecessary) statement — see the
+    correction on `§3a` below and on
+    `QOU.TMCorrespondence.MatrixChainEqBuildChains`. -/
+theorem prod_reverse_eq_of_pairwise_commute {α : Type*} [Monoid α]
+    (xs : List α) (h : xs.Pairwise Commute) :
+    xs.reverse.prod = xs.prod :=
+  ((List.reverse_perm xs).symm.prod_eq' h).symm
+
+/-- Mapped form: when a family `f` commutes with itself globally, the
+    product over `xs.map f` is reversal-invariant. -/
+theorem prod_map_reverse_eq_of_forall_commute {α β : Type*} [Monoid β]
+    (f : α → β) (xs : List α) (h : ∀ x y : α, Commute (f x) (f y)) :
+    (xs.map f).reverse.prod = (xs.map f).prod :=
+  prod_reverse_eq_of_pairwise_commute _
+    (List.pairwise_map.mpr (pairwise_of_forall xs (fun a b => h a b)))
 
 /-- A natural-number list's sum equals the indexed Finset sum
     of its `getD ·  0` accessor. Mechanical induction on the list.
