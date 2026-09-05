@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T20:54:56Z
-updated_at: 2026-09-04T21:56:28Z
+updated_at: 2026-09-05T05:59:38Z
 ---
 
 Audit: [`2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`](../docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md)
@@ -379,3 +379,54 @@ separately proved cannot carry the binding law.
   the set-level-to-truth-value slide AGENTS.md names as `da-arity-conflation`.
 - It does not identify a defect in either builder, and does not say which word is
   the nucleon.
+
+
+---
+
+## 🛑 RESOLVED, and it was never a defect: the per-proton letter is the ELECTRONS
+
+I called the trailing `for _ in range(Z)` loop "the only letter in that function
+with no comment" and put it to the author as an open question. **It is fully
+explained**, and the explanation is in the corpus — just not in the Python file.
+
+`tools/hecke-engine/src/gram.rs:673 build_atom_nf` is the Rust original of the
+same construction, and there the loop reads:
+
+    // Electrons: pe crossing (EM channel, gen=1)
+    for _ in 0..z_count {
+        nf = hm(&nf, 1.0, -h, 1, h);
+    }
+
+**One proton-electron crossing per proton** — a neutral atom has `Z` electrons.
+The Python port dropped the comment; nothing else.
+
+### The real finding this exposes: the two builders model DIFFERENT OBJECTS
+
+Measured: `mass_at_3A_proper.py` contains **zero** occurrences of
+`electron` / `EM channel` / `pe`. Its own docstring accounts for every letter as
+"two per nucleon ... plus one per interface", with no electron term, and its name
+says `3A` — three strands per nucleon, nothing else.
+
+    build_atom_nf / build_atom_nf_mp   nucleus + Z electron crossings  -> the ATOM
+    atom_braid_word_3A                 3A strands, no electrons        -> the NUCLEUS
+
+So the A=1 residual of 5.045e-4 is **the hydrogen electron**. Not a bug, not a
+convention mismatch — the two routes were never computing the same object, and
+comparing their traces was comparing an atom against a nucleus.
+
+**A naming trap worth recording:** `atom_braid_word_3A` has "atom" in its name and
+contains no electrons, while `build_atom_nf` has "atom" in its name and does. That
+function already carries a `NAME IS A MISNOMER` banner for a different reason (it
+returns Hecke elements, not a braid word); this is a second way the name misleads.
+
+### What this does and does not change
+
+- **Retires** the "uncommented per-proton letter" as a question for the author.
+  The Python port should carry the Rust comment; that is a docs fix, not a
+  decision.
+- **Does NOT** explain the interface-schedule difference (chain `A-1` vs complete
+  graph `C(A,2)`). That is inter-nucleon, has nothing to do with electrons, and
+  remains exactly as recorded above.
+- **Does NOT** retract the probe: every assertion in
+  `nucleon_word_route_divergence_probe.py` still holds as measured. What changes
+  is the INTERPRETATION of the one-letter difference at A=1.
