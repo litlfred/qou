@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-09-05T08:18:56Z
+updated_at: 2026-09-05T08:45:02Z
 ---
 
 OPENED 2026-09-05. Route E's ONE surviving branch, now a named held construction
@@ -316,3 +316,111 @@ Six PDFs to uploads/. Four bear directly on this tranche:
 library/ only. Until migrate-uploads-to-library.py runs they are invisible to
 every "has the corpus got this?" check. uploads/ currently holds 28 PDFs, a
 backlog, and disk is at 169 MB, so a blind bulk ingest is not safe.
+
+
+## 🟢 THE WALL HAS UNTRIED LEVERS — and one is a flag I left off (2026-09-05)
+
+A corpus-grep of the tractability question (which I should have run BEFORE
+spending four expensive runs) returns three things that change the next command.
+
+### (viii) 🛑 I RAN ALL FOUR FAILED ATTEMPTS WITH THE TREE REDUCTION SWITCHED OFF
+
+The owner's remembered "trees" are REAL and are a held theorem:
+arxiv-1507.03238v3 section 9 (Triangulation independent Ptolemy varieties):
+
+  "Let G be a connected graph in the one-skeleton of M-hat, which has
+   fundamental group Z and contains all vertices. The reduced Ptolemy variety
+   P(T)red is ISOMORPHIC to the subvariety of P(T) where the Ptolemy
+   coordinates of all edges in G are 1."
+
+Remark 9.2 gives its historical form verbatim: "a maximal TREE with 1- or
+3-cycle". It is a gauge-fixing of the free diagonal torus action — EXACT, an
+isomorphism, not an approximation.
+
+SnapPy implements it as ptolemy_variety(..., eliminate_fixed_ptolemys=BOOL),
+DEFAULT FALSE. Measured on L6a4 just now:
+
+  eliminate_fixed_ptolemys=False   33 vars, 39 eqns   <- ALL FOUR FAILED RUNS
+  eliminate_fixed_ptolemys=True    27 vars, 33 eqns   <- free
+
+Six variables and six equations for nothing. The flag appears in ZERO files
+corpus-wide (computations, docs, content, .beans, .claude) — not prior art, an
+unused switch.
+
+### (ix) 🛑 ROUTE 76 ALREADY EXISTS AND I DUPLICATED IT
+
+  computations/probes/qbeta_route76_ptolemy_singular_probe.py     (356 lines)
+  computations/probes/qbeta_route76_strategy_matrix_probe.py      (600 lines)
+  computations/probes/qbeta_route76_modstd_reach_probe.py         (431 lines)
+  + two witnesses, + beans qou-mfas and ptlm
+
+A Ptolemy -> Singular lane, offline, no Magma, with a 6-strategy x 2-ideal-form
+matrix of wall-clock timings. Its measured headline (qou-mfas):
+
+  10_100, class 1, nz form, finduni           TIMEOUT  1,800,111 ms
+  10_100, class 1, nz form, modStd_finduni    ok          42,040 ms
+
+I ran four expensive attempts without running the corpus-grep checklist first,
+because the work felt like compute rather than a claim. It is exactly what the
+checklist is for.
+
+### (x) THE DIAGNOSTIC I HAD NOT RUN, and what the lane already knows
+
+  1. TIME std(I) ALONE. It localises the wall: GB vs decomposition. Route 76
+     measured 10_100 (14 tets) std 87.6 s / decomposition >312 s => wall was
+     DECOMPOSITION; 11a1 (17 tets) std TIMEOUT >3600 s => wall was the GB.
+     "Any route past 11a1 has to make the GB itself cheaper — a different
+     ordering, a different ideal presentation, or a different algorithm — not a
+     better decomposition." RUNNING NOW on the reduced 27-var ideal.
+  2. dp IS degrevlex in Singular. The obvious "try degrevlex" next-step is
+     already the configuration that times out; lp is the real alternative.
+  3. option(redSB) BEFORE finduni, or it errors "The ideal G has to be reduced",
+     which reads as a mathematical obstruction rather than an unreduced basis.
+  4. SINGULAR-SIDE SATURATION IS A MEASURED 10x PESSIMISATION vs SnapPy's own
+     non-zero-condition variable (1,013,930 ms vs the nz form). I am already on
+     the nz form; do not switch.
+  5. modStd forks ~15 parallel jobs and subprocess.run(timeout=) ORPHANS them —
+     13 orphans survived one timeout and competed with the NEXT measurement.
+     "Timings taken by a harness with this bug are not trustworthy in any run
+     that follows a timeout." MY FOUR RUNS WERE SEQUENTIAL. Use
+     start_new_session=True + os.killpg.
+  6. Singular auto-enables `short` when every ring variable is one character,
+     printing x^14 as x14, which sympy/PARI parse as a LINEAR polynomial in two
+     variables and return a confident wrong answer. Set short = 0.
+  7. Untried and installed: mprimdec.lib (modular primary decomposition),
+     grwalk.lib / rwalk.lib (Groebner walk), nfmodstd, ffmodstd, zeroset,
+     presolve — each measured at ZERO files corpus-wide.
+
+### (xi) TWO CORRECTIONS TO MY OWN NEGATIVE
+
+  * 14 OBSTRUCTION CLASSES EXIST, not 2. I ran class 0 ONLY and never said so.
+  * My four runs are SCOPE-(a): two algorithms, two ideal forms, ONE obstruction
+    class, on the UNREDUCED 33-variable presentation, in this container. They
+    are NOT evidence that L6a4 at n=3 is out of reach. Section (vi) above words
+    it correctly ("out of reach by DIRECT Groebner"); I stated it more strongly
+    than that in chat and am correcting it here.
+
+### (xii) WHAT DOES NOT TRANSFER — flatly, so nobody spends a day on it
+
+  * markov_peel.py is a TRACE RECURSION down the Hecke tower via
+    tr_M^(n)(x sigma_{n-1}) = z tr_M^(n-1)(x). No ideal, no variety, no
+    decomposition. It reduces the cost of evaluating one linear functional on
+    one algebra element. There is NO analogue for a commutative polynomial
+    ideal in 27 variables.
+  * Groebner-SHIRSHOV / gb_nf_reducer.rs / .claude/skills/local/groebner-basis.md
+    are NON-COMMUTATIVE rewriting systems on braid words (Singular letterplace,
+    makeLetterplaceRing/twostd/lpMult). A GS basis for H_n(q) and a commutative
+    GB for a Ptolemy ideal SHARE A NAME AND NOTHING ELSE.
+  * "Vanishing ideals" maps to NO code here — 3 Mathlib files and one prose
+    block. That part of the recollection has no implementation behind it.
+  * Bratteli / branching_tower / BlockCache / LaurentQ are representation-theory
+    caches for the Hecke tower. Different object.
+
+### (xiii) THE INGEST GAP BITES THE MOST ON-POINT SOURCE
+
+library/1307.6697v2 (Falbel-Koseleff-Rouillier), 1401.5542v1, 1111.2828v2 and
+2104.07437v4 are BARE PDFs — no sections/, no ocr/, no structure.json, no
+INDEX.md row. Corpus-grep path 5 is blind to all four tiers on the single most
+relevant document. RUR (Rational Univariate Representation) is absent from the
+corpus's greppable surface entirely: no msolve, no rur. Run
+folio-assistant's scripts/pdf-structure.py on those four.
