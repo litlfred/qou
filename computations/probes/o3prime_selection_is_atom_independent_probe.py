@@ -32,7 +32,7 @@ n, different atom, SAME selected block -- while the PRICE differs (0.4470 vs
 0.4206 at n=3; 0.01655 vs 0.02879 at n=9).  So the price is atom-dependent and
 the block is not.
 
-WHY w WINS -- UNEXPLAINED, and my first explanation is REFUTED BY THIS PROBE.
+WHY w WINS -- MEASURED BELOW; my first explanation is REFUTED BY THIS PROBE.
 
 The obvious mechanism is spread dominance: at n=6 the surviving w span 0.0151 ->
 0.1153 (7.6x) while the characters span 1.560 -> 4.249 (2.7x), so w would move
@@ -49,11 +49,60 @@ and the argmin is unmoved anyway.  So spread dominance is not the mechanism, and
 the assertion that it was now fails by design in this probe rather than being
 quietly dropped.
 
-WHAT THE MECHANISM IS: OPEN.  Spread is a marginal statistic and the product's
-argmin depends on how w and chi are CORRELATED across partitions, not on their
-ranges separately.  A second guess is not offered here -- the corpus's standing
-discipline is that an unexplained regularity is information and a replacement
-mechanism invented to fit six rows is not.
+THE MECHANISM, MEASURED: w AND chi ARE ANTI-CORRELATED.
+
+Spread is a marginal statistic; the product's argmin turns on how w and chi are
+CORRELATED across partitions, not on their ranges separately.  Measured here,
+they are systematically anti-correlated -- of the C(k,2) partition pairs on a
+row, the fraction ordered the SAME way by w and by chi sits far below the 1/2
+expected if the chi-ordering were unrelated to the w-ordering:
+
+    row  n   k  pairs  concordant   w-spr  chi-spr  t-spr   flat   P(conc<=obs)
+      0  3   2      1    0 (  0 %)   2.044    1.308  1.563  1.308x       1/2
+      1  3   2      1    0 (  0 %)   2.044    1.516  1.348  1.516x       1/2
+      2  6   4      6    1 ( 17 %)   7.625    2.724  3.951  1.930x       1/6
+      3  9   5     10    2 ( 20 %)   5.915    6.448  4.696  1.259x      7/60
+      4  9   5     10    1 ( 10 %)   5.915    6.712  4.266  1.386x      1/24
+      5 12   7     21    5 ( 24 %)  17.34    12.51  10.18   1.703x    49/720
+
+    aggregate 9/49 = 18 % concordant, against 24.5 expected under the null.
+
+The last column is exact and distribution-free: P(concordant <= observed) when
+the chi-ordering is a uniform random permutation of the w-ordering, computed by
+enumerating all k! permutations -- no normality, no large-k limit, no fitted
+parameter.  Multiplying the four DISTINCT values of n, taking the LEAST extreme
+row within each n (rows 0/1 share n=3 and rows 3/4 share n=9, and two atoms'
+characters at the same n are plausibly correlated, so treating those as
+independent draws would overstate the evidence):
+
+    1/2 * 1/6 * 7/60 * 49/720 = 343/518400 ~ 6.6e-4.
+
+The all-six-rows product is 343/24883200 ~ 1.4e-5, and is reported alongside it
+as the ANTI-CONSERVATIVE figure rather than as the result.
+
+The consequence is in the t-spr and flat columns: the product is FLATTENED
+relative to w on every row (t-spread < w-spread; flat = w-spread/t-spread > 1),
+never amplified.  A large character lands preferentially on a small weight and
+partly cancels it.  That is why chi-spread exceeding w-spread at n = 9 fails to
+overturn the argmin -- chi is not an independent perturbation that might happen
+to point the other way, it is a partial cancellation of the very ordering it
+would have to reverse.
+
+The cancellation is INCOMPLETE -- t-spread stays well above 1 on every row
+(1.35x to 10.2x) -- so w's ordering survives into the product.  Complete
+cancellation would flatten t to a constant and make the argmin arbitrary; that
+is not what happens, and it is why the selection is stable rather than noise.
+
+Both facts are asserted below and fail loudly on a row that breaks either.
+
+The factorisation the whole account rests on is checked, not assumed: |t| =
+w * |chi| holds in the committed data to 4e-50 relative, i.e. to the witness's
+serialisation floor.
+
+WHAT IS STILL OPEN: WHY the anti-correlation holds.  It is measured over six
+rows and four values of n, not derived.  Whether it is a structural property of
+the Markov weight against the Hecke character, or an artifact of which
+partitions survive the radical quotient, is not settled here.
 
 WHAT SURVIVES FROM #6752, AND WHAT DOES NOT
 -------------------------------------------
@@ -79,6 +128,9 @@ from __future__ import annotations
 
 import json
 import sys
+from fractions import Fraction
+from itertools import permutations
+from math import factorial
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -103,6 +155,21 @@ def check(name: str, ok: bool, detail: str = "") -> None:
           flush=True)
 
 
+def tau_tail(k: int, obs: int) -> Fraction:
+    """Exact P(concordant pairs <= obs) when the chi-ordering is a uniform
+    random permutation of the w-ordering.
+
+    Distribution-free and exact: enumerates all k! permutations.  k <= 7 here
+    (5040 perms), so this is cheap.  Returns a Fraction, never a float --
+    the corpus's NO-FLOAT64 discipline applies to a p-value as much as to a
+    physical quantity.
+    """
+    hits = sum(1 for p in permutations(range(k))
+               if sum(1 for i in range(k) for j in range(i + 1, k)
+                      if p[i] < p[j]) <= obs)
+    return Fraction(hits, factorial(k))
+
+
 WIT = HERE.parent / "a-K-via-lp-dual-full.witness.json"
 
 
@@ -111,8 +178,9 @@ def main() -> int:
     print(f"=== does the character move O3''s argmin? — {len(rows)} rows ===",
           flush=True)
 
-    out, by_n = [], {}
+    out, by_n, tails = [], {}, {}
     agree = 0
+    fact_max = mp.mpf(0)
     for idx, r in enumerate(rows):
         surv = [p for p in r["per_partition"] if mp.mpf(p["y_lambda"]) != 0]
         n = sum(surv[0]["partition"])
@@ -123,12 +191,31 @@ def main() -> int:
 
         w_vals = [mp.mpf(p["y_lambda"]) for p in surv]
         c_vals = [abs(mp.mpf(p["chi_lambda"])) for p in surv]
+        t_vals = [abs(mp.mpf(p["contribution"])) for p in surv]
         w_spread = max(w_vals) / min(w_vals)
         c_spread = max(c_vals) / min(c_vals)
+        t_spread = max(t_vals) / min(t_vals)
+
+        # The mechanism is a CORRELATION between w and chi, not a ratio of
+        # their ranges.  Count concordant pairs and price the count exactly.
+        k = len(surv)
+        pairs = [(i, j) for i in range(k) for j in range(i + 1, k)]
+        conc = sum(1 for i, j in pairs
+                   if (w_vals[i] - w_vals[j]) * (c_vals[i] - c_vals[j]) > 0)
+        tail = tau_tail(k, conc)
+        tails.setdefault(n, []).append(tail)
+
+        # |t| = w * |chi| is what the whole account rests on -- check it here
+        # rather than assuming it from the algebra.
+        fact_err = max((abs(t_vals[i] - w_vals[i] * c_vals[i]) / t_vals[i]
+                        if t_vals[i] != 0 else mp.mpf(0)) for i in range(k))
+        fact_max = max(fact_max, fact_err)
 
         print(f"  row {idx}  n={n:<3} argmin(t)={str(arg_t['partition']):>10} "
               f"argmin(w)={str(arg_w['partition']):>10}  same={same}  "
-              f"w-spread={mp.nstr(w_spread, 4)}x  chi-spread={mp.nstr(c_spread, 4)}x",
+              f"w-spread={mp.nstr(w_spread, 4)}x  chi-spread={mp.nstr(c_spread, 4)}x  "
+              f"t-spread={mp.nstr(t_spread, 4)}x  flat={mp.nstr(w_spread / t_spread, 4)}x  "
+              f"conc={conc}/{len(pairs)}  P={tail}",
               flush=True)
 
         by_n.setdefault(n, []).append(
@@ -139,6 +226,9 @@ def main() -> int:
             "same": same,
             "price_t_min": fmt(mp.mpf(arg_t["contribution"])),
             "w_spread": fmt(w_spread), "chi_spread": fmt(c_spread),
+            "t_spread": fmt(t_spread), "flattening": fmt(w_spread / t_spread),
+            "n_pairs": len(pairs), "concordant": conc,
+            "tau_tail": str(tail),
         })
 
     print(flush=True)
@@ -163,6 +253,43 @@ def main() -> int:
           f"{len(counterex)} counterexample row(s): n="
           f"{sorted({r['n'] for r in counterex})}")
 
+    # The mechanism that DOES hold, asserted so it fails loudly if a seventh
+    # row breaks it.
+    anti = [r for r in out if 2 * r["concordant"] < r["n_pairs"]]
+    check("w and chi are ANTI-correlated on EVERY row — concordant pairs fall "
+          "below the independent expectation of half, so a large character "
+          "lands preferentially on a small weight",
+          len(anti) == len(out),
+          f"{sum(r['concordant'] for r in out)}/{sum(r['n_pairs'] for r in out)}"
+          f" = {sum(r['concordant'] for r in out) * 100 // sum(r['n_pairs'] for r in out)}%"
+          f" concordant vs {sum(r['n_pairs'] for r in out) / 2:.1f} expected")
+
+    flat = [r for r in out if mp.mpf(r["flattening"]) > 1]
+    check("the product is FLATTENED relative to w on EVERY row — chi partly "
+          "CANCELS the weight ordering rather than adding to it, and the "
+          "cancellation is incomplete, so w's argmin survives into t",
+          len(flat) == len(out),
+          "flattening " + ", ".join(mp.nstr(mp.mpf(r["flattening"]), 4)
+                                    for r in out) + "x")
+
+    # Conservative: one row per distinct n, the LEAST extreme in each group.
+    # Two atoms at the same n plausibly have correlated characters, so
+    # multiplying all six would overstate the evidence.
+    p_cons = Fraction(1)
+    for _n, ts in sorted(tails.items()):
+        p_cons *= max(ts)
+    p_all = Fraction(1)
+    for _n, ts in sorted(tails.items()):
+        for t in ts:
+            p_all *= t
+    print(f"\n  anti-correlation, exact and distribution-free:"
+          f"\n    conservative (one row per n, least extreme) = {p_cons}"
+          f" ~ {float(p_cons):.2e}   <- the result"
+          f"\n    all six rows (assumes more independence)    = {p_all}"
+          f" ~ {float(p_all):.2e}"
+          f"\n  |t| = w*|chi| max relative residual = {mp.nstr(fact_max, 3)}"
+          f"  (serialisation floor)", flush=True)
+
     w = WitnessBuilder("o3prime-selection-is-atom-independent",
                        engine="python+mpmath")
     w.set_description(
@@ -172,8 +299,17 @@ def main() -> int:
         "all six committed rows, argmin(t) == argmin(w) every time, so the "
         "character never moves the selection. Two atoms at n=3 and two at n=9 "
         "give the SAME block with DIFFERENT prices. Mechanism UNEXPLAINED: the "
-        "obvious spread-dominance account is refuted here -- chi-spread exceeds "
-        "w-spread at n=9 and the argmin is unmoved anyway. CONSEQUENCE: PR #6752's "
+        "first spread-dominance account is refuted here -- chi-spread exceeds "
+        "w-spread at n=9 and the argmin is unmoved anyway. THE MECHANISM THAT DOES "
+        "hold is an ANTI-CORRELATION between w and chi: concordant partition "
+        "pairs are 9/49 = 18% against 24.5 expected, so a large character lands "
+        "preferentially on a small weight and the product is FLATTENED relative "
+        "to w on every row (never amplified) -- chi is a partial cancellation of "
+        "the ordering it would have to reverse, not an independent perturbation. "
+        "Exact distribution-free tail, one row per distinct n and the least "
+        "extreme within each: 343/518400 ~ 6.6e-4. Cancellation is INCOMPLETE "
+        "(t-spread 1.35x-10.2x), so w's argmin survives. WHY the anti-correlation "
+        "holds is OPEN. CONSEQUENCE: PR #6752's "
         "reading of the selection as 'which Wedderburn blocks the bound state "
         "saturates' is WRONG and is corrected; the pricing result (y_0* nonzero "
         "and atom-dependent, where the full LP has y_0* = 0 identically) STANDS."
