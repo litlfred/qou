@@ -147,6 +147,37 @@ def main():
         # when the weight ratio y_k/y_{k+1} exceeds the trace rise. The MARGIN between them is
         # the quantity a proof would have to bound, and it is a ratio of two things we can get
         # at separately — y_λ has a closed form (SU(2) q-dimensions), the trace does not.
+        # THE CONDITION IS ON THE RAW TRACE, NOT ON |tr|/dim. |c_λ| = y_λ·|tr_λ| carries no dim,
+        # so y-weighted monotonicity is exactly
+        #
+        #       |tr_{k+1}| / |tr_k|  <  y_k / y_{k+1}  =  [n−2k+1]_q / [n−2k−1]_q
+        #
+        # Quoting a |tr|/dim ratio against that ceiling mixes in the dimension profile and is
+        # simply the wrong comparison — at the square end dim FALLS sharply (A=4: 297 → 132), so
+        # |tr|/dim overstates the trace's growth by ~2× exactly where the ceiling is tightest.
+        print("\n  RAW-TRACE ratio vs the weight ceiling — the actual y-weighted condition:")
+        print(f"    {'k→k+1':>8}{'|tr| ratio':>14}{'y_k/y_k+1':>13}{'dim ratio':>12}"
+              f"{'|c| verdict':>14}")
+        for i in range(1, len(shapes) - 1):
+            yk = yl.get(shapes[i]); yk1 = yl.get(shapes[i + 1])
+            yk = abs(mp.mpf(str(yk))) if yk is not None else mp.mpf(0)
+            yk1 = abs(mp.mpf(str(yk1))) if yk1 is not None else mp.mpf(0)
+            if yk1 == 0 or ct[i] == 0:
+                continue
+            # |tr| = (|tr|/dim) * dim; recover both from the stored column.
+            d_i = base.block_structure(shapes[i])[1]
+            d_j = base.block_structure(shapes[i + 1])[1]
+            tr_i, tr_j = vt[i] * d_i, vt[i + 1] * d_j
+            if tr_i == 0:
+                continue
+            tr_ratio = tr_j / tr_i
+            wr = yk / yk1
+            ok = "falls ✓" if tr_ratio < wr else "RISES ✗"
+            print(f"    {str(i) + '→' + str(i + 1):>8}{mp.nstr(tr_ratio, 6):>14}"
+                  f"{mp.nstr(wr, 6):>13}{mp.nstr(mp.mpf(d_j) / d_i, 5):>12}{ok:>14}")
+        print(f"    ceiling over the WHOLE column is max_k y_k/y_k+1 = [3]_q = "
+              f"{mp.nstr(_qint(3, q), 8)} (at the square end, independent of n)")
+
         print("\n  MARGIN at each k where |tr|/dim RISES (TRUE element):")
         any_margin = False
         for i in range(1, len(vt) - 1):

@@ -82,15 +82,34 @@ place where protection is maximal.
 **The sharper statement, and it is the reusable one.** The weight ratio is
 `[n−2k+1]_q/[n−2k−1]_q`, which is maximised over the whole column at the square end, where it is
 `[3]_q/[1]_q = [3]_q ≈ 3.0437` — **a constant, independent of `n`**. So the y-weighting can absorb a
-trace rise of at most `[3]_q` anywhere, ever. That gives a clean necessary condition:
+trace growth of at most `[3]_q` anywhere, ever, giving a clean necessary condition:
 
-> y-weighted monotonicity on the ≤2-row column requires **every** `|tr|/dim` rise to be
-> `< [3]_q ≈ 3.0437`.
+> y-weighted monotonicity on the ≤2-row column requires **every** adjacent **raw** trace ratio
+> `|tr_{k+1}|/|tr_k|` to be `< [3]_q ≈ 3.0437`.
 
-Measured, the square-end trace rise runs **×2.144 (A=2) → ×1.416 (A=3) → ×7.553 (A=4)**. It breaks
-through the ceiling at A=4. The route does not fail by a small margin that a sharper analysis might
-recover — it fails against a fixed bound that cannot be raised, because `[3]_q` is where the weight
-family tops out.
+**The condition is on the RAW trace, not on `|tr|/dim` — a correction to my own first version of
+this section.** `|c_λ| = y_λ·|tr_λ|` carries no `dim`, so comparing a `|tr|/dim` ratio against the
+ceiling mixes in the dimension profile. That is not a pedantic distinction here: at the square end
+`dim` *falls* sharply (A=4: 297 → 132), which inflates the `|tr|/dim` ratio by ~2.25× exactly where
+the ceiling is tightest. The ×7.553 I first quoted against `[3]_q` is a `|tr|/dim` figure and was the
+wrong comparison.
+
+Measured properly, the **square-end raw trace ratio** across sizes:
+
+| A | n | square-end `\|tr_{k+1}\|/\|tr_k\|` | ceiling `[3]_q` | verdict |
+|---|---|---|---|---|
+| 2 | 6 | **1.19121** | 3.0437 | falls ✓ |
+| 3 | 9 | **1.23869** | 3.0437 | falls ✓ |
+| 4 | 12 | **3.35695** | 3.0437 | **rises ✗ — by 10 %** |
+
+It breaks through at A=4, and **by only 10 %** — which is a materially weaker statement than the
+×7.553 suggested, and worth having gotten right. The mid-column failure is the decisive one: at
+A=4 `k=3→4` the raw ratio is **5.36793** against a local ceiling of `[7]_q/[5]_q = 1.4607`, a factor
+3.7 over, and there `dim` is *rising* (154 → 275) so no dimension effect flatters it.
+
+So the route fails, but the honest form is: **it fails comfortably mid-column and marginally at the
+square end**, against a fixed bound that cannot be raised because `[3]_q` is where the weight family
+tops out.
 
 ## What survives
 
@@ -106,16 +125,17 @@ next attempt should bound the tail, not order the terms.**
 
 - **A ≤ 4, one q₀.** The A=4 counterexample refutes monotonicity at that size; it says nothing about
   whether some weaker bound holds, and nothing about large `A`.
-- **The `k=6` rise at A=4 is at the square shape `(6,6)`**, where `dim` drops sharply (297 → 132), so
-  `|tr|/dim` can rise from the denominator alone; I have not separated the two. **This matters for
-  the ceiling argument**, since that rise is the one that breaks `[3]_q` by the largest factor. The
-  `k=3→4` rise has no such ambiguity (dim 154 → 275, *rising*, so the ×3.006 is the trace) and it
-  independently loses its own margin at ×0.486 — so the conclusion survives even if the `k=6` rise
-  turns out to be a dimension effect. Separating them is the first thing to check next.
+- **The `k=6` trace-vs-dimension question is now SEPARATED** (it was open in the first version of
+  this doc). At A=4 `k=5→6` the raw trace rises **×3.35695** while `dim` falls **×2.25** (297 → 132);
+  both contribute to the ×7.553 in `|tr|/dim`. So the trace genuinely rises there — the rise is not a
+  dimension artifact — and it is the *raw* ×3.35695 that clears the `[3]_q` ceiling, by 10 %.
 - **Nothing here bounds anything.** No tail bound is attempted, and the surviving concentration
   statement is measured at three sizes, not proved.
-- **Whether the y-weighted failure persists at A=5** is unmeasured and is the obvious next check —
-  n=15 has 8 two-row shapes with max dim ~1000, still tractable.
+- **A=5 is running** (n=15, 8 two-row shapes, max dim 1430) and is not in this document. It tests
+  whether the y-weighted failure persists and whether the square-end raw ratio keeps growing past
+  `[3]_q`; a single further size is not a trend either way.
+- **A ≤ 4 is a very short baseline for a claim about growth in `A`.** Three sizes produced one
+  reversal, and this session has already been caught once treating two agreeing sizes as a mechanism.
 
 ## Method note
 
