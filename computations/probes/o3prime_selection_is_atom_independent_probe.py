@@ -1,5 +1,40 @@
 """O3' selects a block, but NOT the bound state's block — argmin t = argmin w.
 
+🛑 READ THIS FIRST — EVERY NUMBER BELOW IS MEASURED ON A SUPERSEDED WORD
+ORDERING, AND THE HEADLINE RESULT IS REFUTED UNDER THE CURRENT ONE.
+
+This probe reads `a-K-via-lp-dual-full.witness.json`, which reads the six
+`chi-<atom>-h<n>-at-q0-50dps` caches, which were computed 2026-08-10.
+`atom_braid_word_3A`'s intra-nucleon ordering changed on 2026-09-05 (bean
+`qou-hu1f`, owner ruling), and the cache producer calls it with no
+`intra_order`, so the committed caches are GROUPED while a fresh run is
+BORROMEAN.  Measured in
+`chi_caches_predate_the_intra_ordering_change_probe.py` (4/4):
+
+    tritium    grouped    argmin(t) = [5,4] = argmin(w)          AGREE
+    tritium    borromean  argmin(t) = [7,2], argmin(w) = [5,4]   DIFFER
+
+The falsifier this docstring states below -- "a single row where argmin(t) !=
+argmin(w) would refute it" -- HAS FIRED.  Tritium under the live ordering is
+that row.  The dim-vs-|chi| concordance moves with it, 9/10 and 10/10 under
+grouped to 6/10 and 6/10 under borromean.
+
+The change is not a rescale that could be divided out: |chi| ratios spread
+12.04x, and [8,1] and [5,4] CHANGE SIGN in both A=3 atoms.
+
+NOTHING BELOW IS DELETED, and the reason matters.  Every measurement here is
+correct FOR THE GROUPED ORDERING and was checked as such; the structural
+findings -- that w is a monotone reparametrisation of the content sum, that the
+selection margin is thin, that the mirror flip acts per-partition -- are about
+method and shape, and the METHOD transfers even where the NUMBERS do not.  What
+does not survive is the headline: "argmin(t) == argmin(w) in 6/6" is a fact
+about a word ordering the corpus no longer uses.  Read every figure below as
+GROUPED-CONDITIONAL.
+
+Regenerating the caches is an owner decision -- 84 live consumer scripts and a
+22.5-minute helium-4 recompute -- and is deliberately not done here.
+
+
 Follows PR #6752 (merged), which established that the O3' quotient program
 prices its net constraint (y_0* nonzero where the full LP has y_0* = 0
 identically) and that its optimum is supported on argmin_lambda t_lambda.  That

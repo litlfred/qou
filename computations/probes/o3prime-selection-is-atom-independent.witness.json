@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T19:03:00.842872+00:00",
-  "commitSha": "221fe6b312e7a561facf9af94b7d85641edfb763",
+  "computedAt": "2026-09-05T19:24:47.888881+00:00",
+  "commitSha": "5901e5b04fde655cde8d522d74aa0114a5ee41c5",
   "assertions": [
     {
       "name": "argmin(t) == argmin(w) on EVERY row — the character never moves the selection",
@@ -134,11 +134,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 7,
   "computation": "o3prime-selection-is-atom-independent",
   "scriptFile": "o3prime_selection_is_atom_independent_probe.py",
-  "scriptHash": "4477bfdb8b73",
-  "scriptCommitSha": "221fe6b312e7a561facf9af94b7d85641edfb763",
+  "scriptHash": "9004280d0824",
+  "scriptCommitSha": "5901e5b04fde655cde8d522d74aa0114a5ee41c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
