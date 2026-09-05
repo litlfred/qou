@@ -58,9 +58,18 @@ def shape(n, k):
 def window_trace(lam, word, q, a, *, with_rho=True):
     """tr_λ(ρ · [σ_a, σ_{a+1}]) for ONE window a — the building block of Ω₂^P.
 
-    `with_rho=False` drops ρ and traces the bare commutator, which separates "the window does it"
-    from "the window dressed by ρ does it". A bare commutator's trace is zero on the whole algebra
-    but NOT on an individual irrep, so this is not a trivially-zero control.
+    🛑 `with_rho=False` IS VACUOUS AND IS KEPT ONLY AS A LABELLED DEAD CONTROL. This docstring said
+    it "separates 'the window does it' from 'the window dressed by ρ does it'", on the claim that a
+    bare commutator's trace "is zero on the whole algebra but NOT on an individual irrep". **That is
+    false.** `tr(AB − BA) = 0` in *any* finite-dimensional representation, because `tr(AB) = tr(BA)`
+    — there is no algebra-vs-irrep distinction to exploit. Run, it returns exactly `0.0` for every
+    `k` and every window, as it must.
+
+    What that vacuity actually tells us is worth keeping: **the entire `Ω₂` trace signal exists only
+    because ρ fails to commute with the windows.** The corpus's own Lean already says so —
+    `QOU.MassTheory.trace_mul_commutator_eq` (sorry-free) gives `tr(ρ·(xy−yx)) = tr((ρx−xρ)·y)`, so
+    the quantity is a commutator *of ρ*, not of the window. Dropping ρ does not weaken the probe;
+    it deletes the observable.
     """
     TE._assert_dps(f"window_trace({lam}, a={a})")
     per_gen, dim = base.block_structure(tuple(lam))
@@ -89,6 +98,9 @@ def main():
     ap.add_argument("--dps", type=int, default=65)
     ap.add_argument("--windows", type=int, nargs="*", default=None,
                     help="which a to measure; default: a spread across the word")
+    ap.add_argument("--bare-commutator", action="store_true",
+                    help="trace [σ_a, σ_{a+1}] with NO ρ — separates 'the commutator does it' from "
+                         "'ρ dressing it does it'. Nearly free: the word is never applied.")
     args = ap.parse_args()
     mp.mp.dps = args.dps
     TE._WANT_DPS = args.dps
@@ -103,6 +115,8 @@ def main():
         {0, (ngen - 1) // 2, ngen - 2})          # first, middle, last window
 
     print(f"[k4win] A={A} (n={n}), {ngen} generators ⇒ {ngen - 1} windows in Ω₂^P.")
+    if args.bare_commutator:
+        print("[k4win] BARE COMMUTATOR mode: no ρ. Tests whether the rises belong to the\n[k4win] 3-strand commutator itself or to the word dressing it.")
     print(f"[k4win] Does a SINGLE window [σ_a, σ_{{a+1}}] already single out k=4, or is k=4 a")
     print(f"[k4win] property of the SUM?  Measuring windows a = {wins}.  (dps={args.dps})\n")
 
@@ -113,7 +127,7 @@ def main():
         lam = shape(n, k)
         row = []
         for a in wins:
-            tr, dim = window_trace(lam, word, q, a, with_rho=True)
+            tr, dim = window_trace(lam, word, q, a, with_rho=not args.bare_commutator)
             per_win[a].append(abs(tr) / dim)
             row.append(abs(tr) / dim)
         print(f"  {k:>3}  {str(lam):<11}{base.block_structure(lam)[1]:>6}"
@@ -130,6 +144,18 @@ def main():
               f"{'YES' if into4 else 'no'}"
               f"    (k=3 {mp.nstr(v[3], 6)} → k=4 {mp.nstr(v[4], 6)})" if len(v) > 4 else
               f"    a={a:<3} peak at k={pk}    (column has no k=4)")
+
+    # DEGENERACY GUARD. Without this the probe printed a confident "COLLECTIVE: no single window
+    # rises into k=4" off a table that was identically 0.0 — a verdict on degenerate data, which is
+    # a fabricated finding, not a weak one. Any comparison-based verdict must first establish that
+    # there is something to compare.
+    if all(v == 0 for a in wins for v in per_win[a]):
+        print("\n  ⛔ DEGENERATE: every entry is exactly 0. No verdict is rendered.")
+        print("     Expected in --bare-commutator mode: tr(AB − BA) = 0 in ANY finite-dimensional")
+        print("     representation (tr(AB) = tr(BA)), so the bare window trace vanishes identically")
+        print("     on every irrep. The observable exists only once ρ is present — see")
+        print("     QOU.MassTheory.trace_mul_commutator_eq, tr(ρ(xy−yx)) = tr((ρx−xρ)y).")
+        return
 
     if verdicts:
         if all(verdicts):
