@@ -793,3 +793,56 @@ disclose, reclassify) is unchanged by this; what changes is that the option
 space is now known to be exhausted rather than merely unexplored.
 
 Nothing wired. No content block edited.
+
+### 🟥 The 2026-09-05 anti-fitting directive eliminates `z = 1` — my Option A recommendation is WITHDRAWN
+
+`AGENTS.md` gained **§NO FITTING, EXCEPT CAL-1/2/3** on `main` in `af1368d43ed`,
+dated today, after the analysis above was written. It decides most of this bean,
+against what I recommended.
+
+Two of its clauses are directly on point:
+
+> **Selection against the target.** Choosing an *object* — a knot from a census,
+> a partition, a truncation order, **a branch** — because the choice reproduces
+> the measured value. No continuous parameter is tuned and it is still a fit.
+
+> **Accuracy is not evidence of correctness here, and a more accurate fitted
+> route is worth LESS than a less accurate derived one.**
+
+`z = 1` is precisely a **branch** of the Markov family, sitting outside the
+admissible set (`c(1) = q²(q−1)(q³−q²−1)/… ≠ 0`, so it does not annihilate the
+`(1³)` block the GNS/TL quotient kills), and its entire case is that it lands at
+0.17 %. Under the directive that case is not merely weak — it is the fit
+signature itself.
+
+**So Option A (keep the published number, disclose, reclassify as pre-D
+conditional) is withdrawn.** My argument for it was that the 0.17 % predates the
+convention-D ruling by ~3.5 months and so was not fitted *when written*. That
+does not survive the directive, which asks whether the number the paper
+**publishes today** comes from a derived route — not whether its author was
+fitting at the time. It does not.
+
+**What survives is the two derived options**, and the directive explicitly
+forbids choosing between them by accuracy:
+
+| functional | `β` | Q_β | vs CODATA `0.7823334` MeV |
+|---|---|---|---|
+| `z = 1` (published) | *not on the admissible line* | `0.7836458` | **+0.168 %** — **eliminated** |
+| `z = q`, the augmentation | `0` | `0.8798906` | **+12.470 %** |
+| `z_D = q³/(q²+1)`, the convention-D Markov trace | `q²/(q²+1)²` | `0.4447004` | **−43.157 %** |
+
+Choosing `z = q` over `z_D` *because* 12 % beats 43 % would be the same defect
+one level down. The choice has to come from what `ε` **means** in
+`Q_β = |ε(Δ)|·E₀`, and the corpus carries two functionals under that name — the
+augmentation (an algebra map, `σ ↦ q`) and the coordinate sum
+`net`/`epsNPq` — which is this bean's original question and is unchanged.
+
+**Agent reading, marked as judgement, not a finding:** if `ε` is the *Markov
+trace* in the canonical convention then the 2026-08-15 ruling names `z_D`, and
+the answer is **−43.157 %**; if `ε` is the *augmentation* the answer is
+**+12.470 %**. Nothing measured this session distinguishes them — the directive
+removes one option, it does not pick between the remaining two.
+
+**Not enacted.** Changing the published number touches ~8 content blocks and the
+`AGENTS.md` canonical-chain cheat-sheet line (`Q_β … ≈ 0.784 MeV (0.17 %)`), and
+which of the two derived values replaces it is the owner's call.
