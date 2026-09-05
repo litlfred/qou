@@ -700,3 +700,30 @@ Two consequences worth keeping:
 - `Δ_L` is untouched here; `qou-avt5`'s finding that `Δ_S ≠ Δ_L` stands.
 
 Nothing wired, no content block edited, no `c_k` proposed.
+
+### Extension, same day — BOTH candidate elements are excluded for every physical q
+
+The Δ_L row was extracted from the two admissible evaluations rather than a
+coordinate vector (`tr_M` at `z = q` **is** `χ_(3)`; at `z_D` it is
+`α·χ_(3) + β·χ_(2,1)`, so `χ_(2,1)` follows by inversion). Calibrated: that
+route reproduces `χ_(2,1)(Δ_S) = 0`, matching the direct covector computation.
+
+| element | `b − 2a` | positive real roots | any with `q > 1`? |
+|---|---|---|---|
+| `Δ_S` | `(q−1)(q+1)(q²+1)/q²` | `1` | **no** |
+| `Δ_L` | `(q−1)(q+1)(2q⁶+3q⁴+2q²−1)/(4q³)` | `0.5632`, `1` | **no** |
+
+**Neither element is scalar modulo the radical at any `q > 1`.** Scope-(b), and
+the invariant is cited: a polynomial with no root in the physical regime.
+
+**And the `q = 1` root is degenerate, not a solution.** At `h = 0` the proton and
+neutron words *coincide* — `σ₀(σ₁ − h/2) → σ₀σ₁ ← (σ₀ − h/2)(σ₁ − h)` — so
+`Δ → 0` and the condition holds only as `0 = 0`. Both residuals carry the factor
+`(q−1)(q+1) = q·h` for exactly that reason. Do **not** read the shared `h` factor
+as "the condition is nearly satisfied": it is the statement that the whole
+difference vanishes classically.
+
+**What this does not say.** It excludes the two candidates, not the route: `b −
+2a` is surjective over general elements, so there is no general obstruction. A
+third element could satisfy the condition. What is now known is that neither
+element the corpus currently has does, for any physical `q`.
