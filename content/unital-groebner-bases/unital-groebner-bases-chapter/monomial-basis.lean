@@ -9,7 +9,7 @@ Content block for `def:monomial-basis`. The leading-term data (LM/LC/LT)
 is split into `def:leading-term-data`.
 
 The authoritative formalization lives in
-`content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean`, which defines:
+`content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean`, which defines:
 - `QOU.GrobnerShirshov.Monomial G` — words in generators (abbrev for `List G`)
 - `QOU.GrobnerShirshov.AlgElement G k` — finitely supported linear
   combinations of monomials over a ring `k`
@@ -21,7 +21,7 @@ The paper's Definition 3.1–3.3 corresponds to these declarations.
 ## References
 
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 3
-- content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean §§1–2
+- content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean §§1–2
 -/
 
 -- Re-export the relevant types for documentation purposes.

@@ -21,7 +21,9 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 # QOU.QYangMillsLevi
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QYangMillsLevi.lean (monolithic)
+Source: content/quantum-observable-universe/lean/QOU/QYangMillsLevi.lean (monolithic).
+That file no longer exists — the library was split, and `QYangMillsLevi` now lives at
+  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/VolumeForm.lean
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
 Uses ℝ-specific analysis (trig, norms, real powers).
