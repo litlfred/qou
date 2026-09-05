@@ -176,6 +176,14 @@ for m in $ORDER; do
   printf '  [%d/%d] %s\n' "$i" "$n" "$m"
 done
 
+if [ -n "${REBUILD_ONLY:-}" ]; then
+  # Prepare the shadow and stop.  `scripts/lean-content-sweep.sh` uses this to
+  # build one shadow for the union cone of many targets, then runs `lean` on
+  # them in parallel itself.
+  echo "LEAN_PATH=$LP"
+  exit 0
+fi
+
 rc=0
 for f in "$@"; do
   echo "--- $f"
