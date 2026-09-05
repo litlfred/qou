@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-02T19:33:08Z
-updated_at: 2026-08-19T13:42:34Z
+updated_at: 2026-09-05T16:45:29Z
 parent: qou-59vq
 blocked_by:
     - qou-0h5k
@@ -23,3 +23,37 @@ still holds: no Jacobson density / bicommutant in Mathlib v4.24.0
 (`Subalgebra.centralizer` exists, `centralizer_centralizer` does not). Confirmed
 that SW-8/R2-inst was reachable without this (`qou-tpl5` closed at n=3), so this
 remains a separate Phase-3 goal rather than a blocker for the Wedderburn arc.
+
+
+## 2026-09-05 — the centralizer half is now USED, and the gap is exactly where this bean says
+
+Branch `claude/hecke-cyclicity-markov-2026-09-05` (PR #6845) is the first thing
+in the corpus to actually use `Subalgebra.centralizer` on the Hecke action, so
+the recon finding in this bean can be sharpened from "Mathlib has the
+definition" to "the definition is enough for one direction and the missing
+lemma is exactly the other".
+
+**What landed.** `QOU/IwahoriHecke/QTraceCyclic.lean` proves
+
+    heckeActionN_mem_weightCentralizer :
+      heckeActionN q qi hqi x ∈ Subalgebra.centralizer R {siteWeight w}
+
+for **every** `x`, by corestricting the action along `liftBalanced` into the
+subalgebra and composing back with `Subalgebra.val` (`hom_ext_sigma`). No
+induction over the algebra is needed — subalgebra closure does the work. That
+gives full cyclicity of the site-weighted trace and hence Markov move I.
+
+**Why that is not this bean.** The weight `W = diag(∏ₘ w(aₘ))` is a *single*
+diagonal operator, not the `U_q(gl_N)` action, so this is a containment in the
+centralizer of one element — nowhere near `End_{U_q}(V^{⊗n}) = im H_n(q)`. The
+two things this bean still needs are unchanged:
+
+1. a `U_q(gl_N)` model (nothing in Mathlib, nothing in the corpus);
+2. `centralizer_centralizer` / Jacobson density / bicommutant — **still absent
+   from Mathlib at v4.24.0**, re-checked 2026-09-05.
+
+**Anchor for whoever picks it up.** At `N = 2` the image is `TL_n(q)`, and
+"surjective onto the commutant" and "not injective" are two faces of one fact —
+the kernel is `ker(H_n ↠ TL_n)`, dimension `n! − Catalan(n)` (1, 10, 78, 588,
+4611, 38890 at n = 3…8). So a `Fin 2` attempt proves the Temperley–Lieb
+statement, not the general one; the general one wants `N ≥ n`.

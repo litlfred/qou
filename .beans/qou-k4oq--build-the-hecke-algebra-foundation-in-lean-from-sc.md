@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-05T07:53:31Z
-updated_at: 2026-09-05T08:45:40Z
+updated_at: 2026-09-05T16:46:14Z
 ---
 
 LAYER 1 DONE 2026-09-05, sorry-free, lean-direct exit 0 (4.0 s), zero warnings.
@@ -103,3 +103,47 @@ sequences — no exchange property, no Matsumoto) nor this corpus.
 - The Markov trace is `noncomputable opaque` in `IwahoriHecke/MarkovTrace.lean`; not
   constructed.
 - `QOU/IwahoriHecke/Quotient.lean` imposes the quadratic relation only (bean `qou-phir`).
+
+
+## 2026-09-05 — cyclicity + the Markov peel (PR #6845), and both moves are now proved
+
+Branch `claude/hecke-cyclicity-markov-2026-09-05`. Two files, both lean-direct
+exit 0 with `-DautoImplicit=false -s 65536`, `#print axioms` = [propext,
+Classical.choice, Quot.sound] on every headline result — no `sorryAx`.
+
+**`QOU/IwahoriHecke/QTraceCyclic.lean` — Markov move I.** `QuantumTrace` had
+cyclicity only against a generator. The image of `heckeActionN` now provably
+lies in `Subalgebra.centralizer R {siteWeight w}` for every `x`
+(`heckeActionN_mem_weightCentralizer`), obtained by corestricting the action
+along `liftBalanced` and composing back with `Subalgebra.val` — subalgebra
+closure in place of an induction over the algebra. Hence `qTrace_mul_comm`
+(`tr_w(xy) = tr_w(yx)`, arbitrary x, y, every w) and `qTrace_conj`.
+
+**`QOU/IwahoriHecke/MarkovPeel.lean` — Markov move II.** The tower
+`tower : H_{m+1}(q) →ₐ H_{m+2}(q)` (input: `coxA_castSucc`) and its matrix
+counterpart `extendSiteHom` (= `idTensorHom` reindexed along `Fin.snocEquiv`),
+squared up by `heckeActionN_tower`. Then `trace_peel` /`qTrace_peel`:
+`tr_w(ι(x)·σ_last) = z·tr_w(x)`.
+
+**The result worth carrying forward.** `peel_forces_physical_weight`: if the
+peel holds at all then `w 1 = q²·w 0`; with `w 0 = 1` that is `w = (1, q²)` and
+`z = q³` (`peel_weight_eq`). So `K = diag(1, q²)` — the weight
+`WeightedPermutationCharacter` and the rest of the corpus use — is **not a
+convention adopted to make the arithmetic work**; it is the unique weight up to
+scale admitting a Markov peel at all, and `q³` is `w 1 · q`, forced by the same
+two equations rather than fitted. The mechanism: the weighted partial trace of
+`Ř` over the new site is diagonal (the swap entry would need `u = t` and
+`t = v` at once), with entries `w0·q + w1(q − qi)` and `w1·q`; equating them is
+`w0·q = w1·qi`.
+
+**Still NOT done, and named in the files rather than scaffolded:**
+
+* normalisation `tr(1) = 1` — `qTrace_one` is `(∑ₖ w k)^{m+1}` = `(1+q²)^{m+1}`
+  at the physical weight, so the normalised functional and its `z` carry that
+  factor;
+* the link invariant — `QOU.IwahoriHecke.MarkovTrace.markovTrace` is still
+  `noncomputable opaque`, constructed nowhere;
+* Matsumoto (the group half) — bean `qou-06h7`, updated today with the measured
+  Mathlib status (its own TODO list says it is unproved);
+* surjectivity onto the commutant — bean `qou-us0a`, updated today;
+  `centralizer_centralizer` is still absent from Mathlib v4.24.0.
