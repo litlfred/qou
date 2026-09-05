@@ -317,6 +317,33 @@ def main() -> int:
           "ordering — recorded as the answer, not repaired", B2["2H"] > mpfr(3) * mpfr("2.224566"))
 
     print("\n" + "=" * 76)
+    print("§7  THE LEAN FILE'S DEFINITIONS ARE THESE OBJECTS, NOT LOOKALIKES")
+    print("=" * 76)
+    print("  QOU.Mass.IntraOrdering defines groupedConfinement as the per-generator")
+    print("  product tr_2(sigma^3).tr_2(sigma^-3) and borromeanConfinement as the")
+    print("  closed form (4+h^2-3h^4-h^6)/(h^2+4), then proves they differ. This")
+    print("  section checks both definitions against the ENGINE, so a Lean proof")
+    print("  about them is a proof about the words this probe measures.")
+    _ps, (wp, wm) = E.weights(2)
+    lean_grouped = ((wp * E.Q ** 3 + wm * (-1 / E.Q) ** 3)
+                    * (wp * (1 / E.Q) ** 3 + wm * (-E.Q) ** 3))
+    lean_borr = ((4 + H ** 2 - 3 * H ** 4 - H ** 6) / (H ** 2 + 4))
+    eng_grouped = abs(E.trM(3, [(1, Z0, 0)] * 3 + [(1, -H, 1)] * 3))
+    eng_borr = abs(E.trM(3, [(1, Z0, 0), (1, -H, 1)] * 3))
+    rg = abs(lean_grouped - eng_grouped) / eng_grouped
+    rb = abs(lean_borr - eng_borr) / eng_borr
+    print(f"    groupedConfinement   Lean def {gmpy2.digits(lean_grouped, 10, 22)[0]}")
+    print(f"                         engine   {gmpy2.digits(eng_grouped, 10, 22)[0]}"
+          f"   rel {f(rg):.2e}")
+    print(f"    borromeanConfinement Lean def {gmpy2.digits(lean_borr, 10, 22)[0]}")
+    print(f"                         engine   {gmpy2.digits(eng_borr, 10, 22)[0]}"
+          f"   rel {f(rb):.2e}")
+    check("Lean's groupedConfinement IS tr_M(sigma_0^3 sigma_1^-3) — the "
+          "per-generator product is what the grouped word traces", rg < TOL)
+    check("Lean's borromeanConfinement IS tr_M((sigma_0 sigma_1^-1)^3) — so "
+          "grouped_ne_borromean is a statement about these two words", rb < TOL)
+
+    print("\n" + "=" * 76)
     print("§S  WHAT THIS SETTLES")
     print("=" * 76)
     print("  The intra ordering splits the corpus cleanly. Log-ratio quantities —")
