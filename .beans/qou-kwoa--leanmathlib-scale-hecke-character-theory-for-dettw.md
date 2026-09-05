@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-05T09:06:02Z
+updated_at: 2026-09-05T20:14:39Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -913,3 +913,45 @@ equivalence to get τ's block weights `c_λ` for `H_n(q)`, define the abstract
 Schur element `s_λ := 1/c_λ`, and state the vanishing criterion on those. Then
 option 3: pin `X`, identify Wenzl's `schurElement Q X` with `s_λ`, and build
 Tits deformation for the criterion's forward direction.
+
+
+### 2026-09-05 — OPTION 2 COMPLETE (`a2484e8797`)
+
+`QOU/MathlibExt/TraceWeightsOfAlgEquiv.lean` (5) + `QOU/Hecke/TauSchurElement.lean`
+(7). Arc total **62 declarations across 7 files**, all `[propext,
+Classical.choice, Quot.sound]`, zero `sorryAx`.
+
+The abstract Schur element `s_λ := 1/c_λ` now **exists and is nonzero**, for any
+splitting and every `q ≠ 0`:
+
+`tau_eq_zero_of_forall_mul` (τ nondegenerate — the `T_w` coordinates of an
+annihilated `z` are a left null vector of `tauGram`, det ≠ 0) →
+`traceWeight_tau_ne_zero` (no block weight can vanish, since one would put a
+whole block in the radical) → `abstractSchurElement_ne_zero`, plus
+`tau_eq_weightedTrace_inv_abstractSchurElement` (`τ = Σ_λ (1/s_λ)χ_λ`, the
+identity they are named for) and `abstractSchurElement_indep`.
+
+**The conclusion side of the criterion, derived.** Contrapositively: a candidate
+weight system with a zero is realised by **no** splitting. Not the criterion
+itself — that is the converse (Tits deformation), and it is stated with Wenzl's
+two-parameter `schurElement Q X`, a different object from `s_λ`.
+
+**Splittings are a hypothesis `E`, never produced here** — so nothing depends on
+which `q` admit one. Deliberate.
+
+One hypothesis dropped on re-reading:
+`tau_eq_weightedTrace_inv_abstractSchurElement` needs no `q ≠ 0`, since
+`(c⁻¹)⁻¹ = c` holds in a field unconditionally; only the *interpretation* of
+`s_λ` as a Schur element needs the weights nonzero.
+
+PR #6758 is **out of draft** (sixth attempt; the rate-limit error is emitted by
+the GraphQL draft step *after* the REST body update succeeds) and
+`mergeable_state: clean` even with main 577 commits ahead.
+
+**Option 3, next, in order:** (i) pin `X` — `schurElement Q X` is Wenzl's
+*two-parameter* formula and the corpus uses `X ≤ 0` in
+`substrate_avoids_tl_locus` while the physical specialisation is `X = Q^{-N}`,
+so the statement is not even well posed until that is decided; (ii) prove the
+hook-length product equals `abstractSchurElement`; (iii) Tits deformation for
+the converse. Expect more gaps of the `xchange` kind — Mathlib has neither
+symmetric-algebra theory nor deformation theory.
