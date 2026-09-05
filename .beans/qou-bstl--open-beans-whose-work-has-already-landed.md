@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-04T08:40:00Z
-updated_at: 2026-09-05T08:47:43Z
+updated_at: 2026-09-05T09:31:23Z
 ---
 
 ## The finding
@@ -292,3 +292,62 @@ same session in which I had read this bean's sentence *"an agent that has just s
 session on backlog hygiene will still drop the close."* It took running the audit to
 catch it. That is the second recorded instance of the audit catching its own author's
 miss, after `qou-vtau`.
+
+
+---
+
+## 2026-09-05 — the NORMAL-priority tier has a ~4× higher true-positive rate than the high tier
+
+The caveat block in `bean-completion-candidates.py` reports **MEASURED PRECISION
+2 IN 12**, and that figure is stamped *"on the full high-priority list"*. It has
+since been read as the tool's precision. It is not — it is the precision **of one
+tier**, and the tier it does not describe behaves very differently.
+
+**Measured 2026-09-05 on the normal/unset-priority tail** (PRs #6804, this
+branch). Eight candidates read in full; **six closed on evidence**:
+
+| bean | verdict | why |
+|---|---|---|
+| `qou-jgew` | **CLOSED** | both gates cleared; all 6 producers re-run, 0 substantive diffs |
+| `qou-tean` | **CLOSED** | all three freeze mechanisms verified live |
+| `qou-0a0z` | **CLOSED** | WALL-2 sorry-free on main, 6 days after the bean's last update |
+| `qou-jtc6` | **CLOSED** | fix live; and 4 sibling instances surveyed |
+| `qou-rjuj` | **CLOSED** | fix live, probe re-run ASSERTIONS PASS |
+| `qou-y82a` | **CLOSED** | producer hardening + 3 self-corrections all live |
+| `qou-f9th` | open | cause 3, sharply — see below |
+| `qou-myk3` | open | cause 1: 1 of 41 scanners fixed, 40 explicitly "candidates, NOT a work order" |
+
+**6 of 8 (75 %) against 2 of 12 (17 %).** Small sample and not a claim about the
+whole tail, but the direction is large and has a mechanism behind it, below.
+
+### Why the tiers differ — and it is not about the beans
+
+A high-priority bean is one an agent flagged as *important*, so it gets picked up,
+argued with, partially closed, reopened, and superseded — accreting exactly the
+four structural causes this tool documents. A normal-priority bean is more often
+**one defect, fixed once, status never moved**. The tool is measuring the *shape
+of the bean's history*, not its priority, and priority correlates with how much
+history a bean has.
+
+**Practical consequence: read the tail, not the head.** The high tier is where
+the false positives concentrate, and it is also the tier every prior pass has
+already read. The ~70 untouched normal-priority candidates are the cheaper half.
+
+### `qou-f9th` is cause 3 in its purest form, and worth naming
+
+The matched "later" commit is `4d86daa3eab` — *"the certificate corpus is not
+reproducible — closed question, do not retry"* — which is **precisely the claim
+the bean's own retraction says was wrong**. The bean was reopened by its author
+as a scope-(b) over-narrowing (*"I turned a failed probe into a structural
+exclusion and told the next agent not to look"*). So the completion verb here is
+attached to a *withdrawn* conclusion.
+
+That is worse than a neutral false positive: acting on it would re-close a bean
+whose entire current content is the retraction of the thing the commit asserts.
+What actually remains in it is an **owner call** — `--write` on 22 re-anchorable
+certificates rewrites committed published data — not agent work.
+
+Generalisation for the tool's caveat block: **a completion verb over a claim the
+bean later retracted looks identical to a completion verb over work the bean
+later absorbed.** Only the body separates them, which is the argument for the
+read queue rather than a filter.
