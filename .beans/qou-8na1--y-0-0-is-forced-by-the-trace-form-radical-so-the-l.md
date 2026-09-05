@@ -531,3 +531,59 @@ spanning 1.577 to 10.169.
 partitions carry an out-of-order character for those atoms and not for others.
 Five identified pairs on three named partitions — not a percentage, and n=6 is
 no longer part of it.
+
+## 2026-09-05 (third) — the selection MARGIN is thin, which weakens the
+## atom-independence headline
+
+Two more measurements.  The second matters more than anything above it.
+
+**REFUTED, so nobody re-runs it: the q-dimension is not the missing notion.**
+The obvious repair for the imperfect `dim -> |chi|` link is that `f^lambda` is
+the CLASSICAL dimension while a Hecke character's natural size is the
+q-dimension.  Measured at the proton `q_0` by the q-hook-length formula:
+
+    f^lambda                                43/48 = 89.6 %
+    dim_q, [m] = (q^m - 1)/(q - 1)          43/49 = 87.8 %
+    dim_q, [m] = (q^(m/2) - q^(-m/2))/...   44/49 = 89.8 %
+    q^c(lambda)                              9/49 = 18.4 %   (the anti-correlation)
+    f^lambda * q^c(lambda)                  39/49 = 79.6 %
+
+None is perfect; the symmetric q-dimension's 44/49 is within one pair of
+`f^lambda`'s 43/48, i.e. noise on this sample.  The only thing q-dimensions buy
+is breaking the n=6 tie.
+
+**🛑 THE MARGIN, and it weakens my own headline.**  The right question was never
+whether the argmin held in six rows — it did — but by how much.  Since `t` is
+linear in `chi`, the factor by which `chi` at the argmin must grow to lose the
+selection is exactly `t(runner-up)/t(argmin)`:
+
+    row  n    argmin  runner-up   margin   w ratio   chi ratio   row's chi-spread
+      0  3    [2,1]        [3]    1.563x    2.044      0.765          1.308x
+      1  3    [2,1]        [3]    1.348x    2.044      0.660          1.516x
+      2  6    [3,3]      [4,2]    1.199x    3.044      0.394          2.724x
+      3  9    [5,4]        [9]    2.108x    5.915      0.356          6.448x
+      4  9    [5,4]        [9]    1.840x    5.915      0.311          6.712x
+      5 12    [6,6]       [12]    2.049x   17.338      0.118         12.508x
+
+The weight gap is large (2.0x–17.3x) and the character anti-correlation eats
+almost all of it (0.77x down to 0.12x), leaving **1.2x–2.1x**.  In **five of six
+rows the margin is smaller than that row's own character spread** — at n = 12, a
+margin of 2.05x against characters already spanning 12.5x.
+
+So a flip needs **no outlier**: an ordinary 1.2x–2.1x ratio between two
+particular partitions would do it.  `argmin(t) == argmin(w)` in 6/6 is a
+**measurement**, not a structural law with room to spare, and must not be quoted
+as one.  An earlier version of the probe called the selection "stable rather
+than noise" — too strong, and corrected in place.
+
+**Where a flip would come from.**  At n = 6 the runner-up **is** `[4,2]`, the
+discordant partition — and that row carries the smallest margin in the sample
+(1.199x).  That co-occurrence is **1 of 6 rows** and is not evidence on its own;
+it is the thing to check next.  Recorded in the witness as
+`selection_margin[].runner_is_discordant` rather than left as a null field.
+
+**Open, unchanged in substance but now with a reason to care:** why those three
+partitions carry an out-of-order character for those atoms.  The margin is what
+makes it a live question rather than an academic one — the discordant partitions
+are exactly where a character runs against the weight ordering, and the ordering
+only survives by 1.2x–2.1x.
