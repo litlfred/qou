@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-30T13:40:13Z
-updated_at: 2026-09-04T20:56:55Z
+updated_at: 2026-09-05T03:16:19Z
 ---
 
 `computations/hadron-knot-table.witness.json` disagrees with its own producer
@@ -215,3 +215,93 @@ result.** Untested alternatives: their harness may differ from a bare
 `binding_energy(1,1)` from a non-`ideal_muon` stem: reproducing −7.2711
 confirms the anchor, reproducing −8.5281 refutes it and points at the harness.
 That run is in flight; **do not quote the amplification figure until it lands.**
+
+
+---
+
+## RESOLVED 2026-09-05 — the anchor hypothesis is REFUTED. It is a stale extension build.
+
+The decisive run landed. **My hypothesis was wrong and the amplification figure
+is dead — do not quote it.**
+
+    stem = deuteron_pin_sensitivity_diag  (not in ideal_muon -> PROTON)
+    q_parameter.Q       = 1.1099785827513808
+    binding_energy(1,1) = -8.52811254141235
+    elapsed             = 22606.7 s
+
+Proton gives **−8.5281**, the same as my muon run via `hadron_knot_table`. So the
+q0 pin does **not** move this number, the accumulator is **not**
+anchor-dominated, and the "11.6 ppb in, 17.3 % out, ~1.5e7 amplification"
+speculation in the previous section is **retracted in full**.
+
+### The real cause, and the error that hid it
+
+The runtime is the tell I should have read first: **22,606.7 s against
+`qou-sv7h`'s 942.3 s for the same call — 24×.** We were not running the same
+code path.
+
+`pyhecke_native` **0.9.0 is installed and imports fine**, and I checked exactly
+that and concluded the Rust kernel was in use. **The guard does not test the
+module, it tests a function:**
+
+    _HAS_LP_KERNEL = hasattr(_PHN, "lp_accumulator_step_traces_mpfr")
+
+and that attribute is **ABSENT** from the installed 0.9.0 (58 exported names;
+this is not among them). So `_HAS_LP_KERNEL` is False and both of my runs took
+the **Python fallback**. *"The extension imports"* is not *"the kernel is
+available"* — that is the whole error.
+
+### Why the fallback's number should not be trusted at all
+
+The fallback builds its matrices at line 1207 via `_build_ysn_matrices`. The
+repo's own gate, `computations/audits/ysn_braid_relation_audit.py`, run today:
+
+> the Python YSN family satisfies the QUADRATIC relation but **VIOLATES the
+> BRAID relation**. It is therefore **not a representation of H_n(q)**, and
+> products of these matrices are **not Markov traces of braids**. Everything
+> `unified_iterative_correction` / `binding_energy` computes from them inherits
+> this. The Rust `seminormal_matrices_mpfr` family satisfies all three relations
+> at 50 dps and is the correct object.
+
+So **−8.5281 is computed on matrices that are provably not a representation of
+the Hecke algebra.** `qou-sv7h`'s −7.271102125 is the one computed on matrices
+that are. My four-atom `tr_M` table above inherits the same defect and should be
+read as fallback-path values, not as the framework's numbers.
+
+**What survives:** the SIGN. Both paths are negative (−8.5281 and −7.2711)
+against AME **+2.224566**, so "wrong-signed" does not depend on which path ran.
+`qou-sv7h`'s A-independence finding is on the correct path and is untouched.
+
+### Why the kernel gate could not catch this
+
+`lp_accumulator_kernel_gate.py` says so itself: *"Both sides use the SAME (Rust
+MPFR) seminormal matrices. That is the whole point."* It holds the matrices
+fixed and verifies the **recurrence** to 7.09e-48. The 17.3 % gap is not in the
+recurrence — it is in **which matrices go into it**, which that gate deliberately
+does not vary. Its 7.09e-48 is correct and is not evidence about the end-to-end
+number.
+
+### The systemic problem — this is silent, and it is the corpus's default
+
+`pyhecke-native` is **not on PyPI** (404; its wheel workflow is
+`workflow_dispatch`-only with no publish step — AGENTS.md §Project structure).
+The kernel *is* in the Rust source (`src/lib.rs:941`, registered at `:1957`);
+only the installed 0.9.0 wheel predates it. So in a default container:
+
+- the guard silently selects the fallback — **no error, no warning**;
+- the run is **24× slower**;
+- and the number it produces comes from a **non-representation** matrix family.
+
+Anyone regenerating `hadron-knot-table.witness.json` — or any binding number —
+without a locally built wheel gets that silently. That is a reproducibility
+hazard for the whole binding path, not just this witness.
+
+**Suggested guard (not applied here — it belongs to `qou-sv7h`'s arc):** when
+`_HAS_LP_KERNEL` is False, `binding_energy` should say so loudly rather than
+proceed, because its matrices are known-defective on that path. A `_path_bridge`
+-style refusal, or at minimum a stderr warning naming
+`ysn_braid_relation_audit.py`.
+
+**Method note worth keeping:** the 24× runtime gap identified the cause; the
+value gap alone did not. When two runs of one function disagree, **compare their
+wall times before theorising about the physics.**
