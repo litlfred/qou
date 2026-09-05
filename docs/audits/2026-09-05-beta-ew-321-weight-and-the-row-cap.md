@@ -164,5 +164,38 @@ instance is the audit author's own.
 >
 > **Three of the seven are on the α_EM axis** (`alpha_5_jucys_murphy_central`,
 > `alpha_em_b2_scalar_c_probe`, `alpha_em_b2_canonical_scale_ratio_probe`),
-> which the `4 of 36` figure hid entirely. Whether the Molien ruling moves a
-> physics-facing number there is **not** answered here.
+> which the `4 of 36` figure hid entirely — and that axis matters more than the
+> count, because the corpus's one scoreable L2 result (`m_K/m_π`) is
+> α_em-conditional.
+>
+> **Triaged in the same PR** ([`alpha_em_b2_weight_family_triage_probe.py`](../../computations/probes/alpha_em_b2_weight_family_triage_probe.py),
+> 2/2). `alpha_em_b2_scalar_c_probe.py` pins the B2 scalar `c` on `w_(4,1)(q₀)`
+> and its own verdict calls that *"the canonical **Markov** normalization"*. At
+> λ = (4,1), n = 5, q₀, 50 dps:
+>
+> | family | value | role |
+> |---|---|---|
+> | Plancherel `d_q²/[5]_q!` | `0.12862000417524688333` | what it **computes** |
+> | Molien `f^λ q^{−κ} d_q/[5]_q!` | `0.07429973308938433194` | canonical per `qou-oots` |
+> | Markov `y_(4,1)` at N=2 | `0.12498539716794710592` | what it **calls** it |
+>
+> Three objects under one name — the collision the notation register warns
+> about. The identification is *measured*, not inferred from the source shape:
+> the assertion reproduces the consumer's printed value to 22 digits at 1e-18.
+>
+> **Molien moves this axis by −42.23 %, and no cancellation is available.** The
+> `qou-oots` result that a λ-independent rescale drops out of a same-n ratio —
+> which is why `dim_q²/[n]_q! → dim_q²/D²` is a no-op for the β_EW consumers —
+> does **not** reach here: this consumer normalises on a **single** partition,
+> so there is no ratio for anything to cancel from, and Molien's `q^{−κ}` is
+> λ-dependent besides.
+>
+> The Markov row is the quiet one: **2.83 %** from Plancherel, close enough that
+> the mislabel would never be caught by eye.
+>
+> **Not a claim that `c` is wrong.** That probe is explicit that
+> `c = (Markov norm)/(Hodge polarization norm)` and that the Hodge denominator —
+> the Braden–Northover period polarization of `Jac(Bring)` — is not supplied, so
+> `c` is not a delivered number. What is measured is the size of the family
+> choice on its numerator, and a mislabel in its verdict string. The other two
+> α_EM files are **not** triaged.

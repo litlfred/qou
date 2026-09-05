@@ -411,3 +411,44 @@ second leg under my exact-rational result, and their F2/F3/F4 are why the
 `V^{n}` share and classical `(f^lam)^2/n!` are recorded here as further
 measures rather than as arms. So: their measurement stands, its 'not closed'
 verdict was accurate as of its merge, and the ruling superseded it.
+
+## 2026-09-05 — the alpha_EM axis, triaged (PR #6840)
+
+The corrected blast radius exposed three alpha_EM files the 4-of-36 figure had
+hidden. That axis is the one that matters: the corpus's ONE scoreable L2 result
+(m_K/m_pi) is alpha_em-conditional.
+
+`probes/alpha_em_b2_weight_family_triage_probe.py` (2/2, 50 dps, no float64).
+`alpha_em_b2_scalar_c_probe.py` pins the B2 scalar c on w_(4,1)(q0) and its own
+verdict calls that 'the canonical MARKOV normalization'. At lambda=(4,1), n=5:
+
+    Plancherel  d_q^2/[5]_q!        = 0.12862000417524688333   what it COMPUTES
+    Molien      f^l q^-k d_q/[5]_q! = 0.07429973308938433194   canonical
+    Markov      y_(4,1) at N=2      = 0.12498539716794710592   what it CALLS it
+
+The identification is MEASURED, not inferred from the source shape: the
+assertion reproduces the consumer's printed value to 22 digits at 1e-18.
+
+MOLIEN MOVES THIS AXIS BY -42.23 %, AND NO CANCELLATION IS AVAILABLE. This
+bean's own result — that a lambda-independent rescale drops out of a same-n
+ratio, which is why dim_q^2/[n]_q! -> dim_q^2/D^2 is a no-op for the beta_EW
+consumers — DOES NOT REACH HERE. That consumer normalises on a SINGLE
+partition, so there is no ratio for anything to cancel from, and Molien's
+q^{-kappa} is lambda-dependent besides. Do not carry the beta_EW invariance
+result across to this axis; it is scoped to same-n ratios.
+
+The Markov row is the quiet one: 2.83 % from Plancherel, close enough that the
+mislabel would never be caught by eye. Presumably how it survived.
+
+NOT a claim that c is wrong: c = (Markov norm)/(Hodge polarization norm) and the
+Hodge denominator (Braden-Northover period polarization of Jac(Bring)) is openly
+unsupplied, so c is not a delivered number. THE OTHER TWO alpha_EM FILES ARE NOT
+TRIAGED.
+
+A precision defect of mine, caught by the gate before commit: the probe first
+held its comparison constant as a module-level mp.mpf of a 20-digit literal,
+which is evaluated at import when mp.dps is whatever the import order left it
+at. At mpmath's default 15 it truncates by 5.98e-18 — LARGER than the 1e-18
+tolerance of the assertion comparing against it. It passed only because an
+earlier import had already raised dps. Held as a string now;
+module_const_precision_audit --strict goes LOSSY 1 -> 0.
