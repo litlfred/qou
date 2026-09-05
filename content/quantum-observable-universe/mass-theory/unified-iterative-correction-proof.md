@@ -34,8 +34,28 @@ one matrix rather than splitting one block's scalar $C_{(2,1)}$ into
 three coefficients; building it changed its status, not its direction
 or its arity.  The landing in $M_{n!}$ is additionally conditional on
 the RSK identity $\sum_\lambda (f^\lambda)^2 = n!$, carried as the
-named hypothesis `RSKDimIdentity` and discharged by nothing here.  So
-the clause is still an open obligation, not a derivation; for higher
+named hypothesis `RSKDimIdentity` and discharged by nothing here.
+
+That objection is now a **theorem**, not a remark
+(`QOU/HeckeAlgebra/WedderburnTrace.lean`).  The naive form — "three
+independent coefficients cannot come from one scalar" — is false, since
+one real encodes three set-theoretically.  Under **linearity**, which
+this corpus already assumes for the Markov trace, it is true: that trace
+factors through the block *traces*, so a functional of that form
+supported at a single $\lambda$ is exactly $c_\lambda \cdot
+\operatorname{tr}(x_\lambda)$ — one coefficient against one number — and
+any three such are linearly dependent, with an explicit witness
+(`three_supported_traceFunctionals_dependent`).
+
+This does not make the clause false; it rules out the route the clause
+names, whenever that route is linear, factors through the Markov trace,
+and is localised at $(2,1)$.  It also says where the room is, which is
+the more useful half: $f^{(2,1)} = 2$, so the block is $M_2(\mathbb{R})$
+— **four** real dimensions, of which the trace reads one.  The
+information wanted is present in the block and destroyed by tracing it.
+A derivation reading the block rather than its trace is not blocked by
+any of this.  So the clause is still an open obligation, not a
+derivation; for higher
 partitions it adds the form-factor, $pn$-correlation, and
 ${[3,2,1]}$ pn-invisible corrections.
 
