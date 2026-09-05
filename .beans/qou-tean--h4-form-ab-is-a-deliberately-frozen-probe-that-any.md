@@ -5,7 +5,7 @@ status: completed
 type: bug
 priority: normal
 created_at: 2026-08-23T23:11:17Z
-updated_at: 2026-09-05T09:20:59Z
+updated_at: 2026-09-05T09:54:45Z
 ---
 
 ## The question this started as, and why it dissolved
@@ -143,3 +143,22 @@ literal `1.1099785955573347…` to `q_at()`, which returns the *proton*
 `1.10997858275138…` — was offered as a fourth option and **not selected**;
 it is recorded in the audit doc rather than silently changed. Nothing here is
 waiting on an agent.
+
+
+### Line-number citation corrected 2026-09-05 (post-rebase)
+
+The verification above cited the `preserved` guard at `witness.py:2179-2205`.
+That was accurate at `main` `262ee53eeea` and is **stale by ~30 lines** after
+`c8b8ecd9580` ("substrate+audit: the LATENT count was 24 because pass 2 asked
+the shape question"), a **pure +30/-0 addition** that inserts a
+`declared_tolerance()` helper earlier in the file.
+
+Live range on `main` after that commit: the guard block runs **2209-2235** —
+comment at 2217, the `existing.get("preserved") is True` test at **2223**, the
+raise message at **2226**, and `witness.setdefault("preserved", True)` at
+**2235**. Re-verified after rebasing onto that main; **nothing about the
+mechanism changed**, only where it sits.
+
+Recorded because a line-number citation in a durable artifact is exactly the
+kind of figure this corpus watches go stale — and this one went stale within
+one hour of being written.
