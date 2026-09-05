@@ -123,16 +123,50 @@ worth stating rather than hiding: a name is evidence about what an author called
 a quantity, never about what it holds — and this audit keeps the two apart on
 purpose instead of folding them into one verdict.
 
+> **🛑 That sentence overstated the dataflow route, and fixing a producer is
+> what showed it (corrected the same day).** "0-for-4" and "7-for-7" are both
+> accurate *on `main` as it stood*: all seven blocking hits were provable-shape,
+> and the dataflow half of the `residual-named` tier fired on **nothing** there.
+> But I read its zero as soundness. It was untested.
+>
+> Once `mass-from-q-symbolic:599` was given an independent `expected`, it was
+> **still** reported blocking — its tolerance `borromean_mass_MeV_err` is
+> residual-named and reaches both sides. It is a 1σ **propagated uncertainty**,
+> `sqrt((ratio_err·m_e)² + (ratio·m_e_err)²)`, and entirely correct. An
+> error-propagation formula mentions the measured quantities for exactly the
+> same reason the residual does, so name-plus-reachability cannot separate them.
+>
+> The discriminator is that **a residual is a difference**. `_reaches_subtraction`
+> now requires a `Sub` in the provenance; that keeps the `qou-tol0` positive
+> (`delta = M_derived − M_obs`) and drops the class. Recorded as row 34 of the
+> detector-blindness taxonomy.
+>
+> **Zero hits is not the same as verified sound.** The general form of this
+> error is worth more than the instance: a tier that has never fired has been
+> measured for recall and not at all for precision.
+
 ## What would close this
 
 Fix at the producer, per assertion, and expect some of them to go **red**:
 
-- The two `mass-from-q-symbolic` and two `confined_knot_binding` hits need an
-  *independent* expected value — a literal from the source the `source` field
-  already names, or the assertion deleted. Restating a definition is not a check.
-- `kappa_computed` needs a real tolerance, and it will then **fail** at a 121 %
-  miss. That is the honest outcome and AGENTS.md asks for it explicitly
-  ("report honest negatives"); it is not a reason to keep the bound.
+- **`kappa_computed` — DONE.** Two falsifiable assertions replace it;
+  `yekutieli_kappa_equals_minus_G` **fails** at 121 % and `allPassed` is now
+  false. κ = 3/16 was verified exact (residual `0.0` at dps 30, 50 and 80)
+  before being asserted — the producer had been *printing*
+  `mpmath.identify(κ) = (3/16)` and asserting nothing about it. The same
+  expression was also the witness's only raw-float64 field, so the drain is
+  1 → 0.
+- **`mass-from-q-symbolic:568,577` — DONE.** Both now compare against
+  `Vol / (1 − 1/q)²` recomputed from `q` rather than against the precomputed
+  `HBAR_Q_SQ0`, verified equal to the bit before wiring. Falsifiable: a 1 ppm
+  drift in `q₀` moves the value by 0.0136 against a 1e-6 tolerance. The
+  assertion names and `source` fields state plainly that this is a **regression
+  guard on the constants**, not evidence for the mass formula.
+- **`confined_knot_binding:289,308` — OPEN, deliberately.** The obvious repair
+  is ruled out by measurement: `y_lambda_at(3, q₀)[(1,1,1)] = 0.0` under the
+  SU(2) truncation while `W_ALT` is nonzero, so `W_λ` and `y_λ` are different
+  objects sharing a subscript. Repairing these needs the intended independent
+  source for `W_ALT`, which is research rather than a substitution.
 - The two self-reports (`rust_kernel_loaded`, `budget_is_s_squared`) are the
   benign class `always_vacuous_assertion_scan` already documents. Renaming is
   enough; they inflate `allPassed` but assert nothing false.

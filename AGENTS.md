@@ -2643,7 +2643,7 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **thirty-three** rows, and they split SIX ways — only the first
+>   catalogues **thirty-four** rows, and they split SEVEN ways — only the first
 >   group is about conventions at all:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
@@ -2686,6 +2686,22 @@ Do not regress either.
 >     (payload keys emitted verbatim by `build()`) — and the one live
 >     off-vocabulary producer travels the third. Not about data shape at all,
 >     which is why it is not in the 27-32 family.
+>   - **34** — `qou-t0wm`, and its own group because it blinds a detector by
+>     what an author **NAMED** a quantity rather than by shape or write path.
+>     An identifier matching `delta`/`err`/`resid` that also reaches both sides
+>     of a comparison was taken to mean the quantity IS the residual. An
+>     **error-propagation formula** mentions the measured quantities for
+>     exactly the same reason the residual does —
+>     `borromean_mass_MeV_err = sqrt((ratio_err·m_e)² + (ratio·m_e_err)²)` is a
+>     1σ propagated uncertainty and entirely correct. The discriminator is that
+>     **a residual is a difference**: requiring a `Sub` in the provenance keeps
+>     the `qou-tol0` positive (`delta = M_derived − M_obs`) and drops the class.
+>     Two things make it worth its own row. It was found by running the audit
+>     **on a fix made with that audit** — the repaired producer was still
+>     reported blocking. And the tier had fired on **nothing** on `main`, so
+>     the false positive was latent: **zero hits is not the same as verified
+>     sound**, and the audit doc asserted the second having measured only the
+>     first.
 >
 >   Several were found *by* detectors written to catch the previous blind spot —
 >   row 26 in the output of the audit that introduced it. Quote the split, not

@@ -14,7 +14,7 @@ form**, and thereby being unable to see the same fact expressed in a different
 form. The blind spot is never a missing case in a list. It is the shape of the
 question.
 
-## The thirty-three
+## The thirty-four
 
 | # | detector keyed on | blind to | exposed by |
 |---|---|---|---|
@@ -51,6 +51,7 @@ question.
 | 31 | the **primal's arity** — a vector `x_star` assumed | an **SDP**, whose primal is the MATRIX `X_star`; a vector `x_star` is correctly absent | `gap_a1_binding_k_sdp_feasibility` → `solve_psd_operator_selection_sdp` (qou-dke6) |
 | 32 | the **threshold's discrimination** — a ratio criterion assumed to separate two classes | a **cliff**, where the count measures where the threshold was placed rather than the corpus — and the criterion misses its own confirmed positive | `lp_floor_valued_objective_audit.py`: 62 flagged at fraction 0.96, **7 at 0.98**; and the one producer PROVED floor-valued by a `prec_bits` sweep ranks **59 of 146**. Shipped as a ranking and a recorded NEGATIVE, not a detector (qou-sof3) |
 | 33 | the **write path** — the guard is installed at one of an API's several entry points | a producer using any of the others, however careful elsewhere. `WitnessBuilder` has **three** routes into the anchor vocabulary and the guard sits on one: `stamp_staleness_metadata(payload, q0_anchor=…)` is guarded; `save(extra)` is a bare `witness.update(extra)` with no validation; `wrap_legacy(payload)` carries the payload's keys through `_extra_top_level` and, per its own docstring, emits them "verbatim by `build()`" | the one live off-vocabulary producer travels the **third** route: `codata_corpus_literal_scan.py:816` sets `"q0Anchor": "not-applicable"` in a payload, so neither the existing guard nor a `save(extra)` fix could ever warn about it. Offered by the #6696 sibling (bean `qou-3ral`), which also corrected its own "two entry points" to three; structure verified here, counts measured independently at 256/25 against the sibling's 152/22 and NOT reconciled — see below (qou-3ral) |
+| 34 | the **residual's name** — an identifier matching `delta`/`err`/`resid` taken to mean the quantity IS the residual, once it also reaches both sides of the comparison | an **error-propagation formula**, which mentions the measured quantities for exactly the same reason the residual does. `borromean_mass_MeV_err` is `sqrt((ratio_err*m_e)**2 + (ratio*m_e_err)**2)` — a 1σ propagated uncertainty, entirely correct, and indistinguishable from a residual by name plus reachability | found by running `tolerance_from_residual_audit.py` on a fix made WITH it: `mass-from-q-symbolic:599` was still reported blocking after being given an independent `expected`. The discriminator is that **a residual is a difference** — requiring a `Sub` in the provenance keeps the `qou-tol0` positive (`delta = M_derived - M_obs`) and drops the class. Note the tier had fired on NOTHING on main, so this was latent: **zero hits is not the same as verified sound**, and the audit doc claimed the second having measured only the first (qou-t0wm) |
 
 ### 33 — offered by a sibling, taken here to avoid a conflict on the count line (2026-09-04)
 
