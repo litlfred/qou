@@ -1,11 +1,11 @@
 ---
 # qou-48is
 title: 'GAP: the canonical cross-species nucleon ordering p...pn...n is an unlicensed choice and tr_M depends on it by O(10%) for A>=3'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-09T04:34:20Z
-updated_at: 2026-09-05T18:21:53Z
+updated_at: 2026-09-05T20:02:56Z
 ---
 
 
@@ -342,3 +342,56 @@ Naming a gap honestly is agent work, and per AGENTS.md a visible gap is
 information. Nothing here needs the author to pick between options. It is also
 the same subject as **Cluster 1** (the inter-nucleon topology), where the real
 open question lives. Off the owner-gated queue; merge the question into Cluster 1.
+
+
+## ✅ ANSWERED AND DISCLOSED — closing (checked 2026-09-05)
+
+This bean's question is settled, in the only way a non-derivable DOF can be:
+characterised, measured, and disclosed. Carrier is
+`computations/probes/canonical_ordering_dof_probe.py` + witness
+`computations/probes/canonical-ordering-dof.witness.json` + audit
+[`2026-08-09-canonical-ordering-dof-production-impact.md`](../docs/audits/2026-08-09-canonical-ordering-dof-production-impact.md),
+with Lean in `QOU/MassTheory/NucleonOrderingSymmetry.lean`.
+
+**Q1 — is it live in production?** Yes, and traced by *inspecting source*
+rather than by assertion: `mass_table_comprehensive.try_binding_*` →
+`binding_canonical(use_closed_form=True)` → `closed_form_tau_M` →
+`closed_form_ratio`, whose interface product iterates a hardcoded
+`["p"] * Z + ["n"] * N`.
+
+**Q2 — the three candidate resolutions, all decided:**
+
+1. *"An extremal principle selects it."* **REFUTED.** The interface product
+   factorises as `(f_pn/f_pp)^(b_p−1) · (f_pn/f_nn)^(b_n−1)` relative to the
+   canonical arrangement, where `b_p`/`b_n` count p-/n-**blocks**. At the
+   substrate anchor `f_pn/f_pp < 1 < f_pn/f_nn` — the two base ratios sit on
+   **opposite sides of 1** — so raising `b_p` lowers the trace while raising
+   `b_n` raises it. The canonical `(b_p, b_n) = (1, 1)` is neither minimum nor
+   maximum, so no extremal principle can select it.
+2. *"The observable depends only on the interface multiset, so the ordering is
+   redundant labelling."* Premise **TRUE and proved in closed form** — and it
+   does **not** resolve the question, because the multiset is not an invariant
+   of the isotope: one `(Z, N)` realises up to `min(Z,N)+1` distinct multisets.
+   The DOF is re-coordinatised from "which ordering" to "which `(b_p, b_n)`",
+   not removed.
+3. *"A genuine undeclared DOF."* **What survives**, with its size measured.
+
+**The size, on the production readout:** 14 968 exposed rows; worst-case spread
+**1.15 MeV = 13.6 % of `B_AME`**; 60 rows above 1 % of `B_AME`; largest absolute
+spread **33.874 MeV** (²³⁷Og). The L1/L2 dashboards are **not** affected.
+
+The discipline is clean: `free_parameters = 0`, AME appears only as a
+*denominator* expressing an already-computed spread and never as a selector,
+q₀ is the experimental proton anchor matching production (no layer straddle),
+and **nothing is wired — no ordering is recommended**.
+
+**So this bean's premise stands and is now the corpus's stated position**: the
+orbit identity ranges over `S_Z × S_N` and works by leaving the word unchanged,
+so it cannot license `pnn` over `npn`; the "interface-minimal" justification is
+a cost property, not a selection rule. That is exactly what the audit records.
+
+**Relevance to Cluster 1 (decision D1).** This is direct evidence for the
+proposed default there — *disclose, do not pick*. An ordering that is provably
+**not an extremum** cannot be selected by principle, and selecting one because
+it reproduces AME is the fit the audit explicitly refuses. Closing here; the
+live question is D1.
