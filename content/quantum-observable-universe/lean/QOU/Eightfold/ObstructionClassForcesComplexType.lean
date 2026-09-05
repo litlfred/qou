@@ -63,7 +63,9 @@ theorem eq_zero_of_add_self_eq_zero_odd {n m : ℕ} (hn : n = 2 * m + 1)
 /-- The `ℤ/3` case used by the obstruction argument. -/
 theorem eq_zero_of_eq_neg_zmod_three (x : ZMod 3) (h : x = -x) : x = 0 := by
   refine eq_zero_of_add_self_eq_zero_odd (m := 1) rfl x ?_
-  rw [h]; ring
+  -- `rw [h]` would rewrite BOTH occurrences, leaving `-x + -x = 0`, which needs
+  -- the very fact being proved.  `linear_combination` uses `h` once.
+  linear_combination h
 
 /-- The two topological inputs, named so the theorem below wears what it uses.
 
@@ -79,16 +81,14 @@ class ObstructionDuality (Rep : Type*) (Iso : Rep → Rep → Prop) (dual : Rep 
 variable {Rep : Type*} {Iso : Rep → Rep → Prop} {dual : Rep → Rep} {obs : Rep → ZMod 3}
 
 /-- A self-dual representation has trivial obstruction class. -/
-theorem obs_eq_zero_of_selfDual [ObstructionDuality Rep Iso dual obs]
-    (ρ : Rep) (h : Iso ρ (dual ρ)) : obs ρ = 0 := by
-  have h1 : obs ρ = obs (dual ρ) := ObstructionDuality.obs_congr (Iso := Iso) ρ (dual ρ) h
-  have h2 : obs (dual ρ) = - obs ρ := ObstructionDuality.obs_dual (Iso := Iso) ρ
-  exact eq_zero_of_eq_neg_zmod_three _ (h1.trans h2)
+theorem obs_eq_zero_of_selfDual [inst : ObstructionDuality Rep Iso dual obs]
+    (ρ : Rep) (h : Iso ρ (dual ρ)) : obs ρ = 0 :=
+  eq_zero_of_eq_neg_zmod_three _ ((inst.obs_congr ρ (dual ρ) h).trans (inst.obs_dual ρ))
 
 /-- **The form a search uses.**  Every representation in a non-trivial obstruction class
 fails to be self-dual — hence is of complex type, with no variety decomposition required. -/
 theorem not_selfDual_of_obs_ne_zero [ObstructionDuality Rep Iso dual obs]
     (ρ : Rep) (h : obs ρ ≠ 0) : ¬ Iso ρ (dual ρ) :=
-  fun hsd => h (obs_eq_zero_of_selfDual (Iso := Iso) ρ hsd)
+  fun hsd => h (obs_eq_zero_of_selfDual ρ hsd)
 
 end QOU.Eightfold
