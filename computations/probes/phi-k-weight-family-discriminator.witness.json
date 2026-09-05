@@ -1,0 +1,652 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T06:38:03.384277+00:00",
+  "commitSha": "69f29ec5219abc5d838e85f74d33a8fa0896313b",
+  "assertions": [
+    {
+      "name": "molien_sum_is_identically_one",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "molien_equals_feray_meliot_q_plancherel",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "y_lambda_vanishes_on_depth_ge_2",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "y_lambda_makes_k3_vacuous",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "dq2_over_qfact_mass_drifts_with_n",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "reproduces_committed_producer_under_dq2_over_D2",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "textbook_and_selfnorm_differ_by_c_n_only",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "name": "k3_ranking_is_weight_family_dependent",
+      "computed": true,
+      "expected": true,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 174421,
+  "computation": "phi-k-weight-family-discriminator",
+  "scriptFile": "phi_k_weight_family_discriminator.py",
+  "scriptHash": "02567f2cea25",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/phi_k_weight_family_discriminator.py"
+    ],
+    "reproduce": "python3 -u computations/probes/phi_k_weight_family_discriminator.py"
+  },
+  "description": "Bean qou-oots. Derives what the depth-stratified binding functional Phi_k = SUM_{depth k} w_l log(|chi^l| d_q l) REQUIRES of its weight family, then prunes the four live candidates and re-runs the k=3 FR-pullback sweep under each. Three requirements, each with a Lean companion in QOU/BraidKnot/DepthStratifiedWeightRequirements.lean: R1 full support on the stratum (phi_eq_zero_of_weights_vanish) - excludes y_lambda, whose SU(2) row cap makes it EXACTLY zero on every stratum of depth >= 2, so Phi_3 is identically zero and the depth-3 chirality channel is vacuous; R2 n-independent total mass (crossRatio_smul) - excludes d_q^2/[n]_q!, whose mass drifts with n and so distorts every cross-nucleus comparison; R3 NO Markov requirement (phiDiff_eq_sum_log_ratio: the d_q inside the log cancels in the observable, so B is a weighted mean of log character-ratios and is not a trace) - which removes y_lambda's only claim to privilege here and makes the regular-trace z=0 exclusion of q_plancherel_vs_y_lambda_probe inapplicable, that exclusion being scoped to the linear trace evaluation z = tr(sigma_1). Two survive: d_q^2/D^2 (normalised BY CONSTRUCTION - no evidence, bean qou-sf1t) and the Molien family f^l q^{-kappa_l} d_q(l)/[n]_q! (normalised by THEOREM, molienSum_eq_qFactorial, sorry-free for all n and all q>1). New identification proved here exactly in Q(q): the Molien family IS the Feray-Meliot q-Plancherel measure of arxiv-1001.2180v2 under the corpus's own Q = q^2 bridge. The k=3 knot ranking is INVARIANT across all three families that can score it, so the choice does not move that conclusion - only its magnitudes.",
+  "data": {
+    "total_mass_by_n": {
+      "n2": {
+        "dq2_over_qfact": "0.994581091209831111991678463329739263696381460657025890783451",
+        "dq2_over_D2": "1.00000000000000000000000000000000000000000000000000000000000",
+        "molien": "1.00000000000000000000000000000000000000000000000000000000000",
+        "y_lambda_measure": "1.00000000000000000000000000000000000000000000000000000000000"
+      },
+      "n3": {
+        "dq2_over_qfact": "0.987440229773687729117875218675544503499448071254577060385983",
+        "dq2_over_D2": "1.00000000000000000000000000000000000000000000000000000000000",
+        "molien": "1.00000000000000000000000000000000000000000000000000267276471",
+        "y_lambda_measure": "0.999999999999999999999999999999999999999999999999989308941160"
+      },
+      "n4": {
+        "dq2_over_qfact": "0.982165323835610783872076092737614714004675076537133015129847",
+        "dq2_over_D2": "1.00000000000000000000000000000000000000000000000000000000000",
+        "molien": "1.00000000000000000000000000000000000000000000000000000000000",
+        "y_lambda_measure": "0.999999999999999999999999999999999999999999999999997327235290"
+      },
+      "n5": {
+        "dq2_over_qfact": "0.982224148283254053452615576237827417930881915033037010826424",
+        "dq2_over_D2": "1.00000000000000000000000000000000000000000000000000000000000",
+        "molien": "1.00000000000000000000000000000000000000000000000000534552942",
+        "y_lambda_measure": "1.00000000000000000000000000000000000000000000000001069105884"
+      },
+      "n6": {
+        "dq2_over_qfact": "0.991079523637350140711333719064374092128516167076233702822821",
+        "dq2_over_D2": "1.00000000000000000000000000000000000000000000000000000000000",
+        "molien": "1.00000000000000000000000000000000000000000000000000801829413",
+        "y_lambda_measure": "0.999999999999999999999999999999999999999999999999998663617645"
+      }
+    },
+    "max_drift_from_n2": {
+      "dq2_over_qfact": "0.0124157673742203281196023705921245496917063841198928756536042",
+      "dq2_over_D2": "0.0",
+      "molien": "8.01829413027658693842160940145444563644559064031514609388581e-51",
+      "y_lambda_measure": "1.06910588403687825845621458686059275152607875204201947918477e-50"
+    },
+    "molien_equals_feray_meliot": {
+      "n2_2": {
+        "molien": "1/(q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "1/(q**2 + 1)",
+        "identical": true
+      },
+      "n2_1x1": {
+        "molien": "q**2/(q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "q**2/(q**2 + 1)",
+        "identical": true
+      },
+      "n3_3": {
+        "molien": "1/(q**6 + 2*q**4 + 2*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "1/(q**6 + 2*q**4 + 2*q**2 + 1)",
+        "identical": true
+      },
+      "n3_2x1": {
+        "molien": "2*q**2/(q**4 + q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "2*q**2/(q**4 + q**2 + 1)",
+        "identical": true
+      },
+      "n3_1x1x1": {
+        "molien": "q**6/(q**6 + 2*q**4 + 2*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "q**6/(q**6 + 2*q**4 + 2*q**2 + 1)",
+        "identical": true
+      },
+      "n4_4": {
+        "molien": "1/(q**12 + 3*q**10 + 5*q**8 + 6*q**6 + 5*q**4 + 3*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "1/(q**12 + 3*q**10 + 5*q**8 + 6*q**6 + 5*q**4 + 3*q**2 + 1)",
+        "identical": true
+      },
+      "n4_3x1": {
+        "molien": "3*q**2/(q**8 + 2*q**6 + 2*q**4 + 2*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "3*q**2/(q**8 + 2*q**6 + 2*q**4 + 2*q**2 + 1)",
+        "identical": true
+      },
+      "n4_2x2": {
+        "molien": "2*q**4/(q**8 + 3*q**6 + 4*q**4 + 3*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "2*q**4/(q**8 + 3*q**6 + 4*q**4 + 3*q**2 + 1)",
+        "identical": true
+      },
+      "n4_2x1x1": {
+        "molien": "3*q**6/(q**8 + 2*q**6 + 2*q**4 + 2*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "3*q**6/(q**8 + 2*q**6 + 2*q**4 + 2*q**2 + 1)",
+        "identical": true
+      },
+      "n4_1x1x1x1": {
+        "molien": "q**12/(q**12 + 3*q**10 + 5*q**8 + 6*q**6 + 5*q**4 + 3*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "q**12/(q**12 + 3*q**10 + 5*q**8 + 6*q**6 + 5*q**4 + 3*q**2 + 1)",
+        "identical": true
+      },
+      "n5_5": {
+        "molien": "1/(q**20 + 4*q**18 + 9*q**16 + 15*q**14 + 20*q**12 + 22*q**10 + 20*q**8 + 15*q**6 + 9*q**4 + 4*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "1/(q**20 + 4*q**18 + 9*q**16 + 15*q**14 + 20*q**12 + 22*q**10 + 20*q**8 + 15*q**6 + 9*q**4 + 4*q**2 + 1)",
+        "identical": true
+      },
+      "n5_4x1": {
+        "molien": "4*q**2/(q**14 + 3*q**12 + 5*q**10 + 6*q**8 + 6*q**6 + 5*q**4 + 3*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "4*q**2/(q**14 + 3*q**12 + 5*q**10 + 6*q**8 + 6*q**6 + 5*q**4 + 3*q**2 + 1)",
+        "identical": true
+      },
+      "n5_3x2": {
+        "molien": "5*q**4/(q**12 + 3*q**10 + 5*q**8 + 6*q**6 + 5*q**4 + 3*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "5*q**4/(q**12 + 3*q**10 + 5*q**8 + 6*q**6 + 5*q**4 + 3*q**2 + 1)",
+        "identical": true
+      },
+      "n5_3x1x1": {
+        "molien": "6*q**6/(q**12 + 3*q**10 + 4*q**8 + 4*q**6 + 4*q**4 + 3*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "6*q**6/(q**12 + 3*q**10 + 4*q**8 + 4*q**6 + 4*q**4 + 3*q**2 + 1)",
+        "identical": true
+      },
+      "n5_2x2x1": {
+        "molien": "5*q**8/(q**12 + 3*q**10 + 5*q**8 + 6*q**6 + 5*q**4 + 3*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "5*q**8/(q**12 + 3*q**10 + 5*q**8 + 6*q**6 + 5*q**4 + 3*q**2 + 1)",
+        "identical": true
+      },
+      "n5_2x1x1x1": {
+        "molien": "4*q**12/(q**14 + 3*q**12 + 5*q**10 + 6*q**8 + 6*q**6 + 5*q**4 + 3*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "4*q**12/(q**14 + 3*q**12 + 5*q**10 + 6*q**8 + 6*q**6 + 5*q**4 + 3*q**2 + 1)",
+        "identical": true
+      },
+      "n5_1x1x1x1x1": {
+        "molien": "q**20/(q**20 + 4*q**18 + 9*q**16 + 15*q**14 + 20*q**12 + 22*q**10 + 20*q**8 + 15*q**6 + 9*q**4 + 4*q**2 + 1)",
+        "feray_meliot_at_Q_eq_q2": "q**20/(q**20 + 4*q**18 + 9*q**16 + 15*q**14 + 20*q**12 + 22*q**10 + 20*q**8 + 15*q**6 + 9*q**4 + 4*q**2 + 1)",
+        "identical": true
+      }
+    },
+    "y_lambda_support_by_depth": {
+      "n3": {
+        "3": {
+          "depth": 0,
+          "y_is_zero": false
+        },
+        "2x1": {
+          "depth": 1,
+          "y_is_zero": false
+        },
+        "1x1x1": {
+          "depth": 2,
+          "y_is_zero": true
+        }
+      },
+      "n4": {
+        "4": {
+          "depth": 0,
+          "y_is_zero": false
+        },
+        "3x1": {
+          "depth": 1,
+          "y_is_zero": false
+        },
+        "2x2": {
+          "depth": 1,
+          "y_is_zero": false
+        },
+        "2x1x1": {
+          "depth": 2,
+          "y_is_zero": true
+        },
+        "1x1x1x1": {
+          "depth": 3,
+          "y_is_zero": true
+        }
+      },
+      "n5": {
+        "5": {
+          "depth": 0,
+          "y_is_zero": false
+        },
+        "4x1": {
+          "depth": 1,
+          "y_is_zero": false
+        },
+        "3x2": {
+          "depth": 1,
+          "y_is_zero": false
+        },
+        "3x1x1": {
+          "depth": 2,
+          "y_is_zero": true
+        },
+        "2x2x1": {
+          "depth": 2,
+          "y_is_zero": true
+        },
+        "2x1x1x1": {
+          "depth": 3,
+          "y_is_zero": true
+        },
+        "1x1x1x1x1": {
+          "depth": 4,
+          "y_is_zero": true
+        }
+      },
+      "n6": {
+        "6": {
+          "depth": 0,
+          "y_is_zero": false
+        },
+        "5x1": {
+          "depth": 1,
+          "y_is_zero": false
+        },
+        "4x2": {
+          "depth": 1,
+          "y_is_zero": false
+        },
+        "4x1x1": {
+          "depth": 2,
+          "y_is_zero": true
+        },
+        "3x3": {
+          "depth": 1,
+          "y_is_zero": false
+        },
+        "3x2x1": {
+          "depth": 2,
+          "y_is_zero": true
+        },
+        "3x1x1x1": {
+          "depth": 3,
+          "y_is_zero": true
+        },
+        "2x2x2": {
+          "depth": 2,
+          "y_is_zero": true
+        },
+        "2x2x1x1": {
+          "depth": 3,
+          "y_is_zero": true
+        },
+        "2x1x1x1x1": {
+          "depth": 4,
+          "y_is_zero": true
+        },
+        "1x1x1x1x1x1": {
+          "depth": 5,
+          "y_is_zero": true
+        }
+      }
+    },
+    "conjugation_symmetric": {
+      "dq2": true,
+      "molien": false
+    },
+    "depth3_stratum_mass": {
+      "D": {
+        "dq2_over_qfact": "0.247149925424831701632335624750535006777231081152446640132287",
+        "dq2_over_D2": "0.249374464440320044460735122602931517089224442287296935984608",
+        "molien": "0.348728030320619847943942857047822516981985320528658723142067",
+        "y_lambda_measure": "0.0"
+      },
+      "T": {
+        "dq2_over_qfact": "0.520822910955874192788034334343256816755660079187711261915141",
+        "dq2_over_D2": "0.468819934131488665056662528949475106869630441792220146660473",
+        "molien": "0.391640086356984186396875630313850210353621442269311385739776",
+        "y_lambda_measure": "0.0"
+      },
+      "4He": {
+        "dq2_over_qfact": "0.499127312778561680105901692718469225421313622774060110730259",
+        "dq2_over_D2": "0.328993728598795736409865748776518656630168521415653808772219",
+        "molien": "0.136680374564539749712106746518557126398789144986059448208932",
+        "y_lambda_measure": "0.0"
+      }
+    },
+    "k3_sweep": {
+      "dq2_over_qfact": {
+        "no_FR": {
+          "max_over_min": "1.56212597270293846223291774683712388262225287884925805123578",
+          "ratios": {
+            "D": "0.319160181992959739016351649082372441207779428296047008843001",
+            "T": "0.342478004988647982681821840508077352190600172392290869721618",
+            "3He": "0.355503230366371542018279486967524272754038511312004536211611",
+            "4He": "0.498568409743799097003893927958606159853650067224245497277996"
+          }
+        },
+        "4_1": {
+          "max_over_min": "1.50146673070105153081899595013096202439782333078527441755505",
+          "ratios": {
+            "D": "0.364095497396845160258446946006976387488318651157826402658198",
+            "T": "0.328461183980107756695213283492367329195022484255475385337162",
+            "3He": "0.348130636702824527104846057789098495689120115582162073773143",
+            "4He": "0.493173540072808994336671907268823844681037674531725557624392"
+          },
+          "all_signs_positive": true,
+          "beats_baseline": true
+        },
+        "5_2": {
+          "max_over_min": "1.53942255442161750410512745181732249418608860044978990470618",
+          "ratios": {
+            "D": "0.371023567933643094252310507602737612701677441290808259073038",
+            "T": "0.322111512410046939326845384962549266717344705485969917089064",
+            "3He": "0.343884518610416114612766191670019890284444266110062437231845",
+            "4He": "0.495865727242885006504267140864676864173486844761048389325449"
+          },
+          "all_signs_positive": true,
+          "beats_baseline": true
+        },
+        "6_1": {
+          "max_over_min": "1.60403288447846829028087239829745188623584845808048214897193",
+          "ratios": {
+            "D": "0.312096988242646069159148679595350902220791597308487932147446",
+            "T": "0.352094862879266200214478337802175083538723429134256383163919",
+            "3He": "0.359378006841347980836536906690269269848721057682671450976622",
+            "4He": "0.500613832287894178470881110891045912414270214356185477920311"
+          },
+          "all_signs_positive": true,
+          "beats_baseline": false
+        },
+        "ranking_best_first": [
+          "4_1",
+          "5_2",
+          "6_1"
+        ],
+        "best": "4_1",
+        "n_beating_baseline": 2
+      },
+      "dq2_over_D2": {
+        "no_FR": {
+          "max_over_min": "1.06598812603879468122217285263277301293113033156871737917523",
+          "ratios": {
+            "D": "0.322032868585170077123991855930946887006253452984941165807864",
+            "T": "0.308282359248717462101835298784273345124858449491149502144299",
+            "3He": "0.320007045653977224008279998891577617396795403735316744405779",
+            "4He": "0.328625334426358811182884796083716804564969390609651057956177"
+          }
+        },
+        "4_1": {
+          "max_over_min": "1.24252965262940671787811796821050195182109978078531747802120",
+          "ratios": {
+            "D": "0.367372636315380878683884698878775887737431615819728400512853",
+            "T": "0.295665085769146125342346511540146873301412692107066463764608",
+            "3He": "0.313370588610682557463741611498559989260409465056231231590302",
+            "4He": "0.325069371362580294274681718462202106055948487137871405637398"
+          },
+          "all_signs_positive": true,
+          "beats_baseline": false
+        },
+        "5_2": {
+          "max_over_min": "1.29113233629229646058453774558779810702266778625826337250591",
+          "ratios": {
+            "D": "0.374363064804278820946013287075245291393960746347792493194765",
+            "T": "0.289949414387161343136004131498548743522883045655362516649160",
+            "3He": "0.309548435701272453138203085271234127908520315402443036881241",
+            "4He": "0.326843893959307223517847977831954263044750165306372775406860"
+          },
+          "all_signs_positive": true,
+          "beats_baseline": false
+        },
+        "6_1": {
+          "max_over_min": "1.04784743529503510306286127356233900013520422160688180244587",
+          "ratios": {
+            "D": "0.314906100670128184644356797540838485240328087586150741234637",
+            "T": "0.316938995867403963870331588603864375793777972131383724015008",
+            "3He": "0.323494934557402599236727651475096434373177770289157887669094",
+            "4He": "0.329973549945953953267130694048407133186813742339554006178521"
+          },
+          "all_signs_positive": true,
+          "beats_baseline": true
+        },
+        "ranking_best_first": [
+          "6_1",
+          "4_1",
+          "5_2"
+        ],
+        "best": "6_1",
+        "n_beating_baseline": 1
+      },
+      "molien": {
+        "no_FR": {
+          "max_over_min": "1.54887547773844596163052464511114806089614509463035142533055",
+          "ratios": {
+            "D": "0.278585655257763673382635647994502562056160363656456035947244",
+            "T": "0.389744219577722872300494013915193864338548969774392404742799",
+            "3He": "0.431494489878446719657091112721077830007480342946069694364278",
+            "4He": "0.348588259283944053826382347580901092638414424249262037476013"
+          }
+        },
+        "4_1": {
+          "max_over_min": "1.23085660637081623671642953182465823836631956992787365065605",
+          "ratios": {
+            "D": "0.346802841454345222491050984691731059647389673685090416224151",
+            "T": "0.381192350313623253197203304619681363873261048725478759589397",
+            "3He": "0.426864568512251589058314738977933844125379607388507903540807",
+            "4He": "0.346878625204355579903270484298882303798494880560659444894596"
+          },
+          "all_signs_positive": true,
+          "beats_baseline": true
+        },
+        "5_2": {
+          "max_over_min": "1.21688276949151660640203763842301827991797042427285097077514",
+          "ratios": {
+            "D": "0.358124595593113204147829151453134141757070281195921131404486",
+            "T": "0.375977920194627905010658257083135430847465695817749887036270",
+            "3He": "0.423619266319670206196038786410831817554934490658656712029395",
+            "4He": "0.348118386536677337255794730602277958311368756710659351967310"
+          },
+          "all_signs_positive": true,
+          "beats_baseline": true
+        },
+        "6_1": {
+          "max_over_min": "1.60678321376641812902080877576420285485172591529786128061772",
+          "ratios": {
+            "D": "0.268619123322581817087716324092823624899089072548045048057843",
+            "T": "0.395236531405481370322497818551050953556561886168573036864780",
+            "3He": "0.431612698251375813431682192863400586613398945881343965621947",
+            "4He": "0.348965467013305679210050206394354699486913705276701764738668"
+          },
+          "all_signs_positive": true,
+          "beats_baseline": false
+        },
+        "ranking_best_first": [
+          "5_2",
+          "4_1",
+          "6_1"
+        ],
+        "best": "5_2",
+        "n_beating_baseline": 2
+      },
+      "y_lambda_measure": {
+        "no_FR": {
+          "max_over_min": "5.35612488484820132903661048070338486391692615068529056199039",
+          "ratios": {
+            "D": "0.424530408064163102156386306631663146502096885992817464247792",
+            "T": "0.212365913821852594614292269856281474648291210573645142493044",
+            "3He": "0.172431115051176917172930862000523191984222575139921933989866",
+            "4He": "0.0792607374157958560661309745192978389024819031935586992013974"
+          }
+        },
+        "4_1": {
+          "max_over_min": "5.35612488484820132903661048070338486391692615068529056199039",
+          "ratios": {
+            "D": "0.424530408064163102156386306631663146502096885992817464247792",
+            "T": "0.212365913821852594614292269856281474648291210573645142493044",
+            "3He": "0.172431115051176917172930862000523191984222575139921933989866",
+            "4He": "0.0792607374157958560661309745192978389024819031935586992013974"
+          },
+          "all_signs_positive": true,
+          "beats_baseline": false
+        },
+        "5_2": {
+          "max_over_min": "5.35612488484820132903661048070338486391692615068529056199039",
+          "ratios": {
+            "D": "0.424530408064163102156386306631663146502096885992817464247792",
+            "T": "0.212365913821852594614292269856281474648291210573645142493044",
+            "3He": "0.172431115051176917172930862000523191984222575139921933989866",
+            "4He": "0.0792607374157958560661309745192978389024819031935586992013974"
+          },
+          "all_signs_positive": true,
+          "beats_baseline": false
+        },
+        "6_1": {
+          "max_over_min": "5.35612488484820132903661048070338486391692615068529056199039",
+          "ratios": {
+            "D": "0.424530408064163102156386306631663146502096885992817464247792",
+            "T": "0.212365913821852594614292269856281474648291210573645142493044",
+            "3He": "0.172431115051176917172930862000523191984222575139921933989866",
+            "4He": "0.0792607374157958560661309745192978389024819031935586992013974"
+          },
+          "all_signs_positive": true,
+          "beats_baseline": false
+        },
+        "ranking_best_first": [
+          "4_1",
+          "5_2",
+          "6_1"
+        ],
+        "best": "4_1",
+        "n_beating_baseline": 0
+      }
+    },
+    "cross_validation_vs_producer": {
+      "no_FR": {
+        "producer": "1.06598812603879472254583001197383447423825082736679642949345",
+        "this_probe": "1.06598812603879468122217285263277301293113033156871737917523",
+        "rel_dev": "0.0000000000000000387655886120415952989491172413448026115893573952011880446968"
+      },
+      "4_1": {
+        "producer": "1.24252965262940695769550434047711118789809444186389056315560",
+        "this_probe": "1.24252965262940671787811796821050195182109978078531747802120",
+        "rel_dev": "0.000000000000000193007374805721275975482340632077925109126215476107793933214"
+      },
+      "5_2": {
+        "producer": "1.29113233629229671281715295473059126924523644629107908358680",
+        "this_probe": "1.29113233629229646058453774558779810702266778625826337250591",
+        "rel_dev": "0.000000000000000195357678000282370791113230084098376794653725574399964355998"
+      },
+      "6_1": {
+        "producer": "1.04784743529503488611716078370927781088679470310197301461090",
+        "this_probe": "1.04784743529503510306286127356233900013520422160688180244587",
+        "rel_dev": "0.000000000000000207039396368584150286990465191086414344708096254409349924514"
+      },
+      "_anchor_note": {
+        "this_probe_q0": "1.1099785827513808075916690956107688798744991218736",
+        "producer_q0_source": "qou_substrate.constants.Q, a Python float — 1.1099785827513808",
+        "rel_deviation": "0.0000000000000000272460277996356618089145886002696341872860638589232552087857",
+        "why_it_matters_here": "it is the whole of the ~1e-16 residual below, and it is ~15 orders under the ranking effects reported in section B"
+      }
+    },
+    "c_n_by_atom": {
+      "D": "0.991079523637350140711333719064374092128516167076233702822821",
+      "T": "1.11092313495739793519940970273453586672159312269210294974810",
+      "3He": "1.11092313495739793519940970273453586672159312269210294974810",
+      "4He": "1.51713321376785876032235615304042149175999670547849685989972"
+    },
+    "ranking_by_family": {
+      "dq2_over_qfact": [
+        "4_1",
+        "5_2",
+        "6_1"
+      ],
+      "dq2_over_D2": [
+        "6_1",
+        "4_1",
+        "5_2"
+      ],
+      "molien": [
+        "5_2",
+        "4_1",
+        "6_1"
+      ],
+      "y_lambda_measure": [
+        "4_1",
+        "5_2",
+        "6_1"
+      ]
+    },
+    "ranking_invariant_across_scoreable_families": false,
+    "best_knot_by_family": {
+      "dq2_over_qfact": "4_1",
+      "dq2_over_D2": "6_1",
+      "molien": "5_2",
+      "y_lambda_measure": "4_1"
+    },
+    "y_lambda_k3_is_vacuous": true,
+    "requirements": {
+      "R1_full_support_on_stratum": {
+        "lean": "phi_eq_zero_of_weights_vanish",
+        "prunes": [
+          "y_lambda_measure"
+        ],
+        "scope": "(b)",
+        "invariant": "hook-content row cap: a lambda with more than N rows has a cell of content -N, giving [0]_q = 0 (Eightfold/RowCapObstruction.lean). depth k = k+1 rows, so y_lambda = 0 for all depth >= N; N = 2 in production."
+      },
+      "R2_n_independent_total_mass": {
+        "lean": "crossRatio_smul / crossRatio_invariant_of_eq",
+        "prunes": [
+          "dq2_over_qfact"
+        ],
+        "scope": "(b)",
+        "invariant": "Phi is linear in w, so w -> k_n w multiplies the cross-nucleus metric by k_1/k_2; n = 3A differs between nuclei and SUM d_q^2/[n]_q! drifts 0.991/1.111/1.517 at n = 6/9/12."
+      },
+      "R3_no_markov_requirement": {
+        "lean": "phiDiff_eq_sum_log_ratio",
+        "prunes": [],
+        "effect": "removes the reason to prefer y_lambda, and makes the regular-trace/Plancherel z=0 exclusion inapplicable: B is not linear in the braid element, so it is not a trace and never evaluates z = tr(sigma_1)."
+      }
+    },
+    "survivors": [
+      "dq2_over_D2",
+      "molien"
+    ],
+    "checks_failed": 0,
+    "verdict": "Two of four survive R1-R3: d_q^2/D^2 and the Molien family. The choice between them is NOT settled here. The evidential asymmetry is structural - d_q^2/D^2 is mass-one BY CONSTRUCTION (self-normalised, which bean qou-sf1t records as no evidence at all), whereas the Molien family's mass-one is a THEOREM whose normaliser [n]_q! was named independently, and which coincides exactly with the literature's q-Plancherel measure. That favours Molien and does not prove it. AND THE CHOICE IS EMPIRICALLY LOAD-BEARING: the k=3 knot ranking is NOT invariant - the three scoreable families name three DIFFERENT best knots (textbook 4_1 < 5_2 < 6_1; self-normalised 6_1 < 4_1 < 5_2; Molien 5_2 < 4_1 < 6_1), and under Molien the paper's named 6_1 is the WORST of the three and the only one failing to beat its own no-FR baseline. So the k=3 verdict is a statement about the weight family as much as about the knot, and no reading of it is safe until the family is derived."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "every numeric weight table and the whole k=3 sweep are evaluated at the proton pin (the standing default, owner directive 2026-08-07). The structural verdicts - the Molien identity, the Feray-Meliot identification, the row-cap zeros, the conjugation symmetries - are decided symbolically in Q(q) and hold at every pin; only the reported numbers depend on this one. The anchor is taken from Q_50_DIGIT_STR, NOT from the float64 qou_substrate.constants.Q that fr_pullback_k3_test uses (2.725e-17 relative apart) - which is why the section-B1 cross-validation against that producer agrees at ~1e-16 rather than exactly."
+}
