@@ -186,3 +186,164 @@ never in `content/`"*. It is in **5** `content/` files. The grep used the bare
 string `Sp(1)`; every occurrence is written `\mathrm{Sp}(1)`. One unknown
 spelling ⇒ a confident corpus-wide absence claim. **When a topic-grep returns
 zero, grep the LaTeX spelling too before writing "absent".**
+
+## 2026-09-04 — the `ker Θ` rank contradiction, dim 7, and `J` on the contact distribution (bean `qou-xlw1`)
+
+Audit: `docs/audits/2026-09-04-contact-distribution-complex-rank-and-dimension-seven.md`.
+
+- **Is `H = ker Θ` rank 2 (`dim M_S = 3`) or rank 4 (`dim M = 5`)?** → **BOTH are
+  DERIVED, from opposite halves; the outlier is the assumption one manifold
+  carries both.** Scope-**(b)**, invariant = hypersurface-type parametrisation
+  `dim = 2n+1`, `rank_ℝ H = 2n` (`ContactDistributionRank.realRank_succ`).
+  - **TRAP — the site count answers this the WRONG way.** rank-4 is 2 sites
+    (`archimedean-realisations.md:3`, `brings-qou-axiom-map.md:10`) against 9 at
+    dim 3, so it reads as two typos. It is not: rank-4 is the **hypothesis of the
+    whole archimedean chain** — no `Λ^±` splitting at rank 2, so no `F_A^+`, so
+    the archimedean substrate parameter `q(p) = 1 + |⟨L_Θ,F_A^+⟩|` is ill-formed
+    (17 `content/*.md` consume `F_A^+`). The Lean already gates on it:
+    `models-of-qous/instanton.lean:85-100` and `self-dual-curvature.lean:38,47`
+    take `cr.n = 2` / `dim_ℝ H = 4` as an **explicit hypothesis**;
+    `CRManifoldData` (`CRRealisation.lean:27-56`) pins `n` nowhere.
+  - `brings-qou-4tuple.md` carries both halves 19 lines apart (line 12 dim 3;
+    line 31 the `F_A^+` formula). Also in that block: it says covering **degree
+    3** while `brings-is-qou-verification.md:15` + `Elaboration.lean:151` say
+    **4**, and Riemann–Hurwitz (`g=4`, `R=14`) gives 4.
+  - `brings-qou-axiom-map.md:10` misquotes its own citation: `S_p ≅ ℂ²` where
+    item 3 (`brings-qou-4tuple.md:18`, `c-quantum-universe.md:7`) says `ℙ¹(ℂ)`.
+- **Any 7-dimensional object?** → **NO manifold anywhere.** `7-manifold` /
+  `seven-manifold` / `4n+3` / `quaternionic contact` = 0 on all six paths. Three
+  independent *pointers*: `form_stabilizer_genericity_su3_routes.py:21` (generic
+  3-forms live in dim 7; only corpus `S^7` outside Mathlib), bean `qou-8p1g`
+  ("go to `m ≥ 2`, real dim ≥ 8" — but its `Sp(3)/Sp(1)³` candidate is CLOSED,
+  `quaternionic_flag_su3_exclusion.py`), and `qou-uq5x` (`S⁶ = G₂/SU(3)`).
+  **Present and easy to miss: an SU(3)-Sasaki–Einstein `S⁵`**, built June 2026,
+  living **only in `docs/audits/2026-06-16-s5so3-*`** — a `content/`-only grep
+  misses it.
+- **Does anything give `ker Θ` a complex structure?** → **YES, 7 prose sites, and
+  the corpus explicitly identifies that `J` with the categorical `i`**
+  (`q-deformed-commutator.md:1`, `linearisation-convention.md:1`,
+  `heisenberg-commutator.md:1`, `substrate-radial-coordinate.md:7`,
+  `i-as-braiding-orientation.md:4`, `commutative-crossing-energy.md:25`,
+  `instanton.lean:87`). **No Lean carries it** — every `J` is a bare scalar
+  (`J : K` / `J : R` / `J : ℝ`); `J² = −Id` is docstring-only. The identification
+  `J_CR ↔ i·id_V` typechecks **only at rank 4**, so §3 is §1 from the other side.
+  The one Lean `J² = −id` is `OctonionComplexStructure.Le_sq_eq_neg_id` on
+  `Im 𝕆` — unconnected to `ker Θ`.
+- **Path 5 (library, all four tiers incl. `ocr/`) is EMPTY for the entire CR /
+  contact / Sasakian layer:** `Sasakian` 0, `CR manifold` 0, `pseudoconvex` 1,
+  `7-manifold` 0, `quaternionic contact` 0 — while 34 `content/` files say "CR
+  manifold". Nothing held to cite; closing it needs an upload (Boyer–Galicki;
+  Dragomir–Tomassini; Bryant). **Bare `sasaki` matches 5 section files — all
+  surnames in bibliographies.** Grep `Sasakian`, not `Sasaki`.
+- **Path 6 EMPTY** for `Levi distribution` / `ker Θ` / `contact distribution` /
+  `Levi form` / `CR complex structure`. No bean has ever worked this.
+- **Live constraint on the step AFTER the rank question:**
+  `docs/coordination/s5-so3-keystone.md:31,47,51` — no compact / finite-dim
+  Sasakian arena can host `W_λ` (`q₀` real > 1, not a root of unity). Scope
+  **(a)** against a 7-dim contact route: different construction, must be re-run.
+
+## 2026-09-04 — the hyperbolic volume as a QOU structure (bean `qou-xlw1`)
+
+Audit: `docs/audits/2026-09-04-how-the-hyperbolic-volume-could-arise-from-qou.md`.
+
+- **Is the hyperbolic volume "imported, not a QOU structure"?** → **NO, and that
+  claim was MINE and is RETRACTED.** ~180 QOU `.lean` files on this layer;
+  `Archimedean/HyperbolicMetric.lean` builds `dH` on `H³` from path lengths
+  (sorry-free isometry engine); `MathlibExt/IdealTriangulation.lean` (sorry-free)
+  has `IdealTetrahedron`, `volume_eq_lob_sum`, `param_im_pos`, `param_prod = −1`,
+  `SatisfiesEdgeEquations`. **`figure-eight-kashaev-volume.witness.json` is
+  `verdict: CONFIRMED`** — Richardson 2.03017614 vs `2·Cl₂(π/3)`, err 2.93e-4.
+  SnapPy 3.3.2 really runs (`snappy-cusp-seeding.witness.json`, 45 ms).
+- **Route tiers:** L1 poles **T0**; L2 pole↔cusp / L3 cusp-completeness / L5
+  volume conjecture **T3** (class, no instance); L4 Archimedean limit **T1+T2**.
+  Top-level route statement `brings-surface/thurston-relaxation.md:7-11` is a
+  **`prose` block** — programme, not result. Stated for the `Φ_q`-piece **`K_S`
+  only**, never general knots.
+- **🛑 WEAKEST LINK, and it is a TYPE:** `algebraic-geometric-dilog-equivalence.lean:44`
+  has `opaque BlochWignerD : ℝ → ℝ` and `class …(q x : ℝ)`, so the shape parameter
+  is **real** — but the corpus PROVES `D` vanishes on ℝ
+  (`MassTheory/BlochVolumeLegFlatVanishing.lean:111 eq_zero_of_conjAntisymm_ofReal`,
+  sorry-free). Honest instantiation forces `volume = 0`. Not a live contradiction
+  (`opaque`; the theorem is `ℂ → ℝ` and unwired). Fix is a **re-typing** to
+  `Im z > 0`, reusing `IdealTetrahedron.param`. Scope **(a)**.
+- **🛑 Claim-shape:** `pole_cusp_bijection_proved` (`:124`) contains **no cusp and
+  no bijection** — it exhibits `n` roots of `(x;q)_n`. The file's prose is honest;
+  the NAME is what gets cited.
+- **Bring's surface DOES have its hyperbolic structure used** —
+  `Archimedean/EmCouplingBringZeroMode.lean`, sorry-free: (2,4,5) triangle,
+  240 triangles, area `12π`, `χ=−6`, `g=4`, `b₁=8`, `b₁/Area = 2/(3π)`. **But it
+  is ARITHMETIC in geometric clothing** (`gaussBonnetArea` is a `def`; the proofs
+  are `ring`). Three facts assumed in docstrings / absent: (B1) area = angle
+  defect, (B2) the 240, (B3) `B ≅ ℍ²/Γ` — **B3 absent from the whole corpus.**
+  Mathlib's `UpperHalfPlane` is **never imported** by QOU.
+- **The source for B1–B3 IS HELD and is cited for a DIFFERENT section:**
+  `library/pjm-v154-n1-p09-s/sections/sec-001-2-the-universal-cover-of-brings-curve-if-b-b-is.md`
+  (Riera–Rodríguez 1992 §2, pp. 2–8) gives `Γ*` = (2,4,5) triangle group,
+  `φ: Γ*→S₅`, `Γ = ker φ` torsion-free, **`B = Δ/Γ` genus 4** — and `[Γ*:Γ]=120`
+  × 2 triangles = the corpus's unsourced `240`. `references.ts:9012` cites this
+  paper for its **period matrix** only. Held **twice**
+  (`the-period-matrix-of-bring-s-curve-1hik02mwva`, `duplicate_of`) and **absent
+  from `library-duplicate-ledger.json`**. Second Fuchsian route also held:
+  `arxiv-2402.08782v1` (Bring via Hecke group `H₃`).
+- **GENUINELY OPEN on all six paths: the `ℍ²`(Bring) ↔ `H³`(knot complement)
+  link.** `.beans/` = **0** for `Gauss-Bonnet`, `triangle group`, `(2,4,5)`,
+  `systole`, `uniformis`. No agent has ever worked it. Scope **(a)** — path 0 was
+  down.
+- **Smallest honest Lean:** NOT Gauss–Bonnet arithmetic (already T0, re-deriving
+  is the trap). Best target is the **re-typing** above; next is `qou-idvt`'s live
+  T1–T4 Lobachevsky/concavity ladder (in-progress — do not re-scope).
+
+## 2026-09-04 — the CITATION gap on the hyperbolic-volume / eightfold arc (epic `qou-8lxd`)
+
+Audit: `docs/audits/2026-09-04-citation-gap-inventory.md`. 15 beans, all parented
+to `qou-8lxd`. Answers most "is X sourced?" questions on this arc without a sweep.
+
+**Held and clean (H) — do not re-check:** Kashaev 1997 (`arxiv-q-alg-9601025v2`,
+73 citers) and 1995; Ohtsuki 2016 (`104171-qt-83`); Andersen-Hansen 2006
+(`arxiv-math-0506456v1`); **Neumann-Zagier 1985** — held 3x (one work), registered
+with `alternates`, cited in 63 files, duplication recorded in front-matter AND
+`references.ts` AND by INDEX.md giving the copies no row; **Fulton-Harris 1991** —
+registered w/ ISBN+DOI, `verified-clean`, NOT held (fine: textbooks are registered
+without PDFs), and the FS trichotomy enters Lean as a **parameter**
+(`fs : ℕ → FSType`, `Sym2GateFSTrichotomy.lean:103`), not an assertion;
+**Woronowicz 3D left-covariant calculus** — `woronowicz1987-twisted-su2` IS cited
+(`brings-is-qou-proof.md:11,15`, `connection-su2.ts`). *That last one I nearly
+filed as uncited off the sibling block; check the PROOF block before the
+VERIFICATION block.*
+
+**Not held (U), named works:** Murakami-Murakami 2001 Acta 186 (**63 citers**,
+the single highest-leverage upload); every Woronowicz differential-calculus paper
+(`library/` has **0** files containing the phrase "differential calculus");
+Bryant 1987 / Hitchin 2000 (generic-3-form `G₂` — `baez2002` is cited there and
+does **not** contain it); Butruille 2005 / Gray / Fernandez-Gray; and the whole
+**CR/contact/Sasakian layer — 0 held AND 0 registered across 828 `references.ts`
+entries**, against 34 `content/` files and 10 blocks with no `cites` field at all.
+Cheapest adequate CR source is **Blair** (Darboux, `dim = 2n+1`), not Boyer-Galicki.
+
+**No reference key exists at all for:** Riemann-Hurwitz, Gauss-Bonnet. Both are
+used as arithmetic (`CoveringDegreeRamification.lean:88-91` says outright it is
+"a definition encoding Riemann-Hurwitz ... not a proof"). Held sources exist for
+both — cheapest fix cites the already-registered `s40879-023-00706-0`
+(Braden-Disney-Hogg, *Bring's curve: old and new*).
+
+**Riera-Rodriguez §2** (the (2,4,5) triangle group, `B = Δ/Γ`, `[Γ*:Γ]=120` ⇒ the
+corpus's unsourced **240**) is still uncited at `EmCouplingBringZeroMode.lean`.
+Existing beans `qou-3q4q`/`qou-fkmt` cover *other* sections of the same paper —
+and both name the `duplicate_of` copy rather than `pjm-v154-n1-p09-s`.
+
+**CORRECTION I OWE:** my 2026-09-04 audit called the duplicate ledger
+"under-counting" for omitting the Riera pair. Wrong framing — the ledger holds
+**4 hand-adjudicated DETECTOR MISSES**; machine-detected duplicates live in
+section front-matter (**23 dirs**) and in `references.ts` `alternates`. The Riera
+pair is in both. Nothing under-counts.
+
+**Second correction:** `grep -c '\bsorry\b'` reports 1-4 in five arc Lean files and
+**every match is the string "sorry-free" in prose** or a commented-out instance.
+The arc is sorry-free. Had it not been, the zero-`-- Ref:` finding would be an
+AGENTS.md §1 violation instead of a gap that *falls through* §1 — which is the
+whole point of bean `qou-3o59`.
+
+**Unmeasured, worth a bean if wanted:** a systematic `library/<docId>` ↔
+`references.ts library.docId` reconciliation. 828 entries / 394 with docId / 576
+dirs / 23 duplicates — the residual is **not** 182 and was never measured.
+`library/0803219` was found incidentally.
