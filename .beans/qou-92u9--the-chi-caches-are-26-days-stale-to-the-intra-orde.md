@@ -96,3 +96,40 @@ Whether the O3' arc's structural findings survive re-measurement, in this order:
 the content-sum monotonicity of `w` (predicted untouched — `w` does not depend
 on the word at all), then the anti-correlation, then the margin.  `w`-side facts
 are predicted safe; every `chi`-side fact is open.
+
+
+## Both options measured (2026-09-05) — all six atoms
+
+| finding | GROUPED (committed) | BORROMEAN (live) | |
+|---|---|---|---|
+| `argmin(t) == argmin(w)` | 6/6 rows | **4/6 rows** | moves |
+| `w` monotone in content sum | 49/49 | 49/49 | **invariant** |
+| `conc(w,|chi|) == conc(c,|chi|)` | 6/6 rows | 6/6 rows | **invariant** |
+| anti-correlation `conc(w,|chi|)` | 9/49 | **25/49** | **changes sign** |
+| `dim`~`|chi|` concordance | 43/48 | **21/48** | moves |
+| worst selection margin | 2.108x | **10.069x** | moves |
+| flattened on every row | True | **False** | moves |
+
+The `w`/`chi` split was **predicted before measurement** and holds exactly: `w`
+is a function of the partition and `q` alone (verified identical to `<1e-45`).
+
+**Two rows flip, and where they land was also predicted.**  Tritium `[5,4]` ->
+`[7,2]` and helium-4 `[6,6]` -> `[7,5]` — exactly two of the three partitions
+already flagged as carrying a `dim`-vs-`|chi|` inversion under grouped.  The O3'
+probe had written *"a discordant partition that also happened to be the
+runner-up is what a flip would look like"* before this measurement existed.
+Deuteron's `[4,2]`, the third, does not flip.
+
+**COST, corrected.**  A≤3: under **three seconds** for all five, both orderings.
+Helium-4: **423 s** (~7 min) on the non-incremental path.  A full six-atom
+regeneration is **about seven minutes**, not the 22.5 implied by helium-4's own
+`compute_time_sec` 1352.39 — that figure is the INCREMENTAL path.
+
+**INVISIBILITY, measured not inferred.**
+`witness_import_cone_staleness_audit.py` — the detector built for exactly this —
+scanned **3,610 witnesses and flagged none of the six**.
+
+**A third action, independent of the regenerate/leave choice:** make the producer
+emit `scriptFile`.  That single missing field is what defeats both staleness
+classes; with it, ordinary `scriptHash` drift catches the next producer edit
+automatically.  Cheap, uncontroversial, and it converts prose into a gate.

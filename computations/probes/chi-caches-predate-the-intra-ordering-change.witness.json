@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T19:40:51.835244+00:00",
-  "commitSha": "75432803cc9991a3e77f45355ffdfe713a827100",
+  "computedAt": "2026-09-05T19:51:58.829657+00:00",
+  "commitSha": "094e4f3063eedf7a6b417c9a0ed978add21b4928",
   "assertions": [
     {
       "name": "the two intra orderings give MATERIALLY DIFFERENT words — this is not a relabelling",
@@ -57,8 +57,8 @@
   "durationMs": 16,
   "computation": "chi-caches-predate-the-intra-ordering-change",
   "scriptFile": "chi_caches_predate_the_intra_ordering_change_probe.py",
-  "scriptHash": "d7fd42200e2b",
-  "scriptCommitSha": "75432803cc9991a3e77f45355ffdfe713a827100",
+  "scriptHash": "2ada18ec0ce7",
+  "scriptCommitSha": "094e4f3063eedf7a6b417c9a0ed978add21b4928",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

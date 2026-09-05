@@ -163,10 +163,20 @@ def chi_at(atom: str, Z: int, N: int, q: str, order: str) -> dict:
 
 ATOMS = [("proton", 1, 0, 3), ("neutron", 0, 1, 3), ("deuteron", 1, 1, 6),
          ("tritium", 1, 2, 9), ("helium-3", 2, 1, 9)]
-# helium-4 (2,2,12) is deliberately excluded: 77 partitions, and its committed
-# witness records compute_time_sec 1352.39 on the incremental path.  Every
-# finding below is stable across the five atoms here; adding it would make this
-# probe a 20-minute run for no change in verdict.
+# helium-4 (2,2,12) is deliberately excluded from this probe's RUN, not from the
+# finding: 77 partitions at 423 s per ordering, so including it would turn a
+# 3-second probe into a 15-minute one.  It was measured separately and agrees on
+# every point -- its committed cache is GROUPED too (9.56e-50 against 1.201
+# relative), its |chi| ratios spread 51.2x with [11,1] and [8,4] changing sign,
+# and it is the SECOND row whose argmin flips ([6,6] -> [7,5]).  Over all six
+# atoms the headline is 6/6 -> 4/6, the anti-correlation 9/49 -> 25/49, and the
+# dim~|chi| link 43/48 -> 21/48.  Recorded in
+# docs/audits/2026-09-05-chi-caches-stale-to-the-intra-ordering-both-options.md.
+#
+# NOTE the cost correction: helium-4's own witness records compute_time_sec
+# 1352.39, but that is the INCREMENTAL path, which persists each partition as it
+# goes.  `incremental=False` takes 423 s.  A full six-atom regeneration is about
+# seven minutes, not the 22.5 that figure suggests.
 
 
 def main() -> int:
