@@ -383,3 +383,57 @@ Item 1 remains an owner call and must be asked about the **live**
 number now has a derivation rather than a mystery attached to it: it is
 `Σ_λ y_λ·χ_λ` over the ≤2-row partitions with the post-08-10 weights, and it is
 reproducible from the committed inputs.
+
+---
+
+## Item 1 — ANSWERED, and it is NOT an owner call (2026-09-05)
+
+The section above ended *"Still an owner call, but a smaller one than the bean
+implies"*, and pointed at `qou-r9dv`. **I should have opened it. It answers the
+question outright**, and the corpus-grep discipline exists for exactly this.
+
+`aeb31dfb41` (2026-08-23 17:57, `fix(qou-r9dv): the tr_M-atom expectations were
+one stale snapshot, not three drifts`) states that
+
+    tr_M^atom(q_0) = 0.5751722439177718708265353439861808891524943528928
+
+is **"confirmed by THREE independent methods, exact to every digit printed":**
+the transfer route (`tr_m_atom_via_transfer.py`), the Hoefsmit / markov-peel
+arbiter (`atomic_tr_m_mpfr_50dps.py --anchor proton`), and the chi-cache
+combiner — and that the arbiter agrees on ³H (`0.2293101021`) and ³He
+(`0.4037670369`) too, the same two values this session's probe re-verified.
+Verified there against a clean `origin/main` worktree, so not a branch artifact.
+
+A **fourth**, partially independent, agreement: `ka_additive_cluster_derivation
+_probe.py:112` carries `TR_D_CACHED = 0.5751722439177718708265353439858617…`,
+which agrees with the canonical string to **30 significant digits**
+(rel `5.549e-31`, i.e. 16 orders inside the L1 1 ppQ target). Different route,
+same number.
+
+**So `0.5751722439…` is right, on four routes, and item 1 is closed as answered
+rather than escalated.** Nothing here needs a decision.
+
+### One correction back to `qou-r9dv`
+
+`aeb31dfb41` attributes the move to *"most probably the 2026-08-09 convention
+C→D switch in `y_lambda_at`"* — correctly hedged, and now superseded by
+measurement. It was the **2026-08-10** `_Y_LAMBDA_DEFAULT` swap (`fcf629cf41`,
+18:20:04) landing on a y_λ table that had been **regenerated the same day**;
+and `y_lambda_at` is in any case **anchor-neutral and cache-free** (AGENTS.md,
+bean `qou-c1ya` — the gate-and-cache shape moved into the dead
+`_y_lambda_at_convention_C_HISTORICAL`). What `qou-r9dv` got right, and got
+right from three numbers moving *consistently* (`sqrt(0.388357 · 0.0077684) =
+0.054927`), is that it was **one** upstream change rather than three drifts.
+This session names which one.
+
+### The four deferred hardcodes are labelled, not silently stale
+
+`aeb31dfb41` deliberately left four scripts carrying ~0.3884. Checked on
+current `main`: all four now **announce themselves** —
+`gap_a3_overshoot_robustness_check.py:52` and
+`gap_a3_deuteron_A_D_overshoot.py:54` mark the value `CONVENTION C` and name
+the live one; `canonical_tr_m_via_branching.py:537` says both sides of its
+comparison have moved and names the three agreeing methods;
+`ka_additive_cluster_derivation_probe.py` carries the live value at line 112.
+Ten `computations/` files mention `0.3883` in total and none of them is an
+unlabelled live use. No action.
