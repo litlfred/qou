@@ -60,7 +60,7 @@ from isotope_record_schema import (  # noqa: E402
     IsotopeRecord, CalibrationSource, PredictionMethod,
     build_knot_operator_catalogue,
 )
-from q_parameter import Q as Q_FLOAT, Q_50_DIGIT_STR  # noqa: E402
+from q_parameter import Q as Q_FLOAT, Q_50_DIGIT_STR, Q_MP  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 
 # qou-substrate (Layer 2a): import WitnessBuilder directly from the
@@ -323,7 +323,43 @@ def compute_tr_m_canonical(
     if method == "branching":
         try:
             from canonical_tr_m_via_branching import compute_tr_m_via_branching
-            tr_mp, wall, err = compute_tr_m_via_branching(Z, N, q_val=float(Q_FLOAT))
+            # `Q_MP` (the 50-digit mpf), NOT `float(Q_FLOAT)`.
+            #
+            # WHAT THE OLD CALL ACTUALLY WAS. `q_parameter.Q` is already
+            # binary64 by construction (`Q = float(_d["q"])`), so `float(...)`
+            # around it was a no-op cast, not a downcast — the downcast had
+            # already happened at import. The value handed to the combiner sat
+            # 2.72e-17 relative from the canonical `Q_50_DIGIT_STR`.
+            #
+            # A >= 3 IS UNAFFECTED, MEASURED NOT ASSUMED. `compute_tr_m_via_
+            # branching` tests `abs(float(q_val) - float(Q_FLOAT)) < 1e-30` and
+            # on a hit passes `q=None` to `tr_m_atom_via_transfer.tr_m_atom_zn`,
+            # which uses the full 50-digit q. `float(Q_MP) == Q_FLOAT` is bit-
+            # exact (difference 0.0), so that branch still fires and T, 3He,
+            # 4He, 5Li, 6Li and 7Li come back BIT-IDENTICAL either way. The
+            # float64 twin was inert there; the guard was doing the work.
+            #
+            # A = 2 (the deuteron) IS the case this fixes, and only partly. That
+            # row goes through the operator-valued branching combiner, whose
+            # rho/A-matrix arithmetic is NumPy complex128 (`_compiled_sigmas(
+            # shape, "double")`, `np.kron`, `np.trace`), so it cannot be lifted
+            # by threading q — that is an algorithm property, not a q property.
+            # Against the fine-Bratteli transfer (the corpus's own arbiter for
+            # this convention, itself stable to ~48 digits):
+            #
+            #     q_val = float(Q_FLOAT)  ->  3.79e-15  (14 correct digits)
+            #     q_val = Q_MP            ->  8.69e-17  (16 correct digits)
+            #
+            # Two digits recovered, because `build_A_extract_at_q` now builds
+            # A^lambda at the true 50-digit q instead of a 17-digit float repr
+            # and `y_lambda_at` / `per_nucleon_intra_word` receive the exact q.
+            # The residual 8.69e-17 is the complex128 floor and stays.
+            #
+            # SO: `tr_M_q0_canonical_50dps` is NOT 50 dps on the D row under
+            # either spelling — it is ~16. The witness emits 60 digits for it.
+            # Fixing that overstatement is a witness/schema change, not this
+            # one; it is reported, not done here.
+            tr_mp, wall, err = compute_tr_m_via_branching(Z, N, q_val=Q_MP)
             if err:
                 return None, wall, err, "branching"
             return abs(tr_mp) if tr_mp is not None else None, wall, None, "branching"
@@ -539,7 +575,7 @@ def main() -> int:
     # be the last raw float64 in this witness. `atlas_render_canonical_table`
     # already reads it through `int(...)`.
     paper_floor_ppb = 780
-    paper_floor_dps = float(-mp.log10(mp.mpf(paper_floor_ppb) * mp.mpf("1e-9")))
+    paper_floor_dps = float(-mp.log10(mp.mpf(paper_floor_ppb) * mp.mpf("1e-9")))  # float64-ok: console banner only ("~6.1 dps"), never witnessed
     pruning_safe = verify_pruning_safe(args.target_dps, paper_floor_ppb)
 
     print("=" * 90)
@@ -718,8 +754,8 @@ def main() -> int:
         # columns take the mpf path above — do not copy either cast into a
         # record. `pred` needed this the moment the root lift landed; `ref`
         # needed it when B_AME_MEV stopped being wrapped in float().
-        pred_str = f"{float(pred):.4f}" if pred is not None else "—"
-        ame_str = f"{float(ref):.4f}" if ref is not None else "—"
+        pred_str = f"{float(pred):.4f}" if pred is not None else "—"  # float64-ok: console formatting only (see comment above)
+        ame_str = f"{float(ref):.4f}" if ref is not None else "—"  # float64-ok: console formatting only (see comment above)
         origin_str = (origin or "—")[:20]
         print(f"  {atom_str:<6} {A:>2} {n:>3} {tr_m_str:<22} "
               f"{pred_str:>16} {ame_str:>10} {origin_str:<22} "
