@@ -176,6 +176,27 @@ concentration is not a separate phenomenon from the `k=3→4` divergence of Part
 divergence seen through the mass rather than through the ratio. (Over 100 % at the second step
 because `k=4` also took from `k=2` and `k=3`, which both fell.)
 
+### The attribution is `k=4` itself — settled without A=5, contrary to what I said
+
+I flagged this as open and claimed it needed the A=4→5 step, since at A=3 the term `k=4` is
+simultaneously the newly-arrived shape *and* the square end `(5,4)`, so that step cannot separate
+three readings. **That was wrong: the A=3→4 step already separates them**, because at A=4 `k=4` is
+interior while the square end is `k=6` and the arriving shapes are `k=5, 6`:
+
+| candidate reading | which `k` at A=4 | Δ share |
+|---|---|---|
+| "the **square end**" | k=6 | **+1.042** |
+| "the **arriving** shape" | k=5, k=6 | +0.944, +1.042 |
+| **"`k=4` itself"** | k=4 — present since A=3, *interior* at A=4 | **+15.59** |
+
+The gainer is a term that was **already there** and is **not** at the square end, so both
+alternatives are excluded and `k=4` is the attribution. No further size is required for this
+question, and the A=5 sector job — which I said would supply it "for free" — is not needed for it.
+
+Recorded because the error was in the opposite direction from this session's usual one: not
+over-claiming from too few points, but **failing to notice that the points already in hand
+discriminated**, and so proposing hours of compute for an answer that was already on the page.
+
 **A defect in my own metric, caught by reading its output.** The first version reported the A=2→3
 gainer as `k=2` (+1.779). That was wrong in a structural way: the column grows by one shape every
 two `A`, and `k=4` **does not exist at A=2**, so it had no previous share and the Δ column left it
