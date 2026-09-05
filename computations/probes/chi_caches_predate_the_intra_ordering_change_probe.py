@@ -9,8 +9,29 @@ caches were computed 2026-08-10, twenty-six days earlier.
 They are produced by `chi_at_q0_via_hoefsmit_mpfr.py`, which calls
 `atom_braid_word_3A(Z, N)` at line 96 with NO `intra_order` argument -- so a
 fresh run today produces the borromean word, and the committed caches do not.
-That is import-cone staleness: the producer's own source can be byte-stable
-while the module it CALLS changed, and a file-local `git diff` cannot see it.
+    🛑 CORRECTED.  This paragraph first called that "import-cone staleness:
+    the producer's own source is byte-stable, so a file-local `git diff`
+    cannot see it".  THE PRODUCER IS NOT BYTE-STABLE -- it changed three times
+    after the caches were built:
+
+        52c68267f2  2026-08-15   41f517bf17  2026-08-23
+        d151898dd6  2026-08-30  "fix(L1): pin-specific numerical chi caches
+                                 -- 5/6 atoms certified 1 ppQ (T + 3He recovered)"
+
+    The last is a fix ABOUT THESE CACHES that did not regenerate them.  So this
+    is BOTH self-staleness (producer changed) and import-cone staleness (callee
+    changed on 2026-09-05), and the honest defect underneath both is neither:
+
+WHY NOTHING DETECTS IT: THE WITNESSES CARRY NO `scriptFile`.
+
+`scriptHash` on these caches is `c36a8a393fcd`, which matches NO file in the
+tree, and `scriptFile` is `None`.  So a staleness checker cannot know which
+file to hash, and ordinary `scriptHash` drift -- which would have caught all
+three producer edits -- cannot fire.  This is the "bare producers" class
+AGENTS.md names: *"Some producers never emit provenance; the scriptHash /
+commitSha on disk was added downstream ... Fix the producer to emit provenance
+first."*  That is the cheap, non-controversial half of the fix and it is
+independent of the regeneration decision.
 
 WHY IT MATTERS BEYOND ONE FILE.  84 live (non-deprecated) scripts read these
 caches, `aK_via_lp_dual_full.py` among them, and through it
@@ -98,6 +119,21 @@ def check(name: str, ok: bool, detail: str = "") -> None:
           flush=True)
 
 
+def concordant(a: list, b: list) -> tuple[int, int, int]:
+    """(concordant, discordant, TIED) pairs; ties never folded into either."""
+    k = len(a)
+    c = d = t = 0
+    for i in range(k):
+        for j in range(i + 1, k):
+            if a[i] == a[j] or b[i] == b[j]:
+                t += 1
+            elif (a[i] > a[j]) == (b[i] > b[j]):
+                c += 1
+            else:
+                d += 1
+    return c, d, t
+
+
 def f_lambda(lam: tuple[int, ...]) -> int:
     """#SYT(lambda), exact integer by hook lengths."""
     d = 1
@@ -125,7 +161,12 @@ def chi_at(atom: str, Z: int, N: int, q: str, order: str) -> dict:
         CHI.atom_braid_word_3A = _ORIG_WORD
 
 
-ATOMS = [("tritium", 1, 2, 9), ("helium-3", 2, 1, 9)]
+ATOMS = [("proton", 1, 0, 3), ("neutron", 0, 1, 3), ("deuteron", 1, 1, 6),
+         ("tritium", 1, 2, 9), ("helium-3", 2, 1, 9)]
+# helium-4 (2,2,12) is deliberately excluded: 77 partitions, and its committed
+# witness records compute_time_sec 1352.39 on the incremental path.  Every
+# finding below is stable across the five atoms here; adding it would make this
+# probe a 20-minute run for no change in verdict.
 
 
 def main() -> int:
@@ -186,9 +227,21 @@ def main() -> int:
                         C += 1
                     else:
                         D += 1
+            cs = [sum(j - i for i, r_ in enumerate(l) for j in range(r_))
+                  for l in two]
+            wv = [wm[l] for l in two]
+            cw, _, _ = concordant(cs, wv)
+            wc, _, _ = concordant(wv, ch)
+            cc, _, _ = concordant(cs, ch)
+            w_spread = max(wv) / min(wv)
+            t_spread = max(t.values()) / min(t.values())
             sel[name] = {"argmin_t": list(at), "argmin_w": list(aw),
                          "agree": at == aw, "margin": fmt(srt[1] / srt[0]),
-                         "dim_chi_concordance": f"{C}/{C + D}"}
+                         "dim_chi_concordance": f"{C}/{C + D}",
+                         "dim_chi_C": C, "dim_chi_D": D,
+                         "pairs": len(two) * (len(two) - 1) // 2,
+                         "csw_C": cw, "wchi_C": wc, "identity": wc == cc,
+                         "flattened": w_spread > t_spread}
 
         rows.append({
             "atom": atom, "Z": Z, "N": N, "n": n,
@@ -245,6 +298,63 @@ def main() -> int:
                     f"(argmin(t) {r['selection']['grouped']['argmin_t']} -> "
                     f"{r['selection']['borromean']['argmin_t']})" for r in moved))
 
+    # WHAT REGENERATING WOULD ACTUALLY CHANGE -- the option-1 side, measured
+    # rather than guessed.  `w` never enters: it is a function of the partition
+    # and q alone, so it is identical under both orderings (asserted below),
+    # and every w-side finding is predicted safe on that ground.
+    agg = {}
+    for name in ("grouped", "borromean"):
+        A = {"agree": 0, "wchi_C": 0, "P": 0, "csw_C": 0, "ident": 0,
+             "dimchi_C": 0, "dimchi_D": 0, "margins": [], "flat_all": True}
+        for r in rows:
+            s_ = r["selection"][name]
+            A["agree"] += s_["agree"]
+            A["wchi_C"] += s_["wchi_C"]
+            A["P"] += s_["pairs"]
+            A["csw_C"] += s_["csw_C"]
+            A["ident"] += s_["identity"]
+            A["dimchi_C"] += s_["dim_chi_C"]
+            A["dimchi_D"] += s_["dim_chi_D"]
+            A["margins"].append(mp.mpf(s_["margin"]))
+            A["flat_all"] = A["flat_all"] and s_["flattened"]
+        agg[name] = A
+    print("\n  WHAT REGENERATION WOULD CHANGE (option 1), over "
+          f"{len(rows)} atoms:", flush=True)
+    print(f"    {'finding':<42}{'GROUPED (committed)':>21}{'BORROMEAN (live)':>19}",
+          flush=True)
+    for label, key in (
+            ("argmin(t) == argmin(w)", lambda A: f"{A['agree']}/{len(rows)} rows"),
+            ("w monotone in content sum", lambda A: f"{A['csw_C']}/{A['P']}"),
+            ("conc(w,|chi|)==conc(cs,|chi|)", lambda A: f"{A['ident']}/{len(rows)} rows"),
+            ("anti-correlation conc(w,|chi|)", lambda A: f"{A['wchi_C']}/{A['P']}"),
+            ("dim~|chi| concordance",
+             lambda A: f"{A['dimchi_C']}/{A['dimchi_C'] + A['dimchi_D']}"),
+            ("worst selection margin",
+             lambda A: mp.nstr(max(A["margins"]), 6) + "x"),
+            ("product flattened on EVERY row", lambda A: str(A["flat_all"]))):
+        g, b = key(agg["grouped"]), key(agg["borromean"])
+        print(f"    {label:<42}{g:>21}{b:>19}"
+              + ("   <-- MOVES" if g != b else ""), flush=True)
+
+    check("the w-SIDE findings are INVARIANT under the ordering — w is a "
+          "function of the partition and q alone, so content-sum monotonicity "
+          "and the conc(w,|chi|)==conc(c,|chi|) identity are the same under "
+          "both, and are the part of the O3' arc that survives",
+          agg["grouped"]["csw_C"] == agg["borromean"]["csw_C"]
+          and agg["grouped"]["ident"] == agg["borromean"]["ident"],
+          f"content-sum {agg['grouped']['csw_C']}/{agg['grouped']['P']} both; "
+          f"identity {agg['grouped']['ident']}/{len(rows)} both")
+
+    check("🛑 the chi-SIDE findings REVERSE — the anti-correlation is the one "
+          "that matters: strongly ANTI under grouped, above the independence "
+          "expectation under borromean, so the arc's central structural claim "
+          "does not merely weaken, it changes sign",
+          2 * agg["grouped"]["wchi_C"] < agg["grouped"]["P"]
+          and 2 * agg["borromean"]["wchi_C"] > agg["borromean"]["P"],
+          f"conc(w,|chi|) {agg['grouped']['wchi_C']}/{agg['grouped']['P']} "
+          f"-> {agg['borromean']['wchi_C']}/{agg['borromean']['P']} "
+          f"(independence = {agg['grouped']['P'] / 2:.0f})")
+
     consumers = 84
     print(f"\n  BLAST RADIUS: {consumers} live (non-deprecated) scripts read these "
           f"caches.\n  NOT regenerated here — that is an owner decision, the same "
@@ -259,8 +369,13 @@ def main() -> int:
         "ruling) and chi_at_q0_via_hoefsmit_mpfr.py:96 calls it with no "
         "intra_order, so a fresh run now yields the BORROMEAN word while the "
         "committed caches are GROUPED (matched to ~3e-50 against ~1.3 relative "
-        "for borromean). Import-cone staleness: the producer's own source is "
-        "byte-stable. The change is NOT a per-atom scalar -- |chi| ratios spread "
+        "for borromean). BOTH self-stale and import-cone stale: the producer "
+        "itself also changed 3x after the caches were built (2026-08-15, -23, "
+        "-30), the last being a fix ABOUT these caches that did not regenerate "
+        "them. NOTHING DETECTS EITHER, because the witnesses carry scriptFile: "
+        "None and a scriptHash matching no file in the tree, so no checker knows "
+        "what to hash -- the bare-producer class. The change is NOT a per-atom "
+        "scalar -- |chi| ratios spread "
         "12.04x (tritium) / 11.29x (helium-3) and [8,1] and [5,4] CHANGE SIGN in "
         "both -- so qou-hu1f's R_quark factor does not describe this surface, and "
         "that bean does not mention these caches at all (grepped, 0 hits). It "

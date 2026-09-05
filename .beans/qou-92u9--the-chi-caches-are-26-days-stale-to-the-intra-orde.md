@@ -19,8 +19,20 @@ The six `chi-<atom>-h<n>-at-q0-50dps.witness.json` caches were computed
 Their producer is `chi_at_q0_via_hoefsmit_mpfr.py`, which calls
 `atom_braid_word_3A(Z, N)` at **line 96 with no `intra_order`** — so a fresh run
 today produces the borromean word and the committed caches do not.
-**Import-cone staleness**: the producer's own source is byte-stable, so a
-file-local `git diff` cannot see it.
+**🛑 CORRECTED — I first wrote "import-cone staleness: the producer's own source
+is byte-stable".  It is not.**  `chi_at_q0_via_hoefsmit_mpfr.py` changed **three
+times** after the caches were built — `52c68267f2` (2026-08-15), `41f517bf17`
+(2026-08-23) and `d151898dd6` (2026-08-30, *"fix(L1): pin-specific numerical chi
+caches — 5/6 atoms certified 1 ppQ"*), the last a fix **about these caches** that
+did not regenerate them.  So this is **both** self-staleness and import-cone
+staleness.
+
+**And the reason neither is detected is the real defect: the caches carry
+`scriptFile: None`**, with a `scriptHash` (`c36a8a393fcd`) matching no file in
+the tree.  No checker can know what to hash, so ordinary `scriptHash` drift —
+which would have caught all three producer edits — cannot fire.  This is the
+"bare producers" class AGENTS.md names.  Emitting provenance is the cheap half of
+the fix and is **independent of the regeneration decision**.
 
 Measured (`chi_caches_predate_the_intra_ordering_change_probe.py`, 4/4):
 
