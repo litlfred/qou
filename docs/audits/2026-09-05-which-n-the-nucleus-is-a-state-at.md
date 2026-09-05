@@ -364,6 +364,38 @@ question that the settlement of `N` turned into a dead one.**
    than four points) are untouched and remain the live ways to settle the
    family by measurement rather than by ruling.
 
+**"Then pick a larger `N`" is not available, and this is the sharpest thing a
+sibling added.** The paragraph above says the fork *would* decide at general
+`N`, which invites the rescue: re-choose `N ≥ 4` and both horns come alive on
+depth ≥ 2 again. But `N` is not a free label attached to a fixed trace — the
+Ocneanu/Markov weights depend on it through a nontrivial rational function of
+`q`, so moving `N` **re-weights every surviving channel**. Verified here
+independently at the proton `q₀`, `mp.dps = 50`, balanced convention, against
+the closed form `y_{(2,1)}/y_{(3)} = [2]_q[N-1]_q/[N+2]_q`:
+
+| `N` | `y_{(2,1)}/y_{(3)}` |
+|---|---|
+| 2 | 0.48930712047797097007 |
+| 3 | 0.77459088135788091778 |
+| 4 | 0.95812403128848485757 |
+
+`N = 2 → 3` alone moves that ratio by **58.30 %** (`N = 3 → 4` by 23.69 %) —
+[`ocneanu_n_lockin_crosscheck_probe.py`](../../computations/probes/ocneanu_n_lockin_crosscheck_probe.py), 3/3. So a route-1 rescue by re-choosing
+`N` is not a change of reading; it is a change of trace, and the trace is fixed
+by the convention-D ruling. The stronger form — that **`N` *is* the Ocneanu
+trace parameter**, `a = q^{N-1}`, making "choose `N`" and "choose the trace"
+literally one act, so the row cap is arithmetic rather than an imposed rule —
+is [#6829](https://github.com/litlfred/qou/pull/6829)'s
+(`ocneanu_N_lockin_probe`), not mine: **the three ratios above are what I
+verified; the identification I am citing, not asserting.**
+
+One convention trap they flag and I confirm: that probe's docstring writes the
+closed form as `q·[2][N-1]/[N+2]` in the **asymmetric** convention while
+`y_lambda_su_n` computes **balanced**. The two differ by exactly the leading
+`q` — the asymmetric values are 0.5431 / 0.8598 / 1.0635 — so a reader
+comparing across the two reads a discrepancy where there is none. The table
+above is balanced throughout.
+
 One arithmetic caution for anyone extending the table: the depth-3 column
 (exactly 4 rows) is `0.0` at `n = 3` for **all three** measures, including
 Molien — there is no partition of 3 with four rows. That zero is arithmetic,

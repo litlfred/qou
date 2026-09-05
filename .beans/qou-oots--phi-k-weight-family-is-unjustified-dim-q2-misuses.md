@@ -615,3 +615,23 @@ h1 = `f^λ d_q^{SU(2)}(λ)/[2]_q^n` (dies at `[2+(−2)]_q = [0]_q = 0`); h2 = `
 **Not a derivation of Molien.** Molien passes R1 where both horns fail it, and the owner ruled it canonical. That is *why the ruling was needed* — the route the audit ranked most decisive cannot answer — not a substitute for one. Routes 2 and 3 stay live.
 
 Probe `computations/probes/route_1_is_degenerate_at_n_two_probe.py` (5/5); audit §4e.
+
+### The "then pick a larger N" rescue is not available (2026-09-05)
+
+§4e said the route-1 fork *would* decide at general `N`, which invites re-choosing `N ≥ 4` to revive both horns on depth ≥ 2. It is not a change of reading: the Ocneanu/Markov weights depend on `N` through a nontrivial rational function of `q`, so moving `N` re-weights every surviving channel.
+
+Reproduced independently at the proton q₀, 50 dps, balanced, against `y_{(2,1)}/y_{(3)} = [2]_q[N−1]_q/[N+2]_q` — the three values #6829 supplied on #6826:
+
+| N | ratio | shift |
+|---|---|---|
+| 2 | 0.48930712047797097007 | — |
+| 3 | 0.77459088135788091778 | **+58.30 %** |
+| 4 | 0.95812403128848485757 | +23.69 % |
+
+So a route-1 rescue by re-choosing `N` is a change of **trace**, and the trace is fixed by the convention-D ruling.
+
+**Verified vs cited, kept apart.** The three ratios are verified here. The stronger identification — `N` *is* the Ocneanu parameter `a = q^{N−1}`, so "choose N" and "choose the trace" are one act — is #6829's and is cited, not asserted.
+
+Convention trap, confirmed: `ocneanu_N_lockin_probe`'s docstring writes the form **asymmetrically** (leading `q`) while `y_lambda_su_n` computes **balanced**; the arms differ by exactly that `q` (0.5431 / 0.8598 / 1.0635), so cross-reading them looks like a discrepancy and is not.
+
+Probe `computations/probes/ocneanu_n_lockin_crosscheck_probe.py` (3/3).
