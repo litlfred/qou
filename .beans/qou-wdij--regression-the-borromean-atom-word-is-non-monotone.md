@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T18:12:11Z
-updated_at: 2026-09-05T18:15:35Z
+updated_at: 2026-09-05T18:33:52Z
 ---
 
 ## Measured, not assumed (branch claude/atom-trace-nonmonotone-regression-2026-09-05)
@@ -39,3 +39,49 @@ and (1,1,1) are bit-identical, since sigma_0 and sigma_1 act by the same scalar
 there and cannot see the ordering. That localises the owner ruling's premise.
 
 **Next:** route non-monotone words in `tr_m_atom_via_transfer` through the general-word kernel; keep the transfer's refusal.
+
+## Fixed (PR #6864), and what it costs
+
+`chi_general_word.chi_all_lambda_any` dispatches on the word's own generator
+sequence — monotone to the O(A) block transfer unchanged, non-monotone to
+`pyhecke_native.chi_lambda_all_partitions_mpfr`. The transfer's refusal is left
+exactly as it was, because it is correct. Wired into `tr_m_atom_via_transfer`
+and `binding_canonical`; both run again.
+
+**The route restores correctness and loses the O(A) scaling** (one word per row):
+
+  A=1 n= 3   3 parts   <0.01 s
+  A=2 n= 6  11 parts   <0.01 s
+  A=3 n= 9  30 parts     0.36 s
+  A=4 n=12  77 parts   621.38 s   <- ~1700x jump
+  A=6                  still running at its 900 s budget
+
+The transfer did all of these under 0.05 s. Adequate through 3H/3He; 4He is a
+~21-minute long compute (two words); A>=5 impractical.
+
+**The corrected word moves the binding predictions 4-8x DOWN, away from AME:**
+
+  atom   AME (MeV)   B grouped     B borromean   ratio   AME/B_bor
+  D       2.224566   0.43540348    0.11503953    0.264      19.3
+  3H      8.481798   0.69513150    0.088347359   0.127      96.0
+  3He     7.718043   0.69855221    0.10137663    0.145      76.1
+
+Reported, not repaired. Reverting to the grouped word because its number was
+closer is selection against the target.
+
+## STILL OPEN — the real fix
+
+The atom word is **block-monotone**: non-monotone only WITHIN each 3-strand
+nucleon, while the nucleons stay in increasing generator order. A transfer
+carrying the three-level window state (s_3k, s_3k+1, s_3k+2) instead of a single
+Bratteli edge would compose the interleaved intra word and keep O(A),
+d_lambda-free. `reduced_block_kernel.get_h3_transitions` is already a 3-step
+window composition; what it lacks is the OFF-diagonal seminormal matrix element
+at each step, which is what a revisited generator needs. That is the target.
+
+## Not done here
+
+22 further files statically combine `atom_braid_word_3A` with the monotone
+transfer and were not individually run. A static list overstates — some may not
+call the transfer on an atom word at all — so that is a count of candidates, not
+of breakages.
