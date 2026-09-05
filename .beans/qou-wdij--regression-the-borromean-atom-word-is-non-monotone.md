@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T18:12:11Z
-updated_at: 2026-09-05T18:33:52Z
+updated_at: 2026-09-05T19:13:28Z
 ---
 
 ## Measured, not assumed (branch claude/atom-trace-nonmonotone-regression-2026-09-05)
@@ -85,3 +85,59 @@ at each step, which is what a revisited generator needs. That is the target.
 transfer and were not individually run. A static list overstates — some may not
 call the transfer on an atom word at all — so that is a count of candidates, not
 of breakages.
+
+## The repair does NOT make the dashboard runnable — measured
+
+`mass_binding_dashboard.py --low` needs 2H, 3H, 3He, **4He, 6Li, 7Li** (lines
+88-89). On the general-word kernel that is A=2 (instant), A=3 (0.36 s), A=4
+(~21 min for the two words), and A=6/A=7 (hours). Run on the repaired branch it
+produced **zero output in 25 minutes** before its budget expired.
+
+So: the crash is fixed and the producer is correct, but the low-isotope
+dashboard is still not computable. **The window transfer is not polish — it is
+what makes this surface runnable at all.** That also de-prioritises `qou-4ohh`
+(float64 hygiene in that same dashboard): cleaning arithmetic in a script that
+cannot finish is worth less than making it finish.
+
+## Design for the block-monotone window transfer, with its oracle
+
+Worked out here so the next session does not re-derive it.
+
+**The structure being exploited.** The atom word is
+`P_0 b_0 P_1 b_1 ...`, where `P_k` is nucleon k's intra word on generators
+{3k, 3k+1} (interleaved, hence non-monotone) and `b_k` is the single bond
+letter on generator 3k+2. The `P_k` are non-monotone only INTERNALLY; the
+windows themselves are in strictly increasing generator order. So the word is
+**block-monotone**, and only the inside of a 3-strand window needs general
+treatment.
+
+**Why the current kernel fails, precisely.** `chi_all_lambda` computes
+`chi^lambda = sum over SYT chains of prod_g [O_g]_diag` — DIAGONAL entries
+only. That identity holds because for a monotone word each `O_g` is applied
+once and acts only on level g+1, so the trace closes on diagonal paths. Revisit
+a generator after a higher one and off-diagonal seminormal entries enter the
+product, and the one-box-at-a-time recursion is no longer the trace.
+
+**The fix.** `get_h3_transitions` is already a 3-step window composition keyed
+on `(ab0, ab1, ab2, shape_in, c_in)` — the right architecture. What it lacks is
+that each step multiplies by the scalar `alpha*D(delta)+beta` (the diagonal
+element). Replace the per-step scalar with the FULL 2x2 seminormal block and
+walk the nucleon's letters IN ORDER, summing over the 3-box chain segments from
+`s_3k` to `s_3k+3`. The segment space is small — bounded by (addable corners)^3,
+a few dozen — so it stays d_lambda-free and O(A).
+
+**Two properties that make this cheap.** There are only TWO distinct intra
+words (proton `uud`, neutron `udd`), and the existing cache key already
+captures the window's dependence, so the per-window matrices are computed once
+and reused across every nucleon and every isotope.
+
+**The oracle is already in place.** `chi_all_lambda_general` is fast and correct
+at A=1/2/3 (< 0.4 s), so the window transfer can be validated against it
+byte-for-byte at those sizes before being trusted at A>=4 — which is exactly
+where no independent check is affordable. Note the 1-ulp kernel wobble
+(1.00229e-50) when setting that comparison's tolerance: compare tr_M, which was
+measured to have spread EXACTLY 0.0, or use a tolerance above 1e-48.
+
+**Risk.** The Hoefsmit off-diagonal sign/normalisation convention must match
+this codebase's `_alpha_beta` / `D(delta)`; getting it wrong gives a plausible
+wrong number rather than an error. The oracle is what catches that.
