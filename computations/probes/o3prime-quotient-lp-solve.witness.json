@@ -1,0 +1,202 @@
+{
+  "engine": "python+numpy+clarabel",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T15:18:40.574066+00:00",
+  "commitSha": "bf2912b3fb12fc44884ecf79234dfe4062ace1ad",
+  "assertions": [
+    {
+      "name": "F1 — optimal value is n_target * min_lambda t_lambda, every row",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_quotient_lp_solve_probe"
+    },
+    {
+      "name": "F2 — the primal support IS the argmin block: the program SELECTS",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_quotient_lp_solve_probe"
+    },
+    {
+      "name": "F3 — y_0* = min t_lambda, so the net constraint is PRICED",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_quotient_lp_solve_probe"
+    },
+    {
+      "name": "y_0* is NONZERO on every row — the full LP's degeneracy is GONE (there y_0* = 0 identically, ~1e-47 in the committed solves)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_quotient_lp_solve_probe"
+    },
+    {
+      "name": "the quotient is non-empty at every n, so the program exists",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_quotient_lp_solve_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "o3prime-quotient-lp-solve",
+  "scriptFile": "o3prime_quotient_lp_solve_probe.py",
+  "scriptHash": "0a912f447a92",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/o3prime_quotient_lp_solve_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/o3prime_quotient_lp_solve_probe.py"
+  },
+  "description": "O3' compute half (owner ruling 2026-09-05): the operator-selection program re-posed on the RADICAL QUOTIENT -- surviving Wedderburn blocks only (w_lambda != 0; under SU(2) the <=2-row partitions). Solved via the canonical solve_operator_selection_lp. Tests three falsifiers stated in advance: optimal value = n_target*min t_lambda; the primal support is the argmin block (SELECTION); and y_0* = min t_lambda, i.e. NONZERO -- where the full NF-indexed LP has y_0* = 0 identically and prices nothing. Under the natural lift T_lambda = t_lambda*I the block SDP reduces exactly to this LP; a matrix-valued T_lambda would not and is a different program.",
+  "auditOnly": "docs/proposals/2026-09-05-operator-selection-objective-replacement.md",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "n_target": "1"
+  },
+  "data": {
+    "rows": [
+      {
+        "row": 0,
+        "n": 3,
+        "n_survivors": 2,
+        "argmin_partition": [
+          2,
+          1
+        ],
+        "t_min": "0.447041147540400587771436992037792948784743520699240000000000",
+        "primal_obj": "0.447041147540400587771436992037792948784745804242470000000000",
+        "y0_star": "0.447041147540400587771436992037792948784742440790440000000000",
+        "duality_gap": "3.36345202988580525543660336252845441591713071763920000000000e-42",
+        "support_indices": [
+          1
+        ],
+        "F1_value": true,
+        "F2_selects": true,
+        "F3_priced": true
+      },
+      {
+        "row": 1,
+        "n": 3,
+        "n_survivors": 2,
+        "argmin_partition": [
+          2,
+          1
+        ],
+        "t_min": "0.420626157889027901602133437403681247873588972216950000000000",
+        "primal_obj": "0.420626157889027901602133437403681247873591045433840000000000",
+        "y0_star": "0.420626157889027901602133437403681247873587084534850000000000",
+        "duality_gap": "3.96089898740600246613649147926668121310706837581800000000000e-42",
+        "support_indices": [
+          1
+        ],
+        "F1_value": true,
+        "F2_selects": true,
+        "F3_priced": true
+      },
+      {
+        "row": 2,
+        "n": 6,
+        "n_survivors": 4,
+        "argmin_partition": [
+          3,
+          3
+        ],
+        "t_min": "0.0642671492247627779306976063673960466406916920881960000000000",
+        "primal_obj": "0.0642671492247627779306976063673960466406924786689370000000000",
+        "y0_star": "0.0642671492247627779306976063673960466406911623671080000000000",
+        "duality_gap": "1.31630182967115262478467523651298520300040430027240000000000e-42",
+        "support_indices": [
+          3
+        ],
+        "F1_value": true,
+        "F2_selects": true,
+        "F3_priced": true
+      },
+      {
+        "row": 3,
+        "n": 9,
+        "n_survivors": 5,
+        "argmin_partition": [
+          5,
+          4
+        ],
+        "t_min": "0.0165496952235817501471613735182095199614535874747440000000000",
+        "primal_obj": "0.0165496952235817501471613735182095199614563961491680000000000",
+        "y0_star": "0.0165496952235817501471613735182095199614529843003700000000000",
+        "duality_gap": "3.41184879753273792903044412910823758315460985490570000000000e-42",
+        "support_indices": [
+          4
+        ],
+        "F1_value": true,
+        "F2_selects": true,
+        "F3_priced": true
+      },
+      {
+        "row": 4,
+        "n": 9,
+        "n_survivors": 5,
+        "argmin_partition": [
+          5,
+          4
+        ],
+        "t_min": "0.0287868485647897792091917840246165924121303225890690000000000",
+        "primal_obj": "0.0287868485647897792091917840246165924121304005052440000000000",
+        "y0_star": "0.0287868485647897792091917840246165924121303119281780000000000",
+        "duality_gap": "8.85770662859367421071424537143666851272930078834350000000000e-44",
+        "support_indices": [
+          4
+        ],
+        "F1_value": true,
+        "F2_selects": true,
+        "F3_priced": true
+      },
+      {
+        "row": 5,
+        "n": 12,
+        "n_survivors": 7,
+        "argmin_partition": [
+          6,
+          6
+        ],
+        "t_min": "0.00468272098229808284404533996797918912262545157841530000000000",
+        "primal_obj": "0.00468272098229808284404533996797918912262588509518020000000000",
+        "y0_star": "0.00468272098229808284404533996797918912262529069883220000000000",
+        "duality_gap": "5.94396347943674957112779225732692814589601355143440000000000e-43",
+        "support_indices": [
+          6
+        ],
+        "F1_value": true,
+        "F2_selects": true,
+        "F3_priced": true
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

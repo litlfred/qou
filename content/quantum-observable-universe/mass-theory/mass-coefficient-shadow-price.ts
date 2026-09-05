@@ -38,6 +38,7 @@ export default proposition({
   uses: [
     "prop:mass-categorical-descent",
     "prop:wigner-coefficient-derivation",
+    "prop:operator-selection-lp",
   ],
   tags: [
     "mass-formula",
@@ -48,6 +49,34 @@ export default proposition({
     "derived-coefficient",
   ],
   authorNotes: [
+    {
+      kind: "refined-framing",
+      date: "2026-09-05",
+      body:
+        "**O2 applied (owner ruling, 2026-09-05): the statement now says " +
+        "*which* program.** It read \"the nuclear operator selection LP\", " +
+        "which names `prop:operator-selection-lp` — and that block indexes " +
+        "its Frobenius constraints by **NF basis element** ($n!$ of them), " +
+        "while this proposition claims a **per-partition** dual ($p(n)$ of " +
+        "them; six against three at $n=3$). The two are different programs, " +
+        "and the mismatch was never stated. It now is, along with the two " +
+        "things that follow: the NF-indexed program\u2019s net-constraint " +
+        "dual is identically zero (so any $a_K$ recovered by dividing by it " +
+        "is undefined), and the per-partition Frobenius duals are a separate " +
+        "question that the committed $H_3$ solve does **not** contradict. " +
+        "**No number moves** — per the 2026-08-24 defect audit\u2019s S6, " +
+        "the six-term formula runs on the closed-form chirality/writhe route, " +
+        "not on the LP; the shadow-price reading is a parallel interpretation. " +
+        "Also recorded: `hecke_core_legacy.lp_shadow_price`, named for this " +
+        "proposition, solves no program at all — it is the closed form " +
+        "$w_\\lambda/d_\\lambda - 1/[k]_q!$, whose subtrahend is " +
+        "$\\min_\\lambda(w_\\lambda/d_\\lambda)$ and is not a dual " +
+        "variable. Chosen over O3\u2032 (re-pose as a block SDP on the " +
+        "radical quotient) only in the sense that O2 is free and " +
+        "unconditional; O3\u2032 was authorised in the same ruling and is " +
+        "tracked separately. Evidence: PR #6752, " +
+        "`docs/proposals/2026-09-05-operator-selection-objective-replacement.md`.",
+    },
     {
       kind: "caveat",
       date: "2026-08-22",
