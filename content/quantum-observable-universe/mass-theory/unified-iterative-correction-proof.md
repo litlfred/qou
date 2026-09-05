@@ -58,9 +58,13 @@ information wanted is present in the block and destroyed by tracing it
 has dimension at least $2$ there are **distinct** decompositions on
 which every block trace agrees, so every trace-factoring functional,
 the Markov trace included, takes the same value on both.  Instantiating
-that at $(2,1)$ needs $f^{(2,1)} = 2$, which is classical but is *not*
-a formalised fact in this corpus, so the Lean statement carries the
-bound as a hypothesis.  A derivation reading the block rather than its
+that at $(2,1)$ needs $f^{(2,1)} = 2$; that value is now formalised
+(`SeminormalDimSmall.seminormalDim_p21`, via the Frame–Robinson–Thrall
+hook-length formula), so `trace_does_not_separate_p21` holds
+unconditionally.  The general theorems keep the bound as a hypothesis
+because they are about any block of dimension $\geq 2$.  The boundary
+is real: $f^{(1,1)} = 1$, so at the charge shape the block *is* its
+trace and none of this applies.  A derivation reading the block rather than its
 trace is not blocked by any of this.  So the clause is still an open obligation, not a
 derivation; for higher
 partitions it adds the form-factor, $pn$-correlation, and
