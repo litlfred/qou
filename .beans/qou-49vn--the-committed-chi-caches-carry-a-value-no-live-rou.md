@@ -238,3 +238,58 @@ as the nearest documented convention seam, not as the cause.
 — `hecke_canonical_chi.rs` / `wenzl_lr.rs` against the Python markov-peel — for
 the one scalar that the A ≥ 2 path applies and the A = 1 path does not. The
 exclusions above should make that a short search.
+
+### Fifth exclusion: y_λ is NOT the differing step — refuted cheaply
+
+The wrapper `canonical_tr_m_via_rust.compute_tr_m` takes its weights from a
+**live** `y_lambda_at(n_strands, q_val)` call (line 184), while the peel /
+Hoefsmit path reads them from the committed `y-lambda-mpfr-proton-witness.json`
+via `tr_m_wenzl_bridge_mpfr._Y_LAMBDA_DEFAULT`. Two different sources for the
+same weights is the right shape for a uniform scale factor, so it was worth a
+test.
+
+**Refuted.** `live/committed = 1.0` at **every** λ and every n — spread
+`1.47e-50` (n=3), `4.68e-50` (n=6), `4.41e-50` (n=9), i.e. the serialisation
+floor. The two y_λ sources are the same numbers.
+
+### 🛑 An unresolved TENSION — record it, do not paper over it
+
+With y_λ excluded, the divergence must be in χ. But the two facts do not sit
+together comfortably, and the next agent should start here:
+
+**Fact A — the per-λ χ differ NON-uniformly.** Rust's `chi_normalised` against
+the `--fresh` chi producer's `chi_lambda`, deuteron, top 5 of 11 partitions:
+
+| λ | rust/fresh |
+|---|---|
+| (6,) | `0.99992849311387155534` |
+| (5,1) | `1.00007611045623214990` |
+| (4,2) | `0.99981939581907000940` |
+| (3,3) | `0.99983325648550264807` |
+| (4,1,1) | `0.99983210335191548361` |
+
+Spread `2.567e-4`, **both signs** — one ratio is above 1.
+
+**Fact B — the y-weighted totals differ by ONE constant**, `0.99985852535684389…`,
+identical to 17 significant figures across the deuteron (n=6, 11 partitions),
+tritium and ³He (n=9, 30 partitions).
+
+A non-uniform per-λ difference producing an *identical* weighted-sum ratio at
+two different `n`, over different partition sets and different weights, to 17
+digits, is not something that happens by accident. **Either Fact A or Fact B is
+being mis-measured, or something structural forces the cancellation.** Two
+candidate resolutions, neither tested:
+
+- Fact A compares Rust against the **chi producer**, while Fact B compares Rust
+  against the **markov peel** — a third object. Their *totals* agree to 49
+  digits but their per-λ decompositions were never compared (the peel does not
+  decompose per λ at all). The scatter may be chi-producer-vs-Rust and the
+  constant Rust-vs-peel, i.e. two different comparisons that must not be read
+  as one.
+- Only the **top 5 of 11** partitions were compared (`compute_tr_m` returns
+  `top5_contributions`); the full set may behave differently.
+
+**First move for whoever picks this up:** get the full per-λ Rust χ (not the
+top 5) and re-do Fact A against it, then check whether the y-weighted residual
+actually reproduces `1.41474643e-4`. If it does not, Fact B's constancy needs
+re-deriving before anything is concluded from it.
