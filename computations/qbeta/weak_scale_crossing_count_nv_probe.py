@@ -69,6 +69,8 @@ from pathlib import Path
 
 import mpmath as mp
 
+from qou_substrate.witness import WitnessBuilder as _WB  # noqa: E402 -- provenance stamp
+
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
@@ -232,7 +234,7 @@ def main() -> int:
     print("=" * 72)
 
     out = HERE / "weak-scale-crossing-count-nv.witness.json"
-    out.write_text(json.dumps({
+    _payload = {
         "schema": "qou-probe/v1",
         "name": "weak-scale-crossing-count-nv",
         "description":
@@ -241,7 +243,10 @@ def main() -> int:
             "closed form (checks 1-3). What is open is the rate's SCALE -- the "
             "weak-scale crossing count N_v = 3v/m_e, which is q-independent and, "
             "read as a crossing count, must be a positive integer (checks 4-6).",
-        "q0_anchor": "physical_proton",
+        "q0Anchor": "proton",
+        "q0AnchorReason":
+            "AGENTS.md 2026-08-07 owner directive: proton is the default for all new "
+            "compute. Load-bearing here, not inert: q0 enters the evaluated quantities.",
         "q0Value": mp.nstr(q0, 20),
         "inputs": {
             "m_e_MeV": "0.51099895069(16)  CODATA 2022",
@@ -266,7 +271,13 @@ def main() -> int:
                  "it; the integrality check is a necessary condition on the corpus's "
                  "own crossing-count reading, tested against experiment alone.",
         "checks": checks,
-    }, indent=2) + "\n")
+    }
+    _WB.stamp_staleness_metadata(
+        _payload, script_path=__file__, q0_anchor="proton",
+        q0_anchor_reason=_payload["q0AnchorReason"],
+        q0_value=_payload["q0Value"],
+    )
+    out.write_text(json.dumps(_payload, indent=2) + "\n")
     print(f"\nwitness -> {out}")
     return 0 if n_pass == len(checks) else 1
 
