@@ -698,3 +698,60 @@ audit that establishes the fallback is a representation.
   0 to scipy**. Both `else: Msig = sig_sparse.T.dot(M_run.T).T` arms are
   unreachable. Not removed here — that is a separate change and this branch is
   already four commits of precision work.
+
+
+## Finding 5 is REFUTED — the `dim>=8` numpy branch is ~2.1x FASTER (2026-09-05)
+
+The bean's order of work lists step 4 as *"Delete the dim>=8 numpy branch"*,
+on finding 5: *"measured at dim 16 it is 31% SLOWER than the Python loop
+(0.0126s vs 0.0096s). object dtype has no BLAS."* **Measured on the real
+accumulator inputs, that is backwards** — deleting the branch would roughly
+DOUBLE the dense-path matmul cost.
+
+`_matmul_dim(M0, M_cross, dim)` against the loop-only body that deleting the
+branch would leave, on every dense partition with 8 <= dim <= 28, best of 3,
+at `COMPUTE_DPS`:
+
+    partition        dim   _matmul_dim    loop-only    ratio
+    (8, 1)             8      0.001085     0.002171    0.50x
+    (9, 1)             9      0.001451     0.003059    0.47x
+    (10, 1)           10      0.001996     0.004188    0.48x
+    (2, 2, 2, 1)      14      0.005423     0.011382    0.48x
+    (6, 2)            20      0.016047     0.032929    0.49x
+    (6, 1, 1)         21      0.018227     0.039182    0.47x
+    (7, 2)            27      0.039314     0.080775    0.49x
+    (5, 3)            28      0.043957     0.092222    0.48x
+
+Uniform ~0.48x — numpy is about 2.1x faster at every dim, on every dense
+partition. The `object dtype has no BLAS` premise is CORRECT and the
+conclusion does not follow: numpy's object-dtype path still runs the k-loop
+in C rather than in the interpreter, and that alone is worth ~2x.
+
+Synthetic check on the two dtypes separately (same direction, and it widens):
+
+    dim   dtype      numpy @      py loop   numpy/loop
+      8   object    0.001166     0.001391        0.84x
+     16   object    0.009686     0.011401        0.85x
+     35   object    0.104086     0.112232        0.93x
+     60   object    0.541059     0.550651        0.98x
+     16  float64    0.000004     0.000475        0.01x
+
+**I tested the one mechanism that would have made BOTH measurements right,
+and it does not hold.** Finding 5 predates PR #6794, which made every sigma
+exact, and #6807, which raises the ambient precision — so "the bean measured
+at dps 15, where the relative overheads differ" was the obvious
+reconciliation. Measured at the bean's own stated dim on partition (3,2,1):
+
+    dps=15   numpy 0.008222   loop 0.017834   ratio 0.46x   numpy FASTER
+    dps=70   numpy 0.008118   loop 0.016902   ratio 0.48x   numpy FASTER
+
+The verdict does not flip. So #6807 is not what changed the answer, and the
+**cause of the discrepancy with the recorded 0.0126 / 0.0096 is
+UNDETERMINED** — the bean does not record its harness, and I did not
+reconstruct it. What is established is that the figure does not reproduce on
+the real inputs at the dim it names; what is NOT established is why.
+
+**Step 4 is refused as specified.** Do not delete the branch. If the intent
+behind step 4 was "the dense path is slow", the live target is step 2 (export
+`dense_dense_mul_mpfr` via PyO3) — a measured >=24x, against a branch that is
+already winning 2.1x over the alternative it was to be replaced by.
