@@ -1332,12 +1332,14 @@ def _warn_if_kernel_absent():
     (`unified_iterative_correction(1, 1)`, both arms live, k_exact = k_max):
 
         k=4..7   kernel and fallback agree to 0.000e+00
-        k=8      1.348e-16                 (fallback 14.54 s vs kernel 0.26 s)
+        k=8      1.348e-16                 (fallback  14.54 s vs kernel 0.26 s)
+        k=9      0.000e+00                 (fallback 106.35 s vs kernel 2.20 s)
 
     So at the accumulator the two arms now agree to the arithmetic floor, and
-    the speed gap is the surviving reason to prefer the kernel -- 56x at k=8 on
-    this quantity, against the docstring's 24x on `binding_energy`. Those are
-    different quantities; do not quote one as the other.
+    the speed gap is the surviving reason to prefer the kernel -- 56x at k=8
+    and 48x at k=9 on this quantity, against the docstring's 24x on
+    `binding_energy`. Those are different quantities; do not quote one as the
+    other. Production is k_max = 11, which neither arm was run to here.
 
     Do not read the agreement above as proof the families are interchangeable.
     `ysn_trace_blindness_probe.py` shows the TRACE cannot see a braid defect at
@@ -1370,8 +1372,8 @@ def _warn_if_kernel_absent():
         "DOES satisfy\n"
         "*** the braid relation (audits/ysn_braid_relation_audit.py exits 0), "
         "and at the\n"
-        "*** accumulator the two arms agree to <=1.3e-16 for k<=8 -- but it is "
-        "~56x slower,\n"
+        "*** accumulator the two arms agree to <=1.3e-16 for k<=9 -- but it is "
+        "~50x slower,\n"
         "*** and the recorded 17.3 % gap at binding_energy(1,1) has NOT been "
         "re-measured\n"
         "*** since #6708 (its fallback arm is 6.3 h). Prefer the kernel; treat "
