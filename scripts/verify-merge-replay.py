@@ -134,7 +134,37 @@ def classify(
     return missing, drifted
 
 
+def _require_local_object(ref: str, what: str) -> None:
+    """Refuse to verify against a ref this clone cannot resolve.
+
+    Without this the failure is SILENT AND INVERTED. The main-side window is
+    `{merged}~span..{merged}`; if `merged` is not present locally that range
+    yields nothing, every branch commit is unmatched, and the checker reports
+    them all as MISSING -- which reads exactly like a merge that dropped
+    commits, and invites the reader to re-push work that in fact landed
+    cleanly. Measured 2026-09-05 immediately after merging PR #6849: `MISSING:
+    2`, both commits present on main, the only fault being that `git fetch` had
+    not run since the merge.
+    """
+    # `check=True` is load-bearing: this module's `git()` SWALLOWS a non-zero
+    # exit unless asked. Written without it, this guard ran, returned "", and
+    # never fired -- a guard that is silently inert, which is the same defect
+    # class it was added to catch. Caught by testing it against a sha that does
+    # not exist rather than by reading it.
+    try:
+        git("cat-file", "-e", f"{ref}^{{commit}}", check=True)
+    except SystemExit:
+        raise SystemExit(
+            f"{what} {ref!r} is not present in this clone.\n"
+            f"  Run:  git fetch origin main\n"
+            f"  (A just-merged sha is not local until you fetch. Verifying "
+            f"without it reports every commit MISSING, which is an artifact of "
+            f"the stale ref and not a dropped commit.)")
+
+
 def verify(branch: str, merged: str, window: int = 40, quiet: bool = False) -> tuple[int, int]:
+    _require_local_object(merged, "merged sha")
+    _require_local_object(branch, "branch ref")
     base = git("merge-base", branch, "origin/main").strip()
     if not base:
         raise SystemExit(f"no merge-base between {branch} and origin/main")
@@ -149,6 +179,18 @@ def verify(branch: str, merged: str, window: int = 40, quiet: bool = False) -> t
     span = max(window, len(branch_shas) * 3)
     main_by_pid, _ = index(commits(f"{merged}~{span}..{merged}"))
     branch_by_pid, branch_empty = index(branch_shas)
+
+    # Second line of defence, independent of ref resolution. If the main-side
+    # window indexed NOTHING while the branch has commits, no comparison
+    # happened at all -- so "all missing" is a statement about the window, never
+    # about the merge. Report it as the error it is rather than as a result.
+    if not main_by_pid and branch_by_pid:
+        raise SystemExit(
+            f"main-side window {merged}~{span}..{merged} indexed 0 commits "
+            f"while {branch} has {len(branch_by_pid)}.\n"
+            f"  Nothing was compared, so this is NOT a finding about the merge.\n"
+            f"  Usual cause: the merge sha is stale in this clone — "
+            f"run `git fetch origin main` and re-run.")
 
     unmatched = [(s, subject(s)) for p, s in branch_by_pid.items() if p not in main_by_pid]
 
