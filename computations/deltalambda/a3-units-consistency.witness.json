@@ -5,7 +5,7 @@
   "description": "The '1.6\u00d7 A=3 magnitude near-miss' is dimensionally ill-posed AND scale-ambiguous. The 3-body cluster c\u2083=0.297 is a genuine ENERGY (E\u2080\u00b7deficit) compared directly to the DIMENSIONLESS \u03bc\u2083=0.4708 (borromean probe:188 admits '\u03bc\u2083 dimensionless, read as MeV'). Repairing the pun does NOT give one 'honest gap': the categorical binding scale is unpinned \u2014 the master formula undershoots the DEUTERON by 5.85\u00d7 (C_knot=B_AME/B_cat, an explicitly FITTED deficit ratio = the open \u0394_\u03bb gate). Normalizing c\u2083 by the AME deuteron gives a 3.53\u00d7 UNDERSHOOT; by the categorical deuteron (scale-consistent, E\u2080/m_e cancels) a 1.66\u00d7 OVERSHOOT \u2014 the two differ by exactly C_knot=5.85. So the near-miss is an artifact of the unpinned scale, not a robust proximity. (Self-correction: an earlier version reported 3.53\u00d7 as 'the honest gap' \u2014 that picked one normalization and over-claimed.) The unambiguous object is C_knot itself; deriving it (the \u0394_\u03bb magnitude) is 'how to improve binding' and is currently a FIT (six ans\u00e4tze + three walls failed). scope-(a) calibration; no fit; nothing wired; exact (mpmath). Corpus files carry the pun \u2014 flagged for coordination.",
   "audit_only": true,
   "tier": "scope-(a) units-consistency + scale-ambiguity calibration (self-correction); no fit",
-  "scriptHash": "5ce1275b967d3d3b",
+  "scriptHash": "3c1bd04532a5",
   "result": {
     "the_pun": {
       "site": "borromean_h9_magnitude_lift_probe.py:188 \u2014 'target \u03bc\u2083 = 0.4708 (dimensionless, read as MeV)'",
@@ -16,12 +16,12 @@
     },
     "the_open_gate_C_knot": {
       "B_cat_deuteron_MeV": "0.38013212",
-      "B_AME_deuteron_MeV": "2.224566",
+      "B_AME_deuteron_MeV": "2.2245662",
       "C_knot": "5.85209",
       "status": "the master formula B=m_e\u00b7|\u03a3 y_\u03bb \u03c7^\u03bb sgn f^\u03bb| undershoots the DEUTERON by 5.85\u00d7; C_knot=B_AME/B_cat is an EXPLICITLY FITTED deficit ratio (not derived) = the open \u0394_\u03bb gate (binding_energy_categorical_deuteron.py)."
     },
     "scale_ambiguity": {
-      "normA_c3_over_B_AME": "0.13350919",
+      "normA_c3_over_B_AME": "0.13350918",
       "gap_A_undershoot": "3.52635\u00d7 UNDERshoot",
       "normB_c3_over_B_cat": "0.7813073",
       "gap_B_overshoot": "1.65953\u00d7 OVERshoot",
@@ -39,5 +39,12 @@
     "builds_on": "borromean_h9_magnitude_lift_probe.py:188 (the pun), #4364, three-walls, this PR's mu3/a3/a4 probes",
     "no_fit": true
   },
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2"
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptFile": "a3_units_consistency_probe.py",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engine": "python",
+  "computedAt": "2026-09-05T18:02:46.982158+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

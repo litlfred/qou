@@ -157,6 +157,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 mp.mp.dps = 40
 TOL = mp.mpf(10) ** -30
@@ -234,7 +235,7 @@ def main() -> int:
     print(f"    R = |B(T=0)/B(T=1)| = {fmt(R, 20)}")
     assert abs(B1 + B0) < TOL, "the two channels must be exactly antisymmetric"
     assert abs(R - 1) < TOL, "R must be exactly 1"
-    need = mp.mpf("2.224566") / mp.mpf("0.066")   # the np 1S0 VIRTUAL STATE, the SAME np pair as the deuteron differing only in isospin.  CORRECTED from 0.1 (= pp/nn, a DIFFERENT PAIR), which conflated pair identity with isospin; see main 1d9d3500f5.
+    need = AME_B_DEUTERON_MEV_VALIDATION / mp.mpf("0.066")   # the np 1S0 VIRTUAL STATE, the SAME np pair as the deuteron differing only in isospin.  CORRECTED from 0.1 (= pp/nn, a DIFFERENT PAIR), which conflated pair identity with isospin; see main 1d9d3500f5.
     print(f"    nature requires R ~ {fmt(need, 6)}")
     print(f"    shortfall factor    {fmt(need / R, 6)}")
     print("    => the single-crossing isospin criterion is EXCLUDED at every")

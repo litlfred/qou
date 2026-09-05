@@ -55,14 +55,20 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
 # Low isotopes (closed form ⇒ no feasibility wall; extend freely).
 NUC = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2),
        "6Li": (3, 3), "7Li": (3, 4)}
-AME_B = {"D": mp.mpf("2.224566"), "T": mp.mpf("8.481798"),
-         "3He": mp.mpf("7.718043"), "4He": mp.mpf("28.295673"),
+AME_B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
+         "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION,
          "6Li": mp.mpf("31.99464"), "7Li": mp.mpf("39.24454")}
 
 # Per-bond channel values f_bond^channel at q₀ (derived; reused).

@@ -68,7 +68,13 @@ import mpmath as mp
 
 from _precision import set_compute_dps, fmt
 from witness_base import WitnessBuilder
-from codata_constants import M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV,
+)
 from mass_at_3A_proper import (
     atom_braid_word_3A, markov_trace_3A, dim_q, qfac,
     E_0_CALIBRATION_MEV)
@@ -281,7 +287,7 @@ def main() -> int:
     builder.add_assertion(
         "data_loaded",
         computed=B_AME["D"],
-        expected=2.22456607,
+        expected=AME_B_DEUTERON_MEV_VALIDATION,
         tolerance=1e-10,
         unit="B(D) MeV",
         source="AME 2020 deuteron binding",

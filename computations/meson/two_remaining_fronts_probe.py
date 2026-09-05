@@ -98,7 +98,11 @@ import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 import binding_k_solver as bks  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from codata_constants import M_E_MEV, ame_binding_mev  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    M_E_MEV,
+    ame_binding_mev  # noqa: E402,
+)
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from pyhecke.gram import h as _h_f  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
@@ -217,9 +221,9 @@ def main() -> int:
         weighted += w * t
     max_b, min_b = max(vals), min(vals)
     committed = mp.mpf("0.5751722457697739")
-    need = mp.sqrt(mp.mpf("2.224566"))
+    need = mp.sqrt(AME_B_DEUTERON_MEV_VALIDATION)
     reach = max_b / need
-    ceil_at_max = max_b ** 2 / mp.mpf("2.224566")
+    ceil_at_max = max_b ** 2 / AME_B_DEUTERON_MEV_VALIDATION
 
     print(f"FRONT 1  ln[2]_q = {mp.nstr(ln2q, 12)}")
     for k, d in dens.items():

@@ -35,6 +35,10 @@ from pathlib import Path
 from mpmath import mpf, mp, fabs, acos
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 
 # Cheat-sheet derived μ₀ = m_e / (3(q-q⁻¹)/2)
@@ -58,8 +62,8 @@ H_Q = Q_0 - 1 / Q_0           # ℏ_q at q_0
 MU_0 = M_E_MEV / (mpf(3) * H_Q / mpf(2))  # ≈ 1.63 MeV
 
 AME_MeV = {
-    "D":     mpf("2.224566"),
-    "T":     mpf("8.481798"),
+    "D":     AME_B_DEUTERON_MEV_VALIDATION,
+    "T":     AME_B_TRITIUM_MEV_VALIDATION,
     "3He":   mpf("7.71806"),
 }
 

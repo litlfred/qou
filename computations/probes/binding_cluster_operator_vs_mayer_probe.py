@@ -38,6 +38,11 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 REPO = Path(__file__).resolve().parents[2]
@@ -47,7 +52,7 @@ COMP = REPO / "computations"
 with open(COMP / "three-body-joint-trace-a3.witness.json") as f:
     JT = json.load(f)["data"]["results"]
 
-AME = {"T": mp.mpf("8.481798"), "3He": mp.mpf("7.718043"), "D": mp.mpf("2.224566")}
+AME = {"T": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION, "D": AME_B_DEUTERON_MEV_VALIDATION}
 b2 = AME["D"]  # Mayer 2-body, identified from the unique 2-body nucleus
 
 

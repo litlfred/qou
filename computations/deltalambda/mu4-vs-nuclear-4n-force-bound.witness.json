@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:05:24.396541+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T17:59:19.752835+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "mu4_decomposition_reproduces_witness",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "mu4-vs-nuclear-4n-force-bound",
   "scriptFile": "mu4_vs_nuclear_4n_force_bound_probe.py",
-  "scriptHash": "e6f725ebaf2e",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "3464285c909c",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,10 +40,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -56,19 +56,19 @@
   "data": {
     "mu4_physical_plausibility": {
       "mu4_in_B_D_units": -4.591048,
-      "B_D_MeV": 2.224566,
-      "B_4He_MeV": 28.295662,
-      "mu4_MeV": -10.213089285168,
-      "mu4_as_fraction_of_B4He": 0.36094187459434596,
+      "B_D_MeV": 2.2245662,
+      "B_4He_MeV": 28.2956624,
+      "mu4_MeV": -10.2130902033776,
+      "mu4_as_fraction_of_B4He": 0.3609419019424546,
       "lit_srg_induced_4N_MeV": 0.05,
       "lit_n3lo_4N_MeV": 0.3,
-      "excess_over_n3lo": 34.04363095056,
-      "excess_over_srg": 204.26178570336,
+      "excess_over_n3lo": 34.04363401125867,
+      "excess_over_srg": 204.261804067552,
       "s4": 3.7804,
       "g4": 8.3706,
-      "s4_MeV": 8.4097493064,
-      "g4_MeV": 18.6209521596,
-      "s4_as_fraction_of_B4He": 0.297209844618585,
+      "s4_MeV": 8.40975006248,
+      "g4_MeV": 18.62095383372,
+      "s4_as_fraction_of_B4He": 0.29720986713779846,
       "references": [
         "Jurgenson, Navratil, Furnstahl, PRL 103, 082501 (2009), arXiv:0905.1873",
         "Platter, Hammer, Meissner, arXiv:nucl-th/0409040",

@@ -57,10 +57,15 @@ from _li_2_q_util import flavor_split_leading  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from closed_form_tau_M import hecke_h, markov_z  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
-AME = {"D": mpf("2.224566"), "3H": mpf("8.481798"), "3He": mpf("7.718043")}
+AME = {"D": AME_B_DEUTERON_MEV_VALIDATION, "3H": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION}
 
 THRESHOLD = mpf(2) / 3
 

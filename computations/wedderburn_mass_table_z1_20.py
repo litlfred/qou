@@ -95,6 +95,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from qou_substrate.constants import Q as Q_PROTON  # noqa: E402
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
+from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 mp.dps = 50
 
@@ -104,8 +105,8 @@ SOURCE_COMMIT = "1359fe23ac"
 SOURCE_PATH = "folio-assistant/computations/atom-mass-complete-wedderburn.witness.json"
 
 M_E = "0.510999"        # recorded; CODATA 0.51099895
-M_P = "938.230457"      # recorded; CODATA 938.27208816  (-44 ppm)
-M_N = "939.532005"      # recorded; CODATA 939.56542052  (-36 ppm)
+M_P = "938.230457"      # recorded; CODATA M_P_MEV_VALIDATION  (-44 ppm)
+M_N = "939.532005"      # recorded; CODATA M_N_MEV_VALIDATION  (-36 ppm)
 CODATA_M_P = "938.27208816"
 CODATA_M_N = "939.56542052"
 

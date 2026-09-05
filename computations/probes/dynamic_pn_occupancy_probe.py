@@ -16,6 +16,11 @@ sys.path.insert(0, str(HERE.parent / 'substrate'))
 
 from _precision import set_compute_dps
 from q_parameter import Q_50_DIGIT_STR
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 def q_int(q, n):
     return (q**n - q**(-n)) / (q - mp.mpf('1')/q)
@@ -101,10 +106,10 @@ def main():
     set_compute_dps()
     
     isotopes = [
-        ("2H", 1, 1, 1, 2.224566),
+        ("2H", 1, 1, 1, AME_B_DEUTERON_MEV_VALIDATION),
         ("3H", 1, 2, 0.5, 8.481821),
-        ("3He", 2, 1, 0.5, 7.718043),
-        ("4He", 2, 2, 0, 28.29566)
+        ("3He", 2, 1, 0.5, AME_B_HE3_MEV_VALIDATION),
+        ("4He", 2, 2, 0, AME_B_HE4_MEV_VALIDATION)
     ]
     
     print("=========================================================")

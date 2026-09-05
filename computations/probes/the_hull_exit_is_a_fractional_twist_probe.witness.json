@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T04:54:30.210329+00:00",
-  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T18:01:01.410642+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "A1_framing_scalar_scales_the_determinant",
@@ -42,7 +42,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "e* = 0.8384967429; nearest corpus constant 4h at 0.2690%, not a match"
+      "source": "e* = 0.8384967474; nearest corpus constant 4h at 0.2690%, not a match"
     },
     {
       "name": "A6_scope_is_stated",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 23,
   "computation": "the_hull_exit_is_a_fractional_twist_probe",
   "scriptFile": "the_hull_exit_is_a_fractional_twist_probe.py",
-  "scriptHash": "a25c3174fcf2",
-  "scriptCommitSha": "7f1817304ce7f51b39631059c09c24c1a5b9ba88",
+  "scriptHash": "23fc5706c0f7",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,10 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -117,17 +117,17 @@
       }
     },
     "matching_nature": {
-      "target_ratio": "33.705545",
-      "u_star": "0.098327806881454",
-      "c_star": "0.90635174671193",
-      "e_star": "0.83849674289868",
+      "target_ratio": "33.705548",
+      "u_star": "0.098327807406469",
+      "c_star": "0.90635174623608",
+      "e_star": "0.83849674737579",
       "pct_of_window": "94.2372",
       "is_a_fit": true
     },
     "constant_scan": {
       "4h": {
         "value": "0.836241195183",
-        "rel_diff": "0.268999%"
+        "rel_diff": "0.269000%"
       },
       "z+h": {
         "value": "0.821748335942",
@@ -143,7 +143,7 @@
       },
       "1-h/2": {
         "value": "0.895469850602",
-        "rel_diff": "6.794673%"
+        "rel_diff": "6.794672%"
       },
       "1/q": {
         "value": "0.900918283956",

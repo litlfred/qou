@@ -54,15 +54,19 @@ from _li_2_q_util import load_q_50dps  # noqa: E402
 from substrate._precision import set_compute_dps  # noqa: E402
 from substrate.experimental_constants import M_E_MEV  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
 # (name, Z, N, B_AME MeV)
 ISOTOPES = [
     ("2H", 1, 1, mp.mpf("2.2245662")),
-    ("3H", 1, 2, mp.mpf("8.4817977")),
+    ("3H", 1, 2, AME_B_TRITIUM_MEV_VALIDATION),
     ("3He", 2, 1, mp.mpf("7.7180213")),
-    ("4He", 2, 2, mp.mpf("28.295662")),
+    ("4He", 2, 2, AME_B_HE4_MEV_VALIDATION),
 ]
 SIGN = {"pp": mp.mpf(1), "nn": mp.mpf(-1), "pn": mp.mpf(1)}
 

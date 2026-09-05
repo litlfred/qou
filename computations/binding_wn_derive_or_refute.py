@@ -95,10 +95,14 @@ def a_D(n):
 
 
 from experimental_constants import M_E_MEV as _M_E_MEV  # noqa: E402 — CAL-1 registry (single source)
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 M_E = mp.mpf(str(_M_E_MEV))  # MeV (CAL-1; full-precision CODATA-2022, prior literal was 8 sig figs)
 # AME2020 binding energies (MeV)
-B = {"D": mp.mpf("2.224566"), "T": mp.mpf("8.481821"),
-     "3He": mp.mpf("7.718058"), "4He": mp.mpf("28.295661")}
+B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": mp.mpf("8.481821"),
+     "3He": mp.mpf("7.718058"), "4He": AME_B_HE4_MEV_VALIDATION}
 A = {"D": 2, "T": 3, "3He": 3, "4He": 4}
 
 

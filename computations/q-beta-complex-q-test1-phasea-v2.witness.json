@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T07:58:23.957283+00:00",
-  "commitSha": "2fad630739c6882ba174a44e1027ac1825aa1d91",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T18:03:29.106484+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "q-beta-complex-q-test1-phasea-v2",
   "scriptFile": "q_beta_complex_q_test1_phaseA_v2.py",
-  "scriptHash": "a32b63eeb63f",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "b0574ed843c9",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,10 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -48,7 +48,7 @@
     "Vol_4_1": "2.029883212819307250042405108549040571883378615060599584034978213553195",
     "cal2_target_m_mu_over_m_e": "206.7682827000000000000000000000000000000000000000000223638476790838774",
     "cal3_target_Q_beta_MeV": "0.78233341",
-    "m_e_MeV": "0.51099895"
+    "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678"
   },
   "apollonius_circle": {
     "k_squared": "0.009817188527722425437750202432517666656054200594570200802295822050270203",
@@ -71,5 +71,5 @@
     "outcome_class": "d",
     "outcome_description": "NO joint solution found anywhere on the Apollonius circle — ansatz cannot simultaneously fit CAL-2 + CAL-3 for ANY complex q"
   },
-  "timestamp": "2026-08-29T07:58:23+00:00"
+  "timestamp": "2026-09-05T18:03:29+00:00"
 }

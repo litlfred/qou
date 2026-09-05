@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T14:10:20.192029+00:00",
-  "commitSha": "6e9c05100a137786ea1b339b5c6851f6fc00dbab",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T18:00:44.154175+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "beyond_pairwise_3body_never_shares_sign_with_empirical_b3",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 473,
+  "durationMs": 1397,
   "computation": "binding-triangle-3body-cluster",
   "scriptFile": "binding_triangle_3body_cluster_probe.py",
-  "scriptHash": "0913f3cc8ab7",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "08bd6400aa22",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -58,7 +58,7 @@
         "two_bond_MeV": "-2.863603475",
         "three_bond_MeV": "0.41861869",
         "beyond_pairwise_MeV": "-2.444984785",
-        "empirical_b3_MeV": "1.8081",
+        "empirical_b3_MeV": "1.8080976",
         "same_sign_as_b3": false
       },
       {
@@ -68,7 +68,7 @@
         "two_bond_MeV": "-2.442708875",
         "three_bond_MeV": "0.3153634563",
         "beyond_pairwise_MeV": "-2.127345419",
-        "empirical_b3_MeV": "1.044345",
+        "empirical_b3_MeV": "1.04434272",
         "same_sign_as_b3": false
       },
       {
@@ -78,7 +78,7 @@
         "two_bond_MeV": "-3.877023366",
         "three_bond_MeV": "0.6750690757",
         "beyond_pairwise_MeV": "-3.20195429",
-        "empirical_b3_MeV": "1.8081",
+        "empirical_b3_MeV": "1.8080976",
         "same_sign_as_b3": false
       },
       {
@@ -88,7 +88,7 @@
         "two_bond_MeV": "-3.381021187",
         "three_bond_MeV": "0.5085585571",
         "beyond_pairwise_MeV": "-2.872462629",
-        "empirical_b3_MeV": "1.044345",
+        "empirical_b3_MeV": "1.04434272",
         "same_sign_as_b3": false
       },
       {
@@ -98,7 +98,7 @@
         "two_bond_MeV": "-3.876291135",
         "three_bond_MeV": "0.6748717156",
         "beyond_pairwise_MeV": "-3.201419419",
-        "empirical_b3_MeV": "1.8081",
+        "empirical_b3_MeV": "1.8080976",
         "same_sign_as_b3": false
       },
       {
@@ -108,7 +108,7 @@
         "two_bond_MeV": "-3.380334996",
         "three_bond_MeV": "0.5084098772",
         "beyond_pairwise_MeV": "-2.871925119",
-        "empirical_b3_MeV": "1.044345",
+        "empirical_b3_MeV": "1.04434272",
         "same_sign_as_b3": false
       }
     ],

@@ -63,6 +63,7 @@ from binding_k_solver import (  # noqa: E402
     per_block_evaluation, load_wenzl_weights,
 )
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 Q0 = float(Q_FLOAT)
 HERE = Path(__file__).parent
@@ -73,7 +74,7 @@ A = 2
 # B_AME(D) = 2.224566 MeV — RECORDED FOR RESIDUAL REPORTING ONLY. It is NOT
 # fed into any selection / objective / normalization below. Its sole use is
 # the final honest residual print.
-B_AME_D_MEV = 2.224566
+B_AME_D_MEV = AME_B_DEUTERON_MEV_VALIDATION
 
 # The substrate-only PSD-feasible inter-nucleon binding for ²H, selected by
 # binding_k_enumerator.py (shortest PSD-feasible word in {σ_3, σ_3^{-1}},

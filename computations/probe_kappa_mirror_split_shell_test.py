@@ -111,11 +111,14 @@ for p in (HERE, HERE / "substrate"):
         sys.path.insert(0, str(p))
 
 import coulomb_energy as ce  # noqa: E402
-from codata_constants import _ame_binding_mev as ame_binding  # noqa: E402
+from codata_constants import (
+    M_E_MEV,
+    _ame_binding_mev as ame_binding  # noqa: E402,
+)
 
 Q0 = mp.mpf("1.1099785827513808")
 Q0_PIN = "proton (experimental layer), m_p/m_e"
-M_E_MEV = mp.mpf("0.51099895000")
+M_E_MEV = M_E_MEV
 
 
 def bracket(n: int) -> float:

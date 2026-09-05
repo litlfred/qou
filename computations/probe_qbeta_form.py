@@ -25,9 +25,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]
 from qou_substrate.witness import _q0_value_for_anchor  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import M_E_MEV
 set_compute_dps()
 q0 = mp.mpf(_q0_value_for_anchor("muon"))
-m_e = mp.mpf('0.51099895000')
+m_e = M_E_MEV
 Q_beta_codata = mp.mpf('0.78233341000')
 
 # CONVENTION FIX (2026-08-30, bean qou-46ab). These were convention-C

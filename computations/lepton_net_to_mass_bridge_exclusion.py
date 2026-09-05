@@ -93,6 +93,7 @@ from q_parameter import Q_MP  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
 
 from mpmath import mp, mpf, log  # noqa: E402
+from codata_constants import M_E_MEV
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -102,7 +103,7 @@ set_compute_dps()
 
 # CODATA / PDG lepton masses (MeV). Used only as the TARGET of the
 # excluded map -- no constant here is fitted or tuned.
-M_E = mpf("0.51099895000")
+M_E = M_E_MEV
 M_MU = mpf("105.6583755")
 M_TAU = mpf("1776.86")
 

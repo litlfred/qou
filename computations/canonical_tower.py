@@ -161,6 +161,7 @@ from hecke_characters import (partitions_of, dim_q, qfac,
 from hecke_3a_weights import partitions_of_n
 from mass_at_3A_proper import atom_braid_word_3A, E_0_CALIBRATION_MEV
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION
 
 
 # ── Jucys–Murphy eigenvalue averages ─────────────────────────
@@ -704,8 +705,8 @@ if __name__ == "__main__":
     ATOMS = [
         ("D",    1, 1,  2.22452),
         ("T",    1, 2,  8.481821),
-        ("3He",  2, 1,  7.71804),
-        ("4He",  2, 2, 28.295674),
+        ("3He",  2, 1,  AME_B_HE3_MEV_VALIDATION),
+        ("4He",  2, 2, AME_B_HE4_MEV_VALIDATION),
     ]
     print("=" * 100)
     print("CANONICAL-WITH-PROPER-TOWER: JM-based V̂ + Φ_q tower "

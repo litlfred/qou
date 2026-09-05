@@ -62,6 +62,10 @@ from _li_2_q_util import load_q_50dps  # noqa: E402
 from substrate._precision import set_compute_dps  # noqa: E402
 from substrate.experimental_constants import M_E_MEV  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 set_compute_dps()
 COMP = str(_COMP)
@@ -79,10 +83,10 @@ B_DIM = {  # |B_dim| MeV, single-trace undershoot
     "4He": mp.mpf("3.0381869604868865"),
 }
 B_AME = {  # AME2020 connected binding MeV
-    "2H": mp.mpf("2.224566"),
+    "2H": AME_B_DEUTERON_MEV_VALIDATION,
     "3H": mp.mpf("8.481821"),
     "3He": mp.mpf("7.718058"),
-    "4He": mp.mpf("28.295673"),
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 # Complete-graph nucleon-type layout per isotope (pp=+1, nn=−1 derived; pn=±1

@@ -68,10 +68,11 @@ import json
 import math
 from datetime import datetime, timezone
 from pathlib import Path
+from codata_constants import M_E_MEV
 
 Q0 = mp.mpf("1.1099785827513808")
 Q0_PIN = "proton (experimental layer), m_p/m_e"
-M_E_MEV = mp.mpf("0.51099895000")
+M_E_MEV = M_E_MEV
 MAGIC = [2, 8, 20, 28, 50, 82, 126]
 
 

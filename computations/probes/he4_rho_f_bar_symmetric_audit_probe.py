@@ -62,6 +62,7 @@ sys.path.insert(0, str(HERE.parent.parent / "tools" / "qou-substrate" / "python"
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 try:
     from qou_substrate.constants import q_at
@@ -102,7 +103,7 @@ def main() -> int:
     G_catalan = mp.catalan
     # AME 2020 ⁴He binding (not yet centralized in experimental_constants.py;
     # swap to a registry constant when one is added).
-    B_AME = mp.mpf("28.295674")  # MeV
+    B_AME = AME_B_HE4_MEV_VALIDATION  # MeV
     required_rho_F = B_AME / (m_e * A * 8 * G_catalan)
 
     print("=" * 78)

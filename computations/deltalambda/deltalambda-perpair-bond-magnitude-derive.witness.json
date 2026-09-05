@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T03:11:09.970692+00:00",
-  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
+  "computedAt": "2026-09-05T17:59:19.233470+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "z_naive_unphysical_at_A4",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 3,
   "computation": "deltalambda-perpair-bond-magnitude-derive",
   "scriptFile": "deltalambda_perpair_bond_magnitude_derive_probe.py",
-  "scriptHash": "76e0581d3fa4",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "c609550f0cb9",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "5df83fbc24b06f8a"
@@ -76,10 +76,10 @@
         "4He": "3.038187"
       },
       "B_AME_MeV": {
-        "2H": "2.224566",
+        "2H": "2.2245662",
         "3H": "8.481821",
         "3He": "7.718058",
-        "4He": "28.295673"
+        "4He": "28.295662"
       },
       "residual_target_over_Bdim": {
         "2H": "5.853",
@@ -88,10 +88,10 @@
         "4He": "9.313"
       },
       "deficit_MeV_target_minus_Bdim": {
-        "2H": "1.8444947",
+        "2H": "1.8444949",
         "3H": "6.5732882",
         "3He": "5.3734523",
-        "4He": "25.257486"
+        "4He": "25.257475"
       },
       "source": "deltalambda-o1-manybody-residual.witness.json (consumed, not recomputed)"
     },
@@ -106,9 +106,9 @@
             "A": 2,
             "det_I_plus_G": "0.62461337",
             "det_term_MeV": "1.9700167",
-            "deficit_MeV": "1.8444947",
+            "deficit_MeV": "1.8444949",
             "det_term/deficit": "1.06805",
-            "det_term/AME": "0.885574",
+            "det_term/AME": "0.885573",
             "(B_dim+det)/AME": "1.05643"
           },
           {
@@ -150,7 +150,7 @@
             "A": 2,
             "det_I_plus_G": "0.80043493",
             "det_term_MeV": "0.93179962",
-            "deficit_MeV": "1.8444947",
+            "deficit_MeV": "1.8444949",
             "det_term/deficit": "0.505179",
             "det_term/AME": "0.418868",
             "(B_dim+det)/AME": "0.58972"
@@ -180,7 +180,7 @@
             "A": 4,
             "det_I_plus_G": "0.001740653",
             "det_term_MeV": "26.595611",
-            "deficit_MeV": "25.257486",
+            "deficit_MeV": "25.257475",
             "det_term/deficit": "1.05298",
             "det_term/AME": "0.939918",
             "(B_dim+det)/AME": "1.04729"

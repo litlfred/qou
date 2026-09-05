@@ -89,6 +89,11 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 try:  # P30 provenance stamp; optional so a bare container still runs
     from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
@@ -102,8 +107,8 @@ CHIRAL_W = _COMP / "chirality-weighted-3body-cluster.witness.json"
 STRUCT_W = _COMP / "structured-combiner-and-triangle.witness.json"
 
 # AME2020 binding energies, as the source probes define them.
-AME = {"T": mp.mpf("8.481798"), "3He": mp.mpf("7.718043")}
-B2 = mp.mpf("2.224566")
+AME = {"T": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION}
+B2 = AME_B_DEUTERON_MEV_VALIDATION
 ATOMS = ["T", "3He"]
 CANONICAL_CONV = "bring_color_weighted (canonical, R3)"
 

@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T01:18:05.771677+00:00",
-  "commitSha": "105774c17e58621f1ddc5181478533454bc1281e",
+  "computedAt": "2026-09-05T18:02:53.950123+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 8,
   "computation": "habiro-exact-mass-endomorphism",
   "scriptFile": "habiro_exact_mass_endomorphism.py",
-  "scriptHash": "872b88ade363",
-  "scriptCommitSha": "d986e024fd2946cba678be3a93622edf77e5b65f",
+  "scriptHash": "365f6ddf305b",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,10 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -36,7 +36,7 @@
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
     "q_0_mpf50": "1.1099785956427390391632225954426977052808226110852",
-    "m_e_MeV": 0.51099895069,
+    "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
     "mpmath_dps": 70
   },
   "data": {
@@ -85,16 +85,16 @@
       "m_n_over_m_e": "241.229939974653881084226768881",
       "m_n_over_m_p": "0.0259098367972794922822223366325",
       "delta_np_over_m_e": "-9069.13128931656228990344443795",
-      "m_p_over_m_e_codata": "1836.152675910586509032944196852067895638533112445730074396434669777697",
-      "m_n_over_m_e_codata": "1838.683664496766578483184750183928949364768753438730157860402648576871",
-      "m_p_over_m_e_diff_pct": 407.05811948203126,
-      "m_n_over_m_e_diff_pct": -86.88029133925674
+      "m_p_over_m_e_codata": "1836.152673431236317280978642081602588349142819254501160322856296009831",
+      "m_n_over_m_e_codata": "1838.683662013998802170417036086693025690526002594595531093317568789903",
+      "m_p_over_m_e_diff_pct": 407.05812016670995,
+      "m_n_over_m_e_diff_pct": -86.88029132154124
     },
     "comparison_to_f64": {
       "f64_m_p_over_m_e_baseline": 1869.85,
       "f64_diff_pct_baseline": 1.84,
-      "habiro_50dps_diff_pct": 407.05811948203126,
-      "diff_change_from_f64_to_50dps": 405.2181194820313
+      "habiro_50dps_diff_pct": 407.05812016670995,
+      "diff_change_from_f64_to_50dps": 405.21812016671
     }
   },
   "caveats": [

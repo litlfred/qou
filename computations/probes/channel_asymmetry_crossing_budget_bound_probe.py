@@ -117,11 +117,12 @@ if str(_COMP) not in sys.path:
     sys.path.insert(0, str(_COMP))
 from substrate._precision import set_compute_dps  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 set_compute_dps()
 
 # Experimental comparison point (input only; never used to select anything).
-B_DEUTERON_MEV = mp.mpf("2.224566")     # 3S1, T=0, bound
+B_DEUTERON_MEV = AME_B_DEUTERON_MEV_VALIDATION     # 3S1, T=0, bound
 B_NP_1S0_MEV = mp.mpf("0.066")          # 1S0, T=1, virtual state
 
 STRANDS_PER_NUCLEON = 3                 # H2: forced (qou-gwr9)

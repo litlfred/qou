@@ -67,6 +67,14 @@ set_compute_dps()
 
 from witness_base import WitnessBuilder
 from q_parameter import Q_MP
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+)
 
 
 # Closed-form atomic Markov traces at q_0 (from various witnesses)
@@ -98,8 +106,8 @@ CANONICAL_A_K = {
 # includes 6Li, which is not in the validation registry; flat-literal
 # audit dict is the simplest clean form for the ⁶Li→⁷Li sweep.
 M_CODATA = {
-    "p":    938.27208816,  # noqa: P31 — audit-only comparison value (6Li sweep dict; not in `_VALIDATION` registry)
-    "n":    939.56542052,  # noqa: P31 — audit-only comparison value
+    "p":    M_P_MEV_VALIDATION,  # noqa: P31 — audit-only comparison value (6Li sweep dict; not in `_VALIDATION` registry)
+    "n":    M_N_MEV_VALIDATION,  # noqa: P31 — audit-only comparison value
     "D":   1875.61294257,
     "T":   2808.92113298,
     "3He": 2808.39160743,
@@ -107,10 +115,10 @@ M_CODATA = {
     "6Li": 5601.518600,
 }
 B_CODATA = {
-    "D":   2.224566,
-    "T":   8.481793,
-    "3He": 7.718041,
-    "4He": 28.295674,
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
+    "T":   AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
     "6Li": 31.994576,
 }
 

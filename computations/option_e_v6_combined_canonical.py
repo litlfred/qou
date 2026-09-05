@@ -37,6 +37,10 @@ from pathlib import Path
 from mpmath import mpf, mp, fabs, acos
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -58,7 +62,7 @@ H = Q_0 - 1 / Q_0
 HBAR_Q = 1 - 1 / Q_0
 MU_0 = M_E_MEV / (mpf(3) * H / mpf(2))
 
-AME_MeV = {"D": mpf("2.224566"), "T": mpf("8.481798"),
+AME_MeV = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
            "3He": mpf("7.71806")}
 N_STRANDS = {"D": 6, "T": 9, "3He": 9}
 

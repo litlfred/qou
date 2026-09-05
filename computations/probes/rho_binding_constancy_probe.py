@@ -24,6 +24,7 @@ import mpmath as mp  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 # q0 read BY NAME (bean qou-9ugp, 2026-09-03) and carried as mpf, not float.
 # It was the bare float64 literal 1.10997859555733471 -- the RETIRED
@@ -35,7 +36,7 @@ Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 # AME2020 binding energies (MeV).
 B_OBS = {
-    "D":   (1, 1, 2.224566),
+    "D":   (1, 1, AME_B_DEUTERON_MEV_VALIDATION),
     "T":   (1, 2, 8.481821),
     "He3": (2, 1, 7.718058),
 }

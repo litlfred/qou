@@ -68,7 +68,13 @@ import _path_bridge  # noqa: F401, E402
 
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV  # noqa: E402,
+)
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from per_irrep_pole_atom import parts_of  # noqa: E402
@@ -82,10 +88,10 @@ set_compute_dps()
 
 # AME 2020 binding energies (MeV), for comparison only.
 AME_B_MEV = {
-    "deuteron": mp.mpf("2.224566"),
-    "tritium": mp.mpf("8.481798"),
-    "helium-3": mp.mpf("7.718041"),
-    "helium-4": mp.mpf("28.295674"),
+    "deuteron": AME_B_DEUTERON_MEV_VALIDATION,
+    "tritium": AME_B_TRITIUM_MEV_VALIDATION,
+    "helium-3": AME_B_HE3_MEV_VALIDATION,
+    "helium-4": AME_B_HE4_MEV_VALIDATION,
 }
 
 ISOTOPES = {

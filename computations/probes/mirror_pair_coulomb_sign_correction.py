@@ -67,6 +67,10 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 _HERE = Path(__file__).resolve().parent
 _COMP = _HERE.parent
@@ -83,7 +87,7 @@ def _load(name: str) -> dict:
 # Listed as (A, low-Z member, high-Z member) with (Z, N, B_AME).
 MIRROR_PAIRS = [
     # A,   proton-poor (more bound)      proton-rich (less bound)
-    (3,  ("3H",  1, 2, mp.mpf("8.481798")),  ("3He", 2, 1, mp.mpf("7.718043"))),
+    (3,  ("3H",  1, 2, AME_B_TRITIUM_MEV_VALIDATION),  ("3He", 2, 1, AME_B_HE3_MEV_VALIDATION)),
     (7,  ("7Li", 3, 4, mp.mpf("39.244524")), ("7Be", 4, 3, mp.mpf("37.600416"))),
     (11, ("11B", 5, 6, mp.mpf("76.204967")), ("11C", 6, 5, mp.mpf("73.439798"))),
     (13, ("13C", 6, 7, mp.mpf("97.108059")), ("13N", 7, 6, mp.mpf("94.105219"))),

@@ -46,6 +46,12 @@ REPO = Path(__file__).resolve().parents[2]
 COMP = REPO / "computations"
 sys.path.insert(0, str(COMP))
 import closed_form_tau_M as C  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
 M_E = mp.mpf("0.51099895069")
@@ -56,8 +62,8 @@ TAU_P = mp.mpf("1.22036288908669305595736107223")
 TRM_D = mp.mpf("0.7280918153466761555460727563")
 TAU_N = TRM_D / (TAU_P * Z_MK)  # solved from canonical deuteron trace
 
-AME = {"D": mp.mpf("2.224566"), "T": mp.mpf("8.481798"),
-       "3He": mp.mpf("7.718043"), "4He": mp.mpf("28.295673")}
+AME = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
+       "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 ATOMS = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
 
 

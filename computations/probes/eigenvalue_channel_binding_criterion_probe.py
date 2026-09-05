@@ -131,6 +131,7 @@ import mpmath as mp  # noqa: E402
 
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 mp.mp.dps = 50
 TOL = mp.mpf(10) ** -40
@@ -140,7 +141,7 @@ CHANNELS = [
     ("pp  1S0", 1, False, mp.mpf("0.10")),
     ("nn  1S0", 1, False, mp.mpf("0.10")),
     ("pn  1S0", 1, False, mp.mpf("0.066")),
-    ("pn  3S1", 0, True, mp.mpf("2.224566")),
+    ("pn  3S1", 0, True, AME_B_DEUTERON_MEV_VALIDATION),
 ]
 
 
@@ -267,7 +268,7 @@ def main() -> int:
     print(f"  EXACTLY antisymmetric: B(T=1) + B(T=0) = {fmt(B1 + B0, 6)}")
     assert abs(B1 + B0) < TOL, "the model's two channels must be antisymmetric"
     print("  because |lambda_+||lambda_-| = 1 -- the bar involution q <-> 1/q.")
-    nat_ratio = mp.mpf("2.224566") / mp.mpf("0.10")
+    nat_ratio = AME_B_DEUTERON_MEV_VALIDATION / mp.mpf("0.10")
     print(f"\n  nature's asymmetry: {fmt(nat_ratio, 6)} : 1   model's: 1 : 1")
     print("  So the account is FALSIFIED quantitatively, and it falsifies in a")
     print("  way that names the missing structure: whatever is absent BREAKS THE")

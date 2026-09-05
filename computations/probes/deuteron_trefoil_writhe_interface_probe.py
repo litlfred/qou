@@ -95,10 +95,11 @@ import mpmath as mp  # noqa: E402
 
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 mp.mp.dps = 50
 
-AME_DEUTERON = mp.mpf("2.224566")   # AME2020, MeV
+AME_DEUTERON = AME_B_DEUTERON_MEV_VALIDATION   # AME2020, MeV
 
 
 def fmt(x, n=10):

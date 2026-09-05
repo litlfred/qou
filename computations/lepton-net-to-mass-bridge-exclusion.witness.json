@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T14:18:01.912028+00:00",
-  "commitSha": "75a86e451c51eafde61c1c9a6f46aacad80e7a16",
+  "computedAt": "2026-09-05T18:02:54.390984+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "binet_closed_form_matches_recurrence",
@@ -17,8 +17,8 @@
   "durationMs": 0,
   "computation": "lepton-net-to-mass-bridge-exclusion",
   "scriptFile": "lepton_net_to_mass_bridge_exclusion.py",
-  "scriptHash": "58483e6ad96d",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptHash": "ff7f4d73ac54",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -86,11 +86,11 @@
       "asymptotic_law": "net(n+2)/net(n) = q^2 (1 + O(q^{-2n}))"
     },
     "observed_tower": {
-      "m_mu_over_m_e": "206.7682829876656302327040006637978414632750223850753509376095586889171",
+      "m_mu_over_m_e": "206.7682827084671796902080640552322774868514476087913375050150761246374",
       "m_tau_over_m_mu": "16.81702933242618328917994768904997976237103891494148516413637270052482",
-      "ratio_of_ratios": "12.29517288103791915377193008030334499590073600336165878299935156643905",
+      "ratio_of_ratios": "12.29517286443579252227748798727856145921791619157854430807836072979189",
       "log_increments": [
-        "5.331598760405987970598382680416576798689874703809647657984333607858776",
+        "5.331598759055691654854196178324751727725875718097402309924889777654214",
         "2.822392023751863552259930203363357533936012765206231284466462233771193"
       ],
       "log_concave": true
@@ -106,16 +106,16 @@
       "log_linear_to_exponentially_small_remainder": true
     },
     "pure_power_law_p_per_step": {
-      "p_from_e_to_mu": "24.28805439151877081841856536725478622593592092720031201182983660500199",
+      "p_from_e_to_mu": "24.28805438536750703521428188705493132766635178598009821369388640844573",
       "p_from_mu_to_tau": "13.08146930931126585062532745063622854242209441184744125951274389709723",
-      "disagreement_factor": "1.856676327194435562169500373544371882484842435184722079001662388315906",
+      "disagreement_factor": "1.856676326724208278233905139662039767932908773318981247175405551850187",
       "verdict": "no single p; a pure power law (g=1) is excluded"
     },
     "full_class_fit": {
       "class": "m_n = C * g^n * net(n)^p",
-      "p_fit": "667.2894661978381195327200300186113351225272582951205226948808685966161",
-      "g_squared_fit": "5.011066440684773105637558633098004350185353694093886662158312516204909e-62",
-      "roundtrip_ratio_1": "206.7682829876656302327040006637978414632750223850753509376095586889171",
+      "p_fit": "667.2894658387451462118664049862884264632498484387825342017510793156642",
+      "g_squared_fit": "5.011066828922641908793764738354940953235593872743631059331394932704416e-62",
+      "roundtrip_ratio_1": "206.7682827084671796902080640552322774868514476087913375050150761246374",
       "roundtrip_ratio_2": "16.81702933242618328917994768904997976237103891494148516413637270052489",
       "verdict": "solvable but degenerate: p ~ 664 fits the 0.38% O(q^{-2n}) remainder of the net ratio, g^2 ~ 1e-61 restores the magnitude. Both parameters are exponentially fine-tuned and p grows like q^{2n} for any further generation -- not a physical map."
     },

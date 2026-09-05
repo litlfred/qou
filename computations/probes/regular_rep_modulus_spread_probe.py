@@ -145,6 +145,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 mp.mp.dps = 40
 TOL = mp.mpf(10) ** -25
@@ -340,7 +341,7 @@ def main() -> int:
           + (f"   e.g. {', '.join(unres_ex)}" if unres_ex else ""))
     print("    (counted and reported, not skipped silently -- a dropped word is")
     print("     how an enumeration reports a maximum it never searched.)")
-    need = mp.mpf("2.224566") / mp.mpf("0.066")   # the np 1S0 VIRTUAL STATE, the SAME np pair as the deuteron differing only in isospin.  CORRECTED from 0.1 (= pp/nn, a DIFFERENT PAIR), which conflated pair identity with isospin; see main 1d9d3500f5.
+    need = AME_B_DEUTERON_MEV_VALIDATION / mp.mpf("0.066")   # the np 1S0 VIRTUAL STATE, the SAME np pair as the deuteron differing only in isospin.  CORRECTED from 0.1 (= pp/nn, a DIFFERENT PAIR), which conflated pair identity with isospin; see main 1d9d3500f5.
     print()
     print(f"    nature's channel asymmetry needs R ~ {fmt(need, 6)}")
     print(f"    best over this enumeration          {fmt(best[0], 10)}   at {best[1]}")

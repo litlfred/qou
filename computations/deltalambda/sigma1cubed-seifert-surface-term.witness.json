@@ -2,7 +2,7 @@
   "witness_schema": "qou-probe/v1",
   "name": "sigma1cubed-seifert-surface-term",
   "description": "\u03c3\u2081\u00b3 deuteron NA-Stokes surface term: EMPIRICAL tessellation-independence check + value vs C_knot=5.853. Verdict: the surface state-sum is tessellation-INDEPENDENT (topological invariant, no per-cell DOF, not a fit) but at archimedean q\u2080 it is DEGENERATE (torus-knot Vol=0) and does NOT reproduce 5.853; the character-channel surface-ordering correction is identically 0 by trace cyclicity. The 5.853 content is fibre-level (root-of-unity WRT); the open wall is the fibre\u2192archimedean \u03c4-transfer, NOT a missing discretization. Honest negative.",
-  "computed_at": "2026-08-25T16:36:08Z",
+  "computed_at": "2026-09-05T18:02:51Z",
   "elapsed_sec": "0.001",
   "data": {
     "conventions": {
@@ -45,7 +45,7 @@
       "bottom_line": "TESSELLATION-INDEPENDENT: YES \u2014 the \u03c3\u2081\u00b3 surface state-sum is a topological (Reidemeister/Pachner-invariant) quantity; refining the tessellation (R2 sub-plaquette) leaves it EXACTLY unchanged, so it has no tunable per-cell DOF (not a fit). VALUE: it does NOT reproduce C_knot=5.853 \u2014 at the archimedean q\u2080 the surface state-sum for the \u03c3\u2081\u00b3 torus knot is degenerate (Vol=0, pinched octahedron). Independently, the surface-ordering CORRECTION to the character channel \u03c7^\u03bb is identically 0 (trace cyclicity). CONCLUSION: the deuteron 5.853 deficit is NOT in the tessellation-invariant scalar/archimedean surface sector. The 5.853-relevant content lives at the FIBRE (root-of-unity WRT) level; the open blocker is the fibre\u2192archimedean \u03c4-functor transfer of the pinched regular part (documented: geometric-qdilog-lifted-amplitude 'SHARPENED WALL'), NOT a missing surface discretization. HONEST NEGATIVE."
     },
     "locked_targets": {
-      "B_AME_deuteron_MeV": "2.224566",
+      "B_AME_deuteron_MeV": "2.2245662",
       "B_bare_categorical_MeV": "0.38",
       "C_knot_target": "5.853",
       "note": "B_AME diagnostic-only, never inverted; expectations locked before compute."
@@ -54,5 +54,13 @@
     "audit_only": true,
     "nothing_wired": true
   },
-  "scriptHash": "1b10dfa45f7d70e3"
+  "scriptHash": "1880bc44019c",
+  "scriptFile": "sigma1cubed_seifert_surface_term_probe.py",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engine": "python",
+  "computedAt": "2026-09-05T18:02:51.178121+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
