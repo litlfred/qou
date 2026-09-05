@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:21Z
-updated_at: 2026-09-05T09:38:23Z
+updated_at: 2026-09-05T12:29:09Z
 ---
 
 ## The claim
@@ -343,3 +343,50 @@ deliberate and the fix is the missing `universe v`, nothing structural.
 Two missing imports, one missing value binder, three missing universe
 declarations. Verified 6/6 exit 0 under the corrected options, then the whole
 261 re-swept.
+
+## THE SWEEP WAS AIMED AT 28% OF ITS TARGET (2026-09-05)
+
+Extending the sweeps to the sibling packages turned up something bigger than
+the sibling packages.
+
+`lean-content-sweep.sh` selected targets with `grep -l "^import QOU"`. That reads
+as *"the content blocks that depend on the library"* and is the wrong population:
+
+    content-block .lean files, total          938
+    reached by the import filter              263
+    never swept at all                        675
+
+The 675 import only Mathlib. They are still content blocks, still compiled by
+nothing else in the repo, and still able to carry the auto-implicit vacuity class
+the sweep exists to catch. **So "261/261, 0 red" was a claim about 28% of the
+population** — the same shape of false green this bean is about, in the tool
+written to prevent it. Filter widened to every `.lean` under `content/` outside a
+package `lean/` tree.
+
+## UGB: 997 errors, one cause
+
+`UGB/GrobnerShirshov/HeckeCompletion.lean` — `variable {n : ℕ}` at line 14981 is
+scoped inside `namespace CornerCriterion`, whose `end` at 15078 closes it. Lines
+15128-18779 (~3700) use `n` as `HeckeGen n`, `0 < n`, `heckeOrder n` and nothing
+rebinds it. Under `autoImplicit = false` none of it elaborates: **997
+`Unknown identifier n`**, capped at 100 by `maxErrors` until re-run with
+`-DmaxErrors=100000`.
+
+One `variable {n : ℕ}` after the `end`, matching the three namespaces above it
+(11420, 13951, 14981): **997 -> 0**.
+
+**UGB and Fred2005 both set `autoImplicit = false` in their own lakefiles**, so
+this is their regime, not strictness imported from QOU. Checked before reporting.
+
+Fred2005: 1 module, clean.
+
+## Both sweeps now cover all three packages
+
+* `lean-library-sweep.py` takes `--package` and otherwise **discovers** packages
+  from `content/*/lean/lakefile.toml` + a top-level `<Lib>.lean` with a matching
+  directory, so a fourth paper needs no edit. Per-library shadow subdirectory,
+  since `LEAN_PATH` resolves a module from the first root holding that package
+  dir and two libraries must not share one root.
+* `lean-content-sweep.sh` sweeps all 938.
+
+Sibling-package library result: **UGB 21 ok / 1 red (fixed), Fred2005 1 ok.**
