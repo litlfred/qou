@@ -40,10 +40,13 @@ TWO FINDINGS THAT CHANGE THE DECISION (checks 5 and 6, added 2026-09-05)
         "nothing in computations/ ever built it" as the evidence for retiring
         the definition; that is FALSE. Built-then-deprecated and never-built
         are different claims and only one was measured.
-    (6) The fork is not two-way. `electron_sigma_f_chain.py` (LIVE, not
-        deprecated) uses a THIRD strand count, `n_target = 3A + Z` -- three
-        quark strands per nucleon plus Z electrons. Any rename that assumes
-        two objects leaves this one unnamed. `wedderburn-mass-formula.md` states `A ∈ H_{A+Z}(q)` and links
+    (6) A THIRD strand count is live: `electron_sigma_f_chain.py` (not
+        deprecated) uses `n_target = 3A + Z`. Do NOT read it as a third braid
+        construction -- it is the confinement-SDP normalisation `tr Phi =
+        n_target`, swept over the electron count, and the file never calls
+        `atom_braid_word_3A`. What it does show is that the corpus already
+        models an electron dressing ON TOP OF a 3A nuclear core, which is
+        reading (a)'s picture reached from the SDP side. `wedderburn-mass-formula.md` states `A ∈ H_{A+Z}(q)` and links
 `#def:atomic-braid` while sitting in the chapter that traces the 3A object.
 Both objects are written `A` (script A) and both are called "the atomic braid".
 
@@ -190,8 +193,9 @@ def main() -> int:
     print(f"[6] LIVE producers using a THIRD strand count 3A + Z: {len(third)}")
     for f in third:
         print(f"      {f}")
-    checks.append(("the corpus carries a third live strand convention 3A+Z, so "
-                   "the fork is not two-way", len(third) > 0,
+    checks.append(("the corpus carries a third live strand COUNT 3A+Z -- an SDP "
+                   "normalisation `tr Phi = n_target`, NOT a third braid word "
+                   "(the file never calls atom_braid_word_3A)", len(third) > 0,
                    ", ".join(third) or "none"))
 
     print()
