@@ -256,4 +256,35 @@ theorem tauGram_det :
 theorem tauGram_det_ne_zero (hq : q ≠ 0) : (tauGram K q n).det ≠ 0 :=
   tauGram_det_ne_zero_of_structure_constants K q n hq (tau_Tw_mul_Tw K q n)
 
+/-! ### `τ` is a trace
+
+Immediate from the identity, and not available before it: swapping `v` and `w`
+in `δ_{w,v⁻¹} q^{ℓ(v)}` gives `δ_{v,w⁻¹} q^{ℓ(w)}`, and those agree because
+`w = v⁻¹ ↔ v = w⁻¹` and `ℓ(v⁻¹) = ℓ(v)`.  This is what makes `τ` a *symmetrizing*
+trace rather than merely a linear functional, and it is what makes the block
+weights of a Wedderburn decomposition well defined. -/
+
+/-- **`τ(x y) = τ(y x)`.** -/
+theorem tau_mul_comm (x y : QOU.Hecke.IwahoriHecke K q n) :
+    tau K q n (x * y) = tau K q n (y * x) := by
+  have key : (LinearMap.compr₂ (LinearMap.mul K (QOU.Hecke.IwahoriHecke K q n)) (tau K q n))
+      = (LinearMap.compr₂ (LinearMap.mul K (QOU.Hecke.IwahoriHecke K q n))
+          (tau K q n)).flip := by
+    refine LinearMap.ext_basis (basisTwOfField K q n) (basisTwOfField K q n) ?_
+    intro v w
+    simp only [coe_basisTwOfField, LinearMap.compr₂_apply, LinearMap.mul_apply',
+      LinearMap.flip_apply]
+    rw [tau_Tw_mul_Tw, tau_Tw_mul_Tw]
+    by_cases h : w = v⁻¹
+    · subst h
+      simp [CoxeterSystem.length_inv]
+    · rw [if_neg h, if_neg (fun hc => h (by rw [hc, inv_inv]))]
+  have := congrFun (congrArg DFunLike.coe (congrArg (fun B => B x) key)) y
+  simpa using this
+
+/-- The Gram matrix of `τ` is symmetric — the matrix form of `tau_mul_comm`. -/
+theorem tauGram_symm (v w : Equiv.Perm (Fin (n + 1))) :
+    tauGram K q n v w = tauGram K q n w v := by
+  rw [tauGram_apply, tauGram_apply, tau_mul_comm]
+
 end QOU.Hecke.TwBasis
