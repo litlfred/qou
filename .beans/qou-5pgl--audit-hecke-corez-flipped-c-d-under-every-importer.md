@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T13:23:16Z
-updated_at: 2026-08-24T13:42:53Z
+updated_at: 2026-09-05T08:46:05Z
 ---
 
 Generalises the `alpha_high_precision` finding (`qou-l1gv`) from one file to its
@@ -216,3 +216,58 @@ re-run it and diff, which is exactly how the confirmed instance was caught.
 
 Found while answering `qou-hu1f`. Probe:
 `computations/probes/nf_vs_canonical_word_order_probe.py`.
+
+## 2026-09-05 — the discriminator exists; the class is 15-19 % mechanically decidable, not 78 %
+
+**Tool:** `scripts/stale-audit-discriminator.py` (808 lines; modes `--reconcile`, `--json`, `--rerun N [--dry-run]`, `--rerun-doc`). **Run from the repo root** — it resolves `REPO` via `git rev-parse`.
+
+### Counts: my 75 / 34 / 7 reproduce EXACTLY, and are narrower than the defect
+
+Under this bean's own wording the counts are confirmed — 75 audits and 7 beans, reproduced to the number. The wider reading is legitimately larger, and the difference is definitional on three axes:
+
+| topic regex | audits <2026-08-16 | +≥10sf | beans by `updated_at` | by `created_at` |
+|---|---|---|---|---|
+| NARROW `markov_peel\|tr_M_atomic` (this bean) | **75** | 36 | **7** | 19 |
+| WIDE + `word_to_element`, `tr_m_atom` | 96 | 42 | 13 | 26 |
+
+1. **`word_to_element` is the function `c1a3299434` actually migrated** and this bean's regex omits it: 75 → 96.
+2. **Bean date basis.** `updated_at` gives 7; `created_at` gives 19 — and a bean *authored* pre-migration is as exposed as any audit doc. `qou-3qrv` sits in exactly that gap.
+3. **Glob depth.** Top-level `docs/audits/*.md` misses ~27 files in subdirectories.
+
+Full scan (wide regex, rglob): **80 candidates** — 51 audits, 4 coordination, 25 beans.
+
+### 🛑 The 78 % decidability figure is misleading and must not enter a drain plan
+
+Raw split: DECIDABLE-NOW 63 (78 %), RUNNABLE-BUT-OFF-CONE 9, SCRIPT-GONE 4, NO-SCRIPT-CITED 4.
+
+But **33 of 80 (41 %) quote no decimal on a Markov-adjacent line at all** — filter (c) is "quotes a long decimal", not "quotes a markov-derived number", exactly as this bean warned. Net: **tractable core = 30 docs over 26 scripts (37 %)**, and of 5 actually re-run, **2 returned a verdict**.
+
+**Realistic: ~12-15 of 80 (15-19 %) are mechanically decidable today.** Four structural failure modes, not incidental:
+
+- **The script prints fewer digits than the doc quotes** (2 of 3 failures) — a doc quotes 15-18 digits from a 50-dps run whose *display* was 6. This, not SCRIPT-GONE (4 of 80), is the binding constraint.
+- **A cited script is not a source script.** A doc citing `mass_at_3A_proper.py:256` as a *reference* is not saying its figures came from running it.
+- **`UNDECIDED-LEANS-STALE` is not a verdict** — "no figure reproduced" is equally consistent with staleness and with the wrong script being picked. **The mechanical stage flags; an agent decides.** A drain built on the raw flag will produce false corrections.
+- **A doc corrected in place looks stale forever** unless decimals near a correction marker are excluded (now filtered).
+
+**40 of 63 primaries are producers, only 3 are probes** — that is the cost driver: a producer is slow *and* dirties the tree with sibling witnesses.
+
+### The confirmed finding: ONE stale figure, THREE carriers
+
+`tr_M_atomic(1,0)`: published **1.0653**, today **1.14575969245730086969** (+7.552 %); implied `m_p/m_e` 1960 → **2108.59**; gap vs the exact object 6.7 % → **14.741 %**.
+
+| carrier | state |
+|---|---|
+| `docs/audits/2026-08-08-borromean-trace-convention-forcing.md` | corrected 2026-09-05 (#6712) |
+| `.beans/qou-3qrv` — said *"not staleness"*, now exactly inverted | corrected 2026-09-05 (#6712) |
+| `docs/audits/2026-05-28-mu-p-tension-substrate-floor.md` L54-55 | **corrected 2026-09-05 (this PR)** — the outstanding one |
+
+Verified three independent ways, all agreeing: `probe3qrv.py` re-run; re-deriving the carrier's own formula `m_p/m_e = 2·(Vol(4₁)/ℏ_q²·|tr_M|·[3]_q!/q³ − 6)` at 60 dps, which reproduces **1959.683** from the *published* trace and so validates the reconstruction before applying it; and `atom_intra_block_is_not_a_braid_probe.py`, whose independently measured `rel 0.147409` against the Lean-proved closed form is the same 14.741 %.
+
+The carrier-3 **conclusion survives** — "the towers are fitting experiment" holds with more room, since the formula→exact gap more than doubled. Only magnitudes moved.
+
+**Carrier 3 was found by following carrier 2's own cross-reference, not by the tool.** That is the AGENTS.md failure mode verbatim — a wrong figure surviving elsewhere after being fixed in one place — and the mechanical scan did not produce it.
+
+### Two operational findings
+
+- **The Greek-letter blind spot bit on the first run.** The keyword gate was ASCII-only (`tr_M|trace|markov|hecke|braid`) and the confirmed table row is `` | `(σ₀σ₁⁻¹)³` — true β_Bor | 0.998562… | ``, matching none of them: **1 of 3** figures scored, **3 of 3** after adding Greek. Same class as the thirteen-blind-spellings problem.
+- **A float64 smell in `probe3qrv.py` that is INERT — reporting the negative.** Line 26 does `hn = float(h0)`. Measured rather than assumed, same word both ways: float64 `h` → `0.998562163836787265951213135147`; exact 50-dps `h` → **byte-identical**. The coefficient enters symbolically and the substitution carries the precision. Tested for the interleaved Borromean word only; the cast is worth removing on principle, but the 18 quoted digits are **not** contaminated by it.
