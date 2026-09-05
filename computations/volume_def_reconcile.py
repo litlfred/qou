@@ -72,6 +72,7 @@ def borromean_trM_normalized(q: mp.mpf, qi: mp.mpf) -> mp.mpf:
     value (~0.9986).  Wenzl-normalized closed form for the bare 𝓑₃ trace
     (leading 1 in h): (4 + h² − 3h⁴ − h⁶)/(h² + 4), h = q − q⁻¹.
     """
+    # convention D — verified by EVALUATION at q0, not by reading: computations/audits/borromean_convention_by_evaluation.py
     h = q - qi
     return (4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4)
 
