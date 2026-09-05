@@ -151,8 +151,9 @@
   "order_of_substitution_factor": {
     "measured_W_sq_over_s_pow_four_at_q0": "11875.441893676302628",
     "derived_leading_square": "96**2 = 9216",
+    "overshoot_measured_over_derived": "1.2885679138103626984",
     "qou_ix74_rate_factor": "1.19e4",
-    "verdict": "order derived, value not"
+    "verdict": "the derived leading square predicts the substitution factor's ORDER; the residual overshoot 1.2885679138 is REPORTED, not absorbed into a chosen tolerance (no-fitting directive 2026-09-05: a window sized to contain its own miss is a fit)"
   },
   "scope": "POSITIVE derivation of the normalisation (the framing and rank factors are read off the braid word; the offset and vanishing order of J - 1 are topological) and of the ORDER of the coupling gap. NOT a rescaling constant \u2014 the ratio provably runs, consistent with the scope-(b) exclusion in qou-pfh7.",
   "lean": [
@@ -163,7 +164,9 @@
     "QOU.Braiding.WeakVertexT35.hasDerivAt_qDiff_one",
     "QOU.Braiding.WeakVertexT35.jonesT35_sub_one_mul_pow",
     "QOU.Braiding.WeakVertexT35.jones_dev_eq_sSq_mul_geom",
-    "QOU.Braiding.WeakVertexT35.couplingRatio_one"
+    "QOU.Braiding.WeakVertexT35.couplingRatio_one",
+    "QOU.Braiding.WeakVertexT35.couplingRatio_near_q0",
+    "QOU.Braiding.WeakVertexT35.substitutionRateFactor_overshoot_of_leading_square"
   ],
   "reference_blocks": [
     "prop:hadron-half-life",
@@ -238,17 +241,17 @@
       "note": "(J-1)/s^2 -> -96 at q=1 and -37.09 at q0: the framing q^-10 suppresses it, so no CONSTANT relates the two couplings (consistent with the qou-pfh7 exclusion, and explains it)"
     },
     {
-      "name": "order_of_the_ten_thousand_substitution_factor_is_derived",
+      "name": "leading_square_overshoot_is_measured_not_bracketed",
       "passed": true,
-      "note": "96^2 = 9216 against the measured |W(q0)|^2/s(q0)^4 = 1.1875e4: same order, so qou-ix74's 1.19e4 is derived to ORDER, not value"
+      "note": "the derived leading square 96^2 = 9216 against the measured |W(q0)|^2/s(q0)^4 = 11875.4418936763: the overshoot is 1.2885679138, REPORTED rather than bracketed by a chosen window"
     }
   ],
   "allPassed": true,
-  "scriptHash": "3f2edfeeea92",
-  "scriptCommitSha": "unknown",
-  "commitSha": "e83afa708862b0b815bcd2ebe58ab8ad6b83c74d",
+  "scriptHash": "def342fae879",
+  "scriptCommitSha": "0724b46ba10f2bd5fa697c73c18abe06ea87a597",
+  "commitSha": "21654c703fc71674a4f1880ad8aca675ad9efdf5",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-09-05T07:31:52.140333+00:00",
+  "computedAt": "2026-09-05T07:58:22.267456+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

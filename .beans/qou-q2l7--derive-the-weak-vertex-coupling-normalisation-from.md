@@ -83,3 +83,23 @@ The §7c MIXED flag is still latent in `WeakVertexT35TraceClosedForm.lean`
 `substitutionRateFactor` envelopes) — `check-sidecars.sh` only inspects *changed*
 files. Mechanical split, no mathematical content; deliberately not done here.
 Also on `qou-pfh7`.
+
+## Withdrawn: the "within a factor of two" bracket (2026-09-05, same day)
+
+The order claim was first stated as `96² < |W(q₀)|²/s(q₀)⁴ < 2·96²` and defended
+in the PR body as "the honest limit, not a decoration". **Withdrawn.** The `2` is
+round only because the measurement fits under it — nothing derives it. The
+🟥 NO FITTING, EXCEPT CAL-1/2/3 directive (owner, 2026-09-05), which landed on
+`main` while this branch was open, names exactly this: *"a tolerance sized to its
+own miss is a fit"*, and *"selection against the target"* covers a discrete choice
+even with no continuous parameter tuned.
+
+Replaced by the ratio the window was hiding:
+
+    |W(q₀)|²/s(q₀)⁴ / 96²  =  1.2885679138…
+
+Lean `substitutionRateFactor_overshoot_of_leading_square` brackets that measured
+number to three decimals; the witness carries it as
+`order_of_substitution_factor.overshoot_measured_over_derived`. The derivation is
+unchanged — only the reporting, and the number that was rounded away is now
+attackable.

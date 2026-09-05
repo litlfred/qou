@@ -19,12 +19,19 @@ Two envelopes, both from the producer's numbers:
   `couplingRatio_not_constant`: the framing `q^{-19}` and the size of the Jones
   exponents suppress the ratio away from `q = 1`, which is *why* no rescaling
   constant exists.
-* `substitutionRateFactor_within_factor_two_of_leading_square` — the measured
-  substitution factor `|W(q₀)|²/s(q₀)⁴ ≈ 1.1875·10⁴` lies between `96²` and
-  `2·96²`. That is the falsifiable content of "the order is derived": the
-  leading square of the coupling ratio predicts the order of the factor
-  `WeakVertexSubstitutionScale` measured, to within a factor of two — and no
-  better, which is the honest limit.
+* `substitutionRateFactor_overshoot_of_leading_square` — the measured
+  substitution factor `|W(q₀)|²/s(q₀)⁴ = 11875.4418936763` against the derived
+  leading square `96² = 9216`: the **overshoot is `1.2885679138`**, and the
+  theorem brackets that measured number rather than a round window around it.
+  That is the falsifiable content of "the order is derived", with the residual
+  stated instead of absorbed.
+
+  The first form of this theorem said the factor lies between `96²` and `2·96²`.
+  It is **withdrawn**: the `2` is round only because the measurement happens to
+  fit under it, i.e. a window chosen against the target — which the no-fitting
+  directive of 2026-09-05 counts as a fit even though no continuous parameter is
+  tuned. A tolerance sized to contain its own miss hides the miss; a reported
+  ratio does not, and `1.2885679138` is a number the next agent can attack.
 
 Producer: `computations/markov/weak_vertex_jones_markov_normalisation.py` (13/13)
 Witness: `computations/weak-vertex-jones-markov-normalisation.witness.json`
@@ -43,14 +50,21 @@ theorem couplingRatio_near_q0 :
   simp only [couplingRatio, geomCofactor, Finset.sum_range_succ, Finset.sum_range_zero]
   constructor <;> norm_num
 
-/-- **The order of the `≈ 10⁴` substitution factor is derived.** The coupling ratio's
-classical value is `−96`, so a coupling carrying the trace's Jones content sits `≈ 10²`
-above `s²` and its square `≈ 10⁴` above `s⁴`. Measured against
-`substitutionRateFactor`, the prediction `96² = 9216` brackets the actual `≈ 1.1875·10⁴`
-to within a factor of two — and only to within a factor of two, because the ratio runs. -/
-theorem substitutionRateFactor_within_factor_two_of_leading_square :
-    ((96 : ℝ)) ^ 2 < substitutionRateFactor (1.1099785827513808 : ℝ) ∧
-      substitutionRateFactor (1.1099785827513808 : ℝ) < 2 * ((96 : ℝ)) ^ 2 := by
+/-- **The order of the `≈ 10⁴` substitution factor is derived, and the residual is
+reported.** The coupling ratio's classical value is `−96` (`couplingRatio_one`), so a
+coupling carrying the trace's Jones content sits `≈ 10²` above `s²` and its square
+`≈ 10⁴` above `s⁴`. Measured against `substitutionRateFactor`, the derived leading
+square `96² = 9216` undershoots the actual `11875.4418936763` by the factor
+
+`|W(q₀)|²/s(q₀)⁴ / 96² = 1.2885679138…`
+
+and *that* is what this theorem brackets — the measured overshoot to three decimals,
+not a round tolerance around it. The overshoot is nonzero because `couplingRatio` runs
+from `−96` to `−37.09` on the way to `q₀`; it is the size of what the leading term
+misses, and it is stated rather than absorbed. -/
+theorem substitutionRateFactor_overshoot_of_leading_square :
+    1.288 * ((96 : ℝ)) ^ 2 < substitutionRateFactor (1.1099785827513808 : ℝ) ∧
+      substitutionRateFactor (1.1099785827513808 : ℝ) < 1.289 * ((96 : ℝ)) ^ 2 := by
   rw [substitutionRateFactor_eq _ (by norm_num) (by norm_num) (by positivity)]
   constructor <;> norm_num
 
