@@ -1,5 +1,29 @@
 # The sector trace decays where the irrep column does not — and the irrep failure diverges
 
+> ## 🛑 CORRECTION, same day, before this document was ever quoted: **A=5 refutes the sector claim**
+>
+> Part 2 below reports the sector ratio `|tr_{W_k}|/C(n,k)` decaying at A=3 and A=4 where the irrep
+> column does not, and calls it *"the arc's first constructive direction"*. **A=5, which was running
+> when that was written and is named as pending in "What is NOT established", has now risen:**
+>
+> ```
+> A=5 sector, ρ_true:   k=1  2.950204   k=2  0.220441   k=3  0.05628525   k=4  0.06646242  ← rise ×1.181
+> ```
+>
+> So the tally is **A=2 ✗, A=3 ✓, A=4 ✓, A=5 ✗** — **2 of 4, failing at the largest size measured**,
+> which is the direction that matters. That is not the "holds for A ≥ 3" shape Part 2 anticipated; it
+> is two isolated successes with failures on both sides of them.
+>
+> **What this does and does not touch.** Part 1 (the irrep failure diverging, margin 1.65 → 0.272 →
+> 0.0503) is a separate measurement and **stands**. The **control** stands and is still the reason
+> the A=3/A=4 successes are not nothing: plain `tr(ρ)` rises at A=3 and A=4 where `ρΩ₂^P` decays, so
+> whatever is happening at those two sizes is about the curvature. But *"the sector is the object to
+> bound"* is **not supported**, and I should not have called it a direction on three sizes when the
+> fourth was still running — the caution I pre-registered against exactly this is quoted below and I
+> wrote it, then partly ignored it in the framing.
+>
+> A=5's remaining shapes (k=5,6,7) are still computing and can only add rises, not remove this one.
+
 **Date:** 2026-09-05 · **Bean:** `qou-o6ov` (rescoped) · **Scope:** (a) scope-limited — A = 2…5 at
 one q₀, complete ≤2-row column. Nothing wired, no witness, no fit. **One negative sharpened into a
 divergence, and the arc's first constructive direction.**
