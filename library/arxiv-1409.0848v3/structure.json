@@ -1,0 +1,349 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1409.0848v3",
+ "source": {
+  "file": "1409.0848v3.pdf",
+  "sha256": "5af73ef812ccee40711d79a3493ca54c62567ff03137e1820b3a2f3987784cb8",
+  "bytes": 645155,
+  "pages": 52,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1409.0848",
+   "version": "3",
+   "primary_class": "math.AT",
+   "stamp_date": "1 Jan 2016"
+  },
+  "doi": null,
+  "title": "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES",
+  "authors_raw": "DAVID AYALA, JOHN FRANCIS, AND HIRO LEE TANAKA",
+  "title_lines": [
+   "FACTORIZATION HOMOLOGY OF STRATIFIED SPACES"
+  ],
+  "abstract": "This work forms a foundational study of factorization homol ogy, or topological chiral homology, at the generality of strati\ufb01ed spaces with tangen tial structures. Examples of such factorization homology theories include intersection hom ology, compactly supported strati\ufb01ed mapping spaces, and Hochschild homology with coe\ufb03cients. O ur main theorem characterizes factorization homology theories by a generalization of the Eilenberg\u2013Steenrod axioms; it can also be viewed as an analogue of the Baez\u2013Dolan cobordism hypothe sis formulated for the observables, rather than state spaces, of a topological quantum \ufb01eld theo ry. Using these axioms, we extend the nonabelian Poincar\u00b4 e duality of Salvatore and Lurie to t he setting of strati\ufb01ed spaces \u2013 this is a nonabelian version of the Poincar\u00b4 e duality given by int ersection homology. W e pay special attention to the simple case of singular manifolds whose sin gularity datum is a properly embedded submanifold and give a further simpli\ufb01ed algebraic charact erization of these homology theories. In the case of 3-manifolds with 1-dimensional submanifolds , these structure gives rise to knot and link homology theories.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.08",
+   "CreationDate": "D:20160104223435-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Recollections",
+   "page": 6,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Stratified spaces",
+   "page": 6,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Symmetric monoidal `39`42`\"613A``45`47`\"603A-categories",
+   "page": 10,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "Factorization",
+   "page": 14,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Disk algebras",
+   "page": 14,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Factorization homology",
+   "page": 17,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Disks and finite subsets",
+   "page": 20,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Localizing with respect to isotopy equivalences",
+   "page": 23,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Pushforward",
+   "page": 26,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Algebras over a closed interval",
+   "page": 30,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "Homology theories",
+   "page": 32,
+   "source": "outline",
+   "number": "2.7"
+  },
+  {
+   "level": 1,
+   "title": "Homotopy invariant homology theories",
+   "page": 35,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Classical homology theories",
+   "page": 35,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "1-point compactifications",
+   "page": 36,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Compactly supported cohomology",
+   "page": 38,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Non-abelian Poincar\u00e9 duality",
+   "page": 40,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Examples of factorization homology theories",
+   "page": 42,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Factorization homology of stratified 1-manifolds",
+   "page": 42,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Intersection homology",
+   "page": 43,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Link homology theories and `39`42`\"613A``45`47`\"603ADisk`39`42`\"613A``45`47`\"603Afrdn-algebras",
+   "page": 44,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 51,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 17398,
+   "n_words": 2807
+  },
+  {
+   "id": "sec-001-1-recollections",
+   "number": "1",
+   "title": "Recollections",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 14,
+   "n_chars": 26501,
+   "n_words": 4697
+  },
+  {
+   "id": "sec-002-2-factorization",
+   "number": "2",
+   "title": "Factorization",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 274,
+   "n_words": 45
+  },
+  {
+   "id": "sec-003-21-disk-algebras",
+   "number": "2.1",
+   "title": "Disk algebras",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 8613,
+   "n_words": 1391
+  },
+  {
+   "id": "sec-004-22-factorization-homology",
+   "number": "2.2",
+   "title": "Factorization homology",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 23,
+   "n_chars": 14549,
+   "n_words": 2679
+  },
+  {
+   "id": "sec-005-24-localizing-with-respect-to-isotopy-equivalenc",
+   "number": "2.4",
+   "title": "Localizing with respect to isotopy equivalences",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 10353,
+   "n_words": 1868
+  },
+  {
+   "id": "sec-006-25-pushforward",
+   "number": "2.5",
+   "title": "Pushforward",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 30,
+   "n_chars": 8971,
+   "n_words": 1603
+  },
+  {
+   "id": "sec-007-26-algebras-over-a-closed-interval",
+   "number": "2.6",
+   "title": "Algebras over a closed interval",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 5441,
+   "n_words": 1002
+  },
+  {
+   "id": "sec-008-27-homology-theories",
+   "number": "2.7",
+   "title": "Homology theories",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 35,
+   "n_chars": 7874,
+   "n_words": 1367
+  },
+  {
+   "id": "sec-009-3-homotopy-invariant-homology-theories",
+   "number": "3",
+   "title": "Homotopy invariant homology theories",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 504,
+   "n_words": 85
+  },
+  {
+   "id": "sec-010-31-classical-homology-theories",
+   "number": "3.1",
+   "title": "Classical homology theories",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 38,
+   "n_chars": 8878,
+   "n_words": 1603
+  },
+  {
+   "id": "sec-011-33-compactly-supported-cohomology",
+   "number": "3.3",
+   "title": "Compactly supported cohomology",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 42,
+   "n_chars": 10837,
+   "n_words": 1972
+  },
+  {
+   "id": "sec-012-4-examples-of-factorization-homology-theories",
+   "number": "4",
+   "title": "Examples of factorization homology theories",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 3403,
+   "n_words": 573
+  },
+  {
+   "id": "sec-013-42-intersection-homology",
+   "number": "4.2",
+   "title": "Intersection homology",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 51,
+   "n_chars": 22897,
+   "n_words": 4159
+  },
+  {
+   "id": "sec-014-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 4074,
+   "n_words": 557
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 15,
+  "chars_total": 150567
+ }
+}

@@ -838,6 +838,32 @@ Nikolaus–Waldorf `arxiv-1103.4815v3`; Baez–Huerta `arxiv-1003.4485v2`; Geck�
 
 ---
 
+## 8b. Addendum (same session, later): eleven more papers ingested — every priority-A item is now held
+
+The owner uploaded eleven PDFs in `8a730706` (root of the repo), and they are ingested on this
+branch with `references.ts` joins (`--check` clean; the file loads, 838 entries, no duplicate ids):
+
+| doc-id | work | §8 row | candidates |
+|---|---|---|---|
+| `arxiv-1409.0848v3` | Ayala–Francis–Tanaka, *Factorization homology of stratified spaces* | 1 | 76 |
+| `arxiv-1011.6483v3` | Ginot–Tradler–Zeinalian, *Derived higher Hochschild homology…* | 2 | 91 |
+| `arxiv-math-0510265v3` | Khovanov, *Triply-graded link homology and HH of Soergel bimodules* | 3 | 9 |
+| `arxiv-0904.1247v3` | Ben-Zvi–Nadler, *The character theory of a complex group* | 4 | 61 |
+| `arxiv-0908.4305v3` | Baez–Hoffnung–Walker, *Groupoidification* | 5 | 39 |
+| `arxiv-0808.1923v3` | Schreiber–Waldorf, *Connections on non-abelian gerbes and their holonomy* | 9 | 45 |
+| `arxiv-0707.2003v2` | Webster–Williamson, *A geometric model for HH of Soergel bimodules* | 10 | 22 |
+| `arxiv-1309.0865v1` | Elias–Williamson, *Soergel calculus* | 12 | 95 |
+| `arxiv-1103.1035v4` | Yekutieli, *MC elements in pronilpotent DG Lie algebras* (`yekutieli2009`, 12 citing files — now checkable) | 17 | 41 |
+| `arxiv-0801.3233v4` | Yekutieli, *Twisted deformation quantization* (survey; `yekutieli2008`, 22 citing files — now checkable; the likely home of the mis-keyed "Thm 4.5") | 18 | 23 |
+| `arxiv-2102.00255v1` | Yekutieli, *Rigidity, residues and duality: overview* | 19 | 51 |
+
+With these, **routes A, C, D and E all have their primary sources in the library**, and every
+Yekutieli work the corpus cites by key (`yekutieli2008/2009/2010/2015`) is held. Still not held
+from §8: rows 8 (Ayala–Francis 2012), 11 (Gorsky–Neguț–Rasmussen), 13–16, 20–30 — none blocking.
+The "held nothing on factorization homology / Ben-Zvi" statement in §3.2 is superseded by this
+table. **Nothing in §§5–7 changes:** the prunes come before the reading, and the reading is now
+possible.
+
 ## 9. Verification limits and hygiene items found on the way
 
 - **Direct `arxiv.org` fetch is proxy-blocked** for both `curl` and `WebFetch` this session; every

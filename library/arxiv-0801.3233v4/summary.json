@@ -1,0 +1,77 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0801.3233v4",
+ "source_sha256": "d98f9d4a9ecb4c5e",
+ "brief": "Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) Amnon Yekutieli — Let X be a smooth algebraic variety over a ﬁeld of characteristic 0.",
+ "extended": "**Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) Amnon Yekutieli**\n\n19 pp, 11 sections.\n\n**Abstract.** Let X be a smooth algebraic variety over a ﬁeld of characteristic 0. We introduce the notion of twisted associative (resp. Poisson) deformation of the structure sheafOX. These are stack-like versions of usual deformations. We prove that there is a twisted quantization map from twisted Poisson defor- mations to twisted associative deformations, which is canonical and bijective on equivalence classes. 0. Introduction Let K be a ﬁeld of characteristic0, and letX be a smooth algebraic variety over K, with structure sheafOX. An associative deformation ofOX is a sheafA of ﬂat complete associative K[[ℏ]]-algebras onX, with an isomorphismK⊗K[[ℏ]]A∼=OX, called an augmentation. Similarly, aPoisson deformation ofOX is a sheafA of ﬂat complete commutative PoissonK[[ℏ]]-algebras onX, with an augmentation to OX. In this paper we introduce the notion oftwisted associative (resp.\n\n**Outline.** 0 Introduction; 1 Some background on Deformation Quantization; 2 Poisson Deformations of Algebraic Varieties; 3 Associative Deformations of Algebraic Variet; 4 Deformation Quantization; 5 Twisted Deformations of Algebraic Varieties; 6 Twisted Deformation Quantization; Appendix A. DG Lie Algebras and Deformations; Appendix B. The Universal Quantization Map; Appendix D. Twisted Deformations and their Gau; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 4.2: Let K be a ﬁeld containingR, and letX be a smooth aﬃne\n- Theorem 4.2: is correct as stated. In the context of complex manifolds this issue is\n- Theorem 4.2: is a consequence of the following more general result.\n- Theorem 4.3: Let K be a ﬁeld containingR, and let X be a smooth\n- Theorem 6.1: Let K be a ﬁeld containingR, and let X be a smooth\n- Theorem: A.5([Ye5]). LetC be a smoothK-algebra.",
+ "tokens": {
+  "brief": 44,
+  "extended": 478
+ },
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-1-some-background-on-deformation-quantization",
+   "title": "Some background on Deformation Quantization",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-2-poisson-deformations-of-algebraic-varieties",
+   "title": "Poisson Deformations of Algebraic Varieties",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-3-associative-deformations-of-algebraic-varietie",
+   "title": "Associative Deformations of Algebraic Varieties",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-4-deformation-quantization",
+   "title": "Deformation Quantization",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-5-twisted-deformations-of-algebraic-varieties",
+   "title": "Twisted Deformations of Algebraic Varieties",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-006-6-twisted-deformation-quantization",
+   "title": "Twisted Deformation Quantization",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-007-appendix-a-dg-lie-algebras-and-deformations",
+   "title": "Appendix A. DG Lie Algebras and Deformations",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-008-appendix-b-the-universal-quantization-map",
+   "title": "Appendix B. The Universal Quantization Map",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-009-appendix-d-twisted-deformations-and-their-gauge",
+   "title": "Appendix D. Twisted Deformations and their Gauge Gerbes",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-010-references",
+   "title": "References",
+   "pages": "18-19"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
