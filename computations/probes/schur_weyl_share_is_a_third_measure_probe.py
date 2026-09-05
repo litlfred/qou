@@ -60,7 +60,17 @@ WHY THE ALGEBRA IS THE SAME OBJECT, NOT A COMPETING ONE
     it is the OPERATOR ALGEBRA of the same pair, and the corpus says so
     (`QOU/MassEndomorphism/MassLeftMulEndomorphism.lean`, `QSchurWeyl.lean`).
     Its block share is dim M_{f^l} / dim H_n(q) = (f^l)^2 / n!, the CLASSICAL
-    Plancherel measure -- a candidate the audit does not list. Feray-Meliot
+    Plancherel measure -- a candidate the audit does not list.
+
+    *** CORRECTED 2026-09-05: THAT IS THE WRONG ALGEBRA AT N = 2. q-Schur-Weyl
+    *** is an isomorphism only for N >= n; at N = 2, n = 3A the map
+    *** H_n(q) ->> End_{U_q sl_2}(V^(x)n) = TL_n(q) is SURJECTIVE with kernel of
+    *** dimension n! - Catalan(n). So the operator algebra of the pair is TL_n
+    *** (dim Catalan(n)), and its block share is (f^l)^2 / Catalan(n) over
+    *** l(lambda) <= 2 -- NOT (f^l)^2 / n!. Check D below therefore measures a
+    *** real and normalised measure (Burnside), but NOT the share of the object
+    *** horn 2 names. The corrected share is check C of
+    *** which_n_the_nucleus_is_a_state_at_probe.py. Feray-Meliot
     sec 6.1 (`library/arxiv-1001.2180v2`, the paper the audit already cites for
     sec 2) states exactly this pairing in the literature's own vocabulary:
     the module gives the "Schur-Weyl measure", the regular representation
@@ -234,7 +244,9 @@ def main() -> int:
                    f"{mp.nstr(rows3[(3,6)], 8)} at n=6"))
 
     # ---- D. the audit's missing third candidate: classical Plancherel ----
-    print("[D] classical Plancherel (f^l)^2/n! -- the share of the ALGEBRA")
+    print("[D] classical Plancherel (f^l)^2/n! -- the share of H_n, which at N=2")
+    print("    is NOT the operator algebra of the pair (that is TL_n, dim Catalan(n));")
+    print("    see which_n_the_nucleus_is_a_state_at_probe.py check C for the right one")
     okD = True
     for n in (3, 6, 9):
         L = list(partitions(n))

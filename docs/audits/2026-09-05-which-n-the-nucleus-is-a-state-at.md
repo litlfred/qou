@@ -10,9 +10,13 @@
 
 ## 0. The answer
 
-**`N = 2`.** Nothing here derives it — it follows from the **convention-D owner
-ruling of 2026-08-15**, and the corpus already records it four independent ways.
-The question was closed before it was asked.
+**`N = 2`.** Nothing here derives it, because the corpus already does — **twice,
+from framework axioms, sorry-free** — states it for the mass channel by name,
+hardcodes it in the canonical weight producer, and **closed it a month ago**
+under bean `qou-fvzm` and `main` commit
+[`f92a8b1500`](https://github.com/litlfred/qou/commit/f92a8b1500) whose subject
+is literally *"N = 2 is LOCKED IN for the mass pipeline — the soft constraint is
+hard"*. The question was closed before it was asked.
 
 **And it decides nothing about Φ₃**, which is the half I got wrong. The depth-3
 stratum is vacuous at `N = 3` as well.
@@ -144,6 +148,104 @@ objection of being **q-independent**.
 
 ---
 
+## 4a. It is **derived**, not merely ruled — and the same axiom excludes `N = 3`
+
+The convention-D ruling is how `N = 2` is *enforced*; it is not the only reason
+to believe it. [`VolumeConstraintForcesFibreTwo.lean`](../../content/quantum-observable-universe/lean/QOU/BraidsAndKnots/VolumeConstraintForcesFibreTwo.lean)
+(**0 sorries**) derives it from condition (v) of `def:quantum-observable-universe`
+— the non-degenerate epimorphism `ε : Λ²V → 𝟙`. Read at the fibre,
+`dim Λ²V = C(N,2)`, so:
+
+```lean
+theorem exteriorSquareDim_eq_one_iff (N : ℕ) : exteriorSquareDim N = 1 ↔ N = 2   -- :151
+theorem exteriorSquareDim_three_ne_one  : exteriorSquareDim 3 ≠ 1 := by decide    -- :168
+```
+
+The second line is the one worth carrying: **the same axiom that gives `N = 2`
+positively excludes the colour fibre `N = 3`.** The file is honest about its own
+limit (`:68-78`): this is `N = 2` from a *stated axiom of the framework*, and
+whether condition (v)'s "non-degenerate epimorphism" should be read as an
+isomorphism is an editorial question it flags as unresolved.
+
+A second, independent route: the Wenzl level. Convention D inverts to
+`z_W = q⁴/(q²+1)`, hence `X = q⁴ = Q²`, an **integer Wenzl level `r = 2`** on the
+nose — and [`2026-08-16-su-r-level-tower-gap-map.md:57-61`](2026-08-16-su-r-level-tower-gap-map.md)
+identifies the two indices, *"fibre dimension `N` = Wenzl level `r`"*.
+
+## 4b. The conflation this question was built on, named in the corpus
+
+The `3` in `3A` is the **strand count `n`**, not the fibre dimension. The
+eightfold chapter opens by warning against exactly the inference I was
+entertaining — [`eightfold-intro.md:11,26`](../../content/quantum-observable-universe/eightfold-way/eightfold-intro.md):
+
+> **Two different `A_2`s.** […] because we have set `n = 3` and would like
+> `N = 3`. **Setting `n = 3` does not make `N = 3`.**
+
+and `:34`, *"the single-fibre construction … yields a quantum form of `SU(2)`,
+with `dim V = 2`, and no choice of `q` raises it."*
+
+**Colour does not change the fibre either.** The canonical colour-weighted
+production path — `bring_color_weighted`, made canonical by owner ruling R3 of
+2026-08-15 — runs `z_D = q³/(q²+1)`, the SU(2)/TL parameter, and applies colour
+as a **δ-perturbation on the p–n interface** (`closed_form_tau_M.py:305-307`),
+not as a change of `N`. The only `N = 3` fibre in `computations/` is a probe
+fixture (`ocneanu_param_from_fibre_dimension.py`). So both readings I tested in
+§3 are `N = 2` in production, and the `N = 3` one is not a live alternative at
+all.
+
+## 4c. 🛑 A second error in the prior note: F4 computes the share of the wrong algebra
+
+[`2026-09-05-schur-weyl-share-is-a-third-measure.md`](2026-09-05-schur-weyl-share-is-a-third-measure.md)
+§4 says horn 2's `End(V^{⊗n})` has block share `(f^λ)²/n!`. **At `N = 2` that is
+the wrong algebra.** The operator algebra of the pair is `TL_n`, of dimension
+`Catalan(n)` — not `H_n`, of dimension `n!`. The correct horn-2 share is the one
+in §4 above, `(f^λ)²/C_n` over `ℓ(λ) ≤ 2`.
+
+The root cause is a bare isomorphism where a surjection belongs, and **the corpus
+carries it in three places besides my note**:
+
+| site | text |
+|---|---|
+| [`notation-collisions.md:153`](../../content/quantum-observable-universe/notation/notation-collisions.md) | `H_n(q) \cong \mathrm{End}_{U_q\mathfrak{sl}_N}(V^{\otimes n})` |
+| [`MassLeftMulEndomorphism.lean:20`](../../content/quantum-observable-universe/lean/QOU/MassEndomorphism/MassLeftMulEndomorphism.lean) | *"`H_n(q) ≅ End_{U_q 𝔰𝔩_N}(V^⊗ⁿ)` (Jimbo), under which a Hecke element is **literally** an endomorphism of `V^⊗ⁿ`"* |
+| [`wenzl-bridge-applicability-qou.lean:33`](../../content/quantum-observable-universe/mass-theory/wenzl-bridge-applicability-qou.lean) | *"The centraliser isomorphism `H_n(R, q) ≅ End_H(V^{⊗n})`"* |
+
+`q`-Schur–Weyl is an isomorphism only for **`N ≥ n`**; below that the map is
+surjective with kernel the `> N`-row blocks. At `N = 2`, `n = 3A`, it is nowhere
+near injective — and the corpus contradicts itself here, because
+`TraceBlindSector.lean:11` states `TL_n(q) = End_{U_q(sl₂)}(V^{⊗n})` and
+`wedderburn_jones_markov.py:388` gives the kernel dimension outright. Two sites
+get it right (`QSchurWeyl.lean:11`, *"the **image of** the Iwahori–Hecke
+algebra"*; [`RowCap.lean:48-56`](../../content/quantum-observable-universe/lean/QOU/Hecke/RowCap.lean),
+*"It bounds the **carrier**, not the algebra … a number read off `S^λ` for
+`ℓ(λ) > N` is a number about the algebra, not about the carrier"*).
+
+The `N ≥ n` condition is stated in a **held but uncited source**:
+`library/black-samson-phd2010sp/sections/sec-010-…md` (Black, *Representations
+of Hecke Algebras*, pp. 30-31) — *"For `d ≤ n`, the homomorphism `π_d` is
+injective. **In the sequel, we will be concerned with the other extreme, where
+`π_d` is far from injective**"*, treating `(m|n) = (2|0)` = Jones = `N = 2`.
+That is this framework's situation exactly, at `d = 3A ≫ 2`. Nothing outside
+`library/` cites it.
+
+## 4d. Two sourcing errors in the prior note, corrected
+
+- **`dim V = 2` is NOT forced by the Descartes condition.** The prior note cites
+  `state_space_natural_three_sym2_gate.py:8-17` (*"`dim V = 2` by the Descartes
+  condition"*). The value is right and the sourcing is wrong, **and the corpus
+  says so**: [`schur-weyl-eightfold.md:53`](../../content/quantum-observable-universe/eightfold-way/schur-weyl-eightfold.md)
+  — Descartes *"is compatible with but does not uniquely force `N = 2`"* — and
+  [`2026-08-04-ocneanu-trace-parameter-audit.md:114`](2026-08-04-ocneanu-trace-parameter-audit.md)
+  — ***"Do not claim `N = 2` is forced by the Descartes condition"***. The live
+  sourcing is the volume axiom of §4a.
+- **`schur-weyl-mass-decomposition.md` does NOT keep λ with rows beyond 3.** The
+  prior note's §3 scope carries that claim second-hand. Read at the source, it is
+  **line 18**, and it says the additive-Wedderburn *approximation* *"discards all
+  partitions with **rows longer than 3**"* — that is `λ₁ > 3`, part **size**, and
+  its own examples `λ = (3A−1, 1)` and `(3A−2, 2)` are **two-row** partitions.
+  It is not a statement about the row cap at all, and it describes an
+  approximation no live producer runs.
+
 ## 5. Scope
 
 **Established.** `N = 2`, by owner ruling, recorded four ways. The ≥3-row blocks
@@ -165,8 +267,17 @@ state space" — resting on sorry-free
   current candidate; not selected.
 - **That the TL share is right.** It clears the constraint and is q-independent;
   both facts are stated, neither is a recommendation.
-- **Anything about the colour sector.** `N = 3` appears here only as the
-  alternative reading being tested, and it fails the same way `N = 2` does.
+- **Anything about a future `N = 3` construction.** It stays the eightfold
+  chapter's principal open problem (live carrier `qou-y7vg`, ledger
+  `docs/coordination/eightfold-n3-surface.md`). What §4b establishes is only
+  that `N = 3` is not what *production* runs.
+- **That `N = 2` is RIGHT.** The corpus says it, derives it from its own axiom
+  under the strong reading of condition (v), and locks it in — and the deriving
+  file itself flags that reading as editorially unresolved.
+- **The strand count.** `H_{A+Z}` (`atomic-braid.md:2`, `wedderburn-mass-formula.md:2`)
+  against `H_{3A}` (`schur-weyl-mass-decomposition.md:1`, `hecke_3a_weights.py:5`)
+  is still unreconciled by any block. It does not affect this answer: `N = dim V`
+  is a property of the fibre, independent of `n`.
 
 ---
 

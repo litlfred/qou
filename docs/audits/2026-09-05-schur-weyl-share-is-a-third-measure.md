@@ -38,7 +38,24 @@ the corpus's actual position. Four corpus witnesses and the verifying arithmetic
 are in
 [`2026-09-05-which-n-the-nucleus-is-a-state-at.md`](2026-09-05-which-n-the-nucleus-is-a-state-at.md).
 
-**F1, F2 and F4 below are unaffected** — none depends on the depth labelling.
+**F1 and F2 below are unaffected** — neither depends on the depth labelling.
+
+3. **F4 computes the share of the wrong algebra.** It says horn 2's
+   `End(V^{⊗n})` has block share `(f^λ)²/n!`. At `N = 2` the operator algebra of
+   the pair is **`TL_n`, of dimension `Catalan(n)`** — not `H_n`, of dimension
+   `n!`. The correct share is `(f^λ)²/C_n` over `ℓ(λ) ≤ 2`. The root cause is
+   §4's bare `≅`: `q`-Schur–Weyl is an isomorphism only for `N ≥ n`, and at
+   `N = 2`, `n = 3A` the map is surjective with a kernel of dimension
+   `n! − C_n`. Corrected in the note above; three further corpus sites carry the
+   same over-claim and are listed there.
+
+4. **Two sourcing errors.** §3 attributes `dim V = 2` to *"the Descartes
+   condition"*; the corpus explicitly forbids that attribution
+   (`schur-weyl-eightfold.md:53`, `2026-08-04-ocneanu-trace-parameter-audit.md:114`)
+   and the live sourcing is the volume axiom. And §3's scope note claims
+   `schur-weyl-mass-decomposition.md` keeps λ with rows beyond 3 — read at the
+   source it is **line 18**, about `λ₁ > 3` (part *size*, in an approximation no
+   live producer runs), not row count.
 
 ---
 
@@ -137,7 +154,7 @@ the cell of content `c = −N` contributes `[0]_q = 0`.
 The corpus asserts the state space is `V^{⊗3A}` with **`dim V = 2`**:
 
 - [`per-nucleon-channel-decomposition.md`](../../content/quantum-observable-universe/nuclear-interactions/per-nucleon-channel-decomposition.md) line 13 — *"The typed Garside element acts on `V^{⊗3A}`"*, a live `definition` block, at the nuclear `3A` level.
-- [`state_space_natural_three_sym2_gate.py`](../../computations/state_space_natural_three_sym2_gate.py) lines 8–17 — *"every object in the framework's state space … is built from tensor powers of the ONE fibre `V`, with `dim V = 2` by the Descartes condition."*
+- [`state_space_natural_three_sym2_gate.py`](../../computations/state_space_natural_three_sym2_gate.py) lines 8–17 — *"every object in the framework's state space … is built from tensor powers of the ONE fibre `V`, with `dim V = 2` by the Descartes condition."* **The value is right; that sourcing is not** — `schur-weyl-eightfold.md:53` says Descartes *"is compatible with but does not uniquely force `N = 2`"*, and `2026-08-04-ocneanu-trace-parameter-audit.md:114` says ***"Do not claim `N = 2` is forced by the Descartes condition"***. The live derivation is `VolumeConstraintForcesFibreTwo.lean` (sorry-free).
 
 **So under the corpus's own reading, the module-share measure vanishes
 identically from depth 2 up** — which *includes* the depth-3 stratum, so Φ₃ ≡ 0
@@ -157,22 +174,32 @@ the family without selecting one.
 **Scope.** This is a scope-(b) structural exclusion *of the `N=2` module-share
 reading*, resting on a proved vanishing (`[0]_q = 0`) — not a claim that the
 corpus's `N` is 2 for the colour channel.
-[`schur-weyl-mass-decomposition.md`](../../content/quantum-observable-universe/mass-theory/schur-weyl-mass-decomposition.md)
-line 19 records the corpus keeping λ with rows beyond 3, and the depth-3 channel
-is read elsewhere at `N = 3`.
+~~`schur-weyl-mass-decomposition.md` line 19 records the corpus keeping λ with
+rows beyond 3.~~ **RETRACTED — that was second-hand and wrong.** It is line 18,
+and it says an *approximation* discards partitions with *"rows longer than 3"* —
+`λ₁ > 3`, part **size** (its own examples `(3A−1,1)` and `(3A−2,2)` are two-row
+partitions), not row count. And `N = 3` is not what production runs: the
+canonical colour path `bring_color_weighted` uses `z_D`, the SU(2)/TL parameter.
 
 ---
 
 ## 4. F4 — horn 2 names the operator algebra, and its share is the omitted candidate
 
-`End(V^{⊗n})` is not an alternative state space. Under q-Schur–Weyl
-`H_n(q) ≅ End_{U_q\mathfrak{sl}_N}(V^{⊗n})` (Jimbo) it is the **operator algebra
-of the same dual pair**, and the corpus says so in Lean —
+`End(V^{⊗n})` is not an alternative state space. Under q-Schur–Weyl it is the
+**operator algebra of the same dual pair**, and the corpus says so in Lean —
 [`MassLeftMulEndomorphism.lean`](../../content/quantum-observable-universe/lean/QOU/MassEndomorphism/MassLeftMulEndomorphism.lean)
 lines 7–21, and [`QSchurWeyl.lean`](../../content/quantum-observable-universe/lean/QOU/QuantumObservableUniverses/QSchurWeyl.lean)
 line 11.
 
-Its block share is the dimension share in `H_n(q) ≅ ⊕_λ M_{f^λ}`:
+> **🛑 CORRECTED — the algebra below is wrong at `N = 2`.** `q`-Schur–Weyl is an
+> isomorphism only for `N ≥ n`; at `N = 2`, `n = 3A` the map `H_n(q) ↠
+> End_{U_q\mathfrak{sl}_2}(V^{⊗n}) = TL_n(q)` has kernel of dimension
+> `n! − Catalan(n)`. So the operator algebra of the pair is `TL_n`, and its
+> block share is `(f^λ)²/C_n` over `ℓ(λ) ≤ 2`, **not** the `(f^λ)²/n!` below.
+> See [`2026-09-05-which-n-the-nucleus-is-a-state-at.md`](2026-09-05-which-n-the-nucleus-is-a-state-at.md) §4c.
+
+Its block share *as written here* is the dimension share in `H_n(q) ≅ ⊕_λ M_{f^λ}`
+— correct for `H_n`, and `H_n` is the wrong algebra:
 
 $$
 \frac{(f^\lambda)^2}{n!}, \qquad \sum_\lambda (f^\lambda)^2 = n! \ \text{(Burnside)},
