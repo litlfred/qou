@@ -90,3 +90,60 @@ rather than support for a weight.
   matters.
 - **Not a claim that no closed form exists** for `f₁/f₀`; only that a
   fixed-per-letter-weight functional is not it. Scope-(a).
+
+---
+
+# Follow-on: what `f₁/f₀` does NOT track, and one thing it might
+
+With the entry point in hand, the two obvious explanations are cheap to test.
+Both fail.
+
+## Not the cycle count either
+
+The natural next candidate, and the one the corpus has traction on: the `[★]`
+formula is built on `cycles_of_product`, and `qou-tjys` established
+`c_free = 2A`, `c_atom = A + 1` across 228 `(Z,N)` pairs.
+
+Holding the letter **multiset** fixed and permuting the order — so the census is
+constant by construction — over nine words of the `pn` free word:
+
+    cycles = 4 for every one          (invariant)
+    f₁/f₀  = 37/2, 31/2, 8, 5, 17, 25/2   (six distinct, spanning ~4×)
+
+The cycle count is *invariant* across these words while `f₁/f₀` varies fourfold,
+so **`f₁/f₀` is strictly finer than the cycle count.** Together with the census
+refutation above, both invariants the corpus already had for this object are now
+excluded.
+
+## The canonical ordering is extremal — measured, and stated at its true strength
+
+The canonical word gave the largest value of the nine. That is a 1-in-9 draw and
+worth nothing alone, so it was re-run against **40** random same-multiset
+shuffles:
+
+    canonical                    f₁/f₀ = 37/2 = 18.5
+    40 shuffles                  range  1/2 .. 17
+    strictly above canonical     0
+    equal                        0
+    cycle counts seen            {4}
+
+**What this is worth, precisely.** Under the null "the canonical ordering is a
+typical ordering of its own letters", the probability it is the strict maximum of
+41 draws is `1/41 ≈ 0.024`. So this is **suggestive at p ≈ 0.024 — not a proof of
+maximality**, and it must not be quoted as one. The space is
+`22!/(11!·7!·4!) = 232,792,560` orderings; 40 random draws cannot establish a
+maximum over that, and no number of random draws would.
+
+It is, though, a **well-posed conjecture** that the tool makes cheap to attack:
+*the canonical ordering maximises `f₁/f₀` among orderings of its own letters.*
+Attacking it properly means a directed search (hill-climbing from the canonical
+word, or exhaustive enumeration on a smaller nucleus), not more random sampling.
+
+## Scope on the follow-on
+
+- **One nucleus** (`pn`, `n = 6`, 22 letters), `P = 3`, exact `Fraction`.
+- **40 random shuffles**, one seed. Not a search, not exhaustive.
+- The cycle-count refutation is the solid half: it needs only that the count is
+  invariant while the value varies, which is directly observed.
+- The extremality is the speculative half and is labelled as such.
+- Scope-(a) throughout.
