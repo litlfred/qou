@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T20:46:50Z
-updated_at: 2026-09-04T20:51:04Z
+updated_at: 2026-09-05T07:29:46Z
 ---
 
 Branch claude/normalised-law-residual-shape-2026-09-04. The follow-on qou-hfjc's audit §6 recommended: re-measure #6611's residual shape on the normalised (bond-counting) law, with the un-normalised law as control.
@@ -15,3 +15,6 @@ PROBE normalised_law_residual_shape_probe.py (9/9, 50 dps, #6611's AME selection
 Cross-ref qou-ib3g (#6668): its 'per-nucleon coefficient at N=Z, E_0·0.698581 = 2.92425 MeV' IS ε — un-normalised pp/nn average −ln(zz')/2 = ln[2]_q identically (checked) — so its factor 3.0075 applies to the normalised law unchanged; not re-measured.
 
 VERDICT: the residual has the SEMF shape on the artifact-free law; asymmetry still dominant, surface a live lead again. Recommendation (judgement): update the decision frame's lead ranking to the surviving numbers. Audit docs/audits/2026-09-04-normalised-law-residual-shape.md. Nothing wired.
+
+
+## 2026-09-05 (qou-kqdn) — follow-on on the re-promoted surface lead: the boundary deficit of a bounded-degree bond count DERIVES the A^{−1/3} shape exactly (Lean, sorry-free), refining bounded_degree_saturates. But its magnitude test is measured GENERIC (67.9 % of the plausible window), so only the shape is a result. docs/audits/2026-09-05-coordination-surface-deficit.md.
