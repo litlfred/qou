@@ -620,6 +620,10 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("paths", nargs="*", type=Path,
                     help="scan these files instead of the whole tree")
+    ap.add_argument("--files", nargs="*", type=Path, default=[],
+                    help="same as positional paths; spelled this way to match "
+                         "the sibling precommit audits, which the warn hooks "
+                         "all invoke identically")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--selftest", action="store_true",
                     help="check the known positive and the known benign case")
@@ -628,8 +632,9 @@ def main() -> int:
     if a.selftest:
         return selftest()
 
+    targets = [*a.paths, *a.files]
     hits = []
-    for p in iter_py([q.resolve() for q in a.paths] if a.paths else None):
+    for p in iter_py([q.resolve() for q in targets] if targets else None):
         hits.extend(scan_file(p))
 
     by = {t: [h for h in hits if h["tier"] == t] for t in ("blocking", "review", "context")}
