@@ -113,6 +113,51 @@ def main() -> int:
               "makes the Q-value independent of that choice. Scope-(b): the "
               "invariant is the vanishing of chi_(2,1) on Delta_S")
 
+    # ---- BOTH candidate elements, tested against the condition -----------
+    # Delta_L's Markov trace is quadratic in z (2026-08-29 audit). Its block
+    # characters are EXTRACTED from two admissible evaluations rather than from
+    # a coordinate vector: tr_M at z=q IS chi_(3), and tr_M at z_D is
+    # alpha*chi_(3) + beta*chi_(2,1), so chi_(2,1) follows by inversion.
+    trL = -(q - 1) * (q + 1) * (q**4 * Z**2 + 2 * q**3 * Z + 2 * q**2
+                                - 2 * q * Z + Z**2) / (4 * q**3)
+    trS = q**2 / 2 - q * Z - 1 + Z / q + 1 / (2 * q**2)
+    resid = {}
+    for nm, tr in (("Delta_S", trS), ("Delta_L", trL)):
+        aa = sp.simplify(tr.subs(Z, q))
+        vv = sp.simplify(tr.subs(Z, Z_D))
+        bb = sp.simplify((vv - A * aa) / B)
+        resid[nm] = sp.factor(sp.simplify(bb - 2 * aa))
+        print(f"      {nm}: chi_(3) = {sp.factor(aa)}")
+        print(f"      {nm}: chi_(2,1) = {sp.factor(bb)}")
+        print(f"      {nm}: b - 2a  = {resid[nm]}")
+
+    ok &= chk("extraction_reproduces_the_known_chi21_vanishing_on_Delta_S",
+              sp.simplify(sp.factor(sp.simplify(
+                  (trS.subs(Z, Z_D) - A * trS.subs(Z, q)) / B))) == 0,
+              "chi_(2,1)(Delta_S) extracted from the two admissible evaluations "
+              "= 0, matching the direct covector computation (calibration: two "
+              "independent routes to the same quantity)")
+
+    # the decisive question: does either residual vanish for a PHYSICAL q > 1?
+    roots_gt_one = {}
+    for nm, r in resid.items():
+        num = sp.numer(sp.together(r))
+        rs = [sp.N(t, 25) for t in sp.real_roots(sp.Poly(sp.expand(num), q))
+              if sp.N(t) > 0]
+        roots_gt_one[nm] = [str(t) for t in rs if t > 1]
+        print(f"      {nm}: positive real roots = {[str(t)[:12] for t in rs]}")
+    ok &= chk("NEITHER_element_is_scalar_mod_radical_for_any_q_greater_than_1",
+              all(len(v) == 0 for v in roots_gt_one.values()),
+              f"positive roots with q > 1: {roots_gt_one} -- both empty. "
+              "Scope-(b): the invariant is a polynomial with no root in the "
+              "physical regime")
+    ok &= chk("the_q_equals_1_root_is_DEGENERATE_not_a_solution",
+              sp.simplify(trS.subs(Z, q).subs(q, 1)) == 0
+              and sp.simplify(trL.subs(Z, q).subs(q, 1)) == 0,
+              "at q = 1 both elements VANISH (h = 0 makes the proton and "
+              "neutron words coincide), so the condition holds there only as "
+              "0 = 0 -- it is not a physical solution")
+
     # ---- the target and the FORCED class ---------------------------------
     q0 = sp.Rational(Q_50_DIGIT_STR)
     m_e = sp.Rational(str(CONST.M_E_MEV))

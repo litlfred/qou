@@ -38,6 +38,21 @@
       "detail": "b = 2a fails identically, so NO choice of admissible functional makes the Q-value independent of that choice. Scope-(b): the invariant is the vanishing of chi_(2,1) on Delta_S"
     },
     {
+      "name": "extraction_reproduces_the_known_chi21_vanishing_on_Delta_S",
+      "passed": true,
+      "detail": "chi_(2,1)(Delta_S) extracted from the two admissible evaluations = 0, matching the direct covector computation (calibration: two independent routes to the same quantity)"
+    },
+    {
+      "name": "NEITHER_element_is_scalar_mod_radical_for_any_q_greater_than_1",
+      "passed": true,
+      "detail": "positive roots with q > 1: {'Delta_S': [], 'Delta_L': []} -- both empty. Scope-(b): the invariant is a polynomial with no root in the physical regime"
+    },
+    {
+      "name": "the_q_equals_1_root_is_DEGENERATE_not_a_solution",
+      "passed": true,
+      "detail": "at q = 1 both elements VANISH (h = 0 makes the proton and neutron words coincide), so the condition holds there only as 0 = 0 -- it is not a physical solution"
+    },
+    {
       "name": "Delta_S_does_NOT_realise_the_forced_class",
       "passed": true,
       "detail": "|chi_(3)(Delta_S)| = 0.210199349901 vs forced 0.186893667557 -- the current element does not satisfy functional-independence"
@@ -75,11 +90,11 @@
   ],
   "source": "bean qou-99qc (Option E)",
   "scriptFile": "qbeta_option_e_forced_class_probe.py",
-  "scriptHash": "5671a322a0f4",
-  "scriptCommitSha": "unknown",
-  "commitSha": "e83afa708862b0b815bcd2ebe58ab8ad6b83c74d",
+  "scriptHash": "f0f21a078780",
+  "scriptCommitSha": "0fdff353e1ad5f9260bfb0a71867c69fed50a741",
+  "commitSha": "0fdff353e1ad5f9260bfb0a71867c69fed50a741",
   "engine": "python+sympy",
-  "computedAt": "2026-09-05T07:33:46.963983+00:00",
+  "computedAt": "2026-09-05T07:40:00.279257+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
