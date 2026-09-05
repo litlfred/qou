@@ -289,3 +289,43 @@ it is not.
 
 **STILL OPEN, and it is the author's call**, because wiring a family into the
 production Phi_k moves physics-facing numbers and the choice is not derived.
+
+
+## 2026-09-05 — coordination from #6768, INDEPENDENTLY VERIFIED here
+
+A sibling agent working route 1 posted findings on #6771. I re-checked every
+checkable one rather than relaying them; all hold.
+
+- **FM §6.1 states the Schur-Weyl measure outright** —
+  `library/arxiv-1001.2180v2/sections/sec-023-...:68`: *'the Schur-Weyl measure
+  charges only the Young diagrams whose lengths are smaller than N'*. Neither of
+  us had opened that section; I had grepped sec-002/004/021 only.
+- **'Schur-Weyl measure' has 0 hits outside `library/`** (content, docs,
+  computations, .beans). Verified.
+- **`library/arxiv-1009.4034v1`** (Meliot, *Kerov's CLT for Schur-Weyl
+  measures*) is held and greppable, **0 citations in references.ts**. Verified.
+  Available source, not yet used — deliberately NOT added as a reference entry,
+  since an entry nothing cites is noise.
+- **The row cap zeroes the `V^{n}` share at N=2** — verified and STRONGER than
+  reported: `SU(N) qdim(lam) = 0 IFF lam has more than N rows`, an iff, over
+  every partition of n=1..9 at N=2 and N=3. Total `SUM f^lam*qdim` over lam
+  with >2 rows is exactly 0.0 at n=3,6,9.
+
+**TWO MORE MEASURES EXIST and my four-family table was implicitly exhaustive.**
+Corrected in the #6771 body. Neither is a production path, which the four are:
+  - `V^{n}` Schur-Weyl share: `f^lam * prod[N+c]_q/[h]_q`, index set = lam with
+    <= N rows, normaliser `[N]_q^n`. Different index set AND normaliser, so it
+    is NOT a rescaling of Molien.
+  - classical `(f^lam)^2/n!` via `End(V^{n})`. Normalised by Burnside at every
+    n — but **q-INDEPENDENT**, which is an objection to it as a Phi_k weight,
+    not a feature: it can carry no substrate dependence into the functional.
+    Flagged back to #6768.
+
+**WHAT I HAVE THAT ROUTE 1 DOES NOT.** #6768 frames it as *'route 1 now turns on
+one thing only: which N the nucleus is a state at'*. True of route 1, but the N
+question and the family question are not independent downstream — measured, the
+ratio `w_Molien/w_dimq2` at q0 normalised to its own mean spreads
+**1.87x at n=3, 22.9x at n=6, 1831x at n=9**, monotone row-to-column (that is
+`q^{-kappa}`, extremal on those shapes). Since n = 3A, n=9 is A=3. Picking the
+wrong family at the n where the physics lives is a 10^3 error, so selecting a
+module reading does not make the family choice a detail. Both stay live.
