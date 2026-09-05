@@ -90,15 +90,31 @@ See [Table 2](#tbl:q-beta-categorical-precision-ladder-table2-data).
 The N=4 rung is the first to beat the **7.80 ppb 100$\times$ experimental
 target** (CAL-3 σ = 0.78 ppm) — with $c_3$ at tier *near-match* (see the
 truncation-order section above). N=3 lands at 13.15 ppb, above that target.
-The column is strictly decreasing at both documented pins: with the live
-$c_5 = -(b^2 + 1/2)$ every rung factor $1 + c_k u^k$ has $c_k < 0$ and is
-therefore below 1. The $N{=}4 \to N{=}5$ non-monotonicity reported in
-earlier drafts — the residual ticking back up, read there as the signature
-that the $c_k{\geq}3$ are q$_0$-dependent near-matches — was produced by
-the superseded $c_5 = +12.87$, whose positive sign makes the fifth factor
-exceed 1. It does not survive that supersession, so the ladder no longer
-carries a numerical signature of its own inexactness. The near-match tier
-of $c_{k\geq3}$ still rests on the q$_0$-anchor swing recorded above.
+The **signed** column is strictly decreasing at both documented pins: with
+the live $c_5 = -(b^2 + 1/2)$ every rung factor $1 + c_k u^k$ has $c_k < 0$
+and is therefore below 1. **That is not what the non-monotonicity claim is
+about, and an earlier draft of this paragraph got it backwards.** The claim
+concerns the residual *magnitude* — whether the approximation gets worse —
+and on magnitude the signature **survives, and survives only under the live
+coefficient**. At the proton pin:
+
+| $N$ | $\lvert\text{residual}\rvert$, live $c_5$ | $\lvert\text{residual}\rvert$, superseded $c_5$ |
+|---|---|---|
+| 4 | 6.1698 ppb | 6.1698 ppb |
+| 5 | **6.2260 ppb** (increases) | 5.5551 ppb (decreases) |
+
+So the $N{=}4 \to N{=}5$ non-monotonicity is produced by the **live**
+$c_5 = -(b^2+1/2)$ and is *absent* under the superseded $+12.87$ — the
+reverse of what the earlier draft asserted, which read the signed column
+where $-6.1698 \to -6.2260$ is decreasing. The ladder does carry a
+numerical signature of its own inexactness, now on the correct coefficient
+for the first time.
+
+**Caveat:** the crossing is only $0.91\,\%$, computed with $c_3$ at the
+recorded proton extraction and at the proton pin alone, so it is not robust
+to a large $c_3$ move; a full settlement re-extracts $c_3$ at both pins. The
+near-match tier of $c_{k\geq3}$ rests independently on the q$_0$-anchor swing
+recorded above and does not depend on this crossing.
 Agreement at $q_0$ is research-grade and **conditional on** the
 Habiro-element upgrade, not an unconditional derivation.
 
