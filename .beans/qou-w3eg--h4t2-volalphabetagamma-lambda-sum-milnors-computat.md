@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-05T08:43:01Z
+updated_at: 2026-09-05T08:53:53Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -728,3 +728,32 @@ The last one is the check that mattered and I had not run it: claim 2 asserts `T
 3. Compose with `hypVolume_chimney_wedgeAt` and `lob_sum_eq_reflected`.
 
 **Unchanged:** `idealTet_eq_chimney`'s `α,β,γ < π/2` is a set equality outside all of this and still blocks the volume claim.
+
+
+## 🛑 CORRECTION — the containment is A.E., not strict (2026-09-05)
+
+Two entries above I wrote *"`W_sub ⊆ W_α ∪ W_β` — 0 points outside everywhere"* as though it were a strict set containment. **It is not, and the probe structurally could not have told me.**
+
+`W_α` and `W_β` meet along the ray `φ = t + 2γ + 2α` — `W_α`'s upper edge *is* `W_β`'s lower edge, which is precisely the adjacency condition `θ₁+ψ₁ = θ₂−ψ₂` that makes `disjoint_wedgeAt_obtuse_pair` go through. Both wedges are **open**, so a point on that ray is in **neither**. Points of `W_sub` lie on it. So `W_sub \ (W_α ∪ W_β)` is nonempty but **null**, and the Lean obligation is
+
+    W_sub \ (W_α ∪ W_β)  ⊆  {w | perp_{t+2γ+2α}(w) = 0}
+
+discharged by `volume_perpLine` — the same shape `milnorWedges_ae_eq_inscribedTriangle` already uses — **not** a strict containment.
+
+**Why the probe missed it, which is the part worth keeping.** The exceptional set is a measure-zero ray, so a rectangular grid misses it except by coincidence. And the coincidence is **undecidable numerically**: on the ray the wedge residual `|⟨w,v⟩| − ⟨w,u⟩·tan ψ` is *exactly* zero in exact arithmetic, so at any working precision it is noise at the precision floor — measured **~1e-62 at 60 dps**, with `W_α`'s coming out negative and `W_β`'s positive purely by rounding. Treating that sign as membership is the NO-FLOAT64 error one level up: agreement at the floor of the arithmetic is not evidence about the mathematics.
+
+**What settled it was the proof, not a measurement** — `disjoint_wedgeAt_obtuse_pair` says the two wedges are disjoint, so no point is in both; on the ray both residuals vanish, so the point is in neither. A proved lemma outranking a probe, in the direction that costs me a claim.
+
+The probe now carries `check_shared_ray()` demonstrating this; claim 3's wording is corrected; the header documents claims 3 and 4 (it previously described only 1 and 2).
+
+### Landed alongside
+
+`disjoint_wedgeAt_obtuse_pair` (sorry-free) — the first cash-out of the `π−γ` reformulation. `disjoint_wedgeAt_adjacent` demands `0 < ψᵢ < π/2` of **both** wedges, which is why it was unavailable to the obtuse case as originally framed; recast with the acute `α`, `β` it applies **verbatim**, adjacency closing by `ring`.
+
+### Remaining for option (A), restated with the correction
+
+1. The a.e. set identity. Covering half can reuse `perp_sign_relation` unchanged with the `+ + −` pattern.
+2. The **null-set** obligation above (not a containment), via `volume_perpLine`.
+3. Compose with `hypVolume_chimney_wedgeAt` and `lob_sum_eq_reflected`.
+
+**Known unresolved sub-obligation**, found while drafting (2): the chord condition for `W_α` does **not** follow from `wedgeAt_lt_chord_next`/`_prev` applied to `W_sub` — the required `ψ'` comes out negative under both. The needed fact is `⟨w, u_{θ_s − β}⟩ < R cos α` for `w ∈ wedgeAt R θ_s (α+β)`, which is true (the max over the closed wedge is attained at a vertex, giving exactly `R cos α`) but has no existing helper. That is the real remaining work in step A1.
