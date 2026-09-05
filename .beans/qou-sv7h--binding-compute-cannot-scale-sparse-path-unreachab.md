@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-05T12:00:00Z
+updated_at: 2026-09-05T12:40:00Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -348,3 +348,52 @@ float64 defect does NOT account for 17.3 %.
 claim is stale (#6708 fixed it; the audit exits 0), so it tells a user their
 numbers are invalid when they are not. The 17.3 % half compares fallback
 against kernel — a different comparison from the one above, unrun here.
+
+## A-series COMPLETE (2026-09-05) — the plateau does not exist, and that was my claim
+
+Owner asked for A = 3,4,5 kernel-live. Probe
+`computations/probes/uic_binding_a_series_kernel_live_probe.py`, 5/5, 11350 s.
+
+**All three unverified figures reproduce exactly** — ³H `−7.742121347136118`
+(vs −7.742), ³He `−7.45619950551758` (vs −7.456), ⁴He `−6.828594293148849`
+(vs −6.829). The series was kernel-live; my caution was procedurally right and
+the substance was sound.
+
+**And it identifies the set:** ²H, ³H, ³He, ⁴He — **A = 2, 3, 3, 4**, the same
+five atoms as `[15, 9, 9, 10, 15]` minus ⁶Li. I labelled both "A = 2..5" and
+both were wrong identically, because they are one set. **No A = 5 point had
+ever been computed.**
+
+| atom | A | Z | N | B_pred | AME |
+|---|---|---|---|---|---|
+| ²H | 2 | 1 | 1 | −7.2711 | 2.2246 |
+| ³H | 3 | 1 | 2 | −7.7421 | 8.4818 |
+| ³He | 3 | 2 | 1 | −7.4562 | 7.7180 |
+| ⁴He | 4 | 2 | 2 | −6.8286 | 28.2957 |
+| ⁵He | 5 | 2 | 3 | −6.7896 | 27.5607 |
+| ⁵Li | 5 | 3 | 2 | **−8.1363** | 26.3307 |
+| ⁶Li | 6 | 3 | 3 | −3.0650 | 31.9940 |
+
+**I committed a two-branch prediction before ⁵Li landed and BOTH failed.**
+⁵He and ⁵Li share A = 5 and differ only in Z, so: ⁵Li ≈ −6.8 ⇒ break at A = 6;
+⁵Li ≈ −3 ⇒ break at Z = 3. It is **−8.136**, below the whole plateau.
+
+**So the "A = 2..5 plateau with a cliff at A = 6" does not exist** — an artefact
+of a sample holding one atom per mass number above A = 3. What survives:
+
+- the **same-A mirror split grows ~5×** (³H/³He 3.835 %, ⁵He/⁵Li 19.84 %) — same
+  A, differing only in Z, and the gate account predicts nothing about it;
+- the **largest single jump is same-Z, adjacent-A**: ⁵Li → ⁶Li = 2.655×;
+- predicted spread 2.655× against AME's 14.4×, every point the wrong sign.
+
+**Scoped:** the probe's anti-correlation assertion compares only the extreme A
+points and the series is not monotone (⁵Li sits below ²H) — true of two
+endpoints, weaker than its passing suggests.
+
+**Post-merge check:** ²H re-run after the sibling's #6794 exact-`mpf` fix is
+**bit-identical** (`−7.271102124876717`, MOVED: False), so the series stands.
+Mechanism: with the kernel live the Python sigma family is never consumed.
+
+**Still open:** ⁶Li is the most extreme point and the one row not measured by
+this probe (carried from a standalone run). It wants an independent re-run
+before anything is built on it.
