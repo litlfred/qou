@@ -29,18 +29,35 @@ one thing it needs.
 
 ## What it moves — measured, not estimated
 
-Over the five atoms cheap enough to recompute (proton, neutron, deuteron,
-tritium, helium-3):
+Over **all six atoms** — helium-4 included, measured separately because it is
+the slow one:
 
 | finding | GROUPED (committed) | BORROMEAN (live) | |
 |---|---|---|---|
-| `argmin(t) == argmin(w)` | 5/5 rows | **4/5 rows** | ← moves |
-| `w` monotone in content sum | 28/28 | 28/28 | invariant |
-| `conc(w,\|χ\|) == conc(c(λ),\|χ\|)` | 5/5 rows | 5/5 rows | invariant |
-| anti-correlation `conc(w,\|χ\|)` | 4/28 | **16/28** | ← **changes sign** |
-| `dim`~`\|χ\|` concordance | 24/27 | **12/27** | ← moves |
+| `argmin(t) == argmin(w)` | 6/6 rows | **4/6 rows** | ← moves |
+| `w` monotone in content sum | 49/49 | 49/49 | invariant |
+| `conc(w,\|χ\|) == conc(c(λ),\|χ\|)` | 6/6 rows | 6/6 rows | invariant |
+| anti-correlation `conc(w,\|χ\|)` | 9/49 | **25/49** | ← **changes sign** |
+| `dim`~`\|χ\|` concordance | 43/48 | **21/48** | ← moves |
 | worst selection margin | 2.108× | **10.069×** | ← moves |
 | product flattened on every row | True | **False** | ← moves |
+
+All six committed caches are GROUPED, helium-4 included (`9.56e-50` against
+`1.201` relative). Its `|χ|` ratios spread **51.2×** with `[11,1]` and `[8,4]`
+changing sign.
+
+**Which two rows flip, and where they land, is not incidental:**
+
+    tritium    argmin(t)  [5,4] -> [7,2]      argmin(w) stays [5,4]
+    helium-4   argmin(t)  [6,6] -> [7,5]      argmin(w) stays [6,6]
+
+`[7,2]` and `[7,5]` are **exactly two of the three partitions previously
+identified as carrying a `dim`-vs-`|χ|` inversion** under grouped. The O3′ probe
+had already flagged this shape as where a flip would come from — *"a discordant
+partition that also happened to be the runner-up is what a flip would look
+like"* — written before this measurement existed. The prediction was
+directionally right; deuteron's `[4,2]`, the third discordant partition, does
+not flip.
 
 The split is not arbitrary and was **predicted before measurement**: `w` is a
 function of the partition and `q` alone, so every `w`-side finding is invariant
@@ -61,10 +78,12 @@ under the live ordering is that row — `argmin(t) = [7,2]` against
 **What it means.** Re-run `chi_at_q0_via_hoefsmit_mpfr.py` for all six atoms so
 the caches carry the ordering the corpus actually uses.
 
-**What it costs.** Far less than first thought. All five A≤3 atoms regenerate in
-**under three seconds combined** on the non-incremental path. The 1352-second
-figure in helium-4's own witness is the *incremental* path, which persists each
-partition as it goes; `incremental=False` is a different cost.
+**What it costs — measured, and far less than I first told the owner.** All five
+A≤3 atoms regenerate in **under three seconds combined** on the non-incremental
+path, and **helium-4 takes 423 s (≈ 7 minutes)**, not the 22.5 I quoted. That
+1352-second figure is from helium-4's own witness and describes the *incremental*
+path, which persists each partition as it goes; `incremental=False` is a
+different cost. **A full six-atom regeneration is about seven minutes.**
 
 **What it risks.** 84 live scripts and 48 committed witnesses read these caches.
 Their numbers move, and the O3′ arc's central finding is then refuted outright
