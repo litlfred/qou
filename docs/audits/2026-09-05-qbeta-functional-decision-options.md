@@ -242,3 +242,75 @@ in audit docs and a bean body, and the next agent re-derives it. That has
 already happened once (PR #5893 independently re-encountered the functional
 mismatch this bean had diagnosed). **The default is not stable**, which is the
 one argument for acting on A sooner rather than later.
+
+## 6. 🟥 SUPERSEDED — the anti-fitting directive lands on §5, and I withdraw Option A
+
+**Added the same day this document was written, by its author.** `AGENTS.md`
+gained **§NO FITTING, EXCEPT CAL-1/2/3 (owner directive, 2026-09-05)** on `main`
+in `af1368d43ed`, after §5 above was drafted and while this branch was open.
+**§5's recommendation does not survive it.** §§1–4 are untouched — every
+measurement there stands, and §3's option inventory is still the right map.
+
+### Which clauses collide
+
+Two of the directive's clauses hit §5 directly.
+
+> **Selection against the target.** Choosing an *object* — a knot from a
+> census, a partition, a truncation order, **a branch** — because the choice
+> reproduces the measured value. No continuous parameter is tuned and it is
+> still a fit.
+
+> **Accuracy is not evidence of correctness here, and a more accurate fitted
+> route is worth LESS than a less accurate derived one.** … Corollary: **do not
+> recommend consolidating onto the most accurate route.**
+
+`z = 1` is a **branch** of the Markov family, selected from outside the
+admissible set — its `χ_(1³)` coefficient `c(1) = q²(q−1)(q³−q²−1)/…` is
+nonzero, so it does not annihilate the block the GNS/TL quotient kills — and its
+entire case is that it lands at 0.17 %.
+
+### What each §5 reason was, and what is left of it
+
+1. **"The number is not a fit … it predates the constraint by three and a half
+   months."** — **Withdrawn.** The directive does not ask whether the author was
+   fitting *when the number was written*; it asks whether the route the paper
+   publishes *today* derives or selects. Under convention D this one selects.
+   Provenance is a fact about history, not a defence of a route.
+2. **"B and C trade a precise defect for a vague one."** — **Inverted by the
+   directive**, which ranks a less accurate derived route *above* a more
+   accurate fitted one. B and C are the derived routes; that is the property
+   that now decides, and the 12 % / 43 % misses are the honest output of it.
+3. **"The blast radius is near zero, so there is no forcing reason to decide
+   now."** — **Still true, and still the reason this is cheap.** It is an
+   argument for deferring, never an argument for A.
+
+The line **"What I would not do: adopt B or C"** is the specific sentence the
+directive's corollary forbids, and it is retracted.
+
+### What the directive decides, and what it leaves open
+
+It **eliminates one option** and **forbids one method of choosing between the
+rest**. It does not pick an answer.
+
+| functional | `β` on the admissible line | Q_β | vs CODATA `0.7823334` MeV |
+|---|---|---|---|
+| `z = 1` — published (Option A) | *not on the line* | `0.7836458` | +0.168 % — **eliminated** |
+| `z = q`, augmentation (Option B) | `0` | `0.8798906` | **+12.470 %** |
+| `z_D = q³/(q²+1)`, convention-D Markov trace (Option C) | `q²/(q²+1)²` | `0.4447004` | **−43.157 %** |
+
+Choosing B over C *because* 12 % beats 43 % would be the same defect one level
+down, and is equally forbidden. The choice has to come from what `ε` **means**
+in `Q_β = |ε(Δ)|·E₀` — the augmentation (an algebra map, `σ ↦ q`) or the
+coordinate sum `net`/`epsNPq` — which is bean `qou-99qc`'s original question and
+is untouched by the directive.
+
+**Revised recommendation, marked as judgement rather than finding.** If `ε` is
+the Markov trace in the canonical convention, the 2026-08-15 ruling names `z_D`
+and the answer is **Option C, −43.157 %**. If `ε` is the augmentation, it is
+**Option B, +12.470 %**. Nothing measured distinguishes them; I do not have a
+derived basis for preferring one, and picking by residual is precisely what is
+banned. **Options D, E, F and G are unaffected**, and Option E — derive the
+element — remains where a parameter-free admissible result would come from.
+
+**If nothing is decided:** unchanged from §5, except that the default now also
+leaves a published number the directive classifies as selected-against-target.
