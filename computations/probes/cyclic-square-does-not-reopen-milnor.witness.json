@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T10:28:21.631022+00:00",
-  "commitSha": "47266e1e8f0de10920c62e4ad30a8e57592170d1",
+  "computedAt": "2026-09-04T22:15:36.899311+00:00",
+  "commitSha": "af6e3e40fa884db62247e33ea3162b7e2f44b105",
   "assertions": [
     {
       "name": "cyclic_square_DOES_break_the_at_most_two_components_premise",
@@ -45,8 +45,8 @@
   "durationMs": 0,
   "computation": "cyclic-square-does-not-reopen-milnor",
   "scriptFile": "cyclic_square_does_not_reopen_milnor_probe.py",
-  "scriptHash": "ca4800160218",
-  "scriptCommitSha": "c040c6640c62e36610bcdbb3aafb1f91370a241d",
+  "scriptHash": "832f95d59dee",
+  "scriptCommitSha": "01bc067cd59e9a0d63caf799f0ff7ce5ba703b9e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -69,7 +69,7 @@
     ],
     "reproduce": "python3 -u computations/probes/cyclic_square_does_not_reopen_milnor_probe.py"
   },
-  "description": "EXPLORATORY. Route 3's result rests on a premise true only for MONOTONE words: each summand of the connected-sum closure touches at most 2 components. Sibling #6561 proves the cyclic square (g_m g_{m+1})^2 is the ONLY non-monotone shape yielding a Markov-trace cross term, making it the natural candidate to break that premise. It DOES: measured, it spans 3 distinct components in 188 of 694 insertions -- so the tempting reading that it is local knotting on one component (its closure T(3,2) is a knot) is WRONG. But the conclusion survives for a different reason: in ALL 188 cases at least one pairwise linking number among the three spanned components is nonzero, so Delta != 0 and mubar is not a genuine integer there anyway. The insertion that joins three components is the same one that links them. Scope (a), narrow: one shape, all-positive inserted crossings, sampled word positions, 4 isotopes. NOT a proof that no non-monotone word reopens route 3, and the Delta = 2 one-bit triples are untouched. Nothing wired.",
+  "description": "EXPLORATORY. Route 3's result rests on a premise true only for MONOTONE words: each summand of the connected-sum closure touches at most 2 components. Sibling #6561 proves the cyclic square (g_m g_{m+1})^2 is the ONLY non-monotone shape yielding a Markov-trace cross term, making it the natural candidate to break that premise. It DOES: measured, it spans 3 distinct components in 188 of 694 insertions -- so the tempting reading that it is local knotting on one component (its closure T(3,2) is a knot) is WRONG. CORRECTED 2026-09-04 -- the original reading, that the conclusion survives for a different reason: in ALL 188 cases at least one pairwise linking number among the three spanned components is nonzero, so Delta != 0 and mubar is not a genuine integer there anyway. The insertion that joins three components is the same one that links them -- IS RETRACTED. Delta != 0 means mubar lives in Z/Delta, NOT that there is no obstruction; a nonzero residue is a nonvanishing invariant. This probe never computed mubar. It is nonzero in 2 of these 188 all-positive spanning insertions, at Delta = 2 with mubar = 1 -- exactly route 3's one-bit residual. See mixed_sign_cyclic_square_does_reopen_milnor_probe.py, which also sweeps all 16 inserted-sign patterns (563 of 3008 nonzero) and re-measures the UNPERTURBED carrier as a control (294 triples, 0 nonzero), so route 3 at Delta = 0 and its Lean are untouched. Scope (a), narrow: one shape, all-positive inserted crossings, sampled word positions, 4 isotopes. NOT a proof that no non-monotone word reopens route 3, and the Delta = 2 one-bit triples are untouched. Nothing wired.",
   "auditOnly": "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md",
   "data": {
     "what_is_being_tested": {
@@ -118,7 +118,7 @@
       "premise_breaks": true,
       "insertions_spanning_three_components": 188,
       "of_those_with_all_pairwise_linking_zero": 0,
-      "reading": "the premise really does break -- but in every spanning case at least one pairwise linking number is nonzero, so Delta != 0 and mubar is not a genuine integer there. Route 3's PREMISE is monotone-specific and does break; route 3's CONCLUSION does not, on this shape."
+      "reading": "the premise really does break -- but in every spanning case at least one pairwise linking number is nonzero, so Delta != 0 and mubar is not a genuine integer there. Route 3's PREMISE is monotone-specific and does break; route 3's CONCLUSION ALSO FAILS on this shape, at Delta = 2 -- see the RETRACTED note above and mixed_sign_cyclic_square_does_reopen_milnor_probe.py."
     },
     "what_this_does_NOT_establish": {
       "other_non_monotone_words": "NOT tested. This is one shape -- the one #6561 singles out -- not the non-monotone class",

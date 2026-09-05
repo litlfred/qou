@@ -1623,6 +1623,21 @@ class WitnessBuilder:
             start_time=start_time,
             _script_path=script_path,
         )
+        # The THIRD write path. `q0Anchor` arriving inside `payload` reaches the
+        # witness through `_extra_top_level` and `build()`, touching neither
+        # `stamp_staleness_metadata` (where `_warn_unmappable_anchor` was
+        # installed) nor `save(extra)` (guarded above). Measured on main at
+        # 6a9c2c44fb9: 152 producers call `wrap_legacy` and 22 of them set
+        # `q0Anchor` in the payload -- among them the one live off-vocabulary
+        # producer, `codata_corpus_literal_scan.py`, whose `'not-applicable'`
+        # no existing guard could see. Bean qou-3ral.
+        #
+        # Warn, never raise, for the reason `_warn_unmappable_anchor` documents.
+        # A producer that also passes `q0Anchor` to `save(extra)` would warn
+        # twice; that is two declarations of the same field and worth saying
+        # twice.
+        if "q0Anchor" in payload:
+            _warn_unmappable_anchor(payload["q0Anchor"], str(script_path))
         for key, value in payload.items():
             if key == "description" and isinstance(value, str):
                 builder.set_description(value)
@@ -2122,6 +2137,29 @@ class WitnessBuilder:
         """
         witness = self.build()
         if extra:
+            # The SECOND write path, and the one the vocabulary guard could not
+            # see. `_warn_unmappable_anchor` was installed on
+            # `stamp_staleness_metadata` (bean qou-eggf); this route bypasses
+            # that function entirely -- `save(extra)` merges `extra` into an
+            # already-built witness -- so a prose token arriving here was never
+            # warned about. It is not a back door either: the module header
+            # DOCUMENTS `save({"q0Anchor": "comparison", ...})` and
+            # `save({"q0Anchor": "independent", ...})` as the intended route for
+            # the two tokens the manifest cannot resolve, and those two are the
+            # fastest-growing in the corpus (bean qou-3ral: +540 % and +51 %
+            # against proton's +16 % over one day).
+            #
+            # Warn, never raise -- the same call `_warn_unmappable_anchor`
+            # already documents, for the same reason: stamping happens after the
+            # compute, and discarding a fifty-minute run to correct a label is
+            # the worse trade. This does not re-open that decision; it applies it
+            # to the route it was not applied to.
+            #
+            # `stamp_staleness_metadata` warns only when `"q0Anchor" not in
+            # payload`, so a producer that stamps AND passes `extra` warns
+            # exactly once here rather than twice.
+            if "q0Anchor" in extra:
+                _warn_unmappable_anchor(extra["q0Anchor"], str(self._script_path))
             witness.update(extra)
 
         out_path = self._output_dir / f"{self.name}.witness.json"

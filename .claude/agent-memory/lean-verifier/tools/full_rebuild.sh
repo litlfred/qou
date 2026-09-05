@@ -1,7 +1,7 @@
 #!/bin/bash
 # Full QOU library rebuild from source, topological order, error-only failure detection.
 cd /home/user/qou/content/quantum-observable-universe/lean
-export LEAN_PATH=$(ls -d $PWD/.lake/build/lib/lean /home/user/qou/.lake/packages/*/.lake/build/lib/lean | tr '\n' ':')
+export LEAN_PATH=$(ls -d $PWD/.lake/build/lib/lean /home/user/qou/content/unital-groebner-bases/lean/.lake/build/lib/lean /home/user/qou/.lake/packages/*/.lake/build/lib/lean | tr "\n" ":")
 LOG=/tmp/qou-rebuild.log; : > $LOG; ERR=/tmp/qou-rebuild-errors.txt; : > $ERR
 n=0; ok=0; fail=0; t0=$(date +%s); total=$(grep -c . /tmp/full_topo.txt)
 while read -r m; do

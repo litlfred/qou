@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-04T14:11:32Z
+updated_at: 2026-09-04T20:54:57Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -119,4 +119,42 @@ do the hook Burau form and the two-row sector difference cross at b=2?
 
 Limits: A=2/A=3, dim cap 50 skips 17 of 28 shapes at n=9 (not run, not evidence).
 X*X is NOT central, so the JM/content structure is a reason to look, not a derivation.
+scope-(a). Nothing wired.
+
+## 2026-09-04 — hook vs two-row from the closed forms (#6677)
+
+THE DIM CAP COMES OFF, AND IT STRENGTHENS #6587. Neither closed form builds the
+seminormal irrep (hook: (n-1)x(n-1) reduced Burau, #6556; two-row: sectors of the
+fixed 4x4 Ř, #6587), so neither is bound by dim ≤ 50 — the cap that made every
+earlier probe in this arc skip 17 of 28 shapes at n=9. The full hook column at A=3
+is monotone per-dim over ALL 7 hooks:
+  4718.62 > 3478.29 > 1671.23 > 581.163 > 134.628 > 14.319 > 0.435429
+with (6,1,1,1) dim 56, (5,1^4) dim 70, (4,1^5) dim 56 previously unreachable. #6587
+could only say this of the 4 under the cap. A dimension-selected subset can flatter
+a trend, so this was a real check, and it passed.
+
+GATES (out-of-cap rows are refused unless both pass). In-cap vs direct seminormal:
+6.67e-139 / 10 shapes at A=2, 2.06e-138 / 11 at A=3. The STRONGER gate — the two
+INDEPENDENT reductions against EACH OTHER at b=1, where (n-1,1) is simultaneously a
+hook and a two-row: 1.86e-139 (dims 5/5) and 3.21e-139 (dims 8/8).
+
+THE RELATION REVERSES WITH b, at both sizes.
+  A=3: hook > two-row at b=2 (3478.29 vs 2793.10) and b=3 (1671.23 vs 1498.56);
+       two-row > hook at b=4 (981.20 vs 581.16).
+  A=2: hook > at b=2 (174.18 vs 103.15); two-row > at b=3 (53.56 vs 47.26).
+⇒ #6669's blocking pair (7,1,1)/(7,2) is NOT an instance of a systematic ordering.
+Any statistic ordering the per-dim majorant must reproduce a hook/two-row relation
+that CHANGES SIGN with b — a materially stronger demand than monotonicity, and a
+better reason to stop hunting an eighth candidate than 'seven have failed'.
+
+SUGGESTIVE, SAMPLE SIZE TWO: both reversals sit at b = ⌊n/2⌋, the LAST b at which a
+two-row exists, where (n−b,b) is as square as it gets. May be a BOUNDARY effect of
+the two-row column rather than an interior crossing. Two sizes cannot separate
+those — OPEN, needs a third size.
+
+Limits: A=2/A=3. Out-of-cap values are exact evaluations of formulas verified in-cap
+and against each other — stronger than extrapolation, not a proof of either closed
+form. Nothing here BOUNDS anything; the closed forms compute the trace of X*X, they
+do not majorize it. At b=n−1 the Burau form returns −1.7e-141, roundoff at dps 140
+against a true zero, excluded from the monotonicity check rather than clamped.
 scope-(a). Nothing wired.

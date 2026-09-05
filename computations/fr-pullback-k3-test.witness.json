@@ -1,25 +1,25 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:05:14.162556+00:00",
-  "commitSha": "4c9a01550e94947b92374ac6610f6c7ed4e946eb",
+  "computedAt": "2026-09-05T04:20:17.202857+00:00",
+  "commitSha": "13f19a7b5fd5d1cb129666712ff9fb96e146c425",
   "assertions": [
     {
       "name": "data_loaded",
-      "computed": "2.22456607",
-      "expected": 2.22456607,
+      "computed": "2.22456607000000000000000000000000000000000000000000000000000",
+      "expected": "2.22456607000000000000000000000000000000000000000000000000000",
       "passed": true,
       "tolerance": "1e-10",
       "unit": "B(D) MeV",
-      "source": "AME 2020 deuteron binding"
+      "source": "AME 2020 deuteron binding — SELF-COMPARISON, see caveat"
     }
   ],
   "allPassed": true,
-  "durationMs": 5664,
+  "durationMs": 84806,
   "computation": "fr-pullback-k3-test",
   "scriptFile": "fr_pullback_k3_test.py",
-  "scriptHash": "f1e2ee26a4cf",
-  "scriptCommitSha": "c86e55ec9f547271b135371823248cac0a4b1560",
+  "scriptHash": "a782c8822c44",
+  "scriptCommitSha": "13f19a7b5fd5d1cb129666712ff9fb96e146c425",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,12 +29,10 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -45,7 +43,7 @@
   "description": "Empirical test of conj:depth-stratified-frobenius-reciprocity at k=3 with candidate distinguished knots {4_1, 5_2, 6_1} via Wenzl embedding into H_{3A}. FR-pulled-back weight normalized to preserve uniform Plancherel depth-3 total. Braid words sourced from _deprecated/hyperbolic_knot_db_extended.py canonical table.",
   "parameters": {
     "m_e_CAL1_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
-    "q0_f64": "1.1099785827513808"
+    "q0_50dps": "1.1099785827513808"
   },
   "data": {
     "candidate_knots": {
@@ -56,7 +54,7 @@
           1,
           -2
         ],
-        "hyperbolic_volume_cross_check": 2.0298832,
+        "hyperbolic_volume_cross_check": "2.0298832",
         "n_crossings": 4
       },
       "5_2": {
@@ -68,7 +66,7 @@
           1,
           -2
         ],
-        "hyperbolic_volume_cross_check": 2.828122,
+        "hyperbolic_volume_cross_check": "2.8281220",
         "n_crossings": 6
       },
       "6_1": {
@@ -80,7 +78,7 @@
           -2,
           -2
         ],
-        "hyperbolic_volume_cross_check": 3.1639633,
+        "hyperbolic_volume_cross_check": "3.1639633",
         "n_crossings": 6
       }
     },
@@ -90,7 +88,8 @@
       "qou/computations/atom-chi-rust-3he.witness.json",
       "qou/computations/atom-chi-rust-4he.witness.json"
     ],
-    "baseline_variance_no_fr": 1.82,
+    "baseline_variance_no_fr": "1.06598812603879472254583001197383447423825082736679535946073",
+    "baseline_provenance": "computed in-run via compute_atom_binding_no_fr (uniform weights, same self-normalized measure as the FR variants). Was the hardcoded literal 1.82 under the old textbook normalization — bean qou-7o7h.",
     "per_knot": {
       "4_1": {
         "per_atom": {
@@ -100,14 +99,14 @@
             "A": 2,
             "n_strands": 6,
             "knot_name": "4_1",
-            "B_MeV": "0.809954489748795255425200891644824461259570961275240704004452",
+            "B_MeV": "0.817244701793646273141876185814245160644819052612584846527166",
             "B_pred_sign": "+",
             "upstream_witness": "atom-chi-rust-d.witness.json",
             "upstream_commitSha": "29f06847243a8bd73b90dfa137d7335361558855",
             "atom_chi_errors_count": 0,
             "free_chi_errors_count": 0,
             "B_AME_MeV": "2.22456607000000000000000000000000000000000000000000000000000",
-            "ratio_pred_over_AME": 0.36409549739684527
+            "ratio_pred_over_AME": "0.367372636315380946694865388203212665490676594115536809624704"
           },
           "T": {
             "Z": 1,
@@ -115,14 +114,14 @@
             "A": 3,
             "n_strands": 9,
             "knot_name": "4_1",
-            "B_MeV": "2.78594082212997952363032741506697767871992625025721884709032",
+            "B_MeV": "2.50777100094941766341390226286462083769189480965336674404289",
             "B_pred_sign": "+",
             "upstream_witness": "atom-chi-rust-t.witness.json",
             "upstream_commitSha": "29f06847243a8bd73b90dfa137d7335361558855",
             "atom_chi_errors_count": 0,
             "free_chi_errors_count": 0,
             "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000958520993",
-            "ratio_pred_over_AME": 0.3284611839801078
+            "ratio_pred_over_AME": "0.295665085769146123012705995324978550851280158046401057128793"
           },
           "3He": {
             "Z": 2,
@@ -130,14 +129,14 @@
             "A": 3,
             "n_strands": 9,
             "knot_name": "4_1",
-            "B_MeV": "2.68688715406365164274909107465476356490289591332028013247140",
+            "B_MeV": "2.41860761515844026718288441879887910036410433548010226588080",
             "B_pred_sign": "+",
             "upstream_witness": "atom-chi-rust-3he.witness.json",
             "upstream_commitSha": "29f06847243a8bd73b90dfa137d7335361558855",
             "atom_chi_errors_count": 0,
             "free_chi_errors_count": 0,
             "B_AME_MeV": "7.71804280000000000000000000000000000000000000000000000000000",
-            "ratio_pred_over_AME": 0.3481306367028247
+            "ratio_pred_over_AME": "0.313370588610682525261829905737096858333579639579104467505778"
           },
           "4He": {
             "Z": 2,
@@ -145,17 +144,17 @@
             "A": 4,
             "n_strands": 12,
             "knot_name": "4_1",
-            "B_MeV": "13.9546777153261944517444221908957537793101435144875102349503",
+            "B_MeV": "9.19805695946050806506877958774362631567956363033518915537410",
             "B_pred_sign": "+",
             "upstream_witness": "atom-chi-rust-4he.witness.json",
             "upstream_commitSha": "1fb143089dfc0513c03acf935a9953a97a115433",
             "atom_chi_errors_count": 0,
             "free_chi_errors_count": 0,
             "B_AME_MeV": "28.2956740000000000000000000000000000000000000000000000000000",
-            "ratio_pred_over_AME": 0.49317354007281095
+            "ratio_pred_over_AME": "0.325069371362580303443868472182130254811373767959554140868816"
           }
         },
-        "max_over_min": 1.5014667307010572,
+        "max_over_min": "1.24252965262940695769550434047711118789809444186389061235690",
         "all_signs_correct": true
       },
       "5_2": {
@@ -166,14 +165,14 @@
             "A": 2,
             "n_strands": 6,
             "knot_name": "5_2",
-            "B_MeV": "0.825366440395523195920900249219410234392261360583003088532643",
+            "B_MeV": "0.832795371824809992919871068427671419220165131791578269987996",
             "B_pred_sign": "+",
             "upstream_witness": "atom-chi-rust-d.witness.json",
             "upstream_commitSha": "29f06847243a8bd73b90dfa137d7335361558855",
             "atom_chi_errors_count": 0,
             "free_chi_errors_count": 0,
             "B_AME_MeV": "2.22456607000000000000000000000000000000000000000000000000000",
-            "ratio_pred_over_AME": 0.37102356793364344
+            "ratio_pred_over_AME": "0.374363064804278882541740407120239597657877219979165766017458"
           },
           "T": {
             "Z": 1,
@@ -181,14 +180,14 @@
             "A": 3,
             "n_strands": 9,
             "knot_name": "5_2",
-            "B_MeV": "2.73208420193578983256677728138639974096476069722096642658775",
+            "B_MeV": "2.45929184114125033319524012912927264027670892275923770052455",
             "B_pred_sign": "+",
             "upstream_witness": "atom-chi-rust-t.witness.json",
             "upstream_commitSha": "29f06847243a8bd73b90dfa137d7335361558855",
             "atom_chi_errors_count": 0,
             "free_chi_errors_count": 0,
             "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000958520993",
-            "ratio_pred_over_AME": 0.32211151241004704
+            "ratio_pred_over_AME": "0.289949414387161334198909439621913179224550210574410514756125"
           },
           "3He": {
             "Z": 2,
@@ -196,14 +195,14 @@
             "A": 3,
             "n_strands": 9,
             "knot_name": "5_2",
-            "B_MeV": "2.65411543289258940521547399131739361408155142365752185326863",
+            "B_MeV": "2.38910807541546854750921558853567374123972086052159453320708",
             "B_pred_sign": "+",
             "upstream_witness": "atom-chi-rust-3he.witness.json",
             "upstream_commitSha": "29f06847243a8bd73b90dfa137d7335361558855",
             "atom_chi_errors_count": 0,
             "free_chi_errors_count": 0,
             "B_AME_MeV": "7.71804280000000000000000000000000000000000000000000000000000",
-            "ratio_pred_over_AME": 0.3438845186104163
+            "ratio_pred_over_AME": "0.309548435701272419415608266455282386000725580392168145686764"
           },
           "4He": {
             "Z": 2,
@@ -211,17 +210,17 @@
             "A": 4,
             "n_strands": 12,
             "knot_name": "5_2",
-            "B_MeV": "14.0308549658376336782765437341007052150297153656053640211387",
+            "B_MeV": "9.24826827236312669997365416043856381093805391082255686893651",
             "B_pred_sign": "+",
             "upstream_witness": "atom-chi-rust-4he.witness.json",
             "upstream_commitSha": "1fb143089dfc0513c03acf935a9953a97a115433",
             "atom_chi_errors_count": 0,
             "free_chi_errors_count": 0,
             "B_AME_MeV": "28.2956740000000000000000000000000000000000000000000000000000",
-            "ratio_pred_over_AME": 0.49586572724288647
+            "ratio_pred_over_AME": "0.326843893959307231910208400069868058662891504574959298334315"
           }
         },
-        "max_over_min": 1.5394225544216216,
+        "max_over_min": "1.29113233629229671281715295473059126924523644629107981871291",
         "all_signs_correct": true
       },
       "6_1": {
@@ -232,14 +231,14 @@
             "A": 2,
             "n_strands": 6,
             "knot_name": "6_1",
-            "B_MeV": "0.694280370593781950064496399787373148791522627204736421134850",
+            "B_MeV": "0.700529426786771588148440200031827250980853382223303559104551",
             "B_pred_sign": "+",
             "upstream_witness": "atom-chi-rust-d.witness.json",
             "upstream_commitSha": "29f06847243a8bd73b90dfa137d7335361558855",
             "atom_chi_errors_count": 0,
             "free_chi_errors_count": 0,
             "B_AME_MeV": "2.22456607000000000000000000000000000000000000000000000000000",
-            "ratio_pred_over_AME": 0.31209698824264726
+            "ratio_pred_over_AME": "0.314906100670128259282692466864707349861203889630171136748728"
           },
           "T": {
             "Z": 1,
@@ -247,14 +246,14 @@
             "A": 3,
             "n_strands": 9,
             "knot_name": "6_1",
-            "B_MeV": "2.98639687000888323903924195330014334857312984268976420233308",
+            "B_MeV": "2.68821197077996263951975196804007755540191726595337759484353",
             "B_pred_sign": "+",
             "upstream_witness": "atom-chi-rust-t.witness.json",
             "upstream_commitSha": "29f06847243a8bd73b90dfa137d7335361558855",
             "atom_chi_errors_count": 0,
             "free_chi_errors_count": 0,
             "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000958520993",
-            "ratio_pred_over_AME": 0.35209486287926645
+            "ratio_pred_over_AME": "0.316938995867403963268977385714605776003191077139223712651422"
           },
           "3He": {
             "Z": 2,
@@ -262,14 +261,14 @@
             "A": 3,
             "n_strands": 9,
             "knot_name": "6_1",
-            "B_MeV": "2.77369483818021800279866080704389189816912935842562142706921",
+            "B_MeV": "2.49674775049723206849571233016860777471831689957588577618798",
             "B_pred_sign": "+",
             "upstream_witness": "atom-chi-rust-3he.witness.json",
             "upstream_commitSha": "29f06847243a8bd73b90dfa137d7335361558855",
             "atom_chi_errors_count": 0,
             "free_chi_errors_count": 0,
             "B_AME_MeV": "7.71804280000000000000000000000000000000000000000000000000000",
-            "ratio_pred_over_AME": 0.3593780068413482
+            "ratio_pred_over_AME": "0.323494934557402566942970610394724394987588938943936120202389"
           },
           "4He": {
             "Z": 2,
@@ -277,27 +276,30 @@
             "A": 4,
             "n_strands": 12,
             "knot_name": "6_1",
-            "B_MeV": "14.1652057983089374880623587609102999018410076726862902842779",
+            "B_MeV": "9.33682399789343096056058337419623514041571732923570353979407",
             "B_pred_sign": "+",
             "upstream_witness": "atom-chi-rust-4he.witness.json",
             "upstream_commitSha": "1fb143089dfc0513c03acf935a9953a97a115433",
             "atom_chi_errors_count": 0,
             "free_chi_errors_count": 0,
             "B_AME_MeV": "28.2956740000000000000000000000000000000000000000000000000000",
-            "ratio_pred_over_AME": 0.5006138322878945
+            "ratio_pred_over_AME": "0.329973549945953963159194701430198663598390246128638022186503"
           }
         },
-        "max_over_min": 1.604032884478463,
+        "max_over_min": "1.04784743529503488611716078370927781088679470310197404821879",
         "all_signs_correct": true
       }
     },
-    "verdict": "FR conjecture PARTIAL support: empirically best K_3* = 4_1 (1.501×, baseline 1.82×); paper's named K_3* = 6_1 gives 1.604× (NOT empirically best). Paper's specific naming K_3* = 6_1 NOT validated by this test; general FR mechanism partially validated via 4_1, 5_2.",
-    "best_knot": "4_1",
-    "best_max_over_min": 1.5014667307010572,
+    "verdict": "FR conjecture MARGINAL support: K_3* = 6_1 (matches paper) is the best candidate at 1.0478× vs a no-FR baseline of 1.0660× — an improvement of 1.7%. 1 of 3 candidates beat the baseline at all; the others make the cross-atom variance WORSE. Both figures are under the self-normalized measure (bean qou-7o7h); the previously published 1.82× baseline was inflated ~53% by the textbook dim_q²/[n]_q! form, so the large apparent variance closure it implied was mostly a normalization artifact.",
+    "best_knot": "6_1",
+    "best_max_over_min": "1.04784743529503488611716078370927781088679470310197404821879",
     "paper_named_knot": "6_1",
-    "paper_named_knot_max_over_min": 1.604032884478463,
-    "paper_naming_validated": false
+    "paper_named_knot_max_over_min": "1.04784743529503488611716078370927781088679470310197404821879",
+    "paper_naming_validated": true
   },
+  "caveats": [
+    "SELF-FULFILLING ASSERTION (recorded, not repaired): `data_loaded` compares B_AME['D'] against a literal copy of the same number typed a few hundred lines away — x == x with a tolerance, so it can only pass and gates nothing. Noticed 2026-09-04 while clearing this producer's raw-float64 fields (the literal was the last one). Repairing it properly means rebuilding the four B_AME entries from the CODATA mass-excess table so the check has an independent second source — the same fix fr_pullback_borromean_h3a_test already carries as `b_ame_cross_check`. That is a content change to this producer's inputs and is deliberately NOT bundled into a normalization fix; it is the honest next step, not this one."
+  ],
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

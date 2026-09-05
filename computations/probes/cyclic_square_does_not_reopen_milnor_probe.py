@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: permutation cycles and integer linking numbers;
 # no q enters anywhere.
-"""The one non-monotone shape that breaks route 3's premise does NOT reopen route 3.
+"""The one non-monotone shape that breaks route 3's premise -- and it DOES reopen route 3.
+
+*** CORRECTED 2026-09-04. The filename and the original headline (\"does NOT reopen\")
+*** are WRONG and are kept only because this file is already merged and referenced.
+*** The MEASUREMENT below stands; the INFERENCE drawn from it does not. See
+*** `mixed_sign_cyclic_square_does_reopen_milnor_probe.py`, which computes the
+*** `mubar` this probe never computed and finds it NONZERO in 2 of this probe's
+*** OWN 188 all-positive spanning insertions (Delta = 2, mubar = 1), and in 563 of
+*** 3008 across all 16 inserted-sign patterns.
 
 Bean qou-768r, route 3 — follow-up answering sibling PR #6561 (`qou-kru4`).
 
@@ -27,14 +35,32 @@ adds a knotted summand to a single component -- and local knotting changes no
 Milnor invariant. Measured, it spans up to 3 DISTINCT components: 188 of 694
 insertions. The premise really does break.
 
-THE CONCLUSION SURVIVES ANYWAY, for a different reason than the one it was proved
-by. In every one of those 188 cases at least one pairwise linking number among the
-three spanned components is NONZERO -- so `Delta != 0` there and `mubar` is not a
-genuine integer in the first place. The insertion that joins three components is
-the same insertion that links them.
+THE CONCLUSION WAS CLAIMED TO SURVIVE, AND THAT CLAIM IS RETRACTED. In every one of
+those 188 cases at least one pairwise linking number among the three spanned
+components is NONZERO -- so `Delta != 0` there. That much is measured and stands. The
+step from it that this probe took, and that is now retracted, was: `Delta != 0` means
+`mubar` is "not a genuine integer in the first place", therefore no obstruction.
+
+    NOT AN INTEGER   -- true, `mubar` lives in Z/Delta
+    NO OBSTRUCTION   -- FALSE, a nonzero RESIDUE is still a nonvanishing invariant
+
+This probe never computed `mubar`; it stopped at `Delta`. Computing it (see
+`mixed_sign_cyclic_square_does_reopen_milnor_probe.py`), 2 of these very 188
+all-positive spanning insertions carry `Delta = 2` with `mubar = 1` --
+
+    4He, position 25, m=5,  lk = [0, -2, 0]
+    8Be, position 77, m=17, lk = [0, 0, -2]
+
+-- which is precisely the one bit route 3's own `Delta = 2` residual is about. The
+SCOPE note below already said "it does not touch the `Delta = 2` one-bit triples";
+that note was right and this headline was not.
 
     route 3's PREMISE is monotone-specific and does break;
-    route 3's CONCLUSION does not, on this shape.
+    route 3's CONCLUSION also fails on this shape, at Delta = 2.
+
+What is NOT affected: the unperturbed derived carrier, where `mubar = 0` on every
+triple, and `MilnorTriplesAreDefinedExactlyWhereTheyVanish.lean`, which concerns
+`Delta = 0`. Both are re-measured as controls in the correcting probe.
 
 SCOPE (a), and deliberately narrow. This tests ONE non-monotone shape -- the only
 one #6561 shows yields a trace cross term -- with all-positive inserted crossings,
@@ -155,11 +181,19 @@ def main() -> int:
         "yielding a Markov-trace cross term, making it the natural candidate to break "
         "that premise. It DOES: measured, it spans 3 distinct components in 188 of 694 "
         "insertions -- so the tempting reading that it is local knotting on one component "
-        "(its closure T(3,2) is a knot) is WRONG. But the conclusion survives for a "
+        "(its closure T(3,2) is a knot) is WRONG. CORRECTED 2026-09-04 -- the original "
+        "reading, that the conclusion survives for a "
         "different reason: in ALL 188 cases at least one pairwise linking number among "
         "the three spanned components is nonzero, so Delta != 0 and mubar is not a "
         "genuine integer there anyway. The insertion that joins three components is the "
-        "same one that links them. Scope (a), narrow: one shape, all-positive inserted "
+        "same one that links them -- IS RETRACTED. Delta != 0 means mubar lives in Z/Delta, "
+        "NOT that there is no obstruction; a nonzero residue is a nonvanishing "
+        "invariant. This probe never computed mubar. It is nonzero in 2 of these 188 "
+        "all-positive spanning insertions, at Delta = 2 with mubar = 1 -- exactly route "
+        "3's one-bit residual. See mixed_sign_cyclic_square_does_reopen_milnor_probe.py, "
+        "which also sweeps all 16 inserted-sign patterns (563 of 3008 nonzero) and "
+        "re-measures the UNPERTURBED carrier as a control (294 triples, 0 nonzero), so "
+        "route 3 at Delta = 0 and its Lean are untouched. Scope (a), narrow: one shape, all-positive inserted "
         "crossings, sampled word positions, 4 isotopes. NOT a proof that no non-monotone "
         "word reopens route 3, and the Delta = 2 one-bit triples are untouched. Nothing "
         "wired."
@@ -188,7 +222,9 @@ def main() -> int:
         "reading": ("the premise really does break -- but in every spanning case at least "
                     "one pairwise linking number is nonzero, so Delta != 0 and mubar is "
                     "not a genuine integer there. Route 3's PREMISE is monotone-specific "
-                    "and does break; route 3's CONCLUSION does not, on this shape."),
+                    "and does break; route 3's CONCLUSION ALSO FAILS on this shape, at "
+                    "Delta = 2 -- see the RETRACTED note above and "
+                    "mixed_sign_cyclic_square_does_reopen_milnor_probe.py."),
     })
     b.add_data("what_this_does_NOT_establish", {
         "other_non_monotone_words": ("NOT tested. This is one shape -- the one #6561 "
