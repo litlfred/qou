@@ -199,15 +199,23 @@ def main() -> int:
         if ".lake" in f.parts:
             continue
         for i, ln in enumerate(_strip_lean_comments(f.read_text()).splitlines(), 1):
-            if "wedderburnEmbed" in ln.replace("wedderburnEmbedOf", ""):
+            # The BARE identifier only. `wedderburnEmbedOf` and
+            # `wedderburnEmbedTotal` are real declarations that legitimately
+            # share the prefix; a substring test flags them, which would make
+            # this gate fire on good news. See the note below.
+            if re.search(r"\bwedderburnEmbed\b(?![A-Za-z0-9_'])", ln):
                 term_uses.append(f"{f.relative_to(ROOT)}:{i}")
     ok &= chk("no_term_level_use_of_the_name_remains",
               term_uses, [],
-              note="scans every non-.lake Lean source with COMMENTS STRIPPED. "
-                   "An earlier version of this check filtered on a leading "
-                   "backtick instead, which counted every doc mention as a "
-                   "use -- including the retirement note itself. Stripping is "
-                   "the only version that would actually catch a real use")
+              note="scans every non-.lake Lean source with COMMENTS STRIPPED, "
+                   "for the BARE name. Two earlier versions were wrong in "
+                   "opposite directions: filtering on a leading backtick "
+                   "counted every doc mention as a use (including the "
+                   "retirement note), and a plain substring test would flag "
+                   "the legitimate wedderburnEmbedOf / wedderburnEmbedTotal. "
+                   "Widened deliberately when qou-yos9 added the latter -- "
+                   "the gate means 'the retired opaque has no consumers', not "
+                   "'no identifier starts with these letters'")
 
     print()
     print("=" * 78)

@@ -194,6 +194,12 @@ import QOU.HeckeAlgebra.WedderburnConstruction
 -- `y_lam(q_0)`, and the difference is entirely in the coefficients.  Sharp: they
 -- agree on every decomposition only if the coefficients agree (bean qou-kp2z).
 import QOU.HeckeAlgebra.WedderburnTrace
+-- `WedderburnUnconditional` discharges the RSK hypothesis outright from
+-- `QOU.Mathlib.rskBurnsideHolds` (Schensted, axiom-clean), so
+-- `wedderburnEmbedTotal` is injective with no axiom and no hypothesis at all.
+-- It does NOT reclaim the name `wedderburnEmbed`: the bridge probe guards that
+-- no reference to the retired opaque survives (bean qou-yos9).
+import QOU.HeckeAlgebra.WedderburnUnconditional
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding

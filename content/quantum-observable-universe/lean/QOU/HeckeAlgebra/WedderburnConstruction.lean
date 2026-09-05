@@ -175,12 +175,32 @@ reached "by moving its obligation into a class binder, which is the §3b-cond
 pattern and is exactly what *conditional-proved ≠ premise-established* warns
 about", and was "treated as a RED FLAG and checked three ways".
 
-So the identity is available only conditionally, and `RSKDimIdentity` states the
-same obligation **as an explicit hypothesis on the theorem** rather than inside
-an ambient class binder — which is the difference the guard is complaining
-about. Discharging it here additionally needs the `numSYT` ↔ `dimSYT` bridge
-(`QOU/BraidKnot/SYTEncodingBridge.lean`), which is its own piece of work and is
-not attempted. -/
+So *that* declaration is available only conditionally, and `RSKDimIdentity`
+states the same obligation **as an explicit hypothesis on the theorem** rather
+than inside an ambient class binder — which is the difference the guard is
+complaining about.
+
+✅ **DISCHARGED 2026-09-05 (bean `qou-yos9`) — and the paragraph above cited the
+wrong declaration.** The corpus carries a *second*, independent route:
+`QOU/Mathlib/SchenstedRSKBurnside.lean:56` proves
+`rskBurnsideHolds (n : ℕ) : RSKBurnsideHolds n` universally, from
+`Schensted.rskEquiv` over a ~48-module in-repo Schensted development. Measured
+after building that cone (46 ok, 2 up-to-date, 0 errors), `rskBurnsideHolds`,
+`card_pairs_eq_sum` and `rskEquiv` each report exactly
+`[propext, Classical.choice, Quot.sound]` — no `sorryAx`, no class binder. And
+`RSKDimIdentity n` is *definitionally* `RSKBurnsideHolds n`, since
+`seminormalDim = QOU.Mathlib.dimSYT` and `heckeDim n = n.factorial` are both
+definitions, so the discharge is that theorem applied and nothing else.
+
+`QOU/HeckeAlgebra/WedderburnUnconditional.lean` carries it, along with
+`wedderburnEmbedTotal` — injective with no axiom and no hypothesis. The
+`numSYT` ↔ `dimSYT` bridge this docstring said would be needed
+(`QOU/BraidKnot/SYTEncodingBridge.lean`) is **not** on that route and was never
+required.
+
+Everything in this module stays stated over the hypothesis. The hypothesis form
+is what makes the dependency legible, and the discharge is one import away for
+any caller that wants it. -/
 def RSKDimIdentity (n : ℕ) : Prop :=
   ∑ lam : Nat.Partition n, seminormalDim lam ^ 2 = heckeDim n
 

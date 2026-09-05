@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-05T09:08:29Z
+updated_at: 2026-09-05T17:46:34Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -685,3 +685,40 @@ Both sibling docstrings corrected in place — `EpsEqFromMonotonicity`'s "still 
 section and `OneSeparatedComponentSufficesForMilnorVanishing`'s `PathCarrier` note.
 
 Probe `computations/probes/monotone_word_component_structure_probe.py`, 6/6, idempotent.
+
+
+## 2026-09-05 — the `pStart` half of the modelling assumption is PROVED
+
+`MonotoneWordComponentStructure.lean` named its own remainder: that `pStart` and
+`compIdx` really describe a monotone closure's positions and cycles, *"not attempted"*.
+The `pStart` half is now done, in `QOU/Mass/MonotoneWordPositionTracking.lean`
+(sorry-free, 0 errors).
+
+**Model.** `posAfter e g` is the position→strand map after runs `0…g-1`. `e_g` crossings
+of one adjacent pair compose to the identity when `e_g` is even and to a single swap when
+odd — which is why only parity survives and why this is a one-step recursion rather than
+an iteration.
+
+- `posAfter_of_le` — every position `≥ g+1` is untouched after `g` runs. **This is where
+  ascending order is used**: run `h < g` moves only positions `h, h+1 ≤ g`.
+- `posAfter_succ_self` — hence position `g+1` still holds **strand `g+1`** when `R_g`
+  begins, so the pair that run will cross is fixed before it starts.
+- `posAfter_self` — position `g` holds `pStart e g`: the recursion is the right one.
+- `crossing_pair_of_run` — run `g` crosses exactly `(pStart e g, g+1)`. That is the
+  sentence tier 1 was resting on, now a theorem.
+
+Non-vacuity exercises both branches: all-odd carries the left strand to `0` (maximally
+fused, matching `allOdd_compIdx`), all-even leaves position `g` holding strand `g`
+(maximally split, matching `allEven_compIdx`).
+
+**What remains is now exactly one thing:** that `compIdx` counts components — the cycle
+decomposition of `∏_{e_g odd} σ_g` into maximal consecutive odd blocks. Separate
+combinatorics, not attempted, and **measured not assumed**: probe P2 (components are
+consecutive strand intervals) and P4 (`μ = 1 + #even runs`), 414/414.
+
+Chain now reads: `pStart` **proved** to model the word · `compIdx` **measured** to model
+the cycles · everything above them proved from those two.
+
+Verified against the dependency compiled **from source** (`lean -o` into a scratch
+LEAN_PATH), not against a restored olean — this is the first file in the arc to import a
+QOU module, so the per-module cache staleness on main would otherwise reach it.
