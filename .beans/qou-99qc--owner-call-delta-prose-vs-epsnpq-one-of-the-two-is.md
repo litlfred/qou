@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-26T07:35:22Z
-updated_at: 2026-09-05T12:36:26Z
+updated_at: 2026-09-05T18:28:40Z
 ---
 
 ## Option (1) NARROWED, 2026-08-26 — the colour-weighted carve-out is closed
@@ -900,3 +900,49 @@ The symbol `z_J` is deliberately avoided — `qou-qlma` owns it for a different 
 The owner call is unchanged: `z = q` (`0.8798906` MeV, +12.470 %) or `z_D` (`0.4447004` MeV,
 −43.157 %) against CODATA `0.7823334` MeV, decided by what `ε` *means* — not by residual,
 which §NO FITTING's corollary forbids.
+
+
+### Correction: the registry count is 13, not eight (2026-09-05, PR #6832)
+
+The `qou-99qc` write-ups — PR #6832's body, its probe docstring, and this bean's
+robustness section — cited **"eight `blocked_on_rederivation` rows of the
+trace-convention registry"** as support for *a convention-C site is not
+repairable by substituting `z_D`*.
+
+**Measured:** `docs/coordination/trace-convention-registry.json` carries
+`blocked_on_rederivation` as a **top-level array with 13 entries over 12 distinct
+files** (`deltalambda_bareven_b4_magnitude_probe.py` appears twice). It is not a
+per-row `status` value at all — a `status` histogram of that file returns
+`agreed 4 / agreed-migration-pending 3 / disputed 1` and **zero**
+`blocked_on_rederivation`, which is why a naive status-keyed count reads 0 and a
+naive `grep -c` reads 4 (the key, a note, and two prose mentions).
+
+**Not staleness — my error.** The array held **13 at this branch's own base
+commit** as well as on current `main`, so 181 commits of drift did not make the
+figure wrong. It came from a corpus-grep report and I relayed it without opening
+the file. The registry did move in that window (+44/−15 lines) and the count did
+not, so the coincidence that would have excused it does not exist either.
+
+**Substance unaffected.** The registry states the claim in its own words:
+*"Sites that must NOT stay on convention C but cannot be migrated by substituting
+`z_D`, because the substitution changes the site's asserted RESULT rather than
+its spelling."* Only the cardinality was wrong; the corrected text now quotes
+that sentence instead of paraphrasing it.
+
+**Contamination surface, all four checked:**
+
+| carrier | state |
+|---|---|
+| probe docstring (`qbeta_skein_normalisation_admissibility_robustness_probe.py`) | fixed, producer re-run 13/13 |
+| its witness `caveats` | fixed by the re-run |
+| #6832 PR body | fixed |
+| this bean | this entry |
+| #6820 sibling comment | **no edit needed** — it makes the claim without a cardinality |
+
+**Two different eights — do not sweep the token.** The same probe says the (J)
+Skein normalisation is live in *"eight content blocks across five chapters"*
+(lines 17 and 378). That eight is `qou-8bxv`'s and is **correct**. A
+token-level fix would have broken a right number while repairing a wrong one —
+the failure mode AGENTS.md names for figures that differ only in what they count.
+
+No result changed: 13/13 before and after.
