@@ -264,3 +264,43 @@ not reliably enough across CPython versions. Re-verified against every form:
     Path.open        -> PRECIOUS   BLOCKED
     io.open          -> PRECIOUS   BLOCKED
     read (Path.read_text)          -> PRECIOUS   (reads still work)
+
+### 2026-09-05 — enumeration run: the guard holds, and it names the 95
+
+Ran the full audit with `QOU_IMPORT_WRITE_GUARD=1` on the fixed guard.
+
+**It held.** Tree dirty afterwards: **1 file** — the audit's own witness. The
+docstring records that an unguarded full run modified **111**. So the guard
+turns a run that rewrites a hundred committed witnesses into one that rewrites
+its own output and nothing else, which is what makes this audit safe to run in
+a working checkout at all.
+
+**And it produced the list this item wanted.** Of 2644 producers checked, 164
+unimportable, and the top cause is now the guard itself:
+
+    other:PermissionError            95   <- writes at import
+    in-repo-wiring:qou_substrate     36
+    in-repo-wiring:_path_bridge      18
+    other:SyntaxError                 9
+    optional-dep:matplotlib           1
+
+**95 producers write a file during import.** That is the population that wants
+an `if __name__ == "__main__":` guard, and it is now a concrete list rather
+than a suspicion — written to `.work/import-time-writers.txt`. Sample:
+`alpha_k_jones_markov_h3`, `basis_knot_tables`, `beta-decay-from-q`,
+`binding_ladder_catalog`, `borromean-axial-coupling`, `channel_product_mass`,
+`delta_lambda_dim_weight_proof`, …
+
+Note what the number means, and what it does not. `PermissionError` here is the
+guard reporting "this producer attempted a write while being imported" — it is
+NOT a claim that the producer is broken. Several may write deliberately at
+module scope. The list is the input to that judgement, not the judgement.
+
+Also confirms the `expect_errors` declaration works end to end: the witness
+carries 163 recorded exceptions and the error-row gate left the verdict alone,
+reporting `allPassed: true` on its two real assertions.
+
+- [x] Run with the guard on to enumerate the import-time writers — 95, listed.
+- [ ] Add `__main__` guards where the write is not intended. Needs a judgement
+      per file (some may write at module scope deliberately), so it is its own
+      pass and probably its own bean.

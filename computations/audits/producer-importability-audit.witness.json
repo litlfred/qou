@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T06:23:51.251013+00:00",
-  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
+  "computedAt": "2026-09-05T19:36:13.717249+00:00",
+  "commitSha": "4d590bc2a2258d30d35b46d6b3dfca7d9b5b2209",
   "assertions": [
     {
       "name": "in_repo_wiring_failures_are_reported_not_hidden",
@@ -10,7 +10,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "30 producers cannot import a module that lives in this repo; top causes {'in-repo-wiring:qou_substrate': 14, 'in-repo-wiring:_path_bridge': 14, 'optional-dep:matplotlib': 1, 'in-repo-wiring:witness_base': 1}. Each one owns at least one committed witness that cannot be regenerated, so no staleness check can ever fire on it. Reported, not fixed."
+      "source": "56 producers cannot import a module that lives in this repo; top causes {'other:PermissionError': 95, 'in-repo-wiring:qou_substrate': 36, 'in-repo-wiring:_path_bridge': 18, 'other:SyntaxError': 9}. Each one owns at least one committed witness that cannot be regenerated, so no staleness check can ever fire on it. Reported, not fixed."
     },
     {
       "name": "optional_dependency_failures_are_carved_out_separately",
@@ -27,8 +27,8 @@
   "durationMsBaseline": "builder-construction",
   "computation": "producer-importability-audit",
   "scriptFile": "producer_importability_audit.py",
-  "scriptHash": "7dd9d1036219",
-  "scriptCommitSha": "603eea7ef0f6d9f6daf031984b8f3a04b411b553",
+  "scriptHash": "cec4825fc4b0",
+  "scriptCommitSha": "4d590bc2a2258d30d35b46d6b3dfca7d9b5b2209",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [
@@ -53,12 +53,12 @@
   },
   "description": "Detects committed witnesses whose PRODUCER cannot be imported, so the witness can never be refreshed and no staleness mechanism sees it. Every existing check (scriptHash drift, q0Anchor, the raw-float64 ratchet) presupposes the producer can run; when it cannot, the witness reports clean forever while its numbers age. Real instance: proton-residual-rootcause carried a convention-C z_markov = 0.49932033403356124 invisibly through the entire C->D campaign because its producer raised TypeError on every run (fixed in 179f030c2). Method: import the module by file location in a subprocess — these scripts guard work behind __main__, so an import exercises the whole top level without running the compute. Classes are reported separately because they are not the same defect: in-repo-wiring (a module that IS in this repo is not on sys.path — real and fixable), optional-dep (snappy/matplotlib etc — an environment fact, NOT a producer defect), other, and heavy-at-import (not a failure). Excludes _deprecated/. Loads by file location rather than `import <stem>` because hyphenated filenames make `import beta-decay-from-q` a syntax error in the IMPORT STATEMENT — a first pass reported 24 bogus SyntaxErrors that all parse cleanly under ast.parse, inflating 90 real findings to 109. This is a DETECTOR: it fixes nothing and does not claim every hit is a defect.",
   "data": {
-    "producers_checked": 2582,
-    "unimportable_total": 34,
+    "producers_checked": 2644,
+    "unimportable_total": 164,
     "counts": {
-      "in-repo-wiring": 30,
-      "optional-dep": 1,
-      "other": 3
+      "other": 107,
+      "in-repo-wiring": 56,
+      "optional-dep": 1
     },
     "heavy_at_import": [
       "computations/hadron_knot_table.py",
@@ -73,8 +73,10 @@
       "computations/substrate/lever1_qholonomic_order3_fit.py"
     ],
     "causes": {
-      "in-repo-wiring:qou_substrate": 14,
-      "in-repo-wiring:_path_bridge": 14,
+      "other:PermissionError": 95,
+      "in-repo-wiring:qou_substrate": 36,
+      "in-repo-wiring:_path_bridge": 18,
+      "other:SyntaxError": 9,
       "optional-dep:matplotlib": 1,
       "in-repo-wiring:witness_base": 1,
       "other:ImportError": 1,
@@ -83,6 +85,543 @@
       "other:NameError": 1
     },
     "findings": {
+      "other": [
+        {
+          "producer": "computations/alpha/alpha_k_jones_markov_h3.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/alpha/alpha-k-jones-markov-h3.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/alpha_em/alpha_em_b2_canonical_scale_ratio_probe.py",
+          "error": "SyntaxError: from __future__ imports must occur at the beginning of the file",
+          "cause": "SyntaxError"
+        },
+        {
+          "producer": "computations/alphaem_dilog_bloch_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/alphaem-dilog-bloch-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/basis_knot_tables.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/basis-knot-tables.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/beta-decay-from-q.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/beta-decay-from-q.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/binding_a3plus_arccosh_growth_split.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/binding-a3plus-arccosh-growth-split.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/binding_a3plus_full_theta_assembly.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/binding-a3plus-full-theta-assembly.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/binding_a3plus_joint_ji_combiner.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/binding-a3plus-joint-ji-combiner.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/binding_ladder_catalog.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/binding-ladder-catalog.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/borromean-axial-coupling.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/borromean-axial-coupling.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/branching-qvalue-chain.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/branching-qvalue-chain.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/ch-bond-writhe-lp.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/ch-bond-writhe-lp.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/channel_product_mass.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/channel-product-mass.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/delta_lambda_binding_full_evaluation.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/delta-lambda-binding-full-evaluation.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/delta_lambda_dim_weight_proof.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/delta-lambda-dim-weight-proof.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/delta_lambda_multi_atom_crosscheck.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/delta-lambda-multi-atom-crosscheck.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/delta_lambda_qlommel_recurrence_precheck.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/delta-lambda-qlommel-recurrence-precheck.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/delta_lambda_sign_rule_proof.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/delta-lambda-sign-rule-proof.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/deltalambda/deltalambda_additive_signchanging_term_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/deltalambda/deltalambda-additive-signchanging-term.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/deltalambda/deltalambda_kappa_interface_residual_simplex_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/deltalambda/deltalambda-kappa-interface-residual-simplex.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/deltalambda/deuteron_trefoil_qinvariant_closed_form_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/deltalambda/deuteron_trefoil_qinvariant_closed_form.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/deltalambda/habiro_magnitude_a3_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/deltalambda/habiro-magnitude-a3.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/deltalambda/mu3_target_robustness_audit_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/deltalambda/mu3-target-robustness-audit.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/entanglement_orders.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/entanglement-orders.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/free-neutron-decay.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/free-neutron-decay.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/gram-matrix-dual.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/gram-matrix-dual.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/h2-integer-lp.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/h2-integer-lp.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/h2-molecular-binding.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/h2-molecular-binding.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/inverse-markov-qvalues.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/inverse-markov-qvalues.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/markov-free-energy-qvalues.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/markov-free-energy-qvalues.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/mass-from-q-symbolic.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/mass-from-q-symbolic.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/meson_mass_from_hecke.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/meson-mass-from-hecke.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/meson_per_knot_density.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/meson-per-knot-density.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/meson_vol_density.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/meson-vol-density.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/molecular-frobenius-lp.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/molecular-frobenius-lp.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/molecular-trefoil-scan.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/molecular-trefoil-scan.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/nf-qvalues.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/nf-qvalues.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/ocneanu_cancellation_derivation.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/ocneanu-cancellation-derivation.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/per_nucleon_shift_derivation.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/per-nucleon-shift-derivation.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/photon_operator_table.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/photon-operator-table.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/probe_option_e_h6_entry_point.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/probe-option-e-h6-entry-point.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/probes/delta_lambda_bar_involution_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/probes/delta-lambda-bar-involution.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/probes/delta_lambda_h6_branching_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/probes/delta-lambda-h6-branching.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/probes/delta_lambda_m_pi_constraint_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/probes/delta-lambda-m-pi-constraint-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/probes/gs_filtration_jet_shape_magic_probe.py",
+          "error": "SyntaxError: from __future__ imports must occur at the beginning of the file",
+          "cause": "SyntaxError"
+        },
+        {
+          "producer": "computations/probes/gswz_287_nahm_efactor_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/probes/gswz_psi_section_division.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_5adic_cyclic_qdilog_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/probes/gswz_epsm_5adic_cyclic_qdilog.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_canonicity_criterion_correction_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/probes/gswz_epsm_canonicity_criterion_correction.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_representative_obstruction_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/probes/gswz_epsm_representative_obstruction.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/probes/kaon_pion_ratio_7_8_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/probes/kaon-pion-ratio-7-8.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/probes/meson_lepton_knot_dictionary_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/probes/meson-lepton-knot-dictionary-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/probes/qbeta_g3_annihilator_certification.py",
+          "error": "ImportError: cannot import name 'tet_norm' from 'qbeta_g3_fourone_index_assembly' (/workspace/qou/computations/probes/qbeta_g3_fourone_index_assembly.py)",
+          "cause": "ImportError"
+        },
+        {
+          "producer": "computations/probes/qbeta_habiro_integrality_kill_test.py",
+          "error": "SyntaxError: from __future__ imports must occur at the beginning of the file",
+          "cause": "SyntaxError"
+        },
+        {
+          "producer": "computations/probes/six_fifths_deviation_h4_correction_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/probes/six-fifths-deviation-h4-correction-probe.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/probes/symbolic_nf_q_degree_magic_probe.py",
+          "error": "SyntaxError: from __future__ imports must occur at the beginning of the file",
+          "cause": "SyntaxError"
+        },
+        {
+          "producer": "computations/probes/wlambda_q0_continuation.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/probes/wlambda-q0-continuation.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/qbeta/qbessel_jackson_contiguity.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/qbeta/qbessel-jackson-contiguity.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/qbeta/qbessel_mu_lambda_vs_qlommel_zeros.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/qbeta/qbessel-mu-lambda-vs-qlommel-zeros.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/qbeta/qbessel_offshell_resolvent_quadratic_correction.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/qbeta/qbessel-offshell-resolvent-quadratic-correction.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/qbeta/qbessel_second_kind_quadratic_action_gate.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/qbeta/qbessel-second-kind-quadratic-action-gate.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/qbeta/qbessel_second_order_qdifference_equation.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/qbeta/qbessel-second-order-qdifference-equation.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/qbeta/qbeta_chi_witness_convention_split_probe.py",
+          "error": "SyntaxError: from __future__ imports must occur at the beginning of the file",
+          "cause": "SyntaxError"
+        },
+        {
+          "producer": "computations/qbeta/qbeta_coherent_collapse_sinh_cosh.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/qbeta/qbeta-coherent-collapse-sinh-cosh.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/qbeta/qbeta_computable_observables_vs_row_cap_probe.py",
+          "error": "SyntaxError: from __future__ imports must occur at the beginning of the file",
+          "cause": "SyntaxError"
+        },
+        {
+          "producer": "computations/qbeta/qbeta_derived_w_overdetermined_test_probe.py",
+          "error": "SyntaxError: from __future__ imports must occur at the beginning of the file",
+          "cause": "SyntaxError"
+        },
+        {
+          "producer": "computations/qbeta/qbeta_l1_ceiling_is_one_point_of_a_family_probe.py",
+          "error": "SyntaxError: from __future__ imports must occur at the beginning of the file",
+          "cause": "SyntaxError"
+        },
+        {
+          "producer": "computations/qbeta/qbeta_perlambda_collapse_cancellation_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/qbeta/qbeta-perlambda-collapse-cancellation.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/qbeta/qbeta_qbessel_contiguity_cfinite.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/qbeta/qbeta-qbessel-contiguity-cfinite.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/qbeta/qbeta_qbessel_crossanchor_smoothness_refutation.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/qbeta/qbeta-qbessel-crossanchor-smoothness-refutation.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/qbeta/qbeta_reeb_tower_jacobi_anger.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/qbeta/qbeta-reeb-tower-jacobi-anger.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/qbeta/qbeta_row_cap_sweep_of_physical_numbers_probe.py",
+          "error": "SyntaxError: from __future__ imports must occur at the beginning of the file",
+          "cause": "SyntaxError"
+        },
+        {
+          "producer": "computations/qbeta/qbeta_silver_rationals.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/qbeta/qbeta-silver-rationals.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/alternating_tower_borromean_winding_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/alternating-tower-borromean-winding-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/bar_parity_delta_lambda_prune_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/bar-parity-delta-lambda-prune-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/deformation_selection_5g_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/deformation-selection-5g-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/deuteron_tower_fusion_frame_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/deuteron-tower-fusion-frame-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/e_unit_decay_width_reconcile_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/e-unit-decay-width-reconcile-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/e_unit_parity_constraint_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/e-unit-parity-constraint-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/frakV_askey_wilson_recurrence_tie_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/frakV-askey-wilson-recurrence-tie-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/frakV_descent_zeta4_partner_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/frakV-descent-zeta4-partner-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/frakV_zeta4_fibre_vs_observable_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/frakV-zeta4-fibre-vs-observable-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/gauss_linking_channel_slope_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/gauss-linking-channel-slope-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/hoefsmit_toroidal_ladder_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/hoefsmit-toroidal-ladder-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/lever1_binding_core_characterization.py",
+          "error": "lever1_binding_core_characterization: cannot import qou_substrate.constants, so the substrate q0 is unavailable. Refusing to fall back to a hardcoded pin — that",
+          "cause": "lever1_binding_core_characterization"
+        },
+        {
+          "producer": "computations/substrate/lever1_binding_core_root_distribution.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/lever1-binding-core-root-distribution.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/lever1_binding_monodromy_hyperbolicity.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/lever1-binding-monodromy-hyperbolicity.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/lever1_color_eq_intrinsic_tau_rapidity.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/lever1-color-eq-intrinsic-tau-rapidity.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/lever1_color_eq_lambda_sw_rapidity.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/lever1-color-eq-lambda-sw-rapidity.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/lever1_color_eq_monodromy_integrality.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/lever1-color-eq-monodromy-integrality.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/lever1_lambda_sw_no_shortcut.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/lever1-lambda-sw-no-shortcut.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/lever1_lw_depth2_recurrence_test.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/lever1-lw-depth2-recurrence-test.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/lever1_qinvolution_kernel_test.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/lever1-qinvolution-kernel-test.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/lever1_trB_geometric_target.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/lever1-trB-geometric-target.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/lever1_trB_quantum_integer_form.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/lever1-trB-quantum-integer-form.witness.json",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/toroidal_level_selection_hopf_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/toroidal-level-selection-hopf-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/toroidal_level_selection_three_strand_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/toroidal-level-selection-three-strand-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/whipple_gamma_constant_gridverify.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/whipple-gamma-constant-gridverify.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/whipple_observable_ratio_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/whipple-observable-ratio-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/whipple_physical_windings_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/whipple-physical-windings-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/whipple_rotation_involution_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/whipple-rotation-involution-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/wlambda_identity_i_structure_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/wlambda-identity-i-structure-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/zeropoint_unit_candidate_gate_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/zeropoint-unit-candidate-gate-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/substrate/zeta4_complex_volume_moderator_probe.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/substrate/zeta4-complex-volume-moderator-probe.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/t35-weak-vertex.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/t35-weak-vertex.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/u1_hypercharge_assignment.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/u1-hypercharge-assignment.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/unified-mass-molecular.py",
+          "error": "PermissionError: QOU_IMPORT_WRITE_GUARD: import-time write to /workspace/qou/computations/unified-mass-molecular.witness.json.tmp",
+          "cause": "PermissionError"
+        },
+        {
+          "producer": "computations/universal-ilp.py",
+          "error": "NameError: name 'apply_atom_nf' is not defined. Did you mean: 'build_atom_nf'?",
+          "cause": "NameError"
+        }
+      ],
       "in-repo-wiring": [
         {
           "producer": "computations/alpha_em/alpha_em_count_carrying_object_probe.py",
@@ -130,6 +669,16 @@
           "cause": "qou_substrate"
         },
         {
+          "producer": "computations/probes/chain_triple_magnus_coefficient_is_the_product_probe.py",
+          "error": "ModuleNotFoundError: No module named '_path_bridge'",
+          "cause": "_path_bridge"
+        },
+        {
+          "producer": "computations/probes/ck_membership_payoff_run_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
           "producer": "computations/probes/cyclic_square_does_not_reopen_milnor_probe.py",
           "error": "ModuleNotFoundError: No module named '_path_bridge'",
           "cause": "_path_bridge"
@@ -155,6 +704,26 @@
           "cause": "_path_bridge"
         },
         {
+          "producer": "computations/probes/gswz_287_f1_vs_f5_subscript_resolution_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_287_normalisation_underdetermined_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_52_galois_norm_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_alpha_line_unit_structure_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
           "producer": "computations/probes/gswz_epsm_alpha_teichmuller_order_probe.py",
           "error": "ModuleNotFoundError: No module named 'qou_substrate'",
           "cause": "qou_substrate"
@@ -165,12 +734,57 @@
           "cause": "qou_substrate"
         },
         {
+          "producer": "computations/probes/gswz_epsm_chi_eigenspace_place_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_descent_m2_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_descent_m3_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
           "producer": "computations/probes/gswz_epsm_field_bracketing_probe.py",
           "error": "ModuleNotFoundError: No module named 'qou_substrate'",
           "cause": "qou_substrate"
         },
         {
+          "producer": "computations/probes/gswz_epsm_field_variation_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_five_term_validation_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_h_lift_m12_m24_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_h_lift_m8_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
           "producer": "computations/probes/gswz_epsm_m3_one_two_relation_closure_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_m6_rwf_value_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_m_lattice_eigenspace_census_probe.py",
           "error": "ModuleNotFoundError: No module named 'qou_substrate'",
           "cause": "qou_substrate"
         },
@@ -190,12 +804,52 @@
           "cause": "qou_substrate"
         },
         {
+          "producer": "computations/probes/gswz_epsm_second_element_feasibility_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_v1_computable_m_terminal_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_v1_lift_and_value_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_epsm_v2_vacuity_confirmation_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/gswz_program_convention_immunity_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
           "producer": "computations/probes/milnor_minspan_triples_share_no_summand_probe.py",
           "error": "ModuleNotFoundError: No module named '_path_bridge'",
           "cause": "_path_bridge"
         },
         {
           "producer": "computations/probes/milnor_mubar_vanishes_on_every_triple_probe.py",
+          "error": "ModuleNotFoundError: No module named '_path_bridge'",
+          "cause": "_path_bridge"
+        },
+        {
+          "producer": "computations/probes/milnor_one_separated_component_and_the_chain_residual_probe.py",
+          "error": "ModuleNotFoundError: No module named '_path_bridge'",
+          "cause": "_path_bridge"
+        },
+        {
+          "producer": "computations/probes/milnor_vanishing_is_generic_for_monotone_probe.py",
+          "error": "ModuleNotFoundError: No module named '_path_bridge'",
+          "cause": "_path_bridge"
+        },
+        {
+          "producer": "computations/probes/mixed_sign_cyclic_square_does_reopen_milnor_probe.py",
           "error": "ModuleNotFoundError: No module named '_path_bridge'",
           "cause": "_path_bridge"
         },
@@ -208,6 +862,16 @@
           "producer": "computations/probes/pairing_parity_b3_sign_probe.py",
           "error": "ModuleNotFoundError: No module named '_path_bridge'",
           "cause": "_path_bridge"
+        },
+        {
+          "producer": "computations/probes/qbeta_deformed_one_loop_parity_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/probes/qbeta_nz_even_series_fourone_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
         },
         {
           "producer": "computations/probes/r5full_anchor_gate_divisibility_probe.py",
@@ -233,6 +897,11 @@
           "producer": "computations/q0_value_drift_audit.py",
           "error": "ModuleNotFoundError: No module named 'qou_substrate'",
           "cause": "qou_substrate"
+        },
+        {
+          "producer": "computations/qbeta/qbeta_5two_barodd_antisym_offdiagonal_probe.py",
+          "error": "ModuleNotFoundError: No module named 'qou_substrate'",
+          "cause": "qou_substrate"
         }
       ],
       "optional-dep": [
@@ -240,23 +909,6 @@
           "producer": "computations/bring_chiral_fibre_figure.py",
           "error": "ModuleNotFoundError: No module named 'matplotlib'",
           "cause": "matplotlib"
-        }
-      ],
-      "other": [
-        {
-          "producer": "computations/probes/qbeta_g3_annihilator_certification.py",
-          "error": "ImportError: cannot import name 'tet_norm' from 'qbeta_g3_fourone_index_assembly' (/workspace/qou/computations/probes/qbeta_g3_fourone_index_assembly.py)",
-          "cause": "ImportError"
-        },
-        {
-          "producer": "computations/substrate/lever1_binding_core_characterization.py",
-          "error": "lever1_binding_core_characterization: cannot import qou_substrate.constants, so the substrate q0 is unavailable. Refusing to fall back to a hardcoded pin — that",
-          "cause": "lever1_binding_core_characterization"
-        },
-        {
-          "producer": "computations/universal-ilp.py",
-          "error": "NameError: name 'apply_atom_nf' is not defined. Did you mean: 'build_atom_nf'?",
-          "cause": "NameError"
         }
       ]
     },
