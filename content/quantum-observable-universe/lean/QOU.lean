@@ -1469,6 +1469,12 @@ import QOU.Hecke.BarWeightFamily
 -- because `mass-theory`'s Wigner energy `-Delta_W . T(T+1)/A` is built from
 -- self-conjugate shadow prices at k = 4 and k = 5.
 import QOU.Hecke.SelfConjugateRowCap
+-- `IsospinClassSingleton`: `mass-coefficient-shadow-price-proof`'s own rule makes
+-- `c(lambda) = 0` the ISOSPIN-type scaling class.  At the quartet level `n = 4`
+-- that class has exactly ONE member, `(2,2)` -- so the Wigner coefficient is
+-- selected rather than drawn from a menu, which is the one row of
+-- `mass-formula-regime-switching-table1-data` its fit-shape QA note does not bite.
+import QOU.Hecke.IsospinClassSingleton
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
 
