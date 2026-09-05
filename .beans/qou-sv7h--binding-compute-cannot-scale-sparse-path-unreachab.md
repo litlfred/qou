@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-05T06:36:26Z
+updated_at: 2026-09-05T07:18:08Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -153,3 +153,25 @@ function is otherwise correct.
 **So the arc's remaining item is step 3 alone** — the builder is still float64
 (`math.sqrt`, `1.0` literals, no `mp.dps`), which is why the Python family
 agrees with the Rust MPFR reference only to ~1e-16.
+
+
+### Cross-reference for the sign claim (from `qou-0wqd` / PR #6708, 2026-09-05)
+
+The claim section above rests its "the sign survives a change of the underlying
+representation" argument on the accumulator values *"old braid-violating:
+-0.0319 at k=4 to -2.1955 at k=8; corrected: -0.0896 to -2.0200"*. Those are the
+2026-08-31 audit's step-2 table, which PR #6708 **retires**: its *corrected*
+column is what today's `main` already produces WITH the braid-violating
+matrices, and its *current* column reproduces on no tree measured there.
+
+**The conclusion is strengthened, not weakened.** Varying only the matrix family
+moves the accumulator by `1e-14`, and for a proved reason — the consumers take
+traces, and `Tr(ABA) - Tr(BAB) = Tr(B) - Tr(A) = 0` follows from the quadratic
+relation alone in any dimension. So the sign is invariant under that change by a
+structural argument rather than by two numerical runs that happened to agree in
+sign. Quote the invariance, not the table.
+
+**And it narrows the falsifier usefully:** since the representation cannot move
+the accumulator at all, the sign cannot be traced to anything in the seminormal
+family — the free-choice candidates worth checking are the ones OUTSIDE it (the
+LP objective's ordering, an orientation, a `w_0` convention).
