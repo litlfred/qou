@@ -1,11 +1,11 @@
 ---
 # qou-8na1
 title: y_0* = 0 is forced by the trace-form radical, so the LP shadow price prices nothing
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-16T13:18:20Z
-updated_at: 2026-08-21T16:21:57Z
+updated_at: 2026-09-05T18:20:15Z
 ---
 
 
@@ -446,3 +446,26 @@ quotient?  Not settled.
 **Not done, and a separate decision:** wiring O3' into `hecke_core_legacy`.
 It recomputes every binding number in the corpus, so it is its own change with
 its own gate — not a follow-on to these three.
+
+
+## ✅ RESOLVED 2026-09-05 by owner ruling — the block now says it (checked, not assumed)
+
+This bean asks for a content adjudication of `prop:mass-coefficient-shadow-price`,
+whose reading of `y₀*` as a shadow price the `y₀ ≡ 0` identity kills. The
+adjudication happened **today**, in `1b26c6d28d` — *"O2 (owner ruling): say WHICH
+program, and stop calling `1/[k]_q!` an LP dual"* — and the block carries it:
+
+- line 19: *"and by strong duality $y_0^\ast = 0$. Any quantity recovered by
+  dividing by $y_0^\ast$ is undefined"*
+- line 36: *"…and it is not $y_0^\ast$, which is $0$."*
+
+So consequence 3 (the shadow-price reading) is settled and disclosed in the
+block itself, and consequence 1 (`a_K^{dual_ratio}` as `0/0`) follows from it —
+the guard in `aK_via_lp_dual_hecke_basis.py` is correct to fire, and the block
+now says why it is an identity rather than noise. Consequence 2 is a historical
+note about a formulation move that could not have helped; nothing to decide.
+
+The fact itself (exact in ℚ(q), 18/18, plus `y_0_eq_zero_of_radical` in Lean)
+is unchanged and remains this bean's durable contribution.
+
+Nothing left to adjudicate. Closing.

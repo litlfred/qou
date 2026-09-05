@@ -3,8 +3,9 @@
 title: 'Balanced D-function theta-limit: derive the balanced lattice CLASS (not the extension — see scope note)'
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-01T21:33:57Z
-updated_at: 2026-08-01T21:50:00Z
+updated_at: 2026-09-05T18:21:53Z
 ---
 
 Run the recentring + theta-limit machinery of
@@ -44,3 +45,18 @@ Follow-on bean to open once this resolves: the Friedrichs-vs-Krein selection
 principle (needs owner framing — candidate routes are minimal-form/Friedrichs
 distinguished, a dual-mode positivity/entropy criterion, or accepting
 non-selection as physical).
+
+
+
+## Reclassified 2026-09-05 — not an owner ruling, and never was
+
+Triaged into the owner-gated Cluster 7 as a "Friedrichs-vs-Krein framing"
+call. Re-read: this bean asks nobody to decide anything. It proposes running the
+recentring + theta-limit machinery on the balanced family's D-function, and it
+already carries its own **scope correction** stating exactly what that can and
+cannot deliver (the class-level result fixes the *coset*, not the *extension*,
+so the conjecture's closing question stays open either way).
+
+That is open research, which the **2026-07-11 general reversal** put in scope
+for all agents with no per-item sign-off. Off the owner-gated queue; open as
+work.
