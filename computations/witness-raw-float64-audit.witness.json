@@ -3,8 +3,8 @@
   "name": "witness-raw-float64-audit",
   "description": "Witnesses carrying raw float64 JSON numbers. Enforces the stated NO-FLOAT64 rule, which the padding audit does not: that gate catches only FAKE precision (float64 padded past ~17 digits), so honest float64 passes it. Ratchet only \u2014 draining is PR #4677.",
   "data": {
-    "dirty_witnesses": 1024,
-    "total_fields": 33946,
+    "dirty_witnesses": 1023,
+    "total_fields": 33924,
     "lp_dual_carved_out_fields": 379,
     "lp_dual_carved_out_by_file": {
       "computations/a-K-via-lp-dual-full.witness.json": 129,
@@ -36,7 +36,7 @@
       "y0_star",
       "y_star"
     ],
-    "ephemeral_duration_carved_out_fields": 72,
+    "ephemeral_duration_carved_out_fields": 73,
     "ephemeral_duration_carved_out_by_file": {
       "computations/atom-mass-derived.witness.json": 10,
       "computations/derived-chi-catalogue-sweep.witness.json": 6,
@@ -65,6 +65,7 @@
       "computations/qbeta/qbeta-disjoint-support-factorisation.witness.json": 1,
       "computations/qbeta/qbeta-habiro-phase5q-dn-refactorize.witness.json": 1,
       "computations/qbeta/qbeta-layout-conflict.witness.json": 1,
+      "computations/qbeta/qbeta-loop-value-pinned.witness.json": 1,
       "computations/qbeta/qbeta-strand-multiplicity.witness.json": 1,
       "computations/qbeta/qbeta-tower-log-z-and-roast.witness.json": 1
     },
@@ -101,9 +102,9 @@
   "scriptFile": "witness_raw_float64_audit.py",
   "scriptHash": "9eb501eed27a",
   "scriptCommitSha": "d1bc358ade1369639d19fd60f10e64ad7e7886d3",
-  "commitSha": "7ab13c341df7d35bc2b95c7d3c4e0c6bb25368b3",
+  "commitSha": "5682a4360eefa2cbfb4afb6fd7694a5dc44b88b9",
   "engine": "python",
-  "computedAt": "2026-09-05T05:53:02.326091+00:00",
+  "computedAt": "2026-09-05T06:09:43.186034+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
