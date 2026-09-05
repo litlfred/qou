@@ -30,6 +30,20 @@
   "miss_f_pct_vs_required": "12.4048921830469711818379768373839572165246573492301377533672694836518",
   "miss_E_pct_vs_AME": "22.00416867899056849680329877976927828412824514576700548459324775044995",
   "bracket_fstd_lt_freq_lt_W21": true,
+  "self_normalized_companion": {
+    "why": "W_lambda = d_q^2/[n]_q! is a probability measure at q=1 only; at q_0 it sums to Z(3) = 0.98744023, recorded above as gate_Z3. n is fixed at 3 here, but section [3] compares W_(2,1) against an EXPERIMENTAL magnitude (f_required from AME), not against another W-weighted quantity -- so the 1.27% defect does NOT cancel the way it does in a ratio of two weights at one n. Bean qou-uk8o; docs/audits/2026-09-04-plancherel-convention-gap.md",
+    "gate_Wlambda_n3_selfnorm": {
+      "(3,)": "0.1654613850336068774825346635491931792341286772958966343607660402835298",
+      "(2, 1)": "0.6690772299327862450349306729016136415317426454082067312784679194329404",
+      "(1, 1, 1)": "0.1654613850336068774825346635491931792341286772958966343607660402835298"
+    },
+    "f_pn_pred_selfnorm": "0.6690772299327862450349306729016136415317426454082067312784679194329404",
+    "E_pred_selfnorm_MeV": "1.682160825320967733302632059952599165438039119947855614666229908512398",
+    "miss_f_pct_vs_required_selfnorm": "13.83462896666580474274196487260930991268282884604820548243507572513485",
+    "miss_E_pct_vs_AME_selfnorm": "24.38251662027704580117505796849366728440337935813746975067361865135051",
+    "bracket_survives": true,
+    "verdict_unchanged": "The REFUTE verdict and the bracket both survive: the upper edge moves 0.66067 -> 0.66908, so the required 0.58776 is still strictly inside (0.50823, 0.66908) and the miss widens slightly rather than closing."
+  },
   "bring_coordinate_crosscheck": {
     "z_markov_bond_factor": "0.6126880371464652515958298639458992480263083915450636084720501751483235",
     "z0_color_fibre": "0.104388058259181637833117159349806602633660861250240884082432805203721",
@@ -50,10 +64,10 @@
     "docs/audits/2026-06-20-chirality-forces-complete-graph-topology.md",
     "docs/coordination/s5-so3-keystone.md"
   ],
-  "scriptHash": "61e64e783392",
-  "scriptCommitSha": "d1e8e0dee29ecb44a97a453f1d0d1c73443ca1ef",
-  "commitSha": "5d7ae1c4a2112b50f87ce2af5bbe965e9347801a",
-  "computedAt": "2026-08-29T04:13:19.931845+00:00",
+  "scriptHash": "73ece4fc29db",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
+  "commitSha": "a8550d2f13a15cc1af7fd75adab12490de131b97",
+  "computedAt": "2026-09-05T06:22:10.262115+00:00",
   "durationMs": 0,
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
