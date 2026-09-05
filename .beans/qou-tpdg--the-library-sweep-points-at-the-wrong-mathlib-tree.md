@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T11:48:55Z
-updated_at: 2026-09-05T12:00:49Z
+updated_at: 2026-09-05T12:12:58Z
 ---
 
 ## 2026-09-05 — measured, fixed, verified. PR #6827
@@ -59,3 +59,36 @@ overlay-masking trap (`LEAN_PATH="$SP/oleans:$LP"`, overlay first) and is NOT
 edited here — changing the primary Lean verification guidance is not a passing
 change. And `scripts/lean-content-sweep.sh` was not audited for the same
 LEAN_PATH defect.
+
+
+## 2026-09-05 (cont.) — the SIBLING gate had the same pair, plus two more
+
+`scripts/lean-content-sweep.sh` delegates its whole LEAN_PATH + shadow build to
+`scripts/lean-shadow-verify.sh`, which carried BOTH defects (root-only package
+glob; real `cp -a`) plus two of its own:
+
+3. **The documented `SHADOW=<dir>` reuse path never created its directory** —
+   `$SHADOW` was only made by `mktemp -d` in the branch where SHADOW is UNSET,
+   so the advertised form failed on first use with `cp: cannot create
+   directory`. Pre-existing.
+4. **My own fix to (1) reintroduced the bug it fixed.** I wrote
+   `ls -d <paper-pat> <root-pat>` and **`ls` SORTS its arguments**:
+   `$ROOT/.lake/...` sorts before `$ROOT/content/...`, so the broken root tree
+   came back FIRST and Mathlib still resolved against it. Replaced with a loop
+   (glob expansion keeps written order). The original was safe only because it
+   had ONE pattern.
+
+## 🛑 CREDIT — the mechanism was ALREADY DOCUMENTED; I re-derived it
+
+Line 27 of `lean-shadow-verify.sh`: *"Lean resolves a module from the first
+LEAN_PATH root holding that package directory, so the shadow must be complete,
+not a sparse overlay."* So my three-way measurement CONFIRMS a documented fact
+rather than discovering one, and my empty-shadow experiment tested a question
+the comment two lines from the code already answered. Audit doc corrected. What
+is new is the quantification, and that the Python sweep carries no such comment
+— which is why it was re-derived there.
+
+**Verified (shell path):** `SHADOW=<dir> lean-shadow-verify.sh
+QOU/Braiding/SkeinNormalisation.lean` -> EXIT 0, both dirty cone modules
+rebuilt, target clean; real tree's 2660 oleans IDENTICAL in inode, size and
+mtime before/after. Disk moved 1 MB across the run.
