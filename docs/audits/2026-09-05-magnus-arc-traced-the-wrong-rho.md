@@ -107,10 +107,39 @@ If the sum being truncated is this one, **the row cap already makes it linear, w
 required** — the poly-size property the bean wants to establish would be a consequence of convention
 D rather than of anything about `b`.
 
-**I am not claiming this dissolves the bean, because I have not established which sum the production
-truncation is of.** That is a question about the consumer, not about this census, and it is the one
-thing that would decide whether the remaining `b`-decay work is load-bearing or redundant. It should
-be answered before more effort goes into the rate.
+### And the corpus already knew half of this
+
+Rather than ask, I looked. [`atom_bond_dimension_measure.py:94`](../../computations/atom_bond_dimension_measure.py)
+says it outright, reached from the other direction by a prior agent:
+
+> *"the 0.2–3.4 % figures are CONVENTION-C measurements … **Under D the ≤2-row truncation is already
+> exact**, so this measurement supports no error and no invalidity verdict."*
+
+That is the same fact as my `⌊n/2⌋+1` count, independently arrived at. And it re-scopes the witness
+that declared truncation unusable — `active-set-truncation-prototype.witness.json`
+(computed 2026-08-15) concluded *"rows≤3 recovers ≥99.9 % … ~10⁻³ TRUNCATION ERROR … **truncation is
+INVALID for production**; valid only with a proven tail bound < 10⁻¹⁵"*. Under D that 10⁻³ is not the
+truncation error, because the dropped terms carry weight **exactly zero**.
+
+### So the bean's premise needs splitting, and the two halves fare differently
+
+`qou-o6ov` exists to *"upgrade the poly-size **row**-truncation from heuristic to a rigorous error
+bound"*. But the arc has spent itself on decay in **`b = n − λ₁`**, and for a ≤2-row shape `(n−k, k)`
+we have `b = k`. **Row count and `b` are different gradings, and only one of them is the bean's
+stated target:**
+
+- **The ROW truncation (`ℓ(λ) ≤ 2`) is EXACT under convention D**, not heuristic. `y_λ = 0` off it,
+  measured. There is no error term, so there is nothing to bound — the thing the bean set out to make
+  rigorous is already rigorous, by the 2026-08-09 ruling rather than by any theorem about `b`.
+- **A further `b`-truncation is still a real approximation** — dropping `b ≥ 2` discards 26.5 % of the
+  mass under ρ_true — but it would take a sum that is **already linear** (`⌊n/2⌋+1` terms) down to a
+  constant number of terms. That is a constant-factor win, not a complexity class, and it still needs
+  the tail bound the arc has not got.
+
+**That is the load-bearing finding of this document.** The arc's remaining rate work is not worthless,
+but it is worth much less than the bean's framing implies, and it is aimed at a different grading than
+the bean's stated purpose. Before more effort goes into the rate, that framing should be corrected in
+the bean itself.
 
 ## What this means for the bean, stated carefully
 
@@ -161,8 +190,11 @@ transpose-asymmetric. That is structural — only the 263.16× figure is ρ_bare
   theorem, not the practice.
 - **The `⌊n/2⌋+1` count is measured at n ≤ 12, not proved**, and it is a statement about `y_λ` under
   convention D, not about any other sum in the corpus.
-- **Which sum production truncates is NOT established here**, and it is what decides whether the
-  b-decay work is load-bearing. I have not read the consumer.
+- **The row-vs-`b` split is established; the production caller is not.** I have shown `y_λ = 0` off
+  ≤2 rows under D, and that the corpus already recorded the ≤2-row truncation as exact. I have **not**
+  read the specific production consumer of `P(A) = Σ_λ y_λ tr(ρ_λ Ω₂_λ)` to confirm it truncates in
+  `b` at all — it may keep all `⌊n/2⌋+1` terms, in which case there is no approximation anywhere and
+  the rate question is moot rather than merely smaller.
 - **The 86 % ↔ 70.5/73.5 % gap is unresolved** and I have not determined its cause.
 - **Which ρ the bean *should* be about is not settled here.** I have measured that the two differ and
   which statements hold for which. Whether the row truncation in production consumes the Hecke element
