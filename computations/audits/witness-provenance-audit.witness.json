@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T18:15:15.074762+00:00",
-  "commitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
+  "computedAt": "2026-09-05T18:27:51.791510+00:00",
+  "commitSha": "1c8d12331669f4111ebfcf2ff2c325849006b97d",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 99,
+      "computed": 101,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 3241,
-      "prov_ok": 2775,
-      "prov_audit_exempt": 86,
+      "total_scanned": 3242,
+      "prov_ok": 2773,
+      "prov_audit_exempt": 87,
       "prov_exempt_no_reader": 280,
       "prov_exempt_acknowledged": 1,
-      "prov_missing": 99,
+      "prov_missing": 101,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.969453872261647639617402036408515890157358839864239432273990"
+      "completeness_ratio": "0.968846391116594694632942628007402837754472547809993830968538"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -1938,10 +1938,6 @@
           "missing_fields": []
         },
         {
-          "witness": "chi-helium-3-h9-at-q0-50dps.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "chi-helium-3-h9.witness.json",
           "missing_fields": []
         },
@@ -1967,10 +1963,6 @@
         },
         {
           "witness": "chi-sym-alt-closed-form.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "chi-tritium-h9-at-q0-50dps.witness.json",
           "missing_fields": []
         },
         {
@@ -11278,6 +11270,12 @@
           ]
         },
         {
+          "witness": "chi-helium-3-h9-at-q0-50dps.witness.json",
+          "missing_fields": [
+            "scriptFile"
+          ]
+        },
+        {
           "witness": "chi-helium-4-h12-at-q0-50dps-binding.witness.json",
           "missing_fields": [
             "engine",
@@ -11341,6 +11339,12 @@
             "engine",
             "scriptFile",
             "commitSha"
+          ]
+        },
+        {
+          "witness": "chi-tritium-h9-at-q0-50dps.witness.json",
+          "missing_fields": [
+            "scriptFile"
           ]
         },
         {
@@ -12227,6 +12231,10 @@
         },
         {
           "witness": "witness-raw-float64-audit.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "witness-value-copy-audit.witness.json",
           "missing_fields": []
         }
       ],

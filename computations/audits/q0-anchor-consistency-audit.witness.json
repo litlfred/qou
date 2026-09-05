@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T18:11:41.766583+00:00",
-  "commitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
+  "computedAt": "2026-09-05T18:24:47.356991+00:00",
+  "commitSha": "1c8d12331669f4111ebfcf2ff2c325849006b97d",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 4,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "e2847c7a461e",
@@ -63,7 +63,7 @@
       "Q0_COMPARISON_NO_VALUES": 0,
       "Q0_ANCHOR_MISSING": 1556,
       "Q0_VALUE_MISSING": 17,
-      "Q0_AUDIT_EXEMPT": 86,
+      "Q0_AUDIT_EXEMPT": 87,
       "Q0_PARSE_ERROR": 0,
       "Q0_ANCHOR_UNRECOGNISED": 2,
       "Q0_FLIP": 1
@@ -12927,6 +12927,10 @@
         },
         {
           "witness": "witness-raw-float64-audit.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "witness-value-copy-audit.witness.json",
           "detail": ""
         }
       ],

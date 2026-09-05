@@ -94,6 +94,21 @@ GATES=(
   # (qou-psjm), so a blocking --strict would be red on arrival and get
   # skipped. --baseline blocks every NEW arrival. The baseline DRAINS.
   "reference-literal ratchet|computations/codata_truncation_audit.py|--baseline|yes|yes"
+  # The sibling of the gate above, for values with no published registry to
+  # check against. A producer computes a number into its witness; a second
+  # script types that number in rather than reading it. The copy is short (it
+  # loses digits) and, worse, it goes STALE the moment the producer is re-run
+  # -- and nothing in the tree compares a source literal against a witness.
+  #
+  # Confirmed instance that motivated it: 8.481798 / 7.718043 / 28.295673 all
+  # sit in the RETIRED _deprecated/ame-2020-binding-energies.witness.json,
+  # the hand-maintained file codata_constants.py says "had drifted".
+  #
+  # Ratchet on the NARROW class only (a literal in <=3 witnesses is one
+  # producer's output; one in dozens is a shared reference constant the gate
+  # above owns). Blocks NEW copies; the 264 existing await a hand pass,
+  # because some are deliberate freezes. Bean qou-psjm.
+  "witness-value copy ratchet|computations/audits/witness_value_copy_audit.py|--baseline|yes|yes"
   # The OTHER HALF of the ratchet above, split from it on 2026-08-24 (bean
   # qou-xt5l). The ratchet asks "did a value lose digits a double cannot
   # hold?"; an integral float answers no, because integers are exact in
