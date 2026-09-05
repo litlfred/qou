@@ -1,10 +1,11 @@
 ---
 # qou-gpb5
 title: 'Implement the multi-level character ratio: quark and nuclear-jet levels are unbuilt'
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-05T06:49:42Z
-updated_at: 2026-09-05T06:49:42Z
+updated_at: 2026-09-05T07:05:15Z
 ---
 
 
@@ -68,3 +69,83 @@ No fitting. This is the only unfitted binding route left after the 2026-09-05
 ruling, and its value is precisely that it is unfitted — a number obtained by
 computing beats a better number obtained by selecting. If the three-level
 product misses, record the miss.
+
+## Worked 2026-09-05 — the quark level HAS a word, but not a unique one
+
+Owner: "It should be by definition almost. It goes through Gamma Gamma
+production starting from photons to get to a quark."
+
+### The word exists, and the corpus already derives it
+
+`quark-antiquark-production-reduction` gives it step by step. Two coloured
+photons `gamma = 1 + phi_0 sigma_0 + phi_1 sigma_1 + phi_01 sigma_0 sigma_1`
+collide; their product in `H_3(q)` yields Hopf terms `L_+`, `L_-` from
+cross-colour products; and
+
+    NF(L_+ . e^-) = sigma_1 + h L_+ + h L_- + h^2 e^-
+
+whose dominant output `sigma_1` is "the hadronic crossing that becomes the up
+quark". Three independent productions give three quarks, "confined by the
+Borromean braid `B_3`".
+
+So per nucleon the quark-level word is the **intra word on generators
+`(3k, 3k+1)`**, i.e. `H_3`, and the free constituents are the bare three
+strands. That is exactly the owner's "by definition almost".
+
+### Two checks that make the level well-posed
+
+- `tr_M(1) = 1` on every `H_n` (verified `n = 2, 3, 6, 9, 12`), so "free
+  constituents = identity" needs no normalisation and `R_quark = tr_M(intra)`.
+- The split union factors **exactly**: `tr_M(p on H_3) * tr_M(n on H_3)` equals
+  `tr_M(p ⊔ n on H_6)` to the working floor (`0.629328402203 *
+  0.475133517156 = 0.299015017185`). So free constituents compose correctly.
+
+### The blocker: the intra ordering is not unique, and two live paths disagree
+
+The same 22-letter multiset per nucleon pair appears in two orders:
+
+    A) atom_braid_word_3A / atom_canonical_crossings : GROUPED     [0,0,0,0,0,0,0,1,1,1,1,...]
+    B) atom_gen_chains / E.nucleon_word              : INTERLEAVED [0,1,0,1,0,1,0,0,1,0,0,...]
+
+Generators 0 and 1 are **adjacent**, so they do not commute, and the traces
+differ:
+
+    atom    tr(intra) A      tr(intra) B      ratio
+    2H      1.131716904322   0.299015017185   3.785
+    3H      1.117846228978   0.142072056797   7.868
+    3He     1.296675612245   0.188178642999   6.891
+    4He     1.280783151529   0.089409980502   14.325
+
+This is `qou-bygw`'s ordering ambiguity again, one level down, and it is worse:
+it moves **every absolute trace in the corpus**, not just the all-pairs ones.
+
+### What survives, and it is the important part
+
+**The character RATIO is invariant under the intra ordering.** For `2H`,
+`0.575172/1.131717 = 0.151968/0.299015 = 0.508230` exactly. The numerator and
+denominator both move by the same factor, so `R_nucleon = tr(full)/tr(intra)`
+does not. The bond model `L = -log R` is therefore safe; the individual levels
+are not.
+
+**But the multi-level product is not invariant.** It telescopes to
+`R_quark * R_nucleon = tr_M(full)/1 = tr_M(full)`, which IS ordering-dependent.
+So the three-level character ratio the specification calls for is not well
+defined until the intra ordering is fixed.
+
+### Correction to this bean's own earlier claim
+
+It asserted "every character ratio is `< 1`, so the missing levels push `B` up".
+Wrong on the numbers: `R_quark` is `0.6293` (proton) and `0.4751` (neutron) per
+nucleon, but the multi-nucleon `tr(intra)` under ordering A exceeds 1
+(`1.1317` at `2H`), so the direction depends on the ordering too. The
+three-level `B` under ordering A: `2H +4.07 %`, `3H -27.32 %`, `3He -50.81 %`,
+`4He -72.98 %` — i.e. worse than nucleon-level alone at `A >= 3`, not better.
+The hand-waving direction argument was wrong and is withdrawn.
+
+- [x] Establish whether the quark level has a computable word — **yes**, via
+      gamma-gamma production, and it is the intra `H_3` word.
+- [ ] **NEW BLOCKER, and it is prior to everything else:** fix the intra-word
+      ordering. Two live production paths disagree by up to 14x on `tr(intra)`.
+      Until that is settled no absolute trace in the corpus is well defined, and
+      the multi-level product cannot be evaluated. Ratios are unaffected.
+- [ ] The nuclear-jet level, untouched.

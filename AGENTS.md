@@ -261,6 +261,63 @@ straight — state model results as mathematics, and mark the comparison points
 explicitly as where the empirical claim is being made. When criticising, aim at the
 comparisons and at the systematics on them, not at the naming.
 
+## 🟥 NO FITTING, EXCEPT CAL-1/2/3 (owner directive, 2026-09-05) — STRICT
+
+**This is a mathematics paper, not a physics paper.** The deliverable is a
+*process* and a *derivation*. The owner is building a model in order to iterate
+it toward physics, and **that iteration is impossible if anything is fitted**: a
+fitted model cannot be wrong in a way you can learn from, because it has already
+absorbed the discrepancy that would have taught you something.
+
+**The only admissible calibration is CAL-1/2/3** (the decay-width triple, table
+below). Everything else must be *derived*. There is no fourth constant, no
+"one small tuned factor", no "we only picked the cutoff".
+
+### What counts as fitting — including the kinds agents keep missing
+
+Continuous parameters are the obvious case and are rarely the problem. These
+are the ones that recur:
+
+- **Selection against the target.** Choosing an *object* — a knot from a census,
+  a partition, a truncation order, a branch — because the choice reproduces the
+  measured value. No continuous parameter is tuned and it is still a fit. The
+  giveaway is a gap where no object matched: see the 2026-09-05 retirement of
+  the census route, where `A ∈ {5,6,7}` had no prediction precisely because "no
+  census knot/link with `Vol ≈ B_AME/m_e` yet found".
+- **Sweeping a discrete parameter for accuracy.** "Empirical sweep shows `K = 6`
+  is the OPTIMAL cutoff" is a fitted parameter. Optimal against what? The data.
+- **Per-case dispatch.** A formula that branches on `A` (or on species, or on
+  regime) with a different expression per branch has one free choice per branch.
+- **Importing an empirical term.** Citing a phenomenological formula from the
+  literature (an empirical Wigner energy, an SEMF coefficient) imports somebody
+  else's fit.
+- **A tolerance sized to its own miss.** Already flagged in
+  `unified-iterative-correction-proof`: "A bound sized to its own miss is a fit."
+
+### The ranking rule agents get backwards
+
+**Accuracy is not evidence of correctness here, and a more accurate fitted route
+is worth LESS than a less accurate derived one.** A 5.87 % miss obtained by
+selecting a knot whose volume matches is weaker than a 69 % miss obtained by
+computing, because only the second one can be iterated. When comparing routes,
+rank by *derivational cleanliness first*, and treat accuracy as a diagnostic —
+never as a tie-breaker that promotes a fitted route.
+
+Corollary: **do not recommend consolidating onto the most accurate route.** Ask
+first what each route derives and what it selects.
+
+### What to do instead
+
+- If a derivation is specified but not implemented, **implement the
+  specification**, and report what it gives even when that is worse. A
+  documented honest miss is a result; the corpus's negatives are its most
+  reusable output.
+- If you cannot derive a quantity, say so and leave the gap visible. A gap is
+  information. A filled gap with a chosen constant is not.
+- If you catch yourself reaching for a route because its numbers are better,
+  that is the moment to stop and say so in the report.
+
+
 ## Critical-distance license (standing red-team permission, 2026-06-10)
 
 Agents have standing permission — and, when asked for assessment, an
