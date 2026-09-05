@@ -196,6 +196,10 @@ def build_atom_nf_mp(Z: int, N: int, dps: int = 50) -> list:
     with mp.workdps(dps + 5):  # guard digits
         q0 = q_at(dps + 5)
         h = q0 - mp.mpf(1) / q0
+        # Type-generic: `pn_interface_offset` is pure arithmetic over `q` and
+        # deliberately avoids Python float literals, so it returns an mpf here.
+        from pyhecke.constants import pn_interface_offset as _pn_offset
+        d_pn = _pn_offset(q0)
         half = mp.mpf(1) / 2
         zero = mp.mpf(0)
         one = mp.mpf(1)
@@ -234,7 +238,24 @@ def build_atom_nf_mp(Z: int, N: int, dps: int = 50) -> list:
                 elif ti == 'n' and tj == 'n':
                     nf = hm_mp(nf, one, -h, 0, h)
                 else:
-                    nf = hm_mp(nf, one, -h * half, 0, h)
+                    # `pn_interface_offset(q0)`, NOT `-h/2` (bean `qou-ejuy`).
+                    # This is the INTER-nucleon p-n crossing, and the canonical
+                    # f64 builder uses the colour-weighted D_PN here
+                    # (`pyhecke.atom.build_atom_nf`: "pn/np: mixed
+                    # (colour-weighted)"). `-h/2` is the SUPERSEDED
+                    # `strict_averaged` convention; the two differ by 6.88e-4:
+                    #     D_PN = -0.10445824776972631
+                    #     -h/2 = -0.10453014939781968
+                    # which is why this "mirror" disagreed with the function it
+                    # claims to mirror by 8.5e-5 (deuterium) to 7.7e-4 (li6) --
+                    # twelve orders above float64 noise, i.e. a different
+                    # physics convention wearing the costume of a precision
+                    # upgrade.
+                    #
+                    # The INTRA-nucleon ud crossings above stay literal `-h/2`:
+                    # the canonical builder writes them that way too. Only this
+                    # site is colour-weighted.
+                    nf = hm_mp(nf, one, d_pn, 0, h)
 
         for _ in range(Z):
             nf = hm_mp(nf, one, -h, 1, h)
