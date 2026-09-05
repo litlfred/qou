@@ -138,6 +138,26 @@ def main():
     if inv:
         print("  ⇒ pointwise monotonicity is REFUTED on complete data, confirming #6587's finding")
         print("    on the capped sample — and the count is now exact rather than a lower bound.")
+
+        # WHICH SHAPES CAUSE IT? Reading a pattern off a printed list is how a coincidence becomes
+        # a claim, so the structure is tested. If every violation has a hook on the LOW side and
+        # none has one on the high side, the obstruction is the hook family specifically — and
+        # hooks are exactly the family that already HAS a closed form, which is actionable rather
+        # than merely descriptive.
+        low_hook = sum(1 for li, _bi, _pi, _lj, _bj, _pj in inv if is_hook(li))
+        high_hook = sum(1 for _li, _bi, _pi, lj, _bj, _pj in inv if is_hook(lj))
+        print(f"\n  of the {len(inv)} violations: {low_hook} have a HOOK on the low side, "
+              f"{high_hook} on the high side")
+        nh_inv = [v for v in inv if not is_hook(v[0]) and not is_hook(v[3])]
+        print(f"  violations with NO hook on either side: {len(nh_inv)}")
+        if low_hook == len(inv) and not nh_inv:
+            print("  ⇒ EVERY violation is a hook sitting anomalously LOW in its level, and pointwise")
+            print("    monotonicity HOLDS once hooks are excluded. The obstruction is one family —")
+            print("    and it is the family that already has a closed form (the reduced Burau), so")
+            print("    a bound may treat hooks separately rather than needing a uniform statistic.")
+        else:
+            for li, bi, pi, lj, bj, pj in nh_inv:
+                print(f"    non-hook violation: b={bi} {li} < b={bj} {lj}")
     print()
 
 
