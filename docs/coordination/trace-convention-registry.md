@@ -51,11 +51,24 @@ Row B's status said "never evaluated / deprecated", which reads as an
 administrative choice. It is also a mathematical fact, and the fact has a live
 consequence for figures already in the corpus.
 
-$w(\lambda) = d_q^2(\lambda)/[n]_q!$ is a probability measure at $q=1$ and in the
-*asymmetric* $q$-integer convention. It is **not** one in the **balanced**
-convention $[k] = (q^k - q^{-k})/(q - q^{-1})$ — the convention this corpus's
-`make_qdim` / `dim_q` family actually uses. Measured at the proton $q_0$,
-`mp.dps = 60`:
+$w(\lambda) = d_q^2(\lambda)/[n]_q!$ is a probability measure at $q=1$ — **and
+at $q=1$ only.**
+
+> **🛑 CORRECTED 2026-09-05.** This entry first added "and in the *asymmetric*
+> $q$-integer convention", i.e. that the failure was a convention artifact.
+> **Wrong, retracted.** Measured at the proton $q_0$ (60 dps, $q\to1$ control
+> returns exactly 1.0 in both), the asymmetric convention is *further* from 1
+> at five of six $n$: 0.9150 / 0.8829 / 0.8683 / 0.8746 / 1.0464 / 1.6903 at
+> $n = 3/4/5/6/9/12$, against balanced 0.9874 / 0.9822 / 0.9822 / 0.9911 /
+> 1.1109 / 1.5171. **The defect is structural** — the $q$-deformation breaks
+> $\sum_\lambda (f^\lambda)^2 = n!$, and no convention restores it. The
+> correct $q$-lift replaces one factor, not both:
+> $\sum_\lambda f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda) = [n]_q!$
+> (`QOU/MathlibExt/NormalizedSumUnconditional.lean`, sorry-free, all $n$,
+> all $q>1$). The $c_n$ figures below are unaffected — they were always
+> balanced-convention.
+
+Measured at the proton $q_0$, `mp.dps = 60`:
 
 | $n$ | $A$ | shapes | $c_n = \sum_\lambda d_q^2/[n]_q!$ |
 |---|---|---|---|

@@ -14,10 +14,57 @@ $$
 w(\lambda) \;=\; \frac{d_q^2(\lambda)}{[n]_q!}
 $$
 
-is a probability measure at $q = 1$ and in the *asymmetric* q-integer
-convention. It is **not** one in the **balanced** convention
-$[k] = (q^k - q^{-k})/(q - q^{-1})$ — which is the convention this corpus's
-`make_qdim` / `dim_q` family uses everywhere.
+is a probability measure at $q = 1$ — **and at $q=1$ only.**
+
+> **🛑 CORRECTION (2026-09-05) — this section first said it is also a measure
+> "in the *asymmetric* q-integer convention", i.e. that the failure was a
+> convention artifact. That was wrong and is retracted.** Measured at the
+> proton $q_0$, `mp.dps = 60`, with a $q\to1$ control returning exactly `1.0`
+> in both conventions (so both implementations are sound):
+>
+> | $n$ | balanced $[k]=\frac{q^k-q^{-k}}{q-q^{-1}}$ | asymmetric $[k]=\frac{q^k-1}{q-1}$ |
+> |---|---|---|
+> | 3 | 0.987440229774 | 0.914969211488 |
+> | 4 | 0.982165323836 | 0.882874426585 |
+> | 5 | 0.982224148283 | 0.868254573821 |
+> | 6 | 0.991079523637 | 0.874641716553 |
+> | 9 | 1.11092313496 | 1.04636760337 |
+> | 12 | 1.51713321377 | 1.6902849181 |
+>
+> The asymmetric convention is **further** from 1 at five of these six $n$
+> ($n=9$ is the exception — a sibling survey reported "every $n$", which
+> over-states it by one row).
+>
+> **So the defect is STRUCTURAL, not a convention artifact.** The
+> $q$-deformation breaks the Burnside identity $\sum_\lambda (f^\lambda)^2 = n!$
+> that made the classical form a measure at all, and no choice of $q$-integer
+> convention restores it. Everything else in this document stands — the
+> numbers, the scaling law and the k3 consequences were measured in the
+> balanced convention throughout and are unaffected.
+
+The convention this corpus's `make_qdim` / `dim_q` family uses everywhere is
+the balanced one.
+
+### What the correct $q$-deformation looks like
+
+The right $q$-lift of $\sum_\lambda (f^\lambda)^2 = n!$ replaces **one** factor
+with a quantum dimension, not both — and the corpus already holds it,
+Lean-proved unconditionally for all $n$ and all $q > 1$:
+
+$$
+\sum_{\lambda \vdash n} f^\lambda \, q^{-\kappa_\lambda} \, \dim_q(\lambda)
+  \;=\; [n]_q!
+$$
+
+(`QOU/MathlibExt/NormalizedSumUnconditional.lean:45-50`,
+`molienSum_eq_qFactorial`, axioms clean, no `sorryAx`.) At generic $q$,
+$H_n(q) \cong \mathbb{C}[S_n]$, so the Wedderburn **block dimensions are the
+classical $f^\lambda$**; $\dim_q$ is a *quantum* dimension, a different object.
+$\dim_q^2$ is therefore a misuse of $\dim_q$ where one $\dim_q$ and one
+$f^\lambda$ belong. The held literature says the same in the other convention:
+Féray–Méliot's $q$-Plancherel measure
+$M_{n,q}(\lambda) = D_\lambda(q)\dim(\lambda)/\{n!\}_q$ sums to 1 exactly at
+every $n$ ([`library/arxiv-1001.2180v2`](../../library/arxiv-1001.2180v2/sections/sec-006-13-tools.md)).
 
 Measured at the proton $q_0$, `mp.dps = 60`:
 
