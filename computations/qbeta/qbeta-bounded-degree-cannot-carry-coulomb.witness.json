@@ -27,6 +27,20 @@
       "note": "2E/A = 6 - 12/A > 5 exactly when A > 12"
     },
     {
+      "name": "a_contact_kernel_overshoots_light_nuclei_and_undershoots_heavy",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "1/r-weighted capture runs 1587.4 % at 4He down to 73.1481 % at 208Pb, crossing 1 near Sn. The defect is a kernel TRUNCATED AT RANGE 1 standing in for 1/r -- it over-weights the first shell and drops everything beyond"
+    },
+    {
+      "name": "so_no_rescaling_of_the_bond_energy_repairs_it",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the ratio spans 21.7012x and sits on BOTH sides of 1, so a constant -- or any single monotone eps(Z) -- cannot correct it. The repair is a decay kernel over all pairs, which is a weighted COMPLETE graph: degree Z-1, exactly the case the theorem excludes"
+    },
+    {
       "name": "no_constant_bond_energy_reproduces_coulomb",
       "computed": true,
       "expected": true,
@@ -116,13 +130,57 @@
       }
     ],
     "deltahedral_bound_breaks_at_A": 13,
+    "one_over_r_weighted_capture": [
+      {
+        "iso": "4He",
+        "Z": 2,
+        "A": 4,
+        "pairs_pct": "100.0",
+        "energy_pct": "1587.4"
+      },
+      {
+        "iso": "16O",
+        "Z": 8,
+        "A": 16,
+        "pairs_pct": "100.0",
+        "energy_pct": "359.977"
+      },
+      {
+        "iso": "40Ca",
+        "Z": 20,
+        "A": 40,
+        "pairs_pct": "63.1579",
+        "energy_pct": "179.997"
+      },
+      {
+        "iso": "56Fe",
+        "Z": 26,
+        "A": 56,
+        "pairs_pct": "48.0",
+        "energy_pct": "153.034"
+      },
+      {
+        "iso": "120Sn",
+        "Z": 50,
+        "A": 120,
+        "pairs_pct": "24.4898",
+        "energy_pct": "100.662"
+      },
+      {
+        "iso": "208Pb",
+        "Z": 82,
+        "A": 208,
+        "pairs_pct": "14.8148",
+        "energy_pct": "73.1481"
+      }
+    ],
     "required_epsilon_span": "36.37830038",
     "required_epsilon_flattened_span": "1.0",
     "pb208_coulomb_over_binding": "0.4774703182"
   },
   "provenance": {
-    "headSha": "2bea90b8cb62ad5695c26557cad732efe2eba2a1",
+    "headSha": "4aae73f207da23d17a8e249823ad830099998308",
     "producer": "computations/qbeta/qbeta_bounded_degree_cannot_carry_coulomb_probe.py",
-    "elapsed_s": 0.196
+    "elapsed_s": 0.185
   }
 }

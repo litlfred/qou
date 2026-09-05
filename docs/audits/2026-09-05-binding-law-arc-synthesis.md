@@ -208,12 +208,29 @@ chain's *degree*, so both generalise; and generalising them separates them.
 
 So Coulomb is not a missing *term* in the bond graph — it is outside the
 bond-graph *form*, which is physically right: Coulomb is `1/r` long-range and a
-contact graph is not. The one door left open is a `Z`-dependent per-bond energy,
-and it is a wide one to walk through: reproducing the SEMF term needs
-`ε(Z) ≥ 2a_C(Z−1)/(dA^{1/3})`, which runs **0.0732 → 1.588 MeV** from ⁴He to
-²⁰⁸Pb, a factor of 21.7. The corpus's derived letters are numbers; that is a
-function of the nucleus, so it is a different form of law rather than a
-re-tuning. At ²⁰⁸Pb the omitted term is **47.7 %** of the total binding.
+contact graph is not.
+
+🛑 **And the defect is the FALLOFF, not the coupling** (reframed the same day, on
+the owner's reading; the theorem and its numbers are unchanged). This paragraph
+used to name "a `Z`-dependent per-bond energy" as the door left open —
+`ε(Z) ≥ 2a_C(Z−1)/(dA^{1/3})`, running 0.0732 → 1.588 MeV from ⁴He to ²⁰⁸Pb.
+That arithmetic is right, but it is the *symptom*: a bond graph is **a kernel
+truncated at range 1**, and reading the symptom as the repair aims a successor
+at re-tuning a letter. Weight the captured pairs by `1/r` and the model is not
+short at all:
+
+| | ⁴He | ¹⁶O | ⁴⁰Ca | ⁵⁶Fe | ¹²⁰Sn | ²⁰⁸Pb |
+|---|---:|---:|---:|---:|---:|---:|
+| pairs captured (`k=12`) | 100 % | 100 % | 63.2 % | 48.0 % | 24.5 % | 14.8 % |
+| **energy** captured (`1/r`) | **1587 %** | 360 % | 180 % | 153 % | 101 % | **73.1 %** |
+
+It **overshoots ⁴He by 16×** and undershoots ²⁰⁸Pb, crossing near Sn — and a
+ratio on both sides of 1 cannot be corrected by rescaling any letter. A contact
+sum is `kZ/2`, linear in `Z` with no `A` in it; the true sum over a ball of
+radius `R = r₀A^{1/3}` is `(3/5)Z(Z−1)/R`; their ratio runs as `A^{1/3}/Z`.
+**The repair is a decay kernel over all pairs** — a weighted complete graph,
+degree `Z−1`, exactly the case the theorem excludes. At ²⁰⁸Pb the omitted term
+is **47.7 %** of the total binding.
 
 *(Aside worth knowing before quoting GAP-1: `3A−6` is only degree-5-admissible
 up to `A = 12`. A triangulated sphere has average degree `6 − 12/A`, so max
