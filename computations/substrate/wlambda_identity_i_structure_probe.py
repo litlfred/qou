@@ -13,10 +13,21 @@ Two coupled questions for the s5-so3 W_λ keystone (docs/coordination/s5-so3-key
     whether `E[Σ_c h_c²]` reduces to content moments + RSK.
 
 (C) W_λ  = d_q(λ)²/[n]_q!  (Ocneanu / q-Plancherel measure — the OPEN keystone object).
-    Verify the q-Plancherel normalization `Σ_λ d_q(λ)² = [n]_q!` (the q-analog of `Σ (f^λ)² = n!`,
-    the *sibling* of the involution identity `Σ f^λ = #involutions` characterized in PR #2899),
-    then extract the cyclotomic / Habiro structure of the W_λ family with the PR #2899 method, so
-    the colored-Σ(2,3,5)-WRT ↔ W_λ bridge can be checked at the right (λ-resolved) granularity.
+    TEST the candidate q-Plancherel normalization `Σ_λ d_q(λ)² = [n]_q!` (the would-be q-analog
+    of `Σ (f^λ)² = n!`), then extract the cyclotomic / Habiro structure of the W_λ family with
+    the PR #2899 method, so the colored-Σ(2,3,5)-WRT ↔ W_λ bridge can be checked at the right
+    (λ-resolved) granularity.
+
+    RESULT: the identity is FALSE for every n ≥ 2 — symbolically in q, not merely numerically.
+    `sp.simplify(Σ_λ d_q² − [n]_q!) == 0` holds at n = 1 and fails at n = 2..6; the ratio at
+    n = 2 is `2q/(q²+1)`, which is 1 only at q = 1. The assertion below therefore FAILS
+    (computed False, expected True) and has always been recorded as failing; what was wrong was
+    this docstring and the witness description, which said "verified". The q-deformation breaks
+    the Burnside identity and no q-integer convention restores it; the correct q-lift replaces
+    ONE factor, not both — `Σ_λ f^λ q^{−κ_λ} dim_q(λ) = [n]_q!`, sorry-free in
+    `QOU/MathlibExt/NormalizedSumUnconditional.lean`. Consequence: `Σ_λ W_λ = c_n ≠ 1`, with
+    c_n = 0.9946/0.9874/0.9822/0.9822/0.9911/1.0124/1.0506/1.1109 at n = 2..9 (proton q₀).
+    Bean qou-uk8o; docs/audits/2026-09-04-plancherel-convention-gap.md.
 
 No fit; sympy symbolic in q + exact rationals; (a)/(b)-scoped per AGENTS.md.
 """
@@ -144,7 +155,9 @@ def W_lambda(lam):
     return sp.cancel(sp.together(dim_q(tuple(lam)) ** 2 / qfact(sum(lam))))
 
 
-# q-Plancherel normalization  Σ_λ d_q(λ)² = [n]_q!  (⇒ Σ_λ W_λ = 1) — the q-RSK sibling identity
+# CANDIDATE q-Plancherel normalization  Σ_λ d_q(λ)² = [n]_q!  (would give Σ_λ W_λ = 1).
+# It is FALSE for every n ≥ 2 — symbolically, see the (C) note in the module docstring. The
+# flag below is kept and reported as measured; do not "fix" it to True. Bean qou-uk8o.
 qplanch = {}
 for n in range(1, 7):
     lhs = sp.cancel(sp.together(sum(dim_q(tuple(lam)) ** 2 for lam in partitions(n))))
@@ -178,7 +191,8 @@ if content2_eq_binom and diff_is_n2:
         "provable from the Jucys–Murphy element Σ X_i² in Z(ℂ[S_n]) — RSK + center-of-group-algebra, "
         "NO hook-length FORMULA). The residual E[Σ h² − Σ content²] = n² is the Plancherel mean of "
         "an elementary arm/leg/content combination. So the infra needed is: (1) RSK `Σ(f^λ)²=n!` "
-        "(or its q-form `Σ d_q²=[n]_q!`, verified here), (2) the JM/content second-moment, (3) the "
+        "(note: its q-form `Σ d_q²=[n]_q!` is FALSE for n ≥ 2, measured here symbolically, so "
+        "only the CLASSICAL RSK identity is available), (2) the JM/content second-moment, (3) the "
         "single-diagram elementary hook identity `Σ_c h_c = n + Σ_i C(λ_i,2) + Σ_j C(λ'_j,2)` "
         f"(verified elementary: {sum_h_elementary_ok}) extended to the squared form. The full "
         "hook-length FORMULA is NOT required for Identity I — the ledger's 'needs HLF' scope can be "
@@ -198,8 +212,9 @@ witness = {
         "Scopes the Lean infra for Identity I (the one RT input of the W_λ 144·C(n) defect "
         "sub-target): verifies M(n)=n(3n−1)/2 (n=2..14) and tests whether the proof reduces to "
         "RSK + content-moment + elementary hook identities (no hook-length FORMULA). Also verifies "
-        "the q-Plancherel normalization Σ_λ d_q²=[n]_q! (W_λ=d_q²/[n]_q!) and extracts the W_λ "
-        "cyclotomic/Habiro structure for the colored-Σ(2,3,5)-WRT bridge."
+        "TESTS the candidate q-Plancherel normalization Σ_λ d_q²=[n]_q! — which is FALSE for "
+        "every n ≥ 2, symbolically in q (the assertion is recorded as failing) — and extracts "
+        "the W_λ cyclotomic/Habiro structure for the colored-Σ(2,3,5)-WRT bridge. Bean qou-uk8o."
     ),
     "discipline": "no fit; exact rationals + sympy symbolic in q; (a)/(b)-scoped.",
     "auditOnly": "docs/coordination/s5-so3-keystone.md",
@@ -230,9 +245,15 @@ _b.add_assertion("sum_h_elementary_decomposition_ok",
                  source="the hook-length sum admits the stated elementary decomposition")
 _b.add_assertion("qplancherel_sum_dq2_eq_qfact",
                  computed=bool(qplanch_ok), expected=True,
-                 source=("q-Plancherel normalisation sum_lambda d_q(lambda)^2 "
-                         "= [n]_q! for n = 1..6, verified as a symbolic "
-                         "identity in q (so sum_lambda W_lambda = 1)"))
+                 source=("CANDIDATE q-Plancherel normalisation sum_lambda "
+                         "d_q(lambda)^2 = [n]_q! for n = 1..6, tested as a "
+                         "symbolic identity in q. It HOLDS at n=1 and FAILS "
+                         "for every n >= 2 (ratio at n=2 is 2q/(q^2+1)), so "
+                         "sum_lambda W_lambda = c_n != 1. This assertion is "
+                         "EXPECTED-TRUE and measured FALSE on purpose: it is "
+                         "the corpus's own detector for the defect recorded "
+                         "in docs/audits/2026-09-04-plancherel-convention-"
+                         "gap.md. Do not 'fix' it by lowering expected."))
 out = _b.save()
 
 print(f"(A) Identity I  M(n)=n(3n−1)/2  for n=2..14: {identity_I_holds}")

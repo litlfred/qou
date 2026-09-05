@@ -78,6 +78,39 @@ The defect is not small, and — the part that matters — **it is not constant 
 $n$.** Simple $q^{\pm 2n(\lambda)}$ and $q^{\pm(n(\lambda) - n(\lambda'))}$
 prefactors were tried and do not close it.
 
+> **🛑 UNDER-CITED (added 2026-09-05). The corpus already PROVES the leading
+> $n$-dependence, and this audit did not cite it — a corpus-grep miss on my
+> part.** [`QOU/BraidKnot/WLambdaDefectClosedForm.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/WLambdaDefectClosedForm.lean)
+> (sorry-free, formalizing [`2026-06-20-keystone-wlambda-C-n-closed-form.md`](2026-06-20-keystone-wlambda-C-n-closed-form.md)) gives
+>
+> $$
+> 1 - Z(n) \;=\; C(n)\,h^2 + O(h^4), \qquad C(n) = -\frac{n(n-1)(2n-13)}{144},
+> \qquad h = q - q^{-1}.
+> $$
+>
+> **What it explains, and it is the striking part:** $C(n)$ changes sign at
+> $n = 6.5$, and the measured $c_n$ crosses 1 between $n=6$ ($0.9911$) and
+> $n=9$ ($1.1109$). The direction reversal is *predicted*, not empirical.
+>
+> **How well it agrees — measured here, because the figure I was handed was
+> overstated.** A sibling report said "agrees to 4 significant figures". It
+> does not; being an $h^2$ truncation it degrades with $n$:
+>
+> | $n$ | measured $c_n$ | $1 - C(n)h^2$ | rel. err |
+> |---|---|---|---|
+> | 3 | 0.987440 | 0.987252 | 1.9e-4 |
+> | 6 | 0.991080 | 0.990895 | 1.9e-4 |
+> | 9 | 1.110923 | 1.109266 | 1.5e-3 |
+> | 12 | 1.517133 | **1.440704** | **5.0e-2** |
+>
+> So ~3 significant figures at $n \le 6$, ~2 at $n=9$, and **5 % off at
+> $n=12$** — degrading exactly where the defect is largest and where the
+> light-series ⁴He sits. Quote it as the *leading-order structural
+> explanation*, never as a substitute for the measured $c_n$.
+>
+> This audit's "simple prefactors do not close it" is therefore true of the
+> **residual** only, and should have said so.
+
 ## 2. Why it is a *cross-atom* artifact
 
 Two facts compose:

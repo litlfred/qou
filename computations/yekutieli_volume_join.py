@@ -116,9 +116,36 @@ def dim_q(part) -> sp.Expr:
 
 
 def w_lambda(part) -> sp.Expr:
-    """Paper Stage-2 Wedderburn–Artin weight w_λ = dim_q(λ)²/[k]_q!."""
+    """Paper Stage-2 Wedderburn–Artin weight w_λ = dim_q(λ)²/[k]_q!.
+
+    NOT a probability measure away from q = 1 — see `w_normalization`.
+    """
     k = sum(part)
     return sp.cancel(dim_q(part) ** 2 / qfact(k))
+
+
+def _partitions_of(k):
+    if k == 0:
+        yield ()
+        return
+    def rec(rem, mx, cur):
+        if rem == 0:
+            yield tuple(cur); return
+        for a in range(min(rem, mx), 0, -1):
+            yield from rec(rem - a, a, cur + [a])
+    yield from rec(k, k, [])
+
+
+def w_normalization(k) -> sp.Expr:
+    """Z(k) = Σ_{λ⊢k} w_λ, SYMBOLIC in q. Equals 1 at q = 1 and nowhere else.
+
+    At k = 3, d_q(3) = d_q(1³) = 1 and d_q(2,1) = [2]_q, so
+        Z(3) = (2 + [2]_q²)/([2]_q[3]_q) = (h²+6)/((h²+3)·sqrt(h²+4)),
+    which is 1 at h = 0 and 0.98744023 at the proton q_0. Bean qou-uk8o;
+    docs/audits/2026-09-04-plancherel-convention-gap.md.
+    """
+    return sp.cancel(sp.together(
+        sum((w_lambda(p) for p in _partitions_of(k)), sp.Integer(0))))
 
 
 # ────────────────────────────────────────────────────────────────────
@@ -150,6 +177,8 @@ def paper_J_from_symbolic_chi(chi_by_part: dict, weight: str = "w") -> sp.Expr:
         chi = chi_by_part[part]
         if weight == "w":
             total += sp.cancel(w_lambda(part) * chi / dim_q(part))
+        elif weight == "w_selfnorm":
+            total += sp.cancel(w_lambda(part) * chi / dim_q(part))
         elif weight == "y":
             yv = y_lambda_wenzl_bridge_symbolic(list(part))
             total += sp.cancel(yv * chi / dim_q(part))
@@ -159,6 +188,13 @@ def paper_J_from_symbolic_chi(chi_by_part: dict, weight: str = "w") -> sp.Expr:
             total += sp.cancel(yv * chi)
         else:
             raise ValueError(weight)
+    if weight == "w_selfnorm":
+        # J is LINEAR in the weight, so the whole sum divides by Z(k) exactly.
+        # This matters even though k is fixed at 3 here: J is compared against
+        # `production_linking_weight`, a closed-form scalar carrying NO w_λ, so
+        # the normalization does not cancel from the ratio the way it would
+        # between two w-weighted objects. Bean qou-uk8o.
+        total = sp.cancel(sp.together(total / w_normalization(k)))
     return sp.cancel(sp.together(total)), k
 
 
@@ -332,24 +368,36 @@ def main():
     ]:
         chi, desc = load_symbolic_chi(wfile)
         print(f"\n[PAPER H₃] {name} — χ_λ from {wfile} (weight = w_λ literal)")
-        J, k = paper_J_from_symbolic_chi(chi, weight="w")
-        J = sp.cancel(J)
-        J_h = to_h_series(J, 12)
-        print("   J_w exact:", sp.nsimplify(J))
-        print("   J_w h-series:", fmt_coeffs(J_h, 8))
-        witness["objects"][f"paper_J_{name}_w"] = {
-            "exact_q": str(J),
-            "h_series": fmt_coeffs(J_h, 8),
-            "weight_convention": "w_lambda = dim_q^2 / [k]_q!  (paper Stage-2 literal)",
-            "index_set": "H3 (partitions of 3)",
-        }
-        ratio = sp.cancel(lw / J)
-        ratio_h = to_h_series(ratio, 10)
-        print("   ratio (production/paper_w) h-series:", fmt_coeffs(ratio_h, 6))
-        witness["ratios"][f"{name}_w"] = {
-            "ratio_exact_q": str(ratio),
-            "ratio_h_series": fmt_coeffs(ratio_h, 6),
-        }
+        for wname, wkey in (("w", "w"), ("w_selfnorm", "w_selfnorm")):
+            J, k = paper_J_from_symbolic_chi(chi, weight=wkey)
+            J = sp.cancel(J)
+            J_h = to_h_series(J, 12)
+            print(f"   J_{wname} exact:", sp.nsimplify(J))
+            print(f"   J_{wname} h-series:", fmt_coeffs(J_h, 8))
+            witness["objects"][f"paper_J_{name}_{wname}"] = {
+                "exact_q": str(J),
+                "h_series": fmt_coeffs(J_h, 8),
+                "weight_convention": (
+                    "w_lambda = dim_q^2 / [k]_q!  (paper Stage-2 literal; NOT a "
+                    "probability measure away from q=1 -- it sums to Z(3), "
+                    "0.98744023 at the proton q_0)"
+                    if wkey == "w" else
+                    "w_lambda / Z(k), Z(k) = Sum_mu w_mu -- SELF-NORMALIZED. "
+                    "Needed here despite k being fixed at 3, because J is "
+                    "compared against production_linking_weight, a closed form "
+                    "carrying no w_lambda, so Z(3) does not cancel from the "
+                    "ratio. Bean qou-uk8o."),
+                "index_set": "H3 (partitions of 3)",
+            }
+            ratio = sp.cancel(lw / J)
+            ratio_h = to_h_series(ratio, 10)
+            print(f"   ratio (production/paper_{wname}) h-series:",
+                  fmt_coeffs(ratio_h, 6))
+            witness["ratios"][f"{name}_{wname}"] = {
+                "ratio_exact_q": str(ratio),
+                "ratio_h_series": fmt_coeffs(ratio_h, 6),
+            }
+        witness["objects"]["w_normalization_Z3_symbolic"] = str(w_normalization(3))
 
     # --- The NORMALIZED Markov trace tr_M = Σ_λ y_λ χ_λ (the cache's object) ---
     # This is what markov_trace_for_knot computes and what the sibling

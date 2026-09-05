@@ -16,10 +16,22 @@ proton/neutron full-mass:
 
 This script:
   1. Computes m_{q,X} for X ∈ {p, n, D, T, ³He, ⁴He} using the unified
-     formula with paper-prescribed ~w_λ (the "correct" full-mass weight).
+     formula under four weight forms (see WEIGHT_FORMS below).
   2. Forms B_pred(K) = m_{q,K} - Z · m_{q,p} - N · m_{q,n}.
   3. Compares to AME binding.
   4. Reports cross-atom variance.
+
+NORMALIZATION (2026-09-05, bean qou-uk8o).  The weight this producer has
+always used is (f^λ)²/[n]_q! — the χ witnesses' `dim` field is the classical
+Specht dimension, so the historical variable name `dim_q` was wrong.  That
+weight is not a probability measure: it sums to n!/[n]_q!, which runs
+0.980 / 0.858 / 0.612 / 0.326 at n = 3 / 6 / 9 / 12 and so rescales each
+atom's B_pred by a *different*, monotonically shrinking factor.  The form is
+kept (renamed `f2_over_qfact`, numbers unchanged) beside two self-normalized
+forms that are measures at every n.  What the correction shows is that the
+old 9.35× "cross-atom variance" was a partial cancellation between two
+errors: self-normalized, T/³He/⁴He agree to 1.10× and the whole spread is
+the deuteron.
 
 If B_pred matches AME with variance ≪ 5.22× (or even ≪ 4.6×), this
 substantiates the categorical claim that the unified formula is
@@ -33,7 +45,7 @@ Ref: docs/audits/2026-05-19-deprecated-but-valid-scripts-catalog.md
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
+from _precision import fmt, set_compute_dps  # noqa: E402 — dps must rise before module constants
 import ast
 import json
 import sys
@@ -102,6 +114,31 @@ def q_factorial(n):
     return r
 
 
+def _hooks(lam):
+    """Hook lengths of every cell of `lam` (arm + leg + 1)."""
+    out = []
+    for r, row in enumerate(lam):
+        for c in range(row):
+            arm = row - c - 1
+            leg = sum(1 for rr in range(r + 1, len(lam)) if lam[rr] > c)
+            out.append(arm + leg + 1)
+    return out
+
+
+def dim_q(lam):
+    """d_q(λ) = [n]_q! / ∏_cells [h]_q — the *quantum* dimension.
+
+    Distinct from the classical Specht dimension f^λ = n!/∏h, which is what
+    the χ witnesses carry in their `dim` field.  Keeping the two apart matters
+    here: the weight forms below use one or the other and they are NOT
+    interchangeable at q ≠ 1.
+    """
+    d = q_factorial(sum(lam))
+    for h in _hooks(lam):
+        d /= q_int(h)
+    return d
+
+
 def load_chi(species):
     """Load (n, partitions) for species X."""
     w = json.loads((HERE / CHI_FILES[species]).read_text())
@@ -118,26 +155,64 @@ def load_chi(species):
     return n, parts
 
 
-def phi_k(parts, n, k, w_form="paper"):
+# ── weight forms ────────────────────────────────────────────────────────────
+# `f2_over_qfact` is what this producer has always computed, and its name is
+# now literal: the χ witness's `dim` field is the CLASSICAL Specht dimension
+# f^λ, not d_q, so the weight it forms is (f^λ)²/[n]_q! — neither the textbook
+# q-Plancherel weight nor the classical Plancherel measure.  It is NOT a
+# probability measure: Σ_λ (f^λ)² = n! exactly (Burnside), so it sums to
+#     n!/[n]_q!  =  0.98029937 / 0.85832883 / 0.61193301 / 0.32612477
+# at n = 3 / 6 / 9 / 12 — a factor 3.0 spread across the light series, and it
+# is *decreasing* in n.  Since Φ_k is linear in the weights, every Φ and hence
+# every B_pred at strand count n is scaled by exactly that factor; it cancels
+# from any ratio taken at one n and does NOT cancel from the cross-atom
+# max/min this producer is scored on.  (This is the same defect class as
+# docs/audits/2026-09-04-plancherel-convention-gap.md, but a *different and
+# larger* constant: that audit's c_n = Σ d_q²/[n]_q! runs 0.99/1.11/1.52 and
+# increases with n.  Measure per producer; do not reuse c_n.)
+#
+# The two `_selfnorm` forms below divide by the weight's own total, so each is
+# a probability measure at every n by construction and the cross-atom
+# comparison is normalization-free.  Bean qou-uk8o.
+WEIGHT_FORMS = ("f2_over_qfact", "f2_selfnorm", "dq2_selfnorm", "identity")
+
+
+def _weight_map(parts, n, w_form):
+    """{partition-index: w_λ} for the chosen form, self-normalized where named.
+
+    `parts` entries carry the classical f^λ in `dim`; d_q is recomputed here.
+    """
+    if w_form == "identity":
+        return [mp.mpf(1) for _ in parts]
+    if w_form == "f2_over_qfact":
+        qfact = q_factorial(n)
+        return [mp.mpf(p["dim"]) ** 2 / qfact for p in parts]
+    if w_form == "f2_selfnorm":
+        raw = [mp.mpf(p["dim"]) ** 2 for p in parts]
+    elif w_form == "dq2_selfnorm":
+        raw = [dim_q(p["partition"]) ** 2 for p in parts]
+    else:
+        raise ValueError(w_form)
+    tot = sum(raw, mp.mpf(0))
+    if tot == 0:
+        raise ZeroDivisionError(f"{w_form}: weight total is zero at n={n}")
+    return [r / tot for r in raw]
+
+
+def phi_k(parts, n, k, w_form="f2_over_qfact"):
     """Φ_k(β) under chosen weight form."""
     total = mp.mpf(0)
-    qfact = q_factorial(n)
-    for p in parts:
+    weights = _weight_map(parts, n, w_form)
+    for p, w in zip(parts, weights):
         if p["depth"] != k: continue
-        chi = p["chi"]; dim_q = mp.mpf(p["dim"])
-        f = mp.fabs(chi) * dim_q
+        chi = p["chi"]; f_lam = mp.mpf(p["dim"])
+        f = mp.fabs(chi) * f_lam
         if f < mp.mpf("1e-30"): continue
-        if w_form == "paper":
-            w = dim_q ** 2 / qfact  # paper's ~w_λ
-        elif w_form == "identity":
-            w = mp.mpf(1)
-        else:
-            raise ValueError(w_form)
         total += w * mp.log(f)
     return total
 
 
-def unified_mass(species, w_form="paper"):
+def unified_mass(species, w_form="f2_over_qfact"):
     n, parts = load_chi(species)
     total = mp.mpf(0)
     for k in range(n):
@@ -150,13 +225,18 @@ def main() -> int:
     builder.set_description(
         "Categorical test: B(K) = m_{q,K} - Z·m_{q,p} - N·m_{q,n} via "
         "prop:unified-curvature-rank-mass-formula with paper-prescribed "
-        "~w_λ weight. Tests if the binding-energy projection IS the "
-        "n-strand-renormalized difference."
+        "four weight forms. Tests if the binding-energy projection IS the "
+        "n-strand-renormalized difference. The as-published form "
+        "(f^λ)²/[n]_q! is NOT a probability measure — it sums to n!/[n]_q! "
+        "(0.980/0.858/0.612/0.326 at n=3/6/9/12), so it rescales every "
+        "cross-atom comparison by a factor that varies 3.0x across the "
+        "light series; the two _selfnorm forms are measures at every n by "
+        "construction (bean qou-uk8o)."
     )
 
     print(f"{'species':<6} {'n':>3} {'w_form':<10} {'m_q,X':>16}")
     full_mass = {}
-    for w_form in ("paper", "identity"):
+    for w_form in WEIGHT_FORMS:
         full_mass[w_form] = {}
         for sp in ("p", "n", "D", "T", "3He", "4He"):
             m, n = unified_mass(sp, w_form)
@@ -172,7 +252,7 @@ def main() -> int:
     # Compute B_pred(K) = m_K - Z·m_p - N·m_n per weight form
     print(f"{'atom':<6} {'w_form':<10} {'B_pred':>14} {'B_AME':>12} {'ratio':>10}")
     results = {}
-    for w_form in ("paper", "identity"):
+    for w_form in WEIGHT_FORMS:
         mp_full = full_mass[w_form]
         results[w_form] = {}
         for atom in ("D", "T", "3He", "4He"):
@@ -183,7 +263,9 @@ def main() -> int:
             results[w_form][atom] = {
                 "B_pred": str(B_pred),
                 "B_AME": str(B_emp),
-                "ratio": float(ratio),
+                # `ratio` is an mpf all the way from B_pred; float() here would
+                # have written a binary64 value into the witness (NO-FLOAT64).
+                "ratio": fmt(ratio),
             }
             print(f"  {atom:<6} {w_form:<10} {float(B_pred):>14.6f} "
                   f"{float(B_emp):>12.6f} {float(ratio):>10.4f}")
@@ -196,20 +278,36 @@ def main() -> int:
     print(f"{'w_form':<10} {'min ratio':>12} {'max ratio':>12} {'max/min':>10}")
     summary = {}
     for w_form, atoms in results.items():
-        rs = [r["ratio"] for r in atoms.values()]
-        rs = [r for r in rs if not mp.isnan(mp.mpf(r))]
+        rs = [mp.mpf(r["ratio"]) for r in atoms.values()]
+        rs = [r for r in rs if not mp.isnan(r)]
         if rs:
             rmin, rmax = min(rs), max(rs)
-            mom = rmax / rmin if rmin > 0 else float("inf")
-            summary[w_form] = {"min": rmin, "max": rmax, "max_over_min": mom}
-            print(f"  {w_form:<10} {rmin:>12.4f} {rmax:>12.4f} {mom:>10.4f}")
+            mom = rmax / rmin if rmin > 0 else mp.inf
+            # The heavy three alone. Recorded because the deuteron is the sole
+            # outlier under the self-normalized forms and folding it into one
+            # max/min hides that: it turns a tight T/³He/⁴He cluster plus one
+            # miss into a single large "variance". This is a derived statistic,
+            # NOT a re-tuned threshold — the verdict cut-offs below are left at
+            # their historical values on purpose (bean qou-uk8o).
+            rs_hv = [mp.mpf(atoms[a]["ratio"]) for a in ("T", "3He", "4He")
+                     if a in atoms and not mp.isnan(mp.mpf(atoms[a]["ratio"]))]
+            mom_hv = (max(rs_hv) / min(rs_hv)
+                      if rs_hv and min(rs_hv) > 0 else mp.inf)
+            summary[w_form] = {
+                "min": fmt(rmin), "max": fmt(rmax),
+                "max_over_min": fmt(mom),
+                "max_over_min_heavy_three_no_deuteron": fmt(mom_hv),
+            }
+            print(f"  {w_form:<14} {float(rmin):>12.4f} {float(rmax):>12.4f} "
+                  f"{float(mom):>10.4f}   (T/³He/⁴He only: {float(mom_hv):.4f})")
     builder.add_data("variance_summary", summary)
 
     # Verdict
-    best = min(summary.keys(), key=lambda k: summary[k]["max_over_min"])
-    best_mom = summary[best]["max_over_min"]
+    best = min(summary.keys(),
+               key=lambda k: mp.mpf(summary[k]["max_over_min"]))
+    best_mom = mp.mpf(summary[best]["max_over_min"])
     builder.add_data("best_form", best)
-    builder.add_data("best_max_over_min", best_mom)
+    builder.add_data("best_max_over_min", fmt(best_mom))
     if best_mom < 1.05:
         verdict = f"PASS — {best} gives max/min < 1.05 (universal categorical constant)"
     elif best_mom < 1.5:
@@ -226,8 +324,10 @@ def main() -> int:
     builder.add_assertion(
         "data_loaded",
         computed=B_AME["D"],
-        expected=2.22456607,
-        tolerance=1e-10,
+        # mpf, not a float literal: a binary64 `expected` is a raw-float64
+        # field in the witness and cannot represent the value it asserts.
+        expected=mp.mpf("2.22456607"),
+        tolerance=mp.mpf("1e-10"),
         unit="B(D) AME MeV",
         source="AME 2020 deuteron binding",
     )
