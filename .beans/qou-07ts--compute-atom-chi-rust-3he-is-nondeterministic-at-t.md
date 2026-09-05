@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-05T08:33:29Z
-updated_at: 2026-09-05T08:34:06Z
+updated_at: 2026-09-05T17:39:16Z
 ---
 
 Found 2026-09-05 while doing attribution for `qou-t0wm` on PR #6772 — running
@@ -88,3 +88,51 @@ reporting defect; this is a coverage gap plus a new instance.
 
 Not claimed: that the other atoms are safe. D and T were stable over ~12 runs
 each; 4He costs 21 minutes and was run once, so it is simply unmeasured.
+
+
+---
+
+## 2026-09-05, later: 4He is nondeterministic too — the "unmeasured" caveat resolves the wrong way
+
+This bean originally said *"4He costs 21 minutes and was run once, so it is
+simply unmeasured"*. It has now been re-run, and it wobbles.
+
+**Measured**, one re-run against the committed witness, producer diff
+comment-only so nothing in the source changed:
+
+    chi_lambda values      154 total
+    moved                    4  (2.6 %)
+
+Each by exactly one unit in the last decimal place of the 50-dps string —
+three down, one up:
+
+      1.3324670695047317581719299734538231951319133898682  ->  ...681
+     -6.1493408410039581656739678815748871446717776464091  ->  ...090
+    532.26390734569385307344345076726294286328451841452    ->  ...451
+    995.38207963430477298589219373442229918107243023194    ->  ...195
+
+`n_partitions` is unchanged at 77 = p(12).
+
+**So the defect is not specific to 3He.** Standing tally of what has been
+observed, with sample sizes, because they are very uneven:
+
+| atom | runs | outcome |
+|---|---|---|
+| D | ~12 | stable |
+| T | ~12 | stable |
+| ³He | 8 | **4 distinct outputs** |
+| ⁴He | 2 | **moved on the second** |
+
+D and T are the small cases (`n_partitions` 11 and 30); ³He and ⁴He are the two
+that wobble. But T also has `n_partitions` = 30, equal to ³He, so **size alone
+does not separate the stable from the unstable** — which was true before and
+is worth restating now that the sample is bigger.
+
+**Rate is not established for ⁴He.** One re-run is one re-run; 2.6 % of values
+moving in that single pair says nothing about how many distinct outputs exist.
+Establishing that costs 21 minutes per sample and has not been spent.
+
+**What this changes for the closing conditions above:** item 2 (widen the
+reproducibility checker) gets more valuable, not less — the affected set is at
+least two producers' worth of output, and the checker's eleven-script scope
+still reaches neither.
