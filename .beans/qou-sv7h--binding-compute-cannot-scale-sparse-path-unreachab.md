@@ -1,11 +1,11 @@
 ---
 # qou-sv7h
 title: 'Binding compute cannot scale: sparse path unreachable, zero Rust, float64 straddle'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-08-30T15:42:47Z
+updated_at: 2026-09-05T07:18:08Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -77,3 +77,101 @@ Partition set is FIXED (193 at k<=11, dims 1..2310; 37s just to materialise) --
 it does not grow with A. Crossings grow O(A^2). Cost ~ A^2 * sum_lambda f(dim),
 f = dim^3 today, dim*nnz after fix 1. Relative to deuterium: Li-7 ~5x,
 O-16 ~17x, Fe-56 ~144x.
+
+
+---
+
+## CLAIMED 2026-09-05 — branch claude/rag-document-ingestion-options-orasrw
+
+Taking the SIGN question specifically, on owner direction. The prior session
+(`session_01Cb9sX3NisBDY4WN4z5wJL4`) last committed 2026-09-03; this bean is
+still `todo`, so this is a claim on an unclaimed item rather than a takeover.
+
+**Scope I am taking:** why `unified_iterative_correction` is negative. Its own
+commit `815b2a46a0` says "nothing here says WHY the sign is wrong -- that is the
+physics question this measurement opens and does not answer."
+
+**Scope I am NOT taking**, so it stays available: 6Li / A>=6, which
+`aaa2ef9c51` names as the discriminating measurement for the extensive term's
+SHAPE. That is a different question from the sign and ~5x deuterium's cost.
+
+**Route:** formalize-first, per AGENTS.md STRICT — locate where the sign is
+DETERMINED in term 1 and ask whether it is forced, rather than scanning. The
+strongest existing evidence that it is structural is this bean's own: the
+accumulator is negative on BOTH matrix families (old braid-violating: -0.0319
+at k=4 to -2.1955 at k=8; corrected: -0.0896 to -2.0200), so it survives a
+change of the underlying representation.
+
+**Falsifier stated in advance:** if the sign traces to a free choice — an
+orientation, a w_0 convention, an ordering of the LP objective — then it is not
+structural and this framing is wrong.
+
+## Step 2 answered 2026-09-05 (qou-0wqd / PR #6708) — nothing moves; step 3 is what is left
+
+Step 2 was "wire the correct family in, then re-run the binding numbers and
+report what moved". Measured: `1e-14`, not the 71-221 % the step-2 first-half
+table predicted. The correct family is now in
+`hecke_core_legacy._build_ysn_matrices` (`a_rho = h/(1 - q^(-2 rho))`, braid
+defect `0.7315 -> 7.5e-17`, `ysn_braid_relation_audit.py` exit 0).
+
+Two independent reasons the accumulator could not move:
+
+1. **The kernel bypasses the Python family entirely.**
+   `_lp_kernel_steps(partition, chains)` takes the partition SHAPE, not
+   `entry['ysn']`, so Rust rebuilds its own braid-satisfying family; both
+   consumers early-return on it. 193 calls, 193 served.
+2. **The consumers take traces, and the trace cannot see the defect.**
+   `Tr(ABA) - Tr(BAB) = Tr(B) - Tr(A) = 0` from the quadratic relation alone, in
+   any dimension. Established at MPFR in
+   `computations/audits/ysn_trace_blindness_probe.py` (9/9): legacy MATRIX braid
+   defect `0.731514`, legacy TRACE braid defect `6.68e-52`.
+
+**Step 3 (performance / precision) is now the live item**, and it is joined by a
+consumer this arc has not assessed: `q_sweep_sdp_atom` in
+`sdp_cross_channel.py` imports `_build_ysn_matrices` directly and uses the
+matrices, not their traces — so it is the one place where the defect could have
+had a numerical consequence, and nobody has measured it.
+
+
+## The `q_sweep_sdp_atom` gap is closed — it has no callers (2026-09-05)
+
+Measured, correcting my own note above: `q_sweep_sdp_atom` is defined at
+`computations/sdp_cross_channel.py:394` and **called nowhere in the repo**. A
+tree-wide grep returns its own `def` plus only the three places this session
+wrote *about* it (this bean, `qou-0wqd`, and the audit doc). No witness
+references it.
+
+It was named as "the one place the defect could still bite" because it is the
+only importer of `_build_ysn_matrices` outside `hecke_core_legacy` and it uses
+the **matrices** rather than their traces. That reasoning was right; the
+premise was not — there is no caller, so no recorded number came from it, and
+the fix makes it correct before anyone writes one.
+
+This is a grep, not a run: it establishes there is no consumer, not that the
+function is otherwise correct.
+
+**So the arc's remaining item is step 3 alone** — the builder is still float64
+(`math.sqrt`, `1.0` literals, no `mp.dps`), which is why the Python family
+agrees with the Rust MPFR reference only to ~1e-16.
+
+
+### Cross-reference for the sign claim (from `qou-0wqd` / PR #6708, 2026-09-05)
+
+The claim section above rests its "the sign survives a change of the underlying
+representation" argument on the accumulator values *"old braid-violating:
+-0.0319 at k=4 to -2.1955 at k=8; corrected: -0.0896 to -2.0200"*. Those are the
+2026-08-31 audit's step-2 table, which PR #6708 **retires**: its *corrected*
+column is what today's `main` already produces WITH the braid-violating
+matrices, and its *current* column reproduces on no tree measured there.
+
+**The conclusion is strengthened, not weakened.** Varying only the matrix family
+moves the accumulator by `1e-14`, and for a proved reason — the consumers take
+traces, and `Tr(ABA) - Tr(BAB) = Tr(B) - Tr(A) = 0` follows from the quadratic
+relation alone in any dimension. So the sign is invariant under that change by a
+structural argument rather than by two numerical runs that happened to agree in
+sign. Quote the invariance, not the table.
+
+**And it narrows the falsifier usefully:** since the representation cannot move
+the accumulator at all, the sign cannot be traced to anything in the seminormal
+family — the free-choice candidates worth checking are the ones OUTSIDE it (the
+LP objective's ordering, an orientation, a `w_0` convention).

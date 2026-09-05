@@ -192,3 +192,139 @@ three; a per-element one can.
 Scope, stated: this says the invariant fails at 5.045e-4 on the A=1 atom word.
 It does NOT say which side is wrong, and it is not yet a defect report against
 either.
+
+
+## ANSWERED (2026-09-05): the residual is the WORD ORDER — none of the three suspects
+
+The "decisive next test" named above ran. Probe:
+[`nf_vs_canonical_word_order_probe.py`](../computations/probes/nf_vs_canonical_word_order_probe.py),
+4/4, mpmath end to end at 60 dps, proton pin `q_at(55)`, no float64.
+
+**The identity is intact, and that is the first result.** Under convention D,
+`TR_M[i] == Σ_λ y_λ χ^λ(b_i)` holds on **all six** NF basis elements to
+**8.3e-61** — the arithmetic floor. The invariant that caught the 2026-05-19
+`TR_M[5]` bug is healthy. So the residual is not in the `TR_M` weights, not in
+the `y_λ`, and not in the reduced-block characters. All three are exonerated
+by the one measurement that was supposed to convict one of them.
+
+**Second: `hm_mp` is correct too.** Fed the *canonical* word, it reproduces the
+canonical Frobenius pairing to **1.1e-60**. So the NF machinery evaluates the
+pairing correctly for whatever word it is handed.
+
+### The consequence is forced, not conjectural
+
+Both sides are linear, and `TR_M[i] = Σ_λ y_λ χ^λ(b_i)` exactly. Therefore the
+NF route's `Σ_i nf[i]·TR_M[i]` **is** the Frobenius pairing evaluated on the
+element `Σ_i nf[i]·b_i`. Two exact evaluations of one linear functional that
+disagree by 5.045e-4 cannot be looking at the same algebra element.
+
+They are not. Same 11-letter multiset — 6 `σ₀`, 1 averaged on gen 0, 3 `σ₁⁻¹`,
+1 averaged on gen 1 — in **different order**, and `H₃` is non-commutative:
+
+    canonical (grouped by generator):  s0 s0 s0 s0 A0 s0 s0 S1 S1 S1 A1
+    NF route  (interleaved):           s0 S1 s0 S1 s0 S1 s0 A0 A1 s0 s0
+
+(`s` = σ, `S` = σ⁻¹, `A` = averaged `σ − (h/2)·1`; digit = generator.)
+
+### Both orderings are deliberate and each cites a source
+
+- `pyhecke.atom.build_atom_nf` — which `build_atom_nf_mp` says it mirrors —
+  comments its loop **"B₃ confinement (3 interleaved σ₀, σ₁⁻¹)"**.
+- `mass_at_3A_proper.atom_braid_word_3A` says it **"Matches the chain-walk
+  convention of `hecke_core.atom_per_generator_volumes`"**.
+
+Two conventions, two sources, one disagreement. Neither is a typo, and this is
+why the earlier framing ("at A=1 both sides trace the same 3-strand word in the
+same algebra") was the wrong assumption rather than the safe one.
+
+### Why the order is not cosmetic
+
+`(σ₀σ₁⁻¹)³` is the standard braid word for the **Borromean rings**, and it is
+exactly the interleaved route's intra-nucleon core. The grouped word contains
+no such subword. The framework's mass law is built on the Borromean braid
+(`F_Bor = |tr_M(β_Bor)|·[3]_q!/q³`), so *which* word the binding surface traces
+is a question about the physics, not about formatting.
+
+### A caution the numbers make concrete
+
+The two words are wildly different elements of `H₃` — NF coefficient vectors
+`[0.594, 1.309, −0.174, 0, −0.383, 0]` against
+`[1.019, 0.087, −0.092, −0.070, 0.016, 0.218]`, the first carrying two exact
+zeros — yet their Markov traces agree to four digits. **Trace proximity is not
+evidence that two routes built the same object.** That is the same class as the
+`qou-82mc` trap this bean already cites, one level down.
+
+### Two of my own hypotheses were refuted en route, and both are worth recording
+
+1. **"The residual is convention C vs D in the Markov parameter."** The
+   corpus's own `tr_q_plancherel_symbolic` docstring states the Markov property
+   as `z = 1/[2]_{q^{1/2}}` — convention **C** — while `TR_M` is built from
+   `z_D`. Measured instead: the SU(2) Frobenius pairing at `n = 2` gives
+   `Σ_λ y_λ χ^λ(σ) = 0.6126880371464652…`, which is `z_D = q³/(q²+1)` to the
+   precision of `q` itself. **The two routes agree on the Markov parameter**;
+   that docstring line is stale, and C-vs-D does not explain anything here.
+2. **My hand-transcription of the NF ordering was wrong.** Read off the source
+   it reproduced neither the NF route (45 % off) nor even its own letter
+   multiset. Every claim above is **by construction** — words pushed through
+   the real `hm_mp` and the real `atom_braid_word_3A` — not by reading either
+   file. A source-reading of a word ordering is not evidence about the word.
+
+### Scope, and what is now open
+
+Scope-(a): this localises the **A=1** residual and establishes that the two
+routes trace different words. It does **NOT** say which word is correct.
+
+That is the live question, and it is an authoring decision rather than a
+measurement: the mass law names the Borromean braid, one route builds it and
+the other does not. Whoever settles it should also decide whether the A≥2 rows
+in the table above are worth re-running — they were attributed to the colour
+convention, and the colour convention is real, but the ordering difference
+measured here is present at every `A` and was not accounted for.
+
+**Precision note:** the earlier entry's `q0 = 1.1099785827513808` is the
+float64-solved `q_parameter.Q` (~16 digits). Downstream agreements floor at
+~1e-16 for that reason alone; use `q_at(55)` when the question is whether an
+identity is exact.
+
+
+### SETTLED, and it is a measurement rather than an authoring call
+
+The paragraph above left "which word is correct" as a judgement for the owner.
+It is not — it is checkable against Lean, and the check is decisive.
+
+The mass law's Borromean factor has a **Lean-proved closed form**
+(`BorromeanMarkovTrace.lean`, consumed by
+`m_p_substrate_identity_50dps.trM_borromean`), independent of both word
+builders:
+
+    |tr_M(β_Bor, q)| = (4 + h² − 3h⁴ − h⁶) / (h² + 4)
+
+Evaluated at the proton pin and compared against both candidate intra-nucleon
+confinement words:
+
+| word | `|tr_M|` | vs the Lean closed form |
+|---|---|---|
+| `(σ₀σ₁⁻¹)³` **interleaved** | 0.9985621638367872659512131 | **7.0e-61** |
+| `σ₀³σ₁⁻³` **grouped** | 0.1800645395355010983036299 | **0.82** |
+
+So the **interleaved** ordering *is* `β_Bor` — the Borromean braid the
+framework's own mass law names — verified against Lean to the arithmetic
+floor. The grouped ordering is a different object, 82 % away.
+
+`atom_braid_word_3A` — the canonical route feeding `tr_m_atom_zn` →
+`binding_canonical` → the binding surface — uses the **grouped** one.
+
+**Scope, stated tightly, because the temptation here is to over-read it.**
+This does **NOT** show that any binding number is wrong. Binding is not the
+mass identity; whether `binding_canonical` needs `β_Bor` at all is a separate
+question this probe does not answer, and the closed form reaches the mass law
+without passing through either word builder. What is established is narrower
+and still worth acting on: **two production constructions of "the nucleon's
+intra-nucleon braid" disagree, and exactly one of them is the Borromean object
+the framework elsewhere treats as canonical.**
+
+The next measurement, named precisely: does anything downstream of
+`atom_braid_word_3A` depend on its intra-nucleon block *being* `β_Bor`? If yes,
+the grouped ordering is a defect with a computed blast radius. If no, the two
+are simply different objects with different jobs and the only fix owed is a
+docstring on each saying so.

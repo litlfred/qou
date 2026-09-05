@@ -1,11 +1,11 @@
 ---
 # qou-4a7a
 title: 'RED on main: ParticleInteractions/silver_ratio_beta_decay_null.lean — 3 proof errors, real, not a port'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T13:16:36Z
-updated_at: 2026-09-05T00:53:26Z
+updated_at: 2026-09-05T06:20:57Z
 ---
 
 Found by the dirty-closure library rebuild (qou-n9j7, PR #6649) on main 71744b7775: the only red among 158 modules rebuilt from source (every dependency rebuilt clean first; no importers). File last touched e1fd0deed4 (2026-08-30, 'lean(silver-ratio): the β-decay null in crossing energy, and the q→∞ volume limit'). Errors, verbatim:

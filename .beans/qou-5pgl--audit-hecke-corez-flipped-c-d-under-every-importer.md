@@ -169,3 +169,50 @@ So the comment `# m_e · 8G` does not reproduce the literal to better than
 m_e vintage or a slightly different intended factor — but the constant and its
 stated closed form do not currently agree. Not filed separately; noted here for
 whoever touches `prop:binding-scale-catalan`.
+
+
+## SAME CLASS, A SURFACE THIS BEAN DOES NOT REACH: `markov_peel`, and the DOCS (2026-09-05)
+
+This bean covers the **code** surface — files carrying constants calibrated
+before a C→D flip. There is a second flip of the same shape, and its damage is
+in **durable prose**, which nothing here scans.
+
+**The flip:** `c1a3299434` (2026-08-16) — *"markov_peel: the docstring said
+convention C; the live path is D"*. Every number measured through
+`markov_peel.word_to_element` **before** that date is a convention-C
+measurement wearing no C label.
+
+**A confirmed instance, corrected today.**
+`docs/audits/2026-08-08-borromean-trace-convention-forcing.md` carried a
+"Decisive test" table whose three figures were all pre-migration, and whose
+headline sentence **inverted**:
+
+| object | as published | re-run today |
+|---|---|---|
+| `(σ₀σ₁⁻¹)³` true β_Bor | 0.998366622585715967 | **0.998562163836787266** |
+| `σ₀³σ₁⁻³` grouped core | 0.0685558643198896 | **0.180064539535501098** |
+| `atom_braid_word_3A(1,0)` | 1.06530614425444993 | **1.145759692457300870** |
+| atomic word vs D | 6.68 % | **14.74 %** |
+
+It concluded *"The pure Borromean word reproduces **convention C** exactly"*.
+It reproduces **D** exactly — `probe3qrv.py`, re-run unchanged, prints
+`|interleaved beta_Bor| / D = 1.0000000000000000000`. Cross-checked against an
+independent implementation (Frobenius pairing `Σ_λ y_λ χ^λ`, mpmath 60 dps,
+Hoefsmit seminormal), which agrees with `tr_M_element` at **ratio 1.0**.
+
+**Scope of the class, MEASURED — and it is a candidate list, not a defect
+list.** Audit docs dated before 2026-08-16 that cite `markov_peel` or
+`tr_M_atomic`: **75**, of which **34** quote a ≥10-digit decimal somewhere.
+Beans last touched before that date citing them: **7**. Most of those 34
+decimals will have nothing to do with `markov_peel` — the filter is
+"quotes a long decimal", not "quotes a markov_peel-derived number", and
+separating them needs per-document work.
+
+**Do NOT sweep off these numbers.** Each candidate needs its own re-run to
+decide, and a doc that merely *mentions* the module is not contaminated.
+The cheap discriminator, worth building before any drain: the probe or
+snippet each doc cites is usually still in the tree and still runnable —
+re-run it and diff, which is exactly how the confirmed instance was caught.
+
+Found while answering `qou-hu1f`. Probe:
+`computations/probes/nf_vs_canonical_word_order_probe.py`.

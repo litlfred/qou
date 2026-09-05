@@ -123,3 +123,60 @@ the `net` values' own derivation, colour-antisymmetry of the quark wavefunction
 **And the symmetry energy is still missing.** `corr = -0.804` stands, the swap is
 refuted, `qou-ubsl`'s SU(4) route stays structurally forbidden. The dominant
 residual shape has no source — that is unchanged by this round.
+
+---
+
+## 2026-09-05 (third) — COLOUR TESTED. It forbids the asymmetry rather than explaining it.
+
+`qbeta_colour_does_not_license_the_asymmetry_probe.py` (6/6).
+
+### The symmetry argument does not mention the flavour
+
+In a colour-singlet baryon any quark PAIR is antisymmetric in colour (`3bar`), and
+Fermi statistics then forces `space (x) spin (x) flavour` to be SYMMETRIC — at
+`L = 0` with symmetric flavour, a spin triplet. **That derivation never names the
+flavour**, so `uu` in the proton and `dd` in the neutron are in identical
+configurations. Colour licenses NO asymmetry; whatever letter one takes, the
+other takes.
+
+### And which common letter it picks is ambiguous
+
+  * **strand = whole quark** -> total exchange is antisym (Fermi) -> both `-q^-1`
+  * **strand = colour index** -> colour antisym, rest sym -> both `+q`
+
+The **row cap argues for the first**: `dim V = 2` (`QOU/Hecke/RowCap.lean`) and a
+colour index needs three values, so a strand cannot be carrying colour. This
+arc's own result points at the total-exchange reading.
+
+### Measured — the two readings bracket the corpus's choice
+
+    law                                     viol   median   p5-p95     corr
+    as built  p-p=sigma, n-n=sigma^-1          1   0.8864   1.2250   -0.8038
+    colour: BOTH symmetric  (+q)            2498   1.3231   1.1779   -0.6911
+    colour: BOTH antisym    (-q^-1)            0   0.7189   1.1823   -0.6994
+    both = pinned loop      (1/[2]_q)         62   0.9314   1.1805   -0.6969
+
+  * the colour-INDEX reading is **catastrophically refuted** (2498 of 2548
+    exceed the law);
+  * the total-exchange reading gives a **STRICT bound** — zero violations, better
+    than the corpus's one — but over-binds 39 % on the median against 11 %;
+  * `2498 > 1 > 0`: the corpus's asymmetric hybrid sits BETWEEN the two symmetric
+    readings and is neither of them.
+
+### And the corpus's own justification is a declared fit
+
+`meson-to-proton-via-borromean.md`: *"Untyped composition yields net ~ 1.506. The
+CODATA proton net is ~ 0.999. **Typed crossings close this gap.**"* The split is
+there because it lands on the measured proton, and the block says so. The code
+asserts `uu -> sigma` / `dd -> sigma^-1` with no reason at all.
+
+### Where that leaves this bean
+
+**Open, one candidate shorter and sharper.** The assignment is not merely
+underived — it is in **tension with the symmetry argument that would be its
+natural home**. Remaining candidates: the Borromean proton construction, and the
+`net` values' own derivation.
+
+**And the symmetry energy survives all four laws** (best `-0.691` against the
+corpus's `-0.804`). Removing the asymmetry is worth about a seventh of the
+residual; it is not the missing term.

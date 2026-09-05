@@ -261,6 +261,63 @@ straight — state model results as mathematics, and mark the comparison points
 explicitly as where the empirical claim is being made. When criticising, aim at the
 comparisons and at the systematics on them, not at the naming.
 
+## 🟥 NO FITTING, EXCEPT CAL-1/2/3 (owner directive, 2026-09-05) — STRICT
+
+**This is a mathematics paper, not a physics paper.** The deliverable is a
+*process* and a *derivation*. The owner is building a model in order to iterate
+it toward physics, and **that iteration is impossible if anything is fitted**: a
+fitted model cannot be wrong in a way you can learn from, because it has already
+absorbed the discrepancy that would have taught you something.
+
+**The only admissible calibration is CAL-1/2/3** (the decay-width triple, table
+below). Everything else must be *derived*. There is no fourth constant, no
+"one small tuned factor", no "we only picked the cutoff".
+
+### What counts as fitting — including the kinds agents keep missing
+
+Continuous parameters are the obvious case and are rarely the problem. These
+are the ones that recur:
+
+- **Selection against the target.** Choosing an *object* — a knot from a census,
+  a partition, a truncation order, a branch — because the choice reproduces the
+  measured value. No continuous parameter is tuned and it is still a fit. The
+  giveaway is a gap where no object matched: see the 2026-09-05 retirement of
+  the census route, where `A ∈ {5,6,7}` had no prediction precisely because "no
+  census knot/link with `Vol ≈ B_AME/m_e` yet found".
+- **Sweeping a discrete parameter for accuracy.** "Empirical sweep shows `K = 6`
+  is the OPTIMAL cutoff" is a fitted parameter. Optimal against what? The data.
+- **Per-case dispatch.** A formula that branches on `A` (or on species, or on
+  regime) with a different expression per branch has one free choice per branch.
+- **Importing an empirical term.** Citing a phenomenological formula from the
+  literature (an empirical Wigner energy, an SEMF coefficient) imports somebody
+  else's fit.
+- **A tolerance sized to its own miss.** Already flagged in
+  `unified-iterative-correction-proof`: "A bound sized to its own miss is a fit."
+
+### The ranking rule agents get backwards
+
+**Accuracy is not evidence of correctness here, and a more accurate fitted route
+is worth LESS than a less accurate derived one.** A 5.87 % miss obtained by
+selecting a knot whose volume matches is weaker than a 69 % miss obtained by
+computing, because only the second one can be iterated. When comparing routes,
+rank by *derivational cleanliness first*, and treat accuracy as a diagnostic —
+never as a tie-breaker that promotes a fitted route.
+
+Corollary: **do not recommend consolidating onto the most accurate route.** Ask
+first what each route derives and what it selects.
+
+### What to do instead
+
+- If a derivation is specified but not implemented, **implement the
+  specification**, and report what it gives even when that is worse. A
+  documented honest miss is a result; the corpus's negatives are its most
+  reusable output.
+- If you cannot derive a quantity, say so and leave the gap visible. A gap is
+  information. A filled gap with a chosen constant is not.
+- If you catch yourself reaching for a route because its numbers are better,
+  that is the moment to stop and say so in the report.
+
+
 ## Critical-distance license (standing red-team permission, 2026-06-10)
 
 Agents have standing permission — and, when asked for assessment, an
@@ -2586,7 +2643,7 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **thirty-three** rows, and they split SIX ways — only the first
+>   catalogues **thirty-four** rows, and they split SEVEN ways — only the first
 >   group is about conventions at all:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
@@ -2629,6 +2686,22 @@ Do not regress either.
 >     (payload keys emitted verbatim by `build()`) — and the one live
 >     off-vocabulary producer travels the third. Not about data shape at all,
 >     which is why it is not in the 27-32 family.
+>   - **34** — `qou-t0wm`, and its own group because it blinds a detector by
+>     what an author **NAMED** a quantity rather than by shape or write path.
+>     An identifier matching `delta`/`err`/`resid` that also reaches both sides
+>     of a comparison was taken to mean the quantity IS the residual. An
+>     **error-propagation formula** mentions the measured quantities for
+>     exactly the same reason the residual does —
+>     `borromean_mass_MeV_err = sqrt((ratio_err·m_e)² + (ratio·m_e_err)²)` is a
+>     1σ propagated uncertainty and entirely correct. The discriminator is that
+>     **a residual is a difference**: requiring a `Sub` in the provenance keeps
+>     the `qou-tol0` positive (`delta = M_derived − M_obs`) and drops the class.
+>     Two things make it worth its own row. It was found by running the audit
+>     **on a fix made with that audit** — the repaired producer was still
+>     reported blocking. And the tier had fired on **nothing** on `main`, so
+>     the false positive was latent: **zero hits is not the same as verified
+>     sound**, and the audit doc asserted the second having measured only the
+>     first.
 >
 >   Several were found *by* detectors written to catch the previous blind spot —
 >   row 26 in the output of the audit that introduced it. Quote the split, not
