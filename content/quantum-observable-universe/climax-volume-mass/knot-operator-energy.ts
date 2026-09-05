@@ -6,7 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.BraidKnot.KnotOperatorEnergy",
     validation: "not_checked",
   },
-  uses: ["def:stable-atom"],
+  uses: ["def:stable-atom", "prop:operator-selection-lp"],
   cites: [],
   tags: [
     "knot-operator",

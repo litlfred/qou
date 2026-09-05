@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-05T08:56:43Z
+updated_at: 2026-09-05T14:30:00Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -544,6 +544,137 @@ family — the free-choice candidates worth checking are the ones OUTSIDE it (th
 LP objective's ordering, an orientation, a `w_0` convention).
 
 
+## The sign IS answered — the Pass-2 gate forces it (2026-09-05, PR #6752)
+
+The falsifier stated in advance above asked whether the sign traces to a free
+choice. **It traces to the gate**, which is neither a free convention nor part
+of the seminormal family — so the narrowing in the cross-reference section
+above ("look OUTSIDE the family") pointed the right way.
+
+`unified_iterative_correction` returns `B = sum over GATED lambda of
+C_lambda * ( ln|Tr M_lambda(A)| - ln d_lambda )`. Three measured steps:
+
+1. `C_lambda >= 0` everywhere — **0 of 682** negative.
+2. Pass 2 keeps exactly the partitions with final trace `<= 0` (complementary
+   slackness).
+3. `|Tr| >= d` holds in **34.1 %** of `Tr > 0` cases and **3.4 %** of
+   `Tr <= 0` cases — a 10x asymmetry, structural because `Tr(I) = +d`.
+
+Non-negative scale times a negative log ⇒ `B < 0` forced, for any nucleus.
+**Same cause explains the A-independence**: gated-set size across A = 2..6 is
+`[15, 9, 9, 10, 15]` while AME spans 12.7x — the output is a property of the
+gate's selection, not of the nucleus.
+
+Probe: `computations/probes/uic_sign_forced_by_gate_probe.py` (5/5).
+
+## The gate's justification is disproved — by a proof already in the corpus
+
+`content/quantum-observable-universe/mass-theory/operator-selection-lp.md`
+(commit `6b7d2ec4a8`) proves the operator-selection LP degenerate: `b_1 = 1`
+makes the first Frobenius row equal the objective vector, so the optimum is
+identically 0, `y_0* = 0` by strong duality, and the minimiser set is a
+positive-dimensional face. That commit fixed the content blocks and never
+touched `hecke_core_legacy.py`.
+
+- `lp_shadow_price` sets `y_0 = 1/[k]_q!` and calls it "the dual variable of
+  the normalisation constraint". Measured 0.497 (k=2) to 1.56e-4 (k=7) —
+  never 0. What it actually does is zero the two extremes `(k)` and `(1^k)`.
+- Substituting the **proved** `y_0* = 0` makes the sign MORE negative
+  (2H -1.3657 -> -1.6092; 6Li -1.0770 -> -1.6065). So correcting the dual is
+  necessary and **not sufficient** — the gate is the mechanism.
+
+Probe: `computations/probes/uic_gate_justification_disproved_probe.py` (5/5).
+
+## Replacement objective — written up, two falsifiers run, decision is the owner's
+
+`docs/proposals/2026-09-05-operator-selection-objective-replacement.md`.
+
+New measurement: **an index-set mismatch**. The primal LP is NF-basis-indexed
+(`d = n! = 720` at n=6) while `prop:mass-coefficient-shadow-price` claims a
+**partition's** shadow price — 11 partitions of 6, not 720. No partition-indexed
+LP exists in the corpus. The natural bridge makes the object a `d_lambda x
+d_lambda` matrix, not the scalar the code multiplies; and the `d_lambda = 1`
+blocks, where the scalar type IS correct, are exactly the two `y_0 = 1/[k]_q!`
+zeroes out. Probe: `lp_partition_index_mismatch_probe.py` (4/4).
+
+Five options O1-O5 with cost / risk / what-each-forecloses; **which one to take
+is the owner's decision**, the same one `6b7d2ec4a8` declined, one level down.
+
+- **O3 falsifier FIRES** (`sdp_o3_falsifier_probe.py`, 6/6). The block SDP does
+  exclude all six LP-optimal vertices (min eig -7.33 / -3.85) but is degenerate
+  by a different route: SU(2) gives `y_(1,1,1) = 0` exactly, so a Phi on that
+  block is PSD with objective 0 and nonzero net (0.02016). The ray matches the
+  known q-antisymmetriser radical to **6.4e-51** — not a new object. Amended to
+  **O3' — pose the SDP on `H_n(q)/radical`**.
+- **O3' falsifier does NOT fire** (`sdp_o3prime_weight_positivity_probe.py`,
+  5/5). n = 3..12 at the proton pin: >2-row partitions vanish exactly, every
+  survivor strictly positive, `sum y_lambda f^lambda = 1` throughout; still
+  positive at `k_max = 11` (9.2e-4). Cross-validated at n=3 to 14 digits
+  against the weights the O3 probe solved independently.
+
+**Do not start O3' expecting it to fix the sign.** It fixes the type error;
+the feasible geometry still does not distinguish `B_3`, so selection stays open.
+
+## Still open on this bean
+
+- Step 3 (the float64 builder) — untouched by this session.
+- 6Li / A>=6 for the extensive term's SHAPE (`qou-brng`) — a run is in flight
+  but that is a different question from the sign.
+
+## Owner ruling 2026-09-05 — O2 + O3′ chosen; O2 done, O3′ formalized
+
+Author picked **1 and 2**: fix the documentation, and re-pose as the block SDP
+on the radical quotient.
+
+**O2 applied, six sites, no number moved.** The false claim was that
+`y_0 = 1/[k]_q!` is "the dual variable of the normalisation constraint". It is
+`min_λ(w_λ/d_λ)`, a weight normalisation; and the real net-constraint dual of
+`prop:operator-selection-lp` is identically zero. Corrected in
+`mass-coefficient-shadow-price.{md,ts}`, `knot-operator-energy.md`,
+`unified-iterative-correction.lean` (docstring only), and three sites in
+`hecke_core_legacy.py` — one of which additionally claimed the LP assigns
+"unique invariants" to the partition basis, false twice over (NF-indexed, and a
+positive-dimensional minimiser face). Content validate exit 0; `lean`-direct
+exit 0. `shell-closure-stability.md` makes the same shape of claim about the
+**confinement** LP and was left alone: different program, and settling it is a
+measurement rather than a doc fix.
+
+**O3′ begun formalize-first** — `QOU/MassTheory/BlockSDPNondegeneracy.lean`,
+5 declarations, `lean`-direct exit 0, `#print axioms` clean on all five (no
+`sorryAx`). `obj_pos_of_pos_weights`: on the quotient every feasible point has
+strictly positive objective, so no degenerate ray.
+`exists_zero_obj_of_zero_weight`: one vanishing weight restores the degeneracy
+at any target — the falsifier as a theorem. `feasible_smul`: the value is
+homogeneous of degree one in `n_target`, the property the LP lacks. **Not
+proved: that O3′ selects.** The compute half of O3′ is not started.
+
+## 🛑 My A-independence claim is UNVERIFIED, and ⁶Li is anti-correlated
+
+`binding_energy(3,3)` with `_HAS_LP_KERNEL` asserted, 4039.8 s:
+**B_pred = −3.065019520558719** against AME **+31.994**.
+
+Against the only other production figure I measured myself (²H, kernel live,
+−7.271102124876717): predicted `|B|` **falls ×0.42** while AME binding **rises
+×14.4**. Per nucleon, predicted `|B|/A` falls ×7.1 against AME's ×4.8 rise. The
+prediction is **anti-correlated** with its target, not merely sign-flipped. The
+sign is negative at A = 6 too, consistent with the gate.
+
+**The four-point plateau I quoted in PR #6752 (−7.271 / −7.742 / −7.456 /
+−6.829) has provenance for ONE of its four figures.** A fixed-string grep for
+the other three across `*.md`, `*.json`, `*.py` returns nothing anywhere in the
+tree; they came from conversation context. Kernel-vs-fallback differ by 17.29 %
+on the same atom, so an unverified figure could be either. Marked unverified,
+not retracted. If the plateau is real, ⁶Li breaks it (2.4× smaller than the
+smallest of the four) — deciding that needs A = 3,4,5 re-measured kernel-live,
+~2 h, claimed separately.
+
+Second tension, open: the k_max = 6 reconstruction does **not** show the A = 6
+drop (⁶Li is second *largest* there at −1.0770), and the gated-set size at
+A = 6 is **15**, the largest in the series. Production magnitude falls where the
+gate admits the most partitions. The truncation argument covers absolute scale,
+not a reversed trend.
+
+Audit: `docs/audits/2026-09-05-li6-production-binding-anticorrelates.md`.
 ## Step 3 done — and the builder was float64 in three places, not one (2026-09-05, PR #6794)
 
 I had recorded the remaining defect as "the builder is still float64
@@ -584,3 +715,83 @@ float64 defect does NOT account for 17.3 %.
 claim is stale (#6708 fixed it; the audit exits 0), so it tells a user their
 numbers are invalid when they are not. The 17.3 % half compares fallback
 against kernel — a different comparison from the one above, unrun here.
+
+## A-series COMPLETE (2026-09-05) — the plateau does not exist, and that was my claim
+
+Owner asked for A = 3,4,5 kernel-live. Probe
+`computations/probes/uic_binding_a_series_kernel_live_probe.py`, 5/5, 11350 s.
+
+**All three unverified figures reproduce exactly** — ³H `−7.742121347136118`
+(vs −7.742), ³He `−7.45619950551758` (vs −7.456), ⁴He `−6.828594293148849`
+(vs −6.829). The series was kernel-live; my caution was procedurally right and
+the substance was sound.
+
+**And it identifies the set:** ²H, ³H, ³He, ⁴He — **A = 2, 3, 3, 4**, the same
+five atoms as `[15, 9, 9, 10, 15]` minus ⁶Li. I labelled both "A = 2..5" and
+both were wrong identically, because they are one set. **No A = 5 point had
+ever been computed.**
+
+| atom | A | Z | N | B_pred | AME |
+|---|---|---|---|---|---|
+| ²H | 2 | 1 | 1 | −7.2711 | 2.2246 |
+| ³H | 3 | 1 | 2 | −7.7421 | 8.4818 |
+| ³He | 3 | 2 | 1 | −7.4562 | 7.7180 |
+| ⁴He | 4 | 2 | 2 | −6.8286 | 28.2957 |
+| ⁵He | 5 | 2 | 3 | −6.7896 | 27.5607 |
+| ⁵Li | 5 | 3 | 2 | **−8.1363** | 26.3307 |
+| ⁶Li | 6 | 3 | 3 | −3.0650 | 31.9940 |
+
+**I committed a two-branch prediction before ⁵Li landed and BOTH failed.**
+⁵He and ⁵Li share A = 5 and differ only in Z, so: ⁵Li ≈ −6.8 ⇒ break at A = 6;
+⁵Li ≈ −3 ⇒ break at Z = 3. It is **−8.136**, below the whole plateau.
+
+**So the "A = 2..5 plateau with a cliff at A = 6" does not exist** — an artefact
+of a sample holding one atom per mass number above A = 3. What survives:
+
+- the **same-A mirror split grows ~5×** (³H/³He 3.835 %, ⁵He/⁵Li 19.84 %) — same
+  A, differing only in Z, and the gate account predicts nothing about it;
+- the **largest single jump is same-Z, adjacent-A**: ⁵Li → ⁶Li = 2.655×;
+- predicted spread 2.655× against AME's 14.4×, every point the wrong sign.
+
+**Scoped:** the probe's anti-correlation assertion compares only the extreme A
+points and the series is not monotone (⁵Li sits below ²H) — true of two
+endpoints, weaker than its passing suggests.
+
+**Post-merge check:** ²H re-run after the sibling's #6794 exact-`mpf` fix is
+**bit-identical** (`−7.271102124876717`, MOVED: False), so the series stands.
+Mechanism: with the kernel live the Python sigma family is never consumed.
+
+**Still open:** ⁶Li is the most extreme point and the one row not measured by
+this probe (carried from a standalone run). It wants an independent re-run
+before anything is built on it.
+
+## ⁶Li independently confirmed; O3′ appears to SELECT (2026-09-05, later)
+
+**⁶Li re-run is bit-identical** — `−3.065019520558719`, MOVED: False, 4024.9 s
+against the recorded 4039.8 s run. The extreme outlier is real, and every row of
+the A-series is now measured or independently confirmed. It doubles as a much
+harder post-merge check than ²H (A = 6 exercises far more of the partition
+table), so **#6794 does not move `binding_energy` on the kernel path**,
+confirmed at both ends of the mass range.
+
+**🛑 O3′ appears to SELECT — correcting my own §8 recommendation.** I told the
+owner O3′ would fix the type error and leave selection open. Under the natural
+lift `T_λ = t_λ·I`, the block SDP reduces to a scalar LP in the traces whose
+optimum sits on `argmin_λ t_λ`. Measured over all six rows of
+`a-K-via-lp-dual-full.witness.json`, survivors only: the argmin is **unique in
+every row**, smallest gap 19.9 %, largest 110.8 %. Selected blocks (2,1), (2,1),
+(3,3), (5,4), (5,4), (6,6) — the near-square two-row partition each time.
+
+Precisely: the **block** is selected, the **operator** is not (any PSD `Φ_λ`
+with the right trace is optimal). That is exactly the content the corpus's
+physical reading wants — "which Wedderburn blocks the bound state saturates" —
+and it does **not** contradict S4, which excludes selecting the *operator* `𝓑₃`
+on the NF-indexed polyhedron.
+
+Caveats kept explicit: the **reduction** was measured, not a solver run; the
+lift `T = t·I` is an assumption; and `t_λ > 0` on survivors is measured over six
+rows, not derived (recorded in `BlockSDPNondegeneracy.lean`'s docstring, since
+that is the theorem's hypothesis and characters can in principle go negative).
+
+**This raises the value of the O3′ compute**: authorised as a type fix, it may
+also be a selection principle.

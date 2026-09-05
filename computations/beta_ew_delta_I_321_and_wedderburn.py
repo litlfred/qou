@@ -25,6 +25,52 @@ References:
   - PR #550 commit a08379190 + fdcf90354 (numerical Δ_I spectrum)
   - hecke_character_symbolic.py (PR #546, on main)
   - def:ew-interface-knot, conj:hoefsmit-ew-cell-content
+
+⚠ WEIGHT AND NAME — CORRECTED 2026-09-05 (bean `qou-wapd`). Read before
+quoting any number from this file.
+
+1. THE AGGREGATE BELOW IS NOT A MARKOV TRACE, despite the label. It is
+   SUM_lam w_lam chi^lam with the PLANCHEREL-family weight
+   w_lam = dim_q^2/[n]_q!. The canonical Frobenius pairing of this
+   framework is tr_M = SUM_lam y_lam chi_lam with the OCNEANU weights,
+   and the two are different objects, not two conventions:
+
+     - a Markov trace is NORMALISED, tr_M(1) = 1. Measured at n=6, q0,
+       50 dps: SUM y_lam chi^lam(1) = 1.000000...  while
+       SUM (dim_q^2/[n]_q!) chi^lam(1) = 11.13944754035206007.
+     - they do not share a support. At n=6, y_lam is EXACTLY ZERO on 7
+       of the 11 partitions (every lambda with > 2 rows) while the
+       weight used here is nonzero on all 11.
+
+   Producer: `probes/beta_ew_weight_is_not_markov_probe.py`.
+
+2. THE (3,2,1) BLOCK CARRIES NO STATES AT N = 2. l((3,2,1)) = 3 and the
+   Schur-Weyl row cap gives dim V_lam = 0 whenever l(lam) > N; the fibre
+   is the fundamental of SU_q(2), so N = 2 and y_(3,2,1) = 0 exactly.
+   The corpus adjudicates the consequence in
+   `content/quantum-observable-universe/appendix-standard-model/`
+   `sm-params-gauge-couplings.md`: "Every route from such a block to a
+   physical number is either a Markov trace, which the row cap sends to
+   zero, or a spectrum, which has no states to act on." The cot(theta_W)
+   figure this file family produces is therefore computed OUTSIDE the
+   carrier, and that appendix states it "must not be cited as a
+   framework accuracy result".
+
+3. NOT MIGRATED to the Molien weight made canonical for Phi_k on
+   2026-09-05 (bean `qou-oots`), deliberately: migrating would move a
+   physics-facing number in a construction the paper has already placed
+   outside the carrier. The six candidate readings here are same-n
+   ratios, so they are invariant under dim_q^2/[n]_q! -> dim_q^2/D^2
+   (same numerator) but NOT under Molien, whose numerator is
+   lambda-dependent.
+
+4. WHAT IS NOT SETTLED: at N = 3 the block IS occupied
+   (y_(3,2,1) = 0.0103939752433) and a genuine Markov trace exists —
+   measured, tr_M(beta_EW Delta_I) = 2.90062956640672874659 at N=3
+   against 4.83789085692050323822 at N=2
+   (`probes/beta_ew_n3_second_trace_probe.py`). Whether the EW sector
+   belongs on an N = 3 second trace is open; the corpus's own preferred
+   lever is elsewhere (the Milnor triple linking mu-bar_123).
 """
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
@@ -215,7 +261,8 @@ def main() -> int:
     print()
 
     # ── Part (c): Wedderburn-weighted Markov trace ──────────────
-    print("Part (c): Wedderburn-weighted Markov trace")
+    print("Part (c): Plancherel-weighted block aggregate "
+          "(NOT a Markov trace — see module docstring, bean qou-wapd)")
     print(f"  w_λ = dim_q(λ)² / [{n}]_q!")
     print(f"  [{n}]_q! at q_0 = {q_factorial_at(n, q_0):.6f}")
     print()
@@ -243,7 +290,9 @@ def main() -> int:
 
     tr_M_total = sum(p["w_chi"] for p in per_partition)
     print()
-    print(f"  Markov trace tr_M(β_EW Δ_I) = Σ w_λ · χ^λ ≈ {tr_M_total:.6f}")
+    print(f"  Plancherel-weighted aggregate Σ w_λ · χ^λ ≈ {tr_M_total:.6f}"
+          f"   [NOT tr_M: the Markov trace uses y_λ, is normalised to 1 at\n"
+          f"    the identity, and vanishes on the (3,2,1) block at N=2]")
     print()
 
     # Wedderburn-weighted candidate readings

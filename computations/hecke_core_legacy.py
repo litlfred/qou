@@ -333,16 +333,45 @@ def q_resolvent_weight(partition, s=None):
 
 
 def lp_shadow_price(partition):
-    """LP-dual shadow price y_λ for the Frobenius positivity constraint
-    of partition λ in the operator-selection LP at level k = |λ|.
+    """Per-partition weight y_λ used by the binding accumulator at level
+    k = |λ|.  NAMED for the LP shadow price; it is not one.
 
-    From prop:mass-coefficient-shadow-price:
+        y_λ = w_λ / d_λ − y_0,   y_0 = min_λ (w_λ / d_λ) = 1/[k]_q!
 
-        y_λ = w_λ / d_λ − y_0
+    with d_λ = dim(λ), the classical dimension (number of standard Young
+    tableaux).
 
-    where y_0 = min_λ (w_λ / d_λ) = 1/[k]_q! is the dual variable of the
-    normalisation constraint 1ᵀx = n_target, and d_λ = dim(λ) is the
-    classical dimension (number of standard Young tableaux).
+    CORRECTED 2026-09-05 (owner ruling; PR #6752).  This docstring said y_0
+    "is the dual variable of the normalisation constraint 1ᵀx = n_target".
+    That is false, in two independent ways:
+
+      * This function solves no program.  It evaluates a closed form.  The
+        subtrahend 1/[k]_q! is exactly min_λ(w_λ/d_λ) — a normalisation of
+        the weights, not a dual variable of anything.
+
+      * The actual net-constraint dual of prop:operator-selection-lp is
+        IDENTICALLY ZERO, for every n_target, at every n and q.  The NF
+        basis contains the identity, so the first Frobenius row IS the
+        objective vector; the program minimises t·x subject to t·x ≥ 0, so
+        its optimal value is 0 and strong duality forces y_0* = 0.  Proved
+        in the content block (commit 6b7d2ec4a8) and in Lean
+        (`y_0_eq_zero_of_radical`); confirmed by every committed solve.
+        Measured here, y_0 runs 0.497 at k=2 to 1.56e-4 at k=7 — never 0,
+        so it cannot be that dual under any reading.
+
+    What the term DOES do, measured at k = 2..7: subtracting min_λ(w_λ/d_λ)
+    zeroes exactly the two one-dimensional blocks (k) and (1^k) — the
+    trivial and sign representations — and nothing else.  Note those are
+    precisely the blocks where a SCALAR dual would be well-typed at all;
+    for d_λ > 1 the Frobenius dual is a d_λ × d_λ matrix.  It is also not
+    needed for non-negativity: w_λ/d_λ > 0 already.
+
+    Consumers should read this as a weighting choice with a measured
+    effect, not as a priced constraint.  The replacement program is
+    tracked as O3′ (block SDP on the radical quotient); nothing here is
+    changed by that work.
+    See docs/proposals/2026-09-05-operator-selection-objective-replacement.md
+    and beans qou-sv7h / qou-8na1.
 
     The shadow price y_λ multiplies the categorical scale C_λ = m_e ·
     H_q(λ) to produce a per-partition binding contribution
@@ -357,7 +386,9 @@ def lp_shadow_price(partition):
     d = partition_dimension(partition)
     # y_0 is the smallest of w_λ/d_λ across all partitions of k.
     # For the trivial (n) partition (sym): w = 1/[n]_q!, d = 1.
-    # So y_0 = 1/[n]_q! (the LP normalisation dual).
+    # So y_0 = 1/[n]_q!.  NOT the LP normalisation dual — that one is
+    # identically 0 (see this function's docstring).  It is a weight
+    # normalisation whose measured effect is to zero (k) and (1^k).
     y_0 = 1.0 / q_factorial(k)
     return w / d - y_0
 
@@ -576,7 +607,7 @@ DELTA_22 = H_Q_22 * M_E_MEV                       # = [3]·[2]²·m_e ≈ 6.29 M
 _n4_fac_22 = q_int(2) * q_int(3) * q_int(4)       # [4]_q!
 D_Q_22 = _n4_fac_22 / H_Q_22                       # d_q((2,2)) = [4]_q!/H_q ≈ 2.044
 W_22 = D_Q_22**2 / _n4_fac_22                      # w_{(2,2)} = d_q²/[4]_q! ≈ 0.166
-Y_22 = lp_shadow_price((2, 2))                     # LP-dual shadow price of (2,2)
+Y_22 = lp_shadow_price((2, 2))                     # per-partition weight of (2,2)
 
 
 def _q_exp(x, n_terms=20):
@@ -1842,7 +1873,11 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                                  k_max=K_PARTITION_MAX,
                                  k_exact=K_PARTITION_MAX,
                                  use_rust=None):
-    """Unified iterative correction via LP-dual shadow prices.
+    """Unified iterative correction over per-partition weights.
+
+    NAMING CORRECTED 2026-09-05 (owner ruling; PR #6752).  This read
+    "via LP-dual shadow prices".  The weights y_λ are not LP duals —
+    see `lp_shadow_price` above for the two independent reasons.
 
     A SINGLE consistent algorithm — no special cases for any A.
     Starts at A = 1 and accumulates a per-step contribution from
@@ -1856,11 +1891,15 @@ def unified_iterative_correction(Z, N, return_per_step=False,
       • H_q(λ) = ∏_{x∈λ} [h_x(λ)]_q is the q-hook product (the
         categorical scale C_λ = m_e · H_q(λ) generalises the (2,2)
         derivation of [3]·[2]² · m_e to every λ);
-      • y_λ = w_λ/d_λ − 1/[k]_q! is the LP-dual shadow price of the
-        Frobenius positivity constraint of λ
-        (prop:mass-coefficient-shadow-price); shadow prices are the
-        unique invariants that the operator-selection LP assigns to
-        the partition basis;
+      • y_λ = w_λ/d_λ − 1/[k]_q! is a closed-form per-partition
+        weight, named for prop:mass-coefficient-shadow-price but not
+        computed from any program.  The clause that stood here —
+        "shadow prices are the unique invariants that the
+        operator-selection LP assigns to the partition basis" — is
+        false twice over: that LP indexes its constraints by NF basis
+        element (n! of them, not p(n)), and its minimiser set is a
+        POSITIVE-DIMENSIONAL face, so it assigns nothing uniquely.
+        Proved in the content block, commit 6b7d2ec4a8;
       • M_λ^{(0..step)} is the running YSN matrix product across
         all steps so far, embedded into the Hecke generators
         σ_1, …, σ_{k-1} of H_k(q) (cyclic generator index keeps the

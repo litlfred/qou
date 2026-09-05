@@ -1,0 +1,206 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T07:39:57.986210+00:00",
+  "commitSha": "97d1091f9b984148d85d0a398dc54d114b44613a",
+  "assertions": [
+    {
+      "name": "sum of d_lambda^2 = n!, so constraints group into partition blocks",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "lp_partition_index_mismatch_probe"
+    },
+    {
+      "name": "the two index sets differ in size at every n >= 3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "lp_partition_index_mismatch_probe"
+    },
+    {
+      "name": "the zeroed set IS the d_lambda = 1 set, at every k tested",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "lp_partition_index_mismatch_probe"
+    },
+    {
+      "name": "a scalar dual is well-defined only where d_lambda = 1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "lp_partition_index_mismatch_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "lp-partition-index-mismatch",
+  "scriptFile": "lp_partition_index_mismatch_probe.py",
+  "scriptHash": "dd6b5282f550",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/lp_partition_index_mismatch_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/lp_partition_index_mismatch_probe.py"
+  },
+  "description": "Groundwork for the operator-selection objective replacement. Both LPs index Frobenius positivity by NF basis element (n! of them); the gate, lp_shadow_price and prop:mass-coefficient-shadow-price all index by partition (far fewer). The natural bridge is block-PSD, whose dual is a d_lambda x d_lambda matrix, not a scalar -- and the y_0 = 1/[k]_q! shift zeroes exactly the d_lambda = 1 partitions, i.e. precisely those where a scalar dual would be well-defined.",
+  "auditOnly": "docs/proposals/2026-09-05-operator-selection-objective-replacement.md",
+  "data": {
+    "index_sets": [
+      {
+        "n": 3,
+        "n_partitions": 3,
+        "n_constraints_in_LP": 6,
+        "dims": [
+          1,
+          2,
+          1
+        ],
+        "sum_d_squared": 6
+      },
+      {
+        "n": 4,
+        "n_partitions": 5,
+        "n_constraints_in_LP": 24,
+        "dims": [
+          1,
+          3,
+          2,
+          3,
+          1
+        ],
+        "sum_d_squared": 24
+      },
+      {
+        "n": 5,
+        "n_partitions": 7,
+        "n_constraints_in_LP": 120,
+        "dims": [
+          1,
+          4,
+          5,
+          6,
+          5,
+          4,
+          1
+        ],
+        "sum_d_squared": 120
+      },
+      {
+        "n": 6,
+        "n_partitions": 11,
+        "n_constraints_in_LP": 720,
+        "dims": [
+          1,
+          5,
+          9,
+          10,
+          5,
+          16,
+          10,
+          5,
+          9,
+          5,
+          1
+        ],
+        "sum_d_squared": 720
+      }
+    ],
+    "zeroed_vs_one_dimensional": [
+      {
+        "k": 2,
+        "d1_partitions": [
+          "(1, 1)",
+          "(2,)"
+        ],
+        "zeroed_by_y0": [
+          "(1, 1)",
+          "(2,)"
+        ],
+        "identical": true
+      },
+      {
+        "k": 3,
+        "d1_partitions": [
+          "(1, 1, 1)",
+          "(3,)"
+        ],
+        "zeroed_by_y0": [
+          "(1, 1, 1)",
+          "(3,)"
+        ],
+        "identical": true
+      },
+      {
+        "k": 4,
+        "d1_partitions": [
+          "(1, 1, 1, 1)",
+          "(4,)"
+        ],
+        "zeroed_by_y0": [
+          "(1, 1, 1, 1)",
+          "(4,)"
+        ],
+        "identical": true
+      },
+      {
+        "k": 5,
+        "d1_partitions": [
+          "(1, 1, 1, 1, 1)",
+          "(5,)"
+        ],
+        "zeroed_by_y0": [
+          "(1, 1, 1, 1, 1)",
+          "(5,)"
+        ],
+        "identical": true
+      },
+      {
+        "k": 6,
+        "d1_partitions": [
+          "(1, 1, 1, 1, 1, 1)",
+          "(6,)"
+        ],
+        "zeroed_by_y0": [
+          "(1, 1, 1, 1, 1, 1)",
+          "(6,)"
+        ],
+        "identical": true
+      },
+      {
+        "k": 7,
+        "d1_partitions": [
+          "(1, 1, 1, 1, 1, 1, 1)",
+          "(7,)"
+        ],
+        "zeroed_by_y0": [
+          "(1, 1, 1, 1, 1, 1, 1)",
+          "(7,)"
+        ],
+        "identical": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "engine": "python+mpmath+rust",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T11:52:06.168069+00:00",
+  "commitSha": "c190042c8ca7d54a65d0c3256f7b82bac70a30aa",
+  "assertions": [
+    {
+      "name": "the Rust LP kernel is available -- the fallback family violates the braid relation and is not a representation of H_n(q)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_binding_a_series_kernel_live_probe"
+    },
+    {
+      "name": "every point is negative -- the gate forces the sign at every A",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_binding_a_series_kernel_live_probe"
+    },
+    {
+      "name": "the predicted spread is far smaller than AME's, so the output does not track the nucleus",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_binding_a_series_kernel_live_probe"
+    },
+    {
+      "name": "|B_pred| moves AGAINST A while AME moves with it (anti-correlation)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_binding_a_series_kernel_live_probe"
+    },
+    {
+      "name": "no point reproduces its AME value even in sign, so none is a fit",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_binding_a_series_kernel_live_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18,
+  "computation": "uic-binding-a-series-kernel-live",
+  "scriptFile": "uic_binding_a_series_kernel_live_probe.py",
+  "scriptHash": "40f19c5fcd91",
+  "scriptCommitSha": "10d8b4b2f2b2dda3beccc9ece9b9413ddd221ec8",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/uic_binding_a_series_kernel_live_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/uic_binding_a_series_kernel_live_probe.py"
+  },
+  "description": "Production binding_energy(Z,N) across A = 2..6, EVERY point measured with the Rust LP kernel asserted live (the fallback family violates the braid relation and differs by 17.29% on 2H). Re-measures A = 3,4,5, whose figures in PR #6752 had no provenance anywhere in the tree. Reports whether the 'A-independence plateau' exists and whether the prediction is anti-correlated with AME.",
+  "auditOnly": "docs/audits/2026-09-05-li6-production-binding-anticorrelates.md",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "series": [
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "B_pred_MeV": "-7.27110212487671700000000000000000000000000000000000000000000",
+        "B_AME_MeV": "2.22456620000000000000000000000000000000000000000000000000000",
+        "measured_here": false,
+        "provenance": "measured earlier in the same session, same call, kernel asserted live"
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "B_pred_MeV": "-7.74212134713611800000000000000000000000000000000000000000000",
+        "B_AME_MeV": "8.48179620000000000000000000000000000000000000000000000000000",
+        "elapsed_seconds_note": "wall time is environment-dependent; not a result",
+        "measured_here": true
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "B_pred_MeV": "-7.45619950551758000000000000000000000000000000000000000000000",
+        "B_AME_MeV": "7.71804132000000000000000000000000000000000000000000000000000",
+        "elapsed_seconds_note": "wall time is environment-dependent; not a result",
+        "measured_here": true
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "B_pred_MeV": "-6.82859429314884900000000000000000000000000000000000000000000",
+        "B_AME_MeV": "28.2956624000000000000000000000000000000000000000000000000000",
+        "elapsed_seconds_note": "wall time is environment-dependent; not a result",
+        "measured_here": true
+      },
+      {
+        "atom": "5He",
+        "Z": 2,
+        "N": 3,
+        "A": 5,
+        "B_pred_MeV": "-6.78956030188979000000000000000000000000000000000000000000000",
+        "B_AME_MeV": "27.5606625000000000000000000000000000000000000000000000000000",
+        "elapsed_seconds_note": "wall time is environment-dependent; not a result",
+        "measured_here": true
+      },
+      {
+        "atom": "5Li",
+        "Z": 3,
+        "N": 2,
+        "A": 5,
+        "B_pred_MeV": "-8.13631997667767800000000000000000000000000000000000000000000",
+        "B_AME_MeV": "26.3306625000000000000000000000000000000000000000000000000000",
+        "elapsed_seconds_note": "wall time is environment-dependent; not a result",
+        "measured_here": true
+      },
+      {
+        "atom": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "B_pred_MeV": "-3.06501952055871900000000000000000000000000000000000000000000",
+        "B_AME_MeV": "31.9939872000000000000000000000000000000000000000000000000000",
+        "measured_here": false,
+        "provenance": "measured earlier in the same session, same call, kernel asserted live"
+      }
+    ],
+    "spread_pred_over_ame": {
+      "pred_max_over_min": "2.65457362411659853941393436236816723666152050140930649830677",
+      "ame_max_over_min": "14.3821241193002033385205618965171726514589675955698688580272"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

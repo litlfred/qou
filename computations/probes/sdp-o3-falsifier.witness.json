@@ -1,0 +1,146 @@
+{
+  "engine": "python+mpmath+rust",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T07:47:34.680988+00:00",
+  "commitSha": "ad8cd0783b7a342d513f31571e6c74361d45409f",
+  "assertions": [
+    {
+      "name": "the block decomposition reproduces tr_M at float64 input precision",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "sdp_o3_falsifier_probe"
+    },
+    {
+      "name": "normalisation sum y_lambda d_lambda = 1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "sdp_o3_falsifier_probe"
+    },
+    {
+      "name": "exactly one partition has ZERO Markov weight (the SU(2) vanishing)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "sdp_o3_falsifier_probe"
+    },
+    {
+      "name": "every LP-optimal vertex is EXCLUDED by the PSD constraint",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "sdp_o3_falsifier_probe"
+    },
+    {
+      "name": "that direction has NONZERO net, so it scales to any n_target",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "sdp_o3_falsifier_probe"
+    },
+    {
+      "name": "the degenerate ray IS the known radical, not a new object",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "sdp_o3_falsifier_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "sdp-o3-falsifier",
+  "scriptFile": "sdp_o3_falsifier_probe.py",
+  "scriptHash": "7580df387ce7",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/sdp_o3_falsifier_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/sdp_o3_falsifier_probe.py"
+  },
+  "description": "O3 falsifier for the operator-selection replacement. The partition-block SDP DOES fix the LP's objective-duplicates-constraint defect (all six LP-optimal vertices excluded, min eig -7.33/-3.85) but is degenerate by a different route: the SU(2) specialisation gives y_(1,1,1) = 0, so a Phi supported on that block is PSD with objective 0 and nonzero net, making the optimum identically 0 on a ray. That ray is the known q-antisymmetriser radical, so the repair is the existing quotient (O3').",
+  "auditOnly": "docs/proposals/2026-09-05-operator-selection-objective-replacement.md",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561076887987449912187360000000000"
+  },
+  "data": {
+    "markov_weights": [
+      {
+        "partition": "(3,)",
+        "dim": 1,
+        "y": "0.505404226503930806279896481340470377288895314873907700395620"
+      },
+      {
+        "partition": "(2, 1)",
+        "dim": 2,
+        "y": "0.247297886748034589605349122247294121619317786269628324254446"
+      },
+      {
+        "partition": "(1, 1, 1)",
+        "dim": 1,
+        "y": "0.0000000000000000145094052741649413794724691125868356510954886061993864254230"
+      }
+    ],
+    "lp_vertices_under_psd": [
+      {
+        "vertex": "(1,2,3)",
+        "min_eigenvalue": "-7.32864615779788626828175351902192275752550852381846486178887",
+        "psd": false
+      },
+      {
+        "vertex": "(1,2,4)",
+        "min_eigenvalue": "-7.32864615779788626828175351902192275752550852381846486178887",
+        "psd": false
+      },
+      {
+        "vertex": "(1,3,5)",
+        "min_eigenvalue": "-3.85251717556722493414196815618531686164045215941816213192774",
+        "psd": false
+      },
+      {
+        "vertex": "(1,4,5)",
+        "min_eigenvalue": "-3.85251717556722493414196815618531686164045215941816213192774",
+        "psd": false
+      },
+      {
+        "vertex": "(2,3,5)",
+        "min_eigenvalue": "-3.85251717556722493414196815618531686164045215941819750025326",
+        "psd": false
+      },
+      {
+        "vertex": "(2,4,5)",
+        "min_eigenvalue": "-3.85251717556722493414196815618531686164045215941819750025326",
+        "psd": false
+      }
+    ],
+    "degenerate_ray": {
+      "net_sum": "0.0201621592527849362538405077680228789999786410403597706199778",
+      "radical_match_spread": "6.40427101960980136173748002890613461308984843252723832770372e-51"
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
