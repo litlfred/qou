@@ -46,11 +46,17 @@ tr_{W_k} = Σ_{j≤k} tr_{(n−j,j)}        and        tr_{(n−k,k)} = tr_{W_k}
 A difference of two decaying sequences need not decay. So the question was asked from the other
 side: **does the sector trace itself decay, per sector dimension `C(n,k)`?**
 
-| A | irrep column, ρ_true | **sector `\|tr_{W_k}\|/C(n,k)`, ρ_true** | sector, ρ_bare |
-|---|---|---|---|
-| 2 | 1 rise ✗ | **1 rise ✗** (k=2, ×1.231) | decays ✓ |
-| 3 | 1 rise ✗ | **decays ✓** | decays ✓ |
-| 4 | **2 rises ✗** | **decays ✓** | decays ✓ |
+| A | irrep column, ρ_true | **sector `\|tr_{W_k}\|/C(n,k)`, ρ_true** | sector, ρ_bare | **CONTROL: sector, plain ρ** |
+|---|---|---|---|---|
+| 2 | 1 rise ✗ | **1 rise ✗** (into k=3, ×1.231) | decays ✓ | 1 rise ✗ (into k=3, ×1.194) |
+| 3 | 1 rise ✗ | **decays ✓** | decays ✓ | **1 rise ✗** (into k=3, ×1.415) |
+| 4 | **2 rises ✗** | **decays ✓** | decays ✓ | **2 rises ✗** (into k=3 and k=6) |
+
+**The control is the column that makes this worth anything.** `tr_{W_k}(ρ)` with **no `Ω₂`** does
+*not* decay — it rises at A=3 and A=4 exactly where the `Ω₂` version decays. So sector decay is
+**not** a generic property of the weight filtration `W_k`, which would have made the whole reframing
+deflationary; it appears when the curvature is inserted. That was the obvious deflationary reading
+and it is now excluded by measurement rather than by argument.
 
 **At A=3 and A=4 the sector decays where the irrep column does not** — and A=4 is the decisive case,
 since that is where the irrep column fails twice and where the y-weighted mass fails too. The A=4
@@ -105,6 +111,10 @@ one the corpus had already flagged, tested from the other end.
 
 ## What is NOT established, and one caution I registered before running
 
+- **A labelling inconsistency between my own two probes, caught and fixed.** The column probe reports
+  a rise by its **destination** `k`; the sector probe reported the **source**, so the same event read
+  as "k=2" in one output and "k=3" in the other. Both now say `into k=<destination>`. Any earlier
+  quotation of an A=2 sector rise "at k=2" means **into k=3**.
 - **A=2 fails**, so the honest statement is *"decays for A ≥ 3"*. **A property that only starts
   holding at the third size is the shape of a small-size artifact**, and I wrote that into the
   probe's docstring *before* running it rather than after seeing the result. Two things weigh

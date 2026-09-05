@@ -61,14 +61,50 @@ def shape(n, k):
     return (n - k,) if k == 0 else (n - k, k)
 
 
-def verdict(name, vals):
-    """Report WHERE it breaks; a bare False hides which k is anomalous."""
-    bad = [(i + 1, vals[i], vals[i + 1]) for i in range(len(vals) - 1) if vals[i + 1] > vals[i]]
+def plain_trace(lam, word, q):
+    """tr_λ(ρ) with NO Ω₂ — the CONTROL.
+
+    If the sector ratio decays for the plain word trace too, then sector decay is a property of the
+    weight filtration and says nothing about the curvature insertion, which would make the whole
+    reframing deflationary. Measured: it does NOT — the plain trace rises at A=3 and A=4 where the
+    Ω₂ version decays. That is what makes the result about Ω₂^P rather than about W_k.
+
+    Cheaper than the Ω₂ sweep by roughly the commutator sum: no (ngen−1)×4 extra spmatvecs per
+    column, just the word applied to each basis vector.
+    """
+    per_gen, dim = base.block_structure(tuple(lam))
+    sig = base.sigma_csr(per_gen, dim, q)
+    rev = list(reversed(word))
+    tr = mp.mpf(0)
+    for j in range(dim):
+        v = [mp.mpf(0)] * dim
+        v[j] = mp.mpf(1)
+        for c, d, g in rev:
+            sv = base.spmatvec(sig[g], v)
+            c = mp.mpf(str(c))
+            d = mp.mpf(str(d))
+            v = [c * sv[r] + d * v[r] for r in range(dim)]
+        tr += v[j]
+    return tr, dim
+
+
+def verdict(name, vals, k0=1):
+    """Report WHERE it breaks; a bare False hides which k is anomalous.
+
+    A rise is labelled by its DESTINATION k, matching
+    `magnus_tworow_column_true_element_probe.monotone_report`. That probe reports `ks[i+1]` and an
+    earlier version of this one reported the SOURCE, so the same rise appeared as "k=2" in one
+    output and "k=3" in the other. Two probes in one arc labelling the same event differently is how
+    a wrong `k` reaches an audit doc; `vals` is passed already sliced from `k0`, so the destination
+    of `vals[i] → vals[i+1]` is `k0 + i + 1`.
+    """
+    bad = [(k0 + i + 1, vals[i], vals[i + 1])
+           for i in range(len(vals) - 1) if vals[i + 1] > vals[i]]
     if not bad:
         return f"    {name}: strictly decreasing ✓"
     out = [f"    {name}: NOT decreasing — {len(bad)} rise(s) ✗"]
     for k, lo, hi in bad:
-        out.append(f"        k={k}:  {mp.nstr(lo, 7)} → {mp.nstr(hi, 7)}"
+        out.append(f"        into k={k}:  {mp.nstr(lo, 7)} → {mp.nstr(hi, 7)}"
                    f"  (×{mp.nstr(hi / lo, 4) if lo > 0 else '∞'})")
     return "\n".join(out)
 
@@ -94,6 +130,17 @@ def main():
         print(f"\n{'=' * 82}\n  A={A} (n={n})\n")
         print(f"  {'k':>3}  {'λ':<11}{'dim_λ':>7}{'signed tr_λ TRUE':>20}"
               f"{'tr_W_k':>16}{'C(n,k)':>9}{'|tr_W|/C':>13}")
+
+        # CONTROL FIRST, deliberately: if the plain trace already decays, the Ω₂ result below is
+        # about W_k rather than about the curvature, and the rest of this probe means much less.
+        run_p, rats_p = mp.mpf(0), []
+        for kk in range(n // 2 + 1):
+            trp, _d = plain_trace(shape(n, kk), word, q)
+            run_p += trp
+            rats_p.append(abs(run_p) / comb(n, kk))
+        print(f"  CONTROL — plain tr_λ(ρ), no Ω₂:")
+        print(verdict("|tr_W_k|/C(n,k)  plain ρ", rats_p[1:]))
+        print()
 
         for elt in ("true", "bare"):
             running = mp.mpf(0)
