@@ -4,11 +4,12 @@
   "not_every_live_entry_is_a_defect": "A FAITHFUL live mirror is working as designed: AGENTS.md 4a gates DRIFT, not mirroring, and a `definition` block is REQUIRED to carry a sibling (3). Deleting a faithful mirror would break that requirement. The actionable subset is `live_drifted`.",
   "direction_is_not_uniform": "Do not assume the library is canonical. Measured across the 163 substantive drifts: 91 have the library side edited more recently, 70 the sibling side. Recency is not canonicality -- `QOU.Information.speedOfLight` has the LIBRARY edited later and the SIBLING is the 7c-compliant one (generic base ring, division-free, defining relation discharged as a theorem). Every reconciliation requires reading both sides.",
   "measured_at": "2026-09-05",
+  "totals_note": "These move as main moves -- 47 commits of main between two runs on 2026-09-05 took shared_fqns 130 -> 129 and drifted 164 -> 163 with no change from this branch. Re-measure; do not quote.",
   "totals": {
-    "shared_fqns": 130,
-    "sibling_declarations": 282,
+    "shared_fqns": 129,
+    "sibling_declarations": 281,
     "faithful": 118,
-    "drifted": 164,
+    "drifted": 163,
     "live": 11
   },
   "live": [
