@@ -274,3 +274,9 @@ computations/borromean-reconstruct-ckpt.json
 computations/.bpp-higher-a-checkpoint.json
 computations/.bpp-higher-a-checkpoint.json.tmp
 computations/.sparse-cache/
+
+# Atomic witness writes (bean `qou-sidu`): producers serialize to
+# `<name>.witness.json.tmp` and `os.replace` it into position. A producer that
+# fails between the two leaves the temp file behind; it is debris, never an
+# artifact, and must not be committable by an incautious `git add`.
+*.witness.json.tmp

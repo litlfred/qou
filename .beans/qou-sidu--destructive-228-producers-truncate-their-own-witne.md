@@ -119,3 +119,66 @@ witness stays at its full 1363 bytes instead of going to 0.
       subprocess with a read-only checkout, or the producers grow guards. The
       hoist makes the current failure harmless but does not remove the
       capability.
+
+## 2026-09-05 — the second item, and what the atomic fix already bought
+
+### The destructive CAPABILITY is largely gone, as a side effect
+
+The remaining open item reads "an audit should not be able to mutate the corpus
+it audits". Worth stating precisely what changed: with atomic writes in place,
+the original failure can no longer occur. An import that raises now dies before
+`os.replace`, so the committed witness is never touched — it is not truncated,
+not partially written, not modified at all. The 22-witness wipe is not merely
+less likely; that specific path is closed.
+
+What is NOT closed is the capability. Importing a producer still executes its
+module-scope body, and a producer can do things other than write its witness.
+
+### A trade-off my own fix introduced, recorded rather than hidden
+
+The library (`WitnessBuilder.save()`) unlinks its temp file on failure. The 374
+direct-writer transform does NOT — it emits
+
+    _wpath_sidu = <path>
+    _wtmp_sidu  = str(_wpath_sidu) + ".tmp"
+    with open(_wtmp_sidu, ...) as f:
+        ...
+    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
+
+with no `try`/`except` around it. So a producer that fails mid-write now leaves
+`<name>.witness.json.tmp` behind. That is a strict improvement over destroying
+the witness, but it is debris.
+
+Deliberately not fixed by a third mechanical pass over the same 374 files:
+wrapping each block in `try`/`except` re-indents every body, which is a
+materially riskier transform than the two already done, for a failure mode that
+is cosmetic. Two of the three passes so far needed correction, and the risk of
+a bad edit exceeds the cost of a stray file.
+
+Mitigated instead: `*.witness.json.tmp` is now in `.gitignore`, so debris
+cannot be committed by an incautious `git add` and cannot be mistaken for an
+artifact. Reassess if debris is ever observed in practice — as of this commit
+there is none.
+
+### The remaining item, with options rather than a guess
+
+- [ ] An audit should not be able to mutate the corpus it audits.
+      `producer_importability_audit` imports ~4000 producers in-process to test
+      importability, and the missing `if __name__ == "__main__":` guards on the
+      probe family are what let it reach their module-scope work.
+
+      Options, cheapest first:
+
+      1. **Add the missing `__main__` guards** to the probes that execute work
+         at import. Fixes the cause rather than the symptom, and helps every
+         other importer too. Mechanical but needs care: some producers are
+         MEANT to run on import, and turning that off changes what they do.
+      2. **Import under a write guard** — patch `builtins.open` for the
+         duration of each import so a `"w"`/`"a"` mode raises. Contained, cheap,
+         and turns any attempted mutation into exactly the finding the audit
+         wants to report.
+      3. **Subprocess per import.** Fully isolating, and the honest answer, but
+         ~4000 process spawns on an audit that already runs over ten minutes.
+
+      Recommend 2, with 1 as the real fix where a guard is simply missing.
+      Do NOT do 3 without measuring the cost first.
