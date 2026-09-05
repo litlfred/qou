@@ -296,12 +296,91 @@ That is this framework's situation exactly, at `d = 3A ≫ 2`. Nothing outside
   It is not a statement about the row cap at all, and it describes an
   approximation no live producer runs.
 
+## 4e. What route 1 *does* establish, measured: **both horns vanish**
+
+§4 above claimed route 1 hands down a *constraint* on the weight family. That
+was withdrawn. This section replaces it with what route 1 actually yields once
+`N = 2` is in hand, and the answer is a **negative**: route 1 cannot supply a
+Φ_k weight family for `k ≥ 2` at all, by either horn.
+
+Recall how §7 of
+[`2026-09-05-phi-k-weight-family.md`](2026-09-05-phi-k-weight-family.md) poses
+it — as a fork whose resolution is the naming:
+
+> If that object is `V^{⊗n}` … the share is `f^λ d_q(λ)/[n]_q!`-shaped
+> (Molien) and the question is closed. If it is the endomorphism algebra
+> `End(V^{⊗n})`, the share is `d_q²/D²`-shaped and the question is closed the
+> other way. **Naming which object the nucleus is a state in is the whole
+> content.**
+
+At `N = 2` **both horns are supported on partitions of at most two rows**, i.e.
+on depth 0 and depth 1 only, and are **exactly zero** on every stratum of depth
+`≥ 2`:
+
+| horn | share | index set | why it dies on depth ≥ 2 |
+|---|---|---|---|
+| 1 — module `V^{⊗n}` | `f^λ · d_q^{SU(2)}(λ) / [2]_q^n` | `ℓ(λ) ≤ 2` | the cell `(3,1)` has content `−2`, so `[2 + (−2)]_q = [0]_q = 0` kills the product — `RowCapObstruction.lean` arriving as arithmetic |
+| 2 — operators `End(V^{⊗n})` | `(f^λ)² / Catalan(n)` | `ℓ(λ) ≤ 2` | `End_{U_q𝔰𝔩₂}(V^{⊗n}) = TL_n(q)`, which *has no blocks* with more than two rows |
+
+Measured at the nuclear `n = 3A`, proton pin, `mp.dps = 50`
+([`route_1_is_degenerate_at_n_two_probe.py`](../../computations/probes/route_1_is_degenerate_at_n_two_probe.py),
+5/5):
+
+| `n` | `A` | Σ horn 1 | horn 1 on depth ≥ 2 | Σ horn 2 | horn 2 on depth ≥ 2 | Σ Molien | Molien on depth ≥ 2 |
+|---|---|---|---|---|---|---|---|
+| 3 | 1 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.223435 |
+| 6 | 2 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.902265 |
+| 9 | 3 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.997609 |
+| 12 | 4 | 1.0 | **0.0** | 1.0 | **0.0** | 1.0 | 0.999985 |
+
+By the audit's own **R1** (`phi_eq_zero_of_weights_vanish`: weights vanishing
+throughout a stratum make `Φ_k = 0` for *every* braid), each horn therefore
+gives `Φ_k ≡ 0` for `k ≥ 2`. So naming the object does not select between two
+weight families — it returns the zero functional either way.
+
+**This is a scope-(b) exclusion**, and the invariant is cited: the row cap, in
+horn 1 as `[0]_q = 0` and in horn 2 as the absence of the blocks themselves. It
+is not "the share scores badly on the ranking"; it is "the share makes the
+object identically zero".
+
+**The fork was real — that is what makes the collapse informative.** The two
+horns are genuinely different measures, max per-λ gap 0.305 / 0.205 / 0.206 /
+0.217 at `n = 3/6/9/12`, so §7 was not offering one option written twice, and
+at general `N ≥ 4` naming the object *would* decide. What collapses route 1 is
+specifically the `N = 2` ruling, which post-dates the audit. **§7 was a sound
+question that the settlement of `N` turned into a dead one.**
+
+**Two things this does not license.**
+
+1. **It is not an argument that Molien is correct.** Molien passes R1 here —
+   strictly positive mass on depth `≥ 2` at every nuclear `n`, and it is the
+   only one of the three that does — and the owner ruled it canonical. Surviving
+   the requirement that kills the alternatives is not a derivation, and this
+   measurement supplies none. What it does supply is the reason the ruling was
+   *needed*: route 1, the route the audit ranked most decisive, cannot answer.
+2. **It says nothing about `k = 0` or `k = 1`.** Both horns are perfectly good
+   measures on depth `≤ 1`; the exclusion is only for `k ≥ 2`. Routes 2 (a
+   same-`n` within-stratum observable) and 3 (a cross-nucleus metric with more
+   than four points) are untouched and remain the live ways to settle the
+   family by measurement rather than by ruling.
+
+One arithmetic caution for anyone extending the table: the depth-3 column
+(exactly 4 rows) is `0.0` at `n = 3` for **all three** measures, including
+Molien — there is no partition of 3 with four rows. That zero is arithmetic,
+not a vanishing weight, and reading it as one would repeat §3's error in a new
+place. Molien's depth-3 mass is 0.348728 / 0.391640 / 0.136680 at
+`n = 6/9/12`.
+
+---
+
 ## 5. Scope
 
 **Established.** `N = 2`, by owner ruling, recorded four ways. The ≥3-row blocks
 are `ker(H_n ↠ TL_n)`, verified arithmetically. Depth 3 is vacuous at `N = 2`
 and `N = 3` alike, and empty at `n = 3`. Both surviving Φ_k candidates put mass
-on the kernel.
+on the kernel. And (§4e) **both horns of route 1 are exactly zero on depth
+`≥ 2`** at every nuclear `n = 3A`, so route 1 cannot supply a Φ_k weight family
+for `k ≥ 2` — a scope-(b) exclusion of the *route*, with the row cap cited.
 
 ~~**Scope-(b) structural exclusion of Φ₃ as an observable**~~ — **WITHDRAWN with
 §4.** The Lean theorem cited is real and says what it says about `y_λ`; what was
@@ -314,10 +393,14 @@ under Molien, the canonical family.
 - **That Φ₁ or Φ₂ are vacuous.** Depth 0 and 1 are 1- and 2-row, inside the cap;
   check D shows they carry **all** the `N = 2` mass (1.0 at n = 3, 6, 9). The
   exclusion is specific to `k ≥ 2`.
-- **Which family Φ_k should use.** Narrowed by a constraint that eliminates every
-  current candidate; not selected.
-- **That the TL share is right.** It clears the constraint and is q-independent;
-  both facts are stated, neither is a recommendation.
+- **Which family Φ_k should use.** §4e removes route 1 as a way to answer it; it
+  does not answer it. Molien is canonical **by owner ruling** (2026-08-05,
+  bean `qou-oots`), and passing R1 where both horns fail it is a reason the
+  ruling was needed, not a derivation of it.
+- **That the TL share is right.** §4c corrects it to `(f^λ)²/Catalan(n)` and
+  §4e measures it as identically zero on depth `≥ 2`. Recording what it is is
+  not recommending it — under R1 it is excluded for `k ≥ 2` exactly as the
+  module share is.
 - **Anything about a future `N = 3` construction.** It stays the eightfold
   chapter's principal open problem (live carrier `qou-y7vg`, ledger
   `docs/coordination/eightfold-n3-surface.md`). What §4b establishes is only
