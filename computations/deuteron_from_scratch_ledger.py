@@ -389,7 +389,7 @@ def stage5_binding(q: mp.mpf) -> dict:
     B_diag = mp.mpf(str(bc["B_MeV"] if "B_MeV" in bc else bc.get("B", 0)))
     add("R4_diag_Qbeta_dtr", B_diag,
         "DIAGNOSTIC (Q_β scale, self-labeled wrong-scale)",
-        "scale mismatch: Q_β = ℏ/𝔇_β vs the E₀ family; the residual "
+        "scale mismatch: Q_β = ℏ/P_skew^β vs the E₀ family; the residual "
         "B_AME/B_pred IS the Δ_λ(D) object probed symbolically (P1)")
 
     # R5 — q-Hamiltonian rotational energy (all factors derived);

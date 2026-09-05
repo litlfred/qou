@@ -8,7 +8,7 @@ IDEAL/canonical (muon) vs PHYSICAL-Observations (proton).  `q_parameter` reads
 this manifest to auto-select the anchor for the running producer (bean `yfvb`).
 
 Ground truth = the committed witness's own q₀:
-  muon  1.109978595557…  → ideal   (CAL-2 = 𝔇_β, m_μ/m_e)
+  muon  1.109978595557…  → ideal   (CAL-2 = P_skew^β, m_μ/m_e)
   proton 1.10997858275…  → physical (m_p/m_e)
 
 A producer stem is the witness stem with '-'→'_' (and the raw stem), restricted
@@ -81,7 +81,7 @@ def main() -> int:
 
     manifest = {
         "_schema": "q0-anchor-manifest/v1",
-        "_convention": "ideal=muon (CAL-2 𝔇_β); physical=proton (m_p/m_e). "
+        "_convention": "ideal=muon (CAL-2 P_skew^β); physical=proton (m_p/m_e). "
                        "q_parameter auto-selects by the running producer's stem; "
                        "QOU_Q0_ANCHOR env var overrides.",
         "ideal_muon": sorted(ideal),

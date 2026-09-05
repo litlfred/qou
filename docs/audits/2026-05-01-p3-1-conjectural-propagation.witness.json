@@ -1,7 +1,7 @@
 {
   "audit": "conjectural-propagation (CLAUDE.md §3b + §3b-cond)",
-  "generated": "2026-09-04T10:58:22.983Z",
-  "total_blocks": 3524,
+  "generated": "2026-09-05T07:20:35.590Z",
+  "total_blocks": 3526,
   "blocks_failed_to_load": 0,
   "failed_to_load": [],
   "class_axiomatised_conjectures": [
@@ -173,7 +173,7 @@
     "conj:yang-mills-mass-gap",
     "conj:z-eq-n-rho-correction"
   ],
-  "provable_blocks_touching_conjecture": 163,
+  "provable_blocks_touching_conjecture": 162,
   "violators": [
     {
       "label": "prop:bar-parity-split",
@@ -507,21 +507,6 @@
         "conj:two-filtration-bridge"
       ],
       "file": "content/quantum-observable-universe/mass-theory/one-loop-prefactor-provenance.ts"
-    },
-    {
-      "label": "prop:prolonged-periods-fixed-depth",
-      "kind": "proposition",
-      "conj": [
-        "conj:binding-manybody-eq-jet-filtration",
-        "conj:magic-numbers-bring",
-        "conj:diagrammatic-double-magic-lr-fusion",
-        "conj:gs-residue-at-root-existence",
-        "conj:gs-graded-markov-trace-existence",
-        "conj:magic-numbers-from-q",
-        "conj:confinement-grading-correspondence",
-        "conj:crystal-graph-realization"
-      ],
-      "file": "content/quantum-observable-universe/mass-theory/prolonged-periods-fixed-depth.ts"
     },
     {
       "label": "prop:s4-s3-half-symmetric-projection",

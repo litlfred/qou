@@ -31,7 +31,7 @@
     "scaling": "ℏ_q^0 (|Δ(net)| = 1 implicit; ℏ_q^2 absorbed into the calibration)",
     "hecke_level": "H_{3A} (atom-level: H_6 D, H_9 T/³He, H_12 ⁴He)",
     "strand_count": "3·A (whole atom braid)",
-    "derivation": "Calibration to CAL-3 𝔇_π(n) directly. Sets the operator Δ_NF ≡ 1 in cat-units; canonical for `hecke_core._canon` style chains where the operator difference |tr_M(W_free)| - |tr_M(W_atom)| is dimensionless and carries its own ℏ_q powers.",
+    "derivation": "Calibration to CAL-3 P_avg^π(n) directly. Sets the operator Δ_NF ≡ 1 in cat-units; canonical for `hecke_core._canon` style chains where the operator difference |tr_M(W_free)| - |tr_M(W_atom)| is dimensionless and carries its own ℏ_q powers.",
     "operator_class": "Atom-level binding B(Z, N) = E_0 · (|tr_M(W_free)| - |tr_M(W_atom)|) at H_{3A}. The trace-difference operator carries the ℏ_q^2 scaling; E_0 is the unit-action scale.",
     "canonical_for": [
       "hecke_core.E_0_CALIBRATION_MEV (line 2922)",

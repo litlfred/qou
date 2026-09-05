@@ -15,7 +15,7 @@ inside 3 CALs (E_unit = hbar/𝔇, a CAL-2 datum — NOT CAL-4). This probe test
 that route predicted-first and reconciles it with §2h.
 
 Predicted-first candidates. If E_unit = hbar/𝔇_bond with 𝔇_bond the
-deuteron BOND width, related to the single-nucleon 𝔇_beta (=> Q_beta) by the
+deuteron BOND width, related to the single-nucleon P_skew^beta (=> Q_beta) by the
 2-body structure, then E_unit = Q_beta * F with F a bar-EVEN O(1) 2-body
 factor (bar-even F * bar-odd Q_beta = bar-odd E_unit). The genuine
 2-body-structure factors, stated BEFORE evaluation:

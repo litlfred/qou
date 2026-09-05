@@ -98,7 +98,7 @@ from q_parameter import Q_MP as q0, HA_MP as h_q  # canonical aliases per AGENTS
 from witness_base import WitnessBuilder  # noqa: E402
 # AME 2020 binding-energy comparison targets + proton mass (validation-only,
 # NOT calibration inputs — per AGENTS.md §"Canonical derivation chain" the
-# 3 calibrations are CAL-1 m_e, CAL-2 𝔇_β, CAL-3 𝔇_π; these AME values
+# 3 calibrations are CAL-1 m_e, CAL-2 P_skew^β, CAL-3 P_avg^π; these AME values
 # are used ONLY for the err = pred - AME_B_* comparison in the __main__
 # print loop below). Added via PR #1105 (codata_constants AME extension).
 from codata_constants import (
@@ -243,7 +243,7 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     difference — see the in-body note; the double-modulus form was a
     non-archimedean misuse]
     Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, the **CAL-2
-    proxy** — NOT CAL-3; CAL-3 is 𝔇_π, exactly as line 69 of this file
+    proxy** — NOT CAL-3; CAL-3 is P_avg^π, exactly as line 69 of this file
     already states. `precision-goals.md` scores Q_β as a *prediction*
     carrying 1248–1279 ppb, not as a calibration input, and
     `three-calibration-inputs-context` forbids "a second hadronic scale".
@@ -699,7 +699,7 @@ if __name__ == "__main__":
             f"modulus |·|−|·| was a non-archimedean misuse] with "
             f"Q_β(n) = {float(_Q_BETA_N):.8f} MeV (free-"
             "neutron β-decay Q-value, the CAL-2 proxy — NOT CAL-3, "
-            "which is 𝔇_π; Q_β is a scored prediction, not an input — "
+            "which is P_avg^π; Q_β is a scored prediction, not an input — "
             "NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV). "
             "DIAGNOSTIC ONLY: predicted B values are 5–40× smaller "
             "than AME because Q_β is the wrong energy scale; the "

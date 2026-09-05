@@ -1,5 +1,11 @@
 # L2 100× dashboard refresh — post-#942 / #944 / cheat-sheet §5 close-out
 
+> **Notation note.** This document predates the 2026-09-05 calibration rename and uses
+> the superseded symbols `𝔇_β` (CAL-2) and/or `𝔇_π` (CAL-3). Those are now
+> `P_skew^β` (the bar-skew β-channel) and `P_avg^π` (the bar-even π-channel); the
+> `𝔇` family is reserved for genuine decay rates (`𝔇_n`, `𝔇_μ`, `𝔇_K` = ℏ/τ).
+> The analysis below is left as the record of what was analysed at the time.
+
 > **Status (2026-05-23).** The L2 100× per-observable dashboard
 > witness has been refreshed against current main (post-#942
 > flavor-split wire-up + post-#944 H_12 Phase-1 extract + post-

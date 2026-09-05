@@ -1,5 +1,11 @@
 # Δ: which net value is canonical, and does the crossing-count sentence survive?
 
+> **Notation note.** This document predates the 2026-09-05 calibration rename and uses
+> the superseded symbols `𝔇_β` (CAL-2) and/or `𝔇_π` (CAL-3). Those are now
+> `P_skew^β` (the bar-skew β-channel) and `P_avg^π` (the bar-even π-channel); the
+> `𝔇` family is reserved for genuine decay rates (`𝔇_n`, `𝔇_μ`, `𝔇_K` = ℏ/τ).
+> The analysis below is left as the record of what was analysed at the time.
+
 **2026-09-04.** Owner asked for pros/cons/recommendations/downstream impact on
 two questions. One of them is already answered on `main` and I had been
 carrying it as open; the other is not a two-way choice and cannot be posed as

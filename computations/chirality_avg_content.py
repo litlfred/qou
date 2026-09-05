@@ -407,7 +407,7 @@ def main() -> None:
         "q_0": str(q_0),
         "q0_anchor": "muon",
         "q0_anchor_note": (
-            "IDEAL / canonical 3-CAL pin (CAL-2 = 𝔇_β, proxy "
+            "IDEAL / canonical 3-CAL pin (CAL-2 = P_skew^β, proxy "
             "m_μ/m_e), q_0 = 1.10997859555733471... .  This is NOT a "
             "free choice made here: `q_parameter` auto-selects the "
             "anchor from `q0_anchor_manifest.json` by the running "
