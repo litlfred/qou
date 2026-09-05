@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-05T06:09:44Z
+updated_at: 2026-09-05T06:29:18Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -197,3 +197,53 @@ Limits: A=2,3,4; A=4 computed to k=4 only (k=5,6 not run, not evidence). The spa
 kernel is gated at A=2/A=3 against the dense implementation (9.09e-66, 1.92e-65, every
 k); same algorithm at A=4 is an argument, not a measurement at that size. Nothing here
 BOUNDS anything. scope-(a). Nothing wired.
+
+## 2026-09-05 — third handle (sl3 + Kostka) and the FIRST COMPLETE b-levels (#6729)
+
+CORRECTED MY OWN STATED PLAN. I had said the next step was to bound the envelope from
+the two closed forms in hand. FALSE, and the refuting data was already measured: at
+A=3 the envelope is not attained on a hook or a two-row at large b —
+  b=6: (3,3,3) 211.56 vs hook (3,1^6) 14.319  -> 15x
+  b=7: (2,2,2,2,1) 31.56 vs hook (2,1^7) 0.4354 -> 72x
+At large b the hook is near the MINIMUM of its level. A handle reaching the FAT shapes
+was required.
+
+THE CONSTRUCTION SUBSUMES BOTH EXISTING HANDLES. (ℂ^k)^⊗n = ⊕_λ S^λ(ℂ^k) ⊗ M^λ, Hecke
+acting only on M^λ, μ-weight space of S^λ has dim K_λμ, so tr_{W_μ}(g) = Σ_λ K_λμ χ_λ(g).
+K unitriangular in dominance ⇒ inverts ⇒ every χ_λ with ≤k rows. #6525's two-row
+difference IS the k=2 case, demonstrated not asserted (k=3 checked against k=2 on every
+two-row shape).
+
+GATES, sharing no code by design:
+ (1) Kostka alone: multinomial(n;μ) == Σ_λ K_λμ f^λ, no trace code. Exact at n=6,9,12.
+ (2) n=6 COMPLETE gate: all 7 ≤3-row shapes vs seminormal, + Burau on 3 hooks, + sl2 on
+     4 two-rows. Worst |Δ_rel| = 2.68e-63; per-dim values reproduce #6587 exactly.
+
+n=9, FIVE SHAPES NEVER PREVIOUSLY EVALUATED (per-dim):
+  (6,2,1) dim105 1572.9564 | (5,3,1) dim162 836.89929 | (5,2,2) dim120 665.48861
+  (4,4,1) dim 84 605.58457 | (4,3,2) dim168 384.85787
+  (3,3,3) dim 42 211.56463 reproduces the capped value exactly.
+
+FIRST COMPLETE LEVELS IN THE ARC. Every prior envelope was a max over a DIM-CAPPED
+subset — a lower bound on the max, not the max. Levels b=1,2,3 at n=9 now close:
+  b=1 (1/1) 4718.6197 (8,1) | b=2 (2/2) 3478.2851 (7,1,1) | b=3 (3/3) 1671.2349 (6,1,1,1)
+  4718.62 > 3478.285 > 1671.235  strictly decreasing.
+b=4 missing 1, b=5 missing 3, b=6 missing 5, b=7 missing 3 — no envelope reported for
+those; the probe refuses a subset max. NOTE: the new (6,2,1) 1572.96 lands BETWEEN the
+hook (6,1,1,1) 1671.23 and the two-row (6,3) 1498.56, so completing b=3 did NOT
+overturn its max — recorded because it could have.
+
+COVERAGE, MEASURED: of 30 partitions of 9 — 12 with ≤3 rows, 12 with ≤3 cols (same
+handle on transposes, overlap only (3,3,3)), hooks add 3 => 26 COVERED, 4 NOT:
+(5,2,1,1) 189, (4,3,1,1) 216, (4,2,2,1) 216, (4,2,1,1,1) 189. All four have ≥4 rows AND
+≥4 cols so no k=3 orientation reaches them; k=4 is hopeless (largest sector 7560).
+DIRECT SEMINORMAL at dim ≤216 is the cheaper route for exactly those four.
+
+BUG IN MY OWN REPORTING, fixed: b=0 and b=n−1 printed 'COMPLETE? no' beside 'missing 0'.
+They ARE complete — exact-zero endpoints where Ω₂^P ≡ 0 on a 1-dim rep — and the guard
+conflated 'excluded by design' with 'coverage gap'.
+
+Limits: n=6 and n=9; gate at n=6 (same algorithm at n=9 is an argument, not a
+measurement at that size). Does NOT complete the envelope — 4 levels remain incomplete.
+Nothing BOUNDS anything. Whether the envelope stays monotone once b=4..7 close is OPEN,
+and is exactly what the capped measurements could not answer. scope-(a). Nothing wired.
