@@ -182,3 +182,56 @@ there is none.
 
       Recommend 2, with 1 as the real fix where a guard is simply missing.
       Do NOT do 3 without measuring the cost first.
+
+## 2026-09-05 — write guard landed, and a correction to how I framed this bean
+
+### Correction: the mutation was ALREADY KNOWN and documented
+
+I have been reporting "an audit can mutate the corpus it audits" as though it
+were a discovery. It was not. `producer_importability_audit.py`'s own docstring
+has carried this for some time:
+
+    ⚠ SIDE EFFECT — READ BEFORE RUNNING. Importing a module runs its top level,
+    and some producers here DO REAL WORK (and write their witness) at module
+    level rather than inside `main()`. A full run therefore rewrites those
+    witnesses as a side effect. The first full run modified **111** of them,
+    4343 insertions, and they were nearly committed inside the detector's own
+    commit. Either run this in a throwaway `git worktree`, or afterwards
+    restore everything except this audit's own witness
+
+So the REWRITING was known, measured (111 files), and mitigated by a documented
+procedure. What was new in this bean is narrower and worth stating precisely:
+those rewrites could **empty a witness to zero bytes**, because the write
+truncated before an import that then raised. That is the truncate-then-import
+defect, and it is fixed. The general capability was never a secret.
+
+### The guard
+
+`QOU_IMPORT_WRITE_GUARD=1` replaces `builtins.open` inside the loader
+subprocess for the duration of each import, refusing any mode containing
+`w`, `a`, `x` or `+`.
+
+The audit already runs each import in a SUBPROCESS, so it was process-isolated
+all along — it is just that a subprocess shares the filesystem, which is the
+whole point of the guard.
+
+Verified in isolation on the failure path rather than the happy one:
+
+    WITHOUT guard  exit=0  file='CLOBBERED'
+    WITH guard     exit=1  file='PRECIOUS'   PermissionError
+    read under guard -> 'PRECIOUS'           (reads still work)
+
+`set(mode) & set("wax+")`, not `"w" in mode`: `"rb"` must stay readable and
+`"r+"` must not, and a substring test gets both wrong.
+
+OFF by default, deliberately. A producer that legitimately writes at import
+would start failing under it, which would change what this audit reports and
+move its baseline silently. On, it converts "this producer writes when merely
+imported" into a greppable finding — i.e. the list of files that want a
+`__main__` guard, which is option 1 of the three recorded above.
+
+- [x] An audit should not be able to mutate the corpus it audits — addressed
+      as an opt-in, with the default behaviour and baseline unchanged.
+- [ ] Run with the guard on to enumerate the import-time writers, then add
+      `__main__` guards where the write is not intended. Deferred: a full run
+      of this audit is ~20 min and the `qou-uiut` table holds the checkout.

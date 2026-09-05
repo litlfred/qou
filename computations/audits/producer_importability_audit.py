@@ -153,6 +153,41 @@ _LOADER = (
     "spec.loader.exec_module(m)"
 )
 
+# ── Import-time write guard (bean `qou-sidu`), OPT-IN ─────────────────────
+#
+# This audit imports every producer to find the ones that cannot be imported.
+# Each import already runs in a SUBPROCESS, so it is process-isolated — but a
+# subprocess writes to the same filesystem, and that is how one run of this
+# audit emptied 22 committed witnesses to zero bytes: producers without an
+# `if __name__ == "__main__":` guard execute their module-scope write, and at
+# the time that write truncated the target before an import that raised.
+#
+# The destruction itself is fixed at the source — witness writes are atomic
+# now, so a failing import leaves the committed file untouched. What remains
+# is the CAPABILITY: importing an arbitrary producer still runs arbitrary
+# module-scope work.
+#
+# `QOU_IMPORT_WRITE_GUARD=1` blocks writes for the duration of each import by
+# replacing `builtins.open`. Opt-in and OFF by default, deliberately: a
+# producer that legitimately writes at import would start failing, which would
+# change what this audit reports and silently move its baseline. On, it turns
+# "this producer writes when merely imported" into a visible, greppable
+# finding — which is the list of files that want a `__main__` guard.
+#
+# `set(mode) & set("wax+")` and not `"w" in mode`: "rb" must stay readable
+# while "r+" must not, and a substring test gets that wrong in both directions.
+_WRITE_GUARD = (
+    "import builtins as _b;"
+    "_o=_b.open;"
+    "_b.open=lambda f,mode='r',*a,**k: _o(f,mode,*a,**k)"
+    " if not (set(str(mode)) & set('wax+'))"
+    " else (_ for _ in ()).throw("
+    "PermissionError('QOU_IMPORT_WRITE_GUARD: import-time write to '+str(f)));"
+)
+
+if os.environ.get("QOU_IMPORT_WRITE_GUARD", "").strip() == "1":
+    _LOADER = _WRITE_GUARD + _LOADER
+
 
 def _producers(root: Path):
     """witness -> producer path, for producers that exist beside their witness."""
