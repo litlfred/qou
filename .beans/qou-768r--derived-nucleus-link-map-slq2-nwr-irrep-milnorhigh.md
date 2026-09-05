@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-05T19:39:08Z
+updated_at: 2026-09-05T19:42:13Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -844,3 +844,46 @@ argument) or option 2 — scope every carrier sentence to the grouped word.
 
 Recorded rather than fixed. Noting that I wrote "the outcome I'd expect" against option 1
 about an hour before measuring it to be false.
+
+
+### RESOLVED — same shape, shifted components; and it is the sharper finding
+
+The orbit-partition candidate is **also refuted**, and resolving why reconciles the two
+measurements that looked contradictory.
+
+**Measured, 14 carrier branch-isotope pairs:** permutations identical **0/14**, orbit
+partitions equal **0/14**. Yet the closure table is identical under both conventions
+(848 triples, 786 separable, 62 chain, 0 nonzero `μ̄`, path linking 14/14).
+
+**Not a contradiction — the partitions are SHIFTED BY ONE STRAND:**
+
+    4He grouped     [0,1] [2,3,4] [5,6,7] [8,9,10] [11]
+    4He borromean   [0]   [1,2,3] [4,5,6] [7,8,9]  [10,11]
+
+Same `μ = 5`, same block-size multiset `{1,2,3,3,3}`, different strands. Every count is a
+function of `μ` and the path shape, so every count agrees while no component does. The two
+words are **not the same link**; their linking graphs are **isomorphic**.
+
+**So the correct statement, replacing both my earlier attempts:**
+
+- carrier **counts** are convention-independent — every figure in #6560…#6872 stands under
+  both words, now for a *reason* rather than by coincidence;
+- carrier **component identity** — which strands form which component — is **not**. It
+  shifts by one under the 07:53 default change.
+
+**Why that matters beyond bookkeeping, and it bears on `qou-brng`.** Anything that
+*identifies a component with a nucleon* is convention-dependent. The coordination-graph
+route to the binding term needs exactly that identification: its vertices are supposed to
+be nucleons. Measured here, the vertex↔nucleon assignment is not fixed by the framework —
+it moves with an intra-word convention chosen for unrelated reasons (`qou-hu1f`). That is
+an obstruction of the same family as `qou-m07y`'s arrangement-dependence, reached
+independently and at the level of the *carrier* rather than of a bond ansatz.
+
+**Scope (a)** — 7 isotopes, both crossing-resolution branches, two conventions. Not a
+refutation of the coordination route; a statement that its vertex labelling is not
+currently well-defined.
+
+**Three hypotheses of mine, in order, all refuted by measurement within two hours:** the
+even-per-generator parity route; the shared-orbit-partition route; and before them the
+framing that the carrier is a monotone closure at all. The counts survived all three,
+which is why they are worth more than the framings were.
