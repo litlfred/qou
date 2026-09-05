@@ -303,17 +303,42 @@ noncomputable def chainCrossings (config : NuclearConfig) (j : ℕ) : CrossingSe
     The universal claim
     `matrixChain (chainCrossings config j) = (buildChains config).get! j`
     holds because all transfer matrices commute (so `foldl` and
-    `foldr` agree). The Mathlib lemma
-    `List.foldl_eq_foldr_of_comm` is not yet available; until
-    then, callers witness the equality for the specific
-    `(config, j)` pair they use. -/
+    `foldr` agree), and callers witness the equality for the specific
+    `(config, j)` pair they use.
+
+    **Mathlib pointer corrected 2026-09-05.** This said *"the Mathlib lemma
+    `List.foldl_eq_foldr_of_comm` is not yet available"*.  No lemma of that
+    name exists, and naming a non-existent one makes the gap look wider than
+    it is.  Two real lemmas sit next to it in
+    `Mathlib/Data/List/Basic.lean`:
+
+    * `List.foldl_eq_foldr [Std.Commutative f] [Std.Associative f]` (:802) —
+      the clean statement, but `Std.Commutative` demands `∀ a b, f a b = f b a`
+      for the *operation*.  Matrix multiplication is not commutative, and the
+      claim here is only that *these particular* transfer matrices commute
+      pairwise, so this does not apply.
+    * `List.foldl_eq_foldr'` (:822) — needs only right-commutativity,
+      `∀ a b c, f (f a b) c = f (f a c) b`, which is weaker and may well hold
+      here; but it concludes `foldl f a l = foldr (flip f) a l`, with the
+      `flip`.
+
+    So the gap is real and is **narrower than "no lemma exists"**: what is
+    missing is a pointwise-commuting variant without the `flip`, or an
+    argument that the `flip` is harmless for this fold.  Closing it is Lean
+    work on the `matrixChain` / `buildChains` fold shapes, not a citation. -/
 class MatrixChainEqBuildChains (config : NuclearConfig) (j : ℕ)
     (_hj : j + 1 < config.length) : Prop where
   /-- foldl and foldr agree on the commutative chain product. -/
   eq : matrixChain (chainCrossings config j) =
        (buildChains config).get! j
 
-/-- Per-instance form. -/
+/-- Per-instance form — **this restates its own hypothesis.**
+
+    The conclusion is character-for-character the class field `eq`, so the
+    declaration derives nothing; it exists to give callers the equality
+    without naming the instance.  The content, and the reason no instance is
+    supplied, are in `MatrixChainEqBuildChains` above.  Disclosure added
+    2026-09-05 per bean `qou-pqmw`. -/
 theorem matrixChain_eq_buildChains_axiom (config : NuclearConfig) (j : ℕ)
     (hj : j + 1 < config.length)
     [hi : MatrixChainEqBuildChains config j hj] :
