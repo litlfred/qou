@@ -1,8 +1,8 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-05T17:53:46.030Z",
+  "generated": "2026-09-05T19:22:28.356Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3641,
+  "scanned_files": 3658,
   "files_flagged": 116,
   "total_defects": 75,
   "total_exempt": 66,
@@ -1717,7 +1717,7 @@
     ],
     "content/quantum-observable-universe/glossary/glossary-descent.lean": [
       {
-        "line": 18,
+        "line": 19,
         "category": "proof-claims-unencoded",
         "pattern": "prop-universe-field",
         "snippet": "structure DescentData where",
