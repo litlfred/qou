@@ -473,3 +473,62 @@ cheap and reversible; migrating one block of a tracked migration is neither.
 - [ ] The **pin** rides along and is a separate axis: producer on proton, table
       on muon pin A. A pass that fixes `z` and leaves the pin straddling gives a
       table right in convention and wrong in anchor.
+
+## THE STRUCTURAL GAP IS NOW CHECKABLE — `scripts/witness-block-agreement.py`
+
+Every defect this bean has found is one shape: **a correction lands in compute
+while a block keeps the old value, and nothing walks that boundary.** The
+transfer-matrix readout, the six retired-`q₀` figures, the 21 % `z` divergence.
+The unsourced-figure sweep only caught them because those figures had *no*
+provenance at all; a stale figure that still matches *some* producer stays
+invisible to it.
+
+The sharper question is available and nobody was asking it: a witness already
+declares `contentBlock`, naming the block it is evidence for, and **nothing
+checks that the block's numbers are that witness's numbers.** A producer's
+assertions compare it against itself, so they stay green while publication and
+producer drift apart — which is exactly why CI was green on a 21 % divergence.
+
+New diagnostic, selftested against the known positive (`prop:q-beta-spectral-
+bridge` must flag on `0.4993203340335613`, the figure measured to diverge; a
+detector that cannot see that can see nothing). Scope: 3274 live witnesses, 799
+declaring `contentBlock`, 231 distinct blocks.
+
+**Result: 15 blocks publish 79 figures their declared witness does not carry.**
+
+**Wired into nothing**, same as the companion and for the same reason — a gate
+red on arrival with known false positives in it is one nobody adopts. Two such
+classes are documented in the script and must be read before any row is acted on:
+decimals are not significant figures (a `0.000001` residual column is admitted at
+one sig fig and the test has no resolving power — `rem:atom-mass-full-hecke` is
+entirely this, the same floor that made two 9-digit figures indeterminate in
+round 2); and a block's producer need not be the witness naming it.
+
+- [ ] Triage the 15. `prop:markov-pair-z2` first — it publishes **both** `z`
+      values (`0.4993203342` and `0.497290545604915556`), so it is the same C/D
+      question as the bridge and belongs with `qou-cds1`.
+
+## VINTAGE LABELS: `206.7682830` is CODATA **2018** and two blocks call it 2022
+
+Found by the checker above. The literal survives in six content files. The
+compute side is **governed** — all three hits under `computations/` are annotated
+historical comments under an existing gate — and content is not.
+`epistemic-status-of-calibrations.ts` already records *"The prose said
+`206.7682830`, which is CODATA 2018"*; two other blocks published it **labelled
+CODATA 2022**. Live value `206.7682827 ± 0.0000046`; discrepancy `1.451 ppb` =
+`0.065σ`.
+
+Corrected the labels, **not the values**:
+
+    figure-8-muon-mass-cross-check            (CODATA 2022) -> (CODATA 2018)
+    substrate-consistency-window-table1-data  | CODATA 2022 | -> | CODATA 2018 |
+    calibration-inputs                        noted; value deliberately unchanged
+
+`calibration-inputs` is the one that must not be substituted: that row **is**
+CAL-2, so replacing it moves `q₀` and everything derived from it — the tracked
+refresh above, not a labelling fix.
+
+- [ ] The remaining three (`knot-volumes-verification-table2-data`,
+      `conj-im-q-physical-role`, and the `witness-substitution-audit.ts` fixture)
+      need reading rather than relabelling — check whether each is asserting a
+      vintage or merely quoting one.
