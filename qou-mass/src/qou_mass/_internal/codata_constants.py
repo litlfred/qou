@@ -21,7 +21,7 @@ and binding energy in the paper is a prediction.
 |-------|----------------------|----------------------|------------------------------------------|
 | CAL-1 | m_e                  | M_E_MEV              | electron mass (Penning trap); W-plane scale (DOF of H¹=2W) |
 | CAL-2 | m_μ (→ q₀)           | (in q_parameter.py)  | muon mass (CODATA); fixes q₀ via m_μ/m_e = Vol(4_1)/ℏ_q²; W-plane modulus (DOF of H¹=2W). Phys-obs may anchor q₀ on the more-precise proton ratio m_p/m_e (live q_at, re-pin 2026-05-28) — precision substitution, not a change to canonical CAL-2 |
-| CAL-3 | m_π                  | M_PI_PM_MEV_VALIDATION | charged-pion mass (PDG); orthogonal Vol(Hopf)=0 meson class. Q_β (neutron β-decay 𝔇_β) is DERIVED from CAL-1+CAL-2, not a calibration |
+| CAL-3 | m_π                  | M_PI_PM_MEV_VALIDATION | charged-pion mass (PDG); orthogonal Vol(Hopf)=0 meson class. Q_β is the MEASURED PROXY for CAL-2 (the bar-skew β-channel P_skew^β), per the 2026-06-26 owner ruling -- not 'derived, not a calibration' |
 
 `m_p`, `m_n`, `m_D`, `m_T`, `m_3He`, `m_4He` are **predictions** of
 the framework. They are exposed below for **validation only** —

@@ -541,6 +541,77 @@ def nucleon_gen_chains(quarks, *, q=None, allow_float64: bool = False):
     return g0, g1
 
 
+def nucleon_word_letters(quarks, *, q=None, intra_order: str = "borromean",
+                         allow_float64: bool = False):
+    """One nucleon's intra word AS A WORD: `[(c, d, gen_offset)]` with
+    `gen_offset ∈ {0, 1}` relative to the nucleon's base generator `3k`.
+
+    **Why this exists, and why the two chains above are not enough.**
+    `nucleon_gen_chains` buckets the letters BY GENERATOR, which throws away
+    their order relative to each other. Its own comment names the object it is
+    building —
+
+        # B₃ confinement: (σ₀·σ₁⁻¹)³
+
+    — but a consumer that writes all of `g0` and then all of `g1` emits
+    `σ₀³σ₁⁻³` instead, and `σ₀`/`σ₁` are ADJACENT, so they do not commute.
+    Those are different elements of `H₃(q)`. Measured at `q₀`:
+
+        (σ₀σ₁⁻¹)³   |tr_M| = 0.998562163836787266   <- β_Bor
+        σ₀³σ₁⁻³     |tr_M| = 0.180064539535501098      82 % away
+
+    and the first is `β_Bor` to `5e-60` against the Lean closed form
+    `(4 + h² − 3h⁴ − h⁶)/(h² + 4)` (`QOU.BraidsAndKnots.BorromeanMarkovTrace`,
+    via `m_p_substrate_identity_50dps.trM_borromean`). So which one a caller
+    traces is a question about the object, not about formatting. Bean
+    `qou-hu1f`; probe `nf_vs_canonical_word_order_probe.py`.
+
+    `intra_order`:
+
+      * `"borromean"` (**default**) — the confinement core laid down as
+        `(σ₀σ₁⁻¹)³`, then the three quark-pair crossings, then the two gluon
+        `σ₀`. The CORE is `β_Bor`, which is what
+        `quark-antiquark-production-reduction` means by three quarks "confined
+        by the Borromean braid `B₃`". The returned eleven-letter word is **not**
+        `β_Bor` and not a braid: two of its letters are averaged
+        (`σ − (h/2)·1`), outside the image of `ρ : B_n → H_n(q)`. Measured
+        `|tr_M|` for one proton: `1.145759692457300870` grouped,
+        `0.629328402202921918` alternating, against `0.998562163836787266` for
+        the bare six-letter `β_Bor` — three distinct objects.
+      * `"grouped"` — the pre-2026-09-05 assembly, all of `g0` then all of
+        `g1`. Kept so the legacy word stays reachable, for comparison and for
+        reproducing published absolute traces. It is NOT `β_Bor`.
+
+    **What changes when a caller moves to the default.** Log-ratio quantities
+    do not: `tr_M(W_atom)/tr_M(W_free)` is identical under both orderings to
+    `~1e-60` at `A = 2, 3, 4` and equals `∏ᵢ(z + dᵢ)` under both, because
+    connected-sum multiplicativity is blind to letter order inside a summand.
+    So `L` and the three bond constants are untouched. **Absolute** traces do
+    move — by `3.785×` (`2H`), `7.868×` (`3H`), `6.891×` (`3He`), `14.325×`
+    (`4He`) — and `binding_canonical`'s difference route moves with them by
+    exactly the same factor, since it is proportional to `tr_M(W_free)`.
+    Measured in
+    `the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`.
+    """
+    if intra_order not in ("borromean", "grouped"):
+        raise ValueError(
+            f"unknown intra_order: {intra_order!r} "
+            f"(expected 'borromean' or 'grouped')")
+    g0, g1 = nucleon_gen_chains(quarks, q=q, allow_float64=allow_float64)
+    if intra_order == "grouped":
+        return [(c, d, 0) for c, d in g0] + [(c, d, 1) for c, d in g1]
+    # g0 = [B₃ ×3] + [pair(0,1), pair(0,2)] + [gluon ×2];  g1 = [B₃ ×3] + [pair(1,2)]
+    out = []
+    for k in range(3):                       # (σ₀ σ₁⁻¹)³ — the confinement core
+        out.append((g0[k][0], g0[k][1], 0))
+        out.append((g1[k][0], g1[k][1], 1))
+    out.append((g0[3][0], g0[3][1], 0))      # quark pair (0,1)
+    out.append((g0[4][0], g0[4][1], 0))      # quark pair (0,2)
+    out.append((g1[3][0], g1[3][1], 1))      # quark pair (1,2)
+    out.append((g0[5][0], g0[5][1], 0))      # gluon self-coupling
+    out.append((g0[6][0], g0[6][1], 0))
+    return out
+
 
 # Precomputed per-generator chains for proton and neutron
 _PROTON_G0, _PROTON_G1 = nucleon_gen_chains(['u', 'u', 'd'])

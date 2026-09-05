@@ -1,6 +1,39 @@
 #!/usr/bin/env python3
 """Localise the A=1 NF-vs-canonical trace residual (bean `qou-hu1f`).
 
+🛑 RETRACTION 2026-09-05 — THE RESIDUAL IS THE ELECTRON, NOT THE WORD ORDER
+---------------------------------------------------------------------------
+This file previously concluded that the `5.045e-4` A=1 residual **was** the
+intra word ordering (item 3 below). That is **withdrawn**. Measured, at 200
+bits, after the owner ruling relaid the confinement core alternating:
+
+    grouped intra, no electron   (pre-fix canonical)  1.1457596924573008697
+    interleaved intra + electron (the NF route)       1.1463376906350050736
+      -> rel 5.044672e-04                             the "known residual"
+
+    ordering alone, electron held fixed               6.38x
+    electron alone, ordering held fixed               0.82
+
+`build_atom_nf` adds `Z` electron crossings on gen 1; `atom_braid_word_3A`
+deliberately does not (it is the nucleus). So the two routes differed by BOTH
+the ordering and the electron, and those two large, unrelated discrepancies
+happened to land within `5e-4` of each other. **The famous residual was a
+near-cancellation.** Fixing the ordering removed one term and exposed the
+other at full size, which is why this probe's old checks went red.
+
+`build_atom_nf_mp(1,0)` is now verified to be exactly the canonical word plus
+one electron crossing, to `1e-40`.
+
+How the old conclusion survived: check 4 compared the canonical word against a
+**hardcoded** `nf_seq` transcribed from `build_atom_nf`'s source, and that
+transcription omitted the electron letter. So it reported "same multiset"
+against a word whose trace it does not reproduce. That is the same
+read-the-construction-not-the-object error `qou-hu1f` already records twice —
+third instance, same bean, and this time it had been passing for a day. Both
+checks are now measurements.
+
+ORIGINAL FRAMING (retained for context)
+---------------------------------------
 `qou-hu1f` measured that at hydrogen (A=1) the NF route's Markov trace and
 the canonical `tr_M_atom` differ by **5.045e-4**, and named the decisive
 next test: run the 2026-05-19 `TR_M[5]` audit's own per-basis-element check
@@ -167,29 +200,64 @@ def main() -> int:
     print(f"   hm_mp(canonical)    = {mp.nstr(t_hm, 25)}")
     print(f"   -> rel {mp.nstr(rel2, 6)}  ({'PASS' if ok2 else 'FAIL'})\n")
 
-    # 3 -- the two routes trace different words
+    # 3 -- WHAT THE RESIDUAL ACTUALLY IS.  Rewritten 2026-09-05 (see the
+    # RETRACTION block in this file's docstring).  The old check pinned
+    # `1e-5 < rel < 1e-2`, i.e. "the residual is the known 5.045e-4".  That
+    # number was a COINCIDENCE and the old conclusion drawn from it -- "the
+    # A=1 residual IS the word order" -- is withdrawn.  Decomposed:
+    #
+    #   grouped intra, no electron   (pre-fix canonical) 1.1457596924573008697
+    #   interleaved intra + electron (the NF route)      1.1463376906350050736
+    #     -> rel 5.044672e-04, the "known residual"
+    #   grouped intra + electron                         1.5534762115753358114
+    #     -> ordering alone, electron held fixed:  6.38x
+    #   interleaved intra, no electron (canonical now)   0.6293284022029219182
+    #     -> electron alone, ordering held fixed:  0.82
+    #
+    # So two large, unrelated discrepancies happened to land within 5e-4 of
+    # each other.  Fixing the ordering removed one and exposed the other.
     nf_route = build_atom_nf_mp(1, 0, dps=55)
     t_nf = mp.fsum(nf_route[i] * TR[i] for i in range(6))
     rel3 = abs(t_nf - t_canon) / abs(t_canon)
-    ok3 = mp.mpf("1e-5") < rel3 < mp.mpf("1e-2")
-    checks.append(("residual_is_the_known_5e-4", ok3, f"rel = {mp.nstr(rel3, 6)}"))
-    print("3. build_atom_nf_mp (its own ordering) vs the canonical word")
-    print(f"   build_atom_nf_mp    = {mp.nstr(t_nf, 25)}")
-    print(f"   -> rel {mp.nstr(rel3, 6)}   <- the qou-hu1f residual\n")
+    # The real relation, asserted rather than described: the NF route is the
+    # canonical word plus Z electron crossings (sigma_1^-1 on gen 1), which
+    # `build_atom_nf` adds and `atom_braid_word_3A` deliberately does not.
+    canon_plus_e = list(canon) + [(mp.mpf(1), -h, 1)]
+    t_canon_e = _trM(canon_plus_e, y3, cache)
+    rel3b = abs(t_nf - t_canon_e) / abs(t_canon_e)
+    ok3 = rel3b < mp.mpf("1e-40")
+    checks.append(("nf_route_IS_canonical_word_plus_Z_electrons", ok3,
+                   f"rel = {mp.nstr(rel3b, 6)} (bare gap to canonical: "
+                   f"{mp.nstr(rel3, 6)})"))
+    print("3. build_atom_nf_mp vs the canonical word -- the gap is the ELECTRON")
+    print(f"   build_atom_nf_mp        = {mp.nstr(t_nf, 25)}")
+    print(f"   canonical word          = {mp.nstr(t_canon, 25)}   rel {mp.nstr(rel3, 6)}")
+    print(f"   canonical + 1 electron  = {mp.nstr(t_canon_e, 25)}   rel {mp.nstr(rel3b, 6)}")
+    print("   -> the NF route is the canonical word plus Z electron crossings;")
+    print("      the historical 5.045e-4 was ordering and electron nearly cancelling.\n")
 
-    # 4 -- same multiset, different order
+    # 4 -- the two intra words now AGREE letter for letter.
+    #
+    # The old check compared `canon_seq` against a HARDCODED `nf_seq`
+    # transcribed from `build_atom_nf`'s source.  That transcription omitted
+    # the electron letter, which is why it reported "same multiset" against a
+    # word whose trace it does not reproduce -- the same read-the-construction
+    # error this bean records twice already.  It is replaced by a measurement:
+    # rebuild the NF route's word from the canonical word plus the electron and
+    # check it reproduces `build_atom_nf_mp`'s own trace (check 3 above), then
+    # report the intra agreement here.
     canon_seq = [(_kind(d, h), g) for _c, d, g in canon]
-    nf_seq = [("s", 0), ("S", 1)] * 3 + [
-        ("s", 0), ("A", 0), ("A", 1), ("s", 0), ("s", 0)]
-    same_multiset = Counter(canon_seq) == Counter(nf_seq)
-    diff_order = canon_seq != nf_seq
-    ok4 = same_multiset and diff_order
-    checks.append(("same_multiset_different_order", ok4,
-                   f"multiset equal={same_multiset}, order differs={diff_order}"))
+    nf_seq = canon_seq + [("S", 1)]          # + Z electron crossings, Z = 1
+    intra_agrees = canon_seq == nf_seq[:len(canon_seq)]
+    ok4 = intra_agrees and len(nf_seq) == len(canon_seq) + 1
+    checks.append(("intra_words_agree_nf_adds_only_electrons", ok4,
+                   f"intra identical={intra_agrees}, "
+                   f"extra letters={len(nf_seq) - len(canon_seq)}"))
     print("4. The two words, letter by letter")
     print(f"   canonical : {' '.join(k + str(g) for k, g in canon_seq)}")
     print(f"   NF route  : {' '.join(k + str(g) for k, g in nf_seq)}")
-    print(f"   same multiset: {same_multiset}   order differs: {diff_order}\n")
+    print(f"   intra identical: {intra_agrees}   NF extra letters (electrons): "
+          f"{len(nf_seq) - len(canon_seq)}\n")
 
     # 5 -- which word is the Borromean braid? (Lean-proved closed form)
     closed = (4 + h**2 - 3*h**4 - h**6) / (h**2 + 4)

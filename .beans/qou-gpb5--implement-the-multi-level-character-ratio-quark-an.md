@@ -149,3 +149,67 @@ The hand-waving direction argument was wrong and is withdrawn.
       Until that is settled no absolute trace in the corpus is well defined, and
       the multi-level product cannot be evaluated. Ratios are unaffected.
 - [ ] The nuclear-jet level, untouched.
+
+## BLOCKER CLEARED (2026-09-05), and the multi-level product is now MEASURED
+
+The intra-ordering blocker is settled by `qou-hu1f`: the **interleaved**
+`(σ₀σ₁⁻¹)³` *is* `β_Bor`, matched against the Lean closed form
+`(4+h²−3h⁴−h⁶)/(h²+4)` to `5e-60`; the grouped `σ₀³σ₁⁻³` that
+`atom_braid_word_3A` actually builds is `82 %` away. That is a measurement, not
+an authoring call, and it agrees with the derivation this bean was opened on —
+`quark-antiquark-production-reduction` says the three quarks are "confined by
+the Borromean braid `B₃`", so the quark level's word is forced.
+
+Probe: `the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`
+(9/9). Its grouped rebuild reproduces `atom_braid_word_3A`'s own trace to
+`1e-60`, so every figure below is against production rather than a model of it.
+
+### This bean's invariance claim is CORRECT, and now holds at every A
+
+It asserted "the character RATIO is invariant under the intra ordering" from
+`2H` alone. On the canonical chain it holds at `A = 2, 3, 4` to `~1e-60`:
+
+    atom   R_nucleon (both orderings)   |diff|
+    2H     0.508229789376739            1.2e-60
+    3H     0.205135640448650            9.3e-61
+    3He    0.311386312072596            6.2e-61
+    4He    0.125684152895266            4.7e-61
+
+and equals `∏ᵢ(z + dᵢ)` under **both**. The mechanism is connected-sum
+multiplicativity, which is blind to letter order inside a summand. So `L`, the
+three bond constants and every log-ratio binding number **cannot** move.
+
+Caveat on scope: this is the CHAIN. The bean's earlier table was computed on the
+all-pairs word, which is a different object and retired as ill-posed
+(`qou-bygw`); its ratios are not invariant and are not re-tested.
+
+### THE ANSWER — two-level character ratio, unfitted
+
+`R_quark · R_nucleon` telescopes to `tr_M(W_atom)`, so `B = −α log tr_M(W_atom)`:
+
+    atom   B interleaved (correct)   B grouped (live)   B_AME
+    2H      7.8867  (+254.53 %)      2.3152  (+4.07 %)   2.224566
+    3H     14.7996  ( +74.49 %)      6.1646 (−27.32 %)   8.481796
+    3He    11.8760  ( +53.87 %)      3.7963 (−50.81 %)   7.718041
+    4He    18.7888  ( −33.60 %)      7.6457 (−72.98 %)  28.295662
+
+**It does not work.** It overshoots `2H` by `3.5×` and is worse than the grouped
+word at every `A < 4`. Recorded as the answer, not repaired — the grouped
+column's `+4.07 %` at `2H` is agreement produced by a word that is not `β_Bor`,
+which is exactly what the 2026-09-05 no-fitting directive rates below an honest
+miss. Nothing here was tuned.
+
+### The direction argument this bean already withdrew stays withdrawn
+
+Both `R_quark` values are `< 1` per nucleon under the correct ordering
+(`0.299` at `2H` … `0.089` at `4He`), so the second level does push `B` **up** —
+and that is precisely why it now overshoots at low `A`. "Up" was never the
+useful question.
+
+- [x] Quark level has a computable word — **yes**, and it is `β_Bor`.
+- [x] Intra-ordering blocker — **cleared** (`qou-hu1f`, Lean-verified).
+- [x] Multiply the ratios and report — **done, above. It misses.**
+- [ ] The nuclear-jet level, still unbuilt. Two of the three levels the
+      specification names are now computed; the third has no word, and if it
+      turns out to have none, "the specification names a level the framework
+      cannot evaluate" is the finding.
