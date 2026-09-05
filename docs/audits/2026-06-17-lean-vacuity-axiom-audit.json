@@ -1,22 +1,20 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-05T19:22:28.356Z",
+  "generated": "2026-09-05T19:25:17.564Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3658,
-  "files_flagged": 116,
-  "total_defects": 75,
-  "total_exempt": 66,
+  "files_flagged": 113,
+  "total_defects": 73,
+  "total_exempt": 65,
   "total_promoted_from_exempt": 19,
   "categories": {
     "proof-claims-unencoded": 37,
     "proof-no-self-assuming-projection": 34,
-    "proof-no-unused-hypothesis-rfl": 1,
     "proof-no-decide-masking": 1,
-    "proof-docstring-sorry-mismatch": 1,
-    "proof-no-provable-axiom": 1
+    "proof-docstring-sorry-mismatch": 1
   },
   "conjecture_graph": {
-    "total": 308,
+    "total": 309,
     "primary": [
       {
         "name": "A3CrossTermMagnitudeClosed",
@@ -312,6 +310,11 @@
         "name": "CoordinationEdgeAmplitude",
         "file": "content/quantum-observable-universe/lean/QOU/MassTheory/BraneTowerLevelAmplitude.lean",
         "line": 139
+      },
+      {
+        "name": "CPViolationSpectralForm",
+        "file": "content/quantum-observable-universe/observations/cp-violation-spectral-form.lean",
+        "line": 118
       },
       {
         "name": "CriticalExponent",
@@ -1186,7 +1189,7 @@
       {
         "name": "SDPSlaterUniqueness",
         "file": "content/quantum-observable-universe/lean/QOU/MathlibExt/SDPRealUniqueness.lean",
-        "line": 429
+        "line": 430
       },
       {
         "name": "SecondCrossingInvariant",
@@ -2094,19 +2097,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean": [
-      {
-        "line": 73,
-        "category": "proof-no-self-assuming-projection",
-        "pattern": "field-projection",
-        "snippet": "theorem volume_perturbation [ctx : VolumePerturbationContext] :",
-        "decl": "volume_perturbation",
-        "severity": "critical",
-        "exempt": true,
-        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
-        "detail": "the projected field `ctx.perturbation_formula` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      }
-    ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/WignerSU4FromSpinIsospin.lean": [
       {
         "line": 100,
@@ -2233,17 +2223,6 @@
         "decl": "FrobeniusFormContext",
         "severity": "major",
         "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (is_iso) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [FrobeniusFormContext]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
-    "content/quantum-observable-universe/lean/QOU/Hecke/CrossingConvexity.lean": [
-      {
-        "line": 191,
-        "category": "proof-no-unused-hypothesis-rfl",
-        "pattern": "rfl-with-unused-hypothesis",
-        "snippet": "theorem sq_crossingCoord_snd {h : K} (hh : 0 < h) :",
-        "decl": "sq_crossingCoord_snd",
-        "severity": "major",
-        "detail": "proof is `rfl`, which uses no hypothesis, yet the statement binds `hh` — absent from the conclusion, so the claim holds for every value of it"
       }
     ],
     "content/quantum-observable-universe/lean/QOU/Information/ChiMinusSix.lean": [
@@ -2885,16 +2864,6 @@
         "severity": "critical",
         "exempt": true,
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.lean": [
-      {
-        "line": 79,
-        "category": "proof-no-provable-axiom",
-        "pattern": "uncited-axiom",
-        "snippet": "axiom gram_kappa_numerical_value_axiom :",
-        "decl": "gram_kappa_numerical_value_axiom",
-        "severity": "critical"
       }
     ],
     "content/quantum-observable-universe/mass-theory/he4-channel-active-set.lean": [
