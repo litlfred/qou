@@ -86,6 +86,35 @@ first run.
                source match is a docstring, a self-test fixture, or a dict that
                never reaches the payload.
 
+*** PASS 2 IS BLIND TO A TOLERANCE PASSED AS A VARIABLE — MEASURED, LIVE ***
+
+`_source_would_change` runs `ast.literal_eval` on the token after `"tolerance":`
+and skips anything that is not a literal. So a producer whose assertion helper
+takes `tolerance` as a PARAMETER is invisible to pass 2 no matter how many
+floats reach it.
+
+This is not hypothetical and it was not caught by prediction. On 2026-09-05,
+`3277607d39` ("guard qbeta_ck_qholonomic probe against null extracted c_k")
+re-ran `qbeta_ck_qholonomic_recurrence_test.py` on `main`, and its
+`gate(name, passed, computed, expected, tolerance, source)` helper re-emitted
+`1e-45`, `1e-12` and `1.1` as floats — undoing PR #5910's drain for that file.
+Pass 2 had reported the corpus LATENT-free at the time. **Pass 1 caught it**
+(LIVE-DIRTY 1, and the ratchet independently as REGRESSED 65 -> 67), which is
+why the two passes exist: the artifact check is the guarantee, the source check
+is only the early warning.
+
+Measured surface of the gap: **16** hand-building files pass a non-literal
+tolerance, but most are already safe — `mp.nstr(TOL, …)`, an f-string, and
+`str(t)` all yield strings, and two hits are these audits' own docstrings.
+About **five** pass a bare name that could be a float
+(`m_tau_complex_volume_search`, `lw2_c2_independent_hopf_test_attempt`,
+`he4_binding_k_presentation_correction_probe`,
+`qbeta_habiro_integrality_kill_test`, `aoperator_a5_crosscheck`); pass 1
+reports all of them clean today. Closing the gap needs a detector that keys on
+the helper's call sites rather than on the literal — deliberately NOT built
+here, because a hasty one would add false positives to the very count this
+audit exists to keep honest. Tracked in bean `qou-9tqx`.
+
   UNRESOLVED   the source matches but no committed witness could be found. This
                is a limit of THIS TOOL, not a verdict about the corpus, and it
                is reported separately for that reason — two of the eight the

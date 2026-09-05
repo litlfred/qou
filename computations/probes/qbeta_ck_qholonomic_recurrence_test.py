@@ -126,6 +126,13 @@ from codata_constants import (  # noqa: E402
 # Proton-pinned q0: canonical package layer (qou-substrate constants).
 sys.path.insert(0, str(COMP.parent / "tools" / "qou-substrate" / "python"))
 from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402  # q_parameter (bean qou-9ugp): the anchor stamp resolves through it, qou_substrate.constants does not
+# This producer hand-builds its assertion payload and `json.dump`s it, so
+# `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
+# reached, and a re-run re-emits the float literals and undoes PR #5910's
+# drain for this file alone. `_tol` routes each DECLARED tolerance through
+# that guard; it returns a COMPUTED one unchanged, so those stay floats and
+# stay counted by the raw-float64 ratchet. Bean qou-9tqx.
+from qou_substrate.witness import declared_tolerance as _tol  # noqa: E402
 
 Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
 # Muon-anchor q₀ read BY NAME (bean qou-9ugp, 2026-09-03). This was the literal
@@ -311,9 +318,16 @@ def main():
     assertions = []
 
     def gate(name, passed, computed, expected, tolerance, source):
+        # `_tol` routes the DECLARED tolerance through the guard that runs in
+        # `Assertion.to_dict`. This probe hand-builds its assertion dicts and
+        # `json.dump`s them, so that guard is never reached and a re-run
+        # re-emits the float — which is exactly what happened here: `3277607d39`
+        # re-ran this probe and undid PR #5910's drain for this one file
+        # (1e-45, 1e-12, 1.1 came back). A COMPUTED tolerance is returned
+        # unchanged and stays counted by the raw-float64 ratchet. Bean qou-9tqx.
         assertions.append({
             "name": name, "passed": bool(passed), "computed": computed,
-            "expected": expected, "tolerance": tolerance, "source": source,
+            "expected": expected, "tolerance": _tol(tolerance), "source": source,
         })
         print(f"  [{'PASS' if passed else 'FAIL'}] {name}: {computed}")
 
