@@ -149,3 +149,61 @@ In increasing cost:
    representation is self-dual iff its character is real, so a single group
    element with non-real trace settles complex type.
 3. Only then does the Fock–Goncharov / GTZ machinery earn its cost.
+
+## 6. CORRECTION, same day — the surviving branch has a NAMED, HELD construction
+
+§5 step 3 said *"only then does the Fock–Goncharov / GTZ machinery earn its
+cost"*, and §3-bis called the non-geometric branch *"a route, not a
+construction, and nobody has built one."* **Both are too pessimistic. It earns
+its cost now.**
+
+**The construction is in the literature and the corpus holds the paper.**
+`library/arxiv-1207.6711v1` (Garoufalidis–Thurston–Zickert) — already identified
+as the one substantive rank-2 holding — states it: *"there are often several
+components of representations."* Its **Ptolemy variety** parametrises
+**boundary-unipotent** `PGL(n,ℂ)` representations, and the geometric one is a
+single component among several. The non-geometric reps are the other components.
+Seven further held directories carry Ptolemy / boundary-unipotent material
+(`arxiv-0906.1500v4`, `arxiv-1002.0168v2`, `arxiv-1202.6268v2`, `2018sorus020`,
+the `ant-v14-n7-s` set).
+
+**A second, independent access route is also held: resurgence.** Twelve library
+directories carry alien calculus / trans-series / Stokes constants. The decisive
+one is `arxiv-2007.10190v2`, *The Resurgent Structure of Quantum Knot
+Invariants*:
+
+> *"Given a hyperbolic knot `K` there is a distinguished critical point `σ₁`
+> (the geometric representation…)"*
+>
+> *"`ξ₃ = 0.43016…`, corresponding to the geometric representation, **its
+> conjugate and the real**"*
+
+Trans-series sectors are indexed by critical points — flat connections,
+geometric and non-geometric alike — and the Stokes constants are the transition
+data. So a non-geometric representation is reachable as **another saddle of the
+same asymptotic series**, without building it geometrically. The corpus is
+already partway onto this ground: `appendix-surreals/kashaev-surreal.md` cites
+Écalle's alien calculus and "Stokes data as integer counts", and
+`mass-theory/stokes-dt-bps-bridge.md` and `mass-theory/dt-spectrum-bar-eigenspace.md`
+are live blocks.
+
+**🛑 One caution, flagged because the slip would be this file's own.** That
+paper distinguishes *"the geometric representation, its conjugate"* as
+**different** critical points. Correct for a general hyperbolic knot, and **not**
+a contradiction with §3-bis: the Mostow argument applies only where the manifold
+is **amphichiral**, and there `ρ` and `ρ̄` coincide; for a chiral knot they do
+not. The two statements are about different knots.
+
+**Vocabulary note.** "non-geometric solution / flat connection / component"
+returns **zero** library hits; "Ptolemy", "boundary-unipotent", "component of
+the character variety" return **eight**. The material was held the whole time
+under a name the obvious query does not reach — the fourth instance of that
+blind spot in this arc, and the standing cost of `corpus_search` (checklist
+path 0) being unavailable.
+
+**The revised obligation**, replacing §5 step 3: take a **non-geometric Ptolemy
+component at `n = 3`** for the Borromean complement and read off whether its
+character is real-valued. A representation is self-dual iff its character is
+real, so a **single group element with non-real trace settles complex type** —
+and unlike the geometric component, nothing forces it real. **This computation
+has not been done and is not claimed here.**
