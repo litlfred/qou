@@ -1,11 +1,11 @@
 ---
 # qou-3v8h
 title: authorNotes is silently dropped on prose/equation/diagram/table — AGENTS.md 4d says every block kind accepts it
-status: todo
+status: completed
 type: task
 priority: high
 created_at: 2026-08-26T23:48:05Z
-updated_at: 2026-08-26T23:48:53Z
+updated_at: 2026-09-05T07:23:40Z
 ---
 
 ## The defect
@@ -156,3 +156,74 @@ five notes.
 NOT closing: the defect is fixed on a branch, not in the product. Closing on
 "someone has a fix somewhere" is the failure mode this corpus keeps paying for.
 
+
+## CLOSED 2026-09-05 — the stated close-condition is now met
+
+This bean was deliberately left open with the reason recorded in `qou-bstl`:
+*"NOT closing: the defect is fixed on a branch, not in the product. Closing on
+'someone has a fix somewhere' is the failure mode this corpus keeps paying
+for."* That was the right call. **The fix is now in the product.**
+
+**Evidence.** folio-assistant `a117daa` (2026-09-03, *"Four block kinds
+restated BlockBase instead of extending it"*) is confirmed an ancestor of that
+repo's `main` (`git merge-base --is-ancestor a117daa origin/main` -> yes).
+`affcec4`, the branch commit this bean's predecessor named, is also on main.
+
+**Verified by PARSE, not grep** — grep only shows the declaration changed;
+parse shows the field survives. Each of `ProseSchema` / `EquationSchema` /
+`DiagramSchema` / `TableSchema` `safeParse`s a block carrying
+`authorNotes`, `defines`, `cites`, `computation`:
+
+    prose:    authorNotes=KEPT  defines=KEPT  cites=KEPT  computation=KEPT
+    equation: authorNotes=KEPT  defines=KEPT  cites=KEPT
+    diagram:  authorNotes=KEPT  cites=KEPT
+    table:    authorNotes=KEPT  cites=KEPT  computation=KEPT
+
+**All six previously-dropped qou fields are now honored without anyone editing
+them** — they were never removed from the blocks, only discarded at parse. That
+includes the substantive one: `hecke-log-decomposition-table-data`'s
+multi-paragraph caveat recording that the table has no source block, and
+`prose:knot-periodic-table`'s `computation` link to its producer.
+
+**The five invented field names are also gone** (`is_mathematics` x3, `probe`,
+`consumers`): 0 top-level occurrences remain in `content/`. `positron-correction`
+had them removed with an authorNote explaining why; both `phi-b-*` moved
+`is_mathematics` into the declared `meta:` escape hatch. The other 7 grep hits
+for those names are `consumers:` NESTED inside `computation:`, which is declared
+and legitimate — do not "fix" those.
+
+**Upstream now locks the mechanism, not the fields.** `a117daa` also adds
+`scripts/tests/block-base-fields.test.ts` (fails when any block schema falls
+behind the base) and `scripts/tests/schema-ts-zod-parity.test.ts`. The
+2026-08-24 hand-grant fixed `authorNotes` and left `defines` / `cites` /
+`simulator` / `computation` to be forgotten one kind at a time; that can no
+longer happen silently.
+
+## What this session actually changed (AGENTS.md 4d)
+
+The schema was fine; **the instruction was not.** 4d opened with a bolded
+stop-sign asserting the drops are live, retracted it nine lines down, and then
+CLOSED by telling agents *"do not put an author note on a prose, table,
+equation or diagram block"*. Top-down, an agent met the false claim first and a
+directive to avoid a working field last. Fixed: live state leads, closing
+advice withdrawn and inverted, clone-currency check added as a runnable command.
+
+**A defect in the correction itself, recorded rather than quietly patched.**
+The 2026-09-03 table states its measurement basis as folio-assistant
+`93e476b` and marks two rows *"fixed — folio-assistant#164"*. `93e476b` is
+dated 2026-08-31 and does **not** contain `a117daa`, so those rows were
+forward-looking claims about a PR that had not landed. They are true today.
+They were not when written — and that is exactly the move this bean refused to
+close on, appearing inside the text correcting this bean's defect.
+
+## Trap for the next agent — the clone, not the schema
+
+Measured this session: the same qou tree, validated against a folio-assistant
+clone **169 commits behind**, reports all six fields as dropped — a defect that
+no longer exists. The validator you run is the validator in your checkout.
+`bash scripts/setup-folio-assistant.sh` and check
+`git -C folio-assistant log --oneline -1` before filing anything from a
+validate run. My own first measurement this session was wrong for this reason.
+
+Superseded by nothing; `qou-eu0r` is the duplicate and closes with this.
+Sibling `qou-p7it` (in-progress) owns the upstream half — left to its owner.
