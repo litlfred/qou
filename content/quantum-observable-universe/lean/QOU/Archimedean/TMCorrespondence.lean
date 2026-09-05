@@ -394,6 +394,46 @@ theorem matrixChain_chainCrossings (config : NuclearConfig) (j : ℕ) :
   rw [crossingMatrix_eq]
   rcases vertexType (config[j]!) nk with _ | _ | _ <;> simp
 
+/-- The single accumulator step inside `buildChains`, named so the fold can
+    be reasoned about.
+
+    **The body is term-identical to `buildChains`'s step on purpose**, including
+    the deprecated `List.get!` (which is why this def inherits that deprecation
+    warning). `buildChains_eq_foldl` below is proved by `rfl`, and modernising
+    this one call to `config[k - 1]!` breaks it — measured: `rfl` fails, the two
+    accessors are not definitionally equal at that strength. Do not "tidy" it
+    without re-checking that theorem. -/
+noncomputable def buildStep (config : NuclearConfig) :
+    (List TMatrix × ℕ) → NucleonType → (List TMatrix × ℕ) :=
+  fun acc nk =>
+    let (chains, k) := acc
+    if k = 0 then (chains, k + 1)
+    else
+      let extended := chains.mapIdx fun j Mj => extendChain Mj (config[j]!) nk
+      let newChain := crossingMatrix (config.get! (k - 1)) nk
+      (extended ++ [newChain], k + 1)
+
+/-- **`buildChains` is its own fold — unconditionally, on all three arms.**
+
+    `buildChains` is written with `[]` and `[_]` special-cased before a
+    catch-all, which makes the catch-all's equation lemma carry
+    "not nil and not singleton" side conditions and is why this looked like
+    it needed a three-way case split to reason about.
+
+    It does not: the two special cases are **redundant**. Folding `[]` gives
+    `([], 0)` and folding `[x]` gives `([], 1)` — first component `[]` either
+    way, exactly what those arms return. So the fold form holds for every
+    configuration and `rfl` discharges all three branches.
+
+    This removes the side conditions from any induction over `buildChains`;
+    what remains is the accumulator invariant (bean `qou-affg`). -/
+theorem buildChains_eq_foldl (config : NuclearConfig) :
+    buildChains config = (config.foldl (buildStep config) ([], 0)).1 := by
+  match config with
+  | [] => rfl
+  | [_] => rfl
+  | _ :: _ :: _ => rfl
+
 /-- **foldl/foldr bridge — typeclass (Pattern 4).**
 
     The universal claim
@@ -429,6 +469,9 @@ theorem matrixChain_chainCrossings (config : NuclearConfig) (j : ℕ) :
     the class is now equivalent to
     `(buildChains config).get! j = ((config.drop (j+1)).map (crossingMatrix
     config[j]!)).prod`, with no matrix algebra left in it at all.
+    `buildChains_eq_foldl` above removes the three-arm case split (the `[]`
+    and `[_]` arms are redundant — the fold already returns `[]` for both), so
+    what is left is the accumulator invariant alone.
     `buildChains` (`TransferMatrix.lean:223`) is an index-tracking `foldl`
     over the configuration carrying a `(List TMatrix × ℕ)` accumulator, which
     at each step `mapIdx`-extends every existing chain via `extendChain` and
