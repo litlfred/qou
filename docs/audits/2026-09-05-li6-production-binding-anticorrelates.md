@@ -1,0 +1,93 @@
+# ⁶Li: the production binding does not merely miss its target — it moves the wrong way
+
+**Date:** 2026-09-05 · **Beans:** `qou-sv7h` (sign), `qou-brng` (extensive term)
+· **Branch:** `claude/rag-document-ingestion-options-orasrw`
+
+## The measurement
+
+```
+python3 -u /tmp/li6_run.py     # binding_energy(3, 3), kernel asserted live
+6Li  A=6  B_pred=-3.065019520558719  AME=31.994  elapsed=4039.8s
+```
+
+The script asserts `hecke_core_legacy._HAS_LP_KERNEL` before running and
+refuses otherwise, so this is **not** a fallback-matrix number. That guard
+matters: measured earlier in this session on ²H, the same call returns
+`-7.271102124876717` with the kernel live and `-8.52811254141235` through the
+`_build_ysn_matrices` fallback — **17.29 % apart**, and the fallback matrices
+violate the braid relation, so they are not a representation of `H_n(q)` at all.
+
+## What it establishes, using only figures measured here
+
+Two production points, both kernel-live, both by the same call:
+
+| A | atom | `binding_energy` | AME2020 | B/A predicted | B/A AME |
+|---|---|---|---|---|---|
+| 2 | ²H | **−7.2711** | +2.225 | −3.636 | +1.112 |
+| 6 | ⁶Li | **−3.0650** | +31.994 | −0.511 | +5.332 |
+
+- **The sign is negative at A = 6 as well.** Consistent with the Pass-2 gate
+  mechanism, which forces `B < 0` for any nucleus.
+- **The magnitude moves in the OPPOSITE direction to AME.** Predicted `|B|`
+  *falls* 7.2711 → 3.0650 (×0.42) across the same span over which AME binding
+  *rises* 2.225 → 31.994 (×14.4). Per nucleon the divergence is sharper:
+  predicted `|B|/A` falls ×7.1 while AME's rises ×4.8.
+
+So the defect is not only a sign error on a roughly right magnitude. Over the
+two points that can be verified here, the prediction is **anti-correlated** with
+the observable it is meant to reproduce.
+
+## 🛑 What it does NOT establish, and a claim of mine it scopes
+
+PR #6752 states, of the A-independence: *"The sibling measured −7.271 / −7.742 /
+−7.456 / −6.829 while AME spans 12.7×."*
+
+**Only the first of those four is verifiable.** `−7.271102124876717` was
+measured in this session with the kernel live. The other three
+(`−7.742`, `−7.456`, `−6.829`, for A = 3, 4, 5) appear **nowhere in the tree** —
+a fixed-string grep across `--include=*.md --include=*.json --include=*.py`
+returns no hit for any of them. They reached the PR from conversation context
+attributed to a sibling session, and **their kernel-vs-fallback provenance is
+unknown**. Given the 17.29 % kernel/fallback split above, that is not a detail:
+an unverified figure from that series could be either.
+
+Therefore:
+
+- The **A-independence** claim — a near-constant plateau across A = 2..5 —
+  **rests on three figures with no recorded provenance** and is scoped to that
+  status. It is not retracted; it is unverified.
+- The **anti-correlation** claim above uses only the two figures measured here
+  and stands independently of it.
+- If the plateau is real, ⁶Li **breaks it**: −3.065 is 2.4× smaller in magnitude
+  than the smallest of the four. Whether that is a genuine A = 6 feature or an
+  artefact of comparing against unverified numbers cannot be decided without
+  re-measuring A = 3, 4, 5 with the kernel live (~2 h: cost grows ≈ A², A = 4
+  alone took 2425 s).
+
+## A second tension, recorded rather than resolved
+
+The k_max = 6 / 28-partition direct-from-kernel reconstruction in
+`uic-sign-forced-by-gate.witness.json` does **not** show the A = 6 drop. Its
+`gated_sum` runs ²H −1.3657, ³H −0.9704, ³He −0.8079, ⁴He −0.8021,
+⁶Li −1.0770 — ⁶Li is the *second largest* in magnitude there, whereas in
+production it is the smallest.
+
+The reconstruction omits the q-Gaussian tier and was never expected to
+reproduce production's absolute values (²H: −1.366 against −7.271); it was
+offered as evidence about *which partitions carry the sign*, which is invariant
+to that truncation. But the two disagree about a **trend**, not merely a scale,
+and that is outside what the truncation argument covers. Recorded as open.
+
+Note also that the gated-set size at A = 6 is **15**, the largest in the series
+(`[15, 9, 9, 10, 15]` for ²H/³H/⁴He and ⁶Li), so the production magnitude falls
+where the gate admits the *most* partitions. Any account of the A-dependence has
+to explain that.
+
+## Reproduction
+
+The run is 67 minutes and emits no witness — it was a direct call, not a
+producer. To make it durable, a producer wrapping `binding_energy` across
+A = 2..6 with the kernel guard would be the right artefact; it is not written
+here because the honest first step is re-measuring A = 3, 4, 5, and that is a
+~2 h compute that should be claimed as its own item rather than folded into
+this tranche.
