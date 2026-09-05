@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-09-05T05:54:36Z
-updated_at: 2026-09-05T06:28:22Z
+updated_at: 2026-09-05T06:36:27Z
 ---
 
 
@@ -115,3 +115,13 @@ reproduces on no tree measured here.
 Closed. The remaining open items are `qou-sv7h` step 3 (the builder is still
 float64) and `q_sweep_sdp_atom`, which imports `_build_ysn_matrices` directly and
 is a matrix consumer rather than a trace consumer — unassessed.
+
+
+## Follow-up measured 2026-09-05: `q_sweep_sdp_atom` has no callers
+
+The one matrix-consuming (rather than trace-consuming) path named as unassessed
+above is dead code: defined at `computations/sdp_cross_channel.py:394`, called
+nowhere, referenced by no witness. So the fix moves no recorded number by any
+route, not just by the two traced ones. Recorded in the audit doc and on
+`qou-sv7h`, whose only remaining item is step 3 (the builder's float64
+precision).

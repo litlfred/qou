@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-05T06:36:07Z
+updated_at: 2026-09-05T06:36:26Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -131,3 +131,25 @@ consumer this arc has not assessed: `q_sweep_sdp_atom` in
 `sdp_cross_channel.py` imports `_build_ysn_matrices` directly and uses the
 matrices, not their traces — so it is the one place where the defect could have
 had a numerical consequence, and nobody has measured it.
+
+
+## The `q_sweep_sdp_atom` gap is closed — it has no callers (2026-09-05)
+
+Measured, correcting my own note above: `q_sweep_sdp_atom` is defined at
+`computations/sdp_cross_channel.py:394` and **called nowhere in the repo**. A
+tree-wide grep returns its own `def` plus only the three places this session
+wrote *about* it (this bean, `qou-0wqd`, and the audit doc). No witness
+references it.
+
+It was named as "the one place the defect could still bite" because it is the
+only importer of `_build_ysn_matrices` outside `hecke_core_legacy` and it uses
+the **matrices** rather than their traces. That reasoning was right; the
+premise was not — there is no caller, so no recorded number came from it, and
+the fix makes it correct before anyone writes one.
+
+This is a grep, not a run: it establishes there is no consumer, not that the
+function is otherwise correct.
+
+**So the arc's remaining item is step 3 alone** — the builder is still float64
+(`math.sqrt`, `1.0` literals, no `mp.dps`), which is why the Python family
+agrees with the Rust MPFR reference only to ~1e-16.
