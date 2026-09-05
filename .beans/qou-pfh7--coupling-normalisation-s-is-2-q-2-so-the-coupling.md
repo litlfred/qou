@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-05T06:17:05Z
-updated_at: 2026-09-05T06:26:29Z
+updated_at: 2026-09-05T09:07:16Z
 ---
 
 Owner "merge and coupling renorm" (2026-09-05). The open item qou-ix74 left: what normalisation relates the derived weak-vertex trace W(q) to the single-crossing coupling s² the decay rate actually uses.
@@ -33,3 +33,24 @@ Producer `markov/weak_vertex_coupling_normalisation_probe.py` 7/7; both Lean fil
 STILL OPEN (the real remainder): a W-based coupling of another SHAPE is untested — a ratio against another trace in the tower (the trefoil is the natural denominator, the corpus already reads the electron off its three crossings), a Jones-normalised object (V_K(1) = 1 for EVERY knot, so V − 1 has its normalisation fixed by topology rather than chosen), or a bar-parity component. What would settle it is deriving the coupling's normalisation from the rate formula's own construction, not another scan.
 
 FOLLOW-UP: the same §7c mixed-content flag is latent in the two files merged earlier in this arc (WeakVertexT35TraceClosedForm, WeakVertexSubstitutionScale); unflagged only because the gate inspects changed files. Mechanical, name-preserving, not done here.
+
+
+## 🛑 Superseded magnitude — the power was s⁴, not s² (2026-09-05, bean qou-xql6)
+
+Every `1.19e4` / `10⁴` / "four orders of magnitude" figure in this bean is high by
+`1/s² = 91.7694991484`. `substitutionRateFactor` was
+`(weakVertexTrace q)² / (sSq q)²`, and **`sSq` is already `s²`** — `sSq_eq` even
+says `q + q⁻¹ − 2` — so it computed `|W|²/s⁴`. The rate carries `s²` exactly once:
+`prf:trace-ratio-observable` gives `|ℳ_q|² = |skein_amp|²·|tr(par)/tr(dau)|²` with
+`skein_amp = q^{1/2} − q^{−1/2}`, *"the Skein amplitude at the beta-decay vertex"*,
+and nothing else in the rate carries an `s`.
+
+    |W|²/s⁴ = 11875.4418937      as recorded
+    |W|²/s² =   129.405107404    the rate's actual power
+
+**The verdict is unchanged.** At 129× the substituted half-lives land at 0.8–0.9 %
+of observed — ~110× too short, where a 10–17 % shortening was wanted. So this
+stays a scope-(a) negative; only "four orders of magnitude" is withdrawn, in
+favour of "two orders, ~129×".
+
+Producer `computations/markov/beta_rate_skein_power_audit.py` (9/9).

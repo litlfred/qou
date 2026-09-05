@@ -8,7 +8,10 @@ import Mathlib.Analysis.Calculus.Deriv.Pow
 `WeakVertexSubstitutionScale` showed that substituting the weak-vertex trace
 `W(q) = tr_M((σ₀σ₁)⁵)` for the single-crossing coupling
 `s² = (q^{1/2} − q^{-1/2})²` in the decay rate multiplies every rate by
-`≈ 1.19·10⁴`. That left one question: what normalisation *does* relate them.
+`≈ 129.4` (the figure read `≈ 1.19·10⁴` until 2026-09-05 — `sSq` is already `s²`
+and was squared again, while the rate carries `s²` once; bean `qou-xql6`). That left
+one question: what normalisation *does* relate them. Nothing in this file depends on
+the magnitude: the exclusion below is about the candidate family's functional form.
 
 This file answers the first half and prunes the obvious family for the second.
 

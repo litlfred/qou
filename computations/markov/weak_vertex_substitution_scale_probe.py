@@ -22,7 +22,7 @@ tranche", 2026-09-05).
    orders of magnitude.  It cannot be the 10–17 % heavy-nucleus correction
    the corpus attributed to it.  This is a negative about the PRESCRIBED
    SUBSTITUTION (s² and W are not the same normalisation of a coupling), not
-   about W.  Lean: QOU.Braiding.WeakVertexT35.substitutionRateFactor_gt_ten_thousand
+   about W.  Lean: QOU.Braiding.WeakVertexT35.substitutionRateFactor_near_one_hundred_thirty
    (and _lt_twenty_thousand), sorry-free.
 
    The corpus's own live producer computations/t35-weak-vertex.py has printed
@@ -80,8 +80,8 @@ from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
 q = hs.q
 W = q ** 2 * (q ** 12 + q ** 8 - 1) / (q ** 2 + 1) ** 2      # qou-egvf closed form
 S_SQ = (q - 1) ** 2 / q                                     # (q^{1/2} − q^{-1/2})²
-FACTOR = W ** 2 / S_SQ ** 2                                 # |W|²/s⁴
-FACTOR_CLOSED = q ** 6 * (q ** 12 + q ** 8 - 1) ** 2 / ((q ** 2 + 1) ** 4 * (q - 1) ** 4)
+FACTOR = W ** 2 / S_SQ                                      # |W|²/s²  (ONE power: S_SQ IS s²)
+FACTOR_CLOSED = q ** 5 * (q ** 12 + q ** 8 - 1) ** 2 / ((q ** 2 + 1) ** 4 * (q - 1) ** 2)
 
 # Lean pred_* of ex:hadron-half-life-verification (s²-based, pre-Coulomb)
 NUCLEI = [
@@ -137,13 +137,20 @@ def main() -> int:
     assertions = [
         {"name": "factor_closed_form_matches",
          "passed": sp.simplify(FACTOR - FACTOR_CLOSED) == 0,
-         "note": "|W|²/s⁴ = q^6 (q^12+q^8-1)^2 / ((q^2+1)^4 (q-1)^4), exactly"},
-        {"name": "factor_between_1e4_and_2e4_at_proton_pin",
-         "passed": mp.mpf(10) ** 4 < factor < 2 * mp.mpf(10) ** 4,
-         "note": "the Lean bounds substitutionRateFactor_gt_ten_thousand / _lt_twenty_thousand"},
+         "note": "|W|²/s² = q^5 (q^12+q^8-1)^2 / ((q^2+1)^4 (q-1)^2), exactly"},
+        {"name": "factor_is_one_hundred_twenty_nine_at_proton_pin",
+         "passed": mp.mpf("129") < factor < mp.mpf("130"),
+         "note": "|W|²/s² = 129.405107404; the Lean bound is "
+                 "substitutionRateFactor_near_one_hundred_thirty. This read "
+                 "'between 1e4 and 2e4' until 2026-09-05 because FACTOR squared "
+                 "S_SQ, which is already s² (bean qou-xql6)"},
         {"name": "substitution_is_not_a_10_to_17_percent_correction",
-         "passed": all(mp.mpf(r["new_over_obs"]) < mp.mpf("0.001") for r in rows),
-         "note": "SCOPE-(a) NEGATIVE: every substituted half-life lands below 0.1 % of observed"},
+         "passed": all(mp.mpf("0.008") < mp.mpf(r["new_over_obs"]) < mp.mpf("0.010")
+                       for r in rows),
+         "note": "SCOPE-(a) NEGATIVE: every substituted half-life lands at 0.8-0.9 % "
+                 "of observed, i.e. ~110x too SHORT, where a 10-17 % shortening was "
+                 "wanted. Two-sided on the measured band so the gate fails if the "
+                 "numbers MOVE. (Read '< 0.1 %' until 2026-09-05, on the s^4 factor.)"},
         {"name": "published_0_7036_is_buggy_rule_at_zC",
          "passed": abs(buggy_C - mp.mpf("0.7036")) < mp.mpf("0.0001"),
          "note": "Σ c_w z_C^{|w|} over the reduced (σ₀σ₁)^5 — provenance of the published value"},
@@ -159,9 +166,14 @@ def main() -> int:
         "computation": "weak-vertex-substitution-scale",
         "description": (
             "Wiring |W|² in place of s² into the beta-decay rate multiplies every "
-            "rate by |W(q0)|²/s⁴(q0) ≈ 1.19e4 (half-lives by 8.4e-5): the prescribed "
-            "substitution is a scope-(a) negative, not the 10–17 % heavy-nucleus "
-            "correction attributed to it. Also fixes the provenance of the two "
+            "rate by |W(q0)|²/s²(q0) = 129.405107404 (half-lives by 0.00773): the "
+            "prescribed substitution is a scope-(a) negative, not the 10–17 % "
+            "heavy-nucleus correction attributed to it — the substituted half-lives "
+            "land at 0.8–0.9 % of observed, ~110x too short. THE POWER WAS s⁴ AND "
+            "THE FACTOR 1.19e4 UNTIL 2026-09-05: S_SQ is already s², so squaring it "
+            "double-counted the amplitude; the rate carries s² once "
+            "(prf:trace-ratio-observable). The verdict is unchanged, the magnitude "
+            "is 92x smaller (bean qou-xql6). Also fixes the provenance of the two "
             "stale W values: both are hecke_division's former z^{len} trace rule, "
             "at z_C (0.7036, the published figure) and z_D (0.9684, the 2026-08-29 "
             "witness). Table 4 of ex:hadron-half-life-verification has no producer."
@@ -170,7 +182,8 @@ def main() -> int:
                        "anchor": "proton pin (Q_50_DIGIT_STR)"},
         "q0": Q_50_DIGIT_STR,
         "W_q0": n(Wv), "s_sq_q0": n(s2),
-        "factor_W2_over_s4_q0": n(factor), "halflife_scale_s4_over_W2_q0": n(t_scale),
+        "factor_W2_over_s2_q0": n(factor), "halflife_scale_s2_over_W2_q0": n(t_scale),
+        "superseded_factor_W2_over_s4_q0": "11875.4418936763026 (wrong power, bean qou-xql6)",
         "factor_closed_form": str(FACTOR_CLOSED),
         "nuclei": rows,
         "table4_published_unreproduced": TABLE4_PUBLISHED,
@@ -184,8 +197,9 @@ def main() -> int:
                     "which attributed 0.7036 to the deprecated t35-full-calculation.py",
         },
         "lean": ["QOU.Braiding.WeakVertexT35.substitutionRateFactor_eq",
-                 "QOU.Braiding.WeakVertexT35.substitutionRateFactor_gt_ten_thousand",
-                 "QOU.Braiding.WeakVertexT35.substitutionRateFactor_lt_twenty_thousand"],
+                 "QOU.Braiding.WeakVertexT35.substitutionRateFactor_near_one_hundred_thirty",
+                 "QOU.Braiding.WeakVertexT35."
+                 "substitutionRateFactor_denominator_vanishes_numerator_does_not"],
         "reference_blocks": ["prf:hadron-half-life", "rem:hadron-half-life-fermi",
                              "ex:hadron-half-life-verification"],
         "assertions": assertions,

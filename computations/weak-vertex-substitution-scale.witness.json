@@ -1,6 +1,6 @@
 {
   "computation": "weak-vertex-substitution-scale",
-  "description": "Wiring |W|\u00b2 in place of s\u00b2 into the beta-decay rate multiplies every rate by |W(q0)|\u00b2/s\u2074(q0) \u2248 1.19e4 (half-lives by 8.4e-5): the prescribed substitution is a scope-(a) negative, not the 10\u201317 % heavy-nucleus correction attributed to it. Also fixes the provenance of the two stale W values: both are hecke_division's former z^{len} trace rule, at z_C (0.7036, the published figure) and z_D (0.9684, the 2026-08-29 witness). Table 4 of ex:hadron-half-life-verification has no producer.",
+  "description": "Wiring |W|\u00b2 in place of s\u00b2 into the beta-decay rate multiplies every rate by |W(q0)|\u00b2/s\u00b2(q0) = 129.405107404 (half-lives by 0.00773): the prescribed substitution is a scope-(a) negative, not the 10\u201317 % heavy-nucleus correction attributed to it \u2014 the substituted half-lives land at 0.8\u20130.9 % of observed, ~110x too short. THE POWER WAS s\u2074 AND THE FACTOR 1.19e4 UNTIL 2026-09-05: S_SQ is already s\u00b2, so squaring it double-counted the amplitude; the rate carries s\u00b2 once (prf:trace-ratio-observable). The verdict is unchanged, the magnitude is 92x smaller (bean qou-xql6). Also fixes the provenance of the two stale W values: both are hecke_division's former z^{len} trace rule, at z_C (0.7036, the published figure) and z_D (0.9684, the 2026-08-29 witness). Table 4 of ex:hadron-half-life-verification has no producer.",
   "convention": {
     "markov_z": "q**3/(q**2+1) (D)",
     "hecke_h": "q - 1/q",
@@ -9,9 +9,10 @@
   "q0": "1.1099785827513808075916690956107688798744991218736",
   "W_q0": "1.1874806131459626461071158300792049240880255765818",
   "s_sq_q0": "0.010896866707122299752491978091862815889240748484137",
-  "factor_W2_over_s4_q0": "11875.441893676302628203164574429518277238602657260",
-  "halflife_scale_s4_over_W2_q0": "0.000084207392781947934789783946073840028714613900072350",
-  "factor_closed_form": "q**6*(q**12 + q**8 - 1)**2/((q - 1)**4*(q**2 + 1)**4)",
+  "factor_W2_over_s2_q0": "129.40510740356669954845314270572764876293807365011",
+  "halflife_scale_s2_over_W2_q0": "0.0077276702601959103352389356063791536373026791585699",
+  "superseded_factor_W2_over_s4_q0": "11875.4418936763026 (wrong power, bean qou-xql6)",
+  "factor_closed_form": "q**5*(q**12 + q**8 - 1)**2/((q - 1)**2*(q**2 + 1)**4)",
   "nuclei": [
     {
       "nucleus": "3H",
@@ -19,8 +20,8 @@
       "t_old_lean_pred": "13.0",
       "t_obs_nndc": "12.32",
       "old_over_obs": "1.0551948",
-      "t_new_substituted": "0.0010946961",
-      "new_over_obs": "8.8855203e-5"
+      "t_new_substituted": "0.10045971",
+      "new_over_obs": "0.0081541975"
     },
     {
       "nucleus": "14C",
@@ -28,8 +29,8 @@
       "t_old_lean_pred": "6800",
       "t_obs_nndc": "5730",
       "old_over_obs": "1.1867365",
-      "t_new_substituted": "0.57261027",
-      "new_over_obs": "9.9931984e-5"
+      "t_new_substituted": "52.548158",
+      "new_over_obs": "0.0091707082"
     },
     {
       "nucleus": "60Co",
@@ -37,8 +38,8 @@
       "t_old_lean_pred": "6.2",
       "t_obs_nndc": "5.2714",
       "old_over_obs": "1.1761581",
-      "t_new_substituted": "0.00052208584",
-      "new_over_obs": "9.904121e-5"
+      "t_new_substituted": "0.047911556",
+      "new_over_obs": "0.0090889623"
     },
     {
       "nucleus": "90Sr",
@@ -46,8 +47,8 @@
       "t_old_lean_pred": "32.0",
       "t_obs_nndc": "28.79",
       "old_over_obs": "1.111497",
-      "t_new_substituted": "0.0026946366",
-      "new_over_obs": "9.3596268e-5"
+      "t_new_substituted": "0.24728545",
+      "new_over_obs": "0.0085892827"
     },
     {
       "nucleus": "137Cs",
@@ -55,8 +56,8 @@
       "t_old_lean_pred": "33.0",
       "t_obs_nndc": "30.17",
       "old_over_obs": "1.0938018",
-      "t_new_substituted": "0.002778844",
-      "new_over_obs": "9.2106197e-5"
+      "t_new_substituted": "0.25501312",
+      "new_over_obs": "0.0084525396"
     },
     {
       "nucleus": "210Bi",
@@ -64,8 +65,8 @@
       "t_old_lean_pred": "5.8",
       "t_obs_nndc": "5.012",
       "old_over_obs": "1.1572227",
-      "t_new_substituted": "0.00048840288",
-      "new_over_obs": "9.7446704e-5"
+      "t_new_substituted": "0.044820488",
+      "new_over_obs": "0.0089426352"
     }
   ],
   "table4_published_unreproduced": {
@@ -92,8 +93,8 @@
   },
   "lean": [
     "QOU.Braiding.WeakVertexT35.substitutionRateFactor_eq",
-    "QOU.Braiding.WeakVertexT35.substitutionRateFactor_gt_ten_thousand",
-    "QOU.Braiding.WeakVertexT35.substitutionRateFactor_lt_twenty_thousand"
+    "QOU.Braiding.WeakVertexT35.substitutionRateFactor_near_one_hundred_thirty",
+    "QOU.Braiding.WeakVertexT35.substitutionRateFactor_denominator_vanishes_numerator_does_not"
   ],
   "reference_blocks": [
     "prf:hadron-half-life",
@@ -104,17 +105,17 @@
     {
       "name": "factor_closed_form_matches",
       "passed": true,
-      "note": "|W|\u00b2/s\u2074 = q^6 (q^12+q^8-1)^2 / ((q^2+1)^4 (q-1)^4), exactly"
+      "note": "|W|\u00b2/s\u00b2 = q^5 (q^12+q^8-1)^2 / ((q^2+1)^4 (q-1)^2), exactly"
     },
     {
-      "name": "factor_between_1e4_and_2e4_at_proton_pin",
+      "name": "factor_is_one_hundred_twenty_nine_at_proton_pin",
       "passed": true,
-      "note": "the Lean bounds substitutionRateFactor_gt_ten_thousand / _lt_twenty_thousand"
+      "note": "|W|\u00b2/s\u00b2 = 129.405107404; the Lean bound is substitutionRateFactor_near_one_hundred_thirty. This read 'between 1e4 and 2e4' until 2026-09-05 because FACTOR squared S_SQ, which is already s\u00b2 (bean qou-xql6)"
     },
     {
       "name": "substitution_is_not_a_10_to_17_percent_correction",
       "passed": true,
-      "note": "SCOPE-(a) NEGATIVE: every substituted half-life lands below 0.1 % of observed"
+      "note": "SCOPE-(a) NEGATIVE: every substituted half-life lands at 0.8-0.9 % of observed, i.e. ~110x too SHORT, where a 10-17 % shortening was wanted. Two-sided on the measured band so the gate fails if the numbers MOVE. (Read '< 0.1 %' until 2026-09-05, on the s^4 factor.)"
     },
     {
       "name": "published_0_7036_is_buggy_rule_at_zC",
@@ -133,11 +134,11 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "31c8a640b635",
-  "scriptCommitSha": "unknown",
-  "commitSha": "868820902aa742950d0564a80e9c522ccdafcf2c",
+  "scriptHash": "c2ff38f8b7fa",
+  "scriptCommitSha": "33f132805565e3acdec70c51f415b5d3669cb861",
+  "commitSha": "4b3096d0677fa4e4dfe1f66cec240ffb02058795",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-09-05T05:54:22.842044+00:00",
+  "computedAt": "2026-09-05T09:02:02.968306+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
