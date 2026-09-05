@@ -3,6 +3,13 @@
 import QOU.AlgebraicSubstrate.QGenericBase
 import QOU.AlgebraicSubstrate.QGenericBaseReal
 import QOU.AlgebraicSubstrate.TwistSignTorsor
+import QOU.BringsSurface.CoveringDegreeRamification
+import QOU.Eightfold.AmbientInvolutionDoesNotDecideType
+import QOU.Eightfold.CommutativeImageDegeneration
+import QOU.Eightfold.ConnectedSumAnnihilator
+import QOU.Eightfold.ContactDistributionRank
+import QOU.Eightfold.HyperbolicVolumeFormType
+import QOU.Eightfold.IndecomposableQuotientPrune
 import QOU.Eightfold.SelfDualSectorConfinement
 import QOU.Eightfold.OctonionicSu3RankObstruction
 import QOU.Eightfold.FlavourColourDiscriminator
@@ -123,6 +130,8 @@ import QOU.MathlibExt.OctonionSU3Stabilizer
 import QOU.MathlibExt.OctonionSU3BracketClosure
 import QOU.MathlibExt.OctonionColourActionBaseModule
 import QOU.MathlibExt.OctonionComplexStructure
+import QOU.QuantumObservableUniverse.CalculusDimensionObstruction
+import QOU.QuantumObservableUniverse.SelfDualityDegree
 import QOU.StandardModel.ColourStabilizerAction
 import QOU.StandardModel.ThetaQcdFramingCp
 import QOU.StandardModel.SecondCrossingInvariant

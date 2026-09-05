@@ -2,6 +2,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Analysis.Complex.UpperHalfPlane.Basic
 import Mathlib.Tactic
+import QOU.Archimedean.BlochWignerLobachevsky
 
 open scoped UpperHalfPlane
 
@@ -95,7 +96,16 @@ noncomputable def partialProductLocal (q x : ℝ) (n : ℕ) : ℝ :=
     function vanishes identically, so typing it `ℝ → ℝ` silently
     forces every volume it names to zero. -/
 -- Ref: [manuscript] rem:kashaev-volume-density
-opaque BlochWignerD : UpperHalfPlane → ℝ
+-- Ref: [zagier1986] https://doi.org/10.1007/BF01388528 (Bloch-Wigner D)
+noncomputable def BlochWignerD (z : ℍ) : ℝ :=
+  QOU.Archimedean.BlochWigner_lob (z : ℂ)
+
+/-- **The discharge is definitional.**  `BlochWignerD` unfolds to the
+    corpus's concrete Bloch-Wigner on the underlying complex point;
+    nothing about the conjecture is hidden behind an `opaque` any
+    more. -/
+theorem blochWignerD_eq (z : ℍ) :
+    BlochWignerD z = QOU.Archimedean.BlochWigner_lob (z : ℂ) := rfl
 
 /-! ## Why the shape may not be real (the retyping, justified)
 
