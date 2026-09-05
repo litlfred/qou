@@ -1,0 +1,127 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T08:32:30.915423+00:00",
+  "commitSha": "826610927ba338a6b6669ae6c2b88b10d5979f20",
+  "assertions": [
+    {
+      "name": "planchereL_subset_is_smaller_than_the_raw_grep",
+      "computed": "4",
+      "expected": "36",
+      "passed": false,
+      "source": "Files the qou-oots choice can move, vs the raw grep count that was quoted as the blast radius. These are EXPECTED TO DIFFER -- the assertion records both numbers side by side rather than testing equality; read the values, not the pass/fail."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 1355,
+  "computation": "w-lambda-family-consumer-audit",
+  "scriptFile": "w_lambda_family_consumer_audit.py",
+  "scriptHash": "808a36e27b27",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/w_lambda_family_consumer_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/w_lambda_family_consumer_audit.py"
+  },
+  "description": "Bean qou-oots option C. Classifies every live (non-_deprecated) computations/ file that references a `w_lambda`-named weight by WHICH family it actually constructs: PLANCHEREL (the dim_q^2/[n]_q!, dim_q^2/D^2 or Molien families -- the ones the qou-oots canonical choice is between), MARKOV (y_lambda, NOT part of that choice), BOTH (a deliberate comparison or an undeclared straddle), or NAME-ONLY (the token appears with no construction -- the files a raw grep over-counts). Purpose is to replace the raw grep count of 43, which was quoted as a blast radius and is the wrong number for it because `w_lambda` names several different objects. LIMITS: classification is by source pattern, so a weight reached through an alias, a factory, or a witness read at runtime is invisible; every bucket is a LOWER BOUND on its own membership and NAME-ONLY is a lower bound on 'computes no weight'. Measured, not complete.",
+  "data": {
+    "files_plancherel": {
+      "count": 2,
+      "files": [
+        "beta_ew_delta_I_321_and_wedderburn.py",
+        "probes/molien_feray_meliot_bridge_probe.py"
+      ]
+    },
+    "files_markov": {
+      "count": 12,
+      "files": [
+        "alpha_em/alpha_em_b2_canonical_scale_ratio_probe.py",
+        "deltalambda/wlambda_transfer_matrix_connected_probe.py",
+        "fusion_process_joint_h15_lp.py",
+        "h4_markov_weights_closed_form.py",
+        "h_3a_vs_h_3_divergence.py",
+        "log_delta_categorical_derivation.py",
+        "ocneanu_param_from_fibre_dimension.py",
+        "probe_he4_canonical_tr_m_fingerprint.py",
+        "probes/q_plancherel_vs_y_lambda_probe.py",
+        "qbeta/qbessel_quadratic_binding_wiring_gate.py",
+        "rho_w_crystal_vertex_trace.py",
+        "sweeps/paper_six_term_shadow_price_sweep.py"
+      ]
+    },
+    "files_both": {
+      "count": 2,
+      "files": [
+        "fr_pullback_k3_test.py",
+        "probes/phi_k_weight_family_discriminator.py"
+      ]
+    },
+    "files_name_only": {
+      "count": 20,
+      "files": [
+        "_exact_trace_engine.py",
+        "alpha/alpha_5_jucys_murphy_central.py",
+        "alpha_em_b2_scalar_c_probe.py",
+        "atom_level_wedderburn_tower.py",
+        "chirality_braid_average.py",
+        "close_321_weinberg_gap.py",
+        "delta_q_decoration.py",
+        "deltalambda/wlambda_covariance_epic_M1_kerov_clt_leading_kappa.py",
+        "hecke/hecke_wedderburn.py",
+        "hecke/murphy_lead_injectivity_probe.py",
+        "markov_trace_weights_wenzl.py",
+        "meson/zero_weight_sector_is_temperley_lieb_probe.py",
+        "probes/probe_h3_central_idempotents_exact.py",
+        "probes/qbeta_multiblock_ck_lambda_probe.py",
+        "probes/the_binding_arc_was_measured_in_float64_probe.py",
+        "probes/tower_walk_magic_replication_probe.py",
+        "qbeta/qbessel_unblocker_forced_order_refutation.py",
+        "qbeta/qbeta_adjunction_ilp_probe.py",
+        "sweeps/light_isotope_sweep.py",
+        "yekutieli_volume_join.py"
+      ]
+    },
+    "summary": {
+      "raw_grep_total": 36,
+      "planchereL_family_affected_by_the_qou_oots_choice": 4,
+      "note": "The second figure is what the qou-oots canonical choice can move. BOTH is included in it because a file carrying both families is affected whether it is a deliberate comparison or a straddle -- which of those it is has NOT been triaged here."
+    },
+    "molien_vs_dimq2_lambda_dependence": {
+      "note": "Ratio w_Molien(lam)/w_dimq2(lam) at the substrate q0, normalised to its own mean over partitions of n. A value of 1.0 everywhere would mean the two families differ by a lambda-INDEPENDENT constant, and every same-n ratio built from them would be invariant. They do not: the spread is large and monotone from the single row to the single column, which is the q^{-kappa} factor. So consumers whose reported quantities are same-n ratios -- which is ALL SIX candidates in beta_ew_delta_I_321_and_wedderburn.py -- are invariant under dim_q^2/[n]_q! -> dim_q^2/D^2 (same numerator) but are NOT invariant under the Molien option.",
+      "per_n": {
+        "3": {
+          "max_over_min": "1.87019802674910801799933088389820991409849480764417306011621",
+          "at_single_row": "0.709162986800086942811739405911875624579287239697138772949240",
+          "at_single_column": "1.32627521855702633655518870614692248822146744539231135483580"
+        },
+        "6": {
+          "max_over_min": "22.8790491972892062541446602468063912871337227549089841221796",
+          "at_single_row": "0.155883955587194340763354470509673042028288008211312794110041",
+          "at_single_column": "3.56647668894746496040139452269126451121419441944518750174936"
+        },
+        "9": {
+          "max_over_min": "1830.84312358467976276036249501489969608023426555033210340466",
+          "at_single_row": "0.00748578145049279296582863515856559178903845406373614305996531",
+          "at_single_column": "13.7052914932924798851001791113447437162325914874909067672249"
+        }
+      }
+    }
+  }
+}
