@@ -24,19 +24,28 @@ to zero. `exists_gt_bounded_degree_bond_sum` is the quantitative form: no
 constant per-bond energy makes a degree-bounded bond sum keep up with a
 quadratic.
 
-## The escape hatch, stated because it is the honest limit
+## The limit, stated honestly — and it is about RANGE, not coupling
 
 Everything below assumes the per-bond energy does **not itself grow with `Z`**.
-A law with `ε(Z) ~ Z` is untouched by this file. That is the only door left open,
-and anyone who wants Coulomb inside the bond graph has to walk through it and say
-so — a `Z`-dependent bond energy is a different object from the corpus's derived
-letters `b_pp`, `b_pn`, `b_nn`, which are numbers.
+A law with `ε(Z) ~ Z` is untouched by this file.
+
+That is the formal limit, but reading it as "the repair is a `Z`-dependent
+coupling" is wrong, and an earlier version of this docstring said so. **A bond
+graph is a kernel truncated at range 1**; Coulomb is `1/r` with no truncation.
+Weighting the captured pairs by `1/r` shows the model does not merely fall
+short — it **overshoots ⁴He by 16×** and undershoots ²⁰⁸Pb (1587 % → 73 %,
+crossing near Sn), because a contact sum is `kZ/2`, linear in `Z` with no `A` in
+it, while the true sum over a ball of radius `R = r₀A^{1/3}` is
+`(3/5)Z(Z-1)/R`. A ratio on both sides of 1 is not fixable by rescaling a
+letter. The repair is a decay kernel over **all** pairs — a weighted complete
+graph, degree `Z-1`, which is exactly the case this file excludes. Theorem and
+physics agree: the bond-graph form truncates range, and Coulomb does not.
 
 ## What this closes, and what it does not
 
 It closes "Coulomb is a missing TERM in the bond graph": it is outside the
-bond-graph *form*, which is physically right — Coulomb is `1/r` long-range, not
-contact. It says nothing about the surface term, which the same degree bound
+bond-graph *form*, because the form truncates range — which is physically right,
+Coulomb being `1/r` long-range rather than contact. It says nothing about the surface term, which the same degree bound
 *supplies* rather than forbids (`QOU/Mass/CoordinationSurfaceDeficit.lean`, bean
 `qou-kqdn`): a boundary deficit is exactly what a bounded degree gives you.
 

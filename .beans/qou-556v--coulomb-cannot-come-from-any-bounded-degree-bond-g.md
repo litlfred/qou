@@ -116,3 +116,38 @@ degree bound *supplies* the surface term (`QOU/Mass/CoordinationSurfaceDeficit.l
 `qou-kqdn`, completed by a sibling session earlier today) because a boundary
 deficit is what bounded degree gives you. One bound, two opposite consequences:
 fix the edge set and the surface term appears; fix it and Coulomb still does not.
+
+## 🛑 REFRAMED 2026-09-05 (owner) — it is the FALLOFF, not the coupling
+
+Both sections above called a `Z`-dependent per-bond energy "the escape hatch".
+The arithmetic is right; the framing is not, and it aims a successor at
+re-tuning a letter. **A bond graph is a kernel truncated at range 1.** Coulomb
+is `1/r` with no truncation. That is the defect; the `eps(Z)` requirement is its
+symptom.
+
+Weighting the captured pairs by `1/r` (uniform ball, `R = r0 A^(1/3)`, `k = 12`):
+
+| iso | Z | A | pairs captured | ENERGY captured |
+|---|---:|---:|---:|---:|
+| 4He | 2 | 4 | 100 % | **1587 %** |
+| 16O | 8 | 16 | 100 % | 360 % |
+| 40Ca | 20 | 40 | 63.2 % | 180 % |
+| 56Fe | 26 | 56 | 48.0 % | 153 % |
+| 120Sn | 50 | 120 | 24.5 % | 101 % |
+| 208Pb | 82 | 208 | 14.8 % | **73.1 %** |
+
+The contact model **overshoots light nuclei by 16x** and undershoots heavy ones,
+crossing near Sn. **A ratio on both sides of 1 is not repairable by rescaling
+any letter**, constant or growing. The scalings say why: a contact sum is
+`k Z / 2` — linear in `Z`, no `A` at all — against `(3/5) Z(Z-1)/R` for the
+true sum, so the ratio runs as `A^(1/3)/Z`.
+
+**The repair is a decay kernel over ALL pairs**, which is a weighted COMPLETE
+graph — degree `Z-1`, exactly the case the theorem excludes. So theorem and
+physics agree, and more tightly than the first statement suggested: the
+bond-graph form truncates range, and Coulomb does not.
+
+Landed on all four surfaces: this bean, the Lean docstring, the probe (with two
+new assertions pinning the 1587 %/73.1 % crossing so it cannot drift into a
+docstring-only figure), and the synthesis audit. Corrects the framing shipped in
+PR #6783 — the theorem and every number in it stand unchanged.

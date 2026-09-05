@@ -38,17 +38,46 @@ is a SMALL-A construction; extrapolating it past A = 12 silently raises the
 degree bound. That does not touch the theorem (which holds for any `d`), it just
 fixes which `d` to quote -- and the larger `d` still loses.
 
-*** 3. THE ESCAPE HATCH, QUANTIFIED ***
+*** 3. WHAT ACTUALLY HAS TO CHANGE: THE FALLOFF, NOT THE COUPLING ***
 
-The theorem assumes a per-bond energy that does not itself grow with `Z`. To
-reproduce the SEMF Coulomb term a bounded-degree law needs
+🛑 **Reframed 2026-09-05; the first version of this section pointed the wrong
+way.** It called a Z-dependent per-bond energy "the escape hatch". That is the
+SYMPTOM, not the defect, and stating it that way aims a successor at re-tuning a
+letter.
+
+**A bond graph is a kernel TRUNCATED AT RANGE 1.** Coulomb is `1/r` with no
+truncation. Putting the `1/r` weight back in shows the difference is not a
+shortfall at all:
+
+    iso      Z     A   pairs captured   ENERGY captured (k=12, 1/r weighted)
+    4He      2     4          100 %                          1587 %
+    16O      8    16          100 %                           360 %
+    40Ca    20    40         63.2 %                           180 %
+    56Fe    26    56         48.0 %                           153 %
+    120Sn   50   120         24.5 %                           101 %
+    208Pb   82   208         14.8 %                          73.1 %
+
+The contact model **overshoots light nuclei by 16x** and undershoots heavy ones,
+crossing near Sn. **A larger `eps` cannot fix a ratio that is on both sides of
+1.** The scalings say why: a contact sum is `k Z / 2` -- linear in `Z`, with no
+`A` in it -- while the true sum over a uniform ball of radius `R = r0 A^(1/3)`
+is `(3/5) Z(Z-1)/R`. Their ratio runs as `A^(1/3)/Z`, which is exactly the
+overshoot-then-undershoot.
+
+So the repair is a DECAY KERNEL OVER ALL PAIRS, not a bigger letter on a few.
+And a `1/r` kernel over all pairs is a weighted COMPLETE graph -- degree `Z-1`,
+precisely the case the theorem excludes. The theorem and the physics agree:
+Coulomb is outside the bond-graph form because the form truncates range.
+
+*** 3b. THE COUPLING FORM OF THE SAME STATEMENT, KEPT AS A SYMPTOM ***
+
+Insisting on a degree-bounded graph, the per-bond energy would have to be
 
     eps(Z) >= 2 a_C (Z-1) / (d A^(1/3))
 
-which is linear in `Z-1`. Measured across the chart that is a span of >20x
-between 4He and 208Pb. A derived letter (`b_pp`, `b_pn`, `b_nn`) is a NUMBER;
-this is a function of the nucleus. Anyone who wants Coulomb inside the bond
-graph has to adopt a Z-dependent bond energy and say so.
+linear in `Z-1`, a span of 21.7x between 4He and 208Pb. A derived letter
+(`b_pp`, `b_pn`, `b_nn`) is a NUMBER; this is a function of the nucleus. Read it
+as a measure of how badly the truncation distorts, not as a repair to attempt.
 
 `a_C = 0.697 MeV` is an EXTERNAL SEMF reference constant, used only to size the
 requirement -- nothing here is fitted to it and nothing is wired to production.
@@ -155,7 +184,44 @@ def main() -> int:
 
     print()
     print("=" * 78)
-    print("2. THE ESCAPE HATCH IS A Z-DEPENDENT BOND ENERGY, AND IT IS LINEAR")
+    print("2. IT IS THE FALLOFF, NOT THE COUPLING: THE 1/r-WEIGHTED CAPTURE")
+    print("=" * 78)
+    print("    contact sum   ~ k Z / 2                 (linear in Z, no A)")
+    print("    true Coulomb  ~ (3/5) Z(Z-1) / (r0 A^(1/3))")
+    print("    ratio         ~ 5 k A^(1/3) / (6 (Z-1))")
+    print()
+    print(f"    {'iso':>8}{'Z':>5}{'A':>5}{'pairs':>12}{'ENERGY (k=12)':>18}")
+    energy = []
+    kk = mp.mpf(12)
+    for name, Z, A in (("4He", 2, 4), ("16O", 8, 16), ("40Ca", 20, 40),
+                       ("56Fe", 26, 56), ("120Sn", 50, 120), ("208Pb", 82, 208)):
+        pair = min(kk/(Z - 1), mp.mpf(1))
+        en = 5*kk*mp.mpf(A)**(mp.mpf(1)/3)/(6*(Z - 1))
+        energy.append({"iso": name, "Z": Z, "A": A,
+                       "pairs_pct": mp.nstr(pair*100, 6),
+                       "energy_pct": mp.nstr(en*100, 6)})
+        print(f"    {name:>8}{Z:>5}{A:>5}{mp.nstr(pair*100, 4) + ' %':>12}"
+              f"{mp.nstr(en*100, 5) + ' %':>18}")
+
+    ratios = [mp.mpf(r["energy_pct"])/100 for r in energy]
+    ok &= chk("a_contact_kernel_overshoots_light_nuclei_and_undershoots_heavy",
+              bool(max(ratios) > 1 and min(ratios) < 1), True,
+              note=f"1/r-weighted capture runs {mp.nstr(max(ratios)*100, 6)} % at "
+                   f"4He down to {mp.nstr(min(ratios)*100, 6)} % at 208Pb, "
+                   "crossing 1 near Sn. The defect is a kernel TRUNCATED AT "
+                   "RANGE 1 standing in for 1/r -- it over-weights the first "
+                   "shell and drops everything beyond")
+    ok &= chk("so_no_rescaling_of_the_bond_energy_repairs_it",
+              bool(max(ratios)/min(ratios) > 20), True,
+              note=f"the ratio spans {mp.nstr(max(ratios)/min(ratios), 6)}x and "
+                   "sits on BOTH sides of 1, so a constant -- or any single "
+                   "monotone eps(Z) -- cannot correct it. The repair is a decay "
+                   "kernel over all pairs, which is a weighted COMPLETE graph: "
+                   "degree Z-1, exactly the case the theorem excludes")
+
+    print()
+    print("=" * 78)
+    print("2b. THE COUPLING FORM OF THE SAME STATEMENT, KEPT AS A SYMPTOM")
     print("=" * 78)
     print("    eps(Z) >= 2 a_C (Z-1) / (d A^(1/3))   to reproduce SEMF Coulomb")
     print()
@@ -211,8 +277,9 @@ def main() -> int:
     print("3. WHAT THIS CLOSES")
     print("=" * 78)
     print("  Coulomb is not a missing TERM in the bond graph -- it is outside")
-    print("  the bond-graph FORM. Physically right: Coulomb is 1/r, a contact")
-    print("  graph is not. The surface term is the opposite case: the same")
+    print("  the bond-graph FORM, because the form TRUNCATES RANGE. Physically")
+    print("  right: Coulomb is 1/r, a contact graph is not. The surface term is")
+    print("  the opposite case: the same")
     print("  degree bound SUPPLIES it (QOU/Mass/CoordinationSurfaceDeficit,")
     print("  bean qou-kqdn), because a boundary deficit is what bounded degree")
     print("  gives you. One bound, two opposite consequences.")
@@ -233,6 +300,7 @@ def main() -> int:
         "data": {"n_measured": len(meas),
                  "captured_share_pct_by_degree": share,
                  "deltahedral_bound_breaks_at_A": A_break,
+                 "one_over_r_weighted_capture": energy,
                  "required_epsilon_span": mp.nstr(span, 10),
                  "required_epsilon_flattened_span": mp.nstr(flat_span, 12),
                  "pb208_coulomb_over_binding": mp.nstr(frac_pb, 10) if frac_pb else None},
