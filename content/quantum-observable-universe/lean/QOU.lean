@@ -189,6 +189,11 @@ import QOU.HeckeAlgebra
 -- explicit hypothesis `RSKDimIdentity` (bean qou-usol).  The `opaque` it
 -- replaced was deleted on 2026-09-05 (bean qou-kp2z); nothing had consumed it.
 import QOU.HeckeAlgebra.WedderburnConstruction
+-- `WedderburnTrace` compares the two traces on that embedding: the regular one
+-- weights each block by `f^lam` (`blockDiagonal_trace`), the Markov one by
+-- `y_lam(q_0)`, and the difference is entirely in the coefficients.  Sharp: they
+-- agree on every decomposition only if the coefficients agree (bean qou-kp2z).
+import QOU.HeckeAlgebra.WedderburnTrace
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding

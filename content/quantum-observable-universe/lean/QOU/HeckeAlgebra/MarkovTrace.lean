@@ -32,9 +32,13 @@ needed by the QOU mass formula `M = ρ · m_e · |tr_M(T_w)|`:
   `wenzlBridge` is proved by `rfl` — it unfolds a definition rather
   than connecting two independently-given quantities.  And it never
   mentioned `wedderburnEmbed`: nothing in this module did, outside
-  this sentence.  Relating `markovTrace` on the global matrix algebra
-  to the block sum — the identity the old wording described — is
-  genuine content and is **not** proved anywhere in this corpus.
+  this sentence.  Relating a trace on the assembled matrix algebra to
+  the block sum is genuine content, and it is now proved — in
+  `QOU/HeckeAlgebra/WedderburnTrace.lean`, over the constructed
+  `blockDiagonal`.  What is still **not** proved is that identity with
+  `markovTrace` itself on the left: `markovTrace` is `opaque` in
+  `QOU/HeckeAlgebra/Common.lean`, so connecting it to either sum
+  remains open.
 
 ## Categorical content
 
