@@ -139,12 +139,26 @@ specific and physically motivated rather than vestigial.
 > that "(a) requires building something new" is false — a prior implementation
 > exists to start from.
 
-**And the fork is not two-way.** A third strand convention is live in
-`computations/`: [`electron_sigma_f_chain.py`](../../computations/electron_sigma_f_chain.py)
-uses `n_target = 3A + Z` — three quark strands per nucleon **plus** Z electrons —
+**And a third strand COUNT is live — but be precise about what it is.**
+[`electron_sigma_f_chain.py`](../../computations/electron_sigma_f_chain.py)
+uses `n_target = 3A + Z`: three quark strands per nucleon **plus** Z electrons,
 which is neither the definition's `A+Z` nor production's `3A` (check 6, 1 live
-producer, `_deprecated/` excluded). Any renaming that assumes two objects will
-leave this one unnamed.
+producer, `_deprecated/` excluded).
+
+> **It is NOT a third braid construction, and reading it as one would send the
+> next agent looking for a word that does not exist.** `3A + Z` there is the
+> **confinement-SDP normalisation** `tr Φ = n_target` — a dressing level swept
+> `Z = 0…8` to show `σ_F = n_target·y₀*` is monotone in the electron count.
+> The file **never builds a braid word**: it does not import or call
+> `atom_braid_word_3A`, and it is not in the `qou-hu1f` consumer set that
+> triage is re-running. What it establishes for *this* note is narrower and
+> still real: the corpus already models **an atom's electron dressing on top of
+> a 3A nuclear core**, which is exactly reading (a)'s picture — the 3A object as
+> the electron-free core of a larger atomic one — arrived at from the SDP side
+> rather than the braid side.
+
+So a renaming that assumes two objects has a third *count* to account for, even
+though it has only two braid *constructions* to name.
 
 What *is* settled is that the status quo — two objects under one name, cited
 across chapters — cannot be right under any of these readings.
