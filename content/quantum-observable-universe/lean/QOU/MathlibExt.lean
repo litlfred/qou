@@ -129,9 +129,9 @@ theorem List.commute_init_prod {α : Type*} [Monoid α]
     `matrixChain` does not have an accumulator problem — it **reverses the
     list** (`matrixChain (x :: l) = matrixChain l * f x`, so
     `matrixChain seq = (seq.map f).reverse.prod`).  The lemma that applies
-    is `prod_reverse_eq_of_pairwise_commute` in §3b, and the residual gap
-    at that call site is not about folds at all — see
-    `QOU.TMCorrespondence.MatrixChainEqBuildChains`.
+    is `prod_reverse_eq_of_pairwise_commute` in §3b.  (That call site is now
+    fully closed — `QOU.TMCorrespondence.matrixChain_eq_buildChains` is proved
+    unconditionally as of 2026-09-05, and the class has an instance.)
 
     The lemma itself is correct and is kept; only its claimed consequence
     was wrong. -/
