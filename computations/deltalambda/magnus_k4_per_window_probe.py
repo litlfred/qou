@@ -139,24 +139,36 @@ def main():
     # where the raw quantity mattered already cost this arc one published correction, and it is
     # about to cost a second — the "square-end rise is universal (10/10)" claim is 10/10 per-dim
     # and only 9/10 raw.
-    if len(ks) > 6:
-        print("\n  SQUARE END (k=5 → k=6): per-dim rise vs RAW rise — dim drops "
-              f"{base.block_structure(shape(n, 5))[1]} → {base.block_structure(shape(n, 6))[1]}")
-        print(f"    {'a':>4}{'|tr|/dim k=5':>15}{'k=6':>13}{'per-dim':>10}"
-              f"{'raw k=5':>13}{'raw k=6':>13}{'raw':>9}")
-        d5 = base.block_structure(shape(n, 5))[1]
-        d6 = base.block_structure(shape(n, 6))[1]
+    # The last column index, and whether it is actually the SQUARE shape. Hardcoding k=5→6 as
+    # "the square end" was correct only at A=4 (n=12): the square shape is k = n/2 and exists ONLY
+    # for even n. At A=5 (n=15) there is no square shape at all, yet the old code still printed
+    # "SQUARE END (k=5 → k=6)" over the pair (10,5) → (9,6), neither of which is square or last.
+    # A label that is right at one size and silently wrong at every other is worse than no label.
+    klast = n // 2
+    is_sq = (n % 2 == 0)
+    if len(ks) > 2:
+        lo, hi = klast - 1, klast
+        tag = f"SQUARE END ({shape(n, hi)} is square)" if is_sq else \
+              f"COLUMN END ({shape(n, hi)} — n odd, NO square shape exists)"
+        print(f"\n  {tag}: k={lo} → k={hi}, per-dim vs RAW — dim "
+              f"{base.block_structure(shape(n, lo))[1]} → {base.block_structure(shape(n, hi))[1]}")
+        # Indices were hardcoded 5 and 6 alongside the hardcoded label — correct at A=4 only, and
+        # an IndexError at A=3 where the column stops at k=4. Everything below keys off lo/hi.
+        print(f"    {'a':>4}{f'|tr|/dim k={lo}':>15}{f'k={hi}':>13}{'per-dim':>10}"
+              f"{f'raw k={lo}':>13}{f'raw k={hi}':>13}{'raw':>9}")
+        dlo = base.block_structure(shape(n, lo))[1]
+        dhi = base.block_structure(shape(n, hi))[1]
         nraw = 0
         for a in wins:
             v = per_win[a]
-            r5, r6 = v[5] * d5, v[6] * d6
-            pd = v[6] > v[5]
-            rw = r6 > r5
+            rlo, rhi = v[lo] * dlo, v[hi] * dhi
+            pd = v[hi] > v[lo]
+            rw = rhi > rlo
             nraw += 1 if rw else 0
-            print(f"    {a:>4}{mp.nstr(v[5], 6):>15}{mp.nstr(v[6], 6):>13}"
+            print(f"    {a:>4}{mp.nstr(v[lo], 6):>15}{mp.nstr(v[hi], 6):>13}"
                   f"{('rise' if pd else 'fall'):>10}"
-                  f"{mp.nstr(r5, 6):>13}{mp.nstr(r6, 6):>13}{('rise' if rw else 'FALL'):>9}")
-        print(f"    ⇒ per-dim rises: {sum(1 for a in wins if per_win[a][6] > per_win[a][5])}"
+                  f"{mp.nstr(rlo, 6):>13}{mp.nstr(rhi, 6):>13}{('rise' if rw else 'FALL'):>9}")
+        print(f"    ⇒ per-dim rises: {sum(1 for a in wins if per_win[a][hi] > per_win[a][lo])}"
               f"/{len(wins)}    RAW rises: {nraw}/{len(wins)}")
         if nraw < len(wins):
             print("      The gap is the dimension drop. Quote the RAW count for a claim about the")
@@ -184,6 +196,19 @@ def main():
         print("     representation (tr(AB) = tr(BA)), so the bare window trace vanishes identically")
         print("     on every irrep. The observable exists only once ρ is present — see")
         print("     QOU.MassTheory.trace_mul_commutator_eq, tr(ρ(xy−yx)) = tr((ρx−xρ)y).")
+        return
+
+    # SAMPLE-SIZE GUARD. The verdicts below say "every window" / "no single window"; with a partial
+    # sample that is a claim about windows never measured. Run with --windows 0 at A=5 the probe
+    # printed "COLLECTIVE: no single window rises into k=4" off ONE window — while at A=4, 6 of 10
+    # windows do rise into k=4. Same wrong-by-construction shape as the degeneracy case below.
+    if len(wins) < ngen - 1:
+        rising = [a for a in wins if len(per_win[a]) > 4 and per_win[a][4] > per_win[a][3]]
+        print(f"\n  ⚠ PARTIAL SAMPLE: {len(wins)} of {ngen - 1} windows measured — no LOCAL/"
+              f"COLLECTIVE verdict is rendered.")
+        print(f"    of those measured, {len(rising)}/{len(wins)} rise into k=4"
+              + (f" (a = {rising})" if rising else ""))
+        print(f"    Re-run with --windows {' '.join(str(i) for i in range(ngen - 1))} for a verdict.")
         return
 
     if verdicts:
