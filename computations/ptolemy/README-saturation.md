@@ -91,3 +91,28 @@ dimension of 11 is therefore impossible. Nothing failed loudly: exit 0, confiden
 **Check the return type before indexing a library function.** One `typeof` call would have
 prevented this, and the failure mode is silent -- an ideal that is a valid ideal, just not
 the one you asked for.
+
+## Saturation makes this problem HARDER — measured, and it is the expected direction
+
+| computation | outcome |
+|---|---|
+| L6a4 c1 **unsaturated**, msolve mod p | solves in ~4 min; clean slice ladder (5 slices -> dim 0 deg 18) |
+| L6a4 c1 saturated, 12x `sat`, 3.5 GB | silent past 18 min |
+| L6a4 c1 saturated, one `u`-equation, 3 GB | `halt 1` + timeout |
+| L6a4 c2 saturated, one `u`-equation, 3 GB | `halt 1` + timeout |
+| L6a4 c3 saturated, 12x `sat`, 4 GB | `halt 1` + timeout |
+
+**This is consistent with the diagnosis, not against it.** The spurious `{A = 0}`
+components were what made the unsaturated system easy: the Groebner engine could land on a
+big degenerate locus instead of resolving the real geometry. Removing them -- which is
+exactly what soundness requires -- leaves the genuinely hard computation.
+
+So "saturate and re-run" is not a cheap repair here. The unsaturated system was fast
+*because* it was wrong.
+
+**Consequence for planning.** The saturated question sits between two walls already
+measured: the unreduced ideal needs > 10 GB, and the saturated reduced ideal has not
+completed inside 40 min at 3-8 GB. Both are container limits rather than mathematical
+verdicts. The published decomposition for all 14 obstruction classes of this manifold
+exists at `ptolemy.unhyperbolic.org` (measured: returns 000 here, while `pypi.org`
+returns 200), which would settle every class at once.
