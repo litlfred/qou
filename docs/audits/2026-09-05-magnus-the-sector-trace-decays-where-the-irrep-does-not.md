@@ -133,6 +133,33 @@ first differences of decaying sequences are not required to decay. That is a con
 the first in this arc after a run of negatives — and it is not a new mechanism I invented: it is the
 one the corpus had already flagged, tested from the other end.
 
+## Part 3 — the two surviving facts are ONE phenomenon
+
+With the sector reframing refuted (correction at the top), what is left is Part 1's divergence and
+the concentration fact. **They are the same thing measured two ways.**
+
+Concentration is eroding and accelerating — `k=1` share of `Σ|c_λ|`, ρ_true: **77.882 → 73.499 →
+59.437 %**. Asking *which* `k` takes it (`magnus_concentration_erosion_probe.py`):
+
+| step | biggest share gainer | points | share of what `k=1` lost |
+|---|---|---|---|
+| A=2→3 | **k=4** (arrives this A) | +3.33 | **75.99 %** |
+| A=3→4 | **k=4** | +15.59 | **110.89 %** |
+
+`k=4` is the gainer at **both** steps, and its `|c₄|/|c₁|` runs **0.0453 → 0.3184**. So the erosion of
+concentration is not a separate phenomenon from the `k=3→4` divergence of Part 1 — it is that
+divergence seen through the mass rather than through the ratio. (Over 100 % at the second step
+because `k=4` also took from `k=2` and `k=3`, which both fell.)
+
+**A defect in my own metric, caught by reading its output.** The first version reported the A=2→3
+gainer as `k=2` (+1.779). That was wrong in a structural way: the column grows by one shape every
+two `A`, and `k=4` **does not exist at A=2**, so it had no previous share and the Δ column left it
+blank — the "biggest gainer" comparison ranged over the overlap only and was therefore **blind to an
+arriving term**, which is precisely the term that matters. Treating an absent previous share as `0`
+rather than as undefined moves the A=2→3 answer from `k=2` to `k=4` and makes the two steps agree.
+A metric that cannot see a new column entry is not a weaker metric; it is one that reports the wrong
+`k`.
+
 ## What is NOT established, and one caution I registered before running
 
 - **A labelling inconsistency between my own two probes, caught and fixed.** The column probe reports
