@@ -150,3 +150,20 @@ The acceptance criterion in this bean — a derived coordination, no fitted
 constant — is unchanged; what changed is that it now has a measured target
 between two known-wrong endpoints instead of an assertion that it does not
 matter.
+
+## 2026-09-05 (later) — scope narrowed: this bean cannot deliver Coulomb
+
+Re-promoting this bean above was right, and it is worth saying precisely what it
+can and cannot buy, so a successor does not attempt the impossible half.
+
+- **Surface: YES.** A bounded-degree packing's boundary deficit gives the SEMF
+  volume-minus-surface shape with `a_S/a_V = c(k-k')/k` — closed today by a
+  sibling (`qou-kqdn`, `QOU/Mass/CoordinationSurfaceDeficit.lean`).
+- **Coulomb: NO, for every graph this bean could produce.** Degree-sum bound:
+  max degree `d` covers at most `d/(Z-1)` of the proton pairs, 14.81 % at Z=82
+  even at close packing (`qou-556v`, `QOU/Hecke/BoundedDegreeCoulomb.lean`).
+
+So the coordination graph remains the open keystone for the SURFACE/volume
+structure and for `M_n(K)`, and is a dead end for Coulomb. A successor who reads
+the 65x chain-vs-all-pairs gap above as "the right graph fixes everything"
+should read this section first.

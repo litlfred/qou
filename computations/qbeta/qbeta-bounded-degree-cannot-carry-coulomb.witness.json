@@ -1,0 +1,128 @@
+{
+  "computation": "qbeta-bounded-degree-cannot-carry-coulomb",
+  "assertions": [
+    {
+      "name": "even_close_packing_leaves_most_proton_pairs_unrepresented",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "d=12 captures 14.8148 % of proton pairs at Z=82; the chain captures 2.47 %. Coulomb is 1/r long-range and a contact graph is the wrong object for it, whatever d is"
+    },
+    {
+      "name": "only_the_deltahedral_row_outgrows_its_quoted_degree_bound",
+      "computed": [
+        "max-contact deltahedra 3A-6"
+      ],
+      "expected": [
+        "max-contact deltahedra 3A-6"
+      ],
+      "passed": true,
+      "note": "3A-6 exceeds 5A/2 for A>12 -- a triangulated sphere has average degree 6-12/A, so max degree is at least 6 there, and there are only eight convex deltahedra (largest the icosahedron, 12 vertices). GAP-1's 3A-6 is a SMALL-A construction; past A=12 the honest bound is d=12, not d=5"
+    },
+    {
+      "name": "the_deltahedral_bound_breaks_just_above_twelve",
+      "computed": 13,
+      "expected": 13,
+      "passed": true,
+      "note": "2E/A = 6 - 12/A > 5 exactly when A > 12"
+    },
+    {
+      "name": "no_constant_bond_energy_reproduces_coulomb",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "required eps spans 36.3783x across the measured chart. A derived letter is a NUMBER; this is a function of the nucleus, so the escape hatch is not a re-tuning -- it is a different form of law"
+    },
+    {
+      "name": "and_the_required_growth_is_exactly_the_predicted_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "eps_req / ((Z-1)/A^(1/3)) has span 1.0 -- constant to working precision, so the requirement is linear in Z-1 and nothing else. That is the theorem's hypothesis failing in exactly the predicted way"
+    },
+    {
+      "name": "the_omitted_term_is_not_small",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "at 208Pb the SEMF Coulomb term is a large fraction of the total binding, so this is not a correction the law can carry in its error bar"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "dps": 30,
+    "a_C_MeV": "0.697",
+    "a_C_provenance": "EXTERNAL SEMF reference constant, used to size the requirement only; nothing is fitted to it",
+    "edge_sets": [
+      {
+        "label": "canonical chain",
+        "max_degree": 2
+      },
+      {
+        "label": "max-contact deltahedra 3A-6",
+        "max_degree": 5
+      },
+      {
+        "label": "close packing kA/2, k=12",
+        "max_degree": 12
+      }
+    ],
+    "lean": "QOU/Hecke/BoundedDegreeCoulomb.lean"
+  },
+  "data": {
+    "n_measured": 2543,
+    "captured_share_pct_by_degree": [
+      {
+        "Z": 2,
+        "pairs": 1,
+        "d=2": "100.0",
+        "d=5": "100.0",
+        "d=12": "100.0"
+      },
+      {
+        "Z": 8,
+        "pairs": 28,
+        "d=2": "28.5714",
+        "d=5": "71.4286",
+        "d=12": "100.0"
+      },
+      {
+        "Z": 20,
+        "pairs": 190,
+        "d=2": "10.5263",
+        "d=5": "26.3158",
+        "d=12": "63.1579"
+      },
+      {
+        "Z": 26,
+        "pairs": 325,
+        "d=2": "8.0",
+        "d=5": "20.0",
+        "d=12": "48.0"
+      },
+      {
+        "Z": 50,
+        "pairs": 1225,
+        "d=2": "4.08163",
+        "d=5": "10.2041",
+        "d=12": "24.4898"
+      },
+      {
+        "Z": 82,
+        "pairs": 3321,
+        "d=2": "2.46914",
+        "d=5": "6.17284",
+        "d=12": "14.8148"
+      }
+    ],
+    "deltahedral_bound_breaks_at_A": 13,
+    "required_epsilon_span": "36.37830038",
+    "required_epsilon_flattened_span": "1.0",
+    "pb208_coulomb_over_binding": "0.4774703182"
+  },
+  "provenance": {
+    "headSha": "2bea90b8cb62ad5695c26557cad732efe2eba2a1",
+    "producer": "computations/qbeta/qbeta_bounded_degree_cannot_carry_coulomb_probe.py",
+    "elapsed_s": 0.196
+  }
+}

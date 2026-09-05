@@ -219,3 +219,20 @@ surface 154 %, **Coulomb 67 %** — a ranking of 3 : 1.8 : 1, not 18 : 4 : 1,
 with joint `R^2 = 0.927`. Marginal correlations cannot separate collinear
 shapes, and heavy nuclei have large `Z`, large `N-Z` and large `A` together.
 That reading is retracted.
+
+## 2026-09-05 (later) — generalised and CLOSED as a route: `qou-556v`
+
+The chain result above turns only on the chain's DEGREE, so it generalises to
+every edge set the corpus has: by the degree-sum formula a graph with max degree
+`d` covers at most `d/(Z-1)` of the proton pairs — 2.47 % (chain), 6.17 %
+(max-contact deltahedra), **14.81 % even for close packing** at Z=82, and the
+bound holds for the induced proton subgraph whatever the assignment.
+
+Proved in `QOU/Hecke/BoundedDegreeCoulomb.lean` (4 decls, axiom-clean),
+instantiated in `qbeta_bounded_degree_cannot_carry_coulomb_probe.py` (7/7).
+
+**So the sum-vs-product diagnosis in this bean is right and is not repairable
+inside the bond graph.** The only remaining door is a `Z`-dependent per-bond
+energy: reproducing the SEMF term needs `eps(Z) >= 2 a_C (Z-1)/(d A^(1/3))`,
+which spans 21.7x from 4He to 208Pb. That is a different form of law, not a
+re-tuning of the letters. Tracking there: `qou-556v`.

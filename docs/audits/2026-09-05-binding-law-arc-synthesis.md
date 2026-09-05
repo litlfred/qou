@@ -188,6 +188,39 @@ A one-dimensional chain is standing in for a saturating three-dimensional
 packing, and two of the three missing SEMF terms are exactly what that
 substitution costs.
 
+**Sharpened the same day — "one defect" is right about the chain, but the two
+halves are fixed in opposite directions.** Both arguments turn only on the
+chain's *degree*, so both generalise; and generalising them separates them.
+
+- **The surface half is SUPPLIED by a degree bound.** A bounded-degree packing's
+  boundary deficit gives exactly `B/A = εk/2 − (εc(k−k′)/2)·A^{−1/3}`, the SEMF
+  volume-minus-surface shape, with `a_S/a_V = c(k−k′)/k` — ε and k both cancel.
+  Proved in `QOU/Mass/CoordinationSurfaceDeficit.lean` (bean `qou-kqdn`,
+  2026-09-05). Fix the edge set and the surface term appears.
+- **The Coulomb half is FORBIDDEN by a degree bound.** By the degree-sum formula
+  a graph with max degree `d` has at most `dn/2` edges, so its share of the
+  `n(n−1)/2` pairs is at most `d/(n−1)` — and this holds for the induced proton
+  subgraph *whatever the assignment*. At `Z = 82`: **2.47 %** for the chain,
+  6.17 % for max-contact deltahedra, **14.8 % even for close packing**. Fixing
+  the edge set does not help, because every candidate edge set is degree-bounded.
+  `QOU/Hecke/BoundedDegreeCoulomb.lean` (bean `qou-556v`).
+
+So Coulomb is not a missing *term* in the bond graph — it is outside the
+bond-graph *form*, which is physically right: Coulomb is `1/r` long-range and a
+contact graph is not. The one door left open is a `Z`-dependent per-bond energy,
+and it is a wide one to walk through: reproducing the SEMF term needs
+`ε(Z) ≥ 2a_C(Z−1)/(dA^{1/3})`, which runs **0.0732 → 1.588 MeV** from ⁴He to
+²⁰⁸Pb, a factor of 21.7. The corpus's derived letters are numbers; that is a
+function of the nucleus, so it is a different form of law rather than a
+re-tuning. At ²⁰⁸Pb the omitted term is **47.7 %** of the total binding.
+
+*(Aside worth knowing before quoting GAP-1: `3A−6` is only degree-5-admissible
+up to `A = 12`. A triangulated sphere has average degree `6 − 12/A`, so max
+degree exceeds 5 as soon as `A > 12`, and there are exactly eight convex
+deltahedra, the largest the icosahedron. It is a small-`A` construction; past
+that the honest bound is `d = 12`. This does not touch the theorem, which holds
+for any `d` — it only fixes which `d` to quote, and the larger one still loses.)*
+
 🛑 **This supersedes a claim made earlier in this arc.** An edge-set comparison
 reported *"the bond GRAPH is not where the error lives"* on the strength of three
 edge sets landing within 0.6 % of each other. The all-pairs member of that
@@ -258,6 +291,7 @@ the sweep at `k = 1, 2, 4`, and the Lean statement.
 | `QOU/Hecke/BindingExtensivity.lean` | `exists_pow_gt_linear` (the refutation) and `linear_le_bondSum`/`bondSum_le_linear` (the replacement's extensivity), 6 decls |
 | `QOU/Hecke/LayoutConflict.lean` | two disjoint intervals touch at one boundary ⇒ no contiguous layout carries a colour tube, 4 decls |
 | `QOU/Hecke/GeometricTailBound.lean` | `(1−x)⁻¹ − (1+x) = x²/(1−x)`, and `summing_cannot_close`: if the gap is `K > 1` tails wide, the *whole* sum still undershoots, 5 decls |
+| `QOU/Hecke/BoundedDegreeCoulomb.lean` | the degree-sum formula as a bond-count bound, the `d/(n−1)` pair share, and `exists_gt_bounded_degree_bond_sum`: no constant per-bond energy makes a degree-bounded bond sum quadratic, 4 decls |
 
 All sorry-free on `[propext, Classical.choice, Quot.sound]`, `lean`-direct exit 0.
 Everything in `BindingExtensivity` and `LayoutConflict` is proved for arbitrary
