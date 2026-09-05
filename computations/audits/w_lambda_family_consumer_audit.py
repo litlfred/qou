@@ -40,10 +40,38 @@ factory, or a witness file read at runtime. So NAME-ONLY is a lower bound on
 own membership. Reported as measured, not as complete.
 
 No float64: this audit computes no numbers, only counts of files.
+
+CORRECTION 2026-09-05 — the first version of this audit UNDERCOUNTED, and the
+instance was found by `qou-wapd` rather than by me.
+
+`close_321_weinberg_gap.py:302` builds `w_lam = d_q_lam ** 2 / fact_n` -- the
+dim_q^2/[n]_q! weight exactly -- and was filed NAME-ONLY, because the regex
+alternative `d_?q\s*\*\*\s*2` requires the `**` to follow `d_q` immediately and
+the local variable is `d_q_lam`. One underscore-suffix defeated the match. That
+is row 17-and-counting of the detector-blindness class AGENTS.md catalogues, and
+it is the same failure MODE as rows 1-16: keying a detector on how an author
+SPELLED a quantity.
+
+The repair is NOT another spelling. It is to key on PROVENANCE -- what the name
+was assigned FROM -- following `cached_accessor_shape_audit.py`, which the same
+document records as the working instrument for this class. The AST pass below
+finds every `X ** 2 / Y` (and `X * X / Y`), then resolves `X` and `Y` back
+through the file's assignments to the FUNCTION that produced them. `d_q_lam`
+resolves to `dim_q`, `fact_n` to `q_factorial`, and the construction is seen
+regardless of what the local was called. Function names are shared across the
+corpus and stable; local variable names are ad hoc, which is exactly why keying
+on the latter fails.
+
+The regex families are RETAINED alongside it and the buckets are the union, so
+no previously-found file can be lost by this change; `detector` on each record
+says which pass fired, making the residual blindness of each visible instead of
+merely absent. `--selftest` fails unless the known miss is detected, so a future
+narrowing cannot quietly restore the undercount.
 """
 
 from __future__ import annotations
 
+import ast
 import re
 import sys as _sys
 from pathlib import Path as _Path
@@ -69,9 +97,141 @@ PLANCH = {
 }
 MARKOV = re.compile(r'\by_lambda\b|\by_lam\b|markov_weight|y_lambda_at|y_lambda_su_n')
 
+# -- provenance vocabulary -------------------------------------------------
+# These match the name of the FUNCTION a quantity was produced by, not the name
+# of the local it was stored in. That is the whole point of the AST pass: a
+# producer name is shared corpus-wide and stable, a local is whatever the author
+# typed. `d_q_lam` is invisible to a local-name pattern and resolves cleanly
+# here, because it was assigned from `dim_q(...)`.
+DIMQ_SRC = re.compile(r'(?i)dim_?q|q_?dim|quantum_?dim|\bd_?q\b')
+QFACT_SRC = re.compile(r'(?i)q_?factorial|qfact|\bfact\b|factorial')
+SELFNORM_SRC = re.compile(r'(?i)selfnorm|sum_?dim|denominator|\bD2\b|\bD_?sq\b')
+
+
+def _assign_map(tree: ast.AST) -> dict[str, list[ast.AST]]:
+    """name -> every RHS ever assigned to it in this file.
+
+    Deliberately flow-INSENSITIVE and scope-insensitive: a file that assigns the
+    same local twice contributes both, and a match on either is enough. For an
+    audit whose job is to avoid undercounting, over-collecting provenance is the
+    safe direction; the cost is a possible false positive, which is reported
+    with its line number and is cheap to check by eye.
+    """
+    out: dict[str, list[ast.AST]] = {}
+    for node in ast.walk(tree):
+        targets = []
+        if isinstance(node, ast.Assign):
+            targets, value = node.targets, node.value
+        elif isinstance(node, (ast.AnnAssign, ast.AugAssign)) and node.value:
+            targets, value = [node.target], node.value
+        else:
+            continue
+        for t in targets:
+            if isinstance(t, ast.Name):
+                out.setdefault(t.id, []).append(value)
+    return out
+
+
+def _provenance(node: ast.AST, amap: dict[str, list[ast.AST]],
+                depth: int = 0) -> set[str]:
+    """Identifiers this expression's VALUE came from, chased through assignment.
+
+    Depth-capped at 6: the chains here are two or three hops (`d_q_lam` <-
+    `float(dim_q(...))`), and an unbounded chase would loop on `x = x + 1`.
+    """
+    if depth > 6:
+        return set()
+    names: set[str] = set()
+    if isinstance(node, ast.Name):
+        names.add(node.id)
+        for rhs in amap.get(node.id, ())[:4]:
+            names |= _provenance(rhs, amap, depth + 1)
+    elif isinstance(node, ast.Attribute):
+        names.add(node.attr)
+        names |= _provenance(node.value, amap, depth + 1)
+    elif isinstance(node, ast.Call):
+        names |= _provenance(node.func, amap, depth + 1)
+        # `float(dim_q(...))` / `mp.mpf(dim_q(...))`: the wrapper is not the
+        # provenance, the wrapped expression is. Chase arguments too.
+        for a in node.args[:3]:
+            names |= _provenance(a, amap, depth + 1)
+    elif isinstance(node, ast.Subscript):
+        names |= _provenance(node.value, amap, depth + 1)
+    elif isinstance(node, ast.BinOp):
+        names |= _provenance(node.left, amap, depth + 1)
+        names |= _provenance(node.right, amap, depth + 1)
+    return names
+
+
+def _is_square(node: ast.AST) -> ast.AST | None:
+    """Return the base of `X ** 2` or `X * X`, else None."""
+    if (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Pow)
+            and isinstance(node.right, ast.Constant) and node.right.value == 2):
+        return node.left
+    if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Mult):
+        try:
+            if ast.dump(node.left) == ast.dump(node.right):
+                return node.left
+        except (RecursionError, ValueError):
+            return None
+    return None
+
+
+def ast_planch_hits(text: str) -> list[dict]:
+    """Every `dim_q(lam)^2 / <normaliser>` in the file, found by provenance.
+
+    Reports the LOCAL spellings alongside the resolved producers, so the surface
+    a name-keyed detector would have missed is visible in the witness rather
+    than merely absent from a count.
+    """
+    try:
+        tree = ast.parse(text)
+    except SyntaxError:
+        return []
+    amap = _assign_map(tree)
+    hits: list[dict] = []
+    for node in ast.walk(tree):
+        if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
+            continue
+        base = _is_square(node.left)
+        if base is None:
+            continue
+        num = _provenance(base, amap)
+        num_why = sorted(n for n in num if DIMQ_SRC.search(n))
+        if not num_why:
+            continue
+        den = _provenance(node.right, amap)
+        den_self = sorted(n for n in den if SELFNORM_SRC.search(n))
+        den_fact = sorted(n for n in den if QFACT_SRC.search(n))
+        if den_self:
+            family, den_why = "dimq2_selfnorm", den_self
+        elif den_fact:
+            family, den_why = "dimq2_over_qfact", den_fact
+        else:
+            continue
+        try:
+            local = ast.unparse(node)
+        except Exception:  # pragma: no cover - unparse is total in 3.9+
+            local = "<unparse failed>"
+        # Report the names that DECIDED the match, not an alphabetical prefix of
+        # the provenance set. Caught here: `fact_n` resolves through a set whose
+        # ninth member alphabetically is `q_factorial`, so a `sorted(...)[:8]`
+        # sample recorded a provenance list not containing its own evidence --
+        # a row that looks like a false positive while being a true one.
+        hits.append({
+            "line": getattr(node, "lineno", -1),
+            "family": family,
+            "source": local[:120],
+            "matched_numerator": num_why,
+            "matched_denominator": den_why,
+            "numerator_provenance_sample": sorted(num)[:8],
+            "denominator_provenance_sample": sorted(den)[:8],
+        })
+    return hits
+
 
 def classify(text: str) -> str:
-    p = any(rx.search(text) for rx in PLANCH.values())
+    p = any(rx.search(text) for rx in PLANCH.values()) or bool(ast_planch_hits(text))
     m = bool(MARKOV.search(text))
     if p and m:
         return "BOTH"
@@ -103,6 +263,10 @@ def main() -> int:
 
     buckets: dict[str, list[str]] = {
         "PLANCHEREL": [], "MARKOV": [], "BOTH": [], "NAME-ONLY": []}
+    # Files the AST provenance pass finds that the regex pass does not. This
+    # list IS the measured blindness of the original detector; an empty list
+    # would mean the two passes agree, not that either is complete.
+    ast_only: dict[str, list[dict]] = {}
     for f in sorted(ROOT.rglob("*.py")):
         rel = f.relative_to(ROOT).as_posix()
         # Exclude this file. It necessarily contains every pattern it searches
@@ -119,8 +283,22 @@ def main() -> int:
         if not NAME.search(text):
             continue
         buckets[classify(text)].append(rel)
+        hits = ast_planch_hits(text)
+        if hits and not any(rx.search(text) for rx in PLANCH.values()):
+            ast_only[rel] = hits
 
     total = sum(len(v) for v in buckets.values())
+    b.add_data("ast_provenance_only", {
+        "count": len(ast_only),
+        "note": "Files carrying a dim_q^2/<normaliser> construction that the "
+                "REGEX pass does not see, found by resolving the local name "
+                "back to the function that produced it. This is the measured "
+                "blindness of the original detector, whose undercount "
+                "(4 of 36) was found by bean qou-wapd and not by this audit. "
+                "An empty list would mean the two passes AGREE -- it would not "
+                "mean either is complete.",
+        "files": {k: v for k, v in sorted(ast_only.items())},
+    })
     for k, v in buckets.items():
         b.add_data(f"files_{k.lower().replace('-', '_')}", {
             "count": len(v), "files": v})
@@ -199,6 +377,27 @@ def main() -> int:
                "testing equality; read the values, not the pass/fail.",
     )
     b.save()
+
+    if "--selftest" in _sys.argv:
+        # The known miss, kept as a live regression rather than as prose. A
+        # narrowing of the provenance vocabulary that quietly restored the
+        # undercount would pass every other check in this file.
+        known = "close_321_weinberg_gap.py"
+        src = (ROOT / known).read_text(errors="replace")
+        hits = ast_planch_hits(src)
+        ok = any(h["family"] == "dimq2_over_qfact" for h in hits)
+        regex_saw = any(rx.search(src) for rx in PLANCH.values())
+        print(f"selftest: {known} -> AST hits {len(hits)}, "
+              f"dimq2_over_qfact {'FOUND' if ok else 'MISSED'}, "
+              f"regex pass {'sees it' if regex_saw else 'BLIND (as recorded)'}")
+        for h in hits[:4]:
+            print(f"    L{h['line']}: {h['source']}   [{h['family']}]")
+            print(f"        matched num <- {h['matched_numerator']}")
+            print(f"        matched den <- {h['matched_denominator']}")
+        if not ok:
+            print("SELFTEST FAILED: the known qou-wapd miss is not detected.")
+            return 1
+        return 0
 
     print(f"raw grep over live computations/: {total} files")
     for k in ("PLANCHEREL", "BOTH", "MARKOV", "NAME-ONLY"):

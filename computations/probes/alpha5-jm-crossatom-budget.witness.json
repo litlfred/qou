@@ -1,0 +1,99 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T17:02:35.555589+00:00",
+  "commitSha": "cf3287f17df1c7d1af93b4579b10284d797490da",
+  "assertions": [
+    {
+      "name": "alpha5_factorises_exactly_as_budget_times_average",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "unit": "relative",
+      "source": "alpha_5(A) = B_6(A) * <c_5>_A holds identically by definition of the weighted average; checked numerically so that the confound claim rests on an identity that was evaluated, not merely asserted."
+    },
+    {
+      "name": "budget_is_not_constant_across_atoms",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "B_6 max/min = 222.043131514113737004911776917283943685273383379603469576271 across A = [2, 3, 4] (n = 6, 9, 12). A constant budget would make the raw and self-normalised comparisons equivalent; a varying one means they are different tests. Threshold is a legibility floor, not a physical scale."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "alpha5-jm-crossatom-budget",
+  "scriptFile": "alpha5_jm_crossatom_budget_probe.py",
+  "scriptHash": "a57186e831fc",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/alpha5_jm_crossatom_budget_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/alpha5_jm_crossatom_budget_probe.py"
+  },
+  "description": "Bean qou-oots. alpha/alpha_5_jucys_murphy_central.py tests atom-independence of the Jucys-Murphy central scalar c_5 by comparing SUM_{lam |- 3A, ht=6} w_lam c_5(lam) across A = 2,3,4 with w_lam = dim_q^2/[n]_q!. Since n = 3A that is a CROSS-ATOM comparison at three different n, which is the one use AGENTS.md's notation register and qou-oots requirement R2 both exclude for this weight (SUM_lam w_lam(q) is not constant in n; scope-(b), n-independence required). This probe measures the HEIGHT-6 PARTIAL budget B_6(A) = SUM_{ht=6} dim_q^2/[3A]_q! at each A, and verifies the exact decomposition alpha_5(A) = B_6(A) * <c_5>_A. If B_6 varies across A, a spread in alpha_5 cannot distinguish 'c_5 moved' from 'the budget moved'. <c_5>_A is the producer's OWN third route (alpha_5_at_A_partial_normalized), which its docstring already calls 'the structurally derived normaliser'. NOT a claim that the atom-independence conclusion is wrong -- which route it is read off decides that, and the producer reports three.",
+  "parameters": {
+    "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "A_values": "[2, 3, 4]",
+    "height_stratum": "6"
+  },
+  "data": {
+    "per_A": {
+      "2": {
+        "n": 6,
+        "height6_partitions": 1,
+        "B_6_partial_budget": "0.00119212336908621807419756593326313254905609889421615037506947",
+        "alpha_5_raw": "0.000560824553383123772687458511200929331236993498457459525233629",
+        "c5_average_self_normalised": "0.470441707566730196896962727139953995524467758813546941683382"
+      },
+      "3": {
+        "n": 9,
+        "height6_partitions": 3,
+        "B_6_partial_budget": "0.0460622233788888847392761355872489898436412516771066726323493",
+        "alpha_5_raw": "1.97801721099528272215232610229470341067802043515587795309795",
+        "c5_average_self_normalised": "42.9422868871293410075724791025425801352358813353723016990221"
+      },
+      "4": {
+        "n": 12,
+        "height6_partitions": 11,
+        "B_6_partial_budget": "0.264702806023059470395419145770169349536619632445792387048828",
+        "alpha_5_raw": "164.500175347900397508844928815339085481968207299702571687440",
+        "c5_average_self_normalised": "621.452329196578429627875404036687339553941689659193040282910"
+      }
+    },
+    "cross_atom_spreads": {
+      "B_6_budget_max_over_min": "222.043131514113737004911776917283943685273383379603469576271",
+      "alpha_5_raw_max_over_min": "293318.426155859006196657224292742108933673697217719480122898",
+      "c5_average_max_over_min": "1320.99752041740050225037228071941929676499693548975974950382",
+      "note": "The budget column is the confound. alpha_5 = B_6 * <c_5>, so any spread in B_6 propagates into the raw comparison whether or not c_5 moved at all. The self-normalised column is the quantity that is invariant under a lambda-independent rescaling of w (qou-oots R2 / ratio_invariant) and is therefore the one a cross-atom test can be read off."
+    },
+    "producer_route_invariance": {
+      "normalized_by_qfactorial_rel_spread_pct": "482.16",
+      "raw_rel_spread": "83.163894",
+      "partial_selfnorm_rel_spread_pct": "1327.18",
+      "producer_verdict": "strongly atom-dependent (mechanism orthogonal to JM-central)",
+      "spread_statistic": "The producer reports range/median; this probe's own columns report max/min. Different statistics, both quoted under their own names -- neither is a correction of the other.",
+      "triage": "AFFECTED IN PRINCIPLE, IMMATERIAL IN FACT. The file does use dim_q^2/[n]_q! in a cross-atom (n = 3A) metric, which is the use AGENTS.md's notation register and qou-oots R2 both exclude scope-(b). But its conclusion is a NEGATIVE reached identically by all three of its routes -- including the self-normalised one R2 admits -- so the weight-family choice cannot rescue or overturn it. The Molien ruling does not require a change here."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
