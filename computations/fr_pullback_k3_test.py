@@ -50,9 +50,9 @@ import pyhecke_native  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
-from mass_at_3A_proper import dim_q, qfac  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
-from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+from functools import lru_cache  # noqa: E402
+from mass_at_3A_proper import qfac  # noqa: E402  (dim_q now local, mpmath)
+from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
 
 
 # Precision must be raised BEFORE the module-scope constants below: at
@@ -148,15 +148,67 @@ def chi_lambda_braid_via_rust(shape: list[int],
         list(shape), word, str(q_str), 50))
 
 
+def _hooks(shape: tuple) -> list:
+    """Hook lengths of a Young diagram, as a flat list."""
+    conj = [sum(1 for r in shape if r > c) for c in range(shape[0])]
+    return [shape[i] - j + conj[j] - i - 1
+            for i in range(len(shape)) for j in range(shape[i])]
+
+
+@lru_cache(maxsize=None)
+def _qint_mp(k: int) -> mp.mpf:
+    """Balanced q-integer [k]_q at the 50-digit q₀, in mpmath."""
+    q = mp.mpf(Q_50_DIGIT_STR)
+    return (q ** k - (1 / q) ** k) / (q - 1 / q)
+
+
+@lru_cache(maxsize=None)
+def dim_q_mp(shape: tuple) -> mp.mpf:
+    """d_q(λ) by the q-hook-length formula, in MPFR at the 50-digit q₀.
+
+    ADDED 2026-09-05 (bean qou-u6zt). This test used
+    `hecke_characters.dim_q(shape, Q0_PROTON)`, and BOTH halves of that
+    were float64:
+
+      - `Q0_PROTON` is `qou_substrate.constants.Q`, a Python float —
+        2.7e-17 from the 50-digit string. Note `q_parameter.Q`, the
+        other q imported here, is the SAME float, so swapping one for
+        the other fixes nothing; the fix has to reach the string.
+      - more importantly `hecke_characters.dim_q` computes with
+        `math.prod` over `math`-level q-integers, so it is float64 **by
+        construction** and cannot carry a higher-precision q at all.
+
+    That mattered here beyond the usual NO-FLOAT64 grounds: the χ path
+    of this test was moved to the MPFR kernel on 2026-09-04, so the
+    products `|χ| · d_q` were mixing a 50-dps character with a float64
+    dimension — the weaker factor silently capping the pair. Computing
+    d_q in mpmath is what makes that χ upgrade mean anything.
+    """
+    n = sum(shape)
+    num = mp.mpf(1)
+    for k in range(1, n + 1):
+        num *= _qint_mp(k)
+    den = mp.mpf(1)
+    for hk in _hooks(shape):
+        den *= _qint_mp(hk)
+    return num / den
+
+
 def selfnorm_denominator(by_partition: list, n_strands: int) -> mp.mpf:
     """Σ_μ dim_q²(μ) — the SELF-NORMALIZING denominator.
 
     CORRECTED 2026-09-04 (bean qou-7o7h).  This test previously divided
-    dim_q² by [n]_q!, the textbook q-Plancherel form.  That form is a
-    probability measure at q = 1 and in the ASYMMETRIC q-integer
-    convention — but NOT in the BALANCED convention this corpus uses,
-    where c_n = Σ_λ dim_q²/[n]_q! is 0.991 / 1.111 / 1.517 at
-    n = 6/9/12 and grows with n.
+    dim_q² by [n]_q!, the textbook q-Plancherel form, which is a
+    probability measure at q = 1 and **at q = 1 only** — c_n =
+    Σ_λ dim_q²/[n]_q! is 0.991 / 1.111 / 1.517 at n = 6/9/12 and grows
+    with n.
+
+    (An earlier version of this docstring said the textbook form is also
+    a measure "in the ASYMMETRIC q-integer convention", i.e. that the
+    failure was a convention artifact. That was WRONG and is retracted:
+    measured, the asymmetric convention is *further* from 1 at five of
+    six n. The defect is structural — the q-deformation breaks Burnside
+    Σ_λ (f^λ)² = n! — and no convention restores it.)
 
     Because the binding functional is linear in the weights, the whole
     effect is that B scales by c_n: harmless within one atom, and NOT
@@ -168,8 +220,8 @@ def selfnorm_denominator(by_partition: list, n_strands: int) -> mp.mpf:
     """
     total = mp.mpf(0)
     for p in by_partition:
-        dq = dim_q(tuple(p["partition"]), Q0_PROTON)
-        total += mp.mpf(str(dq)) * mp.mpf(str(dq))
+        dq = dim_q_mp(tuple(p["partition"]))
+        total += dq * dq
     return total
 
 
@@ -197,31 +249,31 @@ def fr_pullback_weight_per_partition(
     for p in by_partition:
         shape = tuple(p["partition"])
         depth = len(shape) - 1
-        dq = dim_q(shape, Q0_PROTON)
+        dq = dim_q_mp(shape)
         if depth != k_depth:
-            fr_weights[shape] = mp.mpf(str(dq * dq)) / qfact
+            fr_weights[shape] = (dq * dq) / qfact
             continue
-        s_uniform_at_depth += mp.mpf(str(dq * dq)) / qfact
+        s_uniform_at_depth += (dq * dq) / qfact
         try:
             chi_K = chi_lambda_braid_via_rust(list(shape), knot_word, q_str)
         except (ValueError, RuntimeError, OverflowError) as exc:
             chi_K = mp.mpf(0)
             errors[shape] = f"{type(exc).__name__}: {exc}"
         chi_at_k_dist[shape] = chi_K
-        z_norm_unweighted += mp.mpf(str(dq * dq)) * mp.fabs(chi_K)
+        z_norm_unweighted += (dq * dq) * mp.fabs(chi_K)
 
     # Normalize so FR-pulled-back weights at depth k SUM to the
     # uniform Plancherel total at depth k (preserves total depth-3
     # mass contribution; FR redistributes within stratum).
     if z_norm_unweighted < eps:
         for shape, _ in chi_at_k_dist.items():
-            dq = dim_q(shape, Q0_PROTON)
-            fr_weights[shape] = mp.mpf(str(dq * dq)) / qfact
+            dq = dim_q_mp(shape)
+            fr_weights[shape] = (dq * dq) / qfact
     else:
         scale = s_uniform_at_depth / z_norm_unweighted
         for shape, chi_K in chi_at_k_dist.items():
-            dq = dim_q(shape, Q0_PROTON)
-            fr_weights[shape] = (mp.mpf(str(dq * dq)) * mp.fabs(chi_K)
+            dq = dim_q_mp(shape)
+            fr_weights[shape] = ((dq * dq) * mp.fabs(chi_K)
                                   * scale)
     return fr_weights, errors
 
@@ -238,7 +290,7 @@ def phi_k_with_weights(
         if len(shape) - 1 != k:
             continue
         chi = mp.mpf(str(p["chi_lambda"]))
-        dq = dim_q(shape, Q0_PROTON)
+        dq = dim_q_mp(shape)
         magnitude = mp.fabs(chi) * dq
         if magnitude < eps:
             continue
@@ -253,8 +305,8 @@ def precompute_uniform_weights(by_partition: list, n_strands: int) -> dict:
     weights: dict = {}
     for p in by_partition:
         shape = tuple(p["partition"])
-        dq = dim_q(shape, Q0_PROTON)
-        weights[shape] = mp.mpf(str(dq * dq)) / qfact
+        dq = dim_q_mp(shape)
+        weights[shape] = (dq * dq) / qfact
     return weights
 
 
