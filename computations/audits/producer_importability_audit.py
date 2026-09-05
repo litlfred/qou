@@ -177,12 +177,25 @@ _LOADER = (
 # `set(mode) & set("wax+")` and not `"w" in mode`: "rb" must stay readable
 # while "r+" must not, and a substring test gets that wrong in both directions.
 _WRITE_GUARD = (
-    "import builtins as _b;"
-    "_o=_b.open;"
-    "_b.open=lambda f,mode='r',*a,**k: _o(f,mode,*a,**k)"
-    " if not (set(str(mode)) & set('wax+'))"
-    " else (_ for _ in ()).throw("
+    "import builtins as _b, io as _io, pathlib as _pl;"
+    "_blocked=lambda m: bool(set(str(m)) & set('wax+'));"
+    "_raise=lambda f: (_ for _ in ()).throw("
     "PermissionError('QOU_IMPORT_WRITE_GUARD: import-time write to '+str(f)));"
+    # builtins.open AND io.open: `builtins.open is io.open` is True, but
+    # rebinding one name does not rebind the other, and pathlib reaches
+    # `io.open` directly.
+    "_o=_b.open;"
+    "_g=lambda f,mode='r',*a,**k: _o(f,mode,*a,**k)"
+    " if not _blocked(mode) else _raise(f);"
+    "_b.open=_g; _io.open=_g;"
+    # pathlib.Path.open / write_text / write_bytes: `Path.write_text` calls
+    # `self.open`, which resolves `io.open` at call time, so patching the two
+    # names above is NOT enough on every CPython. Patch the methods directly.
+    "_po=_pl.Path.open;"
+    "_pl.Path.open=lambda self,mode='r',*a,**k: _po(self,mode,*a,**k)"
+    " if not _blocked(mode) else _raise(self);"
+    "_pl.Path.write_text=lambda self,*a,**k: _raise(self);"
+    "_pl.Path.write_bytes=lambda self,*a,**k: _raise(self);"
 )
 
 if os.environ.get("QOU_IMPORT_WRITE_GUARD", "").strip() == "1":

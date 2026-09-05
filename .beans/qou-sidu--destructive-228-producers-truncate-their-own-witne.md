@@ -235,3 +235,32 @@ imported" into a greppable finding — i.e. the list of files that want a
 - [ ] Run with the guard on to enumerate the import-time writers, then add
       `__main__` guards where the write is not intended. Deferred: a full run
       of this audit is ~20 min and the `qou-uiut` table holds the checkout.
+
+### 2026-09-05, later — the guard as first written did NOT work, and my test was why
+
+Ran it for real and it did not hold: the audit still modified 5 witnesses with
+`QOU_IMPORT_WRITE_GUARD=1` set. Restored them from HEAD by explicit path.
+
+**Cause.** `pathlib.Path.write_text` bypasses a `builtins.open` patch.
+`Path.write_text` calls `self.open`, which reaches `io.open`; and although
+`builtins.open is io.open` is True, REBINDING one name does not rebind the
+other. `computations/entanglement_orders.py:178` is exactly this:
+
+    out.write_text(json.dumps(witness, indent=2, default=str))
+
+**Why I did not catch it.** My isolation test wrote its victim file with
+`open(...)` — the one form the guard covered. It passed, and it proved only
+that the guard blocks what I had already assumed it blocks. Same methodological
+error as the warm-cache measurement earlier in this session: testing the happy
+path of my own assumption rather than the thing it could get wrong.
+
+**Fixed** by patching all four routes — `builtins.open`, `io.open`,
+`pathlib.Path.open`, and `Path.write_text` / `Path.write_bytes` directly, since
+`write_text` resolves `io.open` at call time and patching the module names is
+not reliably enough across CPython versions. Re-verified against every form:
+
+    builtins open    -> PRECIOUS   BLOCKED
+    Path.write_text  -> PRECIOUS   BLOCKED
+    Path.open        -> PRECIOUS   BLOCKED
+    io.open          -> PRECIOUS   BLOCKED
+    read (Path.read_text)          -> PRECIOUS   (reads still work)
