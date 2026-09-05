@@ -197,3 +197,44 @@ target**, so it is not a precision artifact and both kernels cannot be right.
 4. `d151898dd6` (*"pin-specific numerical chi caches — 5/6 atoms certified
    1 ppQ"*) claims a certification that a 1.4e-4 kernel split would fail. Read
    it: it may already name this.
+
+### Localisation: four structural exclusions, not yet a culprit
+
+Measured, all from the ratio table above. Each rules out a class; none names
+the step.
+
+1. **Not a framing / writhe power of q₀.** `log(rust/peel)/log(q₀) =
+   −0.0013559869167486641314` — not an integer, so the arbiter's own
+   writhe-match idiom (*"integer ⇒ writhe match"*) excludes it.
+2. **Not per-crossing.** The deuteron is `n = 6`; tritium and ³He are `n = 9`,
+   with different crossing counts. A per-crossing discrepancy would compound to
+   different totals. The ratio is identical to **17 significant figures**.
+3. **Not per-strand and not per-nucleon.** Same argument, and sharper: a
+   per-nucleon factor `f^A` would give `f²` for the deuteron (A=2) and `f³` for
+   T and ³He (A=3). Identical ratio ⇒ the exponent is **0** ⇒ the factor is
+   applied **exactly once, regardless of A**.
+4. **Not Z/N dependent.** D (1,1), T (1,2) and ³He (2,1) span three different
+   `(Z, N)` splits and give the same ratio, so the p/n colour weighting is not
+   the differing step — despite the witness `convention` field naming it.
+
+So: **one scalar, applied once, in the composite assembly only** — present for
+every atom with A ≥ 2 and absent for both single nucleons. `1 − ratio =
+1.41474643156097e-4`; `1/(1 − ratio) = 7068.4045`. Neither is identified, and
+**no identification should be attempted numerically** — the anti-fit rule
+applies with full force to a single measured ratio.
+
+**One lead, unconfirmed.** `wenzl_lr.rs:250-262` documents an averaging-
+convention change: the Rust path substitutes each averaged crossing directly as
+`σ − (h/2)·I` (exactly `(σ + σ⁻¹)/2` under the Hecke relation, since
+`σ⁻¹ = σ − (q − q⁻¹)`), and therefore reports `averaging_denominator = "1"` to
+its Python consumer, where the pre-#682 implementation returned the
+**unnormalised 2^k sub-word sum** and required caller-side division. A consumer
+still dividing — or not dividing — on the wrong side of that contract is the
+right *shape* of defect. **But it does not fit exclusion 2:** a `2^k` mismatch
+is per-averaged-crossing and would differ between `n = 6` and `n = 9`. Recorded
+as the nearest documented convention seam, not as the cause.
+
+**Handoff.** The next step is reading the two composite assemblies side by side
+— `hecke_canonical_chi.rs` / `wenzl_lr.rs` against the Python markov-peel — for
+the one scalar that the A ≥ 2 path applies and the A = 1 path does not. The
+exclusions above should make that a short search.
