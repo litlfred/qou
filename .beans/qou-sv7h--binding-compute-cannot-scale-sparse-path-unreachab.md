@@ -795,3 +795,44 @@ legitimate piece of work, and nothing here excludes it. What is refuted is
 the specific claim that routing `_matmul_dim` through it unblocks the
 isotope table. The isotope-table bottleneck is whatever the Rust kernel
 itself costs, which this did not measure.
+
+
+## The dead-branch claim is now ESTABLISHED, not assumed — and two of my own defects (2026-09-05)
+
+I published *"both `else: Msig = sig_sparse.T.dot(M_run.T).T` arms are
+unreachable"* in this bean and in #6807's body on the strength of a
+measurement over `_PARTITION_TABLE` only: zero `csr_matrix` carriers, 276
+dispatch decisions at k=8 and none to scipy. **That is a corpus-wide claim
+from a table-wide measurement** — it says nothing about a caller that builds
+its own sigmas and passes them in.
+
+Closed by measurement:
+
+- `entry['ysn']` is assigned in **exactly one place** — `_ensure_ysn_attached`,
+  from `_build_ysn_matrices` (`hecke_core_legacy.py:1391`, and `= []` at 1393).
+  Nothing else in the repo writes that key.
+- All three dispatch sites take `sigmas = entry['ysn']` (lines 1703, 1984,
+  2097) and index it (`sig_sparse = sigmas[gen]` at 1752, 2025, 2138). None
+  accepts a sigma family from a parameter.
+- The builder can no longer construct a scipy matrix at all: `csr_matrix(` is
+  **called nowhere** in the file.
+
+The 25 other `csr_matrix` sites in `computations/` build their own matrices
+in their own modules (`threerow_chi_sparse`, `aoperator_a5_crosscheck`, four
+probes, …) and never reach this dispatch.
+
+**Two defects found doing it, both introduced by #6794, both mine.**
+
+1. `_build_ysn_matrices_exact`'s docstring said *"For dim >= sparse_threshold,
+   returns scipy.sparse.csr_matrix objects"*. It returns `_ExactCOO`. #6794
+   changed the emit — csr_matrix is float64 and cannot hold mpf — and left the
+   docstring describing the behaviour it had replaced. Same shape as the
+   `markovZ` docstring that read convention C over a convention-D body: **a
+   label that agrees with its own history instead of with its body.**
+2. `from scipy.sparse import csr_matrix` inside that function is dead. Removed.
+   The three *comments* mentioning csr_matrix stay — they explain why it is
+   not used, which is still the live reason.
+
+Verified unchanged after the edit: 69 tuple + 124 `_ExactCOO` carriers,
+`unified_iterative_correction(1,1,k=7) = -2.020000814981466`,
+`atom_character_raw (4,2,1) = -0.8256259468119246`.
