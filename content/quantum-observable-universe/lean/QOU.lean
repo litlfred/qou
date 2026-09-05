@@ -200,6 +200,11 @@ import QOU.HeckeAlgebra.WedderburnTrace
 -- It does NOT reclaim the name `wedderburnEmbed`: the bridge probe guards that
 -- no reference to the retired opaque survives (bean qou-yos9).
 import QOU.HeckeAlgebra.WedderburnUnconditional
+-- `SeminormalDimSmall` computes f^lam at named partitions via the hook-length
+-- formula -- (2,1) and (2,2) are 2, (1,1) is 1 -- which is what lets the
+-- WedderburnTrace results be instantiated at (2,1) rather than left conditional
+-- on a classical value the corpus had not written down (bean qou-v7ms).
+import QOU.HeckeAlgebra.SeminormalDimSmall
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding

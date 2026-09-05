@@ -79,6 +79,20 @@
       "note": "the ROOM is a theorem too, not only the no-go: distinct decompositions with every block trace equal, so every trace-factoring functional is blind to the difference"
     },
     {
+      "name": "the_21_dimension_fact_is_formalised",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "f^{(2,1)}=2 was prose when the no-go was written. Proved via the hook-length formula, so the (2,1) instances are unconditional rather than resting on a classical value the corpus had not written down"
+    },
+    {
+      "name": "and_the_boundary_case_is_recorded_too",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "f^{(1,1)}=1, so at the charge shape the block IS its trace and these results say NOTHING. Recorded as a theorem so the limit of the no-go is visible rather than assumed"
+    },
+    {
       "name": "and_the_block_is_wider_than_its_trace",
       "computed": true,
       "expected": true,
@@ -107,8 +121,8 @@
     "signature": "noncomputable def wedderburnEmbedOf {n : ℕ} (h : RSKDimIdentity n) (x : WedderburnDecomposition n) : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ := Matrix.reindex (regIndexEquiv h) (regIndexEquiv h) (blockDiagonal x) /-- And it is injective, so it deserves the name \"embedding\". -/ theorem wedderburnEmbedOf_injective {n"
   },
   "provenance": {
-    "headSha": "50a79d4c9893b32b454250e981c8983f0157e38f",
+    "headSha": "94590e2434124865644a9ea18af3078e4a4dac29",
     "producer": "computations/qbeta/qbeta_wedderburn_bridge_probe.py",
-    "elapsed_s": 5.232
+    "elapsed_s": 18.716
   }
 }
