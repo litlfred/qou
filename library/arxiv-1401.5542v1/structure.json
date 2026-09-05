@@ -1,0 +1,424 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1401.5542v1",
+ "source": {
+  "file": "1401.5542v1.pdf",
+  "sha256": "f7cd278a274f37c545e9dda9a4b2553f1b718e65b9ad96edbc0d61e09a5a9d82",
+  "bytes": 570629,
+  "pages": 21,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1401.5542",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "22 Jan 2014"
+  },
+  "doi": null,
+  "title": "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS",
+  "authors_raw": "STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT",
+  "title_lines": [
+   "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS"
+  ],
+  "abstract": "The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by theA-coordinates on higher Teichm\u00a8 uller space due to Fock and Goncharov. In this paper, we de\ufb01ne the Ptolemy \ufb01eld of a (generic) PSL(2, C)-representation and prove that it coincides with the trace \ufb01eld of the represen- tation. This gives an e\ufb03cient algorithm to compute the trace \ufb01eld of a cusped hyperbolic manifold.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20241127044050Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "The Ptolemy coordinates",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Decorated SL(2,C)-representations",
+   "page": 2,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Obstruction classes and PSL(2,C)-representations",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Our results",
+   "page": 4,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 1,
+   "title": "Notation",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Triangulations",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Miscellaneous",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "The Ptolemy varieties",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The SL(2,C)-Ptolemy variety",
+   "page": 7,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Obstruction classes",
+   "page": 8,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "The diagonal action",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The reduced Ptolemy varieties",
+   "page": 9,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Shapes and gluing equations",
+   "page": 11,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof that * is basic",
+   "page": 11,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "The Ptolemy field and the trace field",
+   "page": 12,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Explicit description of the Ptolemy field",
+   "page": 12,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "The setup of the proof",
+   "page": 12,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof for one cusp",
+   "page": 13,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "The general case",
+   "page": 13,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Proposition 1.9",
+   "page": 15,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 1,
+   "title": "Ptolemy varieties for n>2",
+   "page": 16,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Definition of the Ptolemy variety",
+   "page": 16,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "The diagonal action",
+   "page": 16,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Representations",
+   "page": 17,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "Proof that * is basic",
+   "page": 18,
+   "source": "outline",
+   "number": "6.4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-11-the-ptolemy-coordinates",
+   "number": "1.1",
+   "title": "The Ptolemy coordinates",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 379,
+   "n_words": 61
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 6952,
+   "n_words": 1183
+  },
+  {
+   "id": "sec-002-14-our-results",
+   "number": "1.4",
+   "title": "Our results",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4980,
+   "n_words": 822
+  },
+  {
+   "id": "sec-003-2-notation",
+   "number": "2",
+   "title": "Notation",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-21-triangulations",
+   "number": "2.1",
+   "title": "Triangulations",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1274,
+   "n_words": 204
+  },
+  {
+   "id": "sec-005-22-miscellaneous",
+   "number": "2.2",
+   "title": "Miscellaneous",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 717,
+   "n_words": 135
+  },
+  {
+   "id": "sec-006-3-the-ptolemy-varieties",
+   "number": "3",
+   "title": "The Ptolemy varieties",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1845,
+   "n_words": 291
+  },
+  {
+   "id": "sec-007-32-obstruction-classes",
+   "number": "3.2",
+   "title": "Obstruction classes",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2488,
+   "n_words": 419
+  },
+  {
+   "id": "sec-008-4-the-diagonal-action",
+   "number": "4",
+   "title": "The diagonal action",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 954,
+   "n_words": 196
+  },
+  {
+   "id": "sec-009-41-the-reduced-ptolemy-varieties",
+   "number": "4.1",
+   "title": "The reduced Ptolemy varieties",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2956,
+   "n_words": 574
+  },
+  {
+   "id": "sec-010-42-shapes-and-gluing-equations",
+   "number": "4.2",
+   "title": "Shapes and gluing equations",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2326,
+   "n_words": 464
+  },
+  {
+   "id": "sec-011-5-the-ptolemy-field-and-the-trace-field",
+   "number": "5",
+   "title": "The Ptolemy field and the trace field",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 834,
+   "n_words": 162
+  },
+  {
+   "id": "sec-012-52-the-setup-of-the-proof",
+   "number": "5.2",
+   "title": "The setup of the proof",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1260,
+   "n_words": 251
+  },
+  {
+   "id": "sec-013-53-proof-for-one-cusp",
+   "number": "5.3",
+   "title": "Proof for one cusp",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 741,
+   "n_words": 145
+  },
+  {
+   "id": "sec-014-54-the-general-case",
+   "number": "5.4",
+   "title": "The general case",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 3522,
+   "n_words": 634
+  },
+  {
+   "id": "sec-015-55-proof-of-proposition-19",
+   "number": "5.5",
+   "title": "Proof of Proposition 1.9",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 279,
+   "n_words": 48
+  },
+  {
+   "id": "sec-016-62-the-diagonal-action",
+   "number": "6.2",
+   "title": "The diagonal action",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2328,
+   "n_words": 428
+  },
+  {
+   "id": "sec-017-63-representations",
+   "number": "6.3",
+   "title": "Representations",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 20,
+   "n_chars": 7354,
+   "n_words": 1433
+  },
+  {
+   "id": "sec-018-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2444,
+   "n_words": 316
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 27,
+  "sections": 19,
+  "chars_total": 43633
+ }
+}

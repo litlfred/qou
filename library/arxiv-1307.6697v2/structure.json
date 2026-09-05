@@ -1,0 +1,198 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1307.6697v2",
+ "source": {
+  "file": "1307.6697v2.pdf",
+  "sha256": "a3afaefdaebe0292a144037347f9903eace2aea5da25618894915438daa27e2e",
+  "bytes": 365838,
+  "pages": 28,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1307.6697",
+   "version": "2",
+   "primary_class": "math.RT",
+   "stamp_date": "3 Dec 2013"
+  },
+  "doi": null,
+  "title": "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS",
+  "authors_raw": "INTO PGL (3, C): EXACT COMPUTATIONS IN LOW COMPLEXITY",
+  "title_lines": [
+   "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS"
+  ],
+  "abstract": "In this paper we are interested in computing representation s of the funda- mental group of a 3-manifold into PGL (3,C) (in particular in PGL (2,C),PGL(3,R) and PU(2,1)). The representations are obtained by gluing decorated tet rahedra of \ufb02ags as in [10, 2]. W e list complete computations (giving 0-dimensional or 1 -dimensional solution sets (for unipotent boundary holonomy) for the \ufb01rst complet e hyperbolic non-compact manifolds with \ufb01nite volume which are obtained gluing less t han three tetrahedra with a description of the computer methods used to \ufb01nd them. The me thods we use work for non-unipotent boundary holonomy as shown in some examples.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181106171114-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Three geometric structures on three manifolds",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Flag tetrahedra",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Ideal triangulations by flag tetrahedra",
+   "page": 8,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Holonomy of a decoration",
+   "page": 9,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Computational steps",
+   "page": 12,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "An example: the figure-eight knot",
+   "page": 16,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Description of the unipotent solutions for the first hyperbolic manifolds",
+   "page": 20,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 11396,
+   "n_words": 1932
+  },
+  {
+   "id": "sec-001-2-three-geometric-structures-on-three-manifolds",
+   "number": "2",
+   "title": "Three geometric structures on three manifolds",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2399,
+   "n_words": 490
+  },
+  {
+   "id": "sec-002-3-flag-tetrahedra",
+   "number": "3",
+   "title": "Flag tetrahedra",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 6147,
+   "n_words": 1192
+  },
+  {
+   "id": "sec-003-4-ideal-triangulations-by-flag-tetrahedra",
+   "number": "4",
+   "title": "Ideal triangulations by flag tetrahedra",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 4366,
+   "n_words": 839
+  },
+  {
+   "id": "sec-004-5-holonomy-of-a-decoration",
+   "number": "5",
+   "title": "Holonomy of a decoration",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 6564,
+   "n_words": 1301
+  },
+  {
+   "id": "sec-005-6-computational-steps",
+   "number": "6",
+   "title": "Computational steps",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 12312,
+   "n_words": 2313
+  },
+  {
+   "id": "sec-006-7-an-example-the-figure-eight-knot",
+   "number": "7",
+   "title": "An example: the figure-eight knot",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 20,
+   "n_chars": 9006,
+   "n_words": 2040
+  },
+  {
+   "id": "sec-007-8-description-of-the-unipotent-solutions-for-the",
+   "number": "8",
+   "title": "Description of the unipotent solutions for the first hyperbolic manifolds",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 27,
+   "n_chars": 11265,
+   "n_words": 2518
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 3204,
+   "n_words": 491
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 66659
+ }
+}

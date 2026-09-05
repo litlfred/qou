@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-09-05T08:45:02Z
+updated_at: 2026-09-05T09:43:20Z
 ---
 
 OPENED 2026-09-05. Route E's ONE surviving branch, now a named held construction
@@ -424,3 +424,93 @@ INDEX.md row. Corpus-grep path 5 is blind to all four tiers on the single most
 relevant document. RUR (Rational Univariate Representation) is absent from the
 corpus's greppable surface entirely: no msolve, no rur. Run
 folio-assistant's scripts/pdf-structure.py on those four.
+
+
+## 2026-09-05 later — FOUR ITEMS, and TWO MORE CORRECTIONS OF MINE
+
+### (xiv) 🛑 4_1 HAS 2 OBSTRUCTION CLASSES, NOT 14 — I carried a count across manifolds
+
+I wrote that there are "14 obstruction classes" and that my 4_1 result covered
+class 0 only "of fourteen". The 14 is L6a4's (3 cusps). 4_1 has TWO. Measured:
+ptolemy_variety(3, obstruction_class='all') returns len 2 for 4_1, 14 for L6a4.
+The correction is mine and it came from applying a subagent's L6a4 measurement
+to a different manifold without re-measuring.
+
+### (xv) ALL of 4_1's classes now measured — and class 1 is ENTIRELY complex type
+
+  class    solutions   self-dual   NOT self-dual
+    0          6           4            2
+    1          2           0            2
+  total        8           4            4
+
+Class 1 has NO self-dual representation at all. This STRENGTHENS section (iii):
+the earlier finding was 2 complex-type solutions in one class; it is now 4 of 8
+across both, with an entire obstruction class carrying none that are self-dual.
+
+### (xvi) THE FOUR PDFs ARE NOW GREPPABLE — and the ingest had SPLIT them
+
+migrate-uploads-to-library.py had created library/<bare-id>/ holding only the
+PDF. pdf-structure.py derives the doc-id from the page-1 arXiv stamp and so
+wrote to library/arxiv-<id>/ — a SECOND directory. Result: PDF in one, sections
+in the other, neither complete.
+
+Consolidated onto the arxiv- form, which is what the rest of library/ uses:
+  arxiv-1307.6697v2    9 sections   28pp
+  arxiv-1401.5542v1   19 sections   21pp
+  arxiv-1111.2828v2   27 sections   44pp
+  arxiv-2104.07437v4  19 sections   52pp
+
+Verified path 5 reaches the target: grep "rational univariate" now hits
+sections/sec-005-6-computational-steps.md, which was invisible an hour ago.
+
+NOTE FOR THE NEXT INGEST: the two scripts disagree about doc-id. Run
+pdf-structure.py FIRST (or expect to merge the pair by hand).
+
+### (xvii) FKR section 7 — the reduction is on FLAG coordinates, not Ptolemy
+
+The worked figure-eight example uses z_ij and w_ij, one pair per tetrahedron
+edge, with edge equations (Le) and face equations (Lf) as MONOMIAL products
+equal to 1:
+  z23 w24 z13 w31 z14 w21 = 1        (edge)
+  z21 z31 z41 w21 w31 w41 = 1        (face)
+
+That monomial form is what makes their cross-ratio substitution work: at each
+vertex the relations z_ik(1-z_ij) = 1 and z_il z_ij - z_ij + 1 let you pick ONE
+variable per vertex and rewrite the rest, taking 12n -> 4n. Then affine
+relations A z_ij + B with A | P_0^k let you substitute again, reaching 2
+equations in 2 variables for 4_1.
+
+⚠ THIS IS NOT DIRECTLY MY SYSTEM. Theirs is Falbel's decorated-FLAG coordinate
+system; mine is SnapPy's Ptolemy coordinates. Related (both parametrise
+boundary-unipotent PGL(3,C) reps) but NOT the same variables, and the
+cross-ratio relations they eliminate with have no literal counterpart in the
+Ptolemy generators I hold. Porting the pre-processing is a real piece of work,
+not a translation. Their own degree warning applies: "Blind simplifications may
+lead to consider systems of equations with very large degrees ... impossible to
+solve with state of the art algorithms", and their degree-minimising choice
+functions are deliberately not described.
+
+### (xviii) modStd on the reduced ideal: SEGFAULTED, then the container filled
+
+  modStd, 27-var reduced nz ideal, over Q, dp, setsid
+    -> "Singular : signal 11 (v: 4330) ... Segment fault/Bus error occurred at 6
+        because of 10246 ... trying to restart..." at ~34 min, 14 forked procs
+    -> killed by me when the tmpfs hit 0 MB and the harness could not write
+
+So modStd is NOT cleanly refuted here — it crashed and self-restarted rather
+than returning a verdict, and I stopped it for disk rather than on its merits.
+Record it as UNMEASURED, not as a failure.
+
+DISK IS THE RECURRING HAZARD ON THIS TRANCHE, third occurrence today:
+/tmp/lean-v4.24.0 (1.5G) + lean-v4.24.0-linux.zip (697M) are RE-CREATED by a
+session-start hook after deletion. The live toolchain is /root/.elan; the /tmp
+copy is redundant and safe to delete, but it comes back on the next session
+start. Check `df` before launching any long Singular run.
+
+### (xix) std(I) ALONE: 4m22, NOT ">15 min" — my own claim, withdrawn
+
+I told the author std had run ">15 min without finishing" and inferred the wall
+was the Groebner basis. The timer says 4m22.874s; I had read wall-clock
+conversation time rather than the process's own. Four minutes is much weaker
+evidence and does NOT localise the wall. The std diagnostic remains UNRUN to
+completion, and Route 76's GB-vs-decomposition question is still open for L6a4.
