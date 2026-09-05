@@ -648,13 +648,76 @@ carry one significant figure and are almost certainly among them. **The aggregat
 is sound; individual carrier attributions are not**, and no row should be closed
 on this evidence alone.
 
-- [ ] Triage the remaining 10 by finding each block's real producer and declaring
-      it. `prop:sl2-prolongation-recurrence` (8/8 produced elsewhere) and
-      `prop:confined-knot-binding` (6/6) are the cleanest instances of the
-      pattern; `prop:q-beta-spectral-bridge` (12 asserted, only 7 found) is the
-      one whose figures are genuinely least accounted for, and it is already
-      known to diverge from its producer by 21 %.
-- [ ] Consider whether `contentBlock`-on-a-verifier is worth its own check. The
+### 🛑 THE CHECKER ITSELF PARSED FLOAT64 — in a repo that forbids it by gate
+
+Chasing an anomaly in the floor measurement found a defect in my own tool.
+`rounds_to` parsed both the published figure and the witness values with
+`float()`. At 15+ significant digits, float64 spacing (~1.1e-16 near 0.5) is
+comparable to the ±0.5-ulp acceptance window, so **the window stops
+discriminating at exactly the precision this corpus cares most about**:
+`0.508229789376739` matched **31 of 60** fabricated perturbations. Switched to
+exact `Decimal` (prec 80). Measured effect: the 12+ floor drops 11.4 % → 8.8 %,
+and two spurious matches disappear from the report.
+
+Embarrassing, but the interesting part is that the *rest* of the elevation is
+real, and it is a property of the corpus rather than of the tool.
+
+### THE FLOOR IS NOT A NUMBER, IT IS A CURVE — and it inverts at the top
+
+    sig figs     floor       reading
+    0-2         100.0 %      ZERO information. Every fabricated value matches.
+    6-8           5.4 %      a match is real evidence
+    9-11          2.7 %      strongest discrimination available
+    12+           8.8 %      RISES AGAIN
+
+The rise is not an artifact. The fabricated hits concentrate on the corpus's
+**load-bearing constants** — `w₋ = 0.247297886748035` (14/60), the `q₀` pins
+`1.109978595554181` and `…557335` (10 and 9), `z_C = 0.4993203340335613` (9),
+`0.508229789376739` (30) — which the repo carries at many precisions and in many
+registered variants. A perturbed digit lands on a *real neighbouring variant of
+the same constant*.
+
+**So for exactly the figures that matter most, "it matches something in the repo"
+is the weakest evidence available.** Attribution there has to come from reading
+the producer. This also retro-justifies the 0-2 prediction: `rem:atom-mass-full-
+hecke`'s `0.000001`/`0.000002` sit in the 100 % bucket and should never have been
+counted.
+
+### WORKLIST: candidate producers, ranked by COVERAGE not by figure count
+
+One witness carrying k of a block's n figures is much stronger than k scattered
+per-figure hits. Ranked that way, with declared witnesses excluded:
+
+    block                                     coverage  candidate
+    prop:sl2-prolongation-recurrence            8/8     binding-recurrence-spectral-bridge
+                                                8/8     sw-period-lw-sl2-qbessel-probe
+    prop:q-hecke-seminormal-character-closure   5/5     laurentq-a5-ceiling-measure
+                                                5/5     rho-k-leading-order-verification
+                                                5/5     witness-float64-padding-audit
+    prop:q-beta-spectral-bridge                6/12     the_qbeta_bridge_..._different_z_probe
+    prop:confined-knot-binding                  3/6     deuteron-fpn-wlambda-wiring / a-K-via-lp-dual
+    prop:frobenius-gram-matrix                  3/5     qbeta-c3-barodd-knot-operator-gram
+    conj:im-q-physical-role                     3/4     qbeta-imq-reality-locus
+    prop:em-coupling-bring-zero-mode            2/3     published_figures_carry_a_retired_q0_probe
+    prop:alpha-em-categorical-trace-ratio       1/4     -- nothing covers it --
+    rem:atom-mass-full-hecke                    2/2     (0-2 sig figs: MEANINGLESS)
+    rem:beta-decay-energy-scale                 1/1     weak
+
+**Do not auto-declare from this table.** Two reasons, both measured. First, the
+three-way 5/5 tie on `q-hecke-seminormal-character-closure` falsifies the
+independence assumption behind any p-value here — and one of those three is
+`witness-float64-padding-audit`, an **aggregator** that carries numbers without
+producing them, which is a distinct false-positive class the coverage score
+cannot see. Second, several blocks' figures are the load-bearing constants above,
+where the floor is worst.
+
+- [ ] `prop:sl2-prolongation-recurrence` is the strongest candidate (8/8, twice
+      over) and the right next one to read.
+- [ ] `prop:alpha-em-categorical-trace-ratio` is the one to look at hardest:
+      **nothing in 3277 witnesses covers more than 1 of its 4 figures.** That is
+      the signature of a genuinely unproduced figure rather than a misplaced
+      pointer — the opposite finding from the last two blocks.
+- [ ] Consider whether `contentBlock`-on-a-verifier deserves its own check. The
       signature is mechanical: a witness declaring a block whose assertions are
       all engine-agreement comparisons and whose data carries none of the block's
       figures.

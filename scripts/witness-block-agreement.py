@@ -84,6 +84,35 @@ TWO FURTHER FALSE-POSITIVE CLASSES WORTH KNOWING BEFORE READING A ROW
    of them while the producer of the other six emitted no witness at all. Read a
    near-total miss as a misdirected pointer before reading it as a stale table.
 
+HOW MUCH OF A MATCH IS COINCIDENCE — MEASURED, NOT ASSUMED
+-----------------------------------------------------------
+Matching 50 figures against a pool of ~272 000 witness values will find
+coincidences. The floor is measurable: perturb each published figure's last digit
+— same magnitude, same decimal count, fabricated — and re-run.
+
+    REAL published figures matched somewhere   80.0 %
+    FABRICATED (last digit changed)             9.5 %
+
+**But the average floor is not the floor for any particular figure**, and the
+variation is what matters:
+
+    sig figs     floor       what it means
+    0-2         100.0 %      zero information. Every fabricated value matches.
+    6-8           5.4 %      a match is real evidence
+    9-11          2.7 %      strongest discrimination in the corpus
+    12+           8.8 %      RISES AGAIN -- see below
+
+The rise at high precision is not an artifact. The hits concentrate on the
+corpus's load-bearing constants — `w₋ = 0.247297886748035`, the `q₀` pins
+`1.10997859555…`, `z_C = 0.4993203340335613` — which the repo carries at many
+precisions and in many registered variants. A perturbed digit lands on a *real
+neighbouring variant of the same constant*. So for exactly the figures that
+matter most, "it matches something in the repo" is the weakest evidence
+available, and attribution there must come from reading the producer.
+
+(Part of that rise WAS an artifact and is now fixed: parsing both sides with
+`float()` put the 12+ floor at 11.4 %. See `rounds_to`.)
+
 A THIRD HAZARD, MEASURED AND DELIBERATELY NOT PATCHED
 ------------------------------------------------------
 `rounds_to` rejects a **truncated** publication. `em-coupling-bring-zero-mode`
@@ -108,7 +137,10 @@ import json
 import re
 import sys
 from collections import defaultdict
+from decimal import Decimal, getcontext
 from pathlib import Path
+
+getcontext().prec = 80          # comfortably past the corpus's 50-dps witnesses
 
 ROOT = Path(__file__).resolve().parent.parent
 CONTENT = ROOT / "content"
@@ -183,10 +215,21 @@ def witnesses_by_block() -> dict[str, list[Path]]:
     return out
 
 
-def rounds_to(c: str, vals: list[float]) -> bool:
+def rounds_to(c: str, vals: list[Decimal]) -> bool:
+    """Does some witness value round to the published figure `c`?
+
+    EXACT DECIMAL, NOT FLOAT. A first version parsed both sides with `float()`
+    and was measurably blind at the precision this corpus cares most about: at
+    15+ significant digits, float64 spacing (~1.1e-16 near 0.5) is comparable to
+    the ±0.5-ulp window, so the window stops discriminating. Measured on
+    fabricated figures, `0.508229789376739` matched 31 times in 60 draws under
+    float parsing. A repo that forbids float64 by gate deserved better from its
+    own checker. `Decimal` is exact from a decimal string, so the comparison is
+    the one the docstring claims.
+    """
     k = len(c.split(".")[1])
-    tol = 0.5 * 10 ** (-k) * 1.000001
-    x = float(c)
+    tol = Decimal(5).scaleb(-k - 1)          # exactly 0.5 * 10^-k
+    x = Decimal(c)
     i = bisect.bisect_left(vals, x - tol)
     return i < len(vals) and vals[i] <= x + tol
 
@@ -201,7 +244,7 @@ def analyse():
         pub = nums(files, PUB)
         if not pub:
             continue
-        pool = sorted({float(x) for x in nums(wits, SRC)})
+        pool = sorted({Decimal(x) for x in nums(wits, SRC)})
         missing = sorted(c for c in pub if not (pool and rounds_to(c, pool)))
         if missing:
             live = [c for c in missing if asserted(c, files)]
