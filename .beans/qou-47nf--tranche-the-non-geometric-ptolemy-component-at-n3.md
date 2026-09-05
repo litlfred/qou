@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-09-05T09:43:20Z
+updated_at: 2026-09-05T12:25:14Z
 ---
 
 OPENED 2026-09-05. Route E's ONE surviving branch, now a named held construction
@@ -514,3 +514,70 @@ was the Groebner basis. The timer says 4m22.874s; I had read wall-clock
 conversation time rather than the process's own. Four minutes is much weaker
 evidence and does NOT localise the wall. The std diagnostic remains UNRUN to
 completion, and Route 76's GB-vs-decomposition question is still open for L6a4.
+
+
+## 2026-09-05 — L6a4 attack: coordinates changed, tooling changed, still open
+
+### (xx) THE ANSWER IS PRECOMPUTED AND SITS BEHIND THE FIREWALL
+
+snappy's retrieve_solutions() asks for exactly:
+  https://ptolemy.unhyperbolic.org/data/pgl3/HTLinkExteriors/08_tetrahedra/L6a4__sl3_c<k>.magma_out.gz
+for k = 0..13. Goerner's database HAS the Magma primary decomposition for all 14
+obstruction classes of the Borromean rings at n=3 — i.e. the whole question this
+tranche is grinding on is a solved, published computation.
+
+Measured, not assumed:
+  ptolemy.unhyperbolic.org/...L6a4__sl3_c0.magma_out.gz  -> 000 (blocked)
+  pypi.org/simple/                                       -> 200, 45.7 MB
+
+So this is an EGRESS restriction, not a dead host and not a missing dataset.
+Allowlisting that one host would collapse this item from "days of Groebner" to
+"seconds of download", for all 14 classes at once.
+
+### (xxi) eliminate_fixed_ptolemys — the free reduction I had never switched on
+
+  L6a4 c0, eliminate_fixed_ptolemys=False : 32 vars, 38 eqs
+  L6a4 c0, eliminate_fixed_ptolemys=True  : 26 vars, 32 eqs
+(27/33 once the non-zero-condition variable is added back.)
+All four earlier failed runs were on the UNREDUCED system.
+
+### (xxii) NO CHEAP OBSTRUCTION CLASS — measured all 14
+
+On 4_1, class 1 was both smaller (2 sols vs 6) and entirely complex type, so I
+expected a small class on L6a4. There is none: class 0 is 26/32, classes 1-13
+are all 27/33. The class-size shortcut does NOT generalise.
+
+### (xxiii) msolve 0.6.5 IS APT-INSTALLABLE — new capability in this container
+
+  apt-get install -y msolve   ->  /usr/bin/msolve  (Berthomieu, Eder, Safey El Din)
+
+This matters because msolve computes the RATIONAL UNIVARIATE REPRESENTATION,
+which is precisely the method FKR section 6.4 reaches for after reducing to a
+0-dimensional system. So the useful "port" was NOT porting their flag
+coordinates into my Ptolemy system — it was acquiring their solver. The
+coordinate port remains real work and remains undone.
+
+### (xxiv) WHAT IS RUNNING / WHAT FAILED, honestly
+
+  facstd (factorizing GB)   14+ min, 58 MB, no output yet
+  minAssGTZ (minimal primes only, cheaper than primdecGTZ)  running, ~1.1 GB
+  msolve RUR                7.5 GB RSS at 3 min, under an 11.5 GB kill guard
+  Gauss-Newton, 60 random starts, 50 dps   0 of 60 converged
+  phcpy (pip) / PHCpack binary (GitHub)    unavailable; api.github.com also 000
+
+THE NUMERICAL 0/60 IS MY METHOD FAILING, NOT A FACT ABOUT THE VARIETY. Random
+complex starts on 27 variables with a non-vanishing constraint essentially never
+land on a component; this says nothing about how many solutions exist. Do not
+cite it as evidence.
+
+### (xxv) THE MULTI-MANIFOLD OBSTRUCTION TEST TIMED OUT — hypothesis UNTESTED
+
+Hypothesis worth testing later: duality NEGATES the obstruction class in
+H^2(M, dM; Z/3), so any class with c != -c would contain NO self-dual rep at
+all, and the Borromean question would be answered structurally without solving
+anything. The 4_1 data is CONSISTENT (class 1 nontrivial -> 0 of 2 self-dual)
+but one manifold with two classes is not evidence for a general claim.
+
+The check across m003/m004/m009/m015 died in sympy on m003's class 0 inside 280 s
+and produced only a header. UNTESTED, not supported. Re-run it with msolve now
+that msolve exists.
