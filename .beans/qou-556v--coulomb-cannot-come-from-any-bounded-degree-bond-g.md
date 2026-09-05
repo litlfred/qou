@@ -228,3 +228,23 @@ constraint, and no positive `mu` reaches quadratic growth.
 Artifacts: `QOU/Hecke/ChannelRangeGrowthClass.lean` (5 decls, axiom-clean,
 `lean`-direct exit 0) and
 `computations/qbeta/qbeta_channel_range_growth_class_probe.py` (7/7).
+
+
+## 2026-09-05 — option (a) TESTED and NOT ADOPTED (`qou-adr0`)
+
+Summing `b^(d-1)` over all pairs at the derived letters, no new parameter.
+Result: **the truncation is not what the residual is made of.**
+
+- p5-p95 improves only 1.22497 -> 1.20727 (~1.4 %) while the FULL spread
+  WORSENS 10.1815 -> 10.7082, and p25-p75 is unchanged to four figures.
+- **Layout-free `(A-1)` still beats it on both** (1.18085, 8.17344) with no
+  isospin structure at all.
+- It does fix the LIGHT end: A = 2-20 normalised median 0.827248 -> 0.884621
+  (**+6.94 %**), against -0.26 % to -0.97 % in every other bin. That is where a
+  contact law is worst, and it is the one piece worth keeping.
+- It also washes out the layout: segregated-vs-alternating p5-p95 gap
+  0.4589 % -> -0.03037 %, 15x smaller. An independent route to `qou-48is`.
+
+So option (a) is retired as a repair. Options (b) and (c) stand as written: EM
+needs its own `mu = 0` term because a different growth class cannot be a bond
+letter, and re-tuning a letter is excluded twice over. Full detail: `qou-adr0`.
