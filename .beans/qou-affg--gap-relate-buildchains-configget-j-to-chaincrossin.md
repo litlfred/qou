@@ -1,11 +1,11 @@
 ---
 # qou-affg
 title: 'GAP: relate (buildChains config).get! j to chainCrossings config j'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-05T06:22:17Z
-updated_at: 2026-09-05T07:27:21Z
+updated_at: 2026-09-05T08:36:53Z
 ---
 
 ## What is open
@@ -114,3 +114,39 @@ At `m = config.length` this is the bean's goal. The step case splits at
 The closure indexes the ORIGINAL `config` (`config[j]!`, `config.get! (k-1)`),
 not the prefix, so there is no re-indexing to do. `j + 1 < config.length` is
 still needed to discharge `get!` partiality on both sides.
+
+
+## CLOSED 2026-09-05 (commit cb69733d71)
+
+`matrixChain_eq_buildChains` is proved UNCONDITIONALLY. The class hypothesis is
+gone from its signature, and `instMatrixChainEqBuildChains` inhabits the class.
+
+    matrixChain_eq_buildChains_unconditional
+      (config) (j) (hj : j + 1 < config.length) :
+        matrixChain (chainCrossings config j) = (buildChains config).get! j
+
+Six declarations complete the induction, all on [propext, Classical.choice,
+Quot.sound] and nothing else:
+
+  mapIdx_map_range · take_succ_of_lt · chainsUpTo · chainsUpTo_succ ·
+  foldl_take (the accumulator invariant) · buildChains_get
+
+**Nothing new was needed from Mathlib in this entire arc.**
+
+### The three mislocations, for the record
+
+1. `List.foldl_eq_foldr_of_comm` cited as missing — no such lemma exists.
+2. "a pointwise-commuting variant without the `flip`" (mine) — there was no
+   fold-direction problem at all; `matrixChain` reverses its list.
+3. "the three-arm case split forces side conditions" (also mine) — the `[]`
+   and `[_]` arms of `buildChains` are redundant.
+
+Each made the gap look like something other than what it was: one accumulator
+invariant over an index-tracking foldl.
+
+### TRAP worth keeping
+
+`Mathlib.Data.List.Indexes` is **absent from the restored olean cache** (39 of
+the Mathlib `Data/List` oleans are present), so `List.mapIdx_append_one` is
+unreachable in this container without a build. `List.length_mapIdx` and
+`List.getElem_mapIdx` come from **Lean core** and are enough — reach for those.
