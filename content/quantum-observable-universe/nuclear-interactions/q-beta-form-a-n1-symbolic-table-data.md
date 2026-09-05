@@ -10,3 +10,12 @@
 | $N=0$ residual | $+1.31$ keV ($+0.168\%$) |
 | $N=1$ residual | $+9.01$ keV ($+1.151\%$) |
 | Per-braid $N=1$ ceiling | $\hbar_q^4 / (1 - \hbar_q^2) = 97.3$ ppm |
+
+> **⚠ $1 + \hbar_q^2 = 1.009817188513479$ carries a retired $q_0$**
+> (measured 2026-09-05, `qou-i229`). It is reproduced to **15 significant
+> figures** by $q_0 = 1.1099785955541805\ldots$, which survives only in
+> `computations/_deprecated/` and is neither live anchor. The live values are
+> $1.009817186454$ (proton, 8 figures of agreement) and $1.009817188528$ (muon,
+> 10). This is the sharpest of the six figures the sweep found carrying that
+> constant. Not silently recomputed — the proton/muon choice is owner-gated.
+> `published_figures_carry_a_retired_q0_probe.py`.

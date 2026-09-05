@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T13:13:58.673694+00:00",
-  "commitSha": "f9b4565ad070b40b0559484cd9437ffab960d613",
+  "computedAt": "2026-09-05T13:57:18.624104+00:00",
+  "commitSha": "7904384c458862b68e121661401f8d001c5cf04f",
   "assertions": [
     {
       "name": "the retired value is distinct from both live anchors",
@@ -27,14 +27,20 @@
       "computed": "1",
       "expected": "1",
       "passed": true
+    },
+    {
+      "name": "the muon/retired gap needs ~12 significant digits to resolve, so figures published to 9 are indeterminate rather than clean",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "published_figures_carry_a_retired_q0_probe",
   "scriptFile": "published_figures_carry_a_retired_q0_probe.py",
-  "scriptHash": "511602cb654d",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "89718c6ee993",
+  "scriptCommitSha": "1282aafd7220e2d51b35852728eb1cf029fe943e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -78,7 +84,17 @@
     "block_q9_q10_q": "em-coupling-bring-zero-mode",
     "q9_q10_q_at_proton": "136.823208853583",
     "q9_q10_q_at_muon": "136.823219729273",
-    "q9_q10_q_at_RETIRED": "136.823219654561"
+    "q9_q10_q_at_RETIRED": "136.823219654561",
+    "published_1+hbar_q^2": "1.009817188513479",
+    "block_1+hbar_q^2": "q-beta-form-a-n1-symbolic-table-data",
+    "1+hbar_q^2_at_proton": "1.00981718645428",
+    "1+hbar_q^2_at_muon": "1.00981718852772",
+    "1+hbar_q^2_at_RETIRED": "1.00981718851348",
+    "published_h^2": "0.04370621823290131",
+    "block_h^2": "q-beta-spectral-bridge-table-data",
+    "h^2_at_proton": "0.043706208532522",
+    "h^2_at_muon": "0.0437062182975942",
+    "h^2_at_RETIRED": "0.0437062182305121"
   },
   "caveats": [
     "The figures are NOT recomputed and no anchor is chosen for these blocks. q_parameter.py: the corpus is genuinely mixed, a blanket flip is wrong, and the default is owner-gated.",

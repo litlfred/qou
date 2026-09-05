@@ -136,3 +136,47 @@ caption, and solve for the `q0` that reproduces it.
       of them do.
 - [ ] Owner ruling: which anchor do `hecke-log-decomposition-table-data` and
       `em-coupling-bring-zero-mode` take? Then substitute.
+
+## TRIAGE ROUND 2 (same day): six figures, FOUR blocks — and a discrimination floor
+
+Method: read each caption's own closed form and solve for the `q0` that
+reproduces it. Two more confirmed, two more blocks.
+
+    block                                  figure          published              retired matches
+    q-beta-form-a-n1-symbolic-table-data   1 + hbar_q^2    1.009817188513479      15 sig figs
+    q-beta-spectral-bridge-table-data      h^2             0.04370621823290131    10 sig figs
+
+`1 + hbar_q^2` is the sharpest figure in the whole sweep — 15 significant figures
+to the retired value, against muon's 10 and proton's 8. Running total: **six
+figures, four blocks, one retired constant.**
+
+### THE METHOD HAS A FLOOR, AND IT MUST BE QUOTED WITH THE RESULT
+
+The muon and retired values differ by a relative `7.98e-11`, so a figure needs
+about **12 significant digits** to separate them. Two flagged figures fall under
+it:
+
+    q^10 - q^-10              2.48662110   (9 digits)   INDETERMINATE
+    h^2/[q dq(9) dq(10)]      7.30870098   (9 digits)   INDETERMINATE
+
+These are **not clean** — the test has no resolving power there and says nothing.
+Worth stating loudly because in a results table "no hit" and "no resolving power"
+look identical, and reading the second as the first is how a sweep reports a
+class clean.
+
+### TWO CAPTIONS I READ WRONG, RECORDED SO THEY ARE NOT RE-GUESSED
+
+Taking the captions literally, `ln(1 + z h)` and `1/z + (z-1)h/(2z)` reproduce
+`0.09929139859972778` and `1.897907634269324` at **no anchor at all** — 0
+significant figures everywhere, not a near miss. So either the caption is not the
+whole computation or another input enters. That is a statement about my reading,
+not about those figures' provenance, and it is deliberately not dressed up as
+"indeterminate".
+
+- [x] Run the derived-provenance test on the remaining figures — **done for
+      every caption carrying an explicit `q0` closed form.**
+- [ ] The rest need their producers identified rather than their captions read:
+      `tr_M(deuteron, q_0) = 0.17743692421`, the Frobenius Gram eigenvalues, the
+      `q-beta` bridge quantities above, `E_{0,N=1} = 4.22707538`.
+- [ ] Owner ruling: which anchor do the **four** affected blocks take? Then
+      substitute all six figures at once.

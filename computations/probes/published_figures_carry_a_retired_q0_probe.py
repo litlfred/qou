@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Four published figures in two blocks are computed from a `q0` that now exists
+"""Six published figures in FOUR blocks are computed from a `q0` that now exists
 ONLY in `computations/_deprecated/` (`qou-i229`).
 
 AND IT CORRECTS MY OWN SWEEP
@@ -50,6 +50,19 @@ bucket.)
     hecke-log-decomposition-table-data     log(1 + q_0)        0.74667780313
     hecke-log-decomposition-table-data     log(1/hbar_q)       2.31181024982
     em-coupling-bring-zero-mode            q [9]_q [10]_q      136.823219654
+    q-beta-form-a-n1-symbolic-table-data   1 + hbar_q^2        1.009817188513479
+    q-beta-spectral-bridge-table-data      h^2                 0.04370621823290131
+
+`1 + hbar_q^2` is the sharpest of the six: the retired value reproduces it to
+**15** significant figures, against muon's 10 and proton's 8.
+
+HOW MANY DIGITS THE METHOD NEEDS
+--------------------------------
+The muon and retired values differ by a relative `7.98e-11`, so a figure must be
+published to about **12 significant digits** to separate them. Two figures the
+sweep flagged (`2.48662110`, `7.30870098`, both 9 digits) are therefore
+**indeterminate, not clean** — the test cannot rule on them and says nothing.
+Recorded because "no hit" and "no resolving power" look identical in a table.
 
 WHAT IS **NOT** DONE HERE, DELIBERATELY
 ----------------------------------------
@@ -105,6 +118,22 @@ FIGURES = (
      "hecke-log-decomposition-table-data"),
     ("q [9]_q [10]_q", lambda q: q * qint(9, q) * qint(10, q), "136.823219654",
      "em-coupling-bring-zero-mode"),
+    # Round 2 (same day): two more blocks, found by reading each caption's own
+    # closed form and solving. `1 + hbar_q^2` is the sharpest figure in the whole
+    # sweep -- 15 significant figures to the retired value.
+    ("1 + hbar_q^2", lambda q: 1 + (1 - 1 / q) ** 2, "1.009817188513479",
+     "q-beta-form-a-n1-symbolic-table-data"),
+    ("h^2", lambda q: (q - 1 / q) ** 2, "0.04370621823290131",
+     "q-beta-spectral-bridge-table-data"),
+)
+
+#: Captions whose closed form, read literally, reproduces NOTHING at any anchor.
+#: Recorded so the next pass does not re-guess them: the formula in the caption
+#: is not the whole computation, or another input enters. NOT evidence either way
+#: about which `q0` they carry.
+UNRESOLVED = (
+    ("ln(1 + z h)", "0.09929139859972778", "q-beta-spectral-bridge-table-data"),
+    ("1/z + (z-1)h/(2z)", "1.897907634269324", "q-beta-spectral-bridge-table-data"),
 )
 
 
@@ -181,9 +210,32 @@ def main() -> int:
           and a["RETIRED"] >= a["proton (live)"] + 3)
 
     print("\n" + "=" * 78)
+    print("§4  HOW MANY DIGITS THE METHOD NEEDS")
+    print("=" * 78)
+    gap = abs(qs["muon (live)"] - qs["RETIRED"]) / qs["RETIRED"]
+    need = int(mp.ceil(-mp.log(gap, 10))) + 1
+    print(f"    muon vs RETIRED relative gap = {mp.nstr(gap, 4)}")
+    print(f"    so a published figure needs about {need} significant digits to")
+    print("    separate them. Below that the test cannot rule between the muon")
+    print("    anchor and the retired value, and says nothing.")
+    print("\n    Figures the sweep flagged that fall UNDER that floor:")
+    for lbl, pub in (("q^10 - q^-10", "2.48662110"),
+                     ("h^2/[q dq(9) dq(10)]", "7.30870098")):
+        print(f"      {lbl:>24} {pub:>14}  ({len(pub.replace('.', '').lstrip('0'))} digits)"
+              f"  -- INDETERMINATE, not clean")
+    check("the muon/retired gap needs ~12 significant digits to resolve, so "
+          "figures published to 9 are indeterminate rather than clean",
+          need >= 11)
+
+    print("\n    Captions whose literal closed form reproduces nothing at any")
+    print("    anchor — my reading was wrong, recorded so it is not re-guessed:")
+    for lbl, pub, block in UNRESOLVED:
+        print(f"      {lbl:>24} {pub:>21}  [{block}]")
+
+    print("\n" + "=" * 78)
     print("§S  WHAT THIS SETTLES, AND WHAT IT LEAVES OPEN")
     print("=" * 78)
-    print("  Four published figures carry a q0 that survives only in")
+    print("  Six published figures across four blocks carry a q0 that survives only in")
     print("  computations/_deprecated/. They are NOT recomputed here: which")
     print("  anchor these blocks should use is owner-gated (q_parameter.py: the")
     print("  corpus is 'genuinely MIXED', 'a blanket flip is WRONG'). Both live")
