@@ -409,4 +409,4 @@ counts them, so "the number went down" is not evidence this bean shrank.
 Not re-adjudicated here: these belong to this bean's disclosure recipe, not to
 a ledger-verdict pass, and flipping the verdicts back would pre-empt that.
 
-This bean holds 2 of the 7: mass_anchor_stable_forward, mass_direction_sanity_forward. The other rows of the 7 sit in  (ConfinementPhaseStratification_open) and / (whitehead_volume_conjecture).
+This bean holds 2 of the 7: mass_anchor_stable_forward, mass_direction_sanity_forward. The other rows of the 7 sit in `qou-6rmz` (ConfinementPhaseStratification_open) and `qou-7xqs` / `qou-q6f8` (whitehead_volume_conjecture).
