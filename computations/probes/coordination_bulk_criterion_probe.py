@@ -25,10 +25,16 @@ WHAT IS MEASURED:
      affine law returns p = 1 — which also validates #6780's profiler against a
      known answer rather than only against data;
   3. each edge set against HasBulk, both clauses separately;
-  4. that NON-AFFINE IS NOT SUFFICIENT: the one non-affine edge set in the corpus
-     is the complete graph, which is superlinear and already refuted by
-     CoordinationSaturation. The target is specifically sublinear-but-unbounded
-     surface growth, and nothing in the corpus produces it;
+  4. that NON-AFFINE IS NOT SUFFICIENT: the complete graph is non-affine and is
+     refuted for the OPPOSITE reason, being superlinear (CoordinationSaturation).
+     The target is specifically sublinear-but-unbounded surface growth;
+  4b. WHAT IS NOT COVERED, measured rather than asserted. The enumeration of
+     derived edge sets is empirical — the corpus keeps its own list at
+     QOU.Hecke.BoundedDegreeCoulomb and it is longer than two. Max-contact
+     sphere packing is derived-in-principle, is NOT the deltahedron family in
+     general, and is NOT known to be affine, so Part 1 does not reach it; the
+     degree-capped count is piecewise and so not affine on R. The honest claim
+     is about AFFINE edge sets, not about every edge set the corpus derives;
   5. what the DATA require: under CoordinationSurfaceDeficit the deficit is
      (eps(k-k')/2)*(A_surf/A), so #6780's fitted p implies A_surf ~ A^(1-p). Every
      one of #6780's five analysis variants gives 1-p strictly inside (0,1), i.e.
@@ -232,7 +238,8 @@ def main() -> int:
         all_bulk = all_bulk and inside
         print(f"    {nm:<28}{mp.nstr(p, 6):>11}{mp.nstr(theta, 6):>14}   {'yes' if inside else 'NO'}")
     checks.append(("EVERY #6780 variant implies a surface exponent strictly inside (0, 1): the data "
-                   "require an edge set WITH a bulk, and no edge set on main has one", all_bulk))
+                   "require an edge set WITH a bulk, and no AFFINE edge set has one (the unqualified "
+                   "'no edge set on main' would overclaim — see section 6)", all_bulk))
     theta_all = 1 - P6780[0][1]
     print(f"    all-nuclide implied surface exponent {mp.nstr(theta_all, 6)} against the compact-packing "
           f"2/3 = {mp.nstr(mp.mpf(2) / 3, 6)}")
@@ -240,8 +247,31 @@ def main() -> int:
                    "(a consistency check, NOT a prediction — #6780 measured this exponent mass-cut "
                    "dependent)", abs(theta_all - mp.mpf(2) / 3) < mp.mpf("0.05")))
 
+    # ---- 6. what this probe does NOT cover, measured rather than asserted --
+    print("\n  EDGE SETS THIS PROBE DOES NOT COVER — the enumeration is EMPIRICAL, so the")
+    print("  conclusion is scope-(a) and is about AFFINE edge sets, not about every derived one.")
+
+    # the degree-capped count is piecewise, so not affine on R: its second difference is
+    # nonzero at the knee A = k+1 and zero after it.
+    def capped(A, k=12):
+        return mp.mpf(A) * min(mp.mpf(A) - 1, mp.mpf(k)) / 2
+    knee = capped(12) - 2 * capped(13) + capped(14)          # spans the knee at A = 13
+    far = capped(60) - 2 * capped(61) + capped(62)           # well past it
+    checks.append(("the degree-capped count A*min(A-1,k)/2 is PIECEWISE, not affine on R: its "
+                   "second difference is -6 at the knee and 0 far past it "
+                   "(SaturationInvisibleToCumulants) — Part 2 still reaches it, Part 1 does not",
+                   abs(knee + 6) < TOL and abs(far) < TOL))
+    print(f"    degree-capped A*min(A-1,12)/2 : second difference {mp.nstr(knee, 4)} at the knee, "
+          f"{mp.nstr(far, 4)} far past it -> piecewise, not affine")
+    print( "    max-contact sphere packing    : contact numbers for A >= 5 are case-by-case geometry")
+    print( "                                    (computations/binding_edge_set_selection.py); NOT the")
+    print( "                                    deltahedron family in general, and NOT known to be")
+    print( "                                    affine. OUT OF SCOPE — Part 1 does not cover it.")
+    print( "    alpha-cluster contact deltahedra: a second-level edge set on n_alpha = A/4 vertices")
+    print( "                                    (bk_alpha_geometry_selection.py). Not covered here.")
+
     checks.append(("NO-FLOAT64: every reported quantity is an mpmath mpf",
-                   all(isinstance(v, mp.mpf) for v in [EPS, TOL, theta_all, BIG] + second_diff + pn)))
+                   all(isinstance(v, mp.mpf) for v in [EPS, TOL, theta_all, BIG, knee, far] + second_diff + pn)))
 
     print("\n  checks")
     for nm, ok in checks:
