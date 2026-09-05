@@ -1,11 +1,11 @@
 ---
 # qou-i6cn
 title: 'TRIAGE: 29 library files carry 59 standalone axioms — Mathlib-gap or laundering?'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T14:57:07Z
-updated_at: 2026-08-08T15:28:23Z
+updated_at: 2026-09-05T09:09:18Z
 ---
 
 
