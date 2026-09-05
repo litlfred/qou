@@ -123,6 +123,84 @@ One leaked `/tmp/tmp.*` survived thirteen days and drove the container to
 command fails, including the `rm`. Keep `trap 'rm -f "$TGZ"' EXIT INT TERM`.
 `df` lies: ~252G nominal at 100% with ~38G used = a per-session quota near 38G.
 
+## TRAP — a "N modules are missing" count taken from a two-root `LEAN_PATH` is WRONG (2026-09-05)
+
+The overlay-shadowing trap below, in its most expensive form: a coordinator
+measured `QOU.lean`'s 864 direct imports as **820 present / 44 missing** and
+handed me the 44 as a build list. The true figure, testing each module against
+**both** olean roots, is **19 missing / 845 present**. The other 25 were present
+in `content/…/lean/.lake/build/lib/lean` and invisible because the root
+`.lake/build/lib/lean` comes first on `LEAN_PATH` and also holds a `QOU/` dir,
+so it resolves every `QOU.*` and the second root is never consulted. Their list
+named `MathlibExt.ManifoldVolumePositive`, six `MassTheory.*`, nine
+`SchurWeyl.*`; **none of those needed building** — all were on disk.
+
+**So `lean`'s "does not exist" is a statement about ONE root, never about the
+tree.** Test presence with `os.path.isfile` against every root before believing
+a missing-module list — including one handed to you by another agent. It also
+mis-transcribes: their list said `SchurWeyl.HeckeSemisimple{,General,Real}` and
+no `HeckeSemisimple.lean` exists at all.
+
+**The fix is the union mirror, and it is cheap:** `cp -aln` each
+`build/lib/lean` (root, per-paper, ugb, and all 16 package dirs) into one
+`$ROOT/.lake/union/lean`. Measured: **6234 oleans for 26 MB** of real disk.
+Then `LEAN_PATH` is that one directory and nothing shadows anything.
+
+## TRAP — `environment already contains 'C' from M` = a stale olean holding a MOVED declaration
+
+A *second*, distinct stale-cache symptom, and the one that actually blocked
+`lean QOU.lean` after every missing module was built. Not "file absent" —
+**two oleans both define `C`**, because the declaration moved between modules
+after the cache was seeded and only the destination's olean was rebuilt.
+Measured: `S1_eq_seminormalParam` present in both `SchurWeyl.SeminormalParam`
+(olean Aug 24) and `SchurWeyl.SeminormalParamAnchorReal` (olean Sep 5), while
+current source declares it in the second only.
+
+Sibling symptom, same root cause: `` `squares_sum` is not a field of structure
+`StandardYoungCount` `` / `Fields missing: squares_sum_factorial,
+squares_sum_holds`. **That is NOT a defect on `main`** — `HeckeAlgebra.lean`
+(source Sep 3) declares exactly `squares_sum`; its olean was Aug 30 and carried
+the superseded shape. Rebuilding the one parent made the consumer compile in
+**2 s**. I nearly reported it as a real finding; the discriminator is *read the
+current source of the module that defines the symbol*, then check the olean's
+date against it.
+
+**Fix both by rebuilding the implicated module's whole QOU import cone from
+current source**, topologically, not the single file — a single-file rebuild
+just moves the mismatch one level up. Driver that converges automatically:
+loop `lean QOU.lean`, regex the first error for the module name, rebuild its
+cone, repeat. Converged in **2 iterations / 53 modules / ~13 min** here.
+
+## STABLE — `lean QOU.lean` (root library, current source) is GREEN — recipe + cache (2026-09-05)
+
+**exit 0, 10.9 s warm, zero output**, against the union mirror. Two addon
+branches are needed together and both are plain-`tar`, untraced, lean-direct:
+
+| branch | holds |
+|---|---|
+| `lake-cache/ugb-v4-24-0` | 29 UGB oleans — without them every `import QOU` dies at `unknown module prefix 'UGB'` |
+| `lake-cache/qou-v4-24-0-root-import-closure` | 53 QOU oleans: 19 genuinely missing (4 `Hecke.*`, 2 `Mathlib.*`, 13 `QBeta.*`) + 34 rebuilt for staleness (the SchurWeyl/Specht/MathlibExt cone + `Mathlib.HeckeAlgebra`) |
+
+Restore = build the union mirror, then `tar xzf "$T" -C "$MIR" --unlink-first`.
+**`--unlink-first` is load-bearing**: mirror entries are hardlinks shared with
+the real trees, and extracting through one rewrites the shared inode and
+corrupts the source tree. Same rule for `lean -o`: `rm -f` the mirror olean
+first. Full recipe in each branch's `README.md`.
+
+**It certifies the import GRAPH, not the library.** The other ~2500 QOU oleans
+are still the seed snapshot; full certification is the dirty-closure rebuild.
+
+## TRAP — mtime is not a staleness test in this tree, and another agent may be building beside you
+
+`source newer than olean` by mtime flagged **1774 of 2619** QOU modules — a
+checkout artifact (they cluster at a uniform ~26 d), not staleness. Use git
+commit time. And mid-build I found `lean -o` processes writing
+`Archimedean/PauliWitness/Witness12B.olean` into the per-paper tree that were
+**not mine** — a sibling session building in the same worktree. Consequences:
+shared disk pressure, a one-core box running two heavy `lean`s, and a
+half-written olean visible through your hardlink mirror (exit 139, harness §3).
+Check `ps aux | grep '[l]ean -o'` before blaming your own harness.
+
 ## STABLE — UGB is NOT in the qou cache; build it lean-direct in ~4 min (2026-09-05)
 
 `lake-cache/qou-v4-24-0` carries Mathlib + QOU oleans and **no UGB**, so `lean`
