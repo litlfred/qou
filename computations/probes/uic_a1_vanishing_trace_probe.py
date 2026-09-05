@@ -1,67 +1,72 @@
-#!/usr/bin/env python3
-"""Why binding_energy is negative: term 1 takes ln of a trace that is ZERO.
+"""The A=1 Markov trace is zero — and the accumulator survives it. Dropping it does not.
 
-Gap qou-sv7h. `815b2a46a0` measured four wrong-signed atoms and said plainly
-that "nothing here says WHY the sign is wrong -- that is the physics question
-this measurement opens and does not answer." This probe answers it, and the
-answer is arithmetic rather than physics.
+Gap qou-sv7h. Two options were on the table for term 1's wrong sign:
+  (V1) a single nucleon has zero binding, so the A=1 step should not enter;
+  (V2) reference the bound state against the free-nucleon (intra-only) braid.
+This probe measures both, and the answer to (V1) is the opposite of what it
+looks like.
 
-THE STRUCTURE
+WHAT IS TRUE, AND MEASURED HERE
 
-`unified_iterative_correction` accumulates, per partition and per step,
+1. The per-partition scale is NON-NEGATIVE, every factor separately:
+   C_lambda = m_e * H_q(lambda) * y_lambda * rho_lambda(s_*), with
+   y_lambda = w/d - y_0 and y_0 = min_lambda(w/d) -- so y_lambda >= 0 BY
+   CONSTRUCTION, and the code's closed form 1/[k]_q! IS that minimum at every
+   k = 2..11. Measured: q_hook <= 0 in 0 of 682; C_lambda < -1e-12 in 0 of 682.
 
-    B_lambda = C_lambda * ( ln|Tr M_lambda^(0..A)| - ln d_lambda )
-    C_lambda = m_e * H_q(lambda) * y_lambda * rho_lambda(s_*)
+2. At A = 1 the Markov trace of the (2,1) block is EXACTLY ZERO. Precision
+   tracked, |Tr| falls without bound as the arithmetic improves and log_norm
+   stays 0, so ln|Tr| -> -infinity. Exactly one such (partition, step) pair
+   exists in 34 over k <= 5; every other trace is stable.
 
-Each factor of C_lambda is separately non-negative, and this probe measures
-that rather than asserting it:
+3. AND IT CANCELS. The accumulator TELESCOPES:
+       sum_k (log_cur_k - log_prev_k) = log_final - ln d_lambda
+   so the divergent intermediate appears once with each sign. Measured on the
+   RETURNED value, bit-identical at three precisions:
 
-  * m_e > 0;
-  * H_q(lambda) = prod_x [h_x]_q > 0 at q0 > 1;
-  * y_lambda = w_lambda/d_lambda - y_0 with y_0 = min_lambda(w/d), so
-    y_lambda >= 0 BY CONSTRUCTION -- and the code's closed form 1/[k]_q!
-    reproduces that minimum at every k;
-  * rho_lambda(s_*) = 1/(mu_lambda + s_*), with mu_lambda = sum_x [c(x)]_q^2
-    a sum of squares and s_* = (q-1)/q > 0, so rho > 0.
+       kernel dps    uic(1,1), k_max=5
+           50        -0.7335499391634722
+          100        -0.7335499391634722
+          150        -0.7335499391634722
 
-So the SIGN of every contribution is the sign of its log-trace factor, and the
-magnitude is a non-negative multiple of it.
+   *** unified_iterative_correction is NOT divergent. ***
 
-THE DEFECT
+RETRACTION. An earlier version of this probe (and PR #6746, docs/audits/
+2026-09-05-uic-a1-vanishing-trace.md, commit 2cb02fb644) concluded that term 1
+diverges and that this explained the wrong sign. That conclusion was WRONG. It
+was drawn from the PER-STEP decomposition, where (2,1) shows a -117 delta at
+A=1, without checking that the A=2 step carries +115 and that the telescoped
+total is stable. The sign is NOT explained by a divergence, and the sign
+question is still open.
 
-At A = 1 -- a single nucleon, no bond -- the Markov trace of the (2,1) block is
-EXACTLY ZERO. `ln|Tr|` is therefore -infinity, and since C_(2,1) > 0 the
-accumulated binding is -infinity too. Every finite value the function has ever
-returned is an artefact of where the arithmetic underflowed:
+WHAT THE MEASUREMENT ACTUALLY BUYS
 
-    kernel dps   |Tr|          ln|Tr|      implied delta_(2,1)
-        20       7.2e-16        -34.9          -4.38   <- the reported value
-        50       2.7e-51       -116.4         -14.4
-       100       7.3e-61       -141.4         -17.5
-      exact           0           -inf          -inf
+  * (V1) DROPPING THE A=1 STEP IS THE DIVERGENT OPTION. It removes one half of
+    a cancelling pair. Measured at (2,1) for deuterium:
 
-`log_norm` is 0.0 throughout, so there is no compensating rescale: the reported
-`log_trace` IS `ln|Tr|`.
+        dps    A=1 delta      A=2 delta      V0 (keep)     V1 (drop)
+         50    -117.1419      +114.9436      -2.198293     +114.9436
+        100    -142.0855      +139.8872      -2.198293     +139.8872
 
-WHAT IS NOT CLAIMED. That the other traces are ill-conditioned -- they are not.
-A census over every partition of k <= 5 across both deuterium steps finds
-exactly ONE vanishing pair out of 34; all others are stable to <3 decades under
-a 50 -> 100 dps change. This is a single identifiable term, not a general
-breakdown, which is what makes it worth reporting: 84.7 % of the A=1 step comes
-from it, the A=1 step is present for EVERY nucleus, and it is the term that
-carries the sign.
+    V0 is bit-stable; V1 tracks the precision. So the intuition "a free nucleon
+    has no binding, so drop its step" is right about the physics and wrong about
+    this arithmetic: the step is not an additive offset, it is one term of an
+    exact cancellation.
 
-That also explains, without any new physics, three things qou-sv7h measured and
-could not account for: the sign is negative on BOTH matrix families (a
-structural zero survives the braid-relation correction); the prediction is
-nearly A-independent (a divergent A=1 term dominates and does not depend on the
-nucleus); and neither a sign flip nor a constant rescale repairs it (a
-divergence is not a mis-scaled binding).
+  * (V2) THE FREE-NUCLEON REFERENCE IS FINITE. Replacing the baseline ln d
+    (the EMPTY braid) with ln|Tr_free| (the intra-only braid that
+    `include_inter=False` exists to build) is stable at every precision tested
+    and shifts the value modestly -- at (2,1)/deuterium, -2.2254 against V0's
+    -2.1983. It is a defensible alternative reference, not a repair of the sign.
 
-Scope (a): this identifies why the computed number is negative. It does NOT say
-what the correct binding formula is, and it does not touch the extensive-term
-question (qou-brng), which concerns what should be ADDED once term 1 is
-well-defined.
+  * The per-step decomposition is NOT interpretable on its own. Individual step
+    deltas are dominated by a +-117 artefact that cancels in the total, so any
+    diagnostic reading `per_step` sees numbers that mean nothing individually.
+    They are also computed with float64 `math.log`, so summing -117.14 and
+    +114.94 to get -2.198 spends ~3 significant digits.
+
+Scope (a). Does NOT explain the wrong sign; does NOT say what the correct
+formula is; does not touch the extensive-term question (qou-brng).
 
 scope-(a); no fit; nothing wired; no c_k; L2 unchanged. Gap qou-sv7h OPEN.
 """
@@ -188,18 +193,79 @@ def main() -> int:
     check("exactly one (partition, step) pair vanishes", len(vanishing) == 1,
           "(2,1) at A=1; all others stable")
 
+    # ---- 4. and it CANCELS: the telescoped total is stable ---------------
     print()
-    print("  CONSEQUENCE: C_(2,1) > 0 and ln|Tr| -> -inf, so term 1 -> -inf.")
-    print("  The binding energy as computed is divergent; its reported value is")
-    print("  set by the arithmetic precision, not by the nucleus.")
+    print("  4. the accumulator telescopes, so the divergent step CANCELS")
+    from q_parameter import Q_50_DIGIT_STR as _Q50
+
+    def _kernel_at(dps):
+        def f(partition, chains):
+            o = H._PHN.lp_accumulator_step_traces_mpfr(
+                list(partition),
+                [[(str(c), str(d), g) for c, d, g in ch] for ch in chains],
+                _Q50, dps)
+            return [(mp.mpf(t), mp.mpf(l)) for t, l in o]
+        return f
+
+    _orig = H._lp_kernel_steps
+    totals = {}
+    try:
+        for dps in (50, 100, 150):
+            H._lp_kernel_steps = _kernel_at(dps)
+            totals[dps] = H.unified_iterative_correction(1, 1, k_max=5, k_exact=5)
+            print(f"     kernel dps={dps:>4}   uic(1,1) k_max=5 = {totals[dps]!r}")
+    finally:
+        H._lp_kernel_steps = _orig
+    check("the RETURNED value is precision-stable -- term 1 is NOT divergent",
+          len(set(totals.values())) == 1, "bit-identical at 50/100/150 dps")
+
+    # ---- 5. V1 (drop the A=1 step) is the divergent option ----------------
+    print()
+    print("  5. V1 -- dropping the A=1 step -- breaks the cancellation")
+    ordering = ["p", "n"]
+    v0s, v1s = [], []
+    for dps in (50, 100):
+        ch = [H._step_chain_generic(ordering[k], ordering[:k], 2, True)
+              for k in range(2)]
+        o = H._PHN.lp_accumulator_step_traces_mpfr(
+            list(lam), [[(str(c), str(d), g) for c, d, g in c2] for c2 in ch],
+            Q_50_DIGIT_STR, dps)
+        st = [(mp.mpf(t), mp.mpf(l)) for t, l in o]
+        lc = lambda x: x[1] + mp.log(abs(x[0]))
+        L0b = mp.log(2)
+        d0, v0 = lc(st[0]) - L0b, lc(st[-1]) - L0b
+        v0s.append(v0); v1s.append(v0 - d0)
+        print(f"     dps={dps:>4}  A=1 delta={mp.nstr(d0, 10):>14}"
+              f"  V0(keep)={mp.nstr(v0, 10):>13}  V1(drop)={mp.nstr(v0 - d0, 10):>13}")
+    # Relative movement, not bit-equality: V0 prints identically to 10 digits
+    # but the traces differ at the 51st vs 62nd digit, so the logs differ far
+    # below any figure anyone reads. A first pass asserted bit-equality and
+    # FAILED on that -- the same over-strict-threshold mistake as the census
+    # above, caught by the probe's own assertion.
+    rel0 = abs(v0s[1] - v0s[0]) / abs(v0s[0])
+    rel1 = abs(v1s[1] - v1s[0]) / abs(v1s[0])
+    print(f"     relative movement 50 -> 100 dps:   V0 {mp.nstr(rel0, 6)}"
+          f"     V1 {mp.nstr(rel1, 6)}")
+    check("V0 (keep A=1) is precision-stable to < 1e-15 relative",
+          rel0 < mp.mpf("1e-15"), f"moves {mp.nstr(rel0, 4)}")
+    check("V1 (drop A=1) is NOT -- it moves by O(10%) and grows",
+          rel1 > mp.mpf("0.01"),
+          f"moves {mp.nstr(rel1, 4)}; one half of a cancelling pair removed")
+
+    print()
+    print("  So the sign is NOT explained by a divergence, and V1 is refuted:")
+    print("  the A=1 step is not an additive offset, it is one term of an exact")
+    print("  cancellation. The sign question stays OPEN.")
 
     w = WitnessBuilder("uic-a1-vanishing-trace", engine="python+mpmath+rust")
     w.set_description(
-        "Gap qou-sv7h: unified_iterative_correction is negative because at A=1 "
-        "the (2,1) Markov trace is exactly zero, so its ln is -infinity against "
-        "a provably non-negative scale. Precision-tracked: |Tr| falls ~10 "
-        "decades per 50 dps of added precision, log_norm stays 0, and a census "
-        "over k<=5 finds exactly one such pair in 34."
+        "Gap qou-sv7h: the (2,1) Markov trace at A=1 is exactly zero (one such "
+        "pair in 34 over k<=5), but the accumulator TELESCOPES and it cancels -- "
+        "uic(1,1) is bit-identical at 50/100/150 dps, so term 1 is NOT "
+        "divergent. RETRACTS the earlier conclusion in PR #6746 / commit "
+        "2cb02fb644. Measures the two proposed fixes: V1 (drop the A=1 step) is "
+        "the DIVERGENT option, removing one half of the cancelling pair; V2 "
+        "(free-nucleon reference) is finite. The wrong sign is NOT explained."
     )
     w.set_audit_only("docs/audits/2026-09-05-uic-a1-vanishing-trace.md")
     w.add_parameter("q0", fmt(q))

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T06:49:46.793355+00:00",
-  "commitSha": "4f31302d02f3c56d49721c4809b669c397ed3e14",
+  "computedAt": "2026-09-05T07:03:27.663104+00:00",
+  "commitSha": "2cb02fb644d59231b524e32556b57a53adf91a16",
   "assertions": [
     {
       "name": "q_hook is positive on every partition",
@@ -51,14 +51,38 @@
       "passed": true,
       "tolerance": "0",
       "source": "uic_a1_vanishing_trace_probe"
+    },
+    {
+      "name": "the RETURNED value is precision-stable -- term 1 is NOT divergent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_a1_vanishing_trace_probe"
+    },
+    {
+      "name": "V0 (keep A=1) is precision-stable to < 1e-15 relative",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_a1_vanishing_trace_probe"
+    },
+    {
+      "name": "V1 (drop A=1) is NOT -- it moves by O(10%) and grows",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_a1_vanishing_trace_probe"
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 14,
   "computation": "uic-a1-vanishing-trace",
   "scriptFile": "uic_a1_vanishing_trace_probe.py",
-  "scriptHash": "e81479cb9dc0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d429a5914657",
+  "scriptCommitSha": "2cb02fb644d59231b524e32556b57a53adf91a16",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,7 +105,7 @@
     ],
     "reproduce": "python3 -u computations/probes/uic_a1_vanishing_trace_probe.py"
   },
-  "description": "Gap qou-sv7h: unified_iterative_correction is negative because at A=1 the (2,1) Markov trace is exactly zero, so its ln is -infinity against a provably non-negative scale. Precision-tracked: |Tr| falls ~10 decades per 50 dps of added precision, log_norm stays 0, and a census over k<=5 finds exactly one such pair in 34.",
+  "description": "Gap qou-sv7h: the (2,1) Markov trace at A=1 is exactly zero (one such pair in 34 over k<=5), but the accumulator TELESCOPES and it cancels -- uic(1,1) is bit-identical at 50/100/150 dps, so term 1 is NOT divergent. RETRACTS the earlier conclusion in PR #6746 / commit 2cb02fb644. Measures the two proposed fixes: V1 (drop the A=1 step) is the DIVERGENT option, removing one half of the cancelling pair; V2 (free-nucleon reference) is finite. The wrong sign is NOT explained.",
   "auditOnly": "docs/audits/2026-09-05-uic-a1-vanishing-trace.md",
   "parameters": {
     "q0": "1.10997858275138080759166909561076887987449912187360000000000"
