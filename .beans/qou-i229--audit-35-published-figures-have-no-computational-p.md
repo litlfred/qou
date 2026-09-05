@@ -955,10 +955,90 @@ when its two figures sat in prose.
 
 Report **7 blocks / 31 asserted** (honest), from 15/79.
 
-- [ ] Six blocks left. `prop:q-beta-spectral-bridge` (12 asserted) is the largest
-      and belongs to `qou-cds1` — migrating it alone half-migrates the channel.
-      `conj:im-q-physical-role` (4) and `prop:em-coupling-bring-zero-mode` (3)
-      are the next readable ones.
+## TRIAGE 9: `conj:im-q-physical-role` — category (c), and it closes a pending vintage item as a NON-DEFECT
+
+Probe: `the_apollonius_circle_from_cal2_reproduces_exactly_probe.py` (4/4). The
+first row in this whole triage with **no defect at all**.
+
+Odd shape going in: 4 unmatched against **68** declaring witnesses. Those 68 are
+the `Im(q)` reality-locus computations that close candidates (i) and (iii);
+candidate (ii)'s Apollonius geometry is a two-line derivation nobody ran
+separately. **A large witness count says nothing about coverage of any one
+figure.**
+
+CAL-2 is `m_μ/m_e = Vol(4₁)/ℏ_q²` with `ℏ_q = 1 − 1/q`. Over complex `q` the
+modulus condition is the Apollonius locus `|q−1| = k|q|`, giving
+
+    k² = Vol(4₁)/(m_μ/m_e)
+    centre = 1/(1−k²)   radius = k/(1−k²)   leftmost = 1/(1+k)
+
+All three published figures are the correct roundings, and the table closes on
+itself — `centre − radius = leftmost` exactly as printed.
+
+### The vintage does not reach them, which settles a pending item
+
+**No `q₀` enters.** The circle is fixed by `Vol(4₁)` and the mass ratio alone,
+because CAL-2 is the equation that *defines* `q₀`. And both CODATA vintages
+reproduce all three figures, diverging only at `7.4e-10` relative against 7
+published significant digits.
+
+So the `206.7682830` here — one of the three sites this bean left open as "needs
+reading rather than relabelling" — **resolves as a non-defect**: the block quotes
+CAL-2's own input value rather than asserting a CODATA vintage, and nothing it
+derives from that value moves. Two of those three sites remain
+(`knot-volumes-verification-table2-data`, and the `witness-substitution-audit.ts`
+fixture).
+
+### A note on why closing this row is legitimate
+
+The witness records `206.7682830` as `mass_ratio_input` — a **declared input the
+probe consumes**, not a figure copied to satisfy the checker. That is the
+distinction the transcription weakness turns on: provenance for a calibration
+input *is* recording that the computation took it. The three circle figures are
+computed from `mp.clsin` and that input, so recording them is what a producer
+does.
+
+Report **6 blocks / 27 asserted**, from 15/79.
+
+## TRIAGE 10: `prop:em-coupling-bring-zero-mode` — a row that MUST STAY OPEN
+
+All three flagged figures are the **retired** `q₀`, consistently:
+
+    figure              retired pin gives      other pins
+    1.109978595554181   the pin itself         —
+    136.823219654       136.823219654561       muon 136.823219729, proton 136.823208854
+    137.035426245       137.03542624535        muon 137.035426320, frozen A 137.035426248
+
+`137.035426245` (`bare + 2/(3π)`, the zero-mode form) separates all four
+registered pins and lands on retired exactly. `136.823219654` is the truncation
+case documented in the checker — the retired value rounds to `…655`, so it fails
+a half-ulp test against its own producer.
+
+**This is the tracked retired-`q₀` refresh, not a new defect.** The block already
+declares "(muon pin, 16 dps)" and the refresh is owner-gated.
+
+### The right action is to do nothing, and that is the finding
+
+Nothing live carries retired-pin values, and **nothing should**. So the checker
+flagging this block is *correct signal*: these published figures genuinely have
+no live producer, which is exactly the problem awaiting the refresh.
+
+I could close the row by declaring
+`published_figures_carry_a_retired_q0_probe.py` (it already covers 2 of the 3).
+**That would be a defect.** It would make a retired vintage look witnessed and
+silence the one automatic signal that this block is stale. Some rows should stay
+open, and closing them is worse than the flag — a distinction the count cannot
+express, which is another reason this checker must not become a gate on its
+count.
+
+Report stays **6 blocks / 27 asserted**.
+
+- [ ] Five blocks left, and at least two should NOT be closed here:
+      `prop:em-coupling-bring-zero-mode` (3, awaiting the refresh) and
+      `rem:atom-mass-full-hecke` (2, the 0–2-sig-fig class where the method has
+      no resolving power — close as *unresolvable*, do not investigate).
+      `prop:q-beta-spectral-bridge` (12) belongs to `qou-cds1`.
+      So the genuinely-actionable remainder is smaller than 27 suggests.
 - [ ] **Worth considering before any gate**: a `data`-only, producer-only variant
       of the checker. Stricter and immune to the echo problem, at the cost of
       flagging blocks whose provenance genuinely lives in prose.

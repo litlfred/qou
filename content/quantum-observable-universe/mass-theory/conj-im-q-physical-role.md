@@ -157,7 +157,12 @@ both complex extensions the corpus supports, the zero set factors as
 $y \cdot (\text{branch})$ with every branch empty on
 $\mathrm{Re}\,q > 1/2$, and the Apollonius circle above lies entirely in
 that half-plane: its centre is $1.0099145$ and its radius $0.1000641$, so
-its leftmost point is $0.9098504$. Only the two real intersections survive,
+its leftmost point is $0.9098504$ — closed forms $1/(1-k^2)$, $k/(1-k^2)$ and
+$1/(1+k)$ with $k^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$, reproduced by
+[`the_apollonius_circle_from_cal2_reproduces_exactly_probe.py`](computations/probes/the_apollonius_circle_from_cal2_reproduces_exactly_probe.py)
+(4/4), which also records that **no $q_0$ enters**: CAL-2 is the equation that
+*defines* $q_0$, so neither the anchor question nor the CODATA vintage reaches
+these three numbers. Only the two real intersections survive,
 and the circle's arc coordinate is not a live degree of freedom. The
 surviving question is the fibre one: whether $\mathrm{Im}(q)$ parametrises
 anything at the level of the formal variable, where no reality condition
