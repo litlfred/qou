@@ -429,3 +429,62 @@ re-derived here.
    carries `mpf('-0.20906029879563932')`, `2.19e-17` relative from the 50-dps
    `h`. Far too small to be this defect, but it is a NO-FLOAT64 leak on the
    canonical path and wants its own fix.
+
+### ✅ The last unverified step is now verified — δ matches exactly
+
+The previous section flagged one gap: that `0.104458247769726289…` is what
+`bring_color_weighted` prescribes, rather than some other modification at the
+same position. **Closed.**
+
+`atom_braid_word_3A`'s docstring gives the formula — *"its averaged crossing is
+`σ − h·(1/2 − δ/4)·1`, δ = flavor_split_…(q₀), vs the color-blind `σ − h/2·1`"*.
+Inverting the measured shift for δ:
+
+    δ implied by the measured shift : 0.0013757108070270960086
+    flavor_split_leading(q_0)       : 0.0013757108070270960086
+
+**Identical to all 20 digits printed.** The p–n interface crossing is
+`σ − h·(1/2 − δ/4)` with `δ = flavor_split_leading(q₀)`, and the Rust kernel
+substitutes the colour-blind `σ − h/2`. Nothing in the localisation is now
+unverified.
+
+### Two smaller defects found on the way
+
+1. **`pyhecke.gram.h` is float64 on the canonical path.**
+
+       pyhecke.gram.h        = 0.20906029879563937
+       h = q − 1/q at 50 dps = 0.20906029879563931543084621313
+       relative                2.61e-16
+
+   `atom_braid_word_3A`'s own `q=None` default path reads it (the docstring
+   says so: *"uses the canonical q₀ data (`pyhecke.gram.h`, `_avg_color_delta`)
+   and is byte-identical to the historical word"*). So the byte-identity is
+   deliberate back-compat, not an oversight — but it means every default-path
+   word carries ~16 good digits of `h` into a 50-dps computation. The
+   q-parameterised path (`q=` supplied) computes `h` exactly. Far too small to
+   be the kernel split (2.6e-16 against 1.4e-4) and worth its own fix.
+   *(An earlier note in this bean quoted 2.19e-17 for this; that was measured
+   against the word's serialised literal. 2.61e-16 is the constant itself, and
+   is the figure to use.)*
+
+2. **The docstring names the wrong function for δ.** One sentence says
+   `δ = flavor_split_subleading(q₀)`, another says `δ=flavor_split_leading(q)`.
+   The measurement above settles it: **`flavor_split_leading`**. A one-word doc
+   fix, but the two names are a symbol collision of exactly the kind that costs
+   a session.
+
+### Status of this bean
+
+The investigation is **complete**; what remains is remediation, and every item
+changes canonical numbers, so none of it should land without owner sign-off:
+
+1. Fix `hecke-canonical-chi` to apply the p–n interface colour weighting, or
+   document it as colour-blind and stop using it as a composite arbiter. It
+   currently reports `convention: colour-weighted-averaged-crossing` for a
+   computation that is not colour-weighted.
+2. Regenerate the `chi-*-at-q0-50dps` family off the cache.
+3. Re-run `qou-r9dv`'s three-method certification.
+4. Fix the `pyhecke.gram.h` float64 leak.
+5. Fix the δ docstring.
+
+Items 4 and 5 are independent of 1-3 and safe to land on their own.
