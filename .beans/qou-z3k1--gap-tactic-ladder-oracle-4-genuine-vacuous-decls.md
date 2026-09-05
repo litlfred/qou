@@ -8,7 +8,7 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T00:05:00Z
-updated_at: 2026-08-08T00:05:00Z
+updated_at: 2026-09-05T09:00:43Z
 ---
 
 Four provable declarations assert nothing about the objects they name, and two
@@ -156,3 +156,50 @@ Wire a `proof-self-assuming` / `proof-unused-hypothesis-rfl` criterion into
 `content/pipeline/lean-vacuity-axiom-audit.ts` so this class joins the
 review-ledger workflow instead of depending on an expensive probe run
 (`qou-q407` follow-up 1 covers the syntactic half).
+
+
+## 2026-09-05 — item 3 `cp_violation_spectral_form` is DRAINED
+
+Branch `claude/gram-kappa-laundered-axiom-2026-09-05`, PR #6782. This bean's
+"Not edited" note said the honest disposition is a per-item judgement; here it
+is, for this one item.
+
+**The honest form came from the block's own `.md`, not from invention.** Its
+Falsifiability section says *"Amphicheiral knots must yield exactly δ_CP = 0"*,
+and its body *"Amphicheiral or real-q configurations have Im(χ_λ) = 0 and
+δ_CP = 0"*. That direction is **provable** from the definition — a quotient of
+two reals is real — so it is now `deltaCP_eq_zero_of_real_characters`, proved,
+with hypotheses verified load-bearing (without them the goal survives as
+`chiAlt.im * chiSym.re / normSq − chiAlt.re * chiSym.im / normSq = 0`).
+
+**The conjecture proper gets a §3b carrier that is not self-assuming.** It is an
+IDENTIFICATION, so the physical δ_CP enters as a PARAMETER
+(`CPViolationSpectralForm (physicalDeltaCP : … → ℝ)`); asserting it against
+`deltaCP`, which is *defined* as that ratio, would be the §3b-cond item-5
+projection this corpus keeps catching. No instance — the honest open state,
+since the corpus has no independent δ_CP (`complex-chirality-rotation.lean:44`
+records the numerical bound as future work).
+
+`lean.ref` and the definition index moved to `CPViolationSpectralForm`.
+Verified lean-direct exit 0, no sorry.
+
+**Items 1, 2, 4, 5 untouched**, deliberately. Item 1 (`LevelSufficiency`) needs
+the `markovTrace` definition looked at, as this bean says. Item 2
+(`hadron_operations_closure`) is four conjuncts of `∀ n, ∀ h, ∃ h', h' = op n h`
+and has the same "what would the honest statement be" problem as the Markov
+cluster in `qou-ekga` — closure is a claim about an operation's codomain, and
+asserting it needs the operation's own definition, not a restatement.
+
+## Note for whoever picks this up: `explicit_alpha_k_h3` should NOT be drained
+
+I had it queued as the easiest remaining item. It is not — the file itself says
+so, in a header note I had not read:
+
+> "**Known defect, not introduced here and not fixed here.** … Making it
+> falsifiable needs the α_k derived from the `H_3` curvature-rank computation,
+> which is not available here; it is recorded as a bean rather than papered
+> over."
+
+So it is honestly labelled, deliberately left, and blocked on a derivation that
+does not exist. Restating it would be papering over exactly what that note
+refuses to paper over. Leave it.

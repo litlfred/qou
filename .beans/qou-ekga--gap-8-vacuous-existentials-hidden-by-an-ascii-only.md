@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-05T08:33:27Z
-updated_at: 2026-09-05T08:57:58Z
+updated_at: 2026-09-05T09:00:44Z
 ---
 
 ## What was found
@@ -234,3 +234,40 @@ superseded code inside a docstring**, which starts at column 0. The detector
 strips comments; the grep did not. Same class as the `orellana1998` false
 duplicate earlier in this session: a scan over raw source where the question
 was about parsed content.
+
+
+## 2026-09-05 (4) — 🛑 PRIOR ART: `qou-z3k1` enumerated this class in August, with a BETTER method
+
+This bean reads as a discovery. It is mostly not one, and the correction matters
+for how much weight the detector fix should carry.
+
+**`qou-z3k1`** (2026-08-08, priority high, still `todo`) already enumerated
+**12 vacuous existentials** corpus-wide, 8 of them absent from the
+2026-08-07 audit — including `cp_violation_spectral_form` (its item 3, verified
+NOT FLAGGED by the live detector at the time) and `explicit_alpha_k_h3`.
+
+And it found them by a **better method than any regex**: the folio-assistant
+triviality probe, a cheapest-first *tactic ladder* that runs the elaborator. Its
+own conclusion is the one to carry forward — *"the five are invisible to the
+static detectors **by construction**… Semantic vacuity needs an oracle that runs
+the elaborator."*
+
+**So what this bean actually contributes, stated honestly:**
+
+- The ASCII→Unicode fix is a real repair of the *static* detector, which was
+  reporting `0` on a tree with 8 live instances. That zero was not a narrow
+  miss; it was total blindness to Greek-bound existentials.
+- Two drains carried through to honest statements (`cp_violation_spectral_form`
+  here, feeding `qou-z3k1` item 3).
+- The `MarkovTraceAxioms` triviality and the three-way name overload — that part
+  IS new; `qou-z3k1` does not cover `MarkovAxiomsPrimitive.lean` at all.
+
+**What it does NOT contribute**: the enumeration of the class. That was done in
+August, more completely, by an oracle. A static detector will keep missing the
+multi-binder, conjunct and nested-`∀` shapes **by design**, and `qou-z3k1`
+measured exactly that.
+
+Practical consequence for anyone extending this: **run the elaborating oracle
+before widening regexes.** The regex route has now been widened twice (ASCII→
+Unicode, then `∀`-prefix) for a combined 9 findings, of which the oracle had
+already listed several a year earlier.
