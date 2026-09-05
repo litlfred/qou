@@ -1623,10 +1623,36 @@ def _q_gaussian_character_approx(entry, n_crossings_at_step, step_idx):
 def unified_iterative_correction(Z, N, return_per_step=False,
                                  k_max=K_PARTITION_MAX,
                                  k_exact=K_PARTITION_MAX):
+    """Run the accumulator at the canonical working precision.
+
+    MEASURED 2026-09-05 (qou-sv7h): PR #6794 made `_build_ysn_matrices`
+    exact -- a sigma entry carries **167 significand bits** where float64
+    has 53 -- and this function then threw that away on the first
+    multiply, because mpmath rounds every operation to the AMBIENT
+    `mp.dps`, which is **15** in a bare import of this module.  Measured
+    on one entry: `v*v` keeps 53 bits at ambient dps and 234 bits inside
+    `workdps(COMPUTE_DPS)`, a relative difference of 2.57e-17 per
+    operation; compounded over the accumulation the RESULT moved
+    8.3e-15 / 4.1e-15 / 2.9e-15 at k_exact = 5 / 6 / 7.
+
+    Same defect as the one #6794 fixed, one level up: an exact input
+    multiplied at float64 precision is a float64 computation.  This is
+    the builder's wrapper applied to its consumer.
+    """
+    from _precision import COMPUTE_DPS as _CDPS
+    with _mp.workdps(_CDPS):
+        return _unified_iterative_correction_exact(
+            Z, N, return_per_step=return_per_step,
+            k_max=k_max, k_exact=k_exact)
+
+
+def _unified_iterative_correction_exact(Z, N, return_per_step=False,
+                                        k_max=K_PARTITION_MAX,
+                                        k_exact=K_PARTITION_MAX):
     """Unified iterative correction over per-partition weights.
 
     NAMING CORRECTED 2026-09-05 (owner ruling; PR #6752).  This read
-    "via LP-dual shadow prices".  The weights y_λ are not LP duals —
+    "via LP-dual shadow prices".  The weights y_λ are not LP duals --
     see `lp_shadow_price` above for the two independent reasons.
 
     A SINGLE consistent algorithm — no special cases for any A.
