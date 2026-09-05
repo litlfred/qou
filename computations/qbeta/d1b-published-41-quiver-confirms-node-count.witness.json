@@ -1,0 +1,258 @@
+{
+  "engine": "ocr-transcription-cross-validated-plus-exact-determinant",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T08:37:24.335797+00:00",
+  "commitSha": "d92b8592151fda5920b439789976f853dc60e1c0",
+  "assertions": [
+    {
+      "name": "published_passage_present",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the section text carries both the motivic quiver form of 4_1 and the explicit matrix label C41, so the confirmation rests on ingested primary text rather than on recollection"
+    },
+    {
+      "name": "transcription_validated_by_series",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "all 15 independent entries of the symmetric 5x5 agree between the printed matrix and the quadratic form in the exponent of the motivic series -- two separately-typeset objects in the same passage. This is what makes the OCR transcription evidence rather than a hand reading of mangled text. Mismatches: []"
+    },
+    {
+      "name": "c41_is_symmetric",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "C_41 equals its transpose -- consistent with the paper's own statement that its quivers are symmetric quivers, and the reason a knots-quivers matrix can never be GGM eq (98), which is antisymmetric"
+    },
+    {
+      "name": "node_count_confirmed_not_inferred",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the printed quiver has 5 nodes, the motivic sum runs over 5 indices, and det(4_1) = 5. aomega_bps_sector_nondegeneracy derived its 5 from det via the knots-quivers rule; the published quiver now supplies it directly. This is what bean qou-48dw asked for"
+    },
+    {
+      "name": "node_count_equals_det_at_four_knots",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "C_41 is 5x5 (det 5), C_61 is 9x9 (det 9), C_81 is 13x13 (det 13), and KRSS's trefoil quiver has 3 nodes (det 3). So the rule aomega_bps_sector_nondegeneracy relies on is not a coincidence at one knot -- which is the question the bean did not ask and the one that decides whether the probe is right for the right reason"
+    },
+    {
+      "name": "node_count_is_family_formula",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "the node count equals 1+4pm, the determinant formula derived from the paper's eq (5) in d1b_52_charge_lattice_source_exclusion_probe -- so the node count, the determinant and the Alexander polynomial are three faces of one parameter"
+    },
+    {
+      "name": "verdict_unchanged_and_strengthened",
+      "computed": "PASS",
+      "expected": "PASS",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "5 is still not in the GGM DT spectrum {3,4}. The bean asked to firm up a number the probe used to reach a NEGATIVE; firming it up strengthens the negative. Recorded explicitly because 'count confirmed' is the kind of headline a later reader could mistake for the bridge being repaired"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 42,
+  "computation": "d1b-published-41-quiver-confirms-node-count",
+  "scriptFile": "d1b_published_41_quiver_confirms_node_count_probe.py",
+  "scriptHash": "8168d26a3ede",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/d1b_published_41_quiver_confirms_node_count_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/d1b_published_41_quiver_confirms_node_count_probe.py"
+  },
+  "description": "qou-48dw. computations/probes/aomega_bps_sector_nondegeneracy.py takes the 4_1 open-BPS count as int(round(det(4_1))) = 5 -- an INFERENCE through the knots-quivers rule '#nodes = #HOMFLY generators = det'. This probe reads the count directly off the quiver Singh et al. (physrevd108106023) print for 4_1: a 5x5 matrix over a motivic sum in five indices, so 5 is now READ rather than inferred. The OCR transcription is NOT taken on trust -- all 15 independent entries of the symmetric 5x5 are reproduced independently from the quadratic form in the exponent of the motivic series printed in the same passage, a separately-typeset object. It also answers the sharper question the bean did not ask: the rule holds at FOUR knots (3_1 -> 3, 4_1 -> 5, 6_1 -> 9, 8_1 -> 13), so the probe is right for the right reason and not by a one-knot coincidence; the counts equal 1+4pm, the family formula. GUARD: this confirms the probe's INPUT, not its VERDICT -- 5 is still not in {3,4}, so the open-HOMFLY bridge still FAILS and the confirmation makes that negative stronger, not weaker.",
+  "data": {
+    "source": {
+      "doc_id": "physrevd108106023",
+      "citation": "Singh et al., Knot-quiver correspondence for double twist knots, Phys. Rev. D 108, 106023 (2023)",
+      "section_file": "sections/sec-005-1-u2-r2.md",
+      "already_cited_at": "conj:stokes-dt-bps-bridge (beans qou-bk77, qou-qu53)"
+    },
+    "c41_matrix": [
+      [
+        0,
+        -1,
+        -1,
+        0,
+        0
+      ],
+      [
+        -1,
+        -2,
+        -2,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -2,
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        -1,
+        0,
+        1,
+        1
+      ],
+      [
+        0,
+        -1,
+        0,
+        1,
+        2
+      ]
+    ],
+    "transcription_validation": {
+      "method": "reconstruct C from the quadratic form in the motivic series exponent; cross terms carry coefficient 2*C_ij",
+      "entries_checked": 15,
+      "mismatches": [],
+      "per_entry": {
+        "C11": {
+          "from_series": "0",
+          "from_matrix": 0
+        },
+        "C12": {
+          "from_series": "-1",
+          "from_matrix": -1
+        },
+        "C13": {
+          "from_series": "-1",
+          "from_matrix": -1
+        },
+        "C14": {
+          "from_series": "0",
+          "from_matrix": 0
+        },
+        "C15": {
+          "from_series": "0",
+          "from_matrix": 0
+        },
+        "C22": {
+          "from_series": "-2",
+          "from_matrix": -2
+        },
+        "C23": {
+          "from_series": "-2",
+          "from_matrix": -2
+        },
+        "C24": {
+          "from_series": "-1",
+          "from_matrix": -1
+        },
+        "C25": {
+          "from_series": "-1",
+          "from_matrix": -1
+        },
+        "C33": {
+          "from_series": "-1",
+          "from_matrix": -1
+        },
+        "C34": {
+          "from_series": "0",
+          "from_matrix": 0
+        },
+        "C35": {
+          "from_series": "0",
+          "from_matrix": 0
+        },
+        "C44": {
+          "from_series": "1",
+          "from_matrix": 1
+        },
+        "C45": {
+          "from_series": "1",
+          "from_matrix": 1
+        },
+        "C55": {
+          "from_series": "2",
+          "from_matrix": 2
+        }
+      },
+      "why": "the ingested text is column-mangled PDF OCR; a hand transcription of it is not evidence on its own. Agreement of two separately-typeset objects on 15 integers is",
+      "series_linear_part": {
+        "2": -2,
+        "3": -1,
+        "4": 1,
+        "5": 2
+      },
+      "series_linear_note": "framing, not part of C"
+    },
+    "node_counts": {
+      "printed_widths": {
+        "C41": {
+          "width": 5,
+          "n_rows": 5
+        },
+        "C61": {
+          "width": 9,
+          "n_rows": 9
+        },
+        "C81": {
+          "width": 13,
+          "n_rows": 13
+        }
+      },
+      "determinants": {
+        "3_1": 3,
+        "4_1": 5,
+        "6_1": 9,
+        "8_1": 13
+      },
+      "family_formula_1_plus_4pm": {
+        "4_1": 5,
+        "6_1": 9,
+        "8_1": 13
+      },
+      "trefoil": {
+        "nodes": 3,
+        "det": 3,
+        "source": "arxiv-1707.02991v1 (KRSS), not this paper"
+      }
+    },
+    "what_this_settles": {
+      "bean": "qou-48dw",
+      "asked": "cross-check the probe's 5-node figure-eight count against the published explicit 5x5 quiver matrix",
+      "answer": "CONFIRMED -- and the rule behind it is confirmed at four knots, which the bean did not ask for and is the part that decides whether the probe reasons correctly rather than luckily",
+      "verdict_of_the_target_probe": "UNCHANGED: 5 not in {3,4}, the open-HOMFLY / Gukov-Stosic bridge FAILS the A_omega gate. Strengthened, not rescued"
+    },
+    "scope": {
+      "tier": "confirmation of a published value (C1-C4) + generalisation of the rule (C5-C6) + one guard (C7)",
+      "arithmetic": "exact integers and Fractions; no floats",
+      "derives_A_omega": false,
+      "wired": false,
+      "fit": false
+    }
+  }
+}
