@@ -224,39 +224,85 @@ guarantee that it fixes selection.
 
 ---
 
-## 7. Recommendation — my judgement, not a finding
+## 7. FALSIFIER RUN — it fires, and points at its own repair
 
-**O2 now, unconditionally**, and **O3 as the real work**, with O1/O5 declined.
+The test in §8 was run before any content was committed to O3. **It fires**, by
+a mechanism I had not predicted, which is why the result is constructive.
+Probe: [`computations/probes/sdp_o3_falsifier_probe.py`](../../computations/probes/sdp_o3_falsifier_probe.py), 6/6.
 
-O2 is free and removes a false statement from a hot file; nothing about it
-forecloses anything. O3 is the only route that produces the object the
-downstream code already assumes exists — a per-partition dual — and it is
-motivated from both sides: the Wedderburn decomposition makes the partition
-block the natural constraint unit, and the corpus's own physical reading
-("which Wedderburn blocks the bound state saturates") is block-shaped already.
+**What O3 does fix.** The LP's S1 defect genuinely does **not** reproduce. All
+six LP-optimal vertices are excluded by the PSD constraint, and not marginally:
 
-I would decline **O5**: a non-degenerate program that still cannot select is a
-worse epistemic position than a visibly broken one, because it stops advertising
-its own failure.
+| vertex | min eigenvalue | |
+|---|---|---|
+| `(1,2,3)`, `(1,2,4)` | **−7.3286461578** | excluded |
+| `(1,3,5)`, `(1,4,5)`, `(2,3,5)`, `(2,4,5)` | **−3.85251717557** | excluded |
 
-I would not start O3 expecting it to fix the sign. S4 and the relative-interior
-finding say the feasible geometry does not distinguish `𝓑₃`; the honest
-expectation is that O3 fixes the **type error** and leaves selection open.
+**What breaks instead.** Solving for the Markov weights from the six basis
+traces — 6 equations, 3 unknowns, so consistency *is* the validation (residual
+8.02e-17, `Σ y_λ d_λ = 1.0` exactly) — gives
 
-## 8. What would falsify each direction
+| λ | `d_λ` | `y_λ` |
+|---|---|---|
+| `(3)` | 1 | 0.50540422650393 |
+| `(2,1)` | 2 | 0.24729788674803 |
+| `(1,1,1)` | 1 | **1.45e-17 — zero** |
 
-- **O3 is wrong if** the block-PSD program is *also* degenerate — e.g. if some
-  block constraint again duplicates the objective. That is checkable cheaply
-  before any content lands: build `G` in the Wedderburn basis at `n = 3` and see
-  whether the objective functional is in the span of the block constraints.
-- **The whole SDP direction is wrong if** the physics wants a scalar per channel
-  after all, in which case the `d_λ = 1` coincidence in §3.3 is telling us the
-  framework only ever meant the trivial and sign channels — and the code has it
-  exactly backwards.
+That is the **SU(2) specialisation**: at convention-D `z`, the Markov weight
+vanishes for partitions with more than 2 rows. A zero-weight block **does not
+enter the objective at all**, so a `Φ` supported only there is PSD (1×1, entry
++1 > 0), has objective 0, and has `Σx = 0.0202 ≠ 0` — hence scales to any
+`n_target`. **The SDP optimum is also identically 0, attained on a ray.**
 
-## 9. What is not claimed
+**And the ray is already named.** It matches the corpus's known
+`RADICAL = (1, −1/q, −1/q, 1/q², 1/q², −1/q³)` — the q-antisymmetriser — to a
+relative spread of **6.4e-51**. That is the radical of the Frobenius form under
+convention D, for which `G_PINV` / `gram_quotient_inverse` already exist.
 
-That the gate is wrong — only that its justification is disproved and its type
-is inconsistent with either program. That an SDP selects `𝓑₃`. That any number
-changes: per S6 the mass coefficients come from the chirality/writhe/ribbon
-route in closed form and are untouched by all of this.
+### O3′ — the amended option
+
+Pose the block-PSD program on the **quotient by the radical**, i.e. over the
+partitions with **nonzero Markov weight** (≤ 2 rows, for SU(2)). There every
+`y_λ > 0`, so PSD feasibility forces `Σ_λ y_λ tr(Φ_λ) ≥ 0` with equality only at
+`Φ = 0`, which the net constraint excludes. The degeneracy is gone by
+construction, and no new object is needed — the quotient is already built.
+
+## 8. Recommendation — my judgement, not a finding
+
+**O2 now, unconditionally; O3′ (not bare O3) as the real work; O1/O5 declined.**
+
+O2 is free and removes a false statement from a hot file. O3′ is the only route
+that produces the object the downstream code assumes exists — a per-partition
+dual — and it is motivated from both sides: the Wedderburn decomposition makes
+the partition block the natural constraint unit, and the corpus's own physical
+reading ("which Wedderburn blocks the bound state saturates") is block-shaped
+already. The falsifier upgraded O3 → O3′ for the cost of one probe, which is
+exactly what it was for.
+
+I decline **O5**: a non-degenerate program that still cannot select is a worse
+epistemic position than a visibly broken one, because it stops advertising its
+own failure.
+
+**Do not start O3′ expecting it to fix the sign.** S4 and the relative-interior
+finding say the feasible geometry does not distinguish `𝓑₃`, and re-posing the
+program does not touch that. The honest expectation is that O3′ fixes the **type
+error** and leaves selection open.
+
+## 9. What would still falsify O3′
+
+The quotient argument above is analytic and rests on `y_λ > 0` for every
+surviving partition. That is measured only at **n = 3**, where the surviving set
+is `{(3), (2,1)}`. At larger `n` the SU(2) rule kills every partition with ≥ 3
+rows, and whether the survivors all carry **strictly** positive weight at the
+proton pin is **not measured here**. If some surviving `y_λ` is zero or negative
+at some `n`, the same degeneracy returns one level up. That is the next cheap
+check, and it should be run before any content lands.
+
+## 10. What is not claimed
+
+That O3′ **selects** `𝓑₃` or anything else. The scope-(b) exclusion (no linear
+objective selects `𝓑₃`) and the relative-interior finding concern the feasible
+geometry and are untouched by re-posing the program. That the gate is *wrong* —
+only that its justification is disproved and its type is inconsistent with either
+program. That any number changes: per S6 the mass coefficients come from the
+chirality/writhe/ribbon route in closed form.
