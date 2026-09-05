@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T14:57:07Z
-updated_at: 2026-09-05T18:05:22Z
+updated_at: 2026-09-05T18:19:41Z
 ---
 
 
@@ -328,3 +328,59 @@ AGENTS.md already catalogues, one level up.
   `Hoefsmit` (2), `HeckeAlgebra/MarkovTrace` (2), `Hecke/MarkovTrace` (1),
   `Formal` (1), `ParallelogramContour` (1), `SDP` (1), `SDPRankEquality` (1),
   `SDPRealUniqueness` (1).
+
+
+## 🛑 CORRECTION to my own "one-off" claim — a SECOND vacuity, in `IwahoriHeckeAPI`
+
+I recorded above that the `aeon_recycling` shape is *"a one-off, not a class"*
+after three detectors found nothing. **Wrong, and scoped too narrowly.** The
+three `IwahoriHeckeAPI` axioms — the best-cited in the corpus (Murphy 1981,
+Dipper–James 1986) — constrained an API that was **provably collapsed**.
+
+    noncomputable def centralIdempotent (H : _) (_lam : List ℕ) : H.carrier :=
+      Classical.ofNonempty
+
+The index is **discarded**, so a `def` is definitionally constant in it and
+`centralIdempotent H [1]` IS `centralIdempotent H [2]`. With
+`centralIdempotent_orthogonal_axiom`: `e*e = e` (λ=μ) and `e*e = 0` (λ≠μ, same
+term) ⟹ **`e = 0`**. Machine-checked before the fix — the derivation compiled
+on exactly `[propext, Classical.choice, centralIdempotent_orthogonal_axiom]`.
+The other two axioms then held trivially (`0` commutes; `star 0 = 0`), so the
+whole idempotent API asserted nothing.
+
+**Not an inconsistency**, checked rather than assumed:
+`wedderburn_decomposition_generic` quantifies EXISTENTIALLY over a fresh `e`
+and never plugs in `centralIdempotent`, so its `(parts.map e).sum = 1` never
+meets the zero. No external consumers either.
+
+Fixed: both placeholders (`centralIdempotent`, `jucysMurphy`) are now `opaque`,
+which their docstrings always said they were. Verified the collapse is gone —
+the derivation now fails *"not definitionally equal"*.
+
+**Why the earlier detectors could not see it:** the axiom's statement DOES
+mention `lam` on both sides. The vacuity is in the DEFINITION, not the axiom.
+So the negative result should have read "no other axiom has `aeon_recycling`'s
+shape", not "the shape is a one-off". Two shapes, both invisible to scanning
+axiom text.
+
+## A detector that actually works — shipped
+
+[`scripts/lean-constant-def-under-axiom-audit.py`](scripts/lean-constant-def-under-axiom-audit.py)
+flags the CONJUNCTION: a `def` that discards an argument, has a constant body,
+**and is constrained by an axiom**. Carries a `--selftest` and refuses to
+report a clean tree if the self-test fails.
+
+None of the three parts is a signal alone, which is why the earlier attempts
+failed:
+
+- **Constant body is usually CORRECT.** 24 such defs are live.
+  `dimqPartition3 _q := 1` is right — `dim_q([3]) = [3]_q!/([3]_q[2]_q[1]_q)`
+  really is q-independent. `ySign _q := 0` is right — a Schur polynomial in two
+  variables vanishes on a three-row partition, which IS convention D. Both
+  carry docstrings deriving exactly that.
+- **An axiom over a placeholder** is the ordinary Mathlib-gap pattern.
+
+Validated: on the pre-fix tree it flags `centralIdempotent` under all three
+axioms; on the live tree, **0**. This is the first detector this session that
+both self-tests positive AND reports a meaningful zero — the previous four
+shapes each produced only false positives.
