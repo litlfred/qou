@@ -32,8 +32,16 @@ read-the-construction-not-the-object error `qou-hu1f` already records twice —
 third instance, same bean, and this time it had been passing for a day. Both
 checks are now measurements.
 
-ORIGINAL FRAMING (retained for context)
----------------------------------------
+ORIGINAL FRAMING (historical — items 3-5 no longer describe the live code)
+---------------------------------------------------------------------------
+Read the block below as a record of what was believed, not as documentation.
+Item 3's word listings and item 5's "uses the GROUPED one" were true of
+`atom_braid_word_3A` before the 2026-09-05 owner ruling and are false now; item
+3's "same 11-letter multiset" was never true, because the NF route carries `Z`
+electron letters the canonical word does not. **Do not quote these figures.**
+The checks this file actually runs are the ones printed at the bottom.
+
+
 `qou-hu1f` measured that at hydrogen (A=1) the NF route's Markov trace and
 the canonical `tr_M_atom` differ by **5.045e-4**, and named the decisive
 next test: run the 2026-05-19 `TR_M[5]` audit's own per-basis-element check
@@ -262,7 +270,14 @@ def main() -> int:
     # 5 -- which word is the Borromean braid? (Lean-proved closed form)
     closed = (4 + h**2 - 3*h**4 - h**6) / (h**2 + 4)
     one, zero = mp.mpf(1), mp.mpf(0)
+    # word-literal-ok: the two candidate CONFINEMENT CORES, written from first
+    # principles -- `(s0 s1^-1)^3` is the definition of the Borromean braid word
+    # and `s0^3 s1^-3` its grouped rearrangement. Neither is transcribed from a
+    # producer; they are the objects the producers are being compared AGAINST,
+    # and the comparison is to the Lean closed form two lines below.
     inter = [(one, zero, 0), (one, -h, 1)] * 3
+    # word-literal-ok: as above -- the grouped rearrangement of the same six
+    # letters, written from first principles, not read off any producer.
     group = [(one, zero, 0)] * 3 + [(one, -h, 1)] * 3
     t_i, t_g = abs(_trM(inter, y3, cache)), abs(_trM(group, y3, cache))
     rel_i = abs(t_i - abs(closed)) / abs(closed)

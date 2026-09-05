@@ -173,6 +173,23 @@ GATES=(
   #     proton re-pin arc (#5386). Editing it steps on a sibling mid-flight.
   # Drain owners: bean qou-6ort (the dps defect) and the qbeta re-pin arc.
   "witness failed-assertion ratchet|computations/witness_failed_assertion_audit.py|--strict|yes|no"
+  # ADVISORY, red on arrival at 20 — same terms as the entry above, and
+  # deliberately NOT blocking here because the blocking enforcement is
+  # diff-scoped in `.github/workflows/word-provenance-gate.yml`. This entry
+  # exists to keep the backlog visible, not to stop a PR.
+  #
+  # It asks the question no other gate asks: is this hardcoded braid word what
+  # the producer actually emits, or did someone read the producer's source?
+  # Three instances in two days on bean `qou-hu1f`; the third was green in CI
+  # for a day and is why the 5.045e-4 A=1 residual was mis-attributed to the
+  # word ordering when it was ordering and electron nearly cancelling.
+  #
+  # The 20 are essentially all legitimate first-principles constructions
+  # (`(s0 s1^-1)^3` and friends) needing a one-line `# word-literal-ok:`
+  # annotation. They are NOT bulk-annotatable by a passing agent: writing
+  # "trustworthy because ..." for a file you have not read is the same defect
+  # the gate catches. Drain per file, by whoever owns it.
+  "hardcoded braid word|scripts/word-provenance-gate.py|--strict|yes|no"
   # Blocking, and GREEN as of the commit that added it (0 candidates across
   # 273 numpy-importing files) — which is exactly when a gate is safe to make
   # blocking, because it can then only ever fire on a NEW regression.
