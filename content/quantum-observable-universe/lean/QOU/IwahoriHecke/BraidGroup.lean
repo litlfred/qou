@@ -8,9 +8,16 @@ Everything in this arc so far has been about `H(M, q²)` and its matrix represen
 object the Jones polynomial is actually a function *of* is a **braid**, and there has been no
 braid group anywhere to speak of.
 
-**Mathlib has none.** `Mathlib/GroupTheory/` contains `PresentedGroup.lean` and no `Braid*`
-file at all, so this is built from the presentation, exactly as the Hecke algebra was built from
-its own.
+**Mathlib has none.** Measured at the pinned revision (`f897ebcf72`, a full 6996-file checkout,
+not a partial one): `grep -rl "BraidGroup" Mathlib/` returns **nothing**, and the only
+`*braid*` files in the whole tree are `CategoryTheory/Monoidal/Braided`,
+`GradedObject/Braiding.lean` and `Rigid/Braided.lean` — *braided monoidal categories*, which
+are a different object and supply no `B_n`. So this is built from the presentation, exactly as
+the Hecke algebra was built from its own.
+
+(The revision and file count are stated because a sibling branch had to retract a
+"Mathlib has no Bruhat order" claim that turned out to be measuring its own incomplete
+checkout. This one was re-measured against the pin for that reason.)
 
 ## What is here
 
