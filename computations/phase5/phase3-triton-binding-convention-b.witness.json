@@ -1,16 +1,17 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-02T21:59:40.075029+00:00",
-  "commitSha": "9c68f144dc9c850e9b9851fbc813a282561ddbee",
+  "computedAt": "2026-09-05T05:54:45.783248+00:00",
+  "commitSha": "aaebee29d331cabb635680d16e85a6850254f7d1",
   "assertions": [],
   "allPassed": true,
+  "allPassedBasis": "vacuous",
   "durationMs": 0,
   "durationMsBaseline": "builder-construction",
   "computation": "phase3-triton-binding-convention-b",
   "scriptFile": "phase3_triton_binding_convention_b.py",
-  "scriptHash": "7de8b116cb78",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptHash": "1c3706d93082",
+  "scriptCommitSha": "99e70142abf395df8c29e66776cb5bee7742fea6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,7 +55,7 @@
   },
   "owner_directive_2026_05_10": "do workplans 2 phase 2 / Phase 3; no fitting/guessing; all should be derived",
   "data": {
-    "E_0_MeV": 0.78233340931,
+    "E_0_MeV": "0.78233340931",
     "E_0_source": "hecke_core.E_0_CALIBRATION_MEV = Q_β CODATA",
     "rows": [
       {
@@ -64,12 +65,12 @@
         "A": 2,
         "hecke_level": "H_6",
         "trace_kind": "canonical_jones_markov",
-        "E_0_MeV": 0.78233340931,
-        "B_pred_MeV": 0.43540348160748027,
-        "B_ame_MeV": 2.22456612,
-        "residual_pct": -80.42748751349858,
-        "residual_keV": -1789.1626383925197,
-        "compute_time_s": 0.4710564613342285
+        "E_0_MeV": "0.78233340931",
+        "B_pred_MeV": "0.43540348160748030977470068316244466786245086176356",
+        "B_ame_MeV": "2.22456612",
+        "residual_pct": "-80.42748751349857338586543414756111327172190944976",
+        "residual_keV": "-1789.1626383925196902252993168375553321375491382364",
+        "compute_time_s": "0.308"
       },
       {
         "atom": "T",
@@ -78,12 +79,12 @@
         "A": 3,
         "hecke_level": "H_9",
         "trace_kind": "canonical_jones_markov",
-        "E_0_MeV": 0.78233340931,
-        "B_pred_MeV": 0.695131497432181,
-        "B_ame_MeV": 8.481798,
-        "residual_pct": -91.80443229805543,
-        "residual_keV": -7786.6665025678185,
-        "compute_time_s": 0.026847124099731445
+        "E_0_MeV": "0.78233340931",
+        "B_pred_MeV": "0.69513149743218101753227305090962387222840475219654",
+        "B_ame_MeV": "8.481798",
+        "residual_pct": "-91.804432298055423890874634707055934694172099451124",
+        "residual_keV": "-7786.6665025678189824677269490903761277715952478035",
+        "compute_time_s": "0.026"
       },
       {
         "atom": "3He",
@@ -92,12 +93,12 @@
         "A": 3,
         "hecke_level": "H_9",
         "trace_kind": "canonical_jones_markov",
-        "E_0_MeV": 0.78233340931,
-        "B_pred_MeV": 0.6985522099897444,
-        "B_ame_MeV": 7.7181,
-        "residual_pct": -90.94916870745722,
-        "residual_keV": -7019.547790010256,
-        "compute_time_s": 0.022121191024780273
+        "E_0_MeV": "0.78233340931",
+        "B_pred_MeV": "0.69855220998974442773988255073346430388636803044895",
+        "B_ame_MeV": "7.7181",
+        "residual_pct": "-90.949168707457218386132823483325374070219768719647",
+        "residual_keV": "-7019.5477900102555722601174492665356961136319695511",
+        "compute_time_s": "0.022"
       },
       {
         "atom": "4He",
@@ -106,12 +107,12 @@
         "A": 4,
         "hecke_level": "H_12",
         "trace_kind": "canonical_jones_markov",
-        "E_0_MeV": 0.78233340931,
-        "B_pred_MeV": 0.8760639975074899,
-        "B_ame_MeV": 28.29567,
-        "residual_pct": -96.9038937847823,
-        "residual_keV": -27419.60600249251,
-        "compute_time_s": 0.10437130928039551
+        "E_0_MeV": "0.78233340931",
+        "B_pred_MeV": "0.8760639975074899192848739483166983600297769331294",
+        "B_ame_MeV": "28.29567",
+        "residual_pct": "-96.90389378478230089874219642681477992912068548605",
+        "residual_keV": "-27419.606002492510080715126051683301639970223066871",
+        "compute_time_s": "0.108"
       }
     ]
   }

@@ -181,14 +181,48 @@ def f2_inv_minus_1(t):
     return 1 / t - 1
 
 
+class OutOfDomain(ValueError):
+    """A candidate is UNDEFINED at this `t`, as opposed to failing to compute.
+
+    Kept distinct from a bare exception because the witness treats the two
+    differently (bean `qou-qe81`): an "<SomeError>: <message>" value is the
+    shape a producer writes when it swallowed its own breakage and published
+    green anyway, and the error-row gate demotes the whole witness for it. A
+    candidate that is genuinely undefined at a point is a RESULT, and recording
+    it as an exception both loses that and drags the verdict red for no reason.
+    """
+
+
 def f3_log_phi_q_full(t):
     """C3:  f₃(t) = log Φ_q^{(∞)}(t)  where Φ_q is the full compact-q-dilog
     quantum dilogarithm (infinite product form).  Numerically:
 
         Φ_q^{(∞)}(t) = Σ_{n≥0} t^n / (q;q)_n
 
-    Truncated at n_max = 60 (sufficient at q_0 ≈ 1.11; per-term ratio
-    ≈ t·q^n / (1−q^{n+1}) decays fast enough by n=60).
+    Truncated at n_max = 60. The terms do decay fast at q_0 ≈ 1.11 — with
+    q > 1 the Pochhammer (q;q)_n = Π_{k≤n}(1−q^k) grows like q^{n(n+1)/2}, so
+    t^n/(q;q)_n falls off super-exponentially — but truncation is NOT what
+    limits this candidate, and the previous wording ("sufficient at q_0")
+    implied it was.
+
+    Φ_q^{(∞)} VANISHES IDENTICALLY at t = q for q > 1 (bean `qou-qe81`).
+    By Euler, Σ_{n≥0} t^n/(q;q)_n = 1/(t;q)_∞, so at t = q the sum is
+    1/(q;q)_∞ — and for |q| > 1 the product (q;q)_∞ = Π_{k≥1}(1−q^k) diverges
+    in magnitude, making its reciprocal exactly 0.
+
+    Measured, which is how this was settled rather than argued: the truncated
+    sum tracks the working precision exactly and its sign is arbitrary —
+
+        dps  50   +8.25e-49        dps 200   +4.33e-199
+        dps  70   −4.66e-70        dps 400   +1.12e-398
+        dps 120   +3.90e-119
+
+    i.e. it is zero to whatever precision it is asked for, with round-off in
+    the last digit deciding the sign. So log Φ_q^{(∞)}(q_0) = log 0 = −∞.
+
+    That is a correct evaluation of a candidate that is simply inapplicable
+    here, not a computation that failed, and it is raised as `OutOfDomain` so
+    the caller can record it as such.
     """
     q = Q0
     total = mp.mpf(0)
@@ -202,7 +236,11 @@ def f3_log_phi_q_full(t):
             break
         total += t_n / qq_n
     if total <= 0:
-        return mp.nan
+        raise OutOfDomain(
+            f"log Phi_q^(inf)(t) is undefined at t={mp.nstr(t, 12)}: the "
+            f"series sums to {mp.nstr(total, 6)}, which is zero to the working "
+            f"precision (the residue tracks dps and its sign is round-off). "
+            f"Phi_q^(inf)(q) = 1/(q;q)_inf = 0 for q > 1, so the log is -inf.")
     return mp.log(total)
 
 
@@ -286,33 +324,60 @@ def main() -> int:
                         factor_no_E0 = mp.nan
                     else:
                         factor_no_E0 = anchor_val / fval
+                    # `fmt`, not `float()` (bean `qou-qe81`, NO-FLOAT64). Every
+                    # one of these is an mpf computed at compute precision;
+                    # `float()` put 218 raw float64 fields into this witness,
+                    # which the corpus's own gate names. `factor_to_match_Delta`
+                    # is the one the analysis below reads, via `mp.mpf(f)` —
+                    # that parses a decimal string, and `mp.mpf("nan")` stays
+                    # non-finite, so the `isfinite` skip still works.
                     row = {
                         "anchor": anchor_name,
                         "anchor_formula": formula,
-                        "anchor_MeV": float(anchor_val),
+                        "anchor_MeV": fmt(anchor_val),
                         "candidate": cand_name,
                         "candidate_human": label_human,
                         "t_name": t_name,
-                        "t_value": float(t_val),
-                        "f_at_t": float(fval),
-                        "E0_times_f_MeV": float(pred_MeV),
-                        "factor_to_match_Delta": float(factor),
-                        "factor_no_E0_prefactor": float(factor_no_E0),
+                        "t_value": fmt(t_val),
+                        "f_at_t": fmt(fval),
+                        "E0_times_f_MeV": fmt(pred_MeV),
+                        "factor_to_match_Delta": fmt(factor),
+                        "factor_no_E0_prefactor": fmt(factor_no_E0),
                     }
                     rows.append(row)
                     print(f"  {cand_name:<22} @ t={t_name:<12} "
                           f"f={float(fval):+.4e}  "
                           f"E0·f={float(pred_MeV):+9.4f} MeV  "
                           f"need×{float(factor):+8.4f}")
+                except OutOfDomain as exc:
+                    # A RESULT, not a failure (bean `qou-qe81`): this candidate
+                    # is undefined at this t for a structural reason, which is
+                    # itself the finding. Recorded under `undefined_at_t`, not
+                    # `error`, so the error-row gate does not demote a witness
+                    # for correctly reporting where a function does not exist.
+                    # Downstream reads only `factor_to_match_Delta`, and skips
+                    # a row that has none, so the shape is safe.
+                    row = {
+                        "anchor": anchor_name,
+                        "anchor_formula": formula,
+                        "anchor_MeV": fmt(anchor_val),
+                        "candidate": cand_name,
+                        "candidate_human": label_human,
+                        "t_name": t_name,
+                        "t_value": fmt(t_val),
+                        "undefined_at_t": str(exc),
+                    }
+                    rows.append(row)
+                    print(f"  {cand_name:<22} @ t={t_name:<12} UNDEFINED: {exc}")
                 except Exception as exc:  # noqa: BLE001
                     row = {
                         "anchor": anchor_name,
                         "anchor_formula": formula,
-                        "anchor_MeV": float(anchor_val),
+                        "anchor_MeV": fmt(anchor_val),
                         "candidate": cand_name,
                         "candidate_human": label_human,
                         "t_name": t_name,
-                        "t_value": float(t_val),
+                        "t_value": fmt(t_val),
                         "error": f"{type(exc).__name__}: {exc}",
                     }
                     rows.append(row)
@@ -336,9 +401,19 @@ def main() -> int:
         for s in SIMPLE:
             gap = abs(mp.mpf(f) - s) / s
             if gap < mp.mpf("0.05"):  # within 5%
-                promising.append((r, float(s), float(gap)))
+                # `fmt`, not `float()` (bean `qou-qe81`, NO-FLOAT64): these two
+                # ride into the witness as `near_value` / `fractional_gap` and
+                # were the last 8 raw float64 fields it carried. `s` is an exact
+                # small rational as mpf and `gap` a computed relative distance;
+                # both are printed via their own `float()` below, which is
+                # presentation and stays.
+                promising.append((r, fmt(s), fmt(gap)))
+                # `mp.mpf(f)`, not `f`: the rows are `fmt`-serialised now, so
+                # the factor is a decimal STRING and a str has no `:+.4f`.
+                # Formatting the parsed value keeps the display identical
+                # without putting a float back into the row.
                 print(f"  ✓ {r['anchor']:<22} {r['candidate']} @ {r['t_name']}: "
-                      f"factor ≈ {f:+.4f}, near {float(s):.4f} "
+                      f"factor ≈ {float(mp.mpf(f)):+.4f}, near {float(s):.4f} "
                       f"(gap {float(gap)*100:.2f}%)")
 
     # Cross-anchor consistency: which (candidate, t) pairs land near a
