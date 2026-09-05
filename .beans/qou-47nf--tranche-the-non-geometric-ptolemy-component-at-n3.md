@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:45Z
-updated_at: 2026-09-05T12:25:14Z
+updated_at: 2026-09-05T15:53:13Z
 ---
 
 OPENED 2026-09-05. Route E's ONE surviving branch, now a named held construction
@@ -581,3 +581,65 @@ but one manifold with two classes is not evidence for a general claim.
 The check across m003/m004/m009/m015 died in sympy on m003's class 0 inside 280 s
 and produced only a header. UNTESTED, not supported. Re-run it with msolve now
 that msolve exists.
+
+
+## 2026-09-05 (later) — the FKR port WORKED as a reduction; the question is still open
+
+### (xxvi) What was worth porting from FKR was NOT the coordinates
+
+Falbel-Koseleff-Rouillier, arXiv:1307.6697v2 section 6.1. Their cross-ratio/flag
+coordinates run 12n variables reduced to 4n. For L6a4 (n = 8) that is **32** — WORSE
+than the 26 SnapPy already gives in Ptolemy coordinates. Porting their coordinate
+system would have cost hours and lost ground. Do not do it.
+
+Their SECOND pre-processing step is the valuable one, and it is coordinate-independent:
+whenever an equation is affine in a variable, A*z + B, with A a UNIT on the constructible
+set, substitute z = -B/A and drop the equation. In Ptolemy coordinates the units come
+free from the non-zero condition (snappy appends (monomial)*t - 1; every variable in that
+monomial is invertible).
+
+### (xxvii) MEASURED — the reduction, exact throughout (sympy over Q)
+
+  4_1 c0     raw      7 vars / 9 eqs / maxdeg 7
+             const-A  4 vars / 6 eqs / maxdeg 13
+             unit-A   3 vars / 5 eqs / maxdeg 15
+  L6a4 c1    raw     28 vars / 34 eqs / maxdeg 27
+             unit-A  12 vars / 18 eqs / maxdeg 12   (16 elim, 48.5 s)
+  L6a4 c2    unit-A  11 vars / 17 eqs / maxdeg 12   (17 elim, 187.2 s)
+  L6a4 c3    unit-A  13 vars / 19 eqs / maxdeg 12   (15 elim, 89.3 s)
+
+CORRECTNESS CHECKED, NOT ASSUMED: both reduced 4_1 systems give dim 0 and a proper ideal
+under Singular std, consistent with 4_1's known 6 solutions in class 0. No solutions are
+lost because A is a unit.
+
+**FKR's degree warning is not a law.** On 4_1 the degree ROSE 7 -> 15, as they warn. On
+L6a4 it FELL 27 -> 12. Measure per manifold; do not assume either direction.
+
+### (xxviii) The memory contrast is the evidence the reduction is real
+
+Same question, same class, same prime:
+  UNREDUCED c1 mod 32003   9.1 GB after 20 min, no answer (killed)
+  REDUCED   c1 mod 32003   ~292 MB, still running
+
+~30x less memory. The nine earlier failures were all handed the unreduced system.
+
+### (xxix) STILL OPEN — a smaller system is not a solved one
+
+No Groebner basis has returned. Eight runs in flight (std / slimgb / msolve RUR, classes
+1-3, over Q and mod 32003). It remains entirely possible that 12 vars at degree 12 is
+still out of reach in this container, in which case the port is a real improvement that
+does NOT close the problem.
+
+**SCOPE, load-bearing:** FKR's abstract limits their worked results to manifolds glued
+from FEWER THAN THREE tetrahedra. 4_1 is 2; L6a4 is 8. This is an extrapolation four
+times past their largest example — which is why the 4_1 calibration exists and why a
+positive result here would need its own check.
+
+### (xxx) Why non-emptiness suffices — recap
+
+By the obstruction argument (arithmetic core lean-verified, exit 0), a representation in
+a NON-TRIVIAL obstruction class cannot be self-dual. So a single point of the Ptolemy
+variety in any of classes 1-13 is automatically complex type. The question is "is the
+ideal proper", not "decompose the variety".
+
+Ptolemy database host still returns 000; the allowlist has not taken effect.
