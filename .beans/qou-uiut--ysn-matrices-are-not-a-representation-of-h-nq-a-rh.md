@@ -1127,3 +1127,58 @@ have actually run once.
 - [x] Measure warm/cold coverage on a mid-size atom. 98 % at li6.
 - [x] Decide whether to memoise the SDP/LP term. NO — 2 % of the atom at A = 6.
       Revisit only if a heavy atom's profile says otherwise.
+
+### 2026-09-05 — the "-7.27110212 vs -7.27110259" lead was an ANCHOR mismatch
+
+I flagged, at the end of the memo work, that `binding_energy(1,1)` gave
+`-7.27110212487674444…` standalone but `-7.27110259868218217…` inside the
+table, and noted the standalone value matched this bean's bisect baseline
+exactly. Chased it. **Not a defect — the two runs were at different q₀
+anchors**, and the matching baseline was the coincidence that made it look
+like one.
+
+`computations/substrate/q_parameter.py:100` selects the anchor from the
+environment, and when `QOU_Q0_ANCHOR` is unset it AUTO-DETECTS from the
+process's own name:
+
+    _stem = Path(sys.argv[0]).stem
+    if _stem in manifest["ideal_muon"]:
+        _anchor = "ideal"
+
+`hadron_knot_table` is one of the 19 entries in `q0_anchor_manifest.json`'s
+`ideal_muon` list. So:
+
+    run as `python3 hadron_knot_table.py`   -> stem "hadron_knot_table" -> MUON
+    run as `python3 -c "..."`               -> stem "-c"                -> PROTON
+
+Reproduced directly — same call, anchor forced:
+
+    QOU_Q0_ANCHOR=muon  ->  q0 = 1.1099785956427
+                            B(1,1) = -7.27110259868218217191550436683
+                                     ... exactly the table's value
+
+Both numbers are correct; they are answers to different questions.
+
+**The hazard, which is the reusable part.** A probe invoked as `python3 -c` or
+`python3 -m` silently computes at a DIFFERENT ANCHOR from the producer it is
+meant to be checking, and nothing warns. Every ad-hoc comparison against a
+manifest-listed producer must set `QOU_Q0_ANCHOR` explicitly, or it is
+comparing two different physical pins and calling the difference a code change.
+That is exactly the shape of error this bean already recorded twice — the
+`-h/2` convention inside a "precision mirror" (`qou-ejuy`), and the vendored
+qou-mass drift (`qou-qe81`).
+
+**What this does and does not resolve.** It disposes of the lead I raised, and
+nothing more. This bean's earlier bisect
+
+    baseline / braid REVERTED     -7.271102124876744
+    dps floor DISABLED / BOTH     -7.271102124876695
+
+was internally consistent — every row is a proton-anchor standalone run — so
+its conclusion stands: the braid fix and the dps floor are both inert for
+deuterium. The still-open item is the much larger **+2.2213 -> -7.2711** shift,
+a sign change that no anchor difference explains, and that remains open.
+
+- [ ] When the bisect resumes, pin `QOU_Q0_ANCHOR` explicitly on EVERY point,
+      including the "current HEAD" baseline. The previous run happened to be
+      uniformly proton by accident of invocation, not by design.
