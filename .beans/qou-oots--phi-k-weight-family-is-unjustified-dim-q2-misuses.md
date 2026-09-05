@@ -360,12 +360,33 @@ WORSE than that arm's own baseline. The paper's structural 6_1 naming is
 untouched either way: it comes from the GB-filtration route, which carries no
 weight family (qou-9b50), and the verdict string now says so.
 
-**Blast radius, measured (option C):** 4 of 36 live `w_lambda`-referencing
-files, two of which are comparison harnesses. `w_lambda` is a NAME shared by
-different objects; counting the name was the wrong measurement. The one real
-non-harness consumer besides the k=3 test is
-`beta_ew_delta_I_321_and_wedderburn.py`, whose six candidates are same-n ratios
-— invariant under dim_q^2/[n]_q! -> dim_q^2/D^2, NOT invariant under Molien.
+**Blast radius, measured (option C):** ~~4 of 36~~ **11 of 37** live
+`w_lambda`-referencing files. `w_lambda` is a NAME shared by different objects;
+counting the name was the wrong measurement — but so was my replacement for it.
+
+**SUPERSEDED 2026-09-05 (PR #6840).** The 4 was an undercount by a factor of
+~2.75, and the sentence it supported — "the one real non-harness consumer
+besides the k=3 test is `beta_ew_delta_I_321_and_wedderburn.py`" — is FALSE.
+Seven files build `dim_q(...)^2 / q_factorial(...)` and NONE was visible to the
+regex, which required the literal token `dim_q`/`d_q` immediately followed by
+`**`. The seven spellings that defeated it: `dim_q_num(...)`, `q_dimension(...)`,
+`_q_dimension(...)`, `d_q_lam`, `dq[l]`, a single-letter `d`, and — the one that
+matters — `dim_q(part) ** 2`, i.e. a CALL to `dim_q` itself, since `dim_?q\w*`
+cannot cross a `(`. The detector could only ever match a VARIABLE named dim_q,
+never a call to the function it is named after.
+
+Repaired by resolving each operand back through the file's assignments to the
+FUNCTION that produced it (`cached_accessor_shape_audit.py` precedent); both
+passes retained, buckets are their union, `--selftest` pins the known miss.
+
+**Three of the seven are on the alpha_EM axis** — `alpha_5_jucys_murphy_central`,
+`alpha_em_b2_scalar_c_probe`, `alpha_em_b2_canonical_scale_ratio_probe` — an
+axis the 4-of-36 figure hid completely. Whether the Molien ruling moves a
+physics-facing number there is NOT triaged.
+
+The claim about `beta_ew_delta_I_321_and_wedderburn.py` itself still stands: its
+six candidates are same-n ratios — invariant under dim_q^2/[n]_q! ->
+dim_q^2/D^2, NOT invariant under Molien.
 
 **Four errors of mine on this bean, all caught by tooling not by me:** scaling
 law tested inverted; `(f^lam)^a d_q^b` predicted to normalise at (1,1) when it
