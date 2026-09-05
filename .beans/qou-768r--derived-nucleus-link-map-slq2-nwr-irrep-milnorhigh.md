@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-05T19:08:51Z
+updated_at: 2026-09-05T19:36:10Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -762,3 +762,51 @@ reimplementation could do by sharing an assumption.
 every file of the chain, and measured 414/414.
 
 Both sibling docstrings corrected in place.
+
+
+## 2026-09-05 — CORRECTION to my own framing: the canonical word is NOT monotone
+
+Found while starting `qou-brng`. **No merged number is wrong; one framing claim is.**
+
+**What happened.** `7db032fb48` (today **07:53Z**, `qou-hu1f`) changed
+`atom_canonical_crossings`' default `intra_order` from `grouped` to `borromean`, so each
+nucleon's confinement core is the alternating `(σ₀σ₁⁻¹)³` and each generator's letters are
+**interleaved**. Measured on the current default:
+
+    2H   23 letters, 19 runs over 5 generators   one_run_per_gen=False  ascending=False
+    4He  47 letters, 39 runs over 11 generators  one_run_per_gen=False  ascending=False
+
+Under `grouped` both are monotone (5 runs / 5 gens, 11 / 11, ascending).
+
+**So "the derived carrier is a monotone closure" is FALSE for the current default word**,
+and I used that sentence to carry the Lean theorems onto the carrier. The theorems are
+about monotone words and are unaffected; what fails is the *application* to the canonical
+word as it now stands.
+
+**What is NOT affected — measured, both conventions, 14 branch-isotope pairs:**
+
+    grouped    triples 848  SEP 786  CHAIN 62  nonzero mubar 0  path linking 14/14
+    borromean  triples 848  SEP 786  CHAIN 62  nonzero mubar 0  path linking 14/14
+
+Identical. Every carrier figure in #6560/#6634/#6679/#6726/#6775/#6858/#6872 stands, and
+the `Δ`-classification and chain/separable split are unchanged.
+
+**Prediction E is passing for a reason other than the one its docstring gives.**
+`monotone_word_cycle_structure_probe.py` calls E the validation that `posAfter`/`compIdx`
+model *a monotone closure*. The carrier is not monotone, yet `perm == pi` on **14/14**
+carrier words. That is not luck — on random *non-monotone* words the same test agrees on
+only **22/400 (5.5 %)**. So E is measuring something real about the carrier and mislabels
+what.
+
+**Hypothesis (not established):** the Borromean core contributes an *even* number of
+letters per generator within each nucleon, so per-generator parity — which is what the
+permutation depends on here — is unchanged, leaving components and linking identical while
+destroying contiguity. That would explain both the identical table and the 14/14.
+
+**What this costs.** The chain "proved end to end from the braid word" reaches *monotone*
+words; the canonical word is currently outside it, with its structural consequences intact
+by measurement rather than by the theorem. The honest statement is weaker than the one I
+made this afternoon, and the fix is either to prove the parity hypothesis above (which
+would restore the application) or to scope every carrier sentence to "the grouped word".
+
+Not fixed here — measured and recorded. Follow-up before any further carrier claim.
