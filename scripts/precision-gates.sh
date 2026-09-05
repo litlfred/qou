@@ -76,6 +76,24 @@ GATES=(
   "mp.dps no-op|computations/mpf_context_dps_audit.py|--strict|yes|yes"
   "module-const precision|computations/module_const_precision_audit.py|--strict|yes|yes"
   "raw-float64 ratchet|computations/witness_raw_float64_audit.py|--strict|yes|yes"
+  # The value-CORRECTNESS gate, as opposed to the value-CARRIAGE gates above.
+  # Every other member of this family asks how a number is carried and
+  # serialized; none asks whether it was RIGHT WHEN TYPED. A hand-copied
+  # CODATA or AME2020 constant that is a short prefix of -- or worse, quietly
+  # disagrees with -- the registry it came from passes all of them, and
+  # wrapping it in mpf() to clear the float64 gate preserves the error while
+  # reading as a fix.
+  #
+  # It was written 2026-08-10 (PR #4960, bean qou-46ke), worked from the start,
+  # and was in NO array -- not here, not in .github/ -- so nothing ran it for
+  # three weeks. That is verbatim the qou-j6gb lesson recorded at the head of
+  # this file, repeated on the very next gate: "a gate outside this array is a
+  # gate nobody runs."
+  #
+  # Ratchet, not --strict: the backlog is 970 findings across ~500 files
+  # (qou-psjm), so a blocking --strict would be red on arrival and get
+  # skipped. --baseline blocks every NEW arrival. The baseline DRAINS.
+  "reference-literal ratchet|computations/codata_truncation_audit.py|--baseline|yes|yes"
   # The OTHER HALF of the ratchet above, split from it on 2026-08-24 (bean
   # qou-xt5l). The ratchet asks "did a value lose digits a double cannot
   # hold?"; an integral float answers no, because integers are exact in

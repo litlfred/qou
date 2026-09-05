@@ -68,23 +68,80 @@ from pathlib import Path
 from codata_constants import (  # noqa: E402
     M_E_MEV, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION, M_MU_MEV_VALIDATION,
     M_PI_PM_MEV_VALIDATION, U_MEV,
+    AME_B_DEUTERON_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI5_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION,
+    AME_B_LI7_MEV_VALIDATION,
 )
-from q_parameter import Q_MP  # noqa: E402
+from q_parameter import Q_MP, Q_MUON_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 
+
+def _canon_str(v) -> str:
+    """Full-precision decimal for a registry constant.
+
+    ``str(mpf)`` renders at the AMBIENT ``mp.dps``, which is mpmath's default
+    **15** when this module is imported -- nothing here calls
+    ``set_compute_dps()``, and importing ``_precision`` does not raise it.
+    So ``_canon_str(Q_MP)`` returned ``1.10997858275138``: the canonical q0 truncated
+    to 15 of its 50 digits.
+
+    That is this audit's own defect class, in this audit. The consequence was
+    not cosmetic -- ``classify()`` asks ``canon.startswith(lit)``, so against a
+    15-digit canonical every q0 literal LONGER than 15 digits failed the prefix
+    test and was reported clean. The literals most likely to be hand-copied are
+    exactly the long ones.
+
+    ``strip_zeros`` keeps a short constant (m_e is 11 published digits) from
+    being padded out to 50 digits of binary noise.
+    """
+    from mpmath import mp as _mp
+    with _mp.workdps(60):
+        return _mp.nstr(v, 50, strip_zeros=True)
+
 # name -> (canonical value read from the registry, the constant to use instead)
 CANON: dict[str, tuple[str, str]] = {
-    "m_e":   (str(M_E_MEV), "codata_constants.M_E_MEV"),
-    "m_p":   (str(M_P_MEV_VALIDATION), "codata_constants.M_P_MEV_VALIDATION"),
-    "m_n":   (str(M_N_MEV_VALIDATION), "codata_constants.M_N_MEV_VALIDATION"),
-    "m_mu":  (str(M_MU_MEV_VALIDATION), "codata_constants.M_MU_MEV_VALIDATION"),
-    "m_pi":  (str(M_PI_PM_MEV_VALIDATION),
+    "m_e":   (_canon_str(M_E_MEV), "codata_constants.M_E_MEV"),
+    "m_p":   (_canon_str(M_P_MEV_VALIDATION), "codata_constants.M_P_MEV_VALIDATION"),
+    "m_n":   (_canon_str(M_N_MEV_VALIDATION), "codata_constants.M_N_MEV_VALIDATION"),
+    "m_mu":  (_canon_str(M_MU_MEV_VALIDATION), "codata_constants.M_MU_MEV_VALIDATION"),
+    "m_pi":  (_canon_str(M_PI_PM_MEV_VALIDATION),
               "codata_constants.M_PI_PM_MEV_VALIDATION"),
-    "u_MeV": (str(U_MEV), "codata_constants.U_MEV"),
-    "q0":    (str(Q_MP), "q_parameter.Q_MP"),
+    "u_MeV": (_canon_str(U_MEV), "codata_constants.U_MEV"),
+    "q0":    (_canon_str(Q_MP), "q_parameter.Q_MP"),
+    # The MUON pin is a second legitimate anchor, not a botched proton one.
+    # It sits 11.6 ppb from q0 -- inside DIVERGENT_REL_TOL -- so without its
+    # own CANON row every correct muon-pinned literal was reported WRONG.
+    # 78 such occurrences on main. classify() picks the NEAREST canonical, so
+    # a muon literal now resolves against the muon anchor.
+    "q0_muon": (Q_MUON_50_DIGIT_STR, "q_parameter.Q_MUON_50_DIGIT_STR"),
+    # AME2020 binding energies. The registry reads these from
+    # qou-mass/src/qou_mass/data/ame2020.json at run time; a script that types
+    # them instead is the same defect one dataset over, and was invisible here
+    # until 2026-09-05 because CANON held CODATA only.
+    "B_2H":  (_canon_str(AME_B_DEUTERON_MEV_VALIDATION),
+              "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"),
+    "B_3H":  (_canon_str(AME_B_TRITIUM_MEV_VALIDATION),
+              "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"),
+    "B_3He": (_canon_str(AME_B_HE3_MEV_VALIDATION),
+              "codata_constants.AME_B_HE3_MEV_VALIDATION"),
+    "B_4He": (_canon_str(AME_B_HE4_MEV_VALIDATION),
+              "codata_constants.AME_B_HE4_MEV_VALIDATION"),
+    "B_5Li": (_canon_str(AME_B_LI5_MEV_VALIDATION),
+              "codata_constants.AME_B_LI5_MEV_VALIDATION"),
+    "B_6Li": (_canon_str(AME_B_LI6_MEV_VALIDATION),
+              "codata_constants.AME_B_LI6_MEV_VALIDATION"),
+    "B_7Li": (_canon_str(AME_B_LI7_MEV_VALIDATION),
+              "codata_constants.AME_B_LI7_MEV_VALIDATION"),
 }
+
+# A DIVERGENT literal must be at least this close to the canonical value before
+# it is called a botched copy of it rather than an unrelated number. 1e-4 is
+# ~9 orders above the L1 1-ppQ target, so anything inside it is far too close
+# to be coincidence and far too far to be acceptable.
+DIVERGENT_REL_TOL = "1e-4"
 
 # A literal must share at least this many significant digits with a canonical
 # value before it is called a truncation of it. Below that, agreement is
@@ -110,15 +167,79 @@ def canonical_digits(v: str) -> str:
     return v.replace(".", "").replace("-", "").lstrip("0")
 
 
+def _shared_prefix_digits(a: str, b: str) -> int:
+    """Count leading significant digits two decimal strings agree on."""
+    da, db = canonical_digits(a), canonical_digits(b)
+    n = 0
+    for x, y in zip(da, db):
+        if x != y:
+            break
+        n += 1
+    return n
+
+
 def classify(lit: str) -> tuple[str, str, str] | None:
-    """(name, verdict, canonical) if `lit` relates to a canonical value."""
-    for name, (canon, _) in CANON.items():
-        if not canon.startswith(lit):
-            continue
-        if len(canonical_digits(lit)) < MIN_SHARED_DIGITS:
-            continue
+    """(name, verdict, canonical) if `lit` relates to a canonical value.
+
+    Three verdicts, and the third one is why this function was rewritten:
+
+    * ``EXACT``      -- the literal IS the canonical value. Duplication only.
+    * ``TRUNCATED``  -- the literal is a short *prefix*. Loses digits.
+    * ``DIVERGENT``  -- the literal agrees to MIN_SHARED_DIGITS and then
+      *disagrees*. It is not short, it is **wrong** -- a stale CODATA/AME
+      edition, or a typo.
+
+    The original implementation opened with ``if not canon.startswith(lit):
+    continue``, so DIVERGENT returned ``None`` and the whole class was
+    invisible to the detector built to find it. Measured case, live on main
+    2026-09-05: ``computations/substrate/binding_manybody_series.py:43`` types
+    ``mp.mpf("28.295673")`` for the He-4 binding energy whose canonical value
+    is ``28.2956624``. It shares six digits, is not a prefix, and sits
+    3.75e-7 away -- eight orders above the L1 1-ppQ target. A prefix-only
+    detector reports it as clean, which is worse than not checking: the
+    truncation gate going green is taken as evidence the value is right.
+
+    This is the detector-blindness class AGENTS.md catalogues; the counter is
+    to decide on the VALUE (how far apart are they) rather than on the SHAPE
+    (does one string start with the other).
+    """
+    from mpmath import mp, mpf  # local: keeps module import cheap
+    best: tuple[str, str, str] | None = None
+    best_rel = None
+    if len(canonical_digits(lit)) < MIN_SHARED_DIGITS:
+        return None
+    # Exact/prefix match against the LONGEST canonical that admits it, so a
+    # literal shared by two anchors resolves to the more specific one.
+    pref = [(n, c) for n, (c, _) in CANON.items() if c.startswith(lit)]
+    if pref:
+        name, canon = max(pref, key=lambda nc: len(nc[1]))
         return (name, "EXACT" if lit == canon else "TRUNCATED", canon)
-    return None
+    for name, (canon, _) in CANON.items():
+        # Not a prefix. Is it nonetheless a copy of this constant?
+        if _shared_prefix_digits(lit, canon) < MIN_SHARED_DIGITS:
+            continue
+        with mp.workdps(80):
+            try:
+                rel = abs(mpf(lit) - mpf(canon)) / abs(mpf(canon))
+            except (ValueError, ZeroDivisionError):
+                continue
+            if rel >= mpf(DIVERGENT_REL_TOL):
+                continue
+            # CORRECTLY ROUNDED vs WRONG -- the distinction that stops this
+            # detector over-flagging by ~20x. `1.109978582751380808` is not a
+            # botched q0: it is q0 round-to-nearest at 19 digits, because
+            # ...3808075916 rounds up. Round the canonical value to the
+            # literal's own length and compare; only a literal that differs
+            # from its own best short form is WRONG rather than merely SHORT.
+            nsig = len(canonical_digits(lit))
+            best_short = mp.nstr(mpf(canon), nsig, strip_zeros=False)
+            verdict = ("ROUNDED" if mpf(best_short) == mpf(lit)
+                       else "DIVERGENT")
+        # NEAREST canonical wins. Picking the first match instead made every
+        # muon-pinned q0 literal a "wrong proton q0".
+        if best_rel is None or rel < best_rel:
+            best_rel, best = rel, (name, verdict, canon)
+    return best
 
 
 def _prose_lines(src: str) -> set[int]:
@@ -232,17 +353,72 @@ def scan() -> tuple[list[dict], int]:
                     "constant": name,
                     "literal": m.group(0),
                     "canonical": canon,
+                    "verdict": verdict,
                     "use_instead": CANON[name][1],
                 })
     return rows, exact
+
+
+def _selftest() -> int:
+    """Assert the classifier still sees all three verdicts.
+
+    A detector that has been narrowed reports a clean tree, and a clean tree
+    reads as good news. These fixtures are the tripwire: each is a real
+    value taken from this corpus, so a change that stops detecting one of
+    them fails here rather than silently in production.
+    """
+    canon_me = CANON["m_e"][0]
+    canon_he4 = CANON["B_4He"][0]
+    cases = [
+        # (literal, expected verdict, why this fixture exists)
+        (canon_me, "EXACT",
+         "the canonical value itself must classify as duplication, not loss"),
+        ("0.51099895", "TRUNCATED",
+         "the 8-figure m_e prefix, 25 live occurrences on main"),
+        ("1.109978582751380808", "ROUNDED",
+         "q0 round-to-nearest at 19 digits — right but short; scoring this "
+         "DIVERGENT over-flagged the corpus ~20x"),
+        ("1.1099785955573347", "TRUNCATED",
+         "the retired MUON pin — a second anchor, not a botched proton q0; "
+         "48 occurrences were scored DIVERGENT before it had a CANON row"),
+        ("28.295673", "DIVERGENT",
+         "binding_manybody_series.py:43 — agrees to 6 digits then diverges; "
+         "a prefix-only classifier scores this CLEAN"),
+    ]
+    failures = 0
+    print("selftest — classifier fixtures")
+    for lit, want, why in cases:
+        got = classify(lit)
+        verdict = got[1] if got else "NONE"
+        ok = verdict == want
+        failures += not ok
+        print(f"  [{'ok ' if ok else 'FAIL'}] {lit:<24s} "
+              f"want {want:<9s} got {verdict:<9s}  {why}")
+    if failures:
+        print(f"\nSELFTEST FAILED: {failures} fixture(s) — the classifier has "
+              "been narrowed; its clean runs are no longer evidence.")
+        return 1
+    print("\nselftest ok — all three verdicts reachable")
+    return 0
 
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--list", action="store_true", help="print every finding")
     ap.add_argument("--strict", action="store_true",
-                    help="exit 1 if any TRUNCATED literal is present")
+                    help="exit 1 if any TRUNCATED or DIVERGENT literal "
+                         "is present")
+    ap.add_argument("--selftest", action="store_true",
+                    help="verify the classifier still detects each verdict")
+    ap.add_argument("--baseline", action="store_true",
+                    help="ratchet mode: exit 1 only on findings absent from "
+                         "the baseline (blocks NEW truncations)")
+    ap.add_argument("--write-baseline", action="store_true",
+                    help="record the current findings as the baseline")
     args = ap.parse_args(argv)
+
+    if args.selftest:
+        return _selftest()
 
     rows, exact = scan()
     by_const: dict[str, list[dict]] = defaultdict(list)
@@ -278,8 +454,19 @@ def main(argv: list[str] | None = None) -> int:
             "codata_constants / q_parameter at run time, never typed here."
         ),
         "min_shared_digits": MIN_SHARED_DIGITS,
-        "truncated_total": len(rows),
-        "truncated_files": len({r["file"] for r in rows}),
+        "truncated_total": sum(1 for r in rows
+                               if r.get("verdict") == "TRUNCATED"),
+        "truncated_files": len({r["file"] for r in rows
+                                if r.get("verdict") == "TRUNCATED"}),
+        "divergent_total": sum(1 for r in rows
+                               if r.get("verdict") == "DIVERGENT"),
+        "divergent_files": len({r["file"] for r in rows
+                                if r.get("verdict") == "DIVERGENT"}),
+        "rounded_total": sum(1 for r in rows
+                             if r.get("verdict") == "ROUNDED"),
+        "rounded_files": len({r["file"] for r in rows
+                              if r.get("verdict") == "ROUNDED"}),
+        "blocking_total": len(rows),
         "by_constant": {k: len(v) for k, v in by_const.items()},
         "exact_duplicates": exact,
         "findings": rows,
@@ -289,12 +476,22 @@ def main(argv: list[str] | None = None) -> int:
         _prov_payload, script_path=__file__, engine=None, q0_anchor=None)
     out.write_text(json.dumps(_prov_payload, indent=2) + "\n")
 
+    trunc = [r for r in rows if r.get("verdict") == "TRUNCATED"]
+    diverg = [r for r in rows if r.get("verdict") == "DIVERGENT"]
+    rounded = [r for r in rows if r.get("verdict") == "ROUNDED"]
+
     print("=" * 74)
-    print("CODATA TRUNCATION AUDIT — literals that are a SHORT prefix of the")
-    print("                          canonical value, i.e. a different number")
+    print("REFERENCE-LITERAL AUDIT — hand-typed CODATA / AME values that do")
+    print("                          not match the registry they came from")
     print("=" * 74)
-    print(f"  TRUNCATED : {len(rows):4d} occurrence(s) in "
-          f"{len({r['file'] for r in rows})} file(s)")
+    print(f"  TRUNCATED : {len(trunc):4d} occurrence(s) in "
+          f"{len({r['file'] for r in trunc})} file(s)  (short prefix)")
+    print(f"  DIVERGENT : {len(diverg):4d} occurrence(s) in "
+          f"{len({r['file'] for r in diverg})} file(s)  (agrees then DISAGREES"
+          " — WRONG, not short)")
+    print(f"  ROUNDED   : {len(rounded):4d} occurrence(s) in "
+          f"{len({r['file'] for r in rounded})} file(s)  (correctly rounded, "
+          "so right but SHORT)")
     for name, items in sorted(by_const.items(), key=lambda kv: -len(kv[1])):
         canon = CANON[name][0]
         print(f"    {name:6s} {len(items):4d}  e.g. {items[0]['literal']}"
@@ -308,15 +505,50 @@ def main(argv: list[str] | None = None) -> int:
     if rows:
         print("\n  Findings:" if args.list else "\n  Findings (first 25):")
         for r in (rows if args.list else rows[:25]):
-            print(f"    {r['file']}:{r['line']}  {r['constant']} = "
-                  f"{r['literal']}  ->  {r['use_instead']}")
+            print(f"    [{r.get('verdict','?'):9s}] {r['file']}:{r['line']}"
+                  f"  {r['constant']} = {r['literal']}"
+                  f"  (canonical {r['canonical'][:20]})"
+                  f"  ->  {r['use_instead']}")
         if not args.list and len(rows) > 25:
             print(f"    ... and {len(rows) - 25} more (--list)")
 
     print(f"\n  witness -> {out.name}")
 
+    # ---- ratchet -------------------------------------------------------
+    # HARD GATE, without being red on arrival. AGENTS.md records that a gate
+    # which fails from its first run gets skipped, and a skipped gate is how a
+    # checker goes quiet -- so the 970-item backlog is baselined and every NEW
+    # truncation blocks immediately. The baseline DRAINS, never grows: adding
+    # to it to go green is the move this whole gate exists to prevent.
+    bl_path = HERE / "codata-truncation-baseline.json"
+    key = lambda r: f"{r['file']}:{r['line']}:{r['literal']}"  # noqa: E731
+    if args.write_baseline:
+        bl_path.write_text(json.dumps(
+            {"_comment": "Pre-existing reference-literal findings. DRAINS, "
+                         "never grows. Never add an entry to go green — fix "
+                         "at the call site by importing from the registry.",
+             "entries": sorted(key(r) for r in rows)}, indent=2) + "\n")
+        print(f"\nbaseline written: {len(rows)} entries -> {bl_path.name}")
+        return 0
+    if args.baseline:
+        try:
+            known = set(json.loads(bl_path.read_text())["entries"])
+        except (OSError, ValueError, KeyError):
+            known = set()
+        new_rows = [r for r in rows if key(r) not in known]
+        print(f"\n  RATCHET: {len(known)} baselined, {len(new_rows)} NEW")
+        if new_rows:
+            print("  NEW findings — fix at the call site, do NOT baseline:")
+            for r in new_rows[:20]:
+                print(f"    [{r.get('verdict')}] {r['file']}:{r['line']}"
+                      f"  {r['constant']} = {r['literal']}"
+                      f"  ->  {r['use_instead']}")
+            return 1
+        return 0
+
     if args.strict and rows:
-        print(f"\nSTRICT: {len(rows)} truncated literal(s) — exiting 1")
+        print(f"\nSTRICT: {len(trunc)} truncated + {len(diverg)} divergent "
+              f"+ {len(rounded)} rounded literal(s) — exiting 1")
         return 1
     return 0
 
