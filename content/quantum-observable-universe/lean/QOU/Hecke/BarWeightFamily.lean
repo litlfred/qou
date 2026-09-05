@@ -127,4 +127,113 @@ theorem weight_strictAnti {q : ℝ} (hq : 1 < q) {k l : ℝ} (hkl : k < l) :
   have h2 : (0 : ℝ) < q ^ (2 * l) + 1 := by positivity
   exact div_lt_div_of_pos_left one_pos h1 (by linarith)
 
+/-! ## The index `k`, and what selects it
+
+The family has a much simpler form than its definition suggests. Since
+`b_pp/b_nn = q⁴`,
+
+```
+w_k = 1/(q^{2k} + 1) = 1/(1 + (b_pp/b_nn)^{k/2})
+```
+
+so **`k/2` is literally the power of the bond ratio used to weight the average**
+(`weight_eq_inv_rpow`). `k = 0` weights by ratio⁰ — flat; `k = 1` by its square
+root; `k = 2` by the ratio itself. And the interface has the closed form
+
+```
+f_pn(k) = [2]_{q^{2-k}} / ([2]_q · [2]_{q^k})
+```
+
+(`interface_closed_form`), one expression covering the arithmetic mean at
+`k = 0`, the geometric at `k = 1` and the harmonic at `k = 2`. The reflection
+that makes `δ` odd about `k = 1` is one line from it: `interface_reflection`
+gives `f_pn(k)·f_pn(2-k) = 1/[2]_q²`, the squared loop value — so `k ↦ 2-k`
+inverts the interface about the loop value, and `k = 1` is its only fixed point.
+
+**Which members have an argument.** Two, and the enumeration is the point:
+
+* **`k = 0`** — the undeformed limit. `w_0 = 1/2` is what "flat average" *means*,
+  so it is derived, from an assumption the deformation contradicts. **Wrong sign.**
+* **`k = 1`** — `interface_one_eq_loop_value`: the unique member whose interface
+  factor *is* the loop value `1/[2]_q`, and the unique fixed point of the
+  reflection. Two independent characterisations of the same point. **Zero.**
+
+**Nothing in the SEMF-signed region `k > 1` has an argument.** `k = 2` (the
+harmonic mean, weight `b_nn/(b_pp+b_nn)`) gives the right sign and is *not*
+adopted for that reason. So the derivable prediction is `k = 1`: the p-n
+interface contributes **no** symmetry energy, and the SEMF term comes from
+outside this channel. Falsifiable, and the honest close.
+
+Measured in `computations/qbeta/qbeta_averaging_index_k_probe.py`: the corpus's
+actual weight `1/2 + δ/4` sits at `k = -0.00659` — **negative**, so its one
+bar-breaking ingredient pushes away from `k > 1` rather than toward it.
+
+Bean `qou-yf02`.
+-/
+
+/-- **`w_k = 1/(q^{2k}+1)`.** The definition's `q^{-k}/[2]_{q^k}` is this in
+disguise; with `b_pp/b_nn = q⁴` it reads `1/(1 + (b_pp/b_nn)^{k/2})`, so `k/2`
+is the power of the bond ratio the average is weighted by. -/
+theorem weight_eq_inv_rpow {q : ℝ} (hq : 0 < q) (k : ℝ) :
+    w q k = 1 / (q ^ (2 * k) + 1) := by
+  have hm : (0 : ℝ) < q ^ k := Real.rpow_pos_of_pos hq k
+  have hnm : (0 : ℝ) < q ^ (-k) := Real.rpow_pos_of_pos hq (-k)
+  have hprod : q ^ (2 * k) = q ^ k * q ^ k := by
+    rw [← Real.rpow_add hq]; ring_nf
+  have hinv : q ^ (-k) = (q ^ k)⁻¹ := Real.rpow_neg hq.le k
+  have hs : q ^ k + q ^ (-k) ≠ 0 := by positivity
+  rw [w, hinv, hprod]
+  field_simp
+
+/-- **The interface in closed form**, `f_pn(k) = [2]_{q^{2-k}}/([2]_q·[2]_{q^k})`,
+with the like-species bonds pinned as `b_pp = q²/[2]_q`, `b_nn = q⁻²/[2]_q`.
+One expression for the arithmetic (`k = 0`), geometric (`k = 1`) and harmonic
+(`k = 2`) means. -/
+theorem interface_closed_form {q : ℝ} (hq : 0 < q) (k : ℝ) :
+    w q k * (q ^ (2 : ℝ) / (q + 1 / q)) + (1 - w q k) * (q ^ (-2 : ℝ) / (q + 1 / q))
+      = (q ^ (2 - k) + q ^ (-(2 - k))) / ((q + 1 / q) * (q ^ k + q ^ (-k))) := by
+  have hk : (0 : ℝ) < q ^ k := Real.rpow_pos_of_pos hq k
+  have hnk : (0 : ℝ) < q ^ (-k) := Real.rpow_pos_of_pos hq (-k)
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hs : q ^ k + q ^ (-k) ≠ 0 := by positivity
+  have hb : q + 1 / q ≠ 0 := by positivity
+  have e1 : q ^ (2 - k) = q ^ (2 : ℝ) * q ^ (-k) := by
+    rw [← Real.rpow_add hq]; ring_nf
+  have e2 : q ^ (-(2 - k)) = q ^ (-2 : ℝ) * q ^ k := by
+    rw [← Real.rpow_add hq]; ring_nf
+  rw [w, e1, e2]
+  field_simp
+  ring
+
+/-- **The reflection.** `k ↦ 2 - k` inverts the interface about the loop value:
+the product of the two is `1/[2]_q²`. This is why `δ` is odd about `k = 1`, and
+why `k = 1` — the only fixed point — is where it vanishes. -/
+theorem interface_reflection {q : ℝ} (hq : 0 < q) (k : ℝ) :
+    ((q ^ (2 - k) + q ^ (-(2 - k))) / ((q + 1 / q) * (q ^ k + q ^ (-k))))
+      * ((q ^ k + q ^ (-k)) / ((q + 1 / q) * (q ^ (2 - k) + q ^ (-(2 - k)))))
+      = 1 / (q + 1 / q) ^ 2 := by
+  have hk : (0 : ℝ) < q ^ k := Real.rpow_pos_of_pos hq k
+  have hnk : (0 : ℝ) < q ^ (-k) := Real.rpow_pos_of_pos hq (-k)
+  have hr : (0 : ℝ) < q ^ (2 - k) := Real.rpow_pos_of_pos hq _
+  have hnr : (0 : ℝ) < q ^ (-(2 - k)) := Real.rpow_pos_of_pos hq _
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have h1 : q ^ k + q ^ (-k) ≠ 0 := by positivity
+  have h2 : q ^ (2 - k) + q ^ (-(2 - k)) ≠ 0 := by positivity
+  have hb : q + 1 / q ≠ 0 := by positivity
+  field_simp
+
+/-- **`k = 1` is the member whose interface IS the loop value.** With
+`interface_reflection`'s fixed point that is two independent characterisations of
+the same point — and `SymmetrySignAmGm.crossing_weight` shows it is exactly where
+`δ` vanishes. So the one member with an argument predicts NO symmetry energy. -/
+theorem interface_one_eq_loop_value {q : ℝ} (hq : 0 < q) :
+    (q ^ (2 - (1 : ℝ)) + q ^ (-(2 - (1 : ℝ))))
+        / ((q + 1 / q) * (q ^ (1 : ℝ) + q ^ (-1 : ℝ)))
+      = 1 / (q + 1 / q) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hb : q + 1 / q ≠ 0 := by positivity
+  have e1 : (2 : ℝ) - 1 = 1 := by norm_num
+  rw [e1, Real.rpow_one, Real.rpow_neg_one]
+  field_simp
+
 end QOU.Hecke.BarWeightFamily
