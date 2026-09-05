@@ -61,12 +61,17 @@ a cubic field rather than in `ℚ` plus `√−3`.
 ## Verification
 
 `lean`-direct **exit 0**, sorry-free, on all 19 declarations of this file
-(16 theorems + 3 definitions). Because the QOU
-package's own oleans are not built in this container, the check was run on a
-standalone transcription with `barEven`/`barOdd` inlined and narrow Mathlib
-imports; the mathematics is identical, but this file **as written**, importing
-`QOU.QBeta.BarParityZeta4Swap`, has not itself been compiled against that
-import. Stated explicitly rather than reported as a clean build.
+(16 theorems + 3 definitions) — **this file as written, compiled against its
+real `import QOU.QBeta.BarParityZeta4Swap`**, on the restored root Lake
+workspace (`lake-cache/qou-v4-24-0`, 6172 oleans).
+
+An earlier revision of this note said the opposite: it recorded that only a
+standalone transcription had been checked, because the container's partial olean
+set lacked `Mathlib.Tactic`. That was true when written and is now superseded —
+the cache restore closed it. **The reason the restore had appeared to fail is
+worth keeping:** the cache seeds the **root** workspace at `<repo>/.lake`, and I
+was checking `content/quantum-observable-universe/lean/.lake`, so a restore that
+had in fact written 6172 oleans read as "delivered nothing".
 
 **Lean caught a false theorem here**, which is why the characteristic hypothesis
 exists: `shape52A_not_shape52B` was first stated over a general field and is
