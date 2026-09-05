@@ -373,3 +373,20 @@ gives 0.457 (I had dropped q^{-kappa}); nearly recorded beta_EW as invariant
 under the whole choice; and a dated ruling banner in prose plus a JS
 string-concatenation bug that broke the manifest. All recorded at the point
 where the next reader would repeat them.
+
+
+### Reconciliation with the parallel route-1 pass (#6768, merged 08:52Z)
+
+That pass reported *'Not established: which family Phi_k should use. Narrowed
+and partly excluded, not closed.'* **That was correct and is not contradicted
+here.** Route 1 asks which object the nucleus is a state in, and it genuinely
+does not select between the two survivors — at N=2 it excludes the module-share
+reading altogether, by the same row-cap invariant R1 uses to retire y_lambda.
+
+What closes this bean is not route 1 but the **owner ruling**, which came
+after that merge and answers the family question directly. Their F1
+(Molien = Feray-Meliot, reached by change of variables) is an independent
+second leg under my exact-rational result, and their F2/F3/F4 are why the
+`V^{n}` share and classical `(f^lam)^2/n!` are recorded here as further
+measures rather than as arms. So: their measurement stands, its 'not closed'
+verdict was accurate as of its merge, and the ruling superseded it.
