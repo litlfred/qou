@@ -16,6 +16,25 @@ Reading `tr_M_series`, the word is the ONLY channel by which (Z,N) enters:
 point is a wrapper, not a rewrite.  This module does NOT modify that probe
 (it belongs to qou-pdg9); it imports its internals.
 
+🛑 CONVENTION -- READ BEFORE USING ANY NUMBER FROM THIS MODULE
+------------------------------------------------------------
+`atom_canonical_crossings` changed its default `intra_order` from `"grouped"`
+to `"borromean"` in 7db032fb48 (qou-hu1f, 2026-09-05).  Measured here across
+pn / pp / 4He, that change:
+
+    MOVES     f1/f0        37/2, 21, 37      ->  1/2, 3, 1
+    MOVES     c1 (Delta tr) 37/16, 19/8, 259/128 -> 1/16, 1/8, 7/128
+    PRESERVES c0 (the floor)                 1/8, 1/8, 7/128
+    PRESERVES L0, L1 (the LOG-RATIO)         2, 2, 8  and  0, -2, 0
+
+So the docstring claim in that commit -- "Log-RATIO consumers need no change:
+the ratio is invariant" -- is CORRECT and was verified here, but it does NOT
+cover a DIFFERENCE.  `Delta tr = tr_free - tr_atom` is a difference, so the
+whole c_k family is convention-dependent.
+
+This module therefore PINS `intra_order` (see `INTRA_ORDER`) rather than
+inheriting a default that can move underneath it.
+
 PRECISION
 ---------
 Everything here is exact: `Ser` carries `fractions.Fraction` coefficients and
@@ -74,6 +93,12 @@ def log_derivative(crossings, n: int, P: int = 3) -> F:
     return F(str(s.coeff(1))) / F(str(s.coeff(0)))
 
 
+# `intra_order` for words built here.  MUST be pinned: `atom_canonical_crossings`
+# changed its default from "grouped" to "borromean" in 7db032fb48 (qou-hu1f,
+# 2026-09-05), which MOVES every non-ratio quantity -- see the module docstring.
+INTRA_ORDER = "grouped"
+
+
 def _selftest() -> int:
     """Gate: the word-level route must reproduce the (Z,N) route exactly."""
     from canonical_braid_crossings import atom_canonical_crossings
@@ -81,7 +106,8 @@ def _selftest() -> int:
     bad = []
     for (Z, N), exp in expect.items():
         got = log_derivative(
-            atom_canonical_crossings(Z, N, include_inter=False), 3 * (Z + N), 3)
+            atom_canonical_crossings(Z, N, include_inter=False,
+                                     intra_order=INTRA_ORDER), 3 * (Z + N), 3)
         print(f"  Z={Z} N={N}  f1/f0 = {got}   expected {exp}   {got == exp}")
         if got != exp:
             bad.append((Z, N, str(got), str(exp)))
