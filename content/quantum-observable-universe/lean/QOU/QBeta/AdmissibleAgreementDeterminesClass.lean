@@ -155,6 +155,6 @@ theorem dependent_functionals_do_not_determine
   have h1 : ((T / a₁, (1 : K)) : K × K) = p := by
     refine huniq _ ⟨?_, ?_⟩ <;> (field_simp; try ring)
   have : ((T / a₁, (0 : K)) : K × K) = (T / a₁, 1) := h0.trans h1.symm
-  simpa using this
+  simp at this
 
 end QOU.QBeta.AdmissibleAgreement
