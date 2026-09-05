@@ -33,6 +33,14 @@ but **no basis for `⨂[R] i : ι, M`**, and no `finrank` lemma for it either. A
 without first *constructing* that basis, which is a Mathlib-scale contribution in its
 own right and is presumably why Mathlib lacks it.
 
+**SUPERSEDED IN PART, same day:** `QOU.MassTheory.PiTensorMonomialBasis` now
+*constructs* that basis in the case needed —
+`monoEquiv : (⨂[R] _ : α, (κ → R)) ≃ₗ[R] ((α → κ) → R)` — and proves
+`monoEquiv_tensorPerm`, that permuting the tensor **factors** corresponds to the
+`indexPerm` below. So the concrete model used here is no longer a *substitute* for the
+tensor power; it is the tensor power in coordinates, with the identification proved.
+What is still absent is only the `LinearMap.trace` packaging (see that file).
+
 So this file works in the standard concrete model `V^{⊗α} = ((α → κ) → R)`, where the
 monomial basis is definitionally the index type and the whole argument is a
 permutation-matrix trace. That is not a workaround for the mathematics — it *is* the
