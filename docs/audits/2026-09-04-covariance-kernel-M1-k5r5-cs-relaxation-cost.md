@@ -202,6 +202,66 @@ the mass ratio directly — a reading of the census, not a proof that pairing ca
 "a non-negative n exists" on the strength of n = 3,4,5, where the chain is simply too small to have a
 negative edge. Reported as a threshold — where it starts failing and whether it recovers — instead.)*
 
+## An exact criterion for the negative edges
+
+The census left `P > N` as *"bound the pos/neg mass ratio"*, and the obvious next move is a wider
+scan. Formalize-first says look for the invariant first — and **both** per-edge pieces already have
+closed forms, so which edges are negative should be decidable algebraically.
+
+Write the edge as: `λ` has a box at content `u` that `λ*` lacks; `λ*` has one at `v` that `λ` lacks;
+`d_u`, `d_v` are the lengths of diagonals `u`, `v` **in `λ`**. Then
+
+| quantity | closed form |
+|---|---|
+| `Δ(Σ\|c\|)` | `\|u\| − \|v\|` |
+| `Δω₃` | `u² − v²` |
+| `Δ(ΣD²)` | `2(d_u − d_v) − 2` |
+| `Δ(Σ\|c\|)·Δω₃` | `(\|u\|−\|v\|)²(\|u\|+\|v\|) ≥ 0` — Fact A, in closed form |
+
+With `g := |u| − |v|` **signed**, `Δω₃ = g(|u|+|v|)` so `sign(Δω₃) = sign(g)`, and
+`Δ(Σ|c|) + Δ(ΣD²) = g + 2(d_u−d_v) − 2`. The combined term is negative exactly when those two
+disagree:
+
+> **negative ⟺ `g · (g + 2(d_u − d_v) − 2) < 0`**
+
+**Verified at every edge to n = 22** — 12,518 edges at n = 22 — alongside all four closed forms and
+the fact that `g = 0` edges contribute exactly `0`
+([`…_negative_edge_criterion.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_negative_edge_criterion.py),
+exit 0, exact integer/`Fraction`, NO float64). Read at `g > 0` it says `d_u − d_v < 1 − g/2`: a
+negative edge needs the diagonal the box *leaves* to be no longer than the one it *lands on*, by a
+margin growing with the content gap.
+
+### A WLOG shortcut here is wrong, and the probe's own check caught it
+
+The first version derived the `g > 0` case and handled `g < 0` by "swapping the roles of `u` and
+`v`". **That is invalid**: `Δ(ΣD²) = 2(d_u−d_v) − 2` is not symmetric under that swap — the `−2` does
+not flip with the difference — so the swapped form is off by 4. The signature was diagnostic: all
+four closed forms **PASSED** while the criterion **FAILED** at every `n` that has a negative edge,
+which is exactly what correct algebra plus a wrong case analysis looks like. The signed-`g` form has
+no case split and so no place for that error to live.
+
+### A Fact-B violation is *not* a negative edge
+
+I had this backwards until the counts separated them. Fact B claims `Δ(ΣD²)·Δω₃ ≤ 0`; a **violation**
+has it `> 0`, which **adds** to the non-negative `Δ(Σ|c|)·Δω₃` and makes the edge *more* positive.
+The two phenomena are disjoint: negative edges first appear at **n = 6**, Fact-B violations at
+**n = 10**.
+
+### The ratio settles
+
+| n | 6 | 8 | 12 | 16 | 19 | 22 |
+|---|---|---|---|---|---|---|
+| pos/neg mass | 22.0 | 112.0 | 52.3 | 44.1 | 56.3 | 54.8 |
+
+Over `n ≥ 6` the range is [22.0, 112.0], but that is small-`n` noise: over **`n ≥ 16` it is
+[44.1, 56.3]**, sitting near **54.8** at n = 22. The earlier `n ≤ 12` window could not show this.
+
+> **What this buys.** `P > N` was a statement about a weighted sum over an *enumerated* set; it is
+> now a statement about a set **cut out by an inequality in four integers**, three of which
+> (`u`, `v`, `d_u`) are read off a single partition. That is the shape a finite-`n` bound can use —
+> bound the weight the criterion admits, rather than enumerate. **It bounds nothing yet**, and a
+> ratio settling near 55 over `n ≤ 22` is not evidence about `n ≥ 79`.
+
 ## Cross-references
 
 - The sharper reduction being priced: [`…-fulman-exchangeable-pair-reduction.md`](2026-08-21-covariance-kernel-M1-fulman-exchangeable-pair-reduction.md)

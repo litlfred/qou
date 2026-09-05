@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-05T06:33:13Z
+updated_at: 2026-09-05T07:22:44Z
 ---
 
 
@@ -1043,3 +1043,42 @@ THIRD SMALL-n QUANTIFIER TRAP OF THIS ARC, caught before commit: any(n) over the
 'a non-negative n exists' on the strength of n=3,4,5 where the chain is too small to HAVE a negative
 edge. Now reported as a threshold (where it starts failing, whether it recovers). Prior two: #6602
 tested a family claim at a point; the reach probe counted a CONSTANT statistic as an eigenfunction.
+
+
+2026-09-05 (same branch, cont'd): AN EXACT CLOSED-FORM CRITERION FOR THE NEGATIVE EDGES. P > N stops
+being a census and becomes an inequality in four integers.
+
+FORMALIZE-FIRST RATHER THAN A WIDER SCAN. The census left 'bound the pos/neg mass ratio' and the
+obvious move was to extend n. Both per-edge pieces already have closed forms, so which edges are
+negative is decidable algebraically. Write the edge as: lam has a box at content u that lam* lacks,
+lam* has one at v that lam lacks, d_u/d_v the diagonal lengths IN lam. Then
+    Delta(A) = |u|-|v|,  Delta(W) = u^2-v^2,  Delta(D) = 2(d_u-d_v)-2
+    Delta(A)Delta(W) = (|u|-|v|)^2(|u|+|v|) >= 0     (Fact A, in closed form)
+With g = |u|-|v| SIGNED, Delta(W) = g(|u|+|v|) so sign(Delta W) = sign(g), and
+Delta(A)+Delta(D) = g + 2(d_u-d_v) - 2, giving
+
+    NEGATIVE  <=>  g * (g + 2(d_u - d_v) - 2)  <  0
+
+VERIFIED AT EVERY EDGE TO n = 22 (12,518 edges at n=22), together with all four closed forms and
+'g = 0 edges contribute exactly 0'. At g > 0 it reads d_u - d_v < 1 - g/2: a negative edge needs the
+diagonal the box LEAVES to be no longer than the one it LANDS ON, by a margin growing with the gap.
+
+A WLOG SHORTCUT IS WRONG HERE, and my own check caught it before commit. The first version derived
+the g>0 case then handled g<0 by swapping u and v. Invalid: Delta(D) = 2(d_u-d_v)-2 is NOT symmetric
+under that swap -- the -2 does not flip -- so the swapped form is off by 4. Diagnostic signature: all
+four closed forms PASSED while the criterion FAILED at every n having a negative edge, which is what
+correct algebra plus wrong case analysis looks like. The signed-g form has no case split.
+
+A FACT-B VIOLATION IS NOT A NEGATIVE EDGE -- I had this backwards. Fact B claims Delta(D)Delta(W)<=0;
+a VIOLATION has it > 0, which ADDS to the non-negative Delta(A)Delta(W) and makes the edge MORE
+positive. Disjoint phenomena: negative edges first at n=6, Fact-B violations first at n=10.
+
+THE RATIO SETTLES, which the n<=12 window could not show. pos/neg mass over n>=6 is [22.0, 112.0],
+but that is small-n noise; over n >= 16 it is [44.128, 56.315], ~54.8 at n=22.
+  n:    6     8    12    16    19    22
+  R: 22.0 112.0  52.3  44.1  56.3  54.8
+
+WHAT THIS BUYS: P > N was a weighted sum over an ENUMERATED set; it is now a set CUT OUT BY AN
+INEQUALITY in four integers, three of which (u, v, d_u) are read off one partition. That is the shape
+a finite-n bound can use -- bound the weight the criterion admits rather than enumerate. It bounds
+NOTHING yet, and a ratio settling near 55 over n<=22 is not evidence about n>=79.
