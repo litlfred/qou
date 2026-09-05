@@ -206,6 +206,44 @@ rather than as undefined moves the A=2→3 answer from `k=2` to `k=4` and makes 
 A metric that cannot see a new column entry is not a weaker metric; it is one that reports the wrong
 `k`.
 
+## Part 4 — per-window: A=4's two column rises are TWO phenomena, not one
+
+`Ω₂^P = c·Σ_a[σ_a, σ_{a+1}]` is a sum of `ngen−1` 3-strand-local commutators, so the column's rises
+can be asked of a **single window**. Complete at A=4 — all ten windows, no sampling:
+
+| | count | reading |
+|---|---|---|
+| peaks at `k=1` | **10/10** | universal |
+| rises into `k=4` | **6/10** (a = 1,4,6,7,8,9) | **position-dependent** |
+| rises into `k=6` (square end), **per-dim** | **10/10** | |
+| rises into `k=6`, **raw `\|tr\|`** | **9/10** | a=6 falls 0.426999 → 0.416201 |
+
+So the square-end rise and the `k=4` rise are **different phenomena** that the `Ω₂` sum conflates.
+And `k=4` is neither cleanly local nor cleanly collective: a majority of windows carry it alone
+(so not pure interference), four do not (so not purely local).
+
+**🛑 A correction to my own claim of one commit earlier, and it is the same error class this
+document already corrects once.** I published *"the square-end rise is universal across windows
+(10/10)"*. That is the **per-dim** count. `dim` is not monotone along the column — at A=4 it runs
+11, 54, 154, 275, 297, **132** — so it *drops* 2.25× into the square shape and a per-dim rise there
+can be pure denominator. On the **raw** trace it is **9/10**: window `a=6` falls. The exception is
+marginal (−2.5 %), but "universal" and "universal except one" are different claims, and quoting
+`|tr|/dim` where the raw quantity mattered is exactly what cost the `[3]_q`-ceiling correction
+earlier in this file. The probe now prints both columns side by side so the distinction cannot be
+lost again.
+
+**The bare-commutator control is VACUOUS — a false claim of mine, now labelled.** I built it to
+separate "the commutator does it" from "ρ dressing it does it", asserting a bare commutator's trace
+"is zero on the whole algebra but NOT on an individual irrep". **False**: `tr(AB − BA) = 0` in *any*
+finite-dimensional representation, since `tr(AB) = tr(BA)`. It returns exactly `0.0` everywhere, as
+it must. Worse, the probe then printed a confident *"COLLECTIVE: no single window rises into k=4 …
+it is interference"* off that all-zeros table — **a verdict manufactured from degenerate data.** A
+guard now refuses any comparison verdict when every entry is zero.
+
+What the vacuity does establish is worth keeping: **the entire `Ω₂` trace signal exists only because
+ρ fails to commute with the windows**, which the corpus's Lean already states —
+`QOU.MassTheory.trace_mul_commutator_eq` (sorry-free): `tr(ρ(xy−yx)) = tr((ρx−xρ)y)`.
+
 ## What is NOT established, and one caution I registered before running
 
 - **A labelling inconsistency between my own two probes, caught and fixed.** The column probe reports
