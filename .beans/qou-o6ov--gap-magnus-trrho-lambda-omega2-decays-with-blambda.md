@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-05T07:16:32Z
+updated_at: 2026-09-05T10:03:20Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -364,3 +364,38 @@ REDIRECTS: a quantitatively useful bound must KEEP THE SIGN INFORMATION.
 
 Limits: complete n=9 only, this atom word; the two exact-zero endpoints excluded; nothing
 proved for general n. scope-(a). Nothing wired.
+
+## 2026-09-05 — the whole arc was on a superseded braid word (PR #6822)
+
+Sibling `7db032fb48` (qou-hu1f, owner ruling, 07:53 UTC today) fixed `atom_braid_word_3A` to emit
+the interleaved beta_Bor where it had been emitting the same letters BUCKETED BY GENERATOR. Different
+element of H_n(q) — the sibling measures 82% apart at q0. Verified at A=3 and A=4: same 35/47 letters,
+different order.
+
+**Recomputed, complete n=9 census, dps 65: every number moves 4–16%, every structural conclusion
+survives, two strengthen.**
+
+- both chain links hold on all 30 shapes; envelope strictly decreasing over all 7 levels
+  (4147.55 > 2527.90 > 955.32 > 495.70 > 265.95 > 62.58 > 2.906)
+- **hook crossing still at b=4** — same interior b under a different operator
+- pointwise violations 6 -> 4, still 4/4 with a hook on the LOW side, 0 high, 0 hookless
+- hook kappa still U-shaped, minimum b=5 -> b=4
+- hooks still best-bounded: median slack 24.51 vs non-hook 100.5 (4.1x, was 3.3x)
+- #6754 STRENGTHENS: worst link-1 slack 550x -> 1217x
+- (8,1) |tr|/dim 33.648 -> 29.00125; hook fall 291.4x -> 263.16x
+
+**Also: Feray-Sniady pruned, scope-(b).** FS Thm 1's only lambda-dependence at a fixed element is
+max(r,c), transpose-INVARIANT; measured |tr|/dim differs 263.16x across the (8,1)/(2,1^7) conjugate
+pair. Loose by >=263x before any constant is fitted. NOT excluded: a q-deformation carrying a
+transpose-ASYMMETRIC shape parameter — that is exactly what such a deformation must supply.
+
+**STILL OPEN / not covered:** the n=12 legs (#6748) are on the OLD word and are unverified. That is
+the one load-bearing claim in the arc not recomputed.
+
+**Follow-up (not done):** no probe in this arc prints the braid word or a hash of it — they all print
+q0, dps and n, the three things never in doubt. Printing `hash(tuple(gens))` beside the dps line
+would make two runs comparable without re-deriving where their inputs came from. Touches every probe
+in the arc.
+
+**Method note:** this surfaced only because a 10% gap appeared between two runs of my own code. At
+3% I would have read it as rounding.
