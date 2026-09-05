@@ -1,0 +1,119 @@
+{
+  "computation": "beta-rate-skein-power-audit",
+  "description": "The beta-decay rate carries the single-crossing Skein amplitude squared exactly ONCE (prf:trace-ratio-observable: |M_q|^2 = |skein_amp|^2 * |tr(par)/tr(dau)|^2). The merged substitutionRateFactor squares sSq, which is already s^2, so it computes |W|^2/s^4 = 11875.44 where the rate gets |W|^2/s^2 = 129.405107404 -- every '10^4' in the qou-ix74/pfh7/q2l7 arc is high by 1/s^2 = 91.77x. The verdict of qou-ix74 survives (129x still cannot explain a 10-17 % overshoot); its magnitude does not. Separately, qou-q2l7's 'order derived' claim is RETRACTED: |W|^2/s^k diverges as q->1 because W(1) = 1/4 != 0, so the -96 leading value of (J-1)/s^2 -- a ratio whose numerator DOES vanish -- was never its leading constant. Every exact identity of qou-q2l7 is untouched. Third, prf:hadron-half-life multiplies |W|^2 by a |M_q|^2 that still contains s^2, so the live formula carries the vertex trace AND its own single-crossing approximation; which of the three readings is intended is an author decision, recorded and not picked.",
+  "convention": {
+    "markov_z": "q**3/(q**2+1) (D)",
+    "hecke_h": "q - 1/q",
+    "anchor": "proton pin (Q_50_DIGIT_STR); identities exact in q"
+  },
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "skein_amplitude": {
+    "definition": "skein_amp = q**(1/2) - q**(-1/2)   (prf:trace-ratio-observable)",
+    "sSq_identity": "sSq q = (q-1)**2/q == skein_amp**2 == s**2",
+    "power_in_the_rate": 2,
+    "power_in_merged_substitutionRateFactor": 4,
+    "s_sq_at_q0": "0.010896866707122299752491978091862815889240748484137",
+    "s_fourth_at_q0": "0.00011874170403279039205142330993704621125096677697453"
+  },
+  "substitution_factor": {
+    "merged_W2_over_s4": "11875.441893676302628",
+    "corrected_W2_over_s2": "129.40510740356669955",
+    "error_factor_one_over_s_sq": "91.769499148446967689",
+    "W2_at_q0": "1.4101102065975113940",
+    "verdict": "the qou-ix74 negative SURVIVES -- 129x cannot explain a measured 10-17 % overshoot -- but '10^4' and 'four orders of magnitude' are withdrawn in favour of '~129x, two orders'"
+  },
+  "retracted_order_claim": {
+    "claim": "qou-q2l7: the ORDER of the substitution factor is derived, 96^2 = 9216 against 11875",
+    "why_it_fails": "|W|^2/s^k diverges as q->1 for k >= 1 (W(1) = 1/4 != 0, s^2(1) = 0), so it has no leading constant; -96 is the leading value of (J-1)/s^2, whose numerator vanishes because V_K(1) = 1 for every knot",
+    "limit_jones_dev_over_s_sq": "-96",
+    "limit_W2_over_s_sq": "+oo",
+    "limit_W2_over_s_fourth": "+oo",
+    "what_survives": "every exact identity: W*[2]_q^2 = q^20*V(q^-2); J - 1 = -h_4*h_6/q^10; (J-1)/s^2 = -G_8*G_12/q^19; couplingRatio(1) = -96"
+  },
+  "vertex_double_count": {
+    "live_formula": "Gamma_beta = |W(q)|^2 * mu_0/(2 pi^3) * [2]_q * |M_q|^2 * f(Q)",
+    "item_1_says": "|W(q)|^2 replaces the single-crossing approximation s^2",
+    "item_3_says": "|M_q|^2 = s^2 * prod |V_i^par / V_i^dau|^2",
+    "consequence": "the product carries |W|^2 AND s^2",
+    "readings": {
+      "A_double_count": "item 3's s^2 IS the vertex coupling => rate too small by s^2 ~ 0.0109, half-life too long by ~92x",
+      "B_replaces_is_wrong": "nothing was replaced, a factor was added; item 3 must say what its s^2 is",
+      "C_item_3_stale": "the tables use s^2 alone and match neither the pre- nor the post-W formula"
+    },
+    "source_leans_toward": "A -- prf:trace-ratio-observable calls its skein_amp 'the Skein amplitude at the beta-decay vertex'",
+    "decision": "AUTHOR'S -- not picked here; no number above depends on it"
+  },
+  "affected_artifacts": [
+    "QOU.Braiding.WeakVertexT35.substitutionRateFactor (and its two ten-thousand envelope theorems) -- merged PR #6715",
+    "QOU.Braiding.WeakVertexT35.substitutionRateFactor_overshoot_of_leading_square -- merged PR #6765",
+    "computations/weak-vertex-substitution-scale.witness.json",
+    "computations/weak-vertex-jones-markov-normalisation.witness.json",
+    "docs/audits/2026-09-05-weak-vertex-coupling-normalisation.md",
+    "docs/audits/2026-09-05-weak-vertex-jones-markov-derivation.md",
+    "beans qou-ix74, qou-pfh7, qou-q2l7"
+  ],
+  "reference_blocks": [
+    "prop:hadron-half-life",
+    "prf:hadron-half-life",
+    "prop:trace-ratio-observable",
+    "prf:trace-ratio-observable",
+    "def:beta-decay-skein"
+  ],
+  "assertions": [
+    {
+      "name": "sSq_is_already_s_squared",
+      "passed": true,
+      "note": "sSq q = (q-1)^2/q IS (q^(1/2) - q^(-1/2))^2 identically, so squaring it gives s^4 -- the name reads as 's, squared' and was consumed as though it were 's'"
+    },
+    {
+      "name": "nothing_else_in_the_rate_carries_an_s",
+      "passed": true,
+      "note": "[2]_q is full-scale; the pair Skein denominator is the half-scale SUM q^(1/2)+q^(-1/2), not s; Q ~ h_1 = q - q^-1 is full-scale. So s enters the rate once, squared, via |M_q|^2"
+    },
+    {
+      "name": "merged_substitution_factor_uses_s_to_the_fourth",
+      "passed": true,
+      "note": "(weakVertexTrace q)^2/(sSq q)^2 = |W|^2/s^4 = 11875.4418937 -- the figure merged in PR #6715 and repeated in #6735, #6765"
+    },
+    {
+      "name": "corrected_substitution_factor_is_one_hundred_twenty_nine",
+      "passed": true,
+      "note": "|W|^2/s^2 = 129.405107404 is the factor the rate actually gets"
+    },
+    {
+      "name": "error_factor_is_one_over_s_squared",
+      "passed": true,
+      "note": "the two differ by exactly 1/s^2 = 91.7694991484, so every '10^4' figure in the arc is high by ~92x"
+    },
+    {
+      "name": "substitution_factor_has_no_finite_classical_limit",
+      "passed": true,
+      "note": "W(1) = 1/4 != 0 while s^2(1) = 0, so |W|^2/s^k diverges for k >= 1: there is NO leading constant, at either power"
+    },
+    {
+      "name": "the_minus_ninety_six_belongs_to_a_different_ratio",
+      "passed": true,
+      "note": "(J-1)/s^2 -> -96 because J(1) = 1 makes the NUMERATOR vanish (V_K(1) = 1 for every knot); W(1) = 1/4 does not vanish. So -96 cannot be the leading constant of |W|^2/s^k -- qou-q2l7's 'order derived' bridge is RETRACTED, not re-scoped"
+    },
+    {
+      "name": "qou_q2l7_identities_are_untouched",
+      "passed": true,
+      "note": "the Jones-Markov relation, J - 1 = -(q^8-1)(q^12-1)/q^20, and the cyclotomic ratio all still hold: the mathematics of qou-q2l7 survives, only its bridge to the rate does not"
+    },
+    {
+      "name": "negative_of_qou_ix74_survives_at_the_corrected_magnitude",
+      "passed": true,
+      "note": "129x is still far too large to explain a measured 10-17 % overshoot, so substituting |W|^2 for s^2 remains a scope-(a) negative -- the verdict stands, the magnitude was wrong by 92x"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "936a4b7880dd",
+  "scriptCommitSha": "unknown",
+  "commitSha": "c1a61ec8b2a3a7da7b7a24256494c7cff1e8f54f",
+  "engine": "sympy+mpmath",
+  "computedAt": "2026-09-05T08:51:05.829339+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "markov/beta_rate_skein_power_audit.py"
+}
