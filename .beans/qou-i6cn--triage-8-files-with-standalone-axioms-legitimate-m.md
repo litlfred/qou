@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T14:57:07Z
-updated_at: 2026-09-05T09:09:18Z
+updated_at: 2026-09-05T17:50:46Z
 ---
 
 
@@ -145,3 +145,64 @@ The `∀`-bound-constant shape specifically is now covered by
 (corpus currently clean), so the remaining reads are looking for the
 *other* failure modes: an axiom that does not mention the object it claims
 to constrain, an uncited assertion, or a QOU conjecture wearing a citation.
+
+
+## RE-MEASURED 2026-09-05 — the queue is 18 in 12 files, not 55 in 26
+
+Fourth count in this bean's lineage, and the previous one is stale by **37
+axioms / 14 files**. Measured on current `main`, stripping block comments,
+docstrings AND line comments before matching `^\s*(noncomputable\s+)?axiom\s+NAME`:
+
+    before this session:  19 axioms / 13 files
+    after removing aeon_recycling: 18 / 12
+
+**The bean's two highest-value targets now carry ZERO axioms**, so its
+priority guidance must not be followed as written:
+
+| file | bean said | now |
+|---|---|---|
+| `BraidsKnots/LinearJSJVolume.lean` | 5 (incl. `AtomicKnot`, `Vol_p`) | **0** |
+| `HeckeAlgebra/JonesMarkovWenzl.lean` | 4 | **0** |
+| `HeckeAlgebra/MarkovTrace.lean` | 9 | 2 |
+| `HeckeAlgebra/Formal.lean` | 5 | 1 |
+| `HeckeAlgebra/Hoefsmit.lean` | 3 | 2 |
+
+Both files still EXIST — the axioms were drained, not the files. `Eightfold/Sym2Gate.lean`
+is the only named file actually gone.
+
+### All 18 carry a `-- Ref:` — no AGENTS.md §1 violations
+
+`[manuscript]`-only, i.e. where the reading effort belongs (4):
+
+- `b1_holds_at_row` — `AppendixSurreals/B1HyperbolicRowsTheorem.lean`
+- `evenPower_necessary_for_blockPosSemidef` — `BraidKnot/PSDFeasibilityProxy.lean`
+- `affine_slater_rigidity` — `MathlibExt/SDPRankEquality.lean`
+- `slater_strict_complementarity_kernel_axiom` — `MathlibExt/SDPRealUniqueness.lean`
+
+**The last two are in files this bean marks "cleared".** Both cite the QOU
+manuscript's own `prop:operator-selection-lp`, so that clearance plausibly
+covered each file's *other* (Alizadeh–Haeberly–Overton / Boyd–Vandenberghe)
+axiom rather than these. Re-read before trusting the clearance.
+
+## aeon_recycling — VACUOUS, removed (PR #6859)
+
+`axiom aeon_recycling (cmb : CMBFunctorValue) : PlanckStepResult` **never
+mentions `cmb` in its result type**, so its statement is discharged by a
+constant function. Now two theorems in `JetHorizon.lean`:
+
+- `planckStepResult_cmb_independent` `[propext, Quot.sound]` — exhibits
+  `f` with `f c₁ = f c₂` for all inputs.
+- `planckStepResult_nonempty` `[propext]` — a toy algebra (`ULift Bool` at
+  every degree) inhabits the result type.
+
+The axiom's own NOTE justified `axiom` over `opaque` by claiming `Nonempty
+PlanckStepResult` "cannot be witnessed without proving the conjecture
+itself". Category error: inhabiting the RESULT TYPE ≠ the conjecture.
+
+**The real gap: there is no Planck-step map in the formalisation.** `Φ₁`
+occurs only in prose. And — the non-obvious part — a §3b-tax content-bearing
+carrier cannot be written either, because any statement about an *abstract*
+`Φ` is satisfied by choosing `Φ` to be the toy. The object is absent, so this
+is not a "should have been a class" case.
+
+Zero consumers; nothing downstream changed.
