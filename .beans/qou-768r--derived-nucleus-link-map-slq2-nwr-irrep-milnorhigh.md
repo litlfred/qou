@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-05T19:36:10Z
+updated_at: 2026-09-05T19:39:08Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -810,3 +810,37 @@ made this afternoon, and the fix is either to prove the parity hypothesis above 
 would restore the application) or to scope every carrier sentence to "the grouped word".
 
 Not fixed here — measured and recorded. Follow-up before any further carrier claim.
+
+
+### Same day, hours later — my parity hypothesis is REFUTED; option 1 is dead
+
+The correction above proposed two fixes and said I expected option 1 (prove the
+even-per-generator parity hypothesis, restoring the application). **Measured, and it does
+not hold.**
+
+**H1 — TRUE, and stronger than I guessed.** The per-generator *letter counts* are
+identical between `borromean` and `grouped`. The odd-count generator sets match exactly:
+²H `[0,2,3]`, ³H `[0,2,3,5,6]`, ⁴He `[0,2,3,5,6,8,9]`, ⁶Li `[0,2,3,5,6,8,9,11,12,14,15]`
+— same under both conventions.
+
+**H2 — FALSE.** The permutation is *not* determined by that parity vector. Comparing each
+word's true permutation against the ascending word carrying the same per-generator
+parities: **7/14** carrier words agree (the 7 grouped ones, which are monotone and for
+which this is just the monotone reduction), and **70/400 (17.5 %)** random non-monotone.
+
+So the identical closure structure — 848 triples, 786 separable, 62 chain, 0 nonzero
+`μ̄`, path linking 14/14 under both conventions — is **not** explained by parity
+preservation. My stated mechanism is wrong.
+
+**The surviving candidate, not established:** the two words have *different*
+permutations but the *same orbit partition*. Components are cycles, and two distinct
+permutations can share their orbits — that would give identical components, linking and
+triples while the permutations differ, which is exactly the pattern measured. Testing it
+means comparing the two permutations' orbit partitions directly, not their values.
+
+**Consequence for the correction above:** option 1 is dead as stated. The live options
+are the orbit-partition route (if it holds, it restores the application by a different
+argument) or option 2 — scope every carrier sentence to the grouped word.
+
+Recorded rather than fixed. Noting that I wrote "the outcome I'd expect" against option 1
+about an hour before measuring it to be false.
