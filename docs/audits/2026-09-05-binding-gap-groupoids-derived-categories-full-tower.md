@@ -780,6 +780,59 @@ bottom.
 
 ---
 
+## 7b. The two prunes, executed (same day, owner's go) — what they proved and what they corrected
+
+**Item 1 (F1) was already in the corpus, and I had missed it.** Corpus-grep run before writing
+a line found the whole chain in three files: `QOU.MathlibExt.MonotoneWordFactorizes.tr_stabWord_eq_prod_tr`
+(a monotone word's trace is the product of its letters' traces),
+`QOU.Mass.MarkovBondRuleForcesPairwise.b3_eq_zero_of_bondRule` (a bond product under any
+multiplicative-to-additive map gives `b₃ = b₄ = 0`), and
+`QOU.MathlibExt.InterleavedCrossTerm.interleaved_sub_sequential` (the exact `n = 4` cross term
+`z(z² − hz − 1)`). §2.1's F1 is therefore **proved, not conjectural**, and its statement here should
+be read with one correction: **semisimplicity does no work in it.** The zero is forced by the
+*ordering* of the word alone — the monotone/stabilising-letter hypothesis — with nothing about the
+trace beyond the Markov axioms. What landed is the composition, so both hypotheses are visible in
+one type: [`QOU/Mass/FormalityBridgeF1.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/FormalityBridgeF1.lean)
+(5 declarations, `lean -DautoImplicit=false` exit 0, axioms `[propext, Classical.choice, Quot.sound]`
+or none, no `sorry`): `f_tr_stabWord_eq_sum` — for any `f` with `f(xy) = f x + f y`, the `f`-image of a
+monotone word's trace is the **sum** of the letters' `f`-images; `interleaved_ne_sequential` /
+`f_interleaved_ne_f_sequential` — with a non-zero cross term the interleaved word's trace (and any
+injective image of it) is **not** the bond sum of the same letters. So the corpus's one positive
+many-body signal (`qou-kru4`) is the failure of F1's ordering hypothesis, not a counterexample to
+F1; a degree-zero many-body term is word topology, and an *algebraic* one has to live where the
+semisimple fibre's trace cannot see — item 2. Bean `qou-dchj`.
+
+**Item 2 (the honest `HH_1` example) is new and is the structural content of §2 at the one `n`
+where the corpus has a genuine `HeckeAlgebra` instance.**
+[`QOU/Hecke/H2KaehlerDegrees.lean`](../../content/quantum-observable-universe/lean/QOU/Hecke/H2KaehlerDegrees.lean)
+(8 declarations, same verification, no `sorry`). For `A_h = R[X]/(X² − hX − 1)` — the corpus's
+`InstanceH2.H2` at `h = q − q⁻¹` — with `f′(x) = 2x − h`:
+
+| declaration | statement |
+|---|---|
+| `two_x_sub_h_sq` | `(2x − h)² = h² + 4` in `A_h`; at the Hecke parameter `h² + 4 = (q + q⁻¹)² = [2]_q²` (`two_x_sub_h_sq_hecke`) |
+| `kaehlerIdeal_eq_top_of_isUnit` | `h² + 4` a unit of `R` ⇒ `(2x − h) = A_h` ⇒ `A_h/(2x − h) = 0` — **the fibre has no degree** (every generic `q`, `kaehlerIdeal_eq_top_of_qint_ne_zero`) |
+| `kaehlerIdeal_ne_top_of_hom` | a ring hom `R → K` (field, `2 ≠ 0`) with `h² + 4 ↦ 0` ⇒ `(2x − h) ≠ A_h` — **the tower has one**; for `ℤ[q^{±1}] → ℂ`, `q ↦ i` this is `HH_1(H₂/ℤ[q^{±1}]) ≠ 0`, and at a fourth root of unity directly `kaehlerIdeal_ne_top_of_fourth_root` |
+
+**Cited, not proved:** `HH_1(A/R) ≅ Ω¹_{A/R}` for commutative `A` (HKR in degree one; Weibel
+9.4.3) and `Ω¹ ≅ A/(f′)` for a monogenic algebra. Mathlib's `KaehlerDifferential` was not
+exercised; there is no Hochschild framework. The file says so in its header. Scope: `n = 2` only
+(`H_n` is non-commutative for `n ≥ 3`, where `HH_1 ≠ Ω¹` and the corpus has no instance). The
+vacuous `QOU.WedderburnMass.centralIdempotent_idem` is left in place — its GAP note stands — and
+this file complements rather than replaces it. Bean `qou-s6ff`.
+
+**What the two together say.** The degree the derived route needs exists over `ℤ[q^{±1}]` and is
+destroyed by inverting `[2]_q`; and the `b₃ = 0` of the production chain is an ordering fact the
+algebra's semisimplicity does not even enter. Both halves of §2's diagnosis survive, with the
+attribution corrected: *ordering* owns the degree-0 zero, *semisimplicity* owns the absence of a
+higher degree. The `q`-adic-order test (§7 item 3) is unaffected and still queued.
+
+**Verification note.** Four modules of the F1 import cone (`OcneanuTrace`, `InterleavedCrossTerm`,
+`MonotoneWordFactorizes`, `MarkovBondRuleForcesPairwise`) postdate the 2026-08-31 olean cache and
+were compiled from source first, all exit 0, per the "run the sweep, not bare lean-direct" rule.
+`scripts/check-sidecars.sh`: both files *"library Lean — no ℝ, generic OK"*. Both modules are
+registered in `QOU.lean`; the full aggregator was not rebuilt (875 imports).
+
 ## 8. Literature to download — prioritised, with links and one-line justification
 
 **Priority A — likely to change what can be *proved***
