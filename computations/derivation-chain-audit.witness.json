@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T07:40:45.334309+00:00",
-  "commitSha": "1094d70843a8e7a33536cbe7b002215022f66bbd",
+  "computedAt": "2026-09-05T07:52:49.252380+00:00",
+  "commitSha": "d10b34145302fb8a786f84d15991ec711c408ee5",
   "assertions": [
     {
       "name": "chain_valid[D-tau-M-q0.derivation]",
@@ -643,7 +643,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 136,
+  "durationMs": 5,
   "computation": "derivation-chain-audit",
   "scriptFile": "derivation_chain_validator.py",
   "scriptHash": "3bb00f5477af",
@@ -2974,6 +2974,7 @@
         "c1-mirror-asymmetry-sign-probe.witness.json",
         "c5-decomposition-probe.witness.json",
         "canonical-ordering-dof.witness.json",
+        "chain-triple-magnus-coefficient-is-the-product.witness.json",
         "channel-asymmetry-crossing-budget-bound.witness.json",
         "coefficient-quantisation-reachability.witness.json",
         "conjugation-orbit-isospin-room.witness.json",
@@ -3054,6 +3055,7 @@
         "meson-gmor-derivation-probe.witness.json",
         "milnor-minspan-triples-share-no-summand.witness.json",
         "milnor-mubar-vanishes-on-every-triple.witness.json",
+        "milnor-one-separated-component-and-the-chain-residual.witness.json",
         "milnor-vanishing-is-generic-for-monotone.witness.json",
         "mirror-parity-linear-trace-probe.witness.json",
         "mixed-sign-cyclic-square-does-reopen-milnor.witness.json",
@@ -4907,6 +4909,7 @@
         "d1b-eq98-rank-correction.witness.json",
         "d1b-null-direction-is-mirror-symmetric.witness.json",
         "decay-as-computational-time.witness.json",
+        "demazure-length-cannot-carry-decay.witness.json",
         "dt-crossknot-connection-count-certified.witness.json",
         "dt-crossknot-sixone-connection-count.witness.json",
         "dt-crossknot-snappy-slope-hardening.witness.json",
@@ -5036,6 +5039,7 @@
         "qbeta-chain4-wenzl-qpoch.witness.json",
         "qbeta-chi-block-symbolic-closure.witness.json",
         "qbeta-chi-witness-convention-split.witness.json",
+        "qbeta-ck-c5-slot-and-size-mismatch.witness.json",
         "qbeta-ck-cache.witness.json",
         "qbeta-ck-closed-form-candidate-fits-probe.witness.json",
         "qbeta-ck-extraction-precision-floor.witness.json",
