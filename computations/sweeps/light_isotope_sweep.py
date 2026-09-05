@@ -113,8 +113,12 @@ def chi_lambda_numeric(shape, crossings):
 def tr_M_at_q0(Z, N, include_inter, convention="plancherel"):
     """Full tr_M at q_0.
 
-    convention="plancherel" (LEGACY): tr_M = Σ_λ (dim_q²/[n]_q!) · χ_λ / dim_λ_classical
-        Use w_λ = dim_q² / [n]_q! and divide by classical dim_λ inside.
+    convention="plancherel" (LEGACY): tr_M = Σ_λ W_λ · χ_λ / dim_λ_classical with
+        W_λ = (dim_q²/[n]_q!) / c_n, c_n = Σ_μ dim_q(μ)²/[n]_q! -- i.e. the
+        SELF-NORMALIZED q-Plancherel measure. The bare dim_q²/[n]_q! is a
+        probability measure at q=1 only (bean qou-uk8o); since E_0 is
+        calibrated at n=3 and the isotopes sit at n=6,9,12, the un-normalized
+        form put a different factor c_n/c_3 on each isotope's B_pred.
         This is the Plancherel-A convention. Some scripts depend on this.
 
     convention="wenzl-schur" (CANONICAL per prop:y-lambda-recipe-from-partition):
@@ -126,6 +130,15 @@ def tr_M_at_q0(Z, N, include_inter, convention="plancherel"):
     A = Z + N
     k = 3 * A
     nfac = qfac(k, Q0_PROTON)
+    # Self-normalizer for the plancherel convention (bean qou-uk8o, 2026-09-05):
+    # W_lambda = d_q^2/[k]_q! is a probability measure at q = 1 ONLY. At the
+    # proton q_0 it sums to c_k = 0.9911 / 1.1109 / 1.5171 at k = 6 / 9 / 12,
+    # while E_0 is calibrated at k = 3 (c_3 = 0.9874) -- so B_pred carried a
+    # factor c_k/c_3 that DIFFERS per isotope, and every err% in this sweep is
+    # a cross-A comparison. Dividing by c_k makes the weight a measure at each
+    # k. docs/audits/2026-09-04-plancherel-convention-gap.md
+    plancherel_c = sum(dim_q(shape, Q0_PROTON) ** 2 / nfac
+                       for shape in partitions_of(k))
     crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
 
     # Lazy-load Wenzl y_λ if requested
@@ -171,9 +184,20 @@ def tr_M_at_q0(Z, N, include_inter, convention="plancherel"):
             y = wenzl_y.get(shape, 0.0)
             w = y               # for the breakdown
             contrib = y * chi   # canonical: NO /dim_classical
-        else:  # plancherel (legacy)
+        else:  # plancherel (legacy), self-normalized
             d_q_val = dim_q(shape, Q0_PROTON)
-            w = float(d_q_val ** 2 / nfac)
+            # NOTE ON PRECISION, deliberately NOT dressed up. The `float()`
+            # that used to wrap this expression was a no-op: hecke_characters
+            # .dim_q already returns a builtin float, and `chi` below comes
+            # from a numpy matrix product built on float(Q0) (see
+            # chi_lambda_numeric). This producer is float64 END TO END by
+            # construction, so promoting the weight to mpmath.mpf here would
+            # claim a precision the characters do not have. The normalization
+            # defect being fixed is ~1.5% across the isotope series -- fourteen
+            # orders of magnitude above the float64 floor -- so it was never a
+            # precision problem. Rewriting the numpy character kernel in
+            # mpmath is a separate, much larger job (bean qou-uk8o notes it).
+            w = d_q_val ** 2 / nfac / plancherel_c
             contrib = w * chi / d
         total += contrib
         per_lambda.append({

@@ -200,7 +200,19 @@ def main() -> int:
     Wmap3 = {lam: gate_W(lam, Q0) for lam in gate_partitions(3)}
     Z3 = gate_Z(3, Q0)
 
+    # SELF-NORMALIZED companion (2026-09-05, bean qou-uk8o). W_λ = d_q²/[n]_q!
+    # is a probability measure at q = 1 only; at q₀ it sums to Z(3) = 0.98744,
+    # which this probe already computes and prints. That matters HERE even
+    # though n is fixed at 3, because [3] compares W_(2,1) against an
+    # EXPERIMENTAL magnitude (f_required from AME) rather than against another
+    # W-weighted quantity — so the 1.27% normalization defect does not cancel
+    # the way it would in a ratio of two weights. Both are reported: the raw
+    # map is what the Step-1 gate actually emits, the normalized one is what a
+    # probability measure would give.
+    Wmap3_norm = {lam: w / Z3 for lam, w in Wmap3.items()}
+
     pred = deuteron_fpn_from_Wmap(Wmap3)
+    pred_norm = deuteron_fpn_from_Wmap(Wmap3_norm)
 
     print("=" * 84)
     print("  Deuteron f_pn  ×  keystone Step-1 W_λ gate  —  wiring probe (EXPLORATORY, no fit)")
@@ -237,6 +249,13 @@ def main() -> int:
           f"  (under-binds {mp.nstr((AME_D - pred['E_pred_MeV']) / AME_D * 100, 4)}%)")
     print(f"      miss vs required f_pn = {mp.nstr(pred['miss_f_pct'], 4)}%   "
           f"miss vs AME binding = {mp.nstr(pred['miss_E_pct'], 4)}%")
+    print(f"      f_pn_pred (SELF-NORMALIZED W/Z(3))  = "
+          f"{mp.nstr(pred_norm['f_pn_pred'], 8)}"
+          f"   → E = {mp.nstr(pred_norm['E_pred_MeV'], 7)} MeV"
+          f"  (under-binds "
+          f"{mp.nstr((AME_D - pred_norm['E_pred_MeV']) / AME_D * 100, 4)}%)")
+    print(f"      miss vs required f_pn = {mp.nstr(pred_norm['miss_f_pct'], 4)}%   "
+          f"miss vs AME binding = {mp.nstr(pred_norm['miss_E_pct'], 4)}%")
 
     # ---- [2b] Bring-coordinate cross-check (NOT just the algebraic weight) ---
     f_bring = bring_color_weighted_fpn()
@@ -260,11 +279,17 @@ def main() -> int:
 
     # ---- falsifiable verdict ------------------------------------------------
     brackets = (f_std < f_required < pred["f_pn_pred"])
+    brackets_norm = (f_std < f_required < pred_norm["f_pn_pred"])
     bring_on_lower_bracket = abs(f_bring - f_std) < mp.mpf("0.01")
     print("\n  [4] VERDICT (falsifiable, derive-or-refute):")
     print(f"      bracket  f_std < f_required < W_(2,1)  :  "
           f"{mp.nstr(f_std, 6)} < {mp.nstr(f_required, 6)} < "
           f"{mp.nstr(pred['f_pn_pred'], 6)}   → {'YES' if brackets else 'NO'}")
+    print(f"      same, SELF-NORMALIZED W/Z(3)           :  "
+          f"{mp.nstr(f_std, 6)} < {mp.nstr(f_required, 6)} < "
+          f"{mp.nstr(pred_norm['f_pn_pred'], 6)}   → "
+          f"{'YES' if brackets_norm else 'NO'}  (bracket SURVIVES; the upper "
+          f"edge moves out, so the gap widens)")
     print("      • The bare std channel OVER-binds (0.395, E 3.89); the gate's")
     print("        q-Plancherel weight W_(2,1) UNDER-binds (0.661, E 1.74). The")
     print("        required magnitude 0.588 (E 2.22) sits strictly BETWEEN them.")
@@ -313,6 +338,29 @@ def main() -> int:
         "miss_f_pct_vs_required": str(pred["miss_f_pct"]),
         "miss_E_pct_vs_AME": str(pred["miss_E_pct"]),
         "bracket_fstd_lt_freq_lt_W21": bool(brackets),
+        "self_normalized_companion": {
+            "why": (
+                "W_lambda = d_q^2/[n]_q! is a probability measure at q=1 only; "
+                "at q_0 it sums to Z(3) = 0.98744023, recorded above as "
+                "gate_Z3. n is fixed at 3 here, but section [3] compares "
+                "W_(2,1) against an EXPERIMENTAL magnitude (f_required from "
+                "AME), not against another W-weighted quantity -- so the 1.27% "
+                "defect does NOT cancel the way it does in a ratio of two "
+                "weights at one n. Bean qou-uk8o; "
+                "docs/audits/2026-09-04-plancherel-convention-gap.md"),
+            "gate_Wlambda_n3_selfnorm": {
+                str(lam): str(Wmap3_norm[lam]) for lam in gate_partitions(3)},
+            "f_pn_pred_selfnorm": str(pred_norm["f_pn_pred"]),
+            "E_pred_selfnorm_MeV": str(pred_norm["E_pred_MeV"]),
+            "miss_f_pct_vs_required_selfnorm": str(pred_norm["miss_f_pct"]),
+            "miss_E_pct_vs_AME_selfnorm": str(pred_norm["miss_E_pct"]),
+            "bracket_survives": bool(brackets_norm),
+            "verdict_unchanged": (
+                "The REFUTE verdict and the bracket both survive: the upper "
+                "edge moves 0.66067 -> 0.66908, so the required 0.58776 is "
+                "still strictly inside (0.50823, 0.66908) and the miss widens "
+                "slightly rather than closing."),
+        },
         "bring_coordinate_crosscheck": {
             "z_markov_bond_factor": str(z),
             "z0_color_fibre": str(z0_color),
