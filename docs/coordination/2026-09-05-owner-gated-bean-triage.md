@@ -376,7 +376,27 @@ standing NO-FITTING directive, "accuracy is not evidence of correctness here".
 **Default if you say nothing:** (b), the status quo — production keeps
 `45·[3]_q` and nothing moves.
 
-### CLUSTER 7 — one-off content/model calls
+### CLUSTER 7 — one-off content/model calls. ⚠️ **RE-TRIAGED 2026-09-05: 6 of 8 are NOT owner decisions**
+
+Two closed as already-answered, four reclassified off the queue as ordinary
+agent work, two genuinely remain. **The queue was inflated by misclassification
+as well as by staleness** — that is a second inflation mechanism this triage had
+not separated, and it is the larger one here.
+
+| bean | verdict 2026-09-05 |
+|---|---|
+| `qou-8na1` | ✅ **CLOSED — owner ruled today.** `1b26c6d28d` (*"O2 (owner ruling): say WHICH program, and stop calling `1/[k]_q!` an LP dual"*) put the consequence into the block: *"by strong duality $y_0^\ast = 0$. Any quantity recovered by dividing by $y_0^\ast$ is undefined"* (line 19) and *"…it is not $y_0^\ast$, which is $0$"* (line 36). |
+| `qou-hey2` | ✅ **CLOSED — superseded** by `qou-8bxv` / [`2026-09-05-two-skein-normalisations-are-live.md`](../audits/2026-09-05-two-skein-normalisations-are-live.md), which proves the two skein relations are not rescalings. This bean's *argument* is retracted (it evaluated an invariant-level relation on operator eigenvalues — arity conflation); its conclusion survives, and the one claim false under **either** convention — `feynman-eigenbasis.md:29`, *"is simply the characteristic equation of the braiding evaluated under the categorical trace"* — is fixed. Measured **1 of 20** files carried it; the other 19 are correct and must not be swept. |
+| `qou-r4ya` | ↩︎ **Not a ruling.** It proposes running the theta-limit machinery and already carries its own scope correction. Open research, in scope for all under the 2026-07-11 reversal. |
+| `qou-48is` | ↩︎ **Not a ruling.** It establishes a *gap* (the orbit identity does not license the cross-species ordering; the stated reason is a cost property). Same subject as **Cluster 1** — merge it there. |
+| `dgpc` | ↩︎ **Not a ruling.** A Tier-C drain queue with per-family counts and recorded progress. No decision in it. |
+| `qou-imkb` | ↩︎ **Not a ruling — a live defect.** Re-verified: `probe_sdp_canonical_paper_formula.py` and its witness are **0 files on disk** and **0 commits** in this clone, and the raising site is still live at `paper_six_term_isotope_sweep.py:185`. The error message instructs a user to run something that has never existed. |
+| `gm4q` | 🔴 **GENUINELY OPEN** — and it already ships a full options doc with a recommendation ([`2026-09-04-binding-law-options-decision-frame.md`](../audits/2026-09-04-binding-law-options-decision-frame.md), probe 10/10). The ask is *"adopt Option B, the additive law, or say why not"*. |
+| `qou-c66b` | 🔴 **GENUINELY OPEN** — editing a conjecture block's stated obstacle. The measurement is decisive (in `Q_β/m_e = |q² − 2q − 1|·(q+1)/(2q³)` the modulus wraps **one** factor, so the projection is not total), but whether the block's *"no mass observable can detect Im(q)"* is thereby wrong turns on whether a decay Q-value counts as one — a framing call. |
+
+Original pass-3 text, kept for the record:
+
+
 
 `gm4q` (**already has a full options doc with a recommendation**:
 `docs/audits/2026-09-04-binding-law-options-decision-frame.md`, probe 10/10 — the
