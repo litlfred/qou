@@ -20,7 +20,10 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 # QOU.InstantonConnection
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/InstantonConnection.lean (monolithic)
+Source: content/quantum-observable-universe/lean/QOU/InstantonConnection.lean (monolithic).
+That file no longer exists — the library was split, and `InstantonConnection` now lives at
+  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/CRRealisation.lean
+  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Propositions.lean
 
 **Ground ring**: `ℝ` (geometric/analytic realisation).
 Uses ℝ-specific analysis (trig, norms, real powers).

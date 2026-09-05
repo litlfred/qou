@@ -6,7 +6,9 @@ import Mathlib.Data.Real.Basic
 # QOU.QHarmonicForm
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QHarmonicForm.lean (monolithic)
+Source: content/quantum-observable-universe/lean/QOU/QHarmonicForm.lean (monolithic).
+That file no longer exists — the library was split, and `QHarmonicForm` now lives at
+  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Particles.lean
 
 **Archimedean realisation.** A q-harmonic form (particle) is the
 archimedean realisation of a section in the kernel of the q-Laplacian

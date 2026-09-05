@@ -8,7 +8,7 @@ import Mathlib.Data.List.Basic
 Content block for `def:admissible-system`.
 
 The authoritative formalization lives in
-`content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean`, which defines:
+`content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean`, which defines:
 - `QOU.GrobnerShirshov.AdmissibleOrder G` — a well-order on monomials
   compatible with left and right concatenation
 
@@ -29,8 +29,8 @@ Additionally, `NormalForms.lean` provides concrete instances:
 ## References
 
 - [leitnerpawloski2004] https://arxiv.org/abs/math/0409565, Definition 3.4–3.6
-- content/unital-groebner-bases/lean/QOU/GrobnerShirshov/Basic.lean §1
-- content/unital-groebner-bases/lean/QOU/GrobnerShirshov/NormalForms.lean (concrete order)
+- content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean §1
+- content/unital-groebner-bases/lean/UGB/GrobnerShirshov/NormalForms.lean (concrete order)
 -/
 
 namespace QOU.GrobnerShirshov.ContentBlock
