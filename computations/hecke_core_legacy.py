@@ -1163,10 +1163,17 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
 def _build_ysn_matrices_exact(partition, sparse_threshold=32):
     """Build YSN matrices for σ_1, …, σ_{n-1} of the given partition.
 
-    For dim ≥ sparse_threshold, returns scipy.sparse.csr_matrix objects
-    (each σ_j has at most 2·dim nonzeros: a diagonal entry plus
-    2×2 mixing blocks, so sparsity ≈ 2/dim).
-    For smaller dim, returns dense tuples (faster for small cases).
+    For dim ≥ sparse_threshold, returns `_ExactCOO` objects (each σ_j has
+    at most 2·dim nonzeros: a diagonal entry plus 2×2 mixing blocks, so
+    sparsity ≈ 2/dim). For smaller dim, returns dense tuples of `mpf`
+    (faster for small cases).
+
+    This said "returns scipy.sparse.csr_matrix objects" until 2026-09-05.
+    PR #6794 changed the emit to `_ExactCOO` — csr_matrix is float64 and
+    cannot hold these values — and left the docstring describing the
+    behaviour it had replaced. It is corrected rather than deleted because
+    the same slip is what the whole `_ExactCOO` change exists to prevent:
+    a label that agrees with its own history instead of with its body.
 
     All entries numerical (evaluated at q₀).
     """
@@ -1180,8 +1187,6 @@ def _build_ysn_matrices_exact(partition, sparse_threshold=32):
     tab_index = {tuple(tuple(r) for r in T): i for i, T in enumerate(tabs)}
 
     use_sparse = dim >= sparse_threshold
-    if use_sparse:
-        from scipy.sparse import csr_matrix
 
     matrices = []
     for k in range(1, n):
