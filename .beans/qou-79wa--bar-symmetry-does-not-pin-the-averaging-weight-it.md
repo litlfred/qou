@@ -86,3 +86,20 @@ float64-guard clean).
 region (`k > 1` for the SEMF sign) and two named landmarks (`k = 0` undeformed,
 `k = 1` the framework's own bracket). That is a much smaller target than "derive
 the averaging rule".
+
+
+## 2026-09-05 (later) — `k` enumerated: only k = 0 and k = 1 have arguments
+
+`qou-yf02`. The successor this bean named is answered as far as it can be: `k`
+is not derived, but the candidates are now enumerated and the SEMF-signed region
+is empty of them.
+
+- `w_k = 1/(q^{2k}+1) = 1/(1 + (b_pp/b_nn)^(k/2))` — `k/2` is the bond-ratio power.
+- `f_pn(k) = [2]_{q^(2-k)}/([2]_q [2]_{q^k})`, and `f(k).f(2-k) = 1/[2]_q^2`,
+  which is WHY `delta` is odd about `k = 1`.
+- `k = 0` derived (undeformed) → wrong sign; `k = 1` derived (the interface IS
+  the loop value, and the unique fixed point of the reflection) → **zero**;
+  `k > 1` → SEMF sign, **no member with an argument**.
+- The corpus with its flavour split sits at `k = -0.00659`, i.e. negative.
+
+**Derivable prediction: `k = 1`, no symmetry energy from this channel.**
