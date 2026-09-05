@@ -743,32 +743,50 @@ class HeckeDivision:
     # ── Markov trace ─────────────────────────────────────────────
 
     def markov_trace(self, elem, n_strands):
-        """Compute the Markov trace of a reduced Hecke element."""
+        """Compute the Markov trace of a reduced Hecke element.
+
+        Delegates every monomial to the canonical Ocneanu recursion
+        (``markov.markov_trace_canonical.tr_M_word``) with this instance's
+        Markov parameter ``z`` and ``h = q − q⁻¹``.
+
+        CORRECTED 2026-09-05 (bean ``qou-ix74``). The previous ``_trace_word``
+        applied ONLY the Markov rotation ``tr(x·σ_top) = z·tr(x)`` and never
+        the Hecke relation, so an intermediate ``σ_i σ_i`` was traced as
+        ``z·z`` instead of ``h·z + 1``. On the basis word ``σ₁σ₂σ₁`` that
+        gave ``z³ = 0.2300`` against the Ocneanu value ``h z² + z = 0.6912``
+        at the proton pin, and on ``(σ₁σ₂)⁵`` it gave ``0.9684`` against
+        ``1.18748`` — the value the t35-weak-vertex witness carried from
+        2026-08-29. Its memo cache was also a shared mutable default keyed
+        on the word alone, so a second instance with a different ``z``
+        silently read the first instance's numbers. The reducer was never
+        at fault: re-tracing its reduced terms with the correct basis
+        values reproduces the canonical value exactly.
+        """
+        h = self.q - 1.0 / self.q
         total = 0.0
         for word, coeff in elem.terms.items():
-            total += coeff * self._trace_word(word, n_strands)
+            total += coeff * self._trace_word(tuple(word), n_strands, z=self.z_markov, h=h)
         return total
 
-    def _trace_word(self, word, n_strands, _cache={}):
-        """Recursive Markov trace of a braid monomial."""
-        key = (word, n_strands)
-        if key in _cache:
-            return _cache[key]
+    def _trace_word(self, word, n_strands, z=None, h=None):
+        """Markov trace of a braid monomial via the canonical recursion.
 
-        if not word:
-            result = 1.0
-        else:
-            max_gen = max(word)
-            effective_n = max_gen + 2
-            if n_strands > effective_n:
-                n_strands = effective_n
-
-            last_max_pos = len(word) - 1 - list(reversed(word)).index(max_gen)
-            rotated = word[last_max_pos + 1:] + word[:last_max_pos]
-            result = self.z_markov * self._trace_word(rotated, n_strands)
-
-        _cache[key] = result
-        return result
+        Kept as the historical entry point; no private cache — the canonical
+        module memoises on ``(word, n, z, h)`` itself, so distinct instances
+        (distinct ``z``) can no longer contaminate each other.
+        """
+        if z is None:
+            z = self.z_markov
+        if h is None:
+            h = self.q - 1.0 / self.q
+        try:
+            from markov_trace_canonical import tr_M_word
+        except ImportError:  # cluster subdir not on sys.path yet
+            import sys as _s
+            from pathlib import Path as _P
+            _s.path.insert(0, str(_P(__file__).resolve().parent.parent / "markov"))
+            from markov_trace_canonical import tr_M_word
+        return tr_M_word(tuple(word), n_strands, z, h)
 
     # ── Analysis ─────────────────────────────────────────────────
 

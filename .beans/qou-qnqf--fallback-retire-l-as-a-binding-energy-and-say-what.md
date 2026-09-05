@@ -63,4 +63,18 @@ keep every computation, mark the `B = alpha L` identification as an open
 interpretation in the six exposition blocks and wherever a probe compares
 `alpha L` to AME, and leave the numbers standing.
 
-- [ ] The re-labelling itself — a decision for the owner, not a computation.
+- [x] **Done (owner decision Q2, 2026-09-05).** One canonical block,
+      `rem:bond-log-ratio-is-a-free-energy`, wired into
+      `sec:canonical-closure-as-link`: states that `L` is a free-energy
+      difference over the Markov state sum (with the signed-observable caveat
+      and the three closed forms), and marks `B = alpha L` as an open
+      interpretation with the evidence against it — the A=2 ordering, the
+      no-valley result, and the 31 % of helium-4. The two blocks that present
+      the bond constants (`rem:canonical-trace-factorises-over-chain`,
+      `rem:pn-bond-cannot-be-extremal`) now point at it rather than each
+      restating the caveat. Validation clean.
+
+      Nothing retracted, no number moved: every `L` in the corpus stands as a
+      correct free energy. The block also records that the corpus's working
+      binding route is a different one — the Layer-1 canonical `|tr_M(q_0)|`
+      table, reaching -0.16 % to +5.87 % on D, T, 3He and 4He.

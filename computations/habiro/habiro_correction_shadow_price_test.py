@@ -230,10 +230,18 @@ def main():
     # `backend` rides along because a clarabel answer and a scipy-HiGHS answer
     # to this LP are not interchangeable, and a witness that does not say
     # which one produced it cannot be re-checked.
+    # THE PRIMAL, which was missing. Same reasoning as the companions below:
+    # without x* the objective cannot be recomputed from the published
+    # certificate, and both `lp_dual_backend_inference_audit` (it normalises
+    # the gap by max|x*|) and `duality_gap_residuals` are blind to this
+    # record. Bean `qou-dke6`.
+    w.add_data("x_star", rd["x_star"])
     w.add_data("y0_star", y0_star)
     w.add_data("y_star", y_star)
-    for _k in ("y0_star_str", "y_star_str", "primal_obj_str",
-               "dual_obj_str", "duality_gap_str"):
+    for _k in ("x_star_str", "y0_star_str", "y_star_str", "primal_obj_str",
+               "dual_obj_str", "duality_gap_str",
+               "gap_recomputed_str", "residual_primal_str",
+               "residual_dual_str"):
         _v = rd.get(_k)
         if _v is not None:
             w.add_data(_k, _v)

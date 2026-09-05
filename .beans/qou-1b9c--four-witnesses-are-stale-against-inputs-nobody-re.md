@@ -1,11 +1,11 @@
 ---
 # qou-1b9c
 title: four witnesses are stale against inputs nobody re-ran — found only because agents happened to execute them
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T10:42:01Z
-updated_at: 2026-08-30T10:42:28Z
+updated_at: 2026-09-05T05:46:08Z
 ---
 
 
@@ -74,3 +74,15 @@ check that would have caught `qou-2364`, `qou-saop` and all four of these, and
 none of the existing gates can. The obvious objection is runtime — the corpus
 has ~700 witness-emitting producers and several take >10 min — so a sampled or
 staleness-ordered sweep is the realistic form.
+
+CLAIMED 2026-09-05 (session cool-johnson). Re-verifying each of the 3 real stale witnesses on current main (bean is 124 commits old; producers or witnesses may have moved). The 4th (witness-raw-float64-audit) is a contended tree-measuring output — will NOT commit it. Scope: re-run each producer, diff committed-vs-fresh (masking volatile), decide legit-upstream-update (commit fresh) vs regression (investigate/bean). The 'periodic re-run-and-diff sweep' proposal is a separate owner decision, not this drain.
+
+RESOLVED 2026-09-05 — already drained by sibling work, verified current on main (a85157d5a0 + fetch). The bean was filed 2026-08-30; 124 commits of sibling witness-drains have since re-run all three real producers. Verified each by re-running the producer and diffing committed-vs-fresh (volatile masked):
+
+- qbeta-habiro-cross-pair-quick-dp: committed now carries per_m[0].delta=-6, is_zero=False (the bean's target post-fix values). Re-run substantive diff = 0.
+- q-dirac-linking-weight-h4-50dps: committed precisionMetadata = {compute_dps:70, output_dps:60, truncation_bound:1e-60} (the bean's target values). Re-run diff = 0.
+- probes/qbeta-habiro-phi8-squared-from-z-squared-probe: re-run diff = 0.
+
+The 4th (witness-raw-float64-audit) is a tree-measuring audit output, not a defect. Nothing to commit — all four are current.
+
+ONE ITEM SURVIVES, and it is an OWNER DECISION, not a drain: the bean's 'what to decide' — whether a periodic 're-run-and-diff' witness sweep is worth its cost. It is the only check that would have caught this class (qou-2364, qou-saop, these four) since no existing gate executes producers. Cost objection: ~700 witness-emitting producers, several >10 min, so the realistic form is sampled/staleness-ordered. NOT built here (infra policy call). Left in this completed bean for the owner; no separate bean spun to avoid an unowned infra bean.

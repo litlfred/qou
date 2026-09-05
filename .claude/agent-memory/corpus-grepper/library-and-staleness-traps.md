@@ -141,3 +141,37 @@ that document's extracted theorems and definitions.
 Briefs and summaries are **extractive** — assembled from each document's own
 abstract and section titles, nothing model-written — so a brief is only as
 good as the abstract behind it.
+
+## Three citation discriminators (detail for the MEMORY.md "held ≠ held in full" TRAP)
+
+Measured 2026-09-04 over `references.ts` (828 `ref()` entries) and `library/`
+(576 dirs, 552 `INDEX.md` rows).
+
+1. **held vs registered** — does the entry carry `library: { docId }`? **394 of
+   828** do. No `docId` ⇒ the work is *not ingested*, however confidently it is
+   cited. Live examples: `mostow1968` (cited 63x downstream of the arc),
+   `murakami-murakami2001` (**63 citers**, the volume conjecture's founding
+   paper), all four `woronowicz*` keys, `fulton-harris1991`, `bichon2003`,
+   `etingof-ostrik2004`. For a textbook that is fine and deliberate; for a
+   63-times-cited research paper it is a hole.
+2. **held but UNregistered is a real class too.** `library/0803219` — Murakami,
+   *An introduction to the volume conjecture and its generalizations* — is
+   ingested with sections and greppable, and `grep -n 0803219 references.ts`
+   returns **nothing**, so no block can cite it. `references.ts`'s own
+   `milnor1982` note records the same thing happening: *"the library held this
+   paper unlinked, so it read as an unregistered document."* **A systematic
+   `library/<docId>` ↔ `references.ts` reconciliation has never been run**;
+   576 − 394 − 23 duplicates is not the answer, because docIds repeat and
+   alternates exist.
+3. **a `-- Ref:` key can resolve to nothing, and nothing checks.** Over the 70
+   distinct keys in `QOU/{Eightfold,QuantumObservableUniverse,BringsSurface,
+   Archimedean}/*.lean`, **4 are unresolved**: `[hatcher2002]` (appears exactly
+   once in the whole corpus, at `CircleBundleBettiObstruction.lean:63`, and the
+   Gysin count it supports is "the model, cited not derived"); `[ohtsuki2016-52]`
+   (a suffixed variant of the *held* `ohtsuki2016`, same DOI); and
+   `[conj:jet-convergence-classical-limit]` / `[conj:jet-filtered-knot-factor]`,
+   which are content-block labels in a bibliography slot.
+
+Recipe (the check itself is ~15 lines of python): extract `id: "..."` from
+`references.ts` into a set, then regex `--\s*Ref:\s*\[([^\]]+)\]` out of the
+`.lean` files and difference, excluding `manuscript`.

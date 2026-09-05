@@ -89,17 +89,32 @@ forbids promotion to `proposition`/`theorem`.
 
 The Lean formalization follows the hypothesis-carrying conditional-class
 pattern: the class `QOU.QPochhammer.AlgebraicGeometricEquivalence` carries
-exactly the two open inputs — the volume-conjecture saddle asymptotic
-(a theorem for $4_1$ by Ohtsuki / Andersen–Hansen) and the matched-cusp
-volume identification supplied by
+the open inputs — the matched shape parameter $z(x)$, the volume-conjecture
+saddle asymptotic (a theorem for $4_1$ by Ohtsuki / Andersen–Hansen), and the
+matched-cusp volume identification supplied by
 ([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)) —
 and the statement bundle `QOU.QPochhammer.algebraic_geometric_equivalence`
 *derives* both halves: item 1 (pole side) unconditionally, as the sorry-free
 theorem `pole_cusp_bijection_proved` (each $x = q^{-k}$ is a genuine root of
-$(x;q)_n$), and item 2 (Bloch–Wigner asymptotic) from the two class fields.
+$(x;q)_n$), and item 2 (Bloch–Wigner asymptotic) from the class fields.
 The class asserts nothing provable-outright; no instance is fabricated. This
 matches the conjectural-class pattern used for
 [Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge).
+
+**The shape parameter is a field, on the upper half plane.** Item 2 above
+states the asymptotic at $D(z(x))$, with $z(x)$ the shape of the ideal
+tetrahedron; an earlier Lean revision typed the Bloch–Wigner function
+$D \colon \mathbb{R} \to \mathbb{R}$ and applied it to the state variable $x$
+itself, on the grounds that the matching map had been composed away. That
+diverged from the statement above, and it was not a harmless simplification:
+$D$ is conjugation-antisymmetric, $D(\bar z) = -D(z)$, so $D$ vanishes
+identically on the reals and every volume the class could name was forced to
+zero — a *flat* tetrahedron, which is the negation of the conjecture rather
+than a weak form of it. The map is now un-composed: `shape` is a class field
+typed `UpperHalfPlane`, so a degenerate shape is not expressible, and $x$
+keeps its own role as the $q$-Pochhammer state variable. The sibling
+([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy))
+had already made the same repair on its own shape assignment.
 
 ## The bar-odd open item: argument identification to $S$
 

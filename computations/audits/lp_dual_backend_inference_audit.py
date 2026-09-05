@@ -108,10 +108,24 @@ def _has_nested_record(o) -> bool:
     return walk(o, top=True)
 
 
+def _is_aggregate(o) -> bool:
+    """True when the five LP field NAMES are present but the values are a
+    column-wise aggregate across several solves, not one solve.
+
+    `y0_star` is the discriminator: in a real record it is a SCALAR (one net
+    shadow price). `nucleus_operator_selection_sdp` collects its four nuclei
+    into parallel lists under the same names, so `.data.y0_star` is a list of
+    four -- and the five-key test matched it as though it were a solve, then
+    reported it as "no primal" because the aggregate carries none.
+    """
+    return isinstance(o.get("y0_star"), list)
+
+
 def _records(o, p=""):
-    """Yield LEAF LP records only -- wrappers are skipped, not counted."""
+    """Yield LEAF LP records only -- wrappers and aggregates are skipped."""
     if isinstance(o, dict):
-        if LP_KEYS <= set(o) and not _has_nested_record(o):
+        if (LP_KEYS <= set(o) and not _has_nested_record(o)
+                and not _is_aggregate(o)):
             yield p, o
         for k, v in o.items():
             yield from _records(v, f"{p}.{k}")
@@ -128,10 +142,32 @@ def _mpf(v):
         return None
 
 
+def _primal(rec):
+    """The primal vector under ANY key name, preferring the decimal strings.
+
+    🛑 NOT just `x_star` / `x_star_str`. Producers prefix by half when a row
+       carries two solves: `nucleus_operator_selection_sdp` emits
+       `lp_x_star_str` for the LP and `sdp_X_star_str` for the SDP. Keying on
+       the bare name reported that witness as having NO PRIMAL when it carries
+       two, and would have had me "fix" a producer that was already correct.
+       Matched case-insensitively on the substring, so `X_star` is found too.
+    """
+    best = None
+    for k, v in rec.items():
+        if "x_star" not in k.lower():
+            continue
+        if not isinstance(v, list) or not v:
+            continue
+        if k.lower().endswith("_str"):
+            return v          # full precision wins outright
+        best = best or v
+    return best
+
+
 def classify(rec):
     """-> (verdict, rel or None). Verdict is one of: f64-era, mpfr-era,
     ambiguous, or a reason string beginning 'unclassifiable:'."""
-    xs = rec.get("x_star_str") or rec.get("x_star")
+    xs = _primal(rec)
     g = _mpf(rec.get("duality_gap_str") or rec.get("duality_gap"))
     if not isinstance(xs, list) or not xs:
         # NOT one bucket. A record without a primal vector is either a
@@ -161,7 +197,10 @@ def classify(rec):
         return "unclassifiable: gap not numeric", None
     if g == 0:
         return "unclassifiable: gap exactly 0", None
-    xv = [_mpf(v) for v in xs]
+    flat = []
+    for v in xs:                       # an SDP primal is a MATRIX
+        flat.extend(v if isinstance(v, list) else [v])
+    xv = [_mpf(v) for v in flat]
     if any(v is None for v in xv):
         return "unclassifiable: x* not numeric", None
     mx = max(mp.fabs(v) for v in xv)
