@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-05T06:22:17Z
-updated_at: 2026-09-05T07:19:16Z
+updated_at: 2026-09-05T07:27:21Z
 ---
 
 ## What is open
@@ -77,3 +77,40 @@ length `m-1` with entry `j` equal to the product over the nucleons strictly betw
 `j` and `m`. Note the closure reads `config[j]!` and `config.get! (k-1)` against the
 ORIGINAL list, not the prefix, so no re-indexing is needed — but `j + 1 < config.length`
 has to be threaded to discharge the `get!` partiality on both sides.
+
+
+## UPDATE 2026-09-05 (second) — the three-arm case split was illusory
+
+`buildChains_eq_foldl` (commit 07984d4357, `rfl` on all three branches):
+
+    buildChains config = (config.foldl (buildStep config) ([], 0)).1
+
+The `[]` and `[_]` special-case arms are **redundant** — folding `[]` gives
+`([], 0)` and folding `[x]` gives `([], 1)`, first component `[]` either way.
+So the "not nil and not singleton" side conditions I flagged in the first
+update do NOT survive into the induction. Scratch that obstacle.
+
+**TRAP.** `buildStep`'s body must stay term-identical to `buildChains`'s step,
+including the deprecated `List.get! (k - 1)`. Modernising it to
+`config[k - 1]!` breaks `buildChains_eq_foldl` — measured, `rfl` fails; the two
+accessors are not definitionally equal at that strength. The inherited
+deprecation warning is deliberate and documented at the def.
+
+## All that is left: the accumulator invariant
+
+For `m <= config.length`, folding `config.take m`:
+
+    (config.take m).foldl (buildStep config) ([], 0) = (L m, m)
+    L m = (List.range (m-1)).map (fun j =>
+            (((config.take m).drop (j+1)).map (crossingMatrix config[j]!)).prod)
+
+At `m = config.length` this is the bean's goal. The step case splits at
+`m = 0` (counter guard) and `m >= 1`, and needs:
+
+- `List.take_succ` to peel `config.take (m+1) = config.take m ++ [config[m]!]`
+- `List.mapIdx` length + getElem lemmas for the `extended` component
+- `List.drop_append` for `j < m-1`, and the singleton case for `j = m-1`
+
+The closure indexes the ORIGINAL `config` (`config[j]!`, `config.get! (k-1)`),
+not the prefix, so there is no re-indexing to do. `j + 1 < config.length` is
+still needed to discharge `get!` partiality on both sides.
