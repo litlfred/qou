@@ -413,6 +413,44 @@ theorem descartesWtrace_markov (D : DescartesData) (n : ℕ)
   QOU.SchurWeyl.SeminormalRep.wtrace_markov D.q D.q_ne_zero (descartes_sq_ne_one D)
     (descartes_sq_add_one_ne_zero D) (descartes_notRootOfUnity_sq D) n y
 
+/-! #### The refactor is blocked at the universe boundary — measured, not guessed
+
+Retiring `DescartesMarkovTrace` needs its `trSummand` replaced by the real
+per-summand component,
+
+    ocneanuWeight q z_D ν · χ^ν(x)   for  ν : {ν : YoungDiagram // ν.cells.card = n+1}
+
+and the decomposition proved from `wtrace_apply`. Both were written and
+**neither compiles**, for one specific reason worth recording rather than
+re-discovering:
+
+    (kernel) incorrect number of universe levels parameters for
+    'QOU.SchurWeyl.SeminormalRep.seminormalRep', #1 expected, #0 provided
+
+`seminormalRep` is universe-polymorphic in its field `K`
+(`{μ : YoungDiagram} → {K : Type u_1} → [Field K] → …`). Naming it from this
+file at `K := ℝ` elaborates, and then the **kernel** rejects the resulting
+definition. Tried and rejected: leaving both implicits inferred; pinning
+`(μ := ν.1)`; pinning `(μ := ν.1) (K := ℝ)` — the last makes it worse, since
+supplying `K` explicitly is what drives the universe count to zero. Tactic
+mode gets one step further, `rw [wtrace_apply]` closing the shape, and then
+`rfl` fails on two sums that print identically apart from their elided proof
+terms.
+
+This is the §7d universe-carrying problem at the library boundary rather than
+inside one file, so §7d's own remedy (name the universes and tie them at each
+use site) does not apply directly — the parameter belongs to a declaration in
+another package.
+
+**So the cost of retiring `DescartesMarkovTrace` is not the refactor it
+looked like.** The element-type and indexing changes are mechanical; this is
+not, and it has to be solved before any of them are worth starting. What is
+already available and does compile is beside this note: `descartesWtrace`,
+`descartesWtrace_markov`, `descartesWtrace_one` — the trace, its Markov
+property at `z_D`, and its normalisation, all off the library. Bean
+`qou-ah2l`.
+-/
+
 /-- **`DescartesMarkovTrace.z` carries no information**: every non-zero real is
     the `z` of some instance.
 
