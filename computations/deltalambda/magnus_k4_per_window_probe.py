@@ -133,6 +133,35 @@ def main():
         print(f"  {k:>3}  {str(lam):<11}{base.block_structure(lam)[1]:>6}"
               + "".join(f"{mp.nstr(x, 7):>16}" for x in row))
 
+    # RAW vs PER-DIM at the square end. dim is NOT monotone along the column — at A=4 it runs
+    # 11, 54, 154, 275, 297, 132, so it DROPS by 2.25× into the square shape. A rise in |tr|/dim
+    # there can therefore be pure denominator. Reporting both is not pedantry: quoting |tr|/dim
+    # where the raw quantity mattered already cost this arc one published correction, and it is
+    # about to cost a second — the "square-end rise is universal (10/10)" claim is 10/10 per-dim
+    # and only 9/10 raw.
+    if len(ks) > 6:
+        print("\n  SQUARE END (k=5 → k=6): per-dim rise vs RAW rise — dim drops "
+              f"{base.block_structure(shape(n, 5))[1]} → {base.block_structure(shape(n, 6))[1]}")
+        print(f"    {'a':>4}{'|tr|/dim k=5':>15}{'k=6':>13}{'per-dim':>10}"
+              f"{'raw k=5':>13}{'raw k=6':>13}{'raw':>9}")
+        d5 = base.block_structure(shape(n, 5))[1]
+        d6 = base.block_structure(shape(n, 6))[1]
+        nraw = 0
+        for a in wins:
+            v = per_win[a]
+            r5, r6 = v[5] * d5, v[6] * d6
+            pd = v[6] > v[5]
+            rw = r6 > r5
+            nraw += 1 if rw else 0
+            print(f"    {a:>4}{mp.nstr(v[5], 6):>15}{mp.nstr(v[6], 6):>13}"
+                  f"{('rise' if pd else 'fall'):>10}"
+                  f"{mp.nstr(r5, 6):>13}{mp.nstr(r6, 6):>13}{('rise' if rw else 'FALL'):>9}")
+        print(f"    ⇒ per-dim rises: {sum(1 for a in wins if per_win[a][6] > per_win[a][5])}"
+              f"/{len(wins)}    RAW rises: {nraw}/{len(wins)}")
+        if nraw < len(wins):
+            print("      The gap is the dimension drop. Quote the RAW count for a claim about the")
+            print("      trace; the per-dim count is about the trace AND the column's dim profile.")
+
     print("\n  Where does each window PEAK (over k ≥ 1), and does it rise INTO k=4?")
     verdicts = []
     for a in wins:
