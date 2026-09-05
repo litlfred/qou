@@ -1,7 +1,7 @@
 ---
 # qou-oots
 title: 'Phi_k weight family is unjustified: dim_q^2 misuses a quantum dimension where f^lambda*dim_q (Molien, Lean-proved exactly normalized) or y_lambda (Markov, canonical Frobenius pairing) may belong'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-05T05:55:40Z
@@ -329,3 +329,47 @@ ratio `w_Molien/w_dimq2` at q0 normalised to its own mean spreads
 `q^{-kappa}`, extremal on those shapes). Since n = 3A, n=9 is A=3. Picking the
 wrong family at the n where the physics lives is a 10^3 error, so selecting a
 module reading does not make the family choice a detail. Both stay live.
+
+
+## 2026-09-05 — CLOSED. Owner ruling: Molien canonical, two-arm reporting.
+
+**Ruling:** *'molien. do the two arm reporting'*. Molien
+`f^lam q^{-kappa} dim_q/[n]_q!` is the canonical Phi_k weight; `dim_q^2/D^2`
+is retained as a LABELLED comparison arm, not a fallback.
+
+**Delivered:**
+- `fr_pullback_k3_test.py` — base measure is now a parameter
+  (`base_weights(by_partition, family)`) threaded through the FR pullback, the
+  uniform precompute and both binding functions; the pipeline runs twice and
+  reports both arms plus a cross-arm comparison. The FR redistribution RULE is
+  family-agnostic and unchanged between arms — the two were previously
+  conflated in one hard-coded expression, which is the ambiguity this bean was
+  about.
+- `prop:plancherel-term-7-formulation` — Phi_k defined over Molien, title
+  updated, both arms and their disagreement stated in the block itself.
+
+**THE ARMS DISAGREE, which is why one number would have been an overclaim:**
+
+    family              baseline   best knot   best m/m   vs baseline
+    molien  CANONICAL     1.5489       5_2       1.2169      +21.4%
+    dimq2_selfnorm        1.0660       6_1       1.0478       +1.7%
+
+Under the canonical arm the FR MECHANISM gets substantially stronger support
+(+21.4% vs +1.7%) while the paper's 6_1 gets NONE — 6_1 lands at 1.6068x,
+WORSE than that arm's own baseline. The paper's structural 6_1 naming is
+untouched either way: it comes from the GB-filtration route, which carries no
+weight family (qou-9b50), and the verdict string now says so.
+
+**Blast radius, measured (option C):** 4 of 36 live `w_lambda`-referencing
+files, two of which are comparison harnesses. `w_lambda` is a NAME shared by
+different objects; counting the name was the wrong measurement. The one real
+non-harness consumer besides the k=3 test is
+`beta_ew_delta_I_321_and_wedderburn.py`, whose six candidates are same-n ratios
+— invariant under dim_q^2/[n]_q! -> dim_q^2/D^2, NOT invariant under Molien.
+
+**Four errors of mine on this bean, all caught by tooling not by me:** scaling
+law tested inverted; `(f^lam)^a d_q^b` predicted to normalise at (1,1) when it
+gives 0.457 (I had dropped q^{-kappa}); nearly recorded beta_EW as invariant
+under the whole choice; and a dated ruling banner in prose plus a JS
+string-concatenation bug that broke the manifest. All recorded at the point
+where the next reader would repeat them.
