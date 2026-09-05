@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-05T06:09:44Z
+updated_at: 2026-09-05T06:55:45Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -197,3 +197,96 @@ Limits: A=2,3,4; A=4 computed to k=4 only (k=5,6 not run, not evidence). The spa
 kernel is gated at A=2/A=3 against the dense implementation (9.09e-66, 1.92e-65, every
 k); same algorithm at A=4 is an argument, not a measurement at that size. Nothing here
 BOUNDS anything. scope-(a). Nothing wired.
+
+## 2026-09-05 — third handle (sl3 + Kostka) and the FIRST COMPLETE b-levels (#6729)
+
+CORRECTED MY OWN STATED PLAN. I had said the next step was to bound the envelope from
+the two closed forms in hand. FALSE, and the refuting data was already measured: at
+A=3 the envelope is not attained on a hook or a two-row at large b —
+  b=6: (3,3,3) 211.56 vs hook (3,1^6) 14.319  -> 15x
+  b=7: (2,2,2,2,1) 31.56 vs hook (2,1^7) 0.4354 -> 72x
+At large b the hook is near the MINIMUM of its level. A handle reaching the FAT shapes
+was required.
+
+THE CONSTRUCTION SUBSUMES BOTH EXISTING HANDLES. (ℂ^k)^⊗n = ⊕_λ S^λ(ℂ^k) ⊗ M^λ, Hecke
+acting only on M^λ, μ-weight space of S^λ has dim K_λμ, so tr_{W_μ}(g) = Σ_λ K_λμ χ_λ(g).
+K unitriangular in dominance ⇒ inverts ⇒ every χ_λ with ≤k rows. #6525's two-row
+difference IS the k=2 case, demonstrated not asserted (k=3 checked against k=2 on every
+two-row shape).
+
+GATES, sharing no code by design:
+ (1) Kostka alone: multinomial(n;μ) == Σ_λ K_λμ f^λ, no trace code. Exact at n=6,9,12.
+ (2) n=6 COMPLETE gate: all 7 ≤3-row shapes vs seminormal, + Burau on 3 hooks, + sl2 on
+     4 two-rows. Worst |Δ_rel| = 2.68e-63; per-dim values reproduce #6587 exactly.
+
+n=9, FIVE SHAPES NEVER PREVIOUSLY EVALUATED (per-dim):
+  (6,2,1) dim105 1572.9564 | (5,3,1) dim162 836.89929 | (5,2,2) dim120 665.48861
+  (4,4,1) dim 84 605.58457 | (4,3,2) dim168 384.85787
+  (3,3,3) dim 42 211.56463 reproduces the capped value exactly.
+
+FIRST COMPLETE LEVELS IN THE ARC. Every prior envelope was a max over a DIM-CAPPED
+subset — a lower bound on the max, not the max. Levels b=1,2,3 at n=9 now close:
+  b=1 (1/1) 4718.6197 (8,1) | b=2 (2/2) 3478.2851 (7,1,1) | b=3 (3/3) 1671.2349 (6,1,1,1)
+  4718.62 > 3478.285 > 1671.235  strictly decreasing.
+b=4 missing 1, b=5 missing 3, b=6 missing 5, b=7 missing 3 — no envelope reported for
+those; the probe refuses a subset max. NOTE: the new (6,2,1) 1572.96 lands BETWEEN the
+hook (6,1,1,1) 1671.23 and the two-row (6,3) 1498.56, so completing b=3 did NOT
+overturn its max — recorded because it could have.
+
+COVERAGE, MEASURED: of 30 partitions of 9 — 12 with ≤3 rows, 12 with ≤3 cols (same
+handle on transposes, overlap only (3,3,3)), hooks add 3 => 26 COVERED, 4 NOT:
+(5,2,1,1) 189, (4,3,1,1) 216, (4,2,2,1) 216, (4,2,1,1,1) 189. All four have ≥4 rows AND
+≥4 cols so no k=3 orientation reaches them; k=4 is hopeless (largest sector 7560).
+DIRECT SEMINORMAL at dim ≤216 is the cheaper route for exactly those four.
+
+BUG IN MY OWN REPORTING, fixed: b=0 and b=n−1 printed 'COMPLETE? no' beside 'missing 0'.
+They ARE complete — exact-zero endpoints where Ω₂^P ≡ 0 on a 1-dim rep — and the guard
+conflated 'excluded by design' with 'coverage gap'.
+
+Limits: n=6 and n=9; gate at n=6 (same algorithm at n=9 is an argument, not a
+measurement at that size). Does NOT complete the envelope — 4 levels remain incomplete.
+Nothing BOUNDS anything. Whether the envelope stays monotone once b=4..7 close is OPEN,
+and is exactly what the capped measurements could not answer. scope-(a). Nothing wired.
+
+## 2026-09-05 — n=9 COMPLETE at 30/30: envelope monotone, and the pointwise obstruction is THE HOOKS (#6729)
+
+THREE RESULTS.
+
+1. ENVELOPE strictly decreasing over ALL 7 interior levels, every one COMPLETE — first
+   time on complete data rather than dim-capped subsets:
+     b=1 4718.6197 (8,1)  | b=2 3478.2851 (7,1,1) | b=3 1671.2349 (6,1,1,1)
+     b=4  981.20482 (5,4) | b=5  605.58457 (4,4,1)| b=6  211.56463 (3,3,3)
+     b=7   31.556344 (2,2,2,2,1)
+   Both PRE-REGISTERED falsification routes came back null: (5,2,1,1) measured 699.33
+   against the 1671.23 needed to break b=3>b=4, and no b=5 straggler approached 981.20.
+
+2. POINTWISE refuted with EXACTLY 6 violations — and 6/6 have a HOOK on the LOW side,
+   0 on the high side, 0 involving no hook at all. ⇒ POINTWISE MONOTONICITY HOLDS ONCE
+   HOOKS ARE EXCLUDED. The probe COUNTS this rather than my reading it off the list.
+     (5,1^4) 581.16 < (4,4,1) 605.58
+     (4,1^5) 134.63 < (3,3,3) 211.56 / (3,3,2,1) 170.63 / (3,3,1,1,1) 154.25
+     (3,1^6)  14.32 < (2,2,2,2,1) 31.56 / (2,2,2,1,1,1) 24.97
+   ACTIONABLE: the obstruction is ONE family, and it is the family that already has a
+   derived closed form (reduced Burau, #6556). A bound can treat hooks separately and
+   make a uniform statement elsewhere — instead of needing one statistic across all
+   shapes, which #6669 showed none does and #6677 showed would have to reproduce a
+   sign-changing hook/two-row relation. It also retroactively unifies two earlier
+   observations: the hook near its level MINIMUM at large b (15x, 72x below), and the
+   hook/two-row ratio crossing 1 — same fact, hooks decay faster than everything else.
+
+3. 🛑 THE dim<=50 CAP WAS A DENSE-PRODUCTS ARTIFACT, not a seminormal one. The Young
+   seminormal generators are AT MOST 2-SPARSE PER ROW (sigma_csr: one entry for a diag
+   block, two per row for a 2x2), so #6710's column-wise kernel applies DIRECTLY. dim 216
+   went from not-finishing to 8.6 s. So a good part of the tensor scaffolding built over
+   the preceding PRs was NOT strictly necessary at n=9. What it still buys: at larger n
+   the weight sectors stay bounded by multinomials while dim_lambda explodes, and the
+   closed forms are INDEPENDENT cross-checks — which is what makes the gates meaningful.
+
+GATES: sparse seminormal vs reduced-Burau on all 9 hooks, worst 1.38e-64; plus vs
+sl_3+Kostka at dim 105-168, the regime the largest shapes live in (that gate's 1e-10 is
+set by quoting a 10-sig-fig table, not by the arithmetic, and says so).
+
+NOT ESTABLISHED: n=9 only (gated at n=6); the four stragglers rest on ONE kernel with no
+independent second route BY CONSTRUCTION (positivity holds, as it must); nothing BOUNDS
+anything; 'pointwise holds off hooks' is a statement about this census, not a theorem,
+and one size cannot separate it from an n=9 coincidence. scope-(a). Nothing wired.
