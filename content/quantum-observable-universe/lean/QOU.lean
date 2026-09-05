@@ -184,9 +184,10 @@ import QOU.HeckeAlgebra
 -- `WedderburnConstruction` builds the block-diagonal embedding that
 -- `QOU/HeckeAlgebra/Wedderburn.lean` had left `opaque`.  On the natural index
 -- `Sigma lam, Fin (f^lam) x Fin (f^lam)` the assembly is an ordinary def and is
--- injective, with footprint [propext, Classical.choice, Quot.sound] -- no
--- `wedderburnEmbed`.  Only landing in `Fin (n!)` needs the RSK identity, which
--- is isolated there as the explicit hypothesis `RSKDimIdentity` (bean qou-usol).
+-- injective, with footprint [propext, Classical.choice, Quot.sound].  Only
+-- landing in `Fin (n!)` needs the RSK identity, which is isolated there as the
+-- explicit hypothesis `RSKDimIdentity` (bean qou-usol).  The `opaque` it
+-- replaced was deleted on 2026-09-05 (bean qou-kp2z); nothing had consumed it.
 import QOU.HeckeAlgebra.WedderburnConstruction
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity

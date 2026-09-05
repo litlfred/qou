@@ -1,12 +1,14 @@
 /-
 # Constructing the Wedderburn embedding
 
-`QOU/HeckeAlgebra/Wedderburn.lean` declares `opaque wedderburnEmbed`, with the
-explanation that the dimension identity `Σ_λ (f^λ)² = n!` is the
+`QOU/HeckeAlgebra/Wedderburn.lean` used to declare `opaque wedderburnEmbed`,
+with the explanation that the dimension identity `Σ_λ (f^λ)² = n!` is the
 Robinson–Schensted–Knuth correspondence and is not available, "so the embedding
-is axiomatised". Bean `qou-qb7p` measured what that costs: the constant shows up
-as a **fourth axiom** beside `propext`, `Classical.choice` and `Quot.sound` in
-any `#print axioms` that reaches it.
+is axiomatised". Bean `qou-qb7p` measured what that costs: the constant showed
+up as a **fourth axiom** beside `propext`, `Classical.choice` and `Quot.sound`
+in any `#print axioms` that reached it. That declaration was deleted on
+2026-09-05 (bean `qou-kp2z`) once this module replaced it; the past tense here
+is deliberate, and the file it names now carries a note where it stood.
 
 **The blocker is narrower than the axiom.** RSK is needed only to land in
 `Fin (n!)` — not to build the embedding. On its natural index type the
@@ -148,8 +150,9 @@ noncomputable def regIndexEquiv {n : ℕ} (h : RSKDimIdentity n) :
     RegIndex n ≃ Fin (heckeDim n) :=
   Fintype.equivFinOfCardEq (by rw [card_regIndex]; exact h)
 
-/-- **The Wedderburn embedding, given RSK.** This is what `wedderburnEmbed` was
-axiomatised to be — now a definition, with its one hypothesis named. -/
+/-- **The Wedderburn embedding, given RSK.** This is what the former
+`opaque wedderburnEmbed` was axiomatised to be — now a definition, with its one
+hypothesis named. -/
 noncomputable def wedderburnEmbedOf {n : ℕ} (h : RSKDimIdentity n)
     (x : WedderburnDecomposition n) :
     Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ :=

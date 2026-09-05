@@ -14,16 +14,28 @@ identity ([prop:wigner-np-pairing](#prop:wigner-np-pairing)):
 $H_q((2,2)) = [3]_q \cdot [2]_q^2$; for $\lambda = (2,1) \vdash 3$
 it reproduces the volume / surface / Coulomb decomposition
 through their image under the Wedderburn embedding — a step this
-proof does **not** discharge, and which the corpus cannot currently
-supply: the only formalised embedding,
-`QOU.HeckeAlgebra.Wedderburn.wedderburnEmbed`, is declared `opaque`
-("keeps the embedding opaque pending concrete construction"), registers
-as a fourth axiom beside `propext`, `Classical.choice` and `Quot.sound`
-in any `#print axioms` that reaches it, and has the wrong shape for this
-use — its type $\bigoplus_\lambda M_{f^\lambda} \to M_{n!}$ assembles
-blocks into one matrix rather than splitting one block's scalar
-$C_{(2,1)}$ into three coefficients.  The clause is therefore an open
-obligation, not a derivation (bean `qou-qb7p`); for higher
+proof does **not** discharge, and which the corpus still cannot
+supply.
+
+*Updated 2026-09-05 (bean `qou-kp2z`).*  Bean `qou-qb7p` gave three
+reasons the corpus could not supply this step.  Two of them have since
+been removed and one has not, so the clause remains an open obligation
+for a narrower reason than before.  **Removed:** the only formalised
+embedding was `QOU.HeckeAlgebra.Wedderburn.wedderburnEmbed`, declared
+`opaque` ("keeps the embedding opaque pending concrete construction")
+and registering as a fourth axiom beside `propext`, `Classical.choice`
+and `Quot.sound` in any `#print axioms` that reached it.  It is now a
+real construction — `QOU.HeckeAlgebra.Wedderburn.blockDiagonal`, with
+footprint exactly those three — and the `opaque` has been deleted.
+**Not removed, and decisive here:** the shape objection is untouched.
+The constructed map has the *same* type
+$\bigoplus_\lambda M_{f^\lambda} \to M_{n!}$, assembling blocks into
+one matrix rather than splitting one block's scalar $C_{(2,1)}$ into
+three coefficients; building it changed its status, not its direction
+or its arity.  The landing in $M_{n!}$ is additionally conditional on
+the RSK identity $\sum_\lambda (f^\lambda)^2 = n!$, carried as the
+named hypothesis `RSKDimIdentity` and discharged by nothing here.  So
+the clause is still an open obligation, not a derivation; for higher
 partitions it adds the form-factor, $pn$-correlation, and
 ${[3,2,1]}$ pn-invisible corrections.
 
