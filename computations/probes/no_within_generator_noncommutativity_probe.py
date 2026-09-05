@@ -148,6 +148,7 @@ def main() -> int:
     dvals = (("pp", sp.Integer(0)), ("nn", -hv),
              ("pn", -hv * (1 - _delta(q0) / 2) / 2))
     ok_tab = True
+    table: dict[str, tuple[str, str, str]] = {}
     for nm, dv in dvals:
         Mi = S + dv * sp.eye(2)
         # `z` is a free symbol in this probe (the checks above are identities
@@ -158,6 +159,7 @@ def main() -> int:
         got_dep = sp.N(vhat_deprecated(Mi).subs(sub), 25)
         ok_tab &= abs(got_live - want) < sp.Float("1e-20")
         ok_tab &= abs(got_dep - want) > sp.Float("0.1")
+        table[nm] = (str(want), str(got_dep), str(got_live))
         print(f"    {nm:>5} {float(want):18.12f} {float(got_dep):18.12f} "  # float64-ok: display only
               f"{float(got_live):18.12f}")  # float64-ok: display only
     check("on all three interface letters the live readout equals z + d and the "
@@ -237,6 +239,15 @@ def main() -> int:
         wb.add_data("single_crossing_vhat", "z + d")
         wb.add_data("commutator", "0")
         wb.add_data("multiplicativity_defect_at_z", str(defect_at_z))
+        # The correction table published in thm:markov-trace-factorization.
+        # A figure in a content block needs a witness behind it, not a
+        # print statement -- the unsourced-figure sweep flagged these as
+        # having no provenance until they were recorded here.
+        for _nm, (_want, _dep, _live) in table.items():
+            wb.add_data(f"bond_factor_{_nm}", _want)
+            wb.add_data(f"deprecated_readout_{_nm}", _dep)
+            wb.add_data(f"live_readout_{_nm}", _live)
+
         for name, ok in checks:
             wb.add_assertion(name=name, computed=str(int(ok)), expected="1")
         wb.add_caveat(

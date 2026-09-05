@@ -209,3 +209,28 @@ a published figure needs a check behind it.
 
 - [x] Decide the fate of `B_sym` and the `t7qv`/`qou-brng` numbers. **Nothing
       recomputes; only the word "binding" was on loan, and it is now annotated.**
+
+## 🛑 CORRECTION to my own note above: the pn near-cancellation is ONE fact, not two
+
+The entry above says the `pn` letter is "the near-null vector of the `w̃` family
+the nuclear-jet level uses (`qou-gpb5`) — same algebra, **two different weight
+families, one distinguished letter**". The last clause is wrong, and measured
+(probe §5, 8/8):
+
+- **`w̃` is uniform on `H_2`** — both blocks there are the one-dimensional reps,
+  `d_q = 1`, so `w̃ = 1/[2]_q!` on each. Hence "null vector of `w̃`" and "null
+  vector of the *unweighted* block sum" are the **same statement** on two
+  strands, not two families agreeing. `w̃` is not uniform at `H_3`
+  (`0.1634, 0.6607, 0.1634`) or `H_4`, so nothing generalises.
+- **`d_pn` is the average by construction**: `d_pn = -h/2 + h·δ/4`, verified
+  `d_pn + h/2 = h·δ/4` exactly. So `h + 2·d_pn = h·δ/2` is *forced*, and would be
+  exactly `0` at the colour-blind `-h/2`.
+
+So the near-cancellation is **definitional** — the pn offset is defined as the
+average of the other two, read through a measure that happens to be uniform only
+at `H_2`. Not structure, not a coincidence between families, and not worth
+chasing. I flagged it as "more interesting but more speculative"; it was neither.
+
+The statement in `rem:bond-log-ratio-is-a-free-energy` is unaffected — it says
+"near-null vector of the unweighted block sum ... survives in `z+d` only because
+`w₊ ≠ w₋`", which is correct as written.

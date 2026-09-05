@@ -90,8 +90,20 @@ For the `pn` bond the two block factors nearly cancel:
 `(lambda_+ + d) + (lambda_- + d) = h + 2 d_pn = h * delta / 2 =
 1.4380325618674e-4` exactly. So the `pn` interface -- the one the binding arc
 turns on -- is the near-null vector of the unweighted block sum, and survives in
-`z + d` only because `w_+ != w_-`. The same letter is the near-null vector of the
-`w~` family the nuclear-jet level uses (`qou-gpb5`), by the same algebra.
+`z + d` only because `w_+ != w_-`.
+
+**Definitional, not structural — an earlier note of mine overstated it.**
+`d_pn = -h(1 - delta/2)/2 = -h/2 + h*delta/4` is BY CONSTRUCTION the average of
+the `pp` offset `0` and the `nn` offset `-h`, so `h + 2 d_pn` is forced to equal
+`h*delta/2` and would vanish exactly at the colour-blind `-h/2`. And the `w~`
+family the nuclear-jet level uses (`qou-gpb5`) is **uniform on `H_2`**, because
+both blocks there are one-dimensional (`d_q = 1`) -- so "null vector of `w~`" and
+"null vector of the unweighted sum" are the SAME statement on two strands. I
+called these "two different weight families, one distinguished letter"; they are
+one family and one letter, and the near-cancellation is the definition of an
+average read through a measure that is uniform only here. `w~` is NOT uniform at
+`H_3` (`0.1634`, `0.6607`, `0.1634`) or `H_4`, so nothing generalises. Measured
+in §5.
 
 WHAT IS NOT CLAIMED
 -------------------
@@ -210,6 +222,39 @@ def main() -> int:
           "— the pn letter is the near-null vector of the UNWEIGHTED block sum, "
           "surviving in z + d only because w_+ != w_-",
           abs(ssum - ident) < TOL and abs(ssum) < mpfr("1e-3"))
+
+    print("\n" + "=" * 78)
+    print("§5  THAT NEAR-CANCELLATION IS DEFINITIONAL, AND H_2 ONLY")
+    print("=" * 78)
+    from hecke_characters import dim_q, partitions_of, qfac  # noqa: E402
+
+    def _call(fn, *a):
+        try:
+            return fn(*a)
+        except TypeError:
+            return fn(*a[:-1])
+
+    print("    (a) d_pn is the AVERAGE of the pp and nn offsets, by construction:")
+    print(f"        d_pn        = {s(E.D_PN)}")
+    print(f"        -h/2        = {s(-H / 2)}")
+    print(f"        d_pn + h/2  = {s(E.D_PN + H / 2)}   = h*delta/4")
+    ok_mid = abs((E.D_PN + H / 2) - H * E.DELTA / 4) < TOL
+    print("    (b) w~ is UNIFORM on H_2 and on no larger tower level:")
+    unif = {}
+    for n in (2, 3, 4):
+        fac = mpfr(str(_call(qfac, n, Q)))
+        vals = set()
+        for p in partitions_of(n):
+            dq = mpfr(str(_call(dim_q, list(p), Q)))
+            vals.add(s(dq * dq / fac, 12))
+        unif[n] = (len(vals) == 1)
+        print(f"        H_{n}: {len(vals)} distinct w~ value(s)  uniform = {unif[n]}")
+    check("d_pn + h/2 = h*delta/4 exactly — the pn offset IS the average of the "
+          "other two, so h + 2 d_pn = h*delta/2 is forced", ok_mid)
+    check("w~ is uniform on H_2 but NOT on H_3 or H_4 — so 'pn is w~'s null "
+          "vector' and 'pn is the unweighted sum's null vector' are one H_2 "
+          "statement, not two families agreeing",
+          unif[2] and not unif[3] and not unif[4])
 
     print("\n" + "=" * 78)
     print("§S  WHAT THIS SETTLES")
