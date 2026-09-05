@@ -141,4 +141,112 @@ theorem am_sub_gm_eq {q : ℝ} (hq : 0 < q) :
   field_simp
   ring
 
+/-! ## Deriving the convex weight `w`
+
+`w` is not a free parameter. The corpus's three interface factors are
+`f_pp = z` (positive crossing, the Markov axiom `tr(ασ) = z·tr(α)`),
+`f_nn = z - h` (negative crossing, via the Hecke skein `σ⁻¹ = σ - h`), and
+`f_pn = z - h·(1/2 - δ/4)` (`bring_color_weighted`, the default since
+2026-06-01). `weight_of_convention` shows the convex weight is then **forced**:
+`w = 1/2 + δ/4`, identically, for any `z`, `h`, `δ`.
+
+So "derive `w`" reduces entirely to deriving the flat `1/2` in
+`σ_avg = (σ + σ⁻¹)/2` — and `weight_miss` shows that flat half is the whole
+story: the miss against the crossing splits as `(q²-1)/(2(q²+1)) + δ/4`, whose
+two parts stand at `0.0519819` and `0.000344`, a ratio of **151**. The only
+derived ingredient in `w` is 151× too small to matter. -/
+
+/-- **The convex weight is forced by the averaging convention.** Given the three
+interface factors, `w = 1/2 + δ/4` is an identity, not a choice. -/
+theorem weight_of_convention (z h d : ℝ) :
+    z - h * (1 / 2 - d / 4)
+      = (1 / 2 + d / 4) * z + (1 - (1 / 2 + d / 4)) * (z - h) := by ring
+
+/-- **The miss against the crossing, split.** The deformation term
+`(q²-1)/(2(q²+1))` and the flavour term `δ/4` are the only two contributions,
+and at `q₀` the first is 151× the second — so the flavour split, the one derived
+ingredient in `w`, is irrelevant to the sign. -/
+theorem weight_miss {q d : ℝ} (hq : 0 < q) :
+    (1 / 2 + d / 4) - 1 / (q ^ 2 + 1)
+      = (q ^ 2 - 1) / (2 * (q ^ 2 + 1)) + d / 4 := by
+  have : q ^ 2 + 1 ≠ 0 := by positivity
+  field_simp
+  ring
+
+/-! ## Which means can give the SEMF sign: exactly those below the geometric
+
+`mean_mul_reciprocal_mean` is the two-variable identity `M_p · M_{-p} = ab`,
+whose immediate consequence is that `δ` is **odd** under `p ↦ -p`. The
+convention sits at `p = 1`; its mirror `p = -1` is the harmonic mean, which
+therefore has exactly the opposite `δ` — same magnitude, SEMF sign. Since `M_p`
+is increasing in `p` and `M_0` is the geometric mean, the sign is right exactly
+when `p < 0`: strictly BELOW the geometric mean, which is where no average with
+`p ≥ 0` can go.
+
+Stated here for `p = ±1`, where it needs no `rpow` and is the case that matters;
+the general statement is measured in
+`computations/qbeta/qbeta_symmetry_sign_is_am_gm_locked_probe.py`. -/
+
+/-- `HM · AM = a·b`, the `p = ±1` case of `M_p · M_{-p} = ab`. -/
+theorem harmonic_mul_arithmetic {a b : ℝ} (hab : a + b ≠ 0) :
+    (2 * a * b / (a + b)) * ((a + b) / 2) = a * b := by
+  field_simp
+
+/-- **The harmonic mean is the arithmetic mean's exact mirror.** `δ` flips sign
+and keeps its magnitude, so the wrong-signed `-0.0216177…` at `p = 1` is
+`+0.0216177…` at `p = -1`. -/
+theorem delta_harmonic_eq_neg_delta_arithmetic {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
+    delta a (2 * a * b / (a + b)) b = -delta a ((a + b) / 2) b := by
+  have hab : (0 : ℝ) < a + b := by linarith
+  have hH : (0 : ℝ) < 2 * a * b / (a + b) := by positivity
+  have hA : (0 : ℝ) < (a + b) / 2 := by linarith
+  have hmul := harmonic_mul_arithmetic (ne_of_gt hab)
+  have : Real.log (2 * a * b / (a + b)) + Real.log ((a + b) / 2)
+      = Real.log a + Real.log b := by
+    rw [← Real.log_mul (ne_of_gt hH) (ne_of_gt hA), hmul,
+        Real.log_mul (ne_of_gt ha) (ne_of_gt hb)]
+  simp only [delta]
+  linarith
+
+/-- **So the harmonic mean gives the SEMF sign**, for any positive bonds. It is
+recorded as a TARGET a derivation may be checked against — never as a criterion
+to search on, and nothing here adopts it. -/
+theorem delta_harmonic_nonneg {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
+    0 ≤ delta a (2 * a * b / (a + b)) b := by
+  rw [delta_harmonic_eq_neg_delta_arithmetic ha hb, neg_nonneg]
+  exact delta_midpoint_nonpos ha hb
+
+/-! ## The three means in `[2]` form
+
+With `b_pp = q²/[2]_q` and `b_nn = q⁻²/[2]_q`, writing `[2]_x = x + 1/x`:
+
+```
+AM = [2]_{q²}/(2[2]_q)      GM = 1/[2]_q      HM = 2/([2]_q·[2]_{q²})
+```
+
+⚠ Their convex weights are `1/2`, `q⁻¹/[2]_q`, `q⁻²/[2]_{q²}`, which LOOK like a
+ladder `q^{-k}/[2]_{q^k}`. **They are not.** At `p = 2` that formula predicts
+`0.55198` against the true `0.55089`, and it fails at every non-classical `p`
+tested. It is a coincidence of the three classical means and is recorded here so
+nobody re-derives it as structure. -/
+
+/-- `AM = [2]_{q²}/(2[2]_q)`. -/
+theorem arithmetic_pinned {q : ℝ} (hq : 0 < q) :
+    (q ^ 2 / (q + 1 / q) + (q ^ 2)⁻¹ / (q + 1 / q)) / 2
+      = (q ^ 2 + 1 / q ^ 2) / (2 * (q + 1 / q)) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have : q + 1 / q ≠ 0 := by positivity
+  field_simp
+
+/-- `HM = 2/([2]_q·[2]_{q²})`, and with `arithmetic_pinned` and `GM = 1/[2]_q`
+this completes `AM·HM = GM²`. -/
+theorem harmonic_pinned {q : ℝ} (hq : 0 < q) :
+    2 * (q ^ 2 / (q + 1 / q)) * ((q ^ 2)⁻¹ / (q + 1 / q))
+        / (q ^ 2 / (q + 1 / q) + (q ^ 2)⁻¹ / (q + 1 / q))
+      = 2 / ((q + 1 / q) * (q ^ 2 + 1 / q ^ 2)) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have h2 : q + 1 / q ≠ 0 := by positivity
+  have h4 : q ^ 2 + 1 / q ^ 2 ≠ 0 := by positivity
+  field_simp
+
 end QOU.Hecke.SymmetrySignAmGm

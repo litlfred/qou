@@ -77,11 +77,15 @@ fi
 export LEAN_PATH="${LPLINE#LEAN_PATH=}"
 export PATH="$HOME/.elan/bin:$PATH"
 export OUT
+# See scripts/lean-shadow-verify.sh: a bare `lean` does NOT apply the
+# lakefile's [leanOptions], and `autoImplicit` differs (lean: true,
+# lakefile: false), which makes bare lean-direct a WEAKER check than Lake.
+export LEAN_OPTS="${LEAN_OPTS:--DautoImplicit=false -s 65536}"
 
 one() {
   f="$1"
   log="$OUT/$(echo "$f" | tr '/' '_').log"
-  timeout 900 lean "$f" > "$log" 2>&1
+  timeout 900 lean $LEAN_OPTS "$f" > "$log" 2>&1
   s=$?
   n=$(grep -c ': error:' "$log" 2>/dev/null || true)
   printf '%s\t%s\t%s\n' "$s" "$n" "$f"

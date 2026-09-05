@@ -330,13 +330,32 @@ surface the duplicates in step 6) saves a full review cycle.
            LeanSearchClient; do
     LP="$LP:$PWD/.lake/packages/$p/.lake/build/lib/lean"
   done
-  LEAN_PATH="$LP" lean path/to/Changed.lean      # exit 0 = checks, sorry-free
+  # -DautoImplicit=false is NOT optional — see the note below.
+  LEAN_PATH="$LP" lean -DautoImplicit=false -s 65536 path/to/Changed.lean
   ```
 
   Then `#print axioms` on the new declarations to confirm no `sorryAx`. Say in
   the PR that this is what you ran and why.
 
-- **🛑 BUT `lean`-direct against a restored cache verifies against a SNAPSHOT,
+- **🛑 A BARE `lean` DOES NOT APPLY THE LAKEFILE'S `[leanOptions]`, so it is a
+  strictly WEAKER check than Lake — always pass `-DautoImplicit=false`.**
+  `autoImplicit` defaults to **true** in `lean` and is set **false** in both the
+  root and paper lakefiles. With it on, Lean silently auto-binds an unbound
+  identifier as an implicit argument instead of erroring, so a file Lake rejects
+  can pass `lean`-direct. Measured 2026-09-05 on
+  `QOU/MassTheory/AtomWordShadow.lean`, same file, same `LEAN_PATH`:
+
+  ```
+  lean                        ->  exit 0,  0 errors
+  lean -DautoImplicit=false   ->  exit 1,  6 errors      (lake agrees: 20)
+  ```
+
+  That file was **red on `main`** and three sweeps called it clean. Also pass
+  `-s 65536`, mirroring the paper lakefile's `moreLeanArgs`: one generated module
+  overflows the default elaboration stack and aborts as a bare `exit 134` with no
+  source error. The sweep scripts below now pass both.
+
+- **🛑 AND `lean`-direct against a restored cache verifies against a SNAPSHOT,
   and `exit 0` from it is a claim about that snapshot — not about the library
   source your file names.** This is the gate's own blind spot and it has been
   realised: `descartesWtrace` recorded `lean`-direct `exit 0` and **landed on

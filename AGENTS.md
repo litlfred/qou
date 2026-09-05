@@ -1123,6 +1123,55 @@ ephemeral.
    Skill authors updating skill docs should refer to this rule
    rather than restating the policy in their own words.
 
+8a. **Draft → ready: SPACED RETRY ONLY. Never close-and-reopen a
+   PR to get past it** (owner ruling, 2026-09-05). Flipping a draft
+   PR to ready goes through GitHub's GraphQL API, which needs a
+   node-ID lookup, and that lookup is the thing being rate-limited
+   on this repo's shared token. So `mcp__github__update_pull_request`
+   with `draft: false` fails — often for hours — with
+
+       Failed to find pull request: API rate limit already exceeded
+       for user ID 662242
+
+   while every REST path (title, body, state, create, merge, and all
+   reads) keeps working. **Retry the same `draft: false` call, spaced
+   out — typically off a `send_later` check-in — until it lands.**
+
+   **Do NOT close the draft and create a replacement PR for the same
+   head.** It works, which is exactly why it keeps getting
+   reinvented: this session did it three times (#6526 → #6579,
+   #6649 → #6674, #6723 → #6753) before the owner ruled against it.
+   What it costs is not the API call but the record — the review
+   threads, the Copilot request, the comment history and the PR
+   number in every commit message, bean and coordination ledger that
+   already cites it all stay on the abandoned PR, and a reader who
+   follows that number lands on something marked "closed without
+   merging" when the work in fact merged. The agent-harness PR rules
+   independently forbid close-and-reopen; this ruling extends that to
+   the undraft case, which those rules do not name.
+
+   **Two measured traps when retrying.**
+
+   - **The error is not evidence the call did nothing.** A sibling
+     session measured (2026-09-05) that `update_pull_request` calls
+     which set `title` / `body` *alongside* `draft: false` returned
+     that same rate-limit error and **the title and body writes
+     landed anyway** — only the draft flip was dropped. Always
+     confirm with `pull_request_read` before re-sending a mutation,
+     or you will write it twice.
+   - **Retry `draft: false` ALONE.** Bundling other fields makes the
+     partial-success case above harder to read, and none of them need
+     the limiter.
+
+   **The fix that avoids the problem entirely: open the PR non-draft
+   in the first place** where the work is already verified.
+   `create_pull_request` takes `draft` as a plain REST field, so
+   `draft: false` at creation never touches the limiter. Rule 2 of
+   this section asks for the PR immediately, at the first commit,
+   which is usually before verification — so a draft is still the
+   right default for a tranche that is about to grow. It is the wrong
+   default for a PR you are opening at the end of the work.
+
 9. **Never delete closed/merged feature branches** (owner
    directive, 2026-06-12). Do not run `git push origin --delete
    <branch>`, do not enable auto-delete-on-merge, and do not offer
@@ -4887,6 +4936,30 @@ is ~2 min vs a 40-min `lake build` storm. If a stray `lake build` already
 dropped the olean count (`find .lake/packages/mathlib -name '*.olean' | wc -l` ≪ 2919),
 re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 [`lean-environment-setup.md` §"VERIFY a single file with lean-direct"](.claude/skills/local/lean-environment-setup.md#verify-a-single-file-with-lean-direct).
+
+> **🛑 A BARE `lean` IS A WEAKER CHECK THAN `lake build` — pass
+> `-DautoImplicit=false` (measured 2026-09-05, bean `qou-56qy`).** `lean`
+> invoked directly does **not** read the lakefile, so it does not apply its
+> `[leanOptions]`. `autoImplicit` defaults **true** in `lean` and is set
+> **false** in both the root and paper lakefiles, and with it on Lean silently
+> auto-binds an unbound identifier as an implicit argument rather than erroring.
+> Same file, same `LEAN_PATH`, on `QOU/MassTheory/AtomWordShadow.lean`:
+>
+> ```
+> lean                        ->  exit 0,  0 errors
+> lean -DautoImplicit=false   ->  exit 1,  6 errors      (lake agrees: 20)
+> ```
+>
+> That file was **red on `main`**, and it was called clean by a bare
+> `lean`-direct run *and* by both sweep scripts before they were fixed. Pass
+> `-s 65536` too, mirroring the paper lakefile's `moreLeanArgs`: one generated
+> module overflows the default elaboration stack and aborts as a bare `exit 134`
+> with no source error. So the recipe above is
+> `lean -DautoImplicit=false -s 65536 <file>`, never bare `lean`.
+>
+> **This is the sharper of the two defects on this line.** The snapshot problem
+> below makes a green *go stale*; this one makes a green *wrong from the start*,
+> on any tree, however fresh.
 
 > **🛑 `exit 0` here is a claim about the SNAPSHOT, not about the library
 > source (measured 2026-09-05, bean `qou-56qy`).** The restored cache is a

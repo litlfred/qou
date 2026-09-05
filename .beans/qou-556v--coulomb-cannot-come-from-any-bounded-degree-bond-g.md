@@ -116,3 +116,135 @@ degree bound *supplies* the surface term (`QOU/Mass/CoordinationSurfaceDeficit.l
 `qou-kqdn`, completed by a sibling session earlier today) because a boundary
 deficit is what bounded degree gives you. One bound, two opposite consequences:
 fix the edge set and the surface term appears; fix it and Coulomb still does not.
+
+## 🛑 REFRAMED 2026-09-05 (owner) — it is the FALLOFF, not the coupling
+
+Both sections above called a `Z`-dependent per-bond energy "the escape hatch".
+The arithmetic is right; the framing is not, and it aims a successor at
+re-tuning a letter. **A bond graph is a kernel truncated at range 1.** Coulomb
+is `1/r` with no truncation. That is the defect; the `eps(Z)` requirement is its
+symptom.
+
+Weighting the captured pairs by `1/r` (uniform ball, `R = r0 A^(1/3)`, `k = 12`):
+
+| iso | Z | A | pairs captured | ENERGY captured |
+|---|---:|---:|---:|---:|
+| 4He | 2 | 4 | 100 % | **1587 %** |
+| 16O | 8 | 16 | 100 % | 360 % |
+| 40Ca | 20 | 40 | 63.2 % | 180 % |
+| 56Fe | 26 | 56 | 48.0 % | 153 % |
+| 120Sn | 50 | 120 | 24.5 % | 101 % |
+| 208Pb | 82 | 208 | 14.8 % | **73.1 %** |
+
+The contact model **overshoots light nuclei by 16x** and undershoots heavy ones,
+crossing near Sn. **A ratio on both sides of 1 is not repairable by rescaling
+any letter**, constant or growing. The scalings say why: a contact sum is
+`k Z / 2` — linear in `Z`, no `A` at all — against `(3/5) Z(Z-1)/R` for the
+true sum, so the ratio runs as `A^(1/3)/Z`.
+
+**The repair is a decay kernel over ALL pairs**, which is a weighted COMPLETE
+graph — degree `Z-1`, exactly the case the theorem excludes. So theorem and
+physics agree, and more tightly than the first statement suggested: the
+bond-graph form truncates range, and Coulomb does not.
+
+Landed on all four surfaces: this bean, the Lean docstring, the probe (with two
+new assertions pinning the 1587 %/73.1 % crossing so it cannot drift into a
+docstring-only figure), and the synthesis audit. Corrects the framing shipped in
+PR #6783 — the theorem and every number in it stand unchanged.
+
+## 2026-09-05 (owner) — the three channels, their decay rates, and the options
+
+*"There are several channels — EM, strong, weak. They each have their own decay
+rate, potentially visible in the perturbation theory. Those three rates are not
+necessarily independent, so we need to be careful."*
+
+Right on both counts, and the framework makes both precise.
+
+**The native falloff is Yukawa.** Adding a bond MULTIPLIES the Markov trace by
+`b < 1`, so `b^d(i,j) = exp(-mu.d(i,j))` with `mu = -ln b`: exponential in graph
+distance. That puts the three channels on one axis, the mediator mass:
+
+| channel | mediator | mu | pair sum over n sites |
+|---|---|---:|---|
+| weak | W, 80.4 GeV | 407 /fm | O(n) |
+| strong | pion, 139.6 MeV | 0.707 /fm | O(n) |
+| EM | photon, **massless** | 0 | **Theta(n^2)** |
+
+**So Coulomb is not "a longer-range bond" — it is the massless boundary**, a
+different growth class. Every `q`-derived rate is strictly positive because
+`b < 1`, so no choice of letters reaches it. Analytic twin of this bean's
+degree-side theorem.
+
+## The rates carry ONE constraint and one free parameter
+
+`b_pp.b_nn = 1/[2]_q^2` is an identity, so
+
+    L_pp + L_nn = 2 ln[2]_q      EXACTLY   (0.489899 + 0.907262 = 1.397162)
+
+and `L_pn` sits between them by the averaging convention. Three rates, one
+constraint, one free parameter `q`. Scale-free consequence: the RANGE ratios
+`lambda_pp : lambda_pn : lambda_nn = 1.8519 : 1.3405 : 1` are derived with no
+length scale — the p-p channel is 1.85x longer-ranged than n-n.
+
+## A false alarm, recorded so nobody raises it
+
+The per-site sum is `sum_k |S_k| exp(-mu k)`. For a TREE at bounded degree `d`,
+`|S_k| <= d(d-1)^(k-1)` and convergence needs `mu > ln(d-1)`. Against the corpus
+letters that looks alarming — only `L_nn` clears `ln 2` at `d = 3`, and **none**
+of the three clears `ln(d-1)` at `d >= 4`. **A nuclear packing is not a tree:**
+in R^3 the shells grow polynomially (`~k^2`) and every `mu > 0` converges.
+Nothing follows from the tree row, and it is pinned as an assertion so it is not
+re-raised.
+
+## What DOES follow: the range-1 truncation is not self-consistent
+
+On the fcc shell counts `10k^2+2` (12, 42, 92, 162, ...) the framework's own
+decay reaches
+
+| letter | b | effective sites | vs 12 contacts |
+|---|---:|---:|---:|
+| pp | 0.612688 | **173.23** | **14.44x** |
+| pn | 0.508230 | 66.52 | 5.54x |
+| nn | 0.403628 | 28.06 | 2.34x |
+
+Truncating at range 1 discards ~93 % of the p-p weight the same framework's
+decay rate supplies.
+
+## The options, ranked by cost
+
+**(a) Sum `b^d(i,j)` over ALL pairs at the derived letters.** No new parameter —
+it is the letters the corpus already has, applied at their own range. Fixes a
+14x self-inconsistency and is the strong channel done properly. **Does not touch
+Coulomb**: the per-site sum stays finite, so the constant moves 14x and the
+growth class does not.
+
+**(b) A separate `mu = 0` channel for EM.** A different growth class cannot be a
+bond letter; it has to enter as its own term. That is the honest shape of the
+Coulomb repair.
+
+**(c) Re-tuning any letter.** Excluded twice over: the rates carry one
+constraint, and no positive `mu` reaches quadratic growth.
+
+Artifacts: `QOU/Hecke/ChannelRangeGrowthClass.lean` (5 decls, axiom-clean,
+`lean`-direct exit 0) and
+`computations/qbeta/qbeta_channel_range_growth_class_probe.py` (7/7).
+
+
+## 2026-09-05 — option (a) TESTED and NOT ADOPTED (`qou-adr0`)
+
+Summing `b^(d-1)` over all pairs at the derived letters, no new parameter.
+Result: **the truncation is not what the residual is made of.**
+
+- p5-p95 improves only 1.22497 -> 1.20727 (~1.4 %) while the FULL spread
+  WORSENS 10.1815 -> 10.7082, and p25-p75 is unchanged to four figures.
+- **Layout-free `(A-1)` still beats it on both** (1.18085, 8.17344) with no
+  isospin structure at all.
+- It does fix the LIGHT end: A = 2-20 normalised median 0.827248 -> 0.884621
+  (**+6.94 %**), against -0.26 % to -0.97 % in every other bin. That is where a
+  contact law is worst, and it is the one piece worth keeping.
+- It also washes out the layout: segregated-vs-alternating p5-p95 gap
+  0.4589 % -> -0.03037 %, 15x smaller. An independent route to `qou-48is`.
+
+So option (a) is retired as a repair. Options (b) and (c) stand as written: EM
+needs its own `mu = 0` term because a different growth class cannot be a bond
+letter, and re-tuning a letter is excluded twice over. Full detail: `qou-adr0`.

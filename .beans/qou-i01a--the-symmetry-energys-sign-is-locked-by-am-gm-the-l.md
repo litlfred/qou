@@ -87,3 +87,67 @@ delta_flavour/4` because `d_pn` is built as a centred average of `d_pp` and
 put it below `1/(q^2+1)` the symmetry energy would appear with the SEMF sign for
 free. **`w = 1/(q^2+1)` is a target to check a future derivation AGAINST, never
 a criterion to search ON.**
+
+## 2026-09-05 (owner: "derive w") — w IS derived; the open premise is the flat 1/2
+
+**`w` is not a free parameter anywhere in the corpus.** The three interface
+factors are `f_pp = z` (positive crossing, Markov axiom), `f_nn = z - h`
+(negative crossing, Hecke skein) and `f_pn = z - h(1/2 - d/4)`
+(`bring_color_weighted`, the default since 2026-06-01). Solving
+`f_pn = w.f_pp + (1-w).f_nn` gives `(1-w)h = h(1/2 - d/4)` **identically**, so
+`w = 1/2 + d/4`. Verified: `z - h(1/2 - d/4)` equals the corpus's degree-10
+closed form for `b_pn` to **0.0 at 40 dps**.
+
+So "derive w" reduces entirely to **deriving the flat 1/2** in
+`sigma_avg = (sigma + sigma^-1)/2` (`prop:averaging-resonance-rule`).
+
+## And the flat half is the whole miss
+
+    w - w* = (q^2-1)/(2(q^2+1)) + d/4
+             0.051981855026      0.000343927702      ratio 151.14
+
+The ONE derived ingredient in `w` -- the flavour split -- is 151x too small to
+matter. The entire miss is an undeformed average used in a deformed algebra.
+
+## Which means could work: exactly those below the geometric
+
+`M_p . M_-p = b_pp.b_nn = GM^2` for every `p`, so `delta(-p) = -delta(p)`.
+
+| p | 3 | 2 | 1 | 0.5 | 0 | -0.5 | -1 | -2 | -3 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| delta | -0.0615 | -0.0423 | **-0.0216** | -0.0109 | 0 | +0.0109 | **+0.0216** | +0.0423 | +0.0615 |
+
+The convention sits at `p = +1`; the HARMONIC mean at `p = -1` is its exact
+mirror. `M_p` increases in `p` and `M_0` is geometric, so the SEMF sign needs
+`p < 0` -- **strictly below the geometric mean, where no average with `p >= 0`
+can go.** That closes "just pick a better average" for the whole `p >= 0` half,
+including the multiplicative/geometric one that the corpus's own connected-sum
+factorisation might otherwise suggest (it gives `delta = 0` exactly -- neutral,
+not SEMF).
+
+All three classical means have clean `[2]` forms (`[2]_x = x + 1/x`):
+
+    AM = [2]_{q^2}/(2[2]_q)     GM = 1/[2]_q     HM = 2/([2]_q [2]_{q^2})
+
+and `AM.HM = GM^2` closes the triple.
+
+## ⚠ A pattern I tested and it is NOT one
+
+The three weights are `1/2`, `q^-1/[2]_q`, `q^-2/[2]_{q^2}` -- which look like a
+ladder `q^-k/[2]_{q^k}`. **They are not.** At `p = 2` the formula predicts
+0.551982 against the true 0.550893, and it fails at every non-classical `p`
+tested (0.5, -2, -3). A coincidence of the three classical means. Pinned as a
+probe assertion so nobody re-derives it as structure -- this is exactly the
+near-pattern the anti-fit discipline exists for, and I would have shipped it had
+I not tested off the classical points.
+
+## Artifacts (added to the existing two)
+
+`SymmetrySignAmGm.lean` grows to 14 decls, all axiom-clean: `weight_of_convention`,
+`weight_miss`, `harmonic_mul_arithmetic`, `delta_harmonic_eq_neg_delta_arithmetic`,
+`delta_harmonic_nonneg`, `arithmetic_pinned`, `harmonic_pinned`. Probe 9/9 -> 16/16.
+
+**Still open, and now sharply stated:** derive the averaging rule, not `w`. A
+rule with `p < 0` gives the SEMF sign; `p >= 0` cannot. `p < 0` is a TARGET to
+check a derivation AGAINST, never a criterion to search ON, and nothing here
+adopts the harmonic mean.

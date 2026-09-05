@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:21Z
-updated_at: 2026-09-05T08:40:24Z
+updated_at: 2026-09-05T09:08:22Z
 ---
 
 ## The claim
@@ -230,3 +230,71 @@ Two things to carry:
   **0** on a log holding 20 real errors. (The sweep scripts are unaffected —
   they invoke `lean` directly, which uses the second form, and they decide red
   by exit code rather than by grep.)
+
+
+## 🛑 THE BIGGER DEFECT — a bare `lean` is a WEAKER check than `lake build` (2026-09-05)
+
+Everything above concerns a green going **stale**. This one makes a green
+**wrong from the start**, on any tree however fresh, and it invalidated all three
+of my own scripts plus this repo's documented verification recipe.
+
+`lean` invoked directly does **not** read the lakefile, so it does not apply its
+`[leanOptions]`. `autoImplicit` defaults **true** in `lean` and is set **false**
+in both the root and paper lakefiles. With it on, Lean silently auto-binds an
+unbound identifier as an implicit argument instead of erroring.
+
+Measured on `QOU/MassTheory/AtomWordShadow.lean` — same file, same `LEAN_PATH`,
+one flag apart:
+
+    lean                        ->  exit 0,  0 errors
+    lean -DautoImplicit=false   ->  exit 1,  6 errors
+    lake build (per-paper)      ->  exit 1, 20 errors
+
+**That file was RED on `main`** and was called clean by: a bare `lean`-direct
+run, the content sweep, and the library sweep — three independent "verifications"
+that all shared one wrong assumption.
+
+### How it was found, which is the part worth keeping
+
+Not by any detector. By trying to **reseed the olean cache**: the seeder refused,
+which forced a real per-paper `lake build`, which failed on a file I had
+personally verified `exit 0` an hour earlier. **The contradiction between two
+tools is what exposed it** — neither tool alone could have.
+
+### Fixed
+
+* `lean-shadow-verify.sh`, `lean-content-sweep.sh`, `lean-library-sweep.py` all
+  pass `-DautoImplicit=false -s 65536` (the latter mirroring the paper
+  lakefile's `moreLeanArgs`; one generated module overflows the default
+  elaboration stack and aborts as a bare `exit 134` with no source error).
+* `AGENTS.md` and `/prepare-merge` §4 corrected — the documented recipe was bare
+  `lean`.
+* `AtomWordShadow.lean` fixed: `fresh_freeIdx`, `fresh_atomIdx` and
+  `orbitCount_freeShadow` never bound `A`. The sibling declaration
+  `orbitCount_atomShadow` in the same file already had `{A : ℕ}`, so the fix is
+  that binder on the other three.
+* Re-run with the fix: library sweep **1 RED + 4 skipped**, matching lake
+  exactly — then **73/73 ok** after the repair.
+
+### RESEED: BLOCKED, and this is why
+
+You cannot seed a cache from a tree that does not build. Beyond that, this
+container cannot produce a valid seed at all:
+
+    root .lake/packages/mathlib   6990 oleans,    0 traces   <- restored, untraced
+    per-paper .lake/packages      3734 oleans, 3746 traces   <- genuinely built
+    per-paper QOU build           2642 oleans, 2642 traces
+
+`lean-olean-cache-seed.sh` collects from the **workspace root** and refuses at
+`n_ml=0` (it seeds only *freshly rebuilt* mathlib oleans, tracked in
+`/tmp/parbuild_built.txt`, which does not exist here). Its own message is right:
+force-pushing a mathlib-less branch would make the next agent's restore count
+~0 mathlib oleans and conclude Lean is unavailable. **Do not use
+`SEED_ALLOW_NO_MATHLIB=1` from a container in this state.**
+
+`SEED_PAPER=1` is the sanctioned narrow path and is viable *here* — the
+per-paper tree is fully traced — but it reseeds only the paper oleans, so it
+does not fix the untraced root mathlib that makes the closure non-empty in the
+first place. Left undone deliberately; needs a container with a real
+mathlib build, or the parallel-build producer that writes
+`/tmp/parbuild_built.txt`.

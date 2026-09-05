@@ -326,7 +326,16 @@ class HasDqSquaredNonvanishing {C : Type u}
 
     Vacuity ledger, `proof-no-self-assuming-projection`. -/
 
-/-- **`d_q²` non-vanishing** (per-instance form). -/
+/-- **`d_q²` non-vanishing** (per-instance form) — **this restates its own
+    hypothesis.**
+
+    The conclusion is the class field `nonvanishing` verbatim, so the
+    declaration derives nothing.  That is deliberate rather than an oversight:
+    as the removal note above records, *whether* `hq` / `hd_sq` / `hcross`
+    imply the non-vanishing is the open question, and until it is answered no
+    instance should be derivable from the conclusion.  The carrier is
+    parametrised on `(cqd, hq, hd_sq, hcross)` and is honestly uninhabited.
+    Disclosure added 2026-09-05 per bean `qou-pqmw`. -/
 theorem categorical_dq_squared_nonvanishing {C : Type u}
     [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C]

@@ -8,7 +8,7 @@ tags:
     - vacuity
     - issue-2472
 created_at: 2026-08-10T01:47:54Z
-updated_at: 2026-09-04T22:20:41Z
+updated_at: 2026-09-05T06:04:23Z
 parent: qou-5p7n
 ---
 
@@ -333,3 +333,50 @@ Full narrowing, every step measured and re-runnable:
 **Five exculpating shapes, all found by reading rather than by scanning**, and
 each one added a column the previous pass did not have. That is the shape of
 this bean: it is a *candidate* list, and its 78 was never a count of defects.
+
+
+## 2026-09-05 — the four were read one each. **ZERO are defects.** Queue: 0 actionable.
+
+| # | decl | verdict |
+|---|---|---|
+| 1 | `dressed_mass_from_substrate_split` | **not a defect; already disclosed at length** |
+| 2 | `matrixChain_eq_buildChains_axiom` | not a defect; thin docstring → disclosed, and its Mathlib claim corrected |
+| 3 | `categorical_dq_squared_nonvanishing` | not a defect; thin docstring → disclosed |
+| 4 | `opening_eq_holonomy_of_conj` | **not a defect; already disclosed** |
+
+All four are **parametrised** carriers in the honest §3b-tax open state.
+
+**#1 is the strongest case against the queue.** Its file records that an earlier
+`axiom` of the same content made the library **inconsistent** — a compiled
+`theorem … : False`, because `F`, `M_N`, `q` were universally quantified and
+unrelated while `substrate_split_factor` is concrete and strictly positive. It
+also records the mechanism: a review flagged the downstream theorem as a
+*tautology*, the repair introduced the axiom, and *"the tautology fix
+over-corrected into unsoundness — the statement stopped being empty by starting
+to be false."* The current no-instance class is the deliberate repair.
+
+**#4 already carries the disclosure on the theorem itself** (*"this much is
+unconditional given the class instance"*), and its class says *"providing an
+instance amounts to proving the identification — that is the open conjecture."*
+
+**#2's Mathlib claim was wrong and is corrected.** It cited
+`List.foldl_eq_foldr_of_comm` as *"not yet available"*. **No lemma of that name
+exists**, which makes the gap look wider than it is. Two real neighbours do:
+`List.foldl_eq_foldr` (Basic.lean:802) needs `Std.Commutative` on the
+*operation* — matrix multiplication fails that, so it does not apply; and
+`List.foldl_eq_foldr'` (:822) needs only right-commutativity, which is weaker
+and may hold, but concludes with `flip f`. So the gap is real and **narrower
+than "no lemma exists"**: what is missing is a pointwise-commuting variant
+without the `flip`. Closing it is Lean work on the fold shapes, not a citation.
+
+**Eighth measurement error, same family.** My parametrisation check reported
+`False` for #1 and #3; both *are* parametrised, with the parameters on the line
+*after* `class X`. Single-line regex again — the same defect as the refutation
+check two turns earlier.
+
+**Disposition for the bean: 78 entries, 0 actionable defects.** The list was a
+candidate scan, and every one of the 78 is now accounted for by one of seven
+shapes (no longer resolves / derives / bundle built / gate / constructor /
+carrier unidentified / parametrised-and-documented). Recommend closing it, or
+re-scoping it to "re-run `scripts/pqmw-queue-recheck.py` after the next
+carrier-shape change".

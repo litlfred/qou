@@ -15,7 +15,12 @@ N(q,z) = (q²+1)z² − (2q³+q)z + q⁴ = (z − q)·((q²+1)z − q³),
 
 so under convention D **exactly two** Markov parameters descend to the two-row
 quotient: `z = q` (where `tr_M` is the augmentation) and `z = z_D = q³/(q²+1)`.
-Its `one_not_root` proves `z = 1` is not a root on `1 < q <` the plastic number.
+Its `one_not_root` proves `z = 1` is not a root on `1 < q <` the **supergolden
+ratio** `≈ 1.4656` (the root of `x³ = x² + 1`). *Corrected 2026-09-05: this line,
+and three docstrings in the Lean file, called that bound the "plastic number".
+The value quoted was always right; the name was not — the plastic number is
+`≈ 1.32472`, the root of `x³ = x + 1`. Nothing proved is affected: the Lean
+hypothesis is the inequality `q³ − q² − 1 < 0`, not the name.*
 
 The coordinate sum `net` **is** `tr_M` at `z = 1`. So every comparison the Δ
 fork has been argued at — `epsNPq = h²/2 − h` for the short element,
