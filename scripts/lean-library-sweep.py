@@ -238,15 +238,49 @@ def sweep_one(args) -> int:
     shadow.mkdir(parents=True, exist_ok=True)
     try:
         if not (shadow / LIB).is_dir():
-            print(f"copying {LIB} olean tree into shadow ({shadow}) ...")
-            shutil.copytree(oleans / LIB, shadow / LIB)
+            # The shadow MUST contain the whole library tree, not just the
+            # modules we rebuild.  Lean commits to the FIRST LEAN_PATH root that
+            # holds the module's top-level namespace directory and never
+            # consults a later root for anything under it -- measured three
+            # ways: a shadow with no `<LIB>/` falls through and exits 0; a
+            # shadow with `<LIB>/` holding one unrelated module fails with
+            # "does not exist" on every other import from it.  So a partial
+            # shadow MASKS the real tree rather than layering over it, which is
+            # also why two libraries must not share one shadow root (above).
+            # Bean `qou-tpdg`.
+            #
+            # Hardlink rather than copy.  The tree is ~2.3 GB and a container
+            # here has a per-session quota (AGENTS.md §Disk space); a real copy
+            # simply fails with ENOSPC, which is what blocked this sweep from
+            # running at all.  Hardlinks cost ~0 (`du` reports 2.3 GB while
+            # `df` does not move) and are safe because `build()` unlinks its
+            # target before writing, so a rebuild never writes through a shared
+            # inode into the real tree.
+            print(f"linking {LIB} olean tree into shadow ({shadow}) ...")
+            try:
+                shutil.copytree(oleans / LIB, shadow / LIB, copy_function=os.link)
+            except OSError as e:
+                # different filesystem, or a hardlink-hostile mount
+                print(f"  hardlink failed ({e}); falling back to a real copy")
+                shutil.rmtree(shadow / LIB, ignore_errors=True)
+                shutil.copytree(oleans / LIB, shadow / LIB)
 
         siblings = [str(p) for p in ROOT.glob("content/*/lean/.lake/build/lib/lean")
                     if p != oleans]
-        lean_path = ":".join(
-            [str(shadow)]
-            + [str(p) for p in ROOT.glob(".lake/packages/*/.lake/build/lib/lean")]
-            + siblings + [str(oleans)])
+        # Dependency olean roots, in the order Lean should search them.
+        #
+        # BOTH package locations are included deliberately.  The root Lake
+        # workspace has `.lake/packages/`, and each paper package has its own
+        # `<paper>/lean/.lake/packages/` — and the documented sandbox restore
+        # (AGENTS.md §"Mathlib cache 403 fallback") populates the PAPER one.
+        # Globbing only the root gave a tree with a 0-byte `Mathlib/Tactic.olean`
+        # and no `Mathlib/Data/Real/Basic.olean` at all (1212 oleans against the
+        # paper tree's 3477), so every Mathlib-importing module failed with
+        # "invalid header" / "does not exist" and the sweep reported 22 REDs
+        # that were entirely about its own environment.  Bean `qou-tpdg`.
+        pkg_roots = ([str(p) for p in ROOT.glob("content/*/lean/.lake/packages/*/.lake/build/lib/lean")]
+                     + [str(p) for p in ROOT.glob(".lake/packages/*/.lake/build/lib/lean")])
+        lean_path = ":".join([str(shadow)] + pkg_roots + siblings + [str(oleans)])
         env = dict(os.environ,
                    LEAN_PATH=lean_path,
                    PATH=f"{os.path.expanduser('~')}/.elan/bin:{os.environ['PATH']}")
@@ -269,6 +303,15 @@ def sweep_one(args) -> int:
             src = PKG / (m.replace(".", "/") + ".lean")
             out = shadow / (m.replace(".", "/") + ".olean")
             out.parent.mkdir(parents=True, exist_ok=True)
+            # The shadow is hardlinked to the real tree, so REMOVE the target
+            # before `lean -o` writes it.  Writing through a shared inode would
+            # mutate the real olean tree -- the thing the shadow exists to
+            # prevent.  Also drop same-stem siblings that would then be stale.
+            for stale in (out, out.with_suffix(".olean.hash"), out.with_suffix(".ilean")):
+                try:
+                    stale.unlink()
+                except (FileNotFoundError, IsADirectoryError):
+                    pass
             r = subprocess.run(["lean", *LEAN_OPTS, str(src.relative_to(PKG)), "-o", str(out)],
                                cwd=PKG, env=env, capture_output=True, text=True,
                                timeout=1800)
