@@ -897,3 +897,99 @@ absent from this one — that is NOT a coverage loss: they were self-comparing
 (`computed=r["tr_M"], expected=r["tr_M"]`) and were deliberately deleted under
 bean `qou-26f2`, with the values still recorded in full precision under
 `data.atoms`.
+
+## 2026-09-05 — the 391 float64 fields are excised, and they were a symptom
+
+The remaining item — "excise the 391 raw float64 fields from
+`hadron_knot_table`'s witness path, then regenerate" — is done in code, and
+doing it exposed three things the fields were hiding. Regeneration is running.
+
+### What was narrowing
+
+Every numeric field in the atom rows, and mostly by `round()` rather than an
+explicit `float()`, which is why it was invisible at the call site:
+`round(mpf, 12)` returns a Python float.
+
+    nf_compact[bname]   round(val, 12)          -> fmt(val)
+    V_rounded           round(float(v), 12)     -> fmt(v)
+    tr_M                round(float(tr), 12)    -> fmt(tr)
+    net                 round(float(net), 12)   -> fmt(net)
+    ln_abs_tr           round(mp.log(...), 12)  -> fmt(mp.log(...), dps=17)
+    B_MeV               round(B, 4)             -> fmt(B)
+    cross_channel_sum   round(cross_sum, 12)    -> fmt(cross_sum)
+    delta_xchan_MeV     round(delta_xchan, 6)   -> fmt(delta_xchan)
+
+`B_MeV` at **four decimals** is the starkest: a binding energy carried through
+the whole 50-dps MPFR pipeline, published to four figures. The `V_per_gen`
+line even documented the defect — its comment read "compute mpf@q0; serialize
+float".
+
+### 1. B_MeV was float64 at the SOURCE too, and needn't have been
+
+`binding_energy` ended `return float(B)`. The comment defending that cast gave
+two reasons and **both had gone stale**:
+
+* "an mpf raises TypeError at `hadron_knot_table`'s `round(B, 4)`" — that call
+  site is `fmt(B)` now, which serializes mpf natively.
+* "it costs nothing, `math.log` already narrows inside the accumulator" —
+  `math` was excised from the module under `qou-9ay6`; the accumulator uses
+  `_mp.log` and `math` survives only in comments.
+
+One live caller (`hadron_knot_table.py:188`), established by call site rather
+than name search. Cast removed. Measured effect on deuterium:
+
+    before   -7.271102598682182                                      16 digits
+    after    -7.27110259868218217191550436683489629794510593250805…  60 digits
+
+### 2. `tr_M`, `net` and the NF coefficients are STILL float64 — `qou-ejuy`
+
+`fmt` short-circuits a non-mpf to `str()`, so after the conversion they
+serialize as 16-17 digits and say what they are. The source is
+`tools/pyhecke/python/pyhecke/gram.py`, where `z`, `h` and `q0` are Python
+floats and `TR_M = np.array([...])` is float64, so every Markov trace is a
+float64 dot product against a float64 basis vector. Filed as **`qou-ejuy`**;
+not fixed here because pyhecke is a shared library whose convention gate is
+written for the f64 path.
+
+This nearly caused a regression: `ln_abs_tr = mp.log(abs(tr))` promotes its
+float64 argument and returns 60 GENUINE digits of the log of a value that has
+17 — digits 18-60 describing the binary64 rounding of `tr`, not the physics.
+Capped at `dps=17` with a comment to drop the override once `qou-ejuy` lands.
+The `round(..., 12)` this replaced had been accidentally hiding it.
+
+### 3. The LP_stable verdict is below its own noise floor — `qou-3uvs`
+
+`check_frobenius` tests `Gx[i] < -1e-10`, a FIXED absolute tolerance, on a
+float64 product whose magnitude runs from 1e1 to 1e31:
+
+    atom   stable  max|nf|    float64 ulp   vs the -1e-10 threshold
+    o16    True    1.540e+01  3.39e-15      far below  -> meaningful
+    ne20   False   3.541e+02  7.79e-14      below      -> meaningful
+    si28   False   4.166e+06  9.17e-10      comparable -> marginal
+    ca40   False   3.805e+15  8.37e-01      10 orders above
+    fe56   False   1.149e+31  2.53e+15      25 orders above
+
+**This corrects what this bean and my session summary claimed.** The TRACE
+GROWTH result stands — 19.0 at o16 to 4.39e+30 at fe56, and the braid-fix
+ratios (0.9070 / 0.8796 / 0.8770 / 0.8714) keep ~16 digits, being ratios of
+same-magnitude values. The STABILITY verdict for ca40 and fe56 does not: the
+predicate cannot resolve its own threshold there, so "not Frobenius-stable" is
+established only up to ne20. It should have been stated that way.
+
+`check_frobenius` returns `(stable, Gx, violations)` and `compute_atom` already
+unpacked all three, then recorded only the boolean — so this could not be
+audited without re-running a 4.6-hour table. **`Gx` and
+`frobenius_violations` are now recorded in every row**, landed BEFORE the
+regeneration so the run produces an artifact that can answer the question.
+
+### Observation for the still-open deuterium bisect
+
+Deuterium now computes `B = -7.27110259868218217…`. The bisect baseline in
+this bean is `-7.271102124876744`, which differs at the 7th digit. That
+baseline was measured on the PRE-merge tree, so the delta is attributable to
+{merge, convention D, the `qou-8w8v` rescaling removal, this cast removal}
+collectively and to none of them individually. Recorded as a data point, not
+a conclusion — the bisect item stands.
+
+- [x] Excise the 391 raw float64 fields — done in code.
+- [ ] Land the regenerated witness (run in progress, ~4.6 h).
