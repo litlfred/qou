@@ -1,0 +1,37 @@
+{
+  "schema": "mirror-drift/v1",
+  "note": "Ratchet: this list drains, never grows. `live` is a fully-qualified Lean name declared in BOTH a content-block `.lean` sibling and the library, WHERE the block's own `lean.ref` names that exact FQN -- so every per-block checker (`q-usage-*`, `wall-side-correct`, `proof-statement-integrity`, the `da-*` family) reads the sibling and never sees the declaration `lake build` compiles.",
+  "not_every_live_entry_is_a_defect": "A FAITHFUL live mirror is working as designed: AGENTS.md 4a gates DRIFT, not mirroring, and a `definition` block is REQUIRED to carry a sibling (3). Deleting a faithful mirror would break that requirement. The actionable subset is `live_drifted`.",
+  "direction_is_not_uniform": "Do not assume the library is canonical. Measured across the 163 substantive drifts: 91 have the library side edited more recently, 70 the sibling side. Recency is not canonicality -- `QOU.Information.speedOfLight` has the LIBRARY edited later and the SIBLING is the 7c-compliant one (generic base ring, division-free, defining relation discharged as a theorem). Every reconciliation requires reading both sides.",
+  "measured_at": "2026-09-05",
+  "totals": {
+    "shared_fqns": 130,
+    "sibling_declarations": 282,
+    "faithful": 118,
+    "drifted": 164,
+    "live": 12
+  },
+  "live": [
+    "QOU.BraidKnot.delta_q",
+    "QOU.Information.gravitationalConstant",
+    "QOU.Information.informationBandwidth",
+    "QOU.Information.operationalEntropy",
+    "QOU.Information.speedOfLight",
+    "QOU.Interactions.AlgebraicPrimality.IsAlgebraicallyPrime",
+    "QOU.LiftingDescent.ccg_cosimplicial_identities",
+    "QOU.PhiQPiece.subLink",
+    "QOU.qConnection",
+    "QOU.qExtDeriv",
+    "QOU.qLieBracket",
+    "QOU.qReebVectorField"
+  ],
+  "live_drifted": [
+    "QOU.BraidKnot.delta_q",
+    "QOU.Information.gravitationalConstant",
+    "QOU.Information.informationBandwidth",
+    "QOU.Information.operationalEntropy",
+    "QOU.Information.speedOfLight",
+    "QOU.Interactions.AlgebraicPrimality.IsAlgebraicallyPrime",
+    "QOU.qReebVectorField"
+  ]
+}
