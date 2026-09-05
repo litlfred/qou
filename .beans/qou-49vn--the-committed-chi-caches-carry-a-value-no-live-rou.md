@@ -488,3 +488,34 @@ changes canonical numbers, so none of it should land without owner sign-off:
 5. Fix the δ docstring.
 
 Items 4 and 5 are independent of 1-3 and safe to land on their own.
+
+### 🛑 Correction to my own remediation list: item 4 is NOT safe to land alone
+
+The status list above says *"Items 4 and 5 are independent of 1-3 and safe to
+land on their own."* **Item 4 is not**, and the reason is in the docstring I had
+already quoted two paragraphs earlier: `atom_braid_word_3A`'s `q=None` default
+*"uses the canonical q₀ data (`pyhecke.gram.h`, `_avg_color_delta`) and is
+**byte-identical to the historical word** — all existing callers omitting `q`
+are unaffected."*
+
+That byte-identity is a **deliberate contract**, and every default-path caller
+depends on it. Replacing float64 `pyhecke.gram.h` with the exact `h` breaks it
+and moves every default-path word — and therefore every downstream `tr_M` — at
+~2.6e-16. That is inside L1 (1e-15), but it dirties witnesses corpus-wide and is
+exactly the kind of change this bean exists to stop happening unannounced.
+**Item 4 belongs with 1-3, behind owner sign-off.**
+
+Only **item 5** was safe, and it is done: the docstring at
+`mass_at_3A_proper.py:534` said `δ = flavor_split_subleading(q₀)` (line-wrapped,
+which is why a grep for the full name found nothing) where both the code
+(lines 594-595) and the measurement say `flavor_split_leading`. The two are
+distinguishable, not a near-tie:
+
+    flavor_split_leading(q₀)    = 0.001375710807027096008551
+    flavor_split_subleading(q₀) = 0.001377048965992554505398
+    measured from the word      = 0.0013757108070270960086
+    relative separation           9.727e-4
+
+`leading` matches to 22 digits; `subleading` differs at the 4th significant
+figure. Corrected; the emitted word is unchanged (verified: the deuteron idx-11
+shift is byte-identical after the edit).
