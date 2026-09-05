@@ -58,15 +58,17 @@ moves only positions `h, h+1 ≤ g`), hence `posAfter_succ_self` — position `g
 holds strand `g+1` when `R_g` begins — and `posAfter_self`, that position `g` holds
 `pStart e g`. `crossing_pair_of_run` is the sentence this file rests on, as a theorem.
 
-What remains is the **`compIdx` half**: that the cycles of `∏_{e_g odd} σ_g` are the
-maximal consecutive blocks of odd-exponent generators. That is the cycle decomposition
-of a product of ascending adjacent transpositions — a genuinely separate piece of
-combinatorics, and not attempted. It is measured rather than assumed silently: the
-companion probe checks it as **P2** (components are consecutive strand intervals) and
-**P4** (`μ = 1 + #{g : e_g even}`), 414/414.
+**The `compIdx` half is now proved too** (`MonotoneWordCycleStructure.lean`). This said
+it needed "the cycle decomposition of a product of ascending adjacent transpositions";
+it does not. With `π = posAfter e N`, an odd run sends `i` to `i+1` and an even one sends
+it to `pStart e i`, so `π` is the **cyclic shift on each `compIdx` class** — and
+`compIdx_pStart` just above is what puts the even case back in its own class. Cycles
+**are** the classes.
 
-So the chain reads: `pStart` **proved** to model the word, `compIdx` **measured** to
-model the cycles, and everything above them proved from those two.
+So the whole chain is proved from the braid word, and what remains is one level below
+it: that `posAfter`/`compIdx` *model* a monotone closure at all. "Braid word" and
+"closure" are not Lean objects in this arc, so that is a definition, measured 414/414 —
+the probe checks the recursion reproduces `analyse`'s `perm` array exactly.
 
 SCOPE — the theorems are unconditional. The claim that `pStart`/`compIdx` model a
 monotone closure is **scope-(a)**, 414/414.
