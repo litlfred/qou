@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-05T08:33:27Z
-updated_at: 2026-09-05T08:49:29Z
+updated_at: 2026-09-05T08:57:58Z
 ---
 
 ## What was found
@@ -179,3 +179,58 @@ classes is canonical, and it is upstream of any Lean edit.
 Worth noting separately: `QOU.Braiding` and `QOU.Hecke` hold near-identical
 copies of the content-bearing class. Whether that duplication is deliberate
 (content block + library sibling) is unexamined here.
+
+
+## 2026-09-05 (3) — cp-violation DRAINED; and the queue is not 9, because the detector's own exclusions hide more
+
+**Drained** (commit on `claude/gram-kappa-laundered-axiom-2026-09-05`):
+`cp_violation_spectral_form`. Its honest form came from its own `.md` — the
+Falsifiability section's "amphicheiral ⇒ δ_CP = 0" is provable from the
+definition — plus a §3b carrier taking the physical δ_CP as a PARAMETER, with
+no instance, because the corpus has no independent δ_CP to identify against.
+Detector 9 → 8.
+
+### 🛑 It was NOT a discovery — it was listed 2026-08-08
+
+`docs/audits/2026-08-08-triviality-sweep-corpus-wide.md` already names
+`cp_violation_spectral_form` under "**New — not in that audit**". So the widened
+detector RE-found a known item. What the widening genuinely added is that the
+*machine* audit could never see it, so it was never in the enforceable queue —
+which is how an item a sweep named in August was still live in September.
+
+That doc also says "**Coordinate with that audit's owner before draining.**"
+Draining the one item whose honest form its own narrative supplies is within
+that; its remaining list is untouched.
+
+### That list's survivors — and the detector reports NONE of them
+
+Checked each of the eight it listed. Three are changed/gone. Four are live, and
+the detector is silent on all four **by its own documented exclusions**, not
+because they are clean:
+
+| declaration | shape | why the detector cannot see it |
+|---|---|---|
+| `explicit_alpha_k_h3` | `∃ a₀ a₁ a₂ a₃, a₀ = 1 ∧ a₁ = 0 ∧ …` proved `⟨…, rfl, rfl, rfl, rfl⟩` | multi-binder AND conjuncts — both excluded by design |
+| `hadron_operations_closure` | four conjuncts of `∀ n, ∀ h, ∃ h', h' = op n h` | nested `∀` (only one group is stripped) AND conjuncts |
+| `residue_isRingHom_of_residueAtRoot` | `∃ f : R →+* _, ∀ x, residue n x = f x` proved `⟨r.project n, fun _ => rfl⟩` | body is `∀ x, g x = f x`, not `f = e` — a different shape entirely |
+| `optimal_nf_is_standard_basis` | `∃ support, IsPrefixClosed support ∧ ∀ w ∈ support, …` | **NOT vacuous** — real `obtain`/`exact` proof over genuine properties. My first scan flagged it; that was a false positive |
+
+`explicit_alpha_k_h3` is the clearest: four conjuncts, each `var = expr` with a
+distinct fresh variable, so the conjunction carries no more content than one of
+them does. The detector's docstring excludes conjuncts because "the extra
+conjunct **can** carry the content" — true in general, false here, and only
+reading tells you which.
+
+**So the exclusions are doing real work in both directions**, and the queue for
+this shape is 8 by machine and larger by hand. Widening them is not obviously
+right: `optimal_nf_is_standard_basis` is exactly the true negative the conjunct
+exclusion exists to protect.
+
+### Method note
+
+My first pass at this list used `grep '^theorem <name>'` and reported
+`cp_violation_spectral_form` still LIVE — it was matching **my own quoted
+superseded code inside a docstring**, which starts at column 0. The detector
+strips comments; the grep did not. Same class as the `orellana1998` false
+duplicate earlier in this session: a scan over raw source where the question
+was about parsed content.
