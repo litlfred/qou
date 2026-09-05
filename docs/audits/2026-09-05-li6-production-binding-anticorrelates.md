@@ -87,6 +87,63 @@ recorded **before** the number landed:
   the plateau is really "every atom with `Z ≤ 2`" — i.e. an artefact of never
   having left helium.
 
+## 🛑 BOTH PREDICTIONS FAILED — ⁵Li = −8.136319976677678, and the plateau framing is refuted
+
+`⁵Li (Z=3, N=2) = −8.136319976677678` (3199.6 s). Neither branch: not ≈ −6.8,
+not ≈ −3. It is **below the entire plateau** — more negative than every other
+point in the series, including ³H.
+
+Full series, five of seven measured by
+[`uic_binding_a_series_kernel_live_probe.py`](../../computations/probes/uic_binding_a_series_kernel_live_probe.py)
+(5/5, total wall 11350 s), all kernel-live:
+
+| atom | A | Z | N | `B_pred` | AME2020 | `B/A` |
+|---|---|---|---|---|---|---|
+| ²H | 2 | 1 | 1 | −7.2711 | 2.2246 | −3.636 |
+| ³H | 3 | 1 | 2 | −7.7421 | 8.4818 | −2.581 |
+| ³He | 3 | 2 | 1 | −7.4562 | 7.7180 | −2.485 |
+| ⁴He | 4 | 2 | 2 | −6.8286 | 28.2957 | −1.707 |
+| ⁵He | 5 | 2 | 3 | −6.7896 | 27.5607 | −1.358 |
+| **⁵Li** | 5 | 3 | 2 | **−8.1363** | 26.3307 | −1.627 |
+| ⁶Li | 6 | 3 | 3 | −3.0650 | 31.9940 | −0.511 |
+
+**The "A = 2..5 plateau with a cliff at A = 6" does not exist.** It was an
+artefact of a sample carrying only *one* atom per mass number above A = 3
+(⁴He, then ⁶Li). Adding the second A = 5 atom breaks it, and the framing was
+mine.
+
+### What the seven points do show
+
+Stated without fitting a replacement curve to seven points:
+
+- **The same-A mirror split grows ~5× between A = 3 and A = 5.** ³H vs ³He:
+  **3.835 %**. ⁵He vs ⁵Li: **19.84 %**. Same mass number, differing only in
+  `Z`. The gate-forces-the-sign account says nothing about this, and it is the
+  most structured feature in the set.
+- **The largest single jump is same-`Z`, adjacent-`A`**: ⁵Li → ⁶Li is
+  **2.655×**, larger than anything across the whole `A` range.
+- **Total predicted spread is 2.655×** (3.065 → 8.136) against AME's **14.4×**
+  (2.2246 → 31.9940). The prediction still fails to track the observable by a
+  wide margin, and every point still has the wrong sign.
+
+### Scoping my own probe's anti-correlation assertion
+
+The probe asserts `|B_pred|` moves against `A` while AME moves with it, and it
+passes — but it compares only the **extreme `A` points** (²H → ⁶Li). The series
+is **not monotone** (⁵Li sits below ²H), so that assertion is a true statement
+about two endpoints and **weaker evidence than its passing suggests**. Do not
+quote it as a trend. The defensible aggregate claim is the spread mismatch
+(2.655× against 14.4×) plus the uniform wrong sign.
+
+### One caution before anything is built on this
+
+**⁶Li is the most extreme point and is the one row here not measured by this
+probe** — it is carried from the earlier standalone run (kernel asserted,
+4039.8 s, same call). It was the linchpin of the cliff claim; with the cliff
+gone it is one anomaly among several, but it deserves an independent re-run
+before it carries weight. ²H is also carried, but it is unremarkable and sits
+mid-series.
+
 So the caution was procedurally right — they genuinely could not be verified, and
 the 17.29 % kernel/fallback split made the risk real — but the **substance is
 confirmed**, not overturned. The series was kernel-live after all.
