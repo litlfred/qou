@@ -1049,3 +1049,41 @@ atom resumes at the partition it reached.
 - [x] Make the heavy atoms survivable across reclaims.
 - [ ] Land the regenerated witness. Now feasible: each reclaim costs one
       partition, so the table accumulates across restarts instead of resetting.
+
+### 2026-09-05, later — what the memo is and is NOT yet shown to do
+
+First reclaim since the memo landed, so the first real test. Correcting an
+over-claim I made when it went in ("a reclaim costs one partition, not one
+atom"): that describes the MECHANISM, and the mechanism is proven, but the
+COVERAGE — what fraction of a heavy atom's runtime the memo actually removes —
+is not measured, and this test did not measure it either.
+
+**Proven:**
+
+* cold/warm results are BIT-IDENTICAL (deuterium, run with the checkout quiet);
+* full repeat of deuterium is 67x (143.9 s -> 2.2 s), so for A=2 the memoised
+  Rust calls are ~98 % of the atom;
+* entries are written PER PARTITION during an atom (932 -> 1116 over 60 s while
+  tritium was still running);
+* the memo survives a reclaim: 1884 entries / 8.4 MB were on disk afterwards.
+
+**Not proven, and the honest reading of this test:** he4 was the interrupted
+atom and it completed in **257.9 s against 286.2 s cold — about 10 %**, not the
+near-instant resume the 67 % figure would suggest. From the memo's file mtimes
+the reclaim gap sits after entry 1884, and he4 needed ~1291 new entries after
+the restart, so the kill landed EARLY in he4 and very little of it was cached.
+That is consistent with the mechanism working; it is not evidence that it does.
+
+What remains genuinely open is whether fe56's 276 minutes are dominated by
+memoised kernel calls the way deuterium's 144 seconds are. `binding_energy` is
+three terms and only the Rust ones are cached — `sdp_cross_channel_contribution`
+and the LP work are not. If those scale with A, coverage drops exactly where it
+is needed most.
+
+- [ ] Measure warm/cold coverage on a MID-SIZE atom (li6 or c12) with the
+      checkout quiet. An attempt during the run was invalid: profiling
+      concurrently with the table doubled every number through CPU contention,
+      which is the standing "one producer at a time" rule biting a measurement
+      rather than a producer.
+- [ ] If coverage is poor at high A, memoise the SDP/LP term too, or accept
+      that the heavy atoms need a long window regardless.
