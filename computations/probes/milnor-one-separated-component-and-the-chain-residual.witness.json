@@ -1,0 +1,352 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T06:11:20.320579+00:00",
+  "commitSha": "e0b5414868c78e877526083b09db396b0cf19fa3",
+  "assertions": [
+    {
+      "name": "every_CHAIN_triple_IS_the_consecutive_triple",
+      "computed": "62",
+      "expected": "62",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "checked directly in component indices, not inferred from the count matching sum(A-1). The count match is corroboration only."
+    },
+    {
+      "name": "NO_triple_of_the_derived_carrier_carries_nonzero_mubar",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "both branches, 7 isotopes, separable and chain alike -- reproducing #6634 under the new classification."
+    },
+    {
+      "name": "monotone_random_CHAIN_triples_give_NO_nonzero_mubar",
+      "computed": "0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "over 534 chain triples (144 of them at Delta = 2). The residual vanishes generically for monotone words, not only on the carrier."
+    },
+    {
+      "name": "CONTROL_non_monotone_random_DOES_give_nonzero_mubar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "27 nonzero. Without this the monotone nulls above would be uninterpretable."
+    },
+    {
+      "name": "the_6679_monotone_null_is_majority_NON_vacuous",
+      "computed": "870",
+      "expected": "870",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "the Delta = 1 (vacuous) count, recorded so the non-vacuous majority is visible in the witness rather than asserted in prose."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "milnor-one-separated-component-and-the-chain-residual",
+  "scriptFile": "milnor_one_separated_component_and_the_chain_residual_probe.py",
+  "scriptHash": "34be4e4891a6",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/milnor_one_separated_component_and_the_chain_residual_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/milnor_one_separated_component_and_the_chain_residual_probe.py"
+  },
+  "description": "EXPLORATORY. Route 3's splitting argument needs only ONE component separated, not all three: mubar_abc is the h_a h_b coefficient of lambda_c, so if c splits off from the pair it vanishes however strongly a and b are linked. Reclassifying the derived carrier's triples by SHAPE rather than by Delta: SEPARABLE (some component unlinked from both others -- the argument reaches it) vs CHAIN (none is). On the all-sigma^-1 branch, 393 SEPARABLE and 31 CHAIN, 0 nonzero mubar in either. The merged Delta = 0 theorem reaches only the 211 that are separable AND Delta = 0; the 182 separable Delta = 2 triples are reached for the first time: coverage 211 -> 393 of 424, i.e. 49.8 % -> 92.7 %, which is +42.9 percentage POINTS or +86.3 % relative -- both stated because '43 % more' reads as the relative figure and is not it. From deleting a hypothesis rather than adding an argument. The 31 CHAIN triples are VERIFIED (not inferred from the count matching sum(A-1)) to be exactly the consecutive {i, i+1, i+2}, and the companion Lean proves that is forced with no third case, so the residual is ONE SHAPE and cannot be chipped at further by linking-number bookkeeping. Closing it needs a different invariant -- mubar vanishing unless all indices lie in one connected-sum summand -- which is NOT asserted here. The chain null is generic for monotone words and the non-monotone arm is the positive control that it is a fact about monotonicity rather than about the scanner. Also records that #6679's monotone null is 53.7 % NON-vacuous (690 of its triples are Delta = 2, not Delta = 1). Scope (a) for the measurement; the scope-(b) exclusion lives in the Lean. Nothing wired.",
+  "auditOnly": "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md",
+  "data": {
+    "the_strengthening": {
+      "merged_hypothesis": "Delta = 0 -- ALL THREE pairwise linking numbers vanish (MilnorTriplesAreDefinedExactlyWhereTheyVanish.lean)",
+      "what_the_argument_needs": "ONE component unlinked from both others. mubar_abc is the h_a h_b coefficient of the Magnus expansion of lambda_c; if c splits off from the pair that coefficient is zero, and a, b may be linked to each other arbitrarily",
+      "companion_lean": "QOU/Mass/OneSeparatedComponentSufficesForMilnorVanishing.lean -- sorry-free, lean-direct exit 0; splitsOff_of_unlinked depends on NO axioms",
+      "gain_on_the_carrier": "the merged theorem reaches 211 (separable AND Delta = 0); this reaches all 393 separable, adding the 182 that are Delta = 2 with one component unlinked from both"
+    },
+    "carrier_by_shape": {
+      "per_branch": {
+        "sigma": {
+          "separable": 393,
+          "separable_nonzero": 0,
+          "separable_delta2": 182,
+          "chain": 31,
+          "chain_nonzero": 0,
+          "chain_delta2": 31
+        },
+        "sigma^-1": {
+          "separable": 393,
+          "separable_nonzero": 0,
+          "separable_delta2": 182,
+          "chain": 31,
+          "chain_nonzero": 0,
+          "chain_delta2": 31
+        }
+      },
+      "rows": [
+        {
+          "branch": "sigma",
+          "isotope": "2H",
+          "A": 2,
+          "components": 3,
+          "A_minus_1": 1,
+          "separable": 0,
+          "separable_nonzero": 0,
+          "separable_delta2": 0,
+          "chain": 1,
+          "chain_nonzero": 0,
+          "chain_delta2": 1
+        },
+        {
+          "branch": "sigma",
+          "isotope": "3H",
+          "A": 3,
+          "components": 4,
+          "A_minus_1": 2,
+          "separable": 2,
+          "separable_nonzero": 0,
+          "separable_delta2": 2,
+          "chain": 2,
+          "chain_nonzero": 0,
+          "chain_delta2": 2
+        },
+        {
+          "branch": "sigma",
+          "isotope": "3He",
+          "A": 3,
+          "components": 4,
+          "A_minus_1": 2,
+          "separable": 2,
+          "separable_nonzero": 0,
+          "separable_delta2": 2,
+          "chain": 2,
+          "chain_nonzero": 0,
+          "chain_delta2": 2
+        },
+        {
+          "branch": "sigma",
+          "isotope": "4He",
+          "A": 4,
+          "components": 5,
+          "A_minus_1": 3,
+          "separable": 7,
+          "separable_nonzero": 0,
+          "separable_delta2": 6,
+          "chain": 3,
+          "chain_nonzero": 0,
+          "chain_delta2": 3
+        },
+        {
+          "branch": "sigma",
+          "isotope": "6Li",
+          "A": 6,
+          "components": 7,
+          "A_minus_1": 5,
+          "separable": 30,
+          "separable_nonzero": 0,
+          "separable_delta2": 20,
+          "chain": 5,
+          "chain_nonzero": 0,
+          "chain_delta2": 5
+        },
+        {
+          "branch": "sigma",
+          "isotope": "8Be",
+          "A": 8,
+          "components": 9,
+          "A_minus_1": 7,
+          "separable": 77,
+          "separable_nonzero": 0,
+          "separable_delta2": 42,
+          "chain": 7,
+          "chain_nonzero": 0,
+          "chain_delta2": 7
+        },
+        {
+          "branch": "sigma",
+          "isotope": "12C",
+          "A": 12,
+          "components": 13,
+          "A_minus_1": 11,
+          "separable": 275,
+          "separable_nonzero": 0,
+          "separable_delta2": 110,
+          "chain": 11,
+          "chain_nonzero": 0,
+          "chain_delta2": 11
+        },
+        {
+          "branch": "sigma^-1",
+          "isotope": "2H",
+          "A": 2,
+          "components": 3,
+          "A_minus_1": 1,
+          "separable": 0,
+          "separable_nonzero": 0,
+          "separable_delta2": 0,
+          "chain": 1,
+          "chain_nonzero": 0,
+          "chain_delta2": 1
+        },
+        {
+          "branch": "sigma^-1",
+          "isotope": "3H",
+          "A": 3,
+          "components": 4,
+          "A_minus_1": 2,
+          "separable": 2,
+          "separable_nonzero": 0,
+          "separable_delta2": 2,
+          "chain": 2,
+          "chain_nonzero": 0,
+          "chain_delta2": 2
+        },
+        {
+          "branch": "sigma^-1",
+          "isotope": "3He",
+          "A": 3,
+          "components": 4,
+          "A_minus_1": 2,
+          "separable": 2,
+          "separable_nonzero": 0,
+          "separable_delta2": 2,
+          "chain": 2,
+          "chain_nonzero": 0,
+          "chain_delta2": 2
+        },
+        {
+          "branch": "sigma^-1",
+          "isotope": "4He",
+          "A": 4,
+          "components": 5,
+          "A_minus_1": 3,
+          "separable": 7,
+          "separable_nonzero": 0,
+          "separable_delta2": 6,
+          "chain": 3,
+          "chain_nonzero": 0,
+          "chain_delta2": 3
+        },
+        {
+          "branch": "sigma^-1",
+          "isotope": "6Li",
+          "A": 6,
+          "components": 7,
+          "A_minus_1": 5,
+          "separable": 30,
+          "separable_nonzero": 0,
+          "separable_delta2": 20,
+          "chain": 5,
+          "chain_nonzero": 0,
+          "chain_delta2": 5
+        },
+        {
+          "branch": "sigma^-1",
+          "isotope": "8Be",
+          "A": 8,
+          "components": 9,
+          "A_minus_1": 7,
+          "separable": 77,
+          "separable_nonzero": 0,
+          "separable_delta2": 42,
+          "chain": 7,
+          "chain_nonzero": 0,
+          "chain_delta2": 7
+        },
+        {
+          "branch": "sigma^-1",
+          "isotope": "12C",
+          "A": 12,
+          "components": 13,
+          "A_minus_1": 11,
+          "separable": 275,
+          "separable_nonzero": 0,
+          "separable_delta2": 110,
+          "chain": 11,
+          "chain_nonzero": 0,
+          "chain_delta2": 11
+        }
+      ]
+    },
+    "the_chain_is_the_consecutive_triple": {
+      "verified_not_inferred": "every CHAIN triple was checked to satisfy b == a+1 and c == a+2 in component indices",
+      "chain_triples_seen": 62,
+      "of_those_consecutive": 62,
+      "count_corroboration": "31 per branch = sum over the 7 isotopes of (A - 1) = 31 = 1+2+2+3+5+7+11, the number of {i, i+1, i+2} on a path of mu = A + 1 components. A count match is corroboration, not evidence, which is why the shape itself is checked",
+      "forced_by_the_lean": "splitsOff_or_consecutive: on the path carrier an ordered triple is separable or is {a, a+1, a+2}, with no third case; consecutive_has_no_separable_component shows the trichotomy is sharp"
+    },
+    "what_would_close_the_residual": {
+      "the_invariant_needed": "mubar of length k vanishes unless all k indices lie in a single connected-sum summand",
+      "why_it_would_suffice": "combined with the measured 'each summand touches at most 2 components', no summand could hold all three indices of any triple -- closing the chain case and subsuming this file",
+      "status": "NOT asserted and NOT formalised. Axiomatising it as a class would be the axiomatisation-is-not-a-proof pattern"
+    },
+    "random_monotone": {
+      "words": 238,
+      "separable": 1345,
+      "separable_nonzero": 0,
+      "chain": 534,
+      "chain_nonzero": 0,
+      "chain_delta2": 144,
+      "delta_histogram": {
+        "0": 319,
+        "1": 870,
+        "2": 690
+      },
+      "nonzero_by_delta": {}
+    },
+    "CONTROL_random_non_monotone": {
+      "words": 220,
+      "separable": 1365,
+      "separable_nonzero": 26,
+      "chain": 91,
+      "chain_nonzero": 1,
+      "chain_delta2": 1,
+      "delta_histogram": {
+        "0": 925,
+        "1": 490,
+        "2": 39,
+        "3": 2
+      },
+      "nonzero_by_delta": {
+        "0": 23,
+        "2": 3,
+        "3": 1
+      },
+      "note": "the positive control. Without a non-monotone arm producing nonzero mubar -- including at Delta = 2 -- the monotone chain null would be indistinguishable from a scanner that never reports nonzero"
+    },
+    "6679_monotone_null_is_not_vacuous": {
+      "why_it_could_have_been": "Delta = 1 makes mubar = 0 VACUOUSLY, since it lives in Z/1. A null dominated by Delta = 1 would be a count of vacuous zeros",
+      "monotone_delta_histogram": {
+        "0": 319,
+        "1": 870,
+        "2": 690
+      },
+      "reading": "53.7 % of the monotone arm is NON-vacuous (Delta = 0 or >= 2), 690 triples at exactly Delta = 2, all zero. The null stands"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "reads no q0. Inputs are braid words, their closures' permutation cycles, integer linking numbers and degree-2 Magnus coefficients. No substrate pin is evaluated on any path."
+}
