@@ -380,6 +380,13 @@ without a revision attached cannot be checked by the next reader.
 **Cost when it is not caught:** the wrong figure had already reached three
 durable artifacts. Two were editable; the commit message was not.
 
+**A second way to land in this trap, added 2026-09-05:** `git stash`. It
+*looks* like it pins a revision — "put my changes aside and measure what was
+there before" — and it does not: it reverts only the WORKING TREE, so any
+change you have already committed on the branch stays in the measurement. See
+"`git stash` is not a baseline" below; same rule, different mechanism, and the
+stash form is more dangerous because it reads as revision-shaped.
+
 ## TRAP — a producer's ARGUMENT LIST is part of what its committed witness records
 
 Hit **twice in one session** (2026-09-03/04), on two unrelated producers, in
@@ -668,6 +675,13 @@ is the whole producer at ambient dps against the whole producer inside
 `workdps`, diffed.
 
 ## TRAP — `git stash` is not a baseline
+
+**This is an instance of "a 'before' count taken from the tree your own branch
+is mutating is not a before count" above**, which already states the general
+rule: a before-figure must come from a REVISION, not a path. It is recorded
+separately because the mechanism is different and worse — a path-based
+enumeration at least *looks* like what it is, whereas `git stash` reads as
+though it restores a prior state.
 
 To A/B a change against `origin/main` I ran the harness, `git stash`ed, ran it
 again, and reported the second as "main". `git stash` does not undo an
