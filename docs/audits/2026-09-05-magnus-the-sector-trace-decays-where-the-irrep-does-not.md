@@ -28,6 +28,31 @@
 one q₀, complete ≤2-row column. Nothing wired, no witness, no fit. **One negative sharpened into a
 divergence, and the arc's first constructive direction.**
 
+> ## 🛑 SECOND CORRECTION, same day: **A=6 refutes Part 1's RATE claim** (the failure itself stands)
+>
+> Part 1 below reports the `k=3→4` trace ratio growing ~4.6× per A step and concludes the route
+> *"fails at a rate, not by a recoverable margin."* **A=6 has now landed and the ratio drops:**
+>
+> ```
+> |tr₄|/|tr₃| :  1.23869  →  5.36793  →  26.4306  →  19.2541      growth ×4.334, ×4.924, ×0.728
+> ceiling     :  2.04371  →  1.46067  →   1.32961  →   1.27913
+> margin      :  1.6499   →  0.27211  →   0.050306 →   0.066434    ← improves at A=6
+> ```
+>
+> **What survives:** the step **fails at A=4, 5 and 6** — three of the four sizes, passing only at
+> A=3 — and by a wide margin (0.272, 0.050, 0.066 against a required 1). The failure is robust.
+>
+> **What does not:** "growing at a rate", and with it "fails at a rate". The margin *improves* from
+> A=5 to A=6. The correct statement is **"fails at every A ≥ 4 tested, by a large margin, and not
+> monotonically worsening."**
+>
+> **This is the third three-point trend refuted by its fourth point in one session** — after the
+> A=2/A=3 margin table (#6822) and the sector reframing (correction above). The probe's own closing
+> line said *"NOT an asymptotic claim: 3 sizes. Read it as a rate to test, not a limit."* That
+> caveat was correct and the test came back negative; the failure was in my prose framing, which
+> promoted it to a rate anyway. The ceiling half of the argument is unaffected — it is forced by
+> `[n−2k+1]_q/[n−2k−1]_q → q²` and is not an empirical trend.
+
 ## Part 1 — the irrep failure is a divergence, not a near miss
 
 The ≤2-row column's monotonicity breaks are not scattered across `k`. Read across sizes, the **same
