@@ -64,3 +64,15 @@ The additive form provides the cleanest structure. It avoids fitted coefficients
 ## Witness
 
 See `alpha-em-correction-derivation-attempts.witness.json` for the full attempt log.
+
+> **⚠ $q\cdot[9]_q\cdot[10]_q = 136.823219654$ carries a retired $q_0$**
+> (measured 2026-09-05, `qou-i229`). That figure is reproduced to all twelve
+> published digits by $q_0 = 1.1099785955541805\ldots$, which survives only in
+> `computations/_deprecated/`. The live anchors give $136.823208853583$ (proton,
+> 7 significant figures of agreement) and $136.823219729273$ (muon, 9). The
+> quantum integers amplify the difference, which makes this the sharpest of the
+> four figures the sweep found and the one that identifies the retired constant.
+>
+> Not silently recomputed — the proton/muon choice is owner-gated. See
+> `published_figures_carry_a_retired_q0_probe.py` and
+> [the same defect in the Hecke log table](#tbl:hecke-log-decomposition-table-data).

@@ -1,0 +1,44 @@
+{
+  "schema": "qou-probe/v1",
+  "name": "pair-skein-mass-bar-parity",
+  "description": "Answers PR #6820 item 2. The bar-EVEN denominator of the pair Skein mass S_ab(q) = (q mu_a + q^-1 mu_b)/(q^1/2 + q^-1/2) in prf:hadron-half-life item 4 is FORCED, not a sign slip: the bar-odd bridge s would make the mirror of a mass negative, and would make S_ab diverge at q=1 where the corpus requires Q -> 0 and decay to cease.",
+  "q0Anchor": "proton",
+  "q0AnchorReason": "AGENTS.md 2026-08-07 owner directive: proton is the default for all new compute. Load-bearing here, not inert: q0 enters the evaluated quantities.",
+  "q0Value": "1.1099785827513808076",
+  "verdict": "(R3) deliberate symmetrising normalisation -- S_ab is a mass, not an amplitude",
+  "scope": "(b) structural exclusion of the odd bridge IN THIS FORMULA, on two proved invariants (finiteness of the q->1 limit; sign-preservation of a mass under the bar involution). Says nothing about which Skein normalisation is canonical elsewhere -- that is #6820's separate question and is untouched.",
+  "source": "content/quantum-observable-universe/predicted-spectra/hadron-half-life-proof.md:37",
+  "checks": [
+    {
+      "name": "even_denominator_makes_bar_exchange_constituents",
+      "pass": true,
+      "detail": "S_ab(1/q) - S_ba(q) = 0.0 at 60 dps -- the bar involution exchanges a and b and preserves the sign, so a mass maps to a mass"
+    },
+    {
+      "name": "odd_bridge_makes_the_mirror_of_a_mass_negative",
+      "pass": true,
+      "detail": "S_ab(1/q) + S_ba(q) = 4.97841e-60, i.e. S_ab(1/q) = -S_ba(q). The mirror of the mass 6.1844009 is -6.1844009. Excluded for a mass."
+    },
+    {
+      "name": "even_denominator_gives_the_arithmetic_mean_at_q_eq_1",
+      "pass": true,
+      "detail": "S_even -> (mu_a+mu_b)/2 = 0.32; the residual falls linearly with q-1 at all three probe points"
+    },
+    {
+      "name": "odd_bridge_DIVERGES_at_q_eq_1_like_one_over_q_minus_one",
+      "pass": true,
+      "detail": "S_odd matches the analytic pole (mu_a+mu_b)/(q-1) to better than 1% at q-1 = 1e-3, 1e-6, 1e-9. Since f(Q) ~ Q^5, the odd bridge makes the decay RATE diverge at q=1 -- the exact opposite of the corpus's own stated limit (hadron-half-life-fermi.md: 'isobars become degenerate (Q = 0) and beta decay ceases'). This is what makes reading (R2), a sign slip, untenable."
+    },
+    {
+      "name": "even_denominator_gives_S_aa_eq_mu_a_at_q_eq_1",
+      "pass": true,
+      "detail": "S_aa(1+1e-12) = 0.31 against mu_a = 0.31 -- the self-pair reduces to the constituent mass, as a pair mass must"
+    }
+  ],
+  "scriptHash": "2b1ecbc0ddd3",
+  "scriptCommitSha": "63e0861ea45ec158843d550724018fece30d0f8b",
+  "commitSha": "63e0861ea45ec158843d550724018fece30d0f8b",
+  "engine": "python",
+  "computedAt": "2026-09-05T11:52:08.557394+00:00",
+  "durationMs": 0
+}

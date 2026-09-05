@@ -1,0 +1,96 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T12:54:16.949058+00:00",
+  "commitSha": "d3af948286f9e79d2104711f2341ed72589f0c8f",
+  "assertions": [
+    {
+      "name": "the (1,1) block's factor lambda_- + d is NEGATIVE for every bond — the state sum is signed, not a partition function",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "while the total z + d is positive for every bond, so L is real — the positive block simply outweighs the negative one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the required offset d > 1/q lies on the OTHER SIDE OF ZERO from every letter the algebra has (all d <= 0)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "and that holds for every q > 0, not only at q0 — 1/q > 0 always, so no q rescues the sign",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "no real E_- satisfies exp(-E_-) = lambda_- + d, so the (1,1) block has no energy and the Legendre structure F = U - TS is absent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "(lambda_+ + d_pn) + (lambda_- + d_pn) = h + 2 d_pn = h*delta/2 exactly — the pn letter is the near-null vector of the UNWEIGHTED block sum, surviving in z + d only because w_+ != w_-",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "d_pn + h/2 = h*delta/4 exactly — the pn offset IS the average of the other two, so h + 2 d_pn = h*delta/2 is forced",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "w~ is uniform on H_2 but NOT on H_3 or H_4 — so 'pn is w~'s null vector' and 'pn is the unweighted sum's null vector' are one H_2 statement, not two families agreeing",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 10,
+  "computation": "the_free_energy_reading_has_no_energy_spectrum_probe",
+  "scriptFile": "the_free_energy_reading_has_no_energy_spectrum_probe.py",
+  "scriptHash": "56da7a08f332",
+  "scriptCommitSha": "a792f064ebbe76e5e439f5674200e01cbd5b257f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_free_energy_reading_has_no_energy_spectrum_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_free_energy_reading_has_no_energy_spectrum_probe.py"
+  },
+  "description": "Asks the prior question behind rem:bond-log-ratio-is-a-free-energy's open claim that B = alpha L is the binding energy. A free energy is -kT log Z with Z a sum of POSITIVE Boltzmann factors, and that positivity is what makes F a Legendre transform with an internal energy and an entropy. Measured at 200 bits: the (1,1) block's factor lambda_- + d = -1/q + d is NEGATIVE for all three bonds (-0.900918283956, -1.005376531725, -1.109978582751), while the total z + d stays positive because the (2) block outweighs it. Positivity would need d > 1/q, and the algebra's letters satisfy -h <= d <= 0, so the required offset is on the other side of zero from all of them -- for every q > 0, since 1/q > 0 always. Hence no real E_- has exp(-E_-) = lambda_- + d, the (1,1) block has no energy, and there is no U or S for alpha L to be. L itself is untouched and no number moves; what fails is the identification. Also recorded: the pn factors nearly cancel, summing to h*delta/2 = 1.4380325618674e-4 exactly.",
+  "data": {
+    "minus_block_factor_pp": "-9009182839557414921608229",
+    "total_factor_pp": "6126880371464652515958299",
+    "minus_block_factor_pn": "-1005376531725467781178657",
+    "total_factor_pn": "5082297893767389625779958",
+    "minus_block_factor_nn": "-1109978582751380807591669",
+    "total_factor_nn": "4036277383508259361649837",
+    "pn_block_sum_eq_h_delta_over_2": "1438032561867373951780805"
+  },
+  "caveats": [
+    "Nothing is retracted. L remains a correct, exactly computable, convention-D canonical quantity in all 80 files that compute it; the free-energy DESCRIPTION is also correct, since signed free energies over quasi-probabilities are legitimate objects.",
+    "The Gibbs-Helmholtz corollary in the docstring (U ~ 0 if one grants kT = alpha) is INDICATIVE ONLY and is not asserted here: varying q changes the block eigenvalues as well as the scale, so q is not a pure temperature. The finding needs no temperature.",
+    "No new binding formula. This removes a candidate justification; it does not supply one, and says nothing about the Reeb-flow or Wigner channels."
+  ]
+}

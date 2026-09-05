@@ -29,6 +29,22 @@ the empirical claim that this matches the actual 50-dps trace stays in the audit
 `QOU.BraidKnot.ChiralityTopologySelection` (which fixed the p-n bond counts
 `chainPnBonds = 1`, `completePnBonds = Z·N`); this file gives the full
 `(pp, pn, nn)` chain decomposition and its additivity.
+
+## Naming note (2026-09-05, bean `qou-qnqf`)
+
+"Binding" and "log-binding" above are NAMES for a definitionally introduced
+quantity, not a derived identification, exactly as line 8 already says. That
+caution is now backed by a result rather than left as a hedge: the free-energy
+reading which motivated calling `α·ln(tr_free/tr_atom)` a binding energy cannot
+supply the identification, because the underlying state sum has a negative
+summand for every bond and every `q > 0`, so it has no energy spectrum and no
+Legendre structure (`QOU.Mass.FreeEnergyReadingIsSigned`, sorry-free;
+`the_free_energy_reading_has_no_energy_spectrum_probe.py`).
+
+**Nothing in this file is affected.** `L : Bond → R` is an abstract parameter
+over a generic ring and every theorem here is a statement about sums of whatever
+`L` is — the bond-count combinatorics and the additivity closed form are algebra,
+and they hold under any reading of `L`. Only the word "binding" is on loan.
 -/
 
 namespace QOU.BraidKnot.BsymLinearChain
