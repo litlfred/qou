@@ -33,8 +33,19 @@ They are generally not, and the reason is exact rather than a suspicion:
 **`T_w⁻¹ ≠ T_{w⁻¹}`.** Already at a simple reflection, `s` is an involution so
 `T_{s⁻¹} = T_s`, while the quadratic relation forces the inverse to spread over *two*
 basis elements — `inv_Tw_sw_expansion` below states that, and it is proved, not asserted.
-Iterating along a reduced word for `d`, `T_d⁻¹` generically meets up to `2^ℓ(d)` basis
-elements.
+Iterating along a reduced word, the support of `T_d⁻¹` is measured — exactly, over all
+of `S_2`, `S_3`, `S_4` — in
+[`tw_inverse_support_probe.py`](../../../../../computations/hecke/tw_inverse_support_probe.py):
+it is the **Bruhat interval `[e, d⁻¹]`**, with leading coefficient `q^{-ℓ(d)}` at `d⁻¹`.
+
+**Note the `d⁻¹`, and note it is the handedness trap for the third time on this arc.**
+The naive statements — support in `[e, d]`, leading coefficient at `d` — hold on exactly
+`16` of the `32` elements measured, which are exactly the `16` involutions. `Tw_mul_Tw`'s
+flip is what turns `d` into `d⁻¹` here, as it did for `sortPerm` and for `IsDistinguishedL`.
+
+The naive `2^ℓ(d)` bound is real but slack: it is attained only for `ℓ ≤ 3`, and the
+longest element of `S_4` (`ℓ = 6`) spreads over `24` terms, not `64` — the interval size,
+not the power of two.
 
 **That expansion IS Mathas' `R`-combination.** So the two statements are not in tension:
 his combination lives at the basis level, and collapses to one term exactly when you stop
