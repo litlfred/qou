@@ -286,9 +286,67 @@ SECOND smallest in the third ([7,2] at n=9 row 3, behind [5,4]).  Reported as
 measured; two of three is not a law and no mechanism is invented here to make
 it one.
 
-WHAT IS STILL OPEN, after the reduction, the tie correction, the margin
-measurement and these two refutations: WHY those three partitions carry an
-out-of-order character for those atoms and not for others.  Five identified pairs on three named
+THE ATOMS HAVE NAMES, AND THE n = 9 PAIR IS A MIRROR PAIR
+
+This probe spent four revisions saying "two atoms at n = 9".  They are
+TRITIUM (Z=1, N=2) and HELIUM-3 (Z=2, N=1) -- a mirror pair, same A = 3 with
+the proton and neutron counts swapped.  The six rows are proton, neutron,
+deuteron, tritium, helium-3, helium-4, and the atom is now carried in every
+record the witness emits.
+
+That makes rows 3 and 4 the cleanest controlled comparison the corpus offers
+on this question: identical partitions, identical dimensions, identical
+weights, identical q_0.  The ONLY thing that differs is the p<->n content of
+the braid word.  So any difference in the character is attributable to that
+flip alone.
+
+THE FLIP IS NOT A CONSTANT RESCALE -- it acts per partition:
+
+    lambda    chi(He-3)/chi(H-3)
+      [9]           1.5180
+    [8,1]           1.7559
+    [7,2]           2.3721   <== outlier
+    [5,4]           1.7394
+    [6,3]           1.5800
+                    spread 1.5627x
+
+Four of the five cluster in 1.518-1.756, and tr_M_atom itself scales by 1.7608
+-- inside that cluster.  [7,2] sits at 2.3721, well outside it.
+
+AND THAT EXCESS IS WHAT CAUSES THE INVERSION.  [7,2] has dimension 27 and
+[8,1] has dimension 8, so the larger irrep should carry the larger character.
+In helium-3 it does (7.569 > 6.568).  In tritium it does not (3.191 < 3.741).
+Counterfactually, had [7,2] scaled by [8,1]'s mirror ratio instead of its own:
+
+    counterfactual chi([7,2]) = 7.5691 / 1.7559 = 4.3106  >  3.7407 = chi([8,1])
+
+-- no inversion.  So the tritium inversion is caused by [7,2] being suppressed
+35.09 % MORE than [8,1] under the p<->n flip, and nothing else differs between
+the two rows.  Both facts are asserted below.
+
+The same measurement on the other mirror pair (neutron vs proton, A = 1) gives
+a spread of 1.1592x with [3] the outlier -- also not a constant rescale, on a
+row too small to carry an inversion.
+
+Discordance by atom, for the record and WITHOUT a rule inferred from it:
+
+    proton    Z=1 N=0  2 partitions   none
+    neutron   Z=0 N=1  2 partitions   none
+    deuteron  Z=1 N=1  4 partitions   [4,2]      (self-mirror)
+    tritium   Z=1 N=2  5 partitions   [7,2]
+    helium-3  Z=2 N=1  5 partitions   none
+    helium-4  Z=2 N=2  7 partitions   [7,5]      (self-mirror)
+
+Three of the four atoms with enough partitions to carry an inversion do; the
+proton-rich member of the only mirror pair large enough to show one is the
+exception.  That is four data points and no mechanism is claimed from it.
+
+WHAT IS STILL OPEN, one level deeper than before: WHY the p<->n flip acts
+35 % harder on [7,2] than on its neighbours.  The question is no longer "why
+does this partition invert" -- that is answered, it is the excess mirror
+response -- but why the mirror response is partition-dependent at all, and why
+[7,2] specifically.  Answering it needs the braid word itself, which this
+witness does not record; the character is the only trace of it here.  Five identified pairs on three named
 partitions -- not a percentage -- and n = 6 is no longer part of it, having
 been an artifact of the tie rather than a fact about the mathematics.
 
@@ -451,7 +509,7 @@ def main() -> int:
         norm = [c / d for c, d in zip(c_vals, dim)]
         by_dim = sorted(zip(dim, norm))
         norm_stats.append({
-            "n": n, "row": idx,
+            "n": n, "row": idx, "atom": r.get("atom"),
             "max": fmt(max(norm)), "min": fmt(min(norm)),
             "range": fmt(max(norm) / min(norm)),
             "exceeds_classical_bound": max(norm) > 1,
@@ -479,7 +537,8 @@ def main() -> int:
             if dim_r[x] != dim_r[y] and c_vals[x] != c_vals[y]
             and (dim_r[x] > dim_r[y]) != (c_vals[x] > c_vals[y])
             for a in ((x,) if dim_r[x] > dim_r[y] else (y,))})
-        margins.append({"n": n, "row": idx, "margin": fmt(margin),
+        margins.append({"n": n, "row": idx, "atom": r.get("atom"),
+                        "margin": fmt(margin),
                         "argmin": arg_t["partition"],
                         "runner_up": runner["partition"],
                         "chi_spread": fmt(c_spread),
@@ -488,7 +547,20 @@ def main() -> int:
                         "runner_is_discordant":
                             tuple(runner["partition"]) in discordant})
 
-        chain.append({"cs_w": cw, "cs_chi": cc, "cs_dim": cd, "dim_chi": cx,
+        chain.append({"atom": r.get("atom"), "Z": r.get("Z"), "N": r.get("N"),
+                      "chi": {str(list(p["partition"])): p["chi_lambda"]
+                              for p in surv},
+                      "dim": {str(list(p["partition"])): d
+                              for p, d in zip(surv, dim)},
+                      "discordant": [
+                          list(t) for t in sorted({
+                              tuple(surv[a]["partition"])
+                              for x in range(len(surv))
+                              for y in range(x + 1, len(surv))
+                              if dim[x] != dim[y] and c_vals[x] != c_vals[y]
+                              and (dim[x] > dim[y]) != (c_vals[x] > c_vals[y])
+                              for a in ((x,) if dim[x] > dim[y] else (y,))})],
+                      "cs_w": cw, "cs_chi": cc, "cs_dim": cd, "dim_chi": cx,
                       "cs_dim_disc": dd, "dim_chi_disc": dx,
                       "cs_dim_tied": td_, "dim_chi_tied": tx_,
                       "tie_free_cs_w": tw_ == 0, "tie_free_cs_chi": tc_ == 0,
@@ -512,6 +584,8 @@ def main() -> int:
             (str(arg_t["partition"]), fmt(mp.mpf(arg_t["contribution"]))))
         out.append({
             "row": idx, "n": n, "n_survivors": len(surv),
+            "atom": r.get("atom"), "Z": r.get("Z"), "N": r.get("N"),
+            "A": r.get("A"),
             "argmin_t": arg_t["partition"], "argmin_w": arg_w["partition"],
             "same": same,
             "price_t_min": fmt(mp.mpf(arg_t["contribution"])),
@@ -598,6 +672,96 @@ def main() -> int:
           len(split) > 0,
           "; ".join(f"dims {list(d)} -> concordant {sorted(v)}"
                     for d, v in split.items()) or "no split found")
+
+    # THE MIRROR PAIR.  Rows sharing A with (Z,N) swapped differ in NOTHING
+    # but the p<->n content of the braid word -- same partitions, same
+    # dimensions, same weights, same q_0.  So any difference in the character
+    # is attributable to that flip alone, which is the cleanest controlled
+    # comparison the corpus offers on this question.
+    by_zn = {(c["Z"], c["N"]): c for c in chain if c["Z"] is not None}
+    pairs = [(a, by_zn[(a["N"], a["Z"])]) for a in chain
+             if a["Z"] is not None and a["Z"] < a["N"]
+             and (a["N"], a["Z"]) in by_zn]
+    mirror_out = []
+    for a, b in pairs:
+        keys = sorted(a["chi"], key=lambda k: abs(mp.mpf(a["chi"][k])))
+        rat = {k: abs(mp.mpf(b["chi"][k])) / abs(mp.mpf(a["chi"][k]))
+               for k in keys}
+        lo, hi = min(rat.values()), max(rat.values())
+        mirror_out.append({
+            "neutron_rich": a["atom"], "proton_rich": b["atom"],
+            "ratios": {k: fmt(v) for k, v in rat.items()},
+            "spread": fmt(hi / lo),
+            "outlier": max(rat, key=rat.get),
+            "discordant_in_neutron_rich": a["discordant"],
+            "discordant_in_proton_rich": b["discordant"],
+        })
+        print(f"\n  MIRROR PAIR  {a['atom']} (Z={a['Z']},N={a['N']}) vs "
+              f"{b['atom']} (Z={b['Z']},N={b['N']}) — identical partitions, "
+              f"dimensions, weights and q0;\n  the ONLY difference is the p<->n "
+              f"content of the braid word.", flush=True)
+        for k in keys:
+            print(f"      {k:>8}  chi ratio {mp.nstr(rat[k], 8):>10}"
+                  + ("   <== OUTLIER" if k == max(rat, key=rat.get) else ""),
+                  flush=True)
+        print(f"      spread {mp.nstr(hi / lo, 6)}x — NOT a constant rescale, so "
+              f"the flip acts per-partition", flush=True)
+
+    check("the p<->n MIRROR FLIP is not a constant rescale — it acts "
+          "per-partition, which is how two atoms with identical partitions, "
+          "dimensions and weights can order their characters differently",
+          all(mp.mpf(m["spread"]) > mp.mpf("1.1") for m in mirror_out),
+          "; ".join(f"{m['neutron_rich']} vs {m['proton_rich']}: spread "
+                    f"{mp.nstr(mp.mpf(m['spread']), 6)}x, outlier {m['outlier']}"
+                    for m in mirror_out) or "no mirror pair in this sample")
+
+    # The counterfactual: is the outlier's EXCESS suppression what causes the
+    # inversion?  Substitute a non-discordant partition's ratio and re-check.
+    caused = []
+    for m, (a, b) in zip(mirror_out, pairs):
+        if not m["discordant_in_neutron_rich"]:
+            continue
+        d = str(m["discordant_in_neutron_rich"][0])
+        # The reference is the partition d ACTUALLY inverts against: SMALLER
+        # dimension, LARGER character.  A first version picked "the largest
+        # character below d's", which selected the one-row partition [n] --
+        # dimension 1, smallest character -- and printed a comparison whose own
+        # numbers contradicted its verdict ("3.19 < 1.58   INVERTED").
+        partners = [k for k in a["chi"]
+                    if a["dim"][k] < a["dim"][d]
+                    and abs(mp.mpf(a["chi"][k])) > abs(mp.mpf(a["chi"][d]))]
+        if not partners:
+            continue
+        ref = max(partners, key=lambda k: abs(mp.mpf(a["chi"][k])))
+        r_d = mp.mpf(m["ratios"][d]); r_ref = mp.mpf(m["ratios"][ref])
+        cf = abs(mp.mpf(b["chi"][d])) / r_ref
+        caused.append({
+            "atom": a["atom"], "partition": d, "reference": ref,
+            "dim_partition": a["dim"][d], "dim_reference": a["dim"][ref],
+            "excess": fmt(r_d / r_ref),
+            "actual": fmt(abs(mp.mpf(a["chi"][d]))),
+            "counterfactual": fmt(cf),
+            "reference_chi": fmt(abs(mp.mpf(a["chi"][ref]))),
+            "inversion_removed": cf > abs(mp.mpf(a["chi"][ref])),
+        })
+        print(f"\n  COUNTERFACTUAL — had {d} scaled by {ref}'s mirror ratio, "
+              f"would {a['atom']} still invert?"
+              f"\n      {d} has dim {a['dim'][d]}, {ref} has dim {a['dim'][ref]}"
+              f" — the LARGER irrep should carry the LARGER character"
+              f"\n      actual         chi{d} = {mp.nstr(abs(mp.mpf(a['chi'][d])),8)}"
+              f"  <  chi{ref} = {mp.nstr(abs(mp.mpf(a['chi'][ref])),8)}   INVERTED"
+              f"\n      excess suppression of {d}: "
+              f"{mp.nstr((r_d/r_ref - 1)*100, 4)}%"
+              f"\n      counterfactual chi{d} = {mp.nstr(cf,8)}"
+              f"  >  {mp.nstr(abs(mp.mpf(a['chi'][ref])),8)}   NOT inverted",
+              flush=True)
+
+    check("the inversion is CAUSED by the discordant partition's excess "
+          "suppression under the mirror flip — give it a non-discordant "
+          "partition's ratio and the inversion disappears",
+          bool(caused) and all(c["inversion_removed"] for c in caused),
+          "; ".join(f"{c['atom']} {c['partition']}: {mp.nstr(mp.mpf(c['excess']),6)}x "
+                    f"excess vs {c['reference']}" for c in caused) or "no case")
 
     # THE NORMALISED CHARACTER.  Both of these are refutations, kept as
     # assertions so a later row that behaved differently would say so.
@@ -756,6 +920,8 @@ def main() -> int:
     w.add_data("content_sum_reduction", chain)
     w.add_data("selection_margin", margins)
     w.add_data("normalised_character", norm_stats)
+    w.add_data("mirror_pair", mirror_out)
+    w.add_data("mirror_counterfactual", caused)
     for name, ok in CHECKS:
         w.add_assertion(name, computed="1" if ok else "0", expected="1",
                         tolerance="0",

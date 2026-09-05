@@ -656,3 +656,64 @@ neither checks the other.
 
 The scoped claim that survives: **this witness's `chi_lambda` field is not a
 classical `S_n` character**, measured 6/6.
+
+## 2026-09-05 (fifth) — the n=9 pair is a MIRROR PAIR, and the inversion is
+## caused by an excess mirror response
+
+**The atoms have names, and this probe spent four revisions not using them.**
+The six rows are proton, neutron, deuteron, **tritium** (Z=1, N=2), **helium-3**
+(Z=2, N=1), helium-4.  So "two atoms at n = 9" is a **mirror pair** — same A = 3
+with proton and neutron counts swapped.  Atom identity is now carried in every
+record the witness emits.
+
+That makes rows 3/4 the cleanest controlled comparison the corpus offers here:
+identical partitions, dimensions, weights and `q_0`; the **only** difference is
+the p↔n content of the braid word.
+
+**The flip is not a constant rescale — it acts per partition:**
+
+    lambda    chi(He-3)/chi(H-3)
+      [9]           1.5180
+    [8,1]           1.7559
+    [7,2]           2.3721   <== outlier
+    [5,4]           1.7394
+    [6,3]           1.5800
+                    spread 1.5627x
+
+Four of five cluster in 1.518–1.756, and `tr_M_atom` itself scales by **1.7608**
+— inside that cluster.  `[7,2]` sits at 2.3721, well outside.
+
+**And that excess CAUSES the inversion.**  `[7,2]` has dim 27, `[8,1]` has dim 8,
+so the larger irrep should carry the larger character.  In helium-3 it does
+(7.569 > 6.568); in tritium it does not (3.191 < 3.741).  Counterfactually, had
+`[7,2]` scaled by `[8,1]`'s ratio:
+
+    chi([7,2]) = 7.5691 / 1.7559 = 4.3106  >  3.7407 = chi([8,1])   -- no inversion
+
+So the tritium inversion is `[7,2]` being suppressed **35.09 % more** than
+`[8,1]` under the p↔n flip, and nothing else differs between the rows.  Both
+facts asserted (14 → 16 checks).
+
+The other mirror pair (neutron/proton, A = 1) gives spread 1.1592x with `[3]` the
+outlier — also not a constant rescale, on a row too small to carry an inversion.
+
+Discordance by atom, recorded **without** a rule inferred from it: deuteron
+`[4,2]` (self-mirror), tritium `[7,2]`, helium-3 **none**, helium-4 `[7,5]`
+(self-mirror); proton and neutron have only 2 partitions.  Three of the four
+atoms large enough to carry an inversion do, and the proton-rich member of the
+only mirror pair big enough to show one is the exception.  Four data points, no
+mechanism claimed.
+
+**A defect caught in the writing, worth recording.**  The counterfactual's first
+implementation picked the reference partition as "the largest character below
+the discordant one", which selected the one-row partition `[9]` — dimension 1,
+smallest character — and printed *"3.19 < 1.58   INVERTED"*, a comparison whose
+own numbers contradict its verdict, and a 56.27 % excess.  The correct reference
+is the partition it **actually** inverts against (smaller dim, larger character):
+`[8,1]`, giving 35.09 %.  The printed line disagreeing with itself is what
+exposed it.
+
+**Open, one level deeper:** why the p↔n flip acts 35 % harder on `[7,2]` than on
+its neighbours — i.e. why the mirror response is partition-dependent at all.
+Answering it needs the braid word, which this witness does not record; the
+character is its only trace here.
