@@ -1,0 +1,386 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T19:26:41.084535+00:00",
+  "commitSha": "046f680d5728d2e97b7980af2344a374b5c69f37",
+  "assertions": [
+    {
+      "name": "selfnorm_arm_diverges_from_molien_at_nuclear_n",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "worst relative divergence at n = 6 (A = 2) is 3.82625742383109735665762782571856424102275653869298960407564, i.e. over 100 %. Recorded as a predicate so the witness summary cannot read FAILURES when nothing failed; the magnitudes are in premise_selfnorm_does_not_protect."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1268,
+  "computation": "molien-name-gate-missed-triage",
+  "scriptFile": "molien_name_gate_missed_triage.py",
+  "scriptHash": "1102a1d25c80",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/molien_name_gate_missed_triage.py"
+    ],
+    "reproduce": "python3 -u computations/audits/molien_name_gate_missed_triage.py"
+  },
+  "description": "Bean qou-oots. Triages the 26 files that w_lambda_family_consumer_audit's NAME GATE never examined (13th blindness mode, PR #6867), so that 26 stops being quoted as a blast radius. Establishes first, by measurement, that SELF-NORMALISATION DOES NOT PROTECT AGAINST MOLIEN -- correcting my own claim in #6867 that a self-normalised file is 'not moved by the ruling'. It cancels a lambda-INDEPENDENT rescale (which dim_q^2/[n]! -> dim_q^2/D^2 is) but not Molien's lambda-DEPENDENT q^{-kappa}: worst divergence 0.385 at n=3 and 3.826 at n=6. Such a file sits on the RETAINED SECOND ARM and needs no fix, but is NOT invariant. Then sizes each file by whether it is even the family (shape_only hits can be the hook product, i.e. the q-dimension inverted) and by whether anything reads it.",
+  "parameters": {
+    "q0_50dps": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "premise_selfnorm_does_not_protect": {
+      "per_n": {
+        "3": {
+          "sum_dimq2_over_qfact": "0.987440229773687729117875218675544503499448071254574486458660",
+          "sum_molien": "1.00000000000000000000000000000000000000000000000000000000000",
+          "worst_selfnorm_vs_molien_rel": "0.384946446090023659691772422105140917505808850619058583411230"
+        },
+        "6": {
+          "sum_dimq2_over_qfact": "0.991079523637350140711333719064374092128516167076231641854768",
+          "sum_molien": "1.00000000000000000000000000000000000000000000000000000000000",
+          "worst_selfnorm_vs_molien_rel": "3.82625742383109735665762782571856424102275653869298960407564"
+        },
+        "9": {
+          "sum_dimq2_over_qfact": "1.11092313495739793519940970273453586672159312269210466822371",
+          "sum_molien": "1.00000000000000000000000000000000000000000000000000000000000",
+          "worst_selfnorm_vs_molien_rel": "37.5160334826467538096486936804962430227174802789373524551644"
+        }
+      },
+      "correction": "PR #6867 said a self-normalised file is 'already dim_q^2/D^2, which the ruling does not move'. The second clause is FALSE. Self-normalisation cancels only a lambda-INDEPENDENT rescale; Molien's numerator change dim_q^2 -> f^lam q^{-kappa} dim_q is lambda-dependent. 'On a sanctioned arm' and 'unmoved by the ruling' are different claims and only the first holds."
+    },
+    "per_file": {
+      "chirality_avg_content.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": false,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "d * d / n_fac_q"
+      },
+      "chirality_avg_content_atomic.py": {
+        "hits": 3,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "dim_q(shape, Q0, n_fac_q) ** 2 / n_fac_q"
+      },
+      "chirality_avg_content_chiral.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "dim_q(shape, Q0, n_fac_q) ** 2 / n_fac_q"
+      },
+      "delta_lambda_full_variance_phase5e_1.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "dq * dq / qfact"
+      },
+      "hh-trefoil-corrected.py": {
+        "hits": 1,
+        "shape_only": true,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "dim_std ** 2 / nf3"
+      },
+      "keystone_index_necessary_conditions.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": false,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "atom.q_dimension(tuple(l)) ** 2 / qn"
+      },
+      "keystone_wlambda_defect_cn_closedform_crosscheck.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [
+          "computations/keystone-wlambda-defect-cn-closedform-crosscheck.witness.json"
+        ],
+        "session_harness": false,
+        "first_hit": "qdim(lam, q) ** 2 / fact"
+      },
+      "keystone_wlambda_defect_coeff_ladder.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 1,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [
+          "computations/keystone-wlambda-defect-coeff-ladder.witness.json"
+        ],
+        "session_harness": false,
+        "first_hit": "qdim(lam, q) ** 2 / fact"
+      },
+      "m_p_linking_weight_operator_valued_probe.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "dim_q_lambda(lam, q) ** 2 / n_q_factorial(n)"
+      },
+      "mass_endomorphism.py": {
+        "hits": 3,
+        "shape_only": false,
+        "importers": 15,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "qdim((3,), 3) ** 2 / nf3"
+      },
+      "metallic_q_n4_character_sweep.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [
+          "computations/metallic-q-wenzl-sign-sweep.witness.json",
+          "computations/metallic-q-jones-sign-sweep.witness.json",
+          "computations/metallic-q-quark-bifurcation.witness.json",
+          "computations/metallic-q-n4-character-sweep.witness.json"
+        ],
+        "session_harness": false,
+        "first_hit": "d * d / q_factorial(n, q)"
+      },
+      "metallic_q_quark_bifurcation.py": {
+        "hits": 3,
+        "shape_only": true,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [
+          "computations/metallic-q-wenzl-sign-sweep.witness.json",
+          "computations/metallic-q-jones-sign-sweep.witness.json",
+          "computations/metallic-q-quark-bifurcation.witness.json"
+        ],
+        "session_harness": false,
+        "first_hit": "d * d / q_factorial(3, q)"
+      },
+      "metallic_q_wenzl_sign_sweep.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [
+          "computations/metallic-q-wenzl-sign-sweep.witness.json"
+        ],
+        "session_harness": false,
+        "first_hit": "d * d / q_factorial(n, q)"
+      },
+      "probes/alpha5_jm_crossatom_budget_probe.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": true,
+        "first_hit": "PU.dim_q(q0, s) ** 2 / qfact"
+      },
+      "probes/alpha_em_b2_weight_family_triage_probe.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": true,
+        "first_hit": "d_q ** 2 / qfact"
+      },
+      "probes/deuteron_fpn_wlambda_wiring.py": {
+        "hits": 2,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "gate_qdim(lam, q) ** 2 / gate_qfact(sum(lam), q)"
+      },
+      "probes/tower_z_convention_pole_sensitivity_probe.py": {
+        "hits": 3,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "qdim((3,), 3) ** 2 / nf3"
+      },
+      "probes/wenzl_bridge_self_conjugate_premise_is_false.py": {
+        "hits": 4,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "dimq_frt(lam, sym_int) ** 2 / qfact(sum(lam), sym_int)"
+      },
+      "q_pinning_50_digit.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": false,
+        "committed_witnesses": [
+          "computations/q-pinning-50-digit.witness.json"
+        ],
+        "session_harness": false,
+        "first_hit": "d_q ** 2 / nfact"
+      },
+      "substrate/wlambda_identity_i_structure_probe.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": false,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "dim_q(tuple(lam)) ** 2 / qfact(sum(lam))"
+      },
+      "term7_chi5_basis.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": false,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "d * d / n_fac_q"
+      },
+      "term7_height6_partition_enum.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": false,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "d * d / n_factorial_q"
+      },
+      "three_quark_borromean_lp_sweep.py": {
+        "hits": 3,
+        "shape_only": true,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": true,
+        "committed_witnesses": [
+          "computations/three-quark-borromean-lp-sweep.witness.json"
+        ],
+        "session_harness": false,
+        "first_hit": "d * d / q_factorial(3, q)"
+      },
+      "two_quark_hopf_vs_borromean_sdp.py": {
+        "hits": 2,
+        "shape_only": true,
+        "importers": 0,
+        "writes_witness": true,
+        "plots": true,
+        "committed_witnesses": [
+          "computations/two-quark-hopf-vs-borromean-sdp.witness.json"
+        ],
+        "session_harness": false,
+        "first_hit": "d * d / q_factorial(3, q)"
+      },
+      "two_quark_volume_weighted_clean.py": {
+        "hits": 2,
+        "shape_only": true,
+        "importers": 0,
+        "writes_witness": false,
+        "plots": true,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "d * d / q_factorial(3, q)"
+      },
+      "wedderburn_beta3_provenance_probe.py": {
+        "hits": 1,
+        "shape_only": false,
+        "importers": 0,
+        "writes_witness": false,
+        "plots": false,
+        "committed_witnesses": [],
+        "session_harness": false,
+        "first_hit": "q_dim(partition) ** 2 / q_factorial(sum(partition))"
+      }
+    },
+    "tally": {
+      "shape_only": 5,
+      "no_importers": 24,
+      "writes_committed_witness": 8,
+      "plot_only": 1,
+      "session_harness": 2,
+      "total": 26,
+      "note": "A row is NOT automatically in the Molien blast radius. `shape_only` means the numerator was built inline from q-integers and is NOT confirmed to be a dim_q -- the two_quark pair is the proof that such a `d` can be the HOOK PRODUCT, the q-dimension inverted, which is in no arm at all. A file with 0 importers whose value reaches only a plot is a different object from one feeding a committed witness."
+    },
+    "the_one_file_with_reach": {
+      "file": "computations/mass_endomorphism.py",
+      "chain": [
+        "w_sym/w_std/w_alt at L93-99: dim_q^2/[3]_q!, then divided by their own sum -> self-normalised (the RETAINED second arm, not the canonical one)",
+        "L132  Vf = w_sym*sp + w_std*Vs + w_alt*ap, inside additive_wedderburn_volumes()",
+        "returned as v['full']",
+        "m_p_m_e_li2q.py:78-80 calls it for electron / proton / neutron",
+        "m_p_m_e_li2q.py:48,50,54 consume v['full'] into desc/single/cross",
+        "-> mp_me = p_total/e_total, compared against codata_mp_me = 1836.152"
+      ],
+      "weights_do_not_cancel_in_the_ratio": "w_sym/w_std/w_alt are MODULE-LEVEL constants for lambda |- 3 applied to the electron (2 strands) and the nucleons (3 strands) alike, and Vf enters non-linearly through Phi_q(|Vf|) and through products Vf_i*Vf_j. So there is no cancellation and the ruling does reach this number.",
+      "import_counts_measured_by_AST": {
+        "additive_wedderburn_volumes": 2,
+        "Phi_q": 8,
+        "z_mark": 7,
+        "proton_cross": 4,
+        "neutron_cross": 4,
+        "mass_from_tower": 1,
+        "note": "measured with ast.ImportFrom, NOT grep. A single-line `import.*\\bname\\b` grep reported 0 for additive_wedderburn_volumes, because BOTH real importers use a parenthesised multi-line import and the name sits on a continuation line. Same blindness class as everything else in this thread, committed by me while auditing it."
+      },
+      "🛑 AND IT IS IMMATERIAL, WHICH IS THE POINT": "The committed witness computations/m-p-m-e-li2q.witness.json records m_p/m_e = 9310.3278 (err 407.06 %) on the Phi_q arm and 3.3322 (err 99.82 %) on the Li_2_q arm, against CODATA 1836.152. The route is ALREADY recorded as a catastrophic miss, so a 38.5 % weight change can neither rescue nor damage it. The one file of the 26 with real reach carries the weight into a comparison that is already refuted.",
+      "separate_observation_not_fixed_here": "additive_wedderburn_volumes is float64 throughout (a, b = 0.0, 1.0; sp, ap = 1.0, 1.0) on a path that ends at a CODATA comparison. Noted, not fixed: it is a different defect from the weight family and belongs in its own change."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
