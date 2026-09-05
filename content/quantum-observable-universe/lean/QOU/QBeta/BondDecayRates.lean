@@ -66,7 +66,7 @@ because `tanh_log_eq`: `tanh(ln q) = (q²−1)/(q²+1)`.
 ## What is not here
 
 That `δ = flavor_split_leading(q)` vanishes to order `h³` — CAL-3's order, the
-pion decay width's — is a **measurement** (`2.99999` in the probe) and belongs in
+pion-sector bar-even channel's — is a **measurement** (`2.99999` in the probe) and belongs in
 the witness. So does the coupling word: a non-adjacent nucleon pair has no single
 generator to sit on, `σ_g` coupling strands `g` and `g+1` only, so building the
 all-pairs braid remains a construction. What is removed here is only the

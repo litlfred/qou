@@ -69,23 +69,33 @@ the canonical formalism, which does not yet exist, gives a unique
 non-negative integer
 $\nu_{\mathrm{SDP}}(K_w)$ for every bound-state knot $K_w$. Until that solver
 is available, the identity is verified on three census atoms and
-extrapolated to ${}^{4}\mathrm{He}$ with explicit caveat. The Lean class axiomatises
+extrapolated to ${}^{4}\mathrm{He}$ with explicit caveat. The Lean carrier
+axiomatises
 
 ```lean
-class KashaevDensityEqualsSDPMultiplicity
-    (M : Type*) [BrCategory M] [Hecke M] [KashaevVolumeConjecture M] where
-  /-- The joint-tower SDP multiplicity ν_SDP(K_w) of the canonical
-      Hecke element T_w's saturating SDP solution. -/
-  nu_sdp : ∀ (K : Knot), ℕ
-  /-- ν_SDP equals the Kashaev density prefactor ρ_F. -/
-  identity :
-    ∀ (K : Knot),
-      kashaev_density_prefactor K = nu_sdp K
+class KashaevDensityEqualsSdpMultiplicity
+    (Atom : Type*) (rhoF : Atom → ℝ) (nuSdp : Atom → ℕ)
+    (bindingPred vol : Atom → ℝ) (mE : ℝ) : Prop where
+  mE_pos : 0 < mE
+  vol_pos : ∀ a, 0 < vol a
+  nuSdp_pos : ∀ a, 0 < nuSdp a
+  identity : ∀ a, rhoF a = (nuSdp a : ℝ)
+  binding_formula : ∀ a, bindingPred a = rhoF a * mE * vol a
 ```
 
-The only `sorry` is the
-class instance, which closes when the full canonical knot solver
-produces certified $\nu_{\mathrm{SDP}}$ values.
+The quantities are class **parameters supplied by the caller** rather than
+existentials, so the carrier is refutable: the accompanying theorem
+`not_of_prefactor_strictly_between` shows that a prefactor lying strictly
+between two consecutive naturals — as the ${}^{4}\mathrm{He}$ datum
+$\rho_F \approx 1.889$ does — admits no $\nu_{\mathrm{SDP}}$ at all.
+
+**No instance is provided.** That is the open state: an instance would have to
+supply $\nu_{\mathrm{SDP}}$, and no operational definition in the corpus yet
+reproduces the confirmed $1, 2, 2$. The carrier deliberately does *not* identify
+$\nu_{\mathrm{SDP}}$ with any SDP construction — the Wedderburn saturating
+projection whose dimension it is meant to be has no Lean type here — so what the
+carrier states is the positive-integrality of the prefactor and the binding
+formula it feeds, and nothing more.
 
 ## Status of the density prefactor
 

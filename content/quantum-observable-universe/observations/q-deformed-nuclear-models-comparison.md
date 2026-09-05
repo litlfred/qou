@@ -1,6 +1,6 @@
 **Remark (relation to $q$-deformed nuclear and atomic models).**
 
-The magic-number result of [conj:magic-numbers-from-q](#conj:magic-numbers-from-q) joins several quantum-algebraic accounts of nuclear shell structure. We separate our mechanism from three strands of the quantum-group literature. In previous models, the deformation parameter is fitted to the data. In our framework, the substrate parameter $q_0 \approx 1.10998$ is categorically extracted (not a free parameter) and calibrated via the neutron β-decay width.
+The magic-number result of [conj:magic-numbers-from-q](#conj:magic-numbers-from-q) joins several quantum-algebraic accounts of nuclear shell structure. We separate our mechanism from three strands of the quantum-group literature. In previous models, the deformation parameter is fitted to the data. In our framework, the substrate parameter $q_0 \approx 1.10998$ is categorically extracted (not a free parameter) and calibrated via the neutron β-sector bar-skew channel.
 
 ## $\mathrm{SU}_q(2)$ rotor bands
 

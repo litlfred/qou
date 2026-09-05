@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T00:12:10Z
-updated_at: 2026-09-05T05:56:57Z
+updated_at: 2026-09-05T06:05:54Z
 ---
 
 
@@ -310,3 +310,42 @@ namespace alignment in a directory that has no single convention). Finding:
 
 **Net for this queue:** two closed, one re-classified. The syntax count is right;
 for D11 the implied action is not.
+
+## 2026-09-05 — re-measured: the repair queue is FIVE, and my matcher was wrong five times
+
+Read every one of the twelve declarations directly (not matched). Result:
+
+**Already repaired (6):** `IsospinFromCanonicalBowtie` (#6671, this session),
+`SpinFromSo3Fiber` (#6683, this session), `PoincareLefschetzBorromean` (3 fields,
+someone else), `BorromeanBlochGroupElement` (`{B : Type*} [AddCommGroup B]`),
+`LusztigCanonicalBasisQEq1` (`(R : Type u) [CommRing R] (q : R)`), and
+`TFromTraceCyclicity` — the last **done differently**: stub deleted, `.ts` ref
+`qou:QOU.BraidsAndKnots.TFromTraceCyclicity` matching the library carrier's
+namespace exactly. That is a worked example of the disposition D11 still needs.
+
+**Mis-ref (1):** `WignerSu4FromSpinIsospin` — see the 2026-09-05 section above.
+
+**GENUINELY OPEN (5):** `DimMasterPentagon`, `KashaevDensityEqualsSdpMultiplicity`,
+`PFromBraidMirror`, `TypeBFoldingCpt`, `Mirror3d3dCorrespondence`. Each confirmed to
+have exactly ONE `^class` in its file whose sole field is `holds : Prop`.
+
+So this bean's title (12) and its body's live count (11) are both right about the
+census and neither is the number **needing the repair**, which is **5**.
+
+**🛑 THE METHOD TRAP, which is the part worth keeping.** Five successive matchers,
+each returning a plausible number, each wrong on a different Lean feature: (1) missed
+the file it was pointed at — reported 3 content-free carriers against a true 17;
+(2) read **docstring continuation lines as fields**; (3) didn't skip **module**
+docstrings `/-! … -/`, so it read a *quoted example of the old carrier* as a live
+class and **reported D9 and D10 as unrepaired one hour after I repaired them**;
+(4) required `where` on the declaration line, so it called two repaired carriers
+MISSING because their signatures are multi-line. Only direct reading was right.
+
+Trap 3 is the one that stings: `qou-hprp` had already written it down — *"a grep
+that reads comments as code would have sent an agent to fix the one file in the
+chapter that is already correct"* — and I did exactly that, to two files, in a
+session that had read that bean. The control that would have caught 1, 3 and 4 is
+the same each time: **a carrier known to be repaired must not come back as
+unrepaired.**
+
+Full detail: `docs/audits/2026-09-05-qou-tsnp-queue-is-five-and-five-parsers-were-wrong.md`.

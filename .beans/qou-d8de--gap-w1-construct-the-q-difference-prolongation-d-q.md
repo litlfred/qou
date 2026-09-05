@@ -3,8 +3,9 @@
 title: 'GAP W1: construct the q-difference prolongation D_q from the color spectral curve Σ'
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-01T01:43:06Z
-updated_at: 2026-08-01T01:43:06Z
+updated_at: 2026-09-05T06:26:42Z
 ---
 
 
@@ -146,3 +147,11 @@ transcendental core. **Honest terminus for the calculus/algebra approach** — c
 needs the q-difference D-module / monodromy-representation framework from the literature
 (the branch is a section of the cover, not a rational function). Not faked; not a session
 brick.
+
+
+
+## Route 1 PRUNED (2026-09-04, bean qou-1z28, PR #6695) — scope (b), invariant cited
+
+A rational q-connection on the base z-line (z -> lambda z, lambda not a root of unity) with the three colour sheets as flat sections does NOT exist. Shape: the colour cubic is irreducible over K(z) for every char-0 field K (Lean QOU.Mass.ColorCubicIrreducible.colorCubicAt_ne_zero + colorCubic_no_ratFunc_root, sorry-free) so no sheet is rational in z; each sheet is algebraic hence D-finite (explicit order-3 ODE in the probe, leading coefficient vanishing on the branch sextic); a rational rank-3 q-difference system with the sheets as solutions would make a sheet q-holonomic; D-finite AND q-holonomic => rational (Bezivin 1992 / Ramis 1992 / Schaefke-Singer JEMS 2019). Contradiction.
+
+NOT pruned: non-rational coefficients, operators on Sigma rather than the base, and the LOCAL q-dilation t -> qt at a branch point (the theorem does not apply there — every power series is trivially first-order q-holonomic with a power-series coefficient). Routes 2 and 3 untouched; 3 (RSZ / Sauloy local framework) is the natural next step since the surviving object is local. Audit: docs/audits/2026-09-04-w1-route1-base-qshift-rationality-prune.md.
