@@ -66,7 +66,7 @@ taken here.  What is measured: the two relations, their inequivalence, the exact
 bridge, the surface (below), and the consequence for the substitution factor.
 What is NOT decided: whether the rate should be restated in (H) to match §7a, or
 whether §7a should record (J) as the physics-sector convention.  Both are
-coherent; picking one rewrites either seven content blocks or a STRICT section.
+coherent; picking one rewrites either eight content blocks or a STRICT section.
 No identity in this producer depends on the choice.
 
 Precision: sympy-exact throughout; numerics mpmath at 60 dps from the exact
@@ -99,7 +99,7 @@ TWO_Q = q + 1 / q
 BAR_INV = u + 1 / u           # the bar-invariant bridge factor
 W = q ** 2 * (q ** 12 + q ** 8 - 1) / (q ** 2 + 1) ** 2
 
-# The seven content blocks carrying convention (J) as the skein relation or as
+# The eight content blocks carrying convention (J) as the skein relation or as
 # the registered "Skein amplitude". Paths are relative to content/<paper>/.
 J_SITES = [
     "predicted-spectra/beta-decay-skein-properties.md",
@@ -166,7 +166,7 @@ def main() -> int:
          "note": "|W|^2/h_1^2 = 32.2624 against |W|^2/s^2 = 129.4051. Both are far "
                  "too large to be the 10-17 % correction of qou-ix74, so that "
                  "scope-(a) negative survives under either convention"},
-        {"name": "convention_J_surface_is_seven_or_more_blocks",
+        {"name": "convention_J_surface_is_multi_chapter_not_one_block",
          "passed": len(live) >= 7,
          "note": f"{len(live)} of {len(J_SITES)} listed blocks still carry the "
                  "sqrt-q amplitude, across five chapters -- a corpus-wide split, "
@@ -201,7 +201,7 @@ def main() -> int:
         "relations": {
             "H_agents_7a_strict": "L_+ - L_-  =  (q - 1/q) L_0",
             "H_amplitude": "h_1 = q - 1/q",
-            "J_seven_content_blocks": "q [L_+] - q^-1 [L_-]  =  (q^(1/2) - q^(-1/2)) [L_0]",
+            "J_eight_content_blocks": "q [L_+] - q^-1 [L_-]  =  (q^(1/2) - q^(-1/2)) [L_0]",
             "J_amplitude": "s = q^(1/2) - q^(-1/2) = h_(1/2)",
             "L_plus_to_L_minus_weight_ratio": {"H": "1", "J": "q**2"},
             "inequivalent": True,
@@ -231,9 +231,10 @@ def main() -> int:
                   "two relations, their inequivalence, the exact bridge, the surface, "
                   "the consequence. NOT decided: whether the rate is restated in (H) "
                   "to match §7a, or §7a records (J) as the physics-sector convention. "
-                  "Both are coherent; either rewrites seven content blocks or a STRICT "
+                  "Both are coherent; either rewrites eight content blocks or a STRICT "
                   "section. No identity here depends on the choice."),
         "lean": ["QOU.Braiding.WeakVertexT35.sSq_eq_twoQ_sub_two",
+                 "QOU.Braiding.SkeinNormalisation.no_rescaling_of_skein_weights",
                  "QOU.Braiding.SkeinNormalisation.hOne_eq_sSqrt_mul_barEven",
                  "QOU.Braiding.SkeinNormalisation.hOneSq_eq_twoQ_sq_sub_four",
                  "QOU.Braiding.SkeinNormalisation.hOneSq_eq_sSq_mul_twoQ_add_two"],
