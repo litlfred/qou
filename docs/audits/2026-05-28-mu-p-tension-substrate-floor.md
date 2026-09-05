@@ -54,6 +54,37 @@ These close **~4800× below the 240 ppb floor**. They are not derivations:
    gap (which is 6.7%, a different object — the exact proton Markov trace
    `tr_M_atomic(1,0)=1.0653` plugged into the formula gives **1960**, not
    1836). So the towers are fitting experiment.
+
+   > **🛑 FIGURES CORRECTED 2026-09-05 — the conclusion survives, the
+   > magnitudes do not.** The three numbers in this item are
+   > **pre-migration**: `c1a3299434` (2026-08-16) migrated `markov_peel`'s
+   > `word_to_element` path from convention C to convention D, eleven weeks
+   > after this audit was written. Re-run today:
+   >
+   > | quantity | as published here | today |
+   > |---|---|---|
+   > | `tr_M_atomic(1,0)` | 1.0653 | **1.14575969245730086969** (+7.552 %) |
+   > | implied `m_p/m_e` | 1960 | **2108.59** |
+   > | gap vs the exact object | 6.7 % | **14.741 %** |
+   >
+   > **The argument is unaffected and is if anything strengthened** — the
+   > formula→exact gap is now more than twice as large, so "the towers are
+   > fitting experiment" holds with more room. Only the magnitudes move.
+   >
+   > Verified three independent ways, all agreeing: re-running
+   > `computations/probe3qrv.py`; re-deriving this item's own formula
+   > `m_p/m_e = 2·(Vol(4₁)/ℏ_q²·|tr_M|·[3]_q!/q³ − 6)` at 60 dps in mpmath,
+   > which reproduces **1959.683** from the published trace and so validates
+   > the reconstruction before applying it; and
+   > `computations/probes/atom_intra_block_is_not_a_braid_probe.py`, whose
+   > independently measured `rel 0.147409` against the Lean-proved closed form
+   > `(4+h²−3h⁴−h⁶)/(h²+4)` is the same 14.741 %.
+   >
+   > **This figure has three carriers and this is the last of them.**
+   > [`2026-08-08-borromean-trace-convention-forcing.md`](2026-08-08-borromean-trace-convention-forcing.md)
+   > and `.beans/qou-3qrv` were corrected 2026-09-05; this one was found by
+   > following `qou-3qrv`'s own cross-reference, which no mechanical scan
+   > produced. Bean `qou-5pgl`.
 2. **The integer coefficients have no categorical identity.** m_p's 46 is
    46.02 (not a clean invariant); the ℏ⁶ coefficient is 0.256, not 1/4.
 3. **Q_β's apparent structure is a form artifact.** c₃'s "match" to −[2]_q
