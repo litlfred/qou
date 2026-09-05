@@ -47,8 +47,28 @@ several-fold: a figure published at one precision and computed at another does
 not string-match, and `0.00155060213`, `0.00155060` and `0.0015506` are three
 renderings of one quantity. Same lesson as the companion script.
 
-TWO FALSE-POSITIVE CLASSES WORTH KNOWING BEFORE READING A ROW
--------------------------------------------------------------
+THE REPORT IS PARTITIONED, BECAUSE 27 % OF IT IS RETRACTION PROSE
+-----------------------------------------------------------------
+A block that quotes a wrong value **in order to retract it** looks exactly like a
+block that publishes one. This corpus retracts in Markdown blockquotes, so a
+figure occurring only on `>` lines is very likely being disowned rather than
+asserted. Measured: **21 of 79** unmatched figures, and three blocks are entirely
+this — `thm:markov-trace-factorization` (the deprecated transfer-matrix readout,
+quoted to correct it), `prop:markov-pair-z2` (the `1/δ` vs excised `z_C`
+conflation it warns about), `prop:wedderburn-weight-canonical` (a table of
+`y_λ` values printed to show the Wenzl-bridge premise *fails*).
+
+Unpartitioned, this checker is loudest on exactly the blocks where someone did
+the right thing and documented a correction.
+
+**They are labelled, not dropped.** Blockquote is a proxy for retraction and not
+a synonym: a live figure can sit only in a callout — `calibration-inputs`
+publishes the current CODATA `206.7682827` inside one. Dropping the class
+silently would blind the checker to any stale figure that happens to live in a
+note, which is the failure mode the discrimination floor below describes.
+
+TWO FURTHER FALSE-POSITIVE CLASSES WORTH KNOWING BEFORE READING A ROW
+---------------------------------------------------------------------
 1. **Decimals are not significant figures.** `PUB` selects on decimal count, so a
    residual column printed as `0.000001` is admitted with **one** significant
    figure. The round-to window is then ±5e-7 on a value of 1e-6 — the test has no
@@ -114,6 +134,24 @@ def nums(paths, rx) -> dict[str, set[str]]:
     return out
 
 
+def asserted(figure: str, paths) -> bool:
+    """True if `figure` occurs on any line the block is not quoting.
+
+    Retractions in this corpus are Markdown blockquotes, so a figure appearing
+    only on `>` lines is most likely being disowned rather than published. A
+    proxy, not a synonym — hence partition rather than exclude.
+    """
+    for p in paths:
+        try:
+            lines = p.read_text(encoding="utf-8", errors="replace").splitlines()
+        except OSError:
+            continue
+        for line in lines:
+            if figure in line and not line.lstrip().startswith(">"):
+                return True
+    return False
+
+
 def witnesses_by_block() -> dict[str, list[Path]]:
     out: dict[str, list[Path]] = defaultdict(list)
     for w in (ROOT / "computations").rglob("*.witness.json"):
@@ -150,7 +188,9 @@ def analyse():
         pool = sorted({float(x) for x in nums(wits, SRC)})
         missing = sorted(c for c in pub if not (pool and rounds_to(c, pool)))
         if missing:
-            rows.append((block, len(pub), missing, files, wits))
+            live = [c for c in missing if asserted(c, files)]
+            quoted = [c for c in missing if c not in live]
+            rows.append((block, len(pub), live, quoted, files, wits))
     return rows
 
 
@@ -161,10 +201,12 @@ def main() -> int:
     args = ap.parse_args()
 
     rows = analyse()
-    flagged = {b: m for b, n, m, f, w in rows}
+    flagged = {b: live for b, n, live, q, f, w in rows}
 
     # Selftest: the known positive must be flagged, on the figure we know
-    # diverges. Without it a zero here would mean nothing.
+    # diverges, and in the ASSERTED partition — a known positive that lands in
+    # the quoted bucket would prove the partition eats real findings. Without
+    # this a zero here would mean nothing.
     fails = []
     if SELFTEST_BLOCK not in flagged:
         fails.append(f"KNOWN POSITIVE NOT FLAGGED — {SELFTEST_BLOCK} and its "
@@ -172,8 +214,9 @@ def main() -> int:
                      f"(21 %); if this check cannot see that, it can see "
                      f"nothing.")
     elif SELFTEST_FIGURE not in flagged[SELFTEST_BLOCK]:
-        fails.append(f"known positive flagged but not on {SELFTEST_FIGURE}, the "
-                     f"figure that actually diverges")
+        fails.append(f"known positive flagged but not on {SELFTEST_FIGURE} as "
+                     f"ASSERTED — either the figure that diverges is missed, or "
+                     f"the blockquote partition has swallowed it")
     if fails:
         for f in fails:
             print(f"witness-block-agreement SELFTEST FAILED: {f}", file=sys.stderr)
@@ -183,19 +226,35 @@ def main() -> int:
     if args.selftest:
         return 0
 
-    total = sum(len(m) for _b, _n, m, _f, _w in rows)
-    print(f"\n{len(rows)} block(s) publish figures their declared witness does "
-          f"not carry ({total} figures).")
-    print("CANDIDATES ONLY — a block may legitimately publish an experimental "
-          "input,\na quoted value, or a quantity produced elsewhere.\n")
-    for block, npub, missing, files, wits in rows[:args.limit]:
-        print(f"  {block}   ({len(missing)}/{npub} unmatched, "
+    n_live = sum(len(l) for _b, _n, l, _q, _f, _w in rows)
+    n_quoted = sum(len(q) for _b, _n, _l, q, _f, _w in rows)
+    live_rows = [r for r in rows if r[2]]
+    print(f"\n{len(live_rows)} block(s) ASSERT {n_live} figure(s) their declared "
+          f"witness does not carry.")
+    print(f"A further {n_quoted} unmatched figure(s) across {len(rows)} block(s) "
+          f"occur only inside\nblockquotes — most are values quoted in order to "
+          f"be retracted. Shown separately,\nnot dropped: blockquote is a proxy "
+          f"for retraction, not a synonym.")
+    print("\nCANDIDATES ONLY — a block may legitimately publish an experimental "
+          "input, a\nquoted value, or a quantity produced by a sibling that "
+          "declares another block.\n")
+    for block, npub, live, quoted, files, wits in rows[:args.limit]:
+        if not live:
+            continue
+        print(f"  {block}   ({len(live)}/{npub} asserted-unmatched, "
               f"{len(wits)} witness(es))")
         print(f"      block: {files[0].relative_to(ROOT)}")
-        for c in missing[:4]:
+        for c in live[:4]:
             print(f"      unmatched: {c}")
-        if len(missing) > 4:
-            print(f"      ... {len(missing) - 4} more")
+        if len(live) > 4:
+            print(f"      ... {len(live) - 4} more")
+        if quoted:
+            print(f"      (+{len(quoted)} blockquote-only, likely retracted)")
+    quoted_only = [r for r in rows if not r[2]]
+    if quoted_only:
+        print("\n  BLOCKQUOTE-ONLY (no asserted figure unmatched):")
+        for block, _n, _l, quoted, _f, _w in quoted_only:
+            print(f"      {block}  ({len(quoted)})")
     if len(rows) > args.limit:
         print(f"\n  ... {len(rows) - args.limit} more block(s)")
     return 0

@@ -504,9 +504,46 @@ one sig fig and the test has no resolving power — `rem:atom-mass-full-hecke` i
 entirely this, the same floor that made two 9-digit figures indeterminate in
 round 2); and a block's producer need not be the witness naming it.
 
-- [ ] Triage the 15. `prop:markov-pair-z2` first — it publishes **both** `z`
-      values (`0.4993203342` and `0.497290545604915556`), so it is the same C/D
-      question as the bridge and belongs with `qou-cds1`.
+### 🛑 TRIAGE 1 RETRACTS MY OWN FRAMING, AND FIXES THE CHECKER
+
+I wrote above that `prop:markov-pair-z2` "publishes **both** `z` values … the
+same C/D question as the bridge". **Wrong.** That block's line 5 states
+`z = q³/(q²+1)` (**convention D**) outright — it is already migrated. Its two
+flagged figures are not its `z` at all: they sit inside a retraction blockquote
+*as the conflated pair being warned about* (`1/δ = [2]_q⁻¹ = 0.4972905456`
+against the excised `z_C = 0.4993203342`, a 0.4 % confusion, bean `qou-98g5`).
+I should have noticed the arithmetic before writing it down — 0.4 % is not the
+21 % that separates C from D, and that alone rules out the reading.
+
+**The error was the checker's, and it generalises.** A block that quotes a wrong
+value *in order to retract it* is indistinguishable from one that publishes it.
+This corpus retracts in Markdown blockquotes, so that class is measurable:
+**21 of the 79 unmatched figures occur only on `>` lines**, and three blocks are
+entirely that —
+
+    thm:markov-trace-factorization    7/7   the deprecated transfer-matrix readout
+    prop:wedderburn-weight-canonical  8/8   y_λ values printed to show a premise FAILS
+    prop:markov-pair-z2               5/5   the 1/δ vs z_C conflation it warns about
+
+Unpartitioned, the checker was loudest on exactly the blocks where someone did
+the right thing and documented a correction — including **my own** retraction
+table from earlier today. A diagnostic that penalises the discipline the corpus
+runs on gets ignored, deservedly.
+
+**Partitioned, not dropped.** Blockquote is a proxy for retraction, not a
+synonym: `calibration-inputs` publishes the live CODATA `206.7682827` inside a
+callout, so a blanket exclusion would blind the checker to any stale figure
+living in a note — the same failure as reading "no resolving power" as "clean".
+The selftest now also requires the known positive to land in the **asserted**
+partition, so a partition that swallows real findings fails loudly.
+
+**Report is now 12 blocks / 58 asserted figures**, with 21 quoted-only listed
+separately.
+
+- [ ] Triage the remaining 12. Cheapest first: `prop:markov-trace-recursive-
+      reducer` (2 figures, 1 witness) and `prop:em-coupling-projection` (6/7
+      unmatched against its single witness — a near-total miss, so the likely
+      finding is that the block's producer is not the witness naming it).
 
 ## VINTAGE LABELS: `206.7682830` is CODATA **2018** and two blocks call it 2022
 
