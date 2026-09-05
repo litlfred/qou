@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:21Z
-updated_at: 2026-09-05T07:09:55Z
+updated_at: 2026-09-05T08:02:44Z
 ---
 
 ## The claim
@@ -75,3 +75,44 @@ claims, and only one of them is what a PR body means by `lean`-direct exit 0.
 Same shape as the `scriptCommitSha` / `scriptHash` distinction in AGENTS.md
 §"Refresh stale sidecars + witnesses": a provenance stamp that has silently
 stopped tracking the thing it names.
+
+
+## The script could not run at all on a root-restored tree (2026-09-05)
+
+`OLEANS` was hardcoded to `\$PKG/.lake/build/lib/lean`, the **per-paper** path.
+The `lake-cache/qou-<slug>` restore that AGENTS.md prescribes seeds the **root**
+workspace. Measured on a correctly-restored container this session:
+
+    /home/user/qou/.lake/build/lib/lean/QOU                          2442 oleans
+    content/quantum-observable-universe/lean/.lake/build/lib/lean    no QOU dir, 0
+
+So the guard `[ -d "\$OLEANS/QOU" ]` fired and the script exited 2 on exactly the
+tree it exists to verify against. Fixed: it now probes the per-paper path, then
+the root, honours an `OLEANS=` override, prints which tree it chose, and lists
+both paths in the failure message instead of one.
+
+Worth noting the shape, because it is the same one this bean is about. Both
+paths are real — a per-paper `lake build` genuinely writes to the first — so the
+hardcode is not a typo but a **build route silently assumed**. I made the
+identical assumption by hand an hour earlier: I checked the per-paper `.lake`,
+found it empty, and concluded a restore that had in fact written 6172 oleans had
+delivered nothing.
+
+## A second stale-olean instance, caught before publication
+
+`QOU/QBeta/FiveTwoCuspShapeBarParity.lean` (PR #6694) recorded `lean`-direct
+exit 0 against the restored cache. Its one QOU dependency measured:
+
+    BarParityZeta4Swap.olean   mtime  2026-08-08
+    BarParityZeta4Swap.lean    commit 2026-08-28    (20 days newer)
+
+Same class as `descartesWtrace`, and caught only because `d3b96a29f0` landed on
+main while the PR was open. Re-verified by rebuilding that dependency from
+current source into a shadow placed first on `LEAN_PATH` (exit 0) and
+recompiling against it (exit 0, sorry-free, 19 declarations). The mathematics
+did not move; the evidence did.
+
+This is one more argument for the sweep in "Open work" item 1: the file was
+**not** in the 305, because it is new. A new file importing a stale module
+inherits the staleness without appearing in any drift count keyed on changed
+sources.
