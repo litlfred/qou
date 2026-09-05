@@ -59,6 +59,9 @@ from pathlib import Path as _Path
 from fractions import Fraction
 from functools import lru_cache  # memoises _f_skew (bean qou-9ay6)
 import numpy as np
+import os as _os_memo   # noqa: E402 -- kernel memo (qou-uiut)
+import json as _json_memo  # noqa: E402 -- kernel memo (qou-uiut)
+from mpmath.libmp import MPZ as _MPZ  # noqa: E402 -- kernel memo (qou-uiut)
 import mpmath as _mp  # mpf-safe sqrt/exp (bean qou-9ay6, NO-FLOAT64)
 import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
@@ -1585,6 +1588,113 @@ except ImportError:  # pragma: no cover - the pure-Python path still works
     _HAVE_RUST_CHI = False
 
 
+# ── Disk-backed kernel memo (bean `qou-uiut`) ─────────────────────────────
+#
+# The hadron table costs ~11 h, and the per-atom checkpoint only saves after an
+# atom COMPLETES. Measured per-atom wall times from the last full run:
+#
+#     n14 34 min   o16 41 min   ne20 55 min   si28 90 min
+#     ca40 159 min   fe56 276 min
+#
+# so fe56 needs 4.6 hours UNINTERRUPTED. In an ephemeral container that is
+# reclaimed on a shorter cycle, that atom restarts from zero every time and can
+# never finish — and the producer (correctly) refuses to write a partial
+# witness, so the table never lands at all.
+#
+# This memo makes the unit of lost work ONE PARTITION instead of one atom. It
+# sits at the Rust boundary because that is where the time goes and where the
+# inputs are already fully serialised: whatever the kernel is handed IS the key.
+#
+# OPT-IN, via `QOU_KERNEL_MEMO=<dir>`, matching `QOU_HKT_CHECKPOINT`. A cache
+# whose key is subtly incomplete returns wrong numbers silently, which is worse
+# than being slow, so it is off unless a caller asks for it.
+#
+# The key covers everything the kernel sees, and nothing it does not:
+#
+#   * the compiled extension's own content hash — a rebuilt wheel computes
+#     different numbers (measured: a stale wheel DIVERGED at q0 earlier in this
+#     campaign), so the memo must not survive one;
+#   * `dps`, and `q_str` at that dps — the anchor value, not its name;
+#   * the partition;
+#   * the exact serialised `(c, d, gen)` factor strings — these are what cross
+#     the ABI, so hashing them rather than the Python objects means the key
+#     cannot disagree with the call.
+#
+# Values are stored as exact `_mpf_` limbs, never decimal strings: the same
+# rule `_ckpt_enc` in `hadron_knot_table` follows, and for the same reason —
+# a decimal round-trip silently reduces precision on resume.
+_MEMO_DIR = _os_memo.environ.get("QOU_KERNEL_MEMO", "").strip()
+_MEMO_BUILD = None
+
+
+def _memo_build_id():
+    """Content hash of the compiled kernel, so a rebuilt wheel misses."""
+    global _MEMO_BUILD
+    if _MEMO_BUILD is None:
+        _MEMO_BUILD = ""
+        try:
+            import hashlib as _hl
+            import importlib.util as _iu
+            spec = _iu.find_spec("pyhecke_native")
+            origin = getattr(spec, "origin", None) if spec else None
+            if origin and _os_memo.path.exists(origin):
+                with open(origin, "rb") as fh:
+                    _MEMO_BUILD = _hl.sha256(fh.read()).hexdigest()[:16]
+        except Exception:                                    # noqa: BLE001
+            _MEMO_BUILD = ""
+    return _MEMO_BUILD
+
+
+def _memo_key(partition, flat_factors, q_str, dps):
+    import hashlib as _hl
+    h = _hl.sha256()
+    h.update(_memo_build_id().encode())
+    h.update(f"|{dps}|{q_str}|".encode())
+    h.update(repr(list(partition)).encode())
+    h.update(repr(flat_factors).encode())
+    return h.hexdigest()
+
+
+def _memo_get(key):
+    if not _MEMO_DIR:
+        return None
+    path = _os_memo.path.join(_MEMO_DIR, key[:2], key + ".json")
+    try:
+        with open(path, "r") as fh:
+            raw = _json_memo.load(fh)
+    except (OSError, ValueError):
+        return None
+    # `_mpf_` is `(sign, man, exp, bc)` and `man` must be an `MPZ` — mpmath's
+    # `normalize` asserts `type(man) == MPZ`, and MPZ is gmpy2's `mpz` whenever
+    # gmpy2 is installed, so a plain Python int from JSON fails outright.
+    # (`_ckpt_dec` in `hadron_knot_table` rebuilds mpf the same way and carries
+    # the same latent bug; it has not fired because its mpf branch is not
+    # exercised by the row shape it stores.)
+    try:
+        return [_mp.make_mpf((int(t[0]), _MPZ(t[1]), int(t[2]), int(t[3])))
+                for t in raw]
+    except (TypeError, ValueError, IndexError):
+        return None          # a malformed entry is a miss, never a wrong answer
+
+
+def _memo_put(key, values):
+    if not _MEMO_DIR:
+        return
+    d = _os_memo.path.join(_MEMO_DIR, key[:2])
+    try:
+        _os_memo.makedirs(d, exist_ok=True)
+        path = _os_memo.path.join(d, key + ".json")
+        tmp = path + ".tmp"
+        # Atomic, for the same reason every witness write is (bean `qou-sidu`):
+        # a reclaim mid-write would otherwise leave a truncated cache entry
+        # that reads back as a valid-looking wrong answer.
+        with open(tmp, "w") as fh:
+            _json_memo.dump([[int(x) for x in v._mpf_] for v in values], fh)
+        _os_memo.replace(tmp, path)
+    except (OSError, ValueError, AttributeError):
+        pass          # a cache that cannot write must never break the compute
+
+
 def _rust_chi_trace(partition, factors, dps):
     """Tr M_λ for the cumulative factor list, via the Rust MPFR kernel.
 
@@ -1598,8 +1708,14 @@ def _rust_chi_trace(partition, factors, dps):
           ser(_mp.mpf(d), dps, strip_zeros=False),
           g + 1) for c, d, g in factors]
     q_str = ser(q0, dps, strip_zeros=False)
-    return _mp.mpf(_pyhecke_native.chi_q_atomic_mpfr(
+    _k = _memo_key(partition, f, q_str, dps)
+    _hit = _memo_get(_k)
+    if _hit is not None:
+        return _hit[0]
+    res = _mp.mpf(_pyhecke_native.chi_q_atomic_mpfr(
         list(partition), f, q_str, dps))
+    _memo_put(_k, [res])
+    return res
 
 
 _HAVE_RUST_PREFIX = _HAVE_RUST_CHI and hasattr(
@@ -1629,9 +1745,20 @@ def _rust_chi_prefix_traces(partition, segments, dps):
             flat.append((ser(_mp.mpf(c), dps, strip_zeros=False),
                          ser(_mp.mpf(d), dps, strip_zeros=False), g + 1))
     if _HAVE_RUST_PREFIX:
+        # Memoised on the WHOLE trajectory (bean `qou-uiut`): one kernel call
+        # per partition is the natural unit here — it is what the comment above
+        # says the incremental algorithm bought, and it is what a reclaim
+        # currently costs. `lens` joins the key because the same flat factor
+        # list split at different boundaries is a different answer.
+        _k = _memo_key(partition, (flat, lens), q_str, dps)
+        _hit = _memo_get(_k)
+        if _hit is not None:
+            return _hit
         out = _pyhecke_native.chi_q_atomic_prefix_traces_mpfr(
             list(partition), flat, lens, q_str, dps)
-        return [_mp.mpf(x) for x in out]
+        res = [_mp.mpf(x) for x in out]
+        _memo_put(_k, res)
+        return res
     traces, acc = [], []
     for seg in segments:
         acc.extend(seg)

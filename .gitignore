@@ -280,3 +280,8 @@ computations/.sparse-cache/
 # fails between the two leaves the temp file behind; it is debris, never an
 # artifact, and must not be committable by an incautious `git add`.
 *.witness.json.tmp
+
+# Disk-backed Rust-kernel memo (bean `qou-uiut`, opt-in via QOU_KERNEL_MEMO).
+# A derived cache keyed by the compiled kernel hash + q0 + dps + factors; it is
+# reproducible from the producers and can be large (~3 MB for deuterium alone).
+.work/kernel-memo/
