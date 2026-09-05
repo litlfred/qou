@@ -169,4 +169,79 @@ theorem disjoint_wedgeAt_obtuse_pair {R t α β γ : ℝ}
   obtain ⟨hα, hβ⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
   exact disjoint_wedgeAt_adjacent hα0 hα hβ0 hβ (by ring)
 
+/-! ### The missing chord helper: a wedge fits under the chord of any SHRUNK
+half-angle, in the correspondingly rotated direction
+
+`wedgeAt_lt_chord_next` / `_prev` place a wedge under the chords of its two
+NEIGHBOURS, at directions `θ ± ψ ± ψ'`.  The obtuse decomposition needs
+something they cannot give: the chord of a SUB-angle of the wedge's own,
+at direction `θ − δ`.  Solving `θ − ψ − ψ' = θ − δ` forces `ψ' = δ − ψ ≤ 0`,
+and both existing lemmas require `0 < ψ'` — which is why this step has no
+existing helper.
+
+The statement: for `w` in the wedge of half-angle `ψ` about `θ`, and any
+`0 ≤ δ ≤ ψ`,
+
+    ⟨w, u_{θ−δ}⟩  <  R cos (ψ − δ).
+
+Sharp at `δ = 0` (the wedge's own chord) and at `δ = ψ`, where the bound `R`
+is attained in the limit at the wedge's far vertex on that side.
+
+The certificate is the same shape as the two existing chord lemmas, and it is
+*simpler* than theirs: writing `S = ⟨w,u_θ⟩` and `P = ⟨w,v_{θ−ψ}⟩`,
+
+  cos ψ · (R cos(ψ−δ) − ⟨w,u_{θ−δ}⟩)
+      = cos(ψ−δ) · (R cos ψ − S)  +  P · sin δ,
+
+which is a pure `ring` identity once the angle-differences are expanded — no
+Pythagorean rewrite is needed, unlike `wedgeAt_lt_chord_next`/`_prev`.  Both
+summands on the right are non-negative (the first strictly), the first from the
+wedge's own chord bound and the second from `wedgeAt_lower`. -/
+theorem wedgeAt_lt_chord_shift {R θ ψ δ : ℝ}
+    (hψ0 : 0 < ψ) (hψ : ψ < π / 2) (hδ0 : 0 ≤ δ) (hδ : δ ≤ ψ) :
+    ∀ w ∈ wedgeAt R θ ψ,
+      w.1 * Real.cos (θ - δ) + w.2 * Real.sin (θ - δ) < R * Real.cos (ψ - δ) := by
+  intro w hw
+  have hπ : 0 < π := Real.pi_pos
+  have hcψ : 0 < Real.cos ψ := Real.cos_pos_of_mem_Ioo ⟨by linarith, hψ⟩
+  have hcψ' : 0 < Real.cos (ψ - δ) :=
+    Real.cos_pos_of_mem_Ioo ⟨by linarith, by linarith⟩
+  have hsδ : 0 ≤ Real.sin δ :=
+    Real.sin_nonneg_of_nonneg_of_le_pi hδ0 (by linarith)
+  have hP : 0 < -(w.1 * Real.sin (θ - ψ)) + w.2 * Real.cos (θ - ψ) :=
+    wedgeAt_lower hψ0 hψ w hw
+  have hG : 0 < R * Real.cos ψ - (w.1 * Real.cos θ + w.2 * Real.sin θ) := by
+    have := hw.1; linarith
+  have key :
+      Real.cos ψ * (R * Real.cos (ψ - δ)
+          - (w.1 * Real.cos (θ - δ) + w.2 * Real.sin (θ - δ)))
+        = Real.cos (ψ - δ) * (R * Real.cos ψ - (w.1 * Real.cos θ + w.2 * Real.sin θ))
+          + (-(w.1 * Real.sin (θ - ψ)) + w.2 * Real.cos (θ - ψ)) * Real.sin δ := by
+    simp only [Real.sin_sub, Real.cos_sub]
+    ring
+  nlinarith [mul_pos hcψ' hG, mul_nonneg hP.le hsδ]
+
+/-- **The instance the obtuse decomposition needs**, and the reason
+`wedgeAt_lt_chord_shift` was written: the subtracted wedge `W_sub` sits under
+`W_α`'s chord.
+
+`W_sub = wedgeAt R (t+γ+π) (π−γ)` has half-angle `π−γ = α+β`, and
+`t + 2γ + α = (t+γ+π) − β` because `γ = π − α − β`.  So this is the shift
+lemma at `δ = β`, whose bound `R cos((α+β) − β) = R cos α` is exactly `W_α`'s
+chord.  Both hypotheses come free: `α+β < π/2` because `γ` is obtuse, and
+`0 ≤ β ≤ α+β` because `α > 0`. -/
+theorem wedgeAt_sub_lt_chord_alpha {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π) :
+    ∀ w ∈ wedgeAt R (t + γ + π) (π - γ),
+      w.1 * Real.cos (t + 2 * γ + α) + w.2 * Real.sin (t + 2 * γ + α)
+        < R * Real.cos α := by
+  intro w hw
+  have hdir : t + 2 * γ + α = (t + γ + π) - β := by linarith
+  have hhalf : π - γ = α + β := by linarith
+  have h := wedgeAt_lt_chord_shift (R := R) (θ := t + γ + π) (ψ := π - γ) (δ := β)
+    (by linarith) (by linarith) hβ0.le (by linarith) w hw
+  rw [hdir]
+  have hbound : π - γ - β = α := by linarith
+  rwa [hbound] at h
+
 end QOU.Archimedean.HyperbolicVolume
