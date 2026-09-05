@@ -306,3 +306,44 @@ exactly when one stops requiring the coefficients to be Murphy-shaped.
 this chain. The estimate in the update above (*"vocabulary over a proved fact"*) applies
 to Prop 3.3's tableau restatement, which is done (`existsUnique_rowStandard`), and **not**
 to this.
+
+### The support of `T_d⁻¹`, measured — and the handedness trap for the third time
+
+The section above says the remaining step is a triangularity argument over the `T_d⁻¹`
+expansion. Before building any of it,
+[`tw_inverse_support_probe.py`](../../computations/hecke/tw_inverse_support_probe.py)
+measures that support exactly (sympy over `ℚ(q)`, no float), over all of `S_2`, `S_3`,
+`S_4`:
+
+| | |
+|---|---|
+| (A) support has length `≤ ℓ(w)` | **32 / 32** |
+| (B) support inside Bruhat `[e, w]` | 16 / 32 |
+| (C) leading coefficient at `w` is `q^{−ℓ(w)}` | 16 / 32 |
+| **(B′) support inside Bruhat `[e, w⁻¹]`** | **32 / 32** |
+| **(C′) leading coefficient at `w⁻¹` is `q^{−ℓ(w)}`** | **32 / 32** |
+| involutions (`w = w⁻¹`) in range | 16 / 32 |
+
+**The naive statements hold on exactly the involutions, and nowhere else.** In this
+corpus's convention `T_w⁻¹` is triangular with respect to **`w⁻¹`**, not `w` — because
+`Tw_mul_Tw` is flipped. That is the same trap as `sortPerm`'s orientation and as
+`IsDistinguishedL`, now for the third time on this arc, and it is exactly the kind of
+thing that would have made a triangularity formalisation fail after it was written.
+
+**A slack bound to stop quoting.** `2^ℓ(w)` is attained only for `ℓ ≤ 3`; the longest
+element of `S_4` (`ℓ = 6`) spreads over **24** terms, not 64. The real bound is the size
+of the interval `[e, w⁻¹]`.
+
+**The probe checks itself before printing a verdict**, and that is not decoration: its
+first version reported "(B) fails for half of `S_4`" from a Bruhat test with an unverified
+reduced-word orientation and a subword enumeration that built the wrong set. It now
+asserts that every reduced word multiplies back to its permutation with the right length,
+and that `T_w · T_w⁻¹ = T_w⁻¹ · T_w = T_1` symbolically, before any support claim is
+printed. The 16/32 above survived that fix; the earlier run's *different* 32/32 on (C) did
+not.
+
+**Consequence for the next agent.** State triangularity against `w⁻¹`. Mathlib has no
+Bruhat order (`grep Bruhat` over `Mathlib/GroupTheory/Coxeter/` returns nothing), and the
+corpus's `QOU/Mathlib/KazhdanLusztigBasis.lean` is an abstract `BarInvolution`/`KLBasis`
+axiomatisation with no concrete construction — so the subword order would have to be built
+before 3.9 can be stated at basis level.
