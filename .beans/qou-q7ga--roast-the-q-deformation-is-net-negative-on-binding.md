@@ -101,3 +101,28 @@ route the corpus has already CLOSED for the symmetry energy (`qou-ubsl`: the
 `l(lambda) > 2` row cap gives SU(4) labels zero weight), which is why the
 dominant missing term has no obvious algebraic source. That is the honest
 headline of what remains.
+
+## 🛑 REVERSED 2026-09-05 — the deformation is net-negative only on ONE bar branch
+
+This bean concluded that "the q-deformation is NET-NEGATIVE on binding" because
+layout-free bond counting beat every isospin-resolved variant. **That holds for
+the branch the corpus took, and not for the other one.**
+
+`qbeta_asymmetry_sign_is_a_bar_branch_probe.py` (6/6):
+
+    law                            p5-p95    full    corr (N-Z)^2/A^2
+    as built    p-p = sigma        1.22497  10.18       -0.804
+    BAR-SWAPPED p-p = sigma^-1     1.16633   7.37       -0.493
+    no asymmetry (count only)      1.18054   8.21       -0.697
+
+The bar-swapped branch **beats bond counting** on p5-p95 and full range and
+nearly halves the symmetry-energy correlation. So the deformation is
+net-negative as built and net-POSITIVE swapped, and this bean's headline needs
+that qualifier.
+
+Also corrected: this bean's asymmetry coefficient `2(q_0-1) = 0.21996` is the
+FIRST-ORDER value. The exact one is `2 ln q_0 = 0.2086814` — from
+`b_pp = q^2/[2]_q`, `b_nn = q^-2/[2]_q` (`qou-xf14`), the bond energies are
+`ln[2]_q -/+ 2 ln q` identically. Use the exact value.
+
+Full working and the unpinnedness result: `qou-y2np`.
