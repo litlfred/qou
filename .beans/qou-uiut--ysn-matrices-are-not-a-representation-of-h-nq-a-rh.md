@@ -1087,3 +1087,43 @@ is needed most.
       rather than a producer.
 - [ ] If coverage is poor at high A, memoise the SDP/LP term too, or accept
       that the heavy atoms need a long window regardless.
+
+### 2026-09-05 — coverage MEASURED at li6 scale: 98 %
+
+The open item was "measure warm/cold coverage on a mid-size atom with the
+checkout quiet". Done, and it reverses the pessimistic reading from the
+previous entry.
+
+li6 cold, in the table's own run: **681.7 s**. Warm, checkout quiet:
+
+    binding_energy(3, 3)                  14.5 s     -> 98 % removed, 47x
+      unified_iterative_correction        14.3 s
+      sdp_cross_channel_contribution      13.6 s     (NOT memoised)
+      atom_markov_trace(inter=True)       12.3 s
+      atom_markov_trace(inter=False)      20.4 s
+
+    B = -3.06501952055873090718817934962, matching the table's li6 row.
+
+(The per-term figures were taken while the memo was still filling, so they sum
+to more than the end-to-end 14.5 s; the end-to-end number, taken last with
+everything populated, is the one to quote.)
+
+So the earlier worry — that the SDP/LP work is unmemoised and would dominate at
+high A — does not hold at A = 6: the SDP is 13.6 s of a 682 s atom, about 2 %.
+
+**Why the first attempt looked like poor coverage.** It timed out at 580 s on a
+quiet checkout, which I read as coverage being poor. Wrong diagnosis. The
+table's run had populated the paths IT used; my probe called
+`atom_character_raw` and the terms directly, and the first such call took
+12.058 s — a MISS — then 0.002 s on repeat. Those probes populated the
+remainder, after which the end-to-end warm run is 14.5 s. Nothing was wrong with
+the memo; my test was measuring cache population, not cache coverage.
+
+This does not weaken the resumption argument, which is about the SAME call path
+repeating after a reclaim: entries written before the kill are hits on restart.
+It does mean a warm-cache measurement has to be taken after the paths under test
+have actually run once.
+
+- [x] Measure warm/cold coverage on a mid-size atom. 98 % at li6.
+- [x] Decide whether to memoise the SDP/LP term. NO — 2 % of the atom at A = 6.
+      Revisit only if a heavy atom's profile says otherwise.
