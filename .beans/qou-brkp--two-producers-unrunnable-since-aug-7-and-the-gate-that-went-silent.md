@@ -437,3 +437,51 @@ comparison have moved and names the three agreeing methods;
 `ka_additive_cluster_derivation_probe.py` carries the live value at line 112.
 Ten `computations/` files mention `0.3883` in total and none of them is an
 unlabelled live use. No action.
+
+---
+
+## 🛑 RETRACTION — item 1's closure above is WITHDRAWN (2026-09-05, same day)
+
+The section *"Item 1 — ANSWERED, and it is NOT an owner call"* closed item 1 on
+four routes agreeing on `0.5751722439…`. **Withdrawn.** Full measurement and
+scope: bean **`qou-49vn`**.
+
+**The one thing that was never measured is the thing I asserted.** The same
+entry, and PR #6861's body, both say *"re-running the chi producer today
+reproduces them"*. I did not run it. When I did, an hour later:
+
+| `chi_at_q0_via_hoefsmit_mpfr.py deuteron` | `tr_M_at_q0` |
+|---|---|
+| cached (resume: 11 partitions already cached) | `0.5751722439177718708265…` |
+| `--fresh` | `0.1519683392042316075926…` |
+
+Same container, same commit, same `mpmath 1.3.0` — the flag is the only
+difference. A factor of **3.78**. And the markov-peel arbiter, a *different
+script*, run today, gives `0.15196833920423160759266569775106614127124096465526`
+— agreeing with `--fresh` to 49 of 50 digits, and with the Hoefsmit+Wenzl
+bridge at 1e-51.
+
+**Three live routes give `0.152…`; only the cache gives `0.575…`.**
+
+**Why the closure was wrong in method, not just in fact.** `qou-r9dv` /
+`aeb31dfb41` is dated **2026-08-23** and is a *baseline*. `d151898dd6`
+(2026-08-30, *"pin-specific numerical chi caches — 5/6 atoms certified 1 ppQ"*)
+and `41f517bf17` (2026-08-23, *"my own unblock turned a crash into silent cache
+poisoning — guarded"*) both landed on this exact cache afterwards. I closed a
+live question by quoting a stored number instead of re-deriving it — the
+BASELINE trap, committed in the same session in which I wrote five TRAPs into
+`compute-precision-auditor/MEMORY.md` warning about it.
+
+**What is NOT retracted.** Item 2's mechanism stands: it is a measurement about
+the **2026-08-10** transition (a **y_λ** weight-table regeneration), and every
+figure in it is per-partition and internal to that pair of commits. The new
+finding is a **χ** change at a *later* boundary and does not touch it. The
+`trm_provenance_chain_probe` checks all still pass, because they compare the
+committed witness against the committed y_λ table — which is exactly why they
+did **not** catch this: **the probe never re-runs the producer.** That is a
+real gap in the probe and is named in `qou-49vn`.
+
+**Item 1 is once again OPEN**, and is now a bigger question than the bean posed:
+not "which of two numbers", but whether the whole committed `chi-*-at-q0-50dps`
+family is cache-carried past two fixes written to distrust that cache. It still
+needs the Rust kernel restored before any verdict — see `qou-49vn` step 1.
