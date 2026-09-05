@@ -182,6 +182,26 @@ class SlaterStrictComplementarityKernel : Prop where
       (_h_diff_S : (Φ' - sc.Φstar) * sdp.dualSlack sc.ystar = 0),
         Φ' = sc.Φstar
 
+/-! 🛑 **THE AXIOM BELOW IS FALSE.  DO NOT USE IT, AND DO NOT RESTATE IT.**
+
+Refuted in `QOU.MathlibExt.SDPUniquenessCounterexamples` by
+`not_slater_strict_complementarity_kernel` — sorry-free, and depending on no QOU axiom.
+
+Counterexample: `n = 1`, no constraints, zero cost.  The extra
+complementarity-difference hypotheses look like a guard and are VACUOUS here,
+because the dual slack is the zero matrix and its kernel is everything.
+
+Alizadeh-Haeberly-Overton 1997 requires **dual nondegeneracy** for primal
+uniqueness, not strict complementarity alone.  This statement omits it, so it
+is strictly stronger than the theorem it cites: the citation is to a real
+theorem, but the Lean proposition is not that theorem.
+
+The interior case (`dualSlack` positive-DEFINITE) IS genuinely proved in this
+ladder, and is what the live QOU consumers actually satisfy.  Use those lemmas.
+
+Tracked in bean `qou-i6u4`.
+-/
+
 /-- The cited-axiom field carrier — discharges the §3b-cond class
     via Boyd-Vandenberghe / Alizadeh-Haeberly-Overton.  Closing this
     axiom in Mathlib is the Phase-3 SDP uniqueness follow-up. -/
@@ -555,6 +575,27 @@ theorem PosSemidef.mul_zero_comm
         show S.transpose = S from hS_herm]
   rw [← h_T, h_zero]
   exact Matrix.transpose_zero
+
+/-! 🛑 **THE AXIOM BELOW IS FALSE.  DO NOT USE IT, AND DO NOT RESTATE IT.**
+
+Refuted in `QOU.MathlibExt.SDPUniquenessCounterexamples` by
+`not_SDPRankUniqueness` — sorry-free, and depending on no QOU axiom.
+
+Counterexample: `n = 1`, no constraints, zero cost.  Slater's condition holds
+(the identity is PosDef with no constraints to violate), and the
+complementarity-difference hypotheses are vacuous because the dual slack is
+the zero matrix.
+
+Alizadeh-Haeberly-Overton 1997 requires **dual nondegeneracy** for primal
+uniqueness, not strict complementarity alone.  This statement omits it, so it
+is strictly stronger than the theorem it cites: the citation is to a real
+theorem, but the Lean proposition is not that theorem.
+
+The interior case (`dualSlack` positive-DEFINITE) IS genuinely proved in this
+ladder, and is what the live QOU consumers actually satisfy.  Use those lemmas.
+
+Tracked in bean `qou-i6u4`.
+-/
 
 /-- **Strict-complementarity rank equality**
     (Goldman-Tucker / Alizadeh-Haeberly-Overton 1997).

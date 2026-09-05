@@ -190,6 +190,26 @@ The categorical content of strict complementarity:
 slack S.  This is the **single Mathlib gap** isolating the
 multi-week SDP rank-equality work. -/
 
+/-! 🛑 **THE AXIOM BELOW IS FALSE.  DO NOT USE IT, AND DO NOT RESTATE IT.**
+
+Refuted in `QOU.MathlibExt.SDPUniquenessCounterexamples` by
+`not_strict_complementarity_kernel_disjoint` — sorry-free, and depending on no QOU axiom.
+
+Counterexample: `n = 1`, no constraints, zero cost.  With `Phi* = 0` and
+`S = 0` every vector lies in both kernels, so the conclusion `v = 0` fails
+for `v = 1`.
+
+Alizadeh-Haeberly-Overton 1997 requires **dual nondegeneracy** for primal
+uniqueness, not strict complementarity alone.  This statement omits it, so it
+is strictly stronger than the theorem it cites: the citation is to a real
+theorem, but the Lean proposition is not that theorem.
+
+The interior case (`dualSlack` positive-DEFINITE) IS genuinely proved in this
+ladder, and is what the live QOU consumers actually satisfy.  Use those lemmas.
+
+Tracked in bean `qou-i6u4`.
+-/
+
 /-- **Strict-complementarity kernel disjointness** —
     categorical content of Goldman-Tucker / AHO 1997.
 
@@ -655,6 +675,26 @@ Alizadeh-Haeberly-Overton 1997 §3.  Genuinely multi-week categorical
 work (active-face dimension theory + Slater's interior-point
 hypothesis); axiomatised here as a NAMED single statement so
 the rest of the chain composes cleanly. -/
+
+/-! 🛑 **THE AXIOM BELOW IS FALSE.  DO NOT USE IT, AND DO NOT RESTATE IT.**
+
+Refuted in `QOU.MathlibExt.SDPUniquenessCounterexamples` by
+`not_affine_slater_rigidity` — sorry-free, and depending on no QOU axiom.
+
+Counterexample: `n = 2`, no constraints, `cost = diag(1,0)`, with
+`Phi* = diag(0,1)` and `D = diag(0,1)`.  This SATISFIES the rank guard
+`rank Phi* + rank S = n` (1 + 1 = 2) -- that guard is real but insufficient.
+
+Alizadeh-Haeberly-Overton 1997 requires **dual nondegeneracy** for primal
+uniqueness, not strict complementarity alone.  This statement omits it, so it
+is strictly stronger than the theorem it cites: the citation is to a real
+theorem, but the Lean proposition is not that theorem.
+
+The interior case (`dualSlack` positive-DEFINITE) IS genuinely proved in this
+ladder, and is what the live QOU consumers actually satisfy.  Use those lemmas.
+
+Tracked in bean `qou-i6u4`.
+-/
 
 /-- **Affine-Slater rigidity** (Alizadeh-Haeberly-Overton 1997 §3) —
     axiomatised categorical content.

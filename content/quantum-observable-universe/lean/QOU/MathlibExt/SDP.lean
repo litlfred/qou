@@ -274,6 +274,26 @@ structure StrictComplementarityPair (sdp : SDPPrimal n R ι)
          optimal-value match), hence Φ' = Φstar. -/
 -- Ref: [boyd-vandenberghe-2004] §5.5 ("Strict complementarity")
 -- Ref: [todd2001] §3.4 ("Uniqueness via strict complementarity")
+/-! 🛑 **THE AXIOM BELOW IS FALSE.  DO NOT USE IT, AND DO NOT RESTATE IT.**
+
+Refuted in `QOU.MathlibExt.SDPUniquenessCounterexamples` by
+`not_strict_complementarity_unique` — sorry-free, and depending on no QOU axiom.
+
+Counterexample: `n = 1`, no constraints, zero cost.  Every PSD matrix is
+optimal, so `Phi* = 0` and `Phi' = 1` both satisfy every hypothesis, giving
+`1 = 0`.
+
+Alizadeh-Haeberly-Overton 1997 requires **dual nondegeneracy** for primal
+uniqueness, not strict complementarity alone.  This statement omits it, so it
+is strictly stronger than the theorem it cites: the citation is to a real
+theorem, but the Lean proposition is not that theorem.
+
+The interior case (`dualSlack` positive-DEFINITE) IS genuinely proved in this
+ladder, and is what the live QOU consumers actually satisfy.  Use those lemmas.
+
+Tracked in bean `qou-i6u4`.
+-/
+
 /-- **External axiom (Boyd-Vandenberghe 2004 §5.5; Todd 2001 §3.4):
     SDP strict-complementarity uniqueness over a `LinearOrderedField`.**
 
