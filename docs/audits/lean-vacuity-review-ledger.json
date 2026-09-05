@@ -1,6 +1,6 @@
 {
   "$schema": "lean-vacuity-review/v1",
-  "updated_at": "2026-09-04",
+  "updated_at": "2026-09-05",
   "entries": {
     "content/quantum-observable-universe/braids-and-knots/frobenius-antipode-lean-stub.lean::antipode_on_generator::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -3898,13 +3898,6 @@
       "verdict": "needs-agent",
       "file_sha": "a8113eac2726"
     },
-    "content/quantum-observable-universe/lean/QOU/Hecke/CrossingConvexity.lean::sq_crossingCoord_snd::proof-no-unused-hypothesis-rfl": {
-      "category": "proof-no-unused-hypothesis-rfl",
-      "pattern": "rfl-with-unused-hypothesis",
-      "line": 191,
-      "verdict": "needs-agent",
-      "file_sha": "13d0d57713da"
-    },
     "content/quantum-observable-universe/lean/QOU/Information/GeometryOfIncompleteness.lean::DegreeZeroDatum::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
@@ -3947,13 +3940,6 @@
       "evidence": "Every field of this carrier is typed bare `: Prop` -- the UNIVERSE of propositions, not a proposition. An instance therefore supplies a proposition rather than a proof of one, so `instance := <True>` type-checks and discharges the class, and every `[C]`-conditional theorem downstream is conditional on nothing. Measured per carrier by extracting the field list from the declaration (docstring-aware). This is the shape AGENTS.md 3b-tax forbids; the worked fix is IsospinFromCanonicalBowtie (D9) in PR #6671, which re-encodes the content as caller-supplied parameters and proves its own refutability.",
       "reviewer": "claude-session-01CSQEiZ",
       "reviewed_at": "2026-09-04"
-    },
-    "content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.lean::gram_kappa_numerical_value_axiom::proof-no-provable-axiom": {
-      "category": "proof-no-provable-axiom",
-      "pattern": "uncited-axiom",
-      "line": 79,
-      "verdict": "needs-agent",
-      "file_sha": "6dab473d18ee"
     },
     "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean::KashaevDensityEqualsSdpMultiplicity::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
