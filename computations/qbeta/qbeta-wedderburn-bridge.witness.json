@@ -1,0 +1,67 @@
+{
+  "computation": "qbeta-wedderburn-bridge",
+  "assertions": [
+    {
+      "name": "the_only_embedding_is_declared_opaque",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "QOU/HeckeAlgebra/Wedderburn.lean. The file's own words: 'Using `axiom` keeps the embedding opaque pending concrete construction.' There is no body"
+    },
+    {
+      "name": "and_the_file_says_so_itself",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "quoted verbatim in the block annotation; matched after whitespace normalisation because the source wraps mid-phrase"
+    },
+    {
+      "name": "the_signature_takes_a_decomposition_and_returns_one_matrix",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "blocks IN, ONE matrix OUT. The clause needs the opposite -- one block's scalar C_{(2,1)} split into three coefficients. Wrong direction and wrong arity"
+    },
+    {
+      "name": "opaque_makes_it_an_axiom_not_a_definition",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "note": "`opaque` is irreducible AND shows up in #print axioms, unlike a `def`. Recorded as a measurement rather than a theorem -- see the docstring on why no Lean theorem accompanies this"
+    },
+    {
+      "name": "the_sibling_wedderburn_objects_are_weights_and_dimensions",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "note": "none is a map of algebras. So the bridge is unavailable on BOTH readings: this object is opaque and mis-shaped, and anything else is undefined in the corpus"
+    },
+    {
+      "name": "the_block_clause_is_now_marked_an_open_obligation",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "unified-iterative-correction-proof.md's (2,1) clause is ANNOTATED, not deleted -- the claim may well be true, it is simply unsupported, and a reader should not take it as derived"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "lean_source": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean",
+    "block": "content/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md",
+    "axiom_footprint": "[propext, Classical.choice, Quot.sound, QOU.HeckeAlgebra.Wedderburn.wedderburnEmbed]",
+    "note": "documentary + mechanical measurement; no Lean theorem is offered, and the docstring says why"
+  },
+  "data": {
+    "declaration_lines": [
+      "- `wedderburnEmbed` — embed `WedderburnDecomposition n` into",
+      "- `wedderburnEmbed_posSemidef` — block-diagonal-of-PSD-blocks",
+      "opaque wedderburnEmbed : ∀ {n : ℕ}, WedderburnDecomposition n →"
+    ],
+    "signature": "opaque wedderburnEmbed : ∀ {n : ℕ}, WedderburnDecomposition n → Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ end QOU.HeckeAlgebra.Wedderburn"
+  },
+  "provenance": {
+    "headSha": "74a11ad874c23506ac53725592818460d001a686",
+    "producer": "computations/qbeta/qbeta_wedderburn_bridge_probe.py",
+    "elapsed_s": 0.004
+  }
+}

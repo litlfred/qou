@@ -13,7 +13,17 @@ For $\lambda = (2,2) \vdash 4$ this recovers the dedicated Wigner
 identity ([prop:wigner-np-pairing](#prop:wigner-np-pairing)):
 $H_q((2,2)) = [3]_q \cdot [2]_q^2$; for $\lambda = (2,1) \vdash 3$
 it reproduces the volume / surface / Coulomb decomposition
-through their image under the Wedderburn embedding; for higher
+through their image under the Wedderburn embedding — a step this
+proof does **not** discharge, and which the corpus cannot currently
+supply: the only formalised embedding,
+`QOU.HeckeAlgebra.Wedderburn.wedderburnEmbed`, is declared `opaque`
+("keeps the embedding opaque pending concrete construction"), registers
+as a fourth axiom beside `propext`, `Classical.choice` and `Quot.sound`
+in any `#print axioms` that reaches it, and has the wrong shape for this
+use — its type $\bigoplus_\lambda M_{f^\lambda} \to M_{n!}$ assembles
+blocks into one matrix rather than splitting one block's scalar
+$C_{(2,1)}$ into three coefficients.  The clause is therefore an open
+obligation, not a derivation (bean `qou-qb7p`); for higher
 partitions it adds the form-factor, $pn$-correlation, and
 ${[3,2,1]}$ pn-invisible corrections.
 
