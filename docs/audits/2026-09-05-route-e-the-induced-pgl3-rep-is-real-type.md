@@ -82,6 +82,47 @@ in the dictionary. If the corpus's reading wins, `𝓑₃` is the one place left
 It is small, sharp, checkable, and far cheaper than the PGL(3,ℂ) computation it
 would replace.
 
+## 3-bis. RESOLVED, same day — and it resolves AGAINST route E
+
+§3 left the Borromean question open. It is settled, and the two statements were
+never in conflict.
+
+**`μ̄(123)` is negated by two independent operations**: mirroring, and
+transposing two components (`μ̄` of length three is cyclically symmetric and
+antisymmetric under a transposition). So `mirror ∘ swap` **preserves** it, and
+an invariant negated by both is blind to the difference between `L` and
+`mirror (swap L)` — `QOU/Eightfold/MirrorSwapCompatibility.lean`
+(`negBoth_comp_fixes`, `cannot_distinguish_mirror_swap`, sorry-free). That is
+exactly how the Borromean rings are amphichiral: the mirror is isotopic to the
+original *after exchanging two components*.
+
+So `time-reversal-energy-barrier.md:17` is **correct for the ordered, oriented
+link** — with labels fixed, `μ̄` does separate `𝓑₃` from `𝓑₃^σ`, and the same
+file proves that half too (`distinguishes_bare_mirror`). It does **not**
+contradict amphichirality of the unordered link or of the complement.
+
+**Route E's object is the complement**, and its holonomy does not see component
+labels. The complement admits an orientation-reversing self-homeomorphism, and
+by **Mostow rigidity** — already cited in the corpus at
+`swampland-island-of-consistency.md:11` and
+`approach-to-exceptional-divisor.md:11` — the discrete faithful representation
+is unique up to conjugation and complex conjugation. Hence
+`ρ̄_geom ≅ ρ_geom ∘ φ ≅ ρ_geom`: **self-dual**, and §2 prunes it.
+
+**Route E is therefore closed on all three knots of the dictionary, for
+geometric holonomies** — `4₁` by amphichirality, `3₁` for having no hyperbolic
+holonomy at all, `𝓑₃` by this argument. With §1 pruning every `Sym²`-induced
+representation regardless of knot, what survives is **only a genuinely
+non-geometric `PGL(3,ℂ)` representation**: a Fock–Goncharov deformation away
+from the `PGL(2)` locus. That is a route, not a construction, and nobody has
+built one.
+
+**What is NOT proved here:** that the Borromean rings are amphichiral (the
+classical fact, cited) and Mostow rigidity (cited, and already load-bearing
+elsewhere in the corpus). What *is* proved is the compatibility — that the
+appearance of a contradiction was an artifact of reading an ordered-link claim
+as a claim about the complement.
+
 ## 4. Scope, stated plainly
 
 **Scope-(a) throughout.** §1 excludes the `Sym²`-induced representation; §2
