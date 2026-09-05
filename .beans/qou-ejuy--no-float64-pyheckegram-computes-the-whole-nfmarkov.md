@@ -133,9 +133,33 @@ recorded so the stability verdicts become auditable.
 1. [x] Establish whether gram.py is the f64 fast path. IT IS.
 2. [ ] ~~Convert z, h, TR_M to mpf~~ — STRUCK. Would break the f64 callers
        the module guarantees stability to.
-3. [ ] Show `build_atom_nf_mp(Z, N, 50)` agrees with `build_atom_nf(Z, N)` on
-       the light atoms to f64 tolerance. If it does not, that disagreement is
-       the finding and everything below waits on it.
+3. [x] Show `build_atom_nf_mp(Z, N, 50)` agrees with `build_atom_nf(Z, N)`.
+       **IT DID NOT, and the disagreement WAS the finding.** 8.5e-5 (deuterium)
+       to 7.7e-4 (li6) — twelve orders above float64 noise, so a different
+       computation rather than a precision difference.
+
+       Cause: for the INTER-nucleon p-n crossing the "mirror" used `-h/2`, the
+       superseded `strict_averaged` convention, where the canonical builder
+       uses the colour-weighted `D_PN = pn_interface_offset(q0)`:
+
+           D_PN  = -0.10445824776972631
+           -h/2  = -0.10453014939781968     rel 6.88e-4
+
+       Its docstring claimed "Mirror of hecke_core.build_atom_nf — exact same
+       generator sequence". It had fallen behind the function it mirrors: the
+       same divergence-between-copies class as the `.dot` and `a_rho` defects,
+       and as the vendored qou-mass drift under `qou-qe81`.
+
+       FIXED by calling `pn_interface_offset(q0)`, which is type-generic and
+       returns an mpf. The INTRA-nucleon ud crossings stay literal `-h/2` —
+       the canonical builder writes them that way too, and only the
+       inter-nucleon site is colour-weighted. After, over six atoms including
+       c12: `max|nf f64-mp|` 4.0e-16..4.5e-15, `rel(tr)` 1.9e-16..1.2e-15,
+       i.e. differing only by the f64 side's own rounding.
+
+       Had this step been skipped, moving `hadron_knot_table` to the mp path
+       would have shifted the physics by 7e-4 while looking like a clean
+       NO-FLOAT64 upgrade.
 4. [ ] Move `hadron_knot_table` to the mp path: `build_atom_nf_mp`,
        `tr_m_mp()` for the trace, `gram_matrix_mp()` in `check_frobenius`.
        Then drop the `dps=17` cap on `ln_abs_tr` (bean `qou-uiut`) — the input
