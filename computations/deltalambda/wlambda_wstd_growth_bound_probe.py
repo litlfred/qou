@@ -23,6 +23,17 @@ only LOGARITHMICALLY (at most poly-log) in A. Hence k~A and k~bond-count are
 EXCLUDED structurally, not by fit. This does NOT set a scale or close binding; it
 identifies the provable lemma behind the log-type k(A).
 
+NORMALIZATION (2026-09-05, bean qou-uk8o). The q_0 column now uses the
+SELF-NORMALIZED q-Plancherel weight d_q^2 / Sigma_mu d_q^2. The q=1 column is
+untouched and needs no correction -- (f^lambda)^2/k! sums to 1 exactly by
+Burnside -- and checks 1 and 2, which carry the whole super-geometric claim,
+are computed there. Only check 3 (does q_0 track q=1?) was exposed.
+
+The correction STRENGTHENS check 3 rather than threatening it: at k = 10 the
+q_0 column was 193.92 against 159.66 at q=1, a 21% gap; self-normalized it is
+161.48, a 1.1% gap. Most of the apparent q-deformation of the tower weight was
+the missing normalization, not the deformation.
+
 Usage:
     python3 wlambda_wstd_growth_bound_probe.py
 """
@@ -42,6 +53,12 @@ for _p in (_C, os.path.join(_C, "hecke"), os.path.join(_C, "substrate")):
     sys.path.insert(0, _p)
 from hecke_characters import partitions_of, dim_q, qfac  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402
+import mpmath as mp  # noqa: E402
+from _precision import fmt, set_compute_dps  # noqa: E402
+
+set_compute_dps()
+Q0_MP = mp.mpf(Q_50_DIGIT_STR)   # same proton pin as Q0_PROTON, at compute dps
 
 KMAX = 10
 
@@ -86,9 +103,51 @@ def w_std_q1(k):
                for l in partitions_of(k) if contains(l, (2, 1))) / kf
 
 
+def _q_int(m, q):
+    return (q ** m - q ** (-m)) / (q - 1 / q)
+
+
+def _q_fact(m, q):
+    r = mp.mpf(1)
+    for j in range(1, m + 1):
+        r *= _q_int(j, q)
+    return r
+
+
+def _dim_q(lam, q):
+    """d_q(lambda) in mpmath (hecke_characters.dim_q returns a builtin float)."""
+    num = _q_fact(sum(lam), q)
+    den = mp.mpf(1)
+    for r, row in enumerate(lam):
+        for c in range(row):
+            arm = row - c - 1
+            leg = sum(1 for rr in range(r + 1, len(lam)) if lam[rr] > c)
+            den *= _q_int(arm + leg + 1, q)
+    return num / den
+
+
+def normalization_c(k):
+    """c_k = Sigma_{lambda |- k} d_q^2/[k]_q! at q_0 -- 1 at q = 1, not at q_0.
+
+    Bean qou-uk8o; docs/audits/2026-09-04-plancherel-convention-gap.md.
+    """
+    nfac = _q_fact(k, Q0_MP)
+    return sum((_dim_q(lam, Q0_MP) ** 2 / nfac for lam in partitions_of(k)),
+               mp.mpf(0))
+
+
 def w_std_q0(k):
-    nfac = qfac(k, Q0_PROTON)
-    return sum((dim_q(l, Q0_PROTON) ** 2 / nfac) * skew(l, (2, 1))
+    """The q_0 column, with W_lambda SELF-NORMALIZED to a probability measure.
+
+    Only this column was ever exposed: checks 1 and 2 -- the load-bearing
+    super-geometric / super-exponential claims -- are computed on `w_std_q1`,
+    where the weight (f^lambda)^2/k! IS a measure exactly (Burnside), so c_k = 1
+    and nothing there moves. Check 3 compares q_0 against q = 1 at each k, and
+    that ratio is precisely where an unnormalized q_0 column would carry c_k.
+    """
+    nfac = _q_fact(k, Q0_MP)
+    denom = normalization_c(k)
+    return sum((_dim_q(l, Q0_MP) ** 2 / nfac / denom) * skew(l, (2, 1))
                for l in partitions_of(k) if contains(l, (2, 1)))
 
 
@@ -109,7 +168,7 @@ def main() -> int:
         poly = (k / (k - 1)) ** 3 if k > 3 else float('nan')
         rr = f"{r1[i]:.4f}" if r1[i] else "-"
         pr = f"{poly:.4f}" if not math.isnan(poly) else "-"
-        print(f"{k:<4}{w1[i]:<24.6f}{w0[i]:<14.6f}{rr:<12}{pr:<14}")
+        print(f"{k:<4}{w1[i]:<24.6f}{float(w0[i]):<14.6f}{rr:<12}{pr:<14}")
 
     # 1. successive ratios strictly increasing -> super-geometric.
     ratios = r1[1:]
@@ -179,7 +238,14 @@ def main() -> int:
         "allPassed": all_ok,
         "result": {
             "w_std_q1": {str(k): w for k, w in zip(ks, w1)},
-            "w_std_q0": {str(k): w for k, w in zip(ks, w0)},
+            "w_std_q0": {str(k): fmt(w) for k, w in zip(ks, w0)},
+            "normalization_c_k": {str(k): fmt(normalization_c(k)) for k in ks},
+            "weight_convention_q0": (
+                "W_lambda = d_q^2 / Sigma_mu d_q^2 (SELF-NORMALIZED). The "
+                "q=1 column needs no such correction: (f^lambda)^2/k! sums "
+                "to 1 exactly by Burnside, so checks 1 and 2 -- which carry "
+                "the super-geometric / super-exponential claim -- are "
+                "untouched by this. Bean qou-uk8o."),
             "ratios_q1": {str(ks[i]): ratios[i - 1] for i in range(1, len(ks))},
             "verdict": verdict,
         },
