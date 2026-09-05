@@ -252,3 +252,67 @@ refreshing*, and it understates the gap it is justifying by a factor of 28.
 block declares the muon pin; the competing muon values have converged; the
 refresh target is `1.1099785956427390466817951293`. No ambiguity remains, and
 nothing physical moves — this is the 2026-08-15 CODATA fix reaching content.
+
+---
+
+# Addendum 2: the refresh was attempted and REVERTED
+
+Acting on the recommendation above, I substituted the six figures at the
+converged muon pin. **I reverted it**, because the attempt showed the refresh is
+not a six-figure edit — and turned up a further defect.
+
+## Each block carries q₀-derived SIBLINGS that must move together
+
+The sweep flagged only figures with *no provenance*. The same tables contain
+other `q₀`-derived quantities that do have provenance and were therefore never
+flagged — and they sit at the old pin too:
+
+| block | flagged figure | un-flagged sibling | sibling's pin |
+|---|---|---|---|
+| hecke-log-decomposition | `1 + q₀`, `log(1+q₀)`, `log(1/ℏ_q)` | `ℏ_q = 0.09908172644`, `h = 0.20906032199` | **B** |
+| q-beta-form-a-n1 | `1 + ℏ_q²` | `ℏ_q = 0.099081726435699` | **B** |
+| q-beta-spectral-bridge | `h² = 0.04370621823290131` | `h = 0.2090603219955937` | **A** |
+
+Refreshing only the flagged figures leaves `1 + ℏ_q²` at the new pin beside an
+`ℏ_q` at the old one, in the same table. That is worse than the stale value it
+fixes: a reader can no longer recompute one column from another. **A per-figure
+substitution is the wrong shape of edit here; the unit is the block.**
+
+## And `q-beta-spectral-bridge` was ALREADY internally inconsistent
+
+Measured while checking the above, and it is a separate finding:
+
+    prose q_0   1.109978595557335   = pin A exactly
+    h           0.2090603219955937  = pin A  (A gives …9955936)
+    h^2         0.04370621823290131 = pin B
+
+**Its `h` and its `h²` are computed at different `q₀` values.** `h² ≠ (h)²` as
+published — the table does not close on itself, and that predates anything I did
+today. My refresh of `h²` to C would have made it three-way mixed, which is how I
+noticed.
+
+This also revises the earlier claim that all six figures carry B. Five do; this
+block's *prose pin and `h`* carry A, while its `h²` carries B. The block straddles
+two muon vintages internally.
+
+## What this changes
+
+The recommendation is unchanged in direction — refresh to
+`1.1099785956427390466817951293` — but not in method:
+
+- **Per block, all `q₀`-derived quantities together**, not per flagged figure.
+  That needs each block's derived set identified, which means reading the block
+  rather than grepping it.
+- **`q-beta-spectral-bridge` needs its internal A/B straddle resolved first.**
+  Refreshing a table that does not currently close on itself would bury the
+  inconsistency rather than fix it.
+- The stale pin string `1.109978595554181` also appears in **six further content
+  blocks** (`delta-skein-substrate-identity`, `knot-particle-dictionary`,
+  `g-q-closed-form`, `flavor-split-substrate-proof`,
+  `physics-names-knot-operations`, `particle-nf-table`) — the residue of
+  `df13e845cee`'s labelling pass, which labelled 22 sites and refreshed none.
+  Those are **not** touched here for the same reason: their sibling figures were
+  computed at the old pin, and changing the quoted pin alone would make them say
+  something false.
+
+The blocks keep their "carries a retired `q₀`" caveats, which remain accurate.
