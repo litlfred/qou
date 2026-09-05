@@ -40,9 +40,15 @@ sites, adjacent or not; `embedPairHom` is its algebra-map packaging; and
 > for every `n`, and every pair of distinct sites `i ≠ j` of `V^{⊗n}`, the embedded
 > R-matrix satisfies `Ř_{ij}² = (q − qi) Ř_{ij} + 1`.
 
-and `braidAt_commute` is the second defining family at general `n`:
+`braidAt_commute` and `braidAt_braid` are the other two:
 
-> braidings at **disjoint** pairs of sites commute — `σ_i σ_j = σ_j σ_i` for `|i − j| ≥ 2`.
+> braidings at **disjoint** pairs of sites commute — `σ_i σ_j = σ_j σ_i` for `|i − j| ≥ 2`;
+> and three distinct sites satisfy the **braid relation**
+> `Ř_{ij} Ř_{jk} Ř_{ij} = Ř_{jk} Ř_{ij} Ř_{jk}`.
+
+All three defining families, so `heckeActionN` assembles them into an actual algebra map
+
+> `H_{m+1}(q) → End(V^{⊗(m+1)})`,  `σ_a ↦ Ř` at sites `a`, `a+1`.
 
 The engine for both is `sum_collapse`: a `2^n`-term sum whose summand is supported on the
 states agreeing with `a` off `{i, j}` is a 4-term sum over the assignments to those sites.
@@ -472,36 +478,301 @@ theorem braidAt_commute (hij : i ≠ j) (hkl : k ≠ l) (hki : k ≠ i) (hkj : k
     braidAt q qi i j * braidAt q qi k l = braidAt q qi k l * braidAt q qi i j :=
   embedPair_commute hij hkl hki hkj hli hlj _ _
 
+/-! ### Three sites, and the braid relation at general `n`
+
+Far commutation needed only the two-site collapse because its pairs are disjoint. The braid
+relation's three factors overlap, so the intermediate states range over three sites at once.
+This section builds the three-site embedding, shows the two-site one factors through it, and
+then the braid relation is `yangBaxter` transported — no new matrix computation. -/
+
+variable {m₃ : Fin n}
+
+/-- A three-site operator acting at `i`, `j`, `k` and trivially elsewhere. -/
+def embedTriple (i j k : Fin n)
+    (M : Matrix (Fin 2 × Fin 2 × Fin 2) (Fin 2 × Fin 2 × Fin 2) R) :
+    Matrix (Fin n → Fin 2) (Fin n → Fin 2) R :=
+  Matrix.of fun a b =>
+    if (∀ m, m ≠ i → m ≠ j → m ≠ k → a m = b m)
+    then M (a i, a j, a k) (b i, b j, b k) else 0
+
+theorem embedTriple_apply (i j k : Fin n)
+    (M : Matrix (Fin 2 × Fin 2 × Fin 2) (Fin 2 × Fin 2 × Fin 2) R) (a b : Fin n → Fin 2) :
+    embedTriple i j k M a b
+      = if (∀ m, m ≠ i → m ≠ j → m ≠ k → a m = b m)
+        then M (a i, a j, a k) (b i, b j, b k) else 0 := rfl
+
+variable {k : Fin n}
+
+/-- The three free sites parametrise the states agreeing with `a` elsewhere. -/
+def tripleEquiv (hij : i ≠ j) (hik : i ≠ k) (hjk : j ≠ k) (a : Fin n → Fin 2) :
+    (Fin 2 × Fin 2 × Fin 2)
+      ≃ {c : Fin n → Fin 2 // ∀ m, m ≠ i → m ≠ j → m ≠ k → a m = c m} where
+  toFun x := ⟨Function.update (Function.update (Function.update a i x.1) j x.2.1) k x.2.2, by
+    intro m hmi hmj hmk
+    rw [Function.update_of_ne hmk, Function.update_of_ne hmj, Function.update_of_ne hmi]⟩
+  invFun c := (c.1 i, c.1 j, c.1 k)
+  left_inv x := by
+    have hi : Function.update (Function.update (Function.update a i x.1) j x.2.1) k x.2.2 i
+        = x.1 := by
+      rw [Function.update_of_ne hik, Function.update_of_ne hij, Function.update_self]
+    have hj : Function.update (Function.update (Function.update a i x.1) j x.2.1) k x.2.2 j
+        = x.2.1 := by
+      rw [Function.update_of_ne hjk, Function.update_self]
+    simp [hi, hj, Function.update_self]
+  right_inv c := by
+    refine Subtype.ext (funext fun m => ?_)
+    dsimp only
+    by_cases hmk : m = k
+    · subst hmk; rw [Function.update_self]
+    · rw [Function.update_of_ne hmk]
+      by_cases hmj : m = j
+      · subst hmj; rw [Function.update_self]
+      · rw [Function.update_of_ne hmj]
+        by_cases hmi : m = i
+        · subst hmi; rw [Function.update_self]
+        · rw [Function.update_of_ne hmi]; exact c.2 m hmi hmj hmk
+
+/-- The three-site collapse: `2^n` terms become `8`. -/
+theorem sum_collapse3 (hij : i ≠ j) (hik : i ≠ k) (hjk : j ≠ k) (a : Fin n → Fin 2)
+    (F : (Fin n → Fin 2) → R)
+    (hF : ∀ c, ¬(∀ m, m ≠ i → m ≠ j → m ≠ k → a m = c m) → F c = 0) :
+    ∑ c, F c
+      = ∑ x : Fin 2 × Fin 2 × Fin 2,
+          F (Function.update (Function.update (Function.update a i x.1) j x.2.1) k x.2.2) := by
+  classical
+  rw [← Finset.sum_filter_of_ne (p := fun c => ∀ m, m ≠ i → m ≠ j → m ≠ k → a m = c m)
+        (fun c _ hc => by by_contra h; exact hc (hF c h))]
+  rw [Finset.sum_subtype _ (fun c => by simp)
+        (f := F) (p := fun c => ∀ m, m ≠ i → m ≠ j → m ≠ k → a m = c m)]
+  exact (Fintype.sum_equiv (tripleEquiv hij hik hjk a) _ _ (fun _ => rfl)).symm
+
+private theorem upd3_i (hij : i ≠ j) (hik : i ≠ k) (a : Fin n → Fin 2)
+    (x : Fin 2 × Fin 2 × Fin 2) :
+    Function.update (Function.update (Function.update a i x.1) j x.2.1) k x.2.2 i = x.1 := by
+  rw [Function.update_of_ne hik, Function.update_of_ne hij, Function.update_self]
+
+private theorem upd3_j (hjk : j ≠ k) (a : Fin n → Fin 2) (x : Fin 2 × Fin 2 × Fin 2) :
+    Function.update (Function.update (Function.update a i x.1) j x.2.1) k x.2.2 j = x.2.1 := by
+  rw [Function.update_of_ne hjk, Function.update_self]
+
+private theorem upd3_k (a : Fin n → Fin 2) (x : Fin 2 × Fin 2 × Fin 2) :
+    Function.update (Function.update (Function.update a i x.1) j x.2.1) k x.2.2 k = x.2.2 :=
+  Function.update_self ..
+
+private theorem upd3_agrees (a : Fin n → Fin 2) (x : Fin 2 × Fin 2 × Fin 2) :
+    ∀ m, m ≠ i → m ≠ j → m ≠ k →
+      a m = Function.update (Function.update (Function.update a i x.1) j x.2.1) k x.2.2 m := by
+  intro m hmi hmj hmk
+  rw [Function.update_of_ne hmk, Function.update_of_ne hmj, Function.update_of_ne hmi]
+
+theorem embedTriple_apply_update (hij : i ≠ j) (hik : i ≠ k) (hjk : j ≠ k)
+    (M : Matrix (Fin 2 × Fin 2 × Fin 2) (Fin 2 × Fin 2 × Fin 2) R)
+    (a : Fin n → Fin 2) (x : Fin 2 × Fin 2 × Fin 2) :
+    embedTriple i j k M a
+        (Function.update (Function.update (Function.update a i x.1) j x.2.1) k x.2.2)
+      = M (a i, a j, a k) x := by
+  rw [embedTriple_apply, if_pos (upd3_agrees a x), upd3_i hij hik, upd3_j hjk, upd3_k]
+
+theorem embedTriple_update_apply (hij : i ≠ j) (hik : i ≠ k) (hjk : j ≠ k)
+    (N : Matrix (Fin 2 × Fin 2 × Fin 2) (Fin 2 × Fin 2 × Fin 2) R)
+    (a b : Fin n → Fin 2) (x : Fin 2 × Fin 2 × Fin 2) :
+    embedTriple i j k N
+        (Function.update (Function.update (Function.update a i x.1) j x.2.1) k x.2.2) b
+      = if (∀ m, m ≠ i → m ≠ j → m ≠ k → a m = b m)
+        then N x (b i, b j, b k) else 0 := by
+  rw [embedTriple_apply, upd3_i hij hik, upd3_j hjk, upd3_k]
+  congr 1
+  refine propext ⟨fun h m hmi hmj hmk => ?_, fun h m hmi hmj hmk => ?_⟩
+  · rw [upd3_agrees a x m hmi hmj hmk]; exact h m hmi hmj hmk
+  · rw [← upd3_agrees a x m hmi hmj hmk]; exact h m hmi hmj hmk
+
+/-- **The three-site embedding is multiplicative.** -/
+theorem embedTriple_mul (hij : i ≠ j) (hik : i ≠ k) (hjk : j ≠ k)
+    (M N : Matrix (Fin 2 × Fin 2 × Fin 2) (Fin 2 × Fin 2 × Fin 2) R) :
+    embedTriple i j k M * embedTriple i j k N = embedTriple i j k (M * N) := by
+  classical
+  ext a b
+  rw [Matrix.mul_apply,
+    sum_collapse3 hij hik hjk a (fun c => embedTriple i j k M a c * embedTriple i j k N c b)
+      (fun c hc => by dsimp only; rw [embedTriple_apply, if_neg hc, zero_mul])]
+  simp only [embedTriple_apply_update hij hik hjk, embedTriple_update_apply hij hik hjk]
+  by_cases hab : ∀ m, m ≠ i → m ≠ j → m ≠ k → a m = b m
+  · simp only [if_pos hab]
+    rw [embedTriple_apply, if_pos hab, Matrix.mul_apply]
+  · simp [hab, embedTriple_apply]
+
+/-! #### The two-site embedding factors through the three-site one -/
+
+/-- `Ř` at sites `i, j` is `Ř ⊗ 1` at sites `i, j, k`. -/
+theorem embedPair_eq_embedTriple_left (hik : i ≠ k) (hjk : j ≠ k)
+    (M : Matrix (Fin 2 × Fin 2) (Fin 2 × Fin 2) R) :
+    embedPair i j M
+      = embedTriple i j k
+          (Matrix.of fun u v => M (u.1, u.2.1) (v.1, v.2.1)
+            * (if u.2.2 = v.2.2 then 1 else 0)) := by
+  classical
+  ext a b
+  rw [embedPair_apply, embedTriple_apply]
+  by_cases hk : a k = b k
+  · by_cases h3 : ∀ m, m ≠ i → m ≠ j → m ≠ k → a m = b m
+    · rw [if_pos h3, if_pos (fun m hmi hmj => by
+        by_cases hmk : m = k
+        · subst hmk; exact hk
+        · exact h3 m hmi hmj hmk)]
+      simp [hk]
+    · rw [if_neg h3, if_neg (fun h2 => h3 (fun m hmi hmj _ => h2 m hmi hmj))]
+  · rw [if_neg (fun h2 => hk (h2 k (Ne.symm hik) (Ne.symm hjk)))]
+    by_cases h3 : ∀ m, m ≠ i → m ≠ j → m ≠ k → a m = b m
+    · rw [if_pos h3]; simp [hk]
+    · rw [if_neg h3]
+
+/-- `Ř` at sites `j, k` is `1 ⊗ Ř` at sites `i, j, k`. -/
+theorem embedPair_eq_embedTriple_right (hij : i ≠ j) (hik : i ≠ k)
+    (N : Matrix (Fin 2 × Fin 2) (Fin 2 × Fin 2) R) :
+    embedPair j k N
+      = embedTriple i j k
+          (Matrix.of fun u v => (if u.1 = v.1 then 1 else 0)
+            * N (u.2.1, u.2.2) (v.2.1, v.2.2)) := by
+  classical
+  ext a b
+  rw [embedPair_apply, embedTriple_apply]
+  by_cases hi : a i = b i
+  · by_cases h3 : ∀ m, m ≠ i → m ≠ j → m ≠ k → a m = b m
+    · rw [if_pos h3, if_pos (fun m hmj hmk => by
+        by_cases hmi : m = i
+        · subst hmi; exact hi
+        · exact h3 m hmi hmj hmk)]
+      simp [hi]
+    · rw [if_neg h3, if_neg (fun h2 => h3 (fun m _ hmj hmk => h2 m hmj hmk))]
+  · rw [if_neg (fun h2 => hi (h2 i hij hik))]
+    by_cases h3 : ∀ m, m ≠ i → m ≠ j → m ≠ k → a m = b m
+    · rw [if_pos h3]; simp [hi]
+    · rw [if_neg h3]
+
+/-- **The braid relation at general `n`.** `Ř_{ij} Ř_{jk} Ř_{ij} = Ř_{jk} Ř_{ij} Ř_{jk}` for
+three distinct sites — `yangBaxter` transported through the three-site embedding, with no
+new matrix computation. -/
+theorem braidAt_braid (hij : i ≠ j) (hik : i ≠ k) (hjk : j ≠ k) (hqi : q * qi = 1) :
+    braidAt q qi i j * braidAt q qi j k * braidAt q qi i j
+      = braidAt q qi j k * braidAt q qi i j * braidAt q qi j k := by
+  have h1 : braidAt q qi i j = embedTriple i j k (rc1 q qi) :=
+    embedPair_eq_embedTriple_left hik hjk _
+  have h2 : braidAt q qi j k = embedTriple i j k (rc2 q qi) :=
+    embedPair_eq_embedTriple_right hij hik _
+  rw [h1, h2, embedTriple_mul hij hik hjk, embedTriple_mul hij hik hjk,
+    embedTriple_mul hij hik hjk, embedTriple_mul hij hik hjk, yangBaxter q qi hqi]
+
 end Sites
 
-/-! ## What is still missing for a literal `H_n(q) → End(V^{⊗n})`
+/-! ## The Hecke action of `H_{m+1}(q)` on `V^{⊗(m+1)}`
 
-Two of the three defining families now hold in the site-indexed model at general `n`:
+All three defining families now hold at general `n`, so `liftBalanced` assembles them into
+an algebra map. Strand `a` braids sites `a` and `a+1`. -/
 
-* the **quadratic** — `isHeckeGenerator_braidAt`, every `n`, every `i ≠ j`;
-* **far commutation** — `braidAt_commute`, every `n`, disjoint pairs.
+section Action
 
-The **braid relation** `Ř_{ij} Ř_{jk} Ř_{ij} = Ř_{jk} Ř_{ij} Ř_{jk}` is **not** proved at
-sites. It holds at three factors (`yangBaxter`) and survives an abstract spectator
-(`yangBaxter_tensorId`), but neither is transported to `Fin n → Fin 2`, so there is still
-no algebra map out of `H_n(q)` for `n > 3`.
+variable {m : ℕ}
 
-Why that one is harder than far commutation: the two pairs there are **disjoint**, so each
-factor's window survives the other's update untouched and one application of `sum_collapse`
-per side suffices. The braid relation's three factors **overlap** in the site `j`, so the
-intermediate states range over three sites at once and the product does not factor. It
-needs a genuine three-site collapse:
+/-- The type-`A` Coxeter matrix on `m` generators: adjacent strands braid (`3`), distant
+ones commute (`2`). -/
+def coxA (m : ℕ) : Fin m → Fin m → ℕ := fun a b =>
+  if a = b then 1 else if (a : ℕ) + 1 = (b : ℕ) ∨ (b : ℕ) + 1 = (a : ℕ) then 3 else 2
 
-    sitesEquiv (s : Finset (Fin n)) (a : Fin n → Fin 2) :
-        (s → Fin 2) ≃ {c : Fin n → Fin 2 // ∀ k ∉ s, a k = c k}
+theorem coxA_symm : ∀ a b : Fin m, coxA m a b = coxA m b a := by
+  intro a b
+  unfold coxA
+  by_cases hab : a = b
+  · subst hab; rfl
+  · rw [if_neg hab, if_neg (Ne.symm hab)]
+    by_cases h : (a : ℕ) + 1 = (b : ℕ) ∨ (b : ℕ) + 1 = (a : ℕ)
+    · rw [if_pos h, if_pos h.symm]
+    · rw [if_neg h, if_neg (fun hc => h hc.symm)]
 
-with `toFun x k = if h : k ∈ s then x ⟨k, h⟩ else a k`. That form is **easier** than
-`pairEquiv` above, not harder: the `dite` needs no `Function.update` juggling and no
-`i ≠ j` side condition, because membership in `s` already separates the cases. `pairEquiv`
-should be re-derived from it rather than kept as a special case. The remaining step after
-that is the reindex `({i,j,k} → Fin 2) ≃ Fin 2 × Fin 2 × Fin 2` carrying `yangBaxter` over.
+/-- The braiding of strand `a`: `Ř` acting at sites `a` and `a+1` of `V^{⊗(m+1)}`. -/
+def strandBraid (q qi : R) (a : Fin m) :
+    Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) R :=
+  braidAt q qi a.castSucc a.succ
 
-Until that lands, do **not** describe this file as giving a Hecke action on `V^{⊗n}`: it
-gives two relations of three at general `n`, and all three at three factors. -/
+private theorem cs_ne_succ (a : Fin m) : a.castSucc ≠ a.succ := by
+  simp [Fin.ext_iff]
+
+/-- **The Hecke action.** `H_{m+1}(q) → End(V^{⊗(m+1)})`, sending the balanced generator
+`σ_a` to the braiding of strand `a`.
+
+All three obligations are discharged by the general-`n` relations above: the quadratic by
+`isHeckeGenerator_braidAt`, the braid relation by `braidAt_braid`, far commutation by
+`braidAt_commute`. -/
+noncomputable def heckeActionN (hqi : q * qi = 1) :
+    QOU.IwahoriHecke.Balanced.BalancedHecke (coxA m) q →ₐ[R]
+      Matrix (Fin (m + 1) → Fin 2) (Fin (m + 1) → Fin 2) R :=
+  QOU.IwahoriHecke.Balanced.liftBalanced hqi (strandBraid q qi)
+    (fun a => isHeckeGenerator_braidAt q qi (cs_ne_succ a) hqi)
+    (fun a b => by
+      by_cases hab : a = b
+      · -- both sides are literally the same term once `a = b`
+        subst hab; rfl
+      · have hba : b ≠ a := Ne.symm hab
+        have hne : (a : ℕ) ≠ (b : ℕ) := fun hc => hab (Fin.ext_iff.mpr hc)
+        by_cases hadj : (a : ℕ) + 1 = (b : ℕ) ∨ (b : ℕ) + 1 = (a : ℕ)
+        · rw [show coxA m a b = 3 from by simp [coxA, hab, hadj],
+            show coxA m b a = 3 from by simp [coxA, hba, hadj.symm],
+            QOU.MathlibExt.IwahoriHecke.altProd_three,
+            QOU.MathlibExt.IwahoriHecke.altProd_three]
+          rcases hadj with h | h
+          · have hjk : a.succ = b.castSucc := by simp [Fin.ext_iff, h]
+            have e := braidAt_braid (R := R) q qi (i := a.castSucc) (j := a.succ)
+              (k := b.succ) (by simp [Fin.ext_iff])
+              (by simp [Fin.ext_iff]; omega) (by simp [Fin.ext_iff]; omega) hqi
+            simp only [strandBraid, ← hjk]
+            rw [← mul_assoc, ← mul_assoc]
+            exact e
+          · have hjk : b.succ = a.castSucc := by simp [Fin.ext_iff, h]
+            have e := braidAt_braid (R := R) q qi (i := b.castSucc) (j := b.succ)
+              (k := a.succ) (by simp [Fin.ext_iff])
+              (by simp [Fin.ext_iff]; omega) (by simp [Fin.ext_iff]; omega) hqi
+            simp only [strandBraid, ← hjk]
+            rw [← mul_assoc, ← mul_assoc]
+            exact e.symm
+        · have hadj' : ¬((b : ℕ) + 1 = (a : ℕ) ∨ (a : ℕ) + 1 = (b : ℕ)) :=
+            fun hc => hadj hc.symm
+          rw [show coxA m a b = 2 from by simp [coxA, hab, hadj],
+            show coxA m b a = 2 from by simp [coxA, hba, hadj'],
+            QOU.MathlibExt.IwahoriHecke.altProd_two,
+            QOU.MathlibExt.IwahoriHecke.altProd_two]
+          exact braidAt_commute q qi (cs_ne_succ a) (cs_ne_succ b)
+            (by simp [Fin.ext_iff]; omega) (by simp [Fin.ext_iff]; omega)
+            (by simp [Fin.ext_iff]; omega) (by simp [Fin.ext_iff]; omega))
+    coxA_symm
+
+@[simp] theorem heckeActionN_sigma (hqi : q * qi = 1) (a : Fin m) :
+    heckeActionN q qi hqi (QOU.IwahoriHecke.Balanced.sigma (coxA m) q qi a)
+      = strandBraid q qi a :=
+  QOU.IwahoriHecke.Balanced.liftBalanced_sigma hqi _ _ _ coxA_symm a
+
+end Action
+
+/-! ## What `heckeActionN` does NOT say
+
+The three relations and the action are proved at every `n`. Four things are still open, and
+none of them follows from what is here:
+
+1. **Nothing about the image.** `heckeActionN` is an algebra map. That it is *surjective
+   onto the commutant* of the quantum-group action — which is the Schur–Weyl statement
+   proper, the reason one wants this map — is not proved. Neither is injectivity, which
+   would need the `T_w` basis (`QOU.IwahoriHecke.Tw`, still open on Matsumoto).
+2. **Fibre `Fin 2` only.** The general `gl_k` R-matrix
+   `Ř = q Σ_i E_ii⊗E_ii + Σ_{i≠j} E_ji⊗E_ij + (q − q⁻¹) Σ_{i<j} E_ii⊗E_jj`
+   satisfies the same relations for any linearly ordered fibre; only `sl₂` is done, because
+   `Fin 2` is the fibre every consumer in this corpus uses.
+3. **The coordinate model, not `PiTensorProduct`.** This works in
+   `V^{⊗n} = ((Fin n → Fin 2) → R)`. `QOU.MassTheory.PiTensorMonomialBasis` identifies that
+   with the genuine `⨂[R] _ : Fin n, (Fin 2 → R)` via `monoEquiv`, but `heckeActionN` has
+   **not** been transported along it, so there is no statement here about `PiTensorProduct`.
+4. **No trace.** The `q`-deformed character of
+   `QOU.MassTheory.WeightedPermutationCharacter` is the trace-weight half of quantum
+   Schur–Weyl; nothing here connects the braiding to it, and the Markov trace on `H_n(q)` is
+   still `opaque` in `QOU.IwahoriHecke.MarkovTrace`.
+
+Item 3 is bookkeeping. Items 1, 2 and 4 are mathematics. -/
 
 end QOU.IwahoriHecke.TensorEmbed
