@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-05T06:08:49Z
+updated_at: 2026-09-05T06:32:12Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -555,3 +555,73 @@ So route (b) is a **composition**, ~45 lines, not an extension build: on `(0,π)
 - **Step 3** — glue acute → whole open simplex with Mathlib's identity theorem (`AnalyticOnNhd.eqOn_of_preconnected_of_eventuallyEq` family). Cheap *given* steps 1+2, but needs the preconnectedness of the open simplex.
 
 **Infra note (durable, cost me ~40 min).** `.lake/build/lib/lean/QOU/MathlibExt/ComplexDilogarithmSlit.olean` in the restored cache was **truncated** (192,512 B; correct is 279,688 B). Symptom: `lean` on anything importing it exits **139 (segfault) with zero output** — not a type error, no diagnostics, and it poisons the whole downstream cone (Kummer, dilog-deriv). Fix: recompile that one olean directly; the entire chain then imports clean.
+
+
+## 🛑 STEP 2 AS THIS BEAN STATES IT IS MIS-SCOPED — and step 3 is nearly free (2026-09-05, session lean-qa-backlog)
+
+Corpus-grep over all six paths (path 0 `corpus_search` was DOWN — `paper-assistant` MCP `ENOENT` — so every absence below is grep-scoped only, not graph-scoped).
+
+### The finding: the technique named in step 2 does not apply to the object named in step 2
+
+This bean says step 2 is *"the base integral real-analytic in the angles `(α,β)`"*, to be done by differentiation under the integral sign. Measured against the corpus's own formulation, that does not fit:
+
+`QOU/Archimedean/HyperbolicVolumeFubini.lean:275`, `hypVolume_chimney_of_ae_lt`:
+
+```lean
+hypVolume (chimney T R)
+  = ∫⁻ w in T, ENNReal.ofReal (1 / (2 * (R^2 - w.1^2 - w.2^2)))
+```
+
+**The angles enter ONLY through the domain `T = inscribedTriangle R t α β γ`. The integrand is parameter-free, and the value is `ℝ≥0∞`.** Consequences:
+
+- Mathlib's entire parametric-integral family — 7 lemmas in `Analysis/Calculus/ParametricIntegral.lean` plus 4 `intervalIntegral` wrappers — **requires the parameter in the integrand over a fixed measure space.** There is no Mathlib lemma for regularity of `p ↦ μ(T p)`. The nearest shelf is the Jacobian change-of-variables family (`Jacobian.lean:1097`), which is the *technique for moving the parameter into the integrand*, not the result.
+- **There is no statable target.** `grep "hypVolume.*toReal|toReal.*hypVolume"` over the whole non-`.lake` corpus returns **zero**. `AnalyticAt ℝ` of an `ℝ≥0∞`-valued function is not a statement. Before step 2 can be *stated*, someone must define `V(α,β) := (hypVolume …).toReal` and prove finiteness across the whole simplex — and the only finiteness input in the tree, `Lob_nonneg_of_lt_pi_div_two` (`OrthoschemeWedgePair.lean:204`), is itself acute-only.
+- The corpus's one genuinely *parametric* integral, `integral_orthoscheme` (`OrthoschemeBaseIntegral.lean:260`), has `ψ` in both the limit and the integrand — the right shape — but is `ψ < π/2`-only and **cannot** be the continuation carrier: for `ψ > π/2`, `cos²φ − cos²ψ` changes sign inside the range and the `log` is undefined. The one usable parametric integral is exactly the piece that dies at the obtuse boundary.
+
+### The technique is NOT a Mathlib gap — do not re-measure it as one
+
+The corpus already runs the complete route end to end, sorry-free, in `QOU/MathlibExt/` (bean `qou-clx8`, completed): `hasDerivAt_cLiTwoExt` (`ComplexDilogarithmDeriv.lean:149`, via `intervalIntegral.hasDerivAt_integral_of_dominated_loc_of_deriv_le`) → `differentiableOn_cLiTwoExt` (`:240`) → `analyticOnNhd_cLiTwoExt` (`:248`) → identity theorem (`ComplexDilogarithmUnique.lean:85` `starConvex_zero_notCut` → `:108` `isPreconnected_notCut` → `:124/:151`). Mathlib carries an independent worked template of the identical four-step pattern in `Probability/Moments/ComplexMGF.lean:165,173,180,277`. **The gap is the object's shape, not the machinery.**
+
+### LANDED: the RHS half of steps 2+3 is now closed
+
+`QOU/Archimedean/TetVolAnalytic.lean` (new), lean-direct exit 0, all four `[propext, Classical.choice, Quot.sound]`, no sorry:
+
+- `isOpen_tetSimplex` — was genuinely absent (zero hits under any spelling)
+- `isPreconnected_tetSimplex` — one line from the already-proved `convex_tetSimplex`
+- `analyticAt_tetVol` / `analyticOnNhd_tetVol` — `analyticOnNhd_Lob` composed onto `tetVol (α,β) = Λ(α)+Λ(β)+Λ(π−α−β)`
+
+This gives `analyticAt_Lob` its first consumers. **It is the identity's RHS only** — `tetVol` is *defined* as the Λ-sum (`volChart`'s own docstring: "A definition, not the geometric volume"). The LHS stays open.
+
+**Duplicate definitions, unresolved:** `tetVol`/`tetSimplex` (`IdealTetrahedronVolumeConcave.lean:75,80`, namespace `QOU.Archimedean`) and `volChart`/`angleSimplex` (`IdealTetrahedronVolumeConcavity.lean:69,76`, namespace `…IdealTetrahedronConcavity`) are **syntactically identical bodies**. I proved for the former. Someone should pick a canonical one; I did not, to keep this change minimal.
+
+### 🛑 A FOURTH acuteness gate this bean's plan does not mention at all
+
+`idealTet_eq_chimney` (`IdealTetEqChimney.lean:169`) — the geometric identification `idealTetrahedron P₁ P₂ P₃ = chimney (inscribedTriangle 1 t α β γ) 1` — carries `hα : α < π/2`, `hβ`, `hγ` at `:171`, and its three face lemmas at `:50,78,130` do the same. Mirrored in `MostowIdealTetVolume.region_eq_chimney`, stated only for acute triples. Also `inscribedTriangle_vertex_incidence` (`OrthoschemeTiling.lean:475`), the anchor pinning the half-plane-intersection *definition* to the triangle with those three vertices, is acute-hypothesised.
+
+**So steps 1+2+3 complete would give "the base integral over `inscribedTriangle` equals the Λ-sum on the whole simplex" and still NOT "the obtuse ideal tetrahedron's volume is the Λ-sum".** The region-equals-chimney bridge is a **set equality**, which analytic continuation cannot touch. That is a second continuation problem the three-step plan does not account for.
+
+### 🛑 RE-SCOPING THE SIGNED-SUBDIVISION FORECLOSURE (line ~482)
+
+This bean states *"The signed-subdivision route is NOT needed and should not be attempted"*. Under the AGENTS.md (a)/(b) rule that is **scope-(b) language with only scope-(a) support**: its whole basis is that Milnor offers analytic continuation as an alternative, which is a fact about Milnor's paper, not a proved invariant about this formalization. **Re-scoped to (a):** *the signed-subdivision argument is not the only available route, and the analytic route avoids its sign convention.* No invariant forbids it.
+
+Measured, the signed route now looks **cheaper**, not dearer: `lob_sum_eq_reflected` (`IdealTetObtuseReduction.lean:82`, sorry-free, PR #6045) already gives the Λ-side signed form with all arguments in `(0,π/2]`; the geometric side needs one further a.e. set identity of exactly the kind `milnorWedges_ae_eq_inscribedTriangle` (`OrthoschemeTiling.lean:402`) already is, reusing `chordHalfplane`, `wedgeAt`, `rotL`, `perp_sign_relation` and the `Measure.addHaar_submodule` null-line trick — all in the tree. Whereas the analytic route needs an object (real-analyticity of a domain-parametrised 2-D `lintegral`) that exists nowhere in Mathlib or the corpus, **and** still leaves gate 4 standing.
+
+Note also that `IdealTetObtuseReduction.lean`'s header is stale — it still names "signed geometry" as the remaining step, written before this bean's analytic-continuation recommendation.
+
+### What Milnor actually says (library path 5)
+
+Milnor 1982 is held (`library/milnor-1982-hyperbolic-geometry-the-first-150-years/sections/sec-004-18-john-milnor.md`, pp. 10–12; second copy correctly `duplicate_of`-marked). The obtuse handling is **one parenthesis**, verbatim: *"(The case of an obtuse angle can be handled by a similar argument, or by analytic continuation.)"* He does not say in what variable he continues, over what domain, or what the LHS is as an analytic function. **This bean's three-step route is a reconstruction of that parenthesis, not something Milnor states** — and step 2 is where the reconstruction meets the corpus's formulation and does not fit.
+
+**Thurston Ch. 7 is NOT held** — the held copy is Chapters 1–2 (22 sections); `Chapter 7. Computation of volume` appears only as a table-of-contents line in `sec-000-introduction.md:81-82`. Ratcliffe is in neither `library/` nor `uploads/`.
+
+**Two held sources nobody on this arc has read**, both on point: `library/arxiv-1010.5321v3/` (Horváth, *Formulas on hyperbolic volume* — has a Lobachevsky-function section with the same reflection toolkit) and **`library/arxiv-math-0502543v2/` (Rivin, *Continuity of volumes*)**, which proves regularity of hyperbolic polytope volume as a function of the dihedral angles **via the Schläfli differential formula** — a third route to the LHS that this bean does not consider, from a paper the corpus already cites Rivin for elsewhere (`QOU/Knot/RivinConcavity.lean`).
+
+### Recommended next step (my judgement, not a finding)
+
+Do **not** open a session on step 2 as written. Instead **cost the three LHS carriers first** (half a session, versus a multi-session build against an ill-fitting technique):
+
+1. **Change of variables** mapping a fixed reference triangle onto `inscribedTriangle α β γ` (`Jacobian.lean:1097`) — converts domain-dependence into integrand-dependence, after which the `ComplexDilogarithmDeriv` template applies verbatim.
+2. **A polar form of the full triangle valid for obtuse** — `milnor_subdivision_obtuse_scope_probe.py` already does exactly this numerically with ray-clipping (obtuse agreement ~1e-17, *better* than the acute ~2e-15), and the corpus has the polar machinery for the orthoscheme (`mem_orthoBase_polar`, `integral_radial`, `OrthoschemePolarReduction.lean:79,139`). Caveat: that probe implements its own ray-clipped triangle, not the Lean `inscribedTriangle`, so it is evidence the *identity* is true, not that the Lean *definition* is the right triangle when obtuse.
+3. **Rivin's Schläfli route** from the held `arxiv-math-0502543v2`.
+
+And put the signed route back on the table alongside them, per the re-scoping above.

@@ -41,6 +41,28 @@
   (`computations/milnor_subdivision_obtuse_scope_probe.py`, 15/15); only its
   Lean proof route is open.
 
+  ROUTE STATUS (updated 2026-09-05).  The text above names signed subdivision as
+  *the* remaining step; there are now **two live candidate routes**, and neither
+  is excluded.
+
+  * **Signed subdivision** — what this file prepares, and it is cheaper than it
+    looks: `lob_sum_eq_reflected` below already supplies the Λ-side signed form
+    with every argument in `(0, π/2]`, so the geometric side needs one further
+    a.e. set identity of the kind `milnorWedges_ae_eq_inscribedTriangle`
+    (`OrthoschemeTiling.lean:402`) already is.
+  * **Analytic continuation** — Milnor's stated alternative.  Its right-hand
+    half is now closed (`QOU.Archimedean.analyticOnNhd_tetVol` +
+    `isOpen_tetSimplex` + `isPreconnected_tetSimplex`, `TetVolAnalytic.lean`,
+    built on `analyticOnNhd_Lob`).  Its LEFT half is not: the corpus's base
+    integral is an `ℝ≥0∞` `lintegral` whose angle dependence sits wholly in the
+    domain of integration, which is not the shape Mathlib's parametric-integral
+    lemmas consume, and it has no real-valued carrier yet.
+
+  Neither route closes the case on its own, because a **fourth** acuteness gate
+  sits outside both: `IdealTetEqChimney.idealTet_eq_chimney` carries
+  `α, β, γ < π/2`, and that is a set equality rather than an analytic
+  statement.  Measurements and per-route costing: bean `qou-w3eg`.
+
   Archimedean (ℝ): ordering and `Real.pi` — §7c.
 
   -- Ref: [milnor1982] Appendix (the circumcentre subdivision; obtuse minus sign)
