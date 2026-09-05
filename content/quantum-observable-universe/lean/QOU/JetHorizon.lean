@@ -170,26 +170,77 @@ structure PlanckStepResult where
   /-- The degree-1 data is inherited from the CMB. -/
   degree_one_inherited : ∃ (s : next_algebra.sections 1), s ≠ next_algebra.zero 1
 
-/-- **Conjecture (aeon recycling).**
+/-! ## Aeon recycling
 
-    The first Planck step Φ₁ applied to the CMB of an aeon
-    produces a **new** graded jet algebra with non-trivial degree-0
-    sections (landing in Bun°).  The new algebra is distinct from the
-    horizon's algebra (where degree-0 vanishes by definition).
+    **The conjecture, and why it is NOT an axiom here.**
 
-    If this holds for all aeons, it extends to a recycling functor
-    R : π₀(Bun°) → π₀(Bun°). Fixed points = self-recycling aeons. -/
--- Ref: [manuscript] §9/aeon-boundary-generates-chart
--- Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
--- NOTE: this is an `axiom`, not `opaque`: `opaque` requires `Nonempty
--- PlanckStepResult`, whose existential fields (`∃ s, s ≠ 0`) cannot be
--- witnessed without proving the conjecture itself. As an honestly-labelled
--- open conjecture (Penrose CCC recycling), `axiom` is the correct form.
--- (Reverts the over-eager opaque conversion in fa0aa1c5c8 for this decl.)
-axiom aeon_recycling
-    (cmb : CMBFunctorValue)
-    : -- The Planck step produces a new algebra with A_0 ≠ 0.
-      PlanckStepResult
+    The conjecture (Penrose CCC recycling): the first Planck step `Φ₁`
+    applied to the CMB of an aeon produces a **new** graded jet algebra with
+    non-trivial degree-0 sections, distinct from the horizon's algebra (where
+    degree-0 vanishes by definition).  If it holds for all aeons it extends to
+    a recycling functor `R : π₀(Bun°) → π₀(Bun°)`, whose fixed points are the
+    self-recycling aeons.
+
+    **This file used to carry that as `axiom aeon_recycling (cmb :
+    CMBFunctorValue) : PlanckStepResult`.  Removed 2026-09-05: that axiom was
+    VACUOUS — it asserted nothing about the conjecture.**  Two measurements,
+    both machine-checked immediately below:
+
+    * `planckStepResult_nonempty` — `PlanckStepResult` is inhabited outright,
+      by a toy algebra (`ULift Bool` at every degree).  The removed axiom's
+      own note claimed `opaque` was unavailable because `Nonempty
+      PlanckStepResult` "cannot be witnessed without proving the conjecture
+      itself".  That is a category error: inhabiting the *result type* asks
+      whether **some** algebra has non-zero degree-0 and degree-1 sections,
+      not whether the Planck step produces one.
+    * `planckStepResult_cmb_independent` — decisively, the axiom's result type
+      **never mentions `cmb`**.  So its statement is discharged by a constant
+      function, and the two `∃ s, s ≠ 0` fields are satisfied by a toy.  It
+      was true, and true for reasons having nothing to do with aeons.
+
+    **The conjecture is not statable in this formalisation yet**, and that —
+    not the choice of `axiom` versus `opaque` — is the real gap: there is no
+    Planck-step map in the file.  `Φ₁` occurs only in prose.  Until some
+    `Φ : CMBFunctorValue → GradedJetAlgebra` is defined, any Lean statement
+    "about" it is satisfiable by choosing `Φ` to be the toy, so a
+    content-bearing carrier (§3b-tax) cannot be written either.
+
+    Note this is the `weierstrass_diff_eq_axiom` failure mode recorded in bean
+    `qou-i6cn` — *"an axiom that does not mention the object it claims to
+    constrain"* — and the citation was sound throughout: the intent was right,
+    the Lean did not match it.  A correct `-- Ref:` says nothing about whether
+    the statement has content.
+
+    Ref: [manuscript] §9/aeon-boundary-generates-chart
+    Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010. -/
+
+/-- A toy graded jet algebra — `ULift Bool` at every degree, zero is `false`.
+    Exists only as the witness for the two vacuity theorems below. -/
+def toyGradedJetAlgebra : GradedJetAlgebra where
+  sections := fun _ => ULift Bool
+  zero := fun _ => ULift.up false
+  inclusion := fun _ b => b
+
+/-- `PlanckStepResult` is inhabited, with no appeal to the recycling
+    conjecture.  Refutes the removed axiom's stated justification. -/
+theorem planckStepResult_nonempty : Nonempty PlanckStepResult :=
+  ⟨{ next_algebra := toyGradedJetAlgebra
+   , degree_zero_regenerated := ⟨ULift.up true, by simp [toyGradedJetAlgebra]⟩
+   , degree_one_inherited := ⟨ULift.up true, by simp [toyGradedJetAlgebra]⟩ }⟩
+
+/-- **The removed axiom's statement, discharged — and shown to ignore its
+    own argument.**  `fun _ => toyResult` has exactly the type the axiom had,
+    and it returns the same result for any two CMB inputs.  Any future
+    statement of aeon recycling must constrain a Planck-step map; a bare
+    `CMBFunctorValue → PlanckStepResult` carries no content. -/
+theorem planckStepResult_cmb_independent :
+    ∃ f : CMBFunctorValue → PlanckStepResult, ∀ c₁ c₂, f c₁ = f c₂ :=
+  ⟨fun _ => { next_algebra := toyGradedJetAlgebra
+            , degree_zero_regenerated :=
+                ⟨ULift.up true, by simp [toyGradedJetAlgebra]⟩
+            , degree_one_inherited :=
+                ⟨ULift.up true, by simp [toyGradedJetAlgebra]⟩ },
+   fun _ _ => rfl⟩
 
 /-! ## Conformal invariance at the horizon -/
 
