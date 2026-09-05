@@ -97,6 +97,27 @@ account of the A-dependence has to explain that.
 > the plateau claim needed, which is a second reason that claim could not have
 > been checked against it.
 
+## Precision: these figures are float64, and the source says so
+
+`binding_energy` ends `return float(B)`, and its own comment records why that
+cast is not the narrowing that matters:
+
+> `math.log(abs(tr_run))` already narrows to float64 INSIDE the accumulator
+> (`math.log` returns a Python float whatever it is handed), so this path is
+> float64-limited well upstream of here. That narrowing is a real,
+> PRE-EXISTING precision defect and is tracked separately.
+
+So every `B_pred` quoted here carries ~16 significant digits **of arithmetic**,
+not of meaning, and the probe stores them as `mpf(str(B))` — faithful to the
+float64 value, manufacturing no precision it does not have.
+
+This does not weaken anything claimed above. The claims are ratios — ×0.42
+against ×14.4, ×7.1 against ×4.8 — which are orders of magnitude clear of
+float64 resolution. It does mean **no digit beyond the first few should be
+read as a result**, and in particular that agreement or disagreement at the
+1e-16 level between any two of these numbers would be the floor of the
+arithmetic rather than evidence about the model.
+
 ## Reproduction
 
 The run is 67 minutes and emits no witness — it was a direct call, not a
