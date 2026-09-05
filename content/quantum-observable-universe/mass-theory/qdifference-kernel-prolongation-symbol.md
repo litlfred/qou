@@ -194,7 +194,18 @@ local monodromy, not fitted numerically.
 > at least four new weight values against one constraint, so the recurrence
 > constrains nothing until the weights are supplied by the geometry. Both
 > statements are scope-(a): they concern these two candidates on this seed,
-> and the two-term derivative-only class, respectively.
+> and the two-term derivative-only class, respectively. The weights cannot be
+> supplied by a $q$-connection on the base either: the colour cubic is
+> irreducible over $K(z)$ for every field $K$ of characteristic zero
+> (`QOU.Mass.ColorCubicIrreducible`, sorry-free), so no sheet is a rational
+> function of $z$; each sheet is algebraic, hence D-finite; and a rational
+> rank-$3$ $q$-difference system in $z \mapsto \lambda z$ with the sheets as
+> solutions would make a sheet $q$-holonomic, which together with D-finiteness
+> forces rationality (Bézivin, Ramis; Schäfke–Singer). So a rational
+> $q$-connection on the $z$-line with the sheets as flat sections does not
+> exist — scope (b), the cited theorem being the invariant — and the
+> prolongation, if it is a $q$-difference operator at all, is local at the
+> ramification point or has non-rational coefficients.
 >
 > Two earlier readings of the same kernel took $\sigma$ to be a shift in the
 > $t$-exponent of a single jet — the unit $t$-shift with $x = q^{e}$, or the
