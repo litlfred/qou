@@ -1434,6 +1434,12 @@ import QOU.Hecke.LayoutConflict
 -- would have to close.  Pure ordered-field algebra; the measurement enters only
 -- as the hypothesis `K > 1`.
 import QOU.Hecke.GeometricTailBound
+-- `BoundedDegreeCoulomb` generalises the chain result: by the degree-sum
+-- formula a graph with max degree `d` has at most `dn/2` edges, so its share of
+-- the `n(n-1)/2` pairs is at most `d/(n-1)`.  Coulomb is quadratic in Z; every
+-- edge set the corpus has built (chain d=2, max-contact deltahedra d=5, close
+-- packing d=12) is degree-bounded, so none of them can carry it.
+import QOU.Hecke.BoundedDegreeCoulomb
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
 
