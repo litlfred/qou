@@ -153,6 +153,55 @@ requirement on the margin side if that route is taken anyway (empirical envelope
 certified exhaustively). That is a recommendation from a reach measurement, not a proof that the
 margin route is dead — see the scope note above.
 
+## `P > N` in local form — and a false corpus claim found on the way
+
+With `P > N` established as the target, the natural question is whether it is *edge-wise* true: if
+`Δ(Σh)·Δω₃ ≥ 0` on every single-box edge, `M₁ > 0` follows for all `n` immediately and the gap
+closes. Measured ([`…_edge_sign_census.py`](../../computations/deltalambda/wlambda_covariance_epic_M1_edge_sign_census.py),
+exit 0, exact `Fraction`, every edge to n = 12), with every figure gated on the census exactly
+reconstructing `M₁` — **PASS**.
+
+| n | Fact A | Fact B | combined ≥ 0 | #pos | #neg | neg frac | pos/neg mass |
+|---|---|---|---|---|---|---|---|
+| 6 | ok | ok | no | 20 | 4 | 0.167 | 22.0 |
+| 8 | ok | ok | no | 52 | 4 | 0.071 | 112.0 |
+| 10 | ok | **FAIL** | no | 144 | 16 | 0.100 | 30.9 |
+| 12 | ok | **FAIL** | no | 328 | 36 | 0.099 | 52.3 |
+
+### Finding 1 — Fact B is false as stated (a corpus correction)
+
+The 2026-08-21 audit states `Δ(ΣD²)·Δω₃ ≤ 0` "on every single-box edge … verified n≤13". It **fails
+first at n = 10**. Hand-verified counterexample:
+
+> `λ* = (5,4,1) → λ = (5,5)`, joined via `μ = (5,5,1)`. `ΣD²: 16 → 18`, `ω₃: −5 → 0`, so the product
+> is `(+2)(+5) = +10 > 0`.
+
+The stated reason — *larger `|content|` ⟹ shorter diagonal ⟹ `ΣD²` decreases* — describes the
+**equilibrium shape**, not the actual diagonal lengths. Landing a box on a diagonal of current length
+`d` raises its square by `2d+1` regardless of content; here the box leaves a length-1 diagonal
+(`1→0`) and lands on another (`1→4`), net **+2**.
+
+**`N ≥ 0` is not refuted** — it is positive at every `n` in the table above, and `M₁ = P − N` is an
+identity verified exactly. Only the *per-edge argument* for `N`'s sign fails, so "both signs manifest
+edge by edge" is true of `P` and false of `N` at `n ≥ 10`. Fact A **holds**, re-verified at every
+edge to n = 12 (beyond the original's n ≤ 8). The correction is applied to the 2026-08-21 audit in
+place.
+
+### Finding 2 — the combined term is not edge-wise signed, so the gap does not close here
+
+Edge-wise non-negative only for `n < 6` (too few edges to exhibit a counterexample), and **never
+after**, with no recovery through n = 12. So `M₁ > 0` does **not** follow from per-edge signs. What
+must be bounded instead is the **pos/neg mass ratio** — measured in **[22.0, 112.0]** over `n ≥ 6`,
+against the threshold 1.
+
+The negative edges are ~7–17 % of all edges, i.e. a substantial fraction rather than a thin
+exceptional set. That **argues against** a pairing/injection argument over them and **for** bounding
+the mass ratio directly — a reading of the census, not a proof that pairing cannot work.
+
+*(A third small-`n` quantifier trap, and the third of this arc: `any(n)` over the whole table reports
+"a non-negative n exists" on the strength of n = 3,4,5, where the chain is simply too small to have a
+negative edge. Reported as a threshold — where it starts failing and whether it recovers — instead.)*
+
 ## Cross-references
 
 - The sharper reduction being priced: [`…-fulman-exchangeable-pair-reduction.md`](2026-08-21-covariance-kernel-M1-fulman-exchangeable-pair-reduction.md)
