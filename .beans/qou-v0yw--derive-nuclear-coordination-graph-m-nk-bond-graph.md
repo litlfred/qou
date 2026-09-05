@@ -121,3 +121,32 @@ keystone / derived `R(q,x)` routes are in scope, no per-item sign-off.
   deferred.
 - **Anti-fit rule STILL STANDS (orthogonal to the gate):** anchor-inverted `wₙ(K)` is a fit,
   not canonical; only a *derived* bond-count may wire to production.
+
+## 2026-09-05 — RE-PROMOTED: the graph is where the binding error lives
+
+This bean was implicitly demoted on 2026-09-04 by an edge-set comparison
+reporting three edge sets within 0.6 % of one another (`qou-h7mh`). **That
+measurement was rigged and is withdrawn**: its all-pairs member had been
+renormalised to `A-1` bonds, which divides out the quadratic bond growth that
+is the only difference between a path and a complete graph.
+
+Raw, over 2548 AME nuclides
+(`computations/qbeta/qbeta_chain_cannot_carry_coulomb_or_surface_probe.py`):
+
+| edge set | median `B_AME / B_pred` | p5-p95 |
+|---|---:|---:|
+| chain | 0.886414 | 1.2250 |
+| all-pairs (raw) | 0.013558 | 9.8864 |
+
+A factor of **65.4** in the median. Neither endpoint is right — all-pairs
+over-binds as badly as the chain under-binds — which is the shape of a problem
+with a real answer strictly between them, i.e. exactly this bean.
+
+**Two of the three missing SEMF terms are forced by the edge set, by
+counting:** a path carries `2/Z` of the proton pairs (2.44 % at Z=82), so no
+letters give a `Z^2` Coulomb term; and a path's interior degree is the constant
+2, so nothing in it grows like `A^(2/3)`. See `qou-nial` for the full statement.
+The acceptance criterion in this bean — a derived coordination, no fitted
+constant — is unchanged; what changed is that it now has a measured target
+between two known-wrong endpoints instead of an assertion that it does not
+matter.

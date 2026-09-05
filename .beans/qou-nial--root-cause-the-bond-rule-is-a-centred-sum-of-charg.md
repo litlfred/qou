@@ -191,3 +191,31 @@ what to attack next.
 
 Scope-(a): a measurement under ONE assembly (the chain). It does not refute the
 product rule structurally; it prices it.
+
+## 2026-09-05 — confirmed, and it is combinatorial before it is algebraic
+
+`computations/qbeta/qbeta_chain_cannot_carry_coulomb_or_surface_probe.py`
+(8/8, 2548 nuclides). The sum-vs-product diagnosis is right, and it has a
+shorter statement that needs no letters at all:
+
+**A path has `Z-1` proton-proton edges. There are `Z(Z-1)/2` proton pairs.**
+The chain therefore carries `2/Z` of the Coulomb interaction — 100 % at Z=2,
+25 % at Z=8, 10 % at Z=20, 7.69 % at Z=26, 4 % at Z=50, **2.44 % at Z=82**.
+Coulomb is quadratic in `Z`; a path's edge count is linear. No choice of bond
+letters and no scale factor produces a `Z^2` term out of `Z-1` edges, so this
+cannot be repaired inside the chain — the *edge set* has to change.
+
+**The surface term is the same defect.** A path's interior degree is the
+constant 2, so its endpoint deficit is `A`-independent: there is no `A^(2/3)`
+in it at any `A`, for the same reason. `qou-3wvl`'s alpha-cluster ratio law
+(~2 % for n<=2, drifting +13 % by 16O) is that seen from the cluster side.
+So Coulomb and surface are ONE defect: a 1-D chain standing in for a
+saturating 3-D packing.
+
+**And Coulomb is bigger than this arc reported.** The marginal correlation
+`-0.044` was read as "essentially absent"; fitted JOINTLY with the other two
+SEMF shapes over the same nuclides the spans in `B` are asymmetry 361 %,
+surface 154 %, **Coulomb 67 %** — a ranking of 3 : 1.8 : 1, not 18 : 4 : 1,
+with joint `R^2 = 0.927`. Marginal correlations cannot separate collinear
+shapes, and heavy nuclei have large `Z`, large `N-Z` and large `A` together.
+That reading is retracted.
