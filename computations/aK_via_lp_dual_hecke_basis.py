@@ -231,10 +231,24 @@ def solve_atom_lp(atom: str) -> dict:
         })
 
     # Sum y_star over chirality-active (non-self-conjugate) blocks.
-    chi_y_sum = sum(r["y_star"] for r in per_basis if not r["self_conjugate"])
-    sc_y_sum = sum(r["y_star"] for r in per_basis if r["self_conjugate"])
-    # u_0^* shadow price of net constraint
-    u0 = result.y0_star
+    #
+    # From `y_star_str` when the MPFR backend supplied it, NOT from the float
+    # copy (bean `qou-ejuy`). The row carries BOTH — `y_star` for numeric
+    # consumers and `y_star_str` at the solver's own 50 dps — and these sums
+    # were taking the f64 one, so the aggregate was float64-limited even though
+    # the precise values were sitting beside it in the same dict. `aK_chi_active`
+    # divides `chi_y_sum` by a shadow price that can be near zero, which is
+    # exactly where lost digits matter most.
+    def _y(r):
+        v = r.get("y_star_str")
+        return mp.mpf(v) if v is not None else mp.mpf(r["y_star"])
+
+    chi_y_sum = sum((_y(r) for r in per_basis if not r["self_conjugate"]),
+                    mp.mpf(0))
+    sc_y_sum = sum((_y(r) for r in per_basis if r["self_conjugate"]), mp.mpf(0))
+    # u_0^* shadow price of net constraint — same rule.
+    u0 = (mp.mpf(result.y0_star_str) if result.y0_star_str is not None
+          else mp.mpf(result.y0_star))
 
     # u0 is the shadow price of the net constraint and DIVIDES the chirality
     # sum, so when it vanishes numerically the ratio is undefined — which the
@@ -242,9 +256,9 @@ def solve_atom_lp(atom: str) -> dict:
     # json.dump writes a bare NaN token, which is not valid JSON; the residual
     # below then inherited it. null, because undefined-by-a-zero-denominator is
     # a MISSING value, not a pole of a-K itself.
-    _u0_ok = abs(u0) > 1e-12
-    aK_chi_active = (1.0 + chi_y_sum / abs(u0)) if _u0_ok else None
-    aK_C = 1.0  # proton / neutron: A=1, closed form trivially 1
+    _u0_ok = abs(u0) > mp.mpf("1e-12")
+    aK_chi_active = (mp.mpf(1) + chi_y_sum / abs(u0)) if _u0_ok else None
+    aK_C = mp.mpf(1)  # proton / neutron: A=1, closed form trivially 1
 
     return {
         "atom": atom, "Z": Z, "N": N, "A": Z + N,
@@ -261,12 +275,16 @@ def solve_atom_lp(atom: str) -> dict:
         # Solver, precision, and the full-precision decimals behind the f64
         # fields above — otherwise the row cannot say which backend made it.
         **provenance(result),
-        "u0_star": u0,
-        "self_conjugate_y_sum": sc_y_sum,
-        "chirality_y_sum": chi_y_sum,
-        "a_K_chi_active": aK_chi_active,
-        "a_K_C_closed": aK_C,
-        "chi_vs_C_residual": (aK_chi_active - aK_C
+        # `fmt`, since these are mpf now (bean `qou-ejuy`). They were floats,
+        # so they serialised as raw float64 and read as the solver's answer at
+        # ~16 digits when it computed at 50.
+        "u0_star": fmt(u0),
+        "self_conjugate_y_sum": fmt(sc_y_sum),
+        "chirality_y_sum": fmt(chi_y_sum),
+        "a_K_chi_active": (fmt(aK_chi_active)
+                           if aK_chi_active is not None else None),
+        "a_K_C_closed": fmt(aK_C),
+        "chi_vs_C_residual": (fmt(aK_chi_active - aK_C)
                               if aK_chi_active is not None else None),
         "a_K_chi_active_undefined_reason": (
             None if _u0_ok else
@@ -355,11 +373,11 @@ def main() -> int:
         # untouched — this is the print, not the compute.
         print(f"  {r['atom']:8s}  tr_M={float(r['tr_M_atom']):.6f}  "
               f"u0*={float(r['u0_star']):.6f}  active={active_names}")
-        print(f"    sc_y_sum={float(r['self_conjugate_y_sum']):.6f}  "
-              f"chi_y_sum={float(r['chirality_y_sum']):.6f}  "
+        print(f"    sc_y_sum={float(mp.mpf(r['self_conjugate_y_sum'])):.6f}  "
+              f"chi_y_sum={float(mp.mpf(r['chirality_y_sum'])):.6f}  "
               f"a_K^chi_active="
-              f"{'n/a' if r['a_K_chi_active'] is None else format(float(r['a_K_chi_active']), '.6f')}  "
-              f"a_K^C={r['a_K_C_closed']}")
+              f"{'n/a' if r['a_K_chi_active'] is None else format(float(mp.mpf(r['a_K_chi_active'])), '.6f')}  "
+              f"a_K^C={float(mp.mpf(r['a_K_C_closed'])):.1f}")
     return 0
 
 
