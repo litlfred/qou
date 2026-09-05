@@ -47,9 +47,15 @@ the fourth is the expensive one; the fifth is not a defect at all.
              would delete the record of the repair.
 
 The first pass of this audit had only MISREF/ROT/RECORD, and it put all ten UGB
-mentions in ROT. They are WRONGPKG: `lean/UGB/GrobnerShirshov/Basic.lean` exists.
+mentions in ROT. They are WRONGPKG:
+`content/unital-groebner-bases/lean/UGB/GrobnerShirshov/Basic.lean` exists.
 A coarse class is not a neutral simplification -- it prices a one-token fix as
 unrecoverable rot.
+
+(That path is written in full deliberately. It first read
+`lean/UGB/GrobnerShirshov/Basic.lean`, which resolves from nowhere -- a dead
+pointer, in the docstring of the dead-pointer audit, caught by a check that this
+sweep's own asserted paths all exist. Illustrative paths are paths.)
 
 Usage:
     python3 scripts/dead-lean-pointer-audit.py            # summary + table
