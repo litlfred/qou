@@ -1,0 +1,87 @@
+{
+  "name": "qbeta-option-e-forced-class",
+  "description": "Option E under the formalize-first narrowing. Demanding that both admissible functionals agree on Delta is two equations in the two coordinates (chi_(3), chi_(2,1)) an admissible trace can see, so the class is forced (Lean: AdmissibleAgreementDeterminesClass, sorry-free). This computes the forced class and finds the current element Delta_S does NOT realise it -- its chi_(3) coordinate is 12.470 % off, exactly the known augmentation cell. Scope-(a): the independence requirement is POSITED, not derived; nothing wired.",
+  "assertions": [
+    {
+      "name": "trD_decomposes_in_the_admissible_character_basis",
+      "passed": true,
+      "detail": "unique solution found: 1 (overdetermined 6 eqns, 2 unknowns -- consistency is itself the admissibility check)"
+    },
+    {
+      "name": "beta_is_nonzero_so_the_system_is_nondegenerate",
+      "passed": true,
+      "detail": "beta = q**2/(q**2 + 1)**2 != 0 -- this is the Lean hypothesis `hb : b2 != 0`; without it the class is NOT forced"
+    },
+    {
+      "name": "trD_is_NORMALISED_alpha_plus_2beta_equals_one",
+      "passed": true,
+      "detail": "alpha + 2*beta = 1 exactly. chi_(3)(1)=1 and chi_(2,1)(1)=dim=2, so BOTH functionals lie on the normalised line -- the admissible family relevant here is one-parameter, not two"
+    },
+    {
+      "name": "one_minus_alpha_over_beta_is_exactly_two",
+      "passed": true,
+      "detail": "(1-alpha)/beta = 2 for ALL q. So the forced second coordinate is exactly 2*T -- and 2 is dim V_(2,1), which is what makes the condition 'scalar modulo the radical' rather than a fit"
+    },
+    {
+      "name": "chi_21_of_Delta_S_VANISHES_identically_over_Qq",
+      "passed": true,
+      "detail": "chi_(2,1)(Delta_S) = 0 exactly, while chi_(3)(Delta_S) = (1 - q**4)/(2*q**2) != 0. Delta_S is supported, modulo the radical, ENTIRELY in the trivial block"
+    },
+    {
+      "name": "so_the_two_admissible_values_are_ONE_number_rescaled",
+      "passed": true,
+      "detail": "tr_M(z_D)(Delta_S) = alpha * aug(Delta_S) exactly. The +12.470 % and -43.157 % cells are NOT two independent estimates -- they are one value scaled by alpha = (q^4+1)/(q^2+1)^2 ~ 0.5054"
+    },
+    {
+      "name": "Delta_S_is_NOT_scalar_modulo_the_radical",
+      "passed": true,
+      "detail": "b = 2a fails identically, so NO choice of admissible functional makes the Q-value independent of that choice. Scope-(b): the invariant is the vanishing of chi_(2,1) on Delta_S"
+    },
+    {
+      "name": "Delta_S_does_NOT_realise_the_forced_class",
+      "passed": true,
+      "detail": "|chi_(3)(Delta_S)| = 0.210199349901 vs forced 0.186893667557 -- the current element does not satisfy functional-independence"
+    },
+    {
+      "name": "the_chi3_gap_reproduces_the_known_augmentation_error",
+      "passed": true,
+      "detail": "chi_(3) gap = 12.4700225 % == the corpus's +12.470 % augmentation cell (calibration: the forced first coordinate IS the augmentation target, so this MUST match)"
+    }
+  ],
+  "trD_in_character_basis": {
+    "alpha": "(q**4 + 1)/(q**2 + 1)**2",
+    "beta": "q**2/(q**2 + 1)**2"
+  },
+  "forced_class": {
+    "T_target": "0.1868936675566543413712045",
+    "chi_3": "0.1868936675566543413712045",
+    "chi_21": "0.373787335113308682742409"
+  },
+  "delta_S": {
+    "chi_3": "-0.2101993499005029365687948",
+    "chi_21": "0.0",
+    "chi_3_gap_pct": "12.4700224724",
+    "chi_21_gap_pct": "-100.0"
+  },
+  "caveats": [
+    "Functional-independence is POSITED, not a theorem of the framework. Nothing compels a physical quantity to be invariant under swapping the augmentation for the Markov trace.",
+    "Does NOT exhibit an element realising the forced class, and does not claim one exists among legitimate braid-word differences.",
+    "Delta_S only for the comparison; Delta_L is a separate element and qou-avt5's finding that the two differ is untouched."
+  ],
+  "related": [
+    "QOU.QBeta.AdmissibleAgreement.agreement_determines_class",
+    "computations/qbeta/qbeta_admissible_functional_hierarchy_probe.py",
+    "docs/audits/2026-09-05-qbeta-functional-decision-options.md"
+  ],
+  "source": "bean qou-99qc (Option E)",
+  "scriptFile": "qbeta_option_e_forced_class_probe.py",
+  "scriptHash": "5671a322a0f4",
+  "scriptCommitSha": "unknown",
+  "commitSha": "e83afa708862b0b815bcd2ebe58ab8ad6b83c74d",
+  "engine": "python+sympy",
+  "computedAt": "2026-09-05T07:33:46.963983+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "The character decomposition and the forced-class formula are exact over Q(q) and pin-free; q0 enters only to evaluate the target T = Q_codata/E0 and print the comparison."
+}
