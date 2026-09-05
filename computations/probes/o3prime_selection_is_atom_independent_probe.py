@@ -90,8 +90,61 @@ would have to reverse.
 
 The cancellation is INCOMPLETE -- t-spread stays well above 1 on every row
 (1.35x to 10.2x) -- so w's ordering survives into the product.  Complete
-cancellation would flatten t to a constant and make the argmin arbitrary; that
-is not what happens, and it is why the selection is stable rather than noise.
+cancellation would flatten t to a constant and make the argmin arbitrary.
+
+    🛑 BUT "SURVIVES" IS NOT "IS SAFE", and an earlier version of this
+    docstring said the selection is "stable rather than noise".  That was
+    too strong and is corrected below: the surviving margin is THIN.
+
+HOW THIN: THE SELECTION MARGIN, AND IT IS SMALL
+
+The right question is not whether the argmin held in six rows -- it did -- but
+by how much.  Since t is linear in chi, the factor by which chi at the argmin
+would have to grow to lose the selection is exactly
+
+    margin  =  t(runner-up) / t(argmin)  =  w_ratio * chi_ratio
+
+    row  n    argmin  runner-up   margin   w ratio   chi ratio   row's chi-spread
+      0  3    [2,1]        [3]    1.563x    2.044      0.765          1.308x
+      1  3    [2,1]        [3]    1.348x    2.044      0.660          1.516x
+      2  6    [3,3]      [4,2]    1.199x    3.044      0.394          2.724x
+      3  9    [5,4]        [9]    2.108x    5.915      0.356          6.448x
+      4  9    [5,4]        [9]    1.840x    5.915      0.311          6.712x
+      5 12    [6,6]       [12]    2.049x   17.338      0.118         12.508x
+
+Read the middle columns together: the WEIGHT gap is large (2.0x to 17.3x) and
+the character anti-correlation eats almost all of it (0.77x down to 0.12x),
+leaving a margin of only 1.2x to 2.1x.  The flattening reported above IS this,
+seen from the other side.
+
+In FIVE of the six rows the margin is SMALLER THAN THE CHARACTER SPREAD THAT
+SAME ROW EXHIBITS -- at n = 12, a margin of 2.05x against characters already
+spanning 12.5x.  So a flip does not need an outlier character.  It needs a
+ratio of 1.2x-2.1x between two particular partitions, which is ordinary in
+this data.  Asserted below.
+
+CONSEQUENCE FOR THE ATOM-INDEPENDENCE RESULT.  argmin(t) == argmin(w) in 6/6
+rows is a measurement and it stands.  It is NOT a structural law with room to
+spare, and it should not be quoted as one.  The honest statement is: observed
+in every row the corpus has computed, with 1.2x-2.1x of headroom against
+character variation that routinely spans more than that.
+
+REFUTED, so nobody re-runs it: THE Q-DIMENSION IS NOT THE MISSING NOTION.
+
+The obvious repair for the imperfect dim-vs-|chi| link is that f^lambda is the
+CLASSICAL dimension while a Hecke character's natural size is the q-dimension.
+Measured at the proton q_0 by the q-hook-length formula, in both conventions,
+it is not:
+
+    f^lambda                                43/48 = 89.6 %
+    dim_q, [m] = (q^m - 1)/(q - 1)          43/49 = 87.8 %
+    dim_q, [m] = (q^(m/2) - q^(-m/2))/...   44/49 = 89.8 %
+    q^c(lambda)                              9/49 = 18.4 %   (the anti-correlation)
+    f^lambda * q^c(lambda)                  39/49 = 79.6 %
+
+No candidate is perfect, and the symmetric q-dimension's 44/49 is within one
+pair of f^lambda's 43/48 -- noise on this sample, not an explanation.  The
+q-dimensions do break the n = 6 tie, which is the only thing they buy.
 
 Both facts are asserted below and fail loudly on a row that breaks either.
 
@@ -176,11 +229,19 @@ content sum, moving 12.9x across row 5 (peak at [8,4]) -- so the monotonicity
 above is a real fact about the weight, in which the q^c factor dominates a
 non-monotone correction, and not an identity read off a closed form.
 
-WHAT IS STILL OPEN, after that reduction and this correction: WHY those three
-partitions carry an out-of-order character for those atoms and not for others.
-That is now a question about five identified pairs on three named partitions,
-not about a percentage -- and n = 6 is no longer part of it, having been an
-artifact of the tie above rather than a fact about the mathematics.
+WHAT IS STILL OPEN, after the reduction, the tie correction and the margin
+measurement: WHY those three partitions carry an out-of-order character for
+those atoms and not for others.  Five identified pairs on three named
+partitions -- not a percentage -- and n = 6 is no longer part of it, having
+been an artifact of the tie rather than a fact about the mathematics.
+
+The margin above says why that question is worth answering rather than
+academic: the discordant partitions are exactly where a character runs against
+the weight ordering, and the ordering only survives by 1.2x-2.1x.  A discordant
+partition that also happened to be the runner-up is what a flip would look
+like.  At n = 6 the runner-up IS [4,2], the discordant partition, and that row
+carries the smallest margin in the sample (1.199x).  That co-occurrence is one
+row and is not evidence on its own -- it is the thing to check next.
 
 WHAT SURVIVES FROM #6752, AND WHAT DOES NOT
 -------------------------------------------
@@ -294,7 +355,7 @@ def main() -> int:
     print(f"=== does the character move O3''s argmin? — {len(rows)} rows ===",
           flush=True)
 
-    out, by_n, tails, chain = [], {}, {}, []
+    out, by_n, tails, chain, margins = [], {}, {}, [], []
     agree = 0
     fact_max = mp.mpf(0)
     for idx, r in enumerate(rows):
@@ -330,6 +391,32 @@ def main() -> int:
         cc, dc, tc_ = concordant(cs, c_vals)
         cd, dd, td_ = concordant(cs, dim)
         cx, dx, tx_ = concordant(dim, c_vals)
+        # HOW THIN is the win?  t is linear in chi, so the factor by which
+        # chi at the argmin would have to grow to lose the selection is
+        # exactly t(runner-up)/t(argmin).
+        t_sorted = sorted(t_vals)
+        margin = t_sorted[1] / t_sorted[0]
+        runner = min((p for p in surv if p is not arg_t),
+                     key=lambda p: abs(mp.mpf(p["contribution"])))
+        # Which partitions carry a dim-vs-|chi| INVERSION on this row?  A flip
+        # would look like one of them also being the runner-up, so record the
+        # co-occurrence instead of leaving the field null (cf. bean qou-lpio).
+        dim_r = [f_lambda(tuple(p["partition"])) for p in surv]
+        discordant = sorted({
+            tuple(surv[a]["partition"])
+            for x in range(len(surv)) for y in range(x + 1, len(surv))
+            if dim_r[x] != dim_r[y] and c_vals[x] != c_vals[y]
+            and (dim_r[x] > dim_r[y]) != (c_vals[x] > c_vals[y])
+            for a in ((x,) if dim_r[x] > dim_r[y] else (y,))})
+        margins.append({"n": n, "row": idx, "margin": fmt(margin),
+                        "argmin": arg_t["partition"],
+                        "runner_up": runner["partition"],
+                        "chi_spread": fmt(c_spread),
+                        "thin": margin < c_spread,
+                        "discordant_partitions": [list(d) for d in discordant],
+                        "runner_is_discordant":
+                            tuple(runner["partition"]) in discordant})
+
         chain.append({"cs_w": cw, "cs_chi": cc, "cs_dim": cd, "dim_chi": cx,
                       "cs_dim_disc": dd, "dim_chi_disc": dx,
                       "cs_dim_tied": td_, "dim_chi_tied": tx_,
@@ -441,6 +528,38 @@ def main() -> int:
           "; ".join(f"dims {list(d)} -> concordant {sorted(v)}"
                     for d, v in split.items()) or "no split found")
 
+    # THE MARGIN.  The 6/6 agreement is a measurement, not a law with room to
+    # spare, and these two checks are what keep it from being quoted as one.
+    worst = max(mp.mpf(m["margin"]) for m in margins)
+    check("the selection margin is THIN on every row — chi at the argmin would "
+          "need to grow by only this factor to lose the selection",
+          worst < 3,
+          "margins " + ", ".join(mp.nstr(mp.mpf(m["margin"]), 5) for m in margins)
+          + f"x; worst {mp.nstr(worst, 5)}x")
+
+    thin = [m for m in margins if m["thin"]]
+    check("in a MAJORITY of rows the margin is smaller than that row's OWN "
+          "character spread — so a flip needs no outlier, just an ordinary "
+          "ratio between two particular partitions",
+          2 * len(thin) > len(margins),
+          f"{len(thin)}/{len(margins)} rows; at n=12 a margin of "
+          f"{mp.nstr(mp.mpf(margins[-1]['margin']), 5)}x against characters "
+          f"already spanning {mp.nstr(mp.mpf(margins[-1]['chi_spread']), 5)}x")
+
+    co = [m for m in margins if m["runner_is_discordant"]]
+    print("\n  where a flip would come from — is the runner-up also a partition"
+          "\n  carrying a dim-vs-|chi| inversion?", flush=True)
+    for m in margins:
+        print(f"    row {m['row']} n={m['n']:<3} argmin {str(m['argmin']):>8} "
+              f"runner-up {str(m['runner_up']):>8}  margin "
+              f"{mp.nstr(mp.mpf(m['margin']), 5):>7}x  discordant here: "
+              f"{m['discordant_partitions'] or 'none'}"
+              f"{'   <== RUNNER-UP IS DISCORDANT' if m['runner_is_discordant'] else ''}",
+              flush=True)
+    print(f"    -> {len(co)} of {len(margins)} rows. NOT evidence on its own: it is"
+          f" one row, and it happens\n       to be the row with the smallest margin"
+          f" in the sample. It is what to check next.", flush=True)
+
     tp = sum(c["pairs"] for c in chain)
     cw = sum(c["cs_w"] for c in chain)
     cd, dd = (sum(c["cs_dim"] for c in chain), sum(c["cs_dim_disc"] for c in chain))
@@ -513,7 +632,18 @@ def main() -> int:
         "3 and 4 are two atoms at n=9 with the identical dimension multiset "
         "{1,8,27,42,48} and disagree (10/10 vs 9/10), which no partition-only "
         "law could do. The 5 discordant pairs sit on three partitions: [4,2] at "
-        "n=6, [7,2] at n=9, [7,5] at n=12. CONSEQUENCE: PR #6752's "
+        "n=6, [7,2] at n=9, [7,5] at n=12. THE Q-DIMENSION IS NOT THE MISSING "
+        "notion -- measured at the proton q0, dim_q scores 43/49 (asym) and "
+        "44/49 (sym) against f^lambda's 43/48, i.e. noise, so that repair is "
+        "refuted. MOST IMPORTANT, AND IT WEAKENS THIS PROBE'S OWN HEADLINE: the "
+        "selection MARGIN t(runner-up)/t(argmin) is only 1.20x-2.11x, and in 5 "
+        "of 6 rows it is SMALLER than that row's own character spread (at n=12, "
+        "2.05x against 12.5x). The large weight gap (2.0x-17.3x) is nearly "
+        "cancelled by the character anti-correlation (0.77x-0.12x), leaving a "
+        "thin win. So argmin(t)==argmin(w) in 6/6 is a MEASUREMENT, not a "
+        "structural law with room to spare, and must not be quoted as one; an "
+        "earlier version of this probe called the selection 'stable rather than "
+        "noise', which was too strong and is corrected. CONSEQUENCE: PR #6752's "
         "reading of the selection as 'which Wedderburn blocks the bound state "
         "saturates' is WRONG and is corrected; the pricing result (y_0* nonzero "
         "and atom-dependent, where the full LP has y_0* = 0 identically) STANDS."
@@ -523,6 +653,7 @@ def main() -> int:
     w.add_parameter("q0", Q_50_DIGIT_STR)
     w.add_data("rows", out)
     w.add_data("content_sum_reduction", chain)
+    w.add_data("selection_margin", margins)
     for name, ok in CHECKS:
         w.add_assertion(name, computed="1" if ok else "0", expected="1",
                         tolerance="0",

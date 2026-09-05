@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T17:26:04.262127+00:00",
-  "commitSha": "620794f52bb4c1e9c5ff65cbbb154821106fe3fe",
+  "computedAt": "2026-09-05T17:52:01.323291+00:00",
+  "commitSha": "cba6544e3bc52794246e153d18567261dbbe07fb",
   "assertions": [
     {
       "name": "argmin(t) == argmin(w) on EVERY row — the character never moves the selection",
@@ -83,14 +83,30 @@
       "passed": true,
       "tolerance": "0",
       "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "the selection margin is THIN on every row — chi at the argmin would need to grow by only this factor to lose the selection",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "in a MAJORITY of rows the margin is smaller than that row's OWN character spread — so a flip needs no outlier, just an ordinary ratio between two particular partitions",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "o3prime-selection-is-atom-independent",
   "scriptFile": "o3prime_selection_is_atom_independent_probe.py",
-  "scriptHash": "f81394bb37a9",
-  "scriptCommitSha": "620794f52bb4c1e9c5ff65cbbb154821106fe3fe",
+  "scriptHash": "7b0602119822",
+  "scriptCommitSha": "cba6544e3bc52794246e153d18567261dbbe07fb",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -113,7 +129,7 @@
     ],
     "reproduce": "python3 -u computations/probes/o3prime_selection_is_atom_independent_probe.py"
   },
-  "description": "O3' selects a block, but NOT the bound state's block. The objective t_lambda = w_lambda * chi^lambda(W_atom) factors into an atom-INDEPENDENT weight and an atom-dependent character; measured over all six committed rows, argmin(t) == argmin(w) every time, so the character never moves the selection. Two atoms at n=3 and two at n=9 give the SAME block with DIFFERENT prices. Mechanism UNEXPLAINED: the first spread-dominance account is refuted here -- chi-spread exceeds w-spread at n=9 and the argmin is unmoved anyway. THE MECHANISM THAT DOES hold is an ANTI-CORRELATION between w and chi: concordant partition pairs are 9/49 = 18% against 24.5 expected, so a large character lands preferentially on a small weight and the product is FLATTENED relative to w on every row (never amplified) -- chi is a partial cancellation of the ordering it would have to reverse, not an independent perturbation. Exact distribution-free tail, one row per distinct n and the least extreme within each: 343/518400 ~ 6.6e-4. Cancellation is INCOMPLETE (t-spread 1.35x-10.2x), so w's argmin survives. WHY the anti-correlation holds REDUCES to the content sum: w is a strictly increasing function of c(lambda) on 49/49 pairs, so conc(w,|chi|) == conc(c(lambda),|chi|) IDENTICALLY row by row, and the effect decomposes as c up => w up (49/49 exact, 0 ties), c up => dim down (6/48), dim up => |chi| up (43/48 = 89.6%). For two-row partitions [n] has max content and dim 1 while the balanced partition has min content and max dim. CORRECTED here: those last two denominators read 49 and n=6 was called 'uncorrelated at 3/6' -- a tie ([5,1] and [3,3] both have f^lambda = 5 at n=6, the only tie in the sample) was being counted as discordant; n=6 is 3/5 = 60%, weakly POSITIVE. The two exact claims are untouched because c(lambda), w and |chi| are tie-free, now asserted. SETTLED NEGATIVELY: the dim->|chi| link is STATISTICAL, not structural -- rows 3 and 4 are two atoms at n=9 with the identical dimension multiset {1,8,27,42,48} and disagree (10/10 vs 9/10), which no partition-only law could do. The 5 discordant pairs sit on three partitions: [4,2] at n=6, [7,2] at n=9, [7,5] at n=12. CONSEQUENCE: PR #6752's reading of the selection as 'which Wedderburn blocks the bound state saturates' is WRONG and is corrected; the pricing result (y_0* nonzero and atom-dependent, where the full LP has y_0* = 0 identically) STANDS.",
+  "description": "O3' selects a block, but NOT the bound state's block. The objective t_lambda = w_lambda * chi^lambda(W_atom) factors into an atom-INDEPENDENT weight and an atom-dependent character; measured over all six committed rows, argmin(t) == argmin(w) every time, so the character never moves the selection. Two atoms at n=3 and two at n=9 give the SAME block with DIFFERENT prices. Mechanism UNEXPLAINED: the first spread-dominance account is refuted here -- chi-spread exceeds w-spread at n=9 and the argmin is unmoved anyway. THE MECHANISM THAT DOES hold is an ANTI-CORRELATION between w and chi: concordant partition pairs are 9/49 = 18% against 24.5 expected, so a large character lands preferentially on a small weight and the product is FLATTENED relative to w on every row (never amplified) -- chi is a partial cancellation of the ordering it would have to reverse, not an independent perturbation. Exact distribution-free tail, one row per distinct n and the least extreme within each: 343/518400 ~ 6.6e-4. Cancellation is INCOMPLETE (t-spread 1.35x-10.2x), so w's argmin survives. WHY the anti-correlation holds REDUCES to the content sum: w is a strictly increasing function of c(lambda) on 49/49 pairs, so conc(w,|chi|) == conc(c(lambda),|chi|) IDENTICALLY row by row, and the effect decomposes as c up => w up (49/49 exact, 0 ties), c up => dim down (6/48), dim up => |chi| up (43/48 = 89.6%). For two-row partitions [n] has max content and dim 1 while the balanced partition has min content and max dim. CORRECTED here: those last two denominators read 49 and n=6 was called 'uncorrelated at 3/6' -- a tie ([5,1] and [3,3] both have f^lambda = 5 at n=6, the only tie in the sample) was being counted as discordant; n=6 is 3/5 = 60%, weakly POSITIVE. The two exact claims are untouched because c(lambda), w and |chi| are tie-free, now asserted. SETTLED NEGATIVELY: the dim->|chi| link is STATISTICAL, not structural -- rows 3 and 4 are two atoms at n=9 with the identical dimension multiset {1,8,27,42,48} and disagree (10/10 vs 9/10), which no partition-only law could do. The 5 discordant pairs sit on three partitions: [4,2] at n=6, [7,2] at n=9, [7,5] at n=12. THE Q-DIMENSION IS NOT THE MISSING notion -- measured at the proton q0, dim_q scores 43/49 (asym) and 44/49 (sym) against f^lambda's 43/48, i.e. noise, so that repair is refuted. MOST IMPORTANT, AND IT WEAKENS THIS PROBE'S OWN HEADLINE: the selection MARGIN t(runner-up)/t(argmin) is only 1.20x-2.11x, and in 5 of 6 rows it is SMALLER than that row's own character spread (at n=12, 2.05x against 12.5x). The large weight gap (2.0x-17.3x) is nearly cancelled by the character anti-correlation (0.77x-0.12x), leaving a thin win. So argmin(t)==argmin(w) in 6/6 is a MEASUREMENT, not a structural law with room to spare, and must not be quoted as one; an earlier version of this probe called the selection 'stable rather than noise', which was too strong and is corrected. CONSEQUENCE: PR #6752's reading of the selection as 'which Wedderburn blocks the bound state saturates' is WRONG and is corrected; the pricing result (y_0* nonzero and atom-dependent, where the full LP has y_0* = 0 identically) STANDS.",
   "auditOnly": "docs/proposals/2026-09-05-operator-selection-objective-replacement.md",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736"
@@ -380,6 +396,120 @@
         "n": 12,
         "pairs": 21,
         "w_chi": 5
+      }
+    ],
+    "selection_margin": [
+      {
+        "n": 3,
+        "row": 0,
+        "margin": "1.56298485891336160490615301714282984103438884083101955897329",
+        "argmin": [
+          2,
+          1
+        ],
+        "runner_up": [
+          3
+        ],
+        "chi_spread": "1.30756622297248205680748597396195312460234823982928591930392",
+        "thin": false,
+        "discordant_partitions": [],
+        "runner_is_discordant": false
+      },
+      {
+        "n": 3,
+        "row": 1,
+        "margin": "1.34826976304312960689234439179813355430964938459176338730253",
+        "argmin": [
+          2,
+          1
+        ],
+        "runner_up": [
+          3
+        ],
+        "chi_spread": "1.51579918540911917373288165531250354705804885976872865548949",
+        "thin": true,
+        "discordant_partitions": [],
+        "runner_is_discordant": false
+      },
+      {
+        "n": 6,
+        "row": 2,
+        "margin": "1.19931398043904432515633435731957733618667616234201379513713",
+        "argmin": [
+          3,
+          3
+        ],
+        "runner_up": [
+          4,
+          2
+        ],
+        "chi_spread": "2.72420232408119342931414331528234407502873592696028852469690",
+        "thin": true,
+        "discordant_partitions": [
+          [
+            4,
+            2
+          ]
+        ],
+        "runner_is_discordant": true
+      },
+      {
+        "n": 9,
+        "row": 3,
+        "margin": "2.10788964963688003000812372509429399113876085174268286475727",
+        "argmin": [
+          5,
+          4
+        ],
+        "runner_up": [
+          9
+        ],
+        "chi_spread": "6.44841296446525448749773431742111758846258237824116536865259",
+        "thin": true,
+        "discordant_partitions": [
+          [
+            7,
+            2
+          ]
+        ],
+        "runner_is_discordant": false
+      },
+      {
+        "n": 9,
+        "row": 4,
+        "margin": "1.83950996464201267271069994089061847770266407931734906662083",
+        "argmin": [
+          5,
+          4
+        ],
+        "runner_up": [
+          9
+        ],
+        "chi_spread": "6.71217860580942750332159089142339097107971147153433161603573",
+        "thin": true,
+        "discordant_partitions": [],
+        "runner_is_discordant": false
+      },
+      {
+        "n": 12,
+        "row": 5,
+        "margin": "2.04933989159878009312468861841633373086013203432985796877914",
+        "argmin": [
+          6,
+          6
+        ],
+        "runner_up": [
+          12
+        ],
+        "chi_spread": "12.5081165415982580163716185083112314327356605748342489827545",
+        "thin": true,
+        "discordant_partitions": [
+          [
+            7,
+            5
+          ]
+        ],
+        "runner_is_discordant": false
       }
     ]
   },
