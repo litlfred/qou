@@ -67,12 +67,30 @@ verified against the measured ratios rather than assumed. Its profile at `q₀`:
 **Largest at the square end, falling toward `q²` at the long end** — so the weight protection is
 strongest exactly where the A=2 and A=3 bumps were. That is why the route looked good.
 
-**A=4 kills it, and shows why the reasoning was wrong.** Its bumps are *not* at the square end: the
-big one is at `k=3→4`, **mid-column**, where the protection is only `[7]_q/[5]_q = 1.4607` against a
-trace rise of **×3.006**. The weight loses by more than 2×, and the y-weighted mass rises with it.
-The two matching margins at A=2/A=3 were an artifact of those columns being short enough that their
-only bump *had* to land at the protected end. **Two agreeing data points across two sizes were not a
-mechanism; they were a column-length effect.**
+**A=4 kills it, and the way it dies is worse than "the bump moved".** Both A=4 rises lose:
+
+| step | position | trace rise | weight ratio | margin |
+|---|---|---|---|---|
+| `k=3→4` | mid-column | ×3.006 | `[7]/[5]` = 1.4607 | **×0.486 — weight loses** |
+| `k=5→6` | **square end** | ×7.5531 | `[3]/[1]` = **3.0437** | **×0.403 — weight loses** |
+
+My first reading of this was that the A=2/A=3 margins were a column-length artifact — those columns
+being short enough that their only bump *had* to land at the protected end. That is true of the
+mid-column rise and it is **not the main point**, because the square-end rise loses too, at the very
+place where protection is maximal.
+
+**The sharper statement, and it is the reusable one.** The weight ratio is
+`[n−2k+1]_q/[n−2k−1]_q`, which is maximised over the whole column at the square end, where it is
+`[3]_q/[1]_q = [3]_q ≈ 3.0437` — **a constant, independent of `n`**. So the y-weighting can absorb a
+trace rise of at most `[3]_q` anywhere, ever. That gives a clean necessary condition:
+
+> y-weighted monotonicity on the ≤2-row column requires **every** `|tr|/dim` rise to be
+> `< [3]_q ≈ 3.0437`.
+
+Measured, the square-end trace rise runs **×2.144 (A=2) → ×1.416 (A=3) → ×7.553 (A=4)**. It breaks
+through the ceiling at A=4. The route does not fail by a small margin that a sharper analysis might
+recover — it fails against a fixed bound that cannot be raised, because `[3]_q` is where the weight
+family tops out.
 
 ## What survives
 
@@ -88,9 +106,12 @@ next attempt should bound the tail, not order the terms.**
 
 - **A ≤ 4, one q₀.** The A=4 counterexample refutes monotonicity at that size; it says nothing about
   whether some weaker bound holds, and nothing about large `A`.
-- **The `k=6` rises at A=4 are at the square shape `(6,6)`**, where `dim` drops sharply (297 → 132).
-  I have not separated "the trace rises" from "the dimension falls" there — `|tr|/dim` can rise from
-  either. The `k=4` rise is the load-bearing one and has no such ambiguity (275 vs 154, dim rising).
+- **The `k=6` rise at A=4 is at the square shape `(6,6)`**, where `dim` drops sharply (297 → 132), so
+  `|tr|/dim` can rise from the denominator alone; I have not separated the two. **This matters for
+  the ceiling argument**, since that rise is the one that breaks `[3]_q` by the largest factor. The
+  `k=3→4` rise has no such ambiguity (dim 154 → 275, *rising*, so the ×3.006 is the trace) and it
+  independently loses its own margin at ×0.486 — so the conclusion survives even if the `k=6` rise
+  turns out to be a dimension effect. Separating them is the first thing to check next.
 - **Nothing here bounds anything.** No tail bound is attempted, and the surviving concentration
   statement is measured at three sizes, not proved.
 - **Whether the y-weighted failure persists at A=5** is unmeasured and is the obvious next check —
