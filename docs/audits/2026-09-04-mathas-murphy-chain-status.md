@@ -342,8 +342,32 @@ and that `T_w · T_w⁻¹ = T_w⁻¹ · T_w = T_1` symbolically, before any supp
 printed. The 16/32 above survived that fix; the earlier run's *different* 32/32 on (C) did
 not.
 
-**Consequence for the next agent.** State triangularity against `w⁻¹`. Mathlib has no
-Bruhat order (`grep Bruhat` over `Mathlib/GroupTheory/Coxeter/` returns nothing), and the
-corpus's `QOU/Mathlib/KazhdanLusztigBasis.lean` is an abstract `BarInvolution`/`KLBasis`
-axiomatisation with no concrete construction — so the subword order would have to be built
-before 3.9 can be stated at basis level.
+**Consequence for the next agent.** State triangularity against `w⁻¹`. The subword order
+has to be built before 3.9 can be stated at basis level: Mathlib has no Bruhat order, and
+the corpus's `QOU/Mathlib/KazhdanLusztigBasis.lean` is an abstract `BarInvolution`/`KLBasis`
+axiomatisation with no concrete construction.
+
+> **🛑 CORRECTION (same day) — the CONCLUSION above is right and the EVIDENCE I first gave
+> for it was worthless.** This paragraph read *"Mathlib has no Bruhat order (`grep Bruhat`
+> over `Mathlib/GroupTheory/Coxeter/` returns nothing)"*. That grep cannot return anything:
+> in this sandbox `.lake/packages/mathlib` holds **6990 oleans and zero `.lean` files**, so
+> every Mathlib source grep is silent whatever the truth is — and `ls` on a Mathlib source
+> path prints nothing rather than erroring, which is how it passed unnoticed.
+>
+> Re-measured by the method that works against an olean-only tree — **enumerating
+> `env.constants`** after importing `Coxeter.Length` and `Coxeter.Inversion`
+> ([`scripts/lean-probes/`](../../scripts/lean-probes/)):
+>
+>     Coxeter constants reachable: 439
+>       containing 'ruhat' : 0
+>       containing 'ubword': 0
+>
+> Corroborated by a **filename** check, valid because the olean tree is real:
+> `find … -iname '*bruhat*'` returns nothing, and the only Coxeter oleans are `Matrix`,
+> `Inversion`, `Basic`, `Length`.
+>
+> **The lesson is the method, not the answer.** *"My grep found nothing"* and *"it is not
+> there"* are different claims, and against a source-less checkout only the first is ever
+> measured. The same trap does **not** apply to this arc's earlier exchange-property
+> finding, which used environment enumeration from the start — and that is exactly why
+> that one held up.
