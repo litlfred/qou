@@ -139,3 +139,19 @@ FIRST-ORDER value. The exact one is `2 ln q_0 = 0.2086814` — from
 
 Full working and the unpinnedness result: `qou-y2np`.
 ## 2026-09-04 (qou-yau0) — one row revised on the artifact-free law: the residual's asymmetry correlation is −0.6965 (not −0.804) and the surface correlation is −0.298 (not −0.178) once the writhe artifact is removed; 'wrong by 4×' becomes 2.3×, and the surface term is a live lead again. Control reproduces the un-normalised numbers to 3 dp. docs/audits/2026-09-04-normalised-law-residual-shape.md.
+
+
+## 2026-09-05 (later) — SECOND supersession: the corpus already HAS a T(T+1)/A term
+
+Independent of the AM-GM finding above. `mass-theory` carries the Wigner energy
+`-Delta_W . T(T+1)/A`, built from SELF-CONJUGATE shadow prices
+(`unified-iterative-correction-proof.md`, `figure-eight-branching-rule-proof.md`).
+The symmetry energy has a derived route -- in the MASS channel. This bean's
+"named gap with no available route" was wrong about the corpus, not just about
+the mechanism.
+
+Tension, stated as one: self-conjugacy forces `l(lambda) = lambda_1`, so the row
+cap `l <= 2` leaves exactly three self-conjugate shapes -- `(1)`, `(2,1)`,
+`(2,2)`, none at any level >= 5. Of the two the mechanism names, `(2,2)`
+survives and `(3,1,1)` has zero Markov weight. **Whether `y_lambda = 0` forces
+`C_lambda = 0` is NOT established** and is not assumed. `qou-a5jk`.
