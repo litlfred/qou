@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-05T15:31:03Z
+updated_at: 2026-09-05T17:04:08Z
 ---
 
 **RESCOPED 2026-09-05 (owner: "rescope and continue"), after PR #6822. Read this header, not the historical one below it.**
@@ -512,3 +512,43 @@ MY RECOMMENDATION (judgement, not a finding): option 2. The truncation question 
 settled by the ruling, but the b-decay across the <=2-row column is real open mathematics with a
 closed-form hook handle and a two-row sector reduction already built, and it would be a waste to
 close that with the infrastructure framing that no longer applies.
+
+## 2026-09-05 (later still) — THREE three-point trends, three fourth points that refuted them (PR #6842)
+
+The dominant failure mode of this arc, recorded because it recurred three times in ONE session and
+each time the fourth size was cheap enough that there was no excuse:
+
+1. **The y-weighting margin table.** A=2 and A=3 gave margins x1.42 and x1.44 -- two sizes agreeing
+   to 1%, with an exact closed form behind them (y_k/y_k+1 = [n-2k+1]_q/[n-2k-1]_q, verified 1e-50).
+   A=4 refuted it: both its bumps lose, including at the square end where protection is MAXIMAL.
+   The agreement was a column-LENGTH artifact -- those columns were too short for a bump to land
+   anywhere but the protected end.
+2. **The sector reframing.** |tr_W_k|/C(n,k) decayed at A=3 and A=4 where the irrep column did not,
+   and I called it the arc's first constructive direction. A=5 refuted it (rise into k=4, x1.181):
+   2 of 4, failing at the LARGEST size.
+3. **The k=3->4 divergence RATE.** Ratios 1.23869 -> 5.36793 -> 26.4306 looked like ~4.6x/step and
+   I wrote 'fails at a rate, not by a recoverable margin'. A=6 gave 19.2541 -- growth x0.728, margin
+   IMPROVING 0.0503 -> 0.0664.
+
+WHAT SURVIVES ALL THREE CORRECTIONS:
+  * the k=3->4 step FAILS at A=4,5,6 (3 of 4), margins 0.272 / 0.050 / 0.066 vs a required 1
+  * the CEILING argument, because it is FORCED not empirical: [n-2k+1]_q/[n-2k-1]_q -> q^2 at fixed
+    k, capped at [3]_q = 3.0437 anywhere
+  * the CONTROL: plain tr(rho) rises where rho*Omega_2^P decays, so the A=3/A=4 sector behaviour is
+    about the curvature, not the weight filtration
+  * concentration, eroding: k=1 share 77.882 -> 73.499 -> 59.437 %
+
+THE LESSON, and it is not 'measure more sizes'. In every one of the three the probe's OWN OUTPUT
+carried the correct caveat -- 'NOT an asymptotic claim: 3 sizes. Read it as a rate to test, not a
+limit' is printed by magnus_fixed_k_trend_probe.py, and the sector probe's docstring says a property
+holding from the third size is the shape of a small-size artifact. The caveats were right every
+time. The failure was in the PROSE, which promoted each pattern to a mechanism anyway. A caveat
+printed by the tool and contradicted by the sentence quoting it is worth nothing.
+
+Practical rule for the next agent on this arc: an n-point trend here needs its (n+1)th point BEFORE
+it goes in a summary line, not after. The sizes cost 33s / 410s / 3020s at A=4/5/6 -- hours, not
+days, and cheaper than the corrections.
+
+STILL OPEN: whether the k=4 attribution is 'k=4', 'the arriving shape', or 'the square end' -- two
+steps cannot separate them; the A=4->5 step discriminates and comes free from the running A=5
+sector job.
