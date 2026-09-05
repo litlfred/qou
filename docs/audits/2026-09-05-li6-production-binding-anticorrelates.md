@@ -58,6 +58,35 @@ Kernel-live re-runs of the figures that had no provenance:
 **All three reproduce.** Every figure that had no provenance is confirmed
 kernel-live.
 
+## ⁵He: the plateau extends to A = 5, so ⁶Li is a CLIFF — and it is confounded
+
+`⁵He (Z=2, N=3) = −6.78956030188979` (3087.2 s), the first A = 5 point anything
+in this corpus has computed.
+
+| atom | A | Z | `B_pred` | AME2020 |
+|---|---|---|---|---|
+| ²H | 2 | 1 | −7.2711 | 2.2245662 |
+| ³H | 3 | 1 | −7.7421 | 8.4817962 |
+| ³He | 3 | 2 | −7.4562 | 7.71804132 |
+| ⁴He | 4 | 2 | −6.8286 | 28.2956624 |
+| ⁵He | 5 | 2 | **−6.7896** | 27.5606625 |
+| ⁶Li | 6 | 3 | **−3.0650** | 31.9939872 |
+
+⁵He is 0.6 % from ⁴He, so the plateau runs unbroken A = 2..5 — a monotone
+decline of **13.4 %** total — and ⁶Li then falls by **2.22×**. That is a cliff,
+not a roll-off.
+
+**The cliff is confounded, and ⁵Li is the discriminator.** ⁶Li is the first atom
+in the series with `Z = 3`. ⁵Li is also `Z = 3`, at `A = 5`. ⁵He and ⁵Li share
+`A` and differ only in `Z`, so the pair separates the two readings. Prediction
+recorded **before** the number landed:
+
+- **⁵Li ≈ −6.8** ⇒ the break is at **A = 6**; something changes with mass number
+  between 5 and 6.
+- **⁵Li ≈ −3** ⇒ the break is at **Z = 3**; it is not an `A` effect at all, and
+  the plateau is really "every atom with `Z ≤ 2`" — i.e. an artefact of never
+  having left helium.
+
 So the caution was procedurally right — they genuinely could not be verified, and
 the 17.29 % kernel/fallback split made the risk real — but the **substance is
 confirmed**, not overturned. The series was kernel-live after all.
