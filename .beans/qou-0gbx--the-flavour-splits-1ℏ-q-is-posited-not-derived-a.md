@@ -1,11 +1,11 @@
 ---
 # qou-0gbx
 title: The flavour split's (1+ℏ_q³) is posited, not derived — and summing its whole tail buys 1/323 of the gap
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-09-05T07:50:02Z
-updated_at: 2026-09-05T07:50:23Z
+updated_at: 2026-09-05T08:03:03Z
 ---
 
 
@@ -91,3 +91,11 @@ demote it to a stated posit in every block that consumes it. The measured
 `k = 2.8822` and `c = 1.3146` are the numbers a derivation must MISS or MATCH —
 they are a target to check a future derivation against, never a criterion to
 search on.
+
+## Status 2026-09-05 — measurement half LANDED, derivation half OPEN
+
+Landed on `claude/q407-self-assuming-projections-2026-08-21` (commit
+"Coulomb and surface are one defect; the flavour-split tail is 323x too small"):
+the probe, the Lean file, and the citation of the predecessor probe. Returned to
+`todo` rather than left `in-progress` so a sibling is not blocked — nobody is
+working the derivation.
