@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-05T10:03:20Z
+updated_at: 2026-09-05T10:22:52Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -399,3 +399,78 @@ in the arc.
 
 **Method note:** this surfaced only because a 10% gap appeared between two runs of my own code. At
 3% I would have read it as rounding.
+
+## 2026-09-05 (later) — THE PREMISE IS DISSOLVED, and the arc traced the wrong rho (PR #6822)
+
+Two findings, both measured, the second larger than the first.
+
+### 1. The arc traced the wrong rho (54% of letters)
+
+Every probe here builds `gens = [int(t[2]) for t in atom_braid_word_3A(Z, N)]` and applies a bare
+sigma_g. atom_braid_word_3A does NOT return a braid word (own docstring, capitals, PR #5765; rename
+rejected at 685 call sites) -- each triple (c, d, g) is the HECKE ELEMENT c*sigma_g + d*1. At A=3,
+35 letters: 16 sigma, 12 sigma^-1, 7 averaged => 19/35 = 54% applied as the WRONG operator.
+
+Complete n=9 census under both (magnus_true_hecke_element_probe.py, dps 65):
+
+  E(b) = max_{b(lam)=b} tr(X*X)/dim     rho_bare        rho_true
+    b=1                                 4147.5518       18.758498
+    b=3                                  955.31763      31.352745  <- PEAK
+    b=7                                    2.9063514    13.001647
+  strictly decreasing?                  YES             NO
+  dynamic range over all 7 levels       1427x           2.41x
+
+So the bean's theorem AS STATED is FALSE at n=9 for the atom's Hecke element, and holds cleanly
+for the positive braid the arc substituted. The hook split does not survive either.
+
+BUT the PRACTICAL claim survives and improves: y-weighted mass share at b=1 is 70.45% (bare) ->
+73.50% (TRUE), monotone decreasing in b under both. The defect breaks the theorem, not the practice.
+
+UNAFFECTED: all five arc Lean files are over a generic {R : Type*} [CommRing R] with rho an
+ARBITRARY algebra element -- a 54%-wrong input invalidated no theorem. That is what formalize-first
+bought. The Feray-Sniady prune is also unaffected (structural argument).
+
+### 2. THE BEAN'S RIGOR GAP IS CLOSED BY CONVENTION D
+
+magnus_sign_row_truncation_probe.py -- the probe this bean came from -- states its own gap:
+
+  "a rigorous sign needs Sum_{lam excluded} |y_lam tr(rho_lam Omega2_lam)| < |P_truncated|,
+   i.e. a bound on |tr(rho_lam Omega2_lam)| for the excluded HIGH-ROW lambda"
+
+Under convention D (canonical since the 2026-08-09 owner ruling) y_lam = 0 for l(lam) > 2, so every
+excluded term is zero and the inequality is trivial. The bound this bean exists to prove is
+multiplied by zero. Measured n=3..12: nonzero-y count is EXACTLY floor(n/2)+1 -- 5 of 30 at n=9,
+7 of 77 at n=12, i.e. LINEAR. Independently corroborated in the corpus:
+atom_bond_dimension_measure.py:94, "Under D the <=2-row truncation is already exact".
+
+Also re-scopes active-set-truncation-prototype.witness.json ("truncation is INVALID for
+production", ~1e-3 error vs 1e-15): under D the dropped terms carry weight exactly zero.
+
+Also identifies the 86-92% in this bean's own header: it is that probe's convention-C
+"reflection rep alone 56% -> 86% -> 92%". D-frame value at A=3 is 73.50%. NOT decomposed: how much
+of 86 -> 73.5 is C->D weights versus the 2026-09-05 word-ordering fix.
+
+### DECISION FOR THE OWNER — should this bean stay open?
+
+Not closing it myself; dissolving a GAP bean's premise is your call. The options:
+
+  1. CLOSE as superseded-by-ruling. What it means: the row-truncation rigor gap is gone, so the
+     bean's stated purpose is met. Costs: nothing to run. Risks: if some consumer applies the
+     truncation to a differently-weighted sum, that consumer still needs a bound -- I checked the
+     originating probe and atom_bond_dimension_measure, not every caller. Commits to: not funding
+     more rate work under this framing.
+  2. RESCOPE to the surviving mathematics. What it means: keep it open for "|tr(rho_lam Omega2)|
+     decays in b across the <=2-row column", explicitly NOT as a truncation blocker. Costs: the
+     rate work continues at its current pace. Risks: it is FALSE in the envelope form for the true
+     element, so the rescoped target must be stated carefully or it will be chased as before.
+     Commits to: treating it as pure mathematics, not infrastructure.
+  3. LEAVE AS IS. What it means: the header keeps a premise this session measured to be moot and a
+     convention-C 86% quoted as current. Risks: the next agent re-derives all of the above.
+
+DEFAULT IF YOU SAY NOTHING: option 3 -- the bean stays open with the corrected body appended but
+the stale header intact.
+
+MY RECOMMENDATION (judgement, not a finding): option 2. The truncation question is genuinely
+settled by the ruling, but the b-decay across the <=2-row column is real open mathematics with a
+closed-form hook handle and a two-row sector reduction already built, and it would be a waste to
+close that with the infrastructure framing that no longer applies.
