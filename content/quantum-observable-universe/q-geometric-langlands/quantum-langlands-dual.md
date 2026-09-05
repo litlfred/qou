@@ -1,4 +1,4 @@
-The Iwahori–Hecke algebra $H_n(q)$ admits a quantum Langlands dual $H_n(q^{-1})$ obtained by inverting the deformation parameter. Under Cartan-folding, this duality satisfies:
+The Iwahori–Hecke algebra $H_n(q)$ admits a quantum Langlands dual $H_n(q^{-1})$ obtained by inverting the deformation parameter, in the sense of the deformed-$W$-algebra duality $W_{q,t}(\mathfrak{g}) = W_{t,q}({}^L\mathfrak{g})$ \cite{frenkel-reshetikhin1998}. Under Cartan-folding, this duality satisfies:
 
 1. It is distinct from the bar involution $\bar q = q^{-1}$. Langlands duality acts on the Hecke algebra structure at fixed generators, whereas the bar involution acts on the generator action at fixed root data.
 2. It coincides with the reverse-limit $q \to \infty$ for non-classical specialisations.
