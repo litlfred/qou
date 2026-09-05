@@ -79,11 +79,30 @@ declaration a tidy name and closed the ticket.
 
 - **Established:** for `speedOfLight`, the twin is the generic definition at `ℝ` and is
   junk at the one point that matters. Proved.
-- **Not established:** that the same holds for the other five pairs
-  (`operationalEntropy`, `gravitationalConstant`, `informationBandwidth`,
-  `qReebVectorField`, `IsAlgebraicallyPrime`). Their shapes are analogous — generic
-  sibling, `ℝ` library twin — but *analogous is not proved*, and `IsAlgebraicallyPrime`
-  is `Prop`-valued, a different shape entirely. Each needs its own probe.
+- ~~**Not established:** that the same holds for the other five pairs.~~
+  **✅ NOW ESTABLISHED — all five proved**, in
+  [`2026-09-05-archimedean-twins-are-instantiations-probe.lean`](2026-09-05-archimedean-twins-are-instantiations-probe.lean)
+  (`lean`-direct exit 0, no `sorryAx`). The caveat is struck rather than deleted so the
+  sequence stays visible: when written, the claim rested on shape; it no longer does.
+
+  **And proving them found a defect class the shape argument could not have.** The
+  weaker-form count is **not** two, as this document anticipated — it is **four**, and
+  the fourth is a different kind of defect:
+
+  | pair | junk point | why |
+  |---|---|---|
+  | `speedOfLight` | `q = 1` | dropped invertibility; Lean's `1/0 = 0` |
+  | `operationalEntropy` | `q = 0` | dropped invertibility |
+  | `informationBandwidth` | `q = 1` | dropped invertibility — **at classicality, where the bandwidth is meant to diverge** |
+  | `gravitationalConstant` | `q = 1/2` | **not** a dropped hypothesis — a worse algebraic *route* |
+
+  The last one is the find, and nothing about the naming or the wall would have
+  surfaced it. The library computes `S_cell = η·ℏ²/(1 − ℏ²)`; the sibling computes
+  `u²/q³`. Those are equal — `cellEntropy_arch_eq_simple` proves it — but the library
+  route divides by `1 − ℏ² = (2q − 1)/q²`, which vanishes at `q = 1/2`. That
+  singularity is an **artifact of how the expression was written**, not a property of
+  the quantity. `cellEntropy_arch_junk_at_half` proves the library form returns `0`
+  there where the true value is `2`.
 - **Not established:** that `evalAt` is the bridge for all six. It is specifically
   `R_q → ℝ`; only `qReebVectorField`'s sibling is stated over `R_q`. The other four are
   generic over an *arbitrary* commutative ring, where the archimedean version is a plain
