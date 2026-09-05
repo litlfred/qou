@@ -1182,3 +1182,29 @@ a sign change that no anchor difference explains, and that remains open.
 - [ ] When the bisect resumes, pin `QOU_Q0_ANCHOR` explicitly on EVERY point,
       including the "current HEAD" baseline. The previous run happened to be
       uniformly proton by accident of invocation, not by design.
+
+### 2026-09-05 — resumption DEMONSTRATED on a real interruption
+
+The claim I was careful not to over-state now has evidence from an actual
+reclaim rather than a contrived repeat.
+
+A reclaim killed the run partway through **be9**. The checkpoint still held 9
+atoms (through li7), so be9 had to be recomputed from scratch by the
+checkpoint's reckoning — but the memo had captured its partial work (entries
+had grown 3570 -> 6275 across that window).
+
+On restart:
+
+    be9   completed in 35.59 s, adding only 179 new memo entries (6275 -> 6454)
+
+against **li7 cold at 227.94 s** in the same run — and be9 is the LARGER atom
+(A = 9 vs 7), so its cold cost is higher still. The interrupted atom resumed at
+the partition it reached, which is exactly what the memo was built to do and
+what the he4 test could not show (that kill landed too early in the atom for
+anything to be cached).
+
+So the position across four turns settles as:
+
+    mechanism            proven (bit-identical, per-partition writes)
+    coverage             98 % at li6 (14.5 s warm vs 681.7 s cold)
+    RESUMPTION           proven here: 35.6 s for an atom killed mid-flight
