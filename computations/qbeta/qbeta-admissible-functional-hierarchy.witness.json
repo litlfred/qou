@@ -1,0 +1,103 @@
+{
+  "name": "qbeta-admissible-functional-hierarchy",
+  "description": "Measures how many functionals are admissible under convention D (annihilating the (1^3) block) in three nested classes. All linear: 5 of 6 dimensions. Traces: 2 of 3. Markov traces: two points, z = q (which IS the augmentation) and z_D. The two Markov points SPAN the admissible trace space, so relaxing 'Markov trace' to 'trace' adds no new direction -- only the line through them, which is qou-99qc's one-parameter fit. The weight w* that hits Q_beta is the barycentric coordinate (1-z_D)/(q-z_D) of the inadmissible z=1 between the two roots, because Delta's support makes tr_M^z(Delta) affine in z -- the fit in closed form, not a derivation of it. Scope-(a); nothing wired.",
+  "assertions": [
+    {
+      "name": "the_1cubed_ideal_is_one_dimensional",
+      "passed": true,
+      "detail": "common (-1/q)-eigenspace of both generators has dim 1"
+    },
+    {
+      "name": "class1_all_linear_functionals_admissible_dim",
+      "passed": true,
+      "detail": "dim = 5 of 6 (one condition: kill the ideal)"
+    },
+    {
+      "name": "class2_trace_space_is_three_dimensional",
+      "passed": true,
+      "detail": "rank{chi_(3), chi_(2,1), chi_(1^3)} = 3 = the number of partitions of 3"
+    },
+    {
+      "name": "class2_admissible_trace_space_is_TWO_dimensional",
+      "passed": true,
+      "detail": "rank{chi_(3), chi_(2,1)} = 2 (the (1^3) character is the one direction removed)"
+    },
+    {
+      "name": "class2_chi_3_annihilates_the_ideal",
+      "passed": true,
+      "detail": "chi_3(e_sign) = 0"
+    },
+    {
+      "name": "class2_chi_21_annihilates_the_ideal",
+      "passed": true,
+      "detail": "chi_21(e_sign) = 0"
+    },
+    {
+      "name": "class2_chi_1cubed_does_NOT_annihilate_it",
+      "passed": true,
+      "detail": "chi_(1^3)(e_sign) = -q**3 - 2*q - 2/q - 1/q**3 -- the control: the removed direction is genuinely removed"
+    },
+    {
+      "name": "class3_trM_at_z_equals_q_IS_the_augmentation",
+      "passed": true,
+      "detail": "tr_M^{z=q} == chi_(3) on all six basis elements (so the second root adds no third option)"
+    },
+    {
+      "name": "class3_the_two_Markov_points_SPAN_the_admissible_trace_space",
+      "passed": true,
+      "detail": "rank{aug, tr_D} = 2, rank{aug, tr_D, chi_(3), chi_(2,1)} = 2 -- equal, so relaxing 'Markov trace' to 'trace' adds NO new direction, only the line through the two already named"
+    },
+    {
+      "name": "control_net_is_outside_the_admissible_trace_space",
+      "passed": true,
+      "detail": "rank{aug, tr_D, net} = 3 > 2 (reproduces qou-99qc's rank-3 exclusion from a different construction)"
+    },
+    {
+      "name": "trM_of_Delta_is_AFFINE_in_z",
+      "passed": true,
+      "detail": "tr_M^z(Delta) = q**2/2 - q*z - 1 + z/q + 1/(2*q**2) -- degree 1 in z, which is WHY one weight always exists"
+    },
+    {
+      "name": "w_star_is_the_barycentric_coordinate_of_z_equals_1",
+      "passed": true,
+      "detail": "(1 - z_D)/(q - z_D) = -(q**3 - q**2 - 1)/q = qou-99qc's w*. So w* is where z=1 sits between the two admissible roots -- a restatement of one-equation-one-unknown, not a derivation"
+    },
+    {
+      "name": "w_star_carries_the_supergolden_polynomial",
+      "passed": true,
+      "detail": "w* = -(q^3 - q^2 - 1)/q. The same factor appears in N(q,1) = (q - 1)*(q**3 - q**2 - 1), because both measure how far z=1 is from being a root -- shared cause, not independent evidence"
+    }
+  ],
+  "admissible_dimensions": {
+    "all_linear_functionals": "5 of 6",
+    "trace_functionals": "2 of 3",
+    "markov_traces": "2 points (z = q, z_D); z = q IS the augmentation"
+  },
+  "w_star": {
+    "closed_form": "(1 - z_D)/(q - z_D) = -(q^3 - q^2 - 1)/q",
+    "at_proton_pin": "0.7788444125403583684826875",
+    "status": "the fit in closed form; NOT derived"
+  },
+  "caveats": [
+    "Does NOT widen the honest options. The extra admissible traces are exactly the line through the two already named.",
+    "Dropping the trace condition does add directions (5 of 6), but a non-trace functional is not a Markov trace and loses the link to knot invariants that motivates the construction.",
+    "Says nothing about which functional SHOULD be used -- qou-99qc's owner call is untouched.",
+    "Delta_S only; qou-avt5's finding that Delta_S is not the exhibited nucleon-word difference is unaffected."
+  ],
+  "related": [
+    "QOU.QBeta.ConventionDAdmissibleRoots",
+    "computations/qbeta/qbeta_admissible_span_prune_probe.py",
+    "computations/qbeta/qbeta_published_form_is_the_inadmissible_z1_probe.py"
+  ],
+  "source": "bean qou-99qc",
+  "scriptFile": "qbeta_admissible_functional_hierarchy_probe.py",
+  "scriptHash": "4e1751dfa35c",
+  "scriptCommitSha": "unknown",
+  "commitSha": "34d12979b350d7c9af530ecc46b3a1b982a84da8",
+  "engine": "python+sympy",
+  "computedAt": "2026-09-05T06:20:34.784283+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "Display only. Every dimension and every identity is exact over Q(q) and pin-free; q0 enters solely to print w*(q0)."
+}

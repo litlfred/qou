@@ -515,3 +515,71 @@ diagnostics both **before** and **after** the edit, against the real import cone
 Scope-(a) on the physics; the inadmissibility is scope-(b) with the root
 computation as the cited invariant. Nothing wired, no content block edited, no
 `c_k` proposed.
+
+
+## 2026-09-05 (2) — "closed at two" is closed in ONE class. The hierarchy, measured.
+
+Owner asked, on the two admissible options: *"what are options for admissible?
+others?"*
+
+Probe: `computations/qbeta/qbeta_admissible_functional_hierarchy_probe.py`
+(13/13, exact sympy over ℚ(q); every dimension computed, none asserted).
+
+This bean says the admissible set is **"closed at two elements"**. That is true
+and it is closed **within the one-parameter Markov family `tr_M^z`** — it comes
+from solving `y_(1³)(z) = 0`, a quadratic. It was never a statement about every
+functional that descends. Measured across three nested classes:
+
+| class | admissible subspace |
+|---|---|
+| all linear functionals on `H₃(q)` | **5 of 6** dimensions |
+| **trace** functionals (`φ(ab) = φ(ba)`) | **2 of 3** |
+| Markov traces `tr_M^z` | **2 points** — `z = q`, `z = z_D` |
+
+The `(1³)` ideal is computed as the common `(−1/q)`-eigenspace of both
+generators (dim 1, so admissibility is exactly one linear condition), not
+quoted.
+
+### The load-bearing result: relaxing the class adds NO new direction
+
+    rank{aug, tr_M(z_D)}                        = 2
+    rank{aug, tr_M(z_D), χ_(3), χ_(2,1)}        = 2      ← equal
+
+**The two Markov points already SPAN the admissible trace space.** So going
+from "Markov trace" to "any trace" buys only the *line through the two you
+already have* — which is precisely the one-parameter fit this bean refuses. It
+does not widen the honest options.
+
+Going further, to **all linear functionals**, does add three dimensions. But a
+non-trace functional is not a Markov trace, and the trace property is what
+connects the functional to knot invariants at all. That is the trade, stated
+rather than taken.
+
+Control included: `net` sits outside the admissible trace space
+(`rank{aug, tr_D, net} = 3`), reproducing this bean's rank-3 exclusion from a
+different construction — the character basis rather than the covector one.
+
+### And `w*` is the fit in closed form, not a derivation
+
+`Δ` is supported on `{γ, σ₀, σ₁}`, so `tr_M^z(Δ) = h²/2 − h·z` is **affine in
+`z`** — which is *why* a weight always exists. Matching any target is then
+interpolation of the parameter:
+
+    w* = (1 − z_D)/(q − z_D) = −(q³ − q² − 1)/q      (= this bean's w*, verified)
+
+So `w*` is just where the inadmissible `z = 1` sits between the two admissible
+roots. A restatement of one-equation-one-unknown.
+
+**A near-miss worth recording.** `w*` carries the factor `q³ − q² − 1`, and so
+does `N(q,1) = (q−1)(q³−q²−1)` — the admissibility numerator at the
+inadmissible point. That looked like structure. It is a **shared cause**, not
+independent evidence: both quantities measure how far `z = 1` is from being a
+root, so the same polynomial must appear in both. Recorded because the
+coincidence is attractive and would support a "the weight is forced" reading
+that the algebra does not license.
+
+**Answer to the question as asked: no, there are no other honest options.** The
+two remain the two; everything between them is a fit; everything outside them
+costs the trace property.
+
+Scope-(a); nothing wired, no content block edited, no `c_k` proposed.
