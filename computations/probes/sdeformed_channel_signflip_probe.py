@@ -74,6 +74,13 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+# This producer hand-builds its assertion payload and `json.dump`s it, so
+# `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
+# reached, and a re-run would re-emit the float literals and undo PR #5910's
+# drain for this file alone. `_tol` routes each DECLARED tolerance through
+# that guard; it returns a COMPUTED one unchanged, so those stay floats and
+# stay counted by the raw-float64 ratchet. Bean qou-9tqx.
+from qou_substrate.witness import declared_tolerance as _tol  # noqa: E402
 
 set_compute_dps()
 
@@ -147,7 +154,7 @@ def main() -> int:
     sign_flip = S_MUON > 0 > S_PROTON
     assertions.append({
         "name": "tau_purely_imaginary_modulus_sqrt3",
-        "computed": float(tau_re_err + tau_mod_err), "expected": 0.0, "tolerance": 1e-6,
+        "computed": float(tau_re_err + tau_mod_err), "expected": 0.0, "tolerance": _tol(1e-6),
         "passed": bool(tau_re_err < 1e-6 and tau_mod_err < 1e-6),
         "source": "closed-form longitude v(u)/u: Re→0, |τ|=√3 (±i√3 ℚ(√−3) cusp "
                   "modulus; sign is a log-branch convention)"})
@@ -180,12 +187,12 @@ def main() -> int:
           f"  → vanishes on the DIAGONAL, not the axis")
     assertions.append({
         "name": "leading_form_matches_integrated_to_O_u4",
-        "computed": float(max_dev_lead), "expected": 0.0, "tolerance": 1e-3,
+        "computed": float(max_dev_lead), "expected": 0.0, "tolerance": _tol(1e-3),
         "passed": bool(max_dev_lead < 1e-3),
         "source": "Im 𝔙₄₁ = κ(Re²u−Im²u), κ=√3/4 (integrated closed form, r=0.1)"})
     assertions.append({
         "name": "imV_vanishes_on_diagonal_not_axis",
-        "computed": float(diag_vanish), "expected": 0.0, "tolerance": 1e-4,
+        "computed": float(diag_vanish), "expected": 0.0, "tolerance": _tol(1e-4),
         "passed": bool(diag_vanish < 1e-4),
         "source": "Im 𝔙₄₁(Re u = Im u) = 0 (harmonic quadratic form Re(u²))"})
 

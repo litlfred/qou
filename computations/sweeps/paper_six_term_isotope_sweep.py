@@ -144,6 +144,13 @@ _T1_CACHE_B: dict | None = None
 # Default T1 source.  Set to "model-a" via environment to revert.
 import os as _os  # noqa: E402
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+# This producer hand-builds its assertion payload and `json.dump`s it, so
+# `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
+# reached, and a re-run would re-emit the float literals and undo PR #5910's
+# drain for this file alone. `_tol` routes each DECLARED tolerance through
+# that guard; it returns a COMPUTED one unchanged, so those stay floats and
+# stay counted by the raw-float64 ratchet. Bean qou-9tqx.
+from qou_substrate.witness import declared_tolerance as _tol  # noqa: E402
 _T1_DEFAULT_SOURCE = _os.environ.get("QOU_T1_SOURCE", "model-b")
 
 
@@ -1510,7 +1517,7 @@ if __name__ == "__main__":
             "passed": (e0_mode_used == "proton-fit"
                        and abs(float(proton_row["err_pct"])) < 1e-6)
                       or (e0_mode_used == "substrate"),
-            "tolerance": 1e-6,
+            "tolerance": _tol(1e-6),
             "source": "thm:knot-mass-formula-unified § proton calibration",
             "note": ("HARD BREAK 2026-05-12 (P1.A): under substrate "
                      "e0_mode the proton residual is the structural "

@@ -94,6 +94,23 @@ first run.
                committed; `knot_volumes` writes to `substrate/`, which the
                stem convention does not reach).
 
+               `knot-volumes.py` has since been RESOLVED and fixed: it names
+               its output only in its docstring, unquoted, so the path match
+               missed it — a real latent producer (11 sites) filed under a
+               tool limit. That is what this verdict is for, and it is why it
+               must never be read as a clean bill.
+
+               The four that remain are triaged and are NOT work:
+                 - `witness_integer_field_audit.py` and
+                   `test_q0_migration_tolerance_triage.py` — self-test
+                   fixtures whose floats are the thing under test;
+                   stringifying one would delete the case it asserts.
+                 - `witness_constant_staleness.py` — the same, inside
+                   `_selftest()`.
+                 - `q0_migration_tolerance_triage.py` — writes its payload to
+                   STDOUT, never to a file, so there is no artifact to
+                   re-dirty.
+
 *** TWO PASSES, BECAUSE THEY ANSWER DIFFERENT QUESTIONS ***
 
 Pass 1 scans EVERY committed witness, not only those reachable from a matched
@@ -227,7 +244,12 @@ def _candidate_witnesses(py: Path) -> list[Path]:
         text = py.read_text(encoding="utf-8", errors="replace")
     except OSError:
         text = ""
-    for m in re.finditer(r'["\']([A-Za-z0-9_./-]+\.witness\.json)["\']', text):
+    # Unquoted too: `knot-volumes.py` names its output only in its DOCSTRING
+    # ("computations/substrate/knot-volumes.witness.json"), so a quote-requiring
+    # match filed a real latent producer under UNRESOLVED — its witness lives in
+    # a sibling directory the stem convention also cannot reach. The path must
+    # still exist on disk, so relaxing this cannot invent a candidate.
+    for m in re.finditer(r'([A-Za-z0-9_./-]+\.witness\.json)', text):
         rel = m.group(1)
         for base in (py.parent, COMPUTATIONS, ROOT):
             p = (base / rel).resolve()
