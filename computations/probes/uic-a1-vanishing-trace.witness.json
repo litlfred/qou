@@ -1,0 +1,121 @@
+{
+  "engine": "python+mpmath+rust",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T06:49:46.793355+00:00",
+  "commitSha": "4f31302d02f3c56d49721c4809b669c397ed3e14",
+  "assertions": [
+    {
+      "name": "q_hook is positive on every partition",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_a1_vanishing_trace_probe"
+    },
+    {
+      "name": "no partition carries a genuinely negative scale",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_a1_vanishing_trace_probe"
+    },
+    {
+      "name": "y_0 = 1/[k]_q! IS min_lambda(w/d), so y_lambda >= 0 by construction",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_a1_vanishing_trace_probe"
+    },
+    {
+      "name": "the trace FALLS with precision, i.e. it is zero not small",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_a1_vanishing_trace_probe"
+    },
+    {
+      "name": "log_norm is 0, so no rescale compensates the vanishing trace",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_a1_vanishing_trace_probe"
+    },
+    {
+      "name": "exactly one (partition, step) pair vanishes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_a1_vanishing_trace_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "uic-a1-vanishing-trace",
+  "scriptFile": "uic_a1_vanishing_trace_probe.py",
+  "scriptHash": "e81479cb9dc0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/uic_a1_vanishing_trace_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/uic_a1_vanishing_trace_probe.py"
+  },
+  "description": "Gap qou-sv7h: unified_iterative_correction is negative because at A=1 the (2,1) Markov trace is exactly zero, so its ln is -infinity against a provably non-negative scale. Precision-tracked: |Tr| falls ~10 decades per 50 dps of added precision, log_norm stays 0, and a census over k<=5 finds exactly one such pair in 34.",
+  "auditOnly": "docs/audits/2026-09-05-uic-a1-vanishing-trace.md",
+  "parameters": {
+    "q0": "1.10997858275138080759166909561076887987449912187360000000000"
+  },
+  "data": {
+    "precision_scan_2_1_A1": [
+      {
+        "kernel_dps": 20,
+        "abs_trace": "5.08219768352580203440000000000000000000000000000000000000000e-21",
+        "log_norm": "0.0",
+        "ln_abs_trace": "-46.7285431699681166583957260074526750115977539571143584857054"
+      },
+      {
+        "kernel_dps": 50,
+        "abs_trace": "2.67276471009219564614053646715148187881519688010500000000000e-51",
+        "log_norm": "0.0",
+        "ln_abs_trace": "-116.448726334070811982094996404973663436684022572522900912345"
+      },
+      {
+        "kernel_dps": 100,
+        "abs_trace": "3.92733017097511927193465902459014348016916669028174128168905e-62",
+        "log_norm": "0.0",
+        "ln_abs_trace": "-141.392315916417445296273998681437735536147464871510275732097"
+      }
+    ],
+    "vanishing_pairs": [
+      {
+        "partition": "(2, 1)",
+        "step_A": 1,
+        "drop_decades": "10.8328633144725807557129357417388877514850157544111917312006"
+      }
+    ],
+    "n_partitions_scanned": 682
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
