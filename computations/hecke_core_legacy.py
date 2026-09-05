@@ -1073,8 +1073,22 @@ def _build_ysn_matrices(partition, sparse_threshold=32):
                         M[i][i] = q0 if rho > 0 else -qi
                     processed.add(i)
                     continue
-                a_rho = h / q_int(rho)
+                # Hoefsmit/Young seminormal diagonal entry at axial
+                # distance rho.  h / q_int(rho) was WRONG: it satisfies the
+                # quadratic relation (trace h, det -1) but violates the BRAID
+                # relation, so the family was not a representation of H_n(q)
+                # -- constant defect 0.7315 on every partition
+                # (docs/audits/2026-08-31-ysn-matrices-are-not-a-representation.md,
+                # bean qou-4m9u).  Identified against the Rust MPFR reference
+                # pyhecke_native.seminormal_matrices_mpfr: 37/37 generators
+                # over 9 partitions agree to 4e-51, where h/q_int(rho) agreed
+                # on only the 11 with no mixing block.  At rho = -2 this is
+                # -1/(q(q^2+1)), the value qou-4m9u derived symbolically; at
+                # rho = +2 it is q^3/(q^2+1) = z_D, the convention-D Markov
+                # parameter.
+                a_rho = h / (1.0 - q0 ** (-2 * rho))
                 a_neg = h - a_rho
+                # det = -1  =>  b^2 = a(h-a) + 1.  This was already correct.
                 bsq = a_rho * a_neg + 1.0
                 off = math.sqrt(abs(bsq)) * (1.0 if bsq > 0 else -1.0)
                 if use_sparse:
