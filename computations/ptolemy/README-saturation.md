@@ -44,3 +44,19 @@ every stage under the broken reduction -- 6 solutions, 4 self-dual / 2 complex t
 correct number fields, clean lift -- because its solutions happen to avoid the spurious
 locus. A calibration that passes is evidence about the cases it covers, never proof of
 soundness. Only the round trip discriminates.
+
+## Measured limits in this container (15 GB RAM)
+
+| system | outcome |
+|---|---|
+| L6a4 c1 **unreduced** (28 vars, deg 27), Singular `std` mod 32003 | **needs > 10 GB — halts.** Twice reproduced: 9.1 GB at 20 min on the first attempt, 8.87 GB at 19 min then `halt 14` at the 10 GB cap on the second. Growth is accelerating (4.4 GB at 15 min), so a marginally higher cap will not help. |
+| L6a4 c1 unreduced, **msolve** mod 32003 | **structurally impossible** — msolve announces `for esz = 33554432, segmentation fault will follow` and exits 139. An internal allocation ceiling, not a `ulimit`; raising memory does nothing. Three reproductions. |
+| L6a4 c1–c3 **FKR-reduced + saturated**, Singular `sat` + `std` mod 32003 | 340–530 MB, flat. |
+
+So the reduction is not optional for this manifold in this container -- it is a ~20x memory
+reduction on the same question. The defect was never that FKR failed to reduce; it was
+that the reduction was unsound. Saturation restores soundness while keeping the tractability.
+
+**Singular halts gracefully at a `ulimit`** (`halt 14`, exit 14) rather than taking the
+container down, so capping a speculative run is cheap insurance. msolve does not -- it
+segfaults.
