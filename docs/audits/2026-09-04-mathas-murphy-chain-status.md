@@ -234,3 +234,46 @@ bridge from **row-standard `μ`-tableaux to coset representatives** — Mathas' 
 a *composition*-shaped tableau — without which "`m_{st}` is an `R`-combination of
 `m_{uv}`" cannot even be stated. That is the next thing to build, and it is combinatorial
 rather than algebraic.
+
+### 🛑 CORRECTION (2026-09-05, same day, minutes later): `d(t)` IS in the corpus
+
+The section immediately above ends: *"the bridge from **row-standard `μ`-tableaux to
+coset representatives** — Mathas' `d(t)` … — is absent"*. **That is false**, and I wrote
+it without running the corpus-grep checklist on that specific claim — the same failure
+this document already records once, three sections up.
+
+[`QOU/BraidKnot/TableauPerm.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/TableauPerm.lean)
+supplies exactly it, and its own docstring opens *"`d(t)`: the permutation carrying the
+reference tableau to `t`"*:
+
+| declaration | content |
+|---|---|
+| `refTab μ` | the row-superstandard reference `t^μ` |
+| `dOf t` | **`d(t)`** |
+| `dOf_unique`, `dOf_smul` | characterisation, and `t = w • g ⇒ d(t) = w · d(g)` |
+| `dOf_injective` / `_surjective` / `equivPerm` | tableaux `≃` permutations |
+| `length_dOf_smul_eq_add_iff` | Mathas' length condition, reduced to an inversion claim |
+
+`RowStandardTableau.lean` likewise has `IsRowStandard`, `IsColStandard`, `IsStandard`,
+all decidable, with `RowStandardTab μ` a `Fintype`.
+
+**What is genuinely missing is narrower, and the correction shrinks it twice over.**
+`Specht.Tableau μ` is indexed by a `YoungDiagram`, i.e. a **partition** shape; Mathas 3.9
+is about a **composition** `μ`, whose rows need not decrease, so `dOf` does not apply to
+it as stated. The remaining gap is therefore *composition-shaped* tableaux only.
+
+**And that gap is smaller than it looks, because `IsDistinguished` already IS row
+standardness.** Read `d : Fin n → Fin n` as *entry ↦ cell* — which is how `dOf` is
+oriented. The cells of row `i` of a composition are the consecutive positions
+`sizeUpTo i .. sizeUpTo i + blocksFun i − 1`, so `c.index` is exactly "which row is this
+cell in", and
+
+    IsDistinguished c d  ≡  ∀ a b, c.index (d a) = c.index (d b) → a < b → d a < d b
+
+says precisely *entries increase left-to-right along every row* — row standardness,
+verbatim. So Prop 3.3, proved today, already reads: **every right coset of `S_μ`
+contains exactly one row-standard composition tableau.** What is left is the tableau
+*vocabulary* wrapping a fact that is proved, not a new proof.
+
+**So "the next node is combinatorial rather than algebraic" overstates it too.** Both
+halves of that sentence were written from an absence I had not measured.
