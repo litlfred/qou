@@ -1,11 +1,11 @@
 ---
 # qou-9tqx
 title: The artifact-level tolerance drain is undone by any producer re-run — 26 of 33 producers hand-build
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T20:54:48Z
-updated_at: 2026-09-04T20:55:30Z
+updated_at: 2026-09-05T07:18:27Z
 ---
 
 ## What is true
