@@ -11,9 +11,12 @@ is genuinely about `H_n(q)`.
 
 `Ref: [geckpfeiffer2000]` Thm 7.2.6 and §8.1.  The citation stays: Geck and
 Pfeiffer proved this, and formalising a piece of it does not change that.  What
-changes is its *role* — for what is proved below it is attribution, and for the
-identity left open (`tau_Tw_mul_Tw`, stated as a hypothesis rather than an
-axiom) it remains load-bearing.
+changes is its *role*: it is attribution.  The structure-constant identity that
+the two determinant theorems below take as a **hypothesis** is discharged in
+`QOU.Hecke.TauStructureConstants` (`tau_Tw_mul_Tw`), which also supplies the
+unconditional `tauGram_det` and `tauGram_det_ne_zero`.  The hypothesis form is
+kept here deliberately: the implication is what this file is about, and it is
+provable without any Hecke input beyond `Tw_mul_Tw`.
 
 ## `τ` is definable in one line, and that was the surprise
 
@@ -56,43 +59,16 @@ the two together give **`s_λ = 0` for some `λ` ⟹ `H_n(q)` is not split
 semisimple**.  The converse — the direction `SchurElementCriterion` is usually
 wanted for — is a separate argument (Tits deformation) and is not here.
 
-## The remaining induction, worked out — and it is smaller than it looked
+## The induction, and why it is smaller than the textbook statement
 
-`QOU.Hecke.TwBasis.σ_mul_Tw` is the **full** structure-constant table, up and
-down cases together, so the induction is available.  It does not close on the
-naive route — `τ(σ_i · z) = q · [T_{s_i}-coefficient of z]` is a *different*
-coordinate — and Geck–Pfeiffer 8.1.1 is usually stated as an induction on
-`ℓ(v) + ℓ(w)` using a **common** descent, which needs an exchange-condition
-argument that Mathlib does not have (measured: no occurrence of `xchange`
-anywhere in `Mathlib/GroupTheory/Coxeter/`).
-
-**It does not need one.**  Induct on `ℓ(v)` alone, taking *any* left descent
-`i` of `v` (Mathlib's `CoxeterSystem.exists_leftDescent_of_ne_one`), and split
-on whether `i` is a right descent of `w`.  Write `v' = s v`, `w' = w s`.  In
-this file's handedness (`T_a T_b = T_{ba}`) that gives `T_v = T_{v'} T_s`, and
-then:
-
-* **`i` not a right descent of `w`**: `T_s T_w = T_{w s}`, so
-  `τ(T_v T_w) = τ(T_{v'} T_{w'})` with `ℓ(v')` smaller.  The induction
-  hypothesis' delta is `w s = v'⁻¹`, i.e. `w = v⁻¹` — which forces
-  `ℓ(w s) < ℓ(w)`, contradicting the ascent.  So both sides vanish.
-* **`i` a right descent of `w`**: `T_w = T_s T_{w'}`, so
-  `T_v T_w = T_{v'} T_s^2 T_{w'} = (q-1) T_{v'} T_w + q T_{v'} T_{w'}`,
-  both at `ℓ(v')`.  The first term's delta is `w = v'⁻¹ = v⁻¹ s`, which forces
-  `ℓ(v⁻¹ s) < ℓ(v⁻¹)` from the left descent and `ℓ(v⁻¹) < ℓ(v⁻¹ s)` from the
-  right — contradictory, so it drops.  The second gives
-  `q · δ_{w, v⁻¹} q^{ℓ(v) - 1}`, which is the claim.
-
-Both branches turn on the same observation, and it is the whole trick: the
-`IsLeftDescent`/`IsRightDescent` pair at the *same* `i` is contradictory once
-`w` is pinned to `v⁻¹` or `v⁻¹ s`, because `ℓ(s v) = ℓ(v⁻¹ s)` by
-`CoxeterSystem.length_inv`.
-
-What the corpus still owes: the two decompositions above as `Tw` lemmas (both
-are `Tw_mul_Tw` under the right length hypothesis), `T_s^2 = (q-1) T_s + q`
-(the `v = s` case of `σ_mul_Tw`), and the bridge from this corpus's concrete
-descent condition `v i.castSucc < v i.succ` to `CoxeterSystem.IsLeftDescent`.
-Tracked in bean `qou-kwoa`.
+Discharged in `QOU.Hecke.TauStructureConstants`.  Recorded here because the
+route matters: Geck-Pfeiffer 8.1.1 is usually run on `ℓ(v) + ℓ(w)` with a
+descent common to *both* factors, which needs the exchange condition — and
+**Mathlib has none** (measured: no occurrence of `xchange` anywhere in
+`Mathlib/GroupTheory/Coxeter/`).  Inducting on `ℓ(v)` alone with an *arbitrary*
+left descent avoids it entirely, because a left descent of `v` and a right
+descent of `w` at the same `i` are contradictory once `w` is pinned to `v⁻¹` or
+`v⁻¹ s_i`.  The `(q-1)` term therefore never contributes.
 -/
 
 namespace QOU.Hecke.TwBasis
