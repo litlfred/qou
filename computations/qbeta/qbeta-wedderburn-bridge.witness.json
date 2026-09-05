@@ -63,6 +63,20 @@
       "expected": true,
       "passed": true,
       "note": "the opaque and the fourth-axiom reasons are retired; the shape objection is not. A reader must not read 'the embedding was built' as 'the clause was discharged'"
+    },
+    {
+      "name": "the_linear_no_go_is_a_lean_theorem",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the shape objection is no longer only prose. Under linearity -- already assumed for the Markov trace -- three trace-factoring functionals at one partition are dependent"
+    },
+    {
+      "name": "and_the_block_is_wider_than_its_trace",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "f^{(2,1)}=2 so the block is M_2(R), four dimensions to the trace's one. Recording the ROOM as well as the no-go, so this is not read as the clause being refuted"
     }
   ],
   "allPassed": true,
@@ -86,8 +100,8 @@
     "signature": "noncomputable def wedderburnEmbedOf {n : ℕ} (h : RSKDimIdentity n) (x : WedderburnDecomposition n) : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ := Matrix.reindex (regIndexEquiv h) (regIndexEquiv h) (blockDiagonal x) /-- And it is injective, so it deserves the name \"embedding\". -/ theorem wedderburnEmbedOf_injective {n"
   },
   "provenance": {
-    "headSha": "7e75622bdfcee90084ae5af644ed9df33778f003",
+    "headSha": "74c151ae5411f5df8b2e4f7a157edd32d9404008",
     "producer": "computations/qbeta/qbeta_wedderburn_bridge_probe.py",
-    "elapsed_s": 5.796
+    "elapsed_s": 15.05
   }
 }
