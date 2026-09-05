@@ -13,6 +13,6 @@ export default remark({
   ],
   uses: [
     "prop:compound-beta-shell-calibration",
-    "prop:three-calibration-discipline",
+    "def:three-calibration-discipline",
   ],
 });

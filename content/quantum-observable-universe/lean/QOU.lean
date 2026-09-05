@@ -3,6 +3,13 @@
 import QOU.AlgebraicSubstrate.QGenericBase
 import QOU.AlgebraicSubstrate.QGenericBaseReal
 import QOU.AlgebraicSubstrate.TwistSignTorsor
+import QOU.BringsSurface.CoveringDegreeRamification
+import QOU.Eightfold.AmbientInvolutionDoesNotDecideType
+import QOU.Eightfold.CommutativeImageDegeneration
+import QOU.Eightfold.ConnectedSumAnnihilator
+import QOU.Eightfold.ContactDistributionRank
+import QOU.Eightfold.HyperbolicVolumeFormType
+import QOU.Eightfold.IndecomposableQuotientPrune
 import QOU.Eightfold.SelfDualSectorConfinement
 import QOU.Eightfold.OctonionicSu3RankObstruction
 import QOU.Eightfold.FlavourColourDiscriminator
@@ -123,6 +130,8 @@ import QOU.MathlibExt.OctonionSU3Stabilizer
 import QOU.MathlibExt.OctonionSU3BracketClosure
 import QOU.MathlibExt.OctonionColourActionBaseModule
 import QOU.MathlibExt.OctonionComplexStructure
+import QOU.QuantumObservableUniverse.CalculusDimensionObstruction
+import QOU.QuantumObservableUniverse.SelfDualityDegree
 import QOU.StandardModel.ColourStabilizerAction
 import QOU.StandardModel.ThetaQcdFramingCp
 import QOU.StandardModel.SecondCrossingInvariant
@@ -230,6 +239,10 @@ import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry
 import QOU.MassDerivation
+-- Also brings QOU.Mass.ChainTraceFactor under the umbrella; nothing had
+-- imported it, so it was invisible to blueprint/doc-gen import walks.
+import QOU.Mass.IntraOrderingInvariance
+import QOU.Mass.FreeEnergyReadingIsSigned
 import QOU.MassTheory.MarginalRatioExtensivity
 import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.NeutronProtonEMSign
@@ -418,7 +431,7 @@ import QOU.ParticleInteractions.AtomicityLieRank
 import QOU.ParticleInteractions.AtomicityGroupRank
 import QOU.ParticleInteractions.AtomicityRankOneToSingleObject
 import QOU.ParticleInteractions.AtomicitySelfDualToSymplectic
-import QOU.ParticleInteractions.WignerSU4FromSpinIsospin
+import QOU.BraidsAndKnots.WignerSU4FromSpinIsospin
 import QOU.ParticleInteractions.WeakIsospinT3Grading
 import QOU.Elaboration
 import QOU.PathIntegrals
@@ -1418,6 +1431,50 @@ import QOU.Hecke.ClosedFormInterfaceFactors
 import QOU.Hecke.RowCap
 import QOU.Hecke.CrossingConvexity
 import QOU.Hecke.BindingExtensivity
+import QOU.Hecke.LayoutConflict
+-- `GeometricTailBound` answers "why only the leading order?" for the flavour
+-- split: `(1 + h_q^3)` is the first two terms of `1/(1 - h_q^3)`, and summing
+-- the whole tail moves the value by `x^2/(1-x)` -- 323x smaller than the gap it
+-- would have to close.  Pure ordered-field algebra; the measurement enters only
+-- as the hypothesis `K > 1`.
+import QOU.Hecke.GeometricTailBound
+-- `BoundedDegreeCoulomb` generalises the chain result: by the degree-sum
+-- formula a graph with max degree `d` has at most `dn/2` edges, so its share of
+-- the `n(n-1)/2` pairs is at most `d/(n-1)`.  Coulomb is quadratic in Z; every
+-- edge set the corpus has built (chain d=2, max-contact deltahedra d=5, close
+-- packing d=12) is degree-bounded, so none of them can carry it.
+import QOU.Hecke.BoundedDegreeCoulomb
+-- `SymmetrySignAmGm`: a bond sum is additive in `L = -log b`, so its symmetry
+-- term compares `b_pn` against the GEOMETRIC mean of `b_pp`, `b_nn` -- while the
+-- construction delivers an ARITHMETIC (convex) one.  AM >= GM, so the sign is
+-- backwards structurally.  The crossing weight is `1/(q^2+1)`, which is `1/2`
+-- only at `q = 1`; the corpus sits at `1/2 + delta_flavour/4`, 11.7 % above it.
+import QOU.Hecke.SymmetrySignAmGm
+-- `ChannelRangeGrowthClass`: adding a bond MULTIPLIES the trace by `b < 1`, so
+-- the native falloff is `b^d(i,j) = exp(-mu.d(i,j))` -- Yukawa in graph
+-- distance.  That puts weak / strong / EM on one axis (the mediator mass) and
+-- separates them by GROWTH CLASS: every `mu > 0` gives an extensive pair sum,
+-- only `mu = 0` gives `Theta(n^2)`.  Also `L_pp + L_nn = 2 log [2]_q`, so the
+-- three rates carry one constraint and one free parameter.
+import QOU.Hecke.ChannelRangeGrowthClass
+-- `BarWeightFamily`: bar invariance of the p-n interface reduces to
+-- `wbar = 1 - w`, ONE equation -- and the family `w_k = q^-k/[2]_{q^k}` meets it
+-- for every `k`.  The corpus's averaging rule is the `k = 0` member, pinned only
+-- by the unstated assumption that `w` carries no `q`.  `w_1` is the geometric
+-- mean (zero symmetry term); `k > 1` is the SEMF-signed region.
+import QOU.Hecke.BarWeightFamily
+-- `SelfConjugateRowCap`: self-conjugacy forces `ell(lambda) = lambda_1`, so the
+-- fibre-dimension cap `ell <= 2` leaves exactly THREE self-conjugate shapes --
+-- (1), (2,1), (2,2), all of size <= 4, and none at any level >= 5.  Relevant
+-- because `mass-theory`'s Wigner energy `-Delta_W . T(T+1)/A` is built from
+-- self-conjugate shadow prices at k = 4 and k = 5.
+import QOU.Hecke.SelfConjugateRowCap
+-- `IsospinClassSingleton`: `mass-coefficient-shadow-price-proof`'s own rule makes
+-- `c(lambda) = 0` the ISOSPIN-type scaling class.  At the quartet level `n = 4`
+-- that class has exactly ONE member, `(2,2)` -- so the Wigner coefficient is
+-- selected rather than drawn from a menu, which is the one row of
+-- `mass-formula-regime-switching-table1-data` its fit-shape QA note does not bite.
+import QOU.Hecke.IsospinClassSingleton
 import QOU.MassTheory.PnInterfaceBarStructure
 import QOU.MassTheory.PnOffsetBarOddClass
 

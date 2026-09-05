@@ -261,6 +261,63 @@ straight — state model results as mathematics, and mark the comparison points
 explicitly as where the empirical claim is being made. When criticising, aim at the
 comparisons and at the systematics on them, not at the naming.
 
+## 🟥 NO FITTING, EXCEPT CAL-1/2/3 (owner directive, 2026-09-05) — STRICT
+
+**This is a mathematics paper, not a physics paper.** The deliverable is a
+*process* and a *derivation*. The owner is building a model in order to iterate
+it toward physics, and **that iteration is impossible if anything is fitted**: a
+fitted model cannot be wrong in a way you can learn from, because it has already
+absorbed the discrepancy that would have taught you something.
+
+**The only admissible calibration is CAL-1/2/3** (the decay-width triple, table
+below). Everything else must be *derived*. There is no fourth constant, no
+"one small tuned factor", no "we only picked the cutoff".
+
+### What counts as fitting — including the kinds agents keep missing
+
+Continuous parameters are the obvious case and are rarely the problem. These
+are the ones that recur:
+
+- **Selection against the target.** Choosing an *object* — a knot from a census,
+  a partition, a truncation order, a branch — because the choice reproduces the
+  measured value. No continuous parameter is tuned and it is still a fit. The
+  giveaway is a gap where no object matched: see the 2026-09-05 retirement of
+  the census route, where `A ∈ {5,6,7}` had no prediction precisely because "no
+  census knot/link with `Vol ≈ B_AME/m_e` yet found".
+- **Sweeping a discrete parameter for accuracy.** "Empirical sweep shows `K = 6`
+  is the OPTIMAL cutoff" is a fitted parameter. Optimal against what? The data.
+- **Per-case dispatch.** A formula that branches on `A` (or on species, or on
+  regime) with a different expression per branch has one free choice per branch.
+- **Importing an empirical term.** Citing a phenomenological formula from the
+  literature (an empirical Wigner energy, an SEMF coefficient) imports somebody
+  else's fit.
+- **A tolerance sized to its own miss.** Already flagged in
+  `unified-iterative-correction-proof`: "A bound sized to its own miss is a fit."
+
+### The ranking rule agents get backwards
+
+**Accuracy is not evidence of correctness here, and a more accurate fitted route
+is worth LESS than a less accurate derived one.** A 5.87 % miss obtained by
+selecting a knot whose volume matches is weaker than a 69 % miss obtained by
+computing, because only the second one can be iterated. When comparing routes,
+rank by *derivational cleanliness first*, and treat accuracy as a diagnostic —
+never as a tie-breaker that promotes a fitted route.
+
+Corollary: **do not recommend consolidating onto the most accurate route.** Ask
+first what each route derives and what it selects.
+
+### What to do instead
+
+- If a derivation is specified but not implemented, **implement the
+  specification**, and report what it gives even when that is worse. A
+  documented honest miss is a result; the corpus's negatives are its most
+  reusable output.
+- If you cannot derive a quantity, say so and leave the gap visible. A gap is
+  information. A filled gap with a chosen constant is not.
+- If you catch yourself reaching for a route because its numbers are better,
+  that is the moment to stop and say so in the report.
+
+
 ## Critical-distance license (standing red-team permission, 2026-06-10)
 
 Agents have standing permission — and, when asked for assessment, an
@@ -1065,6 +1122,55 @@ ephemeral.
    options now apply only as the exceptions described above.
    Skill authors updating skill docs should refer to this rule
    rather than restating the policy in their own words.
+
+8a. **Draft → ready: SPACED RETRY ONLY. Never close-and-reopen a
+   PR to get past it** (owner ruling, 2026-09-05). Flipping a draft
+   PR to ready goes through GitHub's GraphQL API, which needs a
+   node-ID lookup, and that lookup is the thing being rate-limited
+   on this repo's shared token. So `mcp__github__update_pull_request`
+   with `draft: false` fails — often for hours — with
+
+       Failed to find pull request: API rate limit already exceeded
+       for user ID 662242
+
+   while every REST path (title, body, state, create, merge, and all
+   reads) keeps working. **Retry the same `draft: false` call, spaced
+   out — typically off a `send_later` check-in — until it lands.**
+
+   **Do NOT close the draft and create a replacement PR for the same
+   head.** It works, which is exactly why it keeps getting
+   reinvented: this session did it three times (#6526 → #6579,
+   #6649 → #6674, #6723 → #6753) before the owner ruled against it.
+   What it costs is not the API call but the record — the review
+   threads, the Copilot request, the comment history and the PR
+   number in every commit message, bean and coordination ledger that
+   already cites it all stay on the abandoned PR, and a reader who
+   follows that number lands on something marked "closed without
+   merging" when the work in fact merged. The agent-harness PR rules
+   independently forbid close-and-reopen; this ruling extends that to
+   the undraft case, which those rules do not name.
+
+   **Two measured traps when retrying.**
+
+   - **The error is not evidence the call did nothing.** A sibling
+     session measured (2026-09-05) that `update_pull_request` calls
+     which set `title` / `body` *alongside* `draft: false` returned
+     that same rate-limit error and **the title and body writes
+     landed anyway** — only the draft flip was dropped. Always
+     confirm with `pull_request_read` before re-sending a mutation,
+     or you will write it twice.
+   - **Retry `draft: false` ALONE.** Bundling other fields makes the
+     partial-success case above harder to read, and none of them need
+     the limiter.
+
+   **The fix that avoids the problem entirely: open the PR non-draft
+   in the first place** where the work is already verified.
+   `create_pull_request` takes `draft` as a plain REST field, so
+   `draft: false` at creation never touches the limiter. Rule 2 of
+   this section asks for the PR immediately, at the first commit,
+   which is usually before verification — so a draft is still the
+   right default for a tranche that is about to grow. It is the wrong
+   default for a PR you are opening at the end of the work.
 
 9. **Never delete closed/merged feature branches** (owner
    directive, 2026-06-12). Do not run `git push origin --delete
@@ -2007,11 +2113,40 @@ When working on math-affecting code or content, **trace the change to a step in 
 > for this ladder — so as written the argument does not support its
 > conclusion, even though the conclusion is right.
 >
-> **The sound form is the SIZE MISMATCH.** For an exact series the residual
-> after truncating at `N` tracks the *first omitted* term, so the N=4
-> residual should sit near `|c_5·u^5| = 0.577` ppb. Convention C measured it
-> at **0.055 ppb, ~10× smaller** — an anomalously good landing, which is the
-> fit signature. Use that, not "monotone".
+> **🛑 AND THE REPLACEMENT ARGUMENT WAS ALSO WRONG — corrected 2026-09-05, and
+> it was mine.** This block replaced "monotone" with a SIZE MISMATCH: *"the N=4
+> residual should sit near `|c_5·u^5| = 0.577` ppb; convention C measured it at
+> 0.055 ppb, ~10× smaller — an anomalously good landing, which is the fit
+> signature."* **That figure is computed on the SUPERSEDED `c_5`.**
+>
+> The slot is settled in
+> [`qbeta_ladder_c5_slot_provenance_probe.py`](computations/qbeta/qbeta_ladder_c5_slot_provenance_probe.py)
+> (bean `qou-54g5`): `c_5 = −(b²+½) = −1.2527` is **current** — six carriers,
+> 2.4 % from the SDP extraction `−1.2229`; `c_5 = 3c_3²+b = +12.8676` is
+> **superseded**, wrong sign, ~10× off. And `qbeta_ck_truncation_order_analysis.py`
+> still carries the superseded family at **line 57**, which is the script the
+> 0.577 was read from.
+>
+> With the **live** `c_5`, `|c_5·u^5| = 0.0561` ppb against the measured
+> **0.055** ppb — **2 % apart, exactly what an exact series predicts.** The
+> anomalously-good landing does not exist, and the argument points the other way.
+>
+> **What supports the conclusion is the residual MAGNITUDE.** Recomputed at the
+> proton pin under the live family, `|residual|` runs **6.1698 → 6.2260 ppb**
+> across N=4 → N=5 — it increases, so the signature holds. Under the superseded
+> family it runs 6.1698 → 5.5551 and does not. So the non-monotonicity is real
+> **under the correct coefficient**, while both arguments previously offered for
+> it — "monotone" and the size mismatch — are unsound. Use the magnitude
+> crossing, and note it is the *magnitude*: the signed column goes
+> −6.1698 → −6.2260, which is *decreasing*, and reading it that way is how PR
+> #6424 reached the opposite conclusion.
+>
+> **Caveat, load-bearing:** the crossing is only **0.91 %**, computed with `c_3`
+> hardcoded at the recorded proton extraction and at the proton pin only. It is
+> **not** robust to a large `c_3` move; a full settlement re-extracts `c_3` at
+> both pins. Probe:
+> [`qbeta_ck_c5_slot_and_size_mismatch_probe.py`](computations/qbeta/qbeta_ck_c5_slot_and_size_mismatch_probe.py)
+> (4/4).
 >
 > **The figures `+0.055 → +0.63` ppb are CONVENTION-C.**
 > `qbeta_ck_truncation_order_analysis.py` computes in whatever frame the
@@ -2586,7 +2721,7 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **twenty-six** rows, and they split FOUR ways — only the first
+>   catalogues **thirty-four** rows, and they split SEVEN ways — only the first
 >   group is about conventions at all:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
@@ -2606,6 +2741,45 @@ Do not regress either.
 >     as a keyword argument, because that key is an identifier. 25 could not see
 >     a literal reaching an assertion through a **list slot** two hundred lines
 >     up. Two different audits, two days apart, same assumption.
+>   - **27-32** — `qou-dke6` / `qou-sof3`, and unlike every group above these
+>     are **six blind spots in ONE detector**, found one at a time while it was
+>     used. All six are about the SHAPE of the data around the fields, never
+>     the fields themselves: a hoisted **wrapper** (54 of 241 matches, each
+>     solve counted twice and the hoisted copy manufacturing a phantom
+>     "no primal"), a **column-wise aggregate** whose `y0_star` is a list not a
+>     scalar, a **prefixed key** (`lp_x_star_str`) reported as absent while the
+>     record carried two primals, a **numeric proxy for a structural fact**
+>     (`duality_gap != 0` taken to mean a solve happened — wrong on 6 of 9,
+>     since a closed-form dual's gap is 0 by construction and four producers
+>     never call a solver at all), an **SDP matrix primal** where a vector was
+>     assumed, and a **threshold cliff** (62 flagged at 0.96, 7 at 0.98, with
+>     the one confirmed positive ranking 59 of 146). The corrections ran
+>     105 → 56 and 84 → 44 → 15 → 3 → 0, **every one making the problem
+>     smaller**, and one of them nearly reached the owner as a contract change
+>     that would have turned 29 correct records into violations.
+>   - **33** — `qou-3ral`, and it is its own group: the guard is installed on
+>     one of an API's several **write paths**. `WitnessBuilder` has three
+>     routes into the anchor vocabulary — `stamp_staleness_metadata`
+>     (guarded), `save(extra)` (a bare `witness.update`), and `wrap_legacy`
+>     (payload keys emitted verbatim by `build()`) — and the one live
+>     off-vocabulary producer travels the third. Not about data shape at all,
+>     which is why it is not in the 27-32 family.
+>   - **34** — `qou-t0wm`, and its own group because it blinds a detector by
+>     what an author **NAMED** a quantity rather than by shape or write path.
+>     An identifier matching `delta`/`err`/`resid` that also reaches both sides
+>     of a comparison was taken to mean the quantity IS the residual. An
+>     **error-propagation formula** mentions the measured quantities for
+>     exactly the same reason the residual does —
+>     `borromean_mass_MeV_err = sqrt((ratio_err·m_e)² + (ratio·m_e_err)²)` is a
+>     1σ propagated uncertainty and entirely correct. The discriminator is that
+>     **a residual is a difference**: requiring a `Sub` in the provenance keeps
+>     the `qou-tol0` positive (`delta = M_derived − M_obs`) and drops the class.
+>     Two things make it worth its own row. It was found by running the audit
+>     **on a fix made with that audit** — the repaired producer was still
+>     reported blocking. And the tier had fired on **nothing** on `main`, so
+>     the false positive was latent: **zero hits is not the same as verified
+>     sound**, and the audit doc asserted the second having measured only the
+>     first.
 >
 >   Several were found *by* detectors written to catch the previous blind spot —
 >   row 26 in the output of the audit that introduced it. Quote the split, not
@@ -3934,14 +4108,79 @@ export interface AuthorNote {
 
 `BlockBase.authorNotes?: AuthorNote[]`.
 
-> **🛑 "every block kind accepts it" is FALSE, and the field is dropped in
-> silence (measured 2026-08-30).** This line read *"every block kind accepts
-> it (builders pass through via `Omit<XBlock, "kind">`)"*. Four content-block
-> kinds — **`prose`, `table`, `equation`, `diagram`** — have zod schemas
-> declared as standalone `z.object({...})` rather than
-> `BlockBaseSchema.extend({...})`, so they restate a *subset* of the base
-> fields and `authorNotes` is not among them. Zod strips unknown keys, so a
-> note written on one of those blocks validates clean and **vanishes**.
+> **✅ LIVE STATE (verified 2026-09-05): all four kinds accept every base
+> field. `authorNotes` on a `prose` / `table` / `equation` / `diagram` block
+> WORKS — write it.** The rest of this box is the history of a defect that is
+> now closed in the product; read it for the mechanism, not for the state.
+>
+> Verified by **parse**, not by grep: `ProseSchema` / `EquationSchema` /
+> `DiagramSchema` / `TableSchema` each `safeParse` a block carrying
+> `authorNotes`, `defines`, `cites` and `computation` and **retain** every one.
+> The fix is `folio-assistant` **`a117daa`** (2026-09-03, *"Four block kinds
+> restated BlockBase instead of extending it"*), confirmed an ancestor of that
+> repo's `main`.
+>
+> **🛑 Why this box opened for months with the opposite claim, and why the
+> ordering matters.** The two paragraphs that used to lead were a 🛑 asserting
+> *"every block kind accepts it is FALSE, and the field is dropped in
+> silence"*, retracted nine lines below. An agent reading top-down met the
+> false claim first and stopped — the same *heading-contradicts-its-own-body*
+> defect this document already had to fix once, in the Phase-4 merge-gate
+> table. **The live state now leads; the history follows.** Superseded text,
+> kept because the mechanism is still worth reading: four content-block kinds
+> had zod schemas declared as standalone `z.object({...})` rather than
+> `BlockBaseSchema.extend({...})`, so they restated a *subset* of the base
+> fields; a zod object is non-strict, so a note written on one of those blocks
+> validated clean and **vanished**. `folio-assistant` granted `authorNotes` to
+> all four by hand on 2026-08-24 (bean `folio-assistant-5nle`), which fixed
+> that one field and left the mechanism — see the structural note below.
+>
+> **🛑 And the "fixed" rows in the table below were written AHEAD of the
+> evidence.** That table is dated 2026-09-03 and states its basis as
+> `folio-assistant` `93e476b`. `93e476b` is dated **2026-08-31** and does
+> **not** contain `a117daa` — so at the moment those rows were written, the
+> fix they call *"fixed — folio-assistant#164"* had not landed. The rows are
+> true **today**, and this line is not a retraction of them; it is a note that
+> they were forward-looking claims about an unmerged PR, which is precisely
+> the *"fixed on a branch, not in the product"* move that bean `qou-3v8h`
+> refused to close on. State what has landed, or say it has not.
+>
+> **This document could not have known, and that is the reusable lesson: the
+> validator you ran is the validator in the clone.** The count that produced
+> the table below was taken against a `folio-assistant` checkout at
+> `e1030e8` — itself already behind `main`. The same qou tree, validated
+> against `main`, reports **six** warnings of which **five are invented field
+> names** and exactly **one** is a schema gap. Re-measure with
+> [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh) and
+> `git -C folio-assistant log --oneline -1` before quoting any figure here.
+>
+> **Live state, measured 2026-09-03 against `folio-assistant` `93e476b`:**
+>
+> | class | count | status |
+> |---|---|---|
+> | invented field names (`is_mathematics` ×3, `probe`, `consumers`) | 5 | **fixed** — qou #6501 |
+> | schema gap: `prose:knot-periodic-table` drops `computation` | 1 | **fixed** — folio-assistant#164 |
+> | `authorNotes` dropped | **0** | fixed upstream 2026-08-24 |
+>
+> The five `authorNotes` rows the table below names — `fine-structure-data`,
+> `tm-interaction-completeness`, `millennium-bounds-via-surreals-intro`,
+> `hecke-log-decomposition-table-data`,
+> `q-beta-form-a-n1-symbolic-table-data` — **are no longer dropped**. Kept as
+> a record of what the defect cost, not as a live list.
+>
+> **The structural cause outlived the one-field fix, which is why it is worth
+> reading the rest of this box.** That grant added `authorNotes` to the four
+> schemas *by hand* and left them restating the base. Measured a week later:
+> `defines` was still absent from all four, and `cites`, `simulator` and
+> `computation` from three. `defines` is the sharp one — §4c *mandates* it for
+> every glossary term and the `defterm-declared` rule reads that array, so on
+> those kinds a term could not be declared at all. folio-assistant#164 makes
+> the four **extend `BlockBaseSchema`** and adds a guard
+> (`scripts/tests/block-base-fields.test.ts`) that fails when any block schema
+> falls behind the base, so the next field cannot be forgotten one kind at a
+> time.
+>
+> Superseded text follows.
 >
 > **Six authored fields are being dropped in this corpus right now**, and two
 > of them are substantive:
@@ -3974,10 +4213,29 @@ export interface AuthorNote {
 > [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh) and
 > check the clone is not behind before trusting a clean validate.
 >
-> **The fix is in `folio-assistant`, not here** — those four schemas should
-> extend `BlockBaseSchema` like the other six. Until they do, do **not** put
-> an author note on a `prose`, `table`, `equation` or `diagram` block: it will
-> be accepted and lost.
+> **The fix was in `folio-assistant`, not here, and it has LANDED** — all four
+> schemas now extend `BlockBaseSchema` like the other eleven (`a117daa`, on
+> that repo's `main`). The advice this paragraph used to give — *"do not put an
+> author note on a `prose`, `table`, `equation` or `diagram` block"* — is
+> **withdrawn and inverted**: write the note, it is kept. Verified by parse on
+> 2026-09-05, and locked upstream by two regression tests
+> (`scripts/tests/block-base-fields.test.ts`, which fails when any block schema
+> falls behind the base, and `scripts/tests/schema-ts-zod-parity.test.ts`), so
+> the next field cannot be forgotten one kind at a time the way `defines`,
+> `cites`, `simulator` and `computation` were.
+>
+> **The one thing that still bites is the CLONE, not the schema.** Everything
+> above is a statement about `folio-assistant` `main`; your validator is the
+> validator in *your* checkout. Measured this session: a qou tree validated
+> against a clone **169 commits behind** reported all six of these fields as
+> dropped — a defect that no longer exists. Before quoting any figure from this
+> box, or filing anything from a validate run, refresh and say what you ran
+> against:
+>
+> ```sh
+> bash scripts/setup-folio-assistant.sh
+> git -C folio-assistant fetch origin main && git -C folio-assistant log --oneline -1
+> ```
 
 **Render behavior**: SKIPPED by default in the LaTeX render
 (clean publication voice). Set environment variable
@@ -4118,7 +4376,7 @@ rules of thumb:
 - `$\gamma$` = photon (never vortex; vortex is `$\varrho$`)
 - `$H_q$` alone = **forbidden** (collision); use `$\mathcal{H}_q$` (shuffle) / `$\hat{H}_q$` (Hamiltonian) / `$H_n(q)$` (Hecke) / `$H_q(\lambda)$` (hook-length)
 - `$E$` alone = **not used**; use `$\mathcal{S}_p$` (fibre), `$\mathfrak{E}$` (energy), `$\mathcal{E}_q$` (elliptic curve), or `$E_{\mathfrak{H}}$` (crossing energy with hadron subscript)
-- Three partition-weight families `$y_\lambda$` / `$w_\lambda$` / `$\tilde w_\lambda$` are **distinct** at `$q \neq 1$` — never conflate
+- Three partition-weight families — Markov `$y_\lambda$`, q-deformed Wedderburn `$w_\lambda(q)$`, classical Plancherel `$w_\lambda(1)$` — are **distinct** at `$q \neq 1$` and coincide at `$q = 1$`; never conflate. (**`$\tilde w_\lambda$` is RETIRED** by owner ruling 2026-08-16: bare `$w_\lambda$` now means `$w_\lambda(q)$`, and the classical measure is its specialisation `$w_\lambda(1)$`, not a separate symbol. This line said `$\tilde w_\lambda$` until 2026-09-05.) **Never write a normalisation claim on bare `$w_\lambda$`**: `$\sum_\lambda w_\lambda(1) = 1$` is exact, and `$\sum_\lambda w_\lambda(q)$` is **not** — measured 0.987 / 0.982 / 0.982 / 0.991 / 1.111 / **1.517** at `$n = 3/4/5/6/9/12$` at the proton `$q_0$`. That defect is **structural, not a q-integer-convention artifact** (the deformation breaks Burnside `$\sum_\lambda (f^\lambda)^2 = n!$`; the asymmetric convention is *worse* at five of those six `$n$`), so it does not cancel across different `$n$` and distorts any **cross-atom** metric — `$n = 3A$`. Cross-atom consumers use the self-normalised `$d_q^2/D^2$` (Reshetikhin–Turaev/Verlinde). Whether `$\dim_q^2$` is even the right numerator — against the Molien `$f^\lambda \dim_q(\lambda)$`, which sums to `$[n]_q!$` exactly (Lean, sorry-free, all `$n$`, all `$q>1$`) — is **open**, bean `qou-oots`. Register: [`notation-collisions.md`](content/quantum-observable-universe/notation/notation-collisions.md); measurement: [`2026-09-04-plancherel-convention-gap.md`](docs/audits/2026-09-04-plancherel-convention-gap.md)
 - `$q = 1.1097$` (or any specific numerical value) **must not appear** outside the introduction and Chapter 7
 
 ### 7ab. Observed / derived values — approximation convention (STRICT)
@@ -4678,6 +4936,70 @@ is ~2 min vs a 40-min `lake build` storm. If a stray `lake build` already
 dropped the olean count (`find .lake/packages/mathlib -name '*.olean' | wc -l` ≪ 2919),
 re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 [`lean-environment-setup.md` §"VERIFY a single file with lean-direct"](.claude/skills/local/lean-environment-setup.md#verify-a-single-file-with-lean-direct).
+
+> **🛑 A BARE `lean` IS A WEAKER CHECK THAN `lake build` — pass
+> `-DautoImplicit=false` (measured 2026-09-05, bean `qou-56qy`).** `lean`
+> invoked directly does **not** read the lakefile, so it does not apply its
+> `[leanOptions]`. `autoImplicit` defaults **true** in `lean` and is set
+> **false** in both the root and paper lakefiles, and with it on Lean silently
+> auto-binds an unbound identifier as an implicit argument rather than erroring.
+> Same file, same `LEAN_PATH`, on `QOU/MassTheory/AtomWordShadow.lean`:
+>
+> ```
+> lean                        ->  exit 0,  0 errors
+> lean -DautoImplicit=false   ->  exit 1,  6 errors      (lake agrees: 20)
+> ```
+>
+> That file was **red on `main`**, and it was called clean by a bare
+> `lean`-direct run *and* by both sweep scripts before they were fixed. Pass
+> `-s 65536` too, mirroring the paper lakefile's `moreLeanArgs`: one generated
+> module overflows the default elaboration stack and aborts as a bare `exit 134`
+> with no source error. So the recipe above is
+> `lean -DautoImplicit=false -s 65536 <file>`, never bare `lean`.
+>
+> **This is the sharper of the two defects on this line.** The snapshot problem
+> below makes a green *go stale*; this one makes a green *wrong from the start*,
+> on any tree, however fresh.
+
+> **🛑 `exit 0` here is a claim about the SNAPSHOT, not about the library
+> source (measured 2026-09-05, bean `qou-56qy`).** The restored cache is a
+> point-in-time tree. When a library signature moves after it was taken, a file
+> calling the old signature compiles clean *and* is red against the source it
+> names — both at once, with no signal. Realised, not hypothetical:
+> `descartesWtrace` recorded `lean`-direct `exit 0` and **landed on `main`
+> red**, because the cache was built 2026-08-30 while `794c34897d7`
+> (2026-09-03) retyped `SeminormalRep.wtrace`'s genericity hypothesis and
+> ported the seven consumers *inside* the package. The library half was done
+> correctly; a content-block sibling was simply not in it (#6751).
+>
+> **So on a branch that touches `.lean`, run the sweep rather than bare
+> `lean`-direct.** Each builds a shadow tree, rebuilds from source only the
+> modules whose own olean predates their own last source commit, and compiles
+> against that — never invoking `lake`, so the restored cache is not evicted:
+>
+> ```bash
+> scripts/lean-content-sweep.sh [file.lean ...]   # content-block siblings
+> scripts/lean-library-sweep.py                   # library dirty closure
+> ```
+>
+> Whole corpus 2026-09-05: 261 content blocks and 74 dirty library modules,
+> **0 red**; library sweep 122 s, content sweep ~50 min (pass the changed files,
+> and `SHADOW=`/`--shadow` to reuse the ~2.3 GB shadow). Wired into
+> `/prepare-merge` §4 and `prepare-merge-auto` Phases 1 and 4.
+>
+> **Two limits — do not write either out of a PR.** The dirty closure is
+> computed against *this* container's olean tree, so a result is
+> **container-scoped**: two sessions measured the same dependency as stale and
+> as current, and both were right. And neither script sweeps the **UGB** or
+> **Fred2005** packages.
+>
+> **A source-change count is the wrong population.** Six of those 74 have no
+> olean at all — a *new* file inherits its dependencies' staleness without ever
+> appearing in a drift count keyed on changed sources. Use the closure.
+>
+> This block is an owner-reviewable wording change to the repo's primary
+> verification guidance, added on the evidence above; revert the wording if you
+> disagree — the measurement stands either way.
 
 > **STRICT — route, don't give up, and prefer a sub-agent.** On **any**
 > Lean env/tool failure (LSP "no valid project path", `leansearch` SSL

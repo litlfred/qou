@@ -214,3 +214,31 @@ Before touching Q_β c_k wiring, confirm:
   [`2026-05-18-qbeta-n4-sign-investigation.md`](2026-05-18-qbeta-n4-sign-investigation.md),
   [`2026-05-30-qbeta-ck-mp-dk-deep-audit.md`](2026-05-30-qbeta-ck-mp-dk-deep-audit.md),
   [`2026-05-31-qbeta-bridge-narrowing.md`](2026-05-31-qbeta-bridge-narrowing.md)
+
+
+## 🛑 Correction (2026-09-05) — the size-mismatch figure uses the superseded `c_5`
+
+The size-mismatch argument added here on 2026-09-04 (PR #6564) quotes
+`|c_5·u^5| = 0.577` ppb. **That is computed on the superseded
+`c_5 = 3c_3²+b = +12.8676`.** The slot is settled in
+[`qbeta_ladder_c5_slot_provenance_probe.py`](../../computations/qbeta/qbeta_ladder_c5_slot_provenance_probe.py)
+(bean `qou-54g5`): the current coefficient is `−(b²+½) = −1.2527` — six carriers,
+2.4 % from the SDP extraction `−1.2229` — while `+12.8676` is superseded, wrong
+sign and ~10× off. `qbeta_ck_truncation_order_analysis.py` still carries the
+superseded family at line 57, which is where the figure came from.
+
+With the live `c_5`, `|c_5·u^5| = 0.0561` ppb against the measured `0.055` ppb —
+**2 % apart**, exactly what an exact series predicts. **The anomalously good
+landing does not exist**, so the size mismatch does not support the conclusion
+either.
+
+**What does support it is the residual magnitude.** At the proton pin under the
+live family, `|residual|` runs **6.1698 → 6.2260 ppb** across N=4 → N=5 (it
+increases, so the signature holds); under the superseded family it runs
+6.1698 → 5.5551 and does not. This is the opposite of what PR #6424 concluded —
+that PR read the *signed* column, where `−6.1698 → −6.2260` is decreasing.
+
+**Caveat:** the crossing is only **0.91 %**, with `c_3` hardcoded at the recorded
+proton extraction and the proton pin only; not robust to a large `c_3` move. A
+full settlement re-extracts `c_3` at both pins. Probe:
+[`qbeta_ck_c5_slot_and_size_mismatch_probe.py`](../../computations/qbeta/qbeta_ck_c5_slot_and_size_mismatch_probe.py) (4/4).

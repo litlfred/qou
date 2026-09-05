@@ -55,20 +55,38 @@ scanning `kappa` in `B ~ ln2(A-1) + kappa(N-Z)` the data's optimum is
 Coulomb repulsion would give" — is correct as algebra and **wrong as evidence**:
 in aggregate the splitting pushes the wrong way. Retracted here.
 
-**(b) The bond COUNT is the entire content.** Layout-free `(A-1)` beats every
-isospin-resolved variant on every scale-free comparator:
+**(b) Among CHAINS, the bond COUNT is the entire content.** Layout-free `(A-1)`
+beats every isospin-resolved variant on every scale-free comparator. (The
+qualifier is not decoration -- see the note under the table; changing the GRAPH
+does move the number, by a factor of 65.)
 
     edge set                          p25-p75    p5-p95     full
     segregated p..p n..n (canonical)   1.0953    1.2250    10.18
     alternating p n p n .. (nf)        1.0972    1.2323    10.40
-    all-pairs, renormalised            1.0958    1.2262     9.92
+    all-pairs, renormalised            1.0958    1.2262     9.92   <- RIGGED
     bond COUNT only (layout-free)      1.0843    1.1809     8.17
+
+🛑 The third row does not measure the all-pairs graph. Renormalising it to `A-1`
+bonds divides out exactly the quadratic bond growth that is the only thing
+distinguishing it from a chain, so the row is a chain with reweighted letters.
+RAW all-pairs has median `0.013558` against the chain's `0.886414` -- a factor
+of **65**, not 0.6 %
+(`qbeta_chain_cannot_carry_coulomb_or_surface_probe.py`, 2026-09-05).
 
 **(c) So the ordering gap `qou-48is` barely touches the binding law.** `tr_M`
 depends on the nucleon ordering by 20-36 % (that bean's measurement, and it
-stands), but the three edge sets above land within 0.6 % of each other, and the
-first-order asymmetry coefficient is **exactly `N - Z` for all three**. The
-layout is a real gap for `tr_M`; for `B` it is nearly irrelevant.
+stands), and the first-order asymmetry coefficient is **exactly `N - Z`** for
+both chain orderings. For `B`, the ORDER of the nucleons along the chain is
+nearly irrelevant.
+
+🛑 **WITHDRAWN, 2026-09-05 — the wider claim this sentence used to carry.** It
+read *"the three edge sets above land within 0.6 % of each other ... the bond
+GRAPH is not where the error lives"*. The 0.6 % is an artefact of my own test:
+all-pairs was renormalised to `A-1` bonds, which removes the quadratic growth
+that is the entire difference between a path and a complete graph. Comparing
+the graphs as they actually are gives a factor of 65. The bond graph is
+**exactly** where the error lives -- see (d). What survives is the narrower
+statement above: among CHAINS, the ordering barely matters.
 
 **(d) The missing term is the SYMMETRY energy, not the surface term.**
 Correlation of the residual `B/(E_0.S)` against the three SEMF shapes:
@@ -76,6 +94,15 @@ Correlation of the residual `B/(E_0.S)` against the three SEMF shapes:
     (N-Z)^2/A^2   [asymmetry]   -0.804      <- dominant
     A^(-1/3)      [surface]     -0.178
     Z^2/A^(4/3)   [Coulomb]     -0.044
+
+🛑 **These MARGINAL correlations understate Coulomb badly, and the "-0.044 means
+essentially absent" reading is retracted (2026-09-05).** Heavy nuclei have large
+`Z`, large `N - Z` and large `A` together, so the three shapes are collinear and
+a marginal correlation cannot separate them. Fitted JOINTLY over the same 2548
+nuclides the spans in `B` are asymmetry **361 %**, surface **154 %**, Coulomb
+**67 %** -- a ranking of 3 : 1.8 : 1, not the 18 : 4 : 1 the marginals suggest --
+and together they carry `R^2 = 0.927`. Coulomb is a third of the leading term,
+not a rounding error. (`qbeta_chain_cannot_carry_coulomb_or_surface_probe.py`.)
 
 The decision frame named the surface term / edge set as "the strongest lead".
 That was wrong by a factor of four in correlation. The lead is the symmetry
@@ -86,6 +113,17 @@ since SU(4) labels need four rows, and by `C_2^GL(4) - C_2^GL(2) = 2n` collapsin
 the SU(4) label to the SU(2) isospin the trace already carries. The measurement
 stands; the inference that it points somewhere does not. The symmetry energy is a
 named gap with NO available route.
+
+🛑 **SUPERSEDED 2026-09-05 — there IS a route, and it is sign-locked.** The
+symmetry term is the p-n interface count, and its sign is one inequality: a bond
+sum is additive in `L = -log b`, so it compares `b_pn` against the GEOMETRIC mean
+of `b_pp`, `b_nn`, while the construction delivers an ARITHMETIC one. AM >= GM,
+so the sign is backwards structurally. `sqrt(b_pp b_nn) = 1/[2]_q` exactly, the
+AM-GM gap is `h^2/(2[2]_q)` -- the Hecke parameter itself -- and the crossing
+weight `1/(q^2+1)` equals 1/2 only at `q = 1`. The corpus sits 11.7 % above it.
+`QOU/Hecke/SymmetrySignAmGm.lean`,
+`qbeta_symmetry_sign_is_am_gm_locked_probe.py`, bean `qou-i01a`. That is
+stronger than "no route": a repair must move ONE quantity, the convex weight.
 
 *** 4. WHY OPTION A FAILS, IN ITS FINAL FORM ***
 
@@ -396,7 +434,12 @@ def main() -> int:
         },
         "provenance": {"headSha": _head_sha(),
                        "producer": "computations/qbeta/qbeta_tower_log_z_and_roast_probe.py",
-                       "elapsed_s": round(time.monotonic() - t0, 3)},
+                       # `elapsed_sec`, not `elapsed_s` — the ratchet's
+                       # wall-clock carve-out matches field names exactly and
+                       # does not carry the `_s` spelling. Key only; no value
+                       # changes. See the sibling note in
+                       # qbeta_binding_law_options_probe.py.
+                       "elapsed_sec": round(time.monotonic() - t0, 3)},
     }
     out = HERE / "qbeta-tower-log-z-and-roast.witness.json"
     out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")

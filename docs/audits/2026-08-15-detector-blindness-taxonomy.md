@@ -14,7 +14,7 @@ form**, and thereby being unable to see the same fact expressed in a different
 form. The blind spot is never a missing case in a list. It is the shape of the
 question.
 
-## The twenty-six
+## The thirty-four
 
 | # | detector keyed on | blind to | exposed by |
 |---|---|---|---|
@@ -44,6 +44,96 @@ question.
 | 24 | the **declaration form** — every field-keyed scan begins at `class\|structure … where` | a carrier that is a `def … : Prop`, which is how this corpus states Mahler's Lemma 4 and Roth's Lemma | pre-fix `RothLemma4` reconstructed; `unbounded-quantifier-audit.py` reported `0 candidate(s) over 18 file(s)` (qou-4lbh) |
 | 25 | the **assignment's proximity** — every literal-tracer follows a value to the call it sits in | a literal reaching an assertion through a **list slot**: `target_c[2] = sp.Integer(-1)` assigned 211 lines above `computed=float(target_c[2])`, so the assertion compares an input to itself and cannot fail | `qbeta_wenzl_habiro_ansatz_probe.py:479`; `assertion_on_literal_audit` reports it in NO bucket, confirmed by running it (qou-58zw) |
 | 26 | the **key's lexical form** — every key scan reads `ast.Constant(str)` | a witness key written as a **keyword argument**, i.e. a Python identifier: `result(A_odd_preimage_positions_on_main_chain=v)` | `qcollatz_backward_tree_structure_probe.py:127`; `witness_key_orphan_audit`'s own first version reported three orphans sitting in plain sight in the file it was auditing (qou-58zw) |
+| 27 | the **containment relation** — the matcher yields ANY dict carrying the field set | a **wrapper** whose child is the real record. Producers hoist `primal_obj`/`dual_obj`/`duality_gap`/`active_set`/`y0_star`/`y_star` onto a parent alongside a nested key holding the solve, so each solve counts twice — and because the hoisted copy omits `x_star`, the duplicate also manufactures a phantom "record with no primal vector" | `pn-alpha-lp-dual.witness.json` reported 41 records WITH `x_star` and 41 WITHOUT; they are the same 41 solves, x* one level down on `.lp_dual`. **54 of 241** matches corpus-wide were wrappers (qou-dke6) |
+| 28 | the **value's shape at the key** — one match assumed to be one record | a **column-wise aggregate** carrying the same field NAMES with parallel lists across several solves. Discriminator: in a real record `y0_star` is a SCALAR | `nucleus-operator-selection-sdp.witness.json` `.data`, whose `y0_star` is a list of four nuclei; matched as a solve, then reported primal-less because an aggregate has no primal (qou-dke6) |
+| 29 | the **key's exact name** — the primal looked up as `x_star` / `x_star_str` | a producer that **prefixes by half** when a row carries two solves | same witness: it carries `lp_x_star_str` AND `sdp_X_star_str`, and was reported as having NO primal while carrying TWO. One `grep` from "fixing" a producer that was already correct (qou-dke6) |
+| 30 | a **numeric proxy for a structural fact** — `duality_gap != 0` taken to mean "a solve happened" | (a) producers that build dual-shaped records with **no solver call at all**, whose non-zero gap comes from elsewhere; (b) **closed-form duals** whose gap is 0 *by construction*, so x* is correctly absent | wrong on **6 of 9**: four no-solver producers, plus `sigma_f_electron_shell_chain` (27 records) which writes `"duality_gap": "0"  # closed-form => exact strong duality` and never calls a solver. Only the PRODUCER SOURCE decides (qou-dke6) |
+| 31 | the **primal's arity** — a vector `x_star` assumed | an **SDP**, whose primal is the MATRIX `X_star`; a vector `x_star` is correctly absent | `gap_a1_binding_k_sdp_feasibility` → `solve_psd_operator_selection_sdp` (qou-dke6) |
+| 32 | the **threshold's discrimination** — a ratio criterion assumed to separate two classes | a **cliff**, where the count measures where the threshold was placed rather than the corpus — and the criterion misses its own confirmed positive | `lp_floor_valued_objective_audit.py`: 62 flagged at fraction 0.96, **7 at 0.98**; and the one producer PROVED floor-valued by a `prec_bits` sweep ranks **59 of 146**. Shipped as a ranking and a recorded NEGATIVE, not a detector (qou-sof3) |
+| 33 | the **write path** — the guard is installed at one of an API's several entry points | a producer using any of the others, however careful elsewhere. `WitnessBuilder` has **three** routes into the anchor vocabulary and the guard sits on one: `stamp_staleness_metadata(payload, q0_anchor=…)` is guarded; `save(extra)` is a bare `witness.update(extra)` with no validation; `wrap_legacy(payload)` carries the payload's keys through `_extra_top_level` and, per its own docstring, emits them "verbatim by `build()`" | the one live off-vocabulary producer travels the **third** route: `codata_corpus_literal_scan.py:816` sets `"q0Anchor": "not-applicable"` in a payload, so neither the existing guard nor a `save(extra)` fix could ever warn about it. Offered by the #6696 sibling (bean `qou-3ral`), which also corrected its own "two entry points" to three; structure verified here, counts measured independently at 256/25 against the sibling's 152/22 and NOT reconciled — see below (qou-3ral) |
+| 34 | the **residual's name** — an identifier matching `delta`/`err`/`resid` taken to mean the quantity IS the residual, once it also reaches both sides of the comparison | an **error-propagation formula**, which mentions the measured quantities for exactly the same reason the residual does. `borromean_mass_MeV_err` is `sqrt((ratio_err*m_e)**2 + (ratio*m_e_err)**2)` — a 1σ propagated uncertainty, entirely correct, and indistinguishable from a residual by name plus reachability | found by running `tolerance_from_residual_audit.py` on a fix made WITH it: `mass-from-q-symbolic:599` was still reported blocking after being given an independent `expected`. The discriminator is that **a residual is a difference** — requiring a `Sub` in the provenance keeps the `qou-tol0` positive (`delta = M_derived - M_obs`) and drops the class. Note the tier had fired on NOTHING on main, so this was latent: **zero hits is not the same as verified sound**, and the audit doc claimed the second having measured only the first (qou-t0wm) |
+
+### 33 — offered by a sibling, taken here to avoid a conflict on the count line (2026-09-04)
+
+Row 33 is **not** this branch's finding. The #6696 sibling (bean `qou-3ral`)
+measured it, checked it against all 32 existing rows, named row 21 as the
+near-miss and explained why it differs — row 21 is one measured mpmath-vs-sympy
+site where a caller *cannot invoke* a helper, whereas this is a second and
+third entry point that **bypasses** the helper entirely — and then offered it
+rather than adding it, because this PR holds the file and a second PR touching
+the count line would conflict on exactly the line being maintained. Taken on
+those terms; the finding is theirs.
+
+**What was verified here, and what was not.** AGENTS.md is explicit that a
+sibling's bean is not a primary source, so the structural claim was checked
+against `tools/qou-substrate/python/qou_substrate/witness.py` directly:
+
+- `stamp_staleness_metadata` takes `q0_anchor` — the guarded route. ✓
+- `save(self, extra)` is `if extra: witness.update(extra)`. A bare update, no
+  validation. ✓
+- `wrap_legacy(payload)`'s own docstring states the keys land in
+  `_extra_top_level` and are "emitted verbatim by `build()`". ✓
+- `codata_corpus_literal_scan.py:816` carries `"q0Anchor": "not-applicable"`
+  in a payload. ✓
+
+**The COUNTS still do not reconcile, and the row now carries MINE with the
+method attached.** The sibling reports **152** `wrap_legacy` callers of which
+**22** set `q0Anchor`, measured at `6a9c2c44fb9`. Measuring here:
+
+    files under computations/ MENTIONING wrap_legacy      280
+    of those, an actual call `wrap_legacy(`               256   <- 24 are comment-only
+    of THOSE, setting "q0Anchor"                           25
+
+    same three numbers re-measured AT 6a9c2c44fb9         256 / 25  (identical)
+
+So the gap is **not** drift — their commit gives the same figure as current
+main — and not comment-mentions, which account for 24 of a 104-file difference.
+Nor is it directory scoping: `computations/*.py` top-level only gives 123/4,
+and excluding `probes/` and `audits/` gives 184/12. None is 152/22.
+
+One asymmetry points at the answer without settling it: their set is both
+*smaller* and *richer* in `q0Anchor` — 22/152 is 14.5 %, 25/256 is 9.8 % — so
+it is a more specific filter than a subdirectory, plausibly witness-emitting
+producers only. Their figure may well be the more meaningful denominator; it is
+simply not reconstructible from what was published.
+
+**Quote the method, not the number.** The command behind 256/25 is
+`grep -rlE '(^|[^a-z_])wrap_legacy\(' --include=*.py computations/`, minus
+`_deprecated`, intersected with `"q0Anchor"`. **The structural claim is what
+makes the row; the counts only illustrate it, and this is the third figure on
+this page whose two independent measurements disagree.**
+
+### 27-32 — added 2026-09-04 (beans `qou-dke6`, `qou-sof3`), and ALL SIX blinded ONE detector
+
+Unlike most of this page, rows 27-32 are not six detectors with one blind spot
+each. They are **six blind spots in a single detector**, found one at a time
+while it was used, and the sequence is the point:
+
+    "107 of 241 f64-era/unattributable"  ->  1 live record
+    "105 undeclared"                     ->  56   (row 27: 54 wrappers)
+    "84 blind to the residual check"     ->  44 -> 15 -> 3 -> 0
+    "should x_star be a required field?" ->  No, withdrawn
+
+**Every correction made the problem smaller**, and one of them nearly reached
+an owner: the `x_star`-as-required-field question was drafted on "84 records
+blind to the certified-residual check". The real figure was 15, and requiring
+the field would have turned **29 correct records into violations** (row 30's
+closed-form duals) while helping a population that a per-producer fix closed
+in two commits. A contract change would have *created* defects.
+
+**What separates the classes that fooled this detector**: all six are about
+the SHAPE of the data around the fields, never the fields themselves. A
+wrapper, an aggregate, a prefixed key, a closed-form dual, an SDP matrix and a
+threshold cliff all present *identical field names with plausible values*. No
+amount of reading the numbers distinguishes them — rows 30 and 31 are only
+decidable by reading the PRODUCER, which is what `_producer_solver` now does.
+
+**The method that worked, again**: opening the witness instead of trusting the
+report. Row 29 was caught because a producer the detector called defective had
+a comment claiming it already spread `provenance()`; checking the witness found
+`lp_x_star_str` sitting there. Row 27 was caught while costing an owner
+question rather than while auditing. Row 30 was caught by surveying nine
+producers before writing a fix for them — six had no `x_star` to serialize.
 
 Rows 10, 11 and 12 came from a sibling (#5190, #5209), not from this branch —
 recorded here because this is the list, and because 10 and 12 each break an

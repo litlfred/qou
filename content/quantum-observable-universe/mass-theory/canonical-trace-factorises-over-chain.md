@@ -75,6 +75,85 @@ letters supply $d \in \{0, -h/2, d_{pn}, -h\}$, so $d/h \in [-1, 0]$: the
 required offset is $2.43\times$ more negative than the most negative letter
 that exists. No interface offset can close the gap.
 
+The quantity $L$ itself is a free-energy difference over the Markov state
+sum; that it is the binding energy is a separate and open claim, recorded in
+[the free-energy reading](#rem:bond-log-ratio-is-a-free-energy).
+
+## The stated form assumes the grouped intra ordering; the conclusion does not
+
+Writing the word as $\prod_i p_i(\sigma_i)$ — one polynomial per generator —
+requires each generator's letters to be **contiguous**. That is a property of
+how the word is assembled, not of the chain topology. The corpus's live builder
+`atom_braid_word_3A` does assemble it that way (all of the $\sigma_0$ chain,
+then all of the $\sigma_1$ chain), which is why the identity measures exact
+above. Since 2026-09-05 the live builder instead lays each nucleon's six
+**confinement letters** down alternating, as the $(\sigma_0\sigma_1^{-1})^3$ its
+own source comment always named — the Borromean braid $\beta_{\mathrm{Bor}}$,
+identified against its Lean closed form to $5\times10^{-60}$. Same letter
+multiset, different order, and it does **not** satisfy the per-generator form:
+that fails by $2.8\times$ at $A = 2$, rising to $13.3\times$ at $A = 4$.
+
+*A distinction worth keeping, because this arc's bean once lost it.* Grouped and
+alternating describe the arrangement of six letters **inside** the eleven-letter
+intra block, not the block itself. That block is not $\beta_{\mathrm{Bor}}$
+under either arrangement and cannot be: two of its eleven letters are averaged,
+$\sigma - (h/2)\cdot 1$, which is outside the image of
+$\rho : B_n \to H_n(q)$, so it is not a braid at all and has no single closure to
+name. One proton: $1.145759692457300870$ grouped, $0.629328402202921918$
+alternating, against $0.998562163836787266$ for the bare six-letter
+$\beta_{\mathrm{Bor}}$ — three distinct objects.
+
+**Nothing above is retracted by that.** The load-bearing step is connected-sum
+multiplicativity, which is blind to letter order inside a summand, and it is
+measured to survive the reordering exactly:
+$\mathrm{tr}_M(\text{chain}) = \prod_k \mathrm{tr}_M(\text{intra}_k)\prod_i(z+d_i)$.
+So the interface factors, the three bond constants and $L$ itself are
+**identical under both orderings** — to $\sim 10^{-60}$ at $A = 2, 3, 4$ — and
+the "no many-body binding" conclusion holds for either word. What is
+ordering-specific is the stronger per-generator statement.
+
+The same caveat applies one level up, to the [chain
+form](#prop:canonical-closure-torus-chain): "every generator occurs in exactly
+one contiguous run", so that the closure is a linear connected sum of $(2,k)$
+torus links, is again a property of the assembly. With the confinement core
+alternating, a nucleon's letters no longer form two runs, so that reading of the
+block lapses. It is tempting to go further and say the block therefore satisfies
+this arc's own criterion for where many-body binding could live — "a closure
+that fails to be composite, non-split, prime, with the kind of irreducibly
+multi-component linking the Borromean rings have" — but that would be
+unsupported twice over: the block is a weighted sum of branch closures rather
+than one link, and containing $\beta_{\mathrm{Bor}}$ as a subword is not the
+same as being prime. What is actually measured is only that
+$L$ is unchanged to $\sim 10^{-60}$: the reordering happens **inside** each
+nucleon, the nucleons remain strung on a chain, and no many-body binding
+appears anywhere.
+
+What *moves* is every
+**absolute** trace: the intra factor falls by $3.8\times$ at $^2$H to
+$14.3\times$ at $^4$He when the confinement core is relaid alternating,
+carrying the difference-based
+$B = Q_\beta\bigl(\mathrm{tr}_M(W_{\text{free}}) - \mathrm{tr}_M(W_{\text{atom}})\bigr)$
+route with it by the same factor.
+
+`QOU.Mass.IntraOrderingInvariance` (sorry-free) proves the split. Given the
+connected-sum input — $\mathrm{tr}_M(W_{\text{atom}}) = F \prod_i (z + d_i)$ and
+$\mathrm{tr}_M(W_{\text{free}}) = F$ — the ratio is
+$\prod_i (z+d_i)$ for **any** intra factor $F \neq 0$, so two orderings with
+factors $F_1, F_2$ give the same ratio with *no hypothesis relating them*
+(`chainRatio_eq_of_intra`), and hence the same $L$
+(`L_chain_indep_of_intra`, `L_chain_eq_sum_of_intra`). The invariance is
+cancellation, not coincidence. The difference route instead satisfies
+$F_1(1-P) = (F_1/F_2)\,F_2(1-P)$ (`chainDiff_scales`) and genuinely differs
+whenever $F_1 \neq F_2$ and $P \neq 1$ (`chainDiff_ne`). And the two
+confinement words are different objects: at $q = 1$, where both are elementary,
+the per-generator product is $1/4$ and the Borromean closed form is $1$
+(`grouped_ne_borromean`), so the $82\,\%$ gap at $q_0$ is not a deformation
+artefact. Not formalised, as ever, is the connected-sum multiplicativity itself.
+Measured in
+`the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`; which
+word is $\beta_{\mathrm{Bor}}$ is measured in
+`nf_vs_canonical_word_order_probe.py`.
+
 ## What is formalised, what is checked, what is cited
 
 `QOU.Mass.ChainTraceFactor` (sorry-free) proves the factor algebra: the

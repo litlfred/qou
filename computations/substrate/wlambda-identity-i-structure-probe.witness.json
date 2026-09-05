@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-09-05T06:23:17.486445+00:00",
-  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
+  "computedAt": "2026-09-05T06:28:09.514080+00:00",
+  "commitSha": "b821bba5e48e2e427697d02115377d4936ebfe22",
   "assertions": [
     {
       "name": "identity_I_holds_n2_14",
@@ -37,16 +37,14 @@
       "computed": false,
       "expected": true,
       "passed": false,
-      "source": "q-Plancherel normalisation sum_lambda d_q(lambda)^2 = [n]_q! for n = 1..6, verified as a symbolic identity in q (so sum_lambda W_lambda = 1)"
+      "source": "CANDIDATE q-Plancherel normalisation sum_lambda d_q(lambda)^2 = [n]_q! for n = 1..6, tested as a symbolic identity in q. It HOLDS at n=1 and FAILS for every n >= 2 (ratio at n=2 is 2q/(q^2+1)), so sum_lambda W_lambda = c_n != 1. This assertion is EXPECTED-TRUE and measured FALSE on purpose: it is the corpus's own detector for the defect recorded in docs/audits/2026-09-04-plancherel-convention-gap.md. Do not 'fix' it by lowering expected."
     }
   ],
   "allPassed": false,
-  "allPassedBasis": "failed-assertions",
   "durationMs": 0,
-  "durationMsBaseline": "builder-construction",
   "computation": "wlambda-identity-i-structure-probe",
   "scriptFile": "wlambda_identity_i_structure_probe.py",
-  "scriptHash": "72b03e456d6b",
+  "scriptHash": "de91a4e3cb45",
   "scriptCommitSha": "7dbb428385ac38abd4ee41c8465cdfc3d010e58a",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -62,7 +60,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -70,7 +68,7 @@
     ],
     "reproduce": "python3 -u computations/substrate/wlambda_identity_i_structure_probe.py"
   },
-  "description": "Scopes the Lean infra for Identity I (the one RT input of the W_λ 144·C(n) defect sub-target): verifies M(n)=n(3n−1)/2 (n=2..14) and tests whether the proof reduces to RSK + content-moment + elementary hook identities (no hook-length FORMULA). Also verifies the q-Plancherel normalization Σ_λ d_q²=[n]_q! (W_λ=d_q²/[n]_q!) and extracts the W_λ cyclotomic/Habiro structure for the colored-Σ(2,3,5)-WRT bridge.",
+  "description": "Scopes the Lean infra for Identity I (the one RT input of the W_λ 144·C(n) defect sub-target): verifies M(n)=n(3n−1)/2 (n=2..14) and tests whether the proof reduces to RSK + content-moment + elementary hook identities (no hook-length FORMULA). Also verifies TESTS the candidate q-Plancherel normalization Σ_λ d_q²=[n]_q! — which is FALSE for every n ≥ 2, symbolically in q (the assertion is recorded as failing) — and extracts the W_λ cyclotomic/Habiro structure for the colored-Σ(2,3,5)-WRT bridge. Bean qou-uk8o.",
   "auditOnly": "docs/coordination/s5-so3-keystone.md",
   "discipline": "no fit; exact rationals + sympy symbolic in q; (a)/(b)-scoped.",
   "results": {
@@ -181,5 +179,5 @@
       }
     }
   },
-  "leanInfraRouteVerdict": "NON-HLF ROUTE EXISTS (Lean-feasible). Identity I = E[Σ_c h_c²] = n(3n−1)/2 DECOMPOSES as E[Σ_c content²] + n²  with  E[Σ_c content²] = C(n,2)  (Kerov content second moment, provable from the Jucys–Murphy element Σ X_i² in Z(ℂ[S_n]) — RSK + center-of-group-algebra, NO hook-length FORMULA). The residual E[Σ h² − Σ content²] = n² is the Plancherel mean of an elementary arm/leg/content combination. So the infra needed is: (1) RSK `Σ(f^λ)²=n!` (or its q-form `Σ d_q²=[n]_q!`, verified here), (2) the JM/content second-moment, (3) the single-diagram elementary hook identity `Σ_c h_c = n + Σ_i C(λ_i,2) + Σ_j C(λ'_j,2)` (verified elementary: True) extended to the squared form. The full hook-length FORMULA is NOT required for Identity I — the ledger's 'needs HLF' scope can be narrowed to the content-moment + elementary-hook infra."
+  "leanInfraRouteVerdict": "NON-HLF ROUTE EXISTS (Lean-feasible). Identity I = E[Σ_c h_c²] = n(3n−1)/2 DECOMPOSES as E[Σ_c content²] + n²  with  E[Σ_c content²] = C(n,2)  (Kerov content second moment, provable from the Jucys–Murphy element Σ X_i² in Z(ℂ[S_n]) — RSK + center-of-group-algebra, NO hook-length FORMULA). The residual E[Σ h² − Σ content²] = n² is the Plancherel mean of an elementary arm/leg/content combination. So the infra needed is: (1) RSK `Σ(f^λ)²=n!` (note: its q-form `Σ d_q²=[n]_q!` is FALSE for n ≥ 2, measured here symbolically, so only the CLASSICAL RSK identity is available), (2) the JM/content second-moment, (3) the single-diagram elementary hook identity `Σ_c h_c = n + Σ_i C(λ_i,2) + Σ_j C(λ'_j,2)` (verified elementary: True) extended to the squared form. The full hook-length FORMULA is NOT required for Identity I — the ledger's 'needs HLF' scope can be narrowed to the content-moment + elementary-hook infra."
 }

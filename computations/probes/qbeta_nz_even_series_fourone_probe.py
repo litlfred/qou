@@ -46,6 +46,13 @@ import subprocess
 from datetime import datetime, timezone
 
 import mpmath as mp
+# This producer hand-builds its assertion payload and `json.dump`s it, so
+# `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
+# reached, and a re-run would re-emit the float literals and undo PR #5910's
+# drain for this file alone. `_tol` routes each DECLARED tolerance through
+# that guard; it returns a COMPUTED one unchanged, so those stay floats and
+# stay counted by the raw-float64 ratchet. Bean qou-9tqx.
+from qou_substrate.witness import declared_tolerance as _tol  # noqa: E402
 import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 mp.mp.dps = 60
@@ -135,7 +142,7 @@ def main():
         "computed": float(abs(a_at) + abs(da_at)),
         "expected": 0.0,
         "passed": bool(abs(a_at) < mp.mpf("1e-50") and abs(da_at) < mp.mpf("1e-50")),
-        "tolerance": 1e-50,
+        "tolerance": _tol(1e-50),
         "source": "A(L,1) = (L+1)² — CCGLS 4₁ A-polynomial, complete structure",
     })
 
@@ -148,7 +155,7 @@ def main():
         "computed": float(closure),
         "expected": 0.0,
         "passed": bool(closure < mp.mpf("1e-40")),
-        "tolerance": 1e-40,
+        "tolerance": _tol(1e-40),
         "source": "no branch point of the gluing variety inside |u| = 0.06; "
                   "v is a single-valued analytic function there",
     })
@@ -168,7 +175,7 @@ def main():
         "computed": float(even_leak),
         "expected": 0.0,
         "passed": bool(even_leak < mp.mpf("1e-35")),
-        "tolerance": 1e-35,
+        "tolerance": _tol(1e-35),
         "source": "NZ85 oddness on the geometric branch, corroborated from the "
                   "A-polynomial: v₀ = v₂ = v₄ = v₆ = 0 (Cauchy-extracted); no "
                   "framing-linear even part on this branch",

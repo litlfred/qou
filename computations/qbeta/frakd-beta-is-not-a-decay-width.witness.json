@@ -1,0 +1,65 @@
+{
+  "description": "CAL-2 is named the neutron beta-decay WIDTH D_beta, and the corpus asserts Q_beta = hbar/D_beta with Q_beta a 0.784 MeV Q-value. Both cannot hold: if D_beta is the width then hbar/D_beta is the LIFETIME (878.4 s), and if D_beta := hbar/Q_beta then it is 24 orders of magnitude from that lifetime. The framework computes the decay's ENERGY RELEASE, not its RATE. This RETRACTS the interpretive claim of PR #6687/#6700 that candidate (iii)'s obstacle was already satisfied; (iii) returns to open.",
+  "engine": "python",
+  "q0Anchor": "proton",
+  "q0AnchorReason": "AGENTS.md 2026-08-07 owner directive: proton is the default for all new compute",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "data": {
+    "corpus_assertion": "Q_beta = hbar/D_beta, D_beta = 'the neutron beta-decay width'",
+    "corpus_sites": [
+      "content/quantum-observable-universe/observations/epistemic-status-of-calibrations.md:3",
+      "content/quantum-observable-universe/observations/three-calibration-discipline-discussion.md:7",
+      "docs/canonical-derivation-cheat-sheet.md:134",
+      "docs/canonical-derivation-cheat-sheet.md:490"
+    ],
+    "Q_beta_framework_MeV": "0.78364582737462121307",
+    "Q_beta_AME2020_MeV": "0.78233",
+    "Q_beta_miss_pct": "0.16819339",
+    "tau_n_s": "878.4",
+    "tau_n_err_s": "0.5",
+    "tau_n_source": "PDG 2022, bottle average; the beam-bottle discrepancy is ~8 s and is irrelevant at 24 orders of magnitude",
+    "Gamma_n_eV": "7.4933055202641165756e-19",
+    "reading_R1": "D_beta := Gamma_n  =>  hbar/D_beta = tau_n = 878.4 s, a TIME, so it cannot be the 0.784 MeV Q-value the corpus says it is",
+    "reading_R2_s": "8.3993550901068262909e-22",
+    "reading_R2_orders_from_tau_n": "24.0194463853",
+    "log10_Qbeta_over_Gamma_n": "24.0194463853",
+    "what_stands": "Q_beta as a CAL-2 proxy, reproduced to 0.17 %. A Q-value is fixed by mass differences alone.",
+    "what_is_missing": "the RATE. A width additionally needs the coupling and the phase-space integral -- precisely what candidate (iii) asked for and what the framework has not supplied.",
+    "retraction": "PR #6687 and the block edit in #6700 claim (iii)'s obstacle was satisfied because D_beta IS CAL-2. The Lean and arithmetic of #6687 stand -- they concern two width MECHANISMS and are pure mathematics. The interpretive step does not. Candidate (iii) returns to OPEN with its obstacle sharpened: the missing object is not a decay observable but specifically the rate.",
+    "scope": "(a) throughout. Nothing here says Im(q) DOES encode a width; it says the reciprocal mechanism does not produce the one width we can check, so the argument by which I narrowed (iii) does not hold.",
+    "not_a_rename_proposal": "the naming is the author's, was flagged to the author, and the author's ruling is pending. This probe measures the gap rather than resolving it."
+  },
+  "assertions": [
+    {
+      "name": "framework_reproduces_the_Q_VALUE_to_the_documented_0p17_pct",
+      "passed": true,
+      "detail": "Q_beta = 0.783645827375 MeV vs AME2020 0.78233, miss 0.16819 % -- this result is UNAFFECTED and stands"
+    },
+    {
+      "name": "reading_R1_gives_a_time_not_an_energy",
+      "passed": true,
+      "detail": "if D_beta IS Gamma_n then hbar/D_beta = tau_n = 878.4 s, a TIME -- it cannot equal a 0.783646 MeV Q-value"
+    },
+    {
+      "name": "reading_R2_is_24_orders_from_the_neutron_lifetime",
+      "passed": true,
+      "detail": "D_beta := hbar/Q_beta = 8.3993551e-22 s against tau_n = 878.4 s -- 24.0194 orders of magnitude"
+    },
+    {
+      "name": "the_neutron_width_is_a_Gamma_mechanism_A_fails_to_produce",
+      "passed": true,
+      "detail": "Gamma_n = 7.4933055e-19 eV sits 24.0194 orders below Q_beta = 783645.83 eV -- this is follow-up D's exhibit"
+    },
+    {
+      "name": "pr_6687_interpretive_claim_is_retracted",
+      "passed": true,
+      "detail": "the Lean and arithmetic of #6687 stand (two width MECHANISMS, pure mathematics); the step from 'D_beta is CAL-2' to 'the framework has a categorical decay width' does not. Candidate (iii) returns to OPEN. CORRECTED 2026-09-05: this probe ALSO concluded that the corpus has no rate at all. It does -- prop:hadron-half-life, with a derived T_{3,5} Markov-trace coupling. What is open is the rate's SCALE (the weak-scale crossing count N_v), not its shape. (iii) still returns to OPEN, but re-scoped: the corpus's rate is real at real q, so it exhibits a width needing no Im(q). See weak_scale_crossing_count_nv_probe.py."
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "d5f720d40d41",
+  "scriptCommitSha": "96ce754cf64c979120cd37c20981d306ea383c32",
+  "commitSha": "63e0861ea45ec158843d550724018fece30d0f8b",
+  "computedAt": "2026-09-05T11:52:07.976515+00:00",
+  "durationMs": 0
+}

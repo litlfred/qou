@@ -76,7 +76,11 @@ from pyhecke.gram import (  # noqa: E402
     NF_NAMES,
     TR_M,
 )
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+import mpmath as _mp  # noqa: E402
+from lp_dual_solver import (  # noqa: E402
+    provenance,
+    solve_operator_selection_lp,
+)
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
@@ -308,6 +312,17 @@ w.add_data("primal_obj", float(lp.primal_obj))
 w.add_data("dual_obj", float(lp.dual_obj))
 w.add_data("duality_gap", float(lp.duality_gap))
 w.add_data("lp_feasible", bool(lp.feasible))
+# SOLVER PROVENANCE + full-precision companions. Without this the four
+# `float(lp.*)` lines above are the last step of the chain and they drop
+# `backend`, `precision_bits`, every `*_str`, and the certified residuals
+# (`gap_recomputed_str` et al.) -- exactly the cherry-picking failure mode
+# `provenance()`'s own docstring describes. Measured cost of the omission:
+# this witness carried `primal_obj = 3.81e-16` for its whole life with
+# nothing in the file saying it had been solved in float64, and a re-run
+# with the MPFR binary present moved it 28 orders to 3.57e-44 (bean
+# `qou-sof3`; population `qou-dke6`).
+for _k, _v in provenance(lp).items():
+    w.add_data(_k, _v)
 
 # Master-formula instantiation details:
 w.add_data("observable_vector", {
@@ -335,19 +350,54 @@ w.add_assertion(
 # F1 (PR #565): backfill structural-correctness anchors so a
 # regression that breaks LP duality is caught before the g_A
 # tolerance widens silently.
-w.add_assertion(
-    "lp_duality_gap_zero",
-    computed=abs(float(lp.duality_gap)),
-    expected=0.0,
-    tolerance=1e-10,
-    source="prop:operator-selection-lp § strong duality",
-)
+# BOTH assertions that stood here were VACUOUS. Replaced; see `qou-sof3`.
+#
+# (a) `lp_duality_gap_zero` compared |duality_gap| against tolerance 1e-10.
+#     The gap is the ARITHMETIC FLOOR of a 48-order cancellation, not a
+#     measurement: it read 3.82e-16 when this LP was solved in float64 and
+#     3.60e-44 once the MPFR binary was present -- a 28-order move that the
+#     assertion passed on BOTH sides, because 1e-10 is 34 orders above
+#     either. It could not have failed.
+#
+# (b) `lp_active_set_nonempty` was worse: `computed=len(active_set)`,
+#     `expected=1.0`, `tolerance=10.0`. An EMPTY active set gives
+#     |0 - 1| = 1 <= 10 and PASSES -- so the assertion could not detect the
+#     one condition it is named for. The comment beside it asserted the
+#     opposite ("passes for any non-empty active set"), which is why it
+#     survived: the tolerance says one thing and the name says another.
+#
+# The certified replacement below re-derives the gap from the PUBLISHED
+# certificate via `QOU.Mathlib.LPDuality.duality_gap_decomposition`
+# (sorry-free, unconditional), with a tolerance DERIVED from the
+# cancellation floor rather than chosen.
+_gap_rec = getattr(lp, "gap_recomputed_str", None)
+if _gap_rec is not None:
+    _bits = getattr(lp, "precision_bits", None) or 53
+    _dps = _mp.mpf(_bits) * _mp.log10(2)
+    _xs = getattr(lp, "x_star_str", None) or lp.x_star
+    _floor = (max(_mp.fabs(_mp.mpf(str(_v))) for _v in _xs)
+              * _mp.mpf(10) ** (-_dps))
+    w.add_data("duality_gap_cancellation_floor", _mp.nstr(_floor, 20))
+    _solver_gap = getattr(lp, "duality_gap_str", None) or lp.duality_gap
+    w.add_assertion(
+        "lp_duality_gap_certified",
+        computed=_mp.nstr(_mp.fabs(_mp.mpf(_gap_rec)
+                                   - _mp.mpf(str(_solver_gap))), 30),
+        expected="0",
+        tolerance=_mp.nstr(100 * _floor, 20),
+        source="|gap_recomputed - solver duality_gap|; gap_recomputed from "
+               "QOU.Mathlib.LPDuality.duality_gap_decomposition applied to the "
+               "published x*/y*. Tolerance = 100 x the cancellation floor "
+               "max|x*|*10^(-prec_bits*log10 2), derived not fitted.",
+    )
 w.add_assertion(
     "lp_active_set_nonempty",
-    computed=float(len(active_set)),
-    expected=1.0,
-    tolerance=10.0,  # at least 1; passes for any non-empty active set
-    source="prop:confinement-frobenius-reciprocity § master formula",
+    computed=bool(len(active_set) >= 1),
+    expected=True,
+    tolerance=0,
+    source="prop:confinement-frobenius-reciprocity § master formula; "
+           "boolean so an EMPTY active set fails (the numeric form with "
+           "tolerance 10 passed on len=0)",
 )
 w.add_data("g_A_note", g_A_note)
 w.add_data("interpretation", (

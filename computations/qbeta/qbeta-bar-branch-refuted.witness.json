@@ -1,0 +1,127 @@
+{
+  "computation": "qbeta-bar-branch-refuted",
+  "assertions": [
+    {
+      "name": "the_swap_turns_one_violation_into_hundreds",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "845 against 1. The ruling made the law one-sided for a physical reason -- every SEMF correction SUBTRACTS -- and the swap moves it INTO the data instead of above it"
+    },
+    {
+      "name": "as_built_stays_below_one_in_every_band_and_swapped_does_not",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the swapped A = 40-160 bands sit above 1"
+    },
+    {
+      "name": "the_swap_halves_the_asymmetry_error_and_doubles_the_surface_error",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "error moves between channels rather than out of the law -- what a one-bit reparameterisation does, not what a missing term looks like"
+    },
+    {
+      "name": "the_eigenvalues_are_plus_q_and_minus_one_over_q",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "solved from sigma^2 = h.sigma + 1, not asserted"
+    },
+    {
+      "name": "the_magnitudes_do_not_corroborate_the_sign_match",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "(a) one bit agreeing with one bit happens half the time by chance; (b) in V(x)V the eigenvalue +q belongs to the SYMMETRIC part and -q^-1 to the ANTISYMMETRIC part, so the sign encodes pairing statistics, not charge. Reading it as a charge sign is a category slip. Charge does NOT pin the branch"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "E_0_MeV": "4.2274833556290305503",
+    "E_0_form": "tower-summed (owner ruling 2026-09-05)",
+    "strands_per_nucleon": 3,
+    "verdict": "swap NOT adopted; corpus branch stands"
+  },
+  "data": {
+    "n_measured": 2548,
+    "n_all": 3554,
+    "violations": {
+      "as built": {
+        "measured": 1,
+        "all": 1
+      },
+      "BAR-SWAPPED": {
+        "measured": 845,
+        "all": 1018
+      }
+    },
+    "band_medians": [
+      {
+        "band": "0-39",
+        "n": 247,
+        "built": "0.86014429",
+        "swapped": "0.92365443"
+      },
+      {
+        "band": "40-79",
+        "n": 367,
+        "built": "0.96143583",
+        "swapped": "1.0278461"
+      },
+      {
+        "band": "80-119",
+        "n": 477,
+        "built": "0.93492261",
+        "swapped": "1.0212136"
+      },
+      {
+        "band": "120-159",
+        "n": 508,
+        "built": "0.89624098",
+        "swapped": "0.99421147"
+      },
+      {
+        "band": "160-199",
+        "n": 481,
+        "built": "0.86197038",
+        "swapped": "0.95181834"
+      },
+      {
+        "band": "200-239",
+        "n": 363,
+        "built": "0.82634421",
+        "swapped": "0.92744437"
+      },
+      {
+        "band": "240-279",
+        "n": 105,
+        "built": "0.79575312",
+        "swapped": "0.90331934"
+      }
+    ],
+    "correlations": {
+      "as built": {
+        "(N-Z)^2/A^2": "-0.80378541",
+        "A^(-1/3)   ": "-0.17812461",
+        "Z^2/A^(4/3)": "-0.043874792"
+      },
+      "BAR-SWAPPED": {
+        "(N-Z)^2/A^2": "-0.49288118",
+        "A^(-1/3)   ": "-0.37617253",
+        "Z^2/A^(4/3)": "-0.068179863"
+      }
+    },
+    "eigenvalues": "{+q, -1/q}",
+    "eigenvalue_magnitude_ratio": "1.23205245417",
+    "charge_magnitude_ratio": "2"
+  },
+  "provenance": {
+    "headSha": "7dcbef29f12d755480569bbcc868401786e6f209",
+    "producer": "computations/qbeta/qbeta_bar_branch_refuted_probe.py",
+    "elapsed_s": 1.018
+  }
+}

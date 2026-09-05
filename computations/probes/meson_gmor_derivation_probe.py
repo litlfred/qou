@@ -271,7 +271,23 @@ def main():
     #            no meson mass in it.
     # If the sweep's winner were any other entry the gap is ≥ 0.3, so this
     # pins the identification the (a') block asserts in prose.
-    winner_vs_fusion = abs(best_a[1] - fusion_sum)
+    # Unpacked, not `best_a[1]`, and the reason is precision provenance rather
+    # than style. `best_a` is `(name, value, miss_pct)` where `value` is an mpf
+    # built from `q_int(...)` and `miss_pct` is a float used only to pick the
+    # winner and to print it. Taint analysis works on NAMES, so one float
+    # element makes the whole tuple read as float64-tainted, and the
+    # mixed-mpf/f64 audit flagged the mpf-only subtraction below on that basis
+    # — its own output says a name "can be rebound in a branch this pass does
+    # not follow" and asks for an agent verdict.
+    #
+    # NOT marked `float64-intentional`: nothing here is intentionally mixed.
+    # That marker records a deliberate float64 measurement, which this is not,
+    # and a wrong exemption is worse than the false positive it silences.
+    # Giving the mpf its own name removes the taint because there is no longer
+    # a float in it — verified: the regenerated witness is byte-identical apart
+    # from the environment stamp.
+    _best_name, best_value_mp, _best_miss_pct = best_a
+    winner_vs_fusion = abs(best_value_mp - fusion_sum)
     w.add_assertion("sweep_winner_is_the_spin1_spin3half_fusion_sum",
                     computed=mp.nstr(winner_vs_fusion, 18),
                     expected="0", tolerance="1e-30",

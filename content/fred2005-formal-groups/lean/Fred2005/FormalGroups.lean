@@ -1,10 +1,12 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Nat.Prime.Basic
--- TODO: cross-paper dependency on unital-groebner-bases
--- The QOU bridge module (content/fred2005-formal-groups/lean/QOU/FormalGroups.lean) imports:
---   import QOU.GrobnerShirshov.Basic
--- This will need a cross-paper reference once the content pipeline
--- supports lean cross-paper imports.
+-- TODO: cross-paper dependency on unital-groebner-bases.
+-- A bridge module here would need `import QOU.GrobnerShirshov.Basic`. NO SUCH
+-- MODULE EXISTS: this paper's Lake library is `Fred2005`, there is no `lean/QOU/`
+-- tree under it, and none can be written until the content pipeline supports
+-- cross-paper Lean imports. The path this comment used to name
+-- (`.../lean/QOU/FormalGroups.lean`) was a plan, not a file -- stated here so a
+-- reader does not go looking for it.
 
 /-!
 # Formal Groups and the Lifting Theorem

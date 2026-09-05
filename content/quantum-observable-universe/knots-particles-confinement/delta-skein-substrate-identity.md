@@ -49,7 +49,7 @@ At the substrate parameter $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) an
 
 ## Identity of the residual
 
-The substrate $\mathfrak{Q}_\beta$ ansatz predicts $\mathfrak{Q}_\beta(q_0) = 0.78174\ldots\;\mathrm{MeV}$ against the empirical $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta = 0.78233341\ldots\;\mathrm{MeV}$—a $760$ ppm residual. The $\widetilde{\Delta S}$ relative error of $1\,015$ ppm is the same residual, dominated by:
+The substrate $\mathfrak{Q}_\beta$ ansatz predicts $\mathfrak{Q}_\beta(q_0) = 0.78174\ldots\;\mathrm{MeV}$ against the empirical $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta} = 0.78233341\ldots\;\mathrm{MeV}$—a $760$ ppm residual. The $\widetilde{\Delta S}$ relative error of $1\,015$ ppm is the same residual, dominated by:
 
 1. the symmetric $(\mathfrak{Q}_\beta+m_e)/m_e$ numerator;
 2. the common-scale conjecture $\mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{p})} - \mathfrak{m}_{\mathcal{B}_3}^{(\mathfrak{n})} = 0$.
@@ -66,7 +66,7 @@ The derivation consumes three substrate quantities:
 | $q_0$ | input (via $m_\mu/m_e$) | **CAL-2** |
 | $\mathrm{Vol}(\mathcal{B}_3)$ | Thurston topological invariant | — |
 
-The identity predicts $\Delta S(n - p)$ from CAL-1, CAL-2, and a topological invariant. CAL-2 is overdetermined: its modulus is pinned here through the mass proxy $m_\mu/m_e$, so the empirical decay-width proxy $\mathfrak{Q}_\beta$ is not a further input but a consistency cross-check on the same calibration. CAL-3 ($\mathfrak{D}_\pi$, proxy $m_\pi$) does not enter at all.
+The identity predicts $\Delta S(n - p)$ from CAL-1, CAL-2, and a topological invariant. CAL-2 is overdetermined: its modulus is pinned here through the mass proxy $m_\mu/m_e$, so the empirical $Q$-value proxy $\mathfrak{Q}_\beta$ is not a further input but a consistency cross-check on the same calibration. CAL-3 ($P_{\mathrm{avg}}^{\pi}$, proxy $m_\pi$) does not enter at all.
 
 ## Scope
 

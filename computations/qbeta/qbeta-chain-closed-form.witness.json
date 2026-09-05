@@ -154,7 +154,7 @@
         "free_rel": "2.104e-15"
       }
     ],
-    "matrix_route_seconds_at_A4": 1958.9
+    "matrix_route_seconds_at_A4": "1958.9"
   },
   "context": {
     "axis": "can the extensivity question be settled symbolically, bypassing the n >= 15 dimension wall?",
@@ -162,14 +162,15 @@
     "consequence": "The closed form REFUTES qou-n9qf's headline. Delta_tr(A) = t_p(t_p^(A-1) - r^(A-1)) is asymptotically exponential, not linear: Delta_tr/A runs 0.254 at A=2 to 5.777 at A=40. The four calibration atoms sat in a shallow region, and t_p > 1 > t_n keeps near-symmetric light nuclei there. The measurement stands; the word 'extensive' is withdrawn.",
     "scope": "Sections 2-4 are for a HOMOGENEOUS pure-proton chain. Real atoms mix p and n, so their p-p, p-n and n-n interfaces need a multi-state transfer matrix, which is not derived here. Section 1 does hold for real atoms."
   },
-  "gitCommit": "ab26fb0b2b343044795aae1062d55f5804489374",
+  "gitCommit": "e9f956591268a61f454b60f781a60f18f497f767",
   "durationMs": 0,
   "scriptFile": "qbeta_chain_closed_form_probe.py",
-  "scriptHash": "2fb8ff6484c0",
-  "scriptCommitSha": "ab26fb0b2b343044795aae1062d55f5804489374",
-  "commitSha": "ab26fb0b2b343044795aae1062d55f5804489374",
+  "scriptHash": "c6101093d5de",
+  "scriptCommitSha": "8e4e6633b623c01812c7c472b118ce746b1684cb",
+  "commitSha": "e9f956591268a61f454b60f781a60f18f497f767",
   "engine": "mpmath+sympy",
-  "computedAt": "2026-09-03T16:24:14.083419+00:00",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "computedAt": "2026-09-04T22:21:16.282342+00:00",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
 }

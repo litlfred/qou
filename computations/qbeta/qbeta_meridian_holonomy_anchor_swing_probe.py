@@ -173,7 +173,12 @@ def main() -> int:
         "computed": mp.nstr(max_sens_resid, 6),
         "expected": 0.0,
         "passed": max_sens_resid < mpf("1e-40"),
-        "tolerance": 1e-40,
+        # String, not the float literal. This probe hand-builds its assertion
+        # dicts and json.dumps them, so it never constructs an `Assertion` and
+        # `qou_substrate.witness._tolerance_literal` — which converts a declared
+        # tolerance to its literal at `Assertion.to_dict` — never runs. These
+        # are exactly the strings that helper returns for these two values.
+        "tolerance": "1e-40",
         "source": "(barEven/barOdd)² = 1 + 4/barOdd² at both q₀ anchors — the "
         "boost-hyperbola identity, probe↔Lean "
         "MeridianHolonomyAnchorCarrier.sensitivity_sq tie",
@@ -193,7 +198,7 @@ def main() -> int:
         "computed": mp.nstr(S_channel_swing, 8),
         "expected": "< 1e-5 (O(ppm)); ≈ 2·ρ_u·(Δq₀/q₀)",
         "passed": S_channel_swing < mpf("1e-5"),
-        "tolerance": 1e-5,
+        "tolerance": "1e-05",
         "source": "Δ(u²)/u² across the muon↔proton q₀ anchors, coordinate FIXED "
         "(u=2 ln q). Leading-order 2·ρ_u·(Δq₀/q₀)=" + mp.nstr(pred_S_swing, 8)
         + "; barOdd-shape swing=" + mp.nstr(barOdd_swing, 8)

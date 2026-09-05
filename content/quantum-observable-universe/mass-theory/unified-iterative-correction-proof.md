@@ -43,12 +43,18 @@ The three legacy mechanisms specialise:
   (1 - h^2)^2$):* the $A = 3, 4$ slices of the LP-dual
   accumulator, where the $(2,1)$ and $(3,1)$ contributions
   reproduce the figure-eight and Borromean amphicheiral factors;
-- *Wigner energy ($k \geq 5$, dedicated
-  $-\Delta_W \cdot T(T+1)/A$):* the $k = 4, 5$ self-conjugate
-  shadow prices ($\lambda = (2,2)$ and $(3,1,1)$), which
-  vanish on isolated $pn$ crossings (extremal cancellation,
+- *Wigner energy ($k = 4$, dedicated
+  $-\Delta_W \cdot T(T+1)/A$):* the $k = 4$ self-conjugate
+  shadow price $\lambda = (2,2)$, which
+  vanishes on isolated $pn$ crossings (extremal cancellation,
   [prop:confined-knot-binding](#prop:confined-knot-binding))
-  but are nonzero on collective $pn$ patterns.
+  but is nonzero on collective $pn$ patterns.  Under convention D
+  no self-conjugate partition beyond $k = 4$ can contribute:
+  self-conjugacy forces $\ell(\lambda) = \lambda_1$, so the row cap
+  $\ell(\lambda) \leq 2$ admits only $(1)$, $(2,1)$ and $(2,2)$, and a
+  block with $\tilde w_\lambda = 0$ has $C_\lambda = 0$ and hence
+  $u_\lambda^* = 0$ at every $(Z, N)$ — the vanishing is upstream of the
+  scaling function, so no $S_\lambda$ restores it.
 
 $\square$
 

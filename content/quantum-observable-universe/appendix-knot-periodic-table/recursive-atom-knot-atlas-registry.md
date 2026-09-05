@@ -258,6 +258,13 @@ For an atom with mass number $A$, we build the canonical braid word in $B_{3A}$ 
 
 ### Layer-1 canonical $|\mathrm{tr}_M(q_0)|$ table
 
+> **The binding column is census-assigned, not derived (2026-09-05).** Each
+> atom's knot is selected so its volume reproduces $B_\mathrm{AME}/m_e$, and the
+> $^4$He row is $4\times$ the $^3$He row using the same $8G$. The `± 0.0000 %`
+> is the AME *experimental* uncertainty, not an error bar on the prediction.
+> Retired as a live binding route; see
+> `docs/audits/2026-09-05-binding-route-consolidation-no-knot-selection.md`.
+
 <!-- AUTO:canonical-tr-m-table BEGIN -->
 
 | Atom | $A$ | $N$ | Binding $B_q$ (MeV) | Binding $B_{\text{AME}}$ (MeV) | Binding Error | $M_{\text{atom}}$ (MeV) | $M_{\text{atom}}$ Error |

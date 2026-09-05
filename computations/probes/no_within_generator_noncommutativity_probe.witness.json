@@ -1,0 +1,95 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T12:57:06.551665+00:00",
+  "commitSha": "d3af948286f9e79d2104711f2341ed72589f0c8f",
+  "assertions": [
+    {
+      "name": "the live readout reproduces the proved single-crossing bond factor z + d",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the deprecated readout does NOT — this is the error behind the retracted test",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "on all three interface letters the live readout equals z + d and the deprecated one misses by more than 0.1 — the table published as the correction to thm:markov-trace-factorization",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "S satisfies the Hecke quadratic S^2 = hS + 1 exactly",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "crossings at a generator commute identically — there is no within-generator non-commutativity for anything to be carried by",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the readout is NOT multiplicative within a generator, and the defect is independent of d1, d2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "every INTERFACE generator carries exactly one crossing, so no within-generator combination happens on a bond at all",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "no_within_generator_noncommutativity_probe",
+  "scriptFile": "no_within_generator_noncommutativity_probe.py",
+  "scriptHash": "538325905f5a",
+  "scriptCommitSha": "572819bc13e459dd5153ba3f929973c446b035e2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/no_within_generator_noncommutativity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/no_within_generator_noncommutativity_probe.py"
+  },
+  "description": "Closes qou-jebr negative. The corpus readout is Vhat = z*M[1][0] + M[1][1] with M = alpha + beta*S, S = [[h,1],[1,0]]; pinned against the proved single-crossing bond factor z + d before use, which is the step whose omission caused the earlier retraction (the deprecated readout z*M[0,0] + M[1,0] does not reproduce it). S satisfies S^2 = hS + 1, so every crossing at a generator is a polynomial in the same S and [S+d1, S+d2] = 0 identically: there is NO within-generator non-commutativity and the question is empty. What is true instead is that the readout is not multiplicative within a generator, defect z*h - z^2 + 1 = (q^4+q^2+1)/(q^2+1)^2, independent of the offsets — a different property, easy to confuse with the first. It still cannot make a quadratic in N-Z: every interface generator carries exactly one crossing, and the multi-crossing generators are intra-nucleon, so their contribution is linear in the counts and never mixes two nucleons.",
+  "data": {
+    "live_readout": "z*M[1][0] + M[1][1] = z*beta + alpha",
+    "single_crossing_vhat": "z + d",
+    "commutator": "0",
+    "multiplicativity_defect_at_z": "(q**4 + q**2 + 1)/(q**4 + 2*q**2 + 1)",
+    "bond_factor_pp": "0.6126880371464652515958299",
+    "deprecated_readout_pp": "1.128088744114353785593152",
+    "live_readout_pp": "0.6126880371464652515958299",
+    "bond_factor_nn": "0.4036277383508259361649837",
+    "deprecated_readout_nn": "1.000000000000000000000000",
+    "live_readout_nn": "0.4036277383508259361649837",
+    "bond_factor_pn": "0.5082297893767389625779958",
+    "deprecated_readout_pn": "1.064088425324561054006668",
+    "live_readout_pn": "0.5082297893767389625779958"
+  },
+  "caveats": [
+    "Says nothing about the all-pairs word, whose band generators span several generators and genuinely fail to commute — that is qou-bygw, untouched and still blocked on a modelling decision.",
+    "Says nothing about whether B = alpha L is a binding energy (qou-qnqf). This settles one narrow question created by testing the wrong object."
+  ]
+}

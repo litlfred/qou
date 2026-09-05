@@ -884,6 +884,36 @@ def _tolerance_literal(t: Any) -> "Optional[str]":
     return s
 
 
+def declared_tolerance(t: Any) -> Any:
+    """`t` as `Assertion.to_dict` would serialize it — for HAND-BUILT payloads.
+
+    `_tolerance_literal` runs inside `Assertion.to_dict`, so it is reached only
+    by a producer that constructs an `Assertion`. A producer that hand-builds
+    its assertion dicts and `json.dump`s them (many do — they import
+    `WitnessBuilder` only for the provenance stamp) never reaches the guard, so
+    PR #5910's drain of 1232 declared tolerances to strings is undone for that
+    file on its next re-run, one file at a time and invisibly.
+
+    Call this at such a site instead of typing the literal:
+
+        "tolerance": declared_tolerance(1e-9),   # -> "1e-09"
+        "tolerance": declared_tolerance(0.0),    # -> 0.0, unchanged by design
+
+    Two properties are the point. It returns the value UNCHANGED when the guard
+    declines — an integral tolerance, or a computed one carrying more than
+    `_TOLERANCE_LITERAL_MAX_SIG` significant digits — so a call site never has
+    to know which case it is in, and a genuinely computed tolerance stays a
+    float and stays counted by the raw-float64 ratchet. And it IMPORTS the rule
+    rather than restating it: the alternative in the corpus is to hand-copy the
+    guard's output string into the source, which is correct today and drifts
+    silently the moment the rule changes.
+
+    Audit: `computations/audits/tolerance_guard_bypass_audit.py`. Bean qou-9tqx.
+    """
+    literal = _tolerance_literal(t)
+    return t if literal is None else literal
+
+
 class Assertion:
     """A single named claim with computed vs expected values."""
 
@@ -1445,6 +1475,57 @@ def _check_error_rows(witness: dict, name: str, paths: list) -> None:
     else:
         raise ValueError(f"error-row guard: {msg}")
 
+# ── main, merged 2026-09-05 ──────────────────────────────────
+# Independent addition at the same point, not a competing one: the
+# block above is the error-row gate (bean `qou-qe81`), this is the
+# q0-anchor vocabulary warner (bean `qou-eggf`). Both kept.
+Q0_ANCHOR_VOCABULARY = ("muon", "proton", "ambiguous", "independent",
+                        "comparison")
+"""The five tokens `q0_anchor_consistency_audit.py` can map to a pin.
+
+Anything else means the audit COULD NOT CHECK that witness — not that the
+witness is wrong, which is the point: an unmappable label is unfalsifiable.
+"""
+
+
+def _warn_unmappable_anchor(anchor: object, script_path: str) -> None:
+    """Warn — never raise — when an anchor is outside the vocabulary.
+
+    WARN, not raise, and the choice is not timidity. Stamping happens at the
+    END of a producer, after the compute; several producers here run for tens
+    of minutes and one runs past fifty. Raising would discard that entire run
+    to correct a label, which is a worse trade than writing the witness and
+    saying so loudly. The repo has decided this exact question once before in
+    the other direction's favour: `scripts/precommit-precision-warn.sh` was
+    offered as a blocking hook and the owner declined it, 2026-08-25.
+
+    So this closes the ARRIVAL RATE the way that hook does — the author sees it
+    in their own log, while the producer is fresh in mind — and leaves the
+    backlog to `q0_anchor_consistency_audit.py`, which is already CI-failing on
+    it and is the right place for a gate.
+
+    Why it is needed at all: until 2026-09-03 there was no `q0_anchor_reason`
+    slot, so producers wanting to say WHY wrote prose into the token —
+    `'proton (experimental pin)'`, `'none (exact symbolic identities in q)'`.
+    17 witnesses were fixed at the witness and 13 more arrived within four
+    days from the SAME producers, because nothing upstream had changed and
+    nothing said a word when they wrote it (bean qou-eggf). The slot now
+    exists; this is what points at it.
+
+    Silent on `None` and `False`: neither reaches here (both return earlier),
+    and both are documented, correct calls.
+    """
+    if anchor in Q0_ANCHOR_VOCABULARY:
+        return
+    print(
+        f"⚠ q0Anchor={anchor!r} is not one of {Q0_ANCHOR_VOCABULARY} — "
+        f"q0_anchor_consistency_audit cannot map it to a pin, so this witness "
+        f"will be reported Q0_ANCHOR_UNRECOGNISED and never checked. Pass the "
+        f"bare token in q0_anchor and the prose in q0_anchor_reason. "
+        f"[{script_path}]",
+        file=sys.stderr,
+    )
+
 
 class WitnessBuilder:
     """
@@ -1821,6 +1902,21 @@ class WitnessBuilder:
             start_time=start_time,
             _script_path=script_path,
         )
+        # The THIRD write path. `q0Anchor` arriving inside `payload` reaches the
+        # witness through `_extra_top_level` and `build()`, touching neither
+        # `stamp_staleness_metadata` (where `_warn_unmappable_anchor` was
+        # installed) nor `save(extra)` (guarded above). Measured on main at
+        # 6a9c2c44fb9: 152 producers call `wrap_legacy` and 22 of them set
+        # `q0Anchor` in the payload -- among them the one live off-vocabulary
+        # producer, `codata_corpus_literal_scan.py`, whose `'not-applicable'`
+        # no existing guard could see. Bean qou-3ral.
+        #
+        # Warn, never raise, for the reason `_warn_unmappable_anchor` documents.
+        # A producer that also passes `q0Anchor` to `save(extra)` would warn
+        # twice; that is two declarations of the same field and worth saying
+        # twice.
+        if "q0Anchor" in payload:
+            _warn_unmappable_anchor(payload["q0Anchor"], str(script_path))
         for key, value in payload.items():
             if key == "description" and isinstance(value, str):
                 builder.set_description(value)
@@ -2066,6 +2162,22 @@ class WitnessBuilder:
                 "(q0_anchor=False): no q0-dependent field in this witness",
             )
             return payload
+        # `q0_anchor=True` is NOT special-cased here (merge 2026-09-05).
+        #
+        # This branch had a dedicated `if q0_anchor is True:` that first raised,
+        # then (mid-merge) warned and refused to stamp. Both are superseded by
+        # `origin/main`'s design, which is better: `True` falls through to the
+        # string path, gets stamped, and `_warn_unmappable_anchor` reports it
+        # against the ONE vocabulary — "q0Anchor=True is not one of
+        # ('muon', 'proton', 'ambiguous', 'independent', 'comparison') ... will
+        # be reported Q0_ANCHOR_UNRECOGNISED and never checked".
+        #
+        # That says everything the special case was for (the anchor the author
+        # meant is being discarded) through a single mechanism rather than a
+        # bespoke branch, and without killing a run that may have taken hours
+        # at the point stamping happens. Pinned by
+        # `test_bool_True_is_not_a_documented_anchor_and_warns`, which asserts
+        # both the stamp and the warning.
         if q0_anchor is None:
             # PAYLOAD FIRST (bean qou-aj91): the pin the payload's own q₀ shows
             # it was computed at beats the one the manifest/env would have
@@ -2088,6 +2200,7 @@ class WitnessBuilder:
         # An explicit `q0_anchor=` argument still wins over both, since a caller
         # passing it is making the same declaration one call frame out.
         if "q0Anchor" not in payload:
+            _warn_unmappable_anchor(q0_anchor, spath)
             payload["q0Anchor"] = q0_anchor
             if q0_value is not None:
                 payload["q0Value"] = q0_value
@@ -2396,6 +2509,29 @@ class WitnessBuilder:
         """
         witness = self.build()
         if extra:
+            # The SECOND write path, and the one the vocabulary guard could not
+            # see. `_warn_unmappable_anchor` was installed on
+            # `stamp_staleness_metadata` (bean qou-eggf); this route bypasses
+            # that function entirely -- `save(extra)` merges `extra` into an
+            # already-built witness -- so a prose token arriving here was never
+            # warned about. It is not a back door either: the module header
+            # DOCUMENTS `save({"q0Anchor": "comparison", ...})` and
+            # `save({"q0Anchor": "independent", ...})` as the intended route for
+            # the two tokens the manifest cannot resolve, and those two are the
+            # fastest-growing in the corpus (bean qou-3ral: +540 % and +51 %
+            # against proton's +16 % over one day).
+            #
+            # Warn, never raise -- the same call `_warn_unmappable_anchor`
+            # already documents, for the same reason: stamping happens after the
+            # compute, and discarding a fifty-minute run to correct a label is
+            # the worse trade. This does not re-open that decision; it applies it
+            # to the route it was not applied to.
+            #
+            # `stamp_staleness_metadata` warns only when `"q0Anchor" not in
+            # payload`, so a producer that stamps AND passes `extra` warns
+            # exactly once here rather than twice.
+            if "q0Anchor" in extra:
+                _warn_unmappable_anchor(extra["q0Anchor"], str(self._script_path))
             witness.update(extra)
             # `extra` can introduce error rows that `build()` never saw, and
             # can overwrite `allPassed` outright. Re-run the gate on the merged
@@ -2838,7 +2974,22 @@ def _check_producer_takeover(existing: object, witness: dict,
 _EPHEMERAL_META_FIELDS = frozenset({
     "commitSha", "scriptCommitSha", "computedAt", "durationMs",
     "durationSeconds", "duration_sec",
-    "environment", "elapsed_seconds", "elapsed_sec",
+    # `elapsed_s` declared 2026-09-05 (owner ruling, bean `qou-m549`). It is
+    # the same quantity as `elapsed_sec` under a shorter spelling — every live
+    # site is a wall-clock duration, seven of them written as
+    # `round(time.monotonic() - t0, 3)` in a `provenance` block — and its
+    # absence here made the raw-float64 ratchet read each one as a payload
+    # float. Seven such reds surfaced in two days (two within ten hours)
+    # before it was declared.
+    #
+    # This is the ONE-HALF case the comment in
+    # `computations/witness_raw_float64_audit.py::_ephemeral_timing_fields`
+    # warns about, in its easy direction: that carve-out is a SUBSTRING TEST
+    # over this set (`"dur" in n or "elapsed" in n`), so `elapsed_s` becomes
+    # visible to the ratchet the moment it is named here, with no second edit.
+    # `wall_sec` — also in the corpus, also a duration — would need BOTH
+    # halves and is deliberately NOT added blind; see `qou-ywee`.
+    "environment", "elapsed_seconds", "elapsed_sec", "elapsed_s",
 })
 
 

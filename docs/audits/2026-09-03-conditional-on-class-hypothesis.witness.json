@@ -1,6 +1,6 @@
 {
   "audit": "conditional-on-class-hypothesis (AGENTS.md §3b-cond item 2)",
-  "generated": "2026-09-04T10:58:32.154Z",
+  "generated": "2026-09-04T14:11:22.662Z",
   "source_witness": "docs/audits/2026-05-01-p3-1-conjectural-propagation.witness.json",
   "note": "The propagation audit splits blocks on whether their CONE's conjectures are class-axiomatised; it never opens the downstream block, so §3b-cond item 2 is unchecked. This measures that. `binds_no_carrier` is a CANDIDATE set for hand triage, NOT a violation count: an unconditionally true theorem correctly binds nothing (hand-checked: lem:frobenius-cocasimir-refuted-deuteron is a numeric refutation, prop:alpha-k-derivation-procedure is generic linear algebra).",
   "conditional_on_class_total": 139,
@@ -16,8 +16,7 @@
     "prop:qbeta-canonical-markov-weights-explicit-instance",
     "prop:type-b-folded-crystal-combinatorics",
     "prop:wedderburn-bratteli-recursion",
-    "prop:wigner-2-coefficient",
-    "thm:knot-mass-formula-unified"
+    "prop:wigner-2-coefficient"
   ],
   "binds_cone_class": [
     "prop:crystal-r-matrix-sub-lemma",
@@ -98,7 +97,8 @@
     "prop:y-lambda-closed-form-wenzl-bridge",
     "prop:y-lambda-recipe-from-partition",
     "thm:frobenius-codim-universal",
-    "thm:geometry-of-incompleteness"
+    "thm:geometry-of-incompleteness",
+    "thm:knot-mass-formula-unified"
   ],
   "binds_no_carrier": [
     "lem:frobenius-cocasimir-refuted-deuteron",
@@ -153,10 +153,10 @@
   ],
   "counts": {
     "total": 139,
-    "decl_unresolvable": 13,
+    "decl_unresolvable": 12,
     "binds_cone_class": 9,
     "variable_undecided": 0,
-    "binds_other_carrier": 68,
+    "binds_other_carrier": 69,
     "binds_no_carrier": 49
   }
 }

@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "Quantum Langlands duality — $H_n(q)$ ↔ $H_n(q^{-1})$ via Cartan folding (Type $A_{n-1}$ ↔ ${}^L\\!A_{n-1}$)",
   lean: {
-    ref: "qou:QOU.BraidsAndKnots.QuantumLanglandsDual",
+    ref: "qou:QOU.Conjectures.QuantumLanglandsDual",
     validation: "not_checked",
   },
   uses: [

@@ -4,7 +4,7 @@ export default remark({
   label: "rem:mu-p-residual-two-readings",
   title:
     "The $\\mu$–$p$ residual: two readings of a two-pin discrepancy, and what decides between them",
-  interprets: "prop:three-calibration-discipline",
+  interprets: "def:three-calibration-discipline",
   uses: [
     "rem:epistemic-status-of-calibrations",
     "prop:self-dual-higgs-real-volume",

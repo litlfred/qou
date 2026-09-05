@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-04T10:38:53Z
+updated_at: 2026-09-05T08:54:35Z
 ---
 
 
@@ -940,3 +940,210 @@ CORPUS-GREP: the non-polynomiality MECHANISM for the covariance family M_k is al
 odd weight not => M_2j+1 non-polynomial). Those are about M_k. V_A = Var(Sum|c|) is a DIFFERENT
 object and nothing measured it -- which is why it was run rather than inferred. The analogy held;
 that it would was not evidence.
+
+
+2026-09-04 (branch claude/m1-k5r5-cs-relaxation-cost-2026-09-04): THE CS RELAXATION IS CHEAP -- the
+(CS) margin route is validated as the right target, by audit rather than assumption.
+
+THE RELATIONSHIP, which had never been priced. Two sufficient conditions coexist in this corpus:
+  FULMAN (2026-08-21 audit): Sum h = D + A (split identity) and, with omega_3 = W an eigenfunction of
+    the up-down chain, M_1 = Cov(Sum h, W) = P - N with P = Cov(A,W) >= 0 and N = -Cov(D,W) >= 0,
+    both manifest EDGE BY EDGE. So M_1 > 0 is EXACTLY P > N -- necessary and sufficient.
+  (CS) MARGIN (PRs #6500/#6528/#6576/#6602): m = rho_P - sqrt(V_D/V_A) > 0, which multiplied through
+    by sqrt(V_A V_W) is exactly P > sqrt(V_D V_W). Since N <= sqrt(V_D V_W) by Cauchy-Schwarz, THE
+    MARGIN IS THE CS RELAXATION OF P > N -- sufficient only, and it discards N's per-edge structure.
+
+MEASURED (_cs_relaxation_cost.py, exact Fraction over every partition to n=40, NO float64, exit 0):
+  rho_D = N/sqrt(V_D V_W)  over n>=16 : [0.87815, 0.92034]   <- IS the tightness of CS on (D,W)
+  surviving = (P - sqrt(V_D V_W))/(P - N) over n>=16 : [0.78598, 0.85193]
+Both INCREASE with n (0.8371 -> 0.9203; 0.7467 -> 0.8519), so at n>=79 the relaxation should be
+cheaper still -- the conservative direction for the extrapolation.
+
+VERDICT: CS costs at worst 1.27x. The margin route loses little and sharpening delta_A is well spent.
+NOT obvious in advance: had rho_D come out near 0.5, four PRs would have been paying a 2x premium
+avoidable by working P > N directly.
+
+THE CORPUS'S REDUCTION IS RE-VERIFIED INDEPENDENTLY, not assumed. Sum h is computed PER CELL as an
+explicit hook sum, never as D + A, and two assertions gate every number: split identity Sum h == D+A
+at EVERY partition (PASS) and Fulman reduction Cov(Sum h,W) == P - N at EVERY n (PASS). The probe
+refuses to print a cost figure if either fails.
+
+DOES NOT CLOSE EITHER ROUTE. Both still need a rigorous finite-n argument -- delta_A for the margin,
+P > N for Fulman. Window n<=40 against a requirement of n>=79; nothing here is a bound.
+
+
+2026-09-05 (same branch claude/m1-k5r5-cs-relaxation-cost-2026-09-04, BEFORE merge): I WITHDRAW my
+own inference from the CS-cost measurement. Tightness is not tractability, and the machinery reaches
+P > N, not the margin.
+
+WHAT #6651 MEASURED, and it STANDS: the CS relaxation keeps >= 78.6% of the true margin
+(rho_D in [0.8782, 0.9203] over n>=16), i.e. costs at most 1.27x.
+WHAT I INFERRED FROM IT, and it does NOT follow: 'the margin route is the right target'. Those are
+two different claims and only the first was measured.
+
+THE REACH (_eigenfunction_reach.py, exact Fractions, n=3..12, NO float64, exit 0). The Fulman
+identity is NOT a general covariance formula:
+    Cov(f,g) = E_pi[(f-f*)(g-g*)]/(2(1-beta))   valid ONLY when J g = beta g
+so it computes the covariance of ANY f against an EIGENFUNCTION g of the up-down chain. Measured,
+quantified over the FAMILY (every non-degenerate n):
+    W : eigenfunction at every n, beta_3 = (n-2)/(n+1) EXACT  => Cov(.,W) reachable => P AND N reachable
+    A : eigenfunction at NO non-degenerate n                  => V_A = Cov(A,A) NOT reachable
+    D : eigenfunction at NO non-degenerate n (constant, hence vacuously one, at n=3 only) => V_D NOT reachable
+CONTROL PASSED: J row-stochastic at every n and beta(W) reproduces the corpus's 2026-08-21 value
+exactly, so a negative on A is a fact about A, not about my chain.
+
+CROSS-CHECK FROM AN INDEPENDENT DIRECTION: #6627 found V_W an exact polynomial n(n-1)(n-2)/3 while
+V_A, V_D and P are not polynomial at all. Same boundary from the other side -- the one object with a
+closed form is the one whose statistic is the eigenfunction. Two measurements, one split.
+
+CONSEQUENCE: the margin route's ONE remaining object (V_A) is the one the named machinery does not
+reach AND the one with no polynomial closed form. P > N's two objects are both exact local per-edge
+sums with manifest signs. RECOMMENDED NEXT TARGET CHANGES FROM delta_A TO P > N.
+
+SCOPE (a), NOT (b): this says the NAMED IDENTITY does not apply to V_A. It does NOT exclude V_A -- a
+spectral decomposition of A in the chain's eigenbasis, or a different chain for which A IS an
+eigenfunction, are both untested.
+
+QUANTIFIER BUG IN MY OWN PROBE, caught before commit: the first run reported 'D is an eigenfunction
+=> V_D reachable' on the strength of n=3 ALONE, where D == 3 is CONSTANT and a constant is trivially
+an eigenfunction of any stochastic chain (beta=1). I used any(n) where reachability is a claim about
+the FAMILY and needs every(n) with constants excluded. Second quantifier slip of this arc -- #6602
+had the mirror (testing a family claim at a point).
+
+
+2026-09-05 (same branch, cont'd): P > N IN LOCAL FORM -- and FACT B OF THE 2026-08-21 AUDIT IS FALSE.
+
+FINDING 1 -- CORPUS CORRECTION. docs/audits/2026-08-21-covariance-kernel-M1-fulman-exchangeable-pair-
+reduction.md states Fact B as 'Delta(Sum D^2)*Delta(omega_3) <= 0 on every single-box edge (100% of
+the signed edge weight is discordant; verified n<=13)'. IT FAILS FIRST AT n = 10, and again at n=11,
+12 (16, 24, 36 violating ordered edges). Hand-verified counterexample:
+    lam* = (5,4,1) -> lam = (5,5), joined in the chain via mu = (5,5,1)
+    Sum D^2 : 16 -> 18   omega_3 : -5 -> 0   =>  product = (+2)(+5) = +10 > 0.
+WHY THE STATED REASON FAILS: 'larger |content| => shorter diagonal => Sum D^2 decreases' describes
+the EQUILIBRIUM SHAPE, not the actual diagonal lengths of a given lambda. Landing a box on a diagonal
+of current length d raises its square by 2d+1 whatever the content is; here the box leaves a length-1
+diagonal (1->0) and lands on another length-1 one (1->4), net +2.
+WHAT SURVIVES: N >= 0 is NOT refuted (positive at every n measured); M_1 = P - N is an identity and
+verified exactly; Fact A HOLDS, re-verified at every edge to n=12 (beyond the original's n<=8). Only
+the PER-EDGE argument for N's sign fails, so 'both signs manifest edge by edge' is true of P and
+false of N at n >= 10. Correction applied in place to the 2026-08-21 audit.
+
+FINDING 2 -- THE GAP DOES NOT CLOSE HERE. If Delta(Sum h)*Delta(omega_3) >= 0 edge-wise, M_1 > 0
+would follow for all n immediately. Measured: edge-wise non-negative only for n < 6 (too few edges to
+exhibit one) and NEVER after, no recovery through n=12. So M_1 > 0 does NOT follow from per-edge
+signs. What must be bounded is the POS/NEG MASS RATIO, measured in [22.0, 112.0] over n >= 6, against
+threshold 1. Negative edges are ~7-17% of all edges -- a substantial fraction, not a thin exceptional
+set, which ARGUES AGAINST a pairing/injection argument over them and FOR bounding the ratio directly
+(a reading of the census, not a proof that pairing cannot work).
+
+SELF-CHECK gating every figure: the census reconstructs M_1 exactly from (pos_mass - neg_mass)/
+(2(1-beta_3)) against a direct partition sum -- PASS at every n.
+
+THIRD SMALL-n QUANTIFIER TRAP OF THIS ARC, caught before commit: any(n) over the whole table reports
+'a non-negative n exists' on the strength of n=3,4,5 where the chain is too small to HAVE a negative
+edge. Now reported as a threshold (where it starts failing, whether it recovers). Prior two: #6602
+tested a family claim at a point; the reach probe counted a CONSTANT statistic as an eigenfunction.
+
+
+2026-09-05 (same branch, cont'd): AN EXACT CLOSED-FORM CRITERION FOR THE NEGATIVE EDGES. P > N stops
+being a census and becomes an inequality in four integers.
+
+FORMALIZE-FIRST RATHER THAN A WIDER SCAN. The census left 'bound the pos/neg mass ratio' and the
+obvious move was to extend n. Both per-edge pieces already have closed forms, so which edges are
+negative is decidable algebraically. Write the edge as: lam has a box at content u that lam* lacks,
+lam* has one at v that lam lacks, d_u/d_v the diagonal lengths IN lam. Then
+    Delta(A) = |u|-|v|,  Delta(W) = u^2-v^2,  Delta(D) = 2(d_u-d_v)-2
+    Delta(A)Delta(W) = (|u|-|v|)^2(|u|+|v|) >= 0     (Fact A, in closed form)
+With g = |u|-|v| SIGNED, Delta(W) = g(|u|+|v|) so sign(Delta W) = sign(g), and
+Delta(A)+Delta(D) = g + 2(d_u-d_v) - 2, giving
+
+    NEGATIVE  <=>  g * (g + 2(d_u - d_v) - 2)  <  0
+
+VERIFIED AT EVERY EDGE TO n = 22 (12,518 edges at n=22), together with all four closed forms and
+'g = 0 edges contribute exactly 0'. At g > 0 it reads d_u - d_v < 1 - g/2: a negative edge needs the
+diagonal the box LEAVES to be no longer than the one it LANDS ON, by a margin growing with the gap.
+
+A WLOG SHORTCUT IS WRONG HERE, and my own check caught it before commit. The first version derived
+the g>0 case then handled g<0 by swapping u and v. Invalid: Delta(D) = 2(d_u-d_v)-2 is NOT symmetric
+under that swap -- the -2 does not flip -- so the swapped form is off by 4. Diagnostic signature: all
+four closed forms PASSED while the criterion FAILED at every n having a negative edge, which is what
+correct algebra plus wrong case analysis looks like. The signed-g form has no case split.
+
+A FACT-B VIOLATION IS NOT A NEGATIVE EDGE -- I had this backwards. Fact B claims Delta(D)Delta(W)<=0;
+a VIOLATION has it > 0, which ADDS to the non-negative Delta(A)Delta(W) and makes the edge MORE
+positive. Disjoint phenomena: negative edges first at n=6, Fact-B violations first at n=10.
+
+THE RATIO SETTLES, which the n<=12 window could not show. pos/neg mass over n>=6 is [22.0, 112.0],
+but that is small-n noise; over n >= 16 it is [44.128, 56.315], ~54.8 at n=22.
+  n:    6     8    12    16    19    22
+  R: 22.0 112.0  52.3  44.1  56.3  54.8
+
+WHAT THIS BUYS: P > N was a weighted sum over an ENUMERATED set; it is now a set CUT OUT BY AN
+INEQUALITY in four integers, three of which (u, v, d_u) are read off one partition. That is the shape
+a finite-n bound can use -- bound the weight the criterion admits rather than enumerate. It bounds
+NOTHING yet, and a ratio settling near 55 over n<=22 is not evidence about n>=79.
+
+
+2026-09-05 (same branch, cont'd): THE INTEGER FORM, AND MY LOCALIZATION HYPOTHESIS IS REFUTED.
+
+INTEGER FORM (verified at every edge to n=22, alongside the signed-g form). d_u - d_v is an INTEGER,
+so the half-integer thresholds collapse:
+    g > 0 :  negative <=>  d_u - d_v <= -floor(g/2)
+    g < 0 :  negative <=>  d_u - d_v >= 2 + floor(|g|/2)
+NOT mirror images. That +2 vs -floor is the SAME -2 in Delta(D) that broke the WLOG swap, and it BIT
+A SECOND TIME in this probe as an off-by-one on EVEN |g| only -- the odd cases agreed, so a spot
+check would have passed. Twice from one asymmetry; both forms are machine-checked, not argued.
+
+THE g>0 THRESHOLDS PAIR: g=2 and g=3 both need <= -1; g=4 and g=5 both need <= -2. So the larger ODD
+g inherits the smaller even g's admission condition while carrying a strictly larger |Delta W|.
+
+HYPOTHESIS REFUTED. The profile was measured to test whether the negative mass concentrates at small
+|g| (which would localise a bound to a few edge shapes). IT DOES NOT:
+    n=12  |g|=1 42.9%/20   |g|=2 5.5%/4    |g|=3 51.7%/12
+    n=16  |g|=1 38.2%/84   |g|=2 3.5%/16   |g|=3 57.9%/56
+    n=22  |g|=1 30.2%/448  |g|=2 4.4%/100  |g|=3 46.8%/364
+|g|<=2 carries only ~35% at n=22; the LARGEST bucket is |g|=3; |g| runs to 5. The pairing is why --
+g=3 is admitted on g=2's condition with a bigger term, so the mass is NOT monotone in |g| and there
+is no small-|g| truncation to lean on. A bound must handle the whole admitted set.
+
+
+### 2026-09-05 — a SECOND Cauchy-Schwarz, on the EDGE measure; and reverse-pairing is EXCLUDED
+
+Probe `computations/deltalambda/wlambda_covariance_epic_M1_edge_cauchy_schwarz.py` (PR #6651).
+
+**The move.** The Fulman identity writes BOTH halves of `M_1 = P - N` over the same edge set with
+the same non-negative weight `dmu = pi(lam) J(lam,lam*) (|u|+|v|)`, with `g = |u|-|v|`,
+`delta = d_u - d_v`:
+
+    P = Sum dmu g^2                 (a SQUARE -- this is Fact A in one line)
+    N = Sum dmu g(2 - 2 delta)      (not a square -- which is why Fact B is false)
+
+Cauchy-Schwarz on THAT measure: `N <= sqrt(P Q)`, `Q := Sum dmu (2-2 delta)^2`. So
+
+    Q < P  =>  N < P  =>  M_1 > 0
+
+-- a sufficient condition in two edge sums of the same shape over the same measure, needing
+NEITHER `V_A` NOR `V_D`, the two objects the reach probe showed the identity does not reach.
+
+**MEASURED: it holds, with room.** `Q < P` at every n in 4..20; `P/Q` in [2.231, 2.266] over
+n >= 12 -- 2.24x headroom. Surviving margin `(P - sqrt(PQ))/(P - N)` rises monotonically
+0.811 -> 0.861, i.e. the SAME cost as the first relaxation ([0.786, 0.852]) on a reachable
+target. `P/Q` is U-SHAPED: min 2.23112 at n = 15, rising for the whole second half. (I first
+classified it by endpoints and printed "falling", which is wrong about the tail and is exactly
+the reading a reader cares about.)
+
+**PROVED, and it closes a route.** The chain is reversible with `w = f^lam f^lam*/(n+1)!`.
+Reading an edge from the other end sends `g -> -g` and `delta -> 2 - delta`, hence `k -> -k`, so
+the term `g k (|u|+|v|)` and the weight are BOTH invariant: the negative edge set is CLOSED UNDER
+REVERSAL. Cancelling each negative edge against its own reverse CANNOT work. scope-(b) for that
+pairing (an invariant forbids it); scope-(a) for pairing in general.
+
+**Controls, all PASS, and no verdict is quoted without them:** `P`/`N` rebuilt from the edge sums
+equal `Cov(A,W)` / `-Cov(D,W)` exactly at every n (independent Plancherel computation); `N <=
+sqrt(PQ)` at every n; the reversal identities at every edge.
+
+**Still OPEN, and sufficient is not necessary.** A failure of `Q < P` would say nothing about
+`M_1 > 0`. Window n <= 20 against a requirement of n >= 79; nothing here is a bound. The live
+target is a finite-n proof of `Q < P` -- both sides are explicit edge sums in `(g, delta)` over
+the Plancherel-weighted up-down chain, so this is where the Kerov-CLT-adjacent analysis should
+now be aimed.

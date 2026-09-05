@@ -1,6 +1,6 @@
-The three-calibration discipline ([`prop:three-calibration-discipline`](#prop:three-calibration-discipline)) uses $m_e$, $m_\mu/m_e$, and $m_\pi$ as CODATA/PDG inputs. It maps them bijectively to three cohomological data of the Bring Hodge structure $H^1 = 2W$: the $W$-plane scale, the $W$-plane modulus, and the orthogonal $\mathrm{Vol}(\mathrm{Hopf})=0$ meson class. We clarify the epistemic status of each input.
+The three-calibration discipline ([`def:three-calibration-discipline`](#def:three-calibration-discipline)) uses $m_e$, $m_\mu/m_e$, and $m_\pi$ as CODATA/PDG inputs. It maps them bijectively to three cohomological data of the Bring Hodge structure $H^1 = 2W$: the $W$-plane scale, the $W$-plane modulus, and the orthogonal $\mathrm{Vol}(\mathrm{Hopf})=0$ meson class. We clarify the epistemic status of each input.
 
-The parameter $\mathfrak{Q}_\beta = \hbar/\mathfrak{D}_\beta$ proxies CAL-2 (the neutron $\beta$-decay width $\mathfrak{D}_\beta$). It is not a fourth calibration. The CAL-2 modulus is most precisely pinned by $m_\mu/m_e$. Reproducing $\mathfrak{Q}_\beta$ from $q_0$ provides a $0.17\%$ cross-check. We treat it as the bar-odd $\sinh$ partner of the meson scale $m_\pi$. CAL-3 is the pion decay width $\mathfrak{D}_\pi$ (proxy $m_\pi$).
+The parameter $\mathfrak{Q}_\beta = P_{\mathrm{skew}}^{\beta}$ proxies CAL-2 (the neutron $\beta$-sector bar-skew channel $P_{\mathrm{skew}}^{\beta}$). It is not a fourth calibration. The CAL-2 modulus is most precisely pinned by $m_\mu/m_e$. Reproducing $\mathfrak{Q}_\beta$ from $q_0$ provides a $0.17\%$ cross-check. We treat it as the bar-odd $\sinh$ partner of the meson scale $m_\pi$. CAL-3 is the pion-sector bar-even channel $P_{\mathrm{avg}}^{\pi}$ (proxy $m_\pi$).
 
 We introduce no fourth calibration or numerological substitution. The clauses of [`prop:three-calibration-inputs`](#prop:three-calibration-inputs) remain in force.
 
@@ -35,7 +35,7 @@ The paragraph above argues that the muon is the *structurally* preferred anchor.
 
 | Layer | Pins $q_0$ on | $q_0$ | Status of $m_\mu$ |
 |---|---|---|---|
-| Ideal (canonical 3-CAL) | $m_\mu/m_e$ — CAL-2, proxy for $\mathfrak{D}_\beta$ | $:val[q_0]{precision=17}\ldots$ | anchor input; exact *by construction* |
+| Ideal (canonical 3-CAL) | $m_\mu/m_e$ — CAL-2, proxy for $P_{\mathrm{skew}}^{\beta}$ | $:val[q_0]{precision=17}\ldots$ | anchor input; exact *by construction* |
 | Experimental (Physical-Observations) | $m_p/m_e$ | $1.1099785827513808\ldots$ | a **prediction**, and a $9.5\sigma$ one |
 
 The two differ by $\approx 11.6$ ppb — the $\mu$–$p$ tension itself. Production compute takes the experimental pin, for one reason: $m_p/m_e$ is known to $0.017$ ppb against the muon ratio's $22$ ppb, so pinning there puts the unavoidable theory residual where it costs least. Anchoring on the muon instead would leave the proton wrong by $\approx 1.4 \times 10^{4}\,\sigma$; anchoring on the proton leaves the muon wrong by $9.5\sigma$. Neither is a free choice, and the arithmetic — not a preference — selects the second.
@@ -47,9 +47,9 @@ Two consequences follow:
 - **An $m_\mu$ reproduced at the muon pin is not an accuracy result.** It is the calibration restated. Quoting it as a prediction double-counts the input.
 - **The two layers must never be mixed inside a single computed quantity.** A number built from an ideal-layer input and an experimental-layer input carries the $11.6$ ppb tension as a silent error term, regardless of how small the final discrepancy looks.
 
-## CAL-3 ($\mathfrak{D}_\pi$, proxy $m_\pi$) and CAL-2 proxy $\mathfrak{Q}_\beta$
+## CAL-3 ($P_{\mathrm{avg}}^{\pi}$, proxy $m_\pi$) and CAL-2 proxy $\mathfrak{Q}_\beta$
 
-CAL-3 is the pion decay width $\mathfrak{D}_\pi$ (proxy $m_\pi$). This is independent of $(m_e, q_0)$. The parameter $\mathfrak{Q}_\beta$ proxies CAL-2.
+CAL-3 is the pion-sector bar-even channel $P_{\mathrm{avg}}^{\pi}$ (proxy $m_\pi$). This is independent of $(m_e, q_0)$. The parameter $\mathfrak{Q}_\beta$ proxies CAL-2.
 
 The derived $\mathfrak{Q}_\beta$ fixes the hadronic scale $\mathfrak{E}_0$ via $\mathfrak{Q}_\beta = |\Delta(\mathrm{net})| \cdot \mathfrak{E}_0$.
 

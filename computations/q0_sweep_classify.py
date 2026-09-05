@@ -37,7 +37,7 @@ _RES = re.compile(r"^[✓✗–]\s+(\S+\.py): (.*)$")
 # Canonical q₀ decimal signatures (CAL two-layer convention). A *true* q₀-anchor
 # residual is when the q₀ VALUE itself flips between these two signatures — NOT
 # a derived quantity that merely happens to be named `..._q0` / `..._at_q0`.
-_MUON_SIG = "1.109978595557"     # ideal / canonical 3-CAL (CAL-2 = 𝔇_β)
+_MUON_SIG = "1.109978595557"     # ideal / canonical 3-CAL (CAL-2 = P_skew^β)
 _PROTON_SIG = "1.10997858275"    # physical-observations (m_p/m_e)
 
 

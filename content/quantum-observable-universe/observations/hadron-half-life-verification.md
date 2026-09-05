@@ -58,15 +58,16 @@ The MAE is $4.5\%$.
 
 ## $T_{3,5}$ weak vertex
 
-The weak force is mediated by $T_{3,5}$. We compute the vertex form factor exactly:
+The weak force is mediated by $T_{3,5}$. The vertex form factor is the canonical Markov trace of the $T_{3,5}$ braid word in $H_3(q)$, the coupling of the rate formula ([hadron half-life](#prop:hadron-half-life)), and it has a closed form:
 
 $$
-  \mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)
-  \approx 0.7036
-  \qquad\text{at } q = q_0
+  \mathcal{W}(q) = \mathrm{tr}_{\mathrm{Markov}}\bigl((\sigma_1\sigma_2)^5\bigr)
+  = \frac{q^2\,(q^{12} + q^{8} - 1)}{(q^2 + 1)^2},
+  \qquad
+  \mathcal{W}(q_0) \approx 1.1875 .
 $$
 
-The vertex ratio yields an $11\%$ reduction in transition amplitude.
+The trace is the Wedderburn sum over the two blocks of $H_3(q)$ that the $\mathrm{SU}_q(2)$ Markov trace weights, $\mathcal{W} = y_{(3)}\,q^{10} - y_{(2,1)}$ with $y_{(3)} = (q^4+1)/(q^2+1)^2$ and $y_{(2,1)} = q^2/(q^2+1)^2$; the sign block carries weight zero. Its numerator is $q^{22}\,V_{T_{3,5}}(q^{-2})$ for the Jones polynomial $V_{T_{3,5}}(t) = t^4 + t^6 - t^{10}$ of the torus knot $10_{124}$. At $q = 1$ the value is $\mathcal{W}(1) = 1/4$, so the classical vanishing of the decay rate is carried by $Q \to 0$ and not by the vertex factor. The half-life tables above use the single-crossing approximation and do not consume $\mathcal{W}$.
 
 ## Error budget
 

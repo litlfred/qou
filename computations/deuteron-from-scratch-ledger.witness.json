@@ -211,7 +211,7 @@
         "err_rel_pct": -80.42748821736888,
         "ratio_AME_over_pred": 5.109206274114556,
         "tier": "DIAGNOSTIC (Q_β scale, self-labeled wrong-scale)",
-        "error_source": "scale mismatch: Q_β = ℏ/𝔇_β vs the E₀ family; the residual B_AME/B_pred IS the Δ_λ(D) object probed symbolically (P1)"
+        "error_source": "scale mismatch: Q_β = ℏ/P_skew^β vs the E₀ family; the residual B_AME/B_pred IS the Δ_λ(D) object probed symbolically (P1)"
       },
       "R5_rotational_mu0": {
         "B_MeV": "2.0195829431320914724",

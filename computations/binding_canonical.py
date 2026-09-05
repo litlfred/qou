@@ -1,6 +1,38 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: numerical/intermediate-sympy witness; no symbolic-q polynomial in output.
 """
+🛑 SUPERSEDED LAW — this module's `B_MeV` is `Q_beta . Delta_tr`, and that law
+is REFUTED. It is kept for provenance and comparison; do not quote `B_MeV` as a
+binding-energy prediction.
+
+`tr_M` is MULTIPLICATIVE along the chain (closed form: `t_p^Z t_n^N . prod b`)
+and binding energy is EXTENSIVE, so a constant times a product cannot be a line.
+Measured over the 2548 AME2020 nuclides with MEASURED binding energies, at the
+law's OWN optimal scale, the residual p5-p95 spread is **1592x** (238U over-bound
+19.6-fold). Worse, `Delta_tr/tr_free = 1 - exp(-S)` exactly, which is within
+7.7e-4 of 1 by A = 11: above that, `Delta_tr` does not merely MIS-SCALE the
+binding energy, it does not CONTAIN it.
+
+**The replacement**, which consumes the SAME derived bond factors and is forced
+rather than chosen (`log` is the unique multiplicative-to-additive map):
+
+    B = E_0 . log( tr_M(W_free) / tr_M(W_atom) )
+      = E_0 . [ (Z-1)(-ln b_pp) + (-ln b_pn) + (N-1)(-ln b_nn) ]
+
+implemented in `computations/binding_log_free_energy.py` (bean `lkpl`). p5-p95
+spread **1.225x** on the same 2548 nuclides — a ~1300x gain from changing the
+FUNCTIONAL, not the constant.
+
+Scale, as ruled 2026-09-05 (brane-tower axioms preferred):
+`E_0 = m_e.c_q^2.hbar_q/(1 - hbar_q^2) = 4.227483` MeV. With `delta = [2]_q`
+pinned (`qou-xf14`) and 3 strands per nucleon the law is an upper BOUND on
+binding for 2547 of 2548 measured nuclides, saturated at the iron peak to 0.6 %;
+the sole exception is 4He.
+
+Full record: `docs/audits/2026-09-05-binding-law-arc-synthesis.md`.
+Beans: `qou-2pnv` (derive-or-retract, derive half discharged), `qou-gm4q`,
+`qou-q7ga`, `qou-xf14`, `qou-qkbp`.
+
 CLASS-A acknowledged-anchor banner (per Workplan-0b, applies to
 hardcoded CODATA-precision literals in this file as well — see
 `docs/audits/2026-05-18-workplan-0b-m-n-substrate-derivation.md`).
@@ -66,7 +98,7 @@ from q_parameter import Q_MP as q0, HA_MP as h_q  # canonical aliases per AGENTS
 from witness_base import WitnessBuilder  # noqa: E402
 # AME 2020 binding-energy comparison targets + proton mass (validation-only,
 # NOT calibration inputs — per AGENTS.md §"Canonical derivation chain" the
-# 3 calibrations are CAL-1 m_e, CAL-2 𝔇_β, CAL-3 𝔇_π; these AME values
+# 3 calibrations are CAL-1 m_e, CAL-2 P_skew^β, CAL-3 P_avg^π; these AME values
 # are used ONLY for the err = pred - AME_B_* comparison in the __main__
 # print loop below). Added via PR #1105 (codata_constants AME extension).
 from codata_constants import (
@@ -211,7 +243,7 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     difference — see the in-body note; the double-modulus form was a
     non-archimedean misuse]
     Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, the **CAL-2
-    proxy** — NOT CAL-3; CAL-3 is 𝔇_π, exactly as line 69 of this file
+    proxy** — NOT CAL-3; CAL-3 is P_avg^π, exactly as line 69 of this file
     already states. `precision-goals.md` scores Q_β as a *prediction*
     carrying 1248–1279 ppb, not as a calibration input, and
     `three-calibration-inputs-context` forbids "a second hadronic scale".
@@ -284,6 +316,9 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
         # Im(q_0)=0 ⇒ real at the substrate anchor. Q_β(n) is the MeV-
         # dimensioned multiplier of the dimensionless trace difference.
         delta_tr = tr_free_mp - tr_atom_mp
+        # 🛑 SUPERSEDED: `Q_beta . Delta_tr` is refuted (module banner). Kept for
+        # provenance; the live law is E_0 . log(tr_free/tr_atom) in
+        # computations/binding_log_free_energy.py.
         B = mp.mpf(str(Q_beta_n_mev)) * delta_tr
         if verbose:
             print(f"  transfer tr_M (all λ={len(chi_atom)}, lossless): "
@@ -466,6 +501,8 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     # product stays a float and `B_MeV` keeps float64's honest 17 digits
     # rather than being dressed in 50 it does not have.
     _exact = isinstance(delta_tr, (mp.mpf, mp.mpc))
+    # 🛑 SUPERSEDED: see the module banner. `Q_beta . Delta_tr` is refuted;
+    # the live law is E_0 . log(tr_free/tr_atom).
     B = (mp.mpf(str(Q_beta_n_mev)) if _exact else Q_beta_n_mev) * delta_tr.real
     return {
         "status": "solved",
@@ -662,7 +699,7 @@ if __name__ == "__main__":
             f"modulus |·|−|·| was a non-archimedean misuse] with "
             f"Q_β(n) = {float(_Q_BETA_N):.8f} MeV (free-"
             "neutron β-decay Q-value, the CAL-2 proxy — NOT CAL-3, "
-            "which is 𝔇_π; Q_β is a scored prediction, not an input — "
+            "which is P_avg^π; Q_β is a scored prediction, not an input — "
             "NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV). "
             "DIAGNOSTIC ONLY: predicted B values are 5–40× smaller "
             "than AME because Q_β is the wrong energy scale; the "

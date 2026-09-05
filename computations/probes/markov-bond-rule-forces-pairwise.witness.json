@@ -1,7 +1,7 @@
 {
   "computation": "markov-bond-rule-forces-pairwise",
   "scriptFile": "computations/probes/markov_bond_rule_forces_pairwise_probe.py",
-  "computedAt": "2026-09-03T12:45:19.700579+00:00",
+  "computedAt": "2026-09-04T21:38:01.089665+00:00",
   "contentBlock": "qou-edt7",
   "description": "The bond rule (qou-g8i1, completed: the Markov property applied at an interior GAP, so it covers the BOUND atom word rather than only the disjoint sector) makes the cluster trace a product over its bonds. Any map carrying products to sums then yields a bond functional, whose connected cumulants above order two vanish identically (PairwiseCumulantVanishing). So b3 = 0 is the TRACE's doing, not the assembly's, and qou-edt7's replacement must break the bond rule -- not merely change f or the edge set.",
   "bond_factors": {
@@ -72,10 +72,12 @@
     "probes/ursell-chain-mismatch.witness.json"
   ],
   "source": "AME2020; bean qou-g8i1 (bond rule); docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md s10a",
-  "scriptHash": "fd5192a82056",
-  "scriptCommitSha": "ccf34387eebfcb5ebe35922dbd9529b3b89365ee",
-  "commitSha": "b244062b19705d1be08448e1edcd204b33d312a8",
+  "scriptHash": "f05e99d7080f",
+  "scriptCommitSha": "7b8ff5ede6d5660f669a4f0a00096fd275f8d2e8",
+  "commitSha": "59947967bd8b29f264768fedfa42e9e6e78538b6",
   "engine": "python",
   "durationMs": 0,
-  "q0Anchor": true
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "alpha = E0 = m_e/(q0(q0-1)) is read at the experimental pin via q_at(); the bond factors are evaluated there. It is an overall scale and cancels from every vanishing claim, so the anchor is declared for provenance rather than because a number moves with it."
 }

@@ -1,0 +1,121 @@
+{
+  "computation": "qbeta-loop-value-pinned",
+  "assertions": [
+    {
+      "name": "product_of_the_two_pure_crossing_bonds_is_the_inverse_loop_squared",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "b_pp is sigma and b_nn is sigma^-1; their product collapses to q^2/(q^2+1)^2 = 1/[2]_q^2 with no cancellation assumed"
+    },
+    {
+      "name": "each_pure_bond_is_a_q_squared_twist_of_the_inverse_loop",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "b_pp = q^2/[2]_q and b_nn = q^-2/[2]_q"
+    },
+    {
+      "name": "per_strand_coefficient_is_exactly_the_log_of_the_loop_value",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "(L_pp + L_nn)/2 = ln[2]_q, identically in q"
+    },
+    {
+      "name": "exactly_one_family_member_matches_identically",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "a fit would land at q0 and nowhere else; this holds on the whole parameter line, so it is an algebraic fact about the letters"
+    },
+    {
+      "name": "matches_the_corpus_delta_recorded_in_qou_98g5",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "bean qou-98g5 records the corpus carrying 1/delta = 0.497290545; that is this number, independently"
+    },
+    {
+      "name": "the_family_span_reproduces_qou_59j5s_1_33x",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so this is the same family, and it is that span the identity collapses to a single member"
+    },
+    {
+      "name": "the_pinned_member_is_ALSO_the_closest_landing_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "stated because it CUTS AGAINST the argument: the coincidence means the energy comparison has little discriminating power here. The pinning is §1-§2 and refers to no energy at all"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "dps": 40,
+    "E_0_MeV": "4.1859813632944758969",
+    "E_0_expression": "m_e/(q0*(q0-1))  [CAL-1, still a calibration]",
+    "strands_per_nucleon": 3,
+    "peak_B_over_A_MeV": "8.794555"
+  },
+  "data": {
+    "identity": {
+      "b_pp_times_b_nn": "q**2/(q**2 + 1)**2",
+      "equals": "1/[2]_q^2",
+      "geometric_mean": "q/(q**2 + 1)",
+      "b_pp_closed": "q^2/[2]_q",
+      "b_nn_closed": "q^-2/[2]_q",
+      "per_strand_coefficient": "ln [2]_q"
+    },
+    "family_discrimination": [
+      {
+        "member": "[2]_q = q + 1/q (unframed Jones/TL loop)",
+        "identical": true
+      },
+      {
+        "member": "[2]_Q = 1 + q^2 (corpus partition function)",
+        "identical": false
+      },
+      {
+        "member": "q^(1/2) + q^(-1/2) (Kauffman variable)",
+        "identical": false
+      },
+      {
+        "member": "1 + q^4 (over-shoot control)",
+        "identical": false
+      }
+    ],
+    "inverse_loop_at_q0": "0.497290545604915556",
+    "family_energies": [
+      {
+        "member": "[2]_q = q + 1/q (unframed Jones/TL loop)",
+        "MeV_per_nucleon": "8.772738941",
+        "over_peak": "0.99751937"
+      },
+      {
+        "member": "[2]_Q = 1 + q^2 (corpus partition function)",
+        "MeV_per_nucleon": "10.08304387",
+        "over_peak": "1.1465098"
+      },
+      {
+        "member": "q^(1/2) + q^(-1/2) (Kauffman variable)",
+        "MeV_per_nucleon": "8.721585563",
+        "over_peak": "0.99170288"
+      },
+      {
+        "member": "1 + q^4 (over-shoot control)",
+        "MeV_per_nucleon": "11.59658787",
+        "over_peak": "1.31861"
+      }
+    ],
+    "family_span": "1.32964216",
+    "b_pn_times_two_q": "1.02199769102491"
+  },
+  "provenance": {
+    "headSha": "6ac687ff65cf007b00e4b94bb1e20026938569de",
+    "producer": "computations/qbeta/qbeta_loop_value_pinned_probe.py",
+    "elapsed_s": 0.417
+  }
+}

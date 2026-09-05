@@ -94,3 +94,44 @@ graph.
 **completed and closed**, the SU(4) reading structurally forbidden by the
 `ℓ(λ) ≤ 2` row cap. The demotion of coordination geometry stands on its own
 measurement; the re-promotion it pointed at does not.)
+
+## 2026-09-05 — the demotion above is WITHDRAWN: my edge-set test was rigged
+
+The 2026-09-04 entry demoted coordination geometry on the strength of *"three
+different edge sets ... land within 0.6 % of one another, so the bond GRAPH is
+not where the error lives"*. That measurement does not support the claim.
+
+The all-pairs row was **renormalised to `A-1` bonds** so the count would be
+"comparable" to the chain's. Quadratic bond growth is the only thing that
+distinguishes a complete graph from a path; dividing it out leaves a chain with
+reweighted letters. The test could not have detected the effect it was run to
+detect.
+
+Raw, over the same 2548 nuclides
+(`computations/qbeta/qbeta_chain_cannot_carry_coulomb_or_surface_probe.py`):
+
+| edge set | median `B_AME / B_pred` | p5-p95 |
+|---|---:|---:|
+| chain | 0.886414 | 1.2250 |
+| all-pairs (raw) | 0.013558 | 9.8864 |
+
+A factor of **65.4** in the median. Neither is right — all-pairs over-binds as
+badly as the chain under-binds — but "the graph does not matter" is false.
+
+**What the graph structurally cannot carry**, which is the useful half:
+
+- A path has `Z-1` proton-proton edges against `Z(Z-1)/2` proton pairs, so it
+  captures `2/Z` of the Coulomb interaction: **2.44 % at Z = 82**. Coulomb is
+  quadratic in `Z`; a path's edge count is linear. No choice of letters, and no
+  scale, makes a `Z^2` term out of `Z-1` edges. This is `qou-nial`'s
+  sum-vs-product stated as combinatorics.
+- A path's interior degree is the constant 2, so its "surface deficit" (the
+  two endpoints) is `A`-independent. There is no `A^(2/3)` in it at any `A`.
+
+So **Coulomb and surface are one defect, not two**: a one-dimensional chain
+standing in for a saturating three-dimensional packing. That is a re-promotion
+of coordination geometry, on a measurement that can actually see it.
+
+What does NOT change: the ORDERING half. Segregated vs alternating are both
+chains and still land within 0.6 % of each other, and `(A-1)` layout-free still
+beats every isospin-resolved variant. `qou-48is` stays where it was.

@@ -5,9 +5,25 @@ At low curvature-rank k ≤ 3, the Wedderburn weight ~w_λ pulls
 back through the distinguished hyperbolic-knot ideal e_{K_k*}
 via the center inclusion Z(H_3) ↪ Z(H_n).
 
-At k = 3: K_3* = 4_1 (chirality channel, named in
-prop:plancherel-term-7-formulation).
+At k = 3: K_3* = 4_1 (chirality channel) — but see the weight-family
+caveat below before quoting that.
 At k = 1, k = 2: K_1*, K_2* are OPEN structural questions.
+
+WEIGHT FAMILY (added 2026-09-05).  "K_3* = 4_1" is the ranking under the
+textbook weight w_λ = dim_q²/[n]_q!, and the k = 3 ranking is NOT
+invariant across weight families: dim_q²/[n]_q! ranks 4_1 best, the
+self-normalised dim_q²/Σ_μ dim_q² ranks 6_1 best, the Molien weight
+f^λ q^{−κ_λ} dim_q(λ)/[n]_q! ranks 5_2 best, and under the Markov
+weights y_λ the depth-3 stratum vanishes identically (SU(N) row cap), so
+the test is vacuous.  Which family Φ_k requires is open (bean qou-oots).
+Do not quote a k = 3 knot conclusion without naming the family.
+Ref: docs/audits/2026-09-05-phi-k-weight-family.md
+Ref: docs/audits/2026-09-05-k3-weight-family-labelling.md
+
+The parenthetical "named in prop:plancherel-term-7-formulation" that used
+to sit on the k = 3 line is dropped: that block defines w_λ and names no
+knot, so it does not source the 4_1 identification.  The 4_1 result is
+PR #826's empirical test, at the textbook weight.
 
 This Lean file follows the QOU.Infra.Polylogarithm pattern:
 - Concrete `noncomputable def` for the FR-pulled-back weight
@@ -38,7 +54,8 @@ namespace QOU.BraidKnot
       e_K at a partition (proxy for the full Hecke-algebra projector
       in the abstract setting), valued in the generic base ring `R`.
     - `knot_label`: the name of the distinguished knot ("4_1"
-      at k = 3; pending for k = 1, k = 2).
+      at k = 3 *under the textbook weight* `dim_q²/[n]_q!` — the label is
+      family-relative, see the module docstring; pending for k = 1, k = 2).
 
     §7c: the FR-pullback weight algebra below is pure field arithmetic
     (a `dim_q²·χ / ([n]_q!·Z)` ratio), so it is stated over a generic
@@ -52,8 +69,11 @@ structure DistinguishedKnotIdeal (k : ℕ) (R : Type*) where
   knot_label : String
 
 /-- The distinguished chirality-channel ideal at k = 3:
-    4_1 (figure-eight knot), named in
-    prop:plancherel-term-7-formulation. -/
+    4_1 (figure-eight knot), as ranked best by the FR-pullback variance
+    test **under the textbook weight** `w_λ = dim_q²/[n]_q!` (PR #826).
+    The ranking is weight-family-dependent — see the module docstring —
+    so this label records one family's answer, not a settled
+    identification. -/
 noncomputable def chirality_ideal_4_1 {R : Type*} [Field R] : DistinguishedKnotIdeal 3 R :=
   { central_projector_value := 1, -- placeholder for the
                                   -- abstract projector value

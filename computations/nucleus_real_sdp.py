@@ -297,6 +297,15 @@ def main() -> int:
                 "bounded": bounded,
                 "strong_duality_holds": bounded,
                 "active_blocks": active,
+                # THE PRIMAL. Omitted until now, and the omission was not
+                # cosmetic: with no x* a reader cannot recompute the objective,
+                # `lp_dual_backend_inference_audit.py` cannot infer which
+                # solver produced the record (it normalises the gap by
+                # max|x*|), and `duality_gap_residuals` -- the instantiation of
+                # QOU.Mathlib.LPDuality.duality_gap_decomposition -- has no
+                # certificate to verify. Six witnesses of this producer were
+                # the largest single group in that blind spot (bean qou-dke6).
+                "x_star": lp_d.get("x_star"),
                 "y0_star": lp_d.get("y0_star"),
                 "y_star": lp_d.get("y_star"),
                 "active_set": lp_d.get("active_set"),
@@ -306,8 +315,10 @@ def main() -> int:
                 # `lp_d` is a to_dict() and carries the companions; mirroring
                 # the numbers up without them is what left these bare.
                 **{_sk: lp_d[_sk] for _sk in
-                   ("y0_star_str", "y_star_str", "primal_obj_str",
-                    "dual_obj_str", "duality_gap_str") if _sk in lp_d},
+                   ("x_star_str", "y0_star_str", "y_star_str",
+                    "primal_obj_str", "dual_obj_str", "duality_gap_str",
+                    "residual_primal_str", "residual_dual_str",
+                    "gap_recomputed_str") if _sk in lp_d},
                 **{_k: lp_d[_k] for _k in ("backend", "precision_bits")
                    if _k in lp_d},
             },

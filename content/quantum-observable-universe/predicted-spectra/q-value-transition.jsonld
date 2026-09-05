@@ -9,6 +9,7 @@
   "kind": "definition",
   "title": "$\\mathcal{Q}_q$-Value as Categorical Action Difference",
   "uses": [
+    "papers/quantum-observable-universe/blocks/def-categorical-action",
     "papers/quantum-observable-universe/blocks/conj-q-integer-mass-formula"
   ],
   "tags": [
@@ -20,7 +21,10 @@
     "kinetic-energy",
     "skein"
   ],
-  "leanRef": "qou:QOU.Archimedean.QValueTransition",
+  "defines": [
+    "q-value"
+  ],
+  "leanRef": "qou:QOU.Archimedean.QqValue.value",
   "text": "q-value-transition.md",
   "leanSource": "q-value-transition.lean",
   "provenance": "authored"

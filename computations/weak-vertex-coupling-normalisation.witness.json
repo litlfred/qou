@@ -1,0 +1,126 @@
+{
+  "computation": "weak-vertex-coupling-normalisation",
+  "description": "The beta-decay coupling s^2 equals [2]_q - [2]_1 exactly, so it is the q-dimension minus its classical value; that pattern motivates the candidate family c*(W - W(1))*bridge for a W-based replacement. The family is EXCLUDED (scope-(b)): s^2 vanishes to second order at q=1 while W - W(1) vanishes to first, and once a bridge repairs the order the ratio still runs (5 -> 695.91 between q=1 and q=2), so no constant rescales one onto the other. Says nothing against W itself.",
+  "convention": {
+    "markov_z": "q**3/(q**2+1) (D)",
+    "hecke_h": "q - 1/q",
+    "anchor": "proton pin (Q_50_DIGIT_STR); identities exact in q"
+  },
+  "q0": "1.1099785827513808075916690956107688798744991218736",
+  "s_sq_identity": "(q**(1/2) - q**(-1/2))**2 == q + 1/q - 2 == [2]_q - [2]_1",
+  "s_sq_at_q0": "0.010896866707122299752491978091862815889240748484137",
+  "W_at_q0": "1.1874806131459626461071158300792049240880255765818",
+  "W_at_one": "1/4",
+  "W_residual_at_q0": "0.93748061314596264610711583007920492408802557658179",
+  "vanishing_orders": {
+    "s_sq": 2,
+    "W_minus_W_one": 1,
+    "W_prime_at_one": "5",
+    "s_sq_second_deriv_at_one": "2"
+  },
+  "order_matched_bridges": [
+    {
+      "bridge": "h",
+      "candidate_at_q0": "0.19598997709941410157",
+      "ratio_to_s_sq_at_q0": "17.985902036528823092",
+      "leading_coeff_order2": "10"
+    },
+    {
+      "bridge": "hbar_q",
+      "candidate_at_q0": "0.092887187908725630514",
+      "ratio_to_s_sq_at_q0": "8.5242107116914302230",
+      "leading_coeff_order2": "5"
+    },
+    {
+      "bridge": "s",
+      "candidate_at_q0": "0.097861780861934071920",
+      "ratio_to_s_sq_at_q0": "8.9807266154747625727",
+      "leading_coeff_order2": "5"
+    },
+    {
+      "bridge": "q-1",
+      "candidate_at_q0": "0.10310278919068847105",
+      "ratio_to_s_sq_at_q0": "9.4616913248373928691",
+      "leading_coeff_order2": "5"
+    },
+    {
+      "bridge": "h/2",
+      "candidate_at_q0": "0.097994988549707050783",
+      "ratio_to_s_sq_at_q0": "8.9929510182644115460",
+      "leading_coeff_order2": "5"
+    }
+  ],
+  "candidate_ratio": {
+    "closed_form": "(q + 1)*(4*q**12 + 4*q**10 + 8*q**8 + 8*q**6 + 8*q**4 + 7*q**2 + 1)/(4*(q**2 + 1)**2)",
+    "limit_at_one": "5",
+    "at_q0": "8.5242107116914302230",
+    "at_rational_points": {
+      "2": "69591/100",
+      "3/2": "5647625/86528",
+      "11/10": "396021579593241/48841000000000"
+    },
+    "required_constant_at_2": "100/69591",
+    "required_constant_at_3_2": "86528/5647625"
+  },
+  "scope": "(b) structural exclusion of the family c*(W - W(1))*X for X in {h, hbar_q, s, q-1, h/2}, by proved non-constancy of the ratio. NOT an exclusion of a W-based coupling of another shape: a ratio against another trace, a Jones-normalised object (V_K(1) = 1 for every knot), or a bar-parity component are untested.",
+  "lean": [
+    "QOU.Braiding.WeakVertexT35.sSq_eq_twoQ_sub_two",
+    "QOU.Braiding.WeakVertexT35.hasDerivAt_sSq_one",
+    "QOU.Braiding.WeakVertexT35.hasDerivAt_weakVertexTrace_one",
+    "QOU.Braiding.WeakVertexT35.no_constant_rescaling",
+    "QOU.Braiding.WeakVertexT35.candidateRatio_two",
+    "QOU.Braiding.WeakVertexT35.candidateRatio_three_halves"
+  ],
+  "reference_blocks": [
+    "prop:hadron-half-life",
+    "prf:hadron-half-life",
+    "rem:hadron-half-life-fermi"
+  ],
+  "assertions": [
+    {
+      "name": "s_sq_equals_two_q_minus_classical_value",
+      "passed": true,
+      "note": "s^2 = [2]_q - [2]_1 EXACTLY: the coupling is a classical-value deviation"
+    },
+    {
+      "name": "W_at_one_is_one_quarter",
+      "passed": true,
+      "note": "W(1) = 1/4, so W does not vanish classically and W - W(1) is the candidate"
+    },
+    {
+      "name": "s_sq_vanishes_to_second_order",
+      "passed": true,
+      "note": "s^2(1) = 0, s^2'(1) = 0, s^2''(1) = 2"
+    },
+    {
+      "name": "W_residual_vanishes_to_first_order",
+      "passed": true,
+      "note": "W'(1) = 5 != 0, so W - W(1) is first order \u2014 the order mismatch"
+    },
+    {
+      "name": "every_order_matched_bridge_has_leading_coeff_five_times_bridge",
+      "passed": true,
+      "note": "leading coeff of (W-1/4)*X is W'(1)*X'(1) = 5*X'(1), never s^2's 1"
+    },
+    {
+      "name": "candidate_ratio_is_not_constant",
+      "passed": true,
+      "note": "R(q) runs: 5 as q->1, 8.524 at q0, 65.27 at 3/2, 695.91 at 2 \u2014 no normalisation CONSTANT absorbs it (Lean no_constant_rescaling)"
+    },
+    {
+      "name": "required_constant_differs_at_two_rational_points",
+      "passed": true,
+      "note": "c = 100/69591 at q=2 vs 86528/5647625 at q=3/2"
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "cd4addf19269",
+  "scriptCommitSha": "e83afa708862b0b815bcd2ebe58ab8ad6b83c74d",
+  "commitSha": "4b3096d0677fa4e4dfe1f66cec240ffb02058795",
+  "engine": "sympy+mpmath",
+  "computedAt": "2026-09-05T09:06:32.205716+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "markov/weak_vertex_coupling_normalisation_probe.py"
+}

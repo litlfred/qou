@@ -349,3 +349,50 @@ own work is unstaged and indistinguishable by status from the collateral.
 Reader count on `main` is **85** (was 86), paired **64** (was 65), AT RISK **3**
 (was 4) — a sibling drained one in the interval. Re-measure rather than quoting
 these; the audit prints them every run.
+
+---
+
+## First drain: `qbeta-ladder-convention-fee` stamped (2026-09-04, after #6635)
+
+The ratchet's whole point is that it drains, so: **13 → 12**.
+
+The confirmed member of this class is now stamped. Its producer reads **both**
+pins — the proton pin via `Q_50_DIGIT_STR`, and the muon pin straight out of
+`q-pinning-50-digit.witness.json` — so the honest declaration is `comparison`
+(the E1 exception), with a `q0Values` mapping so the audit can **verify each
+leg against its canonical pin** rather than take the claim on trust.
+
+### Why this one and not the other twelve
+
+Stamping requires **re-running** the producer, which regenerates its witness —
+so a drain is only clean when the re-run moves *nothing but the stamp*. That is
+true here and only here, because #6606 already refreshed this witness's values
+this morning:
+
+- the **two convention-class** entries (`qbeta-symbolic-tbeta-min-l2`,
+  `qbeta-markov-trace-norm-probe`) would commit a **red** — they are
+  `qou-cds1`'s, pending the C→D re-derivation;
+- the **anchor-class** entries would commit the 2026-08-22 anchor drift, which
+  is `qou-3f7a`'s tranche.
+
+Reaching into either would be taking a sibling's work, so the remaining twelve
+stay baselined until their own tranches run.
+
+### Measured, not asserted
+
+| check | result |
+|---|---|
+| did any **value** move? | **no** — stamp only, every payload field byte-identical to `main` after masking |
+| `Q0_COMPARISON` | 29 → **30** |
+| `Q0_ANCHOR_MISSING` | 1555 → **1554** |
+| `Q0_COMPARISON_NO_VALUES` | **0 → 0** — the fvk trap avoided |
+| `Q0_FLIP` | 1, unchanged (the pre-existing `hadron-knot-table` one) |
+| ratchet | `drained 1`, then `--strict` clean at 12/12 |
+
+The counters were measured as a **delta** — restoring `main`'s unstamped copy
+of that one witness by name, running the gate, restoring the stamped copy,
+running it again. The absolute numbers had moved a long way from the figures in
+this bean's earlier sections (COMPARISON 6, ANCHOR_MISSING 1602) because main
+advanced ~150 commits in between, so **quoting them would have looked like my
+change did far more than it did.** Measure the delta; never diff an absolute
+against a figure recorded on a different base.

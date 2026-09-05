@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-29T18:10:00Z
-updated_at: 2026-09-03T12:43:22Z
+updated_at: 2026-09-05T05:56:57Z
 ---
 
 Found sweeping the q-geometric-langlands Lean siblings after the four
@@ -313,3 +313,48 @@ else waits on the owner.
 1-dimensional, i.e. four nucleons fill the singlet) is **not cheap** — this
 Mathlib has no `Mathlib/LinearAlgebra/ExteriorPower/` and
 `exteriorPower.finrank_eq` is an unknown identifier. Probed, not assumed.
+
+
+## 2026-09-05 — progress, and one entry whose prescribed action is WRONG
+
+Three of this list worked in order (D9 → D10 → D11), reading each block first per
+*"not mechanical … do not batch-rewrite"*. Two repaired; the third is mis-scoped.
+
+**Repaired, in the prescribed shape** — content encoded as caller-supplied
+parameters so the class is refutable, refutability discharged as a theorem, **no
+instance** provided:
+
+- `IsospinFromCanonicalBowtie` (D9) — PR #6671. Content is the block's
+  `Δm/M_N = ℏ_q²·h·[2]_q·(1+ℏ_q³)/3`; conventions **read from the producer**
+  `verify_isospin_bar_anomaly.py`, and one would have been wrong if guessed —
+  `[2]_q` there is the **symmetric** `q + q⁻¹`, not `QGenericBase.qBracket`'s
+  unbalanced `1 + q`.
+- `SpinFromSo3Fiber` (D10) — PR #6683. Content is the block's own named missing
+  object, the level → Wedderburn-coefficient map, constrained at `h² = 0` and
+  `h⁴ = −3/4`. The block's Family-A identity is **derived as a theorem**, not
+  axiomatised. Guard case applied: the functor's *construction* is left unstated
+  and what must grow first is named (a level type indexed against `H₃`'s blocks).
+
+**🛑 `WignerSu4FromSpinIsospin` (D11) — the same repair would be WRONG.** A
+substantive D11 carrier already exists: `QOU.WignerSU4FromSpinIsospin` at
+`lean/QOU/ParticleInteractions/WignerSU4FromSpinIsospin.lean` (imported at
+`QOU.lean:421`), with two real parameter-quantified fields
+(`E_gate = E_0·log(1/W_λ)`, `c_λ = B_AME/E_gate`) plus three `: True` fields that
+each carry an `opaque marker` docstring naming why they are unstatable. The `.ts`
+refs the **stub** instead — the names differ by **capitalisation and namespace**
+(`WignerSu4` in `QOU.BraidsAndKnots` vs `WignerSU4` in `QOU`), and the stub's own
+header named a third path that does not exist.
+
+So this is **this bean's own shadow case**, a fifth one its 18 → 16 → 12 correction
+could not catch: that pass keyed on *"the ref's leaf name in a differently-named
+file"*, and here the file name matches while the case and namespace do not.
+Writing content into the stub would create a second D11 competing with the real
+carrier. **The defect is the ref, not the encoding.**
+
+Blast radius measured: **zero consumers** of either class. The ref repoint is left
+as an author decision (§0a prefers candidate-2 resolution, which would need a
+namespace alignment in a directory that has no single convention). Finding:
+`docs/audits/2026-09-05-d11-is-a-mis-ref-not-a-vacuous-carrier.md`.
+
+**Net for this queue:** two closed, one re-classified. The syntax count is right;
+for D11 the implied action is not.

@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-09-05T06:11:35.309237+00:00",
-  "commitSha": "162c04d939d56cf00a61c9f63006725584626826",
+  "computedAt": "2026-09-05T06:40:46.495353+00:00",
+  "commitSha": "89f05be59c02dcf1eb747c659842f062003a8d5e",
   "assertions": [
     {
       "name": "μ–p substrate tension in band (PREDICTION at the proton pin, not an identity)",
@@ -47,31 +47,29 @@
       "source": "Internal consistency check"
     },
     {
-      "name": "𝔪(𝔅₃) Borromean topological mass",
+      "name": "𝔪(𝔅₃) ratio vs Vol/(1−1/q)² recomputed from q",
       "computed": 746.4180075979668,
       "expected": 746.4180075979668,
       "passed": true,
       "tolerance": "1e-06",
       "unit": "m_e",
-      "source": "𝔪(K) = Vol(K) / ℏ_q²"
+      "source": "regression guard: HBAR_Q_SQ0 == (1 − 1/q)², not a test of 𝔪(K) = Vol(K)/ℏ_q²"
     },
     {
-      "name": "𝔪(𝔅₃) in MeV",
-      "computed": "381.418818658681499811960186434589559212327003479",
-      "expected": "381.418818658681499811960186434589559212327003479",
+      "name": "𝔪(𝔅₃) in MeV vs the same ratio recomputed from q",
+      "computed": "381.418818658682",
+      "expected": "381.418818658682",
       "passed": true,
       "tolerance": 8.486312831226684e-06,
       "unit": "MeV",
-      "source": "𝔪(K) = Vol(K) / ℏ_q² × m_e"
+      "source": "regression guard: same, times m_e once"
     }
   ],
   "allPassed": true,
-  "allPassedBasis": "assertions",
-  "durationMs": 48,
-  "durationMsBaseline": "builder-construction",
+  "durationMs": 37,
   "computation": "mass-from-q-symbolic",
   "scriptFile": "mass-from-q-symbolic.py",
-  "scriptHash": "4208cfea6df4",
+  "scriptHash": "99d22474063c",
   "scriptCommitSha": "5f7dad048ff58ea5f48c67453ff03c8c1c47c792",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -87,7 +85,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -107,7 +105,7 @@
     "HA": 0.20906029879563937,
     "E_×": 0.10453014939781968,
     "s_skein": 0.10438805825918152,
-    "z_markov": "0.61268803714646525159582986394589924802630839154506"
+    "z_markov": "0.612688037146465"
   },
   "data": {
     "P_proton_q0": {
@@ -182,15 +180,15 @@
     "topological_mass": {
       "borromean_mass_ratio_me": 746.4180075979668,
       "borromean_mass_ratio_err": 1.6605655330484927e-05,
-      "borromean_mass_MeV": "381.418818658681499811960186434589559212327003479",
+      "borromean_mass_MeV": "381.418818658682",
       "borromean_mass_MeV_err": 8.486312831226684e-06,
       "muon_electron_ratio": 206.7683263706738
     },
     "skein_ratio": {
       "P_n_over_P_p": 0.7803615793226635,
       "P_n_over_P_p_err": 1.5788699793874473e-12,
-      "log_q_ratio": -2.3768084283597175,
-      "codata_m_n_over_m_p": "1.0013784194633623804094146686526361038107853971998"
+      "log_q_ratio": -2.376808428359718,
+      "codata_m_n_over_m_p": "1.00137841946336"
     },
     "error_budget": {
       "q_relative_error": 8.298926041734382e-13,

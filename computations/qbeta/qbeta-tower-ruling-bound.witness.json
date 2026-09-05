@@ -1,0 +1,119 @@
+{
+  "computation": "qbeta-tower-ruling-bound",
+  "assertions": [
+    {
+      "name": "the_tower_form_reduces_violations_by_an_order_of_magnitude",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "10 -> 1. Boundedness is a property of the WHOLE table and cannot be tuned by moving a scale 0.99 % toward one data point, so this argues for the ruling structurally rather than by fit"
+    },
+    {
+      "name": "under_the_ruling_the_law_bounds_all_but_one_nuclide",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "2547 of 2548 — a one-sided law"
+    },
+    {
+      "name": "the_sole_exception_is_helium_four",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "4He at 1.0758 — the corpus's own most-worked anomaly, with 19 open beans on the magic surplus (qou-ooqh, qou-foh0, w5tg, qou-3wvl, qou-guyb). Its single exception is the nuclide everybody already flags"
+    },
+    {
+      "name": "the_bound_is_saturated_at_the_iron_peak",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "Fe-54, Ni-56, Ni-58, Co-55 at 0.9918-0.9941 — saturated to 0.6 %"
+    },
+    {
+      "name": "the_shape_residual_dwarfs_the_entire_scale_freedom",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so the scale — five rounds of work — was never the dominant term. What is left is surface, Coulomb, symmetry, pairing, the wrong-signed isospin contribution, unbound systems, and the factor of 3 with no realisable mechanism"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "ruling": "brane-tower axioms preferred (owner, 2026-09-05)",
+    "E_0_adopted_MeV": "4.2274833556290305503",
+    "E_0_adopted_expression": "m_e.c_q^2.hbar_q/(1-hbar_q^2)",
+    "strands_per_nucleon": 3,
+    "loop_value": "[2]_q (pinned, qou-xf14)",
+    "source": "qou-mass/src/qou_mass/data/ame2020.json"
+  },
+  "data": {
+    "n_measured": 2548,
+    "forms": {
+      "E_0^(N=0)": {
+        "E_0_MeV": "4.18598136329448",
+        "max_ratio": "1.08641581011",
+        "max_at": "4He",
+        "n_exceeding": 10
+      },
+      "E_0^full": {
+        "E_0_MeV": "4.22748335562903",
+        "max_ratio": "1.07575026353",
+        "max_at": "4He",
+        "n_exceeding": 1
+      }
+    },
+    "top_of_table": [
+      {
+        "ratio": "1.075750264",
+        "A": 4,
+        "Z": 2,
+        "N": 2,
+        "element": "He"
+      },
+      {
+        "ratio": "0.9940633553",
+        "A": 54,
+        "Z": 26,
+        "N": 28,
+        "element": "Fe"
+      },
+      {
+        "ratio": "0.9938138616",
+        "A": 56,
+        "Z": 28,
+        "N": 28,
+        "element": "Ni"
+      },
+      {
+        "ratio": "0.993017037",
+        "A": 58,
+        "Z": 28,
+        "N": 30,
+        "element": "Ni"
+      },
+      {
+        "ratio": "0.9917507584",
+        "A": 55,
+        "Z": 27,
+        "N": 28,
+        "element": "Co"
+      },
+      {
+        "ratio": "0.9914317945",
+        "A": 57,
+        "Z": 28,
+        "N": 29,
+        "element": "Ni"
+      }
+    ],
+    "residual_band_pct": "22.49727326",
+    "scale_freedom_pct": "0.9914519137"
+  },
+  "provenance": {
+    "headSha": "d3c8eb4d87c5bda8fcbfaf1cbd350267d5845355",
+    "producer": "computations/qbeta/qbeta_tower_ruling_bound_probe.py",
+    "elapsed_s": 0.206
+  }
+}

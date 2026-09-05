@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-03T22:46:23Z
-updated_at: 2026-09-04T11:06:18Z
+updated_at: 2026-09-04T14:54:32Z
 ---
 
 Audit: `docs/audits/2026-09-03-sibling-lean-compile-sweep.md`
@@ -309,3 +309,8 @@ this branch's cone (+61 lines from a sibling, no deletions). Compiled anyway —
 exit 0 — because "pure addition" is an argument, not a check.
 
 Sweep stands at **38 → 1**; the remaining one is `qou-0xrn`.
+
+
+
+## 2026-09-04 14:5xZ — independent confirmation from qou-n9j7, and four files outside this list
+A second, independent pass (all 907 content-block siblings against a rebuilt library, PR #6649) confirms this sweep: every file in the 38 is green on main ceb526bc31 except qou-0xrn. FOUR reds are NOT in the 38 and remain red on main: knots-particles-confinement/confinement-level-exists (Unknown constant QOU.BraidKnot.ConfinementLevel.exists), lifting-and-descent/euler-char-stability (Failed to infer type of binder n), lifting-and-descent/localized-knot (no BraidWord.writhe in the environment), mass-theory/qz-bicompletion (Unknown identifier zPochhammer). Tracked on qou-isps; not touched by me. Note: my first sibling-fix commits collided with yours on rebase and were dropped for main's versions — same repairs, yours went further.

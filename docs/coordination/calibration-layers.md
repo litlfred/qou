@@ -55,7 +55,7 @@ class; 2+1 = 3, Lean `QOU.Mass.calibrations_eq_cohomology`) is untouched.
 
 | Layer | The three points are… | Chosen by |
 |---|---|---|
-| **Math ideal** | the canonical triple CAL-1 `m_e`, CAL-2 `𝔇_β`, CAL-3 `𝔇_π` | definition — this is *what the calibration is* |
+| **Math ideal** | the canonical triple CAL-1 `m_e`, CAL-2 `P_skew^β`, CAL-3 `P_avg^π` | definition — this is *what the calibration is* |
 | **Observational ideal** | the same three, taken as **measured values** (CODATA / PDG), via their numerical proxies `m_e`, `m_μ/m_e` (or `m_p/m_e`), `m_π` | measurement |
 | **Fitted ideal** | the same three, treated as **free parameters** | minimising binding-energy error over a set of low isotopes (²H, ³H, ³He, ⁴He, …) against AME2020 |
 
@@ -100,9 +100,9 @@ that formula:
 
 1. **CAL-1 (`m_e`)** — a pure multiplicative MeV scale on every `B`. Identifiable,
    and only through the overall normalisation.
-2. **CAL-2 (`𝔇_β`, proxy `q₀`)** — enters both `Q_β` and the dimensionless trace
+2. **CAL-2 (`P_skew^β`, proxy `q₀`)** — enters both `Q_β` and the dimensionless trace
    difference, non-linearly and differently per isotope. Identifiable.
-3. **CAL-3 (`𝔇_π`, proxy `m_π`)** — **does not appear in `B` at all.** The
+3. **CAL-3 (`P_avg^π`, proxy `m_π`)** — **does not appear in `B` at all.** The
    low-isotope binding objective is therefore *flat* in CAL-3: it cannot be
    fitted against this target set.
 

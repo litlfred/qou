@@ -23,17 +23,37 @@ per [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation)
 §Algorithm step 3 (the joint-tower SDP solve that produces
 $\nu_{\mathrm{SDP}}$ as a non-negative integer multiplicity).
 
-## Evidence (three confirmed atoms)
+## Evidence (two confirmed atoms)
 
-The identity is exact on the three SDP-confirmed
+The identity is exact on the SDP-confirmed
 hyperbolic atoms (per
 [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation) line 265):
 
 | Atom | $K_w$ | $\rho_F$ (legacy) | $\nu_{\mathrm{SDP}}$ |
 |------|-------|-------------------|----------------------|
-| ${}^{2}\mathrm{H}$ (D)  | knot $6_2$        | 1 | 1 |
 | ${}^{3}\mathrm{H}$ (T)  | knot $8_{11}$     | 2 | 2 |
 | ${}^{3}\mathrm{He}$     | link $L_{6a4}$    | 2 | 2 |
+
+The deuterium row that once headed this table has been removed, and the
+removal is not bookkeeping. It read
+${}^{2}\mathrm{H} \mid 6_2 \mid 1 \mid 1$, assigning the deuteron the census
+knot $6_2$ with $\mathrm{Vol} \approx 4.40$. The canonical deuteron knot is the
+braid closure (trefoil / Hopf), with $\mathrm{Vol} = 0$; the $6_2$ assignment is
+retired, and the deuteron binding is not a hyperbolic-volume term. Since the
+identity's own formula is
+$B_{\mathrm{pred}}(K) = \rho_F \, \mathfrak{m}_e \, \mathrm{Vol}_{\mathrm{hyp}}(K)$,
+at $\mathrm{Vol} = 0$ it returns $B_{\mathrm{pred}} = 0$ for **every** value of
+$\rho_F$ — so that row could not constrain the prefactor even in principle. It
+was not a stale entry contributing weak support; it was contributing none.
+
+The evidence base for the $\nu_{\mathrm{SDP}}$ pattern is therefore **two
+points**, both equal to $2$, not three points reading $1, 2, 2$. The $1$ was the
+row now removed, so the *variation* in that pattern came entirely from it.
+
+Read this together with the operational finding recorded on the Lean carrier:
+six operational definitions of $\nu_{\mathrm{SDP}}$ were computed and **none**
+reproduces the legacy triple, and the committed values carry the methodology tag
+`"manual-historical-volume-match"` — they are hand-assigned rather than derived.
 
 The ${}^{4}\mathrm{He}$ case uses the magic $A \cdot 8G$ closure rule rather than a
 census knot. A binding-arbiter probe against AME2020,
@@ -45,8 +65,8 @@ $\rho_F(⁴\mathrm{He}) = B_{\mathrm{AME}}/(m_e A\,8G) \approx 1.889$, which sit
 Wedderburn count ($A{-}1 = \mathrm{sc}(3A) = 3$). No clean categorical integer
 count reproduces $1.889$; rounding it to $2$ has no derived origin.
 Consequently the identity $\rho_F = \nu_{\mathrm{SDP}} \in \mathbb{Z}_{>0}$ is
-**scoped to the census-knot / linear-chain atoms** (${}^{2}\mathrm{H}$,
-${}^{3}\mathrm{H}$, ${}^{3}\mathrm{He}$), where $\rho_F = A{-}1$ is exact and the
+**scoped to the census-knot / linear-chain atoms**
+(${}^{3}\mathrm{H}$, ${}^{3}\mathrm{He}$), where $\rho_F = A{-}1$ is exact and the
 SDP framing is canonical. At the doubly-magic point the prefactor is an
 **empirical effective binding coefficient** ($\approx 1.89$, Coulomb-corrected
 $\approx 1.94$), not an integer categorical multiplicity.
@@ -68,38 +88,34 @@ i.e. the joint-tower SDP solver of
 the canonical formalism, which does not yet exist, gives a unique
 non-negative integer
 $\nu_{\mathrm{SDP}}(K_w)$ for every bound-state knot $K_w$. Until that solver
-is available, the identity is verified on three census atoms and
-extrapolated to ${}^{4}\mathrm{He}$ with explicit caveat. The Lean class axiomatises
+is available, the identity is verified on two census atoms and
+extrapolated to ${}^{4}\mathrm{He}$ with explicit caveat. The Lean carrier
+axiomatises
 
 ```lean
-class KashaevDensityEqualsSDPMultiplicity
-    (M : Type*) [BrCategory M] [Hecke M] [KashaevVolumeConjecture M] where
-  /-- The joint-tower SDP multiplicity ν_SDP(K_w) of the canonical
-      Hecke element T_w's saturating SDP solution. -/
-  nu_sdp : ∀ (K : Knot), ℕ
-  /-- ν_SDP equals the Kashaev density prefactor ρ_F. -/
-  identity :
-    ∀ (K : Knot),
-      kashaev_density_prefactor K = nu_sdp K
+class KashaevDensityEqualsSdpMultiplicity
+    (Atom : Type*) (rhoF : Atom → ℝ) (nuSdp : Atom → ℕ)
+    (bindingPred vol : Atom → ℝ) (mE : ℝ) : Prop where
+  mE_pos : 0 < mE
+  vol_pos : ∀ a, 0 < vol a
+  nuSdp_pos : ∀ a, 0 < nuSdp a
+  identity : ∀ a, rhoF a = (nuSdp a : ℝ)
+  binding_formula : ∀ a, bindingPred a = rhoF a * mE * vol a
 ```
 
-The only `sorry` is the
-class instance, which closes when the full canonical knot solver
-produces certified $\nu_{\mathrm{SDP}}$ values.
+The quantities are class **parameters supplied by the caller** rather than
+existentials, so the carrier is refutable: the accompanying theorem
+`not_of_prefactor_strictly_between` shows that a prefactor lying strictly
+between two consecutive naturals — as the ${}^{4}\mathrm{He}$ datum
+$\rho_F \approx 1.889$ does — admits no $\nu_{\mathrm{SDP}}$ at all.
 
-## Status of the density prefactor
-
-The canonical formalism previously carried the density rule
-$\rho_F \in \{1, 2\}$ as *"pending formal justification"*, with no
-derivation behind it. With the conditional adoption above, $\rho_F$ is:
-
-1. **named canonically** (`nu_sdp` in the new code), connecting to the
-   existing `ν_SDP` notation in
-   [`atom-knot-mass-derivation`](#prop:atom-knot-mass-derivation);
-2. **identified as a partition-algebra count** (MacMahon type);
-3. **conditional on a class** that the full SDP solver will eventually
-   inhabit — replacing the open-ended "pending formal justification"
-   with an explicit conjectural dependency.
+**No instance is provided.** That is the open state: an instance would have to
+supply $\nu_{\mathrm{SDP}}$, and no operational definition in the corpus yet
+reproduces the confirmed $1, 2, 2$. The carrier deliberately does *not* identify
+$\nu_{\mathrm{SDP}}$ with any SDP construction — the Wedderburn saturating
+projection whose dimension it is meant to be has no Lean type here — so what the
+carrier states is the positive-integrality of the prefactor and the binding
+formula it feeds, and nothing more.
 
 ## Notation hazard resolved
 
@@ -132,9 +148,10 @@ removing the third unnamed $\rho$.
    categorical count derives the cap at $2$ (see §Evidence). The open successors
    are sharper: (a) is $\rho_F$ even integer-valued at doubly-magic nuclei? and
    (b) derive the doubly-magic prefactor directly (including Coulomb), rather
-   than rounding $1.89 \to 2$. The census-knot atoms (${}^{2}\mathrm{H}$,
-   ${}^{3}\mathrm{H}$, ${}^{3}\mathrm{He}$) remain the exact domain of the
-   $\rho_F = \nu_{\mathrm{SDP}}$ identity.
+   than rounding $1.89 \to 2$. The census-knot atoms
+   (${}^{3}\mathrm{H}$, ${}^{3}\mathrm{He}$) remain the exact domain of the
+   $\rho_F = \nu_{\mathrm{SDP}}$ identity; ${}^{2}\mathrm{H}$ left that domain
+   when its knot assignment was retired (see §Evidence).
 2. **Extend joint-tower SDP to ${}^{5}\mathrm{Li}$, ${}^{6}\mathrm{Li}$, ${}^{7}\mathrm{Li}$** — the A$\in${5,6,7} gap
    needs $\nu_{\mathrm{SDP}}$ values; the wider atom$\to$knot census is
    deferred until the full SDP solver is available.

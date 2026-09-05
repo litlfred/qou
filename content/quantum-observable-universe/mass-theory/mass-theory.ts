@@ -879,6 +879,7 @@ export default chapter({
         "torus-chain-pages-on-bring",
         "frenet-framing-is-not-an-invariant",
         "pn-bond-cannot-be-extremal",
+        "bond-log-ratio-is-a-free-energy",
       ],
     }),
 
@@ -1138,6 +1139,7 @@ export default chapter({
         "frobenius-limits-substrate-cost",
         "knot-mass-formula-unified",
         "content-scaling-correspondence",
+        "content-scaling-dictionary",
       ],
     }),
 

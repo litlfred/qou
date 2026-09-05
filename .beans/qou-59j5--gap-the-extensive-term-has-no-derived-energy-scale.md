@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-08-31T04:13:26Z
-updated_at: 2026-08-31T04:29:11Z
+updated_at: 2026-09-04T12:31:39Z
 ---
 
 
@@ -228,3 +228,32 @@ alone above at 3.259.
 
 This is the surviving half of `qou-2pnv` (derive-or-retract): the DERIVE half
 landed 2026-09-04, the SCALE did not.
+
+
+## 2026-09-04 (qou-hfjc) — re-measured on the normalised (bond-counting) law: median AME/B_norm = 2.8213 over 2548 nuclides, i.e. the data want ε ≈ 8.25 MeV per bond against the derived E_0·ln[2]_q = 2.924 MeV. The 2.656 on the un-normalised law becomes 2.82 here. Target, not criterion.
+
+## 🛑 CORRECTION 2026-09-05 — "E_0 is CAL-1" is a MISLABEL. NOT a re-opening.
+
+This bean is completed and stays completed; the measurements above stand. But its
+closing inference does not, and the correction is recorded here because this is
+where a reader will look.
+
+It reads: *"E_0 is the corpus's, but it is CAL-1, a calibration, not a
+derivation. So neither side is pinned, and until one is, no N× claim about the
+extensive term means anything."*
+
+`rem:energy-scale-planck`
+(`content/quantum-observable-universe/nuclear-interactions/energy-scale-planck.md`)
+derives the form: `E_0 = m_e . c_q^2 . hbar_q` with `c_q = 1/(q-1)` and
+`hbar_q = (q-1)/q`, which is `m_e/(q(q-1))` identically. `m_e` is CAL-1, `q_0` is
+fixed by CAL-2, and `E_0` consumes no further calibration —
+`calibration-inputs.md` states this outright. So the shape has a home and the
+"no N× claim means anything" consequence does not follow.
+
+What DOES survive of the concern, at 1/33rd the size: the brane-tower truncation
+leaves two derived forms, `E_0^(N=0) = 4.185981` and `E_0^full = 4.227483`,
+spanning 0.99 % — and they BRACKET the measured peak at -0.248 % and +0.741 %. A
+freedom comparable to the residual, exactly as this bean warned, but ~1 % rather
+than 33 %.
+
+Full working and the convergence with `log_z`: `qou-qkbp`.

@@ -550,7 +550,7 @@ def calibrate_E0_tower(pair_mode: str = "full") -> float:
     # `mass_at_3A_proper.E_0_CALIBRATION_MEV` = Q_β. (Two corrections,
     # bean qou-0gqn: there is no `hecke_core` module — the constant lives in
     # `mass_at_3A_proper`; and Q_β is the **CAL-2** proxy, not CAL-3, per the
-    # 2026-06-26 decay-width ruling in AGENTS.md. CAL-3 is 𝔇_π, proxy m_π.)
+    # 2026-06-26 decay-width ruling in AGENTS.md. CAL-3 is P_avg^π, proxy m_π.)
     # This proton-tower-
     # anchored variant is retained for per-block comparison only.
     E0 = float(M_P_MEV) / m_p["total"]

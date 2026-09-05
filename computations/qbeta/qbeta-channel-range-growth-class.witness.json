@@ -1,0 +1,180 @@
+{
+  "computation": "qbeta-channel-range-growth-class",
+  "assertions": [
+    {
+      "name": "only_the_massless_channel_is_super_extensive",
+      "computed": [
+        "O(n)",
+        "O(n)",
+        "Theta(n^2)"
+      ],
+      "expected": [
+        "O(n)",
+        "O(n)",
+        "Theta(n^2)"
+      ],
+      "passed": true,
+      "note": "a Yukawa weight exp(-mu r) with mu > 0 makes the pair sum extensive; mu = 0 weights all n(n-1)/2 pairs by 1. Lean: massless_pair_sum, no_linear_bound_on_pairs"
+    },
+    {
+      "name": "all_three_rates_are_strictly_positive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "b < 1 for every letter, so mu = -ln b > 0 always. There is no q at which the framework produces a massless channel"
+    },
+    {
+      "name": "the_pp_and_nn_rates_sum_to_two_log_two_q",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "from b_pp.b_nn = 1/[2]_q^2. Lean: rate_sum_pinned. So three rates carry ONE constraint and one free parameter q -- any proposal moving one rate moves another"
+    },
+    {
+      "name": "the_range_ratios_are_derived_and_scale_free",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "lambda_pp/lambda_nn = 1.8519359, fixed by q alone with no length scale. The p-p channel is the longest-ranged, n-n the shortest -- which is the same ordering as the bond strengths"
+    },
+    {
+      "name": "the_letters_fail_the_tree_threshold_above_coordination_three",
+      "computed": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "expected": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "passed": true,
+      "note": "NONE of the three rates clears ln(d-1) for d >= 4. This is the TREE worst case and it does NOT bind a nucleus: a packing in R^3 has polynomial shell growth ~k^2, for which every mu > 0 converges. Recorded because it is easy to reach for and would be a false alarm"
+    },
+    {
+      "name": "the_framework_s_own_decay_reaches_far_past_first_contact",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "p-p reaches 173.2256979 effective sites against 12 contacts (14.435475x), so a range-1 truncation discards ~93 % of the weight the same framework's decay rate supplies. Summing b^d(i,j) over all pairs needs NO new parameter -- it is the derived letters at their own range"
+    },
+    {
+      "name": "but_the_growth_class_is_unchanged",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "every per-site sum is FINITE, so full-range is still O(n). The constant moves 14x, the growth class does not. Section 4 is an option for the STRONG channel and cannot touch EM"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 40,
+    "hbarc_MeV_fm": "197.3269804",
+    "mediator_masses_provenance": "PDG, EXTERNAL reference constants used only to place the channels on the range axis",
+    "lean": "QOU/Hecke/ChannelRangeGrowthClass.lean"
+  },
+  "data": {
+    "channels": [
+      {
+        "channel": "weak (W boson)",
+        "mass_MeV": "80377.0",
+        "mu_per_fm": "407.32899",
+        "range_fm": "0.002455018",
+        "growth": "O(n)"
+      },
+      {
+        "channel": "strong (pion)",
+        "mass_MeV": "139.57",
+        "mu_per_fm": "0.70730318",
+        "range_fm": "1.4138209",
+        "growth": "O(n)"
+      },
+      {
+        "channel": "EM (photon)",
+        "mass_MeV": "0",
+        "mu_per_fm": "0",
+        "range_fm": "infinite",
+        "growth": "Theta(n^2)"
+      }
+    ],
+    "rates": {
+      "pp": "0.48989938425513485141",
+      "pn": "0.67682159238634338966",
+      "nn": "0.90726226553321290067"
+    },
+    "rate_sum": "1.3971616497883477521",
+    "two_log_two_q": "1.3971616497883477521",
+    "range_ratios_pp_pn_nn": [
+      "1.8519359",
+      "1.3404748",
+      "1.0"
+    ],
+    "tree_thresholds": [
+      {
+        "d": 2,
+        "ln_d_minus_1": "0.0",
+        "clears": [
+          "pp",
+          "pn",
+          "nn"
+        ]
+      },
+      {
+        "d": 3,
+        "ln_d_minus_1": "0.6931471806",
+        "clears": [
+          "nn"
+        ]
+      },
+      {
+        "d": 4,
+        "ln_d_minus_1": "1.098612289",
+        "clears": []
+      },
+      {
+        "d": 5,
+        "ln_d_minus_1": "1.386294361",
+        "clears": []
+      },
+      {
+        "d": 6,
+        "ln_d_minus_1": "1.609437912",
+        "clears": []
+      },
+      {
+        "d": 12,
+        "ln_d_minus_1": "2.397895273",
+        "clears": []
+      }
+    ],
+    "fcc_effective_reach": [
+      {
+        "letter": "pp",
+        "b": "0.61268803714647",
+        "effective_sites": "173.2256979",
+        "over_twelve": "14.435475"
+      },
+      {
+        "letter": "pn",
+        "b": "0.50822978937674",
+        "effective_sites": "66.51961994",
+        "over_twelve": "5.5433017"
+      },
+      {
+        "letter": "nn",
+        "b": "0.40362773835083",
+        "effective_sites": "28.06402531",
+        "over_twelve": "2.3386688"
+      }
+    ]
+  },
+  "provenance": {
+    "headSha": "1771f64dfb20a84e0c8382905dd6e0aa603e97a6",
+    "producer": "computations/qbeta/qbeta_channel_range_growth_class_probe.py",
+    "elapsed_s": 0.006
+  }
+}

@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-04T13:59:56.436Z",
+  "generated": "2026-09-04T14:14:11.906Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3576,
-  "files_flagged": 125,
-  "total_defects": 92,
+  "files_flagged": 124,
+  "total_defects": 91,
   "total_exempt": 58,
   "total_promoted_from_exempt": 26,
   "categories": {
-    "proof-claims-unencoded": 47,
+    "proof-claims-unencoded": 46,
     "proof-no-self-assuming-projection": 41,
     "proof-no-unused-hypothesis-rfl": 1,
     "proof-no-decide-masking": 1,
@@ -671,7 +671,7 @@
       {
         "name": "IsospinFromCanonicalBowtie",
         "file": "content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean",
-        "line": 26
+        "line": 92
       },
       {
         "name": "IsPieriShift",
@@ -2916,17 +2916,6 @@
         "exempt": true,
         "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
         "detail": "the projected field `h.strong_duality` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
-      }
-    ],
-    "content/quantum-observable-universe/mass-theory/isospin-from-canonical-bowtie.lean": [
-      {
-        "line": 26,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-universe-field",
-        "snippet": "class IsospinFromCanonicalBowtie where",
-        "decl": "IsospinFromCanonicalBowtie",
-        "severity": "major",
-        "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (holds) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [IsospinFromCanonicalBowtie]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
       }
     ],
     "content/quantum-observable-universe/mass-theory/kashaev-density-equals-sdp-multiplicity.lean": [

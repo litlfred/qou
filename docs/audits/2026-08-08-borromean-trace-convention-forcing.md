@@ -63,14 +63,47 @@ Two independent reasons it is not `β_Bor`: five extra crossings, and the core i
 
 | object (same machinery, same q₀) | tr_M | ratio to D |
 |---|---|---|
-| `(σ₀σ₁⁻¹)³` — true β_Bor | **0.998366622585715967** | 0.999804178 (**195.8 ppm**) |
-| `σ₀³σ₁⁻³` — the grouped core alone | 0.0685558643198896 | 0.0686 |
-| `atom_braid_word_3A(1,0)` — 11 letters | **1.06530614425444993** | 1.0668 (**6.68 %**) |
+| `(σ₀σ₁⁻¹)³` — true β_Bor | **0.998562163836787266** | **1.000000000** (exact) |
+| `σ₀³σ₁⁻³` — the grouped core alone | 0.180064539535501098 | 0.1803 |
+| `atom_braid_word_3A(1,0)` — 11 letters | **1.145759692457300870** | 1.1474 (**14.74 %**) |
 | convention D closed form | 0.998562163836787266 | — |
 
-The pure Borromean word reproduces **convention C exactly** — matching the
-registry's documented D−C gap of 1.9554e-4. The 6.7 % belongs to the atomic
-word. The bean's phrasing *"convention D for the same braid at the same q₀"* is
+The pure Borromean word reproduces **convention D exactly**. The 14.7 % belongs
+to the atomic word.
+
+> **🛑 CORRECTED 2026-09-05 — every number in the table above changed, and one
+> conclusion INVERTED. The qualitative finding survives; do not quote the old
+> figures.**
+>
+> As first written this table read `0.998366622585715967` / `0.0685558643198896`
+> / `1.06530614425444993`, and concluded *"The pure Borromean word reproduces
+> **convention C** exactly — matching the registry's documented D−C gap of
+> 1.9554e-4"*, with the atomic word at **6.68 %**.
+>
+> **That was correct when measured and is false now.** Re-running
+> `computations/probe3qrv.py` **unchanged** reproduces the new column exactly,
+> and the probe prints its own verdict: `|interleaved beta_Bor| / D =
+> 1.0000000000000000000`. The pure Borromean word reproduces **D**, not C, and
+> the 195.8 ppm C-gap this section attributed to it is gone.
+>
+> **Cause, attributed rather than guessed:** `c1a3299434` (2026-08-16,
+> *"markov_peel: the docstring said convention C; the live path is D"*) migrated
+> the `word_to_element` path this probe traces through. The audit predates that
+> commit by eight days, so its numbers are pre-migration. `probe3qrv.py`'s own
+> `z0 = q₀³/(q₀²+1)` was convention D all along — the C came in through
+> `markov_peel`, which is exactly what `c1a3299434` fixed.
+>
+> **Cross-checked against an independent implementation** before correcting:
+> the Frobenius pairing `Σ_λ y_λ χ^λ` (mpmath, 60 dps, Hoefsmit seminormal,
+> `y_lambda_su_n(3, q, 2)`) agrees with `tr_M_element` at **ratio 1.0** on both
+> words. Two implementations, one answer; the old table is the outlier.
+>
+> **What survives, unchanged and still the point of this section:** the grouped
+> core is **not** β_Bor (0.1801 against 0.9986 — 82 % off), the atomic word is
+> not β_Bor for the two independent reasons stated above, and comparing
+> `tr_M_atomic` to `tr_M(β_Bor)` remains a **category error**. Only the
+> magnitudes and the C-label moved. Re-measured under `qou-hu1f`; probe
+> `computations/probes/nf_vs_canonical_word_order_probe.py`. The bean's phrasing *"convention D for the same braid at the same q₀"* is
 the error; the braids differ.
 
 **Consequence for the registry.** `tr_M_atomic` should not be listed as a

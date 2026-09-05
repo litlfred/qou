@@ -313,7 +313,12 @@ def main() -> int:
         },
         "provenance": {"headSha": _head_sha(),
                        "producer": "computations/qbeta/qbeta_strand_multiplicity_probe.py",
-                       "elapsed_s": round(time.monotonic() - t0, 3)},
+                       # `elapsed_sec`, not `elapsed_s` — the raw-float64
+                       # ratchet's wall-clock carve-out matches field names
+                       # exactly and does not carry the `_s` spelling. Key
+                       # only; no value changes. Fourth site of this class on
+                       # this branch; see qbeta_binding_law_options_probe.py.
+                       "elapsed_sec": round(time.monotonic() - t0, 3)},
     }
     out = HERE / "qbeta-strand-multiplicity.witness.json"
     out.write_text(json.dumps(witness, indent=2, ensure_ascii=False) + "\n")

@@ -1,10 +1,10 @@
 {
   "engine": "scipy+mpmath",
-  "engineVersion": "mpmath 1.3.0; numpy 2.4.6",
-  "computedAt": "2026-08-24T14:24:05.396557+00:00",
+  "engineVersion": "mpmath 1.4.1; numpy 2.4.6",
+  "computedAt": "2026-09-04T20:55:23.781956+00:00",
   "computation": "he3-pairknot-composite-lp",
   "scriptFile": "he3_pairknot_composite_lp_probe.py",
-  "scriptHash": "8ee3202bfd79",
+  "scriptHash": "74c126e5c31c",
   "contentBlock": "def:coulomb-charge",
   "auditOnly": true,
   "auditDoc": "docs/audits/2026-06-18-he3-tower-charge-asymmetry-and-pairknot.md",
@@ -22,6 +22,25 @@
       "e⁻"
     ]
   },
+  "x_star": [
+    -262396.0199009954,
+    223029.53142655053,
+    223029.53142655053,
+    -183738.63285037113,
+    -183738.63285037113,
+    183815.36850832903
+  ],
+  "x_star_str": [
+    "-262396.0199009954265341804542453632893726256201911779",
+    "223029.5314265505407750805545136488580019587716782922",
+    "223029.5314265505407750805545136488580019587716782879",
+    "-183738.6328503711212356713580925796987259232531361121",
+    "-183738.6328503711212356713580925796987259232531359790",
+    "183815.3685083290447561620614032249708205545831066878"
+  ],
+  "gap_recomputed_str": "6.1622225410311636405917696769062333214015545999746e-44",
+  "residual_primal_str": "-1.4864038179112200051364527790188593779390628156607e-42",
+  "residual_dual_str": "1.5480260433215316415423704757879217111530783616605e-42",
   "y0_star": -1.2946176858703793e-46,
   "y_star": [
     1.0,
@@ -71,7 +90,7 @@
       "fraction_of_split_covered": "0.289699267153",
       "cited_from": "charge-coulomb-tn3he-derived.witness.json"
     },
-    "spurious_tower_asymmetry_MeV": "1.16501847427",
+    "spurious_tower_asymmetry_MeV": "1.16501862315",
     "charge_coulomb_witness_qrepin_drift": "1.46776e-17",
     "charge_coulomb_witness_stale": false,
     "stale_note": "charge-coulomb-tn3he-derived.witness.json is current (drift 1.47e-17); refreshed in PR #2478."
@@ -122,5 +141,10 @@
     "def:coulomb-charge, prop:coulomb-strong-ratio-q-rational",
     "charge-coulomb-tn3he-derived.witness.json (31%, B_pp — cited)",
     "he3-tower-charge-asymmetry.witness.json (spurious Δtower)"
-  ]
+  ],
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "f1c58515e8e8c4b4510c6fdad3d72dfbb44e5135",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

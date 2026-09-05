@@ -1,7 +1,7 @@
 # Canonical-watcher baseline audit — 2026-05-18
 
 **Branch:** `claude/canonical-watcher-skill-UaWnQ` (PR [#694](https://github.com/litlfred/qou/pull/694))
-**Anchored to:** `prop:three-calibration-inputs` + `prop:three-calibration-discipline` + the framework's "exactly three calibration inputs" rule (CAL-1 $m_e$, CAL-2 $m_\mu/m_e \to q_0$, CAL-3 $Q_\beta(n)$).
+**Anchored to:** `prop:three-calibration-inputs` + `def:three-calibration-discipline` + the framework's "exactly three calibration inputs" rule (CAL-1 $m_e$, CAL-2 $m_\mu/m_e \to q_0$, CAL-3 $Q_\beta(n)$).
 
 Baseline state of the canonical-derivation discipline across the
 codebase at the time the watcher armed, plus a comprehensive
@@ -169,7 +169,7 @@ earlier on main. Re-audit produces three lists.
 | `descartes-universe/em-coupling-bring-zero-mode.md` | `prop:em-coupling-bring-zero-mode` | Additive Bring zero-mode $1/\alpha = q[9]_q[10]_q + 2/(3\pi)$ | Bloch-Suslin uniqueness; Lean closes the algebraic identity at $g=4$ |
 | `braids-and-knots/lambda-scale-substrate-form.md` | `conj:lambda-scale-substrate-form` | $\lambda_{\mathrm{scale}} = 5/2 - h^2 G$ (**justification**, not derivation) | 5.4 ppm match; $\mathrm{Vol}(\mathcal{B}_3) = 8G$ derived (Adams 1985); $h^2 G$ correction conjectural per audit §13 |
 | `braids-and-knots/three-calibration-inputs.md` | `prop:three-calibration-inputs` | Three external calibrations CAL-1/2/3 aligned to Wedderburn blocks | 19-link chain audit |
-| `observations/three-calibration-discipline.md` | `prop:three-calibration-discipline` | $\mathfrak{m}(X) = m_e^{a(X)} Q_\beta^{c(X)} Q_X(q_0)$ | Induction along chain |
+| `observations/three-calibration-discipline.md` | `def:three-calibration-discipline` | $\mathfrak{m}(X) = m_e^{a(X)} Q_\beta^{c(X)} Q_X(q_0)$ | Induction along chain |
 
 ### 8b  Current best mass-table compute infra (KEEP)
 

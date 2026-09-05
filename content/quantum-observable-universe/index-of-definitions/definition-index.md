@@ -480,7 +480,7 @@
 | [prop:confinement-universality](#prop:confinement-universality) | Confinement universality: nucleon NF independent of photon polarization | Ch 8 | `qou:QOU.Interactions.confinementUniversality` |
 | [prop:horizon-conformal-invariance](#prop:horizon-conformal-invariance) | Conformal invariance at the jet horizon | Ch 20 | `qou:QOU.horizon_conformal_invariance` |
 | [prop:topological-decomposition-mass](#prop:topological-decomposition-mass) | Conjectural Topological Decomposition of Mass | Ch 7 | `qou:QOU.TopologicalMass.TopologicalDecompositionMass` |
-| [prop:content-scaling-correspondence](#prop:content-scaling-correspondence) | Content $c = m_j$ by Schur--Weyl: box content determines BW scaling | Ch 12 | `qou:QOU.BraidKnot.BoxContent.boxContent` |
+| [prop:content-scaling-correspondence](#prop:content-scaling-correspondence) | Box content is the $q$-Jucys--Murphy eigenvalue exponent | Ch 12 | `qou:QOU.SchurWeyl.SeminormalRep.seminormalRep_qJM` |
 | [prop:lepton-continuant-recurrence](#prop:lepton-continuant-recurrence) | Continuant recurrence for the lepton tower $T_{2,n}$ | Ch 14 | `qou:QOU.Archimedean.lepton_continuant_recurrence` |
 | [prop:shadow-price-continuity](#prop:shadow-price-continuity) | Continuity of shadow prices on the generic locus | Ch 11 | `qou:QOU.BraidKnot.ShadowPriceContinuity` |
 | [prop:rigid-monoidal-structural-gap-invariance](#prop:rigid-monoidal-structural-gap-invariance) | Convention-independence of the structural gap: the brane-tower factors through the rigid monoidal Markov trace on the Type-B-folded Hecke category | Ch 12 | `qou:QOU.BraidKnot.RigidMonoidalStructuralGapInvariance` |
@@ -883,7 +883,7 @@
 | [prop:benzene-threading-emergence](#prop:benzene-threading-emergence) | Threading link $T(2,6)$ emerges as the LP-optimal $\pi$ configuration | Ch 16 | `qou:QOU.Molecular.benzene_threading_emergence` |
 | [prop:three-parameters-wedderburn](#prop:three-parameters-wedderburn) | Three calibration parameters from Wedderburn-Artin decomposition of $H_3(q)$ | Ch 12 | `qou:QOU.BraidKnot.three_parameters_wedderburn` |
 | [prop:nuclear-operator-regimes](#prop:nuclear-operator-regimes) | Three operator regimes for nuclear binding | Ch 10 | `qou:QOU.Interactions.nuclearOperatorRegimes` |
-| [prop:three-calibration-discipline](#prop:three-calibration-discipline) | Three-calibration discipline ($m_e$, $m_\mu$, $m_\pi$) aligned to (co)homological data | Ch 15 | `qou:QOU.Observations.threeCalibrationDiscipline` |
+| [def:three-calibration-discipline](#def:three-calibration-discipline) | Three-calibration discipline ($m_e$, $m_\mu$, $m_\pi$) aligned to (co)homological data | Ch 15 | `qou:QOU.Observations.threeCalibrationDiscipline` |
 | [prop:thurston-volume-additivity](#prop:thurston-volume-additivity) | Thurston additivity of hyperbolic volume over ideal tetrahedra | Ch 12 | `qou:QOU.ParticleInteractions.thurstonVolumeAdditivity` |
 | [prop:topological-mass-formula-algebraic](#prop:topological-mass-formula-algebraic) | Topological mass formula (algebraic, $\mathbb{Q}(q)$-side) | Ch 12 | `qou:QOU.Torsion.AlgebraicMassFormula` |
 | [prop:topological-mass-formula](#prop:topological-mass-formula) | Topological mass formula (Archimedean) | Ch 12 | `qou:QOU.Torsion.ArchimedeanMassFormula` |

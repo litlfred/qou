@@ -85,6 +85,37 @@ Usage:
     python3 computations/mpf_import_time_dps_audit.py --strict   # exit 1 on NEW/REGRESSED
     python3 computations/mpf_import_time_dps_audit.py --rebaseline   # draining only
     python3 computations/mpf_import_time_dps_audit.py --self-test
+
+MEASURED LIMITATION — this audit cannot see dps raised by an IMPORT (2026-09-04).
+It is position-aware WITHIN a file: it compares the line of an `mpf(...)` against
+the line of a dps raise in that same file. It does NOT model the fact that
+importing another module can raise `mp.dps` as a side effect, BEFORE the flagged
+module-scope line ever executes. So a file with no local raise at all can still
+bind its constants at full precision, and this audit flags it anyway.
+
+Measured by importing each module with `mp.dps` reset to mpmath's default 15 and
+reading back what the constants actually hold:
+
+    probes/rho_binding_constancy_probe.py        dps after import 70,
+                                                 Q0 rel err 1.54e-62 (~61 digits)
+    probes/saddle_offset_zero_location_probe.py  dps after import 70,
+                                                 Q0 rel err 1.54e-62 (~61 digits)
+    probe_toroidal_reeb_deformation.py           dps after import 15,
+                                                 TOL 1.59e-17 (~16 digits)  <- REAL
+
+Two of those three NEW entries were FALSE POSITIVES. The third was real and is
+fixed. AGENTS.md forbids silencing this ratchet by baselining a file, and that
+rule is right -- but it means a false positive has no sanctioned exit, so VERIFY
+BY EXECUTION before treating a NEW entry as a defect:
+
+    mp.mp.dps = 15
+    spec = importlib.util.spec_from_file_location(name, path)
+    m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)
+    # then read mp.mp.dps, and compare m.<CONST> against a full-precision ref
+
+A true positive is also not automatically consequential: the one real case above
+bound a TOLERANCE, whose 16-digit and 60-digit values cannot change any
+`abs(...) < TOL` comparison it gates. Report the magnitude, not just the flag.
 """
 from __future__ import annotations
 

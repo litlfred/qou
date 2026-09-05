@@ -191,3 +191,48 @@ what to attack next.
 
 Scope-(a): a measurement under ONE assembly (the chain). It does not refute the
 product rule structurally; it prices it.
+
+## 2026-09-05 — confirmed, and it is combinatorial before it is algebraic
+
+`computations/qbeta/qbeta_chain_cannot_carry_coulomb_or_surface_probe.py`
+(8/8, 2548 nuclides). The sum-vs-product diagnosis is right, and it has a
+shorter statement that needs no letters at all:
+
+**A path has `Z-1` proton-proton edges. There are `Z(Z-1)/2` proton pairs.**
+The chain therefore carries `2/Z` of the Coulomb interaction — 100 % at Z=2,
+25 % at Z=8, 10 % at Z=20, 7.69 % at Z=26, 4 % at Z=50, **2.44 % at Z=82**.
+Coulomb is quadratic in `Z`; a path's edge count is linear. No choice of bond
+letters and no scale factor produces a `Z^2` term out of `Z-1` edges, so this
+cannot be repaired inside the chain — the *edge set* has to change.
+
+**The surface term is the same defect.** A path's interior degree is the
+constant 2, so its endpoint deficit is `A`-independent: there is no `A^(2/3)`
+in it at any `A`, for the same reason. `qou-3wvl`'s alpha-cluster ratio law
+(~2 % for n<=2, drifting +13 % by 16O) is that seen from the cluster side.
+So Coulomb and surface are ONE defect: a 1-D chain standing in for a
+saturating 3-D packing.
+
+**And Coulomb is bigger than this arc reported.** The marginal correlation
+`-0.044` was read as "essentially absent"; fitted JOINTLY with the other two
+SEMF shapes over the same nuclides the spans in `B` are asymmetry 361 %,
+surface 154 %, **Coulomb 67 %** — a ranking of 3 : 1.8 : 1, not 18 : 4 : 1,
+with joint `R^2 = 0.927`. Marginal correlations cannot separate collinear
+shapes, and heavy nuclei have large `Z`, large `N-Z` and large `A` together.
+That reading is retracted.
+
+## 2026-09-05 (later) — generalised and CLOSED as a route: `qou-556v`
+
+The chain result above turns only on the chain's DEGREE, so it generalises to
+every edge set the corpus has: by the degree-sum formula a graph with max degree
+`d` covers at most `d/(Z-1)` of the proton pairs — 2.47 % (chain), 6.17 %
+(max-contact deltahedra), **14.81 % even for close packing** at Z=82, and the
+bound holds for the induced proton subgraph whatever the assignment.
+
+Proved in `QOU/Hecke/BoundedDegreeCoulomb.lean` (4 decls, axiom-clean),
+instantiated in `qbeta_bounded_degree_cannot_carry_coulomb_probe.py` (7/7).
+
+**So the sum-vs-product diagnosis in this bean is right and is not repairable
+inside the bond graph.** The only remaining door is a `Z`-dependent per-bond
+energy: reproducing the SEMF term needs `eps(Z) >= 2 a_C (Z-1)/(d A^(1/3))`,
+which spans 21.7x from 4He to 208Pb. That is a different form of law, not a
+re-tuning of the letters. Tracking there: `qou-556v`.

@@ -1138,6 +1138,22 @@ def _is_coo_mpf(x) -> bool:
     return isinstance(x, _CooMPF)
 
 
+#: Merge 2026-09-05: `origin/main` migrated this file's YSN builder in
+#: parallel, under the name `_is_sparse_sigma` over its own `_ExactCOO`
+#: container. This branch's migration (`_CooMPF`) was taken for the twelve
+#: conflicting hunks because it is internally consistent and directive-aligned
+#: — module-wide mpf rather than f64 names kept for "display or float-domain"
+#: call sites — but three of main's CALL SITES auto-merged outside those hunks
+#: and referenced the name whose definition did not survive.
+#:
+#: Aliased rather than renamed at the three sites: the predicate is the same
+#: question ("is this the sparse sigma form this module builds?"), and keeping
+#: main's name resolvable means a future merge from main does not re-conflict
+#: on it. Caught by the Rust/Python parity tests, which went from 64 passing to
+#: 18 failing with `NameError: _is_sparse_sigma`.
+_is_sparse_sigma = _is_coo_mpf
+
+
 def _build_ysn_matrices(partition, sparse_threshold=32, q=None):
     """Build YSN matrices for σ_1, …, σ_{n-1} of the given partition.
 
@@ -1321,6 +1337,62 @@ try:                                                    # pragma: no cover
 except ImportError:                                     # pragma: no cover
     _PHN = None
     _HAS_LP_KERNEL = False
+
+
+_FALLBACK_WARNED = False
+
+
+def _warn_if_kernel_absent():
+    """Say, once per process, that this run is on braid-violating matrices.
+
+    When `_HAS_LP_KERNEL` is False the accumulator falls back to matrices from
+    `_build_ysn_matrices`, and `computations/audits/ysn_braid_relation_audit.py`
+    proves that family VIOLATES the braid relation: it is not a representation
+    of H_n(q), its products are not Markov traces of braids, and everything
+    computed from them inherits that. The fallback exists so this module still
+    imports in a bare container and must stay — but it produced a DIFFERENT
+    NUMBER, silently, and that is what this warning is for.
+
+    Measured (bean `qou-i7ju`), deuterium, same call, same commit, same q0:
+
+        kernel live      binding_energy(1,1) = -7.271102125     942 s
+        fallback         binding_energy(1,1) = -8.52811254141  22607 s
+
+    17.3 % apart and 24x slower, with no error and no warning. The trap is that
+    the module IMPORTS fine — `pyhecke_native` 0.9.0 is installed and exports 58
+    names, and the one the guard needs is not among them. So checking
+    `import pyhecke_native` tells you nothing; the guard tests the FUNCTION.
+
+    `lp_accumulator_kernel_gate.py` cannot catch this either, by design: it holds
+    the matrices fixed and verifies only the recurrence (to 7.09e-48). The
+    divergence is in WHICH matrices enter it.
+
+    Not a refusal. Whether a bare container should be allowed to compute a
+    binding energy at all is a behavioural decision for the owner / `qou-sv7h`;
+    this only makes the silent case audible.
+    """
+    global _FALLBACK_WARNED
+    if _HAS_LP_KERNEL or _FALLBACK_WARNED:
+        return
+    _FALLBACK_WARNED = True
+    print(
+        "\n*** WARNING: pyhecke_native.lp_accumulator_step_traces_mpfr is "
+        "UNAVAILABLE.\n"
+        "*** Falling back to _build_ysn_matrices, which VIOLATES the braid "
+        "relation\n"
+        "*** (audits/ysn_braid_relation_audit.py): not a representation of "
+        "H_n(q), so\n"
+        "*** products are not Markov traces of braids. Any binding number from "
+        "this run\n"
+        "*** is NOT the framework's value -- measured 17.3 % off at deuterium, "
+        "and 24x\n"
+        "*** slower. Do not commit a witness from it.\n"
+        "*** Fix: cd tools/pyhecke-native && maturin build --release && pip "
+        "install --force-reinstall --no-deps target/wheels/*.whl\n"
+        "*** (pyhecke-native is not on PyPI, so a default container has a stale "
+        "wheel.)\n",
+        file=_sys.stderr,
+    )
 
 
 def _lp_kernel_steps(partition, chains):
@@ -1836,6 +1908,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     Satuła et al. 1997 (empirical Wigner energy) [satula1997],
     prop:mass-coefficient-shadow-price (LP dual = BW coefficient).
     """
+    _warn_if_kernel_absent()
     A = Z + N
     if A < 1:
         if return_per_step:
@@ -1910,7 +1983,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
     state = []
     for e in active:
         first = e['ysn'][0]
-        sparse_sigmas = _issparse(first)
+        sparse_sigmas = _is_sparse_sigma(first)
         dim = first.shape[0] if sparse_sigmas else len(first)
         if sparse_sigmas:
             # Running M is dense for fast sparse-× -dense multiplication
@@ -2224,7 +2297,7 @@ def atom_character_raw(Z, N, entry, include_inter=True, use_rust=None):
     sigmas = entry['ysn']
     n_gens = entry['n_gens']
     first = sigmas[0]
-    sparse_sigmas = _issparse(first)
+    sparse_sigmas = _is_sparse_sigma(first)
     dim = first.shape[0] if sparse_sigmas else len(first)
     # ── Rust MPFR character kernel (bean `qou-sv7h`) ──────────────
     #
@@ -2352,7 +2425,7 @@ def _contrib_single_partition(Z, N, entry):
     sigmas = entry['ysn']
     n_gens = entry['n_gens']
     first = sigmas[0]
-    sparse_sigmas = _issparse(first)
+    sparse_sigmas = _is_sparse_sigma(first)
     dim = first.shape[0] if sparse_sigmas else len(first)
 
     if sparse_sigmas:
@@ -3080,6 +3153,7 @@ def binding_energy(Z, N, *, sdp=True, frobenius=True):
 
     Replaces the retired 11-term Bethe-Weizsäcker formula path.
     """
+    _warn_if_kernel_absent()
     A = Z + N
     if A <= 1:
         # mpf, not 0.0 (bean `qou-uiut`): now that the main return is an mpf,

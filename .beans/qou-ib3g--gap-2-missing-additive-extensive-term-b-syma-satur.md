@@ -1,11 +1,11 @@
 ---
 # qou-ib3g
 title: 'GAP-2: missing additive extensive term - B_sym/A saturates at 2.998 MeV/nucleon vs nature''s 8.790'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:39Z
-updated_at: 2026-09-04T10:34:38Z
+updated_at: 2026-09-05T05:48:17Z
 parent: qou-9ot5
 ---
 
@@ -55,3 +55,75 @@ i.e. the absence of evidence against, not evidence for.
 
 Direct successor to `qou-0c19` (the colour-tube localisation), which this makes
 quantitative: the colour tube would supply exactly 3, and the gap is 3.0075.
+
+## 2026-09-04 (later) — the colour tube's trace assumption is DISCHARGED
+
+`qbeta_disjoint_support_factorisation_probe.py` (7/7): `tr_M` factorises over
+disjoint non-adjacent generator blocks EXACTLY (rel. diff 0.0 at 40 dps), for
+non-trivial words with generators repeated inside each block. So the `b -> b^3`
+step is exact and the factor is exactly 3, not approximately.
+
+The previous probe listed two undischarged assumptions. **(a) is now
+discharged.** (b) is sharpened from "the couplings are distance 3 apart" to a
+LAYOUT CONFLICT: intra-nucleon crossings want a nucleon's three strands adjacent,
+colour-blocked inter-nucleon coupling wants them `A` apart, and one ordering
+cannot do both. Detail on `qou-0c19`.
+
+Still not a derivation, and the scale is still unpinned (`E_0` is CAL-1;
+`qou-59j5`'s normaliser family spans 1.33x).
+
+## 2026-09-04 (third) — the deficit is a COUNTING statement
+
+`qbeta_layout_conflict_probe.py` (5/5) + `QOU/Hecke/LayoutConflict.lean`.
+Exhaustively, no ordering of the `3A` strands makes the nucleon triples
+contiguous AND the three colour-matched interface couplings single generators;
+under contiguity the maximum is `A-1` of `3(A-1)` — one third. Proved for general
+`A`: two disjoint intervals touch at one boundary.
+
+So the missing factor of 3 and the interface shortfall are the SAME 3. That
+sharpens the gap but does not close it: it says the colour tube is unrealisable
+in this construction family, not what a realisable one would be worth. The energy
+scale is untouched — `E_0` is CAL-1, the normaliser family spans 1.33x.
+
+## Summary of Changes — completed 2026-09-05
+
+**The question this bean asked** — what is the missing additive extensive term,
+given `B_sym/A` saturating at ~2.998 MeV/nucleon against nature's 8.790 — is
+answered. The gap is a **factor of 3, and it is the strand count**. What remains
+is not this bean's question.
+
+**Established, in order:**
+
+1. **The number.** Compared to the PEAK of `B/A` (8.79456 at `A = 62`), which is
+   the honest comparison for a law with no surface/Coulomb/asymmetry/pairing
+   term, the required factor is **3.00746** — and there are exactly 3 strands per
+   nucleon (`atom_braid_word_3A`, `base_g0 = 3k`). Sensitivity stated: against
+   the median `B/A` the required factor is 2.795 and 3 is 7.3 % off.
+   (`qbeta_strand_multiplicity_probe.py`, 7/7.)
+2. **The parameterised mechanism is REFUTED.** `m_pp`/`m_pn`/`m_nn` repeat the
+   same letter on the SAME generator, so `m = 3` is `X^3` in a 2-dim subalgebra:
+   factors 0.335 / 0.984 / 1.709, and `b > 1` (negative bond energy) at `m = 2`.
+3. **The trace cooperates exactly.** `tr_M` factorises over disjoint non-adjacent
+   generator blocks — relative difference 0.0 at 40 dps, with generators repeated
+   inside each block so it is not the Markov property in disguise. So a colour
+   tube WOULD give `b -> b^3` exactly.
+   (`qbeta_disjoint_support_factorisation_probe.py`, 7/7.)
+4. **But no strand ordering carries it.** Exhaustively over all `(3A)!` orderings
+   at `A = 2, 3`: zero satisfy both contiguity and the colour tube, while each is
+   individually satisfiable. Under contiguity the maximum is `A-1` couplings
+   against `3(A-1)` needed — **exactly one third**. Proved for general `A`:
+   `QOU/Hecke/LayoutConflict.lean`, 4 decls, sorry-free.
+   (`qbeta_layout_conflict_probe.py`, 5/5.)
+
+**So the deficit is a counting statement:** the canonical layout realises one
+third of a colour-complete interface, and the missing factor is 3.0075. Same 3.
+
+**Where the remainder lives.** `qou-0c19` — the colour tube, now settled as
+unrealisable in this construction family, with both escape routes named (drop
+contiguity, or drop single-generator couplings). `qou-xf14` — the normaliser
+convention, now pinned. `qou-59j5` — `E_0` is CAL-1 and the absolute scale is
+still underived; that is the surviving open item and it is not this bean's.
+
+Closing rather than leaving open: the "missing extensive term" is identified and
+characterised, and every remaining thread has a named home.
+## 2026-09-04 (qou-yau0/qou-hfjc, cross-ref) — the 'per-nucleon coefficient at N=Z, E_0·0.698581 = 2.92425 MeV' is exactly the normalised bond energy ε = E_0·ln[2]_q of #6656: the un-normalised pp/nn average −ln(z z')/2 = ln[2]_q identically (checked to 50 dps). So the factor 3.0075 applies unchanged to the normalised (bond-counting) law, where the (N−Z) asymmetry is gone and the law is uniform per bond. Not re-measured there.

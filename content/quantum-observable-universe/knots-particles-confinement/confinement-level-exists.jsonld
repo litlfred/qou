@@ -13,7 +13,7 @@
     "confinement",
     "filtration"
   ],
-  "leanRef": "qou:QOU.BraidKnot.ConfinementLevel.exists",
+  "leanRef": "qou:QOU.BraidKnot.ConfinementLevel.nonempty",
   "text": "confinement-level-exists.md",
   "leanSource": "confinement-level-exists.lean",
   "provenance": "authored"

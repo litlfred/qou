@@ -1,4 +1,13 @@
-*Define the curvature-rank-$k$ residue functional using the q-deformed Wedderburn weight $w_\lambda(q) = \dim_q^2 V_\lambda / [n]_q!$:*
+*Define the curvature-rank-$k$ residue functional using the Molien (fake-degree) weight*
+
+$$
+  w_\lambda(q) \;=\; \frac{f^\lambda \, q^{-\kappa_\lambda} \, \dim_q V_\lambda}{[n]_q!},
+  \qquad
+  \kappa_\lambda \;=\; \sum_{\square \in \lambda} c(\square)
+  \;=\; n(\lambda') - n(\lambda),
+$$
+
+*where $f^\lambda$ is the number of standard Young tableaux (the classical Wedderburn block dimension), $c(\square) = j - i$ is the content of the box in row $i$, column $j$, and $\lambda'$ is the conjugate partition:*
 
 $$
   \Phi_k(\mathcal{K}, \mathcal{T})
@@ -15,3 +24,26 @@ $$
 $$
 
 At low strata ($k \leq 3$), the restricted Frobenius integral routes through distinct hyperbolic-knot ideals. At deep strata ($k \geq 4$), specific knot identities evaporate. The surviving residue isolates the universal Frobenius co-Casimir tail, dependent solely on the block weight topology.
+
+**On the choice of weight family.** The functional was formerly defined against $\dim_q^2 V_\lambda/[n]_q!$. The replacement is not a change of normalisation: the two weights differ by up to a factor $1831$ per partition at $n = 9$, which is $A = 3$. Three properties distinguish the Molien weight.
+
+1. **Molien is the only one of the corpus's numerators that is a measure by an identity.** Over $[n]_q!$, exactly one of the three sums to $1$: $(f^\lambda)^2$ gives $n!/[n]_q!$, $\dim_q^2$ gives the unnormalised historical form, and $f^\lambda q^{-\kappa_\lambda}\dim_q$ gives exactly $1$ — for every $n$ and every $q > 1$ (`QOU.MathlibExt.NormalizedSumUnconditional.molienSum_eq_qFactorial`, Lean, sorry-free). The surviving alternative $\dim_q^2/D^2$ is normalised by dividing by $D^2 = \sum_\mu \dim_q^2$, i.e. by construction rather than by a theorem.
+2. **The exponent $\kappa_\lambda$ is forced, not chosen.** Over the family $f^\lambda q^{c\kappa_\lambda}\dim_q/[n]_q!$ with $c \in [-3,3]$, exactly $c = \pm 1$ normalise, and those two are one measure read on transposed diagrams — conjugation fixes $f^\lambda$ and the hook multiset and negates $\kappa$. No other exponent normalises at all.
+3. **It is the literature's $q$-Plancherel measure.** $f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda)/[n]_q! = \mathbb{M}_{n,q^2}(\lambda)$ exactly, verified in rational arithmetic over every partition of $n \leq 9$ — so the Féray–Méliot asymptotics apply to this weight and to nothing else in the corpus. See [`prop:q-plancherel-asymptotic-skeleton`](../observations/q-plancherel-asymptotic-skeleton.md).
+
+**The former weight is $n$-dependent, and $n = 3A$.** $c_n = \sum_\lambda \dim_q^2/[n]_q!$ is $0.9874 / 0.9911 / 1.1109 / 1.5171$ at $n = 3/6/9/12$ at the substrate $q_0$, and the defect is structural rather than a $q$-integer-convention artifact — the $q$-deformation breaks Burnside's $\sum_\lambda (f^\lambda)^2 = n!$, and no convention restores it. Because $\Phi_k$ is *linear* in $w_\lambda$, a $\lambda$-independent rescaling cancels from a ratio of two $w$-weighted sums **at the same $n$** and from nothing else. Two ways that fails, both of which occurred in production:
+
+1. **Across $n$.** Any quantity comparing different $n$ — equivalently different mass number $A$ — is distorted by the spread of $c_n$.
+2. **At fixed $n$, against a non-$w$-weighted quantity.** A $w$-weighted number compared to an experimental magnitude, a closed-form scalar, or a $y_\lambda$-weighted object does not cancel, because only one side carries $c_n$. Measured instances: [`probes/deuteron_fpn_wlambda_wiring.py`](../../../computations/probes/deuteron_fpn_wlambda_wiring.py) and [`yekutieli_volume_join.py`](../../../computations/yekutieli_volume_join.py).
+
+**A same-$n$ ratio is necessary for cancellation but not sufficient — the numerators must match too.** This is the trap in the present migration and it is easy to get backwards. All six candidates in [`beta_ew_delta_I_321_and_wedderburn.py`](../../../computations/beta_ew_delta_I_321_and_wedderburn.py) are ratios of $w$-weighted sums at fixed $n = 6$, so they are exactly invariant under $\dim_q^2/[n]_q! \to \dim_q^2/D^2$ — same numerator, $\lambda$-independent constant. They are **not** invariant under the move to Molien, whose numerator is $\lambda$-dependent relative to $\dim_q^2$.
+
+**The second arm is retained and labelled.** The requirement set does not separate Molien from $\dim_q^2/D^2$ — it asks only that the normaliser be $n$-independent, and both satisfy that; both are legitimate probability measures. So [`fr_pullback_k3_test.py`](../../../computations/fr_pullback_k3_test.py) computes and reports **both arms**, Molien primary. They disagree: Molien ranks $5_2$ best ($+21.4\%$ against its own baseline, with $6_1$ *worse* than baseline), while $\dim_q^2/D^2$ ranks $6_1$ best ($+1.7\%$). Quoting one number would conceal that. Note the corpus's structural $6_1$ naming comes from the GB-filtration route, which carries no weight family at all and is untouched by either arm.
+
+**Two further measures exist and are not arms here.** The $V^{\otimes n}$ Schur–Weyl share $f^\lambda \prod[N+c]_q/[h]_q$ lives on partitions with at most $N$ rows and is normalised by $[N]_q^n$ — a different index set *and* normaliser, so not a rescaling of anything above; at $N = 2$ the $\mathrm{SU}(N)$ row cap zeroes it on every partition with more than two rows, exactly as it zeroes $y_\lambda$. The classical $(f^\lambda)^2/n!$ reached via $\mathrm{End}(V^{\otimes n})$ is Burnside-normalised at every $n$ but is **$q$-independent**, so it could carry no substrate dependence into $\Phi_k$ at all.
+
+Measurements: [`2026-09-04-plancherel-convention-gap.md`](../../../docs/audits/2026-09-04-plancherel-convention-gap.md); producers [`probes/molien_feray_meliot_bridge_probe.py`](../../../computations/probes/molien_feray_meliot_bridge_probe.py), [`probes/plancherel_deformation_uniqueness_probe.py`](../../../computations/probes/plancherel_deformation_uniqueness_probe.py), [`audits/w_lambda_family_consumer_audit.py`](../../../computations/audits/w_lambda_family_consumer_audit.py); registry [§B-norm](../../../docs/coordination/trace-convention-registry.md).
+
+**Two candidates are excluded outright**, independently of the choice between the two that remain. The Markov weights $y_\lambda$ of the canonical Frobenius pairing are scope-(b) excluded: the $\mathrm{SU}(N)$ row cap sets $y_\lambda = 0$ on every stratum of depth $\geq N$, so $\Phi_3$ vanishes identically and all three candidate knots reproduce the no-FR baseline to the last digit. The historical $\dim_q^2/[n]_q!$ is scope-(b) excluded *for cross-nucleus use* by the $n$-dependence above; it remains valid within a single $n$, by `QOU.BraidKnot.WLambdaNormalizationInvariance.ratio_invariant`.
+
+**One caution on citing the identity.** `molienSum_eq_qFactorial` is $\sum_\lambda f^\lambda q^{-\kappa_\lambda} \dim_q(\lambda) = [n]_q!$ — the $q^{-\kappa_\lambda}$ is part of it. A "Molien weight" written as $f^\lambda\dim_q(\lambda)$ without that factor is a different object and is **not** normalised: it sums to $\approx 0.457$ at $n = 6$ rather than $1$. An earlier version of this very paragraph made that omission.

@@ -97,6 +97,16 @@ oleans written in ten minutes **zero** were QOU/UGB/Fred2005. Guard:
 `[ -f "$ROOT/.lake/RESTORED-NO-TRACES" ] && echo "restored — do NOT lake build"`.
 (The marker is absent in some containers; its absence is NOT proof of traces.)
 
+**And there are TWO mathlib trees, so the guard can read clean and still be
+worthless** (measured 2026-09-05). `lake build` run from
+`content/<paper>/lean/` builds *that* directory's own
+`.lake/packages/mathlib` — a near-empty second copy, no marker — while
+`scripts/lean-direct-env.sh` puts the **repo-root** `.lake/packages/mathlib`
+(5.4 G, marker present) on `LEAN_PATH`. So it does not evict the restore; it
+burns 40 min and +1.4 G on an 88 %-full disk rebuilding a tree nothing verifies
+against, and would not have finished. Same file, `lean`-direct: **5.0 s**.
+Check `du -sh` on both before believing a `lake build` is doing what you want.
+
 ## STABLE — cache shortcuts and hazards → `restore-shortcuts.md`
 
 Before fetching 1.6 GB, check whether a **leaked `/tmp/tmp.*`** already IS the
@@ -122,6 +132,125 @@ One leaked `/tmp/tmp.*` survived thirteen days and drove the container to
 **92K free**, where the Bash harness cannot write its own output and *every*
 command fails, including the `rm`. Keep `trap 'rm -f "$TGZ"' EXIT INT TERM`.
 `df` lies: ~252G nominal at 100% with ~38G used = a per-session quota near 38G.
+
+## TRAP — a "N modules are missing" count taken from a two-root `LEAN_PATH` is WRONG (2026-09-05)
+
+The overlay-shadowing trap below, in its most expensive form: a coordinator
+measured `QOU.lean`'s 864 direct imports as **820 present / 44 missing** and
+handed me the 44 as a build list. The true figure, testing each module against
+**both** olean roots, is **19 missing / 845 present**. The other 25 were present
+in `content/…/lean/.lake/build/lib/lean` and invisible because the root
+`.lake/build/lib/lean` comes first on `LEAN_PATH` and also holds a `QOU/` dir,
+so it resolves every `QOU.*` and the second root is never consulted. Their list
+named `MathlibExt.ManifoldVolumePositive`, six `MassTheory.*`, nine
+`SchurWeyl.*`; **none of those needed building** — all were on disk.
+
+**So `lean`'s "does not exist" is a statement about ONE root, never about the
+tree.** Test presence with `os.path.isfile` against every root before believing
+a missing-module list — including one handed to you by another agent. It also
+mis-transcribes: their list said `SchurWeyl.HeckeSemisimple{,General,Real}` and
+no `HeckeSemisimple.lean` exists at all.
+
+**The fix is the union mirror, and it is cheap:** `cp -aln` each
+`build/lib/lean` (root, per-paper, ugb, and all 16 package dirs) into one
+`$ROOT/.lake/union/lean`. Measured: **6234 oleans for 26 MB** of real disk.
+Then `LEAN_PATH` is that one directory and nothing shadows anything.
+
+## TRAP — `environment already contains 'C' from M` = a stale olean holding a MOVED declaration
+
+A *second*, distinct stale-cache symptom, and the one that actually blocked
+`lean QOU.lean` after every missing module was built. Not "file absent" —
+**two oleans both define `C`**, because the declaration moved between modules
+after the cache was seeded and only the destination's olean was rebuilt.
+Measured: `S1_eq_seminormalParam` present in both `SchurWeyl.SeminormalParam`
+(olean Aug 24) and `SchurWeyl.SeminormalParamAnchorReal` (olean Sep 5), while
+current source declares it in the second only.
+
+Sibling symptom, same root cause: `` `squares_sum` is not a field of structure
+`StandardYoungCount` `` / `Fields missing: squares_sum_factorial,
+squares_sum_holds`. **That is NOT a defect on `main`** — `HeckeAlgebra.lean`
+(source Sep 3) declares exactly `squares_sum`; its olean was Aug 30 and carried
+the superseded shape. Rebuilding the one parent made the consumer compile in
+**2 s**. I nearly reported it as a real finding; the discriminator is *read the
+current source of the module that defines the symbol*, then check the olean's
+date against it.
+
+**Fix both by rebuilding the implicated module's whole QOU import cone from
+current source**, topologically, not the single file — a single-file rebuild
+just moves the mismatch one level up. Driver that converges automatically:
+loop `lean QOU.lean`, regex the first error for the module name, rebuild its
+cone, repeat. Converged in **2 iterations / 53 modules / ~13 min** here.
+
+## STABLE — `lean QOU.lean` (root library, current source) is GREEN — recipe + cache (2026-09-05)
+
+**exit 0, 10.9 s warm, zero output**, against the union mirror. Two addon
+branches are needed together and both are plain-`tar`, untraced, lean-direct:
+
+| branch | holds |
+|---|---|
+| `lake-cache/ugb-v4-24-0` | 29 UGB oleans — without them every `import QOU` dies at `unknown module prefix 'UGB'` |
+| `lake-cache/qou-v4-24-0-root-import-closure` | 53 QOU oleans: 19 genuinely missing (4 `Hecke.*`, 2 `Mathlib.*`, 13 `QBeta.*`) + 34 rebuilt for staleness (the SchurWeyl/Specht/MathlibExt cone + `Mathlib.HeckeAlgebra`) |
+
+Restore = build the union mirror, then `tar xzf "$T" -C "$MIR" --unlink-first`.
+**`--unlink-first` is load-bearing**: mirror entries are hardlinks shared with
+the real trees, and extracting through one rewrites the shared inode and
+corrupts the source tree. Same rule for `lean -o`: `rm -f` the mirror olean
+first. Full recipe in each branch's `README.md`.
+
+**It certifies the import GRAPH, not the library.** The other ~2500 QOU oleans
+are still the seed snapshot; full certification is the dirty-closure rebuild.
+
+## TRAP — mtime is not a staleness test in this tree, and another agent may be building beside you
+
+`source newer than olean` by mtime flagged **1774 of 2619** QOU modules — a
+checkout artifact (they cluster at a uniform ~26 d), not staleness. Use git
+commit time. And mid-build I found `lean -o` processes writing
+`Archimedean/PauliWitness/Witness12B.olean` into the per-paper tree that were
+**not mine** — a sibling session building in the same worktree. Consequences:
+shared disk pressure, a one-core box running two heavy `lean`s, and a
+half-written olean visible through your hardlink mirror (exit 139, harness §3).
+Check `ps aux | grep '[l]ean -o'` before blaming your own harness.
+
+## STABLE — UGB is NOT in the qou cache; build it lean-direct in ~4 min (2026-09-05)
+
+`lake-cache/qou-v4-24-0` carries Mathlib + QOU oleans and **no UGB**, so `lean`
+on anything doing `import QOU` dies at `unknown module prefix 'UGB'` —
+`QOU/PhotonThreading.lean` imports `UGB.GrobnerShirshov.HeckeGS`. Verified as a
+two-sided control 2026-09-05: UGB dir on `LEAN_PATH` → exit 0; off it → exit 1
+with that exact error.
+
+**Do not `lake build` the ugb package to fix this.** It has no `.lake/` at all,
+so Lake would clone and build Mathlib from source (~3.3 GB) — infeasible at the
+674 MB free this container had. All three manifests (root / qou / ugb) pin the
+same mathlib rev `f897ebcf72cd`, so the restored oleans serve UGB directly.
+
+Recipe: topologically order the 29 modules (`UGB.lean` + 28 under `UGB/`) by
+their `import UGB.` lines, then from `content/unital-groebner-bases/lean`
+`lean -o .lake/build/lib/lean/<M>.olean -i …ilean <M>.lean` with `LEAN_PATH` =
+that output dir + every `.lake/packages/*/.lake/build/lib/lean` under BOTH the
+repo root and `content/quantum-observable-universe/lean`. **29/29 exit 0, ~4 min
+total, 31 MB** — 1-5 s each except `GrobnerShirshov.HeckeCompletion` at 170 s.
+Preserved (plain `tar`, untraced, restore-only-for-lean-direct) on
+**`lake-cache/ugb-v4-24-0`**, single 11 MB blob `addon-oleans.tgz`, no chunking:
+
+    git fetch --depth=1 origin lake-cache/ugb-v4-24-0
+    git show FETCH_HEAD:addon-oleans.tgz > "$T" && tar xzf "$T" -C "$ROOT"
+
+`HeckeGS` and `HeckeCompletion` are **not reachable from `UGB.lean`** — the
+lakefile widens `globs` for exactly that reason; a root-only build misses the
+whole Hecke GS development including the `hecke_is_gs_basis` refutation.
+
+**`import QOU` costs 7m27s COLD, 11.5 s warm — `user` was 3.7 s both times.**
+Textbook cold-page-cache (§TRAP above): do not read the 7 minutes as a rebuild.
+
+## TRAP — seed a cache branch with git PLUMBING, never a checkout
+
+Seeding from a mid-merge working branch must not touch the index or worktree.
+`git hash-object -w` each payload → `git mktree` → `git commit-tree` (no `-p`,
+that is what makes it an orphan) → `git update-ref refs/heads/lake-cache/<x>` →
+`git push origin refs/heads/…:refs/heads/…`. Measured 2026-09-05: `git status`
+stayed at 0 lines throughout. A `git checkout --orphan` would have stashed or
+clobbered the in-flight merge.
 
 ## TRAP — seeding route depends on how you built
 
@@ -169,8 +298,13 @@ block's sidecar (128 files for one block) — revert all but yours.
 2. **A partial `LEAN_PATH` overlay shadows the whole namespace** — the first
    root holding a `QOU/` dir wins. Use a complete `cp -al` mirror, `rm -f`-ing
    each olean before rebuilding it (else you truncate the shared inode).
-3. **Disk-full builds write truncated oleans that segfault**: exit 139, zero
-   errors, 0–1 s. Olean SIZE is not a test (50–226 KB inside a normal range).
+3. **Truncated oleans segfault**: exit 139, zero errors, 0–1 s. Olean SIZE is
+   not a test (50–226 KB inside a normal range). Two causes: a disk-full local
+   build, **and the restored cache itself** — so a clean `df` does NOT clear it
+   (measured 2026-09-05, `ComplexDilogarithmSlit` 192,512 vs 279,688 B on a
+   healthy disk). One bad olean segfaults its whole downstream cone while every
+   consumer's source is clean; bisect to the deepest module whose own deps all
+   pass, recompile that one. Harness §4a.
 4. **Most cone failures are the harness** (8 measured, 1 real). `object file …
    does not exist` usually = a non-cone dependency with no olean; `ls` it.
    Decisive test: re-run against main's own oleans with your changes off the path.
@@ -233,6 +367,59 @@ file whose cone moved since is checked against old declarations — silently, er
 pointing at your call site. `ls -l <olean>` vs `git log -1 -- <source>` before
 trusting a green OR debugging a red. Does NOT invalidate every restore.
 
+## STABLE — library rebuild: the DIRTY CLOSURE, and which criterion is sound (2026-09-04, corrected the same day)
+
+Single-file `lean`-direct certifies against on-disk oleans, so the only way to
+know `main` is green is to rebuild what the cache cannot vouch for. Recipe
+(bean `qou-n9j7`, PRs #6649/#6674), from `content/quantum-observable-universe/lean`:
+
+1. Full topological order of `QOU/**/*.lean` → `/tmp/full_topo_all.txt`
+   (regenerate it; `main` adds modules daily).
+2. **Dirty = source changed since the cache's SEED COMMIT, or olean missing,
+   or an import dirty.** Seed commit = last `main` commit before the OLDEST
+   olean mtime in the restored tree (2026-08-16 `19e299946a` for
+   `lake-cache/qou-v4-24-0` as of 2026-09-04). Measured: **1,494 of 2,600**.
+3. `tools/full_rebuild.sh` over that list (put `Archimedean/PauliWitness/*`
+   LAST — 25 modules at 10+ min each, nothing imports them — so the rest
+   reports in ~90 min); Monitor on `^FAIL|^progress|^DONE`.
+
+**TRAP — the per-module mtime criterion (`tools/dirty_closure.py`) is
+UNSOUND and under-verified a merged claim.** It treats a module as clean when
+its source's last commit is older than its olean's mtime. But a restored
+tarball gives many oleans the EXTRACTION time, so an olean built from an old
+source looks fresh. Measured: `QOU.KnotTheory` had `BraidWord.writhe` in its
+source (line 86) and NOT in its cached olean; a sibling importing it was
+reported "real red: the environment does not contain BraidWord.writhe" and
+beaned as such (`qou-isps`) — it was green the moment the dependency was
+rebuilt. The "157/158 library green" of #6674 was measured under that
+criterion and is therefore a LOWER BOUND on staleness, not a verification;
+the seed-closure rerun is the honest one. The mtime script stays only as a
+fast pre-filter, never as the gate.
+
+Other traps, each one cost a relaunch: an olean's mtime may be your OWN
+earlier rebuild — derive nothing from one file's stamp; `pkill -f <script
+name>` kills the shell that mentions the name (exit 144) — kill by PID; do
+not run a second heavy `lean` beside the rebuild on this one-core box; the
+sibling checker needs the UGB build dir on `LEAN_PATH` or two files fail
+falsely; a file `main` deleted since your list was written reports as a FAIL.
+Warm rate ~3-4 s/module. Content-block siblings (907+) are not modules; run
+`tools/sibling_check.sh` after the library. Classify every red as
+**mechanical port** vs **real** — and before beaning a real one, rebuild its
+import cone under the SOUND criterion, then grep `.beans/` for it.
+
+## TRAP — grep `.beans/` BEFORE opening a bean for a red list (2026-09-04)
+
+The sibling pass of `qou-n9j7` found 41 red content-block `.lean` files and I
+opened an umbrella bean (`qou-isps`) listing 35 of them as "real drift, not
+touched". Bean `qou-e7xv` — a different session, PR #6540 and follow-ups —
+had ALREADY swept the same 38 files to 1 (`qou-0xrn` the survivor) and landed
+the repairs on `main` while my pass was running; my seven "mechanical fixes"
+collided with theirs on rebase and were dropped for `main`'s versions. Corpus-
+grep path 6 (`grep -rl <file stem> .beans/`) would have shown it in one
+command. A red list is a *claim about the corpus*; it goes through the
+checklist like any other, and a rebuild result older than the last `main`
+merge is not a current claim.
+
 ## BASELINE — re-measure, do not quote
 
 | what | command | last seen | when |
@@ -265,3 +452,16 @@ quota mid-rebuild and leave a 1.5G `.git/objects/pack/tmp_pack_*` that
 between your rebuild and your push: the same session then found the base
 file of its own new module restructured on `main` (a class removed) — re-run
 the diff at check-in time, not once.
+
+## BASELINE — seed-closure library rebuild, 2026-09-05 (re-measure, do not quote)
+
+`main` `60d79979ed`, seed `19e299946a`, `tools/full_rebuild.sh` over the
+seed-commit closure: **1,497 of 2,600 modules, 13,940 s (3 h 52 min)**, of
+which the 22 `Archimedean/PauliWitness/*` at the end took ~30 min total (not
+10 min each this time — they had been rebuilt earlier in the day) and the
+`Machinery/HeckeH4*` block maps ~85 min for one hundred modules. Result:
+**1,495 green; 1 real red** (`ParticleInteractions/silver_ratio_beta_decay_null`,
+3 proof errors, bean `qou-4a7a`); 1 false red from a missing `UGB` path (fixed
+in the script). So the library on that `main` is green except one module.
+Command to reproduce is the recipe above; expect ~4 h on this box.
+

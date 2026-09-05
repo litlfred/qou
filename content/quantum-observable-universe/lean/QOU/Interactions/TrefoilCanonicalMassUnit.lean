@@ -15,8 +15,8 @@ The QOU calibration triangle identifies three inputs
 (AGENTS.md §"Canonical derivation chain"):
 
   CAL-1 : m_e  — the electron mass (sets the MeV scale)
-  CAL-2 : 𝔇_β  — the neutron β-decay width (fixes q₀)
-  CAL-3 : 𝔇_π  — the pion decay width (the meson scale)
+  CAL-2 : P_skew^β  — the neutron β-sector bar-skew channel (fixes q₀)
+  CAL-3 : P_avg^π  — the pion-sector bar-even channel (the meson scale)
 
 The electron itself is identified with the trefoil knot `T(2,3)`:
 it is the **only** closed 3-braid whose Hecke NF coefficient for the

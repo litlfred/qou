@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-04T09:28:36Z
+updated_at: 2026-09-05T07:16:32Z
 ---
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
@@ -84,3 +84,283 @@ PROGRESS (2026-09-03, PR #6434): 'germ on the full tower?' ANSWERED — NO, the 
 
 
 - 2026-09-04 (second-statistic search: ALL candidates DEAD). Given pointwise b-monotonicity is refuted, tested whether some other single statistic orders tr_λ(X*X)/dim_λ. Candidates: b(λ), ℓ(λ), n(λ)=Σ(i−1)λ_i (the corpus's own Δ_λ grading), n(λ'), n(λ)−n(λ'), b+ℓ, and dim_λ as a NULL CONTROL. Result at A=2 and A=3: NONE is strictly decreasing. Inversions/ties (A=2 | A=3): b 0/7 | 2/8; ℓ 4/7 | 3/8; n(λ) 2/2 | 1/1; n(λ') 32/2 | 53/1; n(λ)−n(λ') 2/2 | 1/0; b+ℓ 2/2 | 1/2; dim_λ 17/8 | 25/7. Two things worth keeping: (i) the NULL CONTROL FAILS HARD (dim_λ 17 and 25 inversions), so the decay is NOT a dimension artifact — it is about λ's shape; (ii) n(λ) and n(λ)−n(λ') are the closest (1–2 inversions) but do NOT order it, so they must not be quoted as the grading. NOTE b(λ) shows 0 inversions at A=2 and fails only on TIES there — the A=3 inversions are what refute it, which is why one size was not enough. NET: the per-dim majorant is not a function of any of these alone; what survives is the ENVELOPE form. 17 of 30 shapes at A=3 unmeasured (dim cap, named in output).
+
+## 2026-09-04 — q-content statistic probe (#6669): ONE blocking pair, not a dead class
+
+Three findings.
+
+1. PREMISE REFUTED BY ITS OWN CONTROL. I built #6669 on the observation that all
+   seven of #6587's dead statistics are q-INDEPENDENT while the ordered quantity is
+   a normalized character of an element of H_n(q). The q-independent control
+   n(λ')−n(λ) matches the best q-content statistic exactly at A=3 (1 inversion, 0
+   ties, 55 pairs). q-independence was not the defect.
+
+2. ONE BLOCKING PAIR. Five of seventeen statistics tested come within one inversion
+   at A=3 and ALL FIVE fail on the same pair: (7,1,1) [hook, j=2, dim 28, per-dim
+   3478.285] vs (7,2) [two-row, k=2, dim 27, per-dim 2793.099]. None fails elsewhere.
+   b(λ) fails on a different pair ((3,1⁶) vs the two b=7 shapes) plus 8 ties.
+   ⇒ ACTIONABLE: the blocking pair is hook-vs-two-row at b=2, and BOTH columns have
+   derived closed forms already (#6556 reduced Burau; #6587 sector difference). The
+   obstruction is analytically accessible, not merely measured.
+
+3. THE q-CANDIDATE IS NOT INDEPENDENT EVIDENCE. P₁−P₋₁ = 2Σsinh(2c·lnq) has leading
+   term 4·lnq·(n(λ')−n(λ)). Tested: at A=3 the two induce IDENTICAL orderings (0
+   disagreements) so the q-result corroborates nothing; at A=2 they differ on one
+   pair so they are not the same statistic.
+
+CORRECTION TO MY OWN CHARACTERISATION of #6587 (not to its numbers — it re-runs and
+reproduces exactly, and its verdict is right). 'All 7 candidates dead' is true as
+'none is a strict orderer' and misleading as 'none is close': three miss by one pair.
+The dim_λ null control still fails hard (25/7), so the shape-not-dimension conclusion
+stands.
+
+NEXT: settle (7,1,1) vs (7,2) from the two closed forms rather than by measurement —
+do the hook Burau form and the two-row sector difference cross at b=2?
+
+Limits: A=2/A=3, dim cap 50 skips 17 of 28 shapes at n=9 (not run, not evidence).
+X*X is NOT central, so the JM/content structure is a reason to look, not a derivation.
+scope-(a). Nothing wired.
+
+## 2026-09-04 — hook vs two-row from the closed forms (#6677)
+
+THE DIM CAP COMES OFF, AND IT STRENGTHENS #6587. Neither closed form builds the
+seminormal irrep (hook: (n-1)x(n-1) reduced Burau, #6556; two-row: sectors of the
+fixed 4x4 Ř, #6587), so neither is bound by dim ≤ 50 — the cap that made every
+earlier probe in this arc skip 17 of 28 shapes at n=9. The full hook column at A=3
+is monotone per-dim over ALL 7 hooks:
+  4718.62 > 3478.29 > 1671.23 > 581.163 > 134.628 > 14.319 > 0.435429
+with (6,1,1,1) dim 56, (5,1^4) dim 70, (4,1^5) dim 56 previously unreachable. #6587
+could only say this of the 4 under the cap. A dimension-selected subset can flatter
+a trend, so this was a real check, and it passed.
+
+GATES (out-of-cap rows are refused unless both pass). In-cap vs direct seminormal:
+6.67e-139 / 10 shapes at A=2, 2.06e-138 / 11 at A=3. The STRONGER gate — the two
+INDEPENDENT reductions against EACH OTHER at b=1, where (n-1,1) is simultaneously a
+hook and a two-row: 1.86e-139 (dims 5/5) and 3.21e-139 (dims 8/8).
+
+THE RELATION REVERSES WITH b, at both sizes.
+  A=3: hook > two-row at b=2 (3478.29 vs 2793.10) and b=3 (1671.23 vs 1498.56);
+       two-row > hook at b=4 (981.20 vs 581.16).
+  A=2: hook > at b=2 (174.18 vs 103.15); two-row > at b=3 (53.56 vs 47.26).
+⇒ #6669's blocking pair (7,1,1)/(7,2) is NOT an instance of a systematic ordering.
+Any statistic ordering the per-dim majorant must reproduce a hook/two-row relation
+that CHANGES SIGN with b — a materially stronger demand than monotonicity, and a
+better reason to stop hunting an eighth candidate than 'seven have failed'.
+
+SUGGESTIVE, SAMPLE SIZE TWO: both reversals sit at b = ⌊n/2⌋, the LAST b at which a
+two-row exists, where (n−b,b) is as square as it gets. May be a BOUNDARY effect of
+the two-row column rather than an interior crossing. Two sizes cannot separate
+those — OPEN, needs a third size.
+
+Limits: A=2/A=3. Out-of-cap values are exact evaluations of formulas verified in-cap
+and against each other — stronger than extrapolation, not a proof of either closed
+form. Nothing here BOUNDS anything; the closed forms compute the trace of X*X, they
+do not majorize it. At b=n−1 the Burau form returns −1.7e-141, roundoff at dps 140
+against a true zero, excluded from the monotonicity check rather than clamped.
+scope-(a). Nothing wired.
+
+## 2026-09-05 — A=4 settles it: the crossing is INTERIOR, not a boundary artifact (#6710 kernel)
+
+#6677 left this open: hook(b) vs two-row(b) reverses, but at both sizes then measured
+the reversal sat at b = ⌊n/2⌋, which is ALSO the last b with a two-row shape. Two
+readings fit two points — (i) BOUNDARY, the column just ends; (ii) INTERIOR, the
+curves genuinely cross. A=4 separates them.
+
+A=4 (n=12), ⌊n/2⌋ = 6, ratio hook/two-row per-dim:
+  b=1  62105.983 / 62105.983  = 1.0        (same shape — forced, the cross-check)
+  b=2  50708.093 / 43907.244  = 1.154891
+  b=3  28688.965 / 25677.635  = 1.117274
+  b=4  13057.703 / 15754.936  = 0.8288007  ← CROSSES
+Crosses at b=4, STRICTLY before b=6. Reading (i) is REFUTED — the two-row column
+continues to b=5,6, so its boundary cannot explain a crossing at b=4. k=5,6 were
+never computed; the k=4 result already decides it.
+
+CROSSING POINT vs ⌊n/2⌋ across all three sizes — the divergence IS the result:
+  n= 6: crosses at b=3, ⌊n/2⌋=3  agree
+  n= 9: crosses at b=4, ⌊n/2⌋=4  agree
+  n=12: crosses at b=4, ⌊n/2⌋=6  DIVERGE
+
+OBSERVATION, sample size 3, recorded as observation not law: over n=6,9,12 the
+crossing sits at b=3,4,4 while n doubles — roughly CONSTANT in b, not proportional
+to n (fractions 0.50, 0.44, 0.33). Second pattern same caveat: the ratio peak (always
+at b=2) shrinks — 1.689, 1.245, 1.155 — so the columns converge as n grows. Whether
+the crossing is asymptotically constant is OPEN; three sizes cannot settle it.
+
+CONSEQUENCE FOR THE ARC. #6669: five of seventeen statistics come within one inversion,
+all failing on the same hook-vs-two-row pair. #6677: the relation reverses. This closes
+the remaining escape — the reversal is NOT an edge artifact a statistic could be excused
+from reproducing. Any ordering statistic must reproduce a hook/two-row relation that
+CHANGES SIGN at an interior b that does NOT track n. That is why hunting an eighth
+diagram statistic is the wrong next move.
+
+Limits: A=2,3,4; A=4 computed to k=4 only (k=5,6 not run, not evidence). The sparse
+kernel is gated at A=2/A=3 against the dense implementation (9.09e-66, 1.92e-65, every
+k); same algorithm at A=4 is an argument, not a measurement at that size. Nothing here
+BOUNDS anything. scope-(a). Nothing wired.
+
+## 2026-09-05 — third handle (sl3 + Kostka) and the FIRST COMPLETE b-levels (#6729)
+
+CORRECTED MY OWN STATED PLAN. I had said the next step was to bound the envelope from
+the two closed forms in hand. FALSE, and the refuting data was already measured: at
+A=3 the envelope is not attained on a hook or a two-row at large b —
+  b=6: (3,3,3) 211.56 vs hook (3,1^6) 14.319  -> 15x
+  b=7: (2,2,2,2,1) 31.56 vs hook (2,1^7) 0.4354 -> 72x
+At large b the hook is near the MINIMUM of its level. A handle reaching the FAT shapes
+was required.
+
+THE CONSTRUCTION SUBSUMES BOTH EXISTING HANDLES. (ℂ^k)^⊗n = ⊕_λ S^λ(ℂ^k) ⊗ M^λ, Hecke
+acting only on M^λ, μ-weight space of S^λ has dim K_λμ, so tr_{W_μ}(g) = Σ_λ K_λμ χ_λ(g).
+K unitriangular in dominance ⇒ inverts ⇒ every χ_λ with ≤k rows. #6525's two-row
+difference IS the k=2 case, demonstrated not asserted (k=3 checked against k=2 on every
+two-row shape).
+
+GATES, sharing no code by design:
+ (1) Kostka alone: multinomial(n;μ) == Σ_λ K_λμ f^λ, no trace code. Exact at n=6,9,12.
+ (2) n=6 COMPLETE gate: all 7 ≤3-row shapes vs seminormal, + Burau on 3 hooks, + sl2 on
+     4 two-rows. Worst |Δ_rel| = 2.68e-63; per-dim values reproduce #6587 exactly.
+
+n=9, FIVE SHAPES NEVER PREVIOUSLY EVALUATED (per-dim):
+  (6,2,1) dim105 1572.9564 | (5,3,1) dim162 836.89929 | (5,2,2) dim120 665.48861
+  (4,4,1) dim 84 605.58457 | (4,3,2) dim168 384.85787
+  (3,3,3) dim 42 211.56463 reproduces the capped value exactly.
+
+FIRST COMPLETE LEVELS IN THE ARC. Every prior envelope was a max over a DIM-CAPPED
+subset — a lower bound on the max, not the max. Levels b=1,2,3 at n=9 now close:
+  b=1 (1/1) 4718.6197 (8,1) | b=2 (2/2) 3478.2851 (7,1,1) | b=3 (3/3) 1671.2349 (6,1,1,1)
+  4718.62 > 3478.285 > 1671.235  strictly decreasing.
+b=4 missing 1, b=5 missing 3, b=6 missing 5, b=7 missing 3 — no envelope reported for
+those; the probe refuses a subset max. NOTE: the new (6,2,1) 1572.96 lands BETWEEN the
+hook (6,1,1,1) 1671.23 and the two-row (6,3) 1498.56, so completing b=3 did NOT
+overturn its max — recorded because it could have.
+
+COVERAGE, MEASURED: of 30 partitions of 9 — 12 with ≤3 rows, 12 with ≤3 cols (same
+handle on transposes, overlap only (3,3,3)), hooks add 3 => 26 COVERED, 4 NOT:
+(5,2,1,1) 189, (4,3,1,1) 216, (4,2,2,1) 216, (4,2,1,1,1) 189. All four have ≥4 rows AND
+≥4 cols so no k=3 orientation reaches them; k=4 is hopeless (largest sector 7560).
+DIRECT SEMINORMAL at dim ≤216 is the cheaper route for exactly those four.
+
+BUG IN MY OWN REPORTING, fixed: b=0 and b=n−1 printed 'COMPLETE? no' beside 'missing 0'.
+They ARE complete — exact-zero endpoints where Ω₂^P ≡ 0 on a 1-dim rep — and the guard
+conflated 'excluded by design' with 'coverage gap'.
+
+Limits: n=6 and n=9; gate at n=6 (same algorithm at n=9 is an argument, not a
+measurement at that size). Does NOT complete the envelope — 4 levels remain incomplete.
+Nothing BOUNDS anything. Whether the envelope stays monotone once b=4..7 close is OPEN,
+and is exactly what the capped measurements could not answer. scope-(a). Nothing wired.
+
+## 2026-09-05 — n=9 COMPLETE at 30/30: envelope monotone, and the pointwise obstruction is THE HOOKS (#6729)
+
+THREE RESULTS.
+
+1. ENVELOPE strictly decreasing over ALL 7 interior levels, every one COMPLETE — first
+   time on complete data rather than dim-capped subsets:
+     b=1 4718.6197 (8,1)  | b=2 3478.2851 (7,1,1) | b=3 1671.2349 (6,1,1,1)
+     b=4  981.20482 (5,4) | b=5  605.58457 (4,4,1)| b=6  211.56463 (3,3,3)
+     b=7   31.556344 (2,2,2,2,1)
+   Both PRE-REGISTERED falsification routes came back null: (5,2,1,1) measured 699.33
+   against the 1671.23 needed to break b=3>b=4, and no b=5 straggler approached 981.20.
+
+2. POINTWISE refuted with EXACTLY 6 violations — and 6/6 have a HOOK on the LOW side,
+   0 on the high side, 0 involving no hook at all. ⇒ POINTWISE MONOTONICITY HOLDS ONCE
+   HOOKS ARE EXCLUDED. The probe COUNTS this rather than my reading it off the list.
+     (5,1^4) 581.16 < (4,4,1) 605.58
+     (4,1^5) 134.63 < (3,3,3) 211.56 / (3,3,2,1) 170.63 / (3,3,1,1,1) 154.25
+     (3,1^6)  14.32 < (2,2,2,2,1) 31.56 / (2,2,2,1,1,1) 24.97
+   ACTIONABLE: the obstruction is ONE family, and it is the family that already has a
+   derived closed form (reduced Burau, #6556). A bound can treat hooks separately and
+   make a uniform statement elsewhere — instead of needing one statistic across all
+   shapes, which #6669 showed none does and #6677 showed would have to reproduce a
+   sign-changing hook/two-row relation. It also retroactively unifies two earlier
+   observations: the hook near its level MINIMUM at large b (15x, 72x below), and the
+   hook/two-row ratio crossing 1 — same fact, hooks decay faster than everything else.
+
+3. 🛑 THE dim<=50 CAP WAS A DENSE-PRODUCTS ARTIFACT, not a seminormal one. The Young
+   seminormal generators are AT MOST 2-SPARSE PER ROW (sigma_csr: one entry for a diag
+   block, two per row for a 2x2), so #6710's column-wise kernel applies DIRECTLY. dim 216
+   went from not-finishing to 8.6 s. So a good part of the tensor scaffolding built over
+   the preceding PRs was NOT strictly necessary at n=9. What it still buys: at larger n
+   the weight sectors stay bounded by multinomials while dim_lambda explodes, and the
+   closed forms are INDEPENDENT cross-checks — which is what makes the gates meaningful.
+
+GATES: sparse seminormal vs reduced-Burau on all 9 hooks, worst 1.38e-64; plus vs
+sl_3+Kostka at dim 105-168, the regime the largest shapes live in (that gate's 1e-10 is
+set by quoting a 10-sig-fig table, not by the arithmetic, and says so).
+
+NOT ESTABLISHED: n=9 only (gated at n=6); the four stragglers rest on ONE kernel with no
+independent second route BY CONSTRUCTION (positivity holds, as it must); nothing BOUNDS
+anything; 'pointwise holds off hooks' is a statement about this census, not a theorem,
+and one size cannot separate it from an n=9 coincidence. scope-(a). Nothing wired.
+
+## 2026-09-05 — the hook crosses level-MAX to level-MIN, at b=4 at BOTH sizes (#6748)
+
+SHARPENS #6729, which said 'the obstruction is the hook family'. Ranking each hook
+inside its own level on the COMPLETE n=9 census:
+  b=2 rank 1/2 MAXIMUM | b=3 rank 1/3 MAXIMUM | b=4 rank 5/5 MINIMUM
+  b=5 rank 6/6 MINIMUM | b=6 rank 7/7 MINIMUM | b=7 rank 4/4 MINIMUM
+The hook is the TOP of its level at small b and the BOTTOM at large b, crossing between
+b=3 and b=4 — exactly where #6677 found the hook/two-row ratio crossing 1.
+
+n=12 CONFIRMS THE LOCATION. Hook vs two-row per-dim:
+  b=2 50708.093 > 43907.244  hook could still be max
+  b=3 28688.965 > 25677.635  hook could still be max
+  b=4 13057.703 < 15754.936  HOOK IS NOT THE LEVEL MAX
+Same crossover b=4 while n grew from 9 to 12. So the rank crossover is a real feature,
+not an n=9 coincidence — which is the one thing #6729's hook-exclusion result could not
+distinguish.
+
+⇒ FOUR observations recorded separately across this arc are ONE fact: the hook column
+decays faster than every other family. 'Sits low', 'is the pointwise obstruction',
+'crosses the two-row at b=4', and 'is 15x/72x below the level max at large b' are all
+this.
+
+ASYMMETRY THAT MAKES n=12 AFFORDABLE AT ALL, and the probe states it per row: refuting
+'hook is the level MAX' needs ONE shape above it (cheap); establishing 'hook is the level
+MIN' needs the whole level (Sum dim^2 = 12!, ~1e11 ops even sparse — permanently out of
+reach). So n=12 confirms the crossover LOCATION and says nothing about minimality there.
+
+Limits: n=9 ranks exact (complete census); n=12 decides maximality only; b=1 excluded
+from the n=12 comparison since (n-1,1) IS both shapes. Nothing BOUNDS anything.
+scope-(a). Nothing wired.
+
+## 2026-09-05 — the chain CLOSES end-to-end, and the majorant route cannot carry the SIZE
+
+COMPOSED, first time end-to-end against the actual signed trace:
+  |tr_λ(ρΩ₂^P)| ≤ Σ|eig(M_λ)| ≤ √(dim_λ·tr_λ(X*X)) ≤ dim_λ·√(E(b))
+Both links hold on all 30 shapes; composed bound strictly decreasing:
+  b=1 68.6922 > 58.977 > 40.8807 > 31.3242 > 24.6086 > 14.5453 > b=7 5.6175
+That IS the arc's target — a derived per-dim bound on the ORIGINAL signed trace that
+falls with b, no fit anywhere. AND IT IS MUCH LESS THAN IT SOUNDS.
+
+TIGHTNESS, the actual result:
+                          b=1      b=7     falls by
+  composed bound √E(b)   68.69    5.62     12.2x
+  actual |tr|/dim env    33.65    0.178    189x
+  actual worst shape     33.65    0.0142(b=6)  2360x
+⇒ THE BOUND CAPTURES 12x OF A 189x EFFECT. Slack per link:
+  link 1 (spectrum→Frobenius): 2.041x at (8,1) b=1  …  550.2x at (3,2,1^4) b=6
+  link 2 (shape→level envelope): 1.0x … 8.513x
+Link 2 is fine — replacing a shape by its level max costs ≤8.5x, the price of wanting a
+bound in b alone. LINK 1 IS WHERE THE BOUND DIES, and its looseness GROWS with b.
+
+WHAT IT MEANS. Link 1 is |tr X| ≤ √(dim·||X||_F²): it replaces a signed trace by a norm,
+discarding all eigenvalue cancellation. That discarded cancellation is the DOMINANT part
+of the effect at large b. So the majorant route — the strategy since #6556 — establishes
+the SHAPE of the decay and structurally CANNOT carry its SIZE. It cannot be repaired by
+tightening links 2/3; link 1 alone accounts for the loss.
+
+CORRECTS MY OWN #6556 FRAMING. There I compared conjugate pairs, found the majorant
+decaying 213x vs 1.4x in the input norm, and wrote the decay is 'overwhelmingly
+output-spectrum collapse, not phase cancellation'. First half STANDS (E falls 149x
+per-dim). 'Overwhelmingly' was TOO STRONG: there IS substantial trace-level cancellation
+on top, reaching 550x. Not a contradiction — #6556 compared a majorant between
+conjugates, this compares a signed trace against its OWN majorant — but this is the first
+time that comparison has been made across a complete census, which is why it only becomes
+visible now.
+
+SETTLES: the b-decay of the signed trace is real, derived, monotone on complete data.
+DOES NOT SETTLE: any quantitative claim — 550x slack cannot support a numerical statement
+about the row-truncation error, which is what this bean wants it for.
+REDIRECTS: a quantitatively useful bound must KEEP THE SIGN INFORMATION.
+
+Limits: complete n=9 only, this atom word; the two exact-zero endpoints excluded; nothing
+proved for general n. scope-(a). Nothing wired.

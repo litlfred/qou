@@ -18,7 +18,7 @@ $$
 
 The parameter $q$ fixes every factor:
 
-1. **Weak vertex form factor** $|\mathcal{W}(q)|^2 = |\mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)|^2$. This full $10$-crossing coupling replaces the single-crossing approximation $s^2 = (q^{1/2} - q^{-1/2})^2$. In the classical limit $q \to 1$, $\mathcal{W}(1) = 0$ and beta decay vanishes.
+1. **Weak vertex form factor** $|\mathcal{W}(q)|^2 = |\mathrm{tr}_{\mathrm{Markov}}((\sigma_1\sigma_2)^5)|^2$. This full $10$-crossing coupling replaces the single-crossing approximation $s^2 = (q^{1/2} - q^{-1/2})^2$. Under the canonical Markov trace it has the closed form $\mathcal{W}(q) = q^2(q^{12} + q^8 - 1)/(q^2+1)^2$, with $\mathcal{W}(1) = 1/4$; the vanishing of the rate in the classical limit $q \to 1$ is carried by the $q$-prefactor of the rate, which is zero at $q = 1$, and not by the vertex factor.
 2. **$q$-integer modulation** $[2]_q = q + q^{-1}$. This is the categorical dimension of the $\mathrm{SU}_q(2)$ fundamental representation. It replaces the classical weak-interaction factor of $2$.
 3. **$q$-deformed matrix element** $|\mathcal{M}_q|^2$. This is the Markov trace ratio between parent and daughter Gröbner--Shirshov normal forms ([trace ratio observable](#prop:trace-ratio-observable)):
 
@@ -42,8 +42,7 @@ The sensitivity of the decay rate to $q$ is
 $$
   \frac{\partial \ln \Gamma_\beta}{\partial \ln q}
   = 
-  \frac{q^2 - 1}{q^2 + 1}
-  + 
+  \frac{q^2 - 1}{q^2 + 1} +
   5\frac{q^2 + 1}{q^2 - 1}
    \approx  48
   \quad\text{at } q = q_0,

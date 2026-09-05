@@ -1,11 +1,11 @@
 ---
 # qou-bstl
-title: 'Open beans whose work has already landed — measured, and it cost this session three times'
+title: Open beans whose work has already landed — measured, and it cost this session three times
 status: todo
 type: task
 priority: high
 created_at: 2026-09-04T08:40:00Z
-updated_at: 2026-09-04T08:40:00Z
+updated_at: 2026-09-05T08:47:43Z
 ---
 
 ## The finding
@@ -221,3 +221,74 @@ this bean:** what makes two beans the same, or one bean finished, lives in their
 bodies and in their authors' intent. Neither is recoverable from titles or
 commit subjects. The signal that *does* work — `--active` — works precisely
 because it asks only WHEN.
+
+
+## Worked 2026-09-05 — the queue read, plus a NEW class this bean does not carry
+
+### The tool's own precision line is now the authority, and it is worse than this bean's tentative note
+
+The body above says *"Three of four survived the read ... n = 4 is small and I am not
+turning it into a rate."* The script now prints, from a full read of all twelve
+high-priority bodies: **MEASURED PRECISION 2 IN 12** — only `qou-vtau` and `qou-w2vy`
+were genuinely stale. Quote the 2/12, not the 3-of-4.
+
+### Independently reproduced on the SEVEN candidates that postdate that read
+
+The high-priority list has grown past the twelve; these were unread. Bodies opened:
+
+| bean | verdict from its own body |
+|---|---|
+| `qou-56qy` | **open** — a numbered "What is still open" list of 4 items |
+| `qou-cite` | **open** — *"Latent, and deliberately not fixed here"* (cause 4, parked) |
+| `qou-f8lit` | **open** — *"What remains of item 1"*, a witness description needing a producer re-run |
+| `qou-z9fx` | **open** — records *"do not ship this detector"*, a recommendation, not a closure |
+| `qou-keu7` | reads complete; left for its owner |
+| `qou-i7ju` | body says UNBLOCKED; later commit claims CLOSED — left for its owner |
+| `qou-74ns` | **CLOSED by this session** — all three of its "next steps" measured individually |
+
+So **1 of 7 closed**, against a 2-of-12 prior. The two figures agree: this print-out is a
+*worth-opening* list and most of it survives the read. That is now measured twice, by two
+agents, on disjoint samples.
+
+### NEW CLASS — the bean's own REMEDIATION LIST can be stale on arrival
+
+This bean's taxonomy has four causes, all about the *commit subject* misleading the
+matcher. `qou-74ns` supplies a fifth, one level in: **the bean body's own "next honest
+step" list can name work that is already done.**
+
+`qou-74ns` item 2 read *"Decide what `hecke_character_symbolic.py` was meant to name. The
+Hoefsmit character route does exist in the corpus under other filenames."* Measured: the
+file exists at `computations/hecke/hecke_character_symbolic.py`, landed by merge
+`b831ff34c3d` on **2026-08-29**, i.e. **six days before that bean's own updated_at of
+2026-09-04T11:15:59Z** — and all five citing derivation chains already write exactly that
+path. An agent following the remediation list would have hunted for a phantom that had
+existed for a week.
+
+This is strictly worse than a stale status, because a status says *"maybe done"* while a
+next-step list says *"do this"*. `scripts/bean-completion-candidates.py` cannot see it:
+it matches bean IDs in commit subjects, and nothing about that merge names `qou-74ns`.
+
+Item 1 of the same bean carried a **wrong count** in the same way — it says *"the three
+`T_w(Z,N)` steps"*; measured across every `computations/*.derivation.json` there are
+**five** without a `script:` note, and all five are correct as they stand (their own text
+says *"Pure algebra"*, and this bean's item 1 already allows dropping the citation when
+the step is not script-backed).
+
+### Four more instances of the headline pattern, from this session
+
+Beans picked up this session that turned out already resolved by sibling work, none of
+which the tracker showed:
+
+* `qou-2ht2` — the bare-array tolerance was already retired.
+* `qou-1b9c` — four "stale" witnesses: all three producers re-run, 0 substantive diff,
+  committed values already matching the bean's own post-fix targets.
+* `qou-74ns` — closed above.
+* `qou-3v8h` / `qou-eu0r` — the four-schema zod gap, fixed upstream by folio-assistant
+  `a117daa` and verified by parse; both closed.
+
+**And this bean's own lesson reproduced on me.** I verified `qou-74ns` green early in the
+session, wrote *"cheap honest closeout available"*, and then did not close it — in the
+same session in which I had read this bean's sentence *"an agent that has just spent a
+session on backlog hygiene will still drop the close."* It took running the audit to
+catch it. That is the second recorded instance of the audit catching its own author's
+miss, after `qou-vtau`.

@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T04:07:44Z
-updated_at: 2026-09-03T04:54:51Z
+updated_at: 2026-09-05T09:58:49Z
 ---
 
 Done on `claude/rag-document-ingestion-options-orasrw` (qou 40538dbcfc, fa d07c325).
@@ -94,3 +94,29 @@ one heading twice; removed.
 Verified on a live question: `corpus_search "Hoefsmit"` → 20 seeds, 47
 graph-reached, `byProvenance {"authored": 67}` — **zero ingested**, which is
 `hoefsmit1974` (83 citations, source not held) visible in one line.
+
+
+---
+
+## Correction (2026-09-05, `qou-3i7m` / PR #6819) — the seven targets are all `prose`
+
+This bean says the 35 prefix-less refs point at *"seven `prose`/`example`
+blocks in the transfer-matrix appendix and braids-and-knots"*. Re-measured by
+loading every block and reading its `kind`: **all seven are `prose`. None is an
+`example`.** Minor, but `kind` is exactly the field that decides whether a bare
+label is legitimate, so an `example` in that list would have been a real
+convention break rather than a nit.
+
+The rest of the entry verifies: 35 refs in 34 blocks, 7 distinct targets, all
+resolving to blocks that exist, **0 dangling** corpus-wide.
+
+**One reframing worth carrying forward.** "prefix-less because `prose` requires
+no prefix" reads as though bare prose labels were the norm. They are the
+exception: of 324 prose blocks in the paper **315 are prefixed**
+(`sec`/`prose`/`ssec`/`subsec`) and **9 are bare** — and those 9 are the only
+bare labels among all 3526 blocks. The permission exists and 97.2 % of prose
+declines it.
+
+Re-derive with `bun run content/pipeline/prefixless-ref-audit.ts` (added by
+PR #6819) rather than by re-reading either bean — it reports per-target
+existence and kind, and exits non-zero only on a genuinely missing target.

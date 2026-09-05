@@ -1,0 +1,117 @@
+{
+  "name": "qbeta-published-form-is-the-inadmissible-z1",
+  "description": "The framework's published Q_beta closed form m_e|q^2-2q-1|(q+1)/(2q^3) is EXACTLY |tr_M(Delta_S)| * E0 evaluated at Markov parameter z = 1 -- the coordinate sum epsNPq. Solving for z gives z = 1 (positive branch) and z = h - 1 (negative), and neither is a root of the (1^3) weight numerator, whose only roots are z = q and z_D = q^3/(q^2+1) (ConventionDAdmissibleRoots.lean, sorry-free). So the published form commits to the one functional convention D forbids. Scope-(a) on the physics; the inadmissibility is scope-(b) with the root computation as the cited invariant. Nothing wired.",
+  "assertions": [
+    {
+      "name": "epsNPq_is_trM_at_z_equals_one",
+      "passed": true,
+      "detail": "simplify(tr_M(Delta_S)(1) - epsNPq) = 0"
+    },
+    {
+      "name": "published_closed_form_equals_abs_epsNPq_times_E0",
+      "passed": true,
+      "detail": "simplify(|epsNPq|*E0 - published) = 0 on 1 < q < 1+sqrt(2) (exact over Q(q), not a numerical coincidence)"
+    },
+    {
+      "name": "identity_also_holds_above_the_silver_ratio",
+      "passed": true,
+      "detail": "same difference with both signs flipped = 0 (so the identity is not an artifact of the branch chosen)"
+    },
+    {
+      "name": "the_pin_lies_below_the_silver_ratio",
+      "passed": true,
+      "detail": "q0 = 1.1099785827... < 1+sqrt(2) = 2.41421..., so the first branch is the physical one"
+    },
+    {
+      "name": "published_form_solves_to_z_equals_one",
+      "passed": true,
+      "detail": "positive branch: z = [1]"
+    },
+    {
+      "name": "negative_branch_is_h_minus_one",
+      "passed": true,
+      "detail": "negative branch: z = [q - 1 - 1/q] = h - 1"
+    },
+    {
+      "name": "admissible_root_q_annihilates_N",
+      "passed": true,
+      "detail": "N(q, q) = 0"
+    },
+    {
+      "name": "admissible_root_z_D_annihilates_N",
+      "passed": true,
+      "detail": "N(q, z_D) = 0"
+    },
+    {
+      "name": "solved_z_one_is_NOT_an_admissible_root",
+      "passed": true,
+      "detail": "N(q, one) = -(q - 1)*(-q**3 + q**2 + 1) (nonzero as a polynomial in q)"
+    },
+    {
+      "name": "solved_z_h_minus_one_is_NOT_an_admissible_root",
+      "passed": true,
+      "detail": "N(q, h_minus_one) = (q + 1)*(q**3 + q + 1)/q**2 (nonzero as a polynomial in q)"
+    },
+    {
+      "name": "N_at_z_one_vanishes_at_the_SUPERGOLDEN_ratio",
+      "passed": true,
+      "detail": "root of q^3-q^2-1 = 1.46557123188 annihilates N(q,1)"
+    },
+    {
+      "name": "the_plastic_number_is_a_DIFFERENT_constant",
+      "passed": true,
+      "detail": "plastic (root of q^3-q-1) = 1.32471795724 != 1.46557123188; it does NOT annihilate N(q,1). The corpus calls the bound 'plastic' in 4 sites; the value it quotes (1.4656) is the supergolden one and is correct."
+    },
+    {
+      "name": "the_pin_is_below_the_bound",
+      "passed": true,
+      "detail": "q0 = 1.10997858275 < 1.46557123188, so z = 1 is genuinely not a root AT the substrate, not merely generically"
+    },
+    {
+      "name": "reproduces_the_corpus_published_grid",
+      "passed": true,
+      "detail": "max |mine - audit 2026-08-29| = 0.0002431 pp over the three cells (calibration, not a new result)"
+    },
+    {
+      "name": "published_and_epsNPq_agree_at_the_pin",
+      "passed": true,
+      "detail": "|published - |epsNPq|*E0| / m_e = 0.0 at 60 dps"
+    }
+  ],
+  "solved_markov_parameter": {
+    "positive_branch": "1",
+    "negative_branch": "h - 1 = q - 1 - 1/q",
+    "admissible_roots": [
+      "q",
+      "q**3/(q**2 + 1)"
+    ]
+  },
+  "err_pct_at_proton_pin": {
+    "z=1 (published, INADMISSIBLE)": "0.16775687",
+    "z=q (augmentation)": "12.470022",
+    "z=z_D (Markov, convention D)": "-43.157175"
+  },
+  "caveats": [
+    "Does NOT show the published Q_beta value is wrong as arithmetic; it is exact and reproduces to 50 digits.",
+    "Does NOT adjudicate which functional SHOULD be used -- that is the owner call qou-99qc holds open. It removes the ambiguity about which one the PUBLISHED form uses.",
+    "The grid row values are a calibration against docs/audits/2026-08-29-delta-fork-at-admissible-parameters.md, not new measurements.",
+    "Delta_S (the NF vector) only. qou-avt5's standing finding that Delta_S is not the exhibited nucleon-word difference is untouched; the Delta_L row of the grid is unaffected by this."
+  ],
+  "related": [
+    "QOU.QBeta.ConventionDAdmissibleRoots",
+    "QOU.QBeta.CounitSigmaOne.h_eq_zero_of_image_one",
+    "docs/audits/2026-08-29-delta-fork-at-admissible-parameters.md",
+    "computations/qbeta/qbeta_admissible_functionals_bracket_probe.py"
+  ],
+  "source": "bean qou-99qc",
+  "scriptFile": "qbeta_published_form_is_the_inadmissible_z1_probe.py",
+  "scriptHash": "ff8fb4247374",
+  "scriptCommitSha": "unknown",
+  "commitSha": "cb4eac1b5a3c1f913a6c22d18ac8dc09a30a2812",
+  "engine": "python+sympy+mpmath",
+  "computedAt": "2026-09-05T06:10:43.174865+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "Readout only. Every algebraic result (the z solve, the root computation, the two identities) is exact over Q(q) and pin-free; q0 enters solely to print the err_pct grid at the canonical experimental pin."
+}

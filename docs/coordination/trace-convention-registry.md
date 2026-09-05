@@ -85,11 +85,24 @@ Row B's status said "never evaluated / deprecated", which reads as an
 administrative choice. It is also a mathematical fact, and the fact has a live
 consequence for figures already in the corpus.
 
-$w(\lambda) = d_q^2(\lambda)/[n]_q!$ is a probability measure at $q=1$ and in the
-*asymmetric* $q$-integer convention. It is **not** one in the **balanced**
-convention $[k] = (q^k - q^{-k})/(q - q^{-1})$ — the convention this corpus's
-`make_qdim` / `dim_q` family actually uses. Measured at the proton $q_0$,
-`mp.dps = 60`:
+$w(\lambda) = d_q^2(\lambda)/[n]_q!$ is a probability measure at $q=1$ — **and
+at $q=1$ only.**
+
+> **🛑 CORRECTED 2026-09-05.** This entry first added "and in the *asymmetric*
+> $q$-integer convention", i.e. that the failure was a convention artifact.
+> **Wrong, retracted.** Measured at the proton $q_0$ (60 dps, $q\to1$ control
+> returns exactly 1.0 in both), the asymmetric convention is *further* from 1
+> at five of six $n$: 0.9150 / 0.8829 / 0.8683 / 0.8746 / 1.0464 / 1.6903 at
+> $n = 3/4/5/6/9/12$, against balanced 0.9874 / 0.9822 / 0.9822 / 0.9911 /
+> 1.1109 / 1.5171. **The defect is structural** — the $q$-deformation breaks
+> $\sum_\lambda (f^\lambda)^2 = n!$, and no convention restores it. The
+> correct $q$-lift replaces one factor, not both:
+> $\sum_\lambda f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda) = [n]_q!$
+> (`QOU/MathlibExt/NormalizedSumUnconditional.lean`, sorry-free, all $n$,
+> all $q>1$). The $c_n$ figures below are unaffected — they were always
+> balanced-convention.
+
+Measured at the proton $q_0$, `mp.dps = 60`:
 
 | $n$ | $A$ | shapes | $c_n = \sum_\lambda d_q^2/[n]_q!$ |
 |---|---|---|---|
@@ -120,12 +133,29 @@ residual is the 4-significant-figure rounding of the recorded ratios).
 > argmax atom is the largest-$c_n$ one and the argmin the smallest, under both
 > normalizations. Quote the scaling law instead.
 
-**Which producers are on which side:** `fr_pullback_k3_test.py` uses the
-textbook form (so its $1.82\times$ / $1.5015\times$ figures carry the
-distortion); `fr_pullback_borromean_h3a_test.py` was migrated to
-self-normalized on 2026-09-03. **Figures from the two are not comparable.**
-This says nothing about which normalization is physically right — only that
-they differ by a known, $n$-dependent factor and the corpus contains both.
+**Which producers are on which side:** `fr_pullback_borromean_h3a_test.py` was
+migrated to self-normalized on 2026-09-03, and **`fr_pullback_k3_test.py`
+followed on 2026-09-04** — it now calls `selfnorm_denominator`, so its live
+output is $d_q^2/D^2$ while its *committed* $1.82\times$ / $1.5015\times$
+figures are the pre-migration textbook run. (This paragraph read
+"`fr_pullback_k3_test.py` uses the textbook form" until 2026-09-05; that was
+stale by a day. Quote the family, not the producer name, when citing either
+figure.) **Figures from the two forms are not comparable.** This says nothing
+about which normalization is physically right — only that they differ by a
+known, $n$-dependent factor and the corpus contains both.
+
+> **The $k=3$ knot ranking is weight-family-dependent — an unlabelled $k=3$
+> conclusion is not interpretable (added 2026-09-05, bean `qou-9b50`).** Same
+> harness, same braid words, same character inputs, changing only the partition
+> weight: $\dim_q^2/[n]_q!$ ranks $4_1$ best, $\dim_q^2/\sum_\mu \dim_q^2$ ranks
+> $6_1$ best, the Molien weight $f^\lambda q^{-\kappa_\lambda}\dim_q(\lambda)/[n]_q!$
+> ranks $5_2$ best, and under $y_\lambda$ the depth-3 stratum is identically zero
+> (the $\mathrm{SU}(N)$ row cap), so the test is vacuous. Three scoreable
+> families, three winners. Which family $\Phi_k$ requires is **open**
+> (bean `qou-oots`). Measurements:
+> [`2026-09-05-phi-k-weight-family.md`](../audits/2026-09-05-phi-k-weight-family.md);
+> labelling sweep:
+> [`2026-09-05-k3-weight-family-labelling.md`](../audits/2026-09-05-k3-weight-family-labelling.md).
 
 Producer [`probe_plancherel_convention_gap.py`](../../computations/probe_plancherel_convention_gap.py)
 (3/3 assertions), audit

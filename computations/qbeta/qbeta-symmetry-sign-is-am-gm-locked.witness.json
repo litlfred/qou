@@ -1,0 +1,300 @@
+{
+  "computation": "qbeta-symmetry-sign-is-am-gm-locked",
+  "assertions": [
+    {
+      "name": "geometric_mean_is_exactly_one_over_two_q",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "b_pp b_nn = 1/[2]_q^2 identically; re-verified from qbeta_loop_value_pinned_probe.py, not new here"
+    },
+    {
+      "name": "arithmetic_mean_is_two_q_over_two_minus_its_inverse",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "(q^2+q^-2)/(2[2]_q) = ([2]_q^2-2)/(2[2]_q)"
+    },
+    {
+      "name": "am_minus_gm_is_h_squared_over_twice_two_q",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "[2]_q^2 - 4 = (q - 1/q)^2 = h^2, so the AM-GM gap IS the Hecke parameter squared over 2[2]_q -- the deformation is literally the gap"
+    },
+    {
+      "name": "bpn_is_a_convex_combination_of_the_like_species_bonds",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "w = 0.500343927702. This is the load-bearing input from the sibling's pn-bond-cannot-be-extremal (merged 2026-09-04); verified here numerically rather than assumed"
+    },
+    {
+      "name": "and_it_is_the_half_plus_quarter_flavour_split_weight",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "residual -3.345e-7 -- agrees to 6 decimals, not exactly, because the sibling's delta is a particular flavour-split convention. Reported, not rounded away"
+    },
+    {
+      "name": "delta_vanishes_exactly_at_the_threshold",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "w b_pp + (1-w) b_nn = 1/[2]_q  <=>  w q^2 + (1-w) q^-2 = 1 <=>  w = (q^2-1)/(q^4-1) = 1/(q^2+1)"
+    },
+    {
+      "name": "the_corpus_weight_is_above_the_threshold_so_the_sign_is_wrong",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "w/threshold = 1.1167939; the p-n bond would have to be weighted ~11.7 % further toward the n-n end to get the SEMF sign"
+    },
+    {
+      "name": "equal_weight_is_wrong_signed_for_every_q_above_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "delta(1/2) <= 0  <=>  1/2 >= 1/(q^2+1)  <=>  q >= 1. At q = 1 it is exactly zero (b_pp = b_nn, AM = GM). Every q > 1 breaks it, so no re-derivation of q rescues the sign"
+    },
+    {
+      "name": "the_endpoints_are_qou_y2np_s_plus_minus_two_ln_q",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "qou-y2np's bar branch is the w=0 / w=1 pair of this convex family. Its 'one bit' is two points on a continuum whose crossing 1/(q^2+1) is derived -- which is the finer object"
+    },
+    {
+      "name": "the_convention_reproduces_the_corpus_closed_form_exactly",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the degree-10 numerator over 12q^5(q^2+1) IS z - h(1/2-d/4). So w is not a free parameter anywhere in the corpus"
+    },
+    {
+      "name": "w_is_forced_to_one_half_plus_flavour_over_four",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "solving z - h(1/2-d/4) = w.z + (1-w)(z-h) gives (1-w)h = h(1/2-d/4) identically. Lean: weight_of_convention. So 'derive w' reduces entirely to deriving the flat 1/2"
+    },
+    {
+      "name": "the_miss_splits_as_deformation_plus_flavour",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "Lean: weight_miss"
+    },
+    {
+      "name": "and_the_miss_is_the_flat_half_not_the_derived_flavour_split",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "ratio 151.14181. The ONE derived ingredient in w is 151x too small to matter; the entire miss is an undeformed average sitting in a deformed algebra"
+    },
+    {
+      "name": "power_mean_delta_is_odd_under_p_to_minus_p",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "M_p . M_-p = b_pp.b_nn = GM^2 for every p, so delta(-p) = -delta(p). The convention sits at p = +1; its exact mirror is the harmonic mean. Lean: harmonic_mul_arithmetic and delta_harmonic_eq_neg_delta_arithmetic for p = +/-1"
+    },
+    {
+      "name": "the_sign_is_right_exactly_when_p_is_negative",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "M_p is increasing in p and M_0 is the geometric mean, so the SEMF sign needs a mean STRICTLY BELOW geometric -- where no average with p >= 0 can go"
+    },
+    {
+      "name": "the_three_classical_means_have_closed_two_q_forms",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "with [2]_x = x + 1/x. Lean: arithmetic_pinned, harmonic_pinned; AM.HM = GM^2 closes the triple"
+    },
+    {
+      "name": "the_weight_ladder_is_a_coincidence_of_the_three_classical_means",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "it fails at every non-classical p tested -- 0.55089 vs 0.55198 at p=2. Recorded so nobody re-derives it as structure; the near-pattern is exactly what the anti-fit discipline is for"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 40,
+    "b_pp": "0.6126880371464652516",
+    "b_pn": "0.50822978937673896258",
+    "b_nn": "0.40362773835082593616",
+    "lean": "QOU/Hecke/SymmetrySignAmGm.lean",
+    "convexity_input": "pn-bond-cannot-be-extremal.md (merged 2026-09-04) -- verified numerically here, not re-derived"
+  },
+  "data": {
+    "geometric_mean": "0.497290545604915556",
+    "arithmetic_mean": "0.50815788774864559388",
+    "am_minus_gm": "0.010867342143730037885",
+    "h_squared_over_two_two_q": "0.010867342143730037885",
+    "recovered_convex_weight": "0.500343927701756774",
+    "threshold_one_over_q2_plus_1": "0.44801814497379492716",
+    "weight_over_threshold": "1.11679389175",
+    "delta_at_corpus_weight": "-0.021759232507830486375",
+    "delta_sweep_in_w": [
+      {
+        "w": "0.0",
+        "delta": "0.208681440639"
+      },
+      {
+        "w": "0.1",
+        "delta": "0.158182903254"
+      },
+      {
+        "w": "0.2",
+        "delta": "0.110112349619"
+      },
+      {
+        "w": "0.3",
+        "delta": "0.0642469750481"
+      },
+      {
+        "w": "0.4",
+        "delta": "0.0203933027387"
+      },
+      {
+        "w": "0.5",
+        "delta": "-0.0216177478562"
+      },
+      {
+        "w": "0.6",
+        "delta": "-0.0619347977458"
+      },
+      {
+        "w": "0.7",
+        "delta": "-0.100689181751"
+      },
+      {
+        "w": "0.8",
+        "delta": "-0.137997529502"
+      },
+      {
+        "w": "0.9",
+        "delta": "-0.173963882014"
+      },
+      {
+        "w": "1.0",
+        "delta": "-0.208681440639"
+      }
+    ],
+    "threshold_sweep_in_q": [
+      {
+        "q": "1.0",
+        "threshold": "0.5",
+        "delta_at_half": "0.0"
+      },
+      {
+        "q": "1.02",
+        "threshold": "0.490099980396",
+        "delta_at_half": "-0.000784083145447"
+      },
+      {
+        "q": "1.05",
+        "threshold": "0.475624256837",
+        "delta_at_half": "-0.00475342378825"
+      },
+      {
+        "q": "1.1099785827513808",
+        "threshold": "0.448018144974",
+        "delta_at_half": "-0.0216177478562"
+      },
+      {
+        "q": "1.2",
+        "threshold": "0.409836065574",
+        "delta_at_half": "-0.0650592188843"
+      },
+      {
+        "q": "1.5",
+        "threshold": "0.307692307692",
+        "delta_at_half": "-0.298044859487"
+      }
+    ],
+    "f_pn_from_convention": "0.50822978937673896258",
+    "miss_deformation_part": "0.051981855026205072838",
+    "miss_flavour_part": "0.00034392770175677400214",
+    "miss_ratio": "151.141809051",
+    "power_mean_sweep": [
+      {
+        "p": "3",
+        "M_p": "0.52880951064437",
+        "delta": "-0.06145381962131"
+      },
+      {
+        "p": "2",
+        "M_p": "0.51879763975398",
+        "delta": "-0.042339448910622"
+      },
+      {
+        "p": "1",
+        "M_p": "0.50815788774865",
+        "delta": "-0.021617747856193"
+      },
+      {
+        "p": "0.5",
+        "M_p": "0.50272421667678",
+        "delta": "-0.010867288668457"
+      },
+      {
+        "p": "0",
+        "M_p": "0.49729054560492",
+        "delta": "0.0"
+      },
+      {
+        "p": "-0.5",
+        "M_p": "0.49191560411149",
+        "delta": "0.010867288668457"
+      },
+      {
+        "p": "-1",
+        "M_p": "0.48665560982172",
+        "delta": "0.021617747856193"
+      },
+      {
+        "p": "-2",
+        "M_p": "0.47667504205553",
+        "delta": "0.042339448910622"
+      },
+      {
+        "p": "-3",
+        "M_p": "0.46765022521379",
+        "delta": "0.06145381962131"
+      }
+    ],
+    "failed_weight_ladder": [
+      {
+        "p": "2",
+        "actual": "0.550893221078",
+        "ladder_prediction": "0.551981855026"
+      },
+      {
+        "p": "0.5",
+        "actual": "0.474009072487",
+        "ladder_prediction": "0.473938459933"
+      },
+      {
+        "p": "-2",
+        "actual": "0.349407822171",
+        "ladder_prediction": "0.348408015991"
+      },
+      {
+        "p": "-3",
+        "actual": "0.306239334928",
+        "ladder_prediction": "0.30264676075"
+      }
+    ]
+  },
+  "provenance": {
+    "headSha": "592eddbfe30f39fd5289176721866b39490ca39d",
+    "producer": "computations/qbeta/qbeta_symmetry_sign_is_am_gm_locked_probe.py",
+    "elapsed_s": 0.009
+  }
+}

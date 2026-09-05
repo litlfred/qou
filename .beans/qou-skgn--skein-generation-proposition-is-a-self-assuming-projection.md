@@ -110,7 +110,7 @@ by transitive closure over `uses[]` across every `.ts` in the paper:
 | proof | **44** | → `remark` + `interprets:` |
 
 The cone contains `thm:knot-mass-formula-unified`, `prop:categorical-proton-*`,
-`prop:markov-trace-*`, `prop:three-calibration-discipline`, the α_EM chain and
+`prop:markov-trace-*`, `def:three-calibration-discipline`, the α_EM chain and
 the whole mass-formula spine.
 
 **So my recommendation in this bean — *"(1) now, (3) later … demoting is cheap

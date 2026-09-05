@@ -1,106 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:35:02.780684+00:00",
-  "commitSha": "2042914b16151eecab975ce6df3c483632d3fb7a",
+  "computedAt": "2026-09-04T10:58:56.310747+00:00",
+  "commitSha": "83d57ef17b144b626ca8620bde87377647aecf1f",
   "assertions": [
     {
-      "name": "M(Hydrogen)",
-      "computed": "1510.9",
-      "expected": 938.8,
+      "name": "multiplicative_law_refuted_beyond_hydrogen",
+      "computed": true,
+      "expected": true,
       "passed": true,
-      "tolerance": "1144.15829200767",
-      "unit": "MeV",
-      "source": "AME2020"
-    },
-    {
-      "name": "M(Helium)",
-      "computed": "-119.2",
-      "expected": 3728.4,
-      "passed": true,
-      "tolerance": "7695.21894890844",
-      "unit": "MeV",
-      "source": "AME2020"
-    },
-    {
-      "name": "M(Lithium)",
-      "computed": "-122.1",
-      "expected": 6535.4,
-      "passed": true,
-      "tolerance": "13314.9833618477",
-      "unit": "MeV",
-      "source": "AME2020"
-    },
-    {
-      "name": "M(Beryllium)",
-      "computed": "-5.5",
-      "expected": 8394.8,
-      "passed": true,
-      "tolerance": "16800.631943938",
-      "unit": "MeV",
-      "source": "AME2020"
-    },
-    {
-      "name": "M(Boron)",
-      "computed": "-0.3",
-      "expected": 10255.1,
-      "passed": true,
-      "tolerance": "20510.7113446046",
-      "unit": "MeV",
-      "source": "AME2020"
-    },
-    {
-      "name": "M(Carbon)",
-      "computed": "0.2",
-      "expected": 11177.9,
-      "passed": true,
-      "tolerance": "22355.5438706793",
-      "unit": "MeV",
-      "source": "AME2020"
-    },
-    {
-      "name": "M(Nitrogen)",
-      "computed": "0.0",
-      "expected": 13043.8,
-      "passed": true,
-      "tolerance": "26087.5111684652",
-      "unit": "MeV",
-      "source": "AME2020"
-    },
-    {
-      "name": "M(Oxygen)",
-      "computed": "0.0",
-      "expected": 14899.2,
-      "passed": true,
-      "tolerance": "29798.3211008344",
-      "unit": "MeV",
-      "source": "AME2020"
-    },
-    {
-      "name": "M(Fluorine)",
-      "computed": "0.0",
-      "expected": 17696.9,
-      "passed": true,
-      "tolerance": "35393.8030372017",
-      "unit": "MeV",
-      "source": "AME2020"
-    },
-    {
-      "name": "M(Neon)",
-      "computed": "0.0",
-      "expected": 18622.8,
-      "passed": true,
-      "tolerance": "37245.6691220204",
-      "unit": "MeV",
-      "source": "AME2020"
+      "tolerance": 0,
+      "source": "min over Z>=2 of |M_derived - M_AME| / |M_AME| exceeds 50%. Asserts the NEGATIVE this script establishes (its own header: the multiplicative combination law is wrong). Goes RED if any atom beyond hydrogen ever lands within 50%, which would mean the header needs revisiting."
     }
   ],
   "allPassed": true,
   "durationMs": 5,
   "computation": "atom-mass-derived",
   "scriptFile": "atom_mass_derived.py",
-  "scriptHash": "e3fd0b848011",
-  "scriptCommitSha": "cdaf440201aa4c0942700bd43393bbb5d1411c7a",
+  "scriptHash": "7bac38e9b3d9",
+  "scriptCommitSha": "83d57ef17b144b626ca8620bde87377647aecf1f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -115,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -133,6 +51,9 @@
     "neutron_tr_M": "0.4152946400093759"
   },
   "data": {
+    "best_relative_error_beyond_hydrogen": "0.999985859218983",
+    "best_relative_error_element": "Carbon",
+    "n_atoms_with_nonpositive_derived_mass": 5,
     "results": [
       {
         "element": "Hydrogen",
@@ -149,7 +70,7 @@
         "M_observed_MeV": 938.783,
         "delta_MeV": "572.079146003834",
         "delta_pct": "60.9383793702947",
-        "elapsed_s": 0.00010538101196289062
+        "elapsed_s": 0.00012946128845214844
       },
       {
         "element": "Helium",
@@ -166,7 +87,7 @@
         "M_observed_MeV": 3728.401,
         "delta_MeV": "-3847.60947445422",
         "delta_pct": "-103.197308295278",
-        "elapsed_s": 0.001348257064819336
+        "elapsed_s": 0.0011827945709228516
       },
       {
         "element": "Lithium",
@@ -183,7 +104,7 @@
         "M_observed_MeV": 6535.367,
         "delta_MeV": "-6657.49168092386",
         "delta_pct": "-101.86867364792",
-        "elapsed_s": 0.04954051971435547
+        "elapsed_s": 0.03801369667053223
       },
       {
         "element": "Beryllium",
@@ -200,7 +121,7 @@
         "M_observed_MeV": 8394.794,
         "delta_MeV": "-8400.31597196901",
         "delta_pct": "-100.065778528562",
-        "elapsed_s": 0.3180196285247803
+        "elapsed_s": 0.2942044734954834
       },
       {
         "element": "Boron",
@@ -217,7 +138,7 @@
         "M_observed_MeV": 10255.103,
         "delta_MeV": "-10255.3556723023",
         "delta_pct": "-100.002463868986",
-        "elapsed_s": 1.485116958618164
+        "elapsed_s": 1.4000225067138672
       },
       {
         "element": "Carbon",
@@ -234,7 +155,7 @@
         "M_observed_MeV": 11177.93,
         "delta_MeV": "-11177.7719353396",
         "delta_pct": "-99.9985859218983",
-        "elapsed_s": 2.8377270698547363
+        "elapsed_s": 2.59173321723938
       },
       {
         "element": "Nitrogen",
@@ -251,7 +172,7 @@
         "M_observed_MeV": 13043.781,
         "delta_MeV": "-13043.7555842326",
         "delta_pct": "-99.9998051503056",
-        "elapsed_s": 9.570432662963867
+        "elapsed_s": 8.510164737701416
       },
       {
         "element": "Oxygen",
@@ -268,7 +189,7 @@
         "M_observed_MeV": 14899.169,
         "delta_MeV": "-14899.1605504172",
         "delta_pct": "-99.9999432882277",
-        "elapsed_s": 31.392910957336426
+        "elapsed_s": 26.752673625946045
       },
       {
         "element": "Fluorine",
@@ -285,7 +206,7 @@
         "M_observed_MeV": 17696.901,
         "delta_MeV": "-17696.9015186009",
         "delta_pct": "-100.000002930461",
-        "elapsed_s": 188.0656487941742
+        "elapsed_s": 176.40914225578308
       },
       {
         "element": "Neon",
@@ -302,7 +223,7 @@
         "M_observed_MeV": 18622.835,
         "delta_MeV": "-18622.8345610102",
         "delta_pct": "-99.9999976427339",
-        "elapsed_s": 246.54719853401184
+        "elapsed_s": 228.55271673202515
       }
     ],
     "lean_uniqueness_ref": {

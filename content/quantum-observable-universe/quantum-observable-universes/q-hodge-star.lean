@@ -20,7 +20,9 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 # QOU.QHodgeStar
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QHodgeStar.lean (monolithic)
+Source: content/quantum-observable-universe/lean/QOU/QHodgeStar.lean (monolithic).
+That file no longer exists — the library was split, and `QHodgeStar` now lives at
+  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/VolumeForm.lean
 -/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory

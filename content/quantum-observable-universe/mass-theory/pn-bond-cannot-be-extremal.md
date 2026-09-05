@@ -67,6 +67,10 @@ is no $(2,2)$ partition of $2$, so it supplies nothing at $A = 2$. The two
 statements are consistent — which is the difficulty, because it leaves the
 two-body ordering with nothing to rescue it.
 
+The ordering result above constrains $L$, which is a free-energy difference;
+whether $B = \alpha L$ is a binding energy at all is the separate open claim in
+[the free-energy reading](#rem:bond-log-ratio-is-a-free-energy).
+
 ## What would have to change
 
 One of these, none of them settled here: the $pn$ interface stops being an

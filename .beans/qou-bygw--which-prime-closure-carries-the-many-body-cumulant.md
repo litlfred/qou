@@ -1,11 +1,11 @@
 ---
 # qou-bygw
 title: 'Which prime closure carries the many-body cumulants: the all-pairs band routing is not a chain'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-03T20:24:04Z
-updated_at: 2026-09-04T02:12:27Z
+updated_at: 2026-09-05T06:15:33Z
 ---
 
 
@@ -103,3 +103,70 @@ the same quantity.
 **This strengthens the bean's blocked verdict rather than unblocking it.** Two
 independent routes now say the all-pairs word's trace depends on ordering. The
 open item is still a modelling decision, not a computation.
+
+## RETIRED (owner decision B3, 2026-09-05)
+
+The all-pairs bond model is retired as **ill-posed**, not parked as blocked. The
+deciding argument is new and it removes the option that looked cheapest.
+
+### Why "declare a canonical ordering" has no candidate
+
+The sibling arc proves that **monotone** words — ascending, one run per
+generator — always factorise
+(`docs/audits/2026-09-04-monotone-word-trace-factorizes-derived-link-map.md`).
+That is the only ordering class with a factorisation theorem, so it is the only
+principled place to declare a convention. But the band generator's own sequence
+is
+
+    band(0,2) = [5, 4, 3, 2, 3, 4, 5]
+
+with generators 3, 4 and 5 each appearing **twice, in two separate runs, inside
+a single bond**. No reordering of the bonds can merge them, because they belong
+to one bond. **The all-pairs word can never be monotone.**
+
+So the principled ordering class is unreachable, and where it IS reachable the
+word is the chain — which `qou-m3sh` proved is a connected sum carrying no
+many-body binding at all. **The principled choice and the wanted answer exclude
+each other.**
+
+### What that means
+
+The ambiguity is not a technicality standing between us and the cumulants. It
+is the model telling us that a set of pairwise bonds applied *simultaneously* is
+not a braid word, so "the all-pairs closure" does not name an algebra element,
+and the cumulants measured from it were artifacts of a non-canonical choice —
+33 distinct values across 40 sampled orderings at `A = 4`, spanning 15 % of
+helium-4's binding.
+
+### What is retired, and what is not
+
+**Retired:** the all-pairs bond model as a source of many-body binding; the
+`c_3 = -0.34` cumulants read off it; the search for "which prime closure carries
+the cumulants", which presupposed a closure exists.
+
+**Kept, all independent of this:** the chain closure and its connected-sum
+theorem (`qou-m3sh`); the affine interface law and its closed forms
+(`QOU.Mass.ChainTraceFactor`, sorry-free); the Fary-Milnor curvature floor
+`2 pi (2A+1)` and the Frenet-framing jump; and this bean's own measurements,
+which stand as a correct statement about braid words rather than about binding
+— three distinct Jones polynomials from one bond multiset is a fact whatever
+one thinks of the model.
+
+**Not claimed:** that no algebraic home exists for simultaneous pairwise
+bonding. Only that the braid-word presentation is not it, and nobody has a
+candidate. If someone finds one, this reopens as a new bean rather than this
+one.
+
+## Summary of Changes
+
+Investigated fully and retired on the evidence:
+
+- `the_all_pairs_closure_is_not_one_link_probe` (13/13): six bond orderings give
+  three distinct Markov traces and three distinct Jones polynomials at identical
+  letter multiset, exponent sum and strand count; a second, independent
+  arrangement ambiguity (`ppn` vs `pnp`, worth 0.0699 in `L`); the corpus's two
+  published `A = 3` numbers reconciled as two different conventions; and the
+  `A = 4` spread of 0.9924 in `L` = 4.15 MeV = 14.7 % of `B_AME(4He)`.
+- Convergence with the sibling arc's `content_reorder_defect`, which supplies
+  the exact `n = 4` cross term `z(z^2 - hz - 1)` this bean only measured.
+- The monotone argument above, which is what turns "blocked" into "retired".

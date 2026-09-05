@@ -9,7 +9,7 @@ discussion on observable vs nonobservable energy in case of beta decay."
 This script produces `q-beta-predicted.witness.json` recording:
 
   * E_0 from the FULL chain: m_e / (q_0 (q_0 - 1)) ≈ 4.186 MeV
-    — derived from CAL-1 m_e + CAL-2 q_0 only; CAL-3 𝔇_π is the
+    — derived from CAL-1 m_e + CAL-2 q_0 only; CAL-3 P_avg^π is the
     OUTPUT, not an input.
   * Q_β predicted (single-wrap symbolic closed form):
         Q_β = m_e · |q_0² - 2q_0 - 1| · (q_0 + 1) / (2 q_0³)

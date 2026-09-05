@@ -709,13 +709,30 @@ noncomputable instance : SkeinMassFromLinkingContext where
   mass := 0
   mass_identity := by simp
 
-/-- The Wenzl-bridge branching identity over the empty partition range. -/
-noncomputable instance : MarkovIdentificationContext where
-  nPartitions := 0
-  markovWeight := fun _ => 0
-  spechtPartialTrace := fun _ => 0
-  markovTrace := 0
-  markovTrace_branching := by simp
+/-! `MarkovIdentificationContext` — **the class no longer exists** (retired
+2026-09-04 in this file; the instance below stood from 2026-08-30 to then).
+
+This bean's own later commit `b34a9c689b` removed the class from
+`QOU.FeynmanPathIntegrals.markov_identification`, replacing the field with the
+named proposition `markovTrace_branching nPart w trS trM : Prop` and an explicit
+hypothesis on `markov_identification`; the zero instance that was written here
+therefore no longer typechecks, and this file — imported by nothing, compiled
+by nobody — carried a dangling consumer of the removed class for five days.
+The identity is now **proved** at convention D at the data the lemma is about
+(`QOU.FeynmanPathIntegrals.MarkovIdentificationInstance.markovTrace_branching_of_markovTrace`,
+PR #6579), so the "vacuous at zero" verdict recorded for this class is moot:
+there is no class to inhabit, and the proposition is a theorem where it matters
+and refutable at free data (`not_markovTrace_branching_of_free_data`).
+
+Former text, kept for the record and no longer compiled:
+
+    noncomputable instance : MarkovIdentificationContext where
+      nPartitions := 0
+      markovWeight := fun _ => 0
+      spechtPartialTrace := fun _ => 0
+      markovTrace := 0
+      markovTrace_branching := by simp
+-/
 
 end HandAdjudicated6
 

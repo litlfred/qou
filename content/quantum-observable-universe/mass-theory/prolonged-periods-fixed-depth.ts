@@ -7,9 +7,6 @@ export default proposition({
     validation: "validated",
   },
   title: "A fixed-depth recurrence for the prolonged periods exists (Cayley–Hamilton)",
-  uses: [
-    "prop:binding-genfun-qdifference",
-    "prop:mi-sw-abelianisation",
-  ],
+  uses: ["prop:mi-sw-abelianisation"],
   proofs: ["prf:prolonged-periods-fixed-depth"],
 });

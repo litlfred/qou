@@ -889,8 +889,8 @@ is what q₀ and the mass scale are actually pinned to here.
 | CAL | DOF (h-order) | Canonical observable (math ideal) | Experimental ideal (proxy, σ) |
 |---|---|---|---|
 | CAL-1 | W-plane scale (h⁰) | m_e — leptonic mass scale | **m_e, CODATA (0.31 ppb)** |
-| CAL-2 | W-plane modulus (h²) | 𝔇_β — neutron β-decay width (τ_n=ℏ/𝔇_β) | **m_μ/m_e (22 ppb)** via m_μ/m_e = Vol(4₁)/ℏ_q² (Q_β=ℏ/𝔇_β = decay proxy) |
-| CAL-3 | orthogonal meson (h³) | 𝔇_π — pion decay width (τ_π=ℏ/𝔇_π) | **m_π = 139.57 MeV, PDG** |
+| CAL-2 | W-plane modulus (h²) | P_skew^β — neutron β-decay width (τ_n=ℏ/P_skew^β) | **m_μ/m_e (22 ppb)** via m_μ/m_e = Vol(4₁)/ℏ_q² (Q_β=ℏ/P_skew^β = decay proxy) |
+| CAL-3 | orthogonal meson (h³) | P_avg^π — pion decay width (τ_π=ℏ/P_avg^π) | **m_π = 139.57 MeV, PDG** |
 
 This dashboard's q₀ is the **experimental (proton) pin**, m_p/m_e,
 q₀ = 1.1099785827513808… — per the 2026-08-07 owner directive that all compute

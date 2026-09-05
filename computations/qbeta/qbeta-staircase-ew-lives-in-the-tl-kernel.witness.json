@@ -123,14 +123,15 @@
     "answer": "No. rho_k has exactly k rows, so only k = 2 is physical at N = 2, and the block itself calls that case untestable. Both empirically-loaded cases (k = 3, 4) are in the TL kernel.",
     "scope": "Scope-(a). The conjecture is NOT refuted and no content block is edited here."
   },
-  "gitCommit": "82da216923ff5a455b71e6f06d06e72b41248ca2",
+  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
   "durationMs": 0,
   "scriptFile": "qbeta_staircase_ew_lives_in_the_tl_kernel_probe.py",
-  "scriptHash": "aa8b84bcbda1",
-  "scriptCommitSha": "unknown",
-  "commitSha": "82da216923ff5a455b71e6f06d06e72b41248ca2",
-  "computedAt": "2026-09-01T07:52:58.804399+00:00",
+  "scriptHash": "e7284b676fd7",
+  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "computedAt": "2026-09-04T12:40:18.664112+00:00",
   "engineVersion": "mpmath 1.4.1",
-  "q0Anchor": "proton (experimental pin)",
-  "q0Value": "1.10997858275138080759166909561"
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"
 }

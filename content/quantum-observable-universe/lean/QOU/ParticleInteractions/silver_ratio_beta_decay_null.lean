@@ -172,13 +172,16 @@ theorem crossing_energy_eq_one_iff (q : ℝ) (hq : 0 < q) :
       unfold crossingEnergy heckeSkein at h; linarith
     have hquad : q ^ 2 - 2 * q - 1 = 0 := by
       have hmul : (q - 1 / q) * q = 2 * q := by rw [h2]
-      have hexp : (q - 1 / q) * q = q ^ 2 - 1 := by field_simp; ring
+      have hexp : (q - 1 / q) * q = q ^ 2 - 1 := by field_simp
       rw [hexp] at hmul; linarith
     -- factor over ℝ using √2 · √2 = 2
     have hfac : (q - 1 - Real.sqrt 2) * (q - 1 + Real.sqrt 2) = 0 := by
       have hexpand : (q - 1 - Real.sqrt 2) * (q - 1 + Real.sqrt 2)
           = q ^ 2 - 2 * q + 1 - Real.sqrt 2 * Real.sqrt 2 := by ring
       rw [hexpand, hs]; linarith
+    have hs_gt1 : (1 : ℝ) < Real.sqrt 2 := by
+      rw [show (1 : ℝ) = Real.sqrt 1 from Real.sqrt_one.symm]
+      exact Real.sqrt_lt_sqrt (by norm_num) (by norm_num)
     rcases mul_eq_zero.mp hfac with h1 | h1
     · linarith
     · exfalso; linarith
@@ -224,7 +227,9 @@ theorem tendsto_hbarQ_atTop :
     Filter.Tendsto hbarQ Filter.atTop (nhds (1 : ℝ)) := by
   have h : Filter.Tendsto (fun q : ℝ => 1 - q⁻¹) Filter.atTop (nhds (1 - 0)) :=
     Filter.Tendsto.sub tendsto_const_nhds tendsto_inv_atTop_zero
-  simpa [hbarQ, one_div] using h
+  have hfun : hbarQ = fun q : ℝ => 1 - q⁻¹ := by
+    funext q; simp [hbarQ, one_div]
+  rw [hfun]; simpa using h
 
 /-- **The large-$q$ limit returns the bare hyperbolic volume.**
 $\mathrm{Vol}/\hbar_q^2 \to \mathrm{Vol}$ as $q \to \infty$. This is a limit

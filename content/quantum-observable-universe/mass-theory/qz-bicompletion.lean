@@ -30,6 +30,17 @@ noncomputable def qPochhammerProduct (q : ℝ) : ℕ → ℝ
   | 0 => 1
   | m + 1 => qPochhammerProduct q m * (1 - q ^ (m + 1))
 
+/-- The z-Pochhammer polynomial P_n(q, z) = ∏_{k=1}^{n}(1 - q^{-k} z), as a
+    polynomial in z with real coefficients depending on q.  Identical to the
+    canonical definition in the sibling `z-habiro-ring.lean` (same namespace);
+    redeclared here because content-block siblings cannot import one another
+    (the same reason `qPochhammerProduct` above is a local copy).  Added
+    2026-09-05: the file referred to `zPochhammer` without any definition in
+    tracked history, and did not compile. -/
+noncomputable def zPochhammer (q : ℝ) : ℕ → Polynomial ℝ
+  | 0 => 1
+  | n + 1 => zPochhammer q n * (Polynomial.C 1 - Polynomial.C (q ^ (-(n + 1 : ℤ))) * Polynomial.X)
+
 /-- The bigraded ideal generator I_{m,n}(q, z) = (q;q)_m · P_n(q, z).
     Returned as a polynomial in z whose coefficients depend on q. -/
 noncomputable def qzBigradedIdealGen (q : ℝ) (m n : ℕ) : Polynomial ℝ :=
