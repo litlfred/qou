@@ -67,8 +67,8 @@ publishes the current CODATA `206.7682827` inside one. Dropping the class
 silently would blind the checker to any stale figure that happens to live in a
 note, which is the failure mode the discrimination floor below describes.
 
-TWO FURTHER FALSE-POSITIVE CLASSES WORTH KNOWING BEFORE READING A ROW
----------------------------------------------------------------------
+THREE FURTHER FALSE-POSITIVE CLASSES WORTH KNOWING BEFORE READING A ROW
+-----------------------------------------------------------------------
 1. **Decimals are not significant figures.** `PUB` selects on decimal count, so a
    residual column printed as `0.000001` is admitted with **one** significant
    figure. The round-to window is then ±5e-7 on a value of 1e-6 — the test has no
@@ -78,11 +78,41 @@ TWO FURTHER FALSE-POSITIVE CLASSES WORTH KNOWING BEFORE READING A ROW
    11th: in a results table "no match" and "cannot tell" look identical.
 2. **A block's producer need not be the witness naming it.** A quantity may be
    computed by a sibling declaring a different block, or in Lean, and the block
-   still publishes it correctly. Several of `prop:confined-knot-binding`'s rows
-   are that. `prop:em-coupling-projection` was the extreme case — 6 of 7 rows
-   unmatched, because the `contentBlock` pointer sat on a producer computing one
-   of them while the producer of the other six emitted no witness at all. Read a
-   near-total miss as a misdirected pointer before reading it as a stale table.
+   still publishes it correctly. `prop:em-coupling-projection` was the extreme
+   case — 6 of 7 rows unmatched, because the `contentBlock` pointer sat on a
+   producer computing one of them while the producer of the other six emitted no
+   witness at all. Read a near-total miss as a misdirected pointer before reading
+   it as a stale table.
+3. **A labelled comparison against a superseded convention.** A block may publish
+   both the production value and the excised one, side by side and clearly
+   marked, so a producer computing the live convention correctly carries none of
+   the other column. `prop:frobenius-gram-matrix` prints its Gram spectrum under
+   D *and* under C, saying so; four of its five flags were the C column. Unlike
+   class 1 in the blockquote partition, this sits in ordinary prose and is not
+   mechanically separable — the label is a sentence, not a syntax.
+
+   That block is also the case for reading every row rather than sweeping: its
+   **fifth** flag was a genuine digit error, `4.23033920` where no registered
+   `q0` produces anything but `4.23033923` (proton) or `4.23033940` (muon).
+   Four false positives and one real defect in the same block.
+
+THE WEAKNESS THAT MATTERS MOST: A ROW CAN BE CLOSED WITHOUT PRODUCING ANYTHING
+-------------------------------------------------------------------------------
+This checker asks whether a witness declaring a block *carries* the block's
+numbers. **A witness that transcribes them answers yes without adding any
+evidence.** Nothing here can tell a computed value from a copied one.
+
+That is not hypothetical. `witness-float64-padding-audit` is an aggregator that
+scrapes numbers from other witnesses, and it surfaced as a top-scoring
+"candidate producer" covering 5 of 5 figures of a block it has never computed.
+And while triaging `prop:frobenius-gram-matrix` I closed its row by pasting the
+block's own convention-C figures into a new witness — accidentally, then
+reverted, because a row closed that way is worse than an open one: the figures
+still have no producer and the checker has stopped saying so.
+
+So: **the count is a floor on the work remaining, never a measure of it**, and
+closing a row means finding or writing the producer, never recording the number
+somewhere the checker will look.
 
 HOW MUCH OF A MATCH IS COINCIDENCE — MEASURED, NOT ASSUMED
 -----------------------------------------------------------

@@ -845,11 +845,67 @@ as this one does, called it witnessed on the strength of a sentence. Both
 readings are defensible and they disagree, which is worth knowing before anyone
 promotes this checker to a gate.
 
-- [ ] Five blocks left. `prop:q-beta-spectral-bridge` (12 asserted, best coverage
-      6/12) is the largest and is already known to diverge 21 % from its producer
-      — it belongs to `qou-cds1`, not here. `prop:frobenius-gram-matrix` (3/5)
-      and `prop:q-hecke-seminormal-character-closure` (5/5, but three rival
-      candidates including an aggregator) are the next readable ones.
+## TRIAGE 7: `prop:frobenius-gram-matrix` — four false positives and one real digit error, in one block
+
+Probe: `the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe.py` (7/7).
+The clearest argument yet for reading every row rather than sweeping.
+
+**Four of five flags are a false-positive class the checker had not named.** The
+block publishes its Gram spectrum under the production convention **D** *and*
+under the excised **C**, side by side and explicitly labelled ("under the excised
+convention C"). A producer computing D correctly carries none of the C column.
+That is a block doing the right thing, counted as a defect. Named as class 3
+now — and unlike the retraction class it sits in ordinary prose, so it is **not
+mechanically separable**: the label is a sentence, not a syntax.
+
+### The fifth was real, and it took a computation to tell from a pin difference
+
+The largest **D** eigenvalue read `+4.23033920`. The block's own declared witness
+(`q0Anchor: proton`) computes `4.230339225030225` → `4.23033923`, five half-ulps
+away. Tempting to call a pin difference: proton→muon moves this eigenvalue by
+~`4e-8` against a `2.5e-8` discrepancy, the same order. So it had to be computed.
+Rebuilding the whole 6×6 from the block's own symbolic entries:
+
+    proton      4.230339225030226   ->  4.23033923
+    muon live   4.230339401101782   ->  4.23033940
+    retired     4.230339399892241   ->  4.23033940
+    published                           4.23033920   <- NO REGISTERED PIN
+
+**A transcription error.** Corrected; the other five D entries are right at the
+proton pin and unchanged.
+
+### 🛑 THE WEAKNESS THAT MATTERS MOST — and I walked into it
+
+Closing this row, I pasted the block's convention-C figures into my new witness
+as part of an internal-consistency check. **The row closed.** The C column still
+has no producer — convention C is excised, none exists — and the checker had
+simply stopped saying so.
+
+Reverted; the row now honestly reads 4/11. But the lesson generalises and is now
+in the script's docstring as its most important limitation: **this checker asks
+whether a declaring witness *carries* a block's numbers, and a witness that
+transcribes them answers yes without adding evidence.** Nothing in it can tell a
+computed value from a copied one. That is exactly why
+`witness-float64-padding-audit` — an aggregator that scrapes other witnesses —
+scored as a top candidate producer for a block it has never computed.
+
+**So the count is a floor on the work remaining, never a measure of it**, and
+closing a row means finding or writing the producer, never recording the number
+somewhere the checker will look. Anyone promoting this to a gate needs to read
+that paragraph first.
+
+Report **7 blocks / 31 asserted**, from 15/79.
+
+- [ ] The four C-column figures stay open deliberately. Closing them would mean
+      computing an excised convention, which is the wrong direction; the honest
+      resolution is that the checker cannot distinguish "unproduced" from
+      "unproducible by policy".
+- [ ] Four blocks left beyond that. `prop:q-beta-spectral-bridge` (12 asserted)
+      is the largest and belongs to `qou-cds1`, not here — migrating it alone
+      half-migrates the channel. `prop:q-hecke-seminormal-character-closure`
+      (5/5, three rival candidates **including the aggregator**) is the next
+      readable one, and its candidate list is precisely the case where the
+      coverage score cannot be trusted.
 - [ ] Consider whether `contentBlock`-on-a-verifier deserves its own check. The
       signature is mechanical: a witness declaring a block whose assertions are
       all engine-agreement comparisons and whose data carries none of the block's
