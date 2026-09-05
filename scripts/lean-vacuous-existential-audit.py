@@ -50,9 +50,26 @@ DECL = re.compile(
     re.S | re.M,
 )
 
-# ∃ x, x = ...   /   ∃ x : T, x = ...
+# ∃ x, x = ...   /   ∃ x : T, x = ...   /   ∃ (x : T), x = ...
+#
+# The bound variable is matched with `[^\W\d][\w']*`, which is UNICODE-aware
+# (Python `\w` covers Unicode letters, digits and subscripts; `[^\W\d]`
+# excludes a leading digit). It read `[A-Za-z_][A-Za-z0-9_']*` until 2026-09-05
+# and that is ASCII-only, so **every existential bound to a Greek name was
+# structurally invisible** — in a corpus that names its mathematical variables
+# κ, δ, λ, τ, ρ by convention. Measured on the same tree, same day: the ASCII
+# form reported `0 candidates in 0 files`, which reads as a clean bill; the
+# Unicode form reports **8 in 3 files**, all bound to `κ`, `δ`, `τ_k`,
+# `τ_joint`, `τ_x_k_stab`. Nothing had been drained — they had never been seen.
+#
+# The optional parens cover `∃ (κ : ℝ), …`. That arm has **zero measured hits**
+# on this corpus (variants B and C both report 8), so it is insurance against a
+# spelling, not a measured gain; it is covered by `--self-test` rather than by
+# any live finding. Note the type group is `[^,)]+?` in this form so a closing
+# paren cannot be swallowed into the type.
 EXISTS_EQ = re.compile(
-    r"^∃\s*(?P<var>[A-Za-z_][A-Za-z0-9_']*)\s*(?::\s*(?P<ty>[^,]+?))?\s*,\s*(?P=var)\s*=\s*(?P<rhs>.+)$",
+    r"^∃\s*\(?\s*(?P<var>[^\W\d][\w']*)\s*(?::\s*(?P<ty>[^,)]+?))?\s*\)?\s*,"
+    r"\s*(?P=var)\s*=\s*(?P<rhs>.+)$",
     re.S,
 )
 
@@ -153,7 +170,55 @@ def analyze(path: Path):
     return out
 
 
+# Fixtures for `--self-test`. The point is NOT coverage for its own sake: this
+# detector reported `0 candidates` for an unknown period while eight live
+# instances sat in the tree, and a zero from a detector with no self-test is
+# indistinguishable from a clean corpus. Each POSITIVE below is a spelling that
+# the ASCII-only pattern missed; each NEGATIVE is a shape the docstring says
+# must NOT be flagged, so a future widening cannot quietly swallow them.
+SELF_TEST = [
+    # (conclusion, should_match, why)
+    ("∃ a : ℝ, a = knotFactor n b m", True, "ascii — the original shape"),
+    ("∃ κ : ℝ, κ = gramKappa n qf nf cs cw", True, "greek bound var"),
+    ("∃ (κ : ℝ), κ = gramKappa n qf nf cs cw", True, "greek, parenthesised"),
+    ("∃ τ_k, τ_k = τ * z^k", True, "greek with ascii subscript, no type"),
+    ("∃ x₀, x₀ = f y", True, "unicode subscript in the name"),
+    ("∃ x, x = e ∧ P x", False, "conjunct may carry content"),
+    ("∃ x, x = e → P x", False, "implication may carry content"),
+    ("∃ x, e = x", False, "reversed orientation — read by hand"),
+    ("∃ x y, x = e", False, "two binders; the extra witness may matter"),
+    ("∃ x : ℝ, y = e", False, "equation LHS is not the bound variable"),
+]
+
+
+def _flags(concl: str) -> bool:
+    """Run the SAME two stages `analyze` runs. `EXISTS_EQ` alone is not the
+    decision: it matches `∃ x, x = e ∧ P x` happily, and the conjunct is
+    excluded downstream by `_depth_split_ok` on the RHS. A self-test that
+    asserted the pipeline's behaviour while exercising only the regex FAILED
+    on its own two negative fixtures when first written — recorded because it
+    is the same error the fixtures exist to catch, one stage up."""
+    m = EXISTS_EQ.match(norm(concl))
+    return bool(m) and _depth_split_ok(m.group("rhs").strip())
+
+
+def self_test() -> int:
+    bad = 0
+    for concl, want, why in SELF_TEST:
+        got = _flags(concl)
+        if got is not want:
+            bad += 1
+            print(f"FAIL want={want} got={got}  {concl!r}  ({why})")
+    if bad:
+        print(f"\nself-test: {bad} of {len(SELF_TEST)} FAILED")
+        return 1
+    print(f"self-test: {len(SELF_TEST)}/{len(SELF_TEST)} pass")
+    return 0
+
+
 def main(argv):
+    if "--self-test" in argv:
+        return self_test()
     roots = [Path(a) for a in argv[1:]] or [Path("content")]
     as_json = False
     if "--json" in argv:
