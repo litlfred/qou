@@ -94,19 +94,25 @@ the same block-diagonal matrix agree block by block, read off at multiplicity
 index `0`, which exists because `0 < f^λ`.
 
 The positivity is taken as an explicit argument rather than invoked, and that is
-deliberate. Current source proves it unconditionally —
-`Hoefsmit.seminormalDim_pos' : 0 < seminormalDim lam`, added 2026-09-03 — but
-**this container's restored olean snapshot predates that change**: it carries
-only the older `seminormalDim_pos`, which takes a `0 < n` hypothesis that the
-statement does not need (the empty diagram has exactly one standard tableau).
-Rather than bolt a `0 < n` decoy onto the statement to satisfy a stale cache,
-the hypothesis is named and discharged by the caller:
+deliberate — though the reason first given for it was about the container, and
+that part is now wrong. Discharge it with
 
     blockDiagonal_injective (fun lam => Hoefsmit.seminormalDim_pos' lam)
 
-which typechecks against current source. `lean`-direct verifies against the
-oleans on disk, so this file is verified against the snapshot; the one-line
-discharge above is what a fresh build supplies. -/
+**Corrected 2026-09-05 (bean `qou-kp2z`).** This docstring said the container's
+restored olean snapshot "carries only the older `seminormalDim_pos`", so
+`seminormalDim_pos'` was unavailable. That was true when measured and is no
+longer true: `Hoefsmit.olean` in the snapshot was ~3 months stale, and any
+`scripts/lean-direct-cone.sh` run touching this module rebuilds it from source,
+after which `seminormalDim_pos'` is present. The claim described a *repairable
+cache state* as if it were a fixed property of the environment — see
+`QOU/HeckeAlgebra/WedderburnTrace.lean` for what that staleness cost elsewhere.
+
+The hypothesis stays explicit anyway, for the reason that does not expire:
+`seminormalDim_pos` takes a `0 < n` that the statement does not need (the empty
+diagram has exactly one standard tableau), and bolting on a decoy hypothesis to
+satisfy a cache is the shape `scripts/lean-decoy-hypothesis-audit.py` exists to
+catch. Naming the real hypothesis is right whether or not the cache is fresh. -/
 theorem blockDiagonal_injective {n : ℕ}
     (hpos : ∀ lam : Nat.Partition n, 0 < seminormalDim lam) :
     Function.Injective (blockDiagonal (n := n)) := by
@@ -115,6 +121,39 @@ theorem blockDiagonal_injective {n : ℕ}
   set m : Fin (seminormalDim lam) := ⟨0, hpos lam⟩ with hm
   have := congrArg (fun M => M ⟨lam, (m, i)⟩ ⟨lam, (m, j)⟩) hxy
   simpa [blockDiagonal_same] using this
+
+/-- **The regular-representation trace formula.** `blockDiagonal` places block
+`λ` along the diagonal once for each multiplicity index `m : Fin (f^λ)`, so its
+trace weights each block trace by `f^λ`:
+
+    trace (blockDiagonal x) = Σ_λ f^λ · trace (x λ)
+
+Unconditional — no RSK, no positivity. This is the identity
+`QOU/HeckeAlgebra/MarkovTrace.lean`'s module doc used to advertise for
+`wenzlBridge` and which nothing proved, because until `blockDiagonal` existed
+there was no embedding to state it over.
+
+It is also a check on the construction rather than only a lemma about it: had
+the multiplicity been mis-indexed in `blockDiagonal`, the coefficient here would
+come out `1` or `(f^λ)²` and the proof would not close. -/
+theorem blockDiagonal_trace {n : ℕ} (x : WedderburnDecomposition n) :
+    (blockDiagonal x).trace
+      = ∑ lam : Nat.Partition n, (seminormalDim lam : ℝ) * (x lam).trace := by
+  classical
+  rw [Matrix.trace]
+  rw [show (∑ p : RegIndex n, (blockDiagonal x).diag p)
+        = ∑ lam : Nat.Partition n,
+            ∑ p : Fin (seminormalDim lam) × Fin (seminormalDim lam),
+              (blockDiagonal x).diag ⟨lam, p⟩ from Fintype.sum_sigma _]
+  refine Finset.sum_congr rfl ?_
+  intro lam _
+  rw [Fintype.sum_prod_type]
+  have hdiag : ∀ m i : Fin (seminormalDim lam),
+      (blockDiagonal x).diag ⟨lam, (m, i)⟩ = x lam i i := by
+    intro m i; simpa [Matrix.diag] using blockDiagonal_same x lam m i i
+  simp only [hdiag]
+  rw [Finset.sum_const, Matrix.trace]
+  simp [Matrix.diag, nsmul_eq_mul]
 
 /-- `Fintype.card (RegIndex n) = Σ_λ (f^λ)²` — the quantity RSK identifies with
 `n!`, computed rather than assumed. -/

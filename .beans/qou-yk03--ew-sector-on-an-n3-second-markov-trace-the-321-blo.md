@@ -209,3 +209,64 @@ candidates, and its witness records the ansatz as neither supported at 1e-3 nor
 falsified at 1e-2. An N=3 redo that runs the same proximity search over
 re-weighted numbers gains nothing — that is the fit signature the anti-fit
 discipline exists to catch.
+
+## 2026-09-05 — ANSWERED, and my own rescope of five hours ago was partly stale
+
+The rescoped question was: "is there a second Markov trace on H_n(q) at a = q^2
+(N=3), and what does the trace-convention registry say about registering it?"
+
+**YES, AND ITS PARAMETER IS ALREADY DERIVED IN CLOSED FORM.** The corpus holds
+it and I framed it as open. `computations/ocneanu_param_from_fibre_dimension.py`
+(6/6 PASS, re-run today) and its Lean companion
+`QOU/BraidsAndKnots/FibreDimensionForcesTL.lean` give
+
+    z_N = q^N / [N]_q     with  z * [N]_q = q^N  proved DIVISION-FREE over a
+                          generic commutative domain
+
+so the Ocneanu parameter is a FUNCTION OF THE FIBRE DIMENSION, and every N has
+its trace. Measured at the proton q0:
+
+    z(N=2) = 0.6126880371464652436505  -> N = 2.0   (== convention D, exactly:
+                                                     q^2/[2]_q = q^3/(q^2+1))
+    z(N=3) = 0.4493048090902078521850  -> N = 3.0
+    z_C    = 0.4993203341836944525024  -> N = 2.5995155364  (NOT an integer)
+
+Three consequences, none of which the bean had:
+
+1. The second trace is not a construction problem. It is the N=3 member of a
+   one-parameter family whose parameter is a closed form in N.
+2. The probe's check C2 establishes that y_(1^3) = 0 **iff N = 2** -- so the
+   Schur-Weyl row cap is visible AS A STATEMENT ABOUT THE TRACE, not only about
+   the fibre. That is the same fact the bean's own lock-in measured, reached
+   from the other side.
+3. C5 is the strong one and is independent of everything above: convention C
+   corresponds to a fibre dimension of **2.5995**, not an integer. So C was
+   never any fibre's trace at all -- an argument for the D ruling that does not
+   depend on any anchor or any comparison to data.
+
+**SO THIS BEAN'S REMAINING SCOPE IS NARROWER AGAIN.** Not "does a second trace
+exist" (it does, derived) but: what would REGISTERING the N=3 channel require,
+given that its support differs from N=2's (C2), so every consumer that switched
+would sum over different blocks? That is a registry-and-consumers question, not
+a mathematics one.
+
+**Method note, and it is the second time today.** I recommended rescoping this
+bean to "build the non-self-dual 3-object" and the corpus-grep showed
+`qou-e2j8` had already built it. I then rescoped it to the second-trace
+question and the corpus-grep shows that is derived too. Both times the framing
+was mine and the answer was on disk. The rule that keeps catching it is path 6
+(grep .beans/) plus reading the probe rather than its bean summary.
+
+## Found while doing this: the documented z_3 grep trap names the wrong quantity
+
+`docs/audits/2026-08-16-colour-level-and-tln-compute.md` and bean `qou-d7h1`
+both warn that "the literal 0.44930482320583087 in many witnesses is h_q, NOT
+z_3 -- they differ at the 8th decimal". Measured at 65 dps
+(probes/z3_muon_pin_vs_hq_misidentification_probe.py, 2/2), that literal is
+**z_3 at the MUON anchor** (rel 2.17e-10, the literal's own truncation), while
+h_q = q - 1/q is **53 % away** -- off by a factor of two, so the claim is not a
+small slip inside a true statement.
+
+The two numbers are ONE quantity at TWO ANCHORS: a layer straddle, not a
+lookalike. Extent measured and small: 0 live producers (3 deprecated, 2 doc
+sites carrying the misidentification itself). Both sites corrected.
