@@ -53,7 +53,7 @@
     {
       "name": "pr_6687_interpretive_claim_is_retracted",
       "passed": true,
-      "detail": "the Lean and arithmetic of #6687 stand (two width MECHANISMS, pure mathematics); the step from 'D_beta is CAL-2' to 'the framework has a categorical decay width' does not. Candidate (iii) returns to OPEN."
+      "detail": "the Lean and arithmetic of #6687 stand (two width MECHANISMS, pure mathematics); the step from 'D_beta is CAL-2' to 'the framework has a categorical decay width' does not. Candidate (iii) returns to OPEN. CORRECTED 2026-09-05: this probe ALSO concluded that the corpus has no rate at all. It does -- prop:hadron-half-life, with a derived T_{3,5} Markov-trace coupling. What is open is the rate's SCALE (the weak-scale crossing count N_v), not its shape. (iii) still returns to OPEN, but re-scoped: the corpus's rate is real at real q, so it exhibits a width needing no Im(q). See weak_scale_crossing_count_nv_probe.py."
     }
   ],
   "allPassed": true
