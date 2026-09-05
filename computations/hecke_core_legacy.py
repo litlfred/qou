@@ -1306,19 +1306,47 @@ def _warn_if_kernel_absent():
     """Say, once per process, that this run is on braid-violating matrices.
 
     When `_HAS_LP_KERNEL` is False the accumulator falls back to matrices from
-    `_build_ysn_matrices`, and `computations/audits/ysn_braid_relation_audit.py`
-    proves that family VIOLATES the braid relation: it is not a representation
-    of H_n(q), its products are not Markov traces of braids, and everything
-    computed from them inherits that. The fallback exists so this module still
-    imports in a bare container and must stay — but it produced a DIFFERENT
-    NUMBER, silently, and that is what this warning is for.
+    `_build_ysn_matrices`. The fallback exists so this module still imports in a
+    bare container and must stay; this warning makes the silent case audible.
 
-    Measured (bean `qou-i7ju`), deuterium, same call, same commit, same q0:
+    🛑 THE BRAID-VIOLATION CLAIM THIS DOCSTRING CARRIED IS FALSE AS OF PR #6708
+    (corrected 2026-09-05). It read "`ysn_braid_relation_audit.py` proves that
+    family VIOLATES the braid relation: it is not a representation of H_n(q)".
+    #6708 fixed the builder (`a_rho = h/(1 - q^(-2 rho))`, braid defect
+    0.7315 -> 7.5e-17) and that audit now EXITS 0, with the Python family in the
+    same precision class as the Rust one. Anyone re-deriving the claim from this
+    text would be re-deriving a retired defect.
+
+    THE 17.3 % IS NOT DELETED -- IT IS RE-SCOPED. As recorded (bean `qou-i7ju`),
+    deuterium, same call, same commit, same q0:
 
         kernel live      binding_energy(1,1) = -7.271102125     942 s
         fallback         binding_energy(1,1) = -8.52811254141  22607 s
 
-    17.3 % apart and 24x slower, with no error and no warning. The trap is that
+    That was measured against the PRE-#6708 fallback, i.e. against the
+    braid-violating family, which is the mechanism it was attributed to and
+    which no longer exists. Whether any gap remains AT `binding_energy` is
+    UNMEASURED -- its fallback arm is 6.3 h, so it was not re-run here.
+
+    What WAS re-measured 2026-09-05, on the accumulator inside it
+    (`unified_iterative_correction(1, 1)`, both arms live, k_exact = k_max):
+
+        k=4..7   kernel and fallback agree to 0.000e+00
+        k=8      1.348e-16                 (fallback 14.54 s vs kernel 0.26 s)
+
+    So at the accumulator the two arms now agree to the arithmetic floor, and
+    the speed gap is the surviving reason to prefer the kernel -- 56x at k=8 on
+    this quantity, against the docstring's 24x on `binding_energy`. Those are
+    different quantities; do not quote one as the other.
+
+    Do not read the agreement above as proof the families are interchangeable.
+    `ysn_trace_blindness_probe.py` shows the TRACE cannot see a braid defect at
+    all -- Tr(ABA) - Tr(BAB) = Tr(B) - Tr(A) = 0 from the quadratic relation
+    alone -- so trace agreement is weak evidence about matrices. It is the
+    braid audit, not this table, that establishes the fallback is a
+    representation.
+
+    The remaining trap is that
     the module IMPORTS fine — `pyhecke_native` 0.9.0 is installed and exports 58
     names, and the one the guard needs is not among them. So checking
     `import pyhecke_native` tells you nothing; the guard tests the FUNCTION.
@@ -1338,15 +1366,17 @@ def _warn_if_kernel_absent():
     print(
         "\n*** WARNING: pyhecke_native.lp_accumulator_step_traces_mpfr is "
         "UNAVAILABLE.\n"
-        "*** Falling back to _build_ysn_matrices, which VIOLATES the braid "
-        "relation\n"
-        "*** (audits/ysn_braid_relation_audit.py): not a representation of "
-        "H_n(q), so\n"
-        "*** products are not Markov traces of braids. Any binding number from "
-        "this run\n"
-        "*** is NOT the framework's value -- measured 17.3 % off at deuterium, "
-        "and 24x\n"
-        "*** slower. Do not commit a witness from it.\n"
+        "*** Falling back to _build_ysn_matrices. Since PR #6708 that family "
+        "DOES satisfy\n"
+        "*** the braid relation (audits/ysn_braid_relation_audit.py exits 0), "
+        "and at the\n"
+        "*** accumulator the two arms agree to <=1.3e-16 for k<=8 -- but it is "
+        "~56x slower,\n"
+        "*** and the recorded 17.3 % gap at binding_energy(1,1) has NOT been "
+        "re-measured\n"
+        "*** since #6708 (its fallback arm is 6.3 h). Prefer the kernel; treat "
+        "a witness\n"
+        "*** from this run as unverified rather than as wrong.\n"
         "*** Fix: cd tools/pyhecke-native && maturin build --release && pip "
         "install --force-reinstall --no-deps target/wheels/*.whl\n"
         "*** (pyhecke-native is not on PyPI, so a default container has a stale "
