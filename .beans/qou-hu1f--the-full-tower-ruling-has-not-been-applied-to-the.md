@@ -430,3 +430,52 @@ returns Hecke elements, not a braid word); this is a second way the name mislead
 - **Does NOT** retract the probe: every assertion in
   `nucleon_word_route_divergence_probe.py` still holds as measured. What changes
   is the INTERPRETATION of the one-letter difference at A=1.
+
+## 🛑 THE RULING'S REAL BLAST RADIUS IS `atom_braid_word_3A`, AND IT IS 339 CALLERS
+
+Found 2026-09-05 from `qou-i229`/`qou-46ab`, by trying to regenerate an unrelated
+witness and getting a different number.
+
+This bean scoped consumers of **`build_atom_nf_mp`** and measured **7**. But the
+intra-ordering default the ruling changed lives on **`atom_braid_word_3A`**:
+
+    339  live Python callers (excluding _deprecated)
+      7  that name `intra_order` explicitly
+    332  that SILENTLY take the new `borromean` default
+     57  committed witnesses referencing it
+
+**Every witness among those generated before 2026-09-05 and not regenerated is
+now stale**, and stale invisibly — the producer still runs, still passes its own
+assertions, and returns a different number.
+
+### The worked example
+
+`atomic-tr-m-mpfr-50dps.witness.json` (computed 2026-08-29) records
+`tr_M(proton) = 1.14575978231523894`. Re-running the producer today gives
+`0.62932842249489294`. Same pin, same anchor, same 11-letter word length, same
+kernel. Measured directly:
+
+    intra_order=grouped     1.1457598292260762   <- reproduces the witness
+    intra_order=borromean   0.6293284926174815   <- the ruling
+
+A factor of **1.82** on the proton and **2.08** on the neutron. Not the kernel
+(`--method hoefsmit-python` agrees) and not a native-extension issue (the
+pure-Python fallback gives the same).
+
+### It has already propagated into published content
+
+`prop:q-hecke-seminormal-character-closure` was migrated C → D earlier the same
+day **from that stale witness**, so its five nuclei are now right in convention
+and wrong in ordering. The block is flagged rather than re-substituted: those
+figures moved once already today on a witness that predates a ruling, and moving
+them again before the ordering question is settled for that quantity would
+compound rather than fix.
+
+- [ ] Enumerate the 57 witnesses by `computedAt` and regenerate those predating
+      the ruling. The count of genuinely stale ones is a subset — some producers
+      may not reach the intra-word core at all — and that subset is the number
+      worth quoting, not 57.
+- [ ] Decide whether `intra_order` should have defaulted at all. A
+      behaviour-changing default across 339 callers is invisible by construction;
+      an explicit-argument-required signature would have surfaced all 332 at
+      import time instead of silently changing their numbers.

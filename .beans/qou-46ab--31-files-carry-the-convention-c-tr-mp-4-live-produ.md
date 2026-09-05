@@ -175,11 +175,61 @@ Not a pin shift, not a convention shift — the ratios are not even constant
 (`scriptCommitSha` `fca08de7d29a` is its last commit), so the difference is a
 dependency, not the code.
 
-**Not the kernel**: `--method hoefsmit-python` gives the same `0.629328422`.
-**Probably not my `pyhecke_native` rebuild** either — I rebuilt it earlier today
-(`825fe60e51bf0442` in this witness, `e87a23f8d6fd6732` now), but
-`markov_trace_recursive.py` re-ran against the rebuilt native with **identical
-numeric output**, so the rebuild does not move numbers in general.
+### 🛑 DIAGNOSED, AND MY FIRST ANSWER WAS WRONG
+
+I wrote above that "the difference is a dependency, not the code". **Backwards.
+It is the code, and the change was authorised.**
+
+`atom_braid_word_3A` lays each nucleon's confinement core down grouped or
+alternating. The **owner ruling** of 2026-09-05 (`qou-hu1f`) made the alternating
+`(σ₀σ₁⁻¹)³` — *borromean* — the default. This witness was computed **2026-08-29,
+before the ruling**, and never regenerated. Measured at the muon pin with the
+kernel forced down its pure-Python path:
+
+    intra_order=grouped     tr_M(proton) = 1.1457598292260762   <- the witness
+    intra_order=borromean   tr_M(proton) = 0.6293284926174815   <- the re-run
+
+So the producer reproduces its witness exactly — under the *superseded*
+ordering. It is a **stale witness**, not a broken producer, and that is a much
+better diagnosis than the one I first published in the migration commit.
+
+Ruled out en route: **not the kernel** (`--method hoefsmit-python` gives the
+same), and **not my `pyhecke_native` rebuild** — the pure-Python fallback gives
+`0.6293` too, so both paths agree and the native is irrelevant to the value.
+
+### THE BACKLOG THIS EXPOSES IS NOT TRACKED ANYWHERE
+
+`qou-hu1f` counts the consumers of `build_atom_nf_mp` (**7**). The ruling
+actually landed on `atom_braid_word_3A`, which has
+
+    339  live Python callers
+      7  that name `intra_order` explicitly
+    332  that SILENTLY take the new default
+     57  committed witnesses referencing it
+
+Every witness among those generated before 2026-09-05 and not regenerated since
+is in this witness's position. **That is the real scope of the ruling, and it is
+recorded in `qou-hu1f`.**
+
+### CONSEQUENCE FOR THE MIGRATION IN THIS BEAN
+
+The five nuclei were migrated C → D from this witness, so they are correct in
+**convention** and wrong in **ordering** — `1.1458` where the ruling implies
+`0.6293`, a factor of 1.82–2.08, far larger than the convention migration
+itself. The block is **flagged rather than re-substituted**: those figures have
+already moved once today on a witness that turns out to predate a ruling, and
+moving them again before the ordering question is settled would compound the
+error. The fix is the producer re-run under the ruling.
+
+### A SEPARATE PROBLEM I INTRODUCED
+
+My rebuilt `pyhecke_native` has an **incompatible API** —
+`chi_lambda_all_partitions_mpfr` raises
+`TypeError: argument 'q_str': 'mpf' object cannot be converted to 'PyString'`.
+The kernel catches it and falls back to pure Python, so numbers are unaffected,
+but every producer using this kernel is now silently taking the slow path. It
+was built to satisfy an environment-record warning; the container had no
+`pyhecke_native` before that.
 
 **The committed values are the corroborated ones, not the re-run.**
 `he4_witness_convention_attribution_probe.py`, run today, independently computes
