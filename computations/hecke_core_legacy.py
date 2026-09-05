@@ -1465,8 +1465,17 @@ def _matmul_dim(A, B, dim):
 
 
 def _trace_dim(M, dim):
+    """Trace, at whatever precision the matrix carries.
+
+    The `float()` that used to wrap `np.trace` truncated an exact (mpf)
+    trace to 53 bits -- measured 2026-09-05: every trace on the A=2 path
+    is `mpf`, and since #6794 the matrices carry 167 significand bits.
+    Each of the three other call sites casts at its own public boundary
+    (`float(chi)`), so widening the return here loses nothing and stops
+    the accumulator's log from being fed a float64 value.
+    """
     if isinstance(M, np.ndarray):
-        return float(np.trace(M))
+        return np.trace(M)
     return sum(M[i][i] for i in range(dim))
 
 
@@ -1850,13 +1859,13 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
         # categorically-derived damping from the q-heat spectrum.
         scale = e['C_lambda_resolvent_MeV']
         state.append({
-            'entry': e, 'dim': dim, 'M': M, 'log_norm': 0.0,
-            'log_prev': L0, 'scale': scale, 'cumul_partition': 0.0,
+            'entry': e, 'dim': dim, 'M': M, 'log_norm': _mp.mpf(0),
+            'log_prev': L0, 'scale': scale, 'cumul_partition': _mp.mpf(0),
             'sparse': sparse_sigmas,
         })
 
     per_step = []
-    cumul_total = 0.0
+    cumul_total = _mp.mpf(0)
 
     # Precompute every partition's per-step (trace, log_norm) in Rust, once.
     # This replaces ONLY the matrix maintenance; every line of the accumulation
@@ -1878,7 +1887,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
         nuc = ordering[kk]
         prev_types = ordering[:kk]
 
-        step_delta_total = 0.0
+        step_delta_total = _mp.mpf(0)
         partitions_step = {}
 
         for s in state:
@@ -1983,11 +1992,14 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
                     M_step = _matmul_dim(M_step, M_cross, dim)
                 s['M'] = _matmul_dim(s['M'], M_step, dim)
             if _kernel_hit:
-                m_max = 0.0          # the rescale already happened in Rust
+                m_max = _mp.mpf(0)   # the rescale already happened in Rust
             elif isinstance(s['M'], np.ndarray):
-                m_max = float(np.max(np.abs(s['M'])))
+                # `float(np.max(...))` truncated an exact max to 53 bits and
+                # then divided the whole matrix by it -- a float64 rescale of
+                # exact entries.  Take the max in the matrix's own arithmetic.
+                m_max = max(abs(x) for x in s['M'].flat) if s['M'].size else _mp.mpf(0)
             else:
-                m_max = 0.0
+                m_max = _mp.mpf(0)
                 for i in range(dim):
                     for j in range(dim):
                         if abs(s['M'][i][j]) > m_max:
@@ -2046,7 +2058,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
         # generate non-zero corrections — it correctly predicts
         # that typical high-k partitions are SLACK and contribute
         # nothing in the LP-dual framework.
-        gaussian_delta_total = 0.0
+        gaussian_delta_total = _mp.mpf(0)
         for eg in active_gaussian:
             eg_info = eg
             log_trace_approx = _q_gaussian_character_approx(eg_info, None, kk)
@@ -2112,7 +2124,7 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
     # atom's FINAL state, i.e. tr(M_λ(W_atom)) ≤ 0.  Partitions with
     # positive final trace are SLACK → y_λ* = 0 → zero contribution.
     # Replace cumul_total with the gated sum over tight partitions.
-    gated_total = 0.0
+    gated_total = _mp.mpf(0)
     n_tight = 0
     for s in state:
         if s.get('final_tr_sign', 1) <= 0:
@@ -2129,10 +2141,13 @@ def _unified_iterative_correction_exact(Z, N, return_per_step=False,
             per_step[-1]['k_exact'] = k_exact
             per_step[-1]['k_max'] = k_max
         return float(gated_total), per_step
-    # float, as this function has always returned. See the note on
-    # binding_energy's return: the cast is at the public boundary rather than at
-    # the kernel, so the accumulation keeps its precision, and it costs nothing
-    # because math.log already narrows inside the loop.
+    # float, as this function has always returned -- the cast is at the public
+    # boundary, and NOW that is true.  The note that stood here said the
+    # accumulation "keeps its precision ... because math.log already narrows
+    # inside the loop", which states the defect and then draws the opposite
+    # conclusion from it: a log that narrows inside the loop is exactly what
+    # stops the accumulation keeping anything.  Every log on this path is
+    # `mp.log` as of 2026-09-05.
     return float(gated_total)
 
 
@@ -2143,6 +2158,23 @@ def _jet_witness_path(Z, N, jet, witness_dir):
 
 
 def atom_character_raw(Z, N, entry, include_inter=True):
+    """Raw characters of the atom braid word in partition λ, at the
+    canonical working precision.
+
+    Same reason as `unified_iterative_correction`'s wrapper: mpmath
+    rounds to the AMBIENT `mp.dps`, which is 15 on a bare import, so
+    without this the exact seminormal matrices are multiplied at
+    float64 precision.  Measured: switching this function's `math.log`
+    to `mp.log` alone moved nothing (0.00e+00 on four partitions),
+    because at dps 15 the two agree -- the precision context is what
+    the type change needs to be worth anything.
+    """
+    from _precision import COMPUTE_DPS as _CDPS
+    with _mp.workdps(_CDPS):
+        return _atom_character_raw_exact(Z, N, entry, include_inter=include_inter)
+
+
+def _atom_character_raw_exact(Z, N, entry, include_inter=True):
     """Return the raw characters of the atom braid word in partition λ.
 
     Returns (chi_q_atom, log_norm, dim) where chi_q_atom × exp(log_norm)
@@ -2177,7 +2209,7 @@ def atom_character_raw(Z, N, entry, include_inter=True):
     sparse_sigmas = _is_sparse_sigma(first)
     dim = first.shape[0] if sparse_sigmas else len(first)
     M = np.eye(dim) if sparse_sigmas else _identity(dim)
-    log_norm = 0.0
+    log_norm = _mp.mpf(0)
     # Rust LP-accumulator kernel (qou-sv7h). Same recurrence, same rescale, at
     # MPFR precision over the braid-satisfying seminormal family. Only the FINAL
     # step's trace and log-norm are returned by this function, so take the last.
@@ -2238,7 +2270,7 @@ def atom_character_raw(Z, N, entry, include_inter=True):
                 M_step = _matmul_dim(M_step, M_cross, dim)
             M = _matmul_dim(M, M_step, dim)
         if isinstance(M, np.ndarray):
-            m_max = float(np.max(np.abs(M)))
+            m_max = max(abs(x) for x in M.flat)
         else:
             m_max = max(abs(M[i][j]) for i in range(dim) for j in range(dim))
         if m_max > 1e80:
@@ -2247,12 +2279,21 @@ def atom_character_raw(Z, N, entry, include_inter=True):
             else:
                 M = tuple(tuple(M[i][j]/m_max for j in range(dim))
                           for i in range(dim))
-            log_norm += math.log(m_max)
+            log_norm += _mp.log(m_max)
     chi = _trace_dim(M, dim)
     return (float(chi), float(log_norm), int(dim))
 
 
 def _contrib_single_partition(Z, N, entry):
+    """One partition's LP-dual contribution, at the canonical working
+    precision (see `atom_character_raw` for why the context, not just
+    the log type, is what matters)."""
+    from _precision import COMPUTE_DPS as _CDPS
+    with _mp.workdps(_CDPS):
+        return _contrib_single_partition_exact(Z, N, entry)
+
+
+def _contrib_single_partition_exact(Z, N, entry):
     """Compute one partition's final LP-dual contribution for atom (Z,N).
     Returns (final_trace_sign, cumul_delta_MeV).
     Separate from the multi-partition accumulator so we can process
@@ -2286,10 +2327,10 @@ def _contrib_single_partition(Z, N, entry):
     else:
         M = _identity(dim)
 
-    log_norm = 0.0
-    log_prev = math.log(dim)
+    log_norm = _mp.mpf(0)
+    log_prev = _mp.log(dim)
     scale = entry['C_lambda_resolvent_MeV']
-    cumul = 0.0
+    cumul = _mp.mpf(0)
     tr_run = dim  # initial trace of identity
 
     for kkk in range(A):
@@ -2343,7 +2384,7 @@ def _contrib_single_partition(Z, N, entry):
             M = _matmul_dim(M, M_step, dim)
 
         if isinstance(M, np.ndarray):
-            m_max = float(np.max(np.abs(M)))
+            m_max = max(abs(x) for x in M.flat)
         else:
             m_max = max(abs(M[i][j]) for i in range(dim) for j in range(dim))
         if m_max > 1e80:
@@ -2352,11 +2393,11 @@ def _contrib_single_partition(Z, N, entry):
             else:
                 M = tuple(tuple(M[i][j]/m_max for j in range(dim))
                           for i in range(dim))
-            log_norm += math.log(m_max)
+            log_norm += _mp.log(m_max)
 
         tr_run = _trace_dim(M, dim)
         if abs(tr_run) > 1e-300:
-            log_cur = log_norm + math.log(abs(tr_run))
+            log_cur = log_norm + _mp.log(abs(tr_run))
         else:
             log_cur = log_prev
         cumul += scale * (log_cur - log_prev)
