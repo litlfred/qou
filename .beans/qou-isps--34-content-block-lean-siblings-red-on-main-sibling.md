@@ -1,11 +1,11 @@
 ---
 # qou-isps
 title: 5 content-block .lean siblings still RED on current main (re-verified 2026-09-04 14:5xZ) — 4 outside qou-e7xv's sweep list + its survivor qou-0xrn
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-04T14:04:41Z
-updated_at: 2026-09-04T21:00:56Z
+updated_at: 2026-09-05T06:20:57Z
 ---
 
 Found by compiling all 907 content-block sibling .lean files against the freshly rebuilt library oleans (bean qou-n9j7, PR #6649, main 71744b7775): 866 green, 41 red. Of the 41: 4 fixed mechanically on the branch (orphan docstrings, a `fun λ =>` binder, two missing tactic imports), 1 was a harness path gap (UGB build dir), and nuclear-interactions/hyperelliptic-z5-classification is not fixed: tactic '' unmapped. The rest are REAL — proof/API drift against current Mathlib or the current library (renamed/removed declarations, structure fields that no longer exist, failed instance synthesis) — and are NOT fixed here: a real red is repaired by whoever owns the block's mathematics, never by weakening statements. Two cannot be verified in this sandbox at all (they `import Mathlib` wholesale and the cache has no Mathlib root olean). Verbatim first error per file (full excerpts were in /tmp/qou-siblings-errors.txt of the session; repro: cd content/quantum-observable-universe/lean; LEAN_PATH=<restored dirs incl. UGB> lean ../<file>):
