@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-05T12:40:00Z
+updated_at: 2026-09-05T14:30:00Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -397,3 +397,34 @@ Mechanism: with the kernel live the Python sigma family is never consumed.
 **Still open:** ⁶Li is the most extreme point and the one row not measured by
 this probe (carried from a standalone run). It wants an independent re-run
 before anything is built on it.
+
+## ⁶Li independently confirmed; O3′ appears to SELECT (2026-09-05, later)
+
+**⁶Li re-run is bit-identical** — `−3.065019520558719`, MOVED: False, 4024.9 s
+against the recorded 4039.8 s run. The extreme outlier is real, and every row of
+the A-series is now measured or independently confirmed. It doubles as a much
+harder post-merge check than ²H (A = 6 exercises far more of the partition
+table), so **#6794 does not move `binding_energy` on the kernel path**,
+confirmed at both ends of the mass range.
+
+**🛑 O3′ appears to SELECT — correcting my own §8 recommendation.** I told the
+owner O3′ would fix the type error and leave selection open. Under the natural
+lift `T_λ = t_λ·I`, the block SDP reduces to a scalar LP in the traces whose
+optimum sits on `argmin_λ t_λ`. Measured over all six rows of
+`a-K-via-lp-dual-full.witness.json`, survivors only: the argmin is **unique in
+every row**, smallest gap 19.9 %, largest 110.8 %. Selected blocks (2,1), (2,1),
+(3,3), (5,4), (5,4), (6,6) — the near-square two-row partition each time.
+
+Precisely: the **block** is selected, the **operator** is not (any PSD `Φ_λ`
+with the right trace is optimal). That is exactly the content the corpus's
+physical reading wants — "which Wedderburn blocks the bound state saturates" —
+and it does **not** contradict S4, which excludes selecting the *operator* `𝓑₃`
+on the NF-indexed polyhedron.
+
+Caveats kept explicit: the **reduction** was measured, not a solver run; the
+lift `T = t·I` is an assumption; and `t_λ > 0` on survivors is measured over six
+rows, not derived (recorded in `BlockSDPNondegeneracy.lean`'s docstring, since
+that is the theorem's hypothesis and characters can in principle go negative).
+
+**This raises the value of the O3′ compute**: authorised as a type fix, it may
+also be a selection principle.
