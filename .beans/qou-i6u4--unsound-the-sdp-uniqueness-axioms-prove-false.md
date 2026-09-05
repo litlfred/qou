@@ -1,11 +1,11 @@
 ---
 # qou-i6u4
 title: 'UNSOUND: the SDP uniqueness axioms prove False'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-09-05T19:41:40Z
-updated_at: 2026-09-05T19:42:17Z
+updated_at: 2026-09-05T20:26:52Z
 ---
 
 ## Finding
@@ -84,3 +84,45 @@ No false *consequence* has landed. The live consumers all instantiate
 
 So this is a false axiom with, so far, only true consequences drawn from it.
 That is luck, not design.
+
+
+## RESOLVED — all five refuted, deleted, and rerouted (PR #6882)
+
+`affine_slater_rigidity` fell too, to a second counterexample. Its rank guard
+`rank Φ⋆ + rank S = n` is real — the `n = 1` example fails it (`0 + 0 ≠ 1`) —
+but insufficient: `n = 2`, no constraints, `cost = diag(1,0)`, `Φ⋆ = diag(0,1)`,
+`D = diag(0,1)` **satisfies** it (`1 + 1 = 2`) with `S · D = 0` and `D ≠ 0`.
+
+Two derived theorems were false as well: `rank_equality_under_strict_complementarity`
+and the `real_strict_complementarity_unique` pair.
+
+### Delivered
+
+- **`QOU/MathlibExt/SDPUniquenessCounterexamples.lean`** — proves the five
+  **negations** directly, not `False` from the axioms, so it survives their
+  deletion and blocks the statements from returning. `#print axioms` on all
+  five: `[propext, Classical.choice, Quot.sound]`.
+- All five axioms **deleted**, each leaving a section comment naming its
+  counterexample theorem and concrete instance.
+- The uninhabitable `class SlaterStrictComplementarityKernel` deleted — its
+  single field *was* the false proposition.
+- Every consumer rerouted onto the proven interior case (`dualSlack` PosDef).
+  `nucleusTrivialStrictCompPair` was re-pointed rather than renamed, so all
+  **eleven** per-nucleus files stayed untouched.
+- **30/30** files importing the SDP chain `lean`-direct exit 0.
+
+### Nothing true was lost
+
+Every live consumer has `cost = 1` and no constraints, so its dual slack is the
+identity — positive-definite — and discharges the interior hypothesis outright.
+The axioms were supplying a false *unconditional default* over the top of a
+correct *conditional* design: `SDPSlaterUniqueness` already had two proven,
+axiom-free instances.
+
+### The reusable lesson
+
+The two prior audits of this exact family (2026-08-26, 2026-09-03) asked *is the
+citation real* and *can Mathlib close it*. Neither asked whether the Lean
+statement **is** the cited theorem. An axiom with an impeccable citation to a
+true published theorem can still be a false Lean proposition — and here five
+were. Worth adding to the axiom-triage method as a third question.
