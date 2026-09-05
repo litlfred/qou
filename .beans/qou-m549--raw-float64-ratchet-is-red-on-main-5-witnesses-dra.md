@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-09-03T20:35:04Z
-updated_at: 2026-09-04T22:24:35Z
+updated_at: 2026-09-05T05:41:33Z
 ---
 
 ## Measured, and re-measured after main took 55 commits
@@ -275,3 +275,16 @@ Recommendation (my judgement, not a finding): **declare it.** The vocabulary is
 a list of names for one concept, not a precision tolerance, and it is already
 inconsistent between two audits in this repo. But it is the owner's call and
 the no-op is safe — renaming keeps working indefinitely.
+
+
+**Narrowing my own contamination list (same day).** The correction above says the
+bad "~14" figure also appeared "in a comment on #5910". **It did not** — checked
+the comment text: it carries the tolerance-drain measurement (489/499, 26 of 33
+hand-building producers) and never mentions `elapsed_s`. The real spread is
+this bean, two commit messages on `claude/ratchet-red-drain-2026-09-03`, and
+PR #6453's body. The first two are immutable; the bean and the PR body are
+corrected.
+
+Recorded because a contamination list is the half of a correction that gets
+dropped, and I had just written a rule-shaped note saying so while getting my
+own list wrong in the direction of over-claiming.
