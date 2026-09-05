@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T10:42:33Z
-updated_at: 2026-09-04T22:06:39Z
+updated_at: 2026-09-05T07:46:14Z
 ---
 
 Parent: `conj:im-q-physical-role`. Reached from `qou-pdix` route 5 (the elliptic
@@ -412,3 +412,62 @@ for decay widths Γ"* — which the retraction above makes **correct again**.
 | (i) chirality | closed at `q₀` | (b) |
 | (ii) phase dual to CAL-2 | closed at `q₀` | (b) |
 | (iii) non-Hermitian | **OPEN** — obstacle stands, now sharpened to *the rate* | (a) |
+
+
+---
+
+## 2026-09-05 — decay as computational time (owner proposal), and the Demazure range test
+
+Branch `claude/cal-cone-audit-and-frakd-tail-2026-09-05`, PR #6759.
+
+### The owner's proposal survives, with one forced correction
+
+Owner: *"decay rate in terms of computational time. no?"* The corpus already
+holds the clock —
+[`2026-07-11-planck-tick-disqualifier.md`](../docs/audits/2026-07-11-planck-tick-disqualifier.md)
+fixes the per-operation tick at the **electron Compton time** 1.288e-21 s and
+disqualified only the *Planck* value, not the notion.
+
+On a **fixed** electron tick, `N_ops = τ/t_C` gives the **Z boson 2.05e-4** —
+below one operation, which a decay-as-computation cannot be. Making the tick
+particle-relative forces
+
+`N_ops(K) = τ_K/t_C(K) = (ℏ/Γ_K)/(ℏ/m_K c²) = m_K/Γ_K`
+
+the resonance narrowness: `≥ 1` by construction, and **dimensionless** — the
+regime the 2026-08-11 ruling leaves open. Target: **25.535 orders**, Z 36.55 →
+neutron 1.25e27.
+
+### The Demazure/length route FAILS at order zero — scope (a)
+
+Set `N_ops = q₀^L` with `q₀` pinned, so `L` is **determined, not fitted**:
+
+| | L required | tower depth needed |
+|---|---|---|
+| Z boson | 34.49 | n ≥ 9 |
+| tau | 262.48 | n ≥ 24 |
+| muon | 387.23 | n ≥ 29 |
+| neutron | 598.00 | n ≥ 36 |
+
+The corpus assigns a nucleon **`B_3`** (`atomic-braid-recipe-n-canonical`), so
+`ℓ(w₀) = 3`. The neutron needs ~598. **Short by 199.33×**, and no `w` inside
+`S_3` helps — 3 is the ceiling. **A decay rate is not a reduction length of the
+particle's own braid.**
+
+The required depths are *tower* depths, consistent in **form** with the
+2026-09-03 full-tower ruling. Consistency in form is **not evidence** and
+nothing here derives them.
+
+### 🛑 A near-integer that is NOT a result
+
+The neutron gives `L = 598.002698` — 0.0027 from 598. **Not a hit.** The PDG
+bottle σ alone gives `ΔL = ±0.0055`, and the unresolved beam–bottle spread
+`±0.087`. The offset is inside the band; the input precision cannot support an
+integer there. The other four are nowhere near integers (387.23, 347.39,
+262.48, 34.49) — one coincidence in five samples. Recorded so nobody picks it
+up later.
+
+### Still open
+
+Whether any Demazure incompleteness measure at tower depth `n ~ 9–36`
+reproduces the ordering Z < τ < π < μ < n.
