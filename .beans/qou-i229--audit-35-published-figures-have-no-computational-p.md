@@ -349,3 +349,68 @@ alone would make them say something false.
 - [ ] Resolve `q-beta-spectral-bridge`'s A/B straddle FIRST — refreshing a table
       that does not close on itself buries the inconsistency.
 - [ ] The six pin-string blocks are the same job, one level out.
+
+## 🛑 RETRACTION + a much bigger finding: the bridge table and its witness compute DIFFERENT z
+
+Probe: `the_qbeta_bridge_table_and_its_witness_compute_different_z_probe.py`, 6/6.
+
+### First, I was wrong
+
+I recorded `q-beta-spectral-bridge` as "already internally inconsistent: `h` at
+pin A, `h²` at pin B, so `h² ≠ (h)²`". **Withdrawn.**
+
+    h published        0.2090603219955937
+    (h published)^2    0.043706218232901319
+    h^2 published      0.04370621823290131     differ by 9.0e-18
+
+The table closes on itself exactly, and every value reproduces from its own
+quoted `q₀` with the proposition's own `z`. I got there by matching `h²` against
+closed forms at three candidate pins and reading the bucket; at `h²` the pin-A
+and pin-B values differ near the tenth digit and the bucketing could not separate
+them. **Second instance today of the same lossy-metric error** — the first should
+have taught me to try the simple explanation (`h²` is `h` squared) before
+reaching for a cross-pin story.
+
+### The real defect is larger, and it runs the OTHER WAY
+
+The block's closing sentence claimed its values were "the displayed digits of the
+50-dps witness … regenerated from the canonical CAL-2 pinning". **Every clause is
+false.** The witness contains none of them and declares `q0Anchor: proton`.
+
+                       block                 witness
+    q0                 1.109978595557335     1.1099785827513808…  proton
+    z                  0.4993203340335613    0.6126880371464652…
+    ln(1 + z h)        0.09929139859972778   0.1205248238414840…
+    predicted bridge   1.897907634269324     1.5660730493910099…
+
+Each side reproduces its own numbers exactly. **Two different computations,
+diverging by 21.2 %** — not a vintage, not drift.
+
+**And the block is the side that matches its proposition.**
+`prop:q-beta-spectral-bridge` *defines* `z := 1/(√q + 1/√q)`, which the table
+uses; `q_beta_spectral_bridge_witness.py` computes `q³/(q²+1)`. For once the
+**compute** has drifted from the stated definition, not content lagging compute.
+
+**What hid it: a name collision.** The proposition calls its `z` "the
+Markov–Jones parameter"; the producer's field holding the *other* formula is
+named `z_markov_jones`. Anything grepping the name sees agreement.
+
+**And CI is green.** Both witness assertions PASS — a producer checking itself
+against itself cannot see that it has drifted from the block it names in
+`contentBlock`. That is the structural gap: nothing compares a witness to the
+block it declares.
+
+### Not decided
+
+Which `z` is correct. The proposition defines one and the producer computes the
+other; the `Q_β` MeV figures differ by ~0.05 MeV between them. Producer,
+proposition and table values all left untouched — only the false provenance
+sentence corrected.
+
+- [x] `q-beta-spectral-bridge` straddle — **there was none.** Retracted, and a
+      21 % publication/producer divergence found instead.
+- [ ] Author: which `z` does `prop:q-beta-spectral-bridge` intend?
+- [ ] **The general gap this exposes:** a witness declares `contentBlock`, and
+      nothing checks that the block's numbers are the witness's. That is
+      mechanically checkable and would have caught this, the transfer-matrix
+      readout, and the retired-`q₀` figures.
