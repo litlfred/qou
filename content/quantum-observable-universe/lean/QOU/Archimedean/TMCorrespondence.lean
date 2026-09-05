@@ -333,6 +333,67 @@ theorem matrixChain_eq_prod (seq : CrossingSeq) :
       (QOU.MathlibExt.pairwise_of_forall seq
         (fun a b => transferMatrix_comm a.1 a.2 b.1 b.2)))
 
+-- `simp` closes three of the four entries outright, so the
+-- `unnecessarySeqFocus` linter's suggested `(simp …; ring)` fails with
+-- "No goals to be solved" on those three. `<;> ring` is the correct form here.
+set_option linter.unnecessarySeqFocus false in
+/-- The transfer matrix is linear in its coefficient pair:
+    `n • T(c, d) = T(n·c, n·d)`. -/
+theorem smul_transferMatrix (n : ℕ) (c d : R_t) :
+    n • transferMatrix c d = transferMatrix (n * c) (n * d) := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [transferMatrix, Matrix.smul_apply, nsmul_eq_mul] <;> ring
+
+/-- **`crossingMatrix` IS the transfer matrix at the coefficients
+    `chainCrossings` emits** — step 1 of the four-step proof sketch on
+    `matrixChain_eq_buildChains`, now discharged.
+
+    The doubling convention lines up in all three vertex cases:
+    `pp` gives `2 • T(1,0) = T(2,0)`, `nn` gives `2 • T(1,−HA) = T(2,−2HA)`,
+    and `pn`'s `two_T_pn` is already `T(2,−HA)`. -/
+theorem crossingMatrix_eq (a b : NucleonType) :
+    crossingMatrix a b =
+      transferMatrix
+        (match vertexType a b with
+          | .pp => 2 * w_plus_t (vertexType a b)
+          | .nn => 2 * w_plus_t (vertexType a b)
+          | .pn => w_plus_t (vertexType a b))
+        (match vertexType a b with
+          | .pp => 2 * w_zero_t (vertexType a b)
+          | .nn => 2 * w_zero_t (vertexType a b)
+          | .pn => w_zero_t (vertexType a b)) := by
+  unfold crossingMatrix
+  rcases h : vertexType a b with _ | _ | _ <;>
+    simp only [T_pp, T_nn, two_T_pn, w_plus_t, w_zero_t] <;>
+    rw [smul_transferMatrix] <;> norm_num
+
+/-- **The left-hand side of `MatrixChainEqBuildChains`, with all matrix
+    algebra eliminated.**
+
+    Combining `matrixChain_eq_prod` (the reversal) with `crossingMatrix_eq`
+    (the coefficients), the chain-`j` matrix is literally the ordered product
+    of `crossingMatrix` over the nucleons after `j` — which is the object
+    `buildChains` assembles.
+
+    Consequence, and the point of this lemma: `MatrixChainEqBuildChains` is
+    now equivalent to the purely combinatorial
+
+      `(buildChains config).get! j = ((config.drop (j+1)).map`
+      `  (fun nk => crossingMatrix config[j]! nk)).prod`
+
+    carrying no Hecke, transfer-matrix or fold-direction content whatsoever.
+    See that class's docstring; the remainder is tracked as bean `qou-affg`. -/
+theorem matrixChain_chainCrossings (config : NuclearConfig) (j : ℕ) :
+    matrixChain (chainCrossings config j) =
+      ((config.drop (j + 1)).map (fun nk => crossingMatrix (config[j]!) nk)).prod := by
+  rw [matrixChain_eq_prod, chainCrossings, List.map_map]
+  refine congrArg List.prod (List.map_congr_left ?_)
+  intro nk _
+  simp only [Function.comp_apply]
+  rw [crossingMatrix_eq]
+  rcases vertexType (config[j]!) nk with _ | _ | _ <;> simp
+
 /-- **foldl/foldr bridge — typeclass (Pattern 4).**
 
     The universal claim
@@ -363,7 +424,11 @@ theorem matrixChain_eq_prod (seq : CrossingSeq) :
       does not: it relocates the *accumulator*, leaving list order alone,
       which is not the operation needed here.  Corrected there too.
 
-    **The residual gap is `buildChains`, and it is not about folds.**
+    **The residual gap is `buildChains` ALONE, and it is not about folds.**
+    `matrixChain_chainCrossings` above discharges the entire left-hand side:
+    the class is now equivalent to
+    `(buildChains config).get! j = ((config.drop (j+1)).map (crossingMatrix
+    config[j]!)).prod`, with no matrix algebra left in it at all.
     `buildChains` (`TransferMatrix.lean:223`) is an index-tracking `foldl`
     over the configuration carrying a `(List TMatrix × ℕ)` accumulator, which
     at each step `mapIdx`-extends every existing chain via `extendChain` and
