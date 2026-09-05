@@ -123,4 +123,54 @@ theorem length_mul_sortPerm_eq_add {c c' : Composition (n + 1)} (m : BlockMatch 
   rw [index_apply_of_mem hv, index_apply_of_mem hv]
   exact hblock
 
+/-! ## The mirror: `ℓ(d · w) = ℓ(d) + ℓ(w)`
+
+`Tw_mul_Tw` is handed — `T_v · T_w = T_{w·v}` — so the two factors of Murphy's
+`m_{st} = T_{d(s)}^* x_μ T_{d(t)}` need the length hypothesis on *both* sides.  The
+one above covers `T_d · T_v`; this covers `T_v · T_d`.
+
+The argument mirrors it and uses the same two block facts: an inversion of a Young
+element lies **inside one block** (across blocks it cannot invert, since blocks are
+ordered), and `sortPerm` is increasing inside a block, so it preserves that inversion.
+-/
+
+/-- **A Young element inverts only inside a block.**  Across two blocks the order is
+fixed by the block order, so no inversion can straddle them. -/
+theorem index_eq_of_mem_invSet {c : Composition n} {w : Perm (Fin n)}
+    (hw : w ∈ youngOfComp c) {p : Fin n × Fin n} (hp : p ∈ invSet w) :
+    c.index p.1 = c.index p.2 := by
+  rw [mem_invSet] at hp
+  obtain ⟨hlt, hinv⟩ := hp
+  by_contra hne
+  rcases lt_trichotomy (c.index p.1) (c.index p.2) with h | h | h
+  · -- `p.1`'s block is lower, so `w p.1 < w p.2`: not an inversion
+    refine absurd hinv (by
+      have : w p.1 < w p.2 := by
+        refine lt_of_index_lt c ?_
+        rw [index_apply_of_mem hw, index_apply_of_mem hw]
+        exact h
+      omega)
+  · exact hne h
+  · exact absurd (lt_of_index_lt c h) (by omega)
+
+/-- **The mirror length identity**: `ℓ(d · w) = ℓ(d) + ℓ(w)` for `w` in the Young
+subgroup of `c'`.
+
+Together with `length_mul_sortPerm_eq_add` this gives `Tw_mul_Tw` its hypothesis on
+both sides, which is what the two-sided `m_{st}` needs. -/
+theorem length_sortPerm_mul_eq_add {c c' : Composition (n + 1)} (m : BlockMatch c c')
+    {w : Perm (Fin (n + 1))} (hw : w ∈ youngOfComp c') :
+    (permCoxeterSystem n).length (sortPerm m * w)
+      = (permCoxeterSystem n).length (sortPerm m) + (permCoxeterSystem n).length w := by
+  rw [length_mul_eq_add_iff]
+  intro p hp
+  have hblock := index_eq_of_mem_invSet hw hp
+  rw [mem_invSet] at hp ⊢
+  obtain ⟨hlt, hinv⟩ := hp
+  refine ⟨hlt, ?_⟩
+  show sortPerm m (w p.2) < sortPerm m (w p.1)
+  refine sortPerm_strictMono_within m _ _ ?_ hinv
+  rw [index_apply_of_mem hw, index_apply_of_mem hw]
+  exact hblock.symm
+
 end QOU.BraidKnot.CompositionMinimal
