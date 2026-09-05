@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T11:48:55Z
-updated_at: 2026-09-05T12:12:58Z
+updated_at: 2026-09-05T22:13:44Z
 ---
 
 ## 2026-09-05 — measured, fixed, verified. PR #6827
@@ -92,3 +92,52 @@ is new is the quantification, and that the Python sweep carries no such comment
 QOU/Braiding/SkeinNormalisation.lean` -> EXIT 0, both dirty cone modules
 rebuilt, target clean; real tree's 2660 oleans IDENTICAL in inode, size and
 mtime before/after. Disk moved 1 MB across the run.
+
+
+## 2026-09-05 — 🛑 REVIEW CORRECTION: my defect-1 claim was one container generalised
+
+The sweep scripts' author reviewed #6827 and caught a real over-claim. On THEIR
+container the ROOT mathlib tree is FINE:
+
+  ROOT,  their container: Tactic.olean 68040 B, Data/Real/Basic 785328 B, 6990 oleans
+  PAPER, their container: Tactic.olean 68040 B, Data/Real/Basic 785328 B, 3477 oleans
+
+Byte-identical, and root is a SUPERSET. That is why their sweeps returned real
+findings rather than 22 environment-REDs, and why they never hit this.
+
+**So "the root tree is broken" is FALSE as a general claim** — true of this
+container only. The defensible statement, which holds on both, is **"the root
+tree is not GUARANTEED to be populated"**: AGENTS.md §"Mathlib cache 403
+fallback" fills the PAPER tree, so that is the one the documented restore
+guarantees. Globbing the root alone makes the gate correct BY LUCK OF
+ENVIRONMENT, which is not a gate.
+
+The fix is unchanged and still right; only its justification needed narrowing.
+Corrected in the audit doc and in BOTH script comments (the comments matter
+more — that is where the next agent reads it). This is the
+absence-of-evidence discipline failing in the other direction: I measured one
+environment and wrote a universal.
+
+**Two of my other findings were CONFIRMED by the same reviewer**, from the
+opposite side:
+
+- **Defect 3 (`SHADOW=<dir>` never mkdir'ing) was LATENT for them, not absent.**
+  They used that reuse form repeatedly and it worked — because their PYTHON
+  sweep runs `shadow.mkdir(parents=True, exist_ok=True)` and they happened to
+  run it first, leaving the directory for the shell one. They note they would
+  have reported it as evidence against me had I not measured it.
+- **Defect 2 bit them too.** The 2.3 GB copy drove their container to 2.2 GB
+  free; they handled it by deleting shadows between runs, and call hardlinking
+  strictly better. They also say the inode/size/mtime snapshot over all 2660
+  files is the check they should have written when first pointing a script at
+  the real olean tree.
+
+They also confirm the namespace-pinning comment at line 27 is load-bearing
+BECAUSE they got it wrong first: their initial shell version wrote into a
+SPARSE shadow, Lean masked the real tree, and the comment is what they left
+after debugging it. So the credit note was right and the three-way measurement
+is the evidence that comment never had.
+
+**Overlap settled:** main carries their LIB generalisation (#6830) plus 14
+content-block and 1 UGB fix; I have merged the LIB half and nothing further
+conflicts. They are explicitly NOT merging #6827 — it is mine to land.
