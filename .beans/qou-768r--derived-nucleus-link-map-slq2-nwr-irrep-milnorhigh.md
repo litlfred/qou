@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-04T07:33:12Z
+updated_at: 2026-09-05T07:26:09Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -497,3 +497,108 @@ Also: `arxiv-2106.01332v4` is held but **not registered** in `references.ts`.
 Per-work links (arXiv/DOI + held-copy path + the exact section:line for the two
 load-bearing citations) are in the §Links section of
 `docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md`.
+
+
+## 2026-09-05 — route 3 needs only ONE component separated; the residual is the chain
+
+The Δ = 2 residual was reopened by the cyclic-square perturbation result (#6679). Going
+back to it produced a strengthening of route 3 and an exact location for what is left.
+
+**Route 3's hypothesis was stronger than its argument.** `μ̄_abc` is the `h_a h_b`
+coefficient of the Magnus expansion of `λ_c`. If **one** component splits off from the
+other two, that coefficient vanishes — the remaining pair may be linked to each other
+arbitrarily. The merged `MilnorTriplesAreDefinedExactlyWhereTheyVanish.lean` asks for
+all three pairwise linking numbers to vanish (`Δ = 0`); only two of the three are used.
+
+New Lean `QOU/Mass/OneSeparatedComponentSufficesForMilnorVanishing.lean` — sorry-free,
+`lean`-direct exit 0, and `splitsOff_of_unlinked` depends on **no axioms at all**.
+`allSplitOff_of_delta_zero` recovers the merged result three times over, so the
+strengthening is visibly a strengthening. (Symmetry of `lk` is an explicit hypothesis:
+the merged theorem pairs hypotheses to conclusions in matching index order and never
+needs it; `SplitsOff k i j` fixes `k` first and does.)
+
+**Reclassify by SHAPE, not by Δ.** SEPARABLE = some component unlinked from both
+others; CHAIN = none is. Measured on the carrier, 7 isotopes, **both** branches
+(identical in each):
+
+    SEPARABLE  393   0 nonzero mubar   (of which Delta = 2: 182)
+    CHAIN       31   0 nonzero mubar   (all Delta = 2)
+
+The merged theorem reaches the **211** that are separable *and* `Δ = 0`. The **182**
+separable `Δ = 2` triples are reached for the first time: coverage goes `211 → 393` of
+424, i.e. 49.8 % → 92.7 % — **+42.9 percentage points, or +86.3 % relative**. Both are
+given because "43 % more" reads as the relative figure and is not it. All from deleting
+a hypothesis rather than adding an argument.
+
+**The residual is one shape, verified not inferred.** 31 per branch equals
+`Σ (A−1) = 1+2+2+3+5+7+11`, the count of `{i, i+1, i+2}` on a path of `μ = A+1`
+components — but a count match is corroboration, so the probe checks each triple's
+indices: **62/62** across both branches are consecutive. `splitsOff_or_consecutive`
+proves this is forced (separable or consecutive, no third case) and
+`consecutive_has_no_separable_component` proves the trichotomy sharp. So the residual
+cannot be chipped at further with linking-number bookkeeping.
+
+**What would close it:** `μ̄` of length `k` vanishes unless all `k` indices lie in one
+connected-sum summand. With the measured "each summand touches at most 2 components"
+that closes the chain case *and* subsumes the new file. **Not asserted, not
+formalised** — axiomatising it would be the axiomatisation-is-not-a-proof pattern.
+
+**Empirically the residual vanishes, and generically for monotone words**: 0 over the
+carrier's 31, 0 over 534 monotone-random chain triples (144 at `Δ = 2`). Non-monotone
+control gives nonzero in both shapes (26 separable, 1 chain), so the null is about
+monotonicity, not the scanner.
+
+**Side finding — #6679's null is not vacuous.** `Δ = 1` makes `μ̄ = 0` vacuously
+(`ℤ/1`). Monotone arm splits `{Δ0: 319, Δ1: 870, Δ2: 690}` — 46.3 % vacuous, but 1009
+non-vacuous triples all zero, 690 at exactly `Δ = 2`. The merged null stands.
+
+Probe `computations/probes/milnor_one_separated_component_and_the_chain_residual_probe.py`,
+5/5, idempotent, integer arithmetic throughout.
+
+
+## 2026-09-05 — the chain residual CLOSES, and it needed no connected-sum citation
+
+The entry above left 31 chain triples open and named as their blocker *"`μ̄` of length
+`k` vanishes unless all `k` indices lie in one connected-sum summand"* — a statement no
+held source in this corpus states. **It is not needed.**
+
+**The mechanism.** On a chain, `lk(x,y) = 0`, so with `u = lk(hub,x)`, `v = lk(hub,y)`
+the indeterminacy is `Δ = gcd(u,v,0) = gcd(u,v)`. On a **monotone** closure the two far
+meridians occupy contiguous, **non-interleaved** blocks of the hub's longitude — one run
+per generator is what monotone means — so the degree-2 Magnus coefficient is a product
+of block sums:
+
+    eps_{x,y}(λ_hub) = u·v        eps_{y,x}(λ_hub) = 0
+
+Measured **596/596** monotone (62 carrier, 534 random); **22/78** and **29/78** off
+monotone. Then `gcd(u,v) | u | u·v` **unconditionally** ⇒ `μ̄ = 0`. New sorry-free
+`QOU/Mass/ChainTripleMilnorVanishesByGcdDividesProduct.lean`; `chain_mubar_vanishes`
+depends only on `propext`. **Every triple of the derived carrier is now covered — 393 by
+one separated component, 31 by this.**
+
+**Order-dependence is the point, not a defect.** `u·v` one way, `0` the other. That is
+exactly what the mod-`Δ` indeterminacy absorbs: both are divisible by `Δ`, so the
+invariant is zero either way and nothing rests on a convention.
+
+**The off-monotone control is a REAL counterexample.** Of 78 non-monotone chain triples
+exactly one has `Δ ≥ 2`, and divisibility **fails** on it (77/78). So `eps_eq` is
+load-bearing, not decorative.
+
+### Two of my own errors, both recorded in the probe
+
+1. **I predicted `eps = u·v`, then wrongly recorded it refuted.** The symmetrised sum
+   that `milnor_mubar_vanishes_on_every_triple_probe.py` computes gave an honest integer
+   `0` on 62/62 and 534/534 — because it lands on `eps_{y,x}`, the ordering that *is*
+   zero. A symmetrising scan can turn a general mechanism into what looks like a
+   coincidence; only splitting the sum into its three terms separated them.
+2. **I quoted "all 71 non-monotone chain triples have `Δ = 1`"** — i.e. an entirely
+   vacuous control — from a scratch run building a *fresh* seeded RNG per arm. The probe
+   uses **one** RNG consumed sequentially (matching the #6679 genericity probe so the
+   arms stay comparable): 71 → 78, and the counterexample appears. **Same trap as
+   #6679's `251/2080`, three days later.** The probe's numbers are authoritative.
+
+The stale "what would close it" paragraph in
+`OneSeparatedComponentSufficesForMilnorVanishing.lean` is corrected in place.
+
+Probe `computations/probes/chain_triple_magnus_coefficient_is_the_product_probe.py`,
+5/5, idempotent, integer arithmetic throughout.

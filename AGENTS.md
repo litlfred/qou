@@ -2064,11 +2064,40 @@ When working on math-affecting code or content, **trace the change to a step in 
 > for this ladder — so as written the argument does not support its
 > conclusion, even though the conclusion is right.
 >
-> **The sound form is the SIZE MISMATCH.** For an exact series the residual
-> after truncating at `N` tracks the *first omitted* term, so the N=4
-> residual should sit near `|c_5·u^5| = 0.577` ppb. Convention C measured it
-> at **0.055 ppb, ~10× smaller** — an anomalously good landing, which is the
-> fit signature. Use that, not "monotone".
+> **🛑 AND THE REPLACEMENT ARGUMENT WAS ALSO WRONG — corrected 2026-09-05, and
+> it was mine.** This block replaced "monotone" with a SIZE MISMATCH: *"the N=4
+> residual should sit near `|c_5·u^5| = 0.577` ppb; convention C measured it at
+> 0.055 ppb, ~10× smaller — an anomalously good landing, which is the fit
+> signature."* **That figure is computed on the SUPERSEDED `c_5`.**
+>
+> The slot is settled in
+> [`qbeta_ladder_c5_slot_provenance_probe.py`](computations/qbeta/qbeta_ladder_c5_slot_provenance_probe.py)
+> (bean `qou-54g5`): `c_5 = −(b²+½) = −1.2527` is **current** — six carriers,
+> 2.4 % from the SDP extraction `−1.2229`; `c_5 = 3c_3²+b = +12.8676` is
+> **superseded**, wrong sign, ~10× off. And `qbeta_ck_truncation_order_analysis.py`
+> still carries the superseded family at **line 57**, which is the script the
+> 0.577 was read from.
+>
+> With the **live** `c_5`, `|c_5·u^5| = 0.0561` ppb against the measured
+> **0.055** ppb — **2 % apart, exactly what an exact series predicts.** The
+> anomalously-good landing does not exist, and the argument points the other way.
+>
+> **What supports the conclusion is the residual MAGNITUDE.** Recomputed at the
+> proton pin under the live family, `|residual|` runs **6.1698 → 6.2260 ppb**
+> across N=4 → N=5 — it increases, so the signature holds. Under the superseded
+> family it runs 6.1698 → 5.5551 and does not. So the non-monotonicity is real
+> **under the correct coefficient**, while both arguments previously offered for
+> it — "monotone" and the size mismatch — are unsound. Use the magnitude
+> crossing, and note it is the *magnitude*: the signed column goes
+> −6.1698 → −6.2260, which is *decreasing*, and reading it that way is how PR
+> #6424 reached the opposite conclusion.
+>
+> **Caveat, load-bearing:** the crossing is only **0.91 %**, computed with `c_3`
+> hardcoded at the recorded proton extraction and at the proton pin only. It is
+> **not** robust to a large `c_3` move; a full settlement re-extracts `c_3` at
+> both pins. Probe:
+> [`qbeta_ck_c5_slot_and_size_mismatch_probe.py`](computations/qbeta/qbeta_ck_c5_slot_and_size_mismatch_probe.py)
+> (4/4).
 >
 > **The figures `+0.055 → +0.63` ppb are CONVENTION-C.**
 > `qbeta_ck_truncation_order_analysis.py` computes in whatever frame the

@@ -381,21 +381,23 @@ theorem descartes_notRootOfUnity_sq (D : DescartesData) :
 theorem descartes_sq_add_one_ne_zero (D : DescartesData) : (D.q ^ 2 + 1 : ℝ) ≠ 0 := by
   positivity
 
-/-- `q² ≠ 1` — the exact genericity `wtrace` asks for. -/
+/-- `q² ≠ 1` — the `m = 2` instance of `descartes_notRootOfUnity`.
+
+    **Not** the hypothesis `wtrace` takes; see the docstring of `descartesWtrace`. -/
 theorem descartes_sq_ne_one (D : DescartesData) : (D.q ^ 2 : ℝ) ≠ 1 :=
   descartes_notRootOfUnity D 2 (by omega)
 
 /-- **The Markov trace of a Descartes universe** — the real one.
 
     `QOU.SchurWeyl.SeminormalRep.wtrace` at the Descartes parameter, available
-    because `descartes_sq_ne_one` discharges its genericity hypothesis. It is
-    a linear functional on the actual Hecke algebra, its λ-sum carries the
+    because `descartes_notRootOfUnity` discharges its genericity hypothesis. It
+    is a linear functional on the actual Hecke algebra, its λ-sum carries the
     Ocneanu weights, and it satisfies the Markov property at `z_D` — the three
     things `DescartesMarkovTrace` above lacks. -/
 -- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
 noncomputable def descartesWtrace (D : DescartesData) (n : ℕ) :
     QOU.SchurWeyl.Hecke ℝ D.q D.q⁻¹ n →ₗ[ℝ] ℝ :=
-  QOU.SchurWeyl.SeminormalRep.wtrace D.q D.q_ne_zero (descartes_sq_ne_one D) n
+  QOU.SchurWeyl.SeminormalRep.wtrace D.q D.q_ne_zero (descartes_notRootOfUnity D) n
 
 /-- **The Markov property holds for every Descartes universe**:
     `tr(ι y · σₙ) = z_D · tr(y)` with `z_D = q³/(q²+1)`.
@@ -410,46 +412,80 @@ theorem descartesWtrace_markov (D : DescartesData) (n : ℕ)
         (QOU.SchurWeyl.HeckeInclusion.heckeIncl ℝ D.q D.q⁻¹ n y
           * QOU.SchurWeyl.Hecke.σ ℝ D.q D.q⁻¹ (n + 1) (Fin.last n))
       = (D.q ^ 3 / (D.q ^ 2 + 1)) * descartesWtrace D n y :=
-  QOU.SchurWeyl.SeminormalRep.wtrace_markov D.q D.q_ne_zero (descartes_sq_ne_one D)
+  QOU.SchurWeyl.SeminormalRep.wtrace_markov D.q D.q_ne_zero (descartes_notRootOfUnity D)
     (descartes_sq_add_one_ne_zero D) (descartes_notRootOfUnity_sq D) n y
 
-/-! #### The refactor is blocked at the universe boundary — measured, not guessed
+/-! #### RETRACTION — there is no universe blocker; the file was checked against a stale library
 
-Retiring `DescartesMarkovTrace` needs its `trSummand` replaced by the real
-per-summand component,
-
-    ocneanuWeight q z_D ν · χ^ν(x)   for  ν : {ν : YoungDiagram // ν.cells.card = n+1}
-
-and the decomposition proved from `wtrace_apply`. Both were written and
-**neither compiles**, for one specific reason worth recording rather than
-re-discovering:
+An earlier revision of this file carried a note asserting that the per-summand
+decomposition below **cannot be written**, because naming `seminormalRep` from
+a content-block file at `K := ℝ` produced
 
     (kernel) incorrect number of universe levels parameters for
     'QOU.SchurWeyl.SeminormalRep.seminormalRep', #1 expected, #0 provided
 
-`seminormalRep` is universe-polymorphic in its field `K`
-(`{μ : YoungDiagram} → {K : Type u_1} → [Field K] → …`). Naming it from this
-file at `K := ℝ` elaborates, and then the **kernel** rejects the resulting
-definition. Tried and rejected: leaving both implicits inferred; pinning
-`(μ := ν.1)`; pinning `(μ := ν.1) (K := ℝ)` — the last makes it worse, since
-supplying `K` explicitly is what drives the universe count to zero. Tactic
-mode gets one step further, `rw [wtrace_apply]` closing the shape, and then
-`rfl` fails on two sums that print identically apart from their elided proof
-terms.
+and that this was AGENTS.md §7d's universe-carrying problem across a package
+boundary, beyond §7d's own remedy. **That is withdrawn. It does not reproduce**
+— `descartesWtraceSummand` and `descartesWtrace_eq_sum` are directly below,
+they name `seminormalRep` at `K := ℝ` with `μ` inferred, and they compile.
 
-This is the §7d universe-carrying problem at the library boundary rather than
-inside one file, so §7d's own remedy (name the universes and tie them at each
-use site) does not apply directly — the parameter belongs to a declaration in
-another package.
+What was actually wrong was the *verification*, not the mathematics.
+`descartesWtrace` and `descartesWtrace_markov` were checked `lean`-direct
+against a **restored olean cache built 2026-08-30**, in which `wtrace` still
+took `hq2 : q ^ 2 ≠ 1`. Commit `794c34897d7` (2026-09-03) retyped that
+hypothesis to `GenericParameter.NotRootOfUnity q` across seven library
+consumers; this file is a content-block sibling and was not among them. So
+both call sites passed `descartes_sq_ne_one`, an `exit 0` was recorded, and
+the two declarations were **red against the library source they call** from
+the moment they landed. Rebuilding the 27-module dirty cone from source and
+recompiling this file gives two `Application type mismatch` errors and nothing
+else; passing `descartes_notRootOfUnity` instead clears them.
 
-**So the cost of retiring `DescartesMarkovTrace` is not the refactor it
-looked like.** The element-type and indexing changes are mechanical; this is
-not, and it has to be solved before any of them are worth starting. What is
-already available and does compile is beside this note: `descartesWtrace`,
-`descartesWtrace_markov`, `descartesWtrace_one` — the trace, its Markov
-property at `z_D`, and its normalisation, all off the library. Bean
-`qou-ah2l`.
+Two things generalise from this and are worth more than the fix:
+
+* **A restored olean cache is a snapshot, and `exit 0` against it is a claim
+  about that snapshot.** When a library signature has moved under you, a
+  content-block file can be green and broken at once. Rebuilding the changed
+  cone into a shadow tree placed first on `LEAN_PATH` costs ~90 s here and is
+  the only thing that distinguishes the two.
+* **A failure observed once is not a diagnosis.** The universe error was real
+  when it was seen; the *explanation* attached to it — polymorphic `K`, a
+  package boundary, §7d not reaching it — was constructed from the error text
+  rather than tested, and it was published in a merged PR and a bean where the
+  next agent would have started from it. The cheap discriminator (write the
+  declaration again, alone, and see) was never run.
+
+Bean `qou-xcvx`.
 -/
+
+/-- **The per-summand component of the Descartes Markov trace.**
+
+    `W_ν · tr ρ_ν(x)` — the Ocneanu weight at `z_D = q³/(q²+1)` times the
+    character of the seminormal representation on the shape `ν`. This is the
+    real object `DescartesMarkovTrace.trSummand` gestures at: indexed by Young
+    diagrams of size `n+1` rather than by `Fin (n/2+1)`, evaluated on an
+    element of the Hecke algebra rather than on a natural number, and carrying
+    the weight rather than asserting a value. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+noncomputable def descartesWtraceSummand (D : DescartesData) (n : ℕ)
+    (ν : {ν : YoungDiagram // ν.cells.card = n + 1})
+    (x : QOU.SchurWeyl.Hecke ℝ D.q D.q⁻¹ n) : ℝ :=
+  QOU.SchurWeyl.ocneanuWeight D.q (D.q ^ 3 / (D.q ^ 2 + 1)) ν.1 *
+    ((QOU.SchurWeyl.SeminormalRep.seminormalRep D.q D.q_ne_zero
+      (descartes_notRootOfUnity D) n ν.2) x).trace
+
+/-- **The Descartes Markov trace is the sum of its per-shape summands.**
+
+    The decomposition `DescartesMarkovTrace` never states: the trace is not an
+    opaque functional with a detached list of numbers beside it, it *is* the
+    weighted sum over partitions of `n+1`. Together with `descartesWtrace_markov`
+    this is the whole content the structure was standing in for. -/
+-- Ref: [jones1987] Annals of Mathematics 126 (1987) §3
+theorem descartesWtrace_eq_sum (D : DescartesData) (n : ℕ)
+    (x : QOU.SchurWeyl.Hecke ℝ D.q D.q⁻¹ n) :
+    descartesWtrace D n x = ∑ ν, descartesWtraceSummand D n ν x :=
+  QOU.SchurWeyl.SeminormalRep.wtrace_apply D.q D.q_ne_zero
+    (descartes_notRootOfUnity D) n x
 
 /-- **`DescartesMarkovTrace.z` carries no information**: every non-zero real is
     the `z` of some instance.
@@ -834,17 +870,16 @@ theorem rhoMixedSigma2_hecke (q : ℝ) (hq : q ≠ 0) :
     simp [rhoMixedSigma2, Matrix.mul_apply, Fin.sum_univ_two, Matrix.one_apply,
       hbb] <;>
     field_simp
-  -- `field_simp` re-normalises `b * b` back to `b ^ 2` after `hbb` has fired,
-  -- so the square is substituted HERE, once the goal is polynomial.
-  -- `linear_combination … * hb` looks like the natural move and fails: it
-  -- finishes with `ring1`, which cannot clear the `(1 + q²)⁻¹` that `hb`'s
-  -- right-hand side carries.  Rewriting first and then clearing denominators
-  -- with the `1 + q² ≠ 0` in context does work.  The off-diagonal goals have
-  -- no `b ^ 2` and close by `ring`.
-  -- `first | ring | (rw [hb]; …)` does NOT work here; the two passes are
-  -- separated deliberately.
+  -- Every goal here is polynomial once `hbb` has fired, so one `ring` pass
+  -- closes them all and `hb` is not needed.  The two later proofs in this
+  -- section (`rhoMixedSigma2_hecke`, `rhoMixed_braid`) DO need the second
+  -- pass, and there the passes must stay separated: `field_simp` re-normalises
+  -- `b * b` back to `b ^ 2`, so the square is substituted after the goal is
+  -- polynomial, and `first | ring | (rw [hb]; …)` does not work.
+  -- (`linear_combination … * hb` is the natural-looking move and fails there:
+  -- it finishes with `ring1`, which cannot clear the `(1 + q²)⁻¹` on `hb`'s
+  -- right-hand side.)
   all_goals (try ring)
-  all_goals (rw [hb]; field_simp; ring)
 
 /-- **The braid relation** `ρ(σ₁)ρ(σ₂)ρ(σ₁) = ρ(σ₂)ρ(σ₁)ρ(σ₂)`.
 

@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:29Z
-updated_at: 2026-08-31T03:47:09Z
+updated_at: 2026-09-05T07:29:46Z
 ---
 
 ## Measured, and closed as a guard (PR pending, branch `claude/brng-coordination-plausibility-2026-08-31`)
@@ -50,3 +50,6 @@ forbidden direction.
 Probe: `computations/bounded_degree_coordination_genericity_probe.py`
 (mpmath 50 dps, no float64, 50-digit proton pin, empirical values as exact
 decimal strings). Shape follows `qbeta/sleak_offset_genericity_check.py`.
+
+
+## 2026-09-05 (qou-kqdn) — this guard's METHOD applied to a k-independent quantity, and it bites there too. The surface-to-volume ratio a_S/a_V = c(k−k')/k from a boundary-deficit bond count has both ε and k cancel (QOU/Mass/CoordinationSurfaceDeficit.lean, surfaceToVolume_ratio), so this guard does not apply verbatim. Applying its methodology anyway: 3 fcc facets × 2 shell treatments reach 0.571..1.250 = 67.9 % of the plausible window [0.5,1.5], against this guard's 73.7 % for k. So the apparent fcc(100) match to the measured 0.961 is generic and was NOT claimed. The guard generalises beyond the inversion it was written for.

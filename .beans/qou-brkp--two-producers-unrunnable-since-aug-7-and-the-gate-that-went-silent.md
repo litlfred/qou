@@ -10,7 +10,7 @@ tags:
     - witnesses
     - infra
 created_at: 2026-08-08T09:40:00Z
-updated_at: 2026-08-08T10:05:00Z
+updated_at: 2026-09-04T21:36:37Z
 ---
 
 
@@ -171,3 +171,95 @@ unchanged across both touching commits) — and the pre-split-path hypothesis
 remains the only candidate, still untested.
 
 **The 5₂ sum rule remains verified to 80 dps, unproved.**
+
+## 2026-09-04 — items 1 and 2: the premise is stale, the path hypothesis is moot, and the mechanism is NOT established
+
+Worked item 2 ("confirm or refute the pre-split-path hypothesis"). The hypothesis
+turns out to be unnecessary, and both items 1 and 2 rest on numbers that stopped
+being live three weeks ago.
+
+### The values this bean reasons about are superseded
+
+    2026-07-18  committed    tr_M(deuteron) = 0.38828642407478887671...
+    (this bean's "regenerated") 0.38835720735922143663...   <- became COMMITTED 2026-08-10
+    2026-08-23  LIVE         tr_M(deuteron) = 0.57517224391777187082653534398618088915249435289286
+
+The bean frames item 1 as choosing between two values differing at the 5th
+significant figure (1e-4). Since 2026-08-23 the live value differs from both by
+**48%**. Neither of the bean's candidates is a live option, so item 1 as written
+("decide which tr_M is right") no longer has its two candidates in front of it.
+
+Witness history is exactly two commits:
+    2c68d7f34a  2026-08-10 19:24:58Z  -> 0.38835720735922143663...
+    a0ee2ac5e9  2026-08-23             -> 0.57517224391777187082...
+                (fix(qou-fl9i): regenerate 563 witnesses)
+
+### Item 2: the pre-split-path hypothesis is MOOT, and still untestable here
+
+Untestable, as the bean says: `folio-assistant/` is a symlink to the platform
+repo and has no `computations/`, so the pre-split input location does not exist
+in this checkout.
+
+But it is also **unnecessary**: the value moved again on 2026-08-23, long after
+the split, so no pre-split path is needed to explain the current number. Item 2
+can be closed as moot rather than answered.
+
+### THREE candidate explanations tested and REFUTED
+
+**Convention D — refuted.** The chi-* witnesses carry a `convention` field, and it
+reads `colour-weighted-averaged-crossing` at 2026-08-08 (efcaf79ed2), at
+2026-08-10 (7e4d1aa6d0, the "convention D propagates downstream" commit) and at
+HEAD. It never changed. Ordering confirms it independently: 7e4d1aa6d0 landed
+18:22:42Z and the option_e regeneration 2c68d7f34a landed 19:24:58Z the SAME DAY,
+so the 0.38835 value was already computed from post-convention-D inputs.
+
+**Stale inputs — refuted.** The three chi-* witnesses this producer reads last
+changed 2026-08-10. They were unchanged across the 2026-08-23 regeneration.
+
+**Import-cone drift via `tr_m_atom_via_transfer.py` — refuted for THIS producer.**
+`option_e_multi_isotope_delta_lambda_probe_v3.py` imports only stdlib, mpmath,
+`_path_bridge` and `_precision`; it reads the chi-* witnesses as DATA FILES. That
+module is not in its import cone. Worth stating because AGENTS.md documents the
+identical number pair -- `tr_M_atom` moving `0.388 -> 0.575`, 48% -- as
+import-cone drift in **`binding_canonical.py`**, a different producer. Same two
+numbers, same quantity, different consumer: either one underlying quantity moved
+corpus-wide, or it is a coincidence. Not settled here, and worth someone's time.
+
+### What DID change, and why it does not explain the size
+
+Between the two witness commits the producer changed exactly once,
+`34b2a75d43` (fix(qou-fl9i): raise 822 sub-canonical mp.dps sites):
+
+    -    mp.dps = 50
+    +    set_compute_dps()
+    +import _path_bridge
+    +from _precision import set_compute_dps
+
+That is the whole diff. `set_compute_dps()` resolves to 70 dps in this tree, so
+the change is 50 -> 70.
+
+**A 50 -> 70 dps raise cannot move a value by 48%.** So `qou-fl9i` is the
+OCCASION of the regeneration -- it is the commit that re-ran the producer -- and
+I have NOT established the MECHANISM. Stating that as an open negative rather
+than dressing the occasion up as a cause.
+
+The remaining shapes worth testing, none of them done here:
+  - the added `import _path_bridge` changes `sys.path` and hence what some
+    resolution inside the run picks up;
+  - the on-disk chi-* files at regeneration time differed from the committed
+    ones (a producer had written siblings, per the AGENTS.md sibling-witness
+    hazard);
+  - the 0.388 value was itself wrong and 0.575 is the correction -- which is
+    what commit aeb31dfb41 the same day, "the tr_M-atom expectations were one
+    stale snapshot, not three drifts" (qou-r9dv), asserts about a related
+    quantity.
+
+The third is the one I would test first: it would make item 1 answer itself.
+
+### Bearing on item 1
+
+Item 1 asks which tr_M is right. It cannot be answered against the pair the bean
+names, because neither is live. Re-scoped, the question is whether 0.5751722439...
+is correct, and `qou-r9dv` may already have answered it for the same quantity.
+Still an owner call, but a smaller one than the bean implies -- and it should be
+asked about the LIVE number.

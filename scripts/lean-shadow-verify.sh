@@ -1,0 +1,172 @@
+#!/usr/bin/env bash
+# lean-shadow-verify.sh — verify a .lean file against the library SOURCE, not
+# against whatever the restored olean cache happens to hold.
+#
+# WHY THIS EXISTS
+#
+# `lean`-direct verification (AGENTS.md §"VERIFY a single file with
+# lean-direct") checks a file against the restored `lake-cache/qou-<slug>`
+# olean tree.  That tree is a SNAPSHOT.  When a library signature moves after
+# the snapshot was taken, a content-block file that calls the OLD signature
+# still compiles — `exit 0` — while being red against the source it names.
+#
+# Measured, 2026-09-05: the cache was built 2026-08-30; commit 794c34897d7
+# (2026-09-03) retyped `SeminormalRep.wtrace`'s genericity hypothesis from
+# `q ^ 2 ≠ 1` to `GenericParameter.NotRootOfUnity q` across seven library
+# consumers.  `descartes-knot-eigenbasis.lean` is a content-block sibling, was
+# not among them, kept passing `q ^ 2 ≠ 1`, recorded `exit 0`, and landed on
+# main broken.  This script reproduces the two errors in ~2 minutes.
+#
+# At the time of writing, 305 QOU modules had both a prebuilt olean and a
+# source change since the snapshot, so the blind spot is not specific to that
+# file.  Bean `qou-56qy`.
+#
+# WHAT IT DOES
+#
+#   1. copies the QOU olean tree into a shadow dir (Lean resolves a module
+#      from the first LEAN_PATH root holding that package directory, so the
+#      shadow must be complete, not a sparse overlay);
+#   2. computes the modules whose SOURCE changed since the tree was built,
+#      plus everything in the targets' import cone that transitively depends
+#      on one, in topological order;
+#   3. rebuilds exactly those from source into the shadow;
+#   4. runs `lean` on the targets against the shadow.
+#
+# Mathlib is untouched — only the QOU package is rebuilt, which is why this is
+# minutes rather than the 40-minute `lake build` storm.  It never invokes
+# `lake`, so it cannot evict the restored cache.
+#
+# USAGE
+#   scripts/lean-shadow-verify.sh <file.lean> [<file.lean> ...]
+#   SHADOW=/path/to/reuse scripts/lean-shadow-verify.sh <file.lean>
+#
+# The shadow is ~2.3 GB.  It is removed on exit unless SHADOW is set, in which
+# case it is kept and reused (the rebuild is skipped if it is already current).
+
+set -uo pipefail
+
+ROOT=$(git rev-parse --show-toplevel)
+PKG="$ROOT/content/quantum-observable-universe/lean"
+OLEANS="$PKG/.lake/build/lib/lean"
+export PATH="$HOME/.elan/bin:$PATH"
+
+[ $# -ge 1 ] || { echo "usage: $0 <file.lean> [...]" >&2; exit 2; }
+[ -d "$OLEANS/QOU" ] || {
+  echo "no restored olean tree at $OLEANS/QOU — restore lake-cache first" >&2
+  echo "(AGENTS.md §'Agents building Lean in a sandbox')" >&2
+  exit 2
+}
+
+KEEP=1
+if [ -z "${SHADOW:-}" ]; then
+  SHADOW=$(mktemp -d)
+  KEEP=0
+  trap 'rm -rf "$SHADOW"' EXIT INT TERM
+fi
+
+if [ ! -d "$SHADOW/QOU" ]; then
+  echo "copying olean tree into shadow ($SHADOW) ..."
+  cp -a "$OLEANS/QOU" "$SHADOW/QOU"
+fi
+
+LP="$SHADOW:$(ls -d "$ROOT"/.lake/packages/*/.lake/build/lib/lean | tr '\n' ':')$OLEANS"
+
+ORDER=$(OLEANS="$OLEANS" ROOT="$ROOT" python3 - "$@" <<'PY'
+import os, re, pathlib, subprocess, sys
+root = pathlib.Path(os.environ["ROOT"])
+pkg = root / "content/quantum-observable-universe/lean"
+oleans = pathlib.Path(os.environ["OLEANS"])
+mod2path = {}
+for p in pkg.glob("QOU/**/*.lean"):
+    mod2path[str(p.relative_to(pkg).with_suffix("")).replace("/", ".")] = p
+imports = {m: [i for i in re.findall(r"^import\s+(\S+)", p.read_text(), re.M) if i in mod2path]
+           for m, p in mod2path.items()}
+
+# Staleness is PER MODULE, not against one snapshot date.  The restored tree is
+# mixed-age (oleans carry the mtime of whichever build wrote them), so taking
+# the newest olean as "the" build time silently declares older modules current.
+# Compare each module's own olean mtime against the commit date of its source.
+# Source mtimes are useless here — a fresh clone stamps every file with the
+# checkout time — so the source side comes from git, in one pass.
+lastcommit, ts = {}, None
+log = subprocess.run(["git", "log", "--format=%ct", "--name-only", "--",
+                      str(pkg / "QOU")], cwd=root, capture_output=True, text=True).stdout
+for line in log.splitlines():
+    if not line:
+        continue
+    if line.isdigit():
+        ts = int(line)
+    elif line.endswith(".lean"):
+        lastcommit.setdefault(line, ts)   # log is newest-first, so first wins
+
+changed = set()
+for m, p in mod2path.items():
+    o = oleans / (m.replace(".", "/") + ".olean")
+    if not o.exists():
+        changed.add(m)                     # never built
+        continue
+    c = lastcommit.get(str(p.relative_to(root)))
+    if c is None or c > o.stat().st_mtime:
+        changed.add(m)
+
+# import cone of the targets
+cone, stack = set(), []
+for t in sys.argv[1:]:
+    txt = pathlib.Path(t).read_text()
+    stack += [i for i in re.findall(r"^import\s+(\S+)", txt, re.M) if i in mod2path]
+while stack:
+    m = stack.pop()
+    if m in cone: continue
+    cone.add(m); stack += imports[m]
+
+sys.setrecursionlimit(100000)
+dirty, clean = set(), set()
+def isdirty(m):
+    if m in dirty: return True
+    if m in clean: return False
+    if m in changed or any(isdirty(d) for d in imports[m]):
+        dirty.add(m); return True
+    clean.add(m); return False
+need = sorted(m for m in cone if isdirty(m))
+
+order, done = [], set()
+while len(done) < len(need):
+    prog = False
+    for n in need:
+        if n not in done and all(d in done or d not in need for d in imports[n]):
+            order.append(n); done.add(n); prog = True
+    if not prog:
+        print("CYCLE", file=sys.stderr); sys.exit(1)
+print(f"# cone={len(cone)} changed_since_snapshot={len(changed)} rebuild={len(need)}",
+      file=sys.stderr)
+print("\n".join(order))
+PY
+) || exit 1
+
+n=$(printf '%s' "$ORDER" | grep -c . || true)
+echo "rebuilding $n module(s) from source ..."
+i=0
+for m in $ORDER; do
+  i=$((i+1))
+  src="$PKG/${m//./\/}.lean"
+  out="$SHADOW/${m//./\/}.olean"
+  mkdir -p "$(dirname "$out")"
+  if ! (cd "$PKG" && LEAN_PATH="$LP" lean "${src#$PKG/}" -o "$out") > "$SHADOW/.rb.log" 2>&1; then
+    echo "REBUILD FAILED [$i/$n] $m"
+    grep -v '^note:' "$SHADOW/.rb.log" | head -30
+    exit 1
+  fi
+  printf '  [%d/%d] %s\n' "$i" "$n" "$m"
+done
+
+rc=0
+for f in "$@"; do
+  echo "--- $f"
+  LEAN_PATH="$LP" lean "$f" 2>&1 | grep -v '^note:'
+  s=${PIPESTATUS[0]}
+  echo "EXIT=$s"
+  [ "$s" -eq 0 ] || rc=1
+done
+
+[ "$KEEP" -eq 1 ] && echo "shadow kept at $SHADOW (reuse with SHADOW=$SHADOW)"
+exit $rc

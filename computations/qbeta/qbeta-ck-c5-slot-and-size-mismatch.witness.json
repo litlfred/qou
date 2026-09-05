@@ -1,0 +1,56 @@
+{
+  "probe": "qbeta_ck_c5_slot_and_size_mismatch_probe",
+  "bean": "qou-cds1",
+  "corrects": "PR #6564 (merged 56c47a0782) and PR #6424, in opposite directions",
+  "question": "does the N=4/N=5 signature survive, and which c_5 does AGENTS.md's size-mismatch figure use?",
+  "answer": "AGENTS.md's 0.577 ppb uses the SUPERSEDED c_5; under the live c_5 the first omitted term is 0.0561 ppb against a measured 0.055, so the size mismatch evaporates. The signature itself SURVIVES on magnitude under the live family and does not under the superseded one.",
+  "scope": "(a); c_3 hardcoded at the proton extraction, proton pin only",
+  "q0": "1.1099785827513808076",
+  "q0_pin": "proton (q_at)",
+  "dps": 50,
+  "u": "0.0085172345501561421893",
+  "c5_live": "-1.2527021132519654016",
+  "c5_superseded": "13.714120117772822457",
+  "omitted_term_ppb_live": "0.056148847412132610882",
+  "omitted_term_ppb_superseded": "0.6146968459129612575",
+  "residual_ppb": {
+    "live": {
+      "1": "73827.222593690312772",
+      "2": "1278.5825421130361078",
+      "3": "2.6662081863285703109e-6",
+      "4": "-6.1698258276700210078",
+      "5": "-6.2259746747357250097"
+    },
+    "superseded": {
+      "1": "73827.222593690312772",
+      "2": "1278.5825421130361078",
+      "3": "2.6662081863285703109e-6",
+      "4": "-6.1698258276700210078",
+      "5": "-5.5551289855496322264"
+    }
+  },
+  "crossing_margin_pct_live": "0.91005562610684112019",
+  "assertions": [
+    {
+      "name": "agents_md_omitted_term_used_the_superseded_c5",
+      "passed": true,
+      "detail": "AGENTS.md's 0.577 ppb tracks the SUPERSEDED c_5 (|c_5 u^5| = 0.614697), not the live one (0.0561488); the figure is off by 10.95x"
+    },
+    {
+      "name": "size_mismatch_evaporates_under_the_live_c5",
+      "passed": true,
+      "detail": "with the live c_5 the first omitted term is 0.0561488 ppb against a measured 0.055 ppb -- 2 % apart, exactly what an EXACT series predicts. The 'anomalously good landing, ~10x smaller' is an artifact of the superseded coefficient and points the other way."
+    },
+    {
+      "name": "nonmonotonicity_holds_under_LIVE_and_not_under_superseded",
+      "passed": true,
+      "detail": "|residual| goes 6.16983 -> 6.22597 ppb under the LIVE c_5 (increases, so the signature holds) and 6.16983 -> 5.55513 under the superseded one (decreases) -- the OPPOSITE of what my PR #6424 concluded, which read the SIGNED column"
+    },
+    {
+      "name": "crossing_margin_is_small_and_is_reported_as_such",
+      "passed": true,
+      "detail": "the N=4 -> N=5 magnitude crossing under the live family is only 0.9101 %, computed with a hardcoded c_3 at one pin; a full settlement re-extracts c_3 at both pins. This probe establishes the direction and the coefficient question, not a final margin."
+    }
+  ],
+  "allPassed": true
+}
