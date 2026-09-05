@@ -114,6 +114,17 @@ the SU(4) label to the SU(2) isospin the trace already carries. The measurement
 stands; the inference that it points somewhere does not. The symmetry energy is a
 named gap with NO available route.
 
+🛑 **SUPERSEDED 2026-09-05 — there IS a route, and it is sign-locked.** The
+symmetry term is the p-n interface count, and its sign is one inequality: a bond
+sum is additive in `L = -log b`, so it compares `b_pn` against the GEOMETRIC mean
+of `b_pp`, `b_nn`, while the construction delivers an ARITHMETIC one. AM >= GM,
+so the sign is backwards structurally. `sqrt(b_pp b_nn) = 1/[2]_q` exactly, the
+AM-GM gap is `h^2/(2[2]_q)` -- the Hecke parameter itself -- and the crossing
+weight `1/(q^2+1)` equals 1/2 only at `q = 1`. The corpus sits 11.7 % above it.
+`QOU/Hecke/SymmetrySignAmGm.lean`,
+`qbeta_symmetry_sign_is_am_gm_locked_probe.py`, bean `qou-i01a`. That is
+stronger than "no route": a repair must move ONE quantity, the convex weight.
+
 *** 4. WHY OPTION A FAILS, IN ITS FINAL FORM ***
 
 `Delta_tr / tr_free = 1 - exp(-S)` exactly, where `S` is Option B's bond sum. So

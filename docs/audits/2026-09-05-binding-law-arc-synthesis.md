@@ -157,7 +157,8 @@ went into the scale, and it was never the dominant term. The named gaps:
    +0.2200`; the data optimum is `κ ≈ −0.15`. Layout-free bond counting
    (p5–p95 **1.181**) beats every isospin-resolved variant (1.225–1.232). What
    the law earns is *"the algebra produces an extensive quantity"* — not the
-   specific bond energies. (`qou-q7ga`.)
+   specific bond energies. (`qou-q7ga`.) **The sign has since been reduced to a
+   single inequality** — see the supersession note at the end of this section.
 3. **Unbound systems are outside it by construction** — strictly positive bond
    energies cannot produce `B ≈ 0` (⁵Be, the hydrogen drip line).
 4. **The factor of 3 has no realisable mechanism.** It is the strand count, and
@@ -237,8 +238,39 @@ variant.
 isospin/SU(4) Casimir is **structurally forbidden** — the trace annihilates every
 partition with `ℓ(λ) > 2` (`QOU/Hecke/RowCap.lean`), and SU(4) labels need four
 rows; on the surviving two-row shapes `C₂^{GL(4)} − C₂^{GL(2)} = 2n`, a constant.
-(`qou-ubsl`, completed.) So the dominant missing term has no obvious algebraic
-source, and that is the honest headline of what remains.
+(`qou-ubsl`, completed.) 
+
+🛑 **But "no obvious algebraic source" — which is what this paragraph used to
+conclude — is superseded (same day).** There *is* a source, it is the p-n
+interface count, and it is **sign-locked**. A bond sum is additive in
+`L = −log b`, so its symmetry term compares `b_pn` against the **geometric** mean
+of `b_pp` and `b_nn`; the construction delivers an **arithmetic** one
+(`pn-bond-cannot-be-extremal.md`: `b_pn = w·b_pp + (1−w)·b_nn` with
+`w = ½ + δ_flavour/4`). AM ≥ GM, so the sign is backwards structurally rather
+than numerically. Three exact facts pin it:
+
+```
+GM      √(b_pp·b_nn) = 1/[2]_q                    0.497290545605
+AM      (b_pp+b_nn)/2 = [2]_q/2 − 1/[2]_q         0.508155…
+AM − GM = ([2]_q²−4)/(2[2]_q) = h²/(2[2]_q)       0.010867342144
+```
+
+with `h = q − 1/q` the Hecke parameter itself — **the AM–GM gap *is* the
+deformation.** The crossing weight is `w = 1/(q²+1)`, which equals `½` only at
+`q = 1` and is strictly below it for every `q > 1`: the deformation moves the
+threshold down and the construction does not follow. At `q₀` the threshold is
+`0.448018` against the corpus's `w = 0.500344` — **11.7 % above it**. And the
+endpoints `δ(w=0) = +2 log q₀`, `δ(w=1) = −2 log q₀` are exactly `qou-y2np`'s bar
+branch, so that "one bit" is two points of a continuum whose crossing is derived.
+
+So the headline is stronger than "nothing found": a repair must move **one**
+quantity — the convex weight `w` below `1/(q²+1)` — and nothing about the graph,
+the layout, the scale or a re-derivation of `q` can substitute for it.
+`QOU/Hecke/SymmetrySignAmGm.lean` (7 decls) and
+`qbeta_symmetry_sign_is_am_gm_locked_probe.py`; bean `qou-i01a`. The *power*
+(`(N−Z)²/A` rather than just a sign) still needs a well-mixed assignment, which
+is a mean-field model and is labelled as one — the corpus's canonical layout is
+segregated, with `E_pn = 1` and no symmetry term at all.
 
 ## 6b. "Why only the leading order?" — because the tail is 323× too small
 
@@ -292,6 +324,7 @@ the sweep at `k = 1, 2, 4`, and the Lean statement.
 | `QOU/Hecke/LayoutConflict.lean` | two disjoint intervals touch at one boundary ⇒ no contiguous layout carries a colour tube, 4 decls |
 | `QOU/Hecke/GeometricTailBound.lean` | `(1−x)⁻¹ − (1+x) = x²/(1−x)`, and `summing_cannot_close`: if the gap is `K > 1` tails wide, the *whole* sum still undershoots, 5 decls |
 | `QOU/Hecke/BoundedDegreeCoulomb.lean` | the degree-sum formula as a bond-count bound, the `d/(n−1)` pair share, and `exists_gt_bounded_degree_bond_sum`: no constant per-bond energy makes a degree-bounded bond sum quadratic, 4 decls |
+| `QOU/Hecke/SymmetrySignAmGm.lean` | the symmetry sign is AM-vs-GM; an equal-weight p–n bond is always wrong-signed; the crossing weight is `1/(q²+1)`, below `½` for every `q > 1`; the gap is `h²/(2[2]_q)`, 7 decls |
 
 All sorry-free on `[propext, Classical.choice, Quot.sound]`, `lean`-direct exit 0.
 Everything in `BindingExtensivity` and `LayoutConflict` is proved for arbitrary
