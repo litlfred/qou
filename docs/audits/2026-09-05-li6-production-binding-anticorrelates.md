@@ -135,14 +135,28 @@ about two endpoints and **weaker evidence than its passing suggests**. Do not
 quote it as a trend. The defensible aggregate claim is the spread mismatch
 (2.655× against 14.4×) plus the uniform wrong sign.
 
-### One caution before anything is built on this
+### ⁶Li independently re-run — CONFIRMED, bit-identical
 
-**⁶Li is the most extreme point and is the one row here not measured by this
-probe** — it is carried from the earlier standalone run (kernel asserted,
-4039.8 s, same call). It was the linchpin of the cliff claim; with the cliff
-gone it is one anomaly among several, but it deserves an independent re-run
-before it carries weight. ²H is also carried, but it is unremarkable and sits
-mid-series.
+⁶Li was the most extreme point and the one row here not measured by this probe
+(carried from the earlier standalone run). It was the linchpin of the cliff
+claim, so it was re-run independently:
+
+```
+6Li re-run     B_pred=-3.065019520558719  (4024.9s)
+6Li recorded   B_pred=-3.065019520558719
+MOVED: False
+```
+
+**Bit-identical.** The outlier is real, and every row of the table above is now
+either measured by the probe or independently confirmed.
+
+**This is also a much harder post-merge check than ²H.** A = 6 exercises far
+more of the partition table than A = 2, so if #6794's exact-`mpf` change reached
+the kernel path anywhere, it was likeliest to show here. It does not. Taken with
+the ²H result, **#6794 does not move `binding_energy` on the kernel path** —
+consistent with the mechanism (`_lp_kernel_steps` serves the accumulator and the
+Python sigma family is never consumed), and now confirmed at both ends of the
+mass range rather than inferred from the call graph.
 
 So the caution was procedurally right — they genuinely could not be verified, and
 the 17.29 % kernel/fallback split made the risk real — but the **substance is
