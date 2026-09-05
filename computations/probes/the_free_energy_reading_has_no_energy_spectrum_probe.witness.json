@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T12:10:34.283037+00:00",
-  "commitSha": "8dea80d111b503a6ad5b426f1777ad79690cccab",
+  "computedAt": "2026-09-05T12:54:16.949058+00:00",
+  "commitSha": "d3af948286f9e79d2104711f2341ed72589f0c8f",
   "assertions": [
     {
       "name": "the (1,1) block's factor lambda_- + d is NEGATIVE for every bond — the state sum is signed, not a partition function",
@@ -39,14 +39,26 @@
       "computed": "1",
       "expected": "1",
       "passed": true
+    },
+    {
+      "name": "d_pn + h/2 = h*delta/4 exactly — the pn offset IS the average of the other two, so h + 2 d_pn = h*delta/2 is forced",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "w~ is uniform on H_2 but NOT on H_3 or H_4 — so 'pn is w~'s null vector' and 'pn is the unweighted sum's null vector' are one H_2 statement, not two families agreeing",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "the_free_energy_reading_has_no_energy_spectrum_probe",
   "scriptFile": "the_free_energy_reading_has_no_energy_spectrum_probe.py",
-  "scriptHash": "f7da52b31ff6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "56da7a08f332",
+  "scriptCommitSha": "a792f064ebbe76e5e439f5674200e01cbd5b257f",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
