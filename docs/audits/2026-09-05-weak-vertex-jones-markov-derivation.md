@@ -154,18 +154,32 @@ Lean: `geomCofactor`, `geomCofactor_one`, `geomCofactor_mul`,
 
 ## 5. What this settles
 
-**The order of the `1.19·10⁴` substitution factor is derived.** A coupling
-carrying the trace's Jones content sits `≈ 10²` above `s²`, so its square sits
-`≈ 10⁴` above `s⁴`, with `96² = 9216` the leading constant. Against the
-measured `|W(q₀)|²/s(q₀)⁴ = 1.1875·10⁴`, machine-checked as a two-sided bracket:
+**The order of the `1.19·10⁴` substitution factor is derived, and the residual is
+reported.** A coupling carrying the trace's Jones content sits `≈ 10²` above `s²`,
+so its square sits `≈ 10⁴` above `s⁴`, with `96² = 9216` the leading constant.
+Against the measured `|W(q₀)|²/s(q₀)⁴ = 11875.4418936763`, the **overshoot is**
 
 ```
-96²  <  |W(q₀)|²/s(q₀)⁴  <  2 · 96²
+|W(q₀)|²/s(q₀)⁴ / 96²  =  1.2885679138…
 ```
 
-(`substitutionRateFactor_within_factor_two_of_leading_square`). Stating it both
-ways is deliberate: the upper bound is the honest limit, not a decoration. The
-prediction is good to a factor of two and no better, because the ratio runs.
+and that measured number is what the Lean brackets, to three decimals
+(`substitutionRateFactor_overshoot_of_leading_square`). The overshoot is nonzero
+because `couplingRatio` runs from `−96` to `−37.09` on the way to `q₀`; it is the
+size of what the leading term misses.
+
+> **The first form of this claim is WITHDRAWN, and the reason is a directive that
+> landed on `main` while this branch was open.** It read `96² < |W(q₀)|²/s(q₀)⁴ <
+> 2·96²` — "good to within a factor of two" — and the PR body defended the
+> two-sided form as "the honest limit, not a decoration". That defence was wrong
+> on its own terms: the `2` is round *only because the measurement fits under
+> it*. Nothing derives it. The 🟥 **NO FITTING, EXCEPT CAL-1/2/3** directive
+> (owner, 2026-09-05) names this exact move — *"a tolerance sized to its own
+> miss is a fit"*, and *"selection against the target"* covers a discrete choice
+> with no continuous parameter tuned. So the window is replaced by the ratio it
+> was hiding. Nothing about the derivation changed; the number that was rounded
+> away is now on the record, and `1.2885679138` is something the next agent can
+> attack.
 
 **It produces no rescaling constant, and cannot.** `couplingRatio` is a
 non-constant rational function (`couplingRatio_not_constant`, and

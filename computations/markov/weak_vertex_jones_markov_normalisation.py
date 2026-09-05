@@ -82,7 +82,12 @@ normalisation is not a free constant to be found, it is fixed by topology.
    substitution factor measured in qou-ix74: a coupling carrying the trace's
    Jones content sits ~10^2 above s^2, so its square sits ~10^4 above s^4, with
    96^2 = 9216 the leading constant against the measured |W(q0)|^2/s(q0)^4 =
-   1.1875e4.  It does NOT produce a rescaling constant, and it CANNOT: the ratio
+   11875.4418936763 -- an overshoot of exactly 1.2885679138, which is REPORTED
+   rather than absorbed into a tolerance.  (A two-sided "within a factor of two"
+   bracket was the first form of this claim and is WITHDRAWN: the factor is round
+   only because the measurement fits under it, i.e. a window chosen against the
+   target, which the no-fitting directive of 2026-09-05 names as a fit even when
+   no continuous parameter is tuned.)  It does NOT produce a rescaling constant, and it CANNOT: the ratio
    runs (-96 at q = 1, -37.09 at q0) because the framing q^-10 and the larger
    exponents suppress it away from q = 1.  That is consistent with qou-pfh7's
    exclusion and now explains it rather than merely measuring it.
@@ -240,11 +245,11 @@ def main() -> int:
          "note": "(J-1)/s^2 -> -96 at q=1 and -37.09 at q0: the framing q^-10 "
                  "suppresses it, so no CONSTANT relates the two couplings "
                  "(consistent with the qou-pfh7 exclusion, and explains it)"},
-        {"name": "order_of_the_ten_thousand_substitution_factor_is_derived",
-         "passed": abs(f(W ** 2 / S_SQ ** 2)) / mp.mpf(96) ** 2 < 2
-                   and abs(f(W ** 2 / S_SQ ** 2)) / mp.mpf(96) ** 2 > mp.mpf("0.5"),
-         "note": "96^2 = 9216 against the measured |W(q0)|^2/s(q0)^4 = 1.1875e4: "
-                 "same order, so qou-ix74's 1.19e4 is derived to ORDER, not value"},
+        {"name": "leading_square_overshoot_is_measured_not_bracketed",
+         "passed": mp.mpf("1.288") < f(W ** 2 / S_SQ ** 2) / mp.mpf(96) ** 2 < mp.mpf("1.289"),
+         "note": "the derived leading square 96^2 = 9216 against the measured "
+                 "|W(q0)|^2/s(q0)^4 = 11875.4418936763: the overshoot is "
+                 "1.2885679138, REPORTED rather than bracketed by a chosen window"},
     ]
 
     witness = {
@@ -309,8 +314,12 @@ def main() -> int:
         "order_of_substitution_factor": {
             "measured_W_sq_over_s_pow_four_at_q0": n(f(W ** 2 / S_SQ ** 2), 20),
             "derived_leading_square": "96**2 = 9216",
+            "overshoot_measured_over_derived": n(f(W ** 2 / S_SQ ** 2) / mp.mpf(96) ** 2, 20),
             "qou_ix74_rate_factor": "1.19e4",
-            "verdict": "order derived, value not",
+            "verdict": ("the derived leading square predicts the substitution factor's "
+                        "ORDER; the residual overshoot 1.2885679138 is REPORTED, not "
+                        "absorbed into a chosen tolerance (no-fitting directive "
+                        "2026-09-05: a window sized to contain its own miss is a fit)"),
         },
         "scope": ("POSITIVE derivation of the normalisation (the framing and rank "
                   "factors are read off the braid word; the offset and vanishing "
@@ -324,7 +333,9 @@ def main() -> int:
                  "QOU.Braiding.WeakVertexT35.hasDerivAt_qDiff_one",
                  "QOU.Braiding.WeakVertexT35.jonesT35_sub_one_mul_pow",
                  "QOU.Braiding.WeakVertexT35.jones_dev_eq_sSq_mul_geom",
-                 "QOU.Braiding.WeakVertexT35.couplingRatio_one"],
+                 "QOU.Braiding.WeakVertexT35.couplingRatio_one",
+                 "QOU.Braiding.WeakVertexT35.couplingRatio_near_q0",
+                 "QOU.Braiding.WeakVertexT35.substitutionRateFactor_overshoot_of_leading_square"],
         "reference_blocks": ["prop:hadron-half-life", "prf:hadron-half-life",
                              "rem:hadron-half-life-fermi"],
         "related_beans": ["qou-egvf (closed form)", "qou-4x7c (content)",
@@ -350,7 +361,8 @@ def main() -> int:
     print(f"  at q0: s^2={n(f(S_SQ), 12)}  J-1={n(f(J_minus_one), 12)}  "
           f"ratio={n(f(ratio), 12)}")
     print(f"  ratio = -G_8*G_12/q^19  ->  {sp.cancel(-geom_sum(8)*geom_sum(12)/q**19).subs(q,1)} at q=1")
-    print(f"  |W|^2/s^4 at q0 = {n(f(W**2/S_SQ**2), 12)}   vs 96^2 = 9216")
+    print(f"  |W|^2/s^4 at q0 = {n(f(W**2/S_SQ**2), 12)}   vs 96^2 = 9216"
+          f"   overshoot {n(f(W**2/S_SQ**2)/mp.mpf(96)**2, 12)}")
     for a in assertions:
         print(f"  [{'PASS' if a['passed'] else 'FAIL'}] {a['name']}")
     print(f"  allPassed = {witness['allPassed']} -> {out.relative_to(REPO)}")
