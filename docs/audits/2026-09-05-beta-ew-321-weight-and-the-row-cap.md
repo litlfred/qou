@@ -137,3 +137,32 @@ figure should be re-derived rather than quoted.
 
 This is the same detector-blindness class `AGENTS.md` catalogues, and this
 instance is the audit author's own.
+
+> **🛑 RE-DERIVED, and "at least 5" was itself far too generous — it is 11 of
+> 37 (2026-09-05, PR #6840).** The paragraph above reads as though one file had
+> slipped through. Measured with a detector keyed on **provenance** — what each
+> operand was assigned *from* — rather than on the local variable's spelling,
+> **seven** files build `dim_q(...)² / q_factorial(...)` and **none** of them was
+> visible to the regex:
+>
+> | spelling in the source | why the regex missed it |
+> |---|---|
+> | `dim_q_num(...) ** 2` | call — `(` stops `\w*` |
+> | `q_dimension(...) ** 2` | word order: no `dim_q` substring at all |
+> | `_q_dimension(...) ** 2` | word order + leading underscore |
+> | `d_q_lam ** 2` | suffix after `d_q` — the instance found above |
+> | `dq[l] ** 2` | subscript between the name and `**` |
+> | `d ** 2` | single-letter local, assigned from `dim_q_via_hooks` |
+> | `dim_q(part) ** 2` | **a call to `dim_q` itself** |
+>
+> The last one is the finding. `dim_?q\w*\s*\*\*` cannot cross a `(`, so the
+> pattern could only ever have matched a *variable* named `dim_q`, never a
+> *call* to the function it is named after — not an exotic alias but the
+> ordinary spelling. So the `_lam` suffix diagnosed above is correct about its
+> own instance and **wrong as a characterisation of the defect**: the detector
+> was not narrow, it was looking at the wrong syntactic category.
+>
+> **Three of the seven are on the α_EM axis** (`alpha_5_jucys_murphy_central`,
+> `alpha_em_b2_scalar_c_probe`, `alpha_em_b2_canonical_scale_ratio_probe`),
+> which the `4 of 36` figure hid entirely. Whether the Molien ruling moves a
+> physics-facing number there is **not** answered here.
