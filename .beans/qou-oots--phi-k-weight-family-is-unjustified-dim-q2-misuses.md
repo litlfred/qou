@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-09-05T08:12:25Z
+updated_at: 2026-09-05T09:20:26Z
 ---
 
 ## 2026-09-05 — requirement derivation + prune + discriminator (in-progress; the CHOICE is open, the PRUNE is not)
@@ -151,3 +151,57 @@ And **Féray–Méliot §6.1 states this pairing outright**, in the paper §2 al
 ### Not established
 
 Which family Φ_k should use. Route 1 is **narrowed and partly excluded, not completed**. `d_q²/D²` is the share of neither object here — it is the RT/Verlinde weight of the `S²×S¹` Hilbert space, a third carrier again.
+
+## 2026-09-05 (later) — SETTLED: `N = 2`. And my own "route 1 turns on which N" is RETRACTED.
+
+**Probe:** `computations/probes/which_n_the_nucleus_is_a_state_at_probe.py`, 9/9, exit 0, mpmath 50 dps, zero builtin-float coercions, no witness.
+**Audit:** `docs/audits/2026-09-05-which-n-the-nucleus-is-a-state-at.md`.
+
+### The answer: `N = 2` — and it was already recorded, four ways
+
+Not derived here; it follows from the **convention-D owner ruling of 2026-08-15**.
+
+1. `wedderburn_jones_markov.py:177` — `_y_su_n(n, mp.mpf(str(q_val)), 2)`. The third argument **is** `N`.
+2. `wedderburn_jones_markov.py:129-133` — *"D's weights are the **SU(2) quantum dimensions** … The defining difference is the row cap: `y_λ = 0` for `ℓ(λ) > 2`"*.
+3. `wedderburn_jones_markov.py:386-391` — the vanishing blocks *"span `ker(H_n ↠ TL_n)`, of dimension `n! − Catalan(n)` (1, 10, 78, 588, 4611, 38890 at n = 3..8)"*, citing sorry-free `QOU.QBeta.WenzlWeight.conventionD_weight_eq_zero_iff`.
+4. **`docs/audits/2026-09-05-phi-k-weight-family.md:105` — *"Production is `N = 2` (convention D)"*.** Stated outright, in the very audit whose §7 I was answering.
+
+### The chain, verified independently (check A)
+
+`Σ_{ℓ(λ)≤2} (f^λ)² = Catalan(n) = dim TL_n`, and `n! − C_n` reproduces **all six** of the corpus's kernel dimensions exactly (5/5/6/1, 14/14/24/10, 42/42/120/78, 132/132/720/588, 429/429/5040/4611, 1430/1430/40320/38890). So:
+
+    H_n(q) ↠ TL_n(q) ≅ End_{U_q sl_2}(V^{⊗n})
+
+and convention D zeroes `y_λ` **precisely on the kernel**. The canonical trace does not merely tolerate `N = 2` — it is **defined on the `N = 2` quotient**. Horn 1 of §7 is the corpus's actual position, structurally rather than in prose; horn 2 is not a rival, because `TL_n` **is** that endomorphism algebra.
+
+### 🛑 RETRACTION — two errors, both mine, both merged in #6768
+
+**(a) Depth is off by one.** The Φ_k audit defines *"Depth `k` means `k+1` rows"* (line 104). So depth 3 is **exactly 4 rows**, and "≥ 3 rows" — what my probe measured — is **depth ≥ 2**. The numbers were right; the stratum name was not.
+
+**(b) The conclusion drawn from it is false.** On the real depth-3 stratum (exactly 4 rows), `N = 3` gives **0.0** too:
+
+| n | #λ depth 3 | N=2 | N=3 | N=4 | Molien | Plancherel |
+|---|---|---|---|---|---|---|
+| 4 | 1 | **0.0** | **0.0** | 0.003505637 | 0.074351 | 0.04166667 |
+| 6 | 2 | **0.0** | **0.0** | 0.03376524 | 0.348728 | 0.2513889 |
+| 9 | 6 | **0.0** | **0.0** | 0.1496872 | 0.3916401 | 0.4614446 |
+
+Both caps sit below 4 rows. The first `N` that does not is **4**, which nothing in the corpus proposes. At `n = 3` (proton, A=1) the stratum is **empty** — no 4-row partition of 3 — so Φ₃ has no index set there at all, for any `N` and any family.
+
+**And the Φ_k audit had already said this**, lines 107-108: *"at `N = 3` the cap still lands on depth ≥ 3, so **`k = 3` is vacuous under `y_λ` at both the mass (`N = 2`) and colour (`N = 3`) readings**."* I quoted the paragraph immediately above that sentence and did not carry the sentence itself.
+
+### What route 1 DOES establish — a constraint that eliminates every current candidate
+
+Any family consistent with the canonical trace must **vanish on `ker(H_n ↠ TL_n)`**, i.e. on every λ with ≥ 3 rows. Measured, **both survivors fail it**: Molien carries 0.223 / 0.902 / 0.998 there at n = 3/6/9; unrestricted classical Plancherel is nonzero at every depth-3 row above; `d_q²/D²` fails unless `D²` is restricted to ≤ 2 rows.
+
+So the honest statement is **stronger** than "open": *no candidate on the table satisfies the corpus's own consistency requirement.* The one that does (check C) is the properly-scoped horn-2 share, `(f^λ)²/C_n` over `ℓ(λ) ≤ 2` — normalised exactly (1.0 at n = 4, 6, 8), zero off the cap by construction, a **fifth** measure. **Not endorsed** — it inherits classical Plancherel's q-independence objection; it is named as the only candidate clearing the constraint.
+
+### Not established
+
+- **Φ₁ / Φ₂ are NOT excluded.** Depth 0 and 1 are inside the cap and carry **all** the N=2 mass (check D: 1.0 at n = 3, 6, 9). The exclusion is specific to `k ≥ 2`.
+- Which family Φ_k should use. Narrowed by a constraint, not selected.
+- Anything about the colour sector — `N = 3` appears only as the tested alternative, and it fails the same way.
+
+### Corrections landed on the merged artifacts
+
+`schur_weyl_share_is_a_third_measure_probe.py` (label + header, still 6/6) and `docs/audits/2026-09-05-schur-weyl-share-is-a-third-measure.md` (correction banner, F3 row, §0 conclusion, §3 caption and closing, §8 open item). F1, F2 and F4 are unaffected — none depends on the depth labelling.
