@@ -23,13 +23,13 @@ $$
 
 ## Numerical match
 
-Evaluation at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) using 60 dps precision yields:
+Evaluation at $q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps) using 60 dps precision yields:
 
 | Quantity | Value |
 |----------|------:|
-| $q\cdot[9]_q\cdot[10]_q$ | $136.823219654\ldots$ |
+| $q\cdot[9]_q\cdot[10]_q$ | $136.823219729\ldots$ |
 | $2/(3\pi) = 2g/(4\pi(g-1))$ | $0.212206591\ldots$ |
-| Sum | $137.035426245\ldots$ |
+| Sum | $137.035426320\ldots$ |
 | CODATA-2022 $1/\alpha$ | $137.035999177(21)$ |
 | **Residual** (relative) | $\mathbf{-4.2 \times 10^{-6}}$ |
 
@@ -65,14 +65,32 @@ The additive form provides the cleanest structure. It avoids fitted coefficients
 
 See `alpha-em-correction-derivation-attempts.witness.json` for the full attempt log.
 
-> **⚠ $q\cdot[9]_q\cdot[10]_q = 136.823219654$ carries a retired $q_0$**
-> (measured 2026-09-05, `qou-i229`). That figure is reproduced to all twelve
-> published digits by $q_0 = 1.1099785955541805\ldots$, which survives only in
-> `computations/_deprecated/`. The live anchors give $136.823208853583$ (proton,
-> 7 significant figures of agreement) and $136.823219729273$ (muon, 9). The
-> quantum integers amplify the difference, which makes this the sharpest of the
-> four figures the sweep found and the one that identifies the retired constant.
+> **Refreshed to the live muon pin, 2026-09-05** (`qou-i229`, owner-approved).
+> Producer:
+> [`retired_q0_refresh_to_live_muon_pin_probe.py`](computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py)
+> (5/5).
 >
-> Not silently recomputed — the proton/muon choice is owner-gated. See
-> `published_figures_carry_a_retired_q0_probe.py` and
-> [the same defect in the Hecke log table](#tbl:hecke-log-decomposition-table-data).
+> | figure | was | now |
+> |---|---|---|
+> | $q_0$ (prose) | $1.109978595554181$ | $1.109978595642739$ |
+> | $q\cdot[9]_q\cdot[10]_q$ | $136.823219654$ | $136.823219729$ |
+> | Sum | $137.035426245$ | $137.035426320$ |
+>
+> The old pin was the **CODATA-2018 vintage of the muon anchor**; commit
+> `df13e845cee` labelled it correctly in 2026-08-21 but did not refresh it. The
+> shift is $8.0 \times 10^{-11}$ relative in $q_0$.
+>
+> **Deliberately unchanged**: $2/(3\pi) = 0.212206591$ is a pure constant, and
+> CODATA-2022 $1/\alpha = 137.035999177(21)$ is an experimental input. Neither
+> is $q_0$-derived and a refresh that moved them would be a different and wrong
+> change.
+>
+> **No stated conclusion moves.** The relative residual is
+> $-4.180 \times 10^{-6}$ before the refresh and $-4.180 \times 10^{-6}$ after
+> (the quoted $-4.2\times10^{-6}$ is unchanged at its stated precision), and the
+> second-order figure moves from $+5.67\times10^{-8}$ to $+5.73\times10^{-8}$
+> against a quoted $+5.7 \times 10^{-8}$ — also unchanged as stated.
+>
+> The published $136.823219654$ was a **truncation** of $136.823219654561$, not
+> an error; it is the rendering that defeats a half-ulp matcher, and it is why
+> `scripts/witness-block-agreement.py` flagged this row against its own producer.

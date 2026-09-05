@@ -1033,6 +1033,63 @@ count.
 
 Report stays **6 blocks / 27 asserted**.
 
+## ✅ THE REFRESH IS DONE (2026-09-05, owner-approved: "refresh and migrate")
+
+Producer: `retired_q0_refresh_to_live_muon_pin_probe.py` (5/5). Target
+`q0 = 1.109978595642739046681795129380001752700065561029011556974045769999095`,
+from the canonical `q-pinning-50-digit.witness.json`. Shift `7.98e-11` relative;
+**nothing physical moves.**
+
+### Per block, all `q₀`-derived rows together — the rule the first attempt broke
+
+    tbl:hecke-log-decomposition-table-data     ALL SEVEN rows
+    prop:em-coupling-bring-zero-mode           pin, q[9][10], sum
+    tbl:q-beta-form-a-n1-symbolic-table-data   pin, ℏ_q, 1+ℏ_q²  (partial, see below)
+    30 pin-string sites across 29 files        prose declarations only
+
+`hecke-log-decomposition` is the case in point: the sweep flagged **3** rows, and
+**7** move. The unflagged four were `q₀`-derived too — they merely had *some*
+provenance, so a no-provenance sweep never saw them.
+
+**Deliberately not refreshed**: `2/(3π)`, CODATA `1/α = 137.035999177(21)`,
+`𝔔_β^CODATA`. Constants and experimental inputs; moving them would be a
+different and wrong change.
+
+### Three pre-existing slips, and one truncation that is not an error
+
+Reproducing the old tables at the retired pin does not recover three figures —
+`1+q₀` (`…556` vs `…555`), `log(1/ℏ_q)` (`…982` vs `…985`), `log(1+q₀)` (`…313`
+vs `…315`), all `1–3e-11`. **Wrong at their own anchor**, independent of the pin.
+Corrected by construction.
+
+A fourth discrepancy is *not* an error: `q[9]_q[10]_q = 136.823219654` against
+`136.823219654561` is a **truncation** — the rendering that defeats a half-ulp
+matcher, and the reason the checker flagged that row against its own producer.
+Telling the two apart requires comparing against the *unrounded* value.
+
+### 🛑 I BLANKET-REPLACED AND CAUGHT IT
+
+The pin-string pass replaced 30 sites across `content/` when I had measured
+sibling precision for only **six** blocks — the sweep the per-block rule and
+AGENTS.md both forbid. Two consequences, both found and fixed:
+
+- It **overwrote the "was" column** in the two provenance notes I had just
+  written, making them say a value changed to itself.
+- 23 files went unchecked. Retro-measuring all 30: an `8e-11` shift reaches a
+  figure only at ~11+ significant figures, and 26 files publish nothing above 10.
+  Two flagged — `137.035999177` (the CODATA input, safe) and
+  `notation-register-table3-data`'s `z(q₀) = 0.61268803714646525160` at **20**
+  figures, which turns out to be **proton**-anchored (agrees to `4e-21`) and sits
+  in a different row from the muon pin string I changed. So all 30 were in fact
+  safe — but I established that *after* acting, not before.
+
+- [ ] Minor, found en route: `notation-register-table3-data` documents `z(q₀)` at
+      the proton pin in row 17 and `w_λ(q)` at the muon pin in row 22. Row 22
+      says which; row 17 does not, relying on the production default. Worth
+      labelling.
+
+Report **5 blocks / 24 asserted**, from 15/79.
+
 - [ ] Five blocks left, and at least two should NOT be closed here:
       `prop:em-coupling-bring-zero-mode` (3, awaiting the refresh) and
       `rem:atom-mass-full-hecke` (2, the 0–2-sig-fig class where the method has

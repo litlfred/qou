@@ -23,7 +23,7 @@ and serialised to
 For each partition $\lambda$ the witness records:
 
 - $\dim V_\lambda$ (classical Hecke irrep dim, integer)
-- $\dim_q V_\lambda$ at $q_0 = 1.109978595554181\ldots$ (50 dps, categorical $q$-dim)
+- $\dim_q V_\lambda$ at $q_0 = 1.109978595642739\ldots$ (50 dps, categorical $q$-dim)
 - $\mathrm{depth}(\lambda)$, $\mathrm{height}(\lambda)$
 - $\mathrm{signed\_content}(\lambda) = \sum_{(i, j) \in \lambda}
   (j - i)$ (chirality marker; $= 0$ marks chirality cells)

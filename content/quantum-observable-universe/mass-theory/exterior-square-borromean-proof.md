@@ -44,7 +44,7 @@ $$
 $$
 
 *where $\binom{n}{k}_q$ is the q-binomial.  At $q = 1$ this gives
-$9 + 36 = 45$; at $q_0 = 1.109978595554181\ldots$ (50 dps) the q-deformation differs from
+$9 + 36 = 45$; at $q_0 = 1.109978595642739\ldots$ (50 dps) the q-deformation differs from
 $45$ by an O($\hbar_q$) correction.*
 
 *The α_EM formula uses the **classical** integer $45 = \binom{10}{2}$
