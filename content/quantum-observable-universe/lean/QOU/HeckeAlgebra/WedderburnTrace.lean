@@ -125,4 +125,105 @@ theorem coeff_eq_of_markovTrace_eq_regular_trace
   · exact sub_eq_zero.mp hh
   · linarith
 
+/-! ## What a trace-factoring functional can carry
+
+`qou-qb7p`'s surviving objection to the `(2,1)` clause of
+`unified-iterative-correction-proof.md` is that the Wedderburn embedding has the
+wrong *shape*: it assembles blocks into one matrix, while the clause needs one
+block's scalar `C_{(2,1)}` split into three coefficients (volume, surface,
+Coulomb). The probe accompanying that bean records why no Lean theorem was
+offered — the tempting statement, "three independent coefficients cannot come
+from one scalar", is **false as stated**, since set-theoretically a single real
+encodes three, and manufacturing a hypothesis to rescue it would be the same
+overreach the probe documents.
+
+There is a hypothesis that does not have to be manufactured: **linearity**,
+which this corpus already commits to for the Markov trace (`markovTrace_add`,
+`markovTrace_smul`, `markovTrace_linear` in `Common.lean`). Under it the
+statement becomes true and provable, and that is what this section does.
+
+`markovTraceOnWedderburn` factors through the block **traces** — one real per
+partition, not the whole block. A functional of that form supported at a single
+`λ` is exactly `c λ · trace (x λ)`: one coefficient against one number. Three
+such functionals at one partition are therefore linearly dependent, with an
+explicit witness.
+
+**What this does and does not settle.** It does *not* show the `(2,1)` clause is
+false; the claim may well be true. It rules out one route to it — the route the
+clause itself names — whenever that route is linear, factors through the Markov
+trace, and is localised at `(2,1)`. Three independent coefficients need more
+than one dimension, and that is all the trace supplies.
+
+It also says where the room is, which is the useful half. For `λ = (2,1) ⊢ 3`,
+`f^λ = 2`, so the block is `M₂(ℝ)` — **four** real dimensions, of which the
+trace reads one. The information the clause wants is present in the block and
+destroyed by taking its trace. A derivation that reads the block rather than its
+trace is not blocked by anything here.
+-/
+
+/-- A functional that factors through the block traces. -/
+noncomputable def traceFunctional (c : Nat.Partition n → ℝ)
+    (x : WedderburnDecomposition n) : ℝ :=
+  ∑ lam : Nat.Partition n, c lam * (x lam).trace
+
+/-- Distinct coefficient families give distinct functionals. -/
+theorem traceFunctional_injective :
+    Function.Injective (traceFunctional (n := n)) := by
+  classical
+  intro c d h
+  funext lam
+  have hx := congrFun h (blockOne lam)
+  unfold traceFunctional at hx
+  have hterm : ∀ (e : Nat.Partition n → ℝ),
+      (∑ mu : Nat.Partition n, e mu * ((blockOne lam) mu).trace)
+        = e lam * (seminormalDim lam : ℝ) := by
+    intro e
+    rw [Finset.sum_eq_single lam
+      (fun mu _ hne => by rw [blockOne_of_ne hne]; simp) (by simp)]
+    rw [blockOne_self, Matrix.trace_one, Fintype.card_fin]
+  rw [hterm c, hterm d] at hx
+  have hpos : (0 : ℝ) < (seminormalDim lam : ℝ) := by
+    exact_mod_cast seminormalDim_pos' lam
+  exact mul_right_cancel₀ (ne_of_gt hpos) hx
+
+/-- **A functional supported at one partition is one real times one real.** All
+the freedom it has is the single coefficient `c lam`; the decomposition enters
+only through the single number `(x lam).trace`. -/
+theorem traceFunctional_supported_apply
+    {c : Nat.Partition n → ℝ} {lam : Nat.Partition n}
+    (hsupp : ∀ mu, mu ≠ lam → c mu = 0) (x : WedderburnDecomposition n) :
+    traceFunctional c x = c lam * (x lam).trace := by
+  classical
+  unfold traceFunctional
+  exact Finset.sum_eq_single lam
+    (fun mu _ hne => by rw [hsupp mu hne]; ring) (by simp)
+
+/-- **Any three are linearly dependent.** So volume, surface and Coulomb cannot
+be three independent trace-factoring functionals localised at a single
+partition: the span is one-dimensional, and three vectors in a line are
+dependent. The witness is explicit, not an existence argument. -/
+theorem three_supported_traceFunctionals_dependent
+    {c₁ c₂ c₃ : Nat.Partition n → ℝ} {lam : Nat.Partition n}
+    (h₁ : ∀ mu, mu ≠ lam → c₁ mu = 0) (h₂ : ∀ mu, mu ≠ lam → c₂ mu = 0)
+    (h₃ : ∀ mu, mu ≠ lam → c₃ mu = 0) :
+    ∃ a b e : ℝ, (a ≠ 0 ∨ b ≠ 0 ∨ e ≠ 0) ∧
+      ∀ x : WedderburnDecomposition n,
+        a * traceFunctional c₁ x + b * traceFunctional c₂ x
+          + e * traceFunctional c₃ x = 0 := by
+  classical
+  rcases eq_or_ne (c₁ lam) 0 with hz | hz
+  · refine ⟨1, 0, 0, Or.inl one_ne_zero, fun x => ?_⟩
+    rw [traceFunctional_supported_apply h₁ x, hz]; ring
+  · refine ⟨c₂ lam, -c₁ lam, 0, Or.inr (Or.inl (neg_ne_zero.mpr hz)), fun x => ?_⟩
+    rw [traceFunctional_supported_apply h₁ x, traceFunctional_supported_apply h₂ x,
+        traceFunctional_supported_apply h₃ x]
+    ring
+
+/-- The Markov trace is itself such a functional, with `c = y_·(q_0)`. So the
+no-go applies to it, not merely to an abstract family. -/
+theorem markovTraceOnWedderburn_eq_traceFunctional (x : WedderburnDecomposition n) :
+    markovTraceOnWedderburn x
+      = traceFunctional (fun lam => JonesMarkovCoefficient lam QSubstrate.q_0) x := by
+  rw [wenzlBridge]; rfl
+
 end QOU.HeckeAlgebra.WedderburnTrace

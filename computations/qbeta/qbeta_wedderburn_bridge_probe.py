@@ -71,12 +71,28 @@ block means the Wedderburn embedding, it is mis-shaped (and, for the `Fin (n!)`
 form, conditional); if it means something else, that something is not defined
 anywhere in the corpus.
 
-*** WHY NO LEAN THEOREM ACCOMPANIES THIS ***
+*** THE LEAN THEOREM THAT DOES ACCOMPANY IT (added 2026-09-05) ***
 
-The tempting one — "three independent coefficients cannot come from one scalar"
-— is FALSE as stated: set-theoretically a single real can encode three. Making
-it true needs a continuity or naturality hypothesis the corpus does not supply,
-and manufacturing one would be the same overreach this probe documents.
+This section used to say no Lean theorem was offered, because the tempting one —
+"three independent coefficients cannot come from one scalar" — is FALSE as
+stated: set-theoretically a single real encodes three. Making it true needs a
+hypothesis, and manufacturing one would be the overreach this probe documents.
+
+The hypothesis did not have to be manufactured. LINEARITY is already assumed for
+the Markov trace in this corpus (`markovTrace_add`, `markovTrace_smul`,
+`markovTrace_linear`). Under it, `QOU/HeckeAlgebra/WedderburnTrace.lean` proves:
+
+  * `markovTraceOnWedderburn` factors through the block TRACES,
+  * a functional of that form supported at a single lambda is exactly
+    `c_lambda * trace (x_lambda)` -- one coefficient against one number,
+  * so any THREE such are linearly dependent, with an explicit witness
+    (`three_supported_traceFunctionals_dependent`).
+
+This does not make the clause false. It rules out the route the clause names,
+whenever that route is linear, factors through the Markov trace, and is
+localised at (2,1). And it says where the room is: f^{(2,1)} = 2, so the block
+is M_2(R) -- FOUR real dimensions, of which the trace reads one. The wanted
+information is present in the block and destroyed by tracing it.
 
 *** WHAT WAS DONE ABOUT IT ***
 
@@ -264,6 +280,19 @@ def main() -> int:
               note="the opaque and the fourth-axiom reasons are retired; the "
                    "shape objection is not. A reader must not read 'the "
                    "embedding was built' as 'the clause was discharged'")
+    wt = ROOT / ("content/quantum-observable-universe/lean/QOU/HeckeAlgebra/"
+                 "WedderburnTrace.lean")
+    wtflat = " ".join(wt.read_text().split()) if wt.exists() else ""
+    ok &= chk("the_linear_no_go_is_a_lean_theorem",
+              "theorem three_supported_traceFunctionals_dependent" in wtflat, True,
+              note="the shape objection is no longer only prose. Under "
+                   "linearity -- already assumed for the Markov trace -- three "
+                   "trace-factoring functionals at one partition are dependent")
+    ok &= chk("and_the_block_is_wider_than_its_trace",
+              "destroyed by taking its trace" in wtflat, True,
+              note="f^{(2,1)}=2 so the block is M_2(R), four dimensions to the "
+                   "trace's one. Recording the ROOM as well as the no-go, so "
+                   "this is not read as the clause being refuted")
     print("  The (2,1) clause names the shape mismatch and the unmet RSK")
     print("  hypothesis, and still calls itself an open obligation.")
 
