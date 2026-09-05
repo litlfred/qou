@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-05T07:46:30Z
+updated_at: 2026-09-05T07:51:57Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -787,3 +787,52 @@ semisimple. The converse (Tits deformation) is a separate argument, not here.
 **Remaining fact 2, unchanged:** that `τ`'s weights are `1/s_λ` for the Wenzl
 `schurElement` in `WenzlSchurElement.lean`. That identification is where `q`
 enters and is where the Schur elements do their work.
+
+
+### 2026-09-05 — CORRECTION: the induction does NOT need the exchange condition
+
+I wrote two hours ago that the remaining step needs *"the exchange fact
+supplying a common descent"*, following the usual statement of Geck–Pfeiffer
+8.1.1 (induct on `ℓ(v) + ℓ(w)`, pick a descent common to both). **Measured:**
+Mathlib's `Mathlib/GroupTheory/Coxeter/` has the descent API in full —
+`IsLeftDescent`, `IsRightDescent`, `isLeftDescent_inv_iff`,
+`exists_leftDescent_of_ne_one`, `length_inv`, `length_eq_zero_iff`, the `+1`
+characterisations — and **no exchange condition at all**: zero occurrences of
+`xchange` in the directory. So that route was blocked on a Mathlib gap I would
+have had to fill first.
+
+**It is not needed.** Worked on paper: induct on `ℓ(v)` **alone**, take *any*
+left descent `i` of `v` (`exists_leftDescent_of_ne_one`), and split on whether
+`i` is a right descent of `w`. With `v' = s v`, `w' = w s`, in this corpus's
+handedness (`T_a T_b = T_{ba}`, so `T_v = T_{v'} T_s`):
+
+* **ascent** (`i` not a right descent of `w`): `T_s T_w = T_{ws}`, so
+  `τ(T_v T_w) = τ(T_{v'} T_{w'})`, at `ℓ(v') = ℓ(v) − 1`. The IH's delta needs
+  `w s = v'⁻¹`, i.e. `w = v⁻¹`, which forces `ℓ(ws) < ℓ(w)` — contradicting the
+  ascent. Both sides vanish.
+* **descent**: `T_w = T_s T_{w'}`, so
+  `T_v T_w = T_{v'} T_s² T_{w'} = (q−1)·T_{v'}T_w + q·T_{v'}T_{w'}`, both at
+  `ℓ(v')`. The first term's delta needs `w = v'⁻¹ = v⁻¹s`, which forces
+  `ℓ(v⁻¹s) < ℓ(v⁻¹)` from the left descent and `ℓ(v⁻¹) < ℓ(v⁻¹s)` from the
+  right — contradictory, so it drops. The second gives `q · δ_{w,v⁻¹}
+  q^{ℓ(v)−1}` = the claim.
+
+Both branches turn on one observation: a left descent of `v` and a right
+descent of `w` at the **same** `i` are contradictory once `w` is pinned to
+`v⁻¹` or `v⁻¹s`, because `ℓ(sv) = ℓ(v⁻¹s)` (`length_inv`). The `(q−1)` term
+never contributes, which is why no common descent is required.
+
+**Remaining corpus obligations, now the whole list:**
+
+1. `Tw v = Tw (s*v) * Tw s` when `i` is a left descent of `v` — `Tw_mul_Tw`
+   under the right length hypothesis.
+2. `Tw s * Tw w = Tw (w*s)` when `i` is not a right descent of `w` — same
+   lemma.
+3. `Tw s * Tw s = (q−1)·Tw s + q·1` — the `v = swap` case of `σ_mul_Tw`,
+   plus `Tw (s i) = σ i`.
+4. The bridge from this corpus's concrete condition `v i.castSucc < v i.succ`
+   to `CoxeterSystem.IsLeftDescent` / `IsRightDescent`. `LengthAdditive.lean`'s
+   `length_mul_eq_add_iff` is the likely hook.
+
+Docstring in `QOU/Hecke/TauSymmetrizing.lean` corrected to match; `lean`-direct
+still exit 0.

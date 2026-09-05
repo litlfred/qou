@@ -56,17 +56,43 @@ the two together give **`s_λ = 0` for some `λ` ⟹ `H_n(q)` is not split
 semisimple**.  The converse — the direction `SchurElementCriterion` is usually
 wanted for — is a separate argument (Tits deformation) and is not here.
 
-## The remaining induction, since it is now legible
+## The remaining induction, worked out — and it is smaller than it looked
 
 `QOU.Hecke.TwBasis.σ_mul_Tw` is the **full** structure-constant table, up and
-down cases together, so the induction is available in principle.  It does not
-close on `ℓ(v)` alone: `τ(σ_i · z) = q · [T_{s_i}-coefficient of z]`, which is a
-different coordinate.  Geck–Pfeiffer 8.1.1 instead inducts on `ℓ(v) + ℓ(w)`,
-using a common descent `s` to write `T_v T_w = (q-1) T_{v s} T_w + q T_{v s}
-T_{s w}` — both terms of smaller total length, so the recursion closes on `τ`
-alone.  What that needs and this corpus does not yet have: the descent
-decomposition in this file's handedness (`T_v T_w = T_{wv}`, not `T_{vw}`), and
-the exchange fact supplying a common descent.  Tracked in bean `qou-kwoa`.
+down cases together, so the induction is available.  It does not close on the
+naive route — `τ(σ_i · z) = q · [T_{s_i}-coefficient of z]` is a *different*
+coordinate — and Geck–Pfeiffer 8.1.1 is usually stated as an induction on
+`ℓ(v) + ℓ(w)` using a **common** descent, which needs an exchange-condition
+argument that Mathlib does not have (measured: no occurrence of `xchange`
+anywhere in `Mathlib/GroupTheory/Coxeter/`).
+
+**It does not need one.**  Induct on `ℓ(v)` alone, taking *any* left descent
+`i` of `v` (Mathlib's `CoxeterSystem.exists_leftDescent_of_ne_one`), and split
+on whether `i` is a right descent of `w`.  Write `v' = s v`, `w' = w s`.  In
+this file's handedness (`T_a T_b = T_{ba}`) that gives `T_v = T_{v'} T_s`, and
+then:
+
+* **`i` not a right descent of `w`**: `T_s T_w = T_{w s}`, so
+  `τ(T_v T_w) = τ(T_{v'} T_{w'})` with `ℓ(v')` smaller.  The induction
+  hypothesis' delta is `w s = v'⁻¹`, i.e. `w = v⁻¹` — which forces
+  `ℓ(w s) < ℓ(w)`, contradicting the ascent.  So both sides vanish.
+* **`i` a right descent of `w`**: `T_w = T_s T_{w'}`, so
+  `T_v T_w = T_{v'} T_s^2 T_{w'} = (q-1) T_{v'} T_w + q T_{v'} T_{w'}`,
+  both at `ℓ(v')`.  The first term's delta is `w = v'⁻¹ = v⁻¹ s`, which forces
+  `ℓ(v⁻¹ s) < ℓ(v⁻¹)` from the left descent and `ℓ(v⁻¹) < ℓ(v⁻¹ s)` from the
+  right — contradictory, so it drops.  The second gives
+  `q · δ_{w, v⁻¹} q^{ℓ(v) - 1}`, which is the claim.
+
+Both branches turn on the same observation, and it is the whole trick: the
+`IsLeftDescent`/`IsRightDescent` pair at the *same* `i` is contradictory once
+`w` is pinned to `v⁻¹` or `v⁻¹ s`, because `ℓ(s v) = ℓ(v⁻¹ s)` by
+`CoxeterSystem.length_inv`.
+
+What the corpus still owes: the two decompositions above as `Tw` lemmas (both
+are `Tw_mul_Tw` under the right length hypothesis), `T_s^2 = (q-1) T_s + q`
+(the `v = s` case of `σ_mul_Tw`), and the bridge from this corpus's concrete
+descent condition `v i.castSucc < v i.succ` to `CoxeterSystem.IsLeftDescent`.
+Tracked in bean `qou-kwoa`.
 -/
 
 namespace QOU.Hecke.TwBasis
