@@ -727,3 +727,69 @@ difference vanishes classically.
 2a` is surjective over general elements, so there is no general obstruction. A
 third element could satisfy the condition. What is now known is that neither
 element the corpus currently has does, for any physical `q`.
+
+### Closing enumeration, same day — the choice is a LINE, and it is surjective
+
+`qbeta_admissible_line_exhausts_the_choice_probe.py` (12/12). The bean's
+question is *"which functional evaluates Δ"*. The answer is that **the Q-value
+cannot determine it**, because the candidates form a one-parameter family whose
+value map is affine and onto.
+
+Decomposing the Markov trace in the character basis of `H₃(q)` — derived here,
+not assumed — gives
+
+```
+tr_M(z) = a(z)·χ_(3) + b(z)·χ_(2,1) + c(z)·χ_(1³)
+c(z) numerator = q²·(z − q)·((q²+1)z − q³)
+```
+
+so the admissibility condition `N(q,z) = 0` of the 2026-08-29 audit **falls out
+of the decomposition** rather than being posited, and `c(1) = q²(q−1)(q³−q²−1)/…
+≠ 0` re-derives the `z = 1` inadmissibility of PR #6722 from a second route.
+
+Normalising `φ(1) = 1` collapses the admissible trace space to the line
+`φ_β = (1−2β)·χ_(3) + β·χ_(2,1)` — because `χ_(3)(1) = 1` and `χ_(2,1)(1) = 2`.
+Both Markov points already lie on it: `z = q` at `β = 0`, `z_D` at
+`β = q²/(q²+1)² ≈ 0.24730`.
+
+On any element the value map is affine with slope exactly the scalar-mod-radical
+residual:
+
+```
+φ_β(Δ) = χ_(3)(Δ) + β·( χ_(2,1)(Δ) − 2·χ_(3)(Δ) )
+```
+
+and that slope has **no root at any `q > 1`** (previous section), so the map is
+**surjective**: solving `φ_β(Δ) = t` for a *symbolic* target `t` returns exactly
+one `β`, on both elements.
+
+| | `β` | `Δ_S` | `Δ_L` |
+|---|---|---|---|
+| `z = q` (augmentation) | `0` | **+12.470 %** | **+39.324 %** |
+| `z = z_D` | `0.24730` | **−43.157 %** | **−15.451 %** |
+| hits CODATA | — | `0.055437` | `0.177538` |
+
+All four published grid cells are **reproduced from the character route**, which
+is the calibration that makes the rest of the table trustworthy; and the
+CODATA-hitting `β` is neither Markov point, on either element.
+
+**So the four doors are now all enumerated:**
+
+| door | what it costs | outcome |
+|---|---|---|
+| Markov **and** admissible | nothing — no free parameter | two points only: +12.470 % / −43.157 % |
+| Markov, drop admissible | one parameter (`z`), fitted | `z = 1` exactly, and it is outside the TL quotient (#6722) |
+| admissible, drop Markov | one parameter (`β`), fitted | reachable at `β* ≈ 0.0554`, with no independent characterisation |
+| **neither choice matters** (functional-independence) | no parameter | impossible on both candidate elements at every `q > 1` |
+
+**The consequence for the decision.** "Maybe some *other* admissible functional
+works" is *true and empty* — one parameter fitted to one anchor has no
+predictive content, and it is the same fit the published form already is, moved
+from `z` to `β`. The only door that removes the parameter without an anchor is
+functional-independence, and it is closed for the elements the corpus has. The
+recommendation in
+`docs/audits/2026-09-05-qbeta-functional-decision-options.md` (Option A — keep,
+disclose, reclassify) is unchanged by this; what changes is that the option
+space is now known to be exhausted rather than merely unexplored.
+
+Nothing wired. No content block edited.
