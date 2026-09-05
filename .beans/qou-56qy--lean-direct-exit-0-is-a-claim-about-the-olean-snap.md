@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:21Z
-updated_at: 2026-09-05T08:17:17Z
+updated_at: 2026-09-05T08:40:24Z
 ---
 
 ## The claim
@@ -164,3 +164,69 @@ untouched by this result.
    `lean`-direct against the restored cache as verification with no caveat
    that the cache ages. That wording is what I followed for seven merged PRs.
    Changing it is an owner call, not mine.
+
+
+## LIBRARY SWEEP 2026-09-05 — 74 stale modules, ZERO red
+
+`scripts/lean-library-sweep.py` closes the gap the content sweep left. It
+computes the **dirty closure** over the whole library — a module that changed,
+has no olean at all, or transitively imports one that did — and rebuilds it from
+source in topological order, continuing past a failure so one break cannot mask
+the rest.
+
+    library modules        2643
+      source-changed         24
+      never built (new)       6
+      DIRTY CLOSURE          74     rebuilt from source
+      snapshot-current     2569
+    result: 74 ok, 0 RED, 0 skipped, 122 s
+
+**The closure is the right population, and it is what a source-change count
+misses.** Six of the 74 have no olean at all: a NEW file inherits its
+dependencies staleness without ever appearing in a drift count keyed on changed
+sources. That is exactly the shape of the `FiveTwoCuspShapeBarParity` case.
+
+## Correction to my own 305 figure
+
+This bean opens by saying **305** QOU modules have both a prebuilt olean and a
+source change since the snapshot. That number came from the coarse method this
+bean is itself about: one snapshot date (`--since` the newest olean in a
+mixed-age tree) instead of per-module comparison. Measured per module on the
+same tree: **24 source-changed, 6 never built, 74 in the dirty closure.**
+
+Do not quote 305. It is not a stale figure, it is a wrong one, produced by the
+method the script was fixed to stop using.
+
+## The dirty closure is CONTAINER-dependent — so is any "zero red"
+
+The sibling instance recorded above does not reproduce here:
+
+    BarParityZeta4Swap.olean   this container  2026-08-24
+    BarParityZeta4Swap.lean    last commit     2026-08-19   (olean NEWER)
+
+so it is not dirty on this tree, while on theirs the olean was 20 days older
+than the source. Both readings are correct about their own container. The
+consequence is that **a sweep is only as complete as the staleness of the tree
+it runs against**, and "zero red" is a claim about one snapshot at one moment,
+not about the corpus. A container restored from an older cache has a larger
+closure and needs its own run.
+
+## A false alarm worth recording, because the shape recurs
+
+The SessionStart background `lake build` reported **21 errors** and
+`status: failed`. Twenty of them were in
+`QOU/MassTheory/AtomWordShadow.lean` — a real-looking find that is **not a live
+defect**: the build started 08:13:10, the fix `400db05b738` landed 08:14, and
+compiling that file at HEAD gives exit 0. The build had read the pre-fix
+content.
+
+Two things to carry:
+
+* **A failing build log is a claim about the tree at the moment it ran.** Same
+  class as the olean snapshot, one level up — and it is the *reason* the raw
+  `lake` log is worth checking against HEAD before reporting anything from it.
+* **Lakes error format is `error: <file>:<line>:<col>: <msg>`**, not
+  `<file>:<line>:<col>: error:`. A grep for `: error:` over a `lake` log returns
+  **0** on a log holding 20 real errors. (The sweep scripts are unaffected —
+  they invoke `lean` directly, which uses the second form, and they decide red
+  by exit code rather than by grep.)
