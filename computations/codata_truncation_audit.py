@@ -242,6 +242,53 @@ def classify(lit: str) -> tuple[str, str, str] | None:
     return best
 
 
+# Numeric constructors: a decimal STRING handed to one of these is a real
+# value and is in scope. `mp.mpf("2.224566")` is the canonical defect shape.
+_NUMERIC_CTORS = {"mpf", "mpmathify", "Decimal", "Fraction", "float",
+                  "mpc", "mpi"}
+
+
+def _fixture_string_lines(src: str) -> set[tuple[int, str]]:
+    """(line, literal) pairs where the number sits in a NON-constructor string.
+
+    A detector's own test fixtures are string data, not computed values:
+
+        ("def protonCodata : R := 938.27208816  -- ...", "938.27208816", MP)
+
+    Those 25 lines in `codata_corpus_literal_scan.py` are the expected inputs
+    of a different audit. Rewriting them to import from the registry would
+    break that audit while reporting progress on this one -- the drain
+    damaging the corpus it is cleaning.
+
+    The discrimination is the ENCLOSING CALL, not the quoting: a string inside
+    `mpf(...)` is a value and stays in scope; a bare string in a list or tuple
+    is data. Keying on "is it quoted" alone would exempt the entire defect
+    class this gate exists to catch.
+    """
+    out: set[tuple[int, str]] = set()
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:
+        return out
+    protected: set[int] = set()
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Call):
+            fn = node.func
+            nm = getattr(fn, "id", None) or getattr(fn, "attr", None)
+            if nm in _NUMERIC_CTORS:
+                for a in ast.walk(node):
+                    if isinstance(a, ast.Constant) and isinstance(a.value, str):
+                        protected.add(id(a))
+    for node in ast.walk(tree):
+        if (isinstance(node, ast.Constant) and isinstance(node.value, str)
+                and id(node) not in protected):
+            for m in NUMBER.finditer(node.value):
+                for ln in range(node.lineno, (node.end_lineno or
+                                              node.lineno) + 1):
+                    out.add((ln, m.group(0)))
+    return out
+
+
 def _prose_lines(src: str) -> set[int]:
     """Line numbers that are documentation or console output, not computation.
 
@@ -329,6 +376,7 @@ def scan() -> tuple[list[dict], int]:
             continue
         lines = src.splitlines()
         prose = _prose_lines(src)
+        fixtures = _fixture_string_lines(src)
         for i, line in enumerate(lines, 1):
             if i in prose:
                 continue
@@ -340,6 +388,8 @@ def scan() -> tuple[list[dict], int]:
             if any(mk in line for mk in PATTERN_MARKERS):
                 continue
             for m in NUMBER.finditer(line):
+                if (i, m.group(0)) in fixtures:
+                    continue
                 got = classify(m.group(0))
                 if not got:
                     continue

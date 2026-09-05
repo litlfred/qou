@@ -1,32 +1,31 @@
 {
   "engine": "python-stdlib",
-  "computedAt": "2026-09-05T12:15:33.892100+00:00",
+  "computedAt": "2026-09-05T17:38:52.046889+00:00",
   "computation": "codata-truncation-audit",
   "scriptFile": "codata_truncation_audit.py",
   "description": "Hand-typed CODATA/substrate constants that are a short prefix of the canonical value, and so compute a different number. Separates that class from exact duplication, which is qou-46ke's original and much larger scope. Canonical values are read from codata_constants / q_parameter at run time, never typed here.",
   "min_shared_digits": 6,
-  "truncated_total": 450,
-  "truncated_files": 328,
-  "divergent_total": 498,
-  "divergent_files": 288,
-  "rounded_total": 22,
-  "rounded_files": 20,
-  "blocking_total": 970,
+  "truncated_total": 222,
+  "truncated_files": 197,
+  "divergent_total": 316,
+  "divergent_files": 204,
+  "rounded_total": 11,
+  "rounded_files": 10,
+  "blocking_total": 549,
   "by_constant": {
-    "B_2H": 180,
-    "B_4He": 141,
-    "m_e": 46,
-    "q0": 154,
-    "B_3H": 80,
-    "m_p": 60,
-    "m_n": 19,
-    "q0_muon": 195,
-    "B_3He": 90,
-    "u_MeV": 2,
+    "B_2H": 137,
+    "B_4He": 107,
+    "m_e": 31,
+    "q0": 62,
+    "B_3H": 61,
+    "m_p": 20,
+    "m_n": 8,
+    "B_3He": 63,
+    "q0_muon": 57,
     "m_mu": 2,
     "B_6Li": 1
   },
-  "exact_duplicates": 305,
+  "exact_duplicates": 211,
   "findings": [
     {
       "file": "computations/a4_interface_kl_subpath_closure.py",
@@ -92,24 +91,6 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/alpha_em_germ_viability_probe.py",
-      "line": 64,
-      "constant": "q0",
-      "literal": "1.109978582751380808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "ROUNDED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/alpha_em_rt_phase3b_exact_vertex_moments.py",
-      "line": 53,
-      "constant": "q0",
-      "literal": "1.109978582751380808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "ROUNDED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/alpha_em_two_loop_structure_probe.py",
       "line": 64,
       "constant": "q0",
@@ -135,51 +116,6 @@
       "canonical": "8.4817962",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/atomic_mass_via_rho_k.py",
-      "line": 215,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/atomic_mass_via_rho_k.py",
-      "line": 216,
-      "constant": "m_n",
-      "literal": "939.56542052",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/audits/_source_normalise.py",
-      "line": 233,
-      "constant": "q0_muon",
-      "literal": "1.10997859555733471",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/_source_normalise.py",
-      "line": 249,
-      "constant": "q0_muon",
-      "literal": "1.10997859",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/braid_encoding_audit.py",
-      "line": 347,
-      "constant": "m_p",
-      "literal": "938.272",
-      "canonical": "938.27208943",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
     },
     {
       "file": "computations/audits/canonical_a_k_magnitude_audit.py",
@@ -236,69 +172,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/audits/codata_2022_downstream_staleness_scan.py",
-      "line": 66,
-      "constant": "m_e",
-      "literal": "0.51099895",
-      "canonical": "0.51099895069",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/audits/codata_2022_downstream_staleness_scan.py",
-      "line": 67,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/audits/codata_2022_downstream_staleness_scan.py",
-      "line": 68,
-      "constant": "m_n",
-      "literal": "939.56542052",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/audits/hardcoded_literal_audit.py",
-      "line": 293,
-      "constant": "m_e",
-      "literal": "0.51099895",
-      "canonical": "0.51099895069",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/audits/hardcoded_q0_literal_families_audit.py",
-      "line": 332,
-      "constant": "q0_muon",
-      "literal": "1.10997859555",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/he4_witness_convention_attribution_probe.py",
-      "line": 72,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347198997632204832250266562084087802",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "ROUNDED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/inherited_q0_pin_audit.py",
-      "line": 89,
-      "constant": "q0_muon",
-      "literal": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/audits/muon_pin_migration_stage1_inventory.py",
       "line": 108,
       "constant": "q0_muon",
@@ -335,150 +208,6 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/audits/muon_pin_migration_stage1_inventory.py",
-      "line": 304,
-      "constant": "q0_muon",
-      "literal": "1.10997859564",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/muon_pin_three_values_probe.py",
-      "line": 219,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/muon_pin_witness_census.py",
-      "line": 58,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/muon_pin_witness_census.py",
-      "line": 59,
-      "constant": "q0_muon",
-      "literal": "1.10997859555418",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/muon_pin_witness_census.py",
-      "line": 60,
-      "constant": "q0_muon",
-      "literal": "1.10997859564273",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/no_q0_recorded_producer_split.py",
-      "line": 11,
-      "constant": "q0_muon",
-      "literal": "1.109978595",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/no_q0_recorded_producer_split.py",
-      "line": 11,
-      "constant": "q0",
-      "literal": "1.1099785827",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/audits/producer_baked_pin_audit.py",
-      "line": 210,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/producer_baked_pin_audit.py",
-      "line": 211,
-      "constant": "q0_muon",
-      "literal": "1.109978595554180575281594079610",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/producer_baked_pin_audit.py",
-      "line": 212,
-      "constant": "q0_muon",
-      "literal": "1.109978595642739046681795129380",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/producer_baked_pin_audit.py",
-      "line": 215,
-      "constant": "q0_muon",
-      "literal": "1.10997859555",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/producer_baked_pin_audit.py",
-      "line": 217,
-      "constant": "q0",
-      "literal": "1.10997858",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/audits/q0_anchor_payload_recovery.py",
-      "line": 83,
-      "constant": "q0_muon",
-      "literal": "1.10997859555418",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_consistency_audit.py",
-      "line": 182,
-      "constant": "q0",
-      "literal": "1.10997858275138080759",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/audits/q0_consistency_audit.py",
-      "line": 183,
-      "constant": "q0_muon",
-      "literal": "1.10997859555733471989",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_cross_layer_fallback_scan.py",
-      "line": 65,
-      "constant": "q0_muon",
-      "literal": "1.10997859",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/audits/q0_cross_layer_fallback_scan.py",
       "line": 68,
       "constant": "q0_muon",
@@ -498,24 +227,6 @@
     },
     {
       "file": "computations/audits/q0_hardcoded_pin_audit.py",
-      "line": 67,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_hardcoded_pin_audit.py",
-      "line": 68,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/audits/q0_hardcoded_pin_audit.py",
       "line": 92,
       "constant": "q0_muon",
       "literal": "1.10997859555733471989976322048322502665620840878015",
@@ -530,285 +241,6 @@
       "literal": "1.10997858275138080759166909561076887987449912187365",
       "canonical": "1.1099785827513808075916690956107688798744991218736",
       "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/audits/q0_hardcoded_pin_audit.py",
-      "line": 98,
-      "constant": "q0_muon",
-      "literal": "1.10997859",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_muon_population_partition.py",
-      "line": 47,
-      "constant": "q0_muon",
-      "literal": "1.109978595557334",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_muon_population_partition.py",
-      "line": 48,
-      "constant": "q0_muon",
-      "literal": "1.109978595554180",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_muon_population_partition.py",
-      "line": 49,
-      "constant": "q0_muon",
-      "literal": "1.109978595642739",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_muon_proton_drain.py",
-      "line": 51,
-      "constant": "q0_muon",
-      "literal": "1.109978595",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_muon_proton_drain.py",
-      "line": 51,
-      "constant": "q0",
-      "literal": "1.1099785827",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/audits/q0_muon_witness_staleness_triage.py",
-      "line": 68,
-      "constant": "q0_muon",
-      "literal": "1.109978595557",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_old_muon_b_witness_triage.py",
-      "line": 80,
-      "constant": "q0_muon",
-      "literal": "1.109978595557",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_old_muon_b_witness_triage.py",
-      "line": 81,
-      "constant": "q0_muon",
-      "literal": "1.109978595554",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_old_muon_b_witness_triage.py",
-      "line": 82,
-      "constant": "q0_muon",
-      "literal": "1.109978595642",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_producer_pin_classifier.py",
-      "line": 151,
-      "constant": "q0_muon",
-      "literal": "1.10997859555",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/q0_producer_pin_classifier.py",
-      "line": 152,
-      "constant": "q0",
-      "literal": "1.109978582751",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/audits/q0_producer_pin_classifier.py",
-      "line": 157,
-      "constant": "q0_muon",
-      "literal": "1.10997859",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/retired_pin_live_code_audit.py",
-      "line": 52,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/retired_pin_live_code_audit.py",
-      "line": 124,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347198",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/retired_pin_live_code_audit.py",
-      "line": 126,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/retired_pin_live_code_audit.py",
-      "line": 127,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/retired_pin_live_code_audit.py",
-      "line": 129,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/retired_pin_live_code_audit.py",
-      "line": 130,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/retired_pin_live_code_audit.py",
-      "line": 131,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/retired_pin_live_code_audit.py",
-      "line": 133,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/undeclared_muon_pin_flip_risk_audit.py",
-      "line": 402,
-      "constant": "q0_muon",
-      "literal": "1.10997859555733",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/undeclared_muon_pin_flip_risk_audit.py",
-      "line": 402,
-      "constant": "q0",
-      "literal": "1.10997858275138",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/audits/wedderburn_beta3_vs_hA2_discrimination.py",
-      "line": 61,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/audits/wedderburn_beta3_vs_hA2_discrimination.py",
-      "line": 62,
-      "constant": "m_n",
-      "literal": "939.56542052",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/audits/wedderburn_beta3_vs_hA2_discrimination.py",
-      "line": 203,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/audits/wedderburn_beta3_vs_hA2_discrimination.py",
-      "line": 203,
-      "constant": "q0_muon",
-      "literal": "1.10997859555733471",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/witness_filename_blindspot_audit.py",
-      "line": 71,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/witness_filename_blindspot_audit.py",
-      "line": 72,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/witness_filename_blindspot_audit.py",
-      "line": 73,
-      "constant": "q0_muon",
-      "literal": "1.1099785956427390",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/audits/witness_filename_blindspot_audit.py",
-      "line": 75,
-      "constant": "q0",
-      "literal": "1.10997858275138",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
       "use_instead": "q_parameter.Q_MP"
     },
     {
@@ -929,51 +361,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/binding_bstar_bridge.py",
-      "line": 68,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/binding_channel_taxonomy_probe.py",
-      "line": 125,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_channel_taxonomy_probe.py",
-      "line": 125,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_channel_taxonomy_probe.py",
-      "line": 125,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_channel_taxonomy_probe.py",
-      "line": 126,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/binding_depth_stratified.py",
       "line": 284,
       "constant": "B_2H",
@@ -1037,123 +424,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/binding_factor_f_decomposition.py",
-      "line": 53,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_factor_f_decomposition.py",
-      "line": 54,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_factor_f_decomposition.py",
-      "line": 55,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_factor_f_decomposition.py",
-      "line": 56,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_factor_f_pair_count.py",
-      "line": 67,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_factor_f_pair_count.py",
-      "line": 68,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_factor_f_pair_count.py",
-      "line": 69,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_factor_f_pair_count.py",
-      "line": 70,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_factor_f_sequence.py",
-      "line": 55,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_factor_f_sequence.py",
-      "line": 56,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_factor_f_sequence.py",
-      "line": 57,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_factor_f_sequence.py",
-      "line": 58,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_fewbody_bondcount.py",
-      "line": 65,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/binding_fewbody_bondcount.py",
       "line": 72,
       "constant": "B_2H",
@@ -1167,24 +437,6 @@
       "line": 73,
       "constant": "B_4He",
       "literal": "28.295661",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_hbarq_rung_forward_test.py",
-      "line": 106,
-      "constant": "B_3He",
-      "literal": "7.718041",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_hbarq_rung_forward_test.py",
-      "line": 107,
-      "constant": "B_4He",
-      "literal": "28.295674",
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
@@ -1235,24 +487,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/binding_mass_rung_derivation_probe.py",
-      "line": 60,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_mass_rung_derivation_probe.py",
-      "line": 62,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/binding_n3_forcing_probe.py",
       "line": 56,
       "constant": "B_2H",
@@ -1268,15 +502,6 @@
       "literal": "28.295661",
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_perblock_bond_type_a3.py",
-      "line": 65,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
@@ -1316,33 +541,6 @@
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
-      "file": "computations/binding_volume_defect_route_refuted.py",
-      "line": 58,
-      "constant": "B_3He",
-      "literal": "7.718041",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_volume_defect_route_refuted.py",
-      "line": 59,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_wn_derive_or_refute.py",
-      "line": 52,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/binding_wn_derive_or_refute.py",
       "line": 100,
       "constant": "B_2H",
@@ -1359,24 +557,6 @@
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/binding_wn_frobenius_dual_probe.py",
-      "line": 70,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/binding_wn_multianchor_tower_refute.py",
-      "line": 69,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
       "file": "computations/binding_wn_multianchor_tower_refute.py",
@@ -1406,24 +586,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/borromean_chi_independent_crosscheck.py",
-      "line": 87,
-      "constant": "q0_muon",
-      "literal": "1.10997859556",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "ROUNDED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/bring_perturbative_cs_2loop_probe.py",
-      "line": 106,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347198997632204832250266562084087801536866079",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/brng_hbarq2_saturation_genericity_probe.py",
       "line": 30,
       "constant": "q0",
@@ -1451,42 +613,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/build_markov_trace_assembly_deuteron_chain.py",
-      "line": 241,
-      "constant": "q0_muon",
-      "literal": "1.10997",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/build_markov_trace_assembly_neutron_chain.py",
-      "line": 242,
-      "constant": "q0_muon",
-      "literal": "1.10997",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/c_3_categorical_derivation_attempt.py",
-      "line": 98,
-      "constant": "q0",
-      "literal": "1.1099785827513808075916690956107688798744991218735787360728142402",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/c_3_categorical_derivation_attempt.py",
-      "line": 101,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/canonical_tower.py",
       "line": 707,
       "constant": "B_3He",
@@ -1503,15 +629,6 @@
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/casimir_xi_2_dig_deeper.py",
-      "line": 119,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
       "file": "computations/catalan_binding.py",
@@ -1532,42 +649,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/channel_binding.py",
-      "line": 383,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/channel_binding.py",
-      "line": 383,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/channel_binding.py",
-      "line": 384,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/channel_binding.py",
-      "line": 384,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/charge_slambda_reeb_phase_crack.py",
       "line": 86,
       "constant": "B_3H",
@@ -1575,303 +656,6 @@
       "canonical": "8.4817962",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/chirality_avg_content.py",
-      "line": 411,
-      "constant": "q0_muon",
-      "literal": "1.10997859555733471",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/chirality_avg_content_chiral.py",
-      "line": 454,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 460,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 461,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 464,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 466,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 466,
-      "constant": "m_n",
-      "literal": "939.56542052",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 467,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 468,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 469,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 470,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 472,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 473,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 474,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 506,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 506,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 507,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 507,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 508,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 508,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 509,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 509,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 511,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 512,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 514,
-      "constant": "m_e",
-      "literal": "0.51099895",
-      "canonical": "0.51099895069",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 515,
-      "constant": "m_e",
-      "literal": "0.51099895",
-      "canonical": "0.51099895069",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 518,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 519,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 521,
-      "constant": "m_e",
-      "literal": "0.51099895",
-      "canonical": "0.51099895069",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 521,
-      "constant": "m_e",
-      "literal": "0.51099895",
-      "canonical": "0.51099895069",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 547,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/codata_corpus_literal_scan.py",
-      "line": 547,
-      "constant": "m_e",
-      "literal": "0.51099895",
-      "canonical": "0.51099895069",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/codata_registry_triangulation_probe.py",
-      "line": 86,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
     },
     {
       "file": "computations/compound_binding_via_differences.py",
@@ -1910,51 +694,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/compute_audit_scan.py",
-      "line": 65,
-      "constant": "m_e",
-      "literal": "0.51099895",
-      "canonical": "0.51099895069",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/compute_audit_scan.py",
-      "line": 66,
-      "constant": "m_p",
-      "literal": "938.272088",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/compute_audit_scan.py",
-      "line": 67,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/compute_audit_scan.py",
-      "line": 68,
-      "constant": "m_n",
-      "literal": "939.565421",
-      "canonical": "939.56542194",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/compute_audit_scan.py",
-      "line": 69,
-      "constant": "m_n",
-      "literal": "939.56542",
-      "canonical": "939.56542194",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
       "file": "computations/connected_magnitude_charge_symmetric.py",
       "line": 91,
       "constant": "B_2H",
@@ -1989,24 +728,6 @@
       "canonical": "2.2245662",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_2row_stratum_analysis.py",
-      "line": 92,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_2row_stratum_analysis.py",
-      "line": 93,
-      "constant": "m_n",
-      "literal": "939.56542052",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
     },
     {
       "file": "computations/delta_lambda_binding_full_evaluation.py",
@@ -2079,33 +800,6 @@
       "canonical": "2.2245662",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_categorical_verification.py",
-      "line": 252,
-      "constant": "B_2H",
-      "literal": "2.22456",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_empirical_tabulation.py",
-      "line": 116,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/delta_lambda_empirical_tabulation.py",
-      "line": 118,
-      "constant": "m_n",
-      "literal": "939.56542052",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
     },
     {
       "file": "computations/delta_lambda_full_variance_phase5e_1.py",
@@ -2315,15 +1009,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/deltalambda/c_knot_tau_transfer_artifact_probe.py",
-      "line": 82,
-      "constant": "m_e",
-      "literal": "0.51099895",
-      "canonical": "0.51099895069",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
       "file": "computations/deltalambda/cumulant_mev_cluster_expansion_probe.py",
       "line": 101,
       "constant": "B_2H",
@@ -2358,60 +1043,6 @@
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_binding_a_scaling_probe.py",
-      "line": 82,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_binding_a_scaling_probe.py",
-      "line": 82,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_binding_a_scaling_probe.py",
-      "line": 83,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_binding_cross_isotope_probe.py",
-      "line": 75,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_binding_cross_isotope_probe.py",
-      "line": 75,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_binding_cross_isotope_probe.py",
-      "line": 76,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
     },
     {
       "file": "computations/deltalambda/deltalambda_demazure_subcrystal_magnitude_probe.py",
@@ -2504,33 +1135,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/deltalambda/deltalambda_o1_manybody_probe.py",
-      "line": 77,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_o1_manybody_probe.py",
-      "line": 77,
-      "constant": "B_4He",
-      "literal": "28.29567",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/deltalambda_o1_manybody_probe.py",
-      "line": 78,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
       "file": "computations/deltalambda/deltalambda_perpair_bond_magnitude_derive_probe.py",
       "line": 82,
       "constant": "B_2H",
@@ -2567,168 +1171,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/deltalambda/deuteron_binding_frame_independent_probe.py",
-      "line": 83,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/deltalambda/eunit_counit_mu0_tracing_probe.py",
-      "line": 80,
-      "constant": "m_e",
-      "literal": "0.51099895",
-      "canonical": "0.51099895069",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/deltalambda/eunit_counit_mu0_tracing_probe.py",
-      "line": 82,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/he4_binding_k_averaged_interface_probe.py",
-      "line": 214,
-      "constant": "q0_muon",
-      "literal": "1.109978595554180575281594",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/deltalambda/he4_binding_k_fingerprint_stage1_probe.py",
-      "line": 239,
-      "constant": "q0_muon",
-      "literal": "1.109978595554180575281594",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/deltalambda/l1_ceiling_d_frame_remeasure.py",
-      "line": 90,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/l1_ceiling_d_frame_remeasure.py",
-      "line": 91,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/l1_ceiling_d_frame_remeasure.py",
-      "line": 92,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/l1_ceiling_d_frame_remeasure.py",
-      "line": 93,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/milnor_a4_deficit_h_form.py",
-      "line": 333,
-      "constant": "q0",
-      "literal": "1.1099785827513805166",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/deltalambda/milnor_a4_deficit_h_form.py",
-      "line": 335,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/deltalambda/milnor_a5_a6_recursion_test.py",
-      "line": 166,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/deltalambda/milnor_deficit_vs_binding_magnitude_probe.py",
-      "line": 110,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/deltalambda/milnor_recursion_capcup_weight_probe.py",
-      "line": 188,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/deltalambda/milnor_recursion_forall_A_proof_probe.py",
-      "line": 228,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/deltalambda/milnor_recursion_forall_A_reduction_probe.py",
-      "line": 174,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/deltalambda/milnor_recursion_tl_derivation_probe.py",
-      "line": 195,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/deltalambda/mu3_target_frame_robustness_probe.py",
-      "line": 235,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/deltalambda/mu3_target_robustness_audit_probe.py",
       "line": 64,
       "constant": "B_2H",
@@ -2745,15 +1187,6 @@
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/mu3_target_robustness_audit_probe.py",
-      "line": 226,
-      "constant": "q0_muon",
-      "literal": "1.10997859",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
       "file": "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py",
@@ -2774,15 +1207,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/deltalambda/mu4_vs_nuclear_4n_force_bound_probe.py",
-      "line": 155,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
       "file": "computations/deltalambda/perknot_pn_bond_mayer_grounding_probe.py",
       "line": 73,
       "constant": "B_3H",
@@ -2801,24 +1225,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/deltalambda/s5so3_geometric_wlambda_a4_helium_probe.py",
-      "line": 228,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deltalambda/s5so3_geometric_wlambda_a4_helium_probe.py",
-      "line": 243,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/deltalambda/sigma1cubed_seifert_surface_term_probe.py",
       "line": 71,
       "constant": "B_2H",
@@ -2828,42 +1234,6 @@
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
-      "file": "computations/derive_q_values.py",
-      "line": 250,
-      "constant": "u_MeV",
-      "literal": "931.494",
-      "canonical": "931.49410372",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.U_MEV"
-    },
-    {
-      "file": "computations/derived_chi_catalogue_consumer_demo.py",
-      "line": 104,
-      "constant": "q0_muon",
-      "literal": "1.10997859556",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "ROUNDED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/derived_chi_catalogue_consumer_demo.py",
-      "line": 163,
-      "constant": "q0_muon",
-      "literal": "1.10997859556",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "ROUNDED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/descartes_n3_channel_separation_probe.py",
-      "line": 105,
-      "constant": "q0_muon",
-      "literal": "1.1099785956427390466817951293800017527",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/deuteron_real_sdp.py",
       "line": 82,
       "constant": "B_2H",
@@ -2871,60 +1241,6 @@
       "canonical": "2.2245662",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/deuteron_real_sdp.py",
-      "line": 646,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/e_hartree_mechanism_b_probe.py",
-      "line": 89,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/e_hartree_round19_dressed_scalar_block.py",
-      "line": 120,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/e_hartree_round20_trace_ratio.py",
-      "line": 104,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/e_hartree_round22_arch_bridge.py",
-      "line": 102,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/e_hartree_round23_normalization.py",
-      "line": 101,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
       "file": "computations/e_hartree_round24_molecular_reuse.py",
@@ -2943,15 +1259,6 @@
       "canonical": "7.71804132",
       "verdict": "TRUNCATED",
       "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/float64_entry_tracer.py",
-      "line": 402,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
       "file": "computations/fr_pullback_borromean_h3a_test.py",
@@ -3053,24 +1360,6 @@
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
-      "file": "computations/gen_q0_anchor_manifest.py",
-      "line": 26,
-      "constant": "q0_muon",
-      "literal": "1.109978595557",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/gen_q0_anchor_manifest.py",
-      "line": 27,
-      "constant": "q0",
-      "literal": "1.10997858275",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/generation_count_t29_truncation_probe.py",
       "line": 78,
       "constant": "m_e",
@@ -3107,15 +1396,6 @@
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
-      "file": "computations/habiro/habiro_ladder_bridge.py",
-      "line": 77,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347198997632204832250266562084087802",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "ROUNDED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/habiro/qbeta_h4_tower_branching_preflight.py",
       "line": 66,
       "constant": "q0_muon",
@@ -3123,24 +1403,6 @@
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "TRUNCATED",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/he4_rho_F_cpt_mechanism_refuted.py",
-      "line": 61,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/he4_rho_F_two_row_stratum_search.py",
-      "line": 65,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/hecke/h3_gram_degeneracy_is_wedderburn_weight_vanishing.py",
@@ -3161,15 +1423,6 @@
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
-      "file": "computations/implied_h2_coefficient_audit_50dps.py",
-      "line": 104,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
       "file": "computations/jpsi_boundstate_mass_probe.py",
       "line": 90,
       "constant": "m_p",
@@ -3181,24 +1434,6 @@
     {
       "file": "computations/knot-volumes.py",
       "line": 170,
-      "constant": "q0_muon",
-      "literal": "1.10997",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/knot-volumes.py",
-      "line": 285,
-      "constant": "q0_muon",
-      "literal": "1.10997",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/knot-volumes.py",
-      "line": 288,
       "constant": "q0_muon",
       "literal": "1.10997",
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
@@ -3240,60 +1475,6 @@
       "canonical": "0.51099895069",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/lever1_binding_classical_kernel_derive.py",
-      "line": 71,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/lever1_borel_half_singularity_probe.py",
-      "line": 78,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/lever1_content_monomial_separation.py",
-      "line": 79,
-      "constant": "q0_muon",
-      "literal": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/lever1_gevrey_order_pin.py",
-      "line": 78,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/lever1_plancherel_content_separation.py",
-      "line": 67,
-      "constant": "q0_muon",
-      "literal": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/lever1_sw_period_lw_rate_refine.py",
-      "line": 75,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
       "file": "computations/log_delta_categorical_derivation.py",
@@ -3440,42 +1621,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/markov/assembly_chain_11_letter_recompute_probe.py",
-      "line": 69,
-      "constant": "q0_muon",
-      "literal": "1.109978595642739046681795129380001752700065561029",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/markov/markov_identity_symbolic_probe.py",
-      "line": 203,
-      "constant": "q0",
-      "literal": "1.1099785827513808075916690956",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/markov/markov_identity_symbolic_probe.py",
-      "line": 204,
-      "constant": "q0_muon",
-      "literal": "1.109978595557334719899763",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/markov/markov_trace_for_knot.py",
-      "line": 295,
-      "constant": "q0_muon",
-      "literal": "1.10997859561220225731080831999100762523924148",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/markov/peel_anchor_identification_probe.py",
       "line": 111,
       "constant": "q0",
@@ -3548,15 +1693,6 @@
       "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
     },
     {
-      "file": "computations/mass_theory_formalize_first_invariants_probe.py",
-      "line": 69,
-      "constant": "q0_muon",
-      "literal": "1.10997859555",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/meson/binding_cut_entropy_derived_weightings_probe.py",
       "line": 157,
       "constant": "B_2H",
@@ -3568,24 +1704,6 @@
     {
       "file": "computations/meson/colour_derived_interface_probe.py",
       "line": 175,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/meson/deuteron_reachability_vs_level_probe.py",
-      "line": 101,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/meson/deuteron_support_reachability_probe.py",
-      "line": 92,
       "constant": "B_2H",
       "literal": "2.224566",
       "canonical": "2.2245662",
@@ -3656,105 +1774,6 @@
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
-      "file": "computations/mp_dk_decisive_test.py",
-      "line": 60,
-      "constant": "q0_muon",
-      "literal": "1.10997859555418057528159407960950937799328227995870",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/mpf_import_time_dps_audit.py",
-      "line": 334,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/mpf_import_time_dps_audit.py",
-      "line": 335,
-      "constant": "B_3He",
-      "literal": "7.7180428",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/mpf_import_time_dps_audit.py",
-      "line": 336,
-      "constant": "B_4He",
-      "literal": "28.295674",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/mpf_import_time_dps_audit.py",
-      "line": 337,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/mpf_import_time_dps_audit.py",
-      "line": 360,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/mpf_import_time_dps_audit.py",
-      "line": 363,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/mpf_import_time_dps_audit.py",
-      "line": 366,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/mpf_import_time_dps_audit.py",
-      "line": 368,
-      "constant": "B_2H",
-      "literal": "2.22456607",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/mpf_mixed_arithmetic_audit.py",
-      "line": 439,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/mu2_vanishing_is_a_normalisation_identity_probe.py",
-      "line": 166,
-      "constant": "q0",
-      "literal": "1.10997858275138",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/multi_level_jet_sum.py",
       "line": 155,
       "constant": "B_3He",
@@ -3789,24 +1808,6 @@
       "canonical": "938.27208943",
       "verdict": "TRUNCATED",
       "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/nv_pslq_extended_basis.py",
-      "line": 214,
-      "constant": "m_e",
-      "literal": "0.51099895000",
-      "canonical": "0.51099895069",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_E_MEV"
-    },
-    {
-      "file": "computations/ocneanu_param_from_fibre_dimension.py",
-      "line": 61,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/option_e_a4_full_reconciliation.py",
@@ -3989,15 +1990,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/per_basis_row_invariants_probe.py",
-      "line": 67,
-      "constant": "q0_muon",
-      "literal": "1.10997859555418057528159407960950937799328227995870",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/per_observable_100x_status.py",
       "line": 110,
       "constant": "m_mu",
@@ -4113,24 +2105,6 @@
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probe_isospin_mirror_v9_generalization.py",
-      "line": 55,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probe_isospin_mirror_v9_generalization.py",
-      "line": 55,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
     },
     {
       "file": "computations/probe_kappa_excess_convention_resolution.py",
@@ -4349,73 +2323,10 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/alpha_residual_gb_jet_bodyorder_probe.py",
-      "line": 284,
-      "constant": "B_2H",
-      "literal": "2.22456637",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/alpha_scale_is_outside_the_trace_probe.py",
-      "line": 172,
-      "constant": "q0",
-      "literal": "1.10997858",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/alpha_scale_is_outside_the_trace_probe.py",
-      "line": 308,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/probes/aomega_o2_stokes_to_observable_mechanism.py",
       "line": 70,
       "constant": "q0",
       "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/aoperator_a5_crosscheck.py",
-      "line": 411,
-      "constant": "q0_muon",
-      "literal": "1.109978595",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/probes/aoperator_a5_crosscheck.py",
-      "line": 411,
-      "constant": "q0",
-      "literal": "1.109978582",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/arc_count_diagnostic_degeneracy_probe.py",
-      "line": 280,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/assembly_shortfall_shape_probe.py",
-      "line": 389,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
       "canonical": "1.1099785827513808075916690956107688798744991218736",
       "verdict": "TRUNCATED",
       "use_instead": "q_parameter.Q_MP"
@@ -4485,24 +2396,6 @@
     },
     {
       "file": "computations/probes/b4_1four_reeb_flow_magnitude.py",
-      "line": 118,
-      "constant": "B_4He",
-      "literal": "28.29566",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/b4_1four_reeb_flow_magnitude.py",
-      "line": 144,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/b4_1four_reeb_flow_magnitude.py",
       "line": 214,
       "constant": "B_4He",
       "literal": "28.29566",
@@ -4563,15 +2456,6 @@
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/baseline_comparison_probe.py",
-      "line": 12,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
     },
     {
       "file": "computations/probes/binding_additive_linked_cluster_probe.py",
@@ -4646,33 +2530,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/binding_closed_form_C_vs_D_probe.py",
-      "line": 83,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_closed_form_C_vs_D_probe.py",
-      "line": 84,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_closed_form_C_vs_D_probe.py",
-      "line": 84,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/binding_cluster_operator_vs_mayer_probe.py",
       "line": 50,
       "constant": "B_3H",
@@ -4709,33 +2566,6 @@
       "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/binding_functional_extensivity_probe.py",
-      "line": 97,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_functional_extensivity_probe.py",
-      "line": 97,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_functional_extensivity_probe.py",
-      "line": 97,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/binding_mayer_linked_cluster_probe.py",
       "line": 54,
       "constant": "B_2H",
@@ -4765,33 +2595,6 @@
     {
       "file": "computations/probes/binding_mayer_linked_cluster_probe.py",
       "line": 55,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_production_route_C_vs_D_probe.py",
-      "line": 72,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_production_route_C_vs_D_probe.py",
-      "line": 73,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_production_route_C_vs_D_probe.py",
-      "line": 73,
       "constant": "B_4He",
       "literal": "28.295673",
       "canonical": "28.2956624",
@@ -4835,42 +2638,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/binding_recurrence_spectral_bridge_probe.py",
-      "line": 43,
-      "constant": "q0",
-      "literal": "1.10997858275138080759166909561076887987449912187357763605672",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/binding_sum_C_vs_D_per_isotope_probe.py",
-      "line": 94,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_sum_C_vs_D_per_isotope_probe.py",
-      "line": 96,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/binding_sum_C_vs_D_per_isotope_probe.py",
-      "line": 97,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/binding_triangle_3body_cluster_probe.py",
       "line": 65,
       "constant": "q0",
@@ -4907,15 +2674,6 @@
       "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/binding_window_is_a_dual_vertex_hysteresis_probe.py",
-      "line": 252,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/probes/block_transposition_lift_probe.py",
       "line": 426,
       "constant": "B_2H",
@@ -4925,73 +2683,10 @@
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/bond_marginal_and_neutron_chain_probe.py",
-      "line": 343,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/probes/borromean_per_lambda_fr_probe.py",
       "line": 91,
       "constant": "B_4He",
       "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/bpp_a_dependence_bound_probe.py",
-      "line": 338,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/bpp_higher_a_resumable_driver.py",
-      "line": 631,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/bpp_higher_a_sparse_probe.py",
-      "line": 299,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/braid_nucleus_map_exponent_probe.py",
-      "line": 124,
-      "constant": "B_2H",
-      "literal": "2.22456637",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/braid_nucleus_map_exponent_probe.py",
-      "line": 124,
-      "constant": "B_3H",
-      "literal": "8.48179663",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/braid_nucleus_map_exponent_probe.py",
-      "line": 125,
-      "constant": "B_4He",
-      "literal": "28.29561",
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
@@ -5006,33 +2701,6 @@
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
-      "file": "computations/probes/brunnian_triple_exhaustion_probe.py",
-      "line": 55,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/brunnian_triple_exhaustion_probe.py",
-      "line": 55,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/brunnian_triple_exhaustion_probe.py",
-      "line": 55,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/can_the_substrate_carry_a_fractional_twist_probe.py",
       "line": 174,
       "constant": "B_2H",
@@ -5040,60 +2708,6 @@
       "canonical": "2.2245662",
       "verdict": "TRUNCATED",
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/canonical_markov_weights_h3_are_sl2_dimensions.py",
-      "line": 63,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/carrier_crossing_quantisation_probe.py",
-      "line": 88,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/carrier_crossing_quantisation_probe.py",
-      "line": 88,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/carrier_crossing_quantisation_probe.py",
-      "line": 89,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/carrier_crossing_quantisation_probe.py",
-      "line": 89,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/chain_binding_closed_form_probe.py",
-      "line": 395,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/probes/channel_asymmetry_crossing_budget_bound_probe.py",
@@ -5186,107 +2800,8 @@
       "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/concave_deficit_non_exclusion_probe.py",
-      "line": 84,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/concave_deficit_non_exclusion_probe.py",
-      "line": 84,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/concave_deficit_non_exclusion_probe.py",
-      "line": 85,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/concave_deficit_non_exclusion_probe.py",
-      "line": 85,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/coulomb_from_crossing_counts_probe.py",
-      "line": 443,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/count_channel_carrier_locus_probe.py",
-      "line": 69,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/count_channel_carrier_locus_probe.py",
-      "line": 69,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/count_channel_carrier_locus_probe.py",
-      "line": 69,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/count_channel_carrier_locus_probe.py",
-      "line": 207,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/delta_lambda_m_pi_constraint_probe.py",
-      "line": 250,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/deuteron_fpn_wlambda_wiring.py",
       "line": 75,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/deuteron_interface_colour_weighting_probe.py",
-      "line": 103,
       "constant": "B_2H",
       "literal": "2.224566",
       "canonical": "2.2245662",
@@ -5384,24 +2899,6 @@
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/extensive_carrier_scale_inversion_probe.py",
-      "line": 279,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/fibre_functor_dimension_not_categorical_probe.py",
-      "line": 147,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/probes/flavor_split_3strand_derivation_probe.py",
       "line": 60,
       "constant": "m_p",
@@ -5492,33 +2989,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/four_body_term_and_the_h12_collapse_probe.py",
-      "line": 552,
-      "constant": "B_4He",
-      "literal": "28.295661",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/framed_vs_writhe_normalised_bonds_probe.py",
-      "line": 409,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/framework_near_unitary_channel_probe.py",
-      "line": 105,
-      "constant": "q0",
-      "literal": "1.10997858275",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/probes/framing_spin_orbit_magic_probe.py",
       "line": 76,
       "constant": "q0",
@@ -5555,33 +3025,6 @@
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/ground_state_ordering_convention_independence_probe.py",
-      "line": 45,
-      "constant": "q0",
-      "literal": "1.1099785827513808075916690",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/gswz_program_convention_immunity_probe.py",
-      "line": 163,
-      "constant": "q0_muon",
-      "literal": "1.10997",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/probes/gswz_program_convention_immunity_probe.py",
-      "line": 187,
-      "constant": "q0",
-      "literal": "1.10997858275138",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/probes/hbar_q_order_of_binding_observables_probe.py",
       "line": 165,
       "constant": "B_2H",
@@ -5592,39 +3035,12 @@
     },
     {
       "file": "computations/probes/hbar_q_order_of_binding_observables_probe.py",
-      "line": 346,
-      "constant": "B_4He",
-      "literal": "28.29561",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/hbar_q_order_of_binding_observables_probe.py",
       "line": 348,
       "constant": "B_4He",
       "literal": "28.29561",
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/hbar_q_order_of_binding_observables_probe.py",
-      "line": 398,
-      "constant": "B_2H",
-      "literal": "2.22456637",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/hbar_q_order_of_binding_observables_probe.py",
-      "line": 404,
-      "constant": "B_2H",
-      "literal": "2.22456637",
-      "canonical": "2.2245662",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
       "file": "computations/probes/he3_brane_tower_structural_gap.py",
@@ -5724,42 +3140,6 @@
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/he4_partition_dominance_audit_probe.py",
-      "line": 226,
-      "constant": "q0_muon",
-      "literal": "1.10997859555418",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/probes/he4_partition_dominance_audit_probe.py",
-      "line": 228,
-      "constant": "q0",
-      "literal": "1.10997858275138",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/he4_partition_dominance_audit_probe.py",
-      "line": 230,
-      "constant": "q0_muon",
-      "literal": "1.10997859555733",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/probes/he4_partition_dominance_audit_probe.py",
-      "line": 230,
-      "constant": "q0_muon",
-      "literal": "1.10997859564274",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
       "file": "computations/probes/he4_qreeb_phase_falsification_probe.py",
@@ -5951,24 +3331,6 @@
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/isospin_grading_restores_the_sign_probe.py",
-      "line": 347,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/isospin_sweep_bond_energy_probe.py",
-      "line": 441,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/probes/keystone_colored_sigma235_wrt.py",
       "line": 73,
       "constant": "q0",
@@ -5985,15 +3347,6 @@
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "DIVERGENT",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/probes/knot_id_volume_match_adjudication.py",
-      "line": 79,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
     },
     {
       "file": "computations/probes/level_three_colour_channel_probe.py",
@@ -6032,24 +3385,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/logratio_exactly_extensive_probe.py",
-      "line": 263,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/logratio_exactly_pairwise_additive_probe.py",
-      "line": 265,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/probes/magic_a_truncation_overclaim_correction_probe.py",
       "line": 38,
       "constant": "B_4He",
@@ -6057,24 +3392,6 @@
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/manybody_sign_by_bond_topology_probe.py",
-      "line": 108,
-      "constant": "B_4He",
-      "literal": "28.295661",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/manybody_sign_by_bond_topology_probe.py",
-      "line": 302,
-      "constant": "q0",
-      "literal": "1.1099785827513808075",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/probes/mayer_threebody_sign_threshold_probe.py",
@@ -6111,15 +3428,6 @@
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "DIVERGENT",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/probes/metallic_silver_coincidence_weighting_probe.py",
-      "line": 212,
-      "constant": "q0",
-      "literal": "1.1099785827513808076",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "ROUNDED",
-      "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/probes/mirror_pair_coulomb_sign_correction.py",
@@ -6320,15 +3628,6 @@
       "use_instead": "codata_constants.M_P_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/probe_trace_convention_production_impact.py",
-      "line": 49,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/qbeta_5two_capstone_carrier_falsification_probe.py",
       "line": 64,
       "constant": "q0_muon",
@@ -6455,24 +3754,6 @@
       "use_instead": "codata_constants.M_N_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/rho_f_vol_binding_dashboard.py",
-      "line": 96,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/rho_f_vol_binding_dashboard.py",
-      "line": 99,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/signed_crossing_feasibility_probe.py",
       "line": 84,
       "constant": "B_2H",
@@ -6518,15 +3799,6 @@
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/stacked_unbinding_family_exclusion_probe.py",
-      "line": 252,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/su4_1111_markov_trace_probe.py",
       "line": 102,
       "constant": "B_2H",
@@ -6560,51 +3832,6 @@
       "literal": "28.295673",
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/the_canonical_mass_trace_factorises_over_the_chain_probe.py",
-      "line": 269,
-      "constant": "B_3He",
-      "literal": "7.71804",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/the_character_ratio_derivation_path_is_the_bond_model_probe.py",
-      "line": 112,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/the_character_ratio_derivation_path_is_the_bond_model_probe.py",
-      "line": 112,
-      "constant": "B_3H",
-      "literal": "8.481796",
-      "canonical": "8.4817962",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/the_character_ratio_derivation_path_is_the_bond_model_probe.py",
-      "line": 113,
-      "constant": "B_3He",
-      "literal": "7.718041",
-      "canonical": "7.71804132",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/the_character_ratio_derivation_path_is_the_bond_model_probe.py",
-      "line": 113,
-      "constant": "B_4He",
-      "literal": "28.295662",
-      "canonical": "28.2956624",
-      "verdict": "TRUNCATED",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
@@ -6698,33 +3925,6 @@
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
-      "file": "computations/probes/type_weighted_chain_ratio_probe.py",
-      "line": 68,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/type_weighted_chain_ratio_probe.py",
-      "line": 68,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/type_weighted_chain_ratio_probe.py",
-      "line": 68,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
       "file": "computations/probes/ursell_alternation_sign_identity_probe.py",
       "line": 123,
       "constant": "B_2H",
@@ -6750,33 +3950,6 @@
       "canonical": "7.71804132",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/probes/wenzl_bridge_self_conjugate_premise_is_false.py",
-      "line": 106,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/wenzl_level_family.py",
-      "line": 86,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/probes/xq_ratio_function_probe.py",
-      "line": 12,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
     },
     {
       "file": "computations/probes/yardstick_free_phase_binding_probe.py",
@@ -6806,15 +3979,6 @@
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
-      "file": "computations/q0_migration_decompose.py",
-      "line": 75,
-      "constant": "q0_muon",
-      "literal": "1.109978595557",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/q0_provenance_audit.py",
       "line": 43,
       "constant": "q0",
@@ -6830,24 +3994,6 @@
       "literal": "1.1099785955541805",
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/q0_provenance_audit.py",
-      "line": 50,
-      "constant": "q0_muon",
-      "literal": "1.10997859555418057528159407960950937799328227995870",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/q0_provenance_audit.py",
-      "line": 79,
-      "constant": "q0_muon",
-      "literal": "1.10997859555733471989976322048322502665620840878015",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
@@ -6869,69 +4015,6 @@
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
-      "file": "computations/q_integer_convention_derivation.py",
-      "line": 172,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/c3_w2_bar_parity_twist_probe.py",
-      "line": 66,
-      "constant": "q0",
-      "literal": "1.1099785827513808075916690956",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/c3_w2_c1_connection_invariant.py",
-      "line": 71,
-      "constant": "q0",
-      "literal": "1.1099785827513808075916690956",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/c3_w2_c1_connection_matrix.py",
-      "line": 103,
-      "constant": "q0",
-      "literal": "1.1099785827513808075916690956",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/c3_w2_c1_invariant_structure.py",
-      "line": 75,
-      "constant": "q0",
-      "literal": "1.1099785827513808075916690956",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/c3_w2_c1_parity_artifact.py",
-      "line": 87,
-      "constant": "q0",
-      "literal": "1.1099785827513808075916690956",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/c3_w2_c1_pole_divisor.py",
-      "line": 69,
-      "constant": "q0",
-      "literal": "1.1099785827513808075916690956",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/qbeta/c3_w2_c1_qborel_singularity.py",
       "line": 96,
       "constant": "q0",
@@ -6943,24 +4026,6 @@
     {
       "file": "computations/qbeta/c3_w2_c1_stokes_pair_prony.py",
       "line": 121,
-      "constant": "q0",
-      "literal": "1.1099785827513808075916690956",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/c3_w2_c1_theta_canonical.py",
-      "line": 76,
-      "constant": "q0",
-      "literal": "1.1099785827513808075916690956",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/c3_w2_c1_theta_zero_count.py",
-      "line": 78,
       "constant": "q0",
       "literal": "1.1099785827513808075916690956",
       "canonical": "1.1099785827513808075916690956107688798744991218736",
@@ -6993,15 +4058,6 @@
       "canonical": "1.1099785827513808075916690956107688798744991218736",
       "verdict": "TRUNCATED",
       "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/qbeta_1ppq_achieved.py",
-      "line": 111,
-      "constant": "m_n",
-      "literal": "939.5654205240",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
     },
     {
       "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
@@ -7067,42 +4123,6 @@
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
-      "file": "computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py",
-      "line": 103,
-      "constant": "q0",
-      "literal": "1.10997858275",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/qbeta_c3_hopf_habiro_profile_probe.py",
-      "line": 104,
-      "constant": "q0_muon",
-      "literal": "1.10997859555",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/qbeta/qbeta_c3_imq_qstar_ladder_amplification_probe.py",
-      "line": 123,
-      "constant": "q0_muon",
-      "literal": "1.10997859303152",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/qbeta/qbeta_c3_is_extraction_determined_probe.py",
-      "line": 217,
-      "constant": "m_n",
-      "literal": "939.56542179",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
       "file": "computations/qbeta/qbeta_c3_mq0_nk_scan.py",
       "line": 94,
       "constant": "q0_muon",
@@ -7125,15 +4145,6 @@
       "line": 105,
       "constant": "q0_muon",
       "literal": "1.109978593031523288402328",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/qbeta/qbeta_c3_qstar_k31_repin_probe.py",
-      "line": 242,
-      "constant": "q0_muon",
-      "literal": "1.10997859303152",
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "DIVERGENT",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
@@ -7238,69 +4249,6 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/qbeta/qbeta_d_n1_factor_bar_midpoint_probe.py",
-      "line": 190,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347198997632204",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/qbeta/qbeta_d_n1_factor_bar_midpoint_probe.py",
-      "line": 200,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347198997632204",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/qbeta/qbeta_d_parity_is_a_filter_not_a_selector_probe.py",
-      "line": 95,
-      "constant": "q0",
-      "literal": "1.1099785827513808076",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "ROUNDED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/qbeta_derived_w_overdetermined_test_probe.py",
-      "line": 111,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/qbeta/qbeta_derived_w_overdetermined_test_probe.py",
-      "line": 112,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/qbeta/qbeta_derived_w_overdetermined_test_probe.py",
-      "line": 113,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/qbeta/qbeta_derived_w_overdetermined_test_probe.py",
-      "line": 114,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/qbeta/qbeta_dladder_ecalle_phib_resummation.py",
       "line": 87,
       "constant": "q0_muon",
@@ -7346,51 +4294,6 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/qbeta/qbeta_eigenphase_taylor_in_u.py",
-      "line": 86,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805752815940796095093779932822799587",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/qbeta/qbeta_extensivity_is_the_failure_probe.py",
-      "line": 95,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/qbeta/qbeta_extensivity_is_the_failure_probe.py",
-      "line": 95,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/qbeta/qbeta_extensivity_is_the_failure_probe.py",
-      "line": 96,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/qbeta/qbeta_extensivity_is_the_failure_probe.py",
-      "line": 96,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
       "file": "computations/qbeta/qbeta_frakv_transport_blocked_probe.py",
       "line": 87,
       "constant": "q0",
@@ -7418,33 +4321,6 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/qbeta/qbeta_hecke_symbolic_seminormal_probe.py",
-      "line": 294,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
-      "line": 110,
-      "constant": "q0",
-      "literal": "1.1099785828",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "ROUNDED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stability_probe.py",
-      "line": 226,
-      "constant": "q0_muon",
-      "literal": "1.10997859555",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/qbeta/qbeta_hoefsmit_chi_cross_anchor_stage_b_unblocked_probe.py",
       "line": 81,
       "constant": "q0_muon",
@@ -7470,60 +4346,6 @@
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "TRUNCATED",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/qbeta/qbeta_hoefsmit_stage_b_per_block_ck_probe.py",
-      "line": 142,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/qbeta/qbeta_hopf_cubic_shadow_bridge.py",
-      "line": 33,
-      "constant": "q0_muon",
-      "literal": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/qbeta/qbeta_interface_w_deciding_test_probe.py",
-      "line": 84,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/qbeta/qbeta_interface_w_deciding_test_probe.py",
-      "line": 85,
-      "constant": "B_3H",
-      "literal": "8.481798",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/qbeta/qbeta_interface_w_deciding_test_probe.py",
-      "line": 86,
-      "constant": "B_3He",
-      "literal": "7.718043",
-      "canonical": "7.71804132",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/qbeta/qbeta_interface_w_deciding_test_probe.py",
-      "line": 87,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
     },
     {
       "file": "computations/qbeta/qbeta_l1_ceiling_is_one_point_of_a_family_probe.py",
@@ -7652,15 +4474,6 @@
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
-      "file": "computations/qbeta/qbeta_symmetry_sign_is_am_gm_locked_probe.py",
-      "line": 218,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
       "file": "computations/qbeta/qbeta_t3_multiknot_binding_probe.py",
       "line": 48,
       "constant": "m_e",
@@ -7742,24 +4555,6 @@
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
-      "file": "computations/qbeta_multi_block_eigenphase_full_eps_probe.py",
-      "line": 59,
-      "constant": "q0_muon",
-      "literal": "1.10997859555418057528159407960950937799328227995870",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/qbeta_multi_block_eigenphase_probe.py",
-      "line": 57,
-      "constant": "q0_muon",
-      "literal": "1.10997859555418057528159407960950937799328227995870",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/r5_full_canonical_knot_solver.py",
       "line": 102,
       "constant": "B_2H",
@@ -7769,24 +4564,6 @@
       "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
     },
     {
-      "file": "computations/reading_a_residual_at_50dps.py",
-      "line": 124,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/regenerate_y_lambda_jones_markov_conventionD.py",
-      "line": 76,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/rho_k_counit_defect_form.py",
       "line": 56,
       "constant": "B_3He",
@@ -7821,33 +4598,6 @@
       "canonical": "28.2956624",
       "verdict": "DIVERGENT",
       "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/rho_w_crystal_vertex_trace.py",
-      "line": 85,
-      "constant": "B_2H",
-      "literal": "2.224566",
-      "canonical": "2.2245662",
-      "verdict": "TRUNCATED",
-      "use_instead": "codata_constants.AME_B_DEUTERON_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/rt_c23_singlet_sign_core.py",
-      "line": 89,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/rt_identity_chain_consolidation.py",
-      "line": 88,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
       "file": "computations/run_jones_markov_atlas_all_atoms.py",
@@ -7859,33 +4609,6 @@
       "use_instead": "codata_constants.M_E_MEV"
     },
     {
-      "file": "computations/sigma_all_evaluator.py",
-      "line": 493,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805752815940796095093779932822799587",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/stamp_joint_tower_witness.py",
-      "line": 47,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/stamp_joint_tower_witness.py",
-      "line": 48,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/stamp_joint_tower_witness.py",
       "line": 67,
       "constant": "q0",
@@ -7893,24 +4616,6 @@
       "canonical": "1.1099785827513808075916690956107688798744991218736",
       "verdict": "TRUNCATED",
       "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/stamp_joint_tower_witness.py",
-      "line": 71,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/stamp_joint_tower_witness.py",
-      "line": 72,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
       "file": "computations/su2_spinor_multiplicity_resolution.py",
@@ -7949,33 +4654,6 @@
       "use_instead": "codata_constants.M_P_MEV_VALIDATION"
     },
     {
-      "file": "computations/substrate/hecke_core_symbolic_migration.py",
-      "line": 195,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/substrate/hecke_core_symbolic_migration.py",
-      "line": 201,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/substrate/hecke_core_symbolic_migration.py",
-      "line": 245,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/substrate/lever1_descartes_eq_qfamily_geometry.py",
       "line": 68,
       "constant": "q0_muon",
@@ -8003,24 +4681,6 @@
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
     },
     {
-      "file": "computations/substrate/unified_tau_odd_partner_solve.py",
-      "line": 54,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347198997632204832250266562084087802",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "ROUNDED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/substrate/witness_constant_staleness.py",
-      "line": 345,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/substrate/witness_constant_staleness.py",
       "line": 355,
       "constant": "q0_muon",
@@ -8028,33 +4688,6 @@
       "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
       "verdict": "TRUNCATED",
       "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/substrate/witness_constant_staleness.py",
-      "line": 395,
-      "constant": "q0_muon",
-      "literal": "1.10997",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/substrate/witness_constant_staleness.py",
-      "line": 396,
-      "constant": "q0_muon",
-      "literal": "1.1099785900000000",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/substrate/witness_constant_staleness.py",
-      "line": 418,
-      "constant": "q0",
-      "literal": "1.10997858275",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
     },
     {
       "file": "computations/substrate/z2bn_pf_monodromy_synthesis.py",
@@ -8183,69 +4816,6 @@
       "use_instead": "q_parameter.Q_MP"
     },
     {
-      "file": "computations/test_q0_provenance_audit.py",
-      "line": 67,
-      "constant": "q0_muon",
-      "literal": "1.10997859555418057528159407960950937799328227995868622546675",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/test_q0_provenance_audit.py",
-      "line": 68,
-      "constant": "q0_muon",
-      "literal": "1.109978595554180575281594079609509377993282279958686225466751689153746",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/test_q0_provenance_audit.py",
-      "line": 74,
-      "constant": "q0_muon",
-      "literal": "1.1099785956402395783775060672867905833417555643376",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/test_q0_provenance_audit.py",
-      "line": 75,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805169583001889887986763787613849839",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/test_q0_provenance_audit.py",
-      "line": 76,
-      "constant": "q0_muon",
-      "literal": "1.109978595554180575281594079609518150067234842238",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/test_q0_provenance_audit.py",
-      "line": 77,
-      "constant": "q0_muon",
-      "literal": "1.1099785955541805752815940796095093779667618976181",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/test_q0_provenance_audit.py",
-      "line": 87,
-      "constant": "q0_muon",
-      "literal": "1.109978595557334700000000000000",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/three_quark_borromean_lp_sweep.py",
       "line": 51,
       "constant": "q0_muon",
@@ -8307,15 +4877,6 @@
       "canonical": "7.71804132",
       "verdict": "TRUNCATED",
       "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/vendor_ame2020.py",
-      "line": 215,
-      "constant": "u_MeV",
-      "literal": "931.49410242",
-      "canonical": "931.49410372",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.U_MEV"
     },
     {
       "file": "computations/w3_closeability_audit.py",
@@ -8399,42 +4960,6 @@
       "use_instead": "codata_constants.M_N_MEV_VALIDATION"
     },
     {
-      "file": "computations/wedderburn_mass_table_z1_20.py",
-      "line": 109,
-      "constant": "m_p",
-      "literal": "938.27208816",
-      "canonical": "938.27208943",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/wedderburn_mass_table_z1_20.py",
-      "line": 110,
-      "constant": "m_n",
-      "literal": "939.56542052",
-      "canonical": "939.56542194",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.M_N_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/witness_float64_padding_audit.py",
-      "line": 221,
-      "constant": "B_3H",
-      "literal": "8.4817962000000015621026250300928950309753417968750000000000",
-      "canonical": "8.4817962",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_TRITIUM_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/witness_float64_padding_audit.py",
-      "line": 223,
-      "constant": "q0_muon",
-      "literal": "1.10997859555733471989976322048322502665620840878015368660798114614493",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "DIVERGENT",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
       "file": "computations/witness_raw_float64_audit.py",
       "line": 718,
       "constant": "m_p",
@@ -8442,326 +4967,11 @@
       "canonical": "938.27208943",
       "verdict": "TRUNCATED",
       "use_instead": "codata_constants.M_P_MEV_VALIDATION"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 558,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 559,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 563,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 564,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 572,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 573,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 576,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 576,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 578,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 579,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 583,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 584,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 588,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 589,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 598,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 600,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 603,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 604,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 609,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 612,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 618,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 621,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 633,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 635,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 638,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 639,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 642,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 643,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 687,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 689,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 698,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 699,
-      "constant": "q0_muon",
-      "literal": "1.1099785955573347",
-      "canonical": "1.1099785955573347198997632204832250266562084087801536866079811461449",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MUON_50_DIGIT_STR"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 764,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 779,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 780,
-      "constant": "q0",
-      "literal": "1.1099785827513808",
-      "canonical": "1.1099785827513808075916690956107688798744991218736",
-      "verdict": "TRUNCATED",
-      "use_instead": "q_parameter.Q_MP"
     }
   ],
-  "scriptHash": "48af8a0a98bf",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "598025307901a860e2940110b1661f4cd8af65bb",
+  "scriptHash": "94d4e7b4b365",
+  "scriptCommitSha": "b9820887e14ccab5e899b8556db25caa2fba0d68",
+  "commitSha": "e91a54c792d4b5e9a908250026e9cc136ecb4b1a",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
