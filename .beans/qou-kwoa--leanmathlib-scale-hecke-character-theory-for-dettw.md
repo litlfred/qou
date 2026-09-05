@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-05T07:51:57Z
+updated_at: 2026-09-05T08:38:12Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -836,3 +836,45 @@ never contributes, which is why no common descent is required.
 
 Docstring in `QOU/Hecke/TauSymmetrizing.lean` corrected to match; `lean`-direct
 still exit 0.
+
+
+### 2026-09-05 — PROVED. `τ(T_v T_w) = δ_{w,v⁻¹} q^{ℓ(v)}`
+
+Commit `f7cfe5059a`. `QOU/Hecke/TauStructureConstants.lean`, 10 declarations,
+all `[propext, Classical.choice, Quot.sound]`, `lean`-direct exit 0 no
+warnings. The hypothesis `TauSymmetrizing` was carrying is discharged, so
+`tauGram_det` and `tauGram_det_ne_zero` are **unconditional**.
+
+The four obligations listed two hours ago all landed, and each was smaller than
+billed:
+
+| obligation | what it actually took |
+|---|---|
+| bridge `cs.simple i` ↔ `s n i` | `rw [CoxeterSystem.simple]; exact toPerm_simple n i` |
+| `Tw (s n i) = σ i` | `orbitMap_injective` + `Rs_single_perm` at `v = 1` |
+| `T_s² = (q−1)T_s + q` | the `v = s` case of `σ_mul_Tw` — it lands in the DOWN branch because `s_i` inverts its own pair by construction |
+| the three decompositions | all `Tw_mul_Tw` under the length hypothesis the descent supplies |
+
+Obligation 4 as I stated it ("bridge the concrete `v i.castSucc < v i.succ` to
+`IsLeftDescent`") **was not needed at all**: phrasing everything through
+`Tw_mul_Tw`, which takes a *length* hypothesis, keeps the concrete inversion
+condition out of the argument entirely. `σ_mul_Tw` is used exactly once, for
+the quadratic relation, where the condition is decidable on the spot.
+
+**The route is the result.** No exchange condition — Mathlib has none — and the
+`(q−1)` term never contributes. Both branches close on: a left descent of `v`
+and a right descent of `w` at the *same* `i` are contradictory once `w` is
+pinned to `v⁻¹` or `v⁻¹s_i`, since `ℓ(s_i v) = ℓ(v⁻¹ s_i)` (`length_inv`).
+
+**Scope unchanged, and this is worth restating because the result looks
+stronger than it is.** `det(τ-Gram) ≠ 0` for every `q ≠ 0` is **Frobenius-ness,
+not semisimplicity** — semisimplicity is false at roots of unity, so any
+reading of this as a semisimplicity criterion is wrong. Combined with
+`weightedGram_det_ne_zero_iff` at weights `1/s_λ` it gives one direction of the
+Schur criterion: some `s_λ = 0` ⟹ not split semisimple.
+
+**One fact remains between here and `SchurElementCriterion`:** that `τ`'s
+Wedderburn weights are `1/s_λ` for the Wenzl `schurElement`. That identification
+is where `q` enters and is where the Schur elements do their work. Plus, for the
+converse direction, Tits deformation. `SchurElementCriterion` still has **no
+instance**, and the `heckeWedderburn` shortcut is still refused in the file.
