@@ -1,102 +1,120 @@
-# Why `binding_energy` is negative: term 1 takes `ln` of a trace that is zero
+# The A=1 Markov trace is zero — and the accumulator survives it. Dropping it does not.
 
-**Date:** 2026-09-05 · **Bean:** `qou-sv7h` · **Scope:** (a) — identifies why the
-computed number is negative; does not say what the correct formula is.
+**Date:** 2026-09-05 · **Bean:** `qou-sv7h` · **Scope:** (a)
 
-## The question this answers
+> ## ⚠ RETRACTION — this document's first version said term 1 DIVERGES. It does not.
+>
+> The first version of this audit, of
+> [`uic_a1_vanishing_trace_probe.py`](../../computations/probes/uic_a1_vanishing_trace_probe.py),
+> of commit `2cb02fb644` and of PR #6746 concluded that
+> `unified_iterative_correction` is divergent and that this explained the wrong
+> sign. **That was wrong.**
+>
+> It was drawn from the PER-STEP decomposition, where `(2,1)` shows a `−117`
+> delta at A=1, without checking that the A=2 step carries `+115` and that the
+> accumulator telescopes. Measured on the returned value, bit-identical at three
+> precisions:
+>
+> | kernel dps | `uic(1,1)`, k_max=5 |
+> |---|---|
+> | 50 | −0.7335499391634978 |
+> | 100 | −0.7335499391634978 |
+> | 150 | −0.7335499391634978 |
+>
+> **The sign is not explained by a divergence, and the sign question is still
+> open.** What survives is below, and one part of it inverts a proposed fix.
 
-`815b2a46a0` measured four wrong-signed atoms and stated the gap plainly:
+## What is true, and measured
 
-> nothing here says WHY the sign is wrong — that is the physics question this
-> measurement opens and does not answer.
+**1. The per-partition scale is non-negative**, every factor separately.
+`C_λ = m_e · H_q(λ) · y_λ · ρ_λ(s_*)`, with `y_λ = w_λ/d_λ − y_0` and
+`y_0 = min_λ(w_λ/d_λ)` — so `y_λ ≥ 0` **by construction**, and the code's closed
+form `1/[k]_q!` **is** that minimum at every k = 2..11 (rel < 1e-12). Measured:
+`q_hook ≤ 0` in **0 of 682**; `C_λ < −1e-12` in **0 of 682**. The 28 exact zeros
+are the min-attaining `(k)`/`(1^k)` pairs.
 
-The answer is arithmetic, not physics.
+**2. At A=1 the `(2,1)` Markov trace is exactly zero.** `|Tr|` falls without
+bound as the arithmetic improves — 5.08e-21 (dps 20) → 2.67e-51 (50) →
+3.93e-62 (100), 41 decades — and `log_norm` stays 0, so nothing compensates.
+A census over k ≤ 5 across both deuterium steps finds **exactly one** such
+(partition, step) pair in 34.
 
-## The structure of term 1
+**3. And it cancels.** The accumulator telescopes:
+`Σ_k (log_cur_k − log_prev_k) = log_final − ln d_λ`, so the divergent
+intermediate appears once with each sign.
 
-`unified_iterative_correction` accumulates, per partition and per step,
+## The consequence that matters: V1 is the divergent option
 
-```
-B_λ = C_λ · ( ln|Tr M_λ^(0..A)| − ln d_λ )
-C_λ = m_e · H_q(λ) · y_λ · ρ_λ(s_*)
-```
+The natural-looking fix — *a single nucleon has zero binding, so the A=1 step
+should not enter* — removes **one half of a cancelling pair**. Measured at
+`(2,1)` for deuterium:
 
-Every factor of `C_λ` is separately non-negative, and this was measured rather
-than assumed (682 partitions):
+| dps | A=1 delta | A=2 delta | **V0** (keep) | **V1** (drop) |
+|---|---|---|---|---|
+| 50 | −117.1419 | +114.9436 | **−2.198292652** | +114.9436 |
+| 100 | −142.0855 | +139.8872 | **−2.198292652** | +139.8872 |
 
-| factor | why ≥ 0 | measured |
-|---|---|---|
-| `m_e` | a mass | — |
-| `H_q(λ) = ∏_x [h_x]_q` | q-integers are positive at q₀ > 1 | `q_hook ≤ 0` in **0** of 682 |
-| `y_λ = w_λ/d_λ − y_0` | `y_0 = min_λ(w_λ/d_λ)`, so the difference is ≥ 0 **by construction** | the closed form `1/[k]_q!` **is** that minimum at every k = 2..11 (rel < 1e-12) |
-| `ρ_λ(s_*) = 1/(μ_λ + s_*)` | `μ_λ = Σ_x [c(x)]_q²` is a sum of squares; `s_* = (q−1)/q > 0` | — |
+Relative movement across that precision change: **V0 8.46e-51**, **V1 0.217**
+and growing.
 
-`C_λ < −1e-12` in **0** of 682 partitions. 28 are exactly zero — precisely the
-min-attaining `(k)` and `(1^k)` pairs, where `y_λ = 0`; they surface as ~1e-18
-of float64 noise rather than as 0.
+So the intuition is right about the physics and wrong about this arithmetic: the
+A=1 step is **not an additive offset**, it is one term of an exact cancellation.
+Removing it does not remove a spurious contribution — it uncovers a divergence.
 
-**So the sign of every contribution is the sign of its log-trace factor**, and
-its magnitude is a non-negative multiple of it.
+## V2 — the free-nucleon reference — is finite, and is a real alternative
 
-## The defect
+`_step_chain_generic(..., include_inter=False)` exists precisely to build "the
+disconnected intra-nucleon braid segment used for the free-nucleon baseline",
+and the intra block is the gluon-level content (`B₃ + quark + gluon`).
 
-At **A = 1** — a single nucleon, no bond — the Markov trace of the **(2,1)**
-block is **exactly zero**. `ln|Tr|` is therefore `−∞`, and since `C_(2,1) > 0`,
-term 1 is `−∞`.
+The accumulator's baseline is `L0 = ln(dim)` — the trace of the **empty braid**.
+A free nucleon is not an empty braid. Replacing the reference with
+`ln|Tr_free|` gives `ln(|Tr_bound| / |Tr_free|)`, which is stable at every
+precision tested and shifts the value modestly: at `(2,1)`/deuterium, **−2.2254**
+against V0's **−2.1983**.
 
-Every finite value the function has returned is an artefact of where the
-arithmetic underflowed. Measured by calling the Rust kernel on the identical
-chain at increasing precision:
+Measured across five atoms at k_max = 6 (a truncated reconstruction, **not** the
+production quantity — see caveat):
 
-| kernel dps | \|Tr\| | ln\|Tr\| | `log_norm` |
-|---|---|---|---|
-| 20 | 5.08e-21 | −46.73 | 0.0 |
-| 50 | 2.67e-51 | −116.45 | 0.0 |
-| 100 | 3.93e-62 | −141.39 | 0.0 |
+| atom | A | V0 as-is | V1 drop A=1 | V2 free-ref | AME |
+|---|---|---|---|---|---|
+| ²H | 2 | −1.366 | −0.282 | −0.531 | 2.225 |
+| ³H | 3 | −0.970 | +14.398 | −0.262 | 8.482 |
+| ³He | 3 | −0.808 | +14.561 | +0.059 | 7.718 |
+| ⁴He | 4 | −0.802 | +0.237 | −0.423 | 28.296 |
+| ⁶Li | 6 | −1.077 | +14.526 | −1.340 | 31.994 |
 
-A genuine small number stabilises; this keeps falling — **41 decades** across
-that range. `log_norm` is 0 throughout, so no rescale compensates: the reported
-`log_trace` **is** `ln|Tr|`.
+**None reproduces AME's extensivity.** V1's near-constant ≈ +14.5 is entirely
+the divergent `(2,1)` term where the Pass-2 gate admits it (²H and ⁴He escape
+only because the gate excludes it there) — i.e. it is the artefact, not a signal.
 
-Feeding the chain's coefficients at full precision instead of their float64
-values, the fall continues without plateau: 1e-51 → 1e-81 → 1e-121 → 1e-141.
-The plateaus above are the *input* precision, not the trace.
+**Caveat, stated rather than buried:** this table is a direct-from-kernel
+reconstruction at k_max = 6 over 28 partitions. It does not reproduce the
+production accumulator (deuterium V0 here is −1.366 against the production
+−7.271), because it omits the q-Gaussian tier and the exact/gaussian split. It
+is evidence about the **relative structure** of the three baselines, not about
+their absolute values.
 
-## Why this explains what `qou-sv7h` measured
+## Two notes on method
 
-Three of that bean's observations follow with no new physics:
+**The per-step decomposition is not interpretable on its own.** Individual step
+deltas are dominated by a ±117 artefact that cancels in the total, so any
+diagnostic reading `per_step` sees numbers that mean nothing individually. They
+are also computed with float64 `math.log`, so summing −117.14 and +114.94 to get
+−2.198 spends ~3 significant digits.
 
-1. **Negative on both matrix families** (old braid-violating and corrected). A
-   structural zero survives the correction — both families give a vanishing
-   trace here.
-2. **Nearly A-independent** (−7.271 / −7.742 / −7.456 / −6.829 while the target
-   spans 12.7×). The A=1 step is present for *every* nucleus and contributes
-   **84.7 %** of its own step; a divergent term that does not depend on the
-   nucleus dominates.
-3. **Neither a sign flip nor a constant rescale repairs it.** A divergence is
-   not a mis-scaled binding.
+**Two over-strict thresholds in this probe hid its own findings.** The vanishing
+census was first written as "≥ 10 decades" and reported **zero** pairs — the
+real drop is 9.56. The V0-stability check was first written as bit-equality and
+**failed**, because V0 moves at 1e-51. Both are the class catalogued in
+[`2026-08-15-detector-blindness-taxonomy.md`](2026-08-15-detector-blindness-taxonomy.md),
+and in both cases the probe's own assertion is what caught it.
 
-## Scope, and what is not claimed
+## What is still open
 
-**The other traces are fine.** A census over every partition of k ≤ 5 across
-both deuterium steps finds **exactly one** vanishing pair in 34; all others are
-stable to < 3 decades under a 50 → 100 dps change. This is one identifiable
-term, not a general breakdown — which is what makes it worth reporting and
-fixable.
+The wrong sign. This audit removes one candidate explanation (divergence),
+refutes one proposed fix (V1), and shows a second (V2) to be finite but not
+sign-correcting. It does not say what the correct formula is, and does not touch
+the extensive-term question (`qou-brng`).
 
-Not claimed: what the correct binding formula is. Not touched: the
-extensive-term question (`qou-brng` / `aaa2ef9c51`), which concerns what should
-be **added** once term 1 is well-defined. That work is now differently
-positioned, though — `E = AME − B_pred` was fitted against a `B_pred` whose
-value is set by precision, so the extracted `E ≈ 5.4 MeV × C(A,2)` inherits
-that dependence.
-
-## A note on the detector
-
-The census threshold was first written as "≥ 10 decades" and reported **zero**
-vanishing pairs. The real drop is 9.56 decades — the detector's own threshold
-hid the finding it was written to catch. It is 3 decades now. Recorded because
-this is the same class as the blind spots catalogued in
-[`2026-08-15-detector-blindness-taxonomy.md`](2026-08-15-detector-blindness-taxonomy.md).
-
-Reproduce: [`computations/probes/uic_a1_vanishing_trace_probe.py`](../../computations/probes/uic_a1_vanishing_trace_probe.py) — 6/6 checks.
+Reproduce: [`computations/probes/uic_a1_vanishing_trace_probe.py`](../../computations/probes/uic_a1_vanishing_trace_probe.py) — 9/9 checks.
