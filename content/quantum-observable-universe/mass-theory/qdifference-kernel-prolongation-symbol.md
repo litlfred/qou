@@ -230,3 +230,27 @@ local monodromy, not fitted numerically.
 > correct axis those facts say nothing about $D_{q}$, and the
 > "$\sigma \leftrightarrow t$-shift dictionary" they posed as wall W2 is not a
 > question the conjecture asks.
+
+> **Scope note (2026-09-05) — an operator on the curve does not evade the
+> exclusion either, when its base map is a dilation.** The two preceding
+> exclusions constrain the *coefficient field*, so an operator living on
+> $\Sigma$ rather than on a coordinate line is not reached by them. It is
+> reached by the branch locus. An automorphism of $\Sigma$ covering the base
+> dilation $z \mapsto \lambda z$ is an isomorphism of coverings up to that base
+> automorphism, so it carries ramification points to ramification points and
+> therefore permutes the six finite branch points — the zeros of the branch
+> sextic $D(z) = 16z^{6} + 24z^{5} + 35z^{4} + 50z^{3} + 35z^{2} + 24z + 16$,
+> which is squarefree with $D(0) = 16 \neq 0$. Equal root multisets means
+> $D(\lambda z) = c\,D(z)$, and then two coefficients settle it: the constant
+> term gives $16 = 16c$, so $c = 1$, and the linear term gives $24\lambda = 24$,
+> so $\lambda = 1$ (`QOU.Mass.DilationBranchLocusRigidity`, sorry-free, generic
+> characteristic-zero field). **Only the identity dilation lifts to $\Sigma$**,
+> for every $\lambda$ and at every $q$ — scope (b), the invariant being the
+> sextic's own coefficients rather than a cited analytic theorem, so this
+> covers the root-of-unity case that the rationality theorem does not. The
+> substrate asks for $\lambda = q_{0}^{2} \approx 1.2321$, which is excluded
+> both by that identity and by the weaker bound $\lambda^{6} = 1$ that the
+> product of the roots alone would give. This does **not** touch a
+> $q$-difference operator whose base map is not a dilation, nor the fibre
+> monodromy route, which acts on the fibre and is untouched by any statement
+> about maps of the $z$-line.
