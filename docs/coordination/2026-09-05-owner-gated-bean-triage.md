@@ -248,10 +248,31 @@ in their current form, so this cluster is not optional work — the current form
 cannot be discharged. `qou-w1g8` carries a specific recommendation
 (`[CommRing R]`, `IsUnit` over `≠ 0`, `End(𝟙) ≅ R` as an explicit field).
 
-### CLUSTER 5 — notation. `qou-d7h1`
+### ~~CLUSTER 5 — notation. `qou-d7h1`~~ ✅ **RESOLVED 2026-09-05 — already ruled, no decision needed**
 
-`SU(3)_C` vs `SU(3)_F` collision. Blocks the flavour-SU(3) work from even being
-*stated* unambiguously. Cheapest of the 19; pure convention, no numbers move.
+**The fifth already-answered item.** The bean says the `SU(3)_C`/`SU(3)_F`
+collision "needs an owner convention decision". That decision landed
+**2026-09-03** in `afec87d506` (bean `qou-gght`), with a 28-site sweep — **eight
+days after** this bean's last update. `notation-collisions.md` now rules: bare
+`SU(3)` only for statements true of any `SU(3)`; otherwise `SU(3)_c` (colour) or
+`SU(3)_f` (flavour), roman lowercase — *because eightfold-open-problems item 4
+asks whether the two are the same, and a shared glyph presupposes an answer*.
+That is precisely the reasoning the bean wanted.
+
+**`qou-d7h1`'s medium-term work is unblocked and agent-actionable.**
+
+Compliance measured: 16 canonical `_c`, 19 canonical `_f`, 6 declared-legacy
+(explicitly not swept), **45 bare across 22 files** — of which **20 are in
+`appendix-standard-model/`** and are the SM gauge triple `SU(3)×SU(2)×U(1)`, i.e.
+the ruling's own carve-out.
+
+**One genuinely new, small question surfaced.** `q-deformed-nuclear-models-comparison.md`
+uses **Elliott's `SU(3)`** (3 sites, `\cite{elliott1958}`) — the harmonic-oscillator
+shell-model symmetry, a **third** group the register does not name. It is
+disambiguated today by the adjacent word "Elliott", the same mechanism the
+register accepts for `\zeta(s)` vs `\zeta_n`. **Proposed, not applied** (a register
+change is a convention claim): one line in `notation-collisions.md` recording it,
+so a future sweep does not "correct" those 3 sites into `_c` or `_f`.
 
 ### CLUSTER 6 — a construction choice with a falsifiable side. `qou-aemx`
 
