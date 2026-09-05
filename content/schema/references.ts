@@ -1231,6 +1231,15 @@ export const references: Reference[] = [
   // ── Yekutieli 2010 ────────────────────────────────────────────
   ref({
     id: "yekutieli2010",
+    library: {
+      docId: "arxiv-0801.0083v4",
+      dir: "library/arxiv-0801.0083v4",
+      pdf: "library/arxiv-0801.0083v4/0801.0083v4.pdf",
+      stage: "candidates",
+      pages: 36,
+      sections: 7,
+      arxiv: "0801.0083v4",
+    },
     type: "article-journal",
     title: "Central Extensions of Gerbes",
     author: [
@@ -1242,7 +1251,7 @@ export const references: Reference[] = [
     issue: "1",
     page: "445-486",
     DOI: "10.1016/j.aim.2010.03.002",
-    note: "arXiv:0801.0083",
+    note: "arXiv:0801.0083. PDF library/arxiv-0801.0083v4/0801.0083v4.pdf (ingested 2026-09-05, owner upload ad60e3f2). Numbered results as held: Thm 3.13 (quotient gerbe G/N), Thm 4.6 (obstruction to lifting isomorphisms, cl^1), Thm 4.17 (obstruction to lifting objects, cl^2), Thm 5.11 (existence of cl^2 under N-acyclic coverings), Thm 6.10 (pronilpotent gerbes: connectivity from H^1/H^2 of the graded pieces). NOTE: the corpus cites this paper as Thm 1.7 / Thm 3.4 / Thm 4.5 — none of those numbers exist in it; see docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md §9.",
     URL: "https://arxiv.org/abs/0801.0083",
   }),
 
@@ -1300,6 +1309,48 @@ export const references: Reference[] = [
     DOI: "10.1016/j.jpaa.2012.03.009",
     note: "arXiv:1103.1035 (revised 2011 version; an earlier preprint at arXiv:0905.0488 has the same title — same paper, different revision)",
     URL: "https://arxiv.org/abs/1103.1035",
+  }),
+  ref({
+    id: "yekutieli2014-descent",
+    library: {
+      docId: "arxiv-1109.1919v3",
+      dir: "library/arxiv-1109.1919v3",
+      pdf: "library/arxiv-1109.1919v3/1109.1919v3.pdf",
+      stage: "candidates",
+      pages: 13,
+      sections: 5,
+      arxiv: "1109.1919v3",
+    },
+    type: "article-journal",
+    title: "Combinatorial Descent Data for Gerbes",
+    author: [
+      { family: "Yekutieli", given: "Amnon" },
+    ],
+    "container-title": "Journal of Noncommutative Geometry",
+    issued: { "date-parts": [[2014]] },
+    volume: "8",
+    note: "arXiv:1109.1919. PDF library/arxiv-1109.1919v3/1109.1919v3.pdf. Descent data in cosimplicial crossed groupoids; a weak equivalence induces a bijection on gauge classes of descent data (Thm 0.1 / 2.4). Ingested 2026-09-05 (owner upload ad60e3f2).",
+    URL: "https://arxiv.org/abs/1109.1919",
+  }),
+  ref({
+    id: "yekutieli2006-averaging",
+    library: {
+      docId: "arxiv-math-0505170v2",
+      dir: "library/arxiv-math-0505170v2",
+      pdf: "library/arxiv-math-0505170v2/math0505170.pdf",
+      stage: "candidates",
+      pages: 11,
+      sections: 3,
+      arxiv: "math/0505170v2",
+    },
+    type: "article",
+    title: "An Averaging Process for Unipotent Group Actions",
+    author: [
+      { family: "Yekutieli", given: "Amnon" },
+    ],
+    issued: { "date-parts": [[2006]] },
+    note: "arXiv:math/0505170 [math.RT]. PDF library/arxiv-math-0505170v2/math0505170.pdf. Weighted average wav_G of sections of a unipotent-group torsor into a global simplicial section (Thm 0.1); used by the twisted deformation quantization papers. Journal metadata not verified this session. Ingested 2026-09-05 (owner upload ad60e3f2).",
+    URL: "https://arxiv.org/abs/math/0505170",
   }),
 
   // ── Freed, Hopkins, Lurie, Teleman 2010 ───────────────────────
@@ -7934,6 +7985,14 @@ export const references: Reference[] = [
   // ── Halverson–Ram 1998 — characters of Iwahori–Hecke ──────────
   ref({
     id: "halverson_ram_1998",
+    library: {
+      docId: "9511222v1",
+      dir: "library/9511222v1",
+      pdf: "library/9511222v1/9511222v1.pdf",
+      stage: "sections",
+      pages: 26,
+      sections: 5,
+    },
     type: "article-journal",
     title:
       "Murnaghan–Nakayama rules for characters of Iwahori–Hecke algebras of classical type",
