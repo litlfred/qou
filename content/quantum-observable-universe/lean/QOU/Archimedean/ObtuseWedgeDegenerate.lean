@@ -43,7 +43,7 @@
   -- Ref: [milnor1982] https://doi.org/10.1090/S0273-0979-1982-14958-8
   -- Ref: [manuscript] bean qou-w3eg (H4-5 obtuse)
 -/
-import QOU.Archimedean.OrthoschemeRotation
+import QOU.Archimedean.OrthoschemeLambdaSum
 
 namespace QOU.Archimedean.HyperbolicVolume
 
@@ -146,5 +146,27 @@ theorem perp_coeff_signs_of_obtuse {α β γ : ℝ} (hα0 : 0 < α) (hβ0 : 0 < 
   refine ⟨?_, ?_, sin_two_mul_neg_of_obtuse hγ (by linarith)⟩
   · exact Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
   · exact Real.sin_pos_of_pos_of_lt_pi (by linarith) (by linarith)
+
+/-! ### The two surviving wedges are disjoint, by the ACUTE lemma unchanged
+
+The point of the whole `π−γ` reformulation is that the obtuse configuration is
+built from acute pieces, so the existing acute machinery applies with no new
+geometry.  This is the first cash-out: `disjoint_wedgeAt_adjacent` demands
+`0 < ψᵢ < π/2` of both wedges, and `acute_of_obtuse_third` supplies exactly
+that for `α` and `β`.  The adjacency side condition
+`θ₁ + ψ₁ = θ₂ − ψ₂` holds on the nose:
+
+    (t + 2γ + α) + α  =  t + 2γ + 2α  =  (t + 2γ + 2α + β) − β
+-/
+
+/-- **In the obtuse configuration the two surviving wedges are disjoint.**
+No new argument — the acute `disjoint_wedgeAt_adjacent` applies verbatim,
+because `γ` obtuse forces `α` and `β` acute. -/
+theorem disjoint_wedgeAt_obtuse_pair {R t α β γ : ℝ}
+    (hα0 : 0 < α) (hβ0 : 0 < β) (hγ : π / 2 < γ) (hsum : α + β + γ = π) :
+    Disjoint (wedgeAt R (t + 2 * γ + α) α)
+      (wedgeAt R (t + 2 * γ + 2 * α + β) β) := by
+  obtain ⟨hα, hβ⟩ := acute_of_obtuse_third hα0 hβ0 hγ hsum
+  exact disjoint_wedgeAt_adjacent hα0 hα hβ0 hβ (by ring)
 
 end QOU.Archimedean.HyperbolicVolume
