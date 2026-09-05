@@ -63,9 +63,9 @@ not from the glyphs:
 | `ρ_F` | has **no** separate name in the producer — `rho_factor` was renamed to `nu_sdp` | the identity is asserted by the *renaming*, which is precisely what this class states |
 
 Everything is a class **parameter supplied by the caller**, following the rule recorded in
-`QOU/AlgebraicSubstrate/ConditionalClasses.lean` after that file's own retraction: *"an `∃`
-over a quantity you get to pick cannot be false, while a `∀` about a quantity the caller
-supplies can."* So the class **is refutable**, and `kashaev_density_eq_sdp_multiplicity_refutable`
+`QOU/AlgebraicSubstrate/ConditionalClasses.lean` after that file's own retraction — an `∃`
+over a quantity the class itself chooses cannot be false, whereas a `∀` about a quantity the
+caller supplies can be. So the class **is refutable**, and `kashaev_density_eq_sdp_multiplicity_refutable`
 below discharges that as a theorem rather than asserting it in prose.
 
 ## What is NOT encoded, and why — the honest half

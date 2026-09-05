@@ -85,9 +85,9 @@ noncomputable def IwahoriHeckeOfSn : Type max 0 v :=
 
 The *indexing* was right — `adjacentTranspositionIndex n` really is the simple
 reflections, unlike the generic `IwahoriHecke` which passed all of `W`.  What was
-missing is the other half: `IwahoriHeckeQuot` imposes the **quadratic relation only**,
-so the object was the free product of `n − 1` copies of `R[x]/((x−q)(x+1))` and no braid
-relation held in it.
+missing is the other half: `IwahoriHeckeQuot` imposes the **quadratic relation only**.
+The object was therefore the free product of `n − 1` copies of `R[x]/((x−q)(x+1))`, in
+which no braid relation held.
 
 Now built on `QOU.MathlibExt.IwahoriHecke.HeckeAlgebra` at the type-A Coxeter matrix, so
 both families hold. -/

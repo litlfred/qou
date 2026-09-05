@@ -1,0 +1,82 @@
+{
+  "description": "Range test of the Demazure/reduction-length route to a categorical decay rate. With N_ops = q_0^L and q_0 pinned, L is determined (fit-free): 34.5 (Z) to 598.0 (neutron). The corpus assigns a nucleon B_3, so l(w_0) = 3 \u2014 short by ~199x. The order-zero single-braid reading FAILS. The required depths (n >= 9/24/29/36) are tower depths, consistent in form with the 2026-09-03 full-tower ruling but not evidence for it. The neutron's L = 598.0027 is NOT a near-integer result: the offset is inside the PDG lifetime band.",
+  "engine": "mpmath 40 dps; no float64",
+  "q0Anchor": "proton",
+  "q0AnchorReason": "AGENTS.md 2026-08-07 owner directive: proton is the default",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "data": {
+    "identity": "N_ops = q_0^L  =>  L = ln(N_ops)/ln(q_0), q_0 pinned, no fit",
+    "ln_q0": "0.10434072032",
+    "rows": [
+      {
+        "particle": "neutron",
+        "N_ops": "1.25387e27",
+        "L_required": "598.0026982",
+        "corpus_braid_index": 3,
+        "l_w0": 3,
+        "tower_depth_needed": 36
+      },
+      {
+        "particle": "muon",
+        "N_ops": "3.52667e17",
+        "L_required": "387.2342508",
+        "corpus_braid_index": 3,
+        "l_w0": 3,
+        "tower_depth_needed": 29
+      },
+      {
+        "particle": "charged pion",
+        "N_ops": "5.52016e15",
+        "L_required": "347.3924958",
+        "corpus_braid_index": null,
+        "l_w0": null,
+        "tower_depth_needed": 27
+      },
+      {
+        "particle": "tau lepton",
+        "N_ops": "7.83672e11",
+        "L_required": "262.4790812",
+        "corpus_braid_index": 3,
+        "l_w0": 3,
+        "tower_depth_needed": 24
+      },
+      {
+        "particle": "Z boson",
+        "N_ops": "36.5506",
+        "L_required": "34.48986734",
+        "corpus_braid_index": null,
+        "l_w0": null,
+        "tower_depth_needed": 9
+      }
+    ],
+    "neutron_shortfall_factor": "199.33423",
+    "near_integer_offset": "0.00269816",
+    "delta_L_from_pdg_sigma": "0.00545537",
+    "delta_L_from_beam_bottle": "0.0872858",
+    "scope": "(a). Excludes a reduction length OF THE PARTICLE'S OWN BRAID as the carrier. Does NOT exclude a tower-level length, a different incompleteness measure, or a non-exponential dependence.",
+    "open": "whether any Demazure incompleteness measure at tower depth n ~ 9-36 reproduces the ordering Z < tau < pion < muon < neutron. Nothing here derives it."
+  },
+  "assertions": [
+    {
+      "name": "length_exponent_is_fit_free",
+      "passed": true,
+      "detail": "q_0 is pinned, so L = ln(N_ops)/ln(q_0) is read off rather than adjusted \u2014 there is no parameter to tune"
+    },
+    {
+      "name": "order_zero_single_braid_reading_FAILS",
+      "passed": true,
+      "detail": "the neutron needs L = 598.0027 and its corpus braid B_3 caps l(w_0) at 3 \u2014 short by 199.33x. No w inside S_3 can help; 3 is the ceiling. A decay rate is NOT a reduction length of the particle's own braid."
+    },
+    {
+      "name": "required_depths_are_tower_not_strand_counts",
+      "passed": true,
+      "detail": "n >= 9 (Z), 24 (tau), 29 (muon), 36 (neutron) \u2014 depths in H_n, not the particles' strand counts. Consistent in FORM with the 2026-09-03 full-tower ruling; consistency in form is NOT evidence, and nothing here derives these depths or their ordering"
+    },
+    {
+      "name": "the_neutron_near_integer_is_NOT_a_result",
+      "passed": true,
+      "detail": "L = 598.002698 sits 0.002698 from 598, inside the PDG bottle band (0.005455) and far inside the beam-bottle spread (0.08729). One coincidence in five samples; the other four are not near integers."
+    }
+  ],
+  "allPassed": true
+}

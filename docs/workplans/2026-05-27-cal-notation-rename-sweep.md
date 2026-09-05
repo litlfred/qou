@@ -1,7 +1,7 @@
 # Workplan: CAL notation rename sweep
 
 **Date:** 2026-05-27
-**Driver:** PR #1354 (merged) — finalized CAL-1=m_e, CAL-2=𝔇_β, CAL-3=𝔇_π
+**Driver:** PR #1354 (merged) — finalized CAL-1=m_e, CAL-2=P_skew^β, CAL-3=P_avg^π
 
 ## Scope
 
@@ -16,8 +16,8 @@
 
 | Old | New | Notes |
 |-----|-----|-------|
-| CAL-2 = m_μ/m_e | CAL-2 = 𝔇_β | β-decay width → Q_β → q₀ |
-| CAL-3 = Q_β | CAL-3 = 𝔇_π | pion decay width → m_π |
+| CAL-2 = m_μ/m_e | CAL-2 = P_skew^β | β-decay width → Q_β → q₀ |
+| CAL-3 = Q_β | CAL-3 = P_avg^π | pion decay width → m_π |
 | "mass ratio" language | "decay width" language | consistent with fraktur notation |
 
 CAL-1 = m_e is unchanged.
@@ -39,7 +39,7 @@ CAL-1 = m_e is unchanged.
 ## Method
 
 Mechanical sed/grep replacement with manual review of edge cases.
-The content is "CAL-2 = m_μ/m_e" → "CAL-2 = 𝔇_β" and
-"CAL-3 = Q_β" → "CAL-3 = 𝔇_π". Context-dependent cases
+The content is "CAL-2 = m_μ/m_e" → "CAL-2 = P_skew^β" and
+"CAL-3 = Q_β" → "CAL-3 = P_avg^π". Context-dependent cases
 (where the old meaning is mathematically correct in situ)
 need individual judgment.

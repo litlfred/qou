@@ -21,7 +21,7 @@ consumes CODATA `M_P_MEV` and `m_n_derived_3input` (lines 100, 102 and lines
 Per the three-calibration discipline
 (`content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md`),
 that is a fourth/fifth dimensional input over the allowed
-{CAL-1 m_e, CAL-2 m_μ/m_e → q_0, CAL-3 𝔇_π}.  This script is an
+{CAL-1 m_e, CAL-2 m_μ/m_e → q_0, CAL-3 P_avg^π}.  This script is an
 **empirical-fit probe** for the binding-fraction ansatz space —
 the Δ_λ values it emits are *targets* fitted to CODATA, not
 predictions.  The witness is tagged `auditOnly`; the output is

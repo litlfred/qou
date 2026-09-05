@@ -148,3 +148,32 @@ print(sp.N(e.subs(q, sp.Float(str(Q), 50)), 30))   # 1.06530614425444993...
 
 Convention D for the same braid at the same q₀:
 `trM_borromean(q) = |(4+h²−3h⁴−h⁶)/(h²+4)|`, `h = q − 1/q` → `0.998562163836787`.
+
+
+## 🛑 CORRECTION 2026-09-05 — this bean's `tr_M_atomic(1,0)` figure is PRE-MIGRATION
+
+The snippet above prints `1.06530614425444993`. **That number is stale**, and so
+is the `docs/audits/2026-08-08-borromean-trace-convention-forcing.md` table it
+fed. Re-run today, the same code prints **`1.14575969245730086969`**.
+
+**Cause, attributed rather than guessed:** `c1a3299434` (2026-08-16, *"markov_peel:
+the docstring said convention C; the live path is D"*) migrated the
+`word_to_element` path these numbers were traced through. This bean and that
+audit both predate it by ~8 days, so every figure measured through
+`markov_peel` here is a **convention-C** measurement wearing no C label.
+
+All three of that audit's figures moved, and one conclusion **inverted** — it
+read *"The pure Borromean word reproduces convention C exactly"*; the word now
+reproduces **convention D** exactly, and `probe3qrv.py` prints its own verdict,
+`|interleaved beta_Bor| / D = 1.0000000000000000000`. The 195.8 ppm C-gap that
+sentence attributed to the Borromean word is gone. Corrected in place there.
+
+**What survives:** the qualitative result this bean and that audit were for —
+the grouped core `σ₀³σ₁⁻³` is not β_Bor (0.1801 vs 0.9986, 82 % off), the
+11-letter atomic word is not β_Bor, and comparing `tr_M_atomic` to
+`tr_M(β_Bor)` is a category error. Only magnitudes and the C-label moved.
+
+Re-measured under `qou-hu1f` with an independent implementation (Frobenius
+pairing `Σ_λ y_λ χ^λ`, mpmath 60 dps, Hoefsmit seminormal) that agrees with
+`tr_M_element` at **ratio 1.0** on both words:
+`computations/probes/nf_vs_canonical_word_order_probe.py`.

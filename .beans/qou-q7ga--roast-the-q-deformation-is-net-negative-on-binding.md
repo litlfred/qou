@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T07:07:35Z
-updated_at: 2026-09-04T12:31:38Z
+updated_at: 2026-09-04T20:51:04Z
 ---
 
 Measured 2026-09-04 on 2548 AME nuclides with MEASURED binding energies
@@ -126,3 +126,4 @@ FIRST-ORDER value. The exact one is `2 ln q_0 = 0.2086814` — from
 `ln[2]_q -/+ 2 ln q` identically. Use the exact value.
 
 Full working and the unpinnedness result: `qou-y2np`.
+## 2026-09-04 (qou-yau0) — one row revised on the artifact-free law: the residual's asymmetry correlation is −0.6965 (not −0.804) and the surface correlation is −0.298 (not −0.178) once the writhe artifact is removed; 'wrong by 4×' becomes 2.3×, and the surface term is a live lead again. Control reproduces the un-normalised numbers to 3 dp. docs/audits/2026-09-04-normalised-law-residual-shape.md.

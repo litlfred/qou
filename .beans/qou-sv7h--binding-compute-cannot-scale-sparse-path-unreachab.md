@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-05T06:36:07Z
+updated_at: 2026-09-05T08:05:00Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -105,3 +105,151 @@ change of the underlying representation.
 **Falsifier stated in advance:** if the sign traces to a free choice — an
 orientation, a w_0 convention, an ordering of the LP objective — then it is not
 structural and this framing is wrong.
+
+## Step 2 answered 2026-09-05 (qou-0wqd / PR #6708) — nothing moves; step 3 is what is left
+
+Step 2 was "wire the correct family in, then re-run the binding numbers and
+report what moved". Measured: `1e-14`, not the 71-221 % the step-2 first-half
+table predicted. The correct family is now in
+`hecke_core_legacy._build_ysn_matrices` (`a_rho = h/(1 - q^(-2 rho))`, braid
+defect `0.7315 -> 7.5e-17`, `ysn_braid_relation_audit.py` exit 0).
+
+Two independent reasons the accumulator could not move:
+
+1. **The kernel bypasses the Python family entirely.**
+   `_lp_kernel_steps(partition, chains)` takes the partition SHAPE, not
+   `entry['ysn']`, so Rust rebuilds its own braid-satisfying family; both
+   consumers early-return on it. 193 calls, 193 served.
+2. **The consumers take traces, and the trace cannot see the defect.**
+   `Tr(ABA) - Tr(BAB) = Tr(B) - Tr(A) = 0` from the quadratic relation alone, in
+   any dimension. Established at MPFR in
+   `computations/audits/ysn_trace_blindness_probe.py` (9/9): legacy MATRIX braid
+   defect `0.731514`, legacy TRACE braid defect `6.68e-52`.
+
+**Step 3 (performance / precision) is now the live item**, and it is joined by a
+consumer this arc has not assessed: `q_sweep_sdp_atom` in
+`sdp_cross_channel.py` imports `_build_ysn_matrices` directly and uses the
+matrices, not their traces — so it is the one place where the defect could have
+had a numerical consequence, and nobody has measured it.
+
+
+## The `q_sweep_sdp_atom` gap is closed — it has no callers (2026-09-05)
+
+Measured, correcting my own note above: `q_sweep_sdp_atom` is defined at
+`computations/sdp_cross_channel.py:394` and **called nowhere in the repo**. A
+tree-wide grep returns its own `def` plus only the three places this session
+wrote *about* it (this bean, `qou-0wqd`, and the audit doc). No witness
+references it.
+
+It was named as "the one place the defect could still bite" because it is the
+only importer of `_build_ysn_matrices` outside `hecke_core_legacy` and it uses
+the **matrices** rather than their traces. That reasoning was right; the
+premise was not — there is no caller, so no recorded number came from it, and
+the fix makes it correct before anyone writes one.
+
+This is a grep, not a run: it establishes there is no consumer, not that the
+function is otherwise correct.
+
+**So the arc's remaining item is step 3 alone** — the builder is still float64
+(`math.sqrt`, `1.0` literals, no `mp.dps`), which is why the Python family
+agrees with the Rust MPFR reference only to ~1e-16.
+
+
+### Cross-reference for the sign claim (from `qou-0wqd` / PR #6708, 2026-09-05)
+
+The claim section above rests its "the sign survives a change of the underlying
+representation" argument on the accumulator values *"old braid-violating:
+-0.0319 at k=4 to -2.1955 at k=8; corrected: -0.0896 to -2.0200"*. Those are the
+2026-08-31 audit's step-2 table, which PR #6708 **retires**: its *corrected*
+column is what today's `main` already produces WITH the braid-violating
+matrices, and its *current* column reproduces on no tree measured there.
+
+**The conclusion is strengthened, not weakened.** Varying only the matrix family
+moves the accumulator by `1e-14`, and for a proved reason — the consumers take
+traces, and `Tr(ABA) - Tr(BAB) = Tr(B) - Tr(A) = 0` follows from the quadratic
+relation alone in any dimension. So the sign is invariant under that change by a
+structural argument rather than by two numerical runs that happened to agree in
+sign. Quote the invariance, not the table.
+
+**And it narrows the falsifier usefully:** since the representation cannot move
+the accumulator at all, the sign cannot be traced to anything in the seminormal
+family — the free-choice candidates worth checking are the ones OUTSIDE it (the
+LP objective's ordering, an orientation, a `w_0` convention).
+
+
+## The sign IS answered — the Pass-2 gate forces it (2026-09-05, PR #6752)
+
+The falsifier stated in advance above asked whether the sign traces to a free
+choice. **It traces to the gate**, which is neither a free convention nor part
+of the seminormal family — so the narrowing in the cross-reference section
+above ("look OUTSIDE the family") pointed the right way.
+
+`unified_iterative_correction` returns `B = sum over GATED lambda of
+C_lambda * ( ln|Tr M_lambda(A)| - ln d_lambda )`. Three measured steps:
+
+1. `C_lambda >= 0` everywhere — **0 of 682** negative.
+2. Pass 2 keeps exactly the partitions with final trace `<= 0` (complementary
+   slackness).
+3. `|Tr| >= d` holds in **34.1 %** of `Tr > 0` cases and **3.4 %** of
+   `Tr <= 0` cases — a 10x asymmetry, structural because `Tr(I) = +d`.
+
+Non-negative scale times a negative log ⇒ `B < 0` forced, for any nucleus.
+**Same cause explains the A-independence**: gated-set size across A = 2..6 is
+`[15, 9, 9, 10, 15]` while AME spans 12.7x — the output is a property of the
+gate's selection, not of the nucleus.
+
+Probe: `computations/probes/uic_sign_forced_by_gate_probe.py` (5/5).
+
+## The gate's justification is disproved — by a proof already in the corpus
+
+`content/quantum-observable-universe/mass-theory/operator-selection-lp.md`
+(commit `6b7d2ec4a8`) proves the operator-selection LP degenerate: `b_1 = 1`
+makes the first Frobenius row equal the objective vector, so the optimum is
+identically 0, `y_0* = 0` by strong duality, and the minimiser set is a
+positive-dimensional face. That commit fixed the content blocks and never
+touched `hecke_core_legacy.py`.
+
+- `lp_shadow_price` sets `y_0 = 1/[k]_q!` and calls it "the dual variable of
+  the normalisation constraint". Measured 0.497 (k=2) to 1.56e-4 (k=7) —
+  never 0. What it actually does is zero the two extremes `(k)` and `(1^k)`.
+- Substituting the **proved** `y_0* = 0` makes the sign MORE negative
+  (2H -1.3657 -> -1.6092; 6Li -1.0770 -> -1.6065). So correcting the dual is
+  necessary and **not sufficient** — the gate is the mechanism.
+
+Probe: `computations/probes/uic_gate_justification_disproved_probe.py` (5/5).
+
+## Replacement objective — written up, two falsifiers run, decision is the owner's
+
+`docs/proposals/2026-09-05-operator-selection-objective-replacement.md`.
+
+New measurement: **an index-set mismatch**. The primal LP is NF-basis-indexed
+(`d = n! = 720` at n=6) while `prop:mass-coefficient-shadow-price` claims a
+**partition's** shadow price — 11 partitions of 6, not 720. No partition-indexed
+LP exists in the corpus. The natural bridge makes the object a `d_lambda x
+d_lambda` matrix, not the scalar the code multiplies; and the `d_lambda = 1`
+blocks, where the scalar type IS correct, are exactly the two `y_0 = 1/[k]_q!`
+zeroes out. Probe: `lp_partition_index_mismatch_probe.py` (4/4).
+
+Five options O1-O5 with cost / risk / what-each-forecloses; **which one to take
+is the owner's decision**, the same one `6b7d2ec4a8` declined, one level down.
+
+- **O3 falsifier FIRES** (`sdp_o3_falsifier_probe.py`, 6/6). The block SDP does
+  exclude all six LP-optimal vertices (min eig -7.33 / -3.85) but is degenerate
+  by a different route: SU(2) gives `y_(1,1,1) = 0` exactly, so a Phi on that
+  block is PSD with objective 0 and nonzero net (0.02016). The ray matches the
+  known q-antisymmetriser radical to **6.4e-51** — not a new object. Amended to
+  **O3' — pose the SDP on `H_n(q)/radical`**.
+- **O3' falsifier does NOT fire** (`sdp_o3prime_weight_positivity_probe.py`,
+  5/5). n = 3..12 at the proton pin: >2-row partitions vanish exactly, every
+  survivor strictly positive, `sum y_lambda f^lambda = 1` throughout; still
+  positive at `k_max = 11` (9.2e-4). Cross-validated at n=3 to 14 digits
+  against the weights the O3 probe solved independently.
+
+**Do not start O3' expecting it to fix the sign.** It fixes the type error;
+the feasible geometry still does not distinguish `B_3`, so selection stays open.
+
+## Still open on this bean
+
+- Step 3 (the float64 builder) — untouched by this session.
+- 6Li / A>=6 for the extensive term's SHAPE (`qou-brng`) — a run is in flight
+  but that is a different question from the sign.

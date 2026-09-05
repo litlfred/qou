@@ -7,7 +7,7 @@ leaking into a single computation.  Per AGENTS.md §"q₀ anchor convention", q�
 but two documented pins:
 
     IDEAL / canonical 3-CAL (mathematical)
-        CAL-2 = 𝔇_β, pinned via its proxy m_μ/m_e
+        CAL-2 = P_skew^β, pinned via its proxy m_μ/m_e
         → q₀ = 1.1099785956427390466817...          (MUON, live CODATA-2022)
         → this docstring read 1.10997859555733471989... until 2026-09-04. That is
           the RETIRED self-certified pin A, superseded 2026-08-22 (fca08de7d2) by

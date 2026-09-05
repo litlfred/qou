@@ -1,0 +1,98 @@
+{
+  "probe": "qbeta_fibre_unit_circle_opens_route5_probe",
+  "bean": "qou-cds1",
+  "question": "does the fibre reading of conj:im-q-physical-role open route 5, and what does the Kashaev regime supply?",
+  "answer": "yes, and exactly: det A = -(ln q)^2 > 0 iff |q| = 1, so the unit circle is the whole locus on which the step-18/19 exclusion lifts -- and it is the same locus candidate (i) names. The root-of-unity sublocus needs theta/2pi rational, which no measurement decides; k/N = 1/111 is the only low-denominator candidate and sits inside the target's own 4.0e-4 uncertainty, so it is neither excluded nor evidence.",
+  "scope": "(a) for the arithmetic; the ellipticity criterion is an identity",
+  "q0": "1.1099785827513808076",
+  "q0_pin": "proton (q_at)",
+  "dps": 50,
+  "theta_required": "0.056617300794061032363",
+  "theta_over_2pi": "0.009010923285895504211",
+  "det_A_at_real_q0": "-0.01088698591679619204",
+  "det_A_on_unit_circle": "0.0032055187492051840057",
+  "continued_fraction": [
+    0,
+    110,
+    1,
+    41,
+    2,
+    2,
+    5,
+    85
+  ],
+  "convergents": [
+    {
+      "k": 1,
+      "N": 110,
+      "theta": "0.057119866428905331608",
+      "rel_err": "0.0088765382276404232734"
+    },
+    {
+      "k": 1,
+      "N": 111,
+      "theta": "0.056605273037653932225",
+      "rel_err": "-0.00021243959423021117053"
+    },
+    {
+      "k": 42,
+      "N": 4661,
+      "theta": "0.056617417485849095051",
+      "rel_err": "2.0610623683234333773e-6"
+    },
+    {
+      "k": 85,
+      "N": 9433,
+      "theta": "0.056617274579695203068",
+      "rel_err": "-4.6300981257737665497e-7"
+    },
+    {
+      "k": 212,
+      "N": 23527,
+      "theta": "0.056617302891234425686",
+      "rel_err": "3.7041211147648871462e-8"
+    },
+    {
+      "k": 1145,
+      "N": 127068,
+      "theta": "0.056617300789503466774",
+      "rel_err": "-8.0497754656711302889e-11"
+    },
+    {
+      "k": 97537,
+      "N": 10824307,
+      "theta": "0.05661730079407165061",
+      "rel_err": "1.875442122641840137e-13"
+    }
+  ],
+  "target_own_uncertainty_rel": "0.0004",
+  "coincidence_2pi_over_theta_vs_100_q0": "0.0001931858159707180056",
+  "assertions": [
+    {
+      "name": "unit_circle_is_exactly_where_the_exclusion_lifts",
+      "passed": true,
+      "detail": "det A = -(ln q)^2 is positive iff ln q is purely imaginary iff |q| = 1; at the real anchor det A = -0.010886986 < 0 (hyperbolic, the step-18 exclusion) and on the circle det A = +phi^2 > 0 (elliptic). The fibre locus is not one candidate among many -- it is the whole solution set."
+    },
+    {
+      "name": "ellipticity_locus_coincides_with_candidate_i_locus",
+      "passed": true,
+      "detail": "the ellipticity requirement (this probe) and the chirality identification (candidate (i)) select the SAME locus |q| = 1 from independent directions -- recorded as a structural correspondence, not as evidence for either"
+    },
+    {
+      "name": "only_N_111_is_inside_the_targets_own_uncertainty",
+      "passed": true,
+      "detail": "k/N = 1/111 sits 0.0002124 relative from the required phase, INSIDE the target's own 0.0004 band, so it cannot be excluded -- and equally is not evidence. Larger denominators fit better and mean nothing: a denominator is a free parameter. No search for a reason N should be 111 was run."
+    },
+    {
+      "name": "rationality_is_not_decidable_by_measurement",
+      "passed": true,
+      "detail": "a root of unity supplies theta iff theta/2pi is rational; every real number has rational approximations of arbitrary accuracy, so no measurement settles this. The convergents illustrate the point rather than answering it."
+    },
+    {
+      "name": "coincidence_is_recorded_not_pursued",
+      "passed": true,
+      "detail": "2pi/theta and 100*q_0 agree to 0.0001932 relative; an integer index against a dimensionless modulus with a hand-inserted factor of 100. Recorded so a later reader does not rediscover it as new."
+    }
+  ],
+  "allPassed": true
+}

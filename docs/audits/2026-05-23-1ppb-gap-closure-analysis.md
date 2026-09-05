@@ -1,5 +1,11 @@
 # 1ppb gap closure — analysis of structural ceilings (2026-05-23)
 
+> **Notation note.** This document predates the 2026-09-05 calibration rename and uses
+> the superseded symbols `𝔇_β` (CAL-2) and/or `𝔇_π` (CAL-3). Those are now
+> `P_skew^β` (the bar-skew β-channel) and `P_avg^π` (the bar-even π-channel); the
+> `𝔇` family is reserved for genuine decay rates (`𝔇_n`, `𝔇_μ`, `𝔇_K` = ℏ/τ).
+> The analysis below is left as the record of what was analysed at the time.
+
 **Context**: post-#942 merge (substrate flavor-split wireup), the
 per-observable 100× status shows m_p / m_n at honest +2.89%
 (Family A class-uniform residual). User directive: *"lets work on

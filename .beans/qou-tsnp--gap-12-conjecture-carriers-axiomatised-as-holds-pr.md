@@ -349,3 +349,131 @@ the same each time: **a carrier known to be repaired must not come back as
 unrepaired.**
 
 Full detail: `docs/audits/2026-09-05-qou-tsnp-queue-is-five-and-five-parsers-were-wrong.md`.
+
+## 2026-09-05 (final) — all five open carriers repaired; what is left is two author decisions
+
+The five from the re-measurement above are closed. Each in the prescribed shape:
+content encoded as **caller-supplied parameters** (per `ConditionalClasses.lean`'s
+own rule — *"an `∃` over a quantity you get to pick cannot be false, while a `∀`
+about a quantity the caller supplies can"*), refutability **discharged as a
+theorem** rather than claimed in a docstring, and **no instance** provided.
+
+| carrier | PR | encoded | derived | left unstated, and what must grow first |
+|---|---|---|---|---|
+| `PFromBraidMirror` | #6728 | `involutive`, `writhe_neg`, `fixes_q` — the third is what separates `P` from bar | `p_fixed_point_writhe_zero` | `bar = P·C·T`; needs one braid-word type carrying `P`, `C`, `T` at once |
+| `DimMasterPentagon` | #6731 | master identity + specialisation | the transport | — |
+| `KashaevDensityEqualsSdpMultiplicity` | #6734 | the prefactor identity | — | the density half; said plainly rather than fabricated |
+| `Mirror3d3dCorrespondence` | #6737 | `four_loop_matches`, `borromean_h4 = −3/4` | `mirror3d3d_four_loop_value` | a 3d `N=2` partition-function type with a loop-order expansion |
+| `TypeBFoldingCpt` | #6741 | `fold_reverses`, `foldAct_involutive`, `stable_iff_fixed`, `anti_iff_moved` | **four** theorems, incl. `typeBFold_no_global_chirality_grading` | `CPT = C⊗P⊗T` (same missing object #6728 names); the type-`B`-*specifically* label needs a root-system/Cartan type |
+
+Three properties of this batch worth keeping:
+
+1. **Two carriers independently named the same missing object.** #6728 and #6741
+   both stopped at `bar = P·C·T` / `CPT = C⊗P⊗T` for the same reason — no single
+   type carries `C`, `P`, `T` and the fold action simultaneously. Two agents
+   reaching the same boundary from different blocks is evidence the boundary is
+   real, not a convenience.
+2. **#6741 re-derives a corpus result from its own repaired fields.**
+   `typeBFold_no_global_chirality_grading` entails
+   `StandardModel.Chirality.stable_matter_and_global_chirality_incompatible`.
+   That is the strongest available check that a repaired carrier asserts enough:
+   it now implies a known non-trivial fact about its own subject, and with the
+   sign the right way round.
+3. **The D11 lesson was applied prospectively, twice.** A library-twin check ran
+   before #6737 and #6741 and came back empty for the first; for the second it
+   came back **non-empty** — `QOU.BraidKnot.SymmetricCrystalPairProduction`
+   already carries the bar-invariance leg — so that leg was deliberately **not**
+   restated. D11's failure mode (a second carrier competing with a real one) was
+   avoided by design rather than caught after the fact.
+
+**Seven dead pointers dropped across the batch** — `lean/QOU/…/<Carrier>.lean`
+"(file pending)" headers naming files that do not exist, plus one `.md` section
+reference with no such section. This rot is systematic in the queue, not
+incidental; a carrier repair should grep its own header before trusting it.
+
+### What remains — both are author decisions, neither is repair work
+
+- **D11 `WignerSu4FromSpinIsospin` ref repoint** (the mis-ref above). Zero
+  consumers of either class, so the no-op is safe and cheap.
+- **The 2026-08-23 wiring decision** (`UNPINNED-EMPTY` as a ledger criterion,
+  which turns `--check-ledger` red corpus-wide until ~77 carriers are read).
+
+Both are framed with evidence, options, defaults and blast radius in
+[`docs/audits/2026-09-05-four-decisions-from-the-carrier-queue.md`](../docs/audits/2026-09-05-four-decisions-from-the-carrier-queue.md)
+(PR #6740).
+
+### One defect found — it was in FOUR merged PRs, not two, and it is now fixed
+
+`voice-scholarly-default`'s `SECOND_PERSON_RE`
+([`qa-checkers-voice.ts:873`](../folio-assistant/content/pipeline/qa-checkers-voice.ts))
+lists `get` in its `you (?:can|…|get|…)` alternation, and the criterion reads
+Lean docstrings when a `.lean` is present (`qa-criteria-registry.ts:177`,
+`also_invalidated_by: ["lean"]`). Every carrier that quoted
+`ConditionalClasses.lean`'s design rule **verbatim** therefore contains a
+matching string, and each read `pass` **only because its sidecar predates the
+repair**. Measured on `spin-from-so3-fiber` (#6683): recorded lean hash
+`01a66001ac03` against a live `dc3554e7761d`; `p-from-braid-mirror` (#6728),
+`828d9508850d` against `8c59ae7dbda4`.
+
+**The count needed correcting, and the correction is the point.** #6741's report
+named **two** siblings. Re-measured by running the actual regex over every
+sidecar'd content-block `.lean` in the tree — rather than over the two files
+named — the answer is **four**: #6683, #6728, #6734 (`kashaev-…`) and #6737
+(`mirror-3d-3d-…`). #6671 and #6731 never carried the quote; #6741 paraphrased.
+A report naming instances is not a measurement of the population, even when the
+instances it names are real.
+
+**Fixed** on the decision-brief branch under the adjacent-bug rule: all four
+paraphrase the rule instead of quoting it, the regex now returns **0** hits
+across sidecar'd content Lean, and all four verify `lean`-direct **exit 0**.
+
+The general hazard stands and is not fixed by this: **a stale sidecar reads
+exactly like a pass**, so a sweep against a file its sidecar predates certifies
+nothing. Four criteria-clean verdicts here were about files that no longer
+existed in that form.
+
+## 2026-09-05 (ruled) — D11 closed, and TWO MORE mis-refs found in the same shape
+
+The author ruled *"do as recommended"* on the four-decision brief. D11 — the one item this
+bean had left as an author decision — is **closed**, and applying the ruling turned up two
+further instances of the same defect that were not in this bean's list of twelve.
+
+**D11 is closed, but not the way the brief described.** The library carrier this bean
+called *"substantive, 2 real fields"* was **uninhabitable**: both content fields quantified
+over all reals with no hypothesis, so `E_gate = E_0·log(1/W_λ)` at `E_gate := 1, E_0 := 0`
+forces `1 = 0`, and `¬ Nonempty WignerSU4FromSpinIsospin` was provable (`lean`-direct,
+exit 0). **That is a worse defect than the `holds : Prop` stub it was to replace** — a
+vacuous carrier makes a conditional theorem conditional on *nothing*; an uninhabitable one
+makes it **vacuously true**, which reads as *proved*. Both were repaired: stub deleted,
+file moved to `QOU/BraidsAndKnots/` so decl path matches file path, and the class
+re-stated on caller-supplied parameters.
+
+**New shape for this bean's taxonomy: `_satisfiable` as well as `_refutable`.** Every
+repair in this queue discharged refutability. D11 shows that is only half the check —
+*"no instance is provided"* and *"no instance could exist"* are indistinguishable from
+outside, and this carrier was the second while reading as the first. Carriers should
+discharge **both** directions.
+
+**Two more mis-refs, found by decision 4.** `quantum-langlands-dual` and
+`reverse-limit-q-to-infinity` each carry a `holds : Prop` stub **shadowing** a substantive
+library carrier via §0a candidate-1 — `QOU.Conjectures.QuantumLanglandsDual` (4 fields) and
+`QOU.IwahoriHecke.TypeA.ReverseLimitQToInfinity` (a proved identity **with an instance**).
+Neither is on this bean's list of twelve, because that list was built from carriers
+*verified to have no library decl under the ref leaf* — and here the leaf names differ from
+the ref's namespace, exactly the D11 blind spot. Both stubs deleted; the Langlands ref
+repointed.
+
+**So the shadow class is bigger than the three this bean has recorded** (`TFromTraceCyclicity`,
+D11, and the four from the 18 → 16 → 12 correction). The mis-ref is a *sibling* defect to
+`holds : Prop`, not a subcase, and no detector in this bean's history looks for it: the
+`free-prop-field-audit` finds the vacuous class and says nothing about whether a real one
+exists elsewhere under a different name. Worth a bean of its own if the pattern recurs.
+
+### Method note — a cached `fail` prints as absent
+
+`qa-sweep`'s summary line counts only criteria **evaluated in that run**. Measured: a second
+sweep of `p-from-braid-mirror` printed `0 critical, 0 major, 0 minor` while its sidecar held
+`detangler-no-forward-ref` as `fail`/major from an earlier run. **A false clean**, and it
+would have gone into a PR body as "all seven blocks clean". Read the sidecar entry, not the
+summary. Same lesson as the stale sidecars one entry up, one level higher: the artifact that
+reports the verdict is not the verdict.

@@ -34,7 +34,7 @@ import sys
 from pathlib import Path
 
 # Canonical q₀ decimal signatures (CAL two-layer convention, AGENTS.md).
-_MUON_SIG  = "1.109978595557"   # ideal / canonical 3-CAL (CAL-2 = 𝔇_β)
+_MUON_SIG  = "1.109978595557"   # ideal / canonical 3-CAL (CAL-2 = P_skew^β)
 _PROTON_SIG = "1.10997858275"   # physical-observations (m_p/m_e)
 
 HERE = Path(__file__).resolve().parent

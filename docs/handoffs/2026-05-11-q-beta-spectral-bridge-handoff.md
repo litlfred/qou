@@ -164,7 +164,7 @@ PR #637's deliverables stand as-is. No further work needed on this branch beyond
 
 - **No fitting / no algebraic +1**
 - **No float64** in production scripts (all mpmath 50 dps)
-- **Three-calibration discipline** (CAL-1 m_e, CAL-2 q_0, CAL-3 𝔇_π as PREDICTION)
+- **Three-calibration discipline** (CAL-1 m_e, CAL-2 q_0, CAL-3 P_avg^π as PREDICTION)
 - **Form A as canonical Q_β** for free neutron (A=1)
 - **No paper changes** in PR #637 beyond what's already committed (per owner directive)
 

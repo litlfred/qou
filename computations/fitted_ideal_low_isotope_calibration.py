@@ -36,7 +36,7 @@ currently fail it.
 There are **exactly three calibration points in every layer**; the layers differ
 only in how the three values are *chosen*:
 
-  math ideal        the canonical triple CAL-1 m_e, CAL-2 𝔇_β, CAL-3 𝔇_π,
+  math ideal        the canonical triple CAL-1 m_e, CAL-2 P_skew^β, CAL-3 P_avg^π,
                     by definition.
   observational     the same three, taken as MEASURED (CODATA / PDG).
   fitted ideal      the same three, treated as FREE PARAMETERS and chosen to
@@ -75,10 +75,10 @@ Low-isotope binding enters the chain as
 
   CAL-1 (m_e)  — a pure multiplicative MeV scale on every B.  Identifiable
                  only through the overall normalisation.
-  CAL-2 (𝔇_β)  — enters BOTH the MeV scale Q_β and the dimensionless trace
+  CAL-2 (P_skew^β)  — enters BOTH the MeV scale Q_β and the dimensionless trace
                  difference, non-linearly and differently per isotope.
                  Identifiable.
-  CAL-3 (𝔇_π)  — DOES NOT APPEAR IN B AT ALL. The low-isotope binding
+  CAL-3 (P_avg^π)  — DOES NOT APPEAR IN B AT ALL. The low-isotope binding
                  objective is FLAT in CAL-3.
 
 So the fitted ideal has three calibration points but only **two identifiable

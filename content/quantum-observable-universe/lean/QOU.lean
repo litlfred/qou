@@ -427,7 +427,7 @@ import QOU.ParticleInteractions.AtomicityLieRank
 import QOU.ParticleInteractions.AtomicityGroupRank
 import QOU.ParticleInteractions.AtomicityRankOneToSingleObject
 import QOU.ParticleInteractions.AtomicitySelfDualToSymplectic
-import QOU.ParticleInteractions.WignerSU4FromSpinIsospin
+import QOU.BraidsAndKnots.WignerSU4FromSpinIsospin
 import QOU.ParticleInteractions.WeakIsospinT3Grading
 import QOU.Elaboration
 import QOU.PathIntegrals

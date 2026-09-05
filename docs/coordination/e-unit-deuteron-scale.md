@@ -3,7 +3,7 @@
 **Correction (owner, 2026-07-07).** The earlier framing of `E_unit` as a
 *new derivable absolute scale* was wrong: a fourth calibrated energy is
 **CAL-4, a cohomological violation** — H¹(Bring) = 2W has exactly three real
-DOF, so exactly three calibrations (m_e, 𝔇_β, 𝔇_π). `E_unit` **must** be a
+DOF, so exactly three calibrations (m_e, P_skew^β, P_avg^π). `E_unit` **must** be a
 function of those three, not a new input. The "narrow Subgoal-2 scope for a
 new bar-even scale" request is **withdrawn** as mis-posed; no Subgoal-2
 reversal is in force. `E_unit` closure is an *in-scope* 3-CAL derivation, not
@@ -15,8 +15,8 @@ triple.
 
 ## Why 𝔇 is the natural carrier
 
-- CAL-2 is the neutron β-decay width **𝔇_β**; its energy proxy is
-  `Q_β = ℏ/𝔇_β ≈ 0.784 MeV`. This is a genuine calibration datum, **not** a
+- CAL-2 is the neutron β-decay width **P_skew^β**; its energy proxy is
+  `Q_β = ℏ/P_skew^β ≈ 0.784 MeV`. This is a genuine calibration datum, **not** a
   new input.
 - The reeb-flow rate `g` **is a rate** (linking number per unit Reeb
   parameter). A rate is dimensionally a **width**. So the deuteron law
@@ -66,7 +66,7 @@ error: it is `B(²H)` that is bar-odd, carried entirely by the unit.
 
 ## Open question this ledger tracks
 
-Is `E_unit = ℏ/𝔇` for a `𝔇` derived from CAL-2 (the β-width `𝔇_β`, dressed
+Is `E_unit = ℏ/𝔇` for a `𝔇` derived from CAL-2 (the β-width `P_skew^β`, dressed
 by the bond's 2-body structure), reproducing `0.995940 MeV` **with a derived
 `O(1)` factor and the correct parity** — keeping the deuteron law inside the
 three calibrations? Predicted-first, no fishing; the golden-ratio-adjacent
