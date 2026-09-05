@@ -180,3 +180,126 @@ not about those figures' provenance, and it is deliberately not dressed up as
       `q-beta` bridge quantities above, `E_{0,N=1} = 4.22707538`.
 - [ ] Owner ruling: which anchor do the **four** affected blocks take? Then
       substitute all six figures at once.
+
+## ANCHOR ANALYSIS (2026-09-05): the question was mis-framed, and correcting it collapses most of it
+
+Full write-up:
+[`docs/audits/2026-09-05-anchor-choice-for-the-four-retired-q0-blocks.md`](../docs/audits/2026-09-05-anchor-choice-for-the-four-retired-q0-blocks.md).
+
+**I called this an owner-gated proton-vs-muon decision. It is not.** The six
+figures carry the **CODATA-2018 vintage of the MUON anchor** — the anchor the
+two-layer convention already says canonical blocks should use. Verified by
+inverting the CAL-2 pin `m_μ/m_e = Vol(4₁)/ℏ_q²`:
+
+    m_mu/m_e = 206.7682830  (CODATA 2018)  ->  q0 = 1.1099785955541805753   <- published
+    m_mu/m_e = 206.7682827  (CODATA 2022)  ->  q0 = 1.1099785956427390467   <- live muon
+
+The first matches the published constant **to twenty digits**. So the choice is
+which *vintage*, not which anchor.
+
+### It is collateral of a known, already-fixed defect
+
+`qou_substrate/codata.py`: `206.7682830` was carried under a "CODATA 2022"
+comment **across 138 sites**, fixed 2026-08-15 by reading the NIST table instead
+of transcribing it. **That fix reached `computations/` and `tools/` and not
+`content/`.** Same shape as today's transfer-matrix readout: correction lands in
+compute, block keeps the old value, nothing walks between them. The discrepancy
+is `1.451 ppb` = `0.065σ` — physically nothing, which is why it survived.
+
+### The corpus already rules on three of the four
+
+`q0_anchor_manifest.json` tags **six of its nineteen `ideal_muon` producers as
+`qbeta_*`**, and two of the four blocks are Q_β blocks. Sharper still: **Q_β *is*
+the CAL-2 proxy**, and CAL-2 is what the muon pin pins — anchoring a Q_β table on
+proton makes it a prediction from a prediction and folds in the μ–p tension.
+
+### Magnitudes
+
+`q0` moves `7.98e-11` refreshing the vintage, `1.15e-8` switching to proton —
+**145× larger**. About 11 published digits survive the refresh; ~8 survive the
+switch. Nothing physical moves either way.
+
+### The one I would not decide alone
+
+`em-coupling-bring-zero-mode` sits under `predicted-spectra/`, which the
+two-layer rule reads as Physical-Observations → proton; but its quantity is
+`q[9]_q[10]_q`, the *bare* coupling, a derivation input. Placement and content
+point opposite ways and no manifest entry covers it. **Genuinely ambiguous — a
+question about what that block is for.**
+
+### Recommendation
+
+Refresh the three canonical blocks to the current muon anchor; ask on
+`em-coupling-bring-zero-mode`. Treating a data refresh as an occasion to
+re-decide a convention is how conventions drift.
+
+- [ ] Owner: confirm the refresh, and rule on `em-coupling-bring-zero-mode`.
+- [ ] **Stale comment found en route**, not changed: `q_parameter.py` says the
+      corpus is "genuinely MIXED (279 proton + 455 muon)"; the manifest now reads
+      **906 proton / 19 muon / 15 ambiguous**. Misleading to anyone reasoning
+      about balance from it. Left alone because that file is anchor-selection
+      machinery under an explicit "do NOT change this default".
+- [ ] **The real gap neither gate covers:** both defects found today are a
+      correction landing in code while a block keeps the old value. Nothing walks
+      that boundary. The unsourced-figure sweep found this one only because the
+      figures had no provenance at all — a stale figure that still matches *some*
+      producer stays invisible.
+
+## COMMIT ARCHAEOLOGY (2026-09-05): the open question is closed, and I was wrong twice
+
+Addendum in the same audit doc.
+
+**1. `em-coupling-bring-zero-mode` was never ambiguous — the block says muon.**
+Line 26: *"Evaluation at `q_0 = 1.109978595554181…` **(muon pin, 16 dps)**"*. I
+called it "the one genuine ambiguity" by reasoning from its directory
+(`predicted-spectra/` → physical → proton) without reading its own label.
+Placement is a weaker signal than a declaration and I invoked the first without
+checking the second.
+
+`df13e845cee` (2026-08-21) put that label there and states the identification
+independently: *"solving CAL-2 for CODATA-2018 `m_μ/m_e` gives
+`1.1099785955541805753…` … **The defect was the label.**"* Digit-for-digit what I
+re-derived — so the provenance finding is confirmed, not merely mine.
+
+**2. "Refresh to the current muon anchor" presupposed an open ruling.**
+`qou-po7i` catalogues **three** muon values:
+
+    A canonical q-pinning  1.1099785955573347...  FROZEN
+    B in the witnesses     1.1099785955541805...  the REVERTED derivation's value
+    C q_muon_at() live     1.1099785956427390...  drifts with CODATA
+
+The published figures carry **B**, and that bean closes with *"needs a ruling on
+which of A and C a 'muon-anchored' quantity uses"*. My Option A quietly assumed
+that ruling.
+
+**It is now moot: A and C have converged.** Re-running
+`muon_pin_three_values_probe.py` today gives `A == C == 1.1099785956427390466…`,
+which is also what the canonical witness `q-pinning-50-digit.witness.json`
+carries; B is `<not found>`. One live muon value, and B is the lone outlier at
+`0.0798 ppb`. So Option A is unambiguous after all — refresh target
+`1.1099785956427390466817951293`.
+
+**Side effect, not fixed here:** that probe now FAILS (`allPassed: False`)
+because it asserts a three-way split that no longer exists. The failure is how
+the convergence surfaced, but a permanently-red probe decays into noise. It
+belongs to `qou-po7i`.
+
+**3. A figure in the record is mis-attributed.** `df13e845cee`, `qou-q0lp` and
+`docs/audits/2026-06-24-q0-layer-migration-scope.md` all say the published value
+"sits **0.0028 ppb** from the current muon pin and 11.53 ppb from the proton
+pin". The proton figure is exactly right (I measure 11.53 independently). The
+muon one is `B−A` — the gap to the **frozen** pin — while the gap to the current
+pin is `C−B = 0.0798 ppb`, **28× larger**. The number is real; its attribution is
+not. It matters mildly: that sentence is the stated justification for *labelling
+rather than refreshing*, and it understates the gap it justifies by 28×.
+
+### Revised recommendation
+
+**Option A for all four blocks**, target `1.1099785956427390466817951293`.
+Nothing physical moves; this is the 2026-08-15 CODATA fix reaching content.
+
+- [ ] Owner: confirm. No ambiguity remains to rule on.
+- [ ] `qou-po7i` owns re-pointing `muon_pin_three_values_probe.py` to the
+      converged state.
+- [ ] The `0.0028 ppb` attribution should be corrected where it is durable
+      (`qou-q0lp`, the 2026-06-24 audit).
