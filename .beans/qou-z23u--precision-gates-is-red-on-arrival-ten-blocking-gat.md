@@ -240,3 +240,24 @@ added no script at all, and `durationMs: 53` on a ~28-min compute confirms it
 was hand-assembled from stdout. Every derived field was verified reproducible
 from `rows` alone (all 8 `windowed_exponents` and the secant, exactly), so the
 script now emits its own witness; confirming run in flight.
+
+## BASELINE re-measured 2026-09-05 on main `7904384c45` — **nine**, was ten
+
+Run: `PYTHONPATH=computations:tools/qou-substrate/python:tools/pyhecke/python bash scripts/precision-gates.sh` in a pristine `git worktree` at `origin/main`. **Exit 1.**
+
+```
+RED: q0-anchor flip  q0-anchor refill ratchet  import-time dps ratchet
+     never-raises-dps ratchet  float64-padding ratchet  q0-value drift ratchet
+     CODATA stale-edition  hardcoded braid word (self-test)
+     mixed mpf/f64 -> serializer
+```
+
+Nine, against the ten of 2026-09-03 on `26bd234527`. **I cannot name which one left**, because this bean records the *count* and not the list — so the nine are written out above, and the next re-measure can compute its own delta instead of inheriting mine. Advisory set unchanged (4).
+
+**None of these are phantoms of the `qou-hah0` class.** All three modules import: the same run with a bare `python3` (no `PYTHONPATH`) produces the *identical* nine-name list, and `pyhecke` is not importable bare — so on this container the preflight-phantom hypothesis and the real-red hypothesis are observationally identical at the RED line, and only the pristine-main baseline separates them. **That is a trap worth recording: a matching RED list is not evidence the reds are real.** Run the baseline.
+
+### Consequence for branch verification, which is why this was measured
+
+Branch `claude/phi-k-is-not-a-trace-retraction-2026-09-05` at `9f0f7709b3` (`--changed`, 12 relevant files) gives exit 1 with **exactly this nine-name list** — byte-identical to pristine main. So the branch contributes nothing to it, and a gates run on a feature branch here **cannot** be reported as a pass/fail signal about that branch. The usable per-branch evidence is the narrower one: the raw-float64 ratchet witnesses regenerate with the new file absent from all of them.
+
+**Do not let this be read as licence to skip the gates.** It says the *summary line* is uninformative on a branch while main is red; the per-gate diff against a main baseline still is informative, and is the check to run.
