@@ -1,11 +1,11 @@
 ---
 # qou-0wqd
 title: 'qou-4m9u closed into code: the YSN seminormal formula, and what it moves downstream'
-status: in-progress
+status: completed
 type: task
 priority: high
 created_at: 2026-09-05T05:54:36Z
-updated_at: 2026-09-05T05:55:35Z
+updated_at: 2026-09-05T06:28:22Z
 ---
 
 
@@ -78,3 +78,40 @@ commuting unchanged.
    which per AGENTS.md is the DEFAULT, since it cannot be pip-installed.
    **Do not assume either way: instrument.** Inferring the executed path from
    wall-clock time was yesterday's recorded error.
+
+
+## MEASURED 2026-09-05 — the fix is right, and it moves the binding numbers by ~1e-14
+
+PR #6708, commits `96fdcd8ea5b` (fix) + `b31f2bdb4e8` (correction).
+
+**With `pyhecke_native` present the Python family is never reached.**
+`uic(1,1)` is byte-identical before and after (`-9.147736231020852`), with 193
+kernel calls, 193 served. `_lp_kernel_steps(partition, chains)` takes the
+partition SHAPE, not `entry['ysn']` — Rust rebuilds its own seminormal family —
+and both consumers early-return on it (`hecke_core_legacy.py:1538`, `:1773`).
+
+**With the kernel forced off — the bare-container case, since `pyhecke-native`
+is not on PyPI — agreement at the float64 floor**, varying only the `a_rho`
+formula (`origin/main`'s function `exec`'d into the live module; control-checked
+on `sigma_2[0][0]`: `-0.403627738351` vs `-0.103963710052`):
+
+| | rel |
+|---|---|
+| `uic(1,1)` k_exact = 4 / 5 / 6 | `6.2e-16` / `3.3e-14` / `2.0e-14` |
+| `atom_character_raw(1,1)` over (2,1),(3,1),(2,2),(3,2,1) | `6.7e-16` … `5.6e-14` |
+
+**Why: the trace is blind to this defect.** `Tr(ABA) − Tr(BAB) = Tr(B) − Tr(A) =
+0` follows from the quadratic relation alone, in any dimension. `uic` accumulates
+`ln|Tr M_λ|`; `atom_character_raw` returns a trace. So no character-level check
+could ever have fired on this — which is why it sat in the corpus.
+`computations/audits/ysn_trace_blindness_probe.py` (new, 9/9, exit 0) establishes
+it at MPFR `dps=50`, free of the float64 caveat: legacy matrix defect `0.731514`
+against trace defect `6.68e-52`.
+
+**Retired: the audit's "71-221 %" table.** Its *corrected* column is what today's
+`main` already produces WITH the braid-violating matrices; its *current* column
+reproduces on no tree measured here.
+
+Closed. The remaining open items are `qou-sv7h` step 3 (the builder is still
+float64) and `q_sweep_sdp_atom`, which imports `_build_ysn_matrices` directly and
+is a matrix consumer rather than a trace consumer — unassessed.
