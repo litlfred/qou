@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: medium
 created_at: 2026-08-08T17:40:00Z
-updated_at: 2026-09-05T06:32:12Z
+updated_at: 2026-09-05T07:31:45Z
 ---
 
 The hard tier of `qou-5gai`, and the same statement as `qou-idvt` **T2**:
@@ -625,3 +625,26 @@ Do **not** open a session on step 2 as written. Instead **cost the three LHS car
 3. **Rivin's Schläfli route** from the held `arxiv-math-0502543v2`.
 
 And put the signed route back on the table alongside them, per the re-scoping above.
+
+
+## The polar route and the signed-subdivision route are the SAME route (2026-09-05, probe 21/21)
+
+The note above lists candidate LHS carriers (1) change of variables, (2) "a polar form of the full triangle valid for obtuse", (3) Rivin/Schläfli — and separately re-scopes the signed-subdivision foreclosure. **(2) and the signed route are one route.** Measured, not argued: [`computations/milnor_polar_signed_equivalence_probe.py`](computations/milnor_polar_signed_equivalence_probe.py), 21/21, mpmath 50 dps, no float64, no witness, anchor-free.
+
+**1. `integral_orthoscheme` IS the polar radial reduction of the base integral — it is not an independent construction.** Integrating the corpus base integrand `1/(2(R²−x²−y²))` radially out to `chordHalfplane R θ ψ`, whose boundary is `r(φ) = R·cos ψ / cos(φ−θ)`, gives in closed form
+
+    −(1/4)·log((cos²φ − cos²ψ)/cos²φ)
+
+which is **exactly** `integral_orthoscheme`'s integrand (`OrthoschemeBaseIntegral.lean:260`). Agreement with numeric quadrature of the Cartesian integrand: ~1e-52 across 12 `(ψ,φ)` samples. And `∫₀^ψ` of it reproduces `Lob ψ / 2` with difference **exactly 0.0** at ψ = π/6, π/4, π/3, 5π/12, 11π/24.
+
+**2. `ψ < π/2` is the chord-offset sign condition, nothing more.** `r(φ) > 0` iff the offset `R·cos ψ > 0` iff `ψ < π/2`. At π/2 the offset is zero — the chord passes through the circumcentre. Past it the offset is negative: the circumcentre is on the **far** side and the radial ray never reaches the chord in the positive direction.
+
+**So `integral_orthoscheme`'s `hψ : ψ < π/2` is not a technical convenience and not wedge-disjointness** (which is what the acute hypothesis is usually attributed to elsewhere in this arc). It is "the circumcentre lies on the inner side of this chord" — the same geometric fact as "the circumcentre leaves the triangle when an angle is obtuse", which is precisely what forces one piece of Milnor's subdivision to enter with a minus sign.
+
+**Consequence.** The polar route cannot be pushed past π/2 without reintroducing exactly the sign the signed route makes explicit. Milnor's minus sign and the polar route's `cos ψ < 0` are one phenomenon in two vocabularies. Effort on either is effort on both — which removes (2) as a *distinct* option and further strengthens the (b)→(a) re-scoping above: the signed route is not a route the analytic one lets you avoid.
+
+Scope-(a) structural observation. **Asserts nothing about the obtuse volume identity**, which remains open.
+
+**Live options are therefore two, not four:** (A) the signed/polar route, whose Λ-side is already proved (`lob_sum_eq_reflected`, all arguments in `(0,π/2]`) and whose geometric side needs one a.e. set identity of the `milnorWedges_ae_eq_inscribedTriangle` kind; (B) change of variables moving the angle dependence into the integrand (Mathlib `Jacobian.lean:1097`), after which the `ComplexDilogarithmDeriv` template applies — but note the integrand is singular at the circle (vertices lie on it), so the dominating function needed for the dominated-convergence step must control that boundary, and corpus finiteness input is acute-only. Rivin/Schläfli (`library/arxiv-math-0502543v2`) remains unread and uncosted.
+
+**Neither closes the case**: `idealTet_eq_chimney`'s `α,β,γ < π/2` is a set equality outside both.
