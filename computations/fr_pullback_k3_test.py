@@ -510,12 +510,25 @@ def main() -> int:
 
     builder.add_assertion(
         "data_loaded",
-        computed=B_AME["D"],
-        expected=2.22456607,
+        computed=fmt(B_AME["D"]),
+        expected=fmt(mp.mpf("2.22456607")),
         tolerance=1e-10,
         unit="B(D) MeV",
-        source="AME 2020 deuteron binding",
+        source="AME 2020 deuteron binding — SELF-COMPARISON, see caveat",
     )
+    builder.add_caveat(
+        "SELF-FULFILLING ASSERTION (recorded, not repaired): "
+        "`data_loaded` compares B_AME['D'] against a literal copy of the "
+        "same number typed a few hundred lines away — x == x with a "
+        "tolerance, so it can only pass and gates nothing. Noticed "
+        "2026-09-04 while clearing this producer's raw-float64 fields "
+        "(the literal was the last one). Repairing it properly means "
+        "rebuilding the four B_AME entries from the CODATA mass-excess "
+        "table so the check has an independent second source — the same "
+        "fix fr_pullback_borromean_h3a_test already carries as "
+        "`b_ame_cross_check`. That is a content change to this "
+        "producer's inputs and is deliberately NOT bundled into a "
+        "normalization fix; it is the honest next step, not this one.")
     builder.save()
     return 0
 
