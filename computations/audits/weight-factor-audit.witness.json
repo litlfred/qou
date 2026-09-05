@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T01:06:46.792802+00:00",
-  "commitSha": "78ecbf0270fd6d88a0d1edfa2979dec692bf8144",
+  "computedAt": "2026-09-05T07:31:00.057265+00:00",
+  "commitSha": "6ce35bc8eedd1a44b837f4408a1e44f4698f8201",
   "assertions": [
     {
       "name": "all_weight_checks_pass",
@@ -16,8 +16,8 @@
   "durationMs": 19,
   "computation": "weight-factor-audit",
   "scriptFile": "weight_factor_audit.py",
-  "scriptHash": "dba9ddfbba02",
-  "scriptCommitSha": "a606f1a43e8071c20dec0d602993b33467560930",
+  "scriptHash": "322003647adc",
+  "scriptCommitSha": "3639b850e044812f50e6c247afdaf0834a2c5bbf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -56,7 +56,7 @@
         "n": 2,
         "computed": 1.0,
         "expected": 1.0,
-        "tolerance": 1e-12,
+        "tolerance": "1e-12",
         "passed": true
       },
       {
@@ -65,7 +65,7 @@
         "n": 3,
         "computed": 1.0,
         "expected": 1.0,
-        "tolerance": 1e-12,
+        "tolerance": "1e-12",
         "passed": true
       },
       {
@@ -74,7 +74,7 @@
         "n": 4,
         "computed": 1.0,
         "expected": 1.0,
-        "tolerance": 1e-12,
+        "tolerance": "1e-12",
         "passed": true
       },
       {
@@ -83,7 +83,7 @@
         "n": 5,
         "computed": 1.0,
         "expected": 1.0,
-        "tolerance": 1e-12,
+        "tolerance": "1e-12",
         "passed": true
       },
       {
@@ -92,7 +92,7 @@
         "n": 6,
         "computed": 1.0,
         "expected": 1.0,
-        "tolerance": 1e-12,
+        "tolerance": "1e-12",
         "passed": true
       },
       {
@@ -101,7 +101,7 @@
         "n": 7,
         "computed": 1.0,
         "expected": 1.0,
-        "tolerance": 1e-12,
+        "tolerance": "1e-12",
         "passed": true
       },
       {
@@ -110,7 +110,7 @@
         "n": 8,
         "computed": 1.0,
         "expected": 1.0,
-        "tolerance": 1e-12,
+        "tolerance": "1e-12",
         "passed": true
       },
       {
@@ -119,7 +119,7 @@
         "n": 9,
         "computed": 1.0,
         "expected": 1.0,
-        "tolerance": 1e-12,
+        "tolerance": "1e-12",
         "passed": true
       },
       {
@@ -128,7 +128,7 @@
         "n": 10,
         "computed": 1.0,
         "expected": 1.0,
-        "tolerance": 1e-12,
+        "tolerance": "1e-12",
         "passed": true
       },
       {
@@ -137,7 +137,7 @@
         "n": 11,
         "computed": 1.0,
         "expected": 1.0,
-        "tolerance": 1e-12,
+        "tolerance": "1e-12",
         "passed": true
       },
       {
@@ -146,7 +146,7 @@
         "n": 12,
         "computed": 1.0,
         "expected": 1.0,
-        "tolerance": 1e-12,
+        "tolerance": "1e-12",
         "passed": true
       },
       {
