@@ -1,11 +1,11 @@
 ---
 # qou-imkb
 title: 'GAP: paper_six_term_isotope_sweep''s Model B leg names a producer that does not exist'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T12:14:04Z
-updated_at: 2026-09-05T18:21:53Z
+updated_at: 2026-09-05T19:59:09Z
 ---
 
 ## What is wrong
@@ -222,3 +222,91 @@ existed here, and the Model B leg of the six-term sweep is unreachable. That is
 a defect to fix, not a preference to adjudicate — the only genuine question
 ("what does Model B mean?") is answerable from the corpus. Off the owner-gated
 queue; open as work.
+
+
+## ✅ FIXED ON MAIN 2026-08-30 — and my own "verified live" note above is retracted
+
+`96a1315ab5` — *"qou-imkb: the Model B producer cannot be written, one of its
+inputs is retired"* — landed the same day this bean was last updated. The
+message at the raise site now says, in the code:
+
+> THE PRODUCER IT USED TO NAME DOES NOT EXIST. `probe_sdp_canonical_paper_formula.py`
+> is not on disk anywhere in this repo, GitHub code search finds it only in
+> these error strings, and no commit in this clone's history touches it — so
+> the old instruction to "run it first" could not be followed by anyone.
+> Tracked as bean `qou-imkb`, which also records that the registry's deuteron
+> row is blocked on the 2026-08-29 owner ruling retiring the 6₂ assignment.
+> Model B is unavailable; Model A (3A-strand) is the live T1 route.
+
+That is the right disposition rather than a workaround: the leg is unavailable
+**by design** (its input was retired by owner ruling), the message says so, and
+the Model B path is opt-in — `_load_canonical_t1_model_b` is reached only when
+`source == "model-b"`, so the default sweep never touches it.
+
+**🛑 My verification earlier today was wrong, and the way it was wrong is the
+reusable part.** I wrote *"the raising site is still live at
+`paper_six_term_isotope_sweep.py:185`"* on the strength of
+
+    grep -n "missing Model B T1 witness" computations/sweeps/paper_six_term_isotope_sweep.py
+
+That substring is common to the **old misleading message and the new honest
+one**, so the grep returns a hit either way. I confirmed the presence of a
+string, not the presence of the defect — while writing a bean note that opened
+*"Re-measured on this branch rather than taken from the bean"*. Grep for what
+makes the defect a defect, not for the sentence around it.
+
+Closing.
+
+
+## 🛑 THE CLOSE ABOVE WAS WRONG — reopened and FIXED (2026-09-05)
+
+Two errors of mine in the note above, and the second is the substantive one.
+
+**Error 1 — a mis-verification.** My earlier "Verified 2026-09-05" note said
+*"the raising site is still live at `paper_six_term_isotope_sweep.py:185`"* on
+the strength of
+
+    grep -n "missing Model B T1 witness" computations/sweeps/paper_six_term_isotope_sweep.py
+
+That substring is common to the **old misleading message and the honest one**
+`96a1315ab5` landed on 2026-08-30. The grep hits either way. I confirmed a
+string, not a defect — inside a note that opened *"Re-measured on this branch
+rather than taken from the bean."* **Grep for what makes the defect a defect,
+not for the sentence around it.**
+
+**Error 2 — the close.** I then closed this bean writing *"the Model B path is
+opt-in ... the default sweep never touches it."* False:
+
+    _T1_DEFAULT_SOURCE = _os.environ.get("QOU_T1_SOURCE", "model-b")
+
+The default **is** model-b, and `_T1_ATOM_NAME_B` has three entries. Measured:
+
+    D  RAISE FileNotFoundError    T  RAISE    3He  RAISE
+    4He OK                        p  OK       n    OK
+
+So the defect was live **in the default configuration**, failing for exactly
+the three isotopes Model B covers.
+
+## The fix, and why it is not a design call
+
+Two owner rulings collide: **2026-05-11** *"migrate all compute to default B"*
+and **2026-08-29** retiring the 6₂ deuteron assignment Model B's producer needs.
+
+But the sibling consumer of the *same witness*, under the *same env var*, from
+the *same migration* already handles it correctly —
+`atomic_mass_via_rho_k.py:294` loads Model A first and overlays Model B **only
+`if model_b_witness.exists()`**. The sweep raised instead. So this is making
+the sweep match its sibling, not choosing between rulings.
+
+`_load_canonical_t1_model_b` now returns an **empty table** when the witness is
+absent, with a one-time stderr warning naming the ruling and this bean. The
+caller already falls through to Model A per isotope, so an empty table means
+"no isotope has a Model B value" — which is the truth. It honours 2026-05-11
+rather than overriding it: that directive's own wording is *"prefer Model B …
+fall back to legacy for atoms not yet in the Model B witness"*.
+
+**Verified:** all six isotopes resolve, and D/T/³He come back **byte-identical
+to the explicit `model-a` route**, so the fall-through introduces no new
+numbers — it removes a crash. Precision gates `--changed`: verdict
+byte-identical to `main`'s (same nine blocking gates, same four advisories) and
+**zero mentions of this file**.
