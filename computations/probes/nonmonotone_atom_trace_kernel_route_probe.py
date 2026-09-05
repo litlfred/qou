@@ -38,6 +38,37 @@ kernel and the transfer against the SAME grouped word and requires agreement at
 the 50-dps floor, and only then reports the kernel's value on the Borromean
 word.
 
+## The kernel is NOT bit-reproducible, and this probe is built to survive that
+
+`cf412d98f9` (bean `qou-07ts`, landed while this branch was in flight) measured
+`compute_atom_chi_rust.py 3He` producing **four distinct outputs in eight runs**.
+That producer reaches the SAME function this module dispatches to
+(`chi_cd_mpfr` -> `pyhecke_native.chi_lambda_all_partitions_mpfr`), so the
+finding lands squarely on the route added here, and it is checked rather than
+argued.
+
+Re-measured through THIS route, 8 runs each, sha256 over the 50-digit chi
+strings:
+
+    3He   4 distinct fingerprints in 8    (reproduces qou-07ts exactly)
+    3H    2 distinct fingerprints in 8    (qou-07ts recorded T as STABLE)
+
+so `3H` wobbles too, just more rarely — an extension of that finding on more
+draws, not a contradiction of it.
+
+**Magnitude, which is what decides whether anything here is affected:**
+
+    max |d chi| across 8 runs   1.00229e-50   (~1 ulp at 50 dps)
+    max relative                7.46451e-50
+    spread in tr_M              EXACTLY 0.0
+
+The per-partition characters wobble at the last serialized digit; the
+`y_lambda`-weighted trace does not move at all. So `AGREE` below is set to
+`1e-45` — five orders ABOVE the kernel's own reproducibility floor, deliberately,
+so this probe tests agreement between two implementations and not the kernel's
+noise. Everything this branch reports is far above it: traces at 20 digits (30
+orders), binding numbers at 8 (42 orders).
+
 Arithmetic: mpmath at the 50-dps floor throughout; the kernel returns decimal
 strings loaded into `mpf`. No float64 anywhere.
 
@@ -67,6 +98,12 @@ TOL = mp.mpf("1e-30")
 # (Rust mpfr vs Python mpmath), so exact string equality is not the right bar;
 # 1e-45 is 5 digits inside the 50-dps serialization floor.
 AGREE = mp.mpf("1e-45")
+
+# Reproducibility probe: how many draws, and the bound the per-chi wobble must
+# stay under. Measured floor is 1.00229e-50 (~1 ulp at 50 dps); 1e-48 leaves
+# two orders of slack so a genuine degradation still fails this.
+REPRO_RUNS = 8
+REPRO_ULP = mp.mpf("1e-48")
 
 
 def encode(word, h):
@@ -155,6 +192,32 @@ def main() -> int:
             f"(grouped {mp.nstr(tr_grp, 20)} -> borromean {mp.nstr(tr_bor, 20)}, "
             f"rel {mp.nstr(rel, 4)})",
             tr_bor == tr_bor, ""))  # finiteness; the value is the report
+
+    # ── the kernel's reproducibility floor, and that it does not reach tr_M ──
+    # Deliberately NOT a check on the fingerprint count: the wobble is
+    # stochastic (3H showed 2 distinct in 8, 3He showed 4), so asserting
+    # "unstable" would itself be flaky. What IS robust, and is what this route
+    # depends on, is that the wobble stays ~1 ulp and cancels out of the
+    # y_lambda-weighted trace entirely.
+    for (Z, N) in [(1, 2), (2, 1)]:
+        n = 3 * (Z + N)
+        y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, q).items()}
+        w = atom_braid_word_3A(Z, N)
+        runs = [chi_kernel(w, n, h) for _ in range(REPRO_RUNS)]
+        spread = mp.mpf(0)
+        for lam in runs[0]:
+            vals = [r[lam] for r in runs]
+            spread = max(spread, max(vals) - min(vals))
+        trs = [mp.fsum(y[lam] * r.get(lam, mp.mpf(0)) for lam in y) for r in runs]
+        tr_spread = max(trs) - min(trs)
+        checks.append((
+            f"({Z},{N}) kernel non-reproducibility stays ~1 ulp over "
+            f"{REPRO_RUNS} runs (max spread = {mp.nstr(spread, 6)})",
+            spread < REPRO_ULP, ""))
+        checks.append((
+            f"({Z},{N}) the wobble does NOT reach tr_M "
+            f"(spread = {mp.nstr(tr_spread, 6)})",
+            tr_spread == 0, ""))
 
     ok = sum(1 for _n, p, _m in checks if p)
     for name, passed, _m in checks:
