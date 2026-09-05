@@ -263,3 +263,123 @@ names, because neither is live. Re-scoped, the question is whether 0.5751722439.
 is correct, and `qou-r9dv` may already have answered it for the same quantity.
 Still an owner call, but a smaller one than the bean implies -- and it should be
 asked about the LIVE number.
+
+---
+
+## Item 2 — MECHANISM ESTABLISHED (2026-09-05), and three of my own refutations above are wrong
+
+The section immediately above closed item 2 with *"I have NOT established the
+MECHANISM"* and offered three untested shapes. **The answer is a fourth shape,
+none of the three, and the three "REFUTED" verdicts above are each wrong for a
+different, reusable reason.** Probe:
+[`computations/probes/trm_provenance_chain_probe.py`](computations/probes/trm_provenance_chain_probe.py)
+(11/11), witness `trm-provenance-chain.witness.json`.
+
+### The chain
+
+**`option_e_multi_isotope_delta_lambda_probe_v3.py` does not compute `tr_M`.**
+Its line 129 is `"tr_M": mpf(tr_M_data["tr_M_at_q0"])` — the field is copied
+verbatim out of `chi-<atom>-at-q0-50dps.witness.json`. Asserted live for all
+three atoms (checks `copy/*`). So the option_e move **is** the chi witness's
+move, picked up with a 13-day lag: option_e last ran `2026-08-09T00:41`, next
+ran `2026-08-23T09:15` in the 563-witness sweep `a0ee2ac5e9`.
+
+The chi witness moved in **`7e4d1aa6d0`** (2026-08-10 18:22:42, computed
+18:20:37):
+
+    0.38835714119779098941...  ->  0.57517224391777187082...   +48.1039 %
+
+Across that move, measured per partition:
+
+| | old | new |
+|---|---|---|
+| every `chi_lambda` | — | **byte-identical** |
+| every `y_lambda` | — | **changed** |
+| `scriptHash` | `c36a8a393fcd` | `c36a8a393fcd` |
+| `scriptCommitSha`, `q0Anchor` (proton), `q0Value`, `dps` (50), `engineVersion` | — | **byte-identical** |
+
+The proximate trigger is one line in a one-hop dependency: **`fcf629cf41`,
+committed 18:20:04 — thirty-three seconds before the chi run** — switched
+`_Y_LAMBDA_DEFAULT` in `tr_m_wenzl_bridge_mpfr.py` from
+`y-lambda-mpfr-witness.json` to `y-lambda-mpfr-proton-witness.json`. The new
+chi `y[(6,)]` matches the proton table to all 50 dps.
+
+**But the SIZE is not the pin.** That commit budgets *"13 readers, ~11.5 ppb"*,
+which is the μ–p separation — three orders of magnitude too small. Both y_λ
+tables had themselves been **regenerated earlier the same day**, and the
+regeneration changed the *weights*: at n = 6, `y[(6,)]` went `0.0591877…` →
+`0.1153242…`, and the growth is monotone in row length —
+
+    (3,3) x1.071   (4,2) x1.143   (5,1) x1.339   (6,) x1.948
+
+— while every ≥3-row weight collapsed to ~1e-72. The weight mass migrated onto
+the ≤2-row (SU(2)-admissible) partitions. **That is the 48 %.**
+
+**Classification: a y_λ weight-table regeneration.** Not a pin swap, not a
+convention swap, not a precision change, not a producer-source change. The
+default swap is what made the chi producer *see* it 33 seconds later; the
+regeneration is what created it.
+
+### Why each of my three refutations failed
+
+1. **"Convention D — refuted", on the `convention` field.** That field reads
+   `colour-weighted-averaged-crossing` on both sides and never changed — but it
+   names the **p/n colour** convention, not the Markov C-vs-D parameter. A field
+   literally called `convention` that does not carry the convention in question.
+   Reading it was *uninformative*, not exculpatory. (For the record the Markov
+   `z` in the y_λ tables is convention D on both sides today,
+   `0.61268805…`/`0.61268803…`, so the conclusion happened to be right and the
+   evidence for it was empty.)
+2. **"Convention D — refuted", on ordering.** I wrote that `2c68d7f34a` "landed
+   19:24:58Z the SAME DAY, so the 0.38835 value was already computed from
+   post-convention-D inputs." `19:24:58` is that commit's **commit time**; the
+   option_e witness inside it was **computed `2026-08-09T00:41`**, 42.7 hours
+   *earlier* and a day and a half *before* the convention-D commit. **Reading a
+   commit timestamp as a compute timestamp inverted the ordering argument.**
+3. **"Stale inputs — refuted."** I checked whether the chi witnesses changed *at*
+   the 2026-08-23 regeneration. They did not — and that is the wrong endpoint.
+   What matters is whether they changed **since the consumer last ran**, i.e.
+   across 08-09 → 08-23, and they did, on 08-10. **I compared the input's change
+   date against the consumer's new run instead of its previous one**, which is
+   guaranteed to report "unchanged" for exactly the class of drift being looked
+   for.
+4. **"Import-cone drift — refuted for THIS producer."** True as stated and
+   irrelevant twice over. option_e's dependency on the value runs through a
+   **witness JSON file**, which no import-cone audit can see at all
+   (`witness_import_cone_staleness_audit.py` walks Python imports); and the real
+   drift is in the **chi** producer's cone (`tr_m_wenzl_bridge_mpfr`), not
+   option_e's. Checking the consumer's imports for a data dependency answers a
+   question nobody asked.
+
+### A fifth trap, found while writing the probe
+
+The ≥3-row weights in the proton y_λ table print as `2.188243022053045885…`
+under a 40-character slice and are actually `2.188243…**e-72**`. I read the
+truncation as the value and was one commit from filing a live *"the two y_λ
+tables disagree on support"* defect. They do not: one serialises a vanishing
+quantity as exact `0.0`, the other keeps its 1e-72 residue (checks
+`vanishing/*`). **Never read a truncated numeric string as a value.**
+
+### The committed chi witnesses are NOT stale
+
+Checks `current/*`: each chi witness's `y_lambda` agrees with the **live**
+default y_λ table to < 1e-45 (worst 6.78e-51), and `selfconsistent/*`:
+`tr_M_at_q0 == Σ_λ y_λ·χ_λ` to < 1e-45. So the 08-10 values are current and
+re-running the chi producer today would reproduce them.
+
+### Not measured here
+
+AGENTS.md's import-cone worked example attributes a 48 % `tr_M_atom` move to
+**`binding_canonical.py` / `tr_m_atom_via_transfer.py`** — a *different*
+producer pair from the one measured here, in the same date window at the same
+magnitude. That is **consistent with** one upstream y_λ regeneration hitting
+both, and it is *not* evidence for it; that pair was not measured and nothing
+here claims it. Worth a separate look.
+
+### Bearing on item 1 (unchanged, and now cheaper to ask)
+
+Item 1 remains an owner call and must be asked about the **live**
+`0.5751722439…`, not the dead pair the bean names. What is new is that the
+number now has a derivation rather than a mystery attached to it: it is
+`Σ_λ y_λ·χ_λ` over the ≤2-row partitions with the post-08-10 weights, and it is
+reproducible from the committed inputs.
