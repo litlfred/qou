@@ -1,0 +1,91 @@
+{
+  "computation": "qbeta-colour-does-not-license-the-asymmetry",
+  "assertions": [
+    {
+      "name": "the_fibre_dimension_cannot_carry_a_colour_index",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "dim V = 2 is forced by the categorical volume constraint and proved as the row cap; a colour index needs 3 values, so the strand-is-colour reading is structurally strained -- this arc's own result pointing at the total-exchange reading"
+    },
+    {
+      "name": "the_colour_index_reading_is_catastrophically_refuted",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "2498 of 2548 exceed the law -- both-symmetric is dead on the data"
+    },
+    {
+      "name": "the_total_exchange_reading_gives_a_STRICT_bound_but_a_loose_one",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "zero violations, better than the corpus's one (4He) -- but it over-binds 39 % on the median against the corpus's 11 %"
+    },
+    {
+      "name": "the_two_readings_bracket_the_corpus_choice",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "2498 > 1 > 0: the corpus's asymmetric hybrid sits between the two symmetric readings, and is neither of them"
+    },
+    {
+      "name": "removing_the_asymmetry_improves_but_does_not_fix_the_symmetry_energy",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "-0.804 -> ~-0.69 for every symmetric variant: worth about a seventh of the residual, and none of them fixes it"
+    },
+    {
+      "name": "no_derivation_of_the_assignment_was_found",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the code asserts uu -> sigma / dd -> sigma^-1 with no reason, and the content block's stated reason is closing the gap to CODATA. qou-y2np's obligation is unmet and this probe did not meet it"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "E_0_MeV": "4.2274833556290305503",
+    "E_0_form": "tower-summed (owner ruling 2026-09-05)",
+    "strands_per_nucleon": 3,
+    "source": "qou-mass/src/qou_mass/data/ame2020.json"
+  },
+  "data": {
+    "n_measured": 2548,
+    "laws": {
+      "as built    p-p=sigma, n-n=sigma^-1": {
+        "violations": 1,
+        "median": "0.88641362",
+        "p5_p95": "1.2249727",
+        "corr_asym": "-0.80378541"
+      },
+      "colour: BOTH symmetric  (+q)": {
+        "violations": 2498,
+        "median": "1.3230947",
+        "p5_p95": "1.1778748",
+        "corr_asym": "-0.69113375"
+      },
+      "colour: BOTH antisym    (-q^-1)": {
+        "violations": 0,
+        "median": "0.71886612",
+        "p5_p95": "1.1822486",
+        "corr_asym": "-0.69944167"
+      },
+      "both = pinned loop  (1/[2]_q)": {
+        "violations": 62,
+        "median": "0.93144533",
+        "p5_p95": "1.1805413",
+        "corr_asym": "-0.69685581"
+      }
+    },
+    "corpus_justification": "meson-to-proton-via-borromean.md: 'Typed crossings close this gap' (untyped net 1.506 vs CODATA proton net 0.999)"
+  },
+  "provenance": {
+    "headSha": "3298f3e8066d316fc622c58771bf3e4524b12a80",
+    "producer": "computations/qbeta/qbeta_colour_does_not_license_the_asymmetry_probe.py",
+    "elapsed_s": 0.881
+  }
+}
