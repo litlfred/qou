@@ -24,6 +24,35 @@ Ref: PR #761 (Rust GP MPFR kernel cherry-picked into this branch)
 Ref: prop:plancherel-term-7-formulation
 """
 
+# ─────────────────────────────────────────────────────────────────────────────
+# 🛑 THIS PRODUCER IS NOT REPRODUCIBLE FOR 3He. Measured 2026-09-05, bean
+# `qou-07ts`: eight consecutive runs, same container, same commit, nothing else
+# running, produced FOUR DISTINCT outputs. The differences are one unit in the
+# last place of the 50-dps `chi_lambda` strings, e.g. ...992028901 -> ...8900.
+# The committed value is the modal one (4 of 8).
+#
+# `D` and `T` were stable over the same runs; `4He` costs 21 minutes and is
+# simply unmeasured. It is not "MPFR is loose" — it is specific, and 3He is
+# not even the largest case (T has the same n_partitions = 30).
+#
+# WHAT THIS COSTS YOU. Not precision: a wobble at the 50th significant digit
+# is 35 orders below the 1 ppQ (1e-15) L1 target and threatens no physics
+# claim. What it costs is ATTRIBUTION. The standard discipline — run the
+# producer unmodified first, confirm it reproduces byte-identically, then
+# attribute any remaining diff to your change — DOES NOT WORK HERE. A single
+# before/after pair will show you a spurious diff. The author of this comment
+# nearly attributed one to their own change twice before running the repeat
+# test that showed otherwise.
+#
+# If you need attribution on this producer, run it several times on the
+# UNMODIFIED source first and collect the set of outputs, then check whether
+# your post-change output falls inside that set.
+#
+# `computations/witness-reproducibility-check` is the corpus's checker for
+# exactly this ("drift" is its word) and does NOT cover this producer — its
+# scope is 11 build_*_chain scripts.
+# ─────────────────────────────────────────────────────────────────────────────
+
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
