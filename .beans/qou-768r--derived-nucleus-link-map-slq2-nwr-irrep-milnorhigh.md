@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-05T06:06:40Z
+updated_at: 2026-09-05T07:26:09Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -553,4 +553,52 @@ monotonicity, not the scanner.
 non-vacuous triples all zero, 690 at exactly `Δ = 2`. The merged null stands.
 
 Probe `computations/probes/milnor_one_separated_component_and_the_chain_residual_probe.py`,
+5/5, idempotent, integer arithmetic throughout.
+
+
+## 2026-09-05 — the chain residual CLOSES, and it needed no connected-sum citation
+
+The entry above left 31 chain triples open and named as their blocker *"`μ̄` of length
+`k` vanishes unless all `k` indices lie in one connected-sum summand"* — a statement no
+held source in this corpus states. **It is not needed.**
+
+**The mechanism.** On a chain, `lk(x,y) = 0`, so with `u = lk(hub,x)`, `v = lk(hub,y)`
+the indeterminacy is `Δ = gcd(u,v,0) = gcd(u,v)`. On a **monotone** closure the two far
+meridians occupy contiguous, **non-interleaved** blocks of the hub's longitude — one run
+per generator is what monotone means — so the degree-2 Magnus coefficient is a product
+of block sums:
+
+    eps_{x,y}(λ_hub) = u·v        eps_{y,x}(λ_hub) = 0
+
+Measured **596/596** monotone (62 carrier, 534 random); **22/78** and **29/78** off
+monotone. Then `gcd(u,v) | u | u·v` **unconditionally** ⇒ `μ̄ = 0`. New sorry-free
+`QOU/Mass/ChainTripleMilnorVanishesByGcdDividesProduct.lean`; `chain_mubar_vanishes`
+depends only on `propext`. **Every triple of the derived carrier is now covered — 393 by
+one separated component, 31 by this.**
+
+**Order-dependence is the point, not a defect.** `u·v` one way, `0` the other. That is
+exactly what the mod-`Δ` indeterminacy absorbs: both are divisible by `Δ`, so the
+invariant is zero either way and nothing rests on a convention.
+
+**The off-monotone control is a REAL counterexample.** Of 78 non-monotone chain triples
+exactly one has `Δ ≥ 2`, and divisibility **fails** on it (77/78). So `eps_eq` is
+load-bearing, not decorative.
+
+### Two of my own errors, both recorded in the probe
+
+1. **I predicted `eps = u·v`, then wrongly recorded it refuted.** The symmetrised sum
+   that `milnor_mubar_vanishes_on_every_triple_probe.py` computes gave an honest integer
+   `0` on 62/62 and 534/534 — because it lands on `eps_{y,x}`, the ordering that *is*
+   zero. A symmetrising scan can turn a general mechanism into what looks like a
+   coincidence; only splitting the sum into its three terms separated them.
+2. **I quoted "all 71 non-monotone chain triples have `Δ = 1`"** — i.e. an entirely
+   vacuous control — from a scratch run building a *fresh* seeded RNG per arm. The probe
+   uses **one** RNG consumed sequentially (matching the #6679 genericity probe so the
+   arms stay comparable): 71 → 78, and the counterexample appears. **Same trap as
+   #6679's `251/2080`, three days later.** The probe's numbers are authoritative.
+
+The stale "what would close it" paragraph in
+`OneSeparatedComponentSufficesForMilnorVanishing.lean` is corrected in place.
+
+Probe `computations/probes/chain_triple_magnus_coefficient_is_the_product_probe.py`,
 5/5, idempotent, integer arithmetic throughout.

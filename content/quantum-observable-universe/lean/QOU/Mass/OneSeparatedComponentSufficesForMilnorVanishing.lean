@@ -46,13 +46,24 @@ linking-number bookkeeping.
 chain carrier no component of `{i, i+1, i+2}` splits off — so the 31 are genuinely
 outside this file's reach rather than merely unproved by it.
 
-**What the residual would need.** `μ̄` of length `k` vanishing unless all `k` indices
-lie in a single connected-sum summand. Combined with the measured *"each summand
-touches at most 2 components"*, that would close the consecutive case too — and would
-subsume this file, since no summand could then hold all three indices of any triple.
-It is **not** formalised here and **not** asserted: it is a statement about Milnor
-invariants under connected sum along a component, and axiomatising it as a `class`
-would be the axiomatisation-is-not-a-proof pattern.
+**What the residual would need — and it turned out NOT to need it. CLOSED
+2026-09-05.** This said the chain case would need *"`μ̄` of length `k` vanishing unless
+all `k` indices lie in a single connected-sum summand"*, a statement about Milnor
+invariants under connected sum that no held source in this corpus states (see the
+literature note below, which stands). **That statement is not needed.** The chain closes
+in `ChainTripleMilnorVanishesByGcdDividesProduct.lean` on a divisibility fact:
+
+with `u = lk(hub, x)`, `v = lk(hub, y)` and `lk(x, y) = 0` on a chain, `Δ = gcd(u, v)`,
+and a monotone closure's hub longitude carries the two far meridians in **contiguous,
+non-interleaved blocks** — one run per generator — so `ε_{x,y}(λ_hub) = u · v`
+(measured 596/596; 22/78 off monotone). Then `gcd u v ∣ u ∣ u·v` **unconditionally**,
+so `μ̄` vanishes. Together with this file, every triple of the derived carrier is
+covered: **393 by one separated component, 31 by that**.
+
+The input that replaced the citation is smaller, more concrete, and checkable by
+counting rather than by finding a reference — which is the useful part of the outcome.
+Neither statement is *asserted* as a `class`; the block structure is carried as an
+explicit structural hypothesis there, as the split-link vanishing is here.
 
 **What the corpus holds on it.** Two on-point sources are in the library —
 `library/0110001v3/` (*A geometric interpretation of Milnor's triple linking numbers*)
@@ -65,13 +76,12 @@ State that as what it is: no held source was found *by that query*, which is wea
 statement is standard, and the gap here is a citation this corpus cannot currently
 supply, not a mathematical one.
 
-**The residual vanishes empirically, on the carrier and generically.** `μ̄ = 0` on all
-31 chain triples of the carrier, and on all **534** chain triples produced by random
-*monotone* braid closures (seed `20260904`; the sampler of
-`milnor_vanishing_is_generic_for_monotone_probe.py`). Random *non-monotone* closures
-do produce nonzero `μ̄` — 3 of 39 at `Δ = 2` — so the null is a fact about
-monotonicity, not about the scanner. That is measurement, not proof, and it is why the
-statement above is left open rather than assumed.
+**The residual vanished empirically first, which is what made the mechanism worth
+looking for.** `μ̄ = 0` on all 31 chain triples of the carrier, and on all **534** chain
+triples produced by random *monotone* braid closures (seed `20260904`; the sampler of
+`milnor_vanishing_is_generic_for_monotone_probe.py`). Random *non-monotone* closures do
+produce nonzero `μ̄` — 3 of 39 at `Δ = 2` — so the null is a fact about monotonicity,
+not about the scanner. It is now explained rather than merely observed.
 
 SCOPE — **scope-(b)** on the 393 separable triples, invariant cited: Milnor invariants
 of length ≥ 2 vanish on a link with a split component, together with the connected-sum
