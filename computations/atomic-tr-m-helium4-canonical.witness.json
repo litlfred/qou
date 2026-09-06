@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T11:13:07.813770+00:00",
-  "commitSha": "1f127a1418e728ec762fc4f0fa95ac2488907ae9",
+  "computedAt": "2026-09-06T12:48:14.309048+00:00",
+  "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
   "assertions": [
     {
       "name": "interface_ratio_matches_convention_D_colour_weighted",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 274,
+  "durationMs": 306,
   "computation": "atomic-tr-m-helium4-canonical",
   "scriptFile": "atomic_tr_m_helium4_canonical.py",
-  "scriptHash": "de461a8c07c8",
-  "scriptCommitSha": "4b0bc3f1848b2b4077d80ff6a8e1bb42cf4da551",
+  "scriptHash": "cbeb87cbe298",
+  "scriptCommitSha": "f5baee6026e16d41ced5c99cc915ef9bb8825113",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,9 +60,9 @@
       "total": 3
     },
     "wall_seconds": {
-      "h3_baseline": 0.002305460000002313,
-      "closed_form_4he": 6.503600002361054e-05,
-      "total": 0.0023704960000259234
+      "h3_baseline": 0.30052210300004845,
+      "closed_form_4he": 7.763700000396057e-05,
+      "total": 0.3005997400000524
     },
     "supersedes": {
       "witness": "atomic-tr-m-helium4.witness.json",

@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-09-06T11:12:06Z
-updated_at: 2026-09-06T11:31:45Z
+updated_at: 2026-09-06T12:49:15Z
 ---
 
 ## The mechanism
@@ -324,3 +324,98 @@ finds the loud cases; the ordering ruling's silent cases are the ones that
 construct their own input. Those need a selector keyed on the **value** — a
 grouped-era τ_p is recognisable — which is the same argument
 `y_lambda_convention_c_fingerprint_audit.py` makes for convention detection.
+
+
+---
+
+# IMPLEMENTED — option B (owner decision, 2026-09-06)
+
+## The helper
+
+`compute_tau_M_nucleon_H3` now takes its word from **`atom_braid_word_3A`** and
+its characters from **`chi_general_word.chi_all_lambda_any`**, with
+
+    intra_order: Literal["borromean", "grouped"] = "borromean"
+
+Verified both branches at the proton pin:
+
+| | default (`borromean`) | `grouped` (historical) |
+|---|---|---|
+| τ_p | 0.62932840220292191816 | 1.14575969245730086968 |
+| τ_n | 0.47513351715568221250 | 0.98774368811580957163 |
+
+matching the ruling values and the pre-ruling values respectively, to every
+digit. An unrecognised `intra_order` raises rather than silently picking one.
+
+The substance is not the keyword — it is that the canonical branch **takes the
+word from its producer**. A future ordering ruling now reaches this function by
+changing one default in `atom_braid_word_3A`, instead of silently not reaching
+it. `grouped` rebuilds the old `_PROTON_G0/G1` chain verbatim and is documented
+as a historical escape hatch, not a choice.
+
+Routing to the dispatcher is also **faster**, not a cost: at H₃ the general path
+is `d_λ ≤ 2` and needs no transfer set-up (steady-state 0.7 ms per nucleon).
+
+## The probe that had to keep its historical question
+
+`probes/nucleon_h3_marshalling_divergence_probe.py` passes
+`intra_order="grouped"` explicitly. Its subject is the `qou-qu2w` marshalling
+defect and its target is a grouped-era habiro artifact; its own `chain` is built
+monotone and traced with the monotone-only kernel. Taking the new default would
+have swung `marshalled` to 0.629/0.475 against a 1.146/0.988 target and reported
+a 45 % divergence — a false alarm on a regression guard. It still agrees at
+**1.4e-50**.
+
+This is exactly the case option B existed for, and the same pattern `qou-cvky`
+applied to `reduced_block_kernel`.
+
+### A stale assertion that re-run surfaced
+
+While there, the probe's third assertion was `he4_ratio_matches_the_observed_2p157`,
+`expected="2.157"` — the ratio between the **broken** marshalled path and the
+correct one. `qou-qu2w` fixed that marshalling on 2026-08-26, so the ratio has
+been 1.0 ever since and the assertion has been *failing on success*. The
+committed witness recorded 2.1566 with `passed: true` and the producer has not
+reproduced it for eleven days.
+
+Re-pointed to `qu2w_fix_holds_marshalled_equals_d_preserving`, expected 1.0,
+tolerance 1e-30 — the live check is now that the fix HOLDS, with 2.157 kept as
+`historical_symptom_ratio_before_qu2w`. All three assertions green, truthfully.
+
+(Fourth instance this session of "assert the defect" leaving a check that goes
+red when the defect is fixed. Worth a standing note somewhere.)
+
+## habiro — forced to full scope, not merge-preserved
+
+A default run recomputes only p and n and **merge-preserves** D/T/³He, which
+produces the mixed-ordering witness this bean warned about. The merge-preserve
+is not a bug — it exists because a numpy-less container once replaced all three
+atoms with error stubs (`qou-lrnd`) — so it must not be removed. Forced full
+scope instead:
+
+    HABIRO_WITH_DEUTERON=1 HABIRO_WITH_A3=1 python3 habiro/habiro_coefficients_atomic.py
+
+All five entries recomputed fresh, no merge-preserve lines, now uniformly
+borromean:
+
+| entry | tr_M @ q₀ | Habiro coeffs | integral | reconstruction |
+|---|---|---:|---|---|
+| p | 0.6293284022029219 | 9 | ✓ | ✓ |
+| n | 0.4751335171556822 | 9 | ✓ | ✓ |
+| D | 0.1519683392042316 | 14 | ✓ | ✓ |
+| T | 0.0291440423609721 | 17 | ✓ | ✓ |
+| ³He | 0.0585962536544364 | 17 | ✓ | ✓ |
+
+**The cyclotomic structure survives the ordering change at every A tested.**
+Habiro coefficients stay exact integers (up to 17 of them) and
+`Σ a_m·(q;q)_m = p(q)` still closes. That is a real check, not a formality — had
+integrality broken, it would have been evidence against applying the ruling
+here. D/T/³He now match the canonical chain exactly.
+
+## The duplicate witness
+
+`qou-mass/src/qou_mass/habiro-coefficients-atomic.witness.json` is a byte
+duplicate that the producer does not write; `_path_bridge.witness_path` resolves
+to `computations/habiro/`. Synced so it cannot become a stale grouped fork
+(sha256 now identical again). Left in place rather than deleted — removing it is
+a separate call about that package's data layout.

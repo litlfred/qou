@@ -144,7 +144,22 @@ def main() -> int:
         chi = T.chi_all_lambda(word, 3)
         preserving = mp.fsum([y[p] * chi.get(p, mp.mpf(0)) for p in parts])
 
-        marshalled = C.compute_tau_M_nucleon_H3(nuc, q0, dps=50)
+        # `intra_order="grouped"` DELIBERATELY, 2026-09-06 (bean qou-y2o7).
+        #
+        # This probe's whole subject is the qou-qu2w marshalling defect, and its
+        # target is `habiro-coefficients-atomic` — both grouped-era artifacts,
+        # from before the 2026-09-05 intra-ordering ruling. `chain` above is
+        # likewise built monotone (all gen 0, then all gen 1) and traced with
+        # the monotone-only `T.chi_all_lambda`.
+        #
+        # So this comparison is a HISTORICAL one and must stay in the grouped
+        # frame on both sides. Taking the new borromean default here would swing
+        # `marshalled` to 0.629/0.475 against a 1.146/0.988 target and report a
+        # 45 % divergence — a false alarm on a regression guard for a real past
+        # defect, and precisely the failure mode the escape hatch exists to
+        # prevent. Same pattern qou-cvky applied to reduced_block_kernel.
+        marshalled = C.compute_tau_M_nucleon_H3(nuc, q0, dps=50,
+                                                intra_order="grouped")
         target = targets[nuc]
 
         rel_pres = abs(preserving - target) / abs(target)
@@ -182,15 +197,29 @@ def main() -> int:
     marsh = {r["nucleon"]: mp.mpf(r["marshalled_current"]) for r in rows}
     he4_ratio = ((marsh["p"] * marsh["n"]) ** 2) / ((pres["p"] * pres["n"]) ** 2)
     print(f"\n  implied 4He ratio (Z=N=2): {mp.nstr(he4_ratio, 10)}")
+    # Re-pointed 2026-09-06 (bean qou-y2o7). This asserted `== 2.157`, the
+    # ratio between the BROKEN marshalled path and the correct d-preserving
+    # one — i.e. it asserted the defect. `qou-qu2w` fixed that marshalling on
+    # 2026-08-26, so the two paths have agreed and the ratio has been 1.0 ever
+    # since; the assertion has been failing on success, and the committed
+    # witness (2.1566, passed: true) predates the fix and has been an
+    # unreproducible green for eleven days.
+    #
+    # The live check is now that the fix HOLDS. 2.157 is kept below as the
+    # historical symptom, which is what it always was.
     w.add_assertion(
-        name="he4_ratio_matches_the_observed_2p157",
+        name="qu2w_fix_holds_marshalled_equals_d_preserving",
         computed=str(he4_ratio),
-        expected="2.157",
-        tolerance="1e-3",
-        source=("(tau_p*tau_n)^2 ratio between the two paths. Matching the "
-                "independently-observed 0.34716 / 0.16097 = 2.157 closes the "
-                "chain from root cause to the reported symptom."),
+        expected="1.0",
+        tolerance="1e-30",
+        source=("(tau_p*tau_n)^2 ratio between the two paths. Before the "
+                "qou-qu2w fix this was 2.157, matching the independently "
+                "observed 0.34716 / 0.16097 and closing the chain from root "
+                "cause to reported symptom. It is 1.0 once the marshaller "
+                "stops dropping `d`, and a drift away from 1.0 means that "
+                "defect has returned."),
     )
+    w.add_data("historical_symptom_ratio_before_qu2w", "2.157")
 
     w.add_parameter("q_0", Q_50_DIGIT_STR)
     w.add_parameter("dps", 50)
