@@ -7299,3 +7299,47 @@ Method trap worth keeping: the first scan reported a spurious **fifth** zero
 because dedup used linear distance and `φ = 0` / `φ = 2π` are the same point.
 On a circle use `min(d, 2π−d)`. The false reading was a spurious *finding*
 ("solveset missed a branch"), not a spurious failure.
+
+### 🛑 RETRACTION — owner ruling 2026-09-06: "Does not need to be real in fiber."
+
+The reality premise **both** sections above inherit from #6875 is **rejected**.
+The strengthening section flagged it as load-bearing and asked the question; the
+owner has resolved it against the premise.
+
+**Withdrawn:**
+- "reality selects N on the fibre locus" (#6875, both readings)
+- "the root-of-unity sublocus is EMPTY *because reality admits only 3 phases*"
+- "the partial projection excludes the ENTIRE fibre locus" — the exclusion ran
+  entirely through the rejected premise
+
+Reality of `𝔔_β` is an **archimedean** constraint on the evaluation at `q₀`
+(`lusztig_q_0_imaginary_part_zero`; a `complex-substrate-interpretation` sidecar
+note already flags that fibre-vs-observable `Im(q)` is exactly the AGENTS.md
+2026-06-01 distinction). Imposing it on `|q| = 1` was the level-conflation that
+banner warns against — **I did it twice**, in two consecutive commits, having
+quoted the banner in the second one.
+
+**Survives, unchanged** — every measurement; none depended on the premise:
+- written `Q_A` is real-axis-only (gap 2.407 at `e^{i/3}`); #6875 stays withdrawn
+- the block's projection is the modulus on `Δ(net)` and is partial — structural
+- `Im[q²−q] = sinφ(2cosφ−1)`, zeros exactly `{0, π/3, π, 5π/3}`, no fifth
+- the four degeneracies (`b²=0`, `h=0`, the double one at `q=1`) — structural,
+  not reality-based
+
+**What the ruling changes is their WEIGHT, not their truth.** Under the rejected
+premise those four points were the entire admissible set, so excluding them
+closed the locus. Under the ruling they are four excluded points out of a
+continuum: the same measurement goes from decisive to nearly vacuous. That
+inversion is the substantive consequence.
+
+**Route 5's actual state:** the fibre locus `|q| = 1` is INTACT less four
+degenerate points; nothing selects N there; #6755's `1/111` is neither selected
+nor excluded.
+
+**The open question, now cleanly separated from the archimedean one it was
+entangled with:** if not reality, what constrains the fibre element? That needs
+a *fibre-level structural* condition — Habiro-integrality, or an `H_n(q)`
+representation-theoretic one — not an evaluation condition.
+
+Nothing was wired at any stage. No `c_k` moved. Cost: three commits of analysis,
+all of whose measurements remain reusable.

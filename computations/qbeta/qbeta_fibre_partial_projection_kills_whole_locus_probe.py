@@ -3,6 +3,26 @@
 projection the reality condition excludes the WHOLE fibre locus, not merely its
 root-of-unity sublocus.
 
+🛑 THIS PROBE'S HEADLINE IS WITHDRAWN — OWNER RULING 2026-09-06:
+   "Does not need to be real in fiber."
+
+   The title claim is FALSE under the ruling. The whole locus is excluded only
+   IF Q_beta must be real on the fibre, and it need not be. Reality is an
+   ARCHIMEDEAN constraint on the evaluation at q_0, not a fibre condition, so
+   there is no reality condition on |q| = 1 and the locus is NOT excluded.
+
+   The arithmetic is untouched and all five assertions still hold as stated:
+   the condition (WHEN imposed) is one on every point of the circle, its
+   solution set is exactly {0, pi/3, pi, 5pi/3}, the dense scan finds no fifth
+   zero, and all four are degenerate. The probe's own closing paragraph named
+   this assumption as load-bearing and flagged that the fibre-vs-observable
+   banner puts Im(q) unconstrained at fibre level. The ruling resolves that
+   flag AGAINST the premise.
+
+   Net: route 5's fibre locus |q| = 1 is INTACT, minus 4 degenerate points.
+   Nothing selects N there. #6755's 1/111 is neither selected nor excluded.
+   See the audit doc's RETRACTION section.
+
 Bean `qou-cds1` / `qou-pdix` route 5.  Scope-(a), conditional on the reality
 assumption route 5's N-selection already rests on (stated at the bottom).
 
