@@ -17688,6 +17688,33 @@
     "assessed_at": "2026-09-06T13:42:16Z",
     "source_sha": "d94bd6edf854"
    }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-2601.07906v2/2601.07906v2.pdf"
+   },
+   "id": null,
+   "status": "unreviewed",
+   "note": "Identified from the title page (arXiv:2601.07906v2, hep-th, 25 Mar 2026; header 'March 2026'): Belin, Collier, Eberhardt, Liska, Post, 'A universal sum over topologies in 3d gravity', 117 pp, 31 sections. No ref() entry, none created (tangential).",
+   "relevance": {
+    "verdict": "tangential",
+    "rationale": "The lead was a possible bearing on the Stokes/resurgence arc (conj stokes-dt-bps-bridge, ecalle-borel-resurgence-vocabulary); the instruction was to be sceptical, and the scepticism is borne out. Read: Introduction (eq. 1.1 Z[\u03a3] = \u03a3_{\u2202M=\u03a3} Z_grav[M], the handlebody sum 1.2 over MCG(\u03a3_g)/H_g), \u00a74.3 'the gravitational machine is hyperbolic' (the surgery moves preserve hyperbolicity by Thurston's hyperbolisation criterion \u2014 prime, homotopically atoroidal), \u00a74.4 (not every hyperbolic 3-manifold is generated; acylindrical ones are excluded), \u00a75.3 handlebody knots, \u00a76 discussion. The object is a SUM OVER DISTINCT COMPACT HYPERBOLIC 3-MANIFOLDS with a genus-g conformal boundary, each weighted by an exact Virasoro-TQFT partition function, organised so that the boundary CFT_2 data form a consistent statistical ensemble. The folio's Stokes constant is a coefficient in the Borel-plane structure of the state integral (Teichm\u00fcller TQFT / Andersen\u2013Kashaev / DGG) of ONE cusped knot complement S^3 \u2216 K, conjecturally a DT/BPS integer of T[K]. Grep of all 31 sections: zero hits for 'Stokes', 'resurgen', 'Borel', 'state integral', 'knot complement', 'cusped'; 'Teichm\u00fcller' appears only as boundary moduli and in the bibliography. A sum over topologies is not a trans-series over the Borel-plane saddles of a single manifold, so the two 'sums over hyperbolic manifolds' are different objects and no result transfers. Shared background only: Thurston hyperbolisation (the folio cites thurston1978) and the handlebody-knot tables. Nothing in content/ or docs/audits cites Virasoro TQFT (one audit mentions Teichm\u00fcller TQFT in passing). Scope-(a): as read, supplies nothing usable to the resurgence arc; a Virasoro-TQFT-on-knot-complements bridge is not excluded by this reading, it is simply not in this paper.",
+    "keyResults": [],
+    "proposedActions": [
+     {
+      "action": "no-action",
+      "rationale": "No result attaches to the Stokes/resurgence blocks or any other block; no reference created. Re-triage only if a Virasoro-TQFT \u2194 state-integral identification enters the corpus.",
+      "target": "content/bib-qa-verifications.json"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+    },
+    "assessed_at": "2026-09-06T13:42:16Z",
+    "source_sha": "e69b1bf37f2c"
+   }
   }
  ]
 }
