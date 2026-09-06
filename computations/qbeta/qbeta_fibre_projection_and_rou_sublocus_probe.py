@@ -2,6 +2,26 @@
 """qbeta_fibre_projection_and_rou_sublocus_probe.py — the projection IS the
 modulus, it is PARTIAL, and the root-of-unity sublocus it leaves is EMPTY.
 
+🛑 OWNER RULING 2026-09-06: "Does not need to be real in fiber."
+   THE REALITY PREMISE THIS PROBE INHERITS FROM #6875 IS REJECTED.
+
+   Every assertion below is still TRUE AS ARITHMETIC and is not withdrawn:
+   the written Q_A form is real-axis-only, the block's projection is the
+   modulus and is partial, Im[q^2-q] = sin(phi)(2cos(phi)-1) has exactly the
+   zeros stated, and those points are degenerate.
+
+   What is withdrawn is the CONCLUSION drawn from them. Reality of Q_beta is
+   an ARCHIMEDEAN constraint on the evaluation at q_0 (cf.
+   `lusztig_q_0_imaginary_part_zero`), NOT a condition on the fibre. So the
+   reality condition does not apply on |q| = 1 at all, nothing on the fibre
+   locus is selected OR excluded by it, and the "sublocus is EMPTY" headline
+   below rests on a constraint that was never in force there.
+
+   The 4 points remain excluded on DEGENERACY grounds (b^2 = 0, h = 0, pole),
+   which is structural and survives the ruling — but they are now 4 excluded
+   points out of a continuum, not the whole admissible set. That exclusion is
+   near-vacuous rather than decisive. See the audit doc's RETRACTION section.
+
 Bean `qou-cds1` / `qou-pdix` route 5.  Scope-(a) for the arithmetic; the
 degeneracy exclusion is exact.
 

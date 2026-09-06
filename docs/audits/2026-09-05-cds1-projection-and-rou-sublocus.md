@@ -209,3 +209,71 @@ assumption is the load-bearing one — and dropping it removes the reality
 condition, which is the only thing selecting anything. **The honest reading is
 that this closes the mechanism as posed and reopens the question of whether
 reality should have been imposed there at all.**
+
+---
+
+# 🛑 RETRACTION — owner ruling 2026-09-06: "Does not need to be real in fiber."
+
+**The reality premise that both sections above rest on is rejected.** It was
+inherited from #6875 and never examined until the strengthening section flagged
+it as load-bearing; the owner has now resolved that flag **against** the premise.
+
+## What is withdrawn
+
+| claim | status |
+|---|---|
+| "reality selects `N` on the fibre locus" (#6875, both readings) | **withdrawn** — there is no reality condition on the fibre |
+| "the root-of-unity sublocus is EMPTY" *because reality admits only 3 phases* | **withdrawn as stated** — reality admits every phase |
+| "the partial projection excludes the ENTIRE fibre locus" (strengthening) | **withdrawn** — the exclusion ran entirely through the rejected premise |
+| "route 5 predicts nothing under either reading" | **half survives** — see below |
+
+Reality of `𝔔_β` is an **archimedean** constraint on the evaluation at `q₀` —
+the corpus already says so (`lusztig_q_0_imaginary_part_zero`, and a sidecar
+note on `complex-substrate-interpretation` flagging that "fibre-vs-observable
+level of `Im(q)` is exactly the AGENTS.md 2026-06-01 distinction"). It is **not**
+a condition on the fibre. Imposing it on `|q| = 1` was precisely the
+level-conflation that banner warns against, and I did it twice.
+
+## What survives, unchanged
+
+Every *measurement* stands. None of it depended on the premise:
+
+- **The written `Q_A` form is real-axis-only.** Gap `0` at `q = 1.1`, **2.407**
+  at `e^{i/3}`. #6875's `N = 5` / `N = 4` stay withdrawn — now for two
+  independent reasons rather than one.
+- **The block's projection is the modulus on `Δ(net)`, and it is partial.**
+  A structural fact about `neutron-qvalue-symbolic`, not a consequence of
+  anything about reality.
+- **The arithmetic.** `Im[q²−q] = sin φ (2 cos φ − 1)`; solution set exactly
+  `{0, π/3, π, 5π/3}`; no fifth zero.
+- **The four degeneracies are real and structural** — `b² = 0` at the primitive
+  6th roots, `h = 0` at `−1`, the double degeneracy at `q = 1`. These are
+  *not* reality-based and survive the ruling intact.
+
+## What changes about the degeneracies — the weight, not the fact
+
+Under the rejected premise those four points were the **entire admissible set**,
+so excluding them closed the locus. Under the ruling they are **four excluded
+points out of a continuum**. The same measurement goes from decisive to nearly
+vacuous. That inversion is the substantive consequence of the ruling, and it is
+the opposite of the weight both sections above gave it.
+
+## The state route 5 is actually in
+
+- **The fibre locus `|q| = 1` is intact**, less four degenerate points.
+- **Nothing selects `N` there.** Not reality — it does not apply. The `1/111`
+  candidate recorded in #6755 is neither selected nor excluded.
+- The half of the dichotomy that survives is the *full*-projection half, and it
+  now holds unconditionally rather than as one branch: **no reality argument
+  selects anything on the fibre.**
+
+## The open question, restated honestly
+
+If reality is not the constraint, **what does constrain the fibre element?**
+That is route 5's real open problem, and it is now cleanly separated from the
+archimedean question it had been entangled with. Answering it needs a
+fibre-level structural condition — a Habiro-integrality or an
+`H_n(q)`-representation-theoretic one — not an evaluation condition.
+
+**Nothing was wired, at any stage of this arc. No `c_k` moved.** The cost of the
+error is three commits of analysis, all of whose measurements remain reusable.
