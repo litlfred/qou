@@ -74,12 +74,13 @@ import _path_bridge  # noqa: E402, F401
 
 from closed_form_tau_M import markov_z, hecke_h  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
+from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 mp.mp.dps = 60
 
 # CODATA 2018 (m_n − m_p)/M_N.
-_M_P_MEV = mp.mpf("938.27208816")
-_M_N_MEV = mp.mpf("939.56542052")
+_M_P_MEV = M_P_MEV_VALIDATION
+_M_N_MEV = M_N_MEV_VALIDATION
 C_DATA = (_M_N_MEV - _M_P_MEV) / ((_M_N_MEV + _M_P_MEV) / 2)
 
 

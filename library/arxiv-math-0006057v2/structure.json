@@ -1,0 +1,911 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0006057v2",
+ "source": {
+  "file": "0006057v2.pdf",
+  "sha256": "c881434fe9f4b04fb71fe64491e955051c9dd270b93ca6f80fce3eb25f3485d2",
+  "bytes": 490631,
+  "pages": 44,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0006057",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "10 Jun 2000"
+  },
+  "doi": null,
+  "title": "FINITE QUANTUM GROUPOIDS AND THEIR APPLICA TIONS",
+  "authors_raw": "DMITRI NIKSHYCH AND LEONID VAINERMAN",
+  "title_lines": [
+   "FINITE QUANTUM GROUPOIDS AND THEIR APPLICA TIONS"
+  ],
+  "abstract": "W e give a survey of the theory of \ufb01nite quantum groupoids (wea k Hopf algebras), including foundations of the theory and app lications to \ufb01nite depth subfactors, dynamical deformations of quantum group s, and invariants of knots and 3-manifolds.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180212123311-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0006057v2  [math.QA]  10 Jun 2000"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Definitions and Examples",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "De\ufb01nition of the quantum groupoid. By quantum groupoids or weak Hopf",
+   "page": 3,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Counital maps and subalgebras. The linear maps de\ufb01ned in (3) and (4)",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Properties of the antipode. The properties of the antipode of a quantum",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The dual quantum groupoid. The set of axioms of De\ufb01nition 2.1.1 is self-",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Examples : groupoid algebras and their duals. As group algebras and",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Examples : quantum transformation groupoids. It is known that any",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "Examples : T emperley-Lieb algebras. It was shown in [NV3] (see Section",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.7"
+  },
+  {
+   "level": 2,
+   "title": "Other versions of a quantum groupoid. Here we brie\ufb02y discuss several",
+   "page": 9,
+   "source": "inferred",
+   "number": "2.8"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Integrals and semisimplicity",
+   "page": 10,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Hopf modules. Since a quantum groupoid H is both algebra and coalgebra,",
+   "page": 11,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 2,
+   "title": "Maschke\u2019s Theorem. The existence of left integrals in quantum groupoids",
+   "page": 12,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Actions and smash products",
+   "page": 13,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Smash products. Let A be an H-module algebra, then a smash product",
+   "page": 13,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 2,
+   "title": "Duality for actions. An analogue of the Blattner-Montgomery duality the-",
+   "page": 14,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Representation category of a quantum groupoid",
+   "page": 14,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "De\ufb01nition of Rep (H). For a quantum groupoid H let Rep(H) be the cat-",
+   "page": 14,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 2,
+   "title": "The Drinfeld double. To de\ufb01ne the Drinfeld double D(H) of a quantum",
+   "page": 19,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 2,
+   "title": "T owards modular categories. In [RT] a general method of constructing",
+   "page": 21,
+   "source": "inferred",
+   "number": "5.5"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "Twisting and dynamical quantum groups",
+   "page": 22,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Twisting of quantum groupoids. We describe the procedure of construct-",
+   "page": 23,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 2,
+   "title": "Dynamical twists of Hopf algebras. We describe a method of construct-",
+   "page": 24,
+   "source": "inferred",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Dynamical twists for Uq(g) at roots of 1. Suppose that g is a simple Lie",
+   "page": 25,
+   "source": "inferred",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 26,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(\u03bb)RJ (\u03bb), establishes a homomorphism between DJ =H \u2217op",
+   "page": 27,
+   "source": "inferred",
+   "number": "21"
+  },
+  {
+   "level": 1,
+   "title": "Semisimple and C\u2217-quantum groupoids",
+   "page": 27,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 28,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 2,
+   "title": "Existence of the Haar integral. Given a dual bases {fi} and {\u03bei} of H",
+   "page": 28,
+   "source": "inferred",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "C\u2217-quantum groupoids. De\ufb01nition 7.1.1 and the uniqueness of the unit,",
+   "page": 29,
+   "source": "inferred",
+   "number": "7.3"
+  },
+  {
+   "level": 1,
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "page": 30,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 2,
+   "title": "C\u2217-quantum groupoids and unitary modular categories. To de\ufb01ne the",
+   "page": 31,
+   "source": "inferred",
+   "number": "7.4"
+  },
+  {
+   "level": 1,
+   "title": "C\u2217-quantum groupoids and subfactors : the depth 2 case",
+   "page": 31,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Actions of C\u2217-quantum groupoids on von Neumann algebras. Let a",
+   "page": 32,
+   "source": "inferred",
+   "number": "8.1"
+  },
+  {
+   "level": 1,
+   "title": "(e2b)). Using Equation",
+   "page": 34,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Action on a subfactor. Equation (73) suggests the following de\ufb01nition of",
+   "page": 35,
+   "source": "inferred",
+   "number": "8.3"
+  },
+  {
+   "level": 1,
+   "title": "C\u2217-quantum groupoids and subfactors : the finite depth case",
+   "page": 36,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "A Galois correspondence. The following simple observation gives a natural",
+   "page": 37,
+   "source": "inferred",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Bimodule categories. Here we establish an equivalence between the ten-",
+   "page": 38,
+   "source": "inferred",
+   "number": "9.2"
+  },
+  {
+   "level": 2,
+   "title": "Principal graphs. The principal graph of a subfactor N \u2282 M is de\ufb01ned",
+   "page": 41,
+   "source": "inferred",
+   "number": "9.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 42,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-definitions-and-examples",
+   "number": "2",
+   "title": "Definitions and Examples",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 280,
+   "n_words": 50
+  },
+  {
+   "id": "sec-001-21-de\ufb01nition-of-the-quantum-groupoid-by-quantum",
+   "number": "2.1",
+   "title": "De\ufb01nition of the quantum groupoid. By quantum groupoids or weak Hopf",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 413,
+   "n_words": 76
+  },
+  {
+   "id": "sec-002-4-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "4",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 995,
+   "n_words": 189
+  },
+  {
+   "id": "sec-003-22-counital-maps-and-subalgebras-the-linear-maps",
+   "number": "2.2",
+   "title": "Counital maps and subalgebras. The linear maps de\ufb01ned in (3) and (4)",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2726,
+   "n_words": 509
+  },
+  {
+   "id": "sec-004-23-properties-of-the-antipode-the-properties-of",
+   "number": "2.3",
+   "title": "Properties of the antipode. The properties of the antipode of a quantum",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 643,
+   "n_words": 109
+  },
+  {
+   "id": "sec-005-6-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "6",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2617,
+   "n_words": 465
+  },
+  {
+   "id": "sec-006-24-the-dual-quantum-groupoid-the-set-of-axioms-o",
+   "number": "2.4",
+   "title": "The dual quantum groupoid. The set of axioms of De\ufb01nition 2.1.1 is self-",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1228,
+   "n_words": 224
+  },
+  {
+   "id": "sec-007-25-examples-groupoid-algebras-and-their-duals-as",
+   "number": "2.5",
+   "title": "Examples : groupoid algebras and their duals. As group algebras and",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 658,
+   "n_words": 121
+  },
+  {
+   "id": "sec-008-8-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "8",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 685,
+   "n_words": 132
+  },
+  {
+   "id": "sec-009-26-examples-quantum-transformation-groupoids-it",
+   "number": "2.6",
+   "title": "Examples : quantum transformation groupoids. It is known that any",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1337,
+   "n_words": 256
+  },
+  {
+   "id": "sec-010-27-examples-t-emperley-lieb-algebras-it-was-show",
+   "number": "2.7",
+   "title": "Examples : T emperley-Lieb algebras. It was shown in [NV3] (see Section",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1815,
+   "n_words": 339
+  },
+  {
+   "id": "sec-011-28-other-versions-of-a-quantum-groupoid-here-we",
+   "number": "2.8",
+   "title": "Other versions of a quantum groupoid. Here we brie\ufb02y discuss several",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1264,
+   "n_words": 201
+  },
+  {
+   "id": "sec-012-10-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "10",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 936,
+   "n_words": 162
+  },
+  {
+   "id": "sec-013-3-integrals-and-semisimplicity",
+   "number": "3",
+   "title": "Integrals and semisimplicity",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1676,
+   "n_words": 352
+  },
+  {
+   "id": "sec-014-32-hopf-modules-since-a-quantum-groupoid-h-is-bo",
+   "number": "3.2",
+   "title": "Hopf modules. Since a quantum groupoid H is both algebra and coalgebra,",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1778,
+   "n_words": 349
+  },
+  {
+   "id": "sec-015-12-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "12",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1268,
+   "n_words": 246
+  },
+  {
+   "id": "sec-016-33-maschkes-theorem-the-existence-of-left-integr",
+   "number": "3.3",
+   "title": "Maschke\u2019s Theorem. The existence of left integrals in quantum groupoids",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1348,
+   "n_words": 278
+  },
+  {
+   "id": "sec-017-4-actions-and-smash-products",
+   "number": "4",
+   "title": "Actions and smash products",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 872,
+   "n_words": 178
+  },
+  {
+   "id": "sec-018-42-smash-products-let-a-be-an-h-module-algebra-t",
+   "number": "4.2",
+   "title": "Smash products. Let A be an H-module algebra, then a smash product",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 357,
+   "n_words": 73
+  },
+  {
+   "id": "sec-019-14-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "14",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 73,
+   "n_words": 12
+  },
+  {
+   "id": "sec-020-43-duality-for-actions-an-analogue-of-the-blattn",
+   "number": "4.3",
+   "title": "Duality for actions. An analogue of the Blattner-Montgomery duality the-",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1549,
+   "n_words": 300
+  },
+  {
+   "id": "sec-021-5-representation-category-of-a-quantum-groupoid",
+   "number": "5",
+   "title": "Representation category of a quantum groupoid",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 81,
+   "n_words": 12
+  },
+  {
+   "id": "sec-022-51-de\ufb01nition-of-rep-h-for-a-quantum-groupoid-h-l",
+   "number": "5.1",
+   "title": "De\ufb01nition of Rep (H). For a quantum groupoid H let Rep(H) be the cat-",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 2579,
+   "n_words": 532
+  },
+  {
+   "id": "sec-023-16-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "16",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 3517,
+   "n_words": 714
+  },
+  {
+   "id": "sec-024-18-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "18",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1792,
+   "n_words": 291
+  },
+  {
+   "id": "sec-025-53-the-drinfeld-double-to-de\ufb01ne-the-drinfeld-dou",
+   "number": "5.3",
+   "title": "The Drinfeld double. To de\ufb01ne the Drinfeld double D(H) of a quantum",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1787,
+   "n_words": 368
+  },
+  {
+   "id": "sec-026-20-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "20",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3328,
+   "n_words": 655
+  },
+  {
+   "id": "sec-027-55-t-owards-modular-categories-in-rt-a-general-m",
+   "number": "5.5",
+   "title": "T owards modular categories. In [RT] a general method of constructing",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1252,
+   "n_words": 230
+  },
+  {
+   "id": "sec-028-22-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "22",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 2168,
+   "n_words": 398
+  },
+  {
+   "id": "sec-029-6-twisting-and-dynamical-quantum-groups",
+   "number": "6",
+   "title": "Twisting and dynamical quantum groups",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 625,
+   "n_words": 103
+  },
+  {
+   "id": "sec-030-61-twisting-of-quantum-groupoids-we-describe-the",
+   "number": "6.1",
+   "title": "Twisting of quantum groupoids. We describe the procedure of construct-",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2229,
+   "n_words": 463
+  },
+  {
+   "id": "sec-031-24-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "24",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1767,
+   "n_words": 350
+  },
+  {
+   "id": "sec-032-62-dynamical-twists-of-hopf-algebras-we-describe",
+   "number": "6.2",
+   "title": "Dynamical twists of Hopf algebras. We describe a method of construct-",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 3007,
+   "n_words": 607
+  },
+  {
+   "id": "sec-033-63-dynamical-twists-for-uqg-at-roots-of-1-suppos",
+   "number": "6.3",
+   "title": "Dynamical twists for Uq(g) at roots of 1. Suppose that g is a simple Lie",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 559,
+   "n_words": 117
+  },
+  {
+   "id": "sec-034-26-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "26",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 2988,
+   "n_words": 577
+  },
+  {
+   "id": "sec-035-21-\u03bbrj-\u03bb-establishes-a-homomorphism-between-dj-h",
+   "number": "21",
+   "title": "(\u03bb)RJ (\u03bb), establishes a homomorphism between DJ =H \u2217op",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 27,
+   "n_chars": 325,
+   "n_words": 57
+  },
+  {
+   "id": "sec-036-7-semisimple-and-c-quantum-groupoids",
+   "number": "7",
+   "title": "Semisimple and C\u2217-quantum groupoids",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1362,
+   "n_words": 253
+  },
+  {
+   "id": "sec-037-28-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "28",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-038-72-existence-of-the-haar-integral-given-a-dual-b",
+   "number": "7.2",
+   "title": "Existence of the Haar integral. Given a dual bases {fi} and {\u03bei} of H",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 3693,
+   "n_words": 746
+  },
+  {
+   "id": "sec-039-73-c-quantum-groupoids-de\ufb01nition-711-and-the-uni",
+   "number": "7.3",
+   "title": "C\u2217-quantum groupoids. De\ufb01nition 7.1.1 and the uniqueness of the unit,",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 1447,
+   "n_words": 269
+  },
+  {
+   "id": "sec-040-30-dmitri-nikshych-and-leonid-v-ainerman",
+   "number": "30",
+   "title": "DMITRI NIKSHYCH AND LEONID V AINERMAN",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2098,
+   "n_words": 367
+  },
+  {
+   "id": "sec-041-74-c-quantum-groupoids-and-unitary-modular-categ",
+   "number": "7.4",
+   "title": "C\u2217-quantum groupoids and unitary modular categories. To de\ufb01ne the",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 2663,
+   "n_words": 502
+  },
+  {
+   "id": "sec-042-8-c-quantum-groupoids-and-subfactors-the-depth-2",
+   "number": "8",
+   "title": "C\u2217-quantum groupoids and subfactors : the depth 2 case",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 933,
+   "n_words": 164
+  },
+  {
+   "id": "sec-043-81-actions-of-c-quantum-groupoids-on-von-neumann",
+   "number": "8.1",
+   "title": "Actions of C\u2217-quantum groupoids on von Neumann algebras. Let a",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 5844,
+   "n_words": 1163
+  },
+  {
+   "id": "sec-044-1-e2b-using-equation",
+   "number": "1",
+   "title": "(e2b)). Using Equation",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 1689,
+   "n_words": 345
+  },
+  {
+   "id": "sec-045-83-action-on-a-subfactor-equation-73-suggests-th",
+   "number": "8.3",
+   "title": "Action on a subfactor. Equation (73) suggests the following de\ufb01nition of",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 2614,
+   "n_words": 529
+  },
+  {
+   "id": "sec-046-9-c-quantum-groupoids-and-subfactors-the-finite",
+   "number": "9",
+   "title": "C\u2217-quantum groupoids and subfactors : the finite depth case",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 532,
+   "n_words": 103
+  },
+  {
+   "id": "sec-047-91-a-galois-correspondence-the-following-simple",
+   "number": "9.1",
+   "title": "A Galois correspondence. The following simple observation gives a natural",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 4192,
+   "n_words": 865
+  },
+  {
+   "id": "sec-048-92-bimodule-categories-here-we-establish-an-equi",
+   "number": "9.2",
+   "title": "Bimodule categories. Here we establish an equivalence between the ten-",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 7378,
+   "n_words": 1505
+  },
+  {
+   "id": "sec-049-93-principal-graphs-the-principal-graph-of-a-sub",
+   "number": "9.3",
+   "title": "Principal graphs. The principal graph of a subfactor N \u2282 M is de\ufb01ned",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 3502,
+   "n_words": 662
+  },
+  {
+   "id": "sec-050-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 44,
+   "n_chars": 8044,
+   "n_words": 1247
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 51,
+  "sections": 51,
+  "chars_total": 98513
+ }
+}

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T04:44:26.531595+00:00",
-  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T18:00:41.362638+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "A1_block_product_is_det_of_T_plus_d",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 31,
   "computation": "adding_crossings_cannot_break_the_degeneracy_probe",
   "scriptFile": "adding_crossings_cannot_break_the_degeneracy_probe.py",
-  "scriptHash": "3305035b5db3",
-  "scriptCommitSha": "ded5462ce28709cef973f8ce815b41cf442d77e4",
+  "scriptHash": "ba3bdb259ed1",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,10 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -104,10 +104,10 @@
       "requires": "beta < 0 or beta > 1"
     },
     "cost_of_matching_nature": {
-      "target_ratio": "33.705545",
+      "target_ratio": "33.705548",
       "d_star": "0.9009182838963",
       "beta_star": "-4.309370498",
-      "abs_mu_anti": "5.94404e-11",
+      "abs_mu_anti": "5.94402e-11",
       "sensitivity": {
         "1e-4": "13.185297",
         "1e-5": "16.480558",

@@ -80,6 +80,7 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION
 
 COMP = str(_COMP)
 
@@ -87,8 +88,8 @@ COMP = str(_COMP)
 B_AME = {
     "D": mp.mpf("2.22452"),
     "3H": mp.mpf("8.48180"),
-    "3He": mp.mpf("7.71804"),
-    "4He": mp.mpf("28.29567"),
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 

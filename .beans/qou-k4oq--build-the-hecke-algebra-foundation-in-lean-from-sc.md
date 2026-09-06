@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-05T07:53:31Z
-updated_at: 2026-09-05T08:45:40Z
+updated_at: 2026-09-05T18:59:58Z
 ---
 
 LAYER 1 DONE 2026-09-05, sorry-free, lean-direct exit 0 (4.0 s), zero warnings.
@@ -103,3 +103,173 @@ sequences — no exchange property, no Matsumoto) nor this corpus.
 - The Markov trace is `noncomputable opaque` in `IwahoriHecke/MarkovTrace.lean`; not
   constructed.
 - `QOU/IwahoriHecke/Quotient.lean` imposes the quadratic relation only (bean `qou-phir`).
+
+
+## 2026-09-05 — cyclicity + the Markov peel (PR #6845), and both moves are now proved
+
+Branch `claude/hecke-cyclicity-markov-2026-09-05`. Two files, both lean-direct
+exit 0 with `-DautoImplicit=false -s 65536`, `#print axioms` = [propext,
+Classical.choice, Quot.sound] on every headline result — no `sorryAx`.
+
+**`QOU/IwahoriHecke/QTraceCyclic.lean` — Markov move I.** `QuantumTrace` had
+cyclicity only against a generator. The image of `heckeActionN` now provably
+lies in `Subalgebra.centralizer R {siteWeight w}` for every `x`
+(`heckeActionN_mem_weightCentralizer`), obtained by corestricting the action
+along `liftBalanced` and composing back with `Subalgebra.val` — subalgebra
+closure in place of an induction over the algebra. Hence `qTrace_mul_comm`
+(`tr_w(xy) = tr_w(yx)`, arbitrary x, y, every w) and `qTrace_conj`.
+
+**`QOU/IwahoriHecke/MarkovPeel.lean` — Markov move II.** The tower
+`tower : H_{m+1}(q) →ₐ H_{m+2}(q)` (input: `coxA_castSucc`) and its matrix
+counterpart `extendSiteHom` (= `idTensorHom` reindexed along `Fin.snocEquiv`),
+squared up by `heckeActionN_tower`. Then `trace_peel` /`qTrace_peel`:
+`tr_w(ι(x)·σ_last) = z·tr_w(x)`.
+
+**The result worth carrying forward.** `peel_forces_physical_weight`: if the
+peel holds at all then `w 1 = q²·w 0`; with `w 0 = 1` that is `w = (1, q²)` and
+`z = q³` (`peel_weight_eq`). So `K = diag(1, q²)` — the weight
+`WeightedPermutationCharacter` and the rest of the corpus use — is **not a
+convention adopted to make the arithmetic work**; it is the unique weight up to
+scale admitting a Markov peel at all, and `q³` is `w 1 · q`, forced by the same
+two equations rather than fitted. The mechanism: the weighted partial trace of
+`Ř` over the new site is diagonal (the swap entry would need `u = t` and
+`t = v` at once), with entries `w0·q + w1(q − qi)` and `w1·q`; equating them is
+`w0·q = w1·qi`.
+
+**Still NOT done, and named in the files rather than scaffolded:**
+
+* normalisation `tr(1) = 1` — `qTrace_one` is `(∑ₖ w k)^{m+1}` = `(1+q²)^{m+1}`
+  at the physical weight, so the normalised functional and its `z` carry that
+  factor;
+* the link invariant — `QOU.IwahoriHecke.MarkovTrace.markovTrace` is still
+  `noncomputable opaque`, constructed nowhere;
+* Matsumoto (the group half) — bean `qou-06h7`, updated today with the measured
+  Mathlib status (its own TODO list says it is unproved);
+* surjectivity onto the commutant — bean `qou-us0a`, updated today;
+  `centralizer_centralizer` is still absent from Mathlib v4.24.0.
+
+
+## 2026-09-05 (same PR #6845) — normalisation, and convention D's z is DERIVED
+
+`QOU/IwahoriHecke/MarkovNormalized.lean`. The third Markov axiom, and the
+finding that makes this arc touch the compute layer.
+
+`R` is a bare `CommRing`, so the inverse of the total weight is carried as a
+scalar with a witnessing equation, the idiom `q * qi = 1` already uses:
+`(∑ₖ w k) * wi = 1`, `markovTr x := wi^(m+1) * qTrace w x`. Three axioms:
+`markovTr_one`, `markovTr_mul_comm`, `markovTr_peel` (scalar `z · wi`).
+
+**The peel already forced `w = (1, q²)` and `z = q³`. The total weight is then
+`1 + q²`, so the normalised peel scalar is `q³/(q² + 1)` — convention D's
+Markov parameter verbatim** (`pyhecke/gram.py::z_mp`, *"z = q³/(q² + 1) —
+convention D"*), and not convention C's `√q/(q+1)`. Division-free as
+`markovParam_eq_conventionD`; `markovParam_unique` shows the equation
+`ẑ·(q²+1) = q³` pins `ẑ` once `1+q²` is invertible, so it is a determination
+rather than a choice of representative. `markovTr_physical` collects all four.
+
+Nothing chose it. The weight was forced by the peel existing at all, the
+unnormalised scalar by the same two equations, the normalisation is division
+by `tr_w(1)`.
+
+**Two limits, in the file rather than glossed.** (1) It is a match of
+algebraic FORM in the §7a balanced parameter — which IS the parameter
+`gram.py`'s `z` is written in, since §7a fixes `(σ − q)(σ + q⁻¹) = 0` — but
+proving the compute layer's *numerical* `z` at the substrate pin is this same
+object needs the two trace conventions identified, and that is not attempted.
+(2) Still not a link invariant: that needs `B_n → H_n(q)`, Markov's theorem
+and closure-invariance. `MarkovTrace.markovTrace` stays `noncomputable opaque`.
+
+**Relevance to the 2026-08-15 owner ruling (R1, convention D canonical).**
+That ruling settles which convention is canonical and notes the `c_k` ladder
+must be *re-derived* under D. This is an independent derivation of D's `z`
+from the R-matrix — it does not re-derive the ladder, but it says the
+convention the ladder must be re-derived in is not arbitrary.
+
+
+## 2026-09-05 — the braid group (PR #6860), and both Markov moves on braids
+
+Branch `claude/braid-group-hecke-rep-2026-09-05`, immediately after #6845.
+
+**Mathlib has no braid group.** Measured on the pinned v4.24.0:
+`Mathlib/GroupTheory/` has `PresentedGroup.lean` and **no `Braid*` file at all**.
+So it is built here from the presentation, as the Hecke algebra was.
+
+`QOU/IwahoriHecke/BraidGroup.lean` — `artinRels M` written with the SAME
+`altProd` as `T_braid` / `Balanced.sigma_braid`, so the group relation and the
+algebra relation are one alternating word in two monoids and `map_altProd`
+moves between them. `ArtinGroup M := PresentedGroup (artinRels M)`;
+`BraidGroupN m := ArtinGroup (coxA m)`. `heckeRep : Art(M) →* H(M,q²)ˣ` from
+the universal property, once the braid relation is checked in the UNIT group
+(`sigmaUnit_braid`). `braidTrace` + `braidTrace_conj` = **Markov move I**.
+
+This closes a gap the corpus's own docstrings had been pointing at:
+`isUnit_sigma` says invertibility is *"what makes H(M,q²) a quotient of the
+braid group algebra rather than merely of the free algebra"* — there was no
+braid group for that sentence to be about.
+
+`QOU/IwahoriHecke/BraidTower.lean` — `braidGen_braid` (the relation read back
+out of the quotient), `braidTower : B_{m+1} →* B_{m+2}` (single input:
+`coxA_castSucc`), `heckeRep_braidTower` closing the square against the algebra
+tower, and `braidTrace_peel` = **Markov move II**. All three layers now have a
+tower map and all three squares commute; each is two homs agreeing on
+generators, never an induction.
+
+**STILL NOT A LINK INVARIANT, and the two gaps are NAMED rather than written
+as hypotheses** — a hypothesis would hide how much either is doing:
+
+1. **The writhe normalisation.** II⁺ and II⁻ carry *different* scalars (`σ` and
+   `σ⁻¹` do not peel to the same thing), so the raw functional is an invariant
+   of a **framed** closure. Fixing it needs a well-defined writhe (exponent
+   sum) on `ArtinGroup`. This is the cheaper of the two and is the natural next
+   piece of work.
+2. **Markov's theorem** — closure-equivalence is generated by exactly these two
+   moves. Low-dimensional topology, absent from Mathlib, not proved here.
+
+`MarkovTrace.markovTrace` therefore still stays `noncomputable opaque`.
+
+
+## 2026-09-05 — the framing correction is CLOSED; only Markov's theorem is left (PR #6860)
+
+Same branch, two more files. This closes the FIRST of the two gaps the previous
+entry named, so the honest gap list is now one item long.
+
+`QOU/IwahoriHecke/NegativePeel.lean` — move II comes in two flavours and they do
+NOT share a scalar. No new sum manipulation: the skein relation gives
+`σ⁻¹ = σ − (q − qi)` on the nose, so the negative peel is the positive one minus
+`(q−qi)` times the peel of `1`. The one new ingredient is that last piece,
+`trace_extendSite`: `tr_w(X ⊗ 1) = (∑ₖ w k)·tr_w(X)` — an inert site multiplies
+the trace by the total weight, which is `qTrace_one` one factor at a time.
+Hence `z⁻ = z − (q−qi)(∑ w)`, and at the forced weight
+`q³ − (q−qi)(1+q²) = q³ − (q³ − qi) = qi`. **So `z⁻ = q⁻¹` against `z⁺ = q³`,
+and their product is `q²`, NOT 1** (`peel_scalars_physical`) — which is exactly
+why a writhe-only correction cannot work.
+
+`QOU/IwahoriHecke/JonesNormalisation.lean` — Mathlib has no braid group hence no
+writhe. `writhe : Art(M) →* Multiplicative ℤ` sends every generator to 1 and is
+well defined on the presented group **precisely because `M` is symmetric**: an
+Artin relation equates alternating words of lengths `M i j` and `M j i`, which a
+constant assignment turns into the same power. Same hypothesis `heckeRep` and
+`liftBalanced` already take. `braidWritheZ_braidTower`: an inert strand does not
+change it.
+
+Then `J(β) := A^n · B^{writhe β} · tr(β)`. The two moves give two equations —
+`A·B·z⁺ = 1` and `A·B⁻¹·z⁻ = 1` — whose product and quotient give
+`A² = q⁻²(1+q²)²` and `B² = q⁻⁴`. So `A = (1+q²)q⁻¹`, `B = q⁻²`, written
+division-free as UNITS over `q·qi = 1` and `(1+q²)·wi = 1`, so `R` stays a bare
+`CommRing`. `jonesFn_peel` / `jonesFn_peel_neg` verify both moves;
+`jonesFn_conj` is move I, untouched (writhe and strand count are both
+conjugation-invariant).
+
+**`framing_constants_unique` states what the equations pin AND NO MORE**: for any
+`a,b,c` with `a·b·z⁺ = 1`, `a·c·z⁻ = 1`, `b·c = 1`, they force
+`a²·(q³·qi·wi²) = 1` and `b²·q³ = qi`. That is a determination of the SQUARES —
+the sign is genuinely free, which is why the standard Jones normalisation carries
+a `(−1)`-type factor, and the file does **not** claim uniqueness of `A` and `B`.
+
+**ONE gap left, and it is the topological one.** `jonesFn` is invariant under
+both Markov moves and under conjugation. It is still not a link invariant because
+**Markov's theorem** — closure-equivalence of braids is generated by exactly
+these moves — is low-dimensional topology, absent from Mathlib, and not proved
+here. It is NOT hypothesised anywhere: with it `jonesFn` descends to links;
+without it `jonesFn` is a function on braids constant on the orbits of both
+moves. `MarkovTrace.markovTrace` accordingly stays `noncomputable opaque`.

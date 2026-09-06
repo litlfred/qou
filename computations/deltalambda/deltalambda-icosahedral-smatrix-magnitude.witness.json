@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T03:11:31.754532+00:00",
-  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T17:59:18.559735+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "preflight_det_closed_forms_verified",
@@ -41,11 +41,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "deltalambda-icosahedral-smatrix-magnitude",
   "scriptFile": "deltalambda_icosahedral_smatrix_magnitude_probe.py",
-  "scriptHash": "4ac3fd5f7415",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "9c54aef2544f",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -57,7 +57,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "5df83fbc24b06f8a"
@@ -77,10 +77,10 @@
     "preflight_det_closed_forms_verified": true,
     "he4_spectrum_pm_sqrt5_pm1_verified": true,
     "data_ratios_AME2020": {
-      "rho_4": "12.719899",
-      "rho_3He": "3.4695305",
+      "rho_4": "12.719896",
+      "rho_3He": "3.4695311",
       "rho_3H": "3.8128675",
-      "mirror_3H_over_3He": "1.0989578"
+      "mirror_3H_over_3He": "1.0989576"
     },
     "candidates": {
       "ceiling_1_over_sqrt5": {
@@ -194,10 +194,10 @@
       "candidate_best_for_rho4": "S00_E8_zeta2_1_over_sqrt(10-2sqrt5)",
       "m": "0.425325404176",
       "rho_4_model": "12.770003",
-      "rho_4_AME": "12.719899",
+      "rho_4_AME": "12.719896",
       "rho_4_rel_err": 0.00394,
       "mirror_model": "2.4223233",
-      "mirror_AME": "1.0989578",
+      "mirror_AME": "1.0989576",
       "mirror_rel_err": 1.2042,
       "rho_3H_model": "5.9767518",
       "rho_3H_AME": "3.8128675",

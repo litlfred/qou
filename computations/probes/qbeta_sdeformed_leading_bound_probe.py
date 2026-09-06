@@ -74,6 +74,7 @@ KAPPA = mp.sqrt(3) / 4                       # A-poly cusp modulus |a₂|, τ = 
 # resolves the PROTON pin per the owner directive of 2026-08-15 ("we want
 # proton unless for an explicit reason ... otherwise pin proton").
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402 -- q0 RESOLVED, not frozen (qou-1c4y)
+from codata_constants import M_E_MEV  # noqa: E402
 # This producer hand-builds its assertion payload and `json.dump`s it, so
 # `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
 # reached, and a re-run would re-emit the float literals and undo PR #5910's
@@ -91,7 +92,7 @@ S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")
 
 # CAL-2 gross closed form (cheat-sheet), for the two-"S" sanity row.
-M_E = mp.mpf("0.51099895000")                # MeV
+M_E = M_E_MEV                # MeV
 SILVER = 1 + mp.sqrt(2)                       # zero of q²−2q−1
 
 

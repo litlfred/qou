@@ -185,6 +185,19 @@ def per_generator_product(w):
     return out
 
 
+def s(v, n=20):
+    """Decimal string with the point in the right place. `gmpy2.digits` returns
+    a BARE MANTISSA, so `0.5054...` serialises as `5054...` -- unreadable for
+    magnitude and, in a witness, numerically unusable downstream. Added
+    2026-09-05 (qou-i229) after `witness-block-agreement` found four published
+    figures unmatched against the very probe that computes them."""
+    m, e, _ = gmpy2.digits(mpfr(v), 10, n)
+    neg = m.startswith("-")
+    m = m.lstrip("-")
+    body = ("0." + "0" * (-e) + m) if e <= 0 else (m[:e] + "." + m[e:])
+    return ("-" if neg else "") + body
+
+
 def main() -> int:
     checks: list[tuple[str, bool]] = []
 
@@ -208,10 +221,10 @@ def main() -> int:
                   ("grouped     s0^3 s1^-3", [(1, Z0, 0)] * 3 + [(1, -H, 1)] * 3)):
         v = abs(E.trM(3, w))
         rel[nm[:4]] = abs(v - lean) / lean
-        print(f"    {nm:26s} |tr_M| = {gmpy2.digits(v, 10, 22)[0]}   "
+        print(f"    {nm:26s} |tr_M| = {s(v, 22)}   "
               f"rel {f(rel[nm[:4]]):.3e}")
     print(f"    {'Lean (4+h^2-3h^4-h^6)/(h^2+4)':26s}          "
-          f"{gmpy2.digits(lean, 10, 22)[0]}")
+          f"{s(lean, 22)}")
     check("the INTERLEAVED word is beta_Bor (Lean closed form, rel < 1e-40)",
           rel["inte"] < TOL)
     check("the GROUPED word is a different object (off by more than 50 %)",
@@ -231,8 +244,8 @@ def main() -> int:
             r = abs(prod - mine) / abs(prod)
             ok_prod &= r < TOL
             print(f"    {nm:>5} {io:>10}  atom_braid_word_3A "
-                  f"{gmpy2.digits(prod, 10, 20)[0]}   rebuilt "
-                  f"{gmpy2.digits(mine, 10, 20)[0]}   rel {f(r):.2e}")
+                  f"{s(prod, 20)}   rebuilt "
+                  f"{s(mine, 20)}   rel {f(r):.2e}")
     check("both rebuilds reproduce atom_braid_word_3A's own trace to 1e-40 under "
           "the matching intra_order — every comparison below is against production",
           ok_prod)
@@ -351,11 +364,11 @@ def main() -> int:
     eng_borr = abs(E.trM(3, [(1, Z0, 0), (1, -H, 1)] * 3))
     rg = abs(lean_grouped - eng_grouped) / eng_grouped
     rb = abs(lean_borr - eng_borr) / eng_borr
-    print(f"    groupedConfinement   Lean def {gmpy2.digits(lean_grouped, 10, 22)[0]}")
-    print(f"                         engine   {gmpy2.digits(eng_grouped, 10, 22)[0]}"
+    print(f"    groupedConfinement   Lean def {s(lean_grouped, 22)}")
+    print(f"                         engine   {s(eng_grouped, 22)}"
           f"   rel {f(rg):.2e}")
-    print(f"    borromeanConfinement Lean def {gmpy2.digits(lean_borr, 10, 22)[0]}")
-    print(f"                         engine   {gmpy2.digits(eng_borr, 10, 22)[0]}"
+    print(f"    borromeanConfinement Lean def {s(lean_borr, 22)}")
+    print(f"                         engine   {s(eng_borr, 22)}"
           f"   rel {f(rb):.2e}")
     check("Lean's groupedConfinement IS tr_M(sigma_0^3 sigma_1^-3) — the "
           "per-generator product is what the grouped word traces", rg < TOL)
@@ -395,10 +408,10 @@ def main() -> int:
             "ratio gives 2H +254.53 %, 3H +74.49 %, 3He +53.87 %, 4He -33.60 %: it does "
             "not work, and is worse than the grouped word below A = 4. No fitting.")
         for nm in Rn:
-            wb.add_data(f"R_nucleon_{nm}", gmpy2.digits(Rn[nm], 10, 25)[0])
-            wb.add_data(f"R_quark_interleaved_{nm}", gmpy2.digits(Rq[nm][1], 10, 25)[0])
-            wb.add_data(f"R_quark_grouped_{nm}", gmpy2.digits(Rq[nm][0], 10, 25)[0])
-            wb.add_data(f"B_two_level_interleaved_{nm}", gmpy2.digits(B2[nm], 10, 20)[0])
+            wb.add_data(f"R_nucleon_{nm}", s(Rn[nm], 25))
+            wb.add_data(f"R_quark_interleaved_{nm}", s(Rq[nm][1], 25))
+            wb.add_data(f"R_quark_grouped_{nm}", s(Rq[nm][0], 25))
+            wb.add_data(f"B_two_level_interleaved_{nm}", s(B2[nm], 20))
         for name, ok in checks:
             wb.add_assertion(name=name, computed=str(int(ok)), expected="1")
         wb.add_caveat(

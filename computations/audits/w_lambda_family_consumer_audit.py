@@ -104,6 +104,24 @@ MARKOV = re.compile(r'\by_lambda\b|\by_lam\b|markov_weight|y_lambda_at|y_lambda_
 # typed. `d_q_lam` is invisible to a local-name pattern and resolves cleanly
 # here, because it was assigned from `dim_q(...)`.
 DIMQ_SRC = re.compile(r'(?i)dim_?q|q_?dim|quantum_?dim|\bd_?q\b')
+
+# A q-dimension is often not CALLED but BUILT INLINE from q-integers, and that
+# spelling defeated the vocabulary above -- the 13th blindness mode of this
+# detector, found 2026-09-05 via the trace-convention registry.
+# `two_quark_volume_weighted_clean.py` writes
+#
+#     d = q_int(3, q) * q_int(2, q);  return d * d / q_factorial(3, q)
+#
+# whose numerator provenance resolves to `q_int`, matching nothing in DIMQ_SRC.
+#
+# 🛑 A HIT ON THIS VOCABULARY IS "PLANCHEREL-SHAPED", NOT "A PLANCHEREL WEIGHT".
+# The very files that motivated it are the proof: their `d` is the HOOK PRODUCT,
+# and the q-dimension is its reciprocal times [n]_q! (`dim_q = [n]_q!/hook_prod`).
+# Measured at q0 for lambda |- 3 the true weights are 0.1634 / 0.6607 / 0.1634
+# and those files carry 6.1206 / 1.5136 = hook_prod^2/[3]_q!, matching to the
+# digit -- so the shape matched while the quantity was INVERTED. Report the
+# shape; never assert the family from it.
+QINT_SRC = re.compile(r'(?i)q_?int\b|q_?integer|\bqi\b|q_?bracket|q_?num\b')
 QFACT_SRC = re.compile(r'(?i)q_?factorial|qfact|\bfact\b|factorial')
 SELFNORM_SRC = re.compile(r'(?i)selfnorm|sum_?dim|denominator|\bD2\b|\bD_?sq\b')
 
@@ -198,6 +216,12 @@ def ast_planch_hits(text: str) -> list[dict]:
             continue
         num = _provenance(base, amap)
         num_why = sorted(n for n in num if DIMQ_SRC.search(n))
+        shape_only = False
+        if not num_why:
+            # Fall back to the inline q-integer spelling, and MARK IT, so a
+            # reader cannot mistake a shape match for a confirmed family.
+            num_why = sorted(n for n in num if QINT_SRC.search(n))
+            shape_only = bool(num_why)
         if not num_why:
             continue
         den = _provenance(node.right, amap)
@@ -220,7 +244,9 @@ def ast_planch_hits(text: str) -> list[dict]:
         # a row that looks like a false positive while being a true one.
         hits.append({
             "line": getattr(node, "lineno", -1),
-            "family": family,
+            "family": family + ("  [SHAPE-ONLY: numerator built from q-integers, "
+                                "NOT confirmed to be a dim_q]" if shape_only else ""),
+            "shape_only": shape_only,
             "source": local[:120],
             "matched_numerator": num_why,
             "matched_denominator": den_why,
@@ -267,6 +293,10 @@ def main() -> int:
     # list IS the measured blindness of the original detector; an empty list
     # would mean the two passes agree, not that either is complete.
     ast_only: dict[str, list[dict]] = {}
+    # Files carrying a Plancherel-SHAPED construction that the `w_lambda` name
+    # gate never even examines. The 13th blindness mode, and a SCOPE defect
+    # rather than a pattern one.
+    name_gate_missed: dict[str, list[dict]] = {}
     for f in sorted(ROOT.rglob("*.py")):
         rel = f.relative_to(ROOT).as_posix()
         # Exclude this file. It necessarily contains every pattern it searches
@@ -280,14 +310,42 @@ def main() -> int:
             text = f.read_text(errors="replace")
         except OSError:
             continue
-        if not NAME.search(text):
+        # THE NAME GATE IS THE ONE THAT FAILS FIRST, so the AST pass runs BEFORE
+        # it and over every file. `two_quark_volume_weighted_clean.py` builds the
+        # weight under the name `y_3_sym` and contains the token `w_lambda`
+        # nowhere, so under the old ordering it was never EXAMINED -- the
+        # provenance repair of PR #6840 could not have helped, because the file
+        # never reached it. Scoping a "which files does the ruling move?" audit
+        # by a STRING asks which files use a NAME, not which compute the OBJECT.
+        hits = ast_planch_hits(text)
+        named = bool(NAME.search(text))
+        if hits and not named:
+            name_gate_missed[rel] = hits
+        if not named:
             continue
         buckets[classify(text)].append(rel)
-        hits = ast_planch_hits(text)
         if hits and not any(rx.search(text) for rx in PLANCH.values()):
             ast_only[rel] = hits
 
     total = sum(len(v) for v in buckets.values())
+    b.add_data("name_gate_missed", {
+        "count": len(name_gate_missed),
+        "note": "Files carrying a Plancherel-SHAPED d^2/[n]_q! construction "
+                "that contain NO `w_lambda`-family token, so the name gate "
+                "never examined them at all. The 13th blindness mode, and a "
+                "SCOPE defect rather than a pattern one: the PR #6840 "
+                "provenance repair could not have helped because these files "
+                "never reached it. 🛑 A ROW HERE IS NOT AUTOMATICALLY IN THE "
+                "MOLIEN BLAST RADIUS -- do not add this count to the 11 and "
+                "quote a total. Two spot-checks show the range: "
+                "q_pinning_50_digit.py:169 computes dim_q^2/[n]_q! correctly "
+                "and is a real consumer (in the ANCHOR-DEFINING producer), "
+                "while mass_endomorphism.py:93 divides by the sum of its own "
+                "weights and is therefore already self-normalised dim_q^2/D^2, "
+                "which the ruling does not move. Read the construction, and "
+                "check `shape_only` first.",
+        "files": {k: v for k, v in sorted(name_gate_missed.items())},
+    })
     b.add_data("ast_provenance_only", {
         "count": len(ast_only),
         "note": "Files carrying a dim_q^2/<normaliser> construction that the "

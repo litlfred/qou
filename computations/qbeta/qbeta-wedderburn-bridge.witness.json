@@ -13,7 +13,7 @@
       "computed": [],
       "expected": [],
       "passed": true,
-      "note": "scans every non-.lake Lean source with COMMENTS STRIPPED. An earlier version of this check filtered on a leading backtick instead, which counted every doc mention as a use -- including the retirement note itself. Stripping is the only version that would actually catch a real use"
+      "note": "scans every non-.lake Lean source with COMMENTS STRIPPED, for the BARE name. Two earlier versions were wrong in opposite directions: filtering on a leading backtick counted every doc mention as a use (including the retirement note), and a plain substring test would flag the legitimate wedderburnEmbedOf / wedderburnEmbedTotal. Widened deliberately when qou-yos9 added the latter -- the gate means 'the retired opaque has no consumers', not 'no identifier starts with these letters'"
     },
     {
       "name": "the_construction_defines_the_assembly_unconditionally",
@@ -63,6 +63,41 @@
       "expected": true,
       "passed": true,
       "note": "the opaque and the fourth-axiom reasons are retired; the shape objection is not. A reader must not read 'the embedding was built' as 'the clause was discharged'"
+    },
+    {
+      "name": "the_linear_no_go_is_a_lean_theorem",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the shape objection is no longer only prose. Under linearity -- already assumed for the Markov trace -- three trace-factoring functionals at one partition are dependent"
+    },
+    {
+      "name": "the_trace_is_provably_lossy",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the ROOM is a theorem too, not only the no-go: distinct decompositions with every block trace equal, so every trace-factoring functional is blind to the difference"
+    },
+    {
+      "name": "the_21_dimension_fact_is_formalised",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "f^{(2,1)}=2 was prose when the no-go was written. Proved via the hook-length formula, so the (2,1) instances are unconditional rather than resting on a classical value the corpus had not written down"
+    },
+    {
+      "name": "and_the_boundary_case_is_recorded_too",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "f^{(1,1)}=1, so at the charge shape the block IS its trace and these results say NOTHING. Recorded as a theorem so the limit of the no-go is visible rather than assumed"
+    },
+    {
+      "name": "and_the_block_is_wider_than_its_trace",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "f^{(2,1)}=2 so the block is M_2(R), four dimensions to the trace's one. Recording the ROOM as well as the no-go, so this is not read as the clause being refuted"
     }
   ],
   "allPassed": true,
@@ -86,8 +121,8 @@
     "signature": "noncomputable def wedderburnEmbedOf {n : ℕ} (h : RSKDimIdentity n) (x : WedderburnDecomposition n) : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ := Matrix.reindex (regIndexEquiv h) (regIndexEquiv h) (blockDiagonal x) /-- And it is injective, so it deserves the name \"embedding\". -/ theorem wedderburnEmbedOf_injective {n"
   },
   "provenance": {
-    "headSha": "7e75622bdfcee90084ae5af644ed9df33778f003",
+    "headSha": "94590e2434124865644a9ea18af3078e4a4dac29",
     "producer": "computations/qbeta/qbeta_wedderburn_bridge_probe.py",
-    "elapsed_s": 5.796
+    "elapsed_s": 18.716
   }
 }

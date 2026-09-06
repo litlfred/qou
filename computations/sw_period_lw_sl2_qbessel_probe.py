@@ -126,6 +126,25 @@ def main() -> int:
     w.set_audit_only(
         "docs/audits/2026-06-25-sw-jet-prolongation-explicit-and-fork.md"
     )
+    # Declared 2026-09-05 (qou-i229). `period_table_n2_to_n8` below IS the table
+    # `prop:sl2-prolongation-recurrence` publishes -- both columns, all nine
+    # figures -- and the two assertions here are that block's two claims. It
+    # declared no contentBlock, so those figures had no declared provenance;
+    # the block's pointer sat on `unified_tau_odd_partner_solve.py`, which
+    # solves for tau and carries none of the sequence. Third block in a row
+    # where the pointer was on something other than the producer; see
+    # `scripts/witness-block-agreement.py`.
+    w.set_content_block("prop:sl2-prolongation-recurrence")
+    w.set_description(
+        "Prolonged SW periods a_D^(n) = (1/n) * sum_{lambda |- n} dim_q V_lambda "
+        "against the depth-2 SL2 recurrence a_{n+2} = tau*a_{n+1} - a_n at the "
+        "proton pin. Produces the table prop:sl2-prolongation-recurrence "
+        "publishes: the two series agree at n=4 by construction (tau is that row "
+        "rearranged, so it is not a test) and diverge from n=6, reaching -52.21 % "
+        "by n=8. The closed form grows super-exponentially while any det=1 depth-2 "
+        "recurrence grows geometrically, so the depth-2 form is an n<=4 effective "
+        "germ and the true prolongation kernel is of q-Bessel class."
+    )
     w.add_parameter("q_0", Q0)
     w.add_data("selection_rule",
                "a_D^(n) = lw(n−1) = (1/n) Σ_{λ⊢n} dim_q V_λ (canonical q-hook dim_q)")

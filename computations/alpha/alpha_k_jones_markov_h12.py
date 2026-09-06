@@ -96,6 +96,7 @@ set_compute_dps()
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 record_upstream(Q_PIN, _UPSTREAM_RECORDS)
 from q_parameter import Q_50_DIGIT_STR as _Q50  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION
 q0_mpf = mp.mpf(_Q50)
 q0_f64 = float(q0_mpf)
 h_f64 = float(q0_mpf - 1 / q0_mpf)
@@ -106,6 +107,7 @@ N_STRANDS = 12
 
 # Closed-form Borromean Markov trace (from pm_qm_pythagorean_identity.py)
 def tr_M_borromean(h_val):
+    # convention D — verified by EVALUATION at q0, not by reading: computations/audits/borromean_convention_by_evaluation.py
     h2 = h_val * h_val
     h4 = h2 * h2
     h6 = h4 * h2
@@ -235,7 +237,7 @@ def main() -> int:
     print("=== Test 4: does this close the B(⁴He) gap? ===")
     m_e = float(mp.mpf("0.510998950"))
     vol_bor = float(8 * mp.catalan)
-    B_AME = 28.2956912
+    B_AME = AME_B_HE4_MEV_VALIDATION
     candidates = {
         "B_prod (2·m_e·A·8G, ν=2)": 2 * m_e * 4 * vol_bor,
         "m_e·A·8G·tr_M(β_⁴He)_H12": m_e * 4 * vol_bor * tr_M_he4,

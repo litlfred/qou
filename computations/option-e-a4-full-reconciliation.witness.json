@@ -8,18 +8,18 @@
     "nucleus": "4He (H_12/S_12)",
     "sum_f_lambda": "0.4857822423459058333917825932006298953970757041548754910540423905247376",
     "B_he4_f_lambda_MeV": "0.2482342161025931648807508687941290051949501457176342491762141436409201",
-    "B_he4_f_err_pct": -99.12271275487974,
+    "B_he4_f_err_pct": -99.12271282929007,
     "sum_betti_partial": "0.4857822423459058333917825932006298953970757041548754910540423905247376",
     "B_he4_betti_partial_MeV": "0.2482342161025931648807508687941290051949501457176342491762141436409201",
-    "B_he4_betti_err_pct": -99.12271275487974,
+    "B_he4_betti_err_pct": -99.12271282929007,
     "betti_shapes_computed": 2,
     "betti_weight_coverage_pct": 2.5990127685315505,
     "B_lambda_computed": {
       "12": 1,
       "11,1": 11
     },
-    "AME_he4_MeV": "28.29566",
-    "factor_needed_close": 113.98775094044906
+    "AME_he4_MeV": "28.2956623999999999999999999999999999999999999999999915823563342238137",
+    "factor_needed_close": 113.98776060873749
   },
   "assertions": [
     {
@@ -28,10 +28,10 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "fbbff9471f32",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
-  "commitSha": "cb2197ab70f638c1bbedbf7b6850b0faaa071a10",
-  "computedAt": "2026-09-04T03:47:09.055007+00:00",
+  "scriptHash": "cad06b03d9c0",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "computedAt": "2026-09-05T18:03:02.722069+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

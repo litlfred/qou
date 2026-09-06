@@ -54,7 +54,6 @@ Measured instance (2026-08-24, bean `qou-nmza`).
     id_trace_matches_binding_canonical  computed≈0  tolerance=1e-9  passed=true
 
 from 2026-06-11. Its `data.atom_traces.id` was `0.055358425349822354`. The
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 `binding-canonical.witness.json` it names as its reference was recomputed
 2026-08-22 under convention D and reads `0.16097414544240738…`. So the
 assertion had been advertising agreement at 1e-9 while the two disagreed by
@@ -146,6 +145,7 @@ from __future__ import annotations
 
 import json
 import os
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T01:06:51.678338+00:00",
-  "commitSha": "fcd77aeae157d80bf40973ac9a405d32293fad36",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T18:02:48.710574+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "g_reeb_bar_even",
@@ -30,14 +30,14 @@
     },
     {
       "name": "rho_strong_3_is_3p81",
-      "computed": "3.81279809185252314384019174976152651798148492784660019077879",
+      "computed": "3.81279774906226661180053890956358142994350988520818126248614",
       "expected": 3.8128,
       "passed": true,
       "tolerance": "0.001"
     },
     {
       "name": "rho_strong_4_is_13p03",
-      "computed": "13.0315745802424503211623589870221376805893997543700945173013",
+      "computed": "13.0315686436625831774063924383656861870678600861507576982761",
       "expected": 13.032,
       "passed": true,
       "tolerance": "0.02"
@@ -68,8 +68,8 @@
   "durationMs": 0,
   "computation": "deltalambda-bareven-b4-magnitude",
   "scriptFile": "deltalambda_bareven_b4_magnitude_probe.py",
-  "scriptHash": "6b631eb2f092",
-  "scriptCommitSha": "abab238abc44e49605955c09dd7d1fe9dc37dd09",
+  "scriptHash": "b40660b9ebea",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,7 +81,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "5df83fbc24b06f8a"
@@ -156,7 +156,7 @@
     },
     "steelman_coherence_scan_free_m": {
       "writhe_fix_rho4": {
-        "m": "0.4268738",
+        "m": "0.42687377",
         "rho3_forced": "2.4661",
         "rho3_target": "3.8128",
         "rho3_err_pct": "-35.32"
@@ -181,7 +181,7 @@
         "note": "rho3_even stalls near 3.4 against the 3.813 target.  (The old note here also claimed det(I-mS) turns negative BEFORE rho4_even reaches 13.03.  It does not -- see iso_bareven_fix_rho4: the target is reached at m=0.31900 with every det still positive.)"
       },
       "iso_bareven_fix_rho4": {
-        "m": "0.3189995",
+        "m": "0.31899947",
         "rho4_even_forced": "13.0316",
         "rho4_target": "13.0316",
         "rho3_even_forced": "3.43496",

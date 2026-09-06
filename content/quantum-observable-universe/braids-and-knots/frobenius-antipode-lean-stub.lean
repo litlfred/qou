@@ -139,7 +139,7 @@ theorem symmetrize_invariant {n : ℕ} {q : ℝ} (x : HeckeAlgebra n q) :
     Ref: prop:chirality-dual-space-derivation.
     Concrete model: returns 1 (the trivial chirality factor of an
     unbraided word). -/
-def chiralityFactor (_n : ℕ) (q : ℝ) (_β : HeckeAlgebra _n _q) : ℝ :=
+def chiralityFactor (_n : ℕ) (q : ℝ) (_β : HeckeAlgebra _n q) : ℝ :=
   1 + 0 * q
 
 /-- The chirality factor is multiplicative over independent

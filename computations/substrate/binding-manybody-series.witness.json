@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-05T18:11:50.785539+00:00",
-  "commitSha": "a5e1fb4cb5a9150ce581c8e0c1a6dbde026ec174",
+  "computedAt": "2026-09-05T18:01:08.006484+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "n2_deuteron_within_2pct",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "binding-manybody-series",
   "scriptFile": "binding_manybody_series.py",
-  "scriptHash": "3ffa4bb347b0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "de1b5060ca8d",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,16 +38,23 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/substrate/binding_manybody_series.py"
+    ],
+    "reproduce": "python3 -u computations/substrate/binding_manybody_series.py"
   },
   "auditOnly": "docs/workplans/2026-06-05-delta-lambda-sw-residue-qdifference-attack.md",
   "data": {
     "series_structure": "B(K) = sum_n B_n; body order n = jet/SW vertical degree",
     "n2_deuteron": {
       "formula": "m_e * Vol(6_2)",
-      "value_MeV": "2.24882079486",
-      "ame_MeV": "2.224566",
-      "rel_err": "0.0109032"
+      "value_MeV": "2.2488207979",
+      "ame_MeV": "2.2245662",
+      "rel_err": "0.0109031"
     },
     "n3_threebody": {
       "status": "open",
@@ -55,9 +62,9 @@
     },
     "n4_he4_magicA": {
       "formula": "2 * m_e * A * Vol(L6a4), A=4",
-      "value_MeV": "29.9556772391",
-      "ame_MeV": "28.295673",
-      "rel_err": "0.0586664"
+      "value_MeV": "29.9556772795",
+      "ame_MeV": "28.2956624",
+      "rel_err": "0.0586668"
     }
   }
 }

@@ -19,13 +19,14 @@ from pathlib import Path
 from mpmath import mp, mpf, fabs
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION
 import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
 m_e = mpf('0.51099895069')
-B_AME = {'D': 2.22452, 'T': 8.48180, '3He': 7.71804, '4He': 28.29567}
+B_AME = {'D': 2.22452, 'T': 8.48180, '3He': AME_B_HE3_MEV_VALIDATION, '4He': AME_B_HE4_MEV_VALIDATION}
 
 def n_stat(lam):
     return sum(i * lam[i] for i in range(len(lam)))

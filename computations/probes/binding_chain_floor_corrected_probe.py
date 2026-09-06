@@ -130,6 +130,11 @@ if str(HERE) not in sys.path:
 import tr_m_atom_via_transfer as TR  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 mp.mp.dps = 50
 
@@ -141,8 +146,8 @@ BOND_ZN = {"pp": (2, 0), "pn": (1, 1), "nn": (0, 2)}
 CHAIN = {"D": ["pn"], "T": ["pn", "nn"], "3He": ["pp", "pn"],
          "4He": ["pp", "pn", "nn"]}
 ATOM_ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
-AME_B = {"D": mp.mpf("2.22456637"), "T": mp.mpf("8.48179663"),
-         "3He": mp.mpf("7.71799"), "4He": mp.mpf("28.29561")}
+AME_B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
+         "3He": mp.mpf("7.71799"), "4He": AME_B_HE4_MEV_VALIDATION}
 
 
 def c0(A: int) -> mp.mpf:

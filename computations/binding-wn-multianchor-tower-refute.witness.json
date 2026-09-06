@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T04:16:56.697482+00:00",
-  "commitSha": "250654bfcf2a0bada4b09d1feb48f55133ad54bb",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T17:57:43.675402+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "full_tower_overshoots_A_ge_5",
@@ -11,15 +11,15 @@
       "passed": true,
       "tolerance": 0,
       "unit": "(weight, isotope) pairs with A≥5 overshooting by >900%",
-      "source": "na-Stokes super-exp period summed to n=A overshoots B_strong by >900% at ⁶Li for every bounded/amplifying body-order weight; measured: n^2/6Li +920%, n^2/7Li +3023%, n^2/9Be +34222%, n^2/12C +2263587%, [n]_q^2/6Li +989%, [n]_q^2/7Li +3384%, [n]_q^2/9Be +42615%, [n]_q^2/12C +3481063%. Structural (super-exp vs extensive). Few-body truncation required."
+      "source": "na-Stokes super-exp period summed to n=A overshoots B_strong by >900% at ⁶Li for every bounded/amplifying body-order weight; measured: n^2/6Li +920%, n^2/7Li +3023%, n^2/9Be +34222%, n^2/12C +2263588%, [n]_q^2/6Li +989%, [n]_q^2/7Li +3384%, [n]_q^2/9Be +42615%, [n]_q^2/12C +3481063%. Structural (super-exp vs extensive). Few-body truncation required."
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "binding-wn-multianchor-tower-refute",
   "scriptFile": "binding_wn_multianchor_tower_refute.py",
-  "scriptHash": "e26c647989f3",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "f9a581994238",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "5df83fbc24b06f8a"
@@ -45,8 +45,8 @@
   "description": "EXPLORATORY: refutes (scope-a) the full-tower jet-filtration binding B=Σ_{n=2}^A m_e a_D^(n) w_n summed to the nucleon count A. Multi-anchor (D..12C, Coulomb-corrected B_strong), single global scale. Every amplifying/quadratic w_n (n², [n]_q²) overshoots for A≥5 (⁶Li~+920%..¹²C~+2e6%). Structural: a_D super-exp vs B/A→const. Redirects to few-body truncation. No fit beyond one scale.",
   "data": {
     "worst_abs_err_pct": {
-      "n^2": 2263587.450266978,
-      "[n]_q^2": 3481062.544169662
+      "n^2": 2263587.558789516,
+      "[n]_q^2": 3481062.711058688
     }
   }
 }

@@ -190,7 +190,11 @@ import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 import numpy as np  # noqa: E402
 
-from codata_constants import M_E_MEV as _ME  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    M_E_MEV as _ME  # noqa: E402,
+)
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from nucleus_real_sdp import load_cost  # noqa: E402
 from pyhecke.atom import D_PN  # noqa: E402
@@ -211,7 +215,7 @@ _MEM = _ME if isinstance(_ME, mp.mpf) else mp.mpf(str(_ME))
 ALPHA = float(_MEM / (_Q * (_Q - 1)))
 B_P = (0.0, 0.5, 0.5)
 B_N = (0.5, 0.5, 1.0)
-AME_2H, AME_4HE = 2.224566, 28.295661
+AME_2H, AME_4HE = AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION
 REF_PAIR = {"pp": 0.489899384255, "pn": 0.676821592386, "nn": 0.907262265533}
 REF_PPN = 1.607030798          # H9, bonds appended after all nucleon words
 ORDERS4 = ("ppnn", "pnpn", "pnnp", "nppn", "npnp", "nnpp")

@@ -69,7 +69,6 @@ corpus's ladder does not do that: it FIXES `z = z_conv` and sets
 `prod = data/cos(theta(z_conv))`, while the trace route FREES z and sets
 `affine(z) = data`. Concretely, at z_C the affine correction is 0.4409 -- 56 %
 from the data -- whereas the ladder's product there is 0.999926. Step 16's probe
-import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 printed 0.441582 as "the ladder product at z_C"; that number is not the corpus's
 ladder product and should not be read as one.
 
@@ -95,6 +94,7 @@ measured here. Anchor: experimental (proton) pin, per the 2026-08-07 directive.
 
 import json
 import os
+import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 import subprocess
 import sys
 import time

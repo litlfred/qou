@@ -53,6 +53,12 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 try:  # P30 provenance stamp; optional so a bare container still runs
     from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
@@ -62,10 +68,10 @@ except ImportError:  # pragma: no cover
 set_compute_dps()
 
 AME = {
-    "D": mpf("2.224566"),
-    "3H": mpf("8.481798"),
-    "3He": mpf("7.718043"),
-    "4He": mpf("28.295673"),
+    "D": AME_B_DEUTERON_MEV_VALIDATION,
+    "3H": AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 PHI = [AME["D"], (AME["3H"] + AME["3He"]) / 2, AME["4He"]]
 

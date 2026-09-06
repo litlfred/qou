@@ -189,6 +189,22 @@ import QOU.HeckeAlgebra
 -- explicit hypothesis `RSKDimIdentity` (bean qou-usol).  The `opaque` it
 -- replaced was deleted on 2026-09-05 (bean qou-kp2z); nothing had consumed it.
 import QOU.HeckeAlgebra.WedderburnConstruction
+-- `WedderburnTrace` compares the two traces on that embedding: the regular one
+-- weights each block by `f^lam` (`blockDiagonal_trace`), the Markov one by
+-- `y_lam(q_0)`, and the difference is entirely in the coefficients.  Sharp: they
+-- agree on every decomposition only if the coefficients agree (bean qou-kp2z).
+import QOU.HeckeAlgebra.WedderburnTrace
+-- `WedderburnUnconditional` discharges the RSK hypothesis outright from
+-- `QOU.Mathlib.rskBurnsideHolds` (Schensted, axiom-clean), so
+-- `wedderburnEmbedTotal` is injective with no axiom and no hypothesis at all.
+-- It does NOT reclaim the name `wedderburnEmbed`: the bridge probe guards that
+-- no reference to the retired opaque survives (bean qou-yos9).
+import QOU.HeckeAlgebra.WedderburnUnconditional
+-- `SeminormalDimSmall` computes f^lam at named partitions via the hook-length
+-- formula -- (2,1) and (2,2) are 2, (1,1) is 1 -- which is what lets the
+-- WedderburnTrace results be instantiated at (2,1) rather than left conditional
+-- on a classical value the corpus had not written down (bean qou-v7ms).
+import QOU.HeckeAlgebra.SeminormalDimSmall
 import QOU.Glossary
 import QOU.Knot.CuspShapeBarParity
 import QOU.Knot.FigureEightDeformedMeridianWinding
@@ -1533,3 +1549,5 @@ import QOU.Observations.centered_hecke_variance_positive
 import QOU.Common.TwistUnconditional
 import QOU.Common.HookSumGeneral
 import QOU.Common.HookSumIdentity
+import QOU.Hecke.H2KaehlerDegrees
+import QOU.Mass.FormalityBridgeF1

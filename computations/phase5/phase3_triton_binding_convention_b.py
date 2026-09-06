@@ -107,6 +107,12 @@ from hecke_core_legacy import (  # noqa: E402
 )
 from derivation_chain import E_0_CONVENTIONS  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 OUT = HERE / "phase3-triton-binding-convention-b.witness.json"
 
@@ -116,10 +122,24 @@ OUT = HERE / "phase3-triton-binding-convention-b.witness.json"
 # residual_pct / residual_keV the witness records. `mp.mpf` of a string is the
 # exact decimal. Bean `qou-qe81`.
 AME_2020_BINDING_MEV = {
-    "D":  mp.mpf("2.22456612"),
-    "T":  mp.mpf("8.481798"),
-    "3He": mp.mpf("7.71810"),
-    "4He": mp.mpf("28.29567"),
+    # main's named CODATA constants (merge 2026-09-06): they are mpf
+    # AND more precise than the literals this branch had introduced
+    # (T 8.4817962 vs "8.481798"), so they carry both the provenance
+    # and the precision.
+    #
+    # `3He` was the one entry main left as a typed literal, mp.mpf("7.71810").
+    # It is not a rounded form of the table value: vendored AME2020 quotes
+    # 2572.68044 keV/A, so B(3He) = 7.71804132 MeV and the literal sits
+    # 58.7 eV ABOVE it. `AME_B_HE3_MEV_VALIDATION` is `_ame_binding_mev(2, 3)`
+    # -- Z=2, A=3 IS 3He, so the constant existed the whole time. This is the
+    # failure mode `codata_constants.ame_binding_mev` documents in its own
+    # docstring ("typed literals sitting up to 1.6e-5 away from this table").
+    # These values are the DENOMINATOR of every residual recorded (qou-qe81),
+    # so the 58.7 eV lands in 3He's residual_pct and residual_keV.
+    "D":    AME_B_DEUTERON_MEV_VALIDATION,
+    "T":    AME_B_TRITIUM_MEV_VALIDATION,
+    "3He":  AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 

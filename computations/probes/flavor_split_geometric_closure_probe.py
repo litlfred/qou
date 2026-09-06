@@ -38,9 +38,10 @@ set_compute_dps()
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_P_MEV_VALIDATION
 
 # CODATA 2022: m_n − m_p = 1.29333236(46) MeV; M_N ≈ (m_p+m_n)/2.
-CODATA_DMN_OVER_MN = mpf("1.29333236") / ((mpf("938.27208816") + mpf("939.56542194")) / 2)
+CODATA_DMN_OVER_MN = mpf("1.29333236") / ((M_P_MEV_VALIDATION + mpf("939.56542194")) / 2)
 
 
 def main() -> int:

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T00:41:32.013160+00:00",
-  "commitSha": "2c1b2386fec286bbfc06bbd9ca3fe175f903d969",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T17:59:17.645642+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "deuteron_pair_order_matches_AME_6dig",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "cumulant-mev-cluster-expansion",
   "scriptFile": "cumulant_mev_cluster_expansion_probe.py",
-  "scriptHash": "3f82e1c60933",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "ccba5dc8fa3f",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,7 +40,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "5df83fbc24b06f8a"
@@ -61,7 +61,7 @@
     "cluster_expansion": "B(K) = E_unit * [ Σ_pairs (linear pair term) + Σ_{k>=3} b_k (connected k-body cumulants) ]",
     "V1_deuteron_pair_order_linear": {
       "sqrt5_E_unit_ladder_MeV": "2.224566787",
-      "AME_2H_MeV": "2.224566",
+      "AME_2H_MeV": "2.2245662",
       "matches_AME_6dig": true,
       "note": "the ladder (1 - x/10 + 3x^2/200) fixes the +0.41% that bare 5g=2.2336 carries."
     },
@@ -74,9 +74,9 @@
       "note": "5g is LINEAR in g (pair order); -ln det2 ~ g^2 is QUADRATIC (4-body cumulant). Different powers => different cluster orders, not a normalization mismatch. This is the #4093 category error, resolved."
     },
     "V3_He4_cluster_structure": {
-      "pair_additive_baseline_MeV": "13.347396",
-      "AME_4He_MeV": "28.295673",
-      "many_body_remainder_MeV": "14.948277",
+      "pair_additive_baseline_MeV": "13.347397",
+      "AME_4He_MeV": "28.295662",
+      "many_body_remainder_MeV": "14.948265",
       "rho4_pair_baseline": 6,
       "rho4_observed": "12.7196",
       "many_body_positive": true,

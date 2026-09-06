@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-27T05:31:32.018823+00:00",
-  "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
+  "computedAt": "2026-09-05T18:00:32.698259+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "no_derived_weighting_reaches_ame",
@@ -33,7 +33,7 @@
     },
     {
       "name": "overshoot_band_lower_edge",
-      "computed": "1.6878413870644602058",
+      "computed": "1.68784123531879518",
       "expected": "1.6878",
       "passed": true,
       "tolerance": "1e-3",
@@ -42,7 +42,7 @@
     },
     {
       "name": "overshoot_band_upper_edge",
-      "computed": "2.0634336455962058972",
+      "computed": "2.0634334600828554205",
       "expected": "2.0634",
       "passed": true,
       "tolerance": "1e-3",
@@ -69,7 +69,7 @@
     },
     {
       "name": "ame_requires_concentration_on_trivial_block",
-      "computed": "6.3142475372142839074",
+      "computed": "6.3142472300358342654",
       "expected": "6.314",
       "passed": true,
       "tolerance": "1e-2",
@@ -78,7 +78,7 @@
     },
     {
       "name": "markov_ratio_is_not_two",
-      "computed": "0.02535440919789549307",
+      "computed": "0.02535449682357197796",
       "expected": "0.02535",
       "passed": true,
       "tolerance": "1e-4",
@@ -87,11 +87,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 58,
+  "durationMs": 261,
   "computation": "binding-cut-entropy-derived-weightings",
   "scriptFile": "binding_cut_entropy_derived_weightings_probe.py",
-  "scriptHash": "06244b742504",
-  "scriptCommitSha": "d555091e04db4007e31918f4f13544e95e8b8d13",
+  "scriptHash": "57c293482c54",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -105,7 +105,8 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -117,28 +118,28 @@
   "data": {
     "E0_MeV": "4.18598136329447589694506215876",
     "q0_pin": "proton",
-    "B_AME_2H_MeV": "2.224566",
-    "required_S_vN": "0.531432370795174506835101294034",
+    "B_AME_2H_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
+    "required_S_vN": "0.531432418573695871917054972649",
     "weightings": {
       "W1_markov_plancherel_exact": {
         "S_vN": "1.03591643401005185222109",
         "E0_S_vN_MeV": "4.33632688669654882912635",
-        "ratio_to_B_AME": "1.94929118160420901385994"
+        "ratio_to_B_AME": "1.94929100635285604408012"
       },
       "W2_born_deuteron": {
         "S_vN": "0.896973549853881872520605",
         "E0_S_vN_MeV": "3.75471456305643798220401",
-        "ratio_to_B_AME": "1.68784138706446020581274"
+        "ratio_to_B_AME": "1.68784123531879518002387"
       },
       "W3_classical_plancherel_CONTROL": {
         "S_vN": "1.09657543425772159450243",
         "E0_S_vN_MeV": "4.59024433124936936800076",
-        "ratio_to_B_AME": "2.06343364559620589724052"
+        "ratio_to_B_AME": "2.06343346008285542053132"
       },
       "W4_uniform_CONTROL": {
         "S_vN": "1.01439199357512583960731",
         "E0_S_vN_MeV": "4.24622598018060649713785",
-        "ratio_to_B_AME": "1.90878849185890933203953"
+        "ratio_to_B_AME": "1.90878832024895752580339"
       }
     },
     "vertex_S_vN": {
@@ -147,8 +148,8 @@
       "(4, 2)": "1.09861228866810969139525",
       "(3, 3)": "1.05492016798614412706697"
     },
-    "weight_fraction_onto_trivial_block_for_ame": "0.692752639348700819889953",
-    "concentration_factor": "6.31424753721428390735583"
+    "weight_fraction_onto_trivial_block_for_ame": "0.692752599305650463213795",
+    "concentration_factor": "6.31424723003583426538997"
   },
   "caveats": [
     "Scope (a). No weighting is selected, endorsed, or tuned; all four are computed once and reported. The two controls (classical Plancherel, uniform) are deliberately structure-poor so that agreement between them and the derived pair is informative about the CUT rather than about the weighting.",

@@ -133,6 +133,25 @@ if [ -d .beans ]; then
   fi
 fi
 
+# 4b. Lean artifact freshness — a stale olean silently inverts `#print axioms`
+#
+# Measured 2026-09-05 (bean qou-pdgc): QOU/HeckeAlgebra/MarkovTrace.olean was
+# ~3 months behind its source, and in it THREE declarations that are `def`s in
+# source were AXIOMS, five theorems were absent, and wenzlBridge carried a form
+# the source had already retracted. `lean`-direct verifies against the oleans on
+# disk, so a footprint read there can name constants that do not exist in source.
+# That is invisible unless someone looks, which is what this line is for.
+if [ -x scripts/lean-olean-staleness-audit.py ] || [ -f scripts/lean-olean-staleness-audit.py ]; then
+  echo "**Lean artifact freshness:**"
+  echo
+  python3 scripts/lean-olean-staleness-audit.py --top 5 2>/dev/null | sed 's/^/    /' \
+    || echo "    (could not run — NOT a pass; nothing was compared)"
+  echo
+  echo "_Repair, do not interpret: \`bash scripts/lean-direct-cone.sh <Module>\`._"
+  echo "_A \`#print axioms\` taken against a stale olean is a statement about a cache._"
+  echo
+fi
+
 # 5. Recommended action
 echo "**Recommended action:**"
 echo

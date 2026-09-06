@@ -21,14 +21,96 @@ Two layers have to be got right, and each has a natural wrong answer:
 
 ## Numerical verification
 
-| Atom | $|\mathrm{tr}_M|$ canonical | partition-sum ($q$-Hecke) | Relative error |
-|---|---:|---:|---:|
-| Proton | $1.06530622859$ | $1.06530622859$ | $3.96 \times 10^{-15}$ |
-| Neutron | $0.92323329717$ | $0.92323329717$ | $4.21 \times 10^{-15}$ |
-| Deuteron | $0.38828647155$ | $0.38828647155$ | $7.01 \times 10^{-15}$ |
-| Tritium | $0.10405211868$ | $0.10405211868$ | $1.07 \times 10^{-14}$ |
-| ${}^3$He | $0.20654085856$ | $0.20654085856$ | $1.03 \times 10^{-14}$ |
+| Atom | $|\mathrm{tr}_M|$ (convention **D**, muon pin) |
+|---|---:|
+| Proton | $1.14575978232$ |
+| Neutron | $0.98774375682$ |
+| Deuteron | $0.57517232973$ |
+| Tritium | $0.22931014615$ |
+| ${}^3$He | $0.40376713691$ |
+
+> **🛑 THESE VALUES ARE UNDER THE SUPERSEDED INTRA-ORDERING** (found
+> 2026-09-05, immediately after the migration below). The C → D migration is
+> right; the **braid word** underneath it is not.
+>
+> `atom_braid_word_3A` lays each nucleon's confinement core down in one of two
+> orders. The **owner ruling** of 2026-09-05 (`qou-hu1f`) made the alternating
+> `(σ₀σ₁⁻¹)³` — *borromean* — the default, because `σ₀` and `σ₁` do not commute
+> and only the alternating word is `β_Bor`. The bridge witness these values came
+> from was computed **2026-08-29, before that ruling**, and has not been
+> regenerated:
+>
+> | atom | published here (grouped) | under the ruling (borromean) |
+> |---|---:|---:|
+> | Proton | $1.14575978232$ | $0.62932849262$ |
+> | Neutron | $0.98774375682$ | $0.47513359056$ |
+>
+> A factor of $1.82$–$2.08$, far larger than the convention migration itself.
+>
+> **Not substituted, deliberately.** These five figures have already been
+> changed once today on the strength of a witness that turns out to predate a
+> ruling; changing them again before the ordering question is settled for this
+> block's quantity would compound that rather than fix it. What is needed is the
+> producer re-run under the ruling — and it currently **cannot be**: see the
+> reproducibility item in `qou-46ab`.
+>
+> The backlog is not this block alone. `atom_braid_word_3A` has **339 live
+> callers**, only **7** of which name `intra_order`; **332 silently take the new
+> default**, and **57 committed witnesses** reference it. Any of those generated
+> before 2026-09-05 is in the same position.
+
+> **Migrated C → D, 2026-09-05** (`qou-i229` → `qou-46ab`, owner-approved:
+> *"refresh and migrate"*). Source: the canonical Hoefsmit + Wenzl bridge witness
+> `atomic-tr-m-mpfr-50dps.witness.json`, which computes these five atoms by this
+> block's own stated method $\sum_\lambda y_\lambda \chi_\lambda$ at
+> `q0Anchor: muon`.
+>
+> | atom | was (convention C) | now (convention D) | ratio |
+> |---|---:|---:|---:|
+> | Proton | $1.06530622859$ | $1.14575978232$ | $1.0755$ |
+> | Neutron | $0.92323329717$ | $0.98774375682$ | $1.0699$ |
+> | Deuteron | $0.38828647155$ | $0.57517232973$ | $1.4813$ |
+> | Tritium | $0.10405211868$ | $0.22931014615$ | $2.2038$ |
+> | ${}^3$He | $0.20654085856$ | $0.40376713691$ | $1.9549$ |
+>
+> The proton ratio is `qou-46ab`'s signature, established there to 50 digits:
+> C-frame $1.0653062286131670594$ against D-frame $1.1457597822878355047$,
+> $|D-C|/C = 0.0755215$.
+>
+> **The anchor is unchanged.** The C table was muon-anchored — its per-atom
+> $D/C$ ratios match `qou-46ab`'s convention ratio at the muon pin to 8 digits
+> and at the proton pin only to 7 — so this is a convention migration, not a
+> re-anchoring. The muon pin used is the live one, the same target as the
+> `q₀` refresh in this pass.
+>
+> **The two-column form is withdrawn, not recomputed.** The table used to print
+> $|\mathrm{tr}_M|$ *canonical* against *partition-sum* with a $\sim 10^{-15}$
+> "relative error", and that column read as a verification of the values. It was
+> not: it was the agreement of **two C-frame paths**, which says nothing about
+> which convention both are in. The character-closure identity is
+> convention-independent and the declaring probe verifies it on abstract braids,
+> so the two paths agree under D as well — but **that agreement has not been
+> re-measured at these five nuclei**, because the second path is `markov_peel`,
+> whose proton and neutron entries `qou-46ab` deliberately removed as unreliable
+> (`canonical_tr_m_three_path_comparison.py`). Printing a residual nobody has
+> measured would repeat the defect this migration is fixing.
 
 ## Production paths
 
-The canonical values are rigorously evaluated via formal trace definitions. All three paths agree at the precision floor of their respective layers.
+The values above come from the canonical Hoefsmit + Wenzl bridge,
+`atomic-tr-m-mpfr-50dps.witness.json`, under the production convention **D**.
+
+The earlier claim that "all three paths agree at the precision floor of their
+respective layers" is **withdrawn as stated**: that agreement was measured
+within convention C, and `canonical_tr_m_three_path_comparison.py` records that
+the three paths do *not* all agree under D — `pyhecke` SW disagrees by orders of
+magnitude and the legacy path by ~15 % — while `markov_peel`'s proton and
+neutron entries were deliberately removed as unreliable (`qou-46ab`). What holds
+is the narrower statement the block actually needs: bridge ≡ `markov_peel` where
+both are recorded.
+
+The declaring witness, `q-hecke-seminormal-character-closure-probe`, verifies the
+character-closure identity on five **abstract** $B_3$ braids (identity,
+$\sigma_1$, the Coxeter element, the figure-8, the full twist) and contains no
+nucleon, so it is a structural verifier of the identity — which is
+convention-independent — and not the producer of this table.

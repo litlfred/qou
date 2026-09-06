@@ -56,14 +56,15 @@ import _path_bridge  # noqa: E402, F401
 
 from markov_trace_canonical import tr_M_word  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
+from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 mp.mp.dps = 60
 
 # CODATA 2018 (m_n − m_p)/M_N.  m_p c² = 938.272 088 16 MeV,
 # m_n c² = 939.565 420 52 MeV  ⇒  Δ/M_N = 0.001377469939…
 # (matches the audit-doc value 0.0013774699 to its quoted precision).
-_M_P_MEV = mp.mpf("938.27208816")
-_M_N_MEV = mp.mpf("939.56542052")
+_M_P_MEV = M_P_MEV_VALIDATION
+_M_N_MEV = M_N_MEV_VALIDATION
 C_DATA = (_M_N_MEV - _M_P_MEV) / ((_M_N_MEV + _M_P_MEV) / 2)
 
 

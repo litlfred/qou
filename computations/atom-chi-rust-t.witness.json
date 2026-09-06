@@ -1,25 +1,34 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T19:44:13.036780+00:00",
-  "commitSha": "29f06847243a8bd73b90dfa137d7335361558855",
+  "computedAt": "2026-09-05T08:59:43.245411+00:00",
+  "commitSha": "5260ae449e979aa7cbc7e20610948c0c65019c53",
   "assertions": [
     {
-      "name": "rust_kernel_loaded",
-      "computed": 30.0,
+      "name": "partition_count_is_p_3A_atom",
+      "computed": 30,
       "expected": 30,
       "passed": true,
       "tolerance": 0,
       "unit": "partition count",
-      "source": "pyhecke_native.partitions_of(3A)"
+      "source": "independent p(3A) = p(9); kernel is pyhecke_native.partitions_of(3A)"
+    },
+    {
+      "name": "partition_count_is_p_3A_free",
+      "computed": 30,
+      "expected": 30,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "partition count",
+      "source": "independent p(3A) = p(9); kernel is pyhecke_native.partitions_of(3A)"
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 7,
   "computation": "atom-chi-rust-t",
   "scriptFile": "compute_atom_chi_rust.py",
-  "scriptHash": "45d51b9cc954",
-  "scriptCommitSha": "399ff7c799682b4371e7f4cfaaf604f5c9324ed9",
+  "scriptHash": "256c48b588d2",
+  "scriptCommitSha": "5260ae449e979aa7cbc7e20610948c0c65019c53",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +38,19 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/compute_atom_chi_rust.py",
+      "T"
+    ],
+    "reproduce": "python3 -u computations/compute_atom_chi_rust.py T"
   },
   "description": "Full H_9 chi^λ(β_K) for T (Z=1, N=2), both atom (include_inter=True) and free (include_inter=False) configs. precision=mpfr: MPFR (default) routes through chi_cd_mpfr → pyhecke_native.chi_lambda_all_partitions_mpfr at 50 dps (canonical tier; the color-weighted p-n crossing is expanded by linearity); --f64 is the preview tier only (owner ruling 2026-06-09: no f64 on the canonical path). Consumed by binding_depth_stratified_rust.py.",
   "data": {
@@ -347,7 +367,7 @@
           "chi_lambda": "-0.68427261180216844371170495805556662131497667951158"
         }
       ],
-      "compute_time_sec": 0.5688838958740234,
+      "compute_time_sec": 0.5740740299224854,
       "Z": 1,
       "N": 2,
       "A": 3,
@@ -669,7 +689,7 @@
           "chi_lambda": "-0.61317694190126538921873252317817758884751403254210"
         }
       ],
-      "compute_time_sec": 0.2573363780975342,
+      "compute_time_sec": 0.2628772258758545,
       "Z": 1,
       "N": 2,
       "A": 3,

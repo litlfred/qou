@@ -2721,7 +2721,7 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **thirty-four** rows, and they split SEVEN ways — only the first
+>   catalogues **thirty-five** rows, and they split SEVEN ways — only the first
 >   group is about conventions at all:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.

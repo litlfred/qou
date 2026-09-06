@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T07:11:54.569270+00:00",
-  "commitSha": "b57e4933f7e706aabdc83710ba04e277241af09b",
+  "computedAt": "2026-09-05T18:00:52.008123+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "bar_symmetric_rho_F_candidates_enumerated",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 32,
   "computation": "he4-rho-f-bar-symmetric-audit-probe",
   "scriptFile": "he4_rho_f_bar_symmetric_audit_probe.py",
-  "scriptHash": "94e5a2473066",
-  "scriptCommitSha": "592fe76b52d8ec3f79c8f3fc50f4f93be1277551",
+  "scriptHash": "13eefaaaef9e",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -47,15 +47,15 @@
     "q_proton": "1.109978582751380807591669095610768879874499121873578736072814240181799",
     "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
     "eight_G": "7.327724753417752120436828119459072886193194994253377074131984956974104",
-    "B_AME_MeV": "28.295674",
-    "required_rho_F": "1.889169370864662482713153983924592115958135460862524927082573768461504",
+    "B_AME_MeV": "28.2956623999999999999999999999999999999999999999999915823563342238137",
+    "required_rho_F": "1.88916859638709739519890005689015520785449583332188525517923821281562",
     "candidates": [
       {
         "name": "C1: 2 [production, postulated]",
         "value_rho_F": "2.00000000000000000000000000000000000000000000000000000000000",
         "value_numeric": 2.0,
         "B_pred_MeV": 29.955677279532882,
-        "err_vs_AME_pct": 5.8666327564166965,
+        "err_vs_AME_pct": 5.866676157165639,
         "bar_symmetric": true
       },
       {
@@ -63,7 +63,7 @@
         "value_rho_F": "2.01089686670712229975249197809186281588924074848413291676393",
         "value_numeric": 2.0108968667071223,
         "B_pred_MeV": 30.118888790751203,
-        "err_vs_AME_pct": 6.443440049355967,
+        "err_vs_AME_pct": 6.443483686570997,
         "bar_symmetric": true
       },
       {
@@ -71,7 +71,7 @@
         "value_rho_F": "2.00272236386053329050782023799163176253410508509069637359648",
         "value_numeric": 2.002722363860533,
         "B_pred_MeV": 29.99645240615468,
-        "err_vs_AME_pct": 6.010736503942906,
+        "err_vs_AME_pct": 6.010779963768163,
         "bar_symmetric": true
       },
       {
@@ -79,7 +79,7 @@
         "value_rho_F": "2.00544843335356114987624598904593140794462037424206645838197",
         "value_numeric": 2.005448433353561,
         "B_pred_MeV": 30.037283035142043,
-        "err_vs_AME_pct": 6.155036402886332,
+        "err_vs_AME_pct": 6.155079921868318,
         "bar_symmetric": true
       },
       {
@@ -87,7 +87,7 @@
         "value_rho_F": "1.41613856431973532703471215889151404819567749474029553122604",
         "value_numeric": 1.4161385643197353,
         "B_pred_MeV": 21.210694907931504,
-        "err_vs_AME_pct": -25.0390893394817,
+        "err_vs_AME_pct": -25.039058608744547,
         "bar_symmetric": true
       },
       {
@@ -95,7 +95,7 @@
         "value_rho_F": "1.75270211325196540159377935162023613783017559887490468132603",
         "value_numeric": 1.7527021132519653,
         "B_pred_MeV": 26.251689435865586,
-        "err_vs_AME_pct": -7.223664522479356,
+        "err_vs_AME_pct": -7.223626488187162,
         "bar_symmetric": true
       },
       {
@@ -103,7 +103,7 @@
         "value_rho_F": "1.93786867148207591796316370767928572990956786915090811575271",
         "value_numeric": 1.9378686714820759,
         "B_pred_MeV": 29.025084266517098,
-        "err_vs_AME_pct": 2.5778154869790226,
+        "err_vs_AME_pct": 2.5778575394548695,
         "bar_symmetric": false
       },
       {
@@ -111,7 +111,7 @@
         "value_rho_F": "2.00005873086955921504308683442773271768111077936071558042534",
         "value_numeric": 2.000058730869559,
         "B_pred_MeV": 29.956556941020313,
-        "err_vs_AME_pct": 5.869741576116242,
+        "err_vs_AME_pct": 5.869784978139666,
         "bar_symmetric": true
       }
     ],
@@ -120,7 +120,7 @@
       "value_rho_F": "2.00000000000000000000000000000000000000000000000000000000000",
       "value_numeric": 2.0,
       "B_pred_MeV": 29.955677279532882,
-      "err_vs_AME_pct": 5.8666327564166965,
+      "err_vs_AME_pct": 5.866676157165639,
       "bar_symmetric": true
     },
     "verdict": "BAR-SYMMETRIC ρ_F CANDIDATES ALL FAIL — best is C1: 2 [production, postulated] at +5.87% vs the current production at +5.87%. None of the substrate bar-symmetric forms naturally produce ⁴He binding. CONFIRMS that ⁴He gap needs the categorical multi-nucleon interface operator (per PR #1621 research direction), NOT a substrate constant. 8th-ansatz fishing among bar-symmetric forms is unproductive.",

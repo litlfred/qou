@@ -57,7 +57,13 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 from witness_base import WitnessBuilder
-from codata_constants import M_E_MEV
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV,
+)
 from q_parameter import Q as Q0
 
 CHI_FILES = {
@@ -78,10 +84,10 @@ set_compute_dps()
 B_AME = {  # binding energies (MeV); 0 for free nucleons
     "p":   mp.mpf(0),
     "n":   mp.mpf(0),
-    "D":   mp.mpf("2.22456607"),
-    "T":   mp.mpf("8.481798"),
-    "3He": mp.mpf("7.7180428"),
-    "4He": mp.mpf("28.295674"),
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
+    "T":   AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 # (Z, N) for each species
@@ -326,7 +332,7 @@ def main() -> int:
         computed=B_AME["D"],
         # mpf, not a float literal: a binary64 `expected` is a raw-float64
         # field in the witness and cannot represent the value it asserts.
-        expected=mp.mpf("2.22456607"),
+        expected=AME_B_DEUTERON_MEV_VALIDATION,
         tolerance=mp.mpf("1e-10"),
         unit="B(D) AME MeV",
         source="AME 2020 deuteron binding",

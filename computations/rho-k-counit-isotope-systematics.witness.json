@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-31T04:52:59.553405+00:00",
-  "commitSha": "b204e0ddb7302284f5dd5cf8fa03ed57b60f0b72",
+  "computedAt": "2026-09-05T18:01:08.074497+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "sign_systematically_wrong_all_isotopes",
@@ -19,11 +19,10 @@
   ],
   "allPassed": true,
   "durationMs": 0,
-  "durationMsBaseline": "builder-construction",
   "computation": "rho-k-counit-isotope-systematics",
   "scriptFile": "rho_k_counit_isotope_systematics.py",
-  "scriptHash": "e1aab30d2c61",
-  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+  "scriptHash": "229b835ceac4",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,10 +34,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -57,7 +56,7 @@
         "atom": "D",
         "A": 2,
         "n_partitions": 11,
-        "n_interfaces": 1,
+        "n_nucleon_pairs": 1,
         "counit_sum_chi": "4.9292101409",
         "target_minus_B_over_me": "-4.35327704097",
         "abs_ratio": "1.1322987",
@@ -67,7 +66,7 @@
         "atom": "T",
         "A": 3,
         "n_partitions": 30,
-        "n_interfaces": 3,
+        "n_nucleon_pairs": 3,
         "counit_sum_chi": "27.0629731823",
         "target_minus_B_over_me": "-16.5984685263",
         "abs_ratio": "1.63045",
@@ -77,25 +76,25 @@
         "atom": "3He",
         "A": 3,
         "n_partitions": 30,
-        "n_interfaces": 3,
+        "n_nucleon_pairs": 3,
         "counit_sum_chi": "44.9872064635",
-        "target_minus_B_over_me": "-15.1038274924",
-        "abs_ratio": "2.9785302",
+        "target_minus_B_over_me": "-15.1038300755",
+        "abs_ratio": "2.9785297",
         "right_sign": false
       },
       {
         "atom": "4He",
         "A": 4,
         "n_partitions": 77,
-        "n_interfaces": 6,
+        "n_nucleon_pairs": 6,
         "counit_sum_chi": "150.35839179",
-        "target_minus_B_over_me": "-55.3732448213",
-        "abs_ratio": "2.7153618",
+        "target_minus_B_over_me": "-55.3732299485",
+        "abs_ratio": "2.7153625",
         "right_sign": false
       }
     ],
     "magnitude_ratio_is_fixed": false,
-    "magnitude_ratio_spread_max_over_min": "2.630516311641089",
+    "magnitude_ratio_spread_max_over_min": "2.6305158700614952",
     "sign_systematically_wrong": true,
     "verdict": "The deuteron 13% match is COINCIDENTAL: |Σχ|/|target| grows with A (1.13, 1.63, 2.98, 2.72) — not a fixed missing factor — and the sign is systematically wrong (Σχ>0 vs target<0) for all four. Counit ALONE refuted across the mass range (scope-(a)). BUT the error scales with A alongside the inter-nucleon interface count (D:1, T/³He:3, ⁴He:6), consistent with a missing interface-vortex (Hopf/L±) contribution — the counit+vortex lead, now with an A-scaling signature."
   },

@@ -156,13 +156,17 @@ import b_over_a_evaluator as BOA  # noqa: E402
 import tr_m_atom_via_transfer as TR  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 mp.mp.dps = 60
 
 # Convention values, quoted from the producers that use them.
 E0_A_MEV = "4.18598136329447"        # derive_binding_chain_cooperative
 E0_B_MEV = "0.78233340931"           # binding_canonical's Q_beta_n_MeV
-AME_B_DEUTERON = mp.mpf("2.22456637")
+AME_B_DEUTERON = AME_B_DEUTERON_MEV_VALIDATION
 
 
 def hbar_of_eta(eta) -> mp.mpf:
@@ -345,7 +349,7 @@ def main() -> int:
             mp.nstr(mp.mpf(E0_A_MEV) * (he_q0 - closed(4)), 10),
         "AME_he4_MeV": "28.29561",
         "he4_floor_removed_vs_AME":
-            mp.nstr(mp.mpf("28.29561") / (mp.mpf(E0_A_MEV) * (he_q0 - closed(4))), 6) + "x short",
+            mp.nstr(AME_B_HE4_MEV_VALIDATION / (mp.mpf(E0_A_MEV) * (he_q0 - closed(4))), 6) + "x short",
         "reading": "The A-route's 4.7% near-hit at the deuteron was 22.46% classical "
                    "contamination. Removing it -- which the hbar_q bookkeeping requires -- "
                    "degrades the deuteron to 1.23x short. 4He is ~6x short either way, "

@@ -77,6 +77,7 @@ sys.path.insert(0, str(HERE.parent.parent / "tools" / "qou-substrate" / "python"
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 try:
     from qou_substrate.constants import q_at
@@ -133,7 +134,7 @@ def main() -> int:
     A = 4
     G = mp.catalan
     rho_F_postulated = mp.mpf(2)
-    B_AME = mp.mpf("28.295674")
+    B_AME = AME_B_HE4_MEV_VALIDATION
     B_pred_postulated = rho_F_postulated * m_e * A * 8 * G
     rho_F_required = B_AME / (m_e * A * 8 * G)
     gap_rho_F = rho_F_postulated - rho_F_required

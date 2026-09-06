@@ -36,13 +36,14 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION
 
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
 COMP = HERE.parent      # computations/
 
 m_e = mpf('0.51099895069')
-B_AME = {'D': 2.22452, 'T': 8.48180, '3He': 7.71804, '4He': 28.29567}
+B_AME = {'D': 2.22452, 'T': 8.48180, '3He': AME_B_HE3_MEV_VALIDATION, '4He': AME_B_HE4_MEV_VALIDATION}
 
 
 def conjugate(lam):

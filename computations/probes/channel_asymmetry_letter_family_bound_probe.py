@@ -200,12 +200,13 @@ import mpmath as mp  # noqa: E402
 
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 mp.mp.dps = 50
 TOL = mp.mpf(10) ** -40
 
 # nature, for comparison only (AME2020 / scattering); never an input
-B_PN_3S1 = mp.mpf("2.224566")      # deuteron, bound
+B_PN_3S1 = AME_B_DEUTERON_MEV_VALIDATION      # deuteron, bound
 B_T1_SCALE = mp.mpf("0.066")       # np 1S0 virtual state -- SAME pair as the
                                    # deuteron, differing only in isospin.
                                    # CORRECTED from 0.1 (= pp/nn, a DIFFERENT

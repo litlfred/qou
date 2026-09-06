@@ -1,11 +1,11 @@
 ---
 # qou-4ohh
 title: mass_binding_dashboard computes in float64 — and its own accuracy claim is the f64 floor
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-09-05T06:32:21Z
-updated_at: 2026-09-05T06:33:13Z
+updated_at: 2026-09-05T19:49:55Z
 ---
 
 MEASURED 2026-09-05 (compute-precision-auditor subagent) while producing the
@@ -106,3 +106,108 @@ docstring explicitly retracts.
 
 Read-only run; the tree was left clean and nothing was committed. The float64
 drain of mass_binding_dashboard.py is the actionable item and is NOT done.
+
+## DEFECT 1 + DEFECT 2 FIXED — PR #6881 (stacked on #6864)
+
+**The retraction landed, and it made the claim stronger exactly as this bean
+predicted.**
+
+FOUR f64 downcasts sat on the chain-vs-exact path, not one:
+
+    _constants()            returned float(mex), float(q0x), float(e0x)
+    _bond_type_L()          returned float(...) per bond
+    _chain_writhe_shift()   returned float(...)
+    exact-trace branch      did ta, tf = float(ta), float(tf) before math.log
+
+**Why it survived, which is the reusable part.** The file was MID-migration,
+not un-migrated. `_disp` already existed as the display boundary with the
+invariant spelled out in its docstring. And `_bond_type_L`'s own docstring
+already claimed *'the values are now mpmath end to end — the old body did
+math.log(float(tf)/float(ta)), an f64 collapse the owner directive forbids'*.
+That was true of the BODY and false of the RETURN: mpmath throughout, downcast
+one line later. **The docstring and the internals agreed with each other and
+both were wrong about what came out of the function.**
+
+MEASURED, before/after, 2H/3H/3He at --max-strands 9:
+
+    headline max|d|   8.9e-16  ->  2.1e-49 MeV
+    2H                4.4e-16  ->  2.1e-49
+    3H                0.0e+00  ->  4.3e-50
+    3He               8.9e-16  ->  5.3e-50
+
+Rendered dashboard diff is **12 lines** — the residual column and its headline.
+Every other number byte-identical, so purely precision; no value moved.
+
+**3H printed exactly `0.0e+00` before.** Not agreement — the difference
+underflowing below f64 resolution. A perfect zero from an f64 subtraction of two
+~8 MeV quantities is the signature, not the result. Worth remembering as a
+detector: an exact 0.0 residual in a float pipeline is evidence of underflow,
+not of identity.
+
+The stale in-source comment claiming `|chain − exact| ≈ 1e-13` is corrected to
+the measured 2e-49 in the same commit.
+
+## What this does NOT fix
+
+The dashboard still cannot complete at 4He and above (~21 min, then hours) —
+that is the general-word kernel's d_lambda cost from `qou-wdij`, not a float64
+issue. So this fixes the arithmetic of a producer that remains capacity-limited
+above A=3.
+
+## Still open on this bean
+
+`canonical_mass.py:51` `_from_witness()` does
+`float(preds['m_p_MeV']), float(preds['m_n_MeV'])`. MEASURED: the witness
+carries **25** significant digits and float() keeps ~17, a relative loss of
+**5.7e-17 (m_p) / 6.0e-17 (m_n)**. Correcting my own earlier framing — that is
+~8 digits lost, not ~34, and it sits INSIDE the 1 ppQ (1e-15) L1 target rather
+than breaking it. It is still a NO-FLOAT64 defect and still a hard ceiling on
+55 consumers, but it is not urgent and a return-type change across 55 call sites
+is not a small fix. Deliberately not bundled into #6881.
+
+## Gate attribution (control run) + a detector blind spot the fix exposed
+
+**Attribution: my change introduces ZERO new gate failures.** `precision-gates.sh
+--changed` on the parent commit (the regression branch, WITHOUT the dashboard
+change) returns a RED list identical gate-for-gate and in the same order to the
+one on my branch:
+
+    RED: q0-anchor flip  q0-anchor refill ratchet  import-time dps ratchet
+         never-raises-dps ratchet  float64-padding ratchet  q0-value drift
+         ratchet  CODATA stale-edition  hardcoded braid word (self-test)
+         mixed mpf/f64 -> serializer
+
+Same ADVISORY line too. These gates are **corpus-wide audits, not diff-scoped** —
+`--changed` gates whether they RUN, not what they report. `F64_CAST` reports
+**105 files / 188 sites** on the parent. None of it is mine.
+
+## 🛑 The blind spot: NO gate could see the defect I just fixed
+
+**Measured: `mass_binding_dashboard` appears ZERO times in the entire 22 KB
+control output**, across all **23** tiers that ran — while carrying four
+`float(<mpf>)` downcasts that put a 1e-16 floor under its own printed accuracy
+claim.
+
+The reason is structural, and the F64_CAST tier states it in its own note:
+
+> *"The tier localises where a double ENTERS A COMPUTATION."*
+
+Every float64 tier is about f64 **entering** — `mpf(<float>) source`,
+`f64-into-mpmath`, `raw-float64 ratchet`, `float64-padding ratchet`,
+`mixed mpf/f64 -> serializer`. **None covers `float(<mpf>)` — precision
+LEAVING.** Yet that is the more damaging direction: `float(Q)` where `Q` is
+already f64 loses nothing, whereas `float(mpf_50dps)` destroys 33 digits.
+
+Compounding it: this dashboard **emits no witness**, it prints. So every
+witness-keyed tier is structurally blind to it as well. That is precisely the
+case AGENTS.md's "PROBES ARE NOT EXEMPT" directive is about — a printed
+conclusion is an ARGUMENT that gets copied into beans, audit docs and PR bodies,
+where nothing re-derives it. Here the printed argument was `8.9e-16`, and it was
+noise.
+
+**Proposed tier (not implemented here):** flag `float(x)` where `x` is
+statically an mpf/high-precision value and the result reaches arithmetic rather
+than an f-string. The existing `_disp` pattern is the sanctioned exception and
+gives the discriminator — a downcast at the display boundary is fine, one in a
+value position is not. Candidate row for
+`docs/audits/2026-08-15-detector-blindness-taxonomy.md` (34 rows).

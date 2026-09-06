@@ -54,6 +54,12 @@ from q_parameter import Q_MP  # noqa: E402 — experimental (proton) pin
 # one definition; the import is hard on purpose, because a fallback would
 # silently compute the blind convention while reporting success.
 from pyhecke.constants import pn_interface_offset_from_h as _pn_d  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
@@ -86,7 +92,7 @@ BONDS = {"pp": (mp.mpf(1), mp.mpf(0)),
          "nn": (mp.mpf(1), -h),
          "pn": (mp.mpf(1), _pn_d(h))}   # colour-weighted
 
-AME_D = mp.mpf("2.224566")   # only the deuteron is a bound 2-nucleon system
+AME_D = AME_B_DEUTERON_MEV_VALIDATION   # only the deuteron is a bound 2-nucleon system
 
 
 def channels(c, d):
@@ -158,8 +164,8 @@ def main() -> int:
     M_P = mp.mpf("938.27208943")
     M_N = mp.mpf("939.56542194")
     NUC = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
-    AME_B = {"D": mp.mpf("2.224566"), "T": mp.mpf("8.481798"),
-             "3He": mp.mpf("7.718043"), "4He": mp.mpf("28.295673")}
+    AME_B = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
+             "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 
     def bond_E(channel, bond):
         """Per-bond binding magnitude in a channel; |f| for f<0; 0 if f>=1."""

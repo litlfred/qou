@@ -711,12 +711,465 @@ producing them, which is a distinct false-positive class the coverage score
 cannot see. Second, several blocks' figures are the load-bearing constants above,
 where the floor is worst.
 
-- [ ] `prop:sl2-prolongation-recurrence` is the strongest candidate (8/8, twice
-      over) and the right next one to read.
-- [ ] `prop:alpha-em-categorical-trace-ratio` is the one to look at hardest:
-      **nothing in 3277 witnesses covers more than 1 of its 4 figures.** That is
-      the signature of a genuinely unproduced figure rather than a misplaced
-      pointer — the opposite finding from the last two blocks.
+## TRIAGE 4: `prop:alpha-em-categorical-trace-ratio` — TWO BLOCKS PUBLISH THE TWO SIDES OF ONE IDENTITY AT DIFFERENT PINS
+
+Probe: `two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py`
+(6/6). Taken first *because* nothing in 3277 witnesses covered more than 1 of its
+4 figures — the signature of an unproduced figure rather than a misplaced
+pointer. It was, and the reason is worse than either.
+
+**The block proves an exact identity and then disagrees with itself across
+blocks.** It states
+
+    α_EM = h²/(q·δ_q(T_2,9)·δ_q(T_3,5)) = 1/(q [9]_q [10]_q)
+
+which holds at **any** `q` — `δ_q(T_2,9) = h[9]_q` and `δ_q(T_3,5) = h[10]_q`
+cancel the `h²` — verified to `1e-53` at every registered pin. It is algebra, not
+agreement. It then cites `prop:em-coupling-projection` for the right-hand side:
+
+    side                        block                 pin      α_EM × 10³
+    h²/(q δ₉ δ₁₀)               this block            MUON     7.30870098
+    1/(q[9]_q[10]_q)            em-coupling-projection PROTON   7.30870156
+
+**A `7.94e-8` disagreement between two quantities the corpus has proved equal.**
+Sharper than the `em-coupling-bring-zero-mode` cross-block finding: there two
+blocks merely published the same quantity, here one *derives from and cites* the
+other. They cannot both be right.
+
+### The pin determination is unambiguous; the vintage is not, and is not guessed
+
+Rounding test against every registered `q₀`, on all four table figures:
+
+    proton      0/4   DECISIVELY EXCLUDED (residuals 1.0e-7 to 1.5e-7)
+    muon live   4/4
+    retired     4/4
+    frozen A    4/4
+
+The muon family is certain. **The vintage cannot be determined**: the three
+variants differ by `7.98e-11` relative, the sharpest published figure carries 9
+significant digits, and separating them needs ~12. Stated explicitly in probe,
+witness caveat and block, because this bean has twice recorded that "no resolving
+power" and "clean" look identical in a results table.
+
+### Why the sweep found no carrier — and a false provenance sentence
+
+The block cited `delta-q-decoration.witness.json` with *"The witness assertion
+validates this match."* That witness declares a **different** block
+(`def:delta-q-decoration`), carries Markov-trace machinery rather than any of
+these four quantities, and is anchored `q0Anchor: proton`. It validates nothing
+here and disagrees on the pin. So the live compute for this quantity follows the
+sibling onto proton, and no carrier exists anywhere — exactly what the
+coverage sweep saw. Sentence corrected; **labelled, not recomputed**, since
+choosing between the two blocks is the anchor ruling, not a substitution.
+
+Report now **9 blocks / 46 asserted**, from 15/79.
+
+- [ ] **Owner: this one needs a ruling more than the others.** Elsewhere a stale
+      pin is a data-refresh question; here two blocks publish the two sides of a
+      proven identity and one of them must move.
+## TRIAGE 5: `prop:sl2-prolongation-recurrence` — the pattern a third time
+
+The coverage worklist was right. Both 8/8 candidates carry **all nine** of the
+block's figures — both columns of its table — which at the 9–10 sig-fig floor
+(2.7 % per figure) is ~1e-14, not coincidence.
+
+Distinguishing producer from sibling took reading, not scoring:
+`sw_period_lw_sl2_qbessel_probe.py` carries `period_table_n2_to_n8` — literally
+the block's table — and its two assertions are the block's two claims
+(`sl2_depth2_diverges_from_lw_by_n6`, `lw_growth_ratio_exceeds_sl2_lambda_plus`).
+`binding_recurrence_spectral_bridge_probe.py` shares the sequence but is about
+the spectral bridge (λ₊, det). **Both declared no `contentBlock`**; the block's
+pointer sat on `unified_tau_odd_partner_solve.py`, which solves for τ and carries
+none of the sequence. Declared the producer, and filled in its **null
+description** while there. Row closed.
+
+Worth noting the block itself is sound: its table exists to show the depth-2
+recurrence *fails* (−52.21 % by n=8), and the n=4 row is true by construction
+because τ is that row rearranged — which the block already says.
+
+Report now **8 blocks / 38 asserted**, from 15/79.
+
+## TRIAGE 6: `prop:confined-knot-binding` — MY OWN witnesses were writing numbers without decimal points
+
+The checker turned on my own work from earlier today and found something worse
+than a missing declaration.
+
+`the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py` is the producer
+the block names in its own text. It declared **no `contentBlock`**, and its
+witness recorded only two of the six figures the block publishes — the `H₃`
+weight table was computed, printed, and then dropped. Ordinary, and the fix is
+the one this bean established with `1.064088425325`: *witness the figure, do not
+delete it.*
+
+**But adding the table did not close the row**, which is how the real defect
+surfaced.
+
+### `gmpy2.digits()` returns a BARE MANTISSA, and I fed it straight into witnesses
+
+    published            0.5054042265039308...
+    witness recorded     5054042265039308031875587      <- no decimal point
+
+Every numeric field in those witnesses was **numerically unusable** — not wrong
+digits, but wrong magnitude by an unknown power of ten, invisible to a reader and
+to every downstream tool. **21 sites across 4 probes**, all mine, all from today:
+
+    the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py   12
+    the_nuclear_jet_level_is_the_retired_all_pairs_object_probe.py          6
+    the_free_energy_reading_has_no_energy_spectrum_probe.py                 3
+    the_character_ratio_derivation_path_is_the_bond_model_probe.py          1
+
+Two of those probes **already had** the `s()` formatter I wrote earlier the same
+day for precisely this trap (the one that briefly made `[3]_q! = 6.12` read as
+`0.612`) — and the witness-emission path bypassed it. I fixed the display and
+left the serialisation. The other two never got `s()` at all, so my note that I
+had "added it to every affected probe" was wrong.
+
+All 21 sites now route through `s()`; all four probes re-run green (3/3, 8/8,
+8/8, 13/13). Row closed. Report **7 blocks / 32 asserted**, from 15/79.
+
+### Scanned for it corpus-wide — and it is only mine
+
+Signature: a pure-digit string of length ≥ 15 in a witness `data` field. Across
+**3282 live witnesses**: 6 files, 73 fields, and **every one is a legitimate
+large integer** — rational numerators, LCM denominators, `n!` costs, state-pair
+counts, Taylor coefficients scaled by `2^(3A)`. No other mangled `mpfr` exists.
+So no gate is warranted; the defect was mine and is gone.
+
+### The reason this matters beyond the fix
+
+The two figures that *appeared* to be witnessed before — `0.508229789376739` and
+`0.000071511999729` — matched only because they appear in the witness's
+**description prose**. The structured data carried neither. A checker reading
+`data` alone would have called the block unwitnessed; one reading the whole file,
+as this one does, called it witnessed on the strength of a sentence. Both
+readings are defensible and they disagree, which is worth knowing before anyone
+promotes this checker to a gate.
+
+## TRIAGE 7: `prop:frobenius-gram-matrix` — four false positives and one real digit error, in one block
+
+Probe: `the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe.py` (7/7).
+The clearest argument yet for reading every row rather than sweeping.
+
+**Four of five flags are a false-positive class the checker had not named.** The
+block publishes its Gram spectrum under the production convention **D** *and*
+under the excised **C**, side by side and explicitly labelled ("under the excised
+convention C"). A producer computing D correctly carries none of the C column.
+That is a block doing the right thing, counted as a defect. Named as class 3
+now — and unlike the retraction class it sits in ordinary prose, so it is **not
+mechanically separable**: the label is a sentence, not a syntax.
+
+### The fifth was real, and it took a computation to tell from a pin difference
+
+The largest **D** eigenvalue read `+4.23033920`. The block's own declared witness
+(`q0Anchor: proton`) computes `4.230339225030225` → `4.23033923`, five half-ulps
+away. Tempting to call a pin difference: proton→muon moves this eigenvalue by
+~`4e-8` against a `2.5e-8` discrepancy, the same order. So it had to be computed.
+Rebuilding the whole 6×6 from the block's own symbolic entries:
+
+    proton      4.230339225030226   ->  4.23033923
+    muon live   4.230339401101782   ->  4.23033940
+    retired     4.230339399892241   ->  4.23033940
+    published                           4.23033920   <- NO REGISTERED PIN
+
+**A transcription error.** Corrected; the other five D entries are right at the
+proton pin and unchanged.
+
+### 🛑 THE WEAKNESS THAT MATTERS MOST — and I walked into it
+
+Closing this row, I pasted the block's convention-C figures into my new witness
+as part of an internal-consistency check. **The row closed.** The C column still
+has no producer — convention C is excised, none exists — and the checker had
+simply stopped saying so.
+
+Reverted; the row now honestly reads 4/11. But the lesson generalises and is now
+in the script's docstring as its most important limitation: **this checker asks
+whether a declaring witness *carries* a block's numbers, and a witness that
+transcribes them answers yes without adding evidence.** Nothing in it can tell a
+computed value from a copied one. That is exactly why
+`witness-float64-padding-audit` — an aggregator that scrapes other witnesses —
+scored as a top candidate producer for a block it has never computed.
+
+**So the count is a floor on the work remaining, never a measure of it**, and
+closing a row means finding or writing the producer, never recording the number
+somewhere the checker will look. Anyone promoting this to a gate needs to read
+that paragraph first.
+
+Report **7 blocks / 31 asserted**, from 15/79.
+
+- [ ] The four C-column figures stay open deliberately. Closing them would mean
+      computing an excised convention, which is the wrong direction; the honest
+      resolution is that the checker cannot distinguish "unproduced" from
+      "unproducible by policy".
+## TRIAGE 8: `prop:q-hecke-seminormal-character-closure` — the largest divergence in this bean, and it feeds `qou-46ab`
+
+Probe: `the_character_closure_block_and_a_lean_file_publish_convention_c_probe.py`
+(5/5). Written up in `qou-46ab`, which owns the migration.
+
+**All three top-scoring candidates were wrong, in three different ways** — the
+case the checker's docstring says scoring cannot settle:
+
+    laurentq-a5-ceiling-measure        5/5   a WALLTIME BENCHMARK
+    rho-k-leading-order-verification   5/5   scriptFile literally reads
+                                             "(deferred — producer not in
+                                             computations/ tree)"
+    witness-float64-padding-audit      5/5   the AGGREGATOR
+
+Reading beat scoring, and found something larger than a pointer problem.
+
+**The table is the excised convention C**, by 7 % to 120 %. The canonical
+Hoefsmit + Wenzl bridge computes these same five atoms by the block's *own stated
+method* and agrees with none of them; the proton ratio is `qou-46ab`'s own
+`0.0755215` C→D signature. **The block's "relative error ~1e-15" column is
+agreement between two C-frame paths** — which says nothing about which convention
+both are in, and reads as a verification. Largest divergence this bean has found;
+previous record was the 21 % `z` gap.
+
+The same C value is live in **Lean** (`MarkovPeelH3.lean`), claiming 4e-16
+agreement with a witness it is 7e-2 from — word-for-word the claim `qou-46ab`
+already disproved in `computations/`.
+
+**`qou-46ab`'s literal scan could not see either site**: it scanned
+`1.06530622861316`; the block renders `…859` and Lean `…592389333`. Zero matches
+in a sweep whose whole purpose was to find them. Both sites labelled, nothing
+recomputed — the migration is `qou-46ab`'s.
+
+### 🛑 I HIT THE TRANSCRIPTION TRAP THREE TIMES, ONE COMMIT AFTER DOCUMENTING IT
+
+Closing this row, my own probe closed it three separate ways without producing
+anything: the block's figures in a `data` field, then in the witness
+**description prose**, then as a **prefix** of the Lean value I was quoting as
+evidence. Each time the row closed and the figures still had no producer.
+
+Fixed by recording renderings as **suffixes after a shared prefix**, which
+carries the finding (three renderings of one quantity) without creating a
+matchable literal. Effect: the report went **26 → 31** asserted once the
+transcription came out — my own closures had been hiding five figures.
+
+That the author of the warning walked into it three times in twenty minutes is
+the strongest evidence that the weakness is structural, not a lapse. It should
+be read as a design limit of any checker of this shape: **matching a block's
+numbers against text that mentions them cannot distinguish evidence from echo.**
+A version reading only computed `data` fields, and only from producers, would be
+stricter — and would also have called `prop:confined-knot-binding` unwitnessed
+when its two figures sat in prose.
+
+Report **7 blocks / 31 asserted** (honest), from 15/79.
+
+## TRIAGE 9: `conj:im-q-physical-role` — category (c), and it closes a pending vintage item as a NON-DEFECT
+
+Probe: `the_apollonius_circle_from_cal2_reproduces_exactly_probe.py` (4/4). The
+first row in this whole triage with **no defect at all**.
+
+Odd shape going in: 4 unmatched against **68** declaring witnesses. Those 68 are
+the `Im(q)` reality-locus computations that close candidates (i) and (iii);
+candidate (ii)'s Apollonius geometry is a two-line derivation nobody ran
+separately. **A large witness count says nothing about coverage of any one
+figure.**
+
+CAL-2 is `m_μ/m_e = Vol(4₁)/ℏ_q²` with `ℏ_q = 1 − 1/q`. Over complex `q` the
+modulus condition is the Apollonius locus `|q−1| = k|q|`, giving
+
+    k² = Vol(4₁)/(m_μ/m_e)
+    centre = 1/(1−k²)   radius = k/(1−k²)   leftmost = 1/(1+k)
+
+All three published figures are the correct roundings, and the table closes on
+itself — `centre − radius = leftmost` exactly as printed.
+
+### The vintage does not reach them, which settles a pending item
+
+**No `q₀` enters.** The circle is fixed by `Vol(4₁)` and the mass ratio alone,
+because CAL-2 is the equation that *defines* `q₀`. And both CODATA vintages
+reproduce all three figures, diverging only at `7.4e-10` relative against 7
+published significant digits.
+
+So the `206.7682830` here — one of the three sites this bean left open as "needs
+reading rather than relabelling" — **resolves as a non-defect**: the block quotes
+CAL-2's own input value rather than asserting a CODATA vintage, and nothing it
+derives from that value moves. Two of those three sites remain
+(`knot-volumes-verification-table2-data`, and the `witness-substitution-audit.ts`
+fixture).
+
+### A note on why closing this row is legitimate
+
+The witness records `206.7682830` as `mass_ratio_input` — a **declared input the
+probe consumes**, not a figure copied to satisfy the checker. That is the
+distinction the transcription weakness turns on: provenance for a calibration
+input *is* recording that the computation took it. The three circle figures are
+computed from `mp.clsin` and that input, so recording them is what a producer
+does.
+
+Report **6 blocks / 27 asserted**, from 15/79.
+
+## TRIAGE 10: `prop:em-coupling-bring-zero-mode` — a row that MUST STAY OPEN
+
+All three flagged figures are the **retired** `q₀`, consistently:
+
+    figure              retired pin gives      other pins
+    1.109978595554181   the pin itself         —
+    136.823219654       136.823219654561       muon 136.823219729, proton 136.823208854
+    137.035426245       137.03542624535        muon 137.035426320, frozen A 137.035426248
+
+`137.035426245` (`bare + 2/(3π)`, the zero-mode form) separates all four
+registered pins and lands on retired exactly. `136.823219654` is the truncation
+case documented in the checker — the retired value rounds to `…655`, so it fails
+a half-ulp test against its own producer.
+
+**This is the tracked retired-`q₀` refresh, not a new defect.** The block already
+declares "(muon pin, 16 dps)" and the refresh is owner-gated.
+
+### The right action is to do nothing, and that is the finding
+
+Nothing live carries retired-pin values, and **nothing should**. So the checker
+flagging this block is *correct signal*: these published figures genuinely have
+no live producer, which is exactly the problem awaiting the refresh.
+
+I could close the row by declaring
+`published_figures_carry_a_retired_q0_probe.py` (it already covers 2 of the 3).
+**That would be a defect.** It would make a retired vintage look witnessed and
+silence the one automatic signal that this block is stale. Some rows should stay
+open, and closing them is worse than the flag — a distinction the count cannot
+express, which is another reason this checker must not become a gate on its
+count.
+
+Report stays **6 blocks / 27 asserted**.
+
+## ✅ THE REFRESH IS DONE (2026-09-05, owner-approved: "refresh and migrate")
+
+Producer: `retired_q0_refresh_to_live_muon_pin_probe.py` (5/5). Target
+`q0 = 1.109978595642739046681795129380001752700065561029011556974045769999095`,
+from the canonical `q-pinning-50-digit.witness.json`. Shift `7.98e-11` relative;
+**nothing physical moves.**
+
+### Per block, all `q₀`-derived rows together — the rule the first attempt broke
+
+    tbl:hecke-log-decomposition-table-data     ALL SEVEN rows
+    prop:em-coupling-bring-zero-mode           pin, q[9][10], sum
+    tbl:q-beta-form-a-n1-symbolic-table-data   pin, ℏ_q, 1+ℏ_q²  (partial, see below)
+    30 pin-string sites across 29 files        prose declarations only
+
+`hecke-log-decomposition` is the case in point: the sweep flagged **3** rows, and
+**7** move. The unflagged four were `q₀`-derived too — they merely had *some*
+provenance, so a no-provenance sweep never saw them.
+
+**Deliberately not refreshed**: `2/(3π)`, CODATA `1/α = 137.035999177(21)`,
+`𝔔_β^CODATA`. Constants and experimental inputs; moving them would be a
+different and wrong change.
+
+### Three pre-existing slips, and one truncation that is not an error
+
+Reproducing the old tables at the retired pin does not recover three figures —
+`1+q₀` (`…556` vs `…555`), `log(1/ℏ_q)` (`…982` vs `…985`), `log(1+q₀)` (`…313`
+vs `…315`), all `1–3e-11`. **Wrong at their own anchor**, independent of the pin.
+Corrected by construction.
+
+A fourth discrepancy is *not* an error: `q[9]_q[10]_q = 136.823219654` against
+`136.823219654561` is a **truncation** — the rendering that defeats a half-ulp
+matcher, and the reason the checker flagged that row against its own producer.
+Telling the two apart requires comparing against the *unrounded* value.
+
+### 🛑 I BLANKET-REPLACED AND CAUGHT IT
+
+The pin-string pass replaced 30 sites across `content/` when I had measured
+sibling precision for only **six** blocks — the sweep the per-block rule and
+AGENTS.md both forbid. Two consequences, both found and fixed:
+
+- It **overwrote the "was" column** in the two provenance notes I had just
+  written, making them say a value changed to itself.
+- 23 files went unchecked. Retro-measuring all 30: an `8e-11` shift reaches a
+  figure only at ~11+ significant figures, and 26 files publish nothing above 10.
+  Two flagged — `137.035999177` (the CODATA input, safe) and
+  `notation-register-table3-data`'s `z(q₀) = 0.61268803714646525160` at **20**
+  figures, which turns out to be **proton**-anchored (agrees to `4e-21`) and sits
+  in a different row from the muon pin string I changed. So all 30 were in fact
+  safe — but I established that *after* acting, not before.
+
+- [ ] Minor, found en route: `notation-register-table3-data` documents `z(q₀)` at
+      the proton pin in row 17 and `w_λ(q)` at the muon pin in row 22. Row 22
+      says which; row 17 does not, relying on the production default. Worth
+      labelling.
+
+Report **5 blocks / 24 asserted**, from 15/79.
+
+## ✅ THE MIGRATIONS ARE DONE (2026-09-05, owner-approved: "refresh and migrate")
+
+Two channels, both C → D, both executing rulings already on the books.
+
+### `qou-cds1` — the `qbeta-decay` channel
+
+`prop:q-beta-spectral-bridge` *defined* `z := 1/(√q + 1/√q)` — convention C,
+excised 2026-08-09. Now `z = q³/(q²+1)`. **The table was migrated from its
+producer, not by hand**: every value now comes from
+`q-beta-spectral-bridge.witness.json`, which has computed D all along. That is
+the 21 % divergence this bean measured, closed.
+
+**Both axes were already ruled.** The table was on muon pin A; the producer is on
+the **proton** pin, migrated 2026-08-29 under `qou-cds3` with the authorisation
+recorded there (AGENTS.md §"q₀ anchor convention": *"we want proton unless for an
+explicit reason … fix all, even if not visible"*). So the block had simply not
+followed either ruling.
+
+What moved: `𝔔_β^A` essentially unchanged at `0.7836` MeV; `𝔔_β^B` `0.8324 →
+0.8234`; the A/B disagreement **improves** `0.0487 → 0.0398` MeV against the same
+`h²E₀ = 0.183` bound; the bridge ratio `1.898 → 1.566`, the `1/z` term following
+the convention.
+
+### `qou-46ab` — the `tr_M` class. Written up in that bean.
+
+Five nuclei migrated from the canonical bridge witness at the block's **own**
+muon anchor (established from the per-atom `D/C` ratios), plus **five**
+convention-C residues in `MarkovPeelH3.lean` — including the `z` field docstring,
+which stated the excised convention as the *definition* in a formal artifact.
+
+### 🛑 THE SELFTEST WENT RED BECAUSE I FIXED ITS KNOWN POSITIVE
+
+`witness-block-agreement`'s selftest asserted `prop:q-beta-spectral-bridge` is
+flagged on the convention-C `z`. Migrating the channel removed that figure, and
+the selftest failed — **the third time today** that "assert the defect" produced
+a check that fails on success.
+
+Re-pointed rather than deleted, because a detector with no known positive can
+report a whole class clean and mean nothing. The replacement is chosen to be
+**stable by design** rather than merely unfixed: `prop:frobenius-gram-matrix`'s
+convention-C determinant `0.18920521914403668`, published deliberately as a
+labelled comparison, 17 significant figures, and a row this bean has decided
+*must stay open* because closing it would mean computing an excised convention.
+
+### THE REMAINING C SURFACE — MEASURED, AND DELIBERATELY NOT SWEPT
+
+Scanning `content/` for the C spelling finds **65 unlabelled hits**, and that
+number is **wrong as a migration target**. Most are legitimate uses of
+`q^{1/2}+q^{-1/2}` that have nothing to do with the trace convention: the
+factorisation `h = (q^{1/2}-q^{-1/2})(q^{1/2}+q^{-1/2})`, Wenzl's positivity
+condition `q^{1/2}+q^{-1/2} > 2`, the `e_-` idempotent normalisation, Kauffman's
+`δ = -(q^{1/2}+q^{-1/2})`. Sweeping on that string would corrupt a dozen correct
+derivations — exactly what `qou-46ab`'s "DO NOT SWEEP" and AGENTS.md warn about.
+
+Narrowing to actual **definitions of `z`** in the C form: **22 live, 8 already
+labelled.** And the 22 still needs reading, because several *name* C in order to
+contrast it — `convention-d-kills-antisymmetriser`,
+`markov-trace-frobenius-selection-proof`, `markov-z-reconciliation`,
+`rem-qstar-decay-sector-q0`, `h3-markov-wenzl-weights-context` — which is correct
+content, not a defect. Two more are the labelling boxes written in this very
+pass, which the "historical" heuristic missed on phrasing.
+
+**So the honest remaining surface is well under 22 and needs per-site reading.**
+It is a third scope neither `qou-cds1` (the qbeta channel) nor `qou-46ab` (the
+`tr_M` class) covers, and it is left open rather than swept.
+
+- [ ] Scope a third migration bean for the residual `z`-definition sites, with
+      the discriminator stated up front: *does this site define `z`, or name C to
+      contrast it?* The string alone cannot tell them apart, and a count that
+      does not make the distinction (65) is 3× the real one.
+
+- [ ] Five blocks left, and at least two should NOT be closed here:
+      `prop:em-coupling-bring-zero-mode` (3, awaiting the refresh) and
+      `rem:atom-mass-full-hecke` (2, the 0–2-sig-fig class where the method has
+      no resolving power — close as *unresolvable*, do not investigate).
+      `prop:q-beta-spectral-bridge` (12) belongs to `qou-cds1`.
+      So the genuinely-actionable remainder is smaller than 27 suggests.
+- [ ] **Worth considering before any gate**: a `data`-only, producer-only variant
+      of the checker. Stricter and immune to the echo problem, at the cost of
+      flagging blocks whose provenance genuinely lives in prose.
 - [ ] Consider whether `contentBlock`-on-a-verifier deserves its own check. The
       signature is mechanical: a witness declaring a block whose assertions are
       all engine-agreement comparisons and whose data carries none of the block's

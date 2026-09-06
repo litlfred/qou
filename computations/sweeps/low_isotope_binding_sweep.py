@@ -61,7 +61,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as Q0, HBAR_Q, HBAR_Q_SQ
 # CAL-1: m_e sourced from codata_constants registry (P31-triage Phase A);
 # coerced to float for json-serialisable arithmetic in this script.
-from codata_constants import M_E_MEV as _M_E_MEV_MP
+from codata_constants import AME_B_HE4_MEV_VALIDATION, M_E_MEV as _M_E_MEV_MP
 
 # Knot volumes — single source of truth (knot_volumes module,
 # mpmath 50dps Clausen / SnapPy HP literature). Pre-refactor these
@@ -80,7 +80,7 @@ from knot_volumes import (  # noqa: E402
 M_E_MEV = float(_M_E_MEV_MP)
 
 # Strategy-(B) α-cluster parameters
-B_4HE_MEV = 28.29566                      # AME2020
+B_4HE_MEV = AME_B_HE4_MEV_VALIDATION                      # AME2020
 c_alpha_alpha_MEV = M_E_MEV * VOL_7_2_1   # ≈ 2.4269 MeV — derived, not fit here
 
 # ── AME2020 binding energies (Z ≤ 10) ────────────────────────────
@@ -91,7 +91,7 @@ AME: list[tuple[str, int, int, float]] = [
     ("2H",   1, 1,   2.22458),
     ("3H",   1, 2,   8.4818),
     ("3He",  2, 1,   7.7180),
-    ("4He",  2, 2,  28.29566),
+    ("4He",  2, 2,  AME_B_HE4_MEV_VALIDATION),
     ("6Li",  3, 3,  31.9941),
     ("7Li",  3, 4,  39.2446),
     ("8Be",  4, 4,  56.4995),  # unstable (10⁻¹⁶ s)

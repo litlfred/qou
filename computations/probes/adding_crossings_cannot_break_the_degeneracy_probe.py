@@ -116,6 +116,7 @@ import mpmath as mp  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from q_parameter import q_at  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -126,7 +127,7 @@ except Exception:  # pragma: no cover
 mp.mp.dps = 40
 _Q = q_at(mp.mp.dps)
 _H = _Q - 1 / _Q
-B_DEUT = mp.mpf("2.224566")
+B_DEUT = AME_B_DEUTERON_MEV_VALIDATION
 B_VIRT = mp.mpf("0.066")
 R_EXP = B_DEUT / B_VIRT
 

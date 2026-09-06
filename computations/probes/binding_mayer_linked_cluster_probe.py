@@ -46,13 +46,19 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 REPO = Path(__file__).resolve().parents[2]
 COMP = REPO / "computations"
 
-AME = {"D": mp.mpf("2.224566"), "T": mp.mpf("8.481798"),
-       "3He": mp.mpf("7.718043"), "4He": mp.mpf("28.295673")}
+AME = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
+       "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 A = {"D": 2, "T": 3, "3He": 3, "4He": 4}
 
 

@@ -73,6 +73,10 @@ Exact mpmath at 50 dps. NO fit, NO c_k, NO wiring.
 """
 import datetime, hashlib, json, os, subprocess, sys
 import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
+# `Path` was used below without ever being imported (bean qou-6inm's own fix,
+# 957a8b0da4, 2026-08-31): this module has raised `NameError: name 'Path' is
+# not defined` at import ever since, so the probe has not run in six days.
+from pathlib import Path
 # Repo-root-relative (bean qou-c7g8/qou-6inm). These were absolute paths into a
 # DIFFERENT machine's checkout (/home/user/qou), which resolve to nothing in any
 # clone not at that exact path. A sys.path insert of a missing directory raises

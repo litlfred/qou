@@ -49,10 +49,17 @@ import mpmath as mp  # noqa: E402
 import pyhecke_native  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV,
+)
 from functools import lru_cache  # noqa: E402
 from mass_at_3A_proper import qfac  # noqa: E402  (dim_q now local, mpmath)
 from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 # Precision must be raised BEFORE the module-scope constants below: at
@@ -62,10 +69,10 @@ from q_parameter import Q as Q0, Q_50_DIGIT_STR  # noqa: E402
 set_compute_dps()
 
 B_AME = {
-    "D":   mp.mpf("2.22456607"),
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
     "T":   AME_B_TRITIUM_MEV_VALIDATION,
-    "3He": mp.mpf("7.7180428"),
-    "4He": mp.mpf("28.295674"),
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
@@ -767,7 +774,7 @@ def main() -> int:
     builder.add_assertion(
         "data_loaded",
         computed=fmt(B_AME["D"]),
-        expected=fmt(mp.mpf("2.22456607")),
+        expected=fmt(AME_B_DEUTERON_MEV_VALIDATION),
         tolerance=1e-10,
         unit="B(D) MeV",
         source="AME 2020 deuteron binding — SELF-COMPARISON, see caveat",

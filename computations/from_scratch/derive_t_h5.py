@@ -30,6 +30,7 @@ from hoefsmit_general import (
 )
 from wenzl_y_axiomatic import derive_wenzl_y
 from experimental_constants import M_E_MEV  # noqa: E402
+from codata_constants import AME_B_TRITIUM_MEV_VALIDATION
 
 
 if __name__ == "__main__":
@@ -97,7 +98,7 @@ if __name__ == "__main__":
     print("─" * 78)
     M_E = M_E_MEV
     B_pred = M_E * rho * tr_M_q0
-    B_AME = 8.481798
+    B_AME = AME_B_TRITIUM_MEV_VALIDATION
     err = (B_pred - B_AME) / B_AME * 100
     print(f"  B_pred = {M_E} · {rho} · {tr_M_q0:.6f} = {B_pred:.6f} MeV")
     print(f"  B_AME  = {B_AME:.6f} MeV")

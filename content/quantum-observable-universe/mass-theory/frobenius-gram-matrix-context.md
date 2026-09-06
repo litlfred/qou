@@ -48,7 +48,7 @@ $\mathrm{tr}_M(\sigma_0\sigma_1\sigma_0)
 (the last step uses the Markov axiom on $\sigma_1$ paired with
 $\sigma_0 \in H_1$).
 
-At $q_0 = 1.109978595554181\ldots$ (50 dps), $hz^2 + z \approx 0.5514$ (the stale
+At $q_0 = 1.109978595642739\ldots$ (50 dps), $hz^2 + z \approx 0.5514$ (the stale
 $z^3 \approx 0.1245$ was off by a factor of 4.4).
 
 ## Operator identification via the dual

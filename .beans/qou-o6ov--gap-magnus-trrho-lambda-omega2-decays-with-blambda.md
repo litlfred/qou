@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-05T15:31:03Z
+updated_at: 2026-09-05T18:59:27Z
 ---
 
 **RESCOPED 2026-09-05 (owner: "rescope and continue"), after PR #6822. Read this header, not the historical one below it.**
@@ -512,3 +512,75 @@ MY RECOMMENDATION (judgement, not a finding): option 2. The truncation question 
 settled by the ruling, but the b-decay across the <=2-row column is real open mathematics with a
 closed-form hook handle and a two-row sector reduction already built, and it would be a waste to
 close that with the infrastructure framing that no longer applies.
+
+## 2026-09-05 (later still) — THREE three-point trends, three fourth points that refuted them (PR #6842)
+
+The dominant failure mode of this arc, recorded because it recurred three times in ONE session and
+each time the fourth size was cheap enough that there was no excuse:
+
+1. **The y-weighting margin table.** A=2 and A=3 gave margins x1.42 and x1.44 -- two sizes agreeing
+   to 1%, with an exact closed form behind them (y_k/y_k+1 = [n-2k+1]_q/[n-2k-1]_q, verified 1e-50).
+   A=4 refuted it: both its bumps lose, including at the square end where protection is MAXIMAL.
+   The agreement was a column-LENGTH artifact -- those columns were too short for a bump to land
+   anywhere but the protected end.
+2. **The sector reframing.** |tr_W_k|/C(n,k) decayed at A=3 and A=4 where the irrep column did not,
+   and I called it the arc's first constructive direction. A=5 refuted it (rise into k=4, x1.181):
+   2 of 4, failing at the LARGEST size.
+3. **The k=3->4 divergence RATE.** Ratios 1.23869 -> 5.36793 -> 26.4306 looked like ~4.6x/step and
+   I wrote 'fails at a rate, not by a recoverable margin'. A=6 gave 19.2541 -- growth x0.728, margin
+   IMPROVING 0.0503 -> 0.0664.
+
+WHAT SURVIVES ALL THREE CORRECTIONS:
+  * the k=3->4 step FAILS at A=4,5,6 (3 of 4), margins 0.272 / 0.050 / 0.066 vs a required 1
+  * the CEILING argument, because it is FORCED not empirical: [n-2k+1]_q/[n-2k-1]_q -> q^2 at fixed
+    k, capped at [3]_q = 3.0437 anywhere
+  * the CONTROL: plain tr(rho) rises where rho*Omega_2^P decays, so the A=3/A=4 sector behaviour is
+    about the curvature, not the weight filtration
+  * concentration, eroding: k=1 share 77.882 -> 73.499 -> 59.437 %
+
+THE LESSON, and it is not 'measure more sizes'. In every one of the three the probe's OWN OUTPUT
+carried the correct caveat -- 'NOT an asymptotic claim: 3 sizes. Read it as a rate to test, not a
+limit' is printed by magnus_fixed_k_trend_probe.py, and the sector probe's docstring says a property
+holding from the third size is the shape of a small-size artifact. The caveats were right every
+time. The failure was in the PROSE, which promoted each pattern to a mechanism anyway. A caveat
+printed by the tool and contradicted by the sentence quoting it is worth nothing.
+
+Practical rule for the next agent on this arc: an n-point trend here needs its (n+1)th point BEFORE
+it goes in a summary line, not after. The sizes cost 33s / 410s / 3020s at A=4/5/6 -- hours, not
+days, and cheaper than the corrections.
+
+STILL OPEN: whether the k=4 attribution is 'k=4', 'the arriving shape', or 'the square end' -- two
+steps cannot separate them; the A=4->5 step discriminates and comes free from the running A=5
+sector job.
+
+## 2026-09-05 — cross-arc: a sibling proved WHY a trace-based decay statement is fragile
+
+Sibling bean `qou-v7ms` (merged `082b7d9f3c` / `0c24e1d8a3`, session 016hQePZ) proves in Lean,
+sorry-free, in `QOU/HeckeAlgebra/WedderburnTrace.lean`:
+
+  * `traceFunctional_supported_apply` — a trace functional supported at ONE lambda IS
+    `c_lambda * trace(x lambda)`: one coefficient against one number.
+  * `markovTraceOnWedderburn_eq_traceFunctional` — the Markov trace IS such a functional, with
+    `c = y_lambda(q0)`, so the result bites the actual object, not an abstract family.
+  * Its stated consequence: `f^(2,1) = 2`, so that block is `M_2(R)` -- FOUR real dimensions, of
+    which the trace reads ONE. "The information the clause wants is present in the block and
+    destroyed by taking its trace. A derivation that reads the block rather than its trace is not
+    blocked by anything here."
+
+**Why this matters to o6ov.** This whole arc measures `tr_lambda(rho Omega_2^P)` -- one number per
+block, out of `(f^lambda)^2`. The sibling's theorem is about a different question (the (2,1)
+clause's three coefficients), so this is a THEMATIC connection and not a logical implication: it does
+not prove anything about b-decay. What it does supply is a proved reason to expect trace-based decay
+statements to be fragile, which is what this arc measured from the other end -- irrep 0/4, sector
+2/4, y-weighted failing at A=4.
+
+**And the obvious response has already been tried here, with the same outcome.** "Read the block,
+not the trace" is exactly the Frobenius route: `tr_lambda(X*X) = ||X||_F^2` is a different
+functional of the same block, measured in #6754 and in the chain probe. Its envelope
+`max_{b(lambda)=b} tr(X*X)/dim` DOES decrease monotonically for rho_bare and does NOT for the true
+Hecke element (peaks at b=3, total range 2.41x against rho_bare's 1427x, #6822). So moving from the
+trace to a norm of the same block did not rescue the decay for the correct rho.
+
+**Not duplicating.** The sibling's Lean is about trace functionals at a single partition; nothing
+here re-derives or extends it. Recorded so the next agent on o6ov meets the structural reason
+alongside this arc's measurements, rather than rediscovering the connection.

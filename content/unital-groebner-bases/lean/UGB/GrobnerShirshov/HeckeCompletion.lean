@@ -15077,6 +15077,14 @@ theorem bsbs_overlap_resolves (hn : 0 < n) (hp : HeckeParams)
 
 end CornerCriterion
 
+-- `n` was bound by `variable {n : ℕ}` inside `namespace CornerCriterion`, whose
+-- `end` above closes that scope.  Everything from §4au to the end of the file
+-- uses `n` (as `HeckeGen n`, `0 < n`, `heckeOrder n`, …) and none of it rebound
+-- it, so with the lakefile's `autoImplicit = false` those ~3700 lines do not
+-- elaborate: 997 `Unknown identifier n` errors, all one cause.  Re-declared here
+-- at the same implicitness as the three namespaces above (11420, 13951, 14981).
+variable {n : ℕ}
+
 /-! ## §4au  The overlap of a proper composition is one letter
 
 Every composition namespace above is indexed by the **shape** of the composition

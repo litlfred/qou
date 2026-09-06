@@ -90,16 +90,20 @@ from _li_2_q_util import load_q_50dps  # noqa: E402
 from substrate._precision import set_compute_dps  # noqa: E402
 from substrate.experimental_constants import M_E_MEV  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 set_compute_dps()
 COMP = str(_COMP)
 
 # ── Derived-elsewhere inputs (consumed, NOT recomputed, NOT fitted) ──────────
 B_AME = {  # AME2020 connected binding MeV (from #3943 committed witness)
-    "2H": mp.mpf("2.224566"),
+    "2H": AME_B_DEUTERON_MEV_VALIDATION,
     "3H": mp.mpf("8.481821"),
     "3He": mp.mpf("7.718058"),
-    "4He": mp.mpf("28.295673"),
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 BA_EMPIRICAL = {  # empirical B/A (MeV/nucleon) for the saturation-shape comparison
     "2H": mp.mpf("1.112283"), "3H": mp.mpf("2.827274"), "3He": mp.mpf("2.572686"),

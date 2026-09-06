@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T07:46:18.567047+00:00",
-  "commitSha": "5581d089576c181598f5ad344c7a4af8b787581e",
+  "computedAt": "2026-09-05T17:36:58.677764+00:00",
+  "commitSha": "f1e4e39fb38388fac6756dbaeef1d2ec77928673",
   "assertions": [
     {
       "name": "every character ratio lies in (0,1), so B = -alpha log R is positive",
@@ -24,10 +24,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 7,
   "computation": "the_character_ratio_derivation_path_is_the_bond_model_probe",
   "scriptFile": "the_character_ratio_derivation_path_is_the_bond_model_probe.py",
-  "scriptHash": "27f4a0c35e56",
+  "scriptHash": "5bffd9196296",
   "scriptCommitSha": "30e3094b68fd4ceec87ab9307e31d9628fb0b836",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -40,7 +40,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -50,10 +53,10 @@
   },
   "description": "Implements the character-ratio derivation path specified by prf:confined-knot-binding and admittedly not run by hecke_core_legacy.knot_factor. The character ratio nucleus/free-constituent-product, exact at 200 bits on the canonical word, equals exp(-L) to the working floor, so the specified path and the bond model are the same object. Binding from it: 2H +27.36 %, 3H -21.82 %, 3He -36.72 %, 4He -69.32 %. The hardcoded knot_factor (1-h^2 and its square) differs from the true character ratio by 4x to 7x and is not an approximation to it. Only the nucleon level is implemented; the quark and nuclear-jet levels the specification also names would push B up, which is a direction and not a prediction. No binding claim.",
   "data": {
-    "character_ratio_2H": "5082297893767389625779958",
-    "character_ratio_3H": "2051356404486497689268500",
-    "character_ratio_3He": "3113863120725956524128884",
-    "character_ratio_4He": "1256841528952662694138785",
+    "character_ratio_2H": "0.5082297893767389625779958",
+    "character_ratio_3H": "0.2051356404486497689268500",
+    "character_ratio_3He": "0.3113863120725956524128884",
+    "character_ratio_4He": "0.1256841528952662694138785",
     "max_R_minus_exp_minus_L": "3.112e-61"
   },
   "caveats": [

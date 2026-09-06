@@ -1,0 +1,77 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1312.6411v4",
+ "source_sha256": "ceac22eb8ffe87e6",
+ "brief": "DUALITY AND TILTING FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI — We consider commutative DG rings (better known as nonpositive stronglycommutativeassociativeunitalDGalgebras).",
+ "extended": "**DUALITY AND TILTING FOR COMMUTATIVE DG RINGS AMNON YEKUTIELI**\n\n52 pp, 11 sections.\n\n**Abstract.** We consider commutative DG rings (better known as nonpositive stronglycommutativeassociativeunitalDGalgebras). ForsuchaDGring Awede- ﬁnethenotionsof perfect,tilting,dualizing,Cohen-MacaulayandrigidDG A-modules. Geometricallyperfect DGmodulesaredeﬁnedbyalocalconditionon Spec ¯A,where ¯A is the commutative ringH0(A). Algebraically perfectDG modules are those that can be obtained fromA by ﬁnitely many shifts, direct summands and cones. Tilt- ingDGmodulesarethosethathaveinversesw.r.t.thederivedtensorproduct;their isomorphismclassesformthederivedPicardgroup DPic(A). DualizingDGmod- ules are a generalization of Grothendieck’s original deﬁnition (and hereA has to be cohomologically pseudo-noetherian). Cohen-Macaulay DG modules are the duals (w.r.t. a given dualizing DG module) of ﬁnite¯A-modules.\n\n**Outline.** 0 Introduction; 1 DG Modules and their Resolutions; 2 Cohomological Dimension; 3 Reduction and Lifting; 4 Localization of Commutative DG Rings; 5 Perfect DG Modules; 6 Tilting DG Modules; 7 Dualizing DG Modules; 8 Cohen-Macaulay DG Modules; 9 Rigid DG Modules; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 0.2: Let A be a commutative DG ring, and letP be a DG A-module. The\n- Theorem 0.3: Let A be a commutative DG ring, and letP be a DG A-module. The\n- Theorem 0.4: Let A be a commutative DG ring. The canonical group homomorphism\n- Theorem 0.5: Let A be a tractable commutative DG ring. Then:\n- Theorem 0.7: Let AbeacohomologicallyboundedtractablecommutativeDGring. If ¯Ais\n- Theorem 0.8: Let f : A→ B be a homomorphism between tractable commutative DG",
+ "tokens": {
+  "brief": 43,
+  "extended": 423
+ },
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "title": "Introduction",
+   "pages": "1-7"
+  },
+  {
+   "id": "sec-001-1-dg-modules-and-their-resolutions",
+   "title": "DG Modules and their Resolutions",
+   "pages": "7-11"
+  },
+  {
+   "id": "sec-002-2-cohomological-dimension",
+   "title": "Cohomological Dimension",
+   "pages": "11-16"
+  },
+  {
+   "id": "sec-003-3-reduction-and-lifting",
+   "title": "Reduction and Lifting",
+   "pages": "16-19"
+  },
+  {
+   "id": "sec-004-4-localization-of-commutative-dg-rings",
+   "title": "Localization of Commutative DG Rings",
+   "pages": "19-24"
+  },
+  {
+   "id": "sec-005-5-perfect-dg-modules",
+   "title": "Perfect DG Modules",
+   "pages": "24-30"
+  },
+  {
+   "id": "sec-006-6-tilting-dg-modules",
+   "title": "Tilting DG Modules",
+   "pages": "30-35"
+  },
+  {
+   "id": "sec-007-7-dualizing-dg-modules",
+   "title": "Dualizing DG Modules",
+   "pages": "35-43"
+  },
+  {
+   "id": "sec-008-8-cohen-macaulay-dg-modules",
+   "title": "Cohen-Macaulay DG Modules",
+   "pages": "43-47"
+  },
+  {
+   "id": "sec-009-9-rigid-dg-modules",
+   "title": "Rigid DG Modules",
+   "pages": "47-51"
+  },
+  {
+   "id": "sec-010-references",
+   "title": "References",
+   "pages": "51-52"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

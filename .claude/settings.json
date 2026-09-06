@@ -66,6 +66,11 @@
           },
           {
             "type": "command",
+            "command": "./scripts/precommit-tolerance-tautology-warn.sh",
+            "timeout": 70
+          },
+          {
+            "type": "command",
             "command": "./scripts/prebranch-bean-loss-warn.sh",
             "timeout": 15
           }

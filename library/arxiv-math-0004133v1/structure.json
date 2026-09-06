@@ -1,0 +1,214 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0004133v1",
+ "source": {
+  "file": "0004133v1.pdf",
+  "sha256": "687de8249639c7f27fe1413b26034340e4b37b155afcce2af9256b56183ccc5d",
+  "bytes": 239725,
+  "pages": 30,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0004133",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "20 Apr 2000"
+  },
+  "doi": null,
+  "title": "From Finite Sets to Feynman Diagrams",
+  "authors_raw": "John C. Baez and James Dolan",
+  "title_lines": [
+   "From Finite Sets to Feynman Diagrams"
+  ],
+  "abstract": "\u2018Categori\ufb01cation\u2019 is the process of replacing equations by isomor- phisms. We describe some of the ways a thoroughgoing emphasi s on categori\ufb01cation can simplify and unify mathematics. We beg in with elementary arithmetic, where the category of \ufb01nite sets ser ves as a categori\ufb01ed version of the set of natural numbers, with disj oint union and Cartesian product playing the role of addition and multi plication. We sketch how categorifying the integers leads naturally to the in\ufb01- nite loop space \u2126 \u221eS\u221e, and how categorifying the positive rationals leads naturally to a notion of the \u2018homotopy cardinality\u2019 of a tame space. Then we show how categorifying formal power series le ads to Joyal\u2019s esp` eces des structures, or \u2018structure types\u2019. We also describe a useful generalization of structure types called \u2018stu\ufb00 typ es\u2019. There is an inner product of stu\ufb00 types that makes the category of stu\ufb00 types into a categori\ufb01ed version of the Hilbert space of the quanti zed har- monic oscillator. We conclude by sketching how this idea giv es a nice explanation of the combinatorics of Feynman diagrams.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126160923-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0004133v1  [math.QA]  20 Apr 2000"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Equality and Isomorphism",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Note that \u03a0 1(X) is far more informative than \u03a0 0(X), because it records",
+   "page": 5,
+   "source": "inferred",
+   "number": "X"
+  },
+  {
+   "level": 1,
+   "title": "Natural Numbers and Finite Sets",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "In general,",
+   "page": 14,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Power Series and Structure Types",
+   "page": 17,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Feynman Diagrams and Stu\ufb00 Operators",
+   "page": 22,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 28,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 28,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1097,
+   "n_words": 181
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3432,
+   "n_words": 589
+  },
+  {
+   "id": "sec-002-2-equality-and-isomorphism",
+   "number": "2",
+   "title": "Equality and Isomorphism",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 6451,
+   "n_words": 1140
+  },
+  {
+   "id": "sec-003-x-note-that-\u03c0-1x-is-far-more-informative-than-\u03c0",
+   "number": "X",
+   "title": "Note that \u03a0 1(X) is far more informative than \u03a0 0(X), because it records",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 3013,
+   "n_words": 547
+  },
+  {
+   "id": "sec-004-3-natural-numbers-and-finite-sets",
+   "number": "3",
+   "title": "Natural Numbers and Finite Sets",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 14,
+   "n_chars": 14143,
+   "n_words": 2742
+  },
+  {
+   "id": "sec-005-2-in-general",
+   "number": "2",
+   "title": "In general,",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 4649,
+   "n_words": 893
+  },
+  {
+   "id": "sec-006-4-power-series-and-structure-types",
+   "number": "4",
+   "title": "Power Series and Structure Types",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 22,
+   "n_chars": 9265,
+   "n_words": 1829
+  },
+  {
+   "id": "sec-007-5-feynman-diagrams-and-stu\ufb00-operators",
+   "number": "5",
+   "title": "Feynman Diagrams and Stu\ufb00 Operators",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 28,
+   "n_chars": 11245,
+   "n_words": 2210
+  },
+  {
+   "id": "sec-008-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 28,
+   "n_chars": 59,
+   "n_words": 10
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 3930,
+   "n_words": 607
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 10,
+  "chars_total": 57284
+ }
+}

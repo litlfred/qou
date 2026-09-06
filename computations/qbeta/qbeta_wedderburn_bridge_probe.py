@@ -71,12 +71,34 @@ block means the Wedderburn embedding, it is mis-shaped (and, for the `Fin (n!)`
 form, conditional); if it means something else, that something is not defined
 anywhere in the corpus.
 
-*** WHY NO LEAN THEOREM ACCOMPANIES THIS ***
+*** THE LEAN THEOREM THAT DOES ACCOMPANY IT (added 2026-09-05) ***
 
-The tempting one — "three independent coefficients cannot come from one scalar"
-— is FALSE as stated: set-theoretically a single real can encode three. Making
-it true needs a continuity or naturality hypothesis the corpus does not supply,
-and manufacturing one would be the same overreach this probe documents.
+This section used to say no Lean theorem was offered, because the tempting one —
+"three independent coefficients cannot come from one scalar" — is FALSE as
+stated: set-theoretically a single real encodes three. Making it true needs a
+hypothesis, and manufacturing one would be the overreach this probe documents.
+
+The hypothesis did not have to be manufactured. LINEARITY is already assumed for
+the Markov trace in this corpus (`markovTrace_add`, `markovTrace_smul`,
+`markovTrace_linear`). Under it, `QOU/HeckeAlgebra/WedderburnTrace.lean` proves:
+
+  * `markovTraceOnWedderburn` factors through the block TRACES,
+  * a functional of that form supported at a single lambda is exactly
+    `c_lambda * trace (x_lambda)` -- one coefficient against one number,
+  * so any THREE such are linearly dependent, with an explicit witness
+    (`three_supported_traceFunctionals_dependent`).
+
+This does not make the clause false. It rules out the route the clause names,
+whenever that route is linear, factors through the Markov trace, and is
+localised at (2,1). And it says where the room is: f^{(2,1)} = 2, so the block
+is M_2(R) -- FOUR real dimensions, of which the trace reads one. The wanted
+information is present in the block and destroyed by tracing it.
+
+f^{(2,1)} = 2 was prose when that was written -- classical, but not a fact this
+corpus had in Lean. `QOU/HeckeAlgebra/SeminormalDimSmall.lean` now proves it via
+the Frame-Robinson-Thrall hook-length formula, so the (2,1) instances hold
+unconditionally. It also proves f^{(1,1)} = 1, which is the boundary: at the
+charge shape the block IS its trace and none of these results apply.
 
 *** WHAT WAS DONE ABOUT IT ***
 
@@ -183,15 +205,23 @@ def main() -> int:
         if ".lake" in f.parts:
             continue
         for i, ln in enumerate(_strip_lean_comments(f.read_text()).splitlines(), 1):
-            if "wedderburnEmbed" in ln.replace("wedderburnEmbedOf", ""):
+            # The BARE identifier only. `wedderburnEmbedOf` and
+            # `wedderburnEmbedTotal` are real declarations that legitimately
+            # share the prefix; a substring test flags them, which would make
+            # this gate fire on good news. See the note below.
+            if re.search(r"\bwedderburnEmbed\b(?![A-Za-z0-9_'])", ln):
                 term_uses.append(f"{f.relative_to(ROOT)}:{i}")
     ok &= chk("no_term_level_use_of_the_name_remains",
               term_uses, [],
-              note="scans every non-.lake Lean source with COMMENTS STRIPPED. "
-                   "An earlier version of this check filtered on a leading "
-                   "backtick instead, which counted every doc mention as a "
-                   "use -- including the retirement note itself. Stripping is "
-                   "the only version that would actually catch a real use")
+              note="scans every non-.lake Lean source with COMMENTS STRIPPED, "
+                   "for the BARE name. Two earlier versions were wrong in "
+                   "opposite directions: filtering on a leading backtick "
+                   "counted every doc mention as a use (including the "
+                   "retirement note), and a plain substring test would flag "
+                   "the legitimate wedderburnEmbedOf / wedderburnEmbedTotal. "
+                   "Widened deliberately when qou-yos9 added the latter -- "
+                   "the gate means 'the retired opaque has no consumers', not "
+                   "'no identifier starts with these letters'")
 
     print()
     print("=" * 78)
@@ -264,6 +294,39 @@ def main() -> int:
               note="the opaque and the fourth-axiom reasons are retired; the "
                    "shape objection is not. A reader must not read 'the "
                    "embedding was built' as 'the clause was discharged'")
+    wt = ROOT / ("content/quantum-observable-universe/lean/QOU/HeckeAlgebra/"
+                 "WedderburnTrace.lean")
+    wtflat = " ".join(wt.read_text().split()) if wt.exists() else ""
+    ok &= chk("the_linear_no_go_is_a_lean_theorem",
+              "theorem three_supported_traceFunctionals_dependent" in wtflat, True,
+              note="the shape objection is no longer only prose. Under "
+                   "linearity -- already assumed for the Markov trace -- three "
+                   "trace-factoring functionals at one partition are dependent")
+    ok &= chk("the_trace_is_provably_lossy",
+              "theorem trace_does_not_separate" in wtflat, True,
+              note="the ROOM is a theorem too, not only the no-go: distinct "
+                   "decompositions with every block trace equal, so every "
+                   "trace-factoring functional is blind to the difference")
+    sd = ROOT / ("content/quantum-observable-universe/lean/QOU/HeckeAlgebra/"
+                 "SeminormalDimSmall.lean")
+    sdflat = " ".join(sd.read_text().split()) if sd.exists() else ""
+    ok &= chk("the_21_dimension_fact_is_formalised",
+              "theorem seminormalDim_p21" in sdflat
+              and "theorem trace_does_not_separate_p21" in sdflat, True,
+              note="f^{(2,1)}=2 was prose when the no-go was written. Proved "
+                   "via the hook-length formula, so the (2,1) instances are "
+                   "unconditional rather than resting on a classical value the "
+                   "corpus had not written down")
+    ok &= chk("and_the_boundary_case_is_recorded_too",
+              "not_two_le_seminormalDim_p11" in sdflat, True,
+              note="f^{(1,1)}=1, so at the charge shape the block IS its trace "
+                   "and these results say NOTHING. Recorded as a theorem so the "
+                   "limit of the no-go is visible rather than assumed")
+    ok &= chk("and_the_block_is_wider_than_its_trace",
+              "destroyed by taking its trace" in wtflat, True,
+              note="f^{(2,1)}=2 so the block is M_2(R), four dimensions to the "
+                   "trace's one. Recording the ROOM as well as the no-go, so "
+                   "this is not read as the clause being refuted")
     print("  The (2,1) clause names the shape mismatch and the unmet RSK")
     print("  hypothesis, and still calls itself an open obligation.")
 

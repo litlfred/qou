@@ -1,6 +1,6 @@
 {
   "schema": "trace-convention-registry/v1",
-  "updated": "2026-09-04",
+  "updated": "2026-09-05",
   "authoritative_markdown": "docs/coordination/trace-convention-registry.md",
   "bean": "qou-n1dj",
   "meta": {
@@ -84,7 +84,7 @@
         "computations/mass_at_3A_proper.py::markov_trace_3A"
       ],
       "lean": null,
-      "forcing_status": "deprecated (and measured non-normalized -- see normalization_gap)",
+      "forcing_status": "deprecated",
       "verify": null,
       "source": "computations/mass_at_3A_proper.py docstring ('Do not use for new binding calculations')",
       "normalization_gap": {
@@ -103,7 +103,8 @@
         "bean": "qou-7o7h",
         "consequence_for_readers": "figures computed under this form are not comparable to self-normalized figures; the corpus contains both. fr_pullback_borromean_h3a_test.py was migrated to self-normalized 2026-09-03; fr_pullback_k3_test.py FOLLOWED on 2026-09-04 (it now calls selfnorm_denominator), so its committed 1.82x/1.5015x figures are the PRE-migration textbook run and its live output is d_q^2/D^2. Name the family when quoting either.",
         "k3_ranking_is_family_dependent": "the k=3 FR knot ranking is NOT invariant across weight families: d_q^2/[n]_q! ranks 4_1 best, d_q^2/D^2 ranks 6_1 best, the Molien weight f^lambda q^{-kappa} d_q/[n]_q! ranks 5_2 best, and y_lambda makes the depth-3 stratum identically zero (SU(N) row cap) so the test is vacuous. Which family Phi_k requires is OPEN (bean qou-oots). Measured: docs/audits/2026-09-05-phi-k-weight-family.md; labelling sweep: docs/audits/2026-09-05-k3-weight-family-labelling.md (bean qou-9b50)."
-      }
+      },
+      "forcing_status_note": "Also MEASURED non-normalized -- see this record's `normalization_gap`. This clause used to be appended to `forcing_status` itself, which is an enum the validator checks against ['deprecated','forced-given-premise','not-a-z-trace','pinned-by-definition'], so the registry failed its own R1. No information is lost: the numbers it pointed at are in `normalization_gap` and the argument is in `value_note`."
     },
     {
       "id": "C",
@@ -195,16 +196,16 @@
       "id": "mass",
       "description": "absolute nucleon / atom mass via the muon-anchored Hecke energy",
       "definitional_convention": "D",
-      "definitional_source": "OWNER RULING 2026-08-09: convention C excised. The forcing is docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md — lem:feynman-eigenbasis-decomposition already writes the row cap ell(lambda) <= 2 into the mass channel's own decomposition (V = the fundamental of SU_q(2), summand count floor(n/2)+1), so y_(1^3) = 0 is a restatement of what the mass chapter uses, not an added premise. Feeding that into QOU.BraidsAndKnots.MarkovTraceTLUniqueness.markovWeights_eq_jones_of_threeRow_eq_zero (sorry-free) yields D uniquely. Superseded: prop:categorical-mass-markov + rem:markov-axioms-primitive, which SELECTED C — rem:markov-axioms-primitive says so in its own words, 'a stipulation of this definition, not a consequence of it'.",
+      "definitional_source": "OWNER RULING 2026-08-09: convention C excised. The forcing is docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md \u2014 lem:feynman-eigenbasis-decomposition already writes the row cap ell(lambda) <= 2 into the mass channel's own decomposition (V = the fundamental of SU_q(2), summand count floor(n/2)+1), so y_(1^3) = 0 is a restatement of what the mass chapter uses, not an added premise. Feeding that into QOU.BraidsAndKnots.MarkovTraceTLUniqueness.markovWeights_eq_jones_of_threeRow_eq_zero (sorry-free) yields D uniquely. Superseded: prop:categorical-mass-markov + rem:markov-axioms-primitive, which SELECTED C \u2014 rem:markov-axioms-primitive says so in its own words, 'a stipulation of this definition, not a consequence of it'.",
       "production_convention": "D",
       "production_source": "computations/m_p_substrate_identity_50dps.py::trM_borromean -> F_Bor -> m-p-substrate-identity-50dps.witness.json -> computations/canonical_mass.py",
       "status": "agreed",
       "open_item": null,
       "resolution": {
-        "ruling": "owner, 2026-08-09 — excise convention C",
+        "ruling": "owner, 2026-08-09 \u2014 excise convention C",
         "numerical_impact_on_this_channel": "NONE. Production was already D; only the definitional side moved. m_p unchanged.",
         "forcing": "docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md",
-        "not_decided_by": "CODATA match — the forcing is the fibre dimension (row cap), which is independent of any measured value."
+        "not_decided_by": "CODATA match \u2014 the forcing is the fibre dimension (row cap), which is independent of any measured value."
       }
     },
     {
@@ -217,12 +218,12 @@
       "status": "agreed",
       "open_item": null,
       "resolution": {
-        "ruling": "owner, 2026-08-09 — excise convention C",
+        "ruling": "owner, 2026-08-09 \u2014 excise convention C",
         "numerical_impact": "REAL and it is NOT an improvement on aggregate: mean |err| over {2H,3H,3He,4He,6Li,7Li} moves 37.39% -> 43.85%. 2H improves +74.85% -> +27.36% and the 3H/3He mirror split 2.2708 -> 1.7471 MeV (nature 0.7638); everything heavier under-binds worse.",
         "numerical_impact_per_isotope": "B_D/B_C, A = 2..7: 0.935 (2H), 1.105 (3H), 1.062 (3He), 1.228 (4He), 1.489 (6Li), 1.613 (7Li), 1.614 (7Be) -- the exposure GROWS with interface count, -6.5% to +61%, and is NOT monotone in direction. The Delta_lambda route is far larger: 4He is a ~31x change WITH a sign flip. Measured in docs/audits/2026-08-08-binding-channel-convention-exposure.md; ~15 live consumers of markov_z / y_lambda_wenzl_bridge (deltalambda/*, phase5/*, the mu4/rho_F cluster probes, casimir_xi_2_dig_deeper, crystal_yekutieli_probes_abcd, connected_magnitude_charge_symmetric, meson_symmetry_and_bar_involution, y_lambda_symbolic_validate). This supersedes the earlier claim that binding's exposure is 195 ppm.",
         "structural_impact": "the 2H impossibility disappears. Under C, AME(2H)=2.2246 sits 30.4% BELOW the whole admissible band [2.9072, 5.1780]; under D the band is [2.0507, 3.7978] and AME is inside it, at d = -0.1192*h.",
         "mass_channel_unaffected": "verified: m_p = 938.27208943 and m_n = 939.56542276 both unchanged, because trM_borromean uses the Lean closed form (4+h^2-3h^4-h^6)/(h^2+4) and never calls y_lambda_at.",
-        "not_decided_by": "experimental match — see numerical_impact, D is worse on aggregate",
+        "not_decided_by": "experimental match \u2014 see numerical_impact, D is worse on aggregate",
         "residual_question": {
           "bean": "qou-rm47",
           "status": "NOT an open convention item -- the C-vs-D question is settled by the ruling above. What remains is a separate structural question about the binding channel's fibre.",
@@ -256,7 +257,7 @@
       "open_item": {
         "bean": "qou-cds1",
         "audit": "docs/audits/2026-08-15-owner-ruling-convention-d-proton-color.md",
-        "note": "REPOINTED 2026-08-16 from qou-b3nk (settle the convention — done, see resolution) to qou-cds1 (re-derive the ladder under D — OPEN). UPDATED 2026-08-23 (qou-b3nk CLOSED): the clause 'Neither convention is DERIVED for the decay channel' is SUPERSEDED ON THE C SIDE — C is now a scope-(b) structural exclusion, identically in q, by field membership (see c_exclusion on this channel). D remains NOT derived here: excluding C does not identify the level. A z-swap is still NOT a migration: measured c_3 -> ~-974, implied c_2 -> -9.3, rung convergence collapses (qbeta-c3-ladder-trace-convention-sensitivity witness). Settling = derive the decay fibre's rank, then re-derive the ladder from that trace.",
+        "note": "REPOINTED 2026-08-16 from qou-b3nk (settle the convention \u2014 done, see resolution) to qou-cds1 (re-derive the ladder under D \u2014 OPEN). UPDATED 2026-08-23 (qou-b3nk CLOSED): the clause 'Neither convention is DERIVED for the decay channel' is SUPERSEDED ON THE C SIDE \u2014 C is now a scope-(b) structural exclusion, identically in q, by field membership (see c_exclusion on this channel). D remains NOT derived here: excluding C does not identify the level. A z-swap is still NOT a migration: measured c_3 -> ~-974, implied c_2 -> -9.3, rung convergence collapses (qbeta-c3-ladder-trace-convention-sensitivity witness). Settling = derive the decay fibre's rank, then re-derive the ladder from that trace.",
         "superseded_clause_note": "The prior wording 'C fails two structural conditions each of which would exclude it IF demanded' understated the C side: one of the two (fixed-rank fibre membership) is not a demand but a field-theoretic fact, and holds identically in q rather than pointwise at q0."
       },
       "production_convention_target": "D",
@@ -271,20 +272,20 @@
       "production_source_correction": {
         "recorded": "2026-08-16 (qou-cdh1 follow-up; raised by a sibling on #5235)",
         "finding": "`production_source` above says the z_C alpha = (z-1)h/2 'feeds EVERY committed c_k extraction'. That universal is FALSE and was never measured. computations/qbeta/qbeta_ck_cache.py:85 reads `z = q**3 / (q**2 + 1)` -- convention D -- and computes the same ladder phase. The extraction layer is SPLIT, not uniformly C.",
-        "but_the_artifact_is_stale_not_split": "Checked rather than relayed, and the real state is worse than 'two live frames'. The producer is D; its committed witness computations/qbeta/qbeta-ck-cache.witness.json carries the C-frame c_3 (-2.069…), not the D-frame -974.43. Proven stale, not merely suspected: witness scriptHash 88cb1da28b5e vs sha256(producer)[:12] = 9a13a19a1b52, and computedAt is 2026-08-08 -- ONE DAY before the 2026-08-09 ruling. So the -974.43 quoted on #5235 is that producer's RUN OUTPUT, not a committed value. Detector-blindness taxonomy row 10: the producer migrated, the artifact did not.",
-        "consequence": "Both c_3 frames are committed in this corpus -- -2.069… in qbeta-ck-cache/qbeta-c3-three-rung-probe and others, -974.43 in qbeta-c3-ladder-trace-convention-sensitivity and qbeta-kc21-parity-convention-immunity, where it is a deliberate sensitivity measurement. R9 still correctly asserts C for qbeta_utils.markov_parameter; that entry is not wrong, it is just not the whole production layer.",
+        "but_the_artifact_is_stale_not_split": "Checked rather than relayed, and the real state is worse than 'two live frames'. The producer is D; its committed witness computations/qbeta/qbeta-ck-cache.witness.json carries the C-frame c_3 (-2.069\u2026), not the D-frame -974.43. Proven stale, not merely suspected: witness scriptHash 88cb1da28b5e vs sha256(producer)[:12] = 9a13a19a1b52, and computedAt is 2026-08-08 -- ONE DAY before the 2026-08-09 ruling. So the -974.43 quoted on #5235 is that producer's RUN OUTPUT, not a committed value. Detector-blindness taxonomy row 10: the producer migrated, the artifact did not.",
+        "consequence": "Both c_3 frames are committed in this corpus -- -2.069\u2026 in qbeta-ck-cache/qbeta-c3-three-rung-probe and others, -974.43 in qbeta-c3-ladder-trace-convention-sensitivity and qbeta-kc21-parity-convention-immunity, where it is a deliberate sensitivity measurement. R9 still correctly asserts C for qbeta_utils.markov_parameter; that entry is not wrong, it is just not the whole production layer.",
         "structural_gap": "`production_source` is PROSE, so no rule can check it. R9/R10/R11 validate `evaluators`, which are structured; a channel's claim about which producers feed it is a free-text string that can assert a universal nobody measured -- which is exactly what happened here. Any future rule wanting to catch this needs production_source to become a list of module/symbol entries the way evaluators already is."
       },
       "c_exclusion": {
-        "verdict": "EXCLUDED — scope-(b) structural exclusion, identically in q. Supersedes the earlier 'neither convention is derived' / 'would exclude it IF demanded' wording on the C side only.",
+        "verdict": "EXCLUDED \u2014 scope-(b) structural exclusion, identically in q. Supersedes the earlier 'neither convention is derived' / 'would exclude it IF demanded' wording on the C side only.",
         "statement": "z_C = sqrt(q)/(q+1) is not z_r for ANY r, at any q.",
         "invariant": "FIELD MEMBERSHIP. z_r = q^(2r-1)(1-q^2)/(1-q^(2r)) = q^r/[r]_q lies in Q(q) for every r. x^2 - q is Eisenstein at the prime q of Q[q], hence irreducible over Q(q), so sqrt(q) is not in Q(q); and z_C in Q(q) would give sqrt(q) = z_C*(q+1) in Q(q). For non-integer real r the same follows from non-constancy of the formal level: r_C(1.05) = 2.2267 vs r_C(1.15) = 2.9553.",
         "evidence": "computations/probes/wenzl_level_family.py W4 + W9 (10/10, sympy-exact over Q(q), no float64); witness computations/probes/wenzl-level-family.json; audit docs/audits/2026-08-16-wenzl-level-family.md",
         "subsumes_prior_condition": "The prior note listed 'fixed-rank fibre membership (N_eff(z_C) = 2.5995 POINTWISE, q-dependent)' as a condition that would exclude C IF demanded. W3 proves N_eff and the Wenzl level are the SAME MAP, so that pointwise number was a shadow of a q-identical structural fact. The two structural conditions the prior note listed were therefore not independent.",
         "still_separate": "The full-bar condition bar(z) = z - h (Lean QOU.QBeta.zD_full_bar_covariant / barEven_fullBar_forces_classical, sorry-free) remains a distinct route, still resting on its own premise (trace bar-compatibility).",
-        "premise": "UNCONDITIONAL: 'z_C != z_r for all r' is a theorem about rational-function fields and carries no premise. CONDITIONAL: the inference 'therefore C is not an admissible convention for this channel' requires that the channel's z be a fibre-level parameter at all — the categorical-fibre premise, which is the framework's own and is not proved here.",
-        "does_not_derive_D": "Excluding C says z_C is NO level; it does not say WHICH level the decay channel occupies. r = 2 for this channel still requires the decay fibre's rank — bean qou-cds1, OPEN. W10 records that every channel in the family sits at r = 2 and none at r >= 3: suggestive, not a derivation.",
-        "mutual_exclusivity_role_change": "decayLadder_zC_threeRow_ne_zero (sorry-free) blocked the two-row forcing from transferring WHILE THE LADDER KEEPS z_C. That antecedent is now itself excluded, so the theorem no longer stands as an obstruction to D — it is an argument for abandoning z_C."
+        "premise": "UNCONDITIONAL: 'z_C != z_r for all r' is a theorem about rational-function fields and carries no premise. CONDITIONAL: the inference 'therefore C is not an admissible convention for this channel' requires that the channel's z be a fibre-level parameter at all \u2014 the categorical-fibre premise, which is the framework's own and is not proved here.",
+        "does_not_derive_D": "Excluding C says z_C is NO level; it does not say WHICH level the decay channel occupies. r = 2 for this channel still requires the decay fibre's rank \u2014 bean qou-cds1, OPEN. W10 records that every channel in the family sits at r = 2 and none at r >= 3: suggestive, not a derivation.",
+        "mutual_exclusivity_role_change": "decayLadder_zC_threeRow_ne_zero (sorry-free) blocked the two-row forcing from transferring WHILE THE LADDER KEEPS z_C. That antecedent is now itself excluded, so the theorem no longer stands as an obstruction to D \u2014 it is an argument for abandoning z_C."
       }
     }
   ],
@@ -381,6 +382,34 @@
       {
         "file": "computations/probes/probe_convention_d_vs_c_borromean.py",
         "reason": "the D != C proof; declares both by construction"
+      },
+      {
+        "file": "computations/_li_2_q_util.py",
+        "reason": "MEASURED 2026-09-05 (computations/audits/borromean_convention_by_evaluation.py): returns 1.006730453487707435514279 at q0, which is neither convention (C = 0.998366..., D = 0.998562...). It is the JONES normalisation -- a THIRD normaliser, loop value q+2+q^-1 = 1/z_C^2, against D's [2]_q^2. The source says so itself and states it is kept deliberately as 'the ALTERNATIVE-normalisation comparison column ... overwriting this one would delete the comparison it exists to make'. Not an undeclared C-or-D; out of scope for R5, like the two probes already exempt."
+      },
+      {
+        "file": "computations/hecke/phi0_normalization_disproof.py",
+        "reason": "MEASURED 2026-09-05 (computations/audits/borromean_convention_by_evaluation.py): returns 1.006730453487707435514279 at q0, which is neither convention (C = 0.998366..., D = 0.998562...). It is the JONES normalisation -- a THIRD normaliser, loop value q+2+q^-1 = 1/z_C^2, against D's [2]_q^2. The source says so itself and states it is kept deliberately as 'the ALTERNATIVE-normalisation comparison column ... overwriting this one would delete the comparison it exists to make'. Not an undeclared C-or-D; out of scope for R5, like the two probes already exempt."
+      },
+      {
+        "file": "computations/probes/tau_all_orders_h6_empirical.py",
+        "reason": "MEASURED 2026-09-05 (computations/audits/borromean_convention_by_evaluation.py): returns 1.006730453487707435514279 at q0, which is neither convention (C = 0.998366..., D = 0.998562...). It is the JONES normalisation -- a THIRD normaliser, loop value q+2+q^-1 = 1/z_C^2, against D's [2]_q^2. The source says so itself and states it is kept deliberately as 'the ALTERNATIVE-normalisation comparison column ... overwriting this one would delete the comparison it exists to make'. Not an undeclared C-or-D; out of scope for R5, like the two probes already exempt."
+      },
+      {
+        "file": "computations/yekutieli_borromean_h2_extraction.py",
+        "reason": "MEASURED 2026-09-05 (computations/audits/borromean_convention_by_evaluation.py): returns 1.006730453487707435514279 at q0, which is neither convention (C = 0.998366..., D = 0.998562...). It is the JONES normalisation -- a THIRD normaliser, loop value q+2+q^-1 = 1/z_C^2, against D's [2]_q^2. The source says so itself and states it is kept deliberately as 'the ALTERNATIVE-normalisation comparison column ... overwriting this one would delete the comparison it exists to make'. Not an undeclared C-or-D; out of scope for R5, like the two probes already exempt."
+      },
+      {
+        "file": "qou-mass/src/qou_mass/_internal/_li_2_q_util.py",
+        "reason": "MEASURED 2026-09-05 (computations/audits/borromean_convention_by_evaluation.py): returns 1.006730453487707435514279 at q0, which is neither convention (C = 0.998366..., D = 0.998562...). It is the JONES normalisation -- a THIRD normaliser, loop value q+2+q^-1 = 1/z_C^2, against D's [2]_q^2. The source says so itself and states it is kept deliberately as 'the ALTERNATIVE-normalisation comparison column ... overwriting this one would delete the comparison it exists to make'. Not an undeclared C-or-D; out of scope for R5, like the two probes already exempt. GENERATED MIRROR of computations/_li_2_q_util.py -- never hand-edit; scripts/sync-qou-mass-vendor.py propagates the source."
+      },
+      {
+        "file": "computations/two_quark_hopf_vs_borromean_sdp.py",
+        "reason": "MEASURED 2026-09-05: returns -14.6902069283717993677028 at q0 -- negative, where a normalised Markov trace is ~1. NOT a Markov trace despite the name tr_M_borromean. CORRECTED the same day: an earlier version of this entry called its weights 'the PLANCHEREL family dim_q^2/[n]_q! wearing a y_ prefix'. That is WRONG. The SHAPE is d^2/[n]_q!, but d is the HOOK PRODUCT, and the q-dimension is its reciprocal times [n]_q! (dim_q = [n]_q!/hook_product). Measured at q0 for lambda |- 3: the true Plancherel weights are 0.1634 / 0.6607 / 0.1634 (summing to 0.98744) while this file carries 6.1206 / 1.5136 = hook_prod^2/[3]_q!, matching to the digit on both. So the q-dimension is INVERTED and these are neither Ocneanu nor Plancherel. Exempt from R5 because they implement no registry convention. BLAST RADIUS OF THE INVERSION IS SMALL: both files have ZERO importers, and the value feeds a matplotlib series (float(tr_M_borromean(q))), not the committed witness -- so it reaches a PNG, not a number anyone cites. Not fixed here; fixing it changes a published plot and is its own change."
+      },
+      {
+        "file": "computations/two_quark_volume_weighted_clean.py",
+        "reason": "MEASURED 2026-09-05: returns -14.6902069283717993677028 at q0 -- negative, where a normalised Markov trace is ~1. NOT a Markov trace despite the name tr_M_borromean. CORRECTED the same day: an earlier version of this entry called its weights 'the PLANCHEREL family dim_q^2/[n]_q! wearing a y_ prefix'. That is WRONG. The SHAPE is d^2/[n]_q!, but d is the HOOK PRODUCT, and the q-dimension is its reciprocal times [n]_q! (dim_q = [n]_q!/hook_product). Measured at q0 for lambda |- 3: the true Plancherel weights are 0.1634 / 0.6607 / 0.1634 (summing to 0.98744) while this file carries 6.1206 / 1.5136 = hook_prod^2/[3]_q!, matching to the digit on both. So the q-dimension is INVERTED and these are neither Ocneanu nor Plancherel. Exempt from R5 because they implement no registry convention. BLAST RADIUS OF THE INVERSION IS SMALL: both files have ZERO importers, and the value feeds a matplotlib series (float(tr_M_borromean(q))), not the committed witness -- so it reaches a PNG, not a number anyone cites. Not fixed here; fixing it changes a published plot and is its own change."
       }
     ],
     "roots": [

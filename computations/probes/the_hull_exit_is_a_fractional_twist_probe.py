@@ -131,6 +131,7 @@ import mpmath as mp  # noqa: E402
 
 from pyhecke.constants import pn_interface_offset  # noqa: E402
 from q_parameter import q_at  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -144,7 +145,7 @@ _H = _Q - 1 / _Q
 _Z = _Q ** 3 / (_Q ** 2 + 1)
 LQ = mp.log(_Q)
 LW = mp.log(1 - _H)
-R_EXP = mp.mpf("2.224566") / mp.mpf("0.066")
+R_EXP = AME_B_DEUTERON_MEV_VALIDATION / mp.mpf("0.066")
 
 
 def ratio_at_u(u):

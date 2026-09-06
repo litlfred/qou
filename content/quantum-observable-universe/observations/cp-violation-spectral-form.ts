@@ -5,7 +5,7 @@ export default conjecture({
   title:
     "$\\delta_{\\mathrm{CP}}$ as imaginary part of the alternating-block character",
   lean: {
-    ref: "qou:QOU.Observations.cp_violation_spectral_form",
+    ref: "qou:QOU.Observations.CPViolationSpectralForm",
     validation: "not_checked",
   },
   uses: [

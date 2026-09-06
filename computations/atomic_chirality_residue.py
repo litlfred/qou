@@ -48,6 +48,10 @@ from hecke_core_legacy import _step_chain_generic
 from q_mpmath import set_q, qfac
 from witness_base import WitnessBuilder
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_q(Q0_FLOAT)
 
@@ -133,8 +137,8 @@ def main():
     # current vector-trace algorithm past 10-minute budgets.
     # Future work: SIMD vectorization or batched character evaluation.
     B_NUCL = {
-        ('D',   1, 1): 2.22456612,
-        ('T',   1, 2): 8.481798,
+        ('D',   1, 1): AME_B_DEUTERON_MEV_VALIDATION,
+        ('T',   1, 2): AME_B_TRITIUM_MEV_VALIDATION,
         ('3He', 2, 1): 8.59697,
         ('4He', 2, 2): 29.32700,
     }

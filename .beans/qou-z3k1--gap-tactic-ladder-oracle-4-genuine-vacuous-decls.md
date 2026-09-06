@@ -8,7 +8,7 @@ tags:
     - lean
     - vacuity
 created_at: 2026-08-08T00:05:00Z
-updated_at: 2026-08-08T00:05:00Z
+updated_at: 2026-09-05T09:08:08Z
 ---
 
 Four provable declarations assert nothing about the objects they name, and two
@@ -156,3 +156,104 @@ Wire a `proof-self-assuming` / `proof-unused-hypothesis-rfl` criterion into
 `content/pipeline/lean-vacuity-axiom-audit.ts` so this class joins the
 review-ledger workflow instead of depending on an expensive probe run
 (`qou-q407` follow-up 1 covers the syntactic half).
+
+
+## 2026-09-05 — item 3 `cp_violation_spectral_form` is DRAINED
+
+Branch `claude/gram-kappa-laundered-axiom-2026-09-05`, PR #6782. This bean's
+"Not edited" note said the honest disposition is a per-item judgement; here it
+is, for this one item.
+
+**The honest form came from the block's own `.md`, not from invention.** Its
+Falsifiability section says *"Amphicheiral knots must yield exactly δ_CP = 0"*,
+and its body *"Amphicheiral or real-q configurations have Im(χ_λ) = 0 and
+δ_CP = 0"*. That direction is **provable** from the definition — a quotient of
+two reals is real — so it is now `deltaCP_eq_zero_of_real_characters`, proved,
+with hypotheses verified load-bearing (without them the goal survives as
+`chiAlt.im * chiSym.re / normSq − chiAlt.re * chiSym.im / normSq = 0`).
+
+**The conjecture proper gets a §3b carrier that is not self-assuming.** It is an
+IDENTIFICATION, so the physical δ_CP enters as a PARAMETER
+(`CPViolationSpectralForm (physicalDeltaCP : … → ℝ)`); asserting it against
+`deltaCP`, which is *defined* as that ratio, would be the §3b-cond item-5
+projection this corpus keeps catching. No instance — the honest open state,
+since the corpus has no independent δ_CP (`complex-chirality-rotation.lean:44`
+records the numerical bound as future work).
+
+`lean.ref` and the definition index moved to `CPViolationSpectralForm`.
+Verified lean-direct exit 0, no sorry.
+
+**Items 1, 2, 4, 5 untouched**, deliberately. Item 1 (`LevelSufficiency`) needs
+the `markovTrace` definition looked at, as this bean says. Item 2
+(`hadron_operations_closure`) is four conjuncts of `∀ n, ∀ h, ∃ h', h' = op n h`
+and has the same "what would the honest statement be" problem as the Markov
+cluster in `qou-ekga` — closure is a claim about an operation's codomain, and
+asserting it needs the operation's own definition, not a restatement.
+
+## Note for whoever picks this up: `explicit_alpha_k_h3` should NOT be drained
+
+I had it queued as the easiest remaining item. It is not — the file itself says
+so, in a header note I had not read:
+
+> "**Known defect, not introduced here and not fixed here.** … Making it
+> falsifiable needs the α_k derived from the `H_3` curvature-rank computation,
+> which is not available here; it is recorded as a bean rather than papered
+> over."
+
+So it is honestly labelled, deliberately left, and blocked on a derivation that
+does not exist. Restating it would be papering over exactly what that note
+refuses to paper over. Leave it.
+
+
+## 2026-09-05 — item 1 `LevelSufficiency`: the defect is FIXED; its successor is already queued
+
+Checked because this bean's own note said item 1 "needs the `markovTrace`
+definition looked at, not just the theorem". It has been.
+
+**The content-block file this item names no longer exists.**
+`knots-particles-confinement/level-sufficiency.lean` is gone; the block keeps
+its `.ts`/`.md` and its `lean.ref` now points at
+`qou:QOU.BraidKnot.LevelSufficiency` in the library tree — the §0a
+"no shadowing stubs" shape.
+
+**The definitional defect is repaired.** This bean's sharpest point was that
+`markovTrace P q = markovTrace P' q := rfl` means *"`markovTrace` is
+definitionally independent of its particle argument, which is a defect in the
+definition, not just the theorem"*. The live definition is
+
+```lean
+class HasMarkovTrace (P : ConfinedParticle) (q : R_q) where
+  value : R_q
+
+noncomputable def markovTrace (P : ConfinedParticle) (q : R_q)
+    [h : HasMarkovTrace P q] : R_q := h.value
+```
+
+so the value is now keyed on `(P, q)` through an instance and the `rfl` proof is
+impossible. The hypotheses moved onto a §3b class `LevelSufficient` carrying
+`trace_eq` as a field.
+
+**Its successor is a self-assuming projection — and is ALREADY COUNTED.**
+
+```lean
+def LevelSufficiency … [hi : LevelSufficient P P' q h_unfold h_cover] :
+    markovTrace P q = markovTrace P' q := hi.trace_eq
+```
+
+`docs/audits/2026-06-17-lean-vacuity-axiom-audit.json` flags it
+`proof-no-self-assuming-projection` / `field-projection`, **severity critical**,
+at line 112 — one of the 34 in that category. So it belongs to whoever drains
+that queue, exactly as this bean ruled for `delta_max_numerical_scale`. Do not
+re-work item 1. The file is also candid about it in its own docstring
+("**Assumed, not derived here** — the body projects `LevelSufficient.trace_eq`").
+
+**Two of my own errors while checking this, both worth the reader's caution.**
+
+1. I first reported the corpus audit had **0 hits** for this declaration. It has
+   one. My script queried `d['findings']`; the data lives under `d['flagged']`,
+   and `.get('findings') or []` turned a wrong key into a confident zero.
+2. On seeing `def` rather than `theorem` I hypothesised it escapes the detector
+   as the §1a `theorem → def` disguise. **It does not** — `detectSelfAssuming`
+   has an `isDefProof` arm that opts Prop-valued `def`s in (`PROP_CONCLUSION`
+   includes `=`), added because "36/99 placeholder-canonical projections are
+   `def`-kind". This declaration is precisely what that arm was written for.

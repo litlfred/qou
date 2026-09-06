@@ -1,0 +1,131 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T17:28:08.328000+00:00",
+  "commitSha": "cc965c91dd849b858b477fc0d0e172ac8f67f0fa",
+  "assertions": [
+    {
+      "name": "h^2/(q*delta_9*delta_10) == 1/(q [9]_q [10]_q) identically — the two h cancel the h^2, so this holds at every pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the PROTON pin fails every one of the four figures",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "every muon variant reproduces all four exactly",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "all three muon variants round correctly on all four figures, so the published precision CANNOT choose between them — the family is determined, the vintage is not",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the two blocks publish the two sides of an identity they have proved equal, and the numbers differ — they cannot both be right",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the cited witness declares another block and is PROTON-anchored, while this table is muon-anchored — so the live compute for this quantity sits at the other pin and no carrier exists",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe",
+  "scriptFile": "two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py",
+  "scriptHash": "40f61dd1102a",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py"
+  },
+  "description": "prop:alpha-em-categorical-trace-ratio proves alpha_EM = h^2/(q*delta_q(T_2,9)*delta_q(T_3,5)) = 1/(q [9]_q [10]_q) -- an exact algebraic identity, verified here to 1e-53 at every registered pin, since delta_q(T_2,9) = h[9]_q and delta_q(T_3,5) = h[10]_q cancel the h^2. It cites prop:em-coupling-projection for the right-hand side. That block publishes the right side at the PROTON pin and says so; this block publishes the left side at a MUON pin, so the two sides of a proved identity are published as numbers differing by 7.94e-8 relative. Determined by rounding test against every registered q0: the proton pin fails all four of the block's table figures (residuals 1.0e-7 to 1.5e-7) and every muon variant reproduces all four exactly. The VINTAGE is undeterminable -- the three muon variants differ by 7.98e-11 relative, the sharpest published figure carries 9 significant digits, and separating them needs about 12; all three round correctly on all four, and this probe does not guess. Explains why the candidate-producer sweep found no witness covering more than 1 of these 4 figures among 3277: the cited witness declares a different block and is proton-anchored, so the live compute for this quantity sits at the other pin. qou-i229.",
+  "contentBlock": "prop:alpha-em-categorical-trace-ratio",
+  "data": {
+    "figures_at_proton": {
+      "q0": "1.1099785827513808076",
+      "h = q0 - 1/q0": "0.209060298795639",
+      "delta_q(T_2,9) = q0^9 - q0^-9": "2.16660008355142",
+      "delta_q(T_3,5) = q0^10 - q0^-10": "2.4866207331651",
+      "alpha_EM x 1e3": "7.30870156005566",
+      "rounds_to_published": "0/4"
+    },
+    "figures_at_muon_live": {
+      "q0": "1.1099785956427390467",
+      "h = q0 - 1/q0": "0.209060322150317",
+      "delta_q(T_2,9) = q0^9 - q0^-9": "2.16660039175687",
+      "delta_q(T_3,5) = q0^10 - q0^-10": "2.48662110378437",
+      "alpha_EM x 1e3": "7.30870097910767",
+      "rounds_to_published": "4/4"
+    },
+    "figures_at_retired": {
+      "q0": "1.1099785955541805753",
+      "h = q0 - 1/q0": "0.209060321989879",
+      "delta_q(T_2,9) = q0^9 - q0^-9": "2.16660038963962",
+      "delta_q(T_3,5) = q0^10 - q0^-10": "2.48662110123836",
+      "alpha_EM x 1e3": "7.30870098309855",
+      "rounds_to_published": "4/4"
+    },
+    "figures_at_frozen_A": {
+      "q0": "1.1099785955573347",
+      "h = q0 - 1/q0": "0.209060321995594",
+      "delta_q(T_2,9) = q0^9 - q0^-9": "2.16660038971503",
+      "delta_q(T_3,5) = q0^10 - q0^-10": "2.48662110132904",
+      "alpha_EM x 1e3": "7.30870098295641",
+      "rounds_to_published": "4/4"
+    },
+    "published_by_the_block": {
+      "h = q0 - 1/q0": "0.20906032",
+      "delta_q(T_2,9) = q0^9 - q0^-9": "2.16660039",
+      "delta_q(T_3,5) = q0^10 - q0^-10": "2.48662110",
+      "alpha_EM x 1e3": "7.30870098"
+    },
+    "identity_disagreement": {
+      "sibling_block": "prop:em-coupling-projection",
+      "sibling_alpha_x1e3_at_proton": "7.30870156006",
+      "this_block_alpha_x1e3_published": "7.30870098",
+      "relative_disagreement": "7.93651e-8",
+      "identity_residual_worst_over_pins": "3.132e-53"
+    },
+    "cited_witness": {
+      "file": "delta-q-decoration.witness.json",
+      "declares": "def:delta-q-decoration",
+      "q0Anchor": "proton"
+    }
+  },
+  "caveats": [
+    "Determines the anchor FAMILY (muon, decisively) and says NOTHING about which muon vintage. The published precision cannot separate them and no guess is recorded here -- qou-i229 has twice recorded that 'no resolving power' and 'clean' look identical in a results table.",
+    "Says nothing about which pin either block SHOULD use; that is the owner ruling qou-i229 holds. It is sharper here than elsewhere only because the two blocks publish the two sides of one identity and so cannot both be right.",
+    "Says nothing about whether the bare form models alpha_EM at all. rem:em-coupling-chern-simons is explicitly open. No published figure is changed."
+  ]
+}

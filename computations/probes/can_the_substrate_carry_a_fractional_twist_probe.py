@@ -160,6 +160,7 @@ import numpy as np  # noqa: E402
 
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from q_parameter import q_at  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -171,7 +172,7 @@ mp.mp.dps = 40
 _Q = q_at(mp.mp.dps)
 LQ = float(mp.log(_Q))
 NMAX = 12
-B_DEUT = mp.mpf("2.224566")
+B_DEUT = AME_B_DEUTERON_MEV_VALIDATION
 B_VIRT = mp.mpf("0.066")
 R_NUC = B_DEUT / B_VIRT
 T_NUC = float((R_NUC - 1) / (R_NUC + 1))

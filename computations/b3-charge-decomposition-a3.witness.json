@@ -7,12 +7,12 @@
  "sources": [
   {
    "witness": "binding-triangle-3body-cluster.witness.json",
-   "scriptHash": "0913f3cc8ab7",
+   "scriptHash": "08bd6400aa22",
    "convention_row_used": "bring_color_weighted (canonical, R3)"
   },
   {
    "witness": "chirality-weighted-3body-cluster.witness.json",
-   "scriptHash": "650e9c6470aa",
+   "scriptHash": "87aad07255e6",
    "q0Anchor": "proton"
   },
   {
@@ -22,21 +22,21 @@
  ],
  "parameters": {
   "b3_definition": "AME(A=3) - 3 * B(2H)",
-  "B2_MeV": "2.224566",
+  "B2_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
   "AME_MeV": {
-   "T": "8.481798",
-   "3He": "7.718043"
+   "T": "8.481796200000000000000000000000000000000000000000009585209925309324894",
+   "3He": "7.718041319999999999999999999999999999999999999999995711041411183331376"
   },
   "free_parameters": 0
  },
  "data": {
   "b3_empirical_MeV": {
-   "T": "1.8081",
-   "3He": "1.044345"
+   "T": "1.8080976",
+   "3He": "1.04434272"
   },
-  "b3_sym_MeV": "1.4262225",
-  "b3_asym_MeV": "0.3818775",
-  "coulomb_displacement_MeV": "0.763755",
+  "b3_sym_MeV": "1.42622016",
+  "b3_asym_MeV": "0.38187744",
+  "coulomb_displacement_MeV": "0.76375488",
   "rows": [
    {
     "candidate": "product_beyond_pairwise",
@@ -45,8 +45,8 @@
     "sym_MeV": "-3.036672269",
     "asym_MeV": "-0.16474715",
     "sym_attractive": false,
-    "b3_sym_over_sym": "-0.4696662576",
-    "asym_over_b3_asym": "-0.4314136078",
+    "b3_sym_over_sym": "-0.469665487",
+    "asym_over_b3_asym": "-0.4314136755",
     "asym_sign_matches_coulomb": false
    },
    {
@@ -56,8 +56,8 @@
     "sym_MeV": "-3.628313065",
     "asym_MeV": "-0.2479780695",
     "sym_attractive": false,
-    "b3_sym_over_sym": "-0.3930814332",
-    "asym_over_b3_asym": "-0.6493654889",
+    "b3_sym_over_sym": "-0.3930807883",
+    "asym_over_b3_asym": "-0.649365591",
     "asym_sign_matches_coulomb": false
    },
    {
@@ -67,41 +67,41 @@
     "sym_MeV": "0.5916407964",
     "asym_MeV": "0.0832309192",
     "sym_attractive": true,
-    "b3_sym_over_sym": "2.410622304",
-    "asym_over_b3_asym": "0.2179518804",
+    "b3_sym_over_sym": "2.410618349",
+    "asym_over_b3_asym": "0.2179519146",
     "asym_sign_matches_coulomb": true
    },
    {
     "candidate": "joint_trace_abs_c3",
-    "value_3H_MeV": "-1.7687753",
-    "value_3He_MeV": "-1.4054244",
-    "sym_MeV": "-1.58709985",
-    "asym_MeV": "-0.18167545",
+    "value_3H_MeV": "-1.3723314",
+    "value_3He_MeV": "-1.0338363",
+    "sym_MeV": "-1.20308385",
+    "asym_MeV": "-0.16924755",
     "sym_attractive": false,
-    "b3_sym_over_sym": "-0.8986343865",
-    "asym_over_b3_asym": "-0.4757427447",
+    "b3_sym_over_sym": "-1.18547029",
+    "asym_over_b3_asym": "-0.4431986084",
     "asym_sign_matches_coulomb": false
    },
    {
     "candidate": "joint_trace_signed_c3",
-    "value_3H_MeV": "-1.6324812",
-    "value_3He_MeV": "-1.3288376",
-    "sym_MeV": "-1.4806594",
-    "asym_MeV": "-0.1518218",
+    "value_3H_MeV": "-1.3723314",
+    "value_3He_MeV": "-1.0338363",
+    "sym_MeV": "-1.20308385",
+    "asym_MeV": "-0.16924755",
     "sym_attractive": false,
-    "b3_sym_over_sym": "-0.9632346912",
-    "asym_over_b3_asym": "-0.397566759",
+    "b3_sym_over_sym": "-1.18547029",
+    "asym_over_b3_asym": "-0.4431986084",
     "asym_sign_matches_coulomb": false
    },
    {
     "candidate": "joint_trace_chiral_c3",
-    "value_3H_MeV": "0.075991527",
-    "value_3He_MeV": "0.12021733",
-    "sym_MeV": "0.0981044285",
-    "asym_MeV": "-0.0221129015",
+    "value_3H_MeV": "0.11155618",
+    "value_3He_MeV": "0.15464001",
+    "sym_MeV": "0.133098095",
+    "asym_MeV": "-0.021541915",
     "sym_attractive": true,
-    "b3_sym_over_sym": "14.53779938",
-    "asym_over_b3_asym": "-0.05790574595",
+    "b3_sym_over_sym": "10.71555652",
+    "asym_over_b3_asym": "-0.05641054627",
     "asym_sign_matches_coulomb": false
    },
    {
@@ -111,8 +111,8 @@
     "sym_MeV": "0.133098095",
     "asym_MeV": "-0.021541915",
     "sym_attractive": true,
-    "b3_sym_over_sym": "10.7155741",
-    "asym_over_b3_asym": "-0.05641053741",
+    "b3_sym_over_sym": "10.71555652",
+    "asym_over_b3_asym": "-0.05641054627",
     "asym_sign_matches_coulomb": false
    },
    {
@@ -122,8 +122,8 @@
     "sym_MeV": "0.17019843",
     "asym_MeV": "-0.00666634",
     "sym_attractive": true,
-    "b3_sym_over_sym": "8.379762963",
-    "asym_over_b3_asym": "-0.01745674987",
+    "b3_sym_over_sym": "8.379749214",
+    "asym_over_b3_asym": "-0.01745675262",
     "asym_sign_matches_coulomb": false
    },
    {
@@ -133,8 +133,8 @@
     "sym_MeV": "0.232743515",
     "asym_MeV": "-0.020611565",
     "sym_attractive": true,
-    "b3_sym_over_sym": "6.127872134",
-    "asym_over_b3_asym": "-0.05397428495",
+    "b3_sym_over_sym": "6.12786208",
+    "asym_over_b3_asym": "-0.05397429343",
     "asym_sign_matches_coulomb": false
    },
    {
@@ -144,8 +144,8 @@
     "sym_MeV": "4.1991318",
     "asym_MeV": "-0.1246167",
     "sym_attractive": true,
-    "b3_sym_over_sym": "0.3396469956",
-    "asym_over_b3_asym": "-0.3263263743",
+    "b3_sym_over_sym": "0.3396464383",
+    "asym_over_b3_asym": "-0.3263264256",
     "asym_sign_matches_coulomb": false
    }
   ],
@@ -153,14 +153,14 @@
   "right_signed_asym_candidates": [
    "product_three_bond_only"
   ],
-  "best_right_signed_asym_fraction_of_coulomb": "0.2179518804",
+  "best_right_signed_asym_fraction_of_coulomb": "0.2179519146",
   "mechanism": {
    "tau_vac_ratio_3He_over_3H": "1.159976729",
    "bond_sum_ratio_3He_over_3H": "0.8676760425",
    "bond_product_ratio_3He_over_3H": "0.6494466421",
    "note": "Two competing NON-EM sources: tau_p/tau_n favours 3He, f_pp > f_nn (so x_pp < x_nn) favours 3H. Which dominates is term-dependent, so the sign of the mirror splitting is an accident of the term, not a prediction."
   },
-  "max_abs_asym_fraction_of_coulomb": "0.6493654889"
+  "max_abs_asym_fraction_of_coulomb": "0.649365591"
  },
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736",
@@ -188,9 +188,9 @@
  ],
  "allPassed": true,
  "durationMs": 0,
- "scriptHash": "72d3a63aff65",
- "scriptCommitSha": "184765ce0bfb2508488875abd883e24c5c6ac8eb",
- "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
- "computedAt": "2026-09-04T02:58:23.380647+00:00",
+ "scriptHash": "9f1ef6d186a8",
+ "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+ "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+ "computedAt": "2026-09-05T18:03:07.011539+00:00",
  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

@@ -69,10 +69,11 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 set_compute_dps()
 
-AME_D = mp.mpf("2.224566")          # AME2020 B(²H), the only bound 2-nucleon system
+AME_D = AME_B_DEUTERON_MEV_VALIDATION          # AME2020 B(²H), the only bound 2-nucleon system
 STD_REP_N3 = (2, 1)                  # standard rep at n=3 = the pn std-channel block
 
 

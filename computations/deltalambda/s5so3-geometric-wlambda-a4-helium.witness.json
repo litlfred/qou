@@ -3,7 +3,7 @@
   "producer": "computations/deltalambda/s5so3_geometric_wlambda_a4_helium_probe.py",
   "computation": "s5so3-geometric-wlambda-a4-helium",
   "description": "A=4 analog of #4392: genuine geometric (Beasley-Witten / WRT(S3/2I)) keystone W_lambda = d_q^2/D^2 (Sum=1, C1) re-weight of the canonical He-4 H_12 perblock trace (chi-helium-4-h12-at-q0-50dps, bean b0vf), forward 0-fit, vs the two A=4 targets B(4He)_AME=28.29566 and |mu4|=4.591. E0=4.185981. Production tr_M=0.160974; E0*Sum W_geom|chi|=60.3265 MeV (2.132x B4He); r_geom=89.5271. B(4He) and mu4 targets only, NEVER inverted; the ad-hoc 10^3 color-tube scale in a4_option_e_color_tube_closure.py is a FIT and is NOT used. VERDICT: WALL(scope-a) -- no canonical 0-fit geometric W_lambda form lands on B(4He) or |mu4|; the s5-so3 interface reweighting does NOT supply the A=4 magnitude as-is (this construction alone). NOT a (b) exclusion: E0*max|chi|=266>28.3, so the target is within the normalized-W span -- an EXACT hit needs a tuned weight = FIT.",
-  "timestamp": "2026-08-23T09:05:25.813585+00:00",
+  "timestamp": "2026-09-05T18:02:51.196212+00:00",
   "parameters": {
     "free_parameters": 0,
     "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -26,7 +26,7 @@
       "sum_Wgeom_chi_signed": "-1.788929714557662078814056340952288166875688809981534992177840591391311",
       "sum_Wgeom_abs_chi": "14.41154550269349717500869950468052609775810375982115961998538202258505",
       "E0_times_sum_Wgeom_abs_chi_MeV": "60.32646089054529826414980978727336460117662762496868162458507572408868",
-      "over_B4He": "2.132004020777225138560111684522409606320426087427141887645846597113786",
+      "over_B4He": "2.132003839943513683713932414859224663394931783783534948135149309496736",
       "over_mu4": "13.14001964051460543739682307553163560938082712813472689124249533528917",
       "r_geom_over_production": "89.52708189930783772403558419442530278471772859166372295214020112699036"
     },
@@ -46,7 +46,7 @@
       "note": "|Sum W chi| <= max|chi| for any Sum W=1; bound 266 MeV > 28.3 => target NOT excluded (not a (b))"
     },
     "targets": {
-      "B4He_AME_MeV": "28.29566",
+      "B4He_AME_MeV": "28.2956623999999999999999999999999999999999999999999915823563342238137",
       "abs_mu4_MeV": "4.591048",
       "mu3_MeV": "0.47076896"
     },
@@ -62,8 +62,13 @@
       "anti_fit": "W_geom + y_lambda from q0 + hook-lengths; chi/q0/word = b0vf table; targets never inverted; nothing wired."
     }
   },
-  "scriptCommitSha": "uncommitted",
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptFile": "s5so3_geometric_wlambda_a4_helium_probe.py",
+  "scriptHash": "9d74d5299c2d",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engine": "python",
+  "computedAt": "2026-09-05T18:02:51.298075+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }

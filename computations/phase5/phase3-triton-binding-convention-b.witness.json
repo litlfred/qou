@@ -1,17 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-05T05:54:45.783248+00:00",
-  "commitSha": "aaebee29d331cabb635680d16e85a6850254f7d1",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T18:00:40.162556+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [],
   "allPassed": true,
-  "allPassedBasis": "vacuous",
   "durationMs": 0,
-  "durationMsBaseline": "builder-construction",
   "computation": "phase3-triton-binding-convention-b",
   "scriptFile": "phase3_triton_binding_convention_b.py",
-  "scriptHash": "1c3706d93082",
-  "scriptCommitSha": "99e70142abf395df8c29e66776cb5bee7742fea6",
+  "scriptHash": "40885d2618ec",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,10 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "8cc0313c6de5e844"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -42,7 +40,7 @@
     "scaling": "ℏ_q^0 (|Δ(net)| = 1 implicit; ℏ_q^2 absorbed into the calibration)",
     "hecke_level": "H_{3A} (atom-level: H_6 D, H_9 T/³He, H_12 ⁴He)",
     "strand_count": "3·A (whole atom braid)",
-    "derivation": "Calibration to CAL-3 𝔇_π(n) directly. Sets the operator Δ_NF ≡ 1 in cat-units; canonical for `hecke_core._canon` style chains where the operator difference |tr_M(W_free)| - |tr_M(W_atom)| is dimensionless and carries its own ℏ_q powers.",
+    "derivation": "Calibration to CAL-3 P_avg^π(n) directly. Sets the operator Δ_NF ≡ 1 in cat-units; canonical for `hecke_core._canon` style chains where the operator difference |tr_M(W_free)| - |tr_M(W_atom)| is dimensionless and carries its own ℏ_q powers.",
     "operator_class": "Atom-level binding B(Z, N) = E_0 · (|tr_M(W_free)| - |tr_M(W_atom)|) at H_{3A}. The trace-difference operator carries the ℏ_q^2 scaling; E_0 is the unit-action scale.\n\n⚠ CORRECTED 2026-08-31 (bean `qou-zrx2`). MEASURED, the trace-difference operator carries NEITHER an ℏ_q^2 leading term NOR a vanishing classical limit. Swept along q = exp(η) over four decades it is\n    tr_M(W_free) − tr_M(W_atom) = c₀(A) + c₁·ℏ_q + O(ℏ_q²)\nwith c₀(A) = 2^{-A} − 2^{1-2A}, DERIVED (Schur–Weyl at q = 1 gives tr_M = 2^{c(σ)−n}, and the braid words have c_free = 2A, c_atom = A+1 for A = 2..20). So the operator is ℏ_q^0 + ℏ_q^1, not ℏ_q^2. At q₀ the ℏ_q^0 floor is 22.46 % of the deuteron value and 4.88 % of ⁴He's. See computations/probes/classical_floor_derivation_probe.py and QOU/MassTheory/ClassicalTraceFloor.lean (sorry-free).\n\nCONSEQUENCE, and it points the other way from `validity` below: subtract the floor and Δtr − c₀(A) is a pure ℏ_q^1 observable, which pairs with convention **A** (ℏ_q^1) to total ℏ_q^2 — the same bookkeeping as Δ(net) × A, which predicts Q_β to 0.168 %. So on ℏ_q grounds the corrected atom-level observable takes A, not B. Before the subtraction NO convention paired consistently, because the operator's two parts sat at different orders. Recorded as a measured fact; re-designating the canonical convention is an owner decision and is NOT taken here.",
     "canonical_for": [
       "hecke_core.E_0_CALIBRATION_MEV (line 2922)",
@@ -55,7 +53,7 @@
   },
   "owner_directive_2026_05_10": "do workplans 2 phase 2 / Phase 3; no fitting/guessing; all should be derived",
   "data": {
-    "E_0_MeV": "0.78233340931",
+    "E_0_MeV": 0.78233340931,
     "E_0_source": "hecke_core.E_0_CALIBRATION_MEV = Q_β CODATA",
     "rows": [
       {
@@ -64,13 +62,7 @@
         "N": 1,
         "A": 2,
         "hecke_level": "H_6",
-        "trace_kind": "canonical_jones_markov",
-        "E_0_MeV": "0.78233340931",
-        "B_pred_MeV": "0.43540348160748030977470068316244466786245086176356",
-        "B_ame_MeV": "2.22456612",
-        "residual_pct": "-80.42748751349857338586543414756111327172190944976",
-        "residual_keV": "-1789.1626383925196902252993168375553321375491382364",
-        "compute_time_s": "0.308"
+        "error": "AssertionError: binding_canonical: the `E_0` keyword is deprecated; the parameter was misnamed and is now `Q_beta_n_mev` (the free-neutron β-decay Q-value, NOT the canonical energy scale E_0 ≈ 4.186 MeV). Pass `Q_bet"
       },
       {
         "atom": "T",
@@ -78,13 +70,7 @@
         "N": 2,
         "A": 3,
         "hecke_level": "H_9",
-        "trace_kind": "canonical_jones_markov",
-        "E_0_MeV": "0.78233340931",
-        "B_pred_MeV": "0.69513149743218101753227305090962387222840475219654",
-        "B_ame_MeV": "8.481798",
-        "residual_pct": "-91.804432298055423890874634707055934694172099451124",
-        "residual_keV": "-7786.6665025678189824677269490903761277715952478035",
-        "compute_time_s": "0.026"
+        "error": "AssertionError: binding_canonical: the `E_0` keyword is deprecated; the parameter was misnamed and is now `Q_beta_n_mev` (the free-neutron β-decay Q-value, NOT the canonical energy scale E_0 ≈ 4.186 MeV). Pass `Q_bet"
       },
       {
         "atom": "3He",
@@ -92,13 +78,7 @@
         "N": 1,
         "A": 3,
         "hecke_level": "H_9",
-        "trace_kind": "canonical_jones_markov",
-        "E_0_MeV": "0.78233340931",
-        "B_pred_MeV": "0.69855220998974442773988255073346430388636803044895",
-        "B_ame_MeV": "7.7181",
-        "residual_pct": "-90.949168707457218386132823483325374070219768719647",
-        "residual_keV": "-7019.5477900102555722601174492665356961136319695511",
-        "compute_time_s": "0.022"
+        "error": "AssertionError: binding_canonical: the `E_0` keyword is deprecated; the parameter was misnamed and is now `Q_beta_n_mev` (the free-neutron β-decay Q-value, NOT the canonical energy scale E_0 ≈ 4.186 MeV). Pass `Q_bet"
       },
       {
         "atom": "4He",
@@ -106,13 +86,7 @@
         "N": 2,
         "A": 4,
         "hecke_level": "H_12",
-        "trace_kind": "canonical_jones_markov",
-        "E_0_MeV": "0.78233340931",
-        "B_pred_MeV": "0.8760639975074899192848739483166983600297769331294",
-        "B_ame_MeV": "28.29567",
-        "residual_pct": "-96.90389378478230089874219642681477992912068548605",
-        "residual_keV": "-27419.606002492510080715126051683301639970223066871",
-        "compute_time_s": "0.108"
+        "error": "AssertionError: binding_canonical: the `E_0` keyword is deprecated; the parameter was misnamed and is now `Q_beta_n_mev` (the free-neutron β-decay Q-value, NOT the canonical energy scale E_0 ≈ 4.186 MeV). Pass `Q_bet"
       }
     ]
   }

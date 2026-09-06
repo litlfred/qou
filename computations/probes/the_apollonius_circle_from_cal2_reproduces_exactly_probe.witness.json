@@ -1,0 +1,85 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T19:17:01.709798+00:00",
+  "commitSha": "2178ec5463fa6d5705b0c6c5767619994e5b8ccf",
+  "assertions": [
+    {
+      "name": "all three published figures are the correct roundings of the Apollonius closed forms — centre 1/(1-k^2), radius k/(1-k^2), leftmost 1/(1+k)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the circle is fixed by Vol(4_1) and the mass ratio ALONE, with no q0 input — CAL-2 is the equation that DEFINES q0, so no anchor question reaches these numbers",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "centre - radius equals the published leftmost point exactly, so the three figures are mutually consistent as printed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "both CODATA vintages reproduce all three figures, so the block's 206.7682830 (CODATA 2018) is quoting CAL-2's own input rather than asserting a vintage, and nothing derived from it moves",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "the_apollonius_circle_from_cal2_reproduces_exactly_probe",
+  "scriptFile": "the_apollonius_circle_from_cal2_reproduces_exactly_probe.py",
+  "scriptHash": "cf5964008ce9",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_apollonius_circle_from_cal2_reproduces_exactly_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_apollonius_circle_from_cal2_reproduces_exactly_probe.py"
+  },
+  "description": "Reproduces the three Apollonius-circle figures in candidate (ii) of conj:im-q-physical-role, flagged by witness-block-agreement as absent from all 68 witnesses declaring that block. CAL-2 is m_mu/m_e = Vol(4_1)/hbar_q^2 with hbar_q = 1 - 1/q; over complex q the modulus condition |1 - 1/q| = k is the Apollonius locus |q-1| = k|q|, whose centre is 1/(1-k^2), radius k/(1-k^2) and leftmost point 1/(1+k), with k^2 = Vol(4_1)/(m_mu/m_e). At 40 dps this gives 1.00991452124, 0.100064074317 and 0.909850446921 -- exactly the published 1.0099145, 0.1000641 and 0.9098504 -- and the published table closes on itself, centre minus radius equalling the leftmost point exactly. NO q0 IS NEEDED: the circle is fixed by Vol(4_1) and the mass ratio alone, because CAL-2 is the equation that defines q0, so no anchor question reaches these numbers. Both CODATA vintages (206.7682830 and 206.7682827) reproduce all three, diverging only in the 11th-12th significant digit against 8 published, which resolves one of the three 206.7682830 content sites qou-i229 left open as 'needs reading' -- as a NON-DEFECT: the block quotes CAL-2's own input rather than asserting a CODATA vintage. Verdict: category (c), correct but unwitnessed; record the producer, change nothing.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "vol_figure_eight_2_Cl2_pi_over_3": "2.029883212819307250042405",
+    "apollonius_circle_codata_2018": {
+      "mass_ratio_input": "206.7682830",
+      "k_squared": "0.0098171885134786714365",
+      "centre": "1.0099145212374879788",
+      "radius": "0.10006407431669259652",
+      "leftmost": "0.90985044692079538225"
+    },
+    "apollonius_circle_codata_2022": {
+      "mass_ratio_input": "206.7682827",
+      "k_squared": "0.0098171885277224254378",
+      "centre": "1.0099145212520155729",
+      "radius": "0.10006407439072347378",
+      "leftmost": "0.90985044686129209911"
+    },
+    "vintage_separation_on_radius_relative": "7.39835e-10"
+  },
+  "caveats": [
+    "These values are COMPUTED from Vol(4_1) = 2 Cl_2(pi/3) and the mass ratio, not transcribed from the block. The distinction matters: witness-block-agreement cannot tell a computed figure from a copied one, so a witness closing a row must be able to say where its numbers came from. Here it is mpmath's clsin and CAL-2.",
+    "Says nothing about whether candidate (ii) is right or whether Im(q) has a physical role; the block states its own closure condition and this probe does not evaluate it.",
+    "Says nothing about the reality argument that empties the branches -- that is what the block's 68 declaring witnesses do, and it is untouched."
+  ]
+}

@@ -42,7 +42,11 @@ import pyhecke_native  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    M_E_MEV  # noqa: E402,
+)
 
 q0 = mp.mpf(str(Q0)); q0f = float(Q0)
 E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))
@@ -52,8 +56,8 @@ E0 = mp.mpf(str(M_E_MEV)) / (q0 * (q0 - 1))
 # Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
 set_compute_dps()
 
-B2 = mp.mpf("2.224566")
-AME_4HE = mp.mpf("28.295674")
+B2 = AME_B_DEUTERON_MEV_VALIDATION
+AME_4HE = AME_B_HE4_MEV_VALIDATION
 SUM_DTHETA_4HE = mp.mpf("17.2334")   # from binding_reeb_phase_decomposition.py
 RATIO_A3 = mp.mpf("0.2065")          # MeV/rad, from PR #2681 (T+3He mean)
 _Y12 = {tuple(k) if isinstance(k, (list, tuple)) else k: mp.mpf(str(v))

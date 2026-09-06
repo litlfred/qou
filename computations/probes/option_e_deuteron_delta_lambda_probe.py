@@ -44,6 +44,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from mpmath import mpf, mp
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 
 def main() -> int:
@@ -112,7 +113,7 @@ def main() -> int:
         })
 
     # AME data
-    B_D_MeV = mpf("2.224566")
+    B_D_MeV = AME_B_DEUTERON_MEV_VALIDATION
     m_e_MeV = mpf("0.51099895069")
     target = -B_D_MeV / m_e_MeV
     closure_threshold = mpf("0.10") * B_D_MeV

@@ -1,0 +1,137 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T19:07:05.968420+00:00",
+  "commitSha": "14c798b93c5d5eaa0e96510bbd318bafff46c00f",
+  "assertions": [
+    {
+      "name": "E_posAfter_reproduces_the_probe_perm_exactly",
+      "computed": "414",
+      "expected": "414",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "words",
+      "source": "over 14 carrier branch-isotope pairs and 400 random monotone words."
+    },
+    {
+      "name": "A_compIdx_classes_are_the_components",
+      "computed": "414",
+      "expected": "414",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "words",
+      "source": "over 14 carrier branch-isotope pairs and 400 random monotone words."
+    },
+    {
+      "name": "B_pi_preserves_compIdx",
+      "computed": "414",
+      "expected": "414",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "words",
+      "source": "over 14 carrier branch-isotope pairs and 400 random monotone words."
+    },
+    {
+      "name": "C_pi_is_successor_on_odd_runs",
+      "computed": "414",
+      "expected": "414",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "words",
+      "source": "over 14 carrier branch-isotope pairs and 400 random monotone words."
+    },
+    {
+      "name": "D_pi_wraps_to_the_class_minimum",
+      "computed": "414",
+      "expected": "414",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "words",
+      "source": "over 14 carrier branch-isotope pairs and 400 random monotone words."
+    },
+    {
+      "name": "ALL_FIVE_predictions_hold_on_EVERY_word",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "stated separately so a partial failure cannot hide behind four passing rows."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "monotone-word-cycle-structure",
+  "scriptFile": "monotone_word_cycle_structure_probe.py",
+  "scriptHash": "5c839087feea",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/monotone_word_cycle_structure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/monotone_word_cycle_structure_probe.py"
+  },
+  "description": "EXPLORATORY. Closes the arc's last gap: compIdx really counts components. CLOSED FORM -- with pi the closure permutation, pi i = i+1 when e_i is odd and pi i = pStart e i when even, so pi is the CYCLIC SHIFT on each compIdx class. Both inclusions follow (pi preserves compIdx, so a cycle sits in one class; inside a class every step is odd, so a class sits in one cycle), and no cycle decomposition of a product of adjacent transpositions is needed. Five predictions, all holding on every monotone word measured. PREDICTION E IS THE LOAD-BEARING ONE: the Lean's posAfter recursion, transcribed here, reproduces the `perm` array of `analyse` EXACTLY -- entry for entry, not merely agreeing on components. That is what stands in for the one step this arc never formalises, that posAfter and compIdx MODEL a monotone closure: 'braid word' and 'closure' are not Lean objects anywhere in the arc, so that step is a definition, and a reimplementation agreeing only on components could agree by sharing an assumption. Scope (a) for the measurement; the Lean theorems are unconditional. Nothing wired.",
+  "auditOnly": "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md",
+  "data": {
+    "the_closed_form": {
+      "odd_run": "pi i = i + 1; compIdx (i+1) = compIdx i because an odd run adds 0",
+      "even_run": "pi i = pStart e i; compIdx_pStart (proved in #6775) puts it in the same class, and pStart is that class's least element",
+      "consequence": "pi is the cyclic shift on each compIdx class, so cycles = classes -- which is what compIdx was assumed to compute",
+      "what_it_replaces": "the cycle decomposition of a product of ascending adjacent transpositions, which is not needed"
+    },
+    "measured": {
+      "carrier": {
+        "words": 14,
+        "E_posAfter_reproduces_the_probe_perm_exactly": 14,
+        "A_compIdx_classes_are_the_components": 14,
+        "B_pi_preserves_compIdx": 14,
+        "C_pi_is_successor_on_odd_runs": 14,
+        "D_pi_wraps_to_the_class_minimum": 14
+      },
+      "random_monotone": {
+        "words": 400,
+        "E_posAfter_reproduces_the_probe_perm_exactly": 400,
+        "A_compIdx_classes_are_the_components": 400,
+        "B_pi_preserves_compIdx": 400,
+        "C_pi_is_successor_on_odd_runs": 400,
+        "D_pi_wraps_to_the_class_minimum": 400
+      },
+      "combined": {
+        "E_posAfter_reproduces_the_probe_perm_exactly": 414,
+        "A_compIdx_classes_are_the_components": 414,
+        "B_pi_preserves_compIdx": 414,
+        "C_pi_is_successor_on_odd_runs": 414,
+        "D_pi_wraps_to_the_class_minimum": 414
+      },
+      "words": 414
+    },
+    "why_prediction_E_is_the_load_bearing_one": {
+      "the_gap_it_covers": "that posAfter and compIdx MODEL a monotone braid closure. 'Braid word' and 'closure' are not Lean objects anywhere in this arc, so that step is a definition, not a theorem",
+      "why_agreeing_on_components_would_be_weaker": "a separate reimplementation could agree on the component partition by sharing an assumption with the argument; agreeing on the permutation ARRAY, entry for entry, cannot",
+      "what_is_compared": "the Lean recursion transcribed line for line, against the `perm` array built by `analyse` -- the routine every other number in this arc came from"
+    },
+    "what_the_arc_now_has": {
+      "chain": "posAfter models the word's positions (MonotoneWordPositionTracking) -> compIdx counts its components (MonotoneWordCycleStructure) -> tier 1 of eps_eq (MonotoneWordComponentStructure) -> eps_eq (EpsEqFromMonotonicity) -> mubar = 0 on every triple of the derived carrier (OneSeparatedComponentSuffices..., ChainTripleMilnor...)",
+      "remaining_floor": "the modelling step itself, measured not proved, and named as such in every file of the chain"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "reads no q0. Inputs are monotone braid words and their closures' permutation cycles. No substrate pin is evaluated on any path."
+}

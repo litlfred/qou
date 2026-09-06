@@ -66,7 +66,8 @@ chain is fully `sorry`-free.
 ## Decomposition of the proof into independent pieces
 
 The standard textbook proof (Alizadeh-Haeberly-Overton 1997
-§3, Boyd-Vandenberghe §5.5.4) factors into:
+§3; Boyd-Vandenberghe §5.5.2 for the definition of strict
+complementarity) factors into:
 
 * **(R1) Range containment** (proven in
   `QOU.MathlibExt.SDPRealUniqueness.Matrix.PosSemidef.mul_zero_comm`):
@@ -111,7 +112,10 @@ finite-dimensional linear-algebra under Slater (proven from R2).
 
 ## References
 
-- [boyd-vandenberghe-2004] *Convex Optimization* §5.5.4
+- [boyd-vandenberghe-2004] *Convex Optimization* §5.5.2
+  (strict complementarity DEFINED; §5.5.4 is "Mechanics
+  interpretation of KKT" and does not cover the uniqueness
+  result — see the citation note in §4.5 below)
 - [alizadeh-haeberly-overton-1997] *Complementarity and
   nondegeneracy in semidefinite programming*, Math. Programming
 - [todd2001] *Semidefinite optimization*, Acta Numerica §3.4
@@ -617,6 +621,26 @@ forces uniqueness via finite-dimensional argument:
 
 This is **proven** (modulo §1, §2 axioms). -/
 
+/-! **Citation corrected 2026-09-05 (bean `qou-i6cn`).**  Four sites in this
+file attributed the optimal-face-dimension / uniqueness result to
+Boyd-Vandenberghe §5.5.4.  That section is *"Mechanics interpretation of the
+KKT conditions"* and does not contain it; the authority is
+Alizadeh-Haeberly-Overton (1997) §3, and B-V's contribution is §5.5.2, where
+strict complementarity is defined.
+
+This is not a new diagnosis — the sibling `SDPRealUniqueness.lean` had already
+made it, in its `-- Ref:` lines.  What it had not done is drain the same stale
+section number from its own surrounding prose (6 further sites), so the two
+files disagreed with each other and one disagreed with itself.  All of them are
+corrected together.
+
+It matters here because `affine_slater_rigidity` is an `axiom`, and under bean
+`qou-i6cn`'s discriminator the citation is what separates a legitimate
+Mathlib-gap from a laundered conjecture.  The verdict is unchanged — this is a
+published convex-optimization theorem, and the file carries proven
+sub-instances — but a wrong section number is exactly the evidence that
+discriminator relies on. -/
+
 /-! ### §4.5  Affine-Slater rigidity axiom
 
 The final composition `SDPRankUniqueness_proven_via_rank_equality`
@@ -627,12 +651,12 @@ constraint set restricted to symmetric matrices in ker(S) (where
 the difference D = Φ' − Φstar lives) is a SINGLE POINT.
 
 This is the "active face has dimension zero" content from
-Boyd-Vandenberghe §5.5.4.  Genuinely multi-week categorical
+Alizadeh-Haeberly-Overton 1997 §3.  Genuinely multi-week categorical
 work (active-face dimension theory + Slater's interior-point
 hypothesis); axiomatised here as a NAMED single statement so
 the rest of the chain composes cleanly. -/
 
-/-- **Affine-Slater rigidity** (Boyd-Vandenberghe §5.5.4) —
+/-- **Affine-Slater rigidity** (Alizadeh-Haeberly-Overton 1997 §3) —
     axiomatised categorical content.
 
     Under Slater + rank equality, any symmetric `D` with:

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T21:12:03.029605+00:00",
-  "commitSha": "f5d4719062c39ae4b263acfa9c5aee47fe0d2e85",
+  "computedAt": "2026-09-05T18:03:26.146152+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "braid_index_8_11_is_3",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 48,
   "computation": "tritium-8-11-jones-markov-probe",
   "scriptFile": "tritium_8_11_jones_markov_probe.py",
-  "scriptHash": "727fbc5a8a10",
-  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "scriptHash": "5b6ffa20492f",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -89,12 +89,12 @@
     "tr_M_qschur": "0.1960583516449993534856762",
     "m_e_times_abs_tr_M_wenzl_MeV": "0.1446812571142798266824084",
     "m_e_times_abs_tr_M_qschur_MeV": "0.1001856119646057050169089",
-    "AME_binding_3H_MeV": 8.481798,
-    "ratio_AME_to_bare_wenzl": "58.62402752901473820178005",
-    "ratio_AME_to_bare_qschur": "84.66083935282554067314568",
+    "AME_binding_3H_MeV": "8.4817962",
+    "ratio_AME_to_bare_wenzl": "58.6240150878731839904526",
+    "ratio_AME_to_bare_qschur": "84.66082138617379595039076",
     "wall_seconds": {
-      "wenzl_jm": 0.0009914480006045778,
-      "q_schur": 0.00042065800062118797
+      "wenzl_jm": 0.009810660000312055,
+      "q_schur": 0.0002731939998739108
     },
     "phase_b_2_correction": {
       "original_assumption": "tritium 8_11 is in B_5 / H_5, requiring new Python Hoefsmit seminormal implementation",
@@ -105,5 +105,7 @@
       "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). The real per-nucleus SDP (multi-term cost + non-empty constraints) is per-nucleus substantive open work. Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
