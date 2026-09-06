@@ -1562,3 +1562,4 @@ import QOU.Mass.HeckeMonodromy
 import QOU.Mass.ColourCubicDiscriminant
 import QOU.Mass.ColourCubicDiscriminantReal
 import QOU.Mass.FigureEightGluingFromMonodromy
+import QOU.Mass.FiveTwoGluingFromFareyWord
