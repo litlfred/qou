@@ -1,11 +1,11 @@
 ---
 # qou-9yt9
 title: 'A+C: land the ConfinementLevel refactor and the DressedParticle shadowing fix'
-status: completed
+status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-06T09:28:09Z
+updated_at: 2026-09-06T09:45:12Z
 ---
 
 ## Landed (A + C)
@@ -43,3 +43,40 @@ Axioms 136 → 134, flagged 21 → 19. All touched files lean-direct exit 0;
    content-block `.lean` (line 107). It is an advisory reminder, not a staleness
    verdict, and it does not set the failure flag. I misread it as a failure for
    several turns; the discriminator is the `⚠` lines and the exit code.
+
+
+## NINTH false axiom — `KnotOperatorEnergy.shadowPrice_canonical` (same class, refactored)
+
+`climax-volume-mass/knot-operator-energy-unique.lean`. Plain structure with
+`shadowPrice : R` free; the axiom asserted two records agreeing on
+`partition` and `q` share it. Refuted by `⟨[],0,0,none⟩` vs `⟨[],0,1,none⟩`.
+**Third docstring in this family to name its own defect** — *"requires ... a
+structure refactor carrying the LP-canonicity as a proof field."*
+
+Same three-way pattern as #7: false uniqueness axiom **plus** a junk-record
+existence witness (`{partition := [1], q := 0, shadowPrice := 0}`), so
+`prop:knot-operator-energy-exists` was vacuously backed too.
+
+**Applied the owner's A ruling by analogy** — same defect class, and no library
+counterpart exists (unlike #8), so the refactor was the only option that keeps
+the claims. One design choice worth naming: the determining data is carried as
+a **function** `dualValue : List ℕ → R → R` with `shadowPrice_eq`, NOT as a
+relation with a uniqueness field. A structure carrying its own conclusion would
+be the self-assuming projection AGENTS.md §3b-cond item 5 forbids; here
+uniqueness follows from functionality.
+
+The real content — that the LP dual exists and is unique (Schrijver §7.4) — now
+sits explicitly in the `dualValue` parameter a caller supplies, instead of
+being smuggled in by a witness that ignored its own indices.
+
+Axioms 134 → 133, flagged 19 → 18. All three blocks lean-direct exit 0,
+zero axioms; check-sidecars exit 0.
+
+## The docstring sweep — a useful NEGATIVE
+
+Grepping `"proof field" | "not free data" | "does not enforce"` across
+`content/` returns 11 files; excluding Mathlib and the already-fixed ones, only
+**one** new instance (this ninth). So this family is **three** — #7, #8, #9 —
+not an open-ended class. That is a cheaper and far more specific detector than
+the over-quantification rules, because it keys on the author having ALREADY
+noticed the defect and written it down.
