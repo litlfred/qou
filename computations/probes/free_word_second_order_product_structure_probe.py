@@ -41,6 +41,37 @@ THE HELD-OUT TEST. `⁴He` (`A = 4`, `n = 12`) entered neither the fit nor the p
 predicts `[ε¹] = 1/16` and `[ε²] = 59/64` — `u(2,2) = 2`, so `u²/2 = 2` and `(74+40)/2 = 57`, giving
 `59/2^6`. Both measured exactly as predicted.
 
+THE ATOM SIDE, AS DATA — free, and deliberately not fitted. Since `c₂ = [ε¹] + [ε²]` of
+`Δtr = tr(free) − tr(atom)` and `[ε¹](Δtr) = c₁`, the atom half follows from quantities already
+measured, with **no new computation**:
+
+    [ε²](atom) = [ε²](free) − (c₂ − c₁)
+
+    (Z,N)   A   [ε²](atom)    × 2^(2A)      I_pp  I_nn
+    (2,0)   2   81/32         81/2          1     0
+    (1,1)   2   35/32         35/2          0     0
+    (0,2)   2   27/16         27            0     1
+    (3,0)   3   47/32         94            2     0
+    (2,1)   3   79/128        79/2          1     0
+    (1,2)   3   59/128        59/2          0     1
+    (0,3)   3   33/32         66            0     2
+    (2,2)   4   61/512        61/2          1     1
+
+**No closed form is proposed for these, and that is deliberate.** Eight points admit several
+parameterisations — a quadratic in `(Z,N)` alone is five parameters before any interface term — and
+this arc has been burned by exactly that. Two things are worth recording for whoever does derive it:
+the obvious analogue of the free-side result **fails**, since taking `v = u + 4(I_pp − I_nn)` (the
+first-order atom bracket) leaves `× 2^(2A) − v²/2` at `−19/2, 17, −5, −101/2, 15/2, 17, −32, 57/2`,
+which is not linear in `(Z, N)`; and the parity is uneven — three rows are integers and five are
+half-integers — so any form must produce that.
+
+The one available constraint is the content-cancellation criterion
+(`content_cancellation_invariance_probe`): a zero-net-content combination of the atom-side second
+order must be ordering-invariant, because it is interface-only. Consistency check on the `A = 2`
+combination: `atom(pp) + atom(nn) − 2·atom(pn) = 65/32` against `free(...) = 50/32`, and their
+difference `−15/32` is exactly the measured `c₂` combination, as it must be since the `[ε¹]` part
+cancels there.
+
 🛑 WHAT THIS DOES NOT GIVE, and it is the thing `qou-qqm4` actually wants. `c₂` is
 `[ε¹] + [ε²]` of `Δtr = tr(free) − tr(atom)`, so a closed form for the free side is **half** of it.
 The atom word does not factorise — its interfaces couple adjacent nucleon blocks, which is the whole
