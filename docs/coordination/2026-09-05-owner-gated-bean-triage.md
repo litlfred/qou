@@ -470,6 +470,38 @@ C-conditional label has to be honoured in every future `c_k` claim. *Commits to:
 nothing. *Veto if* you want the compute started — it is the kind of run that
 wants a dedicated session, not an idle pass.
 
+**🔵 UPDATED 2026-09-06 — a sibling closed the route you would try first, and the
+default gets STRONGER.** `9462d1b41c` on `main` (*"close the bar-even rescaling
+route — it LEAVES convention D"*, same bean `qou-cds1`) settles the obvious
+repair:
+
+Under D the eigenphase `2a = (z−1)h` is not bar-odd because `z_D` is not
+bar-even. The rescaling that would fix it **exists and is forced, not chosen** —
+`bar(q^a z_D)/(q^a z_D) = q^(−2a−4)` gives `a = −2` uniquely, so
+`z̃_D := z_D/q² = q/(q²+1) = 1/[2]_q`, which sits beside
+`z_C = √q/(q+1) = 1/[2]_√q` as the *same functional form in a different
+variable*.
+
+**And it is a dead end.** `z_D`'s defining property here is the full-bar
+condition `bar(z) = z − h` (`QOU.QBeta.zD_full_bar_covariant`), and
+`QOU.QBeta.barEven_fullBar_forces_classical` proves bar-even and full-bar are
+incompatible away from `q² = 1`. So rescaling to bar-evenness does not
+re-derive the ladder *within* D — it silently moves to a third parameter that
+is neither `z_C` nor `z_D`.
+
+**The trap they named is the part to carry:** `z̃_D` is **0.4 %** from `z_C`
+while raw `z_D` is **23 %** away, so the C-built ladder *nearly works* under
+`z̃_D` and fails catastrophically under `z_D`. That closeness is **not**
+evidence — the verdict is the full-bar incompatibility, established
+independently, and the number is reported only afterwards.
+
+**Consequence for this decision:** the recommendation is unchanged but now
+better supported. Authorising the compute today would fund a search whose
+cheapest and most obvious path is *proved* closed. D2 is not thereby settled —
+a re-derivation may exist by some other route — but the route a fresh agent
+would reach for first is gone, which lowers the expected return on authorising
+it now rather than raising it.
+
 ### D3 — Cluster 3b. May the binding channel use CAL-3 as an acknowledged anchor?
 **Bean:** `qou-2tuv`.
 

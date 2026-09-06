@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T20:27:28Z
-updated_at: 2026-08-28T15:46:30Z
+updated_at: 2026-09-06T07:02:26Z
 ---
 
 Found on `qou-1c4y` / PR #5464 while re-measuring after #5457 merged (`238fc79f6e`).
@@ -209,3 +209,83 @@ hand; that is the lesson this arc kept re-learning.
 Remaining work: require the env-invariance **and** a source check (no q₀-shaped
 literal, no direct pinning-witness read). Both halves exist as scripts —
 `q0_hardcoded_pin_audit.py` and `q0_muon_population_partition.py`.
+
+
+## Re-measured 2026-09-06 — and the excursion turned up something bigger than the bean
+
+Found by `scripts/bean-staleness-triage.py` (6th of 284 artifact beans).
+
+### The bean's own numbers, re-measured
+
+| | bean (post-#5457) | measured 2026-09-06 |
+|---|---|---|
+| witnesses stamped `q0Anchor: independent` | 37 | **149** |
+| of those, still carrying muon digits | 9 | **7** |
+| producers with a hardcoded muon literal | 6 | **1** (see below) |
+
+**Do not read "7 carry muon digits" as 7 false positives.** Four of the seven
+are audits *whose subject matter is q₀ literals* —
+`q0-value-drift-audit`, `witness-float64-padding-audit`,
+`hardcoded-q0-literal-families`, `fitted-labelled-canonical-audit`. Containing
+the digits is correct for them; they report on files that have them. That is
+this bean's own confusion one level up: a string match on a witness cannot
+separate *pinned to muon* from *reporting about muon pins*.
+
+Of the remaining three, two (`qbeta-ck-basis-constrained-pslq`,
+`substrate/knot-volumes`) have producers that do **not** pin muon at all — the
+witness mentions it for another reason. So the "hardcoded muon literal" class
+is down to **one** site.
+
+### That one site is a deliberate sample point, not a pin
+
+`computations/markov/markov_identity_symbolic_probe.py:204` evaluates a
+**symbolic residual** at five points — `proton_q0`, `muon_q0`, `1.3`, `0.7`,
+`2` — to check it is identically zero. Two of the five are not anchors at all.
+So `independent` is the **correct** disposition here and this is not a false
+positive. Only the *label* was wrong: the literal is the **retired**
+self-certified pin (`1.109978595557334…`), retired 2026-08-22.
+
+### 🛑 My first fix was itself a defect, and a ratchet caught it
+
+I re-pointed the literal to a 28-digit truncation of the live CODATA-2022 pin.
+The precision gates then showed a gate red that had **not** been red in either
+of my two earlier full runs: `witness-value copy ratchet`. Established by
+stash-test, not assumed:
+
+    with my change:     indexed 227038   NARROW 270
+    without my change:  indexed 227034   NARROW 269
+
+and the 28-digit string appeared in **exactly two places, both introduced by
+that edit** — the producer and its witness. That is ≤3 ⇒ NARROW, *"a computed
+value typed in, not read"*. The 16-digit canonical prefix, by contrast, is in
+**150** witnesses (SHARED). So typing any truncation of a canonical constant
+that is not already in the tree manufactures a fresh copy-defect.
+
+**Corrected by fixing the LABEL instead** — `muon_q0` →
+`muon_q0_RETIRED_PIN`, value untouched, no numeric literal introduced. NARROW
+back to **269**. Only the label was ever wrong.
+
+### 🔴 The real find: this witness's `peel` values are ~2× stale
+
+Regenerating it moved numbers at sample points **that did not change**:
+
+| q | committed | recomputed |
+|---|---|---|
+| `proton_q0` | 1.1457596924573008697 | **0.62932840220292191817** |
+| `1.3` | 3.3688168001572002037 | **1.277736943233662226** |
+| `0.7` | −4.7449410256554617359 | **−0.3531913855255301353** |
+| `2` | 116.33458984375 | **51.77927734375** |
+
+**This is not my edit.** A label rename cannot change `peel` at `q = 2`, and
+`peel` is computed *before* the sample loop, so the list cannot reach it. The
+committed witness records values the current code does not reproduce — import-
+cone drift, the class AGENTS.md says actually bites.
+
+**The verdict is robust; the intermediates are not.** The assertion
+(*identity holds identically in q*, 2/2 atoms) passes either way, because the
+residual is identically zero regardless of `peel`'s normalisation.
+
+**The regenerated witness is deliberately NOT committed.** A ~2× move in
+recorded numbers does not land undiagnosed. Whoever picks this up needs to
+identify which upstream changed — note the run costs ~9 min (the deuteron
+bridge alone is 520 s).

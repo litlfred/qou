@@ -143,6 +143,8 @@ _T1_CACHE_B: dict | None = None
 
 # Default T1 source.  Set to "model-a" via environment to revert.
 import os as _os  # noqa: E402
+import sys as _sys  # noqa: E402
+_MODEL_B_WARNED = False
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 # This producer hand-builds its assertion payload and `json.dump`s it, so
 # `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
@@ -181,18 +183,42 @@ def _load_canonical_t1_model_b() -> dict:
         return _T1_CACHE_B
     path = _pb.witness_path("probe-sdp-canonical-paper-formula.witness.json", HERE)
     if not path.exists():
-        raise FileNotFoundError(
-            f"missing Model B T1 witness: {path}. "
-            f"THE PRODUCER IT USED TO NAME DOES NOT EXIST. "
-            f"`probe_sdp_canonical_paper_formula.py` is not on disk anywhere "
-            f"in this repo, GitHub code search finds it only in these error "
-            f"strings, and no commit in this clone's history touches it — so "
-            f"the old instruction to 'run it first' could not be followed by "
-            f"anyone. Tracked as bean `qou-imkb`, which also records that the "
-            f"registry's deuteron row is blocked on the 2026-08-29 owner "
-            f"ruling retiring the 6_2 assignment. Model B is unavailable; "
-            f"Model A (3A-strand) is the live T1 route."
-        )
+        # Model B is UNAVAILABLE, permanently, and this is not a missing run.
+        # `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in
+        # this repo and no commit in this clone's history touches it, so the
+        # instruction this branch used to raise with ("run it first") could
+        # not be followed by anyone. It cannot be written either: its input,
+        # the 6_2 deuteron assignment, was RETIRED by the owner ruling of
+        # 2026-08-29 (`docs/audits/2026-08-29-deuteron-knot-owner-decision.md`).
+        #
+        # Return EMPTY rather than raise. The caller already falls through to
+        # Model A for any isotope absent from this table, so an empty table is
+        # exactly "no isotope has a Model B value" -- which is the truth. This
+        # matches how the OTHER consumer of this same witness under this same
+        # env var already behaves: `atomic_mass_via_rho_k.py` loads Model A
+        # first and overlays Model B only `if model_b_witness.exists()`.
+        #
+        # This does not override the 2026-05-11 "default to Model B"
+        # directive; it is what that directive means when B is unavailable --
+        # the directive's own wording is "prefer Model B ... fall back to
+        # legacy for atoms not yet in the Model B witness".
+        #
+        # Raising instead made the DEFAULT configuration fail for exactly the
+        # three isotopes Model B covers (D, T, 3He), measured 2026-09-05.
+        # Bean `qou-imkb`.
+        global _MODEL_B_WARNED
+        if not _MODEL_B_WARNED:
+            _MODEL_B_WARNED = True
+            print(
+                "[paper_six_term_isotope_sweep] Model B (SDP-canonical "
+                "low-strand) is unavailable: its producer cannot be written "
+                "because the 6_2 deuteron assignment it needs was retired by "
+                "the owner ruling of 2026-08-29. Falling through to Model A "
+                "(3A-strand) for D, T and 3He. Bean qou-imkb.",
+                file=_sys.stderr,
+            )
+        _T1_CACHE_B = {}
+        return _T1_CACHE_B
     d = json.loads(path.read_text())
     out: dict[str, mp.mpf] = {}
     for atom_name, atom_data in d.get("data", {}).get("results", {}).items():

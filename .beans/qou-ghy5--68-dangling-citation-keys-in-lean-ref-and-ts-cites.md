@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:54:24Z
-updated_at: 2026-08-23T08:00:06Z
+updated_at: 2026-09-06T07:31:43Z
 ---
 
 MEASURED 2026-08-21 (found while draining the library registration backlog, bean qou-kqbk).
@@ -269,3 +269,81 @@ of the files changed here.)
 
 Commits: `13617cfa5a` (21 entries), `8170180ca5` (4 retargets), on
 `claude/rag-document-ingestion-options-orasrw` / PR #5502.
+
+
+## Re-measured 2026-09-06 — 68 → 11, and the gate that would catch the rest CANNOT RUN
+
+Found by `scripts/bean-staleness-triage.py` (8th of 284 artifact beans).
+
+### The count drained hard
+
+| path | bean (2026-08-21) | measured 2026-09-06 |
+|---|---|---|
+| `.md \cite{}` | 0 | 0 |
+| `.lean -- Ref: []` | 40 | **8 distinct keys, 38 sites** |
+| `.ts cites: []` | 28 | **3 distinct keys** |
+| distinct total | 68 | **11** |
+
+Method: keys from `ref("…")` / `id: "…"` in `content/schema/references.ts`
+(**827** declared), minus the `manuscript` sentinel and unprefixed block labels,
+matched against `-- Ref: [key]` and `cites: [...]`.
+
+**Two of the eight `.lean` ones are not citation keys at all** —
+`unital-groebner-bases:def:groebner-basis` and
+`unital-groebner-bases:thm:ugb-main-theorem` are **cross-paper block labels**,
+the separate defect this bean already carves out. So the real dangling-citation
+population is **9**:
+
+- `.lean` — `hatcher2002`, `humphreys1990`, `kassel1995quantum`, `litlfred2025`,
+  `matsumoto1964`, `ohtsuki2016-52`
+- `.ts` — `bokut1978`, `faddeev1996`, `milnor1950`
+
+Most are recognisable standard works, but I have **not** added them: typing
+bibliographic metadata from memory into `references.ts` is exactly the kind of
+unverified content the citation rules exist to prevent, and a wrong citation is
+worse than a missing one. They want a source check, not a guess.
+
+### 🔴 "Neither path is checked" is STALE — but the truth is worse
+
+`scripts/run-validate-references.ts` **does** cover the Lean path; its own
+output reaches *"Cross-checking Lean -- Ref: citations…"*. **And it cannot
+complete, by construction, in this repo.**
+
+```
+Cross-checking Lean -- Ref: citations...
+error: 5 papers found (bach2013-double-slit, fred2005-formal-groups,
+       quantum-observable-universe, unital-groebner-bases, visualizer)
+       — name one explicitly.
+  at requirePaper (folio-assistant/content/pipeline/repo-root.ts:118)
+  at folio-assistant/content/pipeline/validate-references.ts:130
+  at requestImportModule
+```
+
+**No invocation can avoid this.** `requirePaper(explicit?, repoRoot?)` takes the
+paper as a **function argument** — it reads no `process.argv` and no env var —
+and `validate-references.ts:130` calls it as bare `requirePaper()` at module
+scope:
+
+```ts
+const leanArchiveDir = join(REPO_ROOT, "content", requirePaper(), "lean");
+```
+
+So the check dies at import, before argument handling, and it dies **exactly at
+the step this bean is about**. That is why 9 dangling keys persist despite a
+gate existing.
+
+**The wrapper's own recipe is stale too.** Its docstring says to pass
+`--paper quantum-observable-universe` and cites the blocker at
+`validate-references.ts:133`; the live line is **:130** and `--paper` does not
+help. The platform moved under the wrapper.
+
+**The fix is one line in `folio-assistant`** — pass the paper into
+`requirePaper()`, or have it fall back to argv/env — and that is the platform
+repo, not this one. Recorded here rather than attempted.
+
+### Two wrong turns of mine, for the next agent
+
+I ran the validator with the paper **positionally** first (wrong), then with
+`--paper` on the strength of the wrapper's docstring (also wrong, because the
+docstring is stale). Both fail identically. Read `requirePaper`'s signature
+before trusting any documented invocation of it.

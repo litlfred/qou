@@ -1,5 +1,25 @@
 # Contiguity does drive `f₁/f₀` — but it **saturates** at ⅔, well short of the grouped word
 
+> **🛑 THE TITLE OF THIS DOCUMENT IS WRONG — CORRECTED 2026-09-06 BY ITS OWN
+> AUTHOR.** Contiguity does **not** drive `f₁/f₀`, and the ⅔ ceiling is an
+> artifact of the *measure*, not a threshold in the object. Measured two ways:
+> twelve re-orderings that preserve each nucleon's internal order give the
+> ceiling value `37/2` at contiguities `0.2381 … 0.6190` (so 0.238 and 0.857
+> carry the same value); and at *fixed* contiguity the value spreads by 10.5
+> (`pn`) and 7.5 (`pp`) against total sample ranges of 21.0. The cause is the
+> corpus's own already-derived split-link multiplicativity — the two nucleons act
+> on disjoint strand sets, so inter-nucleon interleaving moves contiguity a long
+> way while moving nothing the algebra can see, and a greedy walk spends its
+> steps there once the intra-nucleon orders are repaired.
+>
+> **The five walk numbers below are correct and are NOT retracted** — only the
+> causal reading of them is. §"The refinement" is wrong. §"Scope" already said
+> *"correlation along one path is not causation"*; the headline did not, and the
+> headline is what gets quoted.
+>
+> Full working, the exact-`Fraction` probe and the contamination check:
+> [`2026-09-06-contiguity-does-not-drive-f1-the-split-link-factorisation-does.md`](2026-09-06-contiguity-does-not-drive-f1-the-split-link-factorisation-does.md).
+
 **Tests the reading** #6905 offered as interpretation rather than measurement:
 that *contiguity* is the common dependency behind the three grouped-specific
 properties. That reading makes a prediction, so it is testable rather than
