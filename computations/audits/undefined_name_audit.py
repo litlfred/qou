@@ -231,6 +231,60 @@ def scan_source(src: str, filename: str = "<src>"):
     return sorted(seen.items(), key=lambda kv: kv[1]), None
 
 
+BASELINE = HERE / "undefined-name-baseline.json"
+
+
+def _load_baseline() -> dict:
+    if BASELINE.exists():
+        try:
+            return json.loads(BASELINE.read_text())["files"]
+        except Exception:                              # noqa: BLE001
+            return {}
+    return {}
+
+
+def _ratchet(current: dict, strict: bool, rebaseline: bool) -> int:
+    """Tolerate the committed backlog, block anything NEW.
+
+    The pattern the gates array already uses (`q0_anchor_ratchet`,
+    `never_raises_dps_audit`): blocking is only safe because the gate is GREEN
+    at its own baseline, so it can fire on a regression and never on the
+    backlog it inherited.
+
+    DO NOT add a file to the baseline to silence a failure. A finding here is a
+    name that is not defined; the fix is to define it, or to find out where the
+    definition went.
+    """
+    prior = _load_baseline()
+    new_files = sorted(set(current) - set(prior))
+    grew = sorted(f for f in current if f in prior and current[f] > prior[f])
+    drained = sorted(set(prior) - set(current))
+    print(f"\n  baseline files              : {len(prior)}")
+    print(f"  drained since baseline      : {len(drained)}")
+    print(f"  NEW (not baselined)         : {len(new_files)}")
+    print(f"  GREW above baseline         : {len(grew)}")
+    for f in new_files:
+        print(f"      NEW   {f}  ({current[f]})")
+    for f in grew:
+        print(f"      GREW  {f}  {prior[f]} -> {current[f]}")
+    if rebaseline:
+        # Bootstrap: with no baseline on disk every file reads as NEW, so the
+        # draining-only guard would refuse to create the very first one.
+        if BASELINE.exists() and (new_files or grew):
+            print("\n  REFUSED to rebaseline: counts went UP. Rebaselining is for "
+                  "DRAINING only -- fix the finding instead of recording it.")
+            return 1
+        BASELINE.write_text(json.dumps(
+            {"files": current, "total": sum(current.values())},
+            indent=1, sort_keys=True) + "\n")
+        print(f"\n  Rebaselined: {len(current)} file(s), "
+              f"{sum(current.values())} finding(s).")
+        return 0
+    if strict and (new_files or grew):
+        return 1
+    return 0
+
+
 def _selftest() -> int:
     cases = [
         ("def f():\n    return RAIL\n", ["RAIL"],
@@ -286,9 +340,22 @@ def _tracked_py() -> list[str]:
 
 def main(argv: list[str]) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--selftest", action="store_true")
+    # BOTH spellings. `scripts/precision-gates.sh` invokes
+    # `python3 <script> --self-test` (hyphenated) and treats a non-zero exit as
+    # "a detector that cannot be shown to fire is a no-op" -- so a script
+    # offering only `--selftest` fails its gate on arrival, silently, for a
+    # reason that has nothing to do with what it detects. Found by running the
+    # harness rather than by reading the array.
+    ap.add_argument("--self-test", "--selftest", action="store_true",
+                    dest="selftest")
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--no-witness", action="store_true")
+    ap.add_argument("--strict", action="store_true",
+                    help="exit 1 on a NEW finding, or a baselined file whose "
+                         "count grew (the gates-array ratchet contract)")
+    ap.add_argument("--rebaseline", action="store_true",
+                    help="regenerate the baseline (DRAINING only — refuses if "
+                         "any count went up)")
     ap.add_argument("paths", nargs="*")
     a = ap.parse_args(argv)
     if a.selftest:
@@ -333,6 +400,11 @@ def main(argv: list[str]) -> int:
         print(f"\n  {f}")
         for x in by_file[f]:
             print(f"      line {x['line']:>5}  {x['name']}")
+    current = {f: len(v) for f, v in by_file.items()}
+    rc = _ratchet(current, a.strict, a.rebaseline)
+    if a.rebaseline:
+        return rc
+
     if not a.no_witness:
         from witness_base import WitnessBuilder      # noqa: E402
         w = WitnessBuilder("undefined-name-audit", engine="python")
@@ -357,7 +429,10 @@ def main(argv: list[str]) -> int:
         w.set_audit_only("computations/audits/undefined_name_audit.py")
         out = w.save()
         print(f"\n[witness] {out}")
-    return 1 if findings else 0
+    # `--strict` is the GATE answer (regression?), the bare exit code is the
+    # DETECTOR answer (anything outstanding?). A blocking gate must use the
+    # first, or it fails forever on a backlog it inherited.
+    return rc if a.strict else (1 if findings else 0)
 
 
 if __name__ == "__main__":

@@ -101,3 +101,44 @@ Nothing corrected here. The two known-stale descriptions
 (`qdim-route`, `cancellation-ascaling`) still state convention-dependence
 findings nobody here has studied, and rewriting an unverified conclusion is
 worse than leaving it visibly flagged.
+
+---
+
+## Wired into the gates array (2026-09-06)
+
+`scripts/precision-gates.sh` now carries it, blocking:
+
+    "…|--strict --no-witness|yes|yes"
+
+**Ratchet, not bare `--strict`.** A blocking gate that is red on arrival gets
+skipped — the failure mode that file's own header warns about — so it tolerates
+the committed backlog via a `*-baseline.json` and blocks only what is NEW or
+GREW. `--rebaseline` refuses to run if any count went up: draining only.
+
+Confirmed by EXECUTION, not by reading the array:
+
+- green at its own baseline (exit 0) under the harness's exact invocation;
+- **red on an injected regression** — a throwaway probe with one unbound name
+  made it exit 1 and name the file, then was removed. A detector that cannot be
+  shown to fire is a no-op, which is why the harness self-tests at all.
+
+### The harness caught a defect in the wiring itself
+
+`precision-gates.sh` invokes `python3 <script> --self-test` — **hyphenated** —
+and treats a non-zero exit as "a detector that cannot be shown to fire". Both
+audits were written with `--selftest` only (copied from
+`retired_pin_live_code_audit.py`, which is in no array and so never had to
+match). They would have failed their gate on arrival, silently, for a reason
+having nothing to do with what they detect. Both spellings are accepted now.
+
+That is the qou-j6gb lesson landing a third time: a gate outside the array is a
+gate nobody runs — and a gate inside it that the harness cannot invoke is the
+same thing wearing a badge.
+
+### Not verified here
+
+The full `precision-gates.sh` run fails PREFLIGHT in this container
+(`missing: qou_substrate`, needs `pip install -e tools/qou-substrate`). The
+script itself says that is not a gate failure. So the two gates were exercised
+by replaying the harness's own `--self-test` + `$args` sequence against them,
+not by a whole-suite run; the remaining 25 gates are unexercised here.

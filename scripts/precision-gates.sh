@@ -403,6 +403,34 @@ GATES=(
   # --strict exits 1 at 52 from repo root, and 0 is reachable — the count moved
   # 55 -> 52 under the drain, so the detector demonstrably tracks the tree.
   "witness provenance completeness (advisory)|computations/audits/witness_provenance_audit.py|--strict|no|no"
+  # Two detectors for defects NOTHING in this array could see, because every
+  # gate above needs the code to RUN and these break code nobody runs.
+  #
+  # A name used but bound nowhere. `producer_importability_audit` imports each
+  # producer, so it catches MODULE-level names only; a name inside a function
+  # is invisible to it, and the two test trees execute 209 tests and none of
+  # the 300+ probes. Measured cost of that blind spot: seven live defects in
+  # one session -- `_is_sparse_sigma` after a merge, `_os_sidu` twice after a
+  # bulk rewrite injected the import into a DOCSTRING, `Path` never imported,
+  # and `RAIL`/`H` in three he_nu_sdp probes where a q0-anchor migration
+  # rewrote `Q0 = …` / `RAIL = …` and took the second line with it. Every one
+  # is the same shape: a block rewrite drops a definition while its consumer,
+  # outside the diff's line range, survives. Bean qou-lejl.
+  "undefined-name ratchet|computations/audits/undefined_name_audit.py|--strict --no-witness|yes|yes"
+  # A witness whose PROSE quotes a number its own DATA does not contain. Every
+  # staleness mechanism here compares a witness to its PRODUCER -- scriptHash,
+  # q0Anchor, the float64 ratchet, the dps floor -- and none reads a
+  # description, so a hardcoded finding keeps asserting itself after the data
+  # moves. Measured: rho-binding-constancy said "~182% (D 5.73, T 81.5,
+  # 3He 37.4)" while carrying 3.87/36.99/19.12, matching neither the committed
+  # nor the regenerated data. Bean qou-n62l.
+  #
+  # Ratchet, not --strict: the backlog is 239 candidates across 185 witnesses,
+  # so a blocking --strict would be red on arrival and get skipped -- the
+  # failure mode this file's own header warns about. Both are GREEN at their
+  # baselines, verified by running them, and both were verified to go RED on an
+  # injected regression rather than assumed to.
+  "witness prose drift ratchet|computations/audits/witness_prose_drift_audit.py|--strict --no-witness --top 0|yes|yes"
 )
 
 if [ "${1:-}" = "--list" ]; then
