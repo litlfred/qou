@@ -460,4 +460,46 @@ theorem rk_le_of_endpoints (u w : Perm (Fin n)) {a b i m : ℕ} (hu : Increasing
   have hlow := rk_ge_min_of_increasingOn u hu hbn m hai hib
   omega
 
+/-- Past the last index there is nothing left to count. -/
+theorem rk_eq_of_index_ge (u : Perm (Fin n)) {i : ℕ} (h : n ≤ i) (m : ℕ) :
+    rk u i m = rk u n m := by
+  rw [rk_eq_card, rk_eq_card]
+  congr 1
+  ext x
+  simp only [Finset.mem_filter, Finset.mem_univ, true_and]
+  exact ⟨fun hx => ⟨x.isLt, hx.2⟩, fun hx => ⟨lt_of_lt_of_le x.isLt h, hx.2⟩⟩
+
+theorem IncreasingOn.mono_right {u : Perm (Fin n)} {a b b' : ℕ}
+    (hu : IncreasingOn u a b) (h : b' ≤ b) : IncreasingOn u a b' :=
+  fun x y hax hxy hyb => hu x y hax hxy (lt_of_lt_of_le hyb h)
+
+/-! ### The hard direction — stated, not proved
+
+`rk_le_of_bruhatLe` above is the EASY half of Ehresmann's criterion.  Its converse — the rank
+criterion IMPLIES the subword order — is the hard half, and it is the one genuinely
+Mathlib-scale gap in this development.  It is stated here rather than left implicit inside a
+tableau-specific theorem, because it is a standard result about Coxeter groups with nothing
+tableau-theoretic in it, and because isolating it makes every other step machine-checked.
+
+**This carries a `sorry`, and the `sorry` propagates.**  Anything downstream of
+`bruhatLe_of_rk_le` shows `sorryAx` under `#print axioms`, `DominanceIsBruhat`'s
+`dominance_to_bruhatLe` included.  Naming the gap does not close it. -/
+
+/-- **The hard direction of Ehresmann's criterion**: pointwise domination of rank matrices
+implies the Bruhat (subword) order.
+
+Together with `rk_le_of_bruhatLe` this is the criterion in full — `u ≤ w` iff `rk w ≤ rk u`
+pointwise — for the symmetric group.
+
+Measured exhaustively at `n ≤ 6` (708 062/708 062, both directions) in
+`computations/hecke/dipper_james_rank_criterion_probe.py`; the statement is not in doubt, only
+unproved here. -/
+-- Ref: [bjornerbrenti2005] Björner & Brenti, *Combinatorics of Coxeter Groups*, Graduate
+-- Texts in Mathematics 231, Springer 2005, Theorem 2.1.5 (the tableau criterion).
+theorem bruhatLe_of_rk_le {u w : Perm (Fin (n + 1))}
+    (_h : ∀ i m : ℕ, rk w i m ≤ rk u i m) :
+    QOU.Machinery.CoxeterBruhat.BruhatLe
+      (QOU.Hecke.SymmetricCoxeter.permCoxeterSystem n) u w :=
+  sorry
+
 end QOU.Machinery.BruhatRank
