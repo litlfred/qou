@@ -131,3 +131,26 @@ they are about any block of dimension ≥ 2, and `(2,1)` is one instance.
 Surfaces updated: the `WedderburnTrace.lean` docstring and the reader-facing
 block, both of which said the value was not formalised; and the probe, with two
 new assertions pinning the dimension fact and the boundary case. Probe 14/14.
+
+## The constructive complement (2026-09-06)
+
+`three_supported_traceFunctionals_dependent` says any three **trace-factoring**
+functionals at one partition are dependent. `three_blockEntry_independent_p21` is
+the other half: read the block instead of its trace and three independent
+functionals exist at `(2,1)`, exhibited explicitly and witnessed by matrix units.
+
+Together the pair is sharp rather than merely discouraging — it says precisely
+where a derivation of the `(2,1)` clause has to live: **not** in the Markov trace,
+which is one-dimensional there, but in the `f^{(2,1)} = 2`-dimensional block, of
+which the trace reads one dimension.
+
+**What it does not say, and this is the whole point.** It does *not* identify
+those three functionals with volume, surface and Coulomb. It is an existence
+statement about linear algebra. Three independent functionals existing is a
+**necessary** condition for such a match, not evidence of one — and the count
+agreeing with the count of SEMF terms is a target to check a future derivation
+against, never a criterion to search on. That sentence is in the module, the
+block and the probe, because it is exactly the inference this result invites and
+should not support.
+
+Both new declarations: `[propext, Classical.choice, Quot.sound]`. Probe 15/15.

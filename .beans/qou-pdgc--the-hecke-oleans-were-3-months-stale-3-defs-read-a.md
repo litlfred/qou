@@ -133,3 +133,44 @@ Rebuilding oleans in dependency order repaired the class of defect this bean was
 opened for. 15 modules were already refreshed by targeted cone runs earlier in the
 session; this added ~780 more. Any `#print axioms` taken against those now reads
 source rather than a months-old cache.
+
+## Surfaced at session start (2026-09-06)
+
+A measurement nobody reads is the same defect this bean documents, one level up —
+the same reasoning `AGENTS.md` gives for the CI-health watchdog ("a report is only
+read by someone in the room"). `scripts/session-start-coord-sweep.sh` now prints
+the five stalest modules and the repair command, with the "could not run" case
+rendered explicitly as **not a pass**.
+
+Freshness at the time of writing: **616** stale, down from 932 when this bean was
+opened — the difference is what the partial drain and the targeted builds have
+repaired.
+
+## Targeted deep-tail pass (2026-09-06) — and a classifier that lied twice
+
+The shallow sweep answered "does it compile" for the easiest 30 %. The deep tail
+needs the opposite ranking, so `lean-olean-staleness-audit.py --targets N` now
+lists **never-built modules by reverse in-degree**: a leaf that fails breaks one
+module, one of these breaks everything above it. Direct in-degree deliberately,
+not transitive — a transitive closure ranks a few near-universal utilities above
+everything else and says nothing useful.
+
+At the time of writing: **1187 never built, 700 imported by at least one other,
+487 leaves.** The top of the ranking was built directly; each target's cone
+overlaps the next, so 40 targets cover far more than 40 modules.
+
+**Result so far: no source defect found.** Every settled target came back ok.
+
+**Worth recording: my own result classifier was wrong in both directions.** It
+labelled `QOU.MathlibExt.FaddeevQuantumDilogarithm` **FAILED** — in-degree 7,
+zero QOU dependencies, exactly the profile the targeting was built to catch, so
+it read as the finding. It was not. The cone printed `done: up-to-date=1 in 0s`,
+with no `ok=` and no `err=`, and my grep required `ok=`; the module had already
+been built by an earlier target's cone in the same loop. In the other direction
+it labelled `BlochWignerLobachevsky` ok off a progress line whose `done:` was cut
+by a 160-character truncation.
+
+Reclassifying from the raw output rather than the label gives 6/6 ok. The general
+point is the one `AGENTS.md` makes about not taking agent output at face value,
+and it applies to one's own scripts: a status column is a claim, the captured
+output is the evidence.
