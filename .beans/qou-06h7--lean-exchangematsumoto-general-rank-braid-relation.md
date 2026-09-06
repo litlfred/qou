@@ -1,11 +1,11 @@
 ---
 # qou-06h7
 title: 'Lean: exchange/Matsumoto general-rank braid relation'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-19T02:57:13Z
-updated_at: 2026-09-06T06:44:36Z
+updated_at: 2026-09-06T10:49:09Z
 ---
 
 ## Measured 2026-09-05 (branch claude/hecke-cyclicity-markov-2026-09-05, PR #6845)
@@ -198,3 +198,45 @@ one**, and nothing says two reduced words for the same element are
 interchangeable. That is the subword property, equivalent in strength to
 Matsumoto. So the four split cleanly: antisymmetry needed only length
 bookkeeping; transitivity, subword and lifting all wait on Matsumoto.
+
+
+## ✅ CLOSED 2026-09-06 — Matsumoto is proved (branch claude/coxeter-deletion-matsumoto-2026-09-06)
+
+**My "Mathlib-scale work, not a session's task, should be done as a Mathlib
+contribution rather than in QOU/" was wrong on all three counts**, and the
+first correction on this branch is why: the exchange property was ALREADY in
+this corpus (`CoxeterReflectionCocycle.rightExchange`, sorry-free, every
+Coxeter system) — I had measured Mathlib and concluded about availability,
+skipping corpus-grep path 2. With exchange in hand the remaining chain is one
+session's work, and it is now done, in four files:
+
+| file | what it adds |
+|---|---|
+| `Machinery/CoxeterDeletion` | the deletion condition; every word contains a reduced SUBWORD |
+| `Machinery/CoxeterRankTwo` | reduced two-letter words are alternating; parabolics embed isometrically; two spellings ⟹ `(sᵢsⱼ)^k = 1` |
+| `Machinery/CoxeterDihedralDescent` | the descent lemma; `DihedralExact` discharged for `M i j ≤ 3` |
+| `IwahoriHecke/Matsumoto` | Matsumoto, and `exists_Tw_An` |
+
+**Status of the result.** `matsumoto` is conditional on ONE named predicate,
+`CoxeterRankTwo.DihedralExact` — that `σᵢσⱼ` has order exactly `M i j`.
+`matsumoto_An` and `exists_Tw_An` are **hypothesis-free**: for `M i j ≤ 3` the
+predicate follows from `CoxeterGeometricRepresentationFull`'s two unconditional
+cell-faithfulness results. That covers type A, hence `H_n(q)` and the symmetric
+group — every case this corpus's Hecke/braid arc uses.
+
+`#print axioms` on all five headline results: `[propext, Classical.choice,
+Quot.sound]`. No `sorryAx`.
+
+**Non-vacuity checked, not asserted** (`An_le_three` / `An_ne_zero` plus an
+`example` exhibiting a Coxeter system of type Aₙ) — this same branch caught a
+conditional in this corpus whose hypothesis was FALSE at the case it was
+written for.
+
+## What is left, as a NEW item — not this one
+
+`DihedralExact` for `M i j ≥ 4`. That is the order of `σᵢσⱼ` in the reflection
+representation, and it is `CoxeterGeometricRepresentationFull`'s own named open
+item (its HONESTY note: "What this does NOT prove: ... the order of σᵢσⱼ being
+exactly mᵢⱼ"). The trig engine it needs — `periodic_of_two_step`, the
+`(fᵢfⱼ)^m = 1` direction — is already in that file; the converse (no smaller
+power is the identity) is not. No consumer in this corpus needs it.

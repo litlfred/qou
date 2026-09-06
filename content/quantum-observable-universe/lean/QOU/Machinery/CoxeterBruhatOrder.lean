@@ -33,8 +33,13 @@ the same element are interchangeable. That statement is the *subword property*, 
 equivalent in strength to Matsumoto.
 
 So the four split cleanly: antisymmetry needed only length bookkeeping and is done; transitivity,
-the subword property and lifting all wait on Matsumoto, which is open
-(`QOU.IwahoriHecke.TwMatsumoto` records the conditional that consumes it).
+the subword property and lifting all wait on Matsumoto.
+
+✅ **Matsumoto is no longer open** (2026-09-06): `QOU.IwahoriHecke.Matsumoto.matsumoto` proves it
+conditional on `CoxeterRankTwo.DihedralExact`, and `matsumoto_An` proves it outright for type `A`.
+The other three are therefore now *reachable* — but they are still **not proved here**, and
+"reachable" is not "done": each needs the subword property derived from Matsumoto, which is its own
+argument. Do not cite this file for them.
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, §2.2
 -- Ref: [manuscript] beans qou-phir, qou-06h7

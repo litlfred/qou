@@ -27,6 +27,13 @@ property, and it was mine** (corrected 2026-09-06).
 every Coxeter system, sorry-free, off `strong_exchange` (Björner–Brenti Thm 1.4.3). What
 remains open is **deletion → Matsumoto**; the exchange property is not part of the gap.
 
+✅ **And that remainder is now closed too** (2026-09-06). `QOU.Machinery.CoxeterDeletion`
+supplies deletion and `QOU.IwahoriHecke.Matsumoto` supplies Matsumoto —
+**unconditionally whenever `M i j ≤ 3`** (`matsumoto_An`, hence every type-`A` system), and
+conditional on `CoxeterRankTwo.DihedralExact` — the order of `σᵢσⱼ` — in general. So the
+sentence below reading "not proved anywhere in this corpus or in Mathlib" is stale for this
+corpus; it remains true of Mathlib.
+
 `exists_Tw_of_braidEquiv` below is a conditional theorem naming its hypothesis rather than a
 class asserting the conclusion.
 

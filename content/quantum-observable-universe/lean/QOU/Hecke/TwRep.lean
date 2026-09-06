@@ -26,7 +26,8 @@ map out of `H_n(q)`.
 
 This is the representation the Bourbaki route to the `T_w` basis is built on,
 and it avoids Matsumoto's theorem (which Mathlib lists as an open TODO at
-`Coxeter/Basic.lean:78`).  Surjectivity is the **spanning** half of the basis
+`Coxeter/Basic.lean:78`; this corpus proved it in `QOU.IwahoriHecke.Matsumoto`,
+but this route does not need it).  Surjectivity is the **spanning** half of the basis
 theorem; the **independence** half — equivalently, that `orbitMap` is
 injective, so `dim H_n(q) = (n+1)!` — is not proved here.
 
