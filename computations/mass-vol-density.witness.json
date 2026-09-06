@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:15:30.245802+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-06T06:47:34.441283+00:00",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "assertions": [
     {
       "name": "vol_density_equiv_vol_density",
@@ -58,11 +58,11 @@
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "vol_density_vd(density=tr_M) ≡ per_knot_density_per_block: |Δ| = 5.564e-68 < 1.0e-40"
+      "source": "vol_density_vd(density=tr_M) ≡ per_knot_density_per_block: |Δ| = 2.782e-68 < 1.0e-40"
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "mass-vol-density",
   "scriptFile": "mass_vol_density.py",
   "scriptHash": "5e7b8aae8bf9",
@@ -81,7 +81,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -97,8 +97,8 @@
     "bracket_2_q_at_q0": "2.010896866707122",
     "su2_density_loss": {
       "density_global_H4_scalar": "2.532779656399391",
-      "density_per_block_H3_trM_proton": "1.145759692457301",
-      "ratio_global_over_per_block": "2.210567951615893",
+      "density_per_block_H3_trM_proton": "0.6293284022029219",
+      "ratio_global_over_per_block": "4.024575480041209",
       "gate_verdict": "RED — global SU(2)-blind scalar ≠ per-block Markov trace"
     }
   },

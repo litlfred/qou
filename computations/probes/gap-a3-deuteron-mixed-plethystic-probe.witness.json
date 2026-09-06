@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T22:54:07.872478+00:00",
-  "commitSha": "afd363f4b81a718f76087553af0c348b7c092c2c",
+  "computedAt": "2026-09-06T06:49:31.758255+00:00",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "assertions": [
     {
       "name": "mixed_plethystic_m_half_fourth_power_refuted_as_expected",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 77,
+  "durationMs": 57,
   "computation": "gap-a3-deuteron-mixed-plethystic-probe",
   "scriptFile": "gap_a3_deuteron_mixed_plethystic_probe.py",
   "scriptHash": "b8882b7d567c",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptCommitSha": "c360e0a180af341006867c7461edf0279c5837af",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -46,8 +46,8 @@
   "data": {
     "A_D": "23.3528697671839858189466440359889738864013887122817513383720723106129",
     "target": "-4.353237901949242454715460190762295046543669840974952707294765736733141",
-    "closure_with_A": "16458.09441234111814473904143241554542294334047588050196940856814102557",
-    "rel_err": "3781.65586651529042854707561961824152086674723960366004054765421441197",
+    "closure_with_A": "1696.564065809740101311256320514600016679319388307315607618990729526062",
+    "rel_err": "390.7246380791806234891734200353297052587946530224369209907682769632076",
     "per_lambda": [
       {
         "partition": [
@@ -64,7 +64,7 @@
         ],
         "m_half_su2": 5,
         "P_lambda_mixed": 625,
-        "term": "158.711114020138595488097480912170412056932958642070288451360498522043"
+        "term": "-33.66776438148279612509588623491940613721419526609788702804510419422067"
       },
       {
         "partition": [
@@ -73,7 +73,7 @@
         ],
         "m_half_su2": 9,
         "P_lambda_mixed": 6561,
-        "term": "505.6988544868733155846241266843557409453350788698813069641803246813846"
+        "term": "99.3884529885393263093877754757420932787943893178329056111352056597061"
       },
       {
         "partition": [
@@ -92,7 +92,7 @@
         ],
         "m_half_su2": 5,
         "P_lambda_mixed": 625,
-        "term": "40.16696826547673620668600397962252915043230755512188578736766886761978"
+        "term": "6.748481809682749276004352290028323074044978279059531173265962940738082"
       },
       {
         "partition": [
