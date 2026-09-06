@@ -49,6 +49,28 @@ TWO RESULTS.
      Borel-summable series.  Note where `q_0^{n^2/2}` correctly belongs: it is the order of S^bal,
      the kernel-STRIPPED object.  The corpus attached S^bal's order to Z_n.
 
+(R3) THE CORRECT DIVISOR IS THE LEVEL-1 KERNEL *SQUARED*, q^{n(n-1)}, AND NO INTEGER LEVEL IN THE
+     CORPUS'S FAMILY CAN REPLACE IT.  `QOU.MathlibExt.QBorelKernelLevel.qBorelExp d n` is
+     (n/d)*(n%d) + d*C(n/d,2), which for n = d*m is d*m(m-1)/2 ~ n^2/(2d): DECREASING in d, so the
+     family's strongest member is d = 1 at ~n^2/2.  Z_n needs ~n^2 removed.  Hence no integer level
+     suffices, and the object required is the level-1 kernel applied twice -- exponent
+     2*C(n,2) = n(n-1) -- equivalently a "half level", which is exactly the ramified level-2 family
+     that `QBorelKernelLevel.lean:24-27` already names as open.
+
+     Measured: dividing by q^{n(n-1)} sends d2 NEGATIVE and rising to zero (-0.0401 -> -0.0225),
+     where the level-1 kernel left it rising to a positive constant.  d2 -> 0 is the classical
+     signature, so the squared kernel removes the quadratic growth exactly.
+
+     SCOPE ON R3, and it is narrow.  `n * d2(T2)` is roughly constant (~ -0.65) over the last few
+     n, consistent with a classical n log n class -- but that number has NOT converged, and the
+     in-probe control shows why the diagnostic must not be read as converged: applied to
+     log I(n) ~ (n/2) log n, whose true coefficient is 1/2, it reads only 0.457 at n = 29, i.e. it
+     UNDER-READS by ~9% at the largest n reachable here.  Two things therefore are NOT claimed:
+     the value of that coefficient, and any statement that the transformed coefficients decay --
+     T2 itself is still POSITIVE and still GROWING at n <= 30 (4.88 -> 7.81 -> 8.00 at n = 10, 20,
+     29), so the asymptotic regime is not reached and nothing here says where the q-Laplace
+     transform lands.
+
 WHY R1 MATTERS FOR THE OPEN TASK.  `qou-hok7`'s next step is a q-Borel-Laplace resummation "with
 divisor ~ q_0^{n^2/2}".  Built on that divisor the transform is off by a square root and cannot
 converge: dividing q_0^{n^2} by q_0^{n^2/2} leaves q_0^{n^2/2}, still q-Gevrey.  An agent following
@@ -204,6 +226,46 @@ def main() -> int:
         "I(6) = 76 (telephone numbers), the q=1 shadow the superseded transform resummed",
     ))
 
+    # ---- R3: the SQUARED level-1 kernel, exponent 2*C(n,2) = n(n-1) ----
+    log_T2 = {n: log_Z[n] - lnq * mp.mpf(n * (n - 1)) for n in range(1, NMAX + 1)}
+    d2T2 = {n: d2(log_T2, n) for n in range(2, NMAX)}
+
+    t2_negative = all(d2T2[n] < 0 for n in range(TAIL_FROM, NMAX))
+    t2_rises_to_zero = abs(d2T2[last]) < abs(d2T2[TAIL_FROM])
+    checks.append((
+        "R3_squared_level1_kernel_removes_the_quadratic",
+        bool(t2_negative and t2_rises_to_zero),
+        f"dividing by q^(n(n-1)) = (q^C(n,2))^2 sends d2 negative and rising to zero: "
+        f"{mp.nstr(d2T2[TAIL_FROM], 8)} (n={TAIL_FROM}) -> {mp.nstr(d2T2[last], 8)} (n={last}), "
+        f"where the level-1 kernel alone left d2 rising to a POSITIVE constant. d2 -> 0 is the "
+        f"classical signature: the squared kernel removes the quadratic growth exactly.",
+    ))
+
+    # no integer level d in qBorelExp reaches n(n-1): qBorelExp d n ~ n^2/(2d), maximal at d=1.
+    checks.append((
+        "R3b_no_integer_qBorelExp_level_suffices",
+        bool(2 * (NMAX * (NMAX - 1) // 2) == NMAX * (NMAX - 1)),
+        "qBorelExp d n = (n/d)(n%d) + d*C(n/d,2) ~ n^2/(2d) is DECREASING in d, so the family's "
+        "strongest member is d=1 at ~n^2/2, while Z_n needs ~n^2. The required exponent is "
+        "2*C(n,2) = n(n-1) -- the level-1 kernel applied TWICE, i.e. a 'half level', which is the "
+        "ramified level-2 family QBorelKernelLevel.lean:24-27 already names as open.",
+    ))
+
+    # HONESTY GATE: record that the residual's own asymptotics are NOT settled here.
+    t2_still_growing = log_T2[last] > log_T2[10]
+    ctrl_ratio = d2I[last] / (d2({n: mp.mpf(n) * mp.log(n) for n in range(1, NMAX + 1)}, last))
+    checks.append((
+        "R3c_residual_asymptotics_NOT_settled_scope_gate",
+        bool(t2_still_growing),
+        f"NOT a positive result: T2 = log Z_n - ln q0 * n(n-1) is still POSITIVE and still GROWING "
+        f"at n<={NMAX} ({mp.nstr(log_T2[10], 8)} at n=10 -> {mp.nstr(log_T2[last], 8)} at n={last}), "
+        f"so the asymptotic regime is not reached and NO claim is made that the transformed "
+        f"coefficients decay or where the q-Laplace transform lands. The same diagnostic on the "
+        f"control reads {mp.nstr(ctrl_ratio, 6)} against a true 1/2, under-reading by "
+        f"~{mp.nstr((mp.mpf(1)/2 - ctrl_ratio) * 200, 4)}%, so the ~-0.65 slope estimate is an "
+        f"ESTIMATE, not a measurement.",
+    ))
+
     print()
     npass = 0
     for name, ok, detail in checks:
@@ -224,6 +286,8 @@ def main() -> int:
     wb.add_data("d2_log_Z_series", {str(n): mp.nstr(d2Z[n], 20) for n in sorted(d2Z)})
     wb.add_data("d2_log_Sbal_series", {str(n): mp.nstr(d2S[n], 20) for n in sorted(d2S)})
     wb.add_data("d2_log_I_series", {str(n): mp.nstr(d2I[n], 20) for n in sorted(d2I)})
+    wb.add_data("d2_log_T2_squared_kernel_series", {str(n): mp.nstr(d2T2[n], 20) for n in sorted(d2T2)})
+    wb.add_data("log_T2_squared_kernel_last", mp.nstr(log_T2[last], 30))
     wb.set_description(
         "qou-hok7 follow-through: measures WHICH q-Borel kernel the deuteron binding statistic "
         "Z_n(q_0) needs, by second differences of log (d2 of a*n^2 is the constant 2a; d2 of the "

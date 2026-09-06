@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-06T15:17:43.158336+00:00",
-  "commitSha": "b2df317a03575488508905a1443abf81c6db9d9f",
+  "computedAt": "2026-09-06T15:34:38.658817+00:00",
+  "commitSha": "affdd20051a5599391d7f38aaa3bdec6c28c6365",
   "assertions": [
     {
       "name": "control_classical_gevrey_d2_falls",
@@ -52,14 +52,35 @@
       "expected": "1",
       "passed": true,
       "source": "I(6) = 76 (telephone numbers), the q=1 shadow the superseded transform resummed"
+    },
+    {
+      "name": "R3_squared_level1_kernel_removes_the_quadratic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "dividing by q^(n(n-1)) = (q^C(n,2))^2 sends d2 negative and rising to zero: -0.029044056 (n=20) -> -0.022471535 (n=29), where the level-1 kernel alone left d2 rising to a POSITIVE constant. d2 -> 0 is the classical signature: the squared kernel removes the quadratic growth exactly."
+    },
+    {
+      "name": "R3b_no_integer_qBorelExp_level_suffices",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "qBorelExp d n = (n/d)(n%d) + d*C(n/d,2) ~ n^2/(2d) is DECREASING in d, so the family's strongest member is d=1 at ~n^2/2, while Z_n needs ~n^2. The required exponent is 2*C(n,2) = n(n-1) -- the level-1 kernel applied TWICE, i.e. a 'half level', which is the ramified level-2 family QBorelKernelLevel.lean:24-27 already names as open."
+    },
+    {
+      "name": "R3c_residual_asymptotics_NOT_settled_scope_gate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "NOT a positive result: T2 = log Z_n - ln q0 * n(n-1) is still POSITIVE and still GROWING at n<=30 (4.8769152 at n=10 -> 7.9977167 at n=29), so the asymptotic regime is not reached and NO claim is made that the transformed coefficients decay or where the q-Laplace transform lands. The same diagnostic on the control reads 0.456852 against a true 1/2, under-reading by ~8.63%, so the ~-0.65 slope estimate is an ESTIMATE, not a measurement."
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "deuteron-qborel-kernel-level",
   "scriptFile": "deuteron_qborel_kernel_level_probe.py",
-  "scriptHash": "f6ca84f746cf",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f3f8aabac0c2",
+  "scriptCommitSha": "8f03995c397f5cedb69ee9d64be5e163812112ea",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -180,6 +201,37 @@
       "28": "0.016121640332678424331",
       "29": "0.015756633894867787472"
     },
-    "durationMs": 6079
+    "d2_log_T2_squared_kernel_series": {
+      "2": "-0.1016202075956014393",
+      "3": "0.12638845172543134513",
+      "4": "-0.055141190134186381681",
+      "5": "0.027325752253853772963",
+      "6": "-0.04395487362409571697",
+      "7": "-0.0073766103487756905445",
+      "8": "-0.040141470138069779548",
+      "9": "-0.021649756048205882265",
+      "10": "-0.038012868405181930562",
+      "11": "-0.027669656118301762673",
+      "12": "-0.036197791024942001881",
+      "13": "-0.029893956288204264446",
+      "14": "-0.034390937905269221384",
+      "15": "-0.030250350666748986324",
+      "16": "-0.032568738475401080251",
+      "17": "-0.029668204849784330367",
+      "18": "-0.030772027703681291473",
+      "19": "-0.028628300408262516524",
+      "20": "-0.029044056126372146296",
+      "21": "-0.027389831920584663483",
+      "22": "-0.027415279125298706063",
+      "23": "-0.026094800607714899127",
+      "24": "-0.02590244995815335365",
+      "25": "-0.024820267728807906637",
+      "26": "-0.024511565125772308577",
+      "27": "-0.023606280238165269223",
+      "28": "-0.023241253606908835273",
+      "29": "-0.022471535060213615526"
+    },
+    "log_T2_squared_kernel_last": "7.99771666118947790572582134273",
+    "durationMs": 6056
   }
 }
