@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1307.6697v2",
+ "source_sha256": "a3afaefdaebe0292",
+ "brief": "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS — In this paper we are interested in computing representation s of the funda- mental group of a 3-manifold into PGL (3,C) (in particular in PGL",
+ "extended": "**REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS**\n\n*INTO PGL (3, C): EXACT COMPUTATIONS IN LOW COMPLEXITY*\n\n28 pp, 9 sections.\n\n**Abstract.** In this paper we are interested in computing representation s of the funda- mental group of a 3-manifold into PGL (3,C) (in particular in PGL (2,C),PGL(3,R) and PU(2,1)). The representations are obtained by gluing decorated tet rahedra of ﬂags as in [10, 2]. W e list complete computations (giving 0-dimensional or 1 -dimensional solution sets (for unipotent boundary holonomy) for the ﬁrst complet e hyperbolic non-compact manifolds with ﬁnite volume which are obtained gluing less t han three tetrahedra with a description of the computer methods used to ﬁnd them. The me thods we use work for non-unipotent boundary holonomy as shown in some examples.\n\n**Outline.** 1 Introduction; 2 Three geometric structures on three manifold; 3 Flag tetrahedra; 4 Ideal triangulations by flag tetrahedra; 5 Holonomy of a decoration; 6 Computational steps; 7 An example: the figure-eight knot; 8 Description of the unipotent solutions for t; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 272
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-three-geometric-structures-on-three-manifolds",
+   "title": "Three geometric structures on three manifolds",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-002-3-flag-tetrahedra",
+   "title": "Flag tetrahedra",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-003-4-ideal-triangulations-by-flag-tetrahedra",
+   "title": "Ideal triangulations by flag tetrahedra",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-004-5-holonomy-of-a-decoration",
+   "title": "Holonomy of a decoration",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-005-6-computational-steps",
+   "title": "Computational steps",
+   "pages": "12-16"
+  },
+  {
+   "id": "sec-006-7-an-example-the-figure-eight-knot",
+   "title": "An example: the figure-eight knot",
+   "pages": "16-20"
+  },
+  {
+   "id": "sec-007-8-description-of-the-unipotent-solutions-for-the",
+   "title": "Description of the unipotent solutions for the first hyperbolic manifolds",
+   "pages": "20-27"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "27-28"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

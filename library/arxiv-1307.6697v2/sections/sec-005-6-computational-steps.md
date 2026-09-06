@@ -7,6 +7,7 @@ section_number: 6
 pages: 12-16
 source_pdf: 1307.6697v2.pdf
 source_sha256: a3afaefdaebe0292
+doc_brief: "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS — In this paper we are interested in computing representation s of the funda- mental group of a 3-manifold into PGL (3,C) (in particular in PGL"
 ---
 Our goal is to obtain the solutions of the system in the cross- ratio coordinates zij and
 then compute the holonomy representations. We compute:

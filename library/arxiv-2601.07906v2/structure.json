@@ -1,0 +1,586 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2601.07906v2",
+ "source": {
+  "file": "2601.07906v2.pdf",
+  "sha256": "e69b1bf37f2c75b067d792f3b780054879ff55f652bfe2ffdda8738c67a82977",
+  "bytes": 1358241,
+  "pages": 117,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2601.07906",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "25 Mar 2026"
+  },
+  "doi": null,
+  "title": "March 2026 A universal sum over topologies in 3d gravity",
+  "authors_raw": "Alexandre Belin 1,2, Scott Collier 3,4, Lorenz Eberhardt 5, Diego Liska 6,7, Boris",
+  "title_lines": [
+   "March 2026",
+   "A universal sum over topologies in 3d gravity"
+  ],
+  "abstract": "We explore the sum over topologies in AdS 3 quantum gravity and its relationship with the statistical interpretation of the boundary theory. We formulate a statistical version of the conformal bootstrap that systematizes the universal sta- tistical properties of high-energy CFT 2 data. We identify a series of surgery moves on bulk manifolds that precisely reflect the requirements of typicality and crossing symmetry of the boundary ensemble. These surgery moves generate a large num- ber of bulk manifolds that have to be included in any reasonable definition of the gravitational path integral. We show that this procedure generates only on-shell (hyperbolic) manifolds, although it does not produce all of them. These proofs rely on structure theorems of 3-manifolds, which non-trivially interact with the require- ments of the statistical boundary ensemble. We illustrate the application of this procedure with many examples, such as Euclidean wormholes, twistedI-bundles and handlebody-knots. Our findings reveal a large space of possible choices of which manifolds can be included in the gravitational path integral, reflecting a wide range of possible statistical ensembles consistent with crossing symmetry and typicality. arXiv:2601.07906v2 [hep-th] 25 Mar 2026",
+  "docinfo": {
+   "Author": "Alexandre Belin; Scott Collier; Lorenz Eberhardt; Diego Liska; Boris Post",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "A universal sum over topologies in 3d gravity"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The statistical bootstrap",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Kinematic constraints",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Crossing symmetry and modular invariance",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Typicality and index contractions",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Spectral statistics",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Summing over handlebodies",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The mapping class group",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Handlebodies as conformal blocks",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Fixed-P partition functions",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The handlebody sum is crossing symmetric",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Minimal completion of the handlebody sum",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Handlebodies are not sufficient",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The gravitational machine",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The gravitational machine is hyperbolic",
+   "page": 52,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "What 3-manifolds are generated?",
+   "page": 58,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The gravitational machine at work",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Euclidean wormholes",
+   "page": 63,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Twisted I-bundles",
+   "page": 64,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Handlebody-knots",
+   "page": 65,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 73,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "3-manifold technology",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "(In)compressible surfaces in 3-manifolds",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Wirtinger presentation of fundamental groups",
+   "page": 81,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Tricolorability and handlebodyness",
+   "page": 85,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The fundamental group of the gravitational machine",
+   "page": 87,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "What is Bass-Serre theory?",
+   "page": 87,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Groups acting on trees",
+   "page": 89,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Fundamental theorem of Bass-Serre theory",
+   "page": 91,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Application to the gravitational machine",
+   "page": 93,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "VTQFT technology",
+   "page": 98,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Virasoro TQFT identities",
+   "page": 98,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Kirby calculus",
+   "page": 106,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 9,
+   "n_chars": 14727,
+   "n_words": 2254
+  },
+  {
+   "id": "sec-001-the-statistical-bootstrap",
+   "number": null,
+   "title": "The statistical bootstrap",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 4932,
+   "n_words": 817
+  },
+  {
+   "id": "sec-002-kinematic-constraints",
+   "number": null,
+   "title": "Kinematic constraints",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 4796,
+   "n_words": 793
+  },
+  {
+   "id": "sec-003-crossing-symmetry-and-modular-invariance",
+   "number": null,
+   "title": "Crossing symmetry and modular invariance",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 8822,
+   "n_words": 1456
+  },
+  {
+   "id": "sec-004-typicality-and-index-contractions",
+   "number": null,
+   "title": "Typicality and index contractions",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 21,
+   "n_chars": 12734,
+   "n_words": 2051
+  },
+  {
+   "id": "sec-005-spectral-statistics",
+   "number": null,
+   "title": "Spectral statistics",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 4148,
+   "n_words": 626
+  },
+  {
+   "id": "sec-006-summing-over-handlebodies",
+   "number": null,
+   "title": "Summing over handlebodies",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 472,
+   "n_words": 75
+  },
+  {
+   "id": "sec-007-the-mapping-class-group",
+   "number": null,
+   "title": "The mapping class group",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 3753,
+   "n_words": 617
+  },
+  {
+   "id": "sec-008-handlebodies-as-conformal-blocks",
+   "number": null,
+   "title": "Handlebodies as conformal blocks",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 34,
+   "n_chars": 23265,
+   "n_words": 3841
+  },
+  {
+   "id": "sec-009-the-handlebody-sum-is-crossing-symmetric",
+   "number": null,
+   "title": "The handlebody sum is crossing symmetric",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 41,
+   "n_chars": 15781,
+   "n_words": 2686
+  },
+  {
+   "id": "sec-010-minimal-completion-of-the-handlebody-sum",
+   "number": null,
+   "title": "Minimal completion of the handlebody sum",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 961,
+   "n_words": 151
+  },
+  {
+   "id": "sec-011-handlebodies-are-not-sufficient",
+   "number": null,
+   "title": "Handlebodies are not sufficient",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 46,
+   "n_chars": 9722,
+   "n_words": 1627
+  },
+  {
+   "id": "sec-012-the-gravitational-machine",
+   "number": null,
+   "title": "The gravitational machine",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 52,
+   "n_chars": 16027,
+   "n_words": 2658
+  },
+  {
+   "id": "sec-013-the-gravitational-machine-is-hyperbolic",
+   "number": null,
+   "title": "The gravitational machine is hyperbolic",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 58,
+   "n_chars": 15877,
+   "n_words": 2582
+  },
+  {
+   "id": "sec-014-what-3-manifolds-are-generated",
+   "number": null,
+   "title": "What 3-manifolds are generated?",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 62,
+   "n_chars": 10208,
+   "n_words": 1593
+  },
+  {
+   "id": "sec-015-the-gravitational-machine-at-work",
+   "number": null,
+   "title": "The gravitational machine at work",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 63,
+   "n_chars": 1954,
+   "n_words": 295
+  },
+  {
+   "id": "sec-016-euclidean-wormholes",
+   "number": null,
+   "title": "Euclidean wormholes",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 65,
+   "n_chars": 5800,
+   "n_words": 947
+  },
+  {
+   "id": "sec-017-handlebody-knots",
+   "number": null,
+   "title": "Handlebody-knots",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 73,
+   "n_chars": 13932,
+   "n_words": 2314
+  },
+  {
+   "id": "sec-018-discussion",
+   "number": null,
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 73,
+   "page_end": 79,
+   "n_chars": 19373,
+   "n_words": 2993
+  },
+  {
+   "id": "sec-019-3-manifold-technology",
+   "number": null,
+   "title": "3-manifold technology",
+   "level": 1,
+   "page_start": 79,
+   "page_end": 79,
+   "n_chars": 255,
+   "n_words": 44
+  },
+  {
+   "id": "sec-020-incompressible-surfaces-in-3-manifolds",
+   "number": null,
+   "title": "(In)compressible surfaces in 3-manifolds",
+   "level": 2,
+   "page_start": 79,
+   "page_end": 81,
+   "n_chars": 5652,
+   "n_words": 789
+  },
+  {
+   "id": "sec-021-wirtinger-presentation-of-fundamental-groups",
+   "number": null,
+   "title": "Wirtinger presentation of fundamental groups",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 85,
+   "n_chars": 6938,
+   "n_words": 1136
+  },
+  {
+   "id": "sec-022-tricolorability-and-handlebodyness",
+   "number": null,
+   "title": "Tricolorability and handlebodyness",
+   "level": 2,
+   "page_start": 85,
+   "page_end": 87,
+   "n_chars": 3003,
+   "n_words": 490
+  },
+  {
+   "id": "sec-023-the-fundamental-group-of-the-gravitational-machi",
+   "number": null,
+   "title": "The fundamental group of the gravitational machine",
+   "level": 1,
+   "page_start": 87,
+   "page_end": 87,
+   "n_chars": 722,
+   "n_words": 121
+  },
+  {
+   "id": "sec-024-what-is-bass-serre-theory",
+   "number": null,
+   "title": "What is Bass-Serre theory?",
+   "level": 2,
+   "page_start": 87,
+   "page_end": 89,
+   "n_chars": 4249,
+   "n_words": 746
+  },
+  {
+   "id": "sec-025-groups-acting-on-trees",
+   "number": null,
+   "title": "Groups acting on trees",
+   "level": 2,
+   "page_start": 89,
+   "page_end": 91,
+   "n_chars": 4267,
+   "n_words": 716
+  },
+  {
+   "id": "sec-026-fundamental-theorem-of-bass-serre-theory",
+   "number": null,
+   "title": "Fundamental theorem of Bass-Serre theory",
+   "level": 2,
+   "page_start": 91,
+   "page_end": 93,
+   "n_chars": 6418,
+   "n_words": 1113
+  },
+  {
+   "id": "sec-027-application-to-the-gravitational-machine",
+   "number": null,
+   "title": "Application to the gravitational machine",
+   "level": 2,
+   "page_start": 93,
+   "page_end": 98,
+   "n_chars": 10108,
+   "n_words": 1651
+  },
+  {
+   "id": "sec-028-vtqft-technology",
+   "number": null,
+   "title": "VTQFT technology",
+   "level": 1,
+   "page_start": 98,
+   "page_end": 98,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-029-virasoro-tqft-identities",
+   "number": null,
+   "title": "Virasoro TQFT identities",
+   "level": 2,
+   "page_start": 98,
+   "page_end": 106,
+   "n_chars": 12401,
+   "n_words": 2209
+  },
+  {
+   "id": "sec-030-kirby-calculus",
+   "number": null,
+   "title": "Kirby calculus",
+   "level": 2,
+   "page_start": 106,
+   "page_end": 117,
+   "n_chars": 24256,
+   "n_words": 3410
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 33,
+  "sections": 31,
+  "chars_total": 265553
+ }
+}

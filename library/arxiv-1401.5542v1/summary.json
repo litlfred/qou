@@ -1,0 +1,116 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1401.5542v1",
+ "source_sha256": "f7cd278a274f37c5",
+ "brief": "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by theA-coordinates on",
+ "extended": "**THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS**\n\n*STAVROS GAROUFALIDIS, MATTHIAS GOERNER, AND CHRISTIAN K. ZICKERT*\n\n21 pp, 19 sections.\n\n**Abstract.** The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by theA-coordinates on higher Teichm¨ uller space due to Fock and Goncharov. In this paper, we deﬁne the Ptolemy ﬁeld of a (generic) PSL(2, C)-representation and prove that it coincides with the trace ﬁeld of the represen- tation. This gives an eﬃcient algorithm to compute the trace ﬁeld of a cusped hyperbolic manifold.\n\n**Outline.** 1.1 The Ptolemy coordinates; 1 Introduction; 1.4 Our results; 2 Notation; 2.1 Triangulations; 2.2 Miscellaneous; 3 The Ptolemy varieties; 3.2 Obstruction classes; 4 The diagonal action; 4.1 The reduced Ptolemy varieties; 4.2 Shapes and gluing equations; 5 The Ptolemy field and the trace field; 5.2 The setup of the proof; 5.3 Proof for one cusp; 5.4 The general case; 5.5 Proof of Proposition 1.9; 6.2 The diagonal action; 6.3 Representations",
+ "tokens": {
+  "brief": 49,
+  "extended": 265
+ },
+ "sections": [
+  {
+   "id": "sec-000-11-the-ptolemy-coordinates",
+   "title": "The Ptolemy coordinates",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-002-14-our-results",
+   "title": "Our results",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-003-2-notation",
+   "title": "Notation",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-004-21-triangulations",
+   "title": "Triangulations",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-22-miscellaneous",
+   "title": "Miscellaneous",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-006-3-the-ptolemy-varieties",
+   "title": "The Ptolemy varieties",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-007-32-obstruction-classes",
+   "title": "Obstruction classes",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-008-4-the-diagonal-action",
+   "title": "The diagonal action",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-009-41-the-reduced-ptolemy-varieties",
+   "title": "The reduced Ptolemy varieties",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-010-42-shapes-and-gluing-equations",
+   "title": "Shapes and gluing equations",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-011-5-the-ptolemy-field-and-the-trace-field",
+   "title": "The Ptolemy field and the trace field",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-012-52-the-setup-of-the-proof",
+   "title": "The setup of the proof",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-013-53-proof-for-one-cusp",
+   "title": "Proof for one cusp",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-014-54-the-general-case",
+   "title": "The general case",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-015-55-proof-of-proposition-19",
+   "title": "Proof of Proposition 1.9",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-016-62-the-diagonal-action",
+   "title": "The diagonal action",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-017-63-representations",
+   "title": "Representations",
+   "pages": "16-20"
+  },
+  {
+   "id": "sec-018-references",
+   "title": "References",
+   "pages": "20-21"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 9-10
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 bundles over M and representations π1(M ) → G up to conjugation. This correspondence takes a
 ﬂat bundle to its holonomy representation. If ρ : π1(M ) → G is a representation, we let Eρ denote
