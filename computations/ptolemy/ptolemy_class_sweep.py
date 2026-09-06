@@ -10,12 +10,26 @@ on a system msolve settled in four.  Adding u with u*prod(coords) - 1 = 0 impose
 exactly the same condition -- every coordinate invertible -- and needs no sat() at all,
 so the whole pipeline goes to msolve.  Engine choice, not mathematics, was the blocker.
 
-WHY THE ELIMINATION MUST NOT TOUCH THE NON-ZERO CONDITION.  The elimination clears
-denominators via numer(q.subs(x, -B/A)), which ADDS the locus {A = 0}.  snappy's
-t*prod(coords) - 1 = 0 is what forbids that locus; an earlier version fed it into the
-elimination pool, where step 0 consumed it to solve for t, and every point of the
-resulting five-dimensional variety was spurious.  The saturation variable restores the
-condition after the elimination, so A = 0 is cut out by construction.
+WHERE THE NON-ZERO CONDITION GOES, and why it is NOT held through the elimination.
+The elimination clears denominators via numer(q.subs(x, -B/A)), which ADDS the locus
+{A = 0}.  snappy's t*prod(coords) - 1 = 0 forbids that locus, and an early version fed
+it straight into the pool, where step 0 consumed it to solve for t -- leaving nothing
+to cut the spurious components out, and every point of the resulting five-dimensional
+variety was spurious.
+
+The obvious repair is to PROTECT that equation and never eliminate t.  MEASURED, it
+does not work.  t is then never substituted, so the held equation -- already a product
+over all 28 coordinates -- is re-expanded against every substitution and grows without
+bound: on L6a4 class 1 a single elimination step ran past ten minutes and the loop had
+not finished after 35, against a route that settles the same class in minutes.
+
+So do what the class-1 run that actually worked did: let the elimination consume t, and
+re-impose the condition AFTERWARDS on the surviving variables as u*prod(rem) - 1 = 0.
+That does NOT restore the condition by construction -- it forbids the REMAINING
+coordinates from vanishing, not the eliminated ones, whose denominators could still
+vanish at a solution.  Soundness comes from the ROUND TRIP instead
+(ptolemy_exact_character.py), which lifts a solution and evaluates snappy's ORIGINAL
+equations.  Never report a solution from this driver that has not round-tripped.
 
 READING msolve, verified in both directions -- these markers are not interchangeable:
 
@@ -53,7 +67,6 @@ def build_reduced(name, kcls, cap, budget):
     alleq = [str(e) for e in V.equations_with_non_zero_condition]
     maineq = {str(e) for e in V.equations}
     sym = {v: sp.Symbol('x%d' % i) for i, v in enumerate(vs)}
-    protected = {sym[v] for v in vs if v not in plain}
 
     def conv(s):
         for v in sorted(vs, key=len, reverse=True):
@@ -64,8 +77,8 @@ def build_reduced(name, kcls, cap, budget):
     for e in alleq:
         p = sp.expand(sp.sympify(conv(e).replace('^', '**')))
         (polys if e in maineq else held).append(p)
-    print(f"{name} c{kcls}: {len(polys)} main + {len(held)} held, {len(vs)} vars,"
-          f" protected {sorted(str(p) for p in protected)}", flush=True)
+    print(f"{name} c{kcls}: {len(polys)} main + {len(held)} non-zero-condition eqs,"
+          f" {len(vs)} vars", flush=True)
 
     units = set()
     for p in held:
@@ -85,7 +98,7 @@ def build_reduced(name, kcls, cap, budget):
         best = None
         for i, p in enumerate(polys):
             for x in sorted(p.free_symbols, key=str):
-                if x in protected or sp.Poly(p, x).degree() != 1:
+                if sp.Poly(p, x).degree() != 1:
                     continue
                 A = sp.expand(p.coeff(x, 1))
                 if not unit_coeff(A):
@@ -110,8 +123,9 @@ def build_reduced(name, kcls, cap, budget):
                 break
         if not best:
             break
+        # `held` decides only which coefficients count as units; it is deliberately
+        # NOT carried through the elimination -- see the docstring.
         _, i, x, polys, val = best
-        held = [sp.expand(sp.numer(sp.cancel(sp.together(h.subs(x, val))))) for h in held]
         log.append((str(x), str(val)))
         elim += 1
 
