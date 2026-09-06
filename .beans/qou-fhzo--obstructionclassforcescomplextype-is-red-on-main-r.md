@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T05:03:53Z
-updated_at: 2026-09-06T06:39:45Z
+updated_at: 2026-09-06T13:04:32Z
 ---
 
 ## 2026-09-06 — found by the FIXED sweep; two missing imports; verified
@@ -69,3 +69,33 @@ introduced no red. QOU closure 144 -> 145 on that churn (head-scoped, not drift)
 
 Real QOU olean tree identical on all 2660 by inode+size+mtime before/after.
 Pushed as 4ef23f7e2ef. Still waiting on merge permission.
+
+
+## 2026-09-06 ~13:0x UTC — re-verified on main +142 (62 .lean changes); #6827 has MERGED
+
+#6827 (qou-tpdg) merged: b44cc2e1081 / 3144214a1bb / 5ccaa32ed4b are on main, so the
+FIXED sweep is now main's own gate and no scratch copy is needed.
+
+STILL NEEDED after 142 commits: main's version of the file still imports only
+`Mathlib.Data.ZMod.Basic` (checked with git show origin/main:<file>), and no main
+commit touched it.
+
+Rebased to ca56f257fbd. Library sweep on that head, with the merged fixes:
+
+| library | result |
+|---|---|
+| Fred2005 | 2 ok, 0 RED, 82s |
+| QOU | **273 ok, 0 RED**, 557s |
+| UGB | 23 ok, 0 RED, 89s |
+
+`ok QOU.Eightfold.ObstructionClassForcesComplexType` — this fix clears the only RED,
+on the largest closure measured yet (273, up from 145/201/206 as the root-enumeration
+and max() fixes landed). All three library roots green.
+
+Real QOU olean tree IDENTICAL on all 2718 by inode+size+mtime, with NO concurrent
+lake build this time (status file empty) — so the invariant reads clean without
+needing the timestamp argument.
+
+BLOCKED ON: owner merge permission only. NOTE the github MCP server disconnected
+this turn, so this result could not be posted as a PR comment; it is recorded here
+instead. Post it to #6909 when the MCP tools are available again.
