@@ -188,3 +188,68 @@ Corollary 3.8 is the new item. It is what converts a sum indexed by tableaux dom
 into one indexed by tableaux dominating `t` — i.e. it is precisely the step that makes the
 strict-dominance induction close, and nothing in this corpus's chain-status ledger had
 identified it as an input. That is the next thing to read and then to state.
+
+---
+
+## 🟩 And reading one lemma further: dominance on tableaux **IS** the Bruhat order
+
+Corollary 3.8 was named above as the new open input. Reading it, and the Proposition it
+sits under, turns out to settle something much larger than 3.8 — and the source says it in
+so many words, immediately before stating it:
+
+> The partial order `⊵` on `S_n` is the ubiquitous **Bruhat–Chevalley order**. Perhaps
+> surprisingly, it **agrees with the dominance ordering on row standard λ-tableaux** (when
+> restricted to `D_λ`).
+>
+> **3.7 Proposition (Dipper–James).** Let λ be a composition of `n` and suppose that `s` and
+> `t` are row standard λ-tableaux. Then **`s ⊵ t` if and only if `d(s) ⊵ d(t)`.**
+
+`d` is a **bijection** from λ-tableaux to permutations (`TableauPerm.equivPerm`, proved).
+So `DominanceWellFounded.domGtOn` and the Bruhat order on `Perm (Fin n)` are **the same
+order, transported along `dOf`** — not two orders that happen to co-operate.
+
+### What that changes
+
+1. **The inner axis is Bruhat.** The resolution above showed `domGtOn` matches Mathas'
+   `▷`. 3.7 says more: that `▷` *is* Bruhat. `murphyLex` is therefore
+   **lex-on-shapes × Bruhat-on-permutations**, which is a far more standard object than
+   "lex × tabloid dominance" and comes with a literature.
+2. **`QOU/Machinery/CoxeterBruhat.lean` is on the critical path**, which was not known when
+   it was built. It was written on this arc as *"the subword order Mathlib has none of"*, with
+   four things deliberately left unproved: **transitivity, antisymmetry, the subword property,
+   and lifting**. Corollary 3.8's proof consumes exactly those — its first move is
+   > *"It follows from **Theorem 1.1.11** that there exist `r_x ∈ R` such that
+   > `T_{d(v)} T_w = Σ r_x T_x`, where the sum is over elements `x ∈ S_n` which have a reduced
+   > expression which is a **subexpression** of `d(v)w`; that is, `r_x ≠ 0` only if
+   > `x ⊵ d(v)w`."*
+   
+   Theorem 1.1.11 **is** the subword property. The `T`-basis expansion of a product is
+   supported on the Bruhat interval below the product — the same shape as this arc's already
+   proved `TwInverseBruhat.TwInv_mem_spanBruhatLe`, which was built for `T_w⁻¹` and is the
+   nearest thing the corpus has to it.
+3. **Two inequivalent definitions of Bruhat are now both in play, and neither is labelled.**
+   The source's is *reflection-generated with length increase* —
+   `w = v t₁⋯t_k` with `ℓ(v t₁⋯t_j) = ℓ(v) + j`. `CoxeterBruhat.BruhatLe` is the **subword**
+   definition. Their equivalence is a theorem (it is Theorem 1.1.11's neighbourhood), not a
+   definitional unfolding. A corpus that accretes both under one name repeats the `dOf`
+   defect this branch's parent PR spent a tranche fixing.
+
+### The next step is now a different one, and it is smaller
+
+Rather than attacking 3.12's algebra half (open, behind 3.9 at basis level), **prove
+Proposition 3.7**. It is self-contained combinatorics — the source's proof is eight lines,
+by induction on a transposition `(a,b)` chosen at the first row where `s` and `t` differ —
+and it needs no Hecke algebra at all. What it buys:
+
+* the inner axis of `murphyLex` becomes a **Bruhat** statement, so every Bruhat lemma proved
+  anywhere in the corpus applies to it;
+* it is the bridge Corollary 3.8's proof crosses, so 3.8 cannot be stated honestly without it;
+* it makes the sibling work on Bruhat antisymmetry and the deletion condition (**#6894**)
+  load-bearing for the Murphy arc rather than adjacent to it.
+
+**Scope note, so this is not over-read.** 3.7 is stated for a **composition** λ and for
+`d(s)`, `d(t)` in `D_λ`. This corpus's `TableauPerm.dOf` is defined on `YoungDiagram`-shaped
+(partition) tableaux, and the composition-indexed coset machinery lives separately in
+`CompositionCoset*`. Which of the two `d`'s 3.7 is about — and whether the corpus needs the
+composition form to use it — is **not settled here** and should be checked before the
+statement is written, exactly as the two-`dOf` collision would have been.
