@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T03:41:37Z
-updated_at: 2026-09-06T09:05:43Z
+updated_at: 2026-09-06T10:26:59Z
 ---
 
 ## 2026-09-06 — why three class-2 attempts produced no verdict, and the fourth is running
@@ -47,3 +47,29 @@ not restore it by construction — eliminated coordinates' denominators can stil
 vanish at a solution. No dimension/degree may be reported until
 `ptolemy_exact_character.py` round-trips a point against snappy's original
 equations. That gap is exactly what forced the class-1 retraction in #6815.
+
+## 2026-09-06 10:26 — the staircase route is CALIBRATED on a real corpus system
+
+`gb_staircase.py` reproduces **L6a4 class 1 = dim 0, degree 4** from the Groebner
+basis ALONE — no RUR, no parametrisation — matching the independently established
+result (over Q, round-tripped witness, #6815 as corrected). Five hand-checked toy
+ideals also pass. The tool can now be trusted on class 2.
+
+**Timing, and it is informative.** GB only, 1 thread: **286 s** (10:21:22 →
+10:26:08). Full RUR for the same class: 373 s. So for class 1 the Groebner basis is
+most of the cost and the FGLM change-of-order is cheap — unsurprising at degree 4,
+where the linear algebra is tiny.
+
+**That sharpens what a class-2 timeout would mean.** My stated rationale for the
+probe was that FGLM is 'routinely dominant' for a high-degree ideal. Class 1 does not
+exhibit that, because its degree is 4. So if the class-2 GB also times out, the cost
+is in the Groebner basis itself and no RUR budget helps; if the GB lands quickly, the
+degree is large and FGLM was indeed the wall. Either outcome is diagnostic — which is
+the property a blind longer run does not have.
+
+**The verdict remains ASYMMETRIC** (recorded in the tool's own output): the FKR
+reduction clears denominators via `numer(q.subs(x,-B/A))`, ADDING the locus {A=0},
+so genuine solutions inject into the reduced system but not conversely. EMPTY would
+be conclusive; NON-EMPTY is an upper bound only, and — the limitation I missed when
+launching — a Groebner basis supplies no POINT, so a non-empty GB-only verdict cannot
+be round-tripped at all without the RUR.
