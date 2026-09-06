@@ -5,10 +5,10 @@
   "description": "Source literals of >= 11 significant digits that also appear in a *.witness.json the script does not itself produce \u2014 a value copied instead of loaded. Such a copy goes stale silently when the producer is re-run.",
   "min_sig_digits": 11,
   "indexed_literals": 227161,
-  "total": 810,
+  "total": 809,
   "narrow_total": 277,
   "narrow_files": 182,
-  "shared_total": 533,
+  "shared_total": 532,
   "files": 524,
   "from_deprecated_witness": 20,
   "findings": [
@@ -174,7 +174,7 @@
         "computations/alpha-k-per-force-assembly.witness.json",
         "computations/alpha/alpha_em_form_comparison_probe.witness.json"
       ],
-      "witness_count": 8,
+      "witness_count": 9,
       "deprecated_source": false
     },
     {
@@ -447,7 +447,7 @@
         "computations/alpha-k-per-force-assembly.witness.json",
         "computations/alpha/alpha_em_form_comparison_probe.witness.json"
       ],
-      "witness_count": 8,
+      "witness_count": 9,
       "deprecated_source": false
     },
     {
@@ -2468,7 +2468,7 @@
         "computations/alpha-k-per-force-assembly.witness.json",
         "computations/alpha/alpha_em_form_comparison_probe.witness.json"
       ],
-      "witness_count": 8,
+      "witness_count": 9,
       "deprecated_source": false
     },
     {
@@ -2961,7 +2961,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -3403,7 +3403,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -6193,7 +6193,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -6318,7 +6318,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -6536,7 +6536,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -6846,7 +6846,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -6966,7 +6966,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -7193,7 +7193,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -7276,7 +7276,7 @@
         "computations/alpha-k-per-force-assembly.witness.json",
         "computations/alpha/alpha_em_form_comparison_probe.witness.json"
       ],
-      "witness_count": 7,
+      "witness_count": 8,
       "deprecated_source": false
     },
     {
@@ -7411,7 +7411,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -7990,7 +7990,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8020,7 +8020,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8035,7 +8035,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8080,7 +8080,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8095,7 +8095,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8152,7 +8152,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8268,7 +8268,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8283,7 +8283,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8298,7 +8298,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8313,7 +8313,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8328,7 +8328,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8343,7 +8343,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8388,7 +8388,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8415,7 +8415,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8572,7 +8572,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8632,7 +8632,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8647,7 +8647,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8707,7 +8707,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8948,7 +8948,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -8963,7 +8963,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -9066,7 +9066,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -9138,7 +9138,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -9225,7 +9225,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -9255,7 +9255,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -9300,7 +9300,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -9330,7 +9330,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -9388,7 +9388,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -9418,7 +9418,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -9460,7 +9460,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -9593,7 +9593,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -9948,7 +9948,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -10008,7 +10008,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -10038,7 +10038,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -10068,7 +10068,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -10098,7 +10098,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -10155,7 +10155,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1384,
+      "witness_count": 1386,
       "deprecated_source": true
     },
     {
@@ -10460,22 +10460,7 @@
     },
     {
       "file": "computations/substrate/experimental_constants.py",
-      "line": 199,
-      "literal": "2.029883212819307",
-      "sig_digits": 16,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/branching-qvalues.witness.json",
-        "computations/_deprecated/deuterium-derived.witness.json",
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/codata-reconciliation.witness.json"
-      ],
-      "witness_count": 15,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/substrate/experimental_constants.py",
-      "line": 202,
+      "line": 217,
       "literal": "2.828122088330783",
       "sig_digits": 16,
       "spread": "SHARED",
@@ -10490,7 +10475,7 @@
     },
     {
       "file": "computations/substrate/experimental_constants.py",
-      "line": 265,
+      "line": 280,
       "literal": "4.400832516123046",
       "sig_digits": 16,
       "spread": "SHARED",
@@ -10505,7 +10490,7 @@
     },
     {
       "file": "computations/substrate/experimental_constants.py",
-      "line": 267,
+      "line": 282,
       "literal": "8.286316817806593",
       "sig_digits": 16,
       "spread": "SHARED",
@@ -10520,7 +10505,7 @@
     },
     {
       "file": "computations/substrate/experimental_constants.py",
-      "line": 271,
+      "line": 286,
       "literal": "4.749499981874439",
       "sig_digits": 16,
       "spread": "SHARED",
