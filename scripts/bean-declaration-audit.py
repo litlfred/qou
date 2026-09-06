@@ -178,6 +178,71 @@ def collect() -> tuple[dict[str, set[str]], dict[str, str]]:
     return cites, status
 
 
+def cross_check(idents: list[str], mods: set[str], fnidx: dict[str, str]) -> int:
+    """Separate "the constant is not there" from "the artifact is out of date".
+
+    The probe reports ABSENT when it imports a module and the constant is not in
+    the resulting environment. That has two very different causes, and the first
+    version of this tool conflated them:
+
+    * the declaration genuinely is not in the corpus (renamed, deleted, or never
+      written), or
+    * the declaration IS in the source but the module's **olean is stale**, so the
+      environment the probe saw predates it.
+
+    Conflating those is exactly the confusion `qou-pdgc` was opened for -- there, a
+    three-month-old olean reported three `def`s as AXIOMS and dropped five theorems
+    entirely, and `#print axioms` read against it was a statement about a cache.
+    An ABSENT verdict from a stale artifact carries no information about the corpus.
+
+    The freshness rule is imported from `lean_freshness`, the SAME module the axiom
+    guard and the cone rebuilder use. Not reimplemented: a freshness rule two tools
+    compute differently is the deadlock `qou-5v24` records, when the guard compared
+    COMMIT time while the rebuilder compared MTIME.
+    """
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import lean_freshness as lf
+    except Exception as exc:                                  # pragma: no cover
+        print(f"cross-check: cannot import lean_freshness ({exc}).")
+        print("  That is NOT a pass -- nothing was compared.")
+        return 2
+
+    dirty = lf.dirty_paths()
+    current, stale, unresolved = [], [], []
+    for ident in sorted(idents):
+        owner = fnidx.get(ident) or owning_module(ident, mods)
+        if owner is None:
+            unresolved.append(ident)
+            continue
+        rel = owner[len("QOU."):].replace(".", "/")
+        src = SRC / (rel + ".lean")
+        olean = BUILD / (rel + ".olean")
+        if not olean.exists():
+            stale.append((ident, owner, "olean MISSING"))
+        elif not lf.olean_is_current(src, olean, dirty, conservative=False):
+            stale.append((ident, owner, "olean STALE"))
+        else:
+            current.append((ident, owner))
+
+    print(f"cross-checked {len(idents)} ABSENT identifier(s) against olean freshness\n")
+    print(f"  ARTIFACT CURRENT ({len(current)}) -- the module is up to date, so the")
+    print("    constant really is not in the corpus under that name:")
+    for ident, owner in current:
+        print(f"      {ident}\n        (module {owner})")
+    print()
+    print(f"  ARTIFACT STALE/MISSING ({len(stale)}) -- ABSENT says nothing here. The")
+    print("    probe read an environment older than the source. Rebuild, then re-probe:")
+    for ident, owner, why in stale:
+        print(f"      {ident}\n        (module {owner}: {why})")
+    if unresolved:
+        print()
+        print(f"  NO OWNING MODULE ({len(unresolved)}) -- never probed against anything:")
+        for ident in unresolved:
+            print(f"      {ident}")
+    return 0
+
+
 def classify_absent(idents: list[str], mods: set[str]) -> int:
     """Split unresolved identifiers into the three things they actually are.
 
@@ -234,6 +299,12 @@ def main() -> int:
                          "and degrades per-module instead of all-or-nothing")
     ap.add_argument("--report", type=Path, help="read the probe's output and report")
     ap.add_argument("--limit", type=int, default=0, help="cap identifiers probed")
+    ap.add_argument("--cross-check", type=Path, metavar="PROBE_OUT",
+                    help="for each ABSENT identifier, say whether its owning "
+                         "module's olean is CURRENT (so the constant really is not "
+                         "there) or STALE/MISSING (so the ABSENT verdict is about "
+                         "the artifact, not the corpus). Closes the limitation the "
+                         "first version shipped with")
     ap.add_argument("--classify-absent", type=Path, metavar="PROBE_OUT",
                     help="read a probe output and split its ABSENT lines into "
                          "rename-drift vs planned-work. Takes the PROBE OUTPUT, not "
@@ -318,6 +389,12 @@ def main() -> int:
             (args.emit_dir / (owner + ".lean")).write_text("\n".join(lines) + "\n")
         print(f"wrote {len(by_mod)} probe file(s) to {args.emit_dir}")
         return 0
+
+    if args.cross_check:
+        absent = [ln.strip().split("info: ")[-1][len("ABSENT "):].strip()
+                  for ln in args.cross_check.read_text(errors="replace").splitlines()
+                  if ln.strip().split("info: ")[-1].startswith("ABSENT ")]
+        return cross_check(sorted(set(absent)), mods, fnidx)
 
     if args.classify_absent:
         absent = [ln.strip().split("info: ")[-1][len("ABSENT "):].strip()

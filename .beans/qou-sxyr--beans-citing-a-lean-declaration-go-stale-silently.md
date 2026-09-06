@@ -169,3 +169,36 @@ because the artifact is stale", and conflating those is the exact confusion
 
 Current: **184 probed, 41 CLEAN, 35 REVIEW, 0 SORRY, 29 ABSENT, 79 DEF; 34
 candidate-stale beans.** Raw output in `docs/audits/`.
+
+## Standing limitation closed: ABSENT cross-checked against olean freshness
+
+The previous pass shipped with a stated gap — the tool could not tell *"the
+constant is not in the corpus"* from *"the constant is not in the artifact because
+the artifact is stale"*. `--cross-check` closes it, and the result changes the
+finding again:
+
+| of 29 ABSENT | n | meaning |
+|---|---|---|
+| **artifact CURRENT** | **8** | the module is up to date, so the name really is not there |
+| artifact STALE/MISSING | **21** | ABSENT says nothing — the probe read an environment older than the source |
+
+**So the trustworthy count is 8, not 29, and not the 44 I first reported.** Three
+successive corrections, each shrinking the claim: 44 → 29 (resolver fixes) → 8
+(freshness cross-check).
+
+The validation worth recording: `Archimedean.WeierstrassProjection.weierstrassProjection`
+is the case I identified *by hand* last pass as the limitation — it exists in
+source as an `opaque` yet probed ABSENT. The cross-check now files it under
+STALE automatically, which is the right answer for the right reason.
+
+The freshness rule is **imported from `lean_freshness`**, the same module the
+axiom guard and the cone rebuilder use, not reimplemented. A freshness rule two
+tools compute differently is the deadlock `qou-5v24` records, and this session
+already reverted one batched reimplementation for disagreeing on 1 of 40 samples.
+
+Incidental: `QOU.HeckeAlgebra.MarkovTrace` is in the stale bucket — the module
+rebuilt this morning under `qou-1knw`. `main` moved underneath it within hours.
+That is the churn rate the standing bean `qou-8jjo` exists to live with, measured
+rather than assumed.
+
+Raw output: `docs/audits/2026-09-06-bean-audit-cross-check.txt`.

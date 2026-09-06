@@ -934,6 +934,15 @@ durable cross-container preservation lives on **orphan branches**
 `.lake/` (ephemeral) or `../mathlib4` (parent-tree, often persists but not
 guaranteed).
 
+> **🛑 CORRECTED 2026-09-06 — the live restore is `scripts/lean-cache-restore.sh`,
+> and neither script named below exists.** `setup-lean-toolchain.sh:251` sets
+> `FETCH_SCRIPT="$REPO_ROOT/scripts/lean-cache-restore.sh"`; the string
+> `lake-cache-fetch` appears nowhere in it, and `ls scripts/lake-cache-fetch.sh`
+> and `scripts/lake-cache-fetch-multi.py` both fail. The restore does happen on
+> SessionStart — under a different name than this section gives. Use
+> `scripts/lean-cache-restore.sh`. The two paths below are kept as design
+> record; **do not try to run them.**
+>
 > **Two restore paths now wired end-to-end.** Pick the one that
 > matches the branch format:
 >
@@ -962,7 +971,17 @@ guaranteed).
 > end-to-end on Qq: 13 oleans round-tripped through the produce →
 > push → fetch → restore → regen cycle.
 >
-> **SEED — `scripts/lake-cache-produce.py` (PR #1957).** Writes a
+> **🛑 `scripts/lake-cache-produce.py` DOES NOT EXIST in the tree (checked
+> 2026-09-06).** Everything in this block describes a script that is not there:
+> `ls scripts/lake-cache-produce.py` fails, and so does every command below it.
+> The per-package cutover it describes has not happened; the live seeder is
+> `scripts/lean-olean-cache-seed.sh` (monolithic chunked-tgz), documented at
+> §PRESERVE THE BUILD. Kept rather than deleted because the design is the one a
+> future cutover would follow — but do not try to run it. Likewise
+> `lake-cache-fetch-multi.py` and `lake-cache-fetch.sh`: verify a script exists
+> before building a plan on it.
+>
+> **SEED (ABSENT — see above) — `scripts/lake-cache-produce.py` (PR #1957).** Writes a
 > separate orphan branch per package (`lake-cache/<pkg>-v4-24-0`)
 > with per-file `.olean.xz` blobs + a `cache-index.json` master-index:
 >
@@ -1017,20 +1036,32 @@ working tree files would be overwritten" on switch-back; Copilot #1857).
 > `Mathlib/Tactic`, `Mathlib/Data/Real/Basic`, and `QOU/MassTheory/AtomWordShadow`.
 > Rehearsed first on `lake-cache/qou-v4-24-0-test`, which is kept as the record.
 >
-> **How to reproduce it, because the documented path does not work.**
-> `lean-olean-cache-seed.sh` takes mathlib only from `$BUILT_FILE`
-> (`/tmp/parbuild_built.txt`) and **nothing in this repo writes that file** — its
-> own comment records the producer/consumer mismatch (PR #4705), and that, not a
-> missing build, is what makes it refuse with `n_ml=0`. Reconstruct it from the
-> build log, then seed:
+> **How to reproduce it:**
 >
 > ```bash
 > lake build QOU UGB Fred2005                                  # traced tree
-> grep -oE 'Built Mathlib[A-Za-z0-9_.]*' build.log | sed 's/^Built //' \
->   | sort -u > /tmp/parbuild_built.txt                         # 3471 modules
 > SEED_PAPER=1 CACHE_BRANCH=lake-cache/qou-v4-24-0 \
 >   scripts/lean-olean-cache-seed.sh --push
 > ```
+>
+> **🛑 CORRECTION to what this note said on 2026-09-06.** It claimed *"the
+> documented path does not work — nothing in this repo writes `$BUILT_FILE`"*,
+> and told you to reconstruct that file from the build log. **That was wrong,
+> and it was wrong because I quoted a stale comment instead of reading the
+> code.** `build-missing-mathlib-oleans.sh` does write it: `: > "$BUILT_FILE"`
+> at line 53, `echo "$mod" >> "$BUILT_FILE"` at line 70. The PR #4705
+> producer/consumer mismatch is fixed; only the seeder's comment about it is
+> stale.
+>
+> What was genuinely missing is narrower: that producer compiles with `lean -o`,
+> which writes **no `.trace`**, so the `$BUILT_FILE` it produces lists modules
+> whose oleans fail the 90 % trace guard — correctly, since Lake would rebuild
+> and evict them on restore. Nothing wrote a `$BUILT_FILE` from a **traced**
+> build. The seeder now derives one itself from paired `.olean`/`.trace` files
+> when the file is absent, so a plain `lake build` is all you need and the
+> manual reconstruction above is retired. Deriving from the trace side makes the
+> guard pass by construction; it also found **3472** modules where the
+> log-scrape found 3471, because Lake had cached one rather than rebuilding it.
 >
 > **Do NOT reach for `SEED_ALLOW_NO_MATHLIB=1`, and do not run `SEED_PAPER=1`
 > alone against the production branch.** `SEED_PAPER` adds
