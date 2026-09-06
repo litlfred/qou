@@ -1,0 +1,116 @@
+{
+  "computation": "qbeta-covariance-kernel-p3-special",
+  "assertions": [
+    {
+      "name": "two_independent_implementations_agree_on_p3",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "Murnaghan-Nakayama character sum vs the content/hook-length formula. No shared code. Disagreement here would invalidate every number below"
+    },
+    {
+      "name": "every_odd_class_sums_to_zero",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "lam <-> lam' pairs terms with opposite sign since chi^{lam'}(mu) = sgn(mu) chi^lam(mu) and f^{lam'} = f^lam"
+    },
+    {
+      "name": "plancherel_expectation_of_content_square_sum_is_binom_k_2",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "E_Planch[sum c^2] = C(k,2) exactly, so the conjecture is about the BIAS and not the centring"
+    },
+    {
+      "name": "p3_is_negative_throughout",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "consistent with the conjecture; evidence, not proof"
+    },
+    {
+      "name": "p5_changes_sign_so_the_generalisation_is_false",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "S_5 flips sign at least twice over 5 <= k <= 14, so 'S_p <= 0 for odd p' is FALSE and any proof of T_3 <= 0 must use something specific to p = 3"
+    },
+    {
+      "name": "p7_also_changes_sign",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "p=7 is negative through k=11 then positive at k=12"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "epic": "qou-x631",
+    "claim": "p=3 is special; S_p <= 0 for odd p is FALSE",
+    "arithmetic": "exact integers; no float64 anywhere"
+  },
+  "data": {
+    "S_p_by_k": {
+      "3": {
+        "3": "-2"
+      },
+      "4": {
+        "3": "-2"
+      },
+      "5": {
+        "3": "-16",
+        "5": "6"
+      },
+      "6": {
+        "3": "-260",
+        "5": "96"
+      },
+      "7": {
+        "3": "-2336",
+        "5": "172",
+        "7": "-20"
+      },
+      "8": {
+        "3": "-28792",
+        "5": "-840",
+        "7": "-706"
+      },
+      "9": {
+        "3": "-632972",
+        "5": "17644",
+        "7": "-17960"
+      },
+      "10": {
+        "3": "-19676288",
+        "5": "1210868",
+        "7": "-369492"
+      },
+      "11": {
+        "3": "-536156728",
+        "5": "16502880",
+        "7": "-1214912"
+      },
+      "12": {
+        "3": "-15073599368",
+        "5": "-64702464",
+        "7": "58661128"
+      },
+      "13": {
+        "3": "-506810488304",
+        "5": "-8487804992",
+        "7": "1530575136"
+      },
+      "14": {
+        "3": "-22172234503696",
+        "5": "-145474966848",
+        "7": "1328827904"
+      }
+    }
+  },
+  "provenance": {
+    "headSha": "5c3aeb9a57171b490057aaeed0ea23abb12f9202",
+    "producer": "computations/qbeta/qbeta_covariance_kernel_p3_special_probe.py",
+    "elapsed_s": 0.043
+  }
+}
