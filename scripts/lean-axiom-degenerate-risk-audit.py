@@ -149,7 +149,116 @@ def score(decl: str):
         s += 2; reasons.append("no-positivity/rank/nondegeneracy-guard")
     if re.search(r"∀|\{[^}]*:\s*Type", flat) and "Empty" not in flat:
         s += 1; reasons.append("universally-quantified-over-an-index-type")
+    oq_s, oq_r = overquantification_signals(decl)
+    s += oq_s; reasons.extend(oq_r)
     return s, reasons
+
+
+# --- Over-quantification: the root cause shared by all eleven known-false axioms ---
+#
+# Worked against the five documented incidents, TWO crisp rules are needed and they
+# are disjoint -- 4/5 and 1/5. Do not collapse them into one; a single rule that
+# "covers" all five would only do so by being vague enough to fire on everything.
+#
+#   rule A  the conclusion RELATES two binders that no hypothesis mentions together
+#           -> B1 (`3 <= n` for a quantified n), Schrijver x2 (no hypotheses at all),
+#              dressed-mass (F and M_N never tied), macroscopic x2 (psi and zeta
+#              independent, joined only by the concluded iff)
+#   rule B  the conclusion asserts `X = Y` while the hypotheses supply only
+#           `f X = f Y` -- concluding the first from the second needs f injective,
+#           which nothing asserts
+#           -> the SDP five (`objAt Phi' = objAt sc.Phistar |- Phi' = sc.Phistar`)
+#
+# MEASURED on the live corpus after the SDP five were deleted: rule A fires on 38 of
+# 137 (28 %), rule B on ZERO. So neither improves the live queue -- A is too broad to
+# act on, B finds the shape genuinely absent elsewhere. A clean zero from a rule whose
+# self-test proves it CAN fire is a result; a zero from an untested rule would not be,
+# which is why the SDP five are reconstructed from git as fixtures rather than assumed.
+#
+# Reported this way rather than dropped: the flagged count stays 22, and rule A rides
+# along as context on entries a primary signal already flagged.
+
+BINDER_RE = re.compile(r"[({\[]\s*([^:()\[\]{}]+?)\s*:\s*([^()\[\]{}]*(?:\([^()]*\)[^()\[\]{}]*)*)\s*[)}\]]")
+RELATIONAL = re.compile(r"(=|↔|≤|<|≥|>|∈|∉|≠)")
+
+
+def _split_binders(decl: str):
+    """Return (data_binders, hypothesis_binder_types, conclusion)."""
+    body = decl.split("\n", 1)[1] if "\n" in decl else decl
+    concl = ""
+    for ln in reversed(body.split("\n")):
+        if ln.strip():
+            concl = ln.strip().rstrip(",")
+            break
+    # A binder whose TYPE is relational is a hypothesis; otherwise it names data.
+    binders = [(names, ty) for names, ty in BINDER_RE.findall(body)
+               if names.strip() and ty.strip()]
+    data = [(n, ty) for names, ty in binders
+            if not RELATIONAL.search(ty) for n in names.split()]
+    hyps = [ty for _, ty in binders if RELATIONAL.search(ty)]
+    return data, hyps, concl
+
+
+def _mentions(text: str, name: str) -> bool:
+    return re.search(r"(?<![A-Za-z0-9_'])" + re.escape(name) + r"(?![A-Za-z0-9_'])", text) is not None
+
+
+def overquantification_signals(decl: str):
+    """Return (extra_score, reasons) for the two over-quantification rules."""
+    data, hyps, concl = _split_binders(decl)
+    reasons = []
+    extra = 0
+
+    # rule A -- the conclusion relates binders nothing ties together
+    in_concl = [n for n, _ in data if _mentions(concl, n)]
+    if len(in_concl) >= 2:
+        tied = any(sum(1 for n in in_concl if _mentions(h, n)) >= 2 for h in hyps)
+        if not tied:
+            # WEIGHT 0 ON PURPOSE -- annotation, not evidence. MEASURED on the live
+            # corpus: this fires on 38 of 137 axioms (28 %), because "the conclusion
+            # relates binders nothing else ties" is a description of what an axiom is
+            # FOR. `QCasimir_comm_E_axiom` says the Casimir commutes with E: two
+            # structurally connected objects, no hypothesis tying them, and the axiom
+            # IS the tie. Scoring it +3 took the flagged list 22 -> 48, over a third
+            # of the corpus, which is not triage.
+            #
+            # It stays because it is the signal that separates the four historical
+            # incidents (a free ℕ under an inequality, an ℝ forced by an unrelated
+            # factor, an iff between properties of independent objects) from the
+            # SDP shape -- but it is only meaningful ALONGSIDE a primary signal.
+            reasons.append("overquantified:conclusion-relates-binders-no-hypothesis-ties (weight 0 -- fires on 28 % of axioms; read only with a primary signal)")
+
+    # rule B -- concludes X = Y from f X = f Y, with no injectivity anywhere
+    m = re.match(r"^(.+?)\s*=\s*(.+?)$", concl)
+    if m and "Injective" not in decl and "injective" not in decl:
+        lhs, rhs = m.group(1).strip(), m.group(2).strip()
+        for h in hyps:
+            hm = re.match(r"^(.+?)\s*=\s*(.+?)$", h.strip())
+            if not hm:
+                continue
+            hl, hr = hm.group(1), hm.group(2)
+            # both sides of the conclusion occur INSIDE the hypothesis's sides,
+            # i.e. under some application -- and the hypothesis is not the
+            # conclusion itself.
+            if (lhs in hl and rhs in hr and h.strip() != concl
+                    and (hl.strip() != lhs or hr.strip() != rhs)):
+                extra += 3
+                reasons.append("overquantified:concludes-X=Y-from-fX=fY-without-injectivity")
+                break
+    return extra, reasons
+
+
+# Verbatim axiom texts from the four prior post-mortems, used as self-test fixtures.
+# Their axioms are deleted, so they cannot be recovered from git like the SDP five.
+OVERQUANT_FIXTURES = [
+    ("b1_hyperbolic_rows", """axiom b1_hyperbolic_rows
+    (n_hyperbolic_rows_verified : ℕ)
+    (bloch_suslin van_der_veen : Prop) :
+    bloch_suslin → van_der_veen → 3 ≤ n_hyperbolic_rows_verified"""),
+    ("dressed_mass_split_substrate_closed_form", """axiom dressed_mass_split_substrate_closed_form
+    (F : FlavorDressingFunctor) (M_N q : ℝ) (_hM : 0 < M_N) (_hq : 1 < q) :
+    F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q"""),
+]
 
 
 KNOWN_FALSE = [
@@ -183,6 +292,17 @@ def selftest(rev: str) -> bool:
         if sc < THRESHOLD:
             ok = False
         print(f"  {mark} {name:<46} score={sc}  {','.join(reasons)}", file=sys.stderr)
+
+    print("  -- over-quantification fixtures (axioms deleted; text from their"
+          " post-mortems) --", file=sys.stderr)
+    for name, text in OVERQUANT_FIXTURES:
+        _, reasons = overquantification_signals(text)
+        fired = [r for r in reasons if r.startswith("overquantified:")]
+        if not fired:
+            print(f"  FAIL {name:<46} no over-quantification signal fired", file=sys.stderr)
+            ok = False
+        else:
+            print(f"  ok  {name:<46} {','.join(fired)}", file=sys.stderr)
     return ok
 
 
