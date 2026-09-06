@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T11:48:55Z
-updated_at: 2026-09-05T22:13:44Z
+updated_at: 2026-09-06T07:53:12Z
 ---
 
 ## 2026-09-05 — measured, fixed, verified. PR #6827
@@ -141,3 +141,32 @@ is the evidence that comment never had.
 **Overlap settled:** main carries their LIB generalisation (#6830) plus 14
 content-block and 1 UGB fix; I have merged the LIB half and nothing further
 conflicts. They are explicitly NOT merging #6827 — it is mine to land.
+
+
+## 2026-09-06 — full content sweep run to completion: 938 swept, 8 RED, 0 corpus defects
+
+Retires the 'Not claimed' line in #6827's body. Three separate results:
+
+1. **Scope**: the sweep is **938** files, not 261. AGENTS.md carried the
+   pre-coverage-fix population (the `import QOU` filter reaches 262 of 938).
+   Corrected; the sibling's script header already recorded the fix.
+2. **All 8 REDs are a CACHE GAP, not corpus defects.** Exactly 4 of the 252
+   distinct Mathlib modules the content corpus imports are absent from the
+   restored cache (FiberBundle.Basic, HopfAlgebra.Basic, UpperHalfPlane.Basic,
+   Real.Pi.Bounds); those 4 account for all 8. Absent from BOTH olean trees, and
+   reproducible with no shadow and no sweep on a plain restored cache. So:
+   930/938 verifiable and green, 8 unverifiable here.
+3. **The real olean tree moved 2660 -> 2713 mid-sweep and NEITHER SWEEP DID IT.**
+   scripts/lean-build-bg.sh, re-fired by this session's compaction, ran lake build
+   concurrently. Read naively the diff accuses this PR's own fix of write-through.
+   Methodology: quiesce the SessionStart build before trusting that invariant.
+
+BONUS: that background lake build **independently confirms #6909** from the
+canonical path — sole failure in 6459 modules, same six source positions — on a
+branch carrying no .lean change.
+
+Also corrected: this PR's body called an earlier '8 REDs' set 'artifacts of that
+experiment'. Given the cache gap (reproducible with no shadow), that attribution
+is unestablished and most likely wrong.
+
+Audit: docs/audits/2026-09-06-full-content-sweep-938-and-the-cache-gap.md

@@ -5029,10 +5029,57 @@ re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 > scripts/lean-library-sweep.py                   # library dirty closure
 > ```
 >
-> Whole corpus 2026-09-05: 261 content blocks and 74 dirty library modules,
-> **0 red**; library sweep 122 s, content sweep ~50 min (pass the changed files,
-> and `SHADOW=`/`--shadow` to reuse the ~2.3 GB shadow). Wired into
+> Whole corpus 2026-09-06: **938** content blocks and 74 dirty library modules;
+> library sweep 122 s, content sweep ~55 min (pass the changed files, and
+> `SHADOW=`/`--shadow` to reuse the ~2.3 GB shadow). Wired into
 > `/prepare-merge` §4 and `prepare-merge-auto` Phases 1 and 4.
+>
+> **This read "261 content blocks and 74 dirty library modules, 0 red" until
+> 2026-09-06, and BOTH halves misled.** The 261 was the pre-coverage-fix
+> population: the sweep once filtered on an `import QOU` line, which reaches
+> **262** of the **938** content-block `.lean` files — the other 675 import only
+> Mathlib, are compiled by nothing else in the repo, and carry the same
+> auto-implicit vacuity class the sweep exists to catch. The script's own header
+> records the fix and calls the old form what it was: *"a 28%-coverage sweep
+> reporting 0 red is the kind of green this whole bean is about."* Quote the
+> figure the script prints, not this line.
+>
+> **🛑 And "0 red" is not the current result — at full scope it is 8 RED, of which
+> ZERO are corpus defects.** All 8 are one class: a **missing Mathlib olean**,
+> named at the block's own `import` line. Exactly **4** of the **252** distinct
+> Mathlib modules the content corpus imports are absent from the restored
+> `lake-cache/qou-v4-24-0` — `Topology.FiberBundle.Basic`,
+> `RingTheory.HopfAlgebra.Basic`, `Analysis.Complex.UpperHalfPlane.Basic`,
+> `Analysis.Real.Pi.Bounds` — and those four account for all 8. Absent from the
+> **paper and root trees alike**, and reproducible with **no shadow and no sweep**
+> on a plain restored cache, so it is the cache branch, not the gate and not the
+> source. So read the corpus result as **930 of 938 verifiable and green, 8
+> unverifiable here**, and do NOT "fix" those blocks: their imports are fine, the
+> cache is short. Fix at the cache branch (reseed those four cones) or give the
+> gate an expected-RED list, so it distinguishes *cannot verify* from *fails*.
+>
+> **🛑 QUIESCE THE SESSIONSTART BUILD BEFORE TRUSTING THE SAFETY INVARIANT.** Both
+> sweeps assert that the hardlinked shadow never writes through into the real
+> olean tree, checked by snapshotting it before and after. Measured 2026-09-06 the
+> QOU tree went **2660 → 2713** across a content sweep — 53 new, 62 rewritten —
+> and **neither sweep did it**: `lean-shadow-verify.sh` writes only inside
+> `$SHADOW` and unlinks first, while `scripts/lean-build-bg.sh`, re-fired by this
+> session's *compaction*, ran `lake build` concurrently (status stamped mid-sweep,
+> `attempts: 5`) and every changed path is under `QOU/`, `QOU.olean` included.
+> Read naively that diff accuses the gate under review of the one thing that would
+> make it worse than the bug. A concurrent `lake build` is also the eviction
+> hazard documented above, so this is not merely a measurement nuisance.
+>
+> **A `lake build` log you did not commission may already hold the answer.**
+> `/tmp/qou-lake-build.log` is the background build's full output and it is kept
+> (only the `/tmp/qou-lean-build-bg.log` *timing report* discards the error
+> bodies it counts). On 2026-09-06 it independently confirmed #6909 from the
+> canonical path — `✖ [6459/6460] QOU.Eightfold.ObstructionClassForcesComplexType`
+> with the same six source positions, sole failure in 6459 modules — on a branch
+> carrying no `.lean` change. Read it before running any build of your own.
+>
+> Full measurement, both count coincidences, and what is NOT established:
+> [`docs/audits/2026-09-06-full-content-sweep-938-and-the-cache-gap.md`](docs/audits/2026-09-06-full-content-sweep-938-and-the-cache-gap.md).
 >
 > **Two limits — do not write either out of a PR.** The dirty closure is
 > computed against *this* container's olean tree, so a result is
