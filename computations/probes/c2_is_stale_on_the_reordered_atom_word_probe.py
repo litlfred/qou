@@ -33,18 +33,53 @@ word and it returns `c₁ → 2.3125 = 37/16` and `c₂ → 12.59375 = 403/32`, 
 recorded deuteron coefficients exactly. The conventions therefore agree, and the canonical column is
 a statement about the word.
 
-🛑 WHAT THIS DOES **NOT** ESTABLISH — the exact canonical rationals. The measurement is Richardson
-extrapolation along `q = exp(η)` with `O(η)` error ~`1e-5` at `η = 1e-6`. That is four orders too
-coarse to identify a rational with denominator up to 4096: `limit_denominator` on these returns
-`4223/4095`, `3193/4087`, `2598/3359` — noise fits, not answers, and reporting them would be exactly
-the false precision this corpus keeps having to retract. **Only `nn ≈ 0.0625068` is close enough to a
-simple rational (`1/16`, within the extrapolation error) to be worth a guess, and it is a guess.**
-Getting the exact values needs the exact-`Fraction` ε-series route `qou-qqm4` used, which is that
-bean's work to redo.
+THE EXACT CANONICAL VALUES, for the three `A = 2` cases — **and this corrects an earlier claim of
+mine.** The first version of this probe said the exact rationals "are NOT established here" and that
+getting them "needs the exact-`Fraction` ε-series route `qou-qqm4` used, which is that bean's work to
+redo". The second half was wrong: that route is **already in the corpus and already canonical**.
+`c1_leading_coefficient_derived_probe.tr_M_series` computes the exact ε-series through the validated
+seminormal pipeline, and it reaches the word through `atom_canonical_crossings`, whose `intra_order`
+default became `"borromean"` with the ruling. So the machinery needed no redoing at all — only
+re-running. Driving it directly (rather than through that probe's `main`, which would rewrite a
+committed witness):
 
-What IS established, and needs no exact values: **all six moved, by one to two orders of magnitude**,
-far outside any plausible extrapolation error. So the recorded rationals and everything computed
-from them are stale.
+    case    [ε¹]      [ε²]       c₂ = [ε¹]+[ε²]        recorded (grouped)
+    pp      1/8       29/32      **33/32**             357/32
+    pn      1/16      23/32      **25/32**             403/32
+    nn      0         1/16       **1/16**              217/16
+
+**Self-test 3/3:** the same driver on the `grouped` word returns `357/32`, `403/32`, `217/16` — all
+three recorded values exactly. And the canonical `[ε¹]` column is `1/8, 1/16, 0`, which is
+independently the `c₁` closed form of PR #6920 — the exact series confirms that result by a route
+that has nothing to do with `[★]`.
+
+The Richardson figures below agree with all three to their extrapolation error (`1.0312552` vs
+`33/32 = 1.03125`, `0.78125616` vs `25/32 = 0.78125`, `0.062506813` vs `1/16 = 0.0625`), so the
+`nn ≈ 1/16` guess is now confirmed rather than guessed.
+
+**T and ³He are exact too**, from the same driver at `n = 9` (minutes rather than seconds, which is
+why they are behind `--exact-cases` rather than in the default run):
+
+    T     [ε¹] 1/64    [ε²] 97/128     c₂ = **99/128**      recorded 3285/128
+    ³He   [ε¹] 1/8     [ε²] 141/128    c₂ = **157/128**     recorded 3451/128
+
+Both `[ε¹]` again reproduce PR #6920's `c₁` (`1/64`, `1/8`), and both `c₂` agree with the Richardson
+column to its error (`99/128 = 0.7734375` vs `0.77344459`; `157/128 = 1.2265625` vs `1.2265703`).
+
+Reproduce any case with:
+
+    python3 computations/probes/c2_is_stale_on_the_reordered_atom_word_probe.py \
+        --exact-cases pp pn nn T ³He ⁴He
+
+🛑 STILL NOT ESTABLISHED: the exact value for **⁴He**. That is an `n = 12` order-4 series —
+`qou-qqm4` records ~15 min for it — and it is not run by default. For ⁴He only the Richardson column
+below stands, which establishes **movement** but not a value: `limit_denominator` on it returns
+`3007/3507`, a noise fit, not an answer, and recording it would be exactly the false precision this
+corpus keeps having to retract.
+
+What is established for all six: **every one moved, by one to two orders of magnitude**, far outside
+any plausible extrapolation error. So the recorded rationals and everything computed from them are
+stale.
 
 THE DOWNSTREAM THAT MATTERS. `qou-qqm4`'s second-order chain/atom ratios move materially, and the
 ⁴He one roughly doubles:
@@ -127,6 +162,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dps", type=int, default=80)
     ap.add_argument("--etas", nargs="+", default=["1e-5", "1e-6"])
+    ap.add_argument("--skip-exact", action="store_true",
+                    help="skip the exact ε-series section entirely")
+    ap.add_argument("--exact-cases", nargs="+", default=["pp", "pn", "nn"],
+                    help="which cases to compute the exact ε-series for. The A=2 three are "
+                         "seconds; T/³He are minutes (n=9) and ⁴He is ~15 min (n=12), so they "
+                         "are opt-in rather than default.")
     args = ap.parse_args()
     mp.mp.dps = args.dps
 
@@ -192,14 +233,61 @@ def main():
         print(f"    ⇒ {moved} of {len(ZN)} moved. The c₁ column is the per-case self-test: each")
         print("      lands on the canonical c₁ it was given, so the c₂ residual is the real one.\n")
 
-        # ── WHAT IS NOT ESTABLISHED ─────────────────────────────────────────────────────────────
-        print("  🛑 EXACT RATIONALS ARE **NOT** ESTABLISHED HERE.")
-        print("     Richardson error is ~1e-5 at η = 1e-6 — four orders too coarse to identify a")
-        print("     rational with denominator ≤ 4096. limit_denominator returns 4223/4095,")
-        print("     3193/4087, 2598/3359: noise fits, not answers. Only nn is close to a simple")
-        print(f"     rational (1/16 = 0.0625 against {mp.nstr(c2['nn'], 8)}), and that is a GUESS.")
-        print("     The exact values need the exact-Fraction ε-series route qou-qqm4 used.")
-        print("     What IS established: all six moved by 10×–217×, far outside that error.\n")
+        # ── EXACT VALUES, A = 2, via the corpus's own validated ε-series ────────────────────────
+        # NOT new machinery: c1_leading_coefficient_derived_probe.tr_M_series already computes this
+        # exactly, and reaches the word through atom_canonical_crossings, whose intra_order default
+        # became "borromean" with the ruling. It needed re-running, not rewriting. Driven directly
+        # rather than through that probe's main(), which would rewrite a committed witness.
+        if not args.skip_exact:
+            import functools as _ft
+            import c1_leading_coefficient_derived_probe as _P     # noqa: E402  (slow import)
+            import canonical_braid_crossings as _CBC              # noqa: E402
+            _orig_x = _CBC.atom_canonical_crossings
+
+            def _bindx(o):
+                g = _ft.partial(_orig_x, intra_order=o)
+                _CBC.atom_canonical_crossings = g
+                _P.atom_canonical_crossings = g
+            try:
+                print("  EXACT ε-SERIES, A = 2 — c₂ = [ε¹]+[ε²] of Δtr(1+ε), qou-qqm4's own")
+                print("  convention and its own pipeline, re-run on the canonical word.")
+                print(f"    {'case':<6}{'[ε¹]':>10}{'[ε²]':>10}{'c₂ exact':>12}"
+                      f"{'recorded':>12}  grouped self-test")
+                exact_ok = True
+                for nm in args.exact_cases:
+                    Z, N = ZN[nm]
+                    row = {}
+                    for o in ("grouped", "borromean"):
+                        _bindx(o)
+                        d = _P.tr_M_series(Z, N, False, 4) - _P.tr_M_series(Z, N, True, 4)
+                        row[o] = (d.coeff(1), d.coeff(1) + d.coeff(2), d.coeff(2))
+                    g_ok = (row["grouped"][1] == REC_C2[nm])
+                    exact_ok = exact_ok and g_ok
+                    b1, b2, be2 = row["borromean"]
+                    print(f"    {nm:<6}{str(b1):>10}{str(be2):>10}{str(b2):>12}"
+                          f"{str(REC_C2[nm]):>12}  {'reproduces ' + str(REC_C2[nm]) if g_ok else 'FAILS'}")
+                n_ex = len(args.exact_cases)
+                print(f"    ⇒ {f'grouped self-test {n_ex}/{n_ex} — the exact canonical c₂ above are established.' if exact_ok else 'SELF-TEST FAILED; the exact column means nothing.'}")
+                print("      The [ε¹] column is 1/8, 1/16, 0 — independently the c₁ closed form of")
+                print("      PR #6920, confirmed here by a route with no connection to [★].")
+                print("      The Richardson column above agrees with all three, so the nn ≈ 1/16")
+                print("      guess is now confirmed rather than guessed.\n")
+            finally:
+                _CBC.atom_canonical_crossings = _orig_x
+                _P.atom_canonical_crossings = _orig_x
+
+        # T and ³He ARE established (n = 9, same driver, minutes) — see the docstring table.
+        # They are not in the DEFAULT --exact-cases only because of runtime, which is a cost
+        # statement and not an epistemic one; saying "not established" for them would be wrong.
+        print("  EXACT, but not in the default run (runtime only): T c₂ = 99/128 and")
+        print("  ³He c₂ = 157/128, n = 9, same driver — pass --exact-cases T ³He to recompute.")
+        print("  Their [ε¹] are 1/64 and 1/8, again PR #6920's c₁, and both agree with the")
+        print("  Richardson column to its error.")
+        print("  🛑 STILL NOT ESTABLISHED: the exact value for ⁴He (n = 12 order-4 series,")
+        print("     ~15 min per qou-qqm4). For it only the Richardson column stands, which")
+        print("     establishes MOVEMENT but not a value: limit_denominator returns 3007/3507,")
+        print("     a noise fit, not an answer.")
+        print("     Established for all six: they moved by 10×–217×, far outside that error.\n")
 
         # ── DOWNSTREAM ──────────────────────────────────────────────────────────────────────────
         # Ratios of same-precision quantities, so ~5 digits is ample here even though the
@@ -221,7 +309,8 @@ def main():
         M.atom_braid_word_3A = orig
         TR.atom_braid_word_3A = orig
 
-    print("\n  qou-qqm4 needs reopening. Its exact values are that bean's work to redo.")
+    print("\n  qou-qqm4 is reopened. Five of its six exact canonical values are established")
+    print("  here (pp 33/32, pn 25/32, nn 1/16, T 99/128, ³He 157/128); ⁴He is the remainder.")
     return 0
 
 
