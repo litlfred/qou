@@ -5,7 +5,7 @@ status: completed
 type: bug
 priority: normal
 created_at: 2026-09-06T11:12:06Z
-updated_at: 2026-09-06T13:06:49Z
+updated_at: 2026-09-06T13:08:23Z
 ---
 
 ## The mechanism
@@ -476,3 +476,35 @@ never raised because it built its own word. A value-keyed selector (a
 grouped-era τ_p is recognisable, as `y_lambda_convention_c_fingerprint_audit`
 argues for conventions) is the thing that would find any remaining siblings.
 Not attempted here.
+
+## The selector this bean asks for now exists — PR #6960
+
+The closing section names the general lesson: a selector keyed on BREAKAGE
+finds the loud cases, and the ordering ruling's silent cases construct their
+own input. `computations/audits/self_built_braid_word_audit.py` keys on
+provenance instead — for every chi-kernel call site it resolves where the word
+argument came from.
+
+    62 call sites:  43 CANONICAL   3 SELF_BUILT   6 INHERITED   10 OTHER
+    3 MONOTONE_LITERAL
+
+A self-built word with a monotone literal generator sequence IS the grouped
+ordering, since the ruling's word is non-monotone by construction.
+
+**It finds nothing this bean did not already name, and that is the point.**
+The two distinct source files are `closed_form_tau_M` (this bean's subject)
+and `nucleon_h3_marshalling_divergence_probe` (which this bean already says
+needs the explicit grouped pin); the third is the generated qou-mass mirror of
+the first. So the useful output is the NEGATIVE: **there is no fourth silent
+case.** Previously unmeasured, and an unmeasured 'probably nothing else' is
+what let this class survive three sweeps.
+
+Does NOT touch `closed_form_tau_M` — the A/B/C cost decision stays open and
+uncollided.
+
+One caveat on the detector, recorded because it nearly cost the second file:
+its first version stopped at a RE-WRAPPING comprehension
+(`[(mpf(c), mpf(d), g) for c, d, g in chain]`), whose generator slot is the
+iteration variable, one hop short of the literals in `chain`. That reported
+5 SELF_BUILT / 2 flagged. Resolving through the re-wrap gives 3 / 3. Both
+halves of that mistake are pinned in `--selftest` (6/6).
