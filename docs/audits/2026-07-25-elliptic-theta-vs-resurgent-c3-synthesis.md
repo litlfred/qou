@@ -1,5 +1,17 @@
 # The elliptic-θ idea for `c₃` — refutation, redirect, and the resurgence-modularity synthesis (2026-07-25)
 
+> **⚠ CONVENTION-C CONDITIONAL — scope note added 2026-09-06 (bean `qou-h6o3`).**
+> This document's conclusions depend on the `c_k` precision ladder / `Q_β`, which
+> AGENTS.md records as **convention-C-frame throughout and NOT re-derived** under
+> the owner ruling of 2026-08-15 making convention D (`z = q³/(q²+1)`) canonical.
+> Treat every `c_k`-dependent statement below as **C-conditional** until the
+> ladder is re-derived (bean `qou-cds1`). The numbers here are correct *for C*
+> and are kept as recorded — they need **scoping, not correction**. This note was
+> applied mechanically to the 45 documents in this arc that reference the ladder;
+> it asserts dependence on the ladder, not that any particular conclusion changes
+> under D.
+
+
 **PR:** #4189. **Branch:** `claude/elliptic-r-theta-ck-2026-07-25`.
 **Origin:** owner intuition — `sinh/cosh` (bar-odd/bar-even) are not independent;
 the R-matrix / transfer matrix mixes them; perhaps a q-elliptic function for the

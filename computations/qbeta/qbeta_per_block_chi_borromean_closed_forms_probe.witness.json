@@ -1,9 +1,15 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T13:19:58.878286+00:00",
-  "commitSha": "8ddc62a1720716df03e7a4296d011ceb81881ddb",
+  "computedAt": "2026-09-06T13:22:54.766372+00:00",
+  "commitSha": "5033745b5f181350011b89c640ace8fe3eae7f2b",
   "assertions": [
+    {
+      "name": "independent_path_agrees_at_q0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
     {
       "name": "one_dim_blocks_unchanged",
       "computed": "1",
@@ -54,11 +60,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 332,
+  "durationMs": 21,
   "computation": "qbeta_per_block_chi_borromean_closed_forms_probe",
   "scriptFile": "qbeta_per_block_chi_borromean_closed_forms_probe.py",
-  "scriptHash": "923615b87618",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "779313938e60",
+  "scriptCommitSha": "8c071337f7991ca1cbaacbad4dac162812530f59",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

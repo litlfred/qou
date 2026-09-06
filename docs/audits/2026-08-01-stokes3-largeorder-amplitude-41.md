@@ -1,5 +1,17 @@
 # A_ω = 3: the resurgent large-order route — does the 4₁ κ-tower amplitude reproduce the GGM integer Stokes constant?
 
+> **⚠ CONVENTION-C CONDITIONAL — scope note added 2026-09-06 (bean `qou-h6o3`).**
+> This document's conclusions depend on the `c_k` precision ladder / `Q_β`, which
+> AGENTS.md records as **convention-C-frame throughout and NOT re-derived** under
+> the owner ruling of 2026-08-15 making convention D (`z = q³/(q²+1)`) canonical.
+> Treat every `c_k`-dependent statement below as **C-conditional** until the
+> ladder is re-derived (bean `qou-cds1`). The numbers here are correct *for C*
+> and are kept as recorded — they need **scoping, not correction**. This note was
+> applied mechanically to the 45 documents in this arc that reference the ladder;
+> it asserts dependence on the ladder, not that any particular conclusion changes
+> under D.
+
+
 **Date:** 2026-08-01 · **Bean:** `qou-fgte` (T4: Stokes-3 identification) ·
 **Branch:** `claude/stokes3-identification-aomega-2026-08-01` ·
 **Tier:** numerical (large-order asymptotics; exact-κ-validated low orders) ·

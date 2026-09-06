@@ -1,0 +1,68 @@
+{
+  "computation": "qbeta-covariance-kernel-scale",
+  "assertions": [
+    {
+      "name": "margin_is_negative_throughout",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "the conjecture itself, over the measured range"
+    },
+    {
+      "name": "ratio_is_bounded_away_from_zero_and_from_infinity",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "observed range [-0.28883, -0.22387] over k=10..42. Stable, oscillating, not drifting -- so the margin scales as k^{3/2}, NOT as k"
+    },
+    {
+      "name": "scale_k_is_ruled_out_the_ratio_to_k_grows",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "E_Q[Sigma_3]/k at k=12,24,42 is -0.786, -1.345, -1.857 -- it grows, so k is the wrong normalisation and k^{3/2} is the right one"
+    },
+    {
+      "name": "coincidence_recorded_not_asserted",
+      "computed": {
+        "mean_tail": -0.27727,
+        "sqrt3_over_2pi": 0.27566
+      },
+      "expected": "recorded only",
+      "passed": true,
+      "note": "NOT an assertion that the limit is sqrt(3)/(2 pi)"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "epic": "qou-x631",
+    "claim": "the margin scales as k^{3/2}, the CLT fluctuation scale, so concentration/limit-shape arguments cannot work",
+    "arithmetic": "exact Fractions; float only for display"
+  },
+  "data": {
+    "ratio_by_k": {
+      "10": -0.260694,
+      "12": -0.226787,
+      "14": -0.223866,
+      "16": -0.271719,
+      "18": -0.248373,
+      "20": -0.241107,
+      "22": -0.272385,
+      "24": -0.274512,
+      "26": -0.256941,
+      "28": -0.261039,
+      "30": -0.2802,
+      "32": -0.28288,
+      "34": -0.271435,
+      "36": -0.268108,
+      "38": -0.279024,
+      "40": -0.288834,
+      "42": -0.286611
+    }
+  },
+  "provenance": {
+    "headSha": "3fd7cea2f4c26fd58742fdd9f349a4924cdf8147",
+    "producer": "computations/qbeta/qbeta_covariance_kernel_scale_probe.py",
+    "elapsed_s": 4.182
+  }
+}

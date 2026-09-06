@@ -1,4 +1,4 @@
-*Let $W \in B_{3A}$ be the atomic braid of a nucleus $(Z, N)$. The mass functional decomposes as*
+*Let $W \in H_{3A}(q)$ be the atomic Hecke word of a nucleus $(Z, N)$. The mass functional decomposes as*
 
 $$
   \mathfrak{m}(W)

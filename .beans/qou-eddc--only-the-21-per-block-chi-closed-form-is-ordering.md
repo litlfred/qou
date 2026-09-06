@@ -158,3 +158,25 @@ arc has been careful not to do.
       flip its grouped arm, which records the historical agreement it guards
 
 Blocked on being able to build the Lean. Everything numeric it needs is done.
+
+### Cross-checked against a second implementation
+
+A sibling landed `docs/audits/2026-09-05-chi-caches-stale-to-the-intra-ordering-both-options.md`
+the same day: the six committed `chi-<atom>-h<n>-at-q0-50dps` caches are
+**grouped-era**, matching `~3e-50` for grouped against `~1.2–1.3` *relative* for
+borromean. Worth ruling out that this derivation read one.
+
+It cannot have — `q_character_on_braid_word` consults a cache only when
+`atom_cache_label` is passed, and it is not passed here — but that is an
+argument from a call site, so the probe now settles it by measurement instead.
+It re-derives all three characters at q₀ through `chi_all_lambda_any`, an
+unrelated implementation (transfer / window kernels over mpmath, no Hoefsmit
+matrices, no sympy):
+
+    λ           symbolic (Hoefsmit)     independent (kernels)   rel
+    (3)         -0.2603876417901208     -0.2603876417901208     9.2e-41
+    (2,1)       -0.09136297383786948    -0.09136297383786948    4.1e-41
+    (1,1,1)     -0.1715386437765995     -0.1715386437765995     1.2e-40
+
+9/9 assertions. The derived form is confirmed by a path that shares no code with
+the one that produced it.

@@ -1,5 +1,23 @@
 # `c₂` does not continue the cancellation — it is the order at which the expansion stops being one
 
+> **🛑 THE `c_k` BELOW ARE GROUPED-WORD VALUES — CORRECTED 2026-09-06 BY THEIR
+> OWN AUTHOR.** `7db032fb48` (owner ruling, bean `qou-hu1f`) made the Borromean
+> intra-nucleon ordering canonical, and these coefficients were computed on the
+> old default without pinning it. They move — `c₁(⁴He)` by a factor of **37**,
+> `259/128 → 7/128` — and `c₁(nn)` becomes **exactly 0**.
+>
+> **This document's CENTRAL FINDING DOES NOT SURVIVE.** Its headline is that the
+> ratio column is monotone through 1 (`0.465, 0.540, 0.597, 0.998, 1.006, 1.464`).
+> Under Borromean it is `0.817, 1.239, ∞, 4.905, 0.972` — not monotone, not
+> ordered by `A`, already past 1 at `A = 2`. The load-bearing evidence, two `A = 3`
+> cases *"agreeing to 0.8 %, so it is signal, not scatter"*, becomes `4.905` vs
+> `0.972` — a factor of 5 apart. The `A = 4` crossover specifically is **untested**
+> under Borromean (needs `P = 4`), so it is unsettled rather than disproved.
+>
+> Full table under both orderings, and what survives:
+> [`2026-09-06-the-c1-c2-crossover-is-grouped-specific.md`](2026-09-06-the-c1-c2-crossover-is-grouped-specific.md).
+> The `c₀` floor IS ordering-invariant, so everything resting on it is untouched.
+
 > **🛑 NAMING CORRECTION (added 2026-09-04).** The `c_k` in this document are
 > **NOT** the Q_β precision-ladder `c_k` that
 > [`ck-dk-canonical-registry.md` §2](../coordination/ck-dk-canonical-registry.md)
