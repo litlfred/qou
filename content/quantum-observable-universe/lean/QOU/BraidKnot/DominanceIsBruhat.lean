@@ -158,10 +158,11 @@ row-standard tableaux with `s ▷ t` strictly:
 | `a < b` | 142314/142314 | ok |
 | `v ▷ t` strictly | 142314/142314 | ok |
 | `d(v) ≤ d(t)` (subword Bruhat) | 142314/142314 | ok |
-| the raw swap is row standard | 129833/142314 | **91.2 %** |
-| `v` is one LEFT reflection step below `t` | 129833/142314 | **91.2 %** |
+| the raw swap is row standard | 129833/142314 | **91.2 %** — but see below |
+| `v` is one LEFT reflection step below `t` | 129833/142314 | **91.2 %** — likewise |
 | **`s ⊵ v`** | 112096/142314 | **78.8 %** |
 | some transposition does all of it | 142314/142314 | ok |
+| `d(rowsort(τ·t)) ≤ d(τ·t)`, over **every** τ | 2134710/2134710 | ok |
 
 **`s ⊵ v` is the substantive failure.**  The justification Mathas gives for it is
 `ℓ_t(a) ≥ ℓ_s(b)` — `a`'s row in `t` at or below `b`'s row in `s` — and that is the
@@ -175,10 +176,24 @@ and by probe:
     v = t(2,4) = ((1,2),(3),(4))
     v ▷ t  ✓   but   s ⊵ v  is FALSE — at i = 1, m = 3 the counts are s : 2, v : 3
 
-The two 91.2 % rows fail together and cost less: when the raw swap leaves a row unsorted,
-`v` is still the correct *tabloid* but is no longer `(a,b) · t` as a *tableau*, so the
-single-step route through `bruhatLe_of_leftReflLe_An` is unavailable for those pairs.  The
-relation `d(v) ≤ d(t)` holds throughout regardless.
+### The two 91.2 % rows **dissolve** — and the lemma that dissolves them is proved
+
+When the raw swap leaves a row unsorted, `v` is still the correct *tabloid* but is no
+longer `(a,b) · t` as a *tableau*, so the single-step route through
+`bruhatLe_of_leftReflLe_An` is unavailable there.  That looked like a second obstruction.
+It is not: `d(v)` is the **distinguished** (minimal-length) representative of the coset
+`S_λ · d((a,b)·t)`, so `ℓ` is additive across that factorisation and a reduced word for
+`d(v)` is a *prefix* of one for `d((a,b)·t)` — hence a subword.
+
+That is `CoxeterBruhat.bruhatLe_of_length_add`, **proved sorry-free** alongside this file,
+and the corpus's own unconditional Bourbaki lifting lemma
+`CoxeterReflectionCocycle.length_minRep_mul_wordProd'` supplies its hypothesis.  Measured
+first, over **every** transposition of every row-standard tableau rather than only the
+chosen one: **2 134 710/2 134 710** at `n = 6`.
+
+So the raw swap need not be row standard, and under the relaxed valid set that drops the
+requirement, **`s ⊵ v` is the ONE remaining failing clause** — Mathas' rule then scores
+exactly the `s ⊵ v` count, 112 096/142 314.
 
 ### This is a repair, not a refutation — and the difference is measured
 
@@ -196,14 +211,27 @@ write Lean against it.
 
 ### Rules already measured — do not re-try these
 
-Hits against the brute-force valid set at `n = 6`, out of 142 314: Mathas' own **102 404**
-(71.9 %), `lowrow` 95 044, `deep` 98 448, `a_bmin` 111 474, `bmax_a` **119 640** (84.1 %,
-best measured).  Both `b`-side repairs beat both `a`-side ones, which is the one structural
-hint the search produced: Mathas' `b` — least in row `r` of `t` but *not* in row `r` of `s` —
-is the wrong constraint, and the valid set repeatedly wants a `b` that **is** in row `r` of
-`s`, which his definition can never return.  A per-element "do not overshoot" criterion is
-ruled out: the valid set contains steps sending a label *below* the row `s` puts it in,
-because dominance is a global count comparison.
+Hits against the **relaxed** valid set at `n = 6`, out of 142 314 — seven rules, the last
+four written after the coset bound retired the row-standardness requirement:
+
+| rule | | |
+|---|---|---|
+| Mathas | 112 096 | 78.8 % (= the `s ⊵ v` count exactly) |
+| `lowrow` | 107 740 | 75.7 % |
+| `deep` | 109 684 | 77.1 % |
+| `a_bmin` | 113 374 | 79.7 % |
+| `minlift` | 118 814 | 83.5 % |
+| `lift1b` | 123 121 | 86.5 % |
+| **`bmax_a`** | **124 391** | **87.4 %** — best measured, still not a rule |
+
+Two structural hints, both negative.  **Mathas' `b` is the wrong constraint** — least in row
+`r` of `t` but *not* in row `r` of `s`, while the valid set repeatedly wants a `b` that
+**is** in row `r` of `s`, which his definition can never return; both `b`-side repairs beat
+both `a`-side ones.  And **a per-element "do not overshoot" criterion is ruled out in both
+directions**: `minlift` lifts the least misplaced label as high as it can go and overshoots,
+`lift1b` lifts it one row and undershoots, the valid set contains steps sending a label
+*below* the row `s` puts it in, and some pairs' only valid steps do not move the least
+misplaced label at all.  Dominance is a global count comparison, not a per-label one.
 
 Tracked as bean **`qou-f3mc`**.  What remains free and is not in doubt: swapping two labels
 **is** the group action (`TableauPerm.dOf_smul`, `dOf (Equiv.swap a b • t) = Equiv.swap a b *

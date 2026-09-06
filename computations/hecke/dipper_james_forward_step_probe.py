@@ -48,10 +48,18 @@ s |> v".  It is false on about a fifth of the pairs, and the reason is visible i
 inequality: `t >= s` says `a`'s row in `t` is at or below `b`'s row in `s`, so swapping
 sends `b` to a row at or below where `s` puts it -- which is the overshoot, not a bar to it.
 
-`raw_rowstd` / `one_step` fail together and less often: when the raw swap leaves a row
-unsorted, `v` as a tabloid is still correct but is no longer `(a,b) . t` as a tableau, so
-the single-transposition route to `d(v) |> d(t)` is unavailable for those pairs.  The
-relation `d(v) <= d(t)` itself still holds throughout.
+`raw_rowstd` / `one_step` fail together and less often, and they **DISSOLVE**: when the raw
+swap leaves a row unsorted, `v` as a tabloid is still correct but is no longer `(a,b) . t`
+as a tableau -- yet `d(v) <= d(t(a,b))` anyway, because `d(v)` is the distinguished
+(minimal-length) representative of the coset `S_lambda . d(t(a,b))`.  Measured over EVERY
+transposition of every row-standard tableau, not merely the chosen one: `coset_bound` is
+**2134710/2134710** at n = 6.  It is now proved in Lean, sorry-free, as
+`CoxeterBruhat.bruhatLe_of_length_add`, whose hypothesis the corpus's unconditional
+Bourbaki lifting lemma `length_minRep_mul_wordProd'` supplies.
+
+So the raw swap need not be row standard, and `valid_pairs_relaxed` drops that requirement.
+Under it, **`s |>= v` is the ONE remaining failing clause of Mathas' step** -- his rule
+scores exactly the `s_dom_v` count, 112096/142314.
 
 ## What this does NOT say
 
@@ -70,22 +78,30 @@ always exists -- 142314/142314 at `n = 6`.  So the STRATEGY is sound and only th
 RULE is wrong; what a Lean proof needs is a correct rule (or an existence lemma), not a
 different induction.
 
-Five candidate rules are measured against the brute-force valid set so the next attempt
-does not re-try them.  At `n = 6`, out of 142314 pairs:
+Seven candidate rules are measured against both valid sets so the next attempt does not
+re-try them.  At `n = 6`, out of 142314 pairs -- read the RELAXED column, since the strict
+one is scored against a requirement the coset bound retires:
 
-    Mathas     102404   71.9%
-    lowrow      95044   66.8%   worse
-    deep        98448   69.2%   worse
-    a_bmin     111474   78.3%   better
-    bmax_a     119640   84.1%   best measured, still not a rule
+    rule       strict    relaxed
+    Mathas     102404    112096   78.8%  = exactly the s_dom_v count
+    lowrow      95044    107740   75.7%
+    deep        98448    109684   77.1%
+    a_bmin     111474    113374   79.7%
+    minlift    117377    118814   83.5%
+    lift1b     121529    123121   86.5%
+    bmax_a     119640    124391   87.4%   best measured, still not a rule
 
-The two `b`-side repairs beat the two `a`-side ones, which is the one structural hint the
-search produced: Mathas' `b` -- least in row `r` of `t` but NOT in row `r` of `s` -- is the
-wrong constraint.  The brute-force valid set repeatedly wants a `b` that IS in row `r` of
-`s`, which Mathas' definition can never return.  No rule tried reaches 100%, and a
-per-element "do not overshoot" condition is provably not the criterion: dominance is a
-global count comparison, and the valid set contains steps that send a label BELOW the row
-`s` puts it in.
+Two structural hints the search produced, both negative:
+
+* Mathas' `b` -- least in row `r` of `t` but NOT in row `r` of `s` -- is the wrong
+  constraint.  The valid set repeatedly wants a `b` that IS in row `r` of `s`, which his
+  definition can never return.  Both `b`-side repairs beat both `a`-side ones.
+* A per-element "do not overshoot" condition is NOT the criterion, in either direction.
+  `minlift` lifts the least misplaced label as high as it can go and overshoots; `lift1b`
+  lifts it one row and undershoots; and the valid set contains steps that send a label BELOW
+  the row `s` puts it in, because dominance is a global count comparison rather than a
+  per-label one.  There are also pairs whose only valid steps do not move the least
+  misplaced label at all.
 """
 
 import pathlib
@@ -192,6 +208,34 @@ def valid_pairs(s, t, lam):
     return out
 
 
+def valid_pairs_relaxed(s, t, lam):
+    """The RELAXED valid set: the raw swap need not be row standard.
+
+    `v` is the row-standard representative of `t(a,b)`'s tabloid.  `d(v) <= d(t(a,b))`
+    holds by coset minimality -- `d(v)` is the distinguished (minimal-length) representative
+    of the coset `S_lambda . d(t(a,b))`, so `l` is additive across the factorisation and the
+    reduced word for `d(v)` is a prefix of one for `d(t(a,b))`.  That is
+    `CoxeterBruhat.bruhatLe_of_length_add`, proved sorry-free, whose hypothesis the corpus's
+    unconditional Bourbaki lifting lemma `length_minRep_mul_wordProd'` supplies.  Combined
+    with `d(t(a,b)) = (a,b) . d(t)` being one LEFT reflection step below `d(t)`, transitivity
+    gives `d(v) <= d(t)` with no row-standardness required of the raw swap.
+
+    The measurement that motivated this is `coset_bound` below: 2134710/2134710 at n = 6."""
+    n = sum(lam)
+    out = []
+    for a, b in combinations(range(1, n + 1), 2):
+        raw = swap_labels(t, a, b)
+        v = rowsort(raw)
+        if tabloid(v) == tabloid(t):
+            continue
+        if not (dominates(v, t, lam) and dominates(s, v, lam)):
+            continue
+        if not length(d_of(raw, lam)) < length(d_of(t, lam)):
+            continue
+        out.append((a, b))
+    return out
+
+
 # --------------------------------------------------------------- candidate rules
 
 def rule_mathas(s, t, lam):
@@ -240,8 +284,42 @@ def rule_a_bmin(s, t, lam):
     return (a, min(cand)) if cand else (a, a)
 
 
+def least_misplaced(s, t):
+    """The least label `t` puts in a DEEPER row than `s` does.  `None` iff the two agree."""
+    n = sum(len(row) for row in t)
+    for x in range(1, n + 1):
+        if row_of(t, x) > row_of(s, x):
+            return x
+    return None
+
+
+def rule_lift1b(s, t, lam):
+    """`x` = least misplaced label; `y` = least label above `x` exceeding it, scanning up
+    ROW BY ROW from `x`'s row and stopping at the first row that offers one."""
+    x = least_misplaced(s, t)
+    if x is None:
+        return 0, 0
+    for k in range(row_of(t, x) - 1, -1, -1):
+        cand = [z for z in t[k] if z > x]
+        if cand:
+            return x, min(cand)
+    return 0, 0
+
+
+def rule_minlift(s, t, lam):
+    """`x` = least misplaced label; `y` = least label greater than `x` ANYWHERE strictly
+    above `x`'s row.  Lifts `x` as far as it can go, which is why it overshoots."""
+    x = least_misplaced(s, t)
+    if x is None:
+        return 0, 0
+    k = row_of(t, x)
+    cand = [z for i in range(k) for z in t[i] if z > x]
+    return (x, min(cand)) if cand else (0, 0)
+
+
 RULES = {"Mathas": rule_mathas, "lowrow": rule_lowrow, "deep": rule_deep,
-         "bmax_a": rule_bmax_a, "a_bmin": rule_a_bmin}
+         "bmax_a": rule_bmax_a, "a_bmin": rule_a_bmin,
+         "lift1b": rule_lift1b, "minlift": rule_minlift}
 
 CLAUSES = ("a_lt_b", "v_dom_t", "bruhat_dv_dt", "raw_rowstd", "one_step", "s_dom_v")
 
@@ -250,7 +328,10 @@ def run(n, examples=0):
     below = bruhat_sub_set(n)
     tally = {k: [0, 0] for k in CLAUSES}
     tally["step_exists"] = [0, 0]
+    tally["step_exists_relaxed"] = [0, 0]
+    tally["coset_bound"] = [0, 0]
     rule_hits = {k: 0 for k in RULES}
+    rule_hits_relaxed = {k: 0 for k in RULES}
     shown = 0
 
     for lam in partitions(n):
@@ -281,9 +362,21 @@ def run(n, examples=0):
                 tally["step_exists"][1] += 1
                 tally["step_exists"][0] += bool(vp)
                 vps = set(vp)
+                vpr = set(valid_pairs_relaxed(s, t, lam))
+                tally["step_exists_relaxed"][1] += 1
+                tally["step_exists_relaxed"][0] += bool(vpr)
                 for k, f in RULES.items():
                     aa, bb = f(s, t, lam)
-                    rule_hits[k] += (aa != bb and (aa, bb) in vps)
+                    rule_hits[k] += (aa and aa != bb and (aa, bb) in vps)
+                    rule_hits_relaxed[k] += (aa and aa != bb and (aa, bb) in vpr)
+
+                # the coset-minimality bridge, over EVERY transposition, not just the
+                # chosen one: d(rowsort(raw)) <= d(raw) in the subword order
+                for a, b in combinations(range(1, n + 1), 2):
+                    raw = swap_labels(t, a, b)
+                    tally["coset_bound"][1] += 1
+                    tally["coset_bound"][0] += (
+                        d_of(rowsort(raw), lam) in below[d_of(raw, lam)])
 
                 if examples and shown < examples and not checks["s_dom_v"]:
                     print(f"    s_dom_v FAILS  lambda={lam}  s={s}  t={t}")
@@ -293,14 +386,16 @@ def run(n, examples=0):
                     shown += 1
 
     print(f"n = {n}")
-    for k in CLAUSES + ("step_exists",):
+    for k in CLAUSES + ("step_exists", "step_exists_relaxed", "coset_bound"):
         good, tot = tally[k]
         pct = f"{100.0 * good / tot:.1f}%" if tot else "-"
         print(f"    {k:14s} {good:7d}/{tot:<7d} {pct:>6s}  "
               f"{'ok' if good == tot else '**FAILS**'}")
-    print("    selection rules vs the brute-force valid set:")
+    tot = tally["step_exists"][1]
+    print("    selection rules vs the brute-force valid set (strict | relaxed):")
     for k in RULES:
-        print(f"        {k:8s} {rule_hits[k]:7d}/{tally['step_exists'][1]:<7d}")
+        print(f"        {k:8s} {rule_hits[k]:7d}/{tot:<7d}   "
+              f"{rule_hits_relaxed[k]:7d}/{tot:<7d}")
     return tally
 
 
@@ -320,17 +415,19 @@ if __name__ == "__main__":
     else:
         print("    clauses that FAIL: " + ", ".join(bad))
         print()
-        print("    `s_dom_v` is the substantive one: Mathas' (a,b) sends `b` PAST the row")
-        print("    `s` puts it in, so the step overshoots and the induction hypothesis")
-        print("    `s |>= v` is unavailable.  `raw_rowstd` / `one_step` fail together and")
-        print("    only cost the single-transposition route to `d(v) |> d(t)`; the relation")
-        print("    `d(v) <= d(t)` holds throughout.")
+        print("    `s_dom_v` is the ONLY one that survives.  Mathas' (a,b) sends `b` PAST")
+        print("    the row `s` puts it in, so the step overshoots and the induction")
+        print("    hypothesis `s |>= v` is unavailable.")
+        print()
+        print("    `raw_rowstd` / `one_step` DISSOLVE: `coset_bound` above is 100%, so the")
+        print("    raw swap need not be row standard -- the sorted representative sits below")
+        print("    the raw one in Bruhat (proved, `CoxeterBruhat.bruhatLe_of_length_add`).")
+        print("    Under the relaxed valid set, Mathas scores exactly the s_dom_v count.")
         print()
         print("    `step_exists` is the reason this is a repair and not a refutation: a")
         print("    transposition meeting every one of Mathas' conditions ALWAYS exists.")
-        print("    The strategy is sound; the selection rule is not.  The five rules")
-        print("    measured above are the ones already tried.  The two b-side repairs")
-        print("    beat Mathas' own; the two a-side ones are worse.  None reaches 100%.")
+        print("    The strategy is sound; the selection rule is not.  Seven rules are")
+        print("    measured above; the best reaches 87.4% and none reaches 100%.")
         print()
         print("    3.7 itself is NOT in doubt: the sibling probe measures the statement")
         print("    true in both directions, 708062/708062, on this same range.")
