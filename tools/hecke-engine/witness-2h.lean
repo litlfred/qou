@@ -2,7 +2,7 @@
     Computed by hecke-engine 0.8.0, 0ms.
     F_Pauli(q₀) = 1.0050003581
     Denominator: 2^1. -/
--- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+-- Ref: [manuscript] appendix-mass-binding-algorithms (F_Pauli / Markov-trace witnesses)
 noncomputable def tr_alt_2h : LaurentPolynomial ℤ :=
   -LaurentPolynomial.T -2 + LaurentPolynomial.T 1 - LaurentPolynomial.T 2 - LaurentPolynomial.T 3
 
