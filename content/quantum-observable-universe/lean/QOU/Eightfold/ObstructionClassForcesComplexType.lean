@@ -1,6 +1,7 @@
 import Mathlib.Data.ZMod.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
+import Mathlib.Tactic.Group
 
 /-!
 # QOU.Eightfold.ObstructionClassForcesComplexType — self-duality forces a trivial obstruction
@@ -119,5 +120,63 @@ fails to be self-dual — hence is of complex type, with no variety decompositio
 theorem not_selfDual_of_obs_ne_zero [ObstructionDuality Rep Iso dual obs]
     (ρ : Rep) (h : obs ρ ≠ 0) : ¬ Iso ρ (dual ρ) :=
   fun hsd => h (obs_eq_zero_of_selfDual ρ hsd)
+
+/-! ## The cocycle model — where the two hypotheses come from
+
+`ObstructionDuality` above carries `obs_dual` and `obs_congr` as hypotheses.  This section
+proves their group-theoretic content, so they are no longer bare assumptions: each is a
+short computation with the *definition* of the obstruction cocycle, and neither needs a
+topological input.
+
+Write `cocycle s g h = s g * s h * (s (g * h))⁻¹` for the failure of a set-theoretic lift
+`s` to be multiplicative.  For a lift of a `PGL(n,ℂ)` representation to `SL(n,ℂ)` this
+lands in the centre `μ_n`, and its class is the obstruction.
+
+* `cocycle_dual` is `obs_dual`.  Inverse-transpose `φ : A ↦ ᵗA⁻¹` is a group
+  **homomorphism**, not an anti-homomorphism — `(AB)⁻ᵀ = ᵗ(B⁻¹A⁻¹) = A⁻ᵀB⁻ᵀ` — so by
+  `cocycle_map` the dual lift's cocycle is `φ` applied to the original, and `φ` inverts
+  the centre.
+* `cocycle_conj_of_comm` is `obs_congr`.  Conjugating a lift conjugates its cocycle, and a
+  cocycle commuting with the conjugator is unchanged — which centrality supplies.
+
+**Scope.** This is the group theory, machine-checked.  Instantiating `ObstructionDuality`
+for the Ptolemy setting additionally needs the identification `μ₃ ≅ ZMod 3` and the
+*relative* class in `H²(M, ∂M; ℤ/3)` rather than `H²(Γ; μ₃)`; that relative step is
+verified computationally, not here — negating the cocycle acts on the Ptolemy variety as
+`u ↦ u²` (`computations/ptolemy/ptolemy_duality_galois_check.py`, classes 1/2/3). -/
+
+section CocycleModel
+
+variable {Γ G : Type*} [Group Γ] [Group G]
+
+/-- The failure of a set-theoretic lift `s` to be multiplicative. -/
+def cocycle (s : Γ → G) (g h : Γ) : G := s g * s h * (s (g * h))⁻¹
+
+/-- A homomorphism applied to a lift carries its cocycle along. -/
+theorem cocycle_map (φ : G →* G) (s : Γ → G) (g h : Γ) :
+    cocycle (fun x => φ (s x)) g h = φ (cocycle s g h) := by
+  simp [cocycle, map_mul, map_inv]
+
+/-- **`obs_dual`, as group theory.**  If `φ` inverts the cocycle's value — as
+inverse-transpose does on the centre — then the dual lift's cocycle is the inverse. -/
+theorem cocycle_dual (φ : G →* G) (s : Γ → G) (g h : Γ)
+    (hφ : φ (cocycle s g h) = (cocycle s g h)⁻¹) :
+    cocycle (fun x => φ (s x)) g h = (cocycle s g h)⁻¹ := by
+  rw [cocycle_map]; exact hφ
+
+/-- Conjugating a lift conjugates its cocycle. -/
+theorem cocycle_conj (a : G) (s : Γ → G) (g h : Γ) :
+    cocycle (fun x => a * s x * a⁻¹) g h = a * cocycle s g h * a⁻¹ := by
+  simp only [cocycle, mul_inv_rev, inv_inv]
+  group
+
+/-- **`obs_congr`, as group theory.**  A cocycle commuting with the conjugator — which
+centrality supplies — is unchanged by conjugating the lift. -/
+theorem cocycle_conj_of_comm (a : G) (s : Γ → G) (g h : Γ)
+    (hc : a * cocycle s g h = cocycle s g h * a) :
+    cocycle (fun x => a * s x * a⁻¹) g h = cocycle s g h := by
+  rw [cocycle_conj, hc]; group
+
+end CocycleModel
 
 end QOU.Eightfold
