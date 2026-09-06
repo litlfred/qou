@@ -7267,3 +7267,35 @@ emptiness is established before `θ` is mentioned.
 **Route 5 is not closed** — `|q| = 1` is much more than its roots of unity, and
 the full projection stays structurally available at the price of selecting
 nothing.
+
+### Strengthening, same day: the partial projection kills the WHOLE locus
+
+Probe: `computations/qbeta/qbeta_fibre_partial_projection_kills_whole_locus_probe.py` (5/5).
+
+The scope line I wrote above — *"`|q| = 1` is a great deal more than its roots
+of unity"* — is true about the locus and **irrelevant to the argument**. The
+reality condition `sinφ(2cosφ−1) = 0` is imposed at **every** point of `|q| = 1`,
+and its solution set on `[0,2π)` is exactly `{0, π/3, π, 5π/3}` — four points,
+all roots of unity. The non-rational phases were never open; I described them as
+open. Verified by `solveset` and by an independent 20,000-point scan.
+
+All four degenerate, and `φ = 0` twice (`h = 0` *and* the `E_0` pole — I had
+checked only the pole). So:
+
+    PARTIAL  ->  reality leaves 4 points, all degenerate  ==> whole locus excluded
+    FULL     ->  no condition at all                      ==> nothing selected
+
+**Route 5's N-selection mechanism predicts nothing under either reading.**
+Scope (a) on the MECHANISM; silent on route 5's underlying fibre-Habiro idea.
+
+**The load-bearing assumption, now isolated:** that `𝔔_β` must be real *at the
+fibre evaluation point* rather than after the archimedean functor. `AGENTS.md`'s
+fibre-vs-observable banner says `Im(q)` is unconstrained at fibre level — so this
+closes the mechanism as posed and reopens whether reality belonged there at all.
+That is the next question, and it is a framework question rather than a
+measurement.
+
+Method trap worth keeping: the first scan reported a spurious **fifth** zero
+because dedup used linear distance and `φ = 0` / `φ = 2π` are the same point.
+On a circle use `min(d, 2π−d)`. The false reading was a spurious *finding*
+("solveset missed a branch"), not a spurious failure.
