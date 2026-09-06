@@ -315,6 +315,64 @@ theorem refTab_dOf_bruhatLe (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
   rw [this]
   exact QOU.Machinery.CoxeterBruhat.one_bruhatLe _ _
 
+/-! ### Dominance is a rank comparison — the tableaux come out of the statement
+
+The measured reduction in the module docstring, made precise.  `rowPattern_dOf` is the whole
+of it; everything below is reindexing along the bijection `dOf t`. -/
+
+/-- **The key identity**: `d(t)` transports `t`'s row pattern back to the *reference*
+tableau's.
+
+`dOf t x = t⁻¹(refTab x)`, so `t` sends `dOf t x` to the cell `refTab` assigns to `x`, and
+the row of that cell does not mention `t` at all.  Two lines, and it is the reason 3.7 has
+no tableau content: the row of a label in `t` is the row of its `d(t)`-preimage in the
+reference tableau. -/
+theorem rowPattern_dOf (t : QOU.BraidKnot.Specht.Tableau μ)
+    (x : Fin (QOU.BraidKnot.Specht.nOf μ)) :
+    QOU.BraidKnot.Specht.rowPattern t (dOf t x)
+      = QOU.BraidKnot.Specht.rowPattern (refTab μ) x := by
+  simp [QOU.BraidKnot.Specht.rowPattern, dOf_apply]
+
+/-- **The rank matrix of `d(t)`**, cut by the reference tableau's rows: the number of labels
+`x` that `refTab` puts in row `≤ i` and `d(t)` sends below `m`.
+
+Stated against `rowPattern (refTab μ) x ≤ i` rather than against a numeric row boundary
+`x < μ₀ + ⋯ + μ_i`.  The two agree — `refTab` is row-superstandard — but that equality is a
+separate fact about the reference tableau, and nothing below needs it. -/
+noncomputable def rankAt (t : QOU.BraidKnot.Specht.Tableau μ) (i m : ℕ) : ℕ :=
+  (Finset.univ.filter fun x : Fin (QOU.BraidKnot.Specht.nOf μ) =>
+    QOU.BraidKnot.Specht.rowPattern (refTab μ) x ≤ i
+      ∧ ((dOf t x : Fin (QOU.BraidKnot.Specht.nOf μ)) : ℕ) < m).card
+
+/-- **The dominance count IS the rank matrix.**  Reindexing the `domCount` filter along the
+bijection `dOf t` and applying `rowPattern_dOf`. -/
+theorem domCount_eq_rankAt (t : QOU.BraidKnot.Specht.Tableau μ) (i m : ℕ) :
+    domCount (tabloidRowPattern (QOU.BraidKnot.Specht.Tabloid.mk t)) i m = rankAt t i m := by
+  rw [tabloidRowPattern_mk, domCount, rankAt]
+  refine (Finset.card_equiv (dOf t) ?_).symm
+  intro x
+  simp only [Finset.mem_filter, Finset.mem_univ, true_and]
+  rw [rowPattern_dOf]
+  exact and_comm
+
+/-- **Dominance restated with no tableaux in it**: `s ⊵ t` is exactly the rank inequality
+between `d(s)` and `d(t)`, read at the reference tableau's row cuts.
+
+This is the left-hand column of 3.7.  The right-hand column — the Bruhat order — is the
+*same* inequality read at **every** index rather than only at the row cuts (Ehresmann's
+criterion), and the two are reconciled by `d` being a minimal coset representative.  See the
+module docstring for the measurement and for what each half of 3.7 then needs. -/
+theorem domRel_iff_rankAt (s t : QOU.BraidKnot.Specht.Tableau μ) :
+    domRel (QOU.BraidKnot.Specht.Tabloid.mk t) (QOU.BraidKnot.Specht.Tabloid.mk s)
+      ↔ ∀ i m : ℕ, rankAt t i m ≤ rankAt s i m := by
+  constructor
+  · intro h i m
+    rw [← domCount_eq_rankAt, ← domCount_eq_rankAt]
+    exact h i m
+  · intro h i m
+    rw [domCount_eq_rankAt, domCount_eq_rankAt]
+    exact h i m
+
 /-! ### Dipper–James 3.7 itself -/
 
 /-- **Dipper–James (Mathas 3.7): dominance on row-standard tableaux is the Bruhat order.**
