@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T03:41:37Z
-updated_at: 2026-09-06T10:57:56Z
+updated_at: 2026-09-06T12:52:36Z
 ---
 
 ## 2026-09-06 — why three class-2 attempts produced no verdict, and the fourth is running
@@ -141,3 +141,39 @@ H²=(Z/3)³ and the ±involution are measured facts (`obstruction_gerbe_involuti
 result. Next: find the generalized (Z/N) obstruction-class definition — Garoufalidis–
 Goerner–Zickert is the likely source and does not appear to be held — and check how ρ ↦ ρ*
 acts on it. That single step converts a 12-class compute problem into a theorem.
+
+## 2026-09-06 12:50 — the Sym² question is CLOSED; the group theory behind it is formalised
+
+**Result.** L6a4 obstruction classes 1–13 cannot carry a self-dual representation, hence
+cannot contain Sym² of an SL(2,ℂ) rep. The gate passes for all thirteen **with no Gröbner
+basis**. The 12-class sweep is unnecessary for the gate's purpose.
+
+Two halves, both established here rather than cited:
+1. **Derived:** `c* = c^{-1}` from the obstruction cocycle — inverse-transpose is a
+   *homomorphism* ((AB)^{-T} = A^{-T}B^{-T}), and it inverts the centre. With
+   `c = -c ⇒ 2c = 0 ⇒ c = 0` (2 invertible mod 3), only the trivial class can be self-dual.
+2. **Measured (the relative gap):** negating the cocycle acts on the Ptolemy variety as
+   `u → u²`. P^c and P^-c differ in 10 of 33 equations; substituting u→u² through P^c
+   reproduces P^-c exactly as polynomial sets, classes 1/2/3.
+
+**Formalised, sorry-free, lean-direct EXIT 0** (`ObstructionClassForcesComplexType.lean`):
+`cocycle_map`, `cocycle_dual` (=obs_dual), `cocycle_conj`, `cocycle_conj_of_comm`
+(=obs_congr), `obs_neg_of_inv` (the μ₃≅ZMod 3 bridge). Axioms: [propext] / [propext,
+Quot.sound]. **Still not an instance** — needs H² (cocycle→class) and the relative step,
+neither of which is algebra.
+
+**Compute route closed, with a measured reason.** Class-2 GB alone > 2700 s; calibration
+put FGLM at only ~23 % of class 1's cost, so the Gröbner basis IS the wall and no RUR
+budget helps. All classes 1–13 present as 27 vars/33 eqs, so shape decides cost, not size.
+
+**Three broken detectors of my own this session, all the same class:**
+- `Mathlib*.olean` glob → reported 4 oleans, true count 3471. Made me decline the Lean
+  work as impossible when the cache was there all along.
+- String comparison of polynomials → false NEGATIVE on the true u→u² statement.
+- `pdftotext` absent → reported 8 PDFs as "no text layer", a property of my toolchain.
+
+**Lean binary was missing by my own hand** — both elan toolchains are symlinks into /tmp
+and I deleted the targets clearing disk. Re-staged from the GitHub release asset
+(allowlisted; release.lean-lang.org is not). Extract is 2.44 GB, not 4.3 GB.
+`git repack -d` freed only **54 MB** — loose objects were already efficient; packing moved
+bytes. Do not reach for it as a space fix.
