@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T12:51:12.829573+00:00",
-  "commitSha": "df425dccb4bc0118ff65e6cb37ffec89ae2c7936",
+  "computedAt": "2026-09-06T13:25:57.928049+00:00",
+  "commitSha": "99e8e25a28e82017fb939bc9adc3275fae7c21cd",
   "assertions": [
     {
       "name": "three_of_four_are_fkp_hyperbolic",
@@ -50,7 +50,7 @@
   "computation": "protium-fkp-hyperbolicity",
   "scriptFile": "protium_fkp_hyperbolicity_probe.py",
   "scriptHash": "446e5860f508",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "ee54886782acc14f2958ed233230b7a584866bcf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
