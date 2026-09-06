@@ -28,16 +28,16 @@ namespace QOU.QBeta.SeparableInterfaceContent
 `(5 : ℝ) ≠ 6` is discharged by `norm_num`. Recorded so that the ring the corpus actually
 reasons over is on the record as an *instance* of the generic result, not a separate claim.
 
-Written with `@` rather than the named-argument form `(R := ℝ)` that AGENTS.md §7c
-suggests, because `scripts/check-sidecars.sh` counts the literal `(R :=` as evidence that
-a file declares a *generic* result and would report this correctly-split file as "§7c
-MIXED generic + archimedean". A specialisation is the opposite of generic evidence; the
-spelling here sidesteps that without changing the term. Noted rather than swept — see the
-audit for why the detector was left alone. -/
+Written in the named-argument form `(R := ℝ)` that AGENTS.md §7c prescribes for the
+archimedean sibling. An earlier revision used `@f ℝ _` to dodge `check-sidecars.sh`,
+which counted the literal `(R :=` as evidence a file declares a *generic* result and so
+reported this correctly-split file as "§7c MIXED". That detector bug is fixed
+(`scripts/check-sidecars.sh`, fourth false-positive class), so the workaround is gone and
+the prescribed spelling is back. -/
 theorem separability_hypotheses_have_content_real :
     ∃ (fSpin fIso : Bool → ℝ) (fSpace : Unit → ℝ),
       fSpin true * fIso false * fSpace () ≠ fSpin false * fIso true * fSpace () :=
-  @separability_hypotheses_have_content ℝ _ (by norm_num)
+  separability_hypotheses_have_content (R := ℝ) (by norm_num)
 
 /-- **The escape survives positivity.**
 
