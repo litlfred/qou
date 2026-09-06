@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T09:42:46Z
-updated_at: 2026-09-06T14:33:09Z
+updated_at: 2026-09-06T23:00:00Z
 ---
 
 ## What was found
@@ -145,3 +145,44 @@ on each PDF) rather than to reason from the shape again.
 
 Nothing in this contradicts `qou-cvx9`; it narrows what that bean's fix will
 close. Their guard belongs in `migrate-uploads-to-library.py` regardless.
+
+
+## 🛑 2026-09-06 (later still) — the decomposition was NOT mine; a sibling posted it first
+
+Read the #6962 thread properly, which I should have done before commenting on
+it. Comment `5559854490`, **2026-09-06T14:23:14Z** — eleven minutes before mine
+(`5559920028`, 14:34:21Z) — already carries:
+
+> `main` now carries **22 orphan doc dirs** — a bare PDF with no
+> `structure.json`, invisible at *every* tier of corpus-grep path 5. … `INDEX.md`
+> is at **609** rows on `main` and the arithmetic closes with no residual:
+> `655 dirs − 609 rows = 46 = 23 duplicates + 22 orphans + 1 container`
+> (`ant-v14-n7-s` is a bound journal issue; `summarize-library.py:98` skips
+> containers by design).
+
+That is the same count, the same three-way split, and the same container. **This
+bean should not be read as the origin of any of it.** Their citation is also the
+better one: `summarize-library.py:98` skips `container` **and** `duplicate_of`
+in one branch with the rationale written above it (*"the point of the scan tier
+is one line per work"*), where this bean reached the container by reading its
+`container_note` by hand.
+
+**What survives as this bean's own contribution, measured and not in theirs:**
+
+1. **`qou-cvx9`'s mechanism explains ZERO of the 22** — 0 of 22 have an
+   `arxiv-<id>` twin, and nine are not arXiv-shaped at all, so the
+   filename-vs-stamp divergence cannot reach them even in principle. Their
+   comment says the 22 "pre-date this session"; it does not say the mechanism
+   fails to account for them, and the two claims are different.
+2. **"held twice, found once" vs "held once, found never"** as the distinction
+   that matters for path 5.
+3. **AGENTS.md path 5's stated arithmetic is wrong as written** — it says
+   `directories − rows` should equal the *duplicate count*, which reads as index
+   staleness when the residual is an ingest backlog. Neither sibling comment
+   says this; both simply use the correct form.
+
+**The lesson, and it is the one this session keeps re-learning in new places:**
+the corpus-grep discipline applies to a **PR thread**, not only to `content/`,
+`docs/`, `computations/`, `library/` and `.beans/`. I checked five corpora and
+not the two comments already sitting on the PR I was about to comment on.
+Posted the correction as `5562781339`.
