@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-06T15:29:28Z
+updated_at: 2026-09-06T15:44:14Z
 ---
 
 
@@ -62,3 +62,37 @@ specified correctly:
   right `d`, or a level-1 kernel applied twice, or the ramified level-2 family
   that `QBorelKernelLevel.lean:24-27` already names as open;
 - `B_D` is NOT reached here and nothing is wired. scope-(a).
+
+
+## The missing object is SHARED with `qou-odh5` (2026-09-06)
+
+The kernel this bean needs and the one `qou-odh5` is blocked on are the same object.
+
+- **`qou-hok7` (here).** `Z_n ~ q0^{n^2}` needs exponent `n(n-1) = 2*C(n,2)` — twice
+  the level-1 exponent. `qBorelExp d n ~ n^2/(2d)` is DECREASING in `d`, so no
+  integer level in the corpus family supplies it; what is required is a **half
+  level**. Lean: `QOU.MathlibExt.QBorelKernel.two_mul_qBorelExp_one` (sorry-free).
+- **`qou-odh5`.** "C1 infinity: extract the two Stokes multipliers." Its own body
+  records the lower hull at infinity as the single edge `(0,0) -> (2,-1)`,
+  **slope −1/2**, and the open residue as the ramification square roots `B_1,B_2`.
+- **`QBorelKernelLevel.lean:24-27`** already names the **ramified level-2 family**
+  as the open item, for exactly the slope-1/2 case.
+
+Three descriptions of one gap: a half level / slope −1/2 / the ramified level-2
+family. **Constructing it once unblocks both beans.** That is a statement about
+the work plan, not a new mathematical result — but it means these should not be
+attacked as two separate tranches.
+
+## `qou-odh5` is a STALLED CLAIM, not live work (measured 2026-09-06)
+
+I reported it as "in-progress right now" earlier this session on the strength of
+its `status:` field. Measured: its last commit `2ce063f238` is **2026-08-07,
+30.6 days ago**, and it is **NOT on main** — the work never landed. Under the
+AGENTS.md stalled-claim policy (>3h without a commit on the branch backing a live
+in-progress bean) it is available for takeover, following the protocol: re-claim
+with a body-append noting the takeover and the stale SHA, continue from that
+branch's tip or from main, and never force-push over it.
+
+Recording rather than taking it: reading a `status:` field as evidence of current
+activity is the same error class as everything else this bean corrects — a label
+quoted in place of a measurement.
