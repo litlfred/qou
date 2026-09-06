@@ -364,7 +364,13 @@ def main() -> int:
     ap.add_argument("--diff", nargs="*", help="gate only these files")
     ap.add_argument("--strict", action="store_true",
                     help="gate the whole scan root, not just --diff")
-    ap.add_argument("--selftest", action="store_true", help="self-test and exit")
+    # BOTH spellings. `scripts/precision-gates.sh` invokes this with
+    # `--self-test` (hyphenated) and treats a non-zero exit as "a detector that
+    # cannot be shown to fire is a no-op". argparse exits 2 on the unrecognized
+    # flag, so this gate's self-test has never actually run and the harness has
+    # been reporting it failed for a reason unrelated to braid-word provenance.
+    ap.add_argument("--self-test", "--selftest", action="store_true",
+                    dest="selftest", help="self-test and exit")
     args = ap.parse_args()
 
     fails, n_cases = selftest()

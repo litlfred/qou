@@ -134,3 +134,26 @@ The full `precision-gates.sh` run fails PREFLIGHT in this container
 script itself says that is not a gate failure. So the two gates were exercised
 by replaying the harness's own `--self-test` + `$args` sequence against them,
 not by a whole-suite run; the remaining 25 gates are unexercised here.
+
+### The same defect was already live in the array — found by looking
+
+Wiring my own gates surfaced the `--self-test` / `--selftest` mismatch, so I
+checked whether anything else in the array had it. It did:
+
+    scripts/word-provenance-gate.py    declared selftest=yes, accepts only
+                                       --selftest, so `--self-test` exits 2
+                                       ("unrecognized arguments") and the
+                                       harness has been recording a SELF-TEST
+                                       FAILURE for it — for a reason having
+                                       nothing to do with braid-word
+                                       provenance. Confirmed by running it.
+
+Fixed in two places, because one of them is the recurrence:
+
+- the script now accepts both spellings;
+- **`precision-gates.sh` now tries either**, so the next script cannot repeat
+  it. If a self-test genuinely fails, both spellings fail and it is still
+  reported — the OR only forgives the flag name, never the result.
+
+Verified by EXECUTING all 22 gates that declare `selftest=yes`: 22/22 pass.
+Before this, one was failing and the two added today would have made three.

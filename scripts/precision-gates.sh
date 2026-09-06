@@ -589,7 +589,15 @@ for g in "${GATES[@]}"; do
     continue
   fi
   if [ "$selftest" = "yes" ]; then
-    if ! python3 "$script" --self-test >/dev/null 2>&1; then
+    # EITHER spelling. Both are in use across the tree, and argparse exits 2 on
+    # the one a script does not define -- indistinguishable, from here, from a
+    # detector that genuinely could not fire. Two gates were silently failing
+    # their self-test on that alone (`word-provenance-gate.py`, and both
+    # detectors added 2026-09-06) for reasons having nothing to do with what
+    # they detect. If a self-test genuinely fails, BOTH spellings fail and this
+    # still reports it.
+    if ! python3 "$script" --self-test >/dev/null 2>&1 \
+       && ! python3 "$script" --selftest >/dev/null 2>&1; then
       echo "  SELF-TEST FAILED — a detector that cannot be shown to fire is a no-op."
       blocking_failed+=("$name (self-test)")
       continue
