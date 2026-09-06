@@ -31,6 +31,7 @@ argument's provenance:
 |---|---|
 | `CANONICAL` | comes from `atom_braid_word_3A` -- the ruling's own emitter |
 | `SELF_BUILT` | built in place from list/tuple literals or a comprehension |
+| `MIXED` | bound BOTH ways -- a canonical path plus a self-built branch |
 | `INHERITED` | a parameter; the caller decides, so audit the caller |
 | `OTHER` | some other call or name -- reported, not judged |
 
@@ -38,6 +39,15 @@ argument's provenance:
 verdict: a self-built word is legitimate when the producer is deliberately
 testing a non-atom braid (a Hopf link, a bare generator, a scaling sweep).
 What makes it a defect is a self-built word standing in for an ATOM word.
+
+`MIXED` exists because a CORRECT FIX takes that shape, and reading only a
+name's last binding calls the fix a defect. Measured: hours after
+`compute_tau_M_nucleon_H3` was repaired on `main` (option B -- canonical word
+by default, the old chain kept behind `intra_order="grouped"` as a documented
+escape hatch), this audit still flagged it, because the historical branch is
+the later assignment. A false positive that sends the next agent to re-fix a
+correct file is worse than a miss. `MIXED` is reported and NOT flagged: the
+defect being hunted is a producer with no canonical path at all.
 
 ## The second, value-keyed half
 
@@ -274,16 +284,18 @@ def _bindings(scope):
     return out
 
 
-def _classify(arg, binds, params):
-    """(verdict, gen_sequence_or_None) for a word argument.
+def _classify_expr(node, binds, params, seen=None):
+    """(verdict, gen_sequence_or_None) for ONE expression.
 
     Resolves through two kinds of indirection before judging: a short chain of
     local name bindings, and a re-wrapping comprehension (see
     `_rewrap_source`). Both are the difference between reporting where a word
     is COERCED and reporting where it is BUILT.
+
+    A name with SEVERAL bindings is judged over all of them (see `_classify`),
+    not over whichever came last.
     """
-    seen = set()
-    node = arg
+    seen = set() if seen is None else seen
     for _ in range(8):
         rew = _rewrap_source(node)
         if rew is not None:                # a coercion: judge its source
@@ -302,10 +314,52 @@ def _classify(arg, binds, params):
             vals = binds.get(node.id)
             if not vals:
                 break
-            node = vals[-1]                # last assignment wins
+            if len(vals) > 1:
+                return _combine(
+                    [_classify_expr(v, binds, params, set(seen)) for v in vals])
+            node = vals[0]
             continue
         break
     return "OTHER", None
+
+
+def _combine(results):
+    """Fold the verdicts of a name's several bindings into one.
+
+    Why this exists, and it is the sharpest lesson this audit has produced:
+    a "last assignment wins" reading is WRONG on the shape a correct fix takes.
+    `compute_tau_M_nucleon_H3`, as repaired under the ruling (option B), is
+
+        if intra_order == "borromean":
+            word = atom_braid_word_3A(...)       # canonical -- and the DEFAULT
+        else:
+            word = [(mpf(c), mpf(d), 0) for ...] + [... 1 for ...]   # historical
+
+    Reading only the last binding reports SELF_BUILT and flags a file that has
+    just been correctly fixed -- a false positive that would send the next
+    agent to re-fix it. Measured: this audit did exactly that, on `main`, hours
+    after the fix landed.
+
+    So a name bound both canonically and self-built is `MIXED`: it carries a
+    canonical path, and the self-built one is a branch a reader must judge.
+    It is reported and NOT flagged, because the defect this audit hunts is a
+    producer with no canonical path at all.
+    """
+    verdicts = {v for v, _g in results}
+    if verdicts == {"SELF_BUILT"}:
+        gens = next((g for _v, g in results if g is not None), None)
+        return "SELF_BUILT", gens
+    if "CANONICAL" in verdicts and "SELF_BUILT" in verdicts:
+        return "MIXED", None
+    for pref in ("CANONICAL", "INHERITED", "SELF_BUILT"):
+        if pref in verdicts:
+            return pref, next((g for v, g in results if v == pref), None)
+    return "OTHER", None
+
+
+def _classify(arg, binds, params):
+    """(verdict, gen_sequence_or_None) for a word argument."""
+    return _classify_expr(arg, binds, params)
 
 
 def audit():
@@ -383,6 +437,15 @@ def f(g0):
 def f(word):
     return chi_all_lambda(word, 3)
 """, "INHERITED", False),
+    ("a canonical default WITH a historical branch is MIXED, not a defect --\n"
+     "          the repaired compute_tau_M_nucleon_H3 shape (option B)", """
+def f(Z, N, intra_order):
+    if intra_order == "borromean":
+        word = atom_braid_word_3A(Z, N)
+    else:
+        word = [(mpf(c), mpf(d), 0) for c, d in g0] + [(mpf(c), mpf(d), 1) for c, d in g1]
+    return chi_all_lambda_any(word, 3)
+""", "MIXED", False),
 ]
 
 
@@ -437,17 +500,22 @@ def main() -> int:
     flagged = [r for r in rows if r["monotone_literal"]]
 
     print(f"  chi-kernel call sites: {len(rows)}\n")
-    for v in ("CANONICAL", "SELF_BUILT", "INHERITED", "OTHER"):
+    for v in ("CANONICAL", "MIXED", "SELF_BUILT", "INHERITED", "OTHER"):
         print(f"    {v:<12} {counts.get(v, 0):>4}")
 
-    print(f"\n  SELF_BUILT sites (the class three prior sweeps could not see):")
+    print(f"\n  SELF_BUILT / MIXED sites "
+          f"(the class three prior sweeps could not see):")
     for r in rows:
-        if r["verdict"] != "SELF_BUILT":
+        if r["verdict"] not in ("SELF_BUILT", "MIXED"):
             continue
         seq = r["gen_sequence"]
         tag = ("  <-- MONOTONE LITERAL" if r["monotone_literal"]
-               else ("" if seq is None else "  (non-monotone)"))
-        shown = "gens unrecoverable" if seq is None else f"gens {seq}"
+               else ("  (has a canonical path too; branch for a reader)"
+                     if r["verdict"] == "MIXED"
+                     else ("" if seq is None else "  (non-monotone)")))
+        shown = ("gens unrecoverable" if seq is None else f"gens {seq}")
+        if r["verdict"] == "MIXED":
+            shown = "MIXED"
         print(f"    {r['file']}:{r['line']}  {r['scope']}()  "
               f"[{r['kernel']}]  {shown}{tag}")
 
