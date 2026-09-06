@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-09-05T19:41:40Z
-updated_at: 2026-09-06T04:17:55Z
+updated_at: 2026-09-06T08:10:54Z
 ---
 
 ## Finding
@@ -169,3 +169,58 @@ pinned; at `n = 3` the unpinned `σ₁σ₂σ₁` is recovered by cyclicity plus
 quadratic relation (`= h·z² + z`). Its file's caveat ("the field set is too
 weak") is about **provability from its fields**, not falsity — the two must not
 be conflated.
+
+
+## SIXTH and SEVENTH false axioms (2026-09-06)
+
+### 6. `JonesMarkovCoefficient_sum_eq_one` — LANDED (deleted + refuted + registered)
+
+`QOU/HeckeAlgebra/MarkovTrace.lean`. Asserted `Σ_λ y_λ(q) = 1` for all `n`, all
+`q`, cited to Wenzl 1988 Lemma 3.2. **False.** At `q = 1` the q-integer is
+`(1-1)/(1-1) = 0/0 = 0` (real exponents), its inverse is `0`, every cell factor
+zeroes its row, so every coefficient of every partition of `n ≥ 1` is `0` and
+the sum is `0`.
+
+ZERO Lean consumers ⇒ deleted outright. Refutation is a live negation,
+registered in the axiom guard, guard exit 0. Corrected statement deliberately
+NOT supplied (nothing depends on it; Wenzl's lemma is about a normalised trace
+where weights enter against dimensions).
+
+**First true positive of the risk audit on a live axiom** — flagged at 6 by the
+primary signals, not by either over-quantification rule.
+
+### 7. `ConfinementLevel.level_canonical` — FOUND, VERIFIED, **NOT LANDED**
+
+`knots-particles-confinement/confinement-level-unique.lean`. Asserts two
+`ConfinementLevel R` records agreeing on `braidIndex`, `nStrands` and `q` have
+the same `level`. **False**, and the axiom's own docstring says why: *"the
+`level` field ... is not free data but the canonical minimum — a constraint the
+current plain-structure encoding does not enforce at the type level."*
+
+`ConfinementLevel` is a plain structure with four free fields. Refutation
+verified, `#print axioms` = `[propext]` only:
+
+```lean
+theorem not_level_canonical :
+    ¬ (∀ {R : Type} [CommRing R] (L₁ L₂ : ConfinementLevel R),
+        L₁.braidIndex = L₂.braidIndex → L₁.nStrands = L₂.nStrands →
+        L₁.q = L₂.q → L₁.level = L₂.level) := by
+  intro h
+  have hc := h (R := ℤ) ⟨0, 0, 0, 0⟩ ⟨0, 0, 0, 1⟩ rfl rfl rfl
+  simp at hc
+```
+
+**Why it is not landed.** The refutation and the axiom cannot coexist — together
+they derive `False`. So landing requires deleting the axiom, and the axiom's only
+consumer is `ConfinementLevel.unique`, which **is** a published content block
+(`confinement-level-unique.ts` `lean.ref` points at it). Its claim is false as
+stated. Retracting or conditionalising a paper claim is an author decision, not a
+library cleanup.
+
+A second axiom of the same shape sits one file over:
+`DressedParticle.level_canonical_under_bare` (`dressed-particle.lean:62`,
+consumed at `:74`), also flagged at 6. Not yet tested.
+
+### Running tally
+
+**Thirteen false axioms across seven incidents**, of which mine are seven.
