@@ -37,9 +37,15 @@ the subword property and lifting all wait on Matsumoto.
 
 ✅ **Matsumoto is no longer open** (2026-09-06): `QOU.IwahoriHecke.Matsumoto.matsumoto` proves it
 conditional on `CoxeterRankTwo.DihedralExact`, and `matsumoto_An` proves it outright for type `A`.
-The other three are therefore now *reachable* — but they are still **not proved here**, and
-"reachable" is not "done": each needs the subword property derived from Matsumoto, which is its own
-argument. Do not cite this file for them.
+
+✅ **And the subword property and transitivity followed the same day**, in
+`QOU.IwahoriHecke.BruhatSubword` (`subword_property`, `bruhatLe_trans`, and their hypothesis-free
+type-`A` forms). They live there rather than here because they need `BraidMove`, which is defined on
+the Hecke side; this file cannot import them without a cycle. **Cite that file for them, not this
+one** — the paragraph above stands as a description of what *this* file proves.
+
+**Of the four, `lifting` remains open**, as does the equivalence between this subword `BruhatLe`
+and the reflection-generated Bruhat order.
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, §2.2
 -- Ref: [manuscript] beans qou-phir, qou-06h7
