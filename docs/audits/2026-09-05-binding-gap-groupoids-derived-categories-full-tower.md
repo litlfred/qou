@@ -833,6 +833,53 @@ were compiled from source first, all exit 0, per the "run the sweep, not bare le
 `scripts/check-sidecars.sh`: both files *"library Lean — no ℝ, generic OK"*. Both modules are
 registered in `QOU.lean`; the full aggregator was not rebuilt (875 imports).
 
+## 7c. Test T1, executed (same day) — the interleaving cross term is an ORDER-ZERO object
+
+**Claim.** The answer to route B's falsifiable test is **no**. At convention D the three traces of
+§1.3 are the explicit rational functions
+
+    S = q³ (q⁴+1)² / (q²+1)³          I = q⁵ (q⁶+q²−1) / (q²+1)³
+    Δ = I − S = −q³ (q⁴+q²+1) / (q²+1)³ = −q³ Φ₃(q) Φ₆(q) / Φ₄(q)³
+
+and their orders of vanishing at `q = 1` are all **zero**: `S(1) = 1/2`, `I(1) = 1/8`,
+`Δ(1) = −3/8`. The cross term is not "strictly higher order than the sequential product"; it is
+present in full at `q = 1`.
+
+**The order-zero term has a name.** At `q = 1` with `z = 1/2` the Ocneanu trace on `ℚS₄` is the
+cycle-count trace `tr(w) = 2^{c(w) − 4}`, `c(w)` the number of cycles of the underlying permutation
+— the number of **components of the braid closure**. The interleaved word `s₀s₁s₀s₂s₁` closes to a
+knot (`c = 1 → 1/8`); the sequential word `s₀²s₁²s₂` closes to a three-component link (`c = 3 →
+1/2`). The corpus's one positive many-body signal is, at order zero, a difference of component
+counts — word topology in the most classical sense, which is the attribution §7b reached from the
+Lean side.
+
+**What the `q`-deformation adds, measured.** In `ℏ = 1 − q⁻¹` the exact series is
+`Δ = −3/8 − (3/4)ℏ − (17/16)ℏ² − (21/16)ℏ³ − …`, `I/S = 1/4 + (3/2)ℏ + (5/4)ℏ² − 2ℏ³ − …`, with
+radius of convergence exactly `√2` (poles at `q = ±i`). At the proton pin (`ℏ ≈ 0.0991`) the
+order-zero term carries **81.3 %** of `Δ(q₀) = −0.46117…`; the extra log-suppression is
+`0.895` nats against the classical `2 ln 2 = 1.386` nats — the deformation *reduces* the
+classical cross term's binding effect by a third, it does not create it.
+
+**The Habiro half of route B, for this word.** The normalised traces have a **triple pole at
+`Φ₄`** (`q² = −1`), so none of `S, I, Δ` is a Laurent polynomial or a Habiro element as normalised.
+The pole is the normalisation `tr(1) = 1`, i.e. division by `[2]_q⁴`; the unnormalised
+quantum-trace cross term `[2]_q⁴·Δ = −(q⁶+2q⁴+2q²+1)/q` **is** a Laurent polynomial, with simple
+zeros at `Φ₃, Φ₄, Φ₆` and value `−6` at `q = 1` — `q`-adic order still zero. (That the pole locus
+`q² = −1` is where the `H₂` Kähler ideal of §7b is proper is a coincidence of loci, recorded, not
+derived.)
+
+**Consequence for the plan (judgement).** Route B's relevance to `b₃` is **weakened** exactly as
+the test said it would be: the cross term is a degree-0 / order-0 object dressed by a convergent
+perturbative series, not an object that first appears at higher order in `q`. Route B keeps its
+"tower has degrees the fibre lacks" content (§7b's `HH₁` example), but the many-body signal does
+not live there. Routes A and C (where a *class* or a *cardinality* can be a many-body datum at
+order zero) move up relative to B; nothing else in §7 changes. Scope (a): one word pair, convention
+D; whether a nucleus is an interleaved word class remains `qou-5vhf`.
+
+**Artifact.** [`computations/probes/interleaving_cross_term_q_adic_order_probe.py`](../../computations/probes/interleaving_cross_term_q_adic_order_probe.py)
+(exact sympy + integer synthetic division; mpmath 50 dps for the one anchor evaluation; 15/15;
+witness `interleaving-cross-term-q-adic-order.witness.json`, `q0Anchor: proton`). Bean `qou-212w`.
+
 ## 8. Literature to download — prioritised, with links and one-line justification
 
 **Priority A — likely to change what can be *proved***
