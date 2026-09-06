@@ -27,12 +27,35 @@ caches — 5/6 atoms certified 1 ppQ"*), the last a fix **about these caches** t
 did not regenerate them.  So this is **both** self-staleness and import-cone
 staleness.
 
-**And the reason neither is detected is the real defect: the caches carry
-`scriptFile: None`**, with a `scriptHash` (`c36a8a393fcd`) matching no file in
-the tree.  No checker can know what to hash, so ordinary `scriptHash` drift —
-which would have caught all three producer edits — cannot fire.  This is the
-"bare producers" class AGENTS.md names.  Emitting provenance is the cheap half of
-the fix and is **independent of the regeneration decision**.
+**🛑 AND MY EXPLANATION FOR WHY NEITHER WAS DETECTED WAS ALSO WRONG — corrected
+the same session.**  I wrote that the caches carry `scriptFile: None` with a
+`scriptHash` matching no file, so *"no checker knows what to hash"*, and proposed
+emitting `scriptFile` as a cheap independent fix.
+
+The observations were right; the inference was not.  `save_witness` writes a
+**`producer`** field, and every stale cache carried
+`producer: chi_at_q0_via_hoefsmit_mpfr.py` — resolvable — beside
+`scriptHash c36a8a393fcd` against the producer's then-current `815a026e9591`.
+**The drift was plainly visible to ordinary detection keyed on the field these
+tools use.**  It was not undetectable; it was *undetected* — nothing ran the
+check, which is what the dispatch-only workflow posture predicts.
+
+So the proposed `scriptFile` fix is **unnecessary** — the provenance already
+exists under another key.  Proposing it repeated the byte-stable error: reasoning
+from one field's absence without checking whether a sibling carried the same
+information.
+
+**And my "3,610 scanned, none flagged" reading was wrong too.**  That audit's own
+header says `SELF-stale (already caught): 597  (excluded below)` — it EXCLUDES
+self-stale witnesses by design, deferring to the validator that covers them.
+Their absence from its report is the exclusion working, not blindness.  Third
+wrong inference from the same habit: reading an absence as evidence.
+
+**What survives:** two classes, and only the second needs new tooling.  SELF-
+staleness (the producer's three edits) is detectable today and was simply not
+checked.  IMPORT-CONE staleness (the callee changing on 2026-09-05) is invisible
+to `scriptHash` by construction, because the producer is byte-identical across
+that change — that half is real.
 
 Measured (`chi_caches_predate_the_intra_ordering_change_probe.py`, 4/4):
 
@@ -133,3 +156,21 @@ scanned **3,610 witnesses and flagged none of the six**.
 emit `scriptFile`.  That single missing field is what defeats both staleness
 classes; with it, ordinary `scriptHash` drift catches the next producer edit
 automatically.  Cheap, uncontroversial, and it converts prose into a gate.
+
+
+## OUTCOME: regenerated (owner ruling "regen", 2026-09-05)
+
+Rebuilt with `--fresh` on the canonical producer path.
+
+**`--fresh` was load-bearing.** The resume check compares stored-vs-current
+`q_0`, and `q_0` did not change — only the ordering did. Without it the run
+would have resumed, kept every stale partition, and stamped the result current.
+
+**The stale set was EIGHT, not six.**  `chi-diproton-h6` and `chi-dineutron-h6`
+(both built 2026-08-16, same `scriptHash c36a8a393fcd`) were invisible because
+they are not in `aK_via_lp_dual_full.py`'s `ATOM_CHI` — the *consumer* list I had
+been reasoning from.  They are in the *producer's* `ATOMS` map.  Both regenerated.
+
+Generalises: enumerating a producer's outputs from one consumer's list
+undercounts by whatever that consumer does not use.  Index on the `producer`
+field instead — it finds all eleven witnesses this producer has written.
