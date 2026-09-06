@@ -524,33 +524,72 @@ def main() -> int:
     if r52:
         word, tets, f, tau = r52
         check("fivetwo_four_tetrahedra", len(tets) == 4)
-        # shape field: 5₂'s shape field is cubic (disc −23). PSLQ each shape against (1, z, z², z³).
-        rels = []
-        cubic_ok = True
+        # shape field: 5₂'s shape field is cubic (disc −23). Integer relation Σ c_k z^k = 0 for a
+        # COMPLEX z: PSLQ on the real projection Re + √2·Im (a generic real functional), then the
+        # relation is verified on the complex number itself.
+        def complex_relation(vec, maxcoeff=10 ** 6):
+            lam = mp.sqrt(2)
+            proj = [mp.re(v) + lam * mp.im(v) for v in vec]
+            rel = mp.pslq(proj, maxcoeff=maxcoeff, maxsteps=10 ** 5)
+            if rel is None:
+                return None
+            resid = abs(sum(int(c) * v for c, v in zip(rel, vec)))
+            return rel if resid < mp.mpf(10) ** -30 else None
+
+        x = sp.symbols("x")
+        rels, cubic_ok = [], True
         for z in f["shapes"]:
-            rel = mp.pslq([1, z, z ** 2, z ** 3], maxcoeff=10 ** 6, maxsteps=10 ** 5)
+            rel = complex_relation([1, z, z ** 2, z ** 3])
             rels.append(rel); cubic_ok &= rel is not None
         print(f"  5₂ integer relations on (1, z, z², z³): {rels}")
         check("fivetwo_shapes_satisfy_cubic_relations", cubic_ok, "cubic shape field, as 5₂ requires")
         wb.add_data("fivetwo_shape_relations", [str(r) for r in rels])
-        # discriminant of the cubic satisfied by the first shape
+        # exact verification in ℚ(θ): θ := first shape with minimal polynomial m(θ); express every
+        # shape as a polynomial p_i(θ) of degree ≤ 2 (PSLQ on (1, θ, θ², z_i)), then reduce each edge
+        # row modulo m(θ) in ℚ[θ] — an exact zero, no numerics.
         try:
+            theta = f["shapes"][0]
             c = rels[0]
-            x = sp.symbols("x")
-            poly = sp.Poly(sum(int(c[k]) * x ** k for k in range(4)), x)
-            disc = sp.discriminant(poly)
+            m = sp.Poly(sum(int(c[k]) * x ** k for k in range(4)), x)
+            if m.LC() < 0:
+                m = -m
+            disc = sp.discriminant(m)
             sqf = sp.factorint(abs(int(disc)))
             core = 1
             for pr, e in sqf.items():
                 if e % 2:
                     core *= pr
             core = -core if disc < 0 else core
-            print(f"  5₂ cubic {poly.as_expr()} discriminant {disc}, square-free core {core}")
+            print(f"  5₂ minimal polynomial m(θ) = {m.as_expr()}, discriminant {disc}, square-free core {core}")
             check("fivetwo_cubic_discriminant_core_minus23", core == -23)
+            wb.add_data("fivetwo_minpoly", str(m.as_expr()))
             wb.add_data("fivetwo_cubic_discriminant", str(disc))
+            exprs = []
+            for z in f["shapes"]:
+                r = complex_relation([1, theta, theta ** 2, z])
+                assert r is not None and r[3] != 0
+                # r0 + r1 θ + r2 θ² + r3 z = 0  ⇒  z = −(r0 + r1 θ + r2 θ²)/r3
+                exprs.append(sp.Poly(-(sp.Integer(int(r[0])) + int(r[1]) * x + int(r[2]) * x ** 2) / int(r[3]), x))
+            print(f"  5₂ shapes in ℚ(θ): {[e.as_expr() for e in exprs]}")
+            exact_ok = True
+            for row in f["erows"]:
+                a_, b_, sgn = row
+                num = sp.Poly(sgn, x); den = sp.Poly(1, x)
+                for j in range(N):
+                    zj = exprs[j]; oj = sp.Poly(1, x) - zj
+                    if a_[j] >= 0: num = num * zj ** a_[j]
+                    else: den = den * zj ** (-a_[j])
+                    if b_[j] >= 0: num = num * oj ** b_[j]
+                    else: den = den * oj ** (-b_[j])
+                diff = (num - den).rem(m)
+                exact_ok &= diff.is_zero
+            check("fivetwo_edge_rows_exact_in_Q_theta", exact_ok,
+                  "each rect row reduces to 0 modulo m(θ) — exact, no numerics")
+            wb.add_data("fivetwo_shapes_in_Q_theta", [str(e.as_expr()) for e in exprs])
         except Exception as e:  # noqa: BLE001
-            print("  discriminant step failed:", e)
+            print("  exact ℚ(θ) step failed:", repr(e))
             check("fivetwo_cubic_discriminant_core_minus23", False)
+            check("fivetwo_edge_rows_exact_in_Q_theta", False)
 
     # ── convention independence ──
     import ast
