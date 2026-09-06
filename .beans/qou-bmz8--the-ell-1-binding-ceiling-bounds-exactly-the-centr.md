@@ -3,8 +3,9 @@
 title: The ell-1 binding ceiling bounds exactly the CENTRE of H_n, not the family tr_M(.w) — qou-fvzm's 'not a Hecke-trace object at all' is broader than its evidence
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-02T21:56:13Z
-updated_at: 2026-09-02T21:56:13Z
+updated_at: 2026-09-06T11:32:54Z
 ---
 
 Scope correction on a closed conclusion. Probe: computations/qbeta/qbeta_l1_ceiling_is_one_point_of_a_family_probe.py (6/6). Does NOT close the binding gap.
@@ -299,3 +300,46 @@ obvious place to look.
       a TRAP in `.claude/agent-memory/compute-precision-auditor/MEMORY.md`,
       together with the 1-based/0-based generator-index difference, which is
       silent at `n >= 4`.
+
+## TAKEOVER 2026-09-06 — re-run the deciding test against the REGENERATED caches
+
+Taken over under the stalled-claim protocol (`local/todo-manager` §Stalled-claim
+takeover).  Evidence it was stale rather than live: last bmz8 commit
+**`40412156f2`, 2026-09-03**, three days idle against a 3 h threshold, and its
+work is already merged to `main` — the bean was left `in-progress` after landing
+rather than being actively worked.
+
+**Scope of this takeover is ONE item.** Not the bean's wider agenda.
+
+### Why
+
+This bean's verdict — *"the interface route is CLOSED — the deciding test is
+negative"* (`2e68bb647d`) — was computed against the `chi-<atom>-h<n>-at-q0-50dps`
+caches as they stood on 2026-09-03.  Those caches were **26 days stale** to the
+2026-09-05 intra-ordering ruling (`qou-hu1f`) and were **regenerated** on
+2026-09-06 under a second owner ruling (`qou-92u9`).
+
+`qbeta_interface_w_deciding_test_probe.py` is the one downstream consumer the
+regeneration sweep could **not** refresh: it timed out at 180 s in the sweep and
+again at **2400 s** on a re-run, reaching section 3 of 3 and being killed
+mid-table.  It wrote nothing, so its witness still carries
+`computedAt 2026-09-03T06:32:21` — pre-regeneration data.
+
+**So the verdict is untested under the data the corpus now holds**, and this
+session is a direct demonstration that a verdict of that shape can invert: the
+O3′ atom-independence result was measured 6/6, merged twice, and reversed to 4/6
+by exactly this regeneration.
+
+### What is being claimed, and what is NOT
+
+Claimed: re-run the probe with a budget past 40 minutes and report what the
+deciding test says against regenerated caches.
+
+**NOT claimed:** that the verdict is wrong.  It may well reproduce.  The point is
+that "CLOSED" currently rests on inputs that no longer exist, and nobody has
+checked.  Whichever way it lands is a result.
+
+### Falsifier
+
+If the re-run reproduces a negative deciding test, the CLOSED verdict stands and
+this note becomes a confirmation rather than a challenge.
