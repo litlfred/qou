@@ -28,11 +28,17 @@ have to do.
 
 ## What is NOT here
 
-The **inner** measure — dominance on tableaux of a fixed shape — is a separate
-well-foundedness obligation and is not addressed.  `SpechtDominanceCore.domRel` exists;
-whether it is proved to be a strict order, and whether tableaux of a fixed shape carry a
-`Fintype`, has not been checked here.  Do not read this file as "3.14's induction is
-justified" — it justifies one of its two axes.
+The **inner** measure — dominance within a fixed shape — is a separate well-foundedness
+obligation and is not addressed *in this file*.  Do not read this file alone as "3.14's
+induction is justified": it justifies one of its two axes.
+
+> **Both axes are now done, and the note above is scoped to this file rather than to the
+> corpus.**  `DominanceWellFounded.domGtOn_wellFounded` supplies the inner axis (strict
+> dominance on tabloids; `domRel` *is* a partial order and `Specht.Tabloid` *does* carry a
+> `Fintype` — both questions this file left open), and
+> `MurphyInductionMeasure.murphyLex_wellFounded` combines the two into the lexicographic
+> product 3.14 actually runs on.  The paragraph is kept because its *file-local* claim
+> stays true; the open questions it names are answered next door.
 -/
 
 namespace QOU.BraidKnot.PartitionLexWellFounded
