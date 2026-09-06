@@ -7,6 +7,7 @@ section_number: 1.1
 pages: 1-2
 source_pdf: 1808.02836v2.pdf
 source_sha256: 0224a296253122a2
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges"
 ---
 The canonical cell decompositions of cusped hyperbolic 3–manifolds due to Epstein and Penner [7] are gener-
 ically ideal triangulations. It follows from work of Gu ´eritaud [11, Theorem 2.1.7 in Section 2.1.4] that the

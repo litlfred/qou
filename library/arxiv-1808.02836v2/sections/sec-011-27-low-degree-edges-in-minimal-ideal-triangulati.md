@@ -7,6 +7,7 @@ section_number: 2.7
 pages: 10-15
 source_pdf: 1808.02836v2.pdf
 source_sha256: 0224a296253122a2
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges"
 ---
 We now show that there are no edges of degree one or two in a minimal triangulation of a cusped hyperbolic
 3–manifold, and that edges of degree three must be contained in layered ∂ –punctured solid tori.

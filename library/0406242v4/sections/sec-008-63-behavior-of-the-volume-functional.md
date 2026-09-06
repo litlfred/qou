@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 17-19
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 As a consequence of Lemma 6.2, to prove Theorem 1.1 we only need to ﬁnd a critical
 point of the volume functionalV in the open polyhedron P of cyclic sequences (wi)

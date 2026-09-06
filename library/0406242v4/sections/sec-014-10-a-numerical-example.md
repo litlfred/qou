@@ -7,6 +7,7 @@ section_number: 10
 pages: 25-28
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 In this section we ﬁx two large enough integers N and M and investigate the behavior
 of the angles for Ω = RNLM : the angles made positive by the previous computations

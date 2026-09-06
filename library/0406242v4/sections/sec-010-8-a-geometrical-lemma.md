@@ -7,6 +7,7 @@ section_number: 8
 pages: 20-23
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 Deﬁnition 8.1 In the universal cover of the tessellationA of the torus at inﬁnity of
 Vϕ (Figure 4), a fan is a sequence of at least three consecutive layers, such that the ﬁrst

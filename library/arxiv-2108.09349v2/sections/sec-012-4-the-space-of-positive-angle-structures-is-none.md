@@ -7,6 +7,7 @@ section_number: 4
 pages: 16-16
 source_pdf: 2108.09349v2.pdf
 source_sha256: 4c732bfcbf3dfb16
+doc_brief: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM — We construct topological triangulations for complements of ( −2, 3,n )-pretzel knots and links with n≥ 7."
 ---
 We now return to the triangulations, τp, deﬁned in 2.4. Our immediate goal is to complete the
 ﬁrst step of the Casson-Rivin program by showing that A(τp) is nonempty, i.e., that τp admits a

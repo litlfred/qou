@@ -7,6 +7,7 @@ section_number: null
 pages: 37-40
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 The proof that the maximum ofV occurs in the interior of P closely tracks Section 7–
 Section 9 of Gu´eritaud’s paper. We begin by ruling out many types of degeneracies on
