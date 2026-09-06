@@ -50,6 +50,26 @@ THREE CAVEATS, STATED BECAUSE THEY ARE WHERE THIS COULD FAIL.
      NOTHING about whether a nontrivial class is non-empty, what its dimension or degree
      is, or whether its representations are irreducible.  Those still need the compute.
 
+SNAPPY'S OWN ENUMERATION CORROBORATES THIS, in the relative setting where caveat 1
+lives.  get_generalized_ptolemy_obstruction_classes filters the H^2 elements by the
+action of the UNITS of Z/N:
+
+    units = [x for x in range(N) if gcd(x, N) == 1]
+    for u in units: already_seen.add(tuple((x*u) % N for x in H2_element))
+
+so it keeps one representative per orbit of multiplication by (Z/N)^*.  For N = 3 the
+units are {1, 2} and 2 = -1 mod 3, so that quotient IS c -> -c, which is why 27 elements
+appear as 14 classes.  snappy quotients because unit-multiples give ISOMORPHIC Ptolemy
+varieties -- an implementation-level assertion about the relative classes, not the
+absolute ones.
+
+Note the direction carefully.  P^c isomorphic to P^{-c} does NOT make a representation
+self-dual: the isomorphism is a bijection BETWEEN two varieties, and a point of P^c maps
+to a different point of P^{-c}.  Self-duality needs rho isomorphic to rho*, hence
+[rho] = [rho*] = -[rho], hence c = -c.  For c != 0 that fails, so rho is not self-dual --
+which is the argument above, now with snappy's own equivalence agreeing on which classes
+are identified.
+
 CONSISTENCY, measured: class 1 was computed the expensive way and found COMPLEX TYPE,
 i.e. not self-dual -- exactly what (*) predicts for c != 0.  One agreeing instance is
 corroboration, not proof of the general claim.
