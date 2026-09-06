@@ -185,7 +185,22 @@ def main() -> int:
         per = doc["by_partition"]
         target = mp.mpf(doc["tr_M_at_q0"])
         contribs = [mp.mpf(r["contribution"]) for r in per]
-        live = [i for i, r in enumerate(per) if mp.mpf(r["y_lambda"]) != 0]
+        # The radical, by MAGNITUDE rather than by exact zero.  This read
+        # `!= 0` until 2026-09-05.  That worked only because the pre-2026-09-06
+        # chi caches serialized the SU(2)-suppressed weights as exact 0; the
+        # regenerated caches serialize the arithmetic residual instead
+        # (1e-72 to 1e-73, i.e. zero at 50 dps).  With `!= 0` the radical came
+        # out EMPTY, the probe dropped no columns, it solved the ambient LP
+        # after all, and reported `degen` for every atom -- which reads as
+        # "O3' is degenerate" when it actually means "this line stopped
+        # separating the two populations".
+        #
+        # A relative cut is scale-free and separates them by ~70 orders of
+        # magnitude, so no tuning is implied: live weights here run 1e-3 to
+        # 1e-1, radical ones 1e-73.
+        _ys = [abs(mp.mpf(r["y_lambda"])) for r in per]
+        _cut = max(_ys) * mp.mpf("1e-30")
+        live = [i for i, y in enumerate(_ys) if y > _cut]
 
         _, _, amb = solve(contribs, target)
         idx, t_q, quo = solve(contribs, target, keep=live)
@@ -270,8 +285,17 @@ def main() -> int:
     ambient_all_degenerate = all(abs(r["_y0a"]) <= 1e-12 for r in rows)
     quotient_all_defined = all(r["_aK"] is not None for r in rows)
     y0_identity_holds = all(r["y0_star_equals_min_contrib"] for r in rows)
-    worst_ppm = max(abs(r["_ppm"]) for r in rows)
-    quotient_recovers_aK = worst_ppm < 1.0  # 1 ppm would be agreement
+    # `_ppm` is None exactly when `_aK` is (line ~197: the quotient a_K is
+    # undefined when |y0| <= 1e-12, i.e. the dual is degenerate).  The
+    # serialization on the `quotient_vs_closed_ppm` line already guards for
+    # that; this did not, so `abs(None)` raised as soon as any row hit the
+    # degenerate branch.  It never had, until the 2026-09-05 chi-cache
+    # regeneration (qou-92u9) moved a dual onto it.  Same class as the guard
+    # two lines up, which was written for this case and then not applied here.
+    defined_ppm = [abs(r["_ppm"]) for r in rows if r["_ppm"] is not None]
+    worst_ppm = max(defined_ppm) if defined_ppm else float("nan")
+    # No defined row means no recovery was demonstrated -- not a vacuous pass.
+    quotient_recovers_aK = bool(defined_ppm) and worst_ppm < 1.0
 
     # Private display-only keys never reach the witness.
     for r in rows:
