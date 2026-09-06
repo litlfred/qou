@@ -977,6 +977,60 @@ the right *shape* and is blocked on Step 2. Route A has its identification and a
 cobordism chain map); route C has an exact foothold at `q = 1` and an open `q`-deformation. Routes E
 (factorization homology: extensivity as an axiom) and H (`K₃^{ind}`) have not been touched today.
 
+## 7f. Route A step 2 — the cross term is the Markov trace of a canonical *virtual* Soergel object (2026-09-06)
+
+Bean `qou-c50n` (re-created; its first file collided with an existing bean ID), probe
+`computations/probes/interleaving_cross_term_soergel_kl_probe.py`, 12/12, witness
+`q0Anchor: independent`. Merged with #6891.
+
+**The construction.** Route A step 1 (§7d) left the categorification of `Δ` content-free because it
+looked for a chain map between two different links. The canonical object needs none. By Soergel's
+categorification theorem and the Soergel conjecture (Elias–Williamson, held), the Bott–Samelson
+bimodule of a word decomposes into indecomposables `B_w` with multiplicities given by expanding the
+product of `C'_s` in the Kazhdan–Lusztig basis of `H₄`; and the braid word's *Rouquier complex*,
+whose Hochschild homology is the HOMFLY-PT (Khovanov–Rozansky) homology, has class `∏ T_s`, whose
+KL expansion is signed. Dictionary: the framework's `q` is Soergel's `v`, `T_s = v·g_s`,
+`C'_s = g_s + q⁻¹`, `C'_s² = (v+v⁻¹)C'_s`. Everything below is exact over `ℚ(v)` on the 24-element
+group; the KL polynomials are recomputed by the recursion and checked at the two singular Schubert
+cells of `S₄` (`P_{e,3412} = P_{e,4231} = 1 + q_H`).
+
+**What the two words are, categorically.**
+
+| word | Bott–Samelson object, in indecomposables |
+|---|---|
+| sequential `s₀²s₁²s₂` | `(v+v⁻¹)² · B_{s₀s₁s₂}` — four shifted copies of **one** indecomposable |
+| interleaved `s₀s₁s₀s₂s₁` | `B_{3421}` (the 4-cycle, length 5) `⊕ B_{2413} ⊕ B_{3214}`, multiplicity 1 each |
+
+The two share **no** summand. The Rouquier classes expand with signs — top term `v⁵·C'_{3421}` for
+the interleaved word — and the Markov trace of the expansions reproduces `I(q)` and `S(q)`, with
+
+    v⁻⁵ · tr_M( [F(interleaved)] − [F(sequential)] ) = Δ(q)   exactly.
+
+**Reading.** `Δ` is the Markov trace of an *intrinsic* virtual Soergel object (a difference of two
+Rouquier classes in the split Grothendieck group), not of an ad-hoc shifted sum; HOMFLY-PT homology
+categorifies it summand by summand, and the categorical name of "interleaving" is the length-5
+indecomposable of the 4-cycle, which the sequential word never contains. This is the
+categorification route A asked for. What it does **not** do is touch `b₃`: whether the framework's
+binding functional can see that summand requires a nucleus to be an interleaved word class in the
+first place (`qou-5vhf`), and the production word is monotone.
+
+**Route E, closed cheaply.** Its formalize-first prune ("pair-locality contradicts ⊗-excision") was
+miswritten: at the scalar level ⊗-excision is inclusion–exclusion of log-traces, which *local*
+pairwise functionals satisfy and which monotone words satisfy trivially (letter-additivity,
+`f_tr_stabWord_eq_sum` in `FormalityBridgeF1.lean`), while interleaving violates it by exactly `Δ`
+(`f_interleaved_ne_f_sequential`). So route E's scalar content *is* the T1/A/C story, already proved;
+its categorical content (relative tensor products over collars) is route A by
+Ginot–Tradler–Zeinalian. Nothing new to build.
+
+**Arc status after 7b–7f.** Pruned: B (order-zero cross term), D in dimension 2 (central inertia), G
+(planar operad arity ≤ 2), E (reduces to A). Positive footholds: A (canonical virtual object),
+C (Burnside count at `q = 1`). One shape survives with content the corpus cannot yet evaluate: D2's
+abelian volume integral `∫γ` of the inert 3-curvature — additive over triples, the Δ_λ audit's
+requested shape — blocked on Step 2 (no connection form exists to compute `γ` from). H stays with
+the flavour/volume arc. The honest summary is unchanged from §7: the many-body term the binding gap
+needs is not visible in the `n = 4` word pair beyond its component count, and the one route that
+could produce a triple-additive term runs through the framework's un-derived Step 2.
+
 ## 8. Literature to download — prioritised, with links and one-line justification
 
 **Priority A — likely to change what can be *proved***
