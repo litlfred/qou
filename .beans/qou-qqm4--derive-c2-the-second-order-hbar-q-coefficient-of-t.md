@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-06T10:18:58Z
+updated_at: 2026-09-06T11:20:30Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -272,3 +272,69 @@ So the remaining work on goal (2) is narrower than 'derive the second order': it
 canonically and read the class split**, then find the (Z,N) form from the pair terms. And that
 probe's own docstring already declines to assert a closed form, so not fitting one is the corpus's
 position and not merely mine.
+
+
+### [◇]'s witness is refreshed — canonical, 4/4, and a THIRD stale table came with it (2026-09-06, PR #6920)
+
+`c2-diagonal-insertion-expansion-probe.witness.json` no longer carries the grouped values. Re-run on
+the canonical word, 252 s, 4/4 assertions, all six `c₂` matching the tables this branch repaired.
+**The class split this bean asked for, canonical:**
+
+    case  (Z,N)   A   |S|=0    |S|=1      |S|=2      c₂
+    pp    (2,0)   2   0        7/8        5/32       33/32
+    pn    (1,1)   2   0        27/32      −1/16      25/32
+    nn    (0,2)   2   0        13/16      −3/4       1/16
+    T     (1,2)   3   5/32     123/128    −11/32     99/128
+    ³He   (2,1)   3   5/32     65/64      7/128      157/128
+    ⁴He   (2,2)   4   11/64    25/32      −49/512    439/512
+
+**ONE STRUCTURAL FACT IS ALREADY VISIBLE, and it is not a fit.** The `|S| = 0` column is
+**species-blind** — it depends only on `A`. All three `A = 2` words give `0`; both `A = 3` words
+give `5/32`; `⁴He` gives `11/64`. Six points collapse to three, with no parameter chosen. That is
+the second-order shadow of the same fact at order `ε⁰`, where `c₀ = 2^(−A)(1 − 2^(−O))` likewise
+sees only the interface pattern. So the species dependence of `c₂` lives entirely in `|S| = 1` and
+`|S| = 2`.
+
+**THE THIRD STALE TABLE.** Repairing this file earlier I fixed `RECORDED_C1` and `EXACT_C2` and
+stopped, because those are the two the assertions compare against. Forty lines below them sat
+
+    first = {"T": F(292, 163), "3He": F(30, 17), "4He": F(24, 7)}
+
+the FIRST-order chain/atom ratios the second-order assertion measures against — hardcoded from the
+grouped word. Nothing compared to it, so nothing failed; it simply wrote grouped numbers into a
+witness whose every other field was canonical. **It is now DERIVED from `RECORDED_C1`.**
+
+    T     292/163 = 1.7914  →  4
+    ³He    30/17  = 1.7647  →  3/2
+    ⁴He    24/7           →  24/7   (unchanged)
+
+⁴He's invariance is not luck — `pp+pn+nn` and `⁴He` carry the same nucleon content, so the ratio is
+ordering-invariant by the content-cancellation criterion, and `chain_over_atom_He4_generic` proves
+it algebraically. T and ³He have `Z ≠ N` and moved.
+
+**AND THE ASSERTION IT FEEDS IS NOW MARGINAL — read this before quoting it.** "Second-order
+over-count is smaller than first-order" still holds 3/3, but:
+
+    |ratio − 1|    second    first
+    T              0.0909    3.0000
+    ³He            0.4777    0.5000     ← clears by 4.5 %
+    ⁴He            1.1868    2.4286
+
+Under the grouped data ³He read 0.1191 vs 0.7647 and looked comfortable. It is not. Do not cite this
+as evidence the over-count is controlled at second order. (Its source string had two further defects,
+both fixed: it printed the RATIOS while labelling them `|ratio − 1|`, and quoted a hardcoded grouped
+`1.248` for ⁴He.)
+
+### The next step on goal (2), and why it is a TEST rather than a fit
+
+The `c₁` closed form has the shape `a(A)·u + b(A)·(I_pp − I_nn) + c(A)` with `u = 3Z − 2N`. Ask
+whether `|S| = 1` at second order has the same shape. At `A = 2` the three species give a
+**degenerate** system — `pp + nn` reproduces `pn` exactly, so one parameter stays free — and `A = 3`
+supplies only two equations from T and ³He. **Three parameters need four species at one `A`.**
+
+So: measure `3p` and `3n` (`A = 3`, `n = 9`, ~15 s each), solve the three parameters from three of
+the four, and **predict the fourth**. A held-out species at the same `A` is a real test; three points
+against three parameters would not be. If it fails, the shape is wrong and that is the finding.
+
+Deliberately NOT done: reading a form off the six points above. Six points admit many
+parameterisations and this arc has been burned by exactly that.
