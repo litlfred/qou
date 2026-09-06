@@ -1,4 +1,6 @@
 import Mathlib.Data.ZMod.Basic
+import Mathlib.Tactic.Ring              -- `ring`, used in the `calc` at l.57
+import Mathlib.Tactic.LinearCombination -- `linear_combination`, used at l.68
 
 /-!
 # QOU.Eightfold.ObstructionClassForcesComplexType — self-duality forces a trivial obstruction
