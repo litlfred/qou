@@ -1558,3 +1558,5 @@ import QOU.Mass.CrossTermOrderZeroComponentCount
 import QOU.Mass.HeckeQuadraticClassicalShadow
 import QOU.Mass.KZUnitModulusPrune
 import QOU.Mass.HeckeMonodromy
+import QOU.Mass.ColourCubicDiscriminant
+import QOU.Mass.ColourCubicDiscriminantReal
