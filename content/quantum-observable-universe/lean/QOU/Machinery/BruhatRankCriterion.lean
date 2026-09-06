@@ -70,6 +70,14 @@ variable {n : ℕ}
 def rk (u : Perm (Fin n)) (i m : ℕ) : ℕ :=
   ∑ x : Fin n, if (x : ℕ) < i ∧ ((u x : Fin n) : ℕ) < m then 1 else 0
 
+/-- `rk` as a cardinality rather than a sum of indicators -- the form a consumer counting
+tableau labels wants. -/
+theorem rk_eq_card (u : Perm (Fin n)) (i m : ℕ) :
+    rk u i m
+      = (Finset.univ.filter fun x : Fin n => (x : ℕ) < i ∧ ((u x : Fin n) : ℕ) < m).card := by
+  unfold rk
+  rw [Finset.card_filter]
+
 theorem rk_succ (u : Perm (Fin n)) (i m : ℕ) (hi : i < n) :
     rk u (i + 1) m = rk u i m + (if ((u ⟨i, hi⟩ : Fin n) : ℕ) < m then 1 else 0) := by
   unfold rk
