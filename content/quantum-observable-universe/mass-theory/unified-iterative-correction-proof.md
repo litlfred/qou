@@ -65,7 +65,13 @@ unconditionally.  The general theorems keep the bound as a hypothesis
 because they are about any block of dimension $\geq 2$.  The boundary
 is real: $f^{(1,1)} = 1$, so at the charge shape the block *is* its
 trace and none of this applies.  A derivation reading the block rather than its
-trace is not blocked by any of this.  So the clause is still an open obligation, not a
+trace is not blocked by any of this — and that is now constructive
+rather than merely permitted: `three_blockEntry_independent_p21`
+exhibits three linearly independent block-reading functionals at
+$(2,1)$, the exact complement of the three trace-factoring ones being
+dependent.  It does **not** identify those three with volume, surface
+and Coulomb; three independent functionals existing is a *necessary*
+condition for such a match, not evidence of one.  So the clause is still an open obligation, not a
 derivation; for higher
 partitions it adds the form-factor, $pn$-correlation, and
 ${[3,2,1]}$ pn-invisible corrections.

@@ -113,7 +113,6 @@
     "computations/probes/qbeta_5two_n6_cable_qstar_probe.py::1.10997859303152": 1,
     "computations/probes/quark_volume_provenance_probe.py::1.1099786": 1,
     "computations/probes/the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.py::1.1099785955541805752815940796095093779932822799587": 1,
-    "computations/probes/the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.py::1.109978595642739046681795129380001752700065561029011556974045769999095": 1,
     "computations/probes/the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe.py::1.109978595642739046681795129380001752700065561029011": 1,
     "computations/probes/tower_e0_pole_conditioning_probe.py::938.272": 3,
     "computations/probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.py::1.109978595642739046681795129380001752700065561029011": 1,
@@ -200,6 +199,18 @@
     "computations/wedderburn_beta3_provenance_probe.py::1.10997859555733471": 1,
     "computations/wedderburn_mass_table_convention_d.py::0.51099895": 1,
     "computations/wedderburn_mass_table_z1_20.py::0.51099895": 1,
-    "computations/witness_raw_float64_audit.py::938.272": 1
+    "computations/witness_raw_float64_audit.py::938.272": 1,
+    "qou-mass/src/qou_mass/_internal/canonical_tower.py::28.295674": 1,
+    "qou-mass/src/qou_mass/_internal/canonical_tower.py::7.71804": 1,
+    "qou-mass/src/qou_mass/_internal/experimental_constants.py::938.27208816": 1,
+    "qou-mass/src/qou_mass/_internal/mass_at_3A_proper.py::28.295674": 1,
+    "qou-mass/src/qou_mass/_internal/mass_at_3A_proper.py::7.71804": 1,
+    "qou-mass/src/qou_mass/daha_macdonald.py::1.10997858": 1,
+    "qou-mass/src/qou_mass/demazure.py::1.10997858": 1,
+    "qou-mass/src/qou_mass/toroidal_harmonic.py::1.10997858": 1,
+    "qou-mass/src/qou_mass/wenzl_qpoch.py::1.10997858": 1,
+    "scripts/convention-c-value-audit.py::1.1099785827513808": 1,
+    "scripts/convention-c-witness-audit.py::938.272": 1,
+    "tools/pyhecke/tests/test_tl.py::1.1099785827513808": 1
   }
 }

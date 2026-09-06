@@ -38,7 +38,7 @@ attribute [instance] LocalDeformation.instRing LocalDeformation.instModule
 
 /-- **Twisted quantization map**: Yekutieli's construction that
     produces a global algebra from compatible local deformations. -/
--- Ref: [yekutieli2008] §4, [yekutieli2010] Theorem 1.7
+-- Ref: [yekutieli2008] §4, [yekutieli2015-twisted-dq] Theorem 0.10.1
 structure TwistedQuantizationMap (R : Type*) [CommRing R] where
   localData : LocalDeformation R
   GlobalAlgebra : Type*

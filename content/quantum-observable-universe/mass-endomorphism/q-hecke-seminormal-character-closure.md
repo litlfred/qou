@@ -23,41 +23,33 @@ Two layers have to be got right, and each has a natural wrong answer:
 
 | Atom | $|\mathrm{tr}_M|$ (convention **D**, muon pin) |
 |---|---:|
-| Proton | $1.14575978232$ |
-| Neutron | $0.98774375682$ |
-| Deuteron | $0.57517232973$ |
-| Tritium | $0.22931014615$ |
-| ${}^3$He | $0.40376713691$ |
+| Proton | $0.62932842249$ |
+| Neutron | $0.47513351767$ |
+| Deuteron | $0.15196834396$ |
+| Tritium | $0.02914404235$ |
+| ${}^3$He | $0.05859625835$ |
 
-> **🛑 THESE VALUES ARE UNDER THE SUPERSEDED INTRA-ORDERING** (found
-> 2026-09-05, immediately after the migration below). The C → D migration is
-> right; the **braid word** underneath it is not.
+> **Ordering corrected 2026-09-05** (`qou-hu1f`). Earlier the same day these
+> values were migrated C → D from `atomic-tr-m-mpfr-50dps.witness.json` — which
+> was computed **2026-08-29, before** the intra-ordering owner ruling, and had
+> never been regenerated. The producer has now been re-run under the ruling and
+> the table takes its output:
 >
-> `atom_braid_word_3A` lays each nucleon's confinement core down in one of two
-> orders. The **owner ruling** of 2026-09-05 (`qou-hu1f`) made the alternating
-> `(σ₀σ₁⁻¹)³` — *borromean* — the default, because `σ₀` and `σ₁` do not commute
-> and only the alternating word is `β_Bor`. The bridge witness these values came
-> from was computed **2026-08-29, before that ruling**, and has not been
-> regenerated:
->
-> | atom | published here (grouped) | under the ruling (borromean) |
+> | atom | grouped (superseded) | **borromean (the ruling)** |
 > |---|---:|---:|
-> | Proton | $1.14575978232$ | $0.62932849262$ |
-> | Neutron | $0.98774375682$ | $0.47513359056$ |
+> | Proton | $1.14575978232$ | $0.62932842249$ |
+> | Neutron | $0.98774375682$ | $0.47513351767$ |
+> | Deuteron | $0.57517232973$ | $0.15196834396$ |
+> | Tritium | $0.22931014615$ | $0.02914404235$ |
+> | ${}^3$He | $0.40376713691$ | $0.05859625835$ |
 >
-> A factor of $1.82$–$2.08$, far larger than the convention migration itself.
+> A factor of $1.8$ to $7.9$, growing with $A$ — far larger than the convention
+> migration that preceded it. `atom_braid_word_3A` lays each nucleon's
+> confinement core down alternating, `(σ₀σ₁⁻¹)³`, because `σ₀` and `σ₁` do not
+> commute and only the alternating word is `β_Bor`.
 >
-> **Not substituted, deliberately.** These five figures have already been
-> changed once today on the strength of a witness that turns out to predate a
-> ruling; changing them again before the ordering question is settled for this
-> block's quantity would compound that rather than fix it. What is needed is the
-> producer re-run under the ruling — and it currently **cannot be**: see the
-> reproducibility item in `qou-46ab`.
->
-> The backlog is not this block alone. `atom_braid_word_3A` has **339 live
-> callers**, only **7** of which name `intra_order`; **332 silently take the new
-> default**, and **57 committed witnesses** reference it. Any of those generated
-> before 2026-09-05 is in the same position.
+> Both axes are now current: **convention D** and the **borromean** ordering, at
+> the muon pin, all three taken from the producer rather than substituted by hand.
 
 > **Migrated C → D, 2026-09-05** (`qou-i229` → `qou-46ab`, owner-approved:
 > *"refresh and migrate"*). Source: the canonical Hoefsmit + Wenzl bridge witness

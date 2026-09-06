@@ -371,3 +371,52 @@ axiomatisation with no concrete construction.
 > measured. The same trap does **not** apply to this arc's earlier exchange-property
 > finding, which used environment enumeration from the start — and that is exactly why
 > that one held up.
+
+## 3.9 is proved in span form — and the follow-up I proposed is FALSE
+
+**Proved and merged** (#6871, `5869585579`), all sorry-free:
+
+| | declaration |
+|---|---|
+| `x_μ · T_v = q^{ℓ(v)} · x_μ` for all `v ∈ S_μ` | `CompositionEigenPower.xComp_mul_Tw_of_mem` |
+| the mirror, `T_v · x_μ` | `CompositionCosetReduceMirror.Tw_mul_xComp_of_mem` |
+| `x_μ · T_a` reduces onto `D_μ` | `CompositionCosetReduce.xComp_mul_Tw_reduce` |
+| `T_a · x_μ` reduces onto `D_μ` | `CompositionCosetReduceMirror.Tw_mul_xComp_reduce` |
+| **3.9, span form** | `CompositionDoubleCoset.mul_xComp_mul_mem` |
+
+The eigenvector power is the one worth reading: the obvious proof needs the parabolic
+fact (a parabolic subgroup is Coxeter on the simple reflections it contains), which the
+corpus does **not** have. It is avoidable because a Young-subgroup element can only
+descend *within* a block, so every descent is automatically at a generator of `S_μ`.
+
+### 🛑 The follow-up I named as "next" does not hold
+
+I proposed proving the double-coset terms **linearly independent**, which with the span
+statement would give a basis of `H x_μ H`. **That is false**, and the counting settles it
+before any Lean is attempted. At `μ = (1,…,1)`:
+
+* `S_μ` is trivial, so `x_μ = 1`;
+* every `d` is distinguished (the condition quantifies over pairs sharing a block, and no
+  two positions do), so `D_μ = S_n`;
+* the family is `{T_d · T_e}` — **`(n!)²` members in an `n!`-dimensional space.**
+
+Measured exactly over `ℚ(q)` in
+[`double_coset_independence_probe.py`](../../computations/hecke/double_coset_independence_probe.py):
+
+| n | μ | pairs | rank | dim H |
+|---|---|---|---|---|
+| 2 | (2) | 1 | 1 | 2 |
+| 2 | (1,1) | 4 | **2** | 2 |
+| 3 | (2,1) | 9 | **5** | 6 |
+| 3 | (1,1,1) | 36 | **6** | 6 |
+| 4 | (2,2) | 36 | **14** | 24 |
+| 4 | (1,1,1,1) | 576 | **24** | 24 |
+
+Independent only in the degenerate `μ = (n)` rows, where there is one pair.
+
+**The correct route to a basis is different.** Murphy's basis is indexed by pairs of
+**standard** tableaux of a **common shape**, summed over shapes — not by pairs drawn from
+one `D_μ`. The corpus already carries the matching count:
+`HeckeMurphyYoung.murphyIndex_card_eq_finrank` shows that index set has exactly
+`dim H_n(q)` elements, by RSK/Burnside. So **spanning + that cardinality** is the route,
+which is precisely why **3.14 is the arc's real open node** and always was.

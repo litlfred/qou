@@ -7,5 +7,6 @@ export default proof({
   cites: [
     "yekutieli2008",
     "yekutieli2009",
+    "yekutieli2015-twisted-dq",
   ],
 });

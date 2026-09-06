@@ -1,7 +1,7 @@
 ---
 # qou-pdgc
 title: 'The Hecke oleans were 3 months stale: 3 defs read as AXIOMS and wenzlBridge carried a retracted form'
-status: in-progress
+status: done
 type: task
 created_at: 2026-09-05T17:29:43Z
 updated_at: 2026-09-05T17:29:43Z
@@ -174,3 +174,24 @@ Reclassifying from the raw output rather than the label gives 6/6 ok. The genera
 point is the one `AGENTS.md` makes about not taking agent output at face value,
 and it applies to one's own scripts: a status column is a claim, the captured
 output is the evidence.
+
+## Completed 2026-09-06 — subject fixed, remainder handed to `qou-8jjo`
+
+This bean's titled subject is resolved: `MarkovTrace.olean` was rebuilt, the three
+axiom-stubs became `def`s, the five absent theorems appeared, `wenzlBridge` took
+its corrected `q_0` form, and every footprint in that layer now reads source
+rather than a months-old cache. Three tools came out of it — the staleness audit,
+the `--targets` ranking, and the session-start freshness line.
+
+**Final measurement of the deep-tail probe: 40 of 40 targets built, zero source
+defects.** Cones covered 98 modules; top reverse in-degree fell 9 → 4; never-built
+1187 → 1089. Across ~840 modules attempted this session (798 shallow + the
+targeted pass) **no module failed to compile.**
+
+All five `FAILED` labels in the targeted pass were one classifier bug, not five
+findings: `done: up-to-date=N in 0s` has neither `ok=` nor `err=`, and the grep
+required `ok=`. Ground truth — does the olean exist — says all 40 built.
+
+The remaining 1089 never-built modules are a standing condition rather than this
+bean's task, and are carried by `qou-8jjo` with the method and the do-not-do
+(no more `--all` sweeps).

@@ -1,8 +1,8 @@
 {
   "engine": "sympy+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T19:40:03.608388+00:00",
-  "commitSha": "4fb254b7758de06ece4d57b8133c027960d23892",
+  "computedAt": "2026-09-06T03:30:55.510531+00:00",
+  "commitSha": "75fd0b4c3264868c68924658f00c3e433e01bbcb",
   "assertions": [
     {
       "name": "A1_rep_certified",
@@ -96,11 +96,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 17,
   "computation": "nastokes-germ-gauge-covariance",
   "scriptFile": "nastokes_germ_gauge_covariance_probe.py",
   "scriptHash": "6207f903ad9d",
-  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87",
+  "scriptCommitSha": "245c8cfe0ba97355a4df38b9761e8947b288fdab",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -112,7 +112,14 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "clarabel": "0.11.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nastokes_germ_gauge_covariance_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nastokes_germ_gauge_covariance_probe.py"
   },
   "description": "Bean qou-prjo.  Answers the question PR #4849 sec 2.3 left open: is the transverse NA-Stokes pairing Omega_2 gauge-covariant under the connection transformation law of the germ dq = q (d_q rho) rho^-1?  IT IS NOT.  Formalize-first: QOU/MassTheory/GermConnectionGaugeCovariance.lean (sorry-free, generic Ring, #print axioms clean on all 48 declarations) proves the germ is a 1-cocycle, proves the connection law, proves covariance holds IFF a defect vanishes, exhibits a concrete triple where it does not, proves the pairing is covariant GIVEN covariant inputs (so all failure sits in F_q), and proves the covariant second-order object -- the bracket cup square -- is EXACTLY a coboundary with explicit primitive beta = D.alpha, hence zero in H^2.  This probe verifies all of it against the actual Hecke germ: exactly over Q(q) in the 2-dim rep (connection law, nonzero defect, cup-square identity, gauge-invariance of tr alpha), and numerically on the corpus 4He atom word atom_braid_word_3A(2,2) in H_12(q) in TWO gauges -- diag(1,q,...,q^(d-1)) on Hoefsmit seminormal (covariance defect measured directly) and the reduced-Burau realization of the SAME lambda=(11,1) representation (compared via the conjugation-INVARIANT tr(Omega^k), so the comparison needs no intertwiner and is readout-independent).  Both show non-covariance.  Consequence: Omega_2 has no basis-independent value, so the germ-observer-pair selection question of #4849 is VOID rather than open.  Also retro-checks #4848: its Omega_2 = 0 on sigma_1^3 is itself gauge-dependent -- correct within a q-INDEPENDENT change of basis, not under the full connection freedom.  No AME quantity, no g_2, no binding number appears anywhere; free_parameters = 0; nothing wired; bean OPEN.",
   "auditOnly": true,
@@ -141,92 +148,92 @@
       {
         "shape": "(11, 1)",
         "germ_pair": "(0,1)",
-        "norm_Omega_base": "4948.437227819676",
-        "norm_Omega_gauged": "1162.8544104705331",
-        "covariance_defect_rel": "0.7812826746443599",
-        "tr_Om2_base": "3555244.168404439",
-        "tr_Om2_gauged": "163183.59164052393"
+        "norm_Omega_base": "715.1270111032266",
+        "norm_Omega_gauged": "168.84591409905275",
+        "covariance_defect_rel": "0.7570742176617136",
+        "tr_Om2_base": "-174440.4017409317",
+        "tr_Om2_gauged": "-9796.90252383359"
       },
       {
         "shape": "(11, 1)",
         "germ_pair": "(3,4)",
-        "norm_Omega_base": "2341.7572972399257",
-        "norm_Omega_gauged": "3020.983603407377",
-        "covariance_defect_rel": "1.2535549276805913",
-        "tr_Om2_base": "-1212383.9248433984",
-        "tr_Om2_gauged": "760775.0103556628"
+        "norm_Omega_base": "964.900599578762",
+        "norm_Omega_gauged": "1326.9381161571014",
+        "covariance_defect_rel": "0.8639933857958035",
+        "tr_Om2_base": "-362241.9605932053",
+        "tr_Om2_gauged": "-754532.8428051198"
       },
       {
         "shape": "(10, 1, 1)",
         "germ_pair": "(0,1)",
-        "norm_Omega_base": "14845.311683459015",
-        "norm_Omega_gauged": "1198833.5186611477",
-        "covariance_defect_rel": "13.377725878833095",
-        "tr_Om2_base": "31997197.51563998",
-        "tr_Om2_gauged": "6890898020.258329"
+        "norm_Omega_base": "2145.3810333096762",
+        "norm_Omega_gauged": "50470.46918849501",
+        "covariance_defect_rel": "11.65946860118903",
+        "tr_Om2_base": "-1569963.6156683837",
+        "tr_Om2_gauged": "-253617697.71712938"
       },
       {
         "shape": "(10, 1, 1)",
         "germ_pair": "(3,4)",
-        "norm_Omega_base": "7025.271891719777",
-        "norm_Omega_gauged": "690127.0101556488",
-        "covariance_defect_rel": "14.426607690349813",
-        "tr_Om2_base": "-10911455.323590595",
-        "tr_Om2_gauged": "-5784289.866262695"
+        "norm_Omega_base": "2894.7017987362838",
+        "norm_Omega_gauged": "103883.3501096871",
+        "covariance_defect_rel": "7.656619513022901",
+        "tr_Om2_base": "-3260177.645338844",
+        "tr_Om2_gauged": "21652846.31042695"
       }
     ],
-    "B1_worst_covariance_defect_rel": "14.426607690349813",
+    "B1_worst_covariance_defect_rel": "11.65946860118903",
     "B2_character_worst_rel_diff": "1.7345864040248633e-15",
     "B2_rows": [
       {
         "germ_pair": "(0,1)",
         "trace_powers_seminormal": [
-          "3.410605131648481e-13",
-          "3555244.168404439",
-          "-1296127542.9869752",
-          "6566899409522.931"
+          "-4.263256414560601e-14",
+          "-174440.4017409317",
+          "33148771.389052205",
+          "15408969161.727203"
         ],
         "trace_powers_burau": [
-          "1.2017054018542694e-12",
-          "43954089.92389822",
-          "-9319834954.942451",
-          "968709994049103.5"
+          "1.3603180148657524e-13",
+          "231816.65923735363",
+          "-11220351.708788611",
+          "26875055789.269833"
         ],
         "rel_diff": [
-          "2.5234375",
-          "11.363170528347823",
-          "6.190523035614642",
-          "146.5140600820438"
+          "4.190795679611862",
+          "2.3289161050066465",
+          "1.3384846930554497",
+          "0.7441176958171929"
         ],
-        "norm_Omega_seminormal": "4948.437227819676",
-        "norm_Omega_burau": "25268.891609735307"
+        "norm_Omega_seminormal": "715.1270111032266",
+        "norm_Omega_burau": "952.5104648634967"
       },
       {
         "germ_pair": "(3,4)",
         "trace_powers_seminormal": [
-          "2.1316282072803006e-13",
-          "-1212383.9248433984",
-          "877892497.0597205",
-          "-367095764183.0068"
+          "-2.1316282072803006e-14",
+          "-362241.9605932053",
+          "-51119782.588639975",
+          "60777609996.54671"
         ],
         "trace_powers_burau": [
-          "-2.091660178393795e-13",
-          "633281.034200998",
-          "231615998.27328104",
-          "208504153858.4582"
+          "-4.423702062997352e-13",
+          "981484.0997929698",
+          "66550443.76101888",
+          "481831864845.4215"
         ],
         "rel_diff": [
-          "1.98125",
-          "1.5223436415018434",
-          "0.736168153789877",
-          "1.5679830011727225"
+          "19.75269058595101",
+          "3.709471034735173",
+          "2.3018530281427285",
+          "6.92778565779073"
         ],
-        "norm_Omega_seminormal": "2341.7572972399257",
-        "norm_Omega_burau": "4034.6738583744414"
+        "norm_Omega_seminormal": "964.900599578762",
+        "norm_Omega_burau": "11263.339277277591"
       }
     ],
-    "B2_worst_invariant_rel_diff": "146.5140600820438",
-    "B2_trace_control": "9.102686302259886e-17"
+    "B2_worst_invariant_rel_diff": "6.92778565779073",
+    "B2_trace_control": "5.961537388978882e-17"
   },
   "caveats": [
     "SCOPE-(b), STRUCTURAL EXCLUSION, for the claim 'Omega_2 (equivalently F_q) has a basis-independent value'.  Cited invariant: the germ is the right logarithmic derivative of a q-family, hence a 1-COCYCLE, defined only up to the coboundary (1 - Ad u)Theta; the induced defect on [dq_i, dq_j] is nonzero (Lean gaugeDefect_ne_zero; exhibited exactly here in A3), and the conjugation-invariant tr(Omega^k) demonstrably differ between two realizations of the SAME representation.  This is a proved algebraic obstruction, not a failed search.",

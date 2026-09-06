@@ -24,6 +24,7 @@ polynomial at t = -1 (calibrated on the trefoil against the KRSS worked example)
 """
 import json
 import datetime
+from fractions import Fraction
 
 from pathlib import Path as _PathW  # noqa: E402 — witness output root
 import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
@@ -32,17 +33,34 @@ _HERE_W = _PathW(__file__).resolve().parent
 
 def det_from_alexander(coeffs_at_minus1):
     """|Δ_K(-1)| = knot determinant = rank of thin reduced HOMFLY/Kh homology
-    = number of quiver nodes in the knots–quivers correspondence."""
-    return abs(coeffs_at_minus1)
+    = number of quiver nodes in the knots–quivers correspondence.
+
+    Takes a Fraction, returns an int.  It used to take a float built with
+    ``1 / (-1)``, which is float64 arithmetic in a ``computations/`` probe --
+    harmless at these magnitudes but banned outright by AGENTS.md
+    §"PROBES ARE NOT EXEMPT", and a probe's conclusion is an argument nothing
+    re-derives.  Exact now.
+    """
+    v = abs(Fraction(coeffs_at_minus1))
+    assert v.denominator == 1, f"non-integral determinant {v}"
+    return v.numerator
 
 
 def main():
+    _t = Fraction(-1)
     # Δ_{3_1}(t) = t - 1 + t^{-1} ; at t=-1: -1 -1 -1 = -3  -> det 3  (KRSS: 3-node quiver)
-    det_trefoil = det_from_alexander((-1) - 1 + (1 / (-1)))
+    det_trefoil = det_from_alexander(_t - 1 + 1 / _t)
     # Δ_{4_1}(t) = -t + 3 - t^{-1} ; at t=-1: 1 + 3 + 1 = 5   -> det 5  (5-node quiver)
-    det_fig8 = det_from_alexander(-(-1) + 3 - (1 / (-1)))
+    det_fig8 = det_from_alexander(-_t + 3 - 1 / _t)
 
-    open_count_4_1 = int(round(det_fig8))            # Gukov–Stošić / knots-quivers
+    # CONFIRMED, not inferred (bean qou-48dw).  The 5 below used to reach the
+    # witness only through the knots-quivers rule "#nodes = #HOMFLY generators
+    # = det".  It is now READ off the quiver Singh et al. print for 4_1
+    # (physrevd108106023, sections/sec-005-1-u2-r2.md): a 5x5 matrix over a
+    # motivic sum in five indices d1..d5.  See
+    # computations/qbeta/d1b_published_41_quiver_confirms_node_count_probe.py.
+    open_count_4_1 = det_fig8                        # Gukov–Stošić / knots-quivers
+    published_nodes_4_1 = 5                          # read off C_41
     ggm_dt_spectrum = [3, 4]                          # GGM peacock eq 98 (closed sector)
     reduced_stokes = 3                                # (S₁₂+S₂₁)/S₁₁, all q (corpus q^400)
     qzero_anchor = 3                                  # StokesQZeroDTCount: S⁺(0)₀₁ = 3
@@ -64,6 +82,24 @@ def main():
             "expected": 5,
             "passed": open_count_4_1 == 5,
             "source": "Gukov–Stošić open-BPS / knots-quivers: 4_1 count = det(4_1) = 5",
+        },
+        {
+            "name": "open_count_confirmed_against_published_quiver",
+            "computed": published_nodes_4_1,
+            "expected": open_count_4_1,
+            "passed": published_nodes_4_1 == open_count_4_1,
+            "source": (
+                "CONFIRMED, not inferred (bean qou-48dw). The count is read off "
+                "the explicit C_41 that Singh et al. print (physrevd108106023, "
+                "Phys. Rev. D 108, 106023, sections/sec-005-1-u2-r2.md): a 5x5 "
+                "symmetric matrix over a motivic sum in five indices. The OCR "
+                "transcription is cross-validated -- all 15 independent entries "
+                "are reproduced from the quadratic form in the exponent of the "
+                "motivic series printed in the same passage. The rule '#nodes = "
+                "det' is confirmed at FOUR knots (3_1->3, 4_1->5, 6_1->9, "
+                "8_1->13), so this probe is right for the right reason rather "
+                "than by a one-knot coincidence."
+            ),
         },
         {
             "name": "open_sector_does_NOT_reproduce_GGM_spectrum",
@@ -96,6 +132,24 @@ def main():
                 "bridge": "Gukov–Stošić 1112.0030 (open BPS / colored HOMFLY homology)",
                 "count_4_1": open_count_4_1,
                 "route": "knots–quivers 1707.02991: #nodes = #HOMFLY generators = det",
+                "count_provenance": {
+                    "status": "CONFIRMED against a published explicit quiver",
+                    "was": "inferred from det(4_1) via the knots-quivers rule",
+                    "now": "read off C_41, a 5x5 symmetric matrix over a motivic "
+                           "sum in five indices",
+                    "source": "physrevd108106023 (Singh et al., Phys. Rev. D 108, "
+                              "106023), sections/sec-005-1-u2-r2.md",
+                    "transcription_cross_validated": "all 15 independent entries "
+                        "agree with the quadratic form in the motivic series "
+                        "exponent, a separately-typeset object in the same passage",
+                    "rule_confirmed_at": {"3_1": 3, "4_1": 5, "6_1": 9, "8_1": 13},
+                    "probe": "computations/qbeta/"
+                             "d1b_published_41_quiver_confirms_node_count_probe.py",
+                    "effect_on_verdict": "NONE, and the direction matters: "
+                        "confirming that the 5 is real makes this sector's FAIL "
+                        "stronger, not weaker. 5 is still not in {3,4}.",
+                    "bean": "qou-48dw",
+                },
                 "reproduces_GGM_3_4": open_reproduces,
                 "verdict": "FAIL — 5 ∉ {3,4}; wrong BPS sector for A_ω",
             },

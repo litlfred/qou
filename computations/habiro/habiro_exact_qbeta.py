@@ -65,12 +65,36 @@ def q_pochhammer(u, m):
 
 
 def eval_a_m_at_u(expr_str, u_val):
-    """Evaluate a_m(u) polynomial string at u = u_val."""
-    u = float(u_val)
+    """Evaluate an a_m(u) / D(u) polynomial string at u = u_val, EXACTLY.
+
+    CORRECTED 2026-09-06 (two defects, both silent):
+
+    1. **float64.** The body was ``u = float(u_val)`` followed by string
+       substitution of the decimal, which truncated the 50-dps ``u_val`` to
+       ~17 digits — the exact thing the comment in ``habiro_sum`` below
+       forbids ("NOT float() — would silently truncate the 50-dps u_val").
+       Measured cost against exact evaluation: **1.63e-15 relative** on
+       ``tr_M(proton)``, i.e. ~35 of the 50 declared digits, and *over* the
+       framework's own L1 target of 1 ppQ = 1e-15.
+
+    2. **Silent zero.** ``except Exception: return mp.mpf(0)`` turned any
+       parse failure into a coefficient of 0 — a wrong answer rather than a
+       failure. All 71 expressions in the atomic witness parse cleanly, so
+       raising costs nothing today and stops a future malformed coefficient
+       from being absorbed instead of reported.
+
+    Binding the name into the eval namespace (rather than substituting its
+    decimal expansion into the source) keeps the arithmetic in mpmath at the
+    configured dps. ``check_q`` is the witness's own spelling of the same
+    variable, so both names are bound.
+    """
+    ns = {"u": u_val, "check_q": u_val}
     try:
-        return mp.mpf(eval(expr_str.replace("check_q", f"({u})").replace("u", f"({u})")))
-    except Exception:
-        return mp.mpf(0)
+        return mp.mpf(eval(expr_str, {"__builtins__": {}}, ns))
+    except Exception as exc:  # noqa: BLE001 — re-raised with context, never absorbed
+        raise ValueError(
+            f"cannot evaluate Habiro expression {expr_str!r} at u={u_val}: {exc}"
+        ) from exc
 
 
 def habiro_sum(atom_data, u_val):
@@ -89,9 +113,9 @@ def habiro_sum(atom_data, u_val):
         a_val = eval_a_m_at_u(entry["a_m"], u_val)
         poch = q_pochhammer(u_val, m)
         total += a_val * poch
-    # Divide by the Markov denominator D(u) — evaluate at full mpmath
-    # precision via the shared helper (NOT float() — would silently
-    # truncate the 50-dps u_val to ~17 digits).
+    # Divide by the Markov denominator D(u) — evaluated at full mpmath
+    # precision via the shared helper.  (Until 2026-09-06 that helper did
+    # `float(u_val)` and this comment described a property it did not have.)
     D_u = eval_a_m_at_u(atom_data["denom_in_u"], u_val)
     return total / D_u
 

@@ -1,7 +1,7 @@
 {
   "engine": "python-int",
   "engineVersion": "python-stdlib",
-  "computedAt": "2026-08-02T09:46:01.737580+00:00",
+  "computedAt": "2026-09-05T08:39:00.068988+00:00",
   "computation": "aomega-bps-sector-nondegeneracy",
   "scriptFile": "aomega_bps_sector_nondegeneracy.py",
   "contentBlock": "conj:stokes-dt-bps-bridge",
@@ -19,6 +19,13 @@
       "expected": 5,
       "passed": true,
       "source": "Gukov\u2013Sto\u0161i\u0107 open-BPS / knots-quivers: 4_1 count = det(4_1) = 5"
+    },
+    {
+      "name": "open_count_confirmed_against_published_quiver",
+      "computed": 5,
+      "expected": 5,
+      "passed": true,
+      "source": "CONFIRMED, not inferred (bean qou-48dw). The count is read off the explicit C_41 that Singh et al. print (physrevd108106023, Phys. Rev. D 108, 106023, sections/sec-005-1-u2-r2.md): a 5x5 symmetric matrix over a motivic sum in five indices. The OCR transcription is cross-validated -- all 15 independent entries are reproduced from the quadratic form in the exponent of the motivic series printed in the same passage. The rule '#nodes = det' is confirmed at FOUR knots (3_1->3, 4_1->5, 6_1->9, 8_1->13), so this probe is right for the right reason rather than by a one-knot coincidence."
     },
     {
       "name": "open_sector_does_NOT_reproduce_GGM_spectrum",
@@ -41,6 +48,22 @@
       "bridge": "Gukov\u2013Sto\u0161i\u0107 1112.0030 (open BPS / colored HOMFLY homology)",
       "count_4_1": 5,
       "route": "knots\u2013quivers 1707.02991: #nodes = #HOMFLY generators = det",
+      "count_provenance": {
+        "status": "CONFIRMED against a published explicit quiver",
+        "was": "inferred from det(4_1) via the knots-quivers rule",
+        "now": "read off C_41, a 5x5 symmetric matrix over a motivic sum in five indices",
+        "source": "physrevd108106023 (Singh et al., Phys. Rev. D 108, 106023), sections/sec-005-1-u2-r2.md",
+        "transcription_cross_validated": "all 15 independent entries agree with the quadratic form in the motivic series exponent, a separately-typeset object in the same passage",
+        "rule_confirmed_at": {
+          "3_1": 3,
+          "4_1": 5,
+          "6_1": 9,
+          "8_1": 13
+        },
+        "probe": "computations/qbeta/d1b_published_41_quiver_confirms_node_count_probe.py",
+        "effect_on_verdict": "NONE, and the direction matters: confirming that the 5 is real makes this sector's FAIL stronger, not weaker. 5 is still not in {3,4}.",
+        "bean": "qou-48dw"
+      },
       "reproduces_GGM_3_4": false,
       "verdict": "FAIL \u2014 5 \u2209 {3,4}; wrong BPS sector for A_\u03c9"
     },
@@ -56,5 +79,11 @@
       "verdict": "PASS \u2014 reduced-Stokes 3 \u2208 {3,4}; licenses A_\u03c9(4_1)=3 (theorem for 4_1)"
     }
   },
-  "discipline": "Honest non-degeneracy gate. The owner-named Gukov\u2013Sto\u0161i\u0107 OPEN-HOMFLY bridge does NOT reproduce the GGM resurgent-Stokes spectrum {3,4}: the 4_1 open-BPS/quiver count is det(4_1)=5, a DISTINCT BPS sector. The conditional A_\u03c9=3 is therefore adopted on the CLOSED-sector bridge (GGM Conj 3(d) + GPPV), which reproduces {3,4}/reduced-3. No fit; no production wiring (L2/Q_\u03b2 untouched); conditional (theorem for 4_1), internal QOU-driver derivation still open (qou-qnnq)."
+  "discipline": "Honest non-degeneracy gate. The owner-named Gukov\u2013Sto\u0161i\u0107 OPEN-HOMFLY bridge does NOT reproduce the GGM resurgent-Stokes spectrum {3,4}: the 4_1 open-BPS/quiver count is det(4_1)=5, a DISTINCT BPS sector. The conditional A_\u03c9=3 is therefore adopted on the CLOSED-sector bridge (GGM Conj 3(d) + GPPV), which reproduces {3,4}/reduced-3. No fit; no production wiring (L2/Q_\u03b2 untouched); conditional (theorem for 4_1), internal QOU-driver derivation still open (qou-qnnq).",
+  "scriptHash": "2b8920784b28",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "d92b8592151fda5920b439789976f853dc60e1c0",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }
