@@ -261,32 +261,8 @@ under 200 lines — prune the log or split a section out, never the TRAPs.
   docstring-scoped `markov_parameter` ×2, NOT lean-verified — no oleans here);
   shape 13 actionable unchanged (no renames). Survey: C-dependence of closed
   gates is concentrated in the `c_k` arc. Taxonomy rows 37-38.
-- 2026-09-01 — bean `t7qv`: split `functional-and-bond-topology.md` out. Four
-  live convention hazards, all measured. **(1)** Markov vs q-Plancherel is
-  settled three ways — Plancherel is not a Markov trace, does not annihilate the
-  q-antisymmetriser (so its Gram is nonsingular, a different cone), and fails
-  multiplicativity on disjoint blocks 36/36 at `H_6`. The silver coincidence is
-  a true all-`n` theorem about Plancherel; under Markov it moves to the
-  supergolden `q^3 = q^2+1`. **Never transport a metallic result across that
-  line.** **(2)** `atom_gen_chains` (C(A,2) bonds) and `atom_braid_word_3A`
-  (A-1, chain) DISAGREE for every `A >= 3` and this was undocumented; the arity
-  law needs the chain, the binding evidence favours all-pairs, and the choice
-  moves numbers 16 % vs 4 % under mere relabelling. **(3)** the colour
-  convention splits deliberately between scales — `pn` colour-weighted (`D_PN`,
-  owner ruling R3), quark `ud` colour-blind and explicitly UNSETTLED in the
-  source. **(4)** force channels are assigned by GENERATOR (`3k+2` strong,
-  `3k+1` EM, `3k` intra) and the rate follows the generator, not `beta`: the
-  same `sigma^-1` gives `+0.907` strong and `-0.600` EM, opposite signs. Scope
-  trap: AME binding is NUCLEAR, so compare the strong channel ALONE.
-  **The chain/all-pairs choice has a measured cost, not just a convention.** The
-  chain attachment functional is exactly rank one (spread `<1e-12`); all-pairs is
-  not (`0.196..0.696`), and the gap is the model's entire many-body content —
-  produced by the band generator routing a non-adjacent bond *through* the
-  intervening nucleon. That term is **negative** at all eight `A=3` orderings
-  (`-9%` to `-15%`), so a naive all-pairs sum **overestimates** binding; and it
-  privileges the middle nucleon (`pnp` vs `ppn` `4.17%`, `npn` vs `nnp` `5.05%`
-  on identical bond multisets) while reversal is exact — a labelling artifact,
-  since a nucleus has no middle. Before spending more on bond topology, know the
-  ceiling: `B(4He)/B(2H) <= 6.0643` against AME `12.7196`, short `2.0975x` with
-  `alpha` cancelling, and every many-body term measured has the sign that makes
-  it worse.
+- 2026-09-01 — bean `t7qv`: split `functional-and-bond-topology.md` out — read
+  it before touching Markov-vs-Plancherel (never transport a metallic result
+  across that line), the chain/all-pairs bond builders (they disagree for every
+  `A >= 3`, and the gap is the model's whole many-body content), the pn/ud
+  colour split, or generator-assigned force channels. Every number is there.
