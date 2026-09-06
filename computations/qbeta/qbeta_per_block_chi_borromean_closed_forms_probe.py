@@ -142,7 +142,43 @@ def main() -> int:
     print(f"     as a polynomial in h:  canonical {h_can}")
     print(f"                            published {h_pub}")
 
+    # INDEPENDENT-PATH CROSS-CHECK. Everything above comes from the symbolic
+    # Hoefsmit matrix product. Re-derive the same three numbers at q0 through
+    # `chi_general_word.chi_all_lambda_any` -- a different implementation
+    # (transfer / window kernels over mpmath, no Hoefsmit matrices, no sympy)
+    # on the same canonical word.
+    #
+    # This is here because of the chi-cache staleness found the same day
+    # (docs/audits/2026-09-05-chi-caches-stale-to-the-intra-ordering-...): the
+    # committed chi-<atom>-h<n> caches are grouped-era. This path CANNOT have
+    # read one -- `q_character_on_braid_word` consults a cache only when
+    # `atom_cache_label` is passed, and it is not passed above -- but asserting
+    # agreement against an unrelated implementation settles that by measurement
+    # rather than by reading the call site.
+    import mpmath as mp
+    from q_parameter import Q_50_DIGIT_STR
+    from chi_general_word import chi_all_lambda_any
+    from mass_at_3A_proper import atom_braid_word_3A
+
+    mp.mp.dps = 50
+    q0_mp = mp.mpf(Q_50_DIGIT_STR)
+    q0_sym = sp.Rational(Q_50_DIGIT_STR.replace(".", ""), 10 ** (len(Q_50_DIGIT_STR) - 2))
+    num_p = chi_all_lambda_any(atom_braid_word_3A(1, 0, q=q0_mp), 3, dps=50, q=q0_mp)
+    num_n = chi_all_lambda_any(atom_braid_word_3A(0, 1, q=q0_mp), 3, dps=50, q=q0_mp)
+
+    worst = mp.mpf(0)
+    print("\n  independent-path cross-check at q0 (chi_all_lambda_any, no Hoefsmit):")
+    for shape, expr in derived.items():
+        indep = num_n.get(shape, mp.mpf(0)) - num_p.get(shape, mp.mpf(0))
+        symb = mp.mpf(sp.sstr(sp.N(expr.subs(q, q0_sym), 40)))
+        rel = abs(indep - symb) / abs(symb) if symb != 0 else abs(indep - symb)
+        worst = max(worst, rel)
+        print(f"    λ={str(shape):<10} symbolic {mp.nstr(symb, 16):<22} "
+              f"independent {mp.nstr(indep, 16):<22} rel {mp.nstr(rel, 4)}")
+    cross_ok = worst < mp.mpf("1e-38")
+
     checks = {
+        "independent_path_agrees_at_q0": cross_ok,
         "one_dim_blocks_unchanged":
             derived[(3,)] == sp.factor(PUBLISHED[(3,)])
             or sp.simplify(derived[(3,)] - PUBLISHED[(3,)]) == 0,
