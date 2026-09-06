@@ -1,4 +1,9 @@
-# 3.14's inner induction axis is a tabloid-level measure — and the corpus already has a counterexample to one
+# 3.14's inner axis: a corpus counterexample raised a doubt, and the source settled it
+
+> **Read the RESOLUTION at the bottom first.** The body below is the doubt as raised, kept
+> because its reasoning is what a reader needs to see why the resolution is not circular.
+> **Verdict: `murphyLex`'s inner axis is RIGHT** — Mathas' own proof of 3.14 sums over
+> `v ▷ t`, strict dominance at the same shape, which is exactly `domGtOn`.
 
 **Date:** 2026-09-06 · **Bean:** `qou-phir` · **Branch:** `claude/mathas-314-descent-2026-09-06`
 
@@ -115,3 +120,71 @@ deriving from scratch.
 Cross-references added to `MurphyInductionMeasure.lean` and `DominanceWellFounded.lean` so a
 reader of either meets this before writing an induction on it. No measure changed, no proof
 touched, nothing retracted — the merged results stand exactly as stated.
+
+---
+
+## 🛑 RESOLVED, same day, from the primary source: the inner axis is RIGHT
+
+The section above names a probe and three outcomes. **None of them had to be run** — Mathas'
+own proof of 3.14 answers it, and reading it was one command. Recording that as the lesson
+before the finding: the doubt was raised from a *corpus* result about a *different* step,
+and the *source* settles it directly.
+
+`library/hecke-alg/sections/sec-000-document.md`, the proof of 3.14 (OCR normalised; `D` is
+`⊵`, `B` is `▷`):
+
+> First suppose that `t` is row standard but not standard. By Lemma 3.13, `m_st = m_sg T_w`
+> for some Garnir tableau `g` and some `w ∈ S_n`. Consequently, by Lemma 3.12 there exists an
+> element `h = Σ r_uv m_uv`, where `u` and `v` are row standard ν-tableaux with **ν > λ**,
+> such that
+>
+>     m_st = T*_{d(s)} m_{t^λ g} T_w = T*_{d(s)} (h + Σ_{v ▷ g} m_{t^λ v}) T_w
+>          = T*_{d(s)} h T_w + Σ_{v ▷ t} r_v m_sv
+>
+> for some `r_v ∈ R`, and where the last equality uses **Corollary 3.8**. By **Corollary 3.4
+> and induction on ν**, `T*_{d(s)} h T_w` can be written in the required form. Furthermore,
+> **by induction on `t`**, the terms `m_sv` can be written as a linear combination of terms
+> `m_uv'` […]
+
+Three things follow, and they overturn the concern rather than confirm it.
+
+1. **Case (ii) is NOT vacuous.** The third outcome the section above proposed testing first is
+   refuted outright: `Σ_{v ▷ t} r_v m_sv` is same-shape and is the case-(ii) population.
+2. **Its terms are dominance-COMPARABLE by construction** — the sum is indexed *by* the
+   dominance relation. This is the structural difference from the `q = 1` polytabloid step,
+   whose Garnir terms were *measured* incomparable: there the terms fall out of a coset sum
+   and their tabloids land where they land; here the term set is **defined** as those `v`
+   dominating `t`. So the 2026-07-06 counterexample does not carry, for a reason sharper than
+   "different step": the two term-sets are produced by different mechanisms, one of which
+   cannot produce an incomparable term at all.
+3. **And the dominance in the PROOF is STRICT.** 3.14's *statement* says `u ⊵ s`, `v ⊵ t`;
+   its *proof* sums over `v ▷ t`, and Corollary 3.15 makes the same distinction explicitly —
+   *"(ii) ν = λ, u = s and **v ▷ t**"*. The loose `⊵` is the shape of the conclusion; the
+   induction steps on `▷`.
+
+**That is exactly what `DominanceWellFounded.domGtOn` is** — `domRel b a ∧ b ≠ a`, "`a`
+strictly dominates `b`" — and `domGtOn_induction` supplies `C a` from `C b` for every `b`
+strictly dominating `a`, which is the direction *"by induction on `t`"* needs.
+`MurphyInductionMeasure.murphyLex`'s inner axis is the right measure, and its outer axis
+`ν > λ` is the lex order the proof names in the same breath. **The measure matches Mathas'
+induction on both axes.**
+
+The cross-references added to the two Lean files are kept, re-scoped to say this rather than
+to raise the doubt: the `q = 1` counterexample is real and is *about the other mechanism*, and
+a reader who meets `colWordNum` should know why it is not needed here.
+
+### What this hands the next tranche, precisely
+
+The proof names its own remaining inputs, and two of the four are already in the corpus:
+
+| input | status |
+|---|---|
+| **3.13** — `m_st = m_sg T_w` | **proved**, `MurphyRefTab.exists_garnir_murphyMRow_factor` (#6899) |
+| **Corollary 3.4** — `M^μ` free on `{x_μ T_d}` | **proved**, `CompositionCosetSum` |
+| **3.12** — `m_{t^λ g} = h + Σ_{v ▷ g} m_{t^λ v}`, `h` over `ν > λ` | **open** — the algebra half; needs 3.9 at basis level |
+| **Corollary 3.8** — collapses `(Σ_{v ▷ g} m_{t^λ v}) T_w` to `Σ_{v ▷ t} r_v m_sv` | **open, and not previously named on this arc** |
+
+Corollary 3.8 is the new item. It is what converts a sum indexed by tableaux dominating `g`
+into one indexed by tableaux dominating `t` — i.e. it is precisely the step that makes the
+strict-dominance induction close, and nothing in this corpus's chain-status ledger had
+identified it as an input. That is the next thing to read and then to state.
