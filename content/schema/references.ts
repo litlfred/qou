@@ -16715,6 +16715,27 @@ export const references: Reference[] = [
     URL: "https://arxiv.org/abs/1210.5756",
     note: "arXiv:1210.5756 (math.MG, 21 Oct 2012; 19 pp, 13 sections). Theorem 1(i): the number of touching pairs in any packing of n ≥ 2 unit balls in E^3 is < 6n − 0.926 n^{2/3}; (ii) lattice packings < 6n − 3.665 n^{2/3}; and (recalled from Bezdek 2012) fcc packings with n = (2k^3+k)/3 balls have > 6n − 7.862 n^{2/3} touching pairs. Theorem 2: touching triplets ≤ 25n/3, quadruples ≤ 11n/4. Theorems 4/5 use Hales' 2.52 separation of a 13th ball (kissing-number-12 rigidity). This is exactly the affine-plus-sub-affine shape — bulk 12·n/2 from the kissing number, surface deficit ∝ n^{2/3} — that QOU.Mass.CoordinationSaturation (bounded degree k) and docs/audits/2026-09-05-coordination-surface-deficit.md assume; it makes the corpus's Euclidean-packing import a citable theorem while leaving the four recorded objections to that import (internal derivation demanded by qou-rav3; ambient geometry hyperbolic; 3-dimensionality underived; exponent imported) untouched — see docs/audits/2026-09-05-max-contact-sub-affine-negative.md §5. Journal volume/pages recalled, not verified in-sandbox (Crossref CONNECT 403), DOI omitted. Ingested 2026-09-06 (e5afe5ea7b); triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md.",
   }),
+
+  // ── Martelli 2016/2022 — An Introduction to Geometric Topology (hyperbolic 3-manifolds, ideal triangulations, Dehn filling) ──
+  ref({
+    id: "martelli2016",
+    library: {
+      docId: "arxiv-1610.02592v3",
+      dir: "library/arxiv-1610.02592v3",
+      pdf: "library/arxiv-1610.02592v3/1610.02592v3.pdf",
+      stage: "sections",
+      pages: 494,
+      sections: 68,
+      arxiv: "1610.02592v3",
+    },
+    type: "book",
+    title: "An Introduction to Geometric Topology",
+    author: [{ family: "Martelli", given: "Bruno" }],
+    publisher: "arXiv (self-published textbook)",
+    issued: { "date-parts": [[2016]] },
+    URL: "https://arxiv.org/abs/1610.02592",
+    note: "arXiv:1610.02592 (math.GT; v1 Oct 2016, v3 5 Apr 2022; 494 pp, 68 sections). Graduate textbook on surfaces and 3-manifolds through geometrisation. The chapters this folio can cite: §13.1 (Thm 13.1.3 Vol(Δ) = Λ(α)+Λ(β)+Λ(γ) for an ideal tetrahedron, Cor 13.1.4 the regular ideal tetrahedron is maximal — the Λ-form of the Vol(4_1) = 6Λ(π/3) = 2 Cl_2(π/3) guard); §14.1 (ideal triangulations, Thurston's consistency and completeness equations, Prop 14.1.7 a solution with Im z_i > 0 gives a complete finite-volume hyperbolic structure, Prop 14.1.8 + Fig 14.7 the two-tetrahedron valence-6 triangulation at z = e^{iπ/3} is the figure-eight complement, §14.1.7 SnapPea); §15.2 (Prop 15.2.1 #edges = #tetrahedra, Cor 15.2.8 rk A = 2n − c, Prop 15.2.9/15.2.11 the rows of the incidence matrix generate a Lagrangian subspace — the Neumann–Zagier symplectic structure — and the solution space as a complex manifold parametrised by peripheral holonomy); §15.1 the hyperbolic Dehn filling theorem with the figure-eight's exceptional surgeries (Table 15.1); §11.4 torus bundles and Anosov monodromy (Prop 11.4.14). Recorded as the held textbook source behind the NZ-from-braid audit (docs/audits/2026-09-06-nz-gluing-data-from-braid-monodromy.md, beans qou-n2cl / qou-yvyd); the two-bridge layering itself is not in this book (that is Guéritaud / Futer–Kalfagianni–Purcell, library arxiv-0808.2716v4). Ingested 2026-09-06 (e5afe5ea7b); triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
