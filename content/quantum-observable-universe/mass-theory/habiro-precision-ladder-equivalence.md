@@ -15,7 +15,7 @@ $$
   a_m \in \mathbb{Z}[u],
 $$
 
-*where $u = q^{1/2}$, $(u;\,u)_m = \prod_{k=1}^{m}(1-u^{2k})$ is the
+*where $u = q^{1/2}$, $(u;\,u)_m = \prod_{k=1}^{m}(1-u^{k})$ is the
 $q$-Pochhammer symbol, and $M < \infty$ (the series terminates).*
 
 *Under the archimedean evaluation $u \mapsto u_0$ at the substrate

@@ -1031,6 +1031,82 @@ the flavour/volume arc. The honest summary is unchanged from §7: the many-body 
 needs is not visible in the `n = 4` word pair beyond its component count, and the one route that
 could produce a triple-additive term runs through the framework's un-derived Step 2.
 
+## 7g. `qou-5vhf` step 2 — component count decides the q-adic order; the Brunnian class is route B's live object (2026-09-06)
+
+Bean `qou-0fxk`; probe `computations/probes/component_count_decides_q_adic_order_probe.py`, 10/10, witness
+`proton`; Lean `QOU/Mass/CrossTermOrderZeroComponentCount.lean`, sorry-free.
+
+**The joining statement.** At `q = 1` the Markov trace on `ℚSₙ` is the component-count trace
+`2^{c(w)−n}` (verified on every element of `S₃` and `S₄` in the spin-½ representation), so the
+order-zero part of *any* cross term `tr(w) − tr(w′)` is `2^{c(w)−n} − 2^{c(w′)−n}`, and it vanishes
+**iff** the two closures have the same number of components (`componentTrace_eq_iff`; checked on all
+`24 × 24` pairs of `S₄`). Hence two classes of many-body cross term:
+
+| class | example | order at `q = 1` | at the proton pin |
+|---|---|---|---|
+| component-**changing** | `n = 4` trefoil (`c = 1`) vs Hopf-chain (`c = 3`) | 0, classical: `Δ(1) = (2 − 8)/16 = −3/8` | `0.895` nats, `≈ 3.75 MeV` at `E₀` |
+| component-**preserving** | the corpus's Brunnian word `w₃ = [A₀₁, A₁₂]` vs the 3-unlink (both `c = 3`) | 4: `1 − τ_Borr = h⁴(3+h²)/(h²+4)` | `1.44 × 10⁻³`, `≈ 6.0 × 10⁻³ MeV` |
+
+The probe also shows `(σ₀σ₁⁻¹)³` has the same trace as `w₃` (both close to the Borromean rings), and
+the Lean bounds the deficit by `h⁴` outright (`one_sub_tauBorromean_le`, strict for `h ≠ 0`).
+
+**What this settles.** Route B's "all orders in `q`" object, dead for the `n = 4` word (§7c), is
+alive exactly for the Brunnian class — which is the class the corpus's own 3-body operator
+(`BorromeanThreeBodyCluster.lean`) already lives in. And the answer to `qou-5vhf`'s carrier question
+"which word class is a nucleus" is now two-sided: the framework's 3-nucleon operator *is* an
+interleaved (commutator) word class, of the component-preserving kind, and such a class has a cross
+term that is intrinsically `O(h⁴)`.
+
+**What it does to the magnitude problem, as a diagnostic at the comparison boundary (nothing
+fitted).** With `E₀ = m_e/(q₀(q₀−1)) = 4.186 MeV` (the corpus's scale) the two classes bracket the
+Δ_λ audit's quoted target `μ₃ = 0.4708 MeV`: the Brunnian term is `78×` too small, the classical
+one `8×` too large. The missing 3-body magnitude sits between the classes, and neither supplies it
+as it stands. Going up the tower does not help the Brunnian side: the Milnor parity law already on
+`main` (`MilnorParitySignLaw`, leading order `2(A−1)`) says the Brunnian order *rises* with `A`. A
+term of the needed size would have to be classical — a component-changing link topology per
+nucleus, which is the census route `qou-5vhf` closed as a fit — or come from outside this trace
+altogether, which is where §7e left route D2.
+
+**On the resurgent / alien-calculus proposal — CORRECTED 2026-09-06 (the paragraph this
+replaces was wrong on the tower, and the owner caught it).** The superseded text said *"nothing
+resurgent to resum … none arise until the tower limit … the relevant series has not been written
+down"*, and cited the Gevrey results to `QOU/AlgebraicSubstrate/{KernelGrowthBound,
+DominationTowers, PolyhedralDomination}`. Both halves were wrong, and the second contradicts this
+arc's own dialog assessment
+([`2026-09-05-alien-calculus-vs-nonabelian-stokes-dialog-assessment.md` §0 item 4](2026-09-05-alien-calculus-vs-nonabelian-stokes-dialog-assessment.md)),
+which had it right. Corpus-grep, six paths, 2026-09-06:
+
+* **The tower series exists and is divergent.** The Hecke-tower binding period
+  `a_D^(n) = S(n)/n = Σ_{λ⊢n} dim_q(λ)/n` (jet order `n` = strand number) is **Gevrey-1/2**,
+  sorry-free: `QOU/Mass/BindingGevreyHalf.lean` (`n! ≤ 4ⁿ·I(n)² ≤ 8ⁿ·n!` at `q = 1`), with
+  `SWPeriodSuperExponential.lean` and `ConstantKernelGrowthBound.lean` beside it. Its level-1/2
+  Borel transform has a **singularity at `ξ = 1/√2` on the positive real axis** (Pringsheim,
+  measured `0.688` by Padé, non-polar, ten real poles accumulating beyond it):
+  [`2026-07-12-alien-calculus-review-binding-gevrey-half.md` §3](2026-07-12-alien-calculus-review-binding-gevrey-half.md),
+  `lever1_borel_half_singularity_probe.py`. That is the divergence near a singularity.
+* **At the substrate pin the class changes.** `Z_n(q₀) ~ q₀^{n²}`: q-Gevrey, no classical Borel
+  level carries it; the matched q-Borel kernel gives radius `≈ 0.955`
+  (`deltalambda/deuteron-wall-qborel-resummation.witness.json`). Every resummation so far
+  undershoots the deuteron binding; the classical Γ-Borel of the `q = 1` period was shown to be
+  the wrong transform and the deuteron-wall resummation is **reopened as bean `qou-hok7`** (todo,
+  high): q-Borel–Laplace of `Z_n(q₀)`, machinery exists, not yet pointed at the deuteron.
+* **A second divergent tower is the Ohtsuki `κ`-tower** of the `4₁` complex volume: Gevrey-1,
+  Borel singularity at `Vol(4₁)/π ≈ 0.646`, Stokes constant the GGM integer 3
+  (`rem-ohtsuki-tower-bar-parity`, `Stokes3LargeOrderAmplitude.lean`) — a tower in the Kashaev
+  colour, not in the strand number.
+* **What was right and stays:** at *fixed* `n` every trace in this arc is a rational function of
+  `q` (radius `√2` in `ℏ` for the `n = 4` cross term; `1 − τ_Borr` rational in `h`), so the
+  fixed-`n` cross terms carry no resurgent structure. And the `A → ∞` *nuclear* tower series is
+  still unwritten — the brane-tower "divergence at `q₀`" (bean `km42`) was later measured as a
+  saturating plateau in the `σ⁻¹`-chain length, not an `A`-series singularity (`qou-20yf`).
+
+**Consequence for the binding gap.** The "all orders in `q`" object the owner's ruling names is
+the Hecke `n`-tower period, and its resurgent structure is real: the many-body content of the
+tower lives in the q-Borel plane of `Z_n(q₀)`, whose singularity is the deuteron wall. So the
+resurgent route is not a new route of this survey — it is `qou-hok7`, already open, and it is
+where the alien-calculus question has a concrete target. C1 (§7e) still applies to the
+*two-dimensional* version the dialog proposed: that object would be abelian and inert.
+
 ## 8. Literature to download — prioritised, with links and one-line justification
 
 **Priority A — likely to change what can be *proved***

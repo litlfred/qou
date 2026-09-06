@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T20:54:56Z
-updated_at: 2026-09-06T03:11:53Z
+updated_at: 2026-09-06T06:40:42Z
 ---
 
 Audit: [`2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`](../docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md)
@@ -597,10 +597,96 @@ superseded convention as a claim about the mathematics.
 - [x] Re-run and diff — 11 regenerated in total.
 - [x] Gate-exit producers re-run tolerating the gate.
 - [x] Timeouts retried at 1200 s — 1 completed, 1 no-change, 2 still over.
-- [ ] **Decide the 9, do not edit them.** Whether the ruling invalidates each
-      *claim* or each *probe* is a statement about what the canonical word is,
-      and they plausibly share one root. Owner call; the monotonicity assertion
-      is the sharpest case to decide first because the others may follow from it.
+### 🛑 THE "9 BROKEN BY THE RULING" IS ACTUALLY 3. I MISATTRIBUTED SIX.
+
+Owner-approved "fix broken producers / work monotonicity". The first thing that
+had to go was my own classification, which was built by **reading error strings**
+instead of testing.
+
+The discriminator is obvious in hindsight: run each producer with the OLD
+ordering forced (patching `atom_braid_word_3A`'s default, so the 332 producers
+that never name `intra_order` are covered) and see whether the failure survives.
+
+    fails under BOTH        -> pre-existing, merely surfaced by the pass
+    fails only under borromean -> caused by the ruling
+
+Exit code alone is not enough: three producers exit non-zero on a witness gate
+under *both* orderings, which masks whether their assertions differ. Those were
+re-tested at ASSERTION level.
+
+    producer                                verdict
+    nastokes_multigen_cluster_additivity    RULING   16/16 grouped, 15/16 borromean
+                                                     (R3_rel_lambda_robust_within_10pct)
+    qbeta_level_k_binding_operator_probe    RULING   KeyError: (3, 2, 1)
+    classical_floor_derivation_probe        RULING, CONDITIONAL — see below
+    markov_trace_axiomatic_multi_atom       pre-existing  char_fast_cross_check_ok
+                                                          fails BOTH ways
+    per_irrep_pole_atom_crystal             pre-existing  asserted_atoms_match_
+                                                          closed_form_shift, BOTH ways
+    derived_chi_catalogue_build             pre-existing  non-idempotent
+    probe_canonical_braid_interface_comp.   pre-existing  convention mismatch
+    qbeta_mixed_chain_closed_form_probe     pre-existing  KeyError: 'tr_M_at_q0'
+    he4_magnus_omega2_sign_sparse_probe     UNDECIDED — grouped run timed out
+
+**The two I got most wrong, and how:**
+
+- `classical_floor_derivation_probe` does **not** assert monotonicity. It calls
+  the dispatcher, which correctly routes the non-monotone word to the general
+  kernel — which then fails on `ModuleNotFoundError: pyhecke_native`, absent from
+  this container. So it is ruling-caused only *because* the ruling changes which
+  kernel runs; with the native present it would work, slowly. My headline claim
+  that it "asserts the canonical word is monotone" was wrong, and the whole
+  "decide this first, the others follow" framing rested on it.
+- `derived_chi_catalogue_build`'s duplicate cell is `('borromean', (3,),
+  'borromean-baryon')` — a **knot** named borromean, word `[-1,+2,-1,+2,-1,+2]`,
+  nothing to do with `intra_order="borromean"`. Its committed catalogue is dated
+  **2026-06-07**, months before the ruling, and already holds the key. I flagged
+  it by matching a string.
+
+**So five of the "broken" producers are pre-existing failures the regeneration
+pass merely surfaced** — they are not in CI, so nobody was running into them.
+That is a finding in its own right and a better one than the count I reported.
+
+### MONOTONICITY: answered — it is a COST, not a breakage
+
+`chi_monotone_transfer.py` carried, as a "KEY FACT (verified, every atom D…⁷Li)",
+that the atom braid word has a monotone non-decreasing generator sequence.
+Measured under both orderings:
+
+    grouped     [0,0,0,0,0,0,0,1,1,1,1,2,3,3,…]   monotone
+    borromean   [0,1,0,1,0,1,0,0,1,0,0,2,3,4,…]   NOT monotone
+
+**The ruling falsifies it.** Monotonicity *is* contiguity, so this is a fourth
+instance of the pattern `docs/audits/2026-09-06-canonical-extremality-is-grouped-
+specific.md` documents, alongside per-letter factorisation, the six `c₁` values
+and the `f₁/f₀` extremality. Docstring corrected to say so.
+
+It is not breakage. `chi_all_lambda_any` dispatches on `word_is_monotone` and
+routes non-monotone words to a general kernel that is **correct but `d_λ`-bound**
+— A=3 costs 0.36 s, A=4 costs 621 s, A≥5 impractical (`qou-wdij`). **That is
+exactly why two producers time out at 1200 s.** The ruling's real cost is
+scalability, and the fix that restores `O(A)` is the three-level-window transfer
+that `chi_kernel_conformance_harness` was written to be the oracle for.
+
+### FIXED
+
+- `interface_composition.py` accepted only `d = -h/2` for a pn junction, while
+  `atom_braid_word_3A` defaults to `pn_convention="bring_color_weighted"` and
+  emits `-h(1-δ/2)/2 = -0.104458…`. Verified to 1e-12 against
+  `flavor_split_leading`. Both spellings now accepted, δ derived rather than
+  hardcoded so the two cannot drift.
+  `probe_canonical_braid_interface_composition` now passes **6/6**, "all atoms
+  closed-form == from-word: True". Confirmed pre-existing: it failed identically
+  under grouped.
+
+- [x] Classification corrected — 3 ruling-caused, 5 pre-existing, 1 undecided.
+- [x] Monotonicity settled and the false KEY FACT corrected.
+- [x] The pn convention mismatch fixed.
+- [ ] `he4_magnus_omega2_sign_sparse_probe` — needs >300 s under grouped to
+      decide which bucket it is in.
+- [ ] The 2 genuine ruling breakages (`nastokes` R3 bound,
+      `qbeta_level_k_binding_operator` KeyError) still need deciding — but they
+      are now 2 questions, not 9, and neither is the monotonicity question.
 - [ ] `binding_combiner_markov_peel_fallback` and `triton_magnus_omega2_sign_probe`
       need >1200 s, or a smaller case.
 - [ ] Decide whether `intra_order` should have defaulted at all. A

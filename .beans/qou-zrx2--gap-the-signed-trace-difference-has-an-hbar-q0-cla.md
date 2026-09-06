@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-31T10:13:14Z
-updated_at: 2026-09-03T20:46:56Z
+updated_at: 2026-09-06T04:42:55Z
 ---
 
 
@@ -576,3 +576,93 @@ second, numerics-only correction above the existing derived one, and claimed
 A=3 was "predicted before it was measured" as though new. The head sentence it
 was going to remove ("carries the ℏ_q^2 scaling") is superseded-text retained
 above its own correction, which is this corpus's house style, not a defect.
+
+
+## 2026-09-06 — the floor in closed form: interface PARITY, not topology per se
+
+Two probes, exact `Fraction`/integer arithmetic, no q evaluated anywhere:
+`computations/probes/classical_floor_is_markov_cycle_count_probe.py` and
+`classical_floor_is_interface_parity_probe.py`. Audit:
+`docs/audits/2026-09-06-the-classical-floor-is-interface-parity.md`.
+
+**The floor is** `floor(A, O) = 2^(-A)·(1 - 2^(-O))`, with `O` = number of inter-nucleon
+interfaces of ODD crossing multiplicity. Canonical `m = 1` gives `O = A-1`, hence
+`floor(A) = 2^(-A) - 2^(1-2A) = (2^(A-1) - 1)/2^(2A-1)` — `1/8` at A=2 and `7/128` at A=4,
+reproducing this bean's swept values exactly. Derived, not fitted: convention D's
+`y_lambda = [n-2k+1]_q/[2]_q^n` gives `dim V_lambda` at q=1, so
+`tr_M(w)|_1 = (1/2^n)·Sum_lambda dim(V_lambda)·chi^lambda(w) = 2^(cyc w - n)` by Schur-Weyl —
+the last step verified 6/6 in integers by counting fixed basis states of `(C^2)^(x)n`.
+Cycle law measured A = 1..20: `cyc W_free = 2A`, `cyc W_atom = 2A - O`.
+
+**Why parity:** at q=1, `h = q - 1/q = 0`, so sigma / sigma^-1 / the averaged letter all collapse
+to `s_g`; an interface applied m times is `s_g^m`, i.e. `s_g` (odd) or the identity (even).
+Measured: `m_pn = 3` reproduces `m_pn = 1` exactly; `m_pn = 2` does not.
+
+### Three consequences for this bean
+
+1. **The floor is INVARIANT under both contested word conventions** — identical rationals under
+   `intra_order` in {borromean, grouped} and `pn_convention` in {bring_color_weighted,
+   strict_averaged}, at A = 2,3,4,6, and under both at once. Those move absolute traces by
+   3.785x–14.325x. So the floor is **NOT** the source of the 5.35x E_0 disagreement this bean
+   catalogues between `binding_canonical` and `derive_binding_chain_cooperative`; that ratio is
+   a scale choice (`qou-59j5`), a separate defect. This NARROWS the bean, it does not resolve it.
+2. **floor(A=1) = 0 exactly** — no interface, so O = 0. The h_q^0 contamination is created by
+   binding; it is not carried by the nucleon.
+3. **All-even multiplicities give `floor == 0` at every A — and that is a DIAGNOSTIC, NOT A
+   REPAIR.** Choosing m because it makes the observable cleanly h_q^1 is selection against the
+   target, a fit in the sense AGENTS.md 'NO FITTING' names. m=1 stands or falls on the grounds it
+   was chosen on.
+
+**Size:** `floor·2^A = 1 - 2^(1-A) -> 1`, so floor ~ 2^(-A) from below — 22.46 % of the deuteron
+trace difference, 0.024 % by 12C. A light-nucleus problem, which does not make it go away: the
+observable is still a sum of two h_q orders at every A and no single E_0 pairs with both.
+
+**Untouched, and still the bean's subject:** the h_q index in
+`derivation_chain.E_0_CONVENTIONS['B_q_value_absorbed']` is wrong on two counts (leading term is
+h_q^0 not h_q^2; the part above it is h_q^1), and the convention collision is unresolved.
+
+**Falsifiable:** T/3He 3/32, 6Li 31/2048, 7Li 63/8192, 12C 2047/8388608 were never swept. One
+h_q sweep returning a different rational refutes the closed form.
+
+
+### CORRECTION, same day — the derivation above was ALREADY ON MAIN
+
+`computations/probes/classical_floor_derivation_probe.py` + `QOU/MassTheory/ClassicalTraceFloor.lean`
+(sorry-free), commit `7d15b2abbc` 2026-09-04, already derive the floor by Schur-Weyl, already
+establish `c(sigma_free) = 2A` / `c(sigma_atom) = A+1` for A = 2..20, and already state
+`c0(A) = 2^(-A) - 2^(1-2A)`. So does the '⚠ CORRECTED 2026-08-31' note inside
+`derivation_chain.E_0_CONVENTIONS['B_q_value_absorbed']`, which cites both by name.
+
+The entry above claims the Schur-Weyl derivation and the cycle law as findings of this session.
+**They are not.** `classical_floor_is_markov_cycle_count_probe.py` (PR #6879, commit 1)
+re-derived them without finding the prior work — a corpus-grep failure; one grep for
+`classical_floor` returns both artifacts. It survives only as an INDEPENDENT CONFIRMATION by a
+different route (convention D's row cap `y_lambda = [n-2k+1]_q/[2]_q^n` vs the prior
+`y_lambda = s_lambda(1,Q)/(1+Q)^n`, Q = q^2, bean `qou-ssz6`) and is labelled that way in its
+docstring, the audit and the PR body.
+
+**What survives as new:** the interface-multiplicity generalisation `floor = 2^(-A)(1 - 2^(-O))`,
+the m-parity law, the convention invariance, and `floor(A=1) = 0`. Grep-verified: zero
+occurrences of m_pp/m_pn/m_nn/multiplic/parity/intra_order/pn_convention in either prior artifact,
+and no A = 1 row. The prior work fixes m = 1 throughout, which is why `A+1` appears there as a
+fact rather than as the `O = A-1` special case it is.
+
+
+## 2026-09-06 — the floor SHARE quoted in this bean is stale: 85 %, not 22.46 %
+
+The '22.46 % of the deuteron trace difference' above is computed from
+`Dtr(D) = 0.556544660404`, a **pre-2026-09-05 (grouped) intra-ordering** value. Recomputed at
+the canonical q0 on the canonical (borromean) word via `tr_m_atom_via_transfer.tr_m_atom_zn`:
+
+    atom   Dtr                 c0     floor share   this bean said
+    D      0.14704667798041    1/8    85.007 %      22.46 %
+
+**The floor did not move — its denominator did.** c0 is a cycle count and is invariant under
+intra_order (measured). On the canonical word the deuteron binding observable is ~85 % a
+q-INDEPENDENT topological term. This does not weaken the bean's complaint; it is the same
+complaint, roughly four times larger. The 4.88 % figure for 4He is stale for the same reason
+and is not recomputed here (H_12 trace, slow).
+
+Same cause has reopened `qou-pdg9` (its six c1 are also the grouped word's). Probe:
+`computations/probes/c1_is_stale_on_the_reordered_atom_word_probe.py`; audit:
+`docs/audits/2026-09-06-c1-is-stale-on-the-reordered-atom-word.md`.

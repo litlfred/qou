@@ -7,10 +7,34 @@ docs/audits/2026-06-09-large-A-chi-bottleneck-scaling-plan.md §8). It
 SUPERSEDES the coarse-multiplicity F-matrix design of §8a/§8b with a
 simpler, provably-correct construction enabled by a structural fact:
 
-  KEY FACT (verified, every atom D…⁷Li): the atom braid word
+  KEY FACT — TRUE ONLY OF THE **GROUPED** WORD. Corrected 2026-09-06
+  (`qou-hu1f`). This read "verified, every atom D…⁷Li: the atom braid word
   `mass_at_3A_proper.atom_braid_word_3A` has a MONOTONE non-decreasing
-  generator sequence — nucleon k uses gens 3k, 3k+1, junction 3k+2, then
-  k+1 starts at 3k+3 > 3k+2; no generator is ever revisited.
+  generator sequence". Measured under both orderings:
+
+      grouped     [0,0,0,0,0,0,0,1,1,1,1,2,3,3,…]   monotone
+      borromean   [0,1,0,1,0,1,0,0,1,0,0,2,3,4,…]   NOT monotone
+
+  The owner ruling of 2026-09-05 made `borromean` the default, so the atom
+  braid word is **no longer monotone by default** and this construction no
+  longer applies to it. Nucleon k still uses gens 3k, 3k+1, junction 3k+2 —
+  what changed is that the confinement core alternates σ₀/σ₁ instead of
+  laying each generator's letters down contiguously, so generator 0 IS
+  revisited after 1.
+
+  Monotonicity is contiguity, and it joins three other properties measured
+  grouped-specific in `docs/audits/2026-09-06-canonical-extremality-is-
+  grouped-specific.md`: per-letter factorisation, the six `c₁` values, and
+  the `f₁/f₀` extremality. That audit's reading applies here too — the
+  grouped word's tidiness was a consequence of contiguity rather than
+  evidence of correctness.
+
+  NOTHING HERE IS WRONG, and this module is not dead: `chi_general_word.
+  chi_all_lambda_any` dispatches on `word_is_monotone` and still routes
+  grouped words here. The cost is that non-monotone words go to the general
+  kernel, which is `d_λ`-bound — A=3 costs 0.36 s, A=4 costs 621 s, A≥5
+  impractical (bean `qou-wdij`). That is why atom producers TIME OUT under
+  the ruling rather than fail.
 
 For a monotone word W = O_0·O_1·…·O_{n-2} each O_g = Π_{j:g_j=g}(σ_g + d_j·1)
 is a polynomial in σ_g ALONE (every atom-word factor has c=1; d ∈ {0 (σ),
