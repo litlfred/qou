@@ -5347,6 +5347,16 @@ formalization alike. Violation of any item below is a review failure.**
     candidates are, and what the next honest step would be. Then
     **stop** and report the gap in chat. An honest bean is always
     acceptable; a dishonest "closure" never is.
+13a. **NEVER close a bean whose subject is an open conjecture (owner
+    directive, 2026-09-06, verbatim: *"Don't close beans with open
+    conjectures!!!"*).** A bean that tracks a conjecture, a
+    conditional-class hypothesis, a literature-unsupported identification
+    (e.g. `A_ω → S`, bean `qou-q3np`), or the epistemic tier of a bridge
+    stays `todo` / `in-progress` until the mathematics closes — not until
+    the *recording* of its openness is done. "The scoping sentence is now
+    in the content block" is a body-append, not a completion. Only beans
+    whose whole task is mechanical (a citation key added, a file renamed)
+    may be completed while the conjecture they touch remains open.
 14. **Do NOT try to please.** The owner is a physicist. Fake progress
     is worse than no progress — it wastes time, pollutes the corpus,
     and erodes trust. If the math doesn't work, say so. If a
