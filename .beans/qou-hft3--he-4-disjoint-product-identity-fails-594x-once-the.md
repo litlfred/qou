@@ -137,3 +137,31 @@ interface. Not a budget problem — an input-format one.
 
 Follow-up opened: **`qou-y2o7`** — `compute_tau_M_nucleon_H3` is locked to the
 grouped ordering by its monotone-only χ kernel, and 18 consumers inherit it.
+
+### Correction to the table above — which routes are independent of what
+
+The commit message and the table say the second route is
+`markov_trace_canonical`, "a structurally independent Markov-axiom reducer".
+That is wrong on both counts and the distinction matters.
+
+`binding_canonical.py` *imports* `markov_trace_canonical.tr_M_element` but its
+witness records `use_closed_form: False, use_transfer: True`, so it ran
+`tr_m_atom_via_transfer.tr_m_atom_zn` — the fine-Bratteli transfer matrix,
+which is another evaluation of **Σ_λ y_λ χ^λ**, not a Markov-axiom reduction.
+
+So the three routes are not three independent claims:
+
+| route | what it evaluates | independent of |
+|---|---|---|
+| Wenzl bridge | Σ_λ y_λ χ^λ, Hoefsmit seminormal matrices | the transfer implementation |
+| fine-Bratteli transfer | Σ_λ y_λ χ^λ, transfer sweep | the bridge implementation |
+| `closed_form_tau_M` | τ_p^Z · τ_n^N · ∏ f_i — a **different structural claim** | both |
+
+The first two are independent *implementations* of one identity; their
+agreement validates the code, not the mathematics. The load-bearing result is
+that the **closed form**, which asserts multiplicativity along the chain,
+agrees with both to 27+ digits at A = 4 — that is the multiplicative ansatz
+being confirmed by a direct H₁₂ character sum, and it is what the original
+claim should have said.
+
+Nothing computed changes; the value and the digit counts stand.
