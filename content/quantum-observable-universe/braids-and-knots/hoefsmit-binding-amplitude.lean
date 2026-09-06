@@ -129,4 +129,73 @@ theorem de_entanglement_fraction (hq2 : qInt2 q ≠ 0) :
 
 end RatioForm
 
+/-! ## Where the amplitude vanishes — the non-semisimple locus
+
+The corpus already carries `b² = [3]_q/[2]_q²` (above) and, separately, the
+Wenzl/Schur-element semisimplicity machinery (`QOU.SchurWeyl.HeckeSemisimpleReal`,
+`QOU.MathlibExt.WenzlSchurElement`).  **Nothing linked them.**  These three
+lemmas do, arithmetically: they pin the vanishing locus of the Hoefsmit coupling
+to the cyclotomic condition `q⁶ = 1, q² ≠ 1` — the classical point where
+`H₃(q)` stops being semisimple.
+
+Added 2026-09-06 because a merged probe (#6889) read `b² = 0` as "degenerate"
+and used it to exclude phases from a search.  It is not a degeneracy of the
+construction; it is the locus where the Wedderburn decomposition the whole
+`tr = Σ_λ y_λ χ^λ` machinery rests on ceases to exist.
+
+**Scope.** These are the ARITHMETIC half only.  They do not prove
+non-semisimplicity — that needs the Schur-element criterion, which the corpus
+carries elsewhere.  What they establish is that `b²` vanishes exactly at the
+cyclotomic points, so a probe finding `b² = 0` has found a root of unity, not a
+defect. -/
+
+section VanishingLocus
+
+variable {K : Type*} [Field K] (q : Kˣ)
+
+/-- **The amplitude vanishes exactly when `[3]_q` does** (given `[2]_q ≠ 0`). -/
+theorem hoefsmit_b_sq_eq_zero_iff (hq2 : qInt2 q ≠ 0) :
+    qInt3 q / (qInt2 q) ^ 2 = 0 ↔ qInt3 q = 0 := by
+  rw [div_eq_zero_iff]
+  simp [pow_eq_zero_iff, hq2]
+
+/-- `[3]_q = 0` is the cyclotomic condition `q⁴ + q² + 1 = 0`.
+    (`qInt3 q = q² + 1 + q⁻²`, so multiply through by `q²`.) -/
+theorem qInt3_eq_zero_iff_cyclotomic :
+    qInt3 q = 0 ↔ (q : K) ^ 4 + (q : K) ^ 2 + 1 = 0 := by
+  have hq : (q : K) ≠ 0 := q.ne_zero
+  have hinv : (↑q⁻¹ : K) = (q : K)⁻¹ := by
+    simp [Units.val_inv_eq_inv_val]
+  unfold qInt3
+  rw [hinv]
+  constructor
+  · intro h
+    field_simp at h
+    linear_combination h
+  · intro h
+    field_simp
+    linear_combination h
+
+/-- **The vanishing locus is a sixth root of unity.**  `q⁶ - 1 = (q² - 1)(q⁴ + q² + 1)`,
+    so `[3]_q = 0` forces `q⁶ = 1`. -/
+theorem q_pow_six_eq_one_of_qInt3_eq_zero (h : qInt3 q = 0) : (q : K) ^ 6 = 1 := by
+  have hc : (q : K) ^ 4 + (q : K) ^ 2 + 1 = 0 :=
+    (qInt3_eq_zero_iff_cyclotomic q).mp h
+  linear_combination ((q : K) ^ 2 - 1) * hc
+
+/-- …and it is a PRIMITIVE one: `q² = 1` is incompatible with `[3]_q = 0`,
+    since there `q⁴ + q² + 1 = 3`.  (Needs `3 ≠ 0` in `K`.) -/
+theorem q_sq_ne_one_of_qInt3_eq_zero (h3 : (3 : K) ≠ 0) (h : qInt3 q = 0) :
+    (q : K) ^ 2 ≠ 1 := by
+  intro hq2
+  have hc : (q : K) ^ 4 + (q : K) ^ 2 + 1 = 0 :=
+    (qInt3_eq_zero_iff_cyclotomic q).mp h
+  apply h3
+  have h4 : (q : K) ^ 4 = 1 := by
+    have : (q : K) ^ 4 = ((q : K) ^ 2) ^ 2 := by ring
+    rw [this, hq2, one_pow]
+  linear_combination hc - h4 - hq2
+
+end VanishingLocus
+
 end QOU.BraidsAndKnots
