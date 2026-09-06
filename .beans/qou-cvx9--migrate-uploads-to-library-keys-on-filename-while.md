@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T13:48:45Z
-updated_at: 2026-09-06T13:49:24Z
+updated_at: 2026-09-06T14:15:06Z
 ---
 
 Found pre-merge on #6955 while probing its merge ordering against #6942. **A defect
@@ -87,3 +87,57 @@ row** — five pre-existing (`ant-v14-n7-s`, `arxiv-1111.2828v2`, `arxiv-1307.66
 `arxiv-1401.5542v1`, `arxiv-2104.07437v4`) and three from #6942. Different defect
 (staleness, not identity), fixed in-flight on #6955 by re-running
 `summarize-library.py --apply`, so it carries no bean of its own.
+
+
+---
+
+## Update 2026-09-06 (later): the orphan class is 22 documents, and it PRE-DATES this session
+
+Measured after merging `main` (with #6942) into #6955 and resolving. My two were
+deleted; a whole-tree scan for `library/*/` with **no `structure.json`** then found
+**22 more**, every one a bare PDF:
+
+```
+0008027v1 0110009v3 0308152v1 0410111v2 0603444v2 0605242v1 0803.1227v1 
+0806.2317v1 1.9781611972443.fm 1012.4941v2 1408.3518v3 1905.02045v3 
+1907.00949v2 2023unat1343 2108.03616v2 2203.06568v4 2404.02087v1 
+2603.12136v1 amc_2730 
+exploring-the-geometric-buchberger-algorithm-in-integer-prog fulltext m4-24 
+```
+
+All are present at the merge base, so **none were created by this session** — they
+are a standing corpus condition, not fallout from the three concurrent drains.
+
+### Why these are worse than the INDEX gap
+
+A sectioned document missing an `INDEX.md` row is invisible at **tier 1** and
+findable at tier 3 (`grep -rln <topic> library/*/sections/`). These 22 have no
+`sections/` at all, so they are invisible at **every tier of corpus-grep path 5** —
+tier 1 (INDEX), tier 2 (`summary.json`), tier 3 (`sections/`) and tier 4 (`ocr/`).
+The corpus holds the PDF and cannot find a word of it. A "has the corpus got this?"
+check returns clean while the paper sits on disk.
+
+Several names suggest exactly the mechanism this bean is about — `fulltext`,
+`m4-24`, `amc_2730`, `1.9781611972443.fm` are filename-derived doc-ids, i.e. what
+`migrate` produces when it has no ingest output to consult.
+
+### Not drained here, deliberately
+
+22 ingests is not a small related fix, and **three sibling PRs are already
+contending over `library/`** (#6955, #6962, #6964). Adding 22 documents to a
+four-way race would make the `INDEX.md` conflict worse for everyone. Recorded for
+the owner to schedule; the fix is mechanical (`pdf-structure.py` on each, then
+`summarize-library.py --apply`) and needs one owner, not a fourth concurrent one.
+
+### The index arithmetic now closes exactly, which is how the 22 were pinned down
+
+After regenerating on #6955: **655 dirs − 609 rows = 46 = 23 duplicates + 22
+orphans + 1 container.** No residual.
+
+### CORRECTION to this bean's earlier figure
+
+It said **8** sectioned documents were missing a row. It is **7**. `ant-v14-n7-s`
+is a bound journal **issue** — `container: true`, ten `container_children` carrying
+the content — and `summarize-library.py:98` skips containers and duplicates by
+design. A correct omission was counted as a defect because my scan did not know
+containers existed. The other 7 now have rows.
