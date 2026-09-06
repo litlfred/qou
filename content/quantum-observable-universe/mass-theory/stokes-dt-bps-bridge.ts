@@ -21,6 +21,7 @@ export default conjecture({
     "dimofte-gaiotto-gukov2013",
     "gukov-stosic2012",
     "kucharski-reineke-stosic-sulkowski2017",
+    "singh-physrevd108106023",
   ],
   tags: [
     "tier:famous",

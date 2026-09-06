@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-05T19:42:13Z
+updated_at: 2026-09-05T19:49:51Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -887,3 +887,44 @@ currently well-defined.
 even-per-generator parity route; the shared-orbit-partition route; and before them the
 framing that the carrier is a monotone closure at all. The counts survived all three,
 which is why they are worth more than the framings were.
+
+
+### The relabelling is STRAND REVERSAL — and that restores the application, with one measured step
+
+Chasing the "isomorphic linking graphs" candidate from the entry above.
+
+**Measured, 14/14 carrier branch-isotope pairs:** the borromean closure's component
+partition is *exactly* the grouped one under strand reversal `i ↦ n−1−i`.
+
+    4He grouped              [0,1] [2,3,4] [5,6,7] [8,9,10] [11]
+    4He grouped, reversed    [0]   [1,2,3] [4,5,6] [7,8,9]  [10,11]
+    4He borromean            [0]   [1,2,3] [4,5,6] [7,8,9]  [10,11]
+
+**And the crisper claim I reached for is FALSE — checked before asserting it.** The *words*
+are not related by reversal: identical 0/7, `reverse` 0/7, `reverse + generator flip` 0/7.
+²H grouped is `[0×7, 1×4, 2, 3×7, 4×4]`; borromean is `[0,1,0,1,0,1,0,0,1,0,0,2,…]`. The
+relation is between the **closures' partitions**, not between the words — a much weaker
+statement, and worth stating as such since "the words are reverses" would have made the
+transfer a triviality.
+
+**What it buys, and the transfer step is measured not proved.** The **grouped** word *is*
+monotone, so the whole Lean chain applies to it directly. Every structural conclusion —
+path linking graph, the separable/chain split, `μ̄ = 0` on all triples — then holds for the
+borromean carrier via the reversal relabelling, which is measured on every invariant this
+arc computes (848 triples, 786 separable, 62 chain, 0 nonzero `μ̄`, path linking 14/14, all
+matching).
+
+**So the honest chain today is:** theorems (proved, monotone words) → grouped carrier
+(monotone, so they apply) → borromean carrier (by a *measured* relabelling, 14/14). One
+measured link where this afternoon I claimed none. That is materially better than the two
+options in the correction above — option 1 was refuted, and option 2 (scope everything to
+grouped) turns out to lose nothing, because the transfer exists.
+
+**Not established:** that the two closures are the *same link*. Same partition under
+reversal plus matching linking data on every invariant computed here is evidence, not a
+proof of link equivalence.
+
+**Four of my hypotheses refuted by measurement in one evening** — carrier-is-monotone,
+parity preservation, shared orbit partition, words-are-reverses. The fifth (partitions
+related by reversal) held. The counts survived all five, which is the pattern worth
+keeping.

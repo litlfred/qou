@@ -9,7 +9,7 @@ the recursive brane tower satisfy the Yekutieli lifting condition.
 
 ## References
 
-- [yekutieli2010] Central Extensions of Gerbes, Theorem 1.7
+- [yekutieli2010] Central Extensions of Gerbes, Theorem 4.17
 - [manuscript] §3 Proposition: Yekutieli Lifting
 -/
 
@@ -19,12 +19,12 @@ namespace QOU
     defines a central extension of gerbes, and the Yekutieli lifting condition
     holds — the lift exists iff the obstruction class κₙ vanishes.
 
-    By [Theorem 1.7, yekutieli2010], any central extension of gerbes banded
+    By [Theorem 4.17, yekutieli2010], any central extension of gerbes banded
     by an abelian sheaf satisfies this criterion.  The jet prolongation
     realises each transition as precisely such an extension.
 
     LaTeX: `\label{prop:yekutieli-lifting}`
-    Ref: [yekutieli2010] Theorem 1.7 -/
+    Ref: [yekutieli2010] Theorem 4.17 -/
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
 structure YekutieliLifting where
   /-- The obstruction space H²(S, B). -/

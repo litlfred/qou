@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T18:57:37.777019+00:00",
-  "commitSha": "2afaaf54fc0a8dd3b93ba75fa4fc88799cf45287",
+  "computedAt": "2026-09-06T03:40:36.628748+00:00",
+  "commitSha": "7a00dfebf26e82c40c724ff5f1bd0a897c393466",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -22,7 +22,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "e2847c7a461e",
@@ -53,15 +53,15 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded). Q0_ANCHOR_UNRECOGNISED is an anchor label that maps to no pin, so NO comparison was made — also CI-failing, because 'could not check' is not green, but not a flip and counted apart from one.",
   "data": {
     "counts": {
-      "Q0_OK": 1415,
+      "Q0_OK": 1416,
       "Q0_AMBIGUOUS": 6,
       "Q0_AMBIGUOUS_NO_REASON": 14,
-      "Q0_INDEPENDENT": 134,
+      "Q0_INDEPENDENT": 135,
       "Q0_INDEPENDENT_NO_REASON": 3,
       "Q0_COMPARISON": 30,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1576,
+      "Q0_ANCHOR_MISSING": 1580,
       "Q0_VALUE_MISSING": 17,
       "Q0_AUDIT_EXEMPT": 89,
       "Q0_PARSE_ERROR": 0,
@@ -4048,6 +4048,10 @@
           "detail": ""
         },
         {
+          "witness": "retired_q0_refresh_to_live_muon_pin_probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "rho-k-markov-multiplicativity.witness.json",
           "detail": ""
         },
@@ -4108,6 +4112,10 @@
           "detail": ""
         },
         {
+          "witness": "the_apollonius_circle_from_cal2_reproduces_exactly_probe.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "the_asymmetry_term_lives_at_vassiliev_type_two_probe.witness.json",
           "detail": ""
         },
@@ -4121,6 +4129,10 @@
         },
         {
           "witness": "the_canonical_mass_trace_factorises_over_the_chain_probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "the_character_closure_block_and_a_lean_file_publish_convention_c_probe.witness.json",
           "detail": ""
         },
         {
@@ -4949,6 +4961,10 @@
         },
         {
           "witness": "qbeta-f-bar-parity-requirement.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "qbeta-fibre-reality-selects-n.witness.json",
           "detail": ""
         },
         {
@@ -10178,6 +10194,10 @@
           "detail": ""
         },
         {
+          "witness": "nucleon-word-route-divergence.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "nucleon_chain_sets_the_transition_probe.witness.json",
           "detail": ""
         },
@@ -12429,6 +12449,10 @@
         },
         {
           "witness": "monotone-word-component-structure.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "monotone-word-cycle-structure.witness.json",
           "detail": ""
         },
         {

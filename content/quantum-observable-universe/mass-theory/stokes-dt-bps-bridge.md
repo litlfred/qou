@@ -34,8 +34,24 @@ Two published knot-homology/BPS bridges live in the literature, and they identif
 
 The **open**-HOMFLY count is fixed by the knots--quivers correspondence
 [`kucharski-reineke-stosic-sulkowski2017`]: the quiver of a knot has one node per
-HOMFLY-PT homology generator, so the $4_1$ open-BPS count is
-$\det(4_1) = 5$ (calibrated by that paper's worked trefoil, $3 = \det 3_1$ nodes).
+HOMFLY-PT homology generator, so the $4_1$ open-BPS count is $\det(4_1) = 5$.
+
+That count is **read off a published quiver, not inferred from the determinant**.
+Singh et al. [`singh-physrevd108106023`] give the figure-eight explicitly, as a
+motivic sum over $d_1 + \cdots + d_5 = r$ with a symmetric $5 \times 5$ matrix
+$C_{4_1}$: five nodes, directly. The correspondence's rule --- node count equals
+determinant --- is itself confirmed at four knots rather than at one, so the
+identification is not a coincidence of the figure-eight:
+
+| knot | published quiver | $\det$ |
+|---|---|---|
+| $3_1$ | $3 \times 3$ (worked trefoil of [`kucharski-reineke-stosic-sulkowski2017`]) | $3$ |
+| $4_1$ | $5 \times 5$ | $5$ |
+| $6_1$ | $9 \times 9$ | $9$ |
+| $8_1$ | $13 \times 13$ | $13$ |
+
+All four counts equal $1 + 4pm$, the determinant of the double twist knot
+$K(p, -m)$ implied by the Alexander polynomial of [`singh-physrevd108106023`].
 Since $5 \notin \{3, 4\}$, the **open**-HOMFLY Gukov--Stošić bridge does *not*
 reproduce the GGM resurgent-Stokes spectrum $\{3, 4\}$ and does *not* license
 $A_\omega = 3$. Only the **closed**-sector bridge stated above reproduces
