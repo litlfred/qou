@@ -1,0 +1,162 @@
+{
+  "probe": "tl_two_row_weight_family_witness",
+  "bean": "qou-cds1",
+  "contentBlock": "rem:hecke-radical-is-temperley-lieb",
+  "question": "record the n = 2..7 two-row weight run the block says has no witness",
+  "answer": "Recorded, and strengthened: the closed form y_(n-k,k) = [n-2k+1]_q/[2]_q^n normalises EXACTLY as an identity in q for n = 2..10, which is stronger than the block's 50-dps residual at one q. The published Catalan table reproduces, and the registry's convention-D weights at n = 3 fall out as k = 0, 1.",
+  "scope": "(b). Does NOT supply the formalised H_n(q)/rad = TL_n(q) the block says is missing; the identification stays 'an identification the counts support, deliberately not a proposition'.",
+  "normalisation_residuals": {
+    "2": "0",
+    "3": "0",
+    "4": "0",
+    "5": "0",
+    "6": "0",
+    "7": "0",
+    "8": "0",
+    "9": "0",
+    "10": "0"
+  },
+  "published_table": {
+    "2": {
+      "shapes": [
+        "(2)",
+        "(1,1)"
+      ],
+      "sum_dim_sq": 2,
+      "dim_H_n": 2,
+      "catalan": 2
+    },
+    "3": {
+      "shapes": [
+        "(3)",
+        "(2,1)"
+      ],
+      "sum_dim_sq": 5,
+      "dim_H_n": 6,
+      "catalan": 5
+    },
+    "4": {
+      "shapes": [
+        "(4)",
+        "(3,1)",
+        "(2,2)"
+      ],
+      "sum_dim_sq": 14,
+      "dim_H_n": 24,
+      "catalan": 14
+    },
+    "5": {
+      "shapes": [
+        "(5)",
+        "(4,1)",
+        "(3,2)"
+      ],
+      "sum_dim_sq": 42,
+      "dim_H_n": 120,
+      "catalan": 42
+    },
+    "6": {
+      "shapes": [
+        "(6)",
+        "(5,1)",
+        "(4,2)",
+        "(3,3)"
+      ],
+      "sum_dim_sq": 132,
+      "dim_H_n": 720,
+      "catalan": 132
+    },
+    "7": {
+      "shapes": [
+        "(7)",
+        "(6,1)",
+        "(5,2)",
+        "(4,3)"
+      ],
+      "sum_dim_sq": 429,
+      "dim_H_n": 5040,
+      "catalan": 429
+    }
+  },
+  "transpose_collision": {
+    "3": {
+      "at_most_2_rows": [
+        "(2, 1)",
+        "(3,)"
+      ],
+      "at_most_2_cols": [
+        "(1, 1, 1)",
+        "(2, 1)"
+      ],
+      "same_set": false,
+      "dim_sq_rows": 5,
+      "dim_sq_cols": 5
+    },
+    "4": {
+      "at_most_2_rows": [
+        "(2, 2)",
+        "(3, 1)",
+        "(4,)"
+      ],
+      "at_most_2_cols": [
+        "(1, 1, 1, 1)",
+        "(2, 1, 1)",
+        "(2, 2)"
+      ],
+      "same_set": false,
+      "dim_sq_rows": 14,
+      "dim_sq_cols": 14
+    },
+    "5": {
+      "at_most_2_rows": [
+        "(3, 2)",
+        "(4, 1)",
+        "(5,)"
+      ],
+      "at_most_2_cols": [
+        "(1, 1, 1, 1, 1)",
+        "(2, 1, 1, 1)",
+        "(2, 2, 1)"
+      ],
+      "same_set": false,
+      "dim_sq_rows": 42,
+      "dim_sq_cols": 42
+    }
+  },
+  "assertions": [
+    {
+      "name": "specht_dimensions_agree_by_two_independent_routes",
+      "passed": true,
+      "detail": "the ballot formula C(n,k)-C(n,k-1) and the hook-length formula give the same f^(n-k,k) for every two-row shape at n = 2..10. Neither route is trusted alone."
+    },
+    {
+      "name": "closed_form_normalises_EXACTLY_as_an_identity_in_q",
+      "passed": true,
+      "detail": "sum_k f^(n-k,k) [n-2k+1]_q - [2]_q^n simplifies to exactly ['0'] for n = 2..10. So y_(n-k,k) = [n-2k+1]_q/[2]_q^n is a normalised Markov weight family for EVERY q at once \u2014 a stronger statement than the block's 50-dps residual of 1.34e-51, which fixes one q."
+    },
+    {
+      "name": "reproduces_the_blocks_published_table_n_2_to_7",
+      "passed": true,
+      "detail": "sum of squared Specht dimensions over the two-row shapes equals Catalan(n) at every n = 2..7: n=2: 2=2 (n!=2); n=3: 5=5 (n!=6); n=4: 14=14 (n!=24); n=5: 42=42 (n!=120); n=6: 132=132 (n!=720); n=7: 429=429 (n!=5040). Reproduced, not cited."
+    },
+    {
+      "name": "closed_form_reproduces_registry_convention_D_at_n_3",
+      "passed": true,
+      "detail": "k=0 gives y_(3) = [4]_q/[2]_q^3 and k=1 gives y_(2,1) = [2]_q/[2]_q^3 = 1/[2]_q^2 = q**2/(q**2 + 1)**2 \u2014 exactly the two convention-D entries in docs/coordination/trace-convention-registry.json."
+    },
+    {
+      "name": "transpose_collision_different_SETS_equal_dimension_sums",
+      "passed": true,
+      "detail": "WenzlSchurElement states survivors as lambda_1 <= N (at most N COLUMNS) and warns in its own docstring that 'anyone wiring schurElement_tl_eq_zero_iff to that block must transpose'; this block and convention D use at most two ROWS. At n = 3,4,5 the two sets DIFFER while their squared-dimension sums are EQUAL (dim lambda = dim lambda'), e.g. n=3 rows {(3),(2,1)} vs cols {(2,1),(1,1,1)}, both summing to 5. That equality is exactly why the Catalan counts agree and a reader can mistake the conventions for the same one. Live trap for anyone wiring the Lean to the mass channel."
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "efc378085c3d",
+  "scriptCommitSha": "unknown",
+  "commitSha": "7a5206ed3671eace8972607e3999e929788a468e",
+  "engine": "python+sympy",
+  "computedAt": "2026-09-06T13:29:26.072717+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
