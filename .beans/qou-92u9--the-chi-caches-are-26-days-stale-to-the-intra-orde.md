@@ -174,3 +174,46 @@ been reasoning from.  They are in the *producer's* `ATOMS` map.  Both regenerate
 Generalises: enumerating a producer's outputs from one consumer's list
 undercounts by whatever that consumer does not use.  Index on the `producer`
 field instead — it finds all eleven witnesses this producer has written.
+
+
+## Downstream sweep: measured, scoped, NOT executed (2026-09-05)
+
+**75 committed witnesses** are produced by scripts that read a chi cache and were
+computed before the regeneration.  Triaged on the axis that decides the work:
+
+    carry an ABSOLUTE-looking field (tr_M / mass / binding / energy)   64
+    ratio-only                                                        11   predicted immune
+
+**The propagation rule, measured on `a-K-via-lp-dual-full` (before/after in
+git):**
+
+    atom       tr_M before -> after        factor      qou-hu1f R_quark
+    proton     1.145760 -> 0.629328        1.8206      (not listed)
+    neutron    0.987744 -> 0.475134        2.0789      (not listed)
+    deuteron   0.575172 -> 0.151968        3.7848      3.785
+    tritium    0.229310 -> 0.029144        7.8682      7.868
+    helium-3   0.403767 -> 0.058596        6.8907      6.891
+    helium-4   0.160974 -> 0.011237       14.3248     14.325
+
+    a_K^C (the quantity that producer exists to report):  ZERO change, all six.
+
+So `qou-hu1f`'s split is confirmed on a producer that bean never examined:
+**ratio routes are immune; the aggregate trace scales by R_quark exactly.**
+
+**🛑 BUT THE RULE DOES NOT EXTEND TO PER-PARTITION QUANTITIES, and I nearly said
+it did.**  Re-running `delta_lambda_2row_stratum_analysis.py` (24 ms) moved 181
+numeric fields by factors spanning **11.8x to 51.2x within one witness** — and
+51.24 is exactly the helium-4 `|chi_borromean/chi_grouped|` spread.  Per-partition
+characters move by per-partition factors, including sign changes.  **Only the
+aggregate `tr_M` is closed-form**; anything reporting per-lambda values must be
+re-run, not rescaled.
+
+**Status:** `delta-lambda-2row-stratum.witness.json` is refreshed as the
+validation sample (1 of 64).  The other 63 are untouched and are a scoped
+follow-up, not an idle-pass job — several are long computes, and the AGENTS.md
+idle cap is 3 witnesses.
+
+**Also stale and NOT regenerated: the muon-anchor chi caches**
+(`chi-{tritium,helium-3,helium-4}-h9/h12-at-q0-50dps-muon.witness.json`).  I ran
+the producer at its default (proton) anchor only.  Those belong to the ideal
+CAL-2 layer and are a separate anchor decision.
