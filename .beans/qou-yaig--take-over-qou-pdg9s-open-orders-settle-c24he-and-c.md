@@ -1,11 +1,11 @@
 ---
 # qou-yaig
 title: 'Take over qou-pdg9''s open orders: settle c2(4He) and c3 under Borromean'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T13:34:53Z
-updated_at: 2026-09-06T13:46:53Z
+updated_at: 2026-09-06T13:57:00Z
 ---
 
 ## What this takes over, and from whom
@@ -147,3 +147,41 @@ orders to be measured against — read it out of the trend, not into it.
   in a five-case sweep.
 - **`c4`**, which `pp/pn/nn` could supply at their committed `P = 6`, was not
   extracted. Five points across two `A` is a shape, not a convergence proof.
+
+
+## COMPLETE — both takeover items settled, plus the two gaps they exposed
+
+    case  A   c1     c2       c3        c4         c2/c1     c3/c2     c4/c3
+    pp    2   1/8    33/32    67/16     -585/128   0.8174    0.4023   -0.1081
+    pn    2   1/16   25/32    43/8       109/192   1.2385    0.6817    0.0105
+    nn    2   0      1/16     27/4        27/32    INFINITE 10.7008    0.0124
+    T     3   1/64   99/128   101/16    (P=6)      4.9045    0.8087    —
+    3He   3   1/8    157/128  839/128   (P=6)      0.9722    0.5295    —
+    4He   4   7/128  439/512  1329/256  (P=6)      1.5535    0.5999    —
+
+30 controls across four probes; every case reproduced every already-recorded
+coefficient before its new one was read.
+
+**#6607's conclusion HOLDS at its own headline case.** `c3(4He) = 1329/256`,
+ratio 0.5999 < 1 (352 s at P = 5). Its grouped 4He ratio was 0.8219, likewise
+below 1 — so the conclusion is robust to the convention change even though the
+numbers moved.
+
+**The c3 column has NO A trend**: 0.4023, 0.6817, 0.8087, 0.5295, 0.5999 across
+A = 2, 3, 4 — flat in the 0.4-0.8 band. That is sharper than "comparable": the
+ratio is not drifting toward 1 as A grows.
+
+**The settling is a trend, not a fluctuation.** c4 at A = 2 gives |c4/c3| of
+0.011 and 0.012 — about forty times smaller than the c3/c2 step. So the picture
+is: overtakes once at order 2, shrinks at 3, collapses at 4.
+
+Recorded, not built on: pp's c4 = -585/128 is the first NEGATIVE coefficient in
+the family (one sign, one order, one A); and nn behaves at order 4 despite being
+the sole outlier at orders 2 and 3, so its c1 = 0 degeneracy washes out.
+
+## Still open, and named rather than quietly closed
+
+- **c4 at A = 3 and A = 4** — needs P = 6 at n = 9 and n = 12. Not attempted.
+- **c5 and beyond** — nothing here bounds them. Four orders at one A is a shape.
+- **Grouped c3 at A = 2, 3 was never re-derived**, so the row-by-row
+  grouped-vs-Borromean comparison that exists for c2 does not exist for c3.

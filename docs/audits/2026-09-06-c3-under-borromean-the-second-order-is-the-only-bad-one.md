@@ -17,7 +17,7 @@ read; `c₂(⁴He)` was measured separately at `P = 4` in the same bean.
 | nn | 2 | **0** | 1/16 | 27/4 | INFINITE | **10.7008** |
 | T | 3 | 1/64 | 99/128 | 101/16 | 4.9045 | **0.8087** |
 | ³He | 3 | 1/8 | 157/128 | 839/128 | 0.9722 | **0.5295** |
-| ⁴He | 4 | 7/128 | 439/512 | *(P=5)* | 1.5535 | *(open)* |
+| ⁴He | 4 | 7/128 | 439/512 | **1329/256** | 1.5535 | **0.5999** |
 
 ## The finding: the expansion overshoots once and then settles
 
@@ -49,18 +49,49 @@ scale for the later orders to be measured against, so its ratios say something
 about the vanishing and not about convergence. It should be read out of the
 trend, not into it.
 
+## `A = 4` — measured, and #6607's conclusion holds at its own headline case
+
+An earlier revision of this document listed `A = 4` as open, because `c₃` needs
+`d.p > 3`, hence `P ≥ 5`, against a committed `P_OF["4He"] = 3`. That run has now
+been done (352 s at `P = 5`, under the tee-and-progress discipline), and all
+three controls reproduced — `a₀`, `a₁`, and the `c₂ = 439/512` measured
+separately at `P = 4`:
+
+    c3(4He) = 1329/256      ratio c3·ℏ³/c2·ℏ² = 0.5999
+
+So the third order does **not** overtake the second at `A = 4` either. That is
+#6607's own headline case, and **its conclusion holds under the canonical word**
+— its grouped ⁴He ratio was `247.98·ℏ/29.8965 = 0.8219`, likewise below 1.
+
+**The `c₃` column has no `A` trend at all.** `0.4023, 0.6817, 0.8087, 0.5295,
+0.5999` across `A = 2, 3, 4` — flat in the 0.4–0.8 band, with no ordering by
+`A`. That is a sharper statement than "comparable": the ratio is not drifting
+toward 1 as `A` grows.
+
+## `c₄` at `A = 2` — the settling is a trend, not a fluctuation
+
+The `c₄` that `pp/pn/nn` supply free at their committed `P = 6` has also been
+extracted, because the one-bad-order reading otherwise rested on a **single**
+step of settling, and one step down is what a fluctuation looks like:
+
+    case      c3          c4        c3ℏ³/c2ℏ²   c4ℏ⁴/c3ℏ³
+    pp      67/16     −585/128        0.4023     −0.1081
+    pn       43/8      109/192        0.6817      0.0105
+    nn       27/4       27/32        10.7008      0.0124
+
+Two consecutive steps down, and the second is a **collapse** rather than a
+drift — roughly forty times smaller than the `c₃/c₂` step.
+
+Two things recorded but **not** built on. `pp`'s `c₄ = −585/128` is the **first
+negative coefficient** anywhere in this family — one sign, one order, one `A`,
+and no claim about what it means. And `nn` **behaves** at order 4 (`0.0124`),
+so its degeneracy appears to wash out; also recorded, also not leaned on.
+
 ## 🛑 What is NOT established
 
-- **`A = 4` is still open for `c₃`, and that is where #6607's interest lies.**
-  `c₃` needs `d.p > 3`, hence `P ≥ 5`; committed `P_OF["4He"] = 3`. It is
-  excluded deliberately: `P = 4` at `n = 12` cost 295 s with the `[8,4]` and
-  `[7,5]` Wedderburn blocks alone at 50 s and 59 s, so `P = 5` is a separate
-  long-compute run under the tee-and-progress discipline, not something to bury
-  inside a five-case sweep. **This settles `A = 2` and `A = 3` only.**
-- **Five points is a shape, not a convergence proof.** "Overshoots once and
-  settles" is a description of orders 1–3 at two values of `A`. Nothing here
-  bounds `c₄` or beyond, and the `c₄` that `pp/pn/nn` could supply at their
-  committed `P = 6` was not extracted.
+- **`c₄` is `A = 2` only.** `T`/`³He` sit at committed `P = 5` and ⁴He at 3, so
+  none reaches `c₄` without a further long-compute run. Four orders at one `A`
+  is still a shape, not a convergence proof, and nothing here bounds `c₅`.
 - **Scope-(a).** A statement about a series ordering in one braid-word
   convention, not about the physics.
 
