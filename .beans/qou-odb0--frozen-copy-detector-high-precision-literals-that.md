@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T12:46:56Z
-updated_at: 2026-09-06T13:03:18Z
+updated_at: 2026-09-06T13:08:30Z
 ---
 
 ## The blind spot, and it is in an existing audit rather than absent
@@ -92,3 +92,51 @@ as the vacuity audit's ledger.
 3. **Negative literals invisible.** The index is built from unsigned matches,
    so a signed lookup missed every negative constant — including
    `N3_WITNESS_C3`, one of the three the audit exists for.
+
+
+## Triage of the findings, and it cost the detector two more defects
+
+Running the audit and then *reading* its 12 findings removed 2 of them and
+left **10 genuine**. Both were mine, both were found by triage rather than by
+the selftest, and both are the same shape as everything else in this session —
+a check keyed on the wrong thing:
+
+4. **The comment window grabbed a neighbouring line's declaration.**
+   `_comment_context` read the line plus three above, merged. Consecutive
+   constants each carry their own trailing comment:
+
+       REF_B4 = mp.mpf("-10.3376891441")   # qbeta-5two-higher-cable-qstar...
+       REF_B5 = mp.mpf("593.607693594")    # qbeta-5two-n5-cable-qstar...
+
+   so the window over `REF_B5` picked up **REF_B4's** file name, asked the
+   wrong witness, and reported a clean site. The own-line comment now takes
+   precedence; the block above is the fallback.
+
+5. **The declared-source check was a substring test.** `lit not in raw` calls a
+   value absent when the declared file renders the same number at a different
+   width. `Q0_MP_PIN_STR` was exactly that — `q-beta-operator-valued-N3` does
+   carry it. Now width-tolerant, reusing `_agrees_to_shorter`, which the drift
+   path already used. **The guard existed; it was wired into one of the two
+   paths.**
+
+## The 10 that survive
+
+| site | declares | note |
+|---|---|---|
+| `delta_lambda_l1_ceiling_sign_prune.py:118` `M_E_MEV` | `delta-lambda-canonical-residual` | comment covers B_AME values too |
+| `deltalambda/perknot_pn_bond_mayer_grounding_probe.py:70,71` `MU_T`, `MU_3HE` | `deltalambda-extensivity-gap-synthesis` | nearest carrier is `cal4-disguise-hunt` |
+| `em_linking_mirror_series_extension.py:68` `PER_PAIR_UNIT` | `mirror-pair-coulomb-sign-correction` | 31 digits shared with `cal4-disguise-hunt` |
+| `mp_dk_decisive_test.py:60,61` `Q0_STALE_MUON_PIN`, `VOL` | `proton-brane-tower-correction-probe` | value deliberately stale; the *provenance* is what broke |
+| `probes/phi_q_regularization_probe.py:132,133` `T2_li2q`, `T3_li2q` | `mass-formula-6term-mpfr-50dps` | nearest carrier is the probe's own witness |
+| `probes/qbeta_closed_form_wiring_n4_to_n10.py:163` `BASELINE_N4_ppQ` | `qbeta-1ppq-achieved` | |
+| `qbeta/sdp_offset_quotient_reposing_probe.py:88` `C_FRAME_SEPARATION` | `qbeta-braid-nf-sdp-offset` | 21 digits shared with `cal4-disguise-hunt` |
+
+Each is a checkable claim that is currently false in the tree: **the named file
+does not carry this value at any precision.** What that means per site is a
+judgement — a comment can name a witness for context, and a value can be
+deliberately stale — so these stay candidates, not verdicts.
+
+**One pattern is worth a second look**: three of the ten have their nearest
+carrier in `cal4-disguise-hunt.witness.json`, an audit output rather than a
+producer's. That is where those numbers *ended up*, not necessarily where they
+came from, and it does not discharge the claim about the declared file.

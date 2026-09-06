@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T13:02:28.998317+00:00",
-  "commitSha": "f2dc257b157fa03a7cfac84a94c23c83fccd0591",
+  "computedAt": "2026-09-06T13:07:44.433391+00:00",
+  "commitSha": "4a5ad7652dfe6147967fd9af52a913ba5a597ed2",
   "assertions": [
     {
       "name": "audit_examined_a_populated_index",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "drifted-witness-copy-audit",
   "scriptFile": "drifted_witness_copy_audit.py",
-  "scriptHash": "db6e9e3bc02c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "42d037535e77",
+  "scriptCommitSha": "4a5ad7652dfe6147967fd9af52a913ba5a597ed2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,39 +36,23 @@
   },
   "invocation": {
     "argv": [
-      "computations/audits/drifted_witness_copy_audit.py"
+      "computations/audits/drifted_witness_copy_audit.py",
+      "--list"
     ],
-    "reproduce": "python3 -u computations/audits/drifted_witness_copy_audit.py"
+    "reproduce": "python3 -u computations/audits/drifted_witness_copy_audit.py --list"
   },
   "description": "Bean qou-odb0. Complements witness_value_copy_audit, which keys on the VALUE and so goes blind to a copied witness value at exactly the moment it drifts and stops matching. This one keys on the NAME (an identifier or comment declaring a witness provenance) and reports the literals no witness carries any more. Worked case: the three N3_WITNESS_* constants in qbeta_habiro_integrality_kill_test, stale for a month against three failing cross-checks (bean qou-l4q3), invisible to the sibling audit throughout.",
   "data": {
     "population": {
       "witness_literals_indexed": 227231,
       "min_significant_digits": 11,
-      "findings_total": 12,
+      "findings_total": 10,
       "findings_by_class": {
-        "DECLARED_SOURCE_MISSING": 12
+        "DECLARED_SOURCE_MISSING": 10
       },
       "note": "DRIFTED is empty on this corpus as of 2026-09-06: the case this audit was written from (qbeta_habiro_integrality_kill_test, bean qou-l4q3) is fixed, and no other witness-named literal has drifted from a value some witness still carries. An empty class is a result, not a broken detector -- the selftest fires on the known instance."
     },
     "findings": [
-      {
-        "file": "computations/c_3_categorical_derivation_attempt.py",
-        "line": 97,
-        "name": "Q0_MP_PIN_STR",
-        "literal": "1.1099785827513808075916690956107688798744991218735787360728142402",
-        "declared_by": "comment naming a file",
-        "class": "DECLARED_SOURCE_MISSING",
-        "declared_source": "computations/q-beta-operator-valued-N3.witness.json",
-        "nearest_witness_value": {
-          "value": "1.1099785827513808075916690956107688798744991218735787360728142402",
-          "shared_leading_digits": 65,
-          "same_number_at_lower_precision": true,
-          "carriers": [
-            "computations/audits/q0-consistency-audit.witness.json"
-          ]
-        }
-      },
       {
         "file": "computations/delta_lambda_l1_ceiling_sign_prune.py",
         "line": 118,
@@ -214,24 +198,6 @@
           "same_number_at_lower_precision": true,
           "carriers": [
             "computations/probes/phi-q-regularization-probe.witness.json"
-          ]
-        }
-      },
-      {
-        "file": "computations/probes/qbeta_5two_n6_cable_qstar_probe.py",
-        "line": 70,
-        "name": "REF_B5",
-        "literal": "593.607693594",
-        "declared_by": "comment naming a file",
-        "class": "DECLARED_SOURCE_MISSING",
-        "declared_source": "computations/probes/qbeta-5two-higher-cable-qstar.witness.json",
-        "nearest_witness_value": {
-          "value": "593.607693594",
-          "shared_leading_digits": 12,
-          "same_number_at_lower_precision": true,
-          "carriers": [
-            "computations/probes/qbeta-5two-n5-cable-qstar.witness.json",
-            "computations/witness-value-copy-audit.witness.json"
           ]
         }
       },
