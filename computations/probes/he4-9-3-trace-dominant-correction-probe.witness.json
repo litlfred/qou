@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T18:00:51.014151+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "computedAt": "2026-09-06T13:17:54.547413+00:00",
+  "commitSha": "cbbd5df960e97f7f96b46b0bfbfabe8281bfb8c5",
   "assertions": [
     {
       "name": "trace_dominant_top_8_extracted",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 58,
+  "durationMs": 21,
   "computation": "he4-9-3-trace-dominant-correction-probe",
   "scriptFile": "he4_9_3_trace_dominant_correction_probe.py",
   "scriptHash": "52358f7c303d",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -55,33 +55,22 @@
     "top_trace_dominant": [
       {
         "partition": [
+          12
+        ],
+        "dim": 1,
+        "y": 0.003965758016123107,
+        "chi": 2.419836730137038,
+        "fraction_of_tr_M": 0.8539761714657763
+      },
+      {
+        "partition": [
           9,
           3
         ],
         "dim": 154,
         "y": 0.0017441416771205806,
-        "chi": 27.334803050697158,
-        "fraction_of_tr_M": 0.29617035149076737
-      },
-      {
-        "partition": [
-          8,
-          4
-        ],
-        "dim": 275,
-        "y": 0.001194069611162276,
-        "chi": 30.267599832194126,
-        "fraction_of_tr_M": 0.22451817379191494
-      },
-      {
-        "partition": [
-          10,
-          2
-        ],
-        "dim": 54,
-        "y": 0.00237044356292938,
-        "chi": 10.462987496808585,
-        "fraction_of_tr_M": 0.1540739433196371
+        "chi": 4.14962479807226,
+        "fraction_of_tr_M": 0.6440566484097998
       },
       {
         "partition": [
@@ -90,27 +79,28 @@
         ],
         "dim": 11,
         "y": 0.003100348549414145,
-        "chi": 7.391032649053673,
-        "fraction_of_tr_M": 0.14235066935245505
+        "chi": -1.4820805406851345,
+        "fraction_of_tr_M": -0.4088987695882427
       },
       {
         "partition": [
-          7,
-          5
+          8,
+          4
         ],
-        "dim": 297,
-        "y": 0.0006961858006317774,
-        "chi": 21.77701473380702,
-        "fraction_of_tr_M": 0.09418188489933396
+        "dim": 275,
+        "y": 0.001194069611162276,
+        "chi": -2.9794818844089246,
+        "fraction_of_tr_M": -0.31659486929267017
       },
       {
         "partition": [
-          12
+          10,
+          2
         ],
-        "dim": 1,
-        "y": 0.003965758016123107,
-        "chi": 2.419836730137038,
-        "fraction_of_tr_M": 0.059615082185253625
+        "dim": 54,
+        "y": 0.00237044356292938,
+        "chi": 0.5433412735878138,
+        "fraction_of_tr_M": 0.11461350493906454
       },
       {
         "partition": [
@@ -119,24 +109,34 @@
         ],
         "dim": 132,
         "y": 0.00022872963188107212,
-        "chi": 20.47273430988103,
-        "fraction_of_tr_M": 0.029089894960637925
+        "chi": 4.250632591177287,
+        "fraction_of_tr_M": 0.08651859860317686
       },
       {
         "partition": [
-          10,
-          1,
+          7,
+          5
+        ],
+        "dim": 297,
+        "y": 0.0006961858006317774,
+        "chi": 0.424982485760964,
+        "fraction_of_tr_M": 0.026328715463095387
+      },
+      {
+        "partition": [
+          9,
+          2,
           1
         ],
-        "dim": 55,
-        "y": 0.0,
-        "chi": 2.0422894707583885,
-        "fraction_of_tr_M": 0.0
+        "dim": 320,
+        "y": 1.0276676354775885e-73,
+        "chi": -2.498629593467035,
+        "fraction_of_tr_M": -2.2850096383315707e-71
       }
     ],
-    "nine_three_fraction": 0.29617035149076737,
-    "delta_rho_F_9_3_if_all_localized": "0.374215052435313038782837666658572850688636213418368356211327",
-    "verdict": "Localizing the +5.87% gap to the (9,3) trace-dominant channel requires Δρ_F^(9,3) = 0.374215052435 (relative correction 18.71% of ρ_F=2). This is a NUMERICAL LOCAL CORRECTION; the PSLQ search above tries to identify it as a substrate combination. If no clean PSLQ hit: the gap likely distributes across multiple channels (scenario b/c), and the structural correction is NOT a single-block (9,3) feature. The right next probe would then be the joint top-3 trace-dominant channels ((10,2) + (9,3) + (11,1)) Δρ_F splitting analysis.",
+    "nine_three_fraction": 0.6440566484097998,
+    "delta_rho_F_9_3_if_all_localized": "0.172083315786817078291136769827913587475994852940757037956341",
+    "verdict": "Localizing the +5.87% gap to the (9,3) trace-dominant channel requires Δρ_F^(9,3) = 0.172083315786 (relative correction 8.60% of ρ_F=2). This is a NUMERICAL LOCAL CORRECTION; the PSLQ search above tries to identify it as a substrate combination. If no clean PSLQ hit: the gap likely distributes across multiple channels (scenario b/c), and the structural correction is NOT a single-block (9,3) feature. The right next probe would then be the joint top-3 trace-dominant channels ((10,2) + (9,3) + (11,1)) Δρ_F splitting analysis.",
     "framing_correction": "PR #1673 Probe 2 + conj:psd-trace-orthogonality together say the binding-energy gap lives in the trace-dominant family, NOT the PSD-dominant (4,4,4) block. Research direction is re-aimed to the (9,3)/(8,4)/(10,2) channels."
   },
   "q0Anchor": "proton",
