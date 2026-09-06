@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-19T02:57:13Z
-updated_at: 2026-09-05T19:23:34Z
+updated_at: 2026-09-06T03:28:23Z
 ---
 
 ## Measured 2026-09-05 (branch claude/hecke-cyclicity-markov-2026-09-05, PR #6845)
@@ -97,3 +97,35 @@ are unfinished, not blocked."* I found it while checking whether my own
 "Mathlib has no braid group" claim shared the defect the sibling's other commit
 (`2aa451659bf`, *"my 'Mathlib has no Bruhat order' grep was measuring my own
 checkout"*) had retracted. Mine survived that check; this one did not.
+
+
+## 2026-09-06 — the deletion condition is PROVED (PR #6894)
+
+Acting on the retraction above. `QOU/Machinery/CoxeterDeletion.lean`:
+
+* **`exists_deletion`** — the deletion condition (Björner–Brenti Thm 1.4.4):
+  a non-reduced word has two positions `a < b` whose deletion leaves the
+  product unchanged. One induction along the word from the right, off
+  `strong_exchange`. No case analysis on the Coxeter matrix, no rank
+  restriction.
+* **`exists_reduced_sublist`** — every word contains a **reduced subword**
+  with the same product. Strictly stronger than Mathlib's
+  `exists_reduced_word'`, which gives *some* reduced word for the element;
+  this one is a `List.Sublist` of the word you started with.
+
+Both sorry-free, `[propext, Classical.choice, Quot.sound]`.
+
+**So the chain is now exchange ✓ → deletion ✓ → Matsumoto ✗.** Matsumoto
+itself remains open and remains the named hypothesis of
+`BraidWordInvariance.exists_Tw_of_braidEquiv`. This bean is NOT closed.
+
+**Cross-arc consumer.** `QOU.Machinery.CoxeterBruhat` (sibling `qou-phir`,
+merged to `main` 2026-09-05) defines `u ≤ w` by the subword criterion and
+records that transitivity, antisymmetry, the subword property and the lifting
+property are unproved there because "each needs the exchange condition".
+`exists_reduced_sublist` is the first of those inputs in the shape they
+consume.
+
+**Also fixed on `main` in the same PR:** `Tw.lean` and
+`BraidWordInvariance.lean` both asserted that *this corpus* has no exchange
+property. Both docstrings corrected.
