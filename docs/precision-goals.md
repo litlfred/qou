@@ -165,14 +165,22 @@ q_0 must agree to at least 1 ppQ (10⁻¹⁵ relative, i.e. 10⁻⁶ ppb).
 **Configuration.** Controlled by `computations/substrate/_precision.py`:
 
 ```python
-COMPUTE_DPS_DEFAULT  = 65    # mpmath working precision (OUTPUT + GUARD)
-OUTPUT_DPS_DEFAULT   = 50    # serialization precision
-PRECISION_GUARD      = 15    # COMPUTE = OUTPUT + GUARD
+COMPUTE_DPS_DEFAULT  = 70    # mpmath working precision (OUTPUT + GUARD)
+OUTPUT_DPS_DEFAULT   = 60    # serialization precision
+PRECISION_GUARD      = 10    # COMPUTE = OUTPUT + GUARD
 ```
 
+**These three numbers read 65 / 50 / 15 until 2026-09-06 and were stale**
+(bean `qou-0z4i`, which measured 70/60/10 live on 2026-08-30). The change was
+a strict tightening, visible in witness diffs as `precisionMetadata`
+65/50/15/1e-50 → 70/60/10/1e-60 when an old producer is re-run; recomputed
+values agree with committed ones over their whole shared prefix, so no
+recorded result was invalidated. Measure rather than quote:
+`python3 -c "import qou_substrate.precision as P; print(P.COMPUTE_DPS, P.OUTPUT_DPS, P.PRECISION_GUARD)"`.
+
 The **1 ppQ target is the *minimum*** — raise via `QOU_COMPUTE_DPS=<n>`
-environment override. At 50 dps output / 65 dps compute, serialization
-truncation is ~10⁻⁵⁰ absolute (10⁻⁴¹ ppb), far exceeding 1 ppQ.
+environment override. At 60 dps output / 70 dps compute, serialization
+truncation is ~10⁻⁶⁰ absolute (10⁻⁵¹ ppb), far exceeding 1 ppQ.
 
 **Q_β is already at 0 ppQ (exact).** The Habiro expansion of the Markov
 trace terminates at $M = 8$ for the proton/neutron (integer coefficients

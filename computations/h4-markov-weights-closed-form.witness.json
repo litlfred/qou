@@ -1,18 +1,23 @@
 {
   "all_q_verified": true,
   "anchor": {
+    "convention": "D (production), z = q^3/(q^2+1)",
+    "convention_note": "Until 2026-09-06 this field was computed at the convention-C z borrowed from the cross-check below, so it published C-frame weights under a canonical label. Under D the (2,1,1) and (1,1,1,1) weights are exactly 0 (Wenzl row cap, r = 2); the superseded C values were 0.0235874702297528 and -0.000842527616701301. Bean qou-fq0f.",
     "has_own_anchor": false,
+    "markov_z": "0.6126880371464652515958299",
     "note": "The weights are exact rational functions of symbolic q and hold at every q on the genericity locus, so this computation does not depend on an anchor. The canonical proton pin is recorded so a later reader can tell which layer any numeric evaluation belongs to without inferring it from a call site.",
     "pin": "experimental (proton), per the 2026-08-07 owner directive",
     "q_0": "1.1099785827513808075916690956107688798744991218736",
     "q_0_source": "qou_substrate.constants.Q_50_DIGIT_STR (read live)",
+    "row_cap_asserted": true,
     "weights_at_canonical_q0": {
-      "(1,1,1,1)": "-0.0008425276167013005281205345",
-      "(2,1,1)": "0.02358747022975282699253549",
-      "(2,2)": "0.06947330408850531282073966",
-      "(3,1)": "0.1878688567516986371844741",
-      "(4,)": "0.2275269384953362823556125"
-    }
+      "(1,1,1,1)": "0",
+      "(2,1,1)": "0",
+      "(2,2)": "0.06115624479004374624099043",
+      "(3,1)": "0.1861416419579908521652302",
+      "(4,)": "0.3192625845459399510223285"
+    },
+    "wenzl_level_r": 2
   },
   "arithmetic": "exact (sympy Rational + symbolic z); no float64 in the derivation",
   "bean": "qou-x64l",
@@ -29,12 +34,16 @@
     "(2,2)": "-q^3 (z - q)(q z + 1) / (A^2 B)",
     "(3,1)": "-q (z - q)(q z + 1)(q A z + 1) / (A^2 C)",
     "(4,)": "(q z + 1)(q A z + 1)(q B z + 1) / (A^2 B C)",
+    "convention_D_row_cap": "The last two forms carry the factor (A z - q^3), whose root is exactly the production convention D, z = q^3/(q^2+1) = q^3/A. So under D both vanish IDENTICALLY -- equivalently the Wenzl level is Q^r = q^4 = Q^2, r = 2, and Wenzl's row cap (s_{alpha,r} = 0 for l(alpha) > r; Orellana, Crelle 508 (1999) 157-178, p. 5) kills every lambda with three or more rows. tr_M then factors through the two-row (Temperley-Lieb) quotient and only (4,), (3,1), (2,2) carry weight. Convention C sat at r ~ 2.5995, not an integer, and capped nothing. Asserted at run time; bean qou-fq0f.",
     "notation": "A = q^2+1, B = q^4+q^2+1, C = q^4+1 (the wedderburn4 genericity factors h2, h3, h4)"
   },
+  "commitSha": "c180641581a7136a6127fc76a127aec1abb61087",
   "compute": "h4_markov_weights_closed_form",
+  "computedAt": "2026-09-06T10:26:19.896072+00:00",
   "cross_check_alpha_k_jones_markov_h4": {
     "cross_check_passed": true,
     "markov_z": "0.49932033403359827",
+    "markov_z_convention": "C (z = 1/(sqrt(q) + 1/sqrt(q))) -- deliberately, and ONLY here: this arm reproduces a C-era artifact and must be evaluated at the z that artifact used. It is an input being quoted, not a convention this computation adopts. Both sides of the comparison are frozen in C, so this cross-check does NOT detect a live convention change; the row-cap assertion in the anchor block does.",
     "max_relative_difference_allowed": "1e-12",
     "note": "The published values are floats from an independent numerical constraint system (status: exploratory). Agreement at this level confirms the closed forms and fixes the partition labelling, which the spectral computation alone does not determine.",
     "published_q0_source": "computations/alpha-k-jones-markov-h4.witness.json:substrate.q_0 (read at run time, not transcribed -- it is a muon-era value stale against both documented pins, quoted here only as the input those published floats were computed at)",
@@ -69,6 +78,8 @@
     "worst_relative_difference": "2.098e-14"
   },
   "description": "Exact closed-form Jones-Markov weights w_lambda for tr_M on the H4(q) subscript normal-form basis. Supplies the missing input to BilinearTrace.gram_symm_of_rep_decomp, which is the route to an independent proof of trM4_cyclic that does not route through the ASCII Gram chain (bean qou-x64l step 4).",
+  "durationMs": 0,
+  "engine": "python",
   "presentation_check": {
     "braid_s0_s1": true,
     "braid_s1_s2": true,
@@ -77,6 +88,11 @@
     "hecke_quadratic_sigma1": true,
     "hecke_quadratic_sigma2": true
   },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "scriptFile": "h4_markov_weights_closed_form.py",
+  "scriptHash": "587f6c296bbc",
   "source_of_truth": "generator actions and TRM4 transcribed from content/quantum-observable-universe/lean/QOU/Machinery/HeckeH4StabilizationRung.lean",
   "status": "derived",
   "verification_by_q": {

@@ -201,7 +201,16 @@ if __name__ == "__main__":
     set_compute_dps()
     # Small test on 6Li to benchmark cache reuse
     print("Testing 6Li (A=6)...")
-    word = atom_braid_word_3A(3, 3) # 6Li
+    # `intra_order="grouped"` is REQUIRED here and is not a workaround. This
+    # self-test compares `chi_all_lambda` against this module's block
+    # accelerator, and BOTH are monotone-only by construction; the production
+    # default became the interleaved Borromean word on 2026-09-05 (`7db032fb48`),
+    # which neither can compose, so the test refused its own input. Feeding a
+    # non-monotone word here would not test the block composition, it would test
+    # the guard. The interleaved word's route is `chi_general_word` (bean
+    # `qou-wdij`); importing it at module scope would be circular, since it
+    # imports this module.
+    word = atom_braid_word_3A(3, 3, intra_order="grouped")  # 6Li
     
     t0 = time.time()
     res_orig = chi_all_lambda(word, 18)

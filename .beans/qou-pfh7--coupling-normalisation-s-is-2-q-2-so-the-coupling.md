@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-05T06:17:05Z
-updated_at: 2026-09-05T09:07:16Z
+updated_at: 2026-09-05T12:17:13Z
 ---
 
 Owner "merge and coupling renorm" (2026-09-05). The open item qou-ix74 left: what normalisation relates the derived weak-vertex trace W(q) to the single-crossing coupling s² the decay rate actually uses.
@@ -54,3 +54,44 @@ stays a scope-(a) negative; only "four orders of magnitude" is withdrawn, in
 favour of "two orders, ~129×".
 
 Producer `computations/markov/beta_rate_skein_power_audit.py` (9/9).
+
+
+## 2026-09-05 — the §7c MIXED flag is REAL but TOOTHLESS here; the actual defect is upstream of it
+
+Measured rather than assumed, before spending a tranche on it.
+
+**The flag is real.** Both `QOU/Braiding/WeakVertexT35TraceClosedForm.lean` and
+`QOU/Braiding/WeakVertexSubstitutionScale.lean` are MIXED — generic
+`{K : Type*} [Field K]` for the algebra plus inline `ℝ` numeric-bound theorems
+(`weakVertexTrace_near_q0`, `substitutionRateFactor_near_one_hundred_thirty`,
+`sSq (1 : ℝ) = 0 ∧ …`). AGENTS.md §7c says the archimedean specialisation
+"lives in a *separate* file" and "the generic block itself stays … without ever
+mentioning `ℝ`".
+
+**But §7c's own rationale is already void for these files.** The rule justifies
+itself with: *"What is not cheap is the downstream code that inherits the wrong
+specialisation and accretes archimedean assumptions silently."*
+`WeakVertexT35TraceClosedForm` does **`import Mathlib.Tactic`**, which
+transitively pulls in `Real`, and `WeakVertexSubstitutionScale` inherits that
+through it. So no consumer is protected from archimedean deps by moving the
+theorems out — the import cone already dominates.
+
+**The fix is cheap and safe WHENEVER someone does it**, which is why there is no
+urgency: both ℝ theorems have **zero external consumers** (grepped across
+`content/**/*.lean`, excluding the two files themselves), and the companion
+pattern already exists in this same arc
+(`WeakVertexCouplingNormalisationArchimedean.lean`,
+`WeakVertexJonesMarkovArchimedean.lean`). Nothing gets harder by waiting.
+
+**The defect actually worth fixing is the one upstream:** the blanket
+`import Mathlib.Tactic` violates AGENTS.md §8 ("Keep imports minimal — only
+import what the file actually uses"), and it is *what makes* the §7c violation
+harmless. Narrowing it would restore §7c's force and shrink the cone; it is
+also the slower job (find which tactics are actually used) and it is NOT done
+here.
+
+**Recommendation (my judgement):** do the §7c move only as a rider the next
+time either file is touched for a substantive reason, and treat the
+`Mathlib.Tactic` narrowing as the real item. Churning two merged, verified Lean
+files for a naming convention whose protective effect is nil is not worth a
+verification cycle on its own.

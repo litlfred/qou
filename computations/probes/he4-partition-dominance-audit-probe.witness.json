@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:34:34.118250+00:00",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "computedAt": "2026-09-06T06:49:37.947193+00:00",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "assertions": [
     {
       "name": "cache_coverage_complete",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 5,
   "computation": "he4-partition-dominance-audit-probe",
   "scriptFile": "he4_partition_dominance_audit_probe.py",
   "scriptHash": "fd504afb55ed",
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -48,60 +48,10 @@
     "cache_anchor_note": "Cache was generated at q_0=1.10997859555418…, the SUPERSEDED (CODATA-2018) muon value. The current production anchor is the proton pin q_at()≈1.10997858275138… (Δq ≈ 1.28e-8 from the cache anchor). For reference the other two muon values are the frozen canonical pin 1.10997859555733… and q_muon_at()≈1.10997859564274… (CODATA-2022); see computations/audits/muon_pin_three_values_probe.py. This probe is a deliberate cross-anchor comparison and must NOT be migrated. Cross-anchor q-stability of the contribution table is plausible at this scale but not formally verified by this probe.",
     "cached_count": 77,
     "total_partitions": 77,
-    "tr_M_at_q0": "0.16097414544240738182587344098071685392360735413343",
-    "cached_sum": "0.160974145442407381825873440980716853923607354133431",
+    "tr_M_at_q0": "0.011237417659767421564199549374410607269662696081262",
+    "cached_sum": "0.01123741765976742156419954937441060726966269608126248",
     "cache_coverage_pct": 100.0,
     "top_contributors": [
-      {
-        "partition": [
-          9,
-          3
-        ],
-        "dim": 154,
-        "contribution": 0.0476757692366037,
-        "abs_contribution": 0.0476757692366037,
-        "fraction_of_tr_M": 0.29617035149076737
-      },
-      {
-        "partition": [
-          8,
-          4
-        ],
-        "dim": 275,
-        "contribution": 0.03614162116244341,
-        "abs_contribution": 0.03614162116244341,
-        "fraction_of_tr_M": 0.22451817379191494
-      },
-      {
-        "partition": [
-          10,
-          2
-        ],
-        "dim": 54,
-        "contribution": 0.0248019213608205,
-        "abs_contribution": 0.0248019213608205,
-        "fraction_of_tr_M": 0.1540739433196371
-      },
-      {
-        "partition": [
-          11,
-          1
-        ],
-        "dim": 11,
-        "contribution": 0.02291477735216614,
-        "abs_contribution": 0.02291477735216614,
-        "fraction_of_tr_M": 0.14235066935245505
-      },
-      {
-        "partition": [
-          7,
-          5
-        ],
-        "dim": 297,
-        "contribution": 0.015160848437825458,
-        "abs_contribution": 0.015160848437825458,
-        "fraction_of_tr_M": 0.09418188489933396
-      },
       {
         "partition": [
           12
@@ -109,7 +59,47 @@
         "dim": 1,
         "contribution": 0.009596486910250087,
         "abs_contribution": 0.009596486910250087,
-        "fraction_of_tr_M": 0.059615082185253625
+        "fraction_of_tr_M": 0.8539761714657763
+      },
+      {
+        "partition": [
+          9,
+          3
+        ],
+        "dim": 154,
+        "contribution": 0.007237533554730902,
+        "abs_contribution": 0.007237533554730902,
+        "fraction_of_tr_M": 0.6440566484097998
+      },
+      {
+        "partition": [
+          11,
+          1
+        ],
+        "dim": 11,
+        "contribution": -0.004594966254428089,
+        "abs_contribution": 0.004594966254428089,
+        "fraction_of_tr_M": -0.4088987695882427
+      },
+      {
+        "partition": [
+          8,
+          4
+        ],
+        "dim": 275,
+        "contribution": -0.0035577087751812106,
+        "abs_contribution": 0.0035577087751812106,
+        "fraction_of_tr_M": -0.31659486929267017
+      },
+      {
+        "partition": [
+          10,
+          2
+        ],
+        "dim": 54,
+        "contribution": 0.0012879598244500844,
+        "abs_contribution": 0.0012879598244500844,
+        "fraction_of_tr_M": 0.11461350493906454
       },
       {
         "partition": [
@@ -117,20 +107,19 @@
           6
         ],
         "dim": 132,
-        "contribution": 0.004682720982298083,
-        "abs_contribution": 0.004682720982298083,
-        "fraction_of_tr_M": 0.029089894960637925
+        "contribution": 0.0009722456278416686,
+        "abs_contribution": 0.0009722456278416686,
+        "fraction_of_tr_M": 0.08651859860317686
       },
       {
         "partition": [
-          10,
-          1,
-          1
+          7,
+          5
         ],
-        "dim": 55,
-        "contribution": 0.0,
-        "abs_contribution": 0.0,
-        "fraction_of_tr_M": 0.0
+        "dim": 297,
+        "contribution": 0.0002958667721039797,
+        "abs_contribution": 0.0002958667721039797,
+        "fraction_of_tr_M": 0.026328715463095387
       },
       {
         "partition": [
@@ -139,30 +128,40 @@
           1
         ],
         "dim": 320,
-        "contribution": 0.0,
-        "abs_contribution": 0.0,
-        "fraction_of_tr_M": 0.0
+        "contribution": -2.567760766252596e-73,
+        "abs_contribution": 2.567760766252596e-73,
+        "fraction_of_tr_M": -2.2850096383315707e-71
       },
       {
         "partition": [
-          9,
-          1,
+          10,
           1,
           1
         ],
-        "dim": 165,
-        "contribution": 0.0,
-        "abs_contribution": 0.0,
-        "fraction_of_tr_M": 0.0
+        "dim": 55,
+        "contribution": -1.5804325841917934e-73,
+        "abs_contribution": 1.5804325841917934e-73,
+        "fraction_of_tr_M": -1.4064019261739387e-71
+      },
+      {
+        "partition": [
+          7,
+          4,
+          1
+        ],
+        "dim": 1408,
+        "contribution": -1.5155889160884304e-73,
+        "abs_contribution": 1.5155889160884304e-73,
+        "fraction_of_tr_M": -1.3486985729066495e-71
       }
     ],
     "by_row_count": {
-      "1-2_rows": 0.16097414544240737,
-      "3_rows": 0.0,
-      "4+_rows": 0.0
+      "1-2_rows": 0.02754276771898602,
+      "3_rows": 7.031835452512685e-73,
+      "4+_rows": 4.0414164929684294e-73
     },
-    "partition_444_contribution_upper_bound": 1e-51,
-    "verdict": "(4,4,4) is NOT PSD-dominant for tr_M(β_⁴He) at q_proton. Bulk is in 2-row partitions (100.0% of |contribs|), led by (9, 3) at +29.62%. PR #1289's (4,4,4) framing requires reconciliation: either (a) it refers to a different ⁴He braid frame than the canonical Hoefsmit cache, or (b) it refers to a non-tr_M observable (e.g. the magic-A binding form B = ρ_F·m_e·A·8G has its own PSD structure decoupled from the bare Hoefsmit decomposition). Re-frame the ⁴He interface-operator research direction accordingly.",
+    "partition_444_contribution_upper_bound": 4.8e-52,
+    "verdict": "(4,4,4) is NOT PSD-dominant for tr_M(β_⁴He) at q_proton. Bulk is in 2-row partitions (100.0% of |contribs|), led by (12,) at +85.40%. PR #1289's (4,4,4) framing requires reconciliation: either (a) it refers to a different ⁴He braid frame than the canonical Hoefsmit cache, or (b) it refers to a non-tr_M observable (e.g. the magic-A binding form B = ρ_F·m_e·A·8G has its own PSD structure decoupled from the bare Hoefsmit decomposition). Re-frame the ⁴He interface-operator research direction accordingly.",
     "research_implication": "If (4,4,4) is not the dominant block of tr_M at q_proton, the categorical interface-operator research direction needs re-aiming: compute the H_12 A-operator extract at the actual top contributor ((9,3), (8,4), (10,2)) instead, and re-test the +5.87% gap closure against magic-A B = ρ_F·m_e·A·8G with structural ρ_F."
   },
   "q0Anchor": "proton",

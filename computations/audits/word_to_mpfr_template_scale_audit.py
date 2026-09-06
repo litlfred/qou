@@ -51,7 +51,7 @@ import mpmath as mp  # noqa: E402
 
 from chi_monotone_transfer import word_to_mpfr, _TOL  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
+from chi_general_word import chi_all_lambda_any  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from tr_m_atom_via_transfer import _trM, tr_m_atom_zn  # noqa: E402
 
@@ -75,7 +75,7 @@ def _split(eta: "mp.mpf"):
     })
     y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(6, q).items()}
     t = [
-        _trM(chi_all_lambda_reduced_block(
+        _trM(chi_all_lambda_any(
             atom_braid_word_3A(Z, N, include_inter=True, q=q), 6, q=q), y)
         for Z, N in ((2, 0), (0, 2))
     ]

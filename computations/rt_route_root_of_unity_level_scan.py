@@ -29,7 +29,7 @@ from pathlib import Path
 import mpmath as mp
 from mpmath import mpc, mpf
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 # Constants — m_e from canonical source (CAL-1)
@@ -77,49 +77,52 @@ def scan_level(k: int) -> dict:
     N_max = min(k + 1, 10)
     per_N = []
     for N in range(2, N_max + 1):
-        per_particle = {}
+        # Magnitudes stay mpf: the ratios and the deviations from the PDG
+        # values are computed from them, and truncating here put a binary64
+        # round-trip (`float(mag)` then `mpf(str(...))`) inside a comparison
+        # against experiment. `_mp` is working state, dropped before the
+        # witness is written -- the string fields carry the same numbers.
+        exact = {}
         for particle, info in SM_TORUS_MAP.items():
-            J = colored_jones_T2n(N, info["n"], q)
-            mag = abs(J)
-            per_particle[particle] = float(mag)
+            exact[particle] = abs(colored_jones_T2n(N, info["n"], q))
+        ratios_mp = {
+            "W_over_Z": (exact["W±"] / exact["Z"]) if exact["Z"] > 0 else None,
+            "Z_over_H": (exact["Z"] / exact["H"]) if exact["H"] > 0 else None,
+            "W_over_H": (exact["W±"] / exact["H"]) if exact["H"] > 0 else None,
+        }
         per_N.append({
             "N": N,
-            "magnitudes": per_particle,
-            "ratios": (
-                {
-                    "W_over_Z": per_particle["W±"] / per_particle["Z"]
-                                if per_particle["Z"] > 0 else None,
-                    "Z_over_H": per_particle["Z"] / per_particle["H"]
-                                if per_particle["H"] > 0 else None,
-                    "W_over_H": per_particle["W±"] / per_particle["H"]
-                                if per_particle["H"] > 0 else None,
-                }
-            ),
+            "magnitudes": {p: fmt(v) for p, v in exact.items()},
+            "ratios": {k2: (fmt(v) if v is not None else None)
+                       for k2, v in ratios_mp.items()},
+            "_mp": {"magnitudes": exact, "ratios": ratios_mp},
         })
 
     # Best N for this k by total |deviation| from SM ratios
     best_N = None
+    best_data = None
     best_dev = mpf("inf")
     for n_data in per_N:
-        r = n_data["ratios"]
+        r = n_data["_mp"]["ratios"]
         if r["W_over_Z"] is None or r["Z_over_H"] is None or r["W_over_H"] is None:
             continue
-        d_wz = abs(mpf(str(r["W_over_Z"])) - RATIO_W_Z_EXP) / RATIO_W_Z_EXP
-        d_zh = abs(mpf(str(r["Z_over_H"])) - RATIO_Z_H_EXP) / RATIO_Z_H_EXP
-        d_wh = abs(mpf(str(r["W_over_H"])) - RATIO_W_H_EXP) / RATIO_W_H_EXP
-        total = float((d_wz + d_zh + d_wh) * 100)
-        if total < float(best_dev):
-            best_dev = mpf(total)
+        d_wz = abs(r["W_over_Z"] - RATIO_W_Z_EXP) / RATIO_W_Z_EXP
+        d_zh = abs(r["Z_over_H"] - RATIO_Z_H_EXP) / RATIO_Z_H_EXP
+        d_wh = abs(r["W_over_H"] - RATIO_W_H_EXP) / RATIO_W_H_EXP
+        total = (d_wz + d_zh + d_wh) * 100
+        if total < best_dev:
+            best_dev = total
             best_N = n_data["N"]
             best_data = n_data
     return {
         "k": k,
         "q_root_of_unity": f"exp(πi/{k+2})",
-        "q_arg_radians": float(mp.pi / (k + 2)),
+        "q_arg_radians": fmt(mp.pi / (k + 2)),
         "N_max_at_this_level": N_max,
         "per_N_data": per_N,
         "best_N": best_N,
-        "best_N_total_dev_pct": float(best_dev),
+        "best_N_total_dev_pct": fmt(best_dev),
+        "_best_dev_mp": best_dev,
         "best_N_data": best_data if best_N else None,
     }
 
@@ -138,12 +141,12 @@ def main():
             r = scan_level(k)
             results.append(r)
             print(f"\nLevel k = {k}  (q = {r['q_root_of_unity']}, N_max = {r['N_max_at_this_level']})")
-            print(f"  Best N: {r['best_N']}, total |dev| = {r['best_N_total_dev_pct']:.2f}%")
+            print(f"  Best N: {r['best_N']}, total |dev| = {float(r['_best_dev_mp']):.2f}%")
             if r["best_N_data"]:
-                ratios = r["best_N_data"]["ratios"]
-                print(f"    W/Z = {ratios['W_over_Z']:.4f}  (exp {float(RATIO_W_Z_EXP):.4f})")
-                print(f"    Z/H = {ratios['Z_over_H']:.4f}  (exp {float(RATIO_Z_H_EXP):.4f})")
-                print(f"    W/H = {ratios['W_over_H']:.4f}  (exp {float(RATIO_W_H_EXP):.4f})")
+                ratios = r["best_N_data"]["_mp"]["ratios"]
+                print(f"    W/Z = {float(ratios['W_over_Z']):.4f}  (exp {float(RATIO_W_Z_EXP):.4f})")
+                print(f"    Z/H = {float(ratios['Z_over_H']):.4f}  (exp {float(RATIO_Z_H_EXP):.4f})")
+                print(f"    W/H = {float(ratios['W_over_H']):.4f}  (exp {float(RATIO_W_H_EXP):.4f})")
         except Exception as e:
             print(f"\nLevel k = {k}: FAILED ({e})")
             results.append({"k": k, "error": str(e)})
@@ -151,18 +154,25 @@ def main():
     # Best level overall
     valid = [r for r in results if "best_N_total_dev_pct" in r]
     if valid:
-        best = min(valid, key=lambda r: r["best_N_total_dev_pct"])
+        best = min(valid, key=lambda r: r["_best_dev_mp"])
+        best_dev = best["_best_dev_mp"]
         print("\n" + "=" * 80)
         print("VERDICT")
         print("=" * 80)
         print(f"Best level: k = {best['k']}, N = {best['best_N']}")
-        print(f"  total |dev| across 3 ratios: {best['best_N_total_dev_pct']:.2f}%")
-        if best['best_N_total_dev_pct'] < 5:
+        print(f"  total |dev| across 3 ratios: {float(best_dev):.2f}%")
+        if best_dev < 5:
             print("  → STRONG validation of RT-chain SM mapping at this level")
-        elif best['best_N_total_dev_pct'] < 20:
+        elif best_dev < 20:
             print("  → moderate validation; partial signal at this level")
         else:
             print("  → weak signal across all tested levels; RT chain needs more structure")
+
+    # Drop the mpf working state -- every value has a lossless string twin.
+    for r in results:
+        r.pop("_best_dev_mp", None)
+        for n_data in r.get("per_N_data", []):
+            n_data.pop("_mp", None)
 
     # Witness
     witness = {
@@ -185,9 +195,9 @@ def main():
                 for p, info in SM_TORUS_MAP.items()
             },
             "experimental_ratios": {
-                "W_over_Z": float(RATIO_W_Z_EXP),
-                "Z_over_H": float(RATIO_Z_H_EXP),
-                "W_over_H": float(RATIO_W_H_EXP),
+                "W_over_Z": fmt(RATIO_W_Z_EXP),
+                "Z_over_H": fmt(RATIO_Z_H_EXP),
+                "W_over_H": fmt(RATIO_W_H_EXP),
             },
         },
         "results_per_level": results,

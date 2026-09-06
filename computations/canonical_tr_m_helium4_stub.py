@@ -1,6 +1,34 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: stub script; no compute output yet.
-"""Canonical |tr_M(⁴He)| stub — H_12 compute pending Rust kernel.
+"""Canonical |tr_M(⁴He)| stub — SUPERSEDED 2026-09-06, no Rust kernel needed.
+
+✅ The value this stub was a placeholder for is computed, three independent
+ways agreeing to 51 digits at the proton pin:
+
+    |tr_M(⁴He)| = 0.011237417659767421564199549374410607269662696081261
+
+    Wenzl bridge on atom_braid_word_3A(2,2)    ~17 s   atomic_tr_m_helium4.py (C)
+    markov_trace_canonical                      ~1 s   binding-canonical.witness.json
+    closed_form_tau_M, bring_color_weighted   0.002 s  atomic_tr_m_helium4_canonical.py
+
+The cost model below is wrong in both factors it names, and neither
+implementation path it proposes was needed.
+
+Under production convention D the Wenzl level is r = 2 EXACTLY, so Wenzl's row
+cap annihilates every λ with three or more rows (bean `qou-fq0f`). At n = 12
+that is 70 of the 77 partitions counted below, and the largest SURVIVING
+dimension is 297 — not 7700, which belongs to (5,3,2,1,1), a five-row shape
+whose weight is identically zero. The Σ dim² = 12! figure counts the whole
+algebra; the trace lives on the two-row (Temperley–Lieb) quotient.
+
+So the fix was not a Rust kernel with rayon parallel partitions, nor a
+categorical reduction via Wenzl 1988 LR branching. It was not computing χ^λ for
+terms multiplied by zero. Pure Python mpmath does it in ~17 s.
+
+This file is imported nowhere. Kept for the record of what was believed.
+
+──────────────────────────────────────────────────────────────────────────
+ORIGINAL (superseded):
 
 Per `atomic-tr-m-helium4.witness.json`'s `convention_status` field
 and the PR #564 audit finding, the canonical |tr_M(⁴He)| value

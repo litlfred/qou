@@ -120,11 +120,17 @@ def chi_all_lambda_window(word, n: int, *, dps: int = 50, q=None):
     frontier = 0
     lo = 1
 
+    # Seeding the accumulators with an mpf zero rather than Python's int 0
+    # removes an int->mpf coercion on the FIRST write to every key. Profiled at
+    # 7Li: `mpmath.ctx_mp_python.convert` was called 3.77 million times for
+    # exactly that, ~3 s of a 58 s run.
+    _zero = mp.mpf(0)
+
     for idx, (d_mp, g) in enumerate(letters):
         # 1. extend the chain until both levels this letter needs exist
         while frontier < g + 2:
             frontier += 1
-            new = defaultdict(int)
+            new = defaultdict(lambda: _zero)
             for (shape, it, ct), a in amp.items():
                 for (r, c) in _addable(shape):
                     s2 = _add(shape, (r, c))
@@ -138,32 +144,48 @@ def chi_all_lambda_window(word, n: int, *, dps: int = 50, q=None):
 
         # 2. apply the letter: sigma_g + d, acting on tail positions for levels
         #    g+1 and g+2.
+        #
+        # Both coefficients depend ONLY on `delta` and this letter's `d`, never
+        # on the state, so they are computed once per distinct delta instead of
+        # once per state. At 7Li that is a few dozen evaluations replacing
+        # ~130k of `diag + d_mp` and the same again of `diag * other + 1`.
         i = (g + 1) - lo
         j = (g + 2) - lo
-        new = defaultdict(int)
+        coef: dict[int, tuple] = {}
+
+        def _coef(delta, _c=coef, _d=d_mp):
+            v = _c.get(delta)
+            if v is None:
+                diag = _D(delta, q, qi, h, Dc)
+                if abs(delta) == 1:
+                    v = (diag + _d, None)          # 1x1 block: no swap partner
+                else:
+                    other = _D(-delta, q, qi, h, Dc)
+                    v = (diag + _d, diag * other + 1)
+                _c[delta] = v
+            return v
+
+        new = defaultdict(lambda: _zero)
         for (shape, it, ct), a in amp.items():
             ci, cj = ct[i], ct[j]
             delta = cj - ci
-            diag = _D(delta, q, qi, h, Dc)
-            if abs(delta) == 1:
+            on_diag, off_diag = _coef(delta)
+            new[(shape, it, ct)] += a * on_diag
+            if off_diag is None:
                 # swapped chain is not standard: 1x1 block, sigma = q or -1/q,
                 # which is exactly D(+-1).
-                new[(shape, it, ct)] += a * (diag + d_mp)
                 continue
             # 2x2 row form: diagonal D(delta), off-diagonal 1 going one way and
             # D(delta) D(-delta) + 1 the other. See the convention probe.
-            other = _D(-delta, q, qi, h, Dc)
             swapped = list(ct)
             swapped[i], swapped[j] = cj, ci
-            swapped = tuple(swapped)
-            new[(shape, it, ct)] += a * (diag + d_mp)
-            new[(shape, it, swapped)] += a * (1 if ci < cj else diag * other + 1)
+            new[(shape, it, tuple(swapped))] += a if ci < cj else a * off_diag
         amp = dict(new)
 
         # 3. retire levels no later letter touches: require init == cur there.
         while lo <= frontier and last_touch.get(lo, -1) <= idx:
             k = lo - lo  # always 0: we retire from the low end
-            new = defaultdict(int)
+            new = defaultdict(lambda: _zero)
             for (shape, it, ct), a in amp.items():
                 if it[k] != ct[k]:
                     continue                      # chain did not return: not on the diagonal
@@ -175,13 +197,13 @@ def chi_all_lambda_window(word, n: int, *, dps: int = 50, q=None):
     #    they are automatically diagonal.
     while frontier < n:
         frontier += 1
-        new = defaultdict(int)
+        new = defaultdict(lambda: _zero)
         for (shape, it, ct), a in amp.items():
             for (r, c) in _addable(shape):
                 new[(_add(shape, (r, c)), it, ct)] += a
         amp = dict(new)
 
-    out = defaultdict(int)
+    out = defaultdict(lambda: _zero)
     for (shape, it, ct), a in amp.items():
         if it != ct:
             continue

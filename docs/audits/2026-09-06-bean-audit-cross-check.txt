@@ -1,0 +1,65 @@
+cross-checked 29 ABSENT identifier(s) against olean freshness
+
+  ARTIFACT CURRENT (8) -- the module is up to date, so the
+    constant really is not in the corpus under that name:
+      QOU.BraidKnot.SnIsotypicSpechtSplitInstance.instSnIsotypicSpechtSplitRat
+        (module QOU.BraidKnot.SnIsotypicSpechtSplitInstance)
+      QOU.BraidsAndKnots.PlancherelViaRecipe.plancherel_via_recipe
+        (module QOU.BraidsAndKnots.PlancherelViaRecipe)
+      QOU.Mass.QHookDimension.qIntPoly
+        (module QOU.Mass.QHookDimension)
+      QOU.MassTheory.TwoRowCapDerived.massWeight_eq_zero_of_three_rows_of_wenzl
+        (module QOU.MassTheory.TwoRowCapDerived)
+      QOU.MathlibExt.QIntegerCanonical.qIntGeo
+        (module QOU.MathlibExt.QIntegerCanonical)
+      QOU.QBeta.C1ThetaZeroLocus.qThetaC_eq_zero_iff
+        (module QOU.QBeta.C1ThetaZeroLocus)
+      QOU.Substrate.ProtonMassSubstrateIdentity.Scratch
+        (module QOU.Substrate.ProtonMassSubstrateIdentity)
+      QOU.Torsion.idempotent_direct_sum_decomposition
+        (module QOU.Torsion)
+
+  ARTIFACT STALE/MISSING (21) -- ABSENT says nothing here. The
+    probe read an environment older than the source. Rebuild, then re-probe:
+      QOU.AlgebraicSubstrate.CategoricalReebDerivation
+        (module QOU.AlgebraicSubstrate: olean STALE)
+      QOU.AlgebraicSubstrate.GBDepthPeriodCorrespondence
+        (module QOU.AlgebraicSubstrate: olean STALE)
+      QOU.Archimedean.HyperbolicVolumeIndependence.no_relation
+        (module QOU.Archimedean.HyperbolicVolumeIndependence: olean STALE)
+      QOU.Archimedean.TypeBFoldedCrystalCombinatorics.content_sum_plus_transpose_content_sum_eq_zero
+        (module QOU.Archimedean.TypeBFoldedCrystalCombinatorics: olean STALE)
+      QOU.Archimedean.WeierstrassProjection.weierstrassProjection
+        (module QOU.Archimedean.WeierstrassProjection: olean STALE)
+      QOU.BraidKnot.qIntBal
+        (module QOU.BraidKnot.H3HeckeIdempotents: olean STALE)
+      QOU.BraidsAndKnots.BorromeanTraceConventionSplit.conventionD_ne_conventionC
+        (module QOU.BraidsAndKnots.BorromeanTraceConventionSplit: olean STALE)
+      QOU.Hecke.Hoefsmit.axialDistance
+        (module QOU.Hecke.Hoefsmit: olean STALE)
+      QOU.Hecke.blockDim
+        (module QOU.Hecke.Wedderburn: olean STALE)
+      QOU.Hecke.blockDim_eq_numSYT
+        (module QOU.Hecke.Wedderburn: olean STALE)
+      QOU.HeckeAlgebra.MarkovTrace.MarkovTrace_cyclic
+        (module QOU.HeckeAlgebra.MarkovTrace: olean STALE)
+      QOU.HeckeAlgebra.WedderburnDecomposition
+        (module QOU.HeckeAlgebra: olean STALE)
+      QOU.Interactions.QBetaCosResummation
+        (module QOU.Interactions: olean STALE)
+      QOU.Interactions.TransferMatrixEigenphase
+        (module QOU.Interactions: olean STALE)
+      QOU.Interactions.WedderburnMassFormula.catalan_G
+        (module QOU.Interactions.WedderburnMassFormula: olean STALE)
+      QOU.Interactions.eigenphase_bar_involution
+        (module QOU.Interactions: olean STALE)
+      QOU.Interactions.markovZC
+        (module QOU.Interactions: olean STALE)
+      QOU.LiftingDescent.QOUInstance.qouMotivicGaloisChar
+        (module QOU.LiftingDescent: olean STALE)
+      QOU.Mass.MassVolDensity.h_crossing_eq_two_sinh_log
+        (module QOU.Mass.MassVolDensity: olean STALE)
+      QOU.MathlibExt.IwahoriHecke
+        (module QOU.MathlibExt: olean STALE)
+      QOU.MathlibExt.QBesselContiguityRecurrence
+        (module QOU.MathlibExt: olean STALE)

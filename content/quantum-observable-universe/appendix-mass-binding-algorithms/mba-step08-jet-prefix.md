@@ -44,7 +44,7 @@ in the Hecke dimension.*
 [`computations/gb_filtration_jet_order_reader.py`](../../../computations/gb_filtration_jet_order_reader.py),
 which reads the GS-filtered NF and emits the per-jet-order
 truncation witness. The substrate's precision discipline (compute
-at 65 dps, serialise at 50 dps) is configured by
+at 70 dps, serialise at 60 dps) is configured by
 [`qou_substrate.precision`](../../../tools/qou-substrate/python/qou_substrate/precision.py).*
 
 ### Witness contract
