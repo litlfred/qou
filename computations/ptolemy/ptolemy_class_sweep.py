@@ -55,6 +55,7 @@ import pathlib
 import re
 import subprocess
 import sys
+import tempfile
 import time
 
 import snappy
@@ -156,20 +157,38 @@ def write_ms(path, polys, rem, char):
 
 
 def run_msolve(inp, out, extra, budget, threads=1):
-    cmd = ['msolve', '-t', str(threads), '-f', str(inp), '-o', str(out)] + extra
-    t0 = time.time()
-    try:
-        r = subprocess.run(cmd, capture_output=True, text=True, timeout=budget)
-    except subprocess.TimeoutExpired:
-        return None, f"TIMEOUT after {budget}s", time.time() - t0
-    log = (r.stdout or '') + (r.stderr or '')
-    if r.returncode != 0:
-        return None, f"msolve exit {r.returncode}: {log.strip()[:300]}", time.time() - t0
-    try:
-        data = ast.literal_eval(out.read_text().strip().rstrip(':'))
-    except Exception as exc:
-        return None, f"unparsable output: {exc}", time.time() - t0
-    return data, log, time.time() - t0
+    """Run msolve, and land its output file ONLY if it holds a verdict.
+
+    msolve creates its -o file the moment it STARTS, so an in-flight or timed-out run
+    leaves a zero-length file sitting in the repository.  That is worse than no file:
+    it looks like a result, it invites being parsed, and it is exactly the shape of the
+    other reading error this arc has already made -- taking [1, n, -1, []] for "empty"
+    when it means positive dimension.  Five such files had to be deleted by hand after
+    one round of timeouts, and a commit hook flagged a sixth while msolve still held it
+    open, where neither committing it nor deleting it was safe.
+
+    So msolve writes to a scratch path and the result is moved into place only after it
+    parses.  A timeout or a crash then leaves NOTHING behind, which is the honest
+    record: an absent file cannot be mistaken for an answer.
+    """
+    with tempfile.TemporaryDirectory(prefix='msolve-') as tmp:
+        scratch = pathlib.Path(tmp) / out.name
+        cmd = ['msolve', '-t', str(threads), '-f', str(inp), '-o', str(scratch)] + extra
+        t0 = time.time()
+        try:
+            r = subprocess.run(cmd, capture_output=True, text=True, timeout=budget)
+        except subprocess.TimeoutExpired:
+            return None, f"TIMEOUT after {budget}s (no output file written)", time.time() - t0
+        log = (r.stdout or '') + (r.stderr or '')
+        if r.returncode != 0:
+            return None, f"msolve exit {r.returncode}: {log.strip()[:300]}", time.time() - t0
+        try:
+            raw = scratch.read_text()
+            data = ast.literal_eval(raw.strip().rstrip(':'))
+        except Exception as exc:
+            return None, f"unparsable output: {exc}", time.time() - t0
+        out.write_text(raw)          # land it only now, with a verdict in it
+        return data, log, time.time() - t0
 
 
 def describe(data):
