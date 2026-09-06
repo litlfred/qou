@@ -23,8 +23,8 @@ It is not, for two independent reasons, and BOTH had to be measured:
      floats, 556 of 765 are integral; of `computed`, 291 of 607. My leaf-name
      ranking counted them and was inflated by ~3x.
 
-     Measured properly: everything under `.assertions[]` is 589 of 36,945
-     non-integral float leaves -- **1.6 %**. The assertion API is not a lever.
+     Measured properly: everything under `.assertions[]` is 589 of 35,199
+     non-integral float leaves -- **1.7 %**. The assertion API is not a lever.
 
   2. THE TOLERANCE MECHANISM DOES NOT TRANSFER. `Assertion.to_dict` already
      routes `tolerance` through `_tolerance_literal`, which serializes a
@@ -45,15 +45,18 @@ It is not, for two independent reasons, and BOTH had to be measured:
      that docstring refuses. So the mechanism is correct where it is and must
      not be generalised on the strength of the analogy alone.
 
-WHAT THE BACKLOG ACTUALLY IS: diffuse domain data. 4,192 distinct leaf names.
+WHAT THE BACKLOG ACTUALLY IS: diffuse domain data. 4,166 distinct leaf names.
 Named solver-output fields (`y_star`, `x_star`, `x_opt`, `primal_obj`,
-`eigenvalues`, ...) account for 3,801 = 10.3 %, and those are float64 because
+`eigenvalues`, ...) account for 3,801 = 10.8 %, and those are float64 because
 the solver is -- scipy and Clarabel return binary64, so that share is not a
 serialization slip at all and is not fixed by carrying mpf to the boundary.
 
-WHERE THE WORK IS, by producer, so a campaign has somewhere to start:
+WHERE THE WORK IS, by producer, so a campaign has somewhere to start. Figures
+are AS OF the baseline in the tree when this ran -- 1,012 files / 31,956 fields,
+after the same PR drained three bucket-B producers (1,746 fields). The witness
+carries the live numbers; these are for reading, not for quoting:
 
-    B. imports mpmath, does NOT bind fmt                456 files  14,867
+    B. imports mpmath, does NOT bind fmt                453 files  13,121
     A. no mpmath at all -- f64 computation              181 files   8,600
     unresolved producer (this script's resolver)        297 files   8,181
     C. imports mpmath AND binds fmt, still dirty         81 files   2,054
@@ -264,8 +267,8 @@ def main() -> int:
         "solver_output_names_pct": f"{100*solver/total:.2f}",
         "solver_output_names_count": solver,
         "integral_excluded_in_assertions": dict(integral_in_assertions),
-        "verdict": "The assertion API is 1.6 % of the backlog, NOT a lever. "
-                   "Solver output is 10.3 % and is float64 because scipy and "
+        "verdict": "The assertion API is under 2 % of the backlog, NOT a lever. "
+                   "Solver output is ~10 % and is float64 because scipy and "
                    "Clarabel are -- not a serialization slip, and not fixed by "
                    "carrying mpf to the boundary.",
     })

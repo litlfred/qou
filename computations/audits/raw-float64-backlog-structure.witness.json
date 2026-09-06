@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T11:10:15.010804+00:00",
-  "commitSha": "1352b02c29b031532ad552c59fca50e68b914683",
+  "computedAt": "2026-09-06T11:28:58.424021+00:00",
+  "commitSha": "d008450a263dc86a0ef46879a7331467de9e5803",
   "assertions": [
     {
       "name": "assertion_api_is_not_a_central_lever",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "source": "589 of 36945 non-integral float leaves sit under .assertions[] (1.59 %). Stated as a predicate (under 5 %) so the witness summary reports a pass for a measured negative rather than FAILURES."
+      "source": "589 of 35199 non-integral float leaves sit under .assertions[] (1.67 %). Stated as a predicate (under 5 %) so the witness summary reports a pass for a measured negative rather than FAILURES."
     }
   ],
   "allPassed": true,
-  "durationMs": 4726,
+  "durationMs": 4549,
   "computation": "raw-float64-backlog-structure",
   "scriptFile": "raw_float64_backlog_structure.py",
-  "scriptHash": "89721c4a79a8",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "662d58468c4b",
+  "scriptCommitSha": "d008450a263dc86a0ef46879a7331467de9e5803",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,23 +43,23 @@
   "description": "Bean qou-oots. Asks whether the raw-float64 backlog (33,702 fields / 1015 witnesses after the 2026-09-06 ratchet) is reachable by a CENTRAL fix, and answers NO with the measurements. Records that the obvious candidate -- WitnessBuilder.add_assertion, whose `expected`/`computed` are the most WIDESPREAD dirty leaf names -- is a false lead twice over: integral floats are excluded from the count and were inflating that ranking ~3x (assertions are 1.6 % of non-integral leaves), and the `_tolerance_literal` mechanism cannot be generalised to `expected` because the significant-digit bimodality that justifies its cut does not exist there. Reports where the work actually is, by producer bucket, so a campaign has a starting point.",
   "data": {
     "population": {
-      "baselined_witnesses": 1015,
-      "witnesses_scanned": 1015,
-      "non_integral_float_leaves": 36945,
-      "distinct_leaf_names": 4192,
+      "baselined_witnesses": 1012,
+      "witnesses_scanned": 1012,
+      "non_integral_float_leaves": 35199,
+      "distinct_leaf_names": 4166,
       "note": "Integral floats are EXCLUDED, matching the audit's own `_count(integral_is_exact=True)`. Counting them measures a different population and inflates every name ranking."
     },
     "central_fix_candidates": {
-      "under_assertions_pct": "1.59",
+      "under_assertions_pct": "1.67",
       "under_assertions_count": 589,
-      "solver_output_names_pct": "10.29",
+      "solver_output_names_pct": "10.80",
       "solver_output_names_count": 3801,
       "integral_excluded_in_assertions": {
-        "expected": 556,
-        "computed": 291,
+        "expected": 555,
+        "computed": 290,
         "tolerance": 129
       },
-      "verdict": "The assertion API is 1.6 % of the backlog, NOT a lever. Solver output is 10.3 % and is float64 because scipy and Clarabel are -- not a serialization slip, and not fixed by carrying mpf to the boundary."
+      "verdict": "The assertion API is under 2 % of the backlog, NOT a lever. Solver output is ~10 % and is float64 because scipy and Clarabel are -- not a serialization slip, and not fixed by carrying mpf to the boundary."
     },
     "sig_digit_histograms": {
       "expected": {
@@ -95,8 +95,8 @@
         "12": 5,
         "13": 2,
         "14": 1,
-        "15": 11,
-        "16": 113,
+        "15": 10,
+        "16": 114,
         "17": 90
       },
       "tolerance": {
@@ -114,8 +114,8 @@
     },
     "where_the_work_is": {
       "B. mpmath, no fmt": {
-        "files": 456,
-        "fields": 14867
+        "files": 453,
+        "fields": 13121
       },
       "A. no mpmath at all": {
         "files": 181,
