@@ -1251,7 +1251,7 @@ export const references: Reference[] = [
     issue: "1",
     page: "445-486",
     DOI: "10.1016/j.aim.2010.03.002",
-    note: "arXiv:0801.0083. PDF library/arxiv-0801.0083v4/0801.0083v4.pdf (ingested 2026-09-05, owner upload ad60e3f2). Numbered results as held: Thm 3.13 (quotient gerbe G/N), Thm 4.6 (obstruction to lifting isomorphisms, cl^1), Thm 4.17 (obstruction to lifting objects, cl^2), Thm 5.11 (existence of cl^2 under N-acyclic coverings), Thm 6.10 (pronilpotent gerbes: connectivity from H^1/H^2 of the graded pieces). NOTE: the corpus cites this paper as Thm 1.7 / Thm 3.4 / Thm 4.5 — none of those numbers exist in it; see docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md §9.",
+    note: "arXiv:0801.0083. PDF library/arxiv-0801.0083v4/0801.0083v4.pdf (ingested 2026-09-05, owner upload ad60e3f2). Numbered results as held: Thm 3.13 (quotient gerbe G/N), Thm 4.6 (obstruction to lifting isomorphisms, cl^1), Thm 4.17 (obstruction to lifting objects, cl^2), Thm 5.11 (existence of cl^2 under N-acyclic coverings), Thm 6.10 (pronilpotent gerbes: connectivity from H^1/H^2 of the graded pieces). NOTE: until 2026-09-06 the corpus cited this paper as Thm 1.7 / Thm 3.4 / Thm 4.5 — none of those numbers exist in it (nor does a Proposition 3.4: the only 'Proposition 3.4' string in the held text is a citation to [Gr2, Cor. to Prop. 3.4.2]). Remapped corpus-wide (bean qou-smw9): lifting criterion / twisted sectors -> Thm 4.17 (+ Def 4.15 for cl^2), tower as central extension -> Thm 3.13 (+ §6 for the central-filtration tower), 'twisted quantization map' -> yekutieli2015-twisted-dq Thm 0.10.1. Finding: docs/audits/2026-09-05-binding-gap-groupoids-derived-categories-full-tower.md §9.",
     URL: "https://arxiv.org/abs/0801.0083",
   }),
 
@@ -1275,7 +1275,7 @@ export const references: Reference[] = [
     "container-title": "arXiv preprint",
     issued: { "date-parts": [[2008]] },
     note: "arXiv:0801.3233",
-    note: "PDF library/arxiv-0801.3233v4/0801.3233v4.pdf (ingested 2026-09-05, owner upload 8a730706). The likely true home of the corpus's '[Thm 4.5]{yekutieli2010} twisted quantization map' citation — check before re-keying.",
+    note: "PDF library/arxiv-0801.3233v4/0801.3233v4.pdf (ingested 2026-09-05, owner upload 8a730706). The twisted quantization map is Thm 6.1 here (citing [Ye5] = arXiv:0905.0488, where it is Thm 0.10.1 / Thm 11.1). The corpus's former '[Thm 4.5]{yekutieli2010} twisted quantization map' citation was re-keyed 2026-09-06 to yekutieli2015-twisted-dq Thm 0.10.1 (bean qou-smw9).",
     URL: "https://arxiv.org/abs/0801.3233",
   }),
 
