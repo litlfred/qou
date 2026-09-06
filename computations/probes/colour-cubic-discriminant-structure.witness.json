@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T09:15:52.538183+00:00",
-  "commitSha": "4ee64060c9bae2577566d16cbfbade26fcbc2643",
+  "computedAt": "2026-09-06T09:41:42.461580+00:00",
+  "commitSha": "e4fc1bd5e95c52f78d9d03de448f735e1c923aa1",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "colour-cubic-discriminant-structure",
   "scriptFile": "colour_cubic_discriminant_structure_probe.py",
-  "scriptHash": "009db8c19872",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1956da506e86",
+  "scriptCommitSha": "ddeb84427e329447affb5ea5514c19bab1f2dab1",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -75,13 +75,28 @@
       "detail": "no rational root over p|2, q|16 (found [])"
     },
     {
+      "check": "symbolic_chain_offroot",
+      "pass": true,
+      "detail": "max |sextic(z) - z^3*(125/4)*(u^3-u+2/5)| over 4 OFF-ROOT u = 2.96736e-67  (125/2 gives O(10^2..10^4) here; both pass at a root)"
+    },
+    {
+      "check": "cardano_real_root",
+      "pass": true,
+      "detail": "u = -[(1/5-sqrt6/45)^(1/3) + (1/5+sqrt6/45)^(1/3)] = -1.15970485276486176491398255031, trinomial residual 1.35835e-71"
+    },
+    {
+      "check": "real_root_forces_unit_circle",
+      "pass": true,
+      "detail": "|w| = 1.9496310659560772061 < 2, so sqrt(w^2-4) is imaginary and |z|^2 = (w^2 + (4-w^2))/4 = 1 EXACTLY -- the unit-circle pair is forced, not coincidental (Lean: QOU.Brings.normSq_eq_one_of_abs_le_two)"
+    },
+    {
       "check": "xi_not_simply_related",
       "pass": true,
       "detail": "ratios to 1/sqrt(2): abs_zc=1.3337386, abs_zc_sq=1.257843, im_zc=1.3253146, re_zc=0.14966564, abs_w_complex=0.35809131 -- clean hits: []"
     }
   ],
-  "checks_passed": 9,
-  "checks_total": 9,
+  "checks_passed": 12,
+  "checks_total": 12,
   "sextic": [
     16,
     24,
@@ -101,6 +116,11 @@
   ],
   "reduced_cubic_discriminant": -80000,
   "reduced_cubic_discriminant_factored": "-2^7 * 5^4",
+  "symbolic_chain": "colourSextic(z) = z^3 * (125/4) * (u^3 - u + 2/5), w = z + 1/z = (5/4)u - 1/2",
+  "saddle_trinomial": "u^3 - u + 2/5",
+  "saddle_trinomial_discriminant": "-8/25 = -2^3/5^2",
+  "cardano_real_root": "-[(1/5 - sqrt(6)/45)^(1/3) + (1/5 + sqrt(6)/45)^(1/3)]",
+  "lean": "QOU.Brings.ColourCubicDiscriminant -- 7 theorems, sorry-free, lean-direct exit 0",
   "z_c": {
     "re": "0.105829586188268020990938731157",
     "im": "0.937138937838903436914878115252"
