@@ -34,7 +34,7 @@ import sys
 sys.path.insert(0, "computations")
 import mpmath as mp
 from wedderburn_jones_markov import y_lambda_at
-from chi_monotone_transfer import chi_all_lambda
+from chi_general_word import chi_all_lambda_any
 from mass_at_3A_proper import atom_braid_word_3A
 from lr_coefficients import partitions_of
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
@@ -77,8 +77,8 @@ def main():
     y = {tuple(k): (v if isinstance(v, mp.mpf) else mp.mpf(str(v)))
          for k, v in yraw.items()}
     # χ^λ(β_D) canonical (atom braid word, color-weighted interface, q₀)
-    print("[2/2] computing χ^λ(β_D) via canonical chi_all_lambda (H₆, may take a few min) ...", flush=True)
-    chi = chi_all_lambda(atom_braid_word_3A(1, 1), N_STRANDS, dps=mp.mp.dps)
+    print("[2/2] computing χ^λ(β_D) via canonical chi_all_lambda_any (H₆, may take a few min) ...", flush=True)
+    chi = chi_all_lambda_any(atom_braid_word_3A(1, 1), N_STRANDS, dps=mp.mp.dps)
     print("    ... χ^λ done.\n", flush=True)
     chi = {tuple(k): v for k, v in chi.items()}
 

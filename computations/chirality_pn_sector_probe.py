@@ -34,7 +34,7 @@ import sys
 import mpmath as mp  # noqa: E402
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
+from chi_general_word import chi_all_lambda_any  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
@@ -90,7 +90,7 @@ def kappa_avg(Z: int, N: int) -> float:
     n = 3 * (Z + N)
     q0 = mp.mpf(str(Q0))
     y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, q0).items()}
-    chi = chi_all_lambda_reduced_block(atom_braid_word_3A(Z, N, include_inter=True), n)
+    chi = chi_all_lambda_any(atom_braid_word_3A(Z, N, include_inter=True), n)
     num = sum(y[tuple(l)] * v * content_sum(tuple(l)) for l, v in chi.items())
     den = sum(y[tuple(l)] * v for l, v in chi.items())
     return float(num / den)
