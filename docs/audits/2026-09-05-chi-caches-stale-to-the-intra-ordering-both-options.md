@@ -1,4 +1,4 @@
-# The chi caches are stale to the 2026-09-05 intra-ordering change — both options explored
+# The chi caches were stale to the 2026-09-05 intra-ordering change — explored, then REGENERATED on owner ruling
 
 **Bean:** `qou-92u9`. **Probe:** `computations/probes/chi_caches_predate_the_intra_ordering_change_probe.py` (6/6).
 **Related:** `qou-hu1f` (the ordering change itself), PRs #6841 / #6847 (the result this refutes), #6854 (this work).
@@ -14,18 +14,35 @@ with **no `intra_order`**, so a fresh run yields `borromean` while the committed
 caches are `grouped` — matched to `~3e-50` against `~1.2–1.3` **relative** for
 borromean, across all five atoms measured. Not a drift: a different number.
 
-**Nothing detects this**, and that is the sharpest part. The caches carry
-`scriptFile: None` and a `scriptHash` (`c36a8a393fcd`) matching no file in the
-tree, so no checker knows what to hash and ordinary `scriptHash` drift — which
-would have caught all three producer edits — cannot fire. This is the
-"bare producers" class `AGENTS.md` names.
+**🛑 My explanation for why it went undetected was wrong, twice, and is corrected
+here.**  I first wrote that the caches carry `scriptFile: None` with a
+`scriptHash` matching no file, so *"no checker knows what to hash"* — and
+proposed emitting `scriptFile` as a cheap fix independent of the regeneration
+choice.
 
-**Confirmed against the detector that exists for exactly this.**
-`computations/witness_import_cone_staleness_audit.py` was run over the corpus:
-**3,610 witnesses scanned, and not one of the six chi caches flagged.** So the
-invisibility is measured, not inferred — the tool built to catch import-cone
-drift cannot see this instance, because the missing `scriptFile` denies it the
-one thing it needs.
+The observations were right and the inference was not. `save_witness` writes a
+**`producer`** field; every stale cache carried
+`producer: chi_at_q0_via_hoefsmit_mpfr.py` beside `scriptHash c36a8a393fcd`
+against the producer's then-current `815a026e9591`. **The drift was plainly
+visible** to ordinary detection keyed on the field these tools actually use. It
+was not undetectable — it was *undetected*, which is what the dispatch-only
+workflow posture (owner directive 2026-06-30) predicts. The proposed
+`scriptFile` fix is therefore unnecessary.
+
+**And my "3,610 witnesses scanned, none of the six flagged" was a third
+misreading.** That audit's header says `SELF-stale (already caught): 597
+(excluded below)` — it *excludes* self-stale witnesses by design, deferring to
+the validator that covers them. Their absence from its report is the exclusion
+working correctly, not the tool being blind. Three wrong inferences in one
+investigation, all the same habit: treating an absence as evidence without
+checking what produced it.
+
+What survives is a two-class split, and only the second half needs new tooling:
+
+| class | detectable today? | status |
+|---|---|---|
+| **SELF** — producer's own three edits (2026-08-15/-23/-30) | **yes**, `producer` + `scriptHash` | was never checked |
+| **IMPORT-CONE** — callee `atom_braid_word_3A` changed 2026-09-05 | **no** — producer byte-identical across it | genuinely needs the cone audit |
 
 ## What it moves — measured, not estimated
 
@@ -133,3 +150,30 @@ prose banner is exactly the state this repository's disciplines exist to prevent
 
 This is a judgement, not a finding. The measurement stands either way, and the
 no-op is safe and reversible.
+
+
+## Outcome: regenerated (owner ruling, 2026-09-05)
+
+The owner ruled **"regen"**. All caches from this producer were rebuilt with
+`--fresh` on the canonical producer path.
+
+**`--fresh` is load-bearing and its absence would have been silent.** The
+producer's resume check compares *stored-vs-current `q₀`*, and `q₀` did not
+change — only the word ordering did. Without `--fresh` the run would have
+resumed and kept every stale partition while stamping the result as current.
+The flag's own help text describes exactly this trap.
+
+### The stale set was EIGHT, not six
+
+Regenerating surfaced two more witnesses from the same producer and the same
+stale generation — `chi-diproton-h6` and `chi-dineutron-h6`, both built
+2026-08-16, both carrying `scriptHash c36a8a393fcd`. They were invisible to this
+investigation because they are not in `aK_via_lp_dual_full.py`'s `ATOM_CHI` map,
+which is the consumer list I had been reasoning from. They are in the
+*producer's* `ATOMS` map, which is the right place to enumerate from, and both
+are now regenerated.
+
+**The lesson generalises:** enumerating a producer's outputs from one consumer's
+list undercounts by whatever that consumer does not use. The producer field is
+the reliable index — `producer == "chi_at_q0_via_hoefsmit_mpfr.py"` finds all
+eleven witnesses it has ever written.

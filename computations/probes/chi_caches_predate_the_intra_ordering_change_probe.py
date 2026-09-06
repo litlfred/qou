@@ -22,29 +22,44 @@ fresh run today produces the borromean word, and the committed caches do not.
     is BOTH self-staleness (producer changed) and import-cone staleness (callee
     changed on 2026-09-05), and the honest defect underneath both is neither:
 
-WHY NOTHING DETECTS IT: THE WITNESSES CARRY NO `scriptFile`.
+🛑 CORRECTED TWICE — AND THE SECOND CORRECTION REVERSES THE FIRST.
 
-`scriptHash` on these caches is `c36a8a393fcd`, which matches NO file in the
-tree, and `scriptFile` is `None`.  So a staleness checker cannot know which
-file to hash, and ordinary `scriptHash` drift -- which would have caught all
-three producer edits -- cannot fire.  This is the "bare producers" class
-AGENTS.md names: *"Some producers never emit provenance; the scriptHash /
-commitSha on disk was added downstream ... Fix the producer to emit provenance
-first."*  That is the cheap, non-controversial half of the fix and it is
-independent of the regeneration decision.
+This section first said: *"nothing detects it — the caches carry `scriptFile:
+None` and a `scriptHash` matching no file in the tree, so no checker knows what
+to hash"*, and proposed emitting `scriptFile` as a cheap independent fix.
 
-WHY IT MATTERS BEYOND ONE FILE.  84 live (non-deprecated) scripts read these
-caches, `aK_via_lp_dual_full.py` among them, and through it
-`a-K-via-lp-dual-full.witness.json` and everything computed from that.
+**Both halves were wrong.**  The observations were right and the inference was
+not.  `save_witness` writes a **`producer`** field, and the stale caches all
+carried `producer: chi_at_q0_via_hoefsmit_mpfr.py` — resolvable — together with
+`scriptHash c36a8a393fcd` against the producer's then-current `815a026e9591`.
 
-WHAT `qou-hu1f` ALREADY COVERS, AND WHAT IT DOES NOT.  That bean measured the
-ordering change's blast radius carefully and split it: log-ratio routes
-(`tr_M(W_atom)/tr_M(W_free)`) are provably immune by connected-sum
-multiplicativity, and difference routes such as `binding_canonical` scale by a
-computable per-atom factor `R_quark` (3.785x at 2H up to 14.325x at 4He).
-**It does not mention the chi caches or `chi_at_q0_via_hoefsmit_mpfr` at all**
--- grepped, zero hits.  So this surface is outside the measured split, and the
-per-atom scalar factor does NOT describe it, as check 2 below shows.
+    So the drift was PLAINLY VISIBLE to ordinary scriptHash detection, keyed on
+    the field these tools actually use.  It was not undetectABLE.  It was
+    UNDETECTED — nothing ran the check over these files, which is what the
+    dispatch-only workflow posture (owner directive 2026-06-30) predicts.
+
+    And the "3,610 witnesses scanned, none of the six flagged" line I reported
+    from `witness_import_cone_staleness_audit.py` was ALSO read wrong.  Its own
+    header says `SELF-stale (already caught): 597  (excluded below)`.  It
+    EXCLUDES self-stale witnesses by design, deferring to the validator that
+    covers them.  So their absence from its report is the exclusion working, not
+    the tool being blind — a third wrong inference from the same habit of
+    reading an absence as evidence.
+
+And the "emit `scriptFile`" fix I proposed is **unnecessary**: the provenance
+already exists under a different key.  Proposing it was the same failure as the
+byte-stable claim — reasoning from a field's absence without checking whether a
+sibling field carried the same information.
+
+WHAT SURVIVES THE CORRECTION.  Two distinct staleness classes, and only the
+second needs new tooling:
+
+  * SELF-staleness (the producer's own three edits): detectable today, keyed on
+    `producer` + `scriptHash`.  Undetected in practice.
+  * IMPORT-CONE staleness (the callee `atom_braid_word_3A` changing on
+    2026-09-05): invisible to `scriptHash` by construction, since the producer
+    is byte-identical across that change.  This is the half that genuinely
+    needs the cone audit.
 
 THE FOUR THINGS MEASURED HERE
 
