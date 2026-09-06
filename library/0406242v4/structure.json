@@ -1,0 +1,506 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "0406242v4",
+ "source": {
+  "file": "0406242v4.pdf",
+  "sha256": "27e48b483007b8240a4163dfc37f9dee64b8c07c7392e35329503d80bd25b2b6",
+  "bytes": 573397,
+  "pages": 46,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.2140/gt.2006.10.1239",
+  "title": "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC\u00b8 OIS GU\u00c9RITAUD APPENDIX BY DA VIDFUTER",
+  "authors_raw": "We prove the hyperbolization theorem for punctured torus bundles and two-bridge",
+  "title_lines": [
+   "On canonical triangulations of once-punctured",
+   "torus bundles and two-bridge link complements",
+   "FRANC\u00b8 OIS GU\u00c9RITAUD",
+   "APPENDIX BY DA VIDFUTER"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "Title": "",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.4",
+   "CreationDate": "D:20181030203614Z"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Conjugacy in SL(2,Z) and the Farey tesselation",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The canonical triangulation",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Diagonal exchanges",
+   "page": 5,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Tetrahedra",
+   "page": 5,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Combinatorics of the torus at infinity",
+   "page": 6,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Finding positive angles",
+   "page": 10,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Hyperbolic volume",
+   "page": 12,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Volume of an ideal tetrahedron",
+   "page": 13,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Critical volume and trivial holonomy",
+   "page": 13,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Behavior of the volume functional",
+   "page": 17,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "Ruling out some degeneracies",
+   "page": 19,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "A geometrical lemma",
+   "page": 20,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Ruling out all degeneracies",
+   "page": 23,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Case 1: RR|LR",
+   "page": 23,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Case 2: RR|LL",
+   "page": 24,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 1,
+   "title": "A numerical example",
+   "page": 25,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Once-punctured tori and 4\u2013punctured spheres",
+   "page": 28,
+   "source": "outline",
+   "number": "11"
+  },
+  {
+   "level": 1,
+   "title": "A Geometric triangulations of two-bridge link complements",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1 Braids and two-bridge links",
+   "page": 30,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2 The ideal triangulation",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.3 Combinatorics at the cusp",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.4 Angle structures and volume",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.5 Flat tetrahedra never maximize volume",
+   "page": 37,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Applications",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.1 Volume estimates for bundles",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.2 Volume estimates for links",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.3 Hyperbolic geodesics seen in the projection plane",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Bibliography",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 9159,
+   "n_words": 1578
+  },
+  {
+   "id": "sec-001-3-the-canonical-triangulation",
+   "number": "3",
+   "title": "The canonical triangulation",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-31-diagonal-exchanges",
+   "number": "3.1",
+   "title": "Diagonal exchanges",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1274,
+   "n_words": 220
+  },
+  {
+   "id": "sec-003-32-tetrahedra",
+   "number": "3.2",
+   "title": "Tetrahedra",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 10,
+   "n_chars": 8603,
+   "n_words": 1664
+  },
+  {
+   "id": "sec-004-5-finding-positive-angles",
+   "number": "5",
+   "title": "Finding positive angles",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 4841,
+   "n_words": 947
+  },
+  {
+   "id": "sec-005-6-hyperbolic-volume",
+   "number": "6",
+   "title": "Hyperbolic volume",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 443,
+   "n_words": 80
+  },
+  {
+   "id": "sec-006-61-volume-of-an-ideal-tetrahedron",
+   "number": "6.1",
+   "title": "Volume of an ideal tetrahedron",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 660,
+   "n_words": 140
+  },
+  {
+   "id": "sec-007-62-critical-volume-and-trivial-holonomy",
+   "number": "6.2",
+   "title": "Critical volume and trivial holonomy",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 17,
+   "n_chars": 8516,
+   "n_words": 1606
+  },
+  {
+   "id": "sec-008-63-behavior-of-the-volume-functional",
+   "number": "6.3",
+   "title": "Behavior of the volume functional",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 2706,
+   "n_words": 509
+  },
+  {
+   "id": "sec-009-7-ruling-out-some-degeneracies",
+   "number": "7",
+   "title": "Ruling out some degeneracies",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 3038,
+   "n_words": 621
+  },
+  {
+   "id": "sec-010-8-a-geometrical-lemma",
+   "number": "8",
+   "title": "A geometrical lemma",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 5050,
+   "n_words": 970
+  },
+  {
+   "id": "sec-011-9-ruling-out-all-degeneracies",
+   "number": "9",
+   "title": "Ruling out all degeneracies",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 943,
+   "n_words": 185
+  },
+  {
+   "id": "sec-012-91-case-1-rrlr",
+   "number": "9.1",
+   "title": "Case 1: RR|LR",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1080,
+   "n_words": 283
+  },
+  {
+   "id": "sec-013-92-case-2-rrll",
+   "number": "9.2",
+   "title": "Case 2: RR|LL",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1855,
+   "n_words": 396
+  },
+  {
+   "id": "sec-014-10-a-numerical-example",
+   "number": "10",
+   "title": "A numerical example",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 5211,
+   "n_words": 1065
+  },
+  {
+   "id": "sec-015-11-once-punctured-tori-and-4punctured-spheres",
+   "number": "11",
+   "title": "Once-punctured tori and 4\u2013punctured spheres",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 1928,
+   "n_words": 352
+  },
+  {
+   "id": "sec-016-a-geometric-triangulations-of-two-bridge-link-co",
+   "number": null,
+   "title": "A Geometric triangulations of two-bridge link complements",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 30,
+   "n_chars": 1091,
+   "n_words": 166
+  },
+  {
+   "id": "sec-017-a1-braids-and-two-bridge-links",
+   "number": null,
+   "title": "A.1 Braids and two-bridge links",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 2874,
+   "n_words": 508
+  },
+  {
+   "id": "sec-018-a2-the-ideal-triangulation",
+   "number": null,
+   "title": "A.2 The ideal triangulation",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 4222,
+   "n_words": 739
+  },
+  {
+   "id": "sec-019-a3-combinatorics-at-the-cusp",
+   "number": null,
+   "title": "A.3 Combinatorics at the cusp",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 4040,
+   "n_words": 754
+  },
+  {
+   "id": "sec-020-a4-angle-structures-and-volume",
+   "number": null,
+   "title": "A.4 Angle structures and volume",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 3600,
+   "n_words": 661
+  },
+  {
+   "id": "sec-021-a5-flat-tetrahedra-never-maximize-volume",
+   "number": null,
+   "title": "A.5 Flat tetrahedra never maximize volume",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 40,
+   "n_chars": 4770,
+   "n_words": 931
+  },
+  {
+   "id": "sec-022-b-applications",
+   "number": null,
+   "title": "B Applications",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 216,
+   "n_words": 29
+  },
+  {
+   "id": "sec-023-b1-volume-estimates-for-bundles",
+   "number": null,
+   "title": "B.1 Volume estimates for bundles",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 41,
+   "n_chars": 2489,
+   "n_words": 452
+  },
+  {
+   "id": "sec-024-b2-volume-estimates-for-links",
+   "number": null,
+   "title": "B.2 Volume estimates for links",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 44,
+   "n_chars": 5764,
+   "n_words": 1075
+  },
+  {
+   "id": "sec-025-b3-hyperbolic-geodesics-seen-in-the-projection-p",
+   "number": null,
+   "title": "B.3 Hyperbolic geodesics seen in the projection plane",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 46,
+   "n_chars": 5524,
+   "n_words": 854
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 29,
+  "sections": 26,
+  "chars_total": 89897
+ }
+}
