@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-06T22:00:05Z
+updated_at: 2026-09-06T23:14:51Z
 ---
 
 
@@ -473,3 +473,33 @@ explicitly not bulk-editable. `qou-b7cf`'s scope note applies verbatim: fixing
 the `mpf(str(f64))` entry point does not de-float a probe body, and the two
 probes fixed today still carry `HF, DPN = float(_H), float(D_PN)` — they are 2
 of the 105.
+
+
+## 2026-09-06 — the 188 are now ENUMERABLE; the tier listing was capped at 40
+
+Found while trying to scope this bean's drain: I asked for the 188 `F64_CAST`
+sites and got 40, under a message reading *"… and more; re-run with `--tier`
+for the full list"* — while already running `--tier`.
+
+`_print_sites` carried an unconditional `cap = 40`, and `--tier` is passed to
+`_iter_rows(a.tier)`, which filters the **rows** and never the cap. So the
+escape hatch the message advertised did nothing. Two sibling listings (lines
+910, 998 — `numpy`, `imports`) had the same `[:40]` shape; those at least named
+the hidden count, the `F64_CAST` one did not.
+
+Fixed all three: `_cap = 10 ** 6 if a.tier else 40`, set once from the flag.
+
+    overview (no --tier)   40, and now names what is hidden ("… and 148 more")
+    --tier F64_CAST        188 == headline
+    --tier F64_IMPORT      138 == headline
+    --tier NUMPY_ON_Q       21 == headline
+
+**Display only** — `--self-test` 36/36, exit contract unchanged (1 on
+LAUNDERED 0 + F64_CAST 188). Commit on PR #6930.
+
+**Why it matters for this bean specifically:** the drain cannot be scoped from
+a 40-site sample. The full list is now obtainable in one command, which is the
+precondition for anyone — owner or agent — deciding how to stage 188 sites
+across 105 files.
+
+    python3 computations/f64_into_mpmath_audit.py --tier F64_CAST
