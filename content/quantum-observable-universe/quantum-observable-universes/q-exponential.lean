@@ -52,25 +52,20 @@ structure QExponential (H : Type*) where
   /-- Flow equation: D_q e_q = e_q. -/
   flow_invariant : D_q e_q = e_q
 
-/-- **External axiom (§3b-cond pattern): QExponential.unique.**
+/-! ## Uniqueness
 
-    Any two q-exponentials in the same Hopf algebra with the same
-    `D_q` coincide.  (Depends on non-degeneracy of the flow equation
-    on grouplikes — encodes the categorical content pending Mathlib
-    infrastructure or a structure-tightening refactor.) -/
--- Ref: [manuscript] §2
-axiom QExponential.unique_axiom {H : Type*} (e₁ e₂ : QExponential H)
-    (h_coprod : e₁.coprod = e₂.coprod)
-    (h_counit : e₁.counit = e₂.counit)
-    (h_Dq : e₁.D_q = e₂.D_q) :
-    e₁.e_q = e₂.e_q
+The uniqueness statement that stood here as `QExponential.unique_axiom`
+was **false** and is deleted (2026-09-06).  `coprod := fun x => (x, x)`,
+a constant counit and `D_q := id` satisfy `grouplike`, `counit_eq_one`
+and `flow_invariant` for *every* `e_q`, so two records agree on all
+three hypothesised fields and differ in the concluded one.
 
-theorem QExponential.unique {H : Type*} (e₁ e₂ : QExponential H)
-    (h_coprod : e₁.coprod = e₂.coprod)
-    (h_counit : e₁.counit = e₂.counit)
-    (h_Dq : e₁.D_q = e₂.D_q) :
-    e₁.e_q = e₂.e_q :=
-  QExponential.unique_axiom e₁ e₂ h_coprod h_counit h_Dq
+Refutation: `QOU.QAnalysisCounterexamples.not_qExponential_unique`.
+Live conditional statement:
+`QOU.QExponential.unique_of_flow_rigid`.  See `prop:q-exponential-unique`.
+
+The axiom was declared twice, verbatim, here and in
+`q-exponential-unique.lean`. -/
 
 end
 

@@ -1,81 +1,56 @@
-import QOU.Basic
-import Mathlib.Algebra.Polynomial.Laurent
+import QOU.QuantumObservableUniverses.QAnalysisUniqueness
+import QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples
 
 
 /-!
-# QOU.QLogarithm.unique — uniqueness of the q-logarithm primitive
+# prop:q-logarithm-unique — witness extract
 
-Any two primitives of 𝓗_q with the same q-exponential image and
-trivial counit coincide.
+The formalisation lives in the library:
 
-LaTeX: `\label{prop:q-logarithm-unique}`
+* `QOU.QLogarithm.unique_of_prim_rigid`
+  (`QOU/QuantumObservableUniverses/QAnalysisUniqueness.lean`)
 
-## References
+`QLogarithm` itself was relocated into
+`QOU/QuantumObservableUniverses/QAnalysis.lean` on 2026-09-06; this file
+previously inlined a copy of it.
 
-- [manuscript] §2-quantum-observable-universes/q-logarithm-unique
-- [kassel1995] Quantum Groups (Springer GTM 155), §IV.3
+## What changed 2026-09-06
+
+This file previously held an unconditional
+
+    axiom QLogarithm.unique_axiom … : ℓ₁.log_q = ℓ₂.log_q
+
+**The axiom is false.**  `coprod := fun x => (x, x)` satisfies both
+primitivity fields and a constant zero counit satisfies
+`counit_eq_zero`, for *every* `log_q`.  Refutation:
+`QOU.QAnalysisCounterexamples.not_qLogarithm_unique`.
+
+The live statement is conditional on `prim_rigid` -- verbatim the step
+the narrative proof `prf:q-logarithm-unique` asserts, *"a primitive
+fixed by `D_q` with trivial counit vanishes"* -- and on the additivity
+that proof silently uses when it forms `ℓ₁ - ℓ₂`.
 -/
 
-namespace QOU
+namespace QOU.QLogarithmUniqueWitness
 
-noncomputable section
+open QOU QOU.QAnalysisCounterexamples
 
-abbrev R_q := LaurentPolynomial ℤ
+/-- The library statement, conditional on primitive rigidity. -/
+example {H : Type*} [AddCommGroup H] (l₁ l₂ : QLogarithm H)
+    (h_coprod : l₁.coprod = l₂.coprod) (h_counit : l₁.counit = l₂.counit)
+    (hΔ_fst : ∀ x y : H, (l₁.coprod (x - y)).1 = (l₁.coprod x).1 - (l₁.coprod y).1)
+    (hΔ_snd : ∀ x y : H, (l₁.coprod (x - y)).2 = (l₁.coprod x).2 - (l₁.coprod y).2)
+    (hε_sub : ∀ x y : H, l₁.counit (x - y) = l₁.counit x - l₁.counit y)
+    (prim_rigid : ∀ x : H, (l₁.coprod x).1 = x → (l₁.coprod x).2 = x →
+                            l₁.counit x = 0 → x = 0) :
+    l₁.log_q = l₂.log_q :=
+  QLogarithm.unique_of_prim_rigid l₁ l₂ h_coprod h_counit hΔ_fst hΔ_snd hε_sub prim_rigid
 
-/-- **q-Logarithm data**: an abstract primitive element of the
-    q-shuffle Hopf algebra, characterised by primitivity
-    `Δ_q(log_q) = log_q ⊗ 1 + 1 ⊗ log_q` and vanishing counit
-    `ε(log_q) = 0`.
+/-- The unconditional form that stood here as an axiom is refuted. -/
+example :
+    ¬ (∀ {H : Type} (ℓ₁ ℓ₂ : QLogarithm H),
+        ℓ₁.coprod = ℓ₂.coprod → ℓ₁.counit = ℓ₂.counit → ℓ₁.one = ℓ₂.one →
+        ℓ₁.log_q = ℓ₂.log_q) :=
+  not_qLogarithm_unique
 
-    Inlined here so this proposition's sibling compiles standalone
-    (the uniqueness statement quantifies over the structure); mirrors
-    the definition in the sibling `q-logarithm-exists.lean`. -/
--- Ref: [manuscript] §2-quantum-observable-universes/q-logarithm
-structure QLogarithm (H : Type*) where
-  /-- The primitive element log_q ∈ H. -/
-  log_q : H
-  /-- Coproduct on H, encoded as `coprod : H → H × H`. -/
-  coprod : H → H × H
-  /-- Counit on H. -/
-  counit : H → R_q
-  /-- The unit / grouplike `1 ∈ H` against which primitivity is taken. -/
-  one : H
-  /-- Primitivity (left component): the first leg of
-      Δ_q(log_q) = log_q ⊗ 1 + 1 ⊗ log_q is `log_q`. -/
-  primitive_left : (coprod log_q).1 = log_q
-  /-- Primitivity (right component): the second leg is `log_q`. -/
-  primitive_right : (coprod log_q).2 = log_q
-  /-- Vanishing counit: ε(log_q) = 0. -/
-  counit_eq_zero : counit log_q = 0
-
-/-- **External axiom (Kassel 1995 §IV.3, Milnor–Moore uniqueness):
-    q-logarithm primitive is unique under matching coproduct/counit/
-    grouplike.**
-
-    Argument: `ℓ₁ - ℓ₂` is primitive with trivial counit; Milnor–
-    Moore forces it to vanish, so `ℓ₁.log_q = ℓ₂.log_q`.  Pending
-    Mathlib's Hopf-algebra primitive-uniqueness library. -/
--- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §IV.3
-axiom QLogarithm.unique_axiom :
-    ∀ {H : Type*} (ℓ₁ ℓ₂ : QLogarithm H),
-      ℓ₁.coprod = ℓ₂.coprod →
-      ℓ₁.counit = ℓ₂.counit →
-      ℓ₁.one = ℓ₂.one →
-      ℓ₁.log_q = ℓ₂.log_q
-
-/-- **Uniqueness of the q-logarithm primitive.**
-
-    Two q-logarithm structures on the same Hopf algebra with the
-    same coproduct, counit, and primitive axiom satisfying
-    exp_q(log_q) = g for the same grouplike g coincide. -/
--- Ref: [kassel1995] Quantum Groups, §IV.3
-theorem QLogarithm.unique {H : Type*} (ℓ₁ ℓ₂ : QLogarithm H)
-    (h_coprod : ℓ₁.coprod = ℓ₂.coprod)
-    (h_counit : ℓ₁.counit = ℓ₂.counit)
-    (h_one : ℓ₁.one = ℓ₂.one) :
-    ℓ₁.log_q = ℓ₂.log_q :=
-  QLogarithm.unique_axiom ℓ₁ ℓ₂ h_coprod h_counit h_one
-
-end
-
-end QOU
+end QOU.QLogarithmUniqueWitness
