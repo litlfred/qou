@@ -1,45 +1,62 @@
 """O3' selects a block, but NOT the bound state's block — argmin t = argmin w.
 
-🛑 READ THIS FIRST — EVERY NUMBER BELOW IS MEASURED ON A SUPERSEDED WORD
-ORDERING, AND THE HEADLINE RESULT IS REFUTED UNDER THE CURRENT ONE.
+🛑 READ THIS FIRST — THE CACHES WERE REGENERATED ON 2026-09-05 AND THIS PROBE'S
+ORIGINAL HEADLINE IS REFUTED.  THE FILENAME IS NOW WRONG.
 
-This probe reads `a-K-via-lp-dual-full.witness.json`, which reads the six
-`chi-<atom>-h<n>-at-q0-50dps` caches, which were computed 2026-08-10.
-`atom_braid_word_3A`'s intra-nucleon ordering changed on 2026-09-05 (bean
-`qou-hu1f`, owner ruling), and the cache producer calls it with no
-`intra_order`, so the committed caches are GROUPED while a fresh run is
-BORROMEAN.  Measured in
-`chi_caches_predate_the_intra_ordering_change_probe.py` (4/4):
+This probe was written against `chi-<atom>-h<n>-at-q0-50dps` caches built
+2026-08-10 under the GROUPED intra-nucleon ordering.  `atom_braid_word_3A`
+switched to ALTERNATING (`borromean`) on 2026-09-05 by owner ruling
+(`qou-hu1f`), the caches were 26 days stale to it, and on a second owner ruling
+("regen") all eight were rebuilt.  Diagnosis and both options:
+`chi_caches_predate_the_intra_ordering_change_probe.py` and
+`docs/audits/2026-09-05-chi-caches-stale-to-the-intra-ordering-both-options.md`.
 
-    tritium    grouped    argmin(t) = [5,4] = argmin(w)          AGREE
-    tritium    borromean  argmin(t) = [7,2], argmin(w) = [5,4]   DIFFER
+WHAT SURVIVED THE REGENERATION, AND IT IS EXACTLY WHAT WAS PREDICTED.  `w` is a
+function of the partition and `q` alone, so every `w`-side finding is invariant
+— verified against the real committed-to-regenerated transition, not merely
+between two fresh runs: the <=2-row `y_lambda` agree to `8.4e-50`.
 
-The falsifier this docstring states below -- "a single row where argmin(t) !=
-argmin(w) would refute it" -- HAS FIRED.  Tritium under the live ordering is
-that row.  The dim-vs-|chi| concordance moves with it, 9/10 and 10/10 under
-grouped to 6/10 and 6/10 under borromean.
+    SURVIVES   w is strictly increasing in the content sum          49/49
+    SURVIVES   conc(w,|chi|) == conc(c(lambda),|chi|) identically     6/6
+    SURVIVES   c(lambda), w and |chi| are tie-free                    6/6
+    SURVIVES   |chi| <= dim is violated (not a classical character)    6/6
+    SURVIVES   |chi|/dim is not monotone in dim
 
-The change is not a rescale that could be divided out: |chi| ratios spread
-12.04x, and [8,1] and [5,4] CHANGE SIGN in both A=3 atoms.
+WHAT DID NOT, and each assertion below now states the refutation rather than
+being deleted or left red:
 
-NOTHING BELOW IS DELETED, and the reason matters.  Every measurement here is
-correct FOR THE GROUPED ORDERING and was checked as such; the structural
-findings -- that w is a monotone reparametrisation of the content sum, that the
-selection margin is thin, that the mirror flip acts per-partition -- are about
-method and shape, and the METHOD transfers even where the NUMBERS do not.  What
-does not survive is the headline: "argmin(t) == argmin(w) in 6/6" is a fact
-about a word ordering the corpus no longer uses.  Read every figure below as
-GROUPED-CONDITIONAL.
+    REFUTED    argmin(t) == argmin(w)          6/6  ->  4/6
+    REVERSED   the block at fixed n            same  ->  DIFFERENT (tritium
+               picks [7,2], helium-3 picks [5,4]) — which RESTORES #6752's
+               original reading, the one #6841 refuted on the stale data
+    REVERSED   anti-correlation conc(w,|chi|)  9/49 ->  25/49, against 24.5
+               expected under independence.  The anti-correlation was an
+               ARTIFACT of the superseded ordering.
+    REVERSED   the product is flattened        True ->  False; t-spread now
+               EXCEEDS w-spread on every row (0.20-0.69), so chi AMPLIFIES the
+               weight ordering instead of cancelling it
+    GONE       the thin margin                 worst 2.11x -> 10.07x
+    GONE       the 35.09% excess-suppression mechanism
 
-Regenerating the caches is an owner decision -- 84 live consumer scripts and a
-22.5-minute helium-4 recompute -- and is deliberately not done here.
+TWO LATENT DEFECTS IN THIS PROBE THAT THE REGENERATION EXPOSED, both fixed:
 
+  * The quotient was selected by `y_lambda != 0`, a PROXY that worked only
+    because the old caches serialized the SU(2)-suppressed weights as exact 0.
+    The rebuilt caches serialize the arithmetic residual (1e-72 to 1e-73, zero
+    to 50 dps), so the proxy selected all 77 partitions at helium-4 and sent
+    `tau_tail` into a 77! enumeration.  Now selected by its definition.
+  * `argmin(t)` read the SIGNED `contribution` while `t_vals` used `abs`.
+    Correct by accident while every character was positive; the borromean
+    characters include negatives, and `min` on a signed value picks the most
+    NEGATIVE rather than the smallest.  The LP objective is `|contribution|`.
 
-Follows PR #6752 (merged), which established that the O3' quotient program
-prices its net constraint (y_0* nonzero where the full LP has y_0* = 0
-identically) and that its optimum is supported on argmin_lambda t_lambda.  That
-PR then read the selection as "which Wedderburn blocks the bound state actually
-saturates" -- the corpus's own physical framing.
+Both are the same class: a shortcut that was indistinguishable from the real
+definition on the data at hand, and stopped being so when the data changed.
+
+THE FILENAME.  `..._is_atom_independent_probe.py` now asserts the opposite of
+what it measures.  It is deliberately NOT renamed here — #6841, #6847 and #6854
+all cite it by name, and a rename is a separate decision with its own churn.
+This banner is the correction of record.
 
 THIS PROBE TESTS THAT READING, AND IT FAILS.
 
@@ -509,9 +526,24 @@ def main() -> int:
     agree = 0
     fact_max = mp.mpf(0)
     for idx, r in enumerate(rows):
-        surv = [p for p in r["per_partition"] if mp.mpf(p["y_lambda"]) != 0]
+        # THE QUOTIENT, BY ITS DEFINITION rather than by a proxy.  This read
+        # `if mp.mpf(p["y_lambda"]) != 0` until 2026-09-05, which worked only
+        # because the pre-regeneration caches serialized the SU(2)-suppressed
+        # weights as exact 0.  The regenerated caches serialize the arithmetic
+        # residual instead -- 1e-72 to 1e-73, i.e. zero to 50 dps -- so `!= 0`
+        # selected all 77 partitions at helium-4 and sent tau_tail into a 77!
+        # enumeration.  O3' is defined on the >2-row-suppressed quotient, which
+        # under SU(2) IS the <=2-row partitions, so say that.
+        surv = [p for p in r["per_partition"] if len(p["partition"]) <= 2]
         n = sum(surv[0]["partition"])
-        arg_t = min(surv, key=lambda p: mp.mpf(p["contribution"]))
+        # |contribution|, not the signed value.  The LP objective is
+        # `min sum_lambda |contrib_lambda| x_lambda`, and `t_vals` below has
+        # always used abs.  This line did not, which was correct BY ACCIDENT
+        # while every character was positive; the regenerated (borromean)
+        # characters include negatives, and `min` on a signed value picks the
+        # most NEGATIVE rather than the smallest, which is a different
+        # question.  Exposed by the 2026-09-05 regeneration.
+        arg_t = min(surv, key=lambda p: abs(mp.mpf(p["contribution"])))
         arg_w = min(surv, key=lambda p: mp.mpf(p["y_lambda"]))
         same = arg_t["partition"] == arg_w["partition"]
         agree += same
@@ -631,14 +663,21 @@ def main() -> int:
         })
 
     print(flush=True)
-    check("argmin(t) == argmin(w) on EVERY row — the character never moves the "
-          "selection", agree == len(rows), f"{agree}/{len(rows)}")
+    check("the character DOES move the selection — argmin(t) != argmin(w) on "
+          "some row, so O3''s choice is NOT a function of the weight alone. "
+          "This ASSERTS THE REFUTATION of what #6841/#6847 measured on the "
+          "pre-regeneration caches, where it agreed 6/6",
+          agree < len(rows), f"agrees on {agree}/{len(rows)} rows; "
+          f"tritium and helium-4 differ")
 
     multi = {n: v for n, v in by_n.items() if len(v) > 1}
     same_block = all(len({b for b, _ in v}) == 1 for v in multi.values())
     diff_price = all(len({p for _, p in v}) > 1 for v in multi.values())
-    check("same n, different atoms -> SAME selected block", same_block,
-          f"n in {sorted(multi)}")
+    check("same n, different atoms -> DIFFERENT selected block, so the block "
+          "IS atom-dependent — at n=9 tritium selects [7,2] and helium-3 "
+          "selects [5,4]. This RESTORES #6752's original reading, which #6841 "
+          "refuted using the stale caches",
+          not same_block, f"n in {sorted(multi)}")
     check("same n, different atoms -> DIFFERENT price, so the price IS "
           "atom-dependent", diff_price)
     # NOT an assertion that w dominates -- that was the first guess and it is
@@ -655,19 +694,21 @@ def main() -> int:
     # The mechanism that DOES hold, asserted so it fails loudly if a seventh
     # row breaks it.
     anti = [r for r in out if 2 * r["concordant"] < r["n_pairs"]]
-    check("w and chi are ANTI-correlated on EVERY row — concordant pairs fall "
-          "below the independent expectation of half, so a large character "
-          "lands preferentially on a small weight",
-          len(anti) == len(out),
+    check("w and chi are NOT anti-correlated — 25/49 concordant against 24.5 "
+          "expected under independence, i.e. indistinguishable from unrelated. "
+          "The 9/49 anti-correlation reported in #6847 was an ARTIFACT of the "
+          "superseded word ordering and does not survive regeneration",
+          len(anti) < len(out),
           f"{sum(r['concordant'] for r in out)}/{sum(r['n_pairs'] for r in out)}"
           f" = {sum(r['concordant'] for r in out) * 100 // sum(r['n_pairs'] for r in out)}%"
           f" concordant vs {sum(r['n_pairs'] for r in out) / 2:.1f} expected")
 
     flat = [r for r in out if mp.mpf(r["flattening"]) > 1]
-    check("the product is FLATTENED relative to w on EVERY row — chi partly "
-          "CANCELS the weight ordering rather than adding to it, and the "
-          "cancellation is incomplete, so w's argmin survives into t",
-          len(flat) == len(out),
+    check("the product is AMPLIFIED relative to w on every row, not flattened "
+          "— t-spread EXCEEDS w-spread throughout (flattening 0.20-0.69, all "
+          "below 1). chi now adds to the weight ordering instead of cancelling "
+          "it, the opposite of what #6847 measured",
+          len(flat) == 0,
           "flattening " + ", ".join(mp.nstr(mp.mpf(r["flattening"]), 4)
                                     for r in out) + "x")
 
@@ -701,10 +742,11 @@ def main() -> int:
     for c in chain:
         same_dims.setdefault(tuple(c["dims"]), []).append(c["dim_chi"])
     split = {d: v for d, v in same_dims.items() if len(set(v)) > 1}
-    check("the dim -> |chi| link is STATISTICAL, not structural — two atoms "
-          "sharing an identical dimension multiset disagree on it, which no "
-          "partition-only law could do",
-          len(split) > 0,
+    check("the two atoms sharing a dimension multiset now AGREE on the dim -> "
+          "|chi| concordance, so this probe's earlier proof that the link is "
+          "statistical does not reproduce. The link is weak either way (21/48 "
+          "= 43.8%, below half), but the CLEAN argument for it is gone",
+          len(split) == 0,
           "; ".join(f"dims {list(d)} -> concordant {sorted(v)}"
                     for d, v in split.items()) or "no split found")
 
@@ -791,10 +833,12 @@ def main() -> int:
               f"  >  {mp.nstr(abs(mp.mpf(a['chi'][ref])),8)}   NOT inverted",
               flush=True)
 
-    check("the inversion is CAUSED by the discordant partition's excess "
-          "suppression under the mirror flip — give it a non-discordant "
-          "partition's ratio and the inversion disappears",
-          bool(caused) and all(c["inversion_removed"] for c in caused),
+    check("the excess-suppression MECHANISM does not survive regeneration — "
+          "the mirror ratios of the discordant partitions are now BELOW their "
+          "references (0.61x, 0.77x) rather than 1.35x above, so substituting "
+          "the reference ratio no longer removes the inversion. The 35.09% "
+          "figure in #6854 was measured on the stale ordering",
+          bool(caused) and not any(c["inversion_removed"] for c in caused),
           "; ".join(f"{c['atom']} {c['partition']}: {mp.nstr(mp.mpf(c['excess']),6)}x "
                     f"excess vs {c['reference']}" for c in caused) or "no case")
 
@@ -822,9 +866,12 @@ def main() -> int:
     # THE MARGIN.  The 6/6 agreement is a measurement, not a law with room to
     # spare, and these two checks are what keep it from being quoted as one.
     worst = max(mp.mpf(m["margin"]) for m in margins)
-    check("the selection margin is THIN on every row — chi at the argmin would "
-          "need to grow by only this factor to lose the selection",
-          worst < 3,
+    check("the selection margin is NO LONGER uniformly thin — it now reaches "
+          "10.07x at the proton, where the pre-regeneration data gave 2.11x as "
+          "the worst case. The thin-margin finding of #6854 was ordering-"
+          "specific; what survives is that the margin VARIES by 8x across "
+          "atoms, which the earlier data did not show",
+          worst > 3,
           "margins " + ", ".join(mp.nstr(mp.mpf(m["margin"]), 5) for m in margins)
           + f"x; worst {mp.nstr(worst, 5)}x")
 
@@ -892,73 +939,29 @@ def main() -> int:
     w = WitnessBuilder("o3prime-selection-is-atom-independent",
                        engine="python+mpmath")
     w.set_description(
-        "O3' selects a block, but NOT the bound state's block. The objective "
-        "t_lambda = w_lambda * chi^lambda(W_atom) factors into an "
-        "atom-INDEPENDENT weight and an atom-dependent character; measured over "
-        "all six committed rows, argmin(t) == argmin(w) every time, so the "
-        "character never moves the selection. Two atoms at n=3 and two at n=9 "
-        "give the SAME block with DIFFERENT prices. Mechanism UNEXPLAINED: the "
-        "first spread-dominance account is refuted here -- chi-spread exceeds "
-        "w-spread at n=9 and the argmin is unmoved anyway. THE MECHANISM THAT DOES "
-        "hold is an ANTI-CORRELATION between w and chi: concordant partition "
-        "pairs are 9/49 = 18% against 24.5 expected, so a large character lands "
-        "preferentially on a small weight and the product is FLATTENED relative "
-        "to w on every row (never amplified) -- chi is a partial cancellation of "
-        "the ordering it would have to reverse, not an independent perturbation. "
-        "Exact distribution-free tail, one row per distinct n and the least "
-        "extreme within each: 343/518400 ~ 6.6e-4. Cancellation is INCOMPLETE "
-        "(t-spread 1.35x-10.2x), so w's argmin survives. WHY the anti-correlation "
-        "holds REDUCES to the content sum: w is a strictly increasing function "
-        "of c(lambda) on 49/49 pairs, so conc(w,|chi|) == conc(c(lambda),|chi|) "
-        "IDENTICALLY row by row, and the effect decomposes as c up => w up "
-        "(49/49 exact, 0 ties), c up => dim down (6/48), dim up => |chi| up "
-        "(43/48 = 89.6%). For two-row partitions [n] has max content and dim 1 "
-        "while the balanced partition has min content and max dim. CORRECTED "
-        "here: those last two denominators read 49 and n=6 was called "
-        "'uncorrelated at 3/6' -- a tie ([5,1] and [3,3] both have f^lambda = 5 "
-        "at n=6, the only tie in the sample) was being counted as discordant; "
-        "n=6 is 3/5 = 60%, weakly POSITIVE. The two exact claims are untouched "
-        "because c(lambda), w and |chi| are tie-free, now asserted. SETTLED "
-        "NEGATIVELY: the dim->|chi| link is STATISTICAL, not structural -- rows "
-        "3 and 4 are two atoms at n=9 with the identical dimension multiset "
-        "{1,8,27,42,48} and disagree (10/10 vs 9/10), which no partition-only "
-        "law could do. The 5 discordant pairs sit on three partitions: [4,2] at "
-        "n=6, [7,2] at n=9, [7,5] at n=12. THE Q-DIMENSION IS NOT THE MISSING "
-        "notion -- measured at the proton q0, dim_q scores 43/49 (asym) and "
-        "44/49 (sym) against f^lambda's 43/48, i.e. noise, so that repair is "
-        "refuted. MOST IMPORTANT, AND IT WEAKENS THIS PROBE'S OWN HEADLINE: the "
-        "selection MARGIN t(runner-up)/t(argmin) is only 1.20x-2.11x, and in 5 "
-        "of 6 rows it is SMALLER than that row's own character spread (at n=12, "
-        "2.05x against 12.5x). The large weight gap (2.0x-17.3x) is nearly "
-        "cancelled by the character anti-correlation (0.77x-0.12x), leaving a "
-        "thin win. So argmin(t)==argmin(w) in 6/6 is a MEASUREMENT, not a "
-        "structural law with room to spare, and must not be quoted as one; an "
-        "earlier version of this probe called the selection 'stable rather than "
-        "noise', which was too strong and is corrected. TWO MORE CANDIDATE "
-        "explanations for the imperfect dim link are REFUTED here: |chi|/dim is "
-        "NOT monotone in dim (4/6 rows) and spans up to 33x within one row, so "
-        "'character = dimension x slowly varying factor' fails and no better "
-        "notion of dimension repairs it. CAUTION: the CLASSICAL bound "
-        "|chi| <= dim is VIOLATED in 6/6 rows (max |chi|/dim = 1.12 to 2.42, "
-        "always at the one-row partition [n] where dim=1) -- so this field is "
-        "not a classical S_n character. NOT a new corpus finding, and my first "
-        "wording over-claimed it as one: magnus_fs_transpose_prune_probe already "
-        "measures a DIFFERENT normalised quantity reaching 29.0 and already "
-        "scopes Feray-Sniady to q=1. THE ATOMS ARE proton, neutron, deuteron, "
-        "tritium, helium-3, helium-4 -- so the n=9 pair is the MIRROR PAIR "
-        "tritium (Z=1,N=2) / helium-3 (Z=2,N=1), identical in partitions, "
-        "dimensions, weights and q0, differing ONLY in the p<->n content of "
-        "the braid word. That flip is NOT a constant rescale: "
-        "chi(He-3)/chi(H-3) runs 1.518, 1.756, 2.372, 1.739, 1.580 (spread "
-        "1.563x) with [7,2] the outlier, while tr_M_atom itself scales by "
-        "1.761, inside the cluster. AND THAT EXCESS CAUSES THE INVERSION: had "
-        "[7,2] scaled by [8,1]'s ratio, chi([7,2]) would be 4.311 > 3.741 and "
-        "tritium would not invert -- so [7,2] is suppressed 35.09% more than "
-        "[8,1] under the flip. OPEN one level deeper: why the mirror response "
-        "is partition-dependent at all. CONSEQUENCE: PR #6752's "
-        "reading of the selection as 'which Wedderburn blocks the bound state "
-        "saturates' is WRONG and is corrected; the pricing result (y_0* nonzero "
-        "and atom-dependent, where the full LP has y_0* = 0 identically) STANDS."
+        "POST-REGENERATION (2026-09-05). Written against chi caches built "
+        "2026-08-10 under the GROUPED intra ordering; those were 26 days stale "
+        "to the 2026-09-05 borromean switch (qou-hu1f) and were rebuilt on "
+        "owner ruling. This probe's ORIGINAL HEADLINE IS REFUTED and its "
+        "filename is now wrong. SURVIVES (w is a function of the partition and "
+        "q alone, so w-side facts are invariant -- <=2-row y_lambda agree to "
+        "8.4e-50 across the transition): w strictly increasing in the content "
+        "sum 49/49; conc(w,|chi|)==conc(c,|chi|) identically 6/6; tie-freeness; "
+        "|chi|<=dim violated 6/6; |chi|/dim non-monotone. REFUTED OR REVERSED: "
+        "argmin(t)==argmin(w) 6/6 -> 4/6; the block at fixed n goes from SAME to "
+        "DIFFERENT (tritium [7,2] vs helium-3 [5,4]), which RESTORES #6752's "
+        "original atom-dependent reading that #6841 refuted on stale data; the "
+        "anti-correlation 9/49 -> 25/49 against 24.5 expected, i.e. it was an "
+        "ARTIFACT; the product goes from flattened to AMPLIFIED (t-spread "
+        "exceeds w-spread on every row); the thin margin 2.11x -> 10.07x; the "
+        "35.09% excess-suppression mechanism is gone. Every assertion now states "
+        "the refutation rather than being deleted. TWO LATENT DEFECTS the "
+        "regeneration exposed, both fixed: the quotient was selected by "
+        "`y_lambda != 0`, a proxy that worked only while the old caches "
+        "serialized SU(2)-suppressed weights as exact 0 (rebuilt ones carry the "
+        "1e-73 residual); and argmin(t) read the SIGNED contribution while "
+        "t_vals used abs, correct by accident until borromean introduced "
+        "negative characters."
     )
     w.set_audit_only(
         "docs/proposals/2026-09-05-operator-selection-objective-replacement.md")

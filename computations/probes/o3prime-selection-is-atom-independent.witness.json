@@ -1,11 +1,11 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T19:24:47.888881+00:00",
-  "commitSha": "5901e5b04fde655cde8d522d74aa0114a5ee41c5",
+  "computedAt": "2026-09-06T03:33:58.114489+00:00",
+  "commitSha": "a5f85e3117bd5195ecce50a86d70ca92e03f987f",
   "assertions": [
     {
-      "name": "argmin(t) == argmin(w) on EVERY row — the character never moves the selection",
+      "name": "the character DOES move the selection — argmin(t) != argmin(w) on some row, so O3''s choice is NOT a function of the weight alone. This ASSERTS THE REFUTATION of what #6841/#6847 measured on the pre-regeneration caches, where it agreed 6/6",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -13,7 +13,7 @@
       "source": "o3prime_selection_is_atom_independent_probe"
     },
     {
-      "name": "same n, different atoms -> SAME selected block",
+      "name": "same n, different atoms -> DIFFERENT selected block, so the block IS atom-dependent — at n=9 tritium selects [7,2] and helium-3 selects [5,4]. This RESTORES #6752's original reading, which #6841 refuted using the stale caches",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -37,7 +37,7 @@
       "source": "o3prime_selection_is_atom_independent_probe"
     },
     {
-      "name": "w and chi are ANTI-correlated on EVERY row — concordant pairs fall below the independent expectation of half, so a large character lands preferentially on a small weight",
+      "name": "w and chi are NOT anti-correlated — 25/49 concordant against 24.5 expected under independence, i.e. indistinguishable from unrelated. The 9/49 anti-correlation reported in #6847 was an ARTIFACT of the superseded word ordering and does not survive regeneration",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -45,7 +45,7 @@
       "source": "o3prime_selection_is_atom_independent_probe"
     },
     {
-      "name": "the product is FLATTENED relative to w on EVERY row — chi partly CANCELS the weight ordering rather than adding to it, and the cancellation is incomplete, so w's argmin survives into t",
+      "name": "the product is AMPLIFIED relative to w on every row, not flattened — t-spread EXCEEDS w-spread throughout (flattening 0.20-0.69, all below 1). chi now adds to the weight ordering instead of cancelling it, the opposite of what #6847 measured",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -77,7 +77,7 @@
       "source": "o3prime_selection_is_atom_independent_probe"
     },
     {
-      "name": "the dim -> |chi| link is STATISTICAL, not structural — two atoms sharing an identical dimension multiset disagree on it, which no partition-only law could do",
+      "name": "the two atoms sharing a dimension multiset now AGREE on the dim -> |chi| concordance, so this probe's earlier proof that the link is statistical does not reproduce. The link is weak either way (21/48 = 43.8%, below half), but the CLEAN argument for it is gone",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -93,7 +93,7 @@
       "source": "o3prime_selection_is_atom_independent_probe"
     },
     {
-      "name": "the inversion is CAUSED by the discordant partition's excess suppression under the mirror flip — give it a non-discordant partition's ratio and the inversion disappears",
+      "name": "the excess-suppression MECHANISM does not survive regeneration — the mirror ratios of the discordant partitions are now BELOW their references (0.61x, 0.77x) rather than 1.35x above, so substituting the reference ratio no longer removes the inversion. The 35.09% figure in #6854 was measured on the stale ordering",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -117,7 +117,7 @@
       "source": "o3prime_selection_is_atom_independent_probe"
     },
     {
-      "name": "the selection margin is THIN on every row — chi at the argmin would need to grow by only this factor to lose the selection",
+      "name": "the selection margin is NO LONGER uniformly thin — it now reaches 10.07x at the proton, where the pre-regeneration data gave 2.11x as the worst case. The thin-margin finding of #6854 was ordering-specific; what survives is that the margin VARIES by 8x across atoms, which the earlier data did not show",
       "computed": "1",
       "expected": "1",
       "passed": true,
@@ -134,11 +134,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 4,
   "computation": "o3prime-selection-is-atom-independent",
   "scriptFile": "o3prime_selection_is_atom_independent_probe.py",
-  "scriptHash": "9004280d0824",
-  "scriptCommitSha": "5901e5b04fde655cde8d522d74aa0114a5ee41c5",
+  "scriptHash": "4a86d0f092f9",
+  "scriptCommitSha": "75432803cc9991a3e77f45355ffdfe713a827100",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -161,7 +161,7 @@
     ],
     "reproduce": "python3 -u computations/probes/o3prime_selection_is_atom_independent_probe.py"
   },
-  "description": "O3' selects a block, but NOT the bound state's block. The objective t_lambda = w_lambda * chi^lambda(W_atom) factors into an atom-INDEPENDENT weight and an atom-dependent character; measured over all six committed rows, argmin(t) == argmin(w) every time, so the character never moves the selection. Two atoms at n=3 and two at n=9 give the SAME block with DIFFERENT prices. Mechanism UNEXPLAINED: the first spread-dominance account is refuted here -- chi-spread exceeds w-spread at n=9 and the argmin is unmoved anyway. THE MECHANISM THAT DOES hold is an ANTI-CORRELATION between w and chi: concordant partition pairs are 9/49 = 18% against 24.5 expected, so a large character lands preferentially on a small weight and the product is FLATTENED relative to w on every row (never amplified) -- chi is a partial cancellation of the ordering it would have to reverse, not an independent perturbation. Exact distribution-free tail, one row per distinct n and the least extreme within each: 343/518400 ~ 6.6e-4. Cancellation is INCOMPLETE (t-spread 1.35x-10.2x), so w's argmin survives. WHY the anti-correlation holds REDUCES to the content sum: w is a strictly increasing function of c(lambda) on 49/49 pairs, so conc(w,|chi|) == conc(c(lambda),|chi|) IDENTICALLY row by row, and the effect decomposes as c up => w up (49/49 exact, 0 ties), c up => dim down (6/48), dim up => |chi| up (43/48 = 89.6%). For two-row partitions [n] has max content and dim 1 while the balanced partition has min content and max dim. CORRECTED here: those last two denominators read 49 and n=6 was called 'uncorrelated at 3/6' -- a tie ([5,1] and [3,3] both have f^lambda = 5 at n=6, the only tie in the sample) was being counted as discordant; n=6 is 3/5 = 60%, weakly POSITIVE. The two exact claims are untouched because c(lambda), w and |chi| are tie-free, now asserted. SETTLED NEGATIVELY: the dim->|chi| link is STATISTICAL, not structural -- rows 3 and 4 are two atoms at n=9 with the identical dimension multiset {1,8,27,42,48} and disagree (10/10 vs 9/10), which no partition-only law could do. The 5 discordant pairs sit on three partitions: [4,2] at n=6, [7,2] at n=9, [7,5] at n=12. THE Q-DIMENSION IS NOT THE MISSING notion -- measured at the proton q0, dim_q scores 43/49 (asym) and 44/49 (sym) against f^lambda's 43/48, i.e. noise, so that repair is refuted. MOST IMPORTANT, AND IT WEAKENS THIS PROBE'S OWN HEADLINE: the selection MARGIN t(runner-up)/t(argmin) is only 1.20x-2.11x, and in 5 of 6 rows it is SMALLER than that row's own character spread (at n=12, 2.05x against 12.5x). The large weight gap (2.0x-17.3x) is nearly cancelled by the character anti-correlation (0.77x-0.12x), leaving a thin win. So argmin(t)==argmin(w) in 6/6 is a MEASUREMENT, not a structural law with room to spare, and must not be quoted as one; an earlier version of this probe called the selection 'stable rather than noise', which was too strong and is corrected. TWO MORE CANDIDATE explanations for the imperfect dim link are REFUTED here: |chi|/dim is NOT monotone in dim (4/6 rows) and spans up to 33x within one row, so 'character = dimension x slowly varying factor' fails and no better notion of dimension repairs it. CAUTION: the CLASSICAL bound |chi| <= dim is VIOLATED in 6/6 rows (max |chi|/dim = 1.12 to 2.42, always at the one-row partition [n] where dim=1) -- so this field is not a classical S_n character. NOT a new corpus finding, and my first wording over-claimed it as one: magnus_fs_transpose_prune_probe already measures a DIFFERENT normalised quantity reaching 29.0 and already scopes Feray-Sniady to q=1. THE ATOMS ARE proton, neutron, deuteron, tritium, helium-3, helium-4 -- so the n=9 pair is the MIRROR PAIR tritium (Z=1,N=2) / helium-3 (Z=2,N=1), identical in partitions, dimensions, weights and q0, differing ONLY in the p<->n content of the braid word. That flip is NOT a constant rescale: chi(He-3)/chi(H-3) runs 1.518, 1.756, 2.372, 1.739, 1.580 (spread 1.563x) with [7,2] the outlier, while tr_M_atom itself scales by 1.761, inside the cluster. AND THAT EXCESS CAUSES THE INVERSION: had [7,2] scaled by [8,1]'s ratio, chi([7,2]) would be 4.311 > 3.741 and tritium would not invert -- so [7,2] is suppressed 35.09% more than [8,1] under the flip. OPEN one level deeper: why the mirror response is partition-dependent at all. CONSEQUENCE: PR #6752's reading of the selection as 'which Wedderburn blocks the bound state saturates' is WRONG and is corrected; the pricing result (y_0* nonzero and atom-dependent, where the full LP has y_0* = 0 identically) STANDS.",
+  "description": "POST-REGENERATION (2026-09-05). Written against chi caches built 2026-08-10 under the GROUPED intra ordering; those were 26 days stale to the 2026-09-05 borromean switch (qou-hu1f) and were rebuilt on owner ruling. This probe's ORIGINAL HEADLINE IS REFUTED and its filename is now wrong. SURVIVES (w is a function of the partition and q alone, so w-side facts are invariant -- <=2-row y_lambda agree to 8.4e-50 across the transition): w strictly increasing in the content sum 49/49; conc(w,|chi|)==conc(c,|chi|) identically 6/6; tie-freeness; |chi|<=dim violated 6/6; |chi|/dim non-monotone. REFUTED OR REVERSED: argmin(t)==argmin(w) 6/6 -> 4/6; the block at fixed n goes from SAME to DIFFERENT (tritium [7,2] vs helium-3 [5,4]), which RESTORES #6752's original atom-dependent reading that #6841 refuted on stale data; the anti-correlation 9/49 -> 25/49 against 24.5 expected, i.e. it was an ARTIFACT; the product goes from flattened to AMPLIFIED (t-spread exceeds w-spread on every row); the thin margin 2.11x -> 10.07x; the 35.09% excess-suppression mechanism is gone. Every assertion now states the refutation rather than being deleted. TWO LATENT DEFECTS the regeneration exposed, both fixed: the quotient was selected by `y_lambda != 0`, a proxy that worked only while the old caches serialized SU(2)-suppressed weights as exact 0 (rebuilt ones carry the 1e-73 residual); and argmin(t) read the SIGNED contribution while t_vals used abs, correct by accident until borromean introduced negative characters.",
   "auditOnly": "docs/proposals/2026-09-05-operator-selection-objective-replacement.md",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736"
@@ -185,14 +185,14 @@
           1
         ],
         "same": true,
-        "price_t_min": "0.447041147540400587771436992037792948784743520699240000000000",
+        "price_t_min": "-0.0693901427139783637522988569578404295587651406099240000000000",
         "w_spread": "2.04370620853252198940201933567738830976821396071355264058991",
-        "chi_spread": "1.30756622297248205680748597396195312460234823982928591930392",
-        "t_spread": "1.56298485891336160490615301714282984103438884083101955897329",
-        "flattening": "1.30756622297248205680748597396195312460234823982930000845455",
+        "chi_spread": "4.92703928635924753077477780962800910609030540984875532424229",
+        "t_spread": "10.0694207792160406594870165837474658487844045599576696098821",
+        "flattening": "0.202961645296506882791931447519550913544927502505260060792737",
         "n_pairs": 1,
-        "concordant": 0,
-        "tau_tail": "1/2"
+        "concordant": 1,
+        "tau_tail": "1"
       },
       {
         "row": 1,
@@ -211,14 +211,14 @@
           1
         ],
         "same": true,
-        "price_t_min": "0.420626157889027901602133437403681247873588972216950000000000",
+        "price_t_min": "-0.0919840130710994575257964954226079346230521521371230000000000",
         "w_spread": "2.04370620853252198940201933567738830976821396071355264058991",
-        "chi_spread": "1.51579918540911917373288165531250354705804885976872865548949",
-        "t_spread": "1.34826976304312960689234439179813355430964938459176338730253",
-        "flattening": "1.51579918540911917373288165531250354705804885976874819151560",
+        "chi_spread": "3.01677037588427963773065440936120195479268387800240030445635",
+        "t_spread": "6.16539234691169234737310369723481240448978115612483005120642",
+        "flattening": "0.331480316829509672415540954415686029732370946693001716095643",
         "n_pairs": 1,
-        "concordant": 0,
-        "tau_tail": "1/2"
+        "concordant": 1,
+        "tau_tail": "1"
       },
       {
         "row": 2,
@@ -237,14 +237,14 @@
           3
         ],
         "same": true,
-        "price_t_min": "0.0642671492247627779306976063673960466406916920881960000000000",
-        "w_spread": "7.62534203713249695670141762989255924623136986209968659424281",
-        "chi_spread": "2.72420232408119342931414331528234407502873592696028852469690",
-        "t_spread": "3.95128437304913122410764432724260982704426624474022499131537",
-        "flattening": "1.92983883649157985125210684067005983726779300099521528426051",
+        "price_t_min": "0.0107975708954923988416069636640453169184719652464950000000000",
+        "w_spread": "7.62534203713249695670141762989255924623136986210034780328572",
+        "chi_spread": "4.74008919471066655673356316041053414751465186611242341524063",
+        "t_spread": "16.6603047531426776926558722888806746414056258641607538252349",
+        "flattening": "0.457695231276853345874881449867157414483190424124838289424850",
         "n_pairs": 6,
-        "concordant": 1,
-        "tau_tail": "1/6"
+        "concordant": 4,
+        "tau_tail": "5/6"
       },
       {
         "row": 3,
@@ -255,22 +255,22 @@
         "N": 2,
         "A": 3,
         "argmin_t": [
-          5,
-          4
+          7,
+          2
         ],
         "argmin_w": [
           5,
           4
         ],
-        "same": true,
-        "price_t_min": "0.0165496952235817501471613735182095199614535874747440000000000",
+        "same": false,
+        "price_t_min": "0.00314915915153762540869386052250592605223336374396190000000000",
         "w_spread": "5.91491061780669391433300152304207723128163811452297267925466",
-        "chi_spread": "6.44841296446525448749773431742111758846258237824116536865259",
-        "t_spread": "4.69646393667336623351250277120973930946914634969629054149565",
-        "flattening": "1.25943916477646515619051073910861145717756190897381931067501",
+        "chi_spread": "6.85480940923684420195993048968357516541837875956971875615795",
+        "t_spread": "11.0775383484190622124689886350410183700069178088987894826750",
+        "flattening": "0.533955327597745944033294939513804495630083306898115752419906",
         "n_pairs": 10,
-        "concordant": 2,
-        "tau_tail": "7/60"
+        "concordant": 5,
+        "tau_tail": "71/120"
       },
       {
         "row": 4,
@@ -289,14 +289,14 @@
           4
         ],
         "same": true,
-        "price_t_min": "0.0287868485647897792091917840246165924121303225890690000000000",
+        "price_t_min": "-0.00619004049584358197116959378714873203118050103562060000000000",
         "w_spread": "5.91491061780669391433300152304207723128163811452297267925466",
-        "chi_spread": "6.71217860580942750332159089142339097107971147153433161603573",
-        "t_spread": "4.26614809026825241968223552365536103635087282288406526921587",
-        "flattening": "1.38647569016638811889328258858918342741944695727270302371653",
+        "chi_spread": "3.72848634915083480652610623260293928351739812223945377289668",
+        "t_spread": "8.55466047776717535967359405858177470486762536747221089087344",
+        "flattening": "0.691425525674459714502845259838968945834007096811883701789011",
         "n_pairs": 10,
-        "concordant": 1,
-        "tau_tail": "1/24"
+        "concordant": 5,
+        "tau_tail": "71/120"
       },
       {
         "row": 5,
@@ -307,22 +307,22 @@
         "N": 2,
         "A": 4,
         "argmin_t": [
-          6,
-          6
+          7,
+          5
         ],
         "argmin_w": [
           6,
           6
         ],
-        "same": true,
-        "price_t_min": "0.00468272098229808284404533996797918912262545157841530000000000",
-        "w_spread": "17.3381908741281979106997363104612820819989018846402185507023",
-        "chi_spread": "12.5081165415982580163716185083112314327356605748342489827545",
-        "t_spread": "10.1812107569147621680780513406449263979897616529773536025327",
-        "flattening": "1.70295962711042368977503713298477142012325207932588277515669",
+        "same": false,
+        "price_t_min": "0.000295866772103979698890689899988833014342983502829120000000000",
+        "w_spread": "17.3381908741281979106997363104612820819989018846406557481007",
+        "chi_spread": "10.0019006278957601871986245216065158934911591652710408530865",
+        "t_spread": "32.4351627660218893154407816543487924760626598204269193875651",
+        "flattening": "0.534549217440375245695801450031663556153059468657883753004352",
         "n_pairs": 21,
-        "concordant": 5,
-        "tau_tail": "49/720"
+        "concordant": 9,
+        "tau_tail": "649/1680"
       }
     ],
     "content_sum_reduction": [
@@ -332,19 +332,24 @@
         "N": 0,
         "chi": {
           "[3]": "1.3824944633925928759010066186910068575145333016307",
-          "[2, 1]": "1.8077030637786210288109844137955337992663530400168"
+          "[2, 1]": "-0.28059335090347205472579085759649577839746521664058"
         },
         "dim": {
           "[3]": 1,
           "[2, 1]": 2
         },
-        "discordant": [],
+        "discordant": [
+          [
+            2,
+            1
+          ]
+        ],
         "cs_w": 1,
-        "cs_chi": 0,
+        "cs_chi": 1,
         "cs_dim": 0,
-        "dim_chi": 1,
+        "dim_chi": 0,
         "cs_dim_disc": 1,
-        "dim_chi_disc": 0,
+        "dim_chi_disc": 1,
         "cs_dim_tied": 0,
         "dim_chi_tied": 0,
         "tie_free_cs_w": true,
@@ -355,7 +360,7 @@
         ],
         "n": 3,
         "pairs": 1,
-        "w_chi": 0
+        "w_chi": 1
       },
       {
         "atom": "neutron",
@@ -363,19 +368,24 @@
         "N": 1,
         "chi": {
           "[3]": "1.1221068216024720738277212759029981741187093477827",
-          "[2, 1]": "1.7008886061270429791873531548743888917445154859717"
+          "[2, 1]": "-0.37195632474134153141629884205128506411028151416031"
         },
         "dim": {
           "[3]": 1,
           "[2, 1]": 2
         },
-        "discordant": [],
+        "discordant": [
+          [
+            2,
+            1
+          ]
+        ],
         "cs_w": 1,
-        "cs_chi": 0,
+        "cs_chi": 1,
         "cs_dim": 0,
-        "dim_chi": 1,
+        "dim_chi": 0,
         "cs_dim_disc": 1,
-        "dim_chi_disc": 0,
+        "dim_chi_disc": 1,
         "cs_dim_tied": 0,
         "dim_chi_tied": 0,
         "tie_free_cs_w": true,
@@ -386,7 +396,7 @@
         ],
         "n": 3,
         "pairs": 1,
-        "w_chi": 0
+        "w_chi": 1
       },
       {
         "atom": "deuteron",
@@ -394,9 +404,9 @@
         "N": 1,
         "chi": {
           "[6]": "1.5598701995641515927061666224371716599524918200175",
-          "[5, 1]": "3.2163173422358811759338955425246731048947002364696",
-          "[4, 2]": "1.674395262034255343169483577355723837618195423347",
-          "[3, 3]": "4.2494020229176567667259911311634128827066133542552"
+          "[5, 1]": "-0.68228501276057044641239950847620023335096905058467",
+          "[4, 2]": "0.32908034753961323775704153752221780532274628165492",
+          "[3, 3]": "0.71394515175138574642252125970790802050354907040101"
         },
         "dim": {
           "[6]": 1,
@@ -406,16 +416,24 @@
         },
         "discordant": [
           [
+            3,
+            3
+          ],
+          [
             4,
             2
+          ],
+          [
+            5,
+            1
           ]
         ],
         "cs_w": 6,
-        "cs_chi": 1,
+        "cs_chi": 4,
         "cs_dim": 1,
-        "dim_chi": 3,
+        "dim_chi": 0,
         "cs_dim_disc": 4,
-        "dim_chi_disc": 2,
+        "dim_chi_disc": 5,
         "cs_dim_tied": 1,
         "dim_chi_tied": 1,
         "tie_free_cs_w": true,
@@ -428,7 +446,7 @@
         ],
         "n": 6,
         "pairs": 6,
-        "w_chi": 1
+        "w_chi": 4
       },
       {
         "atom": "tritium",
@@ -436,10 +454,10 @@
         "N": 2,
         "chi": {
           "[9]": "1.5769142026206059678899601029121810561841755105317",
-          "[8, 1]": "3.7407466497181145821959557462735806887402288084202",
-          "[7, 2]": "3.1908421607602640076006658099124882744522606887527",
-          "[6, 3]": "10.168593988028104706045534852554497564117942546517",
-          "[5, 4]": "4.4249501211116940150632810574068765926017070605576"
+          "[8, 1]": "-1.0523302898545896879468570038658642106176701605433",
+          "[7, 2]": "0.26505255299853592847601499423565014804919380240065",
+          "[6, 3]": "1.8168847342366114061343190364530766699202067351894",
+          "[5, 4]": "-1.4087381126810728208157105093155033150586935890936"
         },
         "dim": {
           "[9]": 1,
@@ -450,16 +468,24 @@
         },
         "discordant": [
           [
+            5,
+            4
+          ],
+          [
             7,
             2
+          ],
+          [
+            8,
+            1
           ]
         ],
         "cs_w": 10,
-        "cs_chi": 2,
+        "cs_chi": 5,
         "cs_dim": 1,
-        "dim_chi": 9,
+        "dim_chi": 6,
         "cs_dim_disc": 9,
-        "dim_chi_disc": 1,
+        "dim_chi_disc": 4,
         "cs_dim_tied": 0,
         "dim_chi_tied": 0,
         "tie_free_cs_w": true,
@@ -473,7 +499,7 @@
         ],
         "n": 9,
         "pairs": 10,
-        "w_chi": 2
+        "w_chi": 5
       },
       {
         "atom": "helium-3",
@@ -481,10 +507,10 @@
         "N": 1,
         "chi": {
           "[9]": "2.3936820385526544748822680766148824447018669548521",
-          "[8, 1]": "6.5684336727794646284667037102745293541899110161327",
-          "[7, 2]": "7.5691272191317505225617036105556414934390613557871",
-          "[6, 3]": "16.066821368283424608473680863916953103900361409054",
-          "[5, 4]": "7.6968407769640103355890069866120540742076164690623"
+          "[8, 1]": "-0.91566648789088945442984956726905327221227087412063",
+          "[7, 2]": "0.67031471710060441440589616141359293372795973171156",
+          "[6, 3]": "2.4992592723445072094269940827438427778559819037205",
+          "[5, 4]": "-1.6550528618037814647718834957819824488722762744344"
         },
         "dim": {
           "[9]": 1,
@@ -493,13 +519,26 @@
           "[6, 3]": 48,
           "[5, 4]": 42
         },
-        "discordant": [],
+        "discordant": [
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            1
+          ]
+        ],
         "cs_w": 10,
-        "cs_chi": 1,
+        "cs_chi": 5,
         "cs_dim": 1,
-        "dim_chi": 10,
+        "dim_chi": 6,
         "cs_dim_disc": 9,
-        "dim_chi_disc": 0,
+        "dim_chi_disc": 4,
         "cs_dim_tied": 0,
         "dim_chi_tied": 0,
         "tie_free_cs_w": true,
@@ -513,7 +552,7 @@
         ],
         "n": 9,
         "pairs": 10,
-        "w_chi": 1
+        "w_chi": 5
       },
       {
         "atom": "helium-4",
@@ -521,12 +560,12 @@
         "N": 2,
         "chi": {
           "[12]": "2.4198367301370381390315870489209276121289941745398",
-          "[11, 1]": "7.3910326490536730616363551340743925831413654355443",
-          "[10, 2]": "10.462987496808585891109527081706838436893637556217",
-          "[9, 3]": "27.334803050697156764104526073336072263957297555465",
-          "[8, 4]": "30.267599832194126665683819649272854296825974714505",
-          "[7, 5]": "21.777014733807022614549655471009749160817570375144",
-          "[6, 6]": "20.47273430988102875317420224157012703335593442908"
+          "[11, 1]": "-1.4820805406851345826369556135634007686099313433823",
+          "[10, 2]": "0.54334127358781385773508079844803274958038419868712",
+          "[9, 3]": "4.1496247980722597956727059223010327849356048805636",
+          "[8, 4]": "-2.9794818844089247155730654432089599813095789021964",
+          "[7, 5]": "0.42498248576096399502361269067665679823070467335753",
+          "[6, 6]": "4.2506325911772867449524745390920484837828091725434"
         },
         "dim": {
           "[12]": 1,
@@ -541,14 +580,30 @@
           [
             7,
             5
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            11,
+            1
           ]
         ],
         "cs_w": 21,
-        "cs_chi": 5,
+        "cs_chi": 9,
         "cs_dim": 3,
-        "dim_chi": 19,
+        "dim_chi": 9,
         "cs_dim_disc": 18,
-        "dim_chi_disc": 2,
+        "dim_chi_disc": 12,
         "cs_dim_tied": 0,
         "dim_chi_tied": 0,
         "tie_free_cs_w": true,
@@ -564,7 +619,7 @@
         ],
         "n": 12,
         "pairs": 21,
-        "w_chi": 5
+        "w_chi": 9
       }
     ],
     "selection_margin": [
@@ -572,7 +627,7 @@
         "n": 3,
         "row": 0,
         "atom": "proton",
-        "margin": "1.56298485891336160490615301714282984103438884083101955897329",
+        "margin": "10.0694207792160406594870165837474658487844045599576696098821",
         "argmin": [
           2,
           1
@@ -580,16 +635,21 @@
         "runner_up": [
           3
         ],
-        "chi_spread": "1.30756622297248205680748597396195312460234823982928591930392",
+        "chi_spread": "4.92703928635924753077477780962800910609030540984875532424229",
         "thin": false,
-        "discordant_partitions": [],
+        "discordant_partitions": [
+          [
+            2,
+            1
+          ]
+        ],
         "runner_is_discordant": false
       },
       {
         "n": 3,
         "row": 1,
         "atom": "neutron",
-        "margin": "1.34826976304312960689234439179813355430964938459176338730253",
+        "margin": "6.16539234691169234737310369723481240448978115612483005120642",
         "argmin": [
           2,
           1
@@ -597,16 +657,21 @@
         "runner_up": [
           3
         ],
-        "chi_spread": "1.51579918540911917373288165531250354705804885976872865548949",
-        "thin": true,
-        "discordant_partitions": [],
+        "chi_spread": "3.01677037588427963773065440936120195479268387800240030445635",
+        "thin": false,
+        "discordant_partitions": [
+          [
+            2,
+            1
+          ]
+        ],
         "runner_is_discordant": false
       },
       {
         "n": 6,
         "row": 2,
         "atom": "deuteron",
-        "margin": "1.19931398043904432515633435731957733618667616234201379513713",
+        "margin": "1.40294236112573578614130082752617201485266960392929906455884",
         "argmin": [
           3,
           3
@@ -615,12 +680,20 @@
           4,
           2
         ],
-        "chi_spread": "2.72420232408119342931414331528234407502873592696028852469690",
+        "chi_spread": "4.74008919471066655673356316041053414751465186611242341524063",
         "thin": true,
         "discordant_partitions": [
           [
+            3,
+            3
+          ],
+          [
             4,
             2
+          ],
+          [
+            5,
+            1
           ]
         ],
         "runner_is_discordant": true
@@ -629,59 +702,99 @@
         "n": 9,
         "row": 3,
         "atom": "tritium",
-        "margin": "2.10788964963688003000812372509429399113876085174268286475727",
+        "margin": "1.67308218776395134879672477122067307037215111194267126295989",
         "argmin": [
+          7,
+          2
+        ],
+        "runner_up": [
           5,
           4
         ],
-        "runner_up": [
-          9
-        ],
-        "chi_spread": "6.44841296446525448749773431742111758846258237824116536865259",
+        "chi_spread": "6.85480940923684420195993048968357516541837875956971875615795",
         "thin": true,
         "discordant_partitions": [
           [
+            5,
+            4
+          ],
+          [
             7,
             2
+          ],
+          [
+            8,
+            1
           ]
         ],
-        "runner_is_discordant": false
+        "runner_is_discordant": true
       },
       {
         "n": 9,
         "row": 4,
         "atom": "helium-3",
-        "margin": "1.83950996464201267271069994089061847770266407931734906662083",
+        "margin": "1.28661284285571011295258062387080993330805387348270383547509",
         "argmin": [
           5,
           4
         ],
         "runner_up": [
-          9
+          7,
+          2
         ],
-        "chi_spread": "6.71217860580942750332159089142339097107971147153433161603573",
+        "chi_spread": "3.72848634915083480652610623260293928351739812223945377289668",
         "thin": true,
-        "discordant_partitions": [],
-        "runner_is_discordant": false
+        "discordant_partitions": [
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            1
+          ]
+        ],
+        "runner_is_discordant": true
       },
       {
         "n": 12,
         "row": 5,
         "atom": "helium-4",
-        "margin": "2.04933989159878009312468861841633373086013203432985796877914",
+        "margin": "3.28609265896199255874068013238828561190853583040638535261197",
         "argmin": [
+          7,
+          5
+        ],
+        "runner_up": [
           6,
           6
         ],
-        "runner_up": [
-          12
-        ],
-        "chi_spread": "12.5081165415982580163716185083112314327356605748342489827545",
+        "chi_spread": "10.0019006278957601871986245216065158934911591652710408530865",
         "thin": true,
         "discordant_partitions": [
           [
             7,
             5
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            11,
+            1
           ]
         ],
         "runner_is_discordant": false
@@ -693,8 +806,8 @@
         "row": 0,
         "atom": "proton",
         "max": "1.38249446339259287590100661869100685751453330163070000000000",
-        "min": "0.903851531889310514405492206897766899633176520008400000000000",
-        "range": "1.52955924133112937126744277316539369818634692718280198846941",
+        "min": "0.140296675451736027362895428798247889198732608320290000000000",
+        "range": "9.85407857271849506154955561925601821218061081969751064848458",
         "exceeds_classical_bound": true,
         "monotone_in_dim": true
       },
@@ -703,8 +816,8 @@
         "row": 1,
         "atom": "neutron",
         "max": "1.12210682160247207382772127590299817411870934778270000000000",
-        "min": "0.850444303063521489593676577437194445872257742985850000000000",
-        "range": "1.31943599076429998058422463199123085014496107968603746497397",
+        "min": "0.185978162370670765708149421025642532055140757080155000000000",
+        "range": "6.03354075176855927546130881872240390958536775600480060891270",
         "exceeds_classical_bound": true,
         "monotone_in_dim": true
       },
@@ -713,8 +826,8 @@
         "row": 2,
         "atom": "deuteron",
         "max": "1.55987019956415159270616662243717165995249182001750000000000",
-        "min": "0.186043918003806149241053730817302648624243935927444444444444",
-        "range": "8.38441920757785396619398141474693311021872003577048410723501",
+        "min": "0.0365644830599570264174490597246908672580829201838800000000000",
+        "range": "42.6608027523959990106020684436948073276318667950118107371657",
         "exceeds_classical_bound": true,
         "monotone_in_dim": false
       },
@@ -723,8 +836,8 @@
         "row": 3,
         "atom": "tritium",
         "max": "1.57691420262060596788996010291218105618417551053170000000000",
-        "min": "0.105355955264564143215792406128735156966707310965657142857143",
-        "range": "14.9674899597345476162388194688232058576040303908660796407068",
+        "min": "0.00981676122216799735096351830502407955737754823706111111111111",
+        "range": "160.634874062094176764643925061460952020983968583939352944940",
         "exceeds_classical_bound": true,
         "monotone_in_dim": false
       },
@@ -733,8 +846,8 @@
         "row": 4,
         "atom": "helium-3",
         "max": "2.39368203855265447488226807661488244470186695485210000000000",
-        "min": "0.183258113737238341323547785395525097004943249263388095238095",
-        "range": "13.0618065947399002536234021471962144906621159521266923270148",
+        "min": "0.0248264710037260894224405985708738123602948048782059259259259",
+        "range": "96.4165240477955116729754952061874466251656902714313737414473",
         "exceeds_classical_bound": true,
         "monotone_in_dim": false
       },
@@ -743,8 +856,8 @@
         "row": 5,
         "atom": "helium-4",
         "max": "2.41983673013703813903158704892092761212899417453980000000000",
-        "min": "0.0733232819320101771533658433367331621576349170880269360269360",
-        "range": "33.0022970382157534654801082899593433164474898467207560579552",
+        "min": "0.00143091746047462624587074980025810369774648038167518518518519",
+        "range": "1691.10853489368537284813986910267983242364060857683836247829",
         "exceeds_classical_bound": true,
         "monotone_in_dim": false
       }
@@ -754,47 +867,90 @@
         "neutron_rich": "neutron",
         "proton_rich": "proton",
         "ratios": {
-          "[3]": "1.23205245416676393126980451353563618484968142291697493439045",
-          "[2, 1]": "1.06279920817083764457118203180853034127640885680811286658141"
+          "[2, 1]": "0.754371769585035827497846409501996212577856593284380513168000",
+          "[3]": "1.23205245416676393126980451353563618484968142291697493439045"
         },
-        "spread": "1.15925232602235811454281857440624248604112105976627412481449",
+        "spread": "1.63321654367380460542980317408237845261748566759032401255696",
         "outlier": "[3]",
-        "discordant_in_neutron_rich": [],
-        "discordant_in_proton_rich": []
+        "discordant_in_neutron_rich": [
+          [
+            2,
+            1
+          ]
+        ],
+        "discordant_in_proton_rich": [
+          [
+            2,
+            1
+          ]
+        ]
       },
       {
         "neutron_rich": "tritium",
         "proton_rich": "helium-3",
         "ratios": {
+          "[7, 2]": "2.52898796679127642159544113741297553379085893960225227306904",
+          "[8, 1]": "0.870132216775225249478115979820572069731473630431329080577860",
+          "[5, 4]": "1.17484779243597589609927656421456746816610536126876421298090",
           "[9]": "1.51795324981834593754711018277627363962078050951325304729303",
-          "[7, 2]": "2.37214090756789335188571547733076611738176790829368931068789",
-          "[8, 1]": "1.75591513883316088808236602659251148045841785152806407991082",
-          "[5, 4]": "1.73941865248196493341158146729487252988019088180830314100617",
-          "[6, 3]": "1.58004355245174904006530994437906359020216592064066543475210"
+          "[6, 3]": "1.37557392896176468608802844144503035936700574466181457006435"
         },
-        "spread": "1.56272329721074637003071227255755998807374136537104568863419",
+        "spread": "2.90644101900271436168228515413428303990012195221034159296365",
         "outlier": "[7, 2]",
         "discordant_in_neutron_rich": [
           [
+            5,
+            4
+          ],
+          [
             7,
             2
+          ],
+          [
+            8,
+            1
           ]
         ],
-        "discordant_in_proton_rich": []
+        "discordant_in_proton_rich": [
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            1
+          ]
+        ]
       }
     ],
     "mirror_counterfactual": [
       {
+        "atom": "neutron",
+        "partition": "[2, 1]",
+        "reference": "[3]",
+        "dim_partition": 2,
+        "dim_reference": 1,
+        "excess": "0.612288678971234905166308764658196125467805114587310132994150",
+        "actual": "0.371956324741341531416298842051285064110281514160310000000000",
+        "counterfactual": "0.227744646710871664003546674364711002996226893155174783371898",
+        "reference_chi": "1.12210682160247207382772127590299817411870934778270000000000",
+        "inversion_removed": false
+      },
+      {
         "atom": "tritium",
-        "partition": "[7, 2]",
-        "reference": "[8, 1]",
-        "dim_partition": 27,
-        "dim_reference": 8,
-        "excess": "1.35094279621293443854601143779657614826524669295289801709479",
-        "actual": "3.19084216076026400760066580991248827445226068875270000000000",
-        "counterfactual": "4.31064523093159272811663750587350244889546958982754723912664",
-        "reference_chi": "3.74074664971811458219595574627358068874022880842020000000000",
-        "inversion_removed": true
+        "partition": "[5, 4]",
+        "reference": "[9]",
+        "dim_partition": 42,
+        "dim_reference": 1,
+        "excess": "0.773968363371250329030672447340507904560691710704297775402038",
+        "actual": "1.40873811268107282081571050931550331505869358909360000000000",
+        "counterfactual": "1.09031873149047396006142458995538362305261458297064135596828",
+        "reference_chi": "1.57691420262060596788996010291218105618417551053170000000000",
+        "inversion_removed": false
       }
     ]
   },
