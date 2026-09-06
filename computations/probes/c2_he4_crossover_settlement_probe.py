@@ -133,14 +133,25 @@ def main() -> int:
         print(f"    {name:>4s}  A={A}   {r}")
     print(f"    {'4He':>4s}  A=4   {float(ratio):.4f}")
     print()
+    # Be precise about WHICH claim this settles. #6559 said the expansion
+    # "crosses over BETWEEN A = 3 and A = 4", which asserts two things: the
+    # ratio exceeds 1 at A = 4, AND it does not below. Only the first is
+    # decided here, and the second is already FALSE under Borromean -- T
+    # (A = 3) is 4.90 and pn (A = 2) is 1.24, both above 1.
     if ratio > 1:
-        print("  VERDICT: second order EXCEEDS first at A = 4.")
-        print("  #6559's crossover CLAIM survives the ordering change, even though")
-        print("  the monotone column it was argued from does not (#6931).")
+        print("  VERDICT: at A = 4 the second order EXCEEDS the first.")
+        print()
+        print("  What that does and does NOT settle:")
+        print("    SURVIVES  the endpoint fact -- ratio > 1 at A = 4.")
+        print("    STILL FALSE  the LOCATION. #6559 said the expansion crosses")
+        print("      over BETWEEN A = 3 and A = 4, which also requires ratio < 1")
+        print("      below. Under Borromean it is already > 1 at T (4.90, A = 3)")
+        print("      and at pn (1.24, A = 2), so there is no crossing THERE.")
+        print("    STILL REFUTED  the argument -- the monotone column (#6931).")
     else:
-        print("  VERDICT: second order does NOT exceed first at A = 4.")
-        print("  #6559's crossover claim does NOT survive; the reading is retired")
-        print("  in full -- both its argument (#6931) and its conclusion.")
+        print("  VERDICT: at A = 4 the second order does NOT exceed the first.")
+        print("  #6559's conclusion fails at its own endpoint; the reading is")
+        print("  retired in full -- argument (#6931) and conclusion alike.")
     print()
 
     if failures:
