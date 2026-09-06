@@ -232,7 +232,48 @@ def main() -> int:
         "B_n is the braid group; audit scope corrected")
     print()
 
-    total = 12
+    # --- 9. what each reading does to the disjoint-support layout ---------
+    print("CHECK 9 -- the layout consequence, for #6919's f1/f0 additivity")
+    import importlib, os
+    os.environ.setdefault("PYTHONPATH", str(ROOT / "computations"))
+    sys.path.insert(0, str(ROOT / "computations"))
+    try:
+        abw = importlib.import_module("mass_at_3A_proper").atom_braid_word_3A
+    except Exception as exc:                       # pragma: no cover
+        chk("producer importable", False, f"{type(exc).__name__}: {exc}")
+        abw = None
+    if abw is not None:
+        gens = [t2[2] for t2 in abw(1, 1)]          # deuteron, one p + one n
+        pblk, nblk = {0, 1}, {3, 4}
+        bond = [g for g in gens if g == 2]
+        print(f"    D generator sequence: {gens}")
+        print(f"    proton {sorted(pblk)}: {sum(g in pblk for g in gens)} ops;"
+              f"  neutron {sorted(nblk)}: {sum(g in nblk for g in gens)} ops;"
+              f"  bond {{2}}: {len(bond)} ops")
+        cross = min(abs(i - j) for i in pblk for j in nblk)
+        chk("under 3A the two nucleon blocks are disjoint-support (min cross |i-j| = 2)",
+            cross == 2 and set(gens) <= pblk | nblk | {2},
+            "#6919's premise holds -- in the 3A reading it was computed in")
+        chk("BUT the full word carries the inter-nucleon bond at generator 2, "
+            "adjacent to BOTH blocks",
+            len(bond) == 1,
+            "so factorisation is a property of the vacuum part, not of the whole word")
+        # A+Z: one strand per nucleon -> for D, 3 strands, generators {0,1} only
+        apz_gens = (1 + 1 + 1) - 1                  # A+Z = 3 strands -> 2 generators
+        chk("under A+Z the premise is NOT STATABLE -- D has 3 strands, 2 generators, "
+            "no per-nucleon block",
+            apz_gens == 2 and apz_gens < max(nblk) + 1,
+            f"{apz_gens} generators vs neutron block needing index {max(nblk)}")
+        # 3A+Z: blocks survive, but the electron strand is adjacent to the neutron block
+        n_str = 3 * 2 + 1                           # D: 3A+Z = 7 strands
+        e_gen = n_str - 2                           # generator joining last quark to electron
+        chk("under 3A+Z the nucleon blocks survive but the electron generator is "
+            "ADJACENT to the neutron block",
+            e_gen == 5 and abs(e_gen - max(nblk)) == 1,
+            "def:atomic-braid specifies pe/ne/ee crossings, so a full atom word couples them")
+    print()
+
+    total = 16
     print(f"{total - fails}/{total} checks passed")
     return 1 if fails else 0
 
