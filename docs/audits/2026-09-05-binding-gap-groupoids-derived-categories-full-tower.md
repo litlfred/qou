@@ -880,6 +880,51 @@ D; whether a nucleus is an interleaved word class remains `qou-5vhf`.
 (exact sympy + integer synthetic division; mpmath 50 dps for the one anchor evaluation; 15/15;
 witness `interleaving-cross-term-q-adic-order.witness.json`, `q0Anchor: proton`). Bean `qou-212w`.
 
+## 7d. Results of §7 items 4–5 — route A step 1 and route C step 1 (2026-09-06)
+
+Both executed the day after T1, on the same word pair, exact throughout
+(`computations/probes/interleaving_cross_term_closures_probe.py`, 13/13, witness
+`q0Anchor: independent` — no `q₀` is read). Beans `qou-amw3`, `qou-8uxw`.
+
+**Route A step 1 — what the two words are.** From the Ocneanu axioms alone
+(`QOU/MathlibExt/InterleavedWordClosures.lean`, sorry-free, axioms standard):
+
+    tr(s₀ s₁ s₀ s₂ s₁) = z² · tr(σ³)        interleaved = doubly-stabilised σ³   → trefoil
+    tr(s₀² s₁² s₂)     = z  · tr(σ²)²       sequential  = stabilised Hopf-chain → three components
+    Δ                  = z² · tr(σ³) − z · tr(σ²)²                                (`crossTerm_eq_closures`)
+
+with `z` and `h` free, i.e. at the two-variable (HOMFLY-PT) level, and confirmed in the 16-dim
+spin-½ representation. So the "cross term" is the difference of two link invariants of two
+**different** links. Verdict on "is `Δ` an Euler characteristic": true only in the content-free
+sense — each side is the graded Euler characteristic of a Khovanov–Rozansky homology, so `Δ` is
+`χ` of a shifted direct sum. The sense that would matter — a natural chain map between the two
+complexes whose cone carries `Δ` — is supplied by nothing in the corpus: the closures have
+different component counts and no braid move relates the words. Route A's honest step 2 is to
+construct such a map (a cobordism map: two saddles join the three components into one) and
+compute its cone; not attempted here.
+
+**Route C step 1 — what the order-zero term counts.** At `q = 1` with `z = 1/N` the Markov trace
+on `ℚSₙ` is the normalised character of `Sₙ` on `V^{⊗n}`, `dim V = N`: `N^{c(w)}/N^n`. The
+character of a permutation representation is a Burnside fixed-point count — the `w`-invariant
+colourings of the strands, which are exactly the colourings constant on each cycle. Verified on all
+24 permutations of `S₄` at `N = 2, 3`. The interleaved word fixes 2 two-colourings, the sequential
+word 8; the difference `−6` is T1's `[2]_q⁴·Δ|_{q=1}`. Both counts are pinned in Lean by finite
+search (`QOU/Mass/CrossTermFixedPointCount.lean`, `decide` on 16 colourings — the one place that
+tactic is the honest tool). In groupoidification (Baez–Hoffnung–Walker) that character is the
+degroupoidified span `X ← X^w → X`, so **the order-zero cross term is a groupoid cardinality**.
+The 16-dim quantum trace degenerates to exactly this count at `q = 1` (the R-matrix becomes the
+swap), so the `q`-deformation is a `q`-count of fixed points. Whether *that* is a groupoid
+cardinality — the Hecke-algebra-as-groupoid-algebra reading, which lives over `𝔽_q` with `q` a
+prime power, while the framework's `q₀ ≈ 1.11` is not — is route C's step 2, open.
+
+**Net effect on the recommendation.** T1 (§7c) moved the cross term to order zero; 7d names the
+order-zero object twice over — as trefoil-minus-chain (A) and as a fixed-point-count difference
+(C) — and both readings agree that the classical part is *topology of the closure*, not
+algebra of the tower. Route C is the one with a positive, exact foothold; route A has an
+identification and a named gap. Neither has yet produced anything about `b₃`, and §7's honest
+statement stands: the many-body term the binding gap needs is not visible in this word pair
+beyond its component count.
+
 ## 8. Literature to download — prioritised, with links and one-line justification
 
 **Priority A — likely to change what can be *proved***
