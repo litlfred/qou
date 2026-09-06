@@ -1,11 +1,11 @@
 ---
 # qou-lq8g
 title: AGENTS.md §4d's authorNotes all-clear was measured against a platform this repo does not use
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-05T09:03:22Z
-updated_at: 2026-09-05T09:04:18Z
+updated_at: 2026-09-06T04:13:27Z
 ---
 
 ## The claim
@@ -87,3 +87,33 @@ its producer, so it is the only one with a downstream consumer rather than being
 author-facing prose.
 
 Found while running the render-QA and validate gates for `qou-bk77`.
+
+
+## DONE 2026-09-06 — option 1 applied (annotate), pin untouched
+
+Owner said "fix agents.md and merge". Applied the annotation, not the pin bump.
+
+§4d now carries a 🛑 correction directly under the "0 dropped" row recording
+that the table measured unpinned `main` (`93e476b`) while this repo validates
+against `.folio-assistant-pin` = `428ca5c` (2026-08-23 09:52), and that the
+upstream grant `affcec4` (2026-08-24 17:14) landed after it. Ancestry verified
+with `git merge-base --is-ancestor` rather than from the dates alone.
+
+Re-measured on current `main` before editing — nothing had changed across the
+497 commits since the finding: pin still `428ca5c`, §4d still carried the
+0-dropped row, validate against the pin still reports **5 `authorNotes` + 1
+`computation`**.
+
+The sharpest point, now written into §4d: **the block's own re-measure
+instruction is what produces the disagreement.** It says to run
+`scripts/setup-folio-assistant.sh` before quoting any figure — and that script
+installs the *pinned* platform, so an agent following it lands on `428ca5c` and
+sees five warnings a corpus-grep tells them were fixed.
+
+The correction also states explicitly that the pin must NOT be "fixed" by
+tracking `main` (rationale: bean `vbase`), and that advancing it past `affcec4`
+is its own PR because 169 commits of checker changes move every count this repo
+quotes.
+
+Not done, deliberately: the pin bump. It is the reviewable decision the pin
+exists to force, and it is not an idle-pass action.
