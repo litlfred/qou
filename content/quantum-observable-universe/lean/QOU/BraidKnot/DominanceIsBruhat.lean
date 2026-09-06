@@ -128,9 +128,41 @@ Composing with `bruhatLe_of_reflLe_An` therefore reaches `BruhatLe`.  So:
   tracked as bean **`qou-3k66`**.  #6894's own "left open" section names it as *"what a
   consumer citing Mathas' Prop 3.7 needs for an `↔`"* — this file is that consumer.
 
-The `iff` below should therefore be **split** into the two implications, so the reachable half
-is not held hostage to the blocked one.  Left as an `iff` for now only because splitting it is
-a statement change and the forward proof is the next commit, not this one.
+The `iff` is therefore **split** below into its two implications, so the reachable half is not
+held hostage to the blocked one.
+
+## The forward proof, decomposed — with one step already free and one trap already found
+
+Mathas' argument: pick `r` minimal with row `r` of `s` differing from row `r` of `t`; let `a`
+be least in row `r` of `s` but not of `t`, `b` least in row `r` of `t` but not of `s`; then
+`a < b`, and `v := t·(a,b)` satisfies `v ▷ t` and `d(v) ▷ d(t)`; either `v = s` or `s ▷ v`,
+and one inducts.
+
+Two things are settled here so the next attempt does not rediscover them:
+
+**FREE.** Swapping two *labels* in a tableau **is** the group action by a transposition, so
+the permutation step is `TableauPerm.dOf_smul` and costs nothing —
+
+```lean
+example (a b) (t) : dOf (Equiv.swap a b • t) = Equiv.swap a b * dOf t := dOf_smul _ _
+```
+
+verified, compiles as written.  The step Mathas spends a paragraph on is one existing lemma.
+
+**🛑 TRAP — the seventh handedness instance on this arc, and the first found before the proof
+rather than after.**  `dOf_smul` produces `Equiv.swap a b * dOf t` — the transposition on the
+**LEFT**.  `BruhatReflection.ReflStep v w := ∃ τ, IsReflection τ ∧ w = v * τ ∧ ℓ v < ℓ w`
+multiplies on the **RIGHT**.  So the corpus's tableau step is **not literally a `ReflStep`**,
+and a proof written assuming it is will fail at the point where `bruhatLe_of_reflLe_An` is
+applied — late, and looking like a hard obstruction.
+
+It is a bridge, not a wall: `ℓ(w) = ℓ(w⁻¹)` and Bruhat is inversion-invariant, so either
+transport through `⁻¹`, or state a left-handed `ReflStep` variant.  **Deciding which is the
+first thing the forward proof must do**, and it is a one-lemma decision, not a redesign.
+
+The remaining genuinely-new work is then only the combinatorics: the minimal differing row,
+the extraction of `a` and `b` with `a < b` from `domRel`, and the induction — for which
+`DominanceWellFounded.domGtOn_wellFounded` already supplies the well-founded measure.
 -/
 
 open Equiv
