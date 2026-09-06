@@ -317,6 +317,14 @@ def main() -> int:
                    "via the hook-length formula, so the (2,1) instances are "
                    "unconditional rather than resting on a classical value the "
                    "corpus had not written down")
+    ok &= chk("and_the_complement_is_constructive",
+              "theorem three_blockEntry_independent_p21" in sdflat, True,
+              note="three trace-factoring functionals at one partition are "
+                   "DEPENDENT; three block-reading ones at (2,1) are "
+                   "INDEPENDENT. The pair says where a derivation must live. "
+                   "It does NOT identify them with volume/surface/Coulomb -- "
+                   "existence is a necessary condition for such a match, not "
+                   "evidence of one")
     ok &= chk("and_the_boundary_case_is_recorded_too",
               "not_two_le_seminormalDim_p11" in sdflat, True,
               note="f^{(1,1)}=1, so at the charge shape the block IS its trace "

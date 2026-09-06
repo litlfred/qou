@@ -53,6 +53,7 @@ from __future__ import annotations
 
 import argparse
 import pathlib
+import re
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -121,6 +122,60 @@ def audit() -> tuple[list[dict], list[dict]]:
     return stale, unbuilt
 
 
+def _rank_targets(limit: int) -> int:
+    """List never-built modules ranked by how many others import them.
+
+    A whole-corpus sweep answers "does it compile" in topological order, which
+    means it spends its first hours on the SHALLOWEST modules -- the ones with
+    fewest dependencies and therefore fewest ways to fail. Measured 2026-09-05
+    (bean `qou-pdgc`): 798 such modules, 798 ok, which says little about the
+    deep tail.
+
+    This ranks the opposite way. A module that has never been built AND is
+    imported by many others is where a defect would both exist undetected and
+    propagate to everything above it. Reverse in-degree is direct, not
+    transitive: it is a cheap proxy, and inflating it with a transitive closure
+    would rank a handful of near-universal utilities above everything else and
+    say nothing useful.
+    """
+    imports: dict[str, list[str]] = {}
+    for src in sorted(SRC_ROOT.rglob("*.lean")):
+        mod = "QOU." + str(src.relative_to(SRC_ROOT))[:-5].replace("/", ".")
+        imports[mod] = re.findall(r"^import\s+(QOU\S*)", src.read_text(), re.M)
+    known = set(imports)
+
+    indeg: dict[str, int] = {m: 0 for m in imports}
+    for deps in imports.values():
+        for d in deps:
+            if d in known:
+                indeg[d] += 1
+
+    def has_olean(m: str) -> bool:
+        return (BUILD / (m[len("QOU."):].replace(".", "/") + ".olean")).exists()
+
+    unbuilt = [m for m in imports if not has_olean(m)]
+    ranked = sorted((m for m in unbuilt if indeg[m] > 0),
+                    key=lambda m: (-indeg[m], m))
+    leaves = len(unbuilt) - len(ranked)
+
+    print(f"never built: {len(unbuilt)} of {len(imports)} module(s); "
+          f"{len(ranked)} are imported by at least one other, {leaves} are leaves")
+    if not ranked:
+        print("  nothing to target -- every never-built module is a leaf.")
+        return 0
+    print()
+    print(f"  {'in-deg':>6}  {'deps':>5}  module")
+    for m in ranked[:limit]:
+        print(f"  {indeg[m]:>6}  {len(imports[m]):>5}  {m}")
+    if len(ranked) > limit:
+        print(f"  ... and {len(ranked) - limit} more")
+    print()
+    print("  Build these before another undirected sweep: a leaf that does not")
+    print("  compile breaks one module, one of these breaks everything above it.")
+    print(f"      bash scripts/lean-direct-cone.sh {ranked[0]} -k -j3")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -128,7 +183,19 @@ def main() -> int:
                     help="exit 1 when any olean is stale")
     ap.add_argument("--top", type=int, default=0,
                     help="show only the N stalest modules")
+    ap.add_argument("--targets", type=int, default=0, metavar="N",
+                    help="instead of the staleness report, list the N "
+                         "never-built modules with the highest reverse "
+                         "in-degree -- where a source defect would both exist "
+                         "undetected and propagate. See _rank_targets")
     args = ap.parse_args()
+
+    if args.targets:
+        if not BUILD.exists():
+            print(f"lean-olean-staleness-audit: no build directory at {BUILD}.")
+            print("  Every module reads as never-built; that is not a finding.")
+            return 2
+        return _rank_targets(args.targets)
 
     if not BUILD.exists():
         print(f"lean-olean-staleness-audit: no build directory at {BUILD}.")

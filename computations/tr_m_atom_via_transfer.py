@@ -46,7 +46,14 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
 
-from reduced_block_kernel import chi_all_lambda_reduced_block
+# Dispatches on the word's own generator sequence: the O(A) fine-Bratteli block
+# transfer when the word is monotone, the general-word Rust kernel when it is
+# not. The atom word became NON-MONOTONE on 2026-09-05 (`7db032fb48`, owner
+# ruling, bean `qou-hu1f`) when `atom_braid_word_3A` switched to the interleaved
+# Borromean intra word, and the transfer correctly refuses those — so calling
+# `chi_all_lambda_reduced_block` directly here raised for every atom.
+# Bean `qou-wdij`.
+from chi_general_word import chi_all_lambda_any  # noqa: E402
 from chi_free_via_lr import chi_free_lr  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
@@ -124,10 +131,10 @@ def tr_m_atom_zn(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
     # q-parameterised core: build the word AT q (q=None → q₀, byte-identical),
     # so q≠q₀ (e.g. q₀⁻¹, simulator N-grids) re-lifts cleanly instead of
     # raising "unrecognised crossing".
-    chi_atom = chi_all_lambda_reduced_block(
+    chi_atom = chi_all_lambda_any(
         atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
                            include_inter=True, q=q), n, q=q)
-    chi_free = chi_all_lambda_reduced_block(
+    chi_free = chi_all_lambda_any(
         atom_braid_word_3A(Z, N, m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
                            include_inter=False, q=q), n, q=q)
     wall = time.time() - t0
@@ -210,7 +217,7 @@ def main() -> int:
         # free χ ≡ chi_free_via_lr cross-check (independent parabolic-LR)
         if n <= 21:
             chf_lr = chi_free_lr(Z, N)
-            chf = chi_all_lambda_reduced_block(atom_braid_word_3A(Z, N, include_inter=False), n)
+            chf = chi_all_lambda_any(atom_braid_word_3A(Z, N, include_inter=False), n)
             free_lr_max = max(free_lr_max,
                               max(abs(chf[l] - chf_lr.get(l, mp.mpf(0))) for l in chf))
 
