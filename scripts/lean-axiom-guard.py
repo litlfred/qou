@@ -1016,6 +1016,13 @@ def main() -> int:
              "feed to `lake build` — the gate does NOT need the QOU root",
     )
     ap.add_argument(
+        "--can-run",
+        action="store_true",
+        help="report whether the gate COULD report, and exit -- 0 ready, 3 blind. "
+             "Pure filesystem + source-hash, no Lean and no oleans read, so it is "
+             "cheap enough for a session-start hook. See the READY/BLIND note below",
+    )
+    ap.add_argument(
         "--selftest",
         action="store_true",
         help="exercise the `#print axioms` parser on every known output shape and exit; "
@@ -1047,6 +1054,70 @@ def main() -> int:
         # Deliberately bare stdout: this is consumed by `lake build $(...)`.
         print(" ".join(sorted({m for m, _, _ in entries})))
         return 0
+
+    # `--can-run` answers the question the gate itself cannot: *is this gate
+    # currently capable of producing a verdict at all?*
+    #
+    # Why it exists (bean qou-1knw, 2026-09-06). This gate exits 2 when any olean
+    # in its cone is missing or stale -- correctly, since a verdict from a stale
+    # set is the axiom status of an old snapshot. But nothing surfaced that it was
+    # exiting 2, so it sat unable to report for ~a month while ~104 of its modules
+    # went stale (two were never built at all). It was not red; it was BLIND, and
+    # blind looks like silence. When it was finally restored it immediately
+    # reported a month-old promotion nobody had seen.
+    #
+    # A gate that can go silently non-functional needs a second gate on its
+    # liveness. This is that: no Lean and no olean contents read, just the same
+    # freshness rule the verdict path uses. Exit 3 rather than 2 so a caller can
+    # distinguish "blind" from "environment broken".
+    #
+    # COST, MEASURED PROPERLY. One `git log -1 --format=%ct -- <src>` per module,
+    # ~289 subprocesses. Warm that is ~0.10s (three runs: 0.139, 0.096, 0.097);
+    # on a cold git cache it was 16.4s, against a 2.48 GiB pack. The cold number
+    # is the one a session-start hook pays, so budget for it.
+    #
+    # A BATCHED WALK WAS TRIED AND REJECTED -- on correctness, not on speed.
+    # Replacing the per-file calls with one `git log --format=%ct --name-only`
+    # walk plus a path -> time index was measured to DISAGREE with the per-file
+    # call on 1 of a 40-module sample: `ParticleInteractions/mass_categorical_descent`
+    # came back 7.8 days newer. `git log -- <path>` applies history simplification
+    # and prunes merges that did not change the file; `--name-only` lists the path
+    # at those merges anyway.
+    #
+    # The disagreement errs conservative -- falsely "stale", never falsely "fresh"
+    # -- so it would not have produced a false verdict. It was still reverted: a
+    # freshness rule that two tools compute differently is precisely the deadlock
+    # bean qou-5v24 was opened for. Until 2026-08-26 this gate compared COMMIT
+    # time while the rebuilder compared MTIME, and building before committing
+    # deadlocked the pair.
+    #
+    # And the speed case for it was not real. The batch timed 0.131s against the
+    # per-file 16.4s -- but the 16.4s was the cold run and the 0.131s a warm one,
+    # so that 125x was cold-vs-warm, not batched-vs-per-file. Warm they are the
+    # same to within noise. Recorded because the wrong comparison is easy to make
+    # again and it was briefly the stated reason for a change to shared code.
+    #
+    # If you want this faster, make a batched walk AGREE (`--full-history`, or a
+    # per-path `git log` for paths the walk saw only at a merge) and prove it on a
+    # sample first. Do not just batch it.
+    if args.can_run:
+        stale = check_freshness(entries)
+        n_decls, n_mods = len(entries), len({m for m, _, _ in entries})
+        if not stale:
+            print(f"axiom-guard: READY -- {n_decls} declarations across {n_mods} "
+                  f"modules, olean set matches source.")
+            return 0
+        print(f"axiom-guard: BLIND -- it will exit 2 and produce NO verdict. "
+              f"{len(stale)} module(s) in its cone are stale or missing.")
+        for pr in sorted(stale)[:5]:
+            print("  " + pr)
+        if len(stale) > 5:
+            print(f"  ... and {len(stale) - 5} more")
+        print("  This is not a passing gate and not a failing one -- it is an "
+              "absent one.")
+        print("  Restore it:  scripts/lean-direct-cone.sh "
+              "$(python3 scripts/lean-axiom-guard.py --print-modules) -k -j3")
+        return 3
 
     stale = check_freshness(entries)
     if stale:
