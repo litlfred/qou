@@ -1,0 +1,404 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2104.07437v4",
+ "source": {
+  "file": "2104.07437v4.pdf",
+  "sha256": "a0f28a6b6161846756f03965b7cd15d17dbd3c3951fa6804139a3e198797fcd7",
+  "bytes": 923369,
+  "pages": 52,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2104.07437",
+   "version": "4",
+   "primary_class": "hep-th",
+   "stamp_date": "29 Jan 2022"
+  },
+  "doi": null,
+  "title": "Peacock patterns and new integer invariants in topological string theory",
+  "authors_raw": "Jie Gua,b and Marcos Mari\u00f1oa",
+  "title_lines": [
+   "Peacock patterns and new integer",
+   "invariants in topological string theory"
+  ],
+  "abstract": "Topological string theory near the conifold point of a Calabi\u2013Yau threefold gives rise to factorially divergent power series which encode the all-genus enumerative information. These series lead to in\ufb01nite towers of singularities in their Borel plane (also known as \u201cpeacock patterns\u201d), and we conjecture that the corresponding Stokes constants are integer invariants of the Calabi\u2013Yau threefold. We calculate these Stokes constants in some toric examples, con\ufb01rming our conjecture and providing in some cases explicit generating functions for the new integer invariants, in the form of q-series. Our calculations in the toric case rely on the TS/ST correspondence, which promotes the asymptotic series near the conifold point to spectral traces of operators, and makes it easier to identify the Stokes data. The resulting mathematical structure turns out to be very similar to the one of complex Chern\u2013Simons theory. In particular, spectral traces correspond to state integral invariants and factorize in holomorphic/anti-holomorphic blocks. arXiv:2104.07437v4 [hep-th] 29 Jan 2022",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20220201023735Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "medialab",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Defining the new invariants",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Perturbative series in topological string theory",
+   "page": 5,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Resurgence and Stokes constants",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Stokes constants in topological string theory",
+   "page": 10,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 11,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The TS/ST correspondence",
+   "page": 11,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Local F0",
+   "page": 15,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "The first resurgent structure",
+   "page": 16,
+   "source": "outline",
+   "number": "3.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Spectral trace and its factorisation",
+   "page": 20,
+   "source": "outline",
+   "number": "3.2.2"
+  },
+  {
+   "level": 3,
+   "title": "Radial asymptotic analysis",
+   "page": 24,
+   "source": "outline",
+   "number": "3.2.3"
+  },
+  {
+   "level": 3,
+   "title": "Relation to q-Painlev\u00e9",
+   "page": 25,
+   "source": "outline",
+   "number": "3.2.4"
+  },
+  {
+   "level": 2,
+   "title": "Local P2",
+   "page": 27,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "The first resurgent structure",
+   "page": 28,
+   "source": "outline",
+   "number": "3.3.1"
+  },
+  {
+   "level": 3,
+   "title": "The second resurgent structure",
+   "page": 30,
+   "source": "outline",
+   "number": "3.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Second spectral trace and its factorisation",
+   "page": 34,
+   "source": "outline",
+   "number": "3.3.3"
+  },
+  {
+   "level": 3,
+   "title": "Radial asymptotic analysis for the second trace",
+   "page": 38,
+   "source": "outline",
+   "number": "3.3.4"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 39,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "A Quantum dilogarithm and q-series",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1 Faddeev's non-compact quantum dilogarithm",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2 Compact quantum dilogarithm",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.3 q-series",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Fast algorithm for the second resurgent structure of local P2",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "C Hunter-Guerrieri algorithm",
+   "page": 45,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 10127,
+   "n_words": 1612
+  },
+  {
+   "id": "sec-001-21-perturbative-series-in-topological-string-the",
+   "number": "2.1",
+   "title": "Perturbative series in topological string theory",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 6385,
+   "n_words": 1109
+  },
+  {
+   "id": "sec-002-22-resurgence-and-stokes-constants",
+   "number": "2.2",
+   "title": "Resurgence and Stokes constants",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 7175,
+   "n_words": 1195
+  },
+  {
+   "id": "sec-003-23-stokes-constants-in-topological-string-theory",
+   "number": "2.3",
+   "title": "Stokes constants in topological string theory",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 390,
+   "n_words": 65
+  },
+  {
+   "id": "sec-004-3-examples",
+   "number": "3",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 4035,
+   "n_words": 657
+  },
+  {
+   "id": "sec-005-31-the-tsst-correspondence",
+   "number": "3.1",
+   "title": "The TS/ST correspondence",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 15,
+   "n_chars": 10425,
+   "n_words": 1761
+  },
+  {
+   "id": "sec-006-32-local-f0",
+   "number": "3.2",
+   "title": "Local F0",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 20,
+   "n_chars": 8465,
+   "n_words": 1547
+  },
+  {
+   "id": "sec-007-322-spectral-trace-and-its-factorisation",
+   "number": "3.2.2",
+   "title": "Spectral trace and its factorisation",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 24,
+   "n_chars": 8375,
+   "n_words": 1463
+  },
+  {
+   "id": "sec-008-323-radial-asymptotic-analysis",
+   "number": "3.2.3",
+   "title": "Radial asymptotic analysis",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 5196,
+   "n_words": 911
+  },
+  {
+   "id": "sec-009-33-local-p2",
+   "number": "3.3",
+   "title": "Local P2",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 5103,
+   "n_words": 938
+  },
+  {
+   "id": "sec-010-332-the-second-resurgent-structure",
+   "number": "3.3.2",
+   "title": "The second resurgent structure",
+   "level": 3,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 5887,
+   "n_words": 1046
+  },
+  {
+   "id": "sec-011-333-second-spectral-trace-and-its-factorisation",
+   "number": "3.3.3",
+   "title": "Second spectral trace and its factorisation",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 38,
+   "n_chars": 8298,
+   "n_words": 1441
+  },
+  {
+   "id": "sec-012-334-radial-asymptotic-analysis-for-the-second-tr",
+   "number": "3.3.4",
+   "title": "Radial asymptotic analysis for the second trace",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 2217,
+   "n_words": 402
+  },
+  {
+   "id": "sec-013-4-conclusions",
+   "number": "4",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 6424,
+   "n_words": 1020
+  },
+  {
+   "id": "sec-014-a-quantum-dilogarithm-and-q-series",
+   "number": null,
+   "title": "A Quantum dilogarithm and q-series",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 2098,
+   "n_words": 409
+  },
+  {
+   "id": "sec-015-a2-compact-quantum-dilogarithm",
+   "number": null,
+   "title": "A.2 Compact quantum dilogarithm",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 501,
+   "n_words": 96
+  },
+  {
+   "id": "sec-016-a3-q-series",
+   "number": null,
+   "title": "A.3 q-series",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 482,
+   "n_words": 77
+  },
+  {
+   "id": "sec-017-b-fast-algorithm-for-the-second-resurgent-struct",
+   "number": null,
+   "title": "B Fast algorithm for the second resurgent structure of local P2",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 45,
+   "n_chars": 2603,
+   "n_words": 516
+  },
+  {
+   "id": "sec-018-c-hunter-guerrieri-algorithm",
+   "number": null,
+   "title": "C Hunter-Guerrieri algorithm",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 52,
+   "n_chars": 19819,
+   "n_words": 3186
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 24,
+  "sections": 19,
+  "chars_total": 114005
+ }
+}

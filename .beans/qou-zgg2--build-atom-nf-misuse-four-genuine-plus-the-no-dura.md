@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T06:26:13Z
-updated_at: 2026-09-05T06:27:17Z
+updated_at: 2026-09-05T07:17:51Z
 ---
 
 AUDITED 2026-09-05 (corpus-grepper subagent, read-only, branch/gating resolved
@@ -131,3 +131,39 @@ and gamma_chain_tower_magic_probe.py:14-26.
    re-derives this sweep and reaches the same wrong conclusion.
 
 NOTHING EDITED. Read-only audit.
+
+
+## ITEM 3.2 SETTLED 2026-09-05 — DISAGREE, up to 23.5x
+
+Probe: computations/probes/nf_categorical_mass_vs_canonical_trace_probe.py
+(mpf end to end; zero float() calls, no math.log/exp, no statistics — verified
+by AST walk, not by eye).
+
+  atom  A  n=3A   categorical_mass    tr_M_atom (canonical)   rel
+  D     2   6     0.4043618156835758  0.5751722439177719     0.297
+  T     3   9     0.8530708654219248  0.2293101021045565     2.720
+  3He   3   9     0.6870733247700335  0.4037670368514282     0.702
+  4He   4  12     1.5846795322199359  0.1609741454424074     8.844
+  5Li   5  15     2.2069761833656816  0.1130027646540323     18.530
+  6Li   6  18     1.1039565449886311  0.0450520270665527     23.504
+
+Worst relative difference 23.504 against a 50-dps floor of 1e-45. These are
+DIFFERENT OBJECTS, not two renderings of one.
+
+THE STRUCTURE IS THE EVIDENCE, and it is why one spot check would not have done.
+The disagreement GROWS with A (0.30, 2.72, 0.70, 8.84, 18.53, 23.50) and the two
+run in OPPOSITE directions: the canonical trace decreases monotonically in A
+(0.575 -> 0.045) while the NF quantity rises to 2.21 at 5Li then falls. That is
+what a collapse losing more as the tower grows looks like.
+
+CONSEQUENCE. compound-shift-nf.witness.json serialises this field uncaveated
+under a name that says "mass". It is not the framework's canonical trace, so any
+downstream reading is about the wrong object. No consumer reads it today, so
+this is a naming-and-provenance defect rather than a live numerical one — the
+field should be renamed or caveated AT THE PRODUCER. NOT DONE HERE.
+
+SCOPE. Agreement would NOT have shown the NF route is full-tower, only that the
+collapse is faithful at these A. Disagreement does NOT condemn the NF route for
+the questions it was built for — this bean's own category (2) lists several
+legitimate uses, two of which are prior art for 30b3568404. The claim tested is
+narrow: one serialised field, A = 2..6.

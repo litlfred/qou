@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T07:37:09Z
-updated_at: 2026-09-04T07:37:47Z
+updated_at: 2026-09-05T08:31:48Z
 ---
 
 
@@ -310,3 +310,106 @@ shape as the session's other misreads — a true statement with no power, mistak
 for evidence.
 
 Probe: `d1b_null_direction_is_mirror_symmetric_probe.py`, 7/7.
+
+
+## (n) 5₂ cusp shapes in bar-parity — MERGED (#6776, superseding #6694), d6b138d8ef
+
+The rung named by #6676. Result is a **negative and that is the substance**:
+5₂ has three ideal tetrahedra with `z₁ = z₃ ≠ z₂` (exactly), both shapes cubic
+with *different* minimal polynomials `z³−2z²+3z−1` (A) and `z³−2z²+z−1` (B),
+both of discriminant −23 and signature (1,1) — one cubic field, two generators.
+The (1,1) independently reproduces what `dt_d1b_trace_field_bar_grading_probe`
+got by Sturm counting.
+
+Both cubics are irreducible over ℚ, so **neither shape has rational `barEven`**.
+4₁'s `barEven ω = 1` IS rational, and that rationality is exactly what makes its
+bar-even coordinate the anchor-stable `−Vol(4₁)` part. **So the 4₁ bar-parity
+story does not transcribe** — 5₂'s split lands in a cubic field, not in ℚ + √−3.
+
+Recorded but NOT claimed: B's bar-even coordinate is literally `Φ₆(z) = z²−z+1`,
+the polynomial whose vanishing defines the 4₁ shape. Two lines from
+`z⁻¹ = (z−1)²`. No interpretation attached.
+
+Guard recorded in the probe (C7): the shapes are (A,B,A) and eq (98)'s radical
+is (a,a,c) — both "two equal, one different". **Not the same fact.** Different
+index sets, no map between them, and the equal pair sits at different positions
+({1,3} vs {1,2}). Matching shape is not matching structure.
+
+**Lean caught a false theorem.** `shape52A_not_shape52B` was stated over a
+general field and is FALSE in characteristic 2, where both cubics collapse to
+`z³+z+1`. It now carries `(2 : R) ≠ 0`, and the collapse is recorded as a
+theorem (`shape52_cubics_agree_in_char_two`), not a footnote.
+
+**The verification had to be redone, and this is the reusable part.** The first
+`lean`-direct exit 0 was against the restored cache, which is MIXED-AGE: this
+file's one dependency olean was dated 2026-08-08 against a source last committed
+2026-08-28 — 20 days stale. Same class as the `descartesWtrace` red that landed
+on main the same day (`d3b96a29f0`). The merge was withheld and the file
+re-verified by rebuilding that dependency from current source into a shadow
+placed first on LEAN_PATH. **The mathematics did not move; the evidence did.**
+
+Note for staleness accounting: this file is NEW, so it is in none of the 305
+changed-since-snapshot modules `qou-56qy` counts. A new file inheriting a stale
+import is invisible to any drift measure keyed on changed sources.
+
+
+## (o) THE RUNG'S OWN QUESTION, ANSWERED — and the answer is a scope-(b) NO
+
+This bean opened as *"source a charge lattice for the 5₂ flavour"*. Measured:
+**it is not sourceable from the held knots-quivers literature, and the exclusion
+is structural rather than a search that came up empty.**
+
+**What the corpus holds.** Two documents:
+`arxiv-1707.02991v1` (KRSS, the correspondence itself) works **one** explicit
+example and it is the trefoil — measured, 8 'trefoil' lines, 0 for 5₂.
+`physrevd108106023` (Singh et al., *Knot-quiver correspondence for double twist
+knots*, PRD 108 106023) gives explicit quiver matrices for a whole family, and
+is **already cited in this corpus** at `conj:stokes-dt-bps-bridge` (beans
+`qou-bk77`, `qou-qu53`, `qou-48dw`).
+
+**Why 5₂ is not in that family.** The paper parametrises double twist knots as
+`K(p,−m)` and gives their Alexander polynomial in ONE parameter (its eq (5)):
+
+    Δ_{K(p,−m)}(x) = 1 − pm·(1−x)²/x
+
+At `x = −1` that is `Δ(−1) = 1 + 4pm`, so **every member has determinant
+≡ 1 (mod 4)**. `det(5₂) = 7 ≡ 3 (mod 4)`. So 5₂ is `K(p,−m)` for **no** positive
+integers p, m.
+
+**Scope (b), invariant cited: the knot determinant mod 4.** The argument
+excludes the entire two-parameter family, not the finitely many members the
+paper tabulates — that is what makes it (b) rather than (a).
+
+**The formula is confirmed by the paper's own knot list**, five for five, from a
+formula fitted to none of them: `K(1,−1)=4₁` pm=1→5 ✓, `K(2,−1)=6₁` pm=2→9 ✓,
+`K(3,−1)=8₁` pm=3→13 ✓, `K(2,−2)=8₃` pm=4→17 ✓, `K(3,−2)=10₃` pm=6→25 ✓. And
+the exclusion predicts the shape of that list: 3₁ (det 3) and 7₂ (det 11) fall
+the same way, which is exactly why the paper's worked twist knots are
+4₁/6₁/8₁ and never the odd-index ones.
+
+**The guard is the more important half.** Both held sources say **in their own
+words** that their quivers are **symmetric** — `physrevd108106023`
+intro:33 *"quivers are symmetric quivers. That is, C(K)…"*, KRSS
+sec-001:26 *"known for symmetric quivers, i.e. such that…"*. GGM eq (98) is
+**antisymmetric**. So a sourced 5₂ quiver would be the **wrong object anyway**:
+a symmetric integral form and an antisymmetric one are not two presentations of
+one thing. Matching them would be the same category error as reading a matrix's
+SIZE as its RANK (#6643, corrected).
+
+**What this does NOT claim:** that no 5₂ quiver exists anywhere. The measured
+scope is the two documents this corpus holds. But C7 stands regardless of what
+turns up, because anything from this literature is symmetric.
+
+Determinants computed as `|det(V + Vᵀ)|` from exact integer Seifert matrices
+(spherogram), determinant by `Fraction` elimination, **calibrated 8/8 against
+independently known values before any conclusion rested on it**. No floats.
+
+Probe: `d1b_52_charge_lattice_source_exclusion_probe.py`, 7/7, all four
+pre-recorded predictions confirmed.
+
+**Consequence for the arc.** The sourcing rung is closed as a negative. The two
+live items it hands on are already-open beans rather than new ones:
+`qou-48dw` (cross-check `aomega_bps_sector_nondegeneracy.py`'s 5-node 4₁ count
+against the now-legible published 5×5 matrix — the OCR of `C_41` reads cleanly
+in sec-005 lines 100-115) and `qou-bk77` (cite the source at the block whose
+non-degeneracy table asserts that count).

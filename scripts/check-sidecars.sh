@@ -136,7 +136,36 @@ for f in "${files[@]}"; do
         # contains `|`.
         body=$(sed -E 's@/-([^-]|-+[^-/])*-+/@@g' "$f" \
                | sed '\#/-#,\#-/#d' | sed 's|--.*||')
-        GEN='(\{R\s*:\s*Type|\[CommRing|\[Field\b|\[GroupWithZero|\(R\s*:=)'
+        # FOURTH false-positive class (2026-09-06). `\(R\s*:=` was in GEN, so a
+        # file was counted as declaring a GENERIC result because it contained the
+        # named-argument syntax `(R := ...)`. That is backwards twice over:
+        #
+        #  * `(R := ℝ)` is a USE site, not a binder. It is the exact spelling
+        #    AGENTS.md §7c PRESCRIBES for the archimedean sibling -- "consumes the
+        #    generic result via a `(R := ℝ)` instantiation" -- so a correctly-split
+        #    file was told "§7c MIXED -> split into two files per §7c", which is
+        #    the one edit that cannot help: there is nothing left to split.
+        #  * `R` is just a parameter NAME. Of the 31 occurrences measured, 9 bind
+        #    it to something that is not a ring at all -- a radius in
+        #    `IdealTetEqChimney`/`BorelCaratheodory`/`C1ConnectionPoles`
+        #    (`circleIntegrable_sub_zpow_iff (R := ρ)`), `ℂ` in
+        #    `RootsOfUnityProduct`, and a WORD in UGB's `HeckeCompletion`.
+        #
+        # A generic declaration is announced by a BINDER, and all four binder
+        # forms stay in GEN. Safety argument, matching the three fixes above: a
+        # genuine §7c violation is a file that DECLARES something generic
+        # alongside archimedean content, and declaring requires a binder, so the
+        # narrowing cannot hide one.
+        #
+        # MEASURED before landing, over the 3666 non-`.lake` `.lean` under
+        # content/ (script kept at
+        # docs/audits/2026-09-06-check-sidecars-r-assign-false-positive.md):
+        # 19 files have hasGen set SOLELY by `(R :=`; 15 change verdict, every
+        # one MIXED(action) -> R-JUSTIFIED; and 0 of the 31 occurrences sit on a
+        # declaration line. Zero false clears. Note check-sidecars scans only
+        # CHANGED files, so these were never 15 live flags -- they were 15 files
+        # primed to mis-fire the moment anyone edited one. Found by editing one.
+        GEN='(\{R\s*:\s*Type|\[CommRing|\[Field\b|\[GroupWithZero)'
         RTYPE='(:\s*ℝ|\(ℝ\)|→\s*ℝ|ℝ\s*\))'      # ℝ used as a type
         # Archimedean justification, in two strengths.
         #

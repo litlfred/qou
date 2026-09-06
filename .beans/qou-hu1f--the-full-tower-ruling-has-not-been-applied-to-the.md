@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T20:54:56Z
-updated_at: 2026-09-05T05:59:38Z
+updated_at: 2026-09-06T03:11:53Z
 ---
 
 Audit: [`2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`](../docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md)
@@ -488,10 +488,83 @@ may call it for a crossing count, at a size where the core is degenerate, or pas
 diffing — which is the job, and which is why the number to act on is smaller than
 56 and cannot be got at by grep.
 
-- [ ] Re-run the 56 and diff. Mechanical but not cheap; worth doing as one
-      tracked pass rather than opportunistically, because a half-regenerated set
-      is harder to reason about than an un-regenerated one — the same lesson the
-      `q₀` refresh learned about per-block completeness.
+### ✅ THE PASS IS DONE (2026-09-05, owner-approved "go")
+
+53 producers re-run, one run each, committed witness as the baseline.
+
+    CHANGED (raw)   20      SAME  13      ERROR  16      TIMEOUT  4
+
+**But 20 is not 20.** A binary changed/unchanged test conflates a 1.8× ordering
+shift with library last-digit churn, so the raw verdict needed the same
+discrimination guard everything else in this bean has needed. Two passes:
+
+    relative magnitude > 1e-9        20 -> 11   (drops 9 metadata/mpmath churn,
+                                                 worst case rel 5e-48)
+    AND on a non-negligible value    11 ->  9   (drops 2 whose only changes are
+                                                 residuals at 1e-17 and 1e-51,
+                                                 i.e. numerical zeros)
+
+**9 witnesses were genuinely stale.** The separation is not marginal: 47 orders
+of magnitude between the noise ceiling and the material floor, relative shifts of
+0.61–1.9 on values from 1e0 to 7.6e3. `h6-deuteron-free-word-chi-lambda` shows it
+cleanly — `tr_M_bound` 0.5752 → 0.1520 and `tr_M_free` 1.1317 → 0.2990, a
+consistent **3.8×**, exactly the intra-ordering factor measured on this bean.
+
+Only the 9 are committed. The 11 non-material regenerations were reverted: each
+would have traded a meaningless digit for a **degraded environment record** (this
+container has no `pyhecke_native`, so 6 of the set drop it), and that is the wrong
+side of the trade when no number moves.
+
+### THE PAYOFF: the character-closure block is now correct on all three axes
+
+`atomic-tr-m-mpfr-50dps.witness.json` was one of the 9. Its regeneration supplied
+the values that block had been flagged for:
+
+    atom       grouped (superseded)   borromean (the ruling)
+    proton     1.14575978232          0.62932842249
+    neutron    0.98774375682          0.47513351767
+    deuteron   0.57517232973          0.15196834396
+    tritium    0.22931014615          0.02914404235
+    3He        0.40376713691          0.05859625835
+
+A factor of **1.8 to 7.9, growing with A**. The block now carries convention D,
+the borromean ordering, and the muon pin — all three from the producer.
+
+### THE RULING BREAKS PRODUCERS, NOT JUST NUMBERS
+
+The 16 errors are the finding this pass did not expect. They split three ways:
+
+**(a) Genuinely broken BY the ruling — 6.** These are not stale numbers, they are
+producers whose invariants the alternating word violates:
+
+    classical_floor_derivation_probe      ValueError: non-monotone word: gen 0 after 1
+    derived_chi_catalogue_build           duplicate catalogue cell ('borromean', (3,), ...)
+    probe_canonical_braid_interface_...   Unrecognised interface d=-0.104458...
+    he4_magnus_omega2_sign_sparse_probe   GATE FAIL: sign disagrees with triton
+    qbeta_level_k_binding_operator_probe  KeyError: (3, 2, 1)
+    qbeta_mixed_chain_closed_form_probe   KeyError: 'tr_M_at_q0'
+
+`classical_floor_derivation_probe` is the clearest: it **asserts the word is
+monotone in the generator index**, which the grouped order satisfied and the
+alternating order cannot. That assertion encodes the superseded convention.
+
+**(b) Container limitations — 6.** 4 need `pyhecke_native` (absent here, and the
+build I made had an incompatible API); 2 fail importing `codata_constants`.
+
+**(c) Witness-gate exits — 4.** These producers ran and emitted; the non-zero exit
+is a raw-float64 or environment-record gate, not a computation failure. Their
+content was reverted unread by the harness and is still unknown.
+
+- [x] Re-run and diff — done, 9 regenerated.
+- [ ] **Fix the 6 producers the ruling breaks.** This is the real remaining work
+      and it is not regeneration: each encodes an assumption the ruling
+      invalidates, and `classical_floor_derivation_probe`'s monotonicity
+      assertion has to be decided, not edited away.
+- [ ] Re-run the 4 gate-exit producers tolerating the gate, to learn whether
+      their numbers move.
+- [ ] The 4 timeouts (`atomic_tr_m_helium4`, `binding_combiner_markov_peel_
+      fallback`, `d_frame_interface_twelve_derivation_probe`,
+      `triton_magnus_omega2_sign_probe`) need a longer budget than 240 s.
 - [ ] Decide whether `intra_order` should have defaulted at all. A
       behaviour-changing default across 339 callers is invisible by construction;
       an explicit-argument-required signature would have surfaced all 332 at

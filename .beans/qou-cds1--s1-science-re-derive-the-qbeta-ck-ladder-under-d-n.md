@@ -7225,3 +7225,206 @@ move the 10.5 % conclusion, and reconciling it belongs with that probe's owner.
 **(a).** Convention C. Not a claim that the swing gate is wrong — its cancellation
 derivation is sound and its use as the primary filter stands. Only that its
 tolerance should be **±0.0052**, not zero.
+
+---
+
+## Route 5, projection: the mechanism is PARTIAL, and it retracts my own #6875 (2026-09-05)
+
+Probe: `computations/qbeta/qbeta_fibre_projection_and_rou_sublocus_probe.py` (5/5).
+Audit: `docs/audits/2026-09-05-cds1-projection-and-rou-sublocus.md`.
+
+**Retraction first.** #6875 derived `N = 5` (modulus kept) / `N = 4` (analytic
+continuation) from the reality of `Q_A/m_e = |q²−2q−1|(q+1)/(2q³)` on `|q| = 1`.
+**That form holds only on the real axis** — it follows from the block's own
+`|Δ(net)|·E_0` only via `|q²−1| = (q−1)(q+1)`, which needs `q` real `> 1`.
+Measured gap: `0` at `q = 1.1`, **2.407** at `q = e^{i/3}`, **1.186** at
+`q = e^{iπ/3}`. Both `N` values are withdrawn.
+
+**The mechanism was already in the corpus.** `neutron-qvalue-symbolic` writes
+`𝔔_β = |Δ(net)| · E_0` — the projection *is* the modulus, and it is applied to
+`Δ(net)` alone, with `E_0 = m_e/(q(q−1))` unprojected. That partiality is the
+entire source of the reality condition:
+
+    𝔔_β real on |q|=1  ⟺  Im[q²−q] = sin φ (2 cos φ − 1) = 0
+                       ⟺  φ ∈ {π/3, π, 5π/3}    — the SIXTH roots
+
+A **full** projection `|Δ(net)·E_0|` is real for every `q` and selects nothing.
+**So the projection question and the N question are one question.** Taking the
+full projection *because* it admits the required phase would be fitting the
+mechanism to the target — named, not taken.
+
+**The root-of-unity sublocus is EMPTY**, on grounds independent of `θ`:
+`π/3` and `5π/3` are primitive 6th roots, where `q⁶−1 = (q²−1)(q⁴+q²+1)` forces
+`q⁴+q²+1 = 0` and so Hoefsmit `b² = (q⁴+q²+1)/(q²+1)² = 0` — `V_{(2,1)}`
+decouples; `φ = π` gives `h = q − 1/q = 0`. Verified numerically (4.139e-41 at
+40 dps) and exactly (`expand_complex` → 0); `sympy.simplify` alone reports a
+**false** non-degeneracy here.
+
+`θ` is not the binding constraint: it sits 18.496× below `π/3`, but the
+emptiness is established before `θ` is mentioned.
+
+**Scope (a)** for the reality arithmetic; the degeneracy exclusion is exact.
+**Route 5 is not closed** — `|q| = 1` is much more than its roots of unity, and
+the full projection stays structurally available at the price of selecting
+nothing.
+
+### Strengthening, same day: the partial projection kills the WHOLE locus
+
+Probe: `computations/qbeta/qbeta_fibre_partial_projection_kills_whole_locus_probe.py` (5/5).
+
+The scope line I wrote above — *"`|q| = 1` is a great deal more than its roots
+of unity"* — is true about the locus and **irrelevant to the argument**. The
+reality condition `sinφ(2cosφ−1) = 0` is imposed at **every** point of `|q| = 1`,
+and its solution set on `[0,2π)` is exactly `{0, π/3, π, 5π/3}` — four points,
+all roots of unity. The non-rational phases were never open; I described them as
+open. Verified by `solveset` and by an independent 20,000-point scan.
+
+All four degenerate, and `φ = 0` twice (`h = 0` *and* the `E_0` pole — I had
+checked only the pole). So:
+
+    PARTIAL  ->  reality leaves 4 points, all degenerate  ==> whole locus excluded
+    FULL     ->  no condition at all                      ==> nothing selected
+
+**Route 5's N-selection mechanism predicts nothing under either reading.**
+Scope (a) on the MECHANISM; silent on route 5's underlying fibre-Habiro idea.
+
+**The load-bearing assumption, now isolated:** that `𝔔_β` must be real *at the
+fibre evaluation point* rather than after the archimedean functor. `AGENTS.md`'s
+fibre-vs-observable banner says `Im(q)` is unconstrained at fibre level — so this
+closes the mechanism as posed and reopens whether reality belonged there at all.
+That is the next question, and it is a framework question rather than a
+measurement.
+
+Method trap worth keeping: the first scan reported a spurious **fifth** zero
+because dedup used linear distance and `φ = 0` / `φ = 2π` are the same point.
+On a circle use `min(d, 2π−d)`. The false reading was a spurious *finding*
+("solveset missed a branch"), not a spurious failure.
+
+### 🛑 RETRACTION — owner ruling 2026-09-06: "Does not need to be real in fiber."
+
+The reality premise **both** sections above inherit from #6875 is **rejected**.
+The strengthening section flagged it as load-bearing and asked the question; the
+owner has resolved it against the premise.
+
+**Withdrawn:**
+- "reality selects N on the fibre locus" (#6875, both readings)
+- "the root-of-unity sublocus is EMPTY *because reality admits only 3 phases*"
+- "the partial projection excludes the ENTIRE fibre locus" — the exclusion ran
+  entirely through the rejected premise
+
+Reality of `𝔔_β` is an **archimedean** constraint on the evaluation at `q₀`
+(`lusztig_q_0_imaginary_part_zero`; a `complex-substrate-interpretation` sidecar
+note already flags that fibre-vs-observable `Im(q)` is exactly the AGENTS.md
+2026-06-01 distinction). Imposing it on `|q| = 1` was the level-conflation that
+banner warns against — **I did it twice**, in two consecutive commits, having
+quoted the banner in the second one.
+
+**Survives, unchanged** — every measurement; none depended on the premise:
+- written `Q_A` is real-axis-only (gap 2.407 at `e^{i/3}`); #6875 stays withdrawn
+- the block's projection is the modulus on `Δ(net)` and is partial — structural
+- `Im[q²−q] = sinφ(2cosφ−1)`, zeros exactly `{0, π/3, π, 5π/3}`, no fifth
+- the four degeneracies (`b²=0`, `h=0`, the double one at `q=1`) — structural,
+  not reality-based
+
+**What the ruling changes is their WEIGHT, not their truth.** Under the rejected
+premise those four points were the entire admissible set, so excluding them
+closed the locus. Under the ruling they are four excluded points out of a
+continuum: the same measurement goes from decisive to nearly vacuous. That
+inversion is the substantive consequence.
+
+**Route 5's actual state:** the fibre locus `|q| = 1` is INTACT less four
+degenerate points; nothing selects N there; #6755's `1/111` is neither selected
+nor excluded.
+
+**The open question, now cleanly separated from the archimedean one it was
+entangled with:** if not reality, what constrains the fibre element? That needs
+a *fibre-level structural* condition — Habiro-integrality, or an `H_n(q)`
+representation-theoretic one — not an evaluation condition.
+
+Nothing was wired at any stage. No `c_k` moved. Cost: three commits of analysis,
+all of whose measurements remain reusable.
+
+### Correcting my own hand-off, one message later: the fibre condition is NOT missing
+
+I closed the retraction by saying the open question "needs a fibre-level
+structural condition — Habiro-integrality, or an `H_n(q)` representation-
+theoretic one." **The corpus already has it, stated for exactly this object.**
+That is an over-claim of precisely the kind the corpus-grep checklist exists to
+catch, made in the same message as a retraction. 1133 files mention Habiro.
+
+`prop:habiro-precision-ladder-equivalence` (`mass-theory/`) states:
+
+> the Markov trace `tr_M(T_w, q)` of any braid word admits a **finite** Habiro
+> expansion with **integer** coefficients, and specifically
+> `tr_M(β_n) − tr_M(β_p) = Σ_{m=0}^{M} a_m(u)·(u;u)_m` with `a_m ∈ Z[u]`,
+> `M < ∞`
+
+— the neutron–proton braid-word difference, i.e. the Q_β object itself. Its Lean
+carries `habiro_terminates`, `habiro_integral`, `habiro_evaluation_determined`,
+**1 sorry**, and — the part that matters — the bridge to the ladder is
+`precision_ladder_is_habiro_taylor`, **conditional on the unproved class
+`QbetaHabiroTaylorBridgeClass`** (§3b-cond). So the condition is stated and
+partly formalized; what is open is the *bridge*, not the condition.
+
+### A CANDIDATE this suggests — not a finding, and I have not tested it
+
+Habiro integrality gives an N–truncation link for free, with no reality anywhere:
+at a primitive N-th root of unity `ζ`, `(q;q)_m` **vanishes for `m ≥ N`**, so a
+Habiro expansion evaluated at `ζ` truncates to `m ≤ N−1` automatically. That is a
+fibre-level mechanism relating a root of unity to a truncation order — the exact
+shape route 5's "what selects N" question wants, arriving structurally rather
+than from an evaluation condition.
+
+**The gap that stops this being a result:** the ladder's `N` (truncation order in
+`u^k`) and the Habiro index `m` (Pochhammer degree) are **different indices**.
+Identifying them is precisely what `QbetaHabiroTaylorBridgeClass` would have to
+supply, and that class is unproved. So: promising shape, unproved bridge, and
+anyone picking it up should start at that class rather than at the arithmetic.
+
+Recorded as a candidate so the next reader inherits both the shape and the gap.
+No compute run on it; nothing wired.
+
+### Working `QbetaHabiroTaylorBridgeClass`: it is honestly open, and NOT a Lean target
+
+Probe: `computations/qbeta/qbeta_habiro_bridge_class_is_not_a_lean_target_probe.py` (4/4).
+
+**My hypothesis was wrong, and that is the first finding.** Both sides are
+`opaque ... := fun _ => 0`, hence *semantically equal*; a leaky seal would make
+the class trivially inhabited and every downstream conditional vacuous. I
+expected a leak. Six tactics under `lean`-direct (`-DautoImplicit=false -s
+65536`, real import cone; the file itself checks 0 errors):
+
+    rfl / unfold / simp / decide / norm_num / aesop   -> 6/6 exit 1
+
+So the 2026-09-04 `axiom` -> `opaque` conversion is **sound**: it dropped the
+axiom-ledger entry without weakening the seal.
+
+**But the class admits no deductive attack.** `precisionLadderCoeff` and
+`habiroTaylorCoeff` carry **no defining properties** — nothing in the file or its
+cone constrains either — so there is no premise from which `ck_eq_taylor` could
+be derived. It is a **named hole**, not a hypothesis-carrying conditional. Its
+companion `precision_ladder_is_habiro_taylor := h.ck_eq_taylor k` is the
+self-assuming projection §3b-cond item 5 names (honestly labelled by its own
+docstring — a labelling device, not a concealed claim).
+
+**So "work the bridge class" resolves to: progress is COMPUTATIONAL, not
+deductive** — one must first *define* the two sequences. And the corpus already
+ran that computation: `qbeta-delta-tr-vs-formA` finds the leading Taylor orders
+differ, `−2ε` vs `−5/4 ε`.
+
+**Two things I checked rather than assumed:**
+
+1. **That negative is unaffected by my #6889.** The test expands in `ε = q−1`
+   on the **real axis**, where #6889 measured the simplified form's gap as 0 —
+   and the witness does not even use the simplified form, recording
+   `Abs((q²−1)(q(q−2)−1))/(2q³(q−1))`, the faithful `|Δ(net)|·E_0` #6889 says to
+   use. Two independent reasons it stands.
+2. **The negative's inference is sound**, which nobody had verified. "Leading
+   orders differ ⇒ structurally distinct" would be weak if the series were
+   merely *proportional*. Term-by-term `dtr/dnet` = `5/8, −1/8, 1/48, 5/112,
+   17/256` — not constant, and it **changes sign at k=2**. A normalisation would
+   have given a constant ratio.
+
+**Scope (a).** Does not close the bridge and does not claim the `c_k` cannot be
+the Habiro Taylor coefficients — only that the Form-A slot route is refuted and
+the class as written admits no deductive attack. Nothing wired; no `c_k` moved.
