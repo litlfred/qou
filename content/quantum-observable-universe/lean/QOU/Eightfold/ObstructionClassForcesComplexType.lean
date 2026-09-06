@@ -35,10 +35,37 @@ variety in a non-trivial class", i.e. to the ideal being proper.
 
 ## Scope
 
-This proves an implication about any structure satisfying the two hypotheses; it does not
-prove the hypotheses, which are the cited topological facts, and it says nothing about
-whether such a representation exists for a given manifold.  Non-emptiness is a separate,
-computational question.
+This proves an implication about any structure satisfying the two hypotheses, and says
+nothing about whether such a representation exists for a given manifold.  Non-emptiness
+is a separate, computational question.
+
+**Both hypotheses are now DERIVED, not cited (2026-09-06).**  This section previously
+called them "the cited topological facts"; they are two-line computations from the
+definition of the cocycle, and neither needs a topological input.
+
+Write `c(g,h)` for the cocycle of a lift `s`, i.e. `s g * s h * (s (g*h))⁻¹`, central by
+construction.
+
+* `obs_dual`.  Inverse-transpose `φ : A ↦ ᵗA⁻¹` is a group HOMOMORPHISM, not an
+  anti-homomorphism: `(AB)⁻ᵀ = ᵗ(B⁻¹A⁻¹) = A⁻ᵀB⁻ᵀ`.  So the dual lift `φ ∘ s` has
+  cocycle `φ(c(g,h))`, and `φ` inverts the centre (`ζ•1 ↦ ζ⁻¹•1`), giving `c⁻¹`.
+* `obs_congr`.  A conjugate lift `a * s · * a⁻¹` has cocycle `a * c(g,h) * a⁻¹`, which
+  equals `c(g,h)` because `c` is central.
+
+The `obs_dual` step is additionally verified in the RELATIVE setting the Ptolemy
+obstruction actually lives in — `H²(M, ∂M; ℤ/3)`, not `H²(Γ; μ₃)`.  Negating the cocycle
+acts on the Ptolemy variety exactly as `u ↦ u²`, the nontrivial automorphism of `μ₃`:
+`P^c` and `P^{-c}` differ in 10 of 33 equations, and substituting `u ↦ u²` throughout
+`P^c` reproduces `P^{-c}` as polynomial sets, on classes 1, 2 and 3
+(`computations/ptolemy/ptolemy_duality_galois_check.py`, 3/3).  Corroborated
+independently by snappy, whose enumeration quotients `H²` by the units of `ℤ/N` —
+at `N = 3` the units are `{1,2}` and `2 = -1`, which is why 27 classes present as 14.
+
+**NOT YET FORMALISED.**  The class is still carried as hypotheses here because turning
+the two derivations into Lean needs an explicit cocycle model over Mathlib's group theory,
+and the container that derived them could not restore a Mathlib cache to check it.  So
+this is a statement about what is now PROVED ON PAPER, not about what Lean has verified —
+the declarations below are unchanged and still assume the class.
 
 Empirically consistent: for `4₁` at `n = 3`, obstruction class 0 has 6 solutions of which
 4 are self-dual, while the non-trivial class has 2 solutions and **none** are self-dual.
