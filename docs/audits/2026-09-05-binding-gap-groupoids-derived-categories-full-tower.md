@@ -1031,6 +1031,56 @@ the flavour/volume arc. The honest summary is unchanged from §7: the many-body 
 needs is not visible in the `n = 4` word pair beyond its component count, and the one route that
 could produce a triple-additive term runs through the framework's un-derived Step 2.
 
+## 7g. `qou-5vhf` step 2 — component count decides the q-adic order; the Brunnian class is route B's live object (2026-09-06)
+
+Bean `qou-0fxk`; probe `computations/probes/component_count_decides_q_adic_order_probe.py`, 10/10, witness
+`proton`; Lean `QOU/Mass/CrossTermOrderZeroComponentCount.lean`, sorry-free.
+
+**The joining statement.** At `q = 1` the Markov trace on `ℚSₙ` is the component-count trace
+`2^{c(w)−n}` (verified on every element of `S₃` and `S₄` in the spin-½ representation), so the
+order-zero part of *any* cross term `tr(w) − tr(w′)` is `2^{c(w)−n} − 2^{c(w′)−n}`, and it vanishes
+**iff** the two closures have the same number of components (`componentTrace_eq_iff`; checked on all
+`24 × 24` pairs of `S₄`). Hence two classes of many-body cross term:
+
+| class | example | order at `q = 1` | at the proton pin |
+|---|---|---|---|
+| component-**changing** | `n = 4` trefoil (`c = 1`) vs Hopf-chain (`c = 3`) | 0, classical: `Δ(1) = (2 − 8)/16 = −3/8` | `0.895` nats, `≈ 3.75 MeV` at `E₀` |
+| component-**preserving** | the corpus's Brunnian word `w₃ = [A₀₁, A₁₂]` vs the 3-unlink (both `c = 3`) | 4: `1 − τ_Borr = h⁴(3+h²)/(h²+4)` | `1.44 × 10⁻³`, `≈ 6.0 × 10⁻³ MeV` |
+
+The probe also shows `(σ₀σ₁⁻¹)³` has the same trace as `w₃` (both close to the Borromean rings), and
+the Lean bounds the deficit by `h⁴` outright (`one_sub_tauBorromean_le`, strict for `h ≠ 0`).
+
+**What this settles.** Route B's "all orders in `q`" object, dead for the `n = 4` word (§7c), is
+alive exactly for the Brunnian class — which is the class the corpus's own 3-body operator
+(`BorromeanThreeBodyCluster.lean`) already lives in. And the answer to `qou-5vhf`'s carrier question
+"which word class is a nucleus" is now two-sided: the framework's 3-nucleon operator *is* an
+interleaved (commutator) word class, of the component-preserving kind, and such a class has a cross
+term that is intrinsically `O(h⁴)`.
+
+**What it does to the magnitude problem, as a diagnostic at the comparison boundary (nothing
+fitted).** With `E₀ = m_e/(q₀(q₀−1)) = 4.186 MeV` (the corpus's scale) the two classes bracket the
+Δ_λ audit's quoted target `μ₃ = 0.4708 MeV`: the Brunnian term is `78×` too small, the classical
+one `8×` too large. The missing 3-body magnitude sits between the classes, and neither supplies it
+as it stands. Going up the tower does not help the Brunnian side: the Milnor parity law already on
+`main` (`MilnorParitySignLaw`, leading order `2(A−1)`) says the Brunnian order *rises* with `A`. A
+term of the needed size would have to be classical — a component-changing link topology per
+nucleus, which is the census route `qou-5vhf` closed as a fit — or come from outside this trace
+altogether, which is where §7e left route D2.
+
+**On the resurgent / alien-calculus proposal, in this light.** Every quantity in this arc is a
+rational function of `q` at fixed strand number: the `ℏ`-series of the `n = 4` cross term converges
+with radius `√2` (§7c) and the Brunnian deficit is a rational function of `h`. There is nothing
+resurgent to resum at finite `n`, and no Stokes phenomenon: alien derivations act on Borel-plane
+singularities of *divergent* series, and none arise until the tower limit. The corpus's
+Gevrey-`1/2` results live in `QOU/AlgebraicSubstrate/{KernelGrowthBound,DominationTowers,
+PolyhedralDomination}.lean` and concern the substrate kernel, not the finite-`n` traces. Together
+with C1 (§7e) — the non-abelian content of Yekutieli's multiplicative integral is one-dimensional,
+its two-dimensional remainder abelian — the dialog's proposed "2-dimensional alien calculus" would
+be an abelian, inert object, the same shape as D2's `∫γ`. The honest statement is the one the
+2026-09-05 dialog assessment already made: the 1-dimensional half is Schlesinger, the 2-dimensional
+half has no crossed module, and the resurgent question is a question about the `A → ∞` tower,
+where the relevant series has not been written down.
+
 ## 8. Literature to download — prioritised, with links and one-line justification
 
 **Priority A — likely to change what can be *proved***
