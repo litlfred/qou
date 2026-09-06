@@ -162,4 +162,39 @@ theorem bruhatLe_simple_mul_simple_mul {u w : W} (i : B) (h : BruhatLe cs u w)
   simpa [mul_inv_rev, cs.inv_simple] using h2
 
 
+/-- **Length additivity puts the left factor below the product**: if
+`ℓ(u·w) = ℓ(u) + ℓ(w)` then `u ≤ u·w`.
+
+Concatenating reduced words for `u` and `w` gives a word of length `ℓ(u) + ℓ(w) = ℓ(u·w)`,
+so it is reduced for `u·w`, and `u`'s own word is a prefix — hence a subword.
+
+This is the **coset-minimality bridge**, and it is what makes the row-standard
+representative usable in Mathas' Prop. 3.7.  A tableau's `d` is a *distinguished* (minimal
+length) coset representative, and `CoxeterReflectionCocycle.length_minRep_mul_wordProd'` —
+the unconditional Bourbaki lifting lemma — supplies exactly this hypothesis for it.  So a
+step that leaves a tableau's rows unsorted is not lost: the sorted representative sits
+below the raw one in Bruhat, and transitivity closes the gap.
+
+Measured before it was proved: `d(rowsort(τ·t)) ≤ d(τ·t)` on **every** transposition of
+every row-standard tableau of every partition of `n ≤ 6` — 2 134 710/2 134 710 at `n = 6`
+([`dipper_james_forward_step_probe.py`](../../../../../computations/hecke/dipper_james_forward_step_probe.py)). -/
+theorem bruhatLe_of_length_add {u w : W}
+    (h : cs.length (u * w) = cs.length u + cs.length w) : BruhatLe cs u (u * w) := by
+  obtain ⟨ω, hred, hw⟩ := cs.exists_reduced_word' u
+  obtain ⟨ω', hred', hw'⟩ := cs.exists_reduced_word' w
+  have hu : cs.length u = ω.length := by rw [hw]; exact hred
+  have hv : cs.length w = ω'.length := by rw [hw']; exact hred'
+  refine ⟨ω ++ ω', ω, ?_, ?_, List.sublist_append_left ω ω', hw.symm⟩
+  · show cs.length (cs.wordProd (ω ++ ω')) = (ω ++ ω').length
+    rw [cs.wordProd_append, ← hw, ← hw', h, hu, hv, List.length_append]
+  · rw [cs.wordProd_append, ← hw, ← hw']
+
+/-- The right-handed mirror of `bruhatLe_of_length_add`, by transport through `⁻¹`. -/
+theorem bruhatLe_of_length_add_right {u w : W}
+    (h : cs.length (w * u) = cs.length w + cs.length u) : BruhatLe cs u (w * u) := by
+  have h' : cs.length (u⁻¹ * w⁻¹) = cs.length u⁻¹ + cs.length w⁻¹ := by
+    rw [← mul_inv_rev, cs.length_inv, cs.length_inv, cs.length_inv, h, Nat.add_comm]
+  simpa using bruhatLe_inv cs (bruhatLe_of_length_add cs h')
+
+
 end QOU.Machinery.CoxeterBruhat

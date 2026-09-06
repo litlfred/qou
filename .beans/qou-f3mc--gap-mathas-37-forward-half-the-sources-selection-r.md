@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T15:03:40Z
-updated_at: 2026-09-06T15:04:39Z
+updated_at: 2026-09-06T15:34:50Z
 ---
 
 ## What is open
@@ -95,3 +95,47 @@ send a label BELOW the row `s` puts it in, because dominance is a global count c
 identifies that axis with Bruhat, which is the order Mathas' Corollary 3.8 -- the one 3.14's
 induction closes on -- actually speaks about.  The converse half is separately blocked on
 bean `qou-3k66` (`BruhatLe -> ReflLe`).
+
+
+## UPDATE — one of the two obstructions is gone, and it is proved away
+
+The `raw_rowstd` / `one_step` clauses (91.2 %) **dissolve**.  When the raw swap leaves a
+row unsorted, `d(v)` for the row-standard representative `v` is the DISTINGUISHED
+(minimal-length) representative of the coset `S_lambda . d((a,b).t)`, so `l` is additive
+across that factorisation and a reduced word for `d(v)` is a PREFIX of one for
+`d((a,b).t)` -- hence a subword, hence `d(v) <= d((a,b).t) <= d(t)`.
+
+Measured first, over EVERY transposition of every row-standard tableau rather than the
+chosen one: **2134710/2134710** at n = 6 (`coset_bound` in the probe).
+
+Then proved, sorry-free: `CoxeterBruhat.bruhatLe_of_length_add` and
+`bruhatLe_of_length_add_right`, both `[propext, Classical.choice, Quot.sound]`.  The
+corpus's own unconditional Bourbaki lifting lemma
+`CoxeterReflectionCocycle.length_minRep_mul_wordProd'` supplies the hypothesis for a
+tableau's `d`.
+
+**So `s |>= v` is now the ONE remaining failing clause.**  Under the relaxed valid set
+(`valid_pairs_relaxed`, which drops row-standardness of the raw swap) Mathas' rule scores
+exactly the `s_dom_v` count, 112096/142314.
+
+## Seven rules measured, relaxed column -- do not re-try
+
+    Mathas     112096   78.8%   = the s_dom_v count exactly
+    lowrow     107740   75.7%
+    deep       109684   77.1%
+    a_bmin     113374   79.7%
+    minlift    118814   83.5%
+    lift1b     123121   86.5%
+    bmax_a     124391   87.4%   best measured
+
+Two NEW negative hints beyond the b-side one already recorded, both from the two new rules:
+
+* `minlift` (lift the least misplaced label as HIGH as it can go) OVERSHOOTS;
+* `lift1b` (lift it exactly ONE row) UNDERSHOOTS;
+* and there are pairs whose only valid steps DO NOT MOVE THE LEAST MISPLACED LABEL AT ALL
+  -- worked case, lambda = (2,1,1), s = ((1,2),(4),(3)), t = ((1,4),(3),(2)): the least
+  misplaced label is 2, and the valid step swaps 3 and 4, leaving 2 where it is.
+
+So no rule of the form "identify the offending label, move it" can be right.  A correct
+rule has to be a statement about the count vectors, not about a distinguished label.  That
+is also an argument for next-step (3) below -- the rank/count criterion -- over (1).
