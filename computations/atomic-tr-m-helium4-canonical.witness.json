@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T03:43:32.805972+00:00",
-  "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
+  "computedAt": "2026-09-06T11:13:07.813770+00:00",
+  "commitSha": "1f127a1418e728ec762fc4f0fa95ac2488907ae9",
   "assertions": [
     {
       "name": "interface_ratio_matches_convention_D_colour_weighted",
@@ -14,10 +14,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 296,
+  "durationMs": 274,
   "computation": "atomic-tr-m-helium4-canonical",
   "scriptFile": "atomic_tr_m_helium4_canonical.py",
-  "scriptHash": "07504bad02c2",
+  "scriptHash": "de461a8c07c8",
   "scriptCommitSha": "4b0bc3f1848b2b4077d80ff6a8e1bb42cf4da551",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -31,9 +31,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -51,10 +49,10 @@
     "dps": 50
   },
   "data": {
-    "tau_p_str": "1.1457596924573008696890815957741193059437280619435",
-    "tau_n_str": "0.98774368811580957163402016550129498205504875906278",
-    "tau_4he_str": "0.16097414544240738182587344098071685392360735413342",
-    "abs_tau_4he_str": "0.16097414544240738182587344098071685392360735413342",
+    "tau_p_str": "0.62932840220292191816534574677848592760021940063436",
+    "tau_n_str": "0.47513351715568221250609023267500579955840763470872",
+    "tau_4he_str": "0.011237417659767421564199549374410607269662696081261",
+    "abs_tau_4he_str": "0.011237417659767421564199549374410607269662696081261",
     "interface_census": {
       "positive": 1,
       "negative": 1,
@@ -62,9 +60,9 @@
       "total": 3
     },
     "wall_seconds": {
-      "h3_baseline": 0.2916692570000805,
-      "closed_form_4he": 8.279299993319e-05,
-      "total": 0.2917520500000137
+      "h3_baseline": 0.002305460000002313,
+      "closed_form_4he": 6.503600002361054e-05,
+      "total": 0.0023704960000259234
     },
     "supersedes": {
       "witness": "atomic-tr-m-helium4.witness.json",

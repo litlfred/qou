@@ -163,3 +163,61 @@ convention that caps nothing.
 Caught by testing the guard against the case it must reject, not the case it
 must accept. `q` is now read from the same witness table as `z`; C yields None,
 a table with no `q` yields None, and the cap has to be earned.
+
+---
+
+## The 2026-06-10 no-truncation directive is satisfied — it searched the wrong factor
+
+`docs/audits/2026-06-10-binding-active-set-compute-optimization.md` carries an
+owner directive that has blocked partition-count reduction since June:
+
+> **NO truncation — only provable exact-0.** … the precision discipline admits
+> dropping a partition **only if `χ^λ(β_atom) = 0` is provable**. The exact-0
+> search came back **empty**: `exact-χ-zeros = 0` … **Therefore no partitions
+> are droppable.**
+
+The search is correct and reproduces today — at tritium all **30 of 30**
+partitions have `χ^λ ≠ 0`. But the summand is `y_λ · χ^λ`, and under D the
+**weight** vanishes, not the character:
+
+| tritium, n = 9 | count |
+|---|---:|
+| `χ^λ ≠ 0` — the audit's search | **30 of 30** |
+| `y_λ · χ^λ` **exactly** 0 — the droppable set | **25 of 30** |
+
+Not a tail: `χ_(4,3,2) = 2.384` is the **largest** character at n = 9, with
+weight exactly 0.
+
+So the carve-out the directive itself names is met, and the row cap is *more*
+precise than the active-set truncation that was rejected — it drops only
+provable zeros and keeps every nonzero term, including `[5,4]` (−0.00527) that
+a "≲ 1 % each" reading would have dropped. The document's "legitimate
+truncation path (formalize-first): prove a bound `|y_λ χ^λ| ≤ C·q₀^{−c·rows}`"
+is moot; no bound is needed for an exact zero.
+
+**The audit could not have seen this.** It is dated 2026-06-10; C → D landed
+2026-08-09. Under C the level was r ≈ 2.5995, not an integer, no row cap, and
+the ≥3-row tail really was nonzero at ~10⁻³–10⁻⁹ as measured there. Sound
+reasoning in the frame it was written in. Audit updated in place with this
+correction rather than a new document.
+
+## Where the cap is still not taken
+
+`tr_m_atom_via_transfer.tr_m_atom_zn` (the path `binding_canonical` actually
+runs — its witness records `use_transfer: True`, so it does **not** use
+`markov_trace_canonical.tr_M_element` which it imports):
+
+    He-4 (n=12)   0.93 s   evaluating  77 partitions,  7 carry weight
+    Li-6 (n=18)  12.46 s   evaluating 385 partitions, 10 carry weight
+
+Its own comment says "ALL partitions kept, the speed is from the transfer
+sweep, NOT from dropping partitions" and cites the audit above — which is now
+the corrected one.
+
+**Not done here, deliberately.** None of `chi_all_lambda_reduced_block`,
+`chi_all_lambda_window` or `chi_all_lambda_general` accepts a partition
+restriction, so taking the cap means threading a `shapes` parameter through
+three kernels plus the dispatcher. The marginal value is also lower than it
+first looks: a sibling's **window transfer** (`qou-wdij`) already removed the
+`d_λ` wall that made this urgent — 963× at ⁴He (kernel 401.41 s → 0.42 s), with
+⁶Li/⁷Li reachable. Worth doing, not worth rushing.

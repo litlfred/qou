@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 # polynomial_q_not_applicable: numerical mpmath consumer; no symbolic-q polynomial in this layer.
-"""Compute |tr_M(⁴He)| via the disjoint-product extension on H_12.
+"""Compute |tr_M(⁴He)| on H_12 from the canonical braid word.
+
+See "RESOLVED 2026-09-06" below: the authoritative value is arm (C),
+the canonical `atom_braid_word_3A(2, 2)` through the Wenzl bridge.
+The disjoint-product construction this module was built around is
+retained as arm (A), non-canonical.
 
 ⚠ CONVENTION CORRECTION (PR #564, 2026-05-08).  This script uses the
 *disjoint* multi-atom word inherited from
@@ -62,23 +67,59 @@ is retained only as a placeholder pending the Rust-kernel canonical
 recompute described in `atomic-tr-m-helium4.witness.json`'s
 `convention_status` field.
 
-This script computes both values in parallel:
+✅ RESOLVED 2026-09-06 (bean `qou-hft3`).  The regeneration this
+header has asked for since PR #564 has been done, because both
+halves of its precondition now hold: the y-lambda witness carries
+n=12, and taking the Wenzl row cap (bean `qou-fq0f`) brought H_12
+from unreachable to ~17 s by not building χ^λ for the 70 of 77
+partitions whose weight is exactly zero.  Everything above this
+line describes the SUPERSEDED arms, kept because their failure is
+the evidence for the correction.
 
-  (A) **Disjoint-product formula** (fast, exact):
+This script now computes three values:
+
+  (C) **Canonical word via the Wenzl bridge** — AUTHORITATIVE.
+      `atom_braid_word_3A(2, 2)` (47 factors, interfaces at
+      generators 2, 5, 8) through `tr_M_via_wenzl_bridge_mpfr`.
+      |tr_M(⁴He)| = 0.011237417659767421564199549374410607…
+
+      Cross-checked against `markov_trace_canonical` — a
+      structurally independent Markov-axiom reducer, not this
+      bridge — via `binding-canonical.witness.json`, agreeing to
+      relative 1e-30.  That is the Schur-Weyl identity
+      Σ_λ y_λ χ^λ = tr_M holding on the canonical word, which is
+      exactly the test the disjoint word fails by a factor of ~5.
+
+  (A) **Disjoint-product formula** — non-canonical, retained.
       reads tr_M(p), tr_M(n) from `atomic-tr-m-mpfr-50dps.witness.json`
-      and emits the product.
+      and emits the product.  1.280783151528646.
 
-  (B) **Direct H_12 recursion via `markov_trace_recursive`** (slow,
-      authoritative): runs `markov_trace_of_word(12, helium4_word)`
-      with a runtime budget; emits the value if it returns within
-      budget, otherwise records a stub and the elapsed time so the
-      next session can pick up.
+  (B) **Direct H_12 recursion via `markov_trace_recursive`** —
+      non-canonical, retained.  `markov_trace_of_word(12,
+      HELIUM4_WORD)`.  7.610469960740114.
 
-Both values must agree by the disjoint-product axiom.  We commit
-the disjoint-product value as authoritative whenever (B) does not
-return in budget; this is consistent with the deuteron pattern
-(disjoint-product matches direct recursion to 1e-30 in the
-deuteron witness).
+(A) and (B) disagree by a factor of 5.942.  That is not a defect to
+adjudicate: **both trace the disjoint word**, so neither is
+|tr_M(⁴He)| whatever they agree on, and the disagreement is the
+predicted failure of the disjoint-product identity on a
+multi-nucleon atom — the same ~5 the deuteron showed at H_6.  The
+old claim here that "both values must agree by the disjoint-product
+axiom" was assuming the very identity PR #564 had already
+deprecated.
+
+The disagreement went unmeasured for months because (B) had never
+once completed inside its 480 s budget; the witness recorded
+`matches_disjoint_product_within_1ppb: null`, which reads as "not
+checked" but meant "cannot complete".  When it did complete, the
+old promotion rule (`direct_val if direct_val is not None else …`)
+silently replaced the published value with a number 5.9× larger.
+
+(B) can never be run on the canonical word: `markov_trace_of_word`
+consumes jet-tracker SIGNED INTEGERS, which express σ and σ⁻¹ and
+nothing else, while the canonical word carries two further letter
+types — the uniform pn interface -h/2 (×8) and one Bring
+colour-weighted interface -h(1-δ/2)/2 (×1).  The interfaces are not
+representable in that format.
 
 Output: appends a `helium-4` row to a NEW witness file
 `atomic-tr-m-helium4.witness.json` (the legacy 50-dps witness
@@ -122,6 +163,8 @@ HELIUM4_WORD = (
 )
 HELIUM4_WORD_LEN = len(HELIUM4_WORD)             # 44 crossings
 HELIUM4_N = 12
+#: ⁴He = 2 protons + 2 neutrons, for `atom_braid_word_3A(Z, N)`.
+HELIUM4_Z, HELIUM4_NEUT = 2, 2
 
 DIRECT_BUDGET_SEC = 480.0                        # 8 min budget per task brief
 
@@ -311,6 +354,42 @@ def direct_h12_recursion(
             signal.alarm(0)
 
 
+def canonical_h12_bridge():
+    """(C) |tr_M(⁴He)| on the CANONICAL word, via the Wenzl bridge.
+
+    This is the value this module's own header has asked for since PR #564:
+    "it should be regenerated using tr_M_via_wenzl_bridge_mpfr.py once the
+    y-lambda witness is extended to n=12 at true 50 dps". Both halves of that
+    precondition now hold — the witness carries n=12, and taking the Wenzl row
+    cap (bean qou-fq0f) brought H_12 from unreachable to ~17 s by not building
+    χ_λ for the 70 of 77 partitions whose weight is exactly zero.
+
+    The canonical word is `atom_braid_word_3A(2, 2)`: 47 factors, generators
+    0…10, with the three inter-nucleon interfaces at generators 2, 5 and 8 that
+    HELIUM4_WORD omits entirely. It carries four letter types where the
+    disjoint word carries two — plain σ (×23), σ⁻¹ (×15), the uniform pn
+    interface -h/2 (×8), and one Bring colour-weighted interface
+    -h(1-δ/2)/2 = -0.10445824776972629. All are full-precision mpf, so they
+    take the `isinstance(d, mp.mpf)` branch in the bridge rather than the
+    three-key f64 snap map (which does not contain the colour-weighted value).
+
+    That last point is why arm (B) cannot ever evaluate this word:
+    `markov_trace_of_word` consumes jet-tracker SIGNED INTEGERS, a format that
+    can express σ and σ⁻¹ and nothing else. The interface operators are not
+    representable in it. (B) is not slow on the canonical word — it is
+    structurally unable to accept it.
+    """
+    from tr_m_wenzl_bridge_mpfr import tr_M_via_wenzl_bridge_mpfr
+    from q_parameter import Q_50_DIGIT_STR
+    from mass_at_3A_proper import atom_braid_word_3A
+
+    t0 = time.time()
+    word = atom_braid_word_3A(HELIUM4_Z, HELIUM4_NEUT)
+    tr = tr_M_via_wenzl_bridge_mpfr(word, HELIUM4_N, Q_50_DIGIT_STR,
+                                    dps=mp.mp.dps)
+    return abs(mp.mpf(tr)), len(word), time.time() - t0
+
+
 # ── Main ─────────────────────────────────────────────────────
 def main() -> int:
     print("=" * 96)
@@ -345,6 +424,24 @@ def main() -> int:
         print(f"      direct-path skipped: {direct_err}  (elapsed {direct_elapsed:.2f}s)")
         consistency_ok = None  # not exercised this run
 
+    # (C) The CANONICAL word, via the Wenzl bridge. This is the value the
+    # module header has asked for since PR #564; its stated precondition is now
+    # met (see canonical_h12_bridge). (A) and (B) are BOTH computed on the
+    # disjoint 44-crossing word, which omits the three inter-nucleon
+    # interfaces, so neither of them is |tr_M(4He)| whatever they agree on.
+    print("\n  (C) CANONICAL word atom_braid_word_3A(2,2) via Wenzl bridge")
+    try:
+        canon_val, canon_len, canon_elapsed = canonical_h12_bridge()
+        print(f"      word          = {canon_len} factors "
+              f"(interfaces at generators 2, 5, 8)")
+        print(f"      |tr_M(⁴He)|   = {mp.nstr(canon_val, 30)}")
+        print(f"      elapsed       = {canon_elapsed:.2f} s")
+        canon_err = None
+    except Exception as exc:
+        canon_val, canon_len, canon_elapsed, canon_err = (
+            None, None, None, f"{type(exc).__name__}: {exc}")
+        print(f"      canonical path failed: {canon_err}")
+
     # Authoritative value: the direct recursion ONLY IF it agrees with the
     # disjoint product. Otherwise neither arm is authoritative and this
     # producer must not pick one.
@@ -361,24 +458,30 @@ def main() -> int:
     # authoritative |tr_M(4He)| while `allPassed` stayed true and the mismatch
     # sat unread in a boolean field. A published value must not switch by 5.9x
     # because a machine got faster. Bean qou-hft3.
-    if direct_val is not None and consistency_ok is False:
-        print("      ⚠  NEITHER arm is authoritative while they disagree; "
-              "keeping the disjoint-product value and recording both.")
+    # Superseded 2026-09-06 by arm (C). Neither (A) nor (B) is |tr_M(4He)|:
+    # both are computed on the disjoint 44-crossing word, which has no
+    # inter-nucleon interfaces, and this module's header has said so since
+    # PR #564 -- "the output witness therefore stores a value that is NOT the
+    # canonical |tr_M(4He)|". Their disagreement is a fact about that word, not
+    # a question about helium-4, and picking between them was never going to
+    # produce the right number.
+    if canon_val is not None:
+        abs_tr_he4 = canon_val
+        method = "canonical_h12_wenzl_bridge"
+        authoritative_method = (
+            "canonical word atom_braid_word_3A(2,2) via tr_M_via_wenzl_bridge_mpfr")
+        print(f"\n  → authoritative: (C) canonical, "
+              f"|tr_M(⁴He)| = {mp.nstr(canon_val, 24)}")
+    elif direct_val is not None and consistency_ok is False:
+        print("      ⚠  canonical path unavailable and the two non-canonical "
+              "arms disagree; keeping the disjoint-product value.")
         abs_tr_he4 = abs_tr_disjoint
-        authoritative_method = "disjoint_product (direct recursion disagrees; unresolved)"
+        method = "disjoint_product_UNRESOLVED_MISMATCH"
+        authoritative_method = "disjoint_product (non-canonical; direct recursion disagrees)"
     else:
         abs_tr_he4 = direct_val if direct_val is not None else abs_tr_disjoint
+        method = "direct_h12_recursion" if direct_val is not None else "disjoint_product"
         authoritative_method = None
-    # Name the method that produced the value actually published, not the arm
-    # that happened to run. These came apart on 2026-09-06: the direct arm ran,
-    # disagreed, was correctly not promoted -- and `method` still said
-    # "direct_h12_recursion" over a disjoint-product number. Bean qou-hft3.
-    if direct_val is not None and consistency_ok is False:
-        method = "disjoint_product_UNRESOLVED_MISMATCH"
-    elif direct_val is not None:
-        method = "direct_h12_recursion"
-    else:
-        method = "disjoint_product"
 
     # ── Witness emission ──────────────────────────────────
     out = HERE / "atomic-tr-m-helium4.witness.json"
@@ -386,15 +489,34 @@ def main() -> int:
         "computation": "atomic-tr-m-helium4",
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "convention_status": (
-            "DEPRECATED_DISJOINT — value below uses the disjoint-product "
-            "convention (44 crossings, no interface) which is empirically "
-            "wrong per PR #564 audit. Canonical word atom_braid_word_3A(2,2) "
-            "has 47 crossings with 3 interfaces (pp, pn, nn). Canonical "
-            "|tr_M(⁴He)| at H_12 via the Wenzl bridge is intractable with "
-            "current Python mpmath (p(12)=77 partitions, max dim 7700, "
-            "~2×10¹³ ops per partition × 47 crossings); needs a Rust kernel "
-            "with rayon parallel partitions or a categorical reduction via "
-            "Wenzl 1988 LR branching. DO NOT use for mass predictions."
+            "CANONICAL as of 2026-09-06 (bean qou-hft3). The published value "
+            "is arm (C): the canonical word atom_braid_word_3A(2,2), 47 "
+            "crossings with 3 interfaces (pp at generator 2, pn at 5, nn at "
+            "8), evaluated through tr_M_via_wenzl_bridge_mpfr in ~17 s. "
+            "Cross-checked against markov_trace_canonical -- a structurally "
+            "independent Markov-axiom reducer -- at relative 1e-30. "
+            "Arms (A) disjoint-product and (B) direct recursion are RETAINED "
+            "but NON-CANONICAL: both trace the 44-crossing disjoint word with "
+            "no interfaces, and they disagree by a factor of 5.942, the same "
+            "failure of the disjoint-product identity the deuteron showed at "
+            "~5 (PR #564)."
+        ),
+        # Superseded 2026-09-06. This field previously read "DEPRECATED_DISJOINT
+        # ... Canonical |tr_M(4He)| at H_12 via the Wenzl bridge is intractable
+        # with current Python mpmath (p(12)=77 partitions, max dim 7700, ~2e13
+        # ops per partition x 47 crossings); needs a Rust kernel with rayon
+        # parallel partitions or a categorical reduction via Wenzl 1988 LR
+        # branching. DO NOT use for mass predictions."
+        #
+        # That cost model is the one the Wenzl row cap invalidates, and it was
+        # wrong in both factors it names: under production convention D the
+        # level is r = 2 exactly, so 70 of those 77 partitions carry weight
+        # IDENTICALLY ZERO, and the largest surviving dimension is 297, not
+        # 7700. No Rust kernel was needed -- only not computing chi^lambda for
+        # terms multiplied by zero. Bean qou-fq0f.
+        "intractability_claim_superseded": (
+            "2026-09-06: 77 -> 7 partitions, max dim 7700 -> 297, ~17 s. "
+            "See qou-fq0f."
         ),
         "auditOnly": "AUDIT-DEEP-2026-05.md",
         "description": (
@@ -445,8 +567,11 @@ def main() -> int:
                 },
                 "direct_recursion": {
                     "engine": "markov_trace_recursive.markov_trace_of_word",
-                    "budget_sec": DIRECT_BUDGET_SEC,
-                    "elapsed_sec": direct_elapsed,
+                    # Timings as strings: the raw-float64 gate rejects bare
+                    # floats in a witness, and these are wall-clock, not
+                    # mathematics, so there is no mpf to carry.
+                    "budget_sec": f"{DIRECT_BUDGET_SEC:.3f}",
+                    "elapsed_sec": f"{direct_elapsed:.3f}",
                     "abs_tr_M_50dps": (
                         str(direct_val) if direct_val is not None else None
                     ),
@@ -455,23 +580,51 @@ def main() -> int:
                         bool(consistency_ok) if direct_val is not None else None
                     ),
                 },
-                # An UNRESOLVED disagreement between the two arms, stated where
-                # a reader of the headline value cannot miss it. Absent when the
-                # arms agree or the direct arm did not run. See qou-hft3.
-                **({"UNRESOLVED_MISMATCH": {
+                "canonical_h12_wenzl_bridge": {
+                    "engine": "tr_m_wenzl_bridge_mpfr.tr_M_via_wenzl_bridge_mpfr",
+                    "word": "mass_at_3A_proper.atom_braid_word_3A(2, 2)",
+                    "word_length": canon_len,
+                    "interfaces_at_generators": [2, 5, 8],
+                    "abs_tr_M_50dps": fmt(canon_val) if canon_val is not None else None,
+                    "elapsed_sec": (f"{canon_elapsed:.3f}"
+                                    if canon_elapsed is not None else None),
+                    "error": canon_err,
+                    "note": (
+                        "THE canonical |tr_M(4He)|. Cross-checked against "
+                        "markov_trace_canonical (binding-canonical.witness.json, "
+                        "a structurally independent Markov-axiom reducer, not "
+                        "this bridge) at relative 1e-30 -- the Schur-Weyl "
+                        "identity sum_lambda y_lambda chi^lambda = tr_M holding "
+                        "on the canonical word, which is precisely the test the "
+                        "disjoint word below fails by a factor of ~5. Reachable "
+                        "at all only because taking the Wenzl row cap "
+                        "(qou-fq0f) brought H_12 to ~17 s."
+                    ),
+                },
+                # The two NON-CANONICAL arms disagree. Kept because the
+                # disagreement is itself the documented evidence that the
+                # disjoint-product identity does not hold for multi-nucleon
+                # atoms -- the deuteron showed the same failure at factor ~5
+                # (PR #564). Neither is |tr_M(4He)|. See qou-hft3.
+                **({"NON_CANONICAL_ARMS_DISAGREE": {
                     "bean": "qou-hft3",
+                    "word": "HELIUM4_WORD (disjoint, 44 crossings, no interfaces)",
                     "disjoint_product": fmt(abs_tr_disjoint),
                     "direct_recursion": str(direct_val),
                     "relative_difference": str(
                         abs(direct_val - abs_tr_disjoint) / abs_tr_disjoint),
                     "authoritative_method": authoritative_method,
                     "note": (
-                        "These two routes to |tr_M(4He)| on H_12 disagree. The "
-                        "direct recursion had never completed inside the budget "
-                        "before 2026-09-06, so the identity has never been "
-                        "verified -- the previously recorded `null` meant "
-                        "'timed out', not 'agreed'. Neither arm is promoted to "
-                        "authoritative while this is open."
+                        "Both arms trace the DISJOINT word, which omits the "
+                        "three inter-nucleon interfaces, so neither is the "
+                        "canonical helium-4 trace regardless of whether they "
+                        "agree. The direct recursion had never completed inside "
+                        "the budget before 2026-09-06, so this was never "
+                        "measured -- the previously recorded `null` meant "
+                        "'timed out', not 'agreed'. The measured factor of 5.94 "
+                        "matches the ~5 the deuteron showed for the same reason. "
+                        "Superseded as the published value by "
+                        "canonical_h12_wenzl_bridge above."
                     ),
                 }} if (direct_val is not None and consistency_ok is False) else {}),
                 "historical_K_comparison": {

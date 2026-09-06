@@ -5,6 +5,49 @@ here — this is the *plan* + the measurement). Probe + witness:
 [`low_isotopes_binding_sweep.py`](../../computations/low_isotopes_binding_sweep.py)
 / `low-isotopes-binding-sweep.witness.json`.
 
+> ## ⚠ SUPERSEDED IN PART, 2026-09-06 (bean `qou-fq0f`)
+>
+> **The exact-0 carve-out below is satisfied, and this document's search for it
+> looked at the wrong factor.**
+>
+> The directive admits dropping a partition "only if `χ^λ(β_atom) = 0` is
+> provable", and the search for character zeros came back empty. That finding is
+> correct and reproduces today: at tritium all **30 of 30** partitions have
+> `χ^λ ≠ 0`.
+>
+> But the summand is `y_λ · χ^λ`, and under production convention **D** it is the
+> **weight** that vanishes, not the character. `z = q³/(q²+1)` pins the Wenzl
+> level to `Q^r = q⁴ = Q²`, i.e. **r = 2 exactly**, so Wenzl's row cap gives
+> `y_λ = 0` identically for every λ with three or more rows
+> (`WenzlWeightVanishing.lean`; Orellana, *Crelle* **508** (1999) 157–178, p. 5).
+>
+> Measured at tritium, n = 9:
+>
+> | | count |
+> |---|---:|
+> | partitions with `χ^λ ≠ 0` — this document's search | **30 of 30** |
+> | partitions with `y_λ · χ^λ` **exactly** 0 — the droppable set | **25 of 30** |
+>
+> These are not small terms. `χ_(4,3,2) = 2.384` is the **largest** character
+> magnitude at n = 9 and its weight is exactly zero.
+>
+> This is *more* precise than the active-set truncation rejected below, not less:
+> it drops only provable zeros and **keeps** every nonzero term, including
+> `[5,4]` (contribution −0.00527) which the "≲ 1 % each" reading would have
+> dropped. No tail bound is needed, so the "legitimate truncation path
+> (formalize-first)" further down is moot.
+>
+> **Why this document could not have seen it.** It is dated 2026-06-10; the
+> C → D convention migration landed 2026-08-09. Under convention C the level was
+> r ≈ 2.5995 — not an integer — and there was **no row cap**, so the ≥3-row tail
+> really was nonzero at ~10⁻³–10⁻⁹ as measured here. The reasoning was sound in
+> the frame it was written in.
+>
+> Taken in `tr_m_wenzl_bridge_mpfr` (`_apply_wenzl_row_cap`): 99.5× on the
+> five-atom producer, H₁₂ from unreachable to ~17 s, output bit-identical. Not
+> yet taken in `tr_m_atom_via_transfer`, which still evaluates all 385 partitions
+> at ⁶Li when 10 carry weight.
+
 ## FINAL POSITION (owner directive 2026-06-10): NO truncation — only provable exact-0
 
 Truncating nonzero contributions is **rejected** regardless of how small

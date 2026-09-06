@@ -1,11 +1,11 @@
 ---
 # qou-hft3
 title: He-4 disjoint-product identity fails 5.94x once the 480s timeout stops masking it
-status: in-progress
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-06T10:41:05Z
-updated_at: 2026-09-06T10:41:32Z
+updated_at: 2026-09-06T11:14:33Z
 ---
 
 ## What happened
@@ -99,3 +99,69 @@ paper needs. Settle the word before adjudicating the arms.
 
 Only computable at all because the row cap made H₁₂ reachable (19.4 s from
 previously unreachable).
+
+## RESOLVED 2026-09-06
+
+The question "which arm is right?" had no answer, because **both arms trace the
+disjoint word**. Item 2 above was the whole of it.
+
+    |tr_M(4He)| = 0.011237417659767421564199549374410607269662696081261
+
+Three structurally independent routes, agreeing to 51 digits at the proton pin:
+
+| route | what it is | time |
+|---|---|---:|
+| Wenzl bridge on `atom_braid_word_3A(2,2)` | Hoefsmit seminormal + Wenzl weights at H₁₂ | ~17 s |
+| `markov_trace_canonical` | Markov-axiom recursive reducer | ~1 s |
+| `closed_form_tau_M`, `bring_color_weighted` | Phase 5q closed form | 0.002 s |
+
+The first two agreeing **is** the Schur-Weyl identity `Σ_λ y_λ χ^λ = tr_M`
+holding on the canonical word — the test the disjoint word fails by ~5, the
+same failure PR #564 measured on the deuteron.
+
+The third also discriminates the pn convention without assuming it:
+`bring_color_weighted` matches to 30 digits, `chi_lambda_braid` and `uniform`
+give 0.013547 (20 % off). Independent confirmation of the owner's 2026-08-15 R3
+ruling.
+
+**What was actually blocking it** was not tractability. The module's own header
+prescribed this fix and named its precondition; the row cap (`qou-fq0f`) met it.
+`canonical_tr_m_helium4_stub.py`'s intractability estimate was wrong in both
+factors it cited — 70 of its 77 partitions carry weight identically zero, and
+its "max dim 7700" is (5,3,2,1,1), a five-row shape the cap annihilates.
+
+**Arm (B) can never be run on the canonical word.** `markov_trace_of_word`
+takes jet-tracker signed integers, which express σ and σ⁻¹ only; the canonical
+word carries the uniform pn interface -h/2 (×8) and one Bring colour-weighted
+interface. Not a budget problem — an input-format one.
+
+Follow-up opened: **`qou-y2o7`** — `compute_tau_M_nucleon_H3` is locked to the
+grouped ordering by its monotone-only χ kernel, and 18 consumers inherit it.
+
+### Correction to the table above — which routes are independent of what
+
+The commit message and the table say the second route is
+`markov_trace_canonical`, "a structurally independent Markov-axiom reducer".
+That is wrong on both counts and the distinction matters.
+
+`binding_canonical.py` *imports* `markov_trace_canonical.tr_M_element` but its
+witness records `use_closed_form: False, use_transfer: True`, so it ran
+`tr_m_atom_via_transfer.tr_m_atom_zn` — the fine-Bratteli transfer matrix,
+which is another evaluation of **Σ_λ y_λ χ^λ**, not a Markov-axiom reduction.
+
+So the three routes are not three independent claims:
+
+| route | what it evaluates | independent of |
+|---|---|---|
+| Wenzl bridge | Σ_λ y_λ χ^λ, Hoefsmit seminormal matrices | the transfer implementation |
+| fine-Bratteli transfer | Σ_λ y_λ χ^λ, transfer sweep | the bridge implementation |
+| `closed_form_tau_M` | τ_p^Z · τ_n^N · ∏ f_i — a **different structural claim** | both |
+
+The first two are independent *implementations* of one identity; their
+agreement validates the code, not the mathematics. The load-bearing result is
+that the **closed form**, which asserts multiplicativity along the chain,
+agrees with both to 27+ digits at A = 4 — that is the multiplicative ansatz
+being confirmed by a direct H₁₂ character sum, and it is what the original
+claim should have said.
+
+Nothing computed changes; the value and the digit counts stand.
