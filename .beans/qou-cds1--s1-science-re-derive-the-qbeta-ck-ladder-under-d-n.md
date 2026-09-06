@@ -7503,3 +7503,41 @@ Two things checked rather than assumed:
 **Scope (a).** Does NOT refute the projection — it is proved. Measures only that
 it is insufficient by itself, and identifies nothing about what else is needed.
 Nothing wired; no `c_k` moved.
+
+### C and D are DIFFERENT ALGEBRAS, z is a RANK label, and #6889's exclusion is withdrawn (2026-09-06)
+
+Probe: `computations/qbeta/qbeta_c_vs_d_are_different_algebras_probe.py` (5/5).
+Prompted by the owner asking whether the proper `z` coordinate was in use, and
+to work the **full tower** rather than the semisimple part. Both pointed at a
+framing error running through three of my PRs on this arc.
+
+**1. Not a coordinate change — a change of algebra.** Registry:
+
+    convention  name                                y_(3)      y_(2,1)    y_(1^3)
+    C           full-Hecke Ocneanu / Wenzl z-trace  0.415396   0.280930   0.022745
+    D           SU(2)/Temperley-Lieb (Jones)        [4]/[2]^3  1/[2]^2    0
+
+Both normalise; **D annihilates the sign block**. `TL_n = H_n/⟨antisymmetriser⟩`
+kills every >2-row partition, at `n=3` exactly `(1³)`. D is a **quotient** of C.
+`z_D(q) = q²z_C(q²)` is true but relates parameter *values* only — no
+substitution carries a 3-block trace to a 2-block one.
+
+**2. `z` is indexed by RANK.** `z_N = q^N/[N]_q` satisfies full-bar
+`bar(z) = z−h` for **every** N (checked 1–6, exactly zero), twist `q^{−2N}`.
+`z_D = z_2` — **D is SU(2)**. `z_C = 1/[2]_√q` has no `q^N` numerator, is
+bar-even, and is in the family for **no** N. The `q^N` numerator **is** the bar
+twist — so #6915's rescale-to-bar-even was stripping the rank label.
+
+**3. `b² = [3]_q/[2]_q²` exactly** ⟹ `b² = 0 ⟺ [3]_q = 0 ⟺ H₃(q) non-semisimple`.
+The `π/3`, `5π/3` phases #6889 called "degenerate" are where
+`tr = Σ_λ y_λ χ^λ` ceases to exist. **#6889's arithmetic stands; its emptiness
+verdict is withdrawn as interpretation** — it excluded the interesting locus
+because its own tooling stopped there. (First attempt `q²[3]/[2]²` was false;
+sympy caught it.)
+
+**4. Ruling tension, flagged not adjudicated.** 2026-08-15 makes D canonical;
+2026-09-03 asks derivations to use the full tower. D = SU(2)/TL is a two-row
+truncation discarding most of the tower at `n = 3A`. Which governs the Q_β
+channel is an owner decision.
+
+Measurements from #6915 and #6921 stand; their **framing** was wrong.

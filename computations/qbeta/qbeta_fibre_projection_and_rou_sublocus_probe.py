@@ -2,7 +2,26 @@
 """qbeta_fibre_projection_and_rou_sublocus_probe.py — the projection IS the
 modulus, it is PARTIAL, and the root-of-unity sublocus it leaves is EMPTY.
 
-🛑 OWNER RULING 2026-09-06: "Does not need to be real in fiber."
+🛑 SECOND CORRECTION 2026-09-06: THE "DEGENERACY" IS NON-SEMISIMPLICITY,
+   AND THE EMPTINESS VERDICT IS WITHDRAWN AS AN INTERPRETATION.
+
+   `b^2 = [3]_q / [2]_q^2` exactly, and `H_n(q)` is semisimple iff `[k]_q != 0`
+   for all `k <= n`.  So `b^2 = 0  <=>  [3]_q = 0  <=>  H_3(q) is NOT
+   semisimple`.  The phases `pi/3` and `5pi/3` this probe calls "degenerate",
+   and uses to declare the root-of-unity sublocus EMPTY, are exactly the points
+   where the Wedderburn decomposition `tr = sum_lambda y_lambda chi^lambda`
+   CEASES TO EXIST.
+
+   That is not an obstruction to the physics.  It is where the semisimple
+   machinery ends and the cellular / tilting structure begins — i.e. exactly the
+   locus the 2026-09-03 full-tower ruling points AT.  This probe excluded the
+   interesting locus on the grounds that its own tooling stopped working there.
+
+   The arithmetic below is unchanged and correct.  The word "degenerate" and
+   the "sublocus is EMPTY" verdict are withdrawn as interpretation.  See
+   `qbeta_c_vs_d_are_different_algebras_probe.py`.
+
+   🛑 OWNER RULING 2026-09-06: "Does not need to be real in fiber."
    THE REALITY PREMISE THIS PROBE INHERITS FROM #6875 IS REJECTED.
 
    Every assertion below is still TRUE AS ARITHMETIC and is not withdrawn:
