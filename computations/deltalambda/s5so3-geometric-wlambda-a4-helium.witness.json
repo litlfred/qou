@@ -2,8 +2,8 @@
   "schema": "witness/v1",
   "producer": "computations/deltalambda/s5so3_geometric_wlambda_a4_helium_probe.py",
   "computation": "s5so3-geometric-wlambda-a4-helium",
-  "description": "A=4 analog of #4392: genuine geometric (Beasley-Witten / WRT(S3/2I)) keystone W_lambda = d_q^2/D^2 (Sum=1, C1) re-weight of the canonical He-4 H_12 perblock trace (chi-helium-4-h12-at-q0-50dps, bean b0vf), forward 0-fit, vs the two A=4 targets B(4He)_AME=28.29566 and |mu4|=4.591. E0=4.185981. Production tr_M=0.160974; E0*Sum W_geom|chi|=60.3265 MeV (2.132x B4He); r_geom=89.5271. B(4He) and mu4 targets only, NEVER inverted; the ad-hoc 10^3 color-tube scale in a4_option_e_color_tube_closure.py is a FIT and is NOT used. VERDICT: WALL(scope-a) -- no canonical 0-fit geometric W_lambda form lands on B(4He) or |mu4|; the s5-so3 interface reweighting does NOT supply the A=4 magnitude as-is (this construction alone). NOT a (b) exclusion: E0*max|chi|=266>28.3, so the target is within the normalized-W span -- an EXACT hit needs a tuned weight = FIT.",
-  "timestamp": "2026-09-05T18:02:51.196212+00:00",
+  "description": "A=4 analog of #4392: genuine geometric (Beasley-Witten / WRT(S3/2I)) keystone W_lambda = d_q^2/D^2 (Sum=1, C1) re-weight of the canonical He-4 H_12 perblock trace (chi-helium-4-h12-at-q0-50dps, bean b0vf), forward 0-fit, vs the two A=4 targets B(4He)_AME=28.29566 and |mu4|=4.591. E0=4.185981. Production tr_M=0.011237; E0*Sum W_geom|chi|=9.5001 MeV (0.336x B4He); r_geom=82.3997. B(4He) and mu4 targets only, NEVER inverted; the ad-hoc 10^3 color-tube scale in a4_option_e_color_tube_closure.py is a FIT and is NOT used. VERDICT: WALL(scope-a) -- no canonical 0-fit geometric W_lambda form lands on B(4He) or |mu4|; the s5-so3 interface reweighting does NOT supply the A=4 magnitude as-is (this construction alone). NOT a (b) exclusion: E0*max|chi|=266>28.3, so the target is within the normalized-W span -- an EXACT hit needs a tuned weight = FIT.",
+  "timestamp": "2026-09-06T13:17:53.640986+00:00",
   "parameters": {
     "free_parameters": 0,
     "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -12,36 +12,36 @@
     "level": "He-4 H_12 perblock Sum_{lambda|-12} weight * chi_lambda (production b0vf table)",
     "weight_systems": "production y_lambda (Sum=0.00435); geometric d_q^2/D^2 (Sum=1)",
     "D2_sum_dq2": "2228316601.87278446952347073335015260218223185741444267827686123065697",
-    "max_abs_chi": "63.623896325354913592330484668380265917680217944638",
-    "argmax_partition": "(6, 3, 3)",
+    "max_abs_chi": "7.3340686157281335049434445319387007853349322583961",
+    "argmax_partition": "(6, 3, 2, 1)",
     "note": "B4He=28.29566 & |mu4|=4.591 targets only; SAME chi/q0/word as b0vf; ONLY weight changes; 0 fit."
   },
   "results": {
     "production": {
-      "trM_sum_y_chi": "0.1609741454424073818258734409807168539236073541334293450599522414456065",
-      "sum_y_abs_chi": "0.1609741454424073818258734409807168539236073541334293450599522414456065",
-      "E0_times_sum_y_abs_chi_MeV": "0.6738347727941716960408489386983375056095515118751618262751591594857374"
+      "trM_sum_y_chi": "0.01123741765976742156419954937441060726966269608126236469610742870287532",
+      "sum_y_abs_chi": "0.0275427677189860198809864096345807759106001804972690228330412398711504",
+      "E0_times_sum_y_abs_chi_MeV": "0.1152935123652241817077545007212689124787127676028701429804548024069119"
     },
     "geometric": {
-      "sum_Wgeom_chi_signed": "-1.788929714557662078814056340952288166875688809981534992177840591391311",
-      "sum_Wgeom_abs_chi": "14.41154550269349717500869950468052609775810375982115961998538202258505",
-      "E0_times_sum_Wgeom_abs_chi_MeV": "60.32646089054529826414980978727336460117662762496868162458507572408868",
-      "over_B4He": "2.132003839943513683713932414859224663394931783783534948135149309496736",
-      "over_mu4": "13.14001964051460543739682307553163560938082712813472689124249533528917",
-      "r_geom_over_production": "89.52708189930783772403558419442530278471772859166372295214020112699036"
+      "sum_Wgeom_chi_signed": "0.1191353979456397525676303721078654637248834423915040193359161042942591",
+      "sum_Wgeom_abs_chi": "2.269515160879500435109425590979528491485218125588817070883960421224721",
+      "E0_times_sum_Wgeom_abs_chi_MeV": "9.500148167155853022748854325413884092055795650127178676967752605379082",
+      "over_B4He": "0.3357457419747788983639009746389214797832686769024775155345283894362024",
+      "over_mu4": "2.069276593744141429745202909099160821680756909996841391544534625945771",
+      "r_geom_over_production": "82.39967689648918366928772421271303519768607165081034953196046869228759"
     },
     "delta_sign_forms": {
-      "abs_sum_y_chi_sign": "0.01052864461078321871159285676289924375275653832785742147151807738749982",
-      "abs_sum_Wgeom_chi_sign": "0.1326057179799017685964769595547517669354086302174763472758160789337246",
-      "E0_times_abs_sum_Wgeom_chi_sign_MeV": "0.5550850641301519996577667495524021108288454206239704700328830213693431",
-      "abs_sum_y_chi_sign_dim": "0.190937769615115520373086463153717273997485792865786776067419463988786",
-      "abs_sum_Wgeom_chi_sign_dim": "1843.976039021978910226022213278970483353933196539705427169298654843008",
-      "E0_times_abs_sum_Wgeom_chi_sign_dim_MeV": "7718.849333707570963621379281829689936967343401541084160410034473884218"
+      "abs_sum_y_chi_sign": "0.005360549514953835740804427322721234539932272141857793774652254838221809",
+      "abs_sum_Wgeom_chi_sign": "0.7715449598485494008073620102473716845720015364113435959915998171036717",
+      "E0_times_abs_sum_Wgeom_chi_sign_MeV": "3.229672822869812488449278082526826505941749414151279177359125497014338",
+      "abs_sum_y_chi_sign_dim": "1.922795142813909872375853635415094196596996360100448574739663099793119",
+      "abs_sum_Wgeom_chi_sign_dim": "4169.793706200661859673259240707181150974500142213676381121116820449778",
+      "E0_times_abs_sum_Wgeom_chi_sign_dim_MeV": "17454.67874293857182456649934954982449009245951309760861145333776177928"
     },
     "normalized_W_bound": {
-      "max_abs_chi": "63.623896325354913592330484668380265917680217944638",
-      "E0_times_max_abs_chi_MeV": "266.3284442781155565955193210666003838817420769954624013379854077637859",
-      "m_e_times_max_abs_chi_MeV": "32.51174426106570768751649609724144850583776128868052651190022",
+      "max_abs_chi": "7.3340686157281335049434445319387007853349322583961",
+      "E0_times_max_abs_chi_MeV": "30.7002745425608819603422997044622233551154493416751165268151524922509",
+      "m_e_times_max_abs_chi_MeV": "3.747701366925537051338332083614894292708029324242639042388309",
       "bound_excludes_B4He": false,
       "note": "|Sum W chi| <= max|chi| for any Sum W=1; bound 266 MeV > 28.3 => target NOT excluded (not a (b))"
     },
@@ -62,14 +62,13 @@
       "anti_fit": "W_geom + y_lambda from q0 + hook-lengths; chi/q0/word = b0vf table; targets never inverted; nothing wired."
     }
   },
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "scriptFile": "s5so3_geometric_wlambda_a4_helium_probe.py",
   "scriptHash": "9d74d5299c2d",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "commitSha": "cbbd5df960e97f7f96b46b0bfbfabe8281bfb8c5",
   "engine": "python",
-  "computedAt": "2026-09-05T18:02:51.298075+00:00",
+  "computedAt": "2026-09-06T13:17:53.709204+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }
