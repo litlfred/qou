@@ -27,7 +27,7 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
 from chi_atom_transfer import bratteli_state_sizes  # noqa: E402
-from chi_monotone_transfer import chi_all_lambda  # noqa: E402
+from chi_general_word import chi_all_lambda_any  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from lr_coefficients import partitions_of  # noqa: E402
 import mpmath as mp  # noqa: E402
@@ -48,7 +48,7 @@ def numerical(atoms=(("D", 1, 1), ("3He", 2, 1), ("4He", 2, 2)), dps: int = 40) 
     print(f"\nNUMERICAL support (nonzero χ^λ at q₀, dps={dps}):")
     for lbl, Z, N in atoms:
         n = 3 * (Z + N)
-        chi = chi_all_lambda(atom_braid_word_3A(Z, N), n, dps=dps)
+        chi = chi_all_lambda_any(atom_braid_word_3A(Z, N), n, dps=dps)
         nz = sum(1 for v in chi.values() if abs(v) > mp.mpf("1e-30"))
         p3a = len(partitions_of(n))
         flag = "= p(3A)" if nz == p3a else f"≠ p(3A)={p3a}"
@@ -135,8 +135,8 @@ def row_tail(atoms=(("D", 1, 1), ("3He", 2, 1), ("4He", 2, 2)), dps: int = 40) -
         # float64 into a computation rather than a display. NO-FLOAT64 applies to
         # probes exactly as to producers.
         y = y_lambda_at(n, Q0)
-        chA = chi_all_lambda(atom_braid_word_3A(Z, N, include_inter=True), n, dps=dps)
-        chF = chi_all_lambda(atom_braid_word_3A(Z, N, include_inter=False), n, dps=dps)
+        chA = chi_all_lambda_any(atom_braid_word_3A(Z, N, include_inter=True), n, dps=dps)
+        chF = chi_all_lambda_any(atom_braid_word_3A(Z, N, include_inter=False), n, dps=dps)
 
         def tr(ch, mr=99):
             return sum(ymp(y[l]) * ch[l] for l in ch if len(l) <= mr)

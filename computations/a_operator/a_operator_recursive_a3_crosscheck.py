@@ -34,7 +34,7 @@ import a_operator_categorical as aoa
 import a_operator_recursive as rec
 from young_seminormal import chi_young, standard_tableaux
 from mass_at_3A_proper import atom_braid_word_3A
-from reduced_block_kernel import chi_all_lambda_reduced_block
+from chi_general_word import chi_all_lambda_any
 from wedderburn_jones_markov import y_lambda_at
 from q_parameter import Q as Q0
 from lr_coefficients import partitions_of
@@ -117,7 +117,7 @@ def reconstruct(Z: int, Nn: int, label: str) -> dict:
 
     # (b) end-to-end tr_M: combiner vs transfer reference
     y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(TOTAL, Q0).items()}
-    chi_ref = chi_all_lambda_reduced_block(w, TOTAL, q=None)
+    chi_ref = chi_all_lambda_any(w, TOTAL, q=None)
     chi_ref = {tuple(k): (v if isinstance(v, mp.mpf) else mp.mpf(str(v)))
                for k, v in chi_ref.items()}
     worst_b = max(abs(chi_comb[k] - chi_ref[k]) for k in chi_comb)

@@ -28,7 +28,7 @@ import sys
 import mpmath as mp  # noqa: E402
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
+from chi_general_word import chi_all_lambda_any  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
@@ -89,7 +89,7 @@ def main() -> int:
         n = 3 * (Z + N)
         word = atom_braid_word_3A(Z, N, include_inter=True)
         w = writhe(word)
-        chi = chi_all_lambda_reduced_block(word, n, q=q0)
+        chi = chi_all_lambda_any(word, n, q=q0)
         y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, q0).items()}
         num = mp.mpf(0); den = mp.mpf(0)
         for lam, cval in chi.items():
