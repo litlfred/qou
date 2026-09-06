@@ -1,11 +1,11 @@
 ---
 # qou-y2o7
 title: compute_tau_M_nucleon_H3 is locked to the grouped ordering by its monotone-only chi kernel; 18 consumers inherit it
-status: in-progress
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-06T11:12:06Z
-updated_at: 2026-09-06T12:49:15Z
+updated_at: 2026-09-06T13:06:49Z
 ---
 
 ## The mechanism
@@ -419,3 +419,60 @@ duplicate that the producer does not write; `_path_bridge.witness_path` resolves
 to `computations/habiro/`. Synced so it cannot become a stale grouped fork
 (sha256 now identical again). Left in place rather than deleted — removing it is
 a separate call about that package's data layout.
+
+---
+
+## Summary of Changes
+
+Option B implemented, swept, and landed (`a4909014a56`, `016ca698caa`).
+
+- **`compute_tau_M_nucleon_H3`** takes its word from `atom_braid_word_3A` and
+  its characters from `chi_all_lambda_any`, with
+  `intra_order="borromean"` as the default and `"grouped"` as a documented
+  historical escape hatch. Verified against both frames to every digit.
+- **Three call sites legitimately ask for `grouped`**, each because its whole
+  comparison lives in that frame: `nucleon_h3_marshalling_divergence_probe`
+  (guards the `qou-qu2w` fix against a grouped-era habiro target),
+  `qbeta_delta_vs_deltaTbeta_settled_probe` (its own word, its pre/post-fix pin,
+  and its paper closed forms are all grouped), and — from the sibling arc —
+  `reduced_block_kernel` (`qou-cvky`). That is precisely what B was chosen for.
+- **habiro** forced to full scope (`HABIRO_WITH_DEUTERON=1 HABIRO_WITH_A3=1`):
+  all five entries fresh and uniformly borromean, Habiro coefficients still
+  exact integers (9/9/14/17/17), reconstruction identity still closing. The
+  duplicate copy under `qou-mass/` synced so it cannot fork.
+- **Sweep**: 17 consumers — 8 moved, 2 unchanged, 6 emit no witness, 1
+  pre-existing failure (since fixed). `mass_table_comprehensive`, the only
+  content-cited consumer, moved 6.7e-11 — eleven orders below a real ordering
+  effect — so published-content exposure was nil, as predicted.
+- **Convergence**: every artifact now agrees with every other on every nucleus
+  it computes. Before this, `deuteron_from_scratch_ledger` said 0.57517224 where
+  `binding_canonical` said 0.15196834.
+
+Three things fixed that were not the task but blocked or falsified it:
+
+1. `nucleon_h3_marshalling_divergence_probe` asserted `== 2.157`, the ratio of
+   the **broken** path to the correct one — it asserted the defect `qou-qu2w`
+   fixed on 2026-08-26, so it had been failing on success and its committed
+   green witness had been unreproducible for eleven days. Re-pointed to verify
+   the fix holds (`== 1.0`), with 2.157 kept as the historical symptom.
+2. `qbeta_delta_vs_deltaTbeta_settled_probe` had hardcoded
+   `/home/user/qou/computations` paths and had **never run in this container**.
+3. The inlined workaround this session had put in
+   `atomic_tr_m_helium4_canonical` while the helper was locked — removed, since
+   an inlined copy of a shared computation is how the two paths drift apart.
+
+## Follow-ups opened
+
+- **`qou-eddc`** — exactly one of the three per-block χ closed forms, `(2,1)`,
+  is ordering-dependent, and it is the only 2-dimensional block. The `(q²−1)`
+  vanishing and its leading coefficient −1/2 survive, so nothing downstream is
+  affected; one polynomial needs restating.
+
+## Still open elsewhere
+
+The three sweeps that missed this each keyed on a *symptom* — a witness naming
+`atom_braid_word_3A`, a producer that raises on a non-monotone word. This one
+never raised because it built its own word. A value-keyed selector (a
+grouped-era τ_p is recognisable, as `y_lambda_convention_c_fingerprint_audit`
+argues for conventions) is the thing that would find any remaining siblings.
+Not attempted here.
