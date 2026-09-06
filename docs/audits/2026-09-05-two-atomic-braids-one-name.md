@@ -145,20 +145,63 @@ uses `n_target = 3A + Z`: three quark strands per nucleon **plus** Z electrons,
 which is neither the definition's `A+Z` nor production's `3A` (check 6, 1 live
 producer, `_deprecated/` excluded).
 
-> **It is NOT a third braid construction, and reading it as one would send the
-> next agent looking for a word that does not exist.** `3A + Z` there is the
-> **confinement-SDP normalisation** `tr Φ = n_target` — a dressing level swept
-> `Z = 0…8` to show `σ_F = n_target·y₀*` is monotone in the electron count.
-> The file **never builds a braid word**: it does not import or call
-> `atom_braid_word_3A`, and it is not in the `qou-hu1f` consumer set that
-> triage is re-running. What it establishes for *this* note is narrower and
-> still real: the corpus already models **an atom's electron dressing on top of
-> a 3A nuclear core**, which is exactly reading (a)'s picture — the 3A object as
-> the electron-free core of a larger atomic one — arrived at from the SDP side
-> rather than the braid side.
+> **🛑 RETRACTED, same branch, 2026-09-06 — this said "it is NOT a third braid
+> construction" and that is a claim about one FILE promoted to a claim about the
+> CORPUS.** The file-level evidence below is correct and re-verified (check 8 of
+> the new probe): `electron_sigma_f_chain.py` uses `3A + Z` as the
+> confinement-SDP normalisation `tr Φ = n_target`, sweeps `Z = 0…8` to show
+> `σ_F = n_target·y₀*` is monotone in the electron count, and **never** imports
+> or calls `atom_braid_word_3A`. All of that stands.
+>
+> What does not stand is the inference. A **content block** asserts the braid
+> itself on `3A + Z` strands:
+>
+> > [`mass-endomorphism/atomic-mass-gb-nf.md:3`](../../content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.md)
+> > — *"atomic braid $\mathcal{B}_K \in B_{n}$, where $n = 3A + Z$"*
+>
+> `B_n` is the braid group. So `3A + Z` is a third strand count **and** a third
+> braid, and the sentence telling the next agent not to look for one would have
+> sent them past the block that has it. Found by corpus-grep, not by re-reading
+> the file — the file was measured correctly both times.
+>
+> The narrower thing the file does establish is unchanged and still useful: the
+> corpus models **an atom's electron dressing on top of a 3A nuclear core**,
+> reading (a)'s picture arrived at from the SDP side rather than the braid side.
 
-So a renaming that assumes two objects has a third *count* to account for, even
-though it has only two braid *constructions* to name.
+**The structure is a 2×2, not a three-way argument.** Two independent binary
+choices — is a nucleon one strand or three, and are the Z electrons in or out:
+
+|  | electrons **in** | electrons **out** |
+|---|---|---|
+| **nucleon**-strand | `A + Z` — `def:atomic-braid`, **7** blocks | `A` — *coarsening only* |
+| **quark**-strand | `3A + Z` — `atomic-mass-gb-nf`, **1** block | `3A` — production, **26** blocks |
+
+Three cells are asserted as the home of the atomic braid. The fourth appears in
+[`level-sufficiency-interprets.md:41`](../../content/quantum-observable-universe/knots-particles-confinement/level-sufficiency-interprets.md)
+as `|H_A(R,q)| = A!` but explicitly as **"Default-coarse computation"** — an
+approximation, not a competing claim, so the live disagreement is three-way.
+
+Three facts that make this worse than a count discrepancy, all measured
+([`strand_count_is_a_two_by_two_probe.py`](../../computations/probes/strand_count_is_a_two_by_two_probe.py), 12/12):
+
+1. **The collision is on a symbol, and the notation register is a disputant.**
+   `notation-register-table3-data.md:7` says $\mathcal{B}_K \in H_{3A}(q)$;
+   `atomic-mass-gb-nf.md:3` says $\mathcal{B}_K \in B_n$, $n = 3A+Z$. Same
+   symbol, same described object. AGENTS.md §7aa makes the register
+   authoritative for symbols, and `notation-collisions.md` carries **no entry**
+   for $\mathcal{B}_K$ — the collision is unregistered.
+2. **The disagreement sits inside one citation edge.** `atomic-mass-gb-nf.md`
+   links `#def:atomic-braid` *while using a different count than that
+   definition gives*. It is not two chapters drifting apart; it is one block
+   contradicting the definition it points at.
+3. **They never coincide.** `A+Z < 3A < 3A+Z` strictly for every `A ∈ 1..60`,
+   `Z ∈ 1..A` (0 clashes), so no atom and no reading reconciles them by
+   accident. And `3A+Z` is exactly the **join**: `(3A+Z) − 3A = Z` and
+   `3A − A = 2A`, the two axes independent — which is why the one construction
+   that carries electrons *and* splits nucleons lands there.
+
+So a renaming that assumes two objects has a third *count* **and** a third
+*braid* to account for — three cells, not two.
 
 What *is* settled is that the status quo — two objects under one name, cited
 across chapters — cannot be right under any of these readings.
