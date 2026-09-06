@@ -78,8 +78,45 @@ reference tableau sits at the **bottom** of Bruhat while being the **top** of do
 `dominance_iff_bruhatLe` is **stated, not proved** — the honest state-and-queue marker of
 `AGENTS.md` §1, with its `-- Ref:` citation.  It is a published theorem (Dipper–James, via
 Mathas 3.7), not an open problem, and it is confirmed by exhaustive measurement to `n = 6`;
-what is missing is the formalisation.  Mathas' proof is an induction on a transposition
-`(a,b)` chosen at the first row where `s` and `t` differ, and needs no Hecke algebra.
+what is missing is the formalisation.
+
+## 🛑 What discharging that `sorry` ACTUALLY needs — measured, not guessed
+
+Mathas' proof is an induction on a transposition `(a,b)` chosen at the first row where `s`
+and `t` differ, and needs no Hecke algebra.  **But it does not run against the statement as
+written here**, and that is worth knowing before anyone starts:
+
+* the inductive step is *"if `v = t·(a,b)` then `v ▷ t` and `d(v) ▷ d(t)`"* — a **Bruhat
+  cover by an arbitrary transposition with length increase**.  That is the **reflection**
+  characterisation of Bruhat;
+* this file states 3.7 against `CoxeterBruhat.BruhatLe`, the **subword** one.
+
+So the proof route needs the bridge **subword ⟺ reflection**.  Surveyed:
+
+| what | where |
+|---|---|
+| a reflection Bruhat order | **absent from the corpus** |
+| subword ⟺ reflection | **absent from the corpus** |
+| length under a **simple** transposition | `Hecke.ParabolicPairing.length_swap_dichotomy`, `length_mul_swap_eq_succ_iff`, `length_swap_cases` — proved, but **simple** reflections only, while Mathas needs arbitrary `(a,b)` |
+
+Two honest routes, and they cost differently:
+
+1. **Prove subword ⟺ reflection** for a general Coxeter system and keep this statement as
+   written.  That is a real Coxeter theorem — the same neighbourhood as the subword property
+   `CoxeterBruhat.lean` already declines to prove and that Mathas' Corollary 3.8 needs
+   independently.  Most expensive, and pays for two obligations at once.
+2. **Define the reflection order, state 3.7 against it, prove it, and leave the bridge to
+   `BruhatLe` as a separate named obligation.**  Cheaper and self-contained, at the cost of a
+   second Bruhat definition in the corpus — which is acceptable *only* if it is explicitly
+   named as such, because an unnamed second one is the `dOf` collision (#6899) again.
+
+**The probe's 720/720 does not shortcut either route.**  Subword and reflection agreeing on
+`S₃`…`S₆` is evidence the bridge is true; it is not the bridge.
+
+This is recorded here rather than attempted because the choice between (1) and (2) is a
+structural one about how the corpus carries the Bruhat order, and because a sibling
+(**#6894**) is working Bruhat antisymmetry and the deletion condition and may settle it from
+the other side.
 -/
 
 open Equiv
