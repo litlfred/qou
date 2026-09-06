@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-06T09:34:21Z
+updated_at: 2026-09-06T09:41:14Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -140,3 +140,46 @@ share no such structure, and are evidence against a second-order analogue.
 
 **Remaining on this bean:** a closed form in (Z,N) for c2, as PR #6920 gives for c1. Six exact
 points do not fix one — do not guess.
+
+
+### Same day — WHY things survive the ruling: the content-cancellation criterion (tested)
+
+Probe: `computations/probes/content_cancellation_invariance_probe.py`.
+
+The ruling fallout had been case-by-case (c0 survives, c1 moves 163x, c2 moves 10-217x, the 4He
+first-order chain ratio 24/7 survives, the mirror difference survives at first order but not
+second). One rule accounts for all of it:
+
+**A linear combination of SAME-A isotope coefficients whose NET NUCLEON CONTENT IS ZERO is
+invariant under any intra-nucleon reordering, at EVERY order** — because such a combination cancels
+every per-nucleon contribution identically, leaving only INTERFACE data, and interfaces are single
+letters OUTSIDE the nucleon blocks, unreachable by a reordering within one.
+
+    combination                        net (p,n)   c1 canon/grouped   c2 canon/grouped
+    X(pp) + X(nn) - 2X(pn)      [A=2]    (0,0)      0     / 0         -15/32 / -15/32  OK
+    X(3p) + X(3n) - X(T) - X(3He) [A=3]  (0,0)      0     / 0           9/64 /   9/64  OK
+    X(T) - X(3He)               [A=3]   (-1,+1)    -7/64 / -7/64      -29/64 / -83/64  differs
+
+**Row 2 is a HELD-OUT test.** The criterion was stated from row 1 alone; row 2's combination was
+then chosen because 3p+3n and T+3He carry the same content, and c2(3p) = 117/64, c2(3n) = 5/16
+(canonical) / 963/32, 1451/64 (grouped) were computed AFTERWARDS purely to test it. Coefficients are
+fixed by content bookkeeping, not fitted. Row 3 is the control and fails invariance exactly as
+predicted.
+
+Incidentally all four new A=3 species reproduce PR #6920's c1 closed form at [eps^1] (19/64, 181/64,
+19/8, -5/32) — 4 more independent confirmations.
+
+**Note the first-order column: both content-cancelling combinations are 0, not merely equal.** So at
+first order the surviving interface terms cancel too (pp -4 and nn +4 against pn 0). At second order
+they do not — -15/32 and 9/64 — which is the substance: interface-interface cross terms enter one
+order up. That is also the concrete form of this bean's original 'the Y-terms Tr(Y P Y P') no longer
+vanish'.
+
+**This SHARPENS the MirrorAsymmetrySign caveat rather than removing it.** That file survives the
+ruling and its docstring calls the invariance 'measured on two words, not structural'. Row 3
+confirms it: the mirror difference does not cancel content, so the criterion gives it no protection;
+its c1 invariance is the coincidence that P - Q = (S_p - S_n)/2 is 5 for both words, and its c2
+invariance FAILS. Do not promote that file's invariance to a structural one.
+
+**NOT a proof** — a criterion stated from one case, tested on a second, with a control, at orders 0,
+1 and 2 only. It constrains COMBINATIONS, not individual values, so it gives no closed form for c2.
