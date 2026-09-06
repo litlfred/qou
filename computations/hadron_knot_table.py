@@ -394,12 +394,42 @@ _CKPT_PATH = _os.environ.get("QOU_HKT_CHECKPOINT", "").strip()
 
 
 def _ckpt_key():
-    """Hash of everything that determines the numbers."""
+    """Hash of everything that determines the numbers.
+
+    The docstring was already the right spec; the implementation was not
+    meeting it. It covered q0 plus three files -- this module, hecke_core and
+    hecke_core_legacy -- and NOT `compound_shift_nf`, which defines
+    `build_atom_nf_mp`, the function that produces every `nf` row in the table.
+    `pyhecke.gram` (`tr_m_mp`, `gram_matrix_mp`, `nf_tr`, `nf_net`),
+    `pyhecke.atom` (`build_nucleon_nf_mp`) and `pyhecke.constants`
+    (`pn_interface_offset`) were missing for the same reason.
+
+    That is not hypothetical. Bean `qou-ejuy` changed `build_atom_nf_mp`'s p-n
+    convention THIS session; had that landed after a checkpoint rather than
+    before, the resume would have accepted the cached atoms and appended new
+    ones computed under a different convention -- a silently mixed table, with
+    a matching key asserting it was fine. A checkpoint key that omits part of
+    the numeric path does not fail loudly; it fails by agreeing.
+
+    Widening the key invalidates existing checkpoints, which is the correct
+    default. The 2026-09-06 checkpoint was re-stamped by hand instead of
+    discarded, but only after all six NF components of protium, deuterium, He4
+    and C12 were recomputed under current code and reproduced their cached
+    renderings exactly.
+    """
     h = _hashlib.sha256()
     h.update(mp.nstr(_Q0, 50, strip_zeros=False).encode())
     import hecke_core as _hc
     import hecke_core_legacy as _hcl
-    for mod in (__file__, _hcl.__file__, _hc.__file__):
+    import compound_shift_nf as _csn
+    import pyhecke.atom as _pa
+    import pyhecke.constants as _pc
+    import pyhecke.gram as _pg
+    mods = (__file__, _hcl.__file__, _hc.__file__, _csn.__file__,
+            _pg.__file__, _pa.__file__, _pc.__file__)
+    for mod in mods:
+        if not mod:                      # namespace package / C extension
+            continue
         with open(mod, "rb") as fh:
             h.update(fh.read())
     return h.hexdigest()
