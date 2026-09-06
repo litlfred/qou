@@ -16,7 +16,7 @@ finite Habiro expansion:
 
   tr_M = Σ_{m=0}^{M} a_m(u) · (u;u)_m,   a_m ∈ ℤ[u], M < ∞
 
-where (u;u)_m = Π_{k=1}^{m}(1 - u^{2k}) is the q-Pochhammer symbol
+where (u;u)_m = Π_{k=1}^{m}(1 - u^k) is the q-Pochhammer symbol
 and u = q^{1/2}. Under archimedean evaluation u → u₀ = q₀^{1/2},
 each (u₀;u₀)_m shrinks like ~ℏ_q^m, giving the precision ladder.
 
@@ -37,13 +37,27 @@ Ref: [manuscript] prop:habiro-precision-ladder-equivalence
 
 namespace QOU.BraidKnot
 
-/-- The q-Pochhammer symbol (u;u)_m = Π_{k=1}^{m}(1 - u^{2k}).
-    This is the key structural ingredient of the Habiro expansion:
-    at substrate u₀, each factor (1 - u₀^{2k}) ≈ 1 - q₀^k is close
-    to 1, so the product shrinks like ℏ_q^m. -/
+/-- The q-Pochhammer symbol `(u;u)_m = Π_{k=1}^{m}(1 - u^k)`, with
+    `u = q^{1/2}` — i.e. `(√q; √q)_m`, the convention the corpus's Habiro
+    coefficients are actually computed against.
+
+    CORRECTED 2026-09-06: the body read `(1 - u^{2(m+1)})`, which at
+    `u = √q` is `(q;q)_m`, NOT `(u;u)_m`.  Against the stored `a_m` of
+    `habiro-coefficients-atomic.witness.json` — whose own description says
+    the expansion is in `(check_q; check_q)_m` with `check_q = q^{1/2}` —
+    that reconstructs `tr_M(proton) = 6.9602` instead of `1.1458`, a **507 %**
+    error, while `(1 - u^k)` reproduces the witness to `4.65e-17`.
+
+    It was also a notation error on its own terms: `(u;u)_m` denotes
+    `Π(1 - u^k)`; the product `Π(1 - u^{2k})` is `(u²;u²)_m`.
+
+    The two sibling `QOU.BraidKnot.qPochhammer` definitions —
+    `habiro-expansion-atomic.lean` and `full-pole-structure-mass-trace.lean` —
+    both already use `(1 - u^k)`; this file was the only one of the three that
+    disagreed.  Verified by `qbeta_habiro_pochhammer_convention_probe.py`. -/
 noncomputable def qPochhammer {R : Type*} [CommRing R] (u : R) : ℕ → R
   | 0 => 1
-  | m + 1 => qPochhammer u m * (1 - u ^ (2 * (m + 1)))
+  | m + 1 => qPochhammer u m * (1 - u ^ (m + 1))
 
 /-- A Habiro coefficient is an integer polynomial in u = q^{1/2}. -/
 abbrev HabiroCoeff := Polynomial ℤ
