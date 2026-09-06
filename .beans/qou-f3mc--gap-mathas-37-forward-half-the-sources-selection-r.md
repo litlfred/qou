@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T15:03:40Z
-updated_at: 2026-09-06T16:11:03Z
+updated_at: 2026-09-06T16:25:15Z
 ---
 
 ## What is open
@@ -271,3 +271,50 @@ Then: `d(s) <= d(t)` -> `rk_le_of_bruhatLe` -> specialise to the row cuts -> (ii
 (c) the interpolation bridge (boundary => full, for minimal coset reps) and (d) the HARD
 direction of Ehresmann, which together close the FORWARD half.  (d) is the only
 Mathlib-scale piece left in the whole arc.
+
+
+## UPDATE 5 — the CONVERSE HALF OF 3.7 IS PROVED.  Steps (b) and its two bridges: DONE.
+
+`bruhatLe_to_dominance` no longer carries a `sorry`:
+
+    #print axioms QOU.BraidKnot.DominanceIsBruhat.bruhatLe_to_dominance
+    -> [propext, Classical.choice, Quot.sound]
+
+The chain, end to end, with no reflection order anywhere in it:
+
+    d(s) <= d(t)
+      -> rank inequality        BruhatRank.rk_le_of_bruhatLe   (easy Ehresmann, from the
+                                                                SUBWORD definition)
+      -> at the row cuts        rankAt_eq_rk                   (specialisation + transport)
+      -> s |>= t                domRel_iff_rankAt              (the identity)
+
+The two bridges, both proved this pass:
+
+* `rowPattern_refTab_le_iff` -- the row cut IS an initial segment: `refTab` is
+  row-superstandard, so a label sits in row <= i exactly when it is below
+  `rowPrefix mu (i+1)`.  This is the fact `rankAt` was deliberately stated without.
+* `rankAt_eq_rk` -- `rankAt` IS `rk` at that cut, after the value-preserving relabelling
+  `toFinSucc`.  Plus `rk_eq_card` in `BruhatRankCriterion` to move between the sum-of-
+  indicators and cardinality forms.
+
+**`qou-3k66` was never needed for this.**  It stays open on its own merits, but 3.7 is no
+longer a reason to prioritise it, and #6894's "what a consumer citing Mathas' Prop 3.7 needs
+for an `↔`" is not true of this consumer.  I told them the opposite twice today and have
+corrected it on that PR.
+
+**An observation worth recording, not an oversight:** the row-standardness hypotheses
+`hs`/`ht` are UNUSED in the converse.  `domRel` is a relation on tabloids and `dOf` is a
+bijection on ALL tableaux, so the implication holds for arbitrary `mu`-tableaux.  They are
+kept in the signature because the source states 3.7 for row-standard tableaux and the
+FORWARD half does need them.
+
+### What is left
+
+`DominanceIsBruhat.lean` now carries exactly ONE `sorry`: `dominance_to_bruhatLe`.  It needs
+
+  (c) the interpolation bridge -- boundary rank inequality => full, for minimal coset
+      representatives.  Elementary; measured 143916/143916.
+  (d) the HARD direction of Ehresmann: rank criterion => subword.  Bjorner-Brenti Thm 2.1.5.
+      **This is now the only Mathlib-scale piece left in the whole arc.**
+
+Steps (a) and (b) of UPDATE 2's plan are complete.

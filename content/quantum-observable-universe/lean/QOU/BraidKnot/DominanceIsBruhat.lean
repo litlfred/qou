@@ -3,6 +3,8 @@ import QOU.BraidKnot.RowStandardTableau
 import QOU.BraidKnot.SpechtDominanceCore
 import QOU.Machinery.CoxeterBruhat
 import QOU.Hecke.SymmetricCoxeter
+import QOU.BraidKnot.SytRowSuperstandard
+import QOU.Machinery.BruhatRankCriterion
 
 /-!
 # Dipper–James: dominance on row-standard tableaux is the Bruhat order
@@ -124,12 +126,17 @@ Composing with `bruhatLe_of_reflLe_An` therefore reaches `BruhatLe`.  So:
 * **forward** (`s ⊵ t → d(s) ≤ d(t)`) is **unblocked**: the Coxeter side is now supplied and
   what remains is the tableau combinatorics — the induction on a transposition at the first
   differing row;
-* **converse** (`d(s) ≤ d(t) → s ⊵ t`) still needs **`BruhatLe → ReflLe`**, which is open and
-  tracked as bean **`qou-3k66`**.  #6894's own "left open" section names it as *"what a
-  consumer citing Mathas' Prop 3.7 needs for an `↔`"* — this file is that consumer.
+* **converse** (`d(s) ≤ d(t) → s ⊵ t`) appeared to need **`BruhatLe → ReflLe`** — bean
+  **`qou-3k66`**, which #6894's own "left open" section names as *"what a consumer citing
+  Mathas' Prop 3.7 needs for an `↔`"*, this file being that consumer.
 
-The `iff` is therefore **split** below into its two implications, so the reachable half is not
-held hostage to the blocked one.
+**Both halves of that assessment turned out to be wrong, in opposite directions**, and the
+sections below are the record: the forward half is *not* unblocked (its tableau step does not
+close), and the converse *is* — by a route through rank matrices that never mentions the
+reflection order.  **`bruhatLe_to_dominance` is proved.**
+
+The `iff` is nonetheless still **split** below into its two implications, because only one of
+them is closed.
 
 ## 🛑 THE SOURCE'S INDUCTIVE STEP DOES NOT CLOSE — measured, not suspected
 
@@ -270,7 +277,9 @@ interpolation.
   the rank matrix, an induction on deletions from the subword *definition*) ⟹ boundary rank
   **by specialisation** ⟹ `s ⊵ t`.  No reflection order appears anywhere in that chain, so
   `bruhatLe_to_dominance`'s recorded blocker is not a blocker on this route.  Its docstring
-  below still names `qou-3k66`; that is the *old* route, kept until the new one is built.
+  It is now **proved** on exactly this route: `rk_le_of_bruhatLe` (easy Ehresmann,
+  `Machinery/BruhatRankCriterion`), then `rankAt_eq_rk` to specialise to the row cuts, then
+  `domRel_iff_rankAt`.  `qou-3k66` stays open on its own merits.
 * **Forward — re-scoped, not unblocked.**  It still needs the **hard** direction of
   Ehresmann (rank criterion ⟹ subword), plus the interpolation bridge.  But that is a named
   classical theorem with a known proof (Björner–Brenti Thm 2.1.5) in place of a tableau
@@ -373,6 +382,67 @@ theorem domRel_iff_rankAt (s t : QOU.BraidKnot.Specht.Tableau μ) :
     rw [domCount_eq_rankAt, domCount_eq_rankAt]
     exact h i m
 
+/-! ### The two bridges to `Machinery.BruhatRankCriterion`
+
+`rankAt` cuts by the reference tableau's ROW PATTERN and lives on `Fin (nOf μ)`;
+`BruhatRank.rk` cuts by a NUMERIC index and lives on `Fin (n+1)`.  Two lemmas reconcile
+them, and both are bookkeeping: the reference tableau is row-superstandard, so its row cut
+is the initial segment ending at `rowPrefix μ (i+1)`; and `toFinSucc` is a value-preserving
+relabelling. -/
+
+/-- **The row cut is an initial segment.**  `refTab` is row-superstandard, so a label lies
+in row `≤ i` exactly when it is below the cumulative row length `rowPrefix μ (i + 1)`.
+
+This is the fact `rankAt` was deliberately stated *without*, so that everything up to here
+stayed independent of the reference tableau's shape. -/
+theorem rowPattern_refTab_le_iff (i : ℕ) (x : Fin (QOU.BraidKnot.Specht.nOf μ)) :
+    QOU.BraidKnot.Specht.rowPattern (refTab μ) x ≤ i
+      ↔ (x : ℕ) < QOU.BraidKnot.rowPrefix μ (i + 1) := by
+  set c : μ.cells := refTab μ x with hc
+  have hmem : (((c : ℕ × ℕ).1, (c : ℕ × ℕ).2) : ℕ × ℕ) ∈ μ := by simp
+  have hcell :
+      (⟨((c : ℕ × ℕ).1, (c : ℕ × ℕ).2), (YoungDiagram.mem_cells _).2 hmem⟩ : μ.cells) = c := by
+    apply Subtype.ext; simp
+  have hx : (x : ℕ)
+      = QOU.BraidKnot.rowPrefix μ (c : ℕ × ℕ).1 + (c : ℕ × ℕ).2 := by
+    have h := refTab_symm_apply (μ := μ) hmem
+    rw [hcell, hc, Equiv.symm_apply_apply] at h
+    rw [hc]
+    exact h
+  have hj : (c : ℕ × ℕ).2 < μ.rowLen (c : ℕ × ℕ).1 := YoungDiagram.mem_iff_lt_rowLen.mp hmem
+  have hrow : QOU.BraidKnot.Specht.rowPattern (refTab μ) x = (c : ℕ × ℕ).1 := rfl
+  rw [hrow]
+  constructor
+  · intro hle
+    have h1 : QOU.BraidKnot.rowPrefix μ ((c : ℕ × ℕ).1 + 1)
+        ≤ QOU.BraidKnot.rowPrefix μ (i + 1) := QOU.BraidKnot.rowPrefix_mono μ (by omega)
+    rw [QOU.BraidKnot.rowPrefix_succ] at h1
+    omega
+  · intro hlt
+    by_contra hgt
+    have hle : i + 1 ≤ (c : ℕ × ℕ).1 := by omega
+    have h2 := QOU.BraidKnot.rowPrefix_mono μ hle
+    omega
+
+/-- **`rankAt` IS `BruhatRank.rk`**, at the cut `rowPrefix μ (i + 1)` and after the
+value-preserving relabelling `toFinSucc`. -/
+theorem rankAt_eq_rk (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
+    (t : QOU.BraidKnot.Specht.Tableau μ) (i m : ℕ) :
+    rankAt t i m
+      = QOU.Machinery.BruhatRank.rk (toFinSucc hn (dOf t))
+          (QOU.BraidKnot.rowPrefix μ (i + 1)) m := by
+  rw [rankAt, QOU.Machinery.BruhatRank.rk_eq_card]
+  refine Finset.card_equiv (finCongr hn) ?_
+  intro x
+  simp only [Finset.mem_filter, Finset.mem_univ, true_and, rowPattern_refTab_le_iff]
+  constructor
+  · rintro ⟨h1, h2⟩
+    refine ⟨by simpa using h1, ?_⟩
+    simpa [toFinSucc, Equiv.permCongr_apply] using h2
+  · rintro ⟨h1, h2⟩
+    refine ⟨by simpa using h1, ?_⟩
+    simpa [toFinSucc, Equiv.permCongr_apply] using h2
+
 /-! ### Dipper–James 3.7 itself -/
 
 /-- **Dipper–James (Mathas 3.7): dominance on row-standard tableaux is the Bruhat order.**
@@ -408,36 +478,47 @@ theorem dominance_to_bruhatLe (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
       (toFinSucc hn (dOf s)) (toFinSucc hn (dOf t)) :=
   sorry
 
-/-- **The converse half of 3.7** — Bruhat implies dominance.
+/-- **The converse half of 3.7 — PROVED, and it never needed `qou-3k66`.**
 
-**Blocked on a named, tracked Coxeter obligation, not on the tableau side.**  Mathas' argument
-here goes through the *reflection* order (`d(t) = d(s)·τ` with `ℓ` up by one, then read off
-`s ▷ t` from the definitions), so it needs **`BruhatLe → ReflLe`** — the direction #6894 left
-open as bean **`qou-3k66`**, whose own summary names it as *"what a consumer citing Mathas'
-Prop 3.7 needs for an `↔`"*.  This is that consumer.
+Mathas' own argument for this direction goes through the *reflection* order (`d(t) = d(s)·τ`
+with `ℓ` up by one), which is why the corpus recorded it as blocked on **`BruhatLe → ReflLe`**
+— bean `qou-3k66`, whose own summary names it as *"what a consumer citing Mathas' Prop 3.7
+needs for an `↔`"*.  **That route is not the only one.**  The chain used here is
 
-`IwahoriHecke.BruhatReflection` proves the other direction (`bruhatLe_of_reflLe`, and
-`bruhatLe_of_reflLe_An` hypothesis-free for type A), which is why
-`dominance_to_bruhatLe` above is unblocked and this one is not. -/
--- Ref: [dipper-james1986]; [mathas1999] Proposition 3.7.  Blocked on `qou-3k66`
--- (`BruhatLe → ReflLe`), open in `QOU/IwahoriHecke/BruhatReflection.lean`.
+    d(s) ≤ d(t)  →  rank inequality      (`BruhatRank.rk_le_of_bruhatLe`, the EASY half of
+                                          Ehresmann's criterion, proved straight from the
+                                          SUBWORD definition — no reflection order at all)
+                 →  at the row cuts      (specialisation, `rankAt_eq_rk`)
+                 →  s ⊵ t                (`domRel_iff_rankAt`)
+
+so `qou-3k66` stays open on its own merits and 3.7 is no longer a reason to prioritise it.
+
+**The row-standardness hypotheses are not used**, and that is a real observation rather than
+an oversight: `domRel` is a relation on *tabloids* and `dOf` is a bijection on *all*
+tableaux, so this implication holds for arbitrary `μ`-tableaux.  They are kept in the
+signature because 3.7 as stated in the source quantifies over row-standard tableaux and the
+forward half does need them. -/
+-- Ref: [dipper-james1986]; [mathas1999] Proposition 3.7.
 theorem bruhatLe_to_dominance (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
     {s t : QOU.BraidKnot.Specht.Tableau μ}
     (_hs : QOU.BraidKnot.RowStandardTableau.IsRowStandard s)
     (_ht : QOU.BraidKnot.RowStandardTableau.IsRowStandard t)
-    (_hbr : QOU.Machinery.CoxeterBruhat.BruhatLe (permCoxeterSystem n)
+    (hbr : QOU.Machinery.CoxeterBruhat.BruhatLe (permCoxeterSystem n)
       (toFinSucc hn (dOf s)) (toFinSucc hn (dOf t))) :
     domRel (QOU.BraidKnot.Specht.Tabloid.mk t)
-      (QOU.BraidKnot.Specht.Tabloid.mk s) :=
-  sorry
+      (QOU.BraidKnot.Specht.Tabloid.mk s) := by
+  rw [domRel_iff_rankAt]
+  intro i m
+  rw [rankAt_eq_rk hn, rankAt_eq_rk hn]
+  exact QOU.Machinery.BruhatRank.rk_le_of_bruhatLe hbr _ m
 
 /-- **Dipper–James 3.7**, assembled from its two halves.
 
 This declaration itself contains **no `sorry`** — it is the conjunction of
-`dominance_to_bruhatLe` and `bruhatLe_to_dominance`, and inherits exactly their status.  It is
-stated separately so that a consumer needing only one implication is not made to depend on
-the blocked one: the forward half is unblocked (see its docstring), the converse waits on
-`qou-3k66`. -/
+`dominance_to_bruhatLe` and `bruhatLe_to_dominance`, and inherits exactly their status.
+**The converse half is proved; the forward half is not**, so a consumer that needs only
+`d(s) ≤ d(t) → s ⊵ t` should cite `bruhatLe_to_dominance` directly rather than this `iff`,
+which is `sorry`-carrying through its other half.  See each half's own docstring. -/
 theorem dominance_iff_bruhatLe (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
     {s t : QOU.BraidKnot.Specht.Tableau μ}
     (hs : QOU.BraidKnot.RowStandardTableau.IsRowStandard s)
