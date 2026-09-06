@@ -5,12 +5,12 @@
   "description": "Source literals of >= 11 significant digits that also appear in a *.witness.json the script does not itself produce \u2014 a value copied instead of loaded. Such a copy goes stale silently when the producer is re-run.",
   "min_sig_digits": 11,
   "indexed_literals": 227101,
-  "total": 881,
-  "narrow_total": 266,
-  "narrow_files": 177,
-  "shared_total": 615,
-  "files": 535,
-  "from_deprecated_witness": 17,
+  "total": 812,
+  "narrow_total": 232,
+  "narrow_files": 164,
+  "shared_total": 580,
+  "files": 525,
+  "from_deprecated_witness": 13,
   "findings": [
     {
       "file": "computations/a3_mirror_residual_reconciliation.py",
@@ -764,148 +764,6 @@
       ],
       "witness_count": 142,
       "deprecated_source": true
-    },
-    {
-      "file": "computations/audits/muon_pin_migration_stage1_inventory.py",
-      "line": 108,
-      "literal": "1.1099785955573347198944358078180",
-      "sig_digits": 32,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/codata-truncation-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/audits/muon_pin_migration_stage1_inventory.py",
-      "line": 109,
-      "literal": "1.10997859555418057528159407961",
-      "sig_digits": 30,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/alpha-k-jones-markov-h4.witness.json",
-        "computations/audits/hardcoded-q0-literal-families.witness.json",
-        "computations/audits/muon-pin-three-values.witness.json",
-        "computations/cal4-disguise-hunt.witness.json"
-      ],
-      "witness_count": 10,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/audits/muon_pin_migration_stage1_inventory.py",
-      "line": 110,
-      "literal": "1.10997859564273904668179512938",
-      "sig_digits": 30,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/audits/muon-pin-three-values.witness.json",
-        "computations/codata-truncation-audit.witness.json",
-        "computations/deltalambda/convention-systematic-audit.witness.json",
-        "computations/deltalambda/mu3-anchor-consistency.witness.json"
-      ],
-      "witness_count": 19,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/audits/muon_pin_migration_stage1_inventory.py",
-      "line": 111,
-      "literal": "1.1099785827513808",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/binding-k-enumerator.witness.json",
-        "computations/_deprecated/habiro-mirror-pair-li7-be7.witness.json",
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/a3-magnitude-berezinian-crossterm.witness.json"
-      ],
-      "witness_count": 279,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/audits/pin_straddle_unguarded_audit.py",
-      "line": 543,
-      "literal": "1.1099785956",
-      "sig_digits": 11,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/_deprecated/protium-deep-trace.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/audits/pin_straddle_unguarded_audit.py",
-      "line": 543,
-      "literal": "1.1099785827",
-      "sig_digits": 11,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/probes/qbeta-lorentzian-gram-offset.witness.json",
-        "computations/qbeta/qbeta-published-form-is-the-inadmissible-z1.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 4,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/audits/q0_cross_layer_fallback_scan.py",
-      "line": 68,
-      "literal": "1.10997859555733471989976322048322502665620840878015",
-      "sig_digits": 51,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/codata-truncation-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/audits/q0_cross_layer_fallback_scan.py",
-      "line": 69,
-      "literal": "1.10997858275138080759166909561076887987449912187365",
-      "sig_digits": 51,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/codata-truncation-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/audits/q0_hardcoded_pin_audit.py",
-      "line": 92,
-      "literal": "1.10997859555733471989976322048322502665620840878015",
-      "sig_digits": 51,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/codata-truncation-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/audits/q0_hardcoded_pin_audit.py",
-      "line": 93,
-      "literal": "1.10997858275138080759166909561076887987449912187365",
-      "sig_digits": 51,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/codata-truncation-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": false
     },
     {
       "file": "computations/audits/qbeta_multiblock_order_audit.py",
@@ -2982,21 +2840,6 @@
     },
     {
       "file": "computations/isospin_mass_tower_collapse.py",
-      "line": 41,
-      "literal": "3.74445965488548",
-      "sig_digits": 15,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/atomic-braid-mass-paper-formula.witness.json",
-        "computations/_deprecated/comprehensive-low-isotope-table-v2.witness.json",
-        "computations/_deprecated/deuterium-derived.witness.json",
-        "computations/_deprecated/feynman-qou-comparison.witness.json"
-      ],
-      "witness_count": 16,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/isospin_mass_tower_collapse.py",
       "line": 57,
       "literal": "1.813186209713881",
       "sig_digits": 16,
@@ -3079,21 +2922,6 @@
     {
       "file": "computations/knot-operator-table.py",
       "line": 39,
-      "literal": "2.029883212819307",
-      "sig_digits": 16,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/branching-qvalues.witness.json",
-        "computations/_deprecated/deuterium-derived.witness.json",
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/codata-reconciliation.witness.json"
-      ],
-      "witness_count": 16,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/knot-particle-generation.py",
-      "line": 46,
       "literal": "2.029883212819307",
       "sig_digits": 16,
       "spread": "SHARED",
@@ -3306,21 +3134,6 @@
       ],
       "witness_count": 16,
       "deprecated_source": true
-    },
-    {
-      "file": "computations/magic_shell_enhancement_derive_or_refute.py",
-      "line": 188,
-      "literal": "2.5327796564",
-      "sig_digits": 11,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/binding-hbarq-rung-forward-test.witness.json",
-        "computations/binding-recurrence-spectral-bridge.witness.json",
-        "computations/linking-weight-canonical-object-lwfix.witness.json",
-        "computations/lw-growth-rate-probe.witness.json"
-      ],
-      "witness_count": 8,
-      "deprecated_source": false
     },
     {
       "file": "computations/markov/markov_trace_axiomatic_multi_atom.py",
@@ -3688,51 +3501,6 @@
     },
     {
       "file": "computations/mn_delta_pn_qbeta_habiro_cascade_probe.py",
-      "line": 85,
-      "literal": "0.51099895069",
-      "sig_digits": 11,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/alpha-cluster-recursion.witness.json",
-        "computations/_deprecated/binding-k-enumerator.witness.json",
-        "computations/_deprecated/binding-per-block-log.witness.json",
-        "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
-      ],
-      "witness_count": 142,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/mn_delta_pn_qbeta_habiro_cascade_probe.py",
-      "line": 86,
-      "literal": "938.27208816",
-      "sig_digits": 11,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/atom-full-partition-3A.witness.json",
-        "computations/_deprecated/atom-wedderburn-blend.witness.json",
-        "computations/_deprecated/beta-decay-energy-scale.witness.json",
-        "computations/_deprecated/breit-wheeler-nucleon-nf.witness.json"
-      ],
-      "witness_count": 68,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/mn_delta_pn_qbeta_habiro_cascade_probe.py",
-      "line": 87,
-      "literal": "939.56542052",
-      "sig_digits": 11,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/atom-full-partition-3A.witness.json",
-        "computations/_deprecated/atom-wedderburn-blend.witness.json",
-        "computations/_deprecated/beta-decay-energy-scale.witness.json",
-        "computations/_deprecated/breit-wheeler-nucleon-nf.witness.json"
-      ],
-      "witness_count": 60,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/mn_delta_pn_qbeta_habiro_cascade_probe.py",
       "line": 113,
       "literal": "2.029883212819307250042405108549",
       "sig_digits": 31,
@@ -3894,20 +3662,6 @@
       "deprecated_source": true
     },
     {
-      "file": "computations/option_e_canonical_reeb_v5.py",
-      "line": 59,
-      "literal": "1.1097090249",
-      "sig_digits": 11,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/option-e-probe1-derive-1plusq-over-2.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": false
-    },
-    {
       "file": "computations/option_e_deuteron_delta_lambda_probe_v2.py",
       "line": 83,
       "literal": "0.51099895069",
@@ -3936,20 +3690,6 @@
       ],
       "witness_count": 142,
       "deprecated_source": true
-    },
-    {
-      "file": "computations/option_e_deuteron_param_free_residual.py",
-      "line": 48,
-      "literal": "1.1097090249",
-      "sig_digits": 11,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/option-e-probe1-derive-1plusq-over-2.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": false
     },
     {
       "file": "computations/option_e_kl_betti_contributive_deuteron.py",
@@ -3982,19 +3722,6 @@
       "deprecated_source": true
     },
     {
-      "file": "computations/option_e_probe1_derive_1plusq_over_2.py",
-      "line": 54,
-      "literal": "1.1097090249",
-      "sig_digits": 11,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
       "file": "computations/option_e_q_reeb_phase_probe_v4.py",
       "line": 46,
       "literal": "0.51099895069",
@@ -4025,20 +3752,6 @@
       "deprecated_source": true
     },
     {
-      "file": "computations/option_e_v6_combined_canonical.py",
-      "line": 59,
-      "literal": "1.1097090249",
-      "sig_digits": 11,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/option-e-probe1-derive-1plusq-over-2.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": false
-    },
-    {
       "file": "computations/option_e_v7_involution_aware.py",
       "line": 50,
       "literal": "0.51099895069",
@@ -4052,20 +3765,6 @@
       ],
       "witness_count": 142,
       "deprecated_source": true
-    },
-    {
-      "file": "computations/option_e_v7_involution_aware.py",
-      "line": 59,
-      "literal": "1.1097090249",
-      "sig_digits": 11,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/option-e-probe1-derive-1plusq-over-2.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": false
     },
     {
       "file": "computations/option_e_v8_hecke_involution_isospin_mirror.py",
@@ -4083,20 +3782,6 @@
       "deprecated_source": true
     },
     {
-      "file": "computations/option_e_v8_hecke_involution_isospin_mirror.py",
-      "line": 53,
-      "literal": "1.1097090249",
-      "sig_digits": 11,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/option-e-probe1-derive-1plusq-over-2.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": false
-    },
-    {
       "file": "computations/option_e_v9_all_symmetries.py",
       "line": 42,
       "literal": "0.51099895069",
@@ -4110,20 +3795,6 @@
       ],
       "witness_count": 142,
       "deprecated_source": true
-    },
-    {
-      "file": "computations/option_e_v9_all_symmetries.py",
-      "line": 51,
-      "literal": "1.1097090249",
-      "sig_digits": 11,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/option-e-probe1-derive-1plusq-over-2.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": false
     },
     {
       "file": "computations/path_b_evacuation.py",
@@ -7693,21 +7364,6 @@
     },
     {
       "file": "computations/probes/qbeta_root_of_unity_probe.py",
-      "line": 55,
-      "literal": "0.008517234550156142",
-      "sig_digits": 16,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/qbeta/ck-qgevrey-slope.witness.json",
-        "computations/qbeta/qbeta-c3-bar-partner-extractor-breakdown.witness.json",
-        "computations/qbeta/qbeta-c3-measurement-proposal-budget.witness.json"
-      ],
-      "witness_count": 7,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/probes/qbeta_root_of_unity_probe.py",
       "line": 59,
       "literal": "2.06934257711516783787971951725",
       "sig_digits": 30,
@@ -8537,35 +8193,6 @@
       "deprecated_source": true
     },
     {
-      "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
-      "line": 68,
-      "literal": "1.10997858275",
-      "sig_digits": 12,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/binding-log-free-energy.witness.json",
-        "computations/binding-recurrence-spectral-bridge.witness.json",
-        "computations/binding-sym-vs-lin-two-models.witness.json"
-      ],
-      "witness_count": 39,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/qbeta/qbeta_a1_carrier_reconciliation.py",
-      "line": 72,
-      "literal": "1.46324616887618",
-      "sig_digits": 15,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/qbeta/qbeta-hoefsmit-stage-b-per-block-ck-probe.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": false
-    },
-    {
       "file": "computations/qbeta/qbeta_admissible_functionals_bracket_probe.py",
       "line": 181,
       "literal": "0.783645827374621",
@@ -9317,21 +8944,6 @@
       "deprecated_source": true
     },
     {
-      "file": "computations/qbeta/qbeta_coherent_collapse_sinh_cosh.py",
-      "line": 101,
-      "literal": "1.10997859556",
-      "sig_digits": 12,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/borromean-chi-independent-crosscheck.witness.json",
-        "computations/codata-truncation-audit.witness.json",
-        "computations/derived-chi-catalogue-consumer-demo.witness.json"
-      ],
-      "witness_count": 6,
-      "deprecated_source": false
-    },
-    {
       "file": "computations/qbeta/qbeta_colour_does_not_license_the_asymmetry_probe.py",
       "line": 100,
       "literal": "1.1099785827513808075916690956107688798744991218736",
@@ -9999,21 +9611,6 @@
       ],
       "witness_count": 19,
       "deprecated_source": true
-    },
-    {
-      "file": "computations/qbeta/qbeta_heat_fmap_symbolic_explore.py",
-      "line": 55,
-      "literal": "1.10997859556",
-      "sig_digits": 12,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/borromean-chi-independent-crosscheck.witness.json",
-        "computations/codata-truncation-audit.witness.json",
-        "computations/derived-chi-catalogue-consumer-demo.witness.json"
-      ],
-      "witness_count": 6,
-      "deprecated_source": false
     },
     {
       "file": "computations/qbeta/qbeta_heat_kernel_a1_gate_probe.py",
@@ -10721,51 +10318,6 @@
     },
     {
       "file": "computations/qbeta/qbeta_t3_multiknot_binding_probe.py",
-      "line": 48,
-      "literal": "0.51099895000",
-      "sig_digits": 11,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/audits/fitted-labelled-canonical-audit.witness.json",
-        "computations/audits/hardcoded-literal-audit.witness.json",
-        "computations/cal4-disguise-hunt.witness.json",
-        "computations/codata-corpus-vintage-scan.witness.json"
-      ],
-      "witness_count": 7,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/qbeta/qbeta_t3_multiknot_binding_probe.py",
-      "line": 50,
-      "literal": "938.27208816",
-      "sig_digits": 11,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/atom-full-partition-3A.witness.json",
-        "computations/_deprecated/atom-wedderburn-blend.witness.json",
-        "computations/_deprecated/beta-decay-energy-scale.witness.json",
-        "computations/_deprecated/breit-wheeler-nucleon-nf.witness.json"
-      ],
-      "witness_count": 68,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/qbeta/qbeta_t3_multiknot_binding_probe.py",
-      "line": 51,
-      "literal": "939.56542052",
-      "sig_digits": 11,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/atom-full-partition-3A.witness.json",
-        "computations/_deprecated/atom-wedderburn-blend.witness.json",
-        "computations/_deprecated/beta-decay-energy-scale.witness.json",
-        "computations/_deprecated/breit-wheeler-nucleon-nf.witness.json"
-      ],
-      "witness_count": 60,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/qbeta/qbeta_t3_multiknot_binding_probe.py",
       "line": 82,
       "literal": "2.0298832128",
       "sig_digits": 11,
@@ -11261,21 +10813,6 @@
         "computations/substrate/sw-hyperbolicity-gate.witness.json"
       ],
       "witness_count": 6,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/substrate/experimental_constants.py",
-      "line": 352,
-      "literal": "7.327724753417752",
-      "sig_digits": 16,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/alpha-cluster-recursion.witness.json",
-        "computations/_deprecated/deuterium-derived.witness.json",
-        "computations/_deprecated/family-1-kashaev.witness.json",
-        "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
-      ],
-      "witness_count": 41,
       "deprecated_source": true
     },
     {
@@ -11936,494 +11473,6 @@
       "deprecated_source": false
     },
     {
-      "file": "computations/witness_regen_classify.py",
-      "line": 558,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 559,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 564,
-      "literal": "0.10453014939781968",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-from-q.witness.json",
-        "computations/beta-decay-matrix.witness.json"
-      ],
-      "witness_count": 10,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 567,
-      "literal": "0.05534834587669884",
-      "sig_digits": 16,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/_deprecated/chi-helium-4-h12-numeric.witness.json",
-        "computations/_deprecated/tr-m-he4-canonical.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 567,
-      "literal": "0.055358426266783106",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 572,
-      "literal": "0.05534834587669884",
-      "sig_digits": 16,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/_deprecated/chi-helium-4-h12-numeric.witness.json",
-        "computations/_deprecated/tr-m-he4-canonical.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 573,
-      "literal": "0.055358426266783106",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 583,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 585,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 592,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 593,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 599,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 601,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 634,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 636,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 642,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 643,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 676,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 677,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 681,
-      "literal": "0.05534834587669884",
-      "sig_digits": 16,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/_deprecated/chi-helium-4-h12-numeric.witness.json",
-        "computations/_deprecated/tr-m-he4-canonical.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 3,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 682,
-      "literal": "0.055358426266783106",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 688,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 690,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 703,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 704,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 708,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 709,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 715,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 716,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 720,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 720,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 724,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 725,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 779,
-      "literal": "0.20906032199559366",
-      "sig_digits": 17,
-      "spread": "NARROW",
-      "witnesses": [
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/witness-value-copy-audit.witness.json"
-      ],
-      "witness_count": 2,
-      "deprecated_source": false
-    },
-    {
-      "file": "computations/witness_regen_classify.py",
-      "line": 780,
-      "literal": "0.20906029879563937",
-      "sig_digits": 17,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/tau-leptonic-decay.witness.json",
-        "computations/audits/q0-consistency-audit.witness.json",
-        "computations/beta-decay-matrix.witness.json",
-        "computations/confined-knot-binding.witness.json"
-      ],
-      "witness_count": 31,
-      "deprecated_source": true
-    },
-    {
       "file": "computations/y_lambda_su_n.py",
       "line": 294,
       "literal": "0.50540422650393080318755870324047227566035119774981",
@@ -12526,21 +11575,6 @@
     },
     {
       "file": "qou-mass/src/qou_mass/_internal/experimental_constants.py",
-      "line": 95,
-      "literal": "938.27208816",
-      "sig_digits": 11,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/atom-full-partition-3A.witness.json",
-        "computations/_deprecated/atom-wedderburn-blend.witness.json",
-        "computations/_deprecated/beta-decay-energy-scale.witness.json",
-        "computations/_deprecated/breit-wheeler-nucleon-nf.witness.json"
-      ],
-      "witness_count": 68,
-      "deprecated_source": true
-    },
-    {
-      "file": "qou-mass/src/qou_mass/_internal/experimental_constants.py",
       "line": 151,
       "literal": "137.035999084",
       "sig_digits": 12,
@@ -12627,21 +11661,6 @@
         "computations/substrate/sw-hyperbolicity-gate.witness.json"
       ],
       "witness_count": 6,
-      "deprecated_source": true
-    },
-    {
-      "file": "qou-mass/src/qou_mass/_internal/experimental_constants.py",
-      "line": 350,
-      "literal": "7.327724753417752",
-      "sig_digits": 16,
-      "spread": "SHARED",
-      "witnesses": [
-        "computations/_deprecated/alpha-cluster-recursion.witness.json",
-        "computations/_deprecated/deuterium-derived.witness.json",
-        "computations/_deprecated/family-1-kashaev.witness.json",
-        "computations/_deprecated/isotope-mass-structural-y-lambda.witness.json"
-      ],
-      "witness_count": 41,
       "deprecated_source": true
     },
     {
@@ -12774,7 +11793,7 @@
         "computations/codata-corpus-vintage-scan.witness.json",
         "computations/e0-lambda-composite.witness.json"
       ],
-      "witness_count": 8,
+      "witness_count": 9,
       "deprecated_source": false
     }
   ]

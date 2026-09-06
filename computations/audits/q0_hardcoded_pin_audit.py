@@ -89,7 +89,14 @@ PINS = {
 # truncated at 8 decimals, 2.5 ppb), and a value well outside it is neither.
 # A lexical prefix test gets both of those wrong, which is how they were
 # getting missed.
+# witness-copy-intentional: the canonical pins at full precision, held
+# here as this audit's COMPARISON BASIS. They are the thing being
+# detected; sourcing them from a witness would make the detector
+# agree with whatever it is auditing.
 _MUON_EXACT = Decimal("1.10997859555733471989976322048322502665620840878015")
+# witness-copy-intentional: the proton half of the comparison basis
+# above. It needs its own marker because the marker is bounded by the
+# assignment it sits on and deliberately does not leak to the next.
 _PROTON_EXACT = Decimal("1.10997858275138080759166909561076887987449912187365")
 _PIN_GAP = abs(_MUON_EXACT - _PROTON_EXACT) / _PROTON_EXACT
 _Q0_SHAPED = re.compile(r"\b1\.109[0-9]{5,}")

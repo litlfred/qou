@@ -551,6 +551,11 @@ def classify(old: dict, new: dict, script=None, resolve=None) -> dict:
             "flips": len(flips)}
 
 
+# witness-copy-intentional: these are this classifier's own self-test
+# INPUTS, not values read from anywhere. Each pair reproduces a shape
+# observed on a real witness (the braid-encoding-audit -h/2 flip, the
+# deuteron engine-label case) so the verdict logic is pinned against it.
+# Loading them from a witness would delete what the test tests.
 CASES = [
     ("declaration only", {}, {}, True, "DECLARED"),
     ("nothing at all", {"a": 1}, {"a": 1}, False, "NOCHANGE"),
@@ -671,6 +676,9 @@ def _anchor_stub(anchor):
 # the measured colour-blind → colour-weighted move in `tr_M`. The bound at 1e-5
 # sits between them, and the two boundary cases check it is actually enforced
 # there rather than approximately.
+# witness-copy-intentional: as CASES above — this classifier's own
+# self-test inputs, each reproducing a real observed magnitude so the
+# 1e-5 bound is pinned between them.
 INFERRED_CASES = [
     ("no q0 field + proton producer + anchor-sized move is INFERRED",
      {"scriptFile": "p.py", "x": 0.20906032199559366},

@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-05T12:02:04Z
-updated_at: 2026-09-06T04:05:32Z
+updated_at: 2026-09-06T06:37:25Z
 ---
 
 ## 2026-09-05 — detector extended, wired, calibrated (branch claude/precision-truncation-audit-sidecar-r5vjkx)
@@ -159,3 +159,37 @@ it for no gain. Do this as a follow-up.
 exceeded for user ID 662242" — the AGENTS.md 8a GraphQL node-lookup limiter.
 Failed 4x. Retry armed (trig_01EtnrNRzCWvErGYjKLT9Z67). NEVER close-and-reopen.
 The user granted merge permission ("Merge and continue", 2026-09-06).
+
+
+## 2026-09-06 — the deliberate-vs-accidental hand pass ran
+
+Read all 266 NARROW findings with source context. Four classes; two are not
+defects. Full taxonomy: `docs/audits/2026-09-06-witness-copy-hand-pass-taxonomy.md`.
+
+  NARROW findings   266 -> 232      (-34)
+  unique keys       245 -> 228      (-17)
+  from _deprecated   17 ->  13
+
+-34 = 32 hand-confirmed-deliberate sites marked, + 2 scanner false positives fixed.
+Every one accounted for by name; nothing was cleared by widening anything.
+
+NOT defects, now marked `# witness-copy-intentional:` with a reason each:
+  - a pin audit's own comparison basis (it is the thing being detected)
+  - a classifier's self-test fixture tables (loading them deletes the test)
+  - 7 option_e probes' deliberately-frozen historical pin (staleness IS the subject)
+
+Two scanner defects found by using it:
+  - trailing comments were scanned as code (exactly 2 false positives; fixed by
+    tokenizing, since a `#` inside a string is not a comment)
+  - there was NO way to record a hand verdict — the sibling gate honours
+    `# reference-literal-intentional:` and this one honoured nothing, so
+    "reviewed, deliberate" and "nobody has looked" shared one baseline bucket.
+    Added the marker, AST-bounded so one marker covers a 200-line fixture table
+    and stops exactly at the assignment's end. The non-leak half is self-tested.
+
+Flagship real defect spun out as `qou-742w`: the M1 leading constants typed into
+TWELVE scripts at 12 digits with no shared module.
+
+Residue: 232 class-D findings. NOT confirmed defects — each still needs its own
+read. Automating the split is the failure mode; it got the type case wrong the
+first time it was tried.

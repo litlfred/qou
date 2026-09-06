@@ -45,6 +45,9 @@ B_D_AME_MEV = AME_B_DEUTERON_MEV_VALIDATION  # deuteron binding (AME), as used i
 # exists specifically to show the published 0.11 %% near-match was obtained
 # at THIS stale q0. Re-pinning would silently alter a recorded historical
 # result and delete that probe's subject. Do not read it as a live pin.
+# witness-copy-intentional: frozen ON PURPOSE — see the note above.
+# This probe's subject IS the published near-match at this retired
+# pin; re-pointing it at a live value would delete the finding.
 Q_0 = mpf("1.1097090249")
 
 

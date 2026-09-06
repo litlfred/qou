@@ -104,6 +104,9 @@ mp.mp.dps = 60
 #: The four pins this corpus uses, at full recorded precision. A and B and C
 #: are the three values all called "the muon q0" (see
 #: `muon_pin_three_values_probe.py`); P is the proton pin.
+# witness-copy-intentional: the four pins are this inventory's SUBJECT —
+# it exists to find code carrying them. A retired pin has no live
+# producer to read from, which is what makes it retired.
 PINS = {
     "A_retired_frozen": mp.mpf("1.1099785955573347198944358078180"),
     "B_codata_2018": mp.mpf("1.10997859555418057528159407961"),
