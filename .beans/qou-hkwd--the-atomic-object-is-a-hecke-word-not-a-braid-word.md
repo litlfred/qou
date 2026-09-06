@@ -47,3 +47,31 @@ the subject. 4 -> 5 defects after the fix.
 COORDINATION: #6821 owns the strand-count question on the same object and has a
 three-way decision with the owner. Braid-vs-Hecke is PRIOR to it: whichever
 count wins, "in B_n" is wrong on the GROUP.
+
+## 2026-09-06 SELF-CORRECTION — this is a DRAIN, not a discovery
+
+The producer's own docstring has carried the correction since 2026-08-25
+(PR #5765), verbatim:
+
+    NAME IS A MISNOMER - this does NOT return a braid word (2026-08-25, PR #5765).
+    A rename was considered and rejected: 685 call sites across 382 files.
+
+So: the corpus already knew; the rename was already weighed at 685/382 -- close
+to my independent 672 -- and already REJECTED; and PR #6359 already acted on it,
+correcting "the closure" out of its body, its probe and a Lean docstring.
+
+I framed this as a root-level discovery in #6941 §10 and did not run corpus-grep
+path 3 on the producer docstring before doing so. I read canonical_braid_crossings
+and never read atom_braid_word_3A's own header.
+
+WHAT SURVIVES, and it is the only real contribution here:
+  * the measurement (0 of 14 atoms protium->Fe-56) quantifies a known fact
+  * the 5 CONTENT-BLOCK lines still asserting `in B_n` for the atomic object --
+    the docstring fixed the PRODUCER, nobody drained the BLOCKS
+  * the detector, so it does not re-spread
+
+REFINEMENT I had wrong, from #6359: the branch count is 2^(2A+1), not my 2^k,
+and it is NOT a free choice in the way I implied -- an averaged letter and BOTH
+its resolutions project to the SAME transposition, so the component partition,
+non-interaction and strand blocks are branch-INDEPENDENT. Some topology is
+readable; volumes, crossing numbers and genus are not.
