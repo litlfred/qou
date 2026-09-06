@@ -5,7 +5,7 @@
   "data": {
     "counts": {
       "STALE": 207,
-      "proton-pin": 2438,
+      "proton-pin": 2440,
       "unknown": 25,
       "canonical": 82
     },
@@ -13733,6 +13733,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/probes/nucleon-word-route-divergence.witness.json",
+        "field": "q0Value",
+        "value": "1.10997858275138080759166909561",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.61406020773339
+      },
+      {
         "file": "computations/probes/nucleon_chain_sets_the_transition_probe.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
@@ -16582,6 +16589,13 @@
         "ppb_vs_canonical": -11.61406020773339
       },
       {
+        "file": "computations/qbeta/qbeta-fibre-reality-selects-n.witness.json",
+        "field": "q0",
+        "value": "1.1099785827513808076",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.614060207725885
+      },
+      {
         "file": "computations/qbeta/qbeta-fibre-unit-circle-opens-route5.witness.json",
         "field": "q0",
         "value": "1.1099785827513808076",
@@ -19281,9 +19295,9 @@
   "scriptFile": "q0_value_drift_audit.py",
   "scriptHash": "d1e66a3b0067",
   "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "2afaaf54fc0a8dd3b93ba75fa4fc88799cf45287",
+  "commitSha": "7a00dfebf26e82c40c724ff5f1bd0a897c393466",
   "engine": "python",
-  "computedAt": "2026-09-05T18:57:54.925507+00:00",
+  "computedAt": "2026-09-06T03:43:14.643252+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
