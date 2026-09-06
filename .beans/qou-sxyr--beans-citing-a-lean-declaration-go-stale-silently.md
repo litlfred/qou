@@ -120,3 +120,52 @@ would be the same failure this bean exists to name, pointed the other way.
 `Archimedean.WeierstrassProjection`, so those two modules can never be
 co-imported — a single probe importing every owning module fails outright. That
 is why the tool emits one probe per module. Not chased further here.
+
+## The ABSENT bucket, split — and four more corrections to my own tool
+
+The previous pass left 44 identifiers unresolved and I called them "beans citing
+declarations that no longer exist — a worse record than a stale one". That framing
+was too strong. Split properly:
+
+| | n | |
+|---|---|---|
+| relocated | 27 | namespace ≠ my module guess — a **resolver** limitation, not a corpus defect |
+| rename drift | 12 | shortlist; the matcher over-fires and this needs a human |
+| no near match | 17 | most likely names a declaration the bean intends to **create** |
+
+**The case I nearly got wrong: a bean naming work it intends to do SHOULD cite a
+name that does not exist yet.** Reporting those as defects would manufacture ~17
+findings out of ordinary planning. That distinction is now in the tool's docstring
+so the next reader does not have to rediscover it.
+
+### Four fixes, all to code I wrote in the previous pass
+
+1. **Cross-product namespace index.** `fullname_index` paired every namespace in a
+   file with every declaration in it, so a file with `namespace A … namespace B`
+   manufactured `A.<decl from B>`. Those phantoms then **matched themselves** in
+   the drift shortlist — `cites: X / near: X` for 10+ entries. A tool inventing
+   the evidence for its own finding. Fixed with a namespace stack.
+2. **Resolver precedence.** The prefix rule ran before the index and won for the
+   wrong reason whenever a namespace shares a name with a module that does not
+   declare the constant: `JucysMurphy.syt_adjacentSwap_connected` is declared in
+   `JucysMurphyOV`, so the prefix rule imported `JucysMurphy` and reported ABSENT
+   for a theorem that exists. Index first, prefix as fallback.
+3. **`--classify-absent` read the wrong bucket** — the pre-probe unresolved list
+   rather than the probe's own ABSENT lines. An identifier that never resolved was
+   never asked about, so it is not evidence of anything.
+4. **Possessive capture.** Lean allows `'` in identifiers, so the extractor pulled
+   `QOU.Hecke.Wedderburn's` out of English prose.
+
+Net effect of (1) + (2): identifiers probed **118 → 184**, ABSENT **44 → 29**.
+
+## Standing limitation, stated rather than fixed
+
+Some NO-NEAR-MATCH entries do exist in source — `WeierstrassProjection.weierstrassProjection`
+is an `opaque` in the file of that name — but were ABSENT from the built olean.
+The tool does not distinguish "not in the source" from "not in the artifact
+because the artifact is stale", and conflating those is the exact confusion
+`qou-pdgc` was opened for. Cross-checking against
+`lean-olean-staleness-audit.py` would close it; not done here.
+
+Current: **184 probed, 41 CLEAN, 35 REVIEW, 0 SORRY, 29 ABSENT, 79 DEF; 34
+candidate-stale beans.** Raw output in `docs/audits/`.

@@ -1,11 +1,11 @@
 ---
 # qou-06h7
 title: 'Lean: exchange/Matsumoto general-rank braid relation'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-19T02:57:13Z
-updated_at: 2026-09-05T19:23:34Z
+updated_at: 2026-09-06T10:49:09Z
 ---
 
 ## Measured 2026-09-05 (branch claude/hecke-cyclicity-markov-2026-09-05, PR #6845)
@@ -97,3 +97,146 @@ are unfinished, not blocked."* I found it while checking whether my own
 "Mathlib has no braid group" claim shared the defect the sibling's other commit
 (`2aa451659bf`, *"my 'Mathlib has no Bruhat order' grep was measuring my own
 checkout"*) had retracted. Mine survived that check; this one did not.
+
+
+## 2026-09-06 — the deletion condition is PROVED (PR #6894)
+
+Acting on the retraction above. `QOU/Machinery/CoxeterDeletion.lean`:
+
+* **`exists_deletion`** — the deletion condition (Björner–Brenti Thm 1.4.4):
+  a non-reduced word has two positions `a < b` whose deletion leaves the
+  product unchanged. One induction along the word from the right, off
+  `strong_exchange`. No case analysis on the Coxeter matrix, no rank
+  restriction.
+* **`exists_reduced_sublist`** — every word contains a **reduced subword**
+  with the same product. Strictly stronger than Mathlib's
+  `exists_reduced_word'`, which gives *some* reduced word for the element;
+  this one is a `List.Sublist` of the word you started with.
+
+Both sorry-free, `[propext, Classical.choice, Quot.sound]`.
+
+**So the chain is now exchange ✓ → deletion ✓ → Matsumoto ✗.** Matsumoto
+itself remains open and remains the named hypothesis of
+`BraidWordInvariance.exists_Tw_of_braidEquiv`. This bean is NOT closed.
+
+**Cross-arc consumer.** `QOU.Machinery.CoxeterBruhat` (sibling `qou-phir`,
+merged to `main` 2026-09-05) defines `u ≤ w` by the subword criterion and
+records that transitivity, antisymmetry, the subword property and the lifting
+property are unproved there because "each needs the exchange condition".
+`exists_reduced_sublist` is the first of those inputs in the shape they
+consume.
+
+**Also fixed on `main` in the same PR:** `Tw.lean` and
+`BraidWordInvariance.lean` both asserted that *this corpus* has no exchange
+property. Both docstrings corrected.
+
+
+## 🛑 2026-09-06 — `exists_Tw_of_braidEquiv` is VACUOUS at the case it was written for
+
+Found while assessing what Matsumoto would actually buy. The conditional that
+this corpus has been offering as "the honest form of the deferral" **cannot be
+discharged**, so it reduces nothing.
+
+`BraidWordInvariance.exists_Tw_of_braidEquiv` takes as hypothesis
+`∀ u v : List B, π u = π v → BraidEquiv M u v` — over **all** words. Its own
+docstring flagged that as "stronger than Matsumoto" and offered the strength as
+a feature: *"what a total `Tw : W → H` needs"*.
+
+**It is not merely stronger; at `π := cs.wordProd` it is false.** A braid move
+swaps an alternating block of length `M i j` for one of length `M j i`, and a
+Coxeter matrix is symmetric, so braid-equivalence **preserves word length**. But
+`s_i² = 1` gives `π [i,i] = π []` with lengths `2` and `0`. Proved in
+`QOU/IwahoriHecke/TwFromMatsumoto.lean`:
+
+* `braidEquiv_length_eq` — braid-equivalence preserves length (given symmetry);
+* **`not_braidEquiv_hypothesis`** — the all-words hypothesis is false for any
+  Coxeter system with at least one generator.
+
+The theorem itself is fine as a statement about an abstract `π : List B → W`;
+what was wrong is the claim that it made the remaining gap exact. It made a gap
+nothing can fill.
+
+### The replacement, same file
+
+* **`exists_Tw_of_matsumoto`** — hypothesis = Matsumoto verbatim (two
+  **reduced** words with the same image are braid-equivalent); conclusion = a
+  `Tw : W → H(M,q)` agreeing with the word product on every **reduced** word.
+  Satisfiable, and it is what a `T_w` basis actually means — a basis is indexed
+  through reduced expressions, not arbitrary words. Uses Mathlib's
+  `exists_reduced_word'` for the choice (`redWord`).
+* `Tw_one_of_matsumoto` — `T_1 = 1`.
+
+Both sorry-free; `braidEquiv_length_eq` needs only `[propext]`.
+
+`BraidWordInvariance.lean`'s two misleading passages are corrected in the same
+PR (#6894). **Matsumoto itself is still open** — this changes which conditional
+the corpus offers, not whether the input exists.
+
+
+## 2026-09-06 — antisymmetry of the Bruhat order closes (same PR #6894)
+
+`QOU/Machinery/CoxeterBruhatOrder.lean` spends the deletion consequence on the
+sibling's deferred list. `CoxeterBruhat` names four things it does not prove —
+transitivity, antisymmetry, the subword property, lifting — saying "each needs
+the exchange condition". **One of the four now closes.**
+
+* `bruhatLe_reduced_witness` — the witnessing subword may always be taken
+  **reduced** (a subword of a reduced word need not be). This is where
+  `exists_reduced_sublist'` is spent.
+* `eq_of_bruhatLe_of_length_le` — `u ≤ w` with `ℓ(w) ≤ ℓ(u)` forces `u = w`,
+  by a length squeeze: `ℓ(u) ≤ |ω'| ≤ |ω| = ℓ(w) ≤ ℓ(u)`, so the sublist has
+  full length and `List.Sublist.eq_of_length` makes it the host.
+* **`bruhatLe_antisymm`** — antisymmetry.
+* `bruhatLe_one_iff`, `not_bruhatLe_of_length_lt`.
+
+All sorry-free, `[propext, Classical.choice, Quot.sound]`.
+
+**Why the other three do NOT follow, stated in the file.** Transitivity is not
+a corollary: from `v ≤ w` you get a reduced word for `w` with a (now reduced)
+subword for `v`; from `u ≤ v` you get a reduced word for `v` — but **another
+one**, and nothing says two reduced words for the same element are
+interchangeable. That is the subword property, equivalent in strength to
+Matsumoto. So the four split cleanly: antisymmetry needed only length
+bookkeeping; transitivity, subword and lifting all wait on Matsumoto.
+
+
+## ✅ CLOSED 2026-09-06 — Matsumoto is proved (branch claude/coxeter-deletion-matsumoto-2026-09-06)
+
+**My "Mathlib-scale work, not a session's task, should be done as a Mathlib
+contribution rather than in QOU/" was wrong on all three counts**, and the
+first correction on this branch is why: the exchange property was ALREADY in
+this corpus (`CoxeterReflectionCocycle.rightExchange`, sorry-free, every
+Coxeter system) — I had measured Mathlib and concluded about availability,
+skipping corpus-grep path 2. With exchange in hand the remaining chain is one
+session's work, and it is now done, in four files:
+
+| file | what it adds |
+|---|---|
+| `Machinery/CoxeterDeletion` | the deletion condition; every word contains a reduced SUBWORD |
+| `Machinery/CoxeterRankTwo` | reduced two-letter words are alternating; parabolics embed isometrically; two spellings ⟹ `(sᵢsⱼ)^k = 1` |
+| `Machinery/CoxeterDihedralDescent` | the descent lemma; `DihedralExact` discharged for `M i j ≤ 3` |
+| `IwahoriHecke/Matsumoto` | Matsumoto, and `exists_Tw_An` |
+
+**Status of the result.** `matsumoto` is conditional on ONE named predicate,
+`CoxeterRankTwo.DihedralExact` — that `σᵢσⱼ` has order exactly `M i j`.
+`matsumoto_An` and `exists_Tw_An` are **hypothesis-free**: for `M i j ≤ 3` the
+predicate follows from `CoxeterGeometricRepresentationFull`'s two unconditional
+cell-faithfulness results. That covers type A, hence `H_n(q)` and the symmetric
+group — every case this corpus's Hecke/braid arc uses.
+
+`#print axioms` on all five headline results: `[propext, Classical.choice,
+Quot.sound]`. No `sorryAx`.
+
+**Non-vacuity checked, not asserted** (`An_le_three` / `An_ne_zero` plus an
+`example` exhibiting a Coxeter system of type Aₙ) — this same branch caught a
+conditional in this corpus whose hypothesis was FALSE at the case it was
+written for.
+
+## What is left, as a NEW item — not this one
+
+`DihedralExact` for `M i j ≥ 4`. That is the order of `σᵢσⱼ` in the reflection
+representation, and it is `CoxeterGeometricRepresentationFull`'s own named open
+item (its HONESTY note: "What this does NOT prove: ... the order of σᵢσⱼ being
+exactly mᵢⱼ"). The trig engine it needs — `periodic_of_two_step`, the
+`(fᵢfⱼ)^m = 1` direction — is already in that file; the converse (no smaller
+power is the identity) is not. No consumer in this corpus needs it.
