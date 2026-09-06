@@ -2122,6 +2122,83 @@ function detectPropUniverseField(d: Decl, doc: string): Hit | undefined {
   return h;
 }
 
+/** A `Prop`-universe field whose **only** sibling consumption is a field that
+ * asserts it and nothing else — `p : Prop` sitting beside `p_holds : p`.
+ *
+ * This is the fifth shape in the carrier-vacuity family, and it exists in the
+ * blind spot that `detectPropUniverseField` deliberately creates. That detector
+ * fires only on an *unconsumed* `Prop` field, because firing on any `Prop` field
+ * over-reported 6x — declaring an abstract predicate and then consuming it in a
+ * sibling is the correct §3b-cond pattern. Correct, but the exemption is
+ * satisfied by a consumer that adds nothing: if the only sibling mentioning `p`
+ * has type *literally `p`*, the instance still chooses the proposition, and
+ * `⟨True, True.intro⟩` inhabits both fields together. The pair asserts exactly
+ * what a bare `p : Prop` asserts, which is nothing, while looking twice as
+ * populated.
+ *
+ * Exemplar, and it comes with its own proof: `QOU.Mathlib.HeckeAlgebra`'s
+ * `WedderburnDecomposition` declares
+ *
+ *     blocks_sum_to_one : Prop      blocks_sum_holds : blocks_sum_to_one
+ *     blocks_orthogonal : Prop      blocks_orthogonal_holds : blocks_orthogonal
+ *
+ * under docstrings promising `Σ_λ p_λ = 1` and `p_λ · p_μ = 0`, and the SAME
+ * FILE then discharges them at `triv_wedderburn` with `:= True` / `:= True.intro`.
+ * The class asserts nothing about the block projections, so every
+ * `[WedderburnDecomposition]`-conditional result downstream is unconditional.
+ *
+ * Deliberately NARROWER than "has a bare-assertion consumer": a field with a
+ * bare assertion *and* a relating sibling keeps its content and stays silent.
+ * That is what preserves `QOU.Torsion.BraneBoundaryContext`, the counter-example
+ * `detectPropUniverseField` is calibrated against — its `brane_boundary_regular`
+ * carries both `boundary_active : brane_boundary_regular` and an implication
+ * field, so `every` fails and this detector does not fire. This criterion
+ * therefore refines that exemption without overturning its calibration.
+ *
+ * Honest fix: encode the real proposition as the field's type (dropping the
+ * `_holds` field, which then becomes the field itself), or demote per §3b-tax.
+ *
+ * Raised on PR #6097 / #6093 and tracked as bean `qou-qcy6`. */
+function detectSelfDischargedPropField(d: Decl, doc: string): Hit | undefined {
+  if (d.kind !== "class" && d.kind !== "structure") return undefined;
+  const fields = classFields(d);
+  const clean = (s: string) =>
+    s.replace(/--.*$/, "").replace(/\s+/g, " ").trim();
+  const universeFields = fields.filter((f) =>
+    PROP_UNIVERSE_TYPE.test(clean(f.type)),
+  );
+  if (universeFields.length === 0) return undefined;
+  const pairs: { prop: string; holds: string }[] = [];
+  for (const f of universeFields) {
+    const word = new RegExp(`(^|[^\\w.])${f.name}([^\\w]|$)`);
+    const consumers = fields.filter(
+      (g) => g.name !== f.name && word.test(clean(g.type)),
+    );
+    // Unconsumed is `detectPropUniverseField`'s territory, not this one.
+    if (consumers.length === 0) continue;
+    // Every consumer is a bare assertion `g : f` — nothing relates `f` to
+    // anything else, so the pair adds no content over the bare field.
+    if (!consumers.every((g) => clean(g.type) === f.name)) continue;
+    pairs.push({ prop: f.name, holds: consumers.map((g) => g.name).join("/") });
+  }
+  if (pairs.length === 0) return undefined;
+  const names = pairs.map((p) => `${p.prop} + ${p.holds}`).join(", ");
+  if (MARKER_OPT_OUT.test(doc)) {
+    const h = mk(d, "proof-claims-unencoded", "prop-field-self-discharged", true);
+    h.exempt_reason = "explicit @marker / opaque-tag opt-out";
+    h.detail = `self-discharged \`Prop\` field pair(s) (${names}) — honestly framed; tracked not counted`;
+    return h;
+  }
+  const h = mk(d, "proof-claims-unencoded", "prop-field-self-discharged", false);
+  h.detail =
+    `\`Prop\`-universe field(s) whose only consumer asserts them and nothing ` +
+    `else (${names}) — the instance chooses the proposition, so ` +
+    `\`⟨True, True.intro⟩\` inhabits the pair and any [${d.name}]-conditional ` +
+    `result is unconditional. Encode the real proposition as the field's type, ` +
+    `or demote per §3b-tax`;
+  return h;
+}
+
 /** A class/structure field whose Prop is a **tautology about the subject** —
  * neither empty (`proof-no-empty-prop-carrier`) nor literally `: True`
  * (`true-class-field`), but provable for an *arbitrary* substitution of the
@@ -2730,6 +2807,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     push(detectClaimsUnencoded(d, doc));
     push(detectTrueClassField(d, doc + "\n" + rawSpan));
     push(detectPropUniverseField(d, doc + "\n" + rawSpan));
+    push(detectSelfDischargedPropField(d, doc + "\n" + rawSpan));
     push(detectTautologicalField(d, doc + "\n" + rawSpan));
   }
   const importHit = detectImportOrder(origLines);

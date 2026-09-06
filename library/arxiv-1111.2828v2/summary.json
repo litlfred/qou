@@ -1,0 +1,156 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1111.2828v2",
+ "source_sha256": "90e2f5a9b978d403",
+ "brief": "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of",
+ "extended": "**THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS**\n\n*STA VROS GAROUF ALIDIS, DYLAN P. THURSTON, AND CHRISTIAN K. ZICKERT*\n\n44 pp, 27 sections.\n\n**Abstract.** For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of boundary -unipotent representations of π 1(M ) into SL(n, C). Our parametrization uses Ptolemy coordinates, which are i nspired by coordinates on higher Teichmüller spaces due to Fock and Goncharov. We sh ow that a boundary-unipotent representation determines an element in Neumann’s extende d Bloch group ˆB(C), and use this to obtain an eﬃcient formula for the Cheeger-Chern-Simons inv ariant, and in particular for the vol- ume. Computations for the census manifolds show that bounda ry-unipotent representations are abundant, and numerical comparisons with census volumes, s uggest that the volume of a represen- tation is an integral linear combination of volumes of hyper bolic 3-manifolds.\n\n**Outline.** 1 Introduction; 1.1 Statement of our results; 1.3 Overview of the paper; 1.4 Acknowledgment; 2 The Cheeger-Chern-Simons classes; 2.1 Simply connected, simple Lie groups; 2.2 Complex groups and volume; 2.3 The universal classes and group cohomology; 2.4 Compact manifolds with boundary; 2.5 Central elements of order 2; 3 The extended Bloch group; 3.1 The regulator; 4 Decorations of representations; 4.1 The fundamental class of a decorated repre; 5 Generic decorations and Ptolemy coordinates; 5.1 The geometry of the Ptolemy coordinates; 6 A chain complex of Ptolemy assignments; 6.1 The map to the extended Bloch group",
+ "tokens": {
+  "brief": 48,
+  "extended": 408
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-11-statement-of-our-results",
+   "title": "Statement of our results",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-002-13-overview-of-the-paper",
+   "title": "Overview of the paper",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-003-14-acknowledgment",
+   "title": "Acknowledgment",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-004-2-the-cheeger-chern-simons-classes",
+   "title": "The Cheeger-Chern-Simons classes",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-005-21-simply-connected-simple-lie-groups",
+   "title": "Simply connected, simple Lie groups",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-006-22-complex-groups-and-volume",
+   "title": "Complex groups and volume",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-007-23-the-universal-classes-and-group-cohomology",
+   "title": "The universal classes and group cohomology",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-008-24-compact-manifolds-with-boundary",
+   "title": "Compact manifolds with boundary",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-009-25-central-elements-of-order-2",
+   "title": "Central elements of order 2",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-010-3-the-extended-bloch-group",
+   "title": "The extended Bloch group",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-011-31-the-regulator",
+   "title": "The regulator",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-012-4-decorations-of-representations",
+   "title": "Decorations of representations",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-013-41-the-fundamental-class-of-a-decorated-represen",
+   "title": "The fundamental class of a decorated representation",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-014-5-generic-decorations-and-ptolemy-coordinates",
+   "title": "Generic decorations and Ptolemy coordinates",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-015-51-the-geometry-of-the-ptolemy-coordinates",
+   "title": "The geometry of the Ptolemy coordinates",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-016-6-a-chain-complex-of-ptolemy-assignments",
+   "title": "A chain complex of Ptolemy assignments",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-017-61-the-map-to-the-extended-bloch-group",
+   "title": "The map to the extended Bloch group",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-018-62-stabilization",
+   "title": "Stabilization",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-019-7-independence-of-the-decoration",
+   "title": "Independence of the decoration",
+   "pages": "22-26"
+  },
+  {
+   "id": "sec-020-9-recovering-a-representation-from-its-ptolemy-c",
+   "title": "Recovering a representation from its Ptolemy coordinates",
+   "pages": "26-34"
+  },
+  {
+   "id": "sec-021-92-proof-of-theorem-13-and-theorem-18",
+   "title": "Proof of Theorem 1.3 and Theorem 1.8",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-022-10-examples",
+   "title": "Examples",
+   "pages": "35-40"
+  },
+  {
+   "id": "sec-023-111-essential-edges",
+   "title": "Essential edges",
+   "pages": "40-41"
+  },
+  {
+   "id": "sec-024-12-gluing-equations-and-ptolemy-assignments",
+   "title": "Gluing equations and Ptolemy assignments",
+   "pages": "41-42"
+  },
+  {
+   "id": "sec-025-13-other-fields",
+   "title": "Other fields",
+   "pages": "42-42"
+  },
+  {
+   "id": "sec-026-references",
+   "title": "References",
+   "pages": "42-44"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
