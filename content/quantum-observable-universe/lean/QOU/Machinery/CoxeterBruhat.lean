@@ -123,4 +123,43 @@ theorem bruhatLe_mul_simple_mul_simple {u w : W} (i : B) (h : BruhatLe cs u w)
   · rw [cs.wordProd_append, cs.wordProd_singleton, hw]
   · rw [cs.wordProd_append, cs.wordProd_singleton, hu]
 
+/-- **The Bruhat order is inversion-invariant**: `u ≤ w ↔ u⁻¹ ≤ w⁻¹`.
+
+This is the **handedness bridge**, and it is the reason this lemma is here rather than
+in a consumer.  Three separate orders on this arc multiply on opposite sides:
+
+* `Tw_mul_Tw : T_v · T_w = T_{w·v}` — the Hecke product is *anti*-multiplicative in the
+  index, forced by `orbitMap`, not a typo;
+* `TableauPerm.dOf_smul : dOf (w • t) = w * dOf t` — the tableau action puts the
+  permutation on the **left**;
+* `BruhatReflection.ReflStep v w := ∃ τ, IsReflection τ ∧ w = v * τ ∧ ℓ v < ℓ w` — the
+  reflection order steps on the **right**.
+
+A consumer that needs a left-handed statement of a right-handed lemma (or the reverse)
+transports through this lemma rather than restating the lemma with the sides swapped.
+The proof is the reversed word: `wordProd ω.reverse = (wordProd ω)⁻¹`, reversal preserves
+reducedness, and `List.Sublist.reverse` carries the subword across. -/
+theorem bruhatLe_inv {u w : W} (h : BruhatLe cs u w) : BruhatLe cs u⁻¹ w⁻¹ := by
+  obtain ⟨ω, ω', hred, hw, hsub, hu⟩ := h
+  refine ⟨ω.reverse, ω'.reverse, hred.reverse, ?_, hsub.reverse, ?_⟩
+  · rw [cs.wordProd_reverse, hw]
+  · rw [cs.wordProd_reverse, hu]
+
+/-- The `↔` form of `bruhatLe_inv`, by applying it twice. -/
+theorem bruhatLe_inv_iff {u w : W} : BruhatLe cs u⁻¹ w⁻¹ ↔ BruhatLe cs u w :=
+  ⟨fun h => by simpa using bruhatLe_inv cs h, bruhatLe_inv cs⟩
+
+/-- **`u ≤ w` ⇒ `sᵢ·u ≤ sᵢ·w`** when the length ascends on the **left** — the mirror of
+`bruhatLe_mul_simple_mul_simple`, obtained by transporting through `bruhatLe_inv`. -/
+theorem bruhatLe_simple_mul_simple_mul {u w : W} (i : B) (h : BruhatLe cs u w)
+    (hlen : cs.length (cs.simple i * w) = cs.length w + 1) :
+    BruhatLe cs (cs.simple i * u) (cs.simple i * w) := by
+  have hlen' : cs.length (w⁻¹ * cs.simple i) = cs.length w⁻¹ + 1 := by
+    have h1 : cs.length (w⁻¹ * cs.simple i) = cs.length (cs.simple i * w) := by
+      rw [← cs.length_inv (w⁻¹ * cs.simple i), mul_inv_rev, cs.inv_simple, inv_inv]
+    rw [h1, hlen, cs.length_inv]
+  have h2 := bruhatLe_inv cs (bruhatLe_mul_simple_mul_simple cs i (bruhatLe_inv cs h) hlen')
+  simpa [mul_inv_rev, cs.inv_simple] using h2
+
+
 end QOU.Machinery.CoxeterBruhat
