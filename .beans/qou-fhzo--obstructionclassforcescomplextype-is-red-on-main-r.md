@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T05:03:53Z
-updated_at: 2026-09-06T05:05:58Z
+updated_at: 2026-09-06T06:39:45Z
 ---
 
 ## 2026-09-06 — found by the FIXED sweep; two missing imports; verified
@@ -47,3 +47,25 @@ propext / Classical.choice / Quot.sound, no sorryAx.
 environment-REDs on this container, which would have buried a single real one.
 First run after the fix on a head where main had moved 101 commits: 144 ok,
 **1 RED**, and the 1 is genuine. That is the gate doing its job.
+
+
+## 2026-09-06 06:4x UTC — rebased onto 468e99858c9; whole gate now green
+
+Sweep on the rebased head (#6827's fixed script, run from a scratch copy — main's
+copy cannot run on this container):
+
+| library | result |
+|---|---|
+| Fred2005 | 1 ok, 0 RED, 6s |
+| QOU | **145 ok, 0 RED**, 268s |
+| UGB | 22 ok, 0 RED, 97s |
+
+`[17/145] ok QOU.Eightfold.ObstructionClassForcesComplexType` — the fix clears the
+RED against the sweep, not just under a hand-run `lean`. Prior head was 144 ok / 1 RED.
+
+Second fact from the same run, kept separate because it is NOT this PR's doing:
+main's new commit 468e99858c9 (touches QOU/HeckeAlgebra/WedderburnConstruction.lean)
+introduced no red. QOU closure 144 -> 145 on that churn (head-scoped, not drift).
+
+Real QOU olean tree identical on all 2660 by inode+size+mtime before/after.
+Pushed as 4ef23f7e2ef. Still waiting on merge permission.
