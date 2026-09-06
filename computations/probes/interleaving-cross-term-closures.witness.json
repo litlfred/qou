@@ -1,0 +1,305 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-09-06T03:40:53.465695+00:00",
+  "commitSha": "f9ac89f36eb47840962fa50a21f9bdf12110a6b5",
+  "assertions": [
+    {
+      "name": "A:_interleaved_=_z²·tr(σ³)_with_z,_h_free_(trefoil_after_two_stabilisations)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    },
+    {
+      "name": "A:_sequential_=_z·tr(σ²)²_with_z,_h_free_(stabilised_Hopf-chain)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    },
+    {
+      "name": "A:_Δ_=_z²·tr(σ³)_−_z·tr(σ²)²_with_z,_h_free",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    },
+    {
+      "name": "A:_same_two_identities_in_the_independent_16-dim_rep,_q_formal",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    },
+    {
+      "name": "A:_closure_component_counts_1_(4-cycle)_vs_3_(transposition)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    },
+    {
+      "name": "A:_the_sequential_permutation_is_s₂_itself",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    },
+    {
+      "name": "C:_Burnside_—_#fixed_colourings_=_N^cycles_on_all_24_of_S₄,_N_=_2,_3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    },
+    {
+      "name": "C:_the_two_words_fix_2_and_8_two-colourings",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    },
+    {
+      "name": "C:_fixed-point_difference_is_−6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    },
+    {
+      "name": "C:_16-dim_quantum_trace_at_q_=_1_is_the_fixed-point_count_(2,_8,_16)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    },
+    {
+      "name": "C:_the_R-matrix_at_q_=_1_is_the_swap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    },
+    {
+      "name": "C:_normalised_traces_at_q_=_1_are_1/8_and_1/2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    },
+    {
+      "name": "C:_[2]_q⁴·Δ_at_q_=_1_in_the_rep_is_−6_(matches_the_T1_probe)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy / integer)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "interleaving-cross-term-closures",
+  "scriptFile": "interleaving_cross_term_closures_probe.py",
+  "scriptHash": "bb8d1b33211d",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/interleaving_cross_term_closures_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/interleaving_cross_term_closures_probe.py"
+  },
+  "description": "Routes A and C, step 1 (2026-09-05 binding-gap survey §7 items 4–5). A: by the Markov axioms with z, h free, tr(s0s1s0s2s1) = z²·tr(σ³) (the interleaved word is a doubly-stabilised σ³, closure the trefoil) and tr(s0²s1²s2) = z·tr(σ²)² (a stabilised Hopf-chain, three components), so Δ is a difference of two link invariants of two different links — an Euler characteristic only in the content-free sense; no natural chain map is supplied. C: at q = 1 the trace is the normalised character of S₄ on V^{⊗4}, i.e. a Burnside fixed-point count of colourings, verified on all 24 permutations at N = 2, 3; the words fix 2 and 8 two-colourings, difference −6 = [2]_q⁴·Δ|_{q=1}; the 16-dim quantum trace degenerates to that count at q = 1 (R → swap). Exact sympy / integers; no q₀ read. Scope (a).",
+  "contentBlock": "prop:markov-trace-axiomatic-closed-form",
+  "parameters": {
+    "words": {
+      "interleaved": "s0 s1 s0 s2 s1",
+      "sequential": "s0^2 s1^2 s2"
+    }
+  },
+  "data": {
+    "closures": {
+      "interleaved": "z^2 * tr(sigma^3): trefoil (1 component)",
+      "sequential": "z * tr(sigma^2)^2: chain of two Hopf links (3 components)",
+      "interleaved_perm": [
+        [
+          0,
+          3,
+          1,
+          2
+        ]
+      ],
+      "sequential_perm": [
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    "fixed_colourings": {
+      "N=2": {
+        "interleaved": 2,
+        "sequential": 8,
+        "difference": -6
+      }
+    },
+    "burnside_table_N2": [
+      {
+        "perm": "[0, 1, 2, 3]",
+        "cycles": 4,
+        "fixed": 16
+      },
+      {
+        "perm": "[0, 1, 3, 2]",
+        "cycles": 3,
+        "fixed": 8
+      },
+      {
+        "perm": "[0, 2, 1, 3]",
+        "cycles": 3,
+        "fixed": 8
+      },
+      {
+        "perm": "[0, 2, 3, 1]",
+        "cycles": 2,
+        "fixed": 4
+      },
+      {
+        "perm": "[0, 3, 1, 2]",
+        "cycles": 2,
+        "fixed": 4
+      },
+      {
+        "perm": "[0, 3, 2, 1]",
+        "cycles": 3,
+        "fixed": 8
+      },
+      {
+        "perm": "[1, 0, 2, 3]",
+        "cycles": 3,
+        "fixed": 8
+      },
+      {
+        "perm": "[1, 0, 3, 2]",
+        "cycles": 2,
+        "fixed": 4
+      },
+      {
+        "perm": "[1, 2, 0, 3]",
+        "cycles": 2,
+        "fixed": 4
+      },
+      {
+        "perm": "[1, 2, 3, 0]",
+        "cycles": 1,
+        "fixed": 2
+      },
+      {
+        "perm": "[1, 3, 0, 2]",
+        "cycles": 1,
+        "fixed": 2
+      },
+      {
+        "perm": "[1, 3, 2, 0]",
+        "cycles": 2,
+        "fixed": 4
+      },
+      {
+        "perm": "[2, 0, 1, 3]",
+        "cycles": 2,
+        "fixed": 4
+      },
+      {
+        "perm": "[2, 0, 3, 1]",
+        "cycles": 1,
+        "fixed": 2
+      },
+      {
+        "perm": "[2, 1, 0, 3]",
+        "cycles": 3,
+        "fixed": 8
+      },
+      {
+        "perm": "[2, 1, 3, 0]",
+        "cycles": 2,
+        "fixed": 4
+      },
+      {
+        "perm": "[2, 3, 0, 1]",
+        "cycles": 2,
+        "fixed": 4
+      },
+      {
+        "perm": "[2, 3, 1, 0]",
+        "cycles": 1,
+        "fixed": 2
+      },
+      {
+        "perm": "[3, 0, 1, 2]",
+        "cycles": 1,
+        "fixed": 2
+      },
+      {
+        "perm": "[3, 0, 2, 1]",
+        "cycles": 2,
+        "fixed": 4
+      },
+      {
+        "perm": "[3, 1, 0, 2]",
+        "cycles": 2,
+        "fixed": 4
+      },
+      {
+        "perm": "[3, 1, 2, 0]",
+        "cycles": 3,
+        "fixed": 8
+      },
+      {
+        "perm": "[3, 2, 0, 1]",
+        "cycles": 1,
+        "fixed": 2
+      },
+      {
+        "perm": "[3, 2, 1, 0]",
+        "cycles": 2,
+        "fixed": 4
+      }
+    ],
+    "quantum_trace_at_q1_unnormalised": {
+      "interleaved": "2",
+      "sequential": "8",
+      "identity": "16"
+    },
+    "verdict": "Route A step 1: the cross term is trefoil-minus-Hopf-chain, a difference of two different links' invariants; 'Euler characteristic' holds only trivially — a natural map is not supplied and is the honest next gap. Route C step 1: POSITIVE and exact — the q = 1 cross term is a Burnside fixed-point-count difference (2 − 8), a groupoid cardinality in the Baez–Hoffnung–Walker sense; the q-deformation is the μ-weighted quantum trace, a q-count of fixed points, whose groupoid reading is the open step 2."
+  },
+  "caveats": [
+    "Scope (a): one n = 4 word pair. The 16-dim check is the spin-½ representation at convention D; the free-(z,h) identities are representation-independent."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "z, h and q are formal sympy symbols throughout and the only evaluations are at q = 1; no substrate q₀ is read or substituted, so neither pin can affect any number in this witness."
+}

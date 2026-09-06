@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T09:24:13.377300+00:00",
-  "commitSha": "ffbc30b347c2e0f3557d4575dedeed0dcf1e70ed",
+  "computedAt": "2026-09-06T03:25:41.741672+00:00",
+  "commitSha": "75fd0b4c3264868c68924658f00c3e433e01bbcb",
   "assertions": [
     {
       "name": "intra_pn_difference_is_bar_odd_exact_h",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 22,
+  "durationMs": 19,
   "computation": "he3-tritium-cosh-asymmetry-diagnosis",
   "scriptFile": "he3_tritium_cosh_asymmetry_diagnosis.py",
   "scriptHash": "b404a8337fcd",
-  "scriptCommitSha": "8cdcf3865a88511af6f8dc3d4831e956cb60df1f",
+  "scriptCommitSha": "e846a227ef38f9ff7cdeee98f876b498ee6c3b24",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,9 +39,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -54,12 +52,12 @@
     "q0": 1.1099785827513808,
     "per_mode_mirror_mismatch": {
       "full": {
-        "max_abs_diff": 3.2353431302304414,
-        "sum_abs_diff": 18.81288169765347
+        "max_abs_diff": 1.3718006697664185,
+        "sum_abs_diff": 7.278066779212117
       },
       "inter0": {
-        "max_abs_diff": 0.9127664852860123,
-        "sum_abs_diff": 5.433924218065946
+        "max_abs_diff": 0.6446716123869114,
+        "sum_abs_diff": 2.8282786119211627
       },
       "alld0": {
         "max_abs_diff": 0.0,

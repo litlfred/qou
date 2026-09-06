@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T20:54:56Z
-updated_at: 2026-09-05T05:59:38Z
+updated_at: 2026-09-06T06:40:42Z
 ---
 
 Audit: [`2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`](../docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md)
@@ -488,10 +488,271 @@ may call it for a crossing count, at a size where the core is degenerate, or pas
 diffing — which is the job, and which is why the number to act on is smaller than
 56 and cannot be got at by grep.
 
-- [ ] Re-run the 56 and diff. Mechanical but not cheap; worth doing as one
-      tracked pass rather than opportunistically, because a half-regenerated set
-      is harder to reason about than an un-regenerated one — the same lesson the
-      `q₀` refresh learned about per-block completeness.
+### ✅ THE PASS IS DONE (2026-09-05, owner-approved "go")
+
+53 producers re-run, one run each, committed witness as the baseline.
+
+    CHANGED (raw)   20      SAME  13      ERROR  16      TIMEOUT  4
+
+**But 20 is not 20.** A binary changed/unchanged test conflates a 1.8× ordering
+shift with library last-digit churn, so the raw verdict needed the same
+discrimination guard everything else in this bean has needed. Two passes:
+
+    relative magnitude > 1e-9        20 -> 11   (drops 9 metadata/mpmath churn,
+                                                 worst case rel 5e-48)
+    AND on a non-negligible value    11 ->  9   (drops 2 whose only changes are
+                                                 residuals at 1e-17 and 1e-51,
+                                                 i.e. numerical zeros)
+
+**9 witnesses were genuinely stale.** The separation is not marginal: 47 orders
+of magnitude between the noise ceiling and the material floor, relative shifts of
+0.61–1.9 on values from 1e0 to 7.6e3. `h6-deuteron-free-word-chi-lambda` shows it
+cleanly — `tr_M_bound` 0.5752 → 0.1520 and `tr_M_free` 1.1317 → 0.2990, a
+consistent **3.8×**, exactly the intra-ordering factor measured on this bean.
+
+Only the 9 are committed. The 11 non-material regenerations were reverted: each
+would have traded a meaningless digit for a **degraded environment record** (this
+container has no `pyhecke_native`, so 6 of the set drop it), and that is the wrong
+side of the trade when no number moves.
+
+### THE PAYOFF: the character-closure block is now correct on all three axes
+
+`atomic-tr-m-mpfr-50dps.witness.json` was one of the 9. Its regeneration supplied
+the values that block had been flagged for:
+
+    atom       grouped (superseded)   borromean (the ruling)
+    proton     1.14575978232          0.62932842249
+    neutron    0.98774375682          0.47513351767
+    deuteron   0.57517232973          0.15196834396
+    tritium    0.22931014615          0.02914404235
+    3He        0.40376713691          0.05859625835
+
+A factor of **1.8 to 7.9, growing with A**. The block now carries convention D,
+the borromean ordering, and the muon pin — all three from the producer.
+
+### THE RULING BREAKS PRODUCERS, NOT JUST NUMBERS
+
+The 16 errors are the finding this pass did not expect. They split three ways:
+
+**(a) Genuinely broken BY the ruling — 6.** These are not stale numbers, they are
+producers whose invariants the alternating word violates:
+
+    classical_floor_derivation_probe      ValueError: non-monotone word: gen 0 after 1
+    derived_chi_catalogue_build           duplicate catalogue cell ('borromean', (3,), ...)
+    probe_canonical_braid_interface_...   Unrecognised interface d=-0.104458...
+    he4_magnus_omega2_sign_sparse_probe   GATE FAIL: sign disagrees with triton
+    qbeta_level_k_binding_operator_probe  KeyError: (3, 2, 1)
+    qbeta_mixed_chain_closed_form_probe   KeyError: 'tr_M_at_q0'
+
+`classical_floor_derivation_probe` is the clearest: it **asserts the word is
+monotone in the generator index**, which the grouped order satisfied and the
+alternating order cannot. That assertion encodes the superseded convention.
+
+**(b) Container limitations — 6.** 4 need `pyhecke_native` (absent here, and the
+build I made had an incompatible API); 2 fail importing `codata_constants`.
+
+**(c) Witness-gate exits — 4.** These producers ran and emitted; the non-zero exit
+is a raw-float64 or environment-record gate, not a computation failure. Their
+content was reverted unread by the harness and is still unknown.
+
+### THE RESIDUE PASS — and it grew the BROKEN count, not the regenerated one
+
+The 4 gate-exit producers and the 4 timeouts, re-run (gates tolerated; 1200 s).
+
+**Gate-exits.** All four had genuine numeric change — verified by multiset
+comparison, not just a length check, because two of them also gained a new
+`invocation` block and a schema addition is not mathematics.
+`per-irrep-pole-atom-crystal` shares **zero** numeric values with its
+predecessor. But three of the four now have **FAILING ASSERTIONS**:
+
+    markov_trace_axiomatic_multi_atom      char_fast_cross_check_ok
+    per_irrep_pole_atom_crystal            asserted_atoms_match_closed_form_shift
+    nastokes_multigen_cluster_additivity   R3_rel_lambda_robust_within_10pct
+
+Those are **not stale numbers**. They are the same class as the six errors —
+assertions that held under the grouped word and do not hold under the
+alternating one. Reverted rather than committed: a witness recording
+`passed: false` is a failure, and committing it would file a failure as a
+result.
+
+**Timeouts.** `atomic_tr_m_helium4` completed in 481 s and is a genuine
+regeneration. `d_frame_interface_twelve_derivation_probe` completed in 450 s
+with **no** change (reverted). Two still exceed 1200 s.
+
+### RUNNING TOTALS
+
+    regenerated (correct under the ruling)   11
+    BROKEN BY the ruling                      9   <- was 6
+    unchanged                                14
+    container limitations                     6
+    still timing out                          2
+
+**The broken count is the headline.** Nine producers do not merely print
+different numbers — they assert properties the alternating word does not have.
+`classical_floor_derivation_probe` asserts the canonical word is **monotone in
+the generator index**; `per_irrep_pole_atom_crystal` asserts its atoms match a
+closed-form shift; `nastokes` asserts a 10 % robustness bound. Each encodes the
+superseded convention as a claim about the mathematics.
+
+- [x] Re-run and diff — 11 regenerated in total.
+- [x] Gate-exit producers re-run tolerating the gate.
+- [x] Timeouts retried at 1200 s — 1 completed, 1 no-change, 2 still over.
+### 🛑 THE "9 BROKEN BY THE RULING" IS ACTUALLY 3. I MISATTRIBUTED SIX.
+
+Owner-approved "fix broken producers / work monotonicity". The first thing that
+had to go was my own classification, which was built by **reading error strings**
+instead of testing.
+
+The discriminator is obvious in hindsight: run each producer with the OLD
+ordering forced (patching `atom_braid_word_3A`'s default, so the 332 producers
+that never name `intra_order` are covered) and see whether the failure survives.
+
+    fails under BOTH        -> pre-existing, merely surfaced by the pass
+    fails only under borromean -> caused by the ruling
+
+Exit code alone is not enough: three producers exit non-zero on a witness gate
+under *both* orderings, which masks whether their assertions differ. Those were
+re-tested at ASSERTION level.
+
+    producer                                verdict
+    nastokes_multigen_cluster_additivity    RULING   16/16 grouped, 15/16 borromean
+                                                     (R3_rel_lambda_robust_within_10pct)
+    qbeta_level_k_binding_operator_probe    RULING   KeyError: (3, 2, 1)
+    classical_floor_derivation_probe        RULING, CONDITIONAL — see below
+    markov_trace_axiomatic_multi_atom       pre-existing  char_fast_cross_check_ok
+                                                          fails BOTH ways
+    per_irrep_pole_atom_crystal             pre-existing  asserted_atoms_match_
+                                                          closed_form_shift, BOTH ways
+    derived_chi_catalogue_build             pre-existing  non-idempotent
+    probe_canonical_braid_interface_comp.   pre-existing  convention mismatch
+    qbeta_mixed_chain_closed_form_probe     pre-existing  KeyError: 'tr_M_at_q0'
+    he4_magnus_omega2_sign_sparse_probe     UNDECIDED — grouped run timed out
+
+**The two I got most wrong, and how:**
+
+- `classical_floor_derivation_probe` does **not** assert monotonicity. It calls
+  the dispatcher, which correctly routes the non-monotone word to the general
+  kernel — which then fails on `ModuleNotFoundError: pyhecke_native`, absent from
+  this container. So it is ruling-caused only *because* the ruling changes which
+  kernel runs; with the native present it would work, slowly. My headline claim
+  that it "asserts the canonical word is monotone" was wrong, and the whole
+  "decide this first, the others follow" framing rested on it.
+- `derived_chi_catalogue_build`'s duplicate cell is `('borromean', (3,),
+  'borromean-baryon')` — a **knot** named borromean, word `[-1,+2,-1,+2,-1,+2]`,
+  nothing to do with `intra_order="borromean"`. Its committed catalogue is dated
+  **2026-06-07**, months before the ruling, and already holds the key. I flagged
+  it by matching a string.
+
+**So five of the "broken" producers are pre-existing failures the regeneration
+pass merely surfaced** — they are not in CI, so nobody was running into them.
+That is a finding in its own right and a better one than the count I reported.
+
+### MONOTONICITY: answered — it is a COST, not a breakage
+
+`chi_monotone_transfer.py` carried, as a "KEY FACT (verified, every atom D…⁷Li)",
+that the atom braid word has a monotone non-decreasing generator sequence.
+Measured under both orderings:
+
+    grouped     [0,0,0,0,0,0,0,1,1,1,1,2,3,3,…]   monotone
+    borromean   [0,1,0,1,0,1,0,0,1,0,0,2,3,4,…]   NOT monotone
+
+**The ruling falsifies it.** Monotonicity *is* contiguity, so this is a fourth
+instance of the pattern `docs/audits/2026-09-06-canonical-extremality-is-grouped-
+specific.md` documents, alongside per-letter factorisation, the six `c₁` values
+and the `f₁/f₀` extremality. Docstring corrected to say so.
+
+It is not breakage. `chi_all_lambda_any` dispatches on `word_is_monotone` and
+routes non-monotone words to a general kernel that is **correct but `d_λ`-bound**
+— A=3 costs 0.36 s, A=4 costs 621 s, A≥5 impractical (`qou-wdij`). **That is
+exactly why two producers time out at 1200 s.** The ruling's real cost is
+scalability, and the fix that restores `O(A)` is the three-level-window transfer
+that `chi_kernel_conformance_harness` was written to be the oracle for.
+
+### FIXED
+
+- `interface_composition.py` accepted only `d = -h/2` for a pn junction, while
+  `atom_braid_word_3A` defaults to `pn_convention="bring_color_weighted"` and
+  emits `-h(1-δ/2)/2 = -0.104458…`. Verified to 1e-12 against
+  `flavor_split_leading`. Both spellings now accepted, δ derived rather than
+  hardcoded so the two cannot drift.
+  `probe_canonical_braid_interface_composition` now passes **6/6**, "all atoms
+  closed-form == from-word: True". Confirmed pre-existing: it failed identically
+  under grouped.
+
+- [x] Classification corrected — 3 ruling-caused, 5 pre-existing, 1 undecided.
+- [x] Monotonicity settled and the false KEY FACT corrected.
+- [x] The pn convention mismatch fixed.
+- [ ] `he4_magnus_omega2_sign_sparse_probe` — needs >300 s under grouped to
+      decide which bucket it is in.
+### ✅ BOTH GENUINE BREAKAGES FIXED — and each was hiding a finding
+
+**`qbeta_level_k_binding_operator_probe` — `KeyError: (3, 2, 1)`.** Section [5]
+hardcodes `(3,2,1)` and `(2,2,1,1)` and looks them up in `small`, the shapes
+carrying a sub-unit eigenphase. Under the ruled word `small` is **empty** — the
+probe's own stdout says so — and the lookup raised.
+
+**The absence is the result.** That section exists to show the 0.13 % sum
+coincidence is a degeneracy-wall artefact; under the ruled word the coincidence
+*does not arise at all*, which is stronger. The guard reports that and the
+assertion passes on the absence rather than being skipped — skipping drops a
+check. With the crash gone the probe reports what it was hiding:
+
+    grouped     8/8
+    borromean   6/8
+      binding_character_is_largest_in_a_tl_kernel_block   fails
+      the_only_small_eigenphases_are_in_blind_blocks      fails
+
+**`nastokes_multigen_cluster_additivity` — `R3_rel_lambda_robust_within_10pct`.**
+One boolean over `max(spreads)` across three independent measures, so a single
+one moving turned the flag red without saying which:
+
+    measure       grouped   borromean
+    (0,1)         1.034x    1.059x     robust under both
+    (3,4)         1.099x    1.065x     robust under both
+    band-local    1.044x    2.099x     GROUPED-SPECIFIC
+
+Per-measure flags added alongside the aggregate (kept, so nothing silently
+loosens). Witness now reads 17/19 with `[band-local]` named. Note `(3,4)` sits
+at **1.099 under grouped** — 0.001 from the threshold — so the old single flag
+was one digit of noise from failing for an unrelated reason.
+
+### THE GROUPED-SPECIFIC LIST IS NOW SEVEN
+
+    1. per-generator/per-letter factorisation      (prior)
+    2. the six c₁ values                           (prior)
+    3. f₁/f₀ extremality                           (prior)
+    4. MONOTONICITY of the generator sequence      (this pass)
+    5. binding character largest in a TL-kernel block   (this pass)
+    6. small eigenphases confined to blind blocks       (this pass)
+    7. band-local λ-robustness within 10 %              (this pass)
+
+Each was a property of **contiguity**, and each read as evidence of
+correctness until the ruling separated the two. Three of them were only
+visible because a crash was removed.
+
+Corroboration from a sibling: `docs/audits/2026-09-06-the-classical-floor-is-
+interface-parity.md` measures the ℏ_q⁰ floor **invariant** under both
+`intra_order` and `pn_convention` — which independently confirms that
+`classical_floor_derivation_probe`'s failure cannot be mathematical, exactly
+as the discriminator found.
+
+- [x] Both genuine ruling breakages fixed.
+- [ ] `he4_magnus_omega2_sign_sparse_probe` — still undecided; needs >300 s
+      under grouped to place it in a bucket.
+- [ ] The three pre-existing failures with no obvious fix
+      (`derived_chi_catalogue_build` non-idempotency,
+      `markov_trace_axiomatic_multi_atom` and `per_irrep_pole_atom_crystal`
+      failing their own assertions both ways) are unrelated to this bean and
+      want beans of their own.
+
+### METHOD NOTE, EARNED TWICE
+
+A blanket `git checkout -- computations/` run to clean witness churn destroyed
+the qbeta source fix **twice** before it landed. Commit the source change
+BEFORE cleaning generated files; the two live in the same directory and a path
+that matches one matches the other.
+- [ ] `binding_combiner_markov_peel_fallback` and `triton_magnus_omega2_sign_probe`
+      need >1200 s, or a smaller case.
 - [ ] Decide whether `intra_order` should have defaulted at all. A
       behaviour-changing default across 339 callers is invisible by construction;
       an explicit-argument-required signature would have surfaced all 332 at

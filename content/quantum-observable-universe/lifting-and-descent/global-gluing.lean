@@ -47,7 +47,7 @@ attribute [instance] LocalDeformation.instRing LocalDeformation.instModule
     The key property is that the twisted associative structure on
     each patch is compatible with the Čech transitions, so the
     local algebras glue into a single sheaf of algebras. -/
--- Ref: [yekutieli2008] §4, [yekutieli2010] Theorem 1.7
+-- Ref: [yekutieli2008] §4, [yekutieli2015-twisted-dq] Theorem 0.10.1
 structure TwistedQuantizationMap (R : Type*) [CommRing R] where
   /-- The local deformation data. -/
   localData : LocalDeformation R

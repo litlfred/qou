@@ -833,6 +833,280 @@ were compiled from source first, all exit 0, per the "run the sweep, not bare le
 `scripts/check-sidecars.sh`: both files *"library Lean — no ℝ, generic OK"*. Both modules are
 registered in `QOU.lean`; the full aggregator was not rebuilt (875 imports).
 
+## 7c. Test T1, executed (same day) — the interleaving cross term is an ORDER-ZERO object
+
+**Claim.** The answer to route B's falsifiable test is **no**. At convention D the three traces of
+§1.3 are the explicit rational functions
+
+    S = q³ (q⁴+1)² / (q²+1)³          I = q⁵ (q⁶+q²−1) / (q²+1)³
+    Δ = I − S = −q³ (q⁴+q²+1) / (q²+1)³ = −q³ Φ₃(q) Φ₆(q) / Φ₄(q)³
+
+and their orders of vanishing at `q = 1` are all **zero**: `S(1) = 1/2`, `I(1) = 1/8`,
+`Δ(1) = −3/8`. The cross term is not "strictly higher order than the sequential product"; it is
+present in full at `q = 1`.
+
+**The order-zero term has a name.** At `q = 1` with `z = 1/2` the Ocneanu trace on `ℚS₄` is the
+cycle-count trace `tr(w) = 2^{c(w) − 4}`, `c(w)` the number of cycles of the underlying permutation
+— the number of **components of the braid closure**. The interleaved word `s₀s₁s₀s₂s₁` closes to a
+knot (`c = 1 → 1/8`); the sequential word `s₀²s₁²s₂` closes to a three-component link (`c = 3 →
+1/2`). The corpus's one positive many-body signal is, at order zero, a difference of component
+counts — word topology in the most classical sense, which is the attribution §7b reached from the
+Lean side.
+
+**What the `q`-deformation adds, measured.** In `ℏ = 1 − q⁻¹` the exact series is
+`Δ = −3/8 − (3/4)ℏ − (17/16)ℏ² − (21/16)ℏ³ − …`, `I/S = 1/4 + (3/2)ℏ + (5/4)ℏ² − 2ℏ³ − …`, with
+radius of convergence exactly `√2` (poles at `q = ±i`). At the proton pin (`ℏ ≈ 0.0991`) the
+order-zero term carries **81.3 %** of `Δ(q₀) = −0.46117…`; the extra log-suppression is
+`0.895` nats against the classical `2 ln 2 = 1.386` nats — the deformation *reduces* the
+classical cross term's binding effect by a third, it does not create it.
+
+**The Habiro half of route B, for this word.** The normalised traces have a **triple pole at
+`Φ₄`** (`q² = −1`), so none of `S, I, Δ` is a Laurent polynomial or a Habiro element as normalised.
+The pole is the normalisation `tr(1) = 1`, i.e. division by `[2]_q⁴`; the unnormalised
+quantum-trace cross term `[2]_q⁴·Δ = −(q⁶+2q⁴+2q²+1)/q` **is** a Laurent polynomial, with simple
+zeros at `Φ₃, Φ₄, Φ₆` and value `−6` at `q = 1` — `q`-adic order still zero. (That the pole locus
+`q² = −1` is where the `H₂` Kähler ideal of §7b is proper is a coincidence of loci, recorded, not
+derived.)
+
+**Consequence for the plan (judgement).** Route B's relevance to `b₃` is **weakened** exactly as
+the test said it would be: the cross term is a degree-0 / order-0 object dressed by a convergent
+perturbative series, not an object that first appears at higher order in `q`. Route B keeps its
+"tower has degrees the fibre lacks" content (§7b's `HH₁` example), but the many-body signal does
+not live there. Routes A and C (where a *class* or a *cardinality* can be a many-body datum at
+order zero) move up relative to B; nothing else in §7 changes. Scope (a): one word pair, convention
+D; whether a nucleus is an interleaved word class remains `qou-5vhf`.
+
+**Artifact.** [`computations/probes/interleaving_cross_term_q_adic_order_probe.py`](../../computations/probes/interleaving_cross_term_q_adic_order_probe.py)
+(exact sympy + integer synthetic division; mpmath 50 dps for the one anchor evaluation; 15/15;
+witness `interleaving-cross-term-q-adic-order.witness.json`, `q0Anchor: proton`). Bean `qou-212w`.
+
+## 7d. Results of §7 items 4–5 — route A step 1 and route C step 1 (2026-09-06)
+
+Both executed the day after T1, on the same word pair, exact throughout
+(`computations/probes/interleaving_cross_term_closures_probe.py`, 13/13, witness
+`q0Anchor: independent` — no `q₀` is read). Beans `qou-amw3`, `qou-8uxw`.
+
+**Route A step 1 — what the two words are.** From the Ocneanu axioms alone
+(`QOU/MathlibExt/InterleavedWordClosures.lean`, sorry-free, axioms standard):
+
+    tr(s₀ s₁ s₀ s₂ s₁) = z² · tr(σ³)        interleaved = doubly-stabilised σ³   → trefoil
+    tr(s₀² s₁² s₂)     = z  · tr(σ²)²       sequential  = stabilised Hopf-chain → three components
+    Δ                  = z² · tr(σ³) − z · tr(σ²)²                                (`crossTerm_eq_closures`)
+
+with `z` and `h` free, i.e. at the two-variable (HOMFLY-PT) level, and confirmed in the 16-dim
+spin-½ representation. So the "cross term" is the difference of two link invariants of two
+**different** links. Verdict on "is `Δ` an Euler characteristic": true only in the content-free
+sense — each side is the graded Euler characteristic of a Khovanov–Rozansky homology, so `Δ` is
+`χ` of a shifted direct sum. The sense that would matter — a natural chain map between the two
+complexes whose cone carries `Δ` — is supplied by nothing in the corpus: the closures have
+different component counts and no braid move relates the words. Route A's honest step 2 is to
+construct such a map (a cobordism map: two saddles join the three components into one) and
+compute its cone; not attempted here.
+
+**Route C step 1 — what the order-zero term counts.** At `q = 1` with `z = 1/N` the Markov trace
+on `ℚSₙ` is the normalised character of `Sₙ` on `V^{⊗n}`, `dim V = N`: `N^{c(w)}/N^n`. The
+character of a permutation representation is a Burnside fixed-point count — the `w`-invariant
+colourings of the strands, which are exactly the colourings constant on each cycle. Verified on all
+24 permutations of `S₄` at `N = 2, 3`. The interleaved word fixes 2 two-colourings, the sequential
+word 8; the difference `−6` is T1's `[2]_q⁴·Δ|_{q=1}`. Both counts are pinned in Lean by finite
+search (`QOU/Mass/CrossTermFixedPointCount.lean`, `decide` on 16 colourings — the one place that
+tactic is the honest tool). In groupoidification (Baez–Hoffnung–Walker) that character is the
+degroupoidified span `X ← X^w → X`, so **the order-zero cross term is a groupoid cardinality**.
+The 16-dim quantum trace degenerates to exactly this count at `q = 1` (the R-matrix becomes the
+swap), so the `q`-deformation is a `q`-count of fixed points. Whether *that* is a groupoid
+cardinality — the Hecke-algebra-as-groupoid-algebra reading, which lives over `𝔽_q` with `q` a
+prime power, while the framework's `q₀ ≈ 1.11` is not — is route C's step 2, open.
+
+**Net effect on the recommendation.** T1 (§7c) moved the cross term to order zero; 7d names the
+order-zero object twice over — as trefoil-minus-chain (A) and as a fixed-point-count difference
+(C) — and both readings agree that the classical part is *topology of the closure*, not
+algebra of the tower. Route C is the one with a positive, exact foothold; route A has an
+identification and a named gap. Neither has yet produced anything about `b₃`, and §7's honest
+statement stands: the many-body term the binding gap needs is not visible in this word pair
+beyond its component count.
+
+## 7e. Check C1, route G's prune, and what that does to route D (2026-09-06)
+
+**C1 — kite tethering (bean `qou-20bk`). Decided from the held definitions, and my §4.4 reason was
+wrong while the conclusion survives, sharpened.** Read: Def. 4.1.1 (a kite is a string `σ` from the
+basepoint plus a linear square `τ`), Def. 4.3.3 (the basic Riemann product is
+`exp_H(area · Ψ_h(g)(β̃(z)))` with `g` the 1-dimensional integral along the tether and a probe into
+the cell), Def. 4.3.6 / 4.2.7 (the refined product is the ordered product over the `4^k` kites of the
+binary tessellation), Def. 4.4.16 (`MI` is the limit), Thm 0.4.2 (2-dim Stokes:
+`Φ(MI(α,β|σ,τ)) = MI(α|∂(σ,τ))`), Thm 0.9.1 (`Ψ(g) = Ad_H(h)`), §0.5 (`H₀ = ker Φ` is the inertia
+subgroup, central and abelian), Def. 8.6.1 (`γ = dβ + ψ_h(α)(β)`), Lemma 8.6.3
+(`MI(α,β|∂balloon) ∈ H₀`), Thm 8.6.6 (`γ` is inert; `MI(α,β|∂(σ,τ)) = MI(α,γ|τ)`).
+
+The tether is a basepoint gauge choice and is **not** what makes the object pair-local. The
+mechanism is the 2-dimensional Stokes theorem together with the Peiffer identity: for a
+connection–curvature (fake-flat) pair the surface holonomy `h ∈ H` is determined by its boundary
+path holonomy `g = Φ(h)` **up to `ker Φ`, and `ker Φ` is central**. That algebra is now in Lean over
+arbitrary groups (`QOU/LiftingDescent/CrossedModuleSurfaceHolonomy.lean`, sorry-free, axioms
+standard: `ker_le_center`, `eq_mul_center_of_feedback_eq`, `classFn_factors_through_feedback`).
+Read back into the geometry:
+
+1. the **non-abelian** content of any 2-dimensional Yekutieli object is its boundary 1-holonomy — a
+   path-ordered product, i.e. *word/ordering* data, the degree-0 class §7b–7d characterised;
+2. everything beyond it is abelian (inert), and over a closed surface it is the **abelian volume
+   integral of the inert 3-curvature `γ`** over the 3-cell (Thm 8.6.6), additive over 3-cells.
+
+So **no 2-dimensional Yekutieli object carries a non-abelian 3-body term**, and the only
+3-body-shaped object in the book is `∫γ` over a balloon: abelian, extensive, additive over triples —
+exactly the "super-pairwise additive extensive object" the Δ_λ audit asks for. It is live **iff**
+`γ ≠ 0` for the framework's connection, and that cannot be evaluated: Step 2's curvature is
+stipulated, not a form; no `α`, `β` exist in the Lean (cheat-sheet §2a). Route D2's decisive check is
+therefore "construct `(α, β)` as forms on the brane tower and compute `γ`", which is Step 2 itself.
+Route D1's Lean prune (ii) is vacuous as I stated it: in the alternating Čech complex a 2-object cover
+has `C² = 0`, so every `H²` class is "pairwise trivial" by definition; the content is whether
+`κ_n ≠ 0` for the tower, which needs the tower's transition data, which the corpus does not hold as
+values (grep for a computed `cl²` / `κ_n`: none).
+
+**Route G — prune (bean `qou-fvsq`), scope (b) with the invariant cited.** The question was whether a
+3-input planar tangle on `TL₃(q)` could be an irreducibly ternary operation. It cannot, before any
+Temperley–Lieb relation is used: Jones states (held, `library/arxiv-math-9909027v1`, §0, the
+paragraph introducing Prop. 1.20) that *"the planar operad `P` is generated by the Temperley-Lieb
+algebra and tangles of two kinds"* — the multiplication tangle (two input discs) and the annular
+tangles (one input disc); the figure naming the two kinds is not in the held text, the sentence is.
+An operad generated by elements of arity `≤ 2` has every `k`-input element as an iterated composite
+of `≤ 2`-input ones, so a 3-box tangle is a composite of 2-box and 1-box tangles as a *tangle*, and
+its evaluation on any planar algebra, `TL₃` included, factors accordingly. No finite linear-algebra
+check is needed and none was run. Route G is closed for this arc.
+
+**Net effect.** Routes B, D (2-dim), G are now pruned; route D survives only as D2's `∫γ`, which is
+the right *shape* and is blocked on Step 2. Route A has its identification and a named gap (a
+cobordism chain map); route C has an exact foothold at `q = 1` and an open `q`-deformation. Routes E
+(factorization homology: extensivity as an axiom) and H (`K₃^{ind}`) have not been touched today.
+
+## 7f. Route A step 2 — the cross term is the Markov trace of a canonical *virtual* Soergel object (2026-09-06)
+
+Bean `qou-c50n` (re-created; its first file collided with an existing bean ID), probe
+`computations/probes/interleaving_cross_term_soergel_kl_probe.py`, 12/12, witness
+`q0Anchor: independent`. Merged with #6891.
+
+**The construction.** Route A step 1 (§7d) left the categorification of `Δ` content-free because it
+looked for a chain map between two different links. The canonical object needs none. By Soergel's
+categorification theorem and the Soergel conjecture (Elias–Williamson, held), the Bott–Samelson
+bimodule of a word decomposes into indecomposables `B_w` with multiplicities given by expanding the
+product of `C'_s` in the Kazhdan–Lusztig basis of `H₄`; and the braid word's *Rouquier complex*,
+whose Hochschild homology is the HOMFLY-PT (Khovanov–Rozansky) homology, has class `∏ T_s`, whose
+KL expansion is signed. Dictionary: the framework's `q` is Soergel's `v`, `T_s = v·g_s`,
+`C'_s = g_s + q⁻¹`, `C'_s² = (v+v⁻¹)C'_s`. Everything below is exact over `ℚ(v)` on the 24-element
+group; the KL polynomials are recomputed by the recursion and checked at the two singular Schubert
+cells of `S₄` (`P_{e,3412} = P_{e,4231} = 1 + q_H`).
+
+**What the two words are, categorically.**
+
+| word | Bott–Samelson object, in indecomposables |
+|---|---|
+| sequential `s₀²s₁²s₂` | `(v+v⁻¹)² · B_{s₀s₁s₂}` — four shifted copies of **one** indecomposable |
+| interleaved `s₀s₁s₀s₂s₁` | `B_{3421}` (the 4-cycle, length 5) `⊕ B_{2413} ⊕ B_{3214}`, multiplicity 1 each |
+
+The two share **no** summand. The Rouquier classes expand with signs — top term `v⁵·C'_{3421}` for
+the interleaved word — and the Markov trace of the expansions reproduces `I(q)` and `S(q)`, with
+
+    v⁻⁵ · tr_M( [F(interleaved)] − [F(sequential)] ) = Δ(q)   exactly.
+
+**Reading.** `Δ` is the Markov trace of an *intrinsic* virtual Soergel object (a difference of two
+Rouquier classes in the split Grothendieck group), not of an ad-hoc shifted sum; HOMFLY-PT homology
+categorifies it summand by summand, and the categorical name of "interleaving" is the length-5
+indecomposable of the 4-cycle, which the sequential word never contains. This is the
+categorification route A asked for. What it does **not** do is touch `b₃`: whether the framework's
+binding functional can see that summand requires a nucleus to be an interleaved word class in the
+first place (`qou-5vhf`), and the production word is monotone.
+
+**Route E, closed cheaply.** Its formalize-first prune ("pair-locality contradicts ⊗-excision") was
+miswritten: at the scalar level ⊗-excision is inclusion–exclusion of log-traces, which *local*
+pairwise functionals satisfy and which monotone words satisfy trivially (letter-additivity,
+`f_tr_stabWord_eq_sum` in `FormalityBridgeF1.lean`), while interleaving violates it by exactly `Δ`
+(`f_interleaved_ne_f_sequential`). So route E's scalar content *is* the T1/A/C story, already proved;
+its categorical content (relative tensor products over collars) is route A by
+Ginot–Tradler–Zeinalian. Nothing new to build.
+
+**Arc status after 7b–7f.** Pruned: B (order-zero cross term), D in dimension 2 (central inertia), G
+(planar operad arity ≤ 2), E (reduces to A). Positive footholds: A (canonical virtual object),
+C (Burnside count at `q = 1`). One shape survives with content the corpus cannot yet evaluate: D2's
+abelian volume integral `∫γ` of the inert 3-curvature — additive over triples, the Δ_λ audit's
+requested shape — blocked on Step 2 (no connection form exists to compute `γ` from). H stays with
+the flavour/volume arc. The honest summary is unchanged from §7: the many-body term the binding gap
+needs is not visible in the `n = 4` word pair beyond its component count, and the one route that
+could produce a triple-additive term runs through the framework's un-derived Step 2.
+
+## 7g. `qou-5vhf` step 2 — component count decides the q-adic order; the Brunnian class is route B's live object (2026-09-06)
+
+Bean `qou-0fxk`; probe `computations/probes/component_count_decides_q_adic_order_probe.py`, 10/10, witness
+`proton`; Lean `QOU/Mass/CrossTermOrderZeroComponentCount.lean`, sorry-free.
+
+**The joining statement.** At `q = 1` the Markov trace on `ℚSₙ` is the component-count trace
+`2^{c(w)−n}` (verified on every element of `S₃` and `S₄` in the spin-½ representation), so the
+order-zero part of *any* cross term `tr(w) − tr(w′)` is `2^{c(w)−n} − 2^{c(w′)−n}`, and it vanishes
+**iff** the two closures have the same number of components (`componentTrace_eq_iff`; checked on all
+`24 × 24` pairs of `S₄`). Hence two classes of many-body cross term:
+
+| class | example | order at `q = 1` | at the proton pin |
+|---|---|---|---|
+| component-**changing** | `n = 4` trefoil (`c = 1`) vs Hopf-chain (`c = 3`) | 0, classical: `Δ(1) = (2 − 8)/16 = −3/8` | `0.895` nats, `≈ 3.75 MeV` at `E₀` |
+| component-**preserving** | the corpus's Brunnian word `w₃ = [A₀₁, A₁₂]` vs the 3-unlink (both `c = 3`) | 4: `1 − τ_Borr = h⁴(3+h²)/(h²+4)` | `1.44 × 10⁻³`, `≈ 6.0 × 10⁻³ MeV` |
+
+The probe also shows `(σ₀σ₁⁻¹)³` has the same trace as `w₃` (both close to the Borromean rings), and
+the Lean bounds the deficit by `h⁴` outright (`one_sub_tauBorromean_le`, strict for `h ≠ 0`).
+
+**What this settles.** Route B's "all orders in `q`" object, dead for the `n = 4` word (§7c), is
+alive exactly for the Brunnian class — which is the class the corpus's own 3-body operator
+(`BorromeanThreeBodyCluster.lean`) already lives in. And the answer to `qou-5vhf`'s carrier question
+"which word class is a nucleus" is now two-sided: the framework's 3-nucleon operator *is* an
+interleaved (commutator) word class, of the component-preserving kind, and such a class has a cross
+term that is intrinsically `O(h⁴)`.
+
+**What it does to the magnitude problem, as a diagnostic at the comparison boundary (nothing
+fitted).** With `E₀ = m_e/(q₀(q₀−1)) = 4.186 MeV` (the corpus's scale) the two classes bracket the
+Δ_λ audit's quoted target `μ₃ = 0.4708 MeV`: the Brunnian term is `78×` too small, the classical
+one `8×` too large. The missing 3-body magnitude sits between the classes, and neither supplies it
+as it stands. Going up the tower does not help the Brunnian side: the Milnor parity law already on
+`main` (`MilnorParitySignLaw`, leading order `2(A−1)`) says the Brunnian order *rises* with `A`. A
+term of the needed size would have to be classical — a component-changing link topology per
+nucleus, which is the census route `qou-5vhf` closed as a fit — or come from outside this trace
+altogether, which is where §7e left route D2.
+
+**On the resurgent / alien-calculus proposal — CORRECTED 2026-09-06 (the paragraph this
+replaces was wrong on the tower, and the owner caught it).** The superseded text said *"nothing
+resurgent to resum … none arise until the tower limit … the relevant series has not been written
+down"*, and cited the Gevrey results to `QOU/AlgebraicSubstrate/{KernelGrowthBound,
+DominationTowers, PolyhedralDomination}`. Both halves were wrong, and the second contradicts this
+arc's own dialog assessment
+([`2026-09-05-alien-calculus-vs-nonabelian-stokes-dialog-assessment.md` §0 item 4](2026-09-05-alien-calculus-vs-nonabelian-stokes-dialog-assessment.md)),
+which had it right. Corpus-grep, six paths, 2026-09-06:
+
+* **The tower series exists and is divergent.** The Hecke-tower binding period
+  `a_D^(n) = S(n)/n = Σ_{λ⊢n} dim_q(λ)/n` (jet order `n` = strand number) is **Gevrey-1/2**,
+  sorry-free: `QOU/Mass/BindingGevreyHalf.lean` (`n! ≤ 4ⁿ·I(n)² ≤ 8ⁿ·n!` at `q = 1`), with
+  `SWPeriodSuperExponential.lean` and `ConstantKernelGrowthBound.lean` beside it. Its level-1/2
+  Borel transform has a **singularity at `ξ = 1/√2` on the positive real axis** (Pringsheim,
+  measured `0.688` by Padé, non-polar, ten real poles accumulating beyond it):
+  [`2026-07-12-alien-calculus-review-binding-gevrey-half.md` §3](2026-07-12-alien-calculus-review-binding-gevrey-half.md),
+  `lever1_borel_half_singularity_probe.py`. That is the divergence near a singularity.
+* **At the substrate pin the class changes.** `Z_n(q₀) ~ q₀^{n²}`: q-Gevrey, no classical Borel
+  level carries it; the matched q-Borel kernel gives radius `≈ 0.955`
+  (`deltalambda/deuteron-wall-qborel-resummation.witness.json`). Every resummation so far
+  undershoots the deuteron binding; the classical Γ-Borel of the `q = 1` period was shown to be
+  the wrong transform and the deuteron-wall resummation is **reopened as bean `qou-hok7`** (todo,
+  high): q-Borel–Laplace of `Z_n(q₀)`, machinery exists, not yet pointed at the deuteron.
+* **A second divergent tower is the Ohtsuki `κ`-tower** of the `4₁` complex volume: Gevrey-1,
+  Borel singularity at `Vol(4₁)/π ≈ 0.646`, Stokes constant the GGM integer 3
+  (`rem-ohtsuki-tower-bar-parity`, `Stokes3LargeOrderAmplitude.lean`) — a tower in the Kashaev
+  colour, not in the strand number.
+* **What was right and stays:** at *fixed* `n` every trace in this arc is a rational function of
+  `q` (radius `√2` in `ℏ` for the `n = 4` cross term; `1 − τ_Borr` rational in `h`), so the
+  fixed-`n` cross terms carry no resurgent structure. And the `A → ∞` *nuclear* tower series is
+  still unwritten — the brane-tower "divergence at `q₀`" (bean `km42`) was later measured as a
+  saturating plateau in the `σ⁻¹`-chain length, not an `A`-series singularity (`qou-20yf`).
+
+**Consequence for the binding gap.** The "all orders in `q`" object the owner's ruling names is
+the Hecke `n`-tower period, and its resurgent structure is real: the many-body content of the
+tower lives in the q-Borel plane of `Z_n(q₀)`, whose singularity is the deuteron wall. So the
+resurgent route is not a new route of this survey — it is `qou-hok7`, already open, and it is
+where the alien-calculus question has a concrete target. C1 (§7e) still applies to the
+*two-dimensional* version the dialog proposed: that object would be abelian and inert.
+
 ## 8. Literature to download — prioritised, with links and one-line justification
 
 **Priority A — likely to change what can be *proved***
@@ -986,6 +1260,27 @@ Costello–Gwilliam, Beilinson–Drinfeld — books; nothing on the list blocks 
   `0905.0488`. Recorded on bean `qou-3pck`; **not fixed here** — the mapping-table block is a content
   block and the fix is a one-block edit plus a sweep of the theorem-number strings, which is a
   separate tranche.
+
+  **🛑 CORRECTED 2026-09-06 (bean `qou-smw9`, the sweep that fixed it).** Three claims in the bullet
+  above were mine and wrong, and the sweep measured all three. (i) **Which paper.** The theorem
+  numbers 3.13 / 4.6 / 4.17 / 5.11 / 6.10 are those of *Central Extensions of Gerbes*
+  (`library/arxiv-0801.0083v4/`, the file `yekutieli2010` is joined to), **not** of the
+  multiplicative-integration book `arxiv-1007.1250v4` (`yekutieli2015`, numbered 0.1 … 9.3). The
+  numbers were right; the attribution in this bullet and in bean `qou-3pck` was to the wrong file.
+  (ii) **"148 files."** That counted every mention of the key. Measured: **104** files name
+  `yekutieli2010` (94 `content/`, 6 `docs/`, 4 `.beans/`), and only **10** non-record files carried a
+  nonexistent theorem number. (iii) **"Prop. 3.4, Thm 0.1."** Neither is the paper's own: the only
+  `Proposition 3.4` is `[Gr2, Corollaire to Proposition 3.4.2]` and the only `Theorem 0.1` is
+  `[Ye, Theorem 0.1]`, both citations to other works. **Fixed on PR #6891** (`507aa3c560`):
+  Thm 1.7 → **Thm 4.17** (lifting objects, class `cl²` of Def. 4.15); Thm 3.4 (twisted sectors)
+  → **Thm 4.17**; the central-extension tower → **Thm 3.13 + §6**; "§3 obstruction classes" →
+  **§4, Def. 4.15**; and the "twisted quantization map" → **`yekutieli2015-twisted-dq`
+  Thm 0.10.1** (arXiv 0905.0488, verified in its held text), with `cites[]` extended on the two
+  carrier blocks. **Still dangling, deliberately untouched** (recorded on `qou-cqs9`): `Theorem 4.2`
+  ×3 and `Definition 2.1` ×5 on the cosimplicial-crossed-groupoid carriers, and `Theorem 1.1` in
+  `weak-equiv-invariance-proof.md` — none exists in 0801.0083; the likely home is
+  `arxiv-1109.1919v3` (*Combinatorial Descent Data*), which needs its own verification. This
+  correction also invalidates the "148 unverified citations" cost quoted under route D above.
 - The Lean carrier `QOU.WedderburnMass.spectral_sequence_collapses_to_centre` proves idempotence
   and never uses its `[WhiteheadHH]` instance (2026-08-25 audit §2a); it is not in the vacuity
   ledger. §7 item 2 is the fix.

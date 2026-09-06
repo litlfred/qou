@@ -51,6 +51,9 @@ DPS = 50
 mp.mp.dps = DPS
 
 M_PI_MEV = mp.mpf(M_PI_PM_MEV_VALIDATION)           # CAL-3 pion mass (input)
+# witness-copy-intentional: frozen ON PURPOSE — see the note above.
+# This probe's subject IS the published near-match at this retired
+# pin; re-pointing it at a live value would delete the finding.
 STALE_Q0 = mp.mpf("1.1097090249")        # the v9 hardcoded muon-anchor literal
 
 # AME binding energies (MeV) — same source as the v9 script.

@@ -1,5 +1,5 @@
 
-By [Theorem 1.7, yekutieli2010], any central extension of gerbes
+By [Theorem 4.17, yekutieli2010], any central extension of gerbes
 banded by an abelian sheaf on a ringed space satisfies the lifting
 criterion: an object in the base gerbe admits a lift to the total gerbe
 if and only if its obstruction class in $H^2$ vanishes. We verify that
@@ -29,6 +29,6 @@ with the categorical characteristic class $\kappa_n$ of the brane
 tower at level $n$ — both arise from the same 2-cocycle classifying
 the $\mathcal{B}$-torsor structure on the set of lifts.
 
-**Conclusion.** Theorem 1.7 of yekutieli2010 applies with
+**Conclusion.** Theorem 4.17 of yekutieli2010 applies with
 obstruction class $\kappa_n$; the lift exists iff $\kappa_n = 0$,
 which is precisely the categorical lifting condition.

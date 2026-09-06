@@ -4162,11 +4162,58 @@ export interface AuthorNote {
 > | schema gap: `prose:knot-periodic-table` drops `computation` | 1 | **fixed** — folio-assistant#164 |
 > | `authorNotes` dropped | **0** | fixed upstream 2026-08-24 |
 >
-> The five `authorNotes` rows the table below names — `fine-structure-data`,
-> `tm-interaction-completeness`, `millennium-bounds-via-surreals-intro`,
+> 🛑 **That table measured a platform THIS REPO DOES NOT RUN, and the row above
+> is not true here (corrected 2026-09-06, bean `qou-lq8g`).** `93e476b` is
+> unpinned `folio-assistant` `main`. The platform this repo actually validates
+> against is the SHA in
+> [`.folio-assistant-pin`](.folio-assistant-pin) — **`428ca5c`, dated
+> 2026-08-23 09:52** — and the upstream grant `affcec4` (*"schema: grant
+> `authorNotes` to prose, equation, diagram and table"*) landed **after** it.
+>
+> Measured against the pin on 2026-09-06, on a clone
+> `scripts/setup-folio-assistant.sh` had just created:
+>
+> | class | count against the PIN |
+> |---|---|
+> | `authorNotes` dropped | **5** |
+> | `computation` dropped (`prose:knot-periodic-table`) | **1** |
+>
+> — the same six fields, in the same blocks, that the superseded text below
+> lists. Both halves are true and describe different platforms.
+>
+> **The re-measure instruction three lines up is what produces the
+> disagreement, not what resolves it.** It says to re-run
+> `scripts/setup-folio-assistant.sh` before quoting any figure — and that
+> script installs the **pinned** platform, so an agent following it lands on
+> `428ca5c` and sees five warnings a corpus-grep tells them were fixed.
+>
+> **Do NOT "fix" this by pointing the setup script at `main`.** The pin is
+> deliberate, and its rationale is in that script's own header: the checkers
+> live in the platform repo, so every count this repo quotes is a function of
+> **two** inputs, and defaulting to `main` let two agents on the same corpus
+> commit measure different numbers and each be right (bean `vbase`). Moving the
+> platform is meant to be a reviewable one-line commit to
+> `.folio-assistant-pin`, not a silent consequence of when you cloned.
+>
+> **So the useful rule is: name the platform whenever you quote a count.**
+> "validate: N issues" is meaningless without it, and this row is what that
+> looks like when it goes wrong — the same class as everything else this
+> section documents, one level up.
+>
+> Advancing the pin past `affcec4` would make the all-clear true here, and is
+> its own PR: 169 commits of checker changes move every count this repo quotes,
+> which is exactly the reviewable decision the pin exists to force.
+>
+> Of the six, only one has a downstream consumer: `knot-periodic-table`'s
+> `computation`, its link to its producer. The other five are author-facing
+> prose.
+>
+> Superseded — the five `authorNotes` rows the table below names
+> (`fine-structure-data`, `tm-interaction-completeness`,
+> `millennium-bounds-via-surreals-intro`,
 > `hecke-log-decomposition-table-data`,
-> `q-beta-form-a-n1-symbolic-table-data` — **are no longer dropped**. Kept as
-> a record of what the defect cost, not as a live list.
+> `q-beta-form-a-n1-symbolic-table-data`) were described here as *"no longer
+> dropped"*. Against the pin they still are.
 >
 > **The structural cause outlived the one-field fix, which is why it is worth
 > reading the rest of this box.** That grant added `authorNotes` to the four
@@ -5300,6 +5347,16 @@ formalization alike. Violation of any item below is a review failure.**
     candidates are, and what the next honest step would be. Then
     **stop** and report the gap in chat. An honest bean is always
     acceptable; a dishonest "closure" never is.
+13a. **NEVER close a bean whose subject is an open conjecture (owner
+    directive, 2026-09-06, verbatim: *"Don't close beans with open
+    conjectures!!!"*).** A bean that tracks a conjecture, a
+    conditional-class hypothesis, a literature-unsupported identification
+    (e.g. `A_ω → S`, bean `qou-q3np`), or the epistemic tier of a bridge
+    stays `todo` / `in-progress` until the mathematics closes — not until
+    the *recording* of its openness is done. "The scoping sentence is now
+    in the content block" is a body-append, not a completion. Only beans
+    whose whole task is mechanical (a citation key added, a file renamed)
+    may be completed while the conjecture they touch remains open.
 14. **Do NOT try to please.** The owner is a physicist. Fake progress
     is worse than no progress — it wastes time, pollutes the corpus,
     and erodes trust. If the math doesn't work, say so. If a

@@ -167,13 +167,23 @@ Robinson–Schensted–Knuth dimension identity `Σ_λ (f^λ)² = n!`. Everythin
 is independent of it; everything below is explicitly conditional on it.
 
 ⚠ **This is not a new statement.** The corpus already carries it as
-`QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial`, and its status is
-worth quoting exactly. `scripts/lean-axiom-guard.py` records it first as
-`sorryAx` under "known-BAD: the RSK identity and everything reindexed from it",
-and later as `clean` — with the guard's own warning attached, that `clean` was
-reached "by moving its obligation into a class binder, which is the §3b-cond
-pattern and is exactly what *conditional-proved ≠ premise-established* warns
-about", and was "treated as a RED FLAG and checked three ways".
+`QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial`.
+
+**Status corrected 2026-09-06 (bean `qou-1knw`).** This paragraph used to quote
+`scripts/lean-axiom-guard.py` recording that declaration as `sorryAx` under
+"known-BAD: the RSK identity and everything reindexed from it". That entry was
+**a month out of date**, and the guard could not say so because it had been
+unable to run at all — it exits 2 when any olean in its cone is missing or
+stale, and ~104 of its modules were. Once rebuilt, the guard reported a
+promotion: that declaration and three siblings measure exactly
+`[propext, Classical.choice, Quot.sound]`.
+
+It still carries `[SnIsotypicSpechtSplit ℚ]`, so the older caveat about the
+§3b-cond pattern was the right thing to worry about — but that binder now has an
+instance, itself clean, so the statement is established rather than merely
+conditional. The instance is built **from** `QOU.Mathlib.rskBurnsideHolds`, so
+the declaration is derivative and citing it as the *source* of the identity would
+be circular.
 
 So *that* declaration is available only conditionally, and `RSKDimIdentity`
 states the same obligation **as an explicit hypothesis on the theorem** rather

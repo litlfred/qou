@@ -1,7 +1,7 @@
 {
  "computation": "deuteron-magnus-omega2-sign",
  "scriptFile": "deuteron_magnus_omega2_sign_probe.py",
- "computedAt": "2026-09-03T04:20:55.800253+00:00",
+ "computedAt": "2026-09-06T03:25:35.831243+00:00",
  "engine": "mpmath mpf at 140 dps (H\u2086 Hoefsmit seminormal; finite-diff germ; 0 free params)",
  "free_parameters": 0,
  "inputs": {
@@ -12,28 +12,28 @@
   "deuteron_word_source": "mass_at_3A_proper.atom_braid_word_3A(1,1) \u2014 source of truth",
   "deuteron_word_gens": [
    0,
+   1,
    0,
+   1,
    0,
-   0,
-   0,
+   1,
    0,
    0,
    1,
-   1,
-   1,
-   1,
+   0,
+   0,
    2,
    3,
+   4,
    3,
+   4,
    3,
-   3,
-   3,
+   4,
    3,
    3,
    4,
-   4,
-   4,
-   4
+   3,
+   3
   ],
   "deuteron_word_multiplicities": {
    "0": 7,
@@ -66,9 +66,9 @@
     ],
     "dim": 5,
     "y_lambda": "0.0324889466526747331919041151620376111487971425652644912755921",
-    "tr_rho_Omega2": "-337.954621170424225792414440951347253262733901710084556767260",
+    "tr_rho_Omega2": "-65.9246120718943751705320899893916734918189242985309991144516",
     "tr_Omega2_ctrl": "0.0",
-    "tr_rho_Omega2_interface_only": "-97.4135712953219765441157841762335807337920724709956908006632"
+    "tr_rho_Omega2_interface_only": "-89.1727277842881007976979129328696352584865295104974399076009"
    },
    {
     "lambda": [
@@ -77,9 +77,9 @@
     ],
     "dim": 9,
     "y_lambda": "0.111452202657393373028526779387633942103146266120370463203003",
-    "tr_rho_Omega2": "-16.8018507461256625168439636541883773588024910257587213446966",
+    "tr_rho_Omega2": "-45.9542378323830205965770343008833015124946858087242600394532",
     "tr_Omega2_ctrl": "0.0",
-    "tr_rho_Omega2_interface_only": "-85.5109969074394551588209618406882960679013051607188480420416"
+    "tr_rho_Omega2_interface_only": "-30.0177149579180121193521343929179902015752568719734845048316"
    },
    {
     "lambda": [
@@ -89,9 +89,9 @@
     ],
     "dim": 10,
     "y_lambda": "0.135697722767438328603808845362901064674084815032076720239918",
-    "tr_rho_Omega2": "-274.009809626516864403044332246015403119774782931458877381421",
+    "tr_rho_Omega2": "-33.3673969624724957291416287698812367620357675092593461137376",
     "tr_Omega2_ctrl": "0.0",
-    "tr_rho_Omega2_interface_only": "-108.007480971174389203801533967734800625713655311724134506679"
+    "tr_rho_Omega2_interface_only": "-41.1654900672885283222958201887485009743016034873458042306548"
    },
    {
     "lambda": [
@@ -100,9 +100,9 @@
     ],
     "dim": 5,
     "y_lambda": "0.0353909454546065607275199178510052862109283816621100502488083",
-    "tr_rho_Omega2": "-93.2559718149956897989497160125842322093714539774623040974339",
+    "tr_rho_Omega2": "26.3874129226516597855448048615619093269184895912171898232463",
     "tr_Omega2_ctrl": "0.0",
-    "tr_rho_Omega2_interface_only": "-13.6883856663850121335890647179602235004409940289049031496127"
+    "tr_rho_Omega2_interface_only": "12.8593844683590496574102394963168805055150816147722788459056"
    },
    {
     "lambda": [
@@ -112,9 +112,9 @@
     ],
     "dim": 16,
     "y_lambda": "0.358635641834951713459419271670692018756490758528155891169986",
-    "tr_rho_Omega2": "-49.0849540705906465171386287605654529297169190345156749927133",
+    "tr_rho_Omega2": "-17.0259977929566710505459723411410406055553407513479010236751",
     "tr_Omega2_ctrl": "0.0",
-    "tr_rho_Omega2_interface_only": "-75.9964614910316507827970620291336347020761641814344932506787"
+    "tr_rho_Omega2_interface_only": "-14.3805723710131401655687478513868510459751362145993855601488"
    },
    {
     "lambda": [
@@ -125,9 +125,9 @@
     ],
     "dim": 10,
     "y_lambda": "0.135697722767438328603808845362901064674084815032076720239918",
-    "tr_rho_Omega2": "-5.18130532121542164231136765627247222701951142217785151373138",
+    "tr_rho_Omega2": "13.2535657632134066897561928712626321189205367385487735211268",
     "tr_Omega2_ctrl": "0.0",
-    "tr_rho_Omega2_interface_only": "-17.2731203971070977910147033811222603960346395919661400035921"
+    "tr_rho_Omega2_interface_only": "15.2026143972542556555262527141797967606562164321940862176184"
    },
    {
     "lambda": [
@@ -137,9 +137,9 @@
     ],
     "dim": 5,
     "y_lambda": "0.0353909454546065607275199178510052862109283816621100502488083",
-    "tr_rho_Omega2": "93.7610260589628642307636776712820424993197053090260113829417",
+    "tr_rho_Omega2": "-15.7020957985781308895137696035817470440082649624450704255501",
     "tr_Omega2_ctrl": "0.0",
-    "tr_rho_Omega2_interface_only": "-21.5287590159480508934959531361830424459775467634355578266720"
+    "tr_rho_Omega2_interface_only": "-5.09936185238527342061843123172442207474078395708033834195338"
    },
    {
     "lambda": [
@@ -150,9 +150,9 @@
     ],
     "dim": 9,
     "y_lambda": "0.111452202657393373028526779387633942103146266120370463203003",
-    "tr_rho_Omega2": "-36.9373865448244720500027140121259034705372750357248987109213",
+    "tr_rho_Omega2": "4.59309837360340562494489010787487695412666363222466405932071",
     "tr_Omega2_ctrl": "0.0",
-    "tr_rho_Omega2_interface_only": "-10.3344459602425916839505447900792465159183216405651598140466"
+    "tr_rho_Omega2_interface_only": "-1.37394878288261227571490476248806328215513774007048345049091"
    },
    {
     "lambda": [
@@ -164,9 +164,9 @@
     ],
     "dim": 5,
     "y_lambda": "0.0324889466526747331919041151620376111487971425652644912755921",
-    "tr_rho_Omega2": "5.89660048210138096389623019189659510768822962418963418183715",
+    "tr_rho_Omega2": "3.50079425772751406463273680560646101837138660076674569392804",
     "tr_Omega2_ctrl": "0.0",
-    "tr_rho_Omega2_interface_only": "6.30793651988997816551739435580960508167321220668437772427108"
+    "tr_rho_Omega2_interface_only": "3.65030071726011313075076380849019248751278783438919888732281"
    },
    {
     "lambda": [
@@ -184,26 +184,26 @@
     "tr_rho_Omega2_interface_only": "0.0"
    }
   ],
-  "P_total": "-72.2489098605953347719036666288594326785319398945854314886155",
+  "P_total": "-15.0952414446437079252206337315418091482335562779533923530652",
   "P_total_sign": -1,
-  "P_interface_only": "-59.1438119334053765810624061265042747878828310206012772225904",
+  "P_interface_only": "-14.6830580096020065113631192556029957393785682562285888128968",
   "P_interface_only_sign": -1,
   "P_control_rho_identity": "0.0",
   "control_tr_M_Omega2_vanishes": true,
-  "n_partitions_positive": 2,
-  "n_partitions_negative": 7,
+  "n_partitions_positive": 4,
+  "n_partitions_negative": 5,
   "sign_indefinite_across_partitions": true,
   "clears_non_negativity_wall": true,
   "live": true
  },
- "verdict": "LIVE \u2014 the linear Magnus pairing tr_M(\u03c1\u00b7\u03a9\u2082) CLEARS the non-negativity wall that excluded the quadrature \u2016F_q\u2016\u00b2. Evidence, all 0-fit: (i) the \u03c1=I control tr_M(\u03a9\u2082) vanishes exactly (\u03a9\u2082 has no Markov trace), so the quadrature's non-negativity argument provably does NOT transfer to this linear object; (ii) the per-partition pairing is SIGN-INDEFINITE (2 positive, 7 negative \u2014 e.g. (2,2,2) is positive while (5,1) is negative), which a square structurally cannot be; (iii) the y_\u03bb-weighted total is definite and nonzero, net NEGATIVE. This makes the 2nd-order Magnus term a VIABLE carrier for the sign-changing missing binding term, the role the traceless-\u21d2-quadrature F_q could not fill. HONEST LIMITS: this is a fact about the object's sign structure, NOT a derivation of the 0.608 MeV (needs the open \u0394_\u03bb MeV normalization) and NOT yet a sign-MATCH to the deuteron \u2014 mapping 'net-negative' to 'reduces/adds binding' needs the binding-sign convention of the mass functional, and the 'flips positive at A\u22653' half needs H\u2089. Both are flagged open, neither claimed.",
+ "verdict": "LIVE \u2014 the linear Magnus pairing tr_M(\u03c1\u00b7\u03a9\u2082) CLEARS the non-negativity wall that excluded the quadrature \u2016F_q\u2016\u00b2. Evidence, all 0-fit: (i) the \u03c1=I control tr_M(\u03a9\u2082) vanishes exactly (\u03a9\u2082 has no Markov trace), so the quadrature's non-negativity argument provably does NOT transfer to this linear object; (ii) the per-partition pairing is SIGN-INDEFINITE (4 positive, 5 negative \u2014 e.g. (2,2,2) is positive while (5,1) is negative), which a square structurally cannot be; (iii) the y_\u03bb-weighted total is definite and nonzero, net NEGATIVE. This makes the 2nd-order Magnus term a VIABLE carrier for the sign-changing missing binding term, the role the traceless-\u21d2-quadrature F_q could not fill. HONEST LIMITS: this is a fact about the object's sign structure, NOT a derivation of the 0.608 MeV (needs the open \u0394_\u03bb MeV normalization) and NOT yet a sign-MATCH to the deuteron \u2014 mapping 'net-negative' to 'reduces/adds binding' needs the binding-sign convention of the mass functional, and the 'flips positive at A\u22653' half needs H\u2089. Both are flagged open, neither claimed.",
  "scope": "scope-(a): decides the SIGN of the 2nd-order Magnus pairing tr_M(\u03c1\u00b7\u03a9\u2082) at A=2. Does NOT reproduce the 0.608 MeV (needs the open \u0394_\u03bb MeV normalization \u2014 claiming it would be a fit). Does NOT test the 'positive at A\u22653' half (needs H\u2089). No fit; \u03bc\u2083/c\u2083/B(D) never inverted; nothing wired.",
  "lean": "QOU.QBeta.YekutieliTrefoilDiscretization",
  "wired": false,
  "notes": "Magnus continuation (qou-dp32) of deuteron_interface_handle_curvature_probe.py (qou-jqof). The prior probe established F_q traceless \u21d2 quadrature \u2016F_q\u2016\u00b2\u22650, excluded from the negative-at-A=2 term. This tests whether the LINEAR Magnus pairing escapes that non-negativity.",
  "scriptHash": "7f8bd25de651",
- "scriptCommitSha": "cd2f526be6803f6a830fc3b80663d15a7a9d4a06",
- "commitSha": "cd2f526be6803f6a830fc3b80663d15a7a9d4a06",
+ "scriptCommitSha": "5e21b5cbb5f12db67b70431c8868ff3f4248bab1",
+ "commitSha": "75fd0b4c3264868c68924658f00c3e433e01bbcb",
  "durationMs": 0,
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736"

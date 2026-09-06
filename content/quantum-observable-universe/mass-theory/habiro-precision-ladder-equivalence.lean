@@ -16,7 +16,7 @@ finite Habiro expansion:
 
   tr_M = Σ_{m=0}^{M} a_m(u) · (u;u)_m,   a_m ∈ ℤ[u], M < ∞
 
-where (u;u)_m = Π_{k=1}^{m}(1 - u^{2k}) is the q-Pochhammer symbol
+where (u;u)_m = Π_{k=1}^{m}(1 - u^k) is the q-Pochhammer symbol
 and u = q^{1/2}. Under archimedean evaluation u → u₀ = q₀^{1/2},
 each (u₀;u₀)_m shrinks like ~ℏ_q^m, giving the precision ladder.
 
@@ -37,13 +37,27 @@ Ref: [manuscript] prop:habiro-precision-ladder-equivalence
 
 namespace QOU.BraidKnot
 
-/-- The q-Pochhammer symbol (u;u)_m = Π_{k=1}^{m}(1 - u^{2k}).
-    This is the key structural ingredient of the Habiro expansion:
-    at substrate u₀, each factor (1 - u₀^{2k}) ≈ 1 - q₀^k is close
-    to 1, so the product shrinks like ℏ_q^m. -/
+/-- The q-Pochhammer symbol `(u;u)_m = Π_{k=1}^{m}(1 - u^k)`, with
+    `u = q^{1/2}` — i.e. `(√q; √q)_m`, the convention the corpus's Habiro
+    coefficients are actually computed against.
+
+    CORRECTED 2026-09-06: the body read `(1 - u^{2(m+1)})`, which at
+    `u = √q` is `(q;q)_m`, NOT `(u;u)_m`.  Against the stored `a_m` of
+    `habiro-coefficients-atomic.witness.json` — whose own description says
+    the expansion is in `(check_q; check_q)_m` with `check_q = q^{1/2}` —
+    that reconstructs `tr_M(proton) = 6.9602` instead of `1.1458`, a **507 %**
+    error, while `(1 - u^k)` reproduces the witness to `4.65e-17`.
+
+    It was also a notation error on its own terms: `(u;u)_m` denotes
+    `Π(1 - u^k)`; the product `Π(1 - u^{2k})` is `(u²;u²)_m`.
+
+    The two sibling `QOU.BraidKnot.qPochhammer` definitions —
+    `habiro-expansion-atomic.lean` and `full-pole-structure-mass-trace.lean` —
+    both already use `(1 - u^k)`; this file was the only one of the three that
+    disagreed.  Verified by `qbeta_habiro_pochhammer_convention_probe.py`. -/
 noncomputable def qPochhammer {R : Type*} [CommRing R] (u : R) : ℕ → R
   | 0 => 1
-  | m + 1 => qPochhammer u m * (1 - u ^ (2 * (m + 1)))
+  | m + 1 => qPochhammer u m * (1 - u ^ (m + 1))
 
 /-- A Habiro coefficient is an integer polynomial in u = q^{1/2}. -/
 abbrev HabiroCoeff := Polynomial ℤ
@@ -83,9 +97,37 @@ theorem habiro_terminates (h : HabiroExpansion) :
 
     This is the substantive content of the md's integrality claim: the
     coefficients live in `ℤ[u]`, not `ℚ[u]` or `ℝ[u]`, so their integer-point
-    evaluations are integers.  (Verified computationally for proton (M=8),
-    neutron (M=8), deuteron (M=12), ³He (M=16), ⁴He (M=20) —
-    `habiro-expansion-atomic-probe.witness.json`, `all_integral: true`.)
+    evaluations are integers.
+
+    **Evidence, CORRECTED 2026-09-06.**  This parenthetical previously read
+    "Verified computationally for proton (M=8), neutron (M=8), deuteron
+    (M=12), ³He (M=16), ⁴He (M=20) — `habiro-expansion-atomic-probe.witness.json`,
+    `all_integral: true`", and was wrong four ways at once:
+
+    * the named field is in a DIFFERENT file — `all_integral` appears in
+      `habiro-coefficients-atomic.witness.json`, not in the probe witness
+      cited, whose corresponding assertion is `all_a_m_have_integer_coefficients`;
+    * the deuteron's expansion terminates at **M = 13**, not 12;
+    * **⁴He does not appear in the corpus at all** — the list named an atom
+      for which no expansion exists;
+    * **tritium does**, and was omitted.
+
+    What the two witnesses actually carry, re-measured against the live files:
+
+        atom          M    deg_u p    ceil(sqrt(2 deg_u p))
+        proton         8      44             10
+        neutron        8      36              9
+        deuteron      13     100             15
+        tritium       16     136             17
+        ³He           16     144             17
+
+    `habiro-coefficients-atomic.witness.json` carries `all_integral: true` for
+    each; `habiro-expansion-atomic-probe.witness.json` (`cor:habiro-expansion-atomic`,
+    3/3) independently asserts integrality (`all_a_m_have_integer_coefficients`),
+    the degree bound `deg_u a_m ≤ m`, and termination within
+    `m_max ≤ ⌈√(2·deg_u p(u))⌉` — the last column above, satisfied by all five.
+
+    Verified by `qbeta_habiro_citation_and_termination_probe.py`.
 
     **Stated in the ambient ring, which is where the claim has teeth.**
     `HabiroCoeff` is `Polynomial ℤ`, so `(h.coeffs m).eval u₀ : ℤ` is an

@@ -79,7 +79,15 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 
 
-def _canon_str(v) -> str:
+def _q_muon_live():
+    """The muon pin as today's CODATA implies it, via the live derivation."""
+    from qou_substrate.constants import q_muon_at
+    return q_muon_at(90)  # 90 dps so 70 rendered digits are all REAL — rendering
+    # 70 from a 60-dps value exposed ~10 digits of noise that shifted with
+    # ambient precision (…0457699990 vs …0457580704).
+
+
+def _canon_str(v, digits: int = 50) -> str:
     """Full-precision decimal for a registry constant.
 
     ``str(mpf)`` renders at the AMBIENT ``mp.dps``, which is mpmath's default
@@ -98,8 +106,8 @@ def _canon_str(v) -> str:
     being padded out to 50 digits of binary noise.
     """
     from mpmath import mp as _mp
-    with _mp.workdps(60):
-        return _mp.nstr(v, 50, strip_zeros=True)
+    with _mp.workdps(digits + 30):
+        return _mp.nstr(v, digits, strip_zeros=True)
 
 # name -> (canonical value read from the registry, the constant to use instead)
 CANON: dict[str, tuple[str, str]] = {
@@ -117,6 +125,33 @@ CANON: dict[str, tuple[str, str]] = {
     # 78 such occurrences on main. classify() picks the NEAREST canonical, so
     # a muon literal now resolves against the muon anchor.
     "q0_muon": (Q_MUON_50_DIGIT_STR, "q_parameter.Q_MUON_50_DIGIT_STR"),
+    # THE MUON PIN HAS TWO LEGITIMATE VALUES, and this gate knew one.
+    #
+    # qou_substrate.constants documents three live muon strings and is explicit
+    # that the split is deliberate: Q_MUON_50_DIGIT_STR is FROZEN so a witness
+    # stays reproducible against its own history, while `q_muon_at()` RE-DERIVES
+    # from MASS_RATIO_MU_E_STR and therefore moves with CODATA. They differ by
+    # 0.0769 ppb. Both are correct, for different callers.
+    #
+    # Carrying only the frozen one made this gate score every literal written
+    # against the LIVE derivation as DIVERGENT — i.e. as wrong — when it is the
+    # value today's CODATA implies. Measured: of 125 q0 findings, 6 are exact
+    # prefixes of the live value and 3 more sit within 1.3e-8 of it.
+    #
+    # The 17-digit ancestor (1.1099785955541805…, 336 files) is deliberately
+    # NOT added. constants.py names it as the defect population — "a literal
+    # cannot drift from a source it does not have; these had none" — so it must
+    # keep failing. Legitimising it here would silence the very thing the muon
+    # pin's named home was created to expose.
+    # digits=70, not the default 50: q_muon_at(60) carries 70 significant
+    # digits, and rendering it at 50 leaves the CANONICAL truncated — so the
+    # full literal fails the prefix test and the gate scores the live pin
+    # WRONG. The default stays 50 because m_e and the AME constants are built
+    # from short decimal strings and grow binary noise past it
+    # (0.51099895069 -> 0.510998950690000...565443472 at 60), which would make
+    # the canonical a value no author ever typed. One rule cannot serve both;
+    # the precision is a property of each constant, so it is stated per row.
+    "q0_muon_live": (_canon_str(_q_muon_live(), 70), "q_parameter.q_muon_at()"),
     # AME2020 binding energies. The registry reads these from
     # qou-mass/src/qou_mass/data/ame2020.json at run time; a script that types
     # them instead is the same defect one dataset over, and was invisible here
@@ -153,12 +188,57 @@ NUMBER = re.compile(r"\d+\.\d+")
 
 # The registry itself. A CODATA value here is the source of truth, not a copy
 # of one — flagging it would be the audit reporting its own reference as wrong.
+# The registry itself legitimately HOLDS these values — it is the source the
+# rest of the tree is meant to read from, so scanning it would report the
+# canonical values as defects. Extended with the package-layer registry when
+# the scan grew past computations/.
 REGISTRY_FILES = {"codata_2022_source.py", "codata_constants.py",
-                  "q_parameter.py"}
+                  "q_parameter.py",
+                  # tools/qou-substrate/.../ — the package-layer registry
+                  "constants.py", "codata.py"}
 
 # A number inside a regex or a match-prefix is a PATTERN, not a computed value.
 # Without this the audit flags other detectors — including its own siblings —
 # for containing the very literals they exist to find.
+# A DECLARED two-arm comparison, on the literal's line or the one above it.
+#
+# Some probes carry a superseded value BECAUSE it is their subject. The type
+# case is probes/retired_q0_refresh_to_live_muon_pin_probe.py, whose whole
+# content is `RETIRED = mpf(...)` against `MUON = mpf(...)` — routing the
+# retired arm to the registry would delete the comparison the probe exists to
+# make. Such a value is not a defect and cannot be drained.
+#
+# The marker is deliberately NARROW and must stay so: it exempts one literal
+# on one line, never a file or a directory, and it requires the author to say
+# WHY on that line. A blanket per-file opt-out is how a gate stops being one.
+# The spelling mirrors the repo's existing `# float64-intentional:` idiom that
+# mpf_float_source_audit.py already honours.
+_EXEMPT_RE = re.compile(r"reference-literal-intentional:")
+
+
+def _marker_above(lines: list[str], lineno: int) -> bool:
+    """Is the marker anywhere in the comment block directly above this line?
+
+    Checking only the single preceding line looks sufficient and is not:
+    a reason worth giving takes more than one line, so authors write a block
+    and the marker lands at its TOP. Measured on the first real use — a
+    three-line justification above `RETIRED = mp.mpf(...)` — the marker sat
+    three lines up and the literal was still reported.
+
+    Walking the contiguous run of comments keeps this per-literal (the run
+    stops at the first non-comment line, so it cannot reach past an
+    intervening statement) while letting the reason be as long as it needs.
+    """
+    i = lineno - 2  # 0-based index of the line directly above
+    while i >= 0:
+        st = lines[i].strip()
+        if not st.startswith("#"):
+            return False
+        if _EXEMPT_RE.search(st):
+            return True
+        i -= 1
+    return False
+
 PATTERN_MARKERS = ("re.compile", "re.search", "re.match", "re.finditer",
                    r"\d", "_MATCH_", "pattern", "PATTERN", "regex")
 
@@ -365,7 +445,15 @@ def _prose_lines(src: str) -> set[int]:
 def scan() -> tuple[list[dict], int]:
     rows: list[dict] = []
     exact = 0
-    for f in sorted(ROOT.joinpath("computations").rglob("*.py")):
+    exempt = 0
+    # SCAN ROOTS. `computations/` alone was a FLOOR, not a total, and this
+    # gate said so from the start. Measured on the other three: 13 findings in
+    # 11 files, one of them in the public facade (qou_mass/api.py carries the
+    # CODATA-2018 u->MeV 931.49410242 while the registry moved to the 2022
+    # value 931.49410372).
+    roots = ["computations", "tools", "qou-mass", "scripts"]
+    for f in sorted(g for r in roots
+                    for g in ROOT.joinpath(r).rglob("*.py")):
         if "_deprecated" in f.parts or "__pycache__" in f.parts:
             continue
         if f.name == Path(__file__).name or f.name in REGISTRY_FILES:
@@ -390,6 +478,9 @@ def scan() -> tuple[list[dict], int]:
             for m in NUMBER.finditer(line):
                 if (i, m.group(0)) in fixtures:
                     continue
+                if _EXEMPT_RE.search(line) or _marker_above(lines, i):
+                    exempt += 1
+                    continue
                 got = classify(m.group(0))
                 if not got:
                     continue
@@ -406,7 +497,7 @@ def scan() -> tuple[list[dict], int]:
                     "verdict": verdict,
                     "use_instead": CANON[name][1],
                 })
-    return rows, exact
+    return rows, exact, exempt
 
 
 def _selftest() -> int:
@@ -431,6 +522,22 @@ def _selftest() -> int:
         ("1.1099785955573347", "TRUNCATED",
          "the retired MUON pin — a second anchor, not a botched proton q0; "
          "48 occurrences were scored DIVERGENT before it had a CANON row"),
+        # Read the row itself, never a re-render: building this fixture with
+        # _canon_str(...) at the DEFAULT 50 digits while the row holds 70 made
+        # it a 50-digit prefix, which classify() correctly called TRUNCATED —
+        # so the fixture failed on a working classifier. A fixture that
+        # re-derives its own expected value can disagree with the table it is
+        # meant to pin.
+        (CANON["q0_muon_live"][0], "EXACT",
+         "the LIVE muon derivation q_muon_at() — a second legitimate pin, "
+         "0.0769 ppb from the frozen one; scored DIVERGENT before it had a row"),
+        (CANON["q0_muon_live"][0][:52], "TRUNCATED",
+         "a 50-digit copy of the live muon pin is SHORT, not wrong — the "
+         "distinction the frozen/live split exists to keep straight"),
+        ("1.1099785955541805", "DIVERGENT",
+         "the 17-digit ancestor, 336 files — constants.py names it THE DEFECT "
+         "population, so it must keep failing; legitimising it would silence "
+         "what the muon pin's named home exists to expose"),
         ("28.295673", "DIVERGENT",
          "binding_manybody_series.py:43 — agrees to 6 digits then diverges; "
          "a prefix-only classifier scores this CLEAN"),
@@ -474,7 +581,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.selftest:
         return _selftest()
 
-    rows, exact = scan()
+    rows, exact, exempt = scan()
     by_const: dict[str, list[dict]] = defaultdict(list)
     for r in rows:
         by_const[r["constant"]].append(r)
@@ -523,6 +630,7 @@ def main(argv: list[str] | None = None) -> int:
         "blocking_total": len(rows),
         "by_constant": {k: len(v) for k, v in by_const.items()},
         "exact_duplicates": exact,
+        "declared_intentional": exempt,
         "findings": rows,
     }
     _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
@@ -551,6 +659,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"    {name:6s} {len(items):4d}  e.g. {items[0]['literal']}"
               f"   canonical {canon[:22]}")
     print(f"  exact duplicates (not blocking): {exact}")
+    print(f"  declared reference-literal-intentional: {exempt}")
     print("\n  Truncation computes a DIFFERENT number, silently. No precision")
     print("  gate sees it: the NO-FLOAT64 family checks how a value is carried")
     print("  and serialized, never whether it was right when typed. Wrapping a")

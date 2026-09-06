@@ -19,8 +19,11 @@ export default conjecture({
     "garoufalidis-gu-marino2023peacock",
     "gukov-pei-putrov-vafa2017",
     "dimofte-gaiotto-gukov2013",
+    "dimofte-gaiotto2011",
+    "murakami-y2022",
     "gukov-stosic2012",
     "kucharski-reineke-stosic-sulkowski2017",
+    "singh-physrevd108106023",
   ],
   tags: [
     "tier:famous",

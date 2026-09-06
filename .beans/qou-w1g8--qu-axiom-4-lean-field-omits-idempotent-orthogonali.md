@@ -1,11 +1,11 @@
 ---
 # qou-w1g8
 title: QU axiom 4 Lean field omits idempotent orthogonality + completeness (needs Preadditive)
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T00:23:28Z
-updated_at: 2026-09-05T18:06:52Z
+updated_at: 2026-09-05T19:43:34Z
 ---
 
 
@@ -198,3 +198,46 @@ owner-gated queue.
 What is still true and worth keeping: the two gaps cost differently
 (orthogonality needed only `HasZeroMorphisms` and is DONE), and the axiom's name
 still promises more than its type delivers until completeness lands.
+
+
+## ✅ DONE ON MAIN — and my own note above ("still open as work") was wrong
+
+Checked the tree rather than the bean, and this is fully landed. All four
+`QuantumUniverse` carriers now have it:
+
+- `quantum-universes/quantum-universe.lean`
+- `quantum-observable-universes/quantum-observable-universe.lean`
+- `lean/QOU/QuantumObservableUniverse/CategoricalFoundations.lean`
+- `lean/QOU/QuantumObservableUniverse/TrivialWitness.lean` (field **and** its
+  instance, so the completeness axiom is discharged by a witness rather than
+  merely stated)
+
+What is in the class now:
+
+```lean
+[preInst : @CategoryTheory.Preadditive C catInst]
+[linInst : @CategoryTheory.Linear R _ C catInst preInst]
+…
+centralIdem_orthogonal : ∀ b b', b ≠ b' → centralIdem b ≫ centralIdem b' = 0
+centralIdem_complete   : ∑ b, centralIdem b = 𝟙 frobHopf.obj
+frobWeight_isUnit      : ∀ b, IsUnit (frobWeight b)
+```
+
+`Preadditive` **replaces** the bare `HasZeroMorphisms` rather than sitting
+beside it — the docstring records why, and it is a real hazard: two
+`HasZeroMorphisms` instances on `C` would have made `p_b ≫ p_b' = 0`
+ambiguous. `frobWeight_isUnit` also took this bean's other recommendation,
+`IsUnit` over `≠ 0`, with the reason stated (they differ over a ring — `2 ≠ 0`
+in `ℤ` and `2` is not a unit; they coincide only over a field, which is why
+`≠ 0` survived while the base ring was one).
+
+The completeness docstring cites this bean by name and states the gap in this
+bean's own terms: *"This is the field the axiom's NAME promised and its TYPE
+did not deliver."*
+
+**🛑 My reclassification note directly above is wrong and is retracted.** It
+said *"Off the owner-gated queue, still open as agent work."* The first clause
+stands — the `Preadditive` prerequisite really was answered by
+`def:quantum-universe` axiom 1, and this bean really did not need an owner
+ruling. The second clause was asserted without looking at the tree, on a bean
+whose own last update was 2026-08-16. Landed 2026-08-29. Closing.

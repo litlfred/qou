@@ -65,7 +65,14 @@ _PIN_PREFIXES = MUON_PREFIXES + ("1.109978582751", "1.1099785827")
 _OFF_PIN_MIN_LEN = len("1.10997859")
 
 # Canonical pins at full precision, for a NUMERIC comparison.
+# witness-copy-intentional: the canonical pins at full precision, held
+# here as this audit's COMPARISON BASIS. They are the thing being
+# detected; sourcing them from a witness would make the detector
+# agree with whatever it is auditing.
 _MUON_EXACT = Decimal("1.10997859555733471989976322048322502665620840878015")
+# witness-copy-intentional: the proton half of the comparison basis
+# above. It needs its own marker because the marker is bounded by the
+# assignment it sits on and deliberately does not leak to the next.
 _PROTON_EXACT = Decimal("1.10997858275138080759166909561076887987449912187365")
 # PARAMETER-FREE criterion, replacing an arbitrary tolerance.
 #

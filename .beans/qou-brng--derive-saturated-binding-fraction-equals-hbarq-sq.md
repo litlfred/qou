@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-04T10:28:53Z
+updated_at: 2026-09-05T20:24:00Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2401,3 +2401,44 @@ hypothesis of an interface theorem. Recorded as two arguments rather than merged
 into one claim, because they remain independent.
 
 ## 2026-09-04 later (qou-rp9i) — under #6611's log law the cyclic-triple reorder IS extensive (per-bond constants), so 'not a functional of tr_M' from earlier today is too strong as stated; but the class over-shoots 3–8× with the retracted +N−Z asymmetry sign. Word-level route: closed for this class under both laws.
+
+
+## 2026-09-05 (qou-o43i) — CORRECTION to the 2026-09-04 "Next": a D9 witness cannot settle the equal-scalars question, and the hypothesis is not a corpus claim
+
+The 2026-09-04 entry above names `separable_interface_degenerate`'s equal-scalars
+hypothesis as *"where the residue actually is"* and sets the next step as *"a witness for
+D9 would make the equal-scalars question decidable for the first time."* Two measured
+corrections; the **linking-matrix result is untouched**, as is the sibling's pair-layer
+obstruction.
+
+**1. The theorem has ZERO instantiation sites.** Measured over every tracked file with
+Lean comments stripped: **1 declaration, 0 applications, 28 prose citations in 13 files**
+(`scripts/separable-interface-instantiation-audit.py`, `--selftest` 5/5, `--strict`
+gates, so the claim cannot go stale silently). `fSpin`/`fIso` are arbitrary functions on
+arbitrary types, so `hplus`/`hminus` are the antecedent of a universally-quantified
+implication — not a claim about this corpus that any witness could settle. The
+`μ± ↔ y₂/y₁₁` identification lives in the theorem's **docstring**; the entry above cites
+`InterfaceScalar.lean:365–384` for it, which is `weight_eq_proj_scalar` in a different
+section, about different variables.
+
+**2. D9's carrier was rebuilt around a different claim on the same day.** #6671 replaced
+the content-free `holds : Prop` with three fields — `0 < q`, `q ≠ 1`, and one real
+equation for `Δm/M_N`. Its own header states the categorical half (crystal functional,
+isospin swap) is **NOT encoded**. So an instance supplies a real-number identity while the
+equal-scalars question is about projector scalars of a swap construction: the two objects
+do not touch. Worth knowing before a tranche is spent building the witness.
+
+**3. Formalised — the closure is carried entirely by its hypotheses.** Two sorry-free
+library files, split per §7c (`SeparableInterfaceHypothesesHaveContent.lean` generic +
+`…Real.lean` archimedean): drop the hypotheses and the conclusion is **false**
+(`separability_hypotheses_have_content`); keep them and the residual mathematics is
+`mul_comm` (`degeneracy_is_commutativity`); release them and the channel ratio is
+**unconstrained** — every field element, positivity preserved over `ℝ`, the measured
+**33.7055** among them (`asymmetry_attainable_with_distinct_scalars`,
+`distinct_positive_scalars_reach_any_ratio`, `measured_asymmetry_attainable`). Scope (b)
+on {separable interface, distinct scalar pairs}, invariant: a field has no nontrivial
+multiplicative constraint between two free elements.
+
+**NOT claimed:** that the two SU(2)s carry different scalars — as unestablished as its
+converse. Nothing refuted; `separable_interface_degenerate` is correct. Detail, including
+a `check-sidecars.sh` `(R :=` blind spot deliberately left unswept: `qou-o43i`.

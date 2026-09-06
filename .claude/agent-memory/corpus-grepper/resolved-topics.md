@@ -347,3 +347,42 @@ whole point of bean `qou-3o59`.
 `references.ts library.docId` reconciliation. 828 entries / 394 with docId / 576
 dirs / 23 duplicates — the residual is **not** 182 and was never measured.
 `library/0803219` was found incidentally.
+
+## Tower-series divergence near a singularity (resolved 2026-09-06)
+STABLE. "Is the tower series divergent / where is the singularity" has carriers; do not re-declare open.
+Hecke n-tower binding period `a_D^(n)=S(n)/n`: Gevrey-1/2 at q=1 (Lean `QOU/Mass/BindingGevreyHalf.lean`),
+level-1/2 Borel singularity ξ=1/√2 real positive, non-polar (`docs/audits/2026-07-12-alien-calculus-review-binding-gevrey-half.md` §3,
+`computations/lever1_borel_half_singularity_probe.py`); at q₀ q-Gevrey ~q₀^{n²}, q-Borel radius ≈0.955
+(`deltalambda/deuteron-wall-qborel-resummation.witness.json`); deuteron-wall resummation REOPENED `qou-hok7`.
+Ohtsuki κ-tower: Gevrey-1, singularity Vol(4₁)/π≈0.646, Stokes 3. c_k D-ladder: CONVERGENT (three reversals; do not re-run).
+A→∞ nuclear tower series: unwritten (survey 2026-09-05 §7g). Brane-tower "divergence" = plateau in σ⁻¹ chain length (`qou-20yf`), bean `km42` wording stale.
+TRAP: the 2026-09-05 survey §7g (pre-correction) cited the Gevrey result to AlgebraicSubstrate/{KernelGrowthBound,DominationTowers,PolyhedralDomination}; it lives in QOU/Mass/BindingGevreyHalf.lean.
+
+## 2026-09-06 — hyperbolic surface law `S/V → 2` in `H³`, Yekutieli kites, surface term (bean `qou-j8hp`)
+
+- **Has anyone computed/tested `S/V → 2`, `A_surf/A → const`, or a `(ln A)/A` surface correction?**
+  → **GENUINELY OPEN (grep-open; path 0 down).** The `ln A` *separation law* IS in the corpus, but only
+  as the Coulomb-pairing radius, never as a surface law: `2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md:326-343`
+  + `em_linking_alpha_scaling_provenance_probe.py:170` + witness `law_scores` (`ln A` 9.253 % vs `A^{1/3}` 3.505 %),
+  restated `sm-26-parameter-chip-away.md:193-201`, `sm-eightfold-derivation-cheat-sheet.md:486`,
+  `observations/bw-mass-decomposition-dictionary.md:10`. Sinh-ball VOLUME `π(sinh 2R − 2R)` is stated (prose + probe string);
+  the AREA `4π sinh² R` and the ratio appear nowhere. Zero Lean on hyperbolic ball volume/area
+  (`Real.sinh` only in `FaddeevPhiBRealIntegral.lean`; `HyperbolicMetric.lean` has `dx dy dz/z³` only).
+- **Kites**: three homonyms. (i) Yekutieli's 2-cell (`library/arxiv-1007.1250v4` Def 4.1.1: string `σ` + linear square `τ`;
+  `4^k` square kites per binary tessellation `tes_k I²`) — worked to a verdict in bean `qou-20bk` (completed 2026-09-06) +
+  `LiftingDescent/CrossedModuleSurfaceHolonomy.lean` (sorry-free): no 2-dim Yekutieli object carries a non-abelian 3-body term;
+  the only 3-body object is `∫γ` over a balloon (Thm 8.6.6). (ii) "kite-tail" `(1+r²)^k` cyclotomic factor of `tr_M`
+  (`docs/audits/2026-05-09-kite-tail-reconciliation.md`, `computations/_deprecated/kite_tail_*`) — a braid triangle `σᵢσⱼσᵢ`, NOT Yekutieli.
+  (iii) nothing Penrose/Ptolemy. **Nobody counts kites as a function of A.** "surface of kites" has no corpus meaning.
+- **Stokes surface term**: `2026-08-30-nonabelian-stokes-and-the-surface-term.md` — bad set `|bad(τ,k)| ≤ a₀ + a₁·2^k`
+  (perimeter count, singular points of `σ`); shape only, no magnitude. Lean shadow: `AffineCountIsNotASurfaceTerm.lean`
+  (affine count ≠ `A^{2/3}`), `Sigma1CubedSeifertTessellation.lean` (abelian shadow trivial). No Lean on the singular-locus count.
+- **Library**: Yekutieli surfaces HELD (`arxiv-1007.1250v4`, one 261 KB section file, key `yekutieli2015`); ALL cited Yekutieli
+  keys held since 2026-09-05 (`qou-3pck`). Hyperbolic ball volume HELD in **`arxiv-1010.5321v3` *Formulas on hyperbolic volume*
+  §3.1 Bolyai** `πk³ sinh(2x/k) − 2πk²x` (registered, line ~11661). Ratcliffe / Benedetti–Petronio / Weizsäcker / Bethe1936
+  REGISTERED-ONLY; Martelli, Harborth, Bezdek ABSENT (639 dirs); `library/18` (ball-packing rigidity) cites Kuperberg–Schramm
+  only. Thurston held copy = Ch 1–2, has hyperbolic trig but no ball volume. Isoperimetric/Cheeger hits are all probability
+  (Stein kernels, concentration) — no hyperbolic isoperimetry held.
+- **Q5**: no bean/audit tries or rules out a hyperbolic surface law. The coordination-graph Lean is explicitly Euclidean:
+  `EquilateralBound.lean:2-3,34` (ℝ³), `MaxContactSimplex.lean:184` (kissing 12), `qou-usft` RESULT 6 ("ENTIRE nuclear
+  EM-sector geometry is two lines of classical Euclidean"). Not a refutation of an `H³` cluster — an unexamined import, same class as `A^{1/3}`.

@@ -470,6 +470,81 @@ C-conditional label has to be honoured in every future `c_k` claim. *Commits to:
 nothing. *Veto if* you want the compute started — it is the kind of run that
 wants a dedicated session, not an idle pass.
 
+> **D2 update (2026-09-06): the framing above is right and its two cost
+> estimates are both wrong, in opposite directions.** Evidence from `qou-cds1`
+> siblings on `main` — `9462d1b41c`, `bfa317911859`, and the C-vs-D algebra
+> probe.
+>
+> **1. "A real re-derivation" is an understatement — C and D are different
+> ALGEBRAS.** The registry names D *"SU(2)/Temperley–Lieb (Jones)"* with
+> `y_(1³) = 0`, against C's full-Hecke `y_(1³) = 0.022745`. `TL_n =
+> H_n/⟨antisymmetriser⟩` kills every >2-row partition, so **D is a quotient of
+> C** — the re-derivation is not the same ladder in new coordinates, it is a
+> ladder in an algebra with one fewer block. Relatedly, `z` is not a free
+> parameter to re-solve for: it is the rank label of `z_N = q^N/[N]_q` (full-bar
+> for every `N`, twist `q^{−2N}`), and `z_D = z_2` is the SU(2) member.
+>
+> **2. "A long compute" is an overstatement for THIS channel.** The Q_β ladder
+> is an `H_3` object, and at `n = 3` the TL truncation retains **83.3 %**
+> (`dim TL_3 = 5` against `dim H_3 = 6`) — one 1-dimensional block. That is why
+> C and D differ only in the 4th decimal on `β_Bor` (0.99836662 vs 0.99856216).
+> The truncation only becomes severe at `n = 3A`: **0.043 % at ⁴He**, 7e-6 at
+> ⁶Li. So the D2 compute is small; it is the *mass* channel where the tower
+> question is expensive.
+>
+> **3. The obvious repair is already closed, and the derived one is measured
+> insufficient.** `9462d1b41c` closed bar-even rescaling (it leaves D).
+> `bfa317911859` pushed the derived projection `α − h²/4` through the ladder:
+> implied `c_2` improves −9.30 → −1.73 and convergence 1.12× → 2.36×, but
+> self-consistency against the *structural* `c_2 = −1` is **73 %** off where C
+> is **1.8 %**. So authorising the compute today would start from a route
+> already known not to close.
+>
+> **Revised recommendation — still do not authorise, but for a different
+> reason.** Not "it is expensive" (at `H_3` it is not) but "there is no route
+> with a plausible endpoint yet": the rescaling is closed, the projection is
+> insufficient, and no third candidate exists. *What would change this:* a
+> candidate mechanism for the residual, or a ruling on the item below.
+>
+> **A question this raises that D2 does not currently ask.** The 2026-08-15
+> ruling makes D canonical; the 2026-09-03 ruling asks derivations to use the
+> **full tower**. D is a two-row truncation. At `H_3` the conflict is nearly
+> invisible (83 % retained); at `n = 3A` it is total. **Both rulings may be
+> right in their own domains**, and the live question is where the crossover
+> bites — which is a separate owner decision from D2's authorise/don't.
+
+**🔵 UPDATED 2026-09-06 — a sibling closed the route you would try first, and the
+default gets STRONGER.** `9462d1b41c` on `main` (*"close the bar-even rescaling
+route — it LEAVES convention D"*, same bean `qou-cds1`) settles the obvious
+repair:
+
+Under D the eigenphase `2a = (z−1)h` is not bar-odd because `z_D` is not
+bar-even. The rescaling that would fix it **exists and is forced, not chosen** —
+`bar(q^a z_D)/(q^a z_D) = q^(−2a−4)` gives `a = −2` uniquely, so
+`z̃_D := z_D/q² = q/(q²+1) = 1/[2]_q`, which sits beside
+`z_C = √q/(q+1) = 1/[2]_√q` as the *same functional form in a different
+variable*.
+
+**And it is a dead end.** `z_D`'s defining property here is the full-bar
+condition `bar(z) = z − h` (`QOU.QBeta.zD_full_bar_covariant`), and
+`QOU.QBeta.barEven_fullBar_forces_classical` proves bar-even and full-bar are
+incompatible away from `q² = 1`. So rescaling to bar-evenness does not
+re-derive the ladder *within* D — it silently moves to a third parameter that
+is neither `z_C` nor `z_D`.
+
+**The trap they named is the part to carry:** `z̃_D` is **0.4 %** from `z_C`
+while raw `z_D` is **23 %** away, so the C-built ladder *nearly works* under
+`z̃_D` and fails catastrophically under `z_D`. That closeness is **not**
+evidence — the verdict is the full-bar incompatibility, established
+independently, and the number is reported only afterwards.
+
+**Consequence for this decision:** the recommendation is unchanged but now
+better supported. Authorising the compute today would fund a search whose
+cheapest and most obvious path is *proved* closed. D2 is not thereby settled —
+a re-derivation may exist by some other route — but the route a fresh agent
+would reach for first is gone, which lowers the expected return on authorising
+it now rather than raising it.
+
 ### D3 — Cluster 3b. May the binding channel use CAL-3 as an acknowledged anchor?
 **Bean:** `qou-2tuv`.
 

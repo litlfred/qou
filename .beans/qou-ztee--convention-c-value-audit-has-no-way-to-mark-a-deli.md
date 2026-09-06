@@ -1,11 +1,11 @@
 ---
 # qou-ztee
 title: convention-c-value-audit has no way to mark a deliberate comparison — the census floor will look drainable
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-29T09:54:51Z
-updated_at: 2026-08-29T16:27:27Z
+updated_at: 2026-09-06T06:20:51Z
 ---
 
 Observed 2026-08-29 on branch claude/tower-gap-lean-and-infra-2026-08-29 (PR
@@ -70,3 +70,58 @@ SUGGESTED SHAPES, for whoever picks this up:
     docs/audits/lean-vacuity-review-ledger.json holds agent verdicts that a
     machine cannot reach, keyed on file + line + a hash so a verdict goes stale
     when the site changes.
+
+
+## ✅ IMPLEMENTED — and the mechanism is better than this bean asked for (verified 2026-09-06)
+
+Found by `scripts/bean-staleness-triage.py` (4th of 284 artifact beans). The
+predicted failure mode — *"the report reads 'N confirmed convention-C bindings,
+exit 1' with every entry deliberate, and the obvious next move deletes
+measurements"* — **can no longer happen.** A fresh run of
+`scripts/convention-c-value-audit.py`:
+
+```
+convention-C bindings (confirmed): 134
+    of which co-bound with z_D in the same scope: 76  (hint only — not an exemption)
+    of which adjudicated in the ledger: 111
+    BLOCKING (confirmed, unadjudicated): 23
+sqrtvar shape on a q-variable = 1/[2]_q, NOT C: 5
+sqrtvar shape, variable unresolved (needs an eye): 1
+convention-D bindings: 504
+```
+
+Four things now exist that did not when this bean was written:
+
+- **An adjudication ledger** — `docs/audits/convention-c-comparison-ledger.json`
+  (105 KB, committed), with 111 sites adjudicated as deliberate comparisons.
+  Adjudicated sites stop blocking, so the floor cannot present as drainable.
+- **A `[co-bound with z_D]` annotation** on 76 sites, labelled in the output
+  *"hint only — not an exemption"* — the distinction surfaced without becoming
+  a mechanism.
+- **A `NOT C` class** — 5 `sqrtvar` shapes on a q-variable, correctly excluded
+  as `1/[2]_q` rather than counted.
+- **An `UNRESOLVED` bucket** — 1 site whose variable the audit cannot resolve,
+  flagged for an eye instead of being silently classified.
+
+**The design answers this bean's own worry about exemptions**, and does it
+better than an exemption list would. From `_load_ledger`'s docstring:
+
+> *"A `# comparison only` comment or a `z_C`-style name would be an exemption
+> an author grants themselves, in the file being audited — which is the evasion
+> surface this detector exists to close, reintroduced one level up. A ledger
+> entry cannot be granted that way: it lives outside the scanned tree, it has
+> to be committed as a separate deliberate act, and because the key includes a
+> hash of the site's own source line, **editing that line expires the
+> adjudication automatically**."*
+
+That last clause is the part worth carrying: an adjudication that expires when
+the adjudicated line changes cannot go stale the way a comment-based exemption
+would. Same shape as `docs/audits/lean-vacuity-review-ledger.json`.
+
+**Read the count change carefully — it is growth, not drain.** This bean's
+baseline was 85 confirmed (at #5972), 87 on its branch; it is **134** now. The
+census got *bigger* while the actionable number shrank to **23**, which is what
+you would expect from a detector that improved its reach and gained a ledger at
+the same time. Do not quote 134 as a regression against 85.
+
+Closing.

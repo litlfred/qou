@@ -80,6 +80,9 @@ import mpmath as mp  # noqa: E402
 
 mp.mp.dps = 60
 
+# reference-literal-intentional: the RETIRED pin is this probe's SUBJECT, not
+# an input — the whole point is to measure it against the live muon pin below.
+# Routing it to the registry would delete the comparison.
 RETIRED = mp.mpf("1.1099785955541805752815940796095093779932822799587")
 MUON = mp.mpf("1.109978595642739046681795129380001752700065561029011556974045769999095")
 

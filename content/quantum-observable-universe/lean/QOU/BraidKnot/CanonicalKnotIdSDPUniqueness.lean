@@ -1,4 +1,5 @@
 import QOU.MathlibExt.SDP
+import QOU.MathlibExt.SDPRealUniqueness
 import QOU.HeckeAlgebra.Common
 
 /-!
@@ -114,14 +115,16 @@ theorem heckeAsMatrix_posSemidef {n : ℕ} (x : HeckeElement n) :
 theorem canonical_T_w_unique_under_strict_complementarity
     {n : ℕ}
     {sdp : SDPPrimal (heckeDim n) ℝ Empty}
-    (sc : StrictComplementarityPair sdp)
+    (sc : QOU.MathlibExt.SDPRealUniqueness.RealStrictComplementarityPair sdp)
+    (h_S_posDef : (sdp.dualSlack sc.ystar).PosDef)
     {T_w_star T_w' : HeckeElement n}
     (h_star_match : sc.Φstar = heckeAsMatrix T_w_star)
     (h_feas : sdp.IsFeasible (heckeAsMatrix T_w'))
     (h_obj : sdp.objAt (heckeAsMatrix T_w') = sdp.objAt sc.Φstar) :
     heckeAsMatrix T_w' = heckeAsMatrix T_w_star := by
   rw [← h_star_match]
-  exact strict_complementarity_unique sc h_feas h_obj
+  exact QOU.MathlibExt.SDPRealUniqueness.real_strict_complementarity_unique_of_dualSlack_posDef
+    sc.toRealStrongDualityPair h_S_posDef h_feas h_obj
 
 /-- **Subsingleton form** — typeclass-friendly version of the
     above, suitable for use as `[Subsingleton …]` instance argument
@@ -129,9 +132,15 @@ theorem canonical_T_w_unique_under_strict_complementarity
 theorem canonical_T_w_subsingleton
     {n : ℕ}
     {sdp : SDPPrimal (heckeDim n) ℝ Empty}
-    (sc : StrictComplementarityPair sdp) :
+    (sc : QOU.MathlibExt.SDPRealUniqueness.RealStrictComplementarityPair sdp)
+    (h_S_posDef : (sdp.dualSlack sc.ystar).PosDef) :
     Subsingleton {Φ : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ //
-      sdp.IsFeasible Φ ∧ sdp.objAt Φ = sdp.objAt sc.Φstar} :=
-  strict_complementarity_optimum_subsingleton sc
+      sdp.IsFeasible Φ ∧ sdp.objAt Φ = sdp.objAt sc.Φstar} := by
+  refine ⟨fun ⟨Φ₁, h₁_feas, h₁_obj⟩ ⟨Φ₂, h₂_feas, h₂_obj⟩ => ?_⟩
+  ext1
+  exact (QOU.MathlibExt.SDPRealUniqueness.real_strict_complementarity_unique_of_dualSlack_posDef
+      sc.toRealStrongDualityPair h_S_posDef h₁_feas h₁_obj).trans
+    (QOU.MathlibExt.SDPRealUniqueness.real_strict_complementarity_unique_of_dualSlack_posDef
+      sc.toRealStrongDualityPair h_S_posDef h₂_feas h₂_obj).symm
 
 end QOU.BraidKnot

@@ -1,0 +1,235 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-06T06:56:01.566119+00:00",
+  "commitSha": "9aec36a91285e952ec677395da869a415467942c",
+  "assertions": [
+    {
+      "name": "disc_X_P_=_−(16z⁶+24z⁵+35z⁴+50z³+35z²+24z+16),_exact",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps continuation"
+    },
+    {
+      "name": "the_discriminant_is_reciprocal_(z_↔_1/z)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps continuation"
+    },
+    {
+      "name": "the_discriminant_is_irreducible_over_ℚ_and_squarefree",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps continuation"
+    },
+    {
+      "name": "its_six_roots_are_complex,_none_real",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps continuation"
+    },
+    {
+      "name": "every_branch_point_is_simple:_exactly_two_X-roots_collide",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps continuation"
+    },
+    {
+      "name": "no_branching_at_infinity:_leading_form_(X+z)(X²+z²)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps continuation"
+    },
+    {
+      "name": "base_point_z_=_0:_roots_−1,_±i",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps continuation"
+    },
+    {
+      "name": "every_lasso_monodromy_is_a_transposition",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps continuation"
+    },
+    {
+      "name": "ordered_product_of_the_six_local_monodromies_is_the_identity",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps continuation"
+    },
+    {
+      "name": "at_least_two_distinct_transpositions_occur:_monodromy_group_is_S₃",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps continuation"
+    },
+    {
+      "name": "swap_S²_=_1_with_eigenvalues_±1;_the_Hecke_quadratic_at_q_=_1_is_(X−1)(X+1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps continuation"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "colour-cubic-branch-monodromy",
+  "scriptFile": "colour_cubic_branch_monodromy_probe.py",
+  "scriptHash": "f6b85feb17b4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/colour_cubic_branch_monodromy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/colour_cubic_branch_monodromy_probe.py"
+  },
+  "description": "Step-2 option B (cheat-sheet §2a): the classical shadow of the stipulated Hecke curvature derived from the framework's own geometry. The colour cubic's discriminant is the reciprocal irreducible sextic 16z⁶+24z⁵+35z⁴+50z³+35z²+24z+16 with six simple complex branch points and no branching at infinity; analytic continuation of the three roots (mpmath 50 dps, ambiguity-guarded nearest-neighbour matching, adaptive refinement) around each branch point gives a TRANSPOSITION, the six generate S₃ and their ordered product is the identity. The swap on the two colliding roots is an involution with eigenvalues ±1, minimal polynomial σ² − 1 = (σ−q)(σ+q⁻¹) at q = 1: Step 2's relation at order zero, with no stipulation. The q-deformation is not derived here. No q₀ read; scope (a).",
+  "contentBlock": "rem:yekutieli-stokes",
+  "parameters": {
+    "cubic": "X^3 + (z+1)X^2 + (z^2+z+1)X + (z^3+z^2+z+1)",
+    "base_point": "z = 0"
+  },
+  "data": {
+    "discriminant": "-16*z**6 - 24*z**5 - 35*z**4 - 50*z**3 - 35*z**2 - 24*z - 16",
+    "branch_points": [
+      {
+        "k": 0,
+        "z": "(-0.9748155329780386030712390939418967983613 - 0.2230127275846437709422265606405869739665j)",
+        "abs": "1.0",
+        "arg": "-2.91668870825130735286819998763"
+      },
+      {
+        "k": 1,
+        "z": "(-0.9748155329780386030712390939418967983613 + 0.2230127275846437709422265606405869739665j)",
+        "abs": "1.0",
+        "arg": "2.91668870825130735286819998763"
+      },
+      {
+        "k": 2,
+        "z": "(0.1058295861882680209909387311570727599005 - 0.9371389378389034369148781152522105760335j)",
+        "abs": "0.943095589071759029509778594693",
+        "arg": "-1.45834435412565367643409999382"
+      },
+      {
+        "k": 3,
+        "z": "(0.1058295861882680209909387311570727599005 + 0.9371389378389034369148781152522105760335j)",
+        "abs": "0.943095589071759029509778594693",
+        "arg": "1.45834435412565367643409999382"
+      },
+      {
+        "k": 4,
+        "z": "(0.1189859467897705820803003627848240384608 - 1.053640742712109145029459350650498996145j)",
+        "abs": "1.06033790380066254457991265162",
+        "arg": "-1.45834435412565367643409999382"
+      },
+      {
+        "k": 5,
+        "z": "(0.1189859467897705820803003627848240384608 + 1.053640742712109145029459350650498996145j)",
+        "abs": "1.06033790380066254457991265162",
+        "arg": "1.45834435412565367643409999382"
+      }
+    ],
+    "base_roots": [
+      "-1.0",
+      "(0.0 - 1.0j)",
+      "(0.0 + 1.0j)"
+    ],
+    "lasso_permutations_in_departure_order": [
+      {
+        "k": 0,
+        "perm": [
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "k": 2,
+        "perm": [
+          1,
+          0,
+          2
+        ]
+      },
+      {
+        "k": 4,
+        "perm": [
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "k": 3,
+        "perm": [
+          2,
+          1,
+          0
+        ]
+      },
+      {
+        "k": 5,
+        "perm": [
+          0,
+          2,
+          1
+        ]
+      },
+      {
+        "k": 1,
+        "perm": [
+          1,
+          0,
+          2
+        ]
+      }
+    ],
+    "ordered_product": [
+      0,
+      1,
+      2
+    ],
+    "verdict": "Picard–Lefschetz: each local monodromy of the colour cubic is a transposition (involution, eigenvalues ±1), so the q = 1 shadow of the Hecke generator relation σ² = (q−q⁻¹)σ + 1 — namely σ² = 1 — is DERIVED from the branch-point geometry the framework already carries. Step 2 is stipulated only in its q-deformation."
+  },
+  "caveats": [
+    "Order zero only: no connection with q-deformed monodromy is constructed; that is option A's hypothesis / option C's construction.",
+    "Continuation is numerical (50 dps) with an ambiguity guard; the permutations are discrete data and are stable under the refinement sweep recorded here."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "the cubic and its monodromy carry no q; no substrate pin is read."
+}

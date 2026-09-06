@@ -371,3 +371,274 @@ axiomatisation with no concrete construction.
 > measured. The same trap does **not** apply to this arc's earlier exchange-property
 > finding, which used environment enumeration from the start — and that is exactly why
 > that one held up.
+
+## 3.9 is proved in span form — and the follow-up I proposed is FALSE
+
+**Proved and merged** (#6871, `5869585579`), all sorry-free:
+
+| | declaration |
+|---|---|
+| `x_μ · T_v = q^{ℓ(v)} · x_μ` for all `v ∈ S_μ` | `CompositionEigenPower.xComp_mul_Tw_of_mem` |
+| the mirror, `T_v · x_μ` | `CompositionCosetReduceMirror.Tw_mul_xComp_of_mem` |
+| `x_μ · T_a` reduces onto `D_μ` | `CompositionCosetReduce.xComp_mul_Tw_reduce` |
+| `T_a · x_μ` reduces onto `D_μ` | `CompositionCosetReduceMirror.Tw_mul_xComp_reduce` |
+| **3.9, span form** | `CompositionDoubleCoset.mul_xComp_mul_mem` |
+
+The eigenvector power is the one worth reading: the obvious proof needs the parabolic
+fact (a parabolic subgroup is Coxeter on the simple reflections it contains), which the
+corpus does **not** have. It is avoidable because a Young-subgroup element can only
+descend *within* a block, so every descent is automatically at a generator of `S_μ`.
+
+### 🛑 The follow-up I named as "next" does not hold
+
+I proposed proving the double-coset terms **linearly independent**, which with the span
+statement would give a basis of `H x_μ H`. **That is false**, and the counting settles it
+before any Lean is attempted. At `μ = (1,…,1)`:
+
+* `S_μ` is trivial, so `x_μ = 1`;
+* every `d` is distinguished (the condition quantifies over pairs sharing a block, and no
+  two positions do), so `D_μ = S_n`;
+* the family is `{T_d · T_e}` — **`(n!)²` members in an `n!`-dimensional space.**
+
+Measured exactly over `ℚ(q)` in
+[`double_coset_independence_probe.py`](../../computations/hecke/double_coset_independence_probe.py):
+
+| n | μ | pairs | rank | dim H |
+|---|---|---|---|---|
+| 2 | (2) | 1 | 1 | 2 |
+| 2 | (1,1) | 4 | **2** | 2 |
+| 3 | (2,1) | 9 | **5** | 6 |
+| 3 | (1,1,1) | 36 | **6** | 6 |
+| 4 | (2,2) | 36 | **14** | 24 |
+| 4 | (1,1,1,1) | 576 | **24** | 24 |
+
+Independent only in the degenerate `μ = (n)` rows, where there is one pair.
+
+**The correct route to a basis is different.** Murphy's basis is indexed by pairs of
+**standard** tableaux of a **common shape**, summed over shapes — not by pairs drawn from
+one `D_μ`. The corpus already carries the matching count:
+`HeckeMurphyYoung.murphyIndex_card_eq_finrank` shows that index set has exactly
+`dim H_n(q)` elements, by RSK/Burnside. So **spanning + that cardinality** is the route,
+which is precisely why **3.14 is the arc's real open node** and always was.
+
+## Update 2026-09-06 — 3.13 is lifted to the `T`-basis, and a reference-tableau gap surfaces
+
+The section above lands on 3.14 as the real open node. Its two induction axes now have a
+well-founded measure (`MurphyInductionMeasure.murphyLex_wellFounded`), the `T_d⁻¹`
+triangularity that 3.9 at basis level needs is proved against `w⁻¹`
+(`TwInverseBruhat.TwInv_mem_spanBruhatLe`, the orientation the probe demanded), and the
+Garnir step is known to drop the shape in the order the outer axis runs on
+(`GarnirShapeCard.lexGtOn_garnirPartOf`). What was left was the **step** 3.14's induction
+rewrites with, and that is now proved.
+
+[`QOU/BraidKnot/MurphyGarnirFactor.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/MurphyGarnirFactor.lean),
+eight declarations, all sorry-free (`#print axioms`: `[propext, Classical.choice,
+Quot.sound]`), `lean`-direct exit 0:
+
+| declaration | content |
+|---|---|
+| `HeckeMurphyYoung_dOf_smul`, `dAt_smul` | `d(w·g) = w·d(g)` for the **column**-superstandard reference — the companion of `TableauPerm.dOf_smul`, which was missing |
+| `invSet_toFinSucc_mono` | inversion containment survives the re-indexing `Fin (nOf μ) ≃ Fin (n+1)` |
+| `Tw_dOf_smul`, `Tw_dAt_smul` | **the lift**: a length-additive tableau factorisation becomes `T_{d(w·g)} = T_{d(g)} · T_w` |
+| `smul_eq_of_dOf` | recovers the `w` from `d` being a bijection |
+| `exists_garnir_Tw_factor` | **Mathas 3.13 in the `T`-basis** — a row-standard non-standard `t` has `T_{d(t)} = T_{d(g)} · T_w` through a Garnir `g` |
+| `murphyM_smul` | `m_{s, w·g} = m_{s, g} · T_w` |
+
+The whole content is that `T` **is** a homomorphism on a length-additive factorisation
+(`TwBasis.Tw_mul_Tw`) though not on `S_n`; everything else is routing the hypothesis.
+
+### The flipped handedness pays off, for once
+
+`Tw_mul_Tw` reads `T_v · T_w = T_{w·v}`. So the permutation factorisation `d(t) = w · d(g)`
+lifts with `T_w` on the **right** — which is the side Mathas needs, because
+`m_{st} = T*_{d(s)} · x_λ · T_{d(t)}` has `T_{d(t)}` rightmost, so the Garnir factor lands
+adjacent to `x_λ` and the residual is peeled off outside. The unflipped convention would
+have produced `T_w · T_{d(g)}` and stranded `T_w` in the middle. This is the **fourth**
+instance of the handedness trap on this arc (after `sortPerm`'s orientation,
+`IsDistinguishedL`, and `T_w⁻¹`'s triangularity against `w⁻¹`) and the first where it helps
+rather than costs.
+
+### 🛑 The gap this exposed: **two reference tableaux, both called `dOf`**
+
+`d(t)` is *"the permutation carrying the reference tableau to `t`"*, and this corpus has two
+references, in two files, under one name:
+
+| | reference | file |
+|---|---|---|
+| `TableauPerm.dOf` | **row**-superstandard `t^λ` — Mathas' | `QOU/BraidKnot/TableauPerm.lean` |
+| `HeckeMurphyYoung.dOf` | **column**-superstandard | `QOU/BraidKnot/HeckeMurphyYoung.lean` |
+
+The entire Garnir chain (`GarnirTableau`, `GarnirDescentAdditive`, `DescentNodeExists`,
+`length_dOf_smul_eq_add_iff`) is built on the row one; `murphyM` is built on the column one.
+They differ by a fixed permutation on the right — with `c := colSuperstandard ≫ (t^λ)⁻¹`,
+
+    HeckeMurphyYoung.dOf t = TableauPerm.dOf t * c
+
+so the **factorisation** transfers (it is reference-insensitive — that is why both
+`dOf_smul`s have the same one-line proof), while **length additivity does not**: `ℓ(x)` and
+`ℓ(x·c)` are unrelated, and `length_mul_eq_add_iff` reduces the hypothesis to an
+inversion-set containment that right multiplication does not preserve.
+
+**So `exists_garnir_Tw_factor` and `murphyM_smul` are deliberately NOT composed.** The first
+is proved for the row reference, the second for the column one, and each is exactly as
+strong as its own hypothesis. Chaining them would be **false as an inference** even though
+both halves are true — the same arity/scope conflation
+[`local/devils-advocate-watcher`](../../.claude/skills/local/devils-advocate-watcher.md)
+records as `da-arity-conflation`. Closing it needs one of:
+
+1. restate `murphyM` over `refTab` (a definitional change to merged code — `murphyM`'s own
+   docstring already says the reference is *"a red herring: `colSuperstandard` is as good as
+   Murphy's row-superstandard `t^λ` — both are full rank"*, but that was a **rank**
+   measurement, and rank is not what is at stake here); or
+2. re-prove the Garnir length additivity against the column reference.
+
+Neither is done. Tracked on `qou-phir`.
+
+### A method note: the olean was stale and the signature had moved
+
+`HeckeMurphyYoung.olean` in the restored cache was built 2026-08-31T02:52Z against a source
+last committed 05:26Z the same day, and the two disagreed **in the statement**: the cached
+`murphyM` carried `[DecidablePred (· ∈ youngSubgroup n h t)]` — the per-`t` row stabiliser
+that the file's own docstring records as the rank-deficient version that was **replaced** —
+against the live `colSuperstandard μ`. A `#check` against the cache therefore described a
+`murphyM` that no longer exists, and any lemma written to that signature would have been
+about the wrong object while compiling cleanly.
+
+Rebuilding just that module from source took **5 s** and its dependency cone needed nothing,
+so the fix is cheap once noticed. Noticing is the problem: nothing in the toolchain says the
+olean is behind, and the signature difference is one instance argument. Compare the
+committed source's `git log` timestamp against the olean's mtime before trusting a `#check`.
+
+### 🛑 The cheap way out of that gap is REFUTED (2026-09-06, same day)
+
+The gap above admitted two closures: **(1)** restate `murphyM` over `refTab` — a definitional
+change to merged code, touching every consumer; **(2)** re-prove the Garnir length additivity
+against the column reference — cheap *if true*. Whether (2) is true is a factual question
+about small symmetric groups, so it was measured before either was attempted.
+
+[`computations/hecke/murphy_reference_tableau_additivity_probe.py`](../../computations/hecke/murphy_reference_tableau_additivity_probe.py)
+— exact integer arithmetic, no float anywhere, four self-checks that must pass before any
+verdict prints (Garnir construction vs Mathas' three worked `λ = (3,3)` examples; the
+column-superstandard filling is a bijection and column-increasing; `d(t) = w·d(g)` holds for
+**both** references over 886 instances, i.e. the factorisation really is
+reference-insensitive; and the ROW column reproduces the sibling probe):
+
+| `n` | row-standard non-standard `t` | **row** reference (Mathas') | **column** reference (`murphyM`) |
+|---|---|---|---|
+| 3 | 6 | 6/6 | 6/6 |
+| 4 | 37 | 37/37 | **30/37** |
+| 5 | 220 | 220/220 | **138/220** |
+| 6 | 1526 | 1526/1526 | **797/1526** |
+
+Counting a `t` as a success when **some** descent node gives length additivity, which is what
+3.13 asserts. Smallest counterexample: `λ = (2,1,1)`, `t = ((1,3),(4),(2))`, whose single
+descent node gives `ℓ(d_col(t)) = 2` against `ℓ(d_col(g)) + ℓ(w) = 3 + 1`.
+
+**The failure rate grows with `n`** — 0 %, 19 %, 37 %, 48 % — so this is not a small-`n`
+artifact that a larger range would wash out. **Option (2) is false; option (1) is forced.**
+
+Scope, stated per the refutation discipline: this is a **refutation of a specific universally
+quantified statement**, with an explicit witness — not a scope-(b) exclusion of an
+*ingredient*. Nothing here says the column-superstandard reference is bad for anything else;
+it says Garnir length additivity is a property **of the row-superstandard reference**, not a
+fact about Garnir tableaux that happens to be recorded relative to one.
+
+**It also corrects a claim already in the corpus.** `murphyM`'s docstring calls the reference
+*"a red herring: `colSuperstandard` is as good as Murphy's row-superstandard `t^λ` — both are
+full rank"*. That was a **rank** measurement and is still true as one. It does not generalise,
+and this is a property where the reference is decisive. The generalisation was never measured;
+it was inferred from the rank result, which is the same shape of error as the two absence
+claims this document already records.
+
+### The gap is CLOSED — the reference tableau is now a parameter (2026-09-06, same day)
+
+The refutation above forces option (1): the Murphy element must be stated over `t^λ`. That
+is done, and **not** by editing `HeckeMurphyYoung` — the reference is made an **explicit
+parameter**, since its absence is exactly what let two objects share the name `dOf`.
+[`QOU/BraidKnot/MurphyRefTab.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/MurphyRefTab.lean),
+ten declarations, all sorry-free:
+
+| declaration | content |
+|---|---|
+| `dOfRef r t`, `dAtRef n h r t` | `d(t)` relative to an arbitrary reference `r` |
+| `dOfRef_colSuperstandard`, `dOfRef_refTab` | the corpus's two `dOf`s are the two instances — both `rfl` |
+| `dOfRef_smul`, `dAtRef_smul` | `d_r(w·g) = w·d_r(g)` for **every** reference, in one lemma |
+| `murphyMRef r s t` | `T*_{d_r(s)} · x_r · T_{d_r(t)}` |
+| `murphyMRef_colSuperstandard` | **`murphyM` is one instance, definitionally** |
+| `murphyMRow` | `murphyMRef (refTab μ)` — Mathas' element |
+| `Tw_dAtRef_smul`, `murphyMRef_smul` | the lift, for every reference at once |
+| **`exists_garnir_murphyMRow_factor`** | **3.13 on Mathas' Murphy element: `m^row_{s t} = m^row_{s g} · T_w`** |
+
+Because `murphyM` is *definitionally* `murphyMRef (colSuperstandard μ)`, `murphyFamily`,
+`basisOfSpanning` and `murphyBasisOfSpanning` are untouched and keep proving exactly what
+they proved. No merged file changed.
+
+**What the parameterisation buys beyond the composition.** `dOfRef_smul` proves
+`d_r(w·g) = w·d_r(g)` once, for every reference. The corpus previously had that fact twice —
+`TableauPerm.dOf_smul` and `MurphyGarnirFactor.HeckeMurphyYoung_dOf_smul` — with the same
+one-line proof and nothing connecting them, which is what made it easy to believe the
+reference never mattered. Separating the half that transfers (the factorisation) from the
+half that does not (length additivity) is the file's point.
+
+**Rank axis: checked, and narrowly.** The row instance is full rank at `n = 3,4,5`
+(`6/6`, `24/24`, `120/120`), the same as the column one. That licenses exactly one thing —
+the reference does not change the **rank**. It does change 3.13's length additivity, so the
+"red herring" reading stays refuted.
+
+### 🛑 The rank guard that established that had never run
+
+`murphy_supp_rsk_probe.py`'s `run_rank_guard` is defined **below** its file's `if __name__`
+block, so it was never called — the *"standing guard rather than a one-off check"* its own
+docstring describes had not run in `main` since it was written. It is wired in now (0.02 s /
+0.09 s / 16 s at `n = 3/4/5`) and reproduces the figures above. **A guard nobody invokes is
+documentation**, which is the same finding this corpus already recorded for
+`precision-gates.sh`.
+
+Two labels in it were also wrong in a way that made its output assert something false:
+
+1. The deficient row was tagged *"as the corpus's `murphyM` does"*. That describes the
+   **superseded** `murphyM`; the live one sums over the fixed
+   `youngSubgroup n h (colSuperstandard μ)`, which is the **full-rank** row. The output was
+   accusing current code of a defect it no longer has.
+2. *"the reference does not matter"* is scoped to **rank**, and was quoted in `murphyM`'s
+   docstring as the reference being *"a red herring"* without qualification. The docstring
+   now says which axis it measured.
+
+### What is still open
+
+3.14. The rewriting step is proved on the right object; the induction is not run. What
+remains is that the terms it produces **descend** in `MurphyInductionMeasure.murphyLex` —
+which needs 3.12's algebra half, and hence 3.9 at basis level. `murphyLex_wellFounded` says
+such an induction terminates; it does not say the terms descend.
+
+### A measurement of the Lean sweep gate, taken in passing (2026-09-06)
+
+`prepare-merge-auto` now mandates `scripts/lean-library-sweep.py` for any branch touching
+`.lean`, over bare `lean`-direct, because the latter verifies against a **snapshot** of the
+olean cache. Running it on this branch produced two figures worth recording, both well
+outside what the docs lead an agent to expect:
+
+- **The dirty closure was 1288 modules**, against the **145** #6827 measured and the **74**
+  `AGENTS.md` records. It is not drift in the scripts — it is `main`'s Lean churn: the
+  closure is computed against *this container's* olean tree, and `main` had moved 26 commits
+  since the branch last rebased. **Budget by the closure, not by the documented time.**
+- At **45 minutes** it had reached **761 of 1288, every one `ok`, zero RED** — and had not
+  yet reached `QOU/BraidKnot/*`, which is alphabetically after `QOU/Archimedean/*`, so it
+  said nothing about this branch's own files. Throughput fell from ~64 modules/min to ~5 in
+  the `QOU/Archimedean/PauliWitness/*` block.
+
+Two operational notes for the next agent:
+
+1. **The gate as `main` carries it cannot run on a quota-constrained container.** It does a
+   2.3 GB `shutil.copytree` of the olean tree; on this container that hit `ENOSPC` and took
+   the whole session to **0 MB free**, at which point every command fails — including the
+   `rm` that would fix it. The fix (hardlink instead of copy: `du` reads 2.3 GB while `df`
+   does not move) is on **#6827**, unmerged. This run used that PR's script from `/tmp`,
+   uncommitted, rather than porting it and widening someone else's active scope.
+2. **Freeing space:** `content/quantum-observable-universe/lean/.lake/build/ir` is ~1.1 GB of
+   C intermediates from Lean's backend. `lean`-direct verification never reads them, and this
+   corpus never runs `lake` against a restored cache. Deleting it is the cheapest reclaim.
+
+Neither figure is a defect in the sweep — it did exactly what it claims, and 761/761 green is
+a real result about `main`. The point is that its *cost* is a function of how far the branch
+has fallen behind, and that is not what the recorded timings suggest.

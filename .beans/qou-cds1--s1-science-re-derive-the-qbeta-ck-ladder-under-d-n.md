@@ -7225,3 +7225,389 @@ move the 10.5 % conclusion, and reconciling it belongs with that probe's owner.
 **(a).** Convention C. Not a claim that the swing gate is wrong — its cancellation
 derivation is sound and its use as the primary filter stands. Only that its
 tolerance should be **±0.0052**, not zero.
+
+---
+
+## Route 5, projection: the mechanism is PARTIAL, and it retracts my own #6875 (2026-09-05)
+
+Probe: `computations/qbeta/qbeta_fibre_projection_and_rou_sublocus_probe.py` (5/5).
+Audit: `docs/audits/2026-09-05-cds1-projection-and-rou-sublocus.md`.
+
+**Retraction first.** #6875 derived `N = 5` (modulus kept) / `N = 4` (analytic
+continuation) from the reality of `Q_A/m_e = |q²−2q−1|(q+1)/(2q³)` on `|q| = 1`.
+**That form holds only on the real axis** — it follows from the block's own
+`|Δ(net)|·E_0` only via `|q²−1| = (q−1)(q+1)`, which needs `q` real `> 1`.
+Measured gap: `0` at `q = 1.1`, **2.407** at `q = e^{i/3}`, **1.186** at
+`q = e^{iπ/3}`. Both `N` values are withdrawn.
+
+**The mechanism was already in the corpus.** `neutron-qvalue-symbolic` writes
+`𝔔_β = |Δ(net)| · E_0` — the projection *is* the modulus, and it is applied to
+`Δ(net)` alone, with `E_0 = m_e/(q(q−1))` unprojected. That partiality is the
+entire source of the reality condition:
+
+    𝔔_β real on |q|=1  ⟺  Im[q²−q] = sin φ (2 cos φ − 1) = 0
+                       ⟺  φ ∈ {π/3, π, 5π/3}    — the SIXTH roots
+
+A **full** projection `|Δ(net)·E_0|` is real for every `q` and selects nothing.
+**So the projection question and the N question are one question.** Taking the
+full projection *because* it admits the required phase would be fitting the
+mechanism to the target — named, not taken.
+
+**The root-of-unity sublocus is EMPTY**, on grounds independent of `θ`:
+`π/3` and `5π/3` are primitive 6th roots, where `q⁶−1 = (q²−1)(q⁴+q²+1)` forces
+`q⁴+q²+1 = 0` and so Hoefsmit `b² = (q⁴+q²+1)/(q²+1)² = 0` — `V_{(2,1)}`
+decouples; `φ = π` gives `h = q − 1/q = 0`. Verified numerically (4.139e-41 at
+40 dps) and exactly (`expand_complex` → 0); `sympy.simplify` alone reports a
+**false** non-degeneracy here.
+
+`θ` is not the binding constraint: it sits 18.496× below `π/3`, but the
+emptiness is established before `θ` is mentioned.
+
+**Scope (a)** for the reality arithmetic; the degeneracy exclusion is exact.
+**Route 5 is not closed** — `|q| = 1` is much more than its roots of unity, and
+the full projection stays structurally available at the price of selecting
+nothing.
+
+### Strengthening, same day: the partial projection kills the WHOLE locus
+
+Probe: `computations/qbeta/qbeta_fibre_partial_projection_kills_whole_locus_probe.py` (5/5).
+
+The scope line I wrote above — *"`|q| = 1` is a great deal more than its roots
+of unity"* — is true about the locus and **irrelevant to the argument**. The
+reality condition `sinφ(2cosφ−1) = 0` is imposed at **every** point of `|q| = 1`,
+and its solution set on `[0,2π)` is exactly `{0, π/3, π, 5π/3}` — four points,
+all roots of unity. The non-rational phases were never open; I described them as
+open. Verified by `solveset` and by an independent 20,000-point scan.
+
+All four degenerate, and `φ = 0` twice (`h = 0` *and* the `E_0` pole — I had
+checked only the pole). So:
+
+    PARTIAL  ->  reality leaves 4 points, all degenerate  ==> whole locus excluded
+    FULL     ->  no condition at all                      ==> nothing selected
+
+**Route 5's N-selection mechanism predicts nothing under either reading.**
+Scope (a) on the MECHANISM; silent on route 5's underlying fibre-Habiro idea.
+
+**The load-bearing assumption, now isolated:** that `𝔔_β` must be real *at the
+fibre evaluation point* rather than after the archimedean functor. `AGENTS.md`'s
+fibre-vs-observable banner says `Im(q)` is unconstrained at fibre level — so this
+closes the mechanism as posed and reopens whether reality belonged there at all.
+That is the next question, and it is a framework question rather than a
+measurement.
+
+Method trap worth keeping: the first scan reported a spurious **fifth** zero
+because dedup used linear distance and `φ = 0` / `φ = 2π` are the same point.
+On a circle use `min(d, 2π−d)`. The false reading was a spurious *finding*
+("solveset missed a branch"), not a spurious failure.
+
+### 🛑 RETRACTION — owner ruling 2026-09-06: "Does not need to be real in fiber."
+
+The reality premise **both** sections above inherit from #6875 is **rejected**.
+The strengthening section flagged it as load-bearing and asked the question; the
+owner has resolved it against the premise.
+
+**Withdrawn:**
+- "reality selects N on the fibre locus" (#6875, both readings)
+- "the root-of-unity sublocus is EMPTY *because reality admits only 3 phases*"
+- "the partial projection excludes the ENTIRE fibre locus" — the exclusion ran
+  entirely through the rejected premise
+
+Reality of `𝔔_β` is an **archimedean** constraint on the evaluation at `q₀`
+(`lusztig_q_0_imaginary_part_zero`; a `complex-substrate-interpretation` sidecar
+note already flags that fibre-vs-observable `Im(q)` is exactly the AGENTS.md
+2026-06-01 distinction). Imposing it on `|q| = 1` was the level-conflation that
+banner warns against — **I did it twice**, in two consecutive commits, having
+quoted the banner in the second one.
+
+**Survives, unchanged** — every measurement; none depended on the premise:
+- written `Q_A` is real-axis-only (gap 2.407 at `e^{i/3}`); #6875 stays withdrawn
+- the block's projection is the modulus on `Δ(net)` and is partial — structural
+- `Im[q²−q] = sinφ(2cosφ−1)`, zeros exactly `{0, π/3, π, 5π/3}`, no fifth
+- the four degeneracies (`b²=0`, `h=0`, the double one at `q=1`) — structural,
+  not reality-based
+
+**What the ruling changes is their WEIGHT, not their truth.** Under the rejected
+premise those four points were the entire admissible set, so excluding them
+closed the locus. Under the ruling they are four excluded points out of a
+continuum: the same measurement goes from decisive to nearly vacuous. That
+inversion is the substantive consequence.
+
+**Route 5's actual state:** the fibre locus `|q| = 1` is INTACT less four
+degenerate points; nothing selects N there; #6755's `1/111` is neither selected
+nor excluded.
+
+**The open question, now cleanly separated from the archimedean one it was
+entangled with:** if not reality, what constrains the fibre element? That needs
+a *fibre-level structural* condition — Habiro-integrality, or an `H_n(q)`
+representation-theoretic one — not an evaluation condition.
+
+Nothing was wired at any stage. No `c_k` moved. Cost: three commits of analysis,
+all of whose measurements remain reusable.
+
+### Correcting my own hand-off, one message later: the fibre condition is NOT missing
+
+I closed the retraction by saying the open question "needs a fibre-level
+structural condition — Habiro-integrality, or an `H_n(q)` representation-
+theoretic one." **The corpus already has it, stated for exactly this object.**
+That is an over-claim of precisely the kind the corpus-grep checklist exists to
+catch, made in the same message as a retraction. 1133 files mention Habiro.
+
+`prop:habiro-precision-ladder-equivalence` (`mass-theory/`) states:
+
+> the Markov trace `tr_M(T_w, q)` of any braid word admits a **finite** Habiro
+> expansion with **integer** coefficients, and specifically
+> `tr_M(β_n) − tr_M(β_p) = Σ_{m=0}^{M} a_m(u)·(u;u)_m` with `a_m ∈ Z[u]`,
+> `M < ∞`
+
+— the neutron–proton braid-word difference, i.e. the Q_β object itself. Its Lean
+carries `habiro_terminates`, `habiro_integral`, `habiro_evaluation_determined`,
+**1 sorry**, and — the part that matters — the bridge to the ladder is
+`precision_ladder_is_habiro_taylor`, **conditional on the unproved class
+`QbetaHabiroTaylorBridgeClass`** (§3b-cond). So the condition is stated and
+partly formalized; what is open is the *bridge*, not the condition.
+
+### A CANDIDATE this suggests — not a finding, and I have not tested it
+
+Habiro integrality gives an N–truncation link for free, with no reality anywhere:
+at a primitive N-th root of unity `ζ`, `(q;q)_m` **vanishes for `m ≥ N`**, so a
+Habiro expansion evaluated at `ζ` truncates to `m ≤ N−1` automatically. That is a
+fibre-level mechanism relating a root of unity to a truncation order — the exact
+shape route 5's "what selects N" question wants, arriving structurally rather
+than from an evaluation condition.
+
+**The gap that stops this being a result:** the ladder's `N` (truncation order in
+`u^k`) and the Habiro index `m` (Pochhammer degree) are **different indices**.
+Identifying them is precisely what `QbetaHabiroTaylorBridgeClass` would have to
+supply, and that class is unproved. So: promising shape, unproved bridge, and
+anyone picking it up should start at that class rather than at the arithmetic.
+
+Recorded as a candidate so the next reader inherits both the shape and the gap.
+No compute run on it; nothing wired.
+
+### Working `QbetaHabiroTaylorBridgeClass`: it is honestly open, and NOT a Lean target
+
+Probe: `computations/qbeta/qbeta_habiro_bridge_class_is_not_a_lean_target_probe.py` (4/4).
+
+**My hypothesis was wrong, and that is the first finding.** Both sides are
+`opaque ... := fun _ => 0`, hence *semantically equal*; a leaky seal would make
+the class trivially inhabited and every downstream conditional vacuous. I
+expected a leak. Six tactics under `lean`-direct (`-DautoImplicit=false -s
+65536`, real import cone; the file itself checks 0 errors):
+
+    rfl / unfold / simp / decide / norm_num / aesop   -> 6/6 exit 1
+
+So the 2026-09-04 `axiom` -> `opaque` conversion is **sound**: it dropped the
+axiom-ledger entry without weakening the seal.
+
+**But the class admits no deductive attack.** `precisionLadderCoeff` and
+`habiroTaylorCoeff` carry **no defining properties** — nothing in the file or its
+cone constrains either — so there is no premise from which `ck_eq_taylor` could
+be derived. It is a **named hole**, not a hypothesis-carrying conditional. Its
+companion `precision_ladder_is_habiro_taylor := h.ck_eq_taylor k` is the
+self-assuming projection §3b-cond item 5 names (honestly labelled by its own
+docstring — a labelling device, not a concealed claim).
+
+**So "work the bridge class" resolves to: progress is COMPUTATIONAL, not
+deductive** — one must first *define* the two sequences. And the corpus already
+ran that computation: `qbeta-delta-tr-vs-formA` finds the leading Taylor orders
+differ, `−2ε` vs `−5/4 ε`.
+
+**Two things I checked rather than assumed:**
+
+1. **That negative is unaffected by my #6889.** The test expands in `ε = q−1`
+   on the **real axis**, where #6889 measured the simplified form's gap as 0 —
+   and the witness does not even use the simplified form, recording
+   `Abs((q²−1)(q(q−2)−1))/(2q³(q−1))`, the faithful `|Δ(net)|·E_0` #6889 says to
+   use. Two independent reasons it stands.
+2. **The negative's inference is sound**, which nobody had verified. "Leading
+   orders differ ⇒ structurally distinct" would be weak if the series were
+   merely *proportional*. Term-by-term `dtr/dnet` = `5/8, −1/8, 1/48, 5/112,
+   17/256` — not constant, and it **changes sign at k=2**. A normalisation would
+   have given a constant ratio.
+
+**Scope (a).** Does not close the bridge and does not claim the `c_k` cannot be
+the Habiro Taylor coefficients — only that the Form-A slot route is refuted and
+the class as written admits no deductive attack. Nothing wired; no `c_k` moved.
+
+### Dead end closed: rescaling z_D to bar-evenness LEAVES convention D (2026-09-06)
+
+Probe: `computations/qbeta/qbeta_d_frame_bar_even_normalisation_deadend_probe.py` (5/5).
+
+**The route.** Under D the eigenphase `2α = (z−1)h` is not bar-odd because `z_D`
+is not bar-even. The obvious repair is to rescale. It exists and is **forced**:
+`bar(q^a z_D)/(q^a z_D) = q^{−2a−4}` gives `a = −2` uniquely, so
+
+    z̃_D := z_D/q² = q/(q²+1) = 1/[2]_q      (bar-even)
+
+and it sits beside `z_C = √q/(q+1) = 1/[2]_√q` as **the same functional form in a
+different variable** — the same shape as the `(u;u)_m` vs `(q;q)_m` defect fixed
+in #6906. Numerically `z̃_D = 0.49729` vs `z_C = 0.49932` (0.4 % apart) where raw
+`z_D = 0.61269` is 23 % away, which is why the C-built ladder nearly works under
+`z̃_D`. **That closeness is not evidence and was not used.**
+
+**Why it is closed.** `z_D`'s *defining* property here is the full-bar condition
+`bar(z) = z − h` (`zD_full_bar_covariant`), and `barEven_fullBar_forces_classical`
+proves bar-even and full-bar are incompatible away from `q² = 1`. Measured: `z̃_D`
+misses full-bar by **exactly `h`** — and so does `z_C`. So rescaling does not
+re-derive the ladder *within* D; it moves to a third parameter that is neither
+`z_C` nor `z_D`.
+
+**Worth recording separately:** the corpus states the bar law **additively**
+(`bar(z_D) = z_D − h`); deriving it from scratch gives it **multiplicatively**
+(`bar(z_D) = q^{−4} z_D`). These look like two constraints and are **one
+identity** (difference exactly 0). A reader meeting both forms could reasonably
+think two separate conditions apply.
+
+**The live route is unchanged:** `eigenphase_bar_defect_of_fullBar` gives defect
+exactly `h²`, **z-independent across the whole full-bar family**, so no choice
+inside it restores bar-oddness — the derived D eigenphase is `α − h²/4`, no free
+parameter. Independently reproduced here.
+
+Scope (b). Closes one alternative; adjudicates nothing about the live route.
+
+### The live D route, measured through the ladder: it improves, it does not restore (2026-09-06)
+
+Probe: `computations/qbeta/qbeta_d_eigenphase_projection_through_ladder_probe.py` (4/4).
+
+`eigenphase_bar_defect_of_fullBar` gives `bar(2α)+2α = h²` for any full-bar `z`,
+so the bar-odd projection is `α − h²/4`, **derived, no free parameter**. Pushing
+it through the ladder is therefore a derivation, not a search. Result at the
+proton pin, `c_2` held at its structural `−1`:
+
+    arm                     implied c_2      c_3        N1/N2
+    C   (z_C)                 −1.0176     −2.069342     57.74
+    D   naive (z_D)           −9.2989   −974.431888      1.12
+    D   corrected (−h²/4)     −1.7331    −86.080994      2.36
+
+**A large improvement and an insufficient one.** The right metric is
+self-consistency — how far the anchor-inverted `c_2` sits from the *structural*
+`c_2 = −1` — because it references no candidate value (`−2`, `Vol(4₁)`, …):
+
+    C  1.8 %      D corrected  73 %      D naive  830 %
+
+So the corrected D ladder is ~40× less self-consistent than C, with convergence
+2.36× against C's 57.7×. **The eigenphase projection alone is not the whole of
+the C→D move.**
+
+Two things checked rather than assumed:
+
+- **`c_2 = −1` is convention-INDEPENDENT** — it is `1 − (bℏ²)² = 1 − u²`, no `z`
+  anywhere — so holding it fixed across all three arms is legitimate. The
+  "implied `c_2` = −9.3 under D" recorded earlier is the *inverted* `c_2`, a
+  different quantity.
+- **The sign is derived, then corroborated, in that order.** `bar(2α)+2α = h²`
+  forces `−h²/4`; the three candidates rank with the derived one first
+  (`−h²/4` 2.364, `+h²/4` 1.070, `−h²/2` 0.882) and that agreement is recorded
+  as corroboration only. Quoting it as the reason would invert the argument.
+
+**Scope (a).** Does NOT refute the projection — it is proved. Measures only that
+it is insufficient by itself, and identifies nothing about what else is needed.
+Nothing wired; no `c_k` moved.
+
+### C and D are DIFFERENT ALGEBRAS, z is a RANK label, and #6889's exclusion is withdrawn (2026-09-06)
+
+Probe: `computations/qbeta/qbeta_c_vs_d_are_different_algebras_probe.py` (5/5).
+Prompted by the owner asking whether the proper `z` coordinate was in use, and
+to work the **full tower** rather than the semisimple part. Both pointed at a
+framing error running through three of my PRs on this arc.
+
+**1. Not a coordinate change — a change of algebra.** Registry:
+
+    convention  name                                y_(3)      y_(2,1)    y_(1^3)
+    C           full-Hecke Ocneanu / Wenzl z-trace  0.415396   0.280930   0.022745
+    D           SU(2)/Temperley-Lieb (Jones)        [4]/[2]^3  1/[2]^2    0
+
+Both normalise; **D annihilates the sign block**. `TL_n = H_n/⟨antisymmetriser⟩`
+kills every >2-row partition, at `n=3` exactly `(1³)`. D is a **quotient** of C.
+`z_D(q) = q²z_C(q²)` is true but relates parameter *values* only — no
+substitution carries a 3-block trace to a 2-block one.
+
+**2. `z` is indexed by RANK.** `z_N = q^N/[N]_q` satisfies full-bar
+`bar(z) = z−h` for **every** N (checked 1–6, exactly zero), twist `q^{−2N}`.
+`z_D = z_2` — **D is SU(2)**. `z_C = 1/[2]_√q` has no `q^N` numerator, is
+bar-even, and is in the family for **no** N. The `q^N` numerator **is** the bar
+twist — so #6915's rescale-to-bar-even was stripping the rank label.
+
+**3. `b² = [3]_q/[2]_q²` exactly** ⟹ `b² = 0 ⟺ [3]_q = 0 ⟺ H₃(q) non-semisimple`.
+The `π/3`, `5π/3` phases #6889 called "degenerate" are where
+`tr = Σ_λ y_λ χ^λ` ceases to exist. **#6889's arithmetic stands; its emptiness
+verdict is withdrawn as interpretation** — it excluded the interesting locus
+because its own tooling stopped there. (First attempt `q²[3]/[2]²` was false;
+sympy caught it.)
+
+**4. Ruling tension, flagged not adjudicated.** 2026-08-15 makes D canonical;
+2026-09-03 asks derivations to use the full tower. D = SU(2)/TL is a two-row
+truncation discarding most of the tower at `n = 3A`. Which governs the Q_β
+channel is an owner decision.
+
+Measurements from #6915 and #6921 stand; their **framing** was wrong.
+
+#### The truncation cost, as a number rather than an adjective
+
+Probe: `computations/qbeta/qbeta_tl_truncation_cost_by_atom_probe.py` (4/4).
+
+I called D's discarded part "the overwhelming majority of the tower". That is an
+adjective, and not something to rule on. `dim TL_n = Catalan(n)` **exactly**
+(verified by summing `(f^λ)²` over ≤2-row partitions, against `C(2n,n)/(n+1)`;
+`Σ_λ (f^λ)² = n!` asserted first):
+
+    n    A    dim H_n = n!              dim TL_n        retained
+    3    1                  6                   5       83.3333 %
+    6    2                720                 132       18.3333 %
+    9    3            362,880               4,862        1.3398 %
+    12   4        479,001,600             208,012        0.0434 %
+    15   5  1,307,674,368,000           9,694,845        0.0007 %
+    18   6  6.4e15                    477,638,700          ~0 %
+
+**The cost is n-DEPENDENT, and the two rulings live at different n.** The Q_β
+ladder is an `H_3` object: D discards one 1-dim block and keeps **83 %**, which
+is why C-vs-D differs only in the 4th decimal on `β_Bor` (0.99836662 vs
+0.99856216). The mass/binding work is at `n = 3A`: ⁴He retains **0.043 %**.
+
+So "D canonical" (2026-08-15) and "full tower" (2026-09-03) may **both** be
+right in their own domains, and the live question is where the crossover bites —
+not which ruling wins globally. Measured, not adjudicated.
+
+#### 🛑 CORPUS-GREP, BELATEDLY: most of the above is PRIOR ART
+
+I did not run the six-path checklist before claiming the C-vs-D findings. Run
+now, on owner instruction. **Two of the three headline claims are already in the
+corpus, one of them Lean-proved:**
+
+- **D kills the ≥3-row blocks** — `docs/audits/2026-08-10-convention-d-ylambda-root-and-derivation.md`
+  (2026-08-10, a month old): *"Under convention D every `y_λ` with `ℓ(λ) ≥ 3`
+  vanishes identically (**Schur–Weyl on a two-dimensional fibre**)"*. A better
+  reason than my "TL quotient": Schur–Weyl on a 2-dim fibre.
+- **`b² = [3]_q/[2]_q²`** — `prop:hoefsmit-binding-amplitude`, **Lean-proved**
+  as `QOU.BraidsAndKnots.hoefsmit_b_sq_eq_q3_over_q2sq`.
+- **The rank family and the TL stratification** — `qou-p-neq-np.md` §37: at
+  `X = Q^{−N}` the surviving Wedderburn blocks are exactly `λ₁ ≤ N`, **proved
+  sorry-free** in `WenzlSchurElement` (`tl_numerator_eq_zero_iff`,
+  `schurElement_tl_eq_zero_iff`). That `N` is my `z_N = q^N/[N]_q`.
+
+So #6924's algebra section is a **re-derivation**, not a discovery, and it says
+so now. What survives as new: the **#6889 interpretation withdrawal**, the
+**quantified truncation cost** (Catalan(n)/n! by atom), and the **D2 update**.
+
+#### What was actually missing, and is now Lean-proved
+
+The corpus had `b² = [3]_q/[2]_q²` AND the Wenzl/Schur-element semisimplicity
+machinery — and **nothing linked them**. Four sorry-free lemmas added to
+`hoefsmit-binding-amplitude.lean` (`lean` exit 0, 0 errors, 0 sorry, 0 axiom):
+
+    hoefsmit_b_sq_eq_zero_iff          b² = 0  ↔  [3]_q = 0     (given [2]_q ≠ 0)
+    qInt3_eq_zero_iff_cyclotomic       [3]_q = 0  ↔  q⁴+q²+1 = 0
+    q_pow_six_eq_one_of_qInt3_eq_zero  [3]_q = 0  →  q⁶ = 1
+    q_sq_ne_one_of_qInt3_eq_zero       [3]_q = 0  →  q² ≠ 1     (needs 3 ≠ 0)
+
+So `b²` vanishes **exactly** at primitive 6th roots of unity. A probe finding
+`b² = 0` has found a root of unity, not a defect — which is the Lean form of
+#6889's withdrawal.
+
+**Scope, stated in the file:** these are the ARITHMETIC half only. They do not
+prove non-semisimplicity — that is the Schur-element criterion, carried
+elsewhere in the corpus. They pin the vanishing locus.
+
+**Literature: not consulted, and not needed for these four.** They are ring
+identities over a field. The Schur–Weyl / Wenzl / Geck–Pfeiffer citations the
+surrounding claims rest on are already carried by the corpus blocks above.

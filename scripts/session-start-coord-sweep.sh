@@ -116,6 +116,34 @@ if [ -x scripts/lean-olean-staleness-audit.py ] || [ -f scripts/lean-olean-stale
   echo
 fi
 
+# 4c. Can the axiom gate report at all?
+#
+# scripts/lean-axiom-guard.py exits 2 -- producing NO verdict -- when any olean in
+# its cone is missing or stale. Correctly: a verdict from a stale set is the axiom
+# status of an old snapshot. But nothing surfaced that it WAS exiting 2, so it sat
+# unable to report for ~a month while ~104 of its modules went stale (two were
+# never built). It was not red; it was BLIND, and blind looks like silence. When
+# restored it immediately reported a month-old promotion nobody had seen (bean
+# qou-1knw). A gate that can go quietly non-functional needs a check on its own
+# liveness, and that is this line.
+if [ -f scripts/lean-axiom-guard.py ]; then
+  echo "**Axiom gate liveness:**"
+  echo
+  # `set -euo pipefail` is in force (line 16) and --can-run exits 3 when the gate
+  # is blind, which is its NORMAL informative outcome. A bare assignment would
+  # abort the whole hook on exactly the case this line exists to report, so the
+  # rc is captured through `||`. Same hazard the note at the top of section 3
+  # records for exit 141.
+  GUARD_RC=0
+  GUARD_OUT="$(timeout 120 python3 scripts/lean-axiom-guard.py --can-run 2>&1)" || GUARD_RC=$?
+  case "$GUARD_RC" in
+    0|3) printf '%s\n' "$GUARD_OUT" | sed 's/^/    /' ;;
+    *) echo "    could not determine whether the axiom gate can run (exit $GUARD_RC)."
+       echo "    That is NOT a pass -- it is the watchdog itself going dark." ;;
+  esac
+  echo
+fi
+
 # 5. Recommended action
 echo "**Recommended action:**"
 echo
