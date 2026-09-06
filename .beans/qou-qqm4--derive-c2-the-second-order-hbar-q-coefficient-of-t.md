@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-06T09:31:04Z
+updated_at: 2026-09-06T09:34:21Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -104,3 +104,39 @@ guess is now confirmed rather than guessed.
 
     python3 computations/probes/c2_is_stale_on_the_reordered_atom_word_probe.py \
         --exact-cases pp pn nn T 3He 4He
+
+
+### ALL SIX exact canonical c2 established (completes the entry above)
+
+4He landed: **c2 = 439/512** ([eps^0] = 7/128 = c0(4), [eps^1] = 7/128 = the canonical c1). So the
+table above completes:
+
+    case   [eps^1]   [eps^2]    c2 = [e1]+[e2]     recorded (grouped)
+    pp     1/8       29/32      **33/32**          357/32
+    pn     1/16      23/32      **25/32**          403/32
+    nn     0         1/16       **1/16**           217/16
+    T      1/64      97/128     **99/128**         3285/128
+    3He    1/8       141/128    **157/128**        3451/128
+    4He    7/128     411/512    **439/512**        15307/512
+
+**Every [eps^1] reproduces PR #6920's c1** (1/8, 1/16, 0, 1/64, 1/8, 7/128) by a route with no
+connection to [*] — an independent confirmation of that closed form through the exact series. All
+six agree with the Richardson column to its extrapolation error.
+
+**Exact second-order chain/atom ratios:**
+
+    ratio                        recorded (grouped)      canonical (exact)
+    T    (c2pn + c2nn)/c2T        3348/3285  = 1.019     **12/11**   = 1.0909
+    3He  (c2pp + c2pn)/c2He3      3040/3451  = 0.881     **232/157** = 1.4777
+    4He  (c2pp+c2pn+c2nn)/c2He4  19104/15307 = 1.248     **960/439** = 2.1868
+
+The 'over-count nearly cancels one order up' reading is weaker under the canonical word and at 4He
+roughly doubles. `docs/audits/2026-09-04-c2-does-not-continue-the-cancellation.md` is stale in its
+numbers; its title's conclusion holds a fortiori.
+
+**Nothing analogous to the first order's invariance appears here.** At first order
+`chain_over_atom_He4_generic` proves 24/7 for EVERY deletion-sum pair; 12/11, 232/157 and 960/439
+share no such structure, and are evidence against a second-order analogue.
+
+**Remaining on this bean:** a closed form in (Z,N) for c2, as PR #6920 gives for c1. Six exact
+points do not fix one — do not guess.
