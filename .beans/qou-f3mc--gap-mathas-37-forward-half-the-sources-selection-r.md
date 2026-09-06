@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T15:03:40Z
-updated_at: 2026-09-06T15:48:50Z
+updated_at: 2026-09-06T16:11:03Z
 ---
 
 ## What is open
@@ -217,3 +217,57 @@ speculatively.
 **So the left-hand column of 3.7 is now tableau-free in Lean.**  Remaining, unchanged:
 (b) easy Ehresmann, which closes the CONVERSE half; (c) the interpolation bridge; (d) hard
 Ehresmann.
+
+
+## UPDATE 4 — next-step (b) is DONE.  Easy Ehresmann is PROVED, sorry-free.
+
+New file `content/quantum-observable-universe/lean/QOU/Machinery/BruhatRankCriterion.lean`,
+324 lines, **14 declarations, all `[propext, Classical.choice, Quot.sound]`, zero
+`sorryAx`**:
+
+    rk                             rk u i m = #{x < i : u x < m}
+    rk_succ, rk_zero               the successor decomposition
+    rk_mul_swap_eq                 right mult permutes POSITIONS; the swap moves into
+                                   the position condition and leaves the value alone
+    rk_mul_swap_of_ne              off the single cut i = j+1, rk is UNCHANGED
+    rk_mul_swap_cut                at the cut, the two values are exchanged
+    rk_castSucc_succ, rk_succ_succ the two cut decompositions
+    rk_mul_swap_le                 STEP A
+    rk_mul_swap_mono               STEP B
+    permCoxeterSystem_simple'      the missing interface lemma: cs.simple i = swap
+                                   i.castSucc i.succ.  Did not exist in the corpus.
+    rk_mul_simple_le/_mono         A and B restated against COXETER LENGTH, via
+                                   `Hecke.Inversions.length_mul_swap_eq_succ_iff`
+    isReduced_of_isReduced_concat  a prefix of a reduced word is reduced, and the last
+                                   letter is an ascent
+    rk_le_of_sublist               the induction, right-to-left on the reduced word
+    rk_le_of_bruhatLe              **BruhatLe -> rank inequality**
+
+Formalize-first, and it mattered: both steps were measured over ALL of S_3..S_5 before any
+Lean (`run_steps` in `dipper_james_rank_criterion_probe.py`; A 240/240, B 6204/6204 at
+n = 5).  **Step B needs nothing of `u`**, which a hand argument does not predict -- the
+naive case analysis stalls at `u(j+1) >= m > u(j)` and is rescued by the hypothesis at the
+cut `j + 2`, not at `j` or `j + 1`.
+
+`Hecke.Inversions.length_mul_swap_eq_succ_iff` already existed and is exactly the descent
+bridge; corpus-grep found it rather than re-deriving it.
+
+### What still separates this from closing `bruhatLe_to_dominance`
+
+`rk` lives on `Fin (n+1)` with the cut `(x : N) < i`; `DominanceIsBruhat.rankAt` lives on
+`Fin (nOf mu)` with the cut `rowPattern (refTab mu) x <= i`.  Two bridges remain, both
+elementary and both deliberately deferred so far:
+
+  (i)  transport along `toFinSucc hn : Fin (nOf mu) ~ Fin (n+1)`;
+  (ii) `rowPattern (refTab mu) x <= i  <->  (x : N) < mu_0 + ... + mu_i`, the
+       row-superstandard boundary fact.  `rankAt` was deliberately stated against the row
+       pattern so this stayed optional; it is now needed.
+
+Then: `d(s) <= d(t)` -> `rk_le_of_bruhatLe` -> specialise to the row cuts -> (ii) -> (i) ->
+`domRel_iff_rankAt` -> `s |>= t`.  No `qou-3k66`.
+
+### Remaining after that
+
+(c) the interpolation bridge (boundary => full, for minimal coset reps) and (d) the HARD
+direction of Ehresmann, which together close the FORWARD half.  (d) is the only
+Mathlib-scale piece left in the whole arc.

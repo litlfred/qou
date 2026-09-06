@@ -135,6 +135,62 @@ def run(n):
     return tal
 
 
+# ------------------------------- the two steps of the easy-Ehresmann induction
+
+def _rk_perm(u, i, m):
+    """`rank` for a bare permutation tuple, 0-indexed."""
+    return sum(1 for x in range(i) if u[x] < m)
+
+
+def _dominates_rk(u, w, n):
+    """`rk w <= rk u` pointwise -- the rank-matrix form of `u <= w` in Bruhat."""
+    return all(_rk_perm(w, i, m) <= _rk_perm(u, i, m)
+               for i in range(n + 1) for m in range(n + 1))
+
+
+def _rmul_s(v, j):
+    """`v * s_j`: right multiplication by a simple transposition swaps POSITIONS j, j+1."""
+    v = list(v)
+    v[j], v[j + 1] = v[j + 1], v[j]
+    return tuple(v)
+
+
+def run_steps(n):
+    """The two inductive steps the Lean proof is built on, measured over ALL of `S_n`.
+
+    Formalize-first: these were measured before `BruhatRankCriterion.lean` was written,
+    because a step that is false costs a Lean session to discover -- which is exactly what
+    happened with Mathas' own step in the sibling probe.
+
+        A   w ascends across the cut  =>  rk (w s_j) <= rk w
+        B   rk w <= rk u  and w ascends across the cut  =>  rk (w s_j) <= rk (u s_j)
+
+    B is the one worth measuring: it needs NOTHING of `u`, which a hand argument does not
+    predict.  The naive case analysis stalls in the sub-case `u(j+1) >= m > u(j)` and is
+    rescued by the hypothesis at the cut `j + 2`, not at `j` or `j + 1`.
+    """
+    from itertools import permutations as _perms
+    P = list(_perms(range(n)))
+    a = ta = b = tb = 0
+    for w in P:
+        for j in range(n - 1):
+            if w[j] < w[j + 1]:
+                ta += 1
+                a += _dominates_rk(w, _rmul_s(w, j), n)
+    for u in P:
+        for w in P:
+            if not _dominates_rk(u, w, n):
+                continue
+            for j in range(n - 1):
+                if w[j] < w[j + 1]:
+                    tb += 1
+                    b += _dominates_rk(_rmul_s(u, j), _rmul_s(w, j), n)
+    print(f"n = {n}")
+    print(f"    step A (rk_mul_swap_le)   {a:6d}/{ta:<6d} {'ok' if a == ta else '**FAILS**'}")
+    print(f"    step B (rk_mul_swap_mono) {b:6d}/{tb:<6d} {'ok' if b == tb else '**FAILS**'}")
+    return a == ta and b == tb
+
+
 if __name__ == "__main__":
     print("Mathas 3.7 as a rank-matrix statement")
     print()
@@ -144,7 +200,14 @@ if __name__ == "__main__":
         print()
 
     bad = sorted({k for t in tallies.values() for k, (g, tot) in t.items() if g != tot})
+    print("The two inductive steps of the EASY direction, over all of S_n:")
+    print()
+    steps_ok = all(run_steps(k) for k in (3, 4, 5))
+    print()
+
     print("VERDICT")
+    if not steps_ok:
+        print("    A STEP FAILS -- `BruhatRankCriterion.lean` rests on it; stop and read.")
     if bad:
         print("    FAILS: " + ", ".join(bad))
         print("    Do not build this route until the failing row is understood.")
