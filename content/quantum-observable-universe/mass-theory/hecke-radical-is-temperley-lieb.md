@@ -43,9 +43,40 @@ algebra; under convention D it has been computing in Temperley--Lieb throughout.
 The dimension count above is a **measurement, not a theorem of this paper**. The
 weights were evaluated for every partition of $n = 2,\dots,7$ at $50$ decimal places,
 with worst residual $1.34 \times 10^{-51}$ against the closed form
-$y_{(n-k,k)} = [n-2k+1]_q/[2]_q^{\,n}$; no witness file records the run, and no
-formalised statement of $H_n(q)/\mathrm{rad} \cong TL_n(q)$ exists. The Lean sibling
+$y_{(n-k,k)} = [n-2k+1]_q/[2]_q^{\,n}$. That run is now recorded, and
+strengthened, in `tl-two-row-weight-family.witness.json`: rather than a residual
+at one $q$, the normalisation is checked as an **exact identity in $q$**,
+
+$$
+  \sum_{k} f^{(n-k,k)}\,[n-2k+1]_q \;=\; [2]_q^{\,n},
+$$
+
+which `sympy` simplifies to exactly $0$ for $n = 2,\dots,10$ — so the closed
+form is a normalised weight family for *every* $q$ at once, which no
+finite-precision evaluation can establish. The Specht dimensions are cross-checked
+by two independent routes (ballot and hook-length), and the table above is
+reproduced rather than cited. **No formalised statement of
+$H_n(q)/\mathrm{rad} \cong TL_n(q)$ exists**, and the witness does not supply
+one; the identification remains what this section calls it. The Lean sibling
 carries the arithmetic instances --- the Catalan counts at $n = 3,4,5$ checked against
 the standard recursion, and the $n = 4$ radical split --- together with the branching
 recursion that generates the pattern. The isomorphism is stated here as an
 identification the counts support, and it is deliberately not a proposition.
+
+## A convention collision to know about before wiring the Lean
+
+[`QOU.MathlibExt.WenzlSchurElement`](../lean/QOU/MathlibExt/WenzlSchurElement.lean)
+proves the Temperley--Lieb stratification in the **conjugate** convention: at
+$X = Q^{-N}$ the surviving blocks are those with $\lambda_1 \le N$, i.e. at most
+$N$ **columns**. This section, and convention D, state the survivors as at most
+two **rows**. Both are correct in their own convention, and that file's own
+docstring warns: *"anyone wiring `schurElement_tl_eq_zero_iff` to that block must
+transpose."*
+
+The trap is that the two conventions label **different sets of partitions** while
+carrying **equal dimension sums**, since $\dim \lambda = \dim \lambda'$. At
+$n = 3$ the row-set is $\{(3),(2,1)\}$ and the column-set is
+$\{(2,1),(1^3)\}$ — disjoint but for $(2,1)$, both summing to $5$. So the
+Catalan counts agree under either reading, and a check that looks only at
+dimensions cannot tell the two apart. Verified at $n = 3,4,5$ in
+`tl-two-row-weight-family.witness.json`.
