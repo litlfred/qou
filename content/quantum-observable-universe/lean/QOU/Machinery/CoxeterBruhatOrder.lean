@@ -44,8 +44,15 @@ type-`A` forms). They live there rather than here because they need `BraidMove`,
 the Hecke side; this file cannot import them without a cycle. **Cite that file for them, not this
 one** — the paragraph above stands as a description of what *this* file proves.
 
-**Of the four, `lifting` remains open**, as does the equivalence between this subword `BruhatLe`
-and the reflection-generated Bruhat order.
+✅ **And lifting followed too**, in `QOU.IwahoriHecke.BruhatReflection`
+(`bruhatLe_mul_simple_of_isRightDescent`, `lifting`). **All four of `CoxeterBruhat`'s deferred
+properties are now proved** — antisymmetry here, subword + transitivity in `BruhatSubword`, lifting
+in `BruhatReflection`. Only the last is in this file's own namespace; cite the other files for the
+rest.
+
+🛑 **Still open:** the equivalence between this subword `BruhatLe` and the *reflection-generated*
+Bruhat order. `BruhatReflection.bruhatLe_of_reflLe` proves one direction; the converse does not
+follow from lifting, and that file records the obstacle that actually remains.
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, §2.2
 -- Ref: [manuscript] beans qou-phir, qou-06h7

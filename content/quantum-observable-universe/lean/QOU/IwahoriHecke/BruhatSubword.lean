@@ -45,9 +45,12 @@ compiler reported them unused.
 The type-`A` corollaries (`subword_property_An`, `bruhatLe_trans_An`) are hypothesis-free, as in
 `Matsumoto`.
 
-**The lifting property is still not proved**, and neither is the equivalence between this subword
-`BruhatLe` and the *reflection-generated* Bruhat order of Mathas / Dipper–James — a distinct
-statement that no file in this corpus establishes, and one a consumer citing Mathas' Prop 3.7 would
+✅ **The lifting property landed the same day**, in `QOU.IwahoriHecke.BruhatReflection`, off the
+subword property proved here — so all four of `CoxeterBruhat`'s deferred properties are now closed.
+
+🛑 **Still open:** the equivalence between this subword `BruhatLe` and the *reflection-generated*
+Bruhat order of Mathas / Dipper–James. `BruhatReflection` proves `ReflLe → BruhatLe`; the converse
+is not established anywhere in this corpus, and it is what a consumer citing Mathas' Prop 3.7 would
 need.
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, Thm 2.2.2 (subword property)
