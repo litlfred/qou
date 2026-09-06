@@ -7343,3 +7343,43 @@ representation-theoretic one — not an evaluation condition.
 
 Nothing was wired at any stage. No `c_k` moved. Cost: three commits of analysis,
 all of whose measurements remain reusable.
+
+### Correcting my own hand-off, one message later: the fibre condition is NOT missing
+
+I closed the retraction by saying the open question "needs a fibre-level
+structural condition — Habiro-integrality, or an `H_n(q)` representation-
+theoretic one." **The corpus already has it, stated for exactly this object.**
+That is an over-claim of precisely the kind the corpus-grep checklist exists to
+catch, made in the same message as a retraction. 1133 files mention Habiro.
+
+`prop:habiro-precision-ladder-equivalence` (`mass-theory/`) states:
+
+> the Markov trace `tr_M(T_w, q)` of any braid word admits a **finite** Habiro
+> expansion with **integer** coefficients, and specifically
+> `tr_M(β_n) − tr_M(β_p) = Σ_{m=0}^{M} a_m(u)·(u;u)_m` with `a_m ∈ Z[u]`,
+> `M < ∞`
+
+— the neutron–proton braid-word difference, i.e. the Q_β object itself. Its Lean
+carries `habiro_terminates`, `habiro_integral`, `habiro_evaluation_determined`,
+**1 sorry**, and — the part that matters — the bridge to the ladder is
+`precision_ladder_is_habiro_taylor`, **conditional on the unproved class
+`QbetaHabiroTaylorBridgeClass`** (§3b-cond). So the condition is stated and
+partly formalized; what is open is the *bridge*, not the condition.
+
+### A CANDIDATE this suggests — not a finding, and I have not tested it
+
+Habiro integrality gives an N–truncation link for free, with no reality anywhere:
+at a primitive N-th root of unity `ζ`, `(q;q)_m` **vanishes for `m ≥ N`**, so a
+Habiro expansion evaluated at `ζ` truncates to `m ≤ N−1` automatically. That is a
+fibre-level mechanism relating a root of unity to a truncation order — the exact
+shape route 5's "what selects N" question wants, arriving structurally rather
+than from an evaluation condition.
+
+**The gap that stops this being a result:** the ladder's `N` (truncation order in
+`u^k`) and the Habiro index `m` (Pochhammer degree) are **different indices**.
+Identifying them is precisely what `QbetaHabiroTaylorBridgeClass` would have to
+supply, and that class is unproved. So: promising shape, unproved bridge, and
+anyone picking it up should start at that class rather than at the arithmetic.
+
+Recorded as a candidate so the next reader inherits both the shape and the gap.
+No compute run on it; nothing wired.
