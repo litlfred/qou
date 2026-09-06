@@ -148,9 +148,38 @@ def main() -> int:
     option_e = _load("option-e-multi-isotope-delta-lambda-probe-v3.witness.json")
     substrate = option_e["atom_substrate"]
 
-    # --- 1. the copy, not a computation -------------------------------------
+    # --- 0. schema preflight -------------------------------------------------
+    # A missing field is a FINDING, not a crash. `70ae502091` (2026-09-05)
+    # stripped `tr_M_at_q0` and the per-partition `dim`/`y_lambda` from the
+    # deuteron chi witness while leaving its two siblings intact, and the first
+    # version of this probe died on it with a bare KeyError -- which reports the
+    # symptom as a probe bug rather than as the corpus defect it is (bean
+    # qou-16yn). Report per field, per atom, and skip the checks that field
+    # feeds instead of aborting the whole run.
+    REQUIRED_TOP = ("tr_M_at_q0", "n_strands")
+    REQUIRED_ROW = ("partition", "chi_lambda", "y_lambda", "dim")
+    usable: dict[str, dict] = {}
     for atom, stem in ATOMS.items():
         chi = _load(f"{stem}.witness.json")
+        missing_top = [k for k in REQUIRED_TOP if k not in chi]
+        rows = chi.get("by_partition") or []
+        missing_row = sorted(
+            {k for k in REQUIRED_ROW for r in rows if k not in r}
+        )
+        ok = not missing_top and not missing_row
+        check(
+            f"schema/{atom}",
+            ok,
+            "all required fields present"
+            if ok
+            else f"MISSING top-level {missing_top} / per-partition {missing_row} "
+                 f"in {stem}.witness.json -- see bean qou-16yn",
+        )
+        if ok:
+            usable[atom] = chi
+
+    # --- 1. the copy, not a computation -------------------------------------
+    for atom, chi in usable.items():
         a = substrate[atom]["tr_M"]
         b = chi["tr_M_at_q0"]
         check(
@@ -160,8 +189,7 @@ def main() -> int:
         )
 
     # --- 2. chi self-consistency: tr_M == sum y*chi --------------------------
-    for atom, stem in ATOMS.items():
-        chi = _load(f"{stem}.witness.json")
+    for atom, chi in usable.items():
         tot = mp.mpf(0)
         for e in chi["by_partition"]:
             tot += mp.mpf(e["y_lambda"]) * mp.mpf(e["chi_lambda"])
@@ -175,8 +203,7 @@ def main() -> int:
 
     # --- 3. chi's y_lambda is current w.r.t. the live default table ----------
     ydef = _load(Y_DEFAULT)
-    for atom, stem in ATOMS.items():
-        chi = _load(f"{stem}.witness.json")
+    for atom, chi in usable.items():
         n = int(chi["n_strands"])
         table = {
             tuple(w["partition"]): mp.mpf(w["y_lambda"])
