@@ -7383,3 +7383,48 @@ anyone picking it up should start at that class rather than at the arithmetic.
 
 Recorded as a candidate so the next reader inherits both the shape and the gap.
 No compute run on it; nothing wired.
+
+### Working `QbetaHabiroTaylorBridgeClass`: it is honestly open, and NOT a Lean target
+
+Probe: `computations/qbeta/qbeta_habiro_bridge_class_is_not_a_lean_target_probe.py` (4/4).
+
+**My hypothesis was wrong, and that is the first finding.** Both sides are
+`opaque ... := fun _ => 0`, hence *semantically equal*; a leaky seal would make
+the class trivially inhabited and every downstream conditional vacuous. I
+expected a leak. Six tactics under `lean`-direct (`-DautoImplicit=false -s
+65536`, real import cone; the file itself checks 0 errors):
+
+    rfl / unfold / simp / decide / norm_num / aesop   -> 6/6 exit 1
+
+So the 2026-09-04 `axiom` -> `opaque` conversion is **sound**: it dropped the
+axiom-ledger entry without weakening the seal.
+
+**But the class admits no deductive attack.** `precisionLadderCoeff` and
+`habiroTaylorCoeff` carry **no defining properties** — nothing in the file or its
+cone constrains either — so there is no premise from which `ck_eq_taylor` could
+be derived. It is a **named hole**, not a hypothesis-carrying conditional. Its
+companion `precision_ladder_is_habiro_taylor := h.ck_eq_taylor k` is the
+self-assuming projection §3b-cond item 5 names (honestly labelled by its own
+docstring — a labelling device, not a concealed claim).
+
+**So "work the bridge class" resolves to: progress is COMPUTATIONAL, not
+deductive** — one must first *define* the two sequences. And the corpus already
+ran that computation: `qbeta-delta-tr-vs-formA` finds the leading Taylor orders
+differ, `−2ε` vs `−5/4 ε`.
+
+**Two things I checked rather than assumed:**
+
+1. **That negative is unaffected by my #6889.** The test expands in `ε = q−1`
+   on the **real axis**, where #6889 measured the simplified form's gap as 0 —
+   and the witness does not even use the simplified form, recording
+   `Abs((q²−1)(q(q−2)−1))/(2q³(q−1))`, the faithful `|Δ(net)|·E_0` #6889 says to
+   use. Two independent reasons it stands.
+2. **The negative's inference is sound**, which nobody had verified. "Leading
+   orders differ ⇒ structurally distinct" would be weak if the series were
+   merely *proportional*. Term-by-term `dtr/dnet` = `5/8, −1/8, 1/48, 5/112,
+   17/256` — not constant, and it **changes sign at k=2**. A normalisation would
+   have given a constant ratio.
+
+**Scope (a).** Does not close the bridge and does not claim the `c_k` cannot be
+the Habiro Taylor coefficients — only that the Form-A slot route is refuted and
+the class as written admits no deductive attack. Nothing wired; no `c_k` moved.
