@@ -98,6 +98,40 @@ if [ -f "$BUILT_FILE" ]; then
 fi
 echo "  fresh mathlib oleans: $n_ml  (traces: $n_tr)"
 
+# FALLBACK: derive $BUILT_FILE from the tree itself when it is absent or empty.
+#
+# The file is written only by build-missing-mathlib-oleans.sh, and only when
+# somebody ran it. After a plain `lake build QOU UGB Fred2005` — the ordinary
+# way to get a traced tree, and the only way to get one that passes the guard
+# below — nothing has written it, and the seeder refused with n_ml=0 even
+# though a perfectly seedable tree was sitting right there. That refusal cost
+# a session, which is one session more than it should have.
+#
+# Only PAIRED oleans are taken: an olean without its .trace is exactly what
+# must not be seeded, so deriving from the trace side makes the 90% guard pass
+# by construction rather than by luck. Set BUILT_FILE= to override.
+if [ "$n_ml" -eq 0 ] && [ -d "$MLLIB" ]; then
+  echo "  \$BUILT_FILE absent/empty — deriving from paired oleans in $MLLIB"
+  while IFS= read -r tr; do
+    ol="${tr%.trace}.olean"
+    [ -f "$ol" ] || continue
+    rel="${ol#"$MLLIB"/}"; rel="${rel%.olean}"
+    mod="${rel//\//.}"
+    for ext in olean ilean trace; do
+      f="$MLLIB/$rel.$ext"
+      [ -f "$f" ] || continue
+      echo "$f" >> "$LIST"
+      [ "$ext" = olean ] && n_ml=$((n_ml+1))
+      [ "$ext" = trace ] && n_tr=$((n_tr+1))
+    done
+    for ext in c setup.json; do
+      f="$MLIR/$rel.$ext"
+      [ -f "$f" ] && echo "$f" >> "$LIST"
+    done
+  done < <(find "$MLLIB" -name '*.trace' -type f 2>/dev/null)
+  echo "  derived mathlib oleans: $n_ml  (traces: $n_tr)"
+fi
+
 # No mathlib modules collected at all. The `n_ml > 0` wrapper on the coverage
 # check below is load-bearing (div-by-zero), so without this an absent or empty
 # $BUILT_FILE falls straight through it and seeds only the rev-independent dep
@@ -110,6 +144,21 @@ echo "  fresh mathlib oleans: $n_ml  (traces: $n_tr)"
 # ever wrote $BUILT_FILE: build-missing-mathlib-oleans.sh recorded builds as
 # decorated `BUILT(n) <mod>` lines in its own $LOG — a different path in a
 # different format — so producer and consumer never connected.
+#
+# 🛑 THAT HALF IS FIXED AND THIS COMMENT WAS STALE (2026-09-06).
+# build-missing-mathlib-oleans.sh now writes the bare list: `: > "$BUILT_FILE"`
+# at its line 53, `echo "$mod" >> "$BUILT_FILE"` at line 70, annotated "the
+# seed's cleanliness contract". Producer and consumer DO connect. Read the code
+# before repeating this paragraph — I quoted it as current fact in a merged PR
+# and in lean-environment-setup.md, and it was already wrong.
+#
+# What remains true, and is the reason a seed can still be blocked: that
+# producer compiles module-by-module with `lean -o` against a mathlib source
+# clone, and `lean -o` writes NO .trace. So its output populates $BUILT_FILE
+# with modules whose oleans would fail the 90% trace guard below — correctly,
+# since Lake would rebuild and evict every one of them on restore. A seedable
+# $BUILT_FILE has to come from a real `lake build`. The fallback immediately
+# below derives one, so the absent-file case is no longer a dead end.
 #
 # TWO LEGITIMATE MATHLESS CASES are exempted (both from #4705's version of this
 # guard; an earlier absorption here dropped them and wrongly blocked the first):

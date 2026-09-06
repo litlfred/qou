@@ -4911,7 +4911,7 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
 
 # 🛑 The `trap` above is load-bearing, not boilerplate. This recipe streams every
 # `lake-oleans.tgz.part` into ONE temp file before untarring, so `$TGZ` reaches
-# ~2.4G (27 parts, 2,514,511,602 B — measured 2026-09-04; it was ~1.6G/18 parts
+# ~1.8G (20 parts — reseeded 2026-09-06; was ~2.4G/27 parts on 2026-09-04, and ~1.6G/18 parts
 # before the 2026-08-31 reseed added own-package oleans), and until 2026-08-28
 # nothing deleted it — not the recipe, not a reaper.
 # Measured: a single leaked `/tmp/tmp.4JEBENOn9G` from 2026-08-15 was still on
@@ -4923,10 +4923,16 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
 
 # 🛑 MEASURE the traces; do NOT assume them either way. This block used to state
 # flatly that "a RESTORED tree has oleans but NO .trace files". That WAS true and
-# is now FALSE for this branch: `lake-cache/qou-v4-24-0` was reseeded 2026-08-31
-# and carries 100.0% PAIRED trace coverage — 6170 of 6172 oleans have their own
-# .trace sibling (the 2 exceptions are QOU own-package oleans). Measured by
-# stream-listing the 27 parts; the seeders have refused a sub-90% seed since
+# is now FALSE for this branch: `lake-cache/qou-v4-24-0` was RESEEDED AGAIN
+# 2026-09-06 (@ `1c496980587`) from a full `lake build QOU UGB Fred2005` —
+# 6483 oleans / 6484 traces, **100% coverage**, in 20 parts (~1.8 GB):
+# mathlib 3471/3471, QOU 2702/2702, UGB 28, Fred2005 1. Round-trip verified by
+# streaming the parts back through `tar tzf -` (32416 in = 32416 out) and
+# hashing three extracted oleans against local. The prior figures on this line
+# — the 2026-08-31 seed, 6170 of 6172 oleans, 27 parts — are superseded; note
+# that seed was NOT measured before being replaced, so no before/after
+# comparison exists (see lean-environment-setup.md §PRESERVE THE BUILD).
+# Measured by stream-listing the parts; the seeders have refused a sub-90% seed since
 # 2026-08-07. So the unconditional `touch` the recipe used to do now asserts
 # something false in the BLOCKING direction, which is why the line above runs
 # scripts/lake-restore-trace-check.sh instead: it sets the marker from the
