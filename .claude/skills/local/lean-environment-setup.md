@@ -1040,9 +1040,35 @@ working tree files would be overwritten" on switch-back; Copilot #1857).
 >
 > ```bash
 > lake build QOU UGB Fred2005                                  # traced tree
+> scripts/lean-content-mathlib-gap.sh --build                  # ← do not skip
+> # measure the OUTGOING branch first — there is no flag for this, and once
+> # you force-push, its head is unreachable (GitHub refuses arbitrary-sha
+> # fetches). Record these counts before replacing them:
+> git fetch --depth=1 origin lake-cache/qou-v4-24-0
+> C=$(git rev-parse FETCH_HEAD)
+> git ls-tree --name-only "$C" | grep '^lake-oleans\.tgz\.part' | sort \
+>   | while read -r p; do git show "$C:$p"; done | tar tzf - | tee /tmp/outgoing.txt \
+>   | grep -c '\.olean$'
 > SEED_PAPER=1 CACHE_BRANCH=lake-cache/qou-v4-24-0 \
 >   scripts/lean-olean-cache-seed.sh --push
 > ```
+>
+> **🛑 The gap step is not optional, and a seed without it is structurally
+> incomplete.** `lake build QOU UGB Fred2005` builds the dependency cone of the
+> three *libraries*. Content-block `.lean` files live **outside** the package,
+> so anything they import and the libraries do not is never built, never in the
+> tree, and therefore never in the cache — a restoring agent's content sweep
+> then reports REDs that are cache gaps wearing the costume of corpus defects.
+>
+> Measured 2026-09-06 (bean `qou-tpdg`, PR #6827): content blocks import **252**
+> distinct Mathlib modules and **4** were missing —
+> `Analysis.Complex.UpperHalfPlane.Basic`, `Analysis.Real.Pi.Bounds`,
+> `RingTheory.HopfAlgebra.Basic`, `Topology.FiberBundle.Basic` — and those 4
+> accounted for **all 8 REDs** of a 938-file sweep. The reseed earlier that same
+> day inherited the gap, because its recipe was `lake build QOU UGB Fred2005`
+> and nothing else. `lean-content-mathlib-gap.sh` closes it, and goes through
+> `lake` rather than `lean -o` so the oleans carry the `.trace` the coverage
+> guard needs.
 >
 > **🛑 CORRECTION to what this note said on 2026-09-06.** It claimed *"the
 > documented path does not work — nothing in this repo writes `$BUILT_FILE`"*,
