@@ -117,3 +117,43 @@ done: whether `ξ = 1/√2` is the *action* `∫λ_SW` along a Picard–Lefschet
 thimble from `z_c`. That needs a definite `λ_SW` and a thimble integration.
 What is now excluded is the version that would have been found by inspection —
 which is usually how an unasked question dies.
+
+---
+
+## The 2.46 triage, and it SHARPENS §3 rather than softening it
+
+I left "whether anything downstream consumes `A(q₀) ≈ 2.46`" unmeasured. Done now.
+
+**No production code consumes it.** Fourteen `computations/` files carry a
+2.46-ish literal; the hits are `amplification` in unrelated senses (⁴He `C_knot`
+conditioning, the deuteron binding-residual `g₂` coefficient), plus one comment
+(`lambda_scale_refinement_h4_correction_bring.py:55` `≈ 2.4600`). Nothing wires it.
+
+**But `A(q₀) ≈ 2.4599` is `λ_p`, and the corpus identified THAT as a CODATA
+target in May 2026 and purged it.** Recomputed here:
+
+    (m_p/m_e) · ℏ_q² / Vol(𝔅₃) = 2.45995227…
+
+against the PL doc's `A(q₀) ≈ 2.4599` and the audits' `λ_p target = 2.4599534077`
+— the same number. And the May audits already say so, in their own words:
+
+| audit | wording |
+|---|---|
+| `2026-05-18-conjecture-falsification.md` | "λ_p_target (**from CODATA** m_p/m_e · ℏ_q²/Vol(B_3))" |
+| `2026-05-18-lambda-scale-derivation-search.md` | "**λ_p target (from CODATA)**" |
+| `2026-05-20-compute-wiring-audit-pr-852.md` | "used **only as comparison targets** in PSLQ search" |
+| `2026-05-18-workplan-0b-routes-b-c-findings.md` | "(original conjecture, **falsified-as-derivation**)" |
+
+AGENTS.md then records the factor "once called `λ_scale`" as **absorbed on
+2026-05-23** and standing-purged.
+
+**So the finding is stronger than I wrote it.** `picard-lefschetz-plan.md` is not
+merely a fit. It presents, as a **KEY RESULT** and dated **2026-08-10**, a
+1-of-9 selection that lands on **the very number the corpus had identified three
+months earlier as CODATA-derived, labelled "falsified-as-derivation", and
+purged.** A reader arriving at the PL doc today meets that as a live result with
+no pointer to any of it.
+
+Good news in it: because nothing consumes `A(q₀)`, **re-statusing the document
+moves no numbers at all** — it is a documentation fix, not a compute change.
+That strengthens recommendation 3 and makes it the cheapest of the four.
