@@ -1,29 +1,30 @@
 {
   "engine": "python-stdlib",
-  "computedAt": "2026-09-06T03:54:13.123739+00:00",
+  "computedAt": "2026-09-06T04:01:13.816484+00:00",
   "computation": "codata-truncation-audit",
   "scriptFile": "codata_truncation_audit.py",
   "description": "Hand-typed CODATA/substrate constants that are a short prefix of the canonical value, and so compute a different number. Separates that class from exact duplication, which is qou-46ke's original and much larger scope. Canonical values are read from codata_constants / q_parameter at run time, never typed here.",
   "min_shared_digits": 6,
-  "truncated_total": 102,
-  "truncated_files": 89,
-  "divergent_total": 93,
-  "divergent_files": 74,
+  "truncated_total": 111,
+  "truncated_files": 98,
+  "divergent_total": 97,
+  "divergent_files": 78,
   "rounded_total": 11,
   "rounded_files": 10,
-  "blocking_total": 206,
+  "blocking_total": 219,
   "by_constant": {
     "m_e": 14,
-    "q0": 62,
+    "q0": 68,
     "q0_muon": 52,
     "q0_muon_live": 10,
     "B_2H": 23,
     "B_3H": 6,
-    "B_4He": 17,
-    "B_3He": 9,
-    "m_p": 9,
+    "B_4He": 19,
+    "B_3He": 11,
+    "m_p": 11,
     "m_mu": 2,
-    "m_n": 2
+    "m_n": 2,
+    "u_MeV": 1
   },
   "exact_duplicates": 222,
   "declared_intentional": 1,
@@ -1881,11 +1882,128 @@
       "canonical": "938.27208943",
       "verdict": "TRUNCATED",
       "use_instead": "codata_constants.M_P_MEV_VALIDATION"
+    },
+    {
+      "file": "qou-mass/src/qou_mass/_internal/canonical_tower.py",
+      "line": 706,
+      "constant": "B_3He",
+      "literal": "7.71804",
+      "canonical": "7.71804132",
+      "verdict": "TRUNCATED",
+      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
+    },
+    {
+      "file": "qou-mass/src/qou_mass/_internal/canonical_tower.py",
+      "line": 707,
+      "constant": "B_4He",
+      "literal": "28.295674",
+      "canonical": "28.2956624",
+      "verdict": "DIVERGENT",
+      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
+    },
+    {
+      "file": "qou-mass/src/qou_mass/_internal/experimental_constants.py",
+      "line": 95,
+      "constant": "m_p",
+      "literal": "938.27208816",
+      "canonical": "938.27208943",
+      "verdict": "DIVERGENT",
+      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
+    },
+    {
+      "file": "qou-mass/src/qou_mass/_internal/mass_at_3A_proper.py",
+      "line": 1288,
+      "constant": "B_3He",
+      "literal": "7.71804",
+      "canonical": "7.71804132",
+      "verdict": "TRUNCATED",
+      "use_instead": "codata_constants.AME_B_HE3_MEV_VALIDATION"
+    },
+    {
+      "file": "qou-mass/src/qou_mass/_internal/mass_at_3A_proper.py",
+      "line": 1289,
+      "constant": "B_4He",
+      "literal": "28.295674",
+      "canonical": "28.2956624",
+      "verdict": "DIVERGENT",
+      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
+    },
+    {
+      "file": "qou-mass/src/qou_mass/api.py",
+      "line": 232,
+      "constant": "u_MeV",
+      "literal": "931.49410242",
+      "canonical": "931.49410372",
+      "verdict": "DIVERGENT",
+      "use_instead": "codata_constants.U_MEV"
+    },
+    {
+      "file": "qou-mass/src/qou_mass/daha_macdonald.py",
+      "line": 44,
+      "constant": "q0",
+      "literal": "1.10997858",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "verdict": "TRUNCATED",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "qou-mass/src/qou_mass/demazure.py",
+      "line": 92,
+      "constant": "q0",
+      "literal": "1.10997858",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "verdict": "TRUNCATED",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "qou-mass/src/qou_mass/toroidal_harmonic.py",
+      "line": 21,
+      "constant": "q0",
+      "literal": "1.10997858",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "verdict": "TRUNCATED",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "qou-mass/src/qou_mass/wenzl_qpoch.py",
+      "line": 39,
+      "constant": "q0",
+      "literal": "1.10997858",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "verdict": "TRUNCATED",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "scripts/convention-c-value-audit.py",
+      "line": 96,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "verdict": "TRUNCATED",
+      "use_instead": "q_parameter.Q_MP"
+    },
+    {
+      "file": "scripts/convention-c-witness-audit.py",
+      "line": 297,
+      "constant": "m_p",
+      "literal": "938.272",
+      "canonical": "938.27208943",
+      "verdict": "TRUNCATED",
+      "use_instead": "codata_constants.M_P_MEV_VALIDATION"
+    },
+    {
+      "file": "tools/pyhecke/tests/test_tl.py",
+      "line": 133,
+      "constant": "q0",
+      "literal": "1.1099785827513808",
+      "canonical": "1.1099785827513808075916690956107688798744991218736",
+      "verdict": "TRUNCATED",
+      "use_instead": "q_parameter.Q_MP"
     }
   ],
-  "scriptHash": "51603931ad63",
+  "scriptHash": "e6f87997192e",
   "scriptCommitSha": "e6c156f568468d958ad42147478aea240451f911",
-  "commitSha": "7a00dfebf26e82c40c724ff5f1bd0a897c393466",
+  "commitSha": "e57ab7fc0742fe2a1aad17f186a3f18f40d495b8",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

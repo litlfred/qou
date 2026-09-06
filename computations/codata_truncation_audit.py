@@ -188,8 +188,14 @@ NUMBER = re.compile(r"\d+\.\d+")
 
 # The registry itself. A CODATA value here is the source of truth, not a copy
 # of one — flagging it would be the audit reporting its own reference as wrong.
+# The registry itself legitimately HOLDS these values — it is the source the
+# rest of the tree is meant to read from, so scanning it would report the
+# canonical values as defects. Extended with the package-layer registry when
+# the scan grew past computations/.
 REGISTRY_FILES = {"codata_2022_source.py", "codata_constants.py",
-                  "q_parameter.py"}
+                  "q_parameter.py",
+                  # tools/qou-substrate/.../ — the package-layer registry
+                  "constants.py", "codata.py"}
 
 # A number inside a regex or a match-prefix is a PATTERN, not a computed value.
 # Without this the audit flags other detectors — including its own siblings —
@@ -440,7 +446,14 @@ def scan() -> tuple[list[dict], int]:
     rows: list[dict] = []
     exact = 0
     exempt = 0
-    for f in sorted(ROOT.joinpath("computations").rglob("*.py")):
+    # SCAN ROOTS. `computations/` alone was a FLOOR, not a total, and this
+    # gate said so from the start. Measured on the other three: 13 findings in
+    # 11 files, one of them in the public facade (qou_mass/api.py carries the
+    # CODATA-2018 u->MeV 931.49410242 while the registry moved to the 2022
+    # value 931.49410372).
+    roots = ["computations", "tools", "qou-mass", "scripts"]
+    for f in sorted(g for r in roots
+                    for g in ROOT.joinpath(r).rglob("*.py")):
         if "_deprecated" in f.parts or "__pycache__" in f.parts:
             continue
         if f.name == Path(__file__).name or f.name in REGISTRY_FILES:
