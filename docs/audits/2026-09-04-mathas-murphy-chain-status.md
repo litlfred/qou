@@ -508,3 +508,44 @@ Rebuilding just that module from source took **5 s** and its dependency cone nee
 so the fix is cheap once noticed. Noticing is the problem: nothing in the toolchain says the
 olean is behind, and the signature difference is one instance argument. Compare the
 committed source's `git log` timestamp against the olean's mtime before trusting a `#check`.
+
+### 🛑 The cheap way out of that gap is REFUTED (2026-09-06, same day)
+
+The gap above admitted two closures: **(1)** restate `murphyM` over `refTab` — a definitional
+change to merged code, touching every consumer; **(2)** re-prove the Garnir length additivity
+against the column reference — cheap *if true*. Whether (2) is true is a factual question
+about small symmetric groups, so it was measured before either was attempted.
+
+[`computations/hecke/murphy_reference_tableau_additivity_probe.py`](../../computations/hecke/murphy_reference_tableau_additivity_probe.py)
+— exact integer arithmetic, no float anywhere, four self-checks that must pass before any
+verdict prints (Garnir construction vs Mathas' three worked `λ = (3,3)` examples; the
+column-superstandard filling is a bijection and column-increasing; `d(t) = w·d(g)` holds for
+**both** references over 886 instances, i.e. the factorisation really is
+reference-insensitive; and the ROW column reproduces the sibling probe):
+
+| `n` | row-standard non-standard `t` | **row** reference (Mathas') | **column** reference (`murphyM`) |
+|---|---|---|---|
+| 3 | 6 | 6/6 | 6/6 |
+| 4 | 37 | 37/37 | **30/37** |
+| 5 | 220 | 220/220 | **138/220** |
+| 6 | 1526 | 1526/1526 | **797/1526** |
+
+Counting a `t` as a success when **some** descent node gives length additivity, which is what
+3.13 asserts. Smallest counterexample: `λ = (2,1,1)`, `t = ((1,3),(4),(2))`, whose single
+descent node gives `ℓ(d_col(t)) = 2` against `ℓ(d_col(g)) + ℓ(w) = 3 + 1`.
+
+**The failure rate grows with `n`** — 0 %, 19 %, 37 %, 48 % — so this is not a small-`n`
+artifact that a larger range would wash out. **Option (2) is false; option (1) is forced.**
+
+Scope, stated per the refutation discipline: this is a **refutation of a specific universally
+quantified statement**, with an explicit witness — not a scope-(b) exclusion of an
+*ingredient*. Nothing here says the column-superstandard reference is bad for anything else;
+it says Garnir length additivity is a property **of the row-superstandard reference**, not a
+fact about Garnir tableaux that happens to be recorded relative to one.
+
+**It also corrects a claim already in the corpus.** `murphyM`'s docstring calls the reference
+*"a red herring: `colSuperstandard` is as good as Murphy's row-superstandard `t^λ` — both are
+full rank"*. That was a **rank** measurement and is still true as one. It does not generalise,
+and this is a property where the reference is decisive. The generalisation was never measured;
+it was inferred from the rank result, which is the same shape of error as the two absence
+claims this document already records.

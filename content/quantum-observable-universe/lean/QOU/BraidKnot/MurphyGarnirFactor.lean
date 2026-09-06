@@ -56,11 +56,37 @@ right-multiplication by `c` does not preserve.
 **Consequence, stated plainly:** §3's Garnir corollary is proved for the **row**-referenced
 `T_{d(t)}`, which is Mathas'; §4's `murphyM_smul` is proved for `murphyM` as it is currently
 defined, i.e. column-referenced, and takes its length hypothesis as given.  **The two are
-not yet composed**, and composing them is not a rewrite — it is either restating `murphyM`
-over `refTab` (a definitional change to merged code) or re-proving the Garnir length
-additivity against the column reference.  Do not write a corollary chaining §3 into §4
-without doing one of those; it would be false as an inference even though both halves are
-true.
+not yet composed**, and composing them is not a rewrite.  Do not write a corollary chaining
+§3 into §4; it would be false as an inference even though both halves are true.
+
+### And the cheap way out is REFUTED — measured, not assumed
+
+There were two ways to close it: restate `murphyM` over `refTab` (a definitional change to
+merged code), or re-prove the Garnir length additivity against the column reference.  The
+second is the cheap one *if it is true*, and it is a factual question about small symmetric
+groups, so it was measured before either was attempted
+([`murphy_reference_tableau_additivity_probe.py`](../../../../../computations/hecke/murphy_reference_tableau_additivity_probe.py),
+exact integer arithmetic, four self-checks before any verdict):
+
+| `n` | row-standard non-standard `t` | **row** reference | **column** reference |
+|---|---|---|---|
+| 3 | 6 | 6/6 | 6/6 |
+| 4 | 37 | 37/37 | **30/37** |
+| 5 | 220 | 220/220 | **138/220** |
+| 6 | 1526 | 1526/1526 | **797/1526** |
+
+Smallest counterexample: `λ = (2,1,1)`, `t = ((1,3),(4),(2))` — its one descent node gives
+`ℓ(d_col(t)) = 2` against `ℓ(d_col(g)) + ℓ(w) = 3 + 1`.  The failure rate **grows** with `n`
+(0 %, 19 %, 37 %, 48 %), so this is not a small-`n` artifact.
+
+**So option 2 is false and option 1 is forced.**  Length additivity at a Garnir descent node
+is a property *of the row-superstandard reference*, not a fact about Garnir tableaux that
+happens to be recorded there.
+
+This also corrects `murphyM`'s own docstring, which calls the reference *"a red herring:
+`colSuperstandard` is as good as Murphy's row-superstandard `t^λ` — both are full rank"*.
+That was a **rank** measurement and remains true as one.  It does not generalise: here is a
+property where the reference is decisive.
 
 ## What this does NOT prove
 
