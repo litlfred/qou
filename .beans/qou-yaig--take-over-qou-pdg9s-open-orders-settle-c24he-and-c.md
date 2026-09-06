@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T13:34:53Z
-updated_at: 2026-09-06T13:40:32Z
+updated_at: 2026-09-06T13:46:53Z
 ---
 
 ## What this takes over, and from whom
@@ -106,3 +106,44 @@ small cases already sit at committed `P` that reach it; only `4He` needs `P = 5`
 Given P = 4 cost 295 s and the per-order growth here is steep (the [8,4] and
 [7,5] blocks alone were 50 s and 59 s at P = 4), P = 5 at n = 12 is the expensive
 one and should be launched with the long-compute logging discipline.
+
+
+## ITEM 2 MEASURED — and #6607's conclusion SURVIVES
+
+    case  A   c1     c2       c3       c2h²/c1h    c3h³/c2h²
+    pp    2   1/8    33/32    67/16      0.8174      0.4023
+    pn    2   1/16   25/32    43/8       1.2385      0.6817
+    nn    2   0      1/16     27/4       INFINITE   10.7008
+    T     3   1/64   99/128   101/16     4.9045      0.8087
+    3He   3   1/8    157/128  839/128    0.9722      0.5295
+    4He   4   7/128  439/512  (P=5)      1.5535      (open)
+
+5/5 controls passed — every case reproduced its recorded c0, c1 AND c2 first.
+
+**Read the two ratio columns TOGETHER; neither says it alone.** First -> second
+order overtakes (four of five finite ratios at or above 1). Second -> third does
+NOT (four of five well below 1). So this is not a divergent expansion with each
+order beating the last — it has ONE BAD ORDER, the second, after which terms
+resume shrinking.
+
+That is exactly the shape #6607 concluded from the grouped word (its 4He ratio
+was 247.98·h/29.8965 = 0.8219, likewise below 1). **So #6607's conclusion
+survives the ordering change at the A reached here.**
+
+Three documents, three different fates, which is worth keeping straight:
+
+    #6559  argument REFUTED (#6931); crossover LOCATION false; ENDPOINT survives
+    #6607  conclusion SURVIVES at A = 2, 3; A = 4 still open
+    #6931  its own "A=4 untested" bullet now superseded by the measurement
+
+`nn` is the outlier at BOTH orders (INFINITE, then 10.7008) for one reason:
+`c1(nn) = 0` exactly. A case whose first order vanishes has no scale for later
+orders to be measured against — read it out of the trend, not into it.
+
+## What stays open
+
+- **`c3` at A = 4**, which is where #6607's interest lies. Needs `P = 5` against
+  a committed `P_OF` of 3 — a separate long-compute run, deliberately not buried
+  in a five-case sweep.
+- **`c4`**, which `pp/pn/nn` could supply at their committed `P = 6`, was not
+  extracted. Five points across two `A` is a shape, not a convergence proof.
