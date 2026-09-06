@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-06T09:51:16Z
+updated_at: 2026-09-06T10:15:47Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -214,3 +214,36 @@ still the useful half, since it is what makes this 2 parameters rather than 5.
 **Does NOT give c2.** c2 = [e1]+[e2] of tr(free) - tr(atom); the atom word does not factorise (its
 interfaces couple adjacent blocks, which is why c1's closed form needs a separate interface term).
 Nothing here says what the atom side's second order is.
+
+
+### Same day — the ATOM side's [e2], as exact data (not fitted)
+
+Since c2 = [e1]+[e2] of Dtr = tr(free) - tr(atom) and [e1](Dtr) = c1, the atom half follows from
+quantities already measured, with NO new computation: **[e2](atom) = [e2](free) - (c2 - c1)**.
+
+    (Z,N)   A   [e2](atom)   x 2^(2A)    I_pp  I_nn
+    (2,0)   2   81/32        81/2        1     0
+    (1,1)   2   35/32        35/2        0     0
+    (0,2)   2   27/16        27          0     1
+    (3,0)   3   47/32        94          2     0
+    (2,1)   3   79/128       79/2        1     0
+    (1,2)   3   59/128       59/2        0     1
+    (0,3)   3   33/32        66          0     2
+    (2,2)   4   61/512       61/2        1     1
+
+**NO CLOSED FORM IS PROPOSED, deliberately.** Eight points admit several parameterisations (a
+quadratic in (Z,N) alone is five parameters before any interface term) and this arc has been burned
+by exactly that. Two facts for whoever derives it:
+
+- **The obvious analogue of the free-side result FAILS.** Taking v = u + 4(I_pp - I_nn) — the
+  first-order atom bracket — leaves x2^(2A) - v^2/2 at -19/2, 17, -5, -101/2, 15/2, 17, -32, 57/2,
+  which is not linear in (Z,N).
+- **The parity is uneven** — three integers, five half-integers — so any form must produce that.
+
+**The one constraint in hand** is the content-cancellation criterion: a zero-net-content combination
+of the atom-side second order must be ordering-invariant, being interface-only. Consistency check at
+A=2: atom(pp)+atom(nn)-2atom(pn) = 65/32 vs free = 50/32, difference -15/32 — exactly the measured c2
+combination, as it must be since the [e1] part cancels there.
+
+So the remaining work on goal (2) is the atom side alone, and it is now well-posed: 8 exact target
+values, one invariance constraint, and one refuted ansatz.
