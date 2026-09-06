@@ -46,13 +46,21 @@ time."* Two shape facts bear on that, and both are checkable rather than argued:
   corpus's `H₂` Wedderburn weights `y₂`, `y₁₁` — that identification lives in a different
   section of the same file (`weight_eq_proj_scalar`, `WeightsDetermineZ`), about
   different variables.
-* The theorem has **no application site**. Measured 2026-09-05 over every tracked file,
-  with Lean comments stripped (nested block comments included) before the name is
-  searched for: **1 declaration, 0 applications, 28 prose citations in 13 files** — 16 in
-  `.md`, 8 in `.py` docstrings, 2 in witness/ledger JSON, and 2 in Lean *docstrings*
-  (`isospin-from-canonical-bowtie.lean`, `TensorCouplingCannotUnbindSinglet.lean`). The
-  load-bearing figure is the **0**; the prose count will drift as this file and its audit
-  are themselves cited, which is why the guard reports both and gates only on the first:
+* The theorem has **no application site**. Measured over every tracked file, with Lean
+  comments stripped (nested block comments included) before the name is searched for.
+  Quoted against **`origin/main` as of 2026-09-06**, which is the tree the claim is
+  *about* — not against this branch, which cites the name in four files of its own and so
+  cannot be its own denominator:
+
+      1 declaration, 0 applications, 28 prose citations in 13 files
+      16 .md · 8 .py docstrings · 2 witness/ledger JSON · 2 Lean docstrings
+      (isospin-from-canonical-bowtie.lean, TensorCouplingCannotUnbindSinglet.lean)
+
+  On this branch the same command reads **41 in 17 files**. The whole increase is this
+  PR's own four files — verified by set difference against `origin/main`, which adds no
+  file and removes none, so no sibling contributed one. **The load-bearing figure is the
+  `0`**, which is identical on both trees; the guard reports the prose count but gates
+  only on the applications:
   [`scripts/separable-interface-instantiation-audit.py`](../../../../../../scripts/separable-interface-instantiation-audit.py).
 
 So `hplus`/`hminus` are not a claim *about the corpus* that a witness could settle; they
