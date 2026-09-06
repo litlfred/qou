@@ -34,12 +34,29 @@ recorded support sets come from the failure branch. **Which one is the actual
 question**; do not guess a value for `RAIL`/`H` to make it run — that would
 manufacture a result rather than recover one.
 
-Provenance: introduced by `e5dcd8f544` (2026-08-01), present identically on
-BOTH sides of the main merge, so this is neither merge fallout nor branch-local.
-Untouched by the merge commit deliberately — an unrelated five-week-old defect
-does not belong inside a merge resolution.
+Provenance: present identically on BOTH sides of the main merge (compared by
+reading the blobs, `git show <rev>:<path>`), so this is neither merge fallout
+nor branch-local. Untouched by the merge commit deliberately — an unrelated
+pre-existing defect does not belong inside a merge resolution.
 
-Next: date the three witnesses against `e5dcd8f544`, decide stale-vs-failure-branch,
-then fix the names from the probes' own intent (not from a plausible constant).
+**WITHDRAWN — the age and the introducing commit.** An earlier revision of this
+bean said "introduced by `e5dcd8f544` (2026-08-01)" and called the defect five
+weeks old. That came from `git log -L`, and `e5dcd8f544` is the **graft
+boundary** of this shallow clone: `git rev-list --count e5dcd8f544` is 1, it
+has no parents, and everything older than the graft is attributed to it. So
+the SHA is an artifact of the clone depth and the date is the graft's date,
+not the defect's. This repo's own
+`computations/audits/producer_importability_audit.py` warns about exactly this
+("DO NOT DATE ANYTHING IN THIS REPO WITH `git log`") and I walked into it
+anyway. **How old these NameErrors are is not knowable from this clone.**
+
+What survives is what was measured by reading the code and the blobs: the
+names are unbound, they are on the success path, and both sides of the merge
+carry them identically.
+
+Next: read each witness's own `computedAt` (real recorded data, unlike `git
+log` here) against its producer's current state, decide
+stale-vs-failure-branch, then fix the names from the probes' own intent — not
+from a plausible constant.
 
 Unclaimed — filed from the qou-uiut merge, not being worked.

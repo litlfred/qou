@@ -64,9 +64,24 @@ count there is advance warning that the run dirtied the tree.
 
 Agent clones here are SHALLOW. `git rev-parse --is-shallow-repository` returns
 true, and every change predating the graft is attributed by `git log -- <file>`
-and `git log -L` to the boundary commit `cdb64587b8`, which has NO PARENTS
-(`git rev-list --count cdb64587b8` -> 1) and reports "41473 files changed,
-14448426 insertions" — the graft, not a diff.
+and `git log -L` to a BOUNDARY COMMIT: one with no parents, which reports the
+whole tree as one enormous diff — the graft, not a change.
+
+⚠ THE BOUNDARY MOVES. This note originally named `cdb64587b8`. As of
+2026-09-06 that commit has 6795 ancestors and is no longer a boundary at all,
+while `e5dcd8f544` (dated 2026-08-01) is — the clone was re-fetched to a
+different depth in between. Testing a hardcoded SHA therefore gives a FALSE
+ALL-CLEAR: you check `cdb64587b8`, find it has parents, conclude the clone is
+fine, and trust an attribution that is pure graft artifact. That is exactly
+how bean `qou-durg` came to claim a defect was "introduced by `e5dcd8f544`
+(2026-08-01)" and five weeks old; both the SHA and the age were withdrawn.
+
+Do not hardcode it. FIND it, every time:
+
+    git rev-list HEAD --max-parents=0        # the boundary commit(s), if any
+
+Any SHA that command prints is a graft, and `git log`/`git log -L` output
+pointing at it carries no information about when or by whom anything changed.
 
 Cost of not knowing that, on this very audit: the 2026-08-30 re-run found this
 witness's largest class (`pyhecke`, 35) drained, asked git when, was told
