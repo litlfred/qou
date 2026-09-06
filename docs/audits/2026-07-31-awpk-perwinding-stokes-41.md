@@ -1,5 +1,17 @@
 # qou-awpk: per-winding Stokes constants of 4₁ — extraction, certification, and the effective A at the observed ϑ sheets
 
+> **⚠ CONVENTION-C CONDITIONAL — scope note added 2026-09-06 (bean `qou-h6o3`).**
+> This document's conclusions depend on the `c_k` precision ladder / `Q_β`, which
+> AGENTS.md records as **convention-C-frame throughout and NOT re-derived** under
+> the owner ruling of 2026-08-15 making convention D (`z = q³/(q²+1)`) canonical.
+> Treat every `c_k`-dependent statement below as **C-conditional** until the
+> ladder is re-derived (bean `qou-cds1`). The numbers here are correct *for C*
+> and are kept as recorded — they need **scoping, not correction**. This note was
+> applied mechanically to the 45 documents in this arc that reference the ladder;
+> it asserts dependence on the ladder, not that any particular conclusion changes
+> under D.
+
+
 **Date:** 2026-07-31 · **Axis:** ϑ_K gap (`qou-qnnq`, route 2 `qou-awpk`) · **Tier:** structural + measurement (scope-(a)).
 **No c_k wired; nothing fitted; T4 ϑ values consumed as fixed inputs, not re-fitted.**
 **Probe:** [`qbeta_awpk_perwinding_stokes_41_probe.py`](../../computations/probes/qbeta_awpk_perwinding_stokes_41_probe.py)

@@ -141,6 +141,49 @@ def main() -> int:
     check("reduced_cubic_irrational", not rational,
           f"no rational root over p|2, q|16 (found {rational})")
 
+    # 5b. THE SYMBOLIC CHAIN, and an OFF-ROOT test of its constant.
+    #
+    # sextic --(w=z+1/z)--> 16w^3+24w^2-13w+2 --(w=t-1/2)--> 32t^3-50t+25
+    #        --(t=(5/4)u)--> u^3 - u + 2/5     [trinomial, Bring-Jerrard shape]
+    #
+    # so  colourSextic(z) = z^3 * (125/4) * (u^3 - u + 2/5).
+    #
+    # TESTED OFF-ROOT ON PURPOSE. At a root the trinomial is 0, so BOTH sides
+    # vanish for ANY constant and the check is vacuous -- 125/2 (wrong) and
+    # 125/4 (right) both "pass" there at 1e-40. The error was caught by the Lean
+    # identity `QOU.Brings.colourSextic_eq_trinomial_chain`, which quantifies
+    # over all u, and only then reproduced numerically off-root. Formalize-first
+    # earning its place: the natural numeric check could not have found it.
+    def _sextic(zz):
+        return sum(mp.mpf(c) * zz ** (6 - i) for i, c in enumerate(SEXTIC))
+
+    worst = mp.mpf(0)
+    for uu in (mp.mpf(2), mp.mpf(3), mp.mpf(1) / 7, -mp.mpf(5) / 3):
+        tt = mp.mpf(5) / 4 * uu
+        ww = tt - mp.mpf(1) / 2
+        zz = (ww + mp.sqrt(ww ** 2 - 4)) / 2
+        tri = uu ** 3 - uu + mp.mpf(2) / 5
+        worst = max(worst, abs(_sextic(zz) - zz ** 3 * (mp.mpf(125) / 4) * tri))
+    check("symbolic_chain_offroot", worst < mp.mpf("1e-35"),
+          f"max |sextic(z) - z^3*(125/4)*(u^3-u+2/5)| over 4 OFF-ROOT u = "
+          f"{mp.nstr(worst, 6)}  (125/2 gives O(10^2..10^4) here; both pass at a root)")
+
+    # 5c. Cardano: the real root in closed form, and why it forces |z| = 1.
+    def _rcbrt(x):
+        return mp.sign(x) * abs(x) ** (mp.mpf(1) / 3)
+
+    u_card = _rcbrt(-mp.mpf(1) / 5 + mp.sqrt(6) / 45) + _rcbrt(-mp.mpf(1) / 5 - mp.sqrt(6) / 45)
+    tri_res = abs(u_card ** 3 - u_card + mp.mpf(2) / 5)
+    check("cardano_real_root", tri_res < mp.mpf("1e-40"),
+          f"u = -[(1/5-sqrt6/45)^(1/3) + (1/5+sqrt6/45)^(1/3)] = {mp.nstr(u_card, 30)}, "
+          f"trinomial residual {mp.nstr(tri_res, 6)}")
+
+    w_card = mp.mpf(5) / 4 * u_card - mp.mpf(1) / 2
+    check("real_root_forces_unit_circle", abs(w_card) < 2,
+          f"|w| = {mp.nstr(abs(w_card), 20)} < 2, so sqrt(w^2-4) is imaginary and "
+          f"|z|^2 = (w^2 + (4-w^2))/4 = 1 EXACTLY -- the unit-circle pair is forced, "
+          f"not coincidental (Lean: QOU.Brings.normSq_eq_one_of_abs_le_two)")
+
     # 6. THE NEGATIVE: xi = 1/sqrt(2) against the simple invariants of z_c
     zc = [r for r in roots if mp.im(r) > 0 and abs(r) < 1][0]
     xi = 1 / mp.sqrt(2)
@@ -189,6 +232,12 @@ def main() -> int:
         "reduced_cubic": [16, 24, -13, 2],
         "reduced_cubic_discriminant": disc,
         "reduced_cubic_discriminant_factored": "-2^7 * 5^4",
+        "symbolic_chain": "colourSextic(z) = z^3 * (125/4) * (u^3 - u + 2/5), "
+                          "w = z + 1/z = (5/4)u - 1/2",
+        "saddle_trinomial": "u^3 - u + 2/5",
+        "saddle_trinomial_discriminant": "-8/25 = -2^3/5^2",
+        "cardano_real_root": "-[(1/5 - sqrt(6)/45)^(1/3) + (1/5 + sqrt(6)/45)^(1/3)]",
+        "lean": "QOU.Brings.ColourCubicDiscriminant -- 7 theorems, sorry-free, lean-direct exit 0",
         "z_c": {"re": mp.nstr(mp.re(zc), 30), "im": mp.nstr(mp.im(zc), 30)},
         "xi_borel": XI,
         "xi_ratios": {k: mp.nstr(v, 20) for k, v in ratios.items()},
