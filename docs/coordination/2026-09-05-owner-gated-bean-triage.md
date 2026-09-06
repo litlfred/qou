@@ -606,6 +606,36 @@ agents keep hitting the tension one bean at a time, and each resolves it locally
 records `y_(1,1,1) = "0.0"` — i.e. the row cap is **already in the shipped
 numbers**, whichever way you rule.
 
+**🛑 AND THE TRUNCATION FACT IS NOT NEW — IT IS LEAN-PROVED, SORRY-FREE, ON
+`main`, AND FOUR WEEKS OLD.** Corpus-grepped rather than assumed. Bean
+`qou-8iru`, dated **2026-08-09** and titled *"H4/C5 answered: convention D IS
+Temperley-Lieb"*, already carries the whole result — `y_λ = 0` exactly for ≥ 3
+rows, `Σ dim²` over surviving blocks `= Catalan(n)` for `n = 2..7` (2, 5, 14,
+42, 132, 429), and the closed form `y_(n−k,k) = [n−2k+1]_q/[2]_q^n` — with a
+1027-line Lean file, `QOU/QBeta/TemperleyLiebTower.lean`, **0 real sorries**,
+on `main` since 2026-08-29 as far as this shallow clone can see.
+
+Two of its theorems bear directly on D7 and are stronger than anything measured
+overnight:
+
+* `conventionD_kills_antisymmetriser` — `z(q²+1) = q³ ⟹ y₍₁³₎ = 0`.
+* its converse, which **excludes convention C by derivation**: if the
+  antisymmetric weight vanishes then `z = q` or `z(q²+1) = q³`, and
+  `1/(q^{1/2}+q^{-1/2})` is neither root.
+
+So "D is the two-row truncation" is not a fresh probe result to be weighed — it
+is a proved theorem the corpus has held for a month, and D7 rests on it rather
+than on three overnight measurements.
+
+**This is corroboration, not waste, and the additions are real.** Per
+AGENTS.md's parallel-exploration rule, three independent routes to one fact
+strengthen it. `qou-fq0f` reached it through the **Wenzl level** (`Q^r = q⁴ ⇒
+r = 2`, Orellana's row cap) where `qou-8iru` reached it through SU(2)'s
+2-dimensional fundamental — genuinely different mechanisms. `qou-cds1` adds the
+rank indexing `z_N = q^N/[N]_q` and the `b² = [3]_q/[2]_q²` non-semisimplicity
+identification, and `2e00d7b8fa` extends the table from `n = 7` to `n = 18`
+with the per-atom mapping. What none of the three did was cite the Lean.
+
 **Where to check it.** The sibling probes are
 `computations/qbeta/qbeta_c_vs_d_are_different_algebras_probe.py` (5/5) and
 `computations/qbeta/qbeta_tl_truncation_cost_by_atom_probe.py` (4/4); the Wenzl
