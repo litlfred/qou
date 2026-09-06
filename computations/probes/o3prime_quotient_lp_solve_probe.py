@@ -96,6 +96,8 @@ import _path_bridge  # noqa: F401,E402
 import numpy as np  # noqa: E402
 from mpmath import mp  # noqa: E402
 
+from live_channels import is_live  # noqa: E402
+
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
@@ -126,7 +128,16 @@ def main() -> int:
     f1 = f2 = f3 = True
     all_y0_nonzero = True
     for idx, r in enumerate(rows):
-        surv = [p for p in r["per_partition"] if mp.mpf(p["y_lambda"]) != 0]
+        # `is_live`, not `!= 0`.  This read `mp.mpf(p["y_lambda"]) != 0` until
+        # 2026-09-05, which worked only because the pre-regeneration chi caches
+        # serialized the SU(2)-suppressed weights as exact 0; the rebuilt ones
+        # serialize the arithmetic residual (1e-73).  `live_channels.is_live`
+        # is the corpus's existing correct implementation -- DEAD_TOL = 1e-30,
+        # which separates 1e-73 from the 1e-3..1e-1 live weights by forty
+        # orders -- and its docstring settles the definition: "Defined by the
+        # weight, not by the row count".  Third probe found carrying this
+        # proxy; consolidating on the library rather than inventing a cut.
+        surv = [p for p in r["per_partition"] if is_live(mp.mpf(p["y_lambda"]))]
         n = sum(surv[0]["partition"])
         # EXACT from the witness's decimal strings.  These carry the checks and
         # everything serialized; the float64 arrays below exist ONLY because the

@@ -792,3 +792,287 @@ the canonical word indirectly was invisible to it. Worth re-running the sweep
 on a selector that keys on the VALUES (a grouped-era tr_M is recognisable) rather
 than on the import name — the same argument
 `y_lambda_convention_c_fingerprint_audit.py` makes for convention detection.
+Whether `atom_braid_word_3A` should be changed to interleave. That is a
+685-call-site edit that moves every absolute trace in the corpus by `3.8×`–`14.3×`,
+and it needs an owner ruling, not a probe. This measurement is the thing that had
+to come first: it establishes that the fix is *bounded* (one multiplicative
+factor per atom, in closed form) and that the log-ratio surface is not at risk
+either way.
+
+## FIXED (2026-09-05, owner ruling: "fix atom_braid_word_3A now")
+
+`atom_braid_word_3A` now emits `β_Bor` by default. The change is in
+`pyhecke.atom.nucleon_word_letters` — a new WORD-level builder, because
+`nucleon_gen_chains` returns the letters bucketed by generator and therefore
+*structurally cannot* express an interleaving; that is why the bug survived a
+comment (`# B₃ confinement: (σ₀·σ₁⁻¹)³`) sitting directly above the code that
+contradicted it. `intra_order="grouped"` reaches the pre-2026-09-05 word, so
+every published absolute number stays reproducible (verified to `6e-23`, the
+precision of the literal I compared against).
+
+### What the change did to the live suite, measured rather than assumed
+
+- `the_character_ratio_derivation_path_is_the_bond_model_probe` — **numbers
+  bit-identical**: `0.508229789376739`, `0.205135640448650`,
+  `0.311386312072596`, `0.125684152895266`. A live confirmation of the
+  invariance on production code, not a rebuild of it.
+- `the_canonical_mass_trace_factorises_over_the_chain_probe` — 2 of 7 checks
+  went red exactly as predicted (the per-generator factorisation and the Jones
+  product); the bond constants, `L_pp + L_nn`, the 31 % figure and the offset
+  inversion did not move. Both red checks are properties of the GROUPED word,
+  so the probe now asks for it by name. Back to 7/7.
+- `the_canonical_closure_is_a_chain_of_torus_links_probe` — same story, 5/5.
+- float64 gate: **0 new hits** (26 pre-existing in `mass_at_3A_proper.py`,
+  identical count at HEAD; not touched).
+
+### A sharper fact the fix surfaced, which is not just bookkeeping
+
+The chain form — "every generator in exactly one contiguous run", hence a
+linear connected sum of `(2,k)` torus links — is *also* grouped-specific. Under
+`β_Bor` each nucleon's block is the **Borromean rings**: prime, non-split, not a
+torus link. This arc's own stated criterion for where many-body binding could
+live is "a closure that fails to be composite — non-split, prime, with the kind
+of irreducibly multi-component linking the Borromean rings have". The corrected
+word satisfies that criterion — **at the wrong level**. The nucleons are still
+strung on a chain, blocks still overlap in one strand, and `L` is unchanged to
+`~1e-60`. So the Borromean structure is intra-nucleon and buys no many-body
+binding. Recorded in the block, not overstated.
+
+## FORMALISED (2026-09-05): `QOU.Mass.IntraOrderingInvariance`, sorry-free
+
+Owner: "prove assertions in lean." Twelve theorems, all
+`[propext, Classical.choice, Quot.sound]` — no `sorryAx`.
+
+The load-bearing one is **`chainRatio_eq_of_intra`**: given the connected-sum
+input (`tr_M(W_atom) = F · ∏ᵢ(z+dᵢ)`, `tr_M(W_free) = F`), two orderings with
+intra factors `F₁` and `F₂` give the *same* ratio — and **no hypothesis relates
+`F₁` to `F₂`**. That is the point. The measured factors are `14×` apart, and the
+invariance still holds, because it is cancellation rather than a near-miss. Then
+`L_chain_eq_sum_of_intra` / `L_chain_indep_of_intra` carry it to `L` via
+`ChainTraceFactor.neg_log_prod`.
+
+The other half: `chainDiff_scales` proves `F₁(1−P) = (F₁/F₂)·F₂(1−P)`, so
+`binding_canonical`'s difference route scales exactly by the intra ratio, and
+`chainDiff_ne` proves it genuinely differs when `F₁ ≠ F₂` and `P ≠ 1`.
+
+**`grouped_ne_borromean`** settles that the two words are different objects
+without appealing to `q₀` at all: at `q = 1`, where `h = 0` and both are
+elementary, the per-generator product is `1/4` and the Borromean closed form
+(reused from `QOU.BraidsAndKnots.BorromeanMarkovTrace`) is `1`. So the `82 %`
+gap is not a deformation artefact.
+
+### The definitions are pinned to the engine, which is the part that could have been fake
+
+A Lean proof about `groupedConfinement` is worth nothing unless that definition
+IS `tr_M(σ₀³σ₁⁻³)`. Probe §7 checks both against the 200-bit engine:
+
+    groupedConfinement    Lean def 0.1800645395355010983036   rel 1.4e-59
+    borromeanConfinement  Lean def 0.9985621638367872659512   rel 5.0e-60
+
+So the theorems are about the measured words, not lookalike expressions.
+
+### Scope, stated tightly
+
+Connected-sum multiplicativity is **assumed, not proved** — same as
+`ChainTraceFactor`, which says so too. This file proves everything that follows
+from it, and nothing about whether the bond model is *right*: `B = α L` remains
+the open interpretation of `rem:bond-log-ratio-is-a-free-energy`.
+
+### Toolchain note for whoever builds this next
+
+`lake exe cache get` **cannot run in this container**: the elan toolchain ships
+without `libleancpp`/`libLean`, so linking the `cache` executable fails with
+`/usr/bin/ld: cannot find -lleancpp`. Mathlib had to be built from source (3089
+jobs, ~50 min). Nothing is wrong with the repo; budget for it or fix the
+toolchain image.
+
+`QOU.lean` now imports the new module, which also brings
+`QOU.Mass.ChainTraceFactor` under the umbrella — nothing had imported it, so it
+was invisible to every import-walking tool (blueprint, doc-gen) despite being
+compiled by the `globs` target.
+
+## Overclaim corrected at rebase (2026-09-05) — the retraction was right, and it caught me too
+
+The 2026-09-05 ordering work said `atom_braid_word_3A` "emits `β_Bor`" and that
+"each nucleon's block **is** the Borromean rings". Both are wrong, in exactly the
+way the retraction section above names, and they are corrected in the code
+docstrings, the probe docstring and the content block.
+
+- The block is **eleven** letters, two of them averaged, hence not a braid and
+  not `β_Bor` under any arrangement. Only its six-letter confinement **core**
+  changed order.
+- "The block is the Borromean rings" was worse than loose: a block with averaged
+  letters has no single closure at all — `tr_M` of it is a weighted sum of
+  branch closures — so there is no link to identify.
+- The follow-on claim that the corrected block therefore satisfies this arc's
+  "non-split, prime, irreducibly multi-component" criterion is **withdrawn**. It
+  fails twice: a weighted sum of closures is not one link, and containing
+  `β_Bor` as a subword is not being prime. What is measured is only that `L` is
+  unchanged to `~1e-60`.
+
+The measurements were never affected — probe §2 rebuilds both arrangements and
+reproduces `atom_braid_word_3A`'s own trace to `1e-60` under each, and the
+retraction's `1.145759692457300869689082` is the same number as this bean's
+`R_quark grouped` proton. It was the *prose* that outran them, which is the
+identical failure the retraction records one section up. Twice in one day on one
+bean is the signal: **do not name an object from how it was constructed.**
+
+## 🛑 THE 5.045e-4 RESIDUAL WAS A COINCIDENCE — this bean's founding number is retracted
+
+Found at rebase, because fixing the ordering made
+`nf_vs_canonical_word_order_probe` go **3/5**. The failure was correct and the
+probe was wrong.
+
+**This bean concluded "the A=1 residual IS the word order". Withdrawn.**
+Decomposed at 200 bits:
+
+    grouped intra, no electron   (pre-fix canonical)  1.1457596924573008697
+    interleaved intra + electron (the NF route)       1.1463376906350050736
+      -> rel 5.044672e-04                             the "known residual"
+
+    grouped intra + electron                          1.5534762115753358114
+      -> ordering alone, electron held fixed:  6.38x
+    interleaved intra, no electron (canonical now)    0.6293284022029219182
+      -> electron alone, ordering held fixed:  0.82
+
+`build_atom_nf` adds `Z` electron crossings on gen 1; `atom_braid_word_3A`
+deliberately does not — it is the **nucleus**. So the two routes differed by
+**both** the ordering and the electron, and two large unrelated discrepancies
+landed within `5e-4` of each other. `build_atom_nf_mp(1,0)` is now verified to
+be exactly `atom_braid_word_3A(1,0)` plus one `σ₁⁻¹`, to `1e-40` — 25 digits
+agreeing, so this is identification, not a fit.
+
+The ordering fix removed one term and exposed the other at full size. That is
+why the probe went red, and the red was informative.
+
+### How it survived a day: a hardcoded transcription
+
+Check 4 compared the canonical word against a **hardcoded** `nf_seq` literal
+transcribed from `build_atom_nf`'s source — and that transcription omitted the
+electron. So it asserted "same multiset, different order" against a word whose
+trace it does not reproduce. Nobody noticed because the two errors cancelled
+into a plausible-looking `5e-4`.
+
+**Third instance on this bean of the same error class** — naming an object from
+how it was constructed rather than instrumenting it. The first two are recorded
+above; this one had been passing CI. The rule that keeps failing to stick:
+*if a probe prints a word, it must have obtained that word from the producer,
+not from reading the producer.* Both checks are now measurements, 5/5.
+
+### What is NOT retracted
+
+The ordering finding itself. `(σ₀σ₁⁻¹)³` is still `β_Bor` to `7e-61`, the
+grouped arrangement is still `82 %` away, and the two arrangements still give
+production blocks differing by `6.38×` at `A = 1`. What changes is the *story
+about the residual*: it was never evidence for the ordering, because it was
+never a pure ordering effect. The ordering finding rests on the Lean closed
+form, which is untouched by any of this.
+
+## GATED (2026-09-05): `scripts/word-provenance-gate.py`
+
+Three instances of the same error on one bean in two days, one of them green in
+CI — that is a gate, not another bean note. Owner: "add the gate."
+
+**What it catches.** A hardcoded braid word — a list of 2- or 3-tuple crossing
+letters, including `+`/`*` forms — assigned to a name, in a file that also
+references a word producer or a Markov-trace entry point. Escape hatch
+`# word-literal-ok: <reason>`, which may head a multi-line provenance note.
+
+**The mechanism is the annotation, not the detection.** Writing down *why* a
+literal is trustworthy is the moment the author looks for the electron. An
+annotation reading "transcribed from `<producer>`" is the defect restated, and
+the gate's message says so.
+
+### Validated against the real defect, not a mock
+
+Run against the actual committed `nf_vs_canonical_word_order_probe.py` at
+`08cb80478a9`, it flags `nf_seq` at line 182. **The gate would have caught the
+thing that shipped green.**
+
+### Precision: 151 -> 20, by narrowing three times
+
+The first predicate fired on every isotope table in the corpus (`(Z, N)` pairs,
+`("2H", 1, 1)` rows, decay tables). A gate at 151 hits, mostly noise, is one
+nobody can adopt. Narrowed to three routes — word-ish NAME, crossing-string
+VOCABULARY, `(c, d, gen)` SHAPE in a file naming a trace — with a `tabular`
+exclusion for literals carrying non-crossing strings. Every surviving hit is a
+genuine word literal.
+
+### The self-test caught me twice, which is the point of having one
+
+- The escape hatch silently did not work for a marker heading a multi-line
+  comment block — the shape a real provenance note takes. Found because my own
+  annotation failed to suppress its hit.
+- **The first negative control did not discriminate.** Deleting the whole NAME
+  route left the self-test green, because the known positive `nf_seq` was also
+  caught by the crossing-string route. A self-test with one known positive
+  proves only that *something* matches. Now each route has its own positive, and
+  all five negative controls (disable NAME / TOKEN / SHAPE / detection / the
+  tabular exclusion) fail the self-test as they must.
+- The self-test count is derived, not written down: a hardcoded `4/4` was wrong
+  within an hour, which is the same stale-literal failure the gate is about.
+
+### Wiring, and why it is not blocking on the whole tree
+
+`.github/workflows/word-provenance-gate.yml` is **diff-scoped and blocking**,
+exactly as `probe-float64-gate.yml` is and for the same reason. It stops the
+number growing.
+
+`scripts/precision-gates.sh` carries it **advisory**, red at 20, to keep the
+backlog visible. Those 20 are essentially all legitimate first-principles
+constructions (`(σ₀σ₁⁻¹)³` and friends) that need a one-line annotation — and
+they are deliberately **not** bulk-annotated here: writing "trustworthy
+because…" for a file I have not read is the same defect the gate catches. Drain
+per file, by whoever owns it. Two are annotated, in the probe I actually worked.
+
+### What it does not reach
+
+Prose. Instances 1 and 2 were sentences in a bean and a docstring, and no static
+check touches those. The gate narrows the class; the rule still stands — **if
+you state what word a producer emits, you must have called it.**
+
+
+## 2026-09-05 — a CONSUMER THAT STOPS, not one that scales: the alternating word
+## is non-monotone and `reduced_block_kernel` refuses it
+
+Found while sweeping the downstream of the chi-cache regeneration (`qou-92u9`),
+which this ruling made necessary.  Recorded here because it is a consequence of
+the ordering change, not of that bean.
+
+`reduced_block_kernel.chi_all_lambda_reduced_block` (line ~147) raises
+
+    ValueError: non-monotone word: gen {g} after {last}
+
+when a word's generator indices are not non-decreasing.  Measured directly on
+`atom_braid_word_3A` under both orderings:
+
+    atom       grouped monotone   borromean monotone
+    proton           True               False
+    deuteron         True               False
+    tritium          True               False
+    helium-3         True               False
+    helium-4         True               False
+
+**Every atom, both directions.**  So for this route the ordering change is not a
+factor to divide out — the code refuses the input.  `he3_pairknot_composite_lp`
+is the producer that hits it.
+
+**This is the executable form of a fact this bean already records.** The
+blast-radius section notes that `rem:canonical-trace-factorises-over-chain`'s
+per-generator form *"assumes the grouped ordering — it needs each generator's
+letters contiguous"*, and measured the factorisation failing by 2.8x (A=2) to
+13.3x (A=4).  Contiguity of each generator's letters **is** monotonicity of the
+generator sequence.  The bean measured the identity degrading; this is a
+consumer that halts on the same premise.
+
+**Why it is worth adding rather than folding into that note.** The existing
+entry frames the consequence as an accuracy claim about one stated identity,
+with the arc's conclusion "unaffected" because it rests on connected sum.  That
+is right for the identity.  It does not predict that a *producer* becomes
+unrunnable, which is a different kind of cost and lands on a different owner.
+
+**Not fixed here.**  Whether `reduced_block_kernel` should be generalised to
+non-monotone words, or whether its callers should be re-routed, is a design
+question for whoever owns that module.  Tracked as an open item on
+`qou-92u9`'s sweep triage; noted here so the ordering ruling carries its own
+consequence.

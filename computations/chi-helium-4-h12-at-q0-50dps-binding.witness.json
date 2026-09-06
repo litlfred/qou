@@ -1,6 +1,6 @@
 {
   "computation": "chi-helium-4-h12-at-q0-50dps-binding",
-  "description": "Lossless per-\u03bb \u03c7^\u03bb(\u03b2_atomic(2,2))=\u2074He in the BINDING (color-weighted averaged-crossing) convention at q_0, all 77 \u03bb\u22a212, via the dim-independent Rust binding character (mpfr-50dps-rust-binding-atomic). No dim\u00d7dim seminormal (matrix-M is infeasible at n=12). Resolves the partial binding cache (bean b0vf, was 27/77). Gated against the f64 Rust binding character on the same word/\u03b4 (the MPFR path must extend f64 to the f64 floor); the legacy matrix-M 50-dps witness predates the 2026-06-29 \u03b4 de-wire and is a wrong-\u03b4 reference (~2.6e-6 off).",
+  "description": "Lossless per-λ χ^λ(β_atomic(2,2))=⁴He in the BINDING (color-weighted averaged-crossing) convention at q_0, all 77 λ⊢12, via the dim-independent Rust binding character (mpfr-50dps-rust-binding-atomic). No dim×dim seminormal (matrix-M is infeasible at n=12). Resolves the partial binding cache (bean b0vf, was 27/77). Gated against the f64 Rust binding character on the same word/δ (the MPFR path must extend f64 to the f64 floor); the legacy matrix-M 50-dps witness predates the 2026-06-29 δ de-wire and is a wrong-δ reference (~2.6e-6 off).",
   "producer": "chi-q-atomic-binding-lossless",
   "convention": "bring_color_weighted-averaged-crossings",
   "precision": "mpfr-50dps-rust-binding-atomic",
@@ -19,7 +19,7 @@
   "gate_vs_f64_atomic_same_word_max_rel": "3.5430432e-14",
   "gate_n_ref": 77,
   "tr_M_at_q0": "0.160974145442407381825873440980716853923607354133437712352866",
-  "compute_time_sec": 1925.53,
+  "compute_time_sec": 656.66,
   "by_partition": [
     {
       "partition": [
@@ -154,7 +154,7 @@
         4,
         1
       ],
-      "chi_lambda": "1.692283115316047960836900352398012654554911515133",
+      "chi_lambda": "1.6922831153160479608369003523980126545549115151331",
       "y_lambda": "0.0",
       "contribution": "0.0"
     },
@@ -410,7 +410,7 @@
         2,
         2
       ],
-      "chi_lambda": "1.3324670695047317581719299734538231951319133898683",
+      "chi_lambda": "1.3324670695047317581719299734538231951319133898684",
       "y_lambda": "0.0",
       "contribution": "0.0"
     },
@@ -447,7 +447,7 @@
         2,
         1
       ],
-      "chi_lambda": "38.567953005190941872223270746244741274000749834697",
+      "chi_lambda": "38.567953005190941872223270746244741274000749834698",
       "y_lambda": "0.0",
       "contribution": "0.0"
     },
@@ -460,7 +460,7 @@
         1,
         1
       ],
-      "chi_lambda": "-9.2630245623488484366728607433150815574021046632939",
+      "chi_lambda": "-9.263024562348848436672860743315081557402104663294",
       "y_lambda": "0.0",
       "contribution": "0.0"
     },
@@ -521,7 +521,7 @@
         2,
         2
       ],
-      "chi_lambda": "9.6630100901536107308302288866704632500616889695985",
+      "chi_lambda": "9.6630100901536107308302288866704632500616889695986",
       "y_lambda": "0.0",
       "contribution": "0.0"
     },
@@ -594,7 +594,7 @@
         1,
         1
       ],
-      "chi_lambda": "18.713813449919925701309011782134959668100375668904",
+      "chi_lambda": "18.713813449919925701309011782134959668100375668903",
       "y_lambda": "0.0",
       "contribution": "0.0"
     },
@@ -753,7 +753,7 @@
         1,
         1
       ],
-      "chi_lambda": "0.63598318393871483041603925433975204765410295319744",
+      "chi_lambda": "0.63598318393871483041603925433975204765410295319745",
       "y_lambda": "0.0",
       "contribution": "0.0"
     },
@@ -959,8 +959,5 @@
       "y_lambda": "0.0",
       "contribution": "0.0"
     }
-  ],
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+  ]
 }
