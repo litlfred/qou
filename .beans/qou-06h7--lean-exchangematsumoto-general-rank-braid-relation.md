@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-19T02:57:13Z
-updated_at: 2026-09-06T04:33:12Z
+updated_at: 2026-09-06T06:44:36Z
 ---
 
 ## Measured 2026-09-05 (branch claude/hecke-cyclicity-markov-2026-09-05, PR #6845)
@@ -171,3 +171,30 @@ Both sorry-free; `braidEquiv_length_eq` needs only `[propext]`.
 `BraidWordInvariance.lean`'s two misleading passages are corrected in the same
 PR (#6894). **Matsumoto itself is still open** — this changes which conditional
 the corpus offers, not whether the input exists.
+
+
+## 2026-09-06 — antisymmetry of the Bruhat order closes (same PR #6894)
+
+`QOU/Machinery/CoxeterBruhatOrder.lean` spends the deletion consequence on the
+sibling's deferred list. `CoxeterBruhat` names four things it does not prove —
+transitivity, antisymmetry, the subword property, lifting — saying "each needs
+the exchange condition". **One of the four now closes.**
+
+* `bruhatLe_reduced_witness` — the witnessing subword may always be taken
+  **reduced** (a subword of a reduced word need not be). This is where
+  `exists_reduced_sublist'` is spent.
+* `eq_of_bruhatLe_of_length_le` — `u ≤ w` with `ℓ(w) ≤ ℓ(u)` forces `u = w`,
+  by a length squeeze: `ℓ(u) ≤ |ω'| ≤ |ω| = ℓ(w) ≤ ℓ(u)`, so the sublist has
+  full length and `List.Sublist.eq_of_length` makes it the host.
+* **`bruhatLe_antisymm`** — antisymmetry.
+* `bruhatLe_one_iff`, `not_bruhatLe_of_length_lt`.
+
+All sorry-free, `[propext, Classical.choice, Quot.sound]`.
+
+**Why the other three do NOT follow, stated in the file.** Transitivity is not
+a corollary: from `v ≤ w` you get a reduced word for `w` with a (now reduced)
+subword for `v`; from `u ≤ v` you get a reduced word for `v` — but **another
+one**, and nothing says two reduced words for the same element are
+interchangeable. That is the subword property, equivalent in strength to
+Matsumoto. So the four split cleanly: antisymmetry needed only length
+bookkeeping; transitivity, subword and lifting all wait on Matsumoto.
