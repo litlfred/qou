@@ -178,13 +178,31 @@ QOU.BraidsAndKnots.YoungDiagramTailFirstInstance | QOU.BraidsAndKnots.YoungDiagr
 QOU.BraidKnot.SYTEncodingBridgeTwo | QOU.BraidKnot.SYTEncodingBridge.numSYT_eq_numStandardYoungTableaux | sorryAx-free-expected-clean-alias
 QOU.BraidKnot.SYTEncodingBridgeTwo | QOU.BraidKnot.SYTEncodingBridge.numStandardYoungTableaux_le_numSYT | clean
 
-# --- known-BAD: the RSK identity and everything reindexed from it ---
-# The real gap is upstream (RegularRepBlockTrace's sorry on the specialised
-# lemma, plus the Specht-core cone: 16 of 23 modules carry sorry).
-QOU.BraidKnot.OVTopAssembly | QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial | sorryAx
-QOU.BraidKnot.RSKBurnsideDischarge | QOU.BraidKnot.RSKBurnsideDischarge.rskBurnsideHolds | sorryAx
-QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.sum_sytDim_sq_eq_factorial | sorryAx
-QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.nuV_top_closed_form_unconditional | sorryAx
+# --- the RSK identity and everything reindexed from it: PROMOTED 2026-09-06 ---
+# Recorded `sorryAx` since 2026-08-07, when the gap was upstream
+# (RegularRepBlockTrace's sorry on the specialised lemma, plus the Specht-core
+# cone: 16 of 23 modules carried sorry). That gap is closed. Re-measured
+# 2026-09-06 (bean qou-1knw), all four report exactly
+# [propext, Classical.choice, Quot.sound].
+#
+# READ THE NEXT PARAGRAPH BEFORE CITING ANY OF THESE.
+#
+# All four carry `[SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ]`. That
+# binder now HAS an instance -- `SnIsotypicSpechtSplitInstance.instSnIsotypicSpechtSplit`,
+# itself clean -- so unlike the 2026-08-23 situation these are established and
+# not merely conditional. But the instance is built FROM
+# `QOU.Mathlib.rskBurnsideHolds` (Schensted, unconditional, no binder), so these
+# four are DERIVATIVE: citing one as the source of the RSK identity is circular,
+# as `RSKBurnsideDischarge.lean`'s own docstring says. The independent statement
+# is `QOU.Mathlib.rskBurnsideHolds`.
+#
+# Why this sat stale for a month: the guard could not run at all. It exits 2 when
+# any olean in its cone is missing or stale, and ~104 of its modules were --
+# including two that had NEVER been built. See bean qou-1knw.
+QOU.BraidKnot.OVTopAssembly | QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial | clean
+QOU.BraidKnot.RSKBurnsideDischarge | QOU.BraidKnot.RSKBurnsideDischarge.rskBurnsideHolds | clean
+QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.sum_sytDim_sq_eq_factorial | clean
+QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.nuV_top_closed_form_unconditional | clean
 
 # --- fibration exactness (bean qou-de7r, item 2 of qou-pan0) ---
 # Measured 2026-08-24. The topological half of the homotopy LES, and only the
