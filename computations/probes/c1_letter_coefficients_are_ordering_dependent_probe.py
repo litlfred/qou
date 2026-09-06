@@ -92,13 +92,17 @@ CASES = (("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2)),
 # on main gives pp 1/8, pn 1/16, nn 0, T 1/64, 3He 1/8, and those five are what
 # the closed form is tested against.
 #
-# 🛑 THE 4He BORROMEAN ROW IS A PREDICTION, NOT A MEASUREMENT, AND ITS TEST IS
-# THEREFORE CIRCULAR. 7/128 is what the closed form gives at (a,b) = (3,-2);
-# putting it here means that row checks nothing. It is kept so the table is
-# complete and the prediction is on the record to be falsified: the 4He case is
-# n = 12 and takes ~10 min, and the confirming run had not returned when this was
-# written. Read the borromean line as 5 tested + 1 asserted until a measured 4He
-# lands. The grouped 4He row (259/128) is a real test and does pass.
+# 4He: PREDICTED 7/128 from the closed form at (a,b) = (3,-2) BEFORE it was
+# measured, then CONFIRMED by the n=12 run — twice over, since that probe
+# computes it two independent ways and both agree:
+#
+#     4He  A=4   a0=c0 = 7/128   c1 exact = 7/128   c1 [permutation count] = 7/128
+#
+# An earlier revision of this file marked that row circular, because the
+# confirming run had not returned when it was written. It has; the row is a real
+# test and the caveat is withdrawn. Recorded rather than quietly deleted: the
+# prediction came first, which is the only reason it is worth anything.
+
 TARGETS = {
     "grouped": {"pp": F(19, 8), "pn": F(37, 16), "nn": F(9, 4),
                 "T": F(163, 64), "3He": F(85, 32), "4He": F(259, 128)},
