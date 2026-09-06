@@ -26,9 +26,15 @@ delivered in the form they are consumed in.
 
 The chain to Matsumoto's theorem — any two reduced expressions for the same `w` are related
 by braid moves — runs *exchange → deletion → Matsumoto*. The first was already here; this
-file supplies the second. **The third is still open**, and is what
-`QOU.IwahoriHecke.BraidWordInvariance.exists_Tw_of_braidEquiv` still takes as a named
-hypothesis. Nothing here closes that, and nothing here should be read as closing it.
+file supplies the second. **The third is still open.**
+
+The conditional that consumes it is `QOU.IwahoriHecke.TwMatsumoto.exists_Tw_of_matsumoto`.
+Not `BraidWordInvariance.exists_Tw_of_braidEquiv`, which quantifies over *all* words and whose
+hypothesis is therefore **false** on a Coxeter group — refuted in the same tranche by
+`TwMatsumoto.not_braidEquiv_hypothesis`, since braid moves preserve word length while
+`π [i,i] = π []`.
+
+Nothing here closes Matsumoto, and nothing here should be read as closing it.
 
 ## The proof, and why it is short
 
