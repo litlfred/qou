@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T11:52:20Z
-updated_at: 2026-09-06T11:52:20Z
+updated_at: 2026-09-06T11:59:31Z
 ---
 
 OPENED 2026-09-06 from the owner proposal: "if we fix on brings, then every
@@ -36,3 +36,43 @@ CAUTION carried from the same audit: a Farey/flip story on a SURFACE is
 moves. The two connect through BUNDLES over the surface, which is exactly what
 the first row above is. Keeping that distinction is what makes the route
 checkable rather than suggestive.
+
+## SEARCHED 2026-09-06 — NOT FOUND. Scope-(a), stated precisely.
+
+SURFACE SEARCHED:
+  (i)  full held library, BOTH sections/ and ocr/ tiers, for "Hecke group":
+       EXACTLY ONE hit -- arxiv-2402.08782v1, the Bring paper itself -- and it
+       scores ZERO on triangulation vocabulary (ideal triangulation / layered /
+       tetrahedr / 3-manifold).
+  (ii) 8 held docs carry layered-triangulation vocabulary (4geo-dedi-rev,
+       angled-survey, arxiv-0808.2716v4, arxiv-1303.5278v1, arxiv-1604.02688v1,
+       arxiv-2601.05136v2, arxiv-2604.16077v1, topologicalinvariance3dindex).
+       NONE of them mentions a Hecke group.
+  (iii) one targeted web search.
+
+RESULT: the two literatures are DISJOINT across everything searched. The
+layering program (Akiyoshi, Lackenby, Gueritaud; an early special case of Agol's
+veering triangulations) runs on the FAREY GRAPH OF THE MODULAR GROUP -- once-
+punctured torus bundles, 4-punctured sphere bundles, two-bridge links, layered
+solid tori. "Farey maps associated with Hecke groups" DO exist as a body of
+theory, but nothing found carries an H_4 Farey word to a layered ideal
+triangulation of a 3-MANIFOLD.
+
+SCOPE-(a), NOT (b). This is "not found across the held library plus one targeted
+search", NOT "no such theorem exists". What would separate them: a systematic
+read of the Hecke-group Farey-map literature. Worth noting H_q is ARITHMETIC
+only for q = 3, 4, 6 -- so H_4 being arithmetic means an analogue is not
+obviously excluded on those grounds.
+
+TWO ACQUISITION REQUESTS, neither held:
+  * arXiv:2108.09349 "Geometric triangulations of a family of hyperbolic
+    3-braids". DIRECTLY on triangulating BRAID CLOSURES, which is exactly
+    qou-eptr question 2 (are the per-atom closures hyperbolic?). Higher value
+    to this arc than the H_4 question itself.
+  * arXiv:math/0406242 Gueritaud (appendix Futer), "On canonical triangulations
+    of once-punctured torus bundles and two-bridge link complements" -- the
+    PRIMARY source for both rows of the audit's §9 family table, currently
+    cited only indirectly via FKP arxiv-0808.2716v4. Note `futer-gueritaud-
+    angled` is already a references.ts key, so the author is cited but this
+    paper is not held.
+
