@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-05T09:58:53Z
-updated_at: 2026-09-06T07:00:55Z
+updated_at: 2026-09-06T07:16:38Z
 ---
 
 ## 2026-09-05 — measured: they are DIFFERENT OBJECTS, not a disagreement about a number
@@ -118,3 +118,46 @@ disputants.
 content, because the sibling audit cited two of these very sites at paths that
 resolve to nothing (`mass-theory/atomic-braid.md`, bare `hecke_3a_weights.py`)
 while the claims themselves were true.
+
+
+### 2026-09-06 — the strand-count reading is not cosmetic: it moves `qou-q6pp`'s leading explanation
+
+The entry above frames three live strand counts as a **naming** problem. It is
+not only that, and here is the counter-example — one of the three readings is
+**not interchangeable** with the others.
+
+`qou-q6pp` (status `todo`, unclaimed since 2026-08-25) offers, as the better of
+its two candidate explanations for the wrong-signed p-n splitting: the three-Φ
+formula is leading-order, exact only while the three extremal blocks (sym, std,
+alt) exhaust the partitions of `n`; `n = 3` is the unique such `n`; and D is the
+only right-signed atom. **The force of it is a coincidence** — the uniquely-exact
+`n` is occupied by the uniquely right-signed atom. The bean computes `n = A+Z`
+throughout, because `thm:wedderburn-mass-formula` says `H_{A+Z}(q)`.
+
+`p(3) = 3` is the only partition count equal to the extremal count, so the whole
+argument turns on **which atom has `n = 3`**:
+
+| reading | atom at `n = 3` | its verdict in `qou-q6pp` | the coincidence |
+|---|---|---|---|
+| `A+Z` | **D** | RIGHT sign (1.448) | **holds** |
+| `3A` | **H-1** | over-specified, 5e5 off | **inverts** — lands on its worst point |
+| `3A+Z` | *(none)* | — | **evaporates** — `3A+Z = 3` needs `Z = 0` |
+
+So `3A` would move that bean's leading explanation onto its own worst data
+point, and `3A+Z` would remove the explanation's subject entirely. The three
+readings also differ at **every** atom in its five-atom sample (H-1, D, T, ³He,
+⁴He).
+
+**What this does NOT claim.** The p-n sign is unresolved and `qou-q6pp` stays
+open and unclaimed — I did not take it. No vote is cast on which reading is
+right; that stays with the author. And the bean's argument is **not refuted**:
+under the reading it uses, which its own source theorem states, it stands.
+
+**What it establishes** is only that "three counts, pick one later" understates
+the cost. The naming decision on this bean now has a priced consequence outside
+naming.
+
+Probe: `computations/probes/q6pp_unique_n_is_reading_dependent_probe.py`, 10/10,
+exit 0. Exact integer partition DP and integer strand arithmetic; no witness.
+Check 2 reproduces `qou-q6pp`'s own `n` column at 5 of 5 atoms before departing
+from it, so the departure is not an artifact of a differently-built table.
