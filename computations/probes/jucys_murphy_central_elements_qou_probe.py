@@ -59,7 +59,7 @@ from mpmath import mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
 from hecke_character_symbolic import standard_young_tableaux  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 
 def _partitions_of(n: int):
@@ -175,11 +175,15 @@ def main() -> int:
                 total_ell_tests += 1
                 per_ell.append({
                     "ell": ell,
-                    "P_ell_diagonal_first_entry": float(
-                        e_ell_per_syt[0]),
-                    "closed_form_c_ell": float(closed),
-                    "centrality_residue": float(max_pairwise),
-                    "closed_form_residue": float(closed_form_residue),
+                    # `fmt`, not `float`. These residues sit at the
+                    # arithmetic floor (~1e-70 at the current dps); binary64
+                    # holds that magnitude but only 17 of its digits, so the
+                    # record could not distinguish one floor from another --
+                    # which is the whole content of the claim being made.
+                    "P_ell_diagonal_first_entry": fmt(e_ell_per_syt[0]),
+                    "closed_form_c_ell": fmt(closed),
+                    "centrality_residue": fmt(max_pairwise),
+                    "closed_form_residue": fmt(closed_form_residue),
                 })
 
             results.append({
@@ -200,22 +204,28 @@ def main() -> int:
             "matches the closed form c_ℓ(λ) = e_ℓ({q^{2c(□)} : "
             "□ ∈ λ}).  Uses JM-eigenvalue diagonal action on the "
             f"Hoefsmit basis.  Tested across {19} irreps (3 + 5 + "
-            "11 partitions of n = 3, 4, 5).  All residues at "
-            "~1e-50 (mpmath 50 dps)."
+            "11 partitions of n = 3, 4, 5).  Residues are at the "
+            "arithmetic floor and are therefore a statement about "
+            "the working precision, not about the mathematics: see "
+            "max_centrality_residue / max_closed_form_residue, "
+            f"measured at the live compute precision (mp.dps = "
+            f"{mp.dps}). The previous wording, '~1e-50 (mpmath "
+            "50 dps)', was written when the default was 50 dps and "
+            "was stale by 20 orders once the floor moved to 70."
         )
         .set_content_block("prop:jucys-murphy-central-elements-qou")
         .add_parameter("q_0_50dps", Q_50_DIGIT_STR)
         .add_parameter("total_irreps_tested", total_irreps_tested)
         .add_parameter("total_ell_tests", total_ell_tests)
         .add_parameter("max_centrality_residue",
-                       float(max_centrality_residue))
+                       fmt(max_centrality_residue))
         .add_parameter("max_closed_form_residue",
-                       float(max_closed_form_residue))
+                       fmt(max_closed_form_residue))
         .add_data("per_irrep_per_ell_results", results)
         .add_assertion(
             name="P_ell_is_central_scalar_on_V_lambda",
             computed=max_centrality_residue,
-            expected=0.0, tolerance=1e-40,
+            expected=mp.mpf(0), tolerance=mp.mpf("1e-40"),
             unit=(
                 "max over (λ, ℓ, SYT pair) of "
                 "|e_ℓ(J_1(T), …) − e_ℓ(J_1(T'), …)|  on V_λ"
@@ -230,7 +240,7 @@ def main() -> int:
         .add_assertion(
             name="P_ell_scalar_matches_closed_form_c_ell",
             computed=max_closed_form_residue,
-            expected=0.0, tolerance=1e-40,
+            expected=mp.mpf(0), tolerance=mp.mpf("1e-40"),
             unit=(
                 "max over (λ, ℓ) of |e_ℓ(JM eigenvalues for any SYT) "
                 "− e_ℓ({q^{2c(□)} : □ ∈ λ})|"
@@ -260,7 +270,9 @@ def main() -> int:
         for pe in r['per_ell']:
             print(f"  {r['n']:<3} {r['shape']:<20} "
                   f"{r['dim_V_lambda']:<5} {pe['ell']:<3} "
-                  f"{pe['closed_form_c_ell']:<22.12f}")
+                  # `closed_form_c_ell` is now a `fmt` string; float() here
+                  # is display only.
+                  f"{float(pe['closed_form_c_ell']):<22.12f}")
     return 0
 
 
