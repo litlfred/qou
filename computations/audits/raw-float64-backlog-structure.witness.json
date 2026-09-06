@@ -1,0 +1,136 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-06T11:10:15.010804+00:00",
+  "commitSha": "1352b02c29b031532ad552c59fca50e68b914683",
+  "assertions": [
+    {
+      "name": "assertion_api_is_not_a_central_lever",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "589 of 36945 non-integral float leaves sit under .assertions[] (1.59 %). Stated as a predicate (under 5 %) so the witness summary reports a pass for a measured negative rather than FAILURES."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4726,
+  "computation": "raw-float64-backlog-structure",
+  "scriptFile": "raw_float64_backlog_structure.py",
+  "scriptHash": "89721c4a79a8",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/raw_float64_backlog_structure.py"
+    ],
+    "reproduce": "python3 -u computations/audits/raw_float64_backlog_structure.py"
+  },
+  "description": "Bean qou-oots. Asks whether the raw-float64 backlog (33,702 fields / 1015 witnesses after the 2026-09-06 ratchet) is reachable by a CENTRAL fix, and answers NO with the measurements. Records that the obvious candidate -- WitnessBuilder.add_assertion, whose `expected`/`computed` are the most WIDESPREAD dirty leaf names -- is a false lead twice over: integral floats are excluded from the count and were inflating that ranking ~3x (assertions are 1.6 % of non-integral leaves), and the `_tolerance_literal` mechanism cannot be generalised to `expected` because the significant-digit bimodality that justifies its cut does not exist there. Reports where the work actually is, by producer bucket, so a campaign has a starting point.",
+  "data": {
+    "population": {
+      "baselined_witnesses": 1015,
+      "witnesses_scanned": 1015,
+      "non_integral_float_leaves": 36945,
+      "distinct_leaf_names": 4192,
+      "note": "Integral floats are EXCLUDED, matching the audit's own `_count(integral_is_exact=True)`. Counting them measures a different population and inflates every name ranking."
+    },
+    "central_fix_candidates": {
+      "under_assertions_pct": "1.59",
+      "under_assertions_count": 589,
+      "solver_output_names_pct": "10.29",
+      "solver_output_names_count": 3801,
+      "integral_excluded_in_assertions": {
+        "expected": 556,
+        "computed": 291,
+        "tolerance": 129
+      },
+      "verdict": "The assertion API is 1.6 % of the backlog, NOT a lever. Solver output is 10.3 % and is float64 because scipy and Clarabel are -- not a serialization slip, and not fixed by carrying mpf to the boundary."
+    },
+    "sig_digit_histograms": {
+      "expected": {
+        "1": 9,
+        "2": 20,
+        "3": 29,
+        "4": 36,
+        "5": 19,
+        "6": 4,
+        "7": 10,
+        "8": 25,
+        "9": 8,
+        "10": 3,
+        "11": 7,
+        "12": 7,
+        "13": 2,
+        "15": 3,
+        "16": 17,
+        "17": 10
+      },
+      "computed": {
+        "1": 3,
+        "2": 8,
+        "3": 15,
+        "4": 17,
+        "5": 3,
+        "6": 3,
+        "7": 7,
+        "8": 27,
+        "9": 2,
+        "10": 2,
+        "11": 7,
+        "12": 5,
+        "13": 2,
+        "14": 1,
+        "15": 11,
+        "16": 113,
+        "17": 90
+      },
+      "tolerance": {
+        "7": 5,
+        "8": 14,
+        "9": 6,
+        "16": 13,
+        "17": 11
+      }
+    },
+    "why_tolerance_mechanism_does_not_generalise": {
+      "tolerance_has_empty_bin_at_6": "per _tolerance_literal's docstring, which is what makes its cut a cluster boundary rather than a tuned knob",
+      "expected_has_no_empty_bin": "measured here; smeared across sig 1-17",
+      "conclusion": "Extending _tolerance_literal to `expected` would require choosing a threshold with no empirical boundary -- exactly what that docstring declines to do. The mechanism is correct where it is and must not be generalised on the analogy alone."
+    },
+    "where_the_work_is": {
+      "B. mpmath, no fmt": {
+        "files": 456,
+        "fields": 14867
+      },
+      "A. no mpmath at all": {
+        "files": 181,
+        "fields": 8600
+      },
+      "unresolved producer": {
+        "files": 297,
+        "fields": 8181
+      },
+      "C. mpmath AND fmt, still dirty": {
+        "files": 81,
+        "fields": 2054
+      },
+      "reading": "B is where the mass is and is the more tractable half: the arithmetic is already mpmath and only the write is missing, so routing it through `fmt` is mechanical. It is a CANDIDATE class, not a guaranteed one -- `import mpmath` does not establish that the DIRTY LEAF was computed in mpf, so confirm per producer. A is expensive under any reading: the computation itself is f64, so changing it moves recorded numbers. 'unresolved producer' is this script's resolver, not necessarily a defect class.",
+      "predicate_correction": "The first run of this audit had B and C swapped (C read 463 files / 15,189 fields against a true 81 / 2,054) because binds_fmt asked `\"_precision import\" in src`, a substring that `from _precision import set_compute_dps` satisfies without binding fmt. 377 producers were misfiled and the audit's own recommendation about where to start was inverted. Now an AST walk -- see binds_fmt."
+    }
+  }
+}
