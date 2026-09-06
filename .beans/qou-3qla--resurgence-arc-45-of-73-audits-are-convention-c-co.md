@@ -73,3 +73,47 @@ accuracy claim on it.
 
 Not measured: whether anything downstream consumes `A(q₀) ≈ 2.46`. Twelve other
 audits mention it; not triaged.
+
+---
+
+## Measured the Bring side directly (2026-09-06) — four new structural facts, one negative
+
+Probe: [`computations/probes/colour_cubic_discriminant_structure_probe.py`](../computations/probes/colour_cubic_discriminant_structure_probe.py),
+**9/9**, all `mpmath` + exact integer arithmetic, 0 NEW dirty on the ratchet.
+
+`docs/picard-lefschetz-plan.md` records exactly one fact about the discriminant
+locus: the roots are all complex, and the pair nearest `z₀ = 0.104` is
+`z_c ≈ 0.106 ± 0.937i`. Four more fall straight out and none is written down
+anywhere:
+
+1. **The sextic `(16, 24, 35, 50, 35, 24, 16)` is PALINDROMIC**, so its roots
+   come in reciprocal pairs `z, 1/z`. Verified: `|z_min|·|z_max| = 1` exactly.
+2. **One conjugate pair lies EXACTLY on the unit circle** (`|z| − 1 = 0.0`),
+   i.e. a pure phase `e^{±iθ}` with `θ = 2.9166887082513073529`,
+   `θ/π = 0.92841085075702107917`.
+3. **That phase is NOT a root of unity** at any order a Bring/cyclotomic reading
+   would want — `θn/2π` for `n ∈ {5,7,10,12,20,24}` is
+   `2.32, 3.25, 4.64, 5.57, 9.28, 11.14`, none integral. **So the unit-circle
+   point sits at no cyclotomic evaluation point**, and a Habiro-ring reading
+   does not pick it up for free. That is a constraint on any bridge to §2a.
+4. **The palindromic reduction `w = z + 1/z` gives `16w³ + 24w² − 13w + 2`,
+   whose integer discriminant is exactly `−80000 = −2⁷·5⁴`**, with no rational
+   root over `p|2, q|16`. The `5⁴` is arithmetically suggestive beside Bring's
+   quintic / icosahedral setting — **an observation, not a derivation, used for
+   nothing.** Flagging it precisely because this is where numerology would start.
+
+### The negative, which is the point
+
+`ξ = 1/√2` tested directly against the simple invariants of `z_c`:
+
+    |z_c|    /(1/√2) = 1.3337      Re z_c  /(1/√2) = 0.1497
+    |z_c|²   /(1/√2) = 1.2578      |w_ℂ|   /(1/√2) = 0.3581
+    Im z_c   /(1/√2) = 1.3253
+
+**No clean ratio.** Scope-(a): the cheap identification fails.
+
+**It does not exclude the connection**, and the honest test is named and NOT
+done: whether `ξ = 1/√2` is the *action* `∫λ_SW` along a Picard–Lefschetz
+thimble from `z_c`. That needs a definite `λ_SW` and a thimble integration.
+What is now excluded is the version that would have been found by inspection —
+which is usually how an unasked question dies.

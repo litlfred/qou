@@ -1,0 +1,117 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-06T09:15:52.538183+00:00",
+  "commitSha": "4ee64060c9bae2577566d16cbfbade26fcbc2643",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "colour-cubic-discriminant-structure",
+  "scriptFile": "colour_cubic_discriminant_structure_probe.py",
+  "scriptHash": "009db8c19872",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/colour_cubic_discriminant_structure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/colour_cubic_discriminant_structure_probe.py"
+  },
+  "description": "Structure of the colour-tube cubic's discriminant locus (the Bring-side divergent points) and a direct test of the identification resurgence would need. NEW: the sextic is palindromic, its roots pair reciprocally, one conjugate pair lies exactly on the unit circle as a pure phase that is NOT a root of unity at n in {5,7,10,12,20,24}, and the palindromic reduction 16w^3+24w^2-13w+2 has exact integer discriminant -80000 = -2^7*5^4. NEGATIVE: xi = 1/sqrt(2), the Borel-side level-1/2 singularity, is not simply related to any tested invariant of z_c. Scope-(a): the cheap identification fails; the action integral along a Picard-Lefschetz thimble was NOT computed and is the honest test.",
+  "checks": [
+    {
+      "check": "palindromic",
+      "pass": true,
+      "detail": "coefficients [16, 24, 35, 50, 35, 24, 16] read the same backwards"
+    },
+    {
+      "check": "root_count",
+      "pass": true,
+      "detail": "6 roots"
+    },
+    {
+      "check": "reciprocal_pairing",
+      "pass": true,
+      "detail": "|z_min|*|z_max| = 1.0"
+    },
+    {
+      "check": "unit_circle_pair",
+      "pass": true,
+      "detail": "2 roots with |z| = 1 (max deviation 0.0)"
+    },
+    {
+      "check": "phase_not_root_of_unity",
+      "pass": true,
+      "detail": "theta*n/2pi = 5:2.32103, 7:3.24944, 10:4.64205, 12:5.57047, 20:9.28411, 24:11.1409"
+    },
+    {
+      "check": "reduced_cubic_discriminant",
+      "pass": true,
+      "detail": "disc(16w^3+24w^2-13w+2) = -80000 = -2^7 * 5^4 (exact integer arithmetic)"
+    },
+    {
+      "check": "reduction_consistent",
+      "pass": true,
+      "detail": "w = 2cos(theta) = -1.9496310659560772061 solves the reduced cubic, residual 1.15913e-69"
+    },
+    {
+      "check": "reduced_cubic_irrational",
+      "pass": true,
+      "detail": "no rational root over p|2, q|16 (found [])"
+    },
+    {
+      "check": "xi_not_simply_related",
+      "pass": true,
+      "detail": "ratios to 1/sqrt(2): abs_zc=1.3337386, abs_zc_sq=1.257843, im_zc=1.3253146, re_zc=0.14966564, abs_w_complex=0.35809131 -- clean hits: []"
+    }
+  ],
+  "checks_passed": 9,
+  "checks_total": 9,
+  "sextic": [
+    16,
+    24,
+    35,
+    50,
+    35,
+    24,
+    16
+  ],
+  "theta": "2.91668870825130735286819998763",
+  "theta_over_pi": "0.928410850757021079198569999021",
+  "reduced_cubic": [
+    16,
+    24,
+    -13,
+    2
+  ],
+  "reduced_cubic_discriminant": -80000,
+  "reduced_cubic_discriminant_factored": "-2^7 * 5^4",
+  "z_c": {
+    "re": "0.105829586188268020990938731157",
+    "im": "0.937138937838903436914878115252"
+  },
+  "xi_borel": "1/sqrt(2)",
+  "xi_ratios": {
+    "abs_zc": "1.3337385726795249056",
+    "abs_zc_sq": "1.2578429648689236346",
+    "im_zc": "1.3253145957196941094",
+    "re_zc": "0.1496656360877810152",
+    "abs_w_complex": "0.3580913135135061049"
+  },
+  "not_computed": "the action integral int lambda_SW along a Picard-Lefschetz thimble from z_c -- the honest test of whether xi = 1/sqrt(2) is that saddle's action"
+}
