@@ -100,6 +100,24 @@ Contrast the first order, where `PairwiseChainLeadingOrder.chain_over_atom_He4_g
 **No such invariance is claimed or observed at second order**, and these numbers are evidence
 against one.
 
+A THIRD STALE ARTIFACT, AND THE FIRST THAT IS A COMMITTED WITNESS.
+`computations/probes/c2-diagonal-insertion-expansion-probe.witness.json` (`computedAt`
+**2026-09-04**, the day before the ruling) contains all six **grouped** `c₂` values — `357/32`,
+`403/32`, `217/16`, `3285/128`, `3451/128`, `15307/512` — and none of the canonical ones. Unlike
+`qou-pdg9` and `qou-qqm4`, which are beans, this is a **committed record on `main`** that a consumer
+reads.
+
+Its producer, `c2_diagonal_insertion_expansion_probe.py`, implements the diagonal-insertion
+expansion `[◇]` — an exact, **all-orders** derivation of the Markov trace as a fixed-point count over
+sub-words, of which `[★]` is the `|S| ≤ 1` case. It reaches the word through
+`atom_canonical_crossings`, so like the ε-series it is **canonical by default and needs re-running,
+not rewriting**. That re-run is not done here: its `main` writes the witness, and rewriting a
+committed witness is a separate, deliberate act.
+
+Worth noting for anyone continuing: that probe's own docstring already says *"No closed form in
+`(Z, N)` for `c₂` is asserted here; the class split is the raw material for one."* So declining to
+fit one is the corpus's position, not just this probe's.
+
 SCOPE — (a) scope-limited. `mpf` at 80 dps end to end; `q = exp(η)` is a genuine 80-dps value so
 `reject_float64_q` is satisfied rather than bypassed; `float` appears nowhere. The `grouped` word is
 reached by binding `atom_braid_word_3A`'s `intra_order` through `functools.partial` on the module
