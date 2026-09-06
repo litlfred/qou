@@ -32,7 +32,11 @@ from _precision import fmt, set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal  # noqa: E402
-from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 # q0 read BY NAME (bean qou-9ugp, 2026-09-03) and carried as mpf, not float.
 # It was the bare float64 literal 1.10997859555733471 -- the RETIRED
@@ -43,10 +47,24 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 # AME2020 binding energies (MeV).
+#
+# T and 3He were bare float64 literals (bean qou-qe81, NO-FLOAT64) sitting next
+# to D, which already read the registry. They were not rounded forms of the
+# table either -- vendored AME2020 quotes 2827.26540 keV/A for T and 2572.68044
+# for 3He, so the literals ran 24.8 eV and 16.7 eV HIGH respectively:
+#
+#     T    8.481821  vs  AME_B_TRITIUM_MEV_VALIDATION  8.4817962
+#     3He  7.718058  vs  AME_B_HE3_MEV_VALIDATION      7.71804132
+#
+# Both are NUMERATORS of `r = B / abs(trM)`, the one quantity this probe exists
+# to compare across atoms, and the T/3He pair is its stated decisive
+# discriminator -- so a per-atom typo lands directly on the mirror mismatch it
+# reports. Same failure `codata_constants.ame_binding_mev` documents in its own
+# docstring ("typed literals sitting up to 1.6e-5 away from this table").
 B_OBS = {
     "D":   (1, 1, AME_B_DEUTERON_MEV_VALIDATION),
-    "T":   (1, 2, 8.481821),
-    "He3": (2, 1, 7.718058),
+    "T":   (1, 2, AME_B_TRITIUM_MEV_VALIDATION),
+    "He3": (2, 1, AME_B_HE3_MEV_VALIDATION),
 }
 
 
