@@ -1,0 +1,46 @@
+{
+  "probe": "habiro_eval_exactness_probe",
+  "bean": "qou-cds1",
+  "question": "is habiro_exact_qbeta.eval_a_m_at_u exact, and does it fail loudly?",
+  "answer": "Yes to both, after the 2026-09-06 fix. It was float64-limited (1.63e-15, over the L1 1 ppQ target) and absorbed parse failures as zero.",
+  "scope": "(b) \u2014 exact-arithmetic facts about a producer.",
+  "worst_rel_dev_now": "2.9772e-58",
+  "worst_rel_dev_old_float64": "5.4931e-15",
+  "producer_assertion_residual": "4.64789e-17",
+  "expressions_checked": 71,
+  "mpmath_bump_ruled_out": "post-fix values agree with an independent sympy N(...,60) evaluation, so the movement is the fix and not the container's mpmath 1.3.0 -> 1.4.1; the producer imports no numpy/scipy/sympy.",
+  "q0": "1.1099785827513808076",
+  "q0_pin": "proton (q_at)",
+  "dps": 60,
+  "assertions": [
+    {
+      "name": "helper_is_now_exact",
+      "passed": true,
+      "detail": "worst relative deviation of eval_a_m_at_u from an independent sympy N(...,60) evaluation, over all 71 expressions in the atomic witness: 2.977e-58 (< 1e-40). The helper now binds `u` into the eval namespace instead of substituting its decimal expansion."
+    },
+    {
+      "name": "the_old_float64_path_was_over_the_L1_target",
+      "passed": true,
+      "detail": "the pre-fix body, re-run here, deviates by up to 5.493e-15 \u2014 against the framework's L1 compute-precision target of 1 ppQ = 1e-15. This is measured by running the old code, not inferred from the diff."
+    },
+    {
+      "name": "silent_zero_fallback_is_gone",
+      "passed": true,
+      "detail": "eval_a_m_at_u now raises ValueError on an unparseable expression instead of returning mp.mpf(0). A producer that substitutes zero for a coefficient it could not read reports a wrong number rather than a failure; all 71 live expressions parse, so making it loud costs nothing."
+    },
+    {
+      "name": "producer_assertion_now_under_1_ppQ",
+      "passed": true,
+      "detail": "the producer's own self-consistency assertion sits at 1 + 4.648e-17; it was 1 + 1.673e-15, i.e. OVER the 1 ppQ L1 target. The fix moved it from above the line to ~35x below it."
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "09e0e375853c",
+  "scriptCommitSha": "unknown",
+  "commitSha": "43fc534621224c2faf2f0dd717b5645886d87f49",
+  "engine": "python+sympy+mpmath",
+  "computedAt": "2026-09-06T04:46:46.179580+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
