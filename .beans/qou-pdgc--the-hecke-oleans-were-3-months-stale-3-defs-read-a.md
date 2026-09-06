@@ -133,3 +133,15 @@ Rebuilding oleans in dependency order repaired the class of defect this bean was
 opened for. 15 modules were already refreshed by targeted cone runs earlier in the
 session; this added ~780 more. Any `#print axioms` taken against those now reads
 source rather than a months-old cache.
+
+## Surfaced at session start (2026-09-06)
+
+A measurement nobody reads is the same defect this bean documents, one level up —
+the same reasoning `AGENTS.md` gives for the CI-health watchdog ("a report is only
+read by someone in the room"). `scripts/session-start-coord-sweep.sh` now prints
+the five stalest modules and the repair command, with the "could not run" case
+rendered explicitly as **not a pass**.
+
+Freshness at the time of writing: **616** stale, down from 932 when this bean was
+opened — the difference is what the partial drain and the targeted builds have
+repaired.
