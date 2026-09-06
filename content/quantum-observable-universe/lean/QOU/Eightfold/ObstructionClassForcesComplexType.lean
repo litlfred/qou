@@ -2,6 +2,7 @@ import Mathlib.Data.ZMod.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Group
+import Mathlib.Algebra.Group.TypeTags.Basic
 
 /-!
 # QOU.Eightfold.ObstructionClassForcesComplexType — self-duality forces a trivial obstruction
@@ -176,6 +177,20 @@ theorem cocycle_conj_of_comm (a : G) (s : Γ → G) (g h : Γ)
     (hc : a * cocycle s g h = cocycle s g h * a) :
     cocycle (fun x => a * s x * a⁻¹) g h = cocycle s g h := by
   rw [cocycle_conj, hc]; group
+
+/-- **The `μ₃ ≅ ZMod 3` bridge.**  `cocycle_dual` says the dual lift's cocycle is the
+*inverse*; `obs_dual` says the class *negates*.  Transporting along an isomorphism of the
+centre with `Multiplicative (ZMod 3)` is what turns one into the other — inversion in the
+group is negation in `ZMod 3`.
+
+With this, the algebraic chain behind `obs_dual` is complete: inverse-transpose is a
+homomorphism (`cocycle_map`), it inverts the centre (`cocycle_dual`), and inversion of a
+`μ₃` value is negation of a `ZMod 3` value (here).  What is still missing for a genuine
+`instance` is only the passage from a *cocycle* to its *cohomology class* — H² machinery
+— and the relative-vs-absolute step, which is checked computationally instead. -/
+theorem obs_neg_of_inv {Z : Type*} [Group Z] (e : Z ≃* Multiplicative (ZMod 3)) (z : Z) :
+    (e z⁻¹).toAdd = - (e z).toAdd := by
+  rw [map_inv]; rfl
 
 end CocycleModel
 
