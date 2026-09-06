@@ -611,3 +611,60 @@ already per-atom and distinct — so a resolution *would* give per-atom links. B
 free: `2^k` of them, and `k = 113` at ⁵⁶Fe. **Selecting one because its complement's invariants land
 near a target is a fit under the NO-FITTING directive and must be labelled one.** A *derived*
 resolution rule would be a genuine result. This audit does not have one and does not propose one.
+
+---
+
+## 11. What the newly-ingested sources give — a decidable hyperbolicity criterion
+
+Owner uploaded four papers (`e16b7de0f`) in response to §9.2's acquisition requests. Three are new
+and are ingested on this branch; `0808.2716v4` duplicates the held `arxiv-0808.2716v4`.
+
+| doc | what it gives |
+|---|---|
+| [`arxiv-2108.09349v2`](../../library/arxiv-2108.09349v2/) Nimershiem, *Geometric triangulations of a family of hyperbolic 3-braids* | carries **FKP Theorem 5.5** and constructs geometric triangulations for a sub-family |
+| [`0406242v4`](../../library/0406242v4/) Guéritaud (Futer appendix) | the primary source for both rows of the §9 family table |
+| [`arxiv-1808.02836v2`](../../library/arxiv-1808.02836v2/) | minimal ideal triangulations of cusped hyperbolic 3-manifolds |
+
+### 11.1 FKP Theorem 5.5 — hyperbolicity of a 3-braid closure is decidable from the word
+
+Quoted from the ingested introduction: `S³ − L_w` is hyperbolic **iff** `w` is conjugate to
+`C^k σ₁^{p₁} σ₂^{−q₁} ⋯ σ₁^{p_s} σ₂^{−q_s}` with `k ∈ ℤ` and `pᵢ, qᵢ, s` positive integers, **and**
+`w` is not conjugate to `σ₁^{p₀} σ₂^{q₀}` (those closures are unknots, torus knots, or connected
+sums of torus knots). `C = (σ₁σ₂σ₁)²` is the centre.
+
+**This is a criterion on the WORD** — which is exactly what `qou-eptr` question 2 needs, restricted
+to three strands.
+
+### 11.2 It covers the framework's own fundamental-knot family
+
+`winding-parity-sign-transport.md` records that the fundamental knots are powers of the
+half-figure-eight word `w = σ₁σ₂⁻¹`: `4₁ = w²`, `L6a4 = w³`. Reading `w^n` against the criterion
+with `k = 0`, `s = n`, all `pᵢ = qᵢ = 1` matches the hyperbolic form term for term, and `w^n` for
+`n ≥ 2` is not conjugate to `σ₁^{p₀}σ₂^{q₀}`. That is consistent with what the corpus already
+holds independently — `4₁` and `L6a4` hyperbolic, `w¹` closing to the unknot — so the criterion
+*reproduces* the framework's fundamental family rather than merely being compatible with it.
+
+Stated as consistency, not as a re-derivation: no conjugacy decision procedure was run here.
+
+### 11.3 Where this meets §10, and the one tractable next step
+
+§10 says the *atomic* words are not braids, so FKP does not apply to them as they stand. But the
+combination is sharper than either finding alone:
+
+**Protium is a 3-strand word with exactly two `averaged` letters.** Its generator indices are
+`{0, 1}`, so it needs 3 strands — and `2² = 4` resolutions is *fully enumerable*. Its first seven
+letters are `σ₀σ₁⁻¹σ₀σ₁⁻¹σ₀σ₁⁻¹σ₀ = (σ₀σ₁⁻¹)³σ₀`, i.e. the Borromean pattern `w³` followed by one
+generator.
+
+So for `A = 1` the whole question is decidable: enumerate the four resolutions, apply FKP to each.
+**If all four agree on hyperbolicity, the resolution ambiguity does not matter for that question** —
+which would be a genuine result and would not be a fit, because nothing is being selected. If they
+disagree, the choice is load-bearing and §10.4's warning binds.
+
+What that needs and does not yet have: a conjugacy decision procedure in `B₃` (Birman–Ko–Lee or
+Garside normal form). Not implemented here, and not faked — this section records the criterion and
+the enumerable structure, not a verdict.
+
+**It does not scale as stated.** `A = 1` gives `k = 2`; ⁵⁶Fe gives `k = 113`, and beyond three
+strands FKP's characterisation does not apply at all. So this settles a corner, not the route.
+
