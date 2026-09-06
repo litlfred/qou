@@ -62,9 +62,43 @@ PRODUCT_HYP = re.compile(r"\([_A-Za-z][A-Za-z0-9_']*\s*:[^)]*[*·]\s*\(?[^)]*\)?
 GUARD = re.compile(r"\b(PosDef|PosSemidef|nondegener|Nondegener|0\s*<|rank|Rank|Injective|IsUnit|Invertible|≠\s*0|Function\.Bijective)\b")
 
 
+def strip_block_comments(text: str) -> str:
+    """Blank out `/- ... -/`, `/-! ... -/` and `/-- ... -/` regions, preserving
+    line structure so reported line numbers stay correct.
+
+    Load-bearing, and it was missing on the first run. Two things live inside
+    Lean block comments here and both were being parsed as live declarations:
+
+      * A documented POST-MORTEM. `LpDualityHypothesisClass.lean` records two
+        axioms it deleted for being inconsistent, quoting them in a ```lean
+        fence. The audit flagged `schrijver_strong_duality` as an unexamined
+        candidate when it had already been found, refuted and removed.
+      * ORDINARY ENGLISH. A prose line wrapping onto "axiom is consumed only
+        via ..." starts with the word `axiom`, and there are fourteen such:
+        `it`, `of`, `and`, `with`, `in`, `is`, `for`, `that`, `can`, `to`,
+        `beyond`, `standing`, `audit`, `report`.
+
+    Together those were 26 of 163 matches -- a 19 % overcount.
+    """
+    out = []
+    i = 0
+    depth = 0
+    while i < len(text):
+        if text.startswith("/-", i):
+            depth += 1; i += 2; continue
+        if text.startswith("-/", i) and depth:
+            depth -= 1; i += 2; continue
+        if depth == 0:
+            out.append(text[i])
+        else:
+            out.append("\n" if text[i] == "\n" else " ")
+        i += 1
+    return "".join(out)
+
+
 def axioms_in(text: str, path: str):
     """Yield (name, line, full declaration text) for each top-level axiom."""
-    lines = text.split("\n")
+    lines = strip_block_comments(text).split("\n")
     out = []
     i = 0
     while i < len(lines):
