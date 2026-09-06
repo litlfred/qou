@@ -357,3 +357,65 @@ the §3b-cond pattern already used elsewhere in this corpus), or to leave
 them as specifications with that status stated at each site (small).
 Choosing among those is an authorial call about how much of the Hecke
 machinery to formalise, and is not made here.
+
+---
+
+# Addendum 4: two more vacuous, and three things the probe cannot see
+
+`antipode_anti_hom` (`frobenius-antipode-lean-stub.lean`) and
+`strong_multiplicativity_on_generators`
+(`UGB/GrobnerShirshov/StrongMultiplicativity.lean`) are both provable and
+were both axioms.
+
+The second is the plainest instance of the whole arc:
+
+```lean
+axiom strong_multiplicativity_on_generators … :
+    ∀ (f _g : AlgElement G k), bialg.comul f = bialg.comul f
+```
+
+`X = X`, closed by `rfl`, under twenty lines of docstring citing
+[fred2005, Thm 4.12] and explaining why the result "requires"
+axiomatisation. The file says so on the conclusion line —
+*"placeholder for the proper AlgElement multiplication"* — with the real
+statement written beneath it as a comment.
+
+`antipode_anti_hom` is subtler: on that file's scalar-coefficient model
+`antipodeS = id` and `heckeMul` is real multiplication, so
+`S(ab) = S(b)S(a)` collapses to `mul_comm`.
+
+## Three limits of the provability probe, all measured
+
+**1. A fixed tactic list cannot do case-specific unfolding.**
+`antipode_anti_hom` needs `antipodeS` and `heckeMul` unfolded, and both
+are plain `def`s with no `@[simp]`. Measured on a minimal reproduction:
+`rfl`, `trivial`, `simp`, `simp_all`, `simp [mul_comm]`,
+`constructor <;> ring`, `decide` and `aesop` **all fail** — `aesop`
+reporting *"made no progress"*. Those tactics were added after the miss
+and then **reverted**: they cost runtime and caught nothing. Knowing
+which definitions to unfold is case-specific, so this class is out of
+reach rather than one tactic away. Recorded as the second asserted blind
+spot, alongside the witness-record class (`su2_emergence`,
+`categorical_jet_prolongation`).
+
+**2. A missing olean is indistinguishable from "not provable" — and it
+cost a real finding.** The first corpus run reported 122 probed / 3
+provable and did **not** find
+`strong_multiplicativity_on_generators`. It could not: `Flatness`, in
+that UGB subtree's import closure, was absent from the restored cache,
+so the file failed to compile for environment reasons and the probe
+recorded a FAIL. After building that one module into the overlay, the
+same axiom came back `PROVABLE` on the next run. **A FAIL from this
+probe means "did not compile with a proof", not "is not provable".**
+
+**3. The self-test rotted, in exactly the way this branch had already
+fixed once.** Its fixtures were read from `--selftest-rev`, so as soon as
+the fixtures' own axioms were converted the test went red with
+`SELFTEST FAIL: ... not parsed at <rev>` — the same failure the risk
+audit had that morning, reading the SDP axioms from `origin/main`. The
+fix is the same in kind and better in detail: each fixture row now pins
+an **immutable commit sha**, which cannot rot; a shallow clone lacking
+the object reports `SELFTEST ERROR` rather than passing silently.
+
+Making the same mistake twice in one day, hours after documenting it, is
+worth recording as plainly as the findings are.
