@@ -49,7 +49,15 @@ identification [SW] (which the stage-1 probe verifies on the words themselves).
    snapshots and will go stale the next time the word moves.
 3. Splits `c₂` into its insertion classes `|S| = 0, 1, 2` (after the normaliser
    is folded in) and reports them per word, so the structure is visible.
-4. Reports the second-order chain/atom ratios exactly.
+4. Reports the second-order chain/atom ratios exactly, against the first-order
+   ones **derived from `RECORDED_C1`**. That comparison table was itself a
+   hardcoded grouped-word snapshot (`{T: 292/163, ³He: 30/17, ⁴He: 24/7}`) until
+   2026-09-06 — a **third** stale table in this one file, which survived the
+   first repair because it sat below the two obvious ones. It is now computed.
+   ⁴He's `24/7` is unchanged by the ruling and that is not luck: `pp+pn+nn` and
+   `⁴He` carry the same nucleon content, so the ratio is ordering-invariant
+   (`content_cancellation_invariance_probe`). T and ³He have `Z ≠ N`, no such
+   balance, and moved — `292/163 → 4` and `30/17 → 3/2`.
 
 ## What is NOT claimed
 
@@ -304,7 +312,18 @@ def main() -> int:
     chain = {"T": EXACT_C2["pn"] + EXACT_C2["nn"], "3He": EXACT_C2["pp"] + EXACT_C2["pn"],
              "4He": EXACT_C2["pp"] + EXACT_C2["pn"] + EXACT_C2["nn"]}
     ratios = {k: chain[k] / EXACT_C2[k] for k in chain}
-    first = {"T": F(292, 163), "3He": F(30, 17), "4He": F(24, 7)}
+    # The FIRST-order chain/atom ratios, DERIVED from RECORDED_C1 by the same pairwise sum, not
+    # hardcoded. They were a hardcoded grouped-word table ({T: 292/163, ³He: 30/17, ⁴He: 24/7})
+    # until 2026-09-06 — the third stale snapshot in this one file, and the only one that survived
+    # the first repair because it sat below the two obvious tables. Deriving it is what stops a
+    # fourth. Note ⁴He's 24/7 is unchanged by the ruling, which is not luck: `pp+pn+nn` and `⁴He`
+    # carry the same nucleon content, so the ratio is ordering-invariant
+    # (`content_cancellation_invariance_probe`, and `PairwiseChainLeadingOrder.chain_over_atom_He4_generic`
+    # proves it algebraically). T and ³He have Z ≠ N, no such balance, and duly moved.
+    first_chain = {"T": RECORDED_C1["pn"] + RECORDED_C1["nn"],
+                   "3He": RECORDED_C1["pp"] + RECORDED_C1["pn"],
+                   "4He": RECORDED_C1["pp"] + RECORDED_C1["pn"] + RECORDED_C1["nn"]}
+    first = {k: first_chain[k] / RECORDED_C1[k] for k in first_chain}
     # `float` is repr(), not the bare value: it is a readable RENDERING of the
     # exact `ratio` beside it, which is the datum. A raw float64 in a witness is
     # what the raw-float64 ratchet counts, and with the exact rational already
@@ -317,9 +336,14 @@ def main() -> int:
                     computed="1" if all(abs(ratios[k] - 1) < abs(first[k] - 1) for k in ratios) else "0",
                     expected="1",
                     source="|chain/atom − 1| at second order vs first order: "
-                           + ", ".join(f"{k}: {float(ratios[k]):.4f} vs {float(first[k]):.4f}" for k in ratios)
-                           + ". Smaller in every case, but NOT uniformly ≈ 1 (4He 1.248): the "
-                             "leading-order over-count is partly cancelled one order up, not removed.")
+                           + ", ".join(f"{k}: {float(abs(ratios[k] - 1)):.4f} vs "
+                                       f"{float(abs(first[k] - 1)):.4f}" for k in ratios)
+                           + f". Smaller in every case, but the over-count is not removed — 4He's "
+                             f"second-order excess is still {float(abs(ratios['4He'] - 1)):.4f} — so "
+                             "the leading-order over-count is partly cancelled one order up, not "
+                             "eliminated. (This line printed the RATIOS while calling them "
+                             "|ratio − 1|, and quoted a hardcoded grouped-word 1.248, until "
+                             "2026-09-06; both are now computed.)")
     w.add_data("rows", rows)
     w.add_data("verdict", (
         "c2 is DERIVED by the same mechanism as c0 and c1, one insertion deeper. The Hecke "
