@@ -56,8 +56,19 @@ right-multiplication by `c` does not preserve.
 **Consequence, stated plainly:** §3's Garnir corollary is proved for the **row**-referenced
 `T_{d(t)}`, which is Mathas'; §4's `murphyM_smul` is proved for `murphyM` as it is currently
 defined, i.e. column-referenced, and takes its length hypothesis as given.  **The two are
-not yet composed**, and composing them is not a rewrite.  Do not write a corollary chaining
+not composed here**, and composing them is not a rewrite.  Do not write a corollary chaining
 §3 into §4; it would be false as an inference even though both halves are true.
+
+> **RESOLVED next door — `QOU/BraidKnot/MurphyRefTab.lean`.**  The forced option below
+> (restate the Murphy element over `refTab`) is done, by making the reference an **explicit
+> parameter** rather than by editing `HeckeMurphyYoung`: `murphyMRef r s t`, with
+> `murphyMRef (colSuperstandard μ) = murphyM` definitionally (so nothing downstream of
+> `murphyM` moves) and `murphyMRow := murphyMRef (refTab μ)` as Mathas' element.  At the row
+> instance the length hypothesis of §4 **is** what a Garnir descent node supplies, so §3 and
+> §4 meet: `MurphyRefTab.exists_garnir_murphyMRow_factor`, sorry-free.
+>
+> The prohibition in this paragraph still stands **for `murphyM` itself** — it is about the
+> column-referenced element, and that inference is still invalid.
 
 ### And the cheap way out is REFUTED — measured, not assumed
 
@@ -79,9 +90,10 @@ Smallest counterexample: `λ = (2,1,1)`, `t = ((1,3),(4),(2))` — its one desce
 `ℓ(d_col(t)) = 2` against `ℓ(d_col(g)) + ℓ(w) = 3 + 1`.  The failure rate **grows** with `n`
 (0 %, 19 %, 37 %, 48 %), so this is not a small-`n` artifact.
 
-**So option 2 is false and option 1 is forced.**  Length additivity at a Garnir descent node
-is a property *of the row-superstandard reference*, not a fact about Garnir tableaux that
-happens to be recorded there.
+**So option 2 is false and option 1 is forced** — and option 1 is now taken, in
+`MurphyRefTab.lean` (see the note above).  Length additivity at a Garnir descent node is a
+property *of the row-superstandard reference*, not a fact about Garnir tableaux that happens
+to be recorded there.
 
 This also corrects `murphyM`'s own docstring, which calls the reference *"a red herring:
 `colSuperstandard` is as good as Murphy's row-superstandard `t^λ` — both are full rank"*.
