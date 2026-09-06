@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T17:45:14.063635+00:00",
-  "commitSha": "9dd7d7833ddb6daeda8f543bfcb265b651036ab0",
+  "computedAt": "2026-09-06T06:39:41.596945+00:00",
+  "commitSha": "3974fe0882707cb5f390641207291fffd7b67e12",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "trm-provenance-chain",
   "scriptFile": "trm_provenance_chain_probe.py",
-  "scriptHash": "2f95bd279803",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "06b122473a9b",
+  "scriptCommitSha": "d57852f81a2407a11b7c839f56a9ce1bb2b92cca",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,6 +34,21 @@
   },
   "description": "Provenance of the +48.1039 % tr_M_atom move recorded in bean qou-brkp item 2. The option_e probe copies tr_M_at_q0 verbatim from the chi witness (line 129); the chi witness moved in 7e4d1aa6d0 because fcf629cf41, 33 s earlier, switched _Y_LAMBDA_DEFAULT in tr_m_wenzl_bridge_mpfr.py -- and both y_lambda tables had been REGENERATED the same day, moving weight mass onto the <=2-row partitions. A weight-table regeneration, not a pin swap, not a convention swap. Every chi_lambda and every provenance field (scriptHash, q0Anchor, q0Value, dps) is byte-identical across the move, which is why scriptHash-keyed staleness cannot see it.",
   "checks": [
+    {
+      "check": "schema/deuteron",
+      "pass": true,
+      "detail": "all required fields present"
+    },
+    {
+      "check": "schema/tritium",
+      "pass": true,
+      "detail": "all required fields present"
+    },
+    {
+      "check": "schema/helium-3",
+      "pass": true,
+      "detail": "all required fields present"
+    },
     {
       "check": "copy/deuteron",
       "pass": true,
@@ -90,8 +105,8 @@
       "detail": "largest |y| on a >=3-row partition = 0.0 at None"
     }
   ],
-  "checks_passed": 11,
-  "checks_total": 11,
+  "checks_passed": 14,
+  "checks_total": 14,
   "move": {
     "from": "0.38835714119779098941649346949090499349342765669823",
     "to": "0.57517224391777187082653534398618088915249435289286",
