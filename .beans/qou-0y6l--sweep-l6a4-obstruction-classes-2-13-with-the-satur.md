@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T03:41:37Z
-updated_at: 2026-09-06T10:26:59Z
+updated_at: 2026-09-06T10:49:18Z
 ---
 
 ## 2026-09-06 — why three class-2 attempts produced no verdict, and the fourth is running
@@ -73,3 +73,44 @@ so genuine solutions inject into the reduced system but not conversely. EMPTY wo
 be conclusive; NON-EMPTY is an upper bound only, and — the limitation I missed when
 launching — a Groebner basis supplies no POINT, so a non-empty GB-only verdict cannot
 be round-tripped at all without the RUR.
+
+## 2026-09-06 10:43 — the class-2 GROEBNER BASIS also times out: the direct route is CLOSED
+
+`msolve -g 2`, 2700 s, 3 threads: **exit 124, zero bytes.** With the calibration this
+settles which half of msolve is expensive, and therefore closes the route:
+
+| | |
+|---|---|
+| class 1, GB only, 1 thread | **286 s** |
+| class 1, full RUR | 373 s (so FGLM is ~23%) |
+| class 2, GB only, 3 threads | **> 2700 s** (>9x wall on 3x threads) |
+
+For class 2 the **Groebner basis itself is the wall**. No RUR budget helps; a longer
+run of the same shape cannot succeed.
+
+**This corrects my own rationale.** I launched the probe saying FGLM is 'routinely
+dominant for a high-degree ideal'. Class 1 does not exhibit that — at degree 4 its
+linear algebra is trivial. The probe was still right (diagnostic either way) but the
+reason I gave was unsupported by the single data point I had.
+
+**The presentations are IDENTICAL**, which sharpens everything: asked directly, every
+class 1–13 presents as **27 vars / 33 eqs** (class 0 differs at 26/32, being the
+trivial class carrying the geometric rep). So class 1 settles in 373 s and classes
+2/3/4 exceed 900 s *from the same size of presentation*. The ideal's SHAPE does all
+the work.
+
+**A negative I will not dress up:** I tried to detect symmetry orbits among the 14
+classes with a cheap signature, hoping the order-48 symmetry group (Z/2 × octahedral)
+would collapse the sweep. My invariant was broken — it counted '+'-separated terms and
+returned (1,1,1,1,1,1) for every class, i.e. no information. The orbit question is
+untouched and open.
+
+## The unlock is probably NOT more compute — it is a 403
+
+`V.retrieve_solutions()` for class 2 resolves to a real file in the Ptolemy database:
+`ptolemy.unhyperbolic.org/data/pgl3/HTLinkExteriors/08_tetrahedra/L6a4__sl3_c2.magma_out.gz`
+— **the exact object we have failed three times to compute.** The agent proxy denies
+that host (CONNECT 403, policy denial, same class as release.lean-lang.org). This is an
+egress limit, not a mathematical one, and it is the single highest-value unblock
+available: if that host is allowed, classes 2–13 may be answerable by retrieval rather
+than re-derivation.
