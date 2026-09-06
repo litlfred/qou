@@ -84,6 +84,13 @@ matters is a judgement, the same posture as the vacuity audit's ledger.
 
 ## What is NOT a finding
 
+* A declared source that carries the same number at a DIFFERENT WIDTH. The
+  check is width-tolerant for the same reason the drift check is; a substring
+  test calls that absent, and 1 of the first 11 findings was exactly this.
+* A neighbouring line's declaration. Consecutive constants each carry their own
+  trailing comment, so the own-line comment takes precedence over the block
+  above -- without that, a three-line window asks the wrong witness about
+  `REF_B5` and reports a clean site.
 * A literal that IS still in some witness -- reported by the sibling, not here.
 * Fewer than `MIN_SIG` significant digits: short decimals collide by accident,
   the same floor and the same reasoning as the sibling.
@@ -199,11 +206,26 @@ def _literal_of(node: ast.AST) -> str | None:
     return None
 
 
-def _comment_context(lines: list[str], lineno: int) -> str:
-    """Comment text on this line or the three above it (1-indexed lineno)."""
+def _comment_context(lines: list[str], lineno: int) -> tuple[str, str]:
+    """(own-line trailing comment, block above) for a 1-indexed line number.
+
+    THE TWO MUST BE KEPT APART, and a first version merged them into one blob.
+    Consecutive constants each carry their own trailing comment:
+
+        REF_B4 = mp.mpf("-10.3376891441")   # qbeta-5two-higher-cable-qstar...
+        REF_B5 = mp.mpf("593.607693594")    # qbeta-5two-n5-cable-qstar...
+
+    A three-line window over REF_B5 picks up REF_B4's file name, so the audit
+    asked the WRONG witness and reported a clean site. Found by triaging its
+    own output; the own-line comment therefore takes precedence and the block
+    above is only the fallback.
+    """
+    own = lines[lineno - 1] if 0 < lineno <= len(lines) else ""
+    own_c = own[own.index("#"):] if "#" in own else ""
     lo = max(0, lineno - 4)
-    chunk = "\n".join(lines[lo:lineno])
-    return "\n".join(ln[ln.index("#"):] for ln in chunk.splitlines() if "#" in ln)
+    above = "\n".join(
+        ln[ln.index("#"):] for ln in lines[lo:lineno - 1] if "#" in ln)
+    return own_c, above
 
 
 _OWN_CACHE: dict[str, set[str]] = {}
@@ -259,7 +281,8 @@ def scan(idx: dict[str, set[str]]) -> list[dict]:
             lit = _literal_of(node.value)
             if lit is None or sig_digits(lit) < MIN_SIG:
                 continue
-            comment = _comment_context(lines, node.lineno)
+            own_c, above_c = _comment_context(lines, node.lineno)
+            comment = own_c + "\n" + above_c
             by_name = any(NAME_DECLARES.search(n) for n in names)
             by_comment = bool(COMMENT_DECLARES.search(comment))
             if not (by_name or by_comment):
@@ -273,12 +296,20 @@ def scan(idx: dict[str, set[str]]) -> list[dict]:
             # Neither this audit's index nor the sibling's can see that, since
             # both ask "does any witness carry this" rather than "does the
             # named one".
-            named = NAMED_SOURCE.search(comment)
+            # Own-line comment wins: it belongs to THIS assignment.
+            named = NAMED_SOURCE.search(own_c) or NAMED_SOURCE.search(above_c)
             if named:
                 srcs = list(COMP.rglob(named.group(1)))
                 if srcs:
                     raw = srcs[0].read_text()
-                    if lit not in raw:
+                    # Width-tolerant, not `lit not in raw`. The declared file
+                    # may render the same number at a different precision, and
+                    # a substring test calls that absent. Measured: 1 of 11
+                    # findings was this, caught by triaging the output.
+                    carried = any(
+                        sig_digits(c) >= 8 and _agrees_to_shorter(lit, c)
+                        for c in NUMBER.findall(raw))
+                    if not carried:
                         findings.append({
                             "file": str(py.relative_to(ROOT)),
                             "line": node.lineno,
