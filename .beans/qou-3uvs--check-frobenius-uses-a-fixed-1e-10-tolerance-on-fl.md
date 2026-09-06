@@ -128,3 +128,49 @@ variant lives in the consumer.
       They are computed honestly for the first time; whether ca40 and fe56 are
       genuinely unstable is now an answerable question rather than a noise
       reading, and the recorded `Gx` says which.
+
+---
+
+## 2026-09-06 — ne20 is SETTLED, under mpf and a scale-aware tolerance
+
+The `qou-uiut` regeneration reached ne20 (457.10 s). Both objections this bean
+raises are removed for that atom, and the verdict does not move.
+
+**The arithmetic is no longer float64.** `hadron_knot_table.check_frobenius_mp`
+computes `Gx = G·x` in mpf at 50 dps, so the ulp argument above — the reason
+ca40 and fe56 are unsettleable by the old predicate — does not apply.
+
+**The tolerance is no longer a fixed absolute.** It is
+`tol = -(1e-10 × max|Gx|)`, with the scale floored at 1 so it can never be
+LOOSER than the original `-1e-10`.
+
+Measured:
+
+| atom | stable | scale = max\|Gx\| | tol |
+|---|---|---|---|
+| o16 | **True** | 23.3735 | −2.337e−9 |
+| ne20 | **False** | 288.149 | −2.881e−8 |
+
+ne20's three violations, against that tolerance:
+
+| component | Gx | \|Gx\|/scale | \|Gx\|/\|tol\| |
+|---|---|---|---|
+| σ₀ | −126.8308951 | **0.440** | 4.40e+9 |
+| σ₁ | −30.28113213 | **0.105** | 1.05e+9 |
+| L₋ | −241.2744475 | **0.837** | 8.37e+9 |
+
+These are 10 % to 84 % **of the scale itself**, nine orders of magnitude past
+the threshold. **No choice of tolerance flips this verdict**, which is exactly
+the discrimination this bean said the old predicate could not make. ne20 is not
+a boundary case and never was — the bean's own table put its float64 ulp at
+7.79e−14, below the old threshold, so it was already in the trustworthy band;
+what is new is that the verdict now also survives the removal of BOTH doubts.
+
+o16 stable=True is likewise reproduced under mpf, so the two agree with the
+committed float64 verdicts where the old test was trustworthy. That is a
+cross-check on the migration, not just on ne20.
+
+**1 of 4 down.** si28, ca40 and fe56 remain — and those are the ones where the
+bean's ulp argument bites (si28 comparable, ca40 ten orders above, fe56
+twenty-five). Their mpf verdicts are the point of finishing the run; si28 is
+computing now.
