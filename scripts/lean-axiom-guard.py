@@ -133,6 +133,31 @@ LEAN_ROOT = Path("content/quantum-observable-universe/lean")
 
 # Measured 2026-08-07 by `#print axioms`. Keep sorted by module for readability.
 DEFAULT_REGISTRY = """
+# --- the SDP uniqueness counterexamples (bean `qou-i6u4`, PR #6882) ---
+# On 2026-09-05 all five SDP uniqueness axioms in QOU/MathlibExt were shown to be
+# FALSE -- each one alone derives `False`. They had been cleared twice by audits
+# that asked "is the citation real?" and "can Mathlib close it?" and never asked
+# whether the Lean statement IS the cited theorem. Alizadeh-Haeberly-Overton 1997
+# requires dual nondegeneracy; none of the five encoded it, and all five fall to a
+# one-dimensional zero-cost SDP whose dual slack is the zero matrix.
+#
+# Registered because the SDP chain was in NO registry at all -- 283 entries and 324
+# modules, including other MathlibExt ones, and not these. The guard's own docstring
+# says a hand-written `#print axioms` outside this registry has no gate, and that is
+# where the five lived.
+#
+# These are the NEGATIONS, not the axioms: proving `not P` rather than `False from P`
+# is what survives deletion of the axiom and re-verifies on every build. Every prior
+# incident in this corpus (B1HyperbolicRowsTheorem, LpDualityHypothesisClass x2,
+# DressedMassFromSubstrateSplit, macroscopic-stability-equivalence x2 -- eleven false
+# axioms across five incidents, all one root cause: over-quantification) recorded
+# itself as a COMMENTED-OUT `theorem X_axiom_is_inconsistent : False`, which cannot
+# be re-run and goes stale silently. A registry row is a claim a machine re-checks.
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_strict_complementarity_unique | clean
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_slater_strict_complementarity_kernel | clean
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_SDPRankUniqueness | clean
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_strict_complementarity_kernel_disjoint | clean
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_affine_slater_rigidity | clean
 # --- the Lagrange node-sum family (Pieri corner identity, PR #6098) ---
 # `sum_prod_qratio_corner` is the node-coordinate form of the one identity the
 # Macdonald hook telescope's Pieri step (P) reduces to. It is proved FROM
