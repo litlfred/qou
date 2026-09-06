@@ -26,7 +26,12 @@ delivered in the form they are consumed in.
 
 The chain to Matsumoto's theorem — any two reduced expressions for the same `w` are related
 by braid moves — runs *exchange → deletion → Matsumoto*. The first was already here; this
-file supplies the second. **The third is still open.**
+file supplies the second.
+
+✅ **The third landed the same day** (2026-09-06): `QOU.IwahoriHecke.Matsumoto`, via
+`CoxeterRankTwo` and `CoxeterDihedralDescent`. It is hypothesis-free for `M i j ≤ 3` and
+otherwise conditional on `CoxeterRankTwo.DihedralExact`. The paragraph below saying "nothing
+here closes Matsumoto" is still an accurate statement about *this file*.
 
 The conditional that consumes it is `QOU.IwahoriHecke.TwMatsumoto.exists_Tw_of_matsumoto`.
 Not `BraidWordInvariance.exists_Tw_of_braidEquiv`, which quantifies over *all* words and whose
