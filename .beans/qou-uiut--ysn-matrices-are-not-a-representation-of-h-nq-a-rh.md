@@ -1278,3 +1278,36 @@ Run state: 12 atoms cached (through c12), c14 in flight. c14 is A=14, and n14
 at the same A took 34 min in the last full run, so it is simply a big atom
 rather than stuck — the memo grew 7612 -> 7814 entries during the last window,
 which is preserved work.
+
+---
+
+## Table status 2026-09-06 (session-kill cadence, and why it still converges)
+
+**15 / 19 atoms.** proton … c14, n14, o16 committed to
+`.work/hkt-uiut-ckpt.json`. Remaining: **ne20, si28, ca40, fe56**.
+
+The container suspends roughly every 10–15 minutes and kills the run; `setsid`
+does not help, so it is the container, not the process group. That would be
+fatal for a single multi-hour atom except for two things, both now carrying the
+run:
+
+- the **per-atom checkpoint**, which only works because the qou-sidu
+  atomic-write transform had wrapped `_ckpt_load`'s READ as a write — it read
+  `path + ".tmp"`, so resume had SILENTLY never worked and every restart
+  recomputed all 19. Fixed in `3ff3d899c8`.
+- the **kernel memo**, which persists partial work *within* an unfinished atom.
+  Measured across kills: 8204 → 8387 (n14) → 8960 → 9166 → 9360 → 9542 → 9728
+  (ne20 in progress). Each restart is strictly cheaper, so an atom longer than
+  the window still completes across several.
+
+n14 landed in **601 s** against a 34-minute estimate, on the memo's strength.
+
+### Do not run the gate suite while an atom is computing
+
+4 cores; the table sits at ~346 % with load already above 4. The witness records
+a per-atom `wall`, so concurrent CPU load does not merely slow the run — it
+**inflates a number that gets committed**. `qou_substrate` is now pip-installed
+here (`pip install -e tools/qou-substrate --no-deps`), which clears the gate
+suite's PREFLIGHT and makes a full 27-gate run possible in this container for
+the first time — but it is DEFERRED until the table is idle. The install is
+ephemeral and needs repeating in a fresh container.
