@@ -7,6 +7,7 @@ section_number: 7
 pages: 22-26
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 We now show that the extended Bloch group element of a decorate d representation is indepen-
 dent of the decoration. We ﬁrst prove that we can choose logar ithms of the Ptolemy coordinates

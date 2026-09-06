@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-5
 source_pdf: 1307.6697v2.pdf
 source_sha256: a3afaefdaebe0292
+doc_brief: "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS — In this paper we are interested in computing representation s of the funda- mental group of a 3-manifold into PGL (3,C) (in particular in PGL"
 ---
 Geometric structures on three manifolds have been extensiv ely studied. The usual setting
 is an action of a Lie group G on a homogeneous 3-manifold X. An (X, G) structure on a

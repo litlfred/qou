@@ -1,0 +1,1343 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1610.02592v3",
+ "source": {
+  "file": "1610.02592v3.pdf",
+  "sha256": "81020523d7d2bc1adc694fb1b57e0a88fde37b3af5779b4043d56a8ef3a2fe32",
+  "bytes": 16037733,
+  "pages": 494,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1610.02592",
+   "version": "3",
+   "primary_class": "math.GT",
+   "stamp_date": "5 Apr 2022"
+  },
+  "doi": null,
+  "title": "An Introduction to Geometric Topology Bruno Martelli arXiv:1610.02592v3 [math.GT] 5 Apr 2022",
+  "authors_raw": null,
+  "title_lines": [
+   "An Introduction to Geometric Topology",
+   "Bruno Martelli",
+   "arXiv:1610.02592v3 [math.GT] 5 Apr 2022"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20220406003530Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Part 1.  Hyperbolic geometry",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Chapter 1. Preliminaries",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Differential topology",
+   "page": 15,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 3,
+   "title": "Riemannian geometry",
+   "page": 23,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 3,
+   "title": "Measure theory",
+   "page": 31,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 3,
+   "title": "Groups",
+   "page": 34,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 3,
+   "title": "Group actions",
+   "page": 40,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 3,
+   "title": "Homology",
+   "page": 42,
+   "source": "outline",
+   "number": "1.6"
+  },
+  {
+   "level": 3,
+   "title": "Cells and handle decompositions",
+   "page": 45,
+   "source": "outline",
+   "number": "1.7"
+  },
+  {
+   "level": 2,
+   "title": "Chapter 2. Hyperbolic space",
+   "page": 53,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The models of hyperbolic space",
+   "page": 53,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Compactification and isometries of hyperbolic space",
+   "page": 66,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "Isometry groups in dimensions two and three",
+   "page": 72,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 3,
+   "title": "Geometry of hyperbolic space",
+   "page": 76,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Chapter 3. Hyperbolic manifolds",
+   "page": 81,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Discrete groups of isometries",
+   "page": 81,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 3,
+   "title": "Polyhedra",
+   "page": 86,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Tessellations",
+   "page": 90,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "Fundamental domains",
+   "page": 97,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 3,
+   "title": "Geodesic boundary, non-complete, and cone manifolds",
+   "page": 105,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 3,
+   "title": "Orbifolds",
+   "page": 109,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 2,
+   "title": "Chapter 4. Thick-thin decomposition",
+   "page": 117,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Tubes and cusps",
+   "page": 117,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 3,
+   "title": "The Margulis Lemma",
+   "page": 123,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 3,
+   "title": "Geodesic spectrum, isometry groups, and finite covers",
+   "page": 131,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 3,
+   "title": "The Bieberbach Theorem",
+   "page": 136,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Chapter 5. The sphere at infinity",
+   "page": 143,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Limit set",
+   "page": 143,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 3,
+   "title": "Extensions of homotopies",
+   "page": 151,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Part 2.  Surfaces",
+   "page": 159,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Chapter 6. Surfaces",
+   "page": 161,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Topological classification",
+   "page": 161,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 3,
+   "title": "Geometrisation",
+   "page": 165,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 3,
+   "title": "Curves on surfaces",
+   "page": 176,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 3,
+   "title": "Homotopy and isotopy",
+   "page": 189,
+   "source": "outline",
+   "number": "6.4"
+  },
+  {
+   "level": 3,
+   "title": "Mapping class group",
+   "page": 193,
+   "source": "outline",
+   "number": "6.5"
+  },
+  {
+   "level": 2,
+   "title": "Chapter 7. Teichm\u00fcller space",
+   "page": 199,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Introduction",
+   "page": 199,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 3,
+   "title": "Earthquakes and length functions",
+   "page": 202,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 3,
+   "title": "Fenchel\u2013Nielsen coordinates",
+   "page": 210,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 3,
+   "title": "Shear coordinates",
+   "page": 219,
+   "source": "outline",
+   "number": "7.4"
+  },
+  {
+   "level": 2,
+   "title": "Chapter 8. Surface diffeomorphisms",
+   "page": 227,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Thurston's compactification",
+   "page": 227,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 3,
+   "title": "Geodesic currents",
+   "page": 231,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 3,
+   "title": "Laminations",
+   "page": 247,
+   "source": "outline",
+   "number": "8.3"
+  },
+  {
+   "level": 3,
+   "title": "Surface diffeomorphisms",
+   "page": 266,
+   "source": "outline",
+   "number": "8.4"
+  },
+  {
+   "level": 1,
+   "title": "Part 3.  Three-manifolds",
+   "page": 275,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Chapter 9. Topology of three-manifolds",
+   "page": 277,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Algebraic topology",
+   "page": 277,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 3,
+   "title": "Prime decomposition",
+   "page": 280,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 3,
+   "title": "Incompressible surfaces",
+   "page": 295,
+   "source": "outline",
+   "number": "9.3"
+  },
+  {
+   "level": 3,
+   "title": "Haken manifolds",
+   "page": 302,
+   "source": "outline",
+   "number": "9.4"
+  },
+  {
+   "level": 2,
+   "title": "Chapter 10. Seifert manifolds",
+   "page": 311,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Lens spaces",
+   "page": 311,
+   "source": "outline",
+   "number": "10.1"
+  },
+  {
+   "level": 3,
+   "title": "Circle bundles",
+   "page": 318,
+   "source": "outline",
+   "number": "10.2"
+  },
+  {
+   "level": 3,
+   "title": "Seifert manifolds",
+   "page": 321,
+   "source": "outline",
+   "number": "10.3"
+  },
+  {
+   "level": 3,
+   "title": "Classification",
+   "page": 339,
+   "source": "outline",
+   "number": "10.4"
+  },
+  {
+   "level": 2,
+   "title": "Chapter 11. Constructions of three-manifolds",
+   "page": 351,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Heegaard splittings",
+   "page": 351,
+   "source": "outline",
+   "number": "11.1"
+  },
+  {
+   "level": 3,
+   "title": "Knots and links",
+   "page": 353,
+   "source": "outline",
+   "number": "11.2"
+  },
+  {
+   "level": 3,
+   "title": "Dehn surgery",
+   "page": 360,
+   "source": "outline",
+   "number": "11.3"
+  },
+  {
+   "level": 3,
+   "title": "Surface bundles",
+   "page": 367,
+   "source": "outline",
+   "number": "11.4"
+  },
+  {
+   "level": 3,
+   "title": "JSJ decomposition",
+   "page": 372,
+   "source": "outline",
+   "number": "11.5"
+  },
+  {
+   "level": 2,
+   "title": "Chapter 12. The eight geometries",
+   "page": 377,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Introduction",
+   "page": 377,
+   "source": "outline",
+   "number": "12.1"
+  },
+  {
+   "level": 3,
+   "title": "Elliptic three-manifolds",
+   "page": 378,
+   "source": "outline",
+   "number": "12.2"
+  },
+  {
+   "level": 3,
+   "title": "Flat three-manifolds",
+   "page": 388,
+   "source": "outline",
+   "number": "12.3"
+  },
+  {
+   "level": 3,
+   "title": "The product geometries",
+   "page": 391,
+   "source": "outline",
+   "number": "12.4"
+  },
+  {
+   "level": 3,
+   "title": "Nil geometry",
+   "page": 394,
+   "source": "outline",
+   "number": "12.5"
+  },
+  {
+   "level": 3,
+   "title": "SL2\"0365SL2 geometry",
+   "page": 400,
+   "source": "outline",
+   "number": "12.6"
+  },
+  {
+   "level": 3,
+   "title": "Sol geometry",
+   "page": 404,
+   "source": "outline",
+   "number": "12.7"
+  },
+  {
+   "level": 3,
+   "title": "Summary",
+   "page": 408,
+   "source": "outline",
+   "number": "12.8"
+  },
+  {
+   "level": 3,
+   "title": "The geometrisation conjecture",
+   "page": 409,
+   "source": "outline",
+   "number": "12.9"
+  },
+  {
+   "level": 2,
+   "title": "Chapter 13. Mostow rigidity theorem",
+   "page": 413,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Volume of tetrahedra",
+   "page": 413,
+   "source": "outline",
+   "number": "13.1"
+  },
+  {
+   "level": 3,
+   "title": "Simplicial volume",
+   "page": 418,
+   "source": "outline",
+   "number": "13.2"
+  },
+  {
+   "level": 3,
+   "title": "Mostow rigidity",
+   "page": 425,
+   "source": "outline",
+   "number": "13.3"
+  },
+  {
+   "level": 2,
+   "title": "Chapter 14. Hyperbolic three-manifolds",
+   "page": 429,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Cusped three-manifolds",
+   "page": 429,
+   "source": "outline",
+   "number": "14.1"
+  },
+  {
+   "level": 3,
+   "title": "Closed hyperbolic three-manifolds",
+   "page": 441,
+   "source": "outline",
+   "number": "14.2"
+  },
+  {
+   "level": 2,
+   "title": "Chapter 15. Hyperbolic Dehn filling",
+   "page": 451,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Introduction",
+   "page": 451,
+   "source": "outline",
+   "number": "15.1"
+  },
+  {
+   "level": 3,
+   "title": "The solution space",
+   "page": 458,
+   "source": "outline",
+   "number": "15.2"
+  },
+  {
+   "level": 3,
+   "title": "Proof of the theorem",
+   "page": 469,
+   "source": "outline",
+   "number": "15.3"
+  },
+  {
+   "level": 3,
+   "title": "Volumes",
+   "page": 476,
+   "source": "outline",
+   "number": "15.4"
+  },
+  {
+   "level": 2,
+   "title": "Bibliography",
+   "page": 487,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Index",
+   "page": 491,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 17,
+   "n_chars": 12753,
+   "n_words": 1909
+  },
+  {
+   "id": "sec-001-11-differential-topology",
+   "number": "1.1",
+   "title": "Differential topology",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 23,
+   "n_chars": 13374,
+   "n_words": 2170
+  },
+  {
+   "id": "sec-002-12-riemannian-geometry",
+   "number": "1.2",
+   "title": "Riemannian geometry",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 31,
+   "n_chars": 16440,
+   "n_words": 2710
+  },
+  {
+   "id": "sec-003-13-measure-theory",
+   "number": "1.3",
+   "title": "Measure theory",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 34,
+   "n_chars": 6233,
+   "n_words": 1046
+  },
+  {
+   "id": "sec-004-14-groups",
+   "number": "1.4",
+   "title": "Groups",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 40,
+   "n_chars": 12358,
+   "n_words": 2087
+  },
+  {
+   "id": "sec-005-15-group-actions",
+   "number": "1.5",
+   "title": "Group actions",
+   "level": 3,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 5023,
+   "n_words": 818
+  },
+  {
+   "id": "sec-006-16-homology",
+   "number": "1.6",
+   "title": "Homology",
+   "level": 3,
+   "page_start": 42,
+   "page_end": 45,
+   "n_chars": 4264,
+   "n_words": 649
+  },
+  {
+   "id": "sec-007-17-cells-and-handle-decompositions",
+   "number": "1.7",
+   "title": "Cells and handle decompositions",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 53,
+   "n_chars": 14537,
+   "n_words": 2259
+  },
+  {
+   "id": "sec-008-21-the-models-of-hyperbolic-space",
+   "number": "2.1",
+   "title": "The models of hyperbolic space",
+   "level": 3,
+   "page_start": 53,
+   "page_end": 67,
+   "n_chars": 22689,
+   "n_words": 3893
+  },
+  {
+   "id": "sec-009-22-compactification-and-isometries-of-hyperbolic",
+   "number": "2.2",
+   "title": "Compactification and isometries of hyperbolic space",
+   "level": 3,
+   "page_start": 67,
+   "page_end": 72,
+   "n_chars": 11046,
+   "n_words": 1888
+  },
+  {
+   "id": "sec-010-23-isometry-groups-in-dimensions-two-and-three",
+   "number": "2.3",
+   "title": "Isometry groups in dimensions two and three",
+   "level": 3,
+   "page_start": 72,
+   "page_end": 76,
+   "n_chars": 6380,
+   "n_words": 1051
+  },
+  {
+   "id": "sec-011-24-geometry-of-hyperbolic-space",
+   "number": "2.4",
+   "title": "Geometry of hyperbolic space",
+   "level": 3,
+   "page_start": 76,
+   "page_end": 81,
+   "n_chars": 6928,
+   "n_words": 1171
+  },
+  {
+   "id": "sec-012-31-discrete-groups-of-isometries",
+   "number": "3.1",
+   "title": "Discrete groups of isometries",
+   "level": 3,
+   "page_start": 81,
+   "page_end": 86,
+   "n_chars": 9636,
+   "n_words": 1577
+  },
+  {
+   "id": "sec-013-32-polyhedra",
+   "number": "3.2",
+   "title": "Polyhedra",
+   "level": 3,
+   "page_start": 86,
+   "page_end": 90,
+   "n_chars": 8600,
+   "n_words": 1487
+  },
+  {
+   "id": "sec-014-33-tessellations",
+   "number": "3.3",
+   "title": "Tessellations",
+   "level": 3,
+   "page_start": 90,
+   "page_end": 97,
+   "n_chars": 7842,
+   "n_words": 1255
+  },
+  {
+   "id": "sec-015-34-fundamental-domains",
+   "number": "3.4",
+   "title": "Fundamental domains",
+   "level": 3,
+   "page_start": 97,
+   "page_end": 105,
+   "n_chars": 17948,
+   "n_words": 2921
+  },
+  {
+   "id": "sec-016-35-geodesic-boundary-non-complete-and-cone-manif",
+   "number": "3.5",
+   "title": "Geodesic boundary, non-complete, and cone manifolds",
+   "level": 3,
+   "page_start": 105,
+   "page_end": 109,
+   "n_chars": 8525,
+   "n_words": 1349
+  },
+  {
+   "id": "sec-017-36-orbifolds",
+   "number": "3.6",
+   "title": "Orbifolds",
+   "level": 3,
+   "page_start": 109,
+   "page_end": 117,
+   "n_chars": 15137,
+   "n_words": 2429
+  },
+  {
+   "id": "sec-018-41-tubes-and-cusps",
+   "number": "4.1",
+   "title": "Tubes and cusps",
+   "level": 3,
+   "page_start": 117,
+   "page_end": 123,
+   "n_chars": 11000,
+   "n_words": 1805
+  },
+  {
+   "id": "sec-019-42-the-margulis-lemma",
+   "number": "4.2",
+   "title": "The Margulis Lemma",
+   "level": 3,
+   "page_start": 123,
+   "page_end": 131,
+   "n_chars": 18270,
+   "n_words": 2945
+  },
+  {
+   "id": "sec-020-43-geodesic-spectrum-isometry-groups-and-finite",
+   "number": "4.3",
+   "title": "Geodesic spectrum, isometry groups, and finite covers",
+   "level": 3,
+   "page_start": 131,
+   "page_end": 136,
+   "n_chars": 13389,
+   "n_words": 2076
+  },
+  {
+   "id": "sec-021-44-the-bieberbach-theorem",
+   "number": "4.4",
+   "title": "The Bieberbach Theorem",
+   "level": 3,
+   "page_start": 136,
+   "page_end": 143,
+   "n_chars": 9610,
+   "n_words": 1600
+  },
+  {
+   "id": "sec-022-51-limit-set",
+   "number": "5.1",
+   "title": "Limit set",
+   "level": 3,
+   "page_start": 143,
+   "page_end": 151,
+   "n_chars": 15968,
+   "n_words": 2576
+  },
+  {
+   "id": "sec-023-52-extensions-of-homotopies",
+   "number": "5.2",
+   "title": "Extensions of homotopies",
+   "level": 3,
+   "page_start": 151,
+   "page_end": 163,
+   "n_chars": 16415,
+   "n_words": 2800
+  },
+  {
+   "id": "sec-024-61-topological-classification",
+   "number": "6.1",
+   "title": "Topological classification",
+   "level": 3,
+   "page_start": 163,
+   "page_end": 165,
+   "n_chars": 3218,
+   "n_words": 527
+  },
+  {
+   "id": "sec-025-62-geometrisation",
+   "number": "6.2",
+   "title": "Geometrisation",
+   "level": 3,
+   "page_start": 165,
+   "page_end": 176,
+   "n_chars": 22289,
+   "n_words": 3837
+  },
+  {
+   "id": "sec-026-63-curves-on-surfaces",
+   "number": "6.3",
+   "title": "Curves on surfaces",
+   "level": 3,
+   "page_start": 176,
+   "page_end": 189,
+   "n_chars": 25677,
+   "n_words": 4198
+  },
+  {
+   "id": "sec-027-64-homotopy-and-isotopy",
+   "number": "6.4",
+   "title": "Homotopy and isotopy",
+   "level": 3,
+   "page_start": 189,
+   "page_end": 193,
+   "n_chars": 8292,
+   "n_words": 1452
+  },
+  {
+   "id": "sec-028-65-mapping-class-group",
+   "number": "6.5",
+   "title": "Mapping class group",
+   "level": 3,
+   "page_start": 193,
+   "page_end": 199,
+   "n_chars": 12544,
+   "n_words": 2121
+  },
+  {
+   "id": "sec-029-71-introduction",
+   "number": "7.1",
+   "title": "Introduction",
+   "level": 3,
+   "page_start": 199,
+   "page_end": 202,
+   "n_chars": 5685,
+   "n_words": 966
+  },
+  {
+   "id": "sec-030-72-earthquakes-and-length-functions",
+   "number": "7.2",
+   "title": "Earthquakes and length functions",
+   "level": 3,
+   "page_start": 202,
+   "page_end": 210,
+   "n_chars": 14690,
+   "n_words": 2500
+  },
+  {
+   "id": "sec-031-73-fenchelnielsen-coordinates",
+   "number": "7.3",
+   "title": "Fenchel\u2013Nielsen coordinates",
+   "level": 3,
+   "page_start": 210,
+   "page_end": 219,
+   "n_chars": 17017,
+   "n_words": 2794
+  },
+  {
+   "id": "sec-032-74-shear-coordinates",
+   "number": "7.4",
+   "title": "Shear coordinates",
+   "level": 3,
+   "page_start": 219,
+   "page_end": 230,
+   "n_chars": 20799,
+   "n_words": 3422
+  },
+  {
+   "id": "sec-033-82-geodesic-currents",
+   "number": "8.2",
+   "title": "Geodesic currents",
+   "level": 3,
+   "page_start": 230,
+   "page_end": 246,
+   "n_chars": 36645,
+   "n_words": 6200
+  },
+  {
+   "id": "sec-034-83-laminations",
+   "number": "8.3",
+   "title": "Laminations",
+   "level": 3,
+   "page_start": 246,
+   "page_end": 266,
+   "n_chars": 41364,
+   "n_words": 6715
+  },
+  {
+   "id": "sec-035-84-surface-diffeomorphisms",
+   "number": "8.4",
+   "title": "Surface diffeomorphisms",
+   "level": 3,
+   "page_start": 266,
+   "page_end": 277,
+   "n_chars": 19408,
+   "n_words": 3149
+  },
+  {
+   "id": "sec-036-91-algebraic-topology",
+   "number": "9.1",
+   "title": "Algebraic topology",
+   "level": 3,
+   "page_start": 277,
+   "page_end": 280,
+   "n_chars": 6238,
+   "n_words": 982
+  },
+  {
+   "id": "sec-037-92-prime-decomposition",
+   "number": "9.2",
+   "title": "Prime decomposition",
+   "level": 3,
+   "page_start": 280,
+   "page_end": 295,
+   "n_chars": 28660,
+   "n_words": 4736
+  },
+  {
+   "id": "sec-038-93-incompressible-surfaces",
+   "number": "9.3",
+   "title": "Incompressible surfaces",
+   "level": 3,
+   "page_start": 295,
+   "page_end": 302,
+   "n_chars": 14030,
+   "n_words": 2181
+  },
+  {
+   "id": "sec-039-94-haken-manifolds",
+   "number": "9.4",
+   "title": "Haken manifolds",
+   "level": 3,
+   "page_start": 302,
+   "page_end": 311,
+   "n_chars": 18572,
+   "n_words": 2979
+  },
+  {
+   "id": "sec-040-101-lens-spaces",
+   "number": "10.1",
+   "title": "Lens spaces",
+   "level": 3,
+   "page_start": 311,
+   "page_end": 318,
+   "n_chars": 12375,
+   "n_words": 2109
+  },
+  {
+   "id": "sec-041-102-circle-bundles",
+   "number": "10.2",
+   "title": "Circle bundles",
+   "level": 3,
+   "page_start": 318,
+   "page_end": 320,
+   "n_chars": 4128,
+   "n_words": 694
+  },
+  {
+   "id": "sec-042-103-seifert-manifolds",
+   "number": "10.3",
+   "title": "Seifert manifolds",
+   "level": 3,
+   "page_start": 320,
+   "page_end": 339,
+   "n_chars": 39208,
+   "n_words": 6696
+  },
+  {
+   "id": "sec-043-104-classification",
+   "number": "10.4",
+   "title": "Classification",
+   "level": 3,
+   "page_start": 339,
+   "page_end": 351,
+   "n_chars": 25304,
+   "n_words": 4118
+  },
+  {
+   "id": "sec-044-111-heegaard-splittings",
+   "number": "11.1",
+   "title": "Heegaard splittings",
+   "level": 3,
+   "page_start": 351,
+   "page_end": 353,
+   "n_chars": 2845,
+   "n_words": 444
+  },
+  {
+   "id": "sec-045-112-knots-and-links",
+   "number": "11.2",
+   "title": "Knots and links",
+   "level": 3,
+   "page_start": 353,
+   "page_end": 360,
+   "n_chars": 14205,
+   "n_words": 2345
+  },
+  {
+   "id": "sec-046-113-dehn-surgery",
+   "number": "11.3",
+   "title": "Dehn surgery",
+   "level": 3,
+   "page_start": 360,
+   "page_end": 367,
+   "n_chars": 12977,
+   "n_words": 2142
+  },
+  {
+   "id": "sec-047-114-surface-bundles",
+   "number": "11.4",
+   "title": "Surface bundles",
+   "level": 3,
+   "page_start": 367,
+   "page_end": 372,
+   "n_chars": 11324,
+   "n_words": 1879
+  },
+  {
+   "id": "sec-048-115-jsj-decomposition",
+   "number": "11.5",
+   "title": "JSJ decomposition",
+   "level": 3,
+   "page_start": 372,
+   "page_end": 377,
+   "n_chars": 9361,
+   "n_words": 1460
+  },
+  {
+   "id": "sec-049-121-introduction",
+   "number": "12.1",
+   "title": "Introduction",
+   "level": 3,
+   "page_start": 377,
+   "page_end": 378,
+   "n_chars": 2325,
+   "n_words": 379
+  },
+  {
+   "id": "sec-050-122-elliptic-three-manifolds",
+   "number": "12.2",
+   "title": "Elliptic three-manifolds",
+   "level": 3,
+   "page_start": 378,
+   "page_end": 388,
+   "n_chars": 20753,
+   "n_words": 3641
+  },
+  {
+   "id": "sec-051-123-flat-three-manifolds",
+   "number": "12.3",
+   "title": "Flat three-manifolds",
+   "level": 3,
+   "page_start": 388,
+   "page_end": 391,
+   "n_chars": 4269,
+   "n_words": 724
+  },
+  {
+   "id": "sec-052-124-the-product-geometries",
+   "number": "12.4",
+   "title": "The product geometries",
+   "level": 3,
+   "page_start": 391,
+   "page_end": 394,
+   "n_chars": 7032,
+   "n_words": 1161
+  },
+  {
+   "id": "sec-053-125-nil-geometry",
+   "number": "12.5",
+   "title": "Nil geometry",
+   "level": 3,
+   "page_start": 394,
+   "page_end": 404,
+   "n_chars": 18728,
+   "n_words": 3378
+  },
+  {
+   "id": "sec-054-127-sol-geometry",
+   "number": "12.7",
+   "title": "Sol geometry",
+   "level": 3,
+   "page_start": 404,
+   "page_end": 408,
+   "n_chars": 6506,
+   "n_words": 1165
+  },
+  {
+   "id": "sec-055-128-summary",
+   "number": "12.8",
+   "title": "Summary",
+   "level": 3,
+   "page_start": 408,
+   "page_end": 409,
+   "n_chars": 2082,
+   "n_words": 332
+  },
+  {
+   "id": "sec-056-129-the-geometrisation-conjecture",
+   "number": "12.9",
+   "title": "The geometrisation conjecture",
+   "level": 3,
+   "page_start": 409,
+   "page_end": 413,
+   "n_chars": 7180,
+   "n_words": 1091
+  },
+  {
+   "id": "sec-057-131-volume-of-tetrahedra",
+   "number": "13.1",
+   "title": "Volume of tetrahedra",
+   "level": 3,
+   "page_start": 413,
+   "page_end": 418,
+   "n_chars": 6374,
+   "n_words": 1286
+  },
+  {
+   "id": "sec-058-132-simplicial-volume",
+   "number": "13.2",
+   "title": "Simplicial volume",
+   "level": 3,
+   "page_start": 418,
+   "page_end": 424,
+   "n_chars": 12200,
+   "n_words": 2055
+  },
+  {
+   "id": "sec-059-133-mostow-rigidity",
+   "number": "13.3",
+   "title": "Mostow rigidity",
+   "level": 3,
+   "page_start": 424,
+   "page_end": 429,
+   "n_chars": 11378,
+   "n_words": 1788
+  },
+  {
+   "id": "sec-060-141-cusped-three-manifolds",
+   "number": "14.1",
+   "title": "Cusped three-manifolds",
+   "level": 3,
+   "page_start": 429,
+   "page_end": 441,
+   "n_chars": 21994,
+   "n_words": 3593
+  },
+  {
+   "id": "sec-061-142-closed-hyperbolic-three-manifolds",
+   "number": "14.2",
+   "title": "Closed hyperbolic three-manifolds",
+   "level": 3,
+   "page_start": 441,
+   "page_end": 451,
+   "n_chars": 20075,
+   "n_words": 3414
+  },
+  {
+   "id": "sec-062-151-introduction",
+   "number": "15.1",
+   "title": "Introduction",
+   "level": 3,
+   "page_start": 451,
+   "page_end": 458,
+   "n_chars": 12759,
+   "n_words": 2256
+  },
+  {
+   "id": "sec-063-152-the-solution-space",
+   "number": "15.2",
+   "title": "The solution space",
+   "level": 3,
+   "page_start": 458,
+   "page_end": 469,
+   "n_chars": 18247,
+   "n_words": 3160
+  },
+  {
+   "id": "sec-064-153-proof-of-the-theorem",
+   "number": "15.3",
+   "title": "Proof of the theorem",
+   "level": 3,
+   "page_start": 469,
+   "page_end": 476,
+   "n_chars": 16326,
+   "n_words": 2806
+  },
+  {
+   "id": "sec-065-154-volumes",
+   "number": "15.4",
+   "title": "Volumes",
+   "level": 3,
+   "page_start": 476,
+   "page_end": 487,
+   "n_chars": 22350,
+   "n_words": 3708
+  },
+  {
+   "id": "sec-066-bibliography",
+   "number": null,
+   "title": "Bibliography",
+   "level": 2,
+   "page_start": 487,
+   "page_end": 491,
+   "n_chars": 7107,
+   "n_words": 946
+  },
+  {
+   "id": "sec-067-index",
+   "number": null,
+   "title": "Index",
+   "level": 2,
+   "page_start": 491,
+   "page_end": 494,
+   "n_chars": 7971,
+   "n_words": 1137
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 16,
+  "likely_scanned": false,
+  "toc_entries": 88,
+  "sections": 68,
+  "chars_total": 936876
+ }
+}

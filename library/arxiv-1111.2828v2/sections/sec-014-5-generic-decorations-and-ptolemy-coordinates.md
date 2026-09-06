@@ -7,6 +7,7 @@ section_number: 5
 pages: 15-16
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 In all of the following, G = SL( n, C), and N is the subgroup of upper triangular matrices with
 1’s on the diagonal. A (G, N)-representation ρ : π1(M ) → G is called boundary-unipotent. For a

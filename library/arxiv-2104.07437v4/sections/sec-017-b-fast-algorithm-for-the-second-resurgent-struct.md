@@ -7,6 +7,7 @@ section_number: null
 pages: 44-45
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 In this section we present a fast algorithm to compute the asymptotic series Φ 0;2(gs) for the
 geometry of local P2.

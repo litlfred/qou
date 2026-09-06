@@ -1,0 +1,353 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "qt2pf5d0mn",
+ "source": {
+  "file": "qt2pf5d0mn.pdf",
+  "sha256": "4c8581c3b46398e3ab995deba61e3241f3239401299d4461211089e0f0d7b75e",
+  "bytes": 915027,
+  "pages": 106,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "UC Santa Barbara",
+  "authors_raw": "UC Santa Barbara Electronic Theses and Dissertations",
+  "title_lines": [
+   "UC Santa Barbara"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20160609143645-07'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12; modified using iText\u00ae 7.1.4 \u00a92000-2018 iText Group NV (AGPL-version)",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Curriculum Vitae",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Higher Categories",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Ribbon Fusion Categories",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "G-crossed Braided Spherical Fusion Categories (G-BSFC)",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Monoidal 2-categories with Duals",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Invariants of 4-manifolds",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Partition Function",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A Formula for the Partition Function",
+   "page": 51,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Examples",
+   "page": 54,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Variation: Trivial G-grading",
+   "page": 59,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Proof of Invariance",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Invariance under Choice of Representatives",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Invariance under change of ordering",
+   "page": 67,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Pachner Moves",
+   "page": 81,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Invariance under Pachner Moves",
+   "page": 83,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Future Directions and Open Questions",
+   "page": 100,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Bibliography",
+   "page": 103,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1147,
+   "n_words": 179
+  },
+  {
+   "id": "sec-001-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 15,
+   "n_chars": 11170,
+   "n_words": 1957
+  },
+  {
+   "id": "sec-002-higher-categories",
+   "number": null,
+   "title": "Higher Categories",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1392,
+   "n_words": 239
+  },
+  {
+   "id": "sec-003-ribbon-fusion-categories",
+   "number": null,
+   "title": "Ribbon Fusion Categories",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 32,
+   "n_chars": 20657,
+   "n_words": 3728
+  },
+  {
+   "id": "sec-004-g-crossed-braided-spherical-fusion-categories-g",
+   "number": null,
+   "title": "G-crossed Braided Spherical Fusion Categories (G-BSFC)",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 36,
+   "n_chars": 4826,
+   "n_words": 906
+  },
+  {
+   "id": "sec-005-monoidal-2-categories-with-duals",
+   "number": null,
+   "title": "Monoidal 2-categories with Duals",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 42,
+   "n_chars": 7691,
+   "n_words": 1389
+  },
+  {
+   "id": "sec-006-invariants-of-4-manifolds",
+   "number": null,
+   "title": "Invariants of 4-manifolds",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 88,
+   "n_words": 15
+  },
+  {
+   "id": "sec-007-partition-function",
+   "number": null,
+   "title": "Partition Function",
+   "level": 2,
+   "page_start": 42,
+   "page_end": 51,
+   "n_chars": 10712,
+   "n_words": 2005
+  },
+  {
+   "id": "sec-008-a-formula-for-the-partition-function",
+   "number": null,
+   "title": "A Formula for the Partition Function",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 54,
+   "n_chars": 3250,
+   "n_words": 654
+  },
+  {
+   "id": "sec-009-examples",
+   "number": null,
+   "title": "Examples",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 59,
+   "n_chars": 7880,
+   "n_words": 1412
+  },
+  {
+   "id": "sec-010-variation-trivial-g-grading",
+   "number": null,
+   "title": "Variation: Trivial G-grading",
+   "level": 2,
+   "page_start": 59,
+   "page_end": 62,
+   "n_chars": 3468,
+   "n_words": 634
+  },
+  {
+   "id": "sec-011-proof-of-invariance",
+   "number": null,
+   "title": "Proof of Invariance",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 62,
+   "n_chars": 237,
+   "n_words": 40
+  },
+  {
+   "id": "sec-012-invariance-under-choice-of-representatives",
+   "number": null,
+   "title": "Invariance under Choice of Representatives",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 67,
+   "n_chars": 4926,
+   "n_words": 912
+  },
+  {
+   "id": "sec-013-invariance-under-change-of-ordering",
+   "number": null,
+   "title": "Invariance under change of ordering",
+   "level": 2,
+   "page_start": 67,
+   "page_end": 81,
+   "n_chars": 19165,
+   "n_words": 3575
+  },
+  {
+   "id": "sec-014-pachner-moves",
+   "number": null,
+   "title": "Pachner Moves",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 83,
+   "n_chars": 2546,
+   "n_words": 482
+  },
+  {
+   "id": "sec-015-invariance-under-pachner-moves",
+   "number": null,
+   "title": "Invariance under Pachner Moves",
+   "level": 2,
+   "page_start": 83,
+   "page_end": 101,
+   "n_chars": 14875,
+   "n_words": 3106
+  },
+  {
+   "id": "sec-016-future-directions-and-open-questions",
+   "number": null,
+   "title": "Future Directions and Open Questions",
+   "level": 1,
+   "page_start": 101,
+   "page_end": 103,
+   "n_chars": 2399,
+   "n_words": 383
+  },
+  {
+   "id": "sec-017-bibliography",
+   "number": null,
+   "title": "Bibliography",
+   "level": 1,
+   "page_start": 103,
+   "page_end": 106,
+   "n_chars": 6473,
+   "n_words": 977
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 19,
+  "sections": 18,
+  "chars_total": 122902
+ }
+}

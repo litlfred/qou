@@ -7,6 +7,7 @@ section_number: 3.3.3
 pages: 34-38
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 The TS/ST correspondence allows us to write down an integral representation of the second
 trace. In principle the second bosonic trace Tr ρ2

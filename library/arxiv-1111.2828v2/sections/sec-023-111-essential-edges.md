@@ -7,6 +7,7 @@ section_number: 11.1
 pages: 40-41
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 Deﬁnition 11.4. An edge of K is essential if the lifts to L have distinct end points.
 Note that an edge may be essential even though it is homotopic ally trivial in K. Let L(0) denote
