@@ -1,0 +1,62 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-0707.2003v2",
+ "source_sha256": "0b8fe37aabeee412",
+ "brief": "A geometric model for Hochschild homology of Soergel bimodules BEN WEBSTER GEORDIE WILLIAMSON School of Mathematics Mathematisches Institut Institute for Advanced Study der Universität Freiburg — An",
+ "extended": "**A geometric model for Hochschild homology of Soergel bimodules BEN WEBSTER GEORDIE WILLIAMSON School of Mathematics Mathematisches Institut Institute for Advanced Study der Universität Freiburg**\n\n20 pp, 8 sections.\n\n**Abstract.** An important step in the calculation of the triply graded lin k homology theory of Khovanov and Rozansky is the determinati on of the Hochschild homology of Soergel bimodules for SL(n). W e present a ge- ometric model for this Hochschild homology for any simple gr oup G, as equivariant intersection homology of B× B -orbit closures in G. W e show that, in type A these orbit closures are equivariantly forma l for the conju- gation T -action. W e use this fact to show that in the case where the cor re- sponding orbit closure is smooth, this Hochschild homology is an exterior algebra over a polynomial ring on generators whose degree is explicitly determined by the geometry of the orbit closure, and describ e its Hilbert series, proving a conjecture of Jacob Rasmussen.\n\n**Outline.** 1 Introduction; Acknowledgments; 2 Knot homology and Soergel bimodules; 3 The equivariant derived category and dg-modu; 4 Hochschild homology and dg-algebras; 5 The geometry of Bott-Samelson bimodules; 6 Equivariant formality; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: The indecomposable Soergel bimodules are parame-\n- Theorem 1.2: LetF be a semi-simple B× B -equivariant perverse sheaf on G\n- Theorem 1.3: Assume G = SL( n) or GL(n). Then IC(Gw) is equivariantly\n- Theorem 1.4: The intersection cohomology IH∗\n- Theorem 1.5: If Gw is smooth (in any type), then the Hochschild homology of\n- Theorem 1.6: If G = SL(n) or GL(n), then for all i, we have",
+ "tokens": {
+  "brief": 49,
+  "extended": 426
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-001-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-002-2-knot-homology-and-soergel-bimodules",
+   "title": "Knot homology and Soergel bimodules",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-003-3-the-equivariant-derived-category-and-dg-module",
+   "title": "The equivariant derived category and dg-modules",
+   "pages": "7-12"
+  },
+  {
+   "id": "sec-004-4-hochschild-homology-and-dg-algebras",
+   "title": "Hochschild homology and dg-algebras",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-005-5-the-geometry-of-bott-samelson-bimodules",
+   "title": "The geometry of Bott-Samelson bimodules",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-006-6-equivariant-formality",
+   "title": "Equivariant formality",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-007-references",
+   "title": "References",
+   "pages": "19-20"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

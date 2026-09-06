@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-05T19:08:51Z
+updated_at: 2026-09-05T19:42:13Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -762,3 +762,128 @@ reimplementation could do by sharing an assumption.
 every file of the chain, and measured 414/414.
 
 Both sibling docstrings corrected in place.
+
+
+## 2026-09-05 — CORRECTION to my own framing: the canonical word is NOT monotone
+
+Found while starting `qou-brng`. **No merged number is wrong; one framing claim is.**
+
+**What happened.** `7db032fb48` (today **07:53Z**, `qou-hu1f`) changed
+`atom_canonical_crossings`' default `intra_order` from `grouped` to `borromean`, so each
+nucleon's confinement core is the alternating `(σ₀σ₁⁻¹)³` and each generator's letters are
+**interleaved**. Measured on the current default:
+
+    2H   23 letters, 19 runs over 5 generators   one_run_per_gen=False  ascending=False
+    4He  47 letters, 39 runs over 11 generators  one_run_per_gen=False  ascending=False
+
+Under `grouped` both are monotone (5 runs / 5 gens, 11 / 11, ascending).
+
+**So "the derived carrier is a monotone closure" is FALSE for the current default word**,
+and I used that sentence to carry the Lean theorems onto the carrier. The theorems are
+about monotone words and are unaffected; what fails is the *application* to the canonical
+word as it now stands.
+
+**What is NOT affected — measured, both conventions, 14 branch-isotope pairs:**
+
+    grouped    triples 848  SEP 786  CHAIN 62  nonzero mubar 0  path linking 14/14
+    borromean  triples 848  SEP 786  CHAIN 62  nonzero mubar 0  path linking 14/14
+
+Identical. Every carrier figure in #6560/#6634/#6679/#6726/#6775/#6858/#6872 stands, and
+the `Δ`-classification and chain/separable split are unchanged.
+
+**Prediction E is passing for a reason other than the one its docstring gives.**
+`monotone_word_cycle_structure_probe.py` calls E the validation that `posAfter`/`compIdx`
+model *a monotone closure*. The carrier is not monotone, yet `perm == pi` on **14/14**
+carrier words. That is not luck — on random *non-monotone* words the same test agrees on
+only **22/400 (5.5 %)**. So E is measuring something real about the carrier and mislabels
+what.
+
+**Hypothesis (not established):** the Borromean core contributes an *even* number of
+letters per generator within each nucleon, so per-generator parity — which is what the
+permutation depends on here — is unchanged, leaving components and linking identical while
+destroying contiguity. That would explain both the identical table and the 14/14.
+
+**What this costs.** The chain "proved end to end from the braid word" reaches *monotone*
+words; the canonical word is currently outside it, with its structural consequences intact
+by measurement rather than by the theorem. The honest statement is weaker than the one I
+made this afternoon, and the fix is either to prove the parity hypothesis above (which
+would restore the application) or to scope every carrier sentence to "the grouped word".
+
+Not fixed here — measured and recorded. Follow-up before any further carrier claim.
+
+
+### Same day, hours later — my parity hypothesis is REFUTED; option 1 is dead
+
+The correction above proposed two fixes and said I expected option 1 (prove the
+even-per-generator parity hypothesis, restoring the application). **Measured, and it does
+not hold.**
+
+**H1 — TRUE, and stronger than I guessed.** The per-generator *letter counts* are
+identical between `borromean` and `grouped`. The odd-count generator sets match exactly:
+²H `[0,2,3]`, ³H `[0,2,3,5,6]`, ⁴He `[0,2,3,5,6,8,9]`, ⁶Li `[0,2,3,5,6,8,9,11,12,14,15]`
+— same under both conventions.
+
+**H2 — FALSE.** The permutation is *not* determined by that parity vector. Comparing each
+word's true permutation against the ascending word carrying the same per-generator
+parities: **7/14** carrier words agree (the 7 grouped ones, which are monotone and for
+which this is just the monotone reduction), and **70/400 (17.5 %)** random non-monotone.
+
+So the identical closure structure — 848 triples, 786 separable, 62 chain, 0 nonzero
+`μ̄`, path linking 14/14 under both conventions — is **not** explained by parity
+preservation. My stated mechanism is wrong.
+
+**The surviving candidate, not established:** the two words have *different*
+permutations but the *same orbit partition*. Components are cycles, and two distinct
+permutations can share their orbits — that would give identical components, linking and
+triples while the permutations differ, which is exactly the pattern measured. Testing it
+means comparing the two permutations' orbit partitions directly, not their values.
+
+**Consequence for the correction above:** option 1 is dead as stated. The live options
+are the orbit-partition route (if it holds, it restores the application by a different
+argument) or option 2 — scope every carrier sentence to the grouped word.
+
+Recorded rather than fixed. Noting that I wrote "the outcome I'd expect" against option 1
+about an hour before measuring it to be false.
+
+
+### RESOLVED — same shape, shifted components; and it is the sharper finding
+
+The orbit-partition candidate is **also refuted**, and resolving why reconciles the two
+measurements that looked contradictory.
+
+**Measured, 14 carrier branch-isotope pairs:** permutations identical **0/14**, orbit
+partitions equal **0/14**. Yet the closure table is identical under both conventions
+(848 triples, 786 separable, 62 chain, 0 nonzero `μ̄`, path linking 14/14).
+
+**Not a contradiction — the partitions are SHIFTED BY ONE STRAND:**
+
+    4He grouped     [0,1] [2,3,4] [5,6,7] [8,9,10] [11]
+    4He borromean   [0]   [1,2,3] [4,5,6] [7,8,9]  [10,11]
+
+Same `μ = 5`, same block-size multiset `{1,2,3,3,3}`, different strands. Every count is a
+function of `μ` and the path shape, so every count agrees while no component does. The two
+words are **not the same link**; their linking graphs are **isomorphic**.
+
+**So the correct statement, replacing both my earlier attempts:**
+
+- carrier **counts** are convention-independent — every figure in #6560…#6872 stands under
+  both words, now for a *reason* rather than by coincidence;
+- carrier **component identity** — which strands form which component — is **not**. It
+  shifts by one under the 07:53 default change.
+
+**Why that matters beyond bookkeeping, and it bears on `qou-brng`.** Anything that
+*identifies a component with a nucleon* is convention-dependent. The coordination-graph
+route to the binding term needs exactly that identification: its vertices are supposed to
+be nucleons. Measured here, the vertex↔nucleon assignment is not fixed by the framework —
+it moves with an intra-word convention chosen for unrelated reasons (`qou-hu1f`). That is
+an obstruction of the same family as `qou-m07y`'s arrangement-dependence, reached
+independently and at the level of the *carrier* rather than of a bond ansatz.
+
+**Scope (a)** — 7 isotopes, both crossing-resolution branches, two conventions. Not a
+refutation of the coordination route; a statement that its vertex labelling is not
+currently well-defined.
+
+**Three hypotheses of mine, in order, all refuted by measurement within two hours:** the
+even-per-generator parity route; the shared-orbit-partition route; and before them the
+framing that the carrier is a monotone closure at all. The counts survived all three,
+which is why they are worth more than the framings were.

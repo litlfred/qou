@@ -178,9 +178,25 @@ PUB = re.compile(r"\d+\.\d{6,}")      # published figures worth tracing
 SRC = re.compile(r"\d+\.\d{3,}")      # witness values, possibly shorter
 LABEL = re.compile(r'label:\s*"([^"]+)"')
 
-#: The known positive: this block and its declared witness compute different z.
-SELFTEST_BLOCK = "prop:q-beta-spectral-bridge"
-SELFTEST_FIGURE = "0.4993203340335613"
+#: The known positive. A detector with no known positive can report a whole class
+#: clean and mean nothing by it, so this pair must stay live.
+#:
+#: It was `prop:q-beta-spectral-bridge` on `0.4993203340335613`, the convention-C
+#: `z` that diverged 21 % from its own producer. That defect was FIXED on
+#: 2026-09-05 (the qbeta channel migrated C -> D), and fixing it turned the
+#: selftest red -- the third time in one day that "assert the defect" produced a
+#: check that fails on success. A selftest still needs a positive, so it is
+#: re-pointed rather than deleted, and the replacement is chosen to be STABLE BY
+#: DESIGN rather than merely unfixed:
+#:
+#: `prop:frobenius-gram-matrix` publishes its Gram determinant under the excised
+#: convention C as a deliberate, labelled side-by-side comparison against the
+#: production convention D. No witness carries it and none should -- closing that
+#: row would mean computing an excised convention, which is the wrong direction.
+#: So the row stays open on purpose, and 17 significant figures put it far above
+#: the discrimination floor.
+SELFTEST_BLOCK = "prop:frobenius-gram-matrix"
+SELFTEST_FIGURE = "0.18920521914403668"
 
 
 def label_to_files() -> dict[str, list[Path]]:
@@ -298,10 +314,10 @@ def main() -> int:
     # this a zero here would mean nothing.
     fails = []
     if SELFTEST_BLOCK not in flagged:
-        fails.append(f"KNOWN POSITIVE NOT FLAGGED — {SELFTEST_BLOCK} and its "
-                     f"declared witness are measured to compute different z "
-                     f"(21 %); if this check cannot see that, it can see "
-                     f"nothing.")
+        fails.append(f"KNOWN POSITIVE NOT FLAGGED — {SELFTEST_BLOCK} publishes "
+                     f"a convention-C figure no witness carries, deliberately "
+                     f"and permanently; if this check cannot see that, it can "
+                     f"see nothing.")
     elif SELFTEST_FIGURE not in flagged[SELFTEST_BLOCK]:
         fails.append(f"known positive flagged but not on {SELFTEST_FIGURE} as "
                      f"ASSERTED — either the figure that diverges is missed, or "

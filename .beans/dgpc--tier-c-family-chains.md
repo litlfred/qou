@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-08-19T13:52:52Z
+updated_at: 2026-09-05T18:21:53Z
 ---
 
 Parent dgap. 66 witnesses across producers that emit MORE THAN ONE witness. The audit matches
@@ -163,3 +163,13 @@ orphan whose recommended disposition is deletion.
 Open owner decisions: re-point `B_4He_AME_MeV` (gated on `fvxq`); downgrade or
 reconstruct the two `mba-step02` blocks at `status: "verified"`; which of the
 five prose witnesses belong on the acknowledged floor.
+
+
+
+## Reclassified 2026-09-05 — mechanical backlog, misfiled into an owner-gated cluster
+
+This is a Tier-C drain queue with per-family counts and recorded progress (two
+families drained on `claude/dgpc-habiro-family-chain-2026-08-18`). There is no
+decision in it. It was swept into owner-gated Cluster 7 as "a `status:
+verified` downgrade", which is a step *inside* the work, not a question for the
+author. Off the owner-gated queue; ordinary backlog.

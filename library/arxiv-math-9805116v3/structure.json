@@ -1,0 +1,503 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-9805116v3",
+ "source": {
+  "file": "9805116v3.pdf",
+  "sha256": "65ce47d232d61de4f4f1f64b202d5b0299e66d7e2cc7aa0218b5c8e4f8ee169c",
+  "bytes": 401111,
+  "pages": 40,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/9805116",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "8 Jun 1999"
+  },
+  "doi": null,
+  "title": "Weak Hopf Algebras",
+  "authors_raw": "I. Integral Theory and C \u2217-structure",
+  "title_lines": [
+   "Weak Hopf Algebras"
+  ],
+  "abstract": "We give an introduction to the theory of weak Hopf algebras pr oposed recently as a coassociative alternative of weak quasi-Hopf algebras. We follow an axiom atic approach keeping as close as possible to the \u201dclassical\u201d theory of Hop f algebras. The emphasis is put on the new structure related to the presence of canonical sub algebras AL and AR in any weak Hopf algebra A that play the role of non-commutative numbers in many respec ts. A theory of integrals is developed in which we show how the alge braic properties of A, such as the Frobenius property, or semisimplicity, or innerness of the square of the antipode, are related to the existence of non-degenerate, normalized , or Haar integrals. In case of C\u2217-weak Hopf algebras we prove the existence of a unique Haar me asure h \u2208 A and of a canonical grouplike element g \u2208A implementing the square of the antipode and factorizing into left and right elements g = gLg\u2212 1 R , gL \u2208 AL, gR \u2208 AR. Further discussion of the C\u2217-case will be presented in Part II. To appear in J. Algebra 1 Research Institute for Particle and Nuclear Physics, Budap est, H-1525 Budapest 114, P.O.B. 49, Hungary E-mail: BGABR@rmki.kfki.hu Supported by the Hungarian Scienti\ufb01c Research Fund, OTKA \u2013 T 016 233 2 Institut f\u00a8 ur Theoretische Physik, FU\u2013Berlin Arnimallee 1 4, D-14195 Berlin, Germany E-mail: NILL@mail.physik.fu-berlin.de Supported by the DFG, SFB 288 \u201dDi\ufb00erentialgeometrie und Qua ntenphysik\u201d 3 Research Institute for Particle and Nuclear Physics, Budap est, H-1525 Budapest 114, P.O.B. 49, Hungary E-mail: SZLACH@rmki.kfki.hu Supported by the Hungarian Scienti\ufb01c Research Fund, OTKA \u2013 T 020 285. 1",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126160442-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/9805116v3  [math.QA]  8 Jun 1999"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Integral Theory and C \u2217-structure",
+   "page": 1,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Institut f\u00a8 ur Theoretische Physik, FU\u2013Berlin Arnimallee 1 4, D-14195 Berlin, Germany",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Introduction 2",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Weak Hopf Calculus 4",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Weak Hopf Modules and Integral Theory 14",
+   "page": 2,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "C\u2217-Weak Hopf Algebras 31",
+   "page": 2,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The dual problem is to \ufb01nd a \u201dquantum group\u201d \u02c6G acting on N such that M is isomorphic",
+   "page": 3,
+   "source": "inferred",
+   "number": "II"
+  },
+  {
+   "level": 1,
+   "title": "The Weak Hopf Calculus",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The axioms",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Weak bialgebras",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Weak Hopf algebras",
+   "page": 9,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "The \u201dtrivial\u201d representation",
+   "page": 12,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Then",
+   "page": 13,
+   "source": "inferred",
+   "number": "2.13"
+  },
+  {
+   "level": 1,
+   "title": "Weak Hopf Modules and Integral Theory",
+   "page": 14,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Integrals in weak Hopf algebras",
+   "page": 14,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Weak Hopf modules",
+   "page": 16,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Restrictions on the algebraic structure",
+   "page": 21,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Non-degenerate integrals",
+   "page": 22,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Haar integrals",
+   "page": 29,
+   "source": "inferred",
+   "number": "3.6"
+  },
+  {
+   "level": 1,
+   "title": "C \u2217-Weak Hopf Algebras",
+   "page": 31,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "First consequences of the C \u2217-structure",
+   "page": 31,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The Haar measure and selfduality",
+   "page": 33,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "The canonical grouplike element",
+   "page": 35,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Now use the fact that",
+   "page": 37,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 39,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-i-integral-theory-and-c--structure",
+   "number": "I",
+   "title": "Integral Theory and C \u2217-structure",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 59,
+   "n_words": 12
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1155,
+   "n_words": 203
+  },
+  {
+   "id": "sec-003-2-institut-f-ur-theoretische-physik-fuberlin-arn",
+   "number": "2",
+   "title": "Institut f\u00a8 ur Theoretische Physik, FU\u2013Berlin Arnimallee 1 4, D-14195 Berlin, Germany",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 324,
+   "n_words": 44
+  },
+  {
+   "id": "sec-004-1-introduction-2",
+   "number": "1",
+   "title": "Introduction 2",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-2-the-weak-hopf-calculus-4",
+   "number": "2",
+   "title": "The Weak Hopf Calculus 4",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 409,
+   "n_words": 173
+  },
+  {
+   "id": "sec-006-3-weak-hopf-modules-and-integral-theory-14",
+   "number": "3",
+   "title": "Weak Hopf Modules and Integral Theory 14",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 620,
+   "n_words": 240
+  },
+  {
+   "id": "sec-007-4-c-weak-hopf-algebras-31",
+   "number": "4",
+   "title": "C\u2217-Weak Hopf Algebras 31",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 3634,
+   "n_words": 671
+  },
+  {
+   "id": "sec-008-ii-the-dual-problem-is-to-\ufb01nd-a-quantum-group-\u02c6g",
+   "number": "II",
+   "title": "The dual problem is to \ufb01nd a \u201dquantum group\u201d \u02c6G acting on N such that M is isomorphic",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 663,
+   "n_words": 124
+  },
+  {
+   "id": "sec-009-21-the-axioms",
+   "number": "2.1",
+   "title": "The axioms",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2272,
+   "n_words": 393
+  },
+  {
+   "id": "sec-010-2-the-weak-hopf-calculus",
+   "number": "2",
+   "title": "The Weak Hopf Calculus",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4317,
+   "n_words": 857
+  },
+  {
+   "id": "sec-011-22-weak-bialgebras",
+   "number": "2.2",
+   "title": "Weak bialgebras",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 5862,
+   "n_words": 1122
+  },
+  {
+   "id": "sec-012-23-weak-hopf-algebras",
+   "number": "2.3",
+   "title": "Weak Hopf algebras",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 5697,
+   "n_words": 1020
+  },
+  {
+   "id": "sec-013-24-the-trivial-representation",
+   "number": "2.4",
+   "title": "The \u201dtrivial\u201d representation",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1539,
+   "n_words": 277
+  },
+  {
+   "id": "sec-014-213-then",
+   "number": "2.13",
+   "title": "Then",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 3609,
+   "n_words": 707
+  },
+  {
+   "id": "sec-015-3-weak-hopf-modules-and-integral-theory",
+   "number": "3",
+   "title": "Weak Hopf Modules and Integral Theory",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 782,
+   "n_words": 134
+  },
+  {
+   "id": "sec-016-31-integrals-in-weak-hopf-algebras",
+   "number": "3.1",
+   "title": "Integrals in weak Hopf algebras",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 5728,
+   "n_words": 1155
+  },
+  {
+   "id": "sec-017-32-weak-hopf-modules",
+   "number": "3.2",
+   "title": "Weak Hopf modules",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 21,
+   "n_chars": 7607,
+   "n_words": 1581
+  },
+  {
+   "id": "sec-018-33-restrictions-on-the-algebraic-structure",
+   "number": "3.3",
+   "title": "Restrictions on the algebraic structure",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 3762,
+   "n_words": 757
+  },
+  {
+   "id": "sec-019-34-non-degenerate-integrals",
+   "number": "3.4",
+   "title": "Non-degenerate integrals",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 29,
+   "n_chars": 14713,
+   "n_words": 2995
+  },
+  {
+   "id": "sec-020-36-haar-integrals",
+   "number": "3.6",
+   "title": "Haar integrals",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 5360,
+   "n_words": 1058
+  },
+  {
+   "id": "sec-021-4-c--weak-hopf-algebras",
+   "number": "4",
+   "title": "C \u2217-Weak Hopf Algebras",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 773,
+   "n_words": 130
+  },
+  {
+   "id": "sec-022-41-first-consequences-of-the-c--structure",
+   "number": "4.1",
+   "title": "First consequences of the C \u2217-structure",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 4052,
+   "n_words": 784
+  },
+  {
+   "id": "sec-023-42-the-haar-measure-and-selfduality",
+   "number": "4.2",
+   "title": "The Haar measure and selfduality",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 4696,
+   "n_words": 930
+  },
+  {
+   "id": "sec-024-43-the-canonical-grouplike-element",
+   "number": "4.3",
+   "title": "The canonical grouplike element",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 4398,
+   "n_words": 882
+  },
+  {
+   "id": "sec-025-l-now-use-the-fact-that",
+   "number": "L",
+   "title": "Now use the fact that",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 5731,
+   "n_words": 1171
+  },
+  {
+   "id": "sec-026-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 2957,
+   "n_words": 483
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 27,
+  "sections": 27,
+  "chars_total": 90719
+ }
+}

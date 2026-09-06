@@ -1549,3 +1549,5 @@ import QOU.Observations.centered_hecke_variance_positive
 import QOU.Common.TwistUnconditional
 import QOU.Common.HookSumGeneral
 import QOU.Common.HookSumIdentity
+import QOU.Hecke.H2KaehlerDegrees
+import QOU.Mass.FormalityBridgeF1

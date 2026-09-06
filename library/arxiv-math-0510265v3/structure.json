@@ -1,0 +1,115 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0510265v3",
+ "source": {
+  "file": "0510265v3.pdf",
+  "sha256": "548a0eece08bd967c0f4f44754210f765a970010d14e5ad97917668c7d9476a5",
+  "bytes": 190287,
+  "pages": 19,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0510265",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "28 May 2006"
+  },
+  "doi": null,
+  "title": "Triply-graded link homology and Hochschild homology of Soergel bimodules Mikhail Khovanov",
+  "authors_raw": "October 14, 2005",
+  "title_lines": [
+   "Triply-graded link homology and Hochschild",
+   "homology of Soergel bimodules",
+   "Mikhail Khovanov"
+  ],
+  "abstract": "We trade matrix factorizations and Koszul complexes for Hochschild homology of Soergel bimodules to modify the construction of triply- graded link homology and relate it to Kazhdan-Lusztig theor y. Hochschild homology. Let R be a k-algebra, where k is a \ufb01eld, Re = R \u2297k Rop be the enveloping algebra of R, and M be an R-bimodule (equivalently, a left Re-module). The functor of R-coinvariants associates to M the factorspace MR = M/[R, M], where [R, M] is the subspace of M spanned by vectors of the form rm \u2212 mr. We have MR = R \u2297Re M. The R-coinvariants functor is right exact and its i-th derived functor takes M to TorRe i (R, M). The latter space is also denoted HHi(R, M) and called the i-th Hochschild homology of M. The Hochschild homology of M is the direct sum HH(R, M) def = \u2295 i\u22650 HHi(R, M). To compute Hochschild homology, we choose a resolution of the R-bimodule R by projective R-bimodules . . . \u2212 \u2192P2 \u2212 \u2192P1 \u2212 \u2192P0 \u2212 \u2192R \u2212 \u21920, and tensor the resolution with M : . . . \u2212 \u2192P2 \u2297Re M \u2212 \u2192P1 \u2297Re M \u2212 \u2192P0 \u2297Re M \u2212 \u21920. Homology of this complex is isomorphic to the Hochschild hom ology of M. 1",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript SVN PRE-RELEASE 8.62",
+   "CreationDate": "D:20080203121924-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Z-",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "R\u2032 over the subalgebra R\u2032",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 17,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 7,
+   "n_chars": 10227,
+   "n_words": 2033
+  },
+  {
+   "id": "sec-001-2-z",
+   "number": "2",
+   "title": "Z-",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2092,
+   "n_words": 403
+  },
+  {
+   "id": "sec-002-1-r-over-the-subalgebra-r",
+   "number": "1",
+   "title": "R\u2032 over the subalgebra R\u2032",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 17,
+   "n_chars": 18427,
+   "n_words": 3591
+  },
+  {
+   "id": "sec-003-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 3942,
+   "n_words": 575
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "sections": 4,
+  "chars_total": 34688
+ }
+}

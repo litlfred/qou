@@ -1,0 +1,210 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T19:34:56.491759+00:00",
+  "commitSha": "2508fb55d0ffe1267c7dc66fd4132fa6f6b41458",
+  "assertions": [
+    {
+      "name": "all seven rows of hecke-log-decomposition move, so a figure-by-figure refresh would have broken the table's internal recomputability",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "2/(3 pi) is a pure constant and is identical at both pins — it must not be touched by the refresh",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "three published figures are neither the rounding nor the truncation of the retired pin's own value — wrong at their own anchor by 1e-11 to 3e-11, independent of the pin question, and corrected here by construction",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the fourth discrepancy is a TRUNCATION and not an error — the same rendering that defeats a half-ulp matcher, documented in scripts/witness-block-agreement.py",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the refresh moves q0 by 8e-11 relative; the alpha^-1 residual stays at -4.2e-6 and no stated conclusion changes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "retired_q0_refresh_to_live_muon_pin_probe",
+  "scriptFile": "retired_q0_refresh_to_live_muon_pin_probe.py",
+  "scriptHash": "9a0fd2655d34",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py"
+  },
+  "description": "THE REFRESH. Recomputes every closed-form published figure that carried the retired q0 = 1.1099785955541805752... at the live muon pin 1.109978595642739046681795129380001752700065561029011556974045769999095 from the canonical q-pinning-50-digit witness. The retired value is the CODATA-2018 vintage of the muon anchor and survives only in computations/_deprecated/; the 2026-08-15 substrate fix reached computations/ and tools/ but not content/. Refreshes per BLOCK, not per figure: an earlier pass substituted only the six sweep-flagged figures and was reverted because each table's other q0-derived rows were never flagged (the sweep looks for figures with NO provenance), leaving a table the reader could not recompute from itself. All seven rows of hecke-log-decomposition move, not the three flagged. Constants (2/(3pi)) and experimental inputs (CODATA 1/alpha, Q_beta^CODATA) are fixed and untouched. Two pre-existing transcription slips surfaced: 1+q0 published 2.10997859556 where the retired pin gives ...555, and log(1/hbar_q) published 2.31181024982 where it gives ...985 -- 1e-11 and 3e-11, wrong at their own anchor and independent of the pin, corrected by construction. Nothing physical moves: q0 shifts 8e-11 relative and the alpha^-1 residual stays at -4.2e-6. E_0, Q_beta and the spectral-bridge quantities are OUT OF SCOPE -- producer outputs whose values also depend on the trace convention, and the qbeta C->D migration is qou-cds1's. qou-i229.",
+  "contentBlock": "tbl:hecke-log-decomposition-table-data",
+  "data": {
+    "pins": {
+      "retired": "1.1099785955541805752815940796095093779932822799587",
+      "live_muon": "1.109978595642739046681795129380001752700065561029",
+      "relative_move": "7.9783945e-11",
+      "source": "computations/q-pinning-50-digit.witness.json"
+    },
+    "tbl_hecke-log-decomposition-table-data": [
+      {
+        "row": "h(q_0)",
+        "published": "0.20906032199",
+        "at_retired_pin": "0.20906032199",
+        "refreshed_at_muon_pin": "0.20906032215"
+      },
+      {
+        "row": "hbar_q(q_0) = (q_0-1)/q_0",
+        "published": "0.09908172644",
+        "at_retired_pin": "0.09908172644",
+        "refreshed_at_muon_pin": "0.09908172651"
+      },
+      {
+        "row": "1 + q_0",
+        "published": "2.10997859556",
+        "at_retired_pin": "2.10997859555",
+        "refreshed_at_muon_pin": "2.10997859564"
+      },
+      {
+        "row": "log(1/h(q_0))",
+        "published": "1.56513244670",
+        "at_retired_pin": "1.56513244670",
+        "refreshed_at_muon_pin": "1.56513244593"
+      },
+      {
+        "row": "log(1/hbar_q(q_0))",
+        "published": "2.31181024982",
+        "at_retired_pin": "2.31181024985",
+        "refreshed_at_muon_pin": "2.31181024912"
+      },
+      {
+        "row": "log(1 + q_0)",
+        "published": "0.74667780313",
+        "at_retired_pin": "0.74667780315",
+        "refreshed_at_muon_pin": "0.74667780319"
+      },
+      {
+        "row": "log(1/hbar_q) - log(1+q_0)",
+        "published": "1.56513244670",
+        "at_retired_pin": "1.56513244670",
+        "refreshed_at_muon_pin": "1.56513244593"
+      }
+    ],
+    "prop_em-coupling-bring-zero-mode": [
+      {
+        "row": "q [9]_q [10]_q",
+        "published": "136.823219654",
+        "at_retired_pin": "136.823219655",
+        "refreshed_at_muon_pin": "136.823219729"
+      },
+      {
+        "row": "2/(3 pi)  [CONSTANT, fixed]",
+        "published": "0.212206591",
+        "at_retired_pin": "0.212206591",
+        "refreshed_at_muon_pin": "0.212206591"
+      },
+      {
+        "row": "sum",
+        "published": "137.035426245",
+        "at_retired_pin": "137.035426245",
+        "refreshed_at_muon_pin": "137.035426320"
+      },
+      {
+        "row": "residual relative",
+        "published": null,
+        "at_retired_pin": "-4.18088424237e-6",
+        "refreshed_at_muon_pin": "-4.18033904516e-6"
+      },
+      {
+        "row": "alpha/(4 pi)",
+        "published": null,
+        "at_retired_pin": "0.000580704866049",
+        "refreshed_at_muon_pin": "0.000580704866049"
+      },
+      {
+        "row": "residual after second term",
+        "published": null,
+        "at_retired_pin": "5.67239010107e-8",
+        "refreshed_at_muon_pin": "5.72690982238e-8"
+      }
+    ],
+    "tbl_q-beta-form-a-n1-symbolic-table-data_(closed-form_subset)": [
+      {
+        "row": "hbar_q = (q-1)/q",
+        "published": "0.099081726435699",
+        "at_retired_pin": "0.099081726435699",
+        "refreshed_at_muon_pin": "0.099081726507578"
+      },
+      {
+        "row": "1 + hbar_q^2",
+        "published": "1.009817188513479",
+        "at_retired_pin": "1.009817188513479",
+        "refreshed_at_muon_pin": "1.009817188527722"
+      },
+      {
+        "row": "per-braid N=1 ceiling hbar_q^4/(1-hbar_q^2) [ppm]",
+        "published": null,
+        "at_retired_pin": "97.3",
+        "refreshed_at_muon_pin": "97.3"
+      }
+    ],
+    "pre_existing_slips": [
+      {
+        "block": "tbl:hecke-log-decomposition-table-data",
+        "row": "1 + q_0",
+        "published": "2.10997859556",
+        "at_retired_pin": "2.10997859555"
+      },
+      {
+        "block": "tbl:hecke-log-decomposition-table-data",
+        "row": "log(1/hbar_q(q_0))",
+        "published": "2.31181024982",
+        "at_retired_pin": "2.31181024985"
+      },
+      {
+        "block": "tbl:hecke-log-decomposition-table-data",
+        "row": "log(1 + q_0)",
+        "published": "0.74667780313",
+        "at_retired_pin": "0.74667780315"
+      }
+    ],
+    "truncations_not_errors": [
+      {
+        "block": "prop:em-coupling-bring-zero-mode",
+        "row": "q [9]_q [10]_q",
+        "published": "136.823219654",
+        "at_retired_pin": "136.823219655"
+      }
+    ]
+  },
+  "caveats": [
+    "Closed-form figures ONLY. E_0, Q_beta and the spectral-bridge quantities are producer outputs and convention-dependent; refreshing a pin under a convention that is itself about to change would produce numbers nobody has checked. Those come from their producers.",
+    "Constants and experimental inputs are deliberately NOT refreshed: 2/(3pi), CODATA 1/alpha = 137.035999177(21), Q_beta^CODATA. A refresh that moved them would be a different and wrong change."
+  ]
+}

@@ -1,0 +1,392 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0808.1923v3",
+ "source": {
+  "file": "0808.1923v3.pdf",
+  "sha256": "3c53f7c0fd9acf8929545496dfb3eab2ec11a5ad9ddf3ac9aed9aa4c75a22019",
+  "bytes": 731517,
+  "pages": 57,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0808.1923",
+   "version": "3",
+   "primary_class": "math.DG",
+   "stamp_date": "24 Sep 2013"
+  },
+  "doi": null,
+  "title": "Connections on Non-Abelian Gerbes and their Holonomy",
+  "authors_raw": "Urs Schreiber and Konrad Waldorf",
+  "title_lines": [
+   "Connections on Non-Abelian Gerbes and their Holonomy"
+  ],
+  "abstract": "We introduce an axiomatic framework for the parallel transp ort of connections on gerbes. It incorporates parallel transport along curves and along sur faces, and is formulated in terms of gluing axioms and smoothness conditions. The smoothness co nditions are imposed with respect to a strict Lie 2-group, which plays the role of a band, or stru cture 2-group. Upon choosing certain examples of Lie 2-groups, our axiomatic framework r eproduces in a systematical way several known concepts of gerbes with connection: non-abelian di\ufb00e rential cocycles, Breen-Messing gerbes, abelian and non-abelian bundle gerbes. These relationship s convey a well-de\ufb01ned notion of surface holonomy from our axiomatic framework to each of these concr ete models. Till now, holonomy was only known for abelian gerbes; our approach reproduces t hat known concept and extends it to non-abelian gerbes. Several new features of surface holo nomy are exposed under its extension to non-abelian gerbes; for example, it carries an action of t he mapping class group of the surface.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181022121033-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "Connections on Non-Abelian Gerbes and their Holonomy",
+   "Author": "Urs Schreibera and Konrad Waldorfb"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Foundations of the Transport Functor Formalism",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The Path 2-Groupoid of a Smooth Manifold",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Local Trivializations and Descent Data",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Smooth 2-Functors",
+   "page": 10,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Transport Functors",
+   "page": 10,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Transport 2-Functors",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Smooth Descent Data",
+   "page": 12,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Transport 2-Functors",
+   "page": 15,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Some Features of Transport 2-Functors",
+   "page": 18,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Curvature 2-Functors",
+   "page": 22,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Transport 2-Functors are Non-Abelian Gerbes",
+   "page": 25,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Differential Non-Abelian Cohomology",
+   "page": 25,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Abelian Bundle Gerbes with Connection",
+   "page": 33,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Non-Abelian Bundle Gerbes with Connection",
+   "page": 36,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "2-Bundles with Connections",
+   "page": 41,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "Surface Holonomy",
+   "page": 46,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Markings and Fundamental Bigons",
+   "page": 46,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Reduced Surface Holonomy",
+   "page": 49,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Properties of Reduced Surface Holonomy",
+   "page": 52,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 56,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 14178,
+   "n_words": 2711
+  },
+  {
+   "id": "sec-001-2-foundations-of-the-transport-functor-formalism",
+   "number": "2",
+   "title": "Foundations of the Transport Functor Formalism",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 408,
+   "n_words": 70
+  },
+  {
+   "id": "sec-002-21-the-path-2-groupoid-of-a-smooth-manifold",
+   "number": "2.1",
+   "title": "The Path 2-Groupoid of a Smooth Manifold",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 4120,
+   "n_words": 821
+  },
+  {
+   "id": "sec-003-22-local-trivializations-and-descent-data",
+   "number": "2.2",
+   "title": "Local Trivializations and Descent Data",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 6463,
+   "n_words": 1140
+  },
+  {
+   "id": "sec-004-23-smooth-2-functors",
+   "number": "2.3",
+   "title": "Smooth 2-Functors",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2215,
+   "n_words": 371
+  },
+  {
+   "id": "sec-005-24-transport-functors",
+   "number": "2.4",
+   "title": "Transport Functors",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1690,
+   "n_words": 309
+  },
+  {
+   "id": "sec-006-31-smooth-descent-data",
+   "number": "3.1",
+   "title": "Smooth Descent Data",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1608,
+   "n_words": 298
+  },
+  {
+   "id": "sec-007-3-transport-2-functors",
+   "number": "3",
+   "title": "Transport 2-Functors",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 9194,
+   "n_words": 1688
+  },
+  {
+   "id": "sec-008-32-transport-2-functors",
+   "number": "3.2",
+   "title": "Transport 2-Functors",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 7332,
+   "n_words": 1299
+  },
+  {
+   "id": "sec-009-33-some-features-of-transport-2-functors",
+   "number": "3.3",
+   "title": "Some Features of Transport 2-Functors",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 22,
+   "n_chars": 11529,
+   "n_words": 2146
+  },
+  {
+   "id": "sec-010-34-curvature-2-functors",
+   "number": "3.4",
+   "title": "Curvature 2-Functors",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 25,
+   "n_chars": 6459,
+   "n_words": 1146
+  },
+  {
+   "id": "sec-011-4-transport-2-functors-are-non-abelian-gerbes",
+   "number": "4",
+   "title": "Transport 2-Functors are Non-Abelian Gerbes",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 33,
+   "n_chars": 19016,
+   "n_words": 3455
+  },
+  {
+   "id": "sec-012-42-abelian-bundle-gerbes-with-connection",
+   "number": "4.2",
+   "title": "Abelian Bundle Gerbes with Connection",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 6799,
+   "n_words": 1207
+  },
+  {
+   "id": "sec-013-43-non-abelian-bundle-gerbes-with-connection",
+   "number": "4.3",
+   "title": "Non-Abelian Bundle Gerbes with Connection",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 41,
+   "n_chars": 12263,
+   "n_words": 2151
+  },
+  {
+   "id": "sec-014-44-2-bundles-with-connections",
+   "number": "4.4",
+   "title": "2-Bundles with Connections",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 46,
+   "n_chars": 12864,
+   "n_words": 2243
+  },
+  {
+   "id": "sec-015-5-surface-holonomy",
+   "number": "5",
+   "title": "Surface Holonomy",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 46,
+   "n_chars": 1439,
+   "n_words": 268
+  },
+  {
+   "id": "sec-016-51-markings-and-fundamental-bigons",
+   "number": "5.1",
+   "title": "Markings and Fundamental Bigons",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 49,
+   "n_chars": 9379,
+   "n_words": 1841
+  },
+  {
+   "id": "sec-017-52-reduced-surface-holonomy",
+   "number": "5.2",
+   "title": "Reduced Surface Holonomy",
+   "level": 2,
+   "page_start": 49,
+   "page_end": 52,
+   "n_chars": 6374,
+   "n_words": 1191
+  },
+  {
+   "id": "sec-018-53-properties-of-reduced-surface-holonomy",
+   "number": "5.3",
+   "title": "Properties of Reduced Surface Holonomy",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 56,
+   "n_chars": 10870,
+   "n_words": 2027
+  },
+  {
+   "id": "sec-019-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 57,
+   "n_chars": 5680,
+   "n_words": 811
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 21,
+  "sections": 20,
+  "chars_total": 149880
+ }
+}

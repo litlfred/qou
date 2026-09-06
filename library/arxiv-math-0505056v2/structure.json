@@ -1,0 +1,79 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0505056v2",
+ "source": {
+  "file": "0505056v2.pdf",
+  "sha256": "1b6580406c3d35b59f8fb18e5fba40460fe574cab85d94edf705c6c4bb2d0cbe",
+  "bytes": 303442,
+  "pages": 37,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0505056",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "31 Jan 2006"
+  },
+  "doi": null,
+  "title": "Matrix factorizations and link homology II",
+  "authors_raw": "Mikhail Khovanov and Lev Rozansky",
+  "title_lines": [
+   "Matrix factorizations and link homology II"
+  ],
+  "abstract": "To a presentation of an oriented link as the closure of a braid we assign a complex of bigraded vector spaces. The Euler charac teristic of this complex (and of its triply-graded cohomology groups ) is the HOMFLYPT polynomial of the link. We show that the dimension o f each cohomology group is a link invariant. 1 Matrix factorizations with a parameter In the paper [KR] we constructed, for each n > 0, a bigraded cohomology theory of links in R3 whose Euler characteristic is a certain one-variable specialization (qn,q ) of the HOMFLYPT polynomial [HOMFLY], [PT]. The n = 0 specialization is the Alexander polynomial, equal to the Euler char- acteristic of the knot homology theory discovered by Ozsv\u00b4 ath, R asmussen and Szab\u00b4 o [OS], [R1]. The approach in [KR] fails for n = 0, assigning trivial groups to any link. In this sequel to [KR] we assume that the reader is familiar with that paper. Recall that our construction of link cohomology was based o n matrix factorizations with potentials being sums and di\ufb00erences of xn+1, for various x. When n = 0, the category of matrix factorizations (up to chain homo- topies) with the potential \u2211 \u00b1xi is trivial. Looking for a remedy, let us add a formal variable a and change the potential from x to ax. Take an oriented arc c as in \ufb01gure 1, label its ends x1 and x2, and assign the potential ax1 \u2212ax2 to the arc. Let R = Q[a,x 1,x 2] and de\ufb01ne Cc as the factorization R a \u2212 \u2192R x1\u2212x2 \u2212 \u2212 \u2212 \u2192R. We haved2 =ax1 \u2212ax2 and view Cc as an object of the homotopy category of matrix factorizations with the potential a(x1 \u2212x2). 1",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181022164651-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Matrix factorizations with a parameter",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Proofs",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-matrix-factorizations-with-a-parameter",
+   "number": null,
+   "title": "Matrix factorizations with a parameter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 12,
+   "n_chars": 17233,
+   "n_words": 3393
+  },
+  {
+   "id": "sec-001-proofs",
+   "number": null,
+   "title": "Proofs",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 37,
+   "n_chars": 37113,
+   "n_words": 7582
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 2,
+  "sections": 2,
+  "chars_total": 54346
+ }
+}

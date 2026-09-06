@@ -1,0 +1,317 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0707.3799v3",
+ "source": {
+  "file": "0707.3799v3.pdf",
+  "sha256": "0b29cbced7939f7265a53bdefb095c3f72162f1f526e4460631d4a3602b6ed3a",
+  "bytes": 543442,
+  "pages": 32,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0707.3799",
+   "version": "3",
+   "primary_class": "math.RT",
+   "stamp_date": "25 Feb 2026"
+  },
+  "doi": null,
+  "title": "EQUIVARIANT SATAKE CATEGORY AND KOSTANT-WHITTAKER REDUCTION",
+  "authors_raw": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+  "title_lines": [
+   "EQUIVARIANT SATAKE CATEGORY AND",
+   "KOSTANT-WHITTAKER REDUCTION"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Author": "Roman Bezrukavnikov; Michael Finkelberg",
+   "Creator": "arXiv GenPDF (tex2pdf:57610bf)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "Equivariant Satake category and Kostant-Whittaker reduction"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "We denote by\u03c0 L the projection fromt/W L tot/W. We denote byX +",
+   "page": 10,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 26,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 28,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "page": 30,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 31,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-4-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "4",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5670,
+   "n_words": 907
+  },
+  {
+   "id": "sec-001-6-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "6",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5858,
+   "n_words": 919
+  },
+  {
+   "id": "sec-002-8-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "8",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 6018,
+   "n_words": 993
+  },
+  {
+   "id": "sec-003-10-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "10",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1627,
+   "n_words": 250
+  },
+  {
+   "id": "sec-004-l-we-denote-by\u03c0-l-the-projection-fromtw-l-totw-w",
+   "number": "L",
+   "title": "We denote by\u03c0 L the projection fromt/W L tot/W. We denote byX +",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3428,
+   "n_words": 537
+  },
+  {
+   "id": "sec-005-12-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "12",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 4829,
+   "n_words": 833
+  },
+  {
+   "id": "sec-006-14-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "14",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 5465,
+   "n_words": 860
+  },
+  {
+   "id": "sec-007-16-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "16",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 5283,
+   "n_words": 840
+  },
+  {
+   "id": "sec-008-18-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "18",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 5235,
+   "n_words": 844
+  },
+  {
+   "id": "sec-009-20-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "20",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 5151,
+   "n_words": 891
+  },
+  {
+   "id": "sec-010-22-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "22",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 5023,
+   "n_words": 770
+  },
+  {
+   "id": "sec-011-24-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "24",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 5824,
+   "n_words": 908
+  },
+  {
+   "id": "sec-012-26-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "26",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 6107,
+   "n_words": 945
+  },
+  {
+   "id": "sec-013-28-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "28",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 6246,
+   "n_words": 988
+  },
+  {
+   "id": "sec-014-30-roman-bezrukavnikov-and-michael-finkelberg",
+   "number": "30",
+   "title": "ROMAN BEZRUKAVNIKOV AND MICHAEL FINKELBERG",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 4346,
+   "n_words": 733
+  },
+  {
+   "id": "sec-015-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 3297,
+   "n_words": 408
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 16,
+  "sections": 16,
+  "chars_total": 79407
+ }
+}

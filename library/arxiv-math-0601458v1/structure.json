@@ -1,0 +1,402 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0601458v1",
+ "source": {
+  "file": "0601458v1.pdf",
+  "sha256": "ef34611620cfd0bd4f2242e448ce23f82032c6a92447d5bbfcec63e3ce6eb3d4",
+  "bytes": 736390,
+  "pages": 68,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0601458",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "19 Jan 2006"
+  },
+  "doi": null,
+  "title": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON",
+  "authors_raw": null,
+  "title_lines": [
+   "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS",
+   "JEFFREY MORTON"
+  ],
+  "abstract": "Interest in combinatorial interpretations of mathematica l entities stems from the convenience of the concrete models they provi de. Finding a bijective proof of a seemingly obscure identity can reveal u nsuspected signi\ufb01- cance to it. Finding a combinatorial model for some mathemat ical entity is a particular instance of the process called \u201ccategori\ufb01catio n\u201d. Examples include the interpretation of /C6 as the Burnside rig of the category of \ufb01nite sets with product and coproduct, and the interpretation of /C6 [x] as the category of com- binatorial species. This has interesting applications to q uantum mechanics, and in particular the quantum harmonic oscillator, via Joya l\u2019s \u201cspecies\u201d, a new generalization called \u201cstu\ufb00 types\u201d, and operators betw een these, which can be represented as rudimentary Feynman diagrams for the o scillator. In quantum mechanics, we want to represent states in an algebra over the com- plex numbers, and also want our Feynman diagrams to carry mor e structure than these \u201cstu\ufb00 operators\u201d can do, and these turn out to be cl osely related. W e will show how to construct a combinatorial model for the qu antum har- monic oscillator in which the group of phases, U (1), plays a special role. W e describe a general notion of \u201c M -Stu\ufb00 Types\u201d for any monoid M , and see that the case M = U (1) provides an interpretation of time evolution in the comb i- natorial setting, as well as other quantum mechanical featu res of the harmonic oscillator. 1",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181030043431-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Structure Types",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Categorification of N and N [[z]]",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 1,
+   "title": "Structure Types and the Harmonic Oscillator",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The Quantum Harmonic Oscillator",
+   "page": 9,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Structure Types and the Weyl Algebra",
+   "page": 11,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Stuff Types",
+   "page": 14,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Groupoids",
+   "page": 14,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Stuff Types as a Generalization of Structure Types",
+   "page": 20,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Stuff Types As Power Series",
+   "page": 24,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Forgetful Functors: Properties, Structure, and Stuff",
+   "page": 27,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "Stuff Types And Quantum Mechanics",
+   "page": 30,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Inner Product of Stuff Types",
+   "page": 30,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Stuff Operators",
+   "page": 34,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Feynman Diagrams and Stuff Operators",
+   "page": 38,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "M-Stuff Types And Quantum Mechanics",
+   "page": 43,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "M-Stuff Types",
+   "page": 44,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Quantum Mechanics: M=U(1)",
+   "page": 50,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 56,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Categorified Quantum Mechanics",
+   "page": 56,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Other Generalizations",
+   "page": 58,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 60,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. A Little Higher-Dimensional Algebra",
+   "page": 61,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. Slice Categories and 2-Categories",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.1. 2-Categories of Stuff Types and Stuff Operators",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix C. Categorical Approaches to Generalizing Species",
+   "page": 66,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "C.1. Generalized Species",
+   "page": 66,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 68,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2771,
+   "n_words": 456
+  },
+  {
+   "id": "sec-001-2-structure-types",
+   "number": "2",
+   "title": "Structure Types",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 8,
+   "n_chars": 14914,
+   "n_words": 2754
+  },
+  {
+   "id": "sec-002-3-structure-types-and-the-harmonic-oscillator",
+   "number": "3",
+   "title": "Structure Types and the Harmonic Oscillator",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 637,
+   "n_words": 119
+  },
+  {
+   "id": "sec-003-31-the-quantum-harmonic-oscillator",
+   "number": "3.1",
+   "title": "The Quantum Harmonic Oscillator",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 8764,
+   "n_words": 1543
+  },
+  {
+   "id": "sec-004-32-structure-types-and-the-weyl-algebra",
+   "number": "3.2",
+   "title": "Structure Types and the Weyl Algebra",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 7398,
+   "n_words": 1374
+  },
+  {
+   "id": "sec-005-4-stuff-types",
+   "number": "4",
+   "title": "Stuff Types",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1835,
+   "n_words": 361
+  },
+  {
+   "id": "sec-006-41-groupoids",
+   "number": "4.1",
+   "title": "Groupoids",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 30,
+   "n_chars": 40800,
+   "n_words": 7511
+  },
+  {
+   "id": "sec-007-5-stuff-types-and-quantum-mechanics",
+   "number": "5",
+   "title": "Stuff Types And Quantum Mechanics",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 56,
+   "n_chars": 66847,
+   "n_words": 12199
+  },
+  {
+   "id": "sec-008-7-conclusions",
+   "number": "7",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 56,
+   "page_end": 58,
+   "n_chars": 7910,
+   "n_words": 1381
+  },
+  {
+   "id": "sec-009-72-other-generalizations",
+   "number": "7.2",
+   "title": "Other Generalizations",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 60,
+   "n_chars": 6332,
+   "n_words": 1110
+  },
+  {
+   "id": "sec-010-8-acknowledgements",
+   "number": "8",
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 61,
+   "n_chars": 485,
+   "n_words": 78
+  },
+  {
+   "id": "sec-011-appendix-a-a-little-higher-dimensional-algebra",
+   "number": null,
+   "title": "Appendix A. A Little Higher-Dimensional Algebra",
+   "level": 1,
+   "page_start": 61,
+   "page_end": 62,
+   "n_chars": 2649,
+   "n_words": 490
+  },
+  {
+   "id": "sec-012-appendix-b-slice-categories-and-2-categories",
+   "number": null,
+   "title": "Appendix B. Slice Categories and 2-Categories",
+   "level": 1,
+   "page_start": 62,
+   "page_end": 66,
+   "n_chars": 9273,
+   "n_words": 1546
+  },
+  {
+   "id": "sec-013-appendix-c-categorical-approaches-to-generalizin",
+   "number": null,
+   "title": "Appendix C. Categorical Approaches to Generalizing Species",
+   "level": 1,
+   "page_start": 66,
+   "page_end": 66,
+   "n_chars": 884,
+   "n_words": 149
+  },
+  {
+   "id": "sec-014-c1-generalized-species",
+   "number": null,
+   "title": "C.1. Generalized Species",
+   "level": 2,
+   "page_start": 66,
+   "page_end": 68,
+   "n_chars": 3713,
+   "n_words": 689
+  },
+  {
+   "id": "sec-015-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 68,
+   "page_end": 68,
+   "n_chars": 2266,
+   "n_words": 304
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 28,
+  "sections": 16,
+  "chars_total": 177478
+ }
+}

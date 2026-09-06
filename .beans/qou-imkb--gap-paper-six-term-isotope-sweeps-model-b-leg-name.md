@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:14:04Z
-updated_at: 2026-08-30T14:28:05Z
+updated_at: 2026-09-05T18:21:53Z
 ---
 
 ## What is wrong
@@ -204,3 +204,21 @@ once you rule.
 
 **And it sharpens why nothing is urgent:** every one of the three sits behind
 the missing Model B T1 producer. The path raises before reaching any of them.
+
+
+
+## Verified 2026-09-05 — a live defect, not an owner decision
+
+Re-measured on this branch rather than taken from the bean:
+
+- `probe_sdp_canonical_paper_formula.py` — **0 files on disk**
+- `probe-sdp-canonical-paper-formula.witness.json` — **0 files on disk**
+- `git log --all` for either name — **0 commits** in this clone
+- the raising site is still live: `paper_six_term_isotope_sweep.py:185`,
+  `f"missing Model B T1 witness: {path}. "`
+
+So the error message still instructs a user to run a producer that has never
+existed here, and the Model B leg of the six-term sweep is unreachable. That is
+a defect to fix, not a preference to adjudicate — the only genuine question
+("what does Model B mean?") is answerable from the corpus. Off the owner-gated
+queue; open as work.

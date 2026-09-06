@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-09T04:34:20Z
-updated_at: 2026-08-09T05:18:49Z
+updated_at: 2026-09-05T18:21:53Z
 ---
 
 
@@ -326,3 +326,19 @@ order. The layout choice moves `tr_M`; it does not move `B`.
 `atom_braid_word_3A` uses `['p']*Z + ['n']*N` (segregated); `build_atom_nf_exact`
 builds an ALTERNATING ordering. That is a live inconsistency for any `tr_M`
 consumer even though it is nearly invisible to `B`.
+
+
+
+## Reclassified 2026-09-05 — a derivational gap, not an owner decision
+
+Triaged into owner-gated Cluster 7 on the ordering question. But what this bean
+establishes is a **gap**: the canonical cross-species arrangement `p...pn...n`
+is not derived, the orbit identity provably does not license it (it ranges over
+`S_Z × S_N` and its Lemma 1 works by showing the word is *unchanged*, which
+says nothing across `pnn` vs `npn`), and the stated justification is a
+**cost** property rather than a selection rule.
+
+Naming a gap honestly is agent work, and per AGENTS.md a visible gap is
+information. Nothing here needs the author to pick between options. It is also
+the same subject as **Cluster 1** (the inter-nucleon topology), where the real
+open question lives. Off the owner-gated queue; merge the question into Cluster 1.

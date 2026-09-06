@@ -1033,6 +1033,134 @@ count.
 
 Report stays **6 blocks / 27 asserted**.
 
+## ✅ THE REFRESH IS DONE (2026-09-05, owner-approved: "refresh and migrate")
+
+Producer: `retired_q0_refresh_to_live_muon_pin_probe.py` (5/5). Target
+`q0 = 1.109978595642739046681795129380001752700065561029011556974045769999095`,
+from the canonical `q-pinning-50-digit.witness.json`. Shift `7.98e-11` relative;
+**nothing physical moves.**
+
+### Per block, all `q₀`-derived rows together — the rule the first attempt broke
+
+    tbl:hecke-log-decomposition-table-data     ALL SEVEN rows
+    prop:em-coupling-bring-zero-mode           pin, q[9][10], sum
+    tbl:q-beta-form-a-n1-symbolic-table-data   pin, ℏ_q, 1+ℏ_q²  (partial, see below)
+    30 pin-string sites across 29 files        prose declarations only
+
+`hecke-log-decomposition` is the case in point: the sweep flagged **3** rows, and
+**7** move. The unflagged four were `q₀`-derived too — they merely had *some*
+provenance, so a no-provenance sweep never saw them.
+
+**Deliberately not refreshed**: `2/(3π)`, CODATA `1/α = 137.035999177(21)`,
+`𝔔_β^CODATA`. Constants and experimental inputs; moving them would be a
+different and wrong change.
+
+### Three pre-existing slips, and one truncation that is not an error
+
+Reproducing the old tables at the retired pin does not recover three figures —
+`1+q₀` (`…556` vs `…555`), `log(1/ℏ_q)` (`…982` vs `…985`), `log(1+q₀)` (`…313`
+vs `…315`), all `1–3e-11`. **Wrong at their own anchor**, independent of the pin.
+Corrected by construction.
+
+A fourth discrepancy is *not* an error: `q[9]_q[10]_q = 136.823219654` against
+`136.823219654561` is a **truncation** — the rendering that defeats a half-ulp
+matcher, and the reason the checker flagged that row against its own producer.
+Telling the two apart requires comparing against the *unrounded* value.
+
+### 🛑 I BLANKET-REPLACED AND CAUGHT IT
+
+The pin-string pass replaced 30 sites across `content/` when I had measured
+sibling precision for only **six** blocks — the sweep the per-block rule and
+AGENTS.md both forbid. Two consequences, both found and fixed:
+
+- It **overwrote the "was" column** in the two provenance notes I had just
+  written, making them say a value changed to itself.
+- 23 files went unchecked. Retro-measuring all 30: an `8e-11` shift reaches a
+  figure only at ~11+ significant figures, and 26 files publish nothing above 10.
+  Two flagged — `137.035999177` (the CODATA input, safe) and
+  `notation-register-table3-data`'s `z(q₀) = 0.61268803714646525160` at **20**
+  figures, which turns out to be **proton**-anchored (agrees to `4e-21`) and sits
+  in a different row from the muon pin string I changed. So all 30 were in fact
+  safe — but I established that *after* acting, not before.
+
+- [ ] Minor, found en route: `notation-register-table3-data` documents `z(q₀)` at
+      the proton pin in row 17 and `w_λ(q)` at the muon pin in row 22. Row 22
+      says which; row 17 does not, relying on the production default. Worth
+      labelling.
+
+Report **5 blocks / 24 asserted**, from 15/79.
+
+## ✅ THE MIGRATIONS ARE DONE (2026-09-05, owner-approved: "refresh and migrate")
+
+Two channels, both C → D, both executing rulings already on the books.
+
+### `qou-cds1` — the `qbeta-decay` channel
+
+`prop:q-beta-spectral-bridge` *defined* `z := 1/(√q + 1/√q)` — convention C,
+excised 2026-08-09. Now `z = q³/(q²+1)`. **The table was migrated from its
+producer, not by hand**: every value now comes from
+`q-beta-spectral-bridge.witness.json`, which has computed D all along. That is
+the 21 % divergence this bean measured, closed.
+
+**Both axes were already ruled.** The table was on muon pin A; the producer is on
+the **proton** pin, migrated 2026-08-29 under `qou-cds3` with the authorisation
+recorded there (AGENTS.md §"q₀ anchor convention": *"we want proton unless for an
+explicit reason … fix all, even if not visible"*). So the block had simply not
+followed either ruling.
+
+What moved: `𝔔_β^A` essentially unchanged at `0.7836` MeV; `𝔔_β^B` `0.8324 →
+0.8234`; the A/B disagreement **improves** `0.0487 → 0.0398` MeV against the same
+`h²E₀ = 0.183` bound; the bridge ratio `1.898 → 1.566`, the `1/z` term following
+the convention.
+
+### `qou-46ab` — the `tr_M` class. Written up in that bean.
+
+Five nuclei migrated from the canonical bridge witness at the block's **own**
+muon anchor (established from the per-atom `D/C` ratios), plus **five**
+convention-C residues in `MarkovPeelH3.lean` — including the `z` field docstring,
+which stated the excised convention as the *definition* in a formal artifact.
+
+### 🛑 THE SELFTEST WENT RED BECAUSE I FIXED ITS KNOWN POSITIVE
+
+`witness-block-agreement`'s selftest asserted `prop:q-beta-spectral-bridge` is
+flagged on the convention-C `z`. Migrating the channel removed that figure, and
+the selftest failed — **the third time today** that "assert the defect" produced
+a check that fails on success.
+
+Re-pointed rather than deleted, because a detector with no known positive can
+report a whole class clean and mean nothing. The replacement is chosen to be
+**stable by design** rather than merely unfixed: `prop:frobenius-gram-matrix`'s
+convention-C determinant `0.18920521914403668`, published deliberately as a
+labelled comparison, 17 significant figures, and a row this bean has decided
+*must stay open* because closing it would mean computing an excised convention.
+
+### THE REMAINING C SURFACE — MEASURED, AND DELIBERATELY NOT SWEPT
+
+Scanning `content/` for the C spelling finds **65 unlabelled hits**, and that
+number is **wrong as a migration target**. Most are legitimate uses of
+`q^{1/2}+q^{-1/2}` that have nothing to do with the trace convention: the
+factorisation `h = (q^{1/2}-q^{-1/2})(q^{1/2}+q^{-1/2})`, Wenzl's positivity
+condition `q^{1/2}+q^{-1/2} > 2`, the `e_-` idempotent normalisation, Kauffman's
+`δ = -(q^{1/2}+q^{-1/2})`. Sweeping on that string would corrupt a dozen correct
+derivations — exactly what `qou-46ab`'s "DO NOT SWEEP" and AGENTS.md warn about.
+
+Narrowing to actual **definitions of `z`** in the C form: **22 live, 8 already
+labelled.** And the 22 still needs reading, because several *name* C in order to
+contrast it — `convention-d-kills-antisymmetriser`,
+`markov-trace-frobenius-selection-proof`, `markov-z-reconciliation`,
+`rem-qstar-decay-sector-q0`, `h3-markov-wenzl-weights-context` — which is correct
+content, not a defect. Two more are the labelling boxes written in this very
+pass, which the "historical" heuristic missed on phrasing.
+
+**So the honest remaining surface is well under 22 and needs per-site reading.**
+It is a third scope neither `qou-cds1` (the qbeta channel) nor `qou-46ab` (the
+`tr_M` class) covers, and it is left open rather than swept.
+
+- [ ] Scope a third migration bean for the residual `z`-definition sites, with
+      the discriminator stated up front: *does this site define `z`, or name C to
+      contrast it?* The string alone cannot tell them apart, and a count that
+      does not make the distinction (65) is 3× the real one.
+
 - [ ] Five blocks left, and at least two should NOT be closed here:
       `prop:em-coupling-bring-zero-mode` (3, awaiting the refresh) and
       `rem:atom-mass-full-hecke` (2, the 0–2-sig-fig class where the method has
