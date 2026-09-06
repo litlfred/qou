@@ -136,8 +136,22 @@ def scan(idx: dict[str, set[str]]) -> list[dict]:
         if isinstance(d, dict) and isinstance(d.get("scriptFile"), str):
             provenance[str(w.relative_to(ROOT))] = d["scriptFile"]
 
-    for f in sorted(COMP.rglob("*.py")):
+    # SCAN ROOTS. `computations/` alone was a floor, as every report said; the
+    # sibling reference-literal gate was extended the same way in #6885.
+    #
+    # `tests/` is EXCLUDED, and that exclusion is measured rather than assumed.
+    # Of 9 NARROW findings outside computations/, 3 are in test files where the
+    # literal is the test's OWN assertion target for the precision machinery —
+    #     assert str_at_true_precision(v) == "1.5597586581034242"
+    # That is the value under test, not a copy of a producer's output that can
+    # go stale, so flagging it would be a false positive of exactly the kind
+    # this audit's digit floor exists to avoid.
+    roots = ["computations", "tools", "qou-mass", "scripts"]
+    for f in sorted(g for r in roots
+                    for g in ROOT.joinpath(r).rglob("*.py")):
         if "_deprecated" in f.parts or "__pycache__" in f.parts:
+            continue
+        if "tests" in f.parts or f.name.startswith("test_"):
             continue
         if f.name == Path(__file__).name:
             continue
