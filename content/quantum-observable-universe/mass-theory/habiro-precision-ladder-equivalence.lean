@@ -97,9 +97,37 @@ theorem habiro_terminates (h : HabiroExpansion) :
 
     This is the substantive content of the md's integrality claim: the
     coefficients live in `ℤ[u]`, not `ℚ[u]` or `ℝ[u]`, so their integer-point
-    evaluations are integers.  (Verified computationally for proton (M=8),
-    neutron (M=8), deuteron (M=12), ³He (M=16), ⁴He (M=20) —
-    `habiro-expansion-atomic-probe.witness.json`, `all_integral: true`.)
+    evaluations are integers.
+
+    **Evidence, CORRECTED 2026-09-06.**  This parenthetical previously read
+    "Verified computationally for proton (M=8), neutron (M=8), deuteron
+    (M=12), ³He (M=16), ⁴He (M=20) — `habiro-expansion-atomic-probe.witness.json`,
+    `all_integral: true`", and was wrong four ways at once:
+
+    * the named field is in a DIFFERENT file — `all_integral` appears in
+      `habiro-coefficients-atomic.witness.json`, not in the probe witness
+      cited, whose corresponding assertion is `all_a_m_have_integer_coefficients`;
+    * the deuteron's expansion terminates at **M = 13**, not 12;
+    * **⁴He does not appear in the corpus at all** — the list named an atom
+      for which no expansion exists;
+    * **tritium does**, and was omitted.
+
+    What the two witnesses actually carry, re-measured against the live files:
+
+        atom          M    deg_u p    ceil(sqrt(2 deg_u p))
+        proton         8      44             10
+        neutron        8      36              9
+        deuteron      13     100             15
+        tritium       16     136             17
+        ³He           16     144             17
+
+    `habiro-coefficients-atomic.witness.json` carries `all_integral: true` for
+    each; `habiro-expansion-atomic-probe.witness.json` (`cor:habiro-expansion-atomic`,
+    3/3) independently asserts integrality (`all_a_m_have_integer_coefficients`),
+    the degree bound `deg_u a_m ≤ m`, and termination within
+    `m_max ≤ ⌈√(2·deg_u p(u))⌉` — the last column above, satisfied by all five.
+
+    Verified by `qbeta_habiro_citation_and_termination_probe.py`.
 
     **Stated in the ambient ring, which is where the claim has teeth.**
     `HabiroCoeff` is `Polynomial ℤ`, so `(h.coeffs m).eval u₀ : ℤ` is an
