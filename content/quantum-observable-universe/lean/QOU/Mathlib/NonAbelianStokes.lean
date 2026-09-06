@@ -711,30 +711,31 @@ theorem braidWordHolonomy_cyclic_one {G : Type u} [Group G]
     explicit axiom with a Volume-Conjecture citation, NOT as a `True`
     stub, so the dependency is honest and auditable. -/
 
-/-- **Chern–Simons / volume correspondence (theorem; was axiom).**
-    There exists a real-valued "geometric reading" `vol` of the
-    boundary holonomy of a hyperbolic knot's braid word such that
-    `vol` is the hyperbolic volume of the knot complement.
+/-! ### Retired: `chernSimons_volume_correspondence` (2026-09-06, bean `qou-85cg`)
 
-    **Theorem** (was previously `chernSimons_volume_correspondence`
-    axiom). Discharged 2026-06-08: as stated, the inner clause
-    `∀ holonomy, vol holonomy = vol holonomy` is reflexive for ANY
-    `vol`, so the existential is tautological — witnessed by e.g.
-    the constant-zero function. The genuine Volume Conjecture
-    content (Kashaev / colored Jones asymptotics → Vol(S³∖K)) is
-    NOT captured by this signature; this `True`-shaped existential
-    is preserved to maintain audit visibility of the dependency
-    point (a stronger statement would carry the actual conjectural
-    relation `vol(holonomy_K) = Vol(S³∖K)` as the inner clause). -/
--- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
---      (Kashaev's volume conjecture: lim of the quantum-dilogarithm
---       invariant recovers Vol(S³∖K));
---      [murakami-murakami2001] https://doi.org/10.1007/BF02392716
---      (colored Jones ↔ simplicial volume);
---      [manuscript] §5.10 prop:geom-yekutieli-alignment
---      (baselineHolonomy = knotVolume join — NEEDS-NEW-INPUT).
-theorem chernSimons_volume_correspondence (G : Type u) [Group G] :
-    ∃ vol : G → ℝ, ∀ holonomy : G, vol holonomy = vol holonomy :=
-  ⟨fun _ => 0, fun _ => rfl⟩
+The theorem that stood here,
+
+    theorem chernSimons_volume_correspondence (G : Type u) [Group G] :
+        ∃ vol : G → ℝ, ∀ holonomy : G, vol holonomy = vol holonomy := ⟨fun _ => 0, fun _ => rfl⟩
+
+was a tautology — the inner clause is reflexive for every `vol`, and the witness was the
+constant-zero function — kept, by its own docstring, "to maintain audit visibility of the
+dependency point". It is **retired rather than upgraded**, because the honest carrier of the
+Volume-Conjecture content it stood in for **already exists**:
+`QOU.MassEndomorphism.VolumeBridge` (§3b-cond, non-degenerate, deliberately **no instance**)
+axiomatises exactly the archimedean bridge `volTerm = descTrace + transient` at `q₀` — the open
+Step 3 of `conj:mass-endomorphism` — and *derives* the manuscript's identities from it. Adding a
+second carrier for the same conjecture here would be the overload trap AGENTS.md warns about
+("attributes do not transfer across overloaded symbols"); the 2026-07-12 audit's §G6 request to
+"upgrade" this tautology is discharged by pointing at `VolumeBridge`, not by building a twin.
+
+Nothing in `content/` consumed the retired name: the only references were two dated audit docs
+(2026-06-01 §"surface-boundary", 2026-07-12 §G6). The Kashaev-asymptotic form of the same
+conjecture, `log‖J_N(K; e^{2πi/N})‖ / N → Vol(S³∖K)/2π`, is expressible with
+`QOU.MathlibExt.ExponentialGrowthRate` (`tendsto_log_norm_model`: the growth rate is `Re ζ`) and
+is deliberately **not** added here for the same reason. Citations for the conjecture itself:
+[kashaev1997] https://doi.org/10.1023/A:1007364912784, [murakami-murakami2001]
+https://doi.org/10.1007/BF02392716 — both held (`arxiv-q-alg-9601025v2`; MM2001 registered).
+-/
 
 end QOU.Mathlib.NonAbelianStokes
