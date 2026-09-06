@@ -137,7 +137,7 @@ _SKIP_DIRS = {".git", ".lake", "__pycache__", "_deprecated", "node_modules"}
 #  than a name to add here.
 _SQRT_VARS = {"s", "u", "t", "v", "sq", "sqq", "qh", "qhalf", "q_half", "rq",
               "sqrt_q", "qsqrt", "shalf", "ss"}
-_Q_VARS = {"q", "q0", "_q", "q_0", "qq", "Q"}
+_Q_VARS = {"q", "q0", "_q", "q_0", "qq", "Q", "Q0"}
 
 #: path -> names bound to sqrt(q) in that file, filled during the scan.
 _SQRT_BINDINGS_BY_PATH: dict = {}
