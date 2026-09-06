@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-05T09:58:53Z
-updated_at: 2026-09-06T07:16:38Z
+updated_at: 2026-09-06T08:35:17Z
 ---
 
 ## 2026-09-05 — measured: they are DIFFERENT OBJECTS, not a disagreement about a number
@@ -161,3 +161,40 @@ Probe: `computations/probes/q6pp_unique_n_is_reading_dependent_probe.py`, 10/10,
 exit 0. Exact integer partition DP and integer strand arithmetic; no witness.
 Check 2 reproduces `qou-q6pp`'s own `n` column at 5 of 5 atoms before departing
 from it, so the departure is not an artifact of a differently-built table.
+
+
+### 2026-09-06 — a SECOND reading-dependent consumer, and the two point opposite ways
+
+#6919 (sibling) asked whether its `f₁/f₀` additivity across the two nucleons is
+contingent on which strand count `def:atomic-braid` means. Measured at the
+producer (`mass_at_3A_proper.atom_braid_word_3A`), check 9 of
+`strand_count_is_a_two_by_two_probe.py` (now **16/16**):
+
+Their premise is exactly right in the `3A` reading. The deuteron generator
+sequence is `[0,1,0,1,0,1,0,0,1,0,0, 2, 3,4,3,4,3,4,3,3,4,3,3]` — proton `{0,1}`
+11 ops, neutron `{3,4}` 11 ops, **min cross `|i−j| = 2`**.
+
+**But the full word carries the inter-nucleon bond at generator 2**, once, and 2
+is adjacent to *both* blocks. So the factorisation is a property of the **vacuum
+part**, not the whole word. Flagged to them: `atom_braid_word_3A_to_crossings`
+defaults to `include_inter=False`, so measuring the bond-free word and reporting
+additivity of "the pn atom word" is one keyword away and reads identically.
+
+| reading | disjoint-support premise |
+|---|---|
+| `3A` | **holds** — the layout above, production's reading |
+| `A+Z` | **not statable** — D has 3 strands, 2 generators; a nucleon is *one strand*, so there is no per-nucleon block, and the neutron block would need index 4 |
+| `3A+Z` | blocks survive, but the electron generator (5) is **adjacent** to the neutron block; `pe`/`ne`/`ee` crossings couple it in |
+
+**The consequence for the naming decision, and it is new: no reading is free.**
+Two independent consumers now price it in **opposite** directions —
+
+- `qou-q6pp` is cheapest under **`A+Z`** (its coincidence holds there, inverts
+  under `3A`, evaporates under `3A+Z`);
+- #6919's additivity is only statable under **`3A`** or **`3A+Z`**.
+
+The sharpest case is not that `A+Z` gives a *different* answer to #6919 — it is
+that the question has **no referent** there, since "which generators does nucleon
+`k` own" presupposes three strands per nucleon.
+
+Comment 5558064329.
