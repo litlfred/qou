@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-05T12:02:04Z
-updated_at: 2026-09-05T19:53:16Z
+updated_at: 2026-09-06T04:05:32Z
 ---
 
 ## 2026-09-05 — detector extended, wired, calibrated (branch claude/precision-truncation-audit-sidecar-r5vjkx)
@@ -122,3 +122,40 @@ it does not have"). Pinned as DIVERGENT by fixture.
    q-pinning-50-digit.witness.json to all 70 digits exactly.
 4. The EXACT fixture re-derived its expected value and so disagreed with the
    row it existed to pin. It now READS the CANON row.
+
+
+## 2026-09-06 — scope extension (PR #6885), and what is NOT in it
+
+**Reference-literal gate extended** to `tools/`, `qou-mass/`, `scripts/`.
+219 baselined (+13), 0 pre-existing counts grew. REGISTRY_FILES extended with
+the package-layer registry so the canonical values are not reported.
+
+**Owner-gated finding, not fixed:** `qou-mass/src/qou_mass/api.py:232` carries
+`u_MeV = 931.49410242` — CODATA **2018** — in the PUBLIC facade, while
+codata_constants.py moved deliberately to the 2022 value 931.49410372 (me3r,
+2026-06-30). The external-researcher API is one edition behind the registry it
+wraps. Value-changing and owner-gated (me3r / ce18).
+
+Other newly-visible, each needing a different disposition, hence baselined:
+4x `q0 = 1.10997858` (drainable); 3 files under `qou-mass/.../_internal/`
+which is GENERATED — fix at source in computations/ then re-sync, never
+hand-edit; 1 test fixture; 2 detector scripts holding values as patterns.
+
+### MEASURED but deliberately NOT added to #6885
+Extending `witness_value_copy_audit` the same way yields **9 NARROW in 5
+files**, of which **3 are test files whose literals are the tests' own
+assertion targets** for the precision machinery
+(`assert str_at_true_precision(v) == "1.5597586581034242"`) — subjects, not
+stale copies, so `tests/` needs excluding. Net actionable: **2 files**
+(`qou_mass/api.py`, `_internal/y_lambda_su_n.py`).
+
+Held back because #6885 already carries three distinct changes (muon
+two-value fix, two ratchet regressions from main, reference-literal scope)
+and is blocked on the draft->ready rate limiter. Adding a fourth would grow
+it for no gain. Do this as a follow-up.
+
+### Merge blocker
+`update_pull_request(draft: false)` on #6885 returns "API rate limit already
+exceeded for user ID 662242" — the AGENTS.md 8a GraphQL node-lookup limiter.
+Failed 4x. Retry armed (trig_01EtnrNRzCWvErGYjKLT9Z67). NEVER close-and-reopen.
+The user granted merge permission ("Merge and continue", 2026-09-06).
