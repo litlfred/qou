@@ -86,6 +86,13 @@
       "note": "f^{(2,1)}=2 was prose when the no-go was written. Proved via the hook-length formula, so the (2,1) instances are unconditional rather than resting on a classical value the corpus had not written down"
     },
     {
+      "name": "and_the_complement_is_constructive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "three trace-factoring functionals at one partition are DEPENDENT; three block-reading ones at (2,1) are INDEPENDENT. The pair says where a derivation must live. It does NOT identify them with volume/surface/Coulomb -- existence is a necessary condition for such a match, not evidence of one"
+    },
+    {
       "name": "and_the_boundary_case_is_recorded_too",
       "computed": true,
       "expected": true,
@@ -121,8 +128,8 @@
     "signature": "noncomputable def wedderburnEmbedOf {n : ℕ} (h : RSKDimIdentity n) (x : WedderburnDecomposition n) : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ := Matrix.reindex (regIndexEquiv h) (regIndexEquiv h) (blockDiagonal x) /-- And it is injective, so it deserves the name \"embedding\". -/ theorem wedderburnEmbedOf_injective {n"
   },
   "provenance": {
-    "headSha": "94590e2434124865644a9ea18af3078e4a4dac29",
+    "headSha": "d1b2aa8e50193d63b75808799c42f024439eb455",
     "producer": "computations/qbeta/qbeta_wedderburn_bridge_probe.py",
-    "elapsed_s": 18.716
+    "elapsed_s": 20.949
   }
 }
