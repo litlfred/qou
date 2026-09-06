@@ -501,7 +501,40 @@ question with a definite answer — either the `H₄` layering exists in the lit
 held here, or it is genuinely open — and it is the cheapest next thing to settle, because it
 decides whether "fix on Bring's" reaches a triangulation at all or only reaches a tessellation.
 
-Recorded as bean `qou-brfy`. Note also the standing caution from §1.2: a Farey/flip story on a
+Note also the standing caution from §1.2: a Farey/flip story on a
 **surface** is 2-dimensional, and Pachner 2–3 moves on a 3-manifold triangulation are not the same
 moves. The two are related through *bundles* over the surface, which is exactly what the first row
 of the table is; keeping that distinction is what makes the route checkable rather than suggestive.
+
+### 9.2 The `H₄` search, run — NOT FOUND, and the scope of that negative
+
+Bean `qou-brfy`, searched 2026-09-06.
+
+**Surface searched.** (i) The full held library, **both** the `sections/` and `ocr/` tiers, for
+"Hecke group": **exactly one hit** — `arxiv-2402.08782v1`, the Bring paper itself — and it scores
+**zero** on triangulation vocabulary. (ii) The eight held documents carrying layered-triangulation
+vocabulary, none of which mentions a Hecke group. (iii) One targeted web search.
+
+**Result: the two literatures are disjoint across everything searched.** The layering program
+(Akiyoshi, Lackenby, Guéritaud — an early special case of Agol's veering triangulations) runs on
+the Farey graph of the **modular group**. Farey maps associated with Hecke groups *do* exist as a
+body of theory, but nothing found carries an `H₄` Farey word to a layered ideal triangulation of a
+**3-manifold**.
+
+**This is scope-(a), not scope-(b).** "Not found across the held library plus one targeted search"
+is a different claim from "no such theorem exists", and only the first was measured. What would
+separate them is a systematic read of the Hecke-group Farey-map literature. Worth noting that `H_q`
+is arithmetic only for `q = 3, 4, 6`, so `H₄` being arithmetic means an analogue is not obviously
+excluded on those grounds.
+
+**Two acquisitions worth making, neither held.** The second matters more to this arc than the `H₄`
+question does:
+
+- **`arXiv:2108.09349`, *Geometric triangulations of a family of hyperbolic 3-braids*** —
+  directly on triangulating **braid closures**, which is precisely §7 question 2 (are the per-atom
+  closures hyperbolic?). This is the single most on-point unheld source for the live thread.
+- **`arXiv:math/0406242`, Guéritaud (appendix Futer), *On canonical triangulations of
+  once-punctured torus bundles and two-bridge link complements*** — the primary source for **both**
+  rows of the §9 table, currently reachable here only indirectly through FKP `arxiv-0808.2716v4`.
+  `futer-gueritaud-angled` is already a `references.ts` key, so the author is cited but this paper
+  is not held.
