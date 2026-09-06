@@ -66,6 +66,31 @@ C with a different letter in it".  This probe re-derives the identity as a
 check and adds only an INTERPRETATION of the `q^2`: it is the (H)->(J) Skein
 generator rescale.
 
+CONVERGENT WITH `qou-cds1`'s RANK-LABEL READING, AND ITS OBSTRUCTION IS
+STRONGER THAN MINE (added after `336a35ff278` landed on main).  That commit
+reads the same `q^2` a different way -- `z_N = q^N/[N]_q` is a RANK-indexed
+family, `z_2 = z_D`, and `z_C = 1/[2]_sqrt(q)` is in the family for NO N (I
+re-derived that independently for N = 1..6).  The two readings are one
+mechanism seen from two sides, and the bridge is exact:
+
+    kernel(q) = q/(q^2+1) = 1/[2]_q          (exact)
+    markovZD  = q^2 * kernel(q) = q^2/[2]_q  = their z_N at N = 2
+    markovZC  = kernel(sqrt q)  = 1/[2]_sqrt(q)
+
+So the `u^-2` generator rescale of the (H)->(J) transport is EXACTLY the
+operation that strips the `q^N` numerator -- their sentence "rescaling z_D to
+bar-evenness strips the rank label" and this probe's "the q^2 is the Skein
+normalisation change" describe the same map.  Theirs names what is LOST
+(the rank label, bar-oddness); this one names WHERE the rescale COMES FROM
+(a live Skein convention).
+
+**Their obstruction is the better one and supersedes the argument below.**
+It is a BLOCK COUNT, not a specialisation point: convention D annihilates the
+(1^3) block (`y_(1^3) = 0`; TL_n = H_n/<antisym> kills every partition with
+more than two rows) while C does not (`y_(1^3) = 0.022745`), so no
+substitution whatever can carry a 3-block trace to a 2-block one.  Cite that
+rather than the weaker reading that follows.
+
 WHICH WAY THAT INTERPRETATION CUTS -- against the reading one reaches for
 first.  It does NOT rehabilitate convention-C sites.  `z_C(q) = kernel(sqrt q)`
 is the (J)-admissible parameter of the Hecke algebra at the variable `sqrt q`,
@@ -411,6 +436,13 @@ def main() -> int:
             "composition of markovZC_eq_kernel_sqrt and "
             "markovZD_eq_sq_mul_kernel, sorry-free on main. What is new is "
             "reading the q^2 rescale as the (H)->(J) Skein normalisation.",
+            "Convergent with qou-cds1 (336a35ff278): kernel(q) = 1/[2]_q "
+            "exactly, so markovZD = q^2*kernel(q) IS their rank-indexed "
+            "z_N = q^N/[N]_q at N=2, and this probe's u^-2 rescale is exactly "
+            "what strips that numerator. Their obstruction is STRONGER and "
+            "supersedes the specialisation-point argument: D annihilates the "
+            "(1^3) block and C does not, so no substitution carries a 3-block "
+            "trace to a 2-block one.",
             "That reading SUPPORTS the convention-C excision and does not "
             "soften it: z_C(q) = kernel(sqrt q) is the (J)-admissible "
             "parameter of the algebra at the variable sqrt q, not at q, so a "
@@ -439,6 +471,7 @@ def main() -> int:
             "docs/audits/2026-09-05-qbeta-functional-decision-options.md",
             "QOU.QBeta.ConventionDAdmissibleRoots",
             "QOU.BraidKnot.MarkovConventionSeparation",
+            "qou-cds1 / 336a35ff278 (C and D are different algebras; z is a rank label)",
             "content/quantum-observable-universe/lean/QOU/Braiding/SkeinNormalisation.lean",
             "library/li-braid-closures (HOMFLYPT normalisation change, held, uncited)",
         ],
