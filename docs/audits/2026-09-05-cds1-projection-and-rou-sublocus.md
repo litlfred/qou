@@ -277,3 +277,38 @@ fibre-level structural condition — a Habiro-integrality or an
 
 **Nothing was wired, at any stage of this arc. No `c_k` moved.** The cost of the
 error is three commits of analysis, all of whose measurements remain reusable.
+
+---
+
+# 🛑 SECOND CORRECTION (2026-09-06): the "degeneracy" is NON-SEMISIMPLICITY
+
+**Probe:** [`computations/qbeta/qbeta_c_vs_d_are_different_algebras_probe.py`](../../computations/qbeta/qbeta_c_vs_d_are_different_algebras_probe.py) (5/5).
+
+The exclusion above rests on calling `π/3`, `5π/3` and `π` "degenerate". Two of
+those three are something more specific:
+
+```
+b²  =  [3]_q / [2]_q²        (exact)
+```
+
+and `H_n(q)` is semisimple iff `[k]_q ≠ 0` for all `k ≤ n`. Therefore
+
+```
+b² = 0   ⟺   [3]_q = 0   ⟺   H₃(q) is NOT semisimple
+```
+
+So the phases used to declare the root-of-unity sublocus **empty** are exactly
+the points where the Wedderburn decomposition `tr = Σ_λ y_λ χ^λ` — the machinery
+every one of these probes is built on — **ceases to exist**.
+
+**That is not an obstruction to the physics.** It is where the semisimple
+picture ends and the cellular / tilting structure begins, i.e. precisely the
+locus the 2026-09-03 full-tower ruling points *at*. The section above excluded
+the interesting locus on the grounds that its own tooling stopped working there.
+
+**The arithmetic is unchanged and correct. The word "degenerate" and the
+"sublocus is EMPTY" verdict are withdrawn as interpretation.**
+
+(My first attempt at the identity was `b² = q²·[3]_q/[2]_q²`, which is **false**
+— sympy caught the spurious `q²`. Recorded because the wrong form is easy to
+reach by eye.)

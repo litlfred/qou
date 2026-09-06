@@ -71,9 +71,11 @@ export default conjecture({
   lean: {
     // Points at the SORRY-FREE ³He uniqueness closure (interior
     // case, batch 13).  The abstract `canonical_T_w_subsingleton`
-    // currently delegates to `strict_complementarity_unique` which
-    // still has a sorry for the general kernel-uniqueness step;
-    // this manifest cites the proven concrete instance instead.
+    // used to delegate to `strict_complementarity_unique`, whose
+    // backing axiom was shown FALSE and deleted (bean `qou-i6u4`);
+    // it now carries the interior hypothesis `dualSlack.PosDef` and
+    // is axiom-free.  This manifest cites the proven concrete
+    // instance either way.
     ref: "qou:QOU.BraidKnot.CanonicalKnotIdSDP",
   },
 });

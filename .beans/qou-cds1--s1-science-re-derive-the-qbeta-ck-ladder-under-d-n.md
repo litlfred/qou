@@ -7503,3 +7503,111 @@ Two things checked rather than assumed:
 **Scope (a).** Does NOT refute the projection — it is proved. Measures only that
 it is insufficient by itself, and identifies nothing about what else is needed.
 Nothing wired; no `c_k` moved.
+
+### C and D are DIFFERENT ALGEBRAS, z is a RANK label, and #6889's exclusion is withdrawn (2026-09-06)
+
+Probe: `computations/qbeta/qbeta_c_vs_d_are_different_algebras_probe.py` (5/5).
+Prompted by the owner asking whether the proper `z` coordinate was in use, and
+to work the **full tower** rather than the semisimple part. Both pointed at a
+framing error running through three of my PRs on this arc.
+
+**1. Not a coordinate change — a change of algebra.** Registry:
+
+    convention  name                                y_(3)      y_(2,1)    y_(1^3)
+    C           full-Hecke Ocneanu / Wenzl z-trace  0.415396   0.280930   0.022745
+    D           SU(2)/Temperley-Lieb (Jones)        [4]/[2]^3  1/[2]^2    0
+
+Both normalise; **D annihilates the sign block**. `TL_n = H_n/⟨antisymmetriser⟩`
+kills every >2-row partition, at `n=3` exactly `(1³)`. D is a **quotient** of C.
+`z_D(q) = q²z_C(q²)` is true but relates parameter *values* only — no
+substitution carries a 3-block trace to a 2-block one.
+
+**2. `z` is indexed by RANK.** `z_N = q^N/[N]_q` satisfies full-bar
+`bar(z) = z−h` for **every** N (checked 1–6, exactly zero), twist `q^{−2N}`.
+`z_D = z_2` — **D is SU(2)**. `z_C = 1/[2]_√q` has no `q^N` numerator, is
+bar-even, and is in the family for **no** N. The `q^N` numerator **is** the bar
+twist — so #6915's rescale-to-bar-even was stripping the rank label.
+
+**3. `b² = [3]_q/[2]_q²` exactly** ⟹ `b² = 0 ⟺ [3]_q = 0 ⟺ H₃(q) non-semisimple`.
+The `π/3`, `5π/3` phases #6889 called "degenerate" are where
+`tr = Σ_λ y_λ χ^λ` ceases to exist. **#6889's arithmetic stands; its emptiness
+verdict is withdrawn as interpretation** — it excluded the interesting locus
+because its own tooling stopped there. (First attempt `q²[3]/[2]²` was false;
+sympy caught it.)
+
+**4. Ruling tension, flagged not adjudicated.** 2026-08-15 makes D canonical;
+2026-09-03 asks derivations to use the full tower. D = SU(2)/TL is a two-row
+truncation discarding most of the tower at `n = 3A`. Which governs the Q_β
+channel is an owner decision.
+
+Measurements from #6915 and #6921 stand; their **framing** was wrong.
+
+#### The truncation cost, as a number rather than an adjective
+
+Probe: `computations/qbeta/qbeta_tl_truncation_cost_by_atom_probe.py` (4/4).
+
+I called D's discarded part "the overwhelming majority of the tower". That is an
+adjective, and not something to rule on. `dim TL_n = Catalan(n)` **exactly**
+(verified by summing `(f^λ)²` over ≤2-row partitions, against `C(2n,n)/(n+1)`;
+`Σ_λ (f^λ)² = n!` asserted first):
+
+    n    A    dim H_n = n!              dim TL_n        retained
+    3    1                  6                   5       83.3333 %
+    6    2                720                 132       18.3333 %
+    9    3            362,880               4,862        1.3398 %
+    12   4        479,001,600             208,012        0.0434 %
+    15   5  1,307,674,368,000           9,694,845        0.0007 %
+    18   6  6.4e15                    477,638,700          ~0 %
+
+**The cost is n-DEPENDENT, and the two rulings live at different n.** The Q_β
+ladder is an `H_3` object: D discards one 1-dim block and keeps **83 %**, which
+is why C-vs-D differs only in the 4th decimal on `β_Bor` (0.99836662 vs
+0.99856216). The mass/binding work is at `n = 3A`: ⁴He retains **0.043 %**.
+
+So "D canonical" (2026-08-15) and "full tower" (2026-09-03) may **both** be
+right in their own domains, and the live question is where the crossover bites —
+not which ruling wins globally. Measured, not adjudicated.
+
+#### 🛑 CORPUS-GREP, BELATEDLY: most of the above is PRIOR ART
+
+I did not run the six-path checklist before claiming the C-vs-D findings. Run
+now, on owner instruction. **Two of the three headline claims are already in the
+corpus, one of them Lean-proved:**
+
+- **D kills the ≥3-row blocks** — `docs/audits/2026-08-10-convention-d-ylambda-root-and-derivation.md`
+  (2026-08-10, a month old): *"Under convention D every `y_λ` with `ℓ(λ) ≥ 3`
+  vanishes identically (**Schur–Weyl on a two-dimensional fibre**)"*. A better
+  reason than my "TL quotient": Schur–Weyl on a 2-dim fibre.
+- **`b² = [3]_q/[2]_q²`** — `prop:hoefsmit-binding-amplitude`, **Lean-proved**
+  as `QOU.BraidsAndKnots.hoefsmit_b_sq_eq_q3_over_q2sq`.
+- **The rank family and the TL stratification** — `qou-p-neq-np.md` §37: at
+  `X = Q^{−N}` the surviving Wedderburn blocks are exactly `λ₁ ≤ N`, **proved
+  sorry-free** in `WenzlSchurElement` (`tl_numerator_eq_zero_iff`,
+  `schurElement_tl_eq_zero_iff`). That `N` is my `z_N = q^N/[N]_q`.
+
+So #6924's algebra section is a **re-derivation**, not a discovery, and it says
+so now. What survives as new: the **#6889 interpretation withdrawal**, the
+**quantified truncation cost** (Catalan(n)/n! by atom), and the **D2 update**.
+
+#### What was actually missing, and is now Lean-proved
+
+The corpus had `b² = [3]_q/[2]_q²` AND the Wenzl/Schur-element semisimplicity
+machinery — and **nothing linked them**. Four sorry-free lemmas added to
+`hoefsmit-binding-amplitude.lean` (`lean` exit 0, 0 errors, 0 sorry, 0 axiom):
+
+    hoefsmit_b_sq_eq_zero_iff          b² = 0  ↔  [3]_q = 0     (given [2]_q ≠ 0)
+    qInt3_eq_zero_iff_cyclotomic       [3]_q = 0  ↔  q⁴+q²+1 = 0
+    q_pow_six_eq_one_of_qInt3_eq_zero  [3]_q = 0  →  q⁶ = 1
+    q_sq_ne_one_of_qInt3_eq_zero       [3]_q = 0  →  q² ≠ 1     (needs 3 ≠ 0)
+
+So `b²` vanishes **exactly** at primitive 6th roots of unity. A probe finding
+`b² = 0` has found a root of unity, not a defect — which is the Lean form of
+#6889's withdrawal.
+
+**Scope, stated in the file:** these are the ARITHMETIC half only. They do not
+prove non-semisimplicity — that is the Schur-element criterion, carried
+elsewhere in the corpus. They pin the vanishing locus.
+
+**Literature: not consulted, and not needed for these four.** They are ring
+identities over a field. The Schur–Weyl / Wenzl / Geck–Pfeiffer citations the
+surrounding claims rest on are already carried by the corpus blocks above.

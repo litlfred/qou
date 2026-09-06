@@ -137,147 +137,41 @@ theorem RealStrongDualityPair.dualSlack_mul_feasible_eq_zero
     step is encapsulated in `slater_strict_complementarity_kernel_axiom`
     pending Mathlib's finite-dimensional Slater + SDP rank-deficiency
     library. -/
-/-- **External axiom (Alizadeh-Haeberly-Overton 1997 §3; strict
-    complementarity defined in Boyd-Vandenberghe 2004 §5.5.2): Slater +
-    strict complementarity implies
-    optimal-face uniqueness.**
+/-! ## The kernel axiom and its class — REMOVED (they were false)
 
-    Under the standard conditions
-      - `Φ', Φ*` both primal-feasible
-      - both attain the same objective
-      - `tr(A_i · (Φ' − Φ*)) = 0` for every constraint i
-      - `S · (Φ' − Φ*) = 0` and `(Φ' − Φ*) · S = 0`
-    where `S = dualSlack ystar`, the optimal face has dimension 0
-    and `Φ' = Φ*`.
+This section used to carry `class SlaterStrictComplementarityKernel`, the
+`slater_strict_complementarity_kernel_axiom` supplying its default instance,
+and the two theorems consuming it: `real_strict_complementarity_unique` and
+`real_strict_complementarity_optimum_subsingleton`.
 
-    **Refactored 2026-05-30 (§3b-cond pattern).**  The cited result
-    is now wrapped as a `class SlaterStrictComplementarityKernel`
-    with a single field `kernel_uniqueness` carrying the universal
-    statement.  Downstream consumers may take the class as an
-    `[Instance]` hypothesis (explicit §3b-cond dependency, matches
-    the broader uniqueness-theorems campaign — `MarkovTraceUniqueness`,
-    `BringResidueAtOrder`, `BringZeroModeBlochClass`,
-    `BindingForceCarrierKnot`).
+**All of them asserted false propositions and have been deleted.**  The class
+is the sharpest case: its single field *was* the false proposition, so the
+class was **uninhabitable** and any instance of it unsound.  Refutation:
+`QOU.MathlibExt.SDPUniquenessCounterexamples.not_slater_strict_complementarity_kernel`
+— sorry-free, depending on no QOU axiom.
 
-    The axiom below provides the **default instance** so existing
-    consumers keep working unchanged.  Closing the axiom in Mathlib
-    (Phase 3 of the SDP uniqueness programme) discharges the class
-    instance directly. -/
--- Ref: [boyd-vandenberghe-2004] §5.5.2 (strict complementarity defined
---      at end of "Complementary slackness")
--- Ref: [alizadeh-haeberly-overton-1997] §3 (Strict complementarity in
---      SDP — the canonical authority for the optimal-face-dimension /
---      uniqueness result; Boyd's §5.5.4 is "Mechanics interpretation
---      of KKT", which doesn't cover this.)
-class SlaterStrictComplementarityKernel : Prop where
-  kernel_uniqueness :
-    ∀ {n : ℕ} {ι : Type*} [Fintype ι] {sdp : SDPPrimal n ℝ ι}
-      (sc : RealStrictComplementarityPair sdp)
-      {Φ' : Matrix (Fin n) (Fin n) ℝ}
-      (_h_feas : sdp.IsFeasible Φ')
-      (_h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar)
-      (_h_constraint_diff :
-        ∀ i : ι, Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0)
-      (_h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0)
-      (_h_diff_S : (Φ' - sc.Φstar) * sdp.dualSlack sc.ystar = 0),
-        Φ' = sc.Φstar
+**Why the extra hypotheses did not save it**, which is the trap worth
+recording.  The axiom carried `_h_S_diff`, `_h_diff_S` and
+`_h_constraint_diff` on top of feasibility and objective-match, and that looks
+like a guard: it says `Φ' - Φ⋆` lies in `ker S`.  But with `n = 1`, no
+constraints and zero cost the dual slack `S` is the **zero matrix**, whose
+kernel is everything — so all three hold vacuously, exactly in the degenerate
+case where uniqueness fails.  Structure is not soundness.
 
-/-- The cited-axiom field carrier — discharges the §3b-cond class
-    via Boyd-Vandenberghe / Alizadeh-Haeberly-Overton.  Closing this
-    axiom in Mathlib is the Phase-3 SDP uniqueness follow-up. -/
--- Ref: [manuscript] Ch. braid-knot, prop:operator-selection-lp §"dual program" (Slater + strict-complementarity ⟹ SDP primal optimum unique)
-axiom slater_strict_complementarity_kernel_axiom :
-    ∀ {n : ℕ} {ι : Type*} [Fintype ι] {sdp : SDPPrimal n ℝ ι}
-      (sc : RealStrictComplementarityPair sdp)
-      {Φ' : Matrix (Fin n) (Fin n) ℝ}
-      (_h_feas : sdp.IsFeasible Φ')
-      (_h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar)
-      (_h_constraint_diff :
-        ∀ i : ι, Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0)
-      (_h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0)
-      (_h_diff_S : (Φ' - sc.Φstar) * sdp.dualSlack sc.ystar = 0),
-        Φ' = sc.Φstar
+Alizadeh-Haeberly-Overton 1997 requires **dual nondegeneracy**, which none of
+the deleted statements encoded.
 
-/-- **Default class instance** discharged from the cited axiom.
-    Provides backward compatibility: every existing consumer of
-    `real_strict_complementarity_unique` keeps working unchanged
-    (the class instance is found by typeclass resolution).  An
-    alternative `Mathlib`-derived instance, when it lands, replaces
-    this default by being more specific or via `priority`. -/
-instance : SlaterStrictComplementarityKernel where
-  kernel_uniqueness := @slater_strict_complementarity_kernel_axiom
+**What replaces them** — both already proved below, and unaffected:
 
-theorem real_strict_complementarity_unique
-    {sdp : SDPPrimal n ℝ ι}
-    (sc : RealStrictComplementarityPair sdp)
-    {Φ' : Matrix (Fin n) (Fin n) ℝ}
-    (h_feas : sdp.IsFeasible Φ')
-    (h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar) :
-    Φ' = sc.Φstar := by
-  -- Step 1 + 2: kernel containment via complementary slackness.
-  have h_S_Φ' : sdp.dualSlack sc.ystar * Φ' = 0 :=
-    sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero h_feas h_obj
-  have h_S_Φstar : sdp.dualSlack sc.ystar * sc.Φstar = 0 :=
-    sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero
-      sc.primal_feas rfl
-  -- Step 3 (DERIVED): `S · D = 0` where `D := Φ' - Φstar`.
-  have h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0 := by
-    rw [Matrix.mul_sub, h_S_Φ', h_S_Φstar, sub_zero]
-  -- Step 4 (DERIVED): affine constraints match for the difference:
-  -- `tr(A_i · D) = b_i - b_i = 0` for all i.
-  have h_constraint_diff : ∀ i : ι,
-      Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0 := by
-    intro i
-    rw [Matrix.mul_sub, Matrix.trace_sub]
-    rw [h_feas.2 i, sc.primal_feas.2 i]
-    ring
-  -- Step 4.5 (DERIVED): D · S = 0 (symmetric companion to h_S_diff).
-  -- D = Φ' - Φstar is symmetric (both feasible Φ ⪰ 0 are Hermitian).
-  -- S = dualSlack ystar is symmetric (Hermitian + real).
-  -- (S · D)^T = D^T · S^T = D · S; if S · D = 0 then D · S = 0.
-  have h_D_sym : (Φ' - sc.Φstar).IsHermitian := by
-    have h1 : Φ'.IsHermitian := h_feas.1.1
-    have h2 : sc.Φstar.IsHermitian := sc.primal_feas.1.1
-    -- Difference of Hermitian is Hermitian
-    show (Φ' - sc.Φstar).transpose = (Φ' - sc.Φstar)
-    rw [Matrix.transpose_sub, show Φ'.transpose = Φ' from h1,
-        show sc.Φstar.transpose = sc.Φstar from h2]
-  have h_S_sym : (sdp.dualSlack sc.ystar).IsHermitian :=
-    sc.toRealStrongDualityPair.dualSlack_psd.1
-  have h_diff_S : (Φ' - sc.Φstar) * sdp.dualSlack sc.ystar = 0 := by
-    have : ((sdp.dualSlack sc.ystar) * (Φ' - sc.Φstar)).transpose = 0 := by
-      rw [h_S_diff]; rfl
-    rw [Matrix.transpose_mul, show (Φ' - sc.Φstar).transpose = (Φ' - sc.Φstar) from h_D_sym,
-        show (sdp.dualSlack sc.ystar).transpose = sdp.dualSlack sc.ystar from h_S_sym] at this
-    exact this
-  -- Step 5 (KERNEL UNIQUENESS): combine S·D = 0 + D·S = 0 + tr(A_i·D) = 0.
-  -- The remaining bridge from these to D = 0 requires the rank-
-  -- deficiency theorem for the SDP optimal face: under Slater +
-  -- strict complementarity, the optimal face is a single point.
-  --
-  -- Concretely (Alizadeh-Haeberly-Overton 1997 §3):
-  --   * S = T - Σ_{i ∈ active} ystar_i · A_i (since inactive ystar_i = 0)
-  --   * Both Φ' and Φstar lie in the optimal face
-  --       F = {Φ ⪰ 0 : tr(A_i Φ) = b_i ∀i, S · Φ = 0}
-  --   * F has dimension equal to dim(ker(S)) - |active|
-  --   * Slater ⟹ this is 0 ⟹ F is a single point ⟹ Φ' = Φstar
-  --
-  -- Discharge the final kernel-uniqueness step via the cited
-  -- external axiom (Alizadeh-Haeberly-Overton 1997 §3); the remaining
-  -- pieces are constructed above.
-  exact slater_strict_complementarity_kernel_axiom sc h_feas h_obj
-    h_constraint_diff h_S_diff h_diff_S
+* `real_strict_complementarity_unique_of_dualSlack_posDef` (§3.1) — the interior
+  case, hypothesis `(sdp.dualSlack sc.ystar).PosDef`.
+* `SDPSlaterUniqueness` (§3.06) with `real_strict_complementarity_unique_via_class`
+  and `real_strict_complementarity_optimum_subsingleton_via_class` — the
+  §3b-cond route, whose instances `ofDualSlackPosDef` and
+  `ofActiveEmptyAndCostPosDef` are proven and axiom-free.
 
-/-- **Subsingleton wrapper** for typeclass-friendly use. -/
-theorem real_strict_complementarity_optimum_subsingleton
-    {sdp : SDPPrimal n ℝ ι}
-    (sc : RealStrictComplementarityPair sdp) :
-    Subsingleton {Φ : Matrix (Fin n) (Fin n) ℝ //
-      sdp.IsFeasible Φ ∧ sdp.objAt Φ = sdp.objAt sc.Φstar} := by
-  refine ⟨fun ⟨Φ₁, h₁_feas, h₁_obj⟩ ⟨Φ₂, h₂_feas, h₂_obj⟩ => ?_⟩
-  ext1
-  exact (real_strict_complementarity_unique sc h₁_feas h₁_obj).trans
-    (real_strict_complementarity_unique sc h₂_feas h₂_obj).symm
+Tracked in bean `qou-i6u4`.
+-/
 
 /-! ## §3.1  Interior-optimum closure (active set empty)
 
@@ -556,92 +450,22 @@ theorem PosSemidef.mul_zero_comm
   rw [← h_T, h_zero]
   exact Matrix.transpose_zero
 
-/-- **Strict-complementarity rank equality**
-    (Goldman-Tucker / Alizadeh-Haeberly-Overton 1997).
+/-! ## `SDPRankUniqueness` and `ofSlater_proven` — REMOVED (they were false)
 
-    Under Slater + strict complementarity, the dual slack `S` and
-    the primal optimum `Φstar` satisfy a rank-equality structure
-    that — combined with the affine constraints — pins the
-    primal optimum uniquely.
+`axiom SDPRankUniqueness` and the `ofSlater_proven` theorem built on it are
+deleted.  Refutation:
+`QOU.MathlibExt.SDPUniquenessCounterexamples.not_SDPRankUniqueness`
+— sorry-free, depending on no QOU axiom.
 
-    This is the **single missing categorical input** for the
-    general Slater uniqueness theorem.  Axiomatised here at
-    a more refined level than the monolithic
-    `SDPSlaterUniqueness.ofSlater` axiom: it captures EXACTLY
-    the rank-deficiency content (no other categorical claims),
-    and the rest of the proof is composed below from this
-    single axiom + already-proven QOU lemmas.
+Slater's condition does **not** rescue it: in the `n = 1`, no-constraint,
+zero-cost counterexample the identity is positive-definite with nothing to
+violate, so `IsStrictlyFeasible` holds, and the complementarity-difference
+hypotheses are vacuous because the dual slack is the zero matrix.
 
-    Replacing this `axiom` with a Mathlib theorem will turn
-    `SDPSlaterUniqueness.ofSlater_proven` (below) into a fully
-    sorry-free, axiom-free proof. -/
--- Ref: [boyd-vandenberghe-2004] §5.5.2 (strict complementarity defined
---      at end of "Complementary slackness")
--- Ref: [alizadeh-haeberly-overton-1997] §3 (Strict complementarity in
---      SDP — the canonical authority for the optimal-face-dimension /
---      uniqueness result; Boyd's §5.5.4 is "Mechanics interpretation
---      of KKT", which doesn't cover this.)
--- Ref: [todd2001] §3.4
--- Ref: [alizadeh-haeberly-overton-1997] *Complementarity and
---      nondegeneracy in semidefinite programming*
-axiom SDPRankUniqueness
-    {n : ℕ} {ι : Type*} [Fintype ι]
-    (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp)
-    (h_slater : sdp.IsStrictlyFeasible)
-    {Φ' : Matrix (Fin n) (Fin n) ℝ}
-    (h_feas : sdp.IsFeasible Φ')
-    -- Already-derivable hypotheses (proven below from the input data):
-    (_h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0)
-    (_h_constraint_diff :
-      ∀ i : ι, Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0) :
-    Φ' = sc.Φstar
+Use `SDPSlaterUniqueness.ofDualSlackPosDef` or
+`SDPSlaterUniqueness.ofActiveEmptyAndCostPosDef` — both proven, both axiom-free.
 
-/-- **Slater uniqueness — proven from the rank-uniqueness axiom.**
-
-    Composes the proven QOU pipeline (`dualSlack_mul_feasible_eq_zero`
-    + `Matrix.mul_sub` for the difference + linearity-of-trace
-    for the affine constraint match) with the single
-    `SDPRankUniqueness` axiom to discharge the kernel-uniqueness
-    step.
-
-    The proof is **fully closed modulo `SDPRankUniqueness`**.
-    When that axiom is replaced by a Mathlib theorem, this entire
-    function becomes axiom-free. -/
-theorem ofSlater_proven
-    {n : ℕ} {ι : Type*} [Fintype ι]
-    (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp)
-    (h_slater : sdp.IsStrictlyFeasible) :
-    SDPSlaterUniqueness sdp sc where
-  unique {Φ'} h_feas h_obj := by
-    -- Step 1: from complementary slackness, S * Φ' = 0.
-    have h_S_Φ' : sdp.dualSlack sc.ystar * Φ' = 0 :=
-      sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero h_feas h_obj
-    -- Step 2: same for Φstar.
-    have h_S_Φstar : sdp.dualSlack sc.ystar * sc.Φstar = 0 :=
-      sc.toRealStrongDualityPair.dualSlack_mul_feasible_eq_zero
-        sc.primal_feas rfl
-    -- Step 3: subtract — S * (Φ' - Φstar) = 0.
-    have h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0 := by
-      rw [Matrix.mul_sub, h_S_Φ', h_S_Φstar, sub_zero]
-    -- Step 4: affine constraint match for the difference.
-    have h_constraint_diff : ∀ i : ι,
-        Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0 := by
-      intro i
-      rw [Matrix.mul_sub, Matrix.trace_sub]
-      rw [h_feas.2 i, sc.primal_feas.2 i]
-      ring
-    -- Step 5: invoke the rank-uniqueness axiom (Alizadeh-Haeberly-Overton 1997 §3).
-    -- This is the single Mathlib gap; everything else is now closed.
-    exact SDPRankUniqueness sdp sc h_slater h_feas h_S_diff h_constraint_diff
-
-
--- Per Copilot review: removed the redundant
--- `SDPSlaterUniqueness.ofSlater` axiom that had the same
--- effective content as the (more granular) `SDPRankUniqueness`
--- axiom + `ofSlater_proven` theorem combination.  Downstream
--- code should use `SDPSlaterUniqueness.ofSlater_proven` (which
--- composes from `SDPRankUniqueness`) — single source of truth
--- for the multi-week Mathlib gap.
--- Removed: `axiom SDPSlaterUniqueness.ofSlater`.
+Tracked in bean `qou-i6u4`.
+-/
 
 end QOU.MathlibExt.SDPRealUniqueness

@@ -394,13 +394,6 @@ def run_peel(n):
     return ok
 
 
-if __name__ == "__main__":
-    for n in (3, 4, 5):
-        run(n)
-        run_peel(n)
-        print()
-
-
 # ---------------------------------------------------- is the family a basis at all?
 #
 # This section exists because the first version of this probe used the WRONG handedness
@@ -452,15 +445,52 @@ def run_rank_guard(n):
     """Two axes, measured rather than assumed:
 
     * the REFERENCE TABLEAU (Murphy's row-superstandard `t^lambda` vs the corpus's
-      column-superstandard) turns out NOT to matter -- both are full rank;
-    * the SUBGROUP does.  Summing over a fixed reference row-stabiliser is full rank;
-      summing over `rowStab t`, as the corpus's `murphyM` does, is deficient at every
-      n tested, so that family can never span and is not Murphy's element.
+      column-superstandard) does not matter FOR RANK -- both are full;
+    * the SUBGROUP does.  Summing over one fixed reference row-stabiliser is full rank;
+      summing over `rowStab t`, a different conjugate subgroup per `t`, is deficient at
+      every n tested, so that family can never span and is not Murphy's element.
+
+    STALE LABEL CORRECTED 2026-09-06.  The second row used to be tagged "as the corpus's
+    `murphyM` does".  That described the SUPERSEDED `murphyM`; the live one sums over the
+    fixed `youngSubgroup n h (colSuperstandard mu)`, i.e. it is the FIRST row.  The tag is
+    now "[superseded murphyM]" so the output does not accuse current code of a defect it
+    no longer has.
+
+    AND "does not matter" IS SCOPED TO RANK.  It was quoted in `murphyM`'s own docstring
+    as the reference being "a red herring" full stop, and that generalisation is FALSE:
+    `murphy_reference_tableau_additivity_probe.py` exhibits a property -- Mathas 3.13's
+    length additivity at a Garnir descent node -- where the reference is decisive, failing
+    for 48 % of n=6 tableaux under the column reference and never under the row one.
     """
     print(f"n = {n}  m_st = T_(d(s)) x T_(d(t)^-1)")
     for ref in ("row", "col"):
         for fixed_x, tag in ((True, "fixed x_lambda = rowStab(t_ref)   [Murphy]"),
-                             (False, "x = rowStab(t)                    [corpus murphyM]")):
+                             (False, "x = rowStab(t)                [superseded murphyM]")):
             r, nc = family_rank(n, ref=ref, fixed_x=fixed_x)
             print(f"    ref={ref:3s} rank {r:4d}/{nc:4d}  "
                   f"{'FULL     ' if r == nc else 'DEFICIENT'}  {tag}")
+
+
+# ------------------------------------------------------------------------ entry point
+#
+# `run_rank_guard` is defined BELOW the old position of this block and so was never
+# called -- the standing guard its own docstring describes had never run in `__main__`
+# since it was written.  Found 2026-09-06 while checking, for the `murphyM` reference
+# question, whether "both references are full rank" had actually been measured; it had,
+# once, by hand.  A guard nobody invokes is documentation.  Cost: n=3 0.02 s, n=4 0.09 s,
+# n=5 16 s -- cheap enough to run every time, so it does.
+
+if __name__ == "__main__":
+    for n in (3, 4, 5):
+        run(n)
+        run_peel(n)
+        print()
+
+    print("=" * 72)
+    print("RANK GUARD -- is the family a basis at all?")
+    print("Two axes: the REFERENCE tableau (row- vs column-superstandard) and the")
+    print("SUBGROUP (one fixed x_lambda vs a per-`t` row stabiliser).")
+    print("=" * 72)
+    for n in (3, 4, 5):
+        run_rank_guard(n)
+        print()

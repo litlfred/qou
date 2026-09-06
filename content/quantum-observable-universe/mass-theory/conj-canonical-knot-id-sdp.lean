@@ -750,18 +750,29 @@ block level so manuscript references can cite it.
 
 The proof is `Subsingleton`-typed: `Subsingleton {Φ // feasible Φ
 ∧ obj Φ = obj Φstar}` — a real categorical statement, not just an
-existence assertion.  Closing the underlying `sorry` in
-`QOU.MathlibExt.SDP.strict_complementarity_unique` requires
-Mathlib SDP-uniqueness machinery (PSD-cone strict convexity);
-this file contributes the *bridge* from the Hecke-algebra setup
-to that abstract Mathlib statement. -/
+existence assertion.
+
+**Retargeted 2026-09-05 (bean `qou-i6u4`).**  This used to consume
+`QOU.MathlibExt.SDP.strict_complementarity_unique`, which rested on an
+axiom that has since been shown **false** — strict complementarity alone
+does not give primal uniqueness; Alizadeh-Haeberly-Overton 1997 needs dual
+nondegeneracy.  Both the axiom and that theorem are deleted, and the
+refutation is
+`QOU.MathlibExt.SDPUniquenessCounterexamples.not_strict_complementarity_unique`.
+
+The statement is now conditional on the **interior** hypothesis
+`(sdp.dualSlack sc.ystar).PosDef`, under which uniqueness is genuinely
+proved with no axiom at all.  Nothing is lost for the nuclei: every one of
+them uses the empty-constraint SDP with `cost = 1`, whose dual slack is the
+identity, so the hypothesis is discharged by `Matrix.PosDef.one`. -/
 
 theorem canonical_T_w_subsingleton_under_strict_complementarity
     {n : ℕ}
     {sdp : SDPPrimal (heckeDim n) ℝ Empty}
-    (sc : StrictComplementarityPair sdp) :
+    (sc : QOU.MathlibExt.SDPRealUniqueness.RealStrictComplementarityPair sdp)
+    (h_S_posDef : (sdp.dualSlack sc.ystar).PosDef) :
     Subsingleton {Φ : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ //
       sdp.IsFeasible Φ ∧ sdp.objAt Φ = sdp.objAt sc.Φstar} :=
-  canonical_T_w_subsingleton sc
+  canonical_T_w_subsingleton sc h_S_posDef
 
 end QOU.BraidKnot

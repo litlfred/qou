@@ -133,6 +133,57 @@ LEAN_ROOT = Path("content/quantum-observable-universe/lean")
 
 # Measured 2026-08-07 by `#print axioms`. Keep sorted by module for readability.
 DEFAULT_REGISTRY = """
+# --- the ConfinementLevel refactor (bean `qou-9yt9`, PR #6882) ---
+# `ConfinementLevel.level_canonical` asserted that two records agreeing on
+# braidIndex, nStrands and q share a level. It was FALSE -- `level` was a free
+# field -- and its own docstring said the plain-structure encoding did not enforce
+# canonicity. The repair carries the filtration predicate as a PARAMETER with
+# level_valid / level_min as proof fields, after which uniqueness is one line and
+# existence is a real Nat.find construction rather than the junk record <0,1,0,0>
+# that left prop:confinement-level-exists vacuously backed.
+#
+# Registered because all three depend on NO AXIOMS AT ALL -- not even propext or
+# Classical.choice -- which is a property worth a machine re-checking: any future
+# edit that reintroduces a canonicity assumption moves these rows.
+QOU.BraidKnot.ConfinementLevel | QOU.BraidKnot.ConfinementLevel.unique | clean
+QOU.BraidKnot.ConfinementLevel | QOU.BraidKnot.ConfinementLevel.nonempty | clean
+QOU.BraidKnot.ConfinementLevel | QOU.BraidKnot.ConfinementLevel.level_eq_find | clean
+# --- the Jones-Markov normalisation counterexample (bean `qou-i6u4`, PR #6882) ---
+# `JonesMarkovCoefficient_sum_eq_one` asserted the bare sum of the q-deformed
+# Wenzl weights is 1 for ALL n and ALL q. It is false -- at q = 1 the q-integer is
+# 0/0 = 0, so every coefficient of every partition of n >= 1 vanishes and the sum
+# is 0. It had ZERO Lean consumers and is deleted; this row pins the negation.
+#
+# Found by scripts/lean-axiom-degenerate-risk-audit.py, which flagged it at 6 --
+# the audit's first true positive on a live axiom. Note the SAME 2026-09-03 tier
+# triage that cleared the five SDP axioms also lists this one (row 11, tier
+# "literature"): six false axioms cleared by one method in one pass.
+QOU.HeckeAlgebra.JonesMarkovSumCounterexample | QOU.HeckeAlgebra.JonesMarkovSumCounterexample.not_jonesMarkovCoefficient_sum_eq_one | clean
+# --- the SDP uniqueness counterexamples (bean `qou-i6u4`, PR #6882) ---
+# On 2026-09-05 all five SDP uniqueness axioms in QOU/MathlibExt were shown to be
+# FALSE -- each one alone derives `False`. They had been cleared twice by audits
+# that asked "is the citation real?" and "can Mathlib close it?" and never asked
+# whether the Lean statement IS the cited theorem. Alizadeh-Haeberly-Overton 1997
+# requires dual nondegeneracy; none of the five encoded it, and all five fall to a
+# one-dimensional zero-cost SDP whose dual slack is the zero matrix.
+#
+# Registered because the SDP chain was in NO registry at all -- 283 entries and 324
+# modules, including other MathlibExt ones, and not these. The guard's own docstring
+# says a hand-written `#print axioms` outside this registry has no gate, and that is
+# where the five lived.
+#
+# These are the NEGATIONS, not the axioms: proving `not P` rather than `False from P`
+# is what survives deletion of the axiom and re-verifies on every build. Every prior
+# incident in this corpus (B1HyperbolicRowsTheorem, LpDualityHypothesisClass x2,
+# DressedMassFromSubstrateSplit, macroscopic-stability-equivalence x2 -- eleven false
+# axioms across five incidents, all one root cause: over-quantification) recorded
+# itself as a COMMENTED-OUT `theorem X_axiom_is_inconsistent : False`, which cannot
+# be re-run and goes stale silently. A registry row is a claim a machine re-checks.
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_strict_complementarity_unique | clean
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_slater_strict_complementarity_kernel | clean
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_SDPRankUniqueness | clean
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_strict_complementarity_kernel_disjoint | clean
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_affine_slater_rigidity | clean
 # --- the Lagrange node-sum family (Pieri corner identity, PR #6098) ---
 # `sum_prod_qratio_corner` is the node-coordinate form of the one identity the
 # Macdonald hook telescope's Pieri step (P) reduces to. It is proved FROM

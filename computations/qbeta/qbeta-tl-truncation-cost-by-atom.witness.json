@@ -1,0 +1,82 @@
+{
+  "probe": "qbeta_tl_truncation_cost_by_atom_probe",
+  "bean": "qou-cds1",
+  "question": "how much of the Hecke tower does convention D discard?",
+  "answer": "Catalan(n)/n! is retained: 83.3 % at n=3 (A=1), 0.043 % at n=12 (A=4). The cost is n-dependent, so the D-canonical and full-tower rulings may both hold in their own domains.",
+  "scope": "(b) \u2014 exact integer combinatorics. Adjudicates neither ruling.",
+  "table": {
+    "3": {
+      "A": 1,
+      "dim_H_n": 6,
+      "dim_TL_n": 5,
+      "catalan_n": 5,
+      "retained_pct": "83.3333"
+    },
+    "6": {
+      "A": 2,
+      "dim_H_n": 720,
+      "dim_TL_n": 132,
+      "catalan_n": 132,
+      "retained_pct": "18.3333"
+    },
+    "9": {
+      "A": 3,
+      "dim_H_n": 362880,
+      "dim_TL_n": 4862,
+      "catalan_n": 4862,
+      "retained_pct": "1.3398"
+    },
+    "12": {
+      "A": 4,
+      "dim_H_n": 479001600,
+      "dim_TL_n": 208012,
+      "catalan_n": 208012,
+      "retained_pct": "0.0434"
+    },
+    "15": {
+      "A": 5,
+      "dim_H_n": 1307674368000,
+      "dim_TL_n": 9694845,
+      "catalan_n": 9694845,
+      "retained_pct": "0.0007"
+    },
+    "18": {
+      "A": 6,
+      "dim_H_n": 6402373705728000,
+      "dim_TL_n": 477638700,
+      "catalan_n": 477638700,
+      "retained_pct": "0.0000"
+    }
+  },
+  "assertions": [
+    {
+      "name": "burnside_check_sum_of_squares_is_n_factorial",
+      "passed": true,
+      "detail": "sum_lambda (f^lambda)^2 = n! at every n in {3,6,9,12,15,18}, so the hook-length dimensions are right before anything is concluded from them."
+    },
+    {
+      "name": "two_row_sector_dimension_is_exactly_catalan",
+      "passed": true,
+      "detail": "summing (f^lambda)^2 over the <=2-row partitions gives exactly C(2n,n)/(n+1) at every n checked \u2014 i.e. dim TL_n = Catalan(n), verified rather than quoted. This is the dimension convention D retains."
+    },
+    {
+      "name": "truncation_cost_is_n_dependent_83pct_at_A1_and_0.04pct_at_A4",
+      "passed": true,
+      "detail": "n=3 (A=1): 5/6 = 83.3333 %; n=6 (A=2): 132/720 = 18.3333 %; n=9 (A=3): 4,862/362,880 = 1.3398 %; n=12 (A=4): 208,012/479,001,600 = 0.0434 %; n=15 (A=5): 9,694,845/1,307,674,368,000 = 0.0007 %; n=18 (A=6): 477,638,700/6,402,373,705,728,000 = 0.0000 %. So the cost is n-DEPENDENT: the Q_beta ladder is an H_3 object where D discards a single 1-dim block and keeps 83 %, which is why C-vs-D differs only in the 4th decimal on beta_Bor (0.99836662 vs 0.99856216); the mass work is at n = 3A, where ^4He retains 0.043 %."
+    },
+    {
+      "name": "this_replaces_an_adjective_and_adjudicates_nothing",
+      "passed": true,
+      "detail": "the companion PR called the discarded part 'the overwhelming majority of the tower' \u2014 an adjective, and not something an owner can rule on. The number says 'D canonical' (2026-08-15) and 'use the full tower' (2026-09-03) may BOTH be right in their own domains, and the live question is where the crossover bites. Measured, not adjudicated."
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "16bcde4bb415",
+  "scriptCommitSha": "unknown",
+  "commitSha": "56dda855b9c0a1da0351d1abd18464dffcde518a",
+  "engine": "python",
+  "computedAt": "2026-09-06T09:09:28.557845+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
