@@ -86,9 +86,18 @@ theorem antipode_on_generator (n : ℕ) (q : ℝ) (i : ℕ) :
     markovTrace n q (antipodeS n q (heckeSigma n q i))
       = markovTrace n q (heckeSigma n q i) := rfl
 
-/-- **Antipode is an involution: S² = id.** -/
-axiom antipode_involution (n : ℕ) (q : ℝ) (a : HeckeAlgebra n q) :
-    antipodeS n q (antipodeS n q a) = a
+/-- **Antipode is an involution: S² = id.**
+
+    Was an `axiom`; it is `rfl` on this file's scalar-coefficient model,
+    where `antipodeS = id` (as `antipode_on_generator` above already
+    relies on).  So the axiom asserted nothing beyond that model choice.
+
+    Read it as a property of the model, not as the Hopf-algebraic
+    involution: on the basis-vector Hecke model of
+    `knot-eigenbasis-complete.lean`, where `S(σ_i) = σ_i - h·1`, `S² = id`
+    is a real statement and is not proved here. -/
+theorem antipode_involution (n : ℕ) (q : ℝ) (a : HeckeAlgebra n q) :
+    antipodeS n q (antipodeS n q a) = a := rfl
 
 /-- **Markov trace is S-invariant.**
 
@@ -97,11 +106,17 @@ axiom antipode_involution (n : ℕ) (q : ℝ) (a : HeckeAlgebra n q) :
     sign-twist depending on the parity of the braid word
     (Yekutieli's rigid dualizing complex).
 
-    Ref: [kassel1995], [yekutieli2010]. -/
+    Ref: [kassel1995], [yekutieli2010].
+
+    Was an `axiom`; it is `rfl` on this file's scalar-coefficient model,
+    where `antipodeS = id`.  Note that the sign-twist described above
+    cannot appear in this type at all: with `antipodeS = id` the two
+    sides are the same term, so no parity is being tracked.  The twisted
+    statement is the substantive one and is not formalised here. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 Ch. III; [yekutieli2010] (Markov trace is S-invariant up to parity sign-twist)
-axiom markov_trace_antipode_invariant (n : ℕ) (q : ℝ)
+theorem markov_trace_antipode_invariant (n : ℕ) (q : ℝ)
     (x : HeckeAlgebra n q) :
-    markovTrace n q (antipodeS n q x) = markovTrace n q x
+    markovTrace n q (antipodeS n q x) = markovTrace n q x := rfl
 
 /-- **Symmetrized element under antipode.**
 

@@ -141,13 +141,29 @@ structure JetExtension where
   /-- Number of new Ω¹ directions per prolongation (= 3 for SU(2)). -/
   numNewDirs : ℕ := 3
 
-/-- The ordering at level n+1 extends the ordering at level n:
-    if a ≺_n b in B_n, then ℓ_n(a) ≺_{n+1} ℓ_n(b) in B_{n+1}. -/
+/-- **The former `ordering_extends` axiom was `P → P`.**
+
+    It stood as an `axiom` for
+
+        (k : ℕ) (a b : MonomialBasis) (hab : degLex a b) : degLex a b
+
+    -- the conclusion is the hypothesis, so `exact hab` closes it and the
+    axiom asserted nothing.  `k` did not appear in the statement at all.
+
+    The docstring described a different claim: *"if `a ≺_n b` in `B_n`,
+    then `ℓ_n(a) ≺_{n+1} ℓ_n(b)` in `B_{n+1}`"*.  The jet embedding
+    `ℓ_n` occurs nowhere in the type, and neither does the level index,
+    so nothing about prolongation was ever stated.
+
+    Stating it needs `ℓ_n` as a map `MonomialBasis → MonomialBasis` and
+    a hypothesis relating `degLex` across it; that is a real claim and
+    is left open rather than replaced by a guess.  The identity below is
+    kept only so the name resolves and the vacuity is on the record. -/
 -- Ref: [manuscript] §3/ordering-jet-compatibility
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
-axiom ordering_extends (k : ℕ) (a b : MonomialBasis)
+theorem ordering_extends (_k : ℕ) (a b : MonomialBasis)
     (hab : degLex a b) :
-    degLex a b  -- jet embedding preserves degLex at each level
+    degLex a b := hab
 
 /-- Left and right compatibility with multiplication at each level:
     a ≺ b implies c·a·d ≺ c·b·d (when products are nonzero). -/
