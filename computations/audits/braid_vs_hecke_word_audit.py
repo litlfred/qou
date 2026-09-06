@@ -83,6 +83,14 @@ VERIFIED_CORRECT = {
         "distinguishes correctly: 'T_w in H_{n_0}(q_0), w in B_{n_0}'",
     "mass-theory/conj-canonical-knot-id-sdp.lean":
         "explicit braid words for NAMED links (Hopf sigma_3^2 in B_6, L6a4 in B_9)",
+    "mass-theory/graded-hecke-energy-truncation-bound.md":
+        "CORRECTED 2026-09-06 by this tranche. The premise now reads 'let "
+        "B_K in B_n be a braid' and carries a scoping note saying the atomic "
+        "Hecke word does NOT satisfy it and has no closure. Still matches the "
+        "ATOMIC_SUBJECT regex because it keeps the symbol \\mathcal{B}_K -- "
+        "that symbol collision is real and is PR #6821's to adjudicate, so it "
+        "is deliberately NOT renamed here. Listed as correct on the strength of "
+        "the scoping note, not the symbol.",
 }
 
 # Owned by sibling PR #6821 — do not touch here.
@@ -149,9 +157,12 @@ def main() -> int:
             seen.add(p)
 
     checks = [
-        ("defects_are_a_small_reviewable_set", 0 < len(defects) <= 12,
-         f"{len(defects)} mathematically-false lines, against 2169 files "
-         "mentioning 'braid word' — a rename is the wrong instrument"),
+        # A GATE, not a snapshot. This asserted `0 < len(defects) <= 12` while
+        # the defects existed, which made it fail the moment they were drained —
+        # a snapshot masquerading as a check. Clean is zero.
+        ("no_atomic_object_asserted_in_a_braid_group", len(defects) == 0,
+         f"{len(defects)} line(s) assert the atomic object lives in a braid "
+         "group; clean is 0. Drained from 5 by this tranche"),
         ("correct_uses_exist_and_are_adjudicated", len(correct) > 0,
          f"{len(seen)} files assert `in B_n` correctly (explicit sigma-words, "
          "or correctly distinguishing braid from Hecke) and are left alone"),
