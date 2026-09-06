@@ -167,3 +167,70 @@ historically rather than using it.
 4. **Do not re-derive the ladder here.** That is `qou-cds1`, it is large, and it gates 1 and 2.
 
 Nothing in 1–3 changes a number; 2 is open research.
+
+---
+
+## 5. §2c is ANSWERED — and by an existing result I should have found first
+
+The §2c question ("is `ξ = 1/√2` the action of the `z_c` saddle?") was posed
+above as open and unasked. **It is neither.** The answer lives in
+[`2026-09-03-enclosed-pole-set-E-is-not-identifiable.md`](2026-09-03-enclosed-pole-set-E-is-not-identifiable.md)
+(bean `qou-qx7j`), three days old when this was written, and my grep missed it
+because I filtered audit **filenames** on resurgence vocabulary and that file is
+named for its conclusion instead. Recorded because the miss is the reusable part.
+
+### The result
+
+**Every residue of `λ_SW^(n)` vanishes, at every branch point, for every
+`n ≥ 1`, independently of the Puiseux data.** Lean `ddz_residue_slot_eq_zero`,
+sorry-free, depending on `[propext]` alone.
+
+The mechanism is parity, not cancellation: `λ_SW^(n) = X^(n) dz = X^(n)·2t dt`,
+so the residue at a simple branch point is the `t^{−2}` coefficient of a
+`z`-derivative — and the only input that could reach that slot is the constant
+term, which differentiation kills. Non-vacuity is established in that audit:
+`ddz` is not identically zero, and the Puiseux coefficients being killed are
+themselves nonzero (`a₀ = −0.07208520691 + 0.6383267351i` at the first branch
+point, measured at 60 dps).
+
+Three independent routes reach it — a global primitive (`prop:sw-classical-jet-exactness`),
+the compact-surface total residue (`period_eq_zero_of_total_residue_vanishes`),
+and this local parity argument, which assumes least.
+
+### What that does to the question
+
+**Sharper than the scope-(a) negative in §3.** `ξ = 1/√2` cannot be the action of
+a `z_c` saddle **on the classical-jet prolongation** — not because the
+identification is numerically wrong, but because *there is no nonzero action to
+compare it to*. My ratio test was measuring against a quantity that is
+identically zero.
+
+And it re-scopes `qou-l155` (**pin `λ_SW`**) as **the wrong question as posed**:
+pinning `λ_SW` inside the classical jet yields zero however it is pinned. The
+live question is upstream — **which prolongation** — and that audit's own
+re-scoping says so.
+
+### The convergence — my judgement, not a finding
+
+Both sides of this arc now point at the same place, independently:
+
+- **Borel side** (§2a): the binding kernel is Gevrey-1/2 and **q-Gevrey at
+  `q₀`**, so the correct plane is the **q-Borel** plane (RSZ theta kernel) with
+  the Habiro ring as arithmetic home.
+- **Saddle side** (here): the classical-jet prolongation gives **zero**, and the
+  **q-difference prolongation is explicitly untouched** —
+  `RamificationParityMonodromy` locates the missing structure as q-jet-bundle /
+  q-D-module symbol calculus, absent from both Mathlib and this corpus.
+
+Two independent routes arriving at "the classical object is the wrong one; the
+q-deformed object is where the content is" is the strongest thing in this
+audit. **It is an observation about where two negatives agree, not a derivation**,
+and the q-jet machinery it points at does not exist yet in either place.
+
+### Revised recommendation
+
+Recommendation 2 above ("answer §2c") is **withdrawn as stated** — it is
+answered. It is replaced by: **do not pin `λ_SW` (`qou-l155`) and do not chase
+the thimble action (`qou-p443`) on the classical jet.** The open item is the
+q-difference prolongation, and its first obstacle is machinery that has to be
+built, not a number that has to be computed.
