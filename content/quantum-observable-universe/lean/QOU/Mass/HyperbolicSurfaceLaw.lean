@@ -20,6 +20,12 @@ A ball of radius `R` in `H³` (curvature `−1`) has
 
     V(R) = π (sinh 2R − 2R)          S(R) = 4π sinh² R = 2π (cosh 2R − 1).
 
+The volume is **Bolyai's formula and it is held**: `library/arxiv-1010.5321v3/` (Horváth, *Formulas
+on hyperbolic volume*, §3.1 "Formulas of J. Bolyai", key `horvath2010`) gives
+`πk³ sinh(2x/k) − 2πk²x`, which at curvature `k = 1` is `hypVol`. The area is not stated there; it
+is the derivative of the volume, and `hasDerivAt_hypVol` proves `V' = S`, so the area rests on the
+held source too. Nothing had to be ingested for this.
+
 In Euclidean space `S/V = 3/R → 0`: the boundary is a vanishing fraction of a large ball, and that
 vanishing is the whole origin of the `A^(−1/3)` surface term. **In hyperbolic space it does not
 vanish.** Exactly,
@@ -42,17 +48,63 @@ has `A_surf/A ≥ 2` at every `A`, so it **fails `HasBulk`** (`hyperbolic_not_ha
 
 and the residual `A`-dependence is `f(R) − 2 ≤ 4R/(sinh 2R − 2R)` (`surfaceFraction_sub_two_le`),
 which with `V ∼ (π/2) e^(2R)`, i.e. `R ∼ ½ ln A`, is of order **`(ln A)/A`** — a *different
-functional form* from `A^(−1/3)`, and one the residual has never been tested against. The
-companion probe tests it. The honest expectation, on the record before running: it fits **worse**
-than the Euclidean import, because the corpus already measured that consistency costs accuracy.
+functional form* from `A^(−1/3)`, and one the residual had never been tested against. The
+companion probe tests it. The expectation on the record before it ran was that it fits **worse**
+than the Euclidean import, because the corpus had measured that consistency costs accuracy.
 
-## Why this is the right kind of negative
+**That expectation failed.** Against the 2548 measured AME nuclides, with Coulomb, asymmetry and
+pairing carried separately, the hyperbolic `(ln A)/A` fits **better**: RSS **31.44** against the
+Euclidean `A^(−1/3)`'s 38.53 (ratio 0.816), and better than the best pure power `A^(−p)` at any
+`p` (38.19, #6780). The exact ball `S/V` at `V = v₀A`, profiled over `v₀`, also beats the import
+(35.18). The win is **not generic** by the `qou-rav3` discipline: none of nine "reasonable"
+alternative shapes beats the Euclidean import, the hyperbolic one beats all nine, and within its
+own family `(ln A)^m/A^p` at `m = 1` the optimum is `p* = 0.912`, within 0.09 of the hyperbolic
+`p = 1`. Two cautions the probe records: the exact ball's best `v₀` puts every nucleus at
+`R < 2`, the near-Euclidean regime, so the data prefer the asymptotic *shape* rather than a literal
+extensive-volume ball; and a two-parameter `(m, p)` search keeps improving with `m`, so the
+hyperbolic point is the best **predicted** shape, not a global optimum — the latter would be a
+fit, and is not claimed.
 
-A fit that is worse and comes from the framework's own geometry can be iterated: it tells you
-what the geometry actually predicts, and the discrepancy is information. A fit that is better and
-comes from an imported Euclidean packing cannot — it has already absorbed the discrepancy. The four
-tranches before this one all ended on the imported side of that line; this is the first on the
-other side.
+## The non-abelian Stokes connection, and what "the surface of kites" is
+
+Yekutieli's estimate (held, `library/arxiv-1007.1250v4/`, Def 4.4.12 / Lemma 4.4.13) bounds the
+error of the multiplicative integral by a **good** term counted by the `4^k` square **kites** of the
+`k`-th binary tessellation of `I²` — an *area* count — plus a **bad** term bounded by
+`a₀ + a₁·2^k`, one dimension down, counted by the **singular points** of the surface map `σ`
+(`|bad| ≤ m`, `m` = number of singular points; `bad = ∅` when `σ` is linear). So, precisely:
+
+* **the surface of kites is the BULK** of the Stokes estimate, not its surface term;
+* **the surface term is the singular locus**, and `2026-08-30-nonabelian-stokes-and-the-surface-term.md`
+  reads `a_S` as proportional to that count for the spanning surface of the nuclear braid closure.
+
+That is exactly a bulk/boundary split, so `HasBulk`'s question applies to it verbatim
+(`StokesSurfaceTerm`): the singular count is a genuine surface term iff it grows without bound and
+vanishes as a fraction of the kite count. **Nobody has computed how the singular count scales with
+`A`** — the audit never states it and no probe evaluates it for any nucleus. What the corpus *does*
+know is that every Seifert invariant of the canonical closure measured so far is **affine** in `A`
+(`every_seifert_invariant_is_affine_probe`: `χ = −9A + 1`, `2g = 8A`, …, six nuclei), so any
+fixed-mesh 2-cell count of the spanning surface is affine too; and `affine_over_affine_not_surfaceTerm`
+below shows an affine singular count over an affine cell count tends to a **nonzero constant**
+ratio — the same "constant shift of the volume coefficient" the hyperbolic ball gives, and not a
+surface term. So the Stokes route joins the hyperbolic one: **if its singular count is affine, it
+renormalises the volume term and supplies no `A^(−1/3)`.** Whether it *is* affine is the open
+computation, and it is beaned rather than guessed.
+
+(Two homonyms to keep apart, both already in the corpus: the "kite-tail" `(1 + r²)^(3A−1)` is a
+Hecke cyclotomic factor of `tr_M`, not a 2-cell — and its exponent `3A − 1` is affine, so #6801
+already excludes it as a surface term; and bean `qou-20bk` with
+`QOU/LiftingDescent/CrossedModuleSurfaceHolonomy.lean` (sorry-free) has settled that no 2-dim
+Yekutieli object carries a non-abelian 3-body term — kites are not where any many-body term lives.)
+
+## Why this was the right test regardless of outcome
+
+A form that comes from the framework's own geometry can be iterated whichever way the fit goes:
+it says what the geometry predicts, and any discrepancy is information. An imported Euclidean
+packing cannot — it has already absorbed the discrepancy. The four tranches before this one all
+ended on the imported side of that line; this is the first on the other side, and it happens to
+fit better. That is to be read as **the shape the framework's geometry predicts is a better
+description of the residual than the shape the SEMF imports** — not as a derivation of the
+surface coefficient, which stays free.
 
 ## Scope
 
@@ -204,5 +256,50 @@ theorem hyperbolic_perNucleon_le (ε k k' : ℝ) (hε : 0 < ε) (hkk : k' < k)
     have := sub_pos.mpr hkk
     positivity
   nlinarith
+
+/-! ## The area is the derivative of the held volume formula -/
+
+/-- **`V'(R) = S(R)`**: the area follows from Bolyai's volume (held, `horvath2010` §3.1) by
+differentiation, so it rests on the held source too. -/
+theorem hasDerivAt_hypVol (R : ℝ) : HasDerivAt hypVol (hypArea R) R := by
+  unfold hypVol
+  have h2 : HasDerivAt (fun R : ℝ => 2 * R) 2 R := by
+    simpa using (hasDerivAt_id R).const_mul (2 : ℝ)
+  have h1 : HasDerivAt (fun R : ℝ => sinh (2 * R)) (cosh (2 * R) * 2) R := h2.sinh
+  have h := (h1.sub h2).const_mul π
+  rw [hypArea_eq]
+  convert h using 1
+  ring
+
+/-! ## The non-abelian Stokes split, as a `HasBulk` question -/
+
+/-- Yekutieli's estimate splits into a bulk term counted by the `4^k` kites (an area count) and
+a boundary term counted by the singular locus (one dimension down). Read as functions of the mass
+number, the singular count is a **genuine surface term** iff it grows without bound while vanishing
+as a fraction of the kite count — the same conjunction as `HasBulk`. -/
+def StokesSurfaceTerm (cells sing : ℝ → ℝ) : Prop :=
+  Tendsto sing atTop atTop ∧ Tendsto (fun A => sing A / cells A) atTop (nhds 0)
+
+/-- **An affine singular count over an affine cell count is not a surface term.** Their ratio tends
+to the nonzero constant `α_s/α_c` — a constant renormalisation of the bulk, exactly as the
+hyperbolic ball gives. Every Seifert invariant of the canonical closure measured so far is affine
+in `A`; whether the singular count is too is the open computation. -/
+theorem affine_over_affine_not_surfaceTerm (αc βc αs βs : ℝ) (hαc : 0 < αc) (hαs : αs ≠ 0) :
+    ¬ StokesSurfaceTerm (fun A => αc * A + βc) (fun A => αs * A + βs) := by
+  rintro ⟨-, h⟩
+  have heq : (fun A : ℝ => (αs * A + βs) / (αc * A + βc)) =ᶠ[atTop]
+      (fun A => (αs + βs / A) / (αc + βc / A)) := by
+    filter_upwards [eventually_gt_atTop (0 : ℝ)] with A hA
+    field_simp
+  have hnum : Tendsto (fun A : ℝ => αs + βs / A) atTop (nhds (αs + 0)) :=
+    tendsto_const_nhds.add (by simpa [div_eq_mul_inv] using tendsto_inv_atTop_zero.const_mul βs)
+  have hden : Tendsto (fun A : ℝ => αc + βc / A) atTop (nhds (αc + 0)) :=
+    tendsto_const_nhds.add (by simpa [div_eq_mul_inv] using tendsto_inv_atTop_zero.const_mul βc)
+  have hlim : Tendsto (fun A : ℝ => (αs + βs / A) / (αc + βc / A)) atTop (nhds ((αs + 0) / (αc + 0))) :=
+    hnum.div hden (by simpa using hαc.ne')
+  have h' := Filter.Tendsto.congr' heq h
+  have := tendsto_nhds_unique h' hlim
+  simp at this
+  exact hαs (div_eq_zero_iff.mp this.symm |>.resolve_right hαc.ne')
 
 end QOU.Mass.HyperbolicSurfaceLaw
