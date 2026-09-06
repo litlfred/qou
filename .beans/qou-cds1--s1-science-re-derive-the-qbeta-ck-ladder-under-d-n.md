@@ -7464,3 +7464,42 @@ inside it restores bar-oddness — the derived D eigenphase is `α − h²/4`, n
 parameter. Independently reproduced here.
 
 Scope (b). Closes one alternative; adjudicates nothing about the live route.
+
+### The live D route, measured through the ladder: it improves, it does not restore (2026-09-06)
+
+Probe: `computations/qbeta/qbeta_d_eigenphase_projection_through_ladder_probe.py` (4/4).
+
+`eigenphase_bar_defect_of_fullBar` gives `bar(2α)+2α = h²` for any full-bar `z`,
+so the bar-odd projection is `α − h²/4`, **derived, no free parameter**. Pushing
+it through the ladder is therefore a derivation, not a search. Result at the
+proton pin, `c_2` held at its structural `−1`:
+
+    arm                     implied c_2      c_3        N1/N2
+    C   (z_C)                 −1.0176     −2.069342     57.74
+    D   naive (z_D)           −9.2989   −974.431888      1.12
+    D   corrected (−h²/4)     −1.7331    −86.080994      2.36
+
+**A large improvement and an insufficient one.** The right metric is
+self-consistency — how far the anchor-inverted `c_2` sits from the *structural*
+`c_2 = −1` — because it references no candidate value (`−2`, `Vol(4₁)`, …):
+
+    C  1.8 %      D corrected  73 %      D naive  830 %
+
+So the corrected D ladder is ~40× less self-consistent than C, with convergence
+2.36× against C's 57.7×. **The eigenphase projection alone is not the whole of
+the C→D move.**
+
+Two things checked rather than assumed:
+
+- **`c_2 = −1` is convention-INDEPENDENT** — it is `1 − (bℏ²)² = 1 − u²`, no `z`
+  anywhere — so holding it fixed across all three arms is legitimate. The
+  "implied `c_2` = −9.3 under D" recorded earlier is the *inverted* `c_2`, a
+  different quantity.
+- **The sign is derived, then corroborated, in that order.** `bar(2α)+2α = h²`
+  forces `−h²/4`; the three candidates rank with the derived one first
+  (`−h²/4` 2.364, `+h²/4` 1.070, `−h²/2` 0.882) and that agreement is recorded
+  as corroboration only. Quoting it as the reason would invert the argument.
+
+**Scope (a).** Does NOT refute the projection — it is proved. Measures only that
+it is insufficient by itself, and identifies nothing about what else is needed.
+Nothing wired; no `c_k` moved.
