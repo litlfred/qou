@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T09:08:15Z
-updated_at: 2026-09-06T09:09:13Z
+updated_at: 2026-09-06T10:03:19Z
 ---
 
 Found by continuing the class-D read (`qou-psjm`) into the 7 deprecated-source
@@ -103,3 +103,63 @@ CODATA gate cannot see.
 the alpha_EM derivation probes feeding `m_K/m_pi` -- the framework's only
 scoreable L2 result -- and `qou-aemx` (in-progress, high) is already working that
 front. Coordinate there before touching those files.
+
+
+---
+
+## 🛑 CORRECTED 2026-09-06 — three of this bean's claims were WRONG
+
+Fixed in the same change that closed the real gap. Read this before acting on
+anything above.
+
+**1. "codata.py has NO fine-structure entry" — FALSE.** It has both
+`fine-structure constant` = 7.2973525643e-3 and `inverse fine-structure
+constant` = 137.035999177, and the latter is already CODATA 2022. I grepped the
+PARSER source and got one docstring mention of "alpha particle mass"; the data
+lives in `data/allascii.txt`, which the parser reads. Grepping a parser instead
+of the data it serves is the detector-blindness shape AGENTS.md catalogues.
+
+**2. "41 files are off-canon against the CODATA-2022 ruling" — FALSE, and this
+is the one that would have done damage.** The three values are three
+DETERMINATIONS, not three editions:
+
+    137.035999046   Parker et al. 2018, Cs recoil (Berkeley)
+    137.035999206   Morel  et al. 2020, Rb recoil (LKB)          2 files
+    137.035999084   CODATA 2018, Cs-weighted                    41 files
+    137.035999177   CODATA 2022, incorporating both             19 files
+
+Cs and Rb disagree at **7.6σ** — an open experimental tension, not a currency
+question. `experimental_constants.py:150`, three lines above the constant I
+called stale, says: *"DELIBERATE determination choice, not a stale edition. The
+Cs-recoil value is retained on purpose; CODATA-2022 would be a different
+determination, not merely newer digits."* I did not read it. The `qou-6dcc`
+owner ruling on CODATA vintage is about EDITION CURRENCY and does not reach a
+determination choice.
+
+**3. "Two files misname the Rb value CODATA_ALPHA_INV" — ALREADY FOUND.**
+`the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.py:34`
+documents exactly this, marks it fixed, and the consumer now names Morel et al.
+(2020) Rb-87 explicitly and explains why the retained identifier is harmless. I
+filed it without running the corpus-grep for prior work.
+
+## What survives, and what shipped
+
+The gate genuinely had no α coverage. α is now in CANON, **sourced from the
+CODATA table rather than typed**, and carried as THREE determinations — the same
+shape as `q0`/`q0_muon`, for the same reason.
+
+    single CODATA-2022 canonical    63 NEW   (38 of them determination choices)
+    three determinations            25 NEW   (all genuine truncations)
+    DIVERGENT 134 -> 96 · baseline 218 -> 243
+
+## Remaining queue: 25 truncations, NOT drained
+
+`137.0359991` (23 files) and `137.035999` (2). Not drained because
+`137.0359991` is simultaneously a prefix of CODATA-2022 AND the 10-figure
+rounding of CODATA-2018 — lengthening it needs the author's determination.
+
+**Do not blind-migrate.** `alpha_em_schwinger_ladder_probe.py:114` asserts
+`schwinger_brings_alpha_within_3sigma`; the 2018→2022 shift is 9.3e-8 against
+σ = 2.1e-8 = **4.43σ**, so an edition bump can flip that verdict — and that
+4.43σ IS the Cs-vs-Rb tension appearing in a probe's conclusion. `qou-aemx`
+(in-progress, high) owns the α_EM front.
