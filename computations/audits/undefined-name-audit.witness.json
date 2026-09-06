@@ -1,0 +1,89 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-06T11:08:21.318728+00:00",
+  "commitSha": "2294a57db9bcfeac220319d521ea3881b8fcd906",
+  "assertions": [
+    {
+      "name": "no name is loaded while bound nowhere in its file",
+      "computed": 7,
+      "expected": 0,
+      "passed": false
+    }
+  ],
+  "allPassed": false,
+  "allPassedBasis": "failed-assertions",
+  "durationMs": 5,
+  "durationMsBaseline": "builder-construction",
+  "computation": "undefined-name-audit",
+  "scriptFile": "undefined_name_audit.py",
+  "scriptHash": "f1cbf1b83eaa",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/undefined_name_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/undefined_name_audit.py"
+  },
+  "description": "Names loaded in a file and bound nowhere in it, found by static AST over every tracked .py — no execution. Complements producer_importability_audit, which imports each producer and so sees only MODULE-level NameErrors: a name used inside a function that no test calls is invisible to it, and the 300+ probes here are executed by neither test tree. An ad-hoc run on 2026-09-06 found 7 such live defects, all from a block rewrite that dropped a definition while its consumer survived outside the diff range. Whole-file scoping is deliberate: it under-reports rather than false-alarming. Bean qou-lejl.",
+  "auditOnly": "computations/audits/undefined_name_audit.py",
+  "data": {
+    "scanned_files": 4503,
+    "skipped_star_import": 12,
+    "skipped_exec_or_eval": 39,
+    "unparsed": 0,
+    "findings": [
+      {
+        "file": "computations/crt_markov.py",
+        "line": 352,
+        "name": "_q_sym"
+      },
+      {
+        "file": "computations/deltalambda/a4_interface_operator_driver_search_probe.py",
+        "line": 77,
+        "name": "Q_50_DIGIT_STR"
+      },
+      {
+        "file": "computations/from_scratch/derive_he3.py",
+        "line": 66,
+        "name": "tr_M_q0"
+      },
+      {
+        "file": "computations/markov/hecke_regular_nf_table.py",
+        "line": 187,
+        "name": "_HERE_W"
+      },
+      {
+        "file": "computations/probes/finite_q_volume_conjecture_probe.py",
+        "line": 158,
+        "name": "vol41"
+      },
+      {
+        "file": "fluid_part2.py",
+        "line": 98,
+        "name": "append_to_file"
+      },
+      {
+        "file": "qou-mass/src/qou_mass/_internal/schur_principal_mpmath.py",
+        "line": 258,
+        "name": "_pb"
+      }
+    ]
+  }
+}
