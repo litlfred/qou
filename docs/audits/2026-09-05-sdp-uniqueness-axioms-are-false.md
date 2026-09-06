@@ -83,9 +83,39 @@ Neither asked:
 
 That third question is the whole finding. An axiom with an impeccable citation
 to a true published theorem is still a false Lean proposition when the
-formalisation drops a hypothesis the paper requires. Nothing in the
-axiom-triage tradition here tests for it, and no amount of care on questions 1
-and 2 substitutes.
+formalisation drops a hypothesis the paper requires, and no amount of care on
+questions 1 and 2 substitutes.
+
+### 🛑 But this failure mode was NOT new to the corpus, and saying so was my error
+
+The first version of this audit said *"nothing in the axiom-triage tradition
+here tests for it"*, framing the method gap as a discovery. **It is not.** One
+directory over from the SDP files,
+[`QOU/BraidKnot/LpDualityHypothesisClass.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/LpDualityHypothesisClass.lean)
+carries a section headed *"No global instance — and why the two that were here
+proved `False`"*, recording that `schrijver_strong_duality` and
+`schrijver_complementary_slackness` **each independently made the library
+inconsistent** — found by the same degenerate-instance method, on the same kind
+of object (an LP whose `primal_obj` and `dual_obj` are arbitrary independent
+fields), and repaired the same way: delete the axioms, keep the §3b-cond
+conditional class, supply no global instance.
+
+So the corpus already knew this failure mode, in the adjacent file, in the same
+`BraidKnot` directory. What is true is narrower and worth stating exactly:
+
+- the **precedent existed and was well documented** at the site of its own fix;
+- the two 2026-08/09 audits of the SDP family did not carry it across, though
+  the SDP axioms sit one directory away and are the same conic-duality subject;
+- so the gap is in **propagation** — a lesson recorded at its own site does not
+  reach the next audit — not in the corpus ever having lacked the insight.
+
+That distinction matters, because the remedy differs. A novel gap needs a new
+idea; a propagation gap needs the check to be *runnable* and *routine*, which is
+what the script below is for.
+
+**And the same oversight showed up in the script.** Its first version flagged
+`schrijver_strong_duality` as an unexamined candidate — it was matching the
+axiom text quoted inside that file's own post-mortem. See the parser note.
 
 ## Blast radius — no false consequence landed
 
@@ -129,9 +159,29 @@ It earned that on its first run: the conclusion matcher used an ASCII-only
 identifier class and could not see `Φ' = sc.Φstar`, scoring the flagship axiom
 below threshold.
 
-**Live: 164 axioms, 23 flagged.** (Vendored `.lake/packages` are excluded —
-counting Mathlib's and Aesop's own test fixtures put the total at 364 and filled
-the flagged list with test declarations.)
+**Live: 137 axioms, 22 flagged.**
+
+That figure was wrong twice before it was right, both times too high, and both
+corrections were mechanical rather than clever:
+
+| count | what it was counting |
+|---:|---|
+| 364 | included vendored `.lake/packages` — Mathlib's and Aesop's own **test fixtures**, which declare axioms freely |
+| 164 | excluded those, but still parsed inside Lean **block comments** |
+| **137** | real top-level axioms |
+
+The comment bug was 26 of 163 matches (19 %) and had two distinct causes worth
+naming, because neither is obvious from the outside:
+
+- a documented **post-mortem** — the `LpDualityHypothesisClass.lean` section
+  above quotes its two deleted axioms in a ```lean fence, so the audit reported
+  an already-refuted axiom as an open candidate;
+- ordinary **English prose** — a wrapped sentence beginning "axiom is consumed
+  only via …" matches `^axiom\s+\w+`, and there are fourteen: `it`, `of`,
+  `and`, `with`, `in`, `is`, `for`, `that`, `can`, `to`, `beyond`, `standing`,
+  `audit`, `report`.
+
+Quote 137, and re-run rather than quoting any of these.
 
 **A high score is not evidence of falsity and a low one is not evidence of
 soundness.** Only a Lean term settles either.
