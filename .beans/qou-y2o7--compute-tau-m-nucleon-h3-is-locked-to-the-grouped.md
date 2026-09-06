@@ -276,3 +276,51 @@ producers"; it is "force full recompute of habiro across all five entries,
 reconcile two copies, then run 13 producers". Option C's staged migration looks
 worse under this finding, not better: a per-caller migration would hold the
 corpus in exactly this mixed state for the duration.
+
+---
+
+## Precedent from `qou-cvky` (PR #6940, same day) — and why its sweep missed this
+
+A sibling ran the 19 at-risk files from #6864 and found **14 genuinely broken**
+by the 2026-09-05 ordering ruling, via the same mechanism as this bean: a
+monotone-only χ kernel meeting a non-monotone canonical word. Their fix, in both
+breakage routes (4 callers of `chi_all_lambda_reduced_block`, 7 of bare
+`chi_all_lambda`):
+
+> Both fixed by routing to `chi_general_word.chi_all_lambda_any` (identical
+> signature + optional `fast`).
+
+That is **exactly** the fix verified here. And for `reduced_block_kernel.py`,
+whose own self-test must compare two monotone-only paths, they did not route it
+— they **pinned `intra_order="grouped"`**.
+
+So both halves of Option B now have precedent in the corpus, applied by another
+agent to the same ruling on the same day: *route to the dispatcher by default,
+pin `grouped` explicitly where a comparison genuinely requires the historical
+word.* That is the shape `nucleon_h3_marshalling_divergence_probe` needs.
+
+**`compute_tau_M_nucleon_H3` was not in their 19, and still is not fixed** —
+`closed_form_tau_M.py:502` still imports `chi_all_lambda` from
+`chi_monotone_transfer`, and :525 still builds its own `all gen 0, then all
+gen 1` word.
+
+**Why their selector could not see it, and this is the part worth carrying.**
+Their population was files that *raise* — the bean says so: "when the symptom IS
+the failure mode (a hard import-time/call-time raise), the count is honest".
+`compute_tau_M_nucleon_H3` never raises, because it **constructs a monotone word
+itself** rather than being handed one. It satisfies the kernel's precondition by
+building the wrong braid. There is no symptom at all: it returns a
+plausible-looking 50-dps number that is simply the superseded ordering.
+
+That inverts the sibling's lesson rather than contradicting it. Their prior
+("symptom counts over-count") failed there because the symptom was the failure.
+Here there is no symptom, so a symptom-driven sweep undercounts to zero — the
+same blind spot that hid this from the `qou-hu1f` witness sweep and from
+`binding_canonical`. Three sweeps, three different selectors, all blind to a
+producer that quietly builds its own word.
+
+**The general lesson for the remaining audit:** a selector keyed on *breakage*
+finds the loud cases; the ordering ruling's silent cases are the ones that
+construct their own input. Those need a selector keyed on the **value** — a
+grouped-era τ_p is recognisable — which is the same argument
+`y_lambda_convention_c_fingerprint_audit.py` makes for convention detection.
