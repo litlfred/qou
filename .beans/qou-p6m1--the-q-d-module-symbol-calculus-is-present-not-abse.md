@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T13:46:21Z
-updated_at: 2026-09-06T13:47:00Z
+updated_at: 2026-09-06T13:58:09Z
 ---
 
 ## The claim, and why half of it is false
@@ -72,3 +72,14 @@ different claims and only one of them was measured.
 - **A sibling agent's count is not a measurement.** The "9 sites" figure did not
   survive a direct grep; the real set is 8, and it excludes two sites that are
   correct records rather than defects.
+
+
+
+## Landed
+
+- `ac49a3b5a5` — the origin site, `RamificationParityMonodromy.lean:54`. lean-direct exit 0 on it and on `RamifiedShiftCalculus`, its importer.
+- `7e8404686b` — the six further sites.
+
+PR #6968. **Final count: 7 files**, not the 9 a sibling reported nor the 8 my own phrase-grep gave. The population naming these objects is 35 lines / 22 files; most merely name them. Two sites are correct records and were deliberately left (`2026-09-03-ramified-shift-calculus-w1-prune.md`, `qou-4g01`), and `dilog-part-b-cusp-attack.md:54` is a false positive both earlier counts carried (Dedekind-eta limit, and "previously").
+
+**W1 is untouched and still open** (`qou-d8de`): no `J^n_q E`, no connection lift.
