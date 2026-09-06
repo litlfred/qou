@@ -317,3 +317,21 @@ three-calibration discipline review. The correct posture is that the gap stays v
   recorded because a reader should not infer the witness is clean.
 - **The seven contended tree-measuring audit witnesses moved during the precision-gate run and
   were reverted, not committed**, per the gate script's own instruction and bean `qou-v0t8`.
+- **The precision gates report nine RED ratchets, and they are PRE-EXISTING — measured, not
+  assumed.** `scripts/precision-gates.sh` was run twice: once on this branch (`--changed`, which
+  decides *whether* the suite runs, not which gates run) and once on a detached worktree at the
+  branch point `1352b02c2` with none of this work present. The `RED:` and `ADVISORY:` lines are
+  **byte-identical** between the two (`md5 6df99989672bb93b302c5fdc3ade55b9` on both):
+
+  ```
+  RED: q0-anchor flip · q0-anchor refill ratchet · import-time dps ratchet ·
+       never-raises-dps ratchet · float64-padding ratchet · q0-value drift ratchet ·
+       CODATA stale-edition · hardcoded braid word (self-test) · mixed mpf/f64 -> serializer
+  ```
+
+  So this branch introduces no new precision-gate failure. It is worth stating the negative
+  precisely: this is evidence that *these nine gates* are unchanged by this work, **not** evidence
+  that the tree is clean — the nine are red on `main` and stay red, and nothing here drains them.
+  Both probes are `q0Anchor: independent` with no `q`, no Markov parameter and no CODATA value in
+  either, which is consistent with the result but is not what establishes it; the two-run
+  comparison is.
