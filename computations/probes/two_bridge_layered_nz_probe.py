@@ -575,7 +575,7 @@ def main() -> int:
             for row in f["erows"]:
                 a_, b_, sgn = row
                 num = sp.Poly(sgn, x); den = sp.Poly(1, x)
-                for j in range(N):
+                for j in range(len(f["shapes"])):
                     zj = exprs[j]; oj = sp.Poly(1, x) - zj
                     if a_[j] >= 0: num = num * zj ** a_[j]
                     else: den = den * zj ** (-a_[j])
