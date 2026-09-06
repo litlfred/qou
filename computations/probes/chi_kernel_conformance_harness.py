@@ -37,21 +37,24 @@ pass a single-order harness.
    sweep ended holding partitions of the wrong size, every lookup missed, and
    the result read as zero with no exception.
 
-## 🛑 What this proves about the CURRENT dispatcher is weaker than it looks
+## The circularity this file used to carry is GONE — and how to tell
 
-Run against `chi_all_lambda_any`, the non-monotone rows report `max|d| = 0.0`
-EXACTLY — because the dispatcher routes those words to `chi_all_lambda_general`,
-which is also the oracle. On those rows the harness is comparing a function with
-itself: it tests **routing**, not arithmetic. Only the `grouped` rows carry real
-information for this candidate, and they do — `max|d| ~ 1e-49` against the
-kernel and `~4e-50` against the monotone transfer, two genuinely independent
-implementations agreeing at the floor.
+When this harness was written the dispatcher routed non-monotone words to
+`chi_all_lambda_general`, which is *also* the oracle, so those rows reported
+`max|d| = 0.0` EXACTLY: a function compared with itself, testing **routing**
+rather than arithmetic. This section warned that a 35/35 on the dispatcher was
+evidence about the easy case plus the wiring, not about the hard case.
 
-The circularity disappears for the object this harness exists for. A window
-transfer computes the non-monotone case ITSELF, so those rows become the
-load-bearing ones and the `grouped` rows become the regression guard. Stated
-here so nobody reads a 35/35 on the dispatcher as evidence the hard case is
-verified — it is the easy case that is verified, plus the wiring.
+That is no longer true. `chi_all_lambda_any` now routes non-monotone words to
+`chi_window_transfer.chi_all_lambda_window`, an independent `d_λ`-free
+implementation, so the borromean rows are a genuine two-implementation
+comparison and read `1.2e-50 … 2.1e-49`.
+
+**The diagnostic is the number itself, and it is worth keeping in mind whoever
+reads this next: a borromean row reporting exactly `0.0` means the candidate IS
+the oracle on that path, and the row is worth nothing.** A non-zero value at the
+serialization floor is the result; an exact zero is a tautology wearing its
+clothes.
 
 ## Tolerances, and why they are what they are
 
@@ -183,12 +186,11 @@ def main() -> int:
     print("Conformance: chi_general_word.chi_all_lambda_any (the live dispatcher)\n")
     checks, n_pass = conformance(chi_all_lambda_any, name="dispatcher")
     print(
-        "\n  NOTE: the dispatcher routes non-monotone words to the oracle "
-        "itself, so\n  those rows read max|d| = 0.0 and test ROUTING, not "
-        "arithmetic. The real\n  information for this candidate is in the "
-        "`grouped` rows, where two\n  independent implementations agree at "
-        "~1e-49. For a window transfer, which\n  computes the non-monotone "
-        "case itself, that asymmetry reverses.")
+        "\n  NOTE: a borromean row reading exactly max|d| = 0.0 would mean the "
+        "candidate IS\n  the oracle on that path — routing tested, arithmetic "
+        "not. The dispatcher used\n  to be in that position; it now routes "
+        "non-monotone words to the window\n  transfer, so those rows are a "
+        "genuine two-implementation comparison.")
     return 0 if n_pass == len(checks) else 1
 
 

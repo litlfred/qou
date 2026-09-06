@@ -1067,19 +1067,45 @@ term of the needed size would have to be classical — a component-changing link
 nucleus, which is the census route `qou-5vhf` closed as a fit — or come from outside this trace
 altogether, which is where §7e left route D2.
 
-**On the resurgent / alien-calculus proposal, in this light.** Every quantity in this arc is a
-rational function of `q` at fixed strand number: the `ℏ`-series of the `n = 4` cross term converges
-with radius `√2` (§7c) and the Brunnian deficit is a rational function of `h`. There is nothing
-resurgent to resum at finite `n`, and no Stokes phenomenon: alien derivations act on Borel-plane
-singularities of *divergent* series, and none arise until the tower limit. The corpus's
-Gevrey-`1/2` results live in `QOU/AlgebraicSubstrate/{KernelGrowthBound,DominationTowers,
-PolyhedralDomination}.lean` and concern the substrate kernel, not the finite-`n` traces. Together
-with C1 (§7e) — the non-abelian content of Yekutieli's multiplicative integral is one-dimensional,
-its two-dimensional remainder abelian — the dialog's proposed "2-dimensional alien calculus" would
-be an abelian, inert object, the same shape as D2's `∫γ`. The honest statement is the one the
-2026-09-05 dialog assessment already made: the 1-dimensional half is Schlesinger, the 2-dimensional
-half has no crossed module, and the resurgent question is a question about the `A → ∞` tower,
-where the relevant series has not been written down.
+**On the resurgent / alien-calculus proposal — CORRECTED 2026-09-06 (the paragraph this
+replaces was wrong on the tower, and the owner caught it).** The superseded text said *"nothing
+resurgent to resum … none arise until the tower limit … the relevant series has not been written
+down"*, and cited the Gevrey results to `QOU/AlgebraicSubstrate/{KernelGrowthBound,
+DominationTowers, PolyhedralDomination}`. Both halves were wrong, and the second contradicts this
+arc's own dialog assessment
+([`2026-09-05-alien-calculus-vs-nonabelian-stokes-dialog-assessment.md` §0 item 4](2026-09-05-alien-calculus-vs-nonabelian-stokes-dialog-assessment.md)),
+which had it right. Corpus-grep, six paths, 2026-09-06:
+
+* **The tower series exists and is divergent.** The Hecke-tower binding period
+  `a_D^(n) = S(n)/n = Σ_{λ⊢n} dim_q(λ)/n` (jet order `n` = strand number) is **Gevrey-1/2**,
+  sorry-free: `QOU/Mass/BindingGevreyHalf.lean` (`n! ≤ 4ⁿ·I(n)² ≤ 8ⁿ·n!` at `q = 1`), with
+  `SWPeriodSuperExponential.lean` and `ConstantKernelGrowthBound.lean` beside it. Its level-1/2
+  Borel transform has a **singularity at `ξ = 1/√2` on the positive real axis** (Pringsheim,
+  measured `0.688` by Padé, non-polar, ten real poles accumulating beyond it):
+  [`2026-07-12-alien-calculus-review-binding-gevrey-half.md` §3](2026-07-12-alien-calculus-review-binding-gevrey-half.md),
+  `lever1_borel_half_singularity_probe.py`. That is the divergence near a singularity.
+* **At the substrate pin the class changes.** `Z_n(q₀) ~ q₀^{n²}`: q-Gevrey, no classical Borel
+  level carries it; the matched q-Borel kernel gives radius `≈ 0.955`
+  (`deltalambda/deuteron-wall-qborel-resummation.witness.json`). Every resummation so far
+  undershoots the deuteron binding; the classical Γ-Borel of the `q = 1` period was shown to be
+  the wrong transform and the deuteron-wall resummation is **reopened as bean `qou-hok7`** (todo,
+  high): q-Borel–Laplace of `Z_n(q₀)`, machinery exists, not yet pointed at the deuteron.
+* **A second divergent tower is the Ohtsuki `κ`-tower** of the `4₁` complex volume: Gevrey-1,
+  Borel singularity at `Vol(4₁)/π ≈ 0.646`, Stokes constant the GGM integer 3
+  (`rem-ohtsuki-tower-bar-parity`, `Stokes3LargeOrderAmplitude.lean`) — a tower in the Kashaev
+  colour, not in the strand number.
+* **What was right and stays:** at *fixed* `n` every trace in this arc is a rational function of
+  `q` (radius `√2` in `ℏ` for the `n = 4` cross term; `1 − τ_Borr` rational in `h`), so the
+  fixed-`n` cross terms carry no resurgent structure. And the `A → ∞` *nuclear* tower series is
+  still unwritten — the brane-tower "divergence at `q₀`" (bean `km42`) was later measured as a
+  saturating plateau in the `σ⁻¹`-chain length, not an `A`-series singularity (`qou-20yf`).
+
+**Consequence for the binding gap.** The "all orders in `q`" object the owner's ruling names is
+the Hecke `n`-tower period, and its resurgent structure is real: the many-body content of the
+tower lives in the q-Borel plane of `Z_n(q₀)`, whose singularity is the deuteron wall. So the
+resurgent route is not a new route of this survey — it is `qou-hok7`, already open, and it is
+where the alien-calculus question has a concrete target. C1 (§7e) still applies to the
+*two-dimensional* version the dialog proposed: that object would be abelian and inert.
 
 ## 8. Literature to download — prioritised, with links and one-line justification
 

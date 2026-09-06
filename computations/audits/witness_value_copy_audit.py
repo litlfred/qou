@@ -48,13 +48,18 @@ from __future__ import annotations
 
 import argparse
 import ast
+import io
 import json
 import re
+import tokenize
 import sys
 from collections import defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+
+#: This audit's own output. Derived, not spelled, so a rename cannot desync it.
+OWN_WITNESS = Path(__file__).stem.replace("_", "-") + ".witness.json"
 ROOT = HERE.parent.parent
 COMP = ROOT / "computations"
 
@@ -74,6 +79,23 @@ def index_witnesses() -> dict[str, set[str]]:
     """decimal literal -> set of witness paths carrying it."""
     idx: dict[str, set[str]] = defaultdict(set)
     for w in COMP.rglob("*.witness.json"):
+        if w.name == OWN_WITNESS:
+            # SELF-REFERENCE. This audit writes every literal it reports into
+            # its own witness, which is then indexed on the next run -- so the
+            # audit became a carrier for all 232 of its own findings, and the
+            # contamination ran in BOTH directions:
+            #
+            #   * 2 findings had NO carrier but this file: once reported, they
+            #     re-reported themselves forever. Self-sustaining phantoms.
+            #   * every count was inflated by 1, and the NARROW/SHARED cut is
+            #     `<= 3`, so literals genuinely carried by 3 witnesses read as
+            #     4 and were filed SHARED. Measured: 47 real NARROW findings
+            #     were HIDDEN this way (232 -> 277 once excluded).
+            #
+            # The audit already refuses to scan its own .py (see `scan`); this
+            # is the same principle applied to the other half of the loop, and
+            # the omission made the gate LOOSER rather than noisier.
+            continue
         if "_deprecated" in w.parts:
             # Still indexed: copying from a RETIRED witness is the worst
             # case, not an exempt one. See the AME instance in the docstring.
@@ -125,6 +147,103 @@ def fixture_lines(src: str) -> set[tuple[int, str]]:
     return out
 
 
+# ---------------------------------------------------------------------------
+# Intent marker.
+#
+# The sibling reference-literal gate honours `# reference-literal-intentional:`
+# and this one honoured nothing, which left a hand-read verdict with nowhere to
+# land: a finding reviewed and found DELIBERATE (a deliberately-frozen historical
+# pin, a classifier's own self-test fixture) and a finding nobody has looked at
+# yet both ended up in the same baseline bucket, indistinguishable. That is the
+# defect AGENTS.md describes for the Lean vacuity ledger -- the machine can
+# flag, only an agent can clear, and the clearing has to be recorded somewhere
+# the next agent can read.
+#
+# Per-literal and reason-bearing, deliberately: a blanket per-file opt-out is
+# how a gate stops being one.
+_INTENT_RE = re.compile(r"witness-copy-intentional:")
+
+
+def _marker_above(lines: list[str], lineno: int) -> bool:
+    """Is the marker anywhere in the contiguous comment block above this line?
+
+    Walking the run rather than checking one line: a reason worth giving takes
+    more than one line, so authors write a block and the marker lands at its
+    top. The run stops at the first non-comment line, so it cannot reach past
+    an intervening statement and stays per-literal.
+    """
+    i = lineno - 2  # 0-based index of the line directly above
+    while i >= 0:
+        st = lines[i].strip()
+        if not st.startswith("#"):
+            return False
+        if _INTENT_RE.search(st):
+            return True
+        i -= 1
+    return False
+
+
+def marked_lines(src: str) -> set[int]:
+    """Every line covered by a `witness-copy-intentional:` marker.
+
+    A line-only marker (the sibling gate's shape) cannot express the commonest
+    deliberate case here, which is a whole TABLE of reference values:
+
+        # witness-copy-intentional: the classifier's own self-test fixtures.
+        CASES = [
+            ("clean anchor migration", {"x": 0.20906032199559366}, ...),
+            ...                                   # 20 literals, 200 lines
+        ]
+
+    Marking each literal would need twenty comment lines interleaved through a
+    data structure. So a marker above an ASSIGNMENT covers that assignment's
+    whole extent -- bounded by the AST, not by a blank-line or indentation
+    heuristic, so it stops exactly where the statement stops and cannot leak
+    onto the next constant.
+    """
+    out: set[int] = set()
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:
+        return out
+    lines = src.splitlines()
+    for node in ast.walk(tree):
+        if not isinstance(node, (ast.Assign, ast.AnnAssign)):
+            continue
+        if not _marker_above(lines, node.lineno):
+            continue
+        end = node.end_lineno or node.lineno
+        out.update(range(node.lineno, end + 1))
+    return out
+
+
+def comment_cols(src: str) -> dict[int, int]:
+    """line number -> column where that line's trailing comment starts.
+
+    A number inside a comment is PROSE, not a value the program computes, so it
+    must not be reported. `line.strip().startswith("#")` already skipped
+    whole-line comments and missed TRAILING ones -- measured at exactly 2
+    findings, both real false positives:
+
+        _Q0_PREFIX = 14   # muon 1.1099785956..., proton 1.1099785827...
+        PHI2_PROTON = sp.Rational(146324616887618, 100000000000000)  # 1.4632...
+
+    Tokenizing rather than searching for `#`: a `#` inside a string literal is
+    not a comment, and a regex cannot tell the two apart.
+    """
+    cols: dict[int, int] = {}
+    try:
+        toks = tokenize.generate_tokens(io.StringIO(src).readline)
+        for tok in toks:
+            if tok.type == tokenize.COMMENT:
+                row, col = tok.start
+                if row not in cols or col < cols[row]:
+                    cols[row] = col
+    except (tokenize.TokenError, IndentationError, SyntaxError):
+        return {}
+    return cols
+
+
 def scan(idx: dict[str, set[str]]) -> list[dict]:
     rows: list[dict] = []
     provenance: dict[str, str] = {}
@@ -136,8 +255,22 @@ def scan(idx: dict[str, set[str]]) -> list[dict]:
         if isinstance(d, dict) and isinstance(d.get("scriptFile"), str):
             provenance[str(w.relative_to(ROOT))] = d["scriptFile"]
 
-    for f in sorted(COMP.rglob("*.py")):
+    # SCAN ROOTS. `computations/` alone was a floor, as every report said; the
+    # sibling reference-literal gate was extended the same way in #6885.
+    #
+    # `tests/` is EXCLUDED, and that exclusion is measured rather than assumed.
+    # Of 9 NARROW findings outside computations/, 3 are in test files where the
+    # literal is the test's OWN assertion target for the precision machinery —
+    #     assert str_at_true_precision(v) == "1.5597586581034242"
+    # That is the value under test, not a copy of a producer's output that can
+    # go stale, so flagging it would be a false positive of exactly the kind
+    # this audit's digit floor exists to avoid.
+    roots = ["computations", "tools", "qou-mass", "scripts"]
+    for f in sorted(g for r in roots
+                    for g in ROOT.joinpath(r).rglob("*.py")):
         if "_deprecated" in f.parts or "__pycache__" in f.parts:
+            continue
+        if "tests" in f.parts or f.name.startswith("test_"):
             continue
         if f.name == Path(__file__).name:
             continue
@@ -146,15 +279,23 @@ def scan(idx: dict[str, set[str]]) -> list[dict]:
         except OSError:
             continue
         fx = fixture_lines(src)
-        for i, line in enumerate(src.splitlines(), 1):
+        srclines = src.splitlines()
+        ccols = comment_cols(src)
+        marked = marked_lines(src)
+        for i, line in enumerate(srclines, 1):
             st = line.strip()
             if st.startswith("#"):
                 continue
+            ccol = ccols.get(i)
             for m in NUMBER.finditer(line):
                 lit = m.group(0)
                 if sig_digits(lit) < MIN_SIG or lit not in idx:
                     continue
                 if (i, lit) in fx:
+                    continue
+                if ccol is not None and m.start() >= ccol:
+                    continue  # inside a trailing comment: prose, not a value
+                if i in marked or _marker_above(srclines, i):
                     continue
                 carriers = idx[lit]
                 # a producer asserting its own recorded value is not copying
@@ -203,11 +344,57 @@ def _selftest() -> int:
         bad += not ok
         print(f"  [{'ok ' if ok else 'FAIL'}] {lit:<16s} "
               f"accepted={got!s:<5s} want={want!s:<5s}  {why}")
+    # The marker must cover a marked assignment ENTIRELY and must not leak past
+    # its end. Both halves are load-bearing: a marker that stops at line 1 does
+    # not express the table case it exists for, and one that runs to the next
+    # blank line silently exempts the constant after it.
+    fixture = (
+        "# witness-copy-intentional: the classifier\'s own self-test inputs.\n"
+        "CASES = [\n"
+        "    (\'a\', 0.20906032199559366),\n"
+        "    (\'b\', 0.10453016099779683),\n"
+        "]\n"
+        "UNMARKED = 0.57517224391777187\n"
+    )
+    marks = marked_lines(fixture)
+    mcases = [(2, True, "the marked assignment's first line"),
+              (3, True, "a literal inside the marked table"),
+              (4, True, "the last literal inside the marked table"),
+              (6, False, "the NEXT constant — the marker must not leak")]
+    print("\nselftest — intent marker extent")
+    for ln, want, why in mcases:
+        got = ln in marks
+        ok = got == want
+        bad += not ok
+        print(f"  [{'ok ' if ok else 'FAIL'}] line {ln}  "
+              f"marked={got!s:<5s} want={want!s:<5s}  {why}")
+
+    # The self-reference exclusion must actually name this audit's own witness.
+    # Derived from __file__ rather than spelled, so it cannot desync on a
+    # rename -- but a change to the naming convention would, so it is pinned.
+    ok = OWN_WITNESS == "witness-value-copy-audit.witness.json"
+    bad += not ok
+    print("\nselftest — self-reference exclusion")
+    print(f"  [{'ok ' if ok else 'FAIL'}] OWN_WITNESS = {OWN_WITNESS!r}")
+    ok2 = OWN_WITNESS not in {w for w in ()} and OWN_WITNESS.endswith(".witness.json")
+    bad += not ok2
+    print(f"  [{'ok ' if ok2 else 'FAIL'}] names a witness file")
+
+    # A number inside a TRAILING comment is prose, not a value.
+    cc = comment_cols("X = 14   # muon 1.1099785956..., proton 1.1099785827\n")
+    ok = cc.get(1) == 9
+    bad += not ok
+    print("\nselftest — trailing comment")
+    print(f"  [{'ok ' if ok else 'FAIL'}] comment starts at col {cc.get(1)}, "
+          "want 9")
+
     if bad:
         print("\nSELFTEST FAILED — the floor no longer separates a real copy "
-              "from a coincidence; findings are not trustworthy.")
+              "from a coincidence, or the marker no longer bounds itself; "
+              "findings are not trustworthy.")
         return 1
-    print(f"\nselftest ok — floor is {MIN_SIG} significant digits")
+    print(f"\nselftest ok — floor is {MIN_SIG} significant digits; "
+          "marker is AST-bounded")
     return 0
 
 

@@ -647,8 +647,89 @@ def _load_y_lambda(n: int, path: Path | None = None,
             f"available: {sorted(W['tables_by_n'].keys(), key=int)}")
     parsed = {tuple(w["partition"]): mp.mpf(w["y_lambda"])
               for w in table["weights"]}
+    parsed = _apply_wenzl_row_cap(parsed, table.get("z"), table.get("q"),
+                                  source=str(p), n=n)
     _Y_LAMBDA_CACHE[key] = parsed
     return parsed
+
+
+def _wenzl_level(z, q) -> int | None:
+    """The integer Wenzl level r, if the Markov parameter pins one.
+
+    The level is fixed by  Q^r = z_W / (1 - Q + z_W),  Q = q², z_W = q·z.
+    Production convention D, z = q³/(q²+1), gives Q^r = q⁴ = Q² — i.e. r = 2
+    EXACTLY, algebraically: 1 - q² + q⁴/(q²+1) = 1/(q²+1). Convention C sat at
+    r ≈ 2.5995, not an integer, and pinned no level at all.
+
+    Returns the integer r when Q^r is an integer power of Q, else None.
+
+    **q must be supplied independently of z.** An earlier draft of this
+    recovered q from z by solving z = q³/(q²+1) — which assumes convention D
+    and is therefore circular: fed convention C's z = 0.4993203342 it returned
+    r = 2, exactly the answer it was meant to be able to refuse. With q read
+    from the same witness table as z, C correctly yields None and caps nothing.
+    Where a table carries no q, this returns None and the caller caps nothing:
+    the cap must be earned, never assumed. Bean qou-fq0f.
+    """
+    if z is None or q is None:
+        return None
+    try:
+        zz, qq = mp.mpf(str(z)), mp.mpf(str(q))
+    except Exception:
+        return None
+    if qq <= 0 or qq == 1:
+        return None
+    Q, zW = qq ** 2, qq * zz
+    denom = 1 - Q + zW
+    if denom == 0 or zW / denom <= 0:
+        return None
+    r = mp.log(zW / denom) / mp.log(Q)
+    r_int = int(mp.nint(r))
+    # Integrality demanded far tighter than the ~0.6 that separates D's r = 2
+    # from C's r ≈ 2.5995, so this cannot mistake a non-capping convention for
+    # a capping one.
+    return r_int if r_int >= 1 and abs(r - r_int) < mp.mpf("1e-30") else None
+
+
+def _apply_wenzl_row_cap(table: dict, z, q, source: str, n: int) -> dict:
+    """Snap row-capped y_λ to EXACT zero, having verified they already vanish.
+
+    Wenzl's cap (s_{α,r} = 0 whenever ℓ(α) > r; Orellana, *Crelle* 508 (1999)
+    157–178, p. 5; `WenzlWeightVanishing.lean`) says these weights are zero.
+    The witness stores them as ~1e-73 rounding residues instead, because the
+    path that produced them cancels numerically rather than symbolically. That
+    is harmless to the SUM — 71 orders below the surviving weights — but it
+    costs the caller everything: `tr_M_via_wenzl_bridge_mpfr` skips a partition
+    only when its weight is exactly zero, so a residue means χ_λ is built for
+    every shape. At H_9 that is 25 of 30 shapes computed to be multiplied by
+    1e-73; forcing the exact zero measured **77.8x** (26.16 s -> 0.34 s) with a
+    bit-identical tr_M.
+
+    This applies a theorem, it does not threshold: the level r is derived from
+    z (`_wenzl_level`), and if z pins no integer level — as convention C did,
+    r ≈ 2.5995 — nothing is capped. And the residues are *verified* negligible
+    before being dropped, so if the mathematics ever moved, this raises rather
+    than silently zeroing a real weight.
+    """
+    r = _wenzl_level(z, q)
+    if r is None:
+        return table
+    capped = {k: v for k, v in table.items() if len(k) > r}
+    if not capped:
+        return table
+    live_max = max((abs(v) for k, v in table.items() if len(k) <= r), default=mp.mpf(0))
+    worst = max((abs(v) for v in capped.values()), default=mp.mpf(0))
+    if live_max > 0 and worst > live_max * mp.mpf("1e-40"):
+        raise AssertionError(
+            f"Wenzl row cap r={r} says y_lambda = 0 for l(lambda) > {r} at "
+            f"H_{n}, but {source} carries one as large as {mp.nstr(worst, 6)} "
+            f"against a largest live weight of {mp.nstr(live_max, 6)}. That is "
+            f"too big to be a rounding residue -- do NOT zero it; find out why "
+            f"the cap does not hold. (Bean qou-fq0f.)")
+    out = dict(table)
+    for k in capped:
+        out[k] = mp.mpf(0)
+    return out
 
 
 def tr_M_via_wenzl_bridge_mpfr(
@@ -785,12 +866,44 @@ def tr_M_via_wenzl_bridge_mpfr(
             except ImportError:
                 _d_lambda_combinatorial = None
 
+        n_row_capped = 0
         for shape in partitions_of(n):
             shape_t = tuple(shape)
             y_lam = y_table.get(shape_t)
             if y_lam is None:
                 # Should never happen for a complete witness, but guard.
                 continue
+
+            # Wenzl row cap: under production convention D the Markov parameter
+            # z = q³/(q²+1) pins the Wenzl level to Q^r = q⁴ = Q², r = 2
+            # EXACTLY, so y_λ = 0 identically for every λ with three or more
+            # rows (Orellana, Crelle 508 (1999) 157-178, p. 5; bean qou-fq0f).
+            # The contribution y_λ·χ_λ is then exactly zero and χ_λ need not be
+            # built at all -- which until 2026-09-06 it was, for every λ.
+            #
+            # The test is `y_lam == 0`, not `len(shape) > 2`: the zero is what
+            # makes the skip sound, and testing it directly keeps this correct
+            # under any convention (C capped nothing, r ~ 2.5995) and under any
+            # future re-pin, instead of hardcoding D's row count. The zeros ARE
+            # exact -- `schur_principal_mpmath.y_lambda_at_q0_mpmath` returns
+            # mpf(0), not a rounding residue -- so nothing is being thresholded.
+            #
+            # Measured at H_9 (A=3): 25 of 30 partitions skipped, sum d_λ
+            # 2620 -> 126 (4.8%). At H_12 (A=4): 70 of 77, sum d_λ
+            # 140152 -> 924 (0.7%), max d_λ 7700 -> 297.
+            if y_lam == 0:
+                n_row_capped += 1
+                if return_breakdown:
+                    breakdown.append({
+                        "partition": list(shape_t),
+                        "dim": None,
+                        "y_lambda": "0",
+                        "chi_lambda": None,
+                        "contribution": "0",
+                        "skipped": "wenzl row cap (y_lambda = 0 exactly)",
+                    })
+                continue
+
             if rust_chi_by_partition is not None:
                 # Fast path: Rust already computed χ_λ for every partition.
                 chi = rust_chi_by_partition.get(shape_t)
@@ -833,6 +946,14 @@ def tr_M_via_wenzl_bridge_mpfr(
                 "q": q_str,
                 "dps": dps,
                 "n_partitions_used": len(breakdown),
+                "n_partitions_row_capped": n_row_capped,
+                "n_partitions_evaluated": len(breakdown) - n_row_capped,
+                "row_cap_note": (
+                    "Partitions with y_lambda = 0 exactly (Wenzl row cap, level "
+                    "r = 2 under convention D) are listed with chi_lambda = null "
+                    "and contribution 0; chi was not computed for them because "
+                    "the term vanishes identically. See qou-fq0f."
+                ),
                 "by_partition": breakdown,
             }
         return total

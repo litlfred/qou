@@ -495,3 +495,58 @@ STANDING SCORE for the 11 of 37: 1 file carries a genuine mislabel with a
 -42.23 % Molien move (alpha_em_b2_scalar_c_probe, and its c is not a delivered
 number anyway); 1 is affected in principle but route-invariant; 1 is a correct
 labelled two-arm tabulation. The remaining 8 are NOT triaged.
+
+## 2026-09-05 — the 26 name-gate-missed files, TRIAGED. Net consequence: none.
+
+`probes/../audits/molien_name_gate_missed_triage.py` (1/1). The 26 that the name
+gate never examined (13th blindness mode, PR #6867) are NOT a blast radius:
+
+    zero importers                24 of 26
+    writes a committed witness     8
+    shape_only (may not be family) 5
+    my own session harnesses       2
+
+PREMISE CORRECTED FIRST, because I had it wrong in #6867. I wrote there that
+mass_endomorphism.py "divides by the sum of its own weights and is therefore
+already self-normalised dim_q^2/D^2, which the ruling does not move." THE SECOND
+CLAUSE IS FALSE. Self-normalisation cancels a lambda-INDEPENDENT rescale --
+which dim_q^2/[n]! -> dim_q^2/D^2 is, same numerator -- but Molien's numerator
+change dim_q^2 -> f^lam q^{-kappa} dim_q is lambda-DEPENDENT, so nothing
+cancels. Worst |selfnorm - Molien|/Molien, measured at the proton q0:
+
+    n=3   0.3849        n=6   3.8263        n=9   37.516
+
+It GROWS with n. "On a sanctioned arm" and "unmoved by the ruling" are different
+claims and only the first holds.
+
+THE ONE FILE WITH REACH, traced end to end -- and it is mass_endomorphism, the
+one I had called safe:
+
+    w_sym/w_std/w_alt (L93-99, self-normalised dim_q^2/[3]_q!)
+      -> Vf at L132, inside additive_wedderburn_volumes()
+      -> v['full']
+      -> m_p_m_e_li2q.py:78-80 (electron / proton / neutron)
+      -> :48,50,54 into desc/single/cross
+      -> mp_me = p_total/e_total  vs  codata_mp_me = 1836.152
+
+The weights do NOT cancel in that ratio: they are module-level constants for
+lambda |- 3 applied to the electron (2 strands) and nucleons (3 strands) alike,
+and Vf enters non-linearly via Phi_q(|Vf|) and products Vf_i*Vf_j.
+
+AND IT IS IMMATERIAL, WHICH IS THE POINT. The committed witness
+m-p-m-e-li2q.witness.json records m_p/m_e = 9310.3278 (err 407.06 %) on the
+Phi_q arm and 3.3322 (err 99.82 %) on the Li_2_q arm. The route is ALREADY
+recorded as a catastrophic miss, so a 38.5 % weight change can neither rescue
+nor damage it.
+
+SO: 24 of 26 are dead ends, and the one with reach feeds an already-refuted
+comparison. The Molien ruling has no consequential consumer among the 26.
+
+A BLINDNESS OF MY OWN, committed while measuring this: my first import count for
+additive_wedderburn_volumes was ZERO, from a single-line grep
+`import.*\bname\b`. BOTH real importers use a parenthesised multi-line import
+with the name on a continuation line. Re-measured with ast.ImportFrom: 2. Same
+class as everything else in this thread.
+
+NOT FIXED, separate defect: additive_wedderburn_volumes is float64 throughout
+(a, b = 0.0, 1.0) on a path ending at a CODATA comparison.

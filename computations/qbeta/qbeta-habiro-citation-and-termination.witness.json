@@ -1,0 +1,70 @@
+{
+  "probe": "qbeta_habiro_citation_and_termination_probe",
+  "bean": "qou-cds1",
+  "question": "does habiro_integral's docstring cite evidence that says what it claims?",
+  "answer": "No \u2014 four discrepancies: the named field is in a different file, the deuteron M is 13 not 12, 4He does not exist in the corpus, and tritium was omitted. The real evidence supports MORE than was claimed: integrality, a degree bound, and a termination bound.",
+  "scope": "(b) \u2014 checkable facts about committed files.",
+  "atoms": {
+    "p (proton, A=1)": {
+      "M": 8,
+      "deg_p_u": 44,
+      "bound": 10
+    },
+    "n (neutron, A=1)": {
+      "M": 8,
+      "deg_p_u": 36,
+      "bound": 9
+    },
+    "D (deuteron, A=2)": {
+      "M": 13,
+      "deg_p_u": 100,
+      "bound": 15
+    },
+    "T (tritium, A=3)": {
+      "M": 16,
+      "deg_p_u": 136,
+      "bound": 17
+    },
+    "3He (helium-3, A=3)": {
+      "M": 16,
+      "deg_p_u": 144,
+      "bound": 17
+    }
+  },
+  "cited_witness_assertions": [
+    "all_a_m_have_integer_coefficients",
+    "all_deg_a_m_le_m",
+    "termination_within_sqrt_bound"
+  ],
+  "assertions": [
+    {
+      "name": "cited_witness_does_not_contain_the_named_field",
+      "passed": true,
+      "detail": "`all_integral` occurs 0 times in habiro-expansion-atomic-probe.witness.json (the file the docstring cites) and does occur in habiro-coefficients-atomic.witness.json. The cited probe's assertions are all_a_m_have_integer_coefficients, all_deg_a_m_le_m, termination_within_sqrt_bound \u2014 the integrality one is `all_a_m_have_integer_coefficients`."
+    },
+    {
+      "name": "deuteron_M_is_13_not_12",
+      "passed": true,
+      "detail": "the deuteron's Habiro expansion terminates at M = 13; the docstring said 12."
+    },
+    {
+      "name": "helium4_is_absent_and_tritium_was_omitted",
+      "passed": true,
+      "detail": "no 4He / helium-4 / A=4 entry exists anywhere in the atomic witness, so the docstring named an atom for which no expansion exists; meanwhile `T (tritium, A=3)` IS present (M=16) and was omitted. The citation both invented an atom and dropped a real one, which is why its count of five looked right. Atoms actually present: p (proton, A=1), n (neutron, A=1), D (deuteron, A=2), T (tritium, A=3), 3He (helium-3, A=3)"
+    },
+    {
+      "name": "termination_bound_holds_on_the_live_witness",
+      "passed": true,
+      "detail": "m_max <= ceil(sqrt(2 * deg_u p)) for all five atoms: p M=8<= 10; n M=8<= 9; D M=13<= 15; T M=16<= 17; 3He M=16<= 17. This is the cited probe's own Claim 3, re-measured against the current witness contents (which have moved since: tritium added, deuteron M 12->13). It is the derived structural answer to 'what fixes the termination degree' \u2014 found by corpus-grep, not by pattern-matching the five M values."
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "af0bd9453327",
+  "scriptCommitSha": "unknown",
+  "commitSha": "566f7e7ee2fc767aa29bdb166184e9a31c57f26f",
+  "engine": "python",
+  "computedAt": "2026-09-06T06:43:21.330442+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

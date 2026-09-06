@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-10T02:20:19Z
-updated_at: 2026-08-21T21:54:11Z
+updated_at: 2026-09-06T03:59:13Z
 ---
 
 
@@ -230,3 +230,61 @@ finding. Needs a ruling on which of A and C a "muon-anchored" quantity uses.
 part of that population is the genuine straddle defect, and blanket-labelling
 it "deliberate" would launder real findings. Intent needs per-producer
 verification.
+
+
+## Re-checked 2026-09-06 — mechanism UNCHANGED, one figure re-measured, and the framing needs scoping
+
+Found by `scripts/bean-staleness-triage.py`, which ranked this bean third of
+284 artifact beans (81 commits over its 4 named paths since its own
+`updated_at`). Checked rather than assumed, and it is **not** one of the
+already-answered ones.
+
+**The mechanism is still live**, at `computations/substrate/q_parameter.py:107`:
+
+```python
+_stem = _MP(_sys.argv[0]).stem if (_sys.argv and _sys.argv[0]) else ""
+if _stem in _man.get("ideal_muon", []):
+```
+
+So the anchor is still selected by the **name of the invoked script**. (Note
+the file moved: this bean cites `computations/substrate/q_parameter.py:92-100`
+and the code is now at 99-108. There is also a generated mirror at
+`qou-mass/src/qou_mass/_internal/q_parameter.py` — do **not** hand-edit it;
+`scripts/sync-qou-mass-vendor.py` owns it.)
+
+**But the framing as a bare defect over-states it, and that is worth fixing
+before anyone acts on this bean.** Lines 76-95 document the choice, give the
+rationale, and provide an override:
+
+> *"The corpus is genuinely MIXED (sweep 2026-07-06: 279 proton + 455 muon), so
+> a blanket flip is WRONG."*
+>
+>     QOU_Q0_ANCHOR ∈ {ideal, muon, canonical}  → muon override
+>     QOU_Q0_ANCHOR unset / {physical, proton, experimental} → proton
+
+with a design doc (`docs/audits/2026-07-06-q0-producer-muon-refactor-design.md`).
+
+So the stem auto-select is **deliberate, documented and overridable**. What
+this bean legitimately identifies is a **hazard the design doc's reasoning does
+not address**: a producer *imported by a differently-named driver*, or run
+under a wrapper / test runner / `python -c`, gets the caller's anchor rather
+than its own — silently. That is real and unfixed. It is a scope-(a) finding
+about a specific failure mode, not a scope-(b) claim that the mechanism is
+wrong.
+
+**One of the bean's figures re-measured today.** A fresh
+`q0_anchor_consistency_audit.py` run on `main` gives:
+
+| | bean (2026-08-21) | measured 2026-09-05 |
+|---|---|---|
+| witnesses carrying no anchor | 1887 | **1577** (`Q0_ANCHOR_MISSING`) |
+
+Drained by 310, still the dominant category. **Caveat, stated because it
+matters:** I did not verify that the bean's "carry no anchor" and the audit's
+`Q0_ANCHOR_MISSING` define the same population — they plainly *should*, but
+this session has already been bitten twice by two counts that looked like the
+same question and were not. Treat 1577 as the audit's figure, and re-derive the
+bean's own if the difference is load-bearing.
+
+**The producer figure (2384 of 2785 undeclared) was NOT re-measured.** Do not
+quote it as current.

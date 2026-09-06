@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-18T21:00:00Z
-updated_at: 2026-09-05T18:21:53Z
+updated_at: 2026-09-05T20:02:56Z
 ---
 
 Parent dgap. 66 witnesses across producers that emit MORE THAN ONE witness. The audit matches
@@ -173,3 +173,34 @@ families drained on `claude/dgpc-habiro-family-chain-2026-08-18`). There is no
 decision in it. It was swept into owner-gated Cluster 7 as "a `status:
 verified` downgrade", which is a step *inside* the work, not a question for the
 author. Off the owner-gated queue; ordinary backlog.
+
+
+## Correction to my reclassification note above (2026-09-05)
+
+The note says *"There is no decision in it."* That is right about the thing
+Cluster 7 attributed to this bean (a `status: verified` downgrade, which is a
+step inside the work) and **wrong about the bean as a whole**. The Tier-E
+accounting at the end names three open owner decisions:
+
+- re-point `B_4He_AME_MeV` (gated on `fvxq`);
+- downgrade or reconstruct the two `mba-step02` blocks at `status: "verified"`;
+- which of the five prose witnesses belong on the acknowledged floor.
+
+Those are real and they stay. What does not belong on the owner-gated queue is
+the **drain** — the family-chain work itself, which is mechanical and has
+recorded progress. Stays open as backlog; the three decisions above are its own,
+not Cluster 7's.
+
+**Its transferable finding is worth more than its queue position**, and it is
+the same family as today's detector work: two directories must never appear in
+an audit's repo-wide `rglob` — **`.claude/`** (checkouts of other branches) and
+**`_deprecated/`** (retired copies) — because both are invisible in review and
+both fail *toward* the dangerous verdict: a phantom red that trains agents to
+skip a gate, or a false orphan whose recommended disposition is deletion. Its
+Tier-E accounting quantifies that: `186 → 134`, **28 % tool error**, 7 %
+genuinely dead, 65 % load-bearing.
+
+Compare today's vacuity-detector blind spot (a reducible `abbrev` made a
+verbatim self-assuming projection character-different, so the cleanest instance
+of four went unreported). Same shape: the detector was right about what it
+measured and blind to how the tree was spelled.

@@ -574,8 +574,8 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
 
     The p-n interface is color-weighted by default (owner directive
     2026-06-01: bring_color_weighted is canonical across the compute):
-    its averaged crossing is `σ − h·(1/2 − δ/4)·1`, δ = flavor_split_
-    subleading(q₀), vs the color-blind `σ − h/2·1` (`pn_convention=
+    its averaged crossing is `σ − h·(1/2 − δ/4)·1`, δ =
+    flavor_split_leading(q₀), vs the color-blind `σ − h/2·1` (`pn_convention=
     "strict_averaged"`, kept for empirical-pipeline validation). The
     p-p (σ) and n-n (σ⁻¹) interfaces are already isospin-distinct and
     carry no extra color weight. See

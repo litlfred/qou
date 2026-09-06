@@ -1,11 +1,11 @@
 ---
 # qou-j6gb
 title: mpf_import_time_dps_audit is NOT wired into precision-gates.sh — 288 findings, 185 proven lossy, gate silent
-status: in-progress
+status: completed
 type: bug
 priority: normal
 created_at: 2026-08-10T02:36:03Z
-updated_at: 2026-08-25T11:17:19Z
+updated_at: 2026-09-05T20:14:33Z
 ---
 
 
@@ -1035,3 +1035,44 @@ at once.
       appear in the `qou-zbws` dps-floor queue
       (`docs/audits/2026-09-03-dps-floor-regeneration-queue.md`); merge the two
       lists rather than running anything twice.
+
+## ✅ WIRED — closing (verified 2026-09-05)
+
+`scripts/precision-gates.sh:73`:
+
+    "import-time dps ratchet|computations/mpf_import_time_dps_audit.py|--strict|yes|yes"
+
+Blocking (`yes|yes`), not advisory. Confirmed by *execution* rather than by
+grep alone: three separate `precision-gates.sh` runs today — on this branch, on
+detached `origin/main`, and after a `computations/` edit — all printed
+**`import-time dps ratchet`** in the `RED:` line, so the gate is not merely
+listed, it fires. The bean's core claim ("**not** in the `GATES` array … gate
+silent") no longer holds. `scripts/precision-gates.sh:43` also now carries a
+comment about this audit's history.
+
+The bean's own snapshot listed **eight** gates; the array is larger now, and
+today's runs report **nine blocking plus four advisory**.
+
+**Date, hedged deliberately.** `git log -S "mpf_import_time_dps_audit"` on that
+file attributes the change to `78c74bc5ed` (2026-08-29) — but `-S` returned
+that *same* commit for an unrelated change to
+`frobenius-hopf-substrate.md` earlier today, whose subject is about an anchor
+digit count. That is the signature of a large sweep commit absorbing many
+edits, so treat 2026-08-29 as an **upper bound on when it was wired**, not as
+the authoring commit.
+
+**What is NOT settled by this.** The bean's *numbers* — 288 module-scope `mpf`
+built before precision is raised, 185 proven lossy, 91 files — are a 2026-08-25
+measurement and were not re-run here. The gate being wired means those findings
+now block; it does not mean they were drained. Anyone picking that up should
+re-run `computations/mpf_import_time_dps_audit.py --strict` for a current count
+rather than quoting these.
+
+Closing on the wiring claim, which is what the bean is titled for.
+
+---
+
+Found by `scripts/bean-staleness-triage.py`, which ranked this bean **first of
+263** — 85 commits touching its 22 named paths since its own `updated_at`. It is
+the first already-answered bean this session located by ranking rather than by
+the owner-gate criterion, which is the validation that ranking needed.

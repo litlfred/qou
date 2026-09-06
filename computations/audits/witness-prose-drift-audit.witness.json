@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T11:37:00.519728+00:00",
-  "commitSha": "6d7f7e2dc6c5b77a0ff6061cbbf7f9868dd5c7d5",
+  "computedAt": "2026-09-06T11:52:17.847554+00:00",
+  "commitSha": "ac82f267972883065bbcaba8b2e48c2135c15f60",
   "assertions": [
     {
       "name": "no witness prose quotes a number absent from its data",
@@ -18,7 +18,7 @@
   "computation": "witness-prose-drift-audit",
   "scriptFile": "witness_prose_drift_audit.py",
   "scriptHash": "113001c0f715",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "ac82f267972883065bbcaba8b2e48c2135c15f60",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,15 +39,15 @@
     "argv": [
       "computations/audits/witness_prose_drift_audit.py",
       "--top",
-      "6"
+      "0"
     ],
-    "reproduce": "python3 -u computations/audits/witness_prose_drift_audit.py --top 6"
+    "reproduce": "python3 -u computations/audits/witness_prose_drift_audit.py --top 0"
   },
   "description": "Witness descriptions quoting a number the witness's own data does not contain. No staleness mechanism here reads a description -- they all compare a witness to its PRODUCER -- so a description that hardcodes a finding keeps asserting it after the data moves, and the file contradicts itself while staying green. Measured: rho-binding-constancy said '~182% (D 5.73, T 81.5, He3 37.4)' while carrying 3.87/36.99/19.12, matching neither the committed nor the regenerated data. Buckets by DISTANCE, not presence, so a 4% three-sig-fig rounding is not flagged like a 49% contradiction. FAR is a candidate, not a verdict: prose may cite an external constant. Bean qou-n62l.",
   "auditOnly": "computations/audits/witness_prose_drift_audit.py",
   "data": {
-    "witnesses_scanned": 3528,
-    "without_description": 383,
+    "witnesses_scanned": 3539,
+    "without_description": 387,
     "witnesses_with_candidates": 185,
     "findings": [
       {

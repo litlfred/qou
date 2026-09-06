@@ -15,7 +15,9 @@ Define `T_w` as the product of the `σ` along **some** reduced word for `w`
 (`Classical.choose`).  That is *a priori* not well-defined: two reduced words
 for the same `w` might give different elements, and ruling that out is exactly
 Matsumoto's theorem, which Mathlib lists as an open TODO
-(`Coxeter/Basic.lean:78`).
+(`Coxeter/Basic.lean:78`).  (This corpus has since proved it —
+`QOU.IwahoriHecke.Matsumoto`, hypothesis-free for `M i j ≤ 3`.  The route below
+remains the cheaper one and is kept: it needs no Coxeter machinery at all.)
 
 But independence does not need well-definedness.  `applyWord_single` shows that
 along **any** reduced word the operators simply walk the basis, so whichever

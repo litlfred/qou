@@ -2,7 +2,34 @@
 # polynomial_q_not_applicable: numerical mpmath consumer; Rust binary
 # returns f64 χ^λ values which we combine with y_λ(q_0) from
 # `wedderburn_jones_markov.y_lambda_at(n, q_0)` at mpmath precision.
-"""Canonical |tr_M(β_canonical(Z, N))| via Rust + Python combiner.
+"""|tr_M(β_canonical(Z, N))| via Rust + Python combiner — COLOUR-BLIND.
+
+🛑 **This route omits the p–n interface colour weighting, so for any atom with
+A ≥ 2 it does NOT compute the canonical convention.** Owner ruling R3
+(2026-06-01, reaffirmed 2026-08-15) makes `bring_color_weighted` canonical:
+`atom_braid_word_3A` gives the p–n interface crossing as
+`σ − h·(1/2 − δ/4)·1` with `δ = flavor_split_leading(q₀)`. The
+`hecke-canonical-chi` wire format has no encoding for that crossing type and
+receives the colour-blind averaged crossing `σ − h/2·1` instead.
+
+Measured 2026-09-05 (bean `qou-49vn`): the two braid words are identical except
+at **exactly one letter** — index 11 for D and T, index 23 for ³He, none for a
+single nucleon, which is why p and n agree with the markov peel at ~1e-18 while
+every composite is off by one shared constant:
+
+    rust/peel = 0.999858525356843903…  deuteron
+                0.999858525356843896…  tritium
+                0.999858525356843898…  ³He
+
+That is 1.41475e-4 relative — **eleven orders above the 1 ppQ (1e-15) L1
+target**, so it is not round-off. The δ identification is exact to 22 digits.
+
+**Do not cite this route as a colour-weighted arbiter for A ≥ 2.** For single
+nucleons (A = 1) there is no p–n interface and it agrees with the peel. Fixing
+the kernel to apply the weighting is tracked in `qou-49vn` and needs owner
+sign-off, because it moves numbers.
+
+Original description follows.
 
 This is the canonical-side consumer described in
 `docs/audits/2026-05-17-knot-fusion-step1-audit.md` §"Gap to
@@ -65,9 +92,16 @@ from witness_base import WitnessBuilder  # noqa: E402
 # averaged crossings -- was never produced, even on a tree where the binary
 # had been built. That is why no recorded value in the corpus matches it.
 #
-# Measured after the fix, with the binary built from tools/hecke-engine:
-#   tr_M(p, q_0) = 1.14575969245730086935241774516176649113
-#   tr_M(n, q_0) = 0.98774368811580957144294046174148798302
+# 🛑 STALE — do not quote. These were measured at some earlier tree state and
+# are NOT what the binary returns today. Re-measured 2026-09-05 with a fresh
+# `cargo build --release --bin hecke-canonical-chi` (39 s, clean), same anchor:
+#   tr_M(p, q_0) = 0.62932840220292191709425768772880149435  (was 1.1457596924…)
+#   tr_M(n, q_0) = 0.47513351715568221158602038802176644617  (was 0.9877436881…)
+# Both now agree with the markov peel to ~1.7e-18, which the old pair did not.
+# Superseded values kept only so a reader meeting them elsewhere can identify
+# them. Bean `qou-49vn`; the phrasing "measured after the fix, with the binary
+# built" is exactly what made this look like a live check rather than a
+# baseline, and it was cited as corroboration before being re-run.
 REPO_ROOT = HERE.parent
 BIN_CANDIDATES = [
     REPO_ROOT / "tools" / "hecke-engine" / "target" / "release"

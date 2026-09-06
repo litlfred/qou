@@ -1555,3 +1555,9 @@ import QOU.MathlibExt.InterleavedWordClosures
 import QOU.Mass.CrossTermFixedPointCount
 import QOU.LiftingDescent.CrossedModuleSurfaceHolonomy
 import QOU.Mass.CrossTermOrderZeroComponentCount
+import QOU.Mass.HeckeQuadraticClassicalShadow
+import QOU.Mass.KZUnitModulusPrune
+import QOU.Mass.HeckeMonodromy
+import QOU.Mass.ColourCubicDiscriminant
+import QOU.Mass.ColourCubicDiscriminantReal
+import QOU.Mass.FigureEightGluingFromMonodromy

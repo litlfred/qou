@@ -1,0 +1,59 @@
+{
+  "probe": "qbeta_c_vs_d_are_different_algebras_probe",
+  "bean": "qou-cds1",
+  "question": "is the C->D move a change of coordinate on one trace?",
+  "answer": "No. C is the full Hecke (Ocneanu/Wenzl) trace; D is the Temperley-Lieb/SU(2) QUOTIENT with y_(1^3) = 0. z is not a free coordinate but the rank label of z_N = q^N/[N]_q (D = N=2), and b^2 = [3]_q/[2]_q^2 makes the #6889 'degeneracy' exactly the non-semisimple locus of H_3(q).",
+  "corrects": "the FRAMING of my #6915 and #6921 (measurements stand), and the INTERPRETATION of my merged #6889 (arithmetic stands, exclusion withdrawn)",
+  "scope": "(b) for the identities and registry facts. Adjudicates neither ruling; proposes no replacement derivation.",
+  "rank_family": {
+    "z_1": "q",
+    "z_2": "q**3/(q**2 + 1)",
+    "z_3": "q**5/(q**4 + q**2 + 1)",
+    "z_4": "q**7*(q**2 - 1)/(q**8 - 1)"
+  },
+  "full_bar_residuals": {
+    "N=1": "0",
+    "N=2": "0",
+    "N=3": "0",
+    "N=4": "0",
+    "N=5": "0",
+    "N=6": "0"
+  },
+  "b_squared_identity": "b^2 = [3]_q/[2]_q^2",
+  "assertions": [
+    {
+      "name": "D_annihilates_the_sign_block_C_does_not",
+      "passed": true,
+      "detail": "registry: D is named 'SU(2)/Temperley-Lieb (Jones) decomposition' with y_(1^3) = '0'; C is 'full-Hecke Ocneanu / Wenzl z-trace' with y_(1^3) = 0.0227449425... Both normalise (D: sum y_l d_l = 1; C: 1). TL_n = H_n/<antisymmetriser> kills every partition with >2 rows, which at n=3 is exactly (1^3). So D is a QUOTIENT of C \u2014 the two conventions differ in which blocks EXIST, not in how one object is coordinatised."
+    },
+    {
+      "name": "the_zD_equals_q2_zC_of_q2_relation_is_a_value_coincidence",
+      "passed": true,
+      "detail": "z_D(q) = q^2 z_C(q^2) holds exactly \u2014 which is what made the 'same form, different variable' reading tempting. It relates parameter VALUES only. Given assertion 1 it cannot be an isomorphism of traces: no substitution carries a 3-block trace to a 2-block one. This is why #6915's rescaling route was malformed rather than merely unsuccessful."
+    },
+    {
+      "name": "z_is_indexed_by_RANK_and_D_is_the_SU2_member",
+      "passed": true,
+      "detail": "z_N = q^N/[N]_q satisfies the full-bar condition bar(z) = z - h for every N = 1..6 (residual {'0'}), with twist N=1: q**(-2), N=2: q**(-4), N=3: q**(-6). z_2 = q**3/(q**2 + 1) = z_D, so D is the SU(2) member. z_C = 1/[2]_sqrt(q) has NO q^N numerator, is bar-even (twist 1) and is in the family for no N. The q^N numerator IS the bar twist \u2014 so rescaling z_D to bar-evenness strips the rank label."
+    },
+    {
+      "name": "b_squared_is_three_over_two_squared_so_its_vanishing_is_NONSEMISIMPLICITY",
+      "passed": true,
+      "detail": "b^2 = [3]_q/[2]_q^2 exactly (the variant q^2[3]/[2]^2 is NOT equal \u2014 my first attempt carried that spurious q^2 and sympy caught it, recorded because the wrong form is easy to reach). H_n(q) is semisimple iff [k]_q != 0 for all k <= n, so b^2 = 0 <=> [3]_q = 0 <=> H_3(q) is NOT semisimple. The pi/3 and 5pi/3 phases that #6889 called 'degenerate' \u2014 and used to declare the root-of-unity sublocus EMPTY \u2014 are exactly where the Wedderburn decomposition tr = sum_l y_l chi^l ceases to exist. #6889's arithmetic stands; its exclusion is WITHDRAWN as an interpretation."
+    },
+    {
+      "name": "TL_is_a_two_row_truncation_of_the_tower",
+      "passed": true,
+      "detail": "the 2026-09-03 owner ruling asks derivations to use the FULL TOWER (all n of H_n(q), all orders in q); the 2026-08-15 ruling makes D canonical. D = SU(2)/TL keeps only <=2-row partitions, so at n = 3A it discards the overwhelming majority of the tower. The two rulings pull opposite ways for this channel. MEASURED here, NOT adjudicated \u2014 which governs Q_beta is an owner decision."
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "770b429a7597",
+  "scriptCommitSha": "unknown",
+  "commitSha": "bfa317911859d6184c6474573c3dd0869bfe69b6",
+  "engine": "python+sympy",
+  "computedAt": "2026-09-06T09:03:32.623119+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

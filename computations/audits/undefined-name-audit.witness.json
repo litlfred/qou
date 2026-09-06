@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T11:08:21.318728+00:00",
-  "commitSha": "2294a57db9bcfeac220319d521ea3881b8fcd906",
+  "computedAt": "2026-09-06T11:52:02.109662+00:00",
+  "commitSha": "ac82f267972883065bbcaba8b2e48c2135c15f60",
   "assertions": [
     {
       "name": "no name is loaded while bound nowhere in its file",
@@ -18,7 +18,7 @@
   "computation": "undefined-name-audit",
   "scriptFile": "undefined_name_audit.py",
   "scriptHash": "f1cbf1b83eaa",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "6d7f7e2dc6c5b77a0ff6061cbbf7f9868dd5c7d5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,7 +44,7 @@
   "description": "Names loaded in a file and bound nowhere in it, found by static AST over every tracked .py — no execution. Complements producer_importability_audit, which imports each producer and so sees only MODULE-level NameErrors: a name used inside a function that no test calls is invisible to it, and the 300+ probes here are executed by neither test tree. An ad-hoc run on 2026-09-06 found 7 such live defects, all from a block rewrite that dropped a definition while its consumer survived outside the diff range. Whole-file scoping is deliberate: it under-reports rather than false-alarming. Bean qou-lejl.",
   "auditOnly": "computations/audits/undefined_name_audit.py",
   "data": {
-    "scanned_files": 4503,
+    "scanned_files": 4530,
     "skipped_star_import": 12,
     "skipped_exec_or_eval": 39,
     "unparsed": 0,

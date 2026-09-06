@@ -19,8 +19,21 @@ constants are integers corresponding to the Donaldson--Thomas invariants and the
 BPS degeneracies"* — proved by Garoufalidis--Gu--Mariño for the figure-eight
 $4_1$. The second is the [`gukov-pei-putrov-vafa2017`] (GPPV) realisation of the
 DT/BPS count as the graded dimension of the fivebrane BPS Hilbert space of
-$T[M_3]$ on $M_3 \times D^2$, categorifying the $3$d $\mathcal{N}=2$ indices; the
-$3$d--$3$d dictionary is [`dimofte-gaiotto-gukov2013`] (DGG).
+$T[M_3]$ on $M_3 \times D^2$, categorifying the $3$d $\mathcal{N}=2$ indices. The
+$3$d--$3$d dictionary itself --- the assignment of a $3$d $\mathcal{N}=2$ theory
+$T[M]$ to an ideally triangulated $3$-manifold, with $S^3 \setminus 4_1$ worked
+explicitly, and the assembly of its $S^3_b$ partition function (the state integral
+whose Stokes constants appear above) from tetrahedron factors --- is
+[`dimofte-gaiotto2011`] §4.1, §4.6 and §6.3. The $3$d index of that theory is
+[`dimofte-gaiotto-gukov2013`] (DGG).
+
+Part of the second equality is a theorem on a restricted class: [`murakami-y2022`]
+proves that for plumbed $3$-manifolds with negative-definite linking matrix the
+Witten--Reshetikhin--Turaev invariant is the radial limit of the homological block
+$\hat{Z}$. That class consists of closed manifolds; $S^3 \setminus K$ for a
+hyperbolic knot is cusped and not plumbed, so the result does not reach the objects
+this conjecture quantifies over, and the field `dt_eq_bps` below stays an assumption
+rather than a citation.
 
 ### Which BPS sector — the non-degeneracy result
 
