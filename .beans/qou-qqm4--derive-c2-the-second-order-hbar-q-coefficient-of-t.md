@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-06T09:41:14Z
+updated_at: 2026-09-06T09:51:16Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -183,3 +183,34 @@ invariance FAILS. Do not promote that file's invariance to a structural one.
 
 **NOT a proof** — a criterion stated from one case, tested on a second, with a control, at orders 0,
 1 and 2 only. It constrains COMBINATIONS, not individual values, so it gives no closed form for c2.
+
+
+### Same day — the FREE side's second order is forced by its first (probe, 8/8 incl. held-out 4He)
+
+Probe: `computations/probes/free_word_second_order_product_structure_probe.py`. This is progress on
+goal (2) for HALF the object; it does not attempt the atom word.
+
+With u(Z,N) = (Z*S_p + N*S_n)/2 = 3Z - 2N (the c1 per-nucleon sum, PR #6920):
+
+    [e1](free)          = u * 2^(-A-1)
+    2^(A+2) * [e2](free) = u^2/2 + (37Z + 20N)/2
+
+Exact, 7/7 across every (Z,N) split at A = 2 and 3, plus the **held-out 4He** (A=4, n=12, in
+neither the fit nor the pattern search): predicted [e1] = 1/16, [e2] = 59/64; both measured exactly.
+
+**The three quadratic coefficients (9/2, -6, 2) are FORCED by u^2/2** — fixed the moment u is known
+from the FIRST order, with nothing about the second order choosing them. Only (37, 20) was free. So
+8 exact points against 2 parameters. (37, 20) is the second-order analogue of (S_p, S_n) = (6, -4).
+
+**🛑 MY MECHANISM WAS WRONG and is retracted.** I read u^2/2 as an exponentiation signature — the
+free word's A nucleon blocks act on disjoint strand triples, so the normalised trace should
+factorise, log be additive, and second order be (first order)^2/2 + per-nucleon terms. That needs u
+to BE the first-order coefficient in the same normalisation. It is not: [e1] = u*2^(-A-1), so
+([e1])^2/2 = u^2 * 2^(-2A-2)/2, differing from the measured u^2/2 * 2^(-A-2) by a factor 2^(-A). The
+probe's own prediction column caught it (an earlier version asserted u = 2^(A+2)*[e1], which is 2u,
+and every row printed FAIL). What survives is a RELATION BETWEEN THE ORDERS with no mechanism —
+still the useful half, since it is what makes this 2 parameters rather than 5.
+
+**Does NOT give c2.** c2 = [e1]+[e2] of tr(free) - tr(atom); the atom word does not factorise (its
+interfaces couple adjacent blocks, which is why c1's closed form needs a separate interface term).
+Nothing here says what the atom side's second order is.
