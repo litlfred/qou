@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T20:22:33Z
-updated_at: 2026-09-06T04:06:11Z
+updated_at: 2026-09-06T04:17:52Z
 ---
 
 Follows `qou-brng`'s 2026-09-04 entry, which named `separable_interface_degenerate`'s
@@ -216,3 +216,40 @@ way of skipping it that feels like diligence.
 
 Unchanged: the `4.9181` is still not recorded anywhere (checked), and route 7 still
 closes the class. Nothing refuted.
+
+
+---
+## 2026-09-06 — the deferred `(R :=` measurement, done; detector fixed; my own workaround removed
+
+The entry above left this as *"a real measurement is a follow-up"* after a noisy
+first pass. Done properly now.
+
+**Measured** over the **3666** non-`.lake` `.lean` under `content/`, classifying each
+twice with the script's exact §7c logic and diffing verdicts: **19** files have `hasGen`
+set solely by `(R :=`; **15 change verdict, every one `MIXED(action)` → `R-JUSTIFIED`**;
+and **0 of the 31 occurrences sit on a declaration line**.
+
+**Two reasons the token never belonged in `GEN`.** `(R := ℝ)` is a *use* site, and it is
+the spelling §7c PRESCRIBES for the archimedean sibling — so a correctly-split file was
+told to split. And `R` is a parameter *name*: 9 of the 31 bind it to a **radius**
+(`IdealTetEqChimney`, `BorelCaratheodory`, `C1ConnectionPoles`), to `ℂ`
+(`RootsOfUnityProduct`), or to a **word** (UGB `HeckeCompletion`).
+
+**Scope stated honestly:** `check-sidecars` scans only *changed* files, so these were
+never 15 live flags — 15 files primed to mis-fire the moment anyone edits one. Which is
+how it was found: by editing one.
+
+**Fixed**, with the safety argument matching the three prior classes (`qou-mr3q`,
+`qou-akb4`, `qou-aemx`): a genuine violation requires a *declaration*, declarations
+require a *binder*, and all four binder forms stay in `GEN`. Zero false clears.
+
+**And my own workaround is gone.** `…HaveContentReal.lean` had used `@f ℝ _` explicitly
+to dodge this detector. It is back to the prescribed `(R := ℝ)`, and `check-sidecars` now
+reports the pair `no ℝ, generic OK` / `ℝ justified`. Both files `lean`-direct exit 0.
+
+Audit + reproduction script: `docs/audits/2026-09-06-check-sidecars-r-assign-false-positive.md`.
+
+**Still NOT fixed, deliberately:** the content-block arm prints the qa-sweep suggestion
+for every changed block with no staleness test. It produces no wrong *verdict*, only an
+always-printed suggestion, and changing it needs its own measurement of what "stale"
+should mean for a sidecar. Recorded so it is not mistaken for an oversight.
