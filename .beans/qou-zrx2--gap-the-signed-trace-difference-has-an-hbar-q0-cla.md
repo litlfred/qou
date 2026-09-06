@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-31T10:13:14Z
-updated_at: 2026-09-06T03:47:11Z
+updated_at: 2026-09-06T04:42:55Z
 ---
 
 
@@ -646,3 +646,23 @@ the m-parity law, the convention invariance, and `floor(A=1) = 0`. Grep-verified
 occurrences of m_pp/m_pn/m_nn/multiplic/parity/intra_order/pn_convention in either prior artifact,
 and no A = 1 row. The prior work fixes m = 1 throughout, which is why `A+1` appears there as a
 fact rather than as the `O = A-1` special case it is.
+
+
+## 2026-09-06 — the floor SHARE quoted in this bean is stale: 85 %, not 22.46 %
+
+The '22.46 % of the deuteron trace difference' above is computed from
+`Dtr(D) = 0.556544660404`, a **pre-2026-09-05 (grouped) intra-ordering** value. Recomputed at
+the canonical q0 on the canonical (borromean) word via `tr_m_atom_via_transfer.tr_m_atom_zn`:
+
+    atom   Dtr                 c0     floor share   this bean said
+    D      0.14704667798041    1/8    85.007 %      22.46 %
+
+**The floor did not move — its denominator did.** c0 is a cycle count and is invariant under
+intra_order (measured). On the canonical word the deuteron binding observable is ~85 % a
+q-INDEPENDENT topological term. This does not weaken the bean's complaint; it is the same
+complaint, roughly four times larger. The 4.88 % figure for 4He is stale for the same reason
+and is not recomputed here (H_12 trace, slow).
+
+Same cause has reopened `qou-pdg9` (its six c1 are also the grouped word's). Probe:
+`computations/probes/c1_is_stale_on_the_reordered_atom_word_probe.py`; audit:
+`docs/audits/2026-09-06-c1-is-stale-on-the-reordered-atom-word.md`.
