@@ -301,6 +301,7 @@ import QOU.Mass.MixedMultibondMuBarIntegrality
 import QOU.Mass.BindingRecurrenceSpectral
 import QOU.Mass.BindingClassicalKernel
 import QOU.Mass.BindingInteriorMaxObstruction
+import QOU.Mass.GroupoidTerminalDichotomy
 import QOU.Mass.Lever1Depth2Exclusion
 import QOU.Mass.Lever1TauClosedForm
 import QOU.Machinery.HeckeTauAssignmentTower
@@ -1558,3 +1559,6 @@ import QOU.Mass.CrossTermOrderZeroComponentCount
 import QOU.Mass.HeckeQuadraticClassicalShadow
 import QOU.Mass.KZUnitModulusPrune
 import QOU.Mass.HeckeMonodromy
+import QOU.Mass.ColourCubicDiscriminant
+import QOU.Mass.ColourCubicDiscriminantReal
+import QOU.Mass.FigureEightGluingFromMonodromy

@@ -1,0 +1,106 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2605.20846v1",
+ "source_sha256": "db27cb6d01c4f2fb",
+ "brief": "Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li — We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the",
+ "extended": "**Topological Field Theories and the Algebraic Structures of the Two-Sphere Chris Li**\n\n*May 21, 2026*\n\n99 pp, 17 sections.\n\n**Abstract.** We give two presentations for bordisms ofS 2 in the 3-dimensional oriented bor- dism category Cob(3), encoding the algebraic structures onS 2. After passing through topological field theories, we define two kinds of monoids which we call P-monoids and L-monoids. In addition to both being commutative Frobenius monoids, P-monoids are equipped with a class of endomorphisms while L-monoids are equipped with a class of unit morphisms, all of which are labelled by closed oriented irreducible prime 3- manifolds. They turn out to be equivalent.\n\n**Outline.** Introduction; Generators; Commutative Frobenius Relations; Outline of Strategy; Existence and Spherical Morse Functions; Spherical Morse Functions; Local Models of Excellent Morse Failures; Prime Relations; No Internal Relations; External Prime Relations; Sufficiency of External Relations; Necessity of Legs Relations; Passing through TFTs; P and L Monoids; Relations to J-Algebras; Presentations of a Category; Towards",
+ "tokens": {
+  "brief": 49,
+  "extended": 279
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "2-13"
+  },
+  {
+   "id": "sec-001-generators",
+   "title": "Generators",
+   "pages": "13-21"
+  },
+  {
+   "id": "sec-002-commutative-frobenius-relations",
+   "title": "Commutative Frobenius Relations",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-003-outline-of-strategy",
+   "title": "Outline of Strategy",
+   "pages": "22-26"
+  },
+  {
+   "id": "sec-004-existence-and-spherical-morse-functions",
+   "title": "Existence and Spherical Morse Functions",
+   "pages": "26-32"
+  },
+  {
+   "id": "sec-005-spherical-morse-functions",
+   "title": "Spherical Morse Functions",
+   "pages": "32-38"
+  },
+  {
+   "id": "sec-006-local-models-of-excellent-morse-failures",
+   "title": "Local Models of Excellent Morse Failures",
+   "pages": "38-46"
+  },
+  {
+   "id": "sec-007-prime-relations",
+   "title": "Prime Relations",
+   "pages": "46-46"
+  },
+  {
+   "id": "sec-008-no-internal-relations",
+   "title": "No Internal Relations",
+   "pages": "46-49"
+  },
+  {
+   "id": "sec-009-external-prime-relations",
+   "title": "External Prime Relations",
+   "pages": "49-54"
+  },
+  {
+   "id": "sec-010-sufficiency-of-external-relations",
+   "title": "Sufficiency of External Relations",
+   "pages": "54-60"
+  },
+  {
+   "id": "sec-011-necessity-of-legs-relations",
+   "title": "Necessity of Legs Relations",
+   "pages": "60-70"
+  },
+  {
+   "id": "sec-012-passing-through-tfts",
+   "title": "Passing through TFTs",
+   "pages": "70-70"
+  },
+  {
+   "id": "sec-013-p-and-l-monoids",
+   "title": "P and L Monoids",
+   "pages": "70-74"
+  },
+  {
+   "id": "sec-014-relations-to-j-algebras",
+   "title": "Relations to J-Algebras",
+   "pages": "74-90"
+  },
+  {
+   "id": "sec-015-presentations-of-a-category",
+   "title": "Presentations of a Category",
+   "pages": "90-92"
+  },
+  {
+   "id": "sec-016-towards",
+   "title": "Towards",
+   "pages": "92-99"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

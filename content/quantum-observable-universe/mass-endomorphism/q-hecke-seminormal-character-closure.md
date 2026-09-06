@@ -16,8 +16,50 @@ The recursive Markov-axiom ascent and partition-sum Wedderburn formulas must agr
 
 Two layers have to be got right, and each has a natural wrong answer:
 
-1. **Weight layer.** The two-variable Schur function $s_\lambda(q, q^{-1}) / H_q(\lambda)$ vanishes for partitions with three or more rows and so cannot serve as the weight. The correct weight is $y_\lambda(q)$, the Wenzl Schur principal specialisation (`prop:hecke-branching-trace-decomposition`).
+1. **Weight layer.** The weight is $y_\lambda(q)$, the Wenzl Schur principal specialisation (`prop:hecke-branching-trace-decomposition`), and what distinguishes it from the naive two-variable Schur function $s_\lambda(q, q^{-1}) / H_q(\lambda)$ is the **normalisation**: $y_\lambda$ divides by $Z = \sum_\mu s_\mu f^\mu$, fixed by $\sum_\lambda y_\lambda f^\lambda = \mathrm{tr}_M(1) = 1$, not by the hook polynomial $H_q(\lambda)$.
 2. **Character layer.** The $q = 1$ limit of the Hecke character is not the character required here; the trace must be taken of the $q$-Hecke character $\chi^\lambda_q(\mathcal{B}_K) = \mathrm{tr}\,\rho_\lambda^q(\mathcal{B}_K)$, via Hoefsmit seminormal matrices at $q_0$.
+
+> **Corrected 2026-09-06** (`qou-fq0f`). Bullet 1 used to discriminate on
+> *vanishing*: that $s_\lambda(q,q^{-1})/H_q(\lambda)$ "vanishes for partitions
+> with three or more rows and so cannot serve as the weight". Under production
+> convention **D** that reason is vacuous, because $y_\lambda(q)$ vanishes there
+> too — see the row cap below. It was a **convention-C argument**, true when
+> written and left untouched by the C → D migration of 2026-08-09.
+
+### The sum is over at most two rows
+
+Under the production convention $z = q^3/(q^2+1)$ the displayed sum is **not**
+over all partitions of $3A$, however it is written. The Wenzl level is fixed by
+$Q^{r} = z_W/(1 - Q + z_W)$ with $Q = q^2$, $z_W = qz$, and convention D gives
+
+$$
+  1 - q^2 + \frac{q^4}{q^2+1} \;=\; \frac{1}{q^2+1}
+  \qquad\Longrightarrow\qquad
+  Q^{r} \;=\; q^4 \;=\; Q^2, \qquad r = 2 \ \text{ exactly.}
+$$
+
+Wenzl's row cap ($s_{\alpha,r} = 0$ whenever $\ell(\alpha) > r$; Orellana,
+*Crelle* **508** (1999) 157–178, p. 5) therefore bites at two rows, so
+$y_\lambda(q) = 0$ for every $\lambda$ with three or more rows and
+$\mathrm{tr}_M$ factors through the two-row (Temperley–Lieb) quotient:
+
+| | partitions | carry weight under **D** | annihilated |
+|---|---|---|---|
+| $H_3$ | $(3), (2,1), (1,1,1)$ | $(3), (2,1)$ | $(1,1,1)$ |
+| $H_4$ | 5 shapes | $(4), (3,1), (2,2)$ | $(2,1,1), (1,1,1,1)$ |
+
+These are algebraic zeros, not small residuals: the $H_4$ closed forms carry a
+literal factor $(A z - q^3)$ with $A = q^2+1$, and $z_D = q^3/A$ is its root
+(`h4_markov_weights_closed_form.py`, asserted at run time). Two independent
+paths agree exactly — the Wenzl specialisation `y_lambda_symbolic` and that
+closed-form substitution — and both give $w^D_\lambda = s_\lambda(q,q^{-1})/[2]_q^4$
+on the surviving shapes with $\sum_\lambda w_\lambda d_\lambda = 1$.
+
+**Convention C did not cap anything.** There $r \approx 2.5995$ — not an integer
+— which is why the C-frame weights were non-zero on three-row shapes and why
+bullet 1's original contrast read as decisive. That D lands on an *integral*
+Wenzl level and C does not is a derivation-side argument for D that has not been
+written down anywhere else; it is flagged for the owner in `qou-fq0f`.
 
 ## Numerical verification
 

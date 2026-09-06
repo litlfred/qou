@@ -44,6 +44,25 @@ sections directly (operator formalism, higher-dimensional forms, 2D Yang–Mills
 
 ## 2. Unpacking non-abelian Stokes: what actually pops out
 
+> **🛑 CORRECTION (2026-09-06, bean `qou-h7w4`, PR #6936).** The reading below — that the bad
+> set is "counted by the singularities of the map defining the surface", with `|bad(k)| ≤ m` for
+> `m` the singular points of `σ` — is Yekutieli's **1-dimensional** string case (held text
+> `library/arxiv-1007.1250v4/sections/sec-000-0-introduction.md:2280`), imported here into the
+> 2-dimensional one. In 2-dim the kite map `τ : I² → X` is **linear by definition** (Def 4.1.1,
+> `:3278`) and has no singular points; Def 4.4.12 (`:3964`) makes an index good **iff the
+> connection forms `α|Zᵢ`, `β|Zᵢ` are smooth**; and Lemma 4.4.13's proof (`:3969-3976`) covers
+> *the singular locus of α and of β* by `m` segments `Zⱼ`, setting `a₀ := 2m` and
+> `a₁ := 2·Σ len(Zⱼ)` — a **length**, not a count. So the bad set is the singular locus of the
+> **connection**, not of the surface parametrization; smooth forms give `a₀ = a₁ = 0` and no
+> surface term of any size; and the corpus has no `(α, β)` as forms at all (`qou-20bk`: *"Step
+> 2's curvature is stipulated, not a form"*). The bulk/boundary **split** described below is
+> real; its attribution to the surface map is not. What survives is formalised in
+> `QOU/Mass/StokesSingularCountAffine.lean`: Euler bounds the 1-skeleton of *any* cell
+> decomposition below by `2 − χ = 9A + 1`, so **if** the forms' singular locus runs along one
+> (hypothesis H1, not currently dischargeable) the Stokes term renormalises the volume coefficient.
+> The text below is left as written, as the record of the reading being corrected.
+
+
 The construction integrates a pair `(α, β)`, `α ∈ Ω¹⊗g`, `β ∈ Ω²⊗h`, over a
 *kite* `(σ, τ)` — a 1-simplex and a 2-simplex — valued in a Lie crossed module
 `(G, H, Ψ, Φ)`. The multiplicative integral is a limit of Riemann products over
@@ -77,6 +96,16 @@ surface** — a finite, integer, geometric quantity, vanishing exactly when the
 surface is non-singular.
 
 ## 3. What this does and does not give
+
+> **🛑 CORRECTION (2026-09-06, `qou-h7w4`).** "`a_S` … proportional to a count of singularities
+> of the spanning surface … an integer knot invariant … checkable against the N=Z chain" inherits
+> the §2 misreading. The count is of the *connection's* singular locus (`a₀ = 2m`); the other
+> constant `a₁` is a length; both vanish for smooth forms. The prediction is therefore **not
+> checkable** until `(α, β)` exist as forms — it is conditional on H1 of
+> `StokesSingularCountAffine.lean`, and under H1 the count is bounded below by Euler (`≥ 9A + 1`),
+> i.e. affine in `A`, i.e. a volume-coefficient renormalisation rather than an `A^(−1/3)` term.
+> "Does not give a magnitude" below stands, and is now the weaker of the two limitations.
+
 
 **Gives — a falsifiable structural prediction.** If the framework's surface term
 arises this way, then `a_S` is not a free parameter: it should be proportional to

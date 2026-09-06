@@ -106,26 +106,65 @@ theorem nucleusEmptySDP_strictlyFeasible :
   one_isStrictlyFeasible _
 
 /-- **Trivial strict-complementarity pair for the generic empty
-    SDP** — instantiated from `SDPEmptyConstraints`. Active set
-    is empty; the optimum is at `Φ⋆ = 0`. -/
+    SDP.** Active set is empty; the optimum is at `Φ⋆ = 0`.
+
+    This is a `RealStrictComplementarityPair`, not the generic
+    `StrictComplementarityPair` of `SDPEmptyConstraints`: the generic
+    structure's `dual_feas` and `obj_eq` fields are `True` placeholders,
+    so it carries no duality content, and the generic uniqueness route
+    over it was deleted as false (bean `qou-i6u4`).  The real pair below
+    discharges genuine `dualSlack_psd` and `obj_eq_dualObj` obligations
+    and feeds the proven interior-case closure. -/
 noncomputable def nucleusTrivialStrictCompPair :
-    StrictComplementarityPair (nucleusEmptySDP n) :=
-  trivialStrictComplementarityPair _
+    RealStrictComplementarityPair (nucleusEmptySDP n) where
+  Φstar := 0
+  ystar := fun i => i.elim
+  primal_feas := zero_isFeasible _
+  dualSlack_psd := by
+    show ((nucleusEmptySDP n).dualSlack (fun i => i.elim)).PosSemidef
+    have h_eq : (nucleusEmptySDP n).dualSlack (fun i => i.elim) = 1 := by
+      unfold SDPPrimal.dualSlack nucleusEmptySDP
+      simp [Finset.sum_empty]
+    rw [h_eq]
+    exact Matrix.PosDef.one.posSemidef
+  obj_eq_dualObj := by
+    unfold SDPPrimal.objAt SDPPrimal.dualObjAt
+    simp
+  active := ∅
+  active_dual_pos := fun i hi => hi.elim
+  inactive_dual_zero := fun i _ => i.elim
+
+/-- The dual slack at the trivial pair is the identity, hence PosDef. -/
+theorem nucleusTrivialStrictCompPair_dualSlack_posDef :
+    ((nucleusEmptySDP n).dualSlack
+      (nucleusTrivialStrictCompPair n).ystar).PosDef := by
+  show ((nucleusEmptySDP n).dualSlack (fun i => i.elim)).PosDef
+  have h_eq : (nucleusEmptySDP n).dualSlack (fun i => i.elim) = 1 := by
+    unfold SDPPrimal.dualSlack nucleusEmptySDP
+    simp [Finset.sum_empty]
+  rw [h_eq]
+  exact Matrix.PosDef.one
 
 /-- **Generic Subsingleton uniqueness via the abstract bridge.**
     Under the trivial strict-complementarity pair for the
     empty-constraint SDP, the primal optimum is unique among
     feasible matrices achieving the same objective.
 
-    Depends on the `strict_complementarity_unique_axiom`
-    (Boyd-Vandenberghe §5.5 + Todd §3.4). For the sorry-free
-    closure see `nucleus_uniqueness_closed` below. -/
+    Now routed through the **proven interior-case** closure
+    (`real_strict_complementarity_unique_of_dualSlack_posDef`): the
+    empty-constraint SDP has `cost = 1` and no constraints, so its dual
+    slack is the identity, which is positive-definite.
+
+    It used to depend on `strict_complementarity_unique_axiom`, which was
+    **false** and has been deleted (bean `qou-i6u4`).  The statement is
+    unchanged and still true — only the route was rotten. -/
 theorem nucleus_uniqueness_via_empty_sdp :
     Subsingleton {Φ : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ //
       (nucleusEmptySDP n).IsFeasible Φ ∧
       (nucleusEmptySDP n).objAt Φ = (nucleusEmptySDP n).objAt
         (nucleusTrivialStrictCompPair n).Φstar} :=
   canonical_T_w_subsingleton (nucleusTrivialStrictCompPair n)
+    (nucleusTrivialStrictCompPair_dualSlack_posDef n)
 
 /-- **Trivial Φ⋆ is the zero matrix** (by construction). -/
 theorem nucleusEmptySDP_Φstar_eq_zero :

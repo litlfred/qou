@@ -116,16 +116,21 @@ def main() -> int:
     q_val = mp.mpf(q_str)
     print(f"\n  q_0 = {q_str}")
 
-    # Compute H_3 baseline traces for proton and neutron via the
-    # centralised compute_tau_M_nucleon_H3 helper. This uses the
-    # canonical_braid_marshalling pipeline. NOTE these H_3 traces are
-    # CONVENTION-INDEPENDENT: `compute_tau_M_nucleon_H3` takes no
-    # `pn_convention` argument, because a single nucleon has no p-n
-    # interface for one to apply to. The convention enters only in the
-    # ⁴He interface product below. The comment here used to justify the
-    # file's `chi_lambda_braid` by appeal to these traces "matching at
-    # machine precision", which cannot be a reason for anything: there
-    # is nothing here for a p-n convention to change.
+    # The H_3 baselines come from `compute_tau_M_nucleon_H3`, which since
+    # 2026-09-06 takes its word from `atom_braid_word_3A` and defaults to the
+    # canonical borromean intra-ordering (bean `qou-y2o7`).
+    #
+    # This call site briefly carried its own inlined replacement, while that
+    # helper was still locked to the superseded grouped word. Removed now that
+    # the helper is fixed: an inlined copy of a shared computation is how the
+    # two paths drift apart, which is the qou-qu2w defect this file's own
+    # history records.
+    #
+    # These H_3 traces remain CONVENTION-INDEPENDENT in the p-n sense: a single
+    # nucleon has no p-n interface, so no `pn_convention` argument reaches
+    # here. Intra-ORDERING is a different axis and does reach here — that is
+    # exactly what was wrong, and what every pn_convention-keyed audit was
+    # structurally blind to.
     t0 = time.perf_counter()
     print("\n[1/3] Computing tau_p via compute_tau_M_nucleon_H3 (50 dps)...")
     tau_p = compute_tau_M_nucleon_H3("p", q_val, dps=50)

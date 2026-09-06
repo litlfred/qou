@@ -21,7 +21,9 @@ namespace QOU.BraidKnot
 -- Witness that the canonical existence theorem is in scope (no re-declaration).
 -- canonical decl: QOU.BraidKnot.ConfinementLevel.nonempty
 -- Ref: [manuscript] braids-and-knots/confinement-level
-example (R : Type) [CommRing R] : Nonempty (ConfinementLevel R) :=
-  ConfinementLevel.nonempty R
+example (R : Type) [CommRing R] (valid : BraidDatum R → ℕ → Prop)
+    (d : BraidDatum R) [DecidablePred (valid d)] (h : ∃ ℓ, valid d ℓ) :
+    Nonempty (ConfinementLevel valid d) :=
+  ConfinementLevel.nonempty h
 
 end QOU.BraidKnot

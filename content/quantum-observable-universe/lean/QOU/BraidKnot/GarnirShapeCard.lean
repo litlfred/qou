@@ -1,5 +1,6 @@
 import QOU.BraidKnot.GarnirShape
 import QOU.Mathlib.SchenstedPartitionShape
+import QOU.BraidKnot.PartitionLexWellFounded
 
 /-!
 # The Garnir shape has the same size — the connector 3.14's outer induction needs
@@ -11,8 +12,18 @@ size, so feeding the Garnir shape into it needs
 
     `(garnirShape μ i j).cells.card = μ.cells.card`
 
-which was **not** in the corpus.  This file supplies the arithmetic half — that the Garnir
-composition has the same total — and records precisely what blocks the rest.
+This file supplies it, and with it `lexGtOn_garnirPartOf`: the Garnir step **drops the
+shape in the very order 3.14's outer induction runs on**.
+
+> **🛑 CORRECTION.  An earlier version of this file recorded the last step as blocked by a
+> missing lemma — `(ofRowLens w hw).rowLens.sum = w.sum` with no positivity hypothesis —
+> and said so in its docstring and commit message.  That was wrong.
+> `QOU.Mathlib.card_cells_ofRowLens` proves exactly `(ofRowLens L hsort).cells.card = L.sum`,
+> with no positivity hypothesis, and it sits **one screen above**
+> `card_cells_eq_rowLens_sum` in `SchenstedPartitionShape.lean` — the file this one was
+> already importing and citing.  The Mathlib half of that claim was right and was measured
+> by environment enumeration; the corpus half was never checked at all.  `card_garnirShape`
+> below is now three rewrites.
 
 ## Why the count works out
 
@@ -75,37 +86,28 @@ theorem sum_garnirComp (h : (i + 1, j) ∈ μ) :
   rw [hsum]
   omega
 
-/-! ## The remaining step, and the Mathlib gap that blocks it
+/-- **The Garnir shape preserves size.**  This is the connector: it lets
+`GarnirShape.garnirShape_lexGt` be fed to `PartitionLexWellFounded.lexGtOn`, which is
+defined on shapes of one fixed size. -/
+theorem card_garnirShape (h : (i + 1, j) ∈ μ) :
+    (garnirShape μ i j).cells.card = μ.cells.card := by
+  rw [garnirShape, ofComposition, QOU.Mathlib.card_cells_ofRowLens, sum_sortDesc,
+    sum_garnirComp h, ← QOU.Mathlib.card_cells_eq_rowLens_sum]
 
-`sum_garnirComp` is the mathematical content: the Garnir composition and the original shape
-have the same total.  Turning that into
+/-- The Garnir shape, packaged as a member of `PartOf n` — the form
+`PartitionLexWellFounded.lexGtOn` consumes. -/
+def garnirPartOf (h : (i + 1, j) ∈ μ) :
+    QOU.BraidKnot.PartitionLexWellFounded.PartOf μ.cells.card :=
+  ⟨garnirShape μ i j, card_garnirShape h⟩
 
-    `(garnirShape μ i j).cells.card = μ.cells.card`
+/-- **The Garnir step drops the shape in the well-founded order 3.14 inducts along.**
 
-needs one more link — that `ofRowLens` preserves the sum of its input list — and **that is
-not available**:
-
-* `YoungDiagram.rowLens_ofRowLens_eq_self` requires `∀ x ∈ w, 0 < x`, and `garnirComp` can
-  legitimately contain **zeros** (`j = 0`, or `rowLen (i+1) - j - 1 = 0`), so it does not
-  apply.  The same positivity hypothesis blocks `rowLens_length_ofRowLens`.
-* Mathlib has no `card_ofRowLens` / `sum_rowLens_ofRowLens` at all — checked by enumerating
-  the environment, since a source grep is worthless in this checkout
-  ([`scripts/lean-probes/`](../../../../../scripts/lean-probes/README.md)).
-
-The route, for whoever takes it: `ofRowLens` drops trailing zeros (the list is sorted
-descending, so zeros are exactly a suffix), and dropping zeros does not change a sum.  So
-the missing lemma is
-
-    `(YoungDiagram.ofRowLens w hw).rowLens.sum = w.sum`   (no positivity hypothesis)
-
-and it belongs upstream of this file, next to `card_cells_eq_rowLens_sum`.  The corpus's
-`PartitionOfComposition.colLen_ofComposition` gives a second, column-side route via the
-identity `l.sum = Σ_m l.countP (m < ·)`, should the row side prove awkward.
-
-This is recorded rather than attempted because it is a general `YoungDiagram` lemma with a
-real Mathlib gap behind it, not a step of the Garnir argument — and a rushed proof of it at
-the end of a long session is exactly the kind of thing this corpus asks agents not to
-produce.
--/
+This is the composition the whole file exists for: `garnirShape_lexGt` gives a lex-greater
+shape, `card_garnirShape` puts it at the same size, and `lexGtOn` is where 3.14's outer
+induction lives. -/
+theorem lexGtOn_garnirPartOf (h : (i + 1, j) ∈ μ) :
+    QOU.BraidKnot.PartitionLexWellFounded.lexGtOn μ.cells.card
+      (garnirPartOf h) ⟨μ, rfl⟩ :=
+  garnirShape_lexGt h
 
 end QOU.BraidKnot.GarnirShapeCard

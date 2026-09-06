@@ -1,5 +1,5 @@
 import QOU.Basic
-
+import QOU.BraidKnot.DressedParticle
 
 /-!
 # QOU.BraidKnot.DressedParticle
@@ -8,69 +8,38 @@ A dressed particle is the codomain of a dressing morphism
 `P_bare → P_dressed` in the confinement category. Dressings compose
 via shell concatenation; stripping is not in general invertible.
 
+The canonical structure lives in `QOU.BraidKnot.DressedParticle` (imported
+above), which the `.ts` manifest's `lean.ref` resolves to. This content-extract
+file confirms the canonical declarations are in scope rather than shadowing
+them with re-declarations (AGENTS.md §0a no-shadowing-stubs).
+
+**This file previously shadowed that library module with a weaker copy.** It
+declared its own `BareTy`, `ShellTy` and a plain `DressedParticle` whose
+`level` was a **free field**, plus
+`axiom DressedParticle.level_canonical_under_bare` asserting that two records
+sharing a `bare` core share a `level`. That axiom was **false** — the fields
+were independent — and its own docstring said so: *"Pending a structure
+refactor carrying canonicity as a proof field."*
+
+The library had already done that refactor. Its `DressedParticle` carries
+`shell_on_bare` and `level_preserved` as **proof fields**, and proves
+`dressing_composes` from them with no axiom. So nothing is lost by deleting the
+shadow: the composition result the axiom was propping up is stronger in the
+library, and reaches this block by resolution. Bean `qou-i6u4`.
+
 LaTeX: `\label{def:dressed-particle}`
 -/
 
 namespace QOU.BraidKnot
 
-universe u
-
-/-- Concrete bare-particle type.  Carries the proton number and a
-    strand count for the bare braid representation; richer
-    realisations live in sibling files. -/
-structure BareTy where
-  /-- Proton number `Z`. -/
-  Z : ℕ
-  /-- Strand count `n₀` of the bare braid representation. -/
-  n_0 : ℕ
-  deriving Repr
-
-/-- Concrete electron-shell type.  Carries a principal quantum number
-    `n` and the electron count in the shell. -/
-structure ShellTy where
-  /-- Principal quantum number of the shell. -/
-  principal : ℕ
-  /-- Electron count occupying the shell. -/
-  electrons : ℕ
-  deriving Repr
-
-/-- **Dressed particle.** Codomain of a dressing morphism; carries
-    a bare-particle core, a shell record, and the composite Markov
-    class of `ι(K_bare) · W_bind` in `H_{A+Z}(q)`. -/
+-- Witness that the canonical declarations are in scope (no re-declaration).
+-- canonical decls: QOU.BraidKnot.DressedParticle, QOU.BraidKnot.dressing_composes
 -- Ref: [manuscript] braids-and-knots/dressed-particle
-structure DressedParticle where
-  /-- Bare nuclear particle. -/
-  bare : BareTy
-  /-- Electron shell attached to `bare`. -/
-  shell : ShellTy
-  /-- Composite name (e.g. `[He]`, `[Ne]`). -/
-  compositeName : String
-  /-- Confinement level ℓ of the composite particle. -/
-  level : ℕ
-  /-- Total strand count `n₀ + Z`. -/
-  strandCount : ℕ
+example (D : DressedParticle) : D.composite.level = D.bare.level :=
+  D.level_preserved
 
-/-- **External axiom (manuscript braids-and-knots/dressed-particle):
-    the `level` field of `DressedParticle` is canonically determined
-    by the `bare` field via the dress-composition identity
-    `dress_{S₂} ∘ dress_{S₁} = dress_{S₁ ⊕ S₂}`.**
-
-    Encodes the structural invariant that two DressedParticle
-    records sharing a `bare` core have the same `level`.  Pending
-    a structure refactor carrying canonicity as a proof field. -/
--- Ref: [manuscript] braids-and-knots/dressed-particle
-axiom DressedParticle.level_canonical_under_bare :
-    ∀ (P₁ P₂ : DressedParticle),
-      P₁.bare = P₂.bare → P₁.level = P₂.level
-
-/-- Dressings compose: `dress_{S₂} ∘ dress_{S₁} = dress_{S₁ ⊕ S₂}`
-    whenever `S₁ ⊕ S₂` remains SDP-feasible. -/
--- Ref: [manuscript] braids-and-knots/dressed-particle
-theorem dressComposition
-    (P₀ P₁ P₂ : DressedParticle)
-    (h₀₁ : P₁.bare = P₀.bare)
-    (h₁₂ : P₂.bare = P₁.bare) :
-    P₂.level = P₀.level :=
-  DressedParticle.level_canonical_under_bare P₂ P₀ (h₁₂.trans h₀₁)
+example (D₁ D₂ : DressedParticle) (h_chain : D₁.composite = D₂.bare) :
+    D₂.composite.level = D₁.bare.level :=
+  dressing_composes D₁ D₂ h_chain
 
 end QOU.BraidKnot

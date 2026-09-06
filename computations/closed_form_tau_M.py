@@ -443,9 +443,44 @@ def compute_tau_M_nucleon_H3(
     nucleon: Literal["p", "n"],
     q_val: mp.mpf,
     dps: int = 50,
+    *,
+    intra_order: Literal["borromean", "grouped"] = "borromean",
 ) -> mp.mpf:
     """tr_M^3(𝓑_nucleon, q) — H_3 Markov trace of the canonical
     proton or neutron braid via the y_λ · χ_λ pipeline.
+
+    ⚠ **ORDERING CORRECTED 2026-09-06** (bean `qou-y2o7`, owner decision).
+    Until now this built its own nucleon word as *all gen 0, then all gen 1* —
+    the **grouped** ordering — and it did so because it used
+    `chi_monotone_transfer.chi_all_lambda`, the monotone-ONLY kernel. The
+    2026-09-05 ruling (`qou-hu1f`) makes the canonical intra-nucleon core
+    **borromean**, `(σ₀σ₁⁻¹)³`, which is non-monotone by construction:
+
+        grouped   gen sequence [0,0,0,0,0,0,0,1,1,1,1]   τ_p 1.1457596924573009
+        canonical gen sequence [0,1,0,1,0,1,0,0,1,0,0]   τ_p 0.6293284022029219
+
+    So this was not a stale value a re-run would fix — the function *could not
+    express* the canonical word while it used that kernel. It satisfied the
+    kernel's precondition by building the wrong braid, and therefore never
+    raised: it returned a plausible 50-dps number in the superseded ordering.
+    That silence is why three separate sweeps missed it (the `qou-hu1f` witness
+    sweep, `binding_canonical`, and `qou-cvky`'s population of files that raise
+    on a non-monotone word).
+
+    `intra_order="grouped"` reproduces the old word exactly, for producers that
+    must reproduce a grouped-era artifact. It is a **historical escape hatch,
+    not a choice**: the default is the ruling, and a caller passing `grouped`
+    should say why at its call site.
+
+    Compute path:
+      1. Take the canonical word from `mass_at_3A_proper.atom_braid_word_3A`
+         (or, under `intra_order="grouped"`, rebuild the legacy
+         `_PROTON_G0/G1` chain), carrying `d` through unchanged.
+      2. Sum y_λ(q) · χ_λ(word) over partitions of 3 (= 3 partitions),
+         with χ via `chi_general_word.chi_all_lambda_any`.
+
+    At mpfr-50-dps this is cheap (sub-second per nucleon, no H_n>3
+    machinery involved).
 
     Centralised helper for the H_3 building blocks consumed by
     `closed_form_tau_M(Z, N, q, tau_p, tau_n)`.  Replaces three
@@ -455,14 +490,7 @@ def compute_tau_M_nucleon_H3(
       - `tau_M_proton_closed_form_phase5l1.py`
     (last two via thin wrappers; the verification script now imports).
 
-    Compute path:
-      1. Take the _PROTON_G0/G1 (or _NEUTRON_G0/G1) chain as (c, d, gen),
-         carrying `d` through unchanged.
-      2. Sum y_λ(q) · χ_λ(word) over partitions of 3 (= 3 partitions),
-         with χ via the d-preserving `chi_monotone_transfer.chi_all_lambda`.
-
-    At mpfr-50-dps this is cheap (sub-second per nucleon, no H_n>3
-    machinery involved).
+    (The compute path is stated above, under the ordering correction.)
 
     🛑 **This used to marshal through `marshal_to_chi_lambda_braid` and was
     WRONG by 15.3 % (proton) / 27.3 % (neutron)** — fixed 2026-08-26, bean
@@ -499,17 +527,14 @@ def compute_tau_M_nucleon_H3(
     # closed_form_tau_M is itself imported by hecke_characters.
     from hecke_characters import partitions_of
     from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric
-    from chi_monotone_transfer import chi_all_lambda
-    from hecke_core import (
-        _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
-    )
+    from chi_general_word import chi_all_lambda_any
 
-    if nucleon == "p":
-        g0, g1 = _PROTON_G0, _PROTON_G1
-    elif nucleon == "n":
-        g0, g1 = _NEUTRON_G0, _NEUTRON_G1
-    else:
+    if nucleon not in ("p", "n"):
         raise ValueError(f"nucleon must be 'p' or 'n', got {nucleon!r}")
+    if intra_order not in ("borromean", "grouped"):
+        raise ValueError(
+            f"intra_order must be 'borromean' (canonical) or 'grouped' "
+            f"(historical), got {intra_order!r}")
 
     if dps < 50:
         raise ValueError(
@@ -517,19 +542,42 @@ def compute_tau_M_nucleon_H3(
             f"the character path is calibrated at 50+ dps."
         )
 
-    # The chain is (c, d, gen) and MONOTONE (all gen 0, then all gen 1),
-    # which is what `chi_all_lambda` requires. `d` is carried through as
-    # mpf: it IS the crossing, and dropping it is the defect this function
-    # used to have (see the note above).
-    word = [(mp.mpf(str(c)), mp.mpf(str(d)), 0) for c, d in g0] + \
-           [(mp.mpf(str(c)), mp.mpf(str(d)), 1) for c, d in g1]
+    q_mp = mp.mpf(q_val)
+    if intra_order == "borromean":
+        # The word comes FROM ITS PRODUCER. That is the substance of this fix:
+        # a future ordering ruling now reaches this function by changing one
+        # default in `atom_braid_word_3A`, instead of silently not reaching it.
+        from mass_at_3A_proper import atom_braid_word_3A
+        word = atom_braid_word_3A(*((1, 0) if nucleon == "p" else (0, 1)),
+                                  q=q_mp)
+    else:
+        # HISTORICAL. The pre-2026-09-05 word, rebuilt from the hecke_core
+        # chains exactly as this function used to build it unconditionally:
+        # (c, d, gen) with all gen 0 then all gen 1. `d` is carried through as
+        # mpf — it IS the crossing, and dropping it is the defect this
+        # function used to have (see the marshalling note above).
+        from hecke_core import (
+            _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
+        )
+        g0, g1 = ((_PROTON_G0, _PROTON_G1) if nucleon == "p"
+                  else (_NEUTRON_G0, _NEUTRON_G1))
+        word = [(mp.mpf(str(c)), mp.mpf(str(d)), 0) for c, d in g0] + \
+               [(mp.mpf(str(c)), mp.mpf(str(d)), 1) for c, d in g1]
 
+    # `chi_all_lambda_any`, not `chi_monotone_transfer.chi_all_lambda`: the
+    # canonical word is NON-MONOTONE and the monotone transfer cannot accept
+    # it. Same signature; dispatches on the word's own generator sequence, so
+    # the grouped branch above still takes the monotone route. At H_3 the
+    # general path costs nothing (d_λ ≤ 2) and is in fact ~290x FASTER here —
+    # 0.0023 s against 0.669 s — because it needs no transfer set-up at this
+    # size. Same routing `qou-cvky` applied to its 11 monotone-kernel callers.
+    #
     # `q=q_val` explicitly: the trace and the representation are then built
     # at ONE q. The previous implementation classified crossing signs against
     # the module-level `q_parameter.Q` while tracing at the caller's `q_val`
     # — a pin straddle that was harmless only because every caller happened
     # to pass the same value.
-    chi = chi_all_lambda(word, 3, dps=dps, q=mp.mpf(q_val))
+    chi = chi_all_lambda_any(word, 3, dps=dps, q=q_mp)
     total = mp.mpf(0)
     for lam in partitions_of(3):
         y = y_lambda_wenzl_bridge_numeric(lam, q_val, dps=dps)

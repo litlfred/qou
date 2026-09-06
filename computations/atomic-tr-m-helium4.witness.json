@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T03:52:19.152169+00:00",
-  "commitSha": "0867162ff142601c4422eb590dc81f22004454e6",
+  "computedAt": "2026-09-06T11:08:39.387551+00:00",
+  "commitSha": "1f127a1418e728ec762fc4f0fa95ac2488907ae9",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "atomic-tr-m-helium4",
   "scriptFile": "atomic_tr_m_helium4.py",
-  "scriptHash": "6cf1aa422cf6",
-  "scriptCommitSha": "d9459c9a8376d62350b1a1d9ce36b59e8698f755",
+  "scriptHash": "ed8a8f1df9d1",
+  "scriptCommitSha": "14fcd89825149a738bc421224299aaefbb344419",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,11 +40,12 @@
       "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   },
-  "convention_status": "DEPRECATED_DISJOINT — value below uses the disjoint-product convention (44 crossings, no interface) which is empirically wrong per PR #564 audit. Canonical word atom_braid_word_3A(2,2) has 47 crossings with 3 interfaces (pp, pn, nn). Canonical |tr_M(⁴He)| at H_12 via the Wenzl bridge is intractable with current Python mpmath (p(12)=77 partitions, max dim 7700, ~2×10¹³ ops per partition × 47 crossings); needs a Rust kernel with rayon parallel partitions or a categorical reduction via Wenzl 1988 LR branching. DO NOT use for mass predictions.",
+  "convention_status": "CANONICAL as of 2026-09-06 (bean qou-hft3). The published value is arm (C): the canonical word atom_braid_word_3A(2,2), 47 crossings with 3 interfaces (pp at generator 2, pn at 5, nn at 8), evaluated through tr_M_via_wenzl_bridge_mpfr in ~17 s. Cross-checked against markov_trace_canonical -- a structurally independent Markov-axiom reducer -- at relative 1e-30. Arms (A) disjoint-product and (B) direct recursion are RETAINED but NON-CANONICAL: both trace the 44-crossing disjoint word with no interfaces, and they disagree by a factor of 5.942, the same failure of the disjoint-product identity the deuteron showed at ~5 (PR #564).",
+  "intractability_claim_superseded": "2026-09-06: 77 -> 7 partitions, max dim 7700 -> 297, ~17 s. See qou-fq0f.",
   "audit_reference": "AUDIT-DEEP-2026-05.md §3.3a (P4″) + convention audit PR #564",
   "pr": "#564",
   "precision": "mpfr_50dps_disjoint_only",
-  "method": "disjoint_product",
+  "method": "canonical_h12_wenzl_bridge",
   "q_0_50dps": "1.10997858275138080759166909561076887987449912187357763605672",
   "results": [
     {
@@ -102,9 +103,9 @@
         -10
       ],
       "braid_word_str": "σ₁⁷σ₂⁴ · σ₄⁷σ₅⁴ · σ₇⁶σ₈⁴σ₇⁻¹ · σ₁₀⁶σ₁₁⁴σ₁₀⁻¹",
-      "tr_M_at_q0_50dps": "1.28078315152864641063633786713365184627591156910051690838755",
-      "abs_tr_M_at_q0_50dps": "1.28078315152864641063633786713365184627591156910051690838755",
-      "method_used": "disjoint_product",
+      "tr_M_at_q0_50dps": "0.0112374176597674215641995493744106072696626960812612827787745",
+      "abs_tr_M_at_q0_50dps": "0.0112374176597674215641995493744106072696626960812612827787745",
+      "method_used": "canonical_h12_wenzl_bridge",
       "disjoint_product": {
         "formula": "|tr_M(p)|² · |tr_M(n)|²",
         "abs_tr_p_50dps": "1.14575969245730086968908159577411930594372806194352738498820",
@@ -114,11 +115,34 @@
       },
       "direct_recursion": {
         "engine": "markov_trace_recursive.markov_trace_of_word",
-        "budget_sec": 480.0,
-        "elapsed_sec": 480.00026202201843,
-        "abs_tr_M_50dps": null,
-        "error": "timeout_after_480s",
-        "matches_disjoint_product_within_1ppb": null
+        "budget_sec": "480.000",
+        "elapsed_sec": "14.072",
+        "abs_tr_M_50dps": "7.610469960740113589807485514743620007131179542865042249926843872075935",
+        "error": null,
+        "matches_disjoint_product_within_1ppb": false
+      },
+      "canonical_h12_wenzl_bridge": {
+        "engine": "tr_m_wenzl_bridge_mpfr.tr_M_via_wenzl_bridge_mpfr",
+        "word": "mass_at_3A_proper.atom_braid_word_3A(2, 2)",
+        "word_length": 47,
+        "interfaces_at_generators": [
+          2,
+          5,
+          8
+        ],
+        "abs_tr_M_50dps": "0.0112374176597674215641995493744106072696626960812612827787745",
+        "elapsed_sec": "16.918",
+        "error": null,
+        "note": "THE canonical |tr_M(4He)|. Cross-checked against markov_trace_canonical (binding-canonical.witness.json, a structurally independent Markov-axiom reducer, not this bridge) at relative 1e-30 -- the Schur-Weyl identity sum_lambda y_lambda chi^lambda = tr_M holding on the canonical word, which is precisely the test the disjoint word below fails by a factor of ~5. Reachable at all only because taking the Wenzl row cap (qou-fq0f) brought H_12 to ~17 s."
+      },
+      "NON_CANONICAL_ARMS_DISAGREE": {
+        "bean": "qou-hft3",
+        "word": "HELIUM4_WORD (disjoint, 44 crossings, no interfaces)",
+        "disjoint_product": "1.28078315152864641063633786713365184627591156910051690838755",
+        "direct_recursion": "7.610469960740113589807485514743620007131179542865042249926843872075935",
+        "relative_difference": "4.94204409361321564408681659101349277371149654027125528402685224161547",
+        "authoritative_method": "canonical word atom_braid_word_3A(2,2) via tr_M_via_wenzl_bridge_mpfr",
+        "note": "Both arms trace the DISJOINT word, which omits the three inter-nucleon interfaces, so neither is the canonical helium-4 trace regardless of whether they agree. The direct recursion had never completed inside the budget before 2026-09-06, so this was never measured -- the previously recorded `null` meant 'timed out', not 'agreed'. The measured factor of 5.94 matches the ~5 the deuteron showed for the same reason. Superseded as the published value by canonical_h12_wenzl_bridge above."
       },
       "historical_K_comparison": {
         "registry_status": "REGISTRY_PHASE_3B in joint_tower_sdp_solver_v2.py covers p, n, D, T, ³He but NOT ⁴He.  The literature identification (Borromean / B_3² in B_3) is recorded for future cross-checks but is not used here — the disjoint-product extension on H_12 is sufficient for the leading-order ρ_K ansatz of P4″.",

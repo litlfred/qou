@@ -934,6 +934,15 @@ durable cross-container preservation lives on **orphan branches**
 `.lake/` (ephemeral) or `../mathlib4` (parent-tree, often persists but not
 guaranteed).
 
+> **🛑 CORRECTED 2026-09-06 — the live restore is `scripts/lean-cache-restore.sh`,
+> and neither script named below exists.** `setup-lean-toolchain.sh:251` sets
+> `FETCH_SCRIPT="$REPO_ROOT/scripts/lean-cache-restore.sh"`; the string
+> `lake-cache-fetch` appears nowhere in it, and `ls scripts/lake-cache-fetch.sh`
+> and `scripts/lake-cache-fetch-multi.py` both fail. The restore does happen on
+> SessionStart — under a different name than this section gives. Use
+> `scripts/lean-cache-restore.sh`. The two paths below are kept as design
+> record; **do not try to run them.**
+>
 > **Two restore paths now wired end-to-end.** Pick the one that
 > matches the branch format:
 >
@@ -962,7 +971,17 @@ guaranteed).
 > end-to-end on Qq: 13 oleans round-tripped through the produce →
 > push → fetch → restore → regen cycle.
 >
-> **SEED — `scripts/lake-cache-produce.py` (PR #1957).** Writes a
+> **🛑 `scripts/lake-cache-produce.py` DOES NOT EXIST in the tree (checked
+> 2026-09-06).** Everything in this block describes a script that is not there:
+> `ls scripts/lake-cache-produce.py` fails, and so does every command below it.
+> The per-package cutover it describes has not happened; the live seeder is
+> `scripts/lean-olean-cache-seed.sh` (monolithic chunked-tgz), documented at
+> §PRESERVE THE BUILD. Kept rather than deleted because the design is the one a
+> future cutover would follow — but do not try to run it. Likewise
+> `lake-cache-fetch-multi.py` and `lake-cache-fetch.sh`: verify a script exists
+> before building a plan on it.
+>
+> **SEED (ABSENT — see above) — `scripts/lake-cache-produce.py` (PR #1957).** Writes a
 > separate orphan branch per package (`lake-cache/<pkg>-v4-24-0`)
 > with per-file `.olean.xz` blobs + a `cache-index.json` master-index:
 >
@@ -997,7 +1016,101 @@ main working tree is never disturbed — do NOT `git switch --orphan` in the
 main tree (it leaves every file untracked and traps you with "untracked
 working tree files would be overwritten" on switch-back; Copilot #1857).
 
-> **Reseeded 2026-07-02:** `lake-cache/qou-v4-24-0` now holds a near-complete
+> **🗄️ RESEEDED 2026-09-06 — this is the current production seed.**
+> `lake-cache/qou-v4-24-0` @ `1c496980587`, seeded from a full
+> **`lake build QOU UGB Fred2005`** at the workspace root (6484 jobs, **0
+> errors**), so every olean carries the `.trace` Lake needs to honour it:
+>
+> | | oleans | traces |
+> |---|---|---|
+> | mathlib | 3471 | **3471** |
+> | QOU | 2702 | **2702** |
+> | UGB | 28 | 28 |
+> | Fred2005 | 1 | 1 |
+>
+> 32 416 files, 20 parts (~1.8 GB), **100 % trace coverage**.
+>
+> **Verified by round-trip, not by the seeder's own output.** The pushed parts
+> were streamed back through `tar tzf -` (32 416 in = 32 416 out, exit 0), and
+> three oleans extracted *from the branch* hash byte-identical to local —
+> `Mathlib/Tactic`, `Mathlib/Data/Real/Basic`, and `QOU/MassTheory/AtomWordShadow`.
+> Rehearsed first on `lake-cache/qou-v4-24-0-test`, which is kept as the record.
+>
+> **How to reproduce it:**
+>
+> ```bash
+> lake build QOU UGB Fred2005                                  # traced tree
+> scripts/lean-content-mathlib-gap.sh --build                  # ← do not skip
+> # measure the OUTGOING branch first — there is no flag for this, and once
+> # you force-push, its head is unreachable (GitHub refuses arbitrary-sha
+> # fetches). Record these counts before replacing them:
+> git fetch --depth=1 origin lake-cache/qou-v4-24-0
+> C=$(git rev-parse FETCH_HEAD)
+> git ls-tree --name-only "$C" | grep '^lake-oleans\.tgz\.part' | sort \
+>   | while read -r p; do git show "$C:$p"; done | tar tzf - | tee /tmp/outgoing.txt \
+>   | grep -c '\.olean$'
+> SEED_PAPER=1 CACHE_BRANCH=lake-cache/qou-v4-24-0 \
+>   scripts/lean-olean-cache-seed.sh --push
+> ```
+>
+> **🛑 The gap step is not optional, and a seed without it is structurally
+> incomplete.** `lake build QOU UGB Fred2005` builds the dependency cone of the
+> three *libraries*. Content-block `.lean` files live **outside** the package,
+> so anything they import and the libraries do not is never built, never in the
+> tree, and therefore never in the cache — a restoring agent's content sweep
+> then reports REDs that are cache gaps wearing the costume of corpus defects.
+>
+> Measured 2026-09-06 (bean `qou-tpdg`, PR #6827): content blocks import **252**
+> distinct Mathlib modules and **4** were missing —
+> `Analysis.Complex.UpperHalfPlane.Basic`, `Analysis.Real.Pi.Bounds`,
+> `RingTheory.HopfAlgebra.Basic`, `Topology.FiberBundle.Basic` — and those 4
+> accounted for **all 8 REDs** of a 938-file sweep. The reseed earlier that same
+> day inherited the gap, because its recipe was `lake build QOU UGB Fred2005`
+> and nothing else. `lean-content-mathlib-gap.sh` closes it, and goes through
+> `lake` rather than `lean -o` so the oleans carry the `.trace` the coverage
+> guard needs.
+>
+> **🛑 CORRECTION to what this note said on 2026-09-06.** It claimed *"the
+> documented path does not work — nothing in this repo writes `$BUILT_FILE`"*,
+> and told you to reconstruct that file from the build log. **That was wrong,
+> and it was wrong because I quoted a stale comment instead of reading the
+> code.** `build-missing-mathlib-oleans.sh` does write it: `: > "$BUILT_FILE"`
+> at line 53, `echo "$mod" >> "$BUILT_FILE"` at line 70. The PR #4705
+> producer/consumer mismatch is fixed; only the seeder's comment about it is
+> stale.
+>
+> What was genuinely missing is narrower: that producer compiles with `lean -o`,
+> which writes **no `.trace`**, so the `$BUILT_FILE` it produces lists modules
+> whose oleans fail the 90 % trace guard — correctly, since Lake would rebuild
+> and evict them on restore. Nothing wrote a `$BUILT_FILE` from a **traced**
+> build. The seeder now derives one itself from paired `.olean`/`.trace` files
+> when the file is absent, so a plain `lake build` is all you need and the
+> manual reconstruction above is retired. Deriving from the trace side makes the
+> guard pass by construction; it also found **3472** modules where the
+> log-scrape found 3471, because Lake had cached one rather than rebuilding it.
+>
+> **Do NOT reach for `SEED_ALLOW_NO_MATHLIB=1`, and do not run `SEED_PAPER=1`
+> alone against the production branch.** `SEED_PAPER` adds
+> `content/*/lean/.lake/build` — the paper *build output*, not any mathlib — so
+> on its own it force-pushes a **mathlib-less** branch over the working one, and
+> the next agent's restore then finds no Mathlib and concludes Lean is
+> unavailable. The `n_ml` guard is the only thing standing between that and
+> production; it was right to refuse.
+>
+> **🛑 What was NOT measured: the branch this replaced.** Its head
+> `a2bf415e7a7` was force-pushed away before being inspected and is now
+> unreachable (GitHub refuses arbitrary-sha fetches). So no before/after
+> comparison exists, and an earlier claim of mine — that the predecessor "was
+> built lean-direct and carried the trace gap" — is **withdrawn as unsupported**;
+> AGENTS.md records the 2026-08-31 seed at 6170/6172 oleans with 100 % paired
+> traces, which contradicts it. The 0-trace root mathlib this container booted
+> with is real, but its provenance is unknown. **Measure the outgoing branch
+> before the next reseed** — stream its parts through `tar tzf -` and record the
+> counts here first.
+>
+> Superseded record follows.
+>
+> **Reseeded 2026-07-02:** `lake-cache/qou-v4-24-0` then held a near-complete
 > library build @ main `c3a94315` — **859 QOU oleans (96% of the library;
 > the ~38 misses are the known pre-existing red files + their dependents),
 > 19 UGB, 1 Fred2005, and 2962 mathlib oleans (the RepThy/Wedderburn addon

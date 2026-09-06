@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T14:21:27Z
-updated_at: 2026-08-30T14:21:41Z
+updated_at: 2026-09-06T12:06:42Z
 ---
 
 Measured 2026-08-30 on branch claude/srvu-drain-a-2026-08-30, no QOU_* env
@@ -34,3 +34,46 @@ Surfaced by re-running two producers under bean qou-srvu:
 
 Not edited in that PR because AGENTS.md is contested across sibling branches
 and a one-line doc fix there would conflict with four concurrent srvu agents.
+
+## Still live, and it cost a PR body (2026-09-06)
+
+Re-measured today, unchanged: `COMPUTE_DPS 70 OUTPUT_DPS 60 GUARD 10`.
+
+Concrete cost of leaving the AGENTS.md row stale: PR #6937 (window transfer
+speedup, merged) states "65 dps" twice in its body and names "the 50-dps
+floor" as the target of the one remaining optimisation lever. Both came from
+reading the stale L1 row rather than the module. The wall-clock measurements
+in that PR are unaffected, but the *size of the unexplored lever* is
+understated: 70 -> 60 is more headroom than 65 -> 50.
+
+This is the second documented instance of the stale row propagating into a
+durable artifact. It is a three-number edit to one table row.
+
+## DRAINED — PR #6945 (2026-09-06)
+
+Four sites, all fixed. The population is much smaller than the symptom count,
+and recording that is the point:
+
+| | count |
+|---|---|
+| files matching `65 dps` / `50 dps` | ~60 |
+| **actual defects (a claim about the live DEFAULT)** | **4** |
+
+The ~56 non-defects are 'computed at 50 dps' describing a SPECIFIC
+computation — correct, and it STAYS correct, because 50 is the floor and the
+default moved above it. Plus filenames (`atomic_tr_m_mpfr_50dps.py`),
+deliberate explicit `mp.dps` settings, and dated audit records.
+
+The four:
+- `AGENTS.md` L1 row
+- `docs/precision-goals.md` (the code block AND the prose beneath it)
+- `content/.../appendix-mass-binding-algorithms/mba-sidecar-witness-json-pipeline.md`
+- `content/.../appendix-mass-binding-algorithms/mba-step08-jet-prefix.md`
+
+The last two matter most: that appendix is the maintenance contract AGENTS.md
+requires to stay in sync with the actual compute, and a docs-only sweep would
+not have reached them.
+
+Each site now carries the measuring command rather than only a number, and the
+AGENTS.md row names the retired figures explicitly so the next agent who finds
+65/50 in a dated audit doc does not 'correct' it back.

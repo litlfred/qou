@@ -1,0 +1,400 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2108.09349v2",
+ "source": {
+  "file": "2108.09349v2.pdf",
+  "sha256": "4c732bfcbf3dfb163acf30a0f70a2bc464352bc3c53d23623994e454baf83d04",
+  "bytes": 3374335,
+  "pages": 27,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2108.09349",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "22 Jun 2022"
+  },
+  "doi": null,
+  "title": "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM",
+  "authors_raw": null,
+  "title_lines": [
+   "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS",
+   "BARBARA NIMERSHIEM"
+  ],
+  "abstract": "We construct topological triangulations for complements of ( \u22122, 3,n )-pretzel knots and links with n\u2265 7. Following a procedure outlined by Futer and Gu\u00b4 eritaud, we use a theorem of Casson and Rivin to prove the constructed triangulations are geometric. Futer, Kalfagianni, and Purcell have shown (indirectly) that such braids are hyperbolic. The new result here is a direct proof.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20220624003641Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Organization",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Ideal triangulations",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Forming a three-stranded full twist",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "A foundational ideal triangulation",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Adding layers to extend to p=2 and 3",
+   "page": 7,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "An ideal triangulation for any p",
+   "page": 10,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Equivalence classes of edges in the triangulation",
+   "page": 10,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "Angle structures and the Casson-Rivin program",
+   "page": 11,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Angle structures",
+   "page": 11,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Volumes of angle structures",
+   "page": 13,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The Casson-Rivin program",
+   "page": 15,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Symmetries of angle structures",
+   "page": 16,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "The space of positive angle structures is nonempty",
+   "page": 16,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The triangulations are veering",
+   "page": 16,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Coordinates for the space of positive angle structures",
+   "page": 17,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "A symmetry of the space of angle structures",
+   "page": 18,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "The maximal volume occurs at a positive angle structure",
+   "page": 20,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Extending the construction",
+   "page": 23,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Visualizing triangulations of 2-bridge link complements",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3752,
+   "n_words": 632
+  },
+  {
+   "id": "sec-001-organization",
+   "number": null,
+   "title": "Organization",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 442,
+   "n_words": 76
+  },
+  {
+   "id": "sec-002-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 1069,
+   "n_words": 169
+  },
+  {
+   "id": "sec-003-2-ideal-triangulations",
+   "number": "2",
+   "title": "Ideal triangulations",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2394,
+   "n_words": 438
+  },
+  {
+   "id": "sec-004-21-forming-a-three-stranded-full-twist",
+   "number": "2.1",
+   "title": "Forming a three-stranded full twist",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3381,
+   "n_words": 645
+  },
+  {
+   "id": "sec-005-22-a-foundational-ideal-triangulation",
+   "number": "2.2",
+   "title": "A foundational ideal triangulation",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 10,
+   "n_chars": 15500,
+   "n_words": 3093
+  },
+  {
+   "id": "sec-006-24-an-ideal-triangulation-for-any-p",
+   "number": "2.4",
+   "title": "An ideal triangulation for any p",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1596,
+   "n_words": 310
+  },
+  {
+   "id": "sec-007-25-equivalence-classes-of-edges-in-the-triangula",
+   "number": "2.5",
+   "title": "Equivalence classes of edges in the triangulation",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2371,
+   "n_words": 457
+  },
+  {
+   "id": "sec-008-3-angle-structures-and-the-casson-rivin-program",
+   "number": "3",
+   "title": "Angle structures and the Casson-Rivin program",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5487,
+   "n_words": 1024
+  },
+  {
+   "id": "sec-009-32-volumes-of-angle-structures",
+   "number": "3.2",
+   "title": "Volumes of angle structures",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 6049,
+   "n_words": 1184
+  },
+  {
+   "id": "sec-010-33-the-casson-rivin-program",
+   "number": "3.3",
+   "title": "The Casson-Rivin program",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1808,
+   "n_words": 306
+  },
+  {
+   "id": "sec-011-34-symmetries-of-angle-structures",
+   "number": "3.4",
+   "title": "Symmetries of angle structures",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 863,
+   "n_words": 161
+  },
+  {
+   "id": "sec-012-4-the-space-of-positive-angle-structures-is-none",
+   "number": "4",
+   "title": "The space of positive angle structures is nonempty",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 548,
+   "n_words": 94
+  },
+  {
+   "id": "sec-013-41-the-triangulations-are-veering",
+   "number": "4.1",
+   "title": "The triangulations are veering",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 3728,
+   "n_words": 634
+  },
+  {
+   "id": "sec-014-42-coordinates-for-the-space-of-positive-angle-s",
+   "number": "4.2",
+   "title": "Coordinates for the space of positive angle structures",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2075,
+   "n_words": 382
+  },
+  {
+   "id": "sec-015-43-a-symmetry-of-the-space-of-angle-structures",
+   "number": "4.3",
+   "title": "A symmetry of the space of angle structures",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 3991,
+   "n_words": 765
+  },
+  {
+   "id": "sec-016-5-the-maximal-volume-occurs-at-a-positive-angle",
+   "number": "5",
+   "title": "The maximal volume occurs at a positive angle structure",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 9327,
+   "n_words": 1751
+  },
+  {
+   "id": "sec-017-6-extending-the-construction",
+   "number": "6",
+   "title": "Extending the construction",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1198,
+   "n_words": 206
+  },
+  {
+   "id": "sec-018-appendix-a-visualizing-triangulations-of-2-bridg",
+   "number": null,
+   "title": "Appendix A. Visualizing triangulations of 2-bridge link complements",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 7373,
+   "n_words": 1426
+  },
+  {
+   "id": "sec-019-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 3406,
+   "n_words": 494
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 20,
+  "chars_total": 76358
+ }
+}

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T09:58:16.148353+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-06T06:52:45.724232+00:00",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "assertions": [
     {
       "name": "raw_observables_refuted_selector_is_phiq_tower",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 299,
+  "durationMs": 233,
   "computation": "spectral-selector-validate",
   "scriptFile": "spectral_selector_validate.py",
   "scriptHash": "4f0fee7138c9",
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -53,23 +53,23 @@
       1
     ],
     "raw_max_mu_dominant": [
-      3,
-      3
+      5,
+      1
     ],
     "y_weighted_contribution_dominant": [
       6
     ],
     "max_mu": {
       "(6,)": 1.5598701995641515,
-      "(5, 1)": 2.96026727508924,
-      "(4, 2)": 3.987402508563082,
-      "(4, 1, 1)": 3.776748499054993,
-      "(3, 3)": 4.688171603274197,
-      "(3, 2, 1)": 4.5419186258118955,
-      "(3, 1, 1, 1)": 2.799223192579893,
-      "(2, 2, 2)": 2.33260360794703,
-      "(2, 2, 1, 1)": 3.1721436234759506,
-      "(2, 1, 1, 1, 1)": 2.0747080415436097,
+      "(5, 1)": 1.6926006405948097,
+      "(4, 2)": 1.5140935078295032,
+      "(4, 1, 1)": 1.4756194203651307,
+      "(3, 3)": 1.2366251529960133,
+      "(3, 2, 1)": 1.3826427221803135,
+      "(3, 1, 1, 1)": 1.235347346571364,
+      "(2, 2, 2)": 1.3121476713316331,
+      "(2, 2, 1, 1)": 1.2120548236057103,
+      "(2, 1, 1, 1, 1)": 1.0341982801387204,
       "(1, 1, 1, 1, 1, 1)": 0.6768766834329379
     },
     "contribution": {
@@ -89,8 +89,8 @@
     "upstream_witness_hashes": [
       {
         "path": "chi-deuteron-h6-at-q0-50dps-matrix-m.witness.json",
-        "sha256": "18bf1ae789f3d7983bc30171808d2b879aa87ff3d2788d244d8d42f8be9c099b",
-        "size_bytes": 4651,
+        "sha256": "cec613cd351ad0a3b904ed87d7dac3d7bbc8c2e0f47443c18cdf75e3b9cc28eb",
+        "size_bytes": 4972,
         "commitSha": null,
         "scriptCommitSha": null,
         "computedAt": null
