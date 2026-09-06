@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-07-19T02:57:13Z
-updated_at: 2026-09-06T03:28:23Z
+updated_at: 2026-09-06T04:33:12Z
 ---
 
 ## Measured 2026-09-05 (branch claude/hecke-cyclicity-markov-2026-09-05, PR #6845)
@@ -129,3 +129,45 @@ consume.
 **Also fixed on `main` in the same PR:** `Tw.lean` and
 `BraidWordInvariance.lean` both asserted that *this corpus* has no exchange
 property. Both docstrings corrected.
+
+
+## 🛑 2026-09-06 — `exists_Tw_of_braidEquiv` is VACUOUS at the case it was written for
+
+Found while assessing what Matsumoto would actually buy. The conditional that
+this corpus has been offering as "the honest form of the deferral" **cannot be
+discharged**, so it reduces nothing.
+
+`BraidWordInvariance.exists_Tw_of_braidEquiv` takes as hypothesis
+`∀ u v : List B, π u = π v → BraidEquiv M u v` — over **all** words. Its own
+docstring flagged that as "stronger than Matsumoto" and offered the strength as
+a feature: *"what a total `Tw : W → H` needs"*.
+
+**It is not merely stronger; at `π := cs.wordProd` it is false.** A braid move
+swaps an alternating block of length `M i j` for one of length `M j i`, and a
+Coxeter matrix is symmetric, so braid-equivalence **preserves word length**. But
+`s_i² = 1` gives `π [i,i] = π []` with lengths `2` and `0`. Proved in
+`QOU/IwahoriHecke/TwFromMatsumoto.lean`:
+
+* `braidEquiv_length_eq` — braid-equivalence preserves length (given symmetry);
+* **`not_braidEquiv_hypothesis`** — the all-words hypothesis is false for any
+  Coxeter system with at least one generator.
+
+The theorem itself is fine as a statement about an abstract `π : List B → W`;
+what was wrong is the claim that it made the remaining gap exact. It made a gap
+nothing can fill.
+
+### The replacement, same file
+
+* **`exists_Tw_of_matsumoto`** — hypothesis = Matsumoto verbatim (two
+  **reduced** words with the same image are braid-equivalent); conclusion = a
+  `Tw : W → H(M,q)` agreeing with the word product on every **reduced** word.
+  Satisfiable, and it is what a `T_w` basis actually means — a basis is indexed
+  through reduced expressions, not arbitrary words. Uses Mathlib's
+  `exists_reduced_word'` for the choice (`redWord`).
+* `Tw_one_of_matsumoto` — `T_1 = 1`.
+
+Both sorry-free; `braidEquiv_length_eq` needs only `[propext]`.
+
+`BraidWordInvariance.lean`'s two misleading passages are corrected in the same
+PR (#6894). **Matsumoto itself is still open** — this changes which conditional
+the corpus offers, not whether the input exists.

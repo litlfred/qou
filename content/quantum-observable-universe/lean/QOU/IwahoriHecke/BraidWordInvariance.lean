@@ -27,10 +27,16 @@ property, and it was mine** (corrected 2026-09-06).
 every Coxeter system, sorry-free, off `strong_exchange` (Björner–Brenti Thm 1.4.3). What
 remains open is **deletion → Matsumoto**; the exchange property is not part of the gap.
 
-`exists_Tw_of_braidEquiv` below makes the dependency exact: **given** the group half as a
-hypothesis, the well-defined `T_w` follows, unconditionally and constructively-modulo-
-choice. That is the honest form of the deferral — a conditional theorem naming its
-hypothesis — rather than a class asserting the conclusion.
+`exists_Tw_of_braidEquiv` below is a conditional theorem naming its hypothesis rather than a
+class asserting the conclusion.
+
+🛑 **But do not read it as making the dependency exact — corrected 2026-09-06, and the earlier
+wording here was mine.** Its hypothesis quantifies over *all* words, and at the only
+instantiation anyone wants — `π := cs.wordProd` for a Coxeter system — that hypothesis is
+**false**, so the theorem is vacuous there. Braid moves preserve word length (a Coxeter matrix
+is symmetric), while `π [i,i] = π []` because `s_i² = 1`. Refuted in
+`QOU.IwahoriHecke.TwMatsumoto.not_braidEquiv_hypothesis`; the satisfiable replacement, stated
+against **reduced** words, is `TwMatsumoto.exists_Tw_of_matsumoto`.
 
 ## Relation to `QOU.IwahoriHecke.Tw`
 
@@ -145,9 +151,16 @@ is **Matsumoto's theorem**, which is a fact about `W` and is not proved anywhere
 corpus or in Mathlib. Everything else is discharged.
 
 Note the hypothesis is stated for *all* pairs of words with the same image, which is
-stronger than Matsumoto (that speaks only of *reduced* expressions). The stronger form is
-what a total `Tw : W → H` needs; a `Tw` defined only on reduced expressions requires the
-same argument relativised to a choice of reduced word, and the same missing input. -/
+stronger than Matsumoto (that speaks only of *reduced* expressions).
+
+🛑 **That extra strength is not a feature; it is fatal, and the sentence that used to stand
+here calling it "what a total `Tw : W → H` needs" was wrong.** On a Coxeter group the
+all-words hypothesis is refuted outright — see
+`QOU.IwahoriHecke.TwMatsumoto.not_braidEquiv_hypothesis`. The statement one can actually
+discharge is `TwMatsumoto.exists_Tw_of_matsumoto`, whose hypothesis is Matsumoto verbatim and
+whose `Tw` agrees with the word product on every **reduced** word. This theorem remains true
+as a statement about an abstract `π`; it is simply not applicable to the case it was written
+for. -/
 
 /-- **The `T_w` map exists as soon as the group half does.** If words with the same image
 in `W` are braid-equivalent, the word product descends to a well-defined function on `W`
