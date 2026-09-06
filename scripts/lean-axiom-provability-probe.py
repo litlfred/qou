@@ -142,8 +142,23 @@ def probe(path: pathlib.Path, name: str, start: int, end: int,
 # Both were converted to theorems on 2026-09-06, so they are read from the
 # commit before that.  They are listed SEPARATELY because the probe catches one
 # and not the other, and that asymmetry is the point.
+# Each row pins an IMMUTABLE COMMIT SHA, never a moving ref.
+#
+# The first version of this self-test read its fixtures from
+# `--selftest-rev`, defaulting to whatever the caller passed -- and that is
+# exactly the defect this branch had already fixed, hours earlier, in
+# `lean-axiom-degenerate-risk-audit.py`, whose self-test read the five
+# known-false SDP axioms from `origin/main` and went red the moment the merge
+# deleting them landed.  The same mistake was rebuilt here and surfaced the
+# same way (`SELFTEST FAIL: ... not parsed at <rev>`) as soon as the fixtures'
+# own axioms were converted.
+#
+# A pinned sha cannot rot: the axiom is in that commit forever.  The residual
+# risk is a shallow clone lacking the object, which reports SELFTEST ERROR
+# rather than silently passing.
 SELFTEST_PROVABLE = [
-    ("content/quantum-observable-universe/quantum-observable-universes/"
+    ("e6233b20bb~1",
+     "content/quantum-observable-universe/quantum-observable-universes/"
      "spectral-chart-correspondence.lean", "chart_glue_from_spectrum"),
 ]
 
@@ -165,9 +180,32 @@ SELFTEST_PROVABLE = [
 # The self-test asserts this one STAYS unprovable.  If a future tactic addition
 # catches it, the test fails and tells you to move the row up, so coverage can
 # never grow silently.
+# ASSERTED BLIND SPOTS, now TWO and of DIFFERENT KINDS.  Both are vacuous --
+# provable by hand in one line -- and this probe finds neither.
+#
+#  * `su2_emergence` needs a witness RECORD built field by field: after
+#    `⟨?sd, rfl⟩` the metavariable is a whole structure and unification cannot
+#    invent one.  `categorical_jet_prolongation` was later found by hand to be
+#    a second instance of that shape, so it recurs.
+#
+#  * `antipode_anti_hom` needs CASE-SPECIFIC UNFOLDING.  On its file's
+#    scalar-coefficient model `antipodeS = id` and `heckeMul` is real
+#    multiplication, so the anti-homomorphism identity collapses to
+#    `mul_comm` -- but both are plain `def`s with no `@[simp]`, so nothing
+#    unfolds them without being told which.  MEASURED on a minimal
+#    reproduction: `rfl`, `trivial`, `simp`, `simp_all`, `simp [mul_comm]`,
+#    `constructor <;> ring`, `decide` and `aesop` ALL fail, `aesop` reporting
+#    "made no progress".  Those tactics were added and then reverted: they
+#    cost runtime and caught nothing.  Knowing which definitions to unfold is
+#    case-specific, so this class is out of reach of a fixed tactic list
+#    rather than one tactic away.
 SELFTEST_KNOWN_MISS = [
-    ("content/quantum-observable-universe/quantum-observable-universes/"
+    ("e6233b20bb~1",
+     "content/quantum-observable-universe/quantum-observable-universes/"
      "su2-emergence.lean", "su2_emergence"),
+    ("24c6710ad5",
+     "content/quantum-observable-universe/braids-and-knots/"
+     "frobenius-antipode-lean-stub.lean", "antipode_anti_hom"),
 ]
 
 
@@ -176,10 +214,10 @@ def main() -> int:
     ap.add_argument("--root", default="content")
     ap.add_argument("--timeout", type=int, default=180)
     ap.add_argument("--filter", default="")
-    ap.add_argument("--selftest-rev", default="",
-                    help="revision holding the two known-vacuous axioms; when "
-                         "given, they are checked first and the probe aborts "
-                         "unless both come back provable")
+    ap.add_argument("--selftest", action="store_true", default=True,
+                    help="run the pinned-sha self-test first (default on); "
+                         "the probe aborts unless every fixture matches its "
+                         "recorded provable / blind-spot verdict")
     args = ap.parse_args()
 
     lean = shutil.which("lean")
@@ -193,21 +231,22 @@ def main() -> int:
               "scripts/lean-direct-env.sh first", file=sys.stderr)
         return 2
 
-    if args.selftest_rev:
+    if args.selftest:
         ok = True
-        for rel, name, want in ([(r, n, True) for r, n in SELFTEST_PROVABLE]
-                                + [(r, n, False) for r, n in SELFTEST_KNOWN_MISS]):
-            src = subprocess.run(["git", "show", f"{args.selftest_rev}:{rel}"],
+        for rev, rel, name, want in (
+                [(v, r, n, True) for v, r, n in SELFTEST_PROVABLE]
+                + [(v, r, n, False) for v, r, n in SELFTEST_KNOWN_MISS]):
+            src = subprocess.run(["git", "show", f"{rev}:{rel}"],
                                  capture_output=True, text=True)
             if src.returncode != 0:
-                print(f"  SELFTEST ERROR: cannot read {rel}@{args.selftest_rev}",
+                print(f"  SELFTEST ERROR: cannot read {rel}@{rev}",
                       file=sys.stderr); ok = False; continue
             tmpdir = pathlib.Path(rel).parent
             tf = tmpdir / f".selftest-{name}.lean"
             tf.write_text(src.stdout)
             found = [a for a in axioms_in(src.stdout) if a[0] == name]
             if not found:
-                print(f"  SELFTEST FAIL: {name} not parsed at {args.selftest_rev}",
+                print(f"  SELFTEST FAIL: {name} not parsed at {rev}",
                       file=sys.stderr); ok = False; tf.unlink(); continue
             n, s, e = found[0]
             good, _ = probe(tf, n, s, e, lean, lean_path, args.timeout)

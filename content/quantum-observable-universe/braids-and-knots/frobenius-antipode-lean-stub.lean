@@ -65,11 +65,23 @@ def heckeSigma (_n : ℕ) (_q : ℝ) (_i : ℕ) : HeckeAlgebra _n _q :=
 
     S(a · b) = S(b) · S(a).
 
-    Ref: [kassel1995] Quantum Groups, Ch. III. -/
+    Ref: [kassel1995] Quantum Groups, Ch. III.
+
+    Was an `axiom`; provable on this file's scalar-coefficient model,
+    where `antipodeS = id` and `heckeMul` is real multiplication of
+    trace coefficients -- hence commutative, so the anti-homomorphism
+    identity collapses to `mul_comm`.
+
+    As with `antipode_involution` below, read it as a property of the
+    model.  Anti-multiplicativity has content only where the algebra is
+    non-commutative and `S` is not the identity; on the basis-vector
+    Hecke model of `knot-eigenbasis-complete.lean` it is a real
+    statement that is not proved here. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2 Ch. III (antipode is an anti-homomorphism)
-axiom antipode_anti_hom (n : ℕ) (q : ℝ) (a b : HeckeAlgebra n q) :
+theorem antipode_anti_hom (n : ℕ) (q : ℝ) (a b : HeckeAlgebra n q) :
     antipodeS n q (heckeMul a b) =
-      heckeMul (antipodeS n q b) (antipodeS n q a)
+      heckeMul (antipodeS n q b) (antipodeS n q a) := by
+  simp [antipodeS, heckeMul, mul_comm]
 
 /-- **S(σ_i) = σ_i⁻¹**, where σ_i⁻¹ = σ_i - h·1 with h = q - q⁻¹.
 
