@@ -610,3 +610,35 @@ Two labels in it were also wrong in a way that made its output assert something 
 remains is that the terms it produces **descend** in `MurphyInductionMeasure.murphyLex` —
 which needs 3.12's algebra half, and hence 3.9 at basis level. `murphyLex_wellFounded` says
 such an induction terminates; it does not say the terms descend.
+
+### A measurement of the Lean sweep gate, taken in passing (2026-09-06)
+
+`prepare-merge-auto` now mandates `scripts/lean-library-sweep.py` for any branch touching
+`.lean`, over bare `lean`-direct, because the latter verifies against a **snapshot** of the
+olean cache. Running it on this branch produced two figures worth recording, both well
+outside what the docs lead an agent to expect:
+
+- **The dirty closure was 1288 modules**, against the **145** #6827 measured and the **74**
+  `AGENTS.md` records. It is not drift in the scripts — it is `main`'s Lean churn: the
+  closure is computed against *this container's* olean tree, and `main` had moved 26 commits
+  since the branch last rebased. **Budget by the closure, not by the documented time.**
+- At **45 minutes** it had reached **761 of 1288, every one `ok`, zero RED** — and had not
+  yet reached `QOU/BraidKnot/*`, which is alphabetically after `QOU/Archimedean/*`, so it
+  said nothing about this branch's own files. Throughput fell from ~64 modules/min to ~5 in
+  the `QOU/Archimedean/PauliWitness/*` block.
+
+Two operational notes for the next agent:
+
+1. **The gate as `main` carries it cannot run on a quota-constrained container.** It does a
+   2.3 GB `shutil.copytree` of the olean tree; on this container that hit `ENOSPC` and took
+   the whole session to **0 MB free**, at which point every command fails — including the
+   `rm` that would fix it. The fix (hardlink instead of copy: `du` reads 2.3 GB while `df`
+   does not move) is on **#6827**, unmerged. This run used that PR's script from `/tmp`,
+   uncommitted, rather than porting it and widening someone else's active scope.
+2. **Freeing space:** `content/quantum-observable-universe/lean/.lake/build/ir` is ~1.1 GB of
+   C intermediates from Lean's backend. `lean`-direct verification never reads them, and this
+   corpus never runs `lake` against a restored cache. Deleting it is the cheapest reclaim.
+
+Neither figure is a defect in the sweep — it did exactly what it claims, and 761/761 green is
+a real result about `main`. The point is that its *cost* is a function of how far the branch
+has fallen behind, and that is not what the recorded timings suggest.
