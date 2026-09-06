@@ -7,6 +7,7 @@ section_number: 4
 pages: 39-41
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 In this paper we have identiﬁed an inﬁnite family of asymptotic power series arising naturally
 in topological string theory, by considering the conifold free energies and “quantizing” the ﬂat

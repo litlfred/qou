@@ -7,6 +7,7 @@ section_number: 12
 pages: 41-42
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 In this section we discuss the relation between Ptolemy assi gnments and solutions to the gluing
 equations. The latter were invented by Thurston [ 27] to explicitly compute the hyperbolic structure

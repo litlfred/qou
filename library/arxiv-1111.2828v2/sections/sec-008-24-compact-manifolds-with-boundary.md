@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 11-11
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 ofˆc : H3(SL(n, C)) → C/4π2Z to a homomorphism
 (2.14) ˆc : H3(SL(n, C), N) → C/4π2Z,

@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 13-13
 source_pdf: 1401.5542v1.pdf
 source_sha256: f7cd278a274f37c5
+doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by theA-coordinates on"
 ---
 cusp. In this case, all edges are self edges, and T consists of a single edge ε1.
 Lemma 5.4. For any self edge ε, we have m1cε∈kρ.

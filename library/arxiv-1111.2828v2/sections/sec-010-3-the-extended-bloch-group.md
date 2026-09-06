@@ -7,6 +7,7 @@ section_number: 3
 pages: 11-12
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 We use the conventions of Zickert [ 29]; the original reference is Neumann [ 20].
 Deﬁnition 3.1. The pre-Bloch group P(C) is the free abelian group on C \ {0, 1} modulo the ﬁve
