@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T08:32:06Z
-updated_at: 2026-09-06T04:42:54Z
+updated_at: 2026-09-06T08:10:29Z
 ---
 
 Successor to qou-zrx2. c0(A) = 2^-A - 2^(1-2A) is DERIVED (Schur-Weyl + cycle count, ClassicalTraceFloor.lean). c1 = lim (Dtr - c0)/hbar_q is currently six MEASURED dyadic rationals (pp 19/8, pn 37/16, nn 9/4, T 163/64, 3He 85/32, 4He 259/128), entered into PairwiseChainLeadingOrder.lean as defs. Goal: (1) obtain them EXACTLY via laurent_q_trace.tr_M_atomic_lq (formal (z,h)-polynomial with LaurentQ coefficients) expanded at q = e^eta to first order -- no Richardson; (2) find and prove the closed form in A, by the same route as c0 (first-order term of a permutation-character sum). Branch claude/logz-hbarq-rung-operator-class-2026-09-03 (branch name predates the corpus-grep that found qou-ap3d/qou-ssz6 had already closed the log Z rung question).
@@ -119,3 +119,48 @@ lean` (Part B, stated for the old word), the closed form
 
 **No new closed form is proposed.** Six canonical values are recorded as data; guessing a
 form from six points is how this arc has been burned before. That is this bean's work now.
+
+
+## 2026-09-06 — CLOSED FORM ON THE CANONICAL WORD (PR #6920)
+
+Probe: `computations/probes/canonical_c1_closed_form_probe.py`.
+
+    c1(Z,N) = (Z*S_p + N*S_n)/2 * (2^(-A-1) - 2^(-2A)) - 4*(I_pp - I_nn)*2^(-2A)
+
+with S_X the PER-NUCLEON DELETION SUM on that nucleon's own three strands,
+S_X = Sum_{l in X} w_l * 2^(c(3-strand word minus l)). The ONLY ordering-dependent input:
+
+    borromean (CANONICAL)   S = ( 6, -4)  ->  ( 3Z - 2N)
+    grouped   (this bean)   S = (42, 32)  ->  (21Z + 16N)
+
+So the old form was not wrong in SHAPE — it is this form at the wrong (S_p, S_n). The
+interface term -4(I_pp - I_nn)2^(-2A) is UNCHANGED, as it must be: interfaces are single
+letters outside the nucleon blocks. Verified, not asserted.
+
+**Verified A = 1..8, exact Fractions, BOTH HALVES SEPARATELY** so a compensating error in
+the two cannot cancel: [*](free) 44/44, [*](atom) 44/44, c1 44/44 — under BOTH orderings.
+A = 8 did not enter the pattern search (A <= 7 did), so its 9 isotopes are held out.
+
+**Control:** S/2 under grouped reproduces this bean's independently-derived (21, 16)
+exactly, with no adjustment — which is what makes the canonical row the same formula rather
+than a fresh fit.
+
+**Mechanism: cancellation** (the qou-hu1f contiguity theme, quantitative). Per-letter
+deletion contributions for one proton:
+
+    grouped     +2^3 +2^3 +2^3 +2^3  .  +2^3 +2^3 -2^1 -2^1 -2^1  .   = 48 - 6 = 42
+    borromean   +2^1 -2^1 +2^3 -2^1 +2^1 -2^3 +2^1  .  .  +2^1 +2^1   =          6
+
+Contiguous sigma runs leave the same cycle count and add coherently; alternation interleaves
+them with opposite-sign sigma^-1 deletions and they largely cancel. The NEUTRON's sum CHANGES
+SIGN (32 -> -4), which is why canonical c1 is negative for neutron-rich isotopes
+((0,7) = -429/8192) where the grouped one was positive throughout.
+
+Canonical values: D 1/16, T 1/64, 3He 1/8, 4He 7/128, 6Li 93/4096, 7Li 67/16384.
+
+**Still open on this bean:** (1) c2 is untouched — the six recorded c2 (357/32, 403/32,
+217/16, 3285/128, 3451/128) are grouped-word values and have NOT been recomputed;
+(2) the Lean still carries the dead coefficients — `PairwiseChainLeadingOrder.lean` (six
+c1 defs) and `LeadingOrderTraceCoefficient.lean` (c1Closed + letters_pnAtom). Repairing
+that is a separate change with its own verification and is deliberately not attempted in
+#6920.
