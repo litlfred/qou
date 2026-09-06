@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-29T15:08:42.483651+00:00",
-  "commitSha": "a79a8e9d21494f3354031f5103734dd821848f8d",
+  "computedAt": "2026-09-06T06:58:28.928542+00:00",
+  "commitSha": "d0f6edc82f65a2845ee35580c1d0faa93cc84e07",
   "assertions": [
     {
       "name": "interface_composition_D",
@@ -54,16 +54,30 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 15,
   "computation": "canonical-braid-interface-composition",
   "scriptFile": "probe_canonical_braid_interface_composition.py",
-  "scriptHash": "bee7bb2ea0ac",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5b76d69a5062",
+  "scriptCommitSha": "d645877e7ca70b97951bcd1ea443a07b2fbb5b39",
   "precisionMetadata": {
-    "compute_dps": 65,
-    "output_dps": 50,
-    "guard_digits": 15,
-    "truncation_bound": "1e-50"
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "clarabel": "0.11.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_canonical_braid_interface_composition.py"
+    ],
+    "reproduce": "python3 -u computations/probe_canonical_braid_interface_composition.py"
   },
   "description": "Inter-nucleon interface composition (n_pp, n_pn, n_nn) of the canonical atomic braid β(Z, N) ∈ H_{3A}(q) in pppnnn ordering. Cross-checks the closed form (n_pp = max(0, Z−1), n_nn = max(0, N−1), n_pn = 1 if Z≥1,N≥1) against the actual canonical braid word atom_braid_word_3A(Z, N) classified by interface content d ∈ {0 → pp, −h/2 → pn, −h → nn}. Total = A − 1.",
   "contentBlock": "def:canonical-braid-interface-composition",

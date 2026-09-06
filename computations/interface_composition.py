@@ -118,6 +118,29 @@ def interface_composition_from_ordering(
     return (n_pp, n_pn, n_nn)
 
 
+def _pn_color_weighted(h_val: float) -> float:
+    """The Bring color-weighted pn interface, `-h(1 - δ/2)/2`.
+
+    δ is DERIVED from `_li_2_q_util.flavor_split_leading`, not hardcoded, so
+    this cannot drift from the word builder. On failure it returns the uniform
+    average, leaving the caller's behaviour unchanged rather than silently
+    admitting an unrelated value.
+    """
+    try:
+        import mpmath as mp
+        from _li_2_q_util import flavor_split_leading
+        from q_parameter import Q_50_DIGIT_STR
+        # This classifier is float BY SIGNATURE (`h_val: float`) and tags
+        # letters with `abs(d - x) < 1e-9`. delta ~ 1.4e-3 shifts the pn value
+        # by 7e-5, eight orders above that window, so double is ample. No
+        # physical quantity is computed here -- only which of four letter
+        # types a junction is.
+        delta = float(flavor_split_leading(mp.mpf(Q_50_DIGIT_STR)))  # float64-ok: letter-type tag, 1e-9 window, no physics
+    except Exception:
+        return -h_val / 2
+    return -h_val * (1 - delta / 2) / 2
+
+
 def interface_composition_from_word(
     word: list[tuple[float, float, int]],
     *,
@@ -127,9 +150,18 @@ def interface_composition_from_word(
 
     Inspects the `(c, d, gen_idx)` triples at inter-nucleon
     positions `gen_idx = 3k + 2` and classifies by the d value:
-      d = 0      → pp interface (σ)
-      d = -h/2   → pn interface (avg / Δ_I)
-      d = -h     → nn interface (σ⁻¹)
+      d = 0                → pp interface (σ)
+      d = -h/2             → pn, UNIFORM average (Δ_I)
+      d = -h(1 - δ/2)/2    → pn, BRING COLOR-WEIGHTED  ← production default
+      d = -h               → nn interface (σ⁻¹)
+
+    Both pn spellings are accepted and counted as pn. The color-weighted one
+    was added 2026-09-06 (`qou-hu1f`): `atom_braid_word_3A` defaults to
+    `pn_convention="bring_color_weighted"`, emitting `-h(1-δ/2)/2 =
+    -0.104458…` against the uniform `-h/2 = -0.104530…`. This function
+    accepted only the uniform value and so raised `Unrecognised interface d`
+    on every production word. PRE-EXISTING, not a consequence of the
+    intra-ordering ruling — measured failing under both orderings.
 
     `h_val` defaults to the canonical h = q_0 - q_0^{-1} ≈ 0.209.
     """
@@ -144,7 +176,9 @@ def interface_composition_from_word(
         if abs(d) < 1e-9:
             n_pp += 1
         elif abs(d - (-h_val / 2)) < 1e-9:
-            n_pn += 1
+            n_pn += 1                      # uniform average
+        elif abs(d - _pn_color_weighted(h_val)) < 1e-9:
+            n_pn += 1                      # Bring color-weighted (production)
         elif abs(d - (-h_val)) < 1e-9:
             n_nn += 1
         else:
