@@ -60,10 +60,17 @@ The word product **over the algebra that does impose both relations** is
   the *group-theoretic* half (words with the same image in `W` are braid-equivalent),
   a well-defined `T_w` follows.
 
-The group half is Matsumoto's theorem proper. Mathlib does not have it — `GroupTheory/
+The group half is Matsumoto's theorem proper. **Mathlib** does not have it: `GroupTheory/
 Coxeter/` supplies `IsReduced`, the length function, descents and inversion sequences, but
-no exchange property and no Matsumoto — and neither does this corpus. That is the honest
-open item, and it is now stated as a named hypothesis rather than assumed by a class.
+no exchange property and no Matsumoto.
+
+🛑 **This corpus, however, DOES have the exchange property** — corrected 2026-09-06, the
+earlier wording here ("and neither does this corpus") was wrong and was mine.
+`QOU.Machinery.CoxeterReflectionCocycle.rightExchange` proves `RightExchangeProp cs` for
+**every** Coxeter system, sorry-free, off `strong_exchange` (Björner–Brenti Thm 1.4.3). So
+the chain from here is **deletion → Matsumoto**, not exchange → deletion → Matsumoto: the
+first and hardest input is in hand. Matsumoto itself is still unproved, and remains stated
+as a named hypothesis rather than assumed by a class.
 
 Refs:
 - [matsumoto1964] DOI 10.1090/S0002-9904-1964-11211-9

@@ -17,9 +17,15 @@ replacing an alternating subword `i j i ⋯` (`M i j` letters) by `j i j ⋯` (`
 
 **The group half is the real Matsumoto theorem** and is about the *Coxeter group*, not the
 algebra: any two reduced expressions for the same `w ∈ W` are related by a chain of braid
-moves. Mathlib does not have it — `Mathlib/GroupTheory/Coxeter/` has `IsReduced`, the
+moves. **Mathlib** does not have it: `Mathlib/GroupTheory/Coxeter/` has `IsReduced`, the
 length function, descents and inversion sequences, but no exchange property and no
-Matsumoto — and nothing in this corpus proves it either.
+Matsumoto.
+
+🛑 **The claim that "nothing in this corpus proves it either" was wrong about the exchange
+property, and it was mine** (corrected 2026-09-06).
+`QOU.Machinery.CoxeterReflectionCocycle.rightExchange` proves `RightExchangeProp cs` for
+every Coxeter system, sorry-free, off `strong_exchange` (Björner–Brenti Thm 1.4.3). What
+remains open is **deletion → Matsumoto**; the exchange property is not part of the gap.
 
 `exists_Tw_of_braidEquiv` below makes the dependency exact: **given** the group half as a
 hypothesis, the well-defined `T_w` follows, unconditionally and constructively-modulo-
