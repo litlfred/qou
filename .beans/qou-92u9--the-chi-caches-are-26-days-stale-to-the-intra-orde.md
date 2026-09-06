@@ -268,3 +268,30 @@ alternating word is non-monotone for EVERY atom where the grouped word was
 monotone for every atom, so `reduced_block_kernel.chi_all_lambda_reduced_block`
 refuses it outright.  That is the executable form of the "each generator's
 letters must be contiguous" fact that bean already carries.
+
+
+## Final: the three timeouts resolved — 2 were budget artifacts, 1 is genuinely long
+
+    chi_4he_binding_lossless          665 s   exit 0   clean witness
+    chi_4he_via_rust_lossless         586 s   exit 0   clean witness
+    qbeta_interface_w_deciding_test  2400 s   exit 124 TIMED OUT AGAIN
+
+**🛑 I called this "a third confirmation that those three were budget artifacts"
+while it was still running.  It was not.**  Two were; this one needs **more than
+40 minutes** and remains unrun.  It reached section 3 of 3 ("THE DECIDING TEST")
+and was killed mid-table, so it is working, not broken — but it is not cheap
+either, and my 180 s ceiling was never the binding constraint for it.
+
+It wrote **nothing**: its witness still carries `computedAt 2026-09-03T06:32:21`
+from commit `2e68bb647d` (*"qou-bmz8: the interface route is CLOSED — the
+deciding test is negative"*).  So that witness is the one remaining piece of the
+chi-cache downstream that this regeneration has **not** refreshed.
+
+**What that means for `qou-bmz8`.**  Its negative verdict was computed on the
+pre-regeneration caches.  Whether "the interface route is closed" survives the
+new ordering is **untested** — and the O3′ arc is a live demonstration that a
+verdict of that shape can invert.  Not asserted either way here; flagged so it
+is not read as confirmed.
+
+Re-running it needs a budget well past 40 minutes and is the last open item on
+this bean.
