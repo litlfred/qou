@@ -1,0 +1,300 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-09-06T04:11:55.382377+00:00",
+  "commitSha": "6d8ee06e120f8d4157abbf365f2069933dc1d082",
+  "assertions": [
+    {
+      "name": "KL:_the_two_singular_Schubert_cells_of_S₄_(3412,_4231)_carry_1+q_H;_all_other_P_",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy over Q(v))"
+    },
+    {
+      "name": "KL:_nonnegative_coefficients,_constant_term_1,_degree_bound",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy over Q(v))"
+    },
+    {
+      "name": "Soergel_shape:_every_multiplicity_is_a_bar-symmetric_Laurent_polynomial_with_non",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy over Q(v))"
+    },
+    {
+      "name": "sequential_word_=_(v+v⁻¹)²·C'_{s0s1s2}_(four_shifted_copies_of_one_indecomposabl",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy over Q(v))"
+    },
+    {
+      "name": "interleaved_word_has_the_length-5_indecomposable_C'_{3412-type_4-cycle}_with_mul",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy over Q(v))"
+    },
+    {
+      "name": "Bott–Samelson_KL_expansions_reproduce_tr(∏_C'_s)_for_both_words",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy over Q(v))"
+    },
+    {
+      "name": "Rouquier_class_of_the_interleaved_word:_top_summand_C'_(4-cycle)_with_coefficien",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy over Q(v))"
+    },
+    {
+      "name": "Rouquier_classes_have_SIGNED_KL_coefficients_(the_virtual_object_is_intrinsic)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy over Q(v))"
+    },
+    {
+      "name": "Markov_trace_of_the_Rouquier-class_KL_expansion_reproduces_I(q)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy over Q(v))"
+    },
+    {
+      "name": "Markov_trace_of_the_Rouquier-class_KL_expansion_reproduces_S(q)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy over Q(v))"
+    },
+    {
+      "name": "tr_M_of_the_virtual_Rouquier_object_[int]_−_[seq]_is_exactly_Δ(q)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy over Q(v))"
+    },
+    {
+      "name": "the_two_Bott–Samelson_objects_share_NO_indecomposable_summand",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy over Q(v))"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 52,
+  "computation": "interleaving-cross-term-soergel-kl",
+  "scriptFile": "interleaving_cross_term_soergel_kl_probe.py",
+  "scriptHash": "357e1c531935",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/interleaving_cross_term_soergel_kl_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/interleaving_cross_term_soergel_kl_probe.py"
+  },
+  "description": "Route A step 2 (2026-09-05 binding-gap survey §7 item 4): the n = 4 interleaving cross term as a VIRTUAL SOERGEL OBJECT. By Soergel's categorification and the Soergel conjecture (Elias–Williamson), the Bott–Samelson object of a word decomposes into indecomposables B_w with multiplicities given by the KL-basis expansion of the product of C'_s. Computed exactly in H_4 over Q(v): the sequential word is (v+v⁻¹)²·C'_{s0s1s2} (four shifted copies of one indecomposable); the interleaved word contains the length-5 indecomposable of the 4-cycle with multiplicity 1 plus lower terms; the two words share no summand. The Markov trace of the KL expansions reproduces I(q), S(q), and tr_M([int] − [seq]) = Δ(q) exactly, so the cross term is the Markov trace of a canonical virtual object — the categorification route A wanted, with no chain map. KL polynomials of S_4 verified at the two singular Schubert cells. No q₀ read. Scope (a).",
+  "contentBlock": "prop:markov-trace-axiomatic-closed-form",
+  "parameters": {
+    "dictionary": "framework q = Soergel v; T_s = v·g_s; C'_s = g_s + q^-1; q_H = v^2"
+  },
+  "data": {
+    "bott_samelson_kl_multiplicities": {
+      "interleaved": {
+        "3421": "1",
+        "2413": "1",
+        "3214": "1"
+      },
+      "sequential": {
+        "2341": "(v**2 + 1)**2/v**2"
+      }
+    },
+    "rouquier_class_kl_coefficients": {
+      "interleaved": {
+        "3421": "v**5",
+        "2431": "-v**4",
+        "3241": "-v**4",
+        "3412": "-v**4",
+        "1432": "v**3",
+        "2341": "v**3",
+        "2413": "v**3",
+        "3142": "v**3",
+        "3214": "v**3",
+        "1342": "-v**2",
+        "1423": "-v**2",
+        "2143": "-v**2",
+        "2314": "-v**2",
+        "3124": "-v**2",
+        "1243": "v",
+        "1324": "v*(v**2 + 1)",
+        "2134": "v",
+        "1234": "-1"
+      },
+      "sequential": {
+        "2341": "v**3*(v - 1)**2*(v + 1)**2",
+        "1342": "v**2*(v - 1)*(v + 1)",
+        "2143": "v**2*(v - 1)*(v + 1)",
+        "2314": "-v**2*(v - 1)**2*(v + 1)**2",
+        "1243": "v",
+        "1324": "-v*(v - 1)*(v + 1)",
+        "2134": "-v*(v - 1)*(v + 1)",
+        "1234": "-1"
+      },
+      "virtual_int_minus_seq": {
+        "1324": "2*v**3",
+        "3412": "-v**4",
+        "1423": "-v**2",
+        "2143": "-v**4",
+        "3124": "-v**2",
+        "2431": "-v**4",
+        "3214": "v**3",
+        "3241": "-v**4",
+        "3142": "v**3",
+        "2413": "v**3",
+        "1342": "-v**4",
+        "3421": "v**5",
+        "2134": "v**3",
+        "2314": "v**4*(v**2 - 2)",
+        "2341": "-v**5*(v**2 - 2)",
+        "1432": "v**3"
+      },
+      "note": "class of the Rouquier complex F(word) = ∏ T_s = v^5 ∏ g_s; HHH(F) is the HOMFLY-PT homology"
+    },
+    "markov_trace_on_indecomposables_convD": {
+      "1324": {
+        "tr": "(v**2 - v + 1)*(v**2 + v + 1)/(v*(v**2 + 1))",
+        "at_q1": "3/2",
+        "length": 1
+      },
+      "3412": {
+        "tr": "(v**2 - v + 1)**3*(v**2 + v + 1)**3/(v**4*(v**2 + 1)**2)",
+        "at_q1": "27/4",
+        "length": 4
+      },
+      "1423": {
+        "tr": "(v**2 - v + 1)**2*(v**2 + v + 1)**2/(v**2*(v**2 + 1)**2)",
+        "at_q1": "9/4",
+        "length": 2
+      },
+      "2143": {
+        "tr": "(v**2 - v + 1)**2*(v**2 + v + 1)**2/(v**2*(v**2 + 1)**2)",
+        "at_q1": "9/4",
+        "length": 2
+      },
+      "1234": {
+        "tr": "1",
+        "at_q1": "1",
+        "length": 0
+      },
+      "1243": {
+        "tr": "(v**2 - v + 1)*(v**2 + v + 1)/(v*(v**2 + 1))",
+        "at_q1": "3/2",
+        "length": 1
+      },
+      "2431": {
+        "tr": "(v**4 + 1)*(v**2 - v + 1)**2*(v**2 + v + 1)**2/(v**4*(v**2 + 1)**2)",
+        "at_q1": "9/2",
+        "length": 4
+      },
+      "1432": {
+        "tr": "(v**4 + 1)*(v**2 - v + 1)*(v**2 + v + 1)/(v**3*(v**2 + 1))",
+        "at_q1": "3",
+        "length": 3
+      },
+      "3214": {
+        "tr": "(v**4 + 1)*(v**2 - v + 1)*(v**2 + v + 1)/(v**3*(v**2 + 1))",
+        "at_q1": "3",
+        "length": 3
+      },
+      "3241": {
+        "tr": "(v**4 + 1)*(v**2 - v + 1)**2*(v**2 + v + 1)**2/(v**4*(v**2 + 1)**2)",
+        "at_q1": "9/2",
+        "length": 4
+      },
+      "3142": {
+        "tr": "(v**2 - v + 1)**3*(v**2 + v + 1)**3/(v**3*(v**2 + 1)**3)",
+        "at_q1": "27/8",
+        "length": 3
+      },
+      "2413": {
+        "tr": "(v**2 - v + 1)**3*(v**2 + v + 1)**3/(v**3*(v**2 + 1)**3)",
+        "at_q1": "27/8",
+        "length": 3
+      },
+      "1342": {
+        "tr": "(v**2 - v + 1)**2*(v**2 + v + 1)**2/(v**2*(v**2 + 1)**2)",
+        "at_q1": "9/4",
+        "length": 2
+      },
+      "3421": {
+        "tr": "(v**4 + 1)**2*(v**2 - v + 1)*(v**2 + v + 1)/(v**5*(v**2 + 1))",
+        "at_q1": "6",
+        "length": 5
+      },
+      "2134": {
+        "tr": "(v**2 - v + 1)*(v**2 + v + 1)/(v*(v**2 + 1))",
+        "at_q1": "3/2",
+        "length": 1
+      },
+      "2314": {
+        "tr": "(v**2 - v + 1)**2*(v**2 + v + 1)**2/(v**2*(v**2 + 1)**2)",
+        "at_q1": "9/4",
+        "length": 2
+      },
+      "2341": {
+        "tr": "(v**2 - v + 1)**3*(v**2 + v + 1)**3/(v**3*(v**2 + 1)**3)",
+        "at_q1": "27/8",
+        "length": 3
+      },
+      "3124": {
+        "tr": "(v**2 - v + 1)**2*(v**2 + v + 1)**2/(v**2*(v**2 + 1)**2)",
+        "at_q1": "9/4",
+        "length": 2
+      }
+    },
+    "kl_nontrivial_P_e_w": {
+      "3412": "qH + 1",
+      "4231": "qH + 1"
+    },
+    "verdict": "Route A step 2, POSITIVE and canonical: Δ = tr_M([BS(interleaved)] − [BS(sequential)]) with both sides decomposed into indecomposable Soergel bimodules by the KL basis; the supports are disjoint, so the cross term is the trace of a genuine virtual object, not an ad-hoc shifted sum. HOMFLY-PT homology categorifies it summand by summand. What remains open is whether the framework's binding functional sees the length-5 indecomposable (a nucleus must be an interleaved word class first: qou-5vhf)."
+  },
+  "caveats": [
+    "Multiplicity = KL coefficient is the Elias–Williamson theorem, cited not re-proved.",
+    "Scope (a): one n = 4 word pair; convention D only enters the Markov trace values."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "v (= the framework's q) is a formal symbol throughout; the only specialisation is v = 1 for display. No q₀ is read."
+}
