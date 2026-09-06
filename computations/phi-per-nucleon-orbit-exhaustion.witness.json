@@ -1,0 +1,333 @@
+{
+  "description": "Exhaustive phi over both nucleon letter-orbits at n=3.",
+  "data": {
+    "proton": {
+      "orbit_size": 9240,
+      "measured": 9240,
+      "errors": 0,
+      "canonical": "21/2",
+      "attaining_canonical": 1232,
+      "exceeding_canonical": 0,
+      "min": "-3/2",
+      "max": "21/2",
+      "distinct_values": 9,
+      "verdict": "GLOBAL MAXIMUM over the whole orbit",
+      "histogram": {
+        "-3/2": 132,
+        "0": 924,
+        "3/2": 1166,
+        "3": 1518,
+        "9/2": 1166,
+        "6": 1210,
+        "15/2": 1364,
+        "9": 528,
+        "21/2": 1232
+      },
+      "argmax_examples": [
+        [
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "averaged"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ]
+        ],
+        [
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "averaged"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ]
+        ],
+        [
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "averaged"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ]
+        ]
+      ],
+      "elapsed_seconds": 2558.5
+    },
+    "neutron": {
+      "orbit_size": 6930,
+      "measured": 6930,
+      "errors": 0,
+      "canonical": "8",
+      "attaining_canonical": 990,
+      "exceeding_canonical": 0,
+      "min": "-5/2",
+      "max": "8",
+      "distinct_values": 8,
+      "verdict": "GLOBAL MAXIMUM over the whole orbit",
+      "histogram": {
+        "-5/2": 396,
+        "-1": 1089,
+        "1/2": 660,
+        "2": 1166,
+        "7/2": 902,
+        "5": 1067,
+        "13/2": 660,
+        "8": 990
+      },
+      "argmax_examples": [
+        [
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ]
+        ],
+        [
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ]
+        ],
+        [
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "averaged"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            0,
+            "sigma"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            1,
+            "sigma_inv"
+          ],
+          [
+            0,
+            "sigma"
+          ]
+        ]
+      ],
+      "elapsed_seconds": 1934.5
+    }
+  },
+  "scriptFile": "phi_per_nucleon_orbit_exhaustion_probe.py"
+}
