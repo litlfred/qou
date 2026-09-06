@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T13:46:21Z
-updated_at: 2026-09-06T13:58:09Z
+updated_at: 2026-09-06T14:03:30Z
 ---
 
 ## The claim, and why half of it is false
@@ -83,3 +83,31 @@ different claims and only one of them was measured.
 PR #6968. **Final count: 7 files**, not the 9 a sibling reported nor the 8 my own phrase-grep gave. The population naming these objects is 35 lines / 22 files; most merely name them. Two sites are correct records and were deliberately left (`2026-09-03-ramified-shift-calculus-w1-prune.md`, `qou-4g01`), and `dilog-part-b-cusp-attack.md:54` is a false positive both earlier counts carried (Dedekind-eta limit, and "previously").
 
 **W1 is untouched and still open** (`qou-d8de`): no `J^n_q E`, no connection lift.
+
+
+
+## Stand-down on the convention-C adjudication (2026-09-06)
+
+I had queued the 26 blocking value-audit sites as the next item and began
+measuring them. **Stood down**: a sibling owns it — bean `qou-htsi` (created
+today 09:38Z, carrying a verbatim owner directive of the same date) and PR
+#6969, which had already adjudicated all 26 four minutes before I looked.
+Convention-C excision is mechanical/settled work, which AGENTS.md gives ONE
+owner; the measured-research-overlap relaxation does not apply to it.
+
+Independent convergence worth recording: I ran the audit myself (137 confirmed
+/ 26 blocking, against their 136) and independently flagged
+`qbeta_precision_ladder_n5.py` as the one site that must NOT be ledgered as a
+comparison — it emits a witness via `WitnessBuilder` and its `zC` docstring
+says the ladder is z_C-locked. Their entry gets it right and introduces a
+`deliberate-c-frame` verdict, which is exactly the third category the
+comparison/leak binary was missing. No correction was needed.
+
+Handed over on #6969 (comment 5559732847) the one thing they may not have: the
+value audit's 26 blocking sites and `trace-convention-registry.json`'s
+`blocked_on_rederivation` (13 rows) have **zero overlap**, and the two
+registries carry OPPOSITE rules for what is now the same class — the registry
+'accounts without excusing' and deliberately keeps its rows in the actionable
+count, while a ledger entry is 'the ONLY thing that stops a binding from
+blocking'. So the headline C number depends on which file an agent wrote in.
+Their call, their PR.
