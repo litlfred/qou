@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-06T10:15:47Z
+updated_at: 2026-09-06T10:18:58Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -247,3 +247,28 @@ combination, as it must be since the [e1] part cancels there.
 
 So the remaining work on goal (2) is the atom side alone, and it is now well-posed: 8 exact target
 values, one invariance constraint, and one refuted ansatz.
+
+
+### Same day — a THIRD stale artifact, and the first that is a COMMITTED WITNESS
+
+`computations/probes/c2-diagonal-insertion-expansion-probe.witness.json` (computedAt
+**2026-09-04**, the day before the ruling) contains all six **grouped** c2 values — 357/32, 403/32,
+217/16, 3285/128, 3451/128, 15307/512 — and none of the canonical ones. Unlike qou-pdg9 and
+qou-qqm4, which are beans, **this is a committed record on main that a consumer reads.**
+
+Its producer `c2_diagonal_insertion_expansion_probe.py` implements the diagonal-insertion expansion
+[<>] — an exact, ALL-ORDERS derivation of the Markov trace as a fixed-point count over sub-words, of
+which [*] is the |S| <= 1 case. It reaches the word through `atom_canonical_crossings`, so like the
+eps-series it is **canonical by default and needs RE-RUNNING, not rewriting**. Not done here: its
+main() writes the witness, and rewriting a committed witness is a separate deliberate act.
+
+**This also settles what my 'next' should have been.** I had queued 'derive the second-order analogue
+of [*] over letter pairs' as the remaining work. That derivation ALREADY EXISTS — [<>] is all-orders
+and [e2] is its |S| <= 2 case, with the probe reporting the |S| = 0,1,2 class split per word
+explicitly as 'the raw material for' a closed form. Corpus-grep caught this before the tranche was
+spent; it is the third such catch this session.
+
+So the remaining work on goal (2) is narrower than 'derive the second order': it is **re-run [<>]
+canonically and read the class split**, then find the (Z,N) form from the pair terms. And that
+probe's own docstring already declines to assert a closed form, so not fitting one is the corpus's
+position and not merely mine.
