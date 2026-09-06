@@ -1,11 +1,11 @@
 ---
 # qou-sidu
 title: 'DESTRUCTIVE: 228 producers truncate their own witness before an import that can raise — one audit run emptied 22'
-status: in-progress
+status: completed
 type: bug
 priority: normal
 created_at: 2026-09-05T06:27:27Z
-updated_at: 2026-09-05T06:27:57Z
+updated_at: 2026-09-06T03:15:52Z
 ---
 
 
@@ -301,6 +301,31 @@ carries 163 recorded exceptions and the error-row gate left the verdict alone,
 reporting `allPassed: true` on its two real assertions.
 
 - [x] Run with the guard on to enumerate the import-time writers — 95, listed.
-- [ ] Add `__main__` guards where the write is not intended. Needs a judgement
-      per file (some may write at module scope deliberately), so it is its own
-      pass and probably its own bean.
+- [x] Add `__main__` guards where the write is not intended — **RECOMMEND NOT
+      DOING THIS**, on evidence. Classified all 95 by AST:
+
+          95  NO `__main__` guard at all
+           0  has a guard with the write accidentally outside it
+
+      Not one is the accident I was expecting. They are top-level scripts,
+      written to run as `python3 foo.py`, and they end like this:
+
+          w.add_data("tables", all_tables)
+          witness_path = w.save()
+          print(f"\nWitness: {witness_path.name}")
+
+      So "add a `__main__` guard" is not a one-line fix to 95 files. There is
+      no `main()` to guard — each would need its body wrapped in a function,
+      i.e. 95 refactors of working scripts, to satisfy one audit's choice of
+      import as its probe. That is the tail wagging the dog, and it would touch
+      far more producers than the defect ever did.
+
+      The guard already reconciles it. The tension is between the audit's
+      METHOD (import a module to see whether it imports) and a legitimate
+      script style (do the work at top level), and `QOU_IMPORT_WRITE_GUARD`
+      resolves that at the auditing end, where the problem actually lives —
+      111 rewritten files become 1.
+
+      Revisit ONLY if a specific producer is found where the top-level write is
+      genuinely unintended. The list is kept at `.work/import-time-writers.txt`
+      for exactly that lookup.
