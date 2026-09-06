@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T09:42:46Z
-updated_at: 2026-09-06T09:47:34Z
+updated_at: 2026-09-06T14:33:09Z
 ---
 
 ## What was found
@@ -81,3 +81,67 @@ this bean's PR so the wording change can be reviewed on its own.
 Ingest the 22 (`pdf-structure.py` then `extract-candidates.py` per
 `qou-k1hs`), then `summarize-library.py --apply` once, and re-run the
 three-way arithmetic above as the check.
+
+
+## 2026-09-06 (later) — a sibling landed the library work, and we found TWO DIFFERENT populations both called "orphans"
+
+`main` moved under this bean while it was being written. `2c567cca9c` drained
+the uploads backlog (17 PDFs ingested, INDEX 589 → 606), `14a7bb5a2d` regenerated
+the index (606 → **609**), and `805f11d62d` filed **`qou-cvx9`**, which reports
+*"the orphan class is 22 documents and pre-dates this session"*.
+
+**The index half of this bean is fully superseded.** My regeneration
+(589 → 593) is subsumed; re-running `summarize-library.py --apply` on merged
+`main` produces a **byte-identical** `library/` tree, so main is already at the
+generator's fixed point. Nothing of mine survives there and nothing should.
+
+**The arithmetic correction stands, and now closes exactly** on the larger tree:
+
+    dirs 655 − rows 609 = 46 = 23 duplicates + 1 container + 22 never-ingested
+
+### 🛑 But `qou-cvx9`'s MECHANISM explains ZERO of the 22 — measured
+
+`qou-cvx9` diagnoses a real defect: `migrate-uploads-to-library.py` keys the
+doc-id on the **filename** while `pdf-structure.py` keys it on the **page-1
+arXiv stamp**, so a PDF named `1808.02836v2.pdf` lands at `library/1808.02836v2/`
+(one file) *beside* the fully-ingested `library/arxiv-1808.02836v2/`. Their two
+measured instances are `1808.02836v2` and `2108.09349v2`.
+
+That produces an orphan **with a twin**. Checked every one of the 22 on merged
+`main` for an `arxiv-<id>` sibling directory:
+
+    orphans with an arxiv- twin :  0
+    orphans without            : 22
+
+and the two they named are **not on `main` at all** — no orphan dir survives for
+either; only their `arxiv-` twins do. So their defect was caught and did not
+land, which is the good outcome, and it is a **different population** from the 22.
+
+Nine of the 22 are not even arXiv-shaped — `amc_2730`, `fulltext`, `m4-24`,
+`2023unat1343`, `1.9781611972443.fm`,
+`exploring-the-geometric-buchberger-algorithm-in-integer-prog` — so there is no
+arXiv stamp for a filename to diverge from. The mechanism cannot apply to them
+even in principle.
+
+**The two populations differ in the way that matters for path 5:**
+
+| | `qou-cvx9`'s orphans | the 22 here |
+|---|---|---|
+| twin doc dir | **yes**, fully ingested | **no** |
+| corpus holds the document | twice, findable once | **once, findable never** |
+| on `main` today | 0 | 22 |
+| mechanism | filename vs arXiv stamp | **still unidentified** |
+
+So *"the corpus holds the document twice and a check finds it once at best"* is
+true of theirs and **not** of these: for the 22 there is no second copy to find.
+
+**My own earlier guess is retracted too.** This bean said the mechanism was
+running `qou-k1hs`'s final `git mv` without the preceding `pdf-structure.py`.
+That is consistent with the shape but I never measured it, and `qou-cvx9`
+finding a *different* real mechanism for a *different* population is a reminder
+that a plausible story for a shape is not a diagnosis. **The mechanism for these
+22 is open**, and the honest next step is to date them (`git log --diff-filter=A`
+on each PDF) rather than to reason from the shape again.
+
+Nothing in this contradicts `qou-cvx9`; it narrows what that bean's fix will
+close. Their guard belongs in `migrate-uploads-to-library.py` regardless.
