@@ -42,7 +42,11 @@ identification [SW] (which the stage-1 probe verifies on the words themselves).
    the word with at most `k` diagonal insertions, carrying the scalar as an
    exact `ε`-polynomial (`Fraction` coefficients). Cost `2^n · C(L, ≤k)`.
 2. Checks `[ε⁰], [ε¹], [ε²]` of `Δtr` against the exact series values for the
-   six words (pp, pn, nn, T, ³He, ⁴He) — `Fraction ==`.
+   six words (pp, pn, nn, T, ³He, ⁴He) — `Fraction ==`. ⚠ Those targets are
+   **hardcoded snapshots** (`RECORDED_C1`, `EXACT_C2`), not recomputed here;
+   they were the pre-2026-09-05 `grouped` word's until 2026-09-06 and are now
+   the canonical word's. See the note at those tables — they are still
+   snapshots and will go stale the next time the word moves.
 3. Splits `c₂` into its insertion classes `|S| = 0, 1, 2` (after the normaliser
    is folded in) and reports them per word, so the structure is visible.
 4. Reports the second-order chain/atom ratios exactly.
@@ -211,10 +215,30 @@ def trace_expansion(Z: int, N: int, include_inter: bool, K: int, *, log=None) ->
     return coeffs, by_class
 
 
-RECORDED_C1 = {"pp": F(19, 8), "pn": F(37, 16), "nn": F(9, 4),
-               "T": F(163, 64), "3He": F(85, 32), "4He": F(259, 128)}
-EXACT_C2 = {"pp": F(357, 32), "pn": F(403, 32), "nn": F(217, 16),
-            "T": F(3285, 128), "3He": F(3451, 128), "4He": F(15307, 512)}
+# ⚠ REPAIRED 2026-09-06 — both tables were the PRE-2026-09-05 (`grouped`) atom word's.
+#
+# Owner ruling `qou-hu1f` reordered each nucleon's confinement core on 2026-09-05; these are
+# hardcoded SNAPSHOTS of quantities that moved, so on the canonical word this probe was checking
+# against the wrong targets. Same defect class as `letters_pnAtom` in
+# `QOU/MassTheory/LeadingOrderTraceCoefficient.lean` — a datum that was correct when written.
+#
+# Superseded values, for reference: c₁ = 19/8, 37/16, 9/4, 163/64, 85/32, 259/128;
+# c₂ = 357/32, 403/32, 217/16, 3285/128, 3451/128, 15307/512.
+#
+# c₁ below is PR #6920's closed form `(3Z − 2N)(2^(−A−1) − 2^(−2A)) − 4(I_pp − I_nn)2^(−2A)`
+# evaluated at each case; c₂ is the exact ε-series `[ε¹]+[ε²]` re-run on the canonical word
+# (`c2_is_stale_on_the_reordered_atom_word_probe`, whose grouped self-test reproduces the
+# superseded row above exactly, which is what makes these the right replacements).
+#
+# 🛑 These are still SNAPSHOTS, and that is the standing hazard: they go stale the next time the
+# word moves. Computing them live would cost the ⁴He order-4 series (~15 min) on every run, which
+# is presumably why they were frozen. Regenerate with:
+#     python3 computations/probes/c2_is_stale_on_the_reordered_atom_word_probe.py \
+#         --exact-cases pp pn nn T ³He ⁴He
+RECORDED_C1 = {"pp": F(1, 8), "pn": F(1, 16), "nn": F(0),
+               "T": F(1, 64), "3He": F(1, 8), "4He": F(7, 128)}
+EXACT_C2 = {"pp": F(33, 32), "pn": F(25, 32), "nn": F(1, 16),
+            "T": F(99, 128), "3He": F(157, 128), "4He": F(439, 512)}
 CASES = [("pp", (2, 0)), ("pn", (1, 1)), ("nn", (0, 2)),
          ("T", (1, 2)), ("3He", (2, 1)), ("4He", (2, 2))]
 
@@ -270,9 +294,9 @@ def main() -> int:
                     source="[ε¹] (|S| ≤ 1, normaliser folded) vs the six derived/recorded c1 values.")
     w.add_assertion("insertion_expansion_order2_equals_exact_series_c2",
                     computed="1" if ok2 else "0", expected="1",
-                    source="[ε¹]+[ε²] (|S| ≤ 2) vs the exact series c2 from "
-                           "c1_leading_coefficient_derived_probe (4He: 15307/512 from the order-4 "
-                           "run). Fraction == on all six. This is the derivation of c2: a "
+                    source="[ε¹]+[ε²] (|S| ≤ 2) vs the exact series c2 for the CANONICAL word "
+                           "(4He: 439/512 from the order-4 run; the pre-2026-09-05 grouped value "
+                           "was 15307/512). Fraction == on all six. This is the derivation of c2: a "
                            "fixed-point count over sub-words with ≤ 2 letters deleted, weighted by "
                            "the diagonal pattern scalars (q−1 on e11/e22, h on e21, d_ℓ).")
 
