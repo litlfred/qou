@@ -111,6 +111,22 @@ scope conflation this corpus keeps having to correct.
 So the repair is a re-derivation of the inputs plus a re-statement of what the definitions denote —
 not a retraction of any proof. No Lean is edited in this branch.
 
+## This is the third instance of the same root cause, found independently
+
+A sibling landed `63a50799b8` on `main` at 04:35Z, while this branch was being written, with the
+same shape from a different direction: the free-word **extremality** conjecture (#6714) is a local
+maximum under `grouped` (0 of 196 one-swap neighbours beat the canonical) and **refuted** under
+`borromean` (110 of 196 beat it, 56 %). Its conclusion — *"extremality is NOT a property of
+canonicality; it belongs to the grouped assembly and does not transfer to the word the owner ruled
+correct"* — is this document's conclusion for a different quantity.
+
+So the 2026-09-05 reordering has now invalidated three prior results (`c₁`, the floor **share**, and
+extremality) and left one standing (`c₀`, invariant because it is a cycle count). Two agents found
+two of them within an hour of each other without coordinating. **That is a rate, not a coincidence:
+treat any pre-2026-09-05 quantity computed from the atom word as suspect until its
+`intra_order`-invariance is checked, and check it by computing both orderings rather than by
+reasoning about whether it "should" depend on letter order.**
+
 ## What this does not claim
 
 Not that `qou-pdg9`'s derivation is wrong — the method is sound and this probe is built on it; the
