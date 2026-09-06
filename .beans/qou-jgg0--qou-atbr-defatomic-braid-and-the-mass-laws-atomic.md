@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-05T09:58:53Z
-updated_at: 2026-09-06T08:35:17Z
+updated_at: 2026-09-06T09:42:23Z
 ---
 
 ## 2026-09-05 — measured: they are DIFFERENT OBJECTS, not a disagreement about a number
@@ -198,3 +198,38 @@ that the question has **no referent** there, since "which generators does nucleo
 `k` own" presupposes three strands per nucleon.
 
 Comment 5558064329.
+
+
+### 2026-09-06 — the bond question is ANSWERED, by the sibling, and better than I put it
+
+My comment 5558064329 flagged that #6919's additivity description omits the
+inter-nucleon bond at generator 2, and asked which word they measured. **Answered
+— `include_inter=False`.** Their audit landed on `main` at **09:21:39Z**
+(`80cc738916`, 45 min after the flag),
+[`2026-09-06-contiguity-does-not-drive-f1-the-split-link-factorisation-does.md`](../docs/audits/2026-09-06-contiguity-does-not-drive-f1-the-split-link-factorisation-does.md),
+and its scope section says it outright:
+
+> **Additivity is measured on `pn` with `include_inter=False`.** The inter-nucleon
+> terms are exactly the part that breaks the disjoint-strand premise, so nothing
+> here says anything about them — **and they are where the binding lives.**
+
+That last clause is the sharper form of the point and is theirs, not mine. So the
+flag was correct in substance, it is closed, and **no further reply is owed** —
+recording here rather than posting a fourth comment on #6821.
+
+**What is NOT superseded.** Their scope note covers the inter-nucleon bond; it
+says nothing about the **electron** strand, because they work at `n = 6` (`pn`,
+the `3A` reading) where there is none. So the reading-dependence table stands
+unchanged:
+
+| reading | disjoint-support premise |
+|---|---|
+| `3A` | holds — and is what they measured |
+| `A+Z` | not statable — one strand per nucleon, no per-nucleon block |
+| `3A+Z` | blocks survive, but the electron generator is adjacent to the neutron block; `pe`/`ne`/`ee` crossings couple it in |
+
+**Also not affected: their retraction is a different claim from the one I
+analysed.** `80cc738916` retracts *"contiguity drives `f₁/f₀`"* (their #6910).
+My reply was about the **additivity / split-link factorisation**, which their new
+title affirms rather than withdraws. Do not read the retraction as weakening the
+additivity result the reading-dependence applies to.
