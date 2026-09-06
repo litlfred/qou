@@ -440,10 +440,30 @@ under Molien, the canonical family.
 - **That `N = 2` is RIGHT.** The corpus says it, derives it from its own axiom
   under the strong reading of condition (v), and locks it in — and the deriving
   file itself flags that reading as editorially unresolved.
-- **The strand count.** `H_{A+Z}` (`atomic-braid.md:2`, `wedderburn-mass-formula.md:2`)
-  against `H_{3A}` (`schur-weyl-mass-decomposition.md:1`, `hecke_3a_weights.py:5`)
-  is still unreconciled by any block. It does not affect this answer: `N = dim V`
-  is a property of the fibre, independent of `n`.
+- **The strand count.** Unreconciled, and **worse than this bullet said until
+  2026-09-06** — it read *"`H_{A+Z}` … against `H_{3A}` … still unreconciled by
+  any block"*, which undercounts and mis-cites. Two of its four pointers were
+  **dead**: `atomic-braid.md` is under `knots-particles-confinement/`, not
+  `mass-theory/`, and the producer is `computations/hecke/hecke_3a_weights.py`.
+  Both *claims* were true; both *paths* resolved to nothing — a dead pointer in
+  a list this note offers as authoritative.
+
+  There are **three** live counts, not two, and they factor as a 2×2 of two
+  independent choices (nucleon vs quark strand; electrons in vs out):
+  `A+Z` (**7** blocks, incl. `def:atomic-braid` itself), `3A` (**26** blocks,
+  incl. the notation register), `3A+Z` (**1** block,
+  `mass-endomorphism/atomic-mass-gb-nf.md:3`, which asserts
+  `𝓑_K ∈ B_{3A+Z}` **while citing the `A+Z` definition**). `H_A` is a fourth
+  cell but appears only as `level-sufficiency-interprets.md:41`'s explicit
+  "Default-coarse" approximation. The collision is on the symbol `𝓑_K` and
+  `notation-collisions.md` has no entry for it. Measured in
+  [`strand_count_is_a_two_by_two_probe.py`](../../computations/probes/strand_count_is_a_two_by_two_probe.py)
+  (12/12) on branch `claude/two-atomic-braids-one-name-2026-09-05`, which
+  retracts its own narrower reading there.
+
+  **It still does not affect this answer**: `N = dim V` is a property of the
+  fibre, independent of `n` — which is exactly the `n`-vs-`N` conflation §4b
+  names, and the reason a three-way `n` dispute leaves `N = 2` untouched.
 
 ---
 
