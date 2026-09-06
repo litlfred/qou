@@ -1,0 +1,1250 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-06T11:37:00.519728+00:00",
+  "commitSha": "6d7f7e2dc6c5b77a0ff6061cbbf7f9868dd5c7d5",
+  "assertions": [
+    {
+      "name": "no witness prose quotes a number absent from its data",
+      "computed": 239,
+      "expected": 0,
+      "passed": false
+    }
+  ],
+  "allPassed": false,
+  "allPassedBasis": "failed-assertions",
+  "durationMs": 5,
+  "durationMsBaseline": "builder-construction",
+  "computation": "witness-prose-drift-audit",
+  "scriptFile": "witness_prose_drift_audit.py",
+  "scriptHash": "113001c0f715",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "2ac15a3627acca95"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/witness_prose_drift_audit.py",
+      "--top",
+      "6"
+    ],
+    "reproduce": "python3 -u computations/audits/witness_prose_drift_audit.py --top 6"
+  },
+  "description": "Witness descriptions quoting a number the witness's own data does not contain. No staleness mechanism here reads a description -- they all compare a witness to its PRODUCER -- so a description that hardcodes a finding keeps asserting it after the data moves, and the file contradicts itself while staying green. Measured: rho-binding-constancy said '~182% (D 5.73, T 81.5, He3 37.4)' while carrying 3.87/36.99/19.12, matching neither the committed nor the regenerated data. Buckets by DISTANCE, not presence, so a 4% three-sig-fig rounding is not flagged like a 49% contradiction. FAR is a candidate, not a verdict: prose may cite an external constant. Bean qou-n62l.",
+  "auditOnly": "computations/audits/witness_prose_drift_audit.py",
+  "data": {
+    "witnesses_scanned": 3528,
+    "without_description": 383,
+    "witnesses_with_candidates": 185,
+    "findings": [
+      {
+        "witness": "computations/aj-masbaum-crosscheck.witness.json",
+        "prose_number": "5.1",
+        "nearest_relative_distance": "0.390196078431372549019607843137254901960784313725490196078431"
+      },
+      {
+        "witness": "computations/aj-masbaum-crosscheck.witness.json",
+        "prose_number": "5.2",
+        "nearest_relative_distance": "0.401923076923076923076923076923076923076923076923076923076923"
+      },
+      {
+        "witness": "computations/alpha-em-loop-measure-consistency.witness.json",
+        "prose_number": "1.3",
+        "nearest_relative_distance": "0.0769230769230769230769230769230769230769230769230769230769231"
+      },
+      {
+        "witness": "computations/alpha-em-rt-phase3b-exact-vertex-moments.witness.json",
+        "prose_number": "0.313",
+        "nearest_relative_distance": "0.597444089456869009584664536741214057507987220447284345047923"
+      },
+      {
+        "witness": "computations/alpha/three-term-wedderburn.witness.json",
+        "prose_number": "3.1",
+        "nearest_relative_distance": "0.548387096774193548387096774193548387096774193548387096774194"
+      },
+      {
+        "witness": "computations/alpha_em/alpha-em-fibre-Dzeta-shared-wall-test.witness.json",
+        "prose_number": "25.133",
+        "nearest_relative_distance": "0.169349564715712409978912187164285998488043608005411212350296"
+      },
+      {
+        "witness": "computations/alpha_em/alpha-em-period-qdeformation.witness.json",
+        "prose_number": "1.22",
+        "nearest_relative_distance": "0.0655737704918032786885245901639344262295081967213114754098361"
+      },
+      {
+        "witness": "computations/alpha_em/alpha-em-rt-abelian-torsion-count-vs-covolume.witness.json",
+        "prose_number": "6.5",
+        "nearest_relative_distance": "0.230769230769230769230769230769230769230769230769230769230769"
+      },
+      {
+        "witness": "computations/atom-vhyp-bar-trace-test.witness.json",
+        "prose_number": "3.6",
+        "nearest_relative_distance": "0.0919923055555555555555555555555555555555555555555555555555556"
+      },
+      {
+        "witness": "computations/audits/muon-pin-three-values.witness.json",
+        "prose_number": "11.5",
+        "nearest_relative_distance": "0.130434782608695652173913043478260869565217391304347826086957"
+      },
+      {
+        "witness": "computations/averaged-block-swap-binding.witness.json",
+        "prose_number": "0.05536",
+        "nearest_relative_distance": "0.244974597317088692196531791907514450867052023121387283236994"
+      },
+      {
+        "witness": "computations/averaged-block-swap-binding.witness.json",
+        "prose_number": "0.36",
+        "nearest_relative_distance": "0.105380345238282027777777777777777777777777777777777777777778"
+      },
+      {
+        "witness": "computations/averaged-block-swap-binding.witness.json",
+        "prose_number": "5.5",
+        "nearest_relative_distance": "0.240032612863164181818181818181818181818181818181818181818182"
+      },
+      {
+        "witness": "computations/b3-charge-decomposition-a3.witness.json",
+        "prose_number": "14.5",
+        "nearest_relative_distance": "0.0664828275862068965517241379310344827586206896551724137931034"
+      },
+      {
+        "witness": "computations/binding-bstar-bridge.witness.json",
+        "prose_number": "0.193",
+        "nearest_relative_distance": "0.430051813471502590673575129533678756476683937823834196891192"
+      },
+      {
+        "witness": "computations/binding-link-volumes.witness.json",
+        "prose_number": "0.2",
+        "nearest_relative_distance": "0.450000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/binding-log-free-energy.witness.json",
+        "prose_number": "-2.36",
+        "nearest_relative_distance": "0.460169491525423728813559322033898305084745762711864406779661"
+      },
+      {
+        "witness": "computations/binding-log-free-energy.witness.json",
+        "prose_number": "-39.7",
+        "nearest_relative_distance": "0.506297229219143576826196473551637279596977329974811083123426"
+      },
+      {
+        "witness": "computations/binding-lp-delta-audit.witness.json",
+        "prose_number": "5.85",
+        "nearest_relative_distance": "0.215384615384615384615384615384615384615384615384615384615385"
+      },
+      {
+        "witness": "computations/binding-per-bond-decomposition.witness.json",
+        "prose_number": "0.19",
+        "nearest_relative_distance": "0.197235802643143684210526315789473684210526315789473684210526"
+      },
+      {
+        "witness": "computations/binding-shell-enhancement-derivation.witness.json",
+        "prose_number": "2.82",
+        "nearest_relative_distance": "0.0788204964539007092198581560283687943262411347517730496453901"
+      },
+      {
+        "witness": "computations/binding-triangle-3body-cluster.witness.json",
+        "prose_number": "-4.7",
+        "nearest_relative_distance": "0.175101411489361702127659574468085106382978723404255319148936"
+      },
+      {
+        "witness": "computations/binding-triangle-3body-cluster.witness.json",
+        "prose_number": "-7.0",
+        "nearest_relative_distance": "0.446139519142857142857142857142857142857142857142857142857143"
+      },
+      {
+        "witness": "computations/binding-volume-defect-route-refuted.witness.json",
+        "prose_number": "2.00",
+        "nearest_relative_distance": "0.175000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/c3-hopf-habiro-analysis.witness.json",
+        "prose_number": "0.58",
+        "nearest_relative_distance": "0.297762264227526724137931034482758620689655172413793103448276"
+      },
+      {
+        "witness": "computations/c3-hopf-habiro-analysis.witness.json",
+        "prose_number": "0.53",
+        "nearest_relative_distance": "0.420192666513142452830188679245283018867924528301886792452830"
+      },
+      {
+        "witness": "computations/chi-convention-trM-ratio-probe.witness.json",
+        "prose_number": "1.5",
+        "nearest_relative_distance": "0.0666666666666666666666666666666666666666666666666666666666667"
+      },
+      {
+        "witness": "computations/chi-convention-trM-ratio-probe.witness.json",
+        "prose_number": "3.4",
+        "nearest_relative_distance": "0.0852941176470588235294117647058823529411764705882352941176471"
+      },
+      {
+        "witness": "computations/cluster-operator-vs-mayer-b3.witness.json",
+        "prose_number": "1.5",
+        "nearest_relative_distance": "0.133333333333333333333333333333333333333333333333333333333333"
+      },
+      {
+        "witness": "computations/codata-2022-validation-masses.witness.json",
+        "prose_number": "97.025002",
+        "nearest_relative_distance": "0.193678542773954284484322917097182847777730527642761604890253"
+      },
+      {
+        "witness": "computations/codata-2022-validation-masses.witness.json",
+        "prose_number": "1.3",
+        "nearest_relative_distance": "0.398205069230769230769230769230769230769230769230769230769231"
+      },
+      {
+        "witness": "computations/connected-magnitude-charge-symmetric.witness.json",
+        "prose_number": "1.5",
+        "nearest_relative_distance": "0.0666666666666666666666666666666666666666666666666666666666667"
+      },
+      {
+        "witness": "computations/delta-lambda-cancellation-ascaling-probe.witness.json",
+        "prose_number": "1.27",
+        "nearest_relative_distance": "0.0787401574803149606299212598425196850393700787401574803149606"
+      },
+      {
+        "witness": "computations/delta-lambda-cancellation-ascaling-probe.witness.json",
+        "prose_number": "1.31",
+        "nearest_relative_distance": "0.0687022900763358778625954198473282442748091603053435114503817"
+      },
+      {
+        "witness": "computations/delta-lambda-cancellation-ascaling-probe.witness.json",
+        "prose_number": "0.28",
+        "nearest_relative_distance": "0.0584510473332108928571428571428571428571428571428571428571429"
+      },
+      {
+        "witness": "computations/delta-lambda-canonical-residual.witness.json",
+        "prose_number": "0.07",
+        "nearest_relative_distance": "0.285714285714285714285714285714285714285714285714285714285714"
+      },
+      {
+        "witness": "computations/delta-lambda-imme-quartet.witness.json",
+        "prose_number": "0.002",
+        "nearest_relative_distance": "0.550000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/delta-lambda-imme-triplet.witness.json",
+        "prose_number": "0.11",
+        "nearest_relative_distance": "0.0909090909090909090909090909090909090909090909090909090909091"
+      },
+      {
+        "witness": "computations/delta-lambda-qdim-route-probe.witness.json",
+        "prose_number": "0.41",
+        "nearest_relative_distance": "0.0572542201524387804878048780487804878048780487804878048780488"
+      },
+      {
+        "witness": "computations/delta-lambda-qdim-route-probe.witness.json",
+        "prose_number": "5.62",
+        "nearest_relative_distance": "0.225379456918608629893238434163701067615658362989323843416370"
+      },
+      {
+        "witness": "computations/delta-lambda-z-coefficient-and-slope.witness.json",
+        "prose_number": "0.4",
+        "nearest_relative_distance": "0.250000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/delta-n2-lp-dual-extraction.witness.json",
+        "prose_number": "1.6",
+        "nearest_relative_distance": "0.125000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/deltalambda/b4-multiplicative-cumulant.witness.json",
+        "prose_number": "0.583",
+        "nearest_relative_distance": "0.0509228767520843910806174957118353344768439108061749571183533"
+      },
+      {
+        "witness": "computations/deltalambda/b4-multiplicative-cumulant.witness.json",
+        "prose_number": "6.30",
+        "nearest_relative_distance": "0.0771542615952380952380952380952380952380952380952380952380952"
+      },
+      {
+        "witness": "computations/deltalambda/b4-multiplicative-cumulant.witness.json",
+        "prose_number": "3.369",
+        "nearest_relative_distance": "0.0768774116948649450875630750964677945978035025230038587117839"
+      },
+      {
+        "witness": "computations/deltalambda/b4-multiplicative-cumulant.witness.json",
+        "prose_number": "36.4",
+        "nearest_relative_distance": "0.222646637362637362637362637362637362637362637362637362637363"
+      },
+      {
+        "witness": "computations/deltalambda/binding-weight-markov-pinning.witness.json",
+        "prose_number": "0.16",
+        "nearest_relative_distance": "0.113678062500000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/deltalambda/binding-weight-markov-pinning.witness.json",
+        "prose_number": "2.9",
+        "nearest_relative_distance": "0.228937931034482758620689655172413793103448275862068965517241"
+      },
+      {
+        "witness": "computations/deltalambda/binding-weight-markov-pinning.witness.json",
+        "prose_number": "0.415",
+        "nearest_relative_distance": "0.0561469879518072289156626506024096385542168674698795180722892"
+      },
+      {
+        "witness": "computations/deltalambda/borromean-3body-cluster-sign.witness.json",
+        "prose_number": "1.5",
+        "nearest_relative_distance": "0.147726510524024466666666666666666666666666666666666666666667"
+      },
+      {
+        "witness": "computations/deltalambda/borromean-h9-magnitude-lift.witness.json",
+        "prose_number": "0.006",
+        "nearest_relative_distance": "0.143428013793199333333333333333333333333333333333333333333333"
+      },
+      {
+        "witness": "computations/deltalambda/convention-systematic-audit.witness.json",
+        "prose_number": "7.7",
+        "nearest_relative_distance": "0.298701298701298701298701298701298701298701298701298701298701"
+      },
+      {
+        "witness": "computations/deltalambda/deltalambda-binding-a-scaling.witness.json",
+        "prose_number": "2.8",
+        "nearest_relative_distance": "0.460684521041142500000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/deltalambda/deltalambda-binding-a-scaling.witness.json",
+        "prose_number": "0.11",
+        "nearest_relative_distance": "0.355623585000975909090909090909090909090909090909090909090909"
+      },
+      {
+        "witness": "computations/deltalambda/deltalambda-binding-a-scaling.witness.json",
+        "prose_number": "-0.30",
+        "nearest_relative_distance": "0.264156645036379566666666666666666666666666666666666666666667"
+      },
+      {
+        "witness": "computations/deltalambda/deltalambda-coulomb-mirror-split.witness.json",
+        "prose_number": "0.985",
+        "nearest_relative_distance": "0.0558375634517766497461928934010152284263959390862944162436548"
+      },
+      {
+        "witness": "computations/deltalambda/helium4-mu4-cluster-moment.witness.json",
+        "prose_number": "4.591",
+        "nearest_relative_distance": "0.0890873448050533652798954476148987148769331300370289697233718"
+      },
+      {
+        "witness": "computations/deltalambda/mu4-rhoF-cluster-derivation.witness.json",
+        "prose_number": "1.769",
+        "nearest_relative_distance": "0.372538958308998982475975127190503109101187111362351611079706"
+      },
+      {
+        "witness": "computations/deltalambda/mu4-rhoF-cluster-derivation.witness.json",
+        "prose_number": "1.405",
+        "nearest_relative_distance": "0.209979656404711174377224199288256227758007117437722419928826"
+      },
+      {
+        "witness": "computations/deltalambda/mu4-vs-nuclear-4n-force-bound.witness.json",
+        "prose_number": "0.18",
+        "nearest_relative_distance": "0.388888888888888888888888888888888888888888888888888888888889"
+      },
+      {
+        "witness": "computations/deltalambda/mu4-vs-nuclear-4n-force-bound.witness.json",
+        "prose_number": "1.02",
+        "nearest_relative_distance": "0.117647058823529411764705882352941176470588235294117647058824"
+      },
+      {
+        "witness": "computations/deltalambda/perblock-weight-class-feasibility.witness.json",
+        "prose_number": "3.658",
+        "nearest_relative_distance": "0.149808638600328048113723346090759978130125751776927282668125"
+      },
+      {
+        "witness": "computations/deltalambda/r11b-interior-max-monotone-cone-certificate.witness.json",
+        "prose_number": "4.19",
+        "nearest_relative_distance": "0.257756563245823389021479713603818615751789976133651551312649"
+      },
+      {
+        "witness": "computations/deltalambda/r11b-interior-max-monotone-cone-certificate.witness.json",
+        "prose_number": "5.37",
+        "nearest_relative_distance": "0.420856610800744878957169459962756052141527001862197392923650"
+      },
+      {
+        "witness": "computations/deltalambda/triangle-bond-submodularity.witness.json",
+        "prose_number": "1.769",
+        "nearest_relative_distance": "0.265121537591859807801017524024872809496890898812888637648389"
+      },
+      {
+        "witness": "computations/deltalambda/ursell-slot-alignment.witness.json",
+        "prose_number": "0.4225",
+        "nearest_relative_distance": "0.114245968757396449704142011834319526627218934911242603550296"
+      },
+      {
+        "witness": "computations/deltalambda/vol-t-he3-snappy.witness.json",
+        "prose_number": "2.37",
+        "nearest_relative_distance": "0.113003480639801983122362869198312236286919831223628691983122"
+      },
+      {
+        "witness": "computations/deltalambda/wlambda-covariance-epic-dim-threshold.witness.json",
+        "prose_number": "5.1",
+        "nearest_relative_distance": "0.390196078431372549019607843137254901960784313725490196078431"
+      },
+      {
+        "witness": "computations/deltalambda/wlambda-covariance-epic-phase2.witness.json",
+        "prose_number": "1.5",
+        "nearest_relative_distance": "0.133333333333333333333333333333333333333333333333333333333333"
+      },
+      {
+        "witness": "computations/deltalambda/wlambda-covariance-epic-phase7-transfer-bound.witness.json",
+        "prose_number": "0.13",
+        "nearest_relative_distance": "0.153846153846153846153846153846153846153846153846153846153846"
+      },
+      {
+        "witness": "computations/derived-chi-catalogue-matrix-m-mu-n-prototype.witness.json",
+        "prose_number": "1.3",
+        "nearest_relative_distance": "0.0769230769230769230769230769230769230769230769230769230769231"
+      },
+      {
+        "witness": "computations/flavor-split-xq-refinement.witness.json",
+        "prose_number": "-0.10",
+        "nearest_relative_distance": "0.277073889070000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/fr-pullback-k3-test.witness.json",
+        "prose_number": "22.9",
+        "nearest_relative_distance": "0.173009272151012227074235807860262008733624454148471615720524"
+      },
+      {
+        "witness": "computations/fr-pullback-k3-test.witness.json",
+        "prose_number": "21.4",
+        "nearest_relative_distance": "0.255229548236363551401869158878504672897196261682242990654206"
+      },
+      {
+        "witness": "computations/fr-pullback-k3-test.witness.json",
+        "prose_number": "1.7",
+        "nearest_relative_distance": "0.0547058823529411764705882352941176470588235294117647058823529"
+      },
+      {
+        "witness": "computations/habiro/habiro-h9-spectral-decomposition.witness.json",
+        "prose_number": "3.31",
+        "nearest_relative_distance": "0.0604229607250755287009063444108761329305135951661631419939577"
+      },
+      {
+        "witness": "computations/habiro/habiro-normalization-bridge.witness.json",
+        "prose_number": "2.7",
+        "nearest_relative_distance": "0.111111111111111111111111111111111111111111111111111111111111"
+      },
+      {
+        "witness": "computations/habiro/habiro-pochhammer-bridge.witness.json",
+        "prose_number": "7.8",
+        "nearest_relative_distance": "0.0783882626933941025641025641025641025641025641025641025641026"
+      },
+      {
+        "witness": "computations/habiro/habiro-taylor-extraction.witness.json",
+        "prose_number": "1.065",
+        "nearest_relative_distance": "0.0610328638497652582159624413145539906103286384976525821596244"
+      },
+      {
+        "witness": "computations/he4-link-volume-braid-closure.witness.json",
+        "prose_number": "3.3",
+        "nearest_relative_distance": "0.0575757575757575757575757575757575757575757575757575757575758"
+      },
+      {
+        "witness": "computations/he4-rho-F-cpt-mechanism-refuted.witness.json",
+        "prose_number": "5.9",
+        "nearest_relative_distance": "0.152542372881355932203389830508474576271186440677966101694915"
+      },
+      {
+        "witness": "computations/he4-rho-F-cpt-mechanism-refuted.witness.json",
+        "prose_number": "6.4",
+        "nearest_relative_distance": "0.0937500000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/he4-rho-F-two-row-stratum-search.witness.json",
+        "prose_number": "5.7",
+        "nearest_relative_distance": "0.454385964912280701754385964912280701754385964912280701754386"
+      },
+      {
+        "witness": "computations/higgs-h6-correction-probe.witness.json",
+        "prose_number": "0.5",
+        "nearest_relative_distance": "0.128968530610572900000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/hoefsmit-sparse-prototype.witness.json",
+        "prose_number": "5.22",
+        "nearest_relative_distance": "0.404214559386973180076628352490421455938697318007662835249042"
+      },
+      {
+        "witness": "computations/implied-h2-coefficient-audit-50dps.witness.json",
+        "prose_number": "5.6",
+        "nearest_relative_distance": "0.219531990490678750000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/kashaev-link-statesum.witness.json",
+        "prose_number": "3.6",
+        "nearest_relative_distance": "0.111111111111111111111111111111111111111111111111111111111111"
+      },
+      {
+        "witness": "computations/lambda-scale-all-c-i-family-a.witness.json",
+        "prose_number": "938.27",
+        "nearest_relative_distance": "0.0657912967482707536210259307022498854274355995608939857397124"
+      },
+      {
+        "witness": "computations/log-delta-categorical-derivation.witness.json",
+        "prose_number": "5.22",
+        "nearest_relative_distance": "0.0560862361720644636015325670498084291187739463601532567049808"
+      },
+      {
+        "witness": "computations/log-delta-full-mass-subtract.witness.json",
+        "prose_number": "0.612",
+        "nearest_relative_distance": "0.255271732121081535947712418300653594771241830065359477124183"
+      },
+      {
+        "witness": "computations/log-delta-full-mass-subtract.witness.json",
+        "prose_number": "0.326",
+        "nearest_relative_distance": "0.280324163041556748466257668711656441717791411042944785276074"
+      },
+      {
+        "witness": "computations/m-p-borromean-verification-50dps.witness.json",
+        "prose_number": "5.4",
+        "nearest_relative_distance": "0.111111111111111111111111111111111111111111111111111111111111"
+      },
+      {
+        "witness": "computations/meson-em-sinh-closed-form.witness.json",
+        "prose_number": "263.6",
+        "nearest_relative_distance": "0.138088012139605462822458270106221547799696509863429438543247"
+      },
+      {
+        "witness": "computations/meson-habiro-c3-categorical-search.witness.json",
+        "prose_number": "0.7156",
+        "nearest_relative_distance": "0.0648765371716042481833426495248742314141978759083286752375629"
+      },
+      {
+        "witness": "computations/meson-kaon-pion-derivation.witness.json",
+        "prose_number": "51.5",
+        "nearest_relative_distance": "0.165048543689320388349514563106796116504854368932038834951456"
+      },
+      {
+        "witness": "computations/meson-kaon-pion-derivation.witness.json",
+        "prose_number": "263.6",
+        "nearest_relative_distance": "0.0895295902883156297420333839150227617602427921092564491654021"
+      },
+      {
+        "witness": "computations/meson/binding-cut-entropy-derived-weightings.witness.json",
+        "prose_number": "1.79",
+        "nearest_relative_distance": "0.0570719355760920111731843575418994413407821229050279329608939"
+      },
+      {
+        "witness": "computations/meson/two-remaining-fronts.witness.json",
+        "prose_number": "2.59",
+        "nearest_relative_distance": "0.0733590733590733590733590733590733590733590733590733590733591"
+      },
+      {
+        "witness": "computations/metallic-ladder-regime-test.witness.json",
+        "prose_number": "2.9",
+        "nearest_relative_distance": "0.0724137931034482758620689655172413793103448275862068965517241"
+      },
+      {
+        "witness": "computations/metallic-ladder-regime-test.witness.json",
+        "prose_number": "3.8",
+        "nearest_relative_distance": "0.0526315789473684210526315789473684210526315789473684210526316"
+      },
+      {
+        "witness": "computations/mn-flavor-split-plancherel-channel.witness.json",
+        "prose_number": "0.10",
+        "nearest_relative_distance": "0.100000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/mn-standard-channel-correction.witness.json",
+        "prose_number": "0.10",
+        "nearest_relative_distance": "0.100000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/mobius-cross-energy-hopf-calibration.witness.json",
+        "prose_number": "1205.0825",
+        "nearest_relative_distance": "0.170181294641653164824814898565036003759078735273311163343589"
+      },
+      {
+        "witness": "computations/multi-layer-gap-decomposition.witness.json",
+        "prose_number": "-3.86",
+        "nearest_relative_distance": "0.230918425063662538860103626943005181347150259067357512953368"
+      },
+      {
+        "witness": "computations/multiterm-cost-he3-l6a4-probe.witness.json",
+        "prose_number": "7.718",
+        "nearest_relative_distance": "0.295672454003627882871210158072039388442601710287639284788805"
+      },
+      {
+        "witness": "computations/multiterm-cost-he3-l6a4-probe.witness.json",
+        "prose_number": "4.6",
+        "nearest_relative_distance": "0.0608695652173913043478260869565217391304347826086956521739130"
+      },
+      {
+        "witness": "computations/neutron-m_n-derivation.witness.json",
+        "prose_number": "939.6",
+        "nearest_relative_distance": "0.0642826734780757769263516389953171562366964665815240527884206"
+      },
+      {
+        "witness": "computations/nucleus-operator-selection-sdp.witness.json",
+        "prose_number": "0.47",
+        "nearest_relative_distance": "0.140914893617021276595744680851063829787234042553191489361702"
+      },
+      {
+        "witness": "computations/nucleus-operator-selection-sdp.witness.json",
+        "prose_number": "0.10",
+        "nearest_relative_distance": "0.100000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/operator-selection-lp-symbolic-qq.witness.json",
+        "prose_number": "1.64",
+        "nearest_relative_distance": "0.207317073170731707317073170731707317073170731707317073170732"
+      },
+      {
+        "witness": "computations/option-e-deuteron-param-free-residual.witness.json",
+        "prose_number": "82.9",
+        "nearest_relative_distance": "0.163222345136681423401688781664656212303980699638118214716526"
+      },
+      {
+        "witness": "computations/option-e-v9-all-symmetries.witness.json",
+        "prose_number": "6.15",
+        "nearest_relative_distance": "0.249796596911417886178861788617886178861788617886178861788618"
+      },
+      {
+        "witness": "computations/peel-anchor-identification.witness.json",
+        "prose_number": "8.71e-8",
+        "nearest_relative_distance": "0.285097588978185993111366245694603903559127439724454649827784"
+      },
+      {
+        "witness": "computations/pentagon-reduction-li2q.witness.json",
+        "prose_number": "0.65",
+        "nearest_relative_distance": "0.0574030197746689230769230769230769230769230769230769230769231"
+      },
+      {
+        "witness": "computations/per-knot-density-per-block-wiring.witness.json",
+        "prose_number": "56.7",
+        "nearest_relative_distance": "0.0582010582010582010582010582010582010582010582010582010582011"
+      },
+      {
+        "witness": "computations/probes/adding_crossings_cannot_break_the_degeneracy_probe.witness.json",
+        "prose_number": "4.31",
+        "nearest_relative_distance": "0.278422273781902552204176334106728538283062645011600928074246"
+      },
+      {
+        "witness": "computations/probes/b-pred-mirror-slope-closed-form.witness.json",
+        "prose_number": "-0.094",
+        "nearest_relative_distance": "0.409101525393341170212765957446808510638297872340425531914894"
+      },
+      {
+        "witness": "computations/probes/binding-sum-c-vs-d-deut.witness.json",
+        "prose_number": "2.5995",
+        "nearest_relative_distance": "0.0767455279861511829197922677437968840161569532602423542989036"
+      },
+      {
+        "witness": "computations/probes/binding-sum-c-vs-d-heli-tworow.witness.json",
+        "prose_number": "2.5995",
+        "nearest_relative_distance": "0.0691145488990044239276783996922485093287170609732640892479323"
+      },
+      {
+        "witness": "computations/probes/borromean-3d-index.witness.json",
+        "prose_number": "1.5",
+        "nearest_relative_distance": "0.133333333333333333333333333333333333333333333333333333333333"
+      },
+      {
+        "witness": "computations/probes/borromean-3d-index.witness.json",
+        "prose_number": "1.2",
+        "nearest_relative_distance": "0.0500000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/probes/chain_telescopes_and_ordering_sensitivity_probe.witness.json",
+        "prose_number": "2.8e-16",
+        "nearest_relative_distance": "0.207142857142857142857142857142857142857142857142857142857143"
+      },
+      {
+        "witness": "computations/probes/coulomb-mirror-killswitch-probe.witness.json",
+        "prose_number": "1.2",
+        "nearest_relative_distance": "0.0500000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/probes/coulomb-mirror-killswitch-probe.witness.json",
+        "prose_number": "0.002",
+        "nearest_relative_distance": "0.217343287350789900000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/probes/cumulant_hierarchy_does_not_converge_probe.witness.json",
+        "prose_number": "3.49",
+        "nearest_relative_distance": "0.106095306695415472779369627507163323782234957020057306590258"
+      },
+      {
+        "witness": "computations/probes/cumulant_hierarchy_does_not_converge_probe.witness.json",
+        "prose_number": "2.26",
+        "nearest_relative_distance": "0.0619469026548672566371681415929203539823008849557522123893805"
+      },
+      {
+        "witness": "computations/probes/eps-ratio-target-precision.witness.json",
+        "prose_number": "0.06",
+        "nearest_relative_distance": "0.571500000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/probes/eunit-magnus-order2.witness.json",
+        "prose_number": "0.19",
+        "nearest_relative_distance": "0.100317362084210526315789473684210526315789473684210526315789"
+      },
+      {
+        "witness": "computations/probes/finite-q-volume-conjecture-probe.witness.json",
+        "prose_number": "0.67",
+        "nearest_relative_distance": "0.492537313432835820895522388059701492537313432835820895522388"
+      },
+      {
+        "witness": "computations/probes/fivetwo-ak-state-integral.witness.json",
+        "prose_number": "2410.20973",
+        "nearest_relative_distance": "0.585098347437175104259495292967720282168141442197231524743699"
+      },
+      {
+        "witness": "computations/probes/flavor-split-alpha-bond-dilog.witness.json",
+        "prose_number": "0.21",
+        "nearest_relative_distance": "0.184743093257642619047619047619047619047619047619047619047619"
+      },
+      {
+        "witness": "computations/probes/flavor-split-alpha-bond-dilog.witness.json",
+        "prose_number": "0.03",
+        "nearest_relative_distance": "0.147491005148981900000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/probes/flavor-split-alpha-bond-dilog.witness.json",
+        "prose_number": "0.07",
+        "nearest_relative_distance": "0.265273194333654428571428571428571428571428571428571428571429"
+      },
+      {
+        "witness": "computations/probes/flavor-split-alpha-bond-dilog.witness.json",
+        "prose_number": "0.13",
+        "nearest_relative_distance": "0.0595922598521588461538461538461538461538461538461538461538462"
+      },
+      {
+        "witness": "computations/probes/flavor-split-geometric-closure-probe.witness.json",
+        "prose_number": "0.5",
+        "nearest_relative_distance": "0.521386562195271800000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/probes/four_body_term_and_the_h12_collapse_probe.witness.json",
+        "prose_number": "28.295661",
+        "nearest_relative_distance": "0.0602332279850256899812306911649810902102622730743063397600077"
+      },
+      {
+        "witness": "computations/probes/four_body_term_and_the_h12_collapse_probe.witness.json",
+        "prose_number": "-63.29",
+        "nearest_relative_distance": "0.250201000158002844051192921472586506557118028124506241112340"
+      },
+      {
+        "witness": "computations/probes/gamma-chain-tower-magic.witness.json",
+        "prose_number": "0.25",
+        "nearest_relative_distance": "0.560000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/probes/gk-d5-cyclic-dilog-4one.witness.json",
+        "prose_number": "1411.6062",
+        "nearest_relative_distance": "0.291587129611643813975880808684461714605674018717118131104836"
+      },
+      {
+        "witness": "computations/probes/hecke-branching-trace-decomposition-probe.witness.json",
+        "prose_number": "3.4",
+        "nearest_relative_distance": "0.0852941176470588235294117647058823529411764705882352941176471"
+      },
+      {
+        "witness": "computations/probes/keystone-route1-sigma345-constancy-s013.witness.json",
+        "prose_number": "3.8",
+        "nearest_relative_distance": "0.0526315789473684210526315789473684210526315789473684210526316"
+      },
+      {
+        "witness": "computations/probes/keystone-valuemap-genuine-smatrix-s013.witness.json",
+        "prose_number": "2.11",
+        "nearest_relative_distance": "0.0521327014218009478672985781990521327014218009478672985781991"
+      },
+      {
+        "witness": "computations/probes/keystone-valuemap-genuine-smatrix-s013.witness.json",
+        "prose_number": "2.12",
+        "nearest_relative_distance": "0.0566037735849056603773584905660377358490566037735849056603774"
+      },
+      {
+        "witness": "computations/probes/keystone-valuemap-genuine-smatrix-s013.witness.json",
+        "prose_number": "3.8",
+        "nearest_relative_distance": "0.0526315789473684210526315789473684210526315789473684210526316"
+      },
+      {
+        "witness": "computations/probes/keystone-valuemap-genuine-smatrix-s013.witness.json",
+        "prose_number": "5.6",
+        "nearest_relative_distance": "0.0677783436916253571428571428571428571428571428571428571428571"
+      },
+      {
+        "witness": "computations/probes/milnor-one-separated-component-and-the-chain-residual.witness.json",
+        "prose_number": "49.8",
+        "nearest_relative_distance": "0.0783132530120481927710843373493975903614457831325301204819277"
+      },
+      {
+        "witness": "computations/probes/mu3-door-sign-c-vs-d.witness.json",
+        "prose_number": "1.585",
+        "nearest_relative_distance": "0.116719242902208201892744479495268138801261829652996845425868"
+      },
+      {
+        "witness": "computations/probes/no_distance_decay_in_the_trace_probe.witness.json",
+        "prose_number": "0.136",
+        "nearest_relative_distance": "0.191176470588235294117647058823529411764705882352941176470588"
+      },
+      {
+        "witness": "computations/probes/o3prime-selection-is-atom-independent.witness.json",
+        "prose_number": "24.5",
+        "nearest_relative_distance": "0.142857142857142857142857142857142857142857142857142857142857"
+      },
+      {
+        "witness": "computations/probes/perknot-additive-sk-vs-kA-extensivity.witness.json",
+        "prose_number": "1.73",
+        "nearest_relative_distance": "0.103198127775154739884393063583815028901734104046242774566474"
+      },
+      {
+        "witness": "computations/probes/pn_writhe_is_not_an_exponent_probe.witness.json",
+        "prose_number": "2.58",
+        "nearest_relative_distance": "0.0697674418604651162790697674418604651162790697674418604651163"
+      },
+      {
+        "witness": "computations/probes/pn_writhe_is_not_an_exponent_probe.witness.json",
+        "prose_number": "0.024",
+        "nearest_relative_distance": "0.273191666666666666666666666666666666666666666666666666666667"
+      },
+      {
+        "witness": "computations/probes/probe-d-cocasimir-barparity.witness.json",
+        "prose_number": "0.145",
+        "nearest_relative_distance": "0.241379310344827586206896551724137931034482758620689655172414"
+      },
+      {
+        "witness": "computations/probes/probe-h3-central-idempotents-exact.witness.json",
+        "prose_number": "3.43",
+        "nearest_relative_distance": "0.0932944606413994169096209912536443148688046647230320699708455"
+      },
+      {
+        "witness": "computations/probes/qbeta-5two-chirality-state-integral.witness.json",
+        "prose_number": "1411.6062",
+        "nearest_relative_distance": "0.291587129611643813975880808684461714605674018717118131104836"
+      },
+      {
+        "witness": "computations/probes/qbeta-5two-colored-tower-barodd-qstar.witness.json",
+        "prose_number": "16.09",
+        "nearest_relative_distance": "0.0791796146674953387197016780609073958980733374766935985083903"
+      },
+      {
+        "witness": "computations/probes/qbeta-5two-habiro-polynomial-match.witness.json",
+        "prose_number": "1.6",
+        "nearest_relative_distance": "0.125000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/probes/qbeta-5two-n5-cable-qstar.witness.json",
+        "prose_number": "5.4",
+        "nearest_relative_distance": "0.352138778344444444444444444444444444444444444444444444444444"
+      },
+      {
+        "witness": "computations/probes/qbeta-5two-n6-cable-qstar.witness.json",
+        "prose_number": "5.5",
+        "nearest_relative_distance": "0.156217454545454545454545454545454545454545454545454545454545"
+      },
+      {
+        "witness": "computations/probes/qbeta-5two-quantum-volume.witness.json",
+        "prose_number": "0.153",
+        "nearest_relative_distance": "0.265305447098039215686274509803921568627450980392156862745098"
+      },
+      {
+        "witness": "computations/probes/qbeta-5two-stokes-barodd-index.witness.json",
+        "prose_number": "2007.10190",
+        "nearest_relative_distance": "0.171417803949067060322149064778425051563151826023382270725766"
+      },
+      {
+        "witness": "computations/probes/qbeta-5two-stokes-population-bridge.witness.json",
+        "prose_number": "13.2",
+        "nearest_relative_distance": "0.166666666666666666666666666666666666666666666666666666666667"
+      },
+      {
+        "witness": "computations/probes/qbeta-5two-v3-from-borel-poles.witness.json",
+        "prose_number": "6.1",
+        "nearest_relative_distance": "0.180327868852459016393442622950819672131147540983606557377049"
+      },
+      {
+        "witness": "computations/probes/qbeta-qnnq-theta-is-im-u.witness.json",
+        "prose_number": "1.9",
+        "nearest_relative_distance": "0.0526315789473684210526315789473684210526315789473684210526316"
+      },
+      {
+        "witness": "computations/probes/rhoF-vs-adjoint-torsion.witness.json",
+        "prose_number": "2411.03801",
+        "nearest_relative_distance": "0.543764969512031873773736151094523806366702613701224892758949"
+      },
+      {
+        "witness": "computations/probes/the_asymmetry_term_lives_at_vassiliev_type_two_probe.witness.json",
+        "prose_number": "15.8",
+        "nearest_relative_distance": "0.367088607594936708860759493670886075949367088607594936708861"
+      },
+      {
+        "witness": "computations/probes/the_character_ratio_derivation_path_is_the_bond_model_probe.witness.json",
+        "prose_number": "27.36",
+        "nearest_relative_distance": "0.138107865762411001461988304093567251461988304093567251461988"
+      },
+      {
+        "witness": "computations/probes/the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe.witness.json",
+        "prose_number": "2.5e-8",
+        "nearest_relative_distance": "0.200000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/probes/the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.witness.json",
+        "prose_number": "3.785",
+        "nearest_relative_distance": "0.178335535006605019815059445178335535006605019815059445178336"
+      },
+      {
+        "witness": "computations/probes/the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.witness.json",
+        "prose_number": "2.8",
+        "nearest_relative_distance": "0.110714285714285714285714285714285714285714285714285714285714"
+      },
+      {
+        "witness": "computations/probes/the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.witness.json",
+        "prose_number": "254.53",
+        "nearest_relative_distance": "0.0570856087691038384473343024397909873099438180175224924370408"
+      },
+      {
+        "witness": "computations/probes/the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.witness.json",
+        "prose_number": "74.49",
+        "nearest_relative_distance": "0.0602765471875419519398576990200026849241508927372801718351457"
+      },
+      {
+        "witness": "computations/probes/the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.witness.json",
+        "prose_number": "53.87",
+        "nearest_relative_distance": "0.0565624849141655838128828661592723222572860590310005568962317"
+      },
+      {
+        "witness": "computations/probes/three_body_term_has_the_wrong_sign_probe.witness.json",
+        "prose_number": "0.196",
+        "nearest_relative_distance": "0.438775510204081632653061224489795918367346938775510204081633"
+      },
+      {
+        "witness": "computations/probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.witness.json",
+        "prose_number": "1.0e-7",
+        "nearest_relative_distance": "0.206349000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/probes/two_blocks_publish_the_two_sides_of_one_identity_at_different_pins_probe.witness.json",
+        "prose_number": "1.5e-7",
+        "nearest_relative_distance": "0.470899333333333333333333333333333333333333333333333333333333"
+      },
+      {
+        "witness": "computations/probes/two_nucleon_pattern_is_unreachable_probe.witness.json",
+        "prose_number": "4.4e-15",
+        "nearest_relative_distance": "0.204545454545454545454545454545454545454545454545454545454545"
+      },
+      {
+        "witness": "computations/proton-m_e-derivation.witness.json",
+        "prose_number": "1.4283",
+        "nearest_relative_distance": "0.0898270671427571238535321711125113771616607155359518308478611"
+      },
+      {
+        "witness": "computations/qbeta/c3-w2-c1-connection-invariant.witness.json",
+        "prose_number": "1.7",
+        "nearest_relative_distance": "0.176470588235294117647058823529411764705882352941176470588235"
+      },
+      {
+        "witness": "computations/qbeta/c3-w2-c1-connection-invariant.witness.json",
+        "prose_number": "2.9",
+        "nearest_relative_distance": "0.517241379310344827586206896551724137931034482758620689655172"
+      },
+      {
+        "witness": "computations/qbeta/c3-w2-c1-invariant-structure.witness.json",
+        "prose_number": "0.42",
+        "nearest_relative_distance": "0.0642250231452380952380952380952380952380952380952380952380952"
+      },
+      {
+        "witness": "computations/qbeta/c3-w2-newton-slope-is-qgevrey-level.witness.json",
+        "prose_number": "1.3",
+        "nearest_relative_distance": "0.230769230769230769230769230769230769230769230769230769230769"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-bring-embedding-magnitude.witness.json",
+        "prose_number": "2.5e-9",
+        "nearest_relative_distance": "0.199600000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-barodd-binding-sdp-dual.witness.json",
+        "prose_number": "0.4275",
+        "nearest_relative_distance": "0.121902617865758128654970760233918128654970760233918128654971"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-boost-factor-normalization.witness.json",
+        "prose_number": "2.6",
+        "nearest_relative_distance": "0.0769230769230769230769230769230769230769230769230769230769231"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-crossanchor-swing-provenance.witness.json",
+        "prose_number": "3.47",
+        "nearest_relative_distance": "0.103746397694524495677233429394812680115273775216138328530259"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-crossanchor-swing-provenance.witness.json",
+        "prose_number": "3.35",
+        "nearest_relative_distance": "0.0716417910447761194029850746268656716417910447761194029850746"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-exact-volume-boost-enhancement.witness.json",
+        "prose_number": "0.18",
+        "nearest_relative_distance": "0.388888888888888888888888888888888888888888888888888888888889"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-experimental-uncertainty.witness.json",
+        "prose_number": "3.47",
+        "nearest_relative_distance": "0.103746397694524495677233429394812680115273775216138328530259"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-geometric-channel-q0star.witness.json",
+        "prose_number": "0.03946",
+        "nearest_relative_distance": "0.253986315255955397871262037506335529650278763304612265585403"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-imq-decay-projection.witness.json",
+        "prose_number": "5.5",
+        "nearest_relative_distance": "0.0909090909090909090909090909090909090909090909090909090909091"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-imq-qstar-ladder-amplification.witness.json",
+        "prose_number": "4.66e6",
+        "nearest_relative_distance": "0.176308056223175965665236051502145922746781115879828326180258"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-imq-qstar-ladder-amplification.witness.json",
+        "prose_number": "0.54",
+        "nearest_relative_distance": "0.0740740740740740740740740740740740740740740740740740740740741"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-imq-ratio-and-entropy.witness.json",
+        "prose_number": "4.08",
+        "nearest_relative_distance": "0.237745098039215686274509803921568627450980392156862745098039"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-keystone-anchor-blind.witness.json",
+        "prose_number": "0.07",
+        "nearest_relative_distance": "0.235714285714285714285714285714285714285714285714285714285714"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-measurement-proposal-budget.witness.json",
+        "prose_number": "2.02",
+        "nearest_relative_distance": "0.0557524752475247524752475247524752475247524752475247524752475"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-mq0-nk-scan.witness.json",
+        "prose_number": "2.2",
+        "nearest_relative_distance": "0.0772727272727272727272727272727272727272727272727272727272727"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-mq0-nk-scan.witness.json",
+        "prose_number": "0.04",
+        "nearest_relative_distance": "0.250000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-muon-anchor-codata-edition-attribution.witness.json",
+        "prose_number": "5.0e-9",
+        "nearest_relative_distance": "0.423034000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-phib-finite-b-volume-correction.witness.json",
+        "prose_number": "0.0395",
+        "nearest_relative_distance": "0.463983441611908000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-c3-qstar-k31-repin.witness.json",
+        "prose_number": "0.539",
+        "nearest_relative_distance": "0.0723562152133580705009276437847866419294990723562152133580705"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-chain4-kashiwara-crystal-scaffold.witness.json",
+        "prose_number": "6.47",
+        "nearest_relative_distance": "0.0649765419180848531684698608964451313755795981452859350850077"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-ck-recursion-kernel-constraint-probe.witness.json",
+        "prose_number": "3.4",
+        "nearest_relative_distance": "0.0852941176470588235294117647058823529411764705882352941176471"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-cusp-lattice-geodesic.witness.json",
+        "prose_number": "33.5",
+        "nearest_relative_distance": "0.0926119402985074626865671641791044776119402985074626865671642"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-cusp-lattice-geodesic.witness.json",
+        "prose_number": "4.08",
+        "nearest_relative_distance": "0.206482598039215686274509803921568627450980392156862745098039"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-d-frame-trace-baseline.witness.json",
+        "prose_number": "15.5",
+        "nearest_relative_distance": "0.225806451612903225806451612903225806451612903225806451612903"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-dladder-padic-graded-prime.witness.json",
+        "prose_number": "1.4",
+        "nearest_relative_distance": "0.0714285714285714285714285714285714285714285714285714285714286"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-dladder-q-holonomic-base3.witness.json",
+        "prose_number": "1.5",
+        "nearest_relative_distance": "0.133333333333333333333333333333333333333333333333333333333333"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-even-channel-magnitude.witness.json",
+        "prose_number": "5.30",
+        "nearest_relative_distance": "0.0566037735849056603773584905660377358490566037735849056603774"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-fmap-phi-b-root-of-unity-reference.witness.json",
+        "prose_number": "2.1",
+        "nearest_relative_distance": "0.0952380952380952380952380952380952380952380952380952380952381"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-geometric-boost-udeform.witness.json",
+        "prose_number": "0.5",
+        "nearest_relative_distance": "0.0571591526480000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-h1-significance-against-cal3-band.witness.json",
+        "prose_number": "0.07",
+        "nearest_relative_distance": "0.297966541428571428571428571428571428571428571428571428571429"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-ladder-required-phase.witness.json",
+        "prose_number": "2.07",
+        "nearest_relative_distance": "0.159420289855072463768115942028985507246376811594202898550725"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-level-k-operator-and-real-decays.witness.json",
+        "prose_number": "8.9",
+        "nearest_relative_distance": "0.250442159775280898876404494382022471910112359550561797752809"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-odd-channel-stokes-borel.witness.json",
+        "prose_number": "0.249",
+        "nearest_relative_distance": "0.0714794881477966265060240963855421686746987951807228915662651"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-phib-a1-vs-ohtsuki-kappa1.witness.json",
+        "prose_number": "1.713",
+        "nearest_relative_distance": "0.241097489784004670169293636894337419731465265615878575598365"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-phib-a1-vs-ohtsuki-kappa1.witness.json",
+        "prose_number": "2.094",
+        "nearest_relative_distance": "0.379178605539637058261700095510983763132760267430754536771729"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-phib-genuine-4one-2loop-is-quantum-dilog.witness.json",
+        "prose_number": "0.1008",
+        "nearest_relative_distance": "0.124928978174603174603174603174603174603174603174603174603175"
+      },
+      {
+        "witness": "computations/qbeta/qbeta-trace-invisible-is-pairing-representable.witness.json",
+        "prose_number": "7.67",
+        "nearest_relative_distance": "0.303780964797913950456323337679269882659713168187744458930900"
+      },
+      {
+        "witness": "computations/qbeta/qlommel-delta-lambda-two-seed.witness.json",
+        "prose_number": "-3.5",
+        "nearest_relative_distance": "0.164371428571428571428571428571428571428571428571428571428571"
+      },
+      {
+        "witness": "computations/qc-convexity-boundary.witness.json",
+        "prose_number": "0.07",
+        "nearest_relative_distance": "0.571428571428571428571428571428571428571428571428571428571429"
+      },
+      {
+        "witness": "computations/qns-self-sustainment-probe.witness.json",
+        "prose_number": "0.5",
+        "nearest_relative_distance": "0.420000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/rho-binding-constancy.witness.json",
+        "prose_number": "5.728",
+        "nearest_relative_distance": "0.457053072625698324022346368715083798882681564245810055865922"
+      },
+      {
+        "witness": "computations/rho-binding-constancy.witness.json",
+        "prose_number": "5.729",
+        "nearest_relative_distance": "0.457147844300925117821609355908535521033339151684412637458544"
+      },
+      {
+        "witness": "computations/sigma-shell-from-beta-chain.witness.json",
+        "prose_number": "0.001331",
+        "nearest_relative_distance": "0.109347101723593012772351615326821938392186326070623591284748"
+      },
+      {
+        "witness": "computations/staircase-ew-residual-conjecture.witness.json",
+        "prose_number": "0.13",
+        "nearest_relative_distance": "0.0939124991181863846153846153846153846153846153846153846153846"
+      },
+      {
+        "witness": "computations/sweeps/mass-table-bring-phi-q-h4-sweep.witness.json",
+        "prose_number": "2.89",
+        "nearest_relative_distance": "0.0761245674740484429065743944636678200692041522491349480968858"
+      },
+      {
+        "witness": "computations/term6-full-pole-sum.witness.json",
+        "prose_number": "0.057",
+        "nearest_relative_distance": "0.122807017543859649122807017543859649122807017543859649122807"
+      },
+      {
+        "witness": "computations/term6-habiro-residue-mpfr-50dps.witness.json",
+        "prose_number": "1.18e6",
+        "nearest_relative_distance": "0.149224420864784576271186440677966101694915254237288135593220"
+      },
+      {
+        "witness": "computations/term6-habiro-residue-mpfr-50dps.witness.json",
+        "prose_number": "1.50",
+        "nearest_relative_distance": "0.133333333333333333333333333333333333333333333333333333333333"
+      },
+      {
+        "witness": "computations/theta-mn-bondcount-linearchain.witness.json",
+        "prose_number": "0.2",
+        "nearest_relative_distance": "0.450000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "witness": "computations/vdw-pskew-sinh-probe.witness.json",
+        "prose_number": "0.81",
+        "nearest_relative_distance": "0.0707381317876969135802469135802469135802469135802469135802469"
+      },
+      {
+        "witness": "computations/vol-density-per-block-wiring.witness.json",
+        "prose_number": "56.7",
+        "nearest_relative_distance": "0.0582010582010582010582010582010582010582010582010582010582011"
+      },
+      {
+        "witness": "computations/whitehead-c0-tower.witness.json",
+        "prose_number": "0.87",
+        "nearest_relative_distance": "0.206856629506376551724137931034482758620689655172413793103448"
+      },
+      {
+        "witness": "computations/whitehead-volume-identification.witness.json",
+        "prose_number": "7.32772",
+        "nearest_relative_distance": "0.0845695523300562794429918173729345553596480214855371111341591"
+      },
+      {
+        "witness": "docs/audits/2026-05-01-p2-2a-wiring-check.witness.json",
+        "prose_number": "2.2",
+        "nearest_relative_distance": "0.0909090909090909090909090909090909090909090909090909090909091"
+      },
+      {
+        "witness": "qou-mass/src/qou_mass/codata-2022-validation-masses.witness.json",
+        "prose_number": "97.025002",
+        "nearest_relative_distance": "0.193678542773954284484322917097182847777730527642761604890253"
+      },
+      {
+        "witness": "qou-mass/src/qou_mass/codata-2022-validation-masses.witness.json",
+        "prose_number": "1.3",
+        "nearest_relative_distance": "0.398205069230769230769230769230769230769230769230769230769231"
+      },
+      {
+        "witness": "qou-mass/src/qou_mass/data/m-p-borromean-verification-50dps.witness.json",
+        "prose_number": "5.4",
+        "nearest_relative_distance": "0.111111111111111111111111111111111111111111111111111111111111"
+      }
+    ]
+  }
+}
