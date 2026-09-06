@@ -42,7 +42,12 @@ READING msolve, verified in both directions -- these markers are not interchange
 A degree over Q that matches the degree mod p is the evidence that p was not a bad
 prime.  A mismatch is a finding, not a nuisance.
 
-Usage: ptolemy_class_sweep.py <manifold> <class> [degree-cap] [timeout-seconds]
+Usage: ptolemy_class_sweep.py <manifold> <class> [degree-cap] [timeout-seconds] [threads]
+
+BUDGET, measured.  Class 1 settles mod p in 373 s and over Q in 713 s.  Classes 2, 3
+and 4 ALL exceeded 900 s mod p -- and class 2 keeps FEWER variables than class 1 (11
+against 12), so variable count is not the cost and class 1 is simply the easy one.
+Do not size the budget from class 1.
 """
 import ast
 import json
@@ -150,8 +155,8 @@ def write_ms(path, polys, rem, char):
                     + body + "\n")
 
 
-def run_msolve(inp, out, extra, budget):
-    cmd = ['msolve', '-f', str(inp), '-o', str(out)] + extra
+def run_msolve(inp, out, extra, budget, threads=1):
+    cmd = ['msolve', '-t', str(threads), '-f', str(inp), '-o', str(out)] + extra
     t0 = time.time()
     try:
         r = subprocess.run(cmd, capture_output=True, text=True, timeout=budget)
@@ -189,6 +194,7 @@ def main():
     kcls = int(sys.argv[2]) if len(sys.argv) > 2 else 2
     cap = int(sys.argv[3]) if len(sys.argv) > 3 else 25
     budget = int(sys.argv[4]) if len(sys.argv) > 4 else 1200
+    threads = int(sys.argv[5]) if len(sys.argv) > 5 else 1
 
     polys, rem = build_reduced(name, kcls, cap, budget)
     stem = f'{name}-c{kcls}-sweep'
@@ -199,7 +205,7 @@ def main():
         ms = HERE / f'{stem}-{tag}.ms'
         out = HERE / f'{stem}-rur-{tag}.res'
         write_ms(ms, polys, rem, char)
-        data, log, secs = run_msolve(ms, out, extra, budget)
+        data, log, secs = run_msolve(ms, out, extra, budget, threads)
         verdict, deg = describe(data)
         res[tag] = {"verdict": verdict, "degree": deg, "seconds": round(secs, 1)}
         print(f"  {tag}: {verdict}   ({secs:.1f}s)", flush=True)
