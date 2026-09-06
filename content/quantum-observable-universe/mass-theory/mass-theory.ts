@@ -620,6 +620,7 @@ export default chapter({
         "crossing-graded-mass-expansion",
         "crossing-graded-mass-expansion-table-data",
         "lifted-crossing-locality",
+        "hecke-monodromy-step-two",
         "mass-categorical-descent",
         "mass-categorical-descent-proof",
         "descended-level-zero",

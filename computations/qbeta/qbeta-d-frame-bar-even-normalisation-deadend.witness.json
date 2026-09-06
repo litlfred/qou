@@ -1,0 +1,51 @@
+{
+  "probe": "qbeta_d_frame_bar_even_normalisation_deadend_probe",
+  "bean": "qou-cds1",
+  "question": "can the D-frame ladder be repaired by rescaling z_D to bar-evenness?",
+  "answer": "No. The rescaling exists and is forced (z_D/q^2 = 1/[2]_q), but a bar-even parameter cannot satisfy the full-bar condition that DEFINES convention D, so the route leaves D rather than re-deriving within it. The live route remains the derived projection a - h^2/4.",
+  "scope": "(b) \u2014 exact symbolic identities. Closes one alternative; adjudicates nothing about the live route.",
+  "numeric_at_proton_q0": {
+    "z_C": "0.499320334183694452",
+    "z_D": "0.612688037146465252",
+    "z_tilde_D": "0.497290545604915556"
+  },
+  "note_on_the_0_4_percent": "z~_D is 0.4% from z_C while raw z_D is 23% away, which is why the C-built ladder nearly works under z~_D. That closeness is NOT evidence and was not used: the verdict is the full-bar incompatibility, established independently of it.",
+  "q0": "1.1099785827513808076",
+  "q0_pin": "proton (q_at)",
+  "assertions": [
+    {
+      "name": "bar_even_exponent_is_forced_not_chosen",
+      "passed": true,
+      "detail": "bar(q^a z_D)/(q^a z_D) = q^(-2*a - 4), so bar-evenness forces a = -2 uniquely; z~_D = z_D/q^2 = q/(q**2 + 1), and bar(z~)/z~ = 1."
+    },
+    {
+      "name": "the_two_bar_laws_are_the_same_identity",
+      "passed": true,
+      "detail": "bar(z_D) = q^-4 z_D (multiplicative, as derived from scratch) and bar(z_D) = z_D - h (additive, as the corpus states it) differ by exactly 0. They look like two conditions and are one. Worth recording because a reader meeting both forms could think two separate constraints apply."
+    },
+    {
+      "name": "z_C_and_z_tilde_D_are_the_same_form_in_different_variables",
+      "passed": true,
+      "detail": "z_C = 1/[2]_sqrt(q) and z~_D = z_D/q^2 = 1/[2]_q \u2014 the same functional form in q vs sqrt(q), structurally the same shape as the (u;u)_m vs (q;q)_m convention defect fixed in #6906."
+    },
+    {
+      "name": "bar_even_normalisation_LEAVES_convention_D",
+      "passed": true,
+      "detail": "z_D's defining property is the full-bar condition bar(z) = z - h (zD_full_bar_covariant). z~_D misses it by exactly q - 1/q, i.e. h \u2014 and so does z_C. barEven_fullBar_forces_classical proves this is not an accident: bar-even and full-bar are incompatible away from q^2 = 1. So rescaling to bar-evenness does NOT re-derive the ladder within D; it moves to a third parameter that is neither z_C nor z_D. THE ROUTE IS CLOSED."
+    },
+    {
+      "name": "defect_is_exactly_h_squared_reproducing_the_corpus",
+      "passed": true,
+      "detail": "bar(2a) + 2a = h^2 exactly at z_D, independently reproducing QOU.QBeta.eigenphase_bar_defect_of_fullBar. Since the defect is z-independent across the full-bar family, no choice inside it restores bar-oddness \u2014 which is why the live route is the derived projection a - h^2/4, not a reparametrisation."
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "89f751d07c39",
+  "scriptCommitSha": "unknown",
+  "commitSha": "566f7e7ee2fc767aa29bdb166184e9a31c57f26f",
+  "engine": "python+sympy",
+  "computedAt": "2026-09-06T06:53:42.076320+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}
