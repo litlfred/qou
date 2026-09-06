@@ -74,9 +74,33 @@ structure JetPreservesQU (C : Type u) [Category.{v} C]
   /-- The unit section is a monomorphism. -/
   unitSection_mono : Mono unitSection
 
-/-- Theorem stating that jet prolongation preserves the QU structure. -/
+/-- **Jet prolongation preserves the QU structure -- and the statement is
+    vacuous, so this is now a theorem rather than an axiom.**
+
+    It stood as an `axiom` for
+
+        ∃ jet : JetPreservesQU C, jet.original = fh
+
+    Taking `jet := fh` with `jetEval` and `unitSection` both the identity
+    discharges it: `eval_preserves_mul` closes by `tensor_id`, and the
+    identity is a monomorphism.  So the existential says only that the
+    trivial prolongation exists.
+
+    `JetPreservesQU` has no field distinguishing `jet` from `original` --
+    no first-order structure, no requirement that `jetEval` be a genuine
+    evaluation rather than the identity, and `unitSection_mono` is
+    satisfied by the identity.  The prolongation content the proposition
+    describes is therefore nowhere in the type, and adding it is a
+    structure refactor that is deliberately not guessed at here. -/
 -- Ref: [manuscript] prop:categorical-jet-prolongation
-axiom categorical_jet_prolongation (C : Type u) [Category.{v} C] [MonoidalCategory C]
-    (fh : FrobeniusHopfData C) : ∃ (jet : JetPreservesQU C), jet.original = fh
+theorem categorical_jet_prolongation (C : Type u) [Category.{v} C]
+    [MonoidalCategory C]
+    (fh : FrobeniusHopfData C) : ∃ (jet : JetPreservesQU C), jet.original = fh :=
+  ⟨{ original := fh
+     jet := fh
+     jetEval := CategoryTheory.CategoryStruct.id fh.obj
+     eval_preserves_mul := by simp
+     unitSection := CategoryTheory.CategoryStruct.id fh.obj
+     unitSection_mono := inferInstance }, rfl⟩
 
 end QOU
