@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T15:03:40Z
-updated_at: 2026-09-06T22:14:01Z
+updated_at: 2026-09-06T22:25:41Z
 ---
 
 ## What is open
@@ -418,3 +418,48 @@ it is uncertain.
 ### Then (d) alone
 
 The HARD direction of Ehresmann -- rank criterion => subword, Bjorner-Brenti Thm 2.1.5.
+
+
+## UPDATE 8 — step (c) is COMPLETE.  3.7's forward half is now ONE classical theorem.
+
+`dominance_to_bruhatLe` is a two-line composition:
+
+    QOU.Machinery.BruhatRank.bruhatLe_of_rk_le
+      (rk_le_of_rankAt_le hn hs ((domRel_iff_rankAt _ _).mp hdom))
+
+**READ THIS BEFORE QUOTING ANYTHING: `dominance_to_bruhatLe` STILL DEPENDS ON `sorryAx`.**
+`DominanceIsBruhat.lean` now compiles with ZERO warnings and contains no `sorry` token, and
+that is NOT the same statement.  The `sorry` moved to `bruhatLe_of_rk_le` in
+`Machinery/BruhatRankCriterion` and propagates:
+
+    dominance_to_bruhatLe  -> [propext, sorryAx, Classical.choice, Quot.sound]
+    bruhatLe_of_rk_le      -> [propext, sorryAx, Classical.choice, Quot.sound]
+    everything else new    -> [propext, Classical.choice, Quot.sound]
+
+What changed is WHERE the gap is, and that is worth something: it is now the **hard direction
+of Ehresmann's criterion** -- rank criterion => subword, Bjorner-Brenti Thm 2.1.5 -- a named,
+citable statement about Coxeter groups with no tableau content, stated with a `-- Ref:` per
+the state-and-queue disposition.  Previously it was a tableau selection rule that seven
+attempts failed to find and whose negatives say no label-naming rule can work.
+
+### New this pass
+
+    rowPrefix_colLen_zero    rowPrefix mu (colLen 0) = nOf mu -- from the corpus's own
+                             card_eq_sum_rowLen, not re-derived
+    exists_block             **(c2)**: every i <= nOf mu lies in some row block
+    rk_eq_of_index_ge        past the last index there is nothing left to count
+    IncreasingOn.mono_right  a shorter window is a weaker hypothesis
+    rk_le_of_rankAt_le       **the whole of step (c)**: rank inequality at the ROW CUTS
+                             gives one at EVERY index
+    bruhatLe_of_rk_le        the named gap (sorry + Bjorner-Brenti citation)
+
+`rk_le_of_rankAt_le` takes `IsRowStandard s` -- the DOMINATING tableau -- and not `t`, because
+`rk_le_of_endpoints` carries a hypothesis only on its `u` side.  So `_ht` is unused in
+`dominance_to_bruhatLe` as well, and it is now the ONLY unused hypothesis in either half.
+
+### Status of the whole arc
+
+    3.7 converse   PROVED, sorry-free
+    3.7 forward    proved modulo Bjorner-Brenti Thm 2.1.5, nothing else
+    (a) (b) (c)    all done
+    (d)            the one Mathlib-scale piece

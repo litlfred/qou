@@ -276,14 +276,19 @@ interpolation.
   `d(s) ≤ d(t)` ⟹ full rank (the **easy** direction of Ehresmann: a subword can only raise
   the rank matrix, an induction on deletions from the subword *definition*) ⟹ boundary rank
   **by specialisation** ⟹ `s ⊵ t`.  No reflection order appears anywhere in that chain, so
-  `bruhatLe_to_dominance`'s recorded blocker is not a blocker on this route.  Its docstring
+  `bruhatLe_to_dominance`'s recorded blocker is not a blocker on this route.
   It is now **proved** on exactly this route: `rk_le_of_bruhatLe` (easy Ehresmann,
   `Machinery/BruhatRankCriterion`), then `rankAt_eq_rk` to specialise to the row cuts, then
   `domRel_iff_rankAt`.  `qou-3k66` stays open on its own merits.
-* **Forward — re-scoped, not unblocked.**  It still needs the **hard** direction of
-  Ehresmann (rank criterion ⟹ subword), plus the interpolation bridge.  But that is a named
-  classical theorem with a known proof (Björner–Brenti Thm 2.1.5) in place of a tableau
-  selection rule that seven attempts failed to find, which is a better place to be stuck.
+* **Forward — reduced to ONE classical theorem.**  The interpolation bridge is proved
+  (`rk_le_of_rankAt_le`, on `BruhatRank.rk_le_of_endpoints` + `dOf_increasingOn_block` +
+  `exists_block`), so `dominance_to_bruhatLe` is now a two-line composition.  Its ONLY
+  remaining input is `BruhatRank.bruhatLe_of_rk_le`, the **hard** direction of Ehresmann's
+  criterion, stated there with a `sorry` and a citation to Björner–Brenti Thm 2.1.5.
+  **`dominance_to_bruhatLe` therefore still depends on `sorryAx`** — this file has no `sorry`
+  token, which is not the same thing, and `#print axioms` is the honest check.  What changed
+  is *where* the gap is: a named, citable statement about Coxeter groups with no tableau
+  content, rather than a tableau selection rule that seven attempts failed to find.
 
 What remains free and is not in doubt: swapping two labels **is** the group action
 (`TableauPerm.dOf_smul`, verified), the handedness bridge is landed, the coset-minimality
@@ -530,6 +535,71 @@ theorem dOf_increasingOn_block {t : QOU.BraidKnot.Specht.Tableau μ}
   have hlt : dOf t x < dOf t y := ht _ _ hrow hcol
   simpa [toFinSucc, Equiv.permCongr_apply, hxd, hyd] using hlt
 
+/-! ### Every index lies in a row block, and the bridge is wired
+
+`rk_le_of_endpoints` needs a window; `exists_block` supplies it.  The one input is that
+`rowPrefix` REACHES `nOf μ`, which the corpus already had:
+`SytRowSuperstandard.card_eq_sum_rowLen` is literally `rowPrefix μ (colLen 0) = nOf μ`.
+
+`rk_le_of_rankAt_le` is then the whole of step (c): a rank inequality at the ROW CUTS —
+which is what `domRel_iff_rankAt` turns dominance into — gives one at EVERY index, which is
+what Ehresmann's criterion consumes.
+
+Note which hypothesis it takes: `IsRowStandard s`, the DOMINATING tableau, and not `t`.
+`rk_le_of_endpoints` carries a hypothesis only on its `u` side. -/
+
+theorem rowPrefix_colLen_zero : QOU.BraidKnot.rowPrefix μ (μ.colLen 0) = QOU.BraidKnot.Specht.nOf μ := by
+  show (∑ i ∈ Finset.range (μ.colLen 0), μ.rowLen i) = μ.card
+  rw [YoungDiagram.card, QOU.BraidKnot.card_eq_sum_rowLen]
+
+theorem exists_block {i : ℕ} (hi : i ≤ QOU.BraidKnot.Specht.nOf μ) :
+    ∃ r : ℕ, QOU.BraidKnot.rowPrefix μ r ≤ i ∧ i ≤ QOU.BraidKnot.rowPrefix μ (r + 1) := by
+  have hex : ∃ r : ℕ, i ≤ QOU.BraidKnot.rowPrefix μ (r + 1) := by
+    refine ⟨μ.colLen 0, ?_⟩
+    exact le_trans (le_trans hi (le_of_eq rowPrefix_colLen_zero.symm))
+      (QOU.BraidKnot.rowPrefix_mono μ (Nat.le_succ _))
+  refine ⟨Nat.find hex, ?_, Nat.find_spec hex⟩
+  rcases Nat.eq_zero_or_pos (Nat.find hex) with h0 | hpos
+  · rw [h0]; simp
+  · have hnot := Nat.find_min hex (m := Nat.find hex - 1) (by omega)
+    have : Nat.find hex - 1 + 1 = Nat.find hex := by omega
+    rw [this] at hnot
+    omega
+
+theorem rk_le_of_rankAt_le (hn : QOU.BraidKnot.Specht.nOf μ = n + 1) {s t : QOU.BraidKnot.Specht.Tableau μ}
+    (hs : QOU.BraidKnot.RowStandardTableau.IsRowStandard s)
+    (h : ∀ i m, rankAt t i m ≤ rankAt s i m) (i m : ℕ) :
+    QOU.Machinery.BruhatRank.rk (toFinSucc hn (dOf t)) i m ≤ QOU.Machinery.BruhatRank.rk (toFinSucc hn (dOf s)) i m := by
+  have hcut : ∀ k m', QOU.Machinery.BruhatRank.rk (toFinSucc hn (dOf t)) (QOU.BraidKnot.rowPrefix μ k) m'
+      ≤ QOU.Machinery.BruhatRank.rk (toFinSucc hn (dOf s)) (QOU.BraidKnot.rowPrefix μ k) m' := by
+    intro k m'
+    match k with
+    | 0 => simp [QOU.BraidKnot.rowPrefix_zero, QOU.Machinery.BruhatRank.rk_zero]
+    | (j + 1) =>
+        have hj := h j m'
+        rwa [rankAt_eq_rk hn, rankAt_eq_rk hn] at hj
+  set i' : ℕ := min i (n + 1) with hi'
+  have hred : ∀ v : Perm (Fin (n + 1)), QOU.Machinery.BruhatRank.rk v i m = QOU.Machinery.BruhatRank.rk v i' m := by
+    intro v
+    rcases le_or_gt i (n + 1) with hle | hgt
+    · rw [hi', min_eq_left hle]
+    · rw [hi', min_eq_right (by omega), QOU.Machinery.BruhatRank.rk_eq_of_index_ge v (by omega)]
+  rw [hred, hred]
+  have hi'n : i' ≤ n + 1 := min_le_right _ _
+  obtain ⟨r, hr1, hr2⟩ := exists_block (μ := μ) (i := i') (by omega)
+  set b : ℕ := min (QOU.BraidKnot.rowPrefix μ (r + 1)) (n + 1) with hb
+  have hbtr : ∀ v : Perm (Fin (n + 1)), QOU.Machinery.BruhatRank.rk v b m = QOU.Machinery.BruhatRank.rk v (QOU.BraidKnot.rowPrefix μ (r + 1)) m := by
+    intro v
+    rcases le_or_gt (QOU.BraidKnot.rowPrefix μ (r + 1)) (n + 1) with hle | hgt
+    · rw [hb, min_eq_left hle]
+    · rw [hb, min_eq_right (by omega)]
+      exact (QOU.Machinery.BruhatRank.rk_eq_of_index_ge v (by omega) m).symm
+  refine QOU.Machinery.BruhatRank.rk_le_of_endpoints _ _
+    ((dOf_increasingOn_block hs hn r).mono_right (min_le_left _ _))
+    (min_le_right _ _) hr1 (le_min hr2 hi'n) (hcut r m) ?_
+  rw [hbtr, hbtr]
+  exact hcut (r + 1) m
+
 /-! ### Dipper–James 3.7 itself -/
 
 /-- **Dipper–James (Mathas 3.7): dominance on row-standard tableaux is the Bruhat order.**
@@ -540,14 +610,24 @@ theorem dOf_increasingOn_block {t : QOU.BraidKnot.Specht.Tableau μ}
 The Bruhat side is `d(s) ≤ d(t)` — **reversing**; see the module docstring, and
 `refTab_dOf_bruhatLe` for the fact that forces it.
 
-**Stated, not proved — and NOT for want of Coxeter machinery.**  The Coxeter side is
-supplied (`BruhatReflection.bruhatLe_of_leftReflLe_An`, hypothesis-free in type A, with the
-left/right handedness bridge landed alongside it).  What blocks this is the **tableau**
-side: Mathas' selection rule for the inductive step's transposition is wrong, measured at
-**78.8 %** on its `s ⊵ v` clause over 142 314 pairs at `n = 6`.  A correct rule exists —
-some transposition works for **every** pair, 142 314/142 314 — but none of the five rules
-tried finds it.  See the module docstring for the per-clause table and the smallest
-counterexample; tracked as bean `qou-f3mc`.
+**The tableau side is now DONE; one classical Coxeter theorem remains.**  This proof is a
+two-line composition — `domRel_iff_rankAt` turns dominance into a rank comparison at the row
+cuts, `rk_le_of_rankAt_le` interpolates it to every index — and then it applies
+`BruhatRank.bruhatLe_of_rk_le`, the **hard direction of Ehresmann's criterion**, which is
+stated with a `sorry` and a citation to Björner–Brenti Thm 2.1.5.
+
+**So this declaration still depends on `sorryAx`**, and `#print axioms` says so.  What has
+changed is *where* the gap is: it is no longer Mathas' broken tableau induction (measured at
+78.8 % on its `s ⊵ v` clause — see the module docstring), but a standard, citable statement
+about Coxeter groups with no tableau content at all.
+
+Mathas' own route needed a correct selection rule for the inductive step's transposition; one
+exists (some transposition works for **every** pair, 142 314/142 314) but none of seven tried
+finds it, and the negative results say no rule naming a label can. That route is abandoned in
+favour of this one, and `qou-f3mc` records why.
+
+Note that `_ht` is unused: `rk_le_of_rankAt_le` needs row-standardness only of the
+*dominating* tableau `s`.
 
 The **statement** is not in doubt: measured exhaustively over every ordered pair of
 row-standard tableaux of every partition of `n ≤ 6`, **708 062/708 062**, under both
@@ -557,13 +637,14 @@ definitions of the Bruhat order. -/
 -- *Iwahori-Hecke algebras and Schur algebras of the symmetric group*, Proposition 3.7.
 theorem dominance_to_bruhatLe (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
     {s t : QOU.BraidKnot.Specht.Tableau μ}
-    (_hs : QOU.BraidKnot.RowStandardTableau.IsRowStandard s)
+    (hs : QOU.BraidKnot.RowStandardTableau.IsRowStandard s)
     (_ht : QOU.BraidKnot.RowStandardTableau.IsRowStandard t)
-    (_hdom : domRel (QOU.BraidKnot.Specht.Tabloid.mk t)
+    (hdom : domRel (QOU.BraidKnot.Specht.Tabloid.mk t)
       (QOU.BraidKnot.Specht.Tabloid.mk s)) :
     QOU.Machinery.CoxeterBruhat.BruhatLe (permCoxeterSystem n)
       (toFinSucc hn (dOf s)) (toFinSucc hn (dOf t)) :=
-  sorry
+  QOU.Machinery.BruhatRank.bruhatLe_of_rk_le
+    (rk_le_of_rankAt_le hn hs ((domRel_iff_rankAt _ _).mp hdom))
 
 /-- **The converse half of 3.7 — PROVED, and it never needed `qou-3k66`.**
 
