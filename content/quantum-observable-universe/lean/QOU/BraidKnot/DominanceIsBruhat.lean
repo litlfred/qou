@@ -169,24 +169,70 @@ theorem refTab_dOf_bruhatLe (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
 
 /-- **Dipper–James (Mathas 3.7): dominance on row-standard tableaux is the Bruhat order.**
 
+**The forward half of 3.7** — dominance implies Bruhat.
+
 `domRel a b` reads "`a` is dominated by `b`", so `domRel ⟦t⟧ ⟦s⟧` is "`s` dominates `t`".
 The Bruhat side is `d(s) ≤ d(t)` — **reversing**; see the module docstring, and
 `refTab_dOf_bruhatLe` for the fact that forces it.
 
+**Unblocked as of #6894.**  Mathas' argument constructs exactly `BruhatReflection.ReflStep`s
+— multiply by a transposition, length up — and `bruhatLe_of_reflLe_An` converts a chain of
+those into `BruhatLe` with **no hypothesis to discharge** in type A.  So the Coxeter side is
+supplied and what remains is purely the tableau combinatorics: the induction on the
+transposition `(a,b)` at the first row where `s` and `t` differ.
+
 Measured exhaustively over every ordered pair of row-standard tableaux of every partition of
-`n ≤ 6`: **708 062/708 062 in both directions at `n = 6`**, under both definitions of the
-Bruhat order.  What is missing is the formalisation, not the mathematics; Mathas' proof is an
-induction on a transposition chosen at the first row where `s` and `t` differ. -/
+`n ≤ 6`: **708 062/708 062**, under both definitions of the Bruhat order. -/
 -- Ref: [dipper-james1986] Dipper & James, *Blocks and idempotents of Hecke algebras of
 -- general linear groups*, Proc. LMS (3) 54 (1987) 57-82; and [mathas1999] Mathas,
 -- *Iwahori-Hecke algebras and Schur algebras of the symmetric group*, Proposition 3.7.
-theorem dominance_iff_bruhatLe (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
+theorem dominance_to_bruhatLe (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
     {s t : QOU.BraidKnot.Specht.Tableau μ}
     (_hs : QOU.BraidKnot.RowStandardTableau.IsRowStandard s)
-    (_ht : QOU.BraidKnot.RowStandardTableau.IsRowStandard t) :
+    (_ht : QOU.BraidKnot.RowStandardTableau.IsRowStandard t)
+    (_hdom : domRel (QOU.BraidKnot.Specht.Tabloid.mk t)
+      (QOU.BraidKnot.Specht.Tabloid.mk s)) :
+    QOU.Machinery.CoxeterBruhat.BruhatLe (permCoxeterSystem n)
+      (toFinSucc hn (dOf s)) (toFinSucc hn (dOf t)) :=
+  sorry
+
+/-- **The converse half of 3.7** — Bruhat implies dominance.
+
+**Blocked on a named, tracked Coxeter obligation, not on the tableau side.**  Mathas' argument
+here goes through the *reflection* order (`d(t) = d(s)·τ` with `ℓ` up by one, then read off
+`s ▷ t` from the definitions), so it needs **`BruhatLe → ReflLe`** — the direction #6894 left
+open as bean **`qou-3k66`**, whose own summary names it as *"what a consumer citing Mathas'
+Prop 3.7 needs for an `↔`"*.  This is that consumer.
+
+`IwahoriHecke.BruhatReflection` proves the other direction (`bruhatLe_of_reflLe`, and
+`bruhatLe_of_reflLe_An` hypothesis-free for type A), which is why
+`dominance_to_bruhatLe` above is unblocked and this one is not. -/
+-- Ref: [dipper-james1986]; [mathas1999] Proposition 3.7.  Blocked on `qou-3k66`
+-- (`BruhatLe → ReflLe`), open in `QOU/IwahoriHecke/BruhatReflection.lean`.
+theorem bruhatLe_to_dominance (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
+    {s t : QOU.BraidKnot.Specht.Tableau μ}
+    (_hs : QOU.BraidKnot.RowStandardTableau.IsRowStandard s)
+    (_ht : QOU.BraidKnot.RowStandardTableau.IsRowStandard t)
+    (_hbr : QOU.Machinery.CoxeterBruhat.BruhatLe (permCoxeterSystem n)
+      (toFinSucc hn (dOf s)) (toFinSucc hn (dOf t))) :
+    domRel (QOU.BraidKnot.Specht.Tabloid.mk t)
+      (QOU.BraidKnot.Specht.Tabloid.mk s) :=
+  sorry
+
+/-- **Dipper–James 3.7**, assembled from its two halves.
+
+This declaration itself contains **no `sorry`** — it is the conjunction of
+`dominance_to_bruhatLe` and `bruhatLe_to_dominance`, and inherits exactly their status.  It is
+stated separately so that a consumer needing only one implication is not made to depend on
+the blocked one: the forward half is unblocked (see its docstring), the converse waits on
+`qou-3k66`. -/
+theorem dominance_iff_bruhatLe (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
+    {s t : QOU.BraidKnot.Specht.Tableau μ}
+    (hs : QOU.BraidKnot.RowStandardTableau.IsRowStandard s)
+    (ht : QOU.BraidKnot.RowStandardTableau.IsRowStandard t) :
     domRel (QOU.BraidKnot.Specht.Tabloid.mk t) (QOU.BraidKnot.Specht.Tabloid.mk s)
       ↔ QOU.Machinery.CoxeterBruhat.BruhatLe (permCoxeterSystem n)
           (toFinSucc hn (dOf s)) (toFinSucc hn (dOf t)) :=
-  sorry
+  ⟨dominance_to_bruhatLe hn hs ht, bruhatLe_to_dominance hn hs ht⟩
 
 end QOU.BraidKnot.DominanceIsBruhat
