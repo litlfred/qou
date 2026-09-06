@@ -11,7 +11,7 @@ categorical chain and the lever-1 trace `τ` being a function of the quantum int
 **Step 2 of the chain (non-abelian Stokes; `mass-theory/pre-archimedean-derivation-chain.md`,
 `prop:hecke-spectral-sequence`).** The categorical R-matrix connection is *conjectured* to have
 curvature 2-form `F(σ) = σ² − (q − q⁻¹)σ − 1` — the hypothesis is the §3b class
-`QOU.Mass.StepTwoMonodromy.HeckeMonodromy` (2026-09-06; cheat-sheet §2a records that the corpus
+`QOU.Mass.HeckeMonodromy` (2026-09-06; cheat-sheet §2a records that the corpus
 stipulates rather than computes this form, and that only its `q = 1` shadow is derived). Granting
 it, flatness `F = 0` gives the Hecke quadratic `σ² = (q − q⁻¹)σ + 1`; the factorisation below is
 unconditional algebra. The two roots of that characteristic polynomial

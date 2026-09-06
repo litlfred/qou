@@ -42,7 +42,7 @@ Base ring §7c: generic `Field K` for the eigenvalue algebra (division by `q`), 
 --      through the Hecke algebra), for option C.
 -/
 
-namespace QOU.Mass.StepTwoMonodromy
+namespace QOU.Mass
 
 open QOU.MathlibExt.OcneanuTrace
 
@@ -62,6 +62,8 @@ class HeckeMonodromy {K : Type*} [Field K] {A : Type*} [Ring A] [Algebra K A]
   far_comm : ∀ i j, i + 2 ≤ j → T.g i * T.g j = T.g j * T.g i
   /-- The classical shadow of every generator is an involution: the branch-point transposition. -/
   shadow_involution : ∀ i, ε (T.g i) * ε (T.g i) = 1
+
+namespace HeckeMonodromy
 
 variable {K : Type*} [Field K] {A : Type*} [Ring A] [Algebra K A]
 variable (T : MarkovTrace K A) (q : K) {B : Type*} [Ring B] (ε : A →+* B)
@@ -101,4 +103,6 @@ theorem shadow_kills_h [HeckeMonodromy T q ε] (i : ℕ) : ε ((q - q⁻¹) • 
   have := congrArg (fun x => x - 1) h1
   simpa using this.symm
 
-end QOU.Mass.StepTwoMonodromy
+end HeckeMonodromy
+
+end QOU.Mass
