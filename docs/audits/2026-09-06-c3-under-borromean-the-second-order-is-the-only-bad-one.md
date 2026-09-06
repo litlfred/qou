@@ -68,7 +68,7 @@ So the third order does **not** overtake the second at `A = 4` either. That is
 `A`. That is a sharper statement than "comparable": the ratio is not drifting
 toward 1 as `A` grows.
 
-## `c₄` at `A = 2` — the settling is a trend, not a fluctuation
+## `c₄` at all three `A` — the settling is a property of the expansion
 
 The `c₄` that `pp/pn/nn` supply free at their committed `P = 6` has also been
 extracted, because the one-bad-order reading otherwise rested on a **single**
@@ -82,6 +82,38 @@ step of settling, and one step down is what a fluctuation looks like:
 Two consecutive steps down, and the second is a **collapse** rather than a
 drift — roughly forty times smaller than the `c₃/c₂` step.
 
+**Extended to `A = 3` and `A = 4`** (465 s at `P = 6`, twelve controls, every
+case reproducing its recorded `c₀, c₁, c₂, c₃` first), the `c₄` column is
+complete:
+
+| case | A | `c₄` | `c₄ℏ⁴/c₃ℏ³` |
+|---|---|---|---|
+| pp | 2 | −585/128 | −0.1081 |
+| pn | 2 | 109/192 | 0.0105 |
+| nn | 2 | 27/32 | 0.0124 |
+| T | 3 | 743/384 | 0.0304 |
+| ³He | 3 | 10001/1536 | 0.0984 |
+| ⁴He | 4 | **43079/6144** | **0.1338** |
+
+Every `A` collapses. So the one-bad-order shape is a property of **the
+expansion**, not an artefact of the two-nucleon case — which is what the `A = 2`
+result alone could not say.
+
+### 🛑 But do NOT read an `A` trend into this column
+
+The magnitudes *look* like they rise with `A` — `0.0105, 0.0124` at `A = 2`, then
+`0.0304, 0.0984`, then `0.1338`. **They do not support that reading**, because
+the scatter *within* a single `A` is as large as the variation *across* `A`:
+
+    within A = 2   0.0105 .. 0.1081   10.3x
+    across all A   0.0105 .. 0.1338   12.7x
+
+`pp` alone (`−0.1081`) is larger in magnitude than either `A = 3` value and
+comparable to `A = 4`'s. So the honest statement is **scatter in a band below
+~0.14 with no clean `A` dependence**, not a rise. This differs from the `c₃`
+column, which is genuinely flat (`0.4023 … 0.5999`) rather than merely
+trendless-with-scatter.
+
 Two things recorded but **not** built on. `pp`'s `c₄ = −585/128` is the **first
 negative coefficient** anywhere in this family — one sign, one order, one `A`,
 and no claim about what it means. And `nn` **behaves** at order 4 (`0.0124`),
@@ -89,9 +121,13 @@ so its degeneracy appears to wash out; also recorded, also not leaned on.
 
 ## 🛑 What is NOT established
 
-- **`c₄` is `A = 2` only.** `T`/`³He` sit at committed `P = 5` and ⁴He at 3, so
-  none reaches `c₄` without a further long-compute run. Four orders at one `A`
-  is still a shape, not a convergence proof, and nothing here bounds `c₅`.
+- **Nothing here bounds `c₅` or beyond.** Four orders at three values of `A` is
+  a better-supported shape than four orders at one, but it is still a shape and
+  not a convergence proof. A fifth order would need `P ≥ 7` throughout.
+- **`pp`'s `c₄` is the only negative coefficient** in the family, and one sign at
+  one order at one case is not a pattern. It is also what breaks the apparent
+  `A` trend above, so it is doing real work in the argument and should not be
+  quietly dropped as an outlier.
 - **Scope-(a).** A statement about a series ordering in one braid-word
   convention, not about the physics.
 

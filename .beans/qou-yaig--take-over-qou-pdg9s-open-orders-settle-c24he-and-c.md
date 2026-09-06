@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T13:34:53Z
-updated_at: 2026-09-06T13:57:00Z
+updated_at: 2026-09-06T14:10:19Z
 ---
 
 ## What this takes over, and from whom
@@ -185,3 +185,45 @@ the sole outlier at orders 2 and 3, so its c1 = 0 degeneracy washes out.
 - **c5 and beyond** — nothing here bounds them. Four orders at one A is a shape.
 - **Grouped c3 at A = 2, 3 was never re-derived**, so the row-by-row
   grouped-vs-Borromean comparison that exists for c2 does not exist for c3.
+
+
+## c4 COMPLETE at all three A — and the trend reading needs care
+
+465 s at P = 6, twelve controls (four per case), every case reproducing its
+recorded c0, c1, c2, c3 before its c4 was read.
+
+    case   A        c4       c4h⁴/c3h³
+    pp     2  -585/128        -0.1081
+    pn     2   109/192         0.0105
+    nn     2     27/32         0.0124
+    T      3   743/384         0.0304
+    3He    3 10001/1536        0.0984
+    4He    4 43079/6144        0.1338
+
+**Every A collapses**, so the one-bad-order shape is a property of THE EXPANSION
+rather than an artefact of the two-nucleon case — which is exactly what the
+A = 2 result alone could not establish, and why this run was worth doing.
+
+**🛑 But there is NO clean A trend, and the column invites one.** The magnitudes
+look like they rise with A (0.0105, 0.0124 -> 0.0304, 0.0984 -> 0.1338). They do
+not support it: the scatter WITHIN A = 2 is as large as the variation ACROSS A.
+
+    within A = 2   0.0105 .. 0.1081   10.3x
+    across all A   0.0105 .. 0.1338   12.7x
+
+pp alone (-0.1081) exceeds both A = 3 values in magnitude and is comparable to
+A = 4's. So the honest statement is scatter in a band below ~0.14 with no clean
+A dependence. That differs from the c3 column, which is genuinely FLAT
+(0.4023 .. 0.5999) rather than merely trendless-with-scatter — a distinction
+worth keeping, since "flat" and "no detectable trend given the scatter" are not
+the same claim.
+
+pp's c4 is also the only negative coefficient in the family, and it is what
+breaks the apparent trend — so it is doing real work in the argument and must
+not be dropped as an outlier.
+
+## Now genuinely closed
+
+Every gap this bean named is measured: c2(4He), c3 at all six cases, c4 at all
+three A. What remains unbounded by anything here is c5 and beyond, which would
+need P >= 7 throughout.
