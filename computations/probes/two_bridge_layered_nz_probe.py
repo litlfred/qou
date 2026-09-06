@@ -276,10 +276,7 @@ def complete_structure(tets, gl, N, erows, seed=0, tries=40):
         except (ValueError, ZeroDivisionError, TypeError, IndexError):
             continue
         cand = [sol[k] for k in range(N)]
-        # allow FLAT tetrahedra (real shapes not in {0,1}) at the ends of the product region;
-        # a flat tetrahedron contributes zero volume and collapses in the canonical decomposition
-        if not all(mp.im(z) > -mp.mpf(10) ** -30 and abs(z) > mp.mpf(10) ** -20
-                   and abs(z - 1) > mp.mpf(10) ** -20 for z in cand):
+        if not all(mp.im(z) > mp.mpf(10) ** -20 for z in cand):
             continue
         try:
             _, hol = develop(tets, gl, cand)
@@ -294,6 +291,76 @@ def complete_structure(tets, gl, N, erows, seed=0, tries=40):
     return None
 
 
+def h1_invariants(tets, gl):
+    """H₁(M) from the dual spine: dual edges = glued face pairs, dual 2-cells = edge classes.
+    Returns (free rank, [torsion invariants])."""
+    N = len(tets)
+    pairs = {}
+    for (i, f), (j, g, vmap) in gl.items():
+        key = frozenset([(i, frozenset(f)), (j, frozenset(g))])
+        pairs.setdefault(key, (i, frozenset(f), j, frozenset(g)))
+    dual_edges = list(pairs.values())          # oriented from (i,f) to (j,g) as stored
+    idx = {}
+    for k, (i, f, j, g) in enumerate(dual_edges):
+        idx[(i, f)] = (k, 1); idx[(j, g)] = (k, -1)
+    # boundary of a dual 2-cell: walk around each edge class
+    cols = []
+    for cl in edge_classes(tets, gl):
+        i, p, q = cl[0]
+        col = [0] * len(dual_edges)
+        r = next(v for v in range(4) if v not in (p, q))
+        face = frozenset((p, q, r))
+        cur = (i, p, q, face)
+        seen = 0
+        while True:
+            i, p, q, face = cur
+            k, sgn = idx[(i, face)]
+            col[k] += sgn
+            j, g, vmap = gl[(i, tuple(sorted(face)))] if (i, tuple(sorted(face))) in gl else gl[next(key for key in gl if key[0] == i and frozenset(key[1]) == face)]
+            p2, q2 = vmap[p], vmap[q]
+            r2 = next(v for v in g if v not in (p2, q2))
+            other = next(v for v in range(4) if v not in (p2, q2, r2))
+            nface = frozenset((p2, q2, other))
+            cur = (j, p2, q2, nface)
+            seen += 1
+            if (cur[0], frozenset((cur[1], cur[2]))) == (cl[0][0], frozenset((cl[0][1], cl[0][2]))) and cur[3] == frozenset((cl[0][1], cl[0][2], r)):
+                break
+            assert seen < 10 * len(cl) + 10
+        cols.append(col)
+    d2 = sp.Matrix(cols).T if cols else sp.zeros(len(dual_edges), 0)
+    # ∂₁: dual edge (i→j) ↦ [j] − [i]
+    d1 = sp.zeros(N, len(dual_edges))
+    for k, (i, f, j, g) in enumerate(dual_edges):
+        d1[j, k] += 1; d1[i, k] -= 1
+    rank1 = d1.rank()
+    from sympy.matrices.normalforms import smith_normal_form
+    snf = smith_normal_form(d2, domain=sp.ZZ)
+    diag = [abs(snf[k, k]) for k in range(min(snf.shape)) if snf[k, k] != 0]
+    rank2 = len(diag)
+    free = (len(dual_edges) - rank1) - rank2
+    torsion = [d for d in diag if d != 1]
+    return free, torsion
+
+
+def describe_fold(tets, g):
+    """Human-readable fold: for each glued pair, the two faces, whether they lie on the same
+    tetrahedron, and whether the identification fixes their common arc (a reflection)."""
+    out = []
+    seen = set()
+    for (i, f), (j, g2, vmap) in g.items():
+        key = frozenset([(i, f), (j, g2)])
+        if key in seen:
+            continue
+        seen.add(key)
+        ti, tj = tets[i], tets[j]
+        shared = [p for p in f if p in g2 and vmap[p] == p] if i == j else []
+        # arcs: which puncture pairs are fixed pointwise by the map
+        fixed = [p for p in f if ti.puncture(p) == tj.puncture(vmap[p])]
+        out.append(dict(tet_a=i, face_a=f, tet_b=j, face_b=g2, vmap=vmap,
+                        same_tet=(i == j), punctures_fixed=len(fixed)))
+    return out
+
+
 def two_bridge_search(word, label, vol_ref=None, max_solutions=200):
     tets = pillowcase_layers(word)
     N = len(tets)
@@ -301,7 +368,7 @@ def two_bridge_search(word, label, vol_ref=None, max_solutions=200):
     bots = fold_candidates(tets, "bot")
     tops = fold_candidates(tets, "top")
     print(f"\n[{label}] word={word}: {N} tetrahedra, {len(bots)}×{len(tops)} fold candidates")
-    stats = {"total": 0, "torus_cusps": 0, "one_cusp": 0, "geometric": 0}
+    stats = {"total": 0, "torus_cusps": 0, "one_cusp": 0, "h1_Z": 0, "geometric": 0}
     found = []
     for gb in bots:
         for gt in tops:
@@ -315,6 +382,10 @@ def two_bridge_search(word, label, vol_ref=None, max_solutions=200):
             if len(links) != 1:
                 continue
             stats["one_cusp"] += 1
+            free, tors = h1_invariants(tets, gl)
+            if not (free == 1 and not tors):
+                continue
+            stats["h1_Z"] += 1
             classes = edge_classes(tets, gl)
             erows = edge_rows(tets, classes)
             shapes = complete_structure(tets, gl, N, erows)
@@ -377,9 +448,10 @@ def main() -> int:
 
     wb = WitnessBuilder("two-bridge-layered-nz", engine="python", _script_path=__file__)
     wb.set_description(
-        "Two-bridge link complements from the Farey word: pillowcase layering (two tetrahedra per "
-        "letter) with the end folds found by exhaustive search under manifold / one-cusp / geometric "
-        "filters; validated on 4₁ (volume, cusp modulus 2√3 i) and 5₂ (corpus volume). Bean qou-yvyd.")
+        "Two-bridge knot complements from the Farey word: pillowcase layering (two tetrahedra per "
+        "letter, word length c−3) with the end folds found by exhaustive search under manifold / "
+        "one-cusp / H₁=ℤ / geometric filters; validated on 4₁ (word R: volume, cusp modulus 2√3 i) "
+        "and 5₂ (word RL: corpus volume, cubic shape field). Bean qou-yvyd.")
     wb.set_content_block("conj:stokes-dt-bps-bridge")
     ok_all = True
 
@@ -393,81 +465,92 @@ def main() -> int:
     vol41 = 2 * mp.clsin(2, mp.pi / 3)
     vol52 = mp.mpf("2.8281220883307831627638988092766349427709813173006")
 
-    # ── 4₁ = S(5,2): continued fraction [2,2]; the clasps take one crossing from each end ──
-    results = {}
-    for word in ("RL", "LR"):
-        tets, found, stats = two_bridge_search(word, f"4₁ trial word {word}", vol_ref=vol41)
-        results[word] = (tets, found, stats)
-    best41 = None
-    for word, (tets, found, stats) in results.items():
-        for f in found:
-            if abs(f["vol"] - vol41) < mp.mpf(10) ** -30:
-                best41 = (word, tets, f); break
-        if best41:
-            break
-    check("fourone_two_bridge_geometric_with_vol_2cl2", best41 is not None)
-    if best41:
-        word, tets, f = best41
+    def run_knot(name, words, vol_ref, tag):
+        best = None
+        allstats = {}
+        for word in words:
+            tets, found, stats = two_bridge_search(word, f"{name} word {word}", vol_ref=vol_ref)
+            allstats[word] = stats
+            for f in found:
+                if abs(f["vol"] - vol_ref) < mp.mpf(10) ** -25:
+                    best = (word, tets, f); break
+            if best:
+                break
+        check(f"{tag}_geometric_with_reference_volume", best is not None,
+              "the reference volume is a check, never an input to the search")
+        wb.add_data(f"{tag}_search_stats", allstats)
+        if best is None:
+            return None
+        word, tets, f = best
         N = len(tets)
         tau = cusp_modulus(tets, f["gl"], f["shapes"])
-        print(f"  4₁ via two-bridge: word {word}, {N} tetrahedra, shapes "
-              f"{[mp.nstr(z, 12) for z in f['shapes']]}, cusp modulus {mp.nstr(tau, 20)}")
-        check("fourone_two_bridge_cusp_modulus_2sqrt3i",
-              abs(tau - 2 * mp.sqrt(3) * 1j) < mp.mpf(10) ** -25, "matches the bundle route")
+        free, tors = h1_invariants(tets, f["gl"])
+        print(f"  {name} via two-bridge: word {word}, {N} tetrahedra, H₁ = Z^{free} + {tors}")
+        print(f"    shapes {[mp.nstr(z, 15) for z in f['shapes']]}")
+        print(f"    cusp modulus {mp.nstr(tau, 25)}")
+        for r in f["erows"]:
+            print(f"    edge row a={r[0]} b={r[1]} sign={r[2]}")
+        for end, g in (("bottom", f["gb"]), ("top", f["gt"])):
+            for d in describe_fold(tets, g):
+                print(f"    fold {end}: tet{d['tet_a']} face {d['face_a']} ↔ tet{d['tet_b']} face "
+                      f"{d['face_b']} map {d['vmap']} same_tet={d['same_tet']} punctures_fixed={d['punctures_fixed']}")
         G = nz_symplectic_check(f["erows"], N)
-        check("fourone_two_bridge_edge_rows_isotropic",
+        check(f"{tag}_edge_rows_isotropic",
               all(G[p][q] == 0 for p in range(len(f['erows'])) for q in range(len(f['erows']))))
-        wb.add_data("fourone_word", word)
-        wb.add_data("fourone_tetrahedra", N)
-        wb.add_data("fourone_edge_rows_rect", [list(r) for r in f["erows"]])
-        wb.add_data("fourone_shapes", [mp.nstr(z, 45) for z in f["shapes"]])
-        wb.add_data("fourone_cusp_modulus", mp.nstr(tau, 45))
-        wb.add_data("fourone_fold_bot", str(f["gb"]))
-        wb.add_data("fourone_fold_top", str(f["gt"]))
+        check(f"{tag}_h1_is_Z", free == 1 and not tors)
+        wb.add_data(f"{tag}_word", word)
+        wb.add_data(f"{tag}_tetrahedra", N)
+        wb.add_data(f"{tag}_edge_rows_rect", [list(r) for r in f["erows"]])
+        wb.add_data(f"{tag}_shapes", [mp.nstr(z, 45) for z in f["shapes"]])
+        wb.add_data(f"{tag}_volume", mp.nstr(f["vol"], 45))
+        wb.add_data(f"{tag}_cusp_modulus", mp.nstr(tau, 45))
+        wb.add_data(f"{tag}_fold_bottom", [str(d) for d in describe_fold(tets, f["gb"])])
+        wb.add_data(f"{tag}_fold_top", [str(d) for d in describe_fold(tets, f["gt"])])
+        return word, tets, f, tau
 
-    # ── 5₂ = S(7,3): continued fraction [2,3] → braid words of length 3 ──
-    best52 = None
-    stats52 = {}
-    for word in ("RLL", "LLR", "RRL", "LRR"):
-        tets, found, stats = two_bridge_search(word, f"5₂ trial word {word}", vol_ref=vol52)
-        stats52[word] = stats
-        for f in found:
-            if abs(f["vol"] - vol52) < mp.mpf(10) ** -25:
-                best52 = (word, tets, f); break
-        if best52:
-            break
-    check("fivetwo_two_bridge_geometric_with_corpus_volume", best52 is not None,
-          "Vol(5₂) = 2.8281220883… is not an input to the search")
-    if best52:
-        word, tets, f = best52
-        N = len(tets)
-        tau = cusp_modulus(tets, f["gl"], f["shapes"])
-        print(f"  5₂ via two-bridge: word {word}, {N} tetrahedra, shapes "
-              f"{[mp.nstr(z, 12) for z in f['shapes']]}, cusp modulus {mp.nstr(tau, 20)}")
-        # shape field: 5₂'s invariant trace field is cubic, discriminant −23. Test: the minimal
-        # polynomial of each shape over ℚ has degree ≤ 3 (identify by PSLQ on 1, z, z², z³).
+    # ── 4₁ = S(5,2), c = 4: word length c − 3 = 1 ──
+    r41 = run_knot("4₁", ("R", "L"), vol41, "fourone")
+    if r41:
+        word, tets, f, tau = r41
+        check("fourone_two_bridge_cusp_modulus_2sqrt3i",
+              abs(tau - 2 * mp.sqrt(3) * 1j) < mp.mpf(10) ** -25, "matches the bundle route (#6935)")
+        check("fourone_two_tetrahedra", len(tets) == 2)
+        w = mp.exp(1j * mp.pi / 3)
+        check("fourone_shapes_are_sixth_roots",
+              all(abs(z - w) < mp.mpf(10) ** -30 for z in f["shapes"]))
+
+    # ── 5₂ = S(7,3), c = 5: word length 2 ──
+    r52 = run_knot("5₂", ("RL", "LR", "RR", "LL"), vol52, "fivetwo")
+    if r52:
+        word, tets, f, tau = r52
+        check("fivetwo_four_tetrahedra", len(tets) == 4)
+        # shape field: 5₂'s shape field is cubic (disc −23). PSLQ each shape against (1, z, z², z³).
+        rels = []
         cubic_ok = True
-        minpolys = []
         for z in f["shapes"]:
             rel = mp.pslq([1, z, z ** 2, z ** 3], maxcoeff=10 ** 6, maxsteps=10 ** 5)
-            minpolys.append(rel)
-            cubic_ok &= rel is not None
-        print(f"  5₂ shape integer relations (1, z, z², z³): {minpolys}")
-        check("fivetwo_shapes_satisfy_cubic_relations", cubic_ok,
-              "consistent with the cubic shape field of 5₂ (disc −23)")
-        G = nz_symplectic_check(f["erows"], N)
-        check("fivetwo_two_bridge_edge_rows_isotropic",
-              all(G[p][q] == 0 for p in range(len(f['erows'])) for q in range(len(f['erows']))))
-        wb.add_data("fivetwo_word", word)
-        wb.add_data("fivetwo_tetrahedra", N)
-        wb.add_data("fivetwo_edge_rows_rect", [list(r) for r in f["erows"]])
-        wb.add_data("fivetwo_shapes", [mp.nstr(z, 45) for z in f["shapes"]])
-        wb.add_data("fivetwo_volume", mp.nstr(f["vol"], 45))
-        wb.add_data("fivetwo_cusp_modulus", mp.nstr(tau, 45))
-        wb.add_data("fivetwo_shape_relations", [str(r) for r in minpolys])
-        wb.add_data("fivetwo_fold_bot", str(f["gb"]))
-        wb.add_data("fivetwo_fold_top", str(f["gt"]))
-    wb.add_data("fivetwo_search_stats", {k: v for k, v in stats52.items()})
+            rels.append(rel); cubic_ok &= rel is not None
+        print(f"  5₂ integer relations on (1, z, z², z³): {rels}")
+        check("fivetwo_shapes_satisfy_cubic_relations", cubic_ok, "cubic shape field, as 5₂ requires")
+        wb.add_data("fivetwo_shape_relations", [str(r) for r in rels])
+        # discriminant of the cubic satisfied by the first shape
+        try:
+            c = rels[0]
+            x = sp.symbols("x")
+            poly = sp.Poly(sum(int(c[k]) * x ** k for k in range(4)), x)
+            disc = sp.discriminant(poly)
+            sqf = sp.factorint(abs(int(disc)))
+            core = 1
+            for pr, e in sqf.items():
+                if e % 2:
+                    core *= pr
+            core = -core if disc < 0 else core
+            print(f"  5₂ cubic {poly.as_expr()} discriminant {disc}, square-free core {core}")
+            check("fivetwo_cubic_discriminant_core_minus23", core == -23)
+            wb.add_data("fivetwo_cubic_discriminant", str(disc))
+        except Exception as e:  # noqa: BLE001
+            print("  discriminant step failed:", e)
+            check("fivetwo_cubic_discriminant_core_minus23", False)
 
     # ── convention independence ──
     import ast
@@ -482,12 +565,15 @@ def main() -> int:
     hits = sorted(m for m in imported if any(b in m.lower() for b in banned))
     check("no_convention_dependence_imports", not hits, f"imports: {sorted(imported)}")
 
-    wb.add_caveat("The fold at each end is FOUND by exhaustive search under manifold, one-cusp "
-                  "and geometric filters, not transcribed from Guéritaud (not held). The volume "
-                  "references are checks, never inputs.")
-    wb.add_caveat("Orientation: the pillowcase squares inherit the fibre orientation ∧ dt; 5₂ is "
-                  "chiral, so which of S⁺/S⁻ the derived triangulation corresponds to is NOT "
-                  "settled here (mirror gives conjugate shapes, same volume).")
+    wb.add_caveat("The fold at each end is FOUND by exhaustive search under manifold, one-cusp, "
+                  "H₁ = ℤ and geometric filters, not transcribed from Guéritaud (not held). The "
+                  "volume references are checks, never inputs.")
+    wb.add_caveat("Word length is c − 3 (4₁: one letter, 5₂: two letters); the two clasps and one "
+                  "further crossing are absorbed by the folds. Other one-cusped manifolds with the "
+                  "same tetrahedra appear under other folds (m006, m009, … by volume) and are "
+                  "rejected only by the reference volume.")
+    wb.add_caveat("Orientation: 5₂ is chiral; which of S⁺/S⁻ the derived triangulation corresponds "
+                  "to is NOT settled here (the mirror has conjugate shapes and the same volume).")
     wb.save({"q0Anchor": "independent",
              "q0AnchorReason": "pure topology/geometry: no q, no Markov parameter, no anchor"})
     print("\nALL PASS" if ok_all else "\nSOME FAIL")
