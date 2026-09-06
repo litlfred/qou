@@ -35,6 +35,31 @@ that an induction along a reduced word actually consumes.
 subword property above, and the lifting property. Each needs the exchange condition. A
 downstream file that needs one of them should prove it from `rightExchange` rather than
 quietly assume `BruhatLe` is a partial order — it is not yet known here to be one.
+## 🟩 This file is on the Murphy-basis critical path — found 2026-09-06, after it was built
+
+It was written as *"the subword order Mathlib has none of"*, with transitivity, antisymmetry,
+the subword property and lifting **deliberately left unproved**.  All four are consumed by
+Mathas' route to the Murphy basis, which was not known at the time:
+
+* **Proposition 3.7 (Dipper–James)** — for row standard λ-tableaux, `s ⊵ t` **iff**
+  `d(s) ⊵ d(t)`, the source noting that Bruhat–Chevalley *"agrees with the dominance ordering
+  on row standard λ-tableaux"*.  Since `dOf` is a bijection
+  (`TableauPerm.equivPerm`), `DominanceWellFounded.domGtOn` and the Bruhat order are **the
+  same order transported**, so `MurphyInductionMeasure.murphyLex` is
+  lex-on-shapes × **Bruhat**-on-permutations.
+* **Corollary 3.8**, which 3.14's induction closes on, opens by invoking Mathas' Theorem
+  1.1.11: `T_{d(v)} T_w = Σ r_x T_x` with `r_x ≠ 0` only for `x` whose reduced expression is a
+  **subexpression** of `d(v)w`.  That is the **subword property**, i.e. exactly the lemma this
+  file declines to prove.  `QOU.BraidKnot.TwInverseBruhat.TwInv_mem_spanBruhatLe` is the
+  corpus's nearest existing instance of that shape.
+
+🛑 **Two inequivalent definitions of the Bruhat order are now in play in this corpus and only
+one is named.**  `BruhatLe` here is the **subword** definition.  Mathas' is
+**reflection-generated with length increase** — `w = v t₁⋯t_k` with `ℓ(v t₁⋯t_j) = ℓ(v) + j`.
+Their equivalence is a theorem, not an unfolding.  Do not let a second one accrete under this
+name; that is the `dOf` collision (#6899) one level up.
+
+Context: [`docs/audits/2026-09-06-tabloid-dominance-vs-the-column-word-measure.md`](../../../../../docs/audits/2026-09-06-tabloid-dominance-vs-the-column-word-measure.md).
 -/
 
 namespace QOU.Machinery.CoxeterBruhat
