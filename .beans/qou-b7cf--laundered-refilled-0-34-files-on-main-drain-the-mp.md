@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T12:46:17Z
-updated_at: 2026-09-06T16:05:59Z
+updated_at: 2026-09-06T21:59:06Z
 ---
 
 ## State (2026-09-03, PR #6489, branch claude/laundered-sweep-2026-09-03)
@@ -252,3 +252,44 @@ That was the sweep's chosen scope. De-floating the probe bodies is a separate,
 larger job and is left open.
 
 Commit `d1413d5a1f`, PR #6930.
+
+
+## 🛑 CORRECTION 2026-09-06 (same day) — my "F64_CAST 195 → none" was an artifact of my own flag
+
+**The LAUNDERED result stands. The F64_CAST claim beside it does not.**
+
+I ran `f64_into_mpmath_audit.py --tier LAUNDERED` and read the `F64_CAST —
+none.` line in its output as a corpus fact. `--tier` is passed to
+`_iter_rows(a.tier)` and **filters the rows before the report is built**
+(`main()`:844-846), so with `--tier LAUNDERED` the `casts` list is empty *by
+construction* and the tier prints `none` regardless of the tree.
+
+Measured side by side, same tree, same minute:
+
+    f64_into_mpmath_audit.py                    ->  F64_CAST: 105 file(s), 188 site(s)
+    f64_into_mpmath_audit.py --tier LAUNDERED   ->  F64_CAST — none.
+
+So the true movement is **195 → 188 sites**, not 195 → 0. F64_CAST is the
+largest live tier in the whole audit and it is barely drained.
+
+**What is NOT affected.** `--tier LAUNDERED` *includes* LAUNDERED rows, so
+every LAUNDERED figure in this bean is correct: 34 files on main, 3 survivors,
+0 after the fix. The four sites I fixed are fixed, and the `sp.Float(str(Q), 40)`
+site the gate cannot see is still a real find. Only the neighbouring tier's
+count was wrong.
+
+**Where the wrong figure reached, so it can be chased:**
+
+* commit `d1413d5a1f`, message line 4 — *"34 files -> 3, F64_CAST 195 -> none"*
+* this bean, two places above — the `(the 195 sites there are pre-existing on
+  main)` parenthesis in the 2026-09-03 entry, and the `| F64_CAST | 195 sites |
+  **none** |` row in the 2026-09-06 entry
+* the chat report of that turn
+
+The commit message is immutable; this correction is the record. **Do not read
+the table row above as current** — it is superseded by this block.
+
+**The lesson, which this corpus already documents in a dozen other forms:** a
+filtered view printed in the same shape as the full one is indistinguishable
+from it. The audit is not at fault — `--tier` does exactly what it says. I
+quoted a number from a report I had narrowed myself.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-08-09T00:16:16Z
+updated_at: 2026-09-06T22:00:05Z
 ---
 
 
@@ -422,3 +422,54 @@ Item 3 (rewire `global_wedderburn_sum_q_hecke_seminormal` onto
 `_build_seminormal_matrices_mpf`) is the next-largest precision win and its
 Round 1 edit notes are still accurate — but VERIFY THE LINE NUMBERS FIRST.
 Round 1's item-4 references had drifted by a whole function in two weeks.
+
+
+## 2026-09-06 — re-measured: the widened detector LANDED, and it is the largest live tier
+
+Found by `scripts/bean-staleness-triage.py` (21st of 291 artifact beans), and
+reached from the other end the same day: `qou-b7cf`'s LAUNDERED drain ran into
+exactly the boundary this bean names.
+
+### The good half — the detector is no longer a working copy
+
+This bean's widened scan lived in `/tmp/f64scan.py`, which would have been lost.
+It **did land** in the canonical audit, as the `F64_CAST` tier —
+`computations/f64_into_mpmath_audit.py:635` still carries the attribution
+comment *"the tier the LAUNDERED-only reading missed (qou-840k)"* — along with
+`NUMPY_ON_Q`, `F64_ENGINE_ENTRY`, `F64_DISPLAY` and `F64_IMPORT`. So the
+measurement is reproducible by anyone, which was this bean's real deliverable.
+
+### The count, and it has barely moved
+
+| | bean (2026-08-09) | measured 2026-09-06 |
+|---|---|---|
+| files | 129 | **105** |
+| `float()`-casts in a value position | 222 | **188** |
+
+`F64_CAST` is **the largest defect tier in the audit** — LAUNDERED is now 0
+(`qou-b7cf`, four sites fixed today) while this one stands at 188. The
+circumstantial tiers underneath it are larger still: `NUMPY_ON_Q` 283 ops
+corpus-wide, `F64_ENGINE_ENTRY` 70 sites, `F64_IMPORT` 138 files — all marked
+*review, do not bulk-edit*.
+
+### 🛑 A caution bought today, and it is this bean's own failure mode one level up
+
+`--tier` **filters the rows before the report is built** (`main()`:844-846), so
+`--tier LAUNDERED` prints `F64_CAST — none.` on a tree carrying 188 of them. I
+read that as a corpus fact and wrote "F64_CAST 195 → none" into a commit
+message and a bean before catching it; the correction is on `qou-b7cf`.
+
+That is the same shape this bean was opened about — *"`LAUNDERED — none` … and
+that reading was used as assurance"* — except that there the detector was too
+narrow, and here the detector is right and the **invocation** narrowed it.
+Either way a `— none.` line was read as an all-clear. **Run the audit
+unfiltered when quoting any tier's count**; use `--tier` only to list sites
+within a tier you have already sized.
+
+### Not attempted here
+
+Draining 188 sites is a tranche, not an idle pass, and the tiers below it are
+explicitly not bulk-editable. `qou-b7cf`'s scope note applies verbatim: fixing
+the `mpf(str(f64))` entry point does not de-float a probe body, and the two
+probes fixed today still carry `HF, DPN = float(_H), float(D_PN)` — they are 2
+of the 105.
