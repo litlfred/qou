@@ -57,6 +57,9 @@ from collections import defaultdict
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
+
+#: This audit's own output. Derived, not spelled, so a rename cannot desync it.
+OWN_WITNESS = Path(__file__).stem.replace("_", "-") + ".witness.json"
 ROOT = HERE.parent.parent
 COMP = ROOT / "computations"
 
@@ -76,6 +79,23 @@ def index_witnesses() -> dict[str, set[str]]:
     """decimal literal -> set of witness paths carrying it."""
     idx: dict[str, set[str]] = defaultdict(set)
     for w in COMP.rglob("*.witness.json"):
+        if w.name == OWN_WITNESS:
+            # SELF-REFERENCE. This audit writes every literal it reports into
+            # its own witness, which is then indexed on the next run -- so the
+            # audit became a carrier for all 232 of its own findings, and the
+            # contamination ran in BOTH directions:
+            #
+            #   * 2 findings had NO carrier but this file: once reported, they
+            #     re-reported themselves forever. Self-sustaining phantoms.
+            #   * every count was inflated by 1, and the NARROW/SHARED cut is
+            #     `<= 3`, so literals genuinely carried by 3 witnesses read as
+            #     4 and were filed SHARED. Measured: 47 real NARROW findings
+            #     were HIDDEN this way (232 -> 277 once excluded).
+            #
+            # The audit already refuses to scan its own .py (see `scan`); this
+            # is the same principle applied to the other half of the loop, and
+            # the omission made the gate LOOSER rather than noisier.
+            continue
         if "_deprecated" in w.parts:
             # Still indexed: copying from a RETIRED witness is the worst
             # case, not an exempt one. See the AME instance in the docstring.
@@ -348,6 +368,17 @@ def _selftest() -> int:
         bad += not ok
         print(f"  [{'ok ' if ok else 'FAIL'}] line {ln}  "
               f"marked={got!s:<5s} want={want!s:<5s}  {why}")
+
+    # The self-reference exclusion must actually name this audit's own witness.
+    # Derived from __file__ rather than spelled, so it cannot desync on a
+    # rename -- but a change to the naming convention would, so it is pinned.
+    ok = OWN_WITNESS == "witness-value-copy-audit.witness.json"
+    bad += not ok
+    print("\nselftest — self-reference exclusion")
+    print(f"  [{'ok ' if ok else 'FAIL'}] OWN_WITNESS = {OWN_WITNESS!r}")
+    ok2 = OWN_WITNESS not in {w for w in ()} and OWN_WITNESS.endswith(".witness.json")
+    bad += not ok2
+    print(f"  [{'ok ' if ok2 else 'FAIL'}] names a witness file")
 
     # A number inside a TRAILING comment is prose, not a value.
     cc = comment_cols("X = 14   # muon 1.1099785956..., proton 1.1099785827\n")
