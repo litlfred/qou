@@ -90,7 +90,7 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))          # computations/
 import _path_bridge  # noqa: F401, E402 — cluster path bridge
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()  # canonical mpmath dps (≥ 50-dps floor + guard digits)
 
@@ -117,13 +117,9 @@ from codata_constants import M_E_MEV, M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # 
 M_E = mp.mpf(str(M_E_MEV))
 Q_AME = mp.mpf(M_N_MEV_VALIDATION) - mp.mpf(M_P_MEV_VALIDATION) - M_E
 
-# Cross-check targets from committed witnesses (muon/canonical q₀ chain)
-N3_WITNESS_B = mp.mpf(
-    "0.8675840673071423874917977953027706882700761783046107644471134337031143")
-N3_WITNESS_QN2 = mp.mpf(
-    "0.7823343865181718847573065835778360475870559686288237056895486489774164")
-N3_WITNESS_C3 = mp.mpf(
-    "-2.021615577060006120530024970029644566094740817719224122080390024229175")
+# Cross-check targets are READ FROM the committed N3 witness, further down --
+# see the block above `xchecks`. The three literals that used to sit here were
+# snapshots of the retired-muon-pin chain and had gone stale (bean qou-l4q3).
 EXTENDED_CK_C4 = mp.mpf("-2.5378659117940255569454500193524358506536471385217")
 EXTENDED_CK_C5 = mp.mpf("-164.92966962997120315189506117224341793666720626325")
 
@@ -275,11 +271,47 @@ def chain(q0):
 
 CH = {"proton": chain(Q0_PROTON), "muon": chain(Q0_MUON)}
 
-# cross-checks against committed witnesses (muon/canonical chain), 1e-25 floor
+# ---------------------------------------------------------------------------
+# Cross-checks against the committed N3 witness.
+#
+# TWO DEFECTS FIXED HERE (bean qou-l4q3), and they compound:
+#
+#   1. WRONG ANCHOR. These compared `CH["muon"]` against a witness that is
+#      PROTON-pinned. `q-beta-operator-valued-N3.witness.json` moved to the
+#      experimental pin under the 2026-08-07 owner directive ("all production
+#      code defaults to the experimental (proton) anchor") and this probe never
+#      followed, so the check was comparing two anchors -- the layer straddle
+#      AGENTS.md forbids, sitting inside a cross-check. Measured at 60 dps, the
+#      probe's own chain reproduces that witness at the PROTON anchor to
+#      1.6e-61 (b) / 8.7e-52 (QN2) / 2.3e-43 (c3), and misses at the muon
+#      anchor by 3.4e-10 / 2.4e-8 / 0.0497. No tolerance is widened: the
+#      residuals clear the unchanged 1e-25 / 1e-25 / 1e-20 floors by 20+
+#      orders of magnitude.
+#
+#   2. FROZEN COPIES. The references were three hardcoded literals, snapshotted
+#      from the N3 chain as it stood on 2026-07-11 -- i.e. at the RETIRED muon
+#      pin (b matches that pin to 5.3e-19). A copy cannot track its source, so
+#      the check went stale silently and the failure was read as a defect in
+#      this probe. They are now READ FROM THE WITNESS at run time, which is
+#      what makes the cross-check a cross-check.
+#
+# The guard was working the whole time -- it was correctly reporting that its
+# own references had gone stale. Diagnosis: bean qou-l4q3.
+# ---------------------------------------------------------------------------
+with (_path_bridge.witness_path(
+        "q-beta-operator-valued-N3.witness.json", HERE.parent)).open() as fh:
+    _n3 = json.load(fh)
+_n3 = _n3.get("data", _n3)
+N3_WITNESS_B = mp.mpf(str(_n3["hoefsmit_b"]))
+N3_WITNESS_QN2 = mp.mpf(str(_n3["Q_N2"]))
+N3_WITNESS_C3 = mp.mpf(str(_n3["c_3_empirical_additive"]))
+
 xchecks = [
-    ("b_matches_N3_witness", CH["muon"]["b"] - N3_WITNESS_B, mp.mpf("1e-25")),
-    ("QN2_matches_N3_witness", CH["muon"]["QN2"] - N3_WITNESS_QN2, mp.mpf("1e-25")),
-    ("c3_matches_N3_witness_additive", CH["muon"]["c3"] - N3_WITNESS_C3, mp.mpf("1e-20")),
+    ("b_matches_N3_witness", CH["proton"]["b"] - N3_WITNESS_B, mp.mpf("1e-25")),
+    ("QN2_matches_N3_witness",
+     CH["proton"]["QN2"] - N3_WITNESS_QN2, mp.mpf("1e-25")),
+    ("c3_matches_N3_witness_additive",
+     CH["proton"]["c3"] - N3_WITNESS_C3, mp.mpf("1e-20")),
 ]
 print(f"\n[{time.time()-T0:6.1f}s] empirical extraction (c_2 = −1 imposed; c_3 full-absorption)")
 for name, delta, tol in xchecks:
@@ -353,11 +385,11 @@ def analyze(tab, c3v, c4v, c5v, n_lo, label):
         rows.append({
             "n": n,
             "A": mp.nstr(A, 30), "B": mp.nstr(B, 30),
-            "sigma_exp": (0.0 if exact else float(sig_exp)),
-            "sigma_anchor": (0.0 if exact else float(sig_anc)),
+            "sigma_exp": fmt(mp.mpf(0) if exact else sig_exp),
+            "sigma_anchor": fmt(mp.mpf(0) if exact else sig_anc),
             "exact_from_proved_c2": bool(exact),
-            "dist_to_Z": float(dist_Z),
-            "dist_to_ZSqrt3": float(dist_OK),
+            "dist_to_Z": fmt(dist_Z),
+            "dist_to_ZSqrt3": fmt(dist_OK),
             "resolvable_sigma_exp": bool(resolvable_exp),
             "resolvable_anchor_only": bool(resolvable_anc),
             # compatibility judged against the uncertainty of the SAME reading
@@ -376,9 +408,12 @@ def print_rows(rows, label):
         res = "EXACT" if r["exact_from_proved_c2"] else (
             "yes" if r["resolvable_sigma_exp"] else
             ("anchor-only" if r["resolvable_anchor_only"] else "NO"))
+        # The row fields are `fmt` strings (lossless); float() is display only.
         print(f"    {r['n']:>2}  {r['A'][:24]:>24}  {r['B'][:24]:>24}  "
-              f"{r['dist_to_Z']:>10.4g}  {r['dist_to_ZSqrt3']:>10.4g}  "
-              f"{r['sigma_exp']:>9.3g}  {r['sigma_anchor']:>9.3g}  {res}")
+              f"{float(r['dist_to_Z']):>10.4g}  "
+              f"{float(r['dist_to_ZSqrt3']):>10.4g}  "
+              f"{float(r['sigma_exp']):>9.3g}  "
+              f"{float(r['sigma_anchor']):>9.3g}  {res}")
 
 
 RESULTS = {}
@@ -500,10 +535,10 @@ payload = {
             "proton": mp.nstr(C3["proton"], OUT_DPS),
             "muon": mp.nstr(C3["muon"], OUT_DPS),
             "anchor_spread_abs": mp.nstr(C3_SPREAD, 12),
-            "anchor_spread_pct": float(100 * C3_SPREAD / mp.fabs(C3["muon"])),
-            "sigma_exp_c3": float(SIG_C3_EXP),
-            "sigma_exp_c4": float(SIG_C4_EXP),
-            "sigma_exp_c5": float(SIG_C5_EXP),
+            "anchor_spread_pct": fmt(100 * C3_SPREAD / mp.fabs(C3["muon"])),
+            "sigma_exp_c3": fmt(SIG_C3_EXP),
+            "sigma_exp_c4": fmt(SIG_C4_EXP),
+            "sigma_exp_c5": fmt(SIG_C5_EXP),
             "c4_c5_status": "no scheme-independent empirical value (full absorption at rung 3 "
                             "forces 0; recorded values presuppose imposed lower-rung forms; "
                             "sigma_exp >= 148 makes orders h^8+ unresolvable regardless)",
@@ -529,16 +564,20 @@ payload = {
     "scope_classification": SCOPE,
 }
 
+# mpf end to end -- `float(delta)` truncated cross-check residuals as small as
+# 5e-71 to 17 digits on the way into the witness, i.e. the assertion recorded
+# less than the check measured.
 ASSERTIONS = [
-    ("b_squared_three_forms_agree_symbolically", 1.0, 1.0, 0.0,
+    ("b_squared_three_forms_agree_symbolically", mp.mpf(1), mp.mpf(1), mp.mpf(0),
      "sympy simplify == 0 (exact)"),
-    ("basis_invariance_h_hbar_verified", 1.0 if basis_invariant else 0.0, 1.0, 0.0,
+    ("basis_invariance_h_hbar_verified",
+     mp.mpf(1) if basis_invariant else mp.mpf(0), mp.mpf(1), mp.mpf(0),
      "hbar=h/(1+h), h=hbar/(1-hbar) both in Z[[.]] with unit linear term; round-trip id"),
     ("bare_alpha4_equals_minus_three_quarters_exact",
-     float(R2mp(TAB_L[4]["A"]["const"])), -0.75, 0.0,
+     R2mp(TAB_L[4]["A"]["const"]), mp.mpf("-0.75"), mp.mpf(0),
      "exact sympy rational; c_2 = -1 Lean-proved (PR #1602)"),
 ] + [
-    (name, float(delta), 0.0, float(tol),
+    (name, delta, mp.mpf(0), tol,
      "committed witness cross-check (q-beta-operator-valued-N3.witness.json)")
     for name, delta, tol in xchecks
 ]

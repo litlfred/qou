@@ -1,11 +1,11 @@
 ---
 # qou-l4q3
 title: 'GAP: qbeta_habiro_integrality_kill_test''s hardcoded N3_WITNESS_* constants are stale'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T14:43:39Z
-updated_at: 2026-09-06T12:20:32Z
+updated_at: 2026-09-06T12:40:20Z
 ---
 
 Re-running `qbeta_habiro_integrality_kill_test` (one of the `qou-tekx` "merely
@@ -72,3 +72,49 @@ land *after* this bean, not before, so the flip is reviewed on its own terms.
 
 The honest reading of `main` today: this witness asserts `allPassed: true` for
 three cross-checks its own producer fails.
+
+
+## RESOLVED 2026-09-06 — root cause is an ANCHOR MISMATCH, not stale copies alone
+
+The frozen-constants diagnosis above is right about the mechanism and
+incomplete about the cause. Measured from primary sources:
+
+**The N3 witness this probe cross-checks against is PROTON-pinned; the probe
+was comparing its MUON chain to it.** `q-beta-operator-valued-N3.witness.json`
+moved to the experimental pin under the 2026-08-07 owner directive and this
+probe never followed. That is the layer straddle AGENTS.md forbids, sitting
+inside a cross-check.
+
+Decisive measurement — the probe's own `chain()` against the committed N3
+witness, at 60 dps:
+
+| quantity | at the muon anchor | at the proton anchor |
+|---|---|---|
+| `b` | 3.44e-10 | **1.6e-61** |
+| `QN2` | -2.38e-8 | **-8.7e-52** |
+| `c3` | 0.0497 | **-2.3e-43** |
+
+So the probe's chain reproduces that witness *exactly* at proton and misses at
+muon by the μ–p separation. The three "failures" were one root cause.
+
+**And the frozen literals were a THIRD anchor.** `b` at the *retired*
+self-certified muon pin is `0.86758406730714238696`, matching the frozen
+`N3_WITNESS_B` to **5.3e-19** — so the constants were snapshotted from the
+chain at a pin that has since been retired twice over. Three vintages of "the
+muon q₀" were in play at once, which is exactly the trap
+`muon_pin_three_values_probe` exists to name.
+
+**Fix (both halves).** Cross-checks now compare `CH["proton"]`, and the three
+reference values are **read from the committed N3 witness at run time** instead
+of frozen as literals — a copy cannot track its source, which is what let this
+go stale silently.
+
+**No tolerance was widened.** The floors are unchanged at 1e-25 / 1e-25 /
+1e-20 and the residuals clear them by 20+ orders of magnitude: 5.43e-71,
+8.66e-52, 2.33e-43. All 6 assertions pass.
+
+**The bean's own reading was correct and worth keeping**: *"the producer is not
+defective — it is correctly detecting that its frozen references are stale."*
+The guard did its job for two months; what was missing was the anchor.
+
+The drain this blocked is landed with it: **241 -> 0** raw-float64 fields.
