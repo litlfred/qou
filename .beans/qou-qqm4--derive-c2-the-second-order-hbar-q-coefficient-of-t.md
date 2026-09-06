@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-06T12:21:52Z
+updated_at: 2026-09-06T12:34:44Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -405,3 +405,56 @@ route is to COUNT pair types, not fit them — this decomposition is that ground
 
 Probes: `c2_pairwise_shape_holdout_probe.py`, `c2_pair_class_decomposition_probe.py` (exact
 `Fraction`s, no `q`, no witness).
+
+
+### The free word IS a product — my retraction of that mechanism was WRONG (2026-09-06, PR #6920)
+
+**Correcting my own claim, recorded here because this bean carries the copy of it.** Earlier in this
+session I retracted the factorisation reading of the free word's second order and wrote that the
+relation had "no mechanism attached". It has one, and it was the one I first proposed.
+
+`tr(free; Z,N) = tr(p)^Z · tr(n)^N`. Writing each single-nucleon series as `a(1 + rε + qε² + …)`,
+measured independently at `n = 3`:
+
+    a_p = a_n = 1/2      r_p = 3/2, r_n = −1      q_p = 23/4, q_n = 3
+
+Everything at order 2 follows with **zero free parameters**, 7/7 exact:
+
+    [ε⁰] = 2^(−A)
+    [ε¹] = (Z r_p + N r_n)·[ε⁰] = u·2^(−A−1)
+    [ε²] = [Z q_p + N q_n + (σ₁² − σ₂)/2]·[ε⁰]
+    intra(free) = (2Z − 2N)·[ε⁰]      cross(free) = [C(Z,2)r_p² + ZN r_p r_n + C(N,2)r_n²]·[ε⁰]
+    n-if(free) = if-if(free) = 0      (verified, not assumed)
+
+**Two constants this arc called "new data" are now derived.** `(S_p, S_n) = (6, −4)` — `c₁`'s only
+ordering-dependent input, the thing this whole branch turned on — is `4·(r_p, r_n) = 4·(3/2, −1)`.
+And `(37, 20)`, which the probe called "the only fitted pair", falls out of `q_p, q_n`: the identity
+`4[Z q_p + N q_n + (σ₁² − σ₂)/2] == u²/2 + (37Z + 20N)/2` holds exactly on all 8 `(Z,N)` at
+`A = 2,3,4`. So that form is **8 points against ZERO free parameters**, not two.
+
+**Where my retraction went wrong.** I said factorisation fails because `([ε¹])²/2` is off from the
+measurement by `2^(−A)`. Multiplicativity never predicts `([ε¹])²/2`:
+
+1. **The normaliser was squared.** `[ε¹]` already carries `[ε⁰] = 2^(−A)`; a product's cross term is
+   `Σ_{i<j} r_i r_j·[ε⁰]`, with `[ε⁰]` appearing **once**. Squaring `[ε¹]` squares it — that stray
+   `2^(−A)` is exactly what I read as the refutation.
+2. **The self terms were not subtracted.** `Σ_{i<j} r_i r_j = (σ₁² − σ₂)/2`, not `σ₁²/2`; part of
+   the linear `(37Z + 20N)` comes from `−σ₂/2`. No version of "(first order)²/2" can be right.
+
+The probe's own prediction column agreed with the retraction because it had been written to the same
+wrong expression. **A self-check only checks what you encoded.**
+
+**Contaminated and now corrected:** the 🛑 box in
+`free_word_second_order_product_structure_probe.py` (rewritten), finding 5 of PR #6920's body, and
+this bean. The *measured relation* was right throughout; only its status moves, from "empirical, 2
+free parameters" to "derived, 0".
+
+**Where this leaves goal (2).** The **free** side of `c₂` is now fully derived at orders 0, 1, 2 —
+every class. What remains is entirely the **atom** side: `n-if` and `if-if` of `Δtr` are pure
+atom-side data (the free word contributes exactly 0 to both, verified), and `intra` and `cross` each
+have a free half now known and an atom half that is not. That is a much sharper statement of the
+remaining work than "derive `c₂`".
+
+🛑 Factorisation is **not proved** — disjoint strand triples is an argument, and 7 words across three
+orders and four pair classes is evidence. A Lean `tr(free; Z,N) = tr(p)^Z tr(n)^N` would settle it
+and does not exist. Worth opening as its own item.
