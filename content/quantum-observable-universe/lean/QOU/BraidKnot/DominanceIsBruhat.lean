@@ -131,38 +131,84 @@ Composing with `bruhatLe_of_reflLe_An` therefore reaches `BruhatLe`.  So:
 The `iff` is therefore **split** below into its two implications, so the reachable half is not
 held hostage to the blocked one.
 
-## The forward proof, decomposed — with one step already free and one trap already found
+## 🛑 THE SOURCE'S INDUCTIVE STEP DOES NOT CLOSE — measured, not suspected
 
-Mathas' argument: pick `r` minimal with row `r` of `s` differing from row `r` of `t`; let `a`
-be least in row `r` of `s` but not of `t`, `b` least in row `r` of `t` but not of `s`; then
-`a < b`, and `v := t·(a,b)` satisfies `v ▷ t` and `d(v) ▷ d(t)`; either `v = s` or `s ▷ v`,
-and one inducts.
+The paragraph above said the forward half was "unblocked" and that what remained was
+"purely the tableau combinatorics".  The Coxeter side **is** supplied, and the handedness
+trap it warned about **is** closed (`BruhatReflection.LeftReflStep` / `LeftReflLe` /
+`bruhatLe_of_leftReflLe_An`, this branch, sorry-free).  What is *not* true is that Mathas'
+argument transcribes.
 
-Two things are settled here so the next attempt does not rediscover them:
+Mathas' proof, from the source verbatim:
 
-**FREE.** Swapping two *labels* in a tableau **is** the group action by a transposition, so
-the permutation step is `TableauPerm.dOf_smul` and costs nothing —
+> First suppose that `s ▷ t` and choose `r` minimal such that row `r` of `s` and row `r` of
+> `t` are different.  Let `a` be the smallest number which is in row `r` of `s` but not in
+> row `r` of `t`; similarly, let `b` be the smallest number which is in row `r` of `t` but
+> not in row `r` of `s`.  Then `a < b` since `s ▷ t`.  Therefore, if `v = t(a,b)` then
+> `v ▷ t` and `d(v) ▷ d(t)`.  Further, if `a` is in row `t` of `t` and `b` is in row `s` of
+> `s` then `t > r` and `t ≥ s`; so, either `v = s` or `s ▷ v`.  Therefore, by induction,
+> `d(s) ⊵ d(v)`; so `d(s) ⊵ d(t)` as required.
 
-```lean
-example (a b) (t) : dOf (Equiv.swap a b • t) = Equiv.swap a b * dOf t := dOf_smul _ _
-```
+[`dipper_james_forward_step_probe.py`](../../../../../computations/hecke/dipper_james_forward_step_probe.py)
+measures each clause of that separately.  At `n = 6`, over all 142 314 ordered pairs of
+row-standard tableaux with `s ▷ t` strictly:
 
-verified, compiles as written.  The step Mathas spends a paragraph on is one existing lemma.
+| clause | | |
+|---|---|---|
+| `a < b` | 142314/142314 | ok |
+| `v ▷ t` strictly | 142314/142314 | ok |
+| `d(v) ≤ d(t)` (subword Bruhat) | 142314/142314 | ok |
+| the raw swap is row standard | 129833/142314 | **91.2 %** |
+| `v` is one LEFT reflection step below `t` | 129833/142314 | **91.2 %** |
+| **`s ⊵ v`** | 112096/142314 | **78.8 %** |
+| some transposition does all of it | 142314/142314 | ok |
 
-**🛑 TRAP — the seventh handedness instance on this arc, and the first found before the proof
-rather than after.**  `dOf_smul` produces `Equiv.swap a b * dOf t` — the transposition on the
-**LEFT**.  `BruhatReflection.ReflStep v w := ∃ τ, IsReflection τ ∧ w = v * τ ∧ ℓ v < ℓ w`
-multiplies on the **RIGHT**.  So the corpus's tableau step is **not literally a `ReflStep`**,
-and a proof written assuming it is will fail at the point where `bruhatLe_of_reflLe_An` is
-applied — late, and looking like a hard obstruction.
+**`s ⊵ v` is the substantive failure.**  The justification Mathas gives for it is
+`ℓ_t(a) ≥ ℓ_s(b)` — `a`'s row in `t` at or below `b`'s row in `s` — and that is the
+condition which *produces* the overshoot rather than preventing it: swapping sends `b` to
+`a`'s row in `t`, i.e. at or below where `s` puts it.  Smallest instance, verified by hand
+and by probe:
 
-It is a bridge, not a wall: `ℓ(w) = ℓ(w⁻¹)` and Bruhat is inversion-invariant, so either
-transport through `⁻¹`, or state a left-handed `ReflStep` variant.  **Deciding which is the
-first thing the forward proof must do**, and it is a one-lemma decision, not a redesign.
+    λ = (2,1,1)
+    s = ((1,2),(4),(3))      t = ((1,4),(3),(2))      s ▷ t
+    r = 0,  a = 2,  b = 4,  a < b
+    v = t(2,4) = ((1,2),(3),(4))
+    v ▷ t  ✓   but   s ⊵ v  is FALSE — at i = 1, m = 3 the counts are s : 2, v : 3
 
-The remaining genuinely-new work is then only the combinatorics: the minimal differing row,
-the extraction of `a` and `b` with `a < b` from `domRel`, and the induction — for which
-`DominanceWellFounded.domGtOn_wellFounded` already supplies the well-founded measure.
+The two 91.2 % rows fail together and cost less: when the raw swap leaves a row unsorted,
+`v` is still the correct *tabloid* but is no longer `(a,b) · t` as a *tableau*, so the
+single-step route through `bruhatLe_of_leftReflLe_An` is unavailable for those pairs.  The
+relation `d(v) ≤ d(t)` holds throughout regardless.
+
+### This is a repair, not a refutation — and the difference is measured
+
+The last row is why.  For **every** such pair there exists a transposition meeting all of
+Mathas' conditions at once — raw swap row standard, `s ⊵ v ▷ t`, `d(v) = (a,b) · d(t)`,
+length down.  So the *strategy* is sound and only the *selection rule* is wrong: what a
+Lean proof needs is a correct rule, not a different induction.
+
+Nor is this a claim against Mathas.  **3.7 itself is measured true**, in both directions,
+708 062/708 062 on the same range.  The source is OCR, and the sentence carrying the failing
+clause prints its two **row indices** as `s` and `t` — the same glyphs as the two tableaux —
+so a transcription error in either direction is entirely possible.  What is established is
+that *the argument as this corpus can read it does not close*, which is a reason not to
+write Lean against it.
+
+### Rules already measured — do not re-try these
+
+Hits against the brute-force valid set at `n = 6`, out of 142 314: Mathas' own **102 404**
+(71.9 %), `lowrow` 95 044, `deep` 98 448, `a_bmin` 111 474, `bmax_a` **119 640** (84.1 %,
+best measured).  Both `b`-side repairs beat both `a`-side ones, which is the one structural
+hint the search produced: Mathas' `b` — least in row `r` of `t` but *not* in row `r` of `s` —
+is the wrong constraint, and the valid set repeatedly wants a `b` that **is** in row `r` of
+`s`, which his definition can never return.  A per-element "do not overshoot" criterion is
+ruled out: the valid set contains steps sending a label *below* the row `s` puts it in,
+because dominance is a global count comparison.
+
+Tracked as bean **`qou-f3mc`**.  What remains free and is not in doubt: swapping two labels
+**is** the group action (`TableauPerm.dOf_smul`, `dOf (Equiv.swap a b • t) = Equiv.swap a b *
+dOf t`, verified), the handedness bridge is landed, and
+`DominanceWellFounded.domGtOn_wellFounded` supplies the induction's measure.
 -/
 
 open Equiv
@@ -207,14 +253,18 @@ theorem refTab_dOf_bruhatLe (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
 The Bruhat side is `d(s) ≤ d(t)` — **reversing**; see the module docstring, and
 `refTab_dOf_bruhatLe` for the fact that forces it.
 
-**Unblocked as of #6894.**  Mathas' argument constructs exactly `BruhatReflection.ReflStep`s
-— multiply by a transposition, length up — and `bruhatLe_of_reflLe_An` converts a chain of
-those into `BruhatLe` with **no hypothesis to discharge** in type A.  So the Coxeter side is
-supplied and what remains is purely the tableau combinatorics: the induction on the
-transposition `(a,b)` at the first row where `s` and `t` differ.
+**Stated, not proved — and NOT for want of Coxeter machinery.**  The Coxeter side is
+supplied (`BruhatReflection.bruhatLe_of_leftReflLe_An`, hypothesis-free in type A, with the
+left/right handedness bridge landed alongside it).  What blocks this is the **tableau**
+side: Mathas' selection rule for the inductive step's transposition is wrong, measured at
+**78.8 %** on its `s ⊵ v` clause over 142 314 pairs at `n = 6`.  A correct rule exists —
+some transposition works for **every** pair, 142 314/142 314 — but none of the five rules
+tried finds it.  See the module docstring for the per-clause table and the smallest
+counterexample; tracked as bean `qou-f3mc`.
 
-Measured exhaustively over every ordered pair of row-standard tableaux of every partition of
-`n ≤ 6`: **708 062/708 062**, under both definitions of the Bruhat order. -/
+The **statement** is not in doubt: measured exhaustively over every ordered pair of
+row-standard tableaux of every partition of `n ≤ 6`, **708 062/708 062**, under both
+definitions of the Bruhat order. -/
 -- Ref: [dipper-james1986] Dipper & James, *Blocks and idempotents of Hecke algebras of
 -- general linear groups*, Proc. LMS (3) 54 (1987) 57-82; and [mathas1999] Mathas,
 -- *Iwahori-Hecke algebras and Schur algebras of the symmetric group*, Proposition 3.7.
