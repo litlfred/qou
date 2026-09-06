@@ -208,10 +208,13 @@ characters move by per-partition factors, including sign changes.  **Only the
 aggregate `tr_M` is closed-form**; anything reporting per-lambda values must be
 re-run, not rescaled.
 
-**Status:** `delta-lambda-2row-stratum.witness.json` is refreshed as the
-validation sample (1 of 64).  The other 63 are untouched and are a scoped
-follow-up, not an idle-pass job — several are long computes, and the AGENTS.md
-idle cap is 3 witnesses.
+**🛑 CORRECTED — "several are long computes" was inferred, not measured, and it
+is false.**  Every one of the 67 stale witnesses with a recorded `durationMs`
+runs in **under 60 seconds**; 63 of them in under one second, and the slowest in
+the whole set is `delta_lambda_empirical_tabulation` at **36.1 s**.  The full
+sweep is a couple of minutes of compute, not the multi-hour job I implied when I
+scoped it as a follow-up.  I read "84 consumers" as "expensive" without opening
+the durations.  The sweep was therefore RUN, not deferred — see below.
 
 **Also stale and NOT regenerated: the muon-anchor chi caches**
 (`chi-{tritium,helium-3,helium-4}-h9/h12-at-q0-50dps-muon.witness.json`).  I ran
