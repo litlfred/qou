@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-06T12:34:44Z
+updated_at: 2026-09-06T12:48:30Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -458,3 +458,63 @@ remaining work than "derive `c₂`".
 🛑 Factorisation is **not proved** — disjoint strand triples is an argument, and 7 words across three
 orders and four pair classes is evidence. A Lean `tr(free; Z,N) = tr(p)^Z tr(n)^N` would settle it
 and does not exist. Worth opening as its own item.
+
+
+## 🟢 GOAL (2) IS ANSWERED — `c₂` in closed form, as a BOND PRODUCT (2026-09-06, PR #6920)
+
+`c₂` has a closed form. It is **not** a form in `(Z, N)` alone — which is why the `(u, D)`
+leave-one-out had to miss, and that MISS is now explained rather than merely recorded. It is a form
+in the **ordering**:
+
+    tr(atom) = ∏_nucleons a(1 + rε + qε²) · ∏_bonds (1/2)(1 + ρ_b ε + τ_b ε²)
+
+The atom word is a **chain**: `A` nucleon blocks on disjoint strand triples joined by `A − 1` single
+interface letters at generators `3k + 2`, and its trace is the corresponding product. Every factor
+is **measured on a smaller object**, never fitted:
+
+    proton    a = 1/2   r = 3/2   q = 23/4      measured at n = 3, one nucleon, free word
+    neutron   a = 1/2   r = −1    q = 3
+    bond pp   (1/2)(1,  2, 1/2)                 measured at A = 3 by turning ONE interface on
+    bond pn   (1/2)(1,  0, 3/2)                 (`m_pp` / `m_pn` / `m_nn` select which)
+    bond nn   (1/2)(1, −2, 5/2)
+
+With `Δ = tr(free) − tr(atom)`: **9/9 on `c₀`, `c₁` AND `c₂` across `A = 2…5`** — `pp, pn, nn, 3p,
+T, ³He, 3n, ⁴He, ⁵He`. Five measured series predict 27 numbers, no free parameter at any step.
+`--verify-live` re-measures the `n ≤ 9` targets rather than trusting the recorded table; passes too.
+
+**Why it is not a fit, twice over.** The bond factors come from **one-interface** words, so every
+prediction is for a **multi-interface** word — even T and ³He, which supplied the extraction, are
+real tests of the *product*. And `A = 2` (three words), `A = 4` and `A = 5` contributed nothing to
+any input; ⁵He was computed for the unrelated `k(A)` refutation before this form existed.
+
+**Every earlier finding on this bean is now a corollary:**
+
+- `c₀ = 2^(−A) − 2^(1−2A)` is the `ε⁰` part: `2^(−A)` over nucleons times `2^(−(A−1))` over bonds.
+  Interfaces act **multiplicatively** (each halves the leading term) — measured directly, and it is
+  why the `Δ` of one interface is *not additive* over interfaces.
+- `(S_p, S_n) = (6, −4)`, `c₁`'s only ordering-dependent input, is `4·(r_p, r_n)`.
+- `(37, 20)` falls out of `q_p, q_n`.
+- The `|S| = 2` pair classes are this product's second-order terms: `intra` from one nucleon's `q`,
+  `cross` from two nucleons' `r`, `n-if` from a nucleon and a bond, `if-if` from **two bonds** —
+  which is exactly why `if-if` counts *pairs of like interfaces* and cannot be affine in
+  `I_pp − I_nn`.
+
+The bond factors fall into a pattern, `ρ_b = p_b − n_b` and `τ_b = 1/2 + n_b`. That is a
+*description* of three measured values with one spare dof and is **not** what the form uses, so
+nothing rests on it; it is the shape a derivation would have to produce.
+
+### 🛑 What is NOT established — read before quoting
+
+1. **Sorted orderings only.** Every word is `p…p n…n`, because `atom_canonical_crossings` takes
+   `(Z, N)`. The bond product is *stated* for an arbitrary ordering and is **untested** on one;
+   `pnp` is the discriminating case and needs the canonical construction extended, not a hand-built
+   word. Corollary: only the `(p, n)` orientation of the mixed bond ever occurs, so treating
+   `(n, p)` as the same factor is an **assumption**, inert here.
+2. **Orders 0, 1, 2 and `A ≤ 5` only.**
+3. **NOT PROVED.** Disjoint blocks and single-letter bonds is a structural argument; 9 words × 3
+   orders exact is evidence. Neither the bond product nor the free-word factorisation has a Lean
+   statement — that is the formalize-first follow-on and is the highest-value next item on this arc.
+4. **No `q₀` anywhere.** Exact rational ε-coefficients, wired to nothing, no witness, no content
+   block.
+
+Probe: `computations/probes/atom_bond_product_closed_form_probe.py`.
