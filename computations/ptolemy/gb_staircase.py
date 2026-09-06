@@ -100,7 +100,45 @@ def report(path):
     else:
         print("  positive dimensional -- msolve will refuse to parametrise it;"
               " a generic slice by this many hyperplanes cuts it to dimension 0")
+    _epistemics(len(lead) == 1 and not any(lead[0]))
     return d
+
+
+def _epistemics(is_trivial):
+    """State what this result does and does NOT establish.  The two directions differ.
+
+    The FKR reduction clears denominators via numer(q.subs(x, -B/A)), which ADDS the
+    locus {A = 0}.  So the reduced system's solution set CONTAINS the image of every
+    genuine solution, together with spurious points the clearing introduced.  That
+    containment is one-way, and it makes the two possible answers worth very different
+    amounts:
+
+      EMPTY      conclusive.  A genuine point would have to appear in the reduced
+                 system, so if the reduced system has none, the class has none.  No
+                 round trip is needed, because there is nothing to round-trip.
+
+      NON-EMPTY  inconclusive on its own.  The points may all be spurious -- which is
+                 exactly what happened in the #6815 retraction, where every point of a
+                 five-dimensional variety sat on the added locus.  Dimension and degree
+                 are UPPER BOUNDS for the genuine variety, not its values.
+
+    And a Groebner basis alone supplies no POINT, so it cannot be round-tripped.  A
+    non-empty GB-only verdict therefore cannot be promoted to a result by any amount of
+    further reading of that basis: it needs the RUR (or another route to a solution) and
+    then ptolemy_exact_character.py against snappy's ORIGINAL equations.
+    """
+    print()
+    if is_trivial:
+        print("  READING: basis is {1} -- the ideal is the whole ring, so the reduced")
+        print("  system is EMPTY.  This is CONCLUSIVE: genuine solutions inject into the")
+        print("  reduced system, so the class has no points.  No round trip required.")
+    else:
+        print("  READING: non-empty, so this is an UPPER BOUND, not a result.  The")
+        print("  reduction adds the locus {A=0}; the points may all be spurious (that is")
+        print("  precisely the #6815 retraction).  A Groebner basis supplies no POINT, so")
+        print("  this cannot be round-tripped as it stands -- it needs the RUR or another")
+        print("  route to a solution, then ptolemy_exact_character.py against snappy's")
+        print("  ORIGINAL equations.  Do NOT report the degree as the class's degree.")
 
 
 def selftest():
