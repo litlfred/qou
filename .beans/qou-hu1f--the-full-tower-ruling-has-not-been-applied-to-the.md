@@ -555,16 +555,54 @@ build I made had an incompatible API); 2 fail importing `codata_constants`.
 is a raw-float64 or environment-record gate, not a computation failure. Their
 content was reverted unread by the harness and is still unknown.
 
-- [x] Re-run and diff — done, 9 regenerated.
-- [ ] **Fix the 6 producers the ruling breaks.** This is the real remaining work
-      and it is not regeneration: each encodes an assumption the ruling
-      invalidates, and `classical_floor_derivation_probe`'s monotonicity
-      assertion has to be decided, not edited away.
-- [ ] Re-run the 4 gate-exit producers tolerating the gate, to learn whether
-      their numbers move.
-- [ ] The 4 timeouts (`atomic_tr_m_helium4`, `binding_combiner_markov_peel_
-      fallback`, `d_frame_interface_twelve_derivation_probe`,
-      `triton_magnus_omega2_sign_probe`) need a longer budget than 240 s.
+### THE RESIDUE PASS — and it grew the BROKEN count, not the regenerated one
+
+The 4 gate-exit producers and the 4 timeouts, re-run (gates tolerated; 1200 s).
+
+**Gate-exits.** All four had genuine numeric change — verified by multiset
+comparison, not just a length check, because two of them also gained a new
+`invocation` block and a schema addition is not mathematics.
+`per-irrep-pole-atom-crystal` shares **zero** numeric values with its
+predecessor. But three of the four now have **FAILING ASSERTIONS**:
+
+    markov_trace_axiomatic_multi_atom      char_fast_cross_check_ok
+    per_irrep_pole_atom_crystal            asserted_atoms_match_closed_form_shift
+    nastokes_multigen_cluster_additivity   R3_rel_lambda_robust_within_10pct
+
+Those are **not stale numbers**. They are the same class as the six errors —
+assertions that held under the grouped word and do not hold under the
+alternating one. Reverted rather than committed: a witness recording
+`passed: false` is a failure, and committing it would file a failure as a
+result.
+
+**Timeouts.** `atomic_tr_m_helium4` completed in 481 s and is a genuine
+regeneration. `d_frame_interface_twelve_derivation_probe` completed in 450 s
+with **no** change (reverted). Two still exceed 1200 s.
+
+### RUNNING TOTALS
+
+    regenerated (correct under the ruling)   11
+    BROKEN BY the ruling                      9   <- was 6
+    unchanged                                14
+    container limitations                     6
+    still timing out                          2
+
+**The broken count is the headline.** Nine producers do not merely print
+different numbers — they assert properties the alternating word does not have.
+`classical_floor_derivation_probe` asserts the canonical word is **monotone in
+the generator index**; `per_irrep_pole_atom_crystal` asserts its atoms match a
+closed-form shift; `nastokes` asserts a 10 % robustness bound. Each encodes the
+superseded convention as a claim about the mathematics.
+
+- [x] Re-run and diff — 11 regenerated in total.
+- [x] Gate-exit producers re-run tolerating the gate.
+- [x] Timeouts retried at 1200 s — 1 completed, 1 no-change, 2 still over.
+- [ ] **Decide the 9, do not edit them.** Whether the ruling invalidates each
+      *claim* or each *probe* is a statement about what the canonical word is,
+      and they plausibly share one root. Owner call; the monotonicity assertion
+      is the sharpest case to decide first because the others may follow from it.
+- [ ] `binding_combiner_markov_peel_fallback` and `triton_magnus_omega2_sign_probe`
+      need >1200 s, or a smaller case.
 - [ ] Decide whether `intra_order` should have defaulted at all. A
       behaviour-changing default across 339 callers is invisible by construction;
       an explicit-argument-required signature would have surfaced all 332 at
