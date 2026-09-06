@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T18:12:11Z
-updated_at: 2026-09-05T19:17:13Z
+updated_at: 2026-09-06T03:32:40Z
 ---
 
 ## Measured, not assumed (branch claude/atom-trace-nonmonotone-regression-2026-09-05)
@@ -182,3 +182,61 @@ should be wired as a test BEFORE the implementation, not after.
 Recorded rather than started: the estimate changed once already while I was
 writing it down, which is the signal to hand the priority call over rather than
 spend the hours on my own read of it.
+
+## ✅ THE WINDOW TRANSFER IS BUILT AND PASSES — PR #6893
+
+`computations/chi_window_transfer.py`. **35/35** on the conformance harness,
+and here the borromean rows are NOT circular — this transfer computes the
+non-monotone case itself, so they are the load-bearing ones (1.42e-49 / 1.60e-49
+/ 2.14e-49 against the kernel; tr_M agreement 2.1e-51 .. 2.9e-50).
+
+**MEASURED SPEED — the blocking constraint is gone:**
+
+    A   n   parts   kernel               window     speedup
+    3   9      30    0.36 s              0.07 s        5x
+    4  12      77  621.38 s              0.35 s     1770x
+    6  18     385  >900 s (timed out)    5.01 s
+    7  21     792  (never ran)          15.85 s
+
+4He, 6Li and 7Li are all now seconds. `mass_binding_dashboard --low` needs
+exactly those three.
+
+## 🛑 CORRECTING MY OWN DESIGN NOTE, twice over
+
+Both refinements I recorded above were **more pessimistic than the truth**.
+
+**(a) The seam needs no special handling at all.** I wrote that the window is
+"NOT self-contained" and that "the transition must be keyed on and emit the seam
+box", concluding this was "a re-derivation with a larger state, not a localised
+patch". Wrong framing: retirement is driven by `last_touch` per level, so the
+seam is simply *a level that retires late*. There is no seam concept in the code.
+
+**(b) The real difficulty was somewhere I never named: the TRACE.**
+`chi^lambda(W) = sum_T <T|rho(W)|T>` needs the chain to RETURN. The monotone
+transfer gets that free — each `O_g` is applied once at its own level, so only
+diagonal paths survive. Under interleaving an off-diagonal move must be **undone
+later**, and a forward sweep cannot see that. The fix is to carry BOTH the
+initial and current contents of the live levels and require `init == cur` at
+retirement. **That requirement IS the trace.** None of my three design notes
+mentioned it.
+
+**(c) The simplification I did find, and it is what collapsed the bookkeeping:**
+swapping the order in which two boxes are added does **not change the resulting
+partition**. So `sigma_g` leaves `s_{g+2}` invariant and moves only the content
+at level `g+1` — a state of (shape, ordered contents of the last few boxes) is
+closed under the generators, with no box positions carried at all. Corollary that
+removes a case analysis: the swap is invalid exactly when `|delta| = 1`, so
+"is the swapped tableau standard" and "is the block 1x1" are the same test, and
+the 1x1 value `D(+-1)` is already in the diagonal cache.
+
+**Lesson for the estimate:** I revised this design twice, both times upward, and
+the implementation came in at ~120 lines and passed the harness on the first
+run at n=3. The thing I kept refining (the seam) was not the hard part; the hard
+part (the trace) I had not noticed at all. Estimates from design notes on this
+kind of construction were, here, anti-correlated with the difficulty.
+
+## Not yet wired
+
+`tr_m_atom_via_transfer` still routes through the dispatcher. Wiring waits on
+the A=4 cross-check against the kernel (the harness only reaches A=3; 621 s is
+affordable once for the size the dashboard needs).
