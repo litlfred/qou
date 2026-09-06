@@ -12,7 +12,21 @@ identifies the backing content block(s) and Lean declaration(s),
 and flags the f64 / MPFR / `\Phi_q` / `\mathrm{Li}_2^q` distinctions
 that drive open issues at the atomic-braid scale.
 
-## 1. `mass_endomorphism.py` — f64 reference; m_p/m_e ≈ 1870
+## 1. `mass_endomorphism.py` — f64 reference; ~~m_p/m_e ≈ 1870~~ **≈ 9310 (407 % off)**
+
+> **🛑 The `≈ 1870` in this heading is stale — corrected 2026-09-06 (bean
+> `qou-oots`).** It was taken from the producer's docstring, which asserted
+> *"m_p/m_e ≈ 1870 (CODATA: 1836, error 1.8%). Zero fitted parameters."* That
+> docstring is contradicted by the module's own committed witness
+> `computations/mass-endomorphism.witness.json` — `ratio = 9310.32782814957`,
+> `error_pct = 407.0564870527914` — and by a fresh run, which additionally
+> gives `m_n/m_p = 0.014601` (CODATA 1.001378, 98.54 % off) and
+> `Δm = −4688.11 MeV` against CODATA's **+**1.293 MeV, a sign error as well.
+> The producer docstring is now corrected at source.
+>
+> The rest of this document is left as the dated record of its own analysis,
+> per the `qou-3nva` precedent; only the heading is amended, because a heading
+> naming a file and a number is read as a live statement about that file.
 
 **Math claims walked.**
 

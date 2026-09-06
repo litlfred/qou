@@ -347,3 +347,13 @@ whole point of bean `qou-3o59`.
 `references.ts library.docId` reconciliation. 828 entries / 394 with docId / 576
 dirs / 23 duplicates — the residual is **not** 182 and was never measured.
 `library/0803219` was found incidentally.
+
+## Tower-series divergence near a singularity (resolved 2026-09-06)
+STABLE. "Is the tower series divergent / where is the singularity" has carriers; do not re-declare open.
+Hecke n-tower binding period `a_D^(n)=S(n)/n`: Gevrey-1/2 at q=1 (Lean `QOU/Mass/BindingGevreyHalf.lean`),
+level-1/2 Borel singularity ξ=1/√2 real positive, non-polar (`docs/audits/2026-07-12-alien-calculus-review-binding-gevrey-half.md` §3,
+`computations/lever1_borel_half_singularity_probe.py`); at q₀ q-Gevrey ~q₀^{n²}, q-Borel radius ≈0.955
+(`deltalambda/deuteron-wall-qborel-resummation.witness.json`); deuteron-wall resummation REOPENED `qou-hok7`.
+Ohtsuki κ-tower: Gevrey-1, singularity Vol(4₁)/π≈0.646, Stokes 3. c_k D-ladder: CONVERGENT (three reversals; do not re-run).
+A→∞ nuclear tower series: unwritten (survey 2026-09-05 §7g). Brane-tower "divergence" = plateau in σ⁻¹ chain length (`qou-20yf`), bean `km42` wording stale.
+TRAP: the 2026-09-05 survey §7g (pre-correction) cited the Gevrey result to AlgebraicSubstrate/{KernelGrowthBound,DominationTowers,PolyhedralDomination}; it lives in QOU/Mass/BindingGevreyHalf.lean.
