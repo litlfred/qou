@@ -1,11 +1,11 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-05T19:25:17.564Z",
+  "generated": "2026-09-06T04:03:49.184Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3658,
-  "files_flagged": 113,
+  "scanned_files": 3672,
+  "files_flagged": 114,
   "total_defects": 73,
-  "total_exempt": 65,
+  "total_exempt": 66,
   "total_promoted_from_exempt": 19,
   "categories": {
     "proof-claims-unencoded": 37,
@@ -2095,6 +2095,19 @@
         "snippet": "def terms_2_6_higher_operations [ctx : Terms26HigherOperationsContext] :",
         "decl": "terms_2_6_higher_operations",
         "severity": "critical"
+      }
+    ],
+    "content/quantum-observable-universe/lean/QOU/BraidKnot/volume_perturbation.lean": [
+      {
+        "line": 73,
+        "category": "proof-no-self-assuming-projection",
+        "pattern": "field-projection",
+        "snippet": "theorem volume_perturbation [ctx : VolumePerturbationContext] :",
+        "decl": "volume_perturbation",
+        "severity": "critical",
+        "exempt": true,
+        "exempt_reason": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)",
+        "detail": "the projected field `ctx.perturbation_formula` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       }
     ],
     "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/WignerSU4FromSpinIsospin.lean": [
