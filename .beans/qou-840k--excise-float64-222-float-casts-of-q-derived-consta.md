@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-06T23:14:51Z
+updated_at: 2026-09-06T23:18:07Z
 ---
 
 
@@ -501,5 +501,67 @@ LAUNDERED 0 + F64_CAST 188). Commit on PR #6930.
 a 40-site sample. The full list is now obtainable in one command, which is the
 precondition for anyone — owner or agent — deciding how to stage 188 sites
 across 105 files.
+
+    python3 computations/f64_into_mpmath_audit.py --tier F64_CAST
+
+
+## 2026-09-06 — the 188 CHARACTERISED, so the drain can be staged rather than swept
+
+Measurement only; nothing edited. Now that `--tier F64_CAST` lists all 188 (the
+cap fix above), the tranche has a shape.
+
+### 74 % of it is ONE constant, so there is one repair pattern, not 188
+
+    139   q_parameter.Q            <- the same origin as every LAUNDERED site
+     20   q_parameter.HA
+     13   pyhecke.gram.z
+      6   qou_substrate.constants.Q
+      4   q_parameter.Q_INV
+      3   qou_substrate.constants.HA
+      3   pyhecke.gram.q0
+    ---
+    188
+
+`q_parameter.Q` is exactly what `qou-b7cf` repaired today with
+`q_at(mp.mp.dps)` — the established, already-reviewed pattern. So 139 of 188
+have a known fix, and the remaining 49 split over six origins, of which `HA`
+(23) and `pyhecke.gram.z`/`q0` (16) are the only groups above single digits.
+
+### The risk axis: does fixing a file MOVE a published number?
+
+Of the 105 files:
+
+    61   own a committed witness   -> the fix moves published numbers; each
+                                      needs a producer re-run and a before/after
+    41   own no witness            -> probe / consumer / library; the fix is
+                                      local and verifiable in place
+     3   qou-mass/src/…            -> 🛑 GENERATED mirror. NEVER hand-edit.
+                                      Fix at the computations/ source, then
+                                      scripts/sync-qou-mass-vendor.py --apply
+
+### Concentration worth knowing before staging
+
+`computations/h2o_angle_gb_truncation_inverse.py` alone carries **25 sites** —
+**13 % of the whole tranche in one file.** Three more carry 4 each. So a
+first batch of ~5 files reaches roughly a quarter of the sites.
+
+### A suggested staging, offered for scoping — NOT started
+
+1. **The 41 witness-free files.** Local, verifiable in place, no published
+   number moves. This is the safe majority of the *files* even though not of
+   the sites.
+2. **`h2o_angle_gb_truncation_inverse.py`** on its own — 25 sites, one
+   before/after.
+3. **The 61 witness-owning files**, in producer-cost order, each with the
+   before/after `qou-b7cf` used. This is the expensive part and the one that
+   wants owner sign-off, because it re-publishes numbers.
+4. **The 3 generated mirrors last**, via the sync script, never by hand.
+
+**Not begun.** Under the AGENTS.md precision rules a fix here is *fix at the
+producer and re-run*, and 61 producer re-runs is a tranche with real compute
+cost — it is a scoping decision, not an idle pass. The list, the counts and the
+staging are the deliverable of this pass.
+
+Reproduce any of it with:
 
     python3 computations/f64_into_mpmath_audit.py --tier F64_CAST
