@@ -16736,6 +16736,26 @@ export const references: Reference[] = [
     URL: "https://arxiv.org/abs/1610.02592",
     note: "arXiv:1610.02592 (math.GT; v1 Oct 2016, v3 5 Apr 2022; 494 pp, 68 sections). Graduate textbook on surfaces and 3-manifolds through geometrisation. The chapters this folio can cite: §13.1 (Thm 13.1.3 Vol(Δ) = Λ(α)+Λ(β)+Λ(γ) for an ideal tetrahedron, Cor 13.1.4 the regular ideal tetrahedron is maximal — the Λ-form of the Vol(4_1) = 6Λ(π/3) = 2 Cl_2(π/3) guard); §14.1 (ideal triangulations, Thurston's consistency and completeness equations, Prop 14.1.7 a solution with Im z_i > 0 gives a complete finite-volume hyperbolic structure, Prop 14.1.8 + Fig 14.7 the two-tetrahedron valence-6 triangulation at z = e^{iπ/3} is the figure-eight complement, §14.1.7 SnapPea); §15.2 (Prop 15.2.1 #edges = #tetrahedra, Cor 15.2.8 rk A = 2n − c, Prop 15.2.9/15.2.11 the rows of the incidence matrix generate a Lagrangian subspace — the Neumann–Zagier symplectic structure — and the solution space as a complex manifold parametrised by peripheral holonomy); §15.1 the hyperbolic Dehn filling theorem with the figure-eight's exceptional surgeries (Table 15.1); §11.4 torus bundles and Anosov monodromy (Prop 11.4.14). Recorded as the held textbook source behind the NZ-from-braid audit (docs/audits/2026-09-06-nz-gluing-data-from-braid-monodromy.md, beans qou-n2cl / qou-yvyd); the two-bridge layering itself is not in this book (that is Guéritaud / Futer–Kalfagianni–Purcell, library arxiv-0808.2716v4). Ingested 2026-09-06 (e5afe5ea7b); triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md.",
   }),
+
+  // ── Li 2026 — TFTs and the algebraic structures of the two-sphere: Cob(2) ≅ Cob(3)_{S^2,CF}, P/L-monoids ──
+  ref({
+    id: "li2026-two-sphere",
+    library: {
+      docId: "arxiv-2605.20846v1",
+      dir: "library/arxiv-2605.20846v1",
+      pdf: "library/arxiv-2605.20846v1/2605.20846v1.pdf",
+      stage: "sections",
+      pages: 99,
+      sections: 17,
+      arxiv: "2605.20846v1",
+    },
+    type: "article",
+    title: "Topological Field Theories and the Algebraic Structures of the Two-Sphere",
+    author: [{ family: "Li", given: "Chris" }],
+    issued: { "date-parts": [[2026]] },
+    URL: "https://arxiv.org/abs/2605.20846",
+    note: "arXiv:2605.20846 (math.AT, 20 May 2026; 99 pp, 17 sections; thesis-style). Two presentations of the S^2-sector Cob(3)_{S^2} of the oriented 3d bordism category: Thm 1.0.8 (= Thm 3.3.6) a canonical isomorphism Cob(2) ≅ Cob(3)_{S^2,CF} — the commutative-Frobenius part of the S^2 sector IS the 2d cobordism category; Thms 1.0.5/1.0.6 (= 4.4.13, 4.3.2) the full presentation adds one generator per closed oriented irreducible prime 3-manifold p (a unit 1_p : ∅ → S^2, equivalently an endomorphism p×× of S^2) subject to commutative-Frobenius + 'legs' relations; Def 5.1.7 / Lemma 5.1.2 package this as P-monoids ≅ L-monoids (commutative Frobenius monoids in a symmetric monoidal category with prime-labelled units). Cited as the theorem behind rem:tqft-context's sentence that the Frobenius–Hopf object A 'carries the 2d cobordism data' of the 3d TQFT: Z(S^2) is a commutative Frobenius monoid for every 3d TFT. Caveat for that use: Li's monoids are commutative and live in a SYMMETRIC monoidal target; QOU's A is a Hopf algebra in a BRAIDED category and is not assumed commutative, so the match is at the Frobenius level only. Preprint, no DOI. Ingested 2026-09-06 (e5afe5ea7b); triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
