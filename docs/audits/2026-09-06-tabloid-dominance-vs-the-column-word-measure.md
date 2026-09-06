@@ -326,3 +326,61 @@ with `TableauPerm.dOf`, because:
 
 The composition form stays available if 3.9 at basis level turns out to need it; nothing here
 requires building it.
+
+---
+
+## 🛑 A verification claim I published was false: `precision-gates.sh` is RED, on `main` and everywhere
+
+Both this PR's body and the **merged** #6899's said *"`scripts/precision-gates.sh --changed`
+exit 0"*. **That is wrong.** I read the exit status of the backgrounded *wrapper command*,
+not of the script. Measured with `${PIPESTATUS[0]}` on the script itself: **exit 1**.
+
+### What is actually true, measured on both trees
+
+| tree | invocation | exit | RED line |
+|---|---|---|---|
+| `origin/main` `e2ae4d5a31` | full `precision-gates.sh` | **1** | nine gates |
+| this branch | `precision-gates.sh --changed` | **1** | **byte-identical nine gates** |
+
+    RED: q0-anchor flip · q0-anchor refill ratchet · import-time dps ratchet ·
+         never-raises-dps ratchet · float64-padding ratchet · q0-value drift ratchet ·
+         CODATA stale-edition · hardcoded braid word (self-test) · mixed mpf/f64 → serializer
+
+**Identical on both**, so the red is **pre-existing on `main`** and this branch adds nothing
+to it. The attribution also holds independently: the script's own header says *"the ratchets
+are corpus-wide, not per-file, so there is nothing to scope down"* — `--changed` decides
+only **whether** to run — and this branch's sole `computations/` addition is an integer-only
+probe that writes no witness and is **named zero times** in the gate output.
+
+### Two non-answers on the way there, both worth recording
+
+1. **`git checkout --detach origin/main && bash scripts/precision-gates.sh`** short-circuited
+   on a dirty tree, so `&&` skipped the gates entirely. The output file did not exist and the
+   job log was empty — a comparison that never ran and would have been reported as one.
+2. **`--changed` on detached `main` exits 0 and that is NOT a green.** The log reads
+   *"precision-gates: 0 relevant of 0 changed file(s) — skipped."* Nothing changed, so it
+   short-circuits. Reporting that as "main is green" would have repeated the original error
+   in the same turn.
+
+**The lesson is one line: `exit 0` from a wrapper, a pipeline, or a short-circuit is not a
+verification.** Capture the status of the thing you are claiming about — `${PIPESTATUS[0]}`,
+or run it unpiped — and read the log to confirm it did work rather than skipping.
+
+### Blast radius
+
+The claim appears in **#6899's merged body** and in this PR's body; both are corrected, the
+merged one by comment since its body is the record. It reached **no committed file on this
+branch**. Two older audits carry the same sentence from prior sessions —
+`2026-08-26-cable-shift-deficit-lives-in-multidim-channels.md:195` and
+`2026-08-21-ladder-phase-from-wedderburn-weights.md:293` — and are **not swept here**: they
+may have been true when written, and re-measuring the gate history is a separate job. Flagged
+so the next agent does not cite them as evidence that the gates were ever green.
+
+### And a repo-level cost, measured three times this session
+
+`precision-gates.sh` **rewrites audit witnesses as a side effect of running** — eight on the
+first pass, six more on the second, four on the third. None are the runner's work. The
+session's stop hook then reports "uncommitted changes … please commit and push", and
+following it commits other people's regenerated witnesses. That is exactly how seven of them
+reached a pushed commit on #6899 before being caught. **Stage by explicit path; never
+`git add -A` after running the gates.**
