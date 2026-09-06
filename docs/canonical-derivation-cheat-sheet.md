@@ -38,7 +38,7 @@ doc.
 | Step | What | Status | Owner gap / active PR |
 |---|---|---|---|
 | 1. Cat action | `ρ_n: B_n → Aut_C(V^⊗n)` | ✅ proved | — (settled) |
-| 2. Stokes → Hecke | `σ_i²=(q−q⁻¹)σ_i+1` | 🟡 **algebra proved, GEOMETRY ASSERTED** | the curvature 2-form is *defined* to be the Hecke quadratic (see §2a below) |
+| 2. Stokes → Hecke | `σ_i²=(q−q⁻¹)σ_i+1` | 🟡 **algebra proved, GEOMETRY ASSERTED** — since 2026-09-06 carried as the §3b class `QOU.Mass.StepTwoMonodromy.HeckeMonodromy`; its `q = 1` shadow (a reflection) is **derived** from the colour cubic's branch-point monodromy (`HeckeQuadraticClassicalShadow.lean`, `colour_cubic_branch_monodromy_probe.py`); plan and the real-`q` KZ prune in [`2026-09-06-step-2-plan-hecke-monodromy.md`](audits/2026-09-06-step-2-plan-hecke-monodromy.md) | the curvature 2-form is *defined* to be the Hecke quadratic (see §2a below) |
 | 3. Alexander+Markov | unique `tr_M` | 🟢 derived (Lean: **0 sorries**; 2 cited external-proof **axioms** — `markov_trace_unique_axiom` in `QOU/Hecke/MarkovTrace.lean`, `jones_markov_trace_exists` in `jones-markov-trace.lean`, both `-- Ref: [jones1987]`; verified 2026-07-02) | discharge needs a cross-level M3 class field + a reduced-words basis lemma for `H_n(q)` (research-grade — uniqueness is not provable from the current generator-level class) |
 | 4. Bring χ=−6 | 6 ↔ torus knots | 🟢 derived | — (settled) |
 | 5. Wedderburn / partitions | `H_n(q)≅⊕_λ M_{d_λ}`, `tr_M=Σ y_λ χ^λ` | 🟢 derived (Wenzl) | — (the per-block frame; everything downstream rides on it) |
