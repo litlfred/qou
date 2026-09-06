@@ -112,16 +112,33 @@ def _emit_witness(ratios, spread, mr):
         sha = None
     with open(script, "rb") as f:
         script_hash = hashlib.sha256(f.read()).hexdigest()[:12]
+    # The numbers in this description are INTERPOLATED from what this run
+    # actually computed, never typed. They used to be hardcoded ("~182%,
+    # D 5.73, T 81.5, ³He 37.4") and went stale without anything noticing:
+    # by 2026-09-06 the witness on disk read D 3.87 / T 36.99 / ³He 19.12 and
+    # the prose still claimed the old triple, so the witness's own narrative
+    # contradicted its own data. Prose that quotes a number must derive it.
+    _r = {k: mp.nstr(v, 4) for k, v in ratios.items()}
     description = ("B_obs/|tr_M| across D,T,³He under the canonical Markov "
                   "trace (include_inter=True). Tests whether the Path-3 "
                   "single-prefactor binding model B=α_M·|tr_M| has a FORCED "
                   "universal α_M (= m_e·ρ_binding, constant). Finding: the "
-                  "ratio varies ~182% (D 5.73, T 81.5, ³He 37.4), so α_M is "
-                  "NOT a forced constant — the model is a deuteron-anchored "
-                  "approximation that fails at A=3. Scope (a): tr_M as an "
-                  "ingredient is NOT excluded; only the constant-prefactor "
-                  "assumption is refuted. The D ratio 5.728 reproduces the "
-                  "published α_M 5.729 (cross-validates the pipeline).")
+                  f"ratio varies ~{mp.nstr(spread * 100, 4)}% "
+                  f"(D {_r.get('D')}, T {_r.get('T')}, ³He {_r.get('He3')}), "
+                  "so α_M is NOT a forced constant — the model is a "
+                  "deuteron-anchored approximation that fails at A=3. "
+                  "Scope (a): tr_M as an ingredient is NOT excluded; only "
+                  "the constant-prefactor assumption is refuted. "
+                  "CROSS-VALIDATION WITHDRAWN: this witness used to claim "
+                  "'the D ratio 5.728 reproduces the published α_M 5.729', "
+                  "which no longer holds — under the interleaved Borromean "
+                  "atom word that `atom_braid_word_3A` emits since qou-hu1f "
+                  "(7db032fb48, owner-ruled 2026-09-05) |tr_M| moves and the "
+                  "D ratio with it. The REFUTATION above is unaffected (it "
+                  "rests on the spread, which stayed large); the agreement "
+                  "with the published α_M is what is gone, and it should not "
+                  "be quoted as a pipeline check until someone re-derives "
+                  "α_M under the corrected word. Bean qou-hu1f.")
     data_payload = {
         "name": "rho-binding-constancy",
         "probe": True,

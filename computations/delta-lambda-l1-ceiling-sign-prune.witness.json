@@ -1,15 +1,17 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T18:02:13.522376+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "computedAt": "2026-09-06T03:55:43.307723+00:00",
+  "commitSha": "18d714136541debe3a88d017e6ad774a845840a1",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 202,
+  "allPassedBasis": "vacuous",
+  "durationMs": 128,
+  "durationMsBaseline": "caller",
   "computation": "delta-lambda-l1-ceiling-sign-prune",
   "scriptFile": "delta_lambda_l1_ceiling_sign_prune.py",
   "scriptHash": "10e8d1b53d57",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,10 +23,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [
@@ -49,27 +51,27 @@
     },
     "chi_D": {
       "file": "atom-chi-rust-d.witness.json",
-      "scriptHash": "45d51b9cc954",
-      "scriptCommitSha": "399ff7c799682b4371e7f4cfaaf604f5c9324ed9",
-      "computedAt": "2026-08-19T19:44:11.498117+00:00"
+      "scriptHash": "256c48b588d2",
+      "scriptCommitSha": "5260ae449e979aa7cbc7e20610948c0c65019c53",
+      "computedAt": "2026-09-05T08:59:42.076675+00:00"
     },
     "chi_T": {
       "file": "atom-chi-rust-t.witness.json",
-      "scriptHash": "45d51b9cc954",
-      "scriptCommitSha": "399ff7c799682b4371e7f4cfaaf604f5c9324ed9",
-      "computedAt": "2026-08-19T19:44:13.036780+00:00"
+      "scriptHash": "256c48b588d2",
+      "scriptCommitSha": "5260ae449e979aa7cbc7e20610948c0c65019c53",
+      "computedAt": "2026-09-05T08:59:43.245411+00:00"
     },
     "chi_3He": {
       "file": "atom-chi-rust-3he.witness.json",
-      "scriptHash": "45d51b9cc954",
-      "scriptCommitSha": "399ff7c799682b4371e7f4cfaaf604f5c9324ed9",
-      "computedAt": "2026-08-19T19:44:14.533496+00:00"
+      "scriptHash": "256c48b588d2",
+      "scriptCommitSha": "5260ae449e979aa7cbc7e20610948c0c65019c53",
+      "computedAt": "2026-09-05T09:01:26.925511+00:00"
     },
     "chi_4He": {
       "file": "atom-chi-rust-4he.witness.json",
-      "scriptHash": "45d51b9cc954",
-      "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
-      "computedAt": "2026-08-23T17:03:21.705205+00:00"
+      "scriptHash": "256c48b588d2",
+      "scriptCommitSha": "5260ae449e979aa7cbc7e20610948c0c65019c53",
+      "computedAt": "2026-09-05T09:25:34.810787+00:00"
     }
   },
   "data": {

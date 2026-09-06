@@ -1,15 +1,17 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T18:00:40.162556+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-06T03:55:34.715574+00:00",
+  "commitSha": "18d714136541debe3a88d017e6ad774a845840a1",
   "assertions": [],
   "allPassed": true,
+  "allPassedBasis": "vacuous",
   "durationMs": 0,
+  "durationMsBaseline": "builder-construction",
   "computation": "phase3-triton-binding-convention-b",
   "scriptFile": "phase3_triton_binding_convention_b.py",
-  "scriptHash": "40885d2618ec",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "979b3c656d2b",
+  "scriptCommitSha": "5f5ad141957eadd87886e3474ceaca3961a75056",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,10 +23,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "2ac15a3627acca95"
   },
   "invocation": {
     "argv": [
@@ -53,7 +55,7 @@
   },
   "owner_directive_2026_05_10": "do workplans 2 phase 2 / Phase 3; no fitting/guessing; all should be derived",
   "data": {
-    "E_0_MeV": 0.78233340931,
+    "E_0_MeV": "0.78233340931",
     "E_0_source": "hecke_core.E_0_CALIBRATION_MEV = Q_β CODATA",
     "rows": [
       {
@@ -62,7 +64,13 @@
         "N": 1,
         "A": 2,
         "hecke_level": "H_6",
-        "error": "AssertionError: binding_canonical: the `E_0` keyword is deprecated; the parameter was misnamed and is now `Q_beta_n_mev` (the free-neutron β-decay Q-value, NOT the canonical energy scale E_0 ≈ 4.186 MeV). Pass `Q_bet"
+        "trace_kind": "canonical_jones_markov",
+        "E_0_MeV": "0.78233340931",
+        "B_pred_MeV": "0.11503952891212266302482883104562680209851439427973",
+        "B_ame_MeV": "2.2245662",
+        "residual_pct": "-94.828675859944169653174230955876844568684249797568",
+        "residual_keV": "-2109.5266710878773369751711689543731979014856057203",
+        "compute_time_s": "0.329"
       },
       {
         "atom": "T",
@@ -70,7 +78,13 @@
         "N": 2,
         "A": 3,
         "hecke_level": "H_9",
-        "error": "AssertionError: binding_canonical: the `E_0` keyword is deprecated; the parameter was misnamed and is now `Q_beta_n_mev` (the free-neutron β-decay Q-value, NOT the canonical energy scale E_0 ≈ 4.186 MeV). Pass `Q_bet"
+        "trace_kind": "canonical_jones_markov",
+        "E_0_MeV": "0.78233340931",
+        "B_pred_MeV": "0.088347358540585084247701401084630116373010676340089",
+        "B_ame_MeV": "8.4817962",
+        "residual_pct": "-98.958388571743977009873198779703877860528991767804",
+        "residual_keV": "-8393.4488414594149157522985989153698836269893236599",
+        "compute_time_s": "0.461"
       },
       {
         "atom": "3He",
@@ -78,7 +92,13 @@
         "N": 1,
         "A": 3,
         "hecke_level": "H_9",
-        "error": "AssertionError: binding_canonical: the `E_0` keyword is deprecated; the parameter was misnamed and is now `Q_beta_n_mev` (the free-neutron β-decay Q-value, NOT the canonical energy scale E_0 ≈ 4.186 MeV). Pass `Q_bet"
+        "trace_kind": "canonical_jones_markov",
+        "E_0_MeV": "0.78233340931",
+        "B_pred_MeV": "0.10137663244285066132509573441105756166172998629336",
+        "B_ame_MeV": "7.71804132",
+        "residual_pct": "-98.686497930761911736887465453332691387278942602327",
+        "residual_keV": "-7616.6646875571493386749042655889424383382700137066",
+        "compute_time_s": "0.453"
       },
       {
         "atom": "4He",
@@ -86,7 +106,13 @@
         "N": 2,
         "A": 4,
         "hecke_level": "H_12",
-        "error": "AssertionError: binding_canonical: the `E_0` keyword is deprecated; the parameter was misnamed and is now `Q_beta_n_mev` (the free-neutron β-decay Q-value, NOT the canonical energy scale E_0 ≈ 4.186 MeV). Pass `Q_bet"
+        "trace_kind": "canonical_jones_markov",
+        "E_0_MeV": "0.78233340931",
+        "B_pred_MeV": "0.061157007602809743099914214183209443415817418654483",
+        "B_ame_MeV": "28.2956624",
+        "residual_pct": "-99.78386437207842236943032577960355703347726746042",
+        "residual_keV": "-28234.505392397190256900085785816790556584182581346",
+        "compute_time_s": "799.121"
       }
     ]
   }
