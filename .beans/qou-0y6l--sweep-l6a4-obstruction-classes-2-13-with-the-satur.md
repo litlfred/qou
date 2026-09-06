@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T03:41:37Z
-updated_at: 2026-09-06T12:52:36Z
+updated_at: 2026-09-06T13:06:59Z
 ---
 
 ## 2026-09-06 — why three class-2 attempts produced no verdict, and the fourth is running
@@ -177,3 +177,33 @@ and I deleted the targets clearing disk. Re-staged from the GitHub release asset
 (allowlisted; release.lean-lang.org is not). Extract is 2.44 GB, not 4.3 GB.
 `git repack -d` freed only **54 MB** — loose objects were already efficient; packing moved
 bytes. Do not reach for it as a space fix.
+
+## 2026-09-06 13:00 — snappy's own saturation route ALSO times out: three routes, three negatives
+
+Full 27-var system, saturate by every variable, over ℚ, in Singular (Sage's Gröbner
+engine, so this is what `compute_solutions(engine='sage')` runs). **exit=124 at the full
+5400 s** (11:30:11Z → 13:00:11Z — ran to the wall, not an early failure).
+
+**The class-2 compute picture is complete, and every route is a measured negative:**
+
+| route | engine | result |
+|---|---|---|
+| FKR-reduced, RUR | msolve | > 3000 s |
+| FKR-reduced, GB only | `msolve -g 2` | > 2700 s |
+| full system + saturation | Singular | > 5400 s |
+
+These are **not three attempts at one thing**. The first two are the corpus's custom
+reduction (11 vars, fast for class 1, *provisional* — clearing denominators adds {A=0});
+the third is snappy's own route (27 vars, *sound by construction* — saturation removes the
+degenerate components). Small-and-provisional and large-and-sound both fail, so the
+difficulty is in the ideal, not in a choice of formulation.
+
+**No fourth attempt.** Each route answered something the previous could not; none was a
+longer run of the same shape. Nothing available here differs in kind: Magma absent, Sage
+absent (Singular is its engine — that is why it was the right proxy), and the Ptolemy
+database holds no pgl3 data for this manifold.
+
+**Open:** non-emptiness, dimension, degree, irreducibility of classes 2–13.
+**NOT open:** the Sym² gate — settled structurally for all 13, needs no variety
+decomposition, unaffected by this negative. That separation is the session's point: the
+expensive question turned out not to be the one that had to be answered.
