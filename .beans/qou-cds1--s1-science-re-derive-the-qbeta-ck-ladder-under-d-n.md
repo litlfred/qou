@@ -7428,3 +7428,39 @@ differ, `−2ε` vs `−5/4 ε`.
 **Scope (a).** Does not close the bridge and does not claim the `c_k` cannot be
 the Habiro Taylor coefficients — only that the Form-A slot route is refuted and
 the class as written admits no deductive attack. Nothing wired; no `c_k` moved.
+
+### Dead end closed: rescaling z_D to bar-evenness LEAVES convention D (2026-09-06)
+
+Probe: `computations/qbeta/qbeta_d_frame_bar_even_normalisation_deadend_probe.py` (5/5).
+
+**The route.** Under D the eigenphase `2α = (z−1)h` is not bar-odd because `z_D`
+is not bar-even. The obvious repair is to rescale. It exists and is **forced**:
+`bar(q^a z_D)/(q^a z_D) = q^{−2a−4}` gives `a = −2` uniquely, so
+
+    z̃_D := z_D/q² = q/(q²+1) = 1/[2]_q      (bar-even)
+
+and it sits beside `z_C = √q/(q+1) = 1/[2]_√q` as **the same functional form in a
+different variable** — the same shape as the `(u;u)_m` vs `(q;q)_m` defect fixed
+in #6906. Numerically `z̃_D = 0.49729` vs `z_C = 0.49932` (0.4 % apart) where raw
+`z_D = 0.61269` is 23 % away, which is why the C-built ladder nearly works under
+`z̃_D`. **That closeness is not evidence and was not used.**
+
+**Why it is closed.** `z_D`'s *defining* property here is the full-bar condition
+`bar(z) = z − h` (`zD_full_bar_covariant`), and `barEven_fullBar_forces_classical`
+proves bar-even and full-bar are incompatible away from `q² = 1`. Measured: `z̃_D`
+misses full-bar by **exactly `h`** — and so does `z_C`. So rescaling does not
+re-derive the ladder *within* D; it moves to a third parameter that is neither
+`z_C` nor `z_D`.
+
+**Worth recording separately:** the corpus states the bar law **additively**
+(`bar(z_D) = z_D − h`); deriving it from scratch gives it **multiplicatively**
+(`bar(z_D) = q^{−4} z_D`). These look like two constraints and are **one
+identity** (difference exactly 0). A reader meeting both forms could reasonably
+think two separate conditions apply.
+
+**The live route is unchanged:** `eigenphase_bar_defect_of_fullBar` gives defect
+exactly `h²`, **z-independent across the whole full-bar family**, so no choice
+inside it restores bar-oddness — the derived D eigenphase is `α − h²/4`, no free
+parameter. Independently reproduced here.
+
+Scope (b). Closes one alternative; adjudicates nothing about the live route.
