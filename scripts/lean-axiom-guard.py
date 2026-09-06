@@ -133,6 +133,31 @@ LEAN_ROOT = Path("content/quantum-observable-universe/lean")
 
 # Measured 2026-08-07 by `#print axioms`. Keep sorted by module for readability.
 DEFAULT_REGISTRY = """
+# --- free-field axioms in mass-theory (bean `qou-9yt9`, PR #6933) ---
+# Three more axioms asserting facts about a structure field that the structure
+# leaves FREE:
+#   a_eq_one_three_channels_axiom / additive_wedderburn_missing_partitions_axiom
+#     quantified over every SchurWeylMassDecomposition as though `partitions`
+#     were the complete partition list; `decomposition` is satisfiable for ANY
+#     list by choosing markovTrace to match, so it can be empty.
+#   transfer_matrix_level_independence_axiom asserted the constituent product
+#     equals HadronConfig.compositePolynomial, a field tied to the constituents
+#     by nothing.
+#
+# The last is the corpus's SECOND false axiom of that name: a different one,
+# over CategoricalTransferMatrix, was found false and repaired in
+# categorical-transfer-matrix.lean, and the shared identifier is exactly what
+# let this one survive that fix -- a grep lands on the repaired copy.
+# NOT REGISTERED, and the reason is a coverage gap worth stating: all three
+# refutations live in CONTENT-BLOCK SIBLINGS, which are not library modules and
+# have no olean, so this guard cannot reach them --
+#   `Unknown constant QOU.BraidKnot.not_a_eq_one_three_channels`
+# even with the module column pointed at QOU.BraidKnot.schur_weyl_mass_decomposition
+# (a deliberately empty file that exists only so the block's lean.ref has a
+# second resolution candidate). The guard covers the library; the sibling tree
+# is covered by scripts/lean-content-sweep.sh instead, which type-checks but
+# does not pin axiom status. Registering an unreachable row would make the
+# guard fail rather than protect anything.
 # --- the q-analysis uniqueness family (bean `qou-9yt9`, PR #6933) ---
 # Six axioms across five display siblings, all FALSE, one defect: each of
 # QDilogarithm / QExponential / QLogarithm carries its ambient maps (coproduct,
