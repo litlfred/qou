@@ -1,11 +1,11 @@
 ---
 # qou-eptr
 title: 'EP/canonical decomposition as the non-pair-local extensive carrier for b_3 — aim, and the hard blocker at the light end'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T10:56:11Z
-updated_at: 2026-09-06T10:56:11Z
+updated_at: 2026-09-06T11:27:53Z
 ---
 
 WHY IT IS WELL-AIMED at the ONE open piece of the binding gap
@@ -37,3 +37,33 @@ T^2 x I respectively, neither hyperbolic — so NO EP decomposition exists for
 reaches B_3 (hyperbolic, Vol 7.3277) and the A>=3 chain is the first thing to
 measure. Do NOT read "Pachner count" as "volume": the 2026-08-29 Bloch-volume
 leg proved 0 kills a VOLUME term, not a combinatorial count.
+
+## MEASURED 2026-09-06 — the route reaches the atoms and cannot separate them
+
+STAYS OPEN. The subject is the binding gap's irreducibly many-body term, which
+is open (qou-brng). Per AGENTS.md 13a this bean is not closeable by having
+measured something about it.
+
+ep_decomposition_reachability_probe (9/9), commit 43d6ddd46:
+  * 15 of 16 atoms with non-zero binding ARE hyperbolic -- the route is not
+    blocked by hyperbolicity above the deuteron. My earlier framing that "the
+    light end is unreachable" over-generalised from the deuteron; A>=3 is fine.
+  * BUT the dictionary uses only 2 distinct manifolds, and 13 atoms share L6a4
+    with binding spanning 1.667e9. An EP invariant is a function of the
+    manifold, so it is constant on that class. Scope-(b).
+  * deuteron excluded twice over: labelled SATELLITE, and Thurston's trichotomy
+    makes a satellite complement non-hyperbolic. Agrees with the 2026-08-29
+    ruling without depending on it.
+  * classify_nuclear_knot factors through A (30x34 grid), discards the braid
+    word, one consumer, in hecke_core_legacy.py.
+
+canonical_cell_structure_probe (7/7):
+  * the Pachner-distance candidate is 0 on 4_1 -- the derived Floyd-Hatcher
+    layering IS the canonical decomposition (both 2 regular ideal tetrahedra).
+  * Vol(L6a4)/V_oct = 2.0 exactly, Vol(L6a4)/V_tet = 7.2198 not an integer, so
+    the principal manifold's canonical decomposition is not a triangulation.
+
+WHAT IS STILL LIVE. The exclusion is of EP-of-the-DICTIONARY-knot. EP of the
+actual per-atom braid closure is untested and needs that closure identified
+first -- the same modelling decision qou-imkb records as blocked for Model B.
+Attacking a better invariant of a collapsed knot cannot help.

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T10:56:11Z
-updated_at: 2026-09-06T10:56:11Z
+updated_at: 2026-09-06T11:27:53Z
 ---
 
 content/quantum-observable-universe/brings-surface/universality-general.md:
@@ -23,3 +23,10 @@ See also terminal-morphism-brings.{md,ts}.
 The dialog conflates two different universality claims. Worth stating the
 distinction explicitly in the block; worth NOT importing "terminal object"
 vocabulary into any Ptolemy/Pachner setting.
+
+## RECORDED 2026-09-06 — distinction written up; the CONJECTURE stays open
+
+Audit §6. The C_chi terminal object is a CONJECTURE in universality-general.md
+("should admit a terminal object"), so this bean stays open per AGENTS.md 13a.
+What is settled is only that it is untouched by the qou-ptgd prune, because
+C_chi is a category of universes and not a groupoid.

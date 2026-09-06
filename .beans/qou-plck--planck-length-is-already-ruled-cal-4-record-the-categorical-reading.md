@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T10:56:11Z
-updated_at: 2026-09-06T10:56:11Z
+updated_at: 2026-09-06T11:27:53Z
 ---
 
 ANSWERED IN THE CORPUS, both halves, found by corpus-grep path 2:
@@ -32,3 +32,12 @@ Open sub-question worth one paragraph, not a tranche: is the fibre S_p (the
 exceptional divisor) the right "sub-Planck" object to attach a triangulation
 to? That is a question about the CATEGORICAL statement above, and needs no
 new dimensional constant.
+
+## RECORDED 2026-09-06 — both halves written up; one sub-question STAYS OPEN
+
+docs/audits/2026-09-06-universal-triangulation-ep-route-assessment.md §5 carries
+both halves with their content-block citations. NOT closed: the open
+sub-question -- whether the fibre S_p (the exceptional divisor) is the right
+object to attach a decomposition to -- is a question about the categorical
+"below Planck scale" statement and is unresolved. AGENTS.md 13a: recording that
+something is open is not closing it.
