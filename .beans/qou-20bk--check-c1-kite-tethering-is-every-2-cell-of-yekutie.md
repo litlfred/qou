@@ -1,11 +1,11 @@
 ---
 # qou-20bk
 title: 'Check C1: kite tethering — is every 2-cell of Yekutieli''s multiplicative integral a basepoint-tethered (pair-local) object, with the balloon the first 3-body object?'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T03:54:12Z
-updated_at: 2026-09-06T04:01:46Z
+updated_at: 2026-09-06T04:05:04Z
 parent: qou-2akx
 ---
 
