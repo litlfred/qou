@@ -15,6 +15,15 @@ file or to an assertion in a witness emitted by this branch.
 
 ## 0. The claim, flatly
 
+> **🛑 ADDED 2026-09-06, AFTER EVERYTHING BELOW, AND IT SUBSUMES MOST OF IT.** The route presumes
+> an object `S³ ∖ closure(β_atom)`. **That object does not exist for any atom.** The canonical
+> atomic word is not a braid word: it carries `averaged` letters, which the corpus's own classifier
+> defines as `σ_g − h/2`, and that is exactly `(σ + σ⁻¹)/2` — the arithmetic *mean* of the positive
+> and negative crossing, which is not a crossing at all. Measured protium through iron-56:
+> **0 of 14 atoms** has a word free of them, and the count grows with `A` (113 at ⁵⁶Fe). So there
+> is no link, no complement, and nothing to triangulate — **per-atom or otherwise**. §10 has the
+> measurement and the scope. §§3–4 below remain correct and are now *downstream* of this.
+
 1. **The route aims at the right thing.** Of the four missing pieces of the binding gap, three
    are structurally located and the open one is the irreducibly many-body term: measured
    connected 3-body cumulant `b₃ = +1.4262 MeV` against a model value of exactly `0`, where
@@ -538,3 +547,67 @@ question does:
   rows of the §9 table, currently reachable here only indirectly through FKP `arxiv-0808.2716v4`.
   `futer-gueritaud-angled` is already a `references.ts` key, so the author is cited but this paper
   is not held.
+
+---
+
+## 10. The canonical word is not a braid word — the root-level blocker
+
+Producer: [`canonical_word_is_not_a_braid_probe.py`](../../computations/probes/canonical_word_is_not_a_braid_probe.py)
+(5/5, `q0Anchor: independent`).
+
+### 10.1 What the letters are
+
+`canonical_braid_crossings` classifies each letter of the canonical word as a Hecke-algebra
+element `c·σ + d·1` with `c = 1`:
+
+| `d` | ctype | meaning |
+|---|---|---|
+| `0` | `sigma` | `σ_g` — a positive crossing |
+| `−h` | `sigma_inv` | `σ_g − h = σ_g⁻¹`, since `σ² = hσ + 1` — a negative crossing |
+| `−h/2` | `averaged` | `σ_g − h/2` — **neither** |
+| `−h(1/2 − δ/4)` | `averaged_weighted` | colour-weighted — **neither** |
+
+And the third is exactly the mean of the first two:
+
+`(σ + σ⁻¹)/2 = (σ + σ − h)/2 = σ − h/2`.
+
+**An `averaged` letter is not a crossing.** In a link diagram every crossing is either over or
+under; this is the midpoint. It is a proper linear combination in `H_n(q)`, and `B_n` maps into
+`H_n(q)` by *products* of `σ_i^{±1}`.
+
+### 10.2 The measurement
+
+| atom | `A` | letters | `σ` | `σ⁻¹` | non-braid | braid word? |
+|---|---|---|---|---|---|---|
+| protium | 1 | 11 | 6 | 3 | **2** | no |
+| he4 | 4 | 47 | 23 | 15 | **9** | no |
+| c12 | 12 | 143 | 71 | 47 | **25** | no |
+| ca40 | 40 | 479 | 239 | 159 | **81** | no |
+| fe56 | 56 | 671 | 331 | 227 | **113** | no |
+
+**0 of 14 atoms**, protium through iron-56, has a word free of non-braid letters. The obstruction
+is universal, not a heavy-atom artifact — even protium carries two — and it grows with `A` rather
+than washing out.
+
+### 10.3 What this subsumes
+
+The reachability result (§3.3, an Epstein–Penner invariant of the dictionary-named knot is constant
+across 13 atoms) and the cell-structure result (§4, the Pachner candidate vanishes on `4₁`) are both
+correct and both **downstream of this**: there is no per-atom link to have an invariant *of*. It
+also explains the shape of `classify_nuclear_knot` — a four-branch dispatch on `A` is what you can
+write when the object is not a link whose type could be computed. §3.4 read that dispatch as a
+modelling shortcut; it is better read as a symptom.
+
+### 10.4 Scope, and the repair that is a choice
+
+**Scope-(a).** Measured: the canonical word, *as the corpus's own classifier defines its letters*,
+is not a word in the braid group, so its closure is undefined without an additional choice. **Not**
+proved: that `σ − h/2` lies outside the image of `B_n` in `H_n(q)`. That would be scope-(b) and no
+such proof is offered here.
+
+**The repair exists, and that it is a choice is the whole point.** Resolving each `averaged` letter
+to `σ` or to `σ⁻¹` yields a genuine braid whose closure is a link, and the `σ`/`σ⁻¹` counts are
+already per-atom and distinct — so a resolution *would* give per-atom links. But which resolution is
+free: `2^k` of them, and `k = 113` at ⁵⁶Fe. **Selecting one because its complement's invariants land
+near a target is a fit under the NO-FITTING directive and must be labelled one.** A *derived*
+resolution rule would be a genuine result. This audit does not have one and does not propose one.
