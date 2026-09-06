@@ -1,5 +1,5 @@
 **Conjecture (Canonical form of $\rho_K^{\text{pair-gen}}$).**
-*There exists a closed-form Wedderburn-coupled functional $f_2 : \mathbb{Q}(q) \times \mathbb{Q}(q) \times \mathbb{Q}(q) \to \mathbb{R}$ such that for every atomic braid $\mathcal{B}_K \in B_{3A}$:*
+*There exists a closed-form Wedderburn-coupled functional $f_2 : \mathbb{Q}(q) \times \mathbb{Q}(q) \times \mathbb{Q}(q) \to \mathbb{R}$ such that for every atomic Hecke word $\mathcal{B}_K \in H_{3A}(q)$:*
 
 $$
 \rho_K^{\text{pair-gen}}
