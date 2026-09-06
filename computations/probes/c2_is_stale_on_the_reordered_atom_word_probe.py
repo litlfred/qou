@@ -57,39 +57,41 @@ The Richardson figures below agree with all three to their extrapolation error (
 `33/32 = 1.03125`, `0.78125616` vs `25/32 = 0.78125`, `0.062506813` vs `1/16 = 0.0625`), so the
 `nn ≈ 1/16` guess is now confirmed rather than guessed.
 
-**T and ³He are exact too**, from the same driver at `n = 9` (minutes rather than seconds, which is
-why they are behind `--exact-cases` rather than in the default run):
+**All six are exact.** T and ³He are `n = 9`, ⁴He is `n = 12` — minutes and ~15 min rather than
+seconds, which is why they sit behind `--exact-cases` rather than in the default run. That is a
+runtime statement, not an epistemic one:
 
-    T     [ε¹] 1/64    [ε²] 97/128     c₂ = **99/128**      recorded 3285/128
-    ³He   [ε¹] 1/8     [ε²] 141/128    c₂ = **157/128**     recorded 3451/128
+    case   [ε¹]      [ε²]        c₂ = [ε¹]+[ε²]      recorded (grouped)
+    pp     1/8       29/32       **33/32**           357/32
+    pn     1/16      23/32       **25/32**           403/32
+    nn     0         1/16        **1/16**            217/16
+    T      1/64      97/128      **99/128**          3285/128
+    ³He    1/8       141/128     **157/128**         3451/128
+    ⁴He    7/128     411/512     **439/512**         15307/512
 
-Both `[ε¹]` again reproduce PR #6920's `c₁` (`1/64`, `1/8`), and both `c₂` agree with the Richardson
-column to its error (`99/128 = 0.7734375` vs `0.77344459`; `157/128 = 1.2265625` vs `1.2265703`).
+**Every `[ε¹]` reproduces PR #6920's `c₁`** — `1/8, 1/16, 0, 1/64, 1/8, 7/128` — by a route with no
+connection to `[★]`. That is an independent confirmation of the closed form through the exact series.
+`⁴He`'s `[ε⁰] = 7/128` is likewise `c₀(4)`. And all six agree with the Richardson column to its
+extrapolation error, so the earlier `nn ≈ 1/16` guess is confirmed rather than guessed.
 
 Reproduce any case with:
 
     python3 computations/probes/c2_is_stale_on_the_reordered_atom_word_probe.py \
         --exact-cases pp pn nn T ³He ⁴He
 
-🛑 STILL NOT ESTABLISHED: the exact value for **⁴He**. That is an `n = 12` order-4 series —
-`qou-qqm4` records ~15 min for it — and it is not run by default. For ⁴He only the Richardson column
-below stands, which establishes **movement** but not a value: `limit_denominator` on it returns
-`3007/3507`, a noise fit, not an answer, and recording it would be exactly the false precision this
-corpus keeps having to retract.
+**The second-order chain/atom ratios, exactly:**
+
+    ratio                          recorded (grouped)      canonical (exact)
+    T    (c₂pn + c₂nn)/c₂T         3348/3285  = 1.019      **12/11**    = 1.0909
+    ³He  (c₂pp + c₂pn)/c₂He3       3040/3451  = 0.881      **232/157**  = 1.4777
+    ⁴He  (c₂pp+c₂pn+c₂nn)/c₂He4   19104/15307 = 1.248      **960/439**  = 2.1868
 
 What is established for all six: **every one moved, by one to two orders of magnitude**, far outside
 any plausible extrapolation error. So the recorded rationals and everything computed from them are
 stale.
 
-THE DOWNSTREAM THAT MATTERS. `qou-qqm4`'s second-order chain/atom ratios move materially, and the
-⁴He one roughly doubles:
-
-    ratio                     recorded (grouped)   canonical (measured)
-    T    (c₂pn + c₂nn)/c₂T          1.019                 1.091
-    ³He  (c₂pp + c₂pn)/c₂He3        0.881                 1.478
-    ⁴He  (c₂pp+c₂pn+c₂nn)/c₂He4     1.248                 2.187
-
-The recorded reading — that the first-order over-count "nearly cancels one order up" — is weaker
+THE DOWNSTREAM THAT MATTERS. Those ratios (table above) move materially, and the ⁴He one roughly
+doubles. The recorded reading — that the first-order over-count "nearly cancels one order up" — is weaker
 under the canonical word, and at ⁴He much weaker. That audit's own title already says `c₂` does not
 continue the cancellation; on this data it continues it even less.
 
@@ -276,18 +278,17 @@ def main():
                 _CBC.atom_canonical_crossings = _orig_x
                 _P.atom_canonical_crossings = _orig_x
 
-        # T and ³He ARE established (n = 9, same driver, minutes) — see the docstring table.
-        # They are not in the DEFAULT --exact-cases only because of runtime, which is a cost
-        # statement and not an epistemic one; saying "not established" for them would be wrong.
-        print("  EXACT, but not in the default run (runtime only): T c₂ = 99/128 and")
-        print("  ³He c₂ = 157/128, n = 9, same driver — pass --exact-cases T ³He to recompute.")
-        print("  Their [ε¹] are 1/64 and 1/8, again PR #6920's c₁, and both agree with the")
-        print("  Richardson column to its error.")
-        print("  🛑 STILL NOT ESTABLISHED: the exact value for ⁴He (n = 12 order-4 series,")
-        print("     ~15 min per qou-qqm4). For it only the Richardson column stands, which")
-        print("     establishes MOVEMENT but not a value: limit_denominator returns 3007/3507,")
-        print("     a noise fit, not an answer.")
-        print("     Established for all six: they moved by 10×–217×, far outside that error.\n")
+        # All six exact values are established; the default case list is a RUNTIME choice.
+        # An earlier version printed "STILL NOT ESTABLISHED" for cases it had already computed,
+        # which is the same stale-claim defect this probe documents, one level down.
+        print("  EXACT, but not in the default run (runtime only, not epistemic):")
+        print("     T 99/128 and ³He 157/128 (n = 9, minutes); ⁴He 439/512 (n = 12, ~15 min).")
+        print("     Pass --exact-cases T ³He ⁴He to recompute. Their [ε¹] are 1/64, 1/8, 7/128 —")
+        print("     again PR #6920's c₁ — and all agree with the Richardson column to its error.")
+        print("  EXACT second-order chain/atom ratios, canonical vs recorded:")
+        print("     T   12/11   = 1.0909   vs  3348/3285  = 1.019")
+        print("     ³He 232/157 = 1.4777   vs  3040/3451  = 0.881")
+        print("     ⁴He 960/439 = 2.1868   vs 19104/15307 = 1.248\n")
 
         # ── DOWNSTREAM ──────────────────────────────────────────────────────────────────────────
         # Ratios of same-precision quantities, so ~5 digits is ample here even though the
@@ -309,8 +310,8 @@ def main():
         M.atom_braid_word_3A = orig
         TR.atom_braid_word_3A = orig
 
-    print("\n  qou-qqm4 is reopened. Five of its six exact canonical values are established")
-    print("  here (pp 33/32, pn 25/32, nn 1/16, T 99/128, ³He 157/128); ⁴He is the remainder.")
+    print("\n  qou-qqm4 is reopened. All six exact canonical values are established")
+    print("  here: pp 33/32, pn 25/32, nn 1/16, T 99/128, ³He 157/128, ⁴He 439/512.")
     return 0
 
 
