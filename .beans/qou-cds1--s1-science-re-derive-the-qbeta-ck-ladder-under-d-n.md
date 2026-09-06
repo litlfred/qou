@@ -7541,3 +7541,29 @@ truncation discarding most of the tower at `n = 3A`. Which governs the Q_β
 channel is an owner decision.
 
 Measurements from #6915 and #6921 stand; their **framing** was wrong.
+
+#### The truncation cost, as a number rather than an adjective
+
+Probe: `computations/qbeta/qbeta_tl_truncation_cost_by_atom_probe.py` (4/4).
+
+I called D's discarded part "the overwhelming majority of the tower". That is an
+adjective, and not something to rule on. `dim TL_n = Catalan(n)` **exactly**
+(verified by summing `(f^λ)²` over ≤2-row partitions, against `C(2n,n)/(n+1)`;
+`Σ_λ (f^λ)² = n!` asserted first):
+
+    n    A    dim H_n = n!              dim TL_n        retained
+    3    1                  6                   5       83.3333 %
+    6    2                720                 132       18.3333 %
+    9    3            362,880               4,862        1.3398 %
+    12   4        479,001,600             208,012        0.0434 %
+    15   5  1,307,674,368,000           9,694,845        0.0007 %
+    18   6  6.4e15                    477,638,700          ~0 %
+
+**The cost is n-DEPENDENT, and the two rulings live at different n.** The Q_β
+ladder is an `H_3` object: D discards one 1-dim block and keeps **83 %**, which
+is why C-vs-D differs only in the 4th decimal on `β_Bor` (0.99836662 vs
+0.99856216). The mass/binding work is at `n = 3A`: ⁴He retains **0.043 %**.
+
+So "D canonical" (2026-08-15) and "full tower" (2026-09-03) may **both** be
+right in their own domains, and the live question is where the crossover bites —
+not which ruling wins globally. Measured, not adjudicated.
