@@ -223,3 +223,70 @@ fixtures measures itself — the miss is recorded as `SELFTEST_KNOWN_MISS`
 and the self-test **requires it to stay unprovable**. If a future tactic
 addition catches it the test fails and says to move the row, so coverage
 can never grow silently.
+
+---
+
+# Addendum 2: an axiom that shadowed a real definition
+
+A third class, one instance, in
+`climax-volume-mass/vertex-algebra-relations.lean`:
+
+```lean
+axiom AlgElement.zero {n : ℕ} : AlgElement (HeckeGen n) ℝ
+```
+
+`UGB.GrobnerShirshov.AlgElement.zero` is a real `def`
+(`UGB/GrobnerShirshov/Elem.lean:105`) with a real `isZero_zero` theorem,
+and it was **already in scope** through this file's `HeckeGS` import.
+
+Measured by compilation, not inferred: inside `namespace
+QOU.VertexAlgebra` the bare name resolved to the **axiom**, whose type
+`{n : ℕ} → AlgElement (HeckeGen n) ℝ` differs from the library's
+`{G} → {k} → [Ring k] → AlgElement G k`, so `isZero_zero` did not apply
+to it. Deleting the axiom makes the name resolve to the library
+definition and the `isZero` example goes through.
+
+**The consequence was not cosmetic.** `markov_nondegenerate` concludes
+
+```lean
+    (∀ g, MarkovTrace hp (AlgElement.mul f g) = 0) → f = AlgElement.zero
+```
+
+Under the axiom that reads *"`f` equals a fixed unknown element"*, not
+*"`f` is zero"* — a **different proposition** from the one it looks like,
+which is a failure mode neither of the other two classes covers. It is
+not false and it is not vacuous; it is *mis-referring*.
+
+## What remains axiomatised there, and why it is a third thing again
+
+`MarkovTrace`, `AlgElement.mul` and `AlgElement.embed_succ` have no
+library counterpart and stay axiomatised. Claims about them —
+`markov_stabilisation`, `markov_nondegenerate`, `observability`,
+`first_chern_vanishes`, `descartes_trace`, `self_dual_curvature` — are
+**specifications, not theorems**: with an opaque operator there is no
+definition to unfold, so they can be neither proved nor refuted. In
+particular `descartes_trace : MarkovTrace hp (singleton []) = -6` is
+consistent for the trivial reason that `MarkovTrace` is unconstrained.
+
+No inconsistency among them was established here, and no claim is made
+that there is none.
+
+## The scan, and why it could not have found this
+
+A corpus scan for axiom names colliding with a definition reports
+**16** matches raw. Eight are English prose inside block comments —
+`and`, `for`, `is`, `it`, `of`, `that`, `to`, `with` at the start of a
+wrapped line — the exact trap
+`lean-axiom-degenerate-risk-audit.py` documents and strips. With comments
+stripped and the search restricted to *importable* library modules the
+figure is **6**, and checking those files' imports shows **none of them
+imports a module carrying the colliding name**: same name, different
+file, no path between them. So the confirmed count corpus-wide is **one**.
+
+**And the scan cannot see the one true positive.** `AlgElement.zero` is
+declared upstream as `def zero` inside `namespace AlgElement`, so a
+line-matching search for the name `AlgElement.zero` never matches it. A
+scan of this shape is structurally blind to exactly the case that
+motivated it, which is why it is recorded here rather than shipped as a
+tool: settling any candidate needs a compile, and the compile is what
+settled this one.
