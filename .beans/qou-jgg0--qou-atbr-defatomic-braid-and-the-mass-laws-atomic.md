@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-05T09:58:53Z
-updated_at: 2026-09-05T10:01:26Z
+updated_at: 2026-09-06T07:00:55Z
 ---
 
 ## 2026-09-05 — measured: they are DIFFERENT OBJECTS, not a disagreement about a number
@@ -62,3 +62,59 @@ Evidence for (a): the electron rows are specific and physically motivated, not v
 - That either object is wrong — only that they differ and share a name.
 - That the 7 mass-chapter citations are load-bearing; whether any *depends* on the `A+Z` count for a result was not measured.
 - Which meaning of `𝒜` the notation register intends — it does not disambiguate them, and that block has no QA coverage (PR #6817), so no collision detector could have caught this.
+
+
+### 2026-09-06 — RETRACTED my own "not a third braid", and the structure is a 2×2
+
+The entry above says `3A + Z` is a third strand COUNT but "NOT a third braid
+construction". **That is a claim about one FILE promoted to a claim about the
+CORPUS, and it is wrong at corpus level.**
+
+The file-level evidence stands and is re-verified: `electron_sigma_f_chain.py`
+uses `3A + Z` as the confinement-SDP normalisation `tr Φ = n_target`, sweeps
+`Z = 0…8`, and never imports or calls `atom_braid_word_3A`. But
+`content/quantum-observable-universe/mass-endomorphism/atomic-mass-gb-nf.md:3`
+— a **content block** — asserts *"atomic braid $\mathcal{B}_K \in B_{n}$, where
+$n = 3A + Z$"*. `B_n` is the braid group. So it is a third count **and** a third
+braid, and my sentence would have sent the next agent past the block that has it.
+
+Found by corpus-grep. The file was measured correctly both times; what failed
+was the scope of the inference.
+
+**The structure**: two independent binary choices, not a three-way argument.
+
+|  | electrons in | electrons out |
+|---|---|---|
+| nucleon-strand | `A+Z` — `def:atomic-braid`, **7** blocks | `A` — coarsening only |
+| quark-strand | `3A+Z` — `atomic-mass-gb-nf`, **1** block | `3A` — production, **26** blocks |
+
+`H_A` is `level-sufficiency-interprets.md:41`'s explicit **"Default-coarse"**
+approximation, not a competing claim — the live disagreement is three-way.
+
+**Three things that make it worse than a count discrepancy**
+(`computations/probes/strand_count_is_a_two_by_two_probe.py`, 12/12):
+
+1. The collision is on the symbol `\mathcal{B}_K`, and one disputant is the
+   **notation register** (`notation-register-table3-data.md:7` → `H_{3A}(q)`),
+   which AGENTS.md §7aa makes authoritative for symbols.
+   `notation-collisions.md` has **no entry** for it — unregistered.
+2. `atomic-mass-gb-nf.md` links `#def:atomic-braid` **while using a count that
+   definition contradicts**. Inside one citation edge, not two chapters drifting.
+3. `A+Z < 3A < 3A+Z` strictly for every `A ∈ 1..60`, `Z ∈ 1..A` (0 clashes), so
+   nothing reconciles them by coincidence; and `3A+Z` is exactly the **join** —
+   `(3A+Z) − 3A = Z`, `3A − A = 2A`, the two axes independent.
+
+**Blast radius, named.** `qou-q6pp` works entirely in `H_{A+Z}` and derives its
+generator count `A+Z−1` from it; if the canonical home is `3A` or `3A+Z` that
+derivation's arithmetic changes. `notation-register-table3-data.md` and the 26
+`3A` blocks are the production majority, so `def:atomic-braid` (`A+Z`) is the
+**minority** reading despite being the definition.
+
+**This makes the (a)/(b) decision three-way, not two-way.** Whoever renames now
+has three cells to name, and the register — not just a chapter — is one of the
+disputants.
+
+**Guard added.** Check 1 asserts every cited path EXISTS before asserting its
+content, because the sibling audit cited two of these very sites at paths that
+resolve to nothing (`mass-theory/atomic-braid.md`, bare `hecke_3a_weights.py`)
+while the claims themselves were true.
