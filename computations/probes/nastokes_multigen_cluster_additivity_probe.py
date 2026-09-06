@@ -693,6 +693,22 @@ def main() -> int:
           + "  ".join(f"{k}: {v:.3f}x" for k, v in spreads.items()))
     results["lambda_robustness"] = rob
     results["lambda_spread"] = spreads
+    # PER-MEASURE, not one boolean over the max. Corrected 2026-09-06
+    # (`qou-hu1f`). The single `max(spreads) < 1.10` collapsed three independent
+    # curvature measures into one flag, so when the intra-ordering ruling moved
+    # ONE of them the assertion went red without saying which. Measured:
+    #
+    #     measure       grouped   borromean
+    #     (0,1)         1.034x    1.059x     robust under both
+    #     (3,4)         1.099x    1.065x     robust under both
+    #     band-local    1.044x    2.099x     GROUPED-SPECIFIC
+    #
+    # Two of three survive the ruling; the band-local curvature does not. That
+    # is the finding, and a single max() erases it. Note (3,4) sits at 1.099
+    # under grouped — 0.001 from the threshold — so the old flag was one digit
+    # of noise away from failing for an unrelated reason.
+    for _k, _v in spreads.items():
+        assertions[f"R3_rel_lambda_robust_within_10pct[{_k}]"] = 1 if _v < 1.10 else 0
     assertions["R3_rel_lambda_robust_within_10pct"] = \
         1 if max(spreads.values()) < 1.10 else 0
 
