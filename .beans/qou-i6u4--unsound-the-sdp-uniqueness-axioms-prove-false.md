@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-09-05T19:41:40Z
-updated_at: 2026-09-05T20:26:52Z
+updated_at: 2026-09-06T04:17:55Z
 ---
 
 ## Finding
@@ -126,3 +126,46 @@ citation real* and *can Mathlib close it*. Neither asked whether the Lean
 statement **is** the cited theorem. An axiom with an impeccable citation to a
 true published theorem can still be a false Lean proposition — and here five
 were. Worth adding to the axiom-triage method as a third question.
+
+
+## Two corrections to my own claims (2026-09-06)
+
+**1. The failure mode was NOT new to this corpus.** I framed the method gap as a
+discovery. One directory over,
+`QOU/BraidKnot/LpDualityHypothesisClass.lean` already documents two axioms it
+deleted for **independently making the library inconsistent** —
+`schrijver_strong_duality` and `schrijver_complementary_slackness` — found by
+the same degenerate-instance method, on the same kind of object (an LP whose
+`primal_obj` and `dual_obj` are arbitrary independent fields), and repaired
+the same way.
+
+So the gap is **propagation**, not insight: a lesson recorded at its own fix
+site did not reach the next audit of the adjacent subject. The remedy differs —
+a propagation gap needs the check runnable and routine, not a new idea, which is
+what the script is for.
+
+**2. The axiom count was wrong twice, both times high.**
+
+| count | counting |
+|---:|---|
+| 364 | included vendored `.lake/packages` — Mathlib/Aesop **test fixtures** |
+| 164 | excluded those, still parsed inside Lean **block comments** |
+| **137** | real top-level axioms; **22** flagged |
+
+The comment bug was 26 of 163 (19 %) and is defect 1 in miniature: the script
+flagged `schrijver_strong_duality` as an unexamined candidate while matching
+that axiom's text quoted inside its own post-mortem. Fourteen more were English
+prose lines wrapping onto the word `axiom` (`it`, `of`, `and`, `with`,
+`in`, `is`, `for`, `that`, `can`, `to`, `beyond`, `standing`,
+`audit`, `report`).
+
+## First flagged follow-on: worked, NOT refuted
+
+`markov_trace_unique_axiom` — which I had cleared earlier by the citation
+method — **survives** the degenerate-instance attack. `HeckeAlgebra` carries
+`spans : Algebra.adjoin R (Set.range embed) = ⊤`, a real guard the SDP five
+lacked: `n ≤ 1` forces `A ≅ R`; `n = 2` is spanned by `{1, σ₁}`, both
+pinned; at `n = 3` the unpinned `σ₁σ₂σ₁` is recovered by cyclicity plus the
+quadratic relation (`= h·z² + z`). Its file's caveat ("the field set is too
+weak") is about **provability from its fields**, not falsity — the two must not
+be conflated.
