@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T20:22:33Z
-updated_at: 2026-09-05T20:23:23Z
+updated_at: 2026-09-06T03:57:26Z
 ---
 
 Follows `qou-brng`'s 2026-09-04 entry, which named `separable_interface_degenerate`'s
@@ -106,3 +106,57 @@ declarations shows only `propext`/`Classical.choice`/`Quot.sound`, and none on
 `precision-gates.sh --changed` is RED — **pre-existing on main, not this tranche**: zero
 `computations/` files are touched here, and the witnesses the gate regenerated were
 reverted per its own instruction.
+
+
+---
+## 2026-09-06 — my own "Next" was wrong twice: the step is not executable, and the route it opens is already closed
+
+Corrects this bean's own next line ("instantiate `separable_interface_degenerate` at the
+corpus's real `fSpin`/`fIso`"). Same failure class I corrected in `qou-brng` four hours
+earlier, now in my own bean.
+
+**1. `fIso` is available; `fSpin` does not exist.** Read from the carriers' own field
+lists, not their names:
+
+* `fIso` — `μ₊ = (z+q⁻¹)/(q+q⁻¹)`, `μ₋ = (q−z)/(q+q⁻¹)` (`mu_sum_eq_one`,
+  `mu_singlet_lt_mu_triplet`). At the proton pin under convention D these are
+  `0.75270211325196540159377935162` and `0.24729788674803459840622064838` — to all 30
+  digits the corpus's own `y₍₂₎`, `y₍₁,₁₎` at `n = 2` (`y-lambda-at-q0.witness.json`),
+  exactly as `weight_eq_proj_scalar` requires. An independent check that the
+  identification is the corpus's and not mine.
+* `fSpin` — **nothing**. `BringFiberAction` (D10) builds `A5Irrep → IcosahedralRotation`
+  plus an injectivity field; `SpinFromSo3Fiber` constrains `levelCoeff : ℕ → R`, the
+  `h^(2n)` Wedderburn coefficients of the three-strand Borromean trace (`levelCoeff 1 = 0`,
+  `levelCoeff 2 = −3/4`). Neither is a two-element scalar on the spin channel, and no
+  other `.lean` in the tree carries one.
+
+So the equal-scalars identification is **un-instantiable at present** — stronger than
+un-instantiated. `hplus`/`hminus` equate a corpus object to one the corpus has not built.
+That is a better handover than "go do it".
+
+**2. The route it seems to open is CLOSED, by a stronger argument, since 2026-08-16.**
+Dropping the missing spin factor and reading the asymmetry off the isospin scalars alone
+gives `B(T=0)/B(T=1) = 4.9181` at the proton pin against a measured `33.7055`. The
+shortfall is beside the point: the whole class is excluded without naming a candidate.
+The *total* `B(T=1)+B(T=0) = −α·log(μ₊μ₋)` is invariant under every T-odd rescaling
+`(μ₊,μ₋) ↦ (μ₊t, μ₋/t)`, and `μ₊+μ₋ = 1` floors it at `α·log 4 = 5.8030` against nature's
+`2.1510` — route 7 of
+`docs/audits/2026-08-16-two-nucleon-sector-final-state-eight-closures.md`, Lean,
+scope-(b). The `4.9181` is recorded so the next reader does not re-derive it as news.
+
+**Caught by the corpus-grep, before it reached a PR body.** My working thesis entering
+this — "the isospin scalars separate the channels, so the degeneracy is manufactured by a
+spin factor that does not exist" — is *true as stated* and *useless as a route*, because
+the magnitude question it opens was settled a month ago by an argument that does not care
+about the ratio. Path 1 (`docs/audits/`) is what found it.
+
+**NOT claimed:** nothing about the linking-matrix result (`lk` IS `I₃`, achievable
+asymmetry exactly 1) — that is a different object class and is untouched; the "exactly 1"
+figure is about linking data and must not be read as covering the projector scalars, which
+give 4.9181. Nothing refuted: `separable_interface_degenerate`, `mu_singlet_lt_mu_triplet`
+and `singlet_binds_more` are all correct and sorry-free.
+
+**Revised next.** Not this. The two-nucleon channel asymmetry has eight recorded closures;
+adding a ninth candidate to that list is not the shape of progress. Anyone picking this up
+should read `2026-08-16-two-nucleon-sector-final-state-eight-closures.md` first — routes 7
+and 8 close classes rather than candidates, which is why they are the ones that bite.

@@ -68,6 +68,39 @@ are the antecedent of a statement universally quantified over every possible pai
 scalar assignments. Making them a claim about the corpus requires *instantiating* the
 theorem at the corpus's own constructions — which nothing does.
 
+**And that instantiation is not merely absent — one of its two arguments does not
+exist.** Measured 2026-09-06 over every `.lean` in the tree:
+
+* **`fIso` IS available.** The isospin scalars are `μ₊ = (z + q⁻¹)/(q + q⁻¹)` and
+  `μ₋ = (q − z)/(q + q⁻¹)` (`InterfaceScalar.mu_sum_eq_one`,
+  `mu_singlet_lt_mu_triplet`). At the proton pin under convention D they evaluate to
+  `0.75270211325196540159377935162` and `0.24729788674803459840622064838` — which are,
+  to all 30 digits, the corpus's own Wedderburn weights `y₍₂₎` and `y₍₁,₁₎` at `n = 2`
+  (`y-lambda-at-q0.witness.json`), exactly as `weight_eq_proj_scalar` says they must be.
+* **`fSpin` is NOT.** There is no spin-side projector-scalar pair anywhere. The two
+  spin-side carriers assert something else entirely: `BringFiberAction` (D10) builds
+  `A5Irrep → IcosahedralRotation` with an injectivity field, and `SpinFromSo3Fiber`
+  constrains `levelCoeff : ℕ → R`, the `h^(2n)` Wedderburn coefficients of the
+  three-strand Borromean trace (`levelCoeff 1 = 0`, `levelCoeff 2 = −3/4`). Neither is a
+  two-element scalar on the spin channel. Read from the carriers' own field lists, not
+  from their names.
+
+So the equal-scalars identification is **un-instantiable at present**, which is stronger
+than un-instantiated: `hplus`/`hminus` equate a corpus object to one the corpus has not
+built.
+
+**A route that this observation might seem to open is already closed — do not walk into
+it.** The tempting next move is to drop the missing spin factor and read the channel
+asymmetry off the isospin scalars alone. Their log-ratio at the proton pin is
+`B(T=0)/B(T=1) = 4.9181`, against a measured `33.7055` — but the shortfall is beside the
+point, because the whole class is excluded by a stronger argument that needs no candidate:
+the *total* `B(T=1) + B(T=0) = −α·log(μ₊μ₋)` is invariant under every T-odd rescaling
+`(μ₊, μ₋) ↦ (μ₊t, μ₋/t)`, and `μ₊ + μ₋ = 1` floors it at `α·log 4 = 5.8030` against
+nature's `2.1510`. Route 7 of
+[`2026-08-16-two-nucleon-sector-final-state-eight-closures.md`](../../../../../../docs/audits/2026-08-16-two-nucleon-sector-final-state-eight-closures.md),
+Lean, scope-(b), landed 2026-08-16. The `4.9181` is recorded here only so the next reader
+does not re-derive it as though it were news.
+
 **What this does NOT say.** It does not refute `separable_interface_degenerate`, which is
 correct and sorry-free, nor the physics reading of the Pauli lock, nor anything about
 whether the two `SU(2)`s in fact carry equal scalars — that stays exactly as unestablished
