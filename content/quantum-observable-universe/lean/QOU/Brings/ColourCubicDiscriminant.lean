@@ -9,11 +9,27 @@ discriminant proportional to the sextic
 Its roots are the **Bring-side "divergent points"** — the saddles whose
 Picard–Lefschetz thimbles the resurgence arc integrates over.
 
-This file proves the exact algebra behind four facts measured in
-`computations/probes/colour_cubic_discriminant_structure_probe.py`
-(beans `qou-3qla`, `qou-z03j`, `qou-ozyt`). Nothing here is numerical: every
-statement is an identity over a characteristic-zero field, or an exact
-consequence of `|w| ≤ 2` over `ℝ`/`ℂ`.
+🛑 **PARTIAL DUPLICATE — read this before using anything below.**
+`QOU.Brings.ColourCubicBranchLocus` (sorry-free, 2026-09-03, bean `qou-qx7j`)
+**already proves** the self-reciprocality (`disc_inv_mul`,
+`branchLocus_inv_mem`), the reduction to `16w³+24w²−13w+2`
+(`w_cubic_of_palindromic`), the IVT bracket for the real root
+(`w_real_root_mem_Ioo`), and the unit-circle fact (`normSq_root_eq_one`).
+I did not find it: my corpus-grep filtered audit *filenames* on
+`alien|resurg|borel|stokes|gevrey|divergen`, and that audit is called
+`enclosed-pole-set-E-is-not-identifiable`. Recorded rather than quietly
+deleted, because the miss is the reusable part.
+
+**What is genuinely new here is the last three theorems only** — the depression
+`w = t − 1/2`, the scaling `t = (5/4)u` to the trinomial normal form
+`u³ − u + 2/5`, and the composite chain constant. `palindromic_reduction`,
+`colourSextic_eq_cube_mul_reduced` and `normSq_eq_one_of_abs_le_two` below are
+restatements of the existing results over a generic `[Field R] [CharZero R]`
+rather than `ℂ`; they are kept only because the new theorems are stated in that
+generality and would otherwise not compose.
+
+Nothing here is numerical: every statement is an identity over a
+characteristic-zero field, or an exact consequence of `|w| ≤ 2` over `ℝ`/`ℂ`.
 
 The chain, each step an identity proved below:
 
