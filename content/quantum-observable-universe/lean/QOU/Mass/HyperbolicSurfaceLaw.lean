@@ -70,8 +70,12 @@ fit, and is not claimed.
 Yekutieli's estimate (held, `library/arxiv-1007.1250v4/`, Def 4.4.12 / Lemma 4.4.13) bounds the
 error of the multiplicative integral by a **good** term counted by the `4^k` square **kites** of the
 `k`-th binary tessellation of `I²` — an *area* count — plus a **bad** term bounded by
-`a₀ + a₁·2^k`, one dimension down, counted by the **singular points** of the surface map `σ`
-(`|bad| ≤ m`, `m` = number of singular points; `bad = ∅` when `σ` is linear). So, precisely:
+`a₀ + a₁·2^k`, one dimension down. **Corrected in `StokesSingularCountAffine` (this header first
+said the bad term is "counted by the singular points of the surface map"; that is the
+1-dimensional string case, `:2280`):** in the 2-dimensional case the kite map is linear by
+definition and the bad set is where the connection **forms** `(α, β)` fail to be smooth
+(Def 4.4.12), with `a₀ = 2m` for `m` segments covering their singular locus and `a₁` a *length*
+(Lemma 4.4.13). Smooth forms give no bad set at all. So, precisely:
 
 * **the surface of kites is the BULK** of the Stokes estimate, not its surface term;
 * **the surface term is the singular locus**, and `2026-08-30-nonabelian-stokes-and-the-surface-term.md`
