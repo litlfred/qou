@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T08:32:06Z
-updated_at: 2026-09-06T08:10:29Z
+updated_at: 2026-09-06T09:07:58Z
 ---
 
 Successor to qou-zrx2. c0(A) = 2^-A - 2^(1-2A) is DERIVED (Schur-Weyl + cycle count, ClassicalTraceFloor.lean). c1 = lim (Dtr - c0)/hbar_q is currently six MEASURED dyadic rationals (pp 19/8, pn 37/16, nn 9/4, T 163/64, 3He 85/32, 4He 259/128), entered into PairwiseChainLeadingOrder.lean as defs. Goal: (1) obtain them EXACTLY via laurent_q_trace.tr_M_atomic_lq (formal (z,h)-polynomial with LaurentQ coefficients) expanded at q = e^eta to first order -- no Richardson; (2) find and prove the closed form in A, by the same route as c0 (first-order term of a permutation-character sum). Branch claude/logz-hbarq-rung-operator-class-2026-09-03 (branch name predates the corpus-grep that found qou-ap3d/qou-ssz6 had already closed the log Z rung question).
@@ -164,3 +164,36 @@ Canonical values: D 1/16, T 1/64, 3He 1/8, 4He 7/128, 6Li 93/4096, 7Li 67/16384.
 c1 defs) and `LeadingOrderTraceCoefficient.lean` (c1Closed + letters_pnAtom). Repairing
 that is a separate change with its own verification and is deliberately not attempted in
 #6920.
+
+
+### 2026-09-06 — the LEAN is repaired too (PR #6920), all three files sorry-free
+
+Not two files but **three** — `MirrorAsymmetrySign.lean` also consumes `c1Closed`; found by
+corpus grep, and verified rather than assumed.
+
+- **PairwiseChainLeadingOrder.lean** — rewritten GENERICALLY in (S_p, S_n); the six values are now
+  instantiations, so a future reordering is a two-number change. Both columns checked
+  (`c1_canonical_values` at (6,-4), `c1_grouped_values` at (42,32)).
+  **The headline claim got STRONGER:** `chain_over_atom_He4_generic` proves the 4He over-count is
+  24/7 for EVERY (S_p, S_n) — the deletion sums cancel identically — so it survives ANY
+  intra-nucleon reordering, not just the two computed. (4He has Z = N = 2, so its interface term
+  vanishes, and the pp `-4` and nn `+4` cancel across the three A=2 bonds; both sides go as
+  (S_p + S_n).) T and 3He do NOT cancel and really move (292/163 -> 4, 30/17 -> 3/2), recorded as
+  `chain_ratios_T_He3_not_invariant` (a disequality, so it makes no claim about which is right).
+- **LeadingOrderTraceCoefficient.lean** — c1Closed -> (3Z - 2N), the six c1Closed_* values, and ALL
+  TWELVE hardcoded letter tables regenerated. Those tables were a WRONG DATUM (the grouped word's
+  per-letter (w,c) data), not merely mis-scoped theorems. c1_defs_eq_closed and c1_from_letters
+  retargeted to the generic defs.
+- **MirrorAsymmetrySign.lean** — survives UNCHANGED. The mirror difference cancels everything but
+  the coefficient GAP, so mirrorBracket depends on P - Q alone, and P - Q = (S_p - S_n)/2 is 5 under
+  both orderings. Docstring flags this as MEASURED ON TWO WORDS, not structural — unlike the 4He
+  24/7, which is. Do not conflate the two when quoting either.
+
+**Verification:** lean-direct with `-DautoImplicit=false -s 65536` (a bare `lean` is weaker than
+lake — autoImplicit defaults true and the lakefile sets it false), each dependency compiled into a
+shadow first, lake never invoked so the olean cache is not evicted. All three exit 0.
+`#print axioms` on all eight touched declarations: [propext, Classical.choice, Quot.sound] — no
+sorryAx.
+
+**Still open:** c2 only. Its six recorded values (357/32, 403/32, 217/16, 3285/128, 3451/128) are
+grouped-word and have not been recomputed. No Lean carries them.
