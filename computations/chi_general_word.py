@@ -72,6 +72,7 @@ import mpmath as mp  # noqa: E402
 
 from chi_monotone_transfer import chi_all_lambda  # noqa: E402
 from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
+from chi_window_transfer import chi_all_lambda_window  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Template-classification tolerance, matching `chi_monotone_transfer`'s.
@@ -187,9 +188,37 @@ def chi_all_lambda_any(word, n: int, *, dps: int = 50, q=None, fast: bool = True
 
     The dispatch is on the word's own generator sequence, never on a caught
     exception — see `word_is_monotone`.
+
+    **Non-monotone words now take the WINDOW TRANSFER, not the kernel** (bean
+    `qou-wdij`). `chi_window_transfer.chi_all_lambda_window` is `d_λ`-free and
+    validated against the kernel on the interleaved word at A ≤ 4 (max |Δχ| =
+    2.9e-49 at ⁴He) and against the monotone transfer at A = 4/6/7. Measured
+    head-to-head at ⁴He: kernel 401.41 s, window 0.42 s — **963×**, and ⁶Li/⁷Li
+    (5.0 s / 15.9 s) become reachable at all.
+
+    The kernel remains the fallback, because the window transfer is efficient
+    only while the word's live level-window stays bounded; a word that revisits
+    a low generator after a high one raises `ValueError` from `MAX_LIVE` rather
+    than exhausting memory, and the kernel is correct for any word at all. So
+    the fallback is on that *specific* guard, not a bare `except`.
+
+    Monotone words keep the existing transfer, which is **~10× faster than the
+    window transfer on them** (0.18 s vs 1.82 s at ⁷Li) because it needs no
+    (init, cur) level pair. That measurement is why this is a dispatch and not a
+    replacement.
     """
     if word_is_monotone(word):
         if fast:
             return chi_all_lambda_reduced_block(word, n, dps=dps, q=q)
         return chi_all_lambda(word, n, dps=dps, q=q)
-    return chi_all_lambda_general(word, n, dps=dps, q=q)
+    try:
+        return chi_all_lambda_window(word, n, dps=dps, q=q)
+    except ValueError as exc:
+        if "MAX_LIVE" not in str(exc):
+            raise
+        print(
+            f"chi_general_word: window transfer declined (n={n}: {exc}); "
+            "falling back to the general-word kernel, which is correct for any "
+            "word but not d_lambda-free.",
+            file=sys.stderr, flush=True)
+        return chi_all_lambda_general(word, n, dps=dps, q=q)
