@@ -177,3 +177,26 @@ are now regenerated.
 list undercounts by whatever that consumer does not use. The producer field is
 the reliable index — `producer == "chi_at_q0_via_hoefsmit_mpfr.py"` finds all
 eleven witnesses it has ever written.
+
+
+## Downstream: what the regeneration propagates
+
+75 committed witnesses come from scripts reading a chi cache and predate the
+rebuild. **64 carry absolute-looking fields and move; 11 are ratio-only and are
+predicted immune.**
+
+Measured on `a-K-via-lp-dual-full`, before/after in git: `tr_M` scales by
+1.82 / 2.08 / 3.78 / 7.87 / 6.89 / 14.32 — matching `qou-hu1f`'s `R_quark`
+(3.785 / 7.868 / 6.891 / 14.325) exactly where that bean lists it — while
+**`a_K^C`, the quantity the producer exists to report, does not move at all.**
+That confirms `qou-hu1f`'s immune/scaling split on a producer it never examined.
+
+**The scaling rule stops at the aggregate.** Re-running
+`delta_lambda_2row_stratum_analysis.py` moved 181 numeric fields by factors from
+**11.8× to 51.2× within one witness** (51.24 being the helium-4 `|χ|` ratio
+spread). Per-partition characters move by per-partition factors, with sign
+changes. So a per-λ witness must be **re-run, not rescaled** — only the
+aggregate trace has a closed-form factor.
+
+The remaining 63 are a scoped follow-up, tracked in `qou-92u9`. So are the
+muon-anchor chi caches, which this regeneration did not touch.
