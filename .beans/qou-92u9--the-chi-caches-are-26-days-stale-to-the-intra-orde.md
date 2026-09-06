@@ -220,3 +220,51 @@ the durations.  The sweep was therefore RUN, not deferred — see below.
 (`chi-{tritium,helium-3,helium-4}-h9/h12-at-q0-50dps-muon.witness.json`).  I ran
 the producer at its default (proton) anchor only.  Those belong to the ideal
 CAL-2 layer and are a separate anchor decision.
+
+
+## Sweep outcome (2026-09-05) — run, triaged, and it found a defect CLASS
+
+64 downstream producers run: **53 exit 0, 8 exit 1, 3 timed out**; 50 witnesses
+refreshed.  Four of the eleven non-zero exits are correct behaviour and two
+predate this work, so it is not a defect list.
+
+**The three timeouts were budget artifacts, confirmed.**  Re-run with a real
+budget: `chi_4he_binding_lossless` **665 s** exit 0, `chi_4he_via_rust_lossless`
+**586 s** exit 0, both writing clean witnesses.  My 180 s ceiling was simply
+below their cost.  The third is still running.
+
+**🛑 THE EXACT-ZERO RADICAL PROXY WAS IN THREE PROBES — and the corpus already
+had a correct implementation none of them used.**
+
+    computations/live_channels.py:103   is_live(y_lambda, tol=DEAD_TOL)
+                                        DEAD_TOL = 1e-30
+
+Forty orders clear of the 1e-73 residual, and its docstring settles the
+definition: *"Defined by the weight, not by the row count."*  Its own
+`!= 0` is only the fallback for objects `float()` refuses.
+
+  * `o3prime_selection_is_atom_independent_probe` — mine; sent `tau_tail` into
+    a 77! enumeration (a process I later found had been burning CPU for 3h17m).
+  * `ak_lp_dual_quotient_probe` — reported `degen` on every atom, which READS
+    as "O3' is degenerate" and actually meant the line had stopped separating
+    two populations.  I nearly reported it as a finding.
+  * `o3prime_quotient_lp_solve_probe` — the #6752 probe itself.
+
+All three now on the library.  Also fixed in `ak_lp_dual_quotient_probe`: a
+`max(abs(r["_ppm"]))` with no None guard, while the line two above it and the
+serialization line both guard for exactly that case.
+
+**THE POSITIVE RESULT, by two independent routes.**  With the proxy fixed,
+`o3prime_quotient_lp_solve_probe` is **5/5 against the regenerated data**, and
+`ak_lp_dual_quotient_probe` gives `y0*_quot` nonzero on all six atoms where the
+ambient is 0 (0.0694 / 0.0920 / 0.0108 / 0.00315 / 0.00619 / 0.000296).  So
+**O3''s pricing of the net constraint — the defect #6752 was chosen to repair —
+SURVIVES the ordering change.**  The selection claims built on top of it did
+not; the pricing repair did.  All four of `ak_lp_dual_quotient`'s assertions are
+invariant across the regeneration.
+
+**Recorded on `qou-hu1f` instead of here**, being that ruling's consequence: the
+alternating word is non-monotone for EVERY atom where the grouped word was
+monotone for every atom, so `reduced_block_kernel.chi_all_lambda_reduced_block`
+refuses it outright.  That is the executable form of the "each generator's
+letters must be contiguous" fact that bean already carries.
