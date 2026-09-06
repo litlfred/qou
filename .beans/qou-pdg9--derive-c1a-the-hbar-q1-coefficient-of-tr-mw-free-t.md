@@ -223,8 +223,26 @@ extend to `c₂`: the letter-**pair** class `|S| = 2` is NOT affine in `(u, D)` 
 MISS at `A = 3`, against a `c₁` control that hits 4/4 and returns the derived coefficients exactly),
 and that is the entire reason `c₂` has no affine form.
 
-🛑 The `A`-dependence of `k` is a **zero-dof fit** — `m(A) = (3/8)4^A + (15/2)2^A − 23` on three
-points with three parameters. It predicts `k(5) = 663/2¹⁰`; one species at `A = 5` settles it.
-Quote the species-independence, not the formula.
+🛑 **REFUTED the same day.** The `A`-dependence of `k` was a **zero-dof fit** —
+`m(A) = (3/8)4^A + (15/2)2^A − 23` on three points with three parameters, so it could not fail on
+its own data. `⁵He` (`n = 15`, 49 min) settled it: predicted `m(5) = 601`, **measured 521**. The
+sequence is `13, 61, 193, 521` at `A = 2…5` and **no closed form is offered** — a fourth point does
+not license a four-parameter fit.
+
+🛑 And I quoted the prediction wrong before it was refuted: this line said `k(5) = 663/2¹⁰`, and
+`(3/8)·4⁵ + (15/2)·2⁵ − 23 = 601`. The verdict is unaffected (601 misses 521 too), but the same
+wrong number went into `c2_pairwise_shape_holdout_probe.py` and PR #6920's body; all three are
+corrected.
+
+**What the run establishes positively, and it is this bean's business:** `c₁`'s closed form holds at
+`A = 5` — measured `1/256`, predicted `1/256`. Eighth independent size, and the largest word ever
+put through `[◇]` (`2¹⁵` basis states). New exact values there: `c₂(⁵He) = 1001/2048`, class split
+`|S|=0: 67/512`, `|S|=1: 523/1024`, `|S|=2: −313/2048`.
+
+⚠ The `A = 5` run used **one** species, so it tests the *formula*, not the species-independence of
+`k` at that `A`. That remains measured at `A = 2, 3, 4` only (8 species, 3 constants). A second
+`A = 5` species would test it, at another ~49 min.
+
+Quote the species-independence, not any formula.
 
 Probe: `computations/probes/c2_pairwise_shape_holdout_probe.py` (exact `Fraction`s, no `q`).

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-06T11:20:30Z
+updated_at: 2026-09-06T12:21:52Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -338,3 +338,70 @@ against three parameters would not be. If it fails, the shape is wrong and that 
 
 Deliberately NOT done: reading a form off the six points above. Six points admit many
 parameterisations and this arc has been burned by exactly that.
+
+
+### `A = 5` verdict: the `k(A)` form is REFUTED — and the `|S| = 2` pair-class decomposition (2026-09-06, PR #6920)
+
+**The zero-dof fit died, as a zero-dof fit should.** `m(A) = (3/8)4^A + (15/2)2^A − 23` reproduced
+`13, 61, 193` with three parameters on three points. `⁵He` (`Z=2, N=3`, `n = 15`, `2¹⁵` basis
+states, 49 min) gives:
+
+    m(5)  predicted 601   measured 521   MISS by 80/2¹⁰
+
+Sequence `m(A) = 13, 61, 193, 521` at `A = 2…5`. **No closed form is offered for it** — a fourth
+point does not license a four-parameter fit any more than the third licensed the three-parameter
+one. This is the cheaper outcome to have learned: the form was going to be quoted otherwise.
+
+🛑 **My stated prediction was wrong before the run refuted it.** Three artifacts said
+`k(5) = 663/2¹⁰`; `(3/8)·4⁵ + (15/2)·2⁵ − 23 = 384 + 240 − 23 = 601`, so the arithmetic error was
+mine. Verdict unaffected (601 misses 521 too), but the wrong number was in
+`c2_pairwise_shape_holdout_probe.py`, the `qou-pdg9` bean and PR #6920's body — all three corrected.
+
+⚠ **What the `A = 5` run does NOT test:** species-independence of `k` at `A = 5`. One species yields
+one residual; it is consistent with the relation and cannot check it. Species-independence stays
+measured at `A = 2, 3, 4` (8 species, 3 constants). A second `A = 5` species would test it, ~49 min.
+
+**Positively established at `A = 5`:**
+
+- `c₁`'s closed form holds — measured `1/256`, predicted `1/256`. Eighth independent size, largest
+  word ever put through `[◇]`.
+- New exact values: `c₂(⁵He) = 1001/2048`; class split `|S|=0: 67/512`, `|S|=1: 523/1024`,
+  `|S|=2: −313/2048`.
+
+### And `|S| = 2` is now split by letter-PAIR class — the break is in THREE of four
+
+Letters are nucleon (`g % 3 ∈ {0,1}`) or interface (`g % 3 == 2`), so every pair is `intra` /
+`cross` / `n-if` / `if-if`, read off the generators. The four classes **sum to `[◇]`'s `|S| = 2` on
+7/7 words** — an independent recomputation of that witness by a different accumulation.
+
+    case   (Z,N)    intra     cross     n-if    if-if      sum = [◇]
+    pp     (2,0)     1/2      9/32      −5/8       0         5/32
+    pn     (1,1)       0     −3/16       1/8       0        −1/16
+    nn     (0,2)    −1/2       1/8      −3/8       0         −3/4
+    3p     (3,0)    9/16    81/128      −1/2    −1/8       73/128
+    T      (1,2)   −3/16     −3/16      1/32       0       −11/32
+    ³He    (2,1)    3/16    −9/128     −1/16       0        7/128
+    3n     (0,3)   −9/16      9/32     −5/16    −1/8       −23/32
+
+Per-class leave-one-out at `A = 3`: **`intra` AFFINE 4/4; `cross`, `n-if`, `if-if` all 0/4.** So the
+non-affinity is **not localised to one class** — that is a weaker answer than the question hoped for
+and it is the answer.
+
+Two shapes stated from the table and then checked:
+
+- **`intra = (Z − N)·κ(A)`**, `κ(2) = 1/4`, `κ(3) = 3/16`. Seven species, two constants — five dof —
+  exact throughout, including the `Z = N` species where it must give `0`. `Z − N` is affine in
+  `(u, D)`, which is *why* this class passes the leave-one-out.
+- **`if-if = −(1/8)·[C(I_pp,2) + C(I_nn,2)]`** — a count of ways to pick two interfaces *of the same
+  kind*. Its dof are thin and the file says so: `A = 2` contributes nothing (count and class both
+  `0`), so the content is four `A = 3` species against one coefficient. The value is the **shape** —
+  a like-interface *pair* count is quadratic in `(I_pp, I_nn)`, so no affine form in `D` can reach
+  it. A mechanism for the MISS, not a fit to it.
+
+**`cross` and `n-if` deliberately unmodelled.** `cross` runs over distinct nucleon pairs so it
+should be quadratic in content; a full quadratic in `(u, D)` is six parameters and `A = 5` has
+exactly six species, so it is **unfalsifiable at every reachable `A`** (`A = 6` is `n = 18`). The
+route is to COUNT pair types, not fit them — this decomposition is that groundwork.
+
+Probes: `c2_pairwise_shape_holdout_probe.py`, `c2_pair_class_decomposition_probe.py` (exact
+`Fraction`s, no `q`, no witness).
