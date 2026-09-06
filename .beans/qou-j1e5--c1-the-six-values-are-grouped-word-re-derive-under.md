@@ -1,11 +1,11 @@
 ---
 # qou-j1e5
 title: 'c1: the six values are GROUPED-word — re-derive under Borromean, or scope them (blocks the probe going green)'
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T03:58:42Z
-updated_at: 2026-09-06T03:59:28Z
+updated_at: 2026-09-06T09:25:39Z
 ---
 
 ## The situation, measured
@@ -72,3 +72,40 @@ why it falls outside it.
 - `qou-wdij` — the non-monotone dispatch that fixed the production crash.
 - `qou-pdg9` — completed; derived the six values under the grouped word.
 - #6874 — closed. Contains the measurements above and the two abandoned routes.
+
+
+## CLAIMED 2026-09-06 09:24 UTC — takeover of an unclaimed high-priority bean
+
+Status was `todo`, not `in-progress`, so nothing was claimed and no sibling is
+being displaced. The two branches that carry the abandoned routes are stale by
+more than five hours and are both mine from earlier in the same session:
+
+    origin/claude/bean-qou-j1e5-c1-borromean-rederivation-2026-09-06  291a1af33e  04:14 UTC
+    origin/claude/fix-c1-probe-intra-order-red-2026-09-05             40b918e5f7  03:59 UTC
+
+Neither is force-pushed over. Work continues on a fresh branch off `main`
+(`claude/c1-borromean-rederivation-2026-09-06`), since both stale branches carry
+routes this bean already records as closed.
+
+## Plan, in the bean's own order, with what each depends on
+
+1. Recompute the six values under Borromean. Running now.
+2. Update `QOU.MassTheory.PairwiseChainLeadingOrder`. Blocked on 1.
+3. **Does `c1_from_letters` survive?** The research part. Blocked on 1, and it is
+   the step that cannot be scoped in advance.
+4. Scoping notes on #6538 / #6559 / #6607.
+
+## One thing already known that bears on step 3
+
+PR #6919 (merged, `96fdb33da1`) measured that `f1/f0` is **exactly additive
+across the two nucleons** — they occupy disjoint strand sets, so `tr_M`
+factorises — and that this holds for **any** intra-nucleon ordering, Borromean
+included, because the additivity comes from the *inter*-nucleon disjointness and
+not from the intra order at all.
+
+That is a constraint on step 3 rather than an answer to it. `c1_from_letters` is
+a **per-letter** derivation; additivity is **per-nucleon**. Additivity surviving
+the ordering change tells us the `Z`/`N` split of the formula survives; it says
+nothing about whether the per-letter weights (21 and 16) do. The grouped-specific
+measurement the bean cites — grouped factorises to ~3e-59, interleaved fails by
+2.8x-13.3x — is precisely at the per-letter level, so it stands unaffected.
