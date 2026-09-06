@@ -215,3 +215,74 @@ need a genuine `HeckeAlgebra` instance rather than a degenerate one.
 Before clearing any axiom, ask all three questions. Question 3 is answered by
 writing the most degenerate instance the axiom's own structures admit and trying
 to break it — not by reading the citation more carefully.
+
+---
+
+# Corpus-level: this is the FIFTH incident, and all five share one root cause
+
+Added 2026-09-06, after the `LpDualityHypothesisClass.lean` precedent above
+prompted a deliberate search rather than an accidental one.
+
+**Eleven false axioms have now been found in this corpus, across five separate
+incidents.** Mine are the largest batch but not the first, second, third or
+fourth:
+
+| # | site | axioms found false |
+|---|---|---|
+| 1 | `QOU/AppendixSurreals/B1HyperbolicRowsTheorem.lean` | `b1_hyperbolic_rows` |
+| 2 | `QOU/BraidKnot/LpDualityHypothesisClass.lean` | `schrijver_strong_duality`, `schrijver_complementary_slackness` |
+| 3 | `QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean` | `dressed_mass_split_substrate_closed_form` |
+| 4 | `stochastic-mechanics/macroscopic-stability-equivalence.lean` | `macroscopic_iff_rh_axiom`, `rh_iff_persistence_axiom` |
+| 5 | `QOU/MathlibExt/SDP*.lean` (this audit) | the five above |
+
+All four prior post-mortems live inside `/- … -/` blocks; none of the `False`
+proofs is compiled, so **the library is not currently inconsistent** from any
+of them.
+
+## The shared root cause: over-quantification
+
+Every one of the eleven is the same defect — **a binder that should have been
+fixed, or tied to another field, is left free** — and the conclusion then
+relates things nothing connects:
+
+- **B1** quantified over `n_hyperbolic_rows_verified`, the very count it meant
+  to fix, so it asserted `3 ≤ n` for every `n : ℕ`. Instantiate at `0`.
+- **Schrijver** quantified over an `OperatorSelectionLP` whose `primal_obj` and
+  `dual_obj` are arbitrary independent reals, so strong duality asserted that
+  any two reals are equal.
+- **Dressed mass** quantified `F`, `M_N` and `q` mutually unrelated — the left
+  side fixed by `F` alone, the right side varying freely with `M_N`.
+- **Macroscopic stability** quantified `ψ` and `ζ` independently and asserted an
+  *iff* between a property of one and a property of the other.
+- **SDP** (this audit) quantified over strict-complementarity pairs without the
+  nondegeneracy hypothesis that ties the dual's rank to the primal's.
+
+The fourth site says it in as many words: *"The three fields exist to be related
+to **each other**. Quantifying over them independently is precisely the defect
+that made the removed axioms inconsistent."*
+
+So the corpus has independently rediscovered one nameable class **five times**,
+and written it down five times, each at its own fix site. That is the
+propagation gap, measured: not a missing insight, a missing *destination*.
+
+## What follows
+
+1. **Prefer live negations to commented `False` proofs.** Every prior incident
+   recorded itself as `theorem X_axiom_is_inconsistent : False` **inside a
+   comment**. A commented proof cannot be re-run and goes stale silently — and
+   it is also what made the risk audit report `schrijver_strong_duality` as an
+   open candidate, since the text is still there to match. This audit's
+   `SDPUniquenessCounterexamples.lean` instead proves the **negations** as live,
+   compiled theorems, which survive deletion of the axiom and re-verify on every
+   build. That should be the standard idiom.
+
+2. **The check belongs in the risk audit, not in five docstrings.**
+   Over-quantification is mechanically detectable: a binder appearing on only
+   one side of the conclusion, or two binders the conclusion relates with
+   nothing tying them. The current script approximates this with its
+   "no positivity/rank/nondegeneracy guard" and "universally quantified" signals
+   — a direct check is the obvious next refinement.
+
+3. **The count is a floor, not a total.** It counts incidents that were found
+   and documented. Nothing here establishes that the remaining 137 axioms are
+   sound; 22 are flagged and 21 of those are unexamined.
