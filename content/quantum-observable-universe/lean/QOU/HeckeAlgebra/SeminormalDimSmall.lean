@@ -129,4 +129,63 @@ theorem indistinguishable_p21 :
   WedderburnTrace.exists_indistinguishable_by_every_traceFunctional p21
     two_le_seminormalDim_p21
 
+/-! ### The complement: three *block-reading* functionals at (2,1) ARE independent
+
+`WedderburnTrace.three_supported_traceFunctionals_dependent` says any three
+**trace-factoring** functionals at one partition are linearly dependent — one
+coefficient against one number. This is the other half, and it is what makes the
+pair sharp rather than merely discouraging: read the block instead of its trace
+and three independent functionals exist at `(2,1)`, exhibited explicitly and
+witnessed by matrix units.
+
+Together the two say precisely where a derivation of the `(2,1)` clause has to
+live: **not** in the Markov trace, which is one-dimensional there, but in the
+`f^{(2,1)} = 2`-dimensional block, of which the trace reads one dimension.
+
+**What this does not say, and the distinction is the whole point.** It does *not*
+identify these three functionals with volume, surface and Coulomb. It says three
+independent functionals exist at `(2,1)` once you read the block — an existence
+statement about the linear algebra, nothing more. Matching them to physical
+quantities is exactly the open obligation `qou-qb7p` recorded, and three
+independent functionals existing is a *necessary* condition for such a match, not
+evidence of one. A count agreeing with a count is a target to check a future
+derivation against, never a criterion to search on.
+-/
+
+/-- Read entry `(i,j)` of the block at `lam`. Unlike `traceFunctional`, this sees
+the block itself rather than only its trace. -/
+noncomputable def blockEntry (lam : Nat.Partition 3)
+    (i j : Fin (seminormalDim lam)) (x : WedderburnDecomposition 3) : ℝ :=
+  x lam i j
+
+/-- **Three block-reading functionals at (2,1) are linearly independent** — the
+exact complement of `three_supported_traceFunctionals_dependent`, which says any
+three *trace-factoring* ones there are dependent. Witnessed by matrix units:
+each functional is 1 on its own and 0 on the others. -/
+theorem three_blockEntry_independent_p21
+    (a b c : ℝ)
+    (h : ∀ x : WedderburnDecomposition 3,
+        a * blockEntry p21 ⟨0, by rw [seminormalDim_p21]; omega⟩
+              ⟨0, by rw [seminormalDim_p21]; omega⟩ x
+          + b * blockEntry p21 ⟨0, by rw [seminormalDim_p21]; omega⟩
+              ⟨1, by rw [seminormalDim_p21]; omega⟩ x
+          + c * blockEntry p21 ⟨1, by rw [seminormalDim_p21]; omega⟩
+              ⟨0, by rw [seminormalDim_p21]; omega⟩ x = 0) :
+    a = 0 ∧ b = 0 ∧ c = 0 := by
+  classical
+  set i0 : Fin (seminormalDim p21) := ⟨0, by rw [seminormalDim_p21]; omega⟩
+  set i1 : Fin (seminormalDim p21) := ⟨1, by rw [seminormalDim_p21]; omega⟩
+  have hne : i0 ≠ i1 := by simp [i0, i1, Fin.ext_iff]
+  have key : ∀ p q : Fin (seminormalDim p21),
+      a * (Matrix.single p q (1:ℝ)) i0 i0
+        + b * (Matrix.single p q (1:ℝ)) i0 i1
+        + c * (Matrix.single p q (1:ℝ)) i1 i0 = 0 := by
+    intro p q
+    have := h (WedderburnTrace.blockAt p21 (Matrix.single p q 1))
+    simpa [blockEntry, WedderburnTrace.blockAt_self, i0, i1] using this
+  refine ⟨?_, ?_, ?_⟩
+  · have := key i0 i0; simpa [Matrix.single, hne, hne.symm] using this
+  · have := key i0 i1; simpa [Matrix.single, hne, hne.symm] using this
+  · have := key i1 i0; simpa [Matrix.single, hne, hne.symm] using this
+
 end QOU.HeckeAlgebra.SeminormalDimSmall
