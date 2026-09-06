@@ -34,7 +34,7 @@ Lifting needs no induction once the subword property is available: a subword of 
 `w` ending in `s` either uses that final `s` or does not, and *both* branches already exhibit what
 is wanted.
 
-## 🛑 The converse bridge is NOT proved, and the obstacle is NOT lifting
+## The converse bridge — open when this file was written, CLOSED since
 
 `reflStep_of_eraseIdx` shows the atom: deleting **one** letter from a reduced word is exactly a
 downward reflection step, with the reflection read off Mathlib's right inversion sequence. The
@@ -71,7 +71,21 @@ The single-step case of that upward lifting **does** go through — if `y = x·t
 an ascent at the intermediate elements of a `ReflTransGen` chain, and `ReflStep` is not defined for
 a descent.
 
-So: `ReflLe → BruhatLe` ✅, `BruhatLe → ReflLe` ❌ (open — and not for either reason first written).
+✅ **That third statement of the obstacle was the right one, and it is now proved** —
+`QOU.IwahoriHecke.BruhatConverse.reflLe_mul_simple_of_ascent`, and with it
+`reflLe_of_bruhatLe` and `bruhatLe_iff_reflLe`. **The two orders are the same relation.**
+
+What unblocked the chain: the intermediate elements of a `ReflTransGen` from `x` to `y` are all
+**shorter than `y`**, so the outer induction hypothesis of the converse applies to them. Carried into
+the lifting lemma, it closes the descent case — via `bruhatLe_of_reflLe` and this file's own
+`bruhatLe_mul_simple_of_isRightDescent`. So the lifting property **is** used, just not where the
+first wrong diagnosis put it: it resolves the descent case *inside* the chain, not the branch.
+
+So: `ReflLe → BruhatLe` ✅ (here), `BruhatLe → ReflLe` ✅ (`BruhatConverse`).
+
+The two wrong diagnoses above are kept anyway. `not_forall_bruhatLe_of_sublist` remains a true
+refutation and is worth having on the record; and the history of what did *not* work is the part a
+reader cannot reconstruct from the finished proof.
 
 ## The LEFT-handed variant, and why it is here
 
@@ -164,9 +178,9 @@ direction would iterate.
 
 🛑 **Iterating it does not give `BruhatLe → ReflLe`.** A subword deletes several letters, the
 intermediate words are not reduced, and `ReflStep` demands a *strict length increase* at every step
-— which the intermediate products need not provide. See the header: the missing input is **not**
-the lifting property (proved below), and it is **not** the non-reduced-subword statement either
-(that one is refuted by `not_forall_bruhatLe_of_sublist`). -/
+— which the intermediate products need not provide. The converse is proved in
+`QOU.IwahoriHecke.BruhatConverse`, and **not** by iterating this: it peels a right descent instead
+and lifts. This lemma is not the route; it is kept because it is the honest atom. -/
 theorem reflStep_of_eraseIdx {ω : List B} (hred : cs.IsReduced ω) {j : ℕ} (hj : j < ω.length) :
     ReflStep cs (π (ω.eraseIdx j)) (π ω) := by
   classical
@@ -261,7 +275,7 @@ theorem lifting (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j 
     have : π a * cs.simple s * cs.simple s = u * cs.simple s := by rw [← hpa, hu]
     rwa [mul_assoc, cs.simple_mul_simple_self, mul_one] at this
 
-/-! ## 🛑 A refuted repair — do not route the converse through this -/
+/-! ## 🛑 A refuted repair — the converse does not go through this (and did not) -/
 
 /-- **The non-reduced-subword statement is FALSE.**
 
