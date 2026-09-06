@@ -194,6 +194,45 @@ REGISTRY_FILES = {"codata_2022_source.py", "codata_constants.py",
 # A number inside a regex or a match-prefix is a PATTERN, not a computed value.
 # Without this the audit flags other detectors — including its own siblings —
 # for containing the very literals they exist to find.
+# A DECLARED two-arm comparison, on the literal's line or the one above it.
+#
+# Some probes carry a superseded value BECAUSE it is their subject. The type
+# case is probes/retired_q0_refresh_to_live_muon_pin_probe.py, whose whole
+# content is `RETIRED = mpf(...)` against `MUON = mpf(...)` — routing the
+# retired arm to the registry would delete the comparison the probe exists to
+# make. Such a value is not a defect and cannot be drained.
+#
+# The marker is deliberately NARROW and must stay so: it exempts one literal
+# on one line, never a file or a directory, and it requires the author to say
+# WHY on that line. A blanket per-file opt-out is how a gate stops being one.
+# The spelling mirrors the repo's existing `# float64-intentional:` idiom that
+# mpf_float_source_audit.py already honours.
+_EXEMPT_RE = re.compile(r"reference-literal-intentional:")
+
+
+def _marker_above(lines: list[str], lineno: int) -> bool:
+    """Is the marker anywhere in the comment block directly above this line?
+
+    Checking only the single preceding line looks sufficient and is not:
+    a reason worth giving takes more than one line, so authors write a block
+    and the marker lands at its TOP. Measured on the first real use — a
+    three-line justification above `RETIRED = mp.mpf(...)` — the marker sat
+    three lines up and the literal was still reported.
+
+    Walking the contiguous run of comments keeps this per-literal (the run
+    stops at the first non-comment line, so it cannot reach past an
+    intervening statement) while letting the reason be as long as it needs.
+    """
+    i = lineno - 2  # 0-based index of the line directly above
+    while i >= 0:
+        st = lines[i].strip()
+        if not st.startswith("#"):
+            return False
+        if _EXEMPT_RE.search(st):
+            return True
+        i -= 1
+    return False
+
 PATTERN_MARKERS = ("re.compile", "re.search", "re.match", "re.finditer",
                    r"\d", "_MATCH_", "pattern", "PATTERN", "regex")
 
@@ -400,6 +439,7 @@ def _prose_lines(src: str) -> set[int]:
 def scan() -> tuple[list[dict], int]:
     rows: list[dict] = []
     exact = 0
+    exempt = 0
     for f in sorted(ROOT.joinpath("computations").rglob("*.py")):
         if "_deprecated" in f.parts or "__pycache__" in f.parts:
             continue
@@ -425,6 +465,9 @@ def scan() -> tuple[list[dict], int]:
             for m in NUMBER.finditer(line):
                 if (i, m.group(0)) in fixtures:
                     continue
+                if _EXEMPT_RE.search(line) or _marker_above(lines, i):
+                    exempt += 1
+                    continue
                 got = classify(m.group(0))
                 if not got:
                     continue
@@ -441,7 +484,7 @@ def scan() -> tuple[list[dict], int]:
                     "verdict": verdict,
                     "use_instead": CANON[name][1],
                 })
-    return rows, exact
+    return rows, exact, exempt
 
 
 def _selftest() -> int:
@@ -525,7 +568,7 @@ def main(argv: list[str] | None = None) -> int:
     if args.selftest:
         return _selftest()
 
-    rows, exact = scan()
+    rows, exact, exempt = scan()
     by_const: dict[str, list[dict]] = defaultdict(list)
     for r in rows:
         by_const[r["constant"]].append(r)
@@ -574,6 +617,7 @@ def main(argv: list[str] | None = None) -> int:
         "blocking_total": len(rows),
         "by_constant": {k: len(v) for k, v in by_const.items()},
         "exact_duplicates": exact,
+        "declared_intentional": exempt,
         "findings": rows,
     }
     _prov_payload.setdefault("scriptFile", _os.path.basename(__file__))
@@ -602,6 +646,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"    {name:6s} {len(items):4d}  e.g. {items[0]['literal']}"
               f"   canonical {canon[:22]}")
     print(f"  exact duplicates (not blocking): {exact}")
+    print(f"  declared reference-literal-intentional: {exempt}")
     print("\n  Truncation computes a DIFFERENT number, silently. No precision")
     print("  gate sees it: the NO-FLOAT64 family checks how a value is carried")
     print("  and serialized, never whether it was right when typed. Wrapping a")

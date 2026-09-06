@@ -78,10 +78,21 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from chi_general_word import chi_all_lambda_any, word_is_monotone  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from binding_canonical import _Q_BETA_N  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
-# AME2020 binding energies, MeV.
-AME = {"D": mp.mpf("2.224566"), "3H": mp.mpf("8.481798"),
-       "3He": mp.mpf("7.718043")}
+# AME2020 binding energies, MeV — READ from the registry, not retyped.
+# The three literals that stood here (2.224566 / 8.481798 / 7.718043) were
+# copies of the RETIRED _deprecated/ame-2020-binding-energies.witness.json,
+# the hand-maintained file codata_constants.py says "had drifted"; the last
+# two are wrong rather than merely short (8.4817962, 7.71804132). Drained
+# corpus-wide in PR #6857 and re-introduced here from the same stale source.
+AME = {"D": AME_B_DEUTERON_MEV_VALIDATION,
+       "3H": AME_B_TRITIUM_MEV_VALIDATION,
+       "3He": AME_B_HE3_MEV_VALIDATION}
 ZN = {"D": (1, 1), "3H": (1, 2), "3He": (2, 1)}
 
 # Recorded ratios from the run this probe documents; re-derived below and

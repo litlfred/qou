@@ -4,12 +4,12 @@
   "scriptFile": "witness_value_copy_audit.py",
   "description": "Source literals of >= 11 significant digits that also appear in a *.witness.json the script does not itself produce \u2014 a value copied instead of loaded. Such a copy goes stale silently when the producer is re-run.",
   "min_sig_digits": 11,
-  "indexed_literals": 227021,
-  "total": 868,
+  "indexed_literals": 227055,
+  "total": 871,
   "narrow_total": 269,
   "narrow_files": 178,
-  "shared_total": 599,
-  "files": 532,
+  "shared_total": 602,
+  "files": 533,
   "from_deprecated_witness": 17,
   "findings": [
     {
@@ -174,7 +174,7 @@
         "computations/alpha-k-per-force-assembly.witness.json",
         "computations/alpha/alpha_em_form_comparison_probe.witness.json"
       ],
-      "witness_count": 8,
+      "witness_count": 9,
       "deprecated_source": false
     },
     {
@@ -458,7 +458,7 @@
         "computations/alpha-k-per-force-assembly.witness.json",
         "computations/alpha/alpha_em_form_comparison_probe.witness.json"
       ],
-      "witness_count": 8,
+      "witness_count": 9,
       "deprecated_source": false
     },
     {
@@ -2717,7 +2717,7 @@
         "computations/alpha-k-per-force-assembly.witness.json",
         "computations/alpha/alpha_em_form_comparison_probe.witness.json"
       ],
-      "witness_count": 8,
+      "witness_count": 9,
       "deprecated_source": false
     },
     {
@@ -3667,10 +3667,10 @@
       "witnesses": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/binding-bar-even-odd-probe.witness.json",
-        "computations/binding-combiner-markov-peel-fallback.witness.json",
-        "computations/branching-qvalue-chain.witness.json"
+        "computations/binding-block-multiplicative.witness.json",
+        "computations/binding-combiner-markov-peel-fallback.witness.json"
       ],
-      "witness_count": 12,
+      "witness_count": 14,
       "deprecated_source": false
     },
     {
@@ -4989,7 +4989,7 @@
         "computations/lambda-scale-proof-step5-skein-anchor.witness.json",
         "computations/phase5/phase3-triton-binding-convention-b.witness.json"
       ],
-      "witness_count": 15,
+      "witness_count": 14,
       "deprecated_source": false
     },
     {
@@ -7806,6 +7806,51 @@
       "deprecated_source": false
     },
     {
+      "file": "computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py",
+      "line": 83,
+      "literal": "1.1099785955541805752815940796095093779932822799587",
+      "sig_digits": 50,
+      "spread": "SHARED",
+      "witnesses": [
+        "computations/_deprecated/a-minus-2-q-substrate-probe.witness.json",
+        "computations/_deprecated/alpha-em-correction-derivation-attempts.witness.json",
+        "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
+        "computations/_deprecated/delta-lambda-dominant-pin-probe.witness.json"
+      ],
+      "witness_count": 49,
+      "deprecated_source": true
+    },
+    {
+      "file": "computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py",
+      "line": 84,
+      "literal": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+      "sig_digits": 70,
+      "spread": "SHARED",
+      "witnesses": [
+        "computations/atomic-tr-m-mpfr-50dps.witness.json",
+        "computations/audits/muon-pin-A-residual-surface.witness.json",
+        "computations/audits/muon-pin-three-values.witness.json",
+        "computations/audits/q0-anchor-consistency-audit.witness.json"
+      ],
+      "witness_count": 67,
+      "deprecated_source": false
+    },
+    {
+      "file": "computations/probes/retired_q0_refresh_to_live_muon_pin_probe.py",
+      "line": 111,
+      "literal": "137.035999177",
+      "sig_digits": 12,
+      "spread": "SHARED",
+      "witnesses": [
+        "computations/alpha-basis-knot-couplings.witness.json",
+        "computations/alpha-em-form-ladder.witness.json",
+        "computations/alpha-k-per-force-assembly.witness.json",
+        "computations/alpha/alpha_em_form_comparison_probe.witness.json"
+      ],
+      "witness_count": 8,
+      "deprecated_source": false
+    },
+    {
       "file": "computations/probes/rhoF_vs_adjoint_torsion.py",
       "line": 150,
       "literal": "2.828122088330783",
@@ -7952,7 +7997,7 @@
         "computations/audits/muon-pin-three-values.witness.json",
         "computations/audits/q0-anchor-consistency-audit.witness.json"
       ],
-      "witness_count": 67,
+      "witness_count": 68,
       "deprecated_source": false
     },
     {
@@ -7967,7 +8012,7 @@
         "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
         "computations/_deprecated/delta-lambda-dominant-pin-probe.witness.json"
       ],
-      "witness_count": 49,
+      "witness_count": 50,
       "deprecated_source": true
     },
     {
@@ -7978,9 +8023,10 @@
       "spread": "NARROW",
       "witnesses": [
         "computations/probes/published_figures_carry_a_retired_q0_probe.witness.json",
+        "computations/probes/retired_q0_refresh_to_live_muon_pin_probe.witness.json",
         "computations/witness-value-copy-audit.witness.json"
       ],
-      "witness_count": 2,
+      "witness_count": 3,
       "deprecated_source": false
     },
     {
@@ -8060,7 +8106,7 @@
         "computations/_deprecated/rho-k-codata-vs-six-term.witness.json",
         "computations/_deprecated/rho-k-markov-multiplicativity.witness.json"
       ],
-      "witness_count": 10,
+      "witness_count": 11,
       "deprecated_source": true
     },
     {
@@ -8678,7 +8724,7 @@
         "computations/lambda-scale-proof-step5-skein-anchor.witness.json",
         "computations/phase5/phase3-triton-binding-convention-b.witness.json"
       ],
-      "witness_count": 16,
+      "witness_count": 15,
       "deprecated_source": false
     },
     {
@@ -8794,7 +8840,7 @@
         "computations/alpha-em-b2-hecke-s5-symmetry.witness.json",
         "computations/alpha-em-b2-period-intertwiner.witness.json"
       ],
-      "witness_count": 135,
+      "witness_count": 136,
       "deprecated_source": false
     },
     {
@@ -9029,7 +9075,7 @@
         "computations/alpha-em-b2-hecke-s5-symmetry.witness.json",
         "computations/alpha-em-b2-period-intertwiner.witness.json"
       ],
-      "witness_count": 135,
+      "witness_count": 136,
       "deprecated_source": false
     },
     {
@@ -9057,7 +9103,7 @@
         "computations/alpha-em-b2-hecke-s5-symmetry.witness.json",
         "computations/alpha-em-b2-period-intertwiner.witness.json"
       ],
-      "witness_count": 135,
+      "witness_count": 136,
       "deprecated_source": false
     },
     {
@@ -9072,7 +9118,7 @@
         "computations/alpha-em-b2-hecke-s5-symmetry.witness.json",
         "computations/alpha-em-b2-period-intertwiner.witness.json"
       ],
-      "witness_count": 135,
+      "witness_count": 136,
       "deprecated_source": false
     },
     {
@@ -9102,7 +9148,7 @@
         "computations/alpha-em-b2-hecke-s5-symmetry.witness.json",
         "computations/alpha-em-b2-period-intertwiner.witness.json"
       ],
-      "witness_count": 135,
+      "witness_count": 136,
       "deprecated_source": false
     },
     {
@@ -9117,7 +9163,7 @@
         "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
         "computations/_deprecated/delta-lambda-dominant-pin-probe.witness.json"
       ],
-      "witness_count": 48,
+      "witness_count": 49,
       "deprecated_source": true
     },
     {
@@ -9132,7 +9178,7 @@
         "computations/alpha-em-b2-hecke-s5-symmetry.witness.json",
         "computations/alpha-em-b2-period-intertwiner.witness.json"
       ],
-      "witness_count": 135,
+      "witness_count": 136,
       "deprecated_source": false
     },
     {
@@ -9177,7 +9223,7 @@
         "computations/cross-check-trM-wenzl-lr-1ppb.witness.json",
         "computations/markov-identity-symbolic.witness.json"
       ],
-      "witness_count": 8,
+      "witness_count": 9,
       "deprecated_source": false
     },
     {
@@ -9192,7 +9238,7 @@
         "computations/cross-check-trM-wenzl-lr-1ppb.witness.json",
         "computations/per-knot-density-per-block-wiring.witness.json"
       ],
-      "witness_count": 7,
+      "witness_count": 8,
       "deprecated_source": false
     },
     {
@@ -9399,10 +9445,10 @@
       "witnesses": [
         "computations/audits/hardcoded-literal-audit.witness.json",
         "computations/binding-bar-even-odd-probe.witness.json",
-        "computations/binding-combiner-markov-peel-fallback.witness.json",
-        "computations/branching-qvalue-chain.witness.json"
+        "computations/binding-block-multiplicative.witness.json",
+        "computations/binding-combiner-markov-peel-fallback.witness.json"
       ],
-      "witness_count": 12,
+      "witness_count": 14,
       "deprecated_source": false
     },
     {
@@ -9921,7 +9967,7 @@
         "computations/lambda-scale-proof-step5-skein-anchor.witness.json",
         "computations/phase5/phase3-triton-binding-convention-b.witness.json"
       ],
-      "witness_count": 15,
+      "witness_count": 14,
       "deprecated_source": false
     },
     {
@@ -10173,7 +10219,7 @@
         "computations/cross-check-trM-wenzl-lr-1ppb.witness.json",
         "computations/markov-identity-symbolic.witness.json"
       ],
-      "witness_count": 8,
+      "witness_count": 9,
       "deprecated_source": false
     },
     {
@@ -10188,7 +10234,7 @@
         "computations/cross-check-trM-wenzl-lr-1ppb.witness.json",
         "computations/per-knot-density-per-block-wiring.witness.json"
       ],
-      "witness_count": 7,
+      "witness_count": 8,
       "deprecated_source": false
     },
     {
@@ -10232,7 +10278,7 @@
         "computations/lambda-scale-proof-step5-skein-anchor.witness.json",
         "computations/phase5/phase3-triton-binding-convention-b.witness.json"
       ],
-      "witness_count": 15,
+      "witness_count": 14,
       "deprecated_source": false
     },
     {
@@ -10379,7 +10425,7 @@
         "computations/alpha-em-b2-hecke-s5-symmetry.witness.json",
         "computations/alpha-em-b2-period-intertwiner.witness.json"
       ],
-      "witness_count": 135,
+      "witness_count": 136,
       "deprecated_source": false
     },
     {
@@ -10492,7 +10538,7 @@
         "computations/alpha-em-b2-hecke-s5-symmetry.witness.json",
         "computations/alpha-em-b2-period-intertwiner.witness.json"
       ],
-      "witness_count": 136,
+      "witness_count": 137,
       "deprecated_source": false
     },
     {
@@ -10520,7 +10566,7 @@
         "computations/alpha-em-b2-hecke-s5-symmetry.witness.json",
         "computations/alpha-em-b2-period-intertwiner.witness.json"
       ],
-      "witness_count": 136,
+      "witness_count": 137,
       "deprecated_source": false
     },
     {
@@ -10535,7 +10581,7 @@
         "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
         "computations/_deprecated/delta-lambda-dominant-pin-probe.witness.json"
       ],
-      "witness_count": 49,
+      "witness_count": 50,
       "deprecated_source": true
     },
     {
@@ -10550,7 +10596,7 @@
         "computations/alpha-em-b2-hecke-s5-symmetry.witness.json",
         "computations/alpha-em-b2-period-intertwiner.witness.json"
       ],
-      "witness_count": 135,
+      "witness_count": 136,
       "deprecated_source": false
     },
     {
