@@ -7,9 +7,12 @@
 > `259/128 → 7/128` — and `c₁(nn)` becomes **exactly 0**.
 >
 > **Convention-scoped, not refuted:** `c₃` has not been re-measured under
-> Borromean (it needs `P = 5`). But it was built on #6559's crossover reading,
-> and that reading does not survive — so treat the comparable-not-diverging
-> conclusion as **grouped-conditional and open** until `c₃` is re-run.
+> Borromean (it needs `P = 5`). It was built on #6559's crossover reading, and
+> that reading is now **split** (2026-09-06, bean `qou-yaig`): its ENDPOINT
+> survives — `c₂(⁴He) = 439/512`, ratio **1.5535 > 1** — while its LOCATION
+> does not, the ratio being above 1 already at `A = 2` and `A = 3`. So the
+> comparable-not-diverging conclusion is **grouped-conditional and open**,
+> but the premise it leans on is no longer simply refuted.
 >
 > Full table under both orderings, and what survives:
 > [`2026-09-06-the-c1-c2-crossover-is-grouped-specific.md`](2026-09-06-the-c1-c2-crossover-is-grouped-specific.md).
