@@ -36,10 +36,11 @@ that do not yet conform.*
 
 ### Precision discipline
 
-- Default compute: **65 dps** mpmath
+- Default compute: **70 dps** mpmath
   (`qou_substrate.precision.COMPUTE_DPS`).
-- Default serialisation: **50 dps**
-  (`qou_substrate.precision.OUTPUT_DPS`).
+- Default serialisation: **60 dps**
+  (`qou_substrate.precision.OUTPUT_DPS`), with a guard of **10**
+  (`PRECISION_GUARD`, the difference between the two).
 - Cross-method assertion at $\leq 10^{-15}$ relative agreement
   (L1 — internal compute precision).
 - The `precisionMetadata` block records the truncation bound so
