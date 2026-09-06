@@ -1,0 +1,669 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2104.04941v2",
+ "source": {
+  "file": "2104.04941v2.pdf",
+  "sha256": "84426ed37754aa7887343b5506acf1f63f15468ac5c96155e62f81b461dc307f",
+  "bytes": 1370675,
+  "pages": 55,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2104.04941",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "21 Jan 2022"
+  },
+  "doi": null,
+  "title": "FOCK\u2013GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS S. GILLES",
+  "authors_raw": null,
+  "title_lines": [
+   "FOCK\u2013GONCHAROV COORDINATES FOR SEMISIMPLE LIE GROUPS",
+   "S. GILLES"
+  ],
+  "abstract": "Fock and Goncharov [FG06b] introduced cluster ensembles, p roviding a framework for coordi- nates on varieties of surface representations into Lie grou ps, as well as a complete construction for groups of type An. Later, Zickert [Zic19], Le [Le16b], [Le16a], and Ip [Ip18] described, using di\ufb00ering methods, how to apply this framework for other Lie group types. Zicker t also showed that this framework applies to triangulated 3-manifolds. W e present a complete, general construction, b ased on work of Fomin and Zelevinsky. In particular, we complete the picture for the r emaining cases: Lie groups of types F4, E6, E7, and E8.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220124212347-05'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "Fock\u2013Goncharov Coordinates for Semisimple Lie Groups",
+   "Author": "S. Gilles"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Classical Teichm\u00fcller space",
+   "page": 3,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Cluster ensemble structures",
+   "page": 4,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Higher Teichm\u00fcller spaces",
+   "page": 5,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Results",
+   "page": 6,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Historical context",
+   "page": 7,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "Ingredients",
+   "page": 8,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Root spaces and Weyl groups",
+   "page": 8,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Unipotent subgroups",
+   "page": 9,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Coxeter elements",
+   "page": 9,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Generalized minors",
+   "page": 9,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Factorization coordinates",
+   "page": 11,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Quivers",
+   "page": 11,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "Cluster ensembles",
+   "page": 12,
+   "source": "outline",
+   "number": "2.7"
+  },
+  {
+   "level": 1,
+   "title": "Key identities",
+   "page": 13,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Actions of sigma_G",
+   "page": 13,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Grid exchange relations",
+   "page": 14,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Coordinates on generically-decorated representations",
+   "page": 15,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Configurations and gluings",
+   "page": 16,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Triangular quivers and Fock\u2013Goncharov coordinate structures",
+   "page": 17,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "From coordinates to representations",
+   "page": 21,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Regarding 3-manifolds",
+   "page": 23,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "Main Result: Fock\u2013Goncharov coordinate structures for non-A_n",
+   "page": 23,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Overview",
+   "page": 23,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Building the rectangle Q0",
+   "page": 24,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Construction of mu_{rot}",
+   "page": 25,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "The A. edge",
+   "page": 26,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Construction of mu_{flip}",
+   "page": 27,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 2,
+   "title": "The map M",
+   "page": 29,
+   "source": "outline",
+   "number": "5.6"
+  },
+  {
+   "level": 2,
+   "title": "The significance of the ``twisting'' mutations",
+   "page": 31,
+   "source": "outline",
+   "number": "5.7"
+  },
+  {
+   "level": 1,
+   "title": "Construction for A_n",
+   "page": 32,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Proof of thm:fgcs-exists for simple G",
+   "page": 33,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Overview",
+   "page": 33,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Ordering mutations",
+   "page": 34,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Rotation mutations",
+   "page": 36,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 2,
+   "title": "Flip mutations",
+   "page": 40,
+   "source": "outline",
+   "number": "7.4"
+  },
+  {
+   "level": 1,
+   "title": "Proof of thm:fgcs-exists for semisimple G",
+   "page": 43,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 44,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "A_5",
+   "page": 44,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "B_3",
+   "page": 45,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 2,
+   "title": "D_5",
+   "page": 46,
+   "source": "outline",
+   "number": "9.3"
+  },
+  {
+   "level": 2,
+   "title": "G_2",
+   "page": 47,
+   "source": "outline",
+   "number": "9.4"
+  },
+  {
+   "level": 2,
+   "title": "E_6",
+   "page": 48,
+   "source": "outline",
+   "number": "9.5"
+  },
+  {
+   "level": 2,
+   "title": "E_7",
+   "page": 50,
+   "source": "outline",
+   "number": "9.6"
+  },
+  {
+   "level": 2,
+   "title": "E_8",
+   "page": 51,
+   "source": "outline",
+   "number": "9.7"
+  },
+  {
+   "level": 2,
+   "title": "D_2 = A_1 x A_1",
+   "page": 51,
+   "source": "outline",
+   "number": "9.8"
+  },
+  {
+   "level": 2,
+   "title": "A_3 x C_2",
+   "page": 51,
+   "source": "outline",
+   "number": "9.9"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 53,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7953,
+   "n_words": 1401
+  },
+  {
+   "id": "sec-002-12-cluster-ensemble-structures",
+   "number": "1.2",
+   "title": "Cluster ensemble structures",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1122,
+   "n_words": 199
+  },
+  {
+   "id": "sec-003-13-higher-teichm\u00fcller-spaces",
+   "number": "1.3",
+   "title": "Higher Teichm\u00fcller spaces",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 5257,
+   "n_words": 878
+  },
+  {
+   "id": "sec-004-14-results",
+   "number": "1.4",
+   "title": "Results",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2263,
+   "n_words": 367
+  },
+  {
+   "id": "sec-005-15-historical-context",
+   "number": "1.5",
+   "title": "Historical context",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2664,
+   "n_words": 431
+  },
+  {
+   "id": "sec-006-23-coxeter-elements",
+   "number": "2.3",
+   "title": "Coxeter elements",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 207,
+   "n_words": 38
+  },
+  {
+   "id": "sec-007-2-ingredients",
+   "number": "2",
+   "title": "Ingredients",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-24-generalized-minors",
+   "number": "2.4",
+   "title": "Generalized minors",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 78,
+   "n_words": 12
+  },
+  {
+   "id": "sec-009-21-root-spaces-and-weyl-groups",
+   "number": "2.1",
+   "title": "Root spaces and Weyl groups",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2808,
+   "n_words": 573
+  },
+  {
+   "id": "sec-010-22-unipotent-subgroups",
+   "number": "2.2",
+   "title": "Unipotent subgroups",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 5480,
+   "n_words": 1014
+  },
+  {
+   "id": "sec-011-25-factorization-coordinates",
+   "number": "2.5",
+   "title": "Factorization coordinates",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1049,
+   "n_words": 218
+  },
+  {
+   "id": "sec-012-26-quivers",
+   "number": "2.6",
+   "title": "Quivers",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2837,
+   "n_words": 551
+  },
+  {
+   "id": "sec-013-27-cluster-ensembles",
+   "number": "2.7",
+   "title": "Cluster ensembles",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2246,
+   "n_words": 458
+  },
+  {
+   "id": "sec-014-3-key-identities",
+   "number": "3",
+   "title": "Key identities",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 3102,
+   "n_words": 553
+  },
+  {
+   "id": "sec-015-32-grid-exchange-relations",
+   "number": "3.2",
+   "title": "Grid exchange relations",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2985,
+   "n_words": 569
+  },
+  {
+   "id": "sec-016-4-coordinates-on-generically-decorated-represent",
+   "number": "4",
+   "title": "Coordinates on generically-decorated representations",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 23,
+   "n_chars": 18787,
+   "n_words": 3517
+  },
+  {
+   "id": "sec-017-44-regarding-3-manifolds",
+   "number": "4.4",
+   "title": "Regarding 3-manifolds",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 1380,
+   "n_words": 242
+  },
+  {
+   "id": "sec-018-5-main-result-fockgoncharov-coordinate-structure",
+   "number": "5",
+   "title": "Main Result: Fock\u2013Goncharov coordinate structures for non-A_n",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 23,
+   "n_chars": 583,
+   "n_words": 105
+  },
+  {
+   "id": "sec-019-51-overview",
+   "number": "5.1",
+   "title": "Overview",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 3483,
+   "n_words": 626
+  },
+  {
+   "id": "sec-020-52-building-the-rectangle-q0",
+   "number": "5.2",
+   "title": "Building the rectangle Q0",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 29,
+   "n_chars": 10476,
+   "n_words": 1994
+  },
+  {
+   "id": "sec-021-56-the-map-m",
+   "number": "5.6",
+   "title": "The map M",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 33,
+   "n_chars": 11649,
+   "n_words": 1851
+  },
+  {
+   "id": "sec-022-71-overview",
+   "number": "7.1",
+   "title": "Overview",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 1298,
+   "n_words": 259
+  },
+  {
+   "id": "sec-023-72-ordering-mutations",
+   "number": "7.2",
+   "title": "Ordering mutations",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 6656,
+   "n_words": 1279
+  },
+  {
+   "id": "sec-024-73-rotation-mutations",
+   "number": "7.3",
+   "title": "Rotation mutations",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 40,
+   "n_chars": 9795,
+   "n_words": 1896
+  },
+  {
+   "id": "sec-025-74-flip-mutations",
+   "number": "7.4",
+   "title": "Flip mutations",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 44,
+   "n_chars": 8036,
+   "n_words": 1548
+  },
+  {
+   "id": "sec-026-9-examples",
+   "number": "9",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 53,
+   "n_chars": 23061,
+   "n_words": 4869
+  },
+  {
+   "id": "sec-027-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 53,
+   "page_end": 55,
+   "n_chars": 6382,
+   "n_words": 850
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 49,
+  "sections": 28,
+  "chars_total": 141637
+ }
+}

@@ -7,6 +7,7 @@ section_number: 1.4
 pages: 4-6
 source_pdf: 1401.5542v1.pdf
 source_sha256: f7cd278a274f37c5
+doc_brief: "THE PTOLEMY FIELD OF 3-MANIFOLD-REPRESENTATIONS — The Ptolemy coordinates for boundary-unipotent SL(n, C)-representations of a 3-manifold group were introduced in [7] inspired by theA-coordinates on"
 ---
 2 (T ) as subsets of an ambient space Ce,
 with coordinates indexed by the 1-cells of T . Let T = (C∗)v, with the coordinates indexed

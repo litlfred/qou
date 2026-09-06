@@ -1,0 +1,266 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1210.5756v1",
+ "source": {
+  "file": "1210.5756v1.pdf",
+  "sha256": "c7546a79a85b8dd532a665a41fe51c62cfa4fd9681c6f23d05efbccc962cee34",
+  "bytes": 4069500,
+  "pages": 19,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1210.5756",
+   "version": "1",
+   "primary_class": "math.MG",
+   "stamp_date": "21 Oct 2012"
+  },
+  "doi": null,
+  "title": "Contact Graphs of Unit Sphere Packings Revisited \u2217",
+  "authors_raw": "K\u00e1roly Bezdek\u2020and Samuel Reid \u2021",
+  "title_lines": [
+   "Contact Graphs of Unit Sphere Packings Revisited \u2217"
+  ],
+  "abstract": "The contact graph of an arbitrary \ufb01nite packing of unit balls in Euclidean 3-space is the (simple) graph whose vertices correspond to the packing elements and whose two vertices are connected by an edge if the corresponding two packing elements touch each other. One of the most basic questions on contact graphs is to \ufb01nd the maximum number of edges that a contact graph of a packing of n unit balls can have. In this paper, improving earlier estimates, we prove that the number of touching pairs in an arbitrary packing of n unit balls in E3 is always less than 6n \u22120.926n 2 3 . Moreover, as a natural extension of the above problem, we propose to study the maximum number of touching triplets (resp., quadruples) in an arbitrary packing of n unit balls in Euclidean 3-space. In particular, we prove that the number of touching triplets (resp., quadruples) in an arbitrary packing of n unit balls in E3 is at most 25 3 n (resp., 11 4 n).",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20180508193212Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Proof of (i) in Theorem 1",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Upper bounds for Lattice Packings",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of (ii) in Theorem 1",
+   "page": 6,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of (ii) in Theorem 2",
+   "page": 7,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of (i) in Theorem 2 using Theorem 3",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The Polygon Lemmas on S2 for Theorem 3",
+   "page": 8,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 3",
+   "page": 13,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "An upper bound on touching triplets on S2",
+   "page": 13,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "An upper bound on touching pairs on S2",
+   "page": 16,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "Explicit Constructions",
+   "page": 16,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "The Octahedral Construction",
+   "page": 16,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Tightness of the estimates in Problem 2",
+   "page": 18,
+   "source": "outline",
+   "number": "7.2"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6243,
+   "n_words": 1157
+  },
+  {
+   "id": "sec-001-2-proof-of-i-in-theorem-1",
+   "number": "2",
+   "title": "Proof of (i) in Theorem 1",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 9278,
+   "n_words": 1888
+  },
+  {
+   "id": "sec-002-3-upper-bounds-for-lattice-packings",
+   "number": "3",
+   "title": "Upper bounds for Lattice Packings",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-31-proof-of-ii-in-theorem-1",
+   "number": "3.1",
+   "title": "Proof of (ii) in Theorem 1",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2963,
+   "n_words": 600
+  },
+  {
+   "id": "sec-004-32-proof-of-ii-in-theorem-2",
+   "number": "3.2",
+   "title": "Proof of (ii) in Theorem 2",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1034,
+   "n_words": 188
+  },
+  {
+   "id": "sec-005-4-proof-of-i-in-theorem-2-using-theorem-3",
+   "number": "4",
+   "title": "Proof of (i) in Theorem 2 using Theorem 3",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1804,
+   "n_words": 370
+  },
+  {
+   "id": "sec-006-5-the-polygon-lemmas-on-s2-for-theorem-3",
+   "number": "5",
+   "title": "The Polygon Lemmas on S2 for Theorem 3",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 13,
+   "n_chars": 11288,
+   "n_words": 2233
+  },
+  {
+   "id": "sec-007-6-proof-of-theorem-3",
+   "number": "6",
+   "title": "Proof of Theorem 3",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 318,
+   "n_words": 54
+  },
+  {
+   "id": "sec-008-61-an-upper-bound-on-touching-triplets-on-s2",
+   "number": "6.1",
+   "title": "An upper bound on touching triplets on S2",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 9580,
+   "n_words": 1815
+  },
+  {
+   "id": "sec-009-62-an-upper-bound-on-touching-pairs-on-s2",
+   "number": "6.2",
+   "title": "An upper bound on touching pairs on S2",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 1816,
+   "n_words": 375
+  },
+  {
+   "id": "sec-010-7-explicit-constructions",
+   "number": "7",
+   "title": "Explicit Constructions",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-71-the-octahedral-construction",
+   "number": "7.1",
+   "title": "The Octahedral Construction",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 2471,
+   "n_words": 510
+  },
+  {
+   "id": "sec-012-72-tightness-of-the-estimates-in-problem-2",
+   "number": "7.2",
+   "title": "Tightness of the estimates in Problem 2",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 3036,
+   "n_words": 515
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "sections": 13,
+  "chars_total": 49831
+ }
+}

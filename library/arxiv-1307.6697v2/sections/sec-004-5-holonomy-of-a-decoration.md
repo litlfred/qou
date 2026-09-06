@@ -7,6 +7,7 @@ section_number: 5
 pages: 9-12
 source_pdf: 1307.6697v2.pdf
 source_sha256: a3afaefdaebe0292
+doc_brief: "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS — In this paper we are interested in computing representation s of the funda- mental group of a 3-manifold into PGL (3,C) (in particular in PGL"
 ---
 In this section we recall how to compute the holonomy of a deco ration described above
 (see [ 2] for more details). A decoration of a triangulation of a mani fold M gives rise to a

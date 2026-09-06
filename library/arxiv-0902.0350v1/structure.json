@@ -1,0 +1,257 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0902.0350v1",
+ "source": {
+  "file": "0902.0350v1.pdf",
+  "sha256": "4591687132c93973fa7cef71802fea61da8375d3cc6545d0667a8bbeaf20e7bc",
+  "bytes": 576529,
+  "pages": 41,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0902.0350",
+   "version": "1",
+   "primary_class": "math.MG",
+   "stamp_date": "2 Feb 2009"
+  },
+  "doi": null,
+  "title": "A REVISION OF THE PROOFOF THE KEPLER CONJECTURE",
+  "authors_raw": "THOMAS C. HALES, JOHN HARRISON, SEAN MCLAUGHLIN, TOBIAS NIPKOW",
+  "title_lines": [
+   "A REVISION OF THE PROOFOF THE KEPLER",
+   "CONJECTURE"
+  ],
+  "abstract": "The Kepler conjecture asserts that no packing of congruent balls in three-dimensional Euclidean space has density greater than that of the face-centered cubic packing. The original proof, announced in 1998 and published in 2006, is long and complex. The process of revision and review did not end with the publication of the proof. This article summarizes the current status of a long-term initiative to reorganize the original proof into a more transparent form and to provide a greater level of certification of the correctness of the computer code and other details of the proof. A final part of this article lists errata in the original proof of the Kepler conjecture.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20181028155518Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.4",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Part 1. Formal Proof Initiative",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Flyspeck project",
+   "page": 3,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Blueprint edition of the Kepler conjecture",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Formalizing the ordinary mathematics",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Standard ML reimplementation of code",
+   "page": 10,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Proving nonlinear inequalities with Bernstein bases",
+   "page": 12,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Tame graph enumeration",
+   "page": 16,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Verifying linear programs",
+   "page": 19,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Part 2. Addendum to and Errata in the Original Proof",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Biconnected graphs",
+   "page": 22,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Errata listing",
+   "page": 35,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3014,
+   "n_words": 482
+  },
+  {
+   "id": "sec-001-1-the-flyspeck-project",
+   "number": "1",
+   "title": "The Flyspeck project",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 5609,
+   "n_words": 896
+  },
+  {
+   "id": "sec-002-2-blueprint-edition-of-the-kepler-conjecture",
+   "number": "2",
+   "title": "Blueprint edition of the Kepler conjecture",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 5002,
+   "n_words": 825
+  },
+  {
+   "id": "sec-003-3-formalizing-the-ordinary-mathematics",
+   "number": "3",
+   "title": "Formalizing the ordinary mathematics",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 8118,
+   "n_words": 1301
+  },
+  {
+   "id": "sec-004-4-standard-ml-reimplementation-of-code",
+   "number": "4",
+   "title": "Standard ML reimplementation of code",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 6775,
+   "n_words": 1065
+  },
+  {
+   "id": "sec-005-5-proving-nonlinear-inequalities-with-bernstein",
+   "number": "5",
+   "title": "Proving nonlinear inequalities with Bernstein bases",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 6639,
+   "n_words": 1162
+  },
+  {
+   "id": "sec-006-6-tame-graph-enumeration",
+   "number": "6",
+   "title": "Tame graph enumeration",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 8468,
+   "n_words": 1378
+  },
+  {
+   "id": "sec-007-7-verifying-linear-programs",
+   "number": "7",
+   "title": "Verifying linear programs",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 4596,
+   "n_words": 757
+  },
+  {
+   "id": "sec-008-part-2-addendum-to-and-errata-in-the-original-pr",
+   "number": null,
+   "title": "Part 2. Addendum to and Errata in the Original Proof",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-8-biconnected-graphs",
+   "number": "8",
+   "title": "Biconnected graphs",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 35,
+   "n_chars": 28298,
+   "n_words": 4749
+  },
+  {
+   "id": "sec-010-9-errata-listing",
+   "number": "9",
+   "title": "Errata listing",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 38,
+   "n_chars": 8474,
+   "n_words": 1382
+  },
+  {
+   "id": "sec-011-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 38,
+   "page_end": 41,
+   "n_chars": 8412,
+   "n_words": 1123
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 13,
+  "sections": 12,
+  "chars_total": 93405
+ }
+}

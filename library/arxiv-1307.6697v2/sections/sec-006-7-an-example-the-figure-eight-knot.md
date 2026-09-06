@@ -7,6 +7,7 @@ section_number: 7
 pages: 16-20
 source_pdf: 1307.6697v2.pdf
 source_sha256: a3afaefdaebe0292
+doc_brief: "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS — In this paper we are interested in computing representation s of the funda- mental group of a 3-manifold into PGL (3,C) (in particular in PGL"
 ---
 The ﬁgure eight knot is given as a gluing of two tetrahedra as i n Figure 2. We refer to it
 to set the equations of compatibility.

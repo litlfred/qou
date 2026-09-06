@@ -1,0 +1,207 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1904.12095v2",
+ "source": {
+  "file": "1904.12095v2.pdf",
+  "sha256": "7006b250f0d3c991fc0f6b822f74211e255a6ea876e38bf8cacc5633dc9a45be",
+  "bytes": 634580,
+  "pages": 28,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1904.12095",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "6 Jan 2021"
+  },
+  "doi": null,
+  "title": "Verified computations for closed hyperbolic 3-manifolds Matthias Goerner",
+  "authors_raw": null,
+  "title_lines": [
+   "Verified computations for",
+   "closed hyperbolic 3-manifolds",
+   "Matthias Goerner"
+  ],
+  "abstract": "Extending methods \ufb01rst used by Casson, we show how to verify a hyper- bolic structure on a \ufb01nite triangulation of a closed 3-manifold using interval arith- metic methods. A key ingredient is a new theoretical result (akin to a theorem by Neumann-Zagier and Moser for ideal triangulations upon which HIKMOT is based) showing that there is a redundancy among the edge equations if the edges avoid \u201cgim- bal lock\u201d . We successfully test the algorithm on known examples such as the ori- entable closed manifolds in the Hodgson-Weeks census and the bundle census by Bell. We also tackle a previously unsolved problem and determine all knots and links with up to 14 crossings that have a hyperbolic branched double cover.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20210107013222Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Hyperbolic structures on finite triangulations",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Cocycles",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Extending cocycles on genus 0 surfaces",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Extending cocycles on triangulations",
+   "page": 12,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Examples of (non-)gimbal lock",
+   "page": 14,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Algorithm",
+   "page": 15,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Results",
+   "page": 20,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 21,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Appendix: The uncited theorem HIKMOT relies on",
+   "page": 25,
+   "source": "outline",
+   "number": "10"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 12235,
+   "n_words": 2145
+  },
+  {
+   "id": "sec-001-3-cocycles",
+   "number": "3",
+   "title": "Cocycles",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 6189,
+   "n_words": 1249
+  },
+  {
+   "id": "sec-002-4-extending-cocycles-on-genus-0-surfaces",
+   "number": "4",
+   "title": "Extending cocycles on genus 0 surfaces",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 6446,
+   "n_words": 1278
+  },
+  {
+   "id": "sec-003-5-extending-cocycles-on-triangulations",
+   "number": "5",
+   "title": "Extending cocycles on triangulations",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 3965,
+   "n_words": 889
+  },
+  {
+   "id": "sec-004-6-examples-of-non-gimbal-lock",
+   "number": "6",
+   "title": "Examples of (non-)gimbal lock",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 3605,
+   "n_words": 685
+  },
+  {
+   "id": "sec-005-7-algorithm",
+   "number": "7",
+   "title": "Algorithm",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 20,
+   "n_chars": 7919,
+   "n_words": 1573
+  },
+  {
+   "id": "sec-006-8-results",
+   "number": "8",
+   "title": "Results",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3243,
+   "n_words": 527
+  },
+  {
+   "id": "sec-007-9-discussion",
+   "number": "9",
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 10280,
+   "n_words": 2194
+  },
+  {
+   "id": "sec-008-10-appendix-the-uncited-theorem-hikmot-relies-on",
+   "number": "10",
+   "title": "Appendix: The uncited theorem HIKMOT relies on",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 7248,
+   "n_words": 1099
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 9,
+  "chars_total": 61130
+ }
+}
