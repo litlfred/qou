@@ -29,14 +29,24 @@ so the *factorisation* `d(w.g) = w . d(g)` transfers (it is reference-insensitiv
 
 Two ways to close that gap, and they cost very differently:
 
-  1. restate `murphyM` over the row-superstandard reference — a definitional change to
-     merged code, touching every consumer of `murphyM`;
+  1. restate `murphyM` over the row-superstandard reference;
   2. re-prove the Garnir length additivity against the column reference — cheap IF it is
      true, and impossible if it is not.
 
 **Option 2 is a factual question about small symmetric groups, so measure it before
 building either.**  That is this file.  A refutation here forces option 1 and is worth as
 much as a confirmation.
+
+**Outcome: this probe refuted (2), and (1) is now DONE** —
+`QOU/BraidKnot/MurphyRefTab.lean`, by making the reference an explicit *parameter* rather
+than by editing merged code: `murphyMRef r s t`, with `murphyM = murphyMRef
+(colSuperstandard mu)` definitionally and `murphyMRow := murphyMRef (refTab mu)` as Mathas'
+element; `exists_garnir_murphyMRow_factor` then composes Mathas 3.13 onto it, sorry-free.
+
+An estimate to correct while recording that: option 1 was described here as *"a definitional
+change to merged code, touching every consumer of `murphyM`"*.  Measured afterwards,
+**`murphyM` has zero consumers outside its own file** — one internal call in `murphyFamily`
+plus two docstring mentions.  The cost estimate was wrong by the whole of its content.
 
 ## What is checked
 
@@ -328,8 +338,12 @@ if __name__ == "__main__":
         print("    => Option 2 is REFUTED on the measured range: length additivity at a")
         print("       Garnir descent node is a property of the ROW-superstandard")
         print("       reference and does not survive the change to column-superstandard.")
-        print("       Closing the gap in MurphyGarnirFactor.lean requires option 1 —")
-        print("       restating murphyM over refTab — not a re-proof.")
+        print("       Closing the gap required option 1 -- restating the Murphy element")
+        print("       over refTab -- and that is DONE: QOU/BraidKnot/MurphyRefTab.lean")
+        print("       makes the reference an explicit parameter (murphyMRef r s t, with")
+        print("       murphyM = murphyMRef (colSuperstandard mu) definitionally) and")
+        print("       composes 3.13 onto Mathas' element in")
+        print("       exists_garnir_murphyMRow_factor, sorry-free.")
     elif row_all and col_all:
         print()
         print("    => Option 2 is NOT refuted on the measured range.  That is evidence,")
