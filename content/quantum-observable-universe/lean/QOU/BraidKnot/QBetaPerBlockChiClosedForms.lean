@@ -1063,7 +1063,19 @@ pole; Δτ_M's vanishing is the `(q²−1)` factor in each per-block
 `chi_block_λ`). -/
 
 /-- The Markov parameter `z(q) = √q / (1 + q)`. Pure archimedean
-construction — depends on `Real.sqrt`. Source: Wenzl. -/
+construction — depends on `Real.sqrt`. Source: Wenzl.
+
+**Convention C, deliberately — not the canonical Markov parameter.** Owner
+ruling R1 (2026-08-15) makes convention D, `z = q³/(q²+1)`, canonical and
+excises C. This definition is kept **as the C-frame object** because every
+consumer in this file (`delta_tau_M_canonical`, the `c_k` Taylor orders) is
+the convention-C Q_β precision ladder, which bean `qou-cds1` blocks from
+migration until the ladder is re-derived under D: `decayLadder_zC_threeRow_ne_zero`
+(`QOU.QBeta.MarkovZFullBarCondition`) makes the C-frame ladder and the mass
+channel's three-row forcing mutually exclusive, so substituting `q³/(q²+1)` here
+would not migrate the ladder, it would change what these declarations assert.
+Every value derived from this definition is C-conditional; do not cite it as D.
+Convention D lives in `QOU.BraidKnot.markovZD` (`MarkovConventionSeparation.lean`). -/
 noncomputable def markov_parameter (q : ℝ) : ℝ :=
   Real.sqrt q / (1 + q)
 
