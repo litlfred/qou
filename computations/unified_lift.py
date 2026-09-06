@@ -44,9 +44,10 @@ TO that baseline.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from codata_constants import (
+from codata_constants import (  # noqa: E402
     AME_B_HE3_MEV_VALIDATION,
-    M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
 )
 import sys
 import math
@@ -221,7 +222,7 @@ if __name__ == "__main__":
     from datetime import datetime, timezone
     ATOMS = [
         ("D",    1, 1,  2.22452),
-        ("T",    1, 2,  8.481821),
+        ("T",    1, 2,  float(AME_B_TRITIUM_MEV_VALIDATION)),
         ("3He",  2, 1,  AME_B_HE3_MEV_VALIDATION),
     ]
     print("=" * 110)

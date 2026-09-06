@@ -21,10 +21,11 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
-from codata_constants import (
+from codata_constants import (  # noqa: E402
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
-    M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p for E_0 anchor,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
 )
 del _sys, _Path, _bridge
 
@@ -308,7 +309,7 @@ def binding_probe(Z, N, cross_mode, *, m_pp=None, m_pn=None, m_nn=None,
 if __name__ == "__main__":
     ATOMS = [
         ("D",    1, 1,  2.22452),
-        ("T",    1, 2,  8.481821),
+        ("T",    1, 2,  float(AME_B_TRITIUM_MEV_VALIDATION)),
         ("3He",  2, 1,  AME_B_HE3_MEV_VALIDATION),
         ("4He",  2, 2, AME_B_HE4_MEV_VALIDATION),
         ("6Li",  3, 3, 32.0),

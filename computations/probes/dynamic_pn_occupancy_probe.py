@@ -20,6 +20,7 @@ from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 def q_int(q, n):
@@ -107,7 +108,7 @@ def main():
     
     isotopes = [
         ("2H", 1, 1, 1, AME_B_DEUTERON_MEV_VALIDATION),
-        ("3H", 1, 2, 0.5, 8.481821),
+        ("3H", 1, 2, 0.5, float(AME_B_TRITIUM_MEV_VALIDATION)),
         ("3He", 2, 1, 0.5, AME_B_HE3_MEV_VALIDATION),
         ("4He", 2, 2, 0, AME_B_HE4_MEV_VALIDATION)
     ]

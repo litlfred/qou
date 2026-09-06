@@ -59,7 +59,10 @@ from _precision import set_compute_dps  # noqa: E402
 import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from codata_constants import AME_B_TRITIUM_MEV_VALIDATION
+from codata_constants import (
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
@@ -73,7 +76,7 @@ MU_3HE = mp.mpf("3.2918285794896933")
 
 # AME binding energies (MeV) — direction cross-check only
 B_T_AME = AME_B_TRITIUM_MEV_VALIDATION
-B_3HE_AME = mp.mpf("7.718058")
+B_3HE_AME = AME_B_HE3_MEV_VALIDATION
 
 
 def w(a, b):

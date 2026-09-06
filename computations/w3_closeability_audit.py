@@ -51,7 +51,9 @@ from _li_2_q_util import flavor_split_leading  # noqa: E402
 from coulomb_energy import R0_FM, alpha_em_hbar_c_mev_fm  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 Q0 = mp.mpf(Q_50_DIGIT_STR)
@@ -59,8 +61,8 @@ M_E = mp.mpf(str(M_E_MEV))
 ALPHA_HC = mp.mpf(str(alpha_em_hbar_c_mev_fm()))
 
 # AME2020 total binding (MeV) — the comparison boundary, not model input.
-B_AME = {"2H": AME_B_DEUTERON_MEV_VALIDATION, "3H": mp.mpf("8.481821"),
-         "3He": mp.mpf("7.718058"), "4He": AME_B_HE4_MEV_VALIDATION}
+B_AME = {"2H": AME_B_DEUTERON_MEV_VALIDATION, "3H": AME_B_TRITIUM_MEV_VALIDATION,
+         "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 ZA = {"2H": (1, 2), "3H": (1, 3), "3He": (2, 3), "4He": (2, 4)}
 
 
@@ -308,7 +310,8 @@ def main() -> int:
         print(f"     monotone w_2 <= w_3 <= w_4 ?  "
               f"{'YES' if (w2 <= w3 <= w4) else 'NO'}")
         print(f"     => PREDICTION B(3H) = {mp.nstr(b3, 8)} MeV"
-              f"   vs B_AME 8.481821  ({mp.nstr(pct(b3, B_AME['3H']), 5)}%)")
+              f"   vs B_AME {mp.nstr(B_AME['3H'], 8)}"
+              f"  ({mp.nstr(pct(b3, B_AME['3H']), 5)}%)")
         print(f"     tritium bound (B > 0) ? {'YES' if b3 > 0 else 'NO'}")
 
     print("\n  Note the B(3H) prediction is IDENTICAL in rows 1 and 2: it reduces to")

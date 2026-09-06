@@ -50,6 +50,7 @@ from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 
@@ -73,7 +74,7 @@ def main():
     # Known knot volumes (m_e units)
     known = [
         ("²H (D)", 2, 1, AME_B_DEUTERON_MEV_VALIDATION, "6₂", 10.149),
-        ("³H (T)", 1, 2, 8.481821, "8₁₁", 18.224),
+        ("³H (T)", 1, 2, float(AME_B_TRITIUM_MEV_VALIDATION), "8₁₁", 18.224),
         ("³He", 2, 1, AME_B_HE3_MEV_VALIDATION, "L6a4", 16.356),
         ("⁴He", 2, 2, AME_B_HE4_MEV_VALIDATION, "𝓑₃ (8G)", 8 * float(catalan_G)),
     ]
@@ -164,7 +165,7 @@ def main():
     # α+d cluster model for ⁶Li
     B_he4 = AME_B_HE4_MEV_VALIDATION  # AME ⁴He
     B_d = AME_B_DEUTERON_MEV_VALIDATION    # AME D
-    B_t = mp.mpf("8.481821")    # AME T
+    B_t = AME_B_TRITIUM_MEV_VALIDATION    # AME T
     B_he3 = AME_B_HE3_MEV_VALIDATION  # AME ³He
     B_li6_ame = mp.mpf("31.99405")
     B_li7_ame = mp.mpf("39.24451")

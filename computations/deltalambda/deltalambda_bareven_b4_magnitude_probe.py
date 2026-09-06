@@ -94,7 +94,9 @@ mp.mp.dps = 60
 from substrate.q_parameter import Q_50_DIGIT_STR as _Q0_RESOLVED  # noqa: E402
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 
 Q0_STR = _Q0_RESOLVED
@@ -195,8 +197,8 @@ def main() -> int:
     # ---- 2. isospin-corrected STRONG rho targets (from #3990 E_C) -------------
     # AME2020 binding energies (MeV) and the deuteron reference.
     BD = AME_B_DEUTERON_MEV_VALIDATION
-    B3H = mp.mpf("8.481821")
-    B3He = mp.mpf("7.718058")
+    B3H = AME_B_TRITIUM_MEV_VALIDATION
+    B3He = AME_B_HE3_MEV_VALIDATION
     B4 = AME_B_HE4_MEV_VALIDATION
     rho3H, rho3He, rho4 = B3H / BD, B3He / BD, B4 / BD
     # Lean #3986: strong 3H/3He split = 0 exactly => the entire 3H-3He difference is EM.

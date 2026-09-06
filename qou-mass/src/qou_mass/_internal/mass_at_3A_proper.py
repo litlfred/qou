@@ -46,7 +46,10 @@ Key design decisions:
 """
 from __future__ import annotations
 
-from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
+from codata_constants import (  # noqa: E402
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+)
 import os
 import sys
 import math
@@ -1322,7 +1325,7 @@ if __name__ == "__main__":
 
     ATOMS = [
         ("D",    1, 1,  2.22452),
-        ("T",    1, 2,  8.481821),
+        ("T",    1, 2,  float(AME_B_TRITIUM_MEV_VALIDATION)),
         ("3He",  2, 1,  7.71804),
         ("4He",  2, 2, 28.295674),
         ("6Li",  3, 3, 32.0),

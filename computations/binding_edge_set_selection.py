@@ -54,12 +54,14 @@ import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
 )
 set_compute_dps()  # canonical COMPUTE_DPS (=70) — matches WitnessBuilder precisionMetadata
 
-ISO = {"D": (AME_B_DEUTERON_MEV_VALIDATION, 1, 2), "T": (8.481821, 1, 3),
-       "3He": (7.718058, 2, 3), "4He": (AME_B_HE4_MEV_VALIDATION, 2, 4)}
+ISO = {"D": (AME_B_DEUTERON_MEV_VALIDATION, 1, 2), "T": (float(AME_B_TRITIUM_MEV_VALIDATION), 1, 3),
+       "3He": (float(AME_B_HE3_MEV_VALIDATION), 2, 3), "4He": (AME_B_HE4_MEV_VALIDATION, 2, 4)}
 
 
 def b_strong(B, Z, A):

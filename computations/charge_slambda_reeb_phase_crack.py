@@ -52,9 +52,10 @@ import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 from pyhecke.wedderburn import wedderburn_weight  # noqa: E402 — w̃_λ=dim_q²/[n]_q!
 from q_parameter import Q_MP as Q0  # noqa: E402
-from codata_constants import (
+from codata_constants import (  # noqa: E402
+    AME_B_HE3_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
-    M_E_MEV  # noqa: E402 — CAL-1,
+    M_E_MEV,
 )
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
@@ -86,7 +87,7 @@ def main() -> None:
     # ρ_need = B_AME / Σ_λ y_λ dim_λ |Δθ_λ|  (S3_markov full), from
     # binding_rotation_phase_lead.py → binding-rotation-phase-lead.witness.json.
     print("\n=== 2. atomic H_{3A} q-Reeb phase Σ_λ y_λ dim_λ |Δθ_λ| (the magnitude) ===")
-    B_T, B_He3 = AME_B_TRITIUM_MEV_VALIDATION, mp.mpf("7.718058")     # AME2020 binding (MeV)
+    B_T, B_He3 = AME_B_TRITIUM_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION     # AME2020 binding (MeV)
     split = B_T - B_He3
     rho_T, rho_He3 = mp.mpf("18.345"), mp.mpf("18.652")     # ρ_need, S3_markov full
     S_T, S_He3 = B_T / rho_T, B_He3 / rho_He3               # phase sums

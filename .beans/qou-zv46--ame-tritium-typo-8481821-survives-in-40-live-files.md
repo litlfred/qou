@@ -1,10 +1,11 @@
 ---
 # qou-zv46
 title: AME tritium typo 8.481821 survives in 40 live files; 3He companion 7.718058 in 25
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-06T03:41:22Z
-updated_at: 2026-09-06T03:41:22Z
+updated_at: 2026-09-06T06:48:22Z
 ---
 
 Not an inference — **already established prior art**. `computations/binding_canonical.py:610-623`
@@ -64,3 +65,74 @@ probes as `B3H`/`B3He`.
 Both witnesses are queued to regenerate.
 
 **The remaining ~62 live sites are UNCLAIMED — nobody is working them.**
+
+---
+
+## Update 2026-09-06 — 55 sites routed across 30 files
+
+Claimed and worked on `claude/anchor-followups-2026-08-08`.
+
+**Method.** AST-guided, not textual: only `ast.Constant` nodes were candidates,
+so prose that legitimately QUOTES the typo is untouched — `binding_canonical.py`'s
+PR #1105 note and this bean's own tables survive verbatim, which a `sed` sweep
+would have corrupted.
+
+**Type preserved at every site.** A bare float became `float(AME_B_*)`; an
+`mp.mpf("...")` literal became the named mpf directly. Routing the SOURCE of a
+value and changing its TYPE are two different changes and only the first
+belongs to this bean.
+
+Restricted to the 30 files that **already** imported `codata_constants`, so the
+import risk is zero — the module is already resolvable from wherever each file
+sets up `sys.path`; only a NAME was added to an existing import.
+
+| literal | nuclide | offset | sites routed |
+|---|---|---|---|
+| `8.481821` | ³H | +24.8 eV | 25 |
+| `7.718058` | ³He | +16.7 eV | 26 |
+| `2.224573` | ²H | +6.8 eV | 4 |
+
+The deuteron literal is a **third** member of the family, found while wrapping
+a long line: `2.224573` against AME `2.2245662`. Only the 4 sites where it sat
+in the *same tuple* as a T/³He value just fixed were done — leaving D wrong
+beside a corrected T would be incoherent. The rest are listed below.
+
+Also `w3_closeability_audit.py:313` printed the label `vs B_AME 8.481821` next
+to a value that is now correct; the label now interpolates `B_AME['3H']`
+instead of hardcoding it. Same hardcode-vs-derive defect as bean qou-24i9.
+
+Verified: 0 dangling names over the 30 changed files, 0 literal constants left
+in them, all four `AME_B_*_MEV_VALIDATION` names exist and are `mpf`,
+suites 64 + 145 green.
+
+### STILL OPEN — 23 sites, unclaimed
+
+**11 files need a NEW `codata_constants` import** (and a `sys.path` insert),
+which is why they were held back from the mechanical pass — each needs its own
+path setup read:
+
+`binding_hbarq_rung_forward_test` · `binding_mass_rung_derivation_probe` ·
+`binding_n3_forcing_probe` · `binding_row_length_stratification` ·
+`binding_volume_defect_route_refuted` · `deltalambda/mu3_target_robustness_audit_probe` ·
+`probes/binding_closed_form_C_vs_D_probe` · `probes/binding_production_route_C_vs_D_probe` ·
+`probes/binding_sum_C_vs_D_per_isotope_probe` · `two_row_vs_higher_row_binding_split` ·
+`qou-mass/.../canonical_tower`
+
+**14 of the 23 are BARE STRINGS**, e.g. `("3H", 3, "8.481821")` or
+`Decimal("8.481821")`. These are deliberately not mechanically rewritten: a
+string literal is consumed differently at each site (parsed later, used as a
+dict key, formatted for display), so each needs reading. `fmt(AME_B_*)` is the
+likely form but is a per-site decision.
+
+**8 deuteron sites** not adjacent to a fixed T/³He: `per_braid_tower:122`,
+`probes/h6_deuteron_free_word_chi_lambda_probe:58`, and a uniform group of six
+`qbeta/qbessel_*` files all computing `B_DEU_OVER_ME = mpf("2.224573") /
+mpf("0.510999")`. That group is one edit repeated six times. (Its `0.510999`
+for m_e is only 0.05 eV off CODATA — noise, not this family.)
+
+### Regeneration debt
+
+All 30 producers now emit different numbers, so their witnesses are stale by
+construction. **Not regenerated here**: the `hadron_knot_table` run (bean
+qou-uiut) holds the checkout, and this campaign does not run two producers
+concurrently. Queued.

@@ -61,8 +61,13 @@ set_compute_dps()
 
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import (  # noqa: E402
-    M_P_MEV_VALIDATION, M_N_MEV_VALIDATION, M_E_MEV,
-    M_D_MEV_VALIDATION, M_T_MEV_VALIDATION, M_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_D_MEV_VALIDATION,
+    M_E_MEV,
+    M_HE4_MEV_VALIDATION,
+    M_N_MEV_VALIDATION,
+    M_P_MEV_VALIDATION,
+    M_T_MEV_VALIDATION,
     Q_BETA_MEV,
 )
 from _li_2_q_util import (  # noqa: E402
@@ -127,7 +132,7 @@ def _fmt_or_none(x):
 # Source: Wang et al., Chinese Physics C 45 (2021) 030003.
 AME_BINDING = {
     "p": 0.0, "n": 0.0,
-    "D": 2.22452, "T": 8.481821, "3He": 7.71804,
+    "D": 2.22452, "T": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": 7.71804,
     "4He": 28.2957, "6Li": 31.994, "7Li": 39.2445,
     "9Be": 58.165, "10B": 64.751, "11B": 76.205,
     "12C": 92.162, "13C": 97.108, "14N": 104.659, "15N": 115.492,
