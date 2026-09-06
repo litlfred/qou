@@ -40,6 +40,26 @@ With this, an induction proving 3.14 can be written down: `murphyLex_induction` 
 recursor it would use. **The mathematics of the Garnir step is untouched** — that is the
 content of the lemma and remains the arc's open problem. What is settled is that the
 induction it needs terminates.
+
+> **🛑 Terminating is not the same as descending, and the inner axis is the unvalidated
+> half.**  The corpus retired a tabloid-dominance measure for Garnir straightening at
+> `q = 1` on an exact-arithmetic counterexample — μ=(3,2), t=[[1,2,3],[5,4]], *"Garnir
+> produces terms whose tabloids are dominance-incomparable to `{t}`"*, hence *"no
+> tabloid-level measure orders them"* (`SpechtStandardBasisCore.lean` §"Measure correction
+> (2026-07-07)") — and replaced it with the column-reading word `colWordNum`, on which the
+> `q = 1` spanning argument is **sorry-free**.
+>
+> This file's inner axis is a tabloid-level measure.  That is **not** a refutation: the
+> counterexample concerns the `q = 1` polytabloid step, and Mathas' case (ii) states `⊵`
+> non-strictly with case (i) carrying the strict descent.  But it means the inner axis is
+> unvalidated for its intended job while a *validated* alternative for the same job already
+> exists in the corpus, sorry-free, with its monotonicity lemmas
+> (`colWordNum_lt_of_first_diff`, `colWordNum_swap_lt`, `fibre_colWordNum_decrease`).
+>
+> **Measure before inducting.**  The probe that settles it, and the third outcome worth
+> testing first (that case (ii) may be *vacuous* on this route, making the induction
+> single-axis), are in
+> [`docs/audits/2026-09-06-tabloid-dominance-vs-the-column-word-measure.md`](../../../../../docs/audits/2026-09-06-tabloid-dominance-vs-the-column-word-measure.md).
 -/
 
 namespace QOU.BraidKnot.MurphyInductionMeasure

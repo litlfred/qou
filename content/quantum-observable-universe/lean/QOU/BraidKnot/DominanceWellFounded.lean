@@ -35,6 +35,28 @@ to terminate.
 
 Note also that dominance here is on **tabloids** — row-equivalence classes — which is the
 standard object for the dominance order; a tableau's dominance is that of its class.
+
+> **🛑 Read before writing an induction on this axis.**  The corpus holds an
+> exact-arithmetic counterexample showing that a **Garnir step produces terms whose tabloids
+> are dominance-INCOMPARABLE to the source's** — μ=(3,2), t=[[1,2,3],[5,4]] — and concludes
+> *"no tabloid-level measure orders them"*.  It is in `SpechtStandardBasisCore.lean`
+> §"Measure correction (2026-07-07)", which retired `domWeight` for exactly that reason and
+> replaced it with the column-reading word `colWordNum`, on which the whole `q = 1`
+> straightening argument then goes through sorry-free.
+>
+> **That does NOT refute this file**, and it is not being treated as if it did: the
+> counterexample is about the `q = 1` *polytabloid* straightening, while Mathas 3.14's case
+> (ii) is about *Murphy elements* and states `⊵` **non-strictly**, with case (i)'s lex drop
+> doing the strict work.  The populations may be disjoint — `GarnirShapeCard.lexGtOn_garnirPartOf`
+> shows a Garnir step drops the *shape*, so `murphyLex` descends on its outer axis there and
+> never consults dominance.
+>
+> What it does establish is that this axis is **unvalidated for the descent it is meant to
+> carry**, and that a validated alternative (`colWordNum`, with its monotonicity lemmas)
+> already exists for the same job.  `murphyLex_wellFounded` proves the measure terminates;
+> nothing yet proves 3.14's terms descend in it.  Settle that by measurement before building
+> on it — [`docs/audits/2026-09-06-tabloid-dominance-vs-the-column-word-measure.md`](../../../../../docs/audits/2026-09-06-tabloid-dominance-vs-the-column-word-measure.md)
+> names the probe.
 -/
 
 namespace QOU.BraidKnot.DominanceWellFounded
