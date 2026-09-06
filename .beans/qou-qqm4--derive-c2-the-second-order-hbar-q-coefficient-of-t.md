@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-06T09:18:52Z
+updated_at: 2026-09-06T09:31:04Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -74,3 +74,33 @@ though its title's conclusion holds a fortiori.
 Contrast FIRST order, where `chain_over_atom_He4_generic` (PR #6920) proves the 4He ratio is
 24/7 for EVERY deletion-sum pair. No such invariance is claimed or observed at second order,
 and these numbers are evidence against one.
+
+
+### Same day — FIVE of the six exact canonical values ARE established (correcting my own note above)
+
+The entry above says the exact canonical rationals are 'not established' and that getting them
+'needs this bean's own exact-Fraction eps-series route'. **The second half was wrong**: that route
+is already in the corpus AND already canonical. `c1_leading_coefficient_derived_probe.tr_M_series`
+computes the exact series through the validated seminormal pipeline and reaches the word via
+`atom_canonical_crossings`, whose `intra_order` default became `borromean` with the ruling. It
+needed **re-running, not redoing**. Driven directly (not through that probe's `main`, which would
+rewrite a committed witness):
+
+    case   [eps^1]   [eps^2]    c2 = [e1]+[e2]     recorded (grouped)
+    pp     1/8       29/32      **33/32**          357/32
+    pn     1/16      23/32      **25/32**          403/32
+    nn     0         1/16       **1/16**           217/16
+    T      1/64      97/128     **99/128**         3285/128
+    3He    1/8       141/128    **157/128**        3451/128
+    4He    -         -          pending (n=12)     15307/512
+
+**Self-test 3/3** on the A=2 cases: the same driver on the grouped word returns 357/32, 403/32,
+217/16 — the recorded values exactly. **And every [eps^1] reproduces PR #6920's c1** (1/8, 1/16, 0,
+1/64, 1/8) by a route with no connection to [*] — an independent confirmation of that closed form.
+All five agree with the Richardson column to its extrapolation error, so the earlier 'nn ~ 1/16'
+guess is now confirmed rather than guessed.
+
+**Remaining: 4He only** (n = 12 order-4 series, ~15 min). Command for any case:
+
+    python3 computations/probes/c2_is_stale_on_the_reordered_atom_word_probe.py \
+        --exact-cases pp pn nn T 3He 4He
