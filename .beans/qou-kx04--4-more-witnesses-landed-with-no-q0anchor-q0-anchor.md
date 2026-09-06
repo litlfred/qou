@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T22:39:50Z
-updated_at: 2026-08-16T15:20:51Z
+updated_at: 2026-09-06T06:16:15Z
 parent: qou-pq8k
 ---
 
@@ -204,3 +204,65 @@ nothing to fix.
 The commitment stays live for a future PR that actually moves the rungs to h.
 Recorded as a checked non-event rather than left looking pending — a standing
 commitment nobody re-checks is indistinguishable from one nobody honoured.
+
+
+## Re-checked 2026-09-06 — 3 of 4 done; the 4th is NOT refreshable here, and I am not committing it
+
+Found by `scripts/bean-staleness-triage.py` (ranked 5th of 284 artifact beans,
+71 commits over 2 paths). Measured per witness:
+
+| witness | `q0Anchor` today |
+|---|---|
+| `dt-crossknot-snappy-slope-hardening` | **`independent`** ✅ |
+| `qbeta-decay-channel-convention-status` | **`proton`** ✅ |
+| `qbeta-ohtsuki-nz-bridge-b6` | **`independent`** ✅ |
+| `chi-numpy-dtype-fix-benchmark` | **ABSENT** ❌ |
+
+**The fourth's producer is already correct.**
+`computations/chi_numpy_dtype_fix_benchmark.py:173` does
+`w.save({"q0Anchor": "proton", "q0Value": Q_50_DIGIT_STR})`, under a comment
+citing this bean and reasoning it out (it *does* read q₀ via `Q_50_DIGIT_STR`;
+`q_parameter` is manifest-driven, and this stem is not under `ideal_muon`, so
+proton). Only the **witness on disk** is stale — the same shape as the two
+`Q0_ANCHOR_UNRECOGNISED` stragglers from #6699.
+
+### Why I ran it and then threw the result away
+
+Re-running does stamp the anchor correctly (`proton`, `1.10997858275138080759…`).
+It also **flips the second assertion from passing to failing**:
+
+> *"the pre-fix path is strictly slower on every partition — the leak cost real
+> time rather than being a theoretical concern"* → **False**
+
+Committing that would put a failing assertion into the corpus on the strength
+of a measurement this container cannot be trusted to make. Reverted; not
+committed. **Whoever closes this needs a machine where the benchmark's premise
+holds** — one run there fixes it.
+
+### Three hypotheses, two of them mine and disproved
+
+Recorded so the next agent does not repeat them.
+
+1. **Timing noise.** *Disproved.* Three consecutive runs give **identical**
+   speedups — `0.7x 0.2x 0.3x` every time — and identical `allPassed=False`.
+   Reproducible, not noise. I had called this "almost certainly" the cause.
+2. **mpmath 1.3.0 → 1.4.1 broke the promotion.** The environments differ in
+   exactly one entry (python 3.11.15 and numpy 2.4.6 match; the witness
+   records mpmath **1.3.0**, this container has **1.4.1**), and the whole fix
+   is about an `mpf` promoting a numpy product to `dtype=object`. *Disproved
+   directly:* under 1.4.1, `np.ones((3,3)) * mp.mpf('1.5')` still yields
+   `dtype: object`, and so does a matmul against it. The mechanism is intact.
+3. **Import-cone drift** — the class AGENTS.md says actually bites.
+   **Undecidable here:** the witness's `commitSha`
+   `73f8fafac4a8a7369e0d1c7e4996e13e6270e50e` is **not in this shallow clone**,
+   so the cone cannot be diffed. That is the `qou-wsha` "rewritten" class, and
+   it is the standing reason "diff the producer first" is unrunnable for
+   roughly half the witness corpus.
+
+What the run *does* show, and what a fuller check should start from: the
+benchmark prints `first non-float crossing at index None of 35` — i.e. **the
+leak the fix targets is not occurring on this path at all**, which is why the
+"fixed" route is pure overhead here. Whether that is the cone or something in
+`d_for_ctype`'s callers is the open half.
+
+**Bean stays open on the fourth witness only.** Three of its four are closed.
