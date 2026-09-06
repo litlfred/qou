@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T10:24:30Z
-updated_at: 2026-09-06T10:25:06Z
+updated_at: 2026-09-06T10:39:23Z
 ---
 
 ## The measurement
@@ -105,3 +105,61 @@ under a keyword classifier. The executable surface is **8 bindings in 7 files**
 inside a probe whose subject is the C/D difference. The one real defect sits in
 a file where the *same constant is right in one arm and wrong in the other*. A
 sweep would have broken the good arm and missed the point of the bad one.
+
+
+---
+
+## The row cap is worth ~100x, and nobody was taking it
+
+Recorded 2026-09-06, same pass. This is the consequence of r = 2 that matters
+operationally, and it lands on `qou-sv7h` ("binding compute cannot scale").
+
+`tr_M_via_wenzl_bridge_mpfr` sums `y_λ · χ_λ` over **every** partition of n. Under
+D, `y_λ = 0` for `ℓ(λ) > 2`, so most of those terms are identically zero — but χ_λ
+was built for all of them anyway, at full seminormal-matrix cost:
+
+| | shapes | carry weight | Σ d_λ | max d_λ |
+|---|---:|---:|---:|---:|
+| H_9 (A=3) | 30 | 5 | 2620 → 126 (4.8 %) | 216 → 48 |
+| H_12 (A=4) | 77 | 7 | 140152 → 924 (0.7 %) | 7700 → 297 |
+
+**Measured, with bit-identical output** (`strip(before) == strip(after)` on the
+five-atom witness, and `|Δ| = 0` on a direct tritium comparison):
+
+    tritium   (H_9)   30.407 s -> 0.337 s     90.3x
+    helium-3  (H_9)   35.003 s -> 0.305 s    114.6x
+    deuteron  (H_6)    0.049 s -> 0.012 s      4.2x
+    TOTAL             65.46 s  -> 0.66 s      99.5x
+
+    helium-4  (H_12)  >1200 s TIMEOUT -> 19.37 s
+
+The last line is the point: `atomic_tr_m_helium4.py` was one of the four
+producers the `qou-hu1f` regeneration pass could not run at all. It is not a
+scalability *problem* at A=4; it was 91 % waste.
+
+### Why it wasn't already free
+
+The skip is `y_lam == 0`, and the witness does not store zeros — it stores
+**~1e-73 rounding residues**, because the path that produced them cancels
+numerically rather than symbolically. 71 orders below the smallest live weight,
+so harmless to the sum and invisible to every consumer, but enough to defeat an
+exact-zero test. `y_lambda_at_q0_mpmath` (the live closed form) *does* return
+exact zeros; the cached witness does not. So the optimisation was available in
+one code path and not in the one production uses.
+
+`_apply_wenzl_row_cap` now snaps them, having first **verified** they are
+negligible (raises if any capped weight exceeds 1e-40 of the largest live one —
+so if the mathematics ever moves this fails loudly instead of zeroing something
+real). That applies a theorem; it does not threshold.
+
+### A trap I walked into, worth recording
+
+The first version of `_wenzl_level` recovered `q` from `z` by solving
+`z = q³/(q²+1)` — which *assumes convention D* and is therefore circular. Fed
+convention C's `z = 0.4993203342` it returned **r = 2**, precisely the answer the
+function existed to be able to refuse. It would have capped rows under a
+convention that caps nothing.
+
+Caught by testing the guard against the case it must reject, not the case it
+must accept. `q` is now read from the same witness table as `z`; C yields None,
+a table with no `q` yields None, and the cap has to be earned.
