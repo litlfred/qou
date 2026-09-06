@@ -757,3 +757,38 @@ that matches one matches the other.
       behaviour-changing default across 339 callers is invisible by construction;
       an explicit-argument-required signature would have surfaced all 332 at
       import time instead of silently changing their numbers.
+
+## Last undecided producer classified — the pass is closed
+
+`he4_magnus_omega2_sign_sparse_probe` was the one producer left unplaced after
+the regeneration pass. Forced to the OLD `grouped` ordering it ran **33+
+CPU-minutes without completing** inside a 2700 s budget — the same outcome it
+has under `borromean`.
+
+    fails/does-not-complete under BOTH orderings  ->  PRE-EXISTING
+
+So it is not a breakage of this ruling. Its cost is structural: it dispatches
+over all 77 partitions of 12, building `sigma_csr`/`germ_csr` at dimensions to
+d_λ = 7700, and its weight family (`d_q²/[n]_q!`, Plancherel) vanishes nowhere,
+so the row cap that bought 99.5x on the Wenzl bridge (`qou-fq0f`) cannot be
+applied to it as written. Recorded separately as **`qou-za3q`**, which also
+raises whether that weight is the intended one — it is named `y_λ` in its own
+docstrings while being a different family.
+
+Final tally for the pass: two genuine breakages (both fixed), and every other
+failure pre-existing — `qou-pdfx`, `qou-g94g`, `qou-4sqq`, and now `qou-za3q`.
+
+## One producer the sweep missed
+
+`binding_canonical.py` was still emitting **grouped** values and nothing caught
+it: deuteron `tr_M_atom` 0.57517224391777 (grouped) where the ruling gives
+0.15196833920423. Surfaced only when it was re-run as a smoke-test of an
+unrelated change, not by the 56/57-witness sweep — because its witness does not
+reference `atom_braid_word_3A` by name, which is how that sweep selected its
+targets. Regenerated; tritium, helium-3 and helium-4 moved with it.
+
+That is a gap in the sweep's selector, not a one-off: any producer that reaches
+the canonical word indirectly was invisible to it. Worth re-running the sweep
+on a selector that keys on the VALUES (a grouped-era tr_M is recognisable) rather
+than on the import name — the same argument
+`y_lambda_convention_c_fingerprint_audit.py` makes for convention detection.
