@@ -290,3 +290,70 @@ scan of this shape is structurally blind to exactly the case that
 motivated it, which is why it is recorded here rather than shipped as a
 tool: settling any candidate needs a compile, and the compile is what
 settled this one.
+
+---
+
+# Addendum 3: an axiom that collapsed its own type, and what is left
+
+## `degree_filtered_reduction_correct` — stronger than false
+
+```lean
+axiom degree_filtered_reduction_correct
+    {G} {k} [Ring k] [DecidableEq G]
+    (ord) (sys) (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (f nf_full nf_filtered : AlgElement G k)
+    (h_full : ReducesToNF ord sys f nf_full)
+    : nf_full = nf_filtered
+```
+
+`nf_filtered` is bound and never mentioned again — not in a hypothesis,
+not in `h_full`, nowhere but the conclusion. The axiom therefore says
+`nf_full = X` for **every** `X`, and the degree restriction it is named
+for lives in a **comment** beside the binder.
+
+From the axiom alone, any single reduction makes every element of
+`AlgElement G k` equal to every other
+(`degree_filtered_reduction_collapses_type`, which needs no witness
+because the two applications share one `nf_full`). An axiom of that
+shape proves anything about the algebra it quantifies over.
+
+It is the purest instance of the root cause the whole arc keeps finding:
+a binder that should have been tied is left free. Here it is not merely
+under-constrained — it is *unconstrained*.
+
+## A verification note that cost real time
+
+This is a **UGB library** file, and the restored olean cache carries only
+six UGB modules. `Flatness`, in `JetOrder`'s own import list, was absent,
+so `lean`-direct failed with
+
+```
+object file '.../UGB/GrobnerShirshov/Flatness.olean' of module
+UGB.GrobnerShirshov.Flatness does not exist
+```
+
+which reads like a real error and is not one. Building that single
+module into the session overlay first is enough; the file then exits 0.
+`lean-content-sweep.sh` and `lean-library-sweep.py` do not cover UGB
+(AGENTS.md says so), so a UGB library file needs its cone built by hand.
+
+## What remains flagged, and why each is left standing
+
+Four, none of which is a refutation the corpus can currently support:
+
+| axiom | why it stays |
+|---|---|
+| `markov_trace_unique_axiom` | **Resists refutation.** The braid relation forces all generators equal in any commutative carrier, so a counterexample needs a genuine `H₃(q)` — and there **cyclicity pins** the apparently-free direction: `tr(σ₁σ₂σ₁) = tr(σ₂σ₁²) = h·z² + z`. The docstring's *"field set is too weak"* is about provability, not falsity. |
+| `markov_nondegenerate` | Opaque-operator class: `MarkovTrace` and `AlgElement.mul` are themselves axioms in the same file. |
+| `descartes_trace` | Same. `MarkovTrace hp (singleton []) = -6` is consistent for the trivial reason that `MarkovTrace` is unconstrained. |
+| `protonExample_archimedean_agreement_axiom` | Same shape: `protonHabiroTrace` is `opaque`, so an axiom pinning its evaluation to a decimal literal can be neither proved nor refuted. |
+
+**The opaque-operator group is a disposition question, not a refutation
+task.** With no definition to unfold, these three are *specifications*:
+they say what the operator must satisfy, and nothing can check that
+they do. The options are to define the operator (large), to demote the
+claims to a conditional class carrying them as hypotheses (medium, and
+the §3b-cond pattern already used elsewhere in this corpus), or to leave
+them as specifications with that status stated at each site (small).
+Choosing among those is an authorial call about how much of the Hecke
+machinery to formalise, and is not made here.
