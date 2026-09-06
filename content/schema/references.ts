@@ -16688,6 +16688,33 @@ export const references: Reference[] = [
     URL: "https://arxiv.org/abs/0902.0350",
     note: "arXiv:0902.0350 (math.MG, 2 Feb 2009; 41 pp, 12 sections). Part 1 reports the Flyspeck formal-proof initiative (HOL Light + Isabelle/HOL: nonlinear inequalities via Bernstein bases, tame-graph enumeration, linear programs) and the blueprint edition; Part 2 gives errata to the 2005 Annals proof, including the new §8 argument on biconnected graphs. Held (ingested 2026-09-06, e5afe5ea7b) as the packing source the binding arc had none of — docs/audits/2026-09-05-max-contact-sub-affine-negative.md §5 recorded 'references.ts has no packing entry'. What the folio can cite from it is the Kepler theorem STATEMENT (Introduction, p. 2: no packing of congruent balls in E^3 exceeds the fcc density); it proves no kissing-number or contact-number bound, so it does not by itself source the k = 12 bounded-degree coordination of prop:coordination-saturation — that is bezdek-reid2013 / Schütte–van der Waerden. Journal volume/pages recalled, not verified in-sandbox (Crossref CONNECT 403), DOI therefore omitted. Triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md.",
   }),
+
+  // ── Bezdek–Reid 2013 — contact graphs of unit sphere packings: C(n) < 6n − 0.926 n^{2/3} ──
+  ref({
+    id: "bezdek-reid2013",
+    library: {
+      docId: "arxiv-1210.5756v1",
+      dir: "library/arxiv-1210.5756v1",
+      pdf: "library/arxiv-1210.5756v1/1210.5756v1.pdf",
+      stage: "sections",
+      pages: 19,
+      sections: 13,
+      arxiv: "1210.5756v1",
+    },
+    type: "article-journal",
+    title: "Contact graphs of unit sphere packings revisited",
+    author: [
+      { family: "Bezdek", given: "Károly" },
+      { family: "Reid", given: "Samuel" },
+    ],
+    "container-title": "Journal of Geometry",
+    volume: "104",
+    issue: "1",
+    page: "57-83",
+    issued: { "date-parts": [[2013]] },
+    URL: "https://arxiv.org/abs/1210.5756",
+    note: "arXiv:1210.5756 (math.MG, 21 Oct 2012; 19 pp, 13 sections). Theorem 1(i): the number of touching pairs in any packing of n ≥ 2 unit balls in E^3 is < 6n − 0.926 n^{2/3}; (ii) lattice packings < 6n − 3.665 n^{2/3}; and (recalled from Bezdek 2012) fcc packings with n = (2k^3+k)/3 balls have > 6n − 7.862 n^{2/3} touching pairs. Theorem 2: touching triplets ≤ 25n/3, quadruples ≤ 11n/4. Theorems 4/5 use Hales' 2.52 separation of a 13th ball (kissing-number-12 rigidity). This is exactly the affine-plus-sub-affine shape — bulk 12·n/2 from the kissing number, surface deficit ∝ n^{2/3} — that QOU.Mass.CoordinationSaturation (bounded degree k) and docs/audits/2026-09-05-coordination-surface-deficit.md assume; it makes the corpus's Euclidean-packing import a citable theorem while leaving the four recorded objections to that import (internal derivation demanded by qou-rav3; ambient geometry hyperbolic; 3-dimensionality underived; exponent imported) untouched — see docs/audits/2026-09-05-max-contact-sub-affine-negative.md §5. Journal volume/pages recalled, not verified in-sandbox (Crossref CONNECT 403), DOI omitted. Ingested 2026-09-06 (e5afe5ea7b); triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
