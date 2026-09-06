@@ -20,9 +20,14 @@
 > does not (already above 1 at `A = 2` and `A = 3`), the argument stays
 > refuted (#6931).
 >
-> **`A = 4` — where this document's interest lies — is still OPEN**: `c₃`
-> there needs `P = 5` against a committed `P_OF` of 3, a separate
-> long-compute run. Table and caveats:
+> **`A = 4` — where this document's interest lies — is now MEASURED, and
+> THIS DOCUMENT'S CONCLUSION HOLDS THERE TOO**: `c₃(⁴He) = 1329/256`, ratio
+> **`0.5999 < 1`** (352 s at `P = 5`, three controls reproduced). Its grouped
+> counterpart was `0.8219`, likewise below 1 — so the conclusion is robust to
+> the convention change even though every number moved. The `c₃` column also
+> turns out to have **no `A` trend at all** (`0.4023, 0.6817, 0.8087, 0.5295,
+> 0.5999`), which is sharper than "comparable": the ratio is not drifting
+> toward 1 as `A` grows. Table and caveats:
 > [`2026-09-06-c3-under-borromean-the-second-order-is-the-only-bad-one.md`](2026-09-06-c3-under-borromean-the-second-order-is-the-only-bad-one.md).
 >
 > Full table under both orderings, and what survives:
