@@ -1,0 +1,47 @@
+{
+  "probe": "qbeta_habiro_bridge_class_is_not_a_lean_target_probe",
+  "bean": "qou-cds1",
+  "question": "can QbetaHabiroTaylorBridgeClass be worked as a Lean target?",
+  "answer": "No. It is honestly open (6/6 tactics fail, the opaque seal holds) but both sides are property-free opaques, so there is nothing to derive from; the companion theorem is a self-assuming projection. Progress is computational, and the corpus already ran that computation and got a negative that this probe independently verifies as sound.",
+  "scope": "(a). Lean verdicts are exact. Does not close the bridge; does not claim the c_k CANNOT be the Habiro Taylor coefficients \u2014 only that the Form-A slot route is refuted and the class as written admits no deductive attack.",
+  "lean_tactic_battery": {
+    "rfl": "exit 1 \u2014 Type mismatch",
+    "unfold precisionLadderCoeff habiroTaylorCoeff; rfl": "exit 1 \u2014 failed to unfold",
+    "simp [precisionLadderCoeff, habiroTaylorCoeff]": "exit 1 \u2014 made no progress",
+    "decide": "exit 1 \u2014 expected type must not contain free variables",
+    "norm_num [precisionLadderCoeff, habiroTaylorCoeff]": "exit 1 \u2014 unsolved goals",
+    "aesop": "exit 1 \u2014 made no progress"
+  },
+  "lean_invocation": "lean -DautoImplicit=false -s 65536 (LEAN_PATH from restored oleans; never lake build)",
+  "baseline_file_check": "habiro-precision-ladder-equivalence.lean: exit 0, 0 errors",
+  "series_ratios_dtr_over_dnet": [
+    "5/8",
+    "-1/8",
+    "1/48",
+    "5/112",
+    "17/256"
+  ],
+  "assertions": [
+    {
+      "name": "bridge_class_is_honestly_open_not_trivially_inhabited",
+      "passed": true,
+      "detail": "6/6 tactics fail to inhabit QbetaHabiroTaylorBridgeClass under lean-direct (-DautoImplicit=false -s 65536) against the real import cone; the file itself checks with 0 errors. Both sides are `opaque := fun _ => 0`, hence SEMANTICALLY equal, so a leaky seal would make the class trivially inhabited and every downstream conditional vacuous. It does not leak. I expected it to; this is a negative on my own hypothesis, and it confirms the 2026-09-04 axiom->opaque conversion dropped the axiom-ledger entry without weakening the seal."
+    },
+    {
+      "name": "bridge_is_not_a_lean_target_both_sides_are_property_free_opaques",
+      "passed": true,
+      "detail": "precisionLadderCoeff and habiroTaylorCoeff carry NO defining properties \u2014 no lemma in the file or its cone constrains either \u2014 so there is no premise from which ck_eq_taylor could be derived. The class is a NAMED HOLE, not a hypothesis-carrying conditional, and its companion `precision_ladder_is_habiro_taylor := h.ck_eq_taylor k` is the self-assuming projection AGENTS.md \u00a73b-cond item 5 names (honestly labelled by its own docstring, so a labelling device rather than a concealed claim). Consequence: progress on the bridge is COMPUTATIONAL \u2014 define the two sequences \u2014 never deductive. That is the answer to 'work the bridge class'."
+    },
+    {
+      "name": "decisive_test_uses_the_faithful_form_so_6889_does_not_affect_it",
+      "passed": true,
+      "detail": "the witness records Form A as Abs((q^2-1)(q(q-2)-1))/(2q^3(q-1)) \u2014 the FAITHFUL |Delta(net)|*E_0 with the modulus still around (q^2-1), i.e. exactly the expression #6889 says to use (gap to the block form at q=11/10 is 0). And the test expands in eps = q-1 on the REAL AXIS, where #6889 measured the simplified form's gap as 0 anyway. Two independent reasons my correction leaves this negative standing. Checked, not assumed."
+    },
+    {
+      "name": "corpus_negative_is_sound_the_series_are_not_merely_proportional",
+      "passed": true,
+      "detail": "term-by-term dtr/dnet = k=1: 5/8, k=2: -1/8, k=3: 1/48, k=4: 5/112, k=5: 17/256. Not constant, and it CHANGES SIGN at k=2 (5/8 -> -1/8). So 'leading orders differ therefore structurally distinct' is not resting on a leading-order coincidence \u2014 a mere normalisation would have shown a constant ratio. Independent verification of an existing corpus negative, not a new claim."
+    }
+  ],
+  "allPassed": true
+}
