@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-06T23:18:07Z
+updated_at: 2026-09-06T23:20:46Z
 ---
 
 
@@ -565,3 +565,47 @@ staging are the deliverable of this pass.
 Reproduce any of it with:
 
     python3 computations/f64_into_mpmath_audit.py --tier F64_CAST
+
+
+## 🛑 2026-09-06 (correction to my own staging, made BEFORE acting on it)
+
+The plan above says stage 1 is *"the 41 witness-free files — local, verifiable
+in place, no published number moves."* **That is wrong, and it is wrong in the
+exact way AGENTS.md's import-cone note warns about**: a file can own no witness
+and still be *imported by* producers that do, so a float cast fixed there
+propagates into their numbers. `binding_canonical` is the corpus's own worked
+case — source-stable while `tr_M_atom` moved 48 % because a module it *calls*
+changed.
+
+Measured before touching anything. Of the 41:
+
+    12  imported by another computations/ or tools/ module
+    29  imported by nobody -> genuinely cannot move a published number
+
+And the 12 are not marginal. Three are high-fan-in library modules:
+
+    hecke_core_legacy.py       imported by 17
+    per_irrep_pole_atom.py     imported by 14
+    schur_weyl_mpmath.py       imported by 12
+    canonical_tr_m_via_branching.py, term5_v2_chirality.py   3 each
+    canonical_brane_tower.py, probe_4_li6_rectangular_python.py, …
+
+A cast fixed in `hecke_core_legacy` reaches seventeen consumers, several of
+which publish witnesses. Those belong **with** the witness-owning group, behind
+the same sign-off, not ahead of it.
+
+### Corrected staging
+
+1. **29 isolated files / 46 sites** — witness-free *and* imported by nobody.
+   This is the real no-risk batch. Smaller than it looked: 46 of 188 sites
+   (25 %), not the 41 files I implied.
+2. `h2o_angle_gb_truncation_inverse.py` — 25 sites, one before/after.
+3. **61 witness-owners + the 12 imported ones = 73 files** — each moves
+   published numbers, directly or through its consumers. Producer re-run and
+   before/after each. This is the part that wants owner sign-off.
+4. The 3 generated `qou-mass` mirrors, via `sync-qou-mass-vendor.py`, never by
+   hand.
+
+**Still not begun.** Recording the correction is the point: the difference
+between the two versions is 12 files that would have been edited as "no risk"
+while feeding up to seventeen consumers each.
