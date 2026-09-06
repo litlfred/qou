@@ -38,7 +38,7 @@ WHAT IT EXPLAINS, and it is the whole earlier list:
 - **`c₁` and `c₂` individually move** — a single isotope has non-zero content.
 - **The ⁴He first-order chain ratio `24/7` survives** — `pp + pn + nn` against `⁴He` is `2p+2n` on
   both sides, so the ratio's numerator and denominator carry equal content, and
-  `PairwiseChainLeadingOrder.chain_over_atom_He4_generic` proves the invariance algebraically.
+  `PairwiseChainLeadingOrder.chain_over_atom_He4_of_letters` proves the invariance algebraically.
 - **The `T` and `³He` chain ratios move** — those have `Z ≠ N` and no such balance.
 
 🛑 AND IT SHARPENS A CAVEAT I FLAGGED EARLIER RATHER THAN REMOVING IT. `MirrorAsymmetrySign.lean`

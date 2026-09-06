@@ -147,50 +147,32 @@ theorem starSum_dyadic (n : ℕ) (L : List (ℤ × ℕ)) :
 
 /-! ### 3. The closed form -/
 
-/-- `c₁(Z,N) = (3Z − 2N)(2^{−A−1} − 2^{−2A}) − 4(I_pp − I_nn)2^{−2A}`,
-`A = Z + N`, `I_pp = Z − 1`, `I_nn = N − 1` (truncated subtraction in `ℕ`).
+/-! The closed form itself lives in `PairwiseChainLeadingOrder` as
+`c1Closed (a b : ℚ) (Z N : ℕ)`; at the Borromean letter weights it is
+`c1Closed 3 (-2)`, and `c1_defs_eq_closed_borromean` there pins it to the six
+values. This file used to carry a second, specialised `c1Closed (Z N : ℕ)` — a
+**duplicate declaration in the same namespace**, and the weaker of the two — so
+it is dropped and everything below uses the parameterised one.
 
-⚠ **REPAIRED 2026-09-06.** The per-nucleon coefficients read `(21Z + 16N)` until
-this date; those are the **pre-2026-09-05 (`grouped`) atom word's**. Owner ruling
-`qou-hu1f` reordered each nucleon's confinement core and they became `(3Z − 2N)`
-— the neutron's changes **sign**. Both are `(S_p, S_n)/2` for that word's
-per-nucleon deletion sums: `(42, 32)` grouped, `(6, −4)` canonical. The interface
-term `−4(I_pp − I_nn)` is unchanged, and is unchangeable by an intra-nucleon
-reordering: interfaces are single letters outside the nucleon blocks. See
+⚠ Note for anyone reading an older revision: the per-nucleon coefficients read
+`(21Z + 16N)` until 2026-09-06. Those are the **pre-2026-09-05 (`grouped`) atom
+word's**. Owner ruling `qou-hu1f` reordered each nucleon's confinement core and
+they became `(3Z − 2N)` — the neutron's changes **sign**. Both are
+`(S_p, S_n)/2` for that word's per-nucleon deletion sums, `(42, 32)` grouped and
+`(6, −4)` canonical, and `PairwiseChainLeadingOrder.c1_grouped_values_eq_closed`
+keeps the superseded column as a check. The interface term `−4(I_pp − I_nn)` is
+unchanged, and is unchangeable by an intra-nucleon reordering: interfaces are
+single letters outside the nucleon blocks. See
 `computations/probes/canonical_c1_closed_form_probe.py` (44 isotopes, both halves
 verified separately) and
 `docs/audits/2026-09-06-c1-is-stale-on-the-reordered-atom-word.md`. -/
-def c1Closed (Z N : ℕ) : ℚ :=
-  (3 * (Z : ℚ) - 2 * (N : ℚ)) * ((1 / 2 : ℚ) ^ (Z + N + 1) - (1 / 4 : ℚ) ^ (Z + N))
-    - 4 * (((Z - 1 : ℕ) : ℚ) - ((N - 1 : ℕ) : ℚ)) * (1 / 4 : ℚ) ^ (Z + N)
-
-theorem c1Closed_pp : c1Closed 2 0 = 1 / 8 := by norm_num [c1Closed]
-theorem c1Closed_pn : c1Closed 1 1 = 1 / 16 := by norm_num [c1Closed]
-theorem c1Closed_nn : c1Closed 0 2 = 0 := by norm_num [c1Closed]
-theorem c1Closed_T : c1Closed 1 2 = 1 / 64 := by norm_num [c1Closed]
-theorem c1Closed_He3 : c1Closed 2 1 = 1 / 8 := by norm_num [c1Closed]
-theorem c1Closed_He4 : c1Closed 2 2 = 7 / 128 := by norm_num [c1Closed]
-
-/-- The generic definitions of `PairwiseChainLeadingOrder`, evaluated at the
-canonical deletion sums `(S_p, S_n) = (6, −4)`, are the closed form's values.
-
-Previously stated against that file's six bare `def`s (`c1_pp`, …). Those were
-the `grouped` word's constants and are gone; the file now carries the generic
-forms instead, so this theorem pins the two files together at the canonical
-instantiation rather than at a frozen number. -/
-theorem c1_defs_eq_closed :
-    c1PP 6 = c1Closed 2 0 ∧ c1PN 6 (-4) = c1Closed 1 1 ∧ c1NN (-4) = c1Closed 0 2 ∧
-    c1T 6 (-4) = c1Closed 1 2 ∧ c1He3 6 (-4) = c1Closed 2 1 ∧
-    c1He4 6 (-4) = c1Closed 2 2 := by
-  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩ <;>
-    norm_num [c1PP, c1PN, c1NN, c1T, c1He3, c1He4, c1Closed]
 
 /-- The `pp` and `nn` bonds differ from the `pn` bond only through the
 interface term: `c₁(pp) − c₁(pn) = (5·(1/8 − 1/16) − 4/16)` and
 `c₁(nn) − c₁(pn) = −5·(1/8 − 1/16) + 4/16`. In particular
 `c₁(pp) + c₁(nn) = 2·c₁(pn)` — the interface contributions cancel in the
 symmetric combination and the census terms average. -/
-theorem c1Closed_bond_symmetry : c1Closed 2 0 + c1Closed 0 2 = 2 * c1Closed 1 1 := by
+theorem c1Closed_bond_symmetry : c1Closed 3 (-2) 2 0 + c1Closed 3 (-2) 0 2 = 2 * c1Closed 3 (-2) 1 1 := by
   norm_num [c1Closed]
 
 /-- At fixed `A`, `c₁` is affine in `Z` with slope `5(2^{−A−1} − 2^{−2A}) − 8·2^{−2A}`
@@ -199,9 +181,9 @@ while both species stay present (`1 ≤ Z`, `2 ≤ N`, so that after the move
 `I_pp − I_nn` by `2`. (At `N = 1` the truncated `I_nn` does not move and the
 shift is `1`; that boundary case is excluded here.) -/
 theorem c1Closed_step (Z N : ℕ) (hZ : 1 ≤ Z) (hN : 2 ≤ N) :
-    c1Closed (Z + 1) (N - 1) - c1Closed Z N
-      = 5 * ((1 / 2 : ℚ) ^ (Z + N + 1) - (1 / 4 : ℚ) ^ (Z + N))
-        - 8 * (1 / 4 : ℚ) ^ (Z + N) := by
+    c1Closed 3 (-2) (Z + 1) (N - 1) - c1Closed 3 (-2) Z N
+      = 5 * ((2⁻¹ : ℚ) ^ (Z + N + 1) - (2⁻¹ : ℚ) ^ (2 * (Z + N)))
+        - 8 * (2⁻¹ : ℚ) ^ (2 * (Z + N)) := by
   obtain ⟨n, rfl⟩ : ∃ n, N = n + 2 := ⟨N - 2, by omega⟩
   obtain ⟨z, rfl⟩ : ∃ z, Z = z + 1 := ⟨Z - 1, by omega⟩
   unfold c1Closed
@@ -286,14 +268,14 @@ theorem star_He4Atom : starSum 12 letters_He4Atom = 1 / 128 := by
 /-- [★] reproduces all six recorded coefficients from the letter data alone:
 `c₁ = starSum(free) − starSum(atom)`. -/
 theorem c1_from_letters :
-    c1PP 6 = starSum 6 letters_ppFree - starSum 6 letters_ppAtom ∧
-    c1PN 6 (-4) = starSum 6 letters_pnFree - starSum 6 letters_pnAtom ∧
-    c1NN (-4) = starSum 6 letters_nnFree - starSum 6 letters_nnAtom ∧
-    c1T 6 (-4) = starSum 9 letters_TFree - starSum 9 letters_TAtom ∧
-    c1He3 6 (-4) = starSum 9 letters_He3Free - starSum 9 letters_He3Atom ∧
-    c1He4 6 (-4) = starSum 12 letters_He4Free - starSum 12 letters_He4Atom := by
+    c1_pp = starSum 6 letters_ppFree - starSum 6 letters_ppAtom ∧
+    c1_pn = starSum 6 letters_pnFree - starSum 6 letters_pnAtom ∧
+    c1_nn = starSum 6 letters_nnFree - starSum 6 letters_nnAtom ∧
+    c1_T = starSum 9 letters_TFree - starSum 9 letters_TAtom ∧
+    c1_He3 = starSum 9 letters_He3Free - starSum 9 letters_He3Atom ∧
+    c1_He4 = starSum 12 letters_He4Free - starSum 12 letters_He4Atom := by
   rw [star_ppFree, star_ppAtom, star_pnFree, star_pnAtom, star_nnFree, star_nnAtom,
     star_TFree, star_TAtom, star_He3Free, star_He3Atom, star_He4Free, star_He4Atom]
-  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩ <;> norm_num [c1PP, c1PN, c1NN, c1T, c1He3, c1He4]
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩ <;> norm_num [c1_pp, c1_pn, c1_nn, c1_T, c1_He3, c1_He4]
 
 end QOU.MassTheory
