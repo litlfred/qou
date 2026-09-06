@@ -420,3 +420,91 @@ one `D_μ`. The corpus already carries the matching count:
 `HeckeMurphyYoung.murphyIndex_card_eq_finrank` shows that index set has exactly
 `dim H_n(q)` elements, by RSK/Burnside. So **spanning + that cardinality** is the route,
 which is precisely why **3.14 is the arc's real open node** and always was.
+
+## Update 2026-09-06 — 3.13 is lifted to the `T`-basis, and a reference-tableau gap surfaces
+
+The section above lands on 3.14 as the real open node. Its two induction axes now have a
+well-founded measure (`MurphyInductionMeasure.murphyLex_wellFounded`), the `T_d⁻¹`
+triangularity that 3.9 at basis level needs is proved against `w⁻¹`
+(`TwInverseBruhat.TwInv_mem_spanBruhatLe`, the orientation the probe demanded), and the
+Garnir step is known to drop the shape in the order the outer axis runs on
+(`GarnirShapeCard.lexGtOn_garnirPartOf`). What was left was the **step** 3.14's induction
+rewrites with, and that is now proved.
+
+[`QOU/BraidKnot/MurphyGarnirFactor.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/MurphyGarnirFactor.lean),
+eight declarations, all sorry-free (`#print axioms`: `[propext, Classical.choice,
+Quot.sound]`), `lean`-direct exit 0:
+
+| declaration | content |
+|---|---|
+| `HeckeMurphyYoung_dOf_smul`, `dAt_smul` | `d(w·g) = w·d(g)` for the **column**-superstandard reference — the companion of `TableauPerm.dOf_smul`, which was missing |
+| `invSet_toFinSucc_mono` | inversion containment survives the re-indexing `Fin (nOf μ) ≃ Fin (n+1)` |
+| `Tw_dOf_smul`, `Tw_dAt_smul` | **the lift**: a length-additive tableau factorisation becomes `T_{d(w·g)} = T_{d(g)} · T_w` |
+| `smul_eq_of_dOf` | recovers the `w` from `d` being a bijection |
+| `exists_garnir_Tw_factor` | **Mathas 3.13 in the `T`-basis** — a row-standard non-standard `t` has `T_{d(t)} = T_{d(g)} · T_w` through a Garnir `g` |
+| `murphyM_smul` | `m_{s, w·g} = m_{s, g} · T_w` |
+
+The whole content is that `T` **is** a homomorphism on a length-additive factorisation
+(`TwBasis.Tw_mul_Tw`) though not on `S_n`; everything else is routing the hypothesis.
+
+### The flipped handedness pays off, for once
+
+`Tw_mul_Tw` reads `T_v · T_w = T_{w·v}`. So the permutation factorisation `d(t) = w · d(g)`
+lifts with `T_w` on the **right** — which is the side Mathas needs, because
+`m_{st} = T*_{d(s)} · x_λ · T_{d(t)}` has `T_{d(t)}` rightmost, so the Garnir factor lands
+adjacent to `x_λ` and the residual is peeled off outside. The unflipped convention would
+have produced `T_w · T_{d(g)}` and stranded `T_w` in the middle. This is the **fourth**
+instance of the handedness trap on this arc (after `sortPerm`'s orientation,
+`IsDistinguishedL`, and `T_w⁻¹`'s triangularity against `w⁻¹`) and the first where it helps
+rather than costs.
+
+### 🛑 The gap this exposed: **two reference tableaux, both called `dOf`**
+
+`d(t)` is *"the permutation carrying the reference tableau to `t`"*, and this corpus has two
+references, in two files, under one name:
+
+| | reference | file |
+|---|---|---|
+| `TableauPerm.dOf` | **row**-superstandard `t^λ` — Mathas' | `QOU/BraidKnot/TableauPerm.lean` |
+| `HeckeMurphyYoung.dOf` | **column**-superstandard | `QOU/BraidKnot/HeckeMurphyYoung.lean` |
+
+The entire Garnir chain (`GarnirTableau`, `GarnirDescentAdditive`, `DescentNodeExists`,
+`length_dOf_smul_eq_add_iff`) is built on the row one; `murphyM` is built on the column one.
+They differ by a fixed permutation on the right — with `c := colSuperstandard ≫ (t^λ)⁻¹`,
+
+    HeckeMurphyYoung.dOf t = TableauPerm.dOf t * c
+
+so the **factorisation** transfers (it is reference-insensitive — that is why both
+`dOf_smul`s have the same one-line proof), while **length additivity does not**: `ℓ(x)` and
+`ℓ(x·c)` are unrelated, and `length_mul_eq_add_iff` reduces the hypothesis to an
+inversion-set containment that right multiplication does not preserve.
+
+**So `exists_garnir_Tw_factor` and `murphyM_smul` are deliberately NOT composed.** The first
+is proved for the row reference, the second for the column one, and each is exactly as
+strong as its own hypothesis. Chaining them would be **false as an inference** even though
+both halves are true — the same arity/scope conflation
+[`local/devils-advocate-watcher`](../../.claude/skills/local/devils-advocate-watcher.md)
+records as `da-arity-conflation`. Closing it needs one of:
+
+1. restate `murphyM` over `refTab` (a definitional change to merged code — `murphyM`'s own
+   docstring already says the reference is *"a red herring: `colSuperstandard` is as good as
+   Murphy's row-superstandard `t^λ` — both are full rank"*, but that was a **rank**
+   measurement, and rank is not what is at stake here); or
+2. re-prove the Garnir length additivity against the column reference.
+
+Neither is done. Tracked on `qou-phir`.
+
+### A method note: the olean was stale and the signature had moved
+
+`HeckeMurphyYoung.olean` in the restored cache was built 2026-08-31T02:52Z against a source
+last committed 05:26Z the same day, and the two disagreed **in the statement**: the cached
+`murphyM` carried `[DecidablePred (· ∈ youngSubgroup n h t)]` — the per-`t` row stabiliser
+that the file's own docstring records as the rank-deficient version that was **replaced** —
+against the live `colSuperstandard μ`. A `#check` against the cache therefore described a
+`murphyM` that no longer exists, and any lemma written to that signature would have been
+about the wrong object while compiling cleanly.
+
+Rebuilding just that module from source took **5 s** and its dependency cone needed nothing,
+so the fix is cheap once noticed. Noticing is the problem: nothing in the toolchain says the
+olean is behind, and the signature difference is one instance argument. Compare the
+committed source's `git log` timestamp against the olean's mtime before trusting a `#check`.
