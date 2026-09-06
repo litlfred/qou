@@ -191,6 +191,48 @@ def run_steps(n):
     return a == ta and b == tb
 
 
+def run_c(n):
+    """Step (c): the interpolation bridge, decomposed into what the Lean actually uses.
+
+    The claim is that a rank inequality holding at the ROW CUTS holds at every index in
+    between.  It splits into three, and only the middle one needs anything of the tableau:
+
+      PREMISE  d(t) is strictly increasing across each row block, for row-standard t
+      UPPER    for ANY w:   rk w i m <= min(rk w N_r m, rk w N_{r-1} m + (i - N_{r-1}))
+      LOWER    for block-increasing u:  rk u i m >= that same min
+
+    then boundary => full is pure arithmetic: a <= A and b <= B give
+    min(b, a+k) <= min(B, A+k).  UPPER is monotonicity plus "at most one value per
+    position" and holds for every permutation; the PREMISE is where row-standardness --
+    and only row-standardness -- enters.
+    """
+    up = tu = lo = tl = bm = tb = 0
+    for lam in partitions(n):
+        cuts = [0]
+        for L in lam:
+            cuts.append(cuts[-1] + L)
+        for t in row_standard_tableaux(lam):
+            u = d_of(t, lam)
+            tb += 1
+            bm += all(u[x] < u[x + 1] for r in range(len(lam))
+                      for x in range(cuts[r], cuts[r + 1] - 1))
+            for r in range(len(lam)):
+                for i in range(cuts[r], cuts[r + 1] + 1):
+                    k = i - cuts[r]
+                    for m in range(n + 1):
+                        A = rank(u, cuts[r], m)
+                        B = rank(u, cuts[r + 1], m)
+                        v = rank(u, i, m)
+                        tu += 1; up += v <= min(B, A + k)
+                        tl += 1; lo += v >= min(B, A + k)
+    ok = (bm == tb and up == tu and lo == tl)
+    print(f"n = {n}")
+    print(f"    d(t) block-increasing  {bm:6d}/{tb:<6d} {'ok' if bm == tb else '**FAILS**'}")
+    print(f"    UPPER (any w)          {up:6d}/{tu:<6d} {'ok' if up == tu else '**FAILS**'}")
+    print(f"    LOWER (increasing u)   {lo:6d}/{tl:<6d} {'ok' if lo == tl else '**FAILS**'}")
+    return ok
+
+
 if __name__ == "__main__":
     print("Mathas 3.7 as a rank-matrix statement")
     print()
@@ -200,12 +242,19 @@ if __name__ == "__main__":
         print()
 
     bad = sorted({k for t in tallies.values() for k, (g, tot) in t.items() if g != tot})
+    print("Step (c), the interpolation bridge, decomposed:")
+    print()
+    c_ok = all(run_c(k) for k in (3, 4, 5, 6))
+    print()
+
     print("The two inductive steps of the EASY direction, over all of S_n:")
     print()
     steps_ok = all(run_steps(k) for k in (3, 4, 5))
     print()
 
     print("VERDICT")
+    if not c_ok:
+        print("    AN INTERPOLATION LEG FAILS -- `rk_le_of_endpoints` rests on it; stop and read.")
     if not steps_ok:
         print("    A STEP FAILS -- `BruhatRankCriterion.lean` rests on it; stop and read.")
     if bad:

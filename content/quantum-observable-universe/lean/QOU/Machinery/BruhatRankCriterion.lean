@@ -329,4 +329,135 @@ theorem rk_le_of_bruhatLe {u w : Perm (Fin (n + 1))}
   rw [← hw, ← hu]
   exact rk_le_of_sublist ω hred ω' hsub i m
 
+/-! ### Interpolation: from the endpoints of a window to its interior
+
+Mathas 3.7 compares rank matrices only at the reference tableau's ROW CUTS, while Ehresmann's
+criterion wants every index.  The two are reconciled by the fact that `dOf t` is *increasing
+across each row block* exactly when `t` is row standard -- so inside a block the values below
+`m` come first, and the rank matrix there is pinned by its two endpoints.
+
+Everything here is stated at the Coxeter level, over an arbitrary window `[a, b)`; the tableau
+side supplies the windows and the increasing hypothesis.
+
+Measured before being written: over every row-standard tableau of every partition of `n <= 6`,
+`d(t)` is block-increasing (1602/1602 at n = 6) and both endpoint bounds hold
+(122885/122885) -- `computations/hecke/dipper_james_rank_criterion_probe.py`. -/
+
+theorem rk_mono_index (u : Perm (Fin n)) {i j : ℕ} (h : i ≤ j) (m : ℕ) :
+    rk u i m ≤ rk u j m := by
+  rw [rk_eq_card, rk_eq_card]
+  refine Finset.card_le_card fun x hx => ?_
+  obtain ⟨-, h1, h2⟩ := Finset.mem_filter.mp hx
+  exact Finset.mem_filter.mpr ⟨Finset.mem_univ _, lt_of_lt_of_le h1 h, h2⟩
+
+theorem card_filter_val_Ico (n a i : ℕ) (h : i ≤ n) :
+    (Finset.univ.filter fun x : Fin n => a ≤ (x : ℕ) ∧ (x : ℕ) < i).card = i - a := by
+  have key : (Finset.univ.filter fun x : Fin n => a ≤ (x : ℕ) ∧ (x : ℕ) < i).card
+      = (Finset.Ico a i).card := by
+    refine Finset.card_bij (fun (x : Fin n) _ => (x : ℕ)) ?_ ?_ ?_
+    · intro y hy
+      obtain ⟨-, h1, h2⟩ := Finset.mem_filter.mp hy
+      exact Finset.mem_Ico.mpr ⟨h1, h2⟩
+    · intro y _ z _ hyz
+      exact Fin.ext hyz
+    · intro c hc
+      obtain ⟨h1, h2⟩ := Finset.mem_Ico.mp hc
+      exact ⟨⟨c, lt_of_lt_of_le h2 h⟩, Finset.mem_filter.mpr ⟨Finset.mem_univ _, h1, h2⟩, rfl⟩
+  rw [key, Nat.card_Ico]
+
+theorem rk_le_add_sub (u : Perm (Fin n)) (i j m : ℕ) :
+    rk u j m ≤ rk u i m + (j - i) := by
+  rw [rk_eq_card, rk_eq_card]
+  have hsub : (Finset.univ.filter fun x : Fin n => (x : ℕ) < j ∧ ((u x : Fin n) : ℕ) < m)
+      ⊆ (Finset.univ.filter fun x : Fin n => (x : ℕ) < i ∧ ((u x : Fin n) : ℕ) < m)
+        ∪ (Finset.univ.filter fun x : Fin n => i ≤ (x : ℕ) ∧ (x : ℕ) < j) := by
+    intro x hx
+    obtain ⟨-, h1, h2⟩ := Finset.mem_filter.mp hx
+    rcases lt_or_ge (x : ℕ) i with hxi | hxi
+    · exact Finset.mem_union_left _ (Finset.mem_filter.mpr ⟨Finset.mem_univ _, hxi, h2⟩)
+    · exact Finset.mem_union_right _ (Finset.mem_filter.mpr ⟨Finset.mem_univ _, hxi, h1⟩)
+  refine le_trans (Finset.card_le_card hsub) (le_trans (Finset.card_union_le _ _) ?_)
+  refine Nat.add_le_add_left ?_ _
+  refine le_trans (Finset.card_le_card_of_injOn (fun x : Fin n => (x : ℕ))
+    (fun x hx => ?_) (fun x _ y _ hxy => Fin.ext hxy)) (Nat.card_Ico i j).le
+  obtain ⟨-, h1, h2⟩ := Finset.mem_filter.mp hx
+  exact Finset.mem_Ico.mpr ⟨h1, h2⟩
+
+
+/-- `u` is strictly increasing across the index window `[a, b)`. -/
+def IncreasingOn (u : Perm (Fin n)) (a b : ℕ) : Prop :=
+  ∀ x y : Fin n, a ≤ (x : ℕ) → (x : ℕ) < (y : ℕ) → (y : ℕ) < b →
+    ((u x : Fin n) : ℕ) < ((u y : Fin n) : ℕ)
+
+theorem rk_eq_add_of_all_lt (u : Perm (Fin n)) {a i m : ℕ} (hai : a ≤ i) (hin : i ≤ n)
+    (hall : ∀ x : Fin n, a ≤ (x : ℕ) → (x : ℕ) < i → ((u x : Fin n) : ℕ) < m) :
+    rk u i m = rk u a m + (i - a) := by
+  rw [rk_eq_card, rk_eq_card, ← card_filter_val_Ico n a i hin]
+  have hsplit : (Finset.univ.filter fun x : Fin n => (x : ℕ) < i ∧ ((u x : Fin n) : ℕ) < m)
+      = (Finset.univ.filter fun x : Fin n => (x : ℕ) < a ∧ ((u x : Fin n) : ℕ) < m)
+        ∪ (Finset.univ.filter fun x : Fin n => a ≤ (x : ℕ) ∧ (x : ℕ) < i) := by
+    ext x
+    simp only [Finset.mem_union, Finset.mem_filter, Finset.mem_univ, true_and]
+    constructor
+    · rintro ⟨h1, h2⟩
+      rcases lt_or_ge (x : ℕ) a with hxa | hxa
+      · exact Or.inl ⟨hxa, h2⟩
+      · exact Or.inr ⟨hxa, h1⟩
+    · rintro (⟨h1, h2⟩ | ⟨h1, h2⟩)
+      · exact ⟨lt_of_lt_of_le h1 hai, h2⟩
+      · exact ⟨h2, hall x h1 h2⟩
+  have hdisj : Disjoint
+      (Finset.univ.filter fun x : Fin n => (x : ℕ) < a ∧ ((u x : Fin n) : ℕ) < m)
+      (Finset.univ.filter fun x : Fin n => a ≤ (x : ℕ) ∧ (x : ℕ) < i) := by
+    refine Finset.disjoint_left.mpr fun x hx hx' => ?_
+    obtain ⟨-, h1, -⟩ := Finset.mem_filter.mp hx
+    obtain ⟨-, h2, -⟩ := Finset.mem_filter.mp hx'
+    omega
+  rw [hsplit, Finset.card_union_of_disjoint hdisj]
+
+/-- **The interpolation step.**  Inside a window on which `u` increases, the rank matrix is
+pinned from below by the two endpoints: the values below `m` come FIRST, so by index `i` you
+have collected either all of them or one per position, whichever runs out sooner.
+
+This is the only place row-standardness is used: `dOf t` increases across each row block
+exactly when `t` is row standard. -/
+theorem rk_ge_min_of_increasingOn (u : Perm (Fin n)) {a b : ℕ} (hu : IncreasingOn u a b)
+    (hbn : b ≤ n) (m : ℕ) {i : ℕ} (hai : a ≤ i) (hib : i ≤ b) :
+    min (rk u b m) (rk u a m + (i - a)) ≤ rk u i m := by
+  rcases le_or_gt (rk u b m) (rk u i m) with hcase | hcase
+  · exact le_trans (min_le_left _ _) hcase
+  · have hex : ∃ x : Fin n, i ≤ (x : ℕ) ∧ (x : ℕ) < b ∧ ((u x : Fin n) : ℕ) < m := by
+      by_contra hno
+      push_neg at hno
+      refine absurd ?_ (not_le.mpr hcase)
+      rw [rk_eq_card, rk_eq_card]
+      refine Finset.card_le_card fun x hx => ?_
+      obtain ⟨-, h1, h2⟩ := Finset.mem_filter.mp hx
+      refine Finset.mem_filter.mpr ⟨Finset.mem_univ _, ?_, h2⟩
+      by_contra hxi
+      exact absurd h2 (not_lt.mpr (hno x (not_lt.mp hxi) h1))
+    obtain ⟨x, hxi, hxb, hxm⟩ := hex
+    have hall : ∀ y : Fin n, a ≤ (y : ℕ) → (y : ℕ) < i → ((u y : Fin n) : ℕ) < m :=
+      fun y hay hyi => lt_trans (hu y x hay (by omega) hxb) hxm
+    rw [rk_eq_add_of_all_lt u hai (le_trans hib hbn) hall]
+    exact min_le_right _ _
+
+/-- **The interpolation bridge.**  If a rank inequality holds at the two ENDPOINTS of a window
+on which the dominated permutation increases, it holds at every index INSIDE the window.
+
+Nothing is assumed of `w` — the upper bound it needs (`rk w i m ≤ min (rk w b m, rk w a m +
+(i-a))`) holds for any permutation, being monotonicity plus "at most one value per position".
+Only `u` must increase, and only across the window.
+
+This is the step that turns Mathas 3.7's row-cut rank comparison into the every-index
+comparison Ehresmann's criterion consumes. -/
+theorem rk_le_of_endpoints (u w : Perm (Fin n)) {a b i m : ℕ} (hu : IncreasingOn u a b)
+    (hbn : b ≤ n) (hai : a ≤ i) (hib : i ≤ b)
+    (hA : rk w a m ≤ rk u a m) (hB : rk w b m ≤ rk u b m) :
+    rk w i m ≤ rk u i m := by
+  have hup1 : rk w i m ≤ rk w b m := rk_mono_index w hib m
+  have hup2 : rk w i m ≤ rk w a m + (i - a) := rk_le_add_sub w a i m
+  have hlow := rk_ge_min_of_increasingOn u hu hbn m hai hib
+  omega
+
 end QOU.Machinery.BruhatRank
