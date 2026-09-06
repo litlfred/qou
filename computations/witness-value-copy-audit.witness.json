@@ -4,7 +4,7 @@
   "scriptFile": "witness_value_copy_audit.py",
   "description": "Source literals of >= 11 significant digits that also appear in a *.witness.json the script does not itself produce \u2014 a value copied instead of loaded. Such a copy goes stale silently when the producer is re-run.",
   "min_sig_digits": 11,
-  "indexed_literals": 227088,
+  "indexed_literals": 227101,
   "total": 881,
   "narrow_total": 266,
   "narrow_files": 177,
@@ -1759,7 +1759,7 @@
         "computations/audits/codata-2022-downstream-staleness.witness.json",
         "computations/audits/e0-calibration-audit.witness.json"
       ],
-      "witness_count": 44,
+      "witness_count": 43,
       "deprecated_source": false
     },
     {
@@ -2026,7 +2026,7 @@
         "computations/audits/codata-2022-downstream-staleness.witness.json",
         "computations/audits/e0-calibration-audit.witness.json"
       ],
-      "witness_count": 44,
+      "witness_count": 43,
       "deprecated_source": false
     },
     {
@@ -3349,7 +3349,7 @@
         "computations/_deprecated/beta-decay-energy-scale.witness.json",
         "computations/_deprecated/breit-wheeler-nucleon-nf.witness.json"
       ],
-      "witness_count": 60,
+      "witness_count": 59,
       "deprecated_source": true
     },
     {
@@ -3728,7 +3728,7 @@
         "computations/_deprecated/beta-decay-energy-scale.witness.json",
         "computations/_deprecated/breit-wheeler-nucleon-nf.witness.json"
       ],
-      "witness_count": 61,
+      "witness_count": 60,
       "deprecated_source": true
     },
     {
@@ -5180,7 +5180,7 @@
         "computations/audits/codata-2022-downstream-staleness.witness.json",
         "computations/audits/e0-calibration-audit.witness.json"
       ],
-      "witness_count": 44,
+      "witness_count": 43,
       "deprecated_source": false
     },
     {
@@ -5314,7 +5314,7 @@
         "computations/audits/codata-2022-downstream-staleness.witness.json",
         "computations/audits/e0-calibration-audit.witness.json"
       ],
-      "witness_count": 44,
+      "witness_count": 43,
       "deprecated_source": false
     },
     {
@@ -5835,7 +5835,7 @@
         "computations/audits/codata-2022-downstream-staleness.witness.json",
         "computations/audits/e0-calibration-audit.witness.json"
       ],
-      "witness_count": 44,
+      "witness_count": 43,
       "deprecated_source": false
     },
     {
@@ -10761,7 +10761,7 @@
         "computations/_deprecated/beta-decay-energy-scale.witness.json",
         "computations/_deprecated/breit-wheeler-nucleon-nf.witness.json"
       ],
-      "witness_count": 61,
+      "witness_count": 60,
       "deprecated_source": true
     },
     {
