@@ -91,8 +91,25 @@ def lift(varnames, linform, f, fp, coords):
 
 
 def main():
-    rur_path = HERE / 'L6a4-c1-saturated-rur-charzero.res'
-    ms_path = HERE / 'L6a4-c1-saturated-charzero.ms'
+    # Two producers write these, with different stems.  PR #6815's class-1 run used
+    # `-saturated-`; ptolemy_class_sweep.py namespaces its own outputs `-sweep-` so a
+    # re-run cannot silently replace the tracked class-1 artifacts a downstream lift
+    # depends on.  Accept either, preferring the one that exists.
+    name = sys.argv[1] if len(sys.argv) > 1 else 'L6a4'
+    kcls = int(sys.argv[2]) if len(sys.argv) > 2 else 1
+    stems = [f'{name}-c{kcls}-saturated', f'{name}-c{kcls}-sweep']
+    if len(sys.argv) > 3:
+        stems.insert(0, sys.argv[3])
+    for stem in stems:
+        rur_path = HERE / f'{stem}-rur-charzero.res'
+        ms_path = HERE / f'{stem}-charzero.ms'
+        if rur_path.is_file() and ms_path.is_file():
+            break
+    else:
+        raise SystemExit(
+            f"no (rur-charzero.res, charzero.ms) pair for {name} c{kcls}; tried "
+            + ", ".join(stems))
+    print(f"stem: {stem}")
     varnames, linform, f, fp, coords = parse_rur(rur_path)
     fe = f.as_expr()
     fl = sp.factor_list(fe)
@@ -127,10 +144,10 @@ def main():
     if zero:
         return 1
 
-    out = HERE / 'L6a4-c1-charzero-pinned.json'
+    out = HERE / f'{name}-c{kcls}-charzero-pinned.json'
     out.write_text(json.dumps({
-        "manifold": "L6a4",
-        "obstruction_class": 1,
+        "manifold": name,
+        "obstruction_class": kcls,
         "source_rur": rur_path.name,
         "source_system": ms_path.name,
         "field": {"generator": "t", "min_poly": str(fe), "degree": int(f.degree()),

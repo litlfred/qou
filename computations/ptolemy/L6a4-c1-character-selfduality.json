@@ -43,16 +43,16 @@
   ],
   "generator_witnesses": [],
   "sweep": {
-    "max_length": 4,
-    "reduced_words": 936,
-    "pgl_witnesses": 582,
+    "max_length": 3,
+    "reduced_words": 186,
+    "pgl_witnesses": 94,
     "shortest_witness": {
       "word": "ac",
       "chi": "83839/11637 + -803/54000*T + 49/4218750*T^2 + -388/113642578125*T^3",
       "chi_inv": "-69185/11637 + 2431/216000*T + -101/16875000*T^2 + -43/113642578125*T^3"
     },
     "ratio_classes_where_invariant_holds": {
-      "primitive cube root of unity": 224
+      "primitive cube root of unity": 62
     }
   },
   "verdict": "COMPLEX TYPE (not self-dual)",
