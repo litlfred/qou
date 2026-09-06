@@ -684,9 +684,73 @@ that `chi_kernel_conformance_harness` was written to be the oracle for.
 - [x] The pn convention mismatch fixed.
 - [ ] `he4_magnus_omega2_sign_sparse_probe` — needs >300 s under grouped to
       decide which bucket it is in.
-- [ ] The 2 genuine ruling breakages (`nastokes` R3 bound,
-      `qbeta_level_k_binding_operator` KeyError) still need deciding — but they
-      are now 2 questions, not 9, and neither is the monotonicity question.
+### ✅ BOTH GENUINE BREAKAGES FIXED — and each was hiding a finding
+
+**`qbeta_level_k_binding_operator_probe` — `KeyError: (3, 2, 1)`.** Section [5]
+hardcodes `(3,2,1)` and `(2,2,1,1)` and looks them up in `small`, the shapes
+carrying a sub-unit eigenphase. Under the ruled word `small` is **empty** — the
+probe's own stdout says so — and the lookup raised.
+
+**The absence is the result.** That section exists to show the 0.13 % sum
+coincidence is a degeneracy-wall artefact; under the ruled word the coincidence
+*does not arise at all*, which is stronger. The guard reports that and the
+assertion passes on the absence rather than being skipped — skipping drops a
+check. With the crash gone the probe reports what it was hiding:
+
+    grouped     8/8
+    borromean   6/8
+      binding_character_is_largest_in_a_tl_kernel_block   fails
+      the_only_small_eigenphases_are_in_blind_blocks      fails
+
+**`nastokes_multigen_cluster_additivity` — `R3_rel_lambda_robust_within_10pct`.**
+One boolean over `max(spreads)` across three independent measures, so a single
+one moving turned the flag red without saying which:
+
+    measure       grouped   borromean
+    (0,1)         1.034x    1.059x     robust under both
+    (3,4)         1.099x    1.065x     robust under both
+    band-local    1.044x    2.099x     GROUPED-SPECIFIC
+
+Per-measure flags added alongside the aggregate (kept, so nothing silently
+loosens). Witness now reads 17/19 with `[band-local]` named. Note `(3,4)` sits
+at **1.099 under grouped** — 0.001 from the threshold — so the old single flag
+was one digit of noise from failing for an unrelated reason.
+
+### THE GROUPED-SPECIFIC LIST IS NOW SEVEN
+
+    1. per-generator/per-letter factorisation      (prior)
+    2. the six c₁ values                           (prior)
+    3. f₁/f₀ extremality                           (prior)
+    4. MONOTONICITY of the generator sequence      (this pass)
+    5. binding character largest in a TL-kernel block   (this pass)
+    6. small eigenphases confined to blind blocks       (this pass)
+    7. band-local λ-robustness within 10 %              (this pass)
+
+Each was a property of **contiguity**, and each read as evidence of
+correctness until the ruling separated the two. Three of them were only
+visible because a crash was removed.
+
+Corroboration from a sibling: `docs/audits/2026-09-06-the-classical-floor-is-
+interface-parity.md` measures the ℏ_q⁰ floor **invariant** under both
+`intra_order` and `pn_convention` — which independently confirms that
+`classical_floor_derivation_probe`'s failure cannot be mathematical, exactly
+as the discriminator found.
+
+- [x] Both genuine ruling breakages fixed.
+- [ ] `he4_magnus_omega2_sign_sparse_probe` — still undecided; needs >300 s
+      under grouped to place it in a bucket.
+- [ ] The three pre-existing failures with no obvious fix
+      (`derived_chi_catalogue_build` non-idempotency,
+      `markov_trace_axiomatic_multi_atom` and `per_irrep_pole_atom_crystal`
+      failing their own assertions both ways) are unrelated to this bean and
+      want beans of their own.
+
+### METHOD NOTE, EARNED TWICE
+
+A blanket `git checkout -- computations/` run to clean witness churn destroyed
+the qbeta source fix **twice** before it landed. Commit the source change
+BEFORE cleaning generated files; the two live in the same directory and a path
+that matches one matches the other.
 - [ ] `binding_combiner_markov_peel_fallback` and `triton_magnus_omega2_sign_probe`
       need >1200 s, or a smaller case.
 - [ ] Decide whether `intra_order` should have defaulted at all. A
