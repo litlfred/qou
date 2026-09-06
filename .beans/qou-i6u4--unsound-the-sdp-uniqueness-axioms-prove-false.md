@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: high
 created_at: 2026-09-05T19:41:40Z
-updated_at: 2026-09-06T08:10:54Z
+updated_at: 2026-09-06T08:13:44Z
 ---
 
 ## Finding
@@ -224,3 +224,51 @@ consumed at `:74`), also flagged at 6. Not yet tested.
 ### Running tally
 
 **Thirteen false axioms across seven incidents**, of which mine are seven.
+
+
+## EIGHTH false axiom, and a CORRECTION to my own disposition of the seventh
+
+`DressedParticle.level_canonical_under_bare`
+(`knots-particles-confinement/dressed-particle.lean:62`) is false by the same
+argument as #7: that file's `DressedParticle` is a plain structure with `level`
+as a FREE field, and the axiom asserts two records sharing `bare` share `level`.
+Its docstring admits it — *"Pending a structure refactor carrying canonicity as
+a proof field."*
+
+### The real shape: §0a SHADOWING, not (only) a false claim
+
+Both #7 and #8 live in **content-block `.lean` siblings that shadow library
+modules**, and per AGENTS.md §0a resolution checks the sibling FIRST. The two
+cases then differ, and I conflated them when I framed #7 as needing a paper
+retraction:
+
+| | library module | content-block sibling |
+|---|---|---|
+| `DressedParticle` | structure carries `shell_on_bare` and `level_preserved` as **proof fields**; `dressing_composes` is **proved from them** | plain structure, false axiom `level_canonical_under_bare`, `dressComposition` derived from it |
+| `ConfinementLevel` | structure only, plus `ConfinementLevel.nonempty`; **no `unique`** | plain structure, false axiom `level_canonical`, `ConfinementLevel.unique` derived from it |
+
+So:
+
+* **#8 needs no author decision.** The library already did the refactor the
+  sibling's docstring calls "pending", and already proves the composition. The
+  fix is the §0a one — stop shadowing, let `lean.ref` resolve to the library.
+  Nothing is retracted; the claim survives, better proved.
+* **#7 still does.** `ConfinementLevel.unique` is proved NOWHERE — the library
+  has no `unique` at all. The claim is true mathematically (the min of an
+  upward-closed ℕ-subset is unique) but is not established anywhere in the
+  corpus, so landing its refutation means either doing the structure refactor
+  (add `level_is_min` as a proof field, mirroring what `DressedParticle` already
+  has) or conditionalising the block.
+
+**My earlier framing said both were paper-retraction decisions. That was wrong
+for #8 and overstated for #7** — for #7 the honest options are refactor or
+conditionalise, and retraction is not among them, because the mathematical claim
+is true.
+
+`DressedParticle` is the worked template for the #7 refactor: it shows exactly
+what carrying canonicity as a proof field looks like in this corpus.
+
+### Running tally
+
+**Fourteen false axioms across eight incidents**, eight of them found here.
+Six landed; #7 and #8 recorded, not landed.
