@@ -276,7 +276,10 @@ def complete_structure(tets, gl, N, erows, seed=0, tries=40):
         except (ValueError, ZeroDivisionError, TypeError, IndexError):
             continue
         cand = [sol[k] for k in range(N)]
-        if not all(mp.im(z) > mp.mpf(10) ** -20 for z in cand):
+        # allow FLAT tetrahedra (real shapes not in {0,1}) at the ends of the product region;
+        # a flat tetrahedron contributes zero volume and collapses in the canonical decomposition
+        if not all(mp.im(z) > -mp.mpf(10) ** -30 and abs(z) > mp.mpf(10) ** -20
+                   and abs(z - 1) > mp.mpf(10) ** -20 for z in cand):
             continue
         try:
             _, hol = develop(tets, gl, cand)
@@ -291,7 +294,7 @@ def complete_structure(tets, gl, N, erows, seed=0, tries=40):
     return None
 
 
-def two_bridge_search(word, label, vol_ref=None, max_solutions=3):
+def two_bridge_search(word, label, vol_ref=None, max_solutions=200):
     tets = pillowcase_layers(word)
     N = len(tets)
     base_gl = glue_layers(tets)
@@ -319,12 +322,15 @@ def two_bridge_search(word, label, vol_ref=None, max_solutions=3):
                 continue
             stats["geometric"] += 1
             vol = sum(bloch_wigner(z) for z in shapes)
-            found.append(dict(gl=gl, gb=gb, gt=gt, shapes=shapes, vol=vol, erows=erows, classes=classes))
-            print(f"  geometric candidate #{stats['geometric']}: Vol = {mp.nstr(vol, 25)}"
+            nflat = sum(1 for z in shapes if abs(mp.im(z)) < mp.mpf(10) ** -25)
+            found.append(dict(gl=gl, gb=gb, gt=gt, shapes=shapes, vol=vol, erows=erows, classes=classes, nflat=nflat))
+            print(f"  geometric candidate #{stats['geometric']} (flat {nflat}): Vol = {mp.nstr(vol, 25)}"
                   + (f"  (ref {mp.nstr(vol_ref, 25)}, diff {mp.nstr(abs(vol - vol_ref), 3)})" if vol_ref else ""))
-            if stats["geometric"] >= max_solutions:
+            hit = vol_ref is not None and abs(vol - vol_ref) < mp.mpf(10) ** -25
+            if stats["geometric"] >= max_solutions or hit:
                 break
-        if stats["geometric"] >= max_solutions:
+        if stats["geometric"] >= max_solutions or (found and vol_ref is not None
+                                                  and abs(found[-1]["vol"] - vol_ref) < mp.mpf(10) ** -25):
             break
     print(f"  stats: {stats}")
     return tets, found, stats
