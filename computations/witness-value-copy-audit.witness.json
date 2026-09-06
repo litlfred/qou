@@ -4,7 +4,7 @@
   "scriptFile": "witness_value_copy_audit.py",
   "description": "Source literals of >= 11 significant digits that also appear in a *.witness.json the script does not itself produce \u2014 a value copied instead of loaded. Such a copy goes stale silently when the producer is re-run.",
   "min_sig_digits": 11,
-  "indexed_literals": 227101,
+  "indexed_literals": 227131,
   "total": 812,
   "narrow_total": 232,
   "narrow_files": 164,
@@ -54,7 +54,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -69,7 +69,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -762,7 +762,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -817,7 +817,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1105,7 +1105,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -1266,7 +1266,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1281,7 +1281,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1296,7 +1296,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -1341,7 +1341,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -1356,7 +1356,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -1371,7 +1371,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1386,7 +1386,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -1486,7 +1486,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1529,7 +1529,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1572,7 +1572,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1587,7 +1587,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1602,7 +1602,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1632,7 +1632,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1676,7 +1676,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1691,7 +1691,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1706,7 +1706,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -1721,7 +1721,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1736,7 +1736,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1751,7 +1751,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1869,7 +1869,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -1928,7 +1928,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -2129,7 +2129,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -2531,7 +2531,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -2546,7 +2546,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -2791,7 +2791,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -2835,7 +2835,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -2916,7 +2916,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3087,7 +3087,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -3262,7 +3262,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3408,7 +3408,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -3540,7 +3540,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -3568,7 +3568,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3583,7 +3583,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3598,7 +3598,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3613,7 +3613,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3628,7 +3628,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3643,7 +3643,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3658,7 +3658,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3673,7 +3673,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -3688,7 +3688,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3703,7 +3703,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3718,7 +3718,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3733,7 +3733,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3748,7 +3748,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3763,7 +3763,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3778,7 +3778,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3793,7 +3793,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3823,7 +3823,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3913,7 +3913,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3972,7 +3972,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -3987,7 +3987,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4002,7 +4002,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4045,7 +4045,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -4060,7 +4060,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -4075,7 +4075,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -4135,7 +4135,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4165,7 +4165,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4180,7 +4180,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4208,7 +4208,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4223,7 +4223,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4238,7 +4238,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4369,7 +4369,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -4428,7 +4428,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -4472,7 +4472,7 @@
         "computations/binding-additive-linked-cluster-scan.witness.json",
         "computations/cal4-disguise-hunt.witness.json"
       ],
-      "witness_count": 29,
+      "witness_count": 30,
       "deprecated_source": false
     },
     {
@@ -4487,7 +4487,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4502,7 +4502,7 @@
         "computations/binding-additive-linked-cluster-scan.witness.json",
         "computations/cal4-disguise-hunt.witness.json"
       ],
-      "witness_count": 29,
+      "witness_count": 30,
       "deprecated_source": false
     },
     {
@@ -4517,7 +4517,7 @@
         "computations/binding-additive-linked-cluster-scan.witness.json",
         "computations/cal4-disguise-hunt.witness.json"
       ],
-      "witness_count": 29,
+      "witness_count": 30,
       "deprecated_source": false
     },
     {
@@ -4532,7 +4532,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4588,7 +4588,7 @@
         "computations/binding-additive-linked-cluster-scan.witness.json",
         "computations/cal4-disguise-hunt.witness.json"
       ],
-      "witness_count": 29,
+      "witness_count": 30,
       "deprecated_source": false
     },
     {
@@ -4603,7 +4603,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4675,7 +4675,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -4690,7 +4690,7 @@
         "computations/binding-additive-linked-cluster-scan.witness.json",
         "computations/cal4-disguise-hunt.witness.json"
       ],
-      "witness_count": 29,
+      "witness_count": 30,
       "deprecated_source": false
     },
     {
@@ -4705,7 +4705,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4746,7 +4746,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -4806,7 +4806,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -4821,7 +4821,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -4836,7 +4836,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -4940,7 +4940,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -5000,7 +5000,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -5015,7 +5015,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -5119,7 +5119,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -5209,7 +5209,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 278,
+      "witness_count": 277,
       "deprecated_source": true
     },
     {
@@ -5224,7 +5224,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -5239,7 +5239,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -5254,7 +5254,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -5269,7 +5269,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -5491,7 +5491,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -5536,7 +5536,7 @@
         "computations/binding-additive-linked-cluster-scan.witness.json",
         "computations/cal4-disguise-hunt.witness.json"
       ],
-      "witness_count": 28,
+      "witness_count": 29,
       "deprecated_source": false
     },
     {
@@ -5551,7 +5551,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -5594,7 +5594,7 @@
         "computations/binding-additive-linked-cluster-scan.witness.json",
         "computations/cal4-disguise-hunt.witness.json"
       ],
-      "witness_count": 29,
+      "witness_count": 30,
       "deprecated_source": false
     },
     {
@@ -5609,7 +5609,7 @@
         "computations/binding-additive-linked-cluster-scan.witness.json",
         "computations/cal4-disguise-hunt.witness.json"
       ],
-      "witness_count": 28,
+      "witness_count": 29,
       "deprecated_source": false
     },
     {
@@ -5624,7 +5624,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -5684,7 +5684,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -5713,7 +5713,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 278,
+      "witness_count": 277,
       "deprecated_source": true
     },
     {
@@ -5743,7 +5743,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -5758,7 +5758,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -5773,7 +5773,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -5816,7 +5816,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 278,
+      "witness_count": 277,
       "deprecated_source": true
     },
     {
@@ -5859,7 +5859,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 140,
+      "witness_count": 141,
       "deprecated_source": true
     },
     {
@@ -5874,7 +5874,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -6139,7 +6139,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -6154,7 +6154,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -6371,7 +6371,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -6500,7 +6500,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -6732,7 +6732,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -6960,7 +6960,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -7059,7 +7059,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -7179,7 +7179,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -7417,7 +7417,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -7548,7 +7548,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -7638,7 +7638,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -7923,7 +7923,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -8043,7 +8043,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -8088,7 +8088,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -8118,7 +8118,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -8148,7 +8148,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -8189,7 +8189,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -8231,7 +8231,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8246,7 +8246,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -8261,7 +8261,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8276,7 +8276,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8291,7 +8291,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -8321,7 +8321,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8336,7 +8336,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8366,7 +8366,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -8394,7 +8394,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8497,7 +8497,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -8512,7 +8512,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8527,7 +8527,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8542,7 +8542,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8557,7 +8557,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8572,7 +8572,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8587,7 +8587,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8632,7 +8632,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8660,7 +8660,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8820,7 +8820,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8835,7 +8835,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -8880,7 +8880,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8895,7 +8895,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8910,7 +8910,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -8940,7 +8940,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -8955,7 +8955,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -8970,7 +8970,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -9030,7 +9030,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -9045,7 +9045,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -9160,7 +9160,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -9203,7 +9203,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -9218,7 +9218,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -9328,7 +9328,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -9401,7 +9401,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -9416,7 +9416,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -9431,7 +9431,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -9446,7 +9446,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -9461,7 +9461,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -9489,7 +9489,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -9504,7 +9504,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -9519,7 +9519,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -9549,7 +9549,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -9564,7 +9564,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -9594,7 +9594,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -9638,7 +9638,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 278,
+      "witness_count": 277,
       "deprecated_source": true
     },
     {
@@ -9653,7 +9653,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -9683,7 +9683,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -9726,7 +9726,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -9741,7 +9741,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -9786,7 +9786,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -9801,7 +9801,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -9860,7 +9860,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -9993,7 +9993,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -10223,7 +10223,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -10238,7 +10238,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -10253,7 +10253,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -10268,7 +10268,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -10283,7 +10283,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -10313,7 +10313,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -10343,7 +10343,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -10358,7 +10358,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -10373,7 +10373,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -10388,7 +10388,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -10431,7 +10431,7 @@
         "computations/_deprecated/chi-neutron-h3-at-q0-50dps-matrix-m.witness.json",
         "computations/_deprecated/chi-proton-h3-at-q0-50dps-matrix-m.witness.json"
       ],
-      "witness_count": 1378,
+      "witness_count": 1382,
       "deprecated_source": true
     },
     {
@@ -10489,7 +10489,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -10504,7 +10504,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -10633,7 +10633,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -10707,7 +10707,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -10722,7 +10722,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 141,
+      "witness_count": 142,
       "deprecated_source": true
     },
     {
@@ -10901,7 +10901,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -11165,7 +11165,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -11542,7 +11542,7 @@
         "computations/_deprecated/binding-per-block-log.witness.json",
         "computations/_deprecated/delta-coupling-leading-form-probe.witness.json"
       ],
-      "witness_count": 142,
+      "witness_count": 143,
       "deprecated_source": true
     },
     {
@@ -11733,7 +11733,7 @@
         "computations/_deprecated/tau-leptonic-decay.witness.json",
         "computations/a3-magnitude-berezinian-crossterm.witness.json"
       ],
-      "witness_count": 279,
+      "witness_count": 278,
       "deprecated_source": true
     },
     {
@@ -11793,7 +11793,7 @@
         "computations/codata-corpus-vintage-scan.witness.json",
         "computations/e0-lambda-composite.witness.json"
       ],
-      "witness_count": 9,
+      "witness_count": 8,
       "deprecated_source": false
     }
   ]
