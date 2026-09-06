@@ -1,0 +1,43 @@
+{
+  "manifold": "L6a4",
+  "obstruction_class": 1,
+  "field": {
+    "generator": "t",
+    "min_poly": "64*t**4 - 95000*t**3 + 101015625*t**2 - 59375000000*t + 25000000000000",
+    "degree": 4,
+    "irreducible_over_Q": true
+  },
+  "real_roots": 0,
+  "totally_imaginary": true,
+  "primitive_cube_roots_in_K": 1,
+  "generators": [
+    {
+      "generator": "a",
+      "chi": "512/431 + -57/8000*T + 3/625000*T^2 + -19/4208984375*T^3",
+      "chi_min_poly": "x**2 + 3*x + 9",
+      "scalar": "zeta_0",
+      "shape": "zeta * unipotent"
+    },
+    {
+      "generator": "b",
+      "chi": "3",
+      "chi_min_poly": "x - 3",
+      "scalar": "1",
+      "shape": "zeta * unipotent"
+    },
+    {
+      "generator": "c",
+      "chi": "3",
+      "chi_min_poly": "x - 3",
+      "scalar": "1",
+      "shape": "zeta * unipotent"
+    }
+  ],
+  "trace_field": {
+    "words": 186,
+    "max_length": 3,
+    "span_dimension": 4,
+    "equals_ptolemy_field": true
+  },
+  "generators_all_scalar_times_unipotent": true
+}
