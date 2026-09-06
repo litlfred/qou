@@ -43,6 +43,45 @@ here — this is the *plan* + the measurement). Probe + witness:
 > really was nonzero at ~10⁻³–10⁻⁹ as measured here. The reasoning was sound in
 > the frame it was written in.
 >
+> ### Owner amendment, 2026-09-06: exact-0 **or likely provable on numerical evidence**
+>
+> The carve-out is not restricted to a formal proof. A partition is droppable if
+> its contribution is exact-0 **or likely provable so on numerical evidence**.
+>
+> **The standard that makes numerical evidence mean anything here is a q-sweep,
+> not a magnitude.** A structural zero vanishes at *every* q; a term that is
+> merely small at q₀ is a coincidence, and this corpus has measured how often —
+> a figure agreeing to 0–2 significant figures is a coincidence 100 % of the
+> time. So the test is: does it vanish across several q values carrying genuine
+> 50-digit content? (Not `q = 1.1` and friends — `reject_float64_q` refuses
+> those precisely because a 17-digit q makes a 1e-30 threshold meaningless.)
+>
+> **Applied, the amendment admits nothing further for `χ^λ`.** Searched over a
+> 5-point irrational sweep — q₀, √2, φ, √3, e/2 — at 50 dps:
+>
+> | nucleus | n | partitions | `χ^λ` ≈ 0 at all 5 q | smallest \|χ^λ\| at q₀ |
+> |---|---:|---:|---:|---:|
+> | proton | 3 | 3 | **0** | 0.2806 |
+> | deuteron | 6 | 11 | **0** | 0.0367 |
+> | tritium | 9 | 30 | **0** | 0.0693 |
+> | ⁴He | 12 | 77 | **0** | 0.0149 |
+>
+> Nothing is close. The smallest character anywhere is 1.5 × 10⁻², thirty orders
+> above the threshold, so this document's original finding survives a far
+> stronger test than the one it ran — not just "no exact zeros at q₀" but "no
+> near-zeros at any of five q".
+>
+> And the near-misses are already handled: at tritium and ⁴He **every** one of
+> the smallest-|χ^λ| partitions carries `y_λ = 0` already. The two criteria do
+> not overlap — there is nothing for a character rule to drop that the row cap
+> has not dropped via the weight.
+>
+> So the droppable set is exactly the row cap, and it qualifies under the
+> *strict* reading (`WenzlWeightVanishing.lean` certifies it) without needing
+> the amendment. The amendment's practical effect is to sanction the class of
+> judgement already made in `_apply_wenzl_row_cap`, which snaps ~1e-73 residues
+> to exact 0 after verifying them below 1e-40 of the largest live weight.
+>
 > Taken in `tr_m_wenzl_bridge_mpfr` (`_apply_wenzl_row_cap`): 99.5× on the
 > five-atom producer, H₁₂ from unreachable to ~17 s, output bit-identical. Not
 > yet taken in `tr_m_atom_via_transfer`, which still evaluates all 385 partitions
