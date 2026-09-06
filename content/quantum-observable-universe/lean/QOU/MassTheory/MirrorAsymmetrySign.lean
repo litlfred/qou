@@ -55,7 +55,24 @@ only and no closed form in `(Z,N)`.
 namespace QOU.MassTheory
 
 /-- The mirror bracket `5·2^{−A−1} − 13·4^{−A}`, which carries the entire
-`(Z,N)`-dependence of the leading-order mirror asymmetry. -/
+`(Z,N)`-dependence of the leading-order mirror asymmetry.
+
+**This file survived the 2026-09-06 `c1Closed` repair unchanged, and that is not
+luck.** Owner ruling `qou-hu1f` reordered the atom word and `c₁`'s per-nucleon
+coefficients moved from `(21, 16)` to `(3, −2)` — every one of the six recorded
+values changed, by up to `163×`. Nothing here moved, because the mirror
+difference cancels everything except the coefficient *gap*:
+
+    c₁(Z,N) − c₁(N,Z) = (Z − N)·[ (P − Q)·(2^(−A−1) − 2^(−2A)) − 8·2^(−2A) ]
+
+so `mirrorBracket` depends on `P − Q` alone, and `P − Q = (S_p − S_n)/2` is `5`
+under **both** orderings — `(42 − 32)/2` and `(6 − (−4))/2`. The `13` below is
+`(P − Q) + 8`, likewise fixed by it. That equality of gaps is **measured on the
+two words, not derived**: nothing shown here forces a third ordering to give `5`
+as well, so treat this file's invariance as verified-for-these-two rather than
+structural, and re-check `P − Q` before quoting it for any new word. Contrast
+`PairwiseChainLeadingOrder.chain_over_atom_He4_generic`, whose `24/7` **is**
+structural — there the deletion sums cancel identically, for every `(S_p, S_n)`. -/
 noncomputable def mirrorBracket (A : ℕ) : ℚ :=
   5 * (1 / 2 : ℚ) ^ (A + 1) - 13 * (1 / 4 : ℚ) ^ A
 
