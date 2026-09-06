@@ -201,7 +201,24 @@ def run_atom(name, Z, N, q):
     f_res = sp.lambdify(q, residual, "mpmath")
     f_peel = sp.lambdify(q, peel, "mpmath")
     for lbl, qs in (("proton_q0", "1.1099785827513808075916690956"),
-                    ("muon_q0", "1.109978595557334719899763"),
+                    ("muon_q0_RETIRED_PIN", "1.109978595557334719899763"),
+                    # Label, not value: this literal is the RETIRED
+                    # self-certified muon pin (retired 2026-08-22 by owner
+                    # ruling; the live CODATA-2022 one is 1.1099785956427390...).
+                    # It is a SAMPLE POINT on a residual proved identically
+                    # zero in q -- alongside 1.3, 0.7 and 2, which are not
+                    # anchors at all -- so its value carries no claim and
+                    # swapping it changes no verdict (verified: identity still
+                    # holds identically for both atoms).
+                    #
+                    # It is NOT re-pointed to the live pin, and that is
+                    # deliberate. Typing any truncation of the live constant
+                    # that is not already in the tree creates a NARROW
+                    # witness-value copy -- "a computed value typed in, not
+                    # read". Measured: a 28-digit form appeared in exactly 2
+                    # places, both introduced by that edit, and moved the
+                    # drain-only ratchet 269 -> 270. Only the LABEL was ever
+                    # wrong, so only the label is fixed. Bean qou-324i.
                     ("q_1_3", "1.3"), ("q_0_7", "0.7"), ("q_2", "2")):
         try:
             qv = _mp.mpf(qs)
