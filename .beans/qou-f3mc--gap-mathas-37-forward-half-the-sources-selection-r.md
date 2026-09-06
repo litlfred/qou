@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T15:03:40Z
-updated_at: 2026-09-06T22:05:21Z
+updated_at: 2026-09-06T22:14:01Z
 ---
 
 ## What is open
@@ -367,3 +367,54 @@ Then boundary-rank => full-rank for `d`-images, and the forward half reduces to 
 The HARD direction of Ehresmann -- rank criterion => subword, Bjorner-Brenti Thm 2.1.5.
 That is the one Mathlib-scale piece in the arc and nothing else in 3.7 depends on anything
 else.
+
+
+## UPDATE 7 — (c1) is PROVED.  Row-standardness finally does work.
+
+Six more sorry-free declarations in `DominanceIsBruhat.lean`:
+
+    colPattern_dOf                  the column mirror of `rowPattern_dOf`
+    refTab_val_eq                   (x : N) = rowPrefix mu (row x) + col x
+    colPattern_refTab_lt            col x < rowLen (row x)
+    rowPattern_refTab_eq_of_block   inside the window [rowPrefix r, rowPrefix (r+1)) the
+                                    reference row IS r
+    colPattern_refTab_eq_of_block   ...and the column is x - rowPrefix r
+    dOf_increasingOn_block          **(c1)**: for row-standard t, `dOf t` is
+                                    `IncreasingOn (rowPrefix mu r) (rowPrefix mu (r+1))`
+
+**This is the first place row-standardness is used in the whole development.**  UPDATE 5
+recorded that the converse half does not need it; this is the lemma that does.  The proof is
+short because `rowPattern_dOf` / `colPattern_dOf` already reduce it to `IsRowStandard`'s own
+statement: `dOf t x = t.symm (refTab x)` is the label `t` puts in the cell `refTab` assigns
+to `x`, and `IsRowStandard t` says exactly that those increase along a row.
+
+### (c2) is what is left, and the route is mapped
+
+`∀ i <= nOf mu, ∃ r, rowPrefix mu r <= i /\ i <= rowPrefix mu (r+1)`.
+
+The one input needed is that `rowPrefix` REACHES `nOf mu`, and the corpus already has it:
+`SytRowSuperstandard.card_eq_sum_rowLen : mu.cells.card = sum over range (colLen 0) of rowLen`,
+which is literally `rowPrefix mu (colLen 0) = nOf mu`.  Given that,
+`r := Nat.find (exists r, i <= rowPrefix mu (r+1))` works, with minimality supplying
+`rowPrefix mu r <= i` (and `r = 0` handled by `rowPrefix_zero`).
+
+Then the wiring, which also needs two small `rk` facts:
+
+  * `rk u i m = rk u n m` for `n <= i` -- so an index past the end reduces to the last cut;
+  * the `r = 0` endpoint is free, since `rk _ 0 m = 0` on both sides (`rk_zero`).
+
+and the final theorem is
+
+    rankAt t i m <= rankAt s i m for all i m   ->   rk (dOf t) i m <= rk (dOf s) i m for all i m
+
+by `rk_le_of_endpoints` on each block, with `hs : IsRowStandard s` supplying the increasing
+hypothesis for the DOMINATING permutation `dOf s`.  Note `ht` is NOT needed even here --
+only the `u` side of `rk_le_of_endpoints` carries a hypothesis.
+
+I stopped short of (c2) deliberately: it is `YoungDiagram` bookkeeping (row lengths vanish
+past `colLen 0`), orthogonal to the mathematics, and the session had run long.  Nothing about
+it is uncertain.
+
+### Then (d) alone
+
+The HARD direction of Ehresmann -- rank criterion => subword, Bjorner-Brenti Thm 2.1.5.

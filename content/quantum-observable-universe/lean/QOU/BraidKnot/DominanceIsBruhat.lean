@@ -443,6 +443,93 @@ theorem rankAt_eq_rk (hn : QOU.BraidKnot.Specht.nOf μ = n + 1)
     refine ⟨by simpa using h1, ?_⟩
     simpa [toFinSucc, Equiv.permCongr_apply] using h2
 
+/-! ### Row-standardness enters: `d(t)` increases across each row block
+
+`rk_le_of_endpoints` (in `Machinery/BruhatRankCriterion`) turns a rank inequality at the two
+ENDPOINTS of a window into one at every index inside it, provided the dominated permutation
+increases across the window.  This section supplies that hypothesis for `dOf t`.
+
+**This is where row-standardness finally does work.**  It is unused in
+`bruhatLe_to_dominance` above -- the converse holds for arbitrary tableaux -- and
+`dOf_increasingOn_block` is the lemma that needs it: `dOf t x = t.symm (refTab x)` is the
+label `t` puts in the cell `refTab` assigns to `x`, and within one row those labels increase
+exactly when `t` is row standard.
+
+Measured first, over every row-standard tableau of every partition of `n <= 6`: 1602/1602 at
+`n = 6` (`run_c` in `computations/hecke/dipper_james_rank_criterion_probe.py`). -/
+
+theorem colPattern_dOf (t : QOU.BraidKnot.Specht.Tableau μ) (x : Fin (QOU.BraidKnot.Specht.nOf μ)) :
+    QOU.BraidKnot.Specht.colPattern t (dOf t x) = QOU.BraidKnot.Specht.colPattern (refTab μ) x := by
+  simp [QOU.BraidKnot.Specht.colPattern, dOf_apply]
+
+theorem refTab_val_eq (x : Fin (QOU.BraidKnot.Specht.nOf μ)) :
+    (x : ℕ) = QOU.BraidKnot.rowPrefix μ (QOU.BraidKnot.Specht.rowPattern (refTab μ) x)
+        + QOU.BraidKnot.Specht.colPattern (refTab μ) x := by
+  set c : μ.cells := refTab μ x with hc
+  have hmem : (((c : ℕ × ℕ).1, (c : ℕ × ℕ).2) : ℕ × ℕ) ∈ μ := by simp
+  have hcell :
+      (⟨((c : ℕ × ℕ).1, (c : ℕ × ℕ).2), (YoungDiagram.mem_cells _).2 hmem⟩ : μ.cells) = c := by
+    apply Subtype.ext; simp
+  have h := refTab_symm_apply (μ := μ) hmem
+  rw [hcell, hc, Equiv.symm_apply_apply] at h
+  exact h
+
+theorem colPattern_refTab_lt (x : Fin (QOU.BraidKnot.Specht.nOf μ)) :
+    QOU.BraidKnot.Specht.colPattern (refTab μ) x < μ.rowLen (QOU.BraidKnot.Specht.rowPattern (refTab μ) x) := by
+  set c : μ.cells := refTab μ x with hc
+  have hmem : (((c : ℕ × ℕ).1, (c : ℕ × ℕ).2) : ℕ × ℕ) ∈ μ := by simp
+  exact YoungDiagram.mem_iff_lt_rowLen.mp hmem
+
+theorem rowPattern_refTab_eq_of_block {r : ℕ} (x : Fin (QOU.BraidKnot.Specht.nOf μ))
+    (h1 : QOU.BraidKnot.rowPrefix μ r ≤ (x : ℕ)) (h2 : (x : ℕ) < QOU.BraidKnot.rowPrefix μ (r + 1)) :
+    QOU.BraidKnot.Specht.rowPattern (refTab μ) x = r := by
+  have hle : QOU.BraidKnot.Specht.rowPattern (refTab μ) x ≤ r := (rowPattern_refTab_le_iff r x).mpr h2
+  by_contra hne
+  have hlt : QOU.BraidKnot.Specht.rowPattern (refTab μ) x < r := lt_of_le_of_ne hle hne
+  have hv := refTab_val_eq x
+  have hc := colPattern_refTab_lt x
+  have hmono : QOU.BraidKnot.rowPrefix μ (QOU.BraidKnot.Specht.rowPattern (refTab μ) x + 1) ≤ QOU.BraidKnot.rowPrefix μ r :=
+    QOU.BraidKnot.rowPrefix_mono μ (by omega)
+  rw [QOU.BraidKnot.rowPrefix_succ] at hmono
+  omega
+
+theorem colPattern_refTab_eq_of_block {r : ℕ} (x : Fin (QOU.BraidKnot.Specht.nOf μ))
+    (h1 : QOU.BraidKnot.rowPrefix μ r ≤ (x : ℕ)) (h2 : (x : ℕ) < QOU.BraidKnot.rowPrefix μ (r + 1)) :
+    QOU.BraidKnot.Specht.colPattern (refTab μ) x = (x : ℕ) - QOU.BraidKnot.rowPrefix μ r := by
+  have hr := rowPattern_refTab_eq_of_block x h1 h2
+  have hv := refTab_val_eq x
+  rw [hr] at hv
+  omega
+
+theorem dOf_increasingOn_block {t : QOU.BraidKnot.Specht.Tableau μ}
+    (ht : QOU.BraidKnot.RowStandardTableau.IsRowStandard t)
+    (hn : QOU.BraidKnot.Specht.nOf μ = n + 1) (r : ℕ) :
+    QOU.Machinery.BruhatRank.IncreasingOn (toFinSucc hn (dOf t)) (QOU.BraidKnot.rowPrefix μ r) (QOU.BraidKnot.rowPrefix μ (r + 1)) := by
+  intro X Y haX hXY hYb
+  have hx1 : QOU.BraidKnot.rowPrefix μ r ≤ ((finCongr hn).symm X : ℕ) := by simpa using haX
+  have hy2 : (((finCongr hn).symm Y : Fin (QOU.BraidKnot.Specht.nOf μ)) : ℕ) < QOU.BraidKnot.rowPrefix μ (r + 1) := by
+    simpa using hYb
+  have hx2 : (((finCongr hn).symm X : Fin (QOU.BraidKnot.Specht.nOf μ)) : ℕ) < QOU.BraidKnot.rowPrefix μ (r + 1) := by
+    have : (((finCongr hn).symm X : Fin (QOU.BraidKnot.Specht.nOf μ)) : ℕ)
+        < (((finCongr hn).symm Y : Fin (QOU.BraidKnot.Specht.nOf μ)) : ℕ) := by simpa using hXY
+    omega
+  have hy1 : QOU.BraidKnot.rowPrefix μ r ≤ (((finCongr hn).symm Y : Fin (QOU.BraidKnot.Specht.nOf μ)) : ℕ) := by
+    have : (((finCongr hn).symm X : Fin (QOU.BraidKnot.Specht.nOf μ)) : ℕ)
+        < (((finCongr hn).symm Y : Fin (QOU.BraidKnot.Specht.nOf μ)) : ℕ) := by simpa using hXY
+    omega
+  set x : Fin (QOU.BraidKnot.Specht.nOf μ) := (finCongr hn).symm X with hxd
+  set y : Fin (QOU.BraidKnot.Specht.nOf μ) := (finCongr hn).symm Y with hyd
+  have hrow : QOU.BraidKnot.Specht.rowPattern t (dOf t x) = QOU.BraidKnot.Specht.rowPattern t (dOf t y) := by
+    rw [rowPattern_dOf, rowPattern_dOf,
+      rowPattern_refTab_eq_of_block x hx1 hx2, rowPattern_refTab_eq_of_block y hy1 hy2]
+  have hcol : QOU.BraidKnot.Specht.colPattern t (dOf t x) < QOU.BraidKnot.Specht.colPattern t (dOf t y) := by
+    rw [colPattern_dOf, colPattern_dOf,
+      colPattern_refTab_eq_of_block x hx1 hx2, colPattern_refTab_eq_of_block y hy1 hy2]
+    have : (x : ℕ) < (y : ℕ) := by simpa [hxd, hyd] using hXY
+    omega
+  have hlt : dOf t x < dOf t y := ht _ _ hrow hcol
+  simpa [toFinSucc, Equiv.permCongr_apply, hxd, hyd] using hlt
+
 /-! ### Dipper–James 3.7 itself -/
 
 /-- **Dipper–James (Mathas 3.7): dominance on row-standard tableaux is the Bruhat order.**
