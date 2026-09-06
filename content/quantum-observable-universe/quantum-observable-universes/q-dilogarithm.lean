@@ -51,30 +51,22 @@ structure QDilogarithm (H : Type*) [Add H] where
       Li2_eval (div (mul x (compl y)) (compl (mul x y))) +
       Li2_eval (div (mul y (compl x)) (compl (mul x y)))
 
-/-- **Uniqueness** (external axiom, §3b-cond pattern):
-    any two level-2 primitives satisfying the pentagon coincide up to a
-    level-1 shift (the universal property of the q-dilogarithm as
-    generator of the centre of H_q^{⊗2} modulo shuffle-products).
+/-! ## Uniqueness
 
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
+The uniqueness statement that stood here as
+`QDilogarithm.unique_up_to_shift_axiom` was **false** and is deleted
+(2026-09-06).  It concluded `L₁.Li2.1 = L₂.Li2.1` from agreement of
+`log_q`, `mul`, `compl` and `div` -- but `Li2` is not mentioned by the
+`pentagon` field at all (the pentagon constrains `Li2_eval`, a different
+field), so `Li2` is free data and two such records can differ in it.
 
-    Ref: [manuscript] §2-quantum-observable-universes/q-dilogarithm. -/
-axiom QDilogarithm.unique_up_to_shift_axiom {H : Type*} [Add H] (L₁ L₂ : QDilogarithm H)
-    (h_log : L₁.log_q = L₂.log_q)
-    (h_mul : L₁.mul = L₂.mul)
-    (h_compl : L₁.compl = L₂.compl)
-    (h_div : L₁.div = L₂.div) :
-    L₁.Li2.1 = L₂.Li2.1
+Refutation: `QOU.QAnalysisCounterexamples.not_qDilogarithm_unique`.
+Live conditional statement, about `Li2_eval`:
+`QOU.QDilogarithm.eval_unique_of_pentagon_rigid`.  Both live under
+`QOU/QuantumObservableUniverses/`; see `prop:q-dilogarithm-unique`.
 
-theorem QDilogarithm.unique_up_to_shift
-    {H : Type*} [Add H] (L₁ L₂ : QDilogarithm H)
-    (h_log : L₁.log_q = L₂.log_q)
-    (h_mul : L₁.mul = L₂.mul)
-    (h_compl : L₁.compl = L₂.compl)
-    (h_div : L₁.div = L₂.div) :
-    L₁.Li2.1 = L₂.Li2.1 :=
-  QDilogarithm.unique_up_to_shift_axiom L₁ L₂ h_log h_mul h_compl h_div
+The axiom was declared twice, verbatim, here and in
+`q-dilogarithm-unique.lean`. -/
 
 end
 

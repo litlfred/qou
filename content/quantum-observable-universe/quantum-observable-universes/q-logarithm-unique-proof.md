@@ -1,9 +1,13 @@
-The difference $\ell_1 - \ell_2$ is primitive with
-$\exp_q(\ell_1 - \ell_2) = 1$ (in the formal-power-series PROP) and
-$\epsilon(\ell_1 - \ell_2) = 0$. The flow equation forces
-$\ell_1 - \ell_2 = 0$ by the same argument as for
-([uniqueness of $\exp_q$](#prop:q-exponential-unique)): a primitive
-fixed by $D_q$ with trivial counit vanishes. This is the
-Milnor--Moore shadow of the uniqueness of the Lie-algebra logarithm
-on a -connected Lie group; categorically, it holds over any
-base ring where $(\log_q, \exp_q)$ is an adjoint pair.
+Assume the ambient coproduct and counit are additive, and that
+primitives are rigid: a primitive element with vanishing counit is zero.
+
+The difference $\ell_1 - \ell_2$ is primitive, since $\Delta_q$ is
+additive and each $\ell_i$ is primitive; and its counit is $0 - 0 = 0$.
+Rigidity gives $\ell_1 - \ell_2 = 0$.
+
+Rigidity is the Milnor–Moore shadow of uniqueness of the Lie-algebra
+logarithm on a connected group, and it is stated as a hypothesis rather
+than discharged.  It cannot be dropped: primitives of a Hopf algebra
+form a Lie algebra and so are not unique in general, and it is the
+grading of $\mathcal{H}_q$ together with the vanishing counit that cuts
+the relevant space down.
