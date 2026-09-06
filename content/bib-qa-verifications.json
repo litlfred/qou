@@ -17567,6 +17567,73 @@
     "assessed_at": "2026-09-06T13:42:16Z",
     "source_sha": "c7546a79a85b"
    }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-1610.02592v3/1610.02592v3.pdf"
+   },
+   "id": "martelli2016",
+   "status": "uncited",
+   "note": "Identified from the title page and arXiv stamp (arXiv:1610.02592v3, math.GT, 5 Apr 2022): Bruno Martelli, 'An Introduction to Geometric Topology', 494 pp, 68 sections (self-published graduate textbook). No ref() entry existed; docs/audits/2026-09-06-hyperbolic-surface-law.md line 144 and bean qou-j8hp listed it as 'absent \u2014 optional'. Entry martelli2016 created 2026-09-06; no citation site yet.",
+   "relevance": {
+    "verdict": "supporting",
+    "rationale": "A textbook, so 'supporting' by construction \u2014 it derives nothing the folio does not already take from thurston1978 / neumann-zagier1985 / benedetti-petronio / ratcliffe \u2014 but it is the first HELD, sectioned, greppable source for the exact statements the NZ-from-braid chain (docs/audits/2026-09-06-nz-gluing-data-from-braid-monodromy.md, beans qou-n2cl / qou-yvyd) checks against. Read for this triage: \u00a713.1 (Thm 13.1.3, Cor 13.1.4), \u00a714.1 (14.1.1\u201314.1.7: ideal tetrahedra as a single shape z, ideal triangulations, Prop 14.1.7 consistency + completeness \u21d2 complete finite-volume hyperbolic structure, Prop 14.1.8 valence-6 triangulations at z = e^{i\u03c0/3}, Fig 14.7 + \u00a714.1.7 identifying that two-tetrahedron triangulation as the figure-eight complement, Thm 14.1.10 the torus/satellite/hyperbolic trichotomy), \u00a715.1 (Thm 15.1.1 hyperbolic Dehn filling, Table 15.1 exceptional surgeries of 4_1), \u00a715.2 (Prop 15.2.1, Cor 15.2.8, Prop 15.2.9 / 15.2.11 Lagrangian rows, the solution space as a complex manifold parametrised by peripheral holonomy), and \u00a711.3\u201311.4 (Dehn surgery, torus bundles, Prop 11.4.14 Anosov monodromy). Each of these is a claim the corpus currently makes with a citation to Thurston's notes or NZ; Martelli gives numbered, held statements. What it does NOT contain, checked by grep: the Floyd\u2013Hatcher punctured-torus-bundle layering and Gu\u00e9ritaud's two-bridge layered triangulations (no 'punctured torus', 'Farey', 'two-bridge' or 'layered' hits outside a caption), so it cannot replace library arxiv-0808.2716v4 for qou-yvyd; and it treats only closed torus bundles in \u00a711.4. Per the owner's instruction the two-bridge work is not attempted here \u2014 this row records the citation only.",
+    "keyResults": [
+     {
+      "locator": "\u00a714.1.3\u201314.1.5, Prop 14.1.7 (pp. 429\u2013441)",
+      "statement": "For an ideal triangulation with n tetrahedra and c cusps, a shape vector with Im z_i > 0 satisfying the n consistency (edge) and 2c completeness (cusp) equations defines a complete finite-volume hyperbolic metric on M.",
+      "useForFolio": "The held statement behind prop:hyperbolic-knot-shape-fields and prop:gluing-equations-do-not-detect-hyperbolicity (both cite thurston1978 + neumann-zagier1985 only), and behind step 4 of the NZ-from-braid chain.",
+      "targets": [
+       "prop:hyperbolic-knot-shape-fields",
+       "prop:gluing-equations-do-not-detect-hyperbolicity"
+      ]
+     },
+     {
+      "locator": "Prop 14.1.8, Fig 14.7, \u00a714.1.7 (SnapPea)",
+      "statement": "A triangulation whose edges all have valence six is solved by z = e^{i\u03c0/3} throughout (all tetrahedra regular); the two-tetrahedron, two-edge instance is the figure-eight knot complement.",
+      "useForFolio": "Literature form of the audit's \u00a72 exact-solution check z_0 = z_1 = \u03c9 (\u03c9\u00b2 \u2212 \u03c9 + 1 = 0) and of QOU.Mass.FigureEightGluingFromMonodromy.figure_eight_gluing_at_sixth_root; a -- Ref: for that Lean docstring.",
+      "targets": [
+       "QOU.Mass.FigureEightGluingFromMonodromy"
+      ]
+     },
+     {
+      "locator": "Prop 15.2.1, Cor 15.2.8, Prop 15.2.9 and 15.2.11, \u00a715.2.4 (pp. 450\u2013456)",
+      "statement": "#edges = #tetrahedra; the incidence matrix A has rank 2n \u2212 c; its rows generate a Lagrangian subspace for the (degenerate) symplectic form on shape-parameter space; the solution space of the consistency equations is a complex manifold parametrised by peripheral holonomy.",
+      "useForFolio": "The audit's 'NZ symplectic' check (edge rows isotropic, \u03c9(\u03bc,\u03bb) = \u00b12) is Prop 15.2.9's statement; qou-yvyd's cross-knot gate can cite Cor 15.2.8 for the expected rank of the derived edge rows.",
+      "targets": [
+       "prop:hyperbolic-knot-shape-fields"
+      ]
+     },
+     {
+      "locator": "Thm 13.1.3, Cor 13.1.4 (pp. 407\u2013408)",
+      "statement": "Vol(\u0394) = \u039b(\u03b1) + \u039b(\u03b2) + \u039b(\u03b3) for an ideal tetrahedron with dihedral angles \u03b1, \u03b2, \u03b3 (Lobachevsky function \u039b), maximised by the regular ideal tetrahedron.",
+      "useForFolio": "A held source for the \u039b-form of the Vol(4_1) = 6\u039b(\u03c0/3) = 2\u00b7Cl_2(\u03c0/3) coefficient guard (AGENTS.md; bean qou-zdz5) \u2014 the corpus's '\u039b vs Cl_2' drain can cite the definition it is correcting to.",
+      "targets": [
+       "prop:thurston-volume-additivity"
+      ]
+     }
+    ],
+    "proposedActions": [
+     {
+      "action": "add-reference",
+      "rationale": "Relevant and no ref() entry existed (the hyperbolic-surface-law audit had already flagged it as absent); created in this triage pass as martelli2016.",
+      "target": "content/schema/references.ts"
+     },
+     {
+      "action": "cite-in-block",
+      "rationale": "prop:hyperbolic-knot-shape-fields and prop:gluing-equations-do-not-detect-hyperbolicity invoke Thurston's equations with only thurston1978 / neumann-zagier1985; add the numbered textbook statements, and a -- Ref: to the FigureEightGluingFromMonodromy Lean module docstring (Prop 14.1.8, Prop 15.2.9). Citation only \u2014 the two-bridge layering stays with qou-yvyd.",
+      "target": "prop:hyperbolic-knot-shape-fields",
+      "bean": "qou-6cu7"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+    },
+    "assessed_at": "2026-09-06T13:42:16Z",
+    "source_sha": "81020523d7d2"
+   }
   }
  ]
 }
