@@ -7,6 +7,7 @@ section_number: null
 pages: 2-2
 source_pdf: 2108.09349v2.pdf
 source_sha256: 4c732bfcbf3dfb16
+doc_brief: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM — We construct topological triangulations for complements of ( −2, 3,n )-pretzel knots and links with n≥ 7."
 ---
 and a basic outline of the Casson-Rivin program in Section 3. The ﬁrst step of the program is carried
 out in Section 4, where we show that the space of positive angle structures for our triangulations

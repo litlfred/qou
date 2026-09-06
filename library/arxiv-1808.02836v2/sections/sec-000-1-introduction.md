@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-1
 source_pdf: 1808.02836v2.pdf
 source_sha256: 0224a296253122a2
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges"
 ---
 Thurston observed that ideal triangulations are a useful tool to study the geometry and topology of cusped
 hyperbolic 3–manifolds. Geometric triangulations are useful to study geometric properties of a manifold. Min-

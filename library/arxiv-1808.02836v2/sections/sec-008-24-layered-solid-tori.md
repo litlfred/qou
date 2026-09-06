@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 5-6
 source_pdf: 1808.02836v2.pdf
 source_sha256: 0224a296253122a2
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges"
 ---
 A layered solid torus LST is a triangulation of a solid torus iteratively constructed in the following way: Start
 with a one-triangle M ¨obius strip as shown in Figure 2(c). Then attach additional tetrahedra without a twist

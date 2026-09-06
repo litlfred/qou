@@ -7,6 +7,7 @@ section_number: 7
 pages: 19-20
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 From now on, we ﬁx (wi) in the compact polyhedron ¯P at a point which maximizes the
 total hyperbolic volume of all tetrahedra. To prove that (wi) is critical for the volume

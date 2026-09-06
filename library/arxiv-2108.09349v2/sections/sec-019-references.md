@@ -7,6 +7,7 @@ section_number: null
 pages: 26-27
 source_pdf: 2108.09349v2.pdf
 source_sha256: 4c732bfcbf3dfb16
+doc_brief: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM — We construct topological triangulations for complements of ( −2, 3,n )-pretzel knots and links with n≥ 7."
 ---
 1. Ian Agol, Ideal triangulations of pseudo-Anosov mapping tori , Topology and geometry in dimension three, Con-
 temp. Math., vol. 560, Amer. Math. Soc., Providence, RI, 2011, pp. 1–17. MR 2866919

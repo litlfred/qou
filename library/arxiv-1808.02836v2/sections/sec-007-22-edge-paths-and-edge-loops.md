@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 4-5
 source_pdf: 1808.02836v2.pdf
 source_sha256: 0224a296253122a2
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges"
 ---
 To each edge e in ˆM(1) we associate a continuous path γe : [0,1]→ ˆM with endpoints in ˆM(0) via the compo-
 sition of maps [0,1]→~∆→ ˆM, where the ﬁrst map is an afﬁne map onto a 1–simplex in the equivalence class

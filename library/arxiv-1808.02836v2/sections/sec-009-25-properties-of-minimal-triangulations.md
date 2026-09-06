@@ -7,6 +7,7 @@ section_number: 2.5
 pages: 6-7
 source_pdf: 1808.02836v2.pdf
 source_sha256: 0224a296253122a2
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges"
 ---
 An ideal triangulation of a topologically ﬁnite 3–manifold M is minimal if it uses the smallest number of
 simplices in an ideal triangulation of M. The number of ideal simplices in a minimal ideal triangulation of M
