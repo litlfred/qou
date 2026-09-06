@@ -77,6 +77,9 @@ exist.** Measured 2026-09-06 over every `.lean` in the tree:
   `0.75270211325196540159377935162` and `0.24729788674803459840622064838` — which are,
   to all 30 digits, the corpus's own Wedderburn weights `y₍₂₎` and `y₍₁,₁₎` at `n = 2`
   (`y-lambda-at-q0.witness.json`), exactly as `weight_eq_proj_scalar` says they must be.
+  **This is a re-measurement, not a discovery:** bean `qou-kj4v` recorded the same
+  identity at 50 dps (agreement to `3.3e-52`) on 2026-08-09. Cited because the agreement
+  is worth having twice from two directions, not because it is new here.
 * **`fSpin` is NOT.** There is no spin-side projector-scalar pair anywhere. The two
   spin-side carriers assert something else entirely: `BringFiberAction` (D10) builds
   `A5Irrep → IcosahedralRotation` with an injectivity field, and `SpinFromSo3Fiber`
@@ -85,9 +88,26 @@ exist.** Measured 2026-09-06 over every `.lean` in the tree:
   two-element scalar on the spin channel. Read from the carriers' own field lists, not
   from their names.
 
-So the equal-scalars identification is **un-instantiable at present**, which is stronger
-than un-instantiated: `hplus`/`hminus` equate a corpus object to one the corpus has not
-built.
+**🛑 "un-instantiable" would be too strong, and this paragraph said it before the beans
+path of the corpus-grep came back.** Someone *has* instantiated it: bean `qou-5d6k`
+(2026-08-25) evaluates the Pauli-locked interface at 50 dps by using `μ±` for **both**
+`SU(2)`s and gets
+
+    μ(³S₁) = μ₊^spin · μ₋^iso = 0.18614164195799085217
+    μ(¹S₀) = μ₋^spin · μ₊^iso = 0.18614164195799085217
+
+— `separable_interface_degenerate`'s conclusion, measured, to the last digit. So the
+statement is not that the identification cannot be written down; it is that **the only
+way anyone has written it down is by positing `μ±` on the spin side, which assumes
+`hplus`/`hminus` rather than checking them.** That is why "instantiate it at the corpus's
+own constructions" is empty as a next step: no *construction* supplies `fSpin`, and the
+one instantiation that exists supplies it by assumption.
+
+The distinction matters because the two readings send a reader to different places. "It
+cannot be instantiated" invites building a spin scalar. "It has only ever been
+instantiated by assuming the answer" says the missing thing is a *derivation* of the spin
+projector weights from the D10 side — which is a statement about `BringFiberAction`, not
+about this theorem.
 
 **A route that this observation might seem to open is already closed — do not walk into
 it.** The tempting next move is to drop the missing spin factor and read the channel
@@ -100,6 +120,15 @@ nature's `2.1510`. Route 7 of
 [`2026-08-16-two-nucleon-sector-final-state-eight-closures.md`](../../../../../../docs/audits/2026-08-16-two-nucleon-sector-final-state-eight-closures.md),
 Lean, scope-(b), landed 2026-08-16. The `4.9181` is recorded here only so the next reader
 does not re-derive it as though it were news.
+
+There is a second, independent reason, and it is sharper: bean `qou-4g4a` proves the
+admissible interface band `[z − h, z] = [0.40362773835082593616, 0.61268803714646525160]`
+lies **strictly between** the two isospin weights — `μ₋` is 63.22 % below the floor and
+`μ₊` 22.85 % above the ceiling, with a 7.56 % margin on the tighter of the two `q`
+conditions, so it is not a knife-edge and not fixable by a better `q`. Using an isospin
+projector *as* the interface is therefore not merely unmotivated but **unavailable**: the
+two mechanisms compute on disjoint sets. (That separation on the lower side is a
+convention-**D** phenomenon; under C, `μ₋ = 0.303675` sits inside the band.)
 
 **What this does NOT say.** It does not refute `separable_interface_degenerate`, which is
 correct and sorry-free, nor the physics reading of the Pauli lock, nor anything about

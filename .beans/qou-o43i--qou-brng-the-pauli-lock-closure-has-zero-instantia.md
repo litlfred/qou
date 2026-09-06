@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T20:22:33Z
-updated_at: 2026-09-06T03:57:26Z
+updated_at: 2026-09-06T04:06:11Z
 ---
 
 Follows `qou-brng`'s 2026-09-04 entry, which named `separable_interface_degenerate`'s
@@ -160,3 +160,59 @@ and `singlet_binds_more` are all correct and sorry-free.
 adding a ninth candidate to that list is not the shape of progress. Anyone picking this up
 should read `2026-08-16-two-nucleon-sector-final-state-eight-closures.md` first — routes 7
 and 8 close classes rather than candidates, which is why they are the ones that bite.
+
+
+---
+## 2026-09-06, same hour — CORRECTING the entry above: "un-instantiable" is too strong, and the μ± = y_λ identity was already recorded
+
+The beans path of the corpus-grep (path 6) returned **after** I had committed
+`a1b3ba9a4b`. I ran it in the background and did not wait. Three fixes, one of them to
+the load-bearing sentence.
+
+**1. "Un-instantiable" is wrong. Someone instantiated it, by assuming it.** Bean
+`qou-5d6k` (2026-08-25) evaluates the Pauli-locked interface at 50 dps using `μ±` for
+**both** SU(2)s:
+
+    μ(³S₁) = μ₊^spin · μ₋^iso = 0.18614164195799085217
+    μ(¹S₀) = μ₋^spin · μ₊^iso = 0.18614164195799085217
+
+That is `separable_interface_degenerate`'s conclusion, measured, to the last digit — and
+I should have found it before writing that the identification could not be instantiated.
+
+The Lean-level claim survives and is unchanged: **no corpus *construction* supplies
+`fSpin`** (D10's `BringFiberAction` builds `A5Irrep → IcosahedralRotation`;
+`SpinFromSo3Fiber` constrains `levelCoeff : ℕ → R`). What changes is the conclusion drawn
+from it. The correct statement is not *"it cannot be instantiated"* but **"the only
+instantiation that exists posits `μ±` on the spin side, which assumes `hplus`/`hminus`
+rather than checking them."**
+
+The two readings send a reader to different places, which is why the sloppy one matters:
+"cannot be instantiated" invites building a spin scalar; "has only ever been instantiated
+by assuming the answer" says the missing object is a *derivation* of the spin projector
+weights on the D10 side — a statement about `BringFiberAction`, not about this theorem.
+
+**2. The μ± = y_λ identity is a re-measurement, not a discovery.** Bean `qou-kj4v`
+recorded it on 2026-08-09 at **50 dps** (agreement to `3.3e-52`); my run reproduces it at
+30 digits. Worth having from two directions, but I presented it without the citation and
+that reads as novelty.
+
+**3. A second and sharper reason the isospin-scalar route is closed, which I missed.**
+Bean `qou-4g4a` (in-progress, sibling branch `claude/anchor-followups-2026-08-08`,
+sorry-free Lean in `GramSignature.lean` §BandSeparation) proves the admissible interface
+band `[z−h, z] = [0.40362773835082593616, 0.61268803714646525160]` lies **strictly
+between** the two isospin weights: `μ₋` 63.22 % below the floor, `μ₊` 22.85 % above the
+ceiling, 7.56 % margin on the tighter `q` condition. Not a knife-edge, not fixable by a
+better `q`. So using an isospin projector *as* the interface is **unavailable**, not
+merely unmotivated — the two mechanisms compute on disjoint sets. Convention-dependence
+stated rather than buried: the lower separation is a **D** phenomenon; under C,
+`μ₋ = 0.303675` sits inside the band.
+
+**The process lesson, which is the reusable part.** I backgrounded the corpus-grep and
+committed a corpus-status claim while one of its six paths was still running. Paths 1–3
+and 5 had returned and looked clean; path 6 held the correction. **Do not commit a
+corpus-status claim while any checklist path is outstanding** — the whole point of the
+six paths is that the one you skip is the one that bites, and backgrounding a path is a
+way of skipping it that feels like diligence.
+
+Unchanged: the `4.9181` is still not recorded anywhere (checked), and route 7 still
+closes the class. Nothing refuted.
