@@ -1,5 +1,18 @@
 # The leading order is strongly A-dependent; by k = 11 the A-dependence is gone
 
+> **🛑 THE `c_k` BELOW ARE GROUPED-WORD VALUES — CORRECTED 2026-09-06 BY THEIR
+> OWN AUTHOR.** `7db032fb48` (owner ruling, bean `qou-hu1f`) made the Borromean
+> intra-nucleon ordering canonical, and these coefficients were computed on the
+> old default without pinning it. They move — `c₁(⁴He)` by a factor of **37**,
+> `259/128 → 7/128` — and `c₁(nn)` becomes **exactly 0**.
+>
+> **Scope, not refutation:** the `c₁` values here are correct as recorded for the
+> grouped word and are superseded as current values.
+>
+> Full table under both orderings, and what survives:
+> [`2026-09-06-the-c1-c2-crossover-is-grouped-specific.md`](2026-09-06-the-c1-c2-crossover-is-grouped-specific.md).
+> The `c₀` floor IS ordering-invariant, so everything resting on it is untouched.
+
 > **🛑 NAMING CORRECTION (added 2026-09-04).** The `c_k` in this document are
 > **NOT** the Q_β precision-ladder `c_k` that
 > [`ck-dk-canonical-registry.md` §2](../coordination/ck-dk-canonical-registry.md)

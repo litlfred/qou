@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T03:58:42Z
-updated_at: 2026-09-06T09:25:39Z
+updated_at: 2026-09-06T09:51:21Z
 ---
 
 ## The situation, measured
@@ -109,3 +109,48 @@ the ordering change tells us the `Z`/`N` split of the formula survives; it says
 nothing about whether the per-letter weights (21 and 16) do. The grouped-specific
 measurement the bean cites — grouped factorises to ~3e-59, interleaved fails by
 2.8x-13.3x — is precisely at the per-letter level, so it stands unaffected.
+
+
+## ALL FOUR STEPS DONE 2026-09-06 — PR #6931
+
+1. **Recompute the six under Borromean** — done, all six MEASURED:
+
+       pp 1/8   pn 1/16   nn 0   T 1/64   3He 1/8   4He 7/128
+
+   `4He = 7/128` was PREDICTED from the closed form before it was measured, then
+   confirmed twice over (exact series and permutation count agree).
+
+2. **`QOU.MassTheory.PairwiseChainLeadingOrder`** — rewritten, not table-edited,
+   because `c1_nn = 0` exactly. `lean`-direct EXIT 0, `#print axioms` on all 14
+   declarations gives `[propext, Classical.choice, Quot.sound]`, zero `sorryAx`.
+   The two ratios that move: `T 292/163 -> 4`, `3He 30/17 -> 3/2`.
+
+3. **Does `c1_from_letters` survive?** — YES, whole. Only the two letter weights
+   move, `(21, 16) -> (3, -2)`, the neutron weight going negative. Read off two
+   like-nucleon words via the #6919 additivity, then checked against the six.
+
+4. **The three audit docs** — bannered, and step 4 turned out to be much more
+   than scoping notes. See below.
+
+## The two results worth carrying forward
+
+**The `24/7` is STRUCTURAL, and is now proved.** The file previously read
+`259 = 7.37`, `888 = 24.37` as a striking coincidence.
+`chain_over_atom_He4_of_letters` proves the ratio is `24/7` for EVERY `(a, b)`
+with `a + b != 0` — the `(a+b)` cancels identically, so `37` was just `a + b` and
+the ratio is ordering-invariant. `T` and `3He` are NOT invariant, which is what
+makes `4He` worth naming.
+
+**#6559's crossover finding does NOT survive, and it was mine.** Its headline was
+a ratio column monotone through 1 (`0.465 .. 1.464`). Under Borromean it is
+`0.817, 1.239, INFINITE, 4.905, 0.972` — not monotone, not ordered by `A`, past 1
+already at `A = 2`. Its load-bearing evidence, two `A = 3` cases "agreeing to
+0.8 %, so it is signal not scatter", becomes `4.905` vs `0.972`.
+
+Honest limits: `4He`'s `c2` needs `P = 4` and the committed `P_OF` returns
+`None`, so the `A = 3 -> 4` crossover specifically is UNTESTED rather than
+disproved; `c3` (#6607) is untouched and is now grouped-conditional. Both are one
+raised-precision run each, and raising `P_OF` on `main` is `qou-pdg9`'s call.
+
+`c0` is ordering-INVARIANT (verified all six cases), so everything resting on the
+classical floor is untouched.
