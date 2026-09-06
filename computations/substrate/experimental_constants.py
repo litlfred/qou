@@ -196,8 +196,23 @@ G_A_PDG_ERR = 0.0013
 
 # ── Knot volumes (SnapPy 3.3.2) ─────────────────────────────────
 
-VOL_FIGURE_EIGHT     = 2.029883212819307  # ± 1e-12 (numerical precision)
-VOL_FIGURE_EIGHT_ERR = 1e-12
+# Vol(4_1) = 2·Cl_2(pi/3) is an EXACT closed form, not a SnapPy measurement.
+# It sat here as a float64 (1.49e-16 from exact, 0.15x the whole L1 budget for
+# one constant) under a "± 1e-12 (numerical precision)" banner, i.e. filed as a
+# measured quantity with an uncertainty. Nobody re-measures a measurement,
+# which is plausibly why it was never exactified. Bean qou-9ies.
+#
+# Computed at the caller's ambient precision, so it is exact to whatever dps is
+# in force rather than frozen at any digit count.
+VOL_FIGURE_EIGHT     = 2 * _mpm.clsin(2, _mpm.pi / 3)
+# Retained at 0: an exact constant has no measurement uncertainty, and the term
+# is consumed by mass-from-q-symbolic's error budget. Dropping the NAME would
+# break that import; giving it a fictitious 1e-12 inflates the budget with an
+# uncertainty that does not exist. Measured: the old term was 2.2e-5 of the
+# dominant m_mu/m_e term and its removal moves rel_hbar_sq by 2.45e-10
+# relative — negligible, which is why this is safe to correct rather than
+# something that silently restates a published error bar.
+VOL_FIGURE_EIGHT_ERR = 0.0
 
 VOL_THREE_TWIST      = 2.828122088330783  # ± 1e-12
 VOL_THREE_TWIST_ERR  = 1e-12
