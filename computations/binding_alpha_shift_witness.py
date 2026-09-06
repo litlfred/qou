@@ -50,12 +50,37 @@ from pathlib import Path
 from codata_2022_source import M_E_MEV as _M_E_MEV  # noqa: E402
 M_E_MEV = float(_M_E_MEV)
 
-# Experimental binding energies, AME 2020 / NIST (MeV)
+# `codata_constants` lives in computations/substrate/, which is NOT on the path
+# at module level (sys.path[0] is computations/ when this is run as a script);
+# the insert further down happens inside the witness writer, too late for the
+# table below. Same two lines, hoisted.
+sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))  # noqa: E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
+# Experimental binding energies, AME 2020 / NIST (MeV).
+#
+# These were four hand-typed literals. PR #1105 (2026-08-19) identified
+# `8.481821` as a TYPO for tritium and corrected it -- here, `T` already carries
+# the corrected 8.481798 -- but the same pass left `³He` on its companion
+# 7.718058, which is 16.7 eV above the vendored AME2020 value 7.71804132. All
+# four were off (D -0.2 eV, T +1.8, ³He +16.7, ⁴He +11.6), so all four now come
+# from the registry. Bean qou-zv46; ~62 sites of the same lineage remain live
+# elsewhere and are NOT swept here.
+#
+# `float()` retained deliberately, matching the `M_E_MEV` note above and the
+# precedent in `binding_canonical.py`: this witness is json.dumps'd downstream
+# and this module's declared contract is `dict[str, float]`. Routing the SOURCE
+# is the fix; changing the numeric type is a separate change.
 B_EXP_MEV: dict[str, float] = {
-    "D":   2.224566,
-    "T":   8.481798,
-    "³He": 7.718058,
-    "⁴He": 28.295674,
+    "D":   float(AME_B_DEUTERON_MEV_VALIDATION),
+    "T":   float(AME_B_TRITIUM_MEV_VALIDATION),
+    "³He": float(AME_B_HE3_MEV_VALIDATION),
+    "⁴He": float(AME_B_HE4_MEV_VALIDATION),
 }
 
 # Map nucleus label -> (Z, N) for the magic_A dispatch. The Candidate
