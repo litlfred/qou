@@ -121,11 +121,32 @@ axiom AlgElement.embed_succ {n : ℕ} (f : AlgElement (HeckeGen n) ℝ) :
 axiom AlgElement.mul {n : ℕ}
     (_ _ : AlgElement (HeckeGen n) ℝ) : AlgElement (HeckeGen n) ℝ
 
-/-- **AlgElement.zero** — additive identity of the formal algebra. -/
--- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
---      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
---      DOI: 10.1007/978-1-4612-0783-2
-axiom AlgElement.zero {n : ℕ} : AlgElement (HeckeGen n) ℝ
+/-! ### `AlgElement.zero` — axiom deleted 2026-09-06, it SHADOWED the real one
+
+This file declared
+
+    axiom AlgElement.zero {n : ℕ} : AlgElement (HeckeGen n) ℝ
+
+while `UGB.GrobnerShirshov.AlgElement.zero` — a real `def` with a real
+`isZero_zero` theorem (`UGB/GrobnerShirshov/Elem.lean`) — was already in
+scope through the `HeckeGS` import.  Measured: inside this namespace the
+bare name resolved to the **axiom**, and its type
+(`{n : ℕ} → AlgElement (HeckeGen n) ℝ`) differs from the library's
+(`{G} → {k} → [Ring k] → AlgElement G k`), so `isZero_zero` did not apply
+to it.
+
+The consequence was not cosmetic.  `markov_nondegenerate` concludes
+`f = AlgElement.zero`, which under the axiom meant *"`f` equals a fixed
+unknown element"* — not *"`f` is zero"*.  With the axiom gone the name
+resolves to the library definition and the conclusion says what it
+reads as; `(AlgElement.zero).isZero` is now provable here by
+`UGB.GrobnerShirshov.AlgElement.isZero_zero`.
+
+`AlgElement.mul` and `AlgElement.embed_succ` below have no library
+counterpart and remain axiomatised; `MarkovTrace` likewise.  Claims about
+those are specifications rather than theorems — with an opaque operator
+there is no definition to unfold, so they can be neither proved nor
+refuted.  That is a real gap and is left visible. -/
 
 /-- QU-3a: Markov conjugation invariance —
     tr_M(σᵢ · f) = tr_M(f · σᵢ) for all i and f. -/
