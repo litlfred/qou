@@ -64,7 +64,20 @@ def main():
     name = sys.argv[1] if len(sys.argv) > 1 else 'L6a4'
     kcls = int(sys.argv[2]) if len(sys.argv) > 2 else 1
     d = json.loads((HERE / f'{name}-c{kcls}-charzero-pinned.json').read_text())
-    sub = json.loads((HERE / f'{name}_c{kcls}_subs.json').read_text())
+    # Two producers write the substitution record under different names: PR #6815's
+    # class-1 run as `_subs.json`, ptolemy_class_sweep.py as `_sweep_subs.json` (it
+    # namespaces its outputs so a re-run cannot replace the tracked class-1 ones).
+    # The record MUST match the RUR being lifted -- a different elimination order gives
+    # a different, equally valid reduction whose substitutions do not apply here, and
+    # mixing them would lift to a point that fails the round trip for no visible reason.
+    for stem in (f'{name}_c{kcls}_subs.json', f'{name}_c{kcls}_sweep_subs.json'):
+        subf = HERE / stem
+        if subf.is_file():
+            break
+    else:
+        raise SystemExit(f'no substitution record for {name} c{kcls}')
+    print(f"  substitution record: {subf.name}")
+    sub = json.loads(subf.read_text())
 
     fe = sp.sympify(d["field"]["min_poly"]).subs(sp.Symbol('t'), T)
     red = make_reducer(fe)
