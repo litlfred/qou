@@ -1,0 +1,116 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2104.07437v4",
+ "source_sha256": "a0f28a6b61618467",
+ "brief": "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series",
+ "extended": "**Peacock patterns and new integer invariants in topological string theory**\n\n*Jie Gua,b and Marcos Mariñoa*\n\n52 pp, 19 sections.\n\n**Abstract.** Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series which encode the all-genus enumerative information. These series lead to inﬁnite towers of singularities in their Borel plane (also known as “peacock patterns”), and we conjecture that the corresponding Stokes constants are integer invariants of the Calabi–Yau threefold. We calculate these Stokes constants in some toric examples, conﬁrming our conjecture and providing in some cases explicit generating functions for the new integer invariants, in the form of q-series. Our calculations in the toric case rely on the TS/ST correspondence, which promotes the asymptotic series near the conifold point to spectral traces of operators, and makes it easier to identify the Stokes data.\n\n**Outline.** 1 Introduction; 2.1 Perturbative series in topological string ; 2.2 Resurgence and Stokes constants; 2.3 Stokes constants in topological string the; 3 Examples; 3.1 The TS/ST correspondence; 3.2 Local F0; 3.2.2 Spectral trace and its factorisation; 3.2.3 Radial asymptotic analysis; 3.3 Local P2; 3.3.2 The second resurgent structure; 3.3.3 Second spectral trace and its factorisat; 3.3.4 Radial asymptotic analysis for the secon; 4 Conclusions; A Quantum dilogarithm and q-series; A.2 Compact quantum dilogarithm; A.3 q-series; B Fast algorithm for the second resurgent stru",
+ "tokens": {
+  "brief": 49,
+  "extended": 385
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-001-21-perturbative-series-in-topological-string-the",
+   "title": "Perturbative series in topological string theory",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-002-22-resurgence-and-stokes-constants",
+   "title": "Resurgence and Stokes constants",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-003-23-stokes-constants-in-topological-string-theory",
+   "title": "Stokes constants in topological string theory",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-004-3-examples",
+   "title": "Examples",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-005-31-the-tsst-correspondence",
+   "title": "The TS/ST correspondence",
+   "pages": "11-15"
+  },
+  {
+   "id": "sec-006-32-local-f0",
+   "title": "Local F0",
+   "pages": "15-20"
+  },
+  {
+   "id": "sec-007-322-spectral-trace-and-its-factorisation",
+   "title": "Spectral trace and its factorisation",
+   "pages": "20-24"
+  },
+  {
+   "id": "sec-008-323-radial-asymptotic-analysis",
+   "title": "Radial asymptotic analysis",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-009-33-local-p2",
+   "title": "Local P2",
+   "pages": "27-30"
+  },
+  {
+   "id": "sec-010-332-the-second-resurgent-structure",
+   "title": "The second resurgent structure",
+   "pages": "30-34"
+  },
+  {
+   "id": "sec-011-333-second-spectral-trace-and-its-factorisation",
+   "title": "Second spectral trace and its factorisation",
+   "pages": "34-38"
+  },
+  {
+   "id": "sec-012-334-radial-asymptotic-analysis-for-the-second-tr",
+   "title": "Radial asymptotic analysis for the second trace",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-013-4-conclusions",
+   "title": "Conclusions",
+   "pages": "39-41"
+  },
+  {
+   "id": "sec-014-a-quantum-dilogarithm-and-q-series",
+   "title": "A Quantum dilogarithm and q-series",
+   "pages": "41-43"
+  },
+  {
+   "id": "sec-015-a2-compact-quantum-dilogarithm",
+   "title": "A.2 Compact quantum dilogarithm",
+   "pages": "43-43"
+  },
+  {
+   "id": "sec-016-a3-q-series",
+   "title": "A.3 q-series",
+   "pages": "43-44"
+  },
+  {
+   "id": "sec-017-b-fast-algorithm-for-the-second-resurgent-struct",
+   "title": "B Fast algorithm for the second resurgent structure of local P2",
+   "pages": "44-45"
+  },
+  {
+   "id": "sec-018-c-hunter-guerrieri-algorithm",
+   "title": "C Hunter-Guerrieri algorithm",
+   "pages": "45-52"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,397 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1609.08719v1",
+ "source": {
+  "file": "1609.08719v1.pdf",
+  "sha256": "f61ff2111e9a97f9e87191e3936bfc998db9efad44cec9d4fc485f5c65145efa",
+  "bytes": 472351,
+  "pages": 17,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1609.08719",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "28 Sep 2016"
+  },
+  "doi": null,
+  "title": "AN EXPERIMENTAL INVESTIGATION OF NEUMANN\u2019S CONJECTURE",
+  "authors_raw": "STEPHEN GILLES AND PETER HUSTON",
+  "title_lines": [
+   "AN EXPERIMENTAL INVESTIGATION OF NEUMANN\u2019S",
+   "CONJECTURE"
+  ],
+  "abstract": "We use a large census of hyperbolic 3-manifolds to experimentally investigate a conjecture of Neumann regarding the Bloch Group. We present an augmented census including, for feasible invariant trace \ufb01elds, explicit man- ifolds (associated to that \ufb01eld) that appear to generate the Bloch group of that \ufb01eld. We also make use of Ptolemy coordinates to compute \u201cexotic volumes\u201d of representations, and attempt to realize these volumes as linear combinations of generator volumes. We thus present a large body of empirical support for Neumann\u2019s conjecture.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20210712192326Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Neumann's conjecture",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Neumann's weaker conjecture",
+   "page": 2,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "A stronger, false conjecture",
+   "page": 2,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Exotic volumes",
+   "page": 2,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Background",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Cross-ratios",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The invariant trace field",
+   "page": 3,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The Bloch group",
+   "page": 4,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Gluing Equations",
+   "page": 4,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Ptolemy coordinates",
+   "page": 7,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Lattice matching",
+   "page": 8,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 1,
+   "title": "Experimentation",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Manifold generation",
+   "page": 10,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Lattice matching",
+   "page": 11,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Linear combinations for exotic volumes",
+   "page": 11,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "A counter-example to conjecture 1.3",
+   "page": 11,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Evidence for conjecture 1.2",
+   "page": 12,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Examples of missing fields",
+   "page": 12,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Data analysis",
+   "page": 12,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Selected examples",
+   "page": 14,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-14-exotic-volumes",
+   "number": "1.4",
+   "title": "Exotic volumes",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 186,
+   "n_words": 27
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 62,
+   "n_words": 9
+  },
+  {
+   "id": "sec-002-13-a-stronger-false-conjecture",
+   "number": "1.3",
+   "title": "A stronger, false conjecture",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3984,
+   "n_words": 652
+  },
+  {
+   "id": "sec-003-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 143,
+   "n_words": 25
+  },
+  {
+   "id": "sec-004-2-background",
+   "number": "2",
+   "title": "Background",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-21-cross-ratios",
+   "number": "2.1",
+   "title": "Cross-ratios",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 627,
+   "n_words": 115
+  },
+  {
+   "id": "sec-006-24-gluing-equations",
+   "number": "2.4",
+   "title": "Gluing Equations",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1261,
+   "n_words": 223
+  },
+  {
+   "id": "sec-007-23-the-bloch-group",
+   "number": "2.3",
+   "title": "The Bloch group",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 6455,
+   "n_words": 1153
+  },
+  {
+   "id": "sec-008-25-ptolemy-coordinates",
+   "number": "2.5",
+   "title": "Ptolemy coordinates",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1608,
+   "n_words": 276
+  },
+  {
+   "id": "sec-009-26-lattice-matching",
+   "number": "2.6",
+   "title": "Lattice matching",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 3186,
+   "n_words": 539
+  },
+  {
+   "id": "sec-010-3-experimentation",
+   "number": "3",
+   "title": "Experimentation",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1315,
+   "n_words": 271
+  },
+  {
+   "id": "sec-011-32-lattice-matching",
+   "number": "3.2",
+   "title": "Lattice matching",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 1293,
+   "n_words": 222
+  },
+  {
+   "id": "sec-012-31-manifold-generation",
+   "number": "3.1",
+   "title": "Manifold generation",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1977,
+   "n_words": 299
+  },
+  {
+   "id": "sec-013-33-linear-combinations-for-exotic-volumes",
+   "number": "3.3",
+   "title": "Linear combinations for exotic volumes",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 713,
+   "n_words": 103
+  },
+  {
+   "id": "sec-014-4-a-counter-example-to-conjecture-13",
+   "number": "4",
+   "title": "A counter-example to conjecture 1.3",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1239,
+   "n_words": 203
+  },
+  {
+   "id": "sec-015-5-evidence-for-conjecture-12",
+   "number": "5",
+   "title": "Evidence for conjecture 1.2",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 1226,
+   "n_words": 206
+  },
+  {
+   "id": "sec-016-52-data-analysis",
+   "number": "5.2",
+   "title": "Data analysis",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 3724,
+   "n_words": 819
+  },
+  {
+   "id": "sec-017-6-selected-examples",
+   "number": "6",
+   "title": "Selected examples",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 4049,
+   "n_words": 656
+  },
+  {
+   "id": "sec-018-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 2467,
+   "n_words": 310
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 23,
+  "sections": 19,
+  "chars_total": 35515
+ }
+}

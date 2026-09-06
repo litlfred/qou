@@ -7,6 +7,7 @@ section_number: 8
 pages: 20-27
 source_pdf: 1307.6697v2.pdf
 source_sha256: a3afaefdaebe0292
+doc_brief: "REPRESENTATIONS OF FUNDAMENTAL GROUPS OF 3-MANIFOLDS — In this paper we are interested in computing representation s of the funda- mental group of a 3-manifold into PGL (3,C) (in particular in PGL"
 ---
 As explained in the last section we solve the system consisti ng of compatibility equations
 and the unipotent holonomy conditions plus the inequalitie s which prevent the z-coordinates

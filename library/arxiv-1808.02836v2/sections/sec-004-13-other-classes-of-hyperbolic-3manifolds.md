@@ -7,6 +7,7 @@ section_number: 1.3
 pages: 3-4
 source_pdf: 1808.02836v2.pdf
 source_sha256: 0224a296253122a2
+doc_brief: "On minimal ideal triangulations of cusped hyperbolic 3–manifolds — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges"
 ---
 We remark that for closed hyperbolic 3–manifolds, currently no inﬁnite families of minimal triangulations are
 known. In the case of compact manifolds with non-empty boundary, lower bounds on complexity are known

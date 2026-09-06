@@ -7,6 +7,7 @@ section_number: null
 pages: 36-37
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 Following Section 5 of the main article, we will parameterize the dihedral angles of
 the tetrahedra by pleating angles on the pleated 4–punctured spheres. Each sphere Si

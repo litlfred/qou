@@ -7,6 +7,7 @@ section_number: null
 pages: 41-44
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 The volumes of link complements can also be estimated in terms of diagrams. We
 say that a link diagram D is reduced if no single crossing separates D. Its twist

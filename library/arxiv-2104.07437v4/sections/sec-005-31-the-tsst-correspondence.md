@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 11-15
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 review and references can be found in [58].
 3.1 The TS/ST correspondence

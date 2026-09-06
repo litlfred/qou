@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 13-15
 source_pdf: 2108.09349v2.pdf
 source_sha256: 4c732bfcbf3dfb16
+doc_brief: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM — We construct topological triangulations for complements of ( −2, 3,n )-pretzel knots and links with n≥ 7."
 ---
 bolic tetrahedron, T , with dihedral angles θ1, θ2, and θ3 is given by
 V (T ) = L(θ1) + L(θ2) + L(θ3),

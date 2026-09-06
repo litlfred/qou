@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-2
 source_pdf: 2108.09349v2.pdf
 source_sha256: 4c732bfcbf3dfb16
+doc_brief: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM — We construct topological triangulations for complements of ( −2, 3,n )-pretzel knots and links with n≥ 7."
 ---
 A knot or link in S3 is hyperbolic if its complement admits a complete hyperbolic structure. A
 braid on n strands, which is represented by a word in the braid group, w∈Bn, is hyperbolic if its

@@ -7,6 +7,7 @@ section_number: 3.3.2
 pages: 30-34
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 We can use the conifold free energies to construct the formal power series Φ 0;2(gs) at N = 2.
 Instead we will consider the following normalised series 10

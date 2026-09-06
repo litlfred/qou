@@ -1,0 +1,421 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1412.4711v1",
+ "source": {
+  "file": "1412.4711v1.pdf",
+  "sha256": "4fb1d6ee062cca8ca97ebab1608c56fd4f1fa21980d6cedd0178b98fb73fb719",
+  "bytes": 605425,
+  "pages": 29,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1412.4711",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "15 Dec 2014"
+  },
+  "doi": null,
+  "title": "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE EIGHT KNOT",
+  "authors_raw": "E. FALBEL, A. GUILLOUX, P.-V. KOSELEFF",
+  "title_lines": [
+   "CHARACTER VARIETIES FOR SL (3, C): THE FIGURE",
+   "EIGHT KNOT"
+  ],
+  "abstract": "We give a description of several representation varieties of the fundamental group of the complement of the \ufb01gure eight knot in PGL(3, C) or PSL(3 , C). We obtain a description of the projection of the representation variety into the character variety of the boundary torus into SL(3, C).",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20141216013232Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Representation spaces",
+   "page": 3,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Representation variety and character variety",
+   "page": 3,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Decorated versions",
+   "page": 4,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Peripheral representations: choosing a meridian and a longitude",
+   "page": 5,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Deformation variety",
+   "page": 6,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "A diagram",
+   "page": 8,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 2,
+   "title": "The A-variety",
+   "page": 8,
+   "source": "outline",
+   "number": "1.6"
+  },
+  {
+   "level": 1,
+   "title": "The figure eight knot complement",
+   "page": 9,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Triangulation",
+   "page": 9,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Presentations",
+   "page": 10,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "The deformation variety for the figure eight knot complement",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Computational tools",
+   "page": 11,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "An algebraic representation of Defor ( M, T )",
+   "page": 12,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Overview of the computations.",
+   "page": 13,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Explicit computations for the Figure Eight Knot complement.",
+   "page": 16,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Details on algorithm []",
+   "page": 19,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Eigenvalues of peripheral representations",
+   "page": 19,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "A-variety",
+   "page": 20,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Where are some already known representations ?",
+   "page": 20,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Deforming representations: another way to parametrize the components",
+   "page": 22,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The first component, R1",
+   "page": 24,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "The other two components, R2 and R3",
+   "page": 25,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "A focus on the PU(2,1) case",
+   "page": 26,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 28,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5096,
+   "n_words": 839
+  },
+  {
+   "id": "sec-001-1-representation-spaces",
+   "number": "1",
+   "title": "Representation spaces",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 484,
+   "n_words": 92
+  },
+  {
+   "id": "sec-002-11-representation-variety-and-character-variety",
+   "number": "1.1",
+   "title": "Representation variety and character variety",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2384,
+   "n_words": 438
+  },
+  {
+   "id": "sec-003-12-decorated-versions",
+   "number": "1.2",
+   "title": "Decorated versions",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2257,
+   "n_words": 418
+  },
+  {
+   "id": "sec-004-13-peripheral-representations-choosing-a-meridia",
+   "number": "1.3",
+   "title": "Peripheral representations: choosing a meridian and a longitude",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2436,
+   "n_words": 443
+  },
+  {
+   "id": "sec-005-14-deformation-variety",
+   "number": "1.4",
+   "title": "Deformation variety",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3272,
+   "n_words": 569
+  },
+  {
+   "id": "sec-006-21-triangulation",
+   "number": "2.1",
+   "title": "Triangulation",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1719,
+   "n_words": 292
+  },
+  {
+   "id": "sec-007-15-a-diagram",
+   "number": "1.5",
+   "title": "A diagram",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 480,
+   "n_words": 88
+  },
+  {
+   "id": "sec-008-16-the-a-variety",
+   "number": "1.6",
+   "title": "The A-variety",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 341,
+   "n_words": 70
+  },
+  {
+   "id": "sec-009-22-presentations",
+   "number": "2.2",
+   "title": "Presentations",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 735,
+   "n_words": 138
+  },
+  {
+   "id": "sec-010-2-the-figure-eight-knot-complement",
+   "number": "2",
+   "title": "The figure eight knot complement",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1812,
+   "n_words": 323
+  },
+  {
+   "id": "sec-011-3-the-deformation-variety-for-the-figure-eight-k",
+   "number": "3",
+   "title": "The deformation variety for the figure eight knot complement",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1513,
+   "n_words": 263
+  },
+  {
+   "id": "sec-012-31-computational-tools",
+   "number": "3.1",
+   "title": "Computational tools",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5699,
+   "n_words": 1002
+  },
+  {
+   "id": "sec-013-33-overview-of-the-computations",
+   "number": "3.3",
+   "title": "Overview of the computations.",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 8017,
+   "n_words": 1429
+  },
+  {
+   "id": "sec-014-34-explicit-computations-for-the-figure-eight-kn",
+   "number": "3.4",
+   "title": "Explicit computations for the Figure Eight Knot complement.",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 8184,
+   "n_words": 1401
+  },
+  {
+   "id": "sec-015-4-eigenvalues-of-peripheral-representations",
+   "number": "4",
+   "title": "Eigenvalues of peripheral representations",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 615,
+   "n_words": 108
+  },
+  {
+   "id": "sec-016-41-a-variety",
+   "number": "4.1",
+   "title": "A-variety",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1334,
+   "n_words": 223
+  },
+  {
+   "id": "sec-017-42-where-are-some-already-known-representations",
+   "number": "4.2",
+   "title": "Where are some already known representations ?",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 4058,
+   "n_words": 767
+  },
+  {
+   "id": "sec-018-5-deforming-representations-another-way-to-param",
+   "number": "5",
+   "title": "Deforming representations: another way to parametrize the components",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 28,
+   "n_chars": 12131,
+   "n_words": 2267
+  },
+  {
+   "id": "sec-019-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 3415,
+   "n_words": 484
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 25,
+  "sections": 20,
+  "chars_total": 65982
+ }
+}

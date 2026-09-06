@@ -7,6 +7,7 @@ section_number: 2.3
 pages: 10-11
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 deﬁned for the universal ﬂat bundle EGδ → BGδ. For an explicit construction, we refer to Dupont-
 Kamber [ 13] or Dupont-Hain-Zucker [ 11]. In particular, we have a class ˆc ∈ H 3(BGδ; C/4π2Z). If

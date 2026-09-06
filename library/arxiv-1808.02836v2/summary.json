@@ -1,0 +1,131 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1808.02836v2",
+ "source_sha256": "0224a296253122a2",
+ "brief": "On minimal ideal triangulations of cusped hyperbolic 3–manifolds — Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges",
+ "extended": "**On minimal ideal triangulations of cusped hyperbolic 3–manifolds**\n\n*William Jaco, Hyam Rubinstein, Jonathan Spreer and Stephan Tillmann*\n\n34 pp, 22 sections.\n\n**Abstract.** Previous work of the authors studies minimal triangulations of closed 3–manifolds using a characterisation of low degree edges, embedded layered solid torus subcomplexes and 1–dimensional Z2 –cohomology. The underlying blueprint is now used in the study of minimal ideal triangulations. As an application, it is shown that the monodromy ideal triangulations of the hyperbolic once-punctured torus bundles are minimal.\n\n**Outline.** 1 Introduction; 1.1 Minimal ideal triangulations via geometry; 1.2 Minimal ideal triangulations via topology; 2.3 Ideal triangulations; 1.3 Other classes of hyperbolic 3–manifolds; 2 The anatomy of a minimal ideal triangulation; 2.1 Triangulations and pseudo-manifolds; 2.2 Edge paths and edge loops; 2.4 Layered solid tori; 2.5 Properties of minimal triangulations; 2.6 Faces in minimal ideal triangulations of c; 2.7 Low degree edges in minimal ideal triangul; 2.8 Layered punctured solid tori in ideal tria; 3 Normal surfaces representing Z2–homology cla; 3.1 Rank-1 colouring of edges and the canonica; 3.2 Rank-2 colouring of edges; 3.3 Combinatorial bounds for triangulations; 4 Quadrilateral surfaces and minimal ideal tri",
+ "tokens": {
+  "brief": 48,
+  "extended": 334
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-minimal-ideal-triangulations-via-geometry",
+   "title": "Minimal ideal triangulations via geometry",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-12-minimal-ideal-triangulations-via-topology",
+   "title": "Minimal ideal triangulations via topology",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-23-ideal-triangulations",
+   "title": "Ideal triangulations",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-13-other-classes-of-hyperbolic-3manifolds",
+   "title": "Other classes of hyperbolic 3–manifolds",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-005-2-the-anatomy-of-a-minimal-ideal-triangulation",
+   "title": "The anatomy of a minimal ideal triangulation",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-006-21-triangulations-and-pseudo-manifolds",
+   "title": "Triangulations and pseudo-manifolds",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-007-22-edge-paths-and-edge-loops",
+   "title": "Edge paths and edge loops",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-008-24-layered-solid-tori",
+   "title": "Layered solid tori",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-009-25-properties-of-minimal-triangulations",
+   "title": "Properties of minimal triangulations",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-010-26-faces-in-minimal-ideal-triangulations-of-cusp",
+   "title": "Faces in minimal ideal triangulations of cusped hyperbolic 3–manifolds",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-011-27-low-degree-edges-in-minimal-ideal-triangulati",
+   "title": "Low degree edges in minimal ideal triangulations",
+   "pages": "10-15"
+  },
+  {
+   "id": "sec-012-28-layered-punctured-solid-tori-in-ideal-triangu",
+   "title": "Layered punctured solid tori in ideal triangulations",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-013-3-normal-surfaces-representing-z2homology-classe",
+   "title": "Normal surfaces representing Z2–homology classes",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-014-31-rank-1-colouring-of-edges-and-the-canonical-s",
+   "title": "Rank-1 colouring of edges and the canonical surface",
+   "pages": "17-18"
+  },
+  {
+   "id": "sec-015-32-rank-2-colouring-of-edges",
+   "title": "Rank-2 colouring of edges",
+   "pages": "18-18"
+  },
+  {
+   "id": "sec-016-33-combinatorial-bounds-for-triangulations",
+   "title": "Combinatorial bounds for triangulations",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-017-4-quadrilateral-surfaces-and-minimal-ideal-trian",
+   "title": "Quadrilateral surfaces and minimal ideal triangulations",
+   "pages": "19-28"
+  },
+  {
+   "id": "sec-018-5-the-monodromy-ideal-triangulations-of-once-pun",
+   "title": "The monodromy ideal triangulations of once-punctured torus bundles",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-019-52-reduction-using-coverings",
+   "title": "Reduction using coverings",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-020-53-closed-one-sided-incompressible-surfaces",
+   "title": "Closed one-sided incompressible surfaces",
+   "pages": "29-32"
+  },
+  {
+   "id": "sec-021-54-further-examples",
+   "title": "Further examples",
+   "pages": "32-34"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

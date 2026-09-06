@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-5
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 Let T := (R2rZ2)/Z2 be the once-punctured torus endowed with its differential
 structure and an orientation. The group G of isotopy classes of orientation-preserving

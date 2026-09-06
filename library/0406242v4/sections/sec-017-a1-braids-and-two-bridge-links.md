@@ -7,6 +7,7 @@ section_number: null
 pages: 30-31
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 Let S be a 4–punctured sphere, visualized concretely as a square pillowcase with
 the corners removed. A 4–string braid between two pillowcases, one interior and

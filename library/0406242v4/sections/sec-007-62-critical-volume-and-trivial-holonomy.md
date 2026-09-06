@@ -7,6 +7,7 @@ section_number: 6.2
 pages: 13-17
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 Lemma 6.2 (Rivin, Chan–Hodgson) On the open afﬁne polyhedron P of sequences
 (wi) satisfying (3), deﬁne the volume functionalV as the sum of the hyperbolic volumes

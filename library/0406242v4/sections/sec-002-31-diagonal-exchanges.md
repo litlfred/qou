@@ -7,6 +7,7 @@ section_number: 3.1
 pages: 5-5
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 There is another well-known interpretation of the Farey tessellation F of the hyperbolic
 plane H2. Under the canonical identiﬁcation H1(T, Z)≃ Z2, where T is the punctured

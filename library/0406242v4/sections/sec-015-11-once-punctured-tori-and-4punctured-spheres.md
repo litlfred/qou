@@ -7,6 +7,7 @@ section_number: 11
 pages: 28-29
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 Theorem 1.1 is still true if we replace the once-punctured torus T by the 4–punctured
 sphere S, and the map ϕ : T → T by an orientation-preserving homeomorphism

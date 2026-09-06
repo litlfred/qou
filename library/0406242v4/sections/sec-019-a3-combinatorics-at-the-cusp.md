@@ -7,6 +7,7 @@ section_number: null
 pages: 34-36
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 To describe the combinatorics of the boundary component(s) of S3rK , we will ﬁrst
 focus on the product region between the pleated surfaces S1 and Sc. In the layered

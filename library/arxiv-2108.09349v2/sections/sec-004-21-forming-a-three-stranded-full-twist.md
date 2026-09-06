@@ -7,6 +7,7 @@ section_number: 2.1
 pages: 3-4
 source_pdf: 2108.09349v2.pdf
 source_sha256: 4c732bfcbf3dfb16
+doc_brief: "GEOMETRIC TRIANGULATIONS OF A FAMILY OF HYPERBOLIC 3-BRAIDS BARBARA NIMERSHIEM — We construct topological triangulations for complements of ( −2, 3,n )-pretzel knots and links with n≥ 7."
 ---
 punctures 0 through 5 and divide S0 into eight triangles as shown in Figure 3(a). Think of the
 punctures — and the strands descending from them — as living in the plane of the page, so ∆025 is

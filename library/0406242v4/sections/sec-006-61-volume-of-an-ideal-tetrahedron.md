@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 13-13
 source_pdf: 0406242v4.pdf
 source_sha256: 27e48b483007b824
+doc_brief: "On canonical triangulations of once-punctured torus bundles and two-bridge link complements FRANC¸ OIS GUÉRITAUD APPENDIX BY DA VIDFUTER — 26 sections: Introduction; The canonical triangulation; Diago"
 ---
 The volume of a hyperbolic tetrahedron whose dihedral angles are x, y, z> 0 is
 (4) V(x, y, z) =−
