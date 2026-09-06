@@ -99,24 +99,38 @@ So the proof route needs the bridge **subword ⟺ reflection**.  Surveyed:
 | subword ⟺ reflection | **absent from the corpus** |
 | length under a **simple** transposition | `Hecke.ParabolicPairing.length_swap_dichotomy`, `length_mul_swap_eq_succ_iff`, `length_swap_cases` — proved, but **simple** reflections only, while Mathas needs arbitrary `(a,b)` |
 
-Two honest routes, and they cost differently:
-
-1. **Prove subword ⟺ reflection** for a general Coxeter system and keep this statement as
-   written.  That is a real Coxeter theorem — the same neighbourhood as the subword property
-   `CoxeterBruhat.lean` already declines to prove and that Mathas' Corollary 3.8 needs
-   independently.  Most expensive, and pays for two obligations at once.
-2. **Define the reflection order, state 3.7 against it, prove it, and leave the bridge to
-   `BruhatLe` as a separate named obligation.**  Cheaper and self-contained, at the cost of a
-   second Bruhat definition in the corpus — which is acceptable *only* if it is explicitly
-   named as such, because an unnamed second one is the `dOf` collision (#6899) again.
-
-**The probe's 720/720 does not shortcut either route.**  Subword and reflection agreeing on
+**The probe's 720/720 does not shortcut this.**  Subword and reflection agreeing on
 `S₃`…`S₆` is evidence the bridge is true; it is not the bridge.
 
-This is recorded here rather than attempted because the choice between (1) and (2) is a
-structural one about how the corpus carries the Bruhat order, and because a sibling
-(**#6894**) is working Bruhat antisymmetry and the deletion condition and may settle it from
-the other side.
+### 🟩 CORRECTED WITHIN THE HOUR — #6894 landed and the table above is stale
+
+That survey was written against `main` before **#6894** merged (`6d0cb3a094`), and two of its
+three rows are now wrong.  Verified against `main` itself, not against the PR body:
+
+| what | then | **now** |
+|---|---|---|
+| a reflection Bruhat order | absent | **`IwahoriHecke.BruhatReflection.ReflLe`** — `ReflStep v w := ∃ t, IsReflection t ∧ w = v*t ∧ ℓ v < ℓ w`, then `ReflTransGen`.  That is *exactly* Mathas' step. |
+| subword ⟺ reflection | absent | **one direction proved**: `bruhatLe_of_reflLe`, and `bruhatLe_of_reflLe_An` is the **hypothesis-free type-A** corollary — i.e. it applies to `Sₙ` with nothing to discharge |
+| Bruhat antisymmetry / subword property / transitivity / lifting | all four deferred in `CoxeterBruhat` | **all four proved** (#6894, via Matsumoto) |
+
+So the two routes above collapse: **route 2 is unnecessary** (the reflection order exists),
+and **route 1 is half done**.
+
+### What that makes provable, and what it does not
+
+Mathas' proof constructs precisely `ReflStep`s — multiply by a transposition, length goes up.
+Composing with `bruhatLe_of_reflLe_An` therefore reaches `BruhatLe`.  So:
+
+* **forward** (`s ⊵ t → d(s) ≤ d(t)`) is **unblocked**: the Coxeter side is now supplied and
+  what remains is the tableau combinatorics — the induction on a transposition at the first
+  differing row;
+* **converse** (`d(s) ≤ d(t) → s ⊵ t`) still needs **`BruhatLe → ReflLe`**, which is open and
+  tracked as bean **`qou-3k66`**.  #6894's own "left open" section names it as *"what a
+  consumer citing Mathas' Prop 3.7 needs for an `↔`"* — this file is that consumer.
+
+The `iff` below should therefore be **split** into the two implications, so the reachable half
+is not held hostage to the blocked one.  Left as an `iff` for now only because splitting it is
+a statement change and the forward proof is the next commit, not this one.
 -/
 
 open Equiv
