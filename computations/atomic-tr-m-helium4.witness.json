@@ -1,14 +1,14 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T03:52:19.152169+00:00",
-  "commitSha": "0867162ff142601c4422eb590dc81f22004454e6",
+  "computedAt": "2026-09-06T10:43:34.829200+00:00",
+  "commitSha": "692eb5cf1013e50d8876e934257aa4d6cbf3d2da",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "atomic-tr-m-helium4",
   "scriptFile": "atomic_tr_m_helium4.py",
-  "scriptHash": "6cf1aa422cf6",
+  "scriptHash": "6affc0a875c1",
   "scriptCommitSha": "d9459c9a8376d62350b1a1d9ce36b59e8698f755",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -44,7 +44,7 @@
   "audit_reference": "AUDIT-DEEP-2026-05.md §3.3a (P4″) + convention audit PR #564",
   "pr": "#564",
   "precision": "mpfr_50dps_disjoint_only",
-  "method": "disjoint_product",
+  "method": "disjoint_product_UNRESOLVED_MISMATCH",
   "q_0_50dps": "1.10997858275138080759166909561076887987449912187357763605672",
   "results": [
     {
@@ -104,7 +104,7 @@
       "braid_word_str": "σ₁⁷σ₂⁴ · σ₄⁷σ₅⁴ · σ₇⁶σ₈⁴σ₇⁻¹ · σ₁₀⁶σ₁₁⁴σ₁₀⁻¹",
       "tr_M_at_q0_50dps": "1.28078315152864641063633786713365184627591156910051690838755",
       "abs_tr_M_at_q0_50dps": "1.28078315152864641063633786713365184627591156910051690838755",
-      "method_used": "disjoint_product",
+      "method_used": "disjoint_product_UNRESOLVED_MISMATCH",
       "disjoint_product": {
         "formula": "|tr_M(p)|² · |tr_M(n)|²",
         "abs_tr_p_50dps": "1.14575969245730086968908159577411930594372806194352738498820",
@@ -115,10 +115,18 @@
       "direct_recursion": {
         "engine": "markov_trace_recursive.markov_trace_of_word",
         "budget_sec": 480.0,
-        "elapsed_sec": 480.00026202201843,
-        "abs_tr_M_50dps": null,
-        "error": "timeout_after_480s",
-        "matches_disjoint_product_within_1ppb": null
+        "elapsed_sec": 17.22242498397827,
+        "abs_tr_M_50dps": "7.610469960740113589807485514743620007131179542865042249926843872075935",
+        "error": null,
+        "matches_disjoint_product_within_1ppb": false
+      },
+      "UNRESOLVED_MISMATCH": {
+        "bean": "qou-hft3",
+        "disjoint_product": "1.28078315152864641063633786713365184627591156910051690838755",
+        "direct_recursion": "7.610469960740113589807485514743620007131179542865042249926843872075935",
+        "relative_difference": "4.94204409361321564408681659101349277371149654027125528402685224161547",
+        "authoritative_method": "disjoint_product (direct recursion disagrees; unresolved)",
+        "note": "These two routes to |tr_M(4He)| on H_12 disagree. The direct recursion had never completed inside the budget before 2026-09-06, so the identity has never been verified -- the previously recorded `null` meant 'timed out', not 'agreed'. Neither arm is promoted to authoritative while this is open."
       },
       "historical_K_comparison": {
         "registry_status": "REGISTRY_PHASE_3B in joint_tower_sdp_solver_v2.py covers p, n, D, T, ³He but NOT ⁴He.  The literature identification (Borromean / B_3² in B_3) is recorded for future cross-checks but is not used here — the disjoint-product extension on H_12 is sufficient for the leading-order ρ_K ansatz of P4″.",

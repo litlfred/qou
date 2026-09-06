@@ -142,18 +142,46 @@ WORDS = {
 # per the 2026-08-07 owner directive, and it is taken live from
 # qou_substrate.constants rather than transcribed.
 XCHECK_SOURCE = "alpha-k-jones-markov-h4.witness.json"
+#
+# This is the convention-**C** Markov parameter, z = 1/(√q + 1/√q), and it is
+# deliberately still C: the cross-check REPRODUCES a C-era artifact, so it must
+# be evaluated at the z that artifact used.  It is an input being quoted, not a
+# convention this computation adopts -- exactly as with the anchor above.
+#
+# Do NOT reuse it outside the cross-check.  Until 2026-09-06 the canonical-pin
+# arm [3b] did, which put convention-C weights into the witness field a reader
+# takes as canonical; see CANONICAL_Z below and bean qou-fq0f.
 XCHECK_Z = "0.49932033403359827"
+
+#: Production convention **D**, z = q³/(q²+1), for any evaluation of these
+#: weights that is not reproducing a historical artifact.
+#:
+#: D is exactly the root of the factor (A z - q³), A = q²+1, that appears in the
+#: (2,1,1) and (1,1,1,1) closed forms -- equivalently, the Wenzl level is
+#: Q^r = q⁴ = Q², i.e. r = 2 exactly, so Wenzl's row cap kills every λ with
+#: three or more rows.  Both vanishings below are algebraic zeros, not small
+#: residuals.  (Convention C sat at r ≈ 2.5995, not an integer, and capped
+#: nothing -- which is why the C-frame numbers were non-zero there.)
+def CANONICAL_Z(q_expr):
+    return q_expr**3 / (q_expr**2 + 1)
 
 # Tolerance the cross-check is ASSERTED against, not merely reported at.
 #
 # Until 2026-08-24 `worst` was computed, printed and written into the witness
 # and then never checked: the exit code keyed on `all_ok`, the symbolic
 # q-verification, alone.  That made this control arm silent in exactly the
-# direction it exists to catch.  `XCHECK_Z` is transcribed, so a CONVENTION
-# change breaks loudly; the anchor is read from the artifact at run time
-# (deliberately -- see the note above), so a RE-PIN of that artifact moved the
-# comparison without failing anything.  The residual simply grew in a field
+# direction it exists to catch.  The anchor is read from the artifact at run
+# time (deliberately -- see the note above), so a RE-PIN of that artifact moved
+# the comparison without failing anything.  The residual simply grew in a field
 # nobody reads.
+#
+# What this check does NOT catch, contrary to what this comment claimed until
+# 2026-09-06: a convention change.  It asserted that transcribing `XCHECK_Z`
+# makes "a CONVENTION change break loudly".  It does not.  C -> D landed
+# 2026-08-09 and this producer kept exiting 0, because BOTH sides of the
+# comparison are frozen in C -- a self-consistent historical reproduction, which
+# is what it should be.  Believing it was a live-convention tripwire is why the
+# [3b] canonical-pin arm went on evaluating at C for four weeks (qou-fq0f).
 #
 # 1e-12 is set from the measured floor with headroom, not fitted: the
 # published values are float64, so the relative floor is ~1e-16, amplified to
@@ -339,17 +367,39 @@ def main():
 
     # Evaluate at the canonical (proton-pinned) anchor as well, so this witness
     # states which pin any numeric value of its belongs to.
+    #
+    # BOTH axes are canonical here: the proton pin AND production convention D.
+    # Until 2026-09-06 this arm reused `z0` -- the convention-C constant the
+    # cross-check above needs -- and so published C-frame weights in the field a
+    # reader takes as canonical (bean qou-fq0f).
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]
                            / "tools" / "qou-substrate" / "python"))
     from qou_substrate import constants as _c  # noqa: E402
     canonical_q0 = str(_c.Q_50_DIGIT_STR)
-    cfc = closed_forms(sympify(canonical_q0), z0)
+    q_can = sympify(canonical_q0)
+    z_can = CANONICAL_Z(q_can)
+    cfc = closed_forms(q_can, z_can)
     at_canonical = {k: str(NUM(v, 25)) for k, v in cfc.items()}
-    print(f"\n[3b] at the canonical proton pin q_0 = {canonical_q0[:22]}...")
+    print(f"\n[3b] at the canonical proton pin q_0 = {canonical_q0[:22]}..."
+          f"\n     convention D, z = q^3/(q^2+1) = {NUM(z_can, 22)}")
     for k in XCHECK_WEIGHTS:
         print(f"      {k:11s} {at_canonical[k]}")
     print(f"      sum_lambda w_lambda * d_lambda = "
           f"{NUM(sum(cfc[k] * DIMS[k] for k in cfc), 25)}")
+
+    # The row cap is an ALGEBRAIC consequence of D, not a numerical accident:
+    # z_D = q^3/(q^2+1) is exactly the root of the factor (A z - q^3), A = q^2+1,
+    # carried by the (2,1,1) and (1,1,1,1) closed forms.  Equivalently the Wenzl
+    # level is Q^r = q^4 = Q^2, r = 2, and Wenzl's cap kills l(lambda) > 2.
+    # Assert it, so a future re-pin or convention move cannot quietly restore
+    # two blocks that production says are absent.
+    capped = {k: v for k, v in cfc.items() if len(k.strip("()").rstrip(",").split(",")) > 2}
+    row_cap_ok = all(simplify(v) == 0 for v in capped.values())
+    print(f"      Wenzl row cap r=2: {sorted(capped)} vanish -> {row_cap_ok}")
+    if not row_cap_ok:
+        raise AssertionError(
+            "convention D must annihilate every lambda with >2 rows at H_4 "
+            f"(Wenzl level r=2); got {[(k, str(v)) for k, v in capped.items()]}")
 
     witness = {
         "compute": "h4_markov_weights_closed_form",
@@ -377,6 +427,18 @@ def main():
             "(2,2)": "-q^3 (z - q)(q z + 1) / (A^2 B)",
             "(2,1,1)": "q^2 (z - q)(q z + 1)(A z - q^3) / (A^2 C)",
             "(1,1,1,1)": "-q^3 (z - q)(A z - q^3)(B z - q^5) / (A^2 B C)",
+            "convention_D_row_cap": (
+                "The last two forms carry the factor (A z - q^3), whose root is "
+                "exactly the production convention D, z = q^3/(q^2+1) = q^3/A. "
+                "So under D both vanish IDENTICALLY -- equivalently the Wenzl "
+                "level is Q^r = q^4 = Q^2, r = 2, and Wenzl's row cap "
+                "(s_{alpha,r} = 0 for l(alpha) > r; Orellana, Crelle 508 (1999) "
+                "157-178, p. 5) kills every lambda with three or more rows. "
+                "tr_M then factors through the two-row (Temperley-Lieb) "
+                "quotient and only (4,), (3,1), (2,2) carry weight. Convention "
+                "C sat at r ~ 2.5995, not an integer, and capped nothing. "
+                "Asserted at run time; bean qou-fq0f."
+            ),
         },
         "block_dimensions": DIMS,
         "verification_by_q": results,
@@ -393,10 +455,31 @@ def main():
                 "later reader can tell which layer any numeric evaluation belongs "
                 "to without inferring it from a call site."
             ),
+            "convention": "D (production), z = q^3/(q^2+1)",
+            "markov_z": str(NUM(z_can, 25)),
+            "convention_note": (
+                "Until 2026-09-06 this field was computed at the convention-C z "
+                "borrowed from the cross-check below, so it published C-frame "
+                "weights under a canonical label. Under D the (2,1,1) and "
+                "(1,1,1,1) weights are exactly 0 (Wenzl row cap, r = 2); the "
+                "superseded C values were 0.0235874702297528 and "
+                "-0.000842527616701301. Bean qou-fq0f."
+            ),
+            "wenzl_level_r": 2,
             "weights_at_canonical_q0": at_canonical,
+            "row_cap_asserted": bool(row_cap_ok),
         },
         "cross_check_alpha_k_jones_markov_h4": {
             "markov_z": XCHECK_Z,
+            "markov_z_convention": (
+                "C (z = 1/(sqrt(q) + 1/sqrt(q))) -- deliberately, and ONLY here: "
+                "this arm reproduces a C-era artifact and must be evaluated at "
+                "the z that artifact used. It is an input being quoted, not a "
+                "convention this computation adopts. Both sides of the comparison "
+                "are frozen in C, so this cross-check does NOT detect a live "
+                "convention change; the row-cap assertion in the anchor block "
+                "does."
+            ),
             "published_q0_source": (
                 f"computations/{XCHECK_SOURCE}:substrate.q_0 (read at run time, "
                 "not transcribed -- it is a muon-era value stale against both "

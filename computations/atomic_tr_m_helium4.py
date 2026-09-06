@@ -345,9 +345,40 @@ def main() -> int:
         print(f"      direct-path skipped: {direct_err}  (elapsed {direct_elapsed:.2f}s)")
         consistency_ok = None  # not exercised this run
 
-    # Authoritative value: prefer direct if it returned, else disjoint-product.
-    abs_tr_he4 = direct_val if direct_val is not None else abs_tr_disjoint
-    method = "direct_h12_recursion" if direct_val is not None else "disjoint_product"
+    # Authoritative value: the direct recursion ONLY IF it agrees with the
+    # disjoint product. Otherwise neither arm is authoritative and this
+    # producer must not pick one.
+    #
+    # Until 2026-09-06 this read `direct_val if direct_val is not None else
+    # abs_tr_disjoint` -- promote whichever arm returned, agreement unread. That
+    # made the published value a function of WALL-CLOCK: the direct recursion
+    # had never once finished inside DIRECT_BUDGET_SEC (the committed witness
+    # recorded `error: "timeout_after_480s"`, `abs_tr_M_50dps: null`,
+    # `matches_disjoint_product_within_1ppb: null`), so the disjoint product was
+    # published by default. On 2026-09-06 the recursion completed in 16.54 s and
+    # DISAGREED -- 7.610469960740114 against 1.280783151528646, a factor of
+    # 5.942 -- and the old logic promoted it anyway, silently replacing the
+    # authoritative |tr_M(4He)| while `allPassed` stayed true and the mismatch
+    # sat unread in a boolean field. A published value must not switch by 5.9x
+    # because a machine got faster. Bean qou-hft3.
+    if direct_val is not None and consistency_ok is False:
+        print("      ⚠  NEITHER arm is authoritative while they disagree; "
+              "keeping the disjoint-product value and recording both.")
+        abs_tr_he4 = abs_tr_disjoint
+        authoritative_method = "disjoint_product (direct recursion disagrees; unresolved)"
+    else:
+        abs_tr_he4 = direct_val if direct_val is not None else abs_tr_disjoint
+        authoritative_method = None
+    # Name the method that produced the value actually published, not the arm
+    # that happened to run. These came apart on 2026-09-06: the direct arm ran,
+    # disagreed, was correctly not promoted -- and `method` still said
+    # "direct_h12_recursion" over a disjoint-product number. Bean qou-hft3.
+    if direct_val is not None and consistency_ok is False:
+        method = "disjoint_product_UNRESOLVED_MISMATCH"
+    elif direct_val is not None:
+        method = "direct_h12_recursion"
+    else:
+        method = "disjoint_product"
 
     # ── Witness emission ──────────────────────────────────
     out = HERE / "atomic-tr-m-helium4.witness.json"
@@ -424,6 +455,25 @@ def main() -> int:
                         bool(consistency_ok) if direct_val is not None else None
                     ),
                 },
+                # An UNRESOLVED disagreement between the two arms, stated where
+                # a reader of the headline value cannot miss it. Absent when the
+                # arms agree or the direct arm did not run. See qou-hft3.
+                **({"UNRESOLVED_MISMATCH": {
+                    "bean": "qou-hft3",
+                    "disjoint_product": fmt(abs_tr_disjoint),
+                    "direct_recursion": str(direct_val),
+                    "relative_difference": str(
+                        abs(direct_val - abs_tr_disjoint) / abs_tr_disjoint),
+                    "authoritative_method": authoritative_method,
+                    "note": (
+                        "These two routes to |tr_M(4He)| on H_12 disagree. The "
+                        "direct recursion had never completed inside the budget "
+                        "before 2026-09-06, so the identity has never been "
+                        "verified -- the previously recorded `null` meant "
+                        "'timed out', not 'agreed'. Neither arm is promoted to "
+                        "authoritative while this is open."
+                    ),
+                }} if (direct_val is not None and consistency_ok is False) else {}),
                 "historical_K_comparison": {
                     "registry_status": (
                         "REGISTRY_PHASE_3B in joint_tower_sdp_solver_v2.py "

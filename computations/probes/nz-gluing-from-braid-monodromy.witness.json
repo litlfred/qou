@@ -1,0 +1,334 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-06T09:51:38.391942+00:00",
+  "commitSha": "c1b63ac76d5f84de7e5dae77d937dd69524a453f",
+  "assertions": [
+    {
+      "name": "stallings_monodromy_is_RL",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "alexander_poly_fourone",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "trefoil_control_trace_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "closing_map_conjugate_to_phi",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "edge_rows_solved_by_omega_knot",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "edge_rows_solved_by_omega_sister",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "two_tetrahedra_two_edges",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "omega_is_a_diagonal_solution",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "volume_equals_two_cl2_pi_over_3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "cusp_shape_knot_is_2sqrt3_i",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "sister_cusp_shape_differs",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "dual_cycle_rows_evaluate_to_one_at_omega",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "mu_lambda_rows_independent_of_edge_span",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "mu_lambda_rows_evaluate_to_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "nz_edge_rows_isotropic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "nz_edge_cusp_orthogonal",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "nz_meridian_longitude_pair_is_pm2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "nz_torsion_sqrt3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "a_polynomial_matches_corpus_A41",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "RRL_two_independent_cusp_cycles",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "RRL_shapes_exact_in_Q_sqrt_minus7",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "RRL_three_tetrahedra_three_edges",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "RRL_complete_structure_found",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "no_convention_dependence_imports",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    },
+    {
+      "name": "RRL_edge_rows_isotropic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "nz_gluing_from_braid_monodromy_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4427,
+  "computation": "nz-gluing-from-braid-monodromy",
+  "scriptFile": "nz_gluing_from_braid_monodromy_probe.py",
+  "scriptHash": "8abb70ae6d23",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nz_gluing_from_braid_monodromy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nz_gluing_from_braid_monodromy_probe.py"
+  },
+  "description": "Neumann–Zagier gluing data of the figure-eight complement DERIVED from the canonical 3-braid (σ₁σ₂⁻¹)² via Stallings monodromy → LR word → Floyd–Hatcher layering; checked against the exact shape e^{iπ/3}, Vol(4₁)=2Cl₂(π/3), cusp shape 2√3 i, the corpus A-polynomial, the NZ torsion √3 and the NZ symplectic relations. Bean qou-n2cl.",
+  "contentBlock": "conj:stokes-dt-bps-bridge",
+  "parameters": {
+    "braid": "(σ₁σ₂⁻¹)² in B₃, closure = 4₁",
+    "monodromy": "[[2, 1], [1, 1]]",
+    "word": "RL"
+  },
+  "data": {
+    "RRL_shapes_exact": [
+      "5/4 + sqrt(7)*I/4",
+      "3/4 + sqrt(7)*I/4",
+      "3/4 + sqrt(7)*I/4"
+    ],
+    "RRL_volume_50dps": "2.66674478344905979079671246261065004409838389",
+    "RRL_volume_census_reference_from_memory": "2.666744783449061",
+    "edge_rows_rect": [
+      [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        1
+      ],
+      [
+        [
+          -1,
+          -1
+        ],
+        [
+          -1,
+          -1
+        ],
+        1
+      ]
+    ],
+    "meridian_row_rect": [
+      [
+        -1,
+        0
+      ],
+      [
+        0,
+        -1
+      ],
+      1
+    ],
+    "longitude_row_rect": [
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        -1
+      ],
+      1
+    ],
+    "nz_symplectic_gram": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        -2
+      ],
+      [
+        0,
+        0,
+        2,
+        0
+      ]
+    ],
+    "cusp_modulus_knot": "(-6.82113770268061858753065938430437804699101167e-52 + 3.46410161513775458705489268301174473388561051j)",
+    "cusp_modulus_sister": "(0.5 + 0.866025403784438646763723170752936183471402627j)",
+    "volume_50dps": "2.02988321281930725004240510854904057188337862",
+    "torsion_det": "1.73205080756887729352744634150587236694280525",
+    "eliminated_relation": "L**4*(L**2*M**4 - L*M**8 + L*M**6 + 2*L*M**4 + L*M**2 - L + M**4)**2*(L**2*M**4 + L*M**8 - L*M**6 - 2*L*M**4 - L*M**2 + L + M**4)**2"
+  },
+  "caveats": [
+    "The R²L volume is compared only informally to the census value for the trace-4 once-punctured-torus bundle (m009/m010), quoted from memory and not from a held source; it is recorded as data and not asserted.",
+    "Scope: the Stallings step needs a homogeneous braid with once-punctured-torus fibre; among hyperbolic knots in S³ that is 4₁ only. 5₂ (not fibred) needs Guéritaud's two-bridge layering — beaned, not done here.",
+    "The meridian is identified as the shortest vector of the derived cusp lattice and the longitude as its 2√3 i partner; the identification is then verified independently by the A-polynomial elimination.",
+    "Orientation convention: ambient = (fibre orientation) ∧ dt with the class-O vertex ordering (P,Q,S,R). 4₁ is amphichiral so this probe cannot detect a global mirror; a chiral case must re-check it (matters for S⁺ vs S⁻)."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "pure topology/geometry: no q, no Markov parameter, no anchor"
+}
