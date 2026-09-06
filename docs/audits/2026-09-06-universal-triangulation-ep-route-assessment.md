@@ -661,9 +661,36 @@ So for `A = 1` the whole question is decidable: enumerate the four resolutions, 
 which would be a genuine result and would not be a fit, because nothing is being selected. If they
 disagree, the choice is load-bearing and §10.4's warning binds.
 
-What that needs and does not yet have: a conjugacy decision procedure in `B₃` (Birman–Ko–Lee or
-Garside normal form). Not implemented here, and not faked — this section records the criterion and
-the enumerable structure, not a verdict.
+### 11.4 Run — and the four do NOT agree
+
+Producer: [`protium_fkp_hyperbolicity_probe.py`](../../computations/probes/protium_fkp_hyperbolicity_probe.py)
+(5/5, `q0Anchor: independent`).
+
+| resolution | reduced word | exp. sum | FKP form |
+|---|---|---|---|
+| `(+1,+1)` | `s1 S2 s1 S2 s1 S2 s1 s1 s2 s1 s1` | `+5` | **not matched** |
+| `(+1,−1)` | `s1 S2 s1 S2 s1 S2 s1 s1 S2 s1 s1` | `+3` | yes — `(1,1)(1,1)(2,1)(3,1)` |
+| `(−1,+1)` | `s1 S2 s1 S2 s1 s1 s1` | `+3` | yes — `(1,1)(4,1)` |
+| `(−1,−1)` | `s1 S2 s1 S2 s1 S2 S2 s1 s1` | `+1` | yes — `(1,1)(1,2)(3,1)` |
+
+**Three of four are hyperbolic**; each matched form carries a strictly negative `σ₂` exponent, so
+none is conjugate to `σ₁^{p₀}σ₂^{q₀}` and FKP's negative clause is discharged by inspection.
+
+**The fourth is UNDECIDED, and that is not the same as non-hyperbolic.** FKP's criterion is up to
+*conjugacy* in `B₃`; this probe tests only **cyclic rotations** of the reduced word — a proper
+subset of conjugacy that applies no braid relation. The test is **sufficient, not necessary**: a
+match proves hyperbolic, a non-match proves nothing. Settling the fourth still needs a real
+conjugacy decision procedure (Birman–Ko–Lee or Garside), which is **not implemented and not faked**.
+
+**So §11.3's optimistic branch is not available.** "If all four agree, the resolution ambiguity does
+not matter" was the case that would have been a genuine result with nothing selected. It does not
+hold — at best three agree and one is open. §10.4's warning therefore still binds in full: choosing
+a resolution because its complement's invariants land near a target is a fit.
+
+One thing the run does settle cleanly. Exponent sum is a conjugacy invariant (the abelianisation
+`B₃ → ℤ`), and the four take **three distinct values** `+1, +3, +5`. So the resolutions lie in at
+least three distinct conjugacy classes: they are genuinely different braids, not four presentations
+of one. The ambiguity is real, not notational.
 
 **It does not scale as stated.** `A = 1` gives `k = 2`; ⁵⁶Fe gives `k = 113`, and beyond three
 strands FKP's characterisation does not apply at all. So this settles a corner, not the route.
