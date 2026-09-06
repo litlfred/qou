@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 14-15
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 mines a classifying map M → BGδ, where the δ indicates that G is regarded as a discrete group. It
 thus follows from Proposition 4.6 that a decorated representation ρ : π1(M ) → G determines a map

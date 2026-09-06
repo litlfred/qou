@@ -7,6 +7,7 @@ section_number: 2
 pages: 8-8
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 The Cheeger-Chern-Simons classes [ 6, 7] are characteristic classes of principal bundles with con-
 nection. For general bundles, the characteristic classes a re diﬀerential characters [ 6], but for ﬂat

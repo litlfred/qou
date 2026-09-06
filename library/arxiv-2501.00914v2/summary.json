@@ -1,0 +1,126 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2501.00914v2",
+ "source_sha256": "d94bd6edf8544d4a",
+ "brief": "L-SPACES AND KNOT TRACES — There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries.",
+ "extended": "**L-SPACES AND KNOT TRACES**\n\n*JOHN A. BALDWIN AND STEVEN SIVEK*\n\n37 pp, 21 sections.\n\n**Abstract.** There has been a great deal of interest in understanding which knots are characterized by which of their Dehn surgeries. We study a 4-dimensional version of this question: which knots are determined by which of their traces? We prove several results that are in stark contrast with what is known about characterizing surgeries, most notably that the 0-trace detects every L-space knot. Our proof combines tools in Heegaard Floer homology with results about surface homeomorphisms and their dynamics. We also consider nonzero traces, proving for instance that each positive torus knot is determined by itsn-trace for anyn≤0, whereas no non-positive integer is known to be a characterizing slope for any positive torus knot besides the right-handed trefoil.\n\n**Outline.** 1 Introduction; 1.1 Nonzero traces; 1.2 Questions; 1.3 Conventions; 1.4 Organization; 1.5 Acknowledgements; 2 Zero-surgeries on ffpf knots; 2.1 Surface homeomorphisms and fibered knots; 2.2 Fixed points and ffpf knots; 2.3 Zero-surgeries on ffpf knots; 3 Traces and large surgeries; 3.1 Topological preliminaries; 3.3 The mod 2 grading; 3.4 Zero-traces of L-space knots; 4 Traces and rational surgeries; 5 Negative traces and positive torus knots; 5.2 Satellite knots; 5.3 Hyperbolic knots",
+ "tokens": {
+  "brief": 36,
+  "extended": 340
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-11-nonzero-traces",
+   "title": "Nonzero traces",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-12-questions",
+   "title": "Questions",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-003-13-conventions",
+   "title": "Conventions",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-004-14-organization",
+   "title": "Organization",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-15-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-006-2-zero-surgeries-on-ffpf-knots",
+   "title": "Zero-surgeries on ffpf knots",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-007-21-surface-homeomorphisms-and-fibered-knots",
+   "title": "Surface homeomorphisms and fibered knots",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-008-22-fixed-points-and-ffpf-knots",
+   "title": "Fixed points and ffpf knots",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-009-23-zero-surgeries-on-ffpf-knots",
+   "title": "Zero-surgeries on ffpf knots",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-010-3-traces-and-large-surgeries",
+   "title": "Traces and large surgeries",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-011-31-topological-preliminaries",
+   "title": "Topological preliminaries",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-012-33-the-mod-2-grading",
+   "title": "The mod 2 grading",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-013-34-zero-traces-of-l-space-knots",
+   "title": "Zero-traces of L-space knots",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-014-4-traces-and-rational-surgeries",
+   "title": "Traces and rational surgeries",
+   "pages": "19-23"
+  },
+  {
+   "id": "sec-015-5-negative-traces-and-positive-torus-knots",
+   "title": "Negative traces and positive torus knots",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-016-52-satellite-knots",
+   "title": "Satellite knots",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-017-53-hyperbolic-knots",
+   "title": "Hyperbolic knots",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-018-61-alexander-polynomials-of-l-space-knots",
+   "title": "Alexander polynomials of L-space knots",
+   "pages": "28-31"
+  },
+  {
+   "id": "sec-019-63-traces-that-detect-knot-floer-homology",
+   "title": "Traces that detect knot Floer homology",
+   "pages": "31-34"
+  },
+  {
+   "id": "sec-020-references",
+   "title": "References",
+   "pages": "34-37"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

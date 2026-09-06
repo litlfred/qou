@@ -7,6 +7,7 @@ section_number: 3.3.4
 pages: 38-39
 source_pdf: 2104.07437v4.pdf
 source_sha256: a0f28a6b61618467
+doc_brief: "Peacock patterns and new integer invariants in topological string theory — Topological string theory near the conifold point of a Calabi–Yau threefold gives rise to factorially divergent power series"
 ---
 We study here the representation of the anti-holomorphic blocks in terms of Borel resummation
 of asymptotic series. In general, we ﬁnd

@@ -1,0 +1,108 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-06T11:21:47.070302+00:00",
+  "commitSha": "61f7efc7433be4fb856ec66cefe5401b5820a5c1",
+  "assertions": [
+    {
+      "name": "fig8_canonical_is_two_regular_ideal_tetrahedra",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "Vol(4_1)/Vol(regular ideal tetrahedron) = 2 exactly"
+    },
+    {
+      "name": "borromean_canonical_is_two_regular_ideal_octahedra",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "Vol(L6a4)/Vol(regular ideal octahedron) = 2 exactly"
+    },
+    {
+      "name": "borromean_canonical_is_not_a_tetrahedral_decomposition",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "Vol(L6a4)/Vol(tetrahedron) is not an integer, so the canonical decomposition of the corpus's principal manifold is not a triangulation into regular ideal tetrahedra"
+    },
+    {
+      "name": "octahedron_is_not_an_integer_multiple_of_tetrahedron",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "an ideal octahedron is not an integer number of regular ideal tetrahedra, reinforcing the previous check"
+    },
+    {
+      "name": "derived_layered_fig8_has_two_tetrahedra",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the braid-word-derived layered triangulation of S^3\\4_1 has two tetrahedra (one per letter of the LR word RL)"
+    },
+    {
+      "name": "derived_layered_volume_matches_canonical",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the derived layered triangulation carries the full hyperbolic volume to the 45 significant digits its producer serializes (residual 4.94e-45 = that truncation), so it is a decomposition of the same complete structure"
+    },
+    {
+      "name": "pachner_distance_candidate_vanishes_on_fig8",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "layered and canonical cell counts agree, so the candidate observable is 0 on the one knot the framework can derive both for"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "canonical-cell-structure",
+  "scriptFile": "canonical_cell_structure_probe.py",
+  "scriptHash": "7a0d23a3c981",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/canonical_cell_structure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/canonical_cell_structure_probe.py"
+  },
+  "data": {
+    "vol_regular_ideal_tetrahedron": "1.01494160640965362502120255427",
+    "vol_regular_ideal_octahedron": "3.66386237670887606021841405973",
+    "vol_fig8_registry": "2.02988321281930725004240510855",
+    "vol_fig8_derived_from_braid_word": "2.02988321281930725004240510855",
+    "vol_borromean_registry": "7.32772475341775212043682811946",
+    "ratio_fig8_over_tetrahedron": "2.0",
+    "ratio_borromean_over_octahedron": "2.0",
+    "ratio_borromean_over_tetrahedron": "7.2198486170445898169",
+    "n_tetrahedra_layered_derived": 2,
+    "n_tetrahedra_canonical_fig8": 2,
+    "pachner_distance_candidate_fig8": 0,
+    "derived_vs_registry_volume_residual": "4.9394e-45",
+    "derived_volume_recorded_significant_digits": 45,
+    "scope": "A volume identity is consistent with a cell structure, it does not prove one; the octahedral and two-tetrahedron decompositions are classical and are cited. What is measured here is that the corpus registry agrees with them, that the Borromean volume admits no tetrahedral re-reading, and that the Pachner-distance candidate is 0 on 4_1. It is NOT a claim that a Pachner distance is uninformative on a manifold where the two decompositions differ; no such manifold is currently derivable in this corpus."
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "pure geometry: no q, no Markov parameter, no anchor"
+}

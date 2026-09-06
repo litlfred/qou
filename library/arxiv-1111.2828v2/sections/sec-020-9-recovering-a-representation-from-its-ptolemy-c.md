@@ -7,6 +7,7 @@ section_number: 9
 pages: 26-34
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 We now show that a Ptolemy assignment on K determines a generically decorated boundary-
 unipotent representation, which is given explicitly in ter ms of the Ptolemy coordinates. The idea is

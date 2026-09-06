@@ -7,6 +7,7 @@ section_number: 10
 pages: 35-40
 source_pdf: 1111.2828v2.pdf
 source_sha256: 90e2f5a9b978d403
+doc_brief: "THE COMPLEX VOLUME OF SL(n, C)-REPRESENTATIONS OF 3-MANIFOLDS — For a compact 3-manifold M with arbitrary (possibly empty) boundary, we give a parametrization of the set of conjugacy classes of"
 ---
 In the examples below, all computations of Ptolemy varietie s are exact, whereas the computations
 of complex volume are numerical with at least 50 digits precision.

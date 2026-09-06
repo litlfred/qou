@@ -1,0 +1,367 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-06T11:15:12.530601+00:00",
+  "commitSha": "61f7efc7433be4fb856ec66cefe5401b5820a5c1",
+  "assertions": [
+    {
+      "name": "deuteron_is_satellite_hence_no_EP",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "A=2 is labelled satellite; Thurston's trichotomy makes it non-hyperbolic, so no Epstein-Penner decomposition exists for it"
+    },
+    {
+      "name": "all_A_ge_3_are_hyperbolic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "every atom with A>=3 in the dictionary has a hyperbolic complement, so the route is not blocked above the deuteron"
+    },
+    {
+      "name": "distinct_hyperbolic_manifolds_is_two",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the whole dictionary uses exactly two hyperbolic manifolds (4_1, L6a4)"
+    },
+    {
+      "name": "borromean_class_holds_13_atoms",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "13 of 19 atoms are assigned the SAME complement L6a4"
+    },
+    {
+      "name": "borromean_class_binding_spread_exceeds_1e6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "binding varies by more than a factor 1e6 inside the single class on which every Epstein-Penner invariant is constant"
+    },
+    {
+      "name": "classifier_depends_on_A_only",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "classify_nuclear_knot(Z,N) factors through A=Z+N over a 30x34 grid, so the dictionary discards the braid word"
+    },
+    {
+      "name": "vol_L6a4_eq_8_catalan",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "registry sanity: Vol(L6a4) = 8*Catalan"
+    },
+    {
+      "name": "vol_4_1_eq_2_cl2_pi_over_3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "registry sanity: Vol(4_1) = 2*Cl_2(pi/3) (NOT twice Catalan; Cl_2(pi/2) is a different number)"
+    },
+    {
+      "name": "catalan_is_not_cl2_pi_over_3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "guard on the Lambda-vs-Cl_2 confusion the dialog made: Catalan's constant Cl_2(pi/2) and Cl_2(pi/3) differ by ~0.099"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "ep-decomposition-reachability",
+  "scriptFile": "ep_decomposition_reachability_probe.py",
+  "scriptHash": "c07382f73de0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/ep_decomposition_reachability_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/ep_decomposition_reachability_probe.py"
+  },
+  "data": {
+    "atoms": [
+      {
+        "name": "proton",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "label": "trivial",
+        "canonical": "unknot",
+        "hyperbolic": false,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "0.0"
+      },
+      {
+        "name": "neutron",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "label": "trivial",
+        "canonical": "unknot",
+        "hyperbolic": false,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "0.0"
+      },
+      {
+        "name": "protium",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "label": "trivial",
+        "canonical": "unknot",
+        "hyperbolic": false,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "0.0"
+      },
+      {
+        "name": "deuterium",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "label": "satellite",
+        "canonical": null,
+        "hyperbolic": false,
+        "basis": "Thurston trichotomy: satellite is not hyperbolic",
+        "B_MeV": "2.2213"
+      },
+      {
+        "name": "tritium",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "label": "figure-eight",
+        "canonical": "4_1",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "-2.5843"
+      },
+      {
+        "name": "he3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "label": "figure-eight",
+        "canonical": "4_1",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "-3.3606"
+      },
+      {
+        "name": "he4",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "0.7183"
+      },
+      {
+        "name": "li6",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "5.0443"
+      },
+      {
+        "name": "li7",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "5.5081"
+      },
+      {
+        "name": "be9",
+        "Z": 4,
+        "N": 5,
+        "A": 9,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "3.9779"
+      },
+      {
+        "name": "b11",
+        "Z": 5,
+        "N": 6,
+        "A": 11,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "3.3058"
+      },
+      {
+        "name": "c12",
+        "Z": 6,
+        "N": 6,
+        "A": 12,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "5.8438"
+      },
+      {
+        "name": "c14",
+        "Z": 6,
+        "N": 8,
+        "A": 14,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "34.0217"
+      },
+      {
+        "name": "n14",
+        "Z": 7,
+        "N": 7,
+        "A": 14,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "17.5136"
+      },
+      {
+        "name": "o16",
+        "Z": 8,
+        "N": 8,
+        "A": 16,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "27.6581"
+      },
+      {
+        "name": "ne20",
+        "Z": 10,
+        "N": 10,
+        "A": 20,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "132.596"
+      },
+      {
+        "name": "si28",
+        "Z": 14,
+        "N": 14,
+        "A": 28,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "2916.0999"
+      },
+      {
+        "name": "ca40",
+        "Z": 20,
+        "N": 20,
+        "A": 40,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "514735.3763"
+      },
+      {
+        "name": "fe56",
+        "Z": 26,
+        "N": 30,
+        "A": 56,
+        "label": "Borromean",
+        "canonical": "L6a4",
+        "hyperbolic": true,
+        "basis": "sw_hyperbolicity_gate registry",
+        "B_MeV": "1197694903.34"
+      }
+    ],
+    "distinct_hyperbolic_manifolds": [
+      "4_1",
+      "L6a4"
+    ],
+    "class_stats": {
+      "4_1": {
+        "n_atoms": 2,
+        "atoms": [
+          "tritium",
+          "he3"
+        ],
+        "n_nonzero_B": 2,
+        "B_min_MeV": "-3.3606",
+        "B_max_MeV": "-2.5843",
+        "B_ratio_max_over_min": "0.768999583408"
+      },
+      "L6a4": {
+        "n_atoms": 13,
+        "atoms": [
+          "he4",
+          "li6",
+          "li7",
+          "be9",
+          "b11",
+          "c12",
+          "c14",
+          "n14",
+          "o16",
+          "ne20",
+          "si28",
+          "ca40",
+          "fe56"
+        ],
+        "n_nonzero_B": 13,
+        "B_min_MeV": "0.7183",
+        "B_max_MeV": "1197694903.34",
+        "B_ratio_max_over_min": "1667402065.08"
+      }
+    },
+    "n_atoms": 19,
+    "n_atoms_nonzero_binding": 16,
+    "n_atoms_nonzero_binding_hyperbolic": 15,
+    "classifier_consumers_in_tree": [
+      "computations/hadron_knot_table.py"
+    ],
+    "scope": "Excludes an Epstein-Penner invariant of the DICTIONARY-assigned knot as a source of the A-dependent shape residual, because such an invariant is constant on a class whose binding spans more than 1e6. Does NOT exclude an Epstein-Penner invariant of the actual per-atom braid closure, which is untested and would first require identifying that closure."
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "pure topology: no q, no Markov parameter, no anchor"
+}

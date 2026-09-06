@@ -301,6 +301,7 @@ import QOU.Mass.MixedMultibondMuBarIntegrality
 import QOU.Mass.BindingRecurrenceSpectral
 import QOU.Mass.BindingClassicalKernel
 import QOU.Mass.BindingInteriorMaxObstruction
+import QOU.Mass.GroupoidTerminalDichotomy
 import QOU.Mass.Lever1Depth2Exclusion
 import QOU.Mass.Lever1TauClosedForm
 import QOU.Machinery.HeckeTauAssignmentTower
