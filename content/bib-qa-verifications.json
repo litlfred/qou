@@ -17465,6 +17465,49 @@
     "kind": "upload",
     "file": "library/arxiv-math-9907032v1/9907032v1.pdf"
    }
+  },
+  {
+   "source": {
+    "kind": "upload",
+    "file": "library/arxiv-0902.0350v1/0902.0350v1.pdf"
+   },
+   "id": "hales-etal2010",
+   "status": "uncited",
+   "note": "Identified from the arXiv title page (arXiv:0902.0350v1, math.MG, 2 Feb 2009): Hales, Harrison, McLaughlin, Nipkow, Obua, Zumkeller, 'A revision of the proof of the Kepler conjecture', 41 pp. No ref() entry existed before this triage (references.ts had no Kepler / sphere-packing entry; its only 'kissing' match was the surname Kissinger). Entry hales-etal2010 created 2026-09-06; no citation site yet \u2014 bib orphan pending the cite-in-block bean.",
+   "relevance": {
+    "verdict": "supporting",
+    "rationale": "Corpus-grepped before judging: docs/audits/2026-09-05-max-contact-sub-affine-negative.md \u00a75 states outright that 'references.ts has no packing entry' and that the Harborth/Bezdek/contact-number/sphere-packing forms were 'deliberately not cited' because nothing was held; rem:bk-coordination-multiplicity (lines 83-86) and QOU.Mass.CoordinationSaturation nonetheless appeal to 'a geometric close-packing count' / 'the close-packing / fcc picture'. This document is now the held source for the ONE thing it actually establishes for the folio: the Kepler theorem statement (Introduction, p. 2 \u2014 no packing of congruent balls in E^3 exceeds the fcc density), i.e. that fcc is the density-optimal reference configuration the coordination arc names. It does not prove the kissing number 12 or any contact-number bound (those are Sch\u00fctte\u2013van der Waerden 1953 and bezdek-reid2013 Theorem 1), so it cannot by itself source the bounded-degree k = 12 of prop:coordination-saturation. Part 1 (\u00a71\u2013\u00a77: Flyspeck, HOL Light / Isabelle formalisation of the nonlinear inequalities, tame-graph enumeration, LP verification) is a methodological precedent for this repository's blueprint-then-formalise discipline but supplies no mathematics the folio consumes; Part 2 (\u00a78 biconnected graphs, \u00a79 errata) is internal to the Kepler proof. Not 'core': the corpus records four standing objections to importing Euclidean packing geometry at all (internal derivation demanded by qou-rav3; ambient geometry hyperbolic; three-dimensionality underived; exponent imported) and a citation makes the import citable, not derived. Scope-(a): as read, the usable content is the density statement and nothing else.",
+    "keyResults": [
+     {
+      "locator": "Introduction, p. 2 (statement); \u00a72 blueprint edition; Part 2 \u00a78\u2013\u00a79 errata to the 2005 proof",
+      "statement": "No packing of congruent balls in three-dimensional Euclidean space has density greater than the face-centred cubic packing; the paper records the reorganised (blueprint) proof and the errata to the original.",
+      "useForFolio": "Gives rem:bk-coordination-multiplicity's 'geometric close-packing count' and prop:coordination-saturation's fcc picture a held citation for the density-optimality of fcc. It does not supply the coordination bound itself (see bezdek-reid2013) and does not touch the corpus's four objections to the geometric import.",
+      "targets": [
+       "rem:bk-coordination-multiplicity",
+       "prop:coordination-saturation"
+      ]
+     }
+    ],
+    "proposedActions": [
+     {
+      "action": "add-reference",
+      "rationale": "Relevant and no ref() entry existed; created in this triage pass as hales-etal2010 (journal volume/pages recalled, DOI omitted \u2014 Crossref unreachable in-sandbox).",
+      "target": "content/schema/references.ts"
+     },
+     {
+      "action": "cite-in-block",
+      "rationale": "The close-packing / fcc appeal in rem:bk-coordination-multiplicity and the CoordinationSaturation Lean docstring is unsourced; cite the density statement here and the contact bound from bezdek-reid2013 in the same edit (one combined bean for the two packing sources).",
+      "target": "rem:bk-coordination-multiplicity",
+      "bean": "qou-ywbd"
+     }
+    ],
+    "assessed_by": {
+     "kind": "agent",
+     "model": "coding-agent-session-0134BL9GG95tgycYMjLVX35V"
+    },
+    "assessed_at": "2026-09-06T13:42:16Z",
+    "source_sha": "4591687132c9"
+   }
   }
  ]
 }

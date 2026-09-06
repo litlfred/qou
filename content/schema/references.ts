@@ -16657,6 +16657,37 @@ export const references: Reference[] = [
     URL: "https://arxiv.org/abs/q-alg/9708006",
     note: "Cited in q-geometric-langlands/quantum-langlands-dual (cites[]). Rekeyed from 'frenkel-reshetikhin2002' on owner instruction (2026-09-04): no FR paper is dated 2002; the deformed-W-algebra duality W_{q,t}(g) = W_{t,q}(^L g) introduced here is the 'quantum Langlands dual' content the block cites. arXiv:q-alg/9708006. DOI not verifiable this session, so omitted.",
   }),
+
+  // ── Hales–Harrison–McLaughlin–Nipkow–Obua–Zumkeller 2010 — Kepler conjecture: blueprint / Flyspeck status + errata ──
+  ref({
+    id: "hales-etal2010",
+    library: {
+      docId: "arxiv-0902.0350v1",
+      dir: "library/arxiv-0902.0350v1",
+      pdf: "library/arxiv-0902.0350v1/0902.0350v1.pdf",
+      stage: "sections",
+      pages: 41,
+      sections: 12,
+      arxiv: "0902.0350v1",
+    },
+    type: "article-journal",
+    title: "A revision of the proof of the Kepler conjecture",
+    author: [
+      { family: "Hales", given: "Thomas C." },
+      { family: "Harrison", given: "John" },
+      { family: "McLaughlin", given: "Sean" },
+      { family: "Nipkow", given: "Tobias" },
+      { family: "Obua", given: "Steven" },
+      { family: "Zumkeller", given: "Roland" },
+    ],
+    "container-title": "Discrete & Computational Geometry",
+    volume: "44",
+    issue: "1",
+    page: "1-34",
+    issued: { "date-parts": [[2010]] },
+    URL: "https://arxiv.org/abs/0902.0350",
+    note: "arXiv:0902.0350 (math.MG, 2 Feb 2009; 41 pp, 12 sections). Part 1 reports the Flyspeck formal-proof initiative (HOL Light + Isabelle/HOL: nonlinear inequalities via Bernstein bases, tame-graph enumeration, linear programs) and the blueprint edition; Part 2 gives errata to the 2005 Annals proof, including the new §8 argument on biconnected graphs. Held (ingested 2026-09-06, e5afe5ea7b) as the packing source the binding arc had none of — docs/audits/2026-09-05-max-contact-sub-affine-negative.md §5 recorded 'references.ts has no packing entry'. What the folio can cite from it is the Kepler theorem STATEMENT (Introduction, p. 2: no packing of congruent balls in E^3 exceeds the fcc density); it proves no kissing-number or contact-number bound, so it does not by itself source the k = 12 bounded-degree coordination of prop:coordination-saturation — that is bezdek-reid2013 / Schütte–van der Waerden. Journal volume/pages recalled, not verified in-sandbox (Crossref CONNECT 403), DOI therefore omitted. Triage: docs/audits/2026-09-06-uploads-triage-eight-documents.md.",
+  }),
 ];
 
 // ── Lookup helpers ──────────────────────────────────────────────
