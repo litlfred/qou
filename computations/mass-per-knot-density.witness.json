@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:15:29.232379+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-06T06:47:33.680755+00:00",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "assertions": [
     {
       "name": "per_knot_density_equiv_per_knot_density",
@@ -58,11 +58,11 @@
       "computed": 1,
       "expected": 1,
       "passed": true,
-      "source": "per_knot_density_vd(density=tr_M) ≡ per_knot_density_per_block: |Δ| = 5.564e-68 < 1.0e-40"
+      "source": "per_knot_density_vd(density=tr_M) ≡ per_knot_density_per_block: |Δ| = 2.782e-68 < 1.0e-40"
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "mass-per-knot-density",
   "scriptFile": "mass_per_knot_density.py",
   "scriptHash": "41f87573a7eb",
@@ -81,7 +81,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -97,8 +97,8 @@
     "bracket_2_q_at_q0": "2.010896866707122",
     "su2_density_loss": {
       "density_global_H4_scalar": "1.006730453487707",
-      "density_per_block_H3_trM_proton": "1.145759692457301",
-      "ratio_global_over_per_block": "0.8786575929622567",
+      "density_per_block_H3_trM_proton": "0.6293284022029219",
+      "ratio_global_over_per_block": "1.599690161708442",
       "gate_verdict": "RED — global SU(2)-blind scalar ≠ per-block Markov trace"
     }
   },

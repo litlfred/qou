@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-26T14:11:52.582017+00:00",
-  "commitSha": "80b1f75f8c3be884bd63e9f5b55e7a7a6c70c7b2",
+  "computedAt": "2026-09-06T06:49:41.109288+00:00",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "assertions": [
     {
       "name": "binding_scalar_is_bar_even",
-      "computed": "1.1319598848533390459e-72",
+      "computed": "0.0",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-9",
@@ -14,7 +14,7 @@
     },
     {
       "name": "even_projection_recovers_trM",
-      "computed": "8.7172300130674698185e-51",
+      "computed": "6.3784183907184849655e-51",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-9",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 4,
   "computation": "probe-d-barparity-binding",
   "scriptFile": "probe_d_barparity_binding.py",
   "scriptHash": "986b592f0448",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptCommitSha": "95413a361930ca18301b96aba8813b3ce34433fc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c85ef99ee89ce1c3"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -56,16 +56,16 @@
     "beta_D_word_length": 23
   },
   "data": {
-    "bar_conjugate_max_rel_resid": "0.00058591336544084772603",
-    "bar_conjugate_max_rel_resid_mixed_frame_historical": "0.00026249981910016180303",
+    "bar_conjugate_max_rel_resid": "2.3168787904212933988",
+    "bar_conjugate_max_rel_resid_mixed_frame_historical": "2.3171911190227548085",
     "pn_convention_both_sides": "bring_color_weighted",
-    "a_l2_norm": "0.32698036171569202412",
-    "a_even_l2_norm": "0.23121003108399600137",
-    "a_odd_l2_norm": "0.23121003108399600137",
+    "a_l2_norm": "0.18870234596588003603",
+    "a_even_l2_norm": "0.1334327084582837236",
+    "a_odd_l2_norm": "0.1334327084582837236",
     "a_odd_fraction_of_norm": "0.7071067811865475244",
-    "sum_a_even": "0.57517224391777187083",
-    "sum_a_odd": "1.13196e-72",
-    "tr_M": "0.57517224391777187083",
-    "uniform_delta_magnitude": "7.5688065586485218938"
+    "sum_a_even": "0.15196833920423160759",
+    "sum_a_odd": "0.0",
+    "tr_M": "0.15196833920423160759",
+    "uniform_delta_magnitude": "28.646542266062997257"
   }
 }

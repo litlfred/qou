@@ -1,8 +1,8 @@
 {
   "engine": "python (mpf 50 dps; reads ⁴He H₁₂ witness)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-21T16:30:31.782127+00:00",
-  "commitSha": "202d57d4febf12e6fb3b26b8229e84f1a5185f7a",
+  "computedAt": "2026-09-06T06:47:30.811328+00:00",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "assertions": [
     {
       "name": "rho_F_not_a_constant_and_no_two_row_ratio_derives_it",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "he4-rho-F-two-row-stratum-search",
   "scriptFile": "he4_rho_F_two_row_stratum_search.py",
   "scriptHash": "334ad7fe539e",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "69a9799bfa369dd397af0cf1e1ffe31301573993",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/he4_rho_F_two_row_stratum_search.py"
+    ],
+    "reproduce": "python3 -u computations/he4_rho_F_two_row_stratum_search.py"
   },
   "description": "qou-2row derivation attempt for ρ_F(⁴He). Attempt 1: no fit-free two-row Frobenius ratio reproduces ρ_F=1.889 (closest 1.782, −5.7%, cherry-picks blocks). Attempt 2 (decisive): ρ_F is NOT a constant — B_AME/(m_e·A·8G) drifts 1.889 (⁴He) → 2.130 (¹⁶O) → 2.284 (⁴⁰Ca) across doubly-magic light nuclei, and Coulomb add-back makes it worse (1.95→2.39→2.80). So '2' is the rounded ⁴He value, not a universal categorical prefactor. Verdict: ρ_F is a per-nucleus A-dependent effective prefactor; the CPT alt-block route is refuted, a two-row ratio gives no match, and there is no constant to derive — a real derivation must reproduce ρ_F(A), which no corpus quantity supplies. Honest wall. Scope-(a); no fit; no wiring; q₀ proton-anchored.",
   "parameters": {
