@@ -71,11 +71,31 @@ Eight species, three constants — five degrees of freedom of test, and it holds
 eight. The `A = 2` row is worth noting: those three species are rank-deficient for an affine *fit*,
 but subtracting `c₁/2` and finding the same residual three times is a genuine check even there.
 
-🛑 **The `A`-DEPENDENCE OF `k` IS A ZERO-DOF FIT AND IS UNTESTED.** `m(A) = (3/8)4^A + (15/2)2^A −
-23` reproduces `13, 61, 193` — three parameters on three points, so it *cannot* fail, and it is
-recorded here as a candidate to be shot at, **not** as a result. The test is one species at
-`A = 5` (`n = 15`, ~45 min for the pair of words), which predicts `k(5) = 663/2¹⁰`. Until that
-runs, quote the species-independence of `k` (which is measured) and not the formula for it.
+🛑 **THE `A`-DEPENDENCE OF `k` WAS A ZERO-DOF FIT AND IT IS NOW REFUTED (measured 2026-09-06).**
+`m(A) = (3/8)4^A + (15/2)2^A − 23` reproduces `13, 61, 193` — three parameters on three points, so
+it could not fail on its own data. It was recorded as a candidate to be shot at, and `⁵He`
+(`Z=2, N=3`, `n = 15`, `2¹⁵` basis states, 49 min) shot it down:
+
+    m(5)  predicted  601        measured  521        MISS by 80/2¹⁰
+
+So the measured sequence is `m(A) = 13, 61, 193, 521` at `A = 2, 3, 4, 5`, and **no closed form for
+it is offered** — a fourth point does not license a four-parameter fit any more than the third
+licensed a three-parameter one. What the run *does* establish, positively:
+
+- **`c₁`'s closed form holds at `A = 5`**: measured `1/256`, predicted `1/256`. That is the eighth
+  independent size and the largest ever put through `[◇]`.
+- **New exact values at `A = 5`** (`⁵He`): `c₂ = 1001/2048`, and the class split
+  `|S| = 0: 67/512`, `|S| = 1: 523/1024`, `|S| = 2: −313/2048`.
+
+⚠ **What the `A = 5` run does NOT test: species-independence of `k` at `A = 5`.** One species gives
+one residual; it is *consistent with* the relation and cannot check it. The species-independence is
+measured at `A = 2, 3, 4` only (8 species, 3 constants). Testing it at `A = 5` needs a second
+species there — another ~49 min.
+
+🛑 **And my stated prediction was wrong before it was refuted.** This file, the `qou-pdg9` bean and
+PR #6920's body all said the form predicts `k(5) = 663/2¹⁰`; `(3/8)·4⁵ + (15/2)·2⁵ − 23 = 384 + 240
+− 23 = 601`, so the arithmetic was mine, not the form's. The verdict is unchanged — 601 misses 521
+too — but a wrong number was carried in three places, and this is the note that drains it.
 
 SCOPE — (a) scope-limited. One `A` for the leave-one-out, three for the `k` relation, exact
 `Fraction` arithmetic through the `[◇]` expansion. The MISS is scope-(a): it says an affine form in
@@ -193,9 +213,12 @@ def k_relation(rows) -> bool:
         print(f"    A = {A}  ({len(vals)} species: {names:<22}) {shown}{extra}"
               f"   {'constant' if good else 'NOT CONSTANT — the relation is refuted'}")
     print(f"    ⇒ {'species-independent at every A measured — |S|=1 = c₁/2 + k(A).' if ok else 'REFUTED — do not quote the k(A) relation.'}")
-    print("    🛑 The A-DEPENDENCE of k is a separate question and is NOT tested here. The candidate")
-    print("    m(A) = (3/8)4^A + (15/2)2^A − 23 fits 13, 61, 193 with three parameters on three")
-    print("    points — it cannot fail. It predicts k(5) = 663/2^10; that is the test.")
+    print("    🛑 The A-DEPENDENCE of k is a separate question, is NOT tested here, and the")
+    print("    candidate m(A) = (3/8)4^A + (15/2)2^A − 23 (three parameters on three points) is now")
+    print("    REFUTED: it gives m(5) = 601, measured is 521. Sequence m(A) = 13, 61, 193, 521 at")
+    print("    A = 2..5; no closed form is offered for it — a 4th point does not license a 4-param")
+    print("    fit. NOTE the A=5 run used ONE species, so it tests the FORMULA, not the")
+    print("    species-independence at that A; that is measured at A = 2, 3, 4 only.")
     return ok
 
 
@@ -203,6 +226,8 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--with-a4", action="store_true",
                     help="add ⁴He to the k-relation table (n = 12, ~4 min)")
+    ap.add_argument("--a5", action="store_true",
+                    help="re-run the A = 5 test that REFUTED the k(A) form (⁵He, n = 15, ~49 min)")
     ap.add_argument("--verbose", action="store_true")
     args = ap.parse_args()
     t0 = time.time()
@@ -253,6 +278,23 @@ def main() -> int:
         krows.append(r)
     kok = k_relation(krows)
 
+    if args.a5:
+        # The run that refuted the k(A) form. One species (⁵He) is enough to test the FORMULA;
+        # it cannot test species-independence at A = 5, which needs a second species there.
+        print(f"\n  ── A = 5 (⁵He, n = 15, 2¹⁵ basis states) — the refutation, re-run ──")
+        r = measure(2, 3)
+        A = 5
+        c1p = c1_closed(r["u"], r["D"], A)
+        k5 = r["S1"] - r["c1"] / 2
+        pred = (F(3, 8) * 4 ** A + F(15, 2) * 2 ** A - 23) / F(2) ** (2 * A)
+        print(f"    c₁  measured {r['c1']}   closed form {c1p}   "
+              f"{'HIT — 8th independent size' if r['c1'] == c1p else 'MISS — the c₁ closed form FAILS at A=5'}")
+        print(f"    c₂ = {r['c2']}   |S|=0 {r['S0']}   |S|=1 {r['S1']}   |S|=2 {r['S2']}")
+        print(f"    k(5) measured  {k5}  = {k5 * 2 ** (2 * A)}/2^{2 * A}")
+        print(f"    k(5) predicted {pred}  = {pred * 2 ** (2 * A)}/2^{2 * A}   (the zero-dof form)")
+        print(f"    ⇒ {'the form SURVIVES — re-examine, it was refuted on 2026-09-06' if k5 == pred else 'MISS — the k(A) form is refuted, as recorded.'}")
+        print("    ⚠ ONE species: this tests the FORMULA, not species-independence at A = 5.")
+
     print(f"\n  SUMMARY at A = 3:  c₁ {'ok' if ctrl else 'BROKEN HARNESS'}   "
           f"c₂ {'affine' if r2 else 'NOT affine'}   "
           f"|S|=1 {'affine' if r1 else 'NOT affine'}   |S|=2 {'affine' if rr else 'NOT affine'}"
@@ -262,8 +304,8 @@ def main() -> int:
     print("  form in THESE two coordinates fails at THIS A, which is not 'no closed form exists'.")
     if not args.with_a4:
         print("  The k table above covers A = 2 and 3 only; --with-a4 adds ⁴He (n = 12, ~4 min),")
-        print("  which gives 193/2^8. The A-dependence of k is untested either way — that needs")
-        print("  A = 5 (n = 15).")
+        print("  which gives 193/2^8. The A-dependence of k was TESTED at A = 5 and REFUTED")
+        print("  (predicted 601/2^10, measured 521/2^10); --a5 re-runs it (~49 min).")
     print(f"\n  ({time.time()-t0:.1f}s)")
     # Exit 1 only if a CONTROL fails — a c₂/|S|=2 MISS is the finding, not an error.
     return 0 if (ctrl and kok) else 1
