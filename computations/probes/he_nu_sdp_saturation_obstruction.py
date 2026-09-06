@@ -86,6 +86,23 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 # ones. The float() cast below is therefore deliberate: resolve the PIN, keep
 # the tier.
 Q0 = float(Q_50_DIGIT_STR)
+
+# RAIL was dropped, not retired. It was defined immediately below `Q0` as
+#
+#     Q0 = 1.1099785955573347
+#     RAIL = 1e5  # |x| above this is a degenerate bound-rail, not a genuine support
+#
+# and the q0-anchor migration rewrote that two-line block into the resolved
+# pin above, taking the second line with it (bean qou-durg). The call site
+# survived, so the module imported fine and raised `NameError: RAIL` only when
+# the LP actually succeeded -- which no test exercises.
+#
+# Recovered from the corpus's own history at the commit each committed witness
+# records in `scriptCommitSha`, where the name WAS bound; not invented, and not
+# guessed from a plausible magnitude. Float deliberately: it is compared
+# against `res.x[i]`, scipy LP output, and this module's `float(Q_50_DIGIT_STR)`
+# above is an equally deliberate float pin.
+RAIL = 1e5  # |x| above this is a degenerate bound-rail, not a genuine support
 # PRECISION OF THE STRING FORM MATTERS HERE -- corrected 2026-08-30, same day,
 # after the first version of this migration got it wrong.
 #

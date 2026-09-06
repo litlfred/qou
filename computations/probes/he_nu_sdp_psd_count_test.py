@@ -96,6 +96,17 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 # ones. The float() cast below is therefore deliberate: resolve the PIN, keep
 # the tier.
 Q0 = float(Q_50_DIGIT_STR)
+
+# H (the Hecke parameter h = q - 1/q) was dropped, not retired: it sat directly
+# below `Q0` as `H = Q0 - 1.0 / Q0`, and the q0-anchor migration rewrote that
+# block and took it with it (bean qou-durg). `_rho_word` still uses it for
+# sigma^-1 = sigma - h, so the module imported fine and raised `NameError: H`
+# only once a word with a negative generator was built.
+#
+# Recovered from the commit this witness records in `scriptCommitSha`, where
+# the name WAS bound. Float, matching the deliberate float pin above and the
+# numpy matrices it multiplies.
+H = Q0 - 1.0 / Q0
 # Canonical substrate q₀ (proton-pinned; == computations/q_parameter.Q), inlined.
 # READ the pin; do not transcribe it. This was
 #     Q0 = 1.1099785955573347

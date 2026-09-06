@@ -1,10 +1,11 @@
 ---
 # qou-durg
 title: 3 he_nu_sdp probes raise NameError on their success path yet publish witnesses
-status: todo
+status: in-progress
 type: task
+priority: normal
 created_at: 2026-09-06T03:37:41Z
-updated_at: 2026-09-06T03:37:41Z
+updated_at: 2026-09-06T10:45:08Z
 ---
 
 Found by the post-merge AST undefined-name scan (merge 5f5ad14195), not by any
@@ -60,3 +61,62 @@ stale-vs-failure-branch, then fix the names from the probes' own intent — not
 from a plausible constant.
 
 Unclaimed — filed from the qou-uiut merge, not being worked.
+
+---
+
+## Update 2026-09-06 — answered, and the names restored from the corpus's own record
+
+**The open question is settled: the witnesses are records of WORKING code.**
+
+Each witness records a `scriptCommitSha`. Retrieving the producer at that
+commit and AST-checking the name there:
+
+| producer | name | scriptCommitSha | ancestors | bound there? |
+|---|---|---|---|---|
+| `he_nu_sdp_barfold_h9_test` | `RAIL` | `138ab4aa9afd` | 8706 | **yes** |
+| `he_nu_sdp_psd_count_test` | `H` | `df5a7ee4e5af` | 7582 | **yes** |
+| `he_nu_sdp_saturation_obstruction` | `RAIL` | `fcc65c13805d` | 10202 | **yes** |
+
+All three are real commits (thousands of ancestors, so not graft boundaries —
+checked, after this bean's earlier attribution turned out to be one). All three
+`scriptHash` values differ from the current files, so the producers changed
+after the witnesses were written. So: **not failure-branch output, and not
+fabricated — the code worked, and a later edit broke it.**
+
+### What broke them
+
+The q0-anchor migration. Each file had a two-line block:
+
+```
+Q0 = 1.1099785955573347
+RAIL = 1e5   # |x| above this is a degenerate bound-rail, not a genuine support
+```
+
+(`H = Q0 - 1.0 / Q0` in `psd_count`). The migration rewrote that block into the
+resolved pin plus its explanatory comment and **took the second line with it**.
+The call sites survived, so each module still imports cleanly and raises
+`NameError` only when the LP succeeds — which nothing in either test tree
+exercises. Exactly the failure mode as `_is_sparse_sigma` in the qou-uiut
+merge: a block rewrite drops a definition while its consumer lives on.
+
+### Restored — recovered, not invented
+
+`RAIL = 1e5` (with its original comment) and `H = Q0 - 1.0 / Q0`, taken
+verbatim from the commit each witness names. Kept as **float** deliberately:
+`RAIL` is compared against `res.x[i]`, scipy LP output, and these modules
+already carry a documented deliberate `Q0 = float(Q_50_DIGIT_STR)` pin. Making
+them mpf would fight the module's own stated choice, not serve NO-FLOAT64.
+
+Verified: 0 dangling names in all three.
+
+### Remaining — regeneration, and a verdict re-read
+
+`H` depends on `Q0`, and the pin moved from the retired pin A to the resolved
+proton pin, so H goes 0.20906032199559366 → 0.20906029879563937 (−1.1e-7
+relative). That is the migration working as intended, not a defect — but it
+means these three witnesses **cannot** reproduce as committed, and their
+`verdict` / `bounded_support` fields have not been recomputed since the code
+was repaired. Whether the published verdicts still hold is open until they run.
+
+Not run here: the `hadron_knot_table` regeneration (bean qou-uiut) holds the
+checkout. Queued.
