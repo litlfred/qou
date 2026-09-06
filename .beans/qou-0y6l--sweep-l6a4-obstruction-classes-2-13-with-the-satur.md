@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T03:41:37Z
-updated_at: 2026-09-06T10:49:18Z
+updated_at: 2026-09-06T10:57:56Z
 ---
 
 ## 2026-09-06 — why three class-2 attempts produced no verdict, and the fourth is running
@@ -114,3 +114,30 @@ that host (CONNECT 403, policy denial, same class as release.lean-lang.org). Thi
 egress limit, not a mathematical one, and it is the single highest-value unblock
 available: if that host is allowed, classes 2–13 may be answerable by retrieval rather
 than re-derivation.
+
+## 2026-09-06 11:00 — literature search for the duality step: NOT FOUND, and the near-miss is instructive
+
+The conditional needs one antecedent: **duality negates the obstruction class**. Corpus-grep
+path 5 over the 576 held documents does NOT supply it. What it does supply is two traps.
+
+**Trap 1 — the section titled 'Duality' is a different duality.** `arxiv-1207.6711v1`
+(*Gluing equations for PGL(n,C)-representations*, the paper defining our varieties) has
+§12 'Duality'. It is Ptolemy-coordinates ↔ shape-coordinates (Fock–Goncharov A ↔ X), a
+COORDINATE duality. It is not representation duality ρ ↦ ρ*. Citing it for the antecedent
+would be a textbook conflation. That paper mentions 'obstruction' exactly ONCE, about ±I
+for EVEN n — not our case.
+
+**Trap 2 — the paper that defines obstruction cocycles does so over Z/2, not Z/3.**
+`arxiv-1111.2828v2` (*The complex volume of SL(n,C)-representations*) §9.1 'Obstruction
+cocycles and the pSL(n,C)-Ptolemy varieties' defines σ ∈ **Z²(K; Z/2Z)** — the pSL case,
+where the centre is ±I. Ours is **Z/3**, the centre μ₃ of SL(3), via snappy's
+`PtolemyGeneralizedObstructionClass`. Same word, different group; the Z/2 statement does
+not transfer, and 2c=0 in Z/2 is vacuous whereas 2c=0 in Z/3 forces c=0 — the whole
+argument turns on exactly that difference.
+
+**Status: the antecedent is UNVERIFIED and the measured structure stands on its own.**
+H²=(Z/3)³ and the ±involution are measured facts (`obstruction_gerbe_involution.py`,
+6/6 checks). The Sym² consequence remains conditional and must not be reported as a
+result. Next: find the generalized (Z/N) obstruction-class definition — Garoufalidis–
+Goerner–Zickert is the likely source and does not appear to be held — and check how ρ ↦ ρ*
+acts on it. That single step converts a 12-class compute problem into a theorem.
