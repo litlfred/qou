@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T15:03:40Z
-updated_at: 2026-09-06T15:42:41Z
+updated_at: 2026-09-06T15:48:50Z
 ---
 
 ## What is open
@@ -193,3 +193,27 @@ block, so its rank function is fixed by interpolation).
       closes the converse half.
    c. Prove the interpolation bridge for minimal coset representatives.  Elementary.
    d. The HARD Ehresmann direction.  Mathlib-scale; the only genuinely large piece left.
+
+
+## UPDATE 3 — next-step (a) is DONE, sorry-free
+
+`QOU/BraidKnot/DominanceIsBruhat.lean` now carries the identity, proved:
+
+    rowPattern_dOf       rowPattern t (dOf t x) = rowPattern (refTab mu) x
+    rankAt               the rank matrix of d(t), cut by refTab's rows
+    domCount_eq_rankAt   domCount (tabloidRowPattern (mk t)) i m = rankAt t i m
+    domRel_iff_rankAt    s |>= t  iff  forall i m, rankAt t i m <= rankAt s i m
+
+All four `[propext, Classical.choice, Quot.sound]`, no `sorryAx`.  `rowPattern_dOf` is the
+whole content and is two lines: `dOf t x = t^-1 (refTab x)`, so `t` sends `dOf t x` to the
+cell `refTab` assigns to `x`, and that cell's row does not mention `t`.  Everything else is
+reindexing the `domCount` filter along the bijection `dOf t`.
+
+`rankAt` is stated against `rowPattern (refTab mu) x <= i` rather than a numeric boundary
+`x < mu_0 + ... + mu_i`.  The two agree because `refTab` is row-superstandard, but that is
+a separate fact about the reference tableau and nothing so far needs it -- do not add it
+speculatively.
+
+**So the left-hand column of 3.7 is now tableau-free in Lean.**  Remaining, unchanged:
+(b) easy Ehresmann, which closes the CONVERSE half; (c) the interpolation bridge; (d) hard
+Ehresmann.
