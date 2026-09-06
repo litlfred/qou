@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T08:32:06Z
-updated_at: 2026-09-06T09:07:58Z
+updated_at: 2026-09-06T11:35:23Z
 ---
 
 Successor to qou-zrx2. c0(A) = 2^-A - 2^(1-2A) is DERIVED (Schur-Weyl + cycle count, ClassicalTraceFloor.lean). c1 = lim (Dtr - c0)/hbar_q is currently six MEASURED dyadic rationals (pp 19/8, pn 37/16, nn 9/4, T 163/64, 3He 85/32, 4He 259/128), entered into PairwiseChainLeadingOrder.lean as defs. Goal: (1) obtain them EXACTLY via laurent_q_trace.tr_M_atomic_lq (formal (z,h)-polynomial with LaurentQ coefficients) expanded at q = e^eta to first order -- no Richardson; (2) find and prove the closed form in A, by the same route as c0 (first-order term of a permutation-character sum). Branch claude/logz-hbarq-rung-operator-class-2026-09-03 (branch name predates the corpus-grep that found qou-ap3d/qou-ssz6 had already closed the log Z rung question).
@@ -197,3 +197,34 @@ sorryAx.
 
 **Still open:** c2 only. Its six recorded values (357/32, 403/32, 217/16, 3285/128, 3451/128) are
 grouped-word and have not been recomputed. No Lean carries them.
+
+
+### The closed form turns up again one order up: `|S| = 1` is `c₁`, halved (2026-09-06, PR #6920)
+
+Worth recording here rather than only on `qou-qqm4`, because it is a fact about **this bean's**
+closed form. The second-order coefficient `c₂` splits by insertion class (`[◇]`, `|S| = 0, 1, 2`),
+and the single-insertion class is `c₁` itself:
+
+    |S| = 1  −  c₁/2  =  k(A),   species-independent
+
+    A = 2   pp, pn, nn         all  13/16   = 13/2⁴
+    A = 3   3p, T, ³He, 3n     all  61/64   = 61/2⁶
+    A = 4   ⁴He                     193/256 = 193/2⁸
+
+Eight species, three constants — five degrees of freedom of test, exact on all eight. It was not
+looked for: a leave-one-out affine fit of `|S| = 1` in `(u, D)` at `A = 3` returned
+`(a, b) = (3/128, −1/32)`, and that is exactly half of the `(3/64, −1/16)` this bean's closed form
+gives at `A = 3`. So `c₁` is not just the first-order answer; it is the whole species-dependence of
+the single-insertion class at second order too.
+
+**What that buys, and what it does not.** It says the closed form is structural rather than an
+`A`-by-`A` coincidence — the same `(u, D)` combination governs two different orders. It does **not**
+extend to `c₂`: the letter-**pair** class `|S| = 2` is NOT affine in `(u, D)` (4/4 leave-one-out
+MISS at `A = 3`, against a `c₁` control that hits 4/4 and returns the derived coefficients exactly),
+and that is the entire reason `c₂` has no affine form.
+
+🛑 The `A`-dependence of `k` is a **zero-dof fit** — `m(A) = (3/8)4^A + (15/2)2^A − 23` on three
+points with three parameters. It predicts `k(5) = 663/2¹⁰`; one species at `A = 5` settles it.
+Quote the species-independence, not the formula.
+
+Probe: `computations/probes/c2_pairwise_shape_holdout_probe.py` (exact `Fraction`s, no `q`).
