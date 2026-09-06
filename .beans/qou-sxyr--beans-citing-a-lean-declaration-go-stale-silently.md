@@ -120,3 +120,85 @@ would be the same failure this bean exists to name, pointed the other way.
 `Archimedean.WeierstrassProjection`, so those two modules can never be
 co-imported — a single probe importing every owning module fails outright. That
 is why the tool emits one probe per module. Not chased further here.
+
+## The ABSENT bucket, split — and four more corrections to my own tool
+
+The previous pass left 44 identifiers unresolved and I called them "beans citing
+declarations that no longer exist — a worse record than a stale one". That framing
+was too strong. Split properly:
+
+| | n | |
+|---|---|---|
+| relocated | 27 | namespace ≠ my module guess — a **resolver** limitation, not a corpus defect |
+| rename drift | 12 | shortlist; the matcher over-fires and this needs a human |
+| no near match | 17 | most likely names a declaration the bean intends to **create** |
+
+**The case I nearly got wrong: a bean naming work it intends to do SHOULD cite a
+name that does not exist yet.** Reporting those as defects would manufacture ~17
+findings out of ordinary planning. That distinction is now in the tool's docstring
+so the next reader does not have to rediscover it.
+
+### Four fixes, all to code I wrote in the previous pass
+
+1. **Cross-product namespace index.** `fullname_index` paired every namespace in a
+   file with every declaration in it, so a file with `namespace A … namespace B`
+   manufactured `A.<decl from B>`. Those phantoms then **matched themselves** in
+   the drift shortlist — `cites: X / near: X` for 10+ entries. A tool inventing
+   the evidence for its own finding. Fixed with a namespace stack.
+2. **Resolver precedence.** The prefix rule ran before the index and won for the
+   wrong reason whenever a namespace shares a name with a module that does not
+   declare the constant: `JucysMurphy.syt_adjacentSwap_connected` is declared in
+   `JucysMurphyOV`, so the prefix rule imported `JucysMurphy` and reported ABSENT
+   for a theorem that exists. Index first, prefix as fallback.
+3. **`--classify-absent` read the wrong bucket** — the pre-probe unresolved list
+   rather than the probe's own ABSENT lines. An identifier that never resolved was
+   never asked about, so it is not evidence of anything.
+4. **Possessive capture.** Lean allows `'` in identifiers, so the extractor pulled
+   `QOU.Hecke.Wedderburn's` out of English prose.
+
+Net effect of (1) + (2): identifiers probed **118 → 184**, ABSENT **44 → 29**.
+
+## Standing limitation, stated rather than fixed
+
+Some NO-NEAR-MATCH entries do exist in source — `WeierstrassProjection.weierstrassProjection`
+is an `opaque` in the file of that name — but were ABSENT from the built olean.
+The tool does not distinguish "not in the source" from "not in the artifact
+because the artifact is stale", and conflating those is the exact confusion
+`qou-pdgc` was opened for. Cross-checking against
+`lean-olean-staleness-audit.py` would close it; not done here.
+
+Current: **184 probed, 41 CLEAN, 35 REVIEW, 0 SORRY, 29 ABSENT, 79 DEF; 34
+candidate-stale beans.** Raw output in `docs/audits/`.
+
+## Standing limitation closed: ABSENT cross-checked against olean freshness
+
+The previous pass shipped with a stated gap — the tool could not tell *"the
+constant is not in the corpus"* from *"the constant is not in the artifact because
+the artifact is stale"*. `--cross-check` closes it, and the result changes the
+finding again:
+
+| of 29 ABSENT | n | meaning |
+|---|---|---|
+| **artifact CURRENT** | **8** | the module is up to date, so the name really is not there |
+| artifact STALE/MISSING | **21** | ABSENT says nothing — the probe read an environment older than the source |
+
+**So the trustworthy count is 8, not 29, and not the 44 I first reported.** Three
+successive corrections, each shrinking the claim: 44 → 29 (resolver fixes) → 8
+(freshness cross-check).
+
+The validation worth recording: `Archimedean.WeierstrassProjection.weierstrassProjection`
+is the case I identified *by hand* last pass as the limitation — it exists in
+source as an `opaque` yet probed ABSENT. The cross-check now files it under
+STALE automatically, which is the right answer for the right reason.
+
+The freshness rule is **imported from `lean_freshness`**, the same module the
+axiom guard and the cone rebuilder use, not reimplemented. A freshness rule two
+tools compute differently is the deadlock `qou-5v24` records, and this session
+already reverted one batched reimplementation for disagreeing on 1 of 40 samples.
+
+Incidental: `QOU.HeckeAlgebra.MarkovTrace` is in the stale bucket — the module
+rebuilt this morning under `qou-1knw`. `main` moved underneath it within hours.
+That is the churn rate the standing bean `qou-8jjo` exists to live with, measured
+rather than assumed.
+
+Raw output: `docs/audits/2026-09-06-bean-audit-cross-check.txt`.

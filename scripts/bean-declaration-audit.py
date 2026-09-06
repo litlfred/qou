@@ -77,6 +77,61 @@ DONE = {"completed", "done", "scrapped"}
 IDENT = re.compile(r"\bQOU(?:\.[A-Za-z_][A-Za-z0-9_']*){2,}\b")
 
 
+NS_RE = re.compile(r"^namespace\s+(\S+)", re.M)
+DECL_RE = re.compile(
+    r"^\s*(?:@\[[^\]]*\]\s*)?(?:private\s+|protected\s+|noncomputable\s+|"
+    r"partial\s+|unsafe\s+)*"
+    r"(?:theorem|lemma|def|abbrev|instance|structure|class|inductive|axiom|opaque)"
+    r"\s+([A-Za-z_][A-Za-z0-9_'!?]*)", re.M)
+
+
+def _scan_declarations(path: Path, mod: str):
+    """Yield (fully-qualified name, module) for each declaration in one file.
+
+    Tracks the enclosing `namespace` as it goes. The first version took the CROSS
+    PRODUCT of every namespace in a file with every declaration in it, which
+    manufactures names that do not exist: a file holding `namespace A … end A`
+    followed by `namespace B … end B` produced `A.<declaration from B>`. Those
+    phantom entries then matched *themselves* in the rename-drift shortlist,
+    reporting `cites: X / near: X` for 10+ identifiers -- a tool inventing the
+    evidence for its own finding. Found and fixed 2026-09-06.
+    """
+    stack: list[str] = []
+    for line in path.read_text(errors="replace").splitlines():
+        m = re.match(r"\s*namespace\s+(\S+)", line)
+        if m:
+            stack.append(m.group(1))
+            continue
+        if re.match(r"\s*end\s+\S+", line) and stack:
+            stack.pop()
+            continue
+        d = DECL_RE.match(line)
+        if d:
+            ns = ".".join(stack) if stack else mod
+            yield f"{ns}.{d.group(1)}", mod
+
+
+def fullname_index() -> dict[str, str]:
+    """Fully-qualified declaration name -> the module that declares it.
+
+    The prefix rule (longest module prefix of the identifier) is exact when it
+    fires, but fires less often than one would like: a declaration's NAMESPACE
+    routinely differs from its module, and then no prefix of the name is a module
+    at all. Measured 2026-09-06, that left 79 of 455 cited identifiers unresolved
+    and so never probed -- and most of them exist, e.g. `QOU.Braiding.HeckeAlgebra`
+    resolves as a full name while `QOU.Braiding` is not a module.
+
+    Source-derived, and used ONLY to choose which module to import. The verdict
+    still comes from Lean.
+    """
+    idx: dict[str, str] = {}
+    for f in SRC.rglob("*.lean"):
+        mod = "QOU." + str(f.relative_to(SRC))[:-5].replace("/", ".")
+        for name, m in _scan_declarations(f, mod):
+            idx.setdefault(name, m)
+    return idx
+
+
 def modules() -> set[str]:
     return {"QOU." + str(p.relative_to(SRC))[:-5].replace("/", ".")
             for p in SRC.rglob("*.lean")}
@@ -113,8 +168,121 @@ def collect() -> tuple[dict[str, set[str]], dict[str, str]]:
         bid = f.name.split("--")[0]
         status[bid] = st
         for ident in set(IDENT.findall(txt)):
+            # Lean identifiers may contain `'`, so the pattern also captures English
+            # possessives out of prose -- "QOU.Hecke.Wedderburn's" was matched as a
+            # name. Strip a trailing `'s`; a real Lean name ending that way is
+            # vanishingly rare next to the prose it would otherwise pollute.
+            if ident.endswith("'s"):
+                ident = ident[:-2]
             cites.setdefault(ident, set()).add(bid)
     return cites, status
+
+
+def cross_check(idents: list[str], mods: set[str], fnidx: dict[str, str]) -> int:
+    """Separate "the constant is not there" from "the artifact is out of date".
+
+    The probe reports ABSENT when it imports a module and the constant is not in
+    the resulting environment. That has two very different causes, and the first
+    version of this tool conflated them:
+
+    * the declaration genuinely is not in the corpus (renamed, deleted, or never
+      written), or
+    * the declaration IS in the source but the module's **olean is stale**, so the
+      environment the probe saw predates it.
+
+    Conflating those is exactly the confusion `qou-pdgc` was opened for -- there, a
+    three-month-old olean reported three `def`s as AXIOMS and dropped five theorems
+    entirely, and `#print axioms` read against it was a statement about a cache.
+    An ABSENT verdict from a stale artifact carries no information about the corpus.
+
+    The freshness rule is imported from `lean_freshness`, the SAME module the axiom
+    guard and the cone rebuilder use. Not reimplemented: a freshness rule two tools
+    compute differently is the deadlock `qou-5v24` records, when the guard compared
+    COMMIT time while the rebuilder compared MTIME.
+    """
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    try:
+        import lean_freshness as lf
+    except Exception as exc:                                  # pragma: no cover
+        print(f"cross-check: cannot import lean_freshness ({exc}).")
+        print("  That is NOT a pass -- nothing was compared.")
+        return 2
+
+    dirty = lf.dirty_paths()
+    current, stale, unresolved = [], [], []
+    for ident in sorted(idents):
+        owner = fnidx.get(ident) or owning_module(ident, mods)
+        if owner is None:
+            unresolved.append(ident)
+            continue
+        rel = owner[len("QOU."):].replace(".", "/")
+        src = SRC / (rel + ".lean")
+        olean = BUILD / (rel + ".olean")
+        if not olean.exists():
+            stale.append((ident, owner, "olean MISSING"))
+        elif not lf.olean_is_current(src, olean, dirty, conservative=False):
+            stale.append((ident, owner, "olean STALE"))
+        else:
+            current.append((ident, owner))
+
+    print(f"cross-checked {len(idents)} ABSENT identifier(s) against olean freshness\n")
+    print(f"  ARTIFACT CURRENT ({len(current)}) -- the module is up to date, so the")
+    print("    constant really is not in the corpus under that name:")
+    for ident, owner in current:
+        print(f"      {ident}\n        (module {owner})")
+    print()
+    print(f"  ARTIFACT STALE/MISSING ({len(stale)}) -- ABSENT says nothing here. The")
+    print("    probe read an environment older than the source. Rebuild, then re-probe:")
+    for ident, owner, why in stale:
+        print(f"      {ident}\n        (module {owner}: {why})")
+    if unresolved:
+        print()
+        print(f"  NO OWNING MODULE ({len(unresolved)}) -- never probed against anything:")
+        for ident in unresolved:
+            print(f"      {ident}")
+    return 0
+
+
+def classify_absent(idents: list[str], mods: set[str]) -> int:
+    """Split unresolved identifiers into the three things they actually are.
+
+    Measured 2026-09-06. Of 44 identifiers the probe reported ABSENT, **27** were
+    simply somewhere else -- a declaration's namespace routinely differs from its
+    module, so the longest-module-prefix rule imports the wrong file. That is a
+    limitation of the resolver, not a defect in the corpus.
+
+    Of the remaining 17, most are NOT defects either, and this is the distinction
+    worth keeping: **a bean that names a declaration it intends to CREATE should
+    cite a name that does not exist yet.** That is correct usage. Reporting those
+    as "cites a missing declaration" would manufacture 12 findings out of ordinary
+    planning.
+
+    What is left is rename drift -- a bean tracking a name that has since changed,
+    which can never be checked again because nothing resolves it. The fuzzy match
+    below proposes those; it OVER-FIRES (it matched a module name against a
+    declaration inside that module), so its output is a shortlist for a human, not
+    a verdict.
+    """
+    import difflib
+    fullnames = set(fullname_index())
+
+    drift, planned = [], []
+    for ident in sorted(idents):
+        near = difflib.get_close_matches(ident, fullnames, n=1, cutoff=0.90)
+        (drift if near else planned).append((ident, near[0] if near else None))
+
+    print(f"unresolved identifiers: {len(idents)}\n")
+    print(f"RENAME-DRIFT SHORTLIST ({len(drift)}) -- a near-identical name exists.")
+    print("  Shortlist, not verdict: this matcher over-fires (a module name scores")
+    print("  highly against a declaration inside it). Read each before acting.")
+    for ident, near in drift:
+        print(f"    cites : {ident}\n    near  : {near}")
+    print()
+    print(f"NO NEAR MATCH ({len(planned)}) -- most likely a declaration the bean")
+    print("  intends to CREATE. That is correct usage, not a defect.")
+    for ident, _ in planned:
+        print(f"    {ident}")
+    return 0
 
 
 def main() -> int:
@@ -131,10 +299,23 @@ def main() -> int:
                          "and degrades per-module instead of all-or-nothing")
     ap.add_argument("--report", type=Path, help="read the probe's output and report")
     ap.add_argument("--limit", type=int, default=0, help="cap identifiers probed")
+    ap.add_argument("--cross-check", type=Path, metavar="PROBE_OUT",
+                    help="for each ABSENT identifier, say whether its owning "
+                         "module's olean is CURRENT (so the constant really is not "
+                         "there) or STALE/MISSING (so the ABSENT verdict is about "
+                         "the artifact, not the corpus). Closes the limitation the "
+                         "first version shipped with")
+    ap.add_argument("--classify-absent", type=Path, metavar="PROBE_OUT",
+                    help="read a probe output and split its ABSENT lines into "
+                         "rename-drift vs planned-work. Takes the PROBE OUTPUT, not "
+                         "the pre-probe bucket: an identifier that never resolved to "
+                         "a module was never asked about, so it is not evidence of "
+                         "anything")
     args = ap.parse_args()
 
     cites, status = collect()
     mods = modules()
+    fnidx = fullname_index()
 
     resolvable: dict[str, str] = {}
     unbuilt: list[tuple[str, str]] = []
@@ -142,7 +323,15 @@ def main() -> int:
     for ident in sorted(cites):
         if ident in mods:            # the identifier IS a module, not a declaration
             continue
-        owner = owning_module(ident, mods)
+        # The index FIRST, the prefix rule as fallback. The prefix rule is a guess
+        # -- "the longest prefix that happens to be a module" -- and it wins for the
+        # wrong reason whenever a namespace shares a name with a module that does
+        # not declare the constant. Measured case: `JucysMurphy.syt_adjacentSwap_connected`
+        # is declared in module `JucysMurphyOV` under namespace `JucysMurphy`; the
+        # prefix rule imported `JucysMurphy`, found nothing, and reported ABSENT for
+        # a theorem that exists. The index is derived from actual declarations, so
+        # it knows the declaring module and should be consulted first.
+        owner = fnidx.get(ident) or owning_module(ident, mods)
         if owner is None:
             no_module.append(ident)
         elif not has_olean(owner):
@@ -200,6 +389,18 @@ def main() -> int:
             (args.emit_dir / (owner + ".lean")).write_text("\n".join(lines) + "\n")
         print(f"wrote {len(by_mod)} probe file(s) to {args.emit_dir}")
         return 0
+
+    if args.cross_check:
+        absent = [ln.strip().split("info: ")[-1][len("ABSENT "):].strip()
+                  for ln in args.cross_check.read_text(errors="replace").splitlines()
+                  if ln.strip().split("info: ")[-1].startswith("ABSENT ")]
+        return cross_check(sorted(set(absent)), mods, fnidx)
+
+    if args.classify_absent:
+        absent = [ln.strip().split("info: ")[-1][len("ABSENT "):].strip()
+                  for ln in args.classify_absent.read_text(errors="replace").splitlines()
+                  if ln.strip().split("info: ")[-1].startswith("ABSENT ")]
+        return classify_absent(sorted(set(absent)), mods)
 
     if args.report:
         verdict: dict[str, str] = {}

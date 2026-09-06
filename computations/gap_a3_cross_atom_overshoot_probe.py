@@ -25,7 +25,7 @@ import sys, time
 sys.path.insert(0, "computations")
 import mpmath as mp
 from wedderburn_jones_markov import y_lambda_at
-from chi_monotone_transfer import chi_all_lambda
+from chi_general_word import chi_all_lambda_any
 from mass_at_3A_proper import atom_braid_word_3A
 from lr_coefficients import partitions_of
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
@@ -88,7 +88,7 @@ def main():
             y = {tuple(k): (v if isinstance(v, mp.mpf) else mp.mpf(str(v)))
                  for k, v in yitems}
             chi = {tuple(k): v for k, v in
-                   chi_all_lambda(atom_braid_word_3A(Z, N), n, dps=mp.mp.dps).items()}
+                   chi_all_lambda_any(atom_braid_word_3A(Z, N), n, dps=mp.mp.dps).items()}
         except Exception as e:
             print(f"     [{lbl}] FAILED/INFEASIBLE: {type(e).__name__}: {e}", flush=True)
             continue

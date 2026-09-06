@@ -46,7 +46,7 @@ import mpmath as mp  # noqa: E402
 
 import mass_binding_dashboard as mbd  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
+from chi_general_word import chi_all_lambda_any  # noqa: E402
 from tr_m_atom_via_transfer import _trM  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
@@ -80,7 +80,7 @@ def _gg_symmetrize(word, h_half):
 
 
 def _trM_of(word, n, y):
-    chi = chi_all_lambda_reduced_block(word, n)
+    chi = chi_all_lambda_any(word, n)
     return _trM(chi, y)
 
 
