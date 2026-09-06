@@ -133,6 +133,17 @@ LEAN_ROOT = Path("content/quantum-observable-universe/lean")
 
 # Measured 2026-08-07 by `#print axioms`. Keep sorted by module for readability.
 DEFAULT_REGISTRY = """
+# --- the Jones-Markov normalisation counterexample (bean `qou-i6u4`, PR #6882) ---
+# `JonesMarkovCoefficient_sum_eq_one` asserted the bare sum of the q-deformed
+# Wenzl weights is 1 for ALL n and ALL q. It is false -- at q = 1 the q-integer is
+# 0/0 = 0, so every coefficient of every partition of n >= 1 vanishes and the sum
+# is 0. It had ZERO Lean consumers and is deleted; this row pins the negation.
+#
+# Found by scripts/lean-axiom-degenerate-risk-audit.py, which flagged it at 6 --
+# the audit's first true positive on a live axiom. Note the SAME 2026-09-03 tier
+# triage that cleared the five SDP axioms also lists this one (row 11, tier
+# "literature"): six false axioms cleared by one method in one pass.
+QOU.HeckeAlgebra.JonesMarkovSumCounterexample | QOU.HeckeAlgebra.JonesMarkovSumCounterexample.not_jonesMarkovCoefficient_sum_eq_one | clean
 # --- the SDP uniqueness counterexamples (bean `qou-i6u4`, PR #6882) ---
 # On 2026-09-05 all five SDP uniqueness axioms in QOU/MathlibExt were shown to be
 # FALSE -- each one alone derives `False`. They had been cleared twice by audits

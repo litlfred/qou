@@ -114,10 +114,40 @@ theorem jonesMarkovCoefficient_eq_wenzlClosedForm
 -- Ref: [manuscript] Ch. Mass-theory, prop:markov-trace-axioms (Finset enumeration of Nat.Partition n; closed via Mathlib Fintype)
 def partitions_as_finset (n : ℕ) : Finset (Nat.Partition n) := Finset.univ
 
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (central-element normalisation Σ_λ y_λ = 1)
+/-! ### `Σ_λ y_λ(q) = 1` — REMOVED (it was false)
+
+This carried
+
+```lean
 axiom JonesMarkovCoefficient_sum_eq_one :
     ∀ (n : ℕ) (q : ℝ),
     (∑ lam ∈ partitions_as_finset n, JonesMarkovCoefficient lam q) = 1
+```
+
+cited to Wenzl 1988 Lemma 3.2. **The proposition is false and the axiom is
+deleted.** Refutation:
+`QOU.HeckeAlgebra.JonesMarkovSumCounterexample.not_jonesMarkovCoefficient_sum_eq_one`
+— sorry-free, depending on no QOU axiom, and registered in
+`scripts/lean-axiom-guard.py`.
+
+Take `q = 1`. `qInteger` uses **real** exponents, so every `rpow` is `1` there
+and the quotient is `(1-1)/(1-1) = 0/0`, which Lean evaluates to `0` for every
+`k`. Its inverse is `0`, each cell contributes a zero factor, the first row's
+fold collapses, and every partition of every `n ≥ 1` has coefficient `0`. The
+sum is `0`, not `1`.
+
+Two further mismatches, independent of that collapse and worth recording:
+`wenzlClosedForm`'s prefactor `QSubstrate.markovParameter ^ (n-1)` is a bare
+constant pinned at the substrate `q_0` and does not depend on the quantified
+`q`; and AGENTS.md records the measured fact that the q-deformed weights do not
+sum to 1 away from `q = 1` either (0.987 … 1.517 across `n = 3…12`). Wenzl's
+lemma is about a normalised trace, where the weights enter against their
+dimensions — `Σ_λ y_λ · d_λ`, not the bare `Σ_λ y_λ`.
+
+**The corrected statement is deliberately not supplied here.** It had zero Lean
+consumers, so nothing needs it to proceed; naming the right normalisation is a
+separate question and guessing it would repeat the error. Bean `qou-i6u4`.
+-/
 
 /-- **Hecke-algebra multiplication**, carried opaquely.
 
