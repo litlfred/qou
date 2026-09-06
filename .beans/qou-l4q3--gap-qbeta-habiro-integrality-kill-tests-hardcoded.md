@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T14:43:39Z
-updated_at: 2026-08-30T14:44:17Z
+updated_at: 2026-09-06T12:20:32Z
 ---
 
 Re-running `qbeta_habiro_integrality_kill_test` (one of the `qou-tekx` "merely
@@ -45,3 +45,30 @@ Note the upstream was corrected in `126edfa8929` ("a float64 q_0 in the Habiro
 witness — the gate went RED, fixed at the producer"), which is a plausible
 proximate cause but is **not** established here as the whole of it, since the
 script changed too.
+
+
+## Independently reproduced 2026-09-06, and a second staleness alongside it
+
+Hit this while draining bucket B of the raw-float64 backlog (`qou-r47m`). A
+fresh run of the **unmodified** producer on `main` reproduces all three
+failures with the same deltas — `b_matches_N3_witness` 2.28e-12,
+`QN2_matches_N3_witness` 0.00047, `c3_matches_N3_witness_additive` 972.0
+against tolerances of 1e-25 / 1e-25 / 1e-20 — so this is not container drift
+and not the pin.
+
+**Second staleness, not previously recorded here:** the committed witness is
+also stale in its raw-float64 count. `raw-float64-baseline.json` carries
+**241** for it; a fresh run writes **323**. So the file on `main` is behind its
+own producer in two independent dimensions at once.
+
+**Consequence for a precision drain, which is why this bean blocked one.** The
+producer's `sigma_exp` / `sigma_anchor` / `dist_to_Z` / `dist_to_ZSqrt3` rows
+and its `empirical_c3` block route cleanly through `fmt` — that patch takes it
+**241 -> 15** (the residue is the `ASSERTIONS` tuples). But landing the drain
+means committing a regenerated witness whose `allPassed` flips **True ->
+False**, i.e. burying a substantive assertion regression inside a
+serialization commit. Held back deliberately; the drain is ready and should
+land *after* this bean, not before, so the flip is reviewed on its own terms.
+
+The honest reading of `main` today: this witness asserts `allPassed: true` for
+three cross-checks its own producer fails.
