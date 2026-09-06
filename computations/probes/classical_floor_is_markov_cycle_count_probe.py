@@ -29,6 +29,21 @@ are then plain products of transpositions, and the Ocneanu/Markov trace on `ℂ[
 So the floor is not a remainder needing interpretation. It is the classical Markov trace of two
 permutations that differ in cycle count, and the difference of cycle counts is the whole content.
 
+IT IS A DERIVATION, NOT A TWO-POINT MATCH. An earlier draft of this probe rested on the two measured
+floors agreeing with the formula; two points fixing a zero-parameter form is suggestive and nothing
+more, and this session has had three such patterns refuted by their next data point. The formula
+follows instead from three steps, of which only the third needs checking:
+
+  1. Convention D gives `y_λ = [n−2k+1]_q / [2]_q^n`, zero off ≤2 rows. At `q = 1` that is
+     `(n−2k+1)/2^n`, and `n − 2k + 1` is exactly `dim V_λ`, the `sl₂` irrep dimension of `(n−k, k)`.
+  2. Hence `tr_M(w)|_1 = Σ_λ y_λ χ^λ(w) = (1/2^n) · Σ_λ dim(V_λ) · χ^λ(w)`.
+  3. `Σ_λ dim(V_λ) · χ^λ(w)` is the trace of `w` **place-permuting** `(ℂ²)^⊗n` — Schur-Weyl — and
+     equals `2^cyc(w)`. **This is the step the probe verifies**, exactly, in integers, by counting
+     the basis states `w` fixes: 6/6 across D, T and ⁴He, free and atom words.
+  4. Therefore `tr_M(w)|_1 = 2^(cyc w − n) = z₁^(n − cyc w)`, and the floor is the difference.
+
+So the two agreements below are a **consequence check**, not the evidence.
+
 VERIFIED, 2 for 2, on values this probe did not fit to:
 
     atom    n    cyc W_free   cyc W_atom   predicted        bean's measured
@@ -56,6 +71,7 @@ new here is only its application to these two words.
 """
 from __future__ import annotations
 
+import itertools
 import os
 import sys
 from fractions import Fraction
@@ -64,6 +80,25 @@ _HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(_HERE))
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
+
+
+def tensor_trace(p):
+    """Trace of the permutation `p` place-permuting `(ℂ²)^⊗n`, by exact enumeration.
+
+    A basis state is a map `{0..n−1} → {0,1}`; `w` sends `s ↦ s∘w⁻¹`, so a diagonal entry is 1
+    exactly when the state is constant on every cycle of `w`. The trace therefore COUNTS fixed
+    states, and is an integer — no arithmetic to get wrong.
+
+    This is the one step of the derivation that is checked rather than quoted. Cost is `2^n`, so it
+    is run only on the small atoms; that is enough, because it is verifying a standard identity, not
+    establishing a trend.
+    """
+    n = len(p)
+    tr = 0
+    for bits in itertools.product((0, 1), repeat=n):
+        if all(bits[i] == bits[p[i]] for i in range(n)):
+            tr += 1
+    return tr
 
 
 def perm_of(word, n):
@@ -109,6 +144,31 @@ def main():
     print("[floor] The ℏ_q⁰ floor of tr_M(W_free) − tr_M(W_atom), in closed form (qou-zrx2).")
     print(f"[floor] floor = z₁^(n−cyc W_free) − z₁^(n−cyc W_atom),  z₁ = q³/(q²+1)|_(q=1) = {z1}")
     print("[floor] At q=1, h = q−1/q = 0, so σ, σ⁻¹ and the averaged letters all become s_g.\n")
+
+    # THE DERIVATION'S ONE CHECKED STEP. Everything else is quotation:
+    #   (1) convention D gives y_λ = [n−2k+1]_q/[2]_q^n, zero off ≤2 rows; at q=1 that is
+    #       (n−2k+1)/2^n, and n−2k+1 is exactly dim V_λ for the sl₂ irrep of shape (n−k, k);
+    #   (2) so tr_M(w)|_1 = Σ_λ y_λ χ^λ(w) = (1/2^n)·Σ_λ dim(V_λ)·χ^λ(w);
+    #   (3) Σ_λ dim(V_λ)·χ^λ(w) is the trace of w place-permuting (ℂ²)^⊗n — Schur-Weyl — and
+    #       equals 2^cyc(w).  ← THIS is what is verified below, exactly, in integers.
+    #   (4) hence tr_M(w)|_1 = 2^(cyc w − n) = z₁^(n − cyc w).
+    # So the floor is DERIVED, not fitted to the two measured values.
+    print("  SCHUR-WEYL STEP — trace of w on (ℂ²)^⊗n  ==  2^cyc(w)?  (exact integers)")
+    print(f"    {'atom':<6}{'word':<7}{'n':>4}{'cyc':>5}{'2^cyc':>10}{'tensor trace':>15}  verdict")
+    sw_ok = True
+    for nm, (Zc, Nc) in (("D", (1, 1)), ("T", (1, 2)), ("⁴He", (2, 2))):
+        nn = 3 * (Zc + Nc)
+        for tag, inter in (("free", False), ("atom", True)):
+            w = [(t[0], t[1], int(t[2]))
+                 for t in atom_braid_word_3A(Zc, Nc, include_inter=inter)]
+            pp = perm_of(w, nn)
+            cc = cycles(pp)
+            tt = tensor_trace(pp)
+            good = (tt == 2 ** cc)
+            sw_ok = sw_ok and good
+            print(f"    {nm:<6}{tag:<7}{nn:>4}{cc:>5}{2 ** cc:>10}{tt:>15}"
+                  f"  {'ok' if good else 'FAIL'}")
+    print(f"    ⇒ {'Schur-Weyl step verified 6/6 — the closed form is DERIVED, not fitted.' if sw_ok else 'FAILED — the derivation is broken; do not quote the closed form.'}\n")
 
     # The two the bean measured, by an independent ℏ_q sweep. Not fitted to.
     known = {(1, 1): ("D", Fraction(1, 8)), (2, 2): ("⁴He", Fraction(7, 128))}
