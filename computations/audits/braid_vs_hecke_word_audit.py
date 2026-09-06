@@ -15,12 +15,25 @@ returns `(c, d, gen_idx)` triples and `d` takes FOUR values at the proton `q0`:
 so the object lives in `H_n(q)` and not in the image of `B_n`. Measured across
 protium -> iron-56: 0 of 14 atoms has a word free of the last two.
 
-WHY THIS AUDIT EXISTS RATHER THAN A RENAME. The identifier `atom_braid_word_3A`
-appears in 672 files and the phrase "braid word" in 2169. **Most of those uses
-are CORRECT** — the fundamental knots really are braid words: the trefoil is
-`sigma_0^3 in B_2`, the Borromean rings are `(sigma_0 sigma_1^-1)^3 in B_3`.
-A blanket rename would corrupt the true statements to fix the false ones. So
-this audit separates them, and the fix is surgical.
+NONE OF THAT IS NEW, AND THIS AUDIT MUST NOT CLAIM IT IS. The producer's own
+docstring has carried the correction since **2026-08-25 (PR #5765)**:
+
+    NAME IS A MISNOMER - this does NOT return a braid word (2026-08-25, PR #5765).
+    A rename was considered and rejected: 685 call sites across 382 files. So the
+    name stays and this docstring carries the correction.
+    Each triple (c, d, g) denotes the HECKE ELEMENT c*sigma_g + d*1, not a braid
+    generator. The letters OUTSIDE the image of rho are exactly the AVERAGED ones
+
+So the corpus already knows, the rename was already weighed with a count (685 /
+382) close to this audit's independent 672, and it was already REJECTED. PR
+#6359 acted on the same note, correcting "the closure" out of its PR body, its
+probe and a Lean docstring. This audit's own arrival at "a rename is the wrong
+instrument" is a re-derivation, not a finding, and is recorded as agreement.
+
+WHAT IS ACTUALLY UNDRAINED, and is this audit's only real contribution: the
+docstring fixed the PRODUCER. The CONTENT BLOCKS still assert the atomic object
+lives in a braid group. Those are false as mathematics, not merely misnamed, and
+nobody has drained them.
 
 WHAT IT FLAGS. A line is a DEFECT when it asserts membership in a BRAID GROUP
 (`\\in B_n`) for the atomic / canonical-atom object. That is wrong as
