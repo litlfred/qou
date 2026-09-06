@@ -1,0 +1,116 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-06T11:49:26.398869+00:00",
+  "commitSha": "cad22fb885eaf4bb66ea2fb573daa51f32a8a2fb",
+  "assertions": [
+    {
+      "name": "G_in_planck_units_is_identically_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "G_q*(hbar_q/c_q)^2 = 1 as a rational function of q, matching g-q-closed-form.md — the corpus's q-forms are mutually consistent"
+    },
+    {
+      "name": "ell_P_dimensional_equals_sqrt_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sqrt(hbar_q G_q / c_q^3) = sqrt(q) exactly"
+    },
+    {
+      "name": "m_P_dimensional_closed_form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sqrt(hbar_q c_q / G_q) = (q-1)^2 / q^(3/2) exactly"
+    },
+    {
+      "name": "t_P_dimensional_closed_form",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sqrt(hbar_q G_q / c_q^5) = sqrt(q)*|q-1| exactly. The Abs survives because `q` is declared positive but not >1; on the framework's own domain q0 > 1 it reads sqrt(q)*(q-1). Stated with the Abs rather than assuming the domain into the identity"
+    },
+    {
+      "name": "planck_triple_is_free_of_calibration",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "each of ell_P, m_P, t_P is a function of q ALONE — no m_e, no CODATA, no SI G, so none of them is a calibration"
+    },
+    {
+      "name": "normalised_total_is_one",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "discrete-planck-step's ell_P(q) = hbar_q * q/(q-1) = 1 identically"
+    },
+    {
+      "name": "three_planck_lengths_are_pairwise_distinct",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the normalised total, the per-step share and the dimensional form are three inequivalent expressions carrying one name"
+    },
+    {
+      "name": "share_and_dimensional_differ_by_more_than_ten_at_q0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "at the proton q0 they differ by a factor 10.6332"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1,
+  "computation": "planck-symbolic-in-q",
+  "scriptFile": "planck_symbolic_in_q_probe.py",
+  "scriptHash": "1729e2c3a95b",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/planck_symbolic_in_q_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/planck_symbolic_in_q_probe.py"
+  },
+  "data": {
+    "hbar_q": "(q - 1)/q",
+    "c_q": "1/(q - 1)",
+    "G_q": "q**2/(q - 1)**4",
+    "G_planck_units": "1",
+    "ell_P_dimensional": "sqrt(q)",
+    "m_P_dimensional": "(q - 1)**2/q**(3/2)",
+    "t_P_dimensional": "sqrt(q)*Abs(q - 1)",
+    "ell_normalised_total": "1",
+    "ell_per_step_share": "(q - 1)/q",
+    "ell_share_at_q0": "0.0990817160442585016773703941639",
+    "ell_dimensional_at_q0": "1.05355521105985746056758722843",
+    "dimensional_over_share_at_q0": "10.6331950345838598545633880692",
+    "corrects": "This session's own audit §5, which framed the Planck length as forbidden / a fourth calibration. Owner correction: it is not a calibration, it is written symbolically in q. What the corpus forbids is pinning the SUBSTRATE at m_Planck (importing SI G as an input fixing q0), which is a different move.",
+    "scope": "Derives and compares; settles no physics. Does not claim the dimensional sqrt(q) is the 'right' Planck length nor that either corpus form is wrong — only that three inequivalent expressions carry one name, and that none is a calibration. Which one a given block MEANS is an author question."
+  },
+  "q0Anchor": "proton",
+  "q0AnchorReason": "the numeric column is evaluated at the standing proton default; the algebra is anchor-free"
+}

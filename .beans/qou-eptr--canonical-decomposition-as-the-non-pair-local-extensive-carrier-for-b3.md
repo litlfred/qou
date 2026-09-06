@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T10:56:11Z
-updated_at: 2026-09-06T11:27:53Z
+updated_at: 2026-09-06T11:53:23Z
 ---
 
 WHY IT IS WELL-AIMED at the ONE open piece of the binding gap
@@ -67,3 +67,32 @@ WHAT IS STILL LIVE. The exclusion is of EP-of-the-DICTIONARY-knot. EP of the
 actual per-atom braid closure is untested and needs that closure identified
 first -- the same modelling decision qou-imkb records as blocked for Model B.
 Attacking a better invariant of a collapsed knot cannot help.
+
+## 2026-09-06 SELF-CORRECTION — the per-atom closure EXISTS; this was NOT blocked
+
+I wrote that identifying the per-atom closure is something "the corpus does not
+currently do" and framed it as an owner decision blocked on qou-imkb. Both wrong.
+
+MEASURED (per_atom_braid_closure_probe, 5/5):
+  canonical_braid_crossings.atom_canonical_crossings(Z, N) computes a per-atom
+  canonical braid word LIVE for any (Z, N). Over a 10-atom sample the words are
+  pairwise distinct 10/10. Sharp case: tritium (1,2) vs he3 (2,1) -- same A,
+  same 35 crossings -- differ at 4 positions with different crossing TYPES and
+  exponent sums 4 vs 8. Word LENGTH factors through A (12 crossings/nucleon),
+  the word does not.
+
+qou-imkb governs Model B's T1 registry, a different question.
+
+ALSO CORRECTED, on owner challenge ("are you saying that you can't distinguish
+atoms with A >= 4?????"): NO. Over the 13 atoms with A >= 4, exactly ONE field
+is constant -- knot_type, 1/13. net, ln|tr_M|, B_MeV and V_per_gen are all
+13/13 distinct. The framework distinguishes them completely; only the LOOKUP
+LABEL collapses. My phrasing "collapses every atom with A >= 4 onto one knot"
+was true of classify_nuclear_knot and read as a claim about the framework.
+
+THREE OPEN QUESTIONS, in dependency order, none needing a ruling:
+  1. are the per-atom closures distinct LINKS? (distinct words need not close
+     to distinct links -- Markov moves, conjugation). Cheapest killer.
+  2. are they hyperbolic?
+  3. does the canonical decomposition then vary across atoms? (the original
+     route, downstream of both)

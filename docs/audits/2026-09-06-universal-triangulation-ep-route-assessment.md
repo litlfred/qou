@@ -169,9 +169,30 @@ two agree, which is worth recording: the ruling and the live table are consisten
 
 An Epstein–Penner decomposition is a function of the *manifold*. Every quantity derived from it —
 cell count, volume, cusp shape, Pachner distance to any other triangulation, 3d-index — takes the
-same value on every atom in a class. **So no function of the Epstein–Penner decomposition alone
-can separate 13 atoms whose binding spans nine orders of magnitude.** Scope-(b) structural; the
-invariant is that a constant cannot separate a varying quantity.
+same value on every atom in a class. **So no function of the Epstein–Penner decomposition of the
+DICTIONARY-NAMED knot can separate 13 atoms whose binding spans nine orders of magnitude.**
+Scope-(b) structural; the invariant is that a constant cannot separate a varying quantity.
+
+> **🛑 Read that as a statement about ONE FIELD, not about the framework. Corrected 2026-09-06 on
+> owner challenge — *"are you saying that you can't distinguish atoms with A ≥ 4?"*** No, and the
+> wording that invited the question ("the dictionary collapses every atom with `A ≥ 4` onto one
+> knot") is a true statement about `classify_nuclear_knot` that reads as a false one about the
+> framework's discriminating power. Measured over the same 13 atoms in
+> `hadron-knot-table.witness.json`, exactly one field is constant:
+>
+> | field | distinct values |
+> |---|---|
+> | `knot_type` | **1 / 13** — the only collapse |
+> | `n_terms` | 1 / 13 (NF basis size, constant by construction — the 6-element H₃ basis) |
+> | `net` | **13 / 13** |
+> | `ln\|tr_M\|` | **13 / 13** |
+> | `B_MeV` | **13 / 13** |
+> | `V_per_gen` | **13 / 13** |
+>
+> So every *physical* quantity separates all 13, and so do the per-atom braid words (§3.5). The
+> exclusion above is narrow by exactly that much: it forbids sourcing the shape residual from an
+> Epstein–Penner invariant *of the label*, and says nothing about the framework's ability to tell
+> these atoms apart, which is total.
 
 ### 3.4 …and the blocker is the dictionary, not the geometry
 
@@ -185,11 +206,41 @@ Two consequences, and the second is the useful one:
 
 - The §3.3 exclusion is **conditional**: it excludes an Epstein–Penner invariant *of the
   dictionary-assigned knot*. An Epstein–Penner invariant of the **actual per-atom braid closure**
-  is untested, and testing it would first require identifying that closure — which the corpus
-  does not currently do.
+  is untested.
+
+  > **🛑 CORRECTED 2026-09-06 — this clause originally ended "…which the corpus does not
+  > currently do", and that was wrong.** See §3.5: the per-atom canonical braid word is computed
+  > live by `canonical_braid_crossings.atom_canonical_crossings(Z, N)` for any `(Z, N)`, and it is
+  > a function of `(Z, N)` rather than of `A`. So the object the route needs already exists here.
+  > What is missing is the *knot type* of each closure — a knot-recognition problem with a
+  > definite answer, not a modelling decision awaiting a ruling. This session also framed
+  > `qou-imkb` as the blocking owner decision for this route; that bean governs **Model B's `T1`
+  > registry** and is a separate matter.
 - AGENTS.md flags per-case dispatch on `A` as a fitting smell in its own right ("a formula that
   branches on `A` … has one free choice per branch"). The dictionary is such a dispatch. So the
   finding here reflects on the dictionary at least as much as on the route.
+
+### 3.5 The per-atom braid closure exists, and varies with `(Z, N)`
+
+Producer: [`per_atom_braid_closure_probe.py`](../../computations/probes/per_atom_braid_closure_probe.py)
+(5/5, `q0Anchor: independent`).
+
+`atom_canonical_crossings(Z, N)` returns a canonical braid word for any atom, and over a
+ten-atom sample the words are **pairwise distinct, 10 of 10**. The sharp case is `tritium (1,2)`
+against `he3 (2,1)`: same mass number, same length of 35 crossings, and they still differ — at
+four positions, with different crossing *types* (`averaged_weighted` vs `sigma`,
+`averaged` vs `sigma`), and with different exponent sums, **4 against 8**. Word *length* does
+factor through `A` (12 crossings per nucleon), which is why length alone is not the
+discriminator; the word does not.
+
+**What this does not establish.** Distinct braid *words* do not imply distinct *closures* —
+Markov moves and conjugation routinely identify different words with the same link — and the
+probe performs no knot recognition and no hyperbolicity test. Recognising the closure of a
+143-crossing braid on 36 strands (carbon-12) is a hard computation. But it is a computation with
+a definite answer, and that is the difference from where §3.4 originally placed this.
+
+**So the two live questions are, in order:** are the closures distinct links, and are they
+hyperbolic? Both are open. Neither is blocked on an owner decision.
 
 ---
 
@@ -236,11 +287,56 @@ values agree to every digit the witness records.
 
 ---
 
-## 5. Planck length — already answered in the corpus, both halves
+## 5. Planck length — symbolic in `q`, and NOT a calibration
 
-Neither half of this is new; both are live content blocks found by corpus-grep path 2.
+> **🛑 THIS SECTION ORIGINALLY SAID THE OPPOSITE, AND IT WAS WRONG. Corrected
+> 2026-09-06 on owner instruction — *"plank length is not a calibration.. written symbolic in
+> q"*.** The section was headed "already answered in the corpus, both halves" and led with
+> "**Forbidden as an input**", generalising `meridian-exceptional-divisor-note.md` into a
+> prohibition on the Planck length as such. That note forbids something narrower: pinning the
+> **substrate** at `m_Planck`, i.e. importing SI `G` as an input that fixes `q₀`. Writing
+> `ℓ_P(q)` as a `q`-expression is a different move, it is **already done in this corpus**, and it
+> introduces no calibration. `g-q-closed-form.md` says so in its own words: the SI value of `G`
+> "functions strictly as the human-scale rescaling ... enters as a unit-system datum, **not as a
+> fit parameter on `q`**".
 
-**Forbidden as an input.**
+Producer: [`planck_symbolic_in_q_probe.py`](../../computations/probes/planck_symbolic_in_q_probe.py)
+(8/8).
+
+With the corpus's own forms `ħ_q = (q−1)/q`, `c_q = 1/(q−1)`, `G_q = q²/(q−1)⁴`:
+
+| quantity | closed form in `q` |
+|---|---|
+| `G` in Planck units | `G_q·(ħ_q/c_q)² = 1` **identically**, as a rational function |
+| `ℓ_P = √(ħ_q G_q / c_q³)` | `√q` |
+| `m_P = √(ħ_q c_q / G_q)` | `(q−1)²/q^{3/2}` |
+| `t_P = √(ħ_q G_q / c_q⁵)` | `√q·\|q−1\|` (`= √q·(q−1)` on `q > 1`) |
+
+Each is a function of `q` **alone** — no `m_e`, no CODATA, no SI `G` — so none of them is a
+calibration. The `G_Planck = 1` identity is a real consistency win: it is asserted in
+`g-q-closed-form.md` and now verified as an exact rational-function identity rather than a
+numerical coincidence.
+
+### 5.1 Three different objects are called "the Planck length" here
+
+| name | expression | at proton `q₀` |
+|---|---|---|
+| normalised total ([`discrete-planck-step.md`](../../content/quantum-observable-universe/information-theory/discrete-planck-step.md)) | `ħ_q · q/(q−1) = 1` | `1` |
+| per-step share ([`p5-counterexample.md`](../../content/quantum-observable-universe/fluid-dynamics/p5-counterexample.md), written `ℓ_q`) | `(q−1)/q = ħ_q` | `0.0990817` |
+| dimensional (derived above; **no corpus block carries it**) | `√q` | `1.0535552` |
+
+The corpus already separates the first two — `discrete-planck-step.md` says outright *"This is
+the **normalised total** ... It is not the same object as the local `ℓ_P^step ∼ ħ_q`"*. The third
+is new here. The share and the dimensional form differ by a factor of **10.633** at `q₀`.
+
+**Recorded, not resolved.** This is a notation collision of exactly the kind the register exists
+to catch, and which of the three a given block *means* is an author question, not one a probe
+should decide. Nothing here claims `√q` is the "right" Planck length or that either corpus form
+is wrong.
+
+### 5.2 What the corpus does forbid, precisely
+
+**Pinning the substrate at `m_Planck`.**
 [`meridian-exceptional-divisor-note.md`](../../content/quantum-observable-universe/braids-and-knots/meridian-exceptional-divisor-note.md):
 *"Identifying the computational tick with the Planck time would pin the substrate at
 `m_Planck`, i.e. introduce Newton's constant `G` — an input outside the three-calibration weak
@@ -256,11 +352,11 @@ geometry switches from the base `M` to the fibre `S_p`."* And
 carries `G` in Planck units as a dimensionless `q`-rational with `G_Planck = 1` — i.e. as a
 *ratio*, which is the only way a gravitational scale is admitted.
 
-So `ℓ_P` may enter only as a dimensionless ratio derived from `(m_e, 𝔇_β, 𝔇_π)`; never as an
-input, and never to pin the substrate. The one question here that is *not* already answered, and
-that needs no new dimensional constant, is whether the fibre `S_p` is the right object to attach a
-decomposition to — a question about the categorical statement above. That is a paragraph, not a
-tranche, and it is left open.
+So the prohibition is on *pinning `q₀` with SI `G`*, not on the Planck length. Written in `q` it
+is already there and costs nothing. The one question that is genuinely open, and that needs no new
+dimensional constant, is whether the fibre `S_p` is the right object to attach a decomposition to —
+a question about the categorical statement above. That is a paragraph, not a tranche, and it is
+left open.
 
 ---
 
@@ -287,11 +383,32 @@ that stands.
 §4 are statements about the dictionary's knots and about `4_1`, not about cell decompositions in
 general.
 
-**The one live route, and it is not a geometry problem.** To revive this, identify the actual
-per-atom braid closure and ask whether *its* canonical decomposition varies with `A`. That is
-blocked on the dictionary being a four-branch dispatch, and unblocking it is a modelling decision
-with real consequences — the same decision bean `qou-imkb` records as blocked for Model B. Attacking
-a better invariant of a knot the dispatch has already collapsed cannot help.
+**The live route, and it is NOT blocked on an owner decision.**
+
+> **🛑 CORRECTED 2026-09-06.** This paragraph originally said the route was "blocked on the
+> dictionary being a four-branch dispatch", that unblocking it "is a modelling decision with real
+> consequences", and pointed at bean `qou-imkb`. §3.5 measures otherwise: the per-atom canonical
+> braid word is computed live for any `(Z, N)` and is a function of `(Z, N)`, not of `A`.
+> `qou-imkb` governs **Model B's `T1` registry**, which is a different question.
+
+Three questions, in dependency order, none of them requiring a ruling:
+
+1. **Are the per-atom closures distinct links?** Distinct words need not close to distinct links.
+   Answerable by invariants that are cheap on a braid closure (Jones via the Markov trace the
+   framework already computes, Alexander, linking numbers) before any knot recognition is
+   attempted.
+2. **Are they hyperbolic?** Thurston's trichotomy makes this a real question with a real answer,
+   and the corpus already has the gate (`sw_hyperbolicity_gate`) for named knots — what it lacks
+   is recognition of an unnamed 143-crossing closure.
+3. **Does the canonical decomposition then vary across atoms?** Only this one is the original
+   route, and it is downstream of both.
+
+The cheapest thing that could kill the whole route is question 1 returning "the closures coincide".
+The cheapest thing that could *advance* it is the `H₄`-layering literature question of §9.1, which
+is a search rather than a derivation.
+
+**What still cannot help:** a better invariant of the *dictionary-named* knot. §3.3 is unaffected by
+any of the above.
 
 **A tempting move to name and refuse.** Any Pachner or volume quantity selected because it lands
 near `b₃` is a fit, is forbidden by the NO-FITTING directive, and would be caught by the
@@ -335,3 +452,56 @@ three-calibration discipline review. The correct posture is that the gap stays v
   Both probes are `q0Anchor: independent` with no `q`, no Markov parameter and no CODATA value in
   either, which is consistent with the result but is not what establishes it; the two-run
   comparison is.
+
+---
+
+## 9. Families of hyperbolic knots with known ideal triangulations — what is held
+
+Owner question, verbatim: *"do we know any relations between families of hyperbolic knots and
+ideal triangulation?"* **Yes, and this corpus holds the literature for the two families that
+matter here.** The organising object in both cases is a word in `R, L` — equivalently a path in
+the Farey tessellation — and the triangulation is *layered* one tetrahedron per letter.
+
+| family | word | triangulation | held as |
+|---|---|---|---|
+| once-punctured-torus bundles | LR word of the monodromy in `SL₂(ℤ)` | Floyd–Hatcher / Jørgensen layered | [`arxiv-0808.2716v4`](../../library/arxiv-0808.2716v4/) (Futer–Kalfagianni–Purcell, *Cusp areas of Farey manifolds*) §2.2 |
+| two-bridge links `S(p,q)` | LR word of the continued fraction of `p/q` | Guéritaud layered | same, §2.4 |
+| two-bridge knots (1-loop = torsion) | — | ideal triangulation power series | [`arxiv-2411.03801v2`](../../library/arxiv-2411.03801v2/) |
+| 2-bridge coloured Jones | — | — | [`kmj-48-2-255`](../../library/kmj-48-2-255/) |
+
+The first row is **already internal to this repo**: the 2026-09-06 braid-monodromy probe derives
+the `4₁` layered triangulation from the canonical 3-braid with no SnapPy input. The second row is
+the one that matters for reach, because it covers **`4₁ = S(5,2)` and `5₂ = S(7,3)` under one
+functor** — the cross-knot gate the `A_ω` arc needs. It is already beaned as `qou-yvyd`.
+
+### 9.1 The Bring route, and the caveat that decides whether it works
+
+Owner proposal: *"if we fix on brings, then every hyperbolic knot convolution gets knot
+complement. from there to triangulation."*
+
+The corpus holds the relevant paper — [`arxiv-2402.08782v1`](../../library/arxiv-2402.08782v1/),
+Kattan–Singerman, *Hecke–Farey coordinates for Bring's surface*. Its content: Bring's surface is
+`H/H₄(5)`, the main result is the 20-sided hyperbolic polygon presenting it, and it develops
+**Hecke–Farey fractions** and **Farey circuits** on that surface. So the Farey combinatorics —
+the same object that indexes layered triangulations — *is* available on Bring's surface, which
+is the substance behind the proposal.
+
+**But the Hecke group is not the same one, and that gap is load-bearing.** The layered-triangulation
+machinery of the table above runs on the **modular group `Γ = H₃ = PSL(2,ℤ)`**: the Farey
+tessellation there is the once-punctured-torus Teichmüller combinatorics, and `R, L` generate it.
+Bring's surface is presented by **`H₄`**, a *different* Hecke group. Kattan–Singerman's own framing
+is that `H₃` studies triangular maps and they use `H₄` for the `{5,4}` map of genus 4. Nothing
+found in the corpus or the held library asserts an `H₄` analogue of the Floyd–Hatcher/Guéritaud
+layering, and this audit does **not** claim one exists.
+
+**So the honest status of the Bring route is:** the combinatorial vocabulary transfers (Farey
+coordinates exist on Bring's surface, and are held), and the *theorem* that would carry a word to a
+layered ideal triangulation does not, at `H₄`, in anything this corpus holds. That is a literature
+question with a definite answer — either the `H₄` layering exists in the literature and is not yet
+held here, or it is genuinely open — and it is the cheapest next thing to settle, because it
+decides whether "fix on Bring's" reaches a triangulation at all or only reaches a tessellation.
+
+Recorded as bean `qou-brfy`. Note also the standing caution from §1.2: a Farey/flip story on a
+**surface** is 2-dimensional, and Pachner 2–3 moves on a 3-manifold triangulation are not the same
+moves. The two are related through *bundles* over the surface, which is exactly what the first row
+of the table is; keeping that distinction is what makes the route checkable rather than suggestive.
