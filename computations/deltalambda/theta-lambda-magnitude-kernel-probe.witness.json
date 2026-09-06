@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T10:44:14.897007+00:00",
-  "commitSha": "1ad7215aa98d840e67251aaeb75e2b99f05aadae",
+  "computedAt": "2026-09-06T06:47:28.535464+00:00",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "assertions": [
     {
       "name": "deuteron_bare_kappa_reproduced",
-      "computed": "6.416146162391632038578130889739644583602734160382343056492710538587202",
+      "computed": "6.41614616239163203857813088973964458360273416038232247208400011117494",
       "expected": 6.0426,
       "passed": false,
       "tolerance": "0.01",
@@ -30,7 +30,7 @@
     },
     {
       "name": "geometric_in_A_pattern_ratio_scatter",
-      "computed": "1.462072494678767113820861802605340579374914420712843715639514324092364",
+      "computed": "1.462072494678767113820861802605340579374914420712881689434780626191063",
       "expected": 1.06,
       "passed": false,
       "tolerance": "0.05",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 3,
   "computation": "theta-lambda-magnitude-kernel-probe",
   "scriptFile": "theta_lambda_magnitude_kernel_probe.py",
   "scriptHash": "ec231fc59271",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptCommitSha": "7e3809af0b4341b68395ea953d24698043b77591",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -65,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [

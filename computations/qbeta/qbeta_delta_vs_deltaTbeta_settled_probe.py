@@ -72,9 +72,17 @@ claim is made about the ratio as a function of q.
 Exact mpmath at 50 dps. NO fit, NO c_k, NO wiring.
 """
 import datetime, hashlib, json, os, subprocess, sys
-sys.path[:0] = ["/home/user/qou/computations",
-                "/home/user/qou/computations/hecke",
-                "/home/user/qou/computations/substrate"]
+# Derived from __file__, not hardcoded. These were absolute
+# `/home/user/qou/computations/...` paths, so every import below raised
+# ModuleNotFoundError anywhere the repo is not checked out at that exact path.
+# This container has it at /workspace/qou, so the probe had never run here.
+# Found by the qou-y2o7 consumer sweep; the failure predates that change
+# (verified identical at HEAD).
+from pathlib import Path as _Path
+_COMPUTATIONS = _Path(__file__).resolve().parents[1]
+sys.path[:0] = [str(_COMPUTATIONS),
+                str(_COMPUTATIONS / "hecke"),
+                str(_COMPUTATIONS / "substrate")]
 import mpmath as mp
 mp.mp.dps = 50
 from chi_monotone_transfer import chi_all_lambda
@@ -112,14 +120,27 @@ def main():
     # CALIBRATION against the FIXED producer -- mandatory here, because the
     # first attempt at this probe calibrated against the PRE-FIX version and
     # "matched exactly" while both were wrong by 15.3 % / 27.3 %.
+    #
+    # `intra_order="grouped"` DELIBERATELY, 2026-09-06 (bean qou-y2o7).
+    # `_word` above builds the GROUPED word (all gen 0, then all gen 1), and so
+    # does everything this probe compares against: the qu2w calibration, the
+    # hardcoded pre/post-fix pin below, and the `paper` closed forms further
+    # down, which are stated in that frame and reproduce from it exactly.
+    # Since 2026-09-06 `compute_tau_M_nucleon_H3` defaults to the canonical
+    # BORROMEAN ordering, so the unqualified call would compare 0.629/0.475
+    # against this probe's 1.146/0.988 and fail all three — comparing two
+    # different braids, not detecting anything. Asking for the historical word
+    # keeps the comparison like-for-like.
     for nm, c in (("p", cp), ("n", cn)):
         mine = sum(y_lambda_wenzl_bridge_numeric(l, q, dps=50) * c.get(tuple(l), mp.mpf(0))
                    for l in [(3,), (2, 1), (1, 1, 1)])
         check(f"calibrates_against_fixed_compute_tau_M_nucleon_H3_{nm}",
-              abs(compute_tau_M_nucleon_H3(nm, q, dps=50) - mine) < mp.mpf("1e-40"))
+              abs(compute_tau_M_nucleon_H3(nm, q, dps=50, intra_order="grouped") - mine)
+              < mp.mpf("1e-40"))
     # and pin that it is the POST-fix value, not the pre-fix one
     check("post_fix_tau_p_not_the_pre_fix_value",
-          abs(compute_tau_M_nucleon_H3("p", q, dps=50) - mp.mpf("1.14575969245730087")) < mp.mpf("1e-15"))
+          abs(compute_tau_M_nucleon_H3("p", q, dps=50, intra_order="grouped")
+              - mp.mpf("1.14575969245730087")) < mp.mpf("1e-15"))
 
     paper = {(3,): -(q**2 - 1)*(q**2 + 1)**2/(4*q),
              (2, 1): (q**2 - 1)*(-(q**4) - 1)/(4*q**3),

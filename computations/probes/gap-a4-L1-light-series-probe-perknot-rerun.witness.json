@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T10:52:08.995239+00:00",
-  "commitSha": "fc0f9fb1406d2d5db726f9bb782ab60f82c8ca1e",
+  "computedAt": "2026-09-06T12:59:22.683188+00:00",
+  "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
   "assertions": [
     {
       "name": "L1a_lambdaA_proton_gap_matches_documented",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 91,
+  "durationMs": 93,
   "computation": "gap-a4-L1-light-series-probe-perknot-rerun",
   "scriptFile": "gap_a4_L1_light_series_probe_perknot_rerun.py",
   "scriptHash": "95752de27fea",
-  "scriptCommitSha": "0d9aedfc69c9dbd371b6575158a873eed02bc09a",
+  "scriptCommitSha": "0859eceadd4942bfa8422c3c11ed3cd8b9debb8d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,9 +39,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [

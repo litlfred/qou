@@ -225,3 +225,68 @@ changed under this bean since I last wrote:
 
 That is a labelling decision (`qou-exsw`'s remaining content work), not a
 method decision, and it does not gate option 3.
+
+## The defect
+
+`computations/bar_pairing_binding_observable.py::_load_or_compute_chi` validates
+its cache key like this (lines ~131):
+
+    cached_q = w.get("q_str", w.get("q_0_50dps_str", w.get("q_inv_50dps_str")))
+
+The canonical producer, `chi_at_q0_via_hoefsmit_mpfr.py::save_witness`, writes
+that field as **`q_0_50dps`** — no `_str` suffix.  Measured on
+`chi-tritium-h9-at-q0-50dps.witness.json`:
+
+    q_str            present? False
+    q_0_50dps_str    present? False
+    q_inv_50dps_str  present? False
+    q_0_50dps        present? True     <- what is actually written
+
+So `cached_q` is always `None`, the `cached_q == q_str` test can never pass, and
+the function falls through to *"Compute fresh"* — **overwriting the canonical
+cache on every single run**.
+
+## What it costs
+
+The replacement payload does not carry `q_0_50dps` or `tr_M_at_q0`.  Measured
+before/after a single run of the script:
+
+    chi-deuteron-h6    q0=1.109978582751380807  ->  None    tr_M=0.15196833...  ->  None
+    chi-tritium-h9     q0=1.109978582751380807  ->  None    tr_M=0.02914404...  ->  None
+    chi-helium-3-h9    q0=1.109978582751380807  ->  None    tr_M=0.05859625...  ->  None
+
+Three canonical caches lose their anchor stamp and their trace value.  Any
+consumer reading `tr_M_at_q0` — `aK_via_lp_dual_hecke_basis.load_tr_M` does,
+directly — gets `None` and raises.
+
+## The irony, which is the reusable part
+
+That guard was **added by a Copilot review on PR #1748** with the stated purpose
+*"the filename alone does NOT encode q_str + dps.  A future q_0 re-pin or a
+different precision request would otherwise silently load a stale witness."*
+The intent was to prevent silently loading stale data.  Because the field name
+does not match, it instead **silently destroys good data, every run**.
+
+**A validation guard that cannot match its key is not inert — it is an
+unconditional cache-invalidation.**  Failing open in a read path costs a stale
+read; failing open in a read-or-recompute-and-persist path costs the file.
+
+## How it was found
+
+Running it as entry 2 of a downstream sweep after the 2026-09-06 chi-cache
+regeneration (`qou-92u9`).  Three caches I had just regenerated came back with
+`None` fields.  Reproduced in isolation twice — once by re-running the sweep's
+entry 1 (`aK_via_lp_dual_hecke_basis`, which turned out to be innocent) and once
+by running this script alone, which reproduced it exactly.
+
+## Not fixed here
+
+The one-line fix is to read `q_0_50dps`/`q_inv_50dps` as well.  But the file it
+writes is *shaped differently* from the canonical producer's, so making the
+guard match would only stop the clobbering — it would not make the two writers
+agree on a payload.  Two producers writing one filename with different schemas
+is the real defect, and choosing which schema wins is not a change to make
+unilaterally inside someone else's arc.
+
+**Until then: do not run `bar_pairing_binding_observable.py` without reverting
+`chi-{deuteron-h6,tritium-h9,helium-3-h9}-at-q0-50dps.witness.json` afterwards.**

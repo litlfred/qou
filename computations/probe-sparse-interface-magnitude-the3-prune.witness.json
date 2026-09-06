@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:18:24.152285+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-06T06:49:14.449500+00:00",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "assertions": [
     {
       "name": "sparse_common_dominant_block_prune",
@@ -10,11 +10,11 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "FORMALIZE-FIRST: dominant T block [6, 3] carries 34% of |trace|, char-ratio 0.63289 vs AME 1.099 (MISS); common-dominant=True. H_sparse common-dominant REFUTED/partial — see verdict."
+      "source": "FORMALIZE-FIRST: dominant T block [9] carries 47% of |trace|, char-ratio 0.65878 vs AME 1.099 (MISS); common-dominant=True. H_sparse common-dominant REFUTED/partial — see verdict."
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 3,
   "computation": "probe-sparse-interface-magnitude-the3-prune",
   "scriptFile": "probe_sparse_interface_magnitude_the3_prune.py",
   "scriptHash": "cb8cba81f410",
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -47,53 +47,44 @@
     "ratio_tol": 0.02
   },
   "data": {
-    "trM_T": "0.2293101021045565",
-    "trM_He3": "0.4037670368514282",
+    "trM_T": "0.02914404236097207",
+    "trM_He3": "0.05859625365443638",
     "top_block_T": {
       "partition": [
-        6,
-        3
+        9
       ],
-      "abs_share": "0.33895169",
-      "char_ratio": "0.632893946783"
+      "abs_share": "0.46700445",
+      "char_ratio": "0.658781816976"
     },
     "dominant_common": true,
     "dominant_ratio_hits_ame": false,
-    "ratio_hit_blocks": [
-      [
-        5,
-        1,
-        1,
-        1,
-        1
-      ]
-    ],
+    "ratio_hit_blocks": [],
     "by_partition": [
       {
         "partition": [
           9
         ],
         "char_ratio": "0.658781817",
-        "T_abs_share": "0.15212994",
-        "He3_abs_share": "0.13114913"
+        "T_abs_share": "0.46700445",
+        "He3_abs_share": "0.52198708"
       },
       {
         "partition": [
           8,
           1
         ],
-        "char_ratio": "0.5695036041",
-        "T_abs_share": "0.27141933",
-        "He3_abs_share": "0.27066781"
+        "char_ratio": "1.149250632",
+        "T_abs_share": "0.23439097",
+        "He3_abs_share": "0.15017805"
       },
       {
         "partition": [
           7,
           2
         ],
-        "char_ratio": "0.4215601176",
-        "T_abs_share": "0.16532737",
-        "He3_abs_share": "0.22272941"
+        "char_ratio": "0.3954150882",
+        "T_abs_share": "0.042157782",
+        "He3_abs_share": "0.078506363"
       },
       {
         "partition": [
@@ -101,18 +92,18 @@
           1,
           1
         ],
-        "char_ratio": "0.3463762751",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "0.3618500686",
+        "T_abs_share": "5.4919623e-72",
+        "He3_abs_share": "1.1175815e-71"
       },
       {
         "partition": [
           6,
           3
         ],
-        "char_ratio": "0.6328939468",
-        "T_abs_share": "0.33895169",
-        "He3_abs_share": "0.30415796"
+        "char_ratio": "0.7269692882",
+        "T_abs_share": "0.18591336",
+        "He3_abs_share": "0.18831065"
       },
       {
         "partition": [
@@ -120,9 +111,9 @@
           2,
           1
         ],
-        "char_ratio": "2.189921166",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "0.9899627674",
+        "T_abs_share": "4.8075101e-72",
+        "He3_abs_share": "3.5758697e-72"
       },
       {
         "partition": [
@@ -131,18 +122,18 @@
           1,
           1
         ],
-        "char_ratio": "0.5021758055",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "1.06372225",
+        "T_abs_share": "4.6574197e-72",
+        "He3_abs_share": "3.2240181e-72"
       },
       {
         "partition": [
           5,
           4
         ],
-        "char_ratio": "0.5749047238",
-        "T_abs_share": "0.07217168",
-        "He3_abs_share": "0.071295688"
+        "char_ratio": "0.8511740895",
+        "T_abs_share": "0.070533435",
+        "He3_abs_share": "0.06101786"
       },
       {
         "partition": [
@@ -150,9 +141,9 @@
           3,
           1
         ],
-        "char_ratio": "0.3058489898",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "0.5273363843",
+        "T_abs_share": "3.4843368e-73",
+        "He3_abs_share": "4.8653347e-73"
       },
       {
         "partition": [
@@ -160,9 +151,9 @@
           2,
           2
         ],
-        "char_ratio": "0.9377403313",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "1.068531016",
+        "T_abs_share": "1.0523781e-72",
+        "He3_abs_share": "7.2521202e-73"
       },
       {
         "partition": [
@@ -171,9 +162,9 @@
           1,
           1
         ],
-        "char_ratio": "0.7602782653",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "3.455779826",
+        "T_abs_share": "7.1474048e-73",
+        "He3_abs_share": "1.5229395e-73"
       },
       {
         "partition": [
@@ -183,9 +174,9 @@
           1,
           1
         ],
-        "char_ratio": "1.10330115",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "1.998274122",
+        "T_abs_share": "8.3204392e-73",
+        "He3_abs_share": "3.0659956e-73"
       },
       {
         "partition": [
@@ -193,9 +184,9 @@
           4,
           1
         ],
-        "char_ratio": "1.502300903",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "0.7156505718",
+        "T_abs_share": "1.6688151e-72",
+        "He3_abs_share": "1.7170682e-72"
       },
       {
         "partition": [
@@ -203,9 +194,9 @@
           3,
           2
         ],
-        "char_ratio": "0.8123035143",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "0.8610998451",
+        "T_abs_share": "1.619068e-72",
+        "He3_abs_share": "1.3844966e-72"
       },
       {
         "partition": [
@@ -214,9 +205,9 @@
           1,
           1
         ],
-        "char_ratio": "0.6898272407",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "3.085529894",
+        "T_abs_share": "3.0702536e-73",
+        "He3_abs_share": "7.326977e-74"
       },
       {
         "partition": [
@@ -225,9 +216,9 @@
           2,
           1
         ],
-        "char_ratio": "0.333015225",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "0.2205249135",
+        "T_abs_share": "2.1938558e-74",
+        "He3_abs_share": "7.32539e-74"
       },
       {
         "partition": [
@@ -237,9 +228,9 @@
           1,
           1
         ],
-        "char_ratio": "1.034542337",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "0.9659168587",
+        "T_abs_share": "1.3179396e-73",
+        "He3_abs_share": "1.0046993e-73"
       },
       {
         "partition": [
@@ -250,9 +241,9 @@
           1,
           1
         ],
-        "char_ratio": "0.288221936",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "0.8184611554",
+        "T_abs_share": "3.5020927e-73",
+        "He3_abs_share": "3.1507206e-73"
       },
       {
         "partition": [
@@ -260,9 +251,9 @@
           3,
           3
         ],
-        "char_ratio": "0.8360015103",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "2.073090254",
+        "T_abs_share": "7.7097125e-74",
+        "He3_abs_share": "2.7384216e-74"
       },
       {
         "partition": [
@@ -271,9 +262,9 @@
           2,
           1
         ],
-        "char_ratio": "0.7538998633",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "1.169448667",
+        "T_abs_share": "2.8040012e-73",
+        "He3_abs_share": "1.7655392e-73"
       },
       {
         "partition": [
@@ -283,9 +274,9 @@
           1,
           1
         ],
-        "char_ratio": "1.565161725",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "1.073980751",
+        "T_abs_share": "1.8679613e-73",
+        "He3_abs_share": "1.2807127e-73"
       },
       {
         "partition": [
@@ -294,9 +285,9 @@
           2,
           2
         ],
-        "char_ratio": "7.734761162",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "1.756431131",
+        "T_abs_share": "2.365664e-144",
+        "He3_abs_share": "9.9175014e-145"
       },
       {
         "partition": [
@@ -306,9 +297,9 @@
           1,
           1
         ],
-        "char_ratio": "1.602359842",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "0.5907259652",
+        "T_abs_share": "5.5943121e-75",
+        "He3_abs_share": "6.973342e-75"
       },
       {
         "partition": [
@@ -319,9 +310,9 @@
           1,
           1
         ],
-        "char_ratio": "0.9289961119",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "1.24005394",
+        "T_abs_share": "2.1332396e-73",
+        "He3_abs_share": "1.2667164e-73"
       },
       {
         "partition": [
@@ -333,9 +324,9 @@
           1,
           1
         ],
-        "char_ratio": "0.9429337331",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "1.63201308",
+        "T_abs_share": "8.7440536e-74",
+        "He3_abs_share": "3.9452044e-74"
       },
       {
         "partition": [
@@ -345,9 +336,9 @@
           2,
           1
         ],
-        "char_ratio": "1.298934364",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "0.9052619966",
+        "T_abs_share": "1.9572796e-145",
+        "He3_abs_share": "1.5920581e-145"
       },
       {
         "partition": [
@@ -358,9 +349,9 @@
           1,
           1
         ],
-        "char_ratio": "1.374568687",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "1.379946343",
+        "T_abs_share": "3.9382359e-74",
+        "He3_abs_share": "2.1014539e-74"
       },
       {
         "partition": [
@@ -372,9 +363,9 @@
           1,
           1
         ],
-        "char_ratio": "1.281705271",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "4.232003603",
+        "T_abs_share": "1.0413711e-74",
+        "He3_abs_share": "1.8119234e-75"
       },
       {
         "partition": [
@@ -387,9 +378,9 @@
           1,
           1
         ],
-        "char_ratio": "1.432418473",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "char_ratio": "3.638660856",
+        "T_abs_share": "1.1948173e-74",
+        "He3_abs_share": "2.4179107e-75"
       },
       {
         "partition": [
@@ -404,8 +395,8 @@
           1
         ],
         "char_ratio": "1.51795325",
-        "T_abs_share": "0.0",
-        "He3_abs_share": "0.0"
+        "T_abs_share": "4.198489e-75",
+        "He3_abs_share": "2.0366433e-75"
       }
     ],
     "h_sparse_common_dominant_supported": false

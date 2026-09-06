@@ -1,5 +1,17 @@
 # D-ladder resummation: the odd (S-carrier) half is fixed-order Borel-summable — the "no single Gevrey index" is even-k-driven
 
+> **⚠ CONVENTION-C CONDITIONAL — scope note added 2026-09-06 (bean `qou-h6o3`).**
+> This document's conclusions depend on the `c_k` precision ladder / `Q_β`, which
+> AGENTS.md records as **convention-C-frame throughout and NOT re-derived** under
+> the owner ruling of 2026-08-15 making convention D (`z = q³/(q²+1)`) canonical.
+> Treat every `c_k`-dependent statement below as **C-conditional** until the
+> ladder is re-derived (bean `qou-cds1`). The numbers here are correct *for C*
+> and are kept as recorded — they need **scoping, not correction**. This note was
+> applied mechanically to the 45 documents in this arc that reference the ladder;
+> it asserts dependence on the ladder, not that any particular conclusion changes
+> under D.
+
+
 **Date:** 2026-07-17 · **Axis:** Q_β c₃ odd channel (1ppQ; m_n/Δ_pn/Q_β root cause)
 · **Tier:** numerical (scope-(a) measurement) · **Discipline:** no fit to QOU
 data, no c_k wired, no tier change. Parallel-context probe (owner directive:

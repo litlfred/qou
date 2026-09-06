@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-26T15:38:17.765146+00:00",
-  "commitSha": "64e948be588fc02245ee737fcf52ed1951acba6b",
+  "computedAt": "2026-09-06T06:49:41.901382+00:00",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "assertions": [
     {
       "name": "wedderburn_closure",
-      "computed": "8.7172300130674698185e-51",
+      "computed": "6.3784183907184849655e-51",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-9",
@@ -14,18 +14,18 @@
     },
     {
       "name": "bar_conjugate_law_broken_by_colour_weighting",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "source": "χ^λ(β_D, q⁻¹) vs (−1)^L χ^{λ'}(β_D, q): residual ≈2.6e-4 = colour-weighting / flavor-split symmetry breaking"
     }
   ],
-  "allPassed": true,
-  "durationMs": 9,
+  "allPassed": false,
+  "durationMs": 7,
   "computation": "probe-d-delta-lambda-terms",
   "scriptFile": "probe_d_delta_lambda_terms.py",
   "scriptHash": "2e99596f25b3",
-  "scriptCommitSha": "1ccff98a55ebfbfdfdddace99578b528f23164a6",
+  "scriptCommitSha": "6fa55857e552b310031c35dc561782dd60be4c9b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -40,7 +40,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "c85ef99ee89ce1c3"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -80,12 +80,12 @@
         "self_conj": false,
         "dim": 5,
         "y_lambda": "0.0789529624759",
-        "chi_bound": "3.21631734224",
+        "chi_bound": "-0.682285012761",
         "chi_free": "5.93121148832",
         "chi_qinv": "-2.15561330121",
-        "delta_chi": "2.71489414608",
-        "trM_term": "0.253937782432",
-        "binding_term_y_dchi": "0.214348935642"
+        "delta_chi": "6.61349650108",
+        "trM_term": "-0.0538684230104",
+        "binding_term_y_dchi": "0.522155141084"
       },
       {
         "lambda": [
@@ -96,12 +96,12 @@
         "self_conj": false,
         "dim": 9,
         "y_lambda": "0.046032434692",
-        "chi_bound": "1.67439526203",
+        "chi_bound": "0.32908034754",
         "chi_free": "9.00591303276",
         "chi_qinv": "0.819790438079",
-        "delta_chi": "7.33151777072",
-        "trM_term": "0.0770764905482",
-        "binding_term_y_dchi": "0.337487612974"
+        "delta_chi": "8.67683268522",
+        "trM_term": "0.0151483696065",
+        "binding_term_y_dchi": "0.399415733916"
       },
       {
         "lambda": [
@@ -112,13 +112,13 @@
         "conj": "[3, 1, 1, 1]",
         "self_conj": false,
         "dim": 10,
-        "y_lambda": "0.0",
-        "chi_bound": "-0.469805886378",
+        "y_lambda": "2.18824302205e-72",
+        "chi_bound": "-1.20480513409",
         "chi_free": "5.36599503401",
         "chi_qinv": "0.48981789459",
-        "delta_chi": "5.83580092039",
-        "trM_term": "0.0",
-        "binding_term_y_dchi": "0.0"
+        "delta_chi": "6.5708001681",
+        "trM_term": "-2.6364064276e-72",
+        "binding_term_y_dchi": "1.43785076172e-71"
       },
       {
         "lambda": [
@@ -129,12 +129,12 @@
         "self_conj": false,
         "dim": 5,
         "y_lambda": "0.015123810098",
-        "chi_bound": "4.24940202292",
+        "chi_bound": "0.713945151751",
         "chi_free": "4.62600801264",
         "chi_qinv": "3.49789590964",
-        "delta_chi": "0.376605989725",
-        "trM_term": "0.0642671492248",
-        "binding_term_y_dchi": "0.00569571747038"
+        "delta_chi": "3.91206286089",
+        "trM_term": "0.0107975708955",
+        "binding_term_y_dchi": "0.0591652957996"
       },
       {
         "lambda": [
@@ -145,13 +145,13 @@
         "conj": "[3, 2, 1]",
         "self_conj": true,
         "dim": 16,
-        "y_lambda": "0.0",
-        "chi_bound": "-1.97227244615",
+        "y_lambda": "1.37030921826e-72",
+        "chi_bound": "0.385028611527",
         "chi_free": "7.62558351446",
         "chi_qinv": "1.97349626237",
-        "delta_chi": "9.59785596062",
-        "trM_term": "0.0",
-        "binding_term_y_dchi": "0.0"
+        "delta_chi": "7.24055490294",
+        "trM_term": "5.2760825567e-73",
+        "binding_term_y_dchi": "9.92179912883e-72"
       },
       {
         "lambda": [
@@ -163,13 +163,13 @@
         "conj": "[4, 1, 1]",
         "self_conj": false,
         "dim": 10,
-        "y_lambda": "0.0",
-        "chi_bound": "-0.490125652323",
+        "y_lambda": "-4.19168209476e-73",
+        "chi_bound": "1.00437228553",
         "chi_free": "-1.91763458064",
         "chi_qinv": "0.470667065291",
-        "delta_chi": "-1.42750892832",
-        "trM_term": "0.0",
-        "binding_term_y_dchi": "0.0"
+        "delta_chi": "-2.92200686617",
+        "trM_term": "-4.21000932574e-73",
+        "binding_term_y_dchi": "1.22481238617e-72"
       },
       {
         "lambda": [
@@ -180,13 +180,13 @@
         "conj": "[3, 3]",
         "self_conj": false,
         "dim": 5,
-        "y_lambda": "0.0",
-        "chi_bound": "-3.49729440651",
+        "y_lambda": "1.04744125652e-73",
+        "chi_bound": "-1.1804319536",
         "chi_free": "3.74795844081",
         "chi_qinv": "-4.24865960319",
-        "delta_chi": "7.24525284733",
-        "trM_term": "0.0",
-        "binding_term_y_dchi": "0.0"
+        "delta_chi": "4.92839039441",
+        "trM_term": "-1.23643312871e-73",
+        "binding_term_y_dchi": "5.16219942732e-73"
       },
       {
         "lambda": [
@@ -198,13 +198,13 @@
         "conj": "[4, 2]",
         "self_conj": false,
         "dim": 9,
-        "y_lambda": "0.0",
-        "chi_bound": "-0.819654948504",
+        "y_lambda": "-1.85877970257e-73",
+        "chi_bound": "-0.0366981718455",
         "chi_free": "0.844233846277",
         "chi_qinv": "-1.67294991921",
-        "delta_chi": "1.66388879478",
-        "trM_term": "0.0",
-        "binding_term_y_dchi": "0.0"
+        "delta_chi": "0.880932018122",
+        "trM_term": "6.82138169479e-75",
+        "binding_term_y_dchi": "-1.63745855463e-73"
       },
       {
         "lambda": [
@@ -217,13 +217,13 @@
         "conj": "[5, 1]",
         "self_conj": false,
         "dim": 5,
-        "y_lambda": "0.0",
-        "chi_bound": "2.15525533745",
+        "y_lambda": "1.00357863923e-73",
+        "chi_bound": "-0.338262640683",
         "chi_free": "-2.23046769817",
         "chi_qinv": "-3.21536545275",
-        "delta_chi": "-4.38572303561",
-        "trM_term": "0.0",
-        "binding_term_y_dchi": "0.0"
+        "delta_chi": "-1.89220505748",
+        "trM_term": "-3.39473160639e-74",
+        "binding_term_y_dchi": "-1.89897657673e-73"
       },
       {
         "lambda": [
@@ -237,13 +237,13 @@
         "conj": "[6]",
         "self_conj": false,
         "dim": 1,
-        "y_lambda": "0.0",
+        "y_lambda": "-1.92240193176e-74",
         "chi_bound": "-0.676876683433",
         "chi_free": "0.67325689637",
         "chi_qinv": "-1.55962123317",
         "delta_chi": "1.3501335798",
-        "trM_term": "0.0",
-        "binding_term_y_dchi": "0.0"
+        "trM_term": "1.30122904379e-74",
+        "binding_term_y_dchi": "-2.59549940194e-74"
       }
     ],
     "bar_conjugate_check": [
@@ -276,8 +276,8 @@
           1
         ],
         "chi_qinv": "-2.155613301",
-        "signed_chi_conj_q": "-2.155255337",
-        "rel_resid": "0.00011345001272375362919"
+        "signed_chi_conj_q": "0.3382626407",
+        "rel_resid": "1.8635175682834399465"
       },
       {
         "lambda": [
@@ -291,8 +291,8 @@
           1
         ],
         "chi_qinv": "0.8197904381",
-        "signed_chi_conj_q": "0.8196549485",
-        "rel_resid": "0.000074458937984751321347"
+        "signed_chi_conj_q": "0.03669817185",
+        "rel_resid": "0.75537151265528790532"
       },
       {
         "lambda": [
@@ -307,8 +307,8 @@
           1
         ],
         "chi_qinv": "0.4898178946",
-        "signed_chi_conj_q": "0.4901256523",
-        "rel_resid": "0.0002065313969093338188"
+        "signed_chi_conj_q": "-1.004372286",
+        "rel_resid": "0.74546539627790980705"
       },
       {
         "lambda": [
@@ -321,8 +321,8 @@
           2
         ],
         "chi_qinv": "3.49789591",
-        "signed_chi_conj_q": "3.497294407",
-        "rel_resid": "0.00013374777585719361614"
+        "signed_chi_conj_q": "1.180431954",
+        "rel_resid": "1.0628462641113447609"
       },
       {
         "lambda": [
@@ -336,8 +336,8 @@
           1
         ],
         "chi_qinv": "1.973496262",
-        "signed_chi_conj_q": "1.972272446",
-        "rel_resid": "0.00041174429190946518226"
+        "signed_chi_conj_q": "-0.3850286115",
+        "rel_resid": "1.7028708679830296413"
       },
       {
         "lambda": [
@@ -352,8 +352,8 @@
           1
         ],
         "chi_qinv": "0.4706670653",
-        "signed_chi_conj_q": "0.4698058864",
-        "rel_resid": "0.00058591336544084772603"
+        "signed_chi_conj_q": "1.204805134",
+        "rel_resid": "0.33297186107163032089"
       },
       {
         "lambda": [
@@ -366,8 +366,8 @@
           3
         ],
         "chi_qinv": "-4.248659603",
-        "signed_chi_conj_q": "-4.249402023",
-        "rel_resid": "0.00014142938968650686469"
+        "signed_chi_conj_q": "-0.7139451518",
+        "rel_resid": "2.0623264681661612571"
       },
       {
         "lambda": [
@@ -381,8 +381,8 @@
           2
         ],
         "chi_qinv": "-1.672949919",
-        "signed_chi_conj_q": "-1.674395262",
-        "rel_resid": "0.00054043725007059679512"
+        "signed_chi_conj_q": "-0.3290803475",
+        "rel_resid": "1.0111274116432396114"
       },
       {
         "lambda": [
@@ -397,8 +397,8 @@
           1
         ],
         "chi_qinv": "-3.215365453",
-        "signed_chi_conj_q": "-3.216317342",
-        "rel_resid": "0.00022576324564940270445"
+        "signed_chi_conj_q": "0.6822850128",
+        "rel_resid": "2.3168787904212933988"
       },
       {
         "lambda": [
@@ -417,25 +417,25 @@
         "rel_resid": "0.000097257427825113199045"
       }
     ],
-    "bar_conjugate_max_rel_resid": "0.0005859133654408477260339081158770799084341184711696330994101506536201198",
-    "sum_y_chi_bound": "0.57517224391777187083",
-    "tr_M": "0.57517224391777187083",
-    "scalar_binding_trace_diff": "0.5565446604044382119",
+    "bar_conjugate_max_rel_resid": "2.316878790421293398801059717312942494713078294804702396088438726703245",
+    "sum_y_chi_bound": "0.15196833920423160759",
+    "tr_M": "0.15196833920423160759",
+    "scalar_binding_trace_diff": "0.97974856511797847514",
     "chi_bound_zeros": [],
     "top3_binding_lambda": [
       [
-        4,
-        2
-      ],
-      [
         5,
         1
+      ],
+      [
+        4,
+        2
       ],
       [
         3,
         3
       ]
     ],
-    "uniform_delta_magnitude": "7.5688065586485218938"
+    "uniform_delta_magnitude": "28.646542266062997257"
   }
 }

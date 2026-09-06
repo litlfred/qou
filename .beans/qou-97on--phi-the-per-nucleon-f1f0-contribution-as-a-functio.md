@@ -1,11 +1,11 @@
 ---
 # qou-97on
 title: 'phi: the per-nucleon f1/f0 contribution as a function of an 11-letter two-generator word'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T07:13:59Z
-updated_at: 2026-09-06T07:14:27Z
+updated_at: 2026-09-06T09:58:13Z
 ---
 
 ## Why this is now a well-posed question (2026-09-06)
@@ -64,3 +64,42 @@ complete table to fit a closed form against.
 proton alone.)
 
 Refs: `docs/audits/2026-09-06-contiguity-does-not-drive-f1-the-split-link-factorisation-does.md`.
+
+
+## COMPLETED 2026-09-06 — both orbits exhausted, both global maxima
+
+    proton    9240/9240 words   42.6 min   canonical 21/2: 1232 attain, 0 EXCEED
+    neutron   6930/6930 words   32.2 min   canonical 8   :  990 attain, 0 EXCEED
+
+Ran at n=3, not n=6, which is the whole reason this took ~75 min rather than the
+~7 h estimated above. Two invariances licensed it and BOTH are gated in the probe
+rather than assumed: phi is strand-count independent (21/2 at n = 3, 4, 6 alike)
+and translation-invariant in the generator index.
+
+**phi IS QUANTISED IN UNITS OF 3/2.** Every consecutive gap in both spectra is
+exactly 3/2, no gaps in either ladder and nothing off it:
+
+    proton  : 21/2  9  15/2  6  9/2  3  3/2  0  -3/2      (9 values, 9240 words)
+    neutron :    8  13/2  5  7/2  2  1/2   -1  -5/2       (8 values, 6930 words)
+
+The lattices are OFFSET: proton on (3/2)Z, neutron on (3/2)Z + 1/2. Quantum
+shared, offset not. Neither is explained here.
+
+**The two canonical words are the extremes of that ladder.** Grouped is the
+global max of both orbits; borromean — the word made canonical by the 2026-09-05
+ruling — is one rung above the bottom of each (proton 3/2, neutron -1). That is a
+MEASUREMENT and NOT an argument against the ruling, which was made on grounds
+this does not address. It does explain why so much downstream moved when the
+default changed: c1 by a factor of 37, and #6559's crossover finding entirely.
+
+**The refinement that cuts against the extremality reading:** the canonical word
+is NOT unique. 1232 proton words (13.3 %) and 990 neutron words (14.3 %) attain
+the maximum. So "canonical maximises phi" is true, and "canonical is picked out
+by maximising phi" is FALSE — the maximum is a large plateau, not a point.
+Anyone reaching for extremality as a SELECTION PRINCIPLE should read that number
+first.
+
+Upgrades qou-hu1f / #6905 (1-swap local max, 196 of 9240) and #6714 (largest of
+40, p ~ 1/41) to exhaustive statements.
+
+Audit: docs/audits/2026-09-06-phi-is-quantised-in-units-of-three-halves.md

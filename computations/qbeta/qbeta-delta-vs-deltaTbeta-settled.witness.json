@@ -66,8 +66,17 @@
   "verdict": "SETTLED (scope-(a)). Side B is VERIFIED: chi_block_* reproduces chi_lambda(beta_n - beta_p) from the EXHIBITED nucleon words exactly, all three blocks at q0, so Delta_T_beta = beta_n - beta_p and the paper forms are correct. Side A has NO ELEMENT: epsNPq is a bare Lean def, a polynomial in q, with no Hecke element constructed anywhere. Since the counit IS the lambda=(3) block and GS normal form is a character-invariant rewriting of the SAME element, epsNPq is therefore NOT the counit of the exhibited difference -- it is the counit of some other, never-exhibited object, plausibly the 'single-wrap'/'N=0' truncation its own prose names. Q_A = -E_0*eps(Delta), and hence the whole Q_beta ladder whose phase is eps - tr_M, rests on that asserted polynomial. NOT claimed: that either is wrong. Settling which belongs in Q_A needs the single-wrap element written down. The earlier probe's 'two q-deformations' reading is WITHDRAWN.",
   "witness": {
     "scriptPath": "computations/qbeta/qbeta_delta_vs_deltaTbeta_settled_probe.py",
-    "scriptHash": "22e5e1a63751",
-    "commitSha": "1c46136815f0e1811f808af91f1c24a5ad2e4aa0",
-    "generatedAt": "2026-08-27T05:31:44.130472+00:00"
-  }
+    "scriptHash": "4366ffb77718",
+    "commitSha": "e2b3de264025351beaf8ffabb240cf5523d111a3",
+    "generatedAt": "2026-09-06T13:03:02.152470+00:00"
+  },
+  "scriptFile": "qbeta_delta_vs_deltaTbeta_settled_probe.py",
+  "scriptHash": "4366ffb77718",
+  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
+  "commitSha": "e2b3de264025351beaf8ffabb240cf5523d111a3",
+  "computedAt": "2026-09-06T13:03:02.780687+00:00",
+  "durationMs": 0,
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

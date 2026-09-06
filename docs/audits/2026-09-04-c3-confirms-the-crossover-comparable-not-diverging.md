@@ -1,5 +1,20 @@
 # `c₃` confirms the crossover — the orders are comparable, not diverging
 
+> **🛑 THE `c_k` BELOW ARE GROUPED-WORD VALUES — CORRECTED 2026-09-06 BY THEIR
+> OWN AUTHOR.** `7db032fb48` (owner ruling, bean `qou-hu1f`) made the Borromean
+> intra-nucleon ordering canonical, and these coefficients were computed on the
+> old default without pinning it. They move — `c₁(⁴He)` by a factor of **37**,
+> `259/128 → 7/128` — and `c₁(nn)` becomes **exactly 0**.
+>
+> **Convention-scoped, not refuted:** `c₃` has not been re-measured under
+> Borromean (it needs `P = 5`). But it was built on #6559's crossover reading,
+> and that reading does not survive — so treat the comparable-not-diverging
+> conclusion as **grouped-conditional and open** until `c₃` is re-run.
+>
+> Full table under both orderings, and what survives:
+> [`2026-09-06-the-c1-c2-crossover-is-grouped-specific.md`](2026-09-06-the-c1-c2-crossover-is-grouped-specific.md).
+> The `c₀` floor IS ordering-invariant, so everything resting on it is untouched.
+
 **Completes the question** left half-answered by #6559: do `c₂` **and `c₃`**
 continue the cancellation? `c₂` was measured there (it does not — it overtakes
 `c₁`). `c₃` is measured here. Beans `qou-brng` / `qou-pdg9`.

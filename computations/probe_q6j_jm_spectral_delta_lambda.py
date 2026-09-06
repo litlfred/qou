@@ -39,7 +39,7 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 set_compute_dps()
@@ -109,11 +109,12 @@ def main() -> int:
         for a, (blk, n, B) in iso.items():
             B_pred = M_E_MEV * S[a]
             err = (B_pred - B) / B
-            per[a] = {"B_pred_MeV": float(B_pred), "rel_err": float(err)}
+            per[a] = {"B_pred_MeV": fmt(B_pred), "rel_err": fmt(err),
+                      "_mp": {"B_pred": B_pred, "err": err}}
             worst = max(worst, abs(err))
         closes = worst <= TOL
         any_closes_all = any_closes_all or closes
-        results[f"r={r}"] = {"worst_rel_err": float(worst),
+        results[f"r={r}"] = {"worst_rel_err": fmt(worst),
                              "closes_all": bool(closes), "per_isotope": per}
         if best is None or worst < best[0]:
             best = (worst, r, per)
@@ -121,32 +122,44 @@ def main() -> int:
     bw, br, bper = best
     print(f"Best universal r = {br}: worst |err| = {float(bw)*100:.1f}%")
     for a in iso:
-        print(f"    {a:<10} B_pred={bper[a]['B_pred_MeV']:8.4f}  "
-              f"AME={float(AME_B[a]):8.4f}  err={bper[a]['rel_err']*100:+8.1f}%")
+        print(f"    {a:<10} B_pred={float(bper[a]['_mp']['B_pred']):8.4f}  "
+              f"AME={float(AME_B[a]):8.4f}  "
+              f"err={float(bper[a]['_mp']['err'])*100:+8.1f}%")
 
     # ── T/³He same-n differential diagnostic ──
     diff_report = None
     if "tritium" in iso and "helium-3" in iso:
         blkT, nT, _ = iso["tritium"]
         blkH, nH, _ = iso["helium-3"]
-        target_diff = float((AME_B["tritium"] - AME_B["helium-3"]) / M_E_MEV)
+        # Stays mpf: `best_r` below is selected by comparing against it, so a
+        # float here put a binary64 round-trip inside the selection.
+        target_diff = (AME_B["tritium"] - AME_B["helium-3"]) / M_E_MEV
         # map partition→chi for each
         chiT = {tuple(b["part"]): b["chi"] for b in blkT}
         yT = {tuple(b["part"]): b["y"] for b in blkT}
         chiH = {tuple(b["part"]): b["chi"] for b in blkH}
         print(f"\n── T/³He differential (same n=9): "
-              f"target (B_T−B_³He)/m_e = {target_diff:+.4f}")
-        dr = {}
+              f"target (B_T−B_³He)/m_e = {float(target_diff):+.4f}")
+        dr_mp = {}
         for r in range(4, 31):
-            d = sum(vol_jm_spectral(list(p), r) * yT[p] * (chiT[p] - chiH[p])
-                    for p in chiT)
-            dr[f"r={r}"] = float(d)
-        # closest r
-        best_r = min(dr, key=lambda k: abs(dr[k] - target_diff))
+            dr_mp[f"r={r}"] = sum(
+                vol_jm_spectral(list(p), r) * yT[p] * (chiT[p] - chiH[p])
+                for p in chiT)
+        # closest r -- selected in mpf, not on truncated values
+        best_r = min(dr_mp, key=lambda k: abs(dr_mp[k] - target_diff))
         print(f"    best r for differential: {best_r} → "
-              f"Σ Vol·y·Δχ = {dr[best_r]:+.4f} (target {target_diff:+.4f})")
-        diff_report = {"target_diff": target_diff, "by_r": dr,
-                       "best_r": best_r, "best_value": dr[best_r]}
+              f"Σ Vol·y·Δχ = {float(dr_mp[best_r]):+.4f} "
+              f"(target {float(target_diff):+.4f})")
+        diff_report = {"target_diff": fmt(target_diff),
+                       "by_r": {k: fmt(v) for k, v in dr_mp.items()},
+                       "best_r": best_r,
+                       "best_value": fmt(dr_mp[best_r])}
+
+    # `_mp` is working state (the mpf each printed value was computed as);
+    # every one already has a lossless string twin from `fmt`.
+    for row in results.values():
+        for entry in row["per_isotope"].values():
+            entry.pop("_mp", None)
 
     w = WitnessBuilder("probe-q6j-jm-spectral-delta-lambda", engine="mpmath")
     w.set_description(
@@ -156,11 +169,11 @@ def main() -> int:
         "D/T/³He/⁴He. Includes the T/³He same-n differential diagnostic. "
         "Δ_λ remains open (GAP-A-3/A-4)."
     )
-    w.add_parameter("tolerance_pct", 5.0)
+    w.add_parameter("tolerance_pct", fmt(TOL * 100))
     w.add_parameter("r_scan", "4..30")
     w.add_data("by_r", results)
     w.add_data("best_universal_r", br)
-    w.add_data("best_worst_rel_err", float(bw))
+    w.add_data("best_worst_rel_err", fmt(bw))
     if diff_report:
         w.add_data("t_he3_differential", diff_report)
     w.add_data("any_r_closes_all_within_5pct", any_closes_all)
