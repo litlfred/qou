@@ -1,0 +1,27 @@
+{
+  "manifold": "L6a4",
+  "obstruction_class": 1,
+  "field": {
+    "generator": "t",
+    "min_poly": "64*t**4 - 95000*t**3 + 101015625*t**2 - 59375000000*t + 25000000000000",
+    "degree": 4,
+    "irreducible_over_Q": true
+  },
+  "matrices_spanned": 31,
+  "span_rank": 9,
+  "full_rank": 9,
+  "absolutely_irreducible": true,
+  "verdict": "ABSOLUTELY IRREDUCIBLE (Burnside: the image spans M_3(K))",
+  "method": "Burnside: absolutely irreducible iff the image spans M_3(K)",
+  "zariski": {
+    "unipotent_generators": [
+      "b",
+      "c"
+    ],
+    "H1_nontrivial_unipotent": true,
+    "H2_absolutely_irreducible": true,
+    "H3_complex_type": "established separately in <manifold>-c<class>-character-selfduality.json",
+    "conclusion": "G^0 = SL(3,C); the image is Zariski-dense",
+    "status": "argument from standard structure theory over checked hypotheses; NOT machine-checked, and NOT an identification with the flavour triple"
+  }
+}
