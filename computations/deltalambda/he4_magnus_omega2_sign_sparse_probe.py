@@ -473,22 +473,21 @@ def pairing_for_word(gens, n_strands, log_prefix="", a_baseline_sign=None, worke
     ckpt_fh = None
     if checkpoint:
         if os.path.exists(checkpoint):
-            # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
-            # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
-            # dump runs, so any exception in between leaves the committed witness
-            # empty or partial -- the shape that emptied 22 witnesses to zero bytes
-            # in one `producer_importability_audit` run. `os.replace` is atomic on
-            # POSIX within a filesystem, hence a SIBLING temp file.
-            _wpath_sidu = checkpoint
-            _wtmp_sidu = str(_wpath_sidu) + ".tmp"
-            with open(_wtmp_sidu) as fh:
+            # A PLAIN READ of the resume file. The qou-sidu atomic-write
+            # transform matched this `open(...)` and wrapped it as a write: it
+            # read `checkpoint + ".tmp"`, which does not exist, then
+            # `os.replace`d that temp OVER the real checkpoint. So resume here
+            # never fired -- the read raised and took the whole resume block
+            # with it -- and a stale `.tmp` would have been promoted over a
+            # good checkpoint. A read has nothing to make atomic. Same misfire
+            # as `hadron_knot_table._ckpt_load`.
+            with open(checkpoint) as fh:
                 for line in fh:
                     line = line.strip()
                     if not line:
                         continue
                     rec = json.loads(line)
                     rows_by_shape[tuple(rec["lambda"])] = rec
-            _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
             print(f"{log_prefix}  resumed: {len(rows_by_shape)}/{len(parts)} partitions "
                   f"already in {os.path.basename(checkpoint)}", flush=True)
         ckpt_fh = open(checkpoint, "a")

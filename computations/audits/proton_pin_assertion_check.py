@@ -227,19 +227,16 @@ def _atomic_write(path: Path, data: bytes) -> None:
     """A kill during this must not strand the recovery it enables."""
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
-    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
-    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
-    # dump runs, so any exception in between leaves the committed witness
-    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
-    # in one `producer_importability_audit` run. `os.replace` is atomic on
-    # POSIX within a filesystem, hence a SIBLING temp file.
-    _wpath_sidu = tmp
-    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
-    with open(_wtmp_sidu, "wb") as fh:
+    # Already atomic before qou-sidu -- sibling temp, fsync, os.replace, which
+    # is exactly what that bean asks for. The transform did not notice and
+    # added a SECOND temp, so the write went X.tmp.tmp -> X.tmp -> X and the
+    # fsync landed on the inner temp while the file actually promoted to
+    # `path` was never synced, quietly weakening the durability this
+    # function's own docstring promises. One hop, as it was.
+    with open(tmp, "wb") as fh:
         fh.write(data)
         fh.flush()
         os.fsync(fh.fileno())
-    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     os.replace(tmp, path)
 
 

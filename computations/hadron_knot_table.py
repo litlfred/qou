@@ -459,17 +459,16 @@ def _ckpt_load():
     if not _CKPT_PATH or not _os.path.exists(_CKPT_PATH):
         return {}
     try:
-        # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
-        # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
-        # dump runs, so any exception in between leaves the committed witness
-        # empty or partial -- the shape that emptied 22 witnesses to zero bytes
-        # in one `producer_importability_audit` run. `os.replace` is atomic on
-        # POSIX within a filesystem, hence a SIBLING temp file.
-        _wpath_sidu = _CKPT_PATH
-        _wtmp_sidu = str(_wpath_sidu) + ".tmp"
-        with open(_wtmp_sidu, encoding="utf-8") as fh:
+        # A PLAIN READ. It briefly was not: the qou-sidu atomic-write transform
+        # matched this `open(...)` and wrapped it as if it were a write, so
+        # this function opened `_CKPT_PATH + ".tmp"` -- which does not exist --
+        # and then `os.replace`d that temp OVER the real checkpoint. Effects,
+        # in order of severity: resume silently never worked (every run
+        # reported "starting fresh" and recomputed the whole table), and had a
+        # stale `.tmp` ever been lying around it would have been promoted over
+        # a good checkpoint. A read has nothing to make atomic.
+        with open(_CKPT_PATH, encoding="utf-8") as fh:
             blob = _json.load(fh)
-        _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     except (OSError, ValueError) as exc:
         print(f"  [checkpoint] unreadable ({exc}); starting fresh", flush=True)
         return {}
@@ -487,18 +486,13 @@ def _ckpt_save(cache):
         return
     tmp = _CKPT_PATH + ".tmp"
     _os.makedirs(_os.path.dirname(_os.path.abspath(_CKPT_PATH)), exist_ok=True)
-    # Atomic write (bean `qou-sidu`): serialize to a sibling temp file and
-    # `os.replace` it into position. `open(..., "w")` TRUNCATES before the
-    # dump runs, so any exception in between leaves the committed witness
-    # empty or partial -- the shape that emptied 22 witnesses to zero bytes
-    # in one `producer_importability_audit` run. `os.replace` is atomic on
-    # POSIX within a filesystem, hence a SIBLING temp file.
-    _wpath_sidu = tmp
-    _wtmp_sidu = str(_wpath_sidu) + ".tmp"
-    with open(_wtmp_sidu, "w", encoding="utf-8") as fh:
+    # Already atomic before qou-sidu: sibling temp + os.replace, which is what
+    # that bean asks for. The transform did not notice and added a SECOND temp
+    # on top, so the write went X.tmp.tmp -> X.tmp -> X. Harmless but pure
+    # noise; one hop, as it was.
+    with open(tmp, "w", encoding="utf-8") as fh:
         _json.dump({"key": _ckpt_key(),
                     "atoms": {k: _ckpt_enc(v) for k, v in cache.items()}}, fh)
-    _os_sidu.replace(_wtmp_sidu, _wpath_sidu)
     _os.replace(tmp, _CKPT_PATH)
 
 
