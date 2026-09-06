@@ -50,8 +50,25 @@
   **NOT** claim the full geometric identification
   `conj:qdifference-kernel-prolongation-symbol` (that `C1` = the prolongation
   symbol) — constructing the q-difference prolongation `D_q` from `Σ` and
-  extracting its symbol are the named multi-month research walls **W1–W3**
-  (q-jet-bundle / q-D-module symbol calculus, absent from Mathlib and the corpus).
+  extracting its symbol are the named multi-month research walls **W1–W3**.
+
+  🛑 **Scope correction (2026-09-06, bean `qou-p6m1`).** This sentence
+  used to end with the parenthetical "(q-jet-bundle / q-D-module symbol
+  calculus, absent from Mathlib and the corpus)". That bundled two objects and
+  asserted absence of both; only one of them is absent.
+
+  * **q-D-module symbol calculus — PRESENT.**
+    `QOU.Machinery.QuantumTorusSymbol` (QDM-1/2: principal symbol on the q-Weyl
+    quantum torus, 19 declarations, sorry-free, on `main` by 2026-07-24) and
+    `QOU.Mathlib.RamifiedShiftCalculus` (the same calculus at *this file's own*
+    ramified pole `z = z_c + t²`, sorry-free, 2026-09-03). The latter
+    **imports this file** — the builder depends on the module that declared
+    what it builds to be absent, which is how the claim survived.
+  * **q-jet bundle over `Σ` — ABSENT.** W1 (construct `D_q` from
+    `Σ`) is genuinely still a wall, as is the lift of `D_q` to the jet
+    tower. Nothing in this correction weakens W1, and the 2026-09-03 build says
+    so itself: "`D_q` is **not** constructed; W1 stays a wall."
+
   The keystone stays a conjecture; what is upgraded here is the `(−1)^m` residual
   from a measured sign-sequence fact to a branch-point ramification statement.
 
