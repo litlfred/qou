@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-15T10:40:32.645417+00:00",
-  "commitSha": "fb39f0437cfe7a1b502335ae08dd6c144e0e7a0e",
+  "computedAt": "2026-09-06T06:41:10.692778+00:00",
+  "commitSha": "5cc05ecd4fbac0e09e29ae9621621be580bb5e89",
   "assertions": [
     {
       "name": "rows_le_3_recovers_99pct",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 3,
   "computation": "active-set-truncation-prototype",
   "scriptFile": "active_set_truncation_prototype.py",
-  "scriptHash": "1a66900746ef",
-  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+  "scriptHash": "ed112f07268b",
+  "scriptCommitSha": "940b3e118c9cbb5470f89a9779210687afad4127",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,9 +28,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/active_set_truncation_prototype.py"
+    ],
+    "reproduce": "python3 -u computations/active_set_truncation_prototype.py"
   },
   "description": "PROTOTYPE — few-row truncation of tr_M reproduces the full Markov trace (rows≤2 ≳ 93%, rows≤3 ≳ 99% on D/T), verifying the active-set compute optimization: binding scales O(A·few) by summing only few-row partitions + caching nucleon blocks, skipping the high-dim deep partitions (= the matrix-M skipped-max-dim set).",
   "data": {
@@ -44,25 +53,25 @@
             "tr_M_trunc": 1.27103153,
             "frac_recovered": 0.584262,
             "n_partitions_kept": 1,
-            "max_dim_in_truncation": 0
+            "max_dim_in_truncation": 1
           },
           "2": {
             "tr_M_trunc": 2.17544682,
             "frac_recovered": 1.0,
             "n_partitions_kept": 4,
-            "max_dim_in_truncation": 0
+            "max_dim_in_truncation": 9
           },
           "3": {
             "tr_M_trunc": 2.17544682,
             "frac_recovered": 1.0,
             "n_partitions_kept": 7,
-            "max_dim_in_truncation": 0
+            "max_dim_in_truncation": 16
           },
           "4": {
             "tr_M_trunc": 2.17544682,
             "frac_recovered": 1.0,
             "n_partitions_kept": 9,
-            "max_dim_in_truncation": 0
+            "max_dim_in_truncation": 16
           }
         }
       },
