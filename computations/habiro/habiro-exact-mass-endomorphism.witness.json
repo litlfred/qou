@@ -1,15 +1,15 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T18:02:53.950123+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "computedAt": "2026-09-06T06:56:16.541859+00:00",
+  "commitSha": "16bc3e426dc067422b8901cebceb70ccf366dbbc",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 6,
   "computation": "habiro-exact-mass-endomorphism",
   "scriptFile": "habiro_exact_mass_endomorphism.py",
-  "scriptHash": "365f6ddf305b",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "196b71aa8a78",
+  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,10 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -32,7 +32,7 @@
     ],
     "reproduce": "python3 -u computations/habiro/habiro_exact_mass_endomorphism.py"
   },
-  "description": "Habiro-everywhere mass-endomorphism: mpmath at 50 dps throughout (q_0, V̂_i Hecke recursion, Φ_q infinite product, Wedderburn weights). Eliminates f64 numerical noise from the baseline f64 pipeline. Quantifies how much of the +1.84% m_p/m_e residual is f64 vs structural.",
+  "description": "Habiro-everywhere mass-endomorphism: mpmath at 50 dps throughout (q_0, V̂_i Hecke recursion, Φ_q infinite product, Wedderburn weights). Eliminates f64 numerical noise from the baseline f64 pipeline. Quantifies how much of the m_p/m_e residual is f64 vs structural. MEASURED 2026-09-06: 0.00182 percentage points of a 407% residual, so essentially NONE of it is precision -- it is structural. The block previously compared against a hardcoded 1.84% that mass_endomorphism does not produce, and reported 405.218.",
   "contentBlock": "prop:mass-endomorphism-tower",
   "parameters": {
     "q_0_mpf50": "1.1099785956427390391632225954426977052808226110852",
@@ -51,7 +51,7 @@
         "single_mpf50": "1892.5172825188217386087842918882032193284854464775",
         "cross_mpf50": "0.0",
         "total_mpf50": "1893.1902984710437740009279419149976565904618664971",
-        "total_float64": 1893.1902984710437
+        "total_float64": "1893.1902984710437"
       },
       "proton": {
         "n_strands": 3,
@@ -64,7 +64,7 @@
         "single_mpf50": "16969290.159218096330635704442533338660762102531426",
         "cross_mpf50": "656994.37244089409831223961110638190009862926203216",
         "total_mpf50": "17626285.554555071562291821491042681569582543029289",
-        "total_float64": 17626285.554555073
+        "total_float64": "17626285.554555073"
       },
       "neutron": {
         "n_strands": 3,
@@ -77,7 +77,7 @@
         "single_mpf50": "431062.05414799194023124301139687328569233731545511",
         "cross_mpf50": "25631.240368149683559794110420932890151263427812157",
         "total_mpf50": "456694.18206076695490438211553998515195055344844683",
-        "total_float64": 456694.18206076697
+        "total_float64": "456694.18206076697"
       }
     },
     "ratios_at_50dps": {
@@ -87,14 +87,17 @@
       "delta_np_over_m_e": "-9069.13128931656228990344443795",
       "m_p_over_m_e_codata": "1836.152673431236317280978642081602588349142819254501160322856296009831",
       "m_n_over_m_e_codata": "1838.683662013998802170417036086693025690526002594595531093317568789903",
-      "m_p_over_m_e_diff_pct": 407.05812016670995,
-      "m_n_over_m_e_diff_pct": -86.88029132154124
+      "m_p_over_m_e_diff_pct": "407.058120166709982896209404472926226433936742977297887201621",
+      "m_n_over_m_e_diff_pct": "-86.8802913215412429644466872867039832751511574173334076550610"
     },
     "comparison_to_f64": {
-      "f64_m_p_over_m_e_baseline": 1869.85,
-      "f64_diff_pct_baseline": 1.84,
-      "habiro_50dps_diff_pct": 407.05812016670995,
-      "diff_change_from_f64_to_50dps": 405.21812016671
+      "habiro_50dps_diff_pct": "407.058120166709982896209404472926226433936742977297887201621",
+      "f64_m_p_over_m_e_measured": "9310.32782814957000000000000000000000000000000000000000000000",
+      "f64_diff_pct_measured": "407.056301083682221705187027754344271095153469314256462812352",
+      "diff_change_from_f64_to_50dps": "0.00181908302776119102237671858195533878327366304142438926952029",
+      "relative_gap_f64_vs_50dps": "0.00000358753657902178005080258289268419623933334641111847651717546",
+      "reading": "The two routes agree to ~3.6e-6 relative while both sit near 407 % off CODATA, so the residual is STRUCTURAL, not a precision artefact. This is the question the script was built to answer.",
+      "baseline_source": "computed live from mass_endomorphism's f64 tower, not hardcoded -- the previous literals 1869.85 / 1.84 were stale and that module has never produced them."
     }
   },
   "caveats": [
