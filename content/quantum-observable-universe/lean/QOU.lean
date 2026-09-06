@@ -1560,3 +1560,4 @@ import QOU.Mass.KZUnitModulusPrune
 import QOU.Mass.HeckeMonodromy
 import QOU.Mass.ColourCubicDiscriminant
 import QOU.Mass.ColourCubicDiscriminantReal
+import QOU.Mass.FigureEightGluingFromMonodromy
