@@ -64,9 +64,31 @@ right. It is reported because it is the shape a derivation would have to produce
    factor is an **assumption**, not a measurement. It is inert on sorted orderings and would be the
    first thing to check on an unsorted one.
 2. **Orders 0, 1, 2 only**, and `A ≤ 5`.
-3. **Not proved.** Disjointness of the nucleon blocks and single-letter bonds is a structural
-   argument; 9 words × 3 orders exact is evidence. Neither the free-word factorisation nor the bond
-   product has a Lean statement.
+3. **Not proved — and the corpus already holds the neighbouring theorem, which I first claimed it
+   did not.** An earlier version of this file said "neither the free-word factorisation nor the bond
+   product has a Lean statement". That is **wrong**:
+   `QOU/MathlibExt/MonotoneWordTraceFactorizes.lean` (sorry-free, `lean`-direct exit 0, bean
+   `qou-kru4`) proves `tr_stabWord_eq_prod_tr` — a **monotone** word's trace is `∏ tr(letter)`. I
+   asserted an absence without grepping for it, in a session whose whole subject is that failure.
+
+   **But it is a different statement, and the difference is the point.** That theorem factorises
+   over **letters** of an *ascending* word, and the canonical word is **not ascending**: one
+   nucleon's generator sequence is `[0,1,0,1,0,1,0,0,1,0,0]` against the grouped
+   `[0,0,0,0,0,0,0,1,1,1,1]`. The corpus records that too, in bean `qou-wdij` (with the same two
+   sequences), together with the fallout — the monotone transfer refuses on `main`, and the
+   general-word kernel that replaced it **loses the `O(A)` scaling** (`A = 4` takes 621 s, a ~1700×
+   jump). So letter-level factorisation is genuinely dead under owner ruling `qou-hu1f`.
+
+   What survives is **block-and-bond** factorisation, and it survives for a different reason:
+   nucleons act on **disjoint strand triples**, which is insensitive to how their internal letters
+   are ordered. Disjointness is not monotonicity. That is why this file's product holds on exactly
+   the word whose letter-level product the ruling destroyed — and it is the reconciliation between
+   this result and `qou-kru4` / `qou-wdij`, neither of which states it.
+
+   The *disjoint-block trace law* has no Lean statement — checked, not assumed:
+   `QOU/MathlibExt/BraidJuxtapositionMonoid.lean` proves the juxtaposition **monoid** and the
+   commutation of disjoint blocks, but no trace-multiplicativity over them. That, plus the bond
+   factor's stabilisation, is the formalize-first follow-on.
 4. **`q₀` never enters.** These are ε-series coefficients, exact rationals. Nothing here is evaluated
    at any anchor and nothing is wired to a witness or a content block.
 
@@ -243,9 +265,16 @@ def main() -> int:
     print("\n  🛑 SCOPE. (1) SORTED orderings only — every word here is p…p n…n, because the canonical")
     print("  construction takes (Z, N). The bond product is STATED for an arbitrary ordering and is")
     print("  UNTESTED on one; `pnp` is the discriminating case and needs the canonical construction")
-    print("  extended, not a hand-built word. (2) Orders 0,1,2 and A ≤ 5 only. (3) NOT PROVED —")
-    print("  disjoint blocks and single-letter bonds is an argument; 9 words x 3 orders is evidence,")
-    print("  and neither this nor the free-word factorisation has a Lean statement. (4) No q₀ enters")
+    print("  extended, not a hand-built word. (2) Orders 0,1,2 and A ≤ 5 only. (3) NOT PROVED, and")
+    print("  the corpus DOES hold the neighbouring theorem — MonotoneWordTraceFactorizes (qou-kru4),")
+    print("  which an earlier version of this file wrongly said did not exist. That one factorises")
+    print("  over LETTERS of an ASCENDING word; the canonical word is not ascending (qou-wdij), so")
+    print("  letter-level factorisation really is dead under the ruling. THIS product is over BLOCKS")
+    print("  and BONDS and survives for a different reason — disjoint strand triples, insensitive to")
+    print("  internal letter order. Disjointness is not monotonicity, and that is the reconciliation")
+    print("  neither of those beans states. The disjoint-block trace law itself has no Lean statement")
+    print("  (checked: BraidJuxtapositionMonoid proves the monoid and the commutation of disjoint")
+    print("  blocks, not trace-multiplicativity over them). (4) No q₀ enters")
     print("  anywhere: these are exact rational ε-coefficients, wired to nothing.")
     print(f"\n  ({time.time()-t0:.1f}s)")
     return 0 if (ok and live) else 1
