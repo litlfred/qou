@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-31T10:13:14Z
-updated_at: 2026-09-06T03:36:05Z
+updated_at: 2026-09-06T03:47:11Z
 ---
 
 
@@ -623,3 +623,26 @@ h_q^0 not h_q^2; the part above it is h_q^1), and the convention collision is un
 
 **Falsifiable:** T/3He 3/32, 6Li 31/2048, 7Li 63/8192, 12C 2047/8388608 were never swept. One
 h_q sweep returning a different rational refutes the closed form.
+
+
+### CORRECTION, same day — the derivation above was ALREADY ON MAIN
+
+`computations/probes/classical_floor_derivation_probe.py` + `QOU/MassTheory/ClassicalTraceFloor.lean`
+(sorry-free), commit `7d15b2abbc` 2026-09-04, already derive the floor by Schur-Weyl, already
+establish `c(sigma_free) = 2A` / `c(sigma_atom) = A+1` for A = 2..20, and already state
+`c0(A) = 2^(-A) - 2^(1-2A)`. So does the '⚠ CORRECTED 2026-08-31' note inside
+`derivation_chain.E_0_CONVENTIONS['B_q_value_absorbed']`, which cites both by name.
+
+The entry above claims the Schur-Weyl derivation and the cycle law as findings of this session.
+**They are not.** `classical_floor_is_markov_cycle_count_probe.py` (PR #6879, commit 1)
+re-derived them without finding the prior work — a corpus-grep failure; one grep for
+`classical_floor` returns both artifacts. It survives only as an INDEPENDENT CONFIRMATION by a
+different route (convention D's row cap `y_lambda = [n-2k+1]_q/[2]_q^n` vs the prior
+`y_lambda = s_lambda(1,Q)/(1+Q)^n`, Q = q^2, bean `qou-ssz6`) and is labelled that way in its
+docstring, the audit and the PR body.
+
+**What survives as new:** the interface-multiplicity generalisation `floor = 2^(-A)(1 - 2^(-O))`,
+the m-parity law, the convention invariance, and `floor(A=1) = 0`. Grep-verified: zero
+occurrences of m_pp/m_pn/m_nn/multiplic/parity/intra_order/pn_convention in either prior artifact,
+and no A = 1 row. The prior work fixes m = 1 throughout, which is why `A+1` appears there as a
+fact rather than as the `O = A-1` special case it is.
