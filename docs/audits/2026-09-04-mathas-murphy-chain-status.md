@@ -549,3 +549,64 @@ full rank"*. That was a **rank** measurement and is still true as one. It does n
 and this is a property where the reference is decisive. The generalisation was never measured;
 it was inferred from the rank result, which is the same shape of error as the two absence
 claims this document already records.
+
+### The gap is CLOSED — the reference tableau is now a parameter (2026-09-06, same day)
+
+The refutation above forces option (1): the Murphy element must be stated over `t^λ`. That
+is done, and **not** by editing `HeckeMurphyYoung` — the reference is made an **explicit
+parameter**, since its absence is exactly what let two objects share the name `dOf`.
+[`QOU/BraidKnot/MurphyRefTab.lean`](../../content/quantum-observable-universe/lean/QOU/BraidKnot/MurphyRefTab.lean),
+ten declarations, all sorry-free:
+
+| declaration | content |
+|---|---|
+| `dOfRef r t`, `dAtRef n h r t` | `d(t)` relative to an arbitrary reference `r` |
+| `dOfRef_colSuperstandard`, `dOfRef_refTab` | the corpus's two `dOf`s are the two instances — both `rfl` |
+| `dOfRef_smul`, `dAtRef_smul` | `d_r(w·g) = w·d_r(g)` for **every** reference, in one lemma |
+| `murphyMRef r s t` | `T*_{d_r(s)} · x_r · T_{d_r(t)}` |
+| `murphyMRef_colSuperstandard` | **`murphyM` is one instance, definitionally** |
+| `murphyMRow` | `murphyMRef (refTab μ)` — Mathas' element |
+| `Tw_dAtRef_smul`, `murphyMRef_smul` | the lift, for every reference at once |
+| **`exists_garnir_murphyMRow_factor`** | **3.13 on Mathas' Murphy element: `m^row_{s t} = m^row_{s g} · T_w`** |
+
+Because `murphyM` is *definitionally* `murphyMRef (colSuperstandard μ)`, `murphyFamily`,
+`basisOfSpanning` and `murphyBasisOfSpanning` are untouched and keep proving exactly what
+they proved. No merged file changed.
+
+**What the parameterisation buys beyond the composition.** `dOfRef_smul` proves
+`d_r(w·g) = w·d_r(g)` once, for every reference. The corpus previously had that fact twice —
+`TableauPerm.dOf_smul` and `MurphyGarnirFactor.HeckeMurphyYoung_dOf_smul` — with the same
+one-line proof and nothing connecting them, which is what made it easy to believe the
+reference never mattered. Separating the half that transfers (the factorisation) from the
+half that does not (length additivity) is the file's point.
+
+**Rank axis: checked, and narrowly.** The row instance is full rank at `n = 3,4,5`
+(`6/6`, `24/24`, `120/120`), the same as the column one. That licenses exactly one thing —
+the reference does not change the **rank**. It does change 3.13's length additivity, so the
+"red herring" reading stays refuted.
+
+### 🛑 The rank guard that established that had never run
+
+`murphy_supp_rsk_probe.py`'s `run_rank_guard` is defined **below** its file's `if __name__`
+block, so it was never called — the *"standing guard rather than a one-off check"* its own
+docstring describes had not run in `main` since it was written. It is wired in now (0.02 s /
+0.09 s / 16 s at `n = 3/4/5`) and reproduces the figures above. **A guard nobody invokes is
+documentation**, which is the same finding this corpus already recorded for
+`precision-gates.sh`.
+
+Two labels in it were also wrong in a way that made its output assert something false:
+
+1. The deficient row was tagged *"as the corpus's `murphyM` does"*. That describes the
+   **superseded** `murphyM`; the live one sums over the fixed
+   `youngSubgroup n h (colSuperstandard μ)`, which is the **full-rank** row. The output was
+   accusing current code of a defect it no longer has.
+2. *"the reference does not matter"* is scoped to **rank**, and was quoted in `murphyM`'s
+   docstring as the reference being *"a red herring"* without qualification. The docstring
+   now says which axis it measured.
+
+### What is still open
+
+3.14. The rewriting step is proved on the right object; the induction is not run. What
+remains is that the terms it produces **descend** in `MurphyInductionMeasure.murphyLex` —
+which needs 3.12's algebra half, and hence 3.9 at basis level. `murphyLex_wellFounded` says
+such an induction terminates; it does not say the terms descend.
