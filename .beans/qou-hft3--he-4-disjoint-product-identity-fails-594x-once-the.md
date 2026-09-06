@@ -81,3 +81,21 @@ resolved. Recorded here as the starting point, not as the answer.
 `atomic-tr-m-helium4.witness.json` emits 2 raw-float64 fields
 (`direct_recursion.budget_sec`, `.elapsed_sec`) — flagged by the raw-float64
 gate on every run, and inert only because they are timings.
+
+## Cross-validation: neither arm is near the canonical value
+
+Landed with the row cap in the same pass. Two independent routes to
+|tr_M(⁴He)| on the **canonical** word `atom_braid_word_3A(2,2)` at H₁₂ agree to
+full precision:
+
+    direct Wenzl-bridge evaluation      0.01123741765976742156419955
+    binding_canonical.py (regenerated)  0.011237417659767421564
+
+Both differ from **both** arms of `atomic_tr_m_helium4.py` (1.2808 and 7.6105)
+by two orders of magnitude. That strongly supports item 2 above: the word this
+producer uses — hand-specified, 44 crossings — is not the production ⁴He braid,
+so its two arms are disagreeing about something that is not the quantity the
+paper needs. Settle the word before adjudicating the arms.
+
+Only computable at all because the row cap made H₁₂ reachable (19.4 s from
+previously unreachable).
