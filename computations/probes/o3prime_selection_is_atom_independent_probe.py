@@ -446,6 +446,7 @@ import _path_bridge  # noqa: F401,E402
 
 from mpmath import mp  # noqa: E402
 
+from live_channels import is_live  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
@@ -532,9 +533,14 @@ def main() -> int:
         # weights as exact 0.  The regenerated caches serialize the arithmetic
         # residual instead -- 1e-72 to 1e-73, i.e. zero to 50 dps -- so `!= 0`
         # selected all 77 partitions at helium-4 and sent tau_tail into a 77!
-        # enumeration.  O3' is defined on the >2-row-suppressed quotient, which
-        # under SU(2) IS the <=2-row partitions, so say that.
-        surv = [p for p in r["per_partition"] if len(p["partition"]) <= 2]
+        # enumeration.  Fixed first as `len(partition) <= 2`, then moved onto
+        # `live_channels.is_live` (DEAD_TOL = 1e-30, which separates 1e-73 from
+        # the 1e-3..1e-1 live weights by forty orders) so that this probe and
+        # `o3prime_quotient_lp_solve_probe` share ONE definition of the
+        # quotient -- two probes defining the same object differently is a
+        # divergence waiting to happen.  The library's docstring settles which
+        # definition is intended: "Defined by the weight, not by the row count."
+        surv = [p for p in r["per_partition"] if is_live(mp.mpf(p["y_lambda"]))]
         n = sum(surv[0]["partition"])
         # |contribution|, not the signed value.  The LP objective is
         # `min sum_lambda |contrib_lambda| x_lambda`, and `t_vals` below has
