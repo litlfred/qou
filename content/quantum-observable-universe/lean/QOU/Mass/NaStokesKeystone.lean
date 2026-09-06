@@ -20,7 +20,7 @@ The keystone is the last link of the categorical derivation chain. The non-abeli
 Stokes step supplies *what* the period integrates to:
 
 1. **Yekutieli non-abelian Stokes (`prop:hecke-spectral-sequence`) — CONJECTURAL, see
-   `QOU.Mass.StepTwoMonodromy.HeckeMonodromy` (2026-09-06).** The abelianised Cartan
+   `QOU.Mass.HeckeMonodromy` (2026-09-06).** The abelianised Cartan
    connection on the exceptional divisor `S_c` is *conjectured* to have curvature 2-form
    `F(σ) = σ² − (q − q⁻¹)σ − 1`; the corpus does not construct it (cheat-sheet §2a). Its
    `q = 1` shadow — a reflection — IS derived (Picard–Lefschetz monodromy of the colour cubic,
