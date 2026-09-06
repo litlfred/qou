@@ -67,7 +67,7 @@ import rho_xi_diagonal as rxd                   # noqa: E402
 from young_seminormal import chi_young, seminormal_sigma, standard_tableaux  # noqa: E402
 from lr_coefficients import partitions_of       # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
+from chi_general_word import chi_all_lambda_any  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q as Q0                 # noqa: E402
 
@@ -306,7 +306,7 @@ def main() -> int:
     RB5 = {nu: rho_full_float(nu, q_str, bl5) for nu in partitions_of(3)}
 
     t0 = time.time()
-    chi_ref = chi_all_lambda_reduced_block(w5, 15, q=None)
+    chi_ref = chi_all_lambda_any(w5, 15, q=None)
     chi_ref = {tuple(k): float(v) for k, v in chi_ref.items()}
     print(f"[A5] transfer reference (all λ⊢15): {float(time.time()-t0):.0f}s", flush=True)
 

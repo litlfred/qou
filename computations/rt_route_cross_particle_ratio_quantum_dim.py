@@ -42,7 +42,7 @@ import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpc, mpf
 
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 set_compute_dps()
 
 # Constants
@@ -99,18 +99,26 @@ def compute_mass_candidates(n: int, N: int, q) -> dict:
     bracket_N_q = quantum_integer(N, q)
     bracket_n_q = quantum_integer(n, q)
 
-    return {
-        "n_torus": n,
-        "N_color": N,
-        "|J_N|": float(mag),
-        "[N]_q": float(abs(bracket_N_q)),
-        "[n]_q": float(abs(bracket_n_q)),
-        "|J_N|·N·m_e (MeV)": float(mag * N * M_E_MEV),
-        "|J_N|·[N]_q·m_e (MeV)": float(mag * abs(bracket_N_q) * M_E_MEV),
-        "|J_N|·[n]_q·m_e (MeV)": float(mag * abs(bracket_n_q) * M_E_MEV),
-        "|J_N|·n·m_e (MeV)": float(mag * n * M_E_MEV),
-        "|J_N|·m_e (MeV)": float(mag * M_E_MEV),
+    # `_mp` carries the mpf each field was computed as. It exists because the
+    # ratio and deviation stages downstream consume these values, and reading
+    # them back out of a `float(...)` field truncated the comparison against
+    # the experimental ratios to binary64 -- three times over, in a chain
+    # ending at a PDG comparison. It is working state, stripped before the
+    # witness is written; the string fields carry the same numbers via `fmt`.
+    exact = {
+        "|J_N|": mag,
+        "[N]_q": abs(bracket_N_q),
+        "[n]_q": abs(bracket_n_q),
+        "|J_N|·N·m_e (MeV)": mag * N * M_E_MEV,
+        "|J_N|·[N]_q·m_e (MeV)": mag * abs(bracket_N_q) * M_E_MEV,
+        "|J_N|·[n]_q·m_e (MeV)": mag * abs(bracket_n_q) * M_E_MEV,
+        "|J_N|·n·m_e (MeV)": mag * n * M_E_MEV,
+        "|J_N|·m_e (MeV)": mag * M_E_MEV,
     }
+    out = {"n_torus": n, "N_color": N}
+    out.update({k: fmt(v) for k, v in exact.items()})
+    out["_mp"] = exact
+    return out
 
 
 def cross_particle_ratios(candidates: dict) -> dict:
@@ -124,25 +132,37 @@ def cross_particle_ratios(candidates: dict) -> dict:
     ]
     results = {}
     for formula in formulas:
-        w_val = mpf(str(candidates["W±"][formula]))
-        z_val = mpf(str(candidates["Z"][formula]))
-        h_val = mpf(str(candidates["H"][formula]))
+        w_val = candidates["W±"]["_mp"][formula]
+        z_val = candidates["Z"]["_mp"][formula]
+        h_val = candidates["H"]["_mp"][formula]
         if z_val == 0 or h_val == 0:
             results[formula] = None
             continue
-        r_wz_pred = float(w_val / z_val)
-        r_zh_pred = float(z_val / h_val)
-        r_wh_pred = float(w_val / h_val)
+        r_wz_pred = w_val / z_val
+        r_zh_pred = z_val / h_val
+        r_wh_pred = w_val / h_val
+        dev = {
+            "deviation_W_over_Z_pct":
+                (r_wz_pred - RATIO_W_Z_EXP) / RATIO_W_Z_EXP * 100,
+            "deviation_Z_over_H_pct":
+                (r_zh_pred - RATIO_Z_H_EXP) / RATIO_Z_H_EXP * 100,
+            "deviation_W_over_H_pct":
+                (r_wh_pred - RATIO_W_H_EXP) / RATIO_W_H_EXP * 100,
+        }
         results[formula] = {
-            "predicted_W_over_Z": r_wz_pred,
-            "predicted_Z_over_H": r_zh_pred,
-            "predicted_W_over_H": r_wh_pred,
-            "experimental_W_over_Z": float(RATIO_W_Z_EXP),
-            "experimental_Z_over_H": float(RATIO_Z_H_EXP),
-            "experimental_W_over_H": float(RATIO_W_H_EXP),
-            "deviation_W_over_Z_pct": float((mpf(str(r_wz_pred)) - RATIO_W_Z_EXP) / RATIO_W_Z_EXP * 100),
-            "deviation_Z_over_H_pct": float((mpf(str(r_zh_pred)) - RATIO_Z_H_EXP) / RATIO_Z_H_EXP * 100),
-            "deviation_W_over_H_pct": float((mpf(str(r_wh_pred)) - RATIO_W_H_EXP) / RATIO_W_H_EXP * 100),
+            "predicted_W_over_Z": fmt(r_wz_pred),
+            "predicted_Z_over_H": fmt(r_zh_pred),
+            "predicted_W_over_H": fmt(r_wh_pred),
+            "experimental_W_over_Z": fmt(RATIO_W_Z_EXP),
+            "experimental_Z_over_H": fmt(RATIO_Z_H_EXP),
+            "experimental_W_over_H": fmt(RATIO_W_H_EXP),
+            **{k: fmt(v) for k, v in dev.items()},
+            "_mp": {
+                "predicted_W_over_Z": r_wz_pred,
+                "predicted_Z_over_H": r_zh_pred,
+                "predicted_W_over_H": r_wh_pred,
+                **dev,
+            },
         }
     return results
 
@@ -170,11 +190,12 @@ def main():
         for particle, info in SM_TORUS_MAP.items():
             cands = compute_mass_candidates(info["n"], N, Q_0)
             candidates[particle] = cands
-            print(f"\n  {particle} = {info['label']}:  |J_{N}| = {cands['|J_N|']:.4f}")
-            print(f"    |J|·N·m_e        = {cands['|J_N|·N·m_e (MeV)']:>14.2f} MeV  (act: {float(info['mass_MeV']):>10.2f})")
-            print(f"    |J|·[N]_q·m_e    = {cands['|J_N|·[N]_q·m_e (MeV)']:>14.2f} MeV")
-            print(f"    |J|·[n]_q·m_e    = {cands['|J_N|·[n]_q·m_e (MeV)']:>14.2f} MeV")
-            print(f"    |J|·n·m_e        = {cands['|J_N|·n·m_e (MeV)']:>14.2f} MeV")
+            e = cands["_mp"]
+            print(f"\n  {particle} = {info['label']}:  |J_{N}| = {float(e['|J_N|']):.4f}")
+            print(f"    |J|·N·m_e        = {float(e['|J_N|·N·m_e (MeV)']):>14.2f} MeV  (act: {float(info['mass_MeV']):>10.2f})")
+            print(f"    |J|·[N]_q·m_e    = {float(e['|J_N|·[N]_q·m_e (MeV)']):>14.2f} MeV")
+            print(f"    |J|·[n]_q·m_e    = {float(e['|J_N|·[n]_q·m_e (MeV)']):>14.2f} MeV")
+            print(f"    |J|·n·m_e        = {float(e['|J_N|·n·m_e (MeV)']):>14.2f} MeV")
 
         # Compute cross-particle ratios
         ratios = cross_particle_ratios(candidates)
@@ -184,11 +205,12 @@ def main():
         for formula, r in ratios.items():
             if r is None:
                 continue
-            print(f"  {formula:<32} {r['predicted_W_over_Z']:>10.4f} "
-                  f"{r['experimental_W_over_Z']:>10.4f} "
-                  f"{r['deviation_W_over_Z_pct']:>+8.2f}  "
-                  f"{r['predicted_Z_over_H']:>11.4f} "
-                  f"{r['deviation_Z_over_H_pct']:>+8.2f}")
+            e = r["_mp"]
+            print(f"  {formula:<32} {float(e['predicted_W_over_Z']):>10.4f} "
+                  f"{float(RATIO_W_Z_EXP):>10.4f} "
+                  f"{float(e['deviation_W_over_Z_pct']):>+8.2f}  "
+                  f"{float(e['predicted_Z_over_H']):>11.4f} "
+                  f"{float(e['deviation_Z_over_H_pct']):>+8.2f}")
 
         all_results[f"N={N}"] = {
             "candidates": candidates,
@@ -204,25 +226,34 @@ def main():
         for formula, r in data["ratios"].items():
             if r is None:
                 continue
-            total_dev = (abs(r["deviation_W_over_Z_pct"])
-                         + abs(r["deviation_Z_over_H_pct"])
-                         + abs(r["deviation_W_over_H_pct"]))
+            e = r["_mp"]
+            total_dev = (abs(e["deviation_W_over_Z_pct"])
+                         + abs(e["deviation_Z_over_H_pct"])
+                         + abs(e["deviation_W_over_H_pct"]))
             best_results.append({
                 "N_key": N_key,
                 "formula": formula,
-                "total_deviation_pct": total_dev,
-                "W_over_Z_dev_pct": r["deviation_W_over_Z_pct"],
-                "Z_over_H_dev_pct": r["deviation_Z_over_H_pct"],
-                "W_over_H_dev_pct": r["deviation_W_over_H_pct"],
+                "total_deviation_pct": fmt(total_dev),
+                "W_over_Z_dev_pct": fmt(e["deviation_W_over_Z_pct"]),
+                "Z_over_H_dev_pct": fmt(e["deviation_Z_over_H_pct"]),
+                "W_over_H_dev_pct": fmt(e["deviation_W_over_H_pct"]),
+                "_mp": {
+                    "total_deviation_pct": total_dev,
+                    "W_over_Z_dev_pct": e["deviation_W_over_Z_pct"],
+                    "Z_over_H_dev_pct": e["deviation_Z_over_H_pct"],
+                    "W_over_H_dev_pct": e["deviation_W_over_H_pct"],
+                },
             })
 
-    best_results.sort(key=lambda x: x["total_deviation_pct"])
+    best_results.sort(key=lambda x: x["_mp"]["total_deviation_pct"])
     print(f"  {'rank':<5} {'N':<6} {'formula':<32} {'total |dev| (%)':>16} {'W/Z dev':>10} {'Z/H dev':>10} {'W/H dev':>10}")
     print(f"  {'-' * 95}")
     for i, b in enumerate(best_results[:10]):
         marker = "  ← BEST" if i == 0 else ""
-        print(f"  {i+1:<5} {b['N_key']:<6} {b['formula']:<32} {b['total_deviation_pct']:>16.2f}  "
-              f"{b['W_over_Z_dev_pct']:>+10.2f} {b['Z_over_H_dev_pct']:>+10.2f} {b['W_over_H_dev_pct']:>+10.2f}{marker}")
+        e = b["_mp"]
+        print(f"  {i+1:<5} {b['N_key']:<6} {b['formula']:<32} {float(e['total_deviation_pct']):>16.2f}  "
+              f"{float(e['W_over_Z_dev_pct']):>+10.2f} {float(e['Z_over_H_dev_pct']):>+10.2f} "
+              f"{float(e['W_over_H_dev_pct']):>+10.2f}{marker}")
 
     # Verdict
     print(f"\n{'=' * 80}")
@@ -230,16 +261,29 @@ def main():
     print(f"{'=' * 80}")
     if best_results:
         best = best_results[0]
+        best_total = best["_mp"]["total_deviation_pct"]
         print(f"Best match: {best['N_key']}, {best['formula']}")
-        print(f"  total |dev| across 3 ratios: {best['total_deviation_pct']:.2f}%")
-        if best["total_deviation_pct"] < 5.0:
+        print(f"  total |dev| across 3 ratios: {float(best_total):.2f}%")
+        if best_total < 5:
             print(f"  → STRONG validation of RT-chain SM mapping (within 5% on all ratios)")
-        elif best["total_deviation_pct"] < 20.0:
+        elif best_total < 20:
             print(f"  → moderate validation; structural pattern present but quantitative offset")
-        elif best["total_deviation_pct"] < 100.0:
+        elif best_total < 100:
             print(f"  → weak signal; ratios are in same order-of-magnitude but not quantitative")
         else:
             print(f"  → no quantitative match across any (N, formula); chain needs more structure")
+
+    # `_mp` is working state -- the mpf values every ratio, deviation and rank
+    # above was computed from. Drop it before serialization; each one already
+    # has a lossless string twin written by `fmt`.
+    for data in all_results.values():
+        for cands in data["candidates"].values():
+            cands.pop("_mp", None)
+        for r in data["ratios"].values():
+            if r is not None:
+                r.pop("_mp", None)
+    for b in best_results:
+        b.pop("_mp", None)
 
     # Witness
     witness = {
@@ -266,9 +310,9 @@ def main():
                 "H": str(M_H_MEV),
             },
             "experimental_ratios": {
-                "W_over_Z": float(RATIO_W_Z_EXP),
-                "Z_over_H": float(RATIO_Z_H_EXP),
-                "W_over_H": float(RATIO_W_H_EXP),
+                "W_over_Z": fmt(RATIO_W_Z_EXP),
+                "Z_over_H": fmt(RATIO_Z_H_EXP),
+                "W_over_H": fmt(RATIO_W_H_EXP),
             },
         },
         "all_results": all_results,
