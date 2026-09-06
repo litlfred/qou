@@ -1,11 +1,11 @@
 ---
 # qou-oots
 title: 'Phi_k weight family is unjustified: dim_q^2 misuses a quantum dimension where f^lambda*dim_q (Molien, Lean-proved exactly normalized) or y_lambda (Markov, canonical Frobenius pairing) may belong'
-status: completed
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T05:55:40Z
-updated_at: 2026-09-05T11:18:56Z
+updated_at: 2026-09-06T10:51:57Z
 ---
 
 ## 2026-09-05 — requirement derivation + prune + discriminator (in-progress; the CHOICE is open, the PRUNE is not)
@@ -635,3 +635,37 @@ So a route-1 rescue by re-choosing `N` is a change of **trace**, and the trace i
 Convention trap, confirmed: `ocneanu_N_lockin_probe`'s docstring writes the form **asymmetrically** (leading `q`) while `y_lambda_su_n` computes **balanced**; the arms differ by exactly that `q` (0.5431 / 0.8598 / 1.0635), so cross-reading them looks like a discrepancy and is not.
 
 Probe `computations/probes/ocneanu_n_lockin_crosscheck_probe.py` (3/3).
+
+
+### 2026-09-06 — REOPENED. `completed` violated owner rule 13a, which landed today.
+
+**Status changed `completed` → `in-progress`.** Not a new finding; a status this
+bean's own body already contradicted.
+
+**The rule.** `c1b63ac76d` (2026-09-06) added AGENTS.md §13a, owner directive,
+verbatim *"Don't close beans with open conjectures!!!"*: a bean tracking a
+conjecture or an unsupported identification **stays `todo` / `in-progress` until
+the mathematics closes — not until the *recording* of its openness is done.**
+
+**Why this bean qualifies, from three independent sources:**
+
+1. **Its own first heading** — *"requirement derivation + prune + discriminator
+   (in-progress; **the CHOICE is open**, the PRUNE is not)"*.
+2. **AGENTS.md:4426**, the notation-collision register: *"Whether `$\dim_q^2$` is
+   even the right numerator — against the Molien `$f^\lambda \dim_q(\lambda)$` …
+   — is **open**, bean `qou-oots`."* The repo's own instructions name this bean
+   as the live carrier of an open question while the bean says it is done.
+3. **This branch's audit §5**, under NOT established: *"**Which family Φ_k should
+   use.** §4e removes route 1 as a way to answer it; it does not answer it."*
+
+**What WAS closed, and it is real:** the prune (four families down to two), the
+requirement derivation (R1/R2/R3), the discriminator, the α_EM triage, the
+26 name-gate-missed triage, and — this branch — route 1, which closes
+**negatively**: both horns vanish on depth ≥ 2 at `N = 2`, so the route the audit
+ranked most decisive cannot answer. That is why the owner's Molien ruling was
+needed, and it is precisely *not* a derivation of the answer.
+
+**So the completion recorded the closing of every sub-task while the subject
+stayed open** — the exact shape §13a names. Routes 2 and 3 of the Φ_k audit §7
+are still live; §7 route 2 (a same-`n`, within-stratum observable) is the
+nearest actionable one.
