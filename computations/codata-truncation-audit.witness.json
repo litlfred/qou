@@ -1,25 +1,25 @@
 {
   "engine": "python-stdlib",
-  "computedAt": "2026-09-06T03:30:51.054298+00:00",
+  "computedAt": "2026-09-06T03:54:13.123739+00:00",
   "computation": "codata-truncation-audit",
   "scriptFile": "codata_truncation_audit.py",
   "description": "Hand-typed CODATA/substrate constants that are a short prefix of the canonical value, and so compute a different number. Separates that class from exact duplication, which is qou-46ke's original and much larger scope. Canonical values are read from codata_constants / q_parameter at run time, never typed here.",
   "min_shared_digits": 6,
   "truncated_total": 102,
   "truncated_files": 89,
-  "divergent_total": 94,
-  "divergent_files": 75,
+  "divergent_total": 93,
+  "divergent_files": 74,
   "rounded_total": 11,
   "rounded_files": 10,
-  "blocking_total": 207,
+  "blocking_total": 206,
   "by_constant": {
-    "B_4He": 18,
     "m_e": 14,
     "q0": 62,
     "q0_muon": 52,
     "q0_muon_live": 10,
     "B_2H": 23,
     "B_3H": 6,
+    "B_4He": 17,
     "B_3He": 9,
     "m_p": 9,
     "m_mu": 2,
@@ -28,15 +28,6 @@
   "exact_duplicates": 222,
   "declared_intentional": 1,
   "findings": [
-    {
-      "file": "computations/_marker_scope_probe.py",
-      "line": 3,
-      "constant": "B_4He",
-      "literal": "28.295673",
-      "canonical": "28.2956624",
-      "verdict": "DIVERGENT",
-      "use_instead": "codata_constants.AME_B_HE4_MEV_VALIDATION"
-    },
     {
       "file": "computations/a4_interface_trace_integration_all.py",
       "line": 33,
@@ -1893,8 +1884,8 @@
     }
   ],
   "scriptHash": "51603931ad63",
-  "scriptCommitSha": "53a013ca9a06ebd7c4a1cc75eb0efa3d4e0690fd",
-  "commitSha": "64f4fdc5a24623381103b79595f7da7a93a0386c",
+  "scriptCommitSha": "e6c156f568468d958ad42147478aea240451f911",
+  "commitSha": "7a00dfebf26e82c40c724ff5f1bd0a897c393466",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

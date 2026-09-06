@@ -84,6 +84,16 @@ from codata_constants import (  # noqa: E402
     AME_B_TRITIUM_MEV_VALIDATION,
 )
 
+# Precision must be raised BEFORE the module-scope mpf constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a literal
+# rounded there cannot be recovered by raising dps afterwards. Idempotent, and
+# main() calls it again harmlessly. Gate: mpf_import_time_dps_audit.py.
+#
+# This file was clean on origin/main only because it was invisible to that
+# gate; routing the AME dict to the registry surfaced the EXPECTED_RATIO and
+# RATIO_TOL literals below, which have always been built at dps=15.
+set_compute_dps()
+
 # AME2020 binding energies, MeV — READ from the registry, not retyped.
 # The three literals that stood here (2.224566 / 8.481798 / 7.718043) were
 # copies of the RETIRED _deprecated/ame-2020-binding-energies.witness.json,
