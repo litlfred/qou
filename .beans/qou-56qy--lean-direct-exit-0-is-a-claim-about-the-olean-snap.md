@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-05T07:09:21Z
-updated_at: 2026-09-05T13:00:02Z
+updated_at: 2026-09-06T11:48:32Z
 ---
 
 ## The claim
@@ -441,3 +441,62 @@ is in `QOU.ArchimedeanUniverse`, so the bare name still does not resolve — the
 import alone left it red, which the sweep caught.
 
 All 8 verified exit 0.
+
+
+## RESEED DONE 2026-09-06 — and the predecessor was never measured
+
+`lake-cache/qou-v4-24-0` @ `1c496980587`. Seeded from a full
+`lake build QOU UGB Fred2005` at the workspace root — **6484 jobs, 0 errors**,
+which is also the strongest gate `main` has had this session (stronger than
+either sweep).
+
+    mathlib  3471 oleans / 3471 traces
+    QOU      2702 / 2702
+    UGB        28 / 28
+    Fred2005    1 / 1
+    32416 files, 20 parts (~1.8 GB), 100% trace coverage
+
+**Verified by round-trip, not by the seeder saying so.** Parts streamed back
+through `tar tzf -` (32416 in = 32416 out, exit 0); three oleans extracted from
+the pushed branch hash byte-identical to local (`Mathlib/Tactic`,
+`Mathlib/Data/Real/Basic`, `QOU/MassTheory/AtomWordShadow`). Rehearsed on
+`lake-cache/qou-v4-24-0-test` first, kept as the record.
+
+**Payoff, measured after:** dirty closure UGB 22 -> **0**, Fred2005 1 -> **0**,
+QOU 33 remaining and all of those are commits that landed after the build began
+(`main` moved 291 commits), **0 RED**.
+
+### The documented seed path does not work — this is what does
+
+`lean-olean-cache-seed.sh` takes mathlib only from `$BUILT_FILE`
+(`/tmp/parbuild_built.txt`) and **nothing in this repo writes it**. Its own
+comment records the producer/consumer mismatch (PR #4705). That, not a missing
+build, is the `n_ml=0` refusal. Reconstructing the file from the build log
+(3471 modules, all 3471 oleans verified present) is what unblocked it.
+
+**And my earlier "sanctioned narrow path" was wrong in a way that mattered.**
+`SEED_PAPER=1` adds `content/*/lean/.lake/build` — the paper *build output*, not
+any mathlib — so `SEED_PAPER=1 CACHE_BRANCH=lake-cache/qou-v4-24-0 --push` on
+its own force-pushes a **mathlib-less** branch over the working one. The
+`n_ml` guard is the only thing between that and production. It was right to
+refuse and I was wrong to call it the path.
+
+### 🛑 The failure of discipline, recorded because it is mine
+
+**I overwrote the previous branch without measuring it.** Head `a2bf415e7a7`
+was force-pushed away and is now unreachable (GitHub refuses arbitrary-sha
+fetches). I verified what went in and what comes back out — and never what was
+displaced, then reasoned about it anyway.
+
+* **Withdrawn:** "the old seed was built lean-direct, so it carried the trace
+  gap." Unsupported. AGENTS.md records the 2026-08-31 seed at 6170/6172 oleans,
+  100% paired traces, which contradicts it, and I can no longer check.
+* My first attempt to repair this measured `15f6f00e89c` — an **intermediate
+  commit of my own push**. I nearly published a measurement of my own partial
+  seed as the baseline. The true displaced head is the left-hand sha on the
+  `(forced update)` line of the push log; read that, not an arbitrary earlier
+  commit.
+* **Next reseed: measure the outgoing branch first** and record the counts.
+
+The new branch is verified good on its own terms; the gap is that no
+before/after comparison exists.
