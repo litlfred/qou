@@ -22,8 +22,12 @@ imports one that did.
 ## What it does
 
 1. Computes the dirty closure over the whole library, per module — each olean's
-   own mtime against its own source's last commit date.  (Source mtimes are
-   useless: a fresh clone stamps every file with the checkout time.)
+   own mtime against the LATER of its source's last commit date and the source's
+   on-disk mtime.  Commit date alone is unsound in the narrow direction: after a
+   fetch+rebase the content arrives long after its commit date, so an olean built
+   in between reads as fresh (worked case in `dirty_closure`).  Source mtime alone
+   is unsound in the wide direction on a fresh clone.  The max() is safe: it can
+   only over-sweep.
 2. Rebuilds the closure from source, in topological order, into a shadow tree
    placed first on `LEAN_PATH`.
 3. **Continues past a failure**, marking that module's dependents `skipped`
@@ -106,8 +110,13 @@ def find_oleans() -> pathlib.Path:
 
 
 def load_graph() -> tuple[dict, dict]:
+    # `{LIB}/**/*.lean` does NOT match the library ROOT file `{LIB}.lean`, which
+    # sits one level up -- so the root module was outside the sweep's population
+    # entirely, under either freshness rule.  Live instance: main's `545efd2c521`
+    # added `import QOU.Mass.CrossTermOrderZeroComponentCount` to `QOU.lean`, the
+    # 883-import root, and NOTHING in this repo checked that file.  Glob both.
     mod2path = {str(p.relative_to(PKG).with_suffix("")).replace("/", "."): p
-                for p in PKG.glob(f"{LIB}/**/*.lean")}
+                for p in [*PKG.glob(f"{LIB}/**/*.lean"), *PKG.glob(f"{LIB}.lean")]}
     imports = {}
     for m, p in mod2path.items():
         imports[m] = [i for i in re.findall(r"^import\s+(\S+)", p.read_text(), re.M)
@@ -141,7 +150,43 @@ def dirty_closure(mod2path, imports, oleans):
             never_built.add(m)
             continue
         c = times.get(str(p.relative_to(ROOT)))
-        if c is None or c > o.stat().st_mtime:
+        # Take the LATER of the source's last-commit date and its on-disk mtime.
+        #
+        # Commit date alone is UNSOUND, and the hole is the normal case after a
+        # fetch+rebase: a commit dated 06:36 UTC arrives in this tree at 08:0x,
+        # and an olean built at 07:24 -- from the OLD content -- is then "newer
+        # than the commit" and judged clean.
+        #
+        # The ordering is real and routine -- upstream commit 06:36 UTC, local olean
+        # 07:24 built from the tree BEFORE that commit arrived, content arriving at
+        # 08:0x on fetch+rebase -- but NO instance of it is currently reachable by
+        # this sweep, and the case that looked like one is not: `QOU.lean` has
+        # exactly that ordering, and it was missed because the module ENUMERATION
+        # excluded the library root (see `load_graph`), not because of this rule.
+        # So this is cheap insurance in the safe direction, not a fix for an
+        # observed miss -- do not cite it as the latter.
+        #
+        # The corollary that makes instances rare: if a module's last commit
+        # PREDATES its olean and no later commit touched it, the on-disk content IS
+        # what the olean was built from, so it is genuinely clean and a newer mtime
+        # is churn (branch switching rewrites the mtime of every differing file).
+        # Only content arriving out of commit-date order -- a fetch of upstream
+        # commits dated before your last local build -- opens the hole.
+        #
+        # The docstring's objection to mtimes -- "a fresh clone stamps every file
+        # with the checkout time" -- is a statement about COST, not correctness:
+        # it makes the closure too WIDE there, never too narrow.  Wide is the safe
+        # direction for a gate; narrow is the defect.  Measured on this container
+        # the max() widens the root-dirty set 12 -> 80 of 2712 and the QOU closure
+        # 16 -> 201, i.e. 311 s rather than 32 s -- minutes, not hours.
+        #
+        # NOT sound in the other direction either: branch switching rewrites the
+        # mtime of every file that differs, so some of that widening is churn on
+        # content the olean was in fact built from.  A content hash recorded beside
+        # each olean would decide it exactly; a RESTORED olean carries no such hash,
+        # so that is a larger change than this one.
+        src = max(c, p.stat().st_mtime) if c is not None else None
+        if src is None or src > o.stat().st_mtime:
             changed.add(m)
 
     sys.setrecursionlimit(100000)
