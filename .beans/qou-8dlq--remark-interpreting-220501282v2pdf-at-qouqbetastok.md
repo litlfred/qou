@@ -1,11 +1,11 @@
 ---
 # qou-8dlq
 title: Remark interpreting 2205.01282v2.pdf at QOU.QBeta.StokesDTBPSBridge
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:35:19Z
-updated_at: 2026-08-21T17:04:46Z
+updated_at: 2026-09-06T09:10:25Z
 ---
 
 Record what would have to be checked before this changes any epistemic tier: whether the knot complements / 3-manifolds the folio's A_omega argument uses fall inside this document's plumbed, negative-definite-linking-matrix class. If they do not, the GPPV identification stays conjectural for the folio's purposes and the bridge's class fields must remain as they are.
@@ -25,3 +25,5 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
   Witten-Reshetikhin-Turaev invariants and homological blocks for plumbed homology spheres
 
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [murakami-y2022] as the citation key when you do it.
+
+2026-09-06: RECORDED in stokes-dt-bps-bridge.md, citing [murakami-y2022]. The class check: Murakami-Y's theorem is for CLOSED plumbed 3-manifolds with negative-definite linking matrix; S³∖K for hyperbolic K is cusped and not plumbed, so 4₁ and 5₂ are OUTSIDE the class and dt_eq_bps stays an assumed class field. Epistemic tier unchanged. Bean stays OPEN per owner rule (AGENTS.md 13a): its subject is the bridge's tier, which is an open conjecture.
