@@ -31,6 +31,10 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    M_E_MEV as _M_E_MEV_CODATA,
+)
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 # Substrate modulus from the registry, not re-typed here: the literal was
@@ -39,7 +43,11 @@ set_compute_dps()
 from q_parameter import Q_MP  # noqa: E402
 Q0 = Q_MP
 QMU = mpf("1.110037")
-B_DEU_OVER_ME = mpf("2.224573") / mpf("0.510999")
+# Both operands were hand-typed (bean qou-zv46). `2.224573` is +6.8 eV
+# above the vendored AME2020 deuteron binding 2.2245662, and `0.510999`
+# is 0.1 ppm off CODATA m_e 0.51099895069 -- small in isolation, but this
+# is a RATIO used as a scale target, so both errors land in it directly.
+B_DEU_OVER_ME = AME_B_DEUTERON_MEV_VALIDATION / _M_E_MEV_CODATA
 KSER, JSUM = 60, 90
 HERE = pathlib.Path(__file__).resolve().parent
 DEU = HERE.parent / "atom-chi-rust-d.witness.json"

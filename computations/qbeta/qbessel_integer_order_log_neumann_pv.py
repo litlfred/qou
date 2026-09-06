@@ -44,10 +44,18 @@ mp.dps = 60
 import sys as _sys, pathlib as _pl  # noqa: E402
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parent.parent))
 import _path_bridge  # noqa: F401,E402
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    M_E_MEV as _M_E_MEV_CODATA,
+)
 from q_parameter import Q_MP  # noqa: E402
 Q0 = Q_MP
 QMU = mpf("1.110037")
-B_DEU_OVER_ME = mpf("2.224573") / mpf("0.510999")
+# Both operands were hand-typed (bean qou-zv46). `2.224573` is +6.8 eV
+# above the vendored AME2020 deuteron binding 2.2245662, and `0.510999`
+# is 0.1 ppm off CODATA m_e 0.51099895069 -- small in isolation, but this
+# is a RATIO used as a scale target, so both errors land in it directly.
+B_DEU_OVER_ME = AME_B_DEUTERON_MEV_VALIDATION / _M_E_MEV_CODATA
 HERE = pathlib.Path(__file__).resolve().parent
 DEU = HERE.parent / "atom-chi-rust-d.witness.json"
 

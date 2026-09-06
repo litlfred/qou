@@ -40,6 +40,7 @@ from pathlib import Path as _Path
 # `_path_bridge` sets every path this file needs. Bean `qou/ti1n`.
 sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge  # noqa: E402, F401
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 
 import mpmath as mp  # noqa: E402
 
@@ -55,7 +56,10 @@ def log(msg):
 
 # β-decay Q-value calibration E₀ (free-neutron), per prop:categorical-mass-markov.
 E_0_MEV = 0.78233341
-B_D_AME_MEV = 2.224573  # AME2020 deuteron binding (audit comparison only)
+# `2.224573` was hand-typed, +6.8 eV above the vendored AME2020 deuteron
+# binding 2.2245662 (bean qou-zv46). Audit comparison only, but a
+# comparison boundary is exactly where a drifted reference misleads.
+B_D_AME_MEV = float(AME_B_DEUTERON_MEV_VALIDATION)
 
 
 def main():

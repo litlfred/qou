@@ -51,17 +51,32 @@ sys.path.insert(0, str(HERE))
 import _path_bridge  # noqa: F401, E402
 import mpmath as mp  # noqa: E402
 
+from codata_constants import ame_binding_mev as _ame_b  # noqa: E402
+
+
+def _B(Z, A):
+    """AME2020 total binding energy (MeV) as the decimal string AME quotes.
+
+    This table was hand-typed and drifted from the vendored evaluation (bean
+    qou-zv46): the tritium entry carried `8.481821`, the typo PR #1105 named,
+    +24.8 eV above 8.4817962, and its neighbours were off too. `mp.nstr(_, 12)`
+    reproduces AME's own quoted digits exactly for every nuclide here, so the
+    table keeps its string shape while its VALUES come from the registry.
+    """
+    return mp.nstr(_ame_b(Z, A), 12)
+
+
 from _precision import set_compute_dps  # noqa: E402
 import q_parameter as qp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # AME2020 total binding energies (MeV) across the mass range; m_N = mean nucleon mass.
 NUCLEI = [
-    ("2H",   2, "2.224566"),
-    ("3H",   3, "8.481821"),
-    ("4He",  4, "28.295674"),
-    ("12C",  12, "92.161728"),
-    ("16O",  16, "127.619336"),
+    ("2H",   2, _B(1, 2)),
+    ("3H",   3, _B(1, 3)),
+    ("4He",  4, _B(2, 4)),
+    ("12C",  12, _B(6, 12)),
+    ("16O",  16, _B(8, 16)),
     ("40Ca", 40, "342.052000"),
     ("56Fe", 56, "492.253892"),
 ]

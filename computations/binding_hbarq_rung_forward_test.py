@@ -93,6 +93,21 @@ sys.path.insert(0, str(HERE))
 import _path_bridge  # noqa: F401, E402
 import mpmath as mp  # noqa: E402
 
+from codata_constants import ame_binding_mev as _ame_b  # noqa: E402
+
+
+def _B(Z, A):
+    """AME2020 total binding energy (MeV) as the decimal string AME quotes.
+
+    This table was hand-typed and drifted from the vendored evaluation (bean
+    qou-zv46): the tritium entry carried `8.481821`, the typo PR #1105 named,
+    +24.8 eV above 8.4817962, and its neighbours were off too. `mp.nstr(_, 12)`
+    reproduces AME's own quoted digits exactly for every nuclide here, so the
+    table keeps its string shape while its VALUES come from the registry.
+    """
+    return mp.nstr(_ame_b(Z, A), 12)
+
+
 from _precision import set_compute_dps  # noqa: E402
 from _li_2_q_util import linking_weight_family_a  # noqa: E402
 from knot_volumes import VOL_7_SQ_1_MPF  # noqa: E402
@@ -102,9 +117,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 # AME2020 binding energies (MeV) and the arc's committed 𝓑_K interface volumes
 # (docs/audits/2026-07-11-bk-crossing-coordination-multiplicity.md; bk_crossing_coordination.py).
 ISO = {
-    "3H":  dict(A=3, B="8.481821",  vol="8.286316817806593", link="8_11"),
-    "3He": dict(A=3, B="7.718041",  vol="7.327724753417752", link="L6a4"),
-    "4He": dict(A=4, B="28.295674", vol="7.327724753417752", link="L6a4-base"),
+    "3H":  dict(A=3, B=_B(1, 3),  vol="8.286316817806593", link="8_11"),
+    "3He": dict(A=3, B=_B(2, 3),  vol="7.327724753417752", link="L6a4"),
+    "4He": dict(A=4, B=_B(2, 4), vol="7.327724753417752", link="L6a4-base"),
 }
 B_ALPHA_ALPHA = "2.416"   # single α–α bond residual (¹²C/¹⁶O simplex fit)
 

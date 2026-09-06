@@ -75,6 +75,21 @@ sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE.parent))
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge (substrate/ subdir)
+
+from codata_constants import ame_binding_mev as _ame_b  # noqa: E402
+
+
+def _B(Z, A):
+    """AME2020 total binding energy (MeV) as the decimal string AME quotes.
+
+    This table was hand-typed and drifted from the vendored evaluation (bean
+    qou-zv46): the tritium entry carried `8.481821`, the typo PR #1105 named,
+    +24.8 eV above 8.4817962, and its neighbours were off too. `mp.nstr(_, 12)`
+    reproduces AME's own quoted digits exactly for every nuclide here, so the
+    table keeps its string shape while its VALUES come from the registry.
+    """
+    return mp.nstr(_ame_b(Z, A), 12)
+
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
@@ -91,10 +106,10 @@ T0 = time.time()
 # CODATA / AME2020 -- OUTPUT COMPARISON TARGETS ONLY, never an input.
 M_E_MEV = "0.51099895069"
 AME_B_MEV = {
-    "deuteron": "2.224566",
-    "tritium": "8.481821",
-    "helium-3": "7.718043",
-    "helium-4": "28.295673",
+    "deuteron": _B(1, 2),
+    "tritium": _B(1, 3),
+    "helium-3": _B(2, 3),
+    "helium-4": _B(2, 4),
 }
 # (Z, N) for atom_braid_word_3A; n_strands = 3*(Z+N)
 ATOMS = {

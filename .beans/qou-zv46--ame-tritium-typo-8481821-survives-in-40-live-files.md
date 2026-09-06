@@ -136,3 +136,58 @@ All 30 producers now emit different numbers, so their witnesses are stale by
 construction. **Not regenerated here**: the `hadron_knot_table` run (bean
 qou-uiut) holds the checkout, and this campaign does not run two producers
 concurrently. Queued.
+
+---
+
+## Update 2026-09-06 (second pass) — all 23 remaining sites routed; 0 literals left
+
+The tree now contains **zero** `8.481821` / `7.718058` / `2.224573` literal
+constants outside `_deprecated/`, verified by AST over every tracked `.py`.
+
+Handled by form, because a string is consumed differently at every site:
+
+- **6 `qbeta/qbessel_*`** — `B_DEU_OVER_ME = mpf("2.224573") / mpf("0.510999")`
+  → `AME_B_DEUTERON_MEV_VALIDATION / M_E_MEV`. **Both** operands were typed:
+  the binding +6.8 eV, and m_e 0.1 ppm off CODATA. Small alone, but this is a
+  RATIO used as a scale target, so both land in it. Measured shift: 4.3533803 →
+  4.3533675 (3 ppm). Their claim is "within striking distance of ~4.35", so the
+  conclusion is untouched — the number is simply now sourced.
+- **9 whole AME tables** routed rather than just their tritium entry.
+  `mass_rung`, `closed_form_C_vs_D` and friends carried 5–7 nuclides each and
+  the neighbours were off too (⁴He +10.6 eV, ⁶Li −538.8 eV, ⁷Li +549.7 eV).
+  Fixing only the typo would leave a half-corrected table — the same argument
+  that pulled the deuteron in.
+- **String tables** keep their string shape via a local
+  `_B(Z, A) = mp.nstr(ame_binding_mev(Z, A), 12)`. Checked first that `nstr`
+  at 12 digits reproduces AME's own quoted digits **exactly** for every
+  nuclide used (²H…¹⁶O), so nothing is lost in the rendering.
+- **2 Decimal-only modules** (`binding_row_length_stratification`,
+  `two_row_vs_higher_row_binding_split`) keep all arithmetic in `Decimal` at
+  prec 60; mpmath appears solely to read the registry. Their NO-FLOAT64 note is
+  about the arithmetic, not about forbidding an import.
+- **`qou-mass/.../canonical_tower.py`** — import scoped inside
+  `if __name__ == "__main__"`, because `codata_constants` is a SIBLING module
+  resolvable only under direct invocation there; a module-level import would
+  have broken the package path for no gain.
+
+### A regression I introduced and caught
+
+The `_B` helper was first inserted after `import mpmath as mp`, which in 4
+files sits *above* `import _path_bridge` — so `from codata_constants import`
+ran before the path existed and those 4 producers failed to import at all.
+Caught by actually importing every edited file under a write guard, not by
+reading the diff. Helper moved below the bridge; all 4 import again.
+
+Attribution checked rather than assumed: the same import harness was run
+against HEAD in a clean `git worktree`, and the 4 remaining failures
+(3 × `markov_weights_symbolic`, an artifact of `spec_from_file_location` not
+reproducing direct invocation, and `mu3_target_robustness_audit_probe` which
+WRITES at import) are **identical at HEAD** — pre-existing, not regressions.
+
+Verified: 0 literals tree-wide, 0 dangling names, suites 64 + 145 green.
+
+## Remaining — regeneration only
+
+All source sites are done. What is left is the witness debt: ~50 producers now
+emit different numbers. Blocked on the `hadron_knot_table` run (bean qou-uiut)
+holding the checkout — this campaign does not run two producers at once.

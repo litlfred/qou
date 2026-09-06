@@ -70,6 +70,21 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+
+from codata_constants import ame_binding_mev as _ame_b  # noqa: E402
+
+
+def _B(Z, A):
+    """AME2020 total binding energy (MeV) as the decimal string AME quotes.
+
+    This table was hand-typed and drifted from the vendored evaluation (bean
+    qou-zv46): the tritium entry carried `8.481821`, the typo PR #1105 named,
+    +24.8 eV above 8.4817962, and its neighbours were off too. `mp.nstr(_, 12)`
+    reproduces AME's own quoted digits exactly for every nuclide here, so the
+    table keeps its string shape while its VALUES come from the registry.
+    """
+    return mp.nstr(_ame_b(Z, A), 12)
+
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
@@ -94,10 +109,10 @@ NUCLEAR_MASS = {
 
 # (Z, N, knot, ρ_F=ν_SDP, Vol_hyp, B_AME MeV); ρ_F<0 ⇒ extrapolated
 ATOMS = [
-    (1, 1, "6_2",   1, "4.400833", "2.224566"),
-    (1, 2, "8_11",  2, "8.286300", "8.481821"),
-    (2, 1, "L6a4",  2, "7.327700", "7.718058"),
-    (2, 2, "magic", -1, None,      "28.295673"),  # no census knot
+    (1, 1, "6_2",   1, "4.400833", _B(1, 2)),
+    (1, 2, "8_11",  2, "8.286300", _B(1, 3)),
+    (2, 1, "L6a4",  2, "7.327700", _B(2, 3)),
+    (2, 2, "magic", -1, None,      _B(2, 4)),  # no census knot
 ]
 NAMES = {(1, 1): "2H", (1, 2): "3H", (2, 1): "3He", (2, 2): "4He"}
 

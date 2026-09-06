@@ -35,6 +35,12 @@ import sys as _sys  # noqa: E402
 from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR, q_muon_at  # noqa: E402
 
@@ -60,11 +66,15 @@ Q0_MUON = q_muon_at(70)
 Q0_PROTON = mp.mpf(Q_50_DIGIT_STR)
 
 # ── AME2020 connected binding energies (MeV), from the #3943 committed witness ──
+# Whole table routed to the vendored AME2020 registry (bean qou-zv46).
+# Every entry was hand-typed and every one was off: 2H -0.2 eV,
+# 3H +24.8 eV (the typo PR #1105 named), 3He +16.7 eV, 4He +1.4/+10.6 eV.
+# Fixing only the tritium typo would leave a half-corrected table.
 B_AME = {
-    "2H":  mp.mpf("2.224566"),
-    "3H":  mp.mpf("8.481821"),
-    "3He": mp.mpf("7.718058"),
-    "4He": mp.mpf("28.295673"),
+    "2H":  AME_B_DEUTERON_MEV_VALIDATION,
+    "3H":  AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 # Coulomb energy of the A=3 mirror (³He), two standard models (from #3990):
 E_C_3HE_SPHERE = mp.mpf("0.8487393706040641")   # 3/5 uniform charged sphere

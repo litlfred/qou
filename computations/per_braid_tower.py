@@ -63,6 +63,7 @@ sys.path.insert(0, str(HERE / "substrate"))
 warnings.filterwarnings("ignore")
 
 import mpmath as mp  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION  # noqa: E402
 
 from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV as M_E  # noqa: E402
@@ -119,7 +120,9 @@ def deuteron_tower(dps: int = 50) -> dict:
 
 if __name__ == "__main__":
     r = deuteron_tower()
-    B_AME = 2.224573
+    # `2.224573` was hand-typed, +6.8 eV above the vendored AME2020
+    # deuteron binding 2.2245662 (bean qou-zv46).
+    B_AME = float(AME_B_DEUTERON_MEV_VALIDATION)
     print(f"Deuteron per-braid brane tower  (E₀={r['E0_MeV']:.4f} MeV, "
           f"z²={r['z2']:.5f}, ℏ_q² tail={r['hbar_q_sq_tail']:.5f}/level)")
     print(f"  tr_M_free={r['tr_M_free']:.6f}  tr_M_atom={r['tr_M_atom']:.6f}  "

@@ -46,12 +46,31 @@ getcontext().prec = 60
 
 HERE = Path(__file__).resolve().parent
 
+# The AME table below is READ from the vendored evaluation, not typed. It used
+# to be four Decimal literals and every one had drifted (bean qou-zv46):
+# deuteron -0.2 eV, tritium +24.8 eV (the typo PR #1105 named), helium-3
+# +1.9 eV, helium-4 +10.6 eV.
+#
+# mpmath appears here ONLY to read the registry and render the value as the
+# decimal string AME itself quotes; all arithmetic in this module stays
+# Decimal at prec 60, which is what its NO-FLOAT64 note is about.
+import sys as _sys  # noqa: E402
+_sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
+import mpmath as _mp  # noqa: E402
+from codata_constants import ame_binding_mev as _ame_b  # noqa: E402
+
+
+def _B(Z, A):
+    """AME2020 total binding energy (MeV) as Decimal, via the registry."""
+    return Decimal(_mp.nstr(_ame_b(Z, A), 12))
+
+
 M_E_MEV = Decimal("0.51099895069")
 AME_B = {
-    "deuteron":  Decimal("2.224566"),
-    "tritium":   Decimal("8.481821"),
-    "helium-3":  Decimal("7.718043"),
-    "helium-4":  Decimal("28.295673"),
+    "deuteron":  _B(1, 2),
+    "tritium":   _B(1, 3),
+    "helium-3":  _B(2, 3),
+    "helium-4":  _B(2, 4),
 }
 WITNESS = {
     "deuteron":  "chi-deuteron-h6-at-q0-50dps.witness.json",

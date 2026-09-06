@@ -33,6 +33,12 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()
@@ -53,8 +59,12 @@ MEAS_R0_3HE = mp.sqrt(mp.mpf(5) / 3) * mp.mpf("1.9661") / mp.mpf(3) ** (mp.mpf(1
 M_E = mp.mpf(str(M_E_MEV))
 
 # AME2020 binding energies (MeV) — the comparison boundary, not model input.
-B_AME = {"2H": mp.mpf("2.224566"), "3H": mp.mpf("8.481821"),
-         "3He": mp.mpf("7.718058"), "4He": mp.mpf("28.295661")}
+# Whole table routed to the vendored AME2020 registry (bean qou-zv46).
+# Every entry was hand-typed and every one was off: 2H -0.2 eV,
+# 3H +24.8 eV (the typo PR #1105 named), 3He +16.7 eV, 4He +1.4/+10.6 eV.
+# Fixing only the tritium typo would leave a half-corrected table.
+B_AME = {"2H": AME_B_DEUTERON_MEV_VALIDATION, "3H": AME_B_TRITIUM_MEV_VALIDATION,
+         "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 Z_OF = {"2H": 1, "3H": 1, "3He": 2, "4He": 2}
 A_OF = {"2H": 2, "3H": 3, "3He": 3, "4He": 4}
 
