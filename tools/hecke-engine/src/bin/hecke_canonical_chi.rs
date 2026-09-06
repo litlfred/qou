@@ -33,6 +33,28 @@
 //! Output: per-partition χ^λ values (unnormalised — caller divides
 //! by `averaging_denominator = 2^k` for `k` averaged crossings).
 //!
+//! # 🛑 COLOUR-BLIND: not the canonical convention for A ≥ 2
+//!
+//! The wire format above admits exactly three crossing kinds
+//! (`sign ∈ {-1, 0, +1}`), and the averaged one is the plain half-sum
+//! `σ − (h/2)·1`. QOU's canonical p–n interface crossing is
+//! `σ − h·(1/2 − δ/4)·1` with `δ = flavor_split_leading(q₀)` — owner ruling
+//! R3, `bring_color_weighted`. **There is no encoding for it here**, so a
+//! caller building an atomic braid with A ≥ 2 silently gets the colour-blind
+//! crossing at the p–n interface.
+//!
+//! Measured 2026-09-05 (bean `qou-49vn`): against `atom_braid_word_3A` the two
+//! words differ at **exactly one letter** — index 11 for D and T, index 23 for
+//! ³He, none for a single nucleon — and the resulting traces differ by one
+//! shared constant, `rust/peel = 0.99985852535684389…`, identical to 17
+//! significant figures across all three composites. That is 1.41475e-4
+//! relative, eleven orders above the 1 ppQ L1 target, so it is not round-off.
+//!
+//! A = 1 (proton, neutron) has no p–n interface and agrees with the markov
+//! peel to ~1.7e-18. **Do not use this binary as a colour-weighted arbiter for
+//! A ≥ 2.** Teaching the wire format the fourth crossing kind is tracked in
+//! `qou-49vn` and moves numbers, so it needs owner sign-off.
+//!
 //! Usage:
 //! ```text
 //! hecke-canonical-chi --in spec.json --out witness.json
@@ -237,9 +259,13 @@ fn run(args: Args) -> io::Result<()> {
     let out = Output {
         computation: "hecke-canonical-chi",
         description:
-            "Canonical χ^λ at H_n for an atomic braid via direct \
+            "COLOUR-BLIND χ^λ at H_n for an atomic braid via direct \
              Hoefsmit seminormal evaluation with averaged-crossing \
-             expansion.  Default path is MPFR at `--dps` (>=50 per \
+             expansion.  NOT the canonical convention for A >= 2: the \
+             wire format has no encoding for the colour-weighted p-n \
+             interface crossing (sigma - h*(1/2 - delta/4)) that owner \
+             ruling R3 makes canonical, so composites are off by \
+             1.41475e-4 relative (bean qou-49vn).  A = 1 is unaffected.  Default path is MPFR at `--dps` (>=50 per \
              the QOU mpfr-50dps convention); legacy f64 fallback \
              available via `--dps 0`.  Avoids the broken tensor- \
              product LR composition of `hecke-tr-m-wenzl-lr`; this \
