@@ -222,6 +222,9 @@ Both sides of this arc now point at the same place, independently:
   `RamificationParityMonodromy` locates the missing structure as q-jet-bundle /
   q-D-module symbol calculus, absent from both Mathlib and this corpus.
 
+> 🛑 **Scope correction (2026-09-06, bean `qou-p6m1`).** The claim above bundles two objects. The **q-D-module symbol calculus is PRESENT** — `QOU.Machinery.QuantumTorusSymbol` (QDM-1/2, 19 decls, sorry-free, on `main` by 2026-07-24) and `QOU.Mathlib.RamifiedShiftCalculus` (the same calculus at the ramified pole `z = z_c + t²`, sorry-free, 2026-09-03, and it *imports* `RamificationParityMonodromy`, the file that declared it absent). Only the **q-jet bundle over `Σ`** is absent. **W1 (construct `D_q` from `Σ`) still stands** — this is a scoping split, not a downgrade.
+
+
 Two independent routes arriving at "the classical object is the wrong one; the
 q-deformed object is where the content is" is the strongest thing in this
 audit. **It is an observation about where two negatives agree, not a derivation**,
