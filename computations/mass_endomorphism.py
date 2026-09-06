@@ -24,8 +24,44 @@ Proton (B₃ × uud + 2 gluon, 3 strands, 2 generators):
   11 crossings from 4-channel γγ→qq̄ production.
   Cross-term z² · Φ_q(V̂₀V̂₁) ≈ 82,000  (one pair for n = 2).
 
-Result: m_p/m_e ≈ 1870 (CODATA: 1836, error 1.8%).
-Zero fitted parameters.  Inputs: q₀ and m_e only.
+🛑 STALE RESULT CLAIM, CORRECTED 2026-09-06 (bean `qou-oots`).  This docstring
+read:
+
+    Result: m_p/m_e ≈ 1870 (CODATA: 1836, error 1.8%).
+    Zero fitted parameters.  Inputs: q₀ and m_e only.
+
+**That is contradicted by this module's own committed witness and by its own
+live run.**  `mass-endomorphism.witness.json` records
+
+    ratio      = 9310.32782814957
+    codata     = 1836.152
+    error_pct  = 407.0564870527914
+
+and a fresh run reproduces it, additionally printing `m_n/m_p = 0.014601`
+(CODATA 1.001378, error 98.54 %) and `Δm = -4688.11 MeV` against CODATA's
++1.293 MeV — a sign error as well as a magnitude one.  So the true figure is
+**407 %, not 1.8 %**: stale by 5× on the value and by 226× on the error.
+
+This was already visible and not acted on:
+`docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md` tabulates
+`m_p/m_e via per-braid tower = 2.4845` beside "paper claims 1870", i.e. a prior
+agent found the docstring did not reproduce and recorded a THIRD number rather
+than correcting the source.  `docs/audits/2026-05-17-...-mass-endo.md` still
+repeats "m_p/m_e ≈ 1870" in a heading.
+
+Why it matters more than an ordinary stale number: the deleted line paired the
+figure with **"Zero fitted parameters"**, which is exactly the kind of claim
+that gets quoted onward, and this module has eight importers.
+
+The route is **not** a working prediction of `m_p/m_e`.  What the module is
+still good for is the structure it exhibits — the tower shape, the z²-weighted
+cross-term from the Markov factorization, and the atomic `tr_M` ascent it prints
+— none of which depends on the ratio landing anywhere near CODATA.
+
+Inputs remain q₀ and m_e only; no parameter is fitted.  That half of the
+deleted claim stands, and is worth keeping precisely because the number is bad:
+an honest parameter-free miss is a result, and it is the fitted kind of
+agreement the corpus forbids.
 
 Usage:
     python3 computations/mass_endomorphism.py
