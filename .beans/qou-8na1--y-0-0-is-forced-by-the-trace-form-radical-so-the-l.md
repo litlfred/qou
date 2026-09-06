@@ -469,3 +469,251 @@ The fact itself (exact in ℚ(q), 18/18, plus `y_0_eq_zero_of_radical` in Lean)
 is unchanged and remains this bean's durable contribution.
 
 Nothing left to adjudicate. Closing.
+## 2026-09-05 (second) — the mechanism reduces to the CONTENT SUM, and my own
+## reduction carried a tie defect
+
+Two further findings, the second correcting the first.
+
+**The reduction (#6847, merged `620794f52b`).**  `w` is a strictly increasing
+function of the content sum `c(lambda)` — **49/49 pairs, every pair on every
+row, zero ties**.  So ordering the survivors by `w` IS ordering them by
+`c(lambda)`, and
+
+    conc(w, |chi|)  ==  conc(c(lambda), |chi|)
+
+**identically** row by row: `0,0,1,2,1,5` against `0,0,1,2,1,5`.  The
+anti-correlation is therefore not a fact about the Markov weight at all — it is
+content-vs-character, with `w` wearing it as a monotone reparametrisation.  Note
+`w` is NOT simply `q^c`: the residual `w·q^-c` is unimodal and moves 12.9x across
+n=12, so the `q^c` factor dominates a non-monotone correction.
+
+**The tie defect, mine, in that same PR.**  `concordant()` returned
+`(concordant, ALL pairs)`, so a pair TIED in one variable landed in the
+denominator and never the numerator — silently read as discordant.  There is
+exactly **one** tie in the whole sample, in `dim`: at n = 6, `[5,1]` and `[3,3]`
+both have `f^lambda = 5`.  It sits in precisely the row #6847 then reported as
+the anomaly.  Corrected:
+
+    dim -> |chi|     43/49 = 87.8 %   ->   43/48 = 89.6 %
+    c(lambda) -> dim  6/49 = 12.2 %   ->    6/48 = 12.5 %
+    row 2 (n=6)        3/6 = 50 %     ->     3/5 = 60 %
+
+So #6847's "n = 6 is UNCORRELATED there" is **wrong** — it is weakly positive,
+and n=6 is not an anomaly at all, just the weakest row on five pairs.  Per row
+the link runs 1/1, 1/1, 3/5, 9/10, 10/10, 19/21: never anti-correlated anywhere.
+
+**What the defect did NOT touch, and why that was not luck.**  The two EXACT
+claims involve only `c(lambda)`, `w` and `|chi|` — all three tie-free on every
+row.  Only the two REPORTED-not-asserted `dim` ratios moved.  #6847 deliberately
+asserted just the exact links and reported the rest as measurements, and that is
+the reason a sampling defect could land without invalidating a claim.
+Tie-freeness of `c(lambda)`/`w`/`|chi|` is **now asserted**, which is the guard
+that would have caught this.
+
+**SETTLED NEGATIVELY: the dim -> |chi| link is STATISTICAL, not structural.**
+#6847 left open whether it is exact-with-a-degenerate-case or only statistical.
+The corpus already contained the answer: rows 3 and 4 are two atoms at n = 9 with
+the **identical dimension multiset** {1, 8, 27, 42, 48}, and they disagree —
+
+    row 4  |chi| = 2.394, 6.568, 7.569, 7.697, 16.067   monotone in dim, 10/10
+    row 3  |chi| = 1.577, 3.741, 3.191, 4.425, 10.169   [7,2] out of order, 9/10
+
+A partition-only law cannot return two answers for the same partitions, so there
+is **no exact structural statement of this link to be found**.  Asserted.
+
+The five discordant pairs sit on just three partitions — `[4,2]` at n=6 (two),
+`[7,2]` at n=9 (one), `[7,5]` at n=12 (two) — each the LARGER-dimension member
+carrying an out-of-order character.  Not a near-zero and not a sign flip: every
+character in every row is positive, and `[7,2]`'s 3.191 sits mid-range in a row
+spanning 1.577 to 10.169.
+
+**Now open, and it is a smaller question than before:** WHY those three
+partitions carry an out-of-order character for those atoms and not for others.
+Five identified pairs on three named partitions — not a percentage, and n=6 is
+no longer part of it.
+
+## 2026-09-05 (third) — the selection MARGIN is thin, which weakens the
+## atom-independence headline
+
+Two more measurements.  The second matters more than anything above it.
+
+**REFUTED, so nobody re-runs it: the q-dimension is not the missing notion.**
+The obvious repair for the imperfect `dim -> |chi|` link is that `f^lambda` is
+the CLASSICAL dimension while a Hecke character's natural size is the
+q-dimension.  Measured at the proton `q_0` by the q-hook-length formula:
+
+    f^lambda                                43/48 = 89.6 %
+    dim_q, [m] = (q^m - 1)/(q - 1)          43/49 = 87.8 %
+    dim_q, [m] = (q^(m/2) - q^(-m/2))/...   44/49 = 89.8 %
+    q^c(lambda)                              9/49 = 18.4 %   (the anti-correlation)
+    f^lambda * q^c(lambda)                  39/49 = 79.6 %
+
+None is perfect; the symmetric q-dimension's 44/49 is within one pair of
+`f^lambda`'s 43/48, i.e. noise on this sample.  The only thing q-dimensions buy
+is breaking the n=6 tie.
+
+**🛑 THE MARGIN, and it weakens my own headline.**  The right question was never
+whether the argmin held in six rows — it did — but by how much.  Since `t` is
+linear in `chi`, the factor by which `chi` at the argmin must grow to lose the
+selection is exactly `t(runner-up)/t(argmin)`:
+
+    row  n    argmin  runner-up   margin   w ratio   chi ratio   row's chi-spread
+      0  3    [2,1]        [3]    1.563x    2.044      0.765          1.308x
+      1  3    [2,1]        [3]    1.348x    2.044      0.660          1.516x
+      2  6    [3,3]      [4,2]    1.199x    3.044      0.394          2.724x
+      3  9    [5,4]        [9]    2.108x    5.915      0.356          6.448x
+      4  9    [5,4]        [9]    1.840x    5.915      0.311          6.712x
+      5 12    [6,6]       [12]    2.049x   17.338      0.118         12.508x
+
+The weight gap is large (2.0x–17.3x) and the character anti-correlation eats
+almost all of it (0.77x down to 0.12x), leaving **1.2x–2.1x**.  In **five of six
+rows the margin is smaller than that row's own character spread** — at n = 12, a
+margin of 2.05x against characters already spanning 12.5x.
+
+So a flip needs **no outlier**: an ordinary 1.2x–2.1x ratio between two
+particular partitions would do it.  `argmin(t) == argmin(w)` in 6/6 is a
+**measurement**, not a structural law with room to spare, and must not be quoted
+as one.  An earlier version of the probe called the selection "stable rather
+than noise" — too strong, and corrected in place.
+
+**Where a flip would come from.**  At n = 6 the runner-up **is** `[4,2]`, the
+discordant partition — and that row carries the smallest margin in the sample
+(1.199x).  That co-occurrence is **1 of 6 rows** and is not evidence on its own;
+it is the thing to check next.  Recorded in the witness as
+`selection_margin[].runner_is_discordant` rather than left as a null field.
+
+**Open, unchanged in substance but now with a reason to care:** why those three
+partitions carry an out-of-order character for those atoms.  The margin is what
+makes it a live question rather than an academic one — the discordant partitions
+are exactly where a character runs against the weight ordering, and the ordering
+only survives by 1.2x–2.1x.
+
+## 2026-09-05 (fourth) — two more candidate explanations refuted, and a caution
+## that outlives both
+
+Chasing WHY `[4,2]` (n=6), `[7,2]` (n=9) and `[7,5]` (n=12) invert.  The clean
+structural story would be `|chi| = dim x (slowly varying factor)`, i.e. the
+NORMALISED character `|chi|/dim` roughly constant or at least monotone.  It is
+neither.
+
+    row  n    max |chi|/dim         min |chi|/dim          range
+      0  3    1.382  at   [3]       0.9039  at  [2,1]      1.53x
+      1  3    1.122  at   [3]       0.8504  at  [2,1]      1.32x
+      2  6    1.560  at   [6]       0.1860  at  [4,2]      8.38x
+      3  9    1.577  at   [9]       0.1054  at  [5,4]     14.97x
+      4  9    2.394  at   [9]       0.1833  at  [5,4]     13.06x
+      5 12    2.420  at  [12]       0.0733  at  [7,5]     33.00x
+
+Non-monotone in dim in **four of six rows**, and a **33x** swing within one row
+— far more than the dimension ordering can absorb.  So the answer to "why is the
+dim link only 89.6 %" is **not a better notion of dimension**; the normalised
+character is simply not close to constant.  With the q-dimension refutation
+recorded above, that is two candidate repairs closed.
+
+**🛑 CAUTION, worth more than either refutation: THE CLASSICAL CHARACTER BOUND
+DOES NOT HOLD HERE.**  For any finite group `|chi^lambda(g)| <= chi^lambda(1) =
+dim`, so `|chi|/dim <= 1` always.  Measured here it is **violated in 6 of 6
+rows** — always at the one-row partition `[n]`, where `dim = 1` and `|chi|` runs
+**1.122 to 2.420**.
+
+Two readings are consistent and this probe does not separate them: these are
+Hecke characters at `q_0 > 1`, where the classical bound does not apply; or the
+witness's `chi_lambda` field carries a normalisation that is not a bare
+character.  **Either way, do not reason from `|chi| <= dim` anywhere in this
+corpus.**  Asserted in the probe so it stays visible.
+
+Where the discordant partition sits: it is the **argmin** of `|chi|/dim` in two
+of three cases (`[4,2]` at n=6, `[7,5]` at n=12) and the **second** smallest in
+the third (`[7,2]` at n=9 row 3, behind `[5,4]`).  Two of three is not a law and
+no mechanism is invented here to make it one.
+
+**Open, and now well-characterised rather than merely named:** the inversions
+are driven by the normalised character's variation, which is large (up to 33x)
+and not ordered by dimension.  Why it dips where it does — at those three
+(partition, atom) pairs — is unanswered.  Two obvious repairs are closed.
+
+### Correction to the entry above, same session — the caution was over-claimed
+
+The note above first read *"no argument in this corpus may assume that bound"*.
+That asserts something about the **whole corpus** which I had not checked, and
+the corpus-grep checklist caught it — I ran the grep only because the caution
+was about to become durable prose.
+
+Checked: `computations/deltalambda/magnus_fs_transpose_prune_probe.py`
+(bean `qou-o6ov`) already measures a normalised quantity
+`|tr_lambda|/dim_lambda` reaching **29.0** at `(8,1)` — an order of magnitude
+past anything in the a-K witness — and already handles it correctly, scoping
+Féray–Śniady as *"a true theorem about a different regime (q = 1, single
+permutation)"*.  So the corpus **already knows** the q=1 bound does not
+transfer.  My measurement is **corroboration from a second direction**, not a
+warning the corpus needed.
+
+Two quantities, do not conflate: that probe's `|tr_lambda|/dim_lambda` is a
+normalised trace of a fixed operator; this one's `|chi|/dim` is the character of
+an atom's braid word.  At n = 9 they read **29.0** and **0.468 / 0.821** for the
+same partition `(8,1)`.  Both exceed 1 somewhere; they are different objects and
+neither checks the other.
+
+The scoped claim that survives: **this witness's `chi_lambda` field is not a
+classical `S_n` character**, measured 6/6.
+
+## 2026-09-05 (fifth) — the n=9 pair is a MIRROR PAIR, and the inversion is
+## caused by an excess mirror response
+
+**The atoms have names, and this probe spent four revisions not using them.**
+The six rows are proton, neutron, deuteron, **tritium** (Z=1, N=2), **helium-3**
+(Z=2, N=1), helium-4.  So "two atoms at n = 9" is a **mirror pair** — same A = 3
+with proton and neutron counts swapped.  Atom identity is now carried in every
+record the witness emits.
+
+That makes rows 3/4 the cleanest controlled comparison the corpus offers here:
+identical partitions, dimensions, weights and `q_0`; the **only** difference is
+the p↔n content of the braid word.
+
+**The flip is not a constant rescale — it acts per partition:**
+
+    lambda    chi(He-3)/chi(H-3)
+      [9]           1.5180
+    [8,1]           1.7559
+    [7,2]           2.3721   <== outlier
+    [5,4]           1.7394
+    [6,3]           1.5800
+                    spread 1.5627x
+
+Four of five cluster in 1.518–1.756, and `tr_M_atom` itself scales by **1.7608**
+— inside that cluster.  `[7,2]` sits at 2.3721, well outside.
+
+**And that excess CAUSES the inversion.**  `[7,2]` has dim 27, `[8,1]` has dim 8,
+so the larger irrep should carry the larger character.  In helium-3 it does
+(7.569 > 6.568); in tritium it does not (3.191 < 3.741).  Counterfactually, had
+`[7,2]` scaled by `[8,1]`'s ratio:
+
+    chi([7,2]) = 7.5691 / 1.7559 = 4.3106  >  3.7407 = chi([8,1])   -- no inversion
+
+So the tritium inversion is `[7,2]` being suppressed **35.09 % more** than
+`[8,1]` under the p↔n flip, and nothing else differs between the rows.  Both
+facts asserted (14 → 16 checks).
+
+The other mirror pair (neutron/proton, A = 1) gives spread 1.1592x with `[3]` the
+outlier — also not a constant rescale, on a row too small to carry an inversion.
+
+Discordance by atom, recorded **without** a rule inferred from it: deuteron
+`[4,2]` (self-mirror), tritium `[7,2]`, helium-3 **none**, helium-4 `[7,5]`
+(self-mirror); proton and neutron have only 2 partitions.  Three of the four
+atoms large enough to carry an inversion do, and the proton-rich member of the
+only mirror pair big enough to show one is the exception.  Four data points, no
+mechanism claimed.
+
+**A defect caught in the writing, worth recording.**  The counterfactual's first
+implementation picked the reference partition as "the largest character below
+the discordant one", which selected the one-row partition `[9]` — dimension 1,
+smallest character — and printed *"3.19 < 1.58   INVERTED"*, a comparison whose
+own numbers contradict its verdict, and a 56.27 % excess.  The correct reference
+is the partition it **actually** inverts against (smaller dim, larger character):
+`[8,1]`, giving 35.09 %.  The printed line disagreeing with itself is what
+exposed it.
+
+**Open, one level deeper:** why the p↔n flip acts 35 % harder on `[7,2]` than on
+its neighbours — i.e. why the mirror response is partition-dependent at all.
+Answering it needs the braid word, which this witness does not record; the
+character is its only trace here.

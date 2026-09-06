@@ -37,13 +37,13 @@
     },
     {
       "name": "closed_form_reproduces_every_atom",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true,
+      "passed": false,
       "note": "no fitted constant anywhere in the chain"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "dps": 40,
@@ -116,32 +116,32 @@
         "Z": 1,
         "N": 1,
         "delta_closed_form": "0.5565446604044382119048",
-        "delta_measured": "0.5565446604044382119048",
-        "rel_err": "1.54385e-35"
+        "delta_measured": "0.9797485651179784751386",
+        "rel_err": "0.431952"
       },
       {
         "atom": "3H",
         "Z": 1,
         "N": 2,
         "delta_closed_form": "0.8885361268736700699963",
-        "delta_measured": "0.8885361268736700699963",
-        "rel_err": "7.05628e-36"
+        "delta_measured": "1.088702186617254511971",
+        "rel_err": "0.183857"
       },
       {
         "atom": "3He",
         "Z": 2,
         "N": 1,
         "delta_closed_form": "0.8929085753935158473692",
-        "delta_measured": "0.8929085753935158473692",
-        "rel_err": "7.64419e-36"
+        "delta_measured": "1.238079358590507637519",
+        "rel_err": "0.278795"
       },
       {
         "atom": "4He",
         "Z": 2,
         "N": 2,
         "delta_closed_form": "1.11980900608623902881",
-        "delta_measured": "1.11980900608623902881",
-        "rel_err": "4.21308e-36"
+        "delta_measured": "1.269545733868878989072",
+        "rel_err": "0.117945"
       }
     ]
   },
@@ -151,14 +151,14 @@
     "independent_check": "r_previous - t_p.z simplifies to 0, and r_previous was derived from different words in a separate computation. Two independent derivations agreeing symbolically is the strongest available check that neither is an expansion artefact.",
     "scope": "Scope-(a). This derives the CONSTANTS of a form whose structure was established and validated earlier (held-out 3He and 4He at 7.5e-16). It does not say the binding law is right — how far Delta_tr is from B remains open."
   },
-  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "gitCommit": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "durationMs": 0,
   "scriptFile": "qbeta_bond_factors_derived_probe.py",
   "scriptHash": "7ab3851d4ef7",
-  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
-  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "scriptCommitSha": "c415d81fe7af0de5d6506ddcf99a232844856cb0",
+  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
   "engine": "sympy+mpmath",
-  "computedAt": "2026-09-04T12:31:54.776962+00:00",
+  "computedAt": "2026-09-06T06:53:33.012091+00:00",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin"

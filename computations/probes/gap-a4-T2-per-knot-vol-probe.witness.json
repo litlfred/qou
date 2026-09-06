@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-29T11:09:27.241199+00:00",
-  "commitSha": "436b1fcb3e20b485fdd88708c52cd6d97c7c755b",
+  "computedAt": "2026-09-06T12:59:25.768435+00:00",
+  "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
   "assertions": [
     {
       "name": "proton_lambda_emp_matches_documented_value",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 254,
+  "durationMs": 251,
   "computation": "gap-a4-T2-per-knot-vol-probe",
   "scriptFile": "gap_a4_T2_per_knot_vol_probe.py",
   "scriptHash": "7a8c8182787b",
-  "scriptCommitSha": "5e545bc88e6644de6b66424fbc0a088e129b58b3",
+  "scriptCommitSha": "7208369ebe090692c349ece98c575f596c9b7862",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,9 +31,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -57,13 +55,13 @@
         "m_K_MeV": "938.27208943",
         "vol_A_phase4_jsj": "7.32772475341775212043682811945907288619319499425",
         "lambda_emp_A_phase4_jsj": "2.4599522717037903606248228146718146326842258827788",
-        "ratio_to_tr_M_A_phase4_jsj": "2.147005421728488345216818545757881981335258635236",
+        "ratio_to_tr_M_A_phase4_jsj": "3.9088530933815988700431852307905904566638612868354",
         "vol_B_model_b_small_knot": "7.32772475341775212043682811945907288619319499425",
         "lambda_emp_B_model_b_small_knot": "2.4599522717037903606248228146718146326842258827788",
-        "ratio_to_tr_M_B_model_b_small_knot": "2.147005421728488345216818545757881981335258635236",
+        "ratio_to_tr_M_B_model_b_small_knot": "3.9088530933815988700431852307905904566638612868354",
         "vol_C_uniform_borromean": "7.32772475341775212043682811945907288619319499425",
         "lambda_emp_C_uniform_borromean": "2.4599522717037903606248228146718146326842258827788",
-        "ratio_to_tr_M_C_uniform_borromean": "2.147005421728488345216818545757881981335258635236"
+        "ratio_to_tr_M_C_uniform_borromean": "3.9088530933815988700431852307905904566638612868354"
       },
       {
         "label": "n",
@@ -72,13 +70,13 @@
         "m_K_MeV": "939.56542194",
         "vol_A_phase4_jsj": "7.32772475341775212043682811945907288619319499425",
         "lambda_emp_A_phase4_jsj": "2.463343117794049367940140423052274718225091184076",
-        "ratio_to_tr_M_A_phase4_jsj": "2.4939092473403189252387674519599390034471738399297",
+        "ratio_to_tr_M_A_phase4_jsj": "5.1845281986008799021049509593030552497081360316161",
         "vol_B_model_b_small_knot": "7.32772475341775212043682811945907288619319499425",
         "lambda_emp_B_model_b_small_knot": "2.463343117794049367940140423052274718225091184076",
-        "ratio_to_tr_M_B_model_b_small_knot": "2.4939092473403189252387674519599390034471738399297",
+        "ratio_to_tr_M_B_model_b_small_knot": "5.1845281986008799021049509593030552497081360316161",
         "vol_C_uniform_borromean": "7.32772475341775212043682811945907288619319499425",
         "lambda_emp_C_uniform_borromean": "2.463343117794049367940140423052274718225091184076",
-        "ratio_to_tr_M_C_uniform_borromean": "2.4939092473403189252387674519599390034471738399297"
+        "ratio_to_tr_M_C_uniform_borromean": "5.1845281986008799021049509593030552497081360316161"
       },
       {
         "label": "D",
@@ -87,13 +85,13 @@
         "m_K_MeV": "1875.612945",
         "vol_A_phase4_jsj": "12.776",
         "lambda_emp_A_phase4_jsj": "2.8204301558205546417578856124836688317506555060946",
-        "ratio_to_tr_M_A_phase4_jsj": "4.9036270189417741056536817711826572430239090984892",
+        "ratio_to_tr_M_A_phase4_jsj": "18.559327361142990310324485709739888445749255567793",
         "vol_B_model_b_small_knot": "4.4008325161230461014412038656409280339834854185165",
         "lambda_emp_B_model_b_small_knot": "8.1879543333559368392016051010874925798789102697324",
-        "ratio_to_tr_M_B_model_b_small_knot": "14.23565622288009471118642068959785617375126179923",
+        "ratio_to_tr_M_B_model_b_small_knot": "53.879343396337785341789269918604521913621031492997",
         "vol_C_uniform_borromean": "7.32772475341775212043682811945907288619319499425",
         "lambda_emp_C_uniform_borromean": "4.9174630438945917500051112647214145233651364833436",
-        "ratio_to_tr_M_C_uniform_borromean": "8.5495485846107781504757351426924164466457510408586"
+        "ratio_to_tr_M_C_uniform_borromean": "32.358470650165948513009865806272663762599729696297"
       },
       {
         "label": "T",
@@ -102,13 +100,13 @@
         "m_K_MeV": "2808.92113668",
         "vol_A_phase4_jsj": "12.776",
         "lambda_emp_A_phase4_jsj": "4.2238809986534945046642393737429899497829169325308",
-        "ratio_to_tr_M_A_phase4_jsj": "18.419951671939724193312317403697528497912605694998",
+        "ratio_to_tr_M_A_phase4_jsj": "144.93119884803145431191122709734690631105082999683",
         "vol_B_model_b_small_knot": "8.28631681780659258812682479775",
         "lambda_emp_B_model_b_small_knot": "6.51245961569226156889502794820513859500868568169",
-        "ratio_to_tr_M_B_model_b_small_knot": "28.40022988923022991917147563482364784032553121716",
+        "ratio_to_tr_M_B_model_b_small_knot": "223.45766366347836022136483714691511185637066947435",
         "vol_C_uniform_borromean": "7.32772475341775212043682811945907288619319499425",
         "lambda_emp_C_uniform_borromean": "7.3644010186964717246227512731904012672018850826798",
-        "ratio_to_tr_M_C_uniform_borromean": "32.115467007810195221783661676730286327123771470371"
+        "ratio_to_tr_M_C_uniform_borromean": "252.68975825256248922404091427065767850853660027919"
       },
       {
         "label": "3He",
@@ -117,13 +115,13 @@
         "m_K_MeV": "2808.39161112",
         "vol_A_phase4_jsj": "12.554",
         "lambda_emp_A_phase4_jsj": "4.2977641009774314364522410465565850130376354854596",
-        "ratio_to_tr_M_A_phase4_jsj": "10.644167821354012424183432544639394817083057376512",
+        "ratio_to_tr_M_A_phase4_jsj": "73.345373346270977393566685237352208158510182677322",
         "vol_B_model_b_small_knot": "7.32772475341775212043682811945907288619319499425",
         "lambda_emp_B_model_b_small_knot": "7.3630127139403976571784189157245521949832685402456",
-        "ratio_to_tr_M_B_model_b_small_knot": "18.235794510015246767933516262237196284515067501862",
+        "ratio_to_tr_M_B_model_b_small_knot": "125.656714461009517026768212880252903626158953782",
         "vol_C_uniform_borromean": "7.32772475341775212043682811945907288619319499425",
         "lambda_emp_C_uniform_borromean": "7.3630127139403976571784189157245521949832685402456",
-        "ratio_to_tr_M_C_uniform_borromean": "18.235794510015246767933516262237196284515067501862"
+        "ratio_to_tr_M_C_uniform_borromean": "125.656714461009517026768212880252903626158953782"
       },
       {
         "label": "4He",
@@ -132,39 +130,39 @@
         "m_K_MeV": "3727.3794118",
         "vol_A_phase4_jsj": "12.554",
         "lambda_emp_A_phase4_jsj": "5.7041181020932482839648368102286429469346110838468",
-        "ratio_to_tr_M_A_phase4_jsj": "35.434995392685854907164126319234984307919640910071",
+        "ratio_to_tr_M_A_phase4_jsj": "507.60043586484487747961032800022144642367312605953",
         "vol_B_model_b_small_knot": "29.310899013671008481747312477836291544772779977",
         "lambda_emp_B_model_b_small_knot": "2.4431014081239534442346238275843820427679869449173",
-        "ratio_to_tr_M_B_model_b_small_knot": "15.176980138080841475026909284150758755000056138437",
+        "ratio_to_tr_M_B_model_b_small_knot": "217.40772498568125595882925659424820076569556266927",
         "vol_C_uniform_borromean": "7.32772475341775212043682811945907288619319499425",
         "lambda_emp_C_uniform_borromean": "9.7724056324958137769384953103375281710719477796693",
-        "ratio_to_tr_M_C_uniform_borromean": "60.707920552323365900107637136603035020000224553746"
+        "ratio_to_tr_M_C_uniform_borromean": "869.6308999427250238353170263769928030627822506771"
       }
     ],
     "convention_verdicts": [
       {
         "convention": "A_phase4_jsj",
-        "min_lambda": "2.147005421728488345216818545757881981335258635236",
-        "max_lambda": "35.434995392685854907164126319234984307919640910071",
-        "swing": "15.504380955013250400367083285860471083598803655025",
+        "min_lambda": "3.9088530933815988700431852307905904566638612868354",
+        "max_lambda": "507.60043586484487747961032800022144642367312605953",
+        "swing": "128.85917447864822154210780648340612182274542634078",
         "verdict": "REFUTED (≥25 %)"
       },
       {
         "convention": "B_model_b_small_knot",
-        "min_lambda": "2.147005421728488345216818545757881981335258635236",
-        "max_lambda": "28.40022988923022991917147563482364784032553121716",
-        "swing": "12.227833335588912563683945879336371608667366738624",
+        "min_lambda": "3.9088530933815988700431852307905904566638612868354",
+        "max_lambda": "223.45766366347836022136483714691511185637066947435",
+        "swing": "56.167066227644353260224153487333674064508261379719",
         "verdict": "REFUTED (≥25 %)"
       },
       {
         "convention": "C_uniform_borromean",
-        "min_lambda": "2.147005421728488345216818545757881981335258635236",
-        "max_lambda": "60.707920552323365900107637136603035020000224553746",
-        "swing": "27.275625174457769804949123231991962345287517309109",
+        "min_lambda": "3.9088530933815988700431852307905904566638612868354",
+        "max_lambda": "869.6308999427250238353170263769928030627822506771",
+        "swing": "221.47725334450883527966370738147301401753148393135",
         "verdict": "REFUTED (≥25 %)"
       }
     ],
-    "synthesis_verdict": "All three Vol conventions give wide λ_emp swings (>25 %): A_phase4_jsj: 1550.44%, B_model_b_small_knot: 1222.78%, C_uniform_borromean: 2727.56%. T2 closes NEGATIVE — no plausible Vol(K) convention alone collapses the 100× S(K) swing my T1 documented.  The Path B λ(K) is not just a Vol-convention artifact; the productive direction shifts firmly to T3 — derive λ(K) from a Path-B-specific formulation."
+    "synthesis_verdict": "All three Vol conventions give wide λ_emp swings (>25 %): A_phase4_jsj: 12885.92%, B_model_b_small_knot: 5616.71%, C_uniform_borromean: 22147.73%. T2 closes NEGATIVE — no plausible Vol(K) convention alone collapses the 100× S(K) swing my T1 documented.  The Path B λ(K) is not just a Vol-convention artifact; the productive direction shifts firmly to T3 — derive λ(K) from a Path-B-specific formulation."
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

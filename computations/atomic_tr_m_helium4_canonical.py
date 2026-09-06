@@ -116,66 +116,28 @@ def main() -> int:
     q_val = mp.mpf(q_str)
     print(f"\n  q_0 = {q_str}")
 
-    # Compute H_3 baseline traces for proton and neutron via the
-    # centralised compute_tau_M_nucleon_H3 helper. This uses the
-    # canonical_braid_marshalling pipeline. NOTE these H_3 traces are
-    # CONVENTION-INDEPENDENT: `compute_tau_M_nucleon_H3` takes no
-    # `pn_convention` argument, because a single nucleon has no p-n
-    # interface for one to apply to. The convention enters only in the
-    # ⁴He interface product below. The comment here used to justify the
-    # file's `chi_lambda_braid` by appeal to these traces "matching at
-    # machine precision", which cannot be a reason for anything: there
-    # is nothing here for a p-n convention to change.
-    # ORDERING FIX 2026-09-06 (beans qou-y2o7, qou-hft3). The H_3 baselines are
-    # taken from `atom_braid_word_3A` through the general-word dispatcher, NOT
-    # from `compute_tau_M_nucleon_H3`.
+    # The H_3 baselines come from `compute_tau_M_nucleon_H3`, which since
+    # 2026-09-06 takes its word from `atom_braid_word_3A` and defaults to the
+    # canonical borromean intra-ordering (bean `qou-y2o7`).
     #
-    # That helper builds its own nucleon word as "all gen 0, then all gen 1"
-    # -- monotone, because it uses `chi_monotone_transfer.chi_all_lambda`, the
-    # monotone-ONLY transfer kernel. The 2026-09-05 owner ruling (qou-hu1f)
-    # makes the canonical intra-nucleon core borromean, (s0 s1^-1)^3, which is
-    # non-monotone by construction:
+    # This call site briefly carried its own inlined replacement, while that
+    # helper was still locked to the superseded grouped word. Removed now that
+    # the helper is fixed: an inlined copy of a shared computation is how the
+    # two paths drift apart, which is the qou-qu2w defect this file's own
+    # history records.
     #
-    #     grouped   gen sequence [0,0,0,0,0,0,0,1,1,1,1]   tau_p 1.1457596924573009
-    #     canonical gen sequence [0,1,0,1,0,1,0,0,1,0,0]   tau_p 0.6293284022029219
-    #
-    # So the helper cannot express the canonical word at all while it uses that
-    # kernel -- it is not a stale value a re-run would fix. Feeding its grouped
-    # baselines into the closed form returned 0.16097414544240738 here, which is
-    # 14.325x the canonical answer, and 14.325 = (1.8206)^2 * (2.0789)^2 is
-    # exactly the squared ratio of the two baselines. The closed form was right;
-    # its inputs were not.
-    #
-    # This is fixed AT THIS CALL SITE only. `compute_tau_M_nucleon_H3` has 18
-    # consumers and the reference witness it validates against
-    # (habiro-coefficients-atomic, tau_p = 1.14575969245730087) is itself
-    # grouped-era, so the cluster is internally consistent in the superseded
-    # ordering. Repointing it is a subsystem-wide ruling application and an
-    # owner call; it is measured and staged in qou-y2o7. This producer is
-    # corrected now because its published value is LABELLED CANONICAL.
-    #
-    # Cost is not why the helper chose the monotone kernel here: at H_3 the
-    # general kernel is d_lambda <= 2 and sub-second.
-    from chi_general_word import chi_all_lambda_any
-    from hecke_characters import partitions_of
-    from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric
-    from mass_at_3A_proper import atom_braid_word_3A
-
-    def _tau_canonical(Z: int, N: int) -> mp.mpf:
-        word = atom_braid_word_3A(Z, N)
-        chi = chi_all_lambda_any(word, 3, dps=50, q=q_val)
-        return sum(
-            (y_lambda_wenzl_bridge_numeric(lam, q_val, dps=50)
-             * chi.get(tuple(lam), mp.mpf(0)) for lam in partitions_of(3)),
-            mp.mpf(0))
-
+    # These H_3 traces remain CONVENTION-INDEPENDENT in the p-n sense: a single
+    # nucleon has no p-n interface, so no `pn_convention` argument reaches
+    # here. Intra-ORDERING is a different axis and does reach here — that is
+    # exactly what was wrong, and what every pn_convention-keyed audit was
+    # structurally blind to.
     t0 = time.perf_counter()
-    print("\n[1/3] Computing tau_p from atom_braid_word_3A(1,0) (50 dps)...")
-    tau_p = _tau_canonical(1, 0)
+    print("\n[1/3] Computing tau_p via compute_tau_M_nucleon_H3 (50 dps)...")
+    tau_p = compute_tau_M_nucleon_H3("p", q_val, dps=50)
     print(f"      tau_p = {tau_p}")
 
-    print("\n[2/3] Computing tau_n from atom_braid_word_3A(0,1) (50 dps)...")
-    tau_n = _tau_canonical(0, 1)
+    print("\n[2/3] Computing tau_n via compute_tau_M_nucleon_H3 (50 dps)...")
+    tau_n = compute_tau_M_nucleon_H3("n", q_val, dps=50)
     print(f"      tau_n = {tau_n}")
     t_h3 = time.perf_counter() - t0
 

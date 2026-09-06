@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-26T03:49:41.766913+00:00",
-  "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
+  "computedAt": "2026-09-06T12:48:22.682763+00:00",
+  "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
   "assertions": [
     {
       "name": "color_too_small_for_tn3he",
@@ -17,7 +17,7 @@
   "computation": "binding-color-vs-charge-tn3he",
   "scriptFile": "binding_color_vs_charge_tn3he.py",
   "scriptHash": "37bf5bd99a95",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptCommitSha": "6a946de00635e5f6ed3e3011a29ae394661802b0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,9 +30,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -45,9 +43,9 @@
     "delta_flavor_split": 0.001375710807027096,
     "alpha_em": 0.007297352573756914,
     "B0_bonds_MeV": {
-      "pp": 2.128360945757083,
-      "pn": 2.329685576294031,
-      "nn": 2.4355847837462457
+      "pp": 0.43443937894435775,
+      "pn": 0.16455022397738905,
+      "nn": 0.14261330939838984
     },
     "color_weights": {
       "pp": 0.9995422708777575,
@@ -55,8 +53,8 @@
       "nn": 1.0004594114157754
     },
     "needed_split_MeV": 0.7637962,
-    "color_split_MeV": 0.3093169862304215,
-    "color_fraction_of_needed": 0.40497319341261645,
+    "color_split_MeV": -0.29156169580799696,
+    "color_fraction_of_needed": -0.3817270834916395,
     "verdict": "Color-weighting (bring_color_weighted) gives the right SIGN for the bond asymmetry but is ~2 orders too small (Δm_pn scale 0.14%) for the T-vs-³He split (9.5%). That split is CHARGE/Coulomb (α_EM sector). Color averaging must still be wired everywhere for completeness."
   },
   "q0Anchor": "proton",

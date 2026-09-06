@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T18:00:44.154175+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-06T12:59:17.978383+00:00",
+  "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
   "assertions": [
     {
       "name": "beyond_pairwise_3body_never_shares_sign_with_empirical_b3",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1397,
+  "durationMs": 463,
   "computation": "binding-triangle-3body-cluster",
   "scriptFile": "binding_triangle_3body_cluster_probe.py",
   "scriptHash": "08bd6400aa22",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,10 +30,8 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "mpmath": "1.4.1",
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -45,8 +43,8 @@
   "parameters": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
     "E0_MeV": "4.1859813632944758969450621587590084101434868908797",
-    "tau_p": "1.1457596924573008696890815957741193059437280619434",
-    "tau_n": "0.98774368811580957163402016550129498205504875906267",
+    "tau_p": "0.62932840220292191816534574677848592760021940063433",
+    "tau_n": "0.47513351715568221250609023267500579955840763470872",
     "free_parameters": 0
   },
   "data": {
@@ -54,65 +52,65 @@
       {
         "atom": "T",
         "pn_convention": "chi (pn=z)",
-        "one_bond_MeV": "6.415279813",
-        "two_bond_MeV": "-2.863603475",
-        "three_bond_MeV": "0.41861869",
-        "beyond_pairwise_MeV": "-2.444984785",
+        "one_bond_MeV": "0.8153464889",
+        "two_bond_MeV": "-0.3639481218",
+        "three_bond_MeV": "0.05320411409",
+        "beyond_pairwise_MeV": "-0.3107440077",
         "empirical_b3_MeV": "1.8080976",
         "same_sign_as_b3": false
       },
       {
         "atom": "3He",
         "pn_convention": "chi (pn=z)",
-        "one_bond_MeV": "6.306825271",
-        "two_bond_MeV": "-2.442708875",
-        "three_bond_MeV": "0.3153634563",
-        "beyond_pairwise_MeV": "-2.127345419",
+        "one_bond_MeV": "0.9152711826",
+        "two_bond_MeV": "-0.3544954783",
+        "three_bond_MeV": "0.04576677984",
+        "beyond_pairwise_MeV": "-0.3087286984",
         "empirical_b3_MeV": "1.04434272",
         "same_sign_as_b3": false
       },
       {
         "atom": "T",
         "pn_convention": "bar-averaged (pn=z-h/2)",
-        "one_bond_MeV": "7.393532216",
-        "two_bond_MeV": "-3.877023366",
-        "three_bond_MeV": "0.6750690757",
-        "beyond_pairwise_MeV": "-3.20195429",
+        "one_bond_MeV": "0.9396769445",
+        "two_bond_MeV": "-0.4927481702",
+        "three_bond_MeV": "0.085797536",
+        "beyond_pairwise_MeV": "-0.4069506342",
         "empirical_b3_MeV": "1.8080976",
         "same_sign_as_b3": false
       },
       {
         "atom": "3He",
         "pn_convention": "bar-averaged (pn=z-h/2)",
-        "one_bond_MeV": "7.441575293",
-        "two_bond_MeV": "-3.381021187",
-        "three_bond_MeV": "0.5085585571",
-        "beyond_pairwise_MeV": "-2.872462629",
+        "one_bond_MeV": "1.07995055",
+        "two_bond_MeV": "-0.4906670356",
+        "three_bond_MeV": "0.07380400947",
+        "beyond_pairwise_MeV": "-0.4168630262",
         "empirical_b3_MeV": "1.04434272",
         "same_sign_as_b3": false
       },
       {
         "atom": "T",
         "pn_convention": "bring_color_weighted (canonical, R3)",
-        "one_bond_MeV": "7.392859319",
-        "two_bond_MeV": "-3.876291135",
-        "three_bond_MeV": "0.6748717156",
-        "beyond_pairwise_MeV": "-3.201419419",
+        "one_bond_MeV": "0.9395914231",
+        "two_bond_MeV": "-0.4926551076",
+        "three_bond_MeV": "0.08577245261",
+        "beyond_pairwise_MeV": "-0.406882655",
         "empirical_b3_MeV": "1.8080976",
         "same_sign_as_b3": false
       },
       {
         "atom": "3He",
         "pn_convention": "bring_color_weighted (canonical, R3)",
-        "one_bond_MeV": "7.440794749",
-        "two_bond_MeV": "-3.380334996",
-        "three_bond_MeV": "0.5084098772",
-        "beyond_pairwise_MeV": "-2.871925119",
+        "one_bond_MeV": "1.079837274",
+        "two_bond_MeV": "-0.490567453",
+        "three_bond_MeV": "0.07378243246",
+        "beyond_pairwise_MeV": "-0.4167850206",
         "empirical_b3_MeV": "1.04434272",
         "same_sign_as_b3": false
       }
     ],
-    "max_beyond_pairwise_MeV": "-2.127345419",
+    "max_beyond_pairwise_MeV": "-0.3087286984",
     "n_rows_sharing_sign_with_empirical_b3": 0,
     "verdict": "multiplicative_3body_is_destructive_sign_not_fixed_by_triangle"
   },
