@@ -133,6 +133,21 @@ LEAN_ROOT = Path("content/quantum-observable-universe/lean")
 
 # Measured 2026-08-07 by `#print axioms`. Keep sorted by module for readability.
 DEFAULT_REGISTRY = """
+# --- the ConfinementLevel refactor (bean `qou-9yt9`, PR #6882) ---
+# `ConfinementLevel.level_canonical` asserted that two records agreeing on
+# braidIndex, nStrands and q share a level. It was FALSE -- `level` was a free
+# field -- and its own docstring said the plain-structure encoding did not enforce
+# canonicity. The repair carries the filtration predicate as a PARAMETER with
+# level_valid / level_min as proof fields, after which uniqueness is one line and
+# existence is a real Nat.find construction rather than the junk record <0,1,0,0>
+# that left prop:confinement-level-exists vacuously backed.
+#
+# Registered because all three depend on NO AXIOMS AT ALL -- not even propext or
+# Classical.choice -- which is a property worth a machine re-checking: any future
+# edit that reintroduces a canonicity assumption moves these rows.
+QOU.BraidKnot.ConfinementLevel | QOU.BraidKnot.ConfinementLevel.unique | clean
+QOU.BraidKnot.ConfinementLevel | QOU.BraidKnot.ConfinementLevel.nonempty | clean
+QOU.BraidKnot.ConfinementLevel | QOU.BraidKnot.ConfinementLevel.level_eq_find | clean
 # --- the Jones-Markov normalisation counterexample (bean `qou-i6u4`, PR #6882) ---
 # `JonesMarkovCoefficient_sum_eq_one` asserted the bare sum of the q-deformed
 # Wenzl weights is 1 for ALL n and ALL q. It is false -- at q = 1 the q-integer is
