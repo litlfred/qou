@@ -7567,3 +7567,47 @@ is why C-vs-D differs only in the 4th decimal on `β_Bor` (0.99836662 vs
 So "D canonical" (2026-08-15) and "full tower" (2026-09-03) may **both** be
 right in their own domains, and the live question is where the crossover bites —
 not which ruling wins globally. Measured, not adjudicated.
+
+#### 🛑 CORPUS-GREP, BELATEDLY: most of the above is PRIOR ART
+
+I did not run the six-path checklist before claiming the C-vs-D findings. Run
+now, on owner instruction. **Two of the three headline claims are already in the
+corpus, one of them Lean-proved:**
+
+- **D kills the ≥3-row blocks** — `docs/audits/2026-08-10-convention-d-ylambda-root-and-derivation.md`
+  (2026-08-10, a month old): *"Under convention D every `y_λ` with `ℓ(λ) ≥ 3`
+  vanishes identically (**Schur–Weyl on a two-dimensional fibre**)"*. A better
+  reason than my "TL quotient": Schur–Weyl on a 2-dim fibre.
+- **`b² = [3]_q/[2]_q²`** — `prop:hoefsmit-binding-amplitude`, **Lean-proved**
+  as `QOU.BraidsAndKnots.hoefsmit_b_sq_eq_q3_over_q2sq`.
+- **The rank family and the TL stratification** — `qou-p-neq-np.md` §37: at
+  `X = Q^{−N}` the surviving Wedderburn blocks are exactly `λ₁ ≤ N`, **proved
+  sorry-free** in `WenzlSchurElement` (`tl_numerator_eq_zero_iff`,
+  `schurElement_tl_eq_zero_iff`). That `N` is my `z_N = q^N/[N]_q`.
+
+So #6924's algebra section is a **re-derivation**, not a discovery, and it says
+so now. What survives as new: the **#6889 interpretation withdrawal**, the
+**quantified truncation cost** (Catalan(n)/n! by atom), and the **D2 update**.
+
+#### What was actually missing, and is now Lean-proved
+
+The corpus had `b² = [3]_q/[2]_q²` AND the Wenzl/Schur-element semisimplicity
+machinery — and **nothing linked them**. Four sorry-free lemmas added to
+`hoefsmit-binding-amplitude.lean` (`lean` exit 0, 0 errors, 0 sorry, 0 axiom):
+
+    hoefsmit_b_sq_eq_zero_iff          b² = 0  ↔  [3]_q = 0     (given [2]_q ≠ 0)
+    qInt3_eq_zero_iff_cyclotomic       [3]_q = 0  ↔  q⁴+q²+1 = 0
+    q_pow_six_eq_one_of_qInt3_eq_zero  [3]_q = 0  →  q⁶ = 1
+    q_sq_ne_one_of_qInt3_eq_zero       [3]_q = 0  →  q² ≠ 1     (needs 3 ≠ 0)
+
+So `b²` vanishes **exactly** at primitive 6th roots of unity. A probe finding
+`b² = 0` has found a root of unity, not a defect — which is the Lean form of
+#6889's withdrawal.
+
+**Scope, stated in the file:** these are the ARITHMETIC half only. They do not
+prove non-semisimplicity — that is the Schur-element criterion, carried
+elsewhere in the corpus. They pin the vanishing locus.
+
+**Literature: not consulted, and not needed for these four.** They are ring
+identities over a field. The Schur–Weyl / Wenzl / Geck–Pfeiffer citations the
+surrounding claims rest on are already carried by the corpus blocks above.
