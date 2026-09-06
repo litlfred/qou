@@ -1078,6 +1078,27 @@ Costello–Gwilliam, Beilinson–Drinfeld — books; nothing on the list blocks 
   `0905.0488`. Recorded on bean `qou-3pck`; **not fixed here** — the mapping-table block is a content
   block and the fix is a one-block edit plus a sweep of the theorem-number strings, which is a
   separate tranche.
+
+  **🛑 CORRECTED 2026-09-06 (bean `qou-smw9`, the sweep that fixed it).** Three claims in the bullet
+  above were mine and wrong, and the sweep measured all three. (i) **Which paper.** The theorem
+  numbers 3.13 / 4.6 / 4.17 / 5.11 / 6.10 are those of *Central Extensions of Gerbes*
+  (`library/arxiv-0801.0083v4/`, the file `yekutieli2010` is joined to), **not** of the
+  multiplicative-integration book `arxiv-1007.1250v4` (`yekutieli2015`, numbered 0.1 … 9.3). The
+  numbers were right; the attribution in this bullet and in bean `qou-3pck` was to the wrong file.
+  (ii) **"148 files."** That counted every mention of the key. Measured: **104** files name
+  `yekutieli2010` (94 `content/`, 6 `docs/`, 4 `.beans/`), and only **10** non-record files carried a
+  nonexistent theorem number. (iii) **"Prop. 3.4, Thm 0.1."** Neither is the paper's own: the only
+  `Proposition 3.4` is `[Gr2, Corollaire to Proposition 3.4.2]` and the only `Theorem 0.1` is
+  `[Ye, Theorem 0.1]`, both citations to other works. **Fixed on PR #6891** (`507aa3c560`):
+  Thm 1.7 → **Thm 4.17** (lifting objects, class `cl²` of Def. 4.15); Thm 3.4 (twisted sectors)
+  → **Thm 4.17**; the central-extension tower → **Thm 3.13 + §6**; "§3 obstruction classes" →
+  **§4, Def. 4.15**; and the "twisted quantization map" → **`yekutieli2015-twisted-dq`
+  Thm 0.10.1** (arXiv 0905.0488, verified in its held text), with `cites[]` extended on the two
+  carrier blocks. **Still dangling, deliberately untouched** (recorded on `qou-cqs9`): `Theorem 4.2`
+  ×3 and `Definition 2.1` ×5 on the cosimplicial-crossed-groupoid carriers, and `Theorem 1.1` in
+  `weak-equiv-invariance-proof.md` — none exists in 0801.0083; the likely home is
+  `arxiv-1109.1919v3` (*Combinatorial Descent Data*), which needs its own verification. This
+  correction also invalidates the "148 unverified citations" cost quoted under route D above.
 - The Lean carrier `QOU.WedderburnMass.spectral_sequence_collapses_to_centre` proves idempotence
   and never uses its `[WhiteheadHH]` instance (2026-08-25 audit §2a); it is not in the vacuity
   ledger. §7 item 2 is the fix.
