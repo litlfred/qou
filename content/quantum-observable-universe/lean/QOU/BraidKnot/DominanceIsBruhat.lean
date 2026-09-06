@@ -233,10 +233,54 @@ directions**: `minlift` lifts the least misplaced label as high as it can go and
 *below* the row `s` puts it in, and some pairs' only valid steps do not move the least
 misplaced label at all.  Dominance is a global count comparison, not a per-label one.
 
-Tracked as bean **`qou-f3mc`**.  What remains free and is not in doubt: swapping two labels
-**is** the group action (`TableauPerm.dOf_smul`, `dOf (Equiv.swap a b • t) = Equiv.swap a b *
-dOf t`, verified), the handedness bridge is landed, and
-`DominanceWellFounded.domGtOn_wellFounded` supplies the induction's measure.
+Tracked as bean **`qou-f3mc`**.
+
+## 🟩 THE TRANSPOSITION INDUCTION IS THE WRONG ROUTE — and the converse half is unblocked
+
+The negative above ("no rule that names a label can be right") points somewhere specific,
+and the destination is measured in
+[`dipper_james_rank_criterion_probe.py`](../../../../../computations/hecke/dipper_james_rank_criterion_probe.py).
+Write `rank(u, i, m) = #{x < i : u(x) < m}` and let `N_i = μ₀ + ⋯ + μ_i` be the **row
+boundaries**.  Then, at `n ≤ 6`, all four of:
+
+| | | |
+|---|---|---|
+| `s ⊵ t` ⟺ the rank inequality at the **boundaries** `N_i` | 708062/708062 | ok |
+| `u ≤ w` ⟺ the rank inequality at **every** `i` (Ehresmann) | 708062/708062 | ok |
+| boundary ⟹ full, for `d`-images | 143916/143916 | ok |
+| full ⟹ boundary (specialisation) | 143916/143916 | ok |
+
+The first is an **identity**, not a coincidence.  `d(t)` sends a reference label to `t`'s
+label at the same cell and `refTab` is row-superstandard, so the row of `y` in `t` is the
+block of `d(t)⁻¹(y)`, whence
+
+    domCount (rowPattern t) i m = #{x < N_i : d(t) x < m} = rank (d t) N_i m.
+
+**Dominance on tabloids IS a rank comparison on permutations, read only at the row
+boundaries.**  So 3.7 carries no tableau content at all: both sides compare the rank
+matrices of the *same two permutations*, and the entire difference is *"at the boundaries"*
+versus *"at every index"* — reconciled by `d` being a **minimal coset representative**,
+which is increasing within each block and therefore has its rank function determined by
+interpolation.
+
+### What that changes for each half
+
+* **Converse — no longer blocked on `qou-3k66`.**
+  `d(s) ≤ d(t)` ⟹ full rank (the **easy** direction of Ehresmann: a subword can only raise
+  the rank matrix, an induction on deletions from the subword *definition*) ⟹ boundary rank
+  **by specialisation** ⟹ `s ⊵ t`.  No reflection order appears anywhere in that chain, so
+  `bruhatLe_to_dominance`'s recorded blocker is not a blocker on this route.  Its docstring
+  below still names `qou-3k66`; that is the *old* route, kept until the new one is built.
+* **Forward — re-scoped, not unblocked.**  It still needs the **hard** direction of
+  Ehresmann (rank criterion ⟹ subword), plus the interpolation bridge.  But that is a named
+  classical theorem with a known proof (Björner–Brenti Thm 2.1.5) in place of a tableau
+  selection rule that seven attempts failed to find, which is a better place to be stuck.
+
+What remains free and is not in doubt: swapping two labels **is** the group action
+(`TableauPerm.dOf_smul`, verified), the handedness bridge is landed, the coset-minimality
+bridge is proved (`CoxeterBruhat.bruhatLe_of_length_add`), and
+`DominanceWellFounded.domGtOn_wellFounded` supplies a measure should any induction still be
+wanted.
 -/
 
 open Equiv

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T15:03:40Z
-updated_at: 2026-09-06T15:34:50Z
+updated_at: 2026-09-06T15:42:41Z
 ---
 
 ## What is open
@@ -139,3 +139,57 @@ Two NEW negative hints beyond the b-side one already recorded, both from the two
 So no rule of the form "identify the offending label, move it" can be right.  A correct
 rule has to be a statement about the count vectors, not about a distinguished label.  That
 is also an argument for next-step (3) below -- the rank/count criterion -- over (1).
+
+
+## UPDATE 2 — the transposition induction is the WRONG ROUTE, and the CONVERSE half is unblocked
+
+The negative above ("no rule that names a label can be right") points somewhere specific.
+Measured in `computations/hecke/dipper_james_rank_criterion_probe.py`, n <= 6.
+
+Write `rank(u,i,m) = #{x < i : u(x) < m}` and let `N_i = mu_0 + ... + mu_i` be the ROW
+BOUNDARIES.  All four hold at every n:
+
+    s |>= t   iff   rank inequality at the BOUNDARIES N_i        708062/708062
+    u <= w    iff   rank inequality at EVERY i (Ehresmann)       708062/708062
+    boundary => full, for d-images                               143916/143916
+    full => boundary, by specialisation                          143916/143916
+
+The first is an IDENTITY, not a coincidence.  `d(t)` sends a reference label to `t`'s label
+at the same cell and `refTab` is row-superstandard, so the row of `y` in `t` is the block of
+`d(t)^-1(y)`, whence
+
+    domCount (rowPattern t) i m  =  #{x < N_i : d(t) x < m}  =  rank (d t) N_i m.
+
+**Dominance on tabloids IS a rank comparison on permutations, read only at the row
+boundaries.**  3.7 carries no tableau content at all: both sides compare the rank matrices
+of the SAME two permutations, and the whole difference is "at the boundaries" vs "at every
+index", reconciled by `d` being a minimal coset representative (increasing within each
+block, so its rank function is fixed by interpolation).
+
+### Consequences
+
+1. **The CONVERSE half no longer needs bean `qou-3k66`.**
+
+       d(s) <= d(t)  ->  full rank        (EASY Ehresmann: a subword can only raise the
+                                           rank matrix -- an induction on deletions, from
+                                           the subword DEFINITION, no reflection order)
+                     ->  boundary rank    (specialisation)
+                     ->  s |>= t          (the identity above)
+
+   `bruhatLe_to_dominance`'s docstring still names `qou-3k66`; that is the OLD route, kept
+   until this one is built.  `qou-3k66` remains open and is still wanted elsewhere, but 3.7
+   is no longer a reason to prioritise it.
+
+2. **The FORWARD half is re-scoped, not unblocked.**  It still needs the HARD direction of
+   Ehresmann (rank criterion => subword) plus the interpolation bridge.  That is a named
+   classical theorem with a known proof (Bjorner-Brenti Thm 2.1.5) in place of a tableau
+   selection rule that seven attempts failed to find -- a better place to be stuck, and a
+   Mathlib-scale target rather than an open combinatorial question.
+
+3. **Next steps, superseding the three above.**
+   a. Prove the identity `domCount (rowPattern t) i m = rank (d t) N_i m` in Lean.  Pure
+      bookkeeping over `refTab`; no new mathematics.
+   b. Prove the EASY Ehresmann direction for `permCoxeterSystem` (subword => rank).  This
+      closes the converse half.
+   c. Prove the interpolation bridge for minimal coset representatives.  Elementary.
+   d. The HARD Ehresmann direction.  Mathlib-scale; the only genuinely large piece left.
