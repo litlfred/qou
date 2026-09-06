@@ -1,0 +1,158 @@
+#!/usr/bin/env python3
+"""
+Which "braid word" claims about the ATOMIC object are wrong as mathematics.
+
+Issue #6952 (this tranche); root finding in #6941 §10.
+
+The atomic object the mass law traces is NOT a braid. `atom_braid_word_3A`
+returns `(c, d, gen_idx)` triples and `d` takes FOUR values at the proton `q0`:
+
+    d = 0                    ->  sigma          a positive crossing      BRAID
+    d = -h  = -0.2090602988  ->  sigma_inv      a negative crossing      BRAID
+    d = -h/2 = -0.1045301494 ->  averaged       (sigma + sigma^-1)/2     NOT
+    d = -0.1044582478        ->  averaged_wt    colour-weighted          NOT
+
+so the object lives in `H_n(q)` and not in the image of `B_n`. Measured across
+protium -> iron-56: 0 of 14 atoms has a word free of the last two.
+
+WHY THIS AUDIT EXISTS RATHER THAN A RENAME. The identifier `atom_braid_word_3A`
+appears in 672 files and the phrase "braid word" in 2169. **Most of those uses
+are CORRECT** — the fundamental knots really are braid words: the trefoil is
+`sigma_0^3 in B_2`, the Borromean rings are `(sigma_0 sigma_1^-1)^3 in B_3`.
+A blanket rename would corrupt the true statements to fix the false ones. So
+this audit separates them, and the fix is surgical.
+
+WHAT IT FLAGS. A line is a DEFECT when it asserts membership in a BRAID GROUP
+(`\\in B_n`) for the atomic / canonical-atom object. That is wrong as
+mathematics, not merely as naming: `B_n -> H_n(q)` is a proper inclusion and the
+object is outside the image. A line is CORRECT when it asserts `\\in B_n` for a
+named knot given by an explicit sigma-word, or when it distinguishes the two
+(e.g. "a braid `beta in B_n` with Hecke representative `T_w in H_n(q)`").
+
+The verified-correct sites are listed explicitly rather than inferred, so a
+future reader can check the adjudication instead of trusting a regex.
+
+SCOPE. Flagging a line as a defect is a claim about that line's mathematics, and
+each flagged line was read. This audit does NOT claim the 672-file identifier
+surface is fine — it claims a rename is the wrong first instrument, and that the
+mathematically false statements are a much smaller, reviewable set.
+
+-- Ref: [manuscript] docs/audits/2026-09-06-universal-triangulation-ep-route-assessment.md §10
+"""
+from __future__ import annotations
+
+import re
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+
+# Sites asserting `\in B_...` that are CORRECT — each read and adjudicated.
+# Keyed by (path suffix, why).
+VERIFIED_CORRECT = {
+    "knots-particles-confinement/binding-knots-visual-inventory.md":
+        "trefoil sigma_0^3 in B_2 and Borromean (sigma_0 sigma_1^-1)^3 in B_3 — "
+        "explicit sigma-words, genuinely braids",
+    "knots-particles-confinement/binding-knots-visual-inventory-table1-data.md":
+        "same, in table form",
+    "mass-theory/binding-scale-catalan.md":
+        "B_3 = sigma_0 sigma_1 sigma_2 sigma_0 sigma_1 sigma_2 in B_4 — explicit",
+    "mass-theory/six-canonical-knot-operators.md":
+        "beta_w in B_3 for w in S_3 — the six knot operators are genuine braids",
+    "climax-volume-mass/q-momentum.md":
+        "restricts to generators sigma^eps with eps = +-1 IN THE SAME SENTENCE, "
+        "so it is explicitly about braid words",
+    "mass-theory/markov-axiom-recursive-ascent.md":
+        "distinguishes correctly: 'a braid beta in B_n with Hecke representative "
+        "T_w in H_n(q)'",
+    "appendix-knot-periodic-table/recursive-atom-knot-atlas.md":
+        "distinguishes correctly: 'T_w in H_{n_0}(q_0), w in B_{n_0}'",
+    "mass-theory/conj-canonical-knot-id-sdp.lean":
+        "explicit braid words for NAMED links (Hopf sigma_3^2 in B_6, L6a4 in B_9)",
+}
+
+# Owned by sibling PR #6821 — do not touch here.
+SIBLING_OWNED = {
+    "mass-endomorphism/atomic-mass-gb-nf.md":
+        "PR #6821 (three strand counts on one name); its decision governs",
+}
+
+# The atomic object is named EITHER in words OR by its symbol. Keying on the
+# word "atom" alone was a false-negative blind spot of this audit's first
+# version: `graded-hecke-energy-truncation-bound.md` says "the closure of
+# $\mathcal{B}_K \in B_n$" and never says "atom", so it was missed. The
+# notation register gives `\mathcal{B}_K` and `\mathcal{A}` as the atomic
+# braid's symbols (and #6821 records that BOTH are used for it), so they are
+# atomic subjects in their own right.
+ATOMIC_SUBJECT = re.compile(
+    r"atom(ic)?[- ]braid|atomic braid|canonical atom|atom-braid|"
+    r"atomic\s+\w*\s*braid|braid word.*atom|atom.*braid word|"
+    r"\\mathcal\{B\}_K|\\mathcal\{A\}", re.I)
+BRAID_GROUP = re.compile(r"\\in\s*B_")
+
+
+def scan() -> tuple[list, list, list]:
+    out = subprocess.run(
+        ["grep", "-rn", "-E", r"\\in\s*B_", "--include=*.md", "--include=*.lean",
+         "--include=*.ts", "content/"],
+        cwd=ROOT, capture_output=True, text=True)
+    defects, correct, sibling = [], [], []
+    for line in out.stdout.splitlines():
+        try:
+            path, lno, text = line.split(":", 2)
+        except ValueError:
+            continue
+        if "/schema/" in path:
+            continue
+        hit_correct = next((k for k in VERIFIED_CORRECT if path.endswith(k)), None)
+        hit_sibling = next((k for k in SIBLING_OWNED if path.endswith(k)), None)
+        if hit_sibling:
+            sibling.append((path, lno, text.strip()[:110], SIBLING_OWNED[hit_sibling]))
+        elif hit_correct:
+            correct.append((path, lno, VERIFIED_CORRECT[hit_correct]))
+        elif ATOMIC_SUBJECT.search(text):
+            defects.append((path, lno, text.strip()[:150]))
+    return defects, correct, sibling
+
+
+def main() -> int:
+    defects, correct, sibling = scan()
+
+    print("=== DEFECTS: the atomic object asserted to live in a BRAID GROUP ===")
+    for p, l, t in defects:
+        print(f"  {p}:{l}\n      {t}")
+    print(f"\n  {len(defects)} defect line(s)")
+
+    print("\n=== OWNED BY SIBLING PR #6821 — not touched here ===")
+    for p, l, t, why in sibling:
+        print(f"  {p}:{l}  ({why})")
+
+    print(f"\n=== VERIFIED CORRECT (adjudicated, left alone): {len(correct)} line(s) ===")
+    seen = set()
+    for p, l, why in correct:
+        if p not in seen:
+            print(f"  {p}\n      {why}")
+            seen.add(p)
+
+    checks = [
+        ("defects_are_a_small_reviewable_set", 0 < len(defects) <= 12,
+         f"{len(defects)} mathematically-false lines, against 2169 files "
+         "mentioning 'braid word' — a rename is the wrong instrument"),
+        ("correct_uses_exist_and_are_adjudicated", len(correct) > 0,
+         f"{len(seen)} files assert `in B_n` correctly (explicit sigma-words, "
+         "or correctly distinguishing braid from Hecke) and are left alone"),
+        ("sibling_owned_sites_excluded", len(sibling) > 0,
+         "atomic-mass-gb-nf is PR #6821's; flagged, not touched"),
+    ]
+    print()
+    ok = 0
+    for name, cond, desc in checks:
+        print(f"[{'PASS' if cond else 'FAIL'}] {name}: {desc}")
+        ok += 1 if cond else 0
+    print(f"\n{ok}/{len(checks)} assertions")
+    return 0 if ok == len(checks) else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
