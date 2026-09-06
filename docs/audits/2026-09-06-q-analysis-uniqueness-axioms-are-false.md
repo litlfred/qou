@@ -138,3 +138,88 @@ in the library and the `*-unique` siblings import them.
 - `bun run scripts/run-validate.ts content/quantum-observable-universe`
   exit 0 against pinned platform `428ca5c`; the 9 reported issues are
   all pre-existing and none is in a file touched here.
+
+---
+
+# Addendum: the vacuous class, and a probe for it
+
+Five further axioms came out of this tranche that are **not false** —
+they are *provable*, and were sitting as axioms anyway.
+
+| axiom | file | closes by |
+|---|---|---|
+| `chart_glue_from_spectrum` | `spectral-chart-correspondence.lean` | `⟨_, rfl⟩` |
+| `su2_emergence` | `su2-emergence.lean` | a constant-field record |
+| `ordering_extends` | `ordering-jet-compatibility.lean` | `exact hab` |
+| `antipode_involution` | `frobenius-antipode-lean-stub.lean` | `rfl` |
+| `markov_trace_antipode_invariant` | `frobenius-antipode-lean-stub.lean` | `rfl` |
+
+## Why this class is worse to live with, and easier to fix
+
+A false axiom announces itself the moment anyone looks for a
+counterexample. That is how eighteen have now been found in this corpus.
+A vacuous axiom announces nothing: nothing unsound follows from it, so
+no downstream contradiction ever surfaces, and it can stand for years
+cited as Tannaka–Krein reconstruction or as *"the wall — the categorical
+model of `O_q(P¹)` is not in Mathlib"*.
+
+`ordering_extends` is the sharpest instance the arc has produced:
+
+```lean
+axiom ordering_extends (k : ℕ) (a b : MonomialBasis)
+    (hab : degLex a b) : degLex a b
+```
+
+The conclusion **is** the hypothesis, and `k` — the level index the
+claim is entirely about — does not occur in the statement.
+
+## The shared symptom: the docstring carries what the type does not
+
+In every one of the five, the prose describes content absent from the
+type:
+
+- `SpinDecomposition` has no simplicity condition, no injectivity of
+  `simpleObj`, no dimension field — so *"simple objects indexed by
+  half-integer spin labels with `dim = 2j+1`"* is nowhere in the
+  statement.
+- Nothing in `chart_glue_from_spectrum` mentions a chart, a transition
+  map, or `P_q(V)`.
+- `ordering_extends`'s jet embedding `ℓ_n` appears in no binder.
+- The antipode pair's *"sign-twist depending on the parity of the braid
+  word"* cannot appear in a statement whose two sides are the same term,
+  because `antipodeS = id` on this file's model — which the file says
+  out loud, and which the theorem two declarations above already relies
+  on. An axiom was sitting beside a theorem with the same justification.
+
+The walls those docstrings describe are real. None of these axioms was
+standing at one.
+
+## The probe
+
+[`scripts/lean-axiom-provability-probe.py`](../../scripts/lean-axiom-provability-probe.py)
+rewrites each axiom into a theorem with a short tactic block and
+compiles it. **A PASS is a proof, not a heuristic** — sound in the
+direction that matters. A FAIL is evidence of nothing; the tactic list is
+deliberately short, because a long one turns the probe into an unbounded
+proof search whose failures say nothing.
+
+Full run over `content/`: **122 axioms probed, 3 provable** — the three
+in the table not already found by hand. All five are now theorems.
+
+The risk audit could not have found any of them, and this is structural
+rather than a tuning failure: it ranks by the *shape* that made the five
+SDP axioms **false**, and a vacuous axiom has no such shape. The two
+tools are complements, not overlapping heuristics.
+
+## The probe's own blind spot, asserted rather than hidden
+
+It catches `chart_glue_from_spectrum` and **not** `su2_emergence`.
+Closing the latter needs a witness record built field by field; after
+`⟨?sd, rfl⟩` the metavariable is a whole structure and unification
+cannot invent one.
+
+Rather than pad the tactic list until it lands — a list tuned to its own
+fixtures measures itself — the miss is recorded as `SELFTEST_KNOWN_MISS`
+and the self-test **requires it to stay unprovable**. If a future tactic
+addition catches it the test fails and says to move the row, so coverage
+can never grow silently.
