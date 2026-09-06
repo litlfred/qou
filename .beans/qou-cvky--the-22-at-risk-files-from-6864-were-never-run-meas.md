@@ -52,6 +52,11 @@ files whose import carries `# noqa: E402` had calls renamed and imports not
   Borromean: `0.0585962...` / `0.1881786...`. It now REACHES the comparison and
   reports a real change where it previously crashed. Updating the baseline is the
   move AGENTS.md forbids; the canonical value is a `qou-hu1f` question.
+  "PRE-RULING" is measured, not inferred: the snapshot's last commit is
+  `0aa61d9815`, and `git merge-base --is-ancestor 7db032fb48 0aa61d9815` is
+  FALSE — the word correction landed after it. The failing section is
+  `_PRODUCTION` vs `tr_m_atom_zn`, which this branch does not touch, so the
+  staleness is pre-existing and merely unmasked by the crash going away.
 - `delta_lambda_shape_probe.py` unpacks 4 from `_constants()` which returns 3.
   NOT mine, NOT the regression: `git log -S "g8"` on `mass_binding_dashboard.py`
   is empty, so it never returned a 4th value, and #6881 changed only the
