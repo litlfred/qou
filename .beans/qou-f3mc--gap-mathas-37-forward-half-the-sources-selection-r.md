@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T15:03:40Z
-updated_at: 2026-09-06T16:25:15Z
+updated_at: 2026-09-06T22:05:21Z
 ---
 
 ## What is open
@@ -318,3 +318,52 @@ FORWARD half does need them.
       **This is now the only Mathlib-scale piece left in the whole arc.**
 
 Steps (a) and (b) of UPDATE 2's plan are complete.
+
+
+## UPDATE 6 — step (c), the interpolation bridge: the COXETER half is done.
+
+Six more sorry-free declarations in `Machinery/BruhatRankCriterion.lean`, all
+`[propext, Classical.choice, Quot.sound]`:
+
+    rk_mono_index              rk is monotone in the index cut
+    card_filter_val_Ico        #{x : Fin n | a <= x < i} = i - a, for i <= n
+    rk_le_add_sub              rk u j m <= rk u i m + (j - i)  -- at most one per position;
+                               needs NO hypothesis, not even i <= j
+    IncreasingOn u a b         u strictly increasing across the window [a, b)
+    rk_eq_add_of_all_lt        if every position in [a,i) has value < m, the rank is
+                               rk u a m + (i - a) exactly
+    rk_ge_min_of_increasingOn  inside an increasing window the rank is pinned from BELOW by
+                               the endpoints: min(rk u b m, rk u a m + (i-a)) <= rk u i m
+    rk_le_of_endpoints         THE BRIDGE -- a rank inequality at the two ENDPOINTS of a
+                               window on which the DOMINATED permutation increases holds at
+                               every index inside it
+
+**Nothing is assumed of `w`.**  Its upper bound is monotonicity plus "at most one value per
+position" and holds for every permutation.  Only `u` must increase, and only across the
+window.  That asymmetry is what makes the bridge cheap.
+
+Measured before written, `run_c` in `dipper_james_rank_criterion_probe.py`, over every
+row-standard tableau of every partition of n <= 6:
+
+    d(t) block-increasing   1602/1602      (n = 6)
+    UPPER (any w)         122885/122885
+    LOWER (increasing u)  122885/122885
+
+### What is NOT done, and it is the tableau half
+
+`rk_le_of_endpoints` is stated at the Coxeter level over an arbitrary window.  Wiring it to
+3.7's forward half still needs two mu-level facts, neither hard but neither written:
+
+  (c1) `dOf t` is `IncreasingOn` each row block when `t` is row standard.  This is where
+       row-standardness finally EARNS its place in the signature -- it is unused in the
+       converse (UPDATE 5) and this is the lemma that uses it.  `dOf t x = t.symm (refTab x)`
+       is the label in cell `(r, j_x)`, and row-standard means those increase along a row.
+  (c2) every index lies in some block `[rowPrefix mu r, rowPrefix mu (r+1))`.
+
+Then boundary-rank => full-rank for `d`-images, and the forward half reduces to (d) ALONE.
+
+### After that: only (d)
+
+The HARD direction of Ehresmann -- rank criterion => subword, Bjorner-Brenti Thm 2.1.5.
+That is the one Mathlib-scale piece in the arc and nothing else in 3.7 depends on anything
+else.
