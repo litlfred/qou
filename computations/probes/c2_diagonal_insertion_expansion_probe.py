@@ -318,7 +318,7 @@ def main() -> int:
     # the first repair because it sat below the two obvious tables. Deriving it is what stops a
     # fourth. Note ⁴He's 24/7 is unchanged by the ruling, which is not luck: `pp+pn+nn` and `⁴He`
     # carry the same nucleon content, so the ratio is ordering-invariant
-    # (`content_cancellation_invariance_probe`, and `PairwiseChainLeadingOrder.chain_over_atom_He4_generic`
+    # (`content_cancellation_invariance_probe`, and `PairwiseChainLeadingOrder.chain_over_atom_He4_of_letters`
     # proves it algebraically). T and ³He have Z ≠ N, no such balance, and duly moved.
     first_chain = {"T": RECORDED_C1["pn"] + RECORDED_C1["nn"],
                    "3He": RECORDED_C1["pp"] + RECORDED_C1["pn"],

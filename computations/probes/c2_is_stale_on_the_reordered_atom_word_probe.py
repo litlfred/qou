@@ -95,7 +95,7 @@ doubles. The recorded reading — that the first-order over-count "nearly cancel
 under the canonical word, and at ⁴He much weaker. That audit's own title already says `c₂` does not
 continue the cancellation; on this data it continues it even less.
 
-Contrast the first order, where `PairwiseChainLeadingOrder.chain_over_atom_He4_generic` proves the
+Contrast the first order, where `PairwiseChainLeadingOrder.chain_over_atom_He4_of_letters` proves the
 ⁴He ratio is `24/7` for *every* deletion-sum pair — invariant under any intra-nucleon reordering.
 **No such invariance is claimed or observed at second order**, and these numbers are evidence
 against one.
@@ -321,7 +321,7 @@ def main():
             print(f"    {label:<28}{REC_RATIO[key]:>12}{mp.nstr(num / den, 5):>12}")
         print("    The recorded reading — the first-order over-count 'nearly cancels one order")
         print("    up' — is weaker under the canonical word, and at ⁴He much weaker (it roughly")
-        print("    doubles). Contrast FIRST order, where chain_over_atom_He4_generic proves the")
+        print("    doubles). Contrast FIRST order, where chain_over_atom_He4_of_letters proves the")
         print("    ⁴He ratio is 24/7 for EVERY deletion-sum pair. No such invariance is claimed")
         print("    or observed at second order, and these numbers are evidence against one.")
     finally:
