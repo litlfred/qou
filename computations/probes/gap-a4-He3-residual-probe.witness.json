@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T11:09:25.401504+00:00",
-  "commitSha": "436b1fcb3e20b485fdd88708c52cd6d97c7c755b",
+  "computedAt": "2026-09-06T12:59:19.709714+00:00",
+  "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
   "assertions": [
     {
       "name": "L1b_He3_matches_PR1874_value",
@@ -18,7 +18,7 @@
   "computation": "gap-a4-He3-residual-probe",
   "scriptFile": "gap_a4_He3_residual_probe.py",
   "scriptHash": "32b1756c5efe",
-  "scriptCommitSha": "0d9aedfc69c9dbd371b6575158a873eed02bc09a",
+  "scriptCommitSha": "7208369ebe090692c349ece98c575f596c9b7862",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,9 +31,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -57,8 +55,8 @@
     "candidates": [
       {
         "label": "tr_M(³He)",
-        "value_at_q0": "0.40376703685142817036867025333340254115508707059187",
-        "relative_error": "-0.66952010612394586095497262753006947216424467142699",
+        "value_at_q0": "0.058596253654436380218956715452130256830877107284182",
+        "relative_error": "-0.95203946354744637287608643677652247922768502689549",
         "verdict": "REFUTED"
       },
       {

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T18:12:11Z
-updated_at: 2026-09-06T03:32:40Z
+updated_at: 2026-09-06T11:52:03Z
 ---
 
 ## Measured, not assumed (branch claude/atom-trace-nonmonotone-regression-2026-09-05)
@@ -240,3 +240,31 @@ kind of construction were, here, anti-correlated with the difficulty.
 `tr_m_atom_via_transfer` still routes through the dispatcher. Wiring waits on
 the A=4 cross-check against the kernel (the harness only reaches A=3; 621 s is
 affordable once for the size the dashboard needs).
+
+## Both follow-ons merged (2026-09-06)
+
+- **#6937** — window transfer speedup. Two real inefficiencies fixed
+  (accumulator seeding, per-delta coefficient hoisting): 4He 1.24x, 6Li 1.11x,
+  7Li 1.08x. The per-nucleon cache I proposed does NOT exist: state count at
+  nucleon boundaries is 4,7,19,30,67,97,195,272,508,684,1212,1597 — monotone,
+  never collapses, so a cache has nothing to hit.
+- **#6940** — 14 of 19 direct transfer callers were genuinely broken; all
+  routed to `chi_general_word.chi_all_lambda_any`. First population in this
+  arc where the symptom count held up.
+
+Re-verified after rebase onto main: conformance 35/35 window + 35/35
+dispatcher, large-A crosscheck 9/9 (4He/6Li/7Li).
+
+## CORRECTION to #6937's body: the precision figure is 65/50 and is WRONG
+
+That PR twice says the transfer runs at "65 dps" and names "the 50-dps floor"
+as the target of the one remaining lever. **Live is 70 compute / 60
+serialization / guard 10**, measured just now from
+`qou_substrate.precision`. I took 65/50 from the AGENTS.md L1 row, which bean
+`qou-0z4i` measured stale on 2026-08-30 and which is still `todo`.
+
+The wall-clock numbers are unaffected — they are timings of actual runs, not
+derived from the dps figure. What changes is the size of the remaining lever:
+70 -> 60 is more headroom than 65 -> 50, so the unexplored option is larger
+than #6937 claims, not smaller. It remains a precision decision and not mine
+to take.

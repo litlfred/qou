@@ -1,40 +1,40 @@
 {
   "engine": "python+mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-26T03:40:10.824322+00:00",
-  "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
+  "computedAt": "2026-09-06T12:59:27.283832+00:00",
+  "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
   "assertions": [
     {
       "name": "d_preserving_reproduces_habiro_p",
-      "computed": "1.3996467467065141903752180865958505868816912085984e-50",
+      "computed": "0.82060699699337549623882378547906223688396303214426",
       "expected": "0",
-      "passed": true,
+      "passed": false,
       "tolerance": "1e-45",
       "source": "Same Sum y_l chi_l over the same nucleon chain; only whether the crossing `d` survives differs. Reproducing the habiro atomic value to this precision is what shows the divergence is the marshalling, not a convention."
     },
     {
       "name": "d_preserving_reproduces_habiro_n",
-      "computed": "5.4118588501247362434214272494935381119495113474323e-51",
+      "computed": "1.0788760473662091682202522572702965764565316752966",
       "expected": "0",
-      "passed": true,
+      "passed": false,
       "tolerance": "1e-45",
       "source": "Same Sum y_l chi_l over the same nucleon chain; only whether the crossing `d` survives differs. Reproducing the habiro atomic value to this precision is what shows the divergence is the marshalling, not a convention."
     },
     {
-      "name": "he4_ratio_matches_the_observed_2p157",
-      "computed": "2.1566309125836720426438664278185582513922521216054",
-      "expected": "2.157",
+      "name": "qu2w_fix_holds_marshalled_equals_d_preserving",
+      "computed": "1.0",
+      "expected": "1.0",
       "passed": true,
-      "tolerance": "1e-3",
-      "source": "(tau_p*tau_n)^2 ratio between the two paths. Matching the independently-observed 0.34716 / 0.16097 = 2.157 closes the chain from root cause to the reported symptom."
+      "tolerance": "1e-30",
+      "source": "(tau_p*tau_n)^2 ratio between the two paths. Before the qou-qu2w fix this was 2.157, matching the independently observed 0.34716 / 0.16097 and closing the chain from root cause to reported symptom. It is 1.0 once the marshaller stops dropping `d`, and a drift away from 1.0 means that defect has returned."
     }
   ],
-  "allPassed": true,
-  "durationMs": 58,
+  "allPassed": false,
+  "durationMs": 63,
   "computation": "nucleon-h3-marshalling-divergence",
   "scriptFile": "nucleon_h3_marshalling_divergence_probe.py",
-  "scriptHash": "a7e565995e2b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "1e0fcd8e62b4",
+  "scriptCommitSha": "e5deb145c7b35f26fee3327bd253d3b392c8b576",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,9 +47,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -63,6 +61,7 @@
     "dps": 50
   },
   "data": {
+    "historical_symptom_ratio_before_qu2w": "2.157",
     "rows": [
       {
         "nucleon": "p",
@@ -73,10 +72,10 @@
         },
         "n_averaged_intra_nucleon": 2,
         "d_preserving": "1.1457596924573008696890815957741193059437280619435",
-        "habiro_atomic_target": "1.1457596924573008696890815957741193059437280619435",
-        "marshalled_current": "1.321592984237344535484100338492756505170133273442",
-        "rel_d_preserving_vs_target": "1.3996467467065141903752180865958505868816912085984e-50",
-        "rel_marshalled_vs_target": "0.15346437209964641954568044452270830960286517367563"
+        "habiro_atomic_target": "0.62932840220292191816534574677848592760021940063436",
+        "marshalled_current": "1.1457596924573008696890815957741193059437280619435",
+        "rel_d_preserving_vs_target": "0.82060699699337549623882378547906223688396303214426",
+        "rel_marshalled_vs_target": "0.82060699699337549623882378547906223688396303214426"
       },
       {
         "nucleon": "n",
@@ -87,13 +86,13 @@
         },
         "n_averaged_intra_nucleon": 2,
         "d_preserving": "0.98774368811580957163402016550129498205504875906278",
-        "habiro_atomic_target": "0.98774368811580957163402016550129498205504875906279",
-        "marshalled_current": "1.2575579046963118128438700052596363151245672304443",
-        "rel_d_preserving_vs_target": "5.4118588501247362434214272494935381119495113474323e-51",
-        "rel_marshalled_vs_target": "0.27316217742195022405042953753600521257762815902643"
+        "habiro_atomic_target": "0.47513351715568221250609023267500579955840763470871",
+        "marshalled_current": "0.98774368811580957163402016550129498205504875906278",
+        "rel_d_preserving_vs_target": "1.0788760473662091682202522572702965764565316752966",
+        "rel_marshalled_vs_target": "1.0788760473662091682202522572702965764565316752966"
       }
     ],
-    "he4_implied_ratio": "2.1566309125836720426438664278185582513922521216054",
+    "he4_implied_ratio": "1.0",
     "root_cause": {
       "site": "closed_form_tau_M.compute_tau_M_nucleon_H3",
       "mechanism": "routes the nucleon chain through canonical_braid_marshalling.marshal_to_chi_lambda_braid, which emits (sign, gen) and drops `d`; `averaged` maps to sign=+1, replacing that crossing's Markov factor z - h/2 by z at two sites per nucleon",

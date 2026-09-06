@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T19:35:59.014749+00:00",
-  "commitSha": "45798cf49dd90263716fa59eb33b5b602acd3803",
+  "computedAt": "2026-09-06T10:25:58.690567+00:00",
+  "commitSha": "53c2900b12568a2c1bbad4d9dc87bf25b58a7a51",
   "assertions": [
     {
       "name": "mpfr_binding_chi_extends_f64_atomic",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": -1786374139196,
+  "durationMs": 656684,
   "computation": "chi-at-q0-binding-lossless-helium-4",
   "scriptFile": "chi_4he_binding_lossless.py",
-  "scriptHash": "581778d19a7e",
-  "scriptCommitSha": "3fffcd7fb35c980e661b0efce021cc34585251de",
+  "scriptHash": "f6c14ecf744f",
+  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,10 +28,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/chi_4he_binding_lossless.py"
+    ],
+    "reproduce": "python3 -u computations/chi_4he_binding_lossless.py"
   },
   "description": "Lossless ⁴He per-λ χ in the binding (color-weighted averaged-crossing) convention at q_0, all 77 λ⊢12, via the dim-independent Rust binding character (no dim×dim matrix). Resolves bean b0vf (was 27/77).",
   "data": {

@@ -90,9 +90,24 @@ if [ -z "${SHADOW:-}" ]; then
   trap 'rm -rf "$SHADOW"' EXIT INT TERM
 fi
 
+# The documented reuse path (`SHADOW=<dir>`) does not create the directory --
+# only the mktemp branch above did -- so `cp` failed with "cannot create
+# directory" on the very first documented invocation.  Pre-existing; bean
+# `qou-tpdg`.
+mkdir -p "$SHADOW"
+
 if [ ! -d "$SHADOW/QOU" ]; then
-  echo "copying olean tree into shadow ($SHADOW) ..."
-  cp -a "$OLEANS/QOU" "$SHADOW/QOU"
+  # HARDLINK, not copy.  The tree is ~2.3 GB and a container here has a
+  # per-session disk quota (AGENTS.md §Disk space), so `cp -a` simply fails
+  # with ENOSPC and the sweep judges nothing -- measured on a container with
+  # 1.1 GB free.  `cp -al` costs no blocks (`du` reports 2.3 GB, `df` does not
+  # move) and is safe because the rebuild below removes its target first, so it
+  # never writes through a shared inode into the real olean tree.  Falls back
+  # to a real copy if the shadow is on another filesystem.  Bean `qou-tpdg`.
+  echo "linking olean tree into shadow ($SHADOW) ..."
+  cp -al "$OLEANS/QOU" "$SHADOW/QOU" 2>/dev/null ||
+    { echo "  hardlink failed; falling back to a real copy" >&2
+      rm -rf "$SHADOW/QOU"; cp -a "$OLEANS/QOU" "$SHADOW/QOU"; }
 fi
 
 # Every paper package's build dir, not just qou's: a file may import across
@@ -100,7 +115,30 @@ fi
 # shows up as `unknown module prefix`, which reads exactly like a real error.
 SIBLINGS=$(ls -d "$ROOT"/content/*/lean/.lake/build/lib/lean 2>/dev/null |
              grep -v "^$OLEANS\$" | tr '\n' ':')
-LP="$SHADOW:$(ls -d "$ROOT"/.lake/packages/*/.lake/build/lib/lean | tr '\n' ':')$SIBLINGS$OLEANS"
+# BOTH package locations, PAPER FIRST.  The root Lake workspace has
+# `.lake/packages/` and each paper package has its own
+# `content/*/lean/.lake/packages/`; the documented sandbox restore
+# (AGENTS.md §"Mathlib cache 403 fallback") fills the PAPER one, so that is the
+# tree it GUARANTEES.
+#
+# The root tree is not reliably broken -- it is not reliably POPULATED, which is
+# worse for a gate.  Measured on two containers: on one, root held a 0-byte
+# `Mathlib/Tactic.olean`, no `Mathlib/Data/Real/Basic.olean` and 1212 oleans, so
+# every Mathlib-importing module failed with "invalid header" / "does not
+# exist".  On another, root was a 6990-olean SUPERSET with both files
+# byte-identical and the same code was fine.  Globbing the root alone makes this
+# correct by luck of environment.  Bean `qou-tpdg`.
+# Build this with a LOOP, not `ls -d <pat1> <pat2>`: `ls` SORTS its arguments,
+# so it reorders the two patterns ("$ROOT/.lake/..." sorts before
+# "$ROOT/content/...") and the root tree would win the pinning above -- which is
+# exactly the bug being fixed, reintroduced by the fix.  Shell glob expansion
+# keeps the patterns in the order written.
+PKGROOTS=""
+for d in "$ROOT"/content/*/lean/.lake/packages/*/.lake/build/lib/lean \
+         "$ROOT"/.lake/packages/*/.lake/build/lib/lean; do
+  [ -d "$d" ] && PKGROOTS="$PKGROOTS$d:"
+done
+LP="$SHADOW:$PKGROOTS$SIBLINGS$OLEANS"
 
 ORDER=$(OLEANS="$OLEANS" ROOT="$ROOT" python3 - "$@" <<'PY'
 import os, re, pathlib, subprocess, sys
@@ -182,6 +220,10 @@ for m in $ORDER; do
   src="$PKG/${m//./\/}.lean"
   out="$SHADOW/${m//./\/}.olean"
   mkdir -p "$(dirname "$out")"
+  # The shadow is hardlinked to the real tree: REMOVE the target before
+  # `lean -o` writes it, or the write lands on the shared inode and mutates the
+  # real olean tree -- the thing the shadow exists to prevent.
+  rm -f "$out" "${out%.olean}.olean.hash" "${out%.olean}.ilean"
   if ! (cd "$PKG" && LEAN_PATH="$LP" lean $LEAN_OPTS "${src#$PKG/}" -o "$out") > "$SHADOW/.rb.log" 2>&1; then
     echo "REBUILD FAILED [$i/$n] $m"
     grep -v '^note:' "$SHADOW/.rb.log" | head -30
