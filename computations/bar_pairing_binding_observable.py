@@ -102,6 +102,12 @@ ISOTOPES = {
 }
 
 
+def _os_path_basename(p: str) -> str:
+    """Basename of a path, for the cache-ownership check (bean qou-w8rv)."""
+    import os
+    return os.path.basename(p)
+
+
 def _load_chi_witness(path: Path) -> dict[tuple, mp.mpf]:
     """{λ_tuple: chi_value_mpf} from a chi-cache witness JSON."""
     w = json.loads(path.read_text())
@@ -224,7 +230,30 @@ def _load_or_compute_chi(atom: str, n: int, kind: str, q_str: str,
                 and cached_dps == dps):
             return {tuple(e["partition"]): mp.mpf(e["chi_lambda"])
                     for e in w["by_partition"]}, legacy
-        if cached_q is not None and cached_q != q_str:
+        # Checked BEFORE the diagnostics below, so the 'recomputing'
+        # messages are only printed on paths that really do recompute.
+        # Refuse to destroy a file another producer owns. Reaching here
+        # means the cache genuinely disagrees, and overwriting a
+        # canonical at-q0 witness with this script's schema is never the
+        # right repair -- re-run its own producer instead.
+        _owner = w.get("producer")
+        if _owner and _owner != _os_path_basename(__file__):
+            raise RuntimeError(
+                f"{legacy.name} was written by {_owner!r}, not by this "
+                f"script, and its cached q ({cached_q!r}) does not match "
+                f"the requested {q_str!r}. Refusing to overwrite it with "
+                f"a different schema (bean qou-w8rv). Re-run {_owner} to "
+                f"regenerate it, then re-run this script."
+            )
+        if cached_q is None:
+            # Was silent before: both diagnostic branches below are
+            # guarded on `cached_q is not None`, so an unrecognised
+            # schema recomputed and clobbered without printing anything.
+            print(f"[{atom}] cache miss: {legacy.name} carries no "
+                  f"recognised q field (keys: "
+                  f"{sorted(k for k in w if k != 'by_partition')}) "
+                  f"— recomputing", flush=True)
+        elif cached_q != q_str:
             print(f"[{atom}] cache miss: {legacy.name} computed at "
                   f"q_str={cached_q!r}, requested {q_str!r} — recomputing",
                   flush=True)
