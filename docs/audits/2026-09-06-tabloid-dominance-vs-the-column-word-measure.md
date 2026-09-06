@@ -253,3 +253,76 @@ and it needs no Hecke algebra at all. What it buys:
 `CompositionCoset*`. Which of the two `d`'s 3.7 is about — and whether the corpus needs the
 composition form to use it — is **not settled here** and should be checked before the
 statement is written, exactly as the two-`dOf` collision would have been.
+
+---
+
+## Dipper–James 3.7, measured — confirmed, and the orientation is REVERSING
+
+[`dipper_james_dominance_is_bruhat_probe.py`](../../computations/hecke/dipper_james_dominance_is_bruhat_probe.py),
+exact integer arithmetic, no float, self-checks before any verdict (`d` injective with
+`d(t^λ) = 1`; dominance a partial order; both Bruhat relations partial orders with least
+element `1`).
+
+Over **every ordered pair** of row-standard λ-tableaux, every partition λ ⊢ n:
+
+| n | pairs | `s ⊵ t ⇒ d(s) ≤ d(t)` | converse |
+|---|---|---|---|
+| 3 | 46 | 46/46 | 46/46 |
+| 4 | 773 | 773/773 | 773/773 |
+| 5 | 19 426 | 19 426/19 426 | 19 426/19 426 |
+| 6 | 708 062 | **708 062/708 062** | **708 062/708 062** |
+
+**Both directions, both Bruhat definitions.** 3.7 is confirmed on the measured range.
+
+### 🛑 The orientation is the finding, and I got it wrong first
+
+The obvious transcription of *"`s ⊵ t` iff `d(s) ⊵ d(t)`"* is `d(t) ≤ d(s)`. **That is
+backwards**, and the first run said so: it failed at **30/46, 511/773, 14201/19426,
+565748/708062** — *identically in both directions and under both Bruhat definitions*. Equal
+forward and converse counts is the signature of a **flipped relation**, not of a
+counterexample, which is how it was caught rather than reported as a refutation of a
+published lemma.
+
+The reason is structural and worth stating once: **`t^λ` is dominance-MAXIMAL while
+`d(t^λ) = 1` is Bruhat-MINIMAL**, so `d` is order-**reversing** onto standard Bruhat.
+Equivalently, Mathas' `⊵` on `S_n` is standard Bruhat with the order reversed. The correct
+correspondence is
+
+    s ⊵ t   ⟺   d(s) ≤ d(t)   (standard Bruhat)
+
+A Lean statement written off the page would have had this backwards and been unprovable for
+a reason that looks like a hard mathematical obstruction. Sixth instance of the
+handedness/orientation trap on this arc.
+
+### The Bruhat naming collision is COSMETIC on `S_n`, not semantic
+
+The two definitions — `CoxeterBruhat.BruhatLe` (subword) and Mathas' (reflection-generated
+with length increase) — were compared directly, permutation by permutation:
+
+| n | agree |
+|---|---|
+| 3 | 6/6 |
+| 4 | 24/24 |
+| 5 | 120/120 |
+| 6 | **720/720** |
+
+**Identical on the measured range.** So the collision flagged in `CoxeterBruhat.lean` needs a
+docstring, not a rename — and 3.7 may be stated against `BruhatLe` without choosing sides.
+This does **not** discharge the subword property as a *proof obligation*: Corollary 3.8 needs
+it as a theorem about arbitrary `n`, and 720/720 at `n = 6` is evidence, not a proof.
+
+### Scope question from the previous section: settled
+
+3.7 is stated for a **composition** λ. The Lean statement should be for **partition** shapes
+with `TableauPerm.dOf`, because:
+
+* a partition **is** a composition, so the partition case is a genuine special case, not an
+  analogue;
+* `TableauPerm.dOf t = refTab.trans t.symm` with `refTab = t^λ` row-superstandard, which is
+  Mathas' `d(t)` defined by `t = t^λ · d(t)` — same object, verified by the probe's
+  self-check that `d(t^λ) = 1` and `d` is injective;
+* `MurphyInductionMeasure.murphyLex` is indexed by `PartOf n`, so the partition case is
+  exactly what consumes it.
+
+The composition form stays available if 3.9 at basis level turns out to need it; nothing here
+requires building it.
