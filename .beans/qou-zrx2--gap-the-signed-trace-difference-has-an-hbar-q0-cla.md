@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: high
 created_at: 2026-08-31T10:13:14Z
-updated_at: 2026-09-03T20:46:56Z
+updated_at: 2026-09-06T03:36:05Z
 ---
 
 
@@ -576,3 +576,50 @@ second, numerics-only correction above the existing derived one, and claimed
 A=3 was "predicted before it was measured" as though new. The head sentence it
 was going to remove ("carries the ℏ_q^2 scaling") is superseded-text retained
 above its own correction, which is this corpus's house style, not a defect.
+
+
+## 2026-09-06 — the floor in closed form: interface PARITY, not topology per se
+
+Two probes, exact `Fraction`/integer arithmetic, no q evaluated anywhere:
+`computations/probes/classical_floor_is_markov_cycle_count_probe.py` and
+`classical_floor_is_interface_parity_probe.py`. Audit:
+`docs/audits/2026-09-06-the-classical-floor-is-interface-parity.md`.
+
+**The floor is** `floor(A, O) = 2^(-A)·(1 - 2^(-O))`, with `O` = number of inter-nucleon
+interfaces of ODD crossing multiplicity. Canonical `m = 1` gives `O = A-1`, hence
+`floor(A) = 2^(-A) - 2^(1-2A) = (2^(A-1) - 1)/2^(2A-1)` — `1/8` at A=2 and `7/128` at A=4,
+reproducing this bean's swept values exactly. Derived, not fitted: convention D's
+`y_lambda = [n-2k+1]_q/[2]_q^n` gives `dim V_lambda` at q=1, so
+`tr_M(w)|_1 = (1/2^n)·Sum_lambda dim(V_lambda)·chi^lambda(w) = 2^(cyc w - n)` by Schur-Weyl —
+the last step verified 6/6 in integers by counting fixed basis states of `(C^2)^(x)n`.
+Cycle law measured A = 1..20: `cyc W_free = 2A`, `cyc W_atom = 2A - O`.
+
+**Why parity:** at q=1, `h = q - 1/q = 0`, so sigma / sigma^-1 / the averaged letter all collapse
+to `s_g`; an interface applied m times is `s_g^m`, i.e. `s_g` (odd) or the identity (even).
+Measured: `m_pn = 3` reproduces `m_pn = 1` exactly; `m_pn = 2` does not.
+
+### Three consequences for this bean
+
+1. **The floor is INVARIANT under both contested word conventions** — identical rationals under
+   `intra_order` in {borromean, grouped} and `pn_convention` in {bring_color_weighted,
+   strict_averaged}, at A = 2,3,4,6, and under both at once. Those move absolute traces by
+   3.785x–14.325x. So the floor is **NOT** the source of the 5.35x E_0 disagreement this bean
+   catalogues between `binding_canonical` and `derive_binding_chain_cooperative`; that ratio is
+   a scale choice (`qou-59j5`), a separate defect. This NARROWS the bean, it does not resolve it.
+2. **floor(A=1) = 0 exactly** — no interface, so O = 0. The h_q^0 contamination is created by
+   binding; it is not carried by the nucleon.
+3. **All-even multiplicities give `floor == 0` at every A — and that is a DIAGNOSTIC, NOT A
+   REPAIR.** Choosing m because it makes the observable cleanly h_q^1 is selection against the
+   target, a fit in the sense AGENTS.md 'NO FITTING' names. m=1 stands or falls on the grounds it
+   was chosen on.
+
+**Size:** `floor·2^A = 1 - 2^(1-A) -> 1`, so floor ~ 2^(-A) from below — 22.46 % of the deuteron
+trace difference, 0.024 % by 12C. A light-nucleus problem, which does not make it go away: the
+observable is still a sum of two h_q orders at every A and no single E_0 pairs with both.
+
+**Untouched, and still the bean's subject:** the h_q index in
+`derivation_chain.E_0_CONVENTIONS['B_q_value_absorbed']` is wrong on two counts (leading term is
+h_q^0 not h_q^2; the part above it is h_q^1), and the convention collision is unresolved.
+
+**Falsifiable:** T/3He 3/32, 6Li 31/2048, 7Li 63/8192, 12C 2047/8388608 were never swept. One
+h_q sweep returning a different rational refutes the closed form.

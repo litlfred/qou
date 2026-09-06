@@ -225,9 +225,18 @@ def main():
     print("      (A statement about the q=1 limit only. The full trace difference at q₀ is not")
     print("       claimed to be mirror-symmetric, and nothing here measures it.)")
 
-    print("\n  A prediction here is only as good as the two matches above — two points fixing a")
-    print("  zero-parameter form is suggestive, not established. The way to break it is to run")
-    print("  the ℏ_q sweep on one of these rows and get a different rational.")
+    # The closing paragraph here used to read "a prediction is only as good as the two matches
+    # above — two points fixing a zero-parameter form is suggestive, not established". That was
+    # written for the FITTED draft of this probe and survived the rewrite that made it a
+    # derivation; it contradicted the docstring six screens up. The evidence is the Schur-Weyl
+    # step verified in integers, not the two agreements.
+    print("\n  The evidence is the Schur-Weyl step verified above, not the two agreements — those")
+    print("  are a consequence check. The way to break it is still to run the ℏ_q sweep on one of")
+    print("  the predicted rows and get a different rational.")
+    print("  The cycle counts above are not per-isotope lookups: cyc W_free = 2A and")
+    print("  cyc W_atom = 2A − O, giving floor = 2^(−A)·(1 − 2^(−O)) with O the number of")
+    print("  interfaces of ODD crossing multiplicity — see")
+    print("  classical_floor_is_interface_parity_probe.py.")
 
 
 if __name__ == "__main__":
