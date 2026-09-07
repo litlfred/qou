@@ -1074,3 +1074,60 @@ lives.
 
 *Literature here is recalled; the library holds no source on r-process observations or
 varying-constants spectroscopy, so none of it is checkable in-corpus.*
+
+---
+
+# 19. The $q=1$ singularity measured — and my "three sites" was wrong twice over
+
+I ended the previous turn saying three unguarded $q=1$ singularities "are now a class,
+not incidents", and that "one guard fixes all three". **Both halves are wrong, and
+measuring it gives a better finding than the one I claimed.**
+
+## 19.1 The count
+
+I had measured **two** — `y_lambda_su_n.q_int` (§14.4) and the Schwinger cubic's
+`mp.polyroots` (§18.2). The third I gestured at does not exist; I wrote "three" from
+memory of a pattern rather than from a count.
+
+The real surface, measured over `computations/` and `tools/` excluding `_deprecated`:
+
+| | count |
+|---|---|
+| files implementing $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ | **197** |
+| of those, carrying a $q = 1$ guard | **6** |
+| without a guard | **191** |
+
+## 19.2 But 191 is not 191 defects
+
+An unguarded division is a defect only if something can reach $q = 1$. Every producer in
+the corpus pins $q_0 \approx 1.11$ or sweeps away from unity, so nothing reaches it —
+**the corpus has no $q=1$ evaluation path because no prior work has needed one.** This
+session's §4a, §4b and §16 limits are the first thing to want the interface, which is why
+it surfaced twice here and nowhere before.
+
+So the honest characterisation is not "a class of defects" but **a convention that holds
+because the interface has never been studied**. That is a weaker claim about the code and
+a more interesting one about the corpus.
+
+## 19.3 The finding that is real, and larger than the guard
+
+A canonical implementation **exists** —
+`tools/qou-substrate/python/qou_substrate/constants.py:176 def q_int(n)`. It is used by
+**21** files. **192 define their own.**
+
+So roughly **90 % of the corpus reimplements the $q$-integer locally**, and "one guard
+fixes all three" is wrong for a reason that has nothing to do with the count: there is no
+single place to put a guard. Any correction to $[n]_q$ — a $q=1$ limit, a precision
+change, a convention fix — needs ~192 edits, and a fix applied to the canonical one
+reaches 10 % of callers.
+
+This is the same shape as the detector-blindness taxonomy AGENTS.md maintains: a
+correction that lands in one spelling and not the others. Here it is a *definition* rather
+than a detector, which makes it worse — a detector that misses a case reports a low
+number, while a definition that is reimplemented 192 times can silently disagree with
+itself.
+
+**Not established:** that the 192 local definitions agree with each other or with the
+canonical one. Some may differ deliberately (a different bracket convention, a symbolic
+rather than numeric form). Checking that is a separate audit and is not done here; what is
+measured is only the count and the absence of a shared import.
