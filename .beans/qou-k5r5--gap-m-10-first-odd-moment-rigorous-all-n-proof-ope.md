@@ -1471,3 +1471,49 @@ exact rational, worst disagreement 8.05e-26):
 non-monotone with a peak at n = 32 — so monotonicity is not available and an effective bound is
 required). My edge-measure route (`Q < P ⟹ M_1 > 0`, PRs #6651/#6825) attacks the SIGN directly
 and would bypass the effective bound entirely; it is not competing with it.
+
+### 2026-09-07 — the even-moment route is SHUT: neither piece of `Sum h = D + A` is shifted-symmetric (PR #7126)
+
+Probe `computations/deltalambda/wlambda_covariance_epic_M1_shifted_symmetry_membership.py`.
+Executes the cheap question #7120 identified. The answer is negative and closes a route.
+
+**Why it mattered.** `qou-ogrk` PROVED the EVEN moments `M_k = Cov(Sum h^k, omega_3) > 0` by
+shifted-symmetric => exact polynomial in n (Ivanov-Olshanski Prop 5.1) => finite positivity check --
+the epic's ONLY proved positivity technique. `M_1` is the first ODD member. If either summand of
+`Sum h = D + A` were in `Lambda*`, that machinery would apply to it and reduce `M_1` to the other.
+
+**The test.** `Lambda* = Q[p_1^*, p_2^*, ...]` with Kerov-Olshanski shifted power sums
+`p_k^*(lam) = sum_i [(lam_i - i + 1/2)^k - (-i + 1/2)^k]` -- elementary, NO characters. So
+membership is exact linear algebra over Q on monomials `prod p_{mu_j}^*`, `|mu| <= D`, with
+n-INDEPENDENT coefficients, pooled over every partition of every n in [1,12] (271 partitions).
+
+**MEASURED: `Sum h`, `A = Sum|c|`, `D = Sum d_u^2` are ALL OUT.** A rational linear functional
+separates each from the whole subalgebra, so OUT is conclusive at the bound, not a failed search.
+**Not a bound artifact:** the probe re-runs itself at `|mu| <= 8` and `<= 10` (30 -> 67 -> 139
+monomials) and every verdict is UNCHANGED.
+
+**Controls, all PASS, no verdict without them:** `n`, `Sum c`, `Sum c^2`, `Sum h^2` -- four
+functions of KNOWN shifted-symmetric status -- must all land IN, and do. Plus `p_2^* == 2 Sum c`
+and the split identity `Sum h == D + A`, both at every pooled partition.
+
+**CONSEQUENCE.** The even-moment route to `M_1` is shut: ogrk's proved technique applies to no part
+of the split.
+
+**And it is the FOURTH independent sighting of ONE wall** -- worth carrying as one fact:
+  1. `V_W` has a closed form, `V_A` does not (#6627)
+  2. `W` is an eigenfunction of the up-down chain, `A` and `D` are not (#6651)
+  3. even hook-power moments are shifted-symmetric, odd are not (`qou-ogrk`)
+  4. neither summand of the odd one is either (this probe)
+Shifted-symmetric <=> closed form <=> reachable, four times over. A fifth attempt that routes
+around this wall rather than through it should expect the same answer.
+
+**Scope.** OUT is exact at these bounds; it does NOT exclude higher-degree membership, and says
+NOTHING about whether `M_1 > 0` -- only that this technique cannot reach it. scope-(a).
+
+**What is left, after this.** Of the routes the epic names, `M_1` is reachable by none that are
+proved. The live epic routes remain `qou-t5m1` (Sniady genus expansion on the `(f^lam)^3`-biased
+measure, todo) and `qou-0ml9` (RSK, todo, Lean dependency landed in `qou-t181`), and `qou-ujil`
+says a proof must operate at the CLT scale and produce a correlation coefficient. `M_1`'s own next
+move, if any, is the integrated-covariance form `f668c434a97` introduced for the epic
+(`E_Q[X] = integral_0^1 Cov_{Q_t}(log f^lam, X) dt`), which restores first order where the direct
+tilt expansion is ~1/3 nonlinear. That is untested for `M_1` and is the one un-eliminated lead.
