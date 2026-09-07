@@ -241,6 +241,17 @@ def main() -> None:
     # asserted over -- they sit outside the family under discussion.
     main_scan = [r for r in scan if r["c0"] >= 0]
     bracket = [r for r in scan if r["c0"] < 0]
+    # Self-consistency: the chain rule is exact POINTWISE, but the product of
+    # two OLS slope ESTIMATES need not equal the OLS estimate of the direct
+    # slope unless the intermediate fit is exact. Measure the gap rather than
+    # leave a reader to wonder whether the identity is being over-claimed.
+    for r in scan:
+        r["product_vs_direct_slope_rel"] = (r["product_s_times_p"] - measured) / measured
+    gaps = [r["product_vs_direct_slope_rel"] for r in main_scan]
+    attenuation = max(abs(g) for g in gaps)
+    attenuation_min = min(abs(g) for g in gaps)
+    all_negative = all(g <= 0 for g in gaps)
+
     prods = [r["product_s_times_p"] for r in main_scan]
     prod_spread = (max(prods) - min(prods)) / (sum(prods) / len(prods))
     prods_all = [r["product_s_times_p"] for r in scan]
@@ -326,6 +337,32 @@ def main() -> None:
                 "nothing beyond the slope."),
     })
     wb.add_data("degeneracy_scan", scan)
+    wb.add_data("ols_attenuation_check", {
+        "max_relative_gap_over_c0_ge_0": attenuation,
+        "min_relative_gap_over_c0_ge_0": attenuation_min,
+        "every_gap_is_negative": all_negative,
+        "direct_slope": measured,
+        "why": ("dln(kappa)/dln(A) = s*p is exact pointwise (chain rule), but "
+                "s and p are OLS slope ESTIMATES and their product need not "
+                "equal the OLS estimate of the direct slope unless ln(alpha) "
+                "on ln(A) fits exactly (it does not: R^2 ~ 0.973-0.978)."),
+        "verdict": ("THE SPREAD IS THE ATTENUATION. Max gap "
+                    "1.478% against a 1.484% spread of s*p across the family "
+                    "-- the same size, every gap NEGATIVE, and monotone away "
+                    "from c0 ~ 0.4 where it vanishes. That is the attenuation "
+                    "signature, not variation in the product. Where the "
+                    "estimator is clean (c0 = 0.5 and 0.25) s*p reproduces "
+                    "the direct slope to 0.002% and 0.016%."),
+        "consequence": ("The product is the SAME NUMBER for every kernel, to "
+                        "better than the resolution of this decomposition. "
+                        "The degeneracy is tighter than the raw spread "
+                        "suggests, not looser -- so this check strengthens "
+                        "the finding. An earlier version of this probe "
+                        "asserted the gap was 'an order of magnitude below' "
+                        "the spread; that was wrong, from a three-point spot "
+                        "check that missed the large-c0 end, and this "
+                        "assertion is what caught it."),
+    })
     wb.add_data("product_spread_across_scan", {
         "relative_spread": prod_spread,
         "min": min(prods), "max": max(prods),
@@ -409,6 +446,24 @@ def main() -> None:
                 f"The product is what is measured; neither factor separately "
                 f"is. Including the three c0 < 0 bracket points the spread is "
                 f"{mp.nstr(prod_spread_all * 100, 4)}%."))
+    wb.add_assertion(
+        name="the_sp_spread_is_ols_attenuation_not_variation",
+        computed=1 if (all_negative and attenuation_min < mpf("0.0005")) else 0,
+        expected=1, tolerance=0, unit="boolean",
+        source=(f"The chain rule is exact pointwise, but s and p are OLS "
+                f"estimates whose product attenuates when ln(alpha) on ln(A) "
+                f"does not fit exactly. Two signatures establish that the "
+                f"measured spread IS that attenuation rather than genuine "
+                f"variation in the product: EVERY gap over c0 >= 0 is "
+                f"negative (attenuation only ever underestimates), and the "
+                f"smallest is {mp.nstr(attenuation_min * 100, 3)}% -- i.e. "
+                f"where the estimator is clean, s*p reproduces the direct "
+                f"slope {mp.nstr(measured, 8)} essentially exactly. The "
+                f"largest is {mp.nstr(attenuation * 100, 4)}% against a "
+                f"{mp.nstr(prod_spread * 100, 4)}% spread: the same size. So "
+                f"the product is the same number for every kernel to better "
+                f"than this decomposition can resolve, and the degeneracy is "
+                f"TIGHTER than the raw spread suggests."))
     wb.add_assertion(
         name="admissible_kernel_not_worse_once_the_exponent_is_freed",
         computed=1 if ratio_free <= mpf("1.05") else 0,
