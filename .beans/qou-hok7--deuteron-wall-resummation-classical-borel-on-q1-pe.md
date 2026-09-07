@@ -478,6 +478,8 @@ question this bean previously got backwards.
 run and negative. What remains genuinely open is `REV`'s asymptotics, which is a
 statement about the *object*, not about a route to `B_D`.
 
+Taken over 2026-09-07 by claude/stalled-agents-em-linking-jilmbv; the #7093 session ended awaiting merge permission (last c0704640e2e). Child task qou-0ie7 attacks the Σβ constraint on the same branch; nothing force-pushed.
+
 ## 2026-09-07 (later still) — the Jensen step attacked; three refutations and a price (PR #7093)
 
 The section above says: "Replace the Jensen step, not the H bound." Done. It is **not replaced**,

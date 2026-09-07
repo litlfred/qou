@@ -95,3 +95,4 @@ formalisation step if anyone wants the constant in Lean too.
 `Q0_FLIP: 1` = `hadron-knot-table`, `Q0_ANCHOR_UNRECOGNISED: 1` = `qbeta-derived-w-overdetermined-test`,
 verified by running the anchor audit alone); the ten contended audit witnesses it regenerated
 were reverted (bean `qou-v0t8`).
+

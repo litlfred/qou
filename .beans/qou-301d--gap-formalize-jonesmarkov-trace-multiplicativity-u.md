@@ -258,6 +258,8 @@ bond-product reading of the atom word, remains MEASURED, NOT DERIVED.
 Verification: lean-direct exit 0, no sorry; #print axioms clean on involutionTrace,
 sandwichReduces_involution, towerSpan_involution, t_not_mem_shiftedUpTo.
 
+Taken over 2026-09-07 by claude/stalled-agents-em-linking-jilmbv after the #7079 session ended (f8e6fdaefff on main). Child task qou-fq1i builds the symmetric-group tower witness.
+
 --------
 
 **2026-09-07 (witness 2, bean qou-fq1i, PR #7131): the "trace is a homomorphism" objection to InvolutionTowerWitness is CLOSED.** `QOU/MathlibExt/SymmetricGroupTowerWitness.lean`: symmetric-group algebra tower `MonoidAlgebra R (Equiv.Perm ℕ)`, `g = ginv = t m = of (swap m (m+1))`, trace = coefficient of the identity, z = zinv = 0, all MarkovTrace axioms hold. The trace is NOT a hom (`tr(t t) = 1 ≠ 0`), the filtration grows (`t_not_mem_shiftedUpTo`), and `SandwichReduces` is PROVED at every level (`sandwichReduces_sym`) via the double-coset decomposition `S_{k+1} = S_k ∪ S_k s_k S_k`, itself from "adjacent transpositions generate interval-supported permutations" (double induction). Hence `TowerSpan` and `DisjointBlockMultiplicative` through the #7079 chain, cross-checked by a direct proof from `W_{<n} ∩ W_{≥n} = {1}`. Non-trivial pair: `a = 1 + t n`, `b = 1 + t(n+1)`: tr(ab) = 1 = tr a·tr b, while tr(a·a) = 2 ≠ 1 — the law is about disjointness, not multiplicativity. 0 sorry; lean-direct exit 0; #print axioms clean on 18 decls.
