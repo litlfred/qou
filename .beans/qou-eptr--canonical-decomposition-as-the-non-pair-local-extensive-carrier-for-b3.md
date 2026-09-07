@@ -1,11 +1,11 @@
 ---
 # qou-eptr
-title: 'EP/canonical decomposition as the non-pair-local extensive carrier for b_3 — aim, and the hard blocker at the light end'
+title: EP/canonical decomposition as the non-pair-local extensive carrier for b_3 — aim, and the hard blocker at the light end
 status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T10:56:11Z
-updated_at: 2026-09-06T11:53:23Z
+updated_at: 2026-09-07T04:30:55Z
 ---
 
 WHY IT IS WELL-AIMED at the ONE open piece of the binding gap
