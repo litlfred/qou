@@ -9,6 +9,24 @@ Owner asked: *"back to original question of arc — how do we get to 1 ppQ. Lots
 in the last few weeks. A reanalysis is needed. What are the promising attack options … what's
 needed from research and lit."*
 
+> **✅ §5 ITEM 1 HAS LANDED (2026-09-07, PR #7069) — the tables below are the state BEFORE it.**
+> Read §1 and §2c as the measurement that motivated the change, not as current status. What moved:
+>
+> - **`α_EM` is on the L2 dashboard.** `alpha_em_inv`, err 0.3652 ppb, σ_exp 0.1532 ppb, 100×
+>   target 0.001532 ppb, **miss 238.3×** — second-best scoreable row, behind `m_K/m_π` and ahead
+>   of everything else. **The headline moves 1/5 → 1/6 scoreable**, i.e. adding the row makes the
+>   published ratio worse and the scorecard honest.
+> - **Both α_EM producers now read the CODATA reference from the registry** instead of freezing an
+>   edition, so the sign ambiguity in §2c is gone at the source: there is no edition to choose.
+> - **A false premise was corrected.** `qou-rbdi` says `codata.py` has "NO fine-structure entry";
+>   it has two, at CODATA 2022, with uncertainties. That bean grepped the module *source*, which
+>   cannot see entries parsed at runtime from `data/allascii.txt`. What survives is a different and
+>   much cheaper defect: `CANON` in `codata_truncation_audit.py` is a hand-written list that omits
+>   α, so the *gate* is blind even though the *registry* is not.
+>
+> **Not touched, deliberately:** the 66 files that hardcode `137.035999084`. That is bean
+> `qou-7ot6`'s drain and is not a blind sweep to launch off this document.
+
 Supersedes, as a status document,
 [`2026-08-18-mass-binding-accuracy-what-is-closeable.md`](2026-08-18-mass-binding-accuracy-what-is-closeable.md)
 — its §1 recount and §3 refutation both stand and are re-confirmed below; its §7 ranking is

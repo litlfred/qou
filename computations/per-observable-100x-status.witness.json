@@ -1,24 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T09:12:25.806546+00:00",
-  "commitSha": "0b423be6251b9fbc009ec28d8c30d62ef53a8772",
+  "computedAt": "2026-09-07T11:26:45.189233+00:00",
+  "commitSha": "c33a59d6b5088c9c78434e48bbd0adfb056766e8",
   "assertions": [
     {
       "name": "summary_total_observables",
-      "computed": 7,
-      "expected": 7,
+      "computed": 8,
+      "expected": 8,
       "passed": true,
       "tolerance": 0,
       "source": "row count in the emitted payload vs the summary's own total"
     }
   ],
   "allPassed": true,
-  "durationMs": 66,
+  "durationMs": 7,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "567e27a7daba",
-  "scriptCommitSha": "6af337c6c1c60d1a91d6d167eec9a08d1644739d",
+  "scriptHash": "69aae941754c",
+  "scriptCommitSha": "41df0a3d94bc2a2911457ff97fcdfbf5c1cdd078",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -146,6 +146,26 @@
         "compute_output_dps": 60
       },
       {
+        "obs": "alpha_em_inv",
+        "role": "validation (gauge coupling)",
+        "pred_MeV": "137.035999127",
+        "codata_MeV": "137.035999177",
+        "sigma_exp_MeV": "2.10000e-8",
+        "err_ppb": "0.3652",
+        "sigma_exp_ppb": "0.1532",
+        "target_100x_ppb": "0.001532",
+        "miss_factor": "238.3",
+        "roundtrip_residual_ppb": null,
+        "is_anchor_roundtrip": false,
+        "note": "CONDITIONAL on three unproved classes (ArchimedeanLimit, BlochSuslinUniqueness, BringZeroModeBlochClass) — a conditional prediction, not a proved derivation. The Schwinger factor is derived, not fitted. Second-best scoreable row: 238x, against 970x (m_mu) and 152-177x (the Q_beta trio). NOTE the residual's SIGN depends on the CODATA edition (the 2018->2022 shift is 2.2x the residual); the reference is read from the registry so the edition is not a choice.",
+        "beats_1x_experimental": false,
+        "beats_100x_experimental": false,
+        "source_witness": "alpha-em-schwinger-ladder.witness.json :: data.ladder_proton.form_B_alpha_inv (cubic form with the derived Schwinger factor (1-h^2 alpha), proton pin)",
+        "sigma_source": "qou_substrate.codata registry — 'inverse fine-structure constant', CODATA 2022",
+        "compute_truncation_ppb": "7.297e-54",
+        "compute_output_dps": 60
+      },
+      {
         "obs": "m_e",
         "role": "CAL-1 anchor",
         "pred_MeV": "0.510998950690",
@@ -183,10 +203,10 @@
       }
     ],
     "summary": {
-      "total": 7,
+      "total": 8,
       "beats_1x_count": 2,
       "beats_100x_count": 2,
-      "scoreable_total": 5,
+      "scoreable_total": 6,
       "beats_100x_scoreable": 1,
       "calibration_inputs": [
         "m_p",

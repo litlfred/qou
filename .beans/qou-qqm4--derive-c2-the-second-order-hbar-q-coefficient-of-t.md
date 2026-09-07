@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-07T07:12:18Z
+updated_at: 2026-09-07T11:13:26Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -604,3 +604,83 @@ kind -- both establish only that it is NOT sigma and NOT sigma_inv. ORDER 4 is w
 averaged_weighted predicts a DEVIATION from the plain average, and is the measurement that would
 settle it. Cost: A=3 at K=4 is ~4x the K=3 word cost. Also open: A >= 6, and A=4/A=5 at K=3
 (A=4 at K=3 is ~25x A=3, i.e. ~1h/word).
+
+
+2026-09-07 (order 4): THE pn KIND IS SETTLED -- `averaged_weighted`, twice over. Probe:
+computations/probes/bond_pn_kind_order_four_discriminator_probe.py (exit 0, 122s). This CLOSES the
+open item the order-3 entry above left, and supersedes the "two-and-a-half determinations" caveat
+posted on #6992 and #7000.
+
+MY COST ESTIMATE ABOVE WAS WRONG. The entry above says "A=3 at K=4 is ~4x the K=3 word cost" and
+both PR bodies costed the discriminator as an A=3 word (~17 min). Wrong object: the bond factors are
+EXTRACTED at A=2, so the discriminator is an A=2 measurement -- 41 seconds. Do not repeat that
+estimate; ask which object carries the quantity before costing a measurement.
+
+THE DISCRIMINATOR. At eps^4 the two candidate kinds separate for the first time:
+    d_averaged           (0, -1, 1/2, -1/2, 1/2 )
+    d_averaged_weighted  (0, -1, 1/2, -1/2, 7/6 )
+    z + d_averaged       (1/2, 0, 3/4, -3/4,  5/8 )   RULED OUT
+    z + d_averaged_wtd   (1/2, 0, 3/4, -3/4, 31/24)   matches
+    measured pn bond     (1/2, 0, 3/4, -3/4, 31/24)
+
+SETTLED ON TWO DIFFERENT OBJECTS, not one. The held-out 3He word at K=4 re-discriminates the same
+pair independently: carrying the ruled-out plain-average bond through the product gives 3745/512 at
+eps^4 against the measured 11299/1536. That word contributed nothing to the extraction.
+
+WHAT IT COSTS THE ORDER-3 HEADLINE. Two thirds of "the bonds are z, (z+z')/2, z'" survive order 4
+and one third does not:
+    pp   z            STILL EXACT at order 4
+    nn   z' = z - h   STILL EXACT at order 4
+    pn   (z+z')/2     BREAKS at eps^4  (5/8 predicted vs 31/24 measured)
+The mixed bond is the plain mean only through order 3. pp and nn take NO correction, so the entire
+delta weighting lives in the one interface where a (p,n) asymmetry could enter. The `upsilon = -tau`
+corollary also stops -- the order-3 entry called it inherited from z and h rather than structural,
+and this is the measurement showing the inheritance ends (order-4 normalised: 1/4, 31/12, 9/4).
+
+HELD OUT: 10/10 at order 4 -- 3He free and atom, all five coefficients each, predicted from A<=1
+nucleon and A<=2 bond factors. Cost 1470s free + 1785s atom.
+
+NOT FITTED, NOT LEAN. d_averaged_weighted and delta = (q-1)^2(1-q^-4)/3 are the corpus's own
+letter_d_series, untouched; a previously untested BRANCH of that function is now tested and passed.
+The merged DisjointBlockTraceLaw.tr_mul_gen_comb does NOT cover this: averaged_weighted is not a
+constant combination of the two generators once delta enters. No Lean claim is made.
+
+STILL OPEN: A >= 6; A=4/A=5 at K=3 (A=4 at K=3 is ~25x A=3); order 5+.
+
+
+2026-09-07 (order 5): all three identities hold one order further, and pp = z is EVIDENCE for the
+TwoSidedMarkov premise. Same probe, section 6 (241-244s per bond, 730s total, recorded).
+
+    pp = z                        HOLDS   (1/2, 1, 1/4, -1/4, 1/8, 0)
+    nn = z' = z - h               HOLDS   (1/2, -1, 5/4, -5/4, 9/8, -1)
+    pn = z + d_averaged_weighted  HOLDS   (1/2, 0, 3/4, -3/4, 31/24, -5/2)
+    pn = z + d_averaged           ruled out again (eps^5: -1/2 vs -5/2)
+
+So the kind determination stands at TWO orders as well as on two objects.
+
+WHY IT MATTERS BEYOND "one more order". pp's letter has d = 0, so pp = z IS the statement
+tr(a.sigma) = tr(a).z -- the premise of TwoSidedMarkov, the class every theorem in
+DisjointBlockTraceLaw is conditional on and which has NO INSTANCE. Six coefficients now, including
+eps^5 where z's own coefficient is 0 (a zero predicted and a zero measured, not vacuous). This is
+EVIDENCE and discharges nothing: conditional-proved is not premise-established, and that rule
+applies to numerical support exactly as to Lean. The route to the premise is still E_n (qou-301d).
+
+PROCESS TRAP, cost me the edits once and worth recording. `git checkout -- computations/` is the
+command used all session to revert the contended audit witnesses that a precision-gates run
+rewrites. It is TREE-WIDE, so it also destroys uncommitted probe work in computations/. Scope it
+(`git checkout -- computations/audits computations/*.witness.json`) or commit before running gates.
+
+
+2026-09-07 (CORRECTION to the order-5 entry above): "evidence for the TwoSidedMarkov premise, a
+class with NO INSTANCE" is WRONG, both halves, and it is a category error. PR #7067 proves
+TwoSidedMarkov is DERIVABLE from MarkovTrace in four lines -- cyclicity + T3 + the fact that H n is
+a Subalgebra, so y merges with x into y*x in H n and T3 applies -- and registers a global instance.
+So the class has an instance for every MarkovTrace. Worse: tr(a.sigma) = tr(a).z for a in H n is T3
+ITSELF, an AXIOM of MarkovTrace. Offering numerical evidence for an axiom of the structure you are
+reasoning in is not a weak result, it is a category error.
+
+WHAT THE MEASUREMENT ACTUALLY SUPPORTS: that the CONCRETE Hecke Markov trace (the one [diamond]
+evaluates) satisfies Markov stabilisation at the atom word's interface positions with z = z_D. A
+fact about the concrete trace matching the abstract axioms -- classical (Jones/Ocneanu), unformalised
+here, strictly weaker and different. The numbers are unaffected; only their interpretation moved.
+Corrected in the probe's section 6, its docstring, and on #7023.

@@ -34,7 +34,7 @@ probe's. ⁴He magnitude nearly doubles.
 
 ## Work
 
-- [ ] Add a Wenzl-weighted `P_total_wenzl` alongside the existing value in all
+- [x] Add a Wenzl-weighted `P_total_wenzl` alongside the existing value in all
       three sign probes, and make it the headline.
 - [ ] Re-run; confirm every sign gate (including the he4→triton cross-atom
       assert) still passes.
@@ -62,3 +62,48 @@ Parent question: `qou-za3q`. Sibling options: `qou-q2q7` (A), `qou-94yt` (B),
 
 No published conclusion depends on the choice, so this is a correctness-of-object
 question, not an emergency.
+
+
+---
+
+## 2026-09-07 — implemented
+
+All three sign probes now accumulate `P_wenzl` via
+`y_lambda_wenzl_bridge_numeric` alongside the Plancherel `P_total`, and emit
+`headline_pairing: "P_total_wenzl"` with the value and its sign.
+
+**`P_total` keeps its name and Plancherel meaning, deliberately.** Gate 2 of the
+he4 sparse probe does a NUMERICAL dense-vs-sparse check against the committed
+`P_total`, and `he4_magnus_mpfr_probe.py` reads it too — silently re-meaning the
+field would compare a Wenzl-weighted sparse value against a Plancherel-weighted
+committed one and break a real check. Adding the truth rather than re-meaning an
+existing key is the same fix this arc used for the `y_lambda` column and the
+missing `scriptFile`. A hard rename stays available, but must migrate those
+numerical checks in lockstep.
+
+Deuteron regenerated and verified: `P_total_wenzl = -6.9212506529727351`,
+matching the independent offline re-weighting exactly; control assertion still
+passes. Triton and he4 are slow (>10 min and worse) and pick up the fields on
+their next run — no arithmetic changed, only what is additionally recorded.
+
+Remaining on this bean: re-run triton and he4 so their witnesses carry the
+headline fields, and confirm the cross-atom sign gate still passes end to end.
+
+### Runtime reality for the remaining two
+
+`triton_magnus_omega2_sign_probe.py` was given **2400 s and still timed out**
+(exit 124); `he4_magnus_omega2_sign_sparse_probe.py` is slower again. Neither
+wrote, so their witnesses still carry only the Plancherel arm while their
+sources carry the implementation.
+
+This is not a blocker for the result: the Wenzl values for all three atoms are
+already committed, measured independently, in
+`magnus-omega2-weight-family-robustness.witness.json` — deuteron −6.921, triton
+−59.991, ⁴He −100.827. What is missing is only that those numbers travel inside
+each probe's own witness.
+
+Whoever picks this up should run the two with a multi-hour budget rather than a
+session's tail — or, better, profile them first: a 40-minute H₉ probe is itself
+worth a look, and `qou-4383` independently found `atomic_tr_m_helium4.py` and
+`binding_combiner_markov_peel_fallback.py` exceeding 1200 s, so slow producers
+in this tree are a pattern rather than a one-off.

@@ -7,24 +7,42 @@ form-ladder which used the quadratic fixed-point and understated the accuracy.
 At the proton pin (which α_EM independently prefers to 0.245 ppb — see
 alpha_em_anchor_preference_probe.py), the ladder is:
 
-  form A  (quadratic, α²H + αT − 1 = 0; NO Schwinger)        1/α resid = +1.67 ppb
-  form B  (cubic, +derived Schwinger (1−h²α), RT phase 3)    1/α resid = +0.313 ppb  ≈ 2× σ_α
+  form A  (quadratic, α²H + αT − 1 = 0; NO Schwinger)        1/α resid = +0.9937 ppb
+  form B  (cubic, +derived Schwinger (1−h²α), RT phase 3)    1/α resid = −0.3652 ppb  = 2.38 σ_α
 
 So α_EM with the RT-phase-3-DERIVED Schwinger self-energy factor (1−h²α) — NOT a
-fitted knob — lands at +0.313 ppb = ~2× the 0.15 ppb experimental σ. This is far
-closer than the 80 ppb (muon-anchor) or 1.67 ppb (proton, no-Schwinger) headlines.
+fitted knob — lands 2.38 σ from CODATA. Far closer than the ~80 ppb muon-anchor
+headline, and better than form A at the same anchor.
 
-The remaining +0.313 ppb is the genuine 2-loop O(α²) term, of size
-  c₂ = residual/α² ≈ 8.1e-4,
+🛑 THE REFERENCE IS NOW READ FROM THE REGISTRY, AND THAT CHANGED THE SIGN.
+This file used to hardcode CODATA 2018 (137.035999084) with a note calling that
+deliberate. The 2018→2022 edition shift is 0.6787 ppb — **2.2× the form-B
+residual itself** — so it does not merely move the number, it flips it:
+
+  form A   +1.6723 ppb (11.15 σ) vs 2018   →   +0.9937 ppb (6.48 σ) vs 2022
+  form B   +0.3134 ppb ( 2.09 σ) vs 2018   →   −0.3652 ppb (2.38 σ) vs 2022
+
+The magnitude and the σ count barely move; the SIGN does. A residual whose sign
+depends on which CODATA edition you compare against is a number of that size, not
+an agreement — which is why the reference is now derived rather than chosen.
+
+⚠ AND THE 100× TARGET IS STILL MISSED BY ~238×. "≈ 2 σ" is the 1× experimental
+comparison; L2 asks for σ_pred ≤ σ_exp/100. Against a 100× target of 0.0015325 ppb
+the form-B residual misses by 238.3×. Do not quote the σ count as if it were the
+L2 result — an earlier version of this docstring said α_EM "misses its 100× target
+by only ~2×", which conflated the two bars by a factor of 100.
+
+The remaining −0.3652 ppb is the genuine 2-loop O(α²) term, of size
+  c₂ = residual/α² ≈ −9.4e-4,
 which is UNCOMPUTED (the RT phase-2 EmFermionLoop program). It is NOT the Ohtsuki
 2-loop κ₁ = 11√3π/108 ≈ 0.554 (a different, even-channel object in ℚ(√3); α_EM's
-c₂ is ~680× smaller).
+c₂ is ~590× smaller). Note c₂ is now NEGATIVE — under the 2018 pin it read +8.1e-4;
+that sign is the edition flip above, not new physics.
 
-HONEST STATUS: with the correct anchor + the derived Schwinger term, α_EM misses
-its 100× target by only ~2× — the closest any not-yet-met observable sits to 1 ppq.
-The last factor of 2 is a small uncomputed 2-loop coefficient (plus the still-
-conjectural physical coupling claim + upstream classes). No coefficient fitted here
-(the Schwinger factor is derived; only q0 is the documented proton pin); scope-(a).
+HONEST STATUS: with the correct anchor + the derived Schwinger term, α_EM is the
+closest any not-yet-met observable sits to its L2 target — 238× short, against
+970× for m_μ and 152–177× for the Q_β trio. No coefficient fitted here (the
+Schwinger factor is derived; only q0 is the documented proton pin); scope-(a).
 
 Companion: alpha_em_anchor_preference_probe.py, alpha_em_form_ladder_probe.py (#3612,
 which used form A only), QOU/Archimedean/EmCouplingBringZeroMode.lean (#3625).
@@ -41,10 +59,33 @@ import _path_bridge  # noqa: F401, E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate import codata as _codata  # noqa: E402
 
 set_compute_dps()
-CODATA = mp.mpf("137.035999084")
-SIGMA_PPB = mp.mpf("0.15")
+
+# CODATA reference: READ FROM THE REGISTRY, never hand-typed.
+#
+# This producer used to carry `CODATA = mp.mpf("137.035999084")` (CODATA 2018)
+# and `SIGMA_PPB = mp.mpf("0.15")`, with a note saying the 2018 pin was
+# deliberate because "bumping it alone would desynchronise the recorded
+# residuals". That is an argument for re-running, not for freezing: the edition
+# shift is 0.6787 ppb, **2.2x the form-B residual itself**, and it FLIPS the
+# residual's sign (+0.313 -> -0.365). A residual whose sign depends on which
+# CODATA edition you compare against is a number of that size, not an agreement.
+#
+# Reading the registry also removes the freedom entirely — there is no edition
+# to choose, and the value moves when the table does. `qou-rbdi` records that
+# `codata.py` has "NO fine-structure entry"; that is FALSE and is corrected on
+# the bean. It greps the module SOURCE, which cannot see entries the module
+# parses at runtime out of `data/allascii.txt`. Both `fine-structure constant`
+# and `inverse fine-structure constant` are present, with uncertainties.
+_ALPHA_INV = _codata.codata("inverse fine-structure constant")
+CODATA = mp.mpf(_ALPHA_INV.value_str)
+# sigma derived from the table's own uncertainty, not rounded by hand: the old
+# 0.15 was a 2% truncation of 0.15325.
+SIGMA_PPB = mp.mpf(_ALPHA_INV.uncertainty_str) / CODATA * mp.mpf(10) ** 9
+# The superseded pin, kept ONLY to quantify the shift in the witness.
+CODATA_2018 = mp.mpf("137.035999084")
 # Proton pin read BY NAME from the substrate (owner authorisation 2026-09-03, bean
 # qou-4bef); until then a 19-figure truncation of the 50-digit string was hardcoded.
 Q_PROTON = mp.mpf(Q_50_DIGIT_STR)
@@ -67,12 +108,18 @@ def main() -> int:
 
     wb = WitnessBuilder("alpha-em-schwinger-ladder", engine="mpmath")
     wb.set_description(
-        "The alpha_EM ladder at the proton pin: form A (quadratic, no Schwinger) "
-        "resid +1.67 ppb -> form B (+derived Schwinger (1-h^2 alpha), RT phase 3) "
-        "resid +0.313 ppb ~ 2x sigma_a. Corrects the earlier form-ladder (form A only, "
-        "understated). Remaining 2-loop c2 ~ 8.1e-4 (uncomputed, NOT Ohtsuki kappa1=0.554). "
-        "alpha_EM misses its 100x target by only ~2x at the correct anchor. Schwinger "
-        "factor derived (not fitted); q0 = documented proton pin; scope-(a)."
+        "The alpha_EM ladder at the proton pin, scored against the CODATA reference READ "
+        "FROM THE REGISTRY (qou_substrate.codata, CODATA 2022) rather than a hardcoded "
+        "edition: form A (quadratic, no Schwinger) resid +0.9937 ppb (6.48 sigma) -> form B "
+        "(+derived Schwinger (1-h^2 alpha), RT phase 3) resid -0.3652 ppb (2.38 sigma). "
+        "The 2018->2022 edition shift is 0.6787 ppb, 2.2x the form-B residual, and FLIPS its "
+        "sign (+0.3134 -> -0.3652); magnitude and sigma count barely move. Against the L2 "
+        "100x target (0.0015325 ppb) form B still misses by 238.3x -- the 2.38 sigma is the "
+        "1x comparison, not the L2 one, and the two must not be conflated. Remaining 2-loop "
+        "c2 ~ -9.4e-4 (uncomputed, NOT Ohtsuki kappa1=0.554; the sign is the edition flip). "
+        "Closest any not-yet-met observable sits to its L2 target: 238x vs 970x (m_mu) and "
+        "152-177x (Q_beta trio). Schwinger factor derived (not fitted); q0 = documented "
+        "proton pin; scope-(a)."
     )
     wb.set_content_block("prop:em-coupling-bring-zero-mode")
 
@@ -106,7 +153,30 @@ def main() -> int:
         "form_A_no_schwinger_ppb": fmt(rA, 20), "form_B_schwinger_ppb": fmt(rB, 20),
         "schwinger_shift_ppb": fmt(rA - rB, 20),
         "form_A_sigma": fmt(abs(rA) / SIGMA_PPB, 20), "form_B_sigma": fmt(abs(rB) / SIGMA_PPB, 20),
+        "form_A_miss_vs_100x": fmt(abs(rA) / (SIGMA_PPB / 100), 20),
+        "form_B_miss_vs_100x": fmt(abs(rB) / (SIGMA_PPB / 100), 20),
+        # The predicted VALUES, not only their residuals. The witness used to
+        # publish `*_ppb` alone, so a consumer wanting the prediction had to
+        # back it out of a residual against a reference the witness did not
+        # record — the same "publishes a residual with nothing to be a residual
+        # FROM" defect the form-ladder witness was corrected for on 2026-09-04.
+        # per_observable_100x_status.py reads form_B_alpha_inv.
+        "form_A_alpha_inv": fmt(1 / aA, 30),
+        "form_B_alpha_inv": fmt(1 / aB, 30),
         "q0": fmt(q, 50)})
+    # The edition shift, recorded so the sign flip is on the record rather than
+    # rediscovered. This is provenance, NOT a second scoring.
+    wb.add_data("codata_reference", {
+        "alpha_inv": _ALPHA_INV.value_str,
+        "uncertainty": _ALPHA_INV.uncertainty_str,
+        "sigma_ppb": fmt(SIGMA_PPB, 20),
+        "source": "qou_substrate.codata registry (data/allascii.txt, CODATA 2022)",
+        "hardcoded_previously": "137.035999084 (CODATA 2018), sigma_ppb 0.15 (a 2% rounding of 0.15325)",
+        "edition_shift_ppb": fmt((CODATA - CODATA_2018) / CODATA * mp.mpf(10) ** 9, 20),
+        "note": ("the edition shift is 2.2x the form-B residual and flips its sign "
+                 "(+0.3134 ppb vs 2018 -> -0.3652 ppb vs 2022); the magnitude and the "
+                 "sigma count barely move, the sign does"),
+    })
     wb.add_data("two_loop", {
         "c2": mp.nstr(c2, 12), "kappa1_ohtsuki": mp.nstr(KAPPA1_OHTSUKI, 12),
         "c2_vs_kappa1": f"c2 ~ {mp.nstr(KAPPA1_OHTSUKI / abs(c2), 3)}x smaller — different object",

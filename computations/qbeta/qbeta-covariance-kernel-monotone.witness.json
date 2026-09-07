@@ -1,0 +1,229 @@
+{
+  "computation": "qbeta-covariance-kernel-monotone",
+  "assertions": [
+    {
+      "name": "conditional_mean_is_not_monotone_at_any_k",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "every k in 4..26 has inversions; at k=26 there are 184 of 383 consecutive pairs -- about HALF -- with a worst relative jump of 64.0x. Monotone decreasing E[f|C_2] would give the conjecture outright via Cov(h(X),X) <= 0; it is false, and not narrowly"
+    },
+    {
+      "name": "inversions_grow_with_k",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "7 (k=10) -> 49 (k=18) -> 184 (k=26): the defect is structural and worsening, not a small-k artifact"
+    },
+    {
+      "name": "no_binning_recovers_monotonicity",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "neither 8 equal-Plancherel-mass bins nor even 4 are monotone at any k tested. The defect is not resolution-dependent noise"
+    },
+    {
+      "name": "shape_is_a_hump_not_a_decrease",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "for k >= 14 the 4-bin conditional mean attains its MAXIMUM at an interior bin and its minimum at the top bin. E[f|C_2] rises through the middle and falls only at high C_2 -- so the negativity is a TAIL effect, and the target is a one-sided upper bound on E_P[f|C_2=c] for large c, not a monotone trend"
+    },
+    {
+      "name": "covariance_is_negative_exactly",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "Cov_P(f, C_2) < 0 on exact rationals at every k -- the conjecture, since G(1) = (k!/|C_3|) Cov_P(f, C_2)"
+    },
+    {
+      "name": "decile_split_reproduces_A_over_B",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "high-C_2 mass over low-C_2 mass is 0.5727..0.6223, matching `qou-dnev`'s A/B to every printed digit. NOT independent evidence: since chi^lam(3)/f^lam = (C_2-mu)/|C_3| the two sign classes are the same partition of the lambdas and the ratios are equal by identity. This checks that two separately written implementations agree, and nothing more"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "epic": "qou-x631",
+    "bean": "qou-dnev",
+    "claim": "conditional-mean monotonicity of E[f|C_2] is false at every resolution; E[f|C_2] is hump-shaped and the negativity is a high-C_2 tail effect"
+  },
+  "data": {
+    "_grade": "exact integer counts; ratios as decimal strings, 4 dp",
+    "inversions": {
+      "4": 1,
+      "5": 1,
+      "6": 2,
+      "7": 2,
+      "8": 4,
+      "9": 5,
+      "10": 7,
+      "11": 9,
+      "12": 10,
+      "13": 14,
+      "14": 19,
+      "15": 25,
+      "16": 33,
+      "17": 35,
+      "18": 49,
+      "19": 58,
+      "20": 67,
+      "21": 84,
+      "22": 91,
+      "23": 113,
+      "24": 137,
+      "25": 151,
+      "26": 184
+    },
+    "levels": {
+      "4": 3,
+      "5": 4,
+      "6": 6,
+      "7": 8,
+      "8": 10,
+      "9": 13,
+      "10": 18,
+      "11": 23,
+      "12": 28,
+      "13": 37,
+      "14": 45,
+      "15": 56,
+      "16": 67,
+      "17": 83,
+      "18": 100,
+      "19": 123,
+      "20": 142,
+      "21": 173,
+      "22": 201,
+      "23": 242,
+      "24": 277,
+      "25": 321,
+      "26": 384
+    },
+    "worst_relative_jump": {
+      "4": "0.5000",
+      "5": "0.2000",
+      "6": "2.2000",
+      "7": "1.5000",
+      "8": "1.2857",
+      "9": "3.0000",
+      "10": "2.0476",
+      "11": "1.5714",
+      "12": "5.4286",
+      "13": "4.2090",
+      "14": "6.6190",
+      "15": "3.6286",
+      "16": "6.5000",
+      "17": "4.5311",
+      "18": "3.0402",
+      "19": "4.2982",
+      "20": "9.6667",
+      "21": "11.2357",
+      "22": "10.2118",
+      "23": "15.8829",
+      "24": "6.9861",
+      "25": "50.4706",
+      "26": "64.0480"
+    },
+    "bin_means_relative": {
+      "4": {
+        "10": [
+          "1.0000",
+          "0.7792",
+          "0.9795",
+          "0.5589"
+        ],
+        "14": [
+          "1.0000",
+          "0.8649",
+          "1.0411",
+          "0.6908"
+        ],
+        "18": [
+          "1.0000",
+          "1.4713",
+          "1.2832",
+          "0.7569"
+        ],
+        "22": [
+          "1.0000",
+          "1.1140",
+          "1.0446",
+          "0.6030"
+        ],
+        "26": [
+          "1.0000",
+          "1.3613",
+          "1.2216",
+          "0.7417"
+        ]
+      },
+      "8": {
+        "10": [
+          "1.0000",
+          "0.4796",
+          "0.7195",
+          "0.6920",
+          "0.8755",
+          "0.9065",
+          "0.5468",
+          "0.4466"
+        ],
+        "14": [
+          "1.0000",
+          "1.4340",
+          "0.9379",
+          "1.0982",
+          "1.4867",
+          "1.0074",
+          "1.0209",
+          "0.5720"
+        ],
+        "18": [
+          "1.0000",
+          "1.1020",
+          "1.7868",
+          "1.2941",
+          "1.6394",
+          "1.0307",
+          "0.9535",
+          "0.6320"
+        ],
+        "22": [
+          "1.0000",
+          "1.2045",
+          "1.2221",
+          "1.2143",
+          "1.1459",
+          "1.1392",
+          "0.7469",
+          "0.5751"
+        ],
+        "26": [
+          "1.0000",
+          "1.0720",
+          "1.7011",
+          "1.0758",
+          "1.3237",
+          "1.2018",
+          "0.9765",
+          "0.5511"
+        ]
+      }
+    },
+    "high_over_low_mass": {
+      "12": "0.6008",
+      "16": "0.5727",
+      "20": "0.6223",
+      "24": "0.5779",
+      "28": "0.6068"
+    }
+  },
+  "provenance": {
+    "headSha": "9ce6f931f6abb4018e168d792fbbc3cd92a61d39",
+    "producer": "computations/qbeta/qbeta_covariance_kernel_monotone_probe.py",
+    "elapsed_s": "0.354"
+  }
+}
