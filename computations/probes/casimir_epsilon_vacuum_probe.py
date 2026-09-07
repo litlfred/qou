@@ -244,9 +244,11 @@ def main() -> int:
     print(f"  {'d (µm)':<10} {'F/A (Pa)':<18} {'F/A (µPa)':<14}")
     for r in force_results:
         print(
-            f"  {r['separation_um']:<10.2f} "
-            f"{r['force_per_area_Pa']:<18.6e} "
-            f"{r['force_per_area_uPa']:<14.6e}"
+            # float() is DISPLAY-ONLY (AGENTS.md): mpf.__format__ rejects a format
+            # spec, and separation_um is now an mpf.  No arithmetic uses this value.
+            f"  {float(r['separation_um']):<10.2f} "
+            f"{float(r['force_per_area_Pa']):<18.6e} "
+            f"{float(r['force_per_area_uPa']):<14.6e}"
         )
     print()
     print("─── Step 3: open sub-problems for closure ───")
