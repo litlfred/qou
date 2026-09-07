@@ -387,3 +387,52 @@ wrong, not the test. Fixed to derive both indices from `K`; `K = 3` is unchanged
 The nn row is now in the `K = 4` input cache, so the corrected table can be
 regenerated without re-earning the 2.7 h of bond measurement — which is exactly
 what that cache was added for, one commit before it was needed.
+
+## DERIVED 2026-09-07 — and the derivation DEFLATES my own claim from an hour ago
+
+Owner asked to try deriving the recursion. It derives, and what it shows is that
+there was less there than I said.
+
+**k=1 is an algebraic identity.** A bond joins exactly TWO nucleons, so
+`p_b + n_b = 2` always. With qou-qqm4's `rho = p - n` and `tau = 1/2 + n`:
+
+    n = 1 - rho/2   =>   tau = 1/2 + (1 - rho/2) = 3/2 - rho/2
+
+and the measured k=1 rung is `tau = -1/2*rho + 3/2`. The same statement. Nothing
+new was found there.
+
+**The general version kills the "overdetermined" framing outright.** Indexing the
+bonds by `n = 0, 1, 2`:
+
+    c0  [1, 1, 1]              2nd diff 0        AFFINE in n
+    c1  [2, 0, -2]             2nd diff 0        AFFINE
+    c2  [1/2, 3/2, 5/2]        2nd diff 0        AFFINE
+    c3  [-1/2, -3/2, -5/2]     2nd diff 0        AFFINE
+    c4  [1/4, 31/12, 9/4]      2nd diff -8/3     NOT affine
+
+If three coefficients are all affine in `n`, the three bonds are COLLINEAR in
+that 3-space and a 2-term relation exists AUTOMATICALLY. **The third equation is
+not independent of the other two**, so "3 equations, 2 unknowns, overdetermined,
+therefore a real test" was wrong. I wrote that in commit `8bf62d2ad6` and it is
+corrected before merge.
+
+It also explains the break for free: k=3 fails because `c4` is the FIRST
+non-affine coefficient. Not a surprise to investigate — a consequence.
+
+## What actually survives
+
+    k=1   DERIVED, identity from rho, tau, p+n=2
+    k=2   NOT derived — equivalent to  ups = -tau  — still OPEN
+    k=3   REFUTED — c4 is the first non-affine coefficient
+
+`ups = -tau` is the one real fact. `c3` being affine in `n` at all is a genuine
+constraint on three measured rationals, and it is NOT supplied by qou-qqm4's
+description, which covers `rho` and `tau` only — correctly called there "three
+values with one spare dof". This is a relation with none.
+
+**A guess that fails, recorded so it is not re-tried.** `tau, -tau` at orders 2
+and 3 suggests a factor `tau*e^2/(1+e)`, whose order-4 term would be `+tau`, i.e.
+`c4 = 1/2, 3/2, 5/2`. Measured is `1/4, 31/12, 9/4`. Refuted.
+
+**And what is NOT a finding:** `c4` is quadratic in `n` by construction — any
+three points are — so fitting a quadratic there has zero content. Not done.
