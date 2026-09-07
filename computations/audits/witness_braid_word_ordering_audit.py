@@ -41,6 +41,31 @@ its generator sequence is non-decreasing. For a word of atom length, therefore:
 A word that is atom-LENGTH and monotone is the defect shape. Anything else is
 reported for a reader, not flagged.
 
+## How to READ the output: a flag is a record, not necessarily a wrong answer
+
+Measured 2026-09-07 over the 6 distinct sources this flags. Exactly **one** is
+read back at runtime:
+
+    qou-mass/src/qou_mass/api.py:367   word = r.get("braid_word_canonical")
+
+That is the `qou-36i2` site, and it is the whole reason the class was worth
+hunting. Every other appearance of a flagged field in Python is a **write** --
+`isotope_record_schema.py:149` serialising, `he4_word_gens: gens` and
+`triton_word_gens: gens` in their producers' witness payloads, and
+`markov_trace_axiomatic_multi_atom.py:143` reading `info["word"]` out of the
+module-level `ATOMS` dict rather than out of the witness.
+
+So **five of the six are records-only**: stale, worth correcting when their
+producer next runs, and making nothing return a wrong number today.
+
+Do not over-read that into the stronger claim, which is NOT established here:
+that every number in a grouped-word witness inherits the superseded ordering.
+It does not follow, and one counter-example is measured -- `m_qclt_approx.py`
+reads nucleon masses out of `low-isotope-mass-table.witness.json`, and those
+come via the `canonical_mass` facade (m_p ~ 938.2721), a route independent of
+the intra-nucleon ordering. Whether a given file's OTHER numbers were computed
+from the grouped word is a per-producer question this audit does not answer.
+
 ## What it does NOT do
 
 It does not decide whether a witness OUGHT to hold an atom word -- a probe may
