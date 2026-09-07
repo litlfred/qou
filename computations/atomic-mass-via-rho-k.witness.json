@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T03:13:47.975862+00:00",
-  "commitSha": "75fd0b4c3264868c68924658f00c3e433e01bbcb",
+  "computedAt": "2026-09-07T10:14:11.674252+00:00",
+  "commitSha": "791b6c9c21ee3e68f2b9616eefe34d1c46d30339",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "atomic-mass-via-rho-k",
   "scriptFile": "atomic_mass_via_rho_k.py",
   "scriptHash": "0a122a197d78",
-  "scriptCommitSha": "f7d78c7af7ac7bfb3a05367167a359c262655b23",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,7 +22,9 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -106,13 +108,13 @@
         "Z": 2,
         "N": 2,
         "A": 4,
-        "tr_M_at_q0": "7.61046996074011358980748551474362000713117954286504224992684",
-        "rho_K_leading_order": "966.396133959976467613321087323334881449534956744254385820650",
+        "tr_M_at_q0": "0.0112374176597674215641995493744106072696626960812612827787745",
+        "rho_K_leading_order": "654485.663019309626044293413082542851902009006980888316006209",
         "M_pred_MeV": "3758.25867267292318097921955264420467608109313666058094856913",
         "M_codata_MeV": "3727.37937800000000000000000000000000000000000000000000000000",
         "err_pct": "0.828445176661681390544505841396128368049718191593776333038699",
         "binding_residual_MeV": "30.8792946729231809792195526442046760810931366605809485691291",
-        "tr_M_convention_status": "DEPRECATED_DISJOINT — value below uses the disjoint-product convention (44 crossings, no interface) which is empirically wrong per PR #564 audit. Canonical word atom_braid_word_3A(2,2) has 47 crossings with 3 interfaces (pp, pn, nn). Canonical |tr_M(⁴He)| at H_12 via the Wenzl bridge is intractable with current Python mpmath (p(12)=77 partitions, max dim 7700, ~2×10¹³ ops per partition × 47 crossings); needs a Rust kernel with rayon parallel partitions or a categorical reduction via Wenzl 1988 LR branching. DO NOT use for mass predictions."
+        "tr_M_convention_status": "CANONICAL as of 2026-09-06 (bean qou-hft3). The published value is arm (C): the canonical word atom_braid_word_3A(2,2), 47 crossings with 3 interfaces (pp at generator 2, pn at 5, nn at 8), evaluated through tr_M_via_wenzl_bridge_mpfr in ~17 s. Cross-checked against markov_trace_canonical -- a structurally independent Markov-axiom reducer -- at relative 1e-30. Arms (A) disjoint-product and (B) direct recursion are RETAINED but NON-CANONICAL: both trace the 44-crossing disjoint word with no interfaces, and they disagree by a factor of 5.942, the same failure of the disjoint-product identity the deuteron showed at ~5 (PR #564)."
       },
       {
         "atom": "5Li",
@@ -151,27 +153,27 @@
       },
       {
         "path": "atomic-tr-m-helium4-canonical.witness.json",
-        "sha256": "d37416b8bffc367d71322e55e043bef8984577d8e7e6e84e4a988c097612dabf",
-        "size_bytes": 5296,
-        "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
-        "scriptCommitSha": "4b0bc3f1848b2b4077d80ff6a8e1bb42cf4da551",
-        "computedAt": "2026-08-26T03:43:32.805972+00:00"
+        "sha256": "30aff815d8b4af497fa52901d7475924122c4e2bf4cdb50d706a6827484462e1",
+        "size_bytes": 5224,
+        "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
+        "scriptCommitSha": "f5baee6026e16d41ced5c99cc915ef9bb8825113",
+        "computedAt": "2026-09-06T12:48:14.309048+00:00"
       },
       {
         "path": "atomic-tr-m-helium4.witness.json",
-        "sha256": "c4bc86a03de9e8323c1a9baf08615c3084f882a1f837a4785dbe4f44b082c802",
-        "size_bytes": 5606,
-        "commitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
-        "scriptCommitSha": "1eff8389db16ad53443cf0f72de860a3df9335a7",
-        "computedAt": "2026-08-30T07:28:42.213976+00:00"
+        "sha256": "54d811bd3356ef7d1893842a5e2727049e96ff2414357947607aa5a365d5c70e",
+        "size_bytes": 7729,
+        "commitSha": "1f127a1418e728ec762fc4f0fa95ac2488907ae9",
+        "scriptCommitSha": "14fcd89825149a738bc421224299aaefbb344419",
+        "computedAt": "2026-09-06T11:08:39.387551+00:00"
       },
       {
         "path": "a-K-via-lp-dual-hecke-basis.witness.json",
-        "sha256": "f4eb39ca20d637024c58e9836b64158e81e290bb17f643cee94bcd56c04fafd2",
-        "size_bytes": 17262,
-        "commitSha": "83d101be2f3a9bddedf6ba6efffc988578e26900",
-        "scriptCommitSha": "1ee659d7ea7c174fdfdd35bc6d5c70d44951623f",
-        "computedAt": "2026-08-29T12:18:15.897803+00:00"
+        "sha256": "7a02421e5b19eb0bc81a87fe144f43c39364e0cb350b9ab6cbc82989016b9959",
+        "size_bytes": 17843,
+        "commitSha": "791b6c9c21ee3e68f2b9616eefe34d1c46d30339",
+        "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+        "computedAt": "2026-09-07T10:14:07.631923+00:00"
       }
     ]
   },

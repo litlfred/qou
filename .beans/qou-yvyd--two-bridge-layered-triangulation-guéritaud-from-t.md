@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T09:52:25Z
-updated_at: 2026-09-07T08:39:19Z
+updated_at: 2026-09-07T09:35:38Z
 parent: qou-2akx
 ---
 
@@ -26,3 +26,5 @@ Follow-on to qou-n2cl. The Floyd–Hatcher chain reaches 4₁ only (once-punctur
 ## 2026-09-07 — #6985 merged (main 31604b1282)
 
 Landed: meridian frames by the Dehn-filling test (4₁ k*=−1 / 8 sheets, 5₂ k*=0 / 12 sheets), −A₄₁ and A₅₂ recovered, slopes {−4,4} and {−10,−4,0}, chirality frame, Lean chips (FiveTwoAPolynomialFromFareyWord; meridian_row / longitude_row in FiveTwoGluingFromFareyWord). Still open (13a): A_ω arc on derived data; S± identification needs a held source for the Rolfsen-5₂ sign convention; the fold rule as a theorem (Guéritaud not held).
+
+2026-09-07 (option 3 of "1 2 3"): the derived 5_2 data fed back into the A_omega Route-A gate. qou-52sn's SnapPy hardening is done by derivation instead; verdict unchanged (R2 refuted, R1 survives) and now unconditional. The pinned (mu, lambda, Im tau > 0) frame adds nothing to Route A, proved: |max slope| and L-degree are mirror-invariant, so the chirality split {4 in S+, 3 in S-} is not Newton-polygon data. Which chirality GGM's S+/S- are in the derived frame remains the same unheld convention as which 5_2 is Rolfsen's. Audit §3b of 2026-09-06-two-bridge-layering-from-farey-word.md.

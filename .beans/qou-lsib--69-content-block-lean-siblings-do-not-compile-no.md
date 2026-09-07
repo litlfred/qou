@@ -250,3 +250,39 @@ Confirming them needs the wider cone, which this container does not have.
   (source-based, stronger than the cache-based CI check) — `/prepare-merge`
   already names it at step 375. That is the honest state: the gate is now
   correct *when run*, and what runs it is discipline, not CI.
+
+### The 20 resolved — residual is ZERO
+
+The 20 that were unverifiable an hour earlier all **PASS**:
+
+    lean-verify-siblings: pass=20 neutral-skip=0 fail=0
+
+They were neutral-skipped because I ran them against the *paper's* olean tree
+(`content/quantum-observable-universe/lean/.lake`), whose cone does not cover
+their imports. `scripts/lean-verify-siblings.sh` uses the **root** `.lake`, and
+the root cache is in fact fine here: 3480 mathlib oleans, above the ~2900
+"complete" mark. Re-running `lean-cache-restore.sh` now prints *"3480 mathlib
+oleans already present — skipping"* and exits 0.
+
+So the "corrupt tarball" was never the blocker I called it. The earlier
+`tar: Unexpected EOF` came from a *later* payload in the same restore; mathlib
+had already extracted completely, and the run that reported it had simply not
+got that far when I read the log. **The tar failure is real but it is not on
+the path that matters** — which is exactly the kind of thing the new exit-3
+signal is for: the script said VERIFIED NOTHING, and the right response was to
+find out why, not to assume the worst.
+
+**Final tally on the 34 recorded FAIL at 2026-08-28:**
+
+| | |
+|---|---|
+| deleted from the tree | 2 |
+| compile clean | **32** |
+| still failing | **0** |
+
+Per-file: `docs/audits/2026-09-07-known-failing-siblings-recheck.tsv`.
+
+The repair backlog this bean opened with is empty. What remains is entirely the
+wiring half: nothing in CI builds these, and with Actions billing off the
+enforcement is an agent running `scripts/lean-content-sweep.sh` (source-based,
+stronger than the cache check) — which `/prepare-merge` already names.

@@ -164,13 +164,14 @@ theorem bruhatLe_of_reflStep {v w : W} (h : ReflStep cs v w) : BruhatLe cs v w :
 statement proved about `BruhatLe` — the subword property, transitivity, antisymmetry — is available
 to a consumer whose hypothesis is stated in the reflection form.
 
-Carries `DihedralExact` / `M i j ≠ 0` only because it chains with `bruhatLe_trans`; the one-step
+Used to carry `DihedralExact` / `M i j ≠ 0` because it chains with `bruhatLe_trans`; both are now
+proved in `CoxeterDihedralOrder`, so it is unconditional. The one-step
 lemma above needs neither. -/
-theorem bruhatLe_of_reflLe (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0)
+theorem bruhatLe_of_reflLe
     {u w : W} (h : ReflLe cs u w) : BruhatLe cs u w := by
   induction h with
   | refl => exact bruhatLe_refl cs u
-  | tail _ hstep ih => exact bruhatLe_trans cs hDE hfin ih (bruhatLe_of_reflStep cs hstep)
+  | tail _ hstep ih => exact bruhatLe_trans cs ih (bruhatLe_of_reflStep cs hstep)
 
 /-! ## The converse atom — and why iterating it is not a proof -/
 
@@ -241,11 +242,10 @@ private theorem subword_concat_cases {ω' ω : List B} {s : B} (h : ω' <+ ω ++
 No induction: the subword property hands over a subword of a reduced word for `w` ending in `s`,
 and *either* branch of the split already exhibits `u·s`. If the subword used the final `s`, drop it;
 if it did not, append it. -/
-theorem bruhatLe_mul_simple_of_isRightDescent (hDE : DihedralExact cs)
-    (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0) {u w : W} (h : BruhatLe cs u w)
+theorem bruhatLe_mul_simple_of_isRightDescent {u w : W} (h : BruhatLe cs u w)
     {s : B} (hs : cs.IsRightDescent w s) : BruhatLe cs (u * cs.simple s) w := by
   obtain ⟨ω, hred, hωprod, hredc, hcprod⟩ := exists_reduced_concat cs hs
-  obtain ⟨ω', hsub, hu⟩ := subword_property cs hDE hfin h hredc hcprod
+  obtain ⟨ω', hsub, hu⟩ := subword_property cs h hredc hcprod
   rcases subword_concat_cases cs hsub with ⟨a, ha, hpa⟩ | ⟨a, ha, hpa⟩
   · -- The subword avoided the final `s`: append it.
     refine ⟨ω ++ [s], a ++ [s], hredc, hcprod, ha.append (List.Sublist.refl _), ?_⟩
@@ -261,19 +261,19 @@ and `u ≤ w`, then `u·s ≤ w·s`.
 The branch where the subword used the final `s` gives it outright. The other branch gives `u ≤ w·s`,
 and `u·s ≤ u` because `s` is a descent of `u` — a single reflection step — so transitivity finishes
 it. This is the fourth of the four properties `QOU.Machinery.CoxeterBruhat` deferred. -/
-theorem lifting (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0)
+theorem lifting
     {u w : W} (h : BruhatLe cs u w) {s : B}
     (hsw : cs.IsRightDescent w s) (hsu : cs.IsRightDescent u s) :
     BruhatLe cs (u * cs.simple s) (w * cs.simple s) := by
   obtain ⟨ω, hred, hωprod, hredc, hcprod⟩ := exists_reduced_concat cs hsw
-  obtain ⟨ω', hsub, hu⟩ := subword_property cs hDE hfin h hredc hcprod
+  obtain ⟨ω', hsub, hu⟩ := subword_property cs h hredc hcprod
   rcases subword_concat_cases cs hsub with ⟨a, ha, hpa⟩ | ⟨a, ha, hpa⟩
   · -- `u ≤ w·s`; then `u·s ≤ u` is one reflection step down.
     have hle : BruhatLe cs u (w * cs.simple s) := ⟨ω, a, hred, hωprod, ha, by rw [← hpa, hu]⟩
     have hstep : ReflStep cs (u * cs.simple s) u :=
       ⟨cs.simple s, cs.isReflection_simple s, by rw [mul_assoc, cs.simple_mul_simple_self, mul_one],
         hsu⟩
-    exact bruhatLe_trans cs hDE hfin (bruhatLe_of_reflStep cs hstep) hle
+    exact bruhatLe_trans cs (bruhatLe_of_reflStep cs hstep) hle
   · -- The subword used the final `s`: dropping it is already a subword for `u·s` in `ω`.
     refine ⟨ω, a, hred, hωprod, ha, ?_⟩
     have : π a * cs.simple s * cs.simple s = u * cs.simple s := by rw [← hpa, hu]
@@ -336,8 +336,7 @@ theorem reflStep_mul_simple {x y : W} (h : ReflStep cs x y) {s : B}
 theorem bruhatLe_of_reflLe_An {n : ℕ} {W : Type*} [Group W]
     (cs : CoxeterSystem (CoxeterMatrix.Aₙ n) W) {u w : W} (h : ReflLe cs u w) :
     BruhatLe cs u w :=
-  bruhatLe_of_reflLe cs (QOU.Machinery.CoxeterDihedralDescent.dihedralExact_le_three cs
-    (An_le_three n)) (fun i j hij => An_ne_zero n i j hij) h
+  bruhatLe_of_reflLe cs h
 
 /-- **What this buys a Mathas consumer, spelled out.** Given `u ⊵ v ⊵ w` in the reflection sense on
 a type-`A` system, `u` appears as a subword of *every* reduced word for `w`. -/

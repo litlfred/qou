@@ -30,7 +30,11 @@ universe u v
     the braiding.
 
     LaTeX: `\label{def:classical-limit-functor}`
-    Ref: [manuscript] Chapter 8, Section 5 -/
+    Ref: [manuscript] Chapter 8, Section 5
+
+    **`is_exact : Prop` removed 2026-09-07 — universe-`Prop` typed, neither read
+    nor constructed. Exactness of the functor needs additive structure on `Cq`
+    and `C1`, which this structure does not require.** -/
 structure ClassicalLimitFunctor
     (Cq : Type u) [Category.{v} Cq] [MonoidalCategory Cq] [BraidedCategory Cq]
     (C1 : Type u) [Category.{v} C1] [MonoidalCategory C1] [SymmetricCategory C1]
@@ -53,10 +57,6 @@ structure ClassicalLimitFunctor
         (Functor.Monoidal.μIso functor X Y).inv ≫
         (β_ (functor.obj X) (functor.obj Y)).hom ≫
         (Functor.Monoidal.μIso functor Y X).hom
-  /-- The functor is exact (preserves short exact sequences).
-      Stated abstractly as a Prop field; the full proof requires
-      checking preservation of finite limits and colimits. -/
-  is_exact : Prop
   /-- The functor is NOT full: quantum information is lost in the limit.
       There exist morphisms in C_1 not in the image of L. -/
   not_full : ¬ (functor.Full)

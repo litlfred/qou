@@ -2,7 +2,7 @@
  "computation": "he4-binding-k-presentation-correction",
  "description": "Same-day correction of the A=4 stage-1/stage-1.5 probes: the GP-kernel presentation identity is measured (GP variable v = \u221aq; evaluating at q computes the paper trace at q\u00b2) and the full operator dictionary is certified end-to-end against the certified combiner traces (p, n, D, 4He). Canonical seam structure read off the builder: one pair-typed crossing per seam at generators {2,5,8}. Stage-1/1.5 headline residuals (14.7%, 3.8%) are void.",
  "audit_only": true,
- "computedAt": "2026-09-04T01:13:57.975828+00:00",
+ "computedAt": "2026-09-07T10:24:49.476571+00:00",
  "engine": "mpmath",
  "dps": 50,
  "q_pin": {
@@ -40,9 +40,9 @@
  },
  "end_to_end": {
   "proton": {
-   "gp_reproduction": "1.145759782886925318714928",
-   "combiner_target": "1.145759692457300869689082",
-   "rel_delta": "7.89255e-8",
+   "gp_reproduction": "0.6293284243136999689635533",
+   "combiner_target": "0.6293284022029219181653457",
+   "rel_delta": "3.51339e-8",
    "n_crossings": 11,
    "n_averaged": 2,
    "n_color_weighted": 0,
@@ -50,9 +50,9 @@
    "passed": false
   },
   "neutron": {
-   "gp_reproduction": "0.9877437571449744076267679",
-   "combiner_target": "0.9877436881158095716340202",
-   "rel_delta": "6.98857e-8",
+   "gp_reproduction": "0.4751335192365202839866658",
+   "combiner_target": "0.4751335171556822125060902",
+   "rel_delta": "4.37948e-9",
    "n_crossings": 11,
    "n_averaged": 2,
    "n_color_weighted": 0,
@@ -60,9 +60,9 @@
    "passed": false
   },
   "deuteron": {
-   "gp_reproduction": "0.5751723315987641981000786",
-   "combiner_target": "0.5751722439177718708265353",
-   "rel_delta": "1.52443e-7",
+   "gp_reproduction": "0.1519683457609422758628432",
+   "combiner_target": "0.1519683392042316075926657",
+   "rel_delta": "4.31452e-8",
    "n_crossings": 23,
    "n_averaged": 4,
    "n_color_weighted": 1,
@@ -70,9 +70,9 @@
    "passed": false
   },
   "helium-4": {
-   "gp_reproduction": "0.1609741935478148955886056",
-   "combiner_target": "0.1609741454424073818258734",
-   "rel_delta": "2.98839e-7",
+   "gp_reproduction": "0.01123741856150016641448155",
+   "combiner_target": "0.01123741765976742156419955",
+   "rel_delta": "8.02438e-8",
    "n_crossings": 47,
    "n_averaged": 8,
    "n_color_weighted": 1,
@@ -109,12 +109,12 @@
   }
  ],
  "allPassed": false,
+ "scriptFile": "he4_binding_k_presentation_correction_probe.py",
  "scriptHash": "01f041e9b988",
- "scriptCommitSha": "ca6beeb94b6867011de86dedae5ed4f4c9d33e62",
- "commitSha": "ec597e2e49fc6dcb6758268fc5d14efe387b2ff4",
+ "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+ "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
  "durationMs": 0,
  "engineVersion": "mpmath 1.4.1",
  "q0Anchor": "muon",
- "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095",
- "scriptFile": "he4_binding_k_presentation_correction_probe.py"
+ "q0Value": "1.109978595642739046681795129380001752700065561029011556974045769999095"
 }

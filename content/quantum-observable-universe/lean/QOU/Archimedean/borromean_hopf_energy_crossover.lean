@@ -7,22 +7,28 @@ Canonical Lean declaration for content block at
 [`quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts`](quantum-observable-universe/observations/borromean-hopf-energy-crossover.ts).
 
 The three manuscript sub-claims (the two phase-mass formulae and the
-crossover condition) are stated over **opaque categorical / physical
-inputs** (the Borromean volume `V_B`, the abstract energy comparison
-predicate `diquark_favoured`); no faithful Mathlib structure realises the
+crossover condition) are stated over the **opaque physical input** `V_B`
+(the Borromean volume); no faithful Mathlib structure realises the
 phase-mass map, so per the vacuity-fix playbook pattern C the proposition
 is **named** as a `def … : Prop` over the context — honestly recording the
 conditional conjecture rather than projecting context fields.  The context
 class carries the genuine *inputs*; a Lean instance would be the conjecture.
+
+The crossover conjunct was a `diquark_favoured : Prop` field until
+2026-09-07, read back as `ctx.diquark_favoured ↔ |E_D| > |E_B|`.  A field
+typed with the *universe* `Prop` holds a proposition as DATA, so the
+instance chose it: `diquark_favoured := |E_D| > |E_B|` made that conjunct
+`Iff.rfl` and it constrained nothing.  The manuscript states the condition
+outright — *"The crossover occurs when |𝔈_D| > |𝔈_B|"* — so it is now
+stated outright, over `E_B` and `E_D`, which the context already carries.
 -/
 
 namespace QOU.Archimedean
 
 
 /-- Abstract context (inputs) for the `borromean_hopf_energy_crossover`
-    claim — the substrate parameter, the Borromean volume, the two phase
-    masses and binding energies, and the abstract energy-comparison
-    predicate.  No field asserts a conclusion. -/
+    claim — the substrate parameter, the Borromean volume, and the two
+    phase masses and binding energies.  No field asserts a conclusion. -/
 class BorromeanHopfEnergyCrossoverContext where
   /-- Substrate parameter `q : ℝ` (`q > 1`). -/
   q : ℝ
@@ -38,8 +44,6 @@ class BorromeanHopfEnergyCrossoverContext where
   E_B : ℝ
   /-- Binding energy per baryon-number in the diquark phase. -/
   E_D : ℝ
-  /-- Predicate: the diquark phase is energetically favoured. -/
-  diquark_favoured : Prop
 
 /-- **Manuscript statement** (full body):
 
@@ -131,6 +135,6 @@ def borromean_hopf_energy_crossover (ctx : BorromeanHopfEnergyCrossoverContext) 
     Prop :=
   ctx.M_B = 2 * ctx.V_B / ((ctx.q - 1) / ctx.q) ^ 2 ∧
   ctx.M_D = ctx.q + ctx.q⁻¹ ∧
-  (ctx.diquark_favoured ↔ |ctx.E_D| > |ctx.E_B|)
+  |ctx.E_D| > |ctx.E_B|
 
 end QOU.Archimedean

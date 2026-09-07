@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-25T00:07:27.024389+00:00",
-  "commitSha": "7823271e66b3b24b04b491a61bc37c78df85aae7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-07T10:17:49.489226+00:00",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "assertions": [
     {
       "name": "status_report_emitted",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 14,
   "computation": "binding-K-direct",
   "scriptFile": "binding_K_direct.py",
   "scriptHash": "10367b9ce0f9",
-  "scriptCommitSha": "a43bc9ed35d8ab86969167a333f3b9b654334591",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,10 +29,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -124,7 +124,7 @@
         "M_codata_MeV": "3727.37941180000000000000000000000000000000000000000000000000",
         "constituent_MeV": "3755.67502274000000000000000000000000000000000000000000000000",
         "binding_codata_MeV": "-28.2956109400000000000000000000000000000000000000000000000000",
-        "abs_tr_M": "0.967323750591924947479994583565000591346693338371059261801826",
+        "abs_tr_M": "0.0112374176597674215641995493744106072696626960812612827787745",
         "status": "delta_lambda_value_present",
         "sum_delta_lambda_raw_diagnostic": "-12440.0",
         "binding_note": "Δ_λ value proved (signed Springer dim); binding total requires y_λ·χ^λ weighting + separate extensive magnitude term (open) — raw Σ Δ_λ is NOT a binding energy."
@@ -143,19 +143,19 @@
       },
       {
         "path": "atomic-tr-m-helium4-canonical.witness.json",
-        "sha256": "7316c2dc21ec11959ff1fd3262058d830e22e0a04b2346421f36add8935d4de1",
-        "size_bytes": 3312,
-        "commitSha": "bb66ca86c3061b4004739e7ba5855f7183fb0f21",
-        "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
-        "computedAt": "2026-08-23T21:00:11.815426+00:00"
+        "sha256": "30aff815d8b4af497fa52901d7475924122c4e2bf4cdb50d706a6827484462e1",
+        "size_bytes": 5224,
+        "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
+        "scriptCommitSha": "f5baee6026e16d41ced5c99cc915ef9bb8825113",
+        "computedAt": "2026-09-06T12:48:14.309048+00:00"
       },
       {
         "path": "atomic-tr-m-helium4.witness.json",
-        "sha256": "e6de26e48b49e3bcdd8f86a666306f2a00aac01362d1f912b4ea313c56596790",
-        "size_bytes": 5577,
-        "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
-        "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
-        "computedAt": "2026-07-07T13:39:15.929709+00:00"
+        "sha256": "54d811bd3356ef7d1893842a5e2727049e96ff2414357947607aa5a365d5c70e",
+        "size_bytes": 7729,
+        "commitSha": "1f127a1418e728ec762fc4f0fa95ac2488907ae9",
+        "scriptCommitSha": "14fcd89825149a738bc421224299aaefbb344419",
+        "computedAt": "2026-09-06T11:08:39.387551+00:00"
       },
       {
         "path": "delta-lambda-witness.json",

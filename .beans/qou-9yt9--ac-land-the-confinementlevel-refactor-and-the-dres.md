@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-07T09:16:56Z
+updated_at: 2026-09-07T09:40:36Z
 ---
 
 ## Landed (A + C)
@@ -183,3 +183,32 @@ and are pending only on a moved file sha. Split: **9 uninhabited** (restored
 `genuine` needs only the byte-identity check), **2 inhabited**
 (`shell_closure_monotone`, `he4_strong_duality_value` — real adjudication),
 **3** the `:= ivar.field` resolver cannot reach.
+
+
+### Ledger drain (PR #7036) — queue to zero, and my cost estimate was wrong in KIND
+
+`proof-no-self-assuming-projection`: **41 genuine / 20 legit / 0 needs-agent.**
+
+`file_sha` is `sha256(whole file)[:12]`, so any edit anywhere expires every
+verdict in the file. `scripts/lean-vacuity-ledger-reverify.py` compares the
+DECLARATION at the recorded revision against HEAD: **14/14 IDENTICAL**, 0
+changed. Every expiry was collateral, so all fourteen prior readings are
+restored with a dated RE-VERIFIED line.
+
+**I costed this at 9 + 2 + 3 and it was none of those.** The inhabitation
+signal was the wrong tool: the question was never "what is the verdict" but
+"does the old verdict still apply".
+
+**Tension flagged, not overturned.** Four restored `legit` verdicts sit on
+carriers with ZERO builders (`sdp_lp_projection`, both `CatDescendedInputs`
+ones, `jet_prolongation_C`) while qou-z9ws's rule says legitimate ONLY when
+something builds the bundle. One-directional: `genuine` on an inhabited carrier
+is fine (necessary, not sufficient); `legit` on an uninhabited one is not.
+
+**Author decision, framed in Addendum 5** with options/costs/risks and a
+default: does the discriminator apply to a DEFINITIONAL structure at all?
+`jet_prolongation_C`'s docstring makes the `Group.mul_assoc` case; the reply is
+that `Group` has instances and `JetProlongationQOU` has none. Default if
+nothing is decided: the flags stay and nothing moves. My judgement: narrow the
+rule to hypothesis carriers — but it changes another agent's measured
+criterion, so it is not mine to make.

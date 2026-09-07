@@ -1,5 +1,6 @@
 import QOU.Machinery.CoxeterRankTwo
 import QOU.Machinery.CoxeterGeometricRepresentationFull
+import QOU.Machinery.CoxeterDihedralOrder
 
 /-!
 # The dihedral descent lemma — the heart of Matsumoto's theorem
@@ -18,31 +19,39 @@ cut, so **both descents pass to `v`**, and the whole question moves into the ran
 There `CoxeterRankTwo` takes over. A reduced word for `v` over two letters is alternating, and a
 descent at `c` means some reduced word ends in `c` — so *both* alternating spellings of length
 `k = ℓ(v)` are reduced words for `v`. Two spellings with one product force `(s_i s_j)^k = 1`; the
-word is reduced so `k ≤ M i j`; the descents make `k ≥ 1`. `DihedralExact` closes the interval and
-`k = M i j`.
+word is reduced so `k ≤ M i j`; the descents make `k ≥ 1`. Exactness of the dihedral order closes
+the interval and `k = M i j`.
 
-## `DihedralExact` is discharged where the corpus can discharge it
+## Both side conditions are now DERIVED, not assumed
 
-`dihedralExact_le_three` proves it whenever `M i j ≤ 3` — which is **every off-diagonal entry of
-type `A`**, hence every case the Hecke/braid arc uses. The inputs are
-`CoxeterGeometricRepresentationFull`'s two unconditional cell-faithfulness results, and nothing
-else.
+These statements used to carry two hypotheses, `DihedralExact cs` and `M i j ≠ 0`.
+`QOU.Machinery.CoxeterDihedralOrder` discharges both from the geometric representation, and this
+file spends that input rather than propagating the hypotheses:
 
-🛑 **It is not proved in general, and this file does not pretend otherwise.** For `M i j ≥ 4` the
-order of `s_i s_j` is exactly what that file's own HONESTY note excludes from its scope. The
-general statement needs the dihedral rotation to be shown to have order exactly `M i j` in the
-reflection representation — the trig engine (`periodic_of_two_step`) is there, the converse
-direction is not.
+* `dihedralExact_full` — the Chebyshev/cosine argument: `⟨αᵢ, (fᵢfⱼ)^k αᵢ⟩ = cos(2πk / m)`, which
+  is `1` only at `k = 0` in the range `0 < k < m`.
+* `bond_ne_zero_of_pow_eq_one` — the infinite-bond half: at `m = 0` the rotation is a shear whose
+  `αᵢ`-coefficient is `1 + 2k`, so `(σᵢσⱼ)^k = 1` with `k > 0` is impossible. That is exactly what
+  refutes the `M i j = 0` branch here, where the old `hm` hypothesis excluded it by fiat.
+
+Consequence: the whole Matsumoto/Bruhat arc downstream of this file is unconditional for **every**
+Coxeter system, not only type `A` and not only the finite-bond ones.
+
+`dihedralExact_le_three` is kept below. It is now superseded as an *input* — nothing in the arc
+needs it — but it is a genuinely different and much more elementary proof of the `M i j ≤ 3` case,
+resting only on `CoxeterGeometricRepresentationFull`'s two unconditional cell-faithfulness results
+with no trigonometry.
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, §3.3
 -- Ref: [humphreys1990] Reflection Groups and Coxeter Groups, §5.
--- Ref: [manuscript] bean qou-06h7
+-- Ref: [manuscript] beans qou-06h7, qou-1u90
 -/
 
 namespace QOU.Machinery.CoxeterDihedralDescent
 
 open CoxeterSystem List
 open QOU.Machinery.CoxeterParabolic QOU.Machinery.CoxeterRankTwo
+open QOU.Machinery.CoxeterDihedralOrder
 
 variable {B W : Type*} [Group W] {M : CoxeterMatrix B} (cs : CoxeterSystem M W)
 
@@ -116,11 +125,12 @@ theorem exists_reducedWord_concat (J : Set B) {v : W} (hv : v ∈ parabolic cs J
 
 /-- **The rank-two core.** An element of `W_{i,j}` with both `i` and `j` as right descents is the
 product of **both** alternating words of length `M i j`, each of them reduced. -/
-theorem alternatingWord_reduced_of_both_descents (hDE : DihedralExact cs)
-    {i j : B} (hij : i ≠ j) (hm : M i j ≠ 0) {v : W}
+theorem alternatingWord_reduced_of_both_descents
+    {i j : B} (hij : i ≠ j) {v : W}
     (hv : v ∈ parabolic cs ({i, j} : Set B))
     (hi : cs.IsRightDescent v i) (hj : cs.IsRightDescent v j) :
-    cs.IsReduced (alternatingWord i j (M i j)) ∧
+    0 < M i j ∧
+      cs.IsReduced (alternatingWord i j (M i j)) ∧
       π (alternatingWord i j (M i j)) = v ∧
       cs.IsReduced (alternatingWord j i (M i j)) ∧
       π (alternatingWord j i (M i j)) = v := by
@@ -172,25 +182,34 @@ theorem alternatingWord_reduced_of_both_descents (hDE : DihedralExact cs)
   -- Hence `(s i s j)^k = 1`, and `k` is squeezed onto `M i j`.
   have hpow : (σ i * σ j) ^ k = 1 :=
     pow_eq_one_of_alternatingWord_eq cs (hprodAj.trans hprodAi.symm)
+  -- The bond is finite: an infinite bond has `fᵢfⱼ` of infinite order, contradicting `hpow`.
+  have hm : M i j ≠ 0 := bond_ne_zero_of_pow_eq_one cs hij hkpos hpow
   have hkle : k ≤ M i j := by
     by_contra hcon
     exact cs.not_isReduced_alternatingWord i j hm (by omega) hredAj
   have hkeq : k = M i j := by
     rcases Nat.lt_or_ge k (M i j) with hlt | hge
-    · exact absurd hpow (hDE i j hij k hkpos hlt)
+    · exact absurd hpow (dihedralExact_full cs i j hij k hkpos hlt)
     · omega
+  refine ⟨hkeq ▸ hkpos, ?_⟩
   rw [← hkeq]
   exact ⟨hredAj, hprodAj, hredAi, hprodAi⟩
 
 /-! ## The descent lemma proper -/
 
-/-- **The dihedral descent lemma.** If `i` and `j` are both right descents of `w`, then `w` has a
-reduced word whose tail is the alternating block of length `M i j` — in both spellings, with the
-same prefix. A single braid move at that tail moves between them. -/
-theorem exists_reduced_alternating_tail (hDE : DihedralExact cs)
-    {i j : B} (hij : i ≠ j) (hm : M i j ≠ 0) {w : W}
+/-- **The dihedral descent lemma.** If `i` and `j` are both right descents of `w`, then the bond
+order `M i j` is finite and positive, and `w` has a reduced word whose tail is the alternating
+block of length `M i j` — in both spellings, with the same prefix. A single braid move at that tail
+moves between them.
+
+The `0 < M i j` conjunct is *derived*, not assumed: two distinct descents give `(σᵢσⱼ)^k = 1` for
+`k = ℓ(v) > 0`, and `CoxeterDihedralOrder.bond_ne_zero_of_pow_eq_one` refutes that at an infinite
+bond. It is returned rather than left to the caller because the caller needs it to split off the
+tail's last letter. -/
+theorem exists_reduced_alternating_tail
+    {i j : B} (hij : i ≠ j) {w : W}
     (hi : cs.IsRightDescent w i) (hj : cs.IsRightDescent w j) :
-    ∃ l₁ : List B,
+    0 < M i j ∧ ∃ l₁ : List B,
       cs.IsReduced (l₁ ++ alternatingWord i j (M i j)) ∧
         π (l₁ ++ alternatingWord i j (M i j)) = w ∧
         cs.IsReduced (l₁ ++ alternatingWord j i (M i j)) ∧
@@ -210,8 +229,8 @@ theorem exists_reduced_alternating_tail (hDE : DihedralExact cs)
     isRightDescent_of_minRep_mul cs J hmin hv hiJ (by rw [← hwuv]; exact hi)
   have hvj : cs.IsRightDescent v j :=
     isRightDescent_of_minRep_mul cs J hmin hv hjJ (by rw [← hwuv]; exact hj)
-  obtain ⟨hredA, hprodA, hredB, hprodB⟩ :=
-    alternatingWord_reduced_of_both_descents cs hDE hij hm hv hvi hvj
+  obtain ⟨hmpos, hredA, hprodA, hredB, hprodB⟩ :=
+    alternatingWord_reduced_of_both_descents cs hij hv hvi hvj
   obtain ⟨l₁, hl₁len, hl₁⟩ := cs.exists_reduced_word u
   have hlu : ℓ (u * v) = ℓ u + ℓ v := length_minRep_mul cs J hmin hv
   have hkey : ∀ A : List B, cs.IsReduced A → π A = v →
@@ -225,16 +244,21 @@ theorem exists_reduced_alternating_tail (hDE : DihedralExact cs)
     have hAlen : A.length = ℓ v := by
       have := hA; unfold CoxeterSystem.IsReduced at this; rw [hAv] at this; omega
     simp only [List.length_append, hl₁len, hAlen]
-  exact ⟨l₁, (hkey _ hredA hprodA).1, (hkey _ hredA hprodA).2,
+  exact ⟨hmpos, l₁, (hkey _ hredA hprodA).1, (hkey _ hredA hprodA).2,
     (hkey _ hredB hprodB).1, (hkey _ hredB hprodB).2⟩
 
-/-! ## `DihedralExact` for `M i j ≤ 3` — every off-diagonal entry of type `A` -/
+/-! ## `DihedralExact` for `M i j ≤ 3` — an elementary proof, no longer load-bearing -/
 
 /-- **`s_i s_j` has order exactly `M i j` whenever `M i j ≤ 3`.**
 
 Both cases come from `CoxeterGeometricRepresentationFull`'s unconditional cell faithfulness:
 `[i, j]` reduced at `M i j = 2` and `[i, j, i]` reduced at `M i j = 3`. If a smaller power were
-trivial the corresponding word would collapse to something of length `≤ 1`. -/
+trivial the corresponding word would collapse to something of length `≤ 1`.
+
+**Superseded as an input** by `CoxeterDihedralOrder.dihedralExact_full`, which proves the same
+predicate for every `M i j`. Kept because the argument is independent and elementary — no
+trigonometry, no Chebyshev recursion — so it is a cheap cross-check on the general result at the
+only bond orders type `A` ever uses. -/
 theorem dihedralExact_le_three (hle : ∀ i j : B, M i j ≤ 3) : DihedralExact cs := by
   intro i j hij k hkpos hklt
   have hne1 : M i j ≠ 1 := M.off_diagonal i j hij

@@ -3,8 +3,9 @@
 title: 'qou-x631: Q ~ P^{3/2} tempering; g''(0) -> -1/4; rho -> -0.170 retires the -1/(2pi) coincidence'
 status: done
 type: task
+priority: normal
 created_at: 2026-09-07T08:17:41Z
-updated_at: 2026-09-07T08:17:41Z
+updated_at: 2026-09-07T09:06:17Z
 ---
 
 
@@ -71,3 +72,36 @@ something false.
 - `g'(0) → −1/4` (quarantined), the Plancherel linear-response coefficient.
 - `ρ = g(1) ≈ −0.170`, the conjecture's constant. No candidate closed form; the
   one that existed is now disfavoured.
+
+
+---
+
+## CORRECTED 2026-09-07 by `qou-igjo` — both halves of the g'(0) reading were wrong
+
+The claim above, *"Monotone from below ... so this is convergence"*, and the
+probe assertion `gprime0_approaches_quarter_from_below` (which tested
+`-0.25 < g'(0)`) are **both withdrawn**. They survived only because the grid
+stops at k = 48.
+
+`qbeta_covariance_kernel_class_basis_probe` identifies g'(0) with the Plancherel
+Kerov-mode projection `c_3 = Cov_P(log f, Sigma_3)/sd_P(Sigma_3)` — an exact
+identity, since `log Q_t ~ (1+t/2)(2 log f − log k!)` — and the two independent
+code paths agree to every printed digit at all six k in the table. At larger k:
+
+| k | 33 | 34 | 35 | 36 | 48 | 52 | 56 |
+|---|---|---|---|---|---|---|---|
+| g'(0) | −0.242668 | −0.242432 | −0.242351 | −0.242655 | −0.248271 | **−0.250311** | **−0.250614** |
+
+- **Not monotone.** On a *consecutive* grid g'(0) rises at k = 33,34,35 and again
+  at k = 44 — it oscillates, quasi-period ~11 in k, amplitude ~3e-4, on a
+  downward drift. The grid 16,24,32,40,44,48 lands only on descending phases.
+  The monotonicity was an artifact of the sampling, not a property of g'(0).
+- **Not from below.** It passes **through** −1/4 near k = 50 and keeps going.
+
+So the argument that made −1/4 look like the limit is gone in both halves. −1/4
+stays recorded as a target to check a derivation against; what the data now
+supports is only that g'(0) is near −1/4 at k ~ 50, and it does not separate a
+limit of exactly −1/4 from one slightly below it.
+
+Result 2 (rho = −0.170, retiring −1/(2pi)) is **unaffected** — it was read off
+an oscillating sequence with no trend claim attached.

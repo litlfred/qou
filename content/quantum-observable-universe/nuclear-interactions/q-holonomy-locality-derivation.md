@@ -33,7 +33,7 @@ Flatness is equivalent to semisimplicity of the braided tensor category. At gene
 
 ## The substrate as the locality window
 
-At the pinned parameter $q_0 \approx 1.11$, the KZ connection is flat and locality holds. The soft confinement level is far from the first non-trivial root of unity, so locality holds to high order.
+The KZ connection is flat at every level (the infinitesimal braid relations are homogeneous), so flatness does not single out the pinned parameter $q_0 \approx 1.11$; what does is that $q_0$ is not a root of unity, so the monodromy target $H_n(q_0)$ is semisimple and the locality statement is about the generic Hecke representation. The soft confinement level is far from the first non-trivial root of unity, so locality holds to high order.
 
 ## Corollary — exponential mass scaling
 

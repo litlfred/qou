@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T10:38:12.524953+00:00",
-  "commitSha": "692eb5cf1013e50d8876e934257aa4d6cbf3d2da",
+  "computedAt": "2026-09-07T10:16:42.383445+00:00",
+  "commitSha": "fe677b04f4de6070aa0d109ccae1bc4d5d9bdc8d",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "atomic-tr-m-mpfr-50dps",
   "scriptFile": "atomic_tr_m_mpfr_50dps.py",
   "scriptHash": "f3868ed3e861",
-  "scriptCommitSha": "8d18aefe06508cfeca2f0e6e374a3016042e06fc",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,7 +22,9 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -53,19 +55,19 @@
       "rho_factor": 1,
       "word_length_3A": 11,
       "n_crossings_canonical": null,
-      "tr_M_at_q0_50dps": "0.629328422494892939934465029388718478549942559054687300694497",
-      "term1_b_pred_mev_50dps": "0.321586163534283284190400827384135154662833920436718568980956",
-      "bridge_elapsed_sec": "0.0034",
+      "tr_M_at_q0_50dps": "0.629328422494892939934465029388718478549942559054704673665113",
+      "term1_b_pred_mev_50dps": "0.321586163534283284190400827384135154662833920436727446550711",
+      "bridge_elapsed_sec": "0.0041",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000026",
-      "python_hoefsmit_elapsed_sec": "0.0034",
+      "rust_canonical_chi_elapsed_sec": "0.000128",
+      "python_hoefsmit_elapsed_sec": "0.0041",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "0.0201",
+        "elapsed_sec": "0.0241",
         "tr_M_at_q0_50dps": "0.629328424313699968963553267337871437266425379070340000000000",
-        "abs_diff_vs_bridge": "0.00000000181880702902908823794915295871648282001565269930550304884673"
+        "abs_diff_vs_bridge": "0.00000000181880702902908823794915295871648282001563532633488744957503"
       },
       "historical_K_comparison": null
     },
@@ -78,19 +80,19 @@
       "rho_factor": 1,
       "word_length_3A": 11,
       "n_crossings_canonical": null,
-      "tr_M_at_q0_50dps": "0.475133517674156240681798891402919584726147383954134758616467",
-      "term1_b_pred_mev_50dps": "0.242792728969142408319514323688497169797511864206851404739871",
-      "bridge_elapsed_sec": "0.0007",
+      "tr_M_at_q0_50dps": "0.475133517674156240681798891402919584726147383954157477116503",
+      "term1_b_pred_mev_50dps": "0.242792728969142408319514323688497169797511864206863013869551",
+      "bridge_elapsed_sec": "0.0005",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000052",
-      "python_hoefsmit_elapsed_sec": "0.0007",
+      "rust_canonical_chi_elapsed_sec": "0.000049",
+      "python_hoefsmit_elapsed_sec": "0.0005",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "0.0108",
+        "elapsed_sec": "0.0133",
         "tr_M_at_q0_50dps": "0.475133519236520283986665782968850468870792444597370000000000",
-        "abs_diff_vs_bridge": "0.00000000156236404330486689156593088414464506064323524138353305322870"
+        "abs_diff_vs_bridge": "0.00000000156236404330486689156593088414464506064321252288349726956571"
       },
       "historical_K_comparison": null
     },
@@ -103,25 +105,25 @@
       "rho_factor": 1,
       "word_length_3A": 23,
       "n_crossings_canonical": null,
-      "tr_M_at_q0_50dps": "0.151968343958468755872283121674754245819148987877935693006478",
-      "term1_b_pred_mev_50dps": "0.0776556643008745351898864508303970150772074523144006689296084",
-      "bridge_elapsed_sec": "0.0116",
+      "tr_M_at_q0_50dps": "0.151968343958468755872283121674754245819148987877933688432946",
+      "term1_b_pred_mev_50dps": "0.0776556643008745351898864508303970150772074523143996445946367",
+      "bridge_elapsed_sec": "0.0044",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000021",
-      "python_hoefsmit_elapsed_sec": "0.0116",
+      "rust_canonical_chi_elapsed_sec": "0.000041",
+      "python_hoefsmit_elapsed_sec": "0.0044",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "0.7855",
+        "elapsed_sec": "1.0241",
         "tr_M_at_q0_50dps": "0.151968345760942275862905443320213701250789354181610000000000",
-        "abs_diff_vs_bridge": "0.00000000180247351999062232164545945543164036630367430699352170548726"
+        "abs_diff_vs_bridge": "0.00000000180247351999062232164545945543164036630367631156705427463399"
       },
       "historical_K_comparison": {
         "historical_K": "6_2",
         "J_K_published": "q - 1 + 2/q - 2/q**2 + 2/q**3 - 2/q**4 + q**(-5)",
         "J_K_at_q0_50dps": "1.02692001258882474846904009620192072553124864073740000000000",
-        "tr_M_over_J_K_at_q0_50dps": "0.147984596750980214526284709900897818978897613046861127610913",
+        "tr_M_over_J_K_at_q0_50dps": "0.147984596750980214526284709900897818978897613046859175585918",
         "note": "If the ratio is a power of q_0, then tr_M = q_0^k · J_K, i.e. they agree up to writhe normalisation. q_0 = 1.1099785956427390466817951293..., so log(ratio)/log(q_0) should be close to an integer."
       }
     },
@@ -134,19 +136,19 @@
       "rho_factor": 1,
       "word_length_3A": 35,
       "n_crossings_canonical": null,
-      "tr_M_at_q0_50dps": "0.0291440423539614099999473434226673098704920436236055242775695",
-      "term1_b_pred_mev_50dps": "0.0148925750617391980747259654442360685047865140856561282203253",
-      "bridge_elapsed_sec": "0.3366",
+      "tr_M_at_q0_50dps": "0.0291440423539614099999473434226673098704920436236057330873125",
+      "term1_b_pred_mev_50dps": "0.0148925750617391980747259654442360685047865140856562349218849",
+      "bridge_elapsed_sec": "0.3710",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000043",
-      "python_hoefsmit_elapsed_sec": "0.3366",
+      "rust_canonical_chi_elapsed_sec": "0.000047",
+      "python_hoefsmit_elapsed_sec": "0.3710",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "15.3923",
+        "elapsed_sec": "19.2132",
         "tr_M_at_q0_50dps": "0.0291440430338835208107305278549255556959231265556950000000000",
-        "abs_diff_vs_bridge": "0.000000000679922110810783184432258245825431082932089475722430495006793"
+        "abs_diff_vs_bridge": "0.000000000679922110810783184432258245825431082932089266912687519054008"
       },
       "historical_K_comparison": null
     },
@@ -159,19 +161,19 @@
       "rho_factor": 1,
       "word_length_3A": 35,
       "n_crossings_canonical": null,
-      "tr_M_at_q0_50dps": "0.0585962583454862042691531956774434357752044480583594608106352",
-      "term1_b_pred_mev_50dps": "0.0299426265289036058794082813260338393829578796780422923570688",
-      "bridge_elapsed_sec": "0.3053",
+      "tr_M_at_q0_50dps": "0.0585962583454862042691531956774434357752044480583623006231397",
+      "term1_b_pred_mev_50dps": "0.0299426265289036058794082813260338393829578796780437434982787",
+      "bridge_elapsed_sec": "0.3471",
       "method": "canonical-rust",
       "effective_method": "hoefsmit-python-fallback",
-      "rust_canonical_chi_elapsed_sec": "0.000047",
-      "python_hoefsmit_elapsed_sec": "0.3053",
+      "rust_canonical_chi_elapsed_sec": "0.000111",
+      "python_hoefsmit_elapsed_sec": "0.3471",
       "rust_crosscheck": null,
       "symbolic_cross_check": null,
       "peel_cross_check": {
-        "elapsed_sec": "7.1944",
+        "elapsed_sec": "8.9906",
         "tr_M_at_q0_50dps": "0.0585962595316319112957327674697255468786398639575690000000000",
-        "abs_diff_vs_bridge": "0.00000000118614570702657957179228211110343541589920953918936477059668"
+        "abs_diff_vs_bridge": "0.00000000118614570702657957179228211110343541589920669937686029763881"
       },
       "historical_K_comparison": null
     }

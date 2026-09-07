@@ -8,16 +8,33 @@ of `qou-h4fe` is exactly TEMPERING of Plancherel:
 That is the cleanest statement of what the conjecture is about: sharpening the
 Plancherel measure toward its mode makes E[Sigma_3] negative.
 
-*** RESULT 1: g'(0) converges, apparently to -1/4 ***
+*** RESULT 1: g'(0) sits near -1/4 at k ~ 50 ***
 
     k :   16       24       32       40       44       48
   g'(0): -0.2318  -0.2379  -0.2427  -0.2462  -0.2469  -0.2483
 
-Monotone from below with successive differences -0.0060, -0.0049, -0.0035,
--0.0007, -0.0014 -- decaying, so this is convergence rather than drift.
+*** CORRECTED 2026-09-07 (bean `qou-igjo`). This block previously read "Monotone
+from below ... so this is convergence rather than drift", and the assertion below
+tested -0.25 < g'(0). BOTH ARE WRONG, and only survived because this probe's grid
+stops at k = 48. ***
 
--1/4 IS RECORDED AS A TARGET TO CHECK A DERIVATION AGAINST, NEVER AS A CRITERION
-TO SEARCH ON. The data is consistent with -1/4 and does not establish it.
+`qbeta_covariance_kernel_class_basis_probe` identifies g'(0) with the Plancherel
+Kerov-mode projection c_3 = Cov_P(log f, Sigma_3)/sd_P(Sigma_3) -- an exact
+identity, since log Q_t ~ (1+t/2)(2 log f - log k!) -- and the two code paths
+agree to every printed digit at all six k above. Computed there at larger k:
+
+  - NOT MONOTONE. On a CONSECUTIVE grid, g'(0) rises at k = 33,34,35 and again at
+    k = 44. It oscillates with quasi-period ~11 in k and amplitude ~3e-4 on a
+    downward drift. The grid 16,24,32,40,44,48 lands only on descending phases,
+    which is what manufactured the appearance of monotonicity.
+  - NOT FROM BELOW. g'(0) = -0.250311 at k = 52 and -0.250614 at k = 56: it
+    passes THROUGH -1/4 near k = 50 and continues.
+
+So the argument that made -1/4 look like the limit -- a monotone approach from
+below -- is withdrawn in both halves. -1/4 IS STILL RECORDED AS A TARGET TO CHECK
+A DERIVATION AGAINST, NEVER AS A CRITERION TO SEARCH ON, but the honest reading is
+now weaker: the data does not separate a limit of exactly -1/4 from one slightly
+below it.
 
 *** RESULT 2: rho tightens to -0.170, and that RETIRES an earlier coincidence ***
 
@@ -142,13 +159,22 @@ def main() -> int:
 
     gps = [S[k]["gp0"] for k in ks]
     diffs = [gps[i + 1] - gps[i] for i in range(len(gps) - 1)]
-    ok &= chk("gprime0_is_converging_not_drifting",
+    ok &= chk("gprime0_differences_shrink_on_THIS_grid",
               bool(abs(diffs[-1]) < abs(diffs[0]) / 3), True,
-              note=f"successive differences {[round(d,5) for d in diffs]} -- "
-                   "decaying, so this is convergence. Approaches -1/4 from below; "
-                   "-1/4 is a TARGET to check a derivation against, not a fit")
-    ok &= chk("gprime0_approaches_quarter_from_below",
-              bool(all(-0.25 < g < -0.22 for g in gps) and gps[-1] < gps[0]), True)
+              note=f"successive differences {[round(d,5) for d in diffs]}. This is a "
+                   "property OF THIS COARSE GRID and is no longer read as convergence: "
+                   "`qbeta_covariance_kernel_class_basis_probe` section 6 shows g'(0) "
+                   "oscillates on a consecutive grid (quasi-period ~11, amplitude ~3e-4), "
+                   "so shrinking differences here reflect where 16,24,32,40,44,48 happens "
+                   "to sample the oscillation")
+    ok &= chk("gprime0_in_band_over_this_range_only",
+              bool(all(-0.25 < g < -0.22 for g in gps) and gps[-1] < gps[0]), True,
+              note="RETRACTION (bean `qou-igjo`): this was named "
+                   "`gprime0_approaches_quarter_from_below` and its -0.25 < g'(0) bound was "
+                   "read as evidence that -1/4 is the limit. The bound holds only because "
+                   "this grid stops at k = 48. g'(0) = -0.250311 at k = 52 and -0.250614 at "
+                   "k = 56 -- it CROSSES -1/4. The assertion is kept, scoped to its own "
+                   "range, and must not be quoted as an approach from below")
 
     rhos = [S[k]["rho"] for k in ks]
     lo, hi = min(rhos), max(rhos)
@@ -184,12 +210,20 @@ def main() -> int:
         "computation": "qbeta-covariance-kernel-tempering",
         "assertions": a, "allPassed": bool(ok),
         "parameters": {"epic": "qou-x631",
-                       "claim": "Q ~ P^{3/2}; g'(0) -> about -1/4; rho ~ -0.170; "
+                       "claim": "Q ~ P^{3/2}; g'(0) near -1/4 at k~50 (CROSSES it by k=52, see qou-igjo); rho ~ -0.170; "
                                 "-1/(2 pi) disfavoured"},
-        "data": {str(k): {kk: round(vv, 6) for kk, vv in S[k].items()} for k in ks},
+        # NO RAW float64 REACHES THIS WITNESS (drained 2026-09-07, bean `qou-igjo`,
+        # from 25 fields). AGENTS.md: "none may enter a witness", ratcheted by
+        # `witness_raw_float64_audit`; this file is not in the baseline, so any
+        # raw float64 here is a NEW dirty witness. These are float64-grade by
+        # construction (log of an exact integer), so they are emitted as decimal
+        # STRINGS at the 6 dp the computation supports, rather than as doubles or
+        # padded through fmt() to a width that would read as measured.
+        "_grade": "decimal strings, float64-grade, 6 dp",
+        "data": {str(k): {kk: f"{vv:.6f}" for kk, vv in S[k].items()} for k in ks},
         "provenance": {"headSha": head,
                        "producer": "computations/qbeta/qbeta_covariance_kernel_tempering_probe.py",
-                       "elapsed_s": round(time.monotonic() - t0, 3)},
+                       "elapsed_s": f"{time.monotonic() - t0:.3f}"},
     }, indent=2) + "\n")
     print(f"witness -> {out.relative_to(ROOT)}")
     return 0 if ok else 1

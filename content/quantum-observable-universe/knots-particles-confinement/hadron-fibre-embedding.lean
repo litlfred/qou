@@ -33,7 +33,11 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
     integrability, fibre confinement, Hopf compatibility, and
     volume compatibility.
 
-    LaTeX: `\label{def:hadron-fibre-embedding}` -/
+    LaTeX: `\label{def:hadron-fibre-embedding}`
+
+    **`integrable : Prop` removed 2026-09-07 — universe-`Prop` typed, so an
+    instance chose the proposition, and it was neither read nor constructed
+    anywhere. `confined` is kept: it is read by four declarations.** -/
 -- Ref: [manuscript] §3, Definition: Fibre-compatible hadron embedding
 structure HadronFibreEmbedding where
   /-- The base point in the projective line. -/
@@ -43,8 +47,6 @@ structure HadronFibreEmbedding where
   energy : R_q
   -- Energy is non-negative:
   -- energy_nonneg : 0 ≤ energy  -- (archimedean; not meaningful over R_q)
-  /-- Integrability: the embedding preserves the connection structure. -/
-  integrable : Prop
   /-- Fibre confinement: the image is contained in a single fibre. -/
   confined : Prop
 

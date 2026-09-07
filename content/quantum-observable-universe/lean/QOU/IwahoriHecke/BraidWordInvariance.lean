@@ -28,9 +28,9 @@ every Coxeter system, sorry-free, off `strong_exchange` (Björner–Brenti Thm 1
 remains open is **deletion → Matsumoto**; the exchange property is not part of the gap.
 
 ✅ **And that remainder is now closed too** (2026-09-06). `QOU.Machinery.CoxeterDeletion`
-supplies deletion and `QOU.IwahoriHecke.Matsumoto` supplies Matsumoto —
-**unconditionally whenever `M i j ≤ 3`** (`matsumoto_An`, hence every type-`A` system), and
-conditional on `CoxeterRankTwo.DihedralExact` — the order of `σᵢσⱼ` — in general. So the
+supplies deletion and `QOU.IwahoriHecke.Matsumoto` supplies Matsumoto — **for every Coxeter
+system, with no hypothesis**, since `CoxeterDihedralOrder.dihedralExact_full` settles the order
+of `σᵢσⱼ` and `bond_ne_zero_of_pow_eq_one` the infinite-bond case. So the
 sentence below reading "not proved anywhere in this corpus or in Mathlib" is stale for this
 corpus; it remains true of Mathlib.
 

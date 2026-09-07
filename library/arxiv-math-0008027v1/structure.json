@@ -1,0 +1,385 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0008027v1",
+ "source": {
+  "file": "0008027v1.pdf",
+  "sha256": "8bce0b8a1bca372edf9322e8109cd25e0ac04fab6d3bf3d0b37784c537446dda",
+  "bytes": 603291,
+  "pages": 21,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0008027",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "3 Aug 2000"
+  },
+  "doi": null,
+  "title": "KASHAEV\u2019S INVARIANT AND THE VOLUME OF A",
+  "authors_raw": "HYPERBOLIC KNOT AFTER Y. YOKOTA",
+  "title_lines": [
+   "KASHAEV\u2019S INVARIANT AND THE VOLUME OF A"
+  ],
+  "abstract": "I follow Y. Yokota to explain how to obtain a tetrahedron de- composition of the complement of a hyperbolic knot and compa re it with the asymptotic behavior of Kashaev\u2019s link invariant using the \ufb01 gure-eight knot as an example.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181030132936-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0008027v1  [math.GT]  3 Aug 2000"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Algebra",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Geometry",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Ideal tetrahedron decomposition of S3 \\ (K \u222a two points ). We will de-",
+   "page": 4,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Ideal tetrahedron decomposition of S3 \\ K. We will deform the ideal",
+   "page": 6,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Hyperbolicity condition. Now we have a topological ideal tetrahedron de-",
+   "page": 8,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Consistency condition: at each vertex in the cusp torus, the pr oduct of the",
+   "page": 8,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Cusp condition: the products of the parameters along the latitu de and the",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Analysis, and Harmony",
+   "page": 9,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 9,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-hitoshi-murakami",
+   "number": "2",
+   "title": "HITOSHI MURAKAMI",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 238,
+   "n_words": 41
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2563,
+   "n_words": 428
+  },
+  {
+   "id": "sec-002-2-algebra",
+   "number": "2",
+   "title": "Algebra",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 3968,
+   "n_words": 981
+  },
+  {
+   "id": "sec-003-4-hitoshi-murakami",
+   "number": "4",
+   "title": "HITOSHI MURAKAMI",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 998,
+   "n_words": 253
+  },
+  {
+   "id": "sec-004-3-geometry",
+   "number": "3",
+   "title": "Geometry",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 433,
+   "n_words": 78
+  },
+  {
+   "id": "sec-005-31-ideal-tetrahedron-decomposition-of-s3-k-two-p",
+   "number": "3.1",
+   "title": "Ideal tetrahedron decomposition of S3 \\ (K \u222a two points ). We will de-",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 2871,
+   "n_words": 575
+  },
+  {
+   "id": "sec-006-6-hitoshi-murakami",
+   "number": "6",
+   "title": "HITOSHI MURAKAMI",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 57,
+   "n_words": 8
+  },
+  {
+   "id": "sec-007-32-ideal-tetrahedron-decomposition-of-s3-k-we-wi",
+   "number": "3.2",
+   "title": "Ideal tetrahedron decomposition of S3 \\ K. We will deform the ideal",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 3304,
+   "n_words": 673
+  },
+  {
+   "id": "sec-008-8-hitoshi-murakami",
+   "number": "8",
+   "title": "HITOSHI MURAKAMI",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 238,
+   "n_words": 45
+  },
+  {
+   "id": "sec-009-33-hyperbolicity-condition-now-we-have-a-topolog",
+   "number": "3.3",
+   "title": "Hyperbolicity condition. Now we have a topological ideal tetrahedron de-",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1416,
+   "n_words": 257
+  },
+  {
+   "id": "sec-010-1-consistency-condition-at-each-vertex-in-the-cu",
+   "number": "1",
+   "title": "Consistency condition: at each vertex in the cusp torus, the pr oduct of the",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 37,
+   "n_words": 7
+  },
+  {
+   "id": "sec-011-2-cusp-condition-the-products-of-the-parameters",
+   "number": "2",
+   "title": "Cusp condition: the products of the parameters along the latitu de and the",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1214,
+   "n_words": 314
+  },
+  {
+   "id": "sec-012-4-analysis-and-harmony",
+   "number": "4",
+   "title": "Analysis, and Harmony",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 1947,
+   "n_words": 388
+  },
+  {
+   "id": "sec-013-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 860,
+   "n_words": 136
+  },
+  {
+   "id": "sec-014-10-hitoshi-murakami",
+   "number": "10",
+   "title": "HITOSHI MURAKAMI",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 1012,
+   "n_words": 165
+  },
+  {
+   "id": "sec-015-12-hitoshi-murakami",
+   "number": "12",
+   "title": "HITOSHI MURAKAMI",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 355,
+   "n_words": 57
+  },
+  {
+   "id": "sec-016-14-hitoshi-murakami",
+   "number": "14",
+   "title": "HITOSHI MURAKAMI",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 802,
+   "n_words": 151
+  },
+  {
+   "id": "sec-017-16-hitoshi-murakami",
+   "number": "16",
+   "title": "HITOSHI MURAKAMI",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 403,
+   "n_words": 70
+  },
+  {
+   "id": "sec-018-18-hitoshi-murakami",
+   "number": "18",
+   "title": "HITOSHI MURAKAMI",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 211,
+   "n_words": 36
+  },
+  {
+   "id": "sec-019-20-hitoshi-murakami",
+   "number": "20",
+   "title": "HITOSHI MURAKAMI",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 387,
+   "n_words": 69
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 20,
+  "sections": 20,
+  "chars_total": 23314
+ }
+}
