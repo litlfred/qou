@@ -1,11 +1,11 @@
 ---
 # qou-g5sp
 title: The entire Bruhat / Coxeter-order component is unreachable from QOU.lean (9 modules, includes merged main work)
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T22:32:32Z
-updated_at: 2026-09-07T17:08:22Z
+updated_at: 2026-09-07T18:12:09Z
 ---
 
 ## The finding
@@ -261,3 +261,32 @@ Extending that to all 1853 means a full from-source build in topological order. 
 container cannot do it: large closures SIGSEGV, and disk is ~860 MB.  **So the sizing
 question stands unanswered, and it is now unanswered for a measured reason rather than
 an assumed one.**  That is the third estimate of its cost and the first with evidence.
+
+## 2026-09-07 — CLAIMED; the measurement this bean asks for is running (PR #7124)
+
+Taking up this bean's own recommendation ("measure first — run the sweep across
+all 2773, get the actual RED count"), which it could not act on because the sweep
+only knew how to build the dirty closure.
+
+Re-measured on `main` `1ec22a9040c`: **2773 on disk / 910 in root / 1863 outside
+(67%)** — the ratio holds, the counts drift, as this bean already says.
+
+**Two flags added** (`scripts/lean-library-sweep.py`):
+`--all` (compile every module, 4.0 s/module measured) and `--only PREFIX`
+(chunk it, because the full run writes ~610 MB against 619 MB free).
+
+**Three measurements worth keeping regardless of how the sweep ends:**
+
+1. **60 modules on today's main have NO olean at all**, against the 3 this bean's
+   unsound proxy reported. That figure IS sound — olean presence is measured, not
+   inferred from an mtime.
+2. **The hardlinked shadow costs 0.22 MB/module, not 2.4 GB.** `du` says 2.4 GB,
+   `df` moved 9 MB over the same 40-module run. First direct confirmation that
+   #6827's hardlink change does what it claimed.
+3. **The chunked result will be WEAKER than a single-run one** and must be
+   reported as such: a later chunk resolves an earlier-chunk import against the
+   snapshot olean, not one this run rebuilt. Same snapshot-conditionality the
+   sweep already carries (`qou-56qy`), not a new hole.
+
+**I have NOT added the 1863 imports and will not propose it here.** This bean is
+right that scope is the owner's call and should follow the RED count.
