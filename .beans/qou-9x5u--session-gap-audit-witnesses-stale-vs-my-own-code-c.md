@@ -3,8 +3,9 @@
 title: 'SESSION GAP AUDIT: witnesses stale vs my own code changes, no PR, Lean-first directive violated, cheat sheet untouched'
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-08-09T12:33:24Z
-updated_at: 2026-08-09T12:33:24Z
+updated_at: 2026-09-07T10:44:36Z
 ---
 
 
@@ -131,3 +132,51 @@ programme is blocked on the radical, not merely on identifying a state set.
 Caveat recorded in the file: the numerical signature is MEASURED, not proved --
 certifying eigenvalues of an explicit 6x6 over irrational q0 is separate work.
 What is proved is the consequence.
+
+
+## 2026-09-07 — the P0 was still live four weeks on, and it was 3 SECONDS of compute
+
+This bean's P0 ("I introduced witness staleness and never regenerated") was
+**still live**. Verified, not assumed:
+
+- All three named commits are **on `main`**: `0f608066` (writhe + z C→D),
+  `a188542f` (derived α_EM), `9a1d7680` (CAL-3 nuclear length) — all 2026-08-09.
+- Both named consumer producers import `coulomb_energy` **at module level**
+  (`mirror_split_continuum_em_probe.py:98`, `binding_wn_kernel_derive_refute.py:49`).
+- Their witnesses were computed **2026-07-13** and **2026-07-11** — *before*
+  the change, and never regenerated. `coulomb_energy.py` has since moved again
+  (2026-08-29).
+
+**Cost to fix: 2 s and 1 s.** A P0 with a self-reported 15 % magnitude
+(`E_C(3He)` 0.998413 → 0.847422) sat for four weeks behind three seconds of
+compute.
+
+### What actually moved
+
+| | old | new |
+|---|---|---|
+| headline `split_AME/split_pred` | **0.985 ± 0.069** | **0.985 ± 0.069** — unchanged |
+| all 5 assertions | pass | pass, no `computed` value moved |
+| 7Li/7Be fixed-1/3 error factor | **2.16×** | **11.35×** |
+
+`binding-wn-kernel-derive-refute`: **no number moved** (unicode-escape
+normalisation and environment fields only).
+
+So the probe's own conclusion is untouched, and the **supersession is
+strengthened** — the superseded A=3-only fixed-1/3 route now fails 7Li/7Be by
+11.35× rather than 2.16×. The witness is internally consistent after the re-run
+(description 11.4, source 11.35 — the same value at the two precisions the
+producer prints), because **both figures are computed** (`%.1fx` at :259,
+`.2f` at :297), not hardcoded. That distinguishes this from the `habiro`
+witness in `qou-9ot5`, whose prose *is* hardcoded and therefore contradicted
+its own recomputed values — which is why that one was reverted and this one is
+committed.
+
+### Why this class is invisible to the documented check
+
+Neither producer's own source changed; only a module they import did. So
+`git diff <producer>` — the check AGENTS.md's idle-pass policy names first —
+shows nothing. This is `cosmetic_import_cone_drift`, the one bucket the fifth
+staleness-triage run measured **growing 4 → 9** the same day (`qou-e9pp`).
+Two live instances, both cheap, both four weeks stale, and the documented
+triage step cannot see either.

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-13T15:46:12.664354+00:00",
-  "commitSha": "1ad166cc8b1870f60d4b8b041f9731d3d2ba1eab",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-07T10:41:09.679551+00:00",
+  "commitSha": "af31a017f02ab6c47d0711fa1847deb395c3af3f",
   "assertions": [
     {
       "name": "pair_combinatorics_exact",
@@ -34,7 +34,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "at 7Li/7Be: fixed 1/3 errs 2.16x (>2) while the continuum ratio 0.857 is within 15%; tanh route has no A-dependence at all"
+      "source": "at 7Li/7Be: fixed 1/3 errs 11.35x (>2) while the continuum ratio 0.857 is within 15%; tanh route has no A-dependence at all"
     },
     {
       "name": "derived_alpha_insensitive",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 26,
+  "durationMs": 19,
   "computation": "mirror-split-continuum-em",
   "scriptFile": "mirror_split_continuum_em_probe.py",
   "scriptHash": "b6f3ad7eeddf",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,10 +60,20 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
-  "description": "kappa closure via the continuum categorical EM: split_pred = (3/5)·alpha·dZ(Z-1)·m_pi/A^(1/3) with ZERO fitted constants — alpha from the derived trace-ratio 1/(q0[9]_q[10]_q), exact discrete-proton pair count, and the pion-Compton radius law R(A)=lambda_pi·A^(1/3) (CAL-3 length; hbar·c/R = m_pi/A^(1/3), no empirical r0). Across the 8 T_z mirror pairs A=3-39: split_AME/split_pred = 0.985 ± 0.069 — scaling flat (supersedes the A=3-only fixed 1/3, which fails 7Li/7Be by 2.2x, and the A-independent tanh(ln q0) route) and the coefficient is consistent with the predicted 1. PARTIAL: the packing identification R = 1·lambda_pi·A^(1/3) (Yukawa selection among the 4 framework mass scales) and the volume->radius extensivity step are underived; the 3/5 is the uniform-sphere model factor. Exploratory scope-(a), no wiring.",
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/mirror_split_continuum_em_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/mirror_split_continuum_em_probe.py"
+  },
+  "description": "kappa closure via the continuum categorical EM: split_pred = (3/5)·alpha·dZ(Z-1)·m_pi/A^(1/3) with ZERO fitted constants — alpha from the derived trace-ratio 1/(q0[9]_q[10]_q), exact discrete-proton pair count, and the pion-Compton radius law R(A)=lambda_pi·A^(1/3) (CAL-3 length; hbar·c/R = m_pi/A^(1/3), no empirical r0). Across the 8 T_z mirror pairs A=3-39: split_AME/split_pred = 0.985 ± 0.069 — scaling flat (supersedes the A=3-only fixed 1/3, which fails 7Li/7Be by 11.4x, and the A-independent tanh(ln q0) route) and the coefficient is consistent with the predicted 1. PARTIAL: the packing identification R = 1·lambda_pi·A^(1/3) (Yukawa selection among the 4 framework mass scales) and the volume->radius extensivity step are underived; the 3/5 is the uniform-sphere model factor. Exploratory scope-(a), no wiring.",
   "data": {
     "pairs": [
       {
@@ -72,7 +82,7 @@
         "split_AME_MeV": 0.76375488,
         "pred_MeV": 0.8487393706040641,
         "ratio": 0.8998697438253878,
-        "ratio_canonical_r0": 0.7649692682436916
+        "ratio_canonical_r0": 0.9012688186537837
       },
       {
         "pair": "7Li/7Be",
@@ -80,15 +90,15 @@
         "split_AME_MeV": 1.6442398,
         "pred_MeV": 1.919714629957508,
         "ratio": 0.8565021979524083,
-        "ratio_canonical_r0": 0.7281029994757809
+        "ratio_canonical_r0": 0.8578338469758848
       },
       {
         "pair": "11B/11C",
         "A": 11,
-        "split_AME_MeV": 2.76403599999999,
+        "split_AME_MeV": 2.764036,
         "pred_MeV": 2.752034511791283,
-        "ratio": 1.004360951200752,
-        "ratio_canonical_r0": 0.8537960823379573
+        "ratio": 1.0043609512007556,
+        "ratio_canonical_r0": 1.0059224840060208
       },
       {
         "pair": "13C/13N",
@@ -96,15 +106,15 @@
         "split_AME_MeV": 3.0028193,
         "pred_MeV": 3.123572324133715,
         "ratio": 0.9613413708398109,
-        "ratio_canonical_r0": 0.8172256151846065
+        "ratio_canonical_r0": 0.9628360188404427
       },
       {
         "pair": "15N/15O",
         "A": 15,
-        "split_AME_MeV": 3.53653199999999,
+        "split_AME_MeV": 3.536532,
         "pred_MeV": 3.47442056467227,
-        "ratio": 1.0178767751835416,
-        "ratio_canonical_r0": 0.8652857340934141
+        "ratio": 1.0178767751835445,
+        "ratio_canonical_r0": 1.019459321751356
       },
       {
         "pair": "23Na/23Mg",
@@ -112,7 +122,7 @@
         "split_AME_MeV": 4.8385261,
         "pred_MeV": 4.734762214098499,
         "ratio": 1.0219153320081267,
-        "ratio_canonical_r0": 0.8687188663662369
+        "ratio_canonical_r0": 1.0235041575326815
       },
       {
         "pair": "27Al/27Si",
@@ -120,7 +130,7 @@
         "split_AME_MeV": 5.5947051,
         "pred_MeV": 5.304407301078998,
         "ratio": 1.0547276599332693,
-        "ratio_canonical_r0": 0.8966122616653882
+        "ratio_canonical_r0": 1.056367500510143
       },
       {
         "pair": "39K/39Ca",
@@ -128,23 +138,23 @@
         "split_AME_MeV": 7.3068333,
         "pred_MeV": 6.858252942761134,
         "ratio": 1.0654073801276664,
-        "ratio_canonical_r0": 0.905690973110253
+        "ratio_canonical_r0": 1.0670638250273332
       }
     ],
-    "ratio_mean": 0.9852501763838704,
-    "ratio_rms_scatter": 0.06933959865155886,
+    "ratio_mean": 0.9852501763838712,
+    "ratio_rms_scatter": 0.06933959865155917,
     "alpha_derived": 0.007308701560055657,
     "alpha_rel_diff_vs_codata": 0.0015552202890163687,
     "lambda_pi_fm": 1.4138169306541308,
     "scale_selection_required_coefficients": {
-      "m_e (CAL-1)": 269.10378422457416,
-      "m_mu (CAL-2 proxy)": 1.301475161952169,
-      "m_pi (CAL-3)": 0.9852501763838704,
-      "m_p (phys-obs pin)": 0.14655850143533944
+      "m_e (CAL-1)": 269.1037842245744,
+      "m_mu (CAL-2 proxy)": 1.30147516195217,
+      "m_pi (CAL-3)": 0.9852501763838712,
+      "m_p (phys-obs pin)": 0.14655850143533955
     },
-    "B_pp_MeV": 2.286087512404399,
-    "superseded_fixed_one_third_A7_ratio": 2.1577124118105164,
-    "superseded_tanh_A3_ratio": 3.2135079411683227,
+    "B_pp_MeV": 0.43443937894435775,
+    "superseded_fixed_one_third_A7_ratio": 11.354217962436996,
+    "superseded_tanh_A3_ratio": 16.90997808064306,
     "benchmark_canonical_r0": "split/dE_C = 0.838 ± 0.059 (mirror-nuclei-coulomb-systematics)"
   }
 }
