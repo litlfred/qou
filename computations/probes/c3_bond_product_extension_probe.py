@@ -76,7 +76,11 @@ _D = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_D)
 _ORIG = _CBC.atom_canonical_crossings
 
-K = 3   # truncation order: we need a3
+# Truncation order. 3 by default (the c3 question this file was written for);
+# `--order N` raises it, which is how the c4 rung is tested without a second copy
+# of the machinery. mul/div/predict are generic in K, so nothing else changes.
+K = 4 if "--order=4" in sys.argv else (
+    int(next((a.split("=")[1] for a in sys.argv if a.startswith("--order=")), 3)))
 
 ZN = {"pp": (2, 0), "pn": (1, 1), "nn": (0, 2), "3p": (3, 0), "T": (1, 2),
       "3He": (2, 1), "3n": (0, 3), "4He": (2, 2), "5He": (2, 3)}
@@ -85,6 +89,14 @@ LIVE_OK = ("pp", "pn", "nn", "3p", "T", "3He", "3n")
 # c3 measured independently in bean qou-yaig (#6966) — NOT an input here.
 C3_RECORDED = {"pp": F(67, 16), "pn": F(43, 8), "nn": F(27, 4),
                "T": F(101, 16), "3He": F(839, 128), "4He": F(1329, 256)}
+
+# c4 measured independently in bean qou-yaig (#6966) — NOT an input here. Only
+# A = 2 and A = 3 were measured there; 4He's c4 was never computed, so at
+# --order=4 the 4He row becomes a genuine open prediction rather than a check.
+C4_RECORDED = {"pp": F(-585, 128), "pn": F(109, 192), "nn": F(27, 32),
+               "T": F(743, 384), "3He": F(10001, 1536)}
+
+RECORDED = {3: C3_RECORDED, 4: C4_RECORDED}
 
 
 def mul(a, b):
@@ -117,8 +129,9 @@ def measure_inputs(log=print):
     for key, Z, N in (("p", 1, 0), ("n", 0, 1)):
         c = _series(Z, N, inter=False)
         nuc[key] = c
-        log(f"    nucleon {key}:  a={c[0]}  r={c[1]/c[0]}  q={c[2]/c[0]}  "
-            f"s={c[3]/c[0]}   (one nucleon, n=3, free word)")
+        co = "  ".join(f"{nm}={c[i]/c[0]}" for i, nm in
+                       zip(range(1, K + 1), ("r", "q", "s", "t", "u")))
+        log(f"    nucleon {key}:  a={c[0]}  {co}   (one nucleon, n=3, free word)")
     bond = {}
     for wZ, wN, which, mk in ((2, 1, "pp", dict(m_pp=1, m_pn=0, m_nn=0)),
                               (1, 2, "pn", dict(m_pp=0, m_pn=1, m_nn=0)),
@@ -126,8 +139,8 @@ def measure_inputs(log=print):
         free = _series(wZ, wN, inter=True, m_pp=0, m_pn=0, m_nn=0)
         R = div(_series(wZ, wN, inter=True, **mk), free)
         bond[which] = R
-        log(f"    bond {which}:  (1/2)(1, {R[1]/R[0]}, {R[2]/R[0]}, {R[3]/R[0]})"
-            f"   (A=3, ONE interface on)")
+        inner = ", ".join(str(R[i] / R[0]) for i in range(1, K + 1))
+        log(f"    bond {which}:  (1/2)(1, {inner})   (A=3, ONE interface on)")
     return nuc, bond
 
 
@@ -151,9 +164,9 @@ def main() -> int:
         print(f"  [{time.time()-t0:6.1f}s] {m}", flush=True)
 
     print("=" * 78)
-    print("  Does the block-and-bond product reach c3?")
+    print(f"  Does the block-and-bond product reach c{K}?")
     print("=" * 78)
-    log("measuring the seven inputs (2 nucleons x 4 coeffs, 3 bonds x 4) …")
+    log(f"order K = {K}; measuring inputs (2 nucleons x {K+1}, 3 bonds x {K+1}) …")
     nuc, bond = measure_inputs(log)
 
     rows, failures = [], []
@@ -170,12 +183,12 @@ def main() -> int:
             if d_pred != d_live:
                 failures.append(f"{name}: predicted {d_pred} != live {d_live}")
             ok3 = (d_pred[2] + d_pred[3]) == (d_live[2] + d_live[3])
-        elif name in C3_RECORDED:
+        elif name in RECORDED.get(K, {}):
             src = "recorded (qou-yaig, independent)"
-            ok3 = (c3_pred == C3_RECORDED[name])
+            ok3 = (c3_pred == RECORDED[K][name])
             if not ok3:
-                failures.append(f"{name}: c3 predicted {c3_pred} != "
-                                f"recorded {C3_RECORDED[name]}")
+                failures.append(f"{name}: c{K} predicted {c3_pred} != "
+                                f"recorded {RECORDED[K][name]}")
         else:
             src = "prediction only (no target)"
         rows.append((name, Z + N, d_pred[3], c3_pred, src, ok3))
@@ -184,7 +197,7 @@ def main() -> int:
 
     print()
     print("=" * 78)
-    print(f"  {'case':>5s} {'A':>2s} {'a3 (raw)':>16s} {'c3 = a2+a3':>14s}   source")
+    print(f"  {'case':>5s} {'A':>2s} {f'a{K} (raw)':>16s} {f'c{K}':>16s}   source")
     for name, A, a3, c3, src, ok in rows:
         print(f"  {name:>5s} {A:>2d} {str(a3):>16s} {str(c3):>14s}   {src}")
     print("=" * 78)
@@ -192,23 +205,22 @@ def main() -> int:
     print(f"  {sum(1 for r in checked if r[5])}/{len(checked)} checked rows agree")
     print()
     if failures:
-        print("  VERDICT: the product does NOT reach c3. Multiplicativity over")
-        print("  blocks and bonds holds to order 2 and breaks at order 3 — an")
-        print("  irreducible term appears that no smaller object supplies.")
+        print(f"  VERDICT: the product does NOT reach c{K}. Multiplicativity")
+        print(f"  over blocks and bonds holds below order {K} and BREAKS there —")
+        print("  an irreducible term appears that no smaller object supplies.")
         for f in failures:
             print(f"    {f}")
         return 1
-    print("  VERDICT: the product REACHES c3. Adding one cubic term per nucleon")
+    print(f"  VERDICT: the product REACHES c{K}. One order-{K} term per nucleon")
     print("  and per bond — each measured on a smaller object, none fitted to any")
-    print("  c3 — reproduces every checked c3, including 4He's 1329/256, which was")
-    print("  measured independently at P = 5 and contributes to no input here.")
+    print(f"  c{K} — reproduces every checked row.")
     print()
     print("  SCOPE, inherited from the form and not weakened here: SORTED orderings")
     print("  only; A <= 5; NOT PROVED. 'pnp' remains the discriminating untested")
     print("  case. This extends the order reach, not the ordering reach.")
     print()
     print(f"PASS  {sum(1 for r in checked if r[5])}/{len(checked)} — "
-          f"the block-and-bond product carries c3")
+          f"the block-and-bond product carries c{K}")
     return 0
 
 
