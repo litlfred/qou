@@ -279,3 +279,57 @@ All **8** carriers behind the eight paper-facing claims are in the uninhabited
 The projections that reach the paper are exactly the ones with nothing behind
 them. That is the finding this tranche exists for, and it is sharper stated as
 a contrast than as an absolute.
+
+---
+
+## Addendum 3 (same day) — correcting my own "112", and why inhabitation alone cannot reproduce the ledger's verdicts
+
+### The 112 is a 2026-08-30 figure and I quoted it as though it were current
+
+Addendum 1 says *"the corpus already sized this, and the number is 112, not
+41."* Both halves were dated correctly and the sentence still reads as a live
+count. Measured today, `docs/audits/lean-vacuity-review-ledger.json` holds
+**61** rows in `proof-no-self-assuming-projection`:
+
+| verdict | count |
+|---|---|
+| `genuine` | **33** |
+| `legit` | 14 |
+| `needs-agent` | 14 |
+
+So the drain since 2026-08-30 has taken the `genuine` population **112 → 33**.
+Quote 33 as the live figure and 112 only with its date.
+
+### Applying the discriminator to the ledger's own population
+
+Of the 33 `genuine` rows: **9** name a declaration that no longer exists under
+that name (repaired or renamed since), **5** have a proof body this resolver
+cannot parse — it handles `:= ivar.field` and nothing else — and **19** resolve
+to a carrier. Of those 19: **10 inhabited, 9 uninhabited.**
+
+**That is NOT ten mis-adjudications, and reading it that way would be the
+error this whole tranche is about.** `qou-z9ws` built an adjudicator precisely
+because inhabitation is *necessary, not sufficient*, and it separates three
+kinds of instance:
+
+- **`Fact`-wrapper** — `instance … [hf : Fact P] : C … := ⟨hf.out⟩`. Supplies
+  nothing; it relabels the assumption, and whoever must discharge `Fact P` is
+  exactly where the gap already was.
+- **degenerate slice** — inhabits only the diagonal (`f_k = f_inf`), where the
+  bound reads `0 ≤ …` and closes by `positivity`, while the projected theorem
+  quantifies over arbitrary arguments.
+- **substantive** — instances covering the class's parameter domain.
+  `QIntRatioBoundSmall`'s four discharge `m = 1,2,3,4` and the class binds
+  `_hm4 : m ≤ 4`, so they **exhaust** it.
+
+Only the third makes a projection legitimate. So the honest reading of 10/19 is
+that **the cheap necessary condition does not reproduce the ledger's verdicts,
+and the adjudicator is doing real work** — not that the verdicts are wrong.
+
+### What this means for the numbers in Addendum 2
+
+The 30 % there is a rate of *inhabitation*, an upper bound on the legitimate
+rate, not the legitimate rate itself. The **0 / 8** on the paper-facing subset
+is unaffected: an uninhabited carrier fails the necessary condition outright,
+so no adjudication can rescue it. State it that way — the contrast is between
+a bound and a certainty, and only the certainty carries the finding.
