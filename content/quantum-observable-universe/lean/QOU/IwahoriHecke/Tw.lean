@@ -72,12 +72,13 @@ the chain from here is **deletion → Matsumoto**, not exchange → deletion →
 first and hardest input is in hand.
 
 ✅ **And the rest of that chain landed on 2026-09-06.** `QOU.Machinery.CoxeterDeletion` has
-deletion; `QOU.IwahoriHecke.Matsumoto` has Matsumoto, **hypothesis-free whenever
-`M i j ≤ 3`** — so `Matsumoto.exists_Tw_An` gives the `T_w` map for type `A` with nothing
-assumed. In general it is conditional on `CoxeterRankTwo.DihedralExact` (that `σᵢσⱼ` has
-order exactly `M i j`), which is the corpus's own named open item, recorded as such in
-`CoxeterGeometricRepresentationFull`'s HONESTY note. The named-hypothesis form below is kept
-because it is the general statement.
+deletion; `QOU.IwahoriHecke.Matsumoto` has Matsumoto, **hypothesis-free for every Coxeter
+system** — so `Matsumoto.exists_Tw` gives the `T_w` map with nothing assumed, and
+`exists_Tw_An` is its type-`A` specialisation. `DihedralExact` (that `σᵢσⱼ` has order exactly
+`M i j`) was the corpus's own named open item, recorded as such in
+`CoxeterGeometricRepresentationFull`'s HONESTY note; it is now proved in
+`QOU.Machinery.CoxeterDihedralOrder.dihedralExact_full`. The named-hypothesis form below is
+kept because it names its input rather than assuming it.
 
 Refs:
 - [matsumoto1964] DOI 10.1090/S0002-9904-1964-11211-9

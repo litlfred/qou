@@ -1,0 +1,40 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1408.3518v3",
+ "source_sha256": "cf18585b886587c7",
+ "brief": "On Augmentation Algorithms for Linear and Integer-Linear Programming: — 4 sections: Introduction.; Our Contributions; Proofs",
+ "extended": "**On Augmentation Algorithms for Linear and Integer-Linear Programming:**\n\n*From Edmonds-Karp to Bland and Beyond*\n\n15 pp, 4 sections.\n\n**Outline.** 1 Introduction.; 1.1 Our Contributions; 2 Proofs; 3 Concluding remarks",
+ "tokens": {
+  "brief": 31,
+  "extended": 54
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction.",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-11-our-contributions",
+   "title": "Our Contributions",
+   "pages": "4-8"
+  },
+  {
+   "id": "sec-002-2-proofs",
+   "title": "Proofs",
+   "pages": "8-13"
+  },
+  {
+   "id": "sec-003-3-concluding-remarks",
+   "title": "Concluding remarks",
+   "pages": "13-15"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

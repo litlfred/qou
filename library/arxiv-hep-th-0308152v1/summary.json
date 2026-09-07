@@ -1,0 +1,26 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-hep-th-0308152v1",
+ "source_sha256": "93bcc14b8be91257",
+ "brief": "TORUS KNOT AND MINIMAL MODEL — We reveal an intimate connection between the quantum knot i nvariant for torus knot T(s, t) and the character of the minimal model M(s, t), where s and t are relatively",
+ "extended": "**TORUS KNOT AND MINIMAL MODEL**\n\n*KAZUHIRO HIKAMI AND ANATOL N. KIRILLOV*\n\n10 pp, 1 sections.\n\n**Abstract.** We reveal an intimate connection between the quantum knot i nvariant for torus knot T(s, t) and the character of the minimal model M(s, t), where s and t are relatively prime integers. We show that Kashaev’s invariant,i.e., the N-colored Jones polynomial at the N-th root of unity, coincides with the Eichler integral of the character. 1. I ntroduction After Jones polynomial was introduced [1], studies of quant um invariants have been exten- sively developed. These quantum knot invariants are physically interpreted as the Feynman path integral of the Wilson loop with the Chern–Simons action [2] . Though, geometrical interpreta- tion of the quantum invariant is still not complete.\n\n**Outline.** Eichler Integral of the Character",
+ "tokens": {
+  "brief": 49,
+  "extended": 211
+ },
+ "sections": [
+  {
+   "id": "sec-000-eichler-integral-of-the-character",
+   "title": "Eichler Integral of the Character",
+   "pages": "1-10"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -374,3 +374,88 @@ mechanical signal — the inhabitation result is a *second* witness, not a
 substitute for the check the ledger's own contract asks for. It is a bounded,
 well-specified next tranche, and this is what it costs: 9 re-verifications, 2
 genuine adjudications, 3 resolver extensions.
+
+---
+
+## Addendum 5 (2026-09-07) — the `needs-agent` queue drained to zero, and the one tension it exposed
+
+### It was 14 re-verifications, not the 9 + 2 + 3 Addendum 4 costed
+
+`scripts/lean-vacuity-ledger-reverify.py` finds the revision whose blob hashes
+to each entry's recorded `file_sha`, extracts the declaration at that revision
+and at HEAD, and compares. Result: **14 of 14 IDENTICAL**, `CHANGED=0`,
+`NO-REV=0`, `NOT-FOUND=0`.
+
+`file_sha` is `sha256(whole file)[:12]`, so **any** edit anywhere in the file
+expires every verdict in it. All fourteen expiries were collateral: not one
+touched the reviewed declaration. So the prior readings apply unchanged, and
+all fourteen verdicts are restored — 8 `genuine`, 6 `legit` — with a dated
+RE-VERIFIED evidence line naming the revision compared against.
+
+`proof-no-self-assuming-projection` is now **41 `genuine` / 20 `legit` / 0
+`needs-agent`.**
+
+Addendum 4 predicted this queue needed 9 mechanical decisions, 2 real
+adjudications and 3 resolver extensions. It needed none of those: the
+inhabitation signal was the wrong tool for this queue, because the question
+was never *what is the verdict* but *does the old verdict still apply*.
+
+### The tension: four `legit` verdicts sit on carriers with zero builders
+
+Cross-checking the restored verdicts against inhabitation:
+
+| entry | prior verdict | carrier | builders |
+|---|---|---|---|
+| `sdp_lp_projection` | `legit` | `ScalarLPProjection` | **0** |
+| `base_mass_is_norm_of_base_trace` | `legit` | `CatDescendedInputs` | **0** |
+| `descended_trace_is_base_trace` | `legit` | `CatDescendedInputs` | **0** |
+| `jet_prolongation_C` | `legit` | `JetProlongationQOU` | **0** |
+
+`qou-z9ws`'s discriminator says a projection is the legitimate accessor idiom
+**only when something builds the bundle**. By that rule these four cannot be
+`legit`. **Two of the corpus's own criteria disagree**, and the disagreement is
+one-directional: `genuine` on an *inhabited* carrier is consistent
+(`shell_closure_monotone`, `he4_strong_duality_value` — inhabitation is
+necessary, not sufficient, and the instance may be a `Fact`-wrapper or a
+degenerate slice), but `legit` on an *uninhabited* one is not.
+
+**They are flagged in the ledger and NOT overturned.** A re-verification
+restores what was decided; re-deciding it on a signal the corpus itself calls
+necessary-but-not-sufficient in the other direction would be exactly the
+overreach this arc keeps finding.
+
+### What has to be decided, and by whom
+
+The substantive question is whether the discriminator applies to a
+**definitional** structure at all.
+
+`jet_prolongation_C` is the sharp case, and its own docstring makes the counter
+-argument: `JetProlongationQOU` *defines* what a jet prolongation is, and
+`dim_preserved` is one of its defining conditions, so the accessor is Mathlib's
+`Group.mul_assoc := Group.mul_assoc` idiom — exposing an axiom of a definition
+under a readable name. The reply is that `Group` has instances and
+`JetProlongationQOU` has none, so the analogy's own precondition fails: nothing
+in the corpus has ever produced a jet prolongation.
+
+- **Read the rule as stated** — these four become `genuine`, and the ledger's
+  `legit` bucket means "inhabited **and** substantively so". Cost: four verdict
+  flips plus whatever downstream drain `genuine` implies. Risk: it may
+  mis-classify honest definitional accessors, of which the corpus has many.
+- **Narrow the rule to hypothesis carriers** — a `class` standing in for an
+  open result needs a builder; a `structure` that *defines* an object does not.
+  Cost: a stated exception in `qou-z9ws`'s discriminator and a pass over the
+  `legit` bucket to sort carriers by kind. Risk: "definitional" is a judgement,
+  and the exception is exactly where a hypothesis carrier could hide.
+- **Leave it** — the four stay `legit`, flagged, and the two criteria keep
+  disagreeing where they meet.
+
+**Default if nothing is decided:** the third. The flags stay in the ledger, the
+verdicts stand, and nothing downstream moves.
+
+**My judgement, not a finding:** the second. The corpus's definitional
+structures (`TopologicalMassDecomposition`, `ElectronBaseTower`,
+`JetProlongationQOU`) are genuinely a different construct from its hypothesis
+classes (`HasStrongDuality`, `SkeinMultisetInvariant`), and the discriminator
+was written with the latter in mind. But it is a rule change to a criterion
+another agent established and measured, so it is the author's call rather than
+mine.

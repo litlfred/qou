@@ -1,0 +1,100 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0410111v2",
+ "source": {
+  "file": "0410111v2.pdf",
+  "sha256": "0ccaeeabd8de6b5fca592009cff67076819b17e01c77d5cfd9083282a6809a49",
+  "bytes": 189709,
+  "pages": 7,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0410111",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "31 May 2005"
+  },
+  "doi": null,
+  "title": "Integer Polynomial Optimization in Fixed Dimension Jes\u00fas A. De Loera University of California, Dept. of Mathematics, Davis CA 95 616, USA email: deloera@math.ucdavis.edu http://www.math.ucdavis.edu/~deloera",
+  "authors_raw": null,
+  "title_lines": [
+   "Integer Polynomial Optimization in Fixed Dimension",
+   "Jes\u00fas A. De Loera",
+   "University of California, Dept. of Mathematics, Davis CA 95 616, USA",
+   "email: deloera@math.ucdavis.edu http://www.math.ucdavis.edu/~deloera"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181023182836-04'00'",
+   "Creator": "NM",
+   "Title": "createdbydvipdf",
+   "Author": "Megiddo"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "FPT AS for Optimizing Non-Negative Polynomials over Inte ger Points of Polytopes",
+   "page": 2,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Id \u2212 28z2",
+   "page": 6,
+   "source": "inferred",
+   "number": "25"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 7,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-3-fpt-as-for-optimizing-non-negative-polynomials",
+   "number": "3",
+   "title": "FPT AS for Optimizing Non-Negative Polynomials over Inte ger Points of Polytopes",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 13263,
+   "n_words": 2756
+  },
+  {
+   "id": "sec-001-25-id-28z2",
+   "number": "25",
+   "title": "Id \u2212 28z2",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2566,
+   "n_words": 520
+  },
+  {
+   "id": "sec-002-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 3328,
+   "n_words": 495
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 3,
+  "sections": 3,
+  "chars_total": 19157
+ }
+}
