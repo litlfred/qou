@@ -1179,10 +1179,16 @@ for `k > n/2`. Cardinality is multiplicative on products and additive on disjoin
 
     q^{l(w)}·[2]_q^n·tr_D(w) = | ⊔_k  Fix_k(w) × A_k |,   A_k = 𝔽_Q^{n/2−k} or B(𝔽_Q^{k−n/2}),
 
-**a groupoid cardinality in the BHW sense, for even `n`.** For odd `n` the weights are odd powers of
-`Q^{1/2}` (checked at `n = 3`), and the `𝔽_Q` reading fails at the *weight*, not at the count — the
-same `v = Q^{1/2}` that Beilinson–Lusztig–MacPherson need for the Cartan element in the
-flag-variety realisation of `U_v(𝔤𝔩₂)`, which is what `K` is here.
+**a groupoid cardinality in the BHW sense.** For odd `n` the weights are odd powers of `Q^{1/2}`
+(checked at `n = 3`), so over `𝔽_Q` the reading fails at the *weight*, not at the count — the same
+`v = Q^{1/2}` that Beilinson–Lusztig–MacPherson need for the Cartan element in the flag-variety
+realisation of `U_v(𝔤𝔩₂)`, which is what `K` is here. **And that resolves elementarily** (probe checks
+24–26): take the framework's `q` itself to be the prime power `p`. Then `Q = p²` is a prime power,
+the counts `N_k(w)` live over `𝔽_{p²}` (still non-negative integers: measured at `Q ∈ {4, 9, 25, 49, 64}`
+on all six words of `S₃`, e.g. `N_k(s₀) = (Q, 2Q−1, 2Q−1, Q)`), and the weights `p^{n−2k}` are
+`|𝔽_p^{\,n−2k}|` or `|B(𝔽_p^{\,2k−n})|` over the **index-2 subfield** — for every `n`. So the parity
+condition is not an obstruction; it is the statement that the pivotal element lives one field
+degree below the flag variety, which is exactly BLM's `v`.
 
 **Consequence for route C.** Step 1's positive reading (the classical part is a groupoid
 cardinality) stands. Step 2 is now two-sided, and both halves are exact:
@@ -1191,15 +1197,16 @@ cardinality) stands. Step 2 is now two-sided, and both halves are exact:
   groupoid alone) is **not** the framework's object — no unweighted trace on this representation
   is a Markov trace, so it is not a closure invariant;
 * the framework's convention-D trace **is** a groupoid cardinality once the Cartan weight is
-  realised as an affine space or its classifying groupoid — canonically, and for **even strand
-  number only**. The odd-`n` obstruction is a half-integer power of `Q`, exactly BLM's `v`.
+  realised as an affine space or its classifying groupoid over the index-2 subfield — canonically,
+  for **every** strand number: `q^{l(w)}[2]_q^n·tr_D(w) = |⊔_k Fix_k(w) × A_k|` with `Fix_k(w)` over
+  `𝔽_{q²}` and `A_k` over `𝔽_q`.
 
 What this does *not* do: it says nothing about `b₃`. It identifies what kind of object the
 framework's `q`-count is (a `K`-graded point count over `𝔽_{q²}`), which is the prerequisite for
-any route-C construction, and it fixes the parity condition such a construction inherits. Whether
-the `n = 3A`-strand nuclear words (odd `n` for odd `A`) can be given an `𝔽_Q` reading through a
-quadratic extension, or only through the `v`-form, is the next question and is left open on
-`qou-8uxw`. Scope (a): `N = 2`, `n ≤ 4`, one word pair for `Δ`; the weight-space identity and the
+any route-C construction: a `K`-graded point count with the counts over `𝔽_{q²}` and the grading
+over `𝔽_q`. The honest next question on `qou-8uxw` is whether the *binding functional* — a
+log-trace difference, not a trace — has a cardinality reading at all (a log of a cardinality is
+not a cardinality), which is where route C meets the extensive-term problem of §7g. Scope (a): `N = 2`, `n ≤ 4`, one word pair for `Δ`; the weight-space identity and the
 partial-trace invariant are general for this R-matrix. Nothing fitted, nothing wired.
 
 ## 8. Literature to download — prioritised, with links and one-line justification

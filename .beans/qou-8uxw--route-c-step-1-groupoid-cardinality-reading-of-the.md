@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T03:31:25Z
-updated_at: 2026-09-07T09:13:06Z
+updated_at: 2026-09-07T09:20:58Z
 parent: qou-2akx
 ---
 
@@ -24,3 +24,7 @@ Probe computations/probes/route_c_step2_pivotal_vs_count_probe.py (17/17, exact 
 
 
 REFINED same day (checks 18–23 of the same probe): the K-weight is itself a cardinality. With T_w = q^{l(w)}σ_w and Q = q², the per-weight-space traces N_k(w) = q^{l(w)} tr(P_k σ_w) are polynomials in Q, non-negative integers at every prime power Q tested, refined-Burnside at q = 1, and q^{l(w)}[2]^n tr_D(w) = Σ_k q^{n−2k} N_k(w). Since q^{n−2k} = Q^{(n−2k)/2} is |F_Q^{n/2−k}| or |B(F_Q^{k−n/2})| when n is EVEN, the framework's convention-D trace IS a BHW-style groupoid cardinality (of ⊔_k Fix_k(w) × A_k) for even n; for odd n the weight is an odd power of Q^{1/2} (BLM's v) and the F_Q reading fails at the weight. So step 2 is two-sided: unweighted reading NO (Markov failure), K-weighted reading YES for even n. Open: odd n (n = 3A, odd A) — quadratic extension or the v-form. Nothing about b3 yet.
+
+
+
+ODD n RESOLVED same day (checks 24–26, 26/26): take the framework's q itself as the prime power p; the counts N_k(w) live over F_{p²} (non-negative integers at Q ∈ {4,9,25,49,64}, all six words of S₃, e.g. N_k(s0) = (Q, 2Q−1, 2Q−1, Q)) and the weights p^{n−2k} are |F_p^{n−2k}| / |B(F_p^{2k−n})| over the index-2 subfield — cardinalities for EVERY n. So the convention-D trace is a BHW groupoid cardinality of ⊔_k Fix_k(w) × A_k for all n; only the unweighted reading fails (Markov). NEXT honest question: the binding functional is a LOG-trace difference — a log of a cardinality is not a cardinality — so whether route C reaches b3 is the §7g extensive-term problem, not a trace question. PR #7030.

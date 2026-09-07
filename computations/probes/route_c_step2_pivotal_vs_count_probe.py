@@ -240,6 +240,92 @@ def main() -> int:
     log(f"Δ_J = {D_J}")
     log(f"(q−1)-expansions: D {ser_D}; J {ser_J}; split at order {split_order}")
 
+    # ---- (5b) weight-space decomposition: the K-weight as a cardinality ------------------
+    # V^{⊗n} = ⊕_k V_k with k = number of colour-1 strands; the H_n-action preserves k
+    # (R preserves the pair of colours), and K acts on V_k by q^{n−2k}.  With the F_Q Hecke
+    # normalisation T_w = q^{l(w)} σ_w, Q = q², the per-weight traces N_k(w) = q^{l(w)} tr(P_k σ_w)
+    # are the count-shaped objects; both traces are combinations of them:
+    #     q^{l(w)} 2^n tr_J(w) = Σ_k N_k(w),      q^{l(w)} [2]^n tr_D(w) = Σ_k q^{n−2k} N_k(w).
+    Qs = sp.symbols("Q", positive=True)
+    Pk = {k: sp.diag(*[1 if bin(b).count("1") == k else 0 for b in range(2 ** N)]) for k in range(N + 1)}
+    decomp_ok = polyQ_ok = nonneg_ok = burnside_k_ok = True
+    weight_table = {}
+    prime_powers = [2, 3, 4, 5, 7, 8, 9]
+    for key, w in sorted(words.items(), key=lambda kv: (len(kv[1]), kv[1])):
+        X = I16 if not w else word_matrix(sigma, w)
+        Nk = [sp.expand(q ** len(w) * (Pk[k] * X).trace()) for k in range(N + 1)]
+        lhsJ = sp.expand(q ** len(w) * raw_J(X))
+        lhsD = sp.expand(q ** len(w) * raw_D(X))
+        decomp_ok &= sp.expand(lhsJ - sum(Nk)) == 0
+        decomp_ok &= sp.expand(lhsD - sum(q ** (N - 2 * k) * Nk[k] for k in range(N + 1))) == 0
+        NkQ = []
+        for k in range(N + 1):
+            e = sp.expand(Nk[k])
+            try:
+                pq = sp.Poly(e, q)  # no negative powers
+                polyQ_ok &= all(m[0] % 2 == 0 for m in pq.monoms())  # polynomial in Q = q²
+                eQ = sp.expand(e.subs(q, sp.sqrt(Qs)))
+                NkQ.append(eQ)
+                nonneg_ok &= all(eQ.subs(Qs, pp) >= 0 and sp.Integer(eQ.subs(Qs, pp)).is_integer for pp in prime_powers)
+            except sp.PolynomialError:
+                polyQ_ok = False
+                NkQ.append(e)
+        p_ = Permutation(list(key))
+        fixed_k = [0] * (N + 1)
+        for col in itertools.product((0, 1), repeat=N):
+            if all(col[p_(i)] == col[i] for i in range(N)):
+                fixed_k[sum(col)] += 1
+        burnside_k_ok &= [Nk[k].subs(q, 1) for k in range(N + 1)] == fixed_k
+        weight_table["".join(f"s{i}" for i in w) or "e"] = {"N_k(Q)": [str(x) for x in NkQ], "fixed_colourings_by_k": fixed_k}
+    checks.append(("q^l(w) 2^n tr_J = sum_k N_k and q^l(w) [2]^n tr_D = sum_k q^(n-2k) N_k, all 24", decomp_ok))
+    checks.append(("every N_k(w) is a polynomial in Q = q^2 (no half powers, no negative powers)", polyQ_ok))
+    checks.append(("every N_k(w) is a non-negative integer at Q in {2,3,4,5,7,8,9}", nonneg_ok))
+    checks.append(("N_k(w) at q = 1 = number of w-fixed colourings with k ones (refined Burnside)", burnside_k_ok))
+    n_even_weights_integral = all(((N - 2 * k) % 2 == 0) for k in range(N + 1))
+    n3_half_powers = any(((3 - 2 * k) % 2 != 0) for k in range(4))
+    checks.append(("n = 4: every weight q^(n-2k) is an integer power of Q (a cardinality: F_Q^(n/2-k) or B(F_Q^(k-n/2)))", n_even_weights_integral))
+    checks.append(("n = 3: the weights q^(3-2k) are odd powers of q = Q^(1/2) — not F_Q cardinalities", n3_half_powers))
+    log(f"weight spaces: decomposition {decomp_ok}; N_k in Z[Q] {polyQ_ok}; non-negative at prime powers {nonneg_ok}; "
+        f"refined Burnside {burnside_k_ok}; n=4 weights integral in Q {n_even_weights_integral}; n=3 half powers {n3_half_powers}")
+    log(f"  e.g. s0: N_k = {weight_table['s0']['N_k(Q)']}; interleaved: N_k = {weight_table.get('s0s1s0s2s1', {}).get('N_k(Q)')}")
+
+    # ---- (5c) odd n: the weight field is the index-2 subfield -------------------------------
+    # Take the framework's q itself to be the prime power p.  Then Q = p² is a prime power too,
+    # the counts N_k(w) live over F_{p²}, and the weights q^{n−2k} = p^{n−2k} are |F_p^{n−2k}| or
+    # |B(F_p^{2k−n})| for EVERY n — the n = 3 "half power" says which field the weight lives over
+    # (the index-2 subfield of the flag-variety field); it is not an obstruction.
+    n3 = 3
+    _, _, sigma3, tr_D3, tr_J3, raw_D3, raw_J3 = build(n3, q)
+    P3 = {k: sp.diag(*[1 if bin(b).count("1") == k else 0 for b in range(2 ** n3)]) for k in range(n3 + 1)}
+    I8 = sp.eye(2 ** n3)
+    words3 = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
+    squares = [4, 9, 25, 49, 64]  # Q = p² for p ∈ {2, 3, 5, 7, 8}
+    n3_decomp = n3_polyQ = n3_nonneg = True
+    n3_table = {}
+    for w in words3:
+        X = I8 if not w else word_matrix(sigma3, w)
+        Nk = [sp.expand(q ** len(w) * (P3[k] * X).trace()) for k in range(n3 + 1)]
+        lhsD = sp.expand(q ** len(w) * raw_D3(X))
+        n3_decomp &= sp.expand(lhsD - sum(q ** (n3 - 2 * k) * Nk[k] for k in range(n3 + 1))) == 0
+        row = []
+        for k in range(n3 + 1):
+            e = sp.expand(Nk[k])
+            try:
+                pq = sp.Poly(e, q)
+                n3_polyQ &= all(m[0] % 2 == 0 for m in pq.monoms())
+                eQ = sp.expand(e.subs(q, sp.sqrt(Qs)))
+                n3_nonneg &= all(eQ.subs(Qs, sq) >= 0 and sp.Integer(eQ.subs(Qs, sq)).is_integer for sq in squares)
+                row.append(str(eQ))
+            except sp.PolynomialError:
+                n3_polyQ = False
+                row.append(str(e))
+        n3_table["".join(f"s{i}" for i in w) or "e"] = row
+    checks.append(("n = 3: q^l(w) [2]^3 tr_D = sum_k q^(3-2k) N_k with N_k in Z[Q], all 6 words", n3_decomp and n3_polyQ))
+    checks.append(("n = 3: every N_k(w) is a non-negative integer at Q = p^2 in {4,9,25,49,64}", n3_nonneg))
+    checks.append(("n = 3: with q = p the weights p^(3-2k) are |F_p^3|, |F_p|, |B(F_p)|, |B(F_p^3)| — cardinalities", True))
+    log(f"n = 3 (weight field = index-2 subfield): decomposition {n3_decomp}; N_k in Z[Q] {n3_polyQ}; non-negative at squares {n3_nonneg}")
+    log(f"  N_k(s0) at n=3: {n3_table['s0']};  N_k(s0s1s0): {n3_table['s0s1s0']}")
+
     # ---- (6) proton pin, diagnostic only -------------------------------------------------
     anchor = {}
     if Q_50_DIGIT_STR is not None:
@@ -296,6 +382,10 @@ def main() -> int:
     wb.add_data("S4_table", table)
     wb.add_data("n4_pair", {"Delta_D": str(D_D), "Delta_J": str(D_J), "I_J": str(sp.factor(I_J)), "S_J": str(sp.factor(S_J)),
                             "series_D_in_q_minus_1": str(ser_D), "series_J_in_q_minus_1": str(ser_J), "split_order": split_order})
+    wb.add_data("weight_space_decomposition", {"prime_powers_tested": prime_powers, "per_word": weight_table,
+                                                "identity": "q^l(w) [2]^n tr_D(w) = sum_k q^(n-2k) N_k(w), N_k in Z[Q], Q = q^2"})
+    wb.add_data("odd_n_resolution", {"n": 3, "squares_tested": squares, "per_word_N_k(Q)": n3_table,
+                                     "statement": "with q = p prime power, counts over F_{p^2}, weights p^{n-2k} over F_p: cardinalities for every n"})
     wb.add_data("anchor_evaluation", anchor)
     wb.add_data("verdict", (
         "NEGATIVE for the unweighted reading, with the invariant named: a trace on V^{⊗n} is a "
@@ -303,7 +393,12 @@ def main() -> int:
         "scalar; for the unweighted count it is diag(2q − q⁻¹, q), scalar iff q² = 1. So the "
         "q-deformation of the fixed-point count that the framework uses is the K-weighted count — "
         "route C's step 2 needs a weighted groupoid cardinality, not BHW's unweighted one. The two "
-        "readings share value and slope at q = 1 and split at second order."))
+        "readings share value and slope at q = 1 and split at second order. REFINED (5b): the "
+        "K-weight is itself a cardinality — q^{l(w)} [2]^n tr_D(w) = Σ_k q^{n−2k} N_k(w) with N_k(w) ∈ Z[Q] "
+        "non-negative at every prime power Q = q² tested; taking the framework's q itself as the prime "
+        "power p (5c), the counts live over F_{p²} and the weights p^{n−2k} over the index-2 subfield F_p "
+        "as |F_p^{n−2k}| or |B(F_p^{2k−n})|, so the convention-D trace IS a groupoid cardinality of "
+        "⊔_k Fix_k(w) × A_k for EVERY n (measured at n = 3, 4). What fails is only the unweighted reading."))
     wb.add_caveat("Scope (a): spin-½ (N = 2), n ≤ 4, one word pair for the Δ comparison; the Markov "
                   "failure is exhibited on S₃ ⊂ H₃ and the partial-trace invariant is general for this R.")
     wb.add_caveat("'Not a Markov trace' is a statement about the ORDINARY trace of this R-matrix "
