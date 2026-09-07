@@ -1,11 +1,11 @@
 ---
 # qou-wpp2
 title: 'Vendor mirror ratchet is RED on main: 9 modules drifted, 1 witness missing from the cone'
-status: todo
+status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-19T21:03:40Z
-updated_at: 2026-09-06T13:19:34Z
+updated_at: 2026-09-07T06:19:41Z
 ---
 
 Measured on origin/main 5b158ef06c, 2026-08-19.
@@ -113,3 +113,39 @@ pre-existing drifts and regenerate numbers. That belongs with whoever drains
 this bean, not with an audit PR.
 
 Live count: `--check` exits 1, DRIFTED 10 (7 modules + 3 witnesses).
+
+## DRAINED — PR pending (2026-09-07)
+
+`sync-qou-mass-vendor.py --apply`. `--check` now exits 0: 51 modules, 25
+witness JSON, 122 package-data witness JSON, all in sync.
+
+**Correcting my own note above:** I wrote that syncing 'would regenerate
+numbers'. It does not. The script is a pure copy — `dest.write_bytes(
+src.read_bytes())` for witnesses, `render()`-then-write for modules — and runs
+no producer. Verified: all 7 changed JSON files are byte-identical to their
+`computations/` source, 0 mismatches. Nothing here was recomputed; the numbers
+already existed on main.
+
+What moved in the shipped package (grouped -> canonical):
+
+    proton tau   1.14575969245730 -> 0.62932840220292
+    neutron tau  0.98774368811581 -> 0.47513351715568
+    deuteron     0.57517224391777 -> 0.15196833920423
+    helium-4     0.16097414544241 -> 0.01123741766155
+
+One orphan reported not deleted: `canonical_braid_marshalling` is vendored but
+outside the cone; removing a shipped module is an API decision.
+
+## The drain does NOT make the package canonical — bean `qou-36i2`
+
+Measured after syncing: `canonical_braid(1,0).generators` is still
+`(0,0,0,0,0,0,0,1,1,1,1)` (grouped) and `compute_tr_M(1,0)` still returns
+1.1457 (superseded). Both APIs read
+`canonical-mass-table-extended.witness.json` FIRST, deliberately, and that
+shard — `computedAt` 2026-08-28, a week before the ruling — stores the grouped
+word in a field named `braid_word_canonical`, for all 9 rows.
+
+So the mirror was one of THREE carriers, and the one this bean covers is now
+the only one closed by copying. Filed as `qou-36i2`; it needs producer work
+that should land with `qou-xwet` and `qou-3wqg`, which already say that file
+needs regenerating.

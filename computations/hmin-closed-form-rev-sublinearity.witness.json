@@ -1,0 +1,255 @@
+{
+  "H_min_asymptotic": "(2 sqrt2 / 3) n^{3/2} + O(n)",
+  "H_min_closed_form": "H_min(n) = 2n - 1 + sum_{k>=2, T_k <= n-1} (n - T_k)",
+  "bean": "qou-hok7",
+  "checks": [
+    {
+      "check": "R1_Hmin_closed_form_matches_brute_force",
+      "detail": "(H) reproduces min_lambda sum_c h(c) exactly for every n=1..26 (0 disagreements), against a full minimisation over all partitions. Exact integers. (H) costs O(sqrt n); the minimisation costs p(n).",
+      "pass": true
+    },
+    {
+      "check": "R2_Hmin_at_triangular_is_square_pyramidal",
+      "detail": "H_min(T_k) = k(k+1)(2k+1)/6 for k=1..39 (0 failures) -- e.g. k=6: n=21, H_min=91=pyramidal(6). The staircase (k,k-1,...,1) has total hook length sum_{i<=k} i^2, which is why triangular n are exactly the exceptional points.",
+      "pass": true
+    },
+    {
+      "check": "R3_Hmin_asymptotic_constant",
+      "detail": "H_min(n)/n^(3/2) -> 2*sqrt(2)/3 = 0.9428090416; at n=10^6 the exact value of (H) gives 0.942809245 (|diff| = 2.034e-7). Sequence: n=100:0.945, n=1000:0.9429912, n=10000:0.94282, n=100000:0.94281107, n=1000000:0.94280924",
+      "pass": true
+    },
+    {
+      "check": "R4_REV_is_sublinear",
+      "detail": "REV/n peaks at n=18 (0.73384332) and falls to 0.65009703 at n=44, while REV/sqrt(n) rises monotonically over the last three points (4.063779, 4.211396, 4.312256). So sqrt(n) << REV_n << n on the measured range. MEASURED over n<=44, not proved for all n.",
+      "pass": true
+    },
+    {
+      "check": "R5_the_n32_coefficient_belongs_to_the_degree_and_REV_has_none",
+      "detail": "degree_part/n^(3/2) converges to -(2sqrt2/3) ln q0 = -0.09837337452 (at n=10^6, -0.09826905503), computed from the closed form (H) with no partition enumeration. Meanwhile REV/n^(3/2) FALLS over the last three points (0.112883, 0.105285, 0.0980058), consistent with REV being sub-linear (R4) and so having no n^(3/2) component. Since REV >= 0 by construction and the measured residual is NEGATIVE, the n^(3/2) signal can only be the degree's. This CORRECTS D5 of deuteron_qborel_slope_derivation_probe.py, which attributed it to REV because d2(degree part) = 0 at the sampled non-triangular n -- true, but d2 of the degree part is an indicator supported on the triangular numbers, so sampling at generic n returns zero BY CONSTRUCTION rather than showing the degree contributes nothing. NOTE the two parts cross near n=44 and REV is the LARGER there; the claim is about the n^(3/2) coefficient, not about which term dominates at reachable n.",
+      "pass": true
+    }
+  ],
+  "checks_passed": 5,
+  "checks_total": 5,
+  "computedAt": "2026-09-07T06:31:17.913036+00:00",
+  "corrects": "D5 of deuteron_qborel_slope_derivation_probe.py: the n^{3/2} residual is the DEGREE part, not REV",
+  "deg_Z_closed_form": "deg Z_n = n^2 - H_min(n)",
+  "dps": 60,
+  "probe": "hmin_closed_form_and_rev_sublinearity_probe",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0_anchor": "physical_proton",
+  "rev_table": [
+    {
+      "H_min": 8,
+      "REV": "2.1069302985336",
+      "REV_over_n": "0.5267325746",
+      "REV_over_sqrt_n": "1.053465149",
+      "n": 4,
+      "p_n": 5
+    },
+    {
+      "H_min": 14,
+      "REV": "3.6684859605377",
+      "REV_over_n": "0.6114143268",
+      "REV_over_sqrt_n": "1.497653122",
+      "n": 6,
+      "p_n": 11
+    },
+    {
+      "H_min": 22,
+      "REV": "5.3707624578377",
+      "REV_over_n": "0.6713453072",
+      "REV_over_sqrt_n": "1.898851277",
+      "n": 8,
+      "p_n": 22
+    },
+    {
+      "H_min": 30,
+      "REV": "6.9637296484645",
+      "REV_over_n": "0.6963729648",
+      "REV_over_sqrt_n": "2.20212467",
+      "n": 10,
+      "p_n": 42
+    },
+    {
+      "H_min": 40,
+      "REV": "8.6400331307536",
+      "REV_over_n": "0.7200027609",
+      "REV_over_sqrt_n": "2.494162727",
+      "n": 12,
+      "p_n": 77
+    },
+    {
+      "H_min": 50,
+      "REV": "10.186377418586",
+      "REV_over_n": "0.727598387",
+      "REV_over_sqrt_n": "2.722423879",
+      "n": 14,
+      "p_n": 135
+    },
+    {
+      "H_min": 61,
+      "REV": "11.708136243973",
+      "REV_over_n": "0.7317585152",
+      "REV_over_sqrt_n": "2.927034061",
+      "n": 16,
+      "p_n": 231
+    },
+    {
+      "H_min": 73,
+      "REV": "13.209179757212",
+      "REV_over_n": "0.7338433198",
+      "REV_over_sqrt_n": "3.113433527",
+      "n": 18,
+      "p_n": 385
+    },
+    {
+      "H_min": 85,
+      "REV": "14.590382709785",
+      "REV_over_n": "0.7295191355",
+      "REV_over_sqrt_n": "3.262508756",
+      "n": 20,
+      "p_n": 627
+    },
+    {
+      "H_min": 112,
+      "REV": "17.329283095949",
+      "REV_over_n": "0.7220534623",
+      "REV_over_sqrt_n": "3.537325099",
+      "n": 24,
+      "p_n": 1575
+    },
+    {
+      "H_min": 140,
+      "REV": "19.761319396928",
+      "REV_over_n": "0.705761407",
+      "REV_over_sqrt_n": "3.734538336",
+      "n": 28,
+      "p_n": 3718
+    },
+    {
+      "H_min": 172,
+      "REV": "22.240083061321",
+      "REV_over_n": "0.6950025957",
+      "REV_over_sqrt_n": "3.931528387",
+      "n": 32,
+      "p_n": 8349
+    },
+    {
+      "H_min": 204,
+      "REV": "24.382672904392",
+      "REV_over_n": "0.6772964696",
+      "REV_over_sqrt_n": "4.063778817",
+      "n": 36,
+      "p_n": 17977
+    },
+    {
+      "H_min": 240,
+      "REV": "26.635204294357",
+      "REV_over_n": "0.6658801074",
+      "REV_over_sqrt_n": "4.211395576",
+      "n": 40,
+      "p_n": 37338
+    },
+    {
+      "H_min": 276,
+      "REV": "28.604269170958",
+      "REV_over_n": "0.6500970266",
+      "REV_over_sqrt_n": "4.312255829",
+      "n": 44,
+      "p_n": 75175
+    }
+  ],
+  "t2_split": [
+    {
+      "REV_part": "2.10693029853",
+      "T2": "1.68956741726",
+      "degree_part": "-0.417362881278",
+      "n": 4
+    },
+    {
+      "REV_part": "3.66848596054",
+      "T2": "2.83376019798",
+      "degree_part": "-0.834725762556",
+      "n": 6
+    },
+    {
+      "REV_part": "5.37076245784",
+      "T2": "3.90999237336",
+      "degree_part": "-1.46077008447",
+      "n": 8
+    },
+    {
+      "REV_part": "6.96372964846",
+      "T2": "4.87691524207",
+      "degree_part": "-2.08681440639",
+      "n": 10
+    },
+    {
+      "REV_part": "8.64003313075",
+      "T2": "5.71849296181",
+      "degree_part": "-2.92154016895",
+      "n": 12
+    },
+    {
+      "REV_part": "10.1863774186",
+      "T2": "6.43011148708",
+      "degree_part": "-3.7562659315",
+      "n": 14
+    },
+    {
+      "REV_part": "11.708136244",
+      "T2": "7.01280382959",
+      "degree_part": "-4.69533241438",
+      "n": 16
+    },
+    {
+      "REV_part": "13.2091797572",
+      "T2": "7.47044013964",
+      "degree_part": "-5.73873961757",
+      "n": 18
+    },
+    {
+      "REV_part": "14.5903827098",
+      "T2": "7.80823588902",
+      "degree_part": "-6.78214682077",
+      "n": 20
+    },
+    {
+      "REV_part": "17.3292830959",
+      "T2": "8.14729970783",
+      "degree_part": "-9.18198338812",
+      "n": 24
+    },
+    {
+      "REV_part": "19.7613193969",
+      "T2": "8.07515872114",
+      "degree_part": "-11.6861606758",
+      "n": 28
+    },
+    {
+      "REV_part": "22.2400830613",
+      "T2": "7.63238221659",
+      "degree_part": "-14.6077008447",
+      "n": 32
+    },
+    {
+      "REV_part": "24.3826729044",
+      "T2": "6.85343189071",
+      "degree_part": "-17.5292410137",
+      "n": 36
+    },
+    {
+      "REV_part": "26.6352042944",
+      "T2": "5.76706023045",
+      "degree_part": "-20.8681440639",
+      "n": 40
+    },
+    {
+      "REV_part": "28.604269171",
+      "T2": "4.39722205683",
+      "degree_part": "-24.2070471141",
+      "n": 44
+    }
+  ]
+}

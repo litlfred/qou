@@ -1,0 +1,231 @@
+{
+  "A_sqrt2": "5.0959456500661407443",
+  "bean": "qou-hok7",
+  "checks": [
+    {
+      "check": "R1_staircase_stops_being_the_maximiser_at_k7",
+      "detail": "the staircase IS the argmax at k=4,5,6 and is NOT at k=7,8,9, with max/R_staircase growing 1.00116 -> 1.00997. So the staircase gives a valid lower bound on M_n but is not asymptotically optimal, and the trend runs AGAINST tightness.",
+      "pass": true
+    },
+    {
+      "check": "R2_entropy_is_order_sqrt_n_not_smaller",
+      "detail": "(REV - M_n)/sqrt(n) RISES from 0.753845 at n=8 to 1.14578 at n=46 rather than decaying, and is capped by log p(n)/sqrt(n) -> 2.5650997. So the entropy contributes at the SAME order as M_n and cannot be dropped from the constant.",
+      "pass": true
+    },
+    {
+      "check": "R3_conjecture_REV_eq_A_sqrt_2n_is_REFUTED",
+      "detail": "combining R1 and R2: lim REV/sqrt(n) = lim M_n/sqrt(n) + lim(entropy)/sqrt(n), where the first term is >= A*sqrt2 = 5.0959457 (staircase, and R1 says the inequality is not tight) and the second is strictly positive (R2). Hence the true constant EXCEEDS 5.0959457, and 'REV ~ A sqrt(2n)' is refuted as an asymptotic EQUALITY. A*sqrt2 survives only as a lower bound. Scope-(a): this refutes a constant I conjectured, on measured evidence over n <= 46; the limits themselves are not computed.",
+      "pass": true
+    },
+    {
+      "check": "R4_proved_bounds_unaffected",
+      "detail": "neither proved bound used the conjecture. Omega(sqrt n) rests on the staircase having ZERO energy at triangular n (still true -- being non-optimal does not make it invalid as a lower bound), and O(n^{3/4}) rests on L2' (H >= r^2-r+1) plus L1. Both stand. Only the conjectured CONSTANT is corrected.",
+      "pass": true
+    }
+  ],
+  "checks_passed": 4,
+  "checks_total": 4,
+  "computedAt": "2026-09-07T07:57:30.702770+00:00",
+  "corrected_statement": "lim REV/sqrt(n) > A sqrt2 = 5.0959; A sqrt2 is a LOWER bound on the constant, not its value",
+  "dps": 60,
+  "entropy_cap_pi_sqrt_2_over_3": "2.5650996603237281911",
+  "entropy_table": [
+    {
+      "REV": "5.37076245784",
+      "REV_over_sqrt_n": "1.898851277",
+      "entropy": "2.13219464889",
+      "entropy_over_sqrt_n": "0.7538446475",
+      "max": "3.23856780895",
+      "n": 8
+    },
+    {
+      "REV": "8.64003313075",
+      "REV_over_sqrt_n": "2.494162727",
+      "entropy": "2.88138112603",
+      "entropy_over_sqrt_n": "0.8317830844",
+      "max": "5.75865200473",
+      "n": 12
+    },
+    {
+      "REV": "11.708136244",
+      "REV_over_sqrt_n": "2.927034061",
+      "entropy": "3.62798540316",
+      "entropy_over_sqrt_n": "0.9069963508",
+      "max": "8.08015084081",
+      "n": 16
+    },
+    {
+      "REV": "14.5903827098",
+      "REV_over_sqrt_n": "3.262508756",
+      "entropy": "4.50206233723",
+      "entropy_over_sqrt_n": "1.006691742",
+      "max": "10.0883203726",
+      "n": 20
+    },
+    {
+      "REV": "17.3292830959",
+      "REV_over_sqrt_n": "3.537325099",
+      "entropy": "4.92403526919",
+      "entropy_over_sqrt_n": "1.00511449",
+      "max": "12.4052478268",
+      "n": 24
+    },
+    {
+      "REV": "19.7613193969",
+      "REV_over_sqrt_n": "3.734538336",
+      "entropy": "5.62089759703",
+      "entropy_over_sqrt_n": "1.062249799",
+      "max": "14.1404217999",
+      "n": 28
+    },
+    {
+      "REV": "22.2400830613",
+      "REV_over_sqrt_n": "3.931528387",
+      "entropy": "5.96356114061",
+      "entropy_over_sqrt_n": "1.054218631",
+      "max": "16.2765219207",
+      "n": 32
+    },
+    {
+      "REV": "24.3826729044",
+      "REV_over_sqrt_n": "4.063778817",
+      "entropy": "6.60875229067",
+      "entropy_over_sqrt_n": "1.101458715",
+      "max": "17.7739206137",
+      "n": 36
+    },
+    {
+      "REV": "26.6352042944",
+      "REV_over_sqrt_n": "4.211395576",
+      "entropy": "6.88551447472",
+      "entropy_over_sqrt_n": "1.08869543",
+      "max": "19.7496898196",
+      "n": 40
+    },
+    {
+      "REV": "28.604269171",
+      "REV_over_sqrt_n": "4.312255829",
+      "entropy": "7.45807379085",
+      "entropy_over_sqrt_n": "1.124346928",
+      "max": "21.1461953801",
+      "n": 44
+    },
+    {
+      "REV": "29.5932467407",
+      "REV_over_sqrt_n": "4.363286188",
+      "entropy": "7.77105058354",
+      "entropy_over_sqrt_n": "1.145778899",
+      "max": "21.8221961572",
+      "n": 46
+    }
+  ],
+  "probe": "rev_constant_conjecture_correction_probe",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0_anchor": "physical_proton",
+  "refutes": "the conjecture 'REV_n ~ A sqrt(2n) with A sqrt2 = 5.0959' stated in rev_sublinearity_closed_probe.py -- refuted as an asymptotic EQUALITY",
+  "triangular_argmax_table": [
+    {
+      "R_staircase": "4.48463033882",
+      "argmax": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "k": 4,
+      "max": "4.48463033882",
+      "n": 10,
+      "ratio": "1.0",
+      "staircase_is_argmax": true
+    },
+    {
+      "R_staircase": "7.42325802991",
+      "argmax": [
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "k": 5,
+      "max": "7.42325802991",
+      "n": 15,
+      "ratio": "1.0",
+      "staircase_is_argmax": true
+    },
+    {
+      "R_staircase": "10.6919354325",
+      "argmax": [
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "k": 6,
+      "max": "10.6919354325",
+      "n": 21,
+      "ratio": "1.0",
+      "staircase_is_argmax": true
+    },
+    {
+      "R_staircase": "14.1239925882",
+      "argmax": [
+        8,
+        6,
+        5,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "k": 7,
+      "max": "14.1404217999",
+      "n": 28,
+      "ratio": "1.001163213",
+      "staircase_is_argmax": false
+    },
+    {
+      "R_staircase": "17.6320895308",
+      "argmax": [
+        9,
+        7,
+        6,
+        4,
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "k": 8,
+      "max": "17.7739206137",
+      "n": 36,
+      "ratio": "1.008043918",
+      "staircase_is_argmax": false
+    },
+    {
+      "R_staircase": "21.177559857",
+      "argmax": [
+        10,
+        8,
+        7,
+        6,
+        4,
+        3,
+        3,
+        2,
+        1,
+        1
+      ],
+      "k": 9,
+      "max": "21.3886577894",
+      "n": 45,
+      "ratio": "1.009968001",
+      "staircase_is_argmax": false
+    }
+  ],
+  "unaffected": "the proved bounds Omega(sqrt n) <= REV <= O(n^{3/4})"
+}

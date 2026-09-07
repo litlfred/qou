@@ -81,6 +81,11 @@ ${}^{16}\mathrm{O}$: $2.406$). These per-bond $b_{\alpha\alpha}$ values are empi
 $\approx 0$, consistent with its being unbound relative to two $\alpha$-particles. For
 $n_\alpha \ge 5$ the complete graph over-counts — not all pairs can be nearest neighbours
 in three dimensions — and the per-bond residual falls, so the coordination number
-saturates to a geometric close-packing count. This reproduces the classical
+saturates to a geometric close-packing count. That count is bounded by the
+three-dimensional kissing number $12$: the touching pairs in any packing of $n$
+unit balls in $\mathbb{E}^3$ number fewer than $6n - 0.926\,n^{2/3}$ \cite{bezdek-reid2013}
+(Thm.~1(i)), an affine bulk $12 \cdot n/2$ minus a sub-affine surface deficit; the
+density statement behind the fcc picture is the Kepler theorem \cite{hales-etal2010},
+which itself proves no contact bound. This reproduces the classical
 Hafstad–Teller $\alpha$-bond picture with $N_{\mathrm{bonds}}$ read as the
 $\alpha$-cluster coordination number, the same principle as $z = A-1$ one level up.

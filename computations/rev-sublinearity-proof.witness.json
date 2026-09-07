@@ -1,0 +1,291 @@
+{
+  "bean": "qou-hok7",
+  "checks": [
+    {
+      "check": "R1_identity_E_R_lambda_is_a_hook_multiset_sum",
+      "detail": "R_lambda = sum_c eps_h(c) - sum_{i<=n} eps_i verified against the q-integer definition for all 4507 partitions with n <= 22; worst |difference| 1.929e-59 vs tolerance 1.0e-45. R_lambda therefore depends on lambda only through its hook MULTISET -- no polynomial algebra, no transfer operator.",
+      "pass": true
+    },
+    {
+      "check": "R2_L1_hook_multiplicity_bounded_by_min_rows_cols",
+      "detail": "N_m(lambda) <= min(ell, lambda_1) for every hook length m and every partition with n <= 22 (0 violations), and hook lengths never repeat within a row. Consequence via (E): R_lambda <= C * r(lambda) with C = 6.1714057.",
+      "pass": true
+    },
+    {
+      "check": "R3_L2_is_REFUTED_thickness_does_not_force_hook_length",
+      "detail": "the lemma 'H >= 3r^2-3r+1 with r = min(ell, lambda_1)' -- which an earlier version of this probe used to claim REV = O(n^(3/4)) -- is FALSE, with 1168 counterexamples at n <= 22 alone. Canonical counterexample, the hook shape lambda=(11,1^10): r=11, H=131, claimed bound 331. The bad step was h(1,j) >= 2r-j, which needs column j to have >= r cells for all j <= r; only column 1 does (lambda'_2 = 1 here, so h(1,2) = 10, not >= 20). Worst slack over the range: lambda=(11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1), H=131 vs bound 331 (-200). The upper bound on REV is WITHDRAWN; this check passes by confirming the refutation, not the lemma.",
+      "pass": true
+    },
+    {
+      "check": "R4_R_lambda_bounded_by_C_times_r",
+      "detail": "R_lambda <= C*r(lambda) for every partition with n <= 22 (0 violations), the direct consequence of (E) + L1.",
+      "pass": true
+    },
+    {
+      "check": "R5_staircase_hooks_are_odd_with_multiplicity_k_minus_j_plus_1",
+      "detail": "for the staircase delta_k (k=1..29) every hook length is ODD and N_{2j-1}(delta_k) = k-j+1 exactly (0 violations). Hence R_{delta_k} = sum_j (k-j+1) eps_{2j-1} - sum_{i<=n} eps_i -> A*k, A = 3.6033777.",
+      "pass": true
+    },
+    {
+      "check": "R6_lower_bound_REV_is_Omega_sqrt_n",
+      "detail": "R_{delta_k}/sqrt(n) rises to 4.4655872 at k=29 (n=435), against the asymptote A*sqrt2 = 5.0959457. Since the staircase has ZERO energy at triangular n, REV_n >= R_{delta_k}, so REV = Omega(sqrt n) -- PROVED, not measured. (The approach to A*sqrt2 is from below because the -sum_i eps_i term is an O(1) deficit.)",
+      "pass": true
+    },
+    {
+      "check": "R7_upper_bound_WITHDRAWN_not_established",
+      "detail": "no upper bound on REV is established by this probe. The chain that would have given O(n^(3/4)) required L2, refuted in R3. The surviving bound R4 (R <= C*r) is a consequence of L1 alone and is far too loose to couple to the energy: on the hook-shape counterexample it gives 67.8855 where the truth is 5.13727 (13.214x). A repair needs a statistic that both bounds sum_m eps_m N_m from above AND is forced up by H - H_min; r = min(ell, lambda_1) has the first property and demonstrably not the second. Sub-linearity therefore remains MEASURED (n <= 44), not proved.",
+      "pass": true
+    }
+  ],
+  "checks_passed": 7,
+  "checks_total": 7,
+  "computedAt": "2026-09-07T07:13:47.466851+00:00",
+  "constants": {
+    "A_sqrt2_predicted_REV_over_sqrt_n": "5.0959456500661407443",
+    "A_sum_eps_odd": "3.6033777257198572643",
+    "C_sum_eps": "6.1714057200791351202"
+  },
+  "dps": 60,
+  "identity_E": "R_lambda = sum_{c in lambda} eps_{h(c)} - sum_{i<=n} eps_i, eps_m = -log(1-q0^{-2m})",
+  "lower_bound_table": [
+    {
+      "A_times_k": "7.20675545144",
+      "R_over_sqrt_n": "0.3430846843",
+      "R_staircase": "0.594240104575",
+      "k": 2,
+      "n": 3
+    },
+    {
+      "A_times_k": "10.8101331772",
+      "R_over_sqrt_n": "0.8666704596",
+      "R_staircase": "2.12290040127",
+      "k": 3,
+      "n": 6
+    },
+    {
+      "A_times_k": "14.4135109029",
+      "R_over_sqrt_n": "1.418164633",
+      "R_staircase": "4.48463033882",
+      "k": 4,
+      "n": 10
+    },
+    {
+      "A_times_k": "18.0168886286",
+      "R_over_sqrt_n": "1.916676982",
+      "R_staircase": "7.42325802991",
+      "k": 5,
+      "n": 15
+    },
+    {
+      "A_times_k": "21.6202663543",
+      "R_over_sqrt_n": "2.333171593",
+      "R_staircase": "10.6919354325",
+      "k": 6,
+      "n": 21
+    },
+    {
+      "A_times_k": "25.22364408",
+      "R_over_sqrt_n": "2.669183708",
+      "R_staircase": "14.1239925882",
+      "k": 7,
+      "n": 28
+    },
+    {
+      "A_times_k": "28.8270218058",
+      "R_over_sqrt_n": "2.938681588",
+      "R_staircase": "17.6320895308",
+      "k": 8,
+      "n": 36
+    },
+    {
+      "A_times_k": "32.4303995315",
+      "R_over_sqrt_n": "3.156964229",
+      "R_staircase": "21.177559857",
+      "k": 9,
+      "n": 45
+    },
+    {
+      "A_times_k": "36.0337772572",
+      "R_over_sqrt_n": "3.336461464",
+      "R_staircase": "24.7438604602",
+      "k": 10,
+      "n": 55
+    },
+    {
+      "A_times_k": "39.6371549829",
+      "R_over_sqrt_n": "3.486321689",
+      "R_staircase": "28.323011294",
+      "k": 11,
+      "n": 66
+    },
+    {
+      "A_times_k": "43.2405327086",
+      "R_over_sqrt_n": "3.613148629",
+      "R_staircase": "31.910464662",
+      "k": 12,
+      "n": 78
+    },
+    {
+      "A_times_k": "46.8439104344",
+      "R_over_sqrt_n": "3.721763389",
+      "R_staircase": "35.5033599559",
+      "k": 13,
+      "n": 91
+    },
+    {
+      "A_times_k": "50.4472881601",
+      "R_over_sqrt_n": "3.815753163",
+      "R_staircase": "39.099834792",
+      "k": 14,
+      "n": 105
+    },
+    {
+      "A_times_k": "54.0506658858",
+      "R_over_sqrt_n": "3.897837103",
+      "R_staircase": "42.6986661358",
+      "k": 15,
+      "n": 120
+    },
+    {
+      "A_times_k": "57.6540436115",
+      "R_over_sqrt_n": "3.970110721",
+      "R_staircase": "46.2990492666",
+      "k": 16,
+      "n": 136
+    },
+    {
+      "A_times_k": "61.2574213372",
+      "R_over_sqrt_n": "4.034212634",
+      "R_staircase": "49.9004544151",
+      "k": 17,
+      "n": 153
+    },
+    {
+      "A_times_k": "64.860799063",
+      "R_over_sqrt_n": "4.091440937",
+      "R_staircase": "53.5025327328",
+      "k": 18,
+      "n": 171
+    },
+    {
+      "A_times_k": "68.4641767887",
+      "R_over_sqrt_n": "4.142836078",
+      "R_staircase": "57.1050544712",
+      "k": 19,
+      "n": 190
+    },
+    {
+      "A_times_k": "72.0675545144",
+      "R_over_sqrt_n": "4.18924091",
+      "R_staircase": "60.707868305",
+      "k": 20,
+      "n": 210
+    },
+    {
+      "A_times_k": "75.6709322401",
+      "R_over_sqrt_n": "4.231344892",
+      "R_staircase": "64.3108745563",
+      "k": 21,
+      "n": 231
+    },
+    {
+      "A_times_k": "79.2743099658",
+      "R_over_sqrt_n": "4.269717073",
+      "R_staircase": "67.9140075646",
+      "k": 22,
+      "n": 253
+    },
+    {
+      "A_times_k": "82.8776876916",
+      "R_over_sqrt_n": "4.304831015",
+      "R_staircase": "71.5172240763",
+      "k": 23,
+      "n": 276
+    },
+    {
+      "A_times_k": "86.4810654173",
+      "R_over_sqrt_n": "4.337083836",
+      "R_staircase": "75.1204955978",
+      "k": 24,
+      "n": 300
+    },
+    {
+      "A_times_k": "90.084443143",
+      "R_over_sqrt_n": "4.366810917",
+      "R_staircase": "78.7238033583",
+      "k": 25,
+      "n": 325
+    },
+    {
+      "A_times_k": "93.6878208687",
+      "R_over_sqrt_n": "4.394297378",
+      "R_staircase": "82.3271349924",
+      "k": 26,
+      "n": 351
+    },
+    {
+      "A_times_k": "97.2911985944",
+      "R_over_sqrt_n": "4.419787097",
+      "R_staircase": "85.9304823538",
+      "k": 27,
+      "n": 378
+    },
+    {
+      "A_times_k": "100.89457632",
+      "R_over_sqrt_n": "4.443489874",
+      "R_staircase": "89.5338400761",
+      "k": 28,
+      "n": 406
+    },
+    {
+      "A_times_k": "104.497954046",
+      "R_over_sqrt_n": "4.465587162",
+      "R_staircase": "93.1372046239",
+      "k": 29,
+      "n": 435
+    }
+  ],
+  "not_proved": "ANY upper bound on REV. Sub-linearity remains MEASURED over n <= 44 (hmin_closed_form_and_rev_sublinearity_probe.py), not proved. Also not proved: tightness of the lower bound, REV ~ A sqrt(2n).",
+  "probe": "rev_sublinearity_proof_probe",
+  "proved": [
+    "identity (E)",
+    "L1 N_m <= min(ell,lambda_1)",
+    "REV = Omega(sqrt n)"
+  ],
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0_anchor": "physical_proton",
+  "refuted": "L2 'H >= 3r^2-3r+1 with r=min(ell,lambda_1)' is FALSE; counterexample the hook shape (11,1^10) with H=131 vs claimed bound 331. The bad step was h(1,j) >= 2r-j, which needs column j to have >= r cells for all j <= r.",
+  "upper_bound_table": [
+    {
+      "C_times_n_the_only_surviving_R_bound": "617.140572",
+      "H_min": "945",
+      "n": 100,
+      "note": "no upper bound on REV established"
+    },
+    {
+      "C_times_n_the_only_surviving_R_bound": "6171.40572",
+      "H_min": "29820",
+      "n": 1000,
+      "note": "no upper bound on REV established"
+    },
+    {
+      "C_times_n_the_only_surviving_R_bound": "61714.0572",
+      "H_min": "942820",
+      "n": 10000,
+      "note": "no upper bound on REV established"
+    },
+    {
+      "C_times_n_the_only_surviving_R_bound": "617140.572",
+      "H_min": "29814304",
+      "n": 100000,
+      "note": "no upper bound on REV established"
+    },
+    {
+      "C_times_n_the_only_surviving_R_bound": "6171405.72",
+      "H_min": "942809245",
+      "n": 1000000,
+      "note": "no upper bound on REV established"
+    }
+  ],
+  "withdrawn": "REV = O(n^{3/4}) -- rested entirely on the refuted L2"
+}

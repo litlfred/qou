@@ -42,7 +42,10 @@ predictions.*
   phys-obs layer pins on $m_p/m_e$).*
 - *Electron mass $m_e$ in MeV (CAL-1 anchor).*
 - *$\mathrm{Vol}(4_1) \approx 2.0299$ (figure-eight knot, Lobachevsky
-  closed form; the muon's knot).*
+  closed form $6\Lambda(\pi/3) = 2\,\mathrm{Cl}_2(\pi/3)$: two regular ideal
+  tetrahedra, each of volume $\Lambda(\alpha)+\Lambda(\beta)+\Lambda(\gamma)$ at
+  $\alpha=\beta=\gamma=\pi/3$ \cite{martelli2016} (Thm.~13.1.3, Cor.~13.1.4);
+  the muon's knot).*
 
 ### Output
 
