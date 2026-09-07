@@ -88,3 +88,22 @@ their next run — no arithmetic changed, only what is additionally recorded.
 
 Remaining on this bean: re-run triton and he4 so their witnesses carry the
 headline fields, and confirm the cross-atom sign gate still passes end to end.
+
+### Runtime reality for the remaining two
+
+`triton_magnus_omega2_sign_probe.py` was given **2400 s and still timed out**
+(exit 124); `he4_magnus_omega2_sign_sparse_probe.py` is slower again. Neither
+wrote, so their witnesses still carry only the Plancherel arm while their
+sources carry the implementation.
+
+This is not a blocker for the result: the Wenzl values for all three atoms are
+already committed, measured independently, in
+`magnus-omega2-weight-family-robustness.witness.json` — deuteron −6.921, triton
+−59.991, ⁴He −100.827. What is missing is only that those numbers travel inside
+each probe's own witness.
+
+Whoever picks this up should run the two with a multi-hour budget rather than a
+session's tail — or, better, profile them first: a 40-minute H₉ probe is itself
+worth a look, and `qou-4383` independently found `atomic_tr_m_helium4.py` and
+`binding_combiner_markov_peel_fallback.py` exceeding 1200 s, so slow producers
+in this tree are a pattern rather than a one-off.
