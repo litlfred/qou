@@ -2,7 +2,7 @@ import Mathlib.Tactic
 import QOU.MathlibExt.OcneanuTrace
 
 /-!
-# The disjoint-block trace law, and the one axiom it needs beyond `MarkovTrace`
+# The disjoint-block trace law, reduced to a tower structure hypothesis
 
 Bean `qou-301d` (attack option 2, the algebraic Markov-trace-functional route).
 Probe evidence: `computations/probes/atom_bond_product_closed_form_probe.py`.
@@ -26,8 +26,9 @@ under that ruling.
 What survives measurement is a **coarser** factorisation, over *blocks* rather
 than letters: nucleons act on **disjoint strand triples**, which is insensitive
 to how the letters inside a nucleon are ordered. **Disjointness is not
-monotonicity.** That is the statement this file names, together with the one
-axiom it needs that `MarkovTrace` does not carry.
+monotonicity.** That is the statement this file names — and, as of 2026-09-07,
+*derives* from a single structural hypothesis about the algebra (`TowerSpan`),
+which is the only thing left unproved.
 
 ## The gap, stated exactly
 
@@ -61,19 +62,18 @@ registers this as a global instance, so **every `[TwoSidedMarkov T]` binder in
 this file is discharged automatically and every theorem carrying one is
 unconditional.**
 
-**What this does and does not change.** It does *not* narrow the gap: the general
-disjoint-block law is exactly as unproved as before. What it corrects is the
-file's account of *where* the gap is. The file claimed to have isolated the gap
-to a single named axiom; in fact that axiom was free all along, so the gap lies
-**entirely in the implication** `TwoSidedMarkov → DisjointBlockMultiplicative` —
-and, since the hypothesis is vacuous, entirely in
-`DisjointBlockMultiplicative` itself, from `MarkovTrace` alone.
+**What this correction does on its own.** It does *not* narrow the gap. What it
+corrects is the file's account of *where* the gap is: the file claimed to have
+isolated it to a single named axiom, and that axiom was free all along, so the
+gap lay **entirely in `DisjointBlockMultiplicative` itself**, from `MarkovTrace`
+alone.
 
-Consequently the classical route is *not* "assume a stronger stabilisation". It
-is the conditional expectation `E_n : A → H n` with `tr (a * x) = tr (a * E_n x)`
-for `a ∈ H n`, **together with** the independence fact `E_n (b) = tr b • 1` for
-`b ∈ shifted n`. That second half is the real content and nothing here supplies
-it.
+Consequently the route is *not* "assume a stronger stabilisation" — the
+stabilisation is free. It is a statement about the **algebra**, and the section
+"Reducing the gap to a tower structure hypothesis" below supplies it as
+`TowerSpan` and derives the law from it. So the gap *is* now narrowed, by that
+section rather than by this correction: what remains unproved is one classical
+structure theorem about the tower, not a trace identity.
 
 ## What is proved here, and what is not
 
@@ -94,21 +94,25 @@ proved here — `tr_mul_adjoin_gen`: the law for **every** element of
 **interleaved** atom word needs *within* one nucleon and that the ascending-word
 theorem cannot reach.
 
-🛑 **NOT proved: the general case, and it is now the ONLY gap.**
-`DisjointBlockMultiplicative` for arbitrary `b ∈ shifted n` is left as a stated
-`Prop` with no proof term and no instance. An `Algebra.adjoin` induction does not
-close it — the multiplicative step needs `tr (a * b₁ * b₂) = tr a * tr (b₁ * b₂)`,
-which does not follow from the same statement for `b₁` and `b₂` separately, and
-`tr_mul_adjoin_gen` escapes this only because a *single* generator's subalgebra is
-2-dimensional so the induction terminates.
+**Proved CONDITIONALLY, on one hypothesis about the ALGEBRA:**
+`disjointBlock_of_towerSpan` derives the full `DisjointBlockMultiplicative` —
+every `b ∈ shifted n`, repeated top-level generators included — from `TowerSpan`
+plus the quadratic relation. The argument is a filtration by level:
+`tr_mul_step` (the content) shows one step preserves the law, the base is
+`tr_mul_adjoin_gen`, and `shifted n` is the directed union of the stages.
 
-**The gap is not an axiom, and saying so was the error.** The file previously
-claimed to have isolated it to `TwoSidedMarkov`; that class is free, so the gap
-lies entirely in `DisjointBlockMultiplicative` itself, from `MarkovTrace` alone.
-The classical route is the conditional expectation `E_n : A → H n` with
-`tr (a * x) = tr (a * E_n x)` for `a ∈ H n`, **together with** the independence
-fact `E_n b = tr b • 1` for `b ∈ shifted n` — and that second half is the real
-content. Formalising it is the remaining labour on `qou-301d`.
+🛑 **NOT proved: `TowerSpan` itself, and it is now the only gap.** It has no
+Hecke instance here. It is the classical structure theorem
+`H (m+1) = H m + H m · g m · H m` in the form the induction needs, and it is
+exactly what rewrites a repeated top-level generator `g M * x * g M` back down.
+Per AGENTS.md §"Axiomatization is NOT a Proof", stating it is not proving it.
+
+**What has changed is the SHAPE of the remaining work, not its size.** An
+unproved statement about the **trace** has become an unproved statement about the
+**algebra** — classical, citable, and about an object the corpus already has. The
+file previously named `E_n` as the route; `E_n` is the standard packaging, but
+its content is the independence fact `E_n b = tr b • 1` on `shifted n`, and
+`TowerSpan` is that content in the form this proof consumes.
 
 **Nothing here derives the bond product.** The atom word's bond-product reading
 remains **measured, not derived** — 9 words at `A = 2…5` at orders 0-2, plus one
@@ -462,13 +466,18 @@ for the tower* — the Hecke fact `H (m+1) = H m + H m · g m · H m`, which is
 precisely what rewrites `g m * x * g m` back down. Nothing in `MarkovTrace`
 implies it, and it is a statement about the algebra, not about the trace.
 
-🛑 **And the production word sits on the wrong side of this line.** Measured, not
-assumed: one nucleon's generator sequence under owner ruling `qou-hu1f` is
-`[0,1,0,1,0,1,0,0,1,0,0]`, in which the maximal level `1` occurs **four times**
-(and level `0` seven times). So the theorems below, and the rotation argument
-generally, do **not** cover the atom word — the interleaving that made the
-*monotone* theorem inapplicable also puts the word past this file's reach. The
-bond product remains measured, not derived. -/
+🛑 **And the production word sits on the wrong side of this particular line.**
+Measured, not assumed: one nucleon's generator sequence under owner ruling
+`qou-hu1f` is `[0,1,0,1,0,1,0,0,1,0,0]`, in which the maximal level `1` occurs
+**four times** (level `0`, seven). So the two theorems below, and the rotation
+argument generally, do **not** cover the atom word.
+
+**But the `TowerSpan` route further down does** — conditionally. `TowerSpan` is
+exactly the hypothesis that lets a repeated top-level generator be rewritten, so
+`disjointBlock_of_towerSpan` covers *every* `b ∈ shifted n`, repetitions
+included. Read the two together: rotation is unconditional and misses the atom
+word; the structure hypothesis reaches it and is unproved. The bond product
+remains measured, not derived, either way. -/
 
 /-- Ascending pair: `m < k`, so `g m ∈ H k` and T3 at level `k` peels directly. -/
 theorem tr_mul_gen_gen_lt (n m k : ℕ) (hnm : n ≤ m) (hmk : m < k)
@@ -505,6 +514,172 @@ theorem tr_mul_gen_gen_gt (n m k : ℕ) (hnk : n ≤ k) (hkm : k < m)
   have h6 : T.tr (T.g k * T.g m) = T.z * T.tr (T.g k) := T.markov m _ hgk
   rw [h1, h2, h3, h4, h5, h6, T.tr_gen]
   ring
+
+
+/-! ## Reducing the gap to a tower structure hypothesis
+
+Everything above is unconditional but partial. This section closes the general
+law **conditionally**, on a single named hypothesis about the *algebra* — which
+is the formalize-first move: state the structural input, derive the trace
+identity from it, and leave the input visible rather than buried.
+
+The reduction is the standard filtration argument. `shiftedUpTo n M` is the part
+of `shifted n` generated at levels `≤ M`; `TowerSpan` says each step of that
+filtration is spanned by the previous one together with single sandwiches
+`v * g (M+1) * w`; and `tr_mul_step` shows one such step preserves the law.
+Induction over `M`, base case `tr_mul_adjoin_gen`, then `shifted n` is the
+directed union.
+
+🛑 **`TowerSpan` is NOT proved here and has no Hecke instance.** It is the
+algebraic structure theorem `H (m+1) = H m + H m · g m · H m` in the form this
+argument needs, and it is what rewrites a repeated top-level generator
+`g M * x * g M` back down — the exact obstruction identified above. Per
+AGENTS.md §"Axiomatization is NOT a Proof", stating it is not proving it, and
+nothing here derives the bond product for the atom word. What *has* changed is
+the shape of the remaining work: an unproved **trace** law has become an
+unproved **algebra** structure theorem, which is classical, citable, and about
+an object the corpus already has.
+
+Per §3b-cond the class is non-degenerate: its field constrains submodules of
+`A`, and the theorem *derives* a statement about `tr` from it via `markov₂` and
+linearity. It is not the conclusion wearing a different name. -/
+
+/-- One-new-generator sandwiches over a base subalgebra `B`. -/
+def sandwich (B : Subalgebra R A) (m : ℕ) : Set A :=
+  {x | ∃ v ∈ B, ∃ w ∈ B, x = v * T.g m * w}
+
+/-- **The inductive step, and the mathematical content of this section.** If the
+law holds on `B`, it holds on `B` extended by one sandwiched generator.
+
+`markov₂_of_markov` is what does the work — and it is free, per the correction
+at the top of this file. -/
+theorem tr_mul_step (m : ℕ) (B : Subalgebra R A) (hB : B ≤ T.H m)
+    (a : A) (ha : a ∈ T.H m)
+    (ih : ∀ b ∈ B, T.tr (a * b) = T.tr a * T.tr b)
+    (b : A)
+    (hb : b ∈ (Subalgebra.toSubmodule B ⊔ Submodule.span R (sandwich T B m))) :
+    T.tr (a * b) = T.tr a * T.tr b := by
+  rw [Submodule.mem_sup] at hb
+  obtain ⟨u, hu, s, hs, rfl⟩ := hb
+  have hu' : u ∈ B := by simpa using hu
+  have key : T.tr (a * s) = T.tr a * T.tr s := by
+    induction hs using Submodule.span_induction with
+    | mem x hx =>
+        obtain ⟨v, hv, w, hw, rfl⟩ := hx
+        have hav : a * v ∈ T.H m := (T.H m).mul_mem ha (hB hv)
+        have hwm : w ∈ T.H m := hB hw
+        have e1 : T.tr (a * (v * T.g m * w)) = T.z * T.tr (a * v * w) := by
+          rw [show a * (v * T.g m * w) = a * v * T.g m * w by simp only [mul_assoc]]
+          exact markov₂_of_markov T m _ hav w hwm
+        have e2 : T.tr (v * T.g m * w) = T.z * T.tr (v * w) :=
+          markov₂_of_markov T m v (hB hv) w hwm
+        have e3 : T.tr (a * v * w) = T.tr a * T.tr (v * w) := by
+          rw [mul_assoc]; exact ih _ (B.mul_mem hv hw)
+        rw [e1, e2, e3]; ring
+    | zero => simp
+    | add x y _ _ hx hy => rw [mul_add, map_add, map_add, hx, hy]; ring
+    | smul c x _ hx => rw [mul_smul_comm, map_smul, map_smul, hx]; simp [smul_eq_mul]; ring
+  rw [mul_add, map_add, map_add, ih u hu', key]; ring
+
+/-- The level-`≤ M` part of `shifted n`. -/
+def shiftedUpTo (n M : ℕ) : Subalgebra R A :=
+  Algebra.adjoin R {x | ∃ m, n ≤ m ∧ m ≤ M ∧ (x = T.g m ∨ x = T.ginv m)}
+
+theorem shiftedUpTo_le (n M : ℕ) : shiftedUpTo T n M ≤ T.H (M + 1) := by
+  refine Algebra.adjoin_le ?_
+  rintro x ⟨m, _, hmM, rfl | rfl⟩
+  · exact T.H_mono (by omega) (T.g_mem m)
+  · exact T.H_mono (by omega) (T.ginv_mem m)
+
+theorem shiftedUpTo_mono (n : ℕ) : Monotone (shiftedUpTo T n) := by
+  intro M M' hMM'
+  refine Algebra.adjoin_le ?_
+  rintro x ⟨m, hnm, hmM, hx⟩
+  exact Algebra.subset_adjoin ⟨m, hnm, hmM.trans hMM', hx⟩
+
+/-- **The tower structure hypothesis — the one input that remains.**
+
+Each filtration step is spanned by the previous stage together with single
+sandwiches. For the Iwahori-Hecke tower this is `H (m+1) = H m + H m · g m · H m`;
+it is classical and it is **not proved here**. -/
+class TowerSpan : Prop where
+  /-- One filtration step is spanned by the previous stage plus single sandwiches. -/
+  step : ∀ n M : ℕ, Subalgebra.toSubmodule (shiftedUpTo T n (M + 1)) ≤
+    Subalgebra.toSubmodule (shiftedUpTo T n M) ⊔
+      Submodule.span R (sandwich T (shiftedUpTo T n M) (M + 1))
+
+/-- The base level collapses to one generator's subalgebra, where
+`tr_mul_adjoin_gen` applies. -/
+theorem tr_mul_shiftedUpTo_base (n : ℕ) (h : R) (hq : T.g n * T.g n = h • T.g n + 1)
+    (a : A) (ha : a ∈ T.H n) :
+    ∀ b ∈ shiftedUpTo T n n, T.tr (a * b) = T.tr a * T.tr b := by
+  have hsub : shiftedUpTo T n n ≤ Algebra.adjoin R ({T.g n} : Set A) := by
+    refine Algebra.adjoin_le ?_
+    rintro x ⟨m, hnm, hmn, rfl | rfl⟩
+    · rw [le_antisymm hmn hnm]
+      exact Algebra.subset_adjoin rfl
+    · rw [le_antisymm hmn hnm, T.gen_inv_eq_of_quadratic n h hq]
+      exact Subalgebra.sub_mem _ (Algebra.subset_adjoin rfl)
+        (Subalgebra.smul_mem _ (Subalgebra.one_mem _) h)
+  intro b hb
+  exact tr_mul_adjoin_gen T n h hq a ha b (hsub hb)
+
+/-- The law on every filtration stage, by induction on the level. -/
+theorem tr_mul_shiftedUpTo [hT : TowerSpan T] (n : ℕ) (a : A) (ha : a ∈ T.H n)
+    (base : ∀ b ∈ shiftedUpTo T n n, T.tr (a * b) = T.tr a * T.tr b)
+    (M : ℕ) (hM : n ≤ M) :
+    ∀ b ∈ shiftedUpTo T n M, T.tr (a * b) = T.tr a * T.tr b := by
+  induction M, hM using Nat.le_induction with
+  | base => exact base
+  | succ M hM ih =>
+      intro b hb
+      refine tr_mul_step T (M + 1) (shiftedUpTo T n M) (shiftedUpTo_le T n M)
+        a (T.H_mono (by omega) ha) ih b ?_
+      exact hT.step n M (by simpa using hb)
+
+/-- `shifted n` is the directed union of its filtration stages. -/
+theorem mem_shiftedUpTo_of_mem_shifted (n : ℕ) (b : A) (hb : b ∈ shifted T n) :
+    ∃ M, n ≤ M ∧ b ∈ shiftedUpTo T n M := by
+  have hle : shifted T n ≤ ⨆ M, shiftedUpTo T n M := by
+    refine Algebra.adjoin_le ?_
+    intro x hx
+    simp only [Set.mem_iUnion, Set.mem_insert_iff, Set.mem_singleton_iff] at hx
+    obtain ⟨k, hk⟩ := hx
+    exact le_iSup (fun M => shiftedUpTo T n M) (n + k)
+      (Algebra.subset_adjoin ⟨n + k, by omega, le_refl _, hk⟩)
+  have hdir : Directed (· ≤ ·) (shiftedUpTo T n) := (shiftedUpTo_mono T n).directed_le
+  have h : b ∈ (↑(⨆ M, shiftedUpTo T n M) : Set A) := hle hb
+  rw [Subalgebra.coe_iSup_of_directed hdir] at h
+  simp only [Set.mem_iUnion, SetLike.mem_coe] at h
+  obtain ⟨M, hM⟩ := h
+  exact ⟨max M n, le_max_right _ _, shiftedUpTo_mono T n (le_max_left M n) hM⟩
+
+/-- **The reduction, stated as the implication it is.** With the tower structure
+hypothesis and the quadratic relation, the disjoint-block law holds — for every
+`b ∈ shifted n`, repeated top-level generators included, so this DOES reach the
+atom word.
+
+🛑 It reaches it *conditionally*. `TowerSpan` has no Hecke instance here. -/
+theorem disjointBlock_of_towerSpan [TowerSpan T]
+    (hquad : ∀ m : ℕ, ∃ h : R, T.g m * T.g m = h • T.g m + 1) :
+    DisjointBlockMultiplicative T := by
+  intro n a ha b hb
+  obtain ⟨M, hnM, hbM⟩ := mem_shiftedUpTo_of_mem_shifted T n b hb
+  obtain ⟨h, hq⟩ := hquad n
+  exact tr_mul_shiftedUpTo T n a ha (tr_mul_shiftedUpTo_base T n h hq a ha) M hnM b hbM
+
+/-- **Anti-vacuity: `TowerSpan` is inhabited**, so nothing above is vacuously
+true. The one-dimensional tower over `R` satisfies it. -/
+instance towerSpan_unit {R₀ : Type*} [CommRing R₀] (u : R₀ˣ) :
+    TowerSpan (OcneanuTrace.unitMarkovTrace u) where
+  step := by
+    intro n M x _
+    have h1 : (1 : R₀) ∈ Subalgebra.toSubmodule
+        (shiftedUpTo (OcneanuTrace.unitMarkovTrace u) n M) := by
+      simp
+    have hx : x = x • (1 : R₀) := by simp
+    rw [hx]
+    exact Submodule.mem_sup_left (Submodule.smul_mem _ _ h1)
 
 /-- **A statement of what remains, so the gap is in the file rather than only in
 the bean.**
