@@ -133,6 +133,99 @@ theorem blockUnit_mul_blockUnitDual_sum_block (c : ι → K) (i : ι) :
     _ = ((Fintype.card (J i) : K) / c i) • (1 : Matrix (J i) (J i) K) := by
         rw [sum_single_diag_eq_one (J := J) i, div_eq_mul_inv]
 
+/-! ### The left-expansion on the matrix-unit pair
+
+`casimir_eq_of_dual_pair` fires once the *other* pair supplies
+`∀ y, Σ_p t(d_p · y) • d'_p = y`.  For the matrix units that is this section.
+Both sides are linear, so it is checked on `blockUnitBasis`, where exactly one
+term of the sigma-sum survives. -/
+
+/-- `x ↦ Σ_p weightedTrace c (E_p · x) • E_p^∨`, bundled so `Basis.ext` applies. -/
+noncomputable def blockExpand (c : ι → K) :
+    (∀ i, Matrix (J i) (J i) K) →ₗ[K] (∀ i, Matrix (J i) (J i) K) :=
+  ∑ p : (i : ι) × (J i × J i),
+    LinearMap.smulRight
+      (weightedTraceₗ (J := J) c ∘ₗ
+        LinearMap.mulLeft K (blockUnit (K := K) (J := J) p.1 p.2.1 p.2.2))
+      (blockUnitDual (K := K) (J := J) c p.1 p.2.1 p.2.2)
+
+theorem blockExpand_apply (c : ι → K) (x : ∀ i, Matrix (J i) (J i) K) :
+    blockExpand (J := J) c x
+      = ∑ p : (i : ι) × (J i × J i),
+          weightedTrace c (blockUnit (K := K) (J := J) p.1 p.2.1 p.2.2 * x)
+            • blockUnitDual (K := K) (J := J) c p.1 p.2.1 p.2.2 := by
+  rw [blockExpand, LinearMap.sum_apply]
+  rfl
+
+/-- **The left-expansion.**  `Σ_p τ(E_p · x) • E_p^∨ = x`. -/
+theorem sum_weightedTrace_blockUnit_mul_smul_blockUnitDual (c : ι → K)
+    (hc : ∀ i, c i ≠ 0) (x : ∀ i, Matrix (J i) (J i) K) :
+    (∑ p : (i : ι) × (J i × J i),
+        weightedTrace c (blockUnit (K := K) (J := J) p.1 p.2.1 p.2.2 * x)
+          • blockUnitDual (K := K) (J := J) c p.1 p.2.1 p.2.2) = x := by
+  classical
+  have hmap : blockExpand (J := J) c = LinearMap.id := by
+    refine Module.Basis.ext (blockUnitBasis (K := K) (J := J)) ?_
+    rintro ⟨j, a, b⟩
+    rw [blockUnitBasis_apply, blockExpand_apply, LinearMap.id_apply]
+    rw [Finset.sum_eq_single (⟨j, (b, a)⟩ : (i : ι) × (J i × J i))]
+    · have h1 : weightedTrace c (blockUnit (K := K) (J := J) j b a
+          * blockUnit (K := K) (J := J) j a b) = c j := by
+        rw [weightedTrace, Finset.sum_eq_single j]
+        · rw [Pi.mul_apply, blockUnit_self, blockUnit_self, trace_single_mul_single,
+            if_pos rfl, mul_one]
+        · intro k _ hk
+          rw [Pi.mul_apply, blockUnit_of_ne _ _ _ hk, zero_mul, Matrix.trace_zero,
+            mul_zero]
+        · intro h; exact absurd (Finset.mem_univ j) h
+      rw [h1, blockUnitDual, smul_smul, mul_inv_cancel₀ (hc j), one_smul]
+    · rintro ⟨i, u, v⟩ _ hne
+      have hzero : weightedTrace c (blockUnit (K := K) (J := J) i u v
+          * blockUnit (K := K) (J := J) j a b) = 0 := by
+        rw [weightedTrace]
+        refine Finset.sum_eq_zero ?_
+        intro k _
+        by_cases hki : k = i
+        · subst hki
+          by_cases hkj : k = j
+          · subst hkj
+            rw [Pi.mul_apply, blockUnit_self, blockUnit_self,
+              trace_single_mul_single, if_neg ?_, mul_zero]
+            intro hc'
+            exact hne (by
+              obtain ⟨rfl, rfl⟩ := Prod.mk.injEq .. ▸ hc'
+              rfl)
+          · rw [Pi.mul_apply, blockUnit_of_ne _ _ _ hkj, mul_zero,
+              Matrix.trace_zero, mul_zero]
+        · rw [Pi.mul_apply, blockUnit_of_ne _ _ _ hki, zero_mul,
+            Matrix.trace_zero, mul_zero]
+      rw [hzero, zero_smul]
+    · intro h
+      exact absurd (Finset.mem_univ _) h
+  have := congrArg (fun f => f x) hmap
+  simpa [blockExpand_apply] using this
+
+/-- **The assembled Casimir, block by block.**  The sigma-sum's `j`-component is
+    the per-block sum, because every term with `p.1 ≠ j` vanishes there. -/
+theorem sum_blockUnit_mul_blockUnitDual_apply (c : ι → K) (j : ι) :
+    (∑ p : (i : ι) × (J i × J i),
+        blockUnit (K := K) (J := J) p.1 p.2.1 p.2.2
+          * blockUnitDual (K := K) (J := J) c p.1 p.2.1 p.2.2) j
+      = ((Fintype.card (J j) : K) / c j) • (1 : Matrix (J j) (J j) K) := by
+  classical
+  rw [Finset.sum_apply, ← Finset.univ_sigma_univ, Finset.sum_sigma,
+    Finset.sum_eq_single j]
+  · rw [← blockUnit_mul_blockUnitDual_sum_block (K := K) (J := J) c j,
+      ← Finset.sum_product']
+    rfl
+  · intro i _ hij
+    refine Finset.sum_eq_zero ?_
+    intro ab _
+    dsimp only
+    rw [Pi.mul_apply, blockUnit_of_ne _ _ _ (Ne.symm hij), zero_mul]
+  · intro h
+    exact absurd (Finset.mem_univ j) h
+
 end Casimir
 
 end QOU.MathlibExt
