@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T22:32:32Z
-updated_at: 2026-09-07T05:19:20Z
+updated_at: 2026-09-07T10:18:08Z
 ---
 
 ## The finding
@@ -192,3 +192,21 @@ commit, which is not recorded in the tree.
 So the recommendation is unchanged and its cost estimate stands: **a real compute, not a
 five-minute job.**  I now have direct evidence for that rather than an assumption, which is
 the one thing this attempt was worth.
+
+
+## Re-measured at merge time — the counts drift, the ratio does not
+
+The figures above were taken on `main` `8432b885fb`.  Re-run at merge time on
+`4370f5d322`:
+
+    modules on disk   2735 -> 2752
+    imported by root   890 ->  899
+    NOT in the root   1845 -> 1853   (67% both times)
+    BraidKnot          409 ->  410 missing of 436
+
+**So the exact counts are a moving target and the RATIO is the durable finding.**
+Two thirds of the QOU library sits outside `lake build QOU`, and that held across
+~140 commits of main.  Quote `scripts/lean-root-coverage-audit.py`'s output with the
+sha you ran it on; do not quote a number from this bean as current.
+
+That is the whole reason the script is in the PR rather than just the numbers.
