@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-07T08:45:09Z
-updated_at: 2026-08-07T10:04:33Z
+updated_at: 2026-09-07T06:22:35Z
 ---
 
 ---
@@ -1209,3 +1209,22 @@ written down and I did not look.
 
 New beans: `qou-c1ln` (discharge the numerics in Lean), `qou-c1wr` (the C1 work
 is invisible to the manifest graph, and its natural home is a leaf).
+
+
+
+## TAKEN UP 2026-09-07 (owner: "take up idle as relevant")
+
+The owner has ruled that dormancy is not a reason to stand down. Claiming this
+bean under the stalled-claim protocol, with the staleness recorded rather than
+glossed:
+
+- last genuine commit is a month old (see the dormancy table in `qou-hok7`);
+- the whole C1 ∞ arc stopped on 2026-08-08, the day the RSZ route closed;
+- **no sibling branch is touched and none will be force-pushed.**
+
+Work continues from `main` on `claude/alien-calculus-surreal-integration-2t823z`.
+
+**Scope of the takeover is the q-NATIVE ALIEN CALCULUS route**, which is what the
+closure audit names as the successor — NOT the retired RSZ slope-½ chain, and NOT
+the local-isoformal object that `2026-08-08-c1-infinity-has-no-stokes-multiplier.md`
+proves has dimension 0.

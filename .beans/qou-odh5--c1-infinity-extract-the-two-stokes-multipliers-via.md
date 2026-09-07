@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-06T23:30:00Z
-updated_at: 2026-09-07T06:14:21Z
+updated_at: 2026-09-07T06:22:35Z
 ---
 
 ## Why this matters
@@ -265,3 +265,22 @@ on the slope filtration and needs `k ≥ 2`, while alien derivations need no fil
 **Recommended disposition (owner's call, not mine):** re-title this bean to the
 connection-matrix object and fold it into `qou-wgnx`, or scrap it as superseded like its
 three children. I have not changed its status.
+
+
+
+## TAKEN UP 2026-09-07 (owner: "take up idle as relevant")
+
+The owner has ruled that dormancy is not a reason to stand down. Claiming this
+bean under the stalled-claim protocol, with the staleness recorded rather than
+glossed:
+
+- last genuine commit is a month old (see the dormancy table in `qou-hok7`);
+- the whole C1 ∞ arc stopped on 2026-08-08, the day the RSZ route closed;
+- **no sibling branch is touched and none will be force-pushed.**
+
+Work continues from `main` on `claude/alien-calculus-surreal-integration-2t823z`.
+
+**Scope of the takeover is the q-NATIVE ALIEN CALCULUS route**, which is what the
+closure audit names as the successor — NOT the retired RSZ slope-½ chain, and NOT
+the local-isoformal object that `2026-08-08-c1-infinity-has-no-stokes-multiplier.md`
+proves has dimension 0.
