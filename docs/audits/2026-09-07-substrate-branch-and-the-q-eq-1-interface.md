@@ -1277,3 +1277,90 @@ than for the first number.
 **And the sixth is the session's recurring one:** two counts of different populations,
 reported as if one had superseded the other. §19 has the same defect against §14, and
 §15.3 has it against the corpus-grep. Three instances now.
+
+---
+
+# 22. `qou-gl58` worked — the 20-file flag is regex noise, and §14.1's open flag resolves
+
+## 22.1 No file carries both conventions
+
+Measured: **0** of the 363 files contains more than one of the four symbolic forms. So
+there is no internal inconsistency anywhere — every file is self-consistent, whichever
+bracket it picked.
+
+## 22.2 My "20 in Hecke context" flag does not survive contact
+
+I classified the 30 classical-convention files by keyword and flagged 20 as
+Hecke-context. Checking three of them:
+
+- **`computations/hecke/tw_gram_determinant_probe.py`** — flagged hardest, because it is
+  in `hecke/` and computes a Gram determinant. It is **correct as written**. Its
+  `q_int(x, k) = Σ_{j<k} x^j` is the Gaussian bracket, and its docstring states the
+  conventions "match `QOU/Hecke/TwMul.lean` exactly", whose rule is
+  `σᵢ·T_v = (q−1)T_v + q·T_{v sᵢ}` — the **`T_w` basis**, where the classical bracket is
+  the right object. My flag fired on the word "hecke".
+- **`deltalambda/deltalambda_jet_filtration_magnitude_probe.py`** — **declares the
+  convention in the function docstring**: *"the Coxeter-length / coinvariant Poincaré
+  convention, **NOT** the balanced $(q^k-q^{-k})/(q-q^{-1})$"*. Deliberate and documented.
+- **`deltalambda/helium_four_body_cluster_probe.py`** — `sum(q**k for k in range(n))`,
+  undeclared. Genuinely ambiguous; stays open.
+
+**So the real discriminator is the BASIS, not whether the word "Hecke" appears.** The
+`T_w` (Iwahori, unnormalised) basis takes the classical bracket; normalised /
+quantum-dimension work takes the symmetric one. A keyword classifier cannot see which,
+and mine reported 20 where at least 2 of 3 checked are correct.
+
+## 22.3 A wrong test, and what it exposed instead
+
+I tried to settle `computations/term7_chi5_basis.py` — which feeds its bracket into a
+**q-hook-length** `dim_q(λ)` — by comparing `w_λ = \dim_q^2/[n]_q!` computed both ways
+against the canonical `wedderburn_jones_markov.y_lambda_at`. **Neither bracket
+reproduces it**, and the reason is that they are not the same object:
+
+| $\lambda$ ($n=3$) | symmetric | classical | `y_lambda_at` |
+|---|---|---|---|
+| $[3]$ | 0.163383228056 | 0.141811507642 | 0.505404226504 |
+| $[2,1]$ | 0.660673773661 | 0.631346196203 | 0.247297886748 |
+| $[1,1,1]$ | 0.163383228056 | 0.141811507642 | **0.0** |
+
+`y_lambda_at` assigns **zero** to every partition of height > 2 — it is the **SU(2)**
+Markov weight (`y_lambda_su_n(n, q, 2)`), supported on at most two rows. `term7_chi5_basis`
+computes a **Plancherel** weight $\dim_q^2/[n]_q!$, supported on all partitions. Different
+families, so my comparison was the wrong test and `term7_chi5_basis`'s convention remains
+unsettled.
+
+## 22.4 But it resolves §14.1's open flag
+
+§14.1 measured $\sum_\lambda y_\lambda(H_3) \to 3/4$ and flagged that AGENTS.md's notation
+register says the weight families coincide at $q=1$ with $\sum_\lambda w_\lambda(1) = 1$.
+I guessed *"most likely a normalisation convention inside `y_lambda_at`"*.
+
+**It is not.** The register names **three distinct families** — Markov $y_\lambda$,
+$q$-deformed Wedderburn $w_\lambda(q)$, and classical Plancherel $w_\lambda(1)$ — and I
+had hit two of them: §14.1's $3/4$ is the **SU(2)-restricted Markov** weight, while
+§17.1's $d_q^2/D^2$ is the **Wedderburn/Plancherel** one, which does sum to 1. The
+discrepancy was never a convention inside one function; it was two different measures.
+
+The register said so; I flagged the number without reading it. That does not disturb
+§14.1's or §17.1's measurements — both are correct about their own family — but it does
+mean **§14.1's "bar-even" and §17.1's "bar-even" are two separate results**, not one
+restated.
+
+## 22.5 Roast
+
+Three more of mine, all the same shape as §21.3: **classifying by a proxy instead of the
+thing.**
+
+1. Keyword-matching "hecke" for *"needs the symmetric bracket"*. The property is the
+   **basis**; the word is not a proxy for it. At least 2 of the 3 I checked are correct
+   as written.
+2. Comparing `term7_chi5_basis` against `y_lambda_at` because both are called
+   "weights". One is SU(2)-restricted Markov, the other Plancherel over all partitions —
+   visible immediately from the **zeros** on height-3 rows, which I should have read
+   before running the comparison rather than after.
+3. Calling §14.1's $3/4$ *"probably a normalisation convention"* when the notation
+   register names three families and warns they are distinct at $q \neq 1$. I had the
+   answer in a document I had already quoted twice this session.
+
+Reported "20 need review". The defensible figure is **at most 28 unclassified**, with
+**1 confirmed ambiguous** (`helium_four_body_cluster_probe`) and **2 confirmed fine**.
