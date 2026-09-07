@@ -145,6 +145,76 @@ containers existed. The other 7 now have rows.
 
 ---
 
+## Update 2026-09-07: Part A LANDED in #6978; Part B still gated
+
+**Part A (the guard) is written, calibrated and pushed** — PR #6978, issue #6976.
+`scripts/migrate-uploads-to-library.py` now refuses to create a `library/<doc-id>/`
+with no `structure.json`, at **both** entry points (a flat PDF, and a directory
+under `uploads/`), with a non-zero exit and a printed remedy.
+
+Three changes, and the split matters because they catch different things:
+
+1. the arXiv-id fallback checks **both** roots, not `uploads/` only;
+2. an unresolvable flat PDF is REFUSED, not moved;
+3. same refusal for an un-ingested directory under `uploads/`.
+
+**Calibration, because a guard never seen to fail is not evidence.** Each change
+was reverted ALONE and `--selftest` re-run: three distinct failure signatures,
+PASS only with all three. The selftest carries six cases including two negative
+controls (`0406242v4.pdf`, the bean's own old-style-id document that landed
+correctly, and an ordinary fresh ingest) — over-matching would block working
+cases.
+
+### CORRECTION to this bean: which half of the fix carries the measured case
+
+This bean's framing — `pdf-structure.py` skips an ALREADY-HELD document — needs
+one qualifier that changes the answer. In the measured incident the sectioned
+copy was on the **other branch**, not in the working tree `migrate` ran against;
+that is why `git merge-tree` reported `rename/rename` rather than a duplicate.
+So the both-roots fallback could **not** have recovered `1808.02836v2` or
+`2108.09349v2`: `library/arxiv-1808.02836v2/` was not there to be found.
+
+**The REFUSAL carries the measured case.** The fallback carries a different and
+larger class — where the held copy *is* local. Measured on `main`: `source.file`
+is the ingest-time basename, and **226 of 633** `structure.json` carry a `doc_id`
+that is neither the stem nor `arxiv-<stem>`, so `build_mapping`'s `source.file`
+loop misses a third of the corpus and the fallback is what runs. Both cases are
+in the selftest so the two are never conflated.
+
+My first selftest failed to make this distinction and PASSED against the
+un-fixed fallback — the held `structure.json` I wrote had a `source.file`
+matching the upload, so the first loop claimed it and the fallback was never
+reached. A selftest that passes on the broken code is worth nothing; it was only
+found by reverting the fix deliberately.
+
+### A self-inflicted defect, caught by the script's own `--verify`
+
+The first draft wrote `"uploads/1808.02836v2.pdf"` as a literal in the selftest.
+`rewrite_refs` scans every tracked `.py` **including this one**, so `--verify`
+reported it as a stale reference and `--apply` would have REWRITTEN the script's
+own source, silently breaking the test that guards the rewriter. Fixture names
+are now assembled. Found by running `--verify` on the real tree, not by reading
+the diff.
+
+### `--verify` now reports the class
+
+`library/ dirs with no structure.json: 22` — **reported, not counted**,
+following this file's own convention for pre-existing conditions. Counting them
+would make `--verify` permanently red, and a permanently-red gate gets ignored:
+the same end state as the unfalsifiable check this file's ledger comment already
+records the cost of.
+
+### Part B remains OPEN and gated
+
+#6962 and #6964 are both still open and both write `library/INDEX.md`. Verified
+`main` `805f11d62d` independently of any script: **22** orphan dirs, names
+matching this bean exactly. Intent posted on both siblings.
+
+### ~~`qou-b9c3` does not exist~~ — RETRACTED, see the section below
+
+This bean originally carried that claim and it was posted on #6964. It is
+**wrong**; `qou-b9c3` is real. Retracted there and corrected below.
+
 ## 2026-09-07 — the ORPHAN half duplicates `qou-b9c3`, which was first. This bean keeps the GUARD.
 
 A dispatched agent reported that `qou-b9c3` "does not exist" and posted that as a
