@@ -66,7 +66,12 @@ variable {ι : Type*}
 linking number of `k` with the other components vanishes.
 
 This is the Brunnian condition localised at one component, and it is exactly what
-makes a surface bounded by `L_k` in the complement of the rest exist at all. -/
+makes a surface bounded by `L_k` in the complement of the rest exist at all.
+
+**TIER 3.**  It is the pointwise form of `MilnorIndeterminacyGate`'s tier-2
+condition — `BrunnianTierDisambiguation.linkingVanishes_iff_forall_at` proves the
+two agree on a symmetric three-component matrix — and, like it, is strictly
+weaker than true Brunnian-ness.  Tier table for the four things this corpus calls `Brunnian`, and which implications hold: `QOU.Mass.BrunnianTierDisambiguation`. -/
 def BrunnianAt (lk : ι → ι → ℤ) (k : ι) : Prop := ∀ j, j ≠ k → lk k j = 0
 
 /-- One linked partner is enough to destroy the hypothesis. -/
