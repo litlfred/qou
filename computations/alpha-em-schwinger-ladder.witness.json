@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T10:42:14.076898+00:00",
-  "commitSha": "5e0b1213b4182caf3ed7503283cf5c4fadefa94e",
+  "computedAt": "2026-09-07T11:07:27.872275+00:00",
+  "commitSha": "5b11db4f7a58e2e41677783d25f4459efaadd291",
   "assertions": [
     {
       "name": "schwinger_brings_alpha_within_3sigma",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 10,
   "computation": "alpha-em-schwinger-ladder",
   "scriptFile": "alpha_em_schwinger_ladder_probe.py",
-  "scriptHash": "a486cffae389",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "2269c1565151",
+  "scriptCommitSha": "f44d3bf79fa2e971e858e99483235d152ec9a0f3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,7 +41,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -49,21 +49,32 @@
     ],
     "reproduce": "python3 -u computations/alpha_em_schwinger_ladder_probe.py"
   },
-  "description": "The alpha_EM ladder at the proton pin: form A (quadratic, no Schwinger) resid +1.67 ppb -> form B (+derived Schwinger (1-h^2 alpha), RT phase 3) resid +0.313 ppb ~ 2x sigma_a. Corrects the earlier form-ladder (form A only, understated). Remaining 2-loop c2 ~ 8.1e-4 (uncomputed, NOT Ohtsuki kappa1=0.554). alpha_EM misses its 100x target by only ~2x at the correct anchor. Schwinger factor derived (not fitted); q0 = documented proton pin; scope-(a).",
+  "description": "The alpha_EM ladder at the proton pin, scored against the CODATA reference READ FROM THE REGISTRY (qou_substrate.codata, CODATA 2022) rather than a hardcoded edition: form A (quadratic, no Schwinger) resid +0.9937 ppb (6.48 sigma) -> form B (+derived Schwinger (1-h^2 alpha), RT phase 3) resid -0.3652 ppb (2.38 sigma). The 2018->2022 edition shift is 0.6787 ppb, 2.2x the form-B residual, and FLIPS its sign (+0.3134 -> -0.3652); magnitude and sigma count barely move. Against the L2 100x target (0.0015325 ppb) form B still misses by 238.3x -- the 2.38 sigma is the 1x comparison, not the L2 one, and the two must not be conflated. Remaining 2-loop c2 ~ -9.4e-4 (uncomputed, NOT Ohtsuki kappa1=0.554; the sign is the edition flip). Closest any not-yet-met observable sits to its L2 target: 238x vs 970x (m_mu) and 152-177x (Q_beta trio). Schwinger factor derived (not fitted); q0 = documented proton pin; scope-(a).",
   "contentBlock": "prop:em-coupling-bring-zero-mode",
   "data": {
     "ladder_proton": {
-      "form_A_no_schwinger_ppb": "1.6723270456964245288",
-      "form_B_schwinger_ppb": "0.31342795110243077517",
-      "schwinger_shift_ppb": "1.3588990945939937536",
-      "form_A_sigma": "11.148846971309496858",
-      "form_B_sigma": "2.0895196740162051678",
+      "form_A_no_schwinger_ppb": "0.99367325607867091580",
+      "form_B_schwinger_ppb": "-0.36522583759310081907",
+      "schwinger_shift_ppb": "1.3588990936717717349",
+      "form_A_sigma": "6.4842384524858884698",
+      "form_B_sigma": "2.3832898847536809287",
+      "form_A_miss_vs_100x": "648.42384524858884698",
+      "form_B_miss_vs_100x": "238.32898847536809287",
       "q0": "1.1099785827513808075916690956107688798744991218736"
     },
+    "codata_reference": {
+      "alpha_inv": "137.035999177",
+      "uncertainty": "0.000000021",
+      "sigma_ppb": "0.15324440385095992564",
+      "source": "qou_substrate.codata registry (data/allascii.txt, CODATA 2022)",
+      "hardcoded_previously": "137.035999084 (CODATA 2018), sigma_ppb 0.15 (a 2% rounding of 0.15325)",
+      "edition_shift_ppb": "0.67865378848282252781",
+      "note": "the edition shift is 2.2x the form-B residual and flips its sign (+0.3134 ppb vs 2018 -> -0.3652 ppb vs 2022); the magnitude and the sigma count barely move, the sign does"
+    },
     "two_loop": {
-      "c2": "0.000806569388401",
+      "c2": "-0.000939865061874",
       "kappa1_ohtsuki": "0.554216472405",
-      "c2_vs_kappa1": "c2 ~ 687.0x smaller — different object",
+      "c2_vs_kappa1": "c2 ~ 590.0x smaller — different object",
       "status": "uncomputed (RT phase-2 EmFermionLoop)"
     }
   },
