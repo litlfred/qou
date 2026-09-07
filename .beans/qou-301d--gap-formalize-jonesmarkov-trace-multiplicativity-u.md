@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-09-07T11:25:37Z
+updated_at: 2026-09-07T12:34:30Z
 ---
 
 ## Context
@@ -189,3 +189,39 @@ model I tried had the axioms force the law to hold -- constant towers make it ho
 excluded outright because Cayley-Hamilton gives every element a quadratic relation, which is exactly
 tr_mul_adjoin_gen's hypothesis. Inconclusive: this is NOT evidence the law is true, only that these
 models cannot separate it. Scope (a).
+
+
+2026-09-07 (PR follow-on): TowerSpan reduced to ONE LOCAL REWRITING RULE. New module
+QOU/MathlibExt/TowerSpanReduction.lean.
+
+TowerSpan is a claim about every element of every filtration step. `SandwichReduces B m` is a claim
+about one element SHAPE:
+
+    for all c in B,   g m * c * g m   in   B + span(sandwich B m)
+
+`towerSpan_of_sandwichReduces` proves the local rule implies the global decomposition, and
+`disjointBlock_of_sandwichReduces` composes it end to end with disjointBlock_of_towerSpan.
+
+WHY THIS IS THE RIGHT REDUCTION. DisjointBlockTraceLaw identified the obstruction as a REPEATED
+maximal-level generator, a word g M * x * g M that no rotation can peel. SandwichReduces is exactly
+the statement that such a word rewrites, and nothing more. Smaller (one shape, not a submodule
+containment), local (one level m, not the tower), and it is where the braid relation lives -- in the
+Hecke case the reduction is the content of g_i g_{i+-1} g_i = g_{i+-1} g_i g_{i+-1} plus the
+quadratic relation.
+
+THE PROOF is multiplication-closure of P = B + span(sandwich), which has exactly one non-trivial
+case:
+    (v g w)(v' g w') = v * (g * (w v') * g) * w'
+whose middle factor is SandwichReduces applied to w v' in B. The rest is mul_base_left /
+mul_base_right. With closure, P becomes a subalgebra via Submodule.toSubalgebra and Algebra.adjoin_le
+finishes.
+
+STILL NOT ESTABLISHED. SandwichReduces is NOT proved for any tower with a growing filtration. This
+moves the hypothesis; it does not discharge it. A reduction between two unproved statements is
+progress in SHAPE only. The disjoint-block law -- and hence the bond-product reading of the atom word
+-- remains MEASURED, NOT DERIVED. The towerSpan_unit inhabitation caveat carries over unchanged: the
+only witness has a constant filtration, and towerSpan_of_constant shows such a witness satisfies
+TowerSpan for reasons unrelated to any of this.
+
+Verification: lean-direct exit 0, no sorry; #print axioms clean on all declarations; import cone
+rebuilt from current main source.
