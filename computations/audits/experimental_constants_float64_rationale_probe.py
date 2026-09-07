@@ -34,10 +34,25 @@ and wrong about another, and which half applies depends on the consumer:
      an mpf at full precision. So the reason does not cover the case it is
      most often invoked for.
   2. "the importers' float arithmetic stays intact" -- mpf interoperates with
-     float for arithmetic, comparison and f-string formatting, so the ordinary
-     cases are fine. The real hazard is narrower and worse: `math.log(mpf)`
-     does not raise, it SILENTLY DOWNCASTS. A module-level flip would therefore
-     not fail loudly at the sites where it matters most.
+     float for arithmetic and comparison. It does NOT interoperate with f-string
+     FORMAT SPECS, and this docstring said it did until 2026-09-07, while the
+     check below was failing for exactly that reason and reporting only that
+     "mpf interoperates with float arithmetic" was False -- four operations in
+     one try/except, so nothing said WHICH. The checks are split out now.
+
+     Measured: `x * 3.0`, `3.0 / x`, `x < 1.0`, `f"{x}"` and `"%.6f" % x` all
+     work; `f"{x:.6f}"` and `format(x, ".6f")` raise
+     `TypeError: unsupported format string passed to mpf.__format__`. That is
+     the shape that made three producers un-runnable (qou-9q4h, #6971).
+
+     `"%.6f" % x` works but SILENTLY DOWNCASTS -- byte-identical to `float(x)`
+     at 36 decimals -- so it is a display route only. That is not a gate gap:
+     `f64_into_mpmath_audit._is_display_only` already classifies `str % x` as a
+     display sink, correctly.
+
+     The other hazard is unchanged and is the worse one: `math.log(mpf)` does
+     not raise, it SILENTLY DOWNCASTS, so a module-level flip would not fail
+     loudly at the sites where it matters most.
 
 It also re-counts the importers, because the comment's "~266" is a hand-kept
 figure and this repo has a documented habit of those decaying.
@@ -130,14 +145,29 @@ def main() -> int:
         "so a producer emitting a witness would NOT be broken by an mpf"))
 
     # --- claim 2 --------------------------------------------------------
-    arith_ok = True
-    try:
-        _ = x * 3.0, 3.0 / x, x < 1.0, f"{x:.6f}"
-    except Exception:
-        arith_ok = False
-    checks.append((
-        "mpf interoperates with float arithmetic", arith_ok,
-        "the ordinary importer sites are unaffected by a flip"))
+    # SPLIT, one operation per check. This was a single try/except over four
+    # operations; it failed, and the report could not say which -- so the
+    # docstring's "and f-string formatting" survived alongside a FAIL proving
+    # it wrong. A check that cannot name what it caught is the defect this
+    # whole audit family exists to catch.
+    def _survives(fn):
+        try:
+            fn(); return True
+        except Exception:
+            return False
+    for label, fn, why in (
+        ("mpf * float", lambda: x * 3.0, "ordinary arithmetic is unaffected"),
+        ("float / mpf", lambda: 3.0 / x, "ordinary arithmetic is unaffected"),
+        ("mpf < float", lambda: x < 1.0, "ordinary comparison is unaffected"),
+        ('f"{mpf}" (no spec)', lambda: f"{x}", "bare interpolation is unaffected"),
+        ('"%.6f" % mpf', lambda: "%.6f" % x,
+         "works, but DOWNCASTS -- display route only, never a value route"),
+        ('f"{mpf:.6f}" (format spec)', lambda: f"{x:.6f}",
+         "DOES NOT WORK -- the qou-9q4h shape that made three producers un-runnable"),
+    ):
+        ok = _survives(fn)
+        # the format-spec row is expected to FAIL; assert the finding, not the operation
+        checks.append((label, (not ok) if "format spec" in label else ok, why))
 
     downcasts = False
     try:
