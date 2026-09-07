@@ -1,0 +1,107 @@
+{
+  "bean": "qou-hok7",
+  "checks": [
+    {
+      "check": "R1_staircase_n34_ratio_is_not_monotone",
+      "detail": "R/n^(3/4) for the staircase RISES to a peak at n=55 (1.225167) and falls afterwards to 0.7321169 at n=1830. So this statistic is not monotone for a Theta(sqrt n) object, and a flat reading near the peak carries no information about the rate.",
+      "pass": true
+    },
+    {
+      "check": "R2_flat_over_the_scanned_range_so_it_cannot_discriminate",
+      "detail": "over n=36..78 the staircase R/n^(3/4) varies by only 2.08% (1.19971, 1.2189, 1.22517, 1.2158). The M_n scan covers n=40..76 and shows the same flatness at the same value (~1.24). A provably Theta(sqrt n) object is therefore INDISTINGUISHABLE from Theta(n^(3/4)) on this statistic over exactly the reachable range.",
+      "pass": true
+    },
+    {
+      "check": "R3_sqrt_n_ratio_still_far_from_its_own_proved_limit",
+      "detail": "the staircase's R/sqrt(n) is 4.4655872 at n=435, still 12.37% short of its PROVED limit 5.0959457 \u2014 at ten times the largest enumerable n. So a rising M/sqrt(n) is exactly what a Theta(sqrt n) object looks like here and is not evidence against it.",
+      "pass": true
+    },
+    {
+      "check": "R4_enumeration_is_out_by_orders_of_magnitude_at_the_deciding_scale",
+      "detail": "the control only becomes decisive past n ~ 150, where the staircase ratio has clearly left its peak. p(84) = 26,543,660 (reached, ~50 min); p(150) = 40,853,235,313 \u2014 a factor of 1,539, about three orders of magnitude. Enumeration is out of reach at the scale that would decide the question.",
+      "pass": true
+    }
+  ],
+  "checks_passed": 4,
+  "checks_total": 4,
+  "computedAt": "2026-09-07T10:56:09.095607+00:00",
+  "conclusion": "the M/n^{3/4}-vs-M/sqrt(n) discriminator does not discriminate at reachable n; a provably Theta(sqrt n) control shows the same flatness over the same range. Sharpness is closed to enumeration.",
+  "dps": 40,
+  "p_150": 40853235313,
+  "p_84": 26543660,
+  "probe": "rev_sharpness_discriminator_control_probe",
+  "q0_anchor": "physical_proton",
+  "staircase_control": [
+    {
+      "R": "17.6320895308",
+      "R_over_n34": "1.199711735",
+      "R_over_sqrt_n": "2.938681588",
+      "k": 8,
+      "n": 36
+    },
+    {
+      "R": "21.177559857",
+      "R_over_n34": "1.218895665",
+      "R_over_sqrt_n": "3.156964229",
+      "k": 9,
+      "n": 45
+    },
+    {
+      "R": "24.7438604602",
+      "R_over_n34": "1.225167424",
+      "R_over_sqrt_n": "3.336461464",
+      "k": 10,
+      "n": 55
+    },
+    {
+      "R": "31.910464662",
+      "R_over_n34": "1.215800104",
+      "R_over_sqrt_n": "3.613148629",
+      "k": 12,
+      "n": 78
+    },
+    {
+      "R": "39.099834792",
+      "R_over_n34": "1.192018369",
+      "R_over_sqrt_n": "3.815753163",
+      "k": 14,
+      "n": 105
+    },
+    {
+      "R": "49.9004544151",
+      "R_over_n34": "1.147059451",
+      "R_over_sqrt_n": "4.034212634",
+      "k": 17,
+      "n": 153
+    },
+    {
+      "R": "71.5172240763",
+      "R_over_n34": "1.056157865",
+      "R_over_sqrt_n": "4.304831015",
+      "k": 23,
+      "n": 276
+    },
+    {
+      "R": "93.1372046239",
+      "R_over_n34": "0.977814012",
+      "R_over_sqrt_n": "4.465587162",
+      "k": 29,
+      "n": 435
+    },
+    {
+      "R": "132.774334423",
+      "R_over_n34": "0.8664704252",
+      "R_over_sqrt_n": "4.636680883",
+      "k": 40,
+      "n": 820
+    },
+    {
+      "R": "204.841888679",
+      "R_over_n34": "0.7321169372",
+      "R_over_sqrt_n": "4.788430921",
+      "k": 60,
+      "n": 1830
+    }
+  ],
+  "staircase_limit_A_sqrt2": "5.0959456500661407443"
+}
