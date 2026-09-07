@@ -1381,8 +1381,29 @@ def _lp_kernel_steps(partition, chains):
 
 
 def _matmul_dim(A, B, dim):
-    """Multiply two dim×dim matrices.  Uses numpy for dim ≥ 8 (significant
-    speedup for higher Hecke levels)."""
+    """Multiply two dim×dim matrices.  Uses numpy for dim ≥ 8.
+
+    "Significant speedup for higher Hecke levels" is what this said; the real
+    figure is 7-18 %, and the threshold is worth keeping for that rather than
+    for anything dramatic.  Object dtype has no BLAS, so numpy here is an
+    elementwise Python loop with less interpreter overhead, not a kernel.
+
+    Measured 2026-09-07, best-of-7, mpf entries, against the actual else-branch
+    below (python 3.11.15, numpy 2.4.6, mpmath 1.4.1):
+
+        dim=8   numpy  1.10 ms   loop  1.34 ms   0.82x
+        dim=12  numpy  3.89 ms   loop  4.37 ms   0.89x
+        dim=16  numpy  9.50 ms   loop 10.65 ms   0.89x
+        dim=24  numpy 32.54 ms   loop 34.96 ms   0.93x
+
+    This does NOT reproduce finding 5 of bean `qou-sv7h`, which recorded the
+    numpy branch as 31 % SLOWER at dim 16 (0.0126 s vs 0.0096 s) and called the
+    threshold a pessimization.  Scope-limited negative: the claim does not
+    reproduce in this container at these library versions, which is not the
+    same as it having been wrong when it was taken — the arm that moved is
+    numpy's (12.6 -> 9.5 ms), so a version difference is the leading candidate
+    and was not isolated.  Re-measure before acting on either figure.
+    """
     if dim >= 8:
         return np.asarray(A) @ np.asarray(B)
     out = [[0.0] * dim for _ in range(dim)]
@@ -1615,6 +1636,24 @@ def unified_iterative_correction(Z, N, return_per_step=False,
         the q-Gaussian asymptotic approximation (cheap, less
         accurate).  Default = K_PARTITION_MAX (all exact up to the
         compiled partition table).
+
+        Because that default EQUALS `k_max`, the q-Gaussian tier is
+        UNREACHABLE unless a caller passes a smaller `k_exact`: the
+        window `k_exact < k ≤ k_max` is empty, so `active_gaussian`
+        is [].  Measured 2026-09-07, confirming finding 6 of bean
+        `qou-sv7h`:
+
+            defaults (k_exact = k_max = K_PARTITION_MAX = 11)   0 partitions
+            k_exact=4                                         169 partitions
+            k_exact=5                                         164 partitions
+            k_exact=6                                         155 partitions
+
+        So every default run is fully exact and pays for it, and the
+        `_q_gaussian_character_approx` branch below is dead code on
+        that path.  This is a note, not a defect: exact-everywhere is
+        the correct default for a producer.  What it means in practice
+        is that the tier is untested by any default run — do not read
+        a green default run as evidence the approximation works.
 
     Returns
     -------
