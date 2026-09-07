@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T08:54:22Z
+updated_at: 2026-09-07T09:38:17Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7846,3 +7846,50 @@ planar diagram basis — for the spanning set (upper) and because each lower
 bound so far is a representation exhibited by hand at exactly the right
 dimension. Semisimplicity of TL_n(δ), the input the whole arc is for, is
 downstream of that. NOT closed.
+
+
+## Wedderburn at n = 2 and n = 3 (2026-09-07, PR #7001, commit 63a6bb9741)
+
+```
+TL₂(δ) ≃ₐ[R] R × R                          (δ a unit)
+TL₃(δ) ≃ₐ[R] Matrix (Fin 2) (Fin 2) R × R   (δ and δ²−1 units)
+```
+
+sorry-free, `QOU/MathlibExt/TemperleyLiebWedderburn.lean`, 22 declarations
+axiom-clean. Consequence `tl3_traceRadical`: the weighted trace on TL₃(δ) has
+**zero radical with no hypothesis standing in for semisimplicity** — the ⊇ half
+of #6986's single open item, at n = 3.
+
+**The arc's shape.** `TraceRadicalNondegenerate` proved everything downstream
+of a Wedderburn decomposition as a theorem about whatever satisfies the
+hypothesis; nothing was known to satisfy it. At n = 2, 3 something now does.
+
+**Nothing new was constructed.** Both maps are representations already in the
+corpus (`tl2Rep`; `tl3Rep5` from the freeness proof). What is new is that each
+is BIJECTIVE — the basis images are independent (already the freeness content),
+they span (the one new computation), so they are a basis, and a basis-to-basis
+linear map is an isomorphism.
+
+**The lesson worth keeping: injectivity and surjectivity are NOT symmetric over
+a ring.** `tl3Basis` needs δ²−1 only as a non-zero-divisor. Surjectivity needs
+it as a **unit** — an injective endomorphism of a free module of finite rank
+need not be onto (×2 : ℤ → ℤ). The determinant of the five images is exactly
+**(δ²−1)²**, so onto ⟺ δ²−1 invertible. Not a basis artefact: at δ = ±1 the
+algebra degenerates.
+
+**§7c for free.** The inverse is polynomial in c = δ⁻¹ and w = (δ²−1)⁻¹, both
+carried as primitive data with polynomial hypotheses — no ℝ, no ordering, no
+square root, no division. Substrate: δ = q + q⁻¹ ≈ 2.01, δ²−1 ≈ 3.05.
+
+**Cross-check that was not designed in.** The 1 ⊕ 2 block shape matches
+`TemperleyLiebTower.catalan_three`'s 1² + 2² = 5, reached from the
+representation-theoretic side. Two tables became two theorems that agree.
+
+**Method note.** The determinant and every `linear_combination` multiplier were
+computed exactly (five rational δ, then a symbolic solve and an ideal
+reduction) BEFORE any Lean was written. Multipliers derived, not guessed — the
+first Lean attempt then went through.
+
+**Still open, unchanged.** n = 2 and n = 3 are not n. TL_n(δ) is not proved
+semisimple; the ideal equality is open for n ≥ 4. General n needs the planar
+diagram basis, which this arc reaches from a new side each tranche. NOT closed.
