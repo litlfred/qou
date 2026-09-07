@@ -35,7 +35,27 @@ The adjoint action of `σ` on the alien derivations need not be diagonalisable.
 a semisimple part (the multiplicative character) plus a nilpotent correction.
 This is exactly the Levi decomposition of the local q-difference Galois group —
 a torus of characters `qⁿ` extended by a unipotent part that the q-logarithm
-generates. `qweight_shift` computes the eigenvalue statement in that general
+generates. Held: [vanderput2006] §5 (1) gives `Gal(M) = Hom(L, ℂ*) (× 𝔾_a)` for a
+regular-singular module, the `𝔾_a` present exactly when the constant matrix is
+not semisimple (the q-logarithm `ℓ`), and §5 (5) gives the split exact sequence
+`1 → U_ξ → Gal(M) → Gal(gr M) → 1` with `U_ξ` unipotent — a semi-direct product,
+the action of `Gal(gr M)` on `U_ξ` explicit. One caveat the docstring's phrase
+hides: for an *irreducible* module of non-integral slope `t/n`, `n > 1`,
+[vanderput2006] §5 (2) has `1 → 𝔾_m → Gal → (ℤ/n)² → 0` **not** split, so the
+torus-by-unipotent picture is the regular-singular and slope-filtered shape,
+not the shape inside a single ramified block.
+
+**What the structure abstracts, and from where.** The `Δ_ω` are Ramis–Sauloy's
+q-alien derivations [ramis-sauloy2006] Thm 3.5, `Δ̇_c(A) = Res_{d=c} log S_{d,a}(A)`,
+valued in the Stokes Lie algebra `st(A)` and graded by level `δ = μ_j − μ_i`
+(their eq. 16); Thm 3.6 makes them Lie-like ⊗-endomorphisms of the fibre functor,
+which is the functoriality `Derivation R A A` encodes. The singular set `Ω` is
+their `Σ_{A_0} ⊂ E_q`, points of the elliptic curve rather than sectors (Prop.
+2.5 and eq. 6: the Stokes operator `S_{c,d} = (S_c)⁻¹ S_d` is the ambiguity
+between two q-directions of summation). `QBridgeSystem.bridge` is the adjoint
+action of the dilation on those `Δ̇_c`. Ramis–Sauloy supply the object; whether
+their `Δ̇_c` satisfy `bridge` with any particular weight is bean `qou-vkg5`'s
+open item 2, and this file does not claim it. `qweight_shift` computes the eigenvalue statement in that general
 case: the semisimple part multiplies the eigenvalue, the unipotent part adds a
 correction. `qweight_shift_of_semisimple` is the diagonal special case.
 
@@ -49,6 +69,8 @@ ordering and no `ℝ`. Sorry-free.
 
 -- Ref: [ecalle1981] Fonctions résurgentes, tome I
 -- Ref: [ramis-sauloy-zhang2013] https://arxiv.org/abs/0903.0853
+-- Ref: [ramis-sauloy2006] https://arxiv.org/abs/math/0611521 (Prop. 2.5, Thm 3.5–3.6: the q-alien derivations)
+-- Ref: [vanderput2006] https://arxiv.org/abs/math/0612592 (§5 (1), (2), (5): the local q-difference Galois group)
 -- Ref: [manuscript] docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md
 -/
 import Mathlib.RingTheory.Derivation.Basic
@@ -101,7 +123,8 @@ theorem conjDeriv_smul (σ : A ≃ₐ[R] A) (c : R) (D : Derivation R A A) :
     The `unipotent` field is what makes this the general "combined" form: the
     adjoint action of `σ` on the `Δ_ω` need not be diagonalisable, and the Levi
     decomposition of a local q-difference Galois group is precisely a torus of
-    multiplicative characters extended by a unipotent part.  Setting
+    multiplicative characters extended by a unipotent part ([vanderput2006]
+    §5 (1), (5); the `Δ_ω` themselves are [ramis-sauloy2006] Thm 3.5).  Setting
     `unipotent = 0` (`IsSemisimple`) recovers the pure multiplicative case. -/
 structure QBridgeSystem (R A Ω : Type*) [CommSemiring R] [CommRing A]
     [Algebra R A] where

@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:58:18.754241+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-09-07T10:40:40.875135+00:00",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 29,
   "computation": "symmetrized-binding-probe",
   "scriptFile": "symmetrized_binding_probe.py",
   "scriptHash": "150890a1e580",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -24,7 +24,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -49,14 +49,14 @@
         "e_ZeN": 1.13171690432221,
         "S_free_bosonic": 1.0,
         "S_free_fermionic": 1.0,
-        "tr_atom": 0.5751722439177719,
-        "B_linear_Qbeta": 0.4354034819914961,
-        "B_linear_E0": 2.329685576294031,
-        "B_logratio_Qbeta": 0.529500144333238,
-        "B_logratio_E0": 2.8331625720045235,
+        "tr_atom": 0.1519683392042316,
+        "B_linear_Qbeta": 0.7664900358913551,
+        "B_linear_E0": 4.101209234298362,
+        "B_logratio_Qbeta": 1.570783836838723,
+        "B_logratio_E0": 8.404692657534701,
         "B_AME": 2.22452,
-        "B_lin_Qbeta_over_AME": 0.1957291829210329,
-        "B_log_Qbeta_over_AME": 0.23802894302287145
+        "B_lin_Qbeta_over_AME": 0.34456423673033065,
+        "B_log_Qbeta_over_AME": 0.7061225958133543
       },
       {
         "isotope": "T",
@@ -68,14 +68,14 @@
         "e_ZeN": -0.5050682715776329,
         "S_free_bosonic": 1.4518226733557917,
         "S_free_fermionic": -0.4518226733557918,
-        "tr_atom": 0.22931010210455652,
-        "B_linear_Qbeta": 0.695131498045271,
-        "B_linear_E0": 3.7193956677070386,
-        "B_logratio_Qbeta": 1.239281726292162,
-        "B_logratio_E0": 6.630945507146877,
+        "tr_atom": 0.029144042360972067,
+        "B_linear_Qbeta": 0.851728094130733,
+        "B_linear_E0": 4.557287063357772,
+        "B_logratio_Qbeta": 2.8530984330791442,
+        "B_logratio_E0": 15.265891390876389,
         "B_AME": 8.48181,
-        "B_lin_Qbeta_over_AME": 0.08195556114146285,
-        "B_log_Qbeta_over_AME": 0.14611052667911237
+        "B_lin_Qbeta_over_AME": 0.10041820014015088,
+        "B_log_Qbeta_over_AME": 0.3363784891525682
       },
       {
         "isotope": "3He",
@@ -87,14 +87,14 @@
         "e_ZeN": -0.47747044657787446,
         "S_free_bosonic": 1.3682265958185382,
         "S_free_fermionic": -0.36822659581853817,
-        "tr_atom": 0.4037670368514282,
-        "B_linear_Qbeta": 0.6985522106058513,
-        "B_linear_E0": 3.737698655723077,
-        "B_logratio_Qbeta": 0.9127648001744579,
-        "B_logratio_E0": 4.883872264385957,
+        "tr_atom": 0.05859625365443638,
+        "B_linear_Qbeta": 0.9685908464567246,
+        "B_linear_E0": 5.182577121339443,
+        "B_logratio_Qbeta": 2.422799170903931,
+        "B_logratio_E0": 12.96351663724698,
         "B_AME": 7.71804,
-        "B_lin_Qbeta_over_AME": 0.09050901661637556,
-        "B_log_Qbeta_over_AME": 0.11826380793238411
+        "B_lin_Qbeta_over_AME": 0.12549699748339274,
+        "B_log_Qbeta_over_AME": 0.3139137878145139
       },
       {
         "isotope": "4He",
@@ -106,14 +106,14 @@
         "e_ZeN": 0.21308789526910565,
         "S_free_bosonic": 1.9864223940977646,
         "S_free_fermionic": 0.16637312492343453,
-        "tr_atom": 0.16097414544240737,
-        "B_linear_Qbeta": 0.876063998280158,
-        "B_linear_E0": 4.6874996299263065,
-        "B_logratio_Qbeta": 1.6225463821333819,
-        "B_logratio_E0": 8.681655199528311,
-        "B_AME": 28.295674,
-        "B_lin_Qbeta_over_AME": 0.03096105780269302,
-        "B_log_Qbeta_over_AME": 0.05734255993101213
+        "tr_atom": 0.01123741765976742,
+        "B_linear_Qbeta": 0.9932080431285926,
+        "B_linear_E0": 5.314294781825136,
+        "B_logratio_Qbeta": 3.705113767144352,
+        "B_logratio_E0": 19.824715370588667,
+        "B_AME": 28.2956624,
+        "B_lin_Qbeta_over_AME": 0.03510107058418228,
+        "B_log_Qbeta_over_AME": 0.1309428178343106
       }
     ],
     "structural_conclusion": {
@@ -126,19 +126,19 @@
     "upstream_witness_hashes": [
       {
         "path": "symmetrized-constituent-general.witness.json",
-        "sha256": "2c3ff8e48242e66df313ffb2c596ec0f37679ff2d32f40f77357d83f87257a26",
-        "size_bytes": 6911,
-        "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
-        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
-        "computedAt": "2026-08-21T15:05:49.027813+00:00"
+        "sha256": "ca3027bf3b5043aaa17c11d9788336ee3505cc393a7923748f0cf383a7eb255e",
+        "size_bytes": 7172,
+        "commitSha": "3d1a7ae790e4f43bdd34b742c07887bc7fb42257",
+        "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+        "computedAt": "2026-08-30T19:25:57.860738+00:00"
       },
       {
         "path": "binding-canonical.witness.json",
-        "sha256": "141cd06d2a6b9a36fc8cb0c922025d29785651eb00331e67f0444cb3ff55fe39",
-        "size_bytes": 6536,
-        "commitSha": "ed819c29934a44bf7d752a800291f5a01ea1742d",
-        "scriptCommitSha": "77e4e68b75e65453004511c059a6613daee5ee0d",
-        "computedAt": "2026-08-22T19:30:53.367121+00:00"
+        "sha256": "1aa27b97f0dd025876ff61cc08fee88793f0cfd58e95b5487993aaa161cb652b",
+        "size_bytes": 7691,
+        "commitSha": "692eb5cf1013e50d8876e934257aa4d6cbf3d2da",
+        "scriptCommitSha": "b070004cd5286ba850d4546daa6680e74a8fe8a2",
+        "computedAt": "2026-09-06T10:45:41.527610+00:00"
       }
     ]
   }

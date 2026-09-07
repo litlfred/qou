@@ -124,8 +124,14 @@ instance hasConfinementSDPStrongDuality_of_fact (n : ℕ)
     `[hi : HasConfinementSDPStrongDuality n h]`, not from `h`.  The
     manuscript argument is the conic-duality theorem (Boyd–Vandenberghe
     §5.2.3 + §5.3): under a strictly feasible `Φ ≻ 0` the dual is solvable
-    and primal = dual.  That step is **not in Mathlib** (no SDP duality
-    API), so it is supplied rather than derived.
+    and primal = dual.  That step is **not in Mathlib**, and this is
+    measured rather than repeated:
+    `docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §U7
+    records `semidefinite program` **0**, `strict complementarity` **0**,
+    `KKT` **0**, `duality gap` **0** and `LinearProgram` **0** at the
+    pinned revision, with no optimisation layer under `Analysis/Convex/`.
+    Tracked as bean `qou-apcl` (CONFIRMED).  So the step is supplied
+    rather than derived.
 
     **`h : slaterStrict n` does no work, and can be discharged for free**
     (measured 2026-09-07, `lean`-direct exit 0; see

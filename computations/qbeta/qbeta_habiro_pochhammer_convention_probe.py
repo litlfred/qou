@@ -221,7 +221,14 @@ out = {
 # `scripts/check-sidecars.sh` flags as P30.
 WitnessBuilder.stamp_staleness_metadata(
     out, script_path=__file__, engine="python+sympy+mpmath",
-    q0_anchor="physical_proton", q0_value=mpm.nstr(q0, 50),
+    # Bare token in q0_anchor, prose in q0_anchor_reason. "physical_proton" is
+    # not one of the recognised tokens, so q0_anchor_consistency_audit could not
+    # map it to a pin and reported this witness Q0_ANCHOR_UNRECOGNISED — i.e.
+    # never checked at all. Surfaced by the helper's own warning while fixing
+    # the missing scriptFile on this same witness (bean qou-4383).
+    q0_anchor="proton",
+    q0_anchor_reason="the physical proton pin",
+    q0_value=mpm.nstr(q0, 50),
 )
 wpath = _HERE.parent / "qbeta-habiro-pochhammer-convention.witness.json"
 wpath.write_text(json.dumps(out, indent=2) + "\n")

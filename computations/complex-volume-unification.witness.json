@@ -1,15 +1,15 @@
 {
   "engine": "complex_volume_witness.py",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-23T17:16:21.515036+00:00",
-  "commitSha": "ea8ae1b4174ce4213b2228ab5c36df8a0940a395",
+  "computedAt": "2026-09-07T10:19:54.848656+00:00",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "assertions": [
     {
       "name": "im_qbeta_matches_codata",
       "computed": "0.7836458273746213",
-      "expected": "0.7823334093100222",
+      "expected": "0.78233340931",
       "passed": true,
-      "tolerance": "0.0015646668186200443",
+      "tolerance": "0.0015646668186199998",
       "unit": "MeV",
       "source": "CODATA neutron beta-decay Q-value"
     },
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 26,
   "computation": "complex-volume-unification",
   "scriptFile": "complex_volume_witness.py",
   "scriptHash": "2ab875a6278d",
-  "scriptCommitSha": "2c3fc38be096342c717383da7a17a897c2d62392",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,79 +42,88 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
+  },
+  "invocation": {
+    "argv": [
+      "computations/complex_volume_witness.py"
+    ],
+    "reproduce": "python3 -u computations/complex_volume_witness.py"
   },
   "description": "𝔙 = 𝔈_bind + i·𝔔_β: binding (Re) and β-decay Q-value (Im) as the two real archimedean shadows of one complex fibre object (conj:binding-qbeta-complex-volume). Im(q₀)=0 ⇒ both real; complex structure is fibre-level. Re via binding_canonical, Im via q_beta_substrate_prediction; pure-canonical (m_e, q₀). Packaging only — that both descend from one fibre 𝔙 is the open conjecture, not proved here (no binding/Q_β double-count: main cdc2d867 branch A).",
   "contentBlock": "conj:binding-qbeta-complex-volume",
   "parameters": {
     "q_0": 1.1099785827513808,
     "m_e_MeV": 0.51099895069,
-    "Q_beta_codata_MeV": 0.7823334093100222
+    "Q_beta_codata_MeV": 0.78233340931
   },
   "data": {
     "im_qbeta_pred_MeV": "0.7836458273746213",
-    "im_qbeta_rel_err": "0.001677568730902885",
+    "im_qbeta_rel_err": "0.001677568730931315",
     "fibre_caveat": "Im(q_0)=0; complex structure is fibre-level (pre-tau)",
     "V_2H": {
-      "re_binding_MeV": 2.833162572004523,
-      "re_linear_MeV": 0.43540348160749265,
+      "re_binding_MeV": 2.8331625720045226,
+      "re_linear_MeV": 0.11503952891212266,
       "im_qbeta_MeV": 0.7836458273746213,
-      "modulus_MeV": 2.939542641665356,
-      "arg_rad": 0.2698508333517695,
+      "modulus_MeV": 2.9395426416653554,
+      "arg_rad": 0.26985083335176957,
       "B_AME_MeV": 2.2245662,
-      "re_rel_err": 0.2735797981667271,
-      "tr_M_atom_q0": 0.5751722439177719,
-      "tr_M_atom_q0_inv": -0.0014808531711619371,
-      "mass_mod_usual": 0.5751722439177719,
-      "mass_mod_bar": null,
-      "bar_vs_usual_ratio": null
+      "re_rel_err": 0.2735797981667269,
+      "tr_M_atom_q0": 0.1519683392042316,
+      "tr_M_atom_q0_inv": 0.1243483166229129,
+      "mass_mod_usual": 0.1519683392042316,
+      "mass_mod_bar": 0.1374663855639844,
+      "bar_vs_usual_ratio": 0.9045725332251089
     },
     "V_3H": {
       "re_binding_MeV": 6.630945507146874,
-      "re_linear_MeV": 0.6951314974322007,
+      "re_linear_MeV": 0.08834735854058508,
       "im_qbeta_MeV": 0.7836458273746213,
       "modulus_MeV": 6.677090616541981,
       "arg_rad": 0.11763447976937161,
       "B_AME_MeV": 8.4817962,
       "re_rel_err": 0.21821447358675342,
-      "tr_M_atom_q0": 0.22931010210455652,
-      "tr_M_atom_q0_inv": -3.599890527398756e-05,
-      "mass_mod_usual": 0.22931010210455652,
-      "mass_mod_bar": null,
-      "bar_vs_usual_ratio": null
+      "tr_M_atom_q0": 0.029144042360972067,
+      "tr_M_atom_q0_inv": 0.042076944886339375,
+      "mass_mod_usual": 0.029144042360972067,
+      "mass_mod_bar": 0.03501845605088496,
+      "bar_vs_usual_ratio": 1.2015648212816061
     },
     "V_3He": {
-      "re_binding_MeV": 4.883872264385956,
-      "re_linear_MeV": 0.6985522099897643,
+      "re_binding_MeV": 4.883872264385955,
+      "re_linear_MeV": 0.10137663244285067,
       "im_qbeta_MeV": 0.7836458273746213,
-      "modulus_MeV": 4.946343000399392,
-      "arg_rad": 0.15909969247814568,
+      "modulus_MeV": 4.946343000399391,
+      "arg_rad": 0.1590996924781457,
       "B_AME_MeV": 7.71804132,
-      "re_rel_err": 0.36721351157705956,
-      "tr_M_atom_q0": 0.4037670368514282,
-      "tr_M_atom_q0_inv": 4.3892744351718696e-05,
-      "mass_mod_usual": 0.4037670368514282,
-      "mass_mod_bar": 0.004209803240790562,
-      "bar_vs_usual_ratio": 0.01042631729825835
+      "re_rel_err": 0.36721351157705967,
+      "tr_M_atom_q0": 0.05859625365443638,
+      "tr_M_atom_q0_inv": 0.02223420279194686,
+      "mass_mod_usual": 0.05859625365443638,
+      "mass_mod_bar": 0.03609488864924085,
+      "bar_vs_usual_ratio": 0.6159931121553548
     },
     "V_4He": {
       "re_binding_MeV": 8.681655199528308,
-      "re_linear_MeV": 0.8760639975075147,
+      "re_linear_MeV": 0.061157007602809746,
       "im_qbeta_MeV": 0.7836458273746213,
       "modulus_MeV": 8.71695117493832,
       "arg_rad": 0.09002060692008408,
       "B_AME_MeV": 28.2956624,
       "re_rel_err": 0.6931807046323712,
-      "tr_M_atom_q0": 0.16097414544240737,
-      "tr_M_atom_q0_inv": 1.0670137842856296e-06,
-      "mass_mod_usual": 0.16097414544240737,
-      "mass_mod_bar": 0.0004144413494098392,
-      "bar_vs_usual_ratio": 0.002574583317531052
+      "tr_M_atom_q0": 0.01123741765976742,
+      "tr_M_atom_q0_inv": 0.0075236026580520156,
+      "mass_mod_usual": 0.01123741765976742,
+      "mass_mod_bar": 0.009194882564484813,
+      "bar_vs_usual_ratio": 0.8182380367871027
     }
   },
   "caveats": [
     "Re channel is NOT asserted: the log-trace binding is 22-69% from AME across 2H/3H/3He/4He (re_rel_err per isotope). Recorded, not checked.",
     "The single-frakV descent (conj:binding-qbeta-complex-volume) is NOT tested here. Im is ASSIGNED from q_beta_substrate, not derived from a trace; that the two channels descend from one fibre object is the open conjecture. `allPassed` refers to the two assertions above and to nothing else.",
     "Bar-norm sqrt(tr_M(q0)*tr_M(q0^-1)) is n/a for 2H and 3H because the product is NEGATIVE, not because the re-lift fails; as a real number it does not exist for those words."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
