@@ -1,11 +1,11 @@
 ---
 # qou-voa6
 title: 'qou-swiso: the bare Schur-Weyl iso is a surjection at N=2 -- three sites, one in the notation register'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-05T09:39:58Z
-updated_at: 2026-09-05T09:52:24Z
+updated_at: 2026-09-07T18:00:00Z
 ---
 
 ## 2026-09-05 — three `≅` sites fixed, one docstring un-contradicted, and a systemic QA blind spot found by accident
@@ -49,3 +49,32 @@ The mechanism is measured, not inferred — the notation chapter registers 13 bl
 **Not established:** that adding 63 labels is the right fix. A label emits `\label{}` into the LaTeX and makes the block cross-referenceable, so it is a rendering change and a judgement about authoring convention — the author's call, not a measurement. Most of the 63 are `intro-*`/`outro-*`, for which being unlabelled may be deliberate; arguably the defect is that a sidecar is written at all for a block the sweep cannot reach.
 
 Audit: `docs/audits/2026-09-05-unlabelled-blocks-are-invisible-to-qa.md`.
+
+## 2026-09-07 — the fixes MERGED (#6817); the bean stays open, and here is what is still open
+
+PR #6817 merged onto `main` (rebase, per-commit). All three `≅` sites and the
+`wedderburn_jones_markov.py` self-contradiction are fixed and on `main`.
+
+**Strengthened at merge time.** Reviewing what landed on `main` since this
+branch's merge base found that a sibling on `qou-cds1` has since PROVED the
+surjection, sorry-free, at general index type:
+
+* `heckeToTL_surjective` — `H_n(v^2) ↠ TL_n(δ)` (`f1c3a7603`)
+* `heckeTLEquiv` — `TL_n(δ) = H_n(v^2)/⟨U_i U_j U_i − v^2 U_i⟩` (`52be85770`)
+
+both in `QOU/MathlibExt/HeckeToTemperleyLieb.lean`. Both docstrings now cite it,
+**with the scope stated** (`b53eff395`): what is proved is the PRESENTATION leg
+`H ↠ TL`. The second leg `TL_n(q) = End_{U_q 𝔰𝔩₂}(V^{⊗n})` is *stated* in
+`TraceBlindSector.lean:11` and is proved nowhere — verified by grep, not assumed.
+**So the Schur–Weyl surjection is NOT closed end to end in Lean.** That gap is
+the mathematical remainder of this bean and is why it is not `completed`.
+
+**Also still open — an author decision, not an agent one.** The 63 unlabelled
+blocks whose sidecars can never be refreshed. Adding a `label:` emits a
+`\label{}` into the LaTeX and makes the block cross-referenceable, so it is a
+rendering change and an authoring-convention judgement. Most of the 63 are
+`intro-*`/`outro-*`, for which being unlabelled may well be deliberate — in
+which case the defect is the opposite one, that a sidecar is written at all for
+a block no sweep can reach. Both `notation-register` and `notation-collisions`
+are in the 63, so the two blocks AGENTS.md §7aa calls authoritative for every
+symbol in the paper have **no QA coverage at all**.
