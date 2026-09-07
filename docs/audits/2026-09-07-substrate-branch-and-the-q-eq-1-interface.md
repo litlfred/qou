@@ -730,6 +730,13 @@ $\sigma - \sigma^{-1} = 4Z = 2A + 2(Z-N)$, splitting into an isoscalar part $2A$
 
 ## 14.3 The consequent prediction contradicts the table
 
+> **🛑 RETRACTED — see §15. The corpus refuted this mechanism on 2026-06-15,
+> three months before I proposed it.** The mirror isospin split is **Coulomb**, not
+> categorical chirality, established symbolically and validated against AME2020. A
+> Coulomb term is charge-magnitude and does not flip sign under bar, so there is no
+> isovector sign flip to predict proton excess from.
+
+
 Under bar, the isovector term $2(Z-N)$ **flips sign**. If in our regime it drives the
 neutron excess ($N > Z$) that the observed chart shows at high $A$, then in the
 bar-image regime it drives the opposite: **proton excess, $Z > N$** — not $n = p$.
@@ -754,3 +761,64 @@ $q=1$ statement in this document, §4a and §4b included, is a limit taken from 
 never an evaluation at the point. That is a fair way to compute the limit and it is not
 the same thing; §4b's "barrier" in particular is a statement about a limit whose
 endpoint the machinery cannot reach.
+
+
+---
+
+# 15. §14.3 retracted, and how I came to make it
+
+## 15.1 The claim and the refutation
+
+§14.3 argued that the bar-odd isovector writhe $2(Z-N)$ flips sign under
+$q \mapsto q^{-1}$, so the bar-image regime should show proton excess rather than
+$n = p$.
+
+**The corpus had already refuted the premise.**
+[`mirror_isospin_coulomb_split.py`](../../computations/mirror_isospin_coulomb_split.py)
+and its audit
+[`2026-06-15-bqclt-isospin-split-coulomb-not-categorical.md`](2026-06-15-bqclt-isospin-split-coulomb-not-categorical.md)
+prove symbolically (sympy) that the categorical chirality split and the Coulomb split
+share the isospin factor $(Z-N)(A-1)$ but scale as $A^{-1}$ and $A^{-1/3}$ — so the
+over-split goes as $A^{-2/3}$ and **no constant damping $\kappa$ maps the categorical
+split onto the physical one.** Validated numerically: one Coulomb length
+$r_0 \approx 1.6$ fm fits both $^{3}$H/$^{3}$He and $^{7}$Li/$^{7}$Be, where $\kappa$ is
+inconsistent between them (0.50 vs 0.85).
+
+**The mirror isospin split is Coulomb.** A Coulomb term is charge-*magnitude*
+($\propto Z^2$) and does not change sign under bar. There is no isovector sign flip,
+so §14.3's prediction has no mechanism.
+
+## 15.2 What replaces it — and it is a better argument against the same cell
+
+§14.2 still stands: the weight sum is bar-even (§14.1, measured), so the Wedderburn
+weights cannot carry an $n \neq p$ distinction. The corpus's answer to *what does* carry
+it is Coulomb — and Coulomb is bar-even in **sign**.
+
+So under bar the neutron-excess *structure* is unchanged. What changes is the Coulomb
+term's **magnitude**, through the $q$-dependence of $\alpha_{\rm EM}$ and $\hbar_q$,
+which moves the valley of stability without reflecting it. **A Classical-band domain
+should therefore have our chart with a rescaled Coulomb-to-nuclear ratio — not $n = p$.**
+
+That is a cleaner argument against the regime-table cell than §14.3 was, and it rests on
+a corpus result rather than on my conjecture. **How far the valley moves is not computed
+here** — it needs $\alpha_{\rm EM}(q)$ below $q = 1$, and the corpus's $\alpha_{\rm EM}$
+route is itself conditional on an open Lean `sorry` (the Witten-$\kappa$ Gram
+determinant).
+
+## 15.3 The process failure, stated plainly
+
+I proposed a mechanism the corpus had refuted in a dedicated audit document three months
+earlier. AGENTS.md's corpus-grep checklist exists precisely to prevent this, and **I did
+run it — at session start, on antimatter and dark matter.** I did not re-run it when the
+session moved onto the isovector/isospin split, which is a different topic with different
+vocabulary.
+
+**The rule this yields: a new claim needs a new grep, not the session's opening one.**
+The checklist is per-claim, not per-session. Both producers that settle this
+(`mirror_isospin_coulomb_split.py`, `em_linking_fh_mirror_split_charge_blindness.py`)
+sit in `computations/` under the obvious spellings — path 3 would have returned them on
+the first try.
+
+Aggravating: `corpus_search`, the one path that survives a change of vocabulary, has
+been down all session (the `paper-assistant` MCP server fails to connect). That is a
+reason to grep *more*, not less, and I did the opposite.
