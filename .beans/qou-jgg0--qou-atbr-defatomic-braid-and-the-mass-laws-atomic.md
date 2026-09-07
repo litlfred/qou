@@ -1,11 +1,11 @@
 ---
 # qou-jgg0
 title: 'qou-atbr: def:atomic-braid and the mass law''s atomic braid are DIFFERENT objects sharing a name and a symbol'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-09-05T09:58:53Z
-updated_at: 2026-09-07T18:00:00Z
+updated_at: 2026-09-06T09:42:23Z
 ---
 
 ## 2026-09-05 — measured: they are DIFFERENT OBJECTS, not a disagreement about a number
@@ -233,42 +233,3 @@ analysed.** `80cc738916` retracts *"contiguity drives `f₁/f₀`"* (their #6910
 My reply was about the **additivity / split-link factorisation**, which their new
 title affirms rather than withdraws. Do not read the retraction as weakening the
 additivity result the reading-dependence applies to.
-
-## 2026-09-07 — the measurement MERGED (#6821); the DECISION is open and is the author's
-
-PR #6821 merged onto `main` (rebase, per-commit). The audit, the three probes
-(7/7, 16/16, 10/10 — re-run green against a `main` that had moved 683 commits)
-and the cross-references are on `main`.
-
-**Nothing was decided, deliberately.** No content block changed; the three
-strand counts `A+Z` / `3A` / `3A+Z` are all still live. This bean stays open
-because its subject is a naming decision only the author can make.
-
-**What merging added: the decision is now PRICED, and no option is free.**
-
-* **(a) `A+Z` canonical** — cheapest for bean `qou-q6pp`, whose leading
-  explanation for the wrong-signed p–n splitting is stated in this reading
-  already. Minority in production, 7 blocks against 26.
-* **(b) `3A` canonical** — the production majority. But `qou-q6pp`'s explanation
-  INVERTS: the atom at the uniquely-exact `n = 3` becomes H-1, which that bean
-  itself records as over-specified and 5e5 off.
-* **(c) `3A+Z` canonical** — loses no structure and is the join of the other
-  two. But `qou-q6pp`'s explanation EVAPORATES: no neutral atom reaches `n = 3`,
-  since `min(3A+Z) = 4` over `A ≥ 1, Z ≥ 1`.
-
-A second consumer points the other way: #6919's `f₁/f₀` additivity across the
-two nucleons is **only statable** under `3A` or `3A+Z` — under `A+Z` a nucleon
-is one strand, so "which generators does nucleon k own" has no referent.
-
-**Default if the author says nothing: nothing moves.** Three counts stay live,
-the `𝓑_K` collision stays unregistered in `notation-collisions.md`, and the
-audit now records the disagreement accurately instead of understating it. That
-is a safe place to leave it.
-
-**Sibling constraint on option (a).** #6952's rename tranche records the
-corpus's own measurement that renaming the `3A` object costs **685 call sites
-across 382 files**, and that this was considered and rejected in PR #5765. So
-the cheap instrument for whichever cell wins is a scoping note plus a
-notation-register entry — not a rename. #6952 excluded
-`mass-endomorphism/atomic-mass-gb-nf.md:3` by name, recording that this bean's
-decision governs it.
