@@ -1107,6 +1107,108 @@ resurgent route is not a new route of this survey — it is `qou-hok7`, already 
 where the alien-calculus question has a concrete target. C1 (§7e) still applies to the
 *two-dimensional* version the dialog proposed: that object would be abelian and inert.
 
+## 7h. Route C step 2 — the q-count is the K-weighted count, not a groupoid cardinality (2026-09-07)
+
+Bean `qou-8uxw`; probe `computations/probes/route_c_step2_pivotal_vs_count_probe.py` (17/17, exact
+sympy, `q0Anchor: proton` for the diagnostic numbers only); Lean
+[`QOU/Mass/RouteCPivotalVsCount.lean`](../../content/quantum-observable-universe/lean/QOU/Mass/RouteCPivotalVsCount.lean)
+(sorry-free, axioms `propext / Classical.choice / Quot.sound`, generic `Field K`, no `ℝ`).
+
+**The question.** §7d left route C at: the order-zero cross term is a Burnside fixed-point count,
+and its `q`-deformation is "a `q`-count of fixed points"; is that `q`-count itself a groupoid
+cardinality (Baez–Hoffnung–Walker's Hecke-algebra-as-spans-of-flag-groupoids, which lives over
+`𝔽_q` with `q` a prime power)?
+
+**The answer is NO for the unweighted reading, and the invariant that decides it is the Markov
+property.** On the spin-½ tensor space `V^{⊗n}` with the §7a R-matrix (eigenvalues `q` on `Sym²`,
+`−q⁻¹` on `Λ²`) there are two natural normalised traces of a braid word:
+
+| trace | weight | `z = tr(σ)` | at `q = 1` | slope at `q = 1` |
+|---|---|---|---|---|
+| **ordinary** (the count-shaped reading: at `q = 1` it *is* the Burnside count `2^{c(w)}/2^n`; for `q` a prime power it is the candidate point count) | none | `z_J = (3q − q⁻¹)/4` | `1/2` | `1` |
+| **pivotal** (the framework's convention D) | `K = diag(q, q⁻¹)` on every strand, normalised by `[2]_q^n` | `z_D = q³/(q²+1)` | `1/2` | `1` |
+
+They agree at `q = 1` **and to first order**, and part at second order — exactly:
+
+    z_J − z_D = −(q² − 1)² / (4q(q² + 1))          (`zJ_sub_zD`; `= 0 ↔ q² = 1`, `zJ_eq_zD_iff`)
+
+so nothing at the level of the Burnside count or its first deformation distinguishes them; the
+corpus's earlier reading of convention D as "the `q`-deformation of the fixed-point count" was
+correct to first order and is now sharpened.
+
+**Why the ordinary trace cannot be the framework's object.** A trace on `V^{⊗n}` is a Markov trace
+(hence an invariant of the closure) iff the partial trace of the R-matrix over the closed strand is
+scalar. Unweighted, that partial trace is `diag(2q − q⁻¹, q)`, scalar iff `q² = 1`
+(`ordinary_partial_trace_scalar_iff`); with the pivotal weight on the closed strand it is `q²·𝟙`.
+Measured: the Markov property `tr(x·σ₃) = z·tr(x)` holds for the pivotal trace on all six elements
+of `S₃ ⊂ H₃` and **fails for the ordinary trace on four of them** (it survives only on `e` and `s₀`,
+the two that do not touch the closed strand's neighbour). So the ordinary trace is not a link
+invariant away from `q = ±1`, and the framework's `q`-deformation of the fixed-point count is the
+**`K`-weighted** count: each `w`-fixed colouring weighted by `q^{(#\text{colour-0 strands} − #\text{colour-1 strands})}`.
+
+**What does not separate them.** Integrality: `2⁴·tr_J(w)` and `[2]_q⁴·tr_D(w)` are *both* integer
+Laurent polynomials in `q` on all 24 words of `S₄`, and both reduce to `2^{c(w)}` at `q = 1`. A
+"count-shaped" test therefore passes for the pivotal trace too; the discriminator is the Markov
+property, not integrality.
+
+**On the `n = 4` word pair.** `Δ_J = −(4q⁶ + 3q² − 1)/(16q³)` against `Δ_D = −q³Φ₃Φ₆/Φ₄³`; both are
+`−3/8` at `q = 1` with the same first-order coefficient `−3/4`, splitting at order 2
+(`−9/16` vs `−5/16` in `(q − 1)²`). At the proton pin `Δ_J/Δ_D = 1.0085` — the two deformations of
+the same classical cross term differ by under one percent there, which is the size of the
+second-order term.
+
+**The refinement that turns the negative into a two-sided answer (same probe, checks 18–23).**
+Write `V^{⊗n} = ⊕_k V_k` with `k` the number of colour-1 strands. The Hecke action preserves `k`
+(the R-matrix preserves the pair of colours), `K^{⊗n}` acts on `V_k` by `q^{n−2k}`, and with the
+`𝔽_Q` Hecke normalisation `T_w = q^{l(w)}σ_w`, `Q = q²` (the §7a relation `(σ−q)(σ+q⁻¹) = 0` is
+`(T−Q)(T+1) = 0`), the per-weight traces `N_k(w) := q^{l(w)}·tr(P_k σ_w)` are the count-shaped
+objects and **both** traces are combinations of them:
+
+    q^{l(w)}·2^n·tr_J(w)     = Σ_k N_k(w)                    (unweighted: the sum of the counts)
+    q^{l(w)}·[2]_q^n·tr_D(w) = Σ_k q^{n−2k}·N_k(w)           (pivotal: the counts, weighted)
+
+Measured on all 24 words of `S₄`: every `N_k(w)` is a polynomial in `Q` with no half or negative
+powers, a **non-negative integer at every prime power `Q ∈ {2,3,4,5,7,8,9}`**, and at `q = 1` it is
+the number of `w`-fixed colourings with exactly `k` ones (refined Burnside). Examples:
+`N_k(s₀) = (Q, 3Q−1, 4Q−2, 3Q−1, Q)`; for the interleaved word
+`N_k = (Q⁵, Q⁵−Q³, Q⁵−2Q³+Q², Q⁵−Q³, Q⁵)` — point-count shapes, symmetric under `k ↔ n−k`.
+
+So the weight is the only thing at issue, and `q^{n−2k} = Q^{(n−2k)/2}` **is itself a groupoid
+cardinality when `n` is even**: `|𝔽_Q^{\,n/2−k}|` for `k ≤ n/2` and `|B(𝔽_Q^{\,k−n/2})| = Q^{−(k−n/2)}`
+for `k > n/2`. Cardinality is multiplicative on products and additive on disjoint unions, hence
+
+    q^{l(w)}·[2]_q^n·tr_D(w) = | ⊔_k  Fix_k(w) × A_k |,   A_k = 𝔽_Q^{n/2−k} or B(𝔽_Q^{k−n/2}),
+
+**a groupoid cardinality in the BHW sense.** For odd `n` the weights are odd powers of `Q^{1/2}`
+(checked at `n = 3`), so over `𝔽_Q` the reading fails at the *weight*, not at the count — the same
+`v = Q^{1/2}` that Beilinson–Lusztig–MacPherson need for the Cartan element in the flag-variety
+realisation of `U_v(𝔤𝔩₂)`, which is what `K` is here. **And that resolves elementarily** (probe checks
+24–26): take the framework's `q` itself to be the prime power `p`. Then `Q = p²` is a prime power,
+the counts `N_k(w)` live over `𝔽_{p²}` (still non-negative integers: measured at `Q ∈ {4, 9, 25, 49, 64}`
+on all six words of `S₃`, e.g. `N_k(s₀) = (Q, 2Q−1, 2Q−1, Q)`), and the weights `p^{n−2k}` are
+`|𝔽_p^{\,n−2k}|` or `|B(𝔽_p^{\,2k−n})|` over the **index-2 subfield** — for every `n`. So the parity
+condition is not an obstruction; it is the statement that the pivotal element lives one field
+degree below the flag variety, which is exactly BLM's `v`.
+
+**Consequence for route C.** Step 1's positive reading (the classical part is a groupoid
+cardinality) stands. Step 2 is now two-sided, and both halves are exact:
+
+* the **unweighted** groupoidification (BHW's degroupoidification applied to the fixed-point
+  groupoid alone) is **not** the framework's object — no unweighted trace on this representation
+  is a Markov trace, so it is not a closure invariant;
+* the framework's convention-D trace **is** a groupoid cardinality once the Cartan weight is
+  realised as an affine space or its classifying groupoid over the index-2 subfield — canonically,
+  for **every** strand number: `q^{l(w)}[2]_q^n·tr_D(w) = |⊔_k Fix_k(w) × A_k|` with `Fix_k(w)` over
+  `𝔽_{q²}` and `A_k` over `𝔽_q`.
+
+What this does *not* do: it says nothing about `b₃`. It identifies what kind of object the
+framework's `q`-count is (a `K`-graded point count over `𝔽_{q²}`), which is the prerequisite for
+any route-C construction: a `K`-graded point count with the counts over `𝔽_{q²}` and the grading
+over `𝔽_q`. The honest next question on `qou-8uxw` is whether the *binding functional* — a
+log-trace difference, not a trace — has a cardinality reading at all (a log of a cardinality is
+not a cardinality), which is where route C meets the extensive-term problem of §7g. Scope (a): `N = 2`, `n ≤ 4`, one word pair for `Δ`; the weight-space identity and the
+partial-trace invariant are general for this R-matrix. Nothing fitted, nothing wired.
+
 ## 8. Literature to download — prioritised, with links and one-line justification
 
 **Priority A — likely to change what can be *proved***
