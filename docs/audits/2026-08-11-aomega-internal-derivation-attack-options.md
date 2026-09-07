@@ -147,7 +147,13 @@ split. This is the route that makes the user's Newton-polyhedra intuition
 load-bearing: *the DT integers are Newton-polygon data of the internal
 `q`-difference recursion.* Falsifier: compute the C1/`Â` Newton polygon for `5₂`
 and check the slopes match its `{3,4}` chirality split. **Status: the single most
-promising unclaimed route; rung-1 done, rung-2 open.**
+promising unclaimed route; rung-1 done, rung-2 open.** *(Update 2026-09-07: run on
+the corpus-derived `A_{5₂}` (#6985) — slopes `{−10,−4,0}`, connections `4`, same
+verdict as the literature-recalled run, and the falsifier is answered in the
+negative structurally: both Route-A inputs are mirror-invariant, so the
+chirality split is not Newton-polygon data in any frame.
+`RouteANewtonPolygonDT.absSlopeEq_mirror` / `lProfile_mirror`; audit
+`2026-09-06-two-bridge-layering-from-farey-word.md` §3b.)*
 
 **Route B — Character-variety Euler characteristic (Driver 14; scaffolded).**
 `Driver14CharacterVarietyDTMenu.lean` already enumerates the menu: realise the DT
