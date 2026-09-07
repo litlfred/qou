@@ -232,3 +232,50 @@ its `--selftest` fails unless all four known-inhabited carriers are found; it
 also refuses to report at all if its built-in control goes missing. This is the
 fifteenth-odd entry in the same taxonomy the convention work keeps adding to,
 and the first one in this arc that was mine.
+
+---
+
+## Addendum 2 (same day) — census, not sample: 30 % of carriers ARE inhabited
+
+The 2026-08-30 sizing audit applied the inhabitation discriminator to **12
+sampled** declarations of 112, found 0 legitimate, and stated its own
+uncertainty carefully:
+
+> *"0 of 12 does not mean 0 of 112. By the rule of three, an observed zero in
+> n=12 is consistent with a true legitimate rate up to roughly **25 %** at 95 %
+> confidence."*
+
+Checking one carrier is a few seconds, so the sample was never necessary.
+`scripts/lean-self-assuming-carrier-census.py` runs the same discriminator over
+**every** candidate the scanner currently reports:
+
+    41 candidates over 37 distinct carriers
+    inhabited 11   uninhabited 26   (30 % legitimate accessor idiom)
+
+**Inhabited (11)** — `BorromeanQuark`, `ConvergenceBound`, `HasStrongDuality`,
+`MatrixChainEqBuildChains`, `NobleGasMultiOperator`, `QFactRatioBound` (4
+instances), `QIntRatioBoundSmall` (4), `ShellClosureMonotone`,
+`SkeinMultisetInvariant`, `Term7ShellCorrectionClass`, `TheoremA`.
+
+**That vindicates the earlier audit's caution rather than undercutting it.**
+Its stated 25 % ceiling was well calibrated; the measured rate lands just past
+it, and its sample's zero was simply not representative. Two cautions on
+reading the two numbers together: the populations differ (its 112 are ledger
+`genuine` verdicts as of 2026-08-30; these 41 are today's raw scanner
+candidates), and inhabitation is necessary, not sufficient — `qou-z9ws`'s own
+adjudicator separates `Fact`-wrapper and degenerate-slice instances from
+substantive ones, and this census does not.
+
+### The paper-facing subset is worse than the corpus average, not better
+
+All **8** carriers behind the eight paper-facing claims are in the uninhabited
+26. So:
+
+| population | legitimate accessor idiom |
+|---|---|
+| all 37 carriers | 11 / 37 = **30 %** |
+| the 8 backing a content block of provable kind | **0 / 8** |
+
+The projections that reach the paper are exactly the ones with nothing behind
+them. That is the finding this tranche exists for, and it is sharper stated as
+a contrast than as an absolute.
