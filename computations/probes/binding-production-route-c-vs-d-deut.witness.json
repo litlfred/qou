@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-25T10:10:14.933646+00:00",
-  "commitSha": "bdb22ba3d2d794c690a0c2710b4bad008746e6c6",
+  "computedAt": "2026-09-07T08:53:56.833962+00:00",
+  "commitSha": "a3b64e9f8da603abdb9f46a1bcf01a23e8962f55",
   "assertions": [
     {
       "name": "deuteron_delta_tr_changes_under_D",
@@ -13,11 +13,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 27,
+  "allPassedBasis": "assertions",
+  "durationMs": 22,
+  "durationMsBaseline": "builder-construction",
   "computation": "binding-production-route-c-vs-d-deut",
   "scriptFile": "binding_production_route_C_vs_D_probe.py",
-  "scriptHash": "e20029d09f06",
-  "scriptCommitSha": "57c2ef2eabf25c04a84400387960b4224e73ba4e",
+  "scriptHash": "8fd84cfdf322",
+  "scriptCommitSha": "be50b7596814d85a129a2b3515601507ae7851ed",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +34,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "7ccb4c94148958c4"
   },
   "invocation": {
     "argv": [
@@ -60,20 +62,20 @@
       "n_zeroed_under_D": 7,
       "two_row_only": false,
       "C_values_are_two_row_partial": false,
-      "E_0_MeV": "0.7823334093099085",
-      "tr_M_atom_C": "0.3883571411977909894164935",
-      "tr_M_free_C": "0.9835260324047483356761934",
-      "tr_M_atom_D": "0.5751722439177718708265353",
-      "tr_M_free_D": "1.131716904322210082731308",
-      "delta_tr_C": "0.5951688912069573462597",
-      "delta_tr_D": "0.5565446604044382119047722",
-      "delta_tr_D_over_C": "0.935103747234",
-      "B_MeV_C": "0.465620507773137",
-      "B_MeV_D": "0.435403481607429",
-      "B_AME2020_MeV": "2.224566",
-      "rel_err_C": "-0.7906915291",
-      "rel_err_D": "-0.8042748646",
-      "two_row_share_of_delta_tr_C": "0.773274385259"
+      "E_0_MeV": "0.7823334093100000000000000000000000000000000000000326173041633116137717",
+      "tr_M_atom_C": "0.06443107536669534230198536",
+      "tr_M_free_C": "0.1631736182925059541493193",
+      "tr_M_atom_D": "0.1519683392042316075926657",
+      "tr_M_free_D": "0.2990150171846400767021604",
+      "delta_tr_C": "0.09874254292581061184733397",
+      "delta_tr_D": "0.1470466779804084691094947",
+      "delta_tr_D_over_C": "1.48919273925",
+      "B_MeV_C": "0.0772495902510884",
+      "B_MeV_D": "0.115039528912123",
+      "B_AME2020_MeV": "2.2245662",
+      "rel_err_C": "-0.9652743127",
+      "rel_err_D": "-0.9482867586",
+      "two_row_share_of_delta_tr_C": "1.17116573809"
     }
   },
   "q0Anchor": "proton",

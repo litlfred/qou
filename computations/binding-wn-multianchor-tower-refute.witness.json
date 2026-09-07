@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T17:57:43.675402+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-07T08:54:01.120108+00:00",
+  "commitSha": "a3b64e9f8da603abdb9f46a1bcf01a23e8962f55",
   "assertions": [
     {
       "name": "full_tower_overshoots_A_ge_5",
@@ -15,11 +15,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "allPassedBasis": "assertions",
+  "durationMs": 5,
+  "durationMsBaseline": "builder-construction",
   "computation": "binding-wn-multianchor-tower-refute",
   "scriptFile": "binding_wn_multianchor_tower_refute.py",
-  "scriptHash": "f9a581994238",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "8ca04036fcb8",
+  "scriptCommitSha": "c3c2033d4ab1bed5a3198f05ddc129c10ba1646d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,10 +33,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "7ccb4c94148958c4"
   },
   "invocation": {
     "argv": [

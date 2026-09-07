@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T18:02:48.710574+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-07T08:54:04.758264+00:00",
+  "commitSha": "a3b64e9f8da603abdb9f46a1bcf01a23e8962f55",
   "assertions": [
     {
       "name": "g_reeb_bar_even",
@@ -30,14 +30,14 @@
     },
     {
       "name": "rho_strong_3_is_3p81",
-      "computed": "3.81279774906226661180053890956358142994350988520818126248614",
+      "computed": "3.8127866008213196802145065406459920140834649020559603935365",
       "expected": 3.8128,
       "passed": true,
       "tolerance": "0.001"
     },
     {
       "name": "rho_strong_4_is_13p03",
-      "computed": "13.0315686436625831774063924383656861870678600861507576982761",
+      "computed": "13.0315653272813458384200250745534828511196469655277434884262",
       "expected": 13.032,
       "passed": true,
       "tolerance": "0.02"
@@ -65,11 +65,13 @@
     }
   ],
   "allPassed": true,
+  "allPassedBasis": "assertions",
   "durationMs": 0,
+  "durationMsBaseline": "builder-construction",
   "computation": "deltalambda-bareven-b4-magnitude",
   "scriptFile": "deltalambda_bareven_b4_magnitude_probe.py",
-  "scriptHash": "b40660b9ebea",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "12c7994df902",
+  "scriptCommitSha": "c3c2033d4ab1bed5a3198f05ddc129c10ba1646d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -81,10 +83,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "7ccb4c94148958c4"
   },
   "invocation": {
     "argv": [
@@ -110,14 +112,14 @@
       "reading": "A=4 writhe det=(1-5m^2)(1-m^2) is even in m (symmetric spectrum {+-sqrt5,+-1}) => b_4 bar-even regardless of magnitude parity; the iso det carries odd-in-m terms (A>=3)."
     },
     "isospin_corrected_strong_targets": {
-      "rho3H": "3.8128",
-      "rho3He": "3.46947",
+      "rho3H": "3.81279",
+      "rho3He": "3.46946",
       "rho4_raw": "12.7196",
-      "EC3He_MeV": "0.763763",
-      "EC4He_MeV": "0.693925",
-      "rho_strong_3": "3.8128",
+      "EC3He_MeV": "0.763755",
+      "EC4He_MeV": "0.693917",
+      "rho_strong_3": "3.81279",
       "rho_strong_4": "13.0316",
-      "naive_avg_3_task_hint": "3.64113",
+      "naive_avg_3_task_hint": "3.64112",
       "method": "Lean #3986: strong 3H/3He split=0 => 3H(Z=1,no pp pair) IS the strong A=3 value => rho_strong(3)=B(3H)/BD=3.813 (the task's 3.6 is the naive symmetric average, which is physically incorrect since only 3He carries Coulomb). 4He: add pp-Coulomb E_C4=E_C3He*(3/4)^{1/3} back => 13.03."
     },
     "forward_test_parameter_free": {
@@ -156,16 +158,16 @@
     },
     "steelman_coherence_scan_free_m": {
       "writhe_fix_rho4": {
-        "m": "0.42687377",
+        "m": "0.42687375",
         "rho3_forced": "2.4661",
-        "rho3_target": "3.8128",
+        "rho3_target": "3.81279",
         "rho3_err_pct": "-35.32"
       },
       "writhe_fix_rho3": {
         "root_exists": false,
         "rho3_at_bracket_lo": "2.90692",
         "rho3_at_bracket_hi": "2.44978",
-        "rho3_target": "3.8128",
+        "rho3_target": "3.81279",
         "note": "rho3_writhe is monotone DECREASING in m and capped below the target over the whole physical window m < 1/sqrt5 -- no m lands rho3=T3 at all, so there is nothing to force rho4 to."
       },
       "iso_raw_rho4_range": {
@@ -181,11 +183,11 @@
         "note": "rho3_even stalls near 3.4 against the 3.813 target.  (The old note here also claimed det(I-mS) turns negative BEFORE rho4_even reaches 13.03.  It does not -- see iso_bareven_fix_rho4: the target is reached at m=0.31900 with every det still positive.)"
       },
       "iso_bareven_fix_rho4": {
-        "m": "0.31899947",
+        "m": "0.31899946",
         "rho4_even_forced": "13.0316",
         "rho4_target": "13.0316",
         "rho3_even_forced": "3.43496",
-        "rho3_target": "3.8128",
+        "rho3_target": "3.81279",
         "rho3_err_pct": "-9.91",
         "physical": true,
         "note": "rho4_even hits the strong A=4 target while all three dets stay positive, so this branch is NOT excluded on physicality -- it is excluded because rho3_even misses."

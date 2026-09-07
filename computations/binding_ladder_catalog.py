@@ -69,7 +69,7 @@ from codata_constants import (
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
-    m_e,
+    M_E_MEV as m_e,
 )
 import os as _os_sidu  # noqa: E402 -- atomic witness write (qou-sidu)
 Q0 = Q_MP; QI = Q_INV_MP  # was f64 roundtrip

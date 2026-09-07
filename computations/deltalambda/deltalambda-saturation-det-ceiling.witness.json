@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T17:59:19.531085+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "computedAt": "2026-09-07T08:54:06.121208+00:00",
+  "commitSha": "a3b64e9f8da603abdb9f46a1bcf01a23e8962f55",
   "assertions": [
     {
       "name": "closed_form_det_matches_mp_det_A2_to_12",
@@ -54,11 +54,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 85,
+  "allPassedBasis": "assertions",
+  "durationMs": 106,
+  "durationMsBaseline": "caller",
   "computation": "deltalambda-saturation-det-ceiling",
   "scriptFile": "deltalambda_saturation_det_ceiling_probe.py",
-  "scriptHash": "a30057d9db13",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "27a3c6458fe2",
+  "scriptCommitSha": "c3c2033d4ab1bed5a3198f05ddc129c10ba1646d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,10 +72,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "7ccb4c94148958c4"
   },
   "invocation": {
     "argv": [
@@ -314,13 +316,13 @@
     },
     "part3_isospin_corrected_strong_targets": {
       "rho_raw_AME": {
-        "3H": "3.8128",
-        "3He": "3.46947",
+        "3H": "3.81279",
+        "3He": "3.46946",
         "4He": "12.7196"
       },
       "E_C_4He_sphere_MeV": "0.771131",
       "E_C_4He_pair_MeV": "0.642609",
-      "rho_strong_3_(H,Coulomb-free)": "3.8128",
+      "rho_strong_3_(H,Coulomb-free)": "3.81279",
       "rho_strong_4_(mean_of_geometries)": "13.0374",
       "cap_C(3,2)": 3,
       "cap_C(4,2)": 6,
@@ -334,7 +336,7 @@
           "m": "0.446727067906",
           "rho_pred_3": "2.45016",
           "rho_pred_4": "4.15761",
-          "vs_target_3_ratio_pred/strong": "0.64261",
+          "vs_target_3_ratio_pred/strong": "0.64262",
           "vs_target_4_ratio_pred/strong": "0.3189",
           "b4_MeV_at_this_m": "3.87406"
         },

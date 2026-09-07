@@ -179,7 +179,13 @@ if __name__ == "__main__":
         A = Z + N
         B = binding_flat_all_pairs(Z, N)
         dm = abs(B - B_AME) / (A * float(M_P_MEV_VALIDATION)) * 100
-        print(f"  {name:>6} {A:>3} {B_AME:>8.3f} {B:>10.3f} {dm:>9.4f}%")
+        # `float()` HERE ONLY, and only for the width: mpmath 1.3.0 raises
+        # `TypeError: unsupported format string passed to mpf.__format__` on a
+        # `:.3f` spec, while 1.4.x accepts it -- and this project pins
+        # `mpmath>=1.3,<1.5`, so the producer must not depend on which one is
+        # installed. A format width is presentation, not a value (NO-FLOAT64).
+        print(f"  {name:>6} {A:>3} {float(B_AME):>8.3f} "
+              f"{float(B):>10.3f} {float(dm):>9.4f}%")
         results.append({
             "atom": name, "Z": Z, "N": N, "A": A,
             "B_AME_MeV": B_AME, "B_pred_MeV": B,

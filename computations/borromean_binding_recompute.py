@@ -87,7 +87,7 @@ from codata_constants import (  # noqa: E402
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
-    M_E,
+    M_E_MEV as M_E,
 )
 from _li_2_q_util import li_2_q  # noqa: E402
 from canonical_mass import proton_neutron_mass_mev  # noqa: E402

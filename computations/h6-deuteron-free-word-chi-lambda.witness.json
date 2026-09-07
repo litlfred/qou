@@ -27,7 +27,7 @@
   },
   "calibration": {
     "E_0_MeV": 0.78233341,
-    "B_D_AME_MeV": 2.224573
+    "B_D_AME_MeV": 2.2245662
   },
   "markov_trace": {
     "tr_M_bound": "0.151968339204231607592665697751066141271240964655260817214712",
@@ -179,15 +179,15 @@
     }
   ],
   "witness": {
-    "scriptCommitSha": "3e4922262827c42d6a690cd1dbfa401af7473d25",
-    "scriptHash": "369d747cfde7",
+    "scriptCommitSha": "be50b7596814d85a129a2b3515601507ae7851ed",
+    "scriptHash": "43b1b5310e71",
     "producer": "computations/probes/h6_deuteron_free_word_chi_lambda_probe.py"
   },
-  "scriptHash": "369d747cfde7",
-  "scriptCommitSha": "3e4922262827c42d6a690cd1dbfa401af7473d25",
-  "commitSha": "75fd0b4c3264868c68924658f00c3e433e01bbcb",
+  "scriptHash": "43b1b5310e71",
+  "scriptCommitSha": "be50b7596814d85a129a2b3515601507ae7851ed",
+  "commitSha": "a3b64e9f8da603abdb9f46a1bcf01a23e8962f55",
   "engine": "python",
-  "computedAt": "2026-09-06T03:25:40.718020+00:00",
+  "computedAt": "2026-09-07T08:54:07.302293+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

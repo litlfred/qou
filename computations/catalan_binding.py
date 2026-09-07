@@ -44,9 +44,9 @@ from q_parameter import Q as q0
 from hecke_core import atom_per_generator_volumes, w_sym, w_std, w_alt, Phi_q
 from codata_constants import (
     AME_B_TRITIUM_MEV_VALIDATION,
-    _M_E_MEV,
-    _M_N_MEV,
-    _M_P_MEV,
+    M_E_MEV as _M_E_MEV,
+    M_N_MEV_VALIDATION as _M_N_MEV,
+    M_P_MEV_VALIDATION as _M_P_MEV,
 )
 
 HBAR_Q = (q0 - 1.0) / q0

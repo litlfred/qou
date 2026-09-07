@@ -371,7 +371,12 @@ if __name__ == "__main__":
           + "  ".join(f"{h:>9}" for h in headers))
     print("  " + "-" * 90)
     for r in all_results:
-        line = f"  {r['atom']:>6} {r['A']:>3} {r['B_AME']:>8.3f}  "
+        # `float()` HERE ONLY, and only for the width: mpmath 1.3.0 raises
+        # `TypeError: unsupported format string passed to mpf.__format__` on a
+        # `:.3f` spec, while 1.4.x accepts it -- and this project pins
+        # `mpmath>=1.3,<1.5`, so the producer must not depend on which one is
+        # installed. A format width is presentation, not a value (NO-FLOAT64).
+        line = f"  {r['atom']:>6} {r['A']:>3} {float(r['B_AME']):>8.3f}  "
         for k in keys:
             v = r.get(k)
             if v is None:

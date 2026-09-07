@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-05T17:59:18.771991+00:00",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-07T08:54:05.262819+00:00",
+  "commitSha": "a3b64e9f8da603abdb9f46a1bcf01a23e8962f55",
   "assertions": [
     {
       "name": "W_A_is_length_gen_func_not_determinant",
@@ -30,21 +30,21 @@
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "ρ_strong(3)=3.8128 > 3 = 3!/2! (the full classical coinvariant dimension ratio) ⇒ A=3 needs q>1; at q₀, [3]_{q0}=3.34203 still < 3.8128 (undershoots by -12.3%)"
+      "source": "ρ_strong(3)=3.81279 > 3 = 3!/2! (the full classical coinvariant dimension ratio) ⇒ A=3 needs q>1; at q₀, [3]_{q0}=3.34203 still < 3.81279 (undershoots by -12.3%)"
     },
     {
       "name": "graded_step_too_steep_for_all_q_ge_1",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "data step T4/T3=3.4178; graded step [4]_q is 4 at q=1 and 4.7096 at q₀ — monotone ↑ in q, so [4]_q ≥ 4 > 3.4178 for ALL q ≥ 1 ⇒ the A=3→A=4 growth is intrinsically too steep; no q flattens it to the data ratio"
+      "source": "data step T4/T3=3.4179; graded step [4]_q is 4 at q=1 and 4.7096 at q₀ — monotone ↑ in q, so [4]_q ≥ 4 > 3.4179 for ALL q ≥ 1 ⇒ the A=3→A=4 growth is intrinsically too steep; no q flattens it to the data ratio"
     },
     {
       "name": "single_q_cannot_land_both",
       "computed": "True",
       "expected": "True",
       "passed": true,
-      "source": "forcing ρ_grad(3)=ρ_strong(3) needs q=1.25009; at that q ρ_grad(4)=21.9858 vs target 13.0316 (+68.7%) ⇒ no single parameter-free q lands both"
+      "source": "forcing ρ_grad(3)=ρ_strong(3) needs q=1.25008; at that q ρ_grad(4)=21.9857 vs target 13.0316 (+68.7%) ⇒ no single parameter-free q lands both"
     },
     {
       "name": "lands_both_targets_parameter_free",
@@ -55,11 +55,13 @@
     }
   ],
   "allPassed": true,
+  "allPassedBasis": "assertions",
   "durationMs": 0,
+  "durationMsBaseline": "builder-construction",
   "computation": "deltalambda-jet-filtration-magnitude",
   "scriptFile": "deltalambda_jet_filtration_magnitude_probe.py",
-  "scriptHash": "866ce9a15901",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "scriptHash": "1b727a0ceb04",
+  "scriptCommitSha": "c3c2033d4ab1bed5a3198f05ddc129c10ba1646d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -71,10 +73,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "5df83fbc24b06f8a"
+    "pyhecke_native_build": "7ccb4c94148958c4"
   },
   "invocation": {
     "argv": [
@@ -90,8 +92,8 @@
   },
   "data": {
     "strong_targets": {
-      "rho_strong_3": "3.8127977",
-      "rho_strong_4": "13.031569",
+      "rho_strong_3": "3.8127866",
+      "rho_strong_4": "13.031565",
       "construction": "AME2020 + Lean #3986/#3990 Coulomb premise"
     },
     "det_cap_C_A_2": {
@@ -110,27 +112,27 @@
       },
       {
         "A": 3,
-        "target_rho": 3.8127977490622667,
+        "target_rho": 3.81278660082132,
         "C_A_2_cap": 3.0,
         "classical_A!/2!": 3.0,
         "graded_q0_ratio": 3.342031036918145
       },
       {
         "A": 4,
-        "target_rho": 13.031568643662583,
+        "target_rho": 13.031565327281346,
         "C_A_2_cap": 6.0,
         "classical_A!/2!": 12.0,
         "graded_q0_ratio": 15.739572135410121
       }
     ],
     "graded_step_A3_to_A4": {
-      "data_T4/T3": "3.41785",
+      "data_T4/T3": "3.41786",
       "graded_[4]_q1": 4,
       "graded_[4]_q0": "4.70958"
     },
     "forced_fit_check": {
-      "q_forcing_rho3": "1.2500851",
-      "rho4_forced": "21.9858",
+      "q_forcing_rho3": "1.2500819",
+      "rho4_forced": "21.9857",
       "overshoot_pct": "68.71"
     },
     "verdict": "SCOPE-(a) HONEST NEGATIVE on the crack, STRUCTURAL ADVANCE on the escape. The jet-filtration graded dimension W_A(q)=[A]_q!=Σ_{w∈S_A}q^{ℓ(w)} (=Σ_λ dim(λ)f^λ(q), coinvariant Poincaré / graded dim of the principal filtration on H_A) is a NON-determinant object — a sum of positive q-powers, not −ln det — so it is outside the three Lean-excluded exchange-determinant no-gos. It ESCAPES the C(A,2) cap, q-INDEPENDENTLY: the classical ratio A!/2!={3,12} already has 12 > 6=C(4,2), and at q₀ ρ_grad(4)=15.74 > 13.03 ⇒ it is the FIRST non-determinant object that can REACH ρ_4=13.03 (the determinant provably cannot). It does NOT land both parameter-free: at q₀ ρ_grad(3)=3.34 (−12%) and ρ_grad(4)=15.74 (+21%); it undershoots A=3 and overshoots A=4. The A=3→A=4 step [4]_q ≥ 4 for all q≥1 is too steep vs the data ratio 3.42, and ρ_strong(3)=3.81 exceeds even the classical 3!/2!=3, so no single parameter-free q lands both. BRACKET: sub-extensive log-det (undershoots both, capped) < true binding < super-extensive graded dim (overshoots A=4). NOT excluded as an ingredient (permanence): a graded-dim factor may combine with a growth-DAMPING term; this probe measures the direction of the missing correction. No fit; nothing wired."

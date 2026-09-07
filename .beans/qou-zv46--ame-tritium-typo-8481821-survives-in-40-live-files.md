@@ -191,3 +191,56 @@ Verified: 0 literals tree-wide, 0 dangling names, suites 64 + 145 green.
 All source sites are done. What is left is the witness debt: ~50 producers now
 emit different numbers. Blocked on the `hadron_knot_table` run (bean qou-uiut)
 holding the checkout — this campaign does not run two producers at once.
+
+---
+
+## 2026-09-07 — regeneration run. 37 of 39, and three of my own bugs
+
+The witness debt is cleared for every producer that can run: **37 of 39
+producer→witness pairs regenerate clean, 31 witnesses changed, 0 still carrying
+`8.481821` or `7.718058`, 11 now carrying the corrected `8.4817962`.**
+
+Running them found three defects that AST verification could not, all mine
+except the third:
+
+**1. The import rewriter destroyed aliased imports.** It rebuilt each
+`from codata_constants import (...)` from the AST using `a.asname or a.name`,
+which for `M_E_MEV as m_e` yields the ALIAS and drops the `as` — emitting
+`import m_e`, a name that does not exist. Four files:
+`binding_ladder_catalog` (`m_e`), `borromean_binding_recompute` and
+`borromean_per_lambda_fr_probe` (`M_E`), `catalan_binding` (`_M_E_MEV`,
+`_M_N_MEV`, `_M_P_MEV`). Restored from git; 0 broken imports remain.
+
+**2. `probe_9b` used the constants at MODULE level** while its codata import
+sits inside `main()`, so the name was unbound at import time. Module-scope
+import added.
+
+**3. `mpf.__format__` — NOT mine.** mpmath **1.3.0 raises**
+`TypeError: unsupported format string` on a `:.3f` spec that **1.4.x accepts**,
+and this project pins `mpmath>=1.3,<1.5`. sympy had pulled 1.3.0 into this
+container. The affected values (`AME_B_HE3/HE4_MEV_VALIDATION` in `ATOMS`
+tables) were mpf **before** my edits — verified against `c3c2033d4a^`. I began
+patching print sites one at a time; installing a pin-permitted **1.4.1** fixed
+~9 producers at once. Two `float()`-at-the-print-site fixes were kept anyway,
+since a producer should not depend on which permitted version is installed.
+
+### The corpus's own gate stopped a bad commit
+
+The first clean batch produced 31 witnesses of which **19 had a DEGRADED
+`environment` block** — they had silently dropped `clarabel`, absent from this
+container. `witness_base` warns exactly this: *"the environment block records
+LESS than the witness on disk … install it and re-run rather than committing
+the weaker record; the numbers can be identical while the provenance silently
+degrades."* clarabel installed, batch re-run, **0 degraded**.
+
+### Still failing — pre-existing, not this bean
+
+`binding_ladder_catalog` and `binding_bring_enhancement_compare` both die with
+`TypeError: Object of type mpf is not JSON serializable` on the witness write.
+Reproduced at `c3c2033d4a^` (before any zv46 edit), so pre-existing. The mpf
+reaching `json.dump` comes from `AME_B_*` entries that were already there. Not
+fixed here; it wants the producer to serialise with `fmt`, which is a change to
+how those two write witnesses rather than to what they read.
+
+**Remaining on this bean: those two producers' witnesses.** Everything else is
+regenerated and consistent.

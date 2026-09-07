@@ -1,7 +1,7 @@
 {
   "computation": "multi-level-jet-sum",
   "description": "Multi-level jet sum of mass tower \u2014 CURRENT IMPL is a single-level flat sum with all-pairs quadratic term (matching rem:mass-endomorphism-jet-tower's single-level form).  A genuine multi-level version requires jet-lifted V\u0302 at each level n; per-level lift not yet implemented.  This module is a stub that documents the interface and provides the single-level flat sum for callers migrating from tower_binding_full.",
-  "timestamp": "2026-09-04T22:41:45.261887+00:00",
+  "timestamp": "2026-09-07T09:05:18.356751+00:00",
   "parameters": {
     "q0": 1.1099785827513808,
     "z_markov_sq": 0.3753866308623884,
@@ -23,27 +23,27 @@
       "Z": 1,
       "N": 2,
       "A": 3,
-      "B_AME_MeV": 8.481821,
+      "B_AME_MeV": 8.4817962,
       "B_pred_MeV": -0.09508539263837858,
-      "delta_m_over_m_pct": 0.3047057276618927
+      "delta_m_over_m_pct": 0.30470484660971603
     },
     {
       "atom": "3He",
       "Z": 2,
       "N": 1,
       "A": 3,
-      "B_AME_MeV": 7.71804,
+      "B_AME_MeV": "7.718041319999999999999999999999999999999999999999995711041411183331376",
       "B_pred_MeV": NaN,
-      "delta_m_over_m_pct": NaN
+      "delta_m_over_m_pct": "nan"
     },
     {
       "atom": "4He",
       "Z": 2,
       "N": 2,
       "A": 4,
-      "B_AME_MeV": 28.295674,
+      "B_AME_MeV": "28.2956623999999999999999999999999999999999999999999915823563342238137",
       "B_pred_MeV": NaN,
-      "delta_m_over_m_pct": NaN
+      "delta_m_over_m_pct": "nan"
     },
     {
       "atom": "6Li",
@@ -101,11 +101,11 @@
     }
   ],
   "scriptFile": "multi_level_jet_sum.py",
-  "scriptHash": "cb39158c38bc",
-  "scriptCommitSha": "138ab4aa9afd49759062c24a3e53e2683144aac0",
-  "commitSha": "9f778bb3a1ca4dd966a24024c41432d2e6160ec4",
+  "scriptHash": "de97b1e27485",
+  "scriptCommitSha": "c3c2033d4ab1bed5a3198f05ddc129c10ba1646d",
+  "commitSha": "a3b64e9f8da603abdb9f46a1bcf01a23e8962f55",
   "engine": "python",
-  "computedAt": "2026-09-04T22:41:45.479248+00:00",
+  "computedAt": "2026-09-07T09:05:18.379527+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -3,7 +3,7 @@
   "description": "Categorical grounding of the inverse-product per-bond weight w(a,b)=1/(tr_M(a)tr_M(b)) behind the T/3He mu_ext-split LEAD (bean qou-r1sr, PR #3841). Structural reduction to (tr_p/tr_n)^2, Mayer/ideal-gas pair-correlation normalization (b2 level of the Ursell cluster expansion), and correct Coulomb/isospin sign. EXPLORATORY; scope-(a); no fit.",
   "audit_only": true,
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "assertions": [
     {
       "name": "split_reduces_to_trp_trn_squared",
@@ -42,10 +42,10 @@
     "anti_numerology_flag": "true exponent 2.097 ~ 2.093 (4He super-pairwise excess). COINCIDENCE, NOT fit (Ursell-doc guardrail, Rule-14 hidden DOF).",
     "verdict": "GROUNDED (partial): the inverse-product weight is the Mayer b2 normalization, the T/3He split reduces exactly to (tr_p/tr_n)^2 with correct Coulomb sign and -1.38% magnitude. It is a categorically-grounded p!=n isospin discriminator, ORTHOGONAL to the open connected-b4 extensivity magnitude gap. Scope-(a); no wiring."
   },
-  "scriptHash": "4b506cdf9bcf",
-  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
-  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
-  "computedAt": "2026-09-05T18:02:50.501076+00:00",
+  "scriptHash": "75bf89af62f3",
+  "scriptCommitSha": "c3c2033d4ab1bed5a3198f05ddc129c10ba1646d",
+  "commitSha": "a3b64e9f8da603abdb9f46a1bcf01a23e8962f55",
+  "computedAt": "2026-09-07T09:05:18.643090+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

@@ -97,6 +97,16 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
 
 # AME2020 totals (MeV) — comparison target only (same list as
 # borromean_binding_recompute.py).
+# The ISO table below is built at MODULE level, while the codata import
+# lives inside main() and does not run until main() is called -- so
+# routing the literals here (bean qou-zv46) needed the names bound at
+# module scope as well. Caught by running the producer, not by AST.
+from codata_constants import (  # noqa: E402
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
+
 ISO = [("2H", 1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)), ("3H", 1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
        ("3He", 2, 1, float(AME_B_HE3_MEV_VALIDATION)), ("4He", 2, 2, 28.295673),
        ("6Li", 3, 3, 31.994564), ("7Li", 3, 4, 39.244533),
