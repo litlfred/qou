@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-07T17:54:35.093Z",
+  "generated": "2026-09-07T18:35:51.644Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3745,
-  "files_flagged": 110,
-  "total_defects": 78,
+  "scanned_files": 3747,
+  "files_flagged": 109,
+  "total_defects": 77,
   "total_exempt": 59,
   "total_promoted_from_exempt": 26,
   "categories": {
-    "proof-claims-unencoded": 34,
+    "proof-claims-unencoded": 33,
     "proof-no-self-assuming-projection": 42,
     "proof-no-decide-masking": 1,
     "proof-docstring-sorry-mismatch": 1
@@ -2844,17 +2844,6 @@
         "severity": "critical"
       }
     ],
-    "content/quantum-observable-universe/mass-theory/conj-canonical-knot-id-sdp.lean": [
-      {
-        "line": 171,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class CanonicalKnotIdSDP (n : LightNucleus) where",
-        "decl": "CanonicalKnotIdSDP",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (constituentUniqueness + constituentUniqueness_holds, bindingKPSDFeasible + bindingKPSDFeasible_holds, bindingKMinimalLength + bindingKMinimalLength_holds, bindingKMatchesHistoricalMarkovTrace + bindingKMatchesHistoricalMarkovTrace_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [CanonicalKnotIdSDP]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      }
-    ],
     "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean": [
       {
         "line": 275,
@@ -2955,7 +2944,7 @@
     ],
     "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean": [
       {
-        "line": 105,
+        "line": 106,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem bar_even_kernel_implies_radius_of_convergence",
@@ -2966,7 +2955,7 @@
         "promoted_from_exempt": "type-matched projection (field name escapes CONCLUSION_FIELD; tracked, triage pending)"
       },
       {
-        "line": 122,
+        "line": 123,
         "category": "proof-no-self-assuming-projection",
         "pattern": "tuple-projection",
         "snippet": "def bar_even_kernel_implies_q_one_shadow",
@@ -2976,7 +2965,7 @@
         "exempt_reason": "canonical §3b placeholder projection (tracked; derivation pending)"
       },
       {
-        "line": 132,
+        "line": 133,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem bar_even_kernel_implies_direction_sanity",
