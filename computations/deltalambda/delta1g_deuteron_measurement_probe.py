@@ -91,7 +91,7 @@ def perblock(n_strands, word):
          for k, v in y_lambda_at(n_strands, q0).items()}
     factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in word]
     cp = pyhecke_native.chi_q_atomic_all_partitions(n_strands, factors, q0f)
-    return sum(Y[tuple(s)] * abs(mp.mpf(repr(chi))) for s, chi in cp if tuple(s) in Y)
+    return sum(Y[tuple(s)] * abs(mp.mpf(str(chi))) for s, chi in cp if tuple(s) in Y)
 
 
 def main() -> int:

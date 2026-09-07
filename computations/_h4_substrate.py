@@ -28,7 +28,7 @@ import mpmath as mp
 from codata_2022_source import M_E_MEV, M_MU_MEV, M_P_MEV  # noqa: F401
 import experimental_constants as _ec  # noqa: E402
 
-ALPHA_EM = mp.mpf(1) / mp.mpf(repr(_ec.ALPHA_EM_INV))
+ALPHA_EM = mp.mpf(1) / mp.mpf(str(_ec.ALPHA_EM_INV))
 
 
 def trM_borromean_closed(q):

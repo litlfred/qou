@@ -77,7 +77,7 @@ def _perblock(word):
     three_body_joint_trace_a3._perblock; gen index 1-based)."""
     factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in word]
     cp = pyhecke_native.chi_q_atomic_all_partitions(9, factors, q0f)
-    return sum(_Y9[tuple(s)] * abs(mp.mpf(repr(chi)))
+    return sum(_Y9[tuple(s)] * abs(mp.mpf(str(chi)))
                for s, chi in cp if tuple(s) in _Y9)
 
 
@@ -86,7 +86,7 @@ def _perblock_at(word, qv):
           for k, v in y_lambda_at(9, qv).items()}
     factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in word]
     cp = pyhecke_native.chi_q_atomic_all_partitions(9, factors, float(qv))
-    return sum(yv[tuple(s)] * abs(mp.mpf(repr(chi)))
+    return sum(yv[tuple(s)] * abs(mp.mpf(str(chi)))
                for s, chi in cp if tuple(s) in yv)
 
 

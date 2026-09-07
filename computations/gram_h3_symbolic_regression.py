@@ -155,7 +155,7 @@ def main() -> int:
                     worst, cell = d, (i, j)
         return worst, cell
 
-    G_ref = [[mp.mpf(repr(G_pyhecke[i][j])) for j in range(6)] for i in range(6)]
+    G_ref = [[mp.mpf(str(G_pyhecke[i][j])) for j in range(6)] for i in range(6)]
     max_diff_D, cell_D = max_abs_diff(G_D, G_ref)
     max_diff_C, cell_C = max_abs_diff(G_C, G_ref)
     gap_CD, cell_CD = max_abs_diff(G_C, G_D)

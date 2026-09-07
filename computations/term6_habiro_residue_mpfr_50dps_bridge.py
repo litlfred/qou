@@ -87,7 +87,7 @@ def main() -> int:
         # MeV by multiplying by the module-level M_E_MEV_MP (P31 compliant).
         cat_units = float(r["term6_at_q0_real"])
         # Use mpmath 50-dps str roundtrip to preserve precision.
-        t6_b_pred_MeV = M_E_MEV_MP * mp.mpf(repr(cat_units))
+        t6_b_pred_MeV = M_E_MEV_MP * mp.mpf(str(cat_units))
         out_rows.append({
             "atom":                  f"A={A}",
             "A":                     A,

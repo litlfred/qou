@@ -48,7 +48,7 @@ _Y9 = {tuple(k) if isinstance(k, (list, tuple)) else k: mp.mpf(str(v))
 def _perblock(word):
     factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in word]
     cp = pyhecke_native.chi_q_atomic_all_partitions(9, factors, q0f)
-    return sum(_Y9[tuple(s)] * abs(mp.mpf(repr(chi)))
+    return sum(_Y9[tuple(s)] * abs(mp.mpf(str(chi)))
                for s, chi in cp if tuple(s) in _Y9)
 
 

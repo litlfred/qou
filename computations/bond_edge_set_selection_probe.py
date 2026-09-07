@@ -140,7 +140,7 @@ def main() -> int:
         # may carry it as a decimal string or a number depending on that
         # producer's drain state. Read either, exactly.
         _b = r["B_AME_MeV"]
-        B_ame = mp.mpmathify(_b) if isinstance(_b, str) else mp.mpf(repr(_b))
+        B_ame = mp.mpmathify(_b) if isinstance(_b, str) else mp.mpf(str(_b))
         L_req = B_ame / E0
         max_pp, max_pn, max_nn = Z * (Z - 1) // 2, Z * N, N * (N - 1) // 2
 

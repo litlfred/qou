@@ -51,11 +51,11 @@ ISO = {"d": (6, "2.2245662"), "t": (9, "8.4818"), "3he": (9, "7.7180")}
 
 def _mpf(v):
     """Witness numerics are a 50-dps STRING post-migration, a float before it.
-    `mp.mpf(repr(v))` is right for a float — repr round-trips all 17 digits —
+    `mp.mpf(str(v))` is right for a float — repr round-trips all 17 digits —
     but on a string it yields `mpf("\'155…\'")`, quotes included, which mpmath
     rejects outright. Reading the string directly is also strictly better: it
     carries 50 digits where the float carried 17."""
-    return mp.mpf(v) if isinstance(v, str) else mp.mpf(repr(v))
+    return mp.mpf(v) if isinstance(v, str) else mp.mpf(str(v))
 
 
 def _read_chi(iso: str):

@@ -108,8 +108,8 @@ except Exception as exc:                                    # pragma: no cover
     print(f"  SKIPPED: {type(exc).__name__}: {exc}")
     raise SystemExit(0)
 
-Q0 = mp.mpf(repr(ow.Q0))
-Z0 = mp.mpf(repr(ow.z_num))
+Q0 = mp.mpf(str(ow.Q0))
+Z0 = mp.mpf(str(ow.z_num))
 print(f"  q0     = {mp.nstr(Q0, 17)}")
 print(f"  z_num  = {mp.nstr(Z0, 17)}   (module defines z_num = Q0**3/(Q0**2+1))")
 print(f"  q^3/(q^2+1) at that q0 = {mp.nstr(Q0**3 / (Q0**2 + 1), 17)}   -> convention D")
@@ -140,7 +140,7 @@ for n in (2, 3, 4, 5):
     for shape, om in sorted(theirs.items()):
         s = tuple(shape)
         mine = dim(s) * W(s)                       # their omega_lam = d_lam * W_lam
-        t = mp.mpf(repr(om))
+        t = mp.mpf(str(om))
         d = abs(mine - t)
         worst = max(worst, d)
         rows = len(s)

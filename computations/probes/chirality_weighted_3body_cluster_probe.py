@@ -78,7 +78,7 @@ def perblock(word, mode):
         key = tuple(s)
         if key not in _Y9:
             continue
-        c = mp.mpf(repr(chi))
+        c = mp.mpf(str(chi))
         if mode == "abs":
             w = abs(c)
         elif mode == "signed":

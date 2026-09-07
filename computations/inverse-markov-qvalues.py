@@ -70,7 +70,7 @@ set_compute_dps()
 M_E_MEV = mp.mpf(_M_E_MEV)
 M_P_MEV = mp.mpf(_M_P_MEV)
 M_N_MEV = mp.mpf(_M_N_MEV)
-Q_TRITIUM_MEV = mp.mpf(repr(_Q_TRITIUM_MEV))
+Q_TRITIUM_MEV = mp.mpf(str(_Q_TRITIUM_MEV))
 Q_NEUTRON_MEV = mp.mpf(_Q_NEUTRON_MEV)
 
 z = q**3 / (q**2 + 1)

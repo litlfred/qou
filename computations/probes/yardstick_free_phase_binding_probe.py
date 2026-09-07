@@ -71,7 +71,7 @@ def perblock(word, n):
     for s, chi in cp:
         key = tuple(s)
         if key in Y:
-            tot += Y[key] * abs(mp.mpf(repr(chi)))
+            tot += Y[key] * abs(mp.mpf(str(chi)))
     return tot
 
 

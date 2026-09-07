@@ -234,7 +234,7 @@ def main() -> int:
             key = (i, j) if i <= j else (j, i)
             fD = sp.lambdify(q, GD[key], modules="mpmath")
             fC = sp.lambdify(q, sp.simplify(G[key[0]][key[1]].subs(z, Z_C)), modules="mpmath")
-            dref = abs(fD(q0) - mp.mpf(repr(ref[i][j])))
+            dref = abs(fD(q0) - mp.mpf(str(ref[i][j])))
             if dref > worst_d_vs_ref:
                 worst_d_vs_ref, cell_ref = dref, (i, j)
             dcd = abs(fC(q0) - fD(q0))

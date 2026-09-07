@@ -67,11 +67,11 @@ SOURCE = COMPUTATIONS / "delta-lambda-canonical-residual.witness.json"
 def main() -> int:
     set_compute_dps()
     src = record_upstream(SOURCE, _UPSTREAM_RECORDS)["data"]
-    q0 = mp.mpf(repr(src["q0"]))
+    q0 = mp.mpf(str(src["q0"]))
     lnq0 = mp.log(q0)
 
     def ord_q0(x) -> mp.mpf:
-        return mp.log(mp.mpf(repr(x))) / lnq0
+        return mp.log(mp.mpf(str(x))) / lnq0
 
     w = WitnessBuilder("h1-exponent-location", engine="mpmath")
     w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed

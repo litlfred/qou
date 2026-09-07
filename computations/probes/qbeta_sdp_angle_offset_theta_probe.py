@@ -203,7 +203,7 @@ def main() -> int:
     for anchor, name, cell, V1 in (("muon", "m004", "regular ideal TETRAHEDRON", V_tet),
                                    ("proton", "L6a4", "regular ideal OCTAHEDRON", V_oct)):
         Mv = snappy.Manifold(name)
-        vol = mp.mpf(repr(Mv.volume()))
+        vol = mp.mpf(str(Mv.volume()))
         rel = abs(vol - 2 * V1) / vol
         cells[anchor] = {"manifold": name, "cell": cell,
                          "cell_volume": mp.nstr(V1, 16),

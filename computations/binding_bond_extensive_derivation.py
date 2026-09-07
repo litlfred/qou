@@ -76,7 +76,7 @@ def main() -> int:
         gm[iL], gm[iR] = mp.mpf(1) / 2, -mp.mpf(1) / 2
         self_norm_mp = sum(gm[i] * Gmp[i][j] * gm[j]
                            for i in range(6) for j in range(6))
-        norm_gap = abs(self_norm_mp - mp.mpf(repr(self_norm))) / abs(self_norm_mp)
+        norm_gap = abs(self_norm_mp - mp.mpf(str(self_norm))) / abs(self_norm_mp)
         self_norm_s, norm_gap_s = mp.nstr(self_norm_mp, 25), mp.nstr(norm_gap, 6)
     print(f"  cross-check: tr_M(g) exactly {tr_g_exact} (rational); ⟨g⟩²_G at 60 dps "
           f"{self_norm_s}, relative gap to float64 {norm_gap_s}")

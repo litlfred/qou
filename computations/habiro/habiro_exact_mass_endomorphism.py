@@ -247,7 +247,7 @@ def _comparison_to_f64(m_p_over_m_e, M_P_AME, M_E):
             _ME.additive_wedderburn_volumes(2, _ME.electron_cross))[3]
         p64 = _ME.mass_from_tower(
             _ME.additive_wedderburn_volumes(3, _ME.proton_cross))[3]
-        r64 = mp.mpf(repr(p64 / e64))
+        r64 = mp.mpf(str(p64 / e64))
         d64 = (r64 - M_P_AME / M_E) / (M_P_AME / M_E) * 100
         out.update({
             "f64_m_p_over_m_e_measured": fmt(r64),

@@ -372,7 +372,7 @@ def test_z_mp_is_in_lockstep_with_float64_z():
     import mpmath as mp
     from pyhecke import gram as pyhecke_gram
     with mp.workdps(50):
-        zf = mp.mpf(repr(pyhecke_gram.z))
+        zf = mp.mpf(str(pyhecke_gram.z))
         zm = pyhecke_gram.z_mp()
         rel = abs(zm - zf) / zf
         assert rel < mp.mpf("1e-15"), (
@@ -391,7 +391,7 @@ def test_tr_m_mp_is_in_lockstep_with_float64_TR_M():
     with mp.workdps(50):
         for i, (a, b) in enumerate(zip(pyhecke_gram.TR_M,
                                        pyhecke_gram.tr_m_mp())):
-            af = mp.mpf(repr(float(a)))
+            af = mp.mpf(str(float(a)))
             rel = abs(b - af) / max(abs(af), mp.mpf("1e-30"))
             assert rel < mp.mpf("1e-14"), (
                 f"tr_m_mp()[{i}] diverges from TR_M[{i}]: "
@@ -414,7 +414,7 @@ def test_gram_matrix_mp_agrees_with_float64_G():
         worst = mp.mpf(0)
         for i in range(6):
             for j in range(6):
-                af = mp.mpf(repr(float(G[i][j])))
+                af = mp.mpf(str(float(G[i][j])))
                 rel = abs(Gm[i][j] - af) / max(abs(af), mp.mpf("1e-30"))
                 worst = max(worst, rel)
         assert worst < mp.mpf("1e-14"), (

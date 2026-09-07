@@ -200,7 +200,7 @@ def _nearest_rel_mp(raw: str, vals: list[float]):
     for v in vals:
         if v == 0.0:
             continue
-        mv = mp.mpf(repr(v))
+        mv = mp.mpf(str(v))
         for cand in (x, x / 100):
             d = abs(mv - cand) / abs(cand)
             if best is None or d < best:

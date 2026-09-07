@@ -250,7 +250,7 @@ def main() -> int:
             print(f"{iso:4s} {A:>2d} {ncr:>4d} {vol:>10.5f} "
                   f"{'yes' if verified else '·':>6s} {sol:>26s} "
                   f"{B_AME[iso]:>8.3f}")
-            w.add_data(f"{pn_mode}_{iso}_vol", mp.nstr(mp.mpf(repr(vol)), 12))
+            w.add_data(f"{pn_mode}_{iso}_vol", mp.nstr(mp.mpf(str(vol)), 12))
             w.add_data(f"{pn_mode}_{iso}_solution_type", sol)
             w.add_data(f"{pn_mode}_{iso}_verified_hyperbolic", bool(verified))
             w.add_data(f"{pn_mode}_{iso}_n_crossings", ncr)

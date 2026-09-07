@@ -1462,7 +1462,7 @@ def _solve_psd_via_clarabel_lp(
                     G_m = [[_mp.mpf(G[i][j]) for j in range(len(G))]
                            for i in range(len(G))]
                 else:
-                    G_m = [[_mp.mpf(repr(float(G_f[i, j]))) for j in range(G_f.shape[1])]
+                    G_m = [[_mp.mpf(str(float(G_f[i, j]))) for j in range(G_f.shape[1])]
                            for i in range(G_f.shape[0])]
                 x_m = [_mp.mpf(v) for v in lp.x_star_str]
                 gx_m = [sum((G_m[i][j] * x_m[j] for j in range(len(x_m))), _mp.mpf(0))

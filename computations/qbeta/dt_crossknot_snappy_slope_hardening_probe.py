@@ -96,7 +96,7 @@ def main() -> int:
         abs_slopes = sorted({abs(m_) if l_ in (1, -1) else None
                              for (m_, l_) in slopes} - {None})
         # slope p/q with q = +-1 for all these census knots -> |slope| = |m|
-        vol = mp.mpf(repr(M.volume()))
+        vol = mp.mpf(str(M.volume()))
         vol_err = mp.fabs(vol - VOL_CORPUS[name])
         results[name] = {
             "slopes_snappy": [list(s) for s in slopes],

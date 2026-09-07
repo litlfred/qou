@@ -74,7 +74,7 @@ def load_witness(name: str) -> dict:
 
 # ── Read the existing H_3 Gram-matrix witness (canonical input) ───
 gram_w = load_witness("gram-matrix-dual.witness.json")
-G = [[mp.mpf(repr(g)) for g in row] for row in gram_w["gram_matrix"]]
+G = [[mp.mpf(str(g)) for g in row] for row in gram_w["gram_matrix"]]
 
 
 def matmul(A, B):

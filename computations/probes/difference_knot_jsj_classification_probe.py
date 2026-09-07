@@ -110,7 +110,7 @@ def main() -> int:
         print(f"{iso:4s} {A:>2d} {len(braid):>4d} {cusps:>5d} {2*A-1:>5d} "
               f"{vol:>10.5f} {sol:>26s}")
         w.add_data(f"{iso}_num_cusps", cusps)
-        w.add_data(f"{iso}_hp_volume", mp.nstr(mp.mpf(repr(vol)), 12))
+        w.add_data(f"{iso}_hp_volume", mp.nstr(mp.mpf(str(vol)), 12))
         w.add_data(f"{iso}_solution_type", sol)
         w.add_data(f"{iso}_components_eq_2A_minus_1", bool(cusps == 2 * A - 1))
 

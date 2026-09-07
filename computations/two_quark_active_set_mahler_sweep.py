@@ -148,8 +148,8 @@ def solve_lp(q: mp.mpf, n_target: float = 1.0, M: float = 1e6) -> dict:
         "dual_obj": float(res.dual_obj),
         "duality_gap": float(res.duality_gap),
         "Frobenius_slack": [
-            float(G11 * mp.mpf(repr(x_star[0])) + G12 * mp.mpf(repr(x_star[1]))),
-            float(G12 * mp.mpf(repr(x_star[0])) + G22 * mp.mpf(repr(x_star[1]))),
+            float(G11 * mp.mpf(str(x_star[0])) + G12 * mp.mpf(str(x_star[1]))),
+            float(G12 * mp.mpf(str(x_star[0])) + G22 * mp.mpf(str(x_star[1]))),
         ],
     }
     out.update(provenance(res))

@@ -124,8 +124,8 @@ def main() -> int:
         all_nonhyp = all_nonhyp and nonhyp
         print(f"{iso:4s} {cv:>6.1%} {vmin:>8.2f} {vmax:>8.2f} {n_neg:>7d} "
               f"{str(irred):>6s} {str(haken):>6s}")
-        w.add_data(f"{iso}_vol_cv", mp.nstr(mp.mpf(repr(cv)), 6))
-        w.add_data(f"{iso}_vol_min", mp.nstr(mp.mpf(repr(vmin)), 6))
+        w.add_data(f"{iso}_vol_cv", mp.nstr(mp.mpf(str(cv)), 6))
+        w.add_data(f"{iso}_vol_min", mp.nstr(mp.mpf(str(vmin)), 6))
         w.add_data(f"{iso}_n_negative_of_25", n_neg)
         w.add_data(f"{iso}_regina_irreducible", irred)
         w.add_data(f"{iso}_regina_haken", haken)

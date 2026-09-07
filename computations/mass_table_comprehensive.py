@@ -552,7 +552,7 @@ def main() -> int:
             m_observed = (
                 Z * M_P_MEV_VALIDATION
                 + N * M_N_MEV_VALIDATION
-                - mp.mpf(repr(B_AME))
+                - mp.mpf(str(B_AME))
             )
 
         # Errors against Observed

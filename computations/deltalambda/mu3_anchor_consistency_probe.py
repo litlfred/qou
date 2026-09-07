@@ -105,7 +105,7 @@ Q_MUON = mp.mpf(_q0_value_for_anchor("muon"))
 
 def chis(word, qf):
     f = [(float(c), float(d), int(g) + 1) for (c, d, g) in word]
-    return {tuple(s): mp.mpf(repr(c))
+    return {tuple(s): mp.mpf(str(c))
             for s, c in pyhecke_native.chi_q_atomic_all_partitions(9, f, qf)}
 
 

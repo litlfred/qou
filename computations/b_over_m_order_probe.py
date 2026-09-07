@@ -55,7 +55,7 @@ set_compute_dps()
 # column beside it was not.
 #
 # They are also no longer round-tripped through float64. The old shape was
-#     "B": float(AME_B_..._VALIDATION)      then    mp.mpf(repr(v["B"]))
+#     "B": float(AME_B_..._VALIDATION)      then    mp.mpf(str(v["B"]))
 # which takes an exact mpf, truncates it to a float, and rebuilds an mpf
 # from the float's digits -- so the registry's precision was discarded at
 # the door and the `mp.mpf` on the way back in bought nothing. A probe is

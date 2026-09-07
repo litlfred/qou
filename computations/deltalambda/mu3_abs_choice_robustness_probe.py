@@ -55,7 +55,7 @@ EXPECT = {"T": -1.769, "3He": -1.405}
 
 def chis(word):
     f = [(float(c), float(d), int(g) + 1) for (c, d, g) in word]
-    return {tuple(s): mp.mpf(repr(c))
+    return {tuple(s): mp.mpf(str(c))
             for s, c in pyhecke_native.chi_q_atomic_all_partitions(9, f, q0f)}
 
 

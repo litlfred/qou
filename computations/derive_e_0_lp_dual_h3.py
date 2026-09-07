@@ -399,8 +399,8 @@ def main() -> int:
     # duality gap byte-identical to a pristine run.
     with mp.workdps(50):
         _rel = [
-            mp.fabs(mp.mpf(repr(r["duality_gap"])))
-            / mp.fabs(mp.mpf(repr(r["primal_obj"])))
+            mp.fabs(mp.mpf(str(r["duality_gap"])))
+            / mp.fabs(mp.mpf(str(r["primal_obj"])))
             for r in _cone if r.get("feasible") and r.get("primal_obj")
         ]
     if _rel:

@@ -237,7 +237,7 @@ def term_23_brane_tower_mp(
             "expected 'li2q' or 'phi_q'"
         )
     vols_mp = _load_mpfr_native_volumes(Z, N)
-    z_mp = mp.mpf(repr(z_mark))
+    z_mp = mp.mpf(str(z_mark))
 
     if tower_form == "li2q":
         # Lazy import keeps the legacy Φ_q path zero-dependency on

@@ -72,7 +72,7 @@ def perblock12(word, mode="abs"):
         key = tuple(s)
         if key not in _Y12:
             continue
-        c = mp.mpf(repr(chi))
+        c = mp.mpf(str(chi))
         tot += _Y12[key] * (abs(c) if mode == "abs" else c)
     return tot
 

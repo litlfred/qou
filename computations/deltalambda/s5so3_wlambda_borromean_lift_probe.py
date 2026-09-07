@@ -111,7 +111,7 @@ def _characters(word):
     #4364 uses (`chi_q_atomic_all_partitions`, kernel gen index 1-based)."""
     factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in word]
     cp = pyhecke_native.chi_q_atomic_all_partitions(9, factors, q0f)
-    return {tuple(s): mp.mpf(repr(chi)) for s, chi in cp}
+    return {tuple(s): mp.mpf(str(chi)) for s, chi in cp}
 
 
 def _perblock(word, weight):

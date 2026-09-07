@@ -177,7 +177,7 @@ def main() -> int:
          # The per-atom deviations are already in `rows` above — not repeated
          # here, because every extra float field GROWS the raw-float64 count
          # and these values are float64 at source (read out of the residual
-         # witness as JSON numbers). Serialising them through mp.mpf(repr(x))
+         # witness as JSON numbers). Serialising them through mp.mpf(str(x))
          # to zero that count was tried on 2026-08-23 and is WRONG: it writes
          # 50 digits of a number that has 16, and the float64-padding ratchet
          # correctly caught 26 new fake-precision values. The count is accurate

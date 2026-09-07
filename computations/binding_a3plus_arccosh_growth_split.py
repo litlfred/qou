@@ -168,8 +168,8 @@ def channel_sum(by_partition: list, y_map: dict, combine_fn,
             )
         y = y_map[key]
         dim = row["dim"]
-        r_free = mp.mpf(repr(row.get("r_free", 0)))
-        r_atom = mp.mpf(repr(row.get("r_atom", 0)))
+        r_free = mp.mpf(str(row.get("r_free", 0)))
+        r_atom = mp.mpf(str(row.get("r_atom", 0)))
         d_rot = abs(theta_rotation(r_atom) - theta_rotation(r_free))
         d_growth = abs(theta_growth(r_atom) - theta_growth(r_free))
         s += y * dim * combine_fn(d_rot, d_growth)

@@ -210,7 +210,7 @@ def main() -> int:
     for side, terms in (("neutron", terms_n), ("proton", terms_p)):
         for t in fnd[side]["nf_terms"]:
             n_total += 1
-            mine = float(evalq(terms[tuple(t["word"])], mp.mpf(repr(q0_float))))
+            mine = float(evalq(terms[tuple(t["word"])], mp.mpf(str(q0_float))))
             if abs(mine - t["coefficient_numeric"]) < 1e-9:
                 n_match += 1
     print(f"  §0 canonical NF parse: {len(terms_n)}+{len(terms_p)} terms, "
@@ -256,7 +256,7 @@ def main() -> int:
             crossings = [(g, "sigma") for g in w]
             chi[shape][w] = sp.cancel(chi_lambda_symbolic(shape, crossings))
 
-    q0_mp = mp.mpf(repr(q0_float))
+    q0_mp = mp.mpf(str(q0_float))
     gate1_pass = 0
     gate1_rows = []
     for w in basis_words:

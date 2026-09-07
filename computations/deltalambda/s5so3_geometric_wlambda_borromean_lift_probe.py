@@ -106,7 +106,7 @@ _S_Y = sum(_Y9.values())                             # Σ y_λ (= 0.0318, NOT 1)
 def _characters(word):
     factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in word]
     cp = pyhecke_native.chi_q_atomic_all_partitions(9, factors, q0f)
-    return {tuple(s): mp.mpf(repr(chi)) for s, chi in cp}
+    return {tuple(s): mp.mpf(str(chi)) for s, chi in cp}
 
 
 def _perblock(word, weight):

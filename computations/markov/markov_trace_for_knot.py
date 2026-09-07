@@ -190,7 +190,7 @@ def _markov_trace_mpf(
         q_str = q
     else:
         # float / int — DOC THIS AS LOSSY at the call site
-        q_mpf = mp.mpf(repr(q))
+        q_mpf = mp.mpf(str(q))
         q_str = repr(q)
 
     braid = braid_word_for_knot(knot_name)

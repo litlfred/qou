@@ -85,7 +85,7 @@ def chi_dict(word):
     """Per-Wedderburn-block |χ_λ(w)| — the GEOMETRY, stripped of the weight y_λ."""
     factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in word]
     cp = pyhecke_native.chi_q_atomic_all_partitions(9, factors, q0f)
-    return {tuple(s): abs(mp.mpf(repr(chi))) for s, chi in cp if tuple(s) in _Y9}
+    return {tuple(s): abs(mp.mpf(str(chi))) for s, chi in cp if tuple(s) in _Y9}
 
 
 def classify(chi2, ra, rb, rab):

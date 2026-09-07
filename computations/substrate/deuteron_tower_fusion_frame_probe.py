@@ -103,7 +103,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402  (canonical q0, via substra
 # float64 `Q0**3/(Q0**2+1)` until 2026-08-23 (AGENTS.md "PROBES ARE NOT EXEMPT").
 with _mp.workdps(50):
     _q0 = _mp.mpf(Q_50_DIGIT_STR)
-    z_live = _mp.mpf(repr(float(gram.z)))
+    z_live = _mp.mpf(str(float(gram.z)))
     z_formula = _q0**3 / (_q0**2 + 1)
     # 1e-12 is far looser than float64 eps at this magnitude (~1.1e-16); it is
     # the historical threshold and is kept so the tripwire's sensitivity does

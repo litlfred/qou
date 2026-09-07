@@ -223,7 +223,7 @@ def main() -> None:
     # What the superseded float64 midpoint rule gave, kept as a cross-check on
     # the new routine AND as the evidence that the kink cost it ~10 digits.
     f64 = {f"n={n}": gauss_integrals(PHI, 1.0, n) for n in (200, 400, 800)}
-    f64_err = abs(acn_ref - mp.mpf(repr(f64["n=800"][1])))
+    f64_err = abs(acn_ref - mp.mpf(str(f64["n=800"][1])))
 
     # Realisation-dependence: sweep the ellipse aspect ratio.
     sweep = {}

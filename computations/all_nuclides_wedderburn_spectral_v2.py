@@ -96,7 +96,7 @@ try:
 except (ImportError, AttributeError) as _q_err:  # narrow: only "not there"
     # Do NOT swallow real q_at bugs — those should crash the probe.
     from qou_substrate.constants import Q as _Qf  # noqa: E402
-    Q0 = mp.mpf(repr(_Qf))
+    Q0 = mp.mpf(str(_Qf))
     _Q0_SOURCE = f"FALLBACK f64-seeded Q ({type(_q_err).__name__}: {_q_err})"
     print(f"[warn] q_at unavailable — q0 precision downgraded to the "
           f"f64-seeded value: {_q_err}", file=sys.stderr)

@@ -228,7 +228,7 @@ def perblock(n, hecke_word, qv=None):
     Y = _yn(n, qv)
     cp = pyhecke_native.chi_q_atomic_all_partitions(
         n, [(float(c), float(d), int(g) + 1) for (c, d, g) in hecke_word], float(qv))
-    return sum(Y[tuple(s)] * abs(mp.mpf(repr(chi))) for s, chi in cp if tuple(s) in Y)
+    return sum(Y[tuple(s)] * abs(mp.mpf(str(chi))) for s, chi in cp if tuple(s) in Y)
 
 
 def deficit_sigma(n, sigma_word, qv=None, h=None):

@@ -142,7 +142,7 @@ def _perblock(n, word, qv=None):
     Y = _yn(n, qv)
     factors = [(float(c), float(d), int(g) + 1) for (c, d, g) in word]
     cp = pyhecke_native.chi_q_atomic_all_partitions(n, factors, float(qv))
-    return sum(Y[tuple(s)] * abs(mp.mpf(repr(chi))) for s, chi in cp if tuple(s) in Y)
+    return sum(Y[tuple(s)] * abs(mp.mpf(str(chi))) for s, chi in cp if tuple(s) in Y)
 
 
 # =========================================================================

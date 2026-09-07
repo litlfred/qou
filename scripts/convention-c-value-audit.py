@@ -275,7 +275,7 @@ def _evaluate(node: ast.AST, var: str, x):
         # A float LITERAL in the source is fine to read -- it is the author's
         # written constant.  It is re-created as mpf so the ARITHMETIC below
         # never happens in float64.
-        return mp.mpf(repr(node.value))
+        return mp.mpf(str(node.value))
     if isinstance(node, ast.Name):
         if node.id != var:
             raise _NotArithmetic

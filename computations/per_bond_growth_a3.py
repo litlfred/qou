@@ -56,7 +56,7 @@ def _perblock_word(word):
     for shape, chi in chi_pairs:
         y = _Y9.get(tuple(shape))
         if y is not None:
-            tot += y * abs(mp.mpf(repr(chi)))
+            tot += y * abs(mp.mpf(str(chi)))
     return tot
 
 

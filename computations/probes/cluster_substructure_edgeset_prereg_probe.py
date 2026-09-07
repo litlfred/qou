@@ -215,7 +215,7 @@ def main():
         # writing it as a JSON number would put raw float64 INTO the witness
         # (raw-float64 ratchet). repr() is lossless for a binary64.
         xcheck = {k: {"prod_float64_repr": repr(prod[k]), "mpf": mp.nstr(L[k], 20),
-                      "abs_diff": mp.nstr(abs(mp.mpf(repr(prod[k])) - L[k]), 4)}
+                      "abs_diff": mp.nstr(abs(mp.mpf(str(prod[k])) - L[k]), 4)}
                   for k in ("pp", "pn", "nn")}
         print("\n-- cross-check vs production `_bond_type_L` (which returns float):")
         for k in ("pp", "pn", "nn"):

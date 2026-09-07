@@ -87,7 +87,7 @@ def main() -> int:
     hbar_q_sq = hbar_q * hbar_q
     # Vol(4_1) recovered identity: Vol(4_1) = (m_μ/m_e) · ℏ_q²
     cal2_target = mp.mpf(MU_OVER_E)
-    cal_tau_e = mp.mpf(repr(TAU_OVER_E))
+    cal_tau_e = mp.mpf(str(TAU_OVER_E))
     Vol_4_1 = cal2_target * hbar_q_sq  # for the muon sanity check below
     # A convention-C `z` was bound here and NEVER READ -- `z` occurred
     # exactly once in this file, in its own assignment. Excised by

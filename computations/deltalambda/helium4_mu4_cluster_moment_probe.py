@@ -108,7 +108,7 @@ def perblock(word):
     el = time.time() - _calls["t0"]
     print(f"      [trace {_calls['n']:2d}/64] {el:7.1f}s elapsed  "
           f"ETA {el / _calls['n'] * (64 - _calls['n']):6.1f}s", flush=True)
-    return sum(_Y12[tuple(s)] * abs(mp.mpf(repr(chi)))
+    return sum(_Y12[tuple(s)] * abs(mp.mpf(str(chi)))
                for s, chi in cp if tuple(s) in _Y12)
 
 

@@ -189,7 +189,7 @@ def _cell(x):
     """
     if x is None:
         return None
-    return mp.mpmathify(x) if isinstance(x, str) else mp.mpf(repr(x))
+    return mp.mpmathify(x) if isinstance(x, str) else mp.mpf(str(x))
 
 
 def _lit(x):

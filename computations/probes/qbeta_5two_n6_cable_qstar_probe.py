@@ -156,7 +156,7 @@ def main() -> int:
 
     # ---- G0c: cross-engine gate vs the committed dense-f64 N=6 results ----
     f64_path = Path(__file__).parent / "qbeta-5two-n6-cable-qstar-rust.results.json"
-    B6_f64 = mp.mpf(repr(json.load(open(f64_path))["B_qstar"]))
+    B6_f64 = mp.mpf(str(json.load(open(f64_path))["B_qstar"]))
 
     # ---- G1: unknot framing at N=6 — magnitude gated, sign recorded ----
     log("[G1] unknot framing at N=6 ...")
