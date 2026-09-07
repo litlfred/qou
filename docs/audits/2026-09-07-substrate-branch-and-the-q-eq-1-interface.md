@@ -212,6 +212,50 @@ Energy conservation across the layer is unchecked. And this is a **boundary** me
 not a **substance** one: interface area scales differently from volume, so the
 dark-matter budget arithmetic differs entirely from §6 and has not been done.
 
+### 4b. Settled: the mass ratio diverges, so the interface is a BARRIER
+
+§4 left "barrier or door" open, because `rem:cosmological-chirality-flip`'s
+"vanishing masses" contradicts $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$. The escape
+route for the prose was that the density $\rho$ might itself vanish at $q=1$, cancelling
+the $\hbar_q^{-2}$ divergence. **It does not.**
+
+Measured via `wedderburn_jones_markov.y_lambda_at(3, q)`:
+
+| $q$ | $\hbar_q$ | $\sum_\lambda y_\lambda(H_3)$ | $\mathrm{Vol}(4_1)/\hbar_q^2$ |
+|---|---|---|---|
+| 1.1099785827513808 | 0.099081716 | 0.752702113252 | 206.7683264 |
+| 1.05 | 0.047619048 | 0.750594176855 | 895.1784969 |
+| 1.01 | 0.0099009901 | 0.750024750637 | 20706.83865 |
+| 1.001 | 0.000999001 | 0.75000024975 | 2033945.009 |
+| 1.0001 | $9.9990001\times10^{-5}$ | 0.7500000025 | 203028921.0 |
+
+The weight sum converges cleanly to **exactly $3/4$**. With $\hbar_q \to 0$ and
+$\mathrm{Vol}(K)$ $q$-independent, $m(K)/m_e = \mathrm{Vol}(K)\rho(K)/\hbar_q^2$
+**diverges**. Since the framework's mass content is entirely in the ratios — absolute
+mass is $m_e \times$ (dimensionless ratio) with $m_e$ fixed by fiat — the prose claim
+has no support from the machinery.
+
+**Consequence.** Reaching the $q=1$ layer costs unbounded energy: the surface is
+**self-shielding**, matter and antimatter domains never come into contact, and the
+CDG98 $\gamma$-ray bound is evaded by an infinite barrier rather than by a suppressed
+cross-section. This is `rem:time-reversal-energy-barrier`'s
+$\mathfrak{E}_{\text{flip}} = +\infty$ appearing *spatially* rather than in
+configuration space.
+
+**Scope: (a), not (b).** What was measured is $\sum_\lambda y_\lambda$, not
+$\rho_{\text{pb}}(K) = \sum_\lambda y_\lambda \chi^\lambda(\beta_K)$ for a specific
+knot. At $q=1$ the algebra is $\mathbb{C}[S_n]$ and the $\chi^\lambda$ are integer
+symmetric-group characters, so $\rho$ could still vanish for a knot whose image
+permutation makes the sum cancel. **Generic** knots give finite nonzero $\rho$ and hence
+a divergent ratio; a per-knot character computation would be needed to upgrade this to a
+structural exclusion.
+
+**Flagged, not claimed.** AGENTS.md's notation register states the three partition-weight
+families coincide at $q=1$ and that $\sum_\lambda w_\lambda(1) = 1$ exactly. The measured
+$y_\lambda$ sum converges to $3/4$, not $1$. That is most likely a normalisation
+convention inside `y_lambda_at` rather than a defect, but it has not been checked and
+should not be quoted as agreement.
+
 ## 5. Scope of the negatives
 
 Per AGENTS.md §"Before declaring refuted":
