@@ -1720,35 +1720,30 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                        if k_exact < e['k'] <= k_max and e['dim'] >= 2]
     active = active_exact
 
-    # NOTE (2026-09-07, bean `qou-sv7h`): `active = active_exact` is what makes
-    # the q-Gaussian tier INERT, not merely unreachable at the defaults.
-    #
-    # `state` is built from `active`, so a Gaussian partition never enters it.
-    # Its contribution is computed in Pass 1 and accumulated into `cumul_total`
-    # — and Pass 2 does not use `cumul_total`: it rebuilds the answer as
-    # `gated_total = Σ_{s ∈ state} s['cumul_partition']`. So the Gaussian
-    # contribution is computed and DISCARDED.
-    #
-    # Measured before the code was read, then explained by it. `k_max = k_exact`
-    # empties `active_gaussian`; the results are byte-identical either way:
+    # NOTE (2026-09-07, bean `qou-sv7h`): `k_max` does not affect the return
+    # value. `k_max = k_exact` empties `active_gaussian`; results are
+    # byte-identical either way —
     #
     #     A=2 k=4   gauss=169 -> -0.08955968305895068   gauss=0 -> same
     #     A=2 k=5   gauss=164 -> -0.7335499391634976    gauss=0 -> same
     #     A=4 k=4   gauss=169 -> -0.08058674847769143   gauss=0 -> same
     #
-    # Two consequences worth knowing before touching this:
+    # — because `delta_g` in the Gaussian loop below is a HARDCODED 0.0, by
+    # complementary slackness, as the comment there says. Raising `k_max` buys
+    # `log_trace` values for the per-step rows and nothing else.
     #
-    #  - `k_max` does not affect the return value at all. Raising it costs
-    #    compute and changes nothing.
-    #  - The per-step witness rows DISAGREE with the return value:
-    #    `cumulative_MeV` and `raw_total_MeV` carry `cumul_total`, which
-    #    INCLUDES the Gaussian contribution, while the function returns
-    #    `gated_total`, which excludes it.
+    # RETRACTION, same day. This note first read "the Gaussian contribution is
+    # computed and DISCARDED", on the theory that `state` excludes Gaussian
+    # partitions so Pass 2 drops their contribution. The measurement above was
+    # right and the mechanism was wrong: there is no contribution to drop.
+    # I inferred the mechanism from the two totals' definitions without reading
+    # the twenty lines that set `delta_g`, and the byte-identical results are
+    # equally consistent with either story — which is exactly why a measurement
+    # that matches your hypothesis is not evidence for its mechanism.
     #
-    # Whether the tier SHOULD contribute is a design question, not a typo:
-    # Pass 2 gates on `final_tr_sign`, which a Gaussian partition has no
-    # matrix to supply. Left as-is deliberately — this note records the
-    # behaviour, it does not change it.
+    # The disagreement between the per-step rows and the return value is real,
+    # but it is RAW-vs-GATED and has nothing to do with this tier. See the
+    # `cumulative_ungated_MeV` note at the per-step append below.
 
     # ═══ TWO-PASS LP-DUAL WITH COMPLEMENTARY SLACKNESS ═════════
     #
@@ -2019,10 +2014,36 @@ def unified_iterative_correction(Z, N, return_per_step=False,
         if return_per_step:
             Z_k = sum(1 for x in ordering[:kk + 1] if x == 'p')
             N_k = (kk + 1) - Z_k
+            # `cumulative_ungated_MeV`, NOT `cumulative_MeV` (renamed
+            # 2026-09-07, bean `qou-sv7h`).
+            #
+            # This running total is UNGATED and the function's return value is
+            # GATED, so the two are different numbers — and not slightly.
+            # Measured at k_exact=4:
+            #
+            #     A=2   ungated -0.4122121922450237   returned -0.08955968305895068
+            #           4 of 10 exact partitions tight at the final state
+            #     A=4   ungated -0.2742397716173970   returned -0.08058674847769141
+            #           2 of 10 tight
+            #
+            # a factor of 3.4-4.6, not a rounding difference. Under the old
+            # name a reader taking the last row's `cumulative_MeV` as "the
+            # answer so far" was several times off, with nothing in the field
+            # name to say so; `gated_total_MeV` exists but only on the LAST row.
+            #
+            # The gate CANNOT be applied per step, which is why this is a
+            # rename and not a fix: Pass 2 keeps a partition only when
+            # `final_tr_sign <= 0`, a property of the atom's FINAL state, so at
+            # step k there is no fact of the matter about which partitions
+            # survive. An honest per-step running total is necessarily ungated.
+            #
+            # Safe to rename: measured on `main`, this key had ZERO consumers.
+            # `probe_9b_manybody_expansion.py` writes a `cumulative_MeV` of its
+            # own into its own witness and never reads this one.
             per_step.append({
                 'A': kk + 1, 'Z': Z_k, 'N': N_k, 'nuc': nuc,
                 'delta_total_MeV': step_delta_total,
-                'cumulative_MeV': cumul_total,
+                'cumulative_ungated_MeV': cumul_total,
                 'partitions': partitions_step,
                 'n_exact_partitions': len(active_exact),
                 'n_gaussian_partitions': len(active_gaussian),
