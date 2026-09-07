@@ -651,11 +651,11 @@
       {
         "field_hash": {
           "md": "cdabb34ae5cf",
-          "ts": "ff0906213a13",
+          "ts": "745cd0e3e458",
           "lean": "8a221370aca3",
           "lean_statement": "56a61eb017bb"
         },
-        "result": "fail",
+        "result": "pass",
         "reviewer": {
           "kind": "script",
           "id": "content/pipeline/qa-checkers-voice.ts",
@@ -663,10 +663,8 @@
           "script_hash": "37b3fa59a3bc",
           "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
         },
-        "reviewed_at": "2026-09-07T07:00:30.919Z",
-        "reviewed_sha": "75c95dad502fc1d330b38d5a378c0a9838ac81a3",
-        "severity": "critical",
-        "evidence": "content/quantum-observable-universe/lean/QOU/Knot/FlatTetrahedra.lean:1: Lean file uses archimedean constructs but neither the .md narrative nor the .ts authorNotes acknowledge archimedean specialisation. Add a §7c-style note (in authorNotes, per §4d) or move the archimedean evaluation to a sibling block."
+        "reviewed_at": "2026-09-07T07:06:43.896Z",
+        "reviewed_sha": "185c2025e0f32607806fac7f4d79d2007cde2d4c"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1546,7 +1544,7 @@
       }
     ]
   },
-  "updated_at": "2026-09-07T07:00:30.919Z",
+  "updated_at": "2026-09-07T07:06:43.896Z",
   "label": "thm:gluing-equations-do-not-detect-hyperbolicity",
   "kind": "theorem",
   "paths": {
@@ -1556,7 +1554,7 @@
   },
   "source_hashes": {
     "md": "cdabb34ae5cf",
-    "ts": "ff0906213a13",
+    "ts": "745cd0e3e458",
     "lean": "8a221370aca3",
     "lean_statement": "56a61eb017bb"
   }
