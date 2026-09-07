@@ -40,6 +40,34 @@ With this, an induction proving 3.14 can be written down: `murphyLex_induction` 
 recursor it would use. **The mathematics of the Garnir step is untouched** — that is the
 content of the lemma and remains the arc's open problem. What is settled is that the
 induction it needs terminates.
+
+> **🛑 RESOLVED — read this, not the doubt it replaced.**  The doubt was: the corpus retired a
+> tabloid-dominance measure for Garnir straightening at `q = 1` on an exact-arithmetic
+> counterexample (μ=(3,2), t=[[1,2,3],[5,4]]), concluding *"Garnir produces terms whose
+> tabloids are dominance-incomparable to `{t}`"*, hence *"no tabloid-level measure orders
+> them"* (`SpechtStandardBasisCore.lean` §"Measure correction (2026-07-07)").  This axis is a
+> tabloid-level measure, so the doubt was real.
+>
+> **Mathas' own proof of 3.14 settles it, and in this axis's favour.**  Its case (ii) step is
+>
+>     m_st = T*_{d(s)} h T_w + Σ_{v ▷ t} r_v m_sv
+>
+> — the same-shape terms are indexed **by the dominance relation itself**, so they cannot be
+> incomparable, and the relation is `▷`, **strict** (Corollary 3.15 states the same:
+> *"ν = λ, u = s and v ▷ t"*).  3.14's *statement* uses the loose `⊵`; its *induction* steps
+> on `▷`.  `domGtOn` is exactly that strict part, and `domGtOn_induction`'s direction —
+> hypothesis available for strictly-dominating tableaux — is what *"by induction on `t`"*
+> needs.
+>
+> **Why the `q = 1` counterexample does not carry, sharper than "different step":** there the
+> terms fall out of a coset sum and their tabloids land where they land, so incomparability
+> is possible; here the term set is *defined* as those `v` dominating `t`.  Different
+> mechanisms, one of which cannot produce an incomparable term at all.  `colWordNum` remains
+> the right measure for the `q = 1` polytabloid straightening and is not needed here.
+>
+> Full derivation and the two remaining 3.14 inputs it identifies (3.12, and **Corollary 3.8**,
+> not previously named on this arc):
+> [`docs/audits/2026-09-06-tabloid-dominance-vs-the-column-word-measure.md`](../../../../../docs/audits/2026-09-06-tabloid-dominance-vs-the-column-word-measure.md).
 -/
 
 namespace QOU.BraidKnot.MurphyInductionMeasure

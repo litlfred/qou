@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-04T21:00:09Z
+updated_at: 2026-09-07T05:32:58Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7611,3 +7611,38 @@ elsewhere in the corpus. They pin the vanishing locus.
 **Literature: not consulted, and not needed for these four.** They are ring
 identities over a field. The Schur–Weyl / Wenzl / Geck–Pfeiffer citations the
 surrounding claims rest on are already carried by the corpus blocks above.
+
+
+## 2026-09-07 — Lean tranche (PR #6965)
+
+The corpus-grep that should have opened the earlier TL work found something
+bigger than the missing witness, and it is now closed.
+
+**Finding.** Two halves of the Lean tree quantify over TL survivors in opposite
+conventions and nothing related them: `QBeta.TemperleyLiebTower` /
+`QBeta.TwoRowNormalisation` use at most two ROWS, while
+`MathlibExt.WenzlSchurElement` / `MassTheory.SelfConjugateStratumVanishes` use at
+most two COLUMNS. The families are equinumerous but different sets, and their
+squared-dimension totals agree at every `n` — so a proof transported by matching
+totals rather than by transposing is wrong *without producing a wrong number*.
+At `n = 6` the two families share nothing at all and both total `catalan 6 = 132`.
+
+**Proved, sorry-free, general `n`** — `QOU/MassTheory/TwoRowTwoColumnCollision.lean`:
+`transposeEquiv`, `card_transpose`, `atMostTwoCols_transpose` / `atMostTwoRows_transpose`,
+`atMostTwoRows_iff_atMostTwoCols_false`, **`dimHLF_two_col_eq_two_row`**
+(`dim λ = dim λ'` for this family), **`dimHLF_two_col_sq_sum`**.
+
+**Stale status header corrected.** `QBeta/QDimNormalisation.lean` declared the
+general-`n` normalisation open; it had been closed in `TwoRowNormalisation.levelSum_eq_one`
+(bean `qou-f1qs`) under a different name. Cause is a naming split — one identity
+called `levelSum` there and `qdim_normalisation` here, so a grep for either finds
+neither the other nor the overlap. Added `qdim_normalisation_general` and
+`ballot_cast` (the ℤ↔`R` `ballot` bridge that nothing had).
+
+**Not closed, still open, and stated as such in both the Lean and the block:**
+`H_n(q)/rad ≅ TL_n(q)` itself. A count of blocks and a count of dimensions are
+not an isomorphism of algebras. Also `dim λ = dim λ'` for a *general* partition
+(three-or-more rows AND columns) — Mathlib-shaped, no longer between the two
+halves of this corpus.
+
+Gap bean `qou-yhod` filed and closed the same session.

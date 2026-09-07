@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-04T20:54:56Z
-updated_at: 2026-09-06T06:40:42Z
+updated_at: 2026-09-06T08:12:15Z
 ---
 
 Audit: [`2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md`](../docs/audits/2026-09-04-full-tower-ruling-vs-the-h3-mass-surface.md)
@@ -1076,3 +1076,36 @@ non-monotone words, or whether its callers should be re-routed, is a design
 question for whoever owns that module.  Tracked as an open item on
 `qou-92u9`'s sweep triage; noted here so the ordering ruling carries its own
 consequence.
+
+### Item 2 of the grouped-specific list now has its canonical replacement (2026-09-06, PR #6920)
+
+Cross-reference for whoever works this ledger next: **"the six c1 values" (item 2) is no longer
+just a hole.** The closed form on the CANONICAL word is derived and verified on 44 isotopes:
+
+    c1(Z,N) = (Z*S_p + N*S_n)/2 * (2^(-A-1) - 2^(-2A)) - 4*(I_pp - I_nn)*2^(-2A)
+
+with S_X the per-nucleon deletion sum on that nucleon's own three strands. The ONLY
+ordering-dependent input is (S_p, S_n): **borromean (6, -4)** -> (3Z - 2N), grouped (42, 32) ->
+(21Z + 16N). Verified A = 1..8, exact Fractions, both halves ([*](free) and [*](atom)) separately,
+44/44 each under BOTH orderings; A = 8 held out of the pattern search.
+
+**This is direct quantitative support for this bean's "each was a property of contiguity" reading.**
+Per-letter deletion contributions for one proton:
+
+    grouped     +2^3 +2^3 +2^3 +2^3  .  +2^3 +2^3 -2^1 -2^1 -2^1  .   = 48 - 6 = 42
+    borromean   +2^1 -2^1 +2^3 -2^1 +2^1 -2^3 +2^1  .  .  +2^1 +2^1   =          6
+
+Contiguous sigma runs leave the same cycle count and add COHERENTLY; alternation interleaves them
+with opposite-sign sigma^-1 deletions and they CANCEL. So contiguity is not merely correlated with
+the seven properties — for this one it is the arithmetic mechanism, and the cancellation is
+computable per letter.
+
+Note the neutron sum CHANGES SIGN (32 -> -4), so canonical c1 is negative for neutron-rich isotopes
+where the grouped one was positive throughout. Any item on the list involving a p/n asymmetry is
+worth re-checking for a sign flip rather than just a magnitude change.
+
+Also relevant to this ledger: the interface term -4(I_pp - I_nn)2^(-2A) is UNCHANGED by the
+reordering, and that is verified rather than assumed — interfaces are single letters outside the
+nucleon blocks, so nothing reordered within a nucleon can reach them. A candidate rule for triaging
+the rest of the list: a quantity built only from INTER-nucleon structure should survive the ruling;
+one built from intra-nucleon letter positions should be assumed broken until measured.

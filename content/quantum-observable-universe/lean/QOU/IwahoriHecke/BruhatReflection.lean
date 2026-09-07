@@ -73,6 +73,24 @@ a descent.
 
 So: `ReflLe → BruhatLe` ✅, `BruhatLe → ReflLe` ❌ (open — and not for either reason first written).
 
+## The LEFT-handed variant, and why it is here
+
+`ReflStep` multiplies on the **right** (`w = v · t`).  The tableau side of Mathas' Prop. 3.7
+produces the **left** one: swapping two entries of a tableau is the group action, and
+`TableauPerm.dOf_smul` gives `dOf (swap a b • t) = swap a b * dOf t` — transposition on the
+left.  A consumer that assumes the two are interchangeable fails at the point where
+`bruhatLe_of_reflLe_An` is applied: late, and looking like a hard obstruction.
+
+It is a bridge, not a wall.  `LeftReflStep` / `LeftReflLe` below are the mirrored definitions,
+and `bruhatLe_of_leftReflLe_An` is the mirrored conclusion, obtained by **transport through
+`⁻¹`** rather than by re-proving anything: a reflection is an involution
+(`IsReflection.inv`), `ℓ w⁻¹ = ℓ w`, and `CoxeterBruhat.bruhatLe_inv_iff` carries the
+conclusion back.  Nothing in the `≤ᵣ → ≤` proof is duplicated.
+
+Note the mirror is **not** available for the open direction: `BruhatLe → LeftReflLe` transports
+to `BruhatLe → ReflLe`, which is `qou-3k66` — still open.  The transport is faithful in both
+directions, so it neither adds nor removes obligations.
+
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, §2.1–2.2 (both definitions, Thm 2.2.2)
 -- Ref: [mathas1999] Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group, Prop 3.7
 -- Ref: [manuscript] beans qou-06h7, qou-phir
@@ -310,5 +328,55 @@ theorem subword_property_of_reflLe_An {n : ℕ} {W : Type*} [Group W]
     {ω : List (Fin n)} (hred : cs.IsReduced ω) (hw : cs.wordProd ω = w) :
     ∃ ω' : List (Fin n), ω' <+ ω ∧ cs.wordProd ω' = u :=
   subword_property_An cs (bruhatLe_of_reflLe_An cs h) hred hw
+
+/-! ## The left-handed reflection order
+
+The mirror of everything above, for consumers whose step multiplies on the left.  Every proof
+here is a transport through `⁻¹`; no argument from the right-handed development is repeated. -/
+
+/-- One upward step **on the left**: `w = t · v` for a reflection `t`, with the length going up.
+
+The mirror of `ReflStep`.  It exists because the tableau side of Mathas' Prop. 3.7 produces
+left multiplications (`TableauPerm.dOf_smul`), while `ReflStep` is right-handed. -/
+def LeftReflStep (v w : W) : Prop := ∃ t : W, cs.IsReflection t ∧ w = t * v ∧ ℓ v < ℓ w
+
+/-- **The left-handed reflection-generated order.** -/
+abbrev LeftReflLe : W → W → Prop := Relation.ReflTransGen (LeftReflStep cs)
+
+/-- A left step inverts to a right step: `t⁻¹ = t` for a reflection, and `ℓ` is
+inversion-invariant. -/
+theorem reflStep_inv_of_leftReflStep {v w : W} (h : LeftReflStep cs v w) :
+    ReflStep cs v⁻¹ w⁻¹ := by
+  obtain ⟨t, ht, hw, hl⟩ := h
+  refine ⟨t, ht, ?_, ?_⟩
+  · rw [hw, mul_inv_rev, ht.inv]
+  · rwa [cs.length_inv, cs.length_inv]
+
+/-- The chain version of `reflStep_inv_of_leftReflStep`.  Note the chain does **not** reverse:
+`⁻¹` is applied pointwise, and `ReflTransGen` is closed under that. -/
+theorem reflLe_inv_of_leftReflLe {v w : W} (h : LeftReflLe cs v w) :
+    ReflLe cs v⁻¹ w⁻¹ := by
+  induction h with
+  | refl => exact Relation.ReflTransGen.refl
+  | tail _ hstep ih => exact ih.tail (reflStep_inv_of_leftReflStep cs hstep)
+
+/-- **`LeftReflLe → BruhatLe` in type `A`, hypothesis-free** — the left-handed mirror of
+`bruhatLe_of_reflLe_An`, and the lemma a Mathas Prop. 3.7 consumer actually needs.
+
+Proof: transport to the right-handed statement through `⁻¹`, apply
+`bruhatLe_of_reflLe_An`, transport the conclusion back with
+`CoxeterBruhat.bruhatLe_inv_iff`. -/
+theorem bruhatLe_of_leftReflLe_An {n : ℕ} {W : Type*} [Group W]
+    (cs : CoxeterSystem (CoxeterMatrix.Aₙ n) W) {u w : W} (h : LeftReflLe cs u w) :
+    BruhatLe cs u w :=
+  (bruhatLe_inv_iff cs).mp (bruhatLe_of_reflLe_An cs (reflLe_inv_of_leftReflLe cs h))
+
+/-- The subword corollary in left-handed form. -/
+theorem subword_property_of_leftReflLe_An {n : ℕ} {W : Type*} [Group W]
+    (cs : CoxeterSystem (CoxeterMatrix.Aₙ n) W) {u w : W} (h : LeftReflLe cs u w)
+    {ω : List (Fin n)} (hred : cs.IsReduced ω) (hw : cs.wordProd ω = w) :
+    ∃ ω' : List (Fin n), ω' <+ ω ∧ cs.wordProd ω' = u :=
+  subword_property_An cs (bruhatLe_of_leftReflLe_An cs h) hred hw
+
 
 end QOU.IwahoriHecke.BruhatReflection

@@ -9,7 +9,7 @@ Bean `qou-z4ba`. Probe: `computations/probes/c1_mirror_asymmetry_sign_probe.py`.
 `LeadingOrderTraceCoefficient` derives the leading `ℏ_q` coefficient of the trace
 difference as
 
-    c₁(Z,N) = (21Z + 16N)(2^{−A−1} − 4^{−A}) − 4(I_pp − I_nn)·4^{−A},   A = Z + N,
+    c₁(Z,N) = (3Z − 2N)(2^{−A−1} − 4^{−A}) − 4(I_pp − I_nn)·4^{−A},   A = Z + N,
 
 with `I_pp = Z−1`, `I_nn = N−1` truncated in `ℕ`. This file extracts its **isospin
 content**: the difference between a nucleus and its mirror collapses to a single
@@ -55,7 +55,24 @@ only and no closed form in `(Z,N)`.
 namespace QOU.MassTheory
 
 /-- The mirror bracket `5·2^{−A−1} − 13·4^{−A}`, which carries the entire
-`(Z,N)`-dependence of the leading-order mirror asymmetry. -/
+`(Z,N)`-dependence of the leading-order mirror asymmetry.
+
+**This file survived the 2026-09-06 `c1Closed` repair unchanged, and that is not
+luck.** Owner ruling `qou-hu1f` reordered the atom word and `c₁`'s per-nucleon
+coefficients moved from `(21, 16)` to `(3, −2)` — every one of the six recorded
+values changed, by up to `163×`. Nothing here moved, because the mirror
+difference cancels everything except the coefficient *gap*:
+
+    c₁(Z,N) − c₁(N,Z) = (Z − N)·[ (P − Q)·(2^(−A−1) − 2^(−2A)) − 8·2^(−2A) ]
+
+so `mirrorBracket` depends on `P − Q` alone, and `P − Q = (S_p − S_n)/2` is `5`
+under **both** orderings — `(42 − 32)/2` and `(6 − (−4))/2`. The `13` below is
+`(P − Q) + 8`, likewise fixed by it. That equality of gaps is **measured on the
+two words, not derived**: nothing shown here forces a third ordering to give `5`
+as well, so treat this file's invariance as verified-for-these-two rather than
+structural, and re-check `P − Q` before quoting it for any new word. Contrast
+`PairwiseChainLeadingOrder.chain_over_atom_He4_of_letters`, whose `24/7` **is**
+structural — there the letter weights cancel identically, for every `(a, b)`. -/
 noncomputable def mirrorBracket (A : ℕ) : ℚ :=
   5 * (1 / 2 : ℚ) ^ (A + 1) - 13 * (1 / 4 : ℚ) ^ A
 
@@ -63,13 +80,17 @@ noncomputable def mirrorBracket (A : ℕ) : ℚ :=
 `1 ≤ Z` and `1 ≤ N` so that both truncated interface counts are honest
 subtractions (`I_pp = Z−1`, `I_nn = N−1`). -/
 theorem c1Closed_mirror_diff (Z N : ℕ) (hZ : 1 ≤ Z) (hN : 1 ≤ N) :
-    c1Closed Z N - c1Closed N Z = ((Z : ℚ) - (N : ℚ)) * mirrorBracket (Z + N) := by
+    c1Closed 3 (-2) Z N - c1Closed 3 (-2) N Z
+      = ((Z : ℚ) - (N : ℚ)) * mirrorBracket (Z + N) := by
   obtain ⟨z, rfl⟩ : ∃ z, Z = z + 1 := ⟨Z - 1, by omega⟩
   obtain ⟨n, rfl⟩ : ∃ n, N = n + 1 := ⟨N - 1, by omega⟩
   unfold c1Closed mirrorBracket
   have e : n + 1 + (z + 1) = z + 1 + (n + 1) := by omega
-  simp only [Nat.add_sub_cancel, e]
-  push_cast
+  -- `PairwiseChainLeadingOrder.c1Closed` writes the second scale as `(2⁻¹)^(2A)` while
+  -- `mirrorBracket` writes it as `(1/4)^A`. They are equal, but not syntactically, so
+  -- `pow_mul` has to fire before `ring` can see one expression.
+  simp only [Nat.add_sub_cancel, e, pow_mul]
+  norm_num
   ring
 
 /-- `4^A = 2^A · 2^A`, the one rewrite both proofs below need. -/
@@ -119,7 +140,7 @@ channel says it binds MORE. Measured against AME 2020 this is the wrong sign in
 all 230 mirror pairs — see the module docstring and the probe. -/
 theorem c1Closed_mirror_pos {Z N : ℕ} (hZ : 1 ≤ Z) (hN : 1 ≤ N)
     (hA : 3 ≤ Z + N) (hZN : N < Z) :
-    c1Closed N Z < c1Closed Z N := by
+    c1Closed 3 (-2) N Z < c1Closed 3 (-2) Z N := by
   have h := c1Closed_mirror_diff Z N hZ hN
   have hb : 0 < mirrorBracket (Z + N) := mirrorBracket_pos hA
   have hd : (0 : ℚ) < (Z : ℚ) - (N : ℚ) := by
@@ -133,7 +154,7 @@ theorem c1Closed_mirror_pos {Z N : ℕ} (hZ : 1 ≤ Z) (hN : 1 ≤ N)
 isospin reading uses.) -/
 theorem c1Closed_mirror_ne {Z N : ℕ} (hZ : 1 ≤ Z) (hN : 1 ≤ N)
     (hA : 3 ≤ Z + N) (hZN : Z ≠ N) :
-    c1Closed Z N ≠ c1Closed N Z := by
+    c1Closed 3 (-2) Z N ≠ c1Closed 3 (-2) N Z := by
   rcases lt_or_gt_of_ne hZN with h | h
   · exact ne_of_lt (c1Closed_mirror_pos hN hZ (by omega) h)
   · exact ne_of_gt (c1Closed_mirror_pos hZ hN hA h)
