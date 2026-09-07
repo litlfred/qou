@@ -154,6 +154,64 @@ treatment. **This must be settled before any $q=1$ interface argument can be tru
 because whether the interface is soft or violent depends on which way masses go there.
 Tracked as `qou-v1jg`.
 
+### 4a. What is emitted at the interface — nothing, and for a structural reason
+
+Asked directly: at $q=1$ would we see photonic emission, or does it move out of the
+observable band? **Neither — at $q=1$ there is nothing left to emit.** From the Hecke
+relation $\sigma_i^2 = (q-q^{-1})\sigma_i + 1$:
+
+1. At $q=1$ it becomes $\sigma_i^2 = 1$, so $\sigma_i = \sigma_i^{-1}$. The generators
+   are involutions, the braid group surjects onto $S_n$, and $H_n(1) = \mathbb{C}[S_n]$.
+   **There is no knotting at $q = 1$.**
+2. Every knot invariant trivialises — $V_K(1) = 1$ for every knot — so no distinct
+   particle labels survive.
+3. $\sigma_i = \sigma_i^{-1}$ means **bar acts trivially**: no chirality, hence no
+   matter/antimatter distinction and nothing to annihilate with.
+
+The interface is therefore a **de-particling layer**, not an annihilation zone. Matter
+reaching it does not burn to photons; its knot structure dissolves. This is a
+qualitatively different boundary from the one Cohen–De Rújula–Glashow compute, which is
+why that bound does not transfer without a fresh calculation.
+
+**Direction of the shift, and why it does not decide the question.** Under the formula
+reading ($m \propto \hbar_q^{-2}$) transition energies blueshift without bound:
+
+| $q$ | $E/E_0$ | 2 eV (visible) becomes |
+|---|---|---|
+| $q_0 = 1.10998$ | $1.0$ | 2.0 eV — visible |
+| $1.05$ | $4.33$ | 8.66 eV — UV |
+| $1.01$ | $100.1$ | 200 eV — soft X-ray |
+| $1.001$ | $9837$ | 19.7 keV — hard X-ray |
+| $1.0001$ | $981915$ | 1.96 MeV — gamma |
+
+Under the prose reading ("vanishing masses") they redshift to zero instead. **Either way
+the emission leaves the observable window**, so on this particular question the §4
+contradiction fixes the *direction*, not the *answer*. (This corrects an earlier framing
+in which §4 was said to gate everything downstream; it does not gate this.)
+
+**A falsifiable signature.** `rem:cmb-photon-color-content` assigns T/E to jet degree 1
+and **B to degree 2** — the Hopf-link dressing carrying linking number $\pm1$. With bar
+trivial at $q=1$ the two signs are identified, so the parity-odd component has nothing
+to carry: **a $q\to1$ interface emits no B-mode polarisation.** Relatedly, crossing
+energy collapses to the writhe exactly ($3.32994 \to 3$ for the trefoil) — topological
+rather than metric.
+
+**Where §4 does bite: barrier or door.** Under the formula reading, mass diverges as
+$q\to1$, so reaching the layer costs unbounded energy and the surface is
+**self-shielding** — matter and antimatter domains never contact, there is no
+annihilation, and the CDG98 bound is evaded by an infinite barrier rather than by a
+small cross-section. That would be `rem:time-reversal-energy-barrier`'s
+$\mathfrak{E}_{\text{flip}} = +\infty$ appearing *spatially* rather than in configuration
+space. Under the prose reading there is no barrier and the interface is freely
+permeable. **Same contradiction, opposite physics.**
+
+**Not established.** That a $q$-gradient is stable, or that such interfaces exist. The
+de-particling is exact only *at* $q=1$, a codimension-1 surface, so the physics lives in
+the neighbourhood where $q \approx 1$ but $\neq 1$ and the blueshift is large but finite.
+Energy conservation across the layer is unchecked. And this is a **boundary** mechanism,
+not a **substance** one: interface area scales differently from volume, so the
+dark-matter budget arithmetic differs entirely from §6 and has not been done.
+
 ## 5. Scope of the negatives
 
 Per AGENTS.md §"Before declaring refuted":
