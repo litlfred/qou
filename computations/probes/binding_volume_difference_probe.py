@@ -164,6 +164,9 @@ def _hp_volume(M):
 
 HP_DPS = 28      # quad-double: honest, sits ~1e-28 from any binary64
 F64_DPS = 15     # anything that passed through a Python float
+# Raise precision BEFORE building any module-scope mpf (module-const gate);
+# idempotent alongside the call in main().
+set_compute_dps()
 PIECE_MATCH_TOL = mpf("1e-8")
 
 

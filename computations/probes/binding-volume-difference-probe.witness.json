@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-07T18:27:07.990878+00:00",
-  "commitSha": "1a97d501769a2c4df01f7c70a642669604086218",
+  "computedAt": "2026-09-07T18:37:41.038691+00:00",
+  "commitSha": "564bb89411f78ac45deefad839c5ce04f4ce4a98",
   "assertions": [
     {
       "name": "no_derived_volume_difference_closes_A3",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 113630,
+  "durationMs": 117372,
   "computation": "binding-volume-difference-probe",
   "scriptFile": "binding_volume_difference_probe.py",
-  "scriptHash": "655cb096d860",
-  "scriptCommitSha": "b1b7a995c3728280f8dde0f6d98f285078374216",
+  "scriptHash": "e9bbc4b02fbf",
+  "scriptCommitSha": "96c02b054475920b79b3fc5d765efa5c49c1b338",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -112,8 +112,8 @@
         "vol_atom_min": "12.94520306446325832074898036",
         "vol_atom_max": "32.38228592793523713864633834",
         "vol_atom_weighted_mean": "22.78065455612850717807183019",
-        "delta_vol_weighted_mean": "-4.999999567652494165514280172e-64",
-        "delta_vol_max_abs_over_branches": "1.000000239534945670864501265e-63",
+        "delta_vol_weighted_mean": "0.0",
+        "delta_vol_max_abs_over_branches": "0.0",
         "nucleon_pieces": {
           "proton": [
             {
@@ -257,13 +257,13 @@
         },
         "positive_projection_legacy": {
           "free": {
-            "vol_f64": "3.73317165770672e-6",
+            "vol_f64": "6.71207957531061e-6",
             "solution_type": "contains degenerate tetrahedra",
             "cusps": 4,
             "geometric": false
           },
           "atom": {
-            "vol_f64": "0.000213288280621379",
+            "vol_f64": "0.000499787443158725",
             "solution_type": "contains degenerate tetrahedra",
             "cusps": 3,
             "geometric": false
@@ -440,13 +440,13 @@
         },
         "positive_projection_legacy": {
           "free": {
-            "vol_f64": "0.00448468842186439",
+            "vol_f64": "4.27200515806046e-6",
             "solution_type": "contains degenerate tetrahedra",
             "cusps": 6,
             "geometric": false
           },
           "atom": {
-            "vol_f64": "0.000499079998100062",
+            "vol_f64": "0.0157987931357204",
             "solution_type": "contains degenerate tetrahedra",
             "cusps": 4,
             "geometric": false
@@ -478,7 +478,7 @@
         "vol_atom_min": "17.69470304633769682924706691",
         "vol_atom_max": "48.57342889190285570796950750",
         "vol_atom_weighted_mean": "33.49316137588171142971465667",
-        "delta_vol_weighted_mean": "-5.000000473220402048185516923e-64",
+        "delta_vol_weighted_mean": "1.811758715544028027793924800e-71",
         "delta_vol_max_abs_over_branches": "1.000000239534945670864501265e-63",
         "nucleon_pieces": {
           "proton": [
@@ -623,13 +623,13 @@
         },
         "positive_projection_legacy": {
           "free": {
-            "vol_f64": "0.000651743655191878",
+            "vol_f64": "17.8405074231156",
             "solution_type": "contains degenerate tetrahedra",
             "cusps": 6,
             "geometric": false
           },
           "atom": {
-            "vol_f64": "0.000614218279181608",
+            "vol_f64": "0.000662140081277489",
             "solution_type": "contains degenerate tetrahedra",
             "cusps": 4,
             "geometric": false
@@ -661,7 +661,7 @@
         "vol_atom_min": "25.89040612892651664149796072",
         "vol_atom_max": "64.76457185587047427729267667",
         "vol_atom_weighted_mean": "45.56130911225701435614366037",
-        "delta_vol_weighted_mean": "-4.999999878953141871032871948e-64",
+        "delta_vol_weighted_mean": "-4.999999397804007706878437281e-64",
         "delta_vol_max_abs_over_branches": "2.000000479069891341729002530e-63",
         "nucleon_pieces": {
           "proton": [
@@ -806,13 +806,13 @@
         },
         "positive_projection_legacy": {
           "free": {
-            "vol_f64": "0.000191703248707118",
+            "vol_f64": "0.000303989999938450",
             "solution_type": "contains degenerate tetrahedra",
             "cusps": 8,
             "geometric": false
           },
           "atom": {
-            "vol_f64": "0.0146326601267501",
+            "vol_f64": "0.00117123494675414",
             "solution_type": "contains degenerate tetrahedra",
             "cusps": 5,
             "geometric": false
