@@ -299,9 +299,15 @@ def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9),
 
     table = {}
     for k in k_range:
+        # deflate the parabolic zeros: every frame has H(μ₀+kλ) = 1 at the complete point (and
+        # its conjugates), where ℓ = 1; on 4₁ that zero is double (A₄₁(L, 1/L)·L⁷ has a double
+        # root at L = −1), so divide by (ℓ − 1)² — over-deflation only puts a pole there, which
+        # repels the secant instead of attracting it.
         def g(s_, z):
-            return rect_eval(mu0_row, z) * mp.exp(k * s_) - 1
-        seeds = sorted(samples, key=lambda t: abs(t[0] * t[1] ** (2 * k) - 1))[:seeds_per_k]
+            ell = mp.exp(s_)
+            return (rect_eval(mu0_row, z) * mp.exp(k * s_) - 1) / (ell - 1) ** 2
+        far = [t for t in samples if abs(t[1] ** 2 - 1) > mp.mpf("0.2")]
+        seeds = sorted(far, key=lambda t: abs((t[0] * t[1] ** (2 * k) - 1) / (t[1] ** 2 - 1) ** 2))[:seeds_per_k]
         sols, lox = [], 0
         for (x0, L, z0) in seeds:
             s0 = 2 * mp.log(-L)
