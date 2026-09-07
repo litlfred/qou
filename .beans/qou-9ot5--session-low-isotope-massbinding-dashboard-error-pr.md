@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-08-25T16:28:09Z
-updated_at: 2026-09-07T10:22:57Z
+updated_at: 2026-09-07T10:37:51Z
 ---
 
 ## Session state 2026-08-25 (PR #5765)
@@ -127,3 +127,34 @@ that producer needs >50 min for one bound atom of nineteen and will not finish.
 **Follow-ups (none attempted):** adjudicate the habiro drift; implement or
 guard `tr_m_word_lq` Case C; reconcile the manifest vs witness anchor
 vocabulary at the source so the two spellings cannot diverge again.
+
+
+### Correction, same day — the Case-C crash is DOCUMENTED, and my proposed fix was wrong
+
+I recorded `derived-w-overdetermined-test` as *"cannot re-run"* with the
+`RuntimeError`, and proposed *"implement or guard `tr_m_word_lq` Case C"*.
+Corpus-grep (path 6 + the producer's own source) says otherwise on both counts.
+
+**Not a discovery.** The probe's own docstring carries a heading —
+`*** 🛑 THE DECIDING TEST IS BLOCKED, AND NO CONCLUSION IS DRAWN FROM ONE ATOM ***`
+— and states that `tr_m_atomic_mpfr` raises exactly this on interface-suffixed
+words at `n = 9`, so 3H and 3He cannot be evaluated on the fast exact path, and
+*"2H alone is one atom and one free constant: fitted by construction, and it
+proves nothing."* The crash stands as the reason the witness cannot be
+regenerated; it is not a new defect.
+
+**And the fix I proposed is the wrong one.** The probe names the right one:
+*"The seminormal-matrix route has no Case C and would settle it at `n = 9`;
+that is the next step."*
+
+**A near-miss worth keeping.** The message originates in Rust
+(`tools/hecke-engine/src/tr_m_word_lq.rs:325`) and PyO3 surfaces it as
+`RuntimeError`, while the documented Case-C contract names
+`NotImplementedError` — `laurent_q_trace.py:25` (*"callers route the WHOLE
+element through `markov_trace_canonical.tr_M_element`"*) and
+`markov_peel_rust_bridge.py:349` (*"caller routes to
+`markov_peel.tr_M_atomic`"*). I nearly filed that exception-type mismatch as a
+defect silently disabling a designed fallback. It is a real hazard in the
+abstract and is **not** what is happening here: that contract governs those two
+paths, not `tr_m_atomic_mpfr`, and no handler on this path attempts the catch.
+Corrected on the PR before it could mislead.
