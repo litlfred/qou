@@ -48,7 +48,21 @@ pairing as a plain function, so there is no categorical iso in scope to
 put on the other side of the `↔`.  Stating bijectivity alone is weaker
 than the manuscript claim and is what this model supports.
 
-**The categorical half is BUILDABLE, not blocked** (corrected 2026-09-07;
+**The categorical half is now BUILT** — see
+`QOU/FrobeniusHopfData/FrobeniusPairingCategorical.lean`, added 2026-09-07.
+It states non-degeneracy over a monoidal category as the existence of a
+coevaluation satisfying both snake identities *against the pairing the data
+carries*, and `exactPairing_of_nondegenerate` turns that into Mathlib's
+`ExactPairing`.  `#print axioms` on it reports **no axioms at all** — not
+even `propext`.  The manuscript's non-degeneracy condition simply *is*
+Mathlib's `ExactPairing`; what was missing was the right model, not
+infrastructure.
+
+That file does **not** assert the manuscript's *equivalence* with
+bijectivity: that needs a faithful fibre functor `τ` reflecting
+isomorphisms, and is deliberately left unstated.
+
+**Why this docstring first said otherwise** (corrected 2026-09-07;
 this paragraph first said it "needs the rigid-monoidal apparatus", which
 implies a Mathlib gap that does not exist).  Mathlib carries
 `CategoryTheory.Monoidal.Rigid` at the pinned revision — `ExactPairing`,
