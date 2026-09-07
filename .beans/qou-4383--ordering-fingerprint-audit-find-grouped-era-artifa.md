@@ -175,3 +175,87 @@ hit count is an upper bound on the real finding count.
   grouped frame?).
 - 81 candidates un-swept; the 59 from 2026-08 are pre-ruling and expected stale,
   so re-running is the first move there too, not reading.
+
+---
+
+## 2026-09-07 (later) — the bulk re-run, and a third category
+
+### Result
+
+    grouped-era hits   83 files / 81 candidates  ->  48 files / 46 candidates
+    dropped            36
+    newly hit           0     (the sweep introduced no regression)
+
+**36 of 81 were purely stale artifacts.** The hypothesis from the morning pass —
+that a stale witness is not evidence anyone intended a grouped value — holds for
+nearly half the population.
+
+The residual splits by what the producer actually did:
+
+| | |
+|---:|---|
+| 27 | completed clean and **still** emit grouped |
+| 13 | timed out at the 120s budget — verdict unknown, re-running at 900s |
+| 4 | exited 1 on their own assertions |
+| 2 | no identifiable producer |
+
+### The taxonomy needs a third category
+
+The bean has "stale artifact" vs "live source defect". Many of the 27 are
+neither. `witness_value_copy_audit` scrapes witnesses for copied values;
+`derivation_chain_validator` classifies every witness it can find;
+`atomic_mass_via_rho_k` globs `atomic-tr-m-*.witness.json`; several more are
+explicit C-vs-D or three-path *comparisons* that hold both frames on purpose.
+
+These are **downstream reflections**. They carry grouped values because their
+inputs do, they resolve when the inputs do, and fixing them at the reflection
+would be wrong. Any future count should exclude them, the way `DELIBERATE`
+already excludes the deliberate ones — otherwise the number never converges,
+because an audit that reports the corpus will always mirror it.
+
+There is also a **dependency order**: re-running a consumer before its inputs is
+wasted work. One bulk pass is not a fixed point.
+
+### Seven witnesses flipped green → red, and that is the finding
+
+    probe-9b-manybody-expansion              he4_2body_fraction_matches_ceiling_audit
+    colour-weighting-across-mixed-nuclei     reproduces the committed dense arm (x2)
+    qbeta-habiro-taylor-investigation        taylor_series_reproduces_delta_tr_at_q0
+    skein-proton-canonical                   atlas |tr_M| cross-check vs Layer-1 table
+    tr-m-algebraic-q                         algebraic_q0_matches_transfer
+    tr-m-atom-via-transfer                   trM_atom_deuteron_matches_canonical_branching
+    tr-m-q-hecke-seminormal                  q_hecke_seminormal_closes_gap[p,n]
+
+All seven were computed 2026-08-21..08-31, **before** the ruling, and all seven
+fail on a **cross-check against a reference**. They were green only because both
+sides were grouped-era. `algebraic_q0_matches_transfer` now reports max
+deviation **0.976 against a 1e-9 tolerance** — a whole-value mismatch of exactly
+the grouped-vs-borromean magnitude, not drift.
+
+Committed red deliberately: a stale green is a false all-clear, and the honest
+state of these seven is red.
+
+### Two source defects found, one fixed
+
+**`stamp_staleness_metadata` never set `scriptFile`** — 948 call sites, and its
+own docstring promised seven fields and delivered them all except the one that
+says *which script produced the witness*. That is why
+`qbeta-habiro-pochhammer-convention` was unattributable and un-re-runnable, and
+a sibling had already worked around it locally rather than fixing the helper.
+Fixed. Same probe also passed an unrecognised `q0_anchor` token, so its witness
+was reported Q0_ANCHOR_UNRECOGNISED and never checked; fixed too.
+
+**Two qbeta probes hardcode grouped-era nucleon traces.** `T_P` /
+`MEASURED["t_p"]` = `1.1457596924573008697` matches the grouped proton to
+~1e-21 and differs from canonical by **82 %**; the neutron by **108 %** — while
+the same probes read *canonical* atom witnesses. Flagged in place with the
+measurement, not flipped: `qbeta_delta_vs_deltaTbeta_settled_probe` is
+deliberately grouped, so a grouped constant is not automatically a defect, and
+`qbeta_bond_factors_derived_probe` is under active edit today (`qou-qqm4`).
+
+### Next
+
+- 13 slow producers re-running at 900s; their verdicts are still unknown.
+- A second pass after that, since consumers whose inputs just moved will only
+  converge on a re-run.
+- Then the residual is small enough to read per-site.
