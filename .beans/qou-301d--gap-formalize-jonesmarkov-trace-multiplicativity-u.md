@@ -1,11 +1,11 @@
 ---
 # qou-301d
 title: 'GAP: formalize Jones/Markov-trace multiplicativity under connected sum (discharge the ArchimedeanTraceBridge multiplicativity hypothesis)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-08-30T17:50:09Z
+updated_at: 2026-09-07T04:52:53Z
 ---
 
 ## Context
