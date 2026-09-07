@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-07T19:12:58Z
+updated_at: 2026-09-07T19:18:01Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -1102,3 +1102,39 @@ same reason: nothing consumes it until basis-independence lands.
 **Arc status.** dual basis ✅ → Casimir central ✅ → block scalar: **arithmetic
 ✅, connection ❌** → `s_λ` as a character sum ❌ → Wenzl's hook-length product ❌.
 `SchurElementCriterion` still has no instance.
+
+
+### 2026-09-07 — basis-independence: the bridge is built (`faa653df6a`)
+
+`QOU/MathlibExt/CasimirBasisIndependence.lean` + `casimir_eq_of_dual_pair` in
+`TauDualBasis.lean`. Sorry-free, `lean`-direct exit 0. On PR #7136.
+
+```
+casimir_eq_of_expansions : Σ_p d_p d'_p = Σ_i b_i b'_i
+```
+
+The link named as missing one commit earlier. `TauDualBasis` proves the
+`T_w`-Casimir is *central*; `CasimirBlockScalar` computes what a Casimir *is*
+in the matrix-unit basis. Neither mentioned the other's basis, so neither said
+anything about the other's element. Now they can.
+
+**The hypotheses are the two expansions, not "is a basis".** That is deliberate:
+both are *already proved* on the Hecke side, so instantiating re-derives
+nothing.
+
+**The asymmetry is real, not an oversight** — one expansion pairs on the RIGHT,
+the other on the LEFT. It is what lets the middle step move `b_i` out to the
+left of the inner sum, and a "symmetrised" version of the lemma would **not**
+compose with what the Hecke side proves. Recorded in the docstring for exactly
+that reason.
+
+No trace property, no nondegeneracy, no finiteness beyond two `Fintype` index
+types — the expansions carry all of it.
+
+**Arc status.** dual basis ✅ → Casimir central ✅ → block scalar arithmetic ✅ →
+**basis-independence ✅** → transport the matrix units along a splitting ❌ →
+`s_λ` as a character sum ❌ → Wenzl's hook-length product ❌.
+
+**Next** is the transport: build the pulled-back matrix-unit pair's
+left-expansion so `casimir_eq_of_dual_pair` fires. `SchurElementCriterion` still
+has no instance.
