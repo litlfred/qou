@@ -283,29 +283,63 @@ def _curve_solver(tets, erows, lam_row):
     return solve_at
 
 
-def discover_sheets(tets, erows, mu0_row, lam_row, found, known_starts, n_re=22, n_im=22):
-    """Continue each found filling point (s, z) back to ℓ = 1 along a straight line in s; every
-    distinct set of shapes reached at s = 0 is a new sheet of the ℓ-projection over the
-    rectangle, and gets its own continuation grid (coarser than the first). Returns the new
-    grids' points and the updated list of sheet start shapes."""
+def discover_sheets(tets, erows, mu0_row, lam_row, shapes0, n_re=22, n_im=22, seed=5):
+    """Other sheets of the ℓ-projection. Continuing a found filling point back to ℓ = 1 only ever
+    returns to the sheet it was found on (measured: "no new sheets" on both knots), so sheets
+    are seeded at ℓ = 1 directly — the complex conjugate of the complete structure, random-start
+    solutions of {edge rows, H(λ) = 1} (the Galois conjugates of the shape field among them) —
+    and then multiplied by MONODROMY: from each known start, continue out to |ℓ| = r along real
+    ℓ and once around the circle |ℓ| = r; a loop enclosing branch values returns on a different
+    sheet, and that endpoint is continued back to ℓ = 1 as a new start. Repeated until no start
+    is new. Returns the union of coarse grids from every start beyond the first, and the starts."""
     solve_at = _curve_solver(tets, erows, lam_row)
     N = len(tets)
-    new_pts, starts = [], list(known_starts)
-    for (s_f, z_f) in found:
-        z = list(z_f)
-        ok = True
-        for q in range(1, 9):
-            zn = solve_at(s_f * (1 - mp.mpf(q) / 8), z)
-            if zn is None:
-                ok = False; break
-            z = zn
-        if not ok:
-            continue
-        if any(max(abs(z[j] - st[j]) for j in range(N)) < mp.mpf(10) ** -15 for st in starts):
-            continue
-        starts.append(list(z))
-        new_pts.extend(sample_curve(tets, erows, mu0_row, lam_row, z, n_re=n_re, n_im=n_im))
-    return new_pts, starts
+    starts = [list(shapes0)]
+
+    def is_new(z):
+        return all(max(abs(z[j] - st[j]) for j in range(N)) > mp.mpf(10) ** -15 for st in starts)
+
+    zc = [mp.conj(zj) for zj in shapes0]
+    z = solve_at(mp.mpc(0), zc)
+    if z is not None and is_new(z):
+        starts.append(z)
+    random.seed(seed)
+    for _ in range(80):
+        z0 = [mp.mpc(random.uniform(-2, 3), random.uniform(-2.5, 2.5)) for _ in range(N)]
+        z = solve_at(mp.mpc(0), z0)
+        if z is not None and is_new(z):
+            starts.append(z)
+    # monodromy loops
+    changed = True
+    rounds = 0
+    while changed and rounds < 4:
+        changed = False; rounds += 1
+        for st in list(starts):
+            for r in (mp.mpf("0.15"), mp.mpf("0.6"), mp.mpf("2.5"), mp.mpf(12)):
+                z = list(st); ok = True
+                lr = mp.log(r)
+                for q in range(1, 7):                       # out along real ℓ
+                    z = solve_at(lr * q / 6, z)
+                    if z is None: ok = False; break
+                if not ok:
+                    continue
+                z_out = list(z)
+                for q in range(1, 41):                      # once around |ℓ| = r
+                    z = solve_at(mp.mpc(lr, 2 * mp.pi * q / 40), z)
+                    if z is None: ok = False; break
+                if not ok:
+                    continue
+                if max(abs(z[j] - z_out[j]) for j in range(N)) < mp.mpf(10) ** -15:
+                    continue                                # same sheet
+                for q in range(5, -1, -1):                  # back to ℓ = 1 (arg 2π ≡ 0)
+                    z = solve_at(mp.mpc(lr * q / 6, 2 * mp.pi), z)
+                    if z is None: ok = False; break
+                if ok and is_new(z):
+                    starts.append(z); changed = True
+    pts = []
+    for st in starts[1:]:
+        pts.extend(sample_curve(tets, erows, mu0_row, lam_row, st, n_re=n_re, n_im=n_im))
+    return pts, starts
 
 
 def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9), seeds_per_k=10):
@@ -548,22 +582,20 @@ def run_knot(knot, shapes_hint, check, wb):
     print(f"  continuation grid: {len(grid)} points on the deformation curve (μ₀ frame)")
     random.seed(11)
     pts0 = random.sample(grid, min(150, len(grid)))
-    starts = [list(shapes)]
     union = list(grid)
-    for rnd in range(4):
+    survivors, table, found = meridian_frame(tets, info["erows"], info["mu0_row"], info["lam_row"], union)
+    print("  frame search (sheet of the complete structure, 1225 grid points) "
+          "k ↦ (solutions with H(μ₀+kλ)=1, of which loxodromic in λ): " +
+          ", ".join(f"{k}:{v}" for k, v in table.items()))
+    starts = [list(shapes)]
+    if len(survivors) > 1:
+        new_pts, starts = discover_sheets(tets, info["erows"], info["mu0_row"], info["lam_row"], shapes)
+        print(f"  sheet discovery: {len(starts)} start(s) at ℓ = 1, {len(new_pts)} further grid points")
+        union.extend(new_pts)
         survivors, table, found = meridian_frame(tets, info["erows"], info["mu0_row"], info["lam_row"], union)
-        print(f"  frame search (round {rnd}, {len(starts)} sheet(s), {len(union)} grid points) "
+        print(f"  frame search ({len(starts)} sheets, {len(union)} grid points) "
               "k ↦ (solutions with H(μ₀+kλ)=1, of which loxodromic in λ): " +
               ", ".join(f"{k}:{v}" for k, v in table.items()))
-        if len(survivors) <= 1:
-            break
-        new_pts, starts2 = discover_sheets(tets, info["erows"], info["mu0_row"], info["lam_row"], found, starts)
-        if len(starts2) == len(starts):
-            print("  no new sheets reached from the found filling points")
-            break
-        print(f"  sheet discovery: {len(starts2) - len(starts)} new sheet(s), {len(new_pts)} grid points")
-        starts = starts2
-        union.extend(new_pts)
     info["sheets"] = len(starts)
     check(f"{knot}_meridian_frame_unique", len(survivors) == 1, f"survivors {survivors}")
     if len(survivors) != 1:
