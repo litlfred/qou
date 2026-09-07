@@ -254,9 +254,25 @@ def main() -> int:
     print("=" * 80)
     print()
 
-    witness = json.loads(
-        (_pb.witness_path("y-lambda-at-q0.witness.json", HERE)).read_text()
-    )
+    # Resolved WITHOUT `_path_bridge`, deliberately. This module is
+    # vendored into `qou_mass/_internal/` and the sync drops every
+    # `import _path_bridge` line (scripts/sync-qou-mass-vendor.py) because
+    # the flat package does not have the subdirectory layout that shim
+    # papers over. The import here was aliased -- `import _path_bridge as
+    # _pb` -- so the strip removed the binding and left the USE, and the
+    # vendored copy died with `NameError: name '_pb' is not defined` on
+    # the one line that reads a witness (bean qou-lejl).
+    #
+    # Two candidates cover both layouts, and neither needs the bridge:
+    #   computations/schur_principal_mpmath.py  -> HERE is computations/,
+    #       where y-lambda-at-q0.witness.json sits.
+    #   _internal/schur_principal_mpmath.py     -> HERE.parent is the
+    #       package root, where the sync puts the vendored witnesses
+    #       (see its WITNESS_DEST note).
+    _wname = "y-lambda-at-q0.witness.json"
+    _wpath = next((d / _wname for d in (HERE, HERE.parent)
+                   if (d / _wname).exists()), HERE / _wname)
+    witness = json.loads(_wpath.read_text())
     cache = witness.get("data", witness)["by_n"]
 
     print("  witness y-lambda-at-q0.witness.json is still convention C;")

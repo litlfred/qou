@@ -145,7 +145,19 @@ def main():
     # What is θ exactly?
     r41 = eigenvalue_phase_on_standard([(1,0,0),(1,-1,1),(1,0,0),(1,-1,1)], q)
     theta = r41["max_abs_phase"]
-    VOL_41 = 2.0298832128
+    # Named `vol41` because that is what the six uses below say. It was
+    # bound as `VOL_41` and read as `vol41` -- so this probe raised
+    # NameError at the first print and never reached `w.save()`; its
+    # committed witness predates the rename. Checked against the full
+    # 36771-commit history: `vol41` was never bound in any commit, and
+    # `VOL_41` is read nowhere. Bean qou-lejl.
+    #
+    # Still a hand-typed volume literal (correct to 11 digits against
+    # Vol(4_1) = 2.029883212819307...). Sourcing it from the canonical
+    # registry is bean qou-ckbv's excision, not this one -- recorded
+    # rather than folded in, because it would move a published number
+    # under cover of a NameError fix.
+    vol41 = 2.0298832128
 
     # θ = arg(eigenvalue) of (σ₁σ₂⁻¹)² on V_(2,1)
     # Can we express θ in terms of q₀?

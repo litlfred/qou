@@ -157,9 +157,55 @@ def render(path: Path) -> str:
     defined`. The package's tests did not catch this because they exercise
     the bundled-witness fast path, never the vendored modules -- which is
     the same reason the copies could rot unnoticed for months.
+
+    THE THIRD SHAPE, and why this function now refuses instead of stripping:
+
+        import _path_bridge as _pb   # and `_pb.witness_path(...)` later
+
+    The strip removes the BINDING and leaves the USE. That is not a rot the
+    copies merely suffer -- it is one this script CREATES, silently, and it
+    is invisible in the diff because the deleted line and the surviving call
+    are 200 lines apart. `schur_principal_mpmath.py` shipped that way and
+    the vendored copy raised `NameError: name '_pb' is not defined` from
+    `main()` (bean qou-lejl); the `del ..., _bridge` case above is the same
+    bug already paid for once.
+
+    So: if a dropped bridge import bound an alias that the module still
+    LOADS, this raises. Per this script's own rule -- "if a module ever
+    needs a genuine package-specific adaptation, it does NOT belong in this
+    script; give it a real seam upstream" -- the fix is upstream, and a
+    loud failure is what routes it there. A rename upstream should be loud;
+    so should this.
     """
+    text = path.read_text(encoding="utf-8")
+
+    # Aliases bound by a bridge import that this function is about to drop.
+    dropped_aliases: set[str] = set()
+    for node in ast.walk(ast.parse(text)):
+        if isinstance(node, ast.Import):
+            for a in node.names:
+                if a.name == "_path_bridge" and a.asname:
+                    dropped_aliases.add(a.asname)
+    if dropped_aliases:
+        # `del _bridge` is handled below and is a Del context, not a Load.
+        loaded = sorted({
+            n.id for n in ast.walk(ast.parse(text))
+            if isinstance(n, ast.Name)
+            and isinstance(n.ctx, ast.Load)
+            and n.id in dropped_aliases
+        })
+        if loaded:
+            raise SystemExit(
+                f"sync-qou-mass-vendor: {path} binds {', '.join(loaded)} via "
+                f"`import _path_bridge as ...` and still USES the name. "
+                f"Dropping the import would vendor a module that raises "
+                f"NameError at that call site. Give the module a seam that "
+                f"works in both layouts (see schur_principal_mpmath.py's "
+                f"witness lookup) rather than relaxing this check."
+            )
+
     out = []
-    for line in path.read_text(encoding="utf-8").splitlines(keepends=True):
+    for line in text.splitlines(keepends=True):
         stripped = line.strip()
         if stripped.startswith("import _path_bridge"):
             continue

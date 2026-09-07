@@ -92,7 +92,7 @@ M_E_MEV_ERR = _M_E_MEV_ERR   # was 0.00000000015; table says ...16
 # This is E_× × μ₀ where E_× = ½(q−q⁻¹)×m_e c² and μ₀ = m_e/(3×E_×).
 KAPPA       = M_E_MEV / 3.0   # 0.170333 MeV
 
-M_P_MEV     = _M_P_MEV       # was 938.27208816 (CODATA-2018)
+M_P_MEV     = _M_P_MEV       # was M_P_MEV_VALIDATION (CODATA-2018)
 M_P_MEV_ERR = _M_P_MEV_ERR
 
 # NOTE: the registry's M_N_MEV is the AME-DERIVED neutron mass
@@ -129,6 +129,7 @@ Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV
 # sum was silently the one float64 quantity left in this module the moment the
 # casts came off. `_mpm.sqrt` keeps it mpf.
 import mpmath as _mpm  # noqa: E402
+from codata_constants import M_P_MEV_VALIDATION
 Q_NEUTRON_MEV_ERR = _mpm.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
 
 # m_n via the 3-input scheme (m_n = m_p + Q_β + m_e) — the canonical anchor

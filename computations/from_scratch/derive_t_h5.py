@@ -25,6 +25,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))  # for experimental_constants
+# `parent.parent` is `computations/`, which is where the modules named below
+# USED to live. They are under `computations/substrate/` since the Phase 6
+# cluster refactor, so the two inserts above no longer reach them and this
+# script died at import with ModuleNotFoundError. `_path_bridge` is what puts
+# every cluster subdirectory on sys.path; it resolves off the insert above
+# and is the convention the rest of `computations/` already uses. Bean
+# qou-lejl -- found because the NameError this file was flagged for sits
+# BEHIND this import and could never be reached.
+import _path_bridge  # noqa: F401, E402 — cluster subdirs onto sys.path
 from hoefsmit_general import (
     q, partitions_of, chi_lambda_braid, chi_lambda_braid_numeric,
 )

@@ -47,6 +47,8 @@ Key design decisions:
 from __future__ import annotations
 
 from codata_constants import (  # noqa: E402
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
     M_P_MEV_VALIDATION,
 )
@@ -571,8 +573,8 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
 
     The p-n interface is color-weighted by default (owner directive
     2026-06-01: bring_color_weighted is canonical across the compute):
-    its averaged crossing is `σ − h·(1/2 − δ/4)·1`, δ = flavor_split_
-    subleading(q₀), vs the color-blind `σ − h/2·1` (`pn_convention=
+    its averaged crossing is `σ − h·(1/2 − δ/4)·1`, δ =
+    flavor_split_leading(q₀), vs the color-blind `σ − h/2·1` (`pn_convention=
     "strict_averaged"`, kept for empirical-pipeline validation). The
     p-p (σ) and n-n (σ⁻¹) interfaces are already isospin-distinct and
     carry no extra color weight. See
@@ -1326,8 +1328,8 @@ if __name__ == "__main__":
     ATOMS = [
         ("D",    1, 1,  2.22452),
         ("T",    1, 2,  float(AME_B_TRITIUM_MEV_VALIDATION)),
-        ("3He",  2, 1,  7.71804),
-        ("4He",  2, 2, 28.295674),
+        ("3He",  2, 1,  AME_B_HE3_MEV_VALIDATION),
+        ("4He",  2, 2, AME_B_HE4_MEV_VALIDATION),
         ("6Li",  3, 3, 32.0),
         ("7Li",  3, 4, 39.244529),
         ("9Be",  4, 5, 58.1650),

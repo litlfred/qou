@@ -344,6 +344,19 @@ def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
     # fallback only on specific import/value errors.
     try:
         from schur_weyl_symbolic import per_stratum_sum_symbolic
+        # `_q_sym` was USED four times below and bound nowhere -- not in this
+        # function, not at module scope, and (checked against the full 36771-
+        # commit history, not a shallow clone) not in any commit since the
+        # file was introduced. So `per_stratum_sum_symbolic(A, {i}, _q_sym)`
+        # raised NameError on the FIRST iteration of every call, the `except`
+        # below swallowed it as designed, and this Schur-Weyl per-stratum
+        # path has never once executed. What ran instead is the legacy
+        # per-generator V_full fallback -- the very path the comment above
+        # describes as having "drove single + cross to spurious millions".
+        # Bean qou-lejl. `per_stratum_sum_symbolic` takes `q : sympy.Symbol
+        # or rational` and returns an expression in whatever it is handed,
+        # so the symbol only has to be the same object passed to `.subs`.
+        _q_sym = _sp.Symbol("q")
         _q_rat = _sp.Rational(str(q_val))
         n_strands_eff = 3 * A  # full atom strands
         n_gens_eff = n_strands_eff - 1

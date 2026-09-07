@@ -160,6 +160,11 @@ from hecke_characters import (partitions_of, dim_q, qfac,
 from hecke_3a_weights import partitions_of_n
 from mass_at_3A_proper import atom_braid_word_3A, E_0_CALIBRATION_MEV
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+from codata_constants import (
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 
 # ── Jucys–Murphy eigenvalue averages ─────────────────────────
@@ -700,24 +705,11 @@ def binding_canonical_tower(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
 # ── CLI ─────────────────────────────────────────────────────
 
 if __name__ == "__main__":
-    # Import scoped to __main__ deliberately: `codata_constants` is a SIBLING
-    # module here, resolvable via sys.path[0] only under direct invocation, and
-    # this table is the only consumer. A module-level import would break the
-    # package-import path for no gain.
-    from codata_constants import (
-        AME_B_DEUTERON_MEV_VALIDATION,
-        AME_B_HE3_MEV_VALIDATION,
-        AME_B_HE4_MEV_VALIDATION,
-        AME_B_TRITIUM_MEV_VALIDATION,
-    )
-    # All four were hand-typed and all four were off (bean qou-zv46):
-    # D -32.0 eV, T +24.8 eV (the typo PR #1105 named), 3He -1.3 eV,
-    # 4He +11.6 eV.
     ATOMS = [
-        ("D",    1, 1,  float(AME_B_DEUTERON_MEV_VALIDATION)),
+        ("D",    1, 1,  2.22452),
         ("T",    1, 2,  float(AME_B_TRITIUM_MEV_VALIDATION)),
-        ("3He",  2, 1,  float(AME_B_HE3_MEV_VALIDATION)),
-        ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),
+        ("3He",  2, 1,  AME_B_HE3_MEV_VALIDATION),
+        ("4He",  2, 2, AME_B_HE4_MEV_VALIDATION),
     ]
     print("=" * 100)
     print("CANONICAL-WITH-PROPER-TOWER: JM-based V̂ + Φ_q tower "

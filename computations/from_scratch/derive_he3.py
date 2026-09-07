@@ -16,6 +16,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 sys.path.insert(0, str(Path(__file__).parent.parent))  # for experimental_constants
+# `parent.parent` is `computations/`, which is where the modules named below
+# USED to live. They are under `computations/substrate/` since the Phase 6
+# cluster refactor, so the two inserts above no longer reach them and this
+# script died at import with ModuleNotFoundError. `_path_bridge` is what puts
+# every cluster subdirectory on sys.path; it resolves off the insert above
+# and is the convention the rest of `computations/` already uses. Bean
+# qou-lejl -- found because the NameError this file was flagged for sits
+# BEHIND this import and could never be reached.
+import _path_bridge  # noqa: F401, E402 — cluster subdirs onto sys.path
 from hecke_step_by_step import q, from_braid_word
 from h3_canonical_basis import normalize_to_h3_basis, display_basis_coeffs
 from wedderburn_markov import (
@@ -57,7 +66,16 @@ if __name__ == "__main__":
         print(f"  λ = {p}: at q_0 = {c_q0_print:>+10.6f}")
     print()
 
-    tr_M_q0_print = float(tr_M_sym.subs(q, q0).evalf(30))
+    # `tr_M_q0` carries the VALUE; `_print` is only its display cast. The
+    # `_print` suffix triggers the display-context exemption in
+    # compute_no_mpf_to_float_cast, so it cannot be the only binding: the
+    # rename that added it moved the suffix onto the DEFINITION and left the
+    # four uses below -- three of them compute, not display -- pointing at a
+    # name bound nowhere. Checked against the full 36771-commit history:
+    # `tr_M_q0` was never bound in any commit, so this script raised
+    # NameError every time it was run. Bean qou-lejl.
+    tr_M_q0 = tr_M_sym.subs(q, q0).evalf(30)
+    tr_M_q0_print = float(tr_M_q0)
     print(f"tr_M(T_w(³He)) at q_0 = {tr_M_q0_print:.6f}")
     print()
 
@@ -66,10 +84,13 @@ if __name__ == "__main__":
     B_pred = M_E * rho * tr_M_q0
     B_AME = 7.7181
     err = (B_pred - B_AME) / B_AME * 100
+    B_pred_print = float(B_pred)
+    err_print = float(err)
     print(f"Paper formula B = m_e · ρ · tr_M:")
-    print(f"  B_pred = {M_E} · {rho} · {tr_M_q0:.6f} = {B_pred:.6f} MeV")
+    print(f"  B_pred = {M_E} · {rho} · {tr_M_q0_print:.6f} "
+          f"= {B_pred_print:.6f} MeV")
     print(f"  B_AME  = {B_AME:.6f} MeV")
-    print(f"  err = {err:+.2f}%")
+    print(f"  err = {err_print:+.2f}%")
     print()
 
     print("Cross-check vs existing compute (probe_sdp_canonical_paper_formula):")
