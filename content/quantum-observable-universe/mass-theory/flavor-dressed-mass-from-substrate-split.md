@@ -21,3 +21,11 @@ $$
 $$
 
 The CODATA neutron-proton mass difference is no longer an input. The functor extracts the splitting purely from $q_0$ and the scale $M_N$. The individual masses $\mu_{\mathfrak{u}}$ and $\mu_{\mathfrak{d}}$ are then pinned by the baryon-content sum-rule.
+
+**Conditional on two upstream results, neither yet formalised.** The formal
+backing is a named accessor for a hypothesis carrying the substrate side
+([`prop:flavor-split-substrate`](#prop:flavor-split-substrate)) together with
+the Skein side ([`lem:pair-skein-mass-formula`](#lem:pair-skein-mass-formula)),
+which is also where the $O\!\left((\Delta m / M_N)^2\right)$ correction is
+absorbed. The equality above is asserted for a triple $(\mu, M_N, q)$ carrying
+that hypothesis, not for an arbitrary one.
