@@ -21,16 +21,39 @@ back.
 | `computations/probes/symbolic_nf_q_degree_magic_probe.py` | revived by the qou-sidu fix, exceeded 900 s — needs a dedicated long run | `qou-sidu` |
 | `tools/pyhecke/python/pyhecke/atom.py` | last `mp.mpf(repr(` site; it is a CHECKPOINT-KEY file, so editing it discards the table's completed atoms | `qou-gxsd` |
 
-## Confirm-only (took OURS in the 59-commit merge; regenerating should be a no-op)
+## Confirm-only — SETTLED 2026-09-07, no run owed
 
 `a-K-via-lp-dual-hecke-basis`, `he-nu-sdp-saturation-obstruction`,
 `markov_weights_symbolic`, `binding-closed-form-c-vs-d`,
 `binding-production-route-c-vs-d-deut`, `binding-sum-c-vs-d-deut`.
 
-Main changed none of those six producers and this branch changed all of them,
-so the merged source is this branch's and its witnesses already came from it.
-Re-running should reproduce them; a MOVE would mean one of main's 59 commits
-touched something in their import cone, which is worth knowing either way.
+These were taken as OURS in the 59-commit merge and listed here to confirm by
+re-running. **Answered statically instead, so no producer time is spent.**
+
+Main changed 17 `.py` files in those 59 commits. Transitive first-party import
+cones (built with `witness_import_cone_staleness_audit.import_cone`, 20-57
+modules each) intersect that set in **exactly one file for all six**:
+`tools/qou-substrate/python/qou_substrate/witness.py`.
+
+And main's change to it is
+[`stamp_staleness_metadata`](../tools/qou-substrate/python/qou_substrate/witness.py)
+gaining `payload.setdefault("scriptFile", os.path.basename(spath))` — bean
+`qou-4383`. Metadata, no numeric path, and a **`setdefault`**, so a caller
+that already named its producer keeps its own value. All six witnesses
+already carry `scriptFile`:
+
+    aK_via_lp_dual_hecke_basis.py          he_nu_sdp_saturation_obstruction.py
+    markov_weights_symbolic.py             binding_closed_form_C_vs_D_probe.py
+    binding_production_route_C_vs_D_probe.py
+    binding_sum_C_vs_D_per_isotope_probe.py
+
+so the change is a no-op for every one of them. **Nothing moves; taking OURS
+was correct and needs no confirmation run.**
+
+Method note for the next merge: this is cheaper and stronger than re-running.
+Cheaper because it costs a cone walk instead of six producer runs; stronger
+because a re-run that reproduces the numbers only shows the numbers did not
+move *this time*, whereas the cone intersection shows *why* they cannot have.
 
 ## Blocked, not owed
 
