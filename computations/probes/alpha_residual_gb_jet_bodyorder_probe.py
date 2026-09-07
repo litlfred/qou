@@ -165,14 +165,19 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 mp.mp.dps = 40
 
 M_E = mp.mpf("0.51099895069")
 
 # AME2020 binding energies (MeV). Independent of the framework.
-B_AME = {"D": mp.mpf("2.22456637"), "T": mp.mpf("8.48179663"),
-         "3He": mp.mpf("7.71805"), "4He": mp.mpf("28.29566")}
+B_AME = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
+         "3He": mp.mpf("7.71805"), "4He": AME_B_HE4_MEV_VALIDATION}
 
 # SW jet-prolongation periods a_D^(n) = lw(n-1), transcribed from
 # binding_manybody_jet_filtration.py's own output.

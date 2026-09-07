@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-08-30T13:40:13Z
-updated_at: 2026-09-05T05:57:11Z
+updated_at: 2026-09-05T06:29:13Z
 ---
 
 `computations/hadron-knot-table.witness.json` disagrees with its own producer
@@ -403,3 +403,20 @@ better-defined state. The order is: sign first (`qou-sv7h`, and they hold it),
 then anchor classification (`qou-bypn` — proton under the 2026-08-30 ruling),
 then regenerate. Not the reverse. A run costing ~840 s per bound atom is cheap
 compared with publishing 19 wrong-signed numbers that look freshly computed.
+
+## UNBLOCKED 2026-09-05 (qou-0wqd / PR #6708)
+
+The regeneration was gated on step 2 of the corrected priority in
+`docs/audits/2026-08-31-ysn-matrices-are-not-a-representation.md` — "wire the
+correct family in, then re-run the binding numbers". That is now measured, and
+the answer is that nothing moves.
+
+`hadron_knot_table.py` reaches `_build_ysn_matrices` only through
+`binding_energy` (line 180), and `binding_energy`'s accumulator is fully served
+by the Rust MPFR kernel: `uic(1,1)` is byte-identical under both matrix
+families, 193 kernel calls / 193 served. Even with the kernel forced off the two
+families agree to `2.0e-14`, because the consumer takes a trace and the trace is
+provably blind to a braid defect.
+
+So the witness would record the same numbers either way. Regenerating it is a
+staleness question, not a correctness one.

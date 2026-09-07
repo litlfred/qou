@@ -49,14 +49,18 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402 — PROTON pin (owner 2026-
 from experimental_constants import M_E_MEV  # noqa: E402 — CAL-1 registry
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from coulomb_energy import R0_FM, alpha_em_hbar_c_mev_fm  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 Q0 = mp.mpf(Q_50_DIGIT_STR)
 M_E = mp.mpf(str(M_E_MEV))
 ALPHA_HC = mp.mpf(str(alpha_em_hbar_c_mev_fm()))
 
 # AME2020 total binding (MeV) — the comparison boundary, not model input.
-B_AME = {"2H": mp.mpf("2.224566"), "3H": mp.mpf("8.481821"),
-         "3He": mp.mpf("7.718058"), "4He": mp.mpf("28.295661")}
+B_AME = {"2H": AME_B_DEUTERON_MEV_VALIDATION, "3H": mp.mpf("8.481821"),
+         "3He": mp.mpf("7.718058"), "4He": AME_B_HE4_MEV_VALIDATION}
 ZA = {"2H": (1, 2), "3H": (1, 3), "3He": (2, 3), "4He": (2, 4)}
 
 

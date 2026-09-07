@@ -67,7 +67,13 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 from witness_base import WitnessBuilder
-from codata_constants import M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV,
+)
 from mass_at_3A_proper import per_generator_V_hat_3A, E_0_CALIBRATION_MEV
 from _li_2_q_util import load_q_50dps, li_2_q
 # Pentagon-reduced Li_2^q (with POST-τ Rogers log² correction).
@@ -364,7 +370,7 @@ def main() -> int:
     builder.add_assertion(
         "data_loaded",
         computed=fmt(B_AME["D"]),
-        expected=fmt(mp.mpf("2.22456607")),
+        expected=fmt(AME_B_DEUTERON_MEV_VALIDATION),
         tolerance=fmt(mp.mpf("1e-10")),
         unit="B(D) MeV",
         source="AME 2020 deuteron binding",

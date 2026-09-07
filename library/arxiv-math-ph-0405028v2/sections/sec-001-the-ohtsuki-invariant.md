@@ -1,13 +1,12 @@
 ---
 doc_id: arxiv-math-ph-0405028v2
-doc_title: "On the quantum invariant for the Brieskorn homology spheres"
+doc_title: "ON THE QUANTUM INVARIANT FOR THE BRIESKORN HOMOLOGY SPHERES"
 section_id: sec-001-the-ohtsuki-invariant
 section_title: "The Ohtsuki Invariant"
 section_number: null
 pages: 20-26
 source_pdf: 0405028v2.pdf
 source_sha256: 90a0e4ba456988d6
-doc_brief: "On the quantum invariant for the Brieskorn homology spheres — We study an exact asymptotic behavior of the Witten–Reshet ikhin–Turaev SU(2) in- variant for the Brieskorn homology spheres Σ( p1, p 2"
 ---
 τ∞
 (
@@ -75,10 +74,8 @@ Then the invariant λn(M) is computed as follows;
 )
 =
 
-
-
-
-
+
+
 Λ n(p1, p2, p3) for 1
 p1
 + 1

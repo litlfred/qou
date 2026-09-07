@@ -50,6 +50,12 @@ import json, math, os, hashlib, datetime
 from mpmath import mp, mpf
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -118,10 +124,10 @@ CONVENTIONS = {
 
 M_E_MEV = mpf("0.51099895069")
 ISOTOPES = {
-    "D":   ("atom-chi-rust-d.witness.json",   "6",  2.224566, 2),
-    "T":   ("atom-chi-rust-t.witness.json",   "9",  8.481798, 3),
-    "3He": ("atom-chi-rust-3he.witness.json", "9",  7.718043, 3),
-    "4He": ("atom-chi-rust-4he.witness.json", "12", 28.295673, 4),
+    "D":   ("atom-chi-rust-d.witness.json",   "6",  AME_B_DEUTERON_MEV_VALIDATION, 2),
+    "T":   ("atom-chi-rust-t.witness.json",   "9",  AME_B_TRITIUM_MEV_VALIDATION, 3),
+    "3He": ("atom-chi-rust-3he.witness.json", "9",  AME_B_HE3_MEV_VALIDATION, 3),
+    "4He": ("atom-chi-rust-4he.witness.json", "12", AME_B_HE4_MEV_VALIDATION, 4),
 }
 
 

@@ -38,6 +38,7 @@ import mpmath
 from mpmath import mp, mpf
 
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.constants import q_int_at as _q_int_at  # noqa: E402
 from partition_utils import hook_length_1based as hook_length  # noqa: E402
 
 
@@ -60,9 +61,27 @@ def partitions_of_height(n: int, height: int) -> list[tuple[int, ...]]:
 
 
 def q_int(k: int, q_val: mpf) -> mpf:
+    """SYMMETRIC quantum integer [k]_q = (q^k - q^-k)/(q - q^-1).
+
+    Was the CLASSICAL (Gaussian) form (q^k - 1)/(q - 1), which is the wrong
+    bracket for the quantity this file computes.  `dim_q` below feeds a
+    q-hook-length formula whose product is the *Wedderburn* weight
+    w_lambda = dim_q(lambda)^2 / [n]_q!, and that is built on the symmetric
+    bracket: rebuilding the weights with it reproduces AGENTS.md's recorded
+    sum_lambda w_lambda(q) at the proton q0 — 0.9874 / 0.9822 / 0.9822 /
+    0.9911 at n = 3,4,5,6 against the register's 0.987 / 0.982 / 0.982 /
+    0.991 — while the classical form gives 0.9150 / 0.8829 / 0.8683 / 0.8746,
+    7-13 % low, matching none.
+
+    The two never agree anywhere both are defined
+    (`QOU.Substrate.QIntegerConventions.conventions_never_agree`, sorry-free),
+    so this was a real discrepancy and not a normalisation.  Delegates to the
+    canonical `qou_substrate.constants.q_int_at` rather than keeping a 367th
+    local copy (beans qou-c041, qou-4u10, qou-263a).
+    """
     if k == 0:
         return mpf(0)
-    return (q_val ** k - 1) / (q_val - 1)
+    return _q_int_at(k, q_val, mpmath.mp.dps)
 
 
 def q_factorial(k: int, q_val: mpf) -> mpf:

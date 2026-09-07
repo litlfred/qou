@@ -68,7 +68,13 @@ import _path_bridge  # noqa: F401, E402
 
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV  # noqa: E402,
+)
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from per_irrep_pole_atom import parts_of  # noqa: E402
@@ -82,10 +88,10 @@ set_compute_dps()
 
 # AME 2020 binding energies (MeV), for comparison only.
 AME_B_MEV = {
-    "deuteron": mp.mpf("2.224566"),
-    "tritium": mp.mpf("8.481798"),
-    "helium-3": mp.mpf("7.718041"),
-    "helium-4": mp.mpf("28.295674"),
+    "deuteron": AME_B_DEUTERON_MEV_VALIDATION,
+    "tritium": AME_B_TRITIUM_MEV_VALIDATION,
+    "helium-3": AME_B_HE3_MEV_VALIDATION,
+    "helium-4": AME_B_HE4_MEV_VALIDATION,
 }
 
 ISOTOPES = {
@@ -96,6 +102,12 @@ ISOTOPES = {
 }
 
 
+def _os_path_basename(p: str) -> str:
+    """Basename of a path, for the cache-ownership check (bean qou-w8rv)."""
+    import os
+    return os.path.basename(p)
+
+
 def _load_chi_witness(path: Path) -> dict[tuple, mp.mpf]:
     """{λ_tuple: chi_value_mpf} from a chi-cache witness JSON."""
     w = json.loads(path.read_text())
@@ -103,6 +115,91 @@ def _load_chi_witness(path: Path) -> dict[tuple, mp.mpf]:
         tuple(e["partition"]): mp.mpf(e["chi_lambda"])
         for e in w["by_partition"]
     }
+
+
+# Field names under which a chi cache records the q it was computed at, PER CACHE KIND.
+#
+# WHY THIS IS KEYED ON `q_tag` AND NOT AN ORDERED FALLBACK CHAIN (bean qou-w8rv).  It was an
+# inline chain looking for `q_str`, `q_0_50dps_str`, `q_inv_50dps_str`.  The canonical q0 caches,
+# written by `chi_at_q0_via_hoefsmit_mpfr.py`, spell it **`q_0_50dps`** (no `_str`), so the chain
+# returned None on every one of them, and the consequences compounded:
+#
+#   * `cached_q == q_str` became `None == <str>`, always False, so the cache NEVER hit;
+#   * both diagnostics below are guarded by `cached_q is not None`, so nothing printed;
+#   * the miss fell through to recompute-and-persist, OVERWRITING the canonical witness.
+#
+# A guard added to stop a stale witness being loaded was silently destroying the fresh one instead.
+#
+# AND AN ORDERED CHAIN CANNOT FIX IT, which is the part worth keeping.  A qinv witness records
+# BOTH values -- `q_inv_50dps_str` (the q it was computed at) AND `q_0_50dps` (the anchor, as
+# provenance).  Appending `q_0_50dps` to a shared chain therefore reads the ANCHOR off a qinv
+# cache and reports a spurious miss on the qinv leg, which is exactly what the first version of
+# this fix did.  Measured, not reasoned: the run printed
+#
+#   cache miss: chi-deuteron-h6-at-qinv-...json computed at q_str='1.1099...',
+#               requested '0.9009...' -- recomputing
+#
+# The disambiguator is not an ordering, it is WHICH CACHE WE ARE READING.
+_Q_CACHE_FIELDS = {
+    # `q_str` first in both: this producer writes it with the q it was actually called with, so it
+    # is unambiguous on a witness this producer wrote.
+    "q0":   ("q_str", "q_0_50dps", "q_0_50dps_str"),
+    "qinv": ("q_str", "q_inv_50dps_str", "q_inv_50dps"),
+}
+
+
+def _cached_q(w: dict, q_tag: str):
+    """The q a chi-cache witness was computed at, for the cache kind `q_tag`.
+
+    Returns None only when the witness records no q for that kind -- which must stay
+    distinguishable from 'records a different q', because the caller prints different diagnostics
+    for the two, and a None silences both.
+    """
+    for k in _Q_CACHE_FIELDS.get(q_tag, ()):
+        v = w.get(k)
+        if v is not None:
+            return v
+    return None
+
+
+def _self_test() -> int:
+    """Assert the guard reads the right q from every shape a chi cache is known to take.
+
+    This exists because both failures it protects against were INVISIBLE: a lookup that names no
+    field the data carries returns None and is indistinguishable from a legitimate cache miss, and
+    a lookup that names the wrong one of two present fields reports a miss that looks legitimate.
+    """
+    Q0 = "1.1099785827513808075916690956107688798744991218736"
+    QI = "0.90091828395574149216082288248109393601474162661054"
+    cases = [
+        # (name, q_tag, witness, expected)
+        ("this producer, q0",        "q0",   {"q_str": Q0}, Q0),
+        ("hoefsmit q0 cache",        "q0",   {"q_0_50dps": Q0}, Q0),
+        ("suffixed q0",              "q0",   {"q_0_50dps_str": Q0}, Q0),
+        ("this producer, qinv",      "qinv", {"q_str": QI}, QI),
+        # THE REGRESSION: a qinv cache carries the anchor too.  Reading q_0_50dps here is the bug
+        # the first version of this fix introduced.
+        ("qinv cache, BOTH present", "qinv", {"q_inv_50dps_str": QI, "q_0_50dps": Q0}, QI),
+        ("no q recorded",            "q0",   {"dps": 50}, None),
+    ]
+    fails = []
+    for name, tag, w, want in cases:
+        got = _cached_q(w, tag)
+        if got != want:
+            fails.append(f"{name}: got {got!r}, want {want!r}")
+    # Against the real committed witnesses, both kinds, so the test cannot pass on toy data alone.
+    for pat, tag, want in ((f"chi-deuteron-h6-at-q0-50dps.witness.json", "q0", Q0),
+                           (f"chi-deuteron-free-h6-at-qinv-50dps.witness.json", "qinv", QI)):
+        f = HERE / pat
+        if f.exists():
+            got = _cached_q(json.loads(f.read_text()), tag)
+            if got != want:
+                fails.append(f"committed {pat}: got {got!r}, want the {tag} value")
+    for f in fails:
+        print(f"bar-pairing SELF-TEST FAILED: {f}", file=sys.stderr)
+    if not fails:
+        print(f"bar-pairing: cache-key self-test passed ({len(cases) + 2}/{len(cases) + 2})")
+    return 1 if fails else 0
 
 
 def _load_or_compute_chi(atom: str, n: int, kind: str, q_str: str,
@@ -126,14 +223,37 @@ def _load_or_compute_chi(atom: str, n: int, kind: str, q_str: str,
         # alone does NOT encode q_str + dps.  A future q_0 re-pin or a
         # different precision request would otherwise silently load a
         # stale witness.  Re-run if the on-disk fields disagree.
-        cached_q = w.get("q_str", w.get("q_0_50dps_str", w.get("q_inv_50dps_str")))
+        cached_q = _cached_q(w, q_tag)
         cached_dps = w.get("dps")
         if (not w.get("partial", False)
                 and cached_q == q_str
                 and cached_dps == dps):
             return {tuple(e["partition"]): mp.mpf(e["chi_lambda"])
                     for e in w["by_partition"]}, legacy
-        if cached_q is not None and cached_q != q_str:
+        # Checked BEFORE the diagnostics below, so the 'recomputing'
+        # messages are only printed on paths that really do recompute.
+        # Refuse to destroy a file another producer owns. Reaching here
+        # means the cache genuinely disagrees, and overwriting a
+        # canonical at-q0 witness with this script's schema is never the
+        # right repair -- re-run its own producer instead.
+        _owner = w.get("producer")
+        if _owner and _owner != _os_path_basename(__file__):
+            raise RuntimeError(
+                f"{legacy.name} was written by {_owner!r}, not by this "
+                f"script, and its cached q ({cached_q!r}) does not match "
+                f"the requested {q_str!r}. Refusing to overwrite it with "
+                f"a different schema (bean qou-w8rv). Re-run {_owner} to "
+                f"regenerate it, then re-run this script."
+            )
+        if cached_q is None:
+            # Was silent before: both diagnostic branches below are
+            # guarded on `cached_q is not None`, so an unrecognised
+            # schema recomputed and clobbered without printing anything.
+            print(f"[{atom}] cache miss: {legacy.name} carries no "
+                  f"recognised q field (keys: "
+                  f"{sorted(k for k in w if k != 'by_partition')}) "
+                  f"— recomputing", flush=True)
+        elif cached_q != q_str:
             print(f"[{atom}] cache miss: {legacy.name} computed at "
                   f"q_str={cached_q!r}, requested {q_str!r} — recomputing",
                   flush=True)
@@ -301,6 +421,10 @@ def compute_atom(atom: str) -> dict:
 
 
 def main(argv: list[str]) -> int:
+    # Both spellings, so neither `precision-gates.sh` (--self-test) nor a hand run (--selftest)
+    # can report a sound detector as a no-op -- the qou-7u0d failure, avoided by construction.
+    if argv and argv[0] in ("--self-test", "--selftest"):
+        return _self_test()
     set_compute_dps()
     if argv:
         atoms = argv

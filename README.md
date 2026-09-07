@@ -434,13 +434,13 @@ The compute pipeline is layered into reusable packages so external researchers c
 | [`pyhecke`](tools/pyhecke/) | `tools/pyhecke/` | Hecke algebra, Gram matrix, Markov trace, tower binding. Primary domain library — 19 in-repo direct importers. |
 | [`pyhecke-native`](tools/pyhecke-native/) | `tools/pyhecke-native/` | PyO3 bindings into `hecke-engine` for Rust-accelerated Markov trace. 15 in-repo direct importers. |
 | [`qou-mass`](qou-mass/) | `qou-mass/` | High-level facade: `predict("4He")`, `compute_tr_M(Z, N)`, `canonical_braid(Z, N)`. Ships vendored per-Z shards; alpha (`v0.1.0a1`). Canonical wiring example: [`computations/qou_mass_canonical_wiring_example.py`](computations/qou_mass_canonical_wiring_example.py). |
-| [`witness-schema`](tools/witness-schema/) | `tools/witness-schema/` | Pydantic v2 models for the `*.witness.json` interchange format (Python). Also JSON Schema + Zod (TypeScript). |
+| [`witness-schema`](schemas/witness-schema/) | `schemas/witness-schema/` | Pydantic v2 models for the `*.witness.json` interchange format (Python). Also JSON Schema + Zod (TypeScript). |
 
 ### TypeScript / npm
 
 | Package | Source | Role |
 |---|---|---|
-| `@litlfred/witness-schema` | `tools/witness-schema/js/` | Zod schemas + JSON Schema for `*.witness.json` (Node, Deno, Bun, browser). |
+| `@litlfred/witness-schema` | `schemas/witness-schema/js/` | Zod schemas + JSON Schema for `*.witness.json` (Node, Deno, Bun, browser). |
 | `@litlfred/hecke-engine-node` | `tools/hecke-engine-node/` | napi-rs native bindings into `hecke-engine` (Node.js, server-side). |
 | `@litlfred/hecke-engine-wasm` | `tools/hecke-engine-wasm/` | wasm-bindgen build of `hecke-engine` for in-browser symbolic compute. |
 
@@ -471,7 +471,7 @@ The compute pipeline is layered into reusable packages so external researchers c
 | `tools/pyhecke-native/` | `pyhecke-native` PyPI wheel — PyO3 → hecke-engine |
 | `tools/hecke-engine/` | `hecke-engine` Rust crate — canonical compute core (Layer 1) |
 | `tools/hecke-engine-{wasm,node,r,jvm,c}/` | Multi-language bindings of `hecke-engine` |
-| `tools/witness-schema/` | `witness-schema` PyPI + npm — cross-language `*.witness.json` schemas |
+| `schemas/witness-schema/` | `witness-schema` PyPI + npm — cross-language `*.witness.json` schemas |
 | `blueprint/src/` | LeanBlueprint source (dependency graph) |
 | `deploy/` | Remote MCP deployment (Docker Compose, Caddy, auth) |
 | `.github/workflows/` | CI/CD: Lean build, publish, blueprint, deploy |

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-04T07:09:12.134843+00:00",
-  "commitSha": "70e60d642735e2fa3adc2bd0ea87631453ea6a65",
+  "computedAt": "2026-09-05T07:48:45.995153+00:00",
+  "commitSha": "5581d089576c181598f5ad344c7a4af8b787581e",
   "assertions": [
     {
       "name": "two-strand trace of a single sigma is the Markov z = q^3/(q^2+1)",
@@ -51,8 +51,8 @@
   "durationMs": 7,
   "computation": "the_canonical_mass_trace_factorises_over_the_chain_probe",
   "scriptFile": "the_canonical_mass_trace_factorises_over_the_chain_probe.py",
-  "scriptHash": "02e15dcca015",
-  "scriptCommitSha": "8fcdf463f641e17158a9e4f8d917a3dd7e22bcbf",
+  "scriptHash": "07883445acdc",
+  "scriptCommitSha": "24c95ba7f73f7d6a6a46c0c2a72e0e80498e6ab6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

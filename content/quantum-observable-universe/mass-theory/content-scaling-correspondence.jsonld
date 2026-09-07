@@ -7,10 +7,14 @@
   ],
   "label": "prop:content-scaling-correspondence",
   "kind": "proposition",
-  "title": "Content $c = m_j$ by Schur--Weyl: box content determines BW scaling",
+  "title": "Box content is the $q$-Jucys--Murphy eigenvalue exponent",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-knot-eigenbasis-complete",
     "papers/quantum-observable-universe/blocks/rem-hecke-algebra-from-braiding"
+  ],
+  "cites": [
+    "references/jimbo1986",
+    "references/ram1997"
   ],
   "tags": [
     "schur-weyl",
@@ -19,7 +23,7 @@
     "scaling",
     "braid-graph"
   ],
-  "leanRef": "qou:QOU.BraidKnot.BoxContent.boxContent",
+  "leanRef": "qou:QOU.SchurWeyl.SeminormalRep.seminormalRep_qJM",
   "text": "content-scaling-correspondence.md",
   "provenance": "authored"
 }

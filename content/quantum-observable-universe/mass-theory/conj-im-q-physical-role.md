@@ -17,7 +17,7 @@ evaluation at $q_0$ — and all three remain open on the **fibre**,
 where $q$ is a formal variable and $\mathrm{Im}(q)$ is
 unconstrained. The conjecture is therefore restated as a
 fibre-level question; the archimedean findings are recorded in
-[Reality of $\mathfrak{Q}_\beta$ at the substrate](#qbeta-reality)
+the section *Reality of $\mathfrak{Q}_\beta$ at the substrate*
 below.*
 
 ## Exclusions for Im(q)
@@ -28,7 +28,7 @@ Per [`rem:im-q-vs-p-skew`](rem-im-q-vs-p-skew.md), Im(q) is **NOT**:
 - An observable in the current framework (mass formula uses $|\cdot|$)
 - Equal to $\mathrm{Im}(\mathrm{tr}_M(\rho(\beta)))$ — Im(q) is a parameter; Im(tr_M) is the value induced
 
-## Reality of $\mathfrak{Q}_\beta$ at the substrate {#qbeta-reality}
+## Reality of $\mathfrak{Q}_\beta$ at the substrate
 
 The framework does possess an $\mathrm{Im}(q)$-sensitive observable, which
 the opening paragraph's "not currently in the framework" did not anticipate:
@@ -42,7 +42,7 @@ $(\mathrm{Re}\,q, \mathrm{Im}\,q)$.
 |---|---|---|---|
 | (i) chirality | the identification $\text{chirality} = (q \mapsto \bar q)$ holds exactly on $\lvert q\rvert = 1$; the substrate sits $18.83\,\%$ of $q_0$ away from it | (b) | `qou:QOU.QBeta.conj_eq_inv_iff_modulus_one` |
 | (ii) phase dual to CAL-2 | $\mathrm{Im}\,q = 0$ on the whole admissible set | (b) | `qou:QOU.QBeta.im_qbeta_zero_iff_e2` |
-| (iii) non-Hermitian | premise correct; **open** — the framework computes the decay's energy release, not its rate | (a) | `qou:QOU.QBeta.two_width_mechanisms_are_independent` |
+| (iii) non-Hermitian | premise correct; **open**, but re-scoped — the framework *does* carry a categorical decay rate, and that rate is built entirely at real $q$ | (a) | `qou:QOU.QBeta.two_width_mechanisms_are_independent` |
 
 For (i), the corpus's own chirality operation is the **bar involution**
 $q \mapsto q^{-1}$ — the mirror knot, $J_{\bar K}(q) = J_K(q^{-1})$ — and
@@ -71,9 +71,48 @@ $24.02$ orders below $\mathfrak{Q}_\beta$.
 So $\mathfrak{Q}_\beta$ and $\Gamma_n$ are **independent** properties of one
 decay rather than reciprocals: a $Q$-value is fixed by mass differences alone,
 while a width additionally requires the coupling and the phase-space integral.
-The framework reproduces the $Q$-value to $0.17\,\%$ — that result is untouched
-— and supplies no rate. Candidate (iii)'s obstacle therefore stands, and
-$\Gamma_n$ is a width the reciprocal mechanism demonstrably fails to produce.
+The framework reproduces the $Q$-value to $0.17\,\%$ — that result is untouched —
+and $\Gamma_n$ is a width the reciprocal mechanism demonstrably fails to produce.
+
+The coupling and the phase-space integral are, however, **supplied elsewhere in
+the corpus**, which an earlier version of this section denied. The rate formula
+of [hadron half-life](../predicted-spectra/hadron-half-life.md) is
+
+$$
+  \Gamma_\beta
+  =
+  \frac{\lvert\mathcal{W}(q)\rvert^2\,\mu_0}{2\pi^3}
+   \cdot
+  [2]_q
+   \cdot
+  \lvert\mathcal{M}_q\rvert^2
+   \cdot
+  f(Q),
+  \qquad f(Q) \propto Q^5 ,
+$$
+
+whose coupling has a closed form — the canonical Markov trace of the $T_{3,5}$
+braid word in $H_3(q)$, $\mathcal{W}(q) = q^2(q^{12}+q^8-1)/(q^2+1)^2$, with
+$\mathcal{W}(1) = 1/4$. So the missing object is **not** the rate.
+
+This re-scopes candidate (iii) rather than discharging it, and it re-scopes it
+*against* the candidate. Every factor above is real for real $q$: a modulus
+squared, $[2]_q = q + q^{-1}$, a trace ratio, and $Q^5$. The framework therefore
+produces a decay width with **no $\mathrm{Im}\,q$ anywhere** — the same posture
+the mass formula takes. What (iii) needs is not a width the framework lacks but
+a reason a width should require $\mathrm{Im}\,q$ when the framework's own does
+not. Scope (a): this says the corpus's construction needs no
+$\mathrm{Im}\,q$, not that no construction does.
+
+What the rate formula genuinely lacks is its **scale**, not its shape. The
+weak-scale crossing count $N_v$ in $v = N_v\,\mathfrak{E}_\times\,\mu_0$ is
+undetermined, so $G_F$ enters numerically from experiment; the Lean carrier
+`all_six_agree` says so in its own docstring, and
+[the Fermi-relation block](../predicted-spectra/hadron-half-life-fermi.md)
+lists it as open computation 1. Since $m_e = 3\mathfrak{E}_\times\mu_0$, both
+$\mathfrak{E}_\times$ and $\mu_0$ cancel and
+$N_v = 3v/m_e = 1445519.51 \pm 0.37$ is $q$-independent — carrying no anchor and
+no Markov-parameter convention.
 
 ## Three candidate physical roles
 
@@ -118,7 +157,12 @@ both complex extensions the corpus supports, the zero set factors as
 $y \cdot (\text{branch})$ with every branch empty on
 $\mathrm{Re}\,q > 1/2$, and the Apollonius circle above lies entirely in
 that half-plane: its centre is $1.0099145$ and its radius $0.1000641$, so
-its leftmost point is $0.9098504$. Only the two real intersections survive,
+its leftmost point is $0.9098504$ — closed forms $1/(1-k^2)$, $k/(1-k^2)$ and
+$1/(1+k)$ with $k^2 = \mathrm{Vol}(4_1)/(m_\mu/m_e)$, reproduced by
+[`the_apollonius_circle_from_cal2_reproduces_exactly_probe.py`](computations/probes/the_apollonius_circle_from_cal2_reproduces_exactly_probe.py)
+(4/4), which also records that **no $q_0$ enters**: CAL-2 is the equation that
+*defines* $q_0$, so neither the anchor question nor the CODATA vintage reaches
+these three numbers. Only the two real intersections survive,
 and the circle's arc coordinate is not a live degree of freedom. The
 surviving question is the fibre one: whether $\mathrm{Im}(q)$ parametrises
 anything at the level of the formal variable, where no reality condition
@@ -154,9 +198,14 @@ present; the third is not.
 - (ii) asked for a second CAL-2-like constraint.
   $\mathrm{Im}\,\mathfrak{Q}_\beta = 0$ is one, supplied by the CAL-2 proxy
   itself.
-- (iii) asked for a categorical formula for decay widths $\Gamma$, and **this
-  one stands**. What the framework computes is the decay's $Q$-value; the rate
-  is absent, and the two differ by $24.02$ orders of magnitude on the neutron.
+- (iii) asked for a categorical formula for decay widths $\Gamma$. That
+  requirement is **met**: [hadron half-life](../predicted-spectra/hadron-half-life.md)
+  states one, with a closed-form coupling. What stands in (iii)'s way is the
+  opposite of an absence — the corpus's rate is manifestly real at real $q$, so
+  it exhibits a width needing no $\mathrm{Im}\,q$. Separately, the reciprocal
+  mechanism $\Gamma = \hbar/\mathfrak{Q}_\beta$ misses $\Gamma_n$ by $24.02$
+  orders of magnitude, and the rate's overall scale is imported pending the
+  weak-scale crossing count $N_v$.
 
 The framework's mass formula explicitly **projects away** Im(q)
 content via $|\cdot|$, so no mass observable can detect Im(q)

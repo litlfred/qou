@@ -1,11 +1,11 @@
 ---
 # qou-rjuj
 title: 'VACUOUS: qbeta_phase_bar_parity_completeness_probe''s two defect assertions cannot fail'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-30T08:05:06Z
-updated_at: 2026-08-30T08:08:28Z
+updated_at: 2026-09-05T09:29:09Z
 ---
 
 ## 2026-08-30 — FIXED, and my own framing corrected
@@ -38,3 +38,30 @@ the D arm makes it non-bar-odd; the probe then reports 'NOT BAR-ODD' with
 bar(a)+a = 0.0218531 and exits ASSERTIONS FAILED. Restored, it passes. So the
 new check can fail, which is what distinguishes it from the version it
 replaces.
+
+
+---
+
+## CLOSED 2026-09-05 — fix verified live and the probe re-run
+
+Confirmed on `main` `262ee53eeea`, `computations/qbeta/qbeta_phase_bar_parity_completeness_probe.py`:
+
+- **line 118** — the comment recording that the old code *substituted* `bar(a) = -a`;
+- **line 135** — `bar_a = a_of(1 / q)`, the bar involution actually applied;
+- **line 139-140** — `bar_phase = bar_a - (q**2 * u) / 2`, then `defect = bar_phase + phase`;
+- **line 143** — the `'bar-odd OK' / 'NOT BAR-ODD'` branch, i.e. the assumption is now a
+  test with a reachable failing side.
+
+Re-run here: **ASSERTIONS PASS**, exit 0.
+
+The body's own framing correction stands and is the reusable part — the two
+assertions were not *vacuous*; the gap was narrower, that the one hypothesis
+carrying content (each arm's `a` really is bar-odd) was never tested because the
+probe substituted it from its own comment. The mutation test (dropping the forced
+`−h²/4` projection makes the D arm non-bar-odd; the probe then reports
+`bar(a)+a = 0.0218531` and exits ASSERTIONS FAILED) is what distinguishes the new
+check from the one it replaced, and is the right standard for this defect class.
+
+Not in scope, and not claimed closed by this: the probe's own output still ends
+`OPEN: whether F must be bar-even at all is NOT settled here.` That is a live
+mathematical question about the framework, not an assertion defect.

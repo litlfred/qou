@@ -23,9 +23,29 @@ witness `markov-peel-atomic-tr-m.witness.json`):
 
 Direct numerical cross-check at q₀:
   proton  = b₀·γ + b₁·σ₀ + b₂·σ₁ + b₃·L₊ + b₄·L₋ + b₅·e⁻
-       tr_M(proton)|q₀ = +1.065306228592389333… (matches Hoefsmit
-       + Wenzl bridge witness `atomic-tr-m-mpfr-50dps.witness.json`
-       to ~4·10⁻¹⁶).
+       tr_M(proton)|q₀ = +1.14575978231523894039…
+
+  Migrated C → D on 2026-09-05 (`qou-i229` → `qou-46ab`, owner-approved).
+  This comment previously stated +1.065306228592389333… and claimed it
+  "matches Hoefsmit + Wenzl bridge witness
+  `atomic-tr-m-mpfr-50dps.witness.json` to ~4·10⁻¹⁶". Both halves were wrong:
+  the value was **convention C**, and that witness gives
+  1.1457597823152389404 — a 7.02·10⁻² gap, not 4·10⁻¹⁶, wrong by fourteen
+  orders of magnitude. It was word-for-word the claim `qou-46ab` had already
+  disproved at `canonical_tr_m_three_path_comparison.py:104`, and it survived
+  here because that bean scanned the literal `1.06530622861316` while this
+  file rendered the same quantity as `1.065306228592389333`.
+
+  `qou-46ab` attributes the two frames to 50 digits:
+       C-frame  1.0653062286131670594     (excised)
+       D-frame  1.1457597822878355047     |D−C|/C = 0.0755215
+
+  The value now quoted is the bridge witness's own, at `q0Anchor: muon` on the
+  live pin — the same anchor and pin as `prop:q-hecke-seminormal-character-
+  closure`, which was migrated in the same pass. The agreement claim is
+  dropped rather than restated with a new tolerance: it has not been
+  re-measured, and asserting an unmeasured tolerance is what went wrong here
+  the first time.
 
 ## Scope vs the abstract `MarkovTrace` typeclass
 
@@ -48,7 +68,8 @@ requires a generic family `HeckeNF (n : Nat) := Fin (Nat.factorial n) → R`
   - Build `MarkovTraceH3 → MarkovTrace HeckeNF R_q` for n = 3 only,
     routing arbitrary-`n` calls through dummy values for n ≠ 3.
   - Cross-check via `decide` / `native_decide` against the Python
-    proton witness (`tr_M(proton)|q₀ ≈ 1.0653`).
+    proton witness (`tr_M(proton)|q₀ ≈ 1.1458` under convention D;
+    the ≈ 1.0653 this read was the excised convention C).
 
 ## References
 
@@ -69,7 +90,12 @@ open QOU.Archimedean
     six NF basis elements of H₃(q):
     {γ, σ₀, σ₁, L₊, L₋, e⁻}. -/
 structure MarkovTraceH3 (R : Type*) [CommRing R] where
-  /-- The Markov parameter `z = 1/(q^{1/2} + q^{-1/2})`. -/
+  /-- The Markov parameter `z = q³/(q²+1) = q²/[2]_q` — **convention D**,
+      the production trace (trace-convention registry). Corrected
+      2026-09-05 (`qou-46ab`): this read `z = 1/(q^{1/2} + q^{-1/2})`,
+      which is **convention C**, excised by the owner ruling of
+      2026-08-09. The two are not variant normalisations of one
+      quantity — see `rem:markov-z-reconciliation`. -/
   z : R
   /-- The Hecke parameter `h = q − q⁻¹`. -/
   h : R
@@ -96,15 +122,26 @@ structure MarkovTraceH3 (R : Type*) [CommRing R] where
       • tr(σ_iσ_j) = z²      by two (M2) peels (`prop:markov-pair-z2`)
       • tr(σ_iσ_jσ_i) = h·z² + z (Hecke quadratic + Markov peel)
 
-    All Python production witnesses cross-check this formula at
-    `q = q₀` to ≤ 4·10⁻¹⁶ vs the Hoefsmit + Wenzl bridge.
+    Corrected 2026-09-05 (`qou-46ab`): this claimed the Python
+    production witnesses cross-check the formula at `q = q₀` to
+    ≤ 4·10⁻¹⁶ against the Hoefsmit + Wenzl bridge. That tolerance was
+    measured in **convention C** and does not hold as stated; the
+    bridge witness is 7·10⁻² from the C-frame value. The formula
+    itself is convention-independent — it is the Markov axioms applied
+    basis element by basis element — so nothing above depends on `z`'s
+    value. The numeric claim is dropped rather than restated with a new
+    tolerance, because it has not been re-measured under D.
 
     The signature takes an explicit ring hom `φ : R_q →+* R`
     (the "lift" of the algebra coefficients into the trace ring)
     so the canonical instance with `R = R_q` and `φ = RingHom.id`
     drops out trivially, while the symbolic instance with
-    `R = R_q[z, z⁻¹] / (z⁻¹ − q^{1/2} − q^{-1/2})` is also
-    expressible via the inclusion hom. -/
+    `R = R_q[z, z⁻¹] / (z⁻¹ − (q² + 1)/q³)` is also expressible via
+    the inclusion hom.  (Corrected 2026-09-05, `qou-46ab`: the defining
+    relation read `z⁻¹ − q^{1/2} − q^{-1/2}`, i.e. **convention C**.
+    Under production convention D, `z = q³/(q²+1)`, so the relation is
+    `z⁻¹ = (q²+1)/q³` — and note it needs no √q, which is one of the
+    structural reasons D is the production trace.) -/
 noncomputable def trH3
     {R : Type*} [CommRing R]
     (φ : R_q →+* R) (z h : R) (a : HeckeNF) : R :=

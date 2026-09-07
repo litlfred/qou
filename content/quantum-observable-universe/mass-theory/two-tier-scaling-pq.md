@@ -30,7 +30,7 @@ trivial component, and Reidemeister-I invariance would fail
 ## Tier 2: physical scaling — base mass $m_0$
 
 Evaluating the normalised $P_K(q)$ at the substrate parameter
-$q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) produces a dimensionless real number; converting
+$q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps) produces a dimensionless real number; converting
 to MeV requires multiplication by a base mass scale,
 
 $$
@@ -83,7 +83,7 @@ The substrate-bound polynomial $P_K(q)$ is a dimensionless
 topological multiplier; its Markov normalisation by $[N]_q$ is fixed
 by the categorical structure, while the conversion to a macroscopic
 mass requires a separate dimensional anchor $m_0$ chosen by
-calibration ([three calibration discipline](#prop:three-calibration-discipline)).
+calibration ([three calibration discipline](#def:three-calibration-discipline)).
 QOU pins $m_0 = m_e$; the Higgs-VEV and Planck-mass choices are
 mathematically admissible alternatives that re-route the calibration
 through the electroweak or gravitational sector respectively.

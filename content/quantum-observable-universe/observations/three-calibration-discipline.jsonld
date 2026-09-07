@@ -1,12 +1,12 @@
 {
   "@context": "https://litlfred.github.io/folio-assistant/ns/content/v1.jsonld",
-  "@id": "papers/quantum-observable-universe/blocks/prop-three-calibration-discipline",
+  "@id": "papers/quantum-observable-universe/blocks/def-three-calibration-discipline",
   "@type": [
-    "folio:Proposition",
+    "folio:Definition",
     "doco:Section"
   ],
-  "label": "prop:three-calibration-discipline",
-  "kind": "proposition",
+  "label": "def:three-calibration-discipline",
+  "kind": "definition",
   "title": "Three-calibration discipline ($m_e$, $m_\\mu$, $m_\\pi$) aligned to (co)homological data",
   "uses": [
     "papers/quantum-observable-universe/blocks/prop-substrate-consistency-window",

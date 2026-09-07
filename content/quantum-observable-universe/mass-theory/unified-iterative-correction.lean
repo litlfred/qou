@@ -95,11 +95,20 @@ noncomputable def w22 (q : F) : F := (dq22 q) ^ 2 / qFact4 q
 
 /-! ## §4  Per-partition LP-dual shadow price + telescoping -/
 
-/-- LP-dual shadow price (prop:mass-coefficient-shadow-price):
+/-- Per-partition weight (prop:mass-coefficient-shadow-price):
     y_λ = w_λ / d_λ − 1/[k]_q!.
-    The constant 1/[k]_q! is the LP normalisation dual (smallest
-    w_λ/d_λ across partitions of k, attained by the trivial 1-dim
-    sym/alt reps with w = 1/[k]_q! and d = 1). -/
+    The constant 1/[k]_q! is the SMALLEST w_λ/d_λ across partitions
+    of k, attained by the trivial 1-dim sym/alt reps with
+    w = 1/[k]_q! and d = 1.
+
+    Docstring corrected 2026-09-05 (owner ruling; PR #6752): it called
+    that constant "the LP normalisation dual".  It is not.  The
+    net-constraint dual of prop:operator-selection-lp is identically
+    zero — the NF basis contains the identity, so the first Frobenius
+    row is the objective vector and the optimum is 0 for every
+    n_target (commit 6b7d2ec4a8; Lean `y_0_eq_zero_of_radical`).
+    Nothing below changes: `shadowPrice` is and was the displayed
+    closed form, and no theorem in this file depends on the reading. -/
 noncomputable def shadowPrice (w_lambda d_lambda qfac_k : F) : F :=
   w_lambda / d_lambda - 1 / qfac_k
 

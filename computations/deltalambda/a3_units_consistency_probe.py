@@ -69,13 +69,14 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 set_compute_dps()
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 
-BH2 = mp.mpf("2.224566")         # B(²H) MeV (AME)
+BH2 = AME_B_DEUTERON_MEV_VALIDATION         # B(²H) MeV (AME)
 BCAT = mp.mpf("0.380132118905")  # categorical deuteron, master formula m_e·|Σ y_λ χ^λ sgn f^λ|
 C3_MEV = mp.mpf("0.297")         # 3-body Borromean cluster, MeV (E₀·deficit, #4364)
 MU3 = mp.mpf("0.4708")           # dimensionless 3-body simplex coefficient (AME ratio units)

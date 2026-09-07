@@ -23,7 +23,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Workplan 2 Phase 2 — partial Path A derivation of m_n_Hecke at 50 dps from the trustable subset (T1 + T4) of the six-term unified mass formula. NO FITTING per owner directive 2026-05-10. Neutron-side counterpart of derive_m_p_hecke_path_a.py.  Honors the three-calibration discipline (CAL-1 m_e, CAL-2 q_0, CAL-3 𝔇_π) — no CODATA m_n consumed.  The derived value will not match CODATA m_n (~939.6 MeV) until the T2/T3/T5/T6 R&D closes.",
+  "description": "Workplan 2 Phase 2 — partial Path A derivation of m_n_Hecke at 50 dps from the trustable subset (T1 + T4) of the six-term unified mass formula. NO FITTING per owner directive 2026-05-10. Neutron-side counterpart of derive_m_p_hecke_path_a.py.  Honors the three-calibration discipline (CAL-1 m_e, CAL-2 q_0, CAL-3 P_avg^π) — no CODATA m_n consumed.  The derived value will not match CODATA m_n (~939.6 MeV) until the T2/T3/T5/T6 R&D closes.",
   "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md (Phase 2); docs/audits/2026-05-11-three-calibration-discipline-violations.md (motivates building this neutron-side counterpart so the neutron-mass chain consumes a substrate-derived value instead of the placeholder)",
   "data": {
     "lean_uniqueness_ref": {

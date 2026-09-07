@@ -31,6 +31,7 @@ A handful of common letters carry overloaded meanings in the literature. We enfo
     - the Skein module $\mathrm{Sk}_q(\mathbf{C})$ — the $\mathbb{Z}[q^{\pm 1}]$-algebra of knot classes, with mass functional $\mathfrak{m}\colon \mathrm{Sk}_q \to \mathbb{R}_{\geq 0}$ (fraktur; the calligraphic $\mathcal{M}$ is reserved for the mass *endomorphism* $\mathcal{M}(K)\in\mathrm{End}_{\mathbf{C}}(X_K)$ — see the $\mathcal{M}$ ruling below). We moved the Skein *module* off calligraphic $\mathcal{S}$ (where it collided with the state bundle) to roman $\mathrm{Sk}$, since single-letter calligraphic was blocked: $\mathcal{S}$ = state bundle, $\mathcal{K}$ = knot.
 - **$\mathfrak{O}$** = observation / intent morphism — the section $(\mathfrak{O}, \epsilon)$ of $\mathrm{Ad}(J^1\mathcal{S})$ and its germ endomorphism $\mathfrak{O}_p$. We never use this for an ideal. The genus-filtration ideal keeps $\mathfrak{I}$ ($\mathfrak{I}_4 = (u^5)$). We moved intent off $\mathfrak{I}$ to disambiguate the two.
 - **$\mathfrak{W}$** = confinement observable / $q$-Wilson loop $\mathfrak{W}(\mathcal{K}, \mathcal{T})$. We never use this for the observation morphism (now $\mathfrak{O}$). The abstract Wilson-loop functional is plain $W(\gamma)$. This is distinct from $\mathfrak{V}$ (below).
+- **$\mathbb{M}_{n,q}$** = the **$q$-Plancherel measure** on partitions of $n$, $\mathbb{M}_{n,q}(\lambda) = q^{n(\lambda)} f^\lambda / \prod_\square \{h(\square)\}_q$ with the *asymmetric* $q$-integers $\{k\}_q = (q^k-1)/(q-1)$ ([`prop:q-plancherel-asymptotic-skeleton`](../observations/q-plancherel-asymptotic-skeleton.md)). Blackboard bold for the same reason as $\mathbb{V}$ above — it is the source literature's own symbol and both cheaper glyphs are taken: plain $M$ is the (deprecated) base manifold and appears as $\chi_{\mathrm{eu}}(M)$, and $\mathcal{M}$ is the mass endomorphism, which the $\mathcal{M}$ ruling below forbids overloading. **Three distinct things are NOT this measure and must not be written $\mathbb{M}$:** the Wedderburn weight $w_\lambda = \dim_q^2/[n]_q!$ (a different measure — it disagrees with $\mathbb{M}_{n,q^2}$ by a relative $978$ at $n=12$, and is not even normalised), the Markov weights $y_\lambda$, and the Markov trace $\mathrm{tr}_M$, whose subscript $M$ is Markov and is unrelated. Note also that $n(\lambda) = \sum_i (i-1)\lambda_i$ is Macdonald's statistic, not a function of the size $n$; the size is always the bare $n$. The corpus's Molien / fake-degree weight is this same measure at $Q = q^2$ — exactly, [`probes/molien_feray_meliot_bridge_probe.py`](../../../computations/probes/molien_feray_meliot_bridge_probe.py) — so a claim proved for one holds for the other and neither transfers to $w_\lambda$.
 - **$\mathfrak{V}$** = the complex-volume observable (QOU analogue of the Neumann–Zagier complex volume $\mathbb{V}=\mathrm{Vol}+i\,\mathrm{CS}$): $\mathfrak{V}(K) = E_0\,\mathrm{tr}_M((\Pi_{\text{free}}-\mathbf{1})\circ\mathcal{M})$. Its real part is binding $\mathfrak{E}_{\mathrm{bind}} = \mathrm{Re}\mathfrak{V}$ (bar-even / $\cosh$) and its imaginary part is the $\beta$-decay Q-value $\mathfrak{Q}_\beta = \mathrm{Im}\mathfrak{V}$ (bar-odd / $\sinh$) ([`conj:binding-qbeta-complex-volume`](../mass-endomorphism/binding-qbeta-complex-volume.md)). We do not use $\mathfrak{W}$ (Wilson loop) or $\mathbb{V}$ (the literal NZ symbol, used only as the analogy reference).
 - **$\Pi_{\text{free}}$** = idempotent projector onto the factorized sub-object (parabolic/Young subalgebra; constituents un-linked). The "free" trace is $\mathrm{tr}_M\circ\Pi_{\text{free}}$.
 - **$\mathfrak{Q}_\beta$ (fraktur)** = the $\beta$-decay Q-value as a *trace-component* ($\mathrm{Im}\mathfrak{V}$, derived). We promoted this to fraktur (observable register) from the older roman $Q_\beta$. The measured/experimental value is $\mathfrak{Q}_\beta^{\,\mathrm{obs}}$ (CODATA).
@@ -149,11 +150,19 @@ third is the observable.
   \cite{reshetikhin1991, turaev2010}: a long knot is $V \to V$; **closing** it
   (Markov trace) lands in $\mathrm{End}_{\mathbf{C}}(\mathbf{1}) = k$, a scalar.
 - **$\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ is an element, not a map.** It
-  *is* an endomorphism of $V^{\otimes n}$ via $q$-Schur–Weyl
-  $H_n(q) \cong \mathrm{End}_{U_q\mathfrak{sl}_N}(V^{\otimes n})$
-  \cite{jimbo1986}, or via the faithful left-regular map
+  *maps to* an endomorphism of $V^{\otimes n}$ via $q$-Schur–Weyl
+  $H_n(q) \twoheadrightarrow \mathrm{End}_{U_q\mathfrak{sl}_N}(V^{\otimes n})$
+  \cite{jimbo1986}, or *is* one faithfully via the left-regular map
   $a \mapsto L_a \in \mathrm{End}_R(H_n)$ \cite{kock2004} — but say which; do not
   write "$\Phi_{\mathrm{mass}}$ is the mass endomorphism" bare.
+  **The Schur–Weyl arrow is a surjection, not an isomorphism, unless $N \ge n$.**
+  Below that it has kernel the blocks with more than $N$ rows, so an element of
+  the kernel maps to the zero endomorphism and the identification is not
+  faithful. This framework runs at $N = 2$ (convention D) with $n = 3A$, where
+  the image is $\mathrm{TL}_n(q) = \mathrm{End}_{U_q\mathfrak{sl}_2}(V^{\otimes n})$
+  of dimension $C_n$, against $\dim H_n = n!$ — a kernel of dimension
+  $n! - C_n$, i.e. $1, 10, 78, 588, 4611, 38890$ at $n = 3,\dots,8$. Only the
+  left-regular map is faithful unconditionally.
 - **$\mathfrak{m}$ is a functional, not an endomorphism.** The Markov trace
   $\mathrm{tr}_M \colon H_n \to R$ is a trace functional \cite{jones1987,
   geckpfeiffer2000}; the modulus collapses $\mathcal{M}$ to a number. Note

@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T10:27:11.904323+00:00",
-  "commitSha": "1c768a5ad3dddbb5c86fe78fdc53ce98a6faef2d",
+  "computedAt": "2026-09-05T18:00:47.871115+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "baseline_spread_reproduced",
-      "computed": 7.162229445453156,
+      "computed": 7.162226762370407,
       "expected": 7.16,
       "passed": true,
       "tolerance": "0.5",
@@ -15,7 +15,7 @@
     },
     {
       "name": "wedderburn_lift_consistent_to_2em4",
-      "computed": 9.987438477423559e-51,
+      "computed": 9.983134063775882e-51,
       "expected": 0.0,
       "passed": true,
       "tolerance": "0.0005",
@@ -23,11 +23,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 11,
   "computation": "borromean-per-lambda-fr-probe",
   "scriptFile": "borromean_per_lambda_fr_probe.py",
-  "scriptHash": "ce596ada2659",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "558db1d6a0f6",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -39,10 +39,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "30fd920c241a54fa"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -53,10 +53,10 @@
   "description": "H_3-level probe of the FR-restricted knot-ideal projector weight (K*=4_1, Fricke chi_{4_1}((2,1)) = 2-[3]_q) as the missing per-λ weight on the Borromean single binding pipeline, via the Wedderburn re-lift τ = Σ_λ y_λ χ^λ(β_Bor) and a candidate reweight of the (2,1) channel (56.1% of τ). 4 structural candidates × 2 placements tested against the U-shaped net/target residual (baseline spread 7.16x, convention D). No fitted parameters (Δ_λ gate honored). Audit-only.",
   "parameters": {
     "tau_closed_form": "0.998562163836787265951213135146650202094025880059411134127535",
-    "channel_fraction_21": "0.493868038658694878822238240951401409387786270582777369606794"
+    "channel_fraction_21": "0.493868038658694878822238240951401409387786270582767261861744"
   },
   "data": {
-    "wedderburn_lift_mismatch_rel": 9.987438477423559e-51,
+    "wedderburn_lift_mismatch_rel": 9.983134063775882e-51,
     "wedderburn_lift_note": "y-lambda-at-q0 × proved chi closed forms reproduce the Lean closed-form tau to 1.96e-4 relative only — convention gap flagged; fractions normalized so baseline tau is exact.",
     "results": {
       "baseline": {
@@ -79,7 +79,7 @@
           "4He": {
             "A": 4,
             "B_tower": 6.475459552758949,
-            "net_over_target": 0.22884981575659816
+            "net_over_target": 0.2288499014873371
           },
           "6Li": {
             "A": 6,
@@ -107,10 +107,10 @@
             "net_over_target": 1.639074888998437
           }
         },
-        "spread": 7.162229445453156
+        "spread": 7.162226762370407
       },
       "w_chirality_1_minus_h2::both": {
-        "tau_weighted": "0.977008100188249030277631494752645207739585026786003381424976",
+        "tau_weighted": "0.977008100188249030277631494752645207739585026786003822560994",
         "rows": {
           "2H": {
             "A": 2,
@@ -130,7 +130,7 @@
           "4He": {
             "A": 4,
             "B_tower": 6.08341652111121,
-            "net_over_target": 0.2149945866674106
+            "net_over_target": 0.21499466720776292
           },
           "6Li": {
             "A": 6,
@@ -158,11 +158,11 @@
             "net_over_target": 1.5796314175808877
           }
         },
-        "spread": 7.347307865125574,
+        "spread": 7.347305112709564,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chirality_1_minus_h2::atom_only": {
-        "tau_weighted": "0.977008100188249030277631494752645207739585026786003381424976",
+        "tau_weighted": "0.977008100188249030277631494752645207739585026786003822560994",
         "rows": {
           "2H": {
             "A": 2,
@@ -182,7 +182,7 @@
           "4He": {
             "A": 4,
             "B_tower": 6.71178428648815,
-            "net_over_target": 0.23720179005772898
+            "net_over_target": 0.23720187891724884
           },
           "6Li": {
             "A": 6,
@@ -210,11 +210,11 @@
             "net_over_target": 1.7314162695179958
           }
         },
-        "spread": 7.299338968296202,
+        "spread": 7.299336233850088,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_over_d::both": {
-        "tau_weighted": "0.248048226013233453968940667090380815266293429958297985044525",
+        "tau_weighted": "0.248048226013233453968940667090380815266293429958313345430186",
         "rows": {
           "2H": {
             "A": 2,
@@ -234,7 +234,7 @@
           "4He": {
             "A": 4,
             "B_tower": 0.25266355904963933,
-            "net_over_target": 0.008929406239944862
+            "net_over_target": 0.008929409585040828
           },
           "6Li": {
             "A": 6,
@@ -262,11 +262,11 @@
             "net_over_target": 0.13194184277675453
           }
         },
-        "spread": 14.776104841834282,
+        "spread": 14.776099306475173,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_over_d::atom_only": {
-        "tau_weighted": "0.248048226013233453968940667090380815266293429958297985044525",
+        "tau_weighted": "0.248048226013233453968940667090380815266293429958313345430186",
         "rows": {
           "2H": {
             "A": 2,
@@ -286,7 +286,7 @@
           "4He": {
             "A": 4,
             "B_tower": 11.56837939976886,
-            "net_over_target": 0.4088391677331322
+            "net_over_target": 0.40883932089071223
           },
           "6Li": {
             "A": 6,
@@ -314,11 +314,11 @@
             "net_over_target": 3.878098076754795
           }
         },
-        "spread": 9.485632451160367,
+        "spread": 9.485628897694648,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_abs_over_d::both": {
-        "tau_weighted": "0.762760226994628152406176739390563736054408965541311919568238",
+        "tau_weighted": "0.762760226994628152406176739390563736054408965541316745606113",
         "rows": {
           "2H": {
             "A": 2,
@@ -338,7 +338,7 @@
           "4He": {
             "A": 4,
             "B_tower": 3.1144904477815496,
-            "net_over_target": 0.11006949535293081
+            "net_over_target": 0.11006953658669429
           },
           "6Li": {
             "A": 6,
@@ -366,11 +366,11 @@
             "net_over_target": 1.0577779745304134
           }
         },
-        "spread": 9.6100919799688,
+        "spread": 9.610088379878603,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_abs_over_d::atom_only": {
-        "tau_weighted": "0.762760226994628152406176739390563736054408965541311919568238",
+        "tau_weighted": "0.762760226994628152406176739390563736054408965541316745606113",
         "rows": {
           "2H": {
             "A": 2,
@@ -390,7 +390,7 @@
           "4He": {
             "A": 4,
             "B_tower": 8.753803393172445,
-            "net_over_target": 0.30936897642167566
+            "net_over_target": 0.3093690923161581
           },
           "6Li": {
             "A": 6,
@@ -418,11 +418,11 @@
             "net_over_target": 2.5747371332180338
           }
         },
-        "spread": 8.322544694037514,
+        "spread": 8.322541576282594,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_raw::both": {
-        "tau_weighted": "-0.00930777447746389524967736905971064512776433783320898221733133",
+        "tau_weighted": "-0.00930777447746389524967736905971064512776433783318835465777699",
         "rows": {
           "2H": {
             "A": 2,
@@ -442,7 +442,7 @@
           "4He": {
             "A": 4,
             "B_tower": 0.0003448341655362748,
-            "net_over_target": 1.2186816179854596e-05
+            "net_over_target": 1.2186820745227539e-05
           },
           "6Li": {
             "A": 6,
@@ -470,11 +470,11 @@
             "net_over_target": 0.00019009678217632212
           }
         },
-        "spread": 15.598559900375081,
+        "spread": 15.598554056911489,
         "verdict": "FAIL (monotone rescale)"
       },
       "w_chi_raw::atom_only": {
-        "tau_weighted": "-0.00930777447746389524967736905971064512776433783320898221733133",
+        "tau_weighted": "-0.00930777447746389524967736905971064512776433783318835465777699",
         "rows": {
           "2H": {
             "A": 2,
@@ -494,7 +494,7 @@
           "4He": {
             "A": 4,
             "B_tower": 11.902544213970378,
-            "net_over_target": 0.42064891737935967
+            "net_over_target": 0.4206490749610576
           },
           "6Li": {
             "A": 6,
@@ -522,7 +522,7 @@
             "net_over_target": 4.043882634673475
           }
         },
-        "spread": 9.613438826532207,
+        "spread": 9.613435225188228,
         "verdict": "FAIL (monotone rescale)"
       }
     },
@@ -540,11 +540,11 @@
     "upstream_witness_hashes": [
       {
         "path": "y-lambda-at-q0.witness.json",
-        "sha256": "e4f26334a3bc2c699e2ad3f6b6faae0adfbf5292b3dc3b83201b999070f8506e",
-        "size_bytes": 47239,
-        "commitSha": "c37cbd50ef545778a49904278ec8f8e4e426596f",
-        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
-        "computedAt": "2026-08-10T19:03:52.564561+00:00"
+        "sha256": "cc45e79037c07d34def8c19165c2f99cfe9ed6dc986e59d527d8f3652a4b6327",
+        "size_bytes": 48466,
+        "commitSha": "35d29b109bfb86703fdee23b013665576bf01373",
+        "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+        "computedAt": "2026-08-30T14:11:10.092560+00:00"
       }
     ]
   }

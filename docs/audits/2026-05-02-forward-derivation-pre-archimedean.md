@@ -19,7 +19,7 @@ deep-audit and a refresh of that audit's flags is appended at the end
 
 **Strict rules of the game.**
 
-1. **The pre-Archimedean wall** (`prop:three-calibration-discipline`).
+1. **The pre-Archimedean wall** (`def:three-calibration-discipline`).
    Everything below `τ` (the fibre functor / Archimedean realisation)
    must live in the categorical base ring `R ⊇ ℤ[q,q⁻¹]` or
    `ℚ(q)`. Three external scalar inputs are categorically allowed,

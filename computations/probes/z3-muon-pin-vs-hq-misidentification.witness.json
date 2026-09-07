@@ -1,0 +1,93 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T17:27:18.857581+00:00",
+  "commitSha": "312f7ed9d8c56a4bcf778c2cb04afaa60ec67e87",
+  "assertions": [
+    {
+      "name": "literal_is_z3_at_the_muon_anchor",
+      "computed": "0.000000000217312251194509272628001614742106339515777826433642435471101",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-9",
+      "unit": "relative",
+      "source": "z_3 = q^3/[3]_q evaluated at the CODATA-2022 muon anchor reproduces the warned-about literal to the literal's own precision. This is the identification the published warning gets wrong."
+    },
+    {
+      "name": "literal_is_NOT_h_q_by_a_factor_of_two",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "|h_q - literal|/literal = 0.534702749674541602711107937368175882518504263919587166335642 -- h_q = q - 1/q is 0.209060298795639315430846213129674943859757495263063078255215, roughly half the literal. The claim that they 'differ at the 8th decimal' is not a small error in a true statement; the quantities are not comparable."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "z3-muon-pin-vs-hq-misidentification",
+  "scriptFile": "z3_muon_pin_vs_hq_misidentification_probe.py",
+  "scriptHash": "4dfb5be8c6ad",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/z3_muon_pin_vs_hq_misidentification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/z3_muon_pin_vs_hq_misidentification_probe.py"
+  },
+  "description": "Bean qou-yk03. The corpus's documented grep warning -- 'the literal 0.44930482320583087 in many witnesses is h_q, NOT z_3 (0.449304809090...)' -- misnames the quantity. Measured at 65 dps, that literal is z_3 = q^3/[3]_q at the MUON anchor (rel 2.17e-10, which is the literal's own 17-digit truncation), while h_q = q - 1/q is 53 % away. So the two numbers are not two quantities that resemble each other; they are ONE quantity at the two substrate anchors, and the 3.14e-8 gap is the mu-p tension propagated through z_3. That matters because the note as written tells an agent a muon-pinned value needs no anchor check, inverting the 2026-08-07 proton-by-default directive. EXTENT IS SMALL and is reported as measured: 5 files carry the literal, 3 under _deprecated/ and 2 being the doc and bean that carry the misidentification itself -- ZERO live producers. A documentation correction, not a drain. Does NOT claim any computed result is wrong.",
+  "parameters": {
+    "literal_under_test": "0.44930482320583087",
+    "q0_proton_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "q0_muon_derived": "1.109978595642739046681795129380001752700065561029011556974045769999095"
+  },
+  "data": {
+    "candidate_identification": {
+      "rows": {
+        "z_3_at_muon": {
+          "value": "0.449304823303470312603410097035007393163505038247087035508140",
+          "rel_diff_vs_literal": "0.000000000217312251194509272628001614742106339515777826433642435471101"
+        },
+        "z_3_at_proton": {
+          "value": "0.449304809090207860555151201609007624142555944569733180563629",
+          "rel_diff_vs_literal": "0.0000000314165846445372918878666050712166922135962094993795270282767"
+        },
+        "h_q_q_minus_qinv": {
+          "value": "0.209060298795639315430846213129674943859757495263063078255215",
+          "rel_diff_vs_literal": "0.534702749674541602711107937368175882518504263919587166335642"
+        },
+        "hbar_q_one_minus_qinv": {
+          "value": "0.0990817160442585078391771175189060639852583733894630782552147",
+          "rel_diff_vs_literal": "0.779477737769869835672827207594428329819886746087884058827579"
+        },
+        "one_over_q_int_2": {
+          "value": "0.497290545604915555995839231664869631848190730328512985925226",
+          "rel_diff_vs_literal": "0.106799927177950556005638568240442236342755963777708897870370"
+        },
+        "z_2_at_proton_convention_D": {
+          "value": "0.612688037146465251595829863945899248026308391545087014074774",
+          "rel_diff_vs_literal": "0.363635566551189584202739823014343769623011571733123751144059"
+        }
+      },
+      "note": "The muon row's 2.17e-10 residual is the literal's own truncation at 17 significant digits, not a mismatch. h_q is not a near miss -- it is off by a factor of two."
+    },
+    "anchor_gap": {
+      "z3_muon_over_proton_rel": "0.0000000316338978895608318445320810344131242207017479188080912051153",
+      "note": "3.14e-8 -- the mu-p substrate tension (~11.6 ppb on q) propagated through z_3 and amplified ~2.7x. This is the real content of the 'differ at the 8th decimal' observation: a LAYER STRADDLE, which AGENTS.md calls a defect regardless of size, not a coincidental lookalike."
+    }
+  }
+}

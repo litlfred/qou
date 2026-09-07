@@ -133,7 +133,11 @@ def HopfSpectator (t : ClusterTriple) : Prop :=
   t.l12.natAbs = 1 ∨ t.l13.natAbs = 1 ∨ t.l23.natAbs = 1
 
 /-- All pairwise linkings vanish: the Brunnian/Borromean pattern
-    (a pure-α triple). -/
+    (a pure-α triple).
+
+    **This is TIER 2 — strictly weaker than true Brunnian-ness** (every proper
+    sub-link is the unlink), which it does not imply: the Whitehead link has
+    linking number `0` and is not the unlink.  Tier table for the four things this corpus calls `Brunnian`, and which implications hold: `QOU.Mass.BrunnianTierDisambiguation`. -/
 def Brunnian (t : ClusterTriple) : Prop :=
   t.l12 = 0 ∧ t.l13 = 0 ∧ t.l23 = 0
 

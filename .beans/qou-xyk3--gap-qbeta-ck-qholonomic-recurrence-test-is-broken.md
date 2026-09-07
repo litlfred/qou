@@ -50,3 +50,25 @@ changed. That is the first question for whoever picks this up. Note the
 c_k ladder is convention-C-frame and cds1-gated (AGENTS.md), so "just make it
 not-None" may be the wrong fix; the honest answer might be that the rung has no
 value under the current state and the producer should say so.
+
+---
+
+FIXED 2026-09-05 (session fervent-noether). The crash is resolved: `mp.mpf(None)`
+at the extended-ck cross-check now guarded. When
+`qbeta-decay-sdp-extended-ck.witness.json` carries null `c_k_extracted_50dps`
+(float64-drained per qou-p77d / df84635376, and the ladder is convention-C /
+cds1-gated so it must NOT be repopulated), the gate is recorded as **skipped**
+(a new `skip()` helper; `allPassed` excludes skips) rather than crashing. Probe
+now runs to completion (exit 0).
+
+Root cause confirmed as filed: the extended-ck witness `c_2..c_10` are all
+`None`. Fix is guard-the-gate, per the bean's own caveat — not repopulate.
+
+REVEALED, NOT CAUSED (out of scope): the committed witness was stale-GREEN
+(`allPassed:true`, 2026-07-11) because the probe has crashed ever since, freezing
+a pre-breakage snapshot. Regenerating it honestly flips `allPassed` to false and
+surfaces THREE pre-existing failures — `muon_c3_matches_N3_witness` computes
+c_3 ≈ **-974** vs expected -2.02, plus the two downstream c3 gates. That is the
+cds1 convention-gate / **qou-v6wz** c3 breakage, NOT caused by this crash-fix and
+NOT laundered here. The probe now honestly reports it instead of hiding it behind
+a crash + a stale-green witness.

@@ -133,7 +133,7 @@ an explicit prose link to the target, a concept mention without a link, whether
 the block's `.lean` touches the decl, and what the block declares today.
 
 - **2 are near-certain restores on a structural ground rather than taste** —
-  `prop:three-calibration-discipline` and `prf:atom-knot-mass-derivation` link
+  `def:three-calibration-discipline` and `prf:atom-knot-mass-derivation` link
   to the target from their prose while omitting it from `uses[]`. One block's
   two halves contradicting each other.
 - **4 more mention the Markov trace without linking**; that is where judgement

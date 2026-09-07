@@ -57,6 +57,7 @@ set_compute_dps(50)
 
 from qou_substrate.constants import q_at  # mpmath-native proton pin; NOT the f64 `Q`
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
+from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 # q0 at full working precision. `constants.Q` is `_solve_q_proton_f64` -- a
 # float64 solve -- so `mpf(str(Q))` would inflate a double's error to 50 dps
@@ -66,7 +67,7 @@ from qou_substrate.witness import WitnessBuilder  # noqa: E402
 Q = q_at(50)
 H = Q - 1 / Q
 Z_D = Q ** 3 / (Q ** 2 + 1)
-M_E, M_P, M_N = mp.mpf("0.51099895"), mp.mpf("938.27208816"), mp.mpf("939.56542052")
+M_E, M_P, M_N = mp.mpf("0.51099895"), M_P_MEV_VALIDATION, M_N_MEV_VALIDATION
 ALPHA = M_E * 8 * mp.catalan
 BETA2 = -2 * (Q ** 2 + 1 + Q ** -2)
 BETA3 = H ** 2

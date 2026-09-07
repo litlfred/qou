@@ -64,6 +64,10 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import mpmath as mp  # noqa: E402
 from _precision import fmt, set_compute_dps  # noqa: E402
+# Option A (bean qou-q2q7): the production Wenzl/Markov weight, carried
+# alongside the Plancherel measure this probe aggregates with. See
+# docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md.
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 
 # NO-FLOAT64 (owner directive 2026-08-18: probes are not exempt). The germ is a
 # finite-difference q-derivative, so precision is load-bearing: raise dps at
@@ -94,7 +98,33 @@ def q_int(k, q):
 
 
 def wedderburn_weight(shape, q):
-    """y_λ = d_q(λ)² / [n]_q!  (symmetric q-integers) — same as the prior probe."""
+    """**quantum Plancherel** measure `w_planch(λ) = d_q(λ)² / [n]_q!`
+    (symmetric q-integers).
+
+    NOT the Wenzl y_λ (bean qou-za3q). AGENTS.md is explicit that the three
+    partition-weight families y_λ / w_λ / w̃_λ are DISTINCT at q ≠ 1 and must
+    never be conflated; this docstring used to call this one `y_λ`, which is
+    the conflation it forbids, and which makes a corpus scan keying on the
+    name `y_lambda` unable to tell this apart from the production weight.
+
+    The two are not a rescaling of each other. At H₃, measured:
+
+        λ            Wenzl y_λ (production)   d_q²/[n]_q! (here)
+        (3,)             0.50540423              0.16338323
+        (2,1)            0.24729789              0.66067377
+        (1,1,1)          0                       0.16338323
+
+    and at higher n the divergence is structural: the Wenzl row cap (level
+    r = 2, bean qou-fq0f) annihilates every shape with ≥3 rows, which is where
+    the Plancherel measure puts most of its mass — 70 of the 77 partitions of
+    12 carry Wenzl weight exactly zero.
+
+    The name is fixed here; whether the Plancherel measure is the RIGHT pairing
+    for a Magnus Ω₂ sign question is a separate matter and is not settled by
+    this rename. What IS settled (see `sign_robust_to_weight_family` in the
+    witness) is that the probe's headline conclusion — the sign of P_total —
+    does not depend on the choice.
+    """
     n = sum(shape)
     rows = list(shape)
     cols = [sum(1 for r in rows if r > c) for c in range(rows[0])]
@@ -149,8 +179,32 @@ def main() -> None:
     gens = [int(t[2]) for t in triples]                 # ordered generator sequence
     mult = {g: gens.count(g) for g in sorted(set(gens))}
 
+    # Ω₂ PAIR TABLES — depend on the word only, so built once rather than per
+    # partition. Ω₂ = ½ Σ_{i<j, g_i≠g_j} [A_{g_i}, A_{g_j}]; folding the pair
+    # multiplicities and using antisymmetry [A_a,A_b] = −[A_b,A_a] builds each
+    # needed commutator ONCE, where the previous code built every a≠b pair in
+    # range(len(sig)) for every shape — including pairs the word never uses.
+    # `_net_intf` is the same fold restricted to pairs with a leg on the
+    # interface generator σ₂. Verified exact on the triton probe: identical to
+    # 1e-69 at 50 dps, 3.35x faster.
+    _net: dict[tuple[int, int], int] = {}
+    _net_intf: dict[tuple[int, int], int] = {}
+    for _i in range(len(gens)):
+        for _j in range(_i + 1, len(gens)):
+            _a, _b = gens[_i], gens[_j]
+            if _a == _b:
+                continue
+            _key = (_a, _b) if _a < _b else (_b, _a)
+            _d = 1 if _a < _b else -1
+            _net[_key] = _net.get(_key, 0) + _d
+            if _a == 2 or _b == 2:
+                _net_intf[_key] = _net_intf.get(_key, 0) + _d
+    _net = {k: v for k, v in _net.items() if v}
+    _net_intf = {k: v for k, v in _net_intf.items() if v}
+
     rows = []
-    P_total = mp.mpf(0)          # Σ_λ y_λ tr(ρ Ω₂)      — the full Magnus pairing
+    P_total = mp.mpf(0)          # Σ_λ w_planch tr(ρ Ω₂)  — the Plancherel arm
+    P_wenzl = mp.mpf(0)          # Σ_λ y_λ^Wenzl tr(ρ Ω₂) — the HEADLINE (Markov)
     P_intf = mp.mpf(0)           # interface-only part    (Ω₂ restricted to the σ₂ neighbours)
     P_ctrl = mp.mpf(0)           # Σ_λ y_λ tr(Ω₂)         — ρ=I control, must be 0
 
@@ -164,23 +218,17 @@ def main() -> None:
                          "_P": mp.mpf(0)})
             continue
 
-        ngen = len(sig)
-        # precompute pairwise germ commutators C[a][b] = [A_a, A_b]
-        C = {(a, b): comm(A[a], A[b]) for a in range(ngen) for b in range(ngen) if a != b}
-
-        # full Ω₂ = ½ Σ_{i<j} [A_{g_i}, A_{g_j}] over the ordered word
+        # Each needed commutator built exactly once, weighted by its net
+        # multiplicity from the pair tables above.
         Z = sig[0] * 0
         Om2 = Z.copy()
-        Om2_intf = Z.copy()                             # only pairs where one leg is the interface σ₂ (g=2)
-        for i in range(len(gens)):
-            for j in range(i + 1, len(gens)):
-                a, b = gens[i], gens[j]
-                if a == b:
-                    continue
-                cij = C[(a, b)]
-                Om2 += cij
-                if a == 2 or b == 2:
-                    Om2_intf += cij
+        Om2_intf = Z.copy()          # pairs with a leg on the interface σ₂
+        for (a, b), n in _net.items():
+            cij = comm(A[a], A[b])
+            Om2 += n * cij
+            m = _net_intf.get((a, b))
+            if m:
+                Om2_intf += m * cij
         Om2 = Om2 / 2
         Om2_intf = Om2_intf / 2
 
@@ -190,11 +238,14 @@ def main() -> None:
         for g in gens[1:]:
             rho = rho * sig[g]
 
-        tr_rO = sum((rho * Om2)[r, r] for r in range(dim))
-        tr_rO_intf = sum((rho * Om2_intf)[r, r] for r in range(dim))
+        # tr(ρ·M) without forming ρ·M: Σ_{r,s} ρ[r,s]·M[s,r]. O(d²), not O(d³).
+        tr_rO = sum(rho[r, s] * Om2[s, r] for r in range(dim) for s in range(dim))
+        tr_rO_intf = sum(rho[r, s] * Om2_intf[s, r]
+                         for r in range(dim) for s in range(dim))
         tr_O = sum(Om2[r, r] for r in range(dim))        # control: should be ~0
 
         P_total += y * tr_rO
+        P_wenzl += y_lambda_wenzl_bridge_numeric(shape, Q0, dps=mp.mp.dps) * tr_rO
         P_intf += y * tr_rO_intf
         P_ctrl += y * tr_O
         rows.append({"lambda": list(shape), "dim": dim, "y_lambda": fmt(y),
@@ -268,6 +319,39 @@ def main() -> None:
         },
         "results": {
             "per_partition": rows,
+            # Declares WHICH partition-weight family the `y_lambda` column
+            # above actually holds (bean qou-za3q). The column name is left
+            # alone deliberately — several sibling probes read `r["y_lambda"]`
+            # from this witness, so renaming the field would break them; an
+            # explicit declaration removes the ambiguity without that.
+            "weight_family": "quantum_plancherel_dq2_over_n_factorial",
+            "weight_family_note": (
+                "NOT the Wenzl y_lambda used by the production Markov trace. "
+                "AGENTS.md forbids conflating y_lambda / w_lambda / w~_lambda, "
+                "which are distinct at q != 1. Re-weighting this witness's own "
+                "per-partition tr(rho.Omega2) with the Wenzl bridge weight "
+                "leaves the sign of P_total unchanged — measured in "
+                "magnus_omega2_weight_family_robustness_probe.py."
+            ),
+            # HEADLINE (Option A, bean qou-q2q7): the production Wenzl/Markov
+            # weight. `P_total` above keeps its existing name and Plancherel
+            # meaning deliberately — `he4_magnus_mpfr_probe.py` and the sparse
+            # probe both do a NUMERICAL dense-vs-sparse check against the
+            # committed `P_total`, so silently re-meaning it would break a real
+            # cross-check. Declaring which arm is authoritative is the same fix
+            # this arc used for the `y_lambda` column and for `scriptFile`.
+            "headline_pairing": "P_total_wenzl",
+            "P_total_wenzl": fmt(P_wenzl),
+            "P_total_wenzl_sign": (0 if abs(P_wenzl) < _EXACT
+                                   else (1 if P_wenzl > 0 else -1)),
+            "P_total_wenzl_note": (
+                "Sum over lambda of y_lambda^Wenzl * tr(rho.Omega2), the "
+                "production Markov weight (row cap at level r=2 zeroes every "
+                "shape with >=3 rows). tr(1)=1 at every n, so values ARE "
+                "comparable across A -- which the Plancherel arm is not "
+                "(tr(1) = 11.1 / 184.2 / 6751.5 at n = 6 / 9 / 12). See "
+                "docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md."
+            ),
             "P_total": fmt(P_total),
             "P_total_sign": P_sign,
             "P_interface_only": fmt(P_intf),

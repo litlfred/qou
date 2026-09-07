@@ -1,0 +1,157 @@
+{
+  "bean": "qou-hok7",
+  "calibration": [
+    {
+      "argmax_l_W": [
+        11,
+        15
+      ],
+      "dominates": true,
+      "enum_max_B_minus_E": "35.07003253",
+      "n": 16,
+      "relaxed_max": "35.07003253",
+      "true_M": "8.080150841"
+    },
+    {
+      "argmax_l_W": [
+        15,
+        23
+      ],
+      "dominates": true,
+      "enum_max_B_minus_E": "46.30074367",
+      "n": 24,
+      "relaxed_max": "46.30074367",
+      "true_M": "12.40524783"
+    },
+    {
+      "argmax_l_W": [
+        19,
+        31
+      ],
+      "dominates": true,
+      "enum_max_B_minus_E": "54.95942941",
+      "n": 32,
+      "relaxed_max": "54.95942941",
+      "true_M": "16.27652192"
+    },
+    {
+      "argmax_l_W": [
+        22,
+        37
+      ],
+      "dominates": true,
+      "enum_max_B_minus_E": "60.98471557",
+      "n": 40,
+      "relaxed_max": "61.13395151",
+      "true_M": "19.74968982"
+    }
+  ],
+  "checks": [
+    {
+      "check": "R1_the_H_lower_bound_and_the_W_constraint_hold",
+      "detail": "2H >= lambda_1^2 + (n-lambda_1)^2/(l-1) + n^2/lambda_1 and lambda_1 >= W - l + 2 hold on all 914 partitions of n <= 16 (exact Fraction arithmetic, no counterexample). Both are what make the relaxation to two integers valid: the first from the corpus's own 2H = sum lambda_i^2 + sum lambda'_j^2 by Cauchy-Schwarz, the second from distinctness of the beta's with lambda_l >= 1.",
+      "pass": true
+    },
+    {
+      "check": "R2_the_relaxation_dominates_the_enumerated_truth",
+      "detail": "at n = 16..40 the (l, W) relaxation is >= both the enumerated max(B - E) and the true M_n, at every n. It must be, or the relaxation is not an upper bound and nothing below means anything. This is the calibration: the relaxation is checked against the thing it replaces, on the range where both can be computed.",
+      "pass": true
+    },
+    {
+      "check": "R3_the_relaxed_maximum_rate_measured_where_enumeration_cannot_reach",
+      "detail": "over n = 40..4,000 \u2014 a range on which p(n) runs from 37,338 to about 1.0e64, so no enumeration reaches any of the last five points \u2014 the relaxed maximum divided by sqrt(n) varies by 95.42% (9.66613 -> 210.878) while divided by n^(3/4) it rises (3.84359 -> 26.5165). Reported as measured; R4 states what it does and does not settle.",
+      "pass": true
+    },
+    {
+      "check": "R5_neither_the_l_cap_nor_the_eps_truncation_is_doing_the_work",
+      "detail": "the row scan is capped at l <= 8*sqrt(n)+8 and the argmax l lands strictly inside it at every n (22/58, 26/88, 27/134, 43/208, 78/328, 151/513), so the cap is not binding \u2014 a binding cap would under-estimate the max and is reported as a FAILURE here rather than passing quietly. The eps truncation (drop terms with argument > 300) differs from the untruncated sum by at most 7.81e-26 on six spot shapes spanning the scanned (l, W) range.",
+      "pass": true
+    },
+    {
+      "check": "R6_the_relaxation_is_TIGHT_so_the_loss_is_the_beta_bound_itself",
+      "detail": "I wrote this check expecting Hhat to be the weak link and it is NOT. At the relaxation's own argmax (l, W), Hhat reaches 99.325-100.0% of the TRUE minimum hook sum over partitions with exactly that (l, W) \u2014 exact at two of three. And the relaxation as a whole overshoots the enumerated max(B - E) by at most 0.1492 (n=16..40). So passing from a partition to the two integers (l, W) costs essentially nothing.\n\n        That inverts the finding, and makes it more useful. The relaxation is a FAITHFUL instrument, and what it faithfully reports is that the beta-bound of #7070 is itself too weak: its own maximum grows faster than n^(3/4) (R3), while the truth is somewhere in [sqrt n, n^(3/4)]. The lossy step is the Jensen inequality on the pair term \u2014 applied at the MEAN of each distance class, it under-counts badly for a shape whose beta-gaps are mostly 1 with a few large ones, which is exactly what the maximizer then selects (argmax W/l ~ 1.7 at every n).\n\n        The consequence for the next attempt is concrete: a better bound on the pair term can now be TESTED in polynomial time at n = 4000 without enumerating anything, on an instrument calibrated against the truth at n <= 40. Sharpening H further is not worth doing \u2014 there is under 1% left in it.",
+      "pass": true
+    },
+    {
+      "check": "R4_verdict_the_route_is_sound_and_the_current_bound_is_not_strong_enough",
+      "detail": "**The transfer this probe was built to attempt does not fire, and the reason is clean.** The plan was: the relaxed maximum is an upper bound on M_n (R1, R2), and REV_n <= M_n + log p(n) with log p(n) ~ 2.5651*sqrt(n), so a sqrt(n) rate for the relaxation would give REV_n = O(sqrt n) and settle that the 3/4 is NOT sharp. Measured, the sqrt(n) column is not flat (95.42% spread) and the n^(3/4) column RISES, so the relaxation's own growth exceeds n^(3/4) and nothing transfers.\n\n        What that is evidence ABOUT is the bound, not the truth. R6 shows the (l, W) relaxation is tight to under 1%, so this is the beta-bound of #7070 failing on its own, at the Jensen step \u2014 NOT a fact about REV_n, which stays in [Omega(sqrt n), O(n^(3/4))] exactly as before. Sharpness remains OPEN, and no claim is made in either direction.\n\n        Two things survive as usable. The reduction itself: maximizing any bound of the form B(l, W) now costs O(n^2) instead of p(n), so a replacement for the Jensen step is testable at n = 4000 against a calibrated instrument. And the negative is sharp \u2014 'the pair term needs a bound that survives gap sequences of mostly 1s with a few large jumps' is a far more specific target than 'a sharper bound on R_lambda'.\n\n        Anti-caveat, since the mirror-image mistake is on the record: this is NOT the #7065 situation. There the statistic could not discriminate because the range was below its resolving point. Here the reading is a clear RISE across two orders of magnitude in n, not a flat column being over-read, so the negative does not depend on where the control's peak sits.",
+      "pass": true
+    }
+  ],
+  "checks_passed": 6,
+  "checks_total": 6,
+  "computedAt": "2026-09-07T12:39:15.326393+00:00",
+  "dps": 40,
+  "probe": "rev_beta_bound_polynomial_max_probe",
+  "q0_anchor": "physical_proton",
+  "rate_scan": [
+    {
+      "argmax_l_W": [
+        22,
+        37
+      ],
+      "ell_cap": 58,
+      "n": 40,
+      "over_n34": "3.843593716",
+      "over_sqrt_n": "9.666126457",
+      "relaxed_max": "61.1339515114"
+    },
+    {
+      "argmax_l_W": [
+        26,
+        47
+      ],
+      "ell_cap": 88,
+      "n": 100,
+      "over_n34": "3.379786564",
+      "over_sqrt_n": "10.68782355",
+      "relaxed_max": "106.878235476"
+    },
+    {
+      "argmax_l_W": [
+        27,
+        62
+      ],
+      "ell_cap": 134,
+      "n": 250,
+      "over_n34": "3.685931768",
+      "over_sqrt_n": "14.65656822",
+      "relaxed_max": "231.740691253"
+    },
+    {
+      "argmax_l_W": [
+        43,
+        105
+      ],
+      "ell_cap": 208,
+      "n": 625,
+      "over_n34": "5.943117714",
+      "over_sqrt_n": "29.71558857",
+      "relaxed_max": "742.889714269"
+    },
+    {
+      "argmax_l_W": [
+        78,
+        192
+      ],
+      "ell_cap": 328,
+      "n": 1600,
+      "over_n34": "12.13896654",
+      "over_sqrt_n": "76.7735654",
+      "relaxed_max": "3070.94261592"
+    },
+    {
+      "argmax_l_W": [
+        151,
+        357
+      ],
+      "ell_cap": 513,
+      "n": 4000,
+      "over_n34": "26.5164965",
+      "over_sqrt_n": "210.877935",
+      "relaxed_max": "13337.091657"
+    }
+  ],
+  "relaxation": "M_n <= max_(l,W) [ l*C - J(l,W) - F(n) - (Hhat(n,l,W) - H_min(n)) ln q0 ], with 2*Hhat = min over admissible lambda_1 of lambda_1^2 + (n-lambda_1)^2/(l-1) + n^2/lambda_1",
+  "transfer": "REV_n <= M_n + log p(n), and log p(n) ~ pi sqrt(2n/3) = Theta(sqrt n)"
+}

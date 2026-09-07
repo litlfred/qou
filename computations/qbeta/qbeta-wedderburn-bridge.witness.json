@@ -1,0 +1,135 @@
+{
+  "computation": "qbeta-wedderburn-bridge",
+  "assertions": [
+    {
+      "name": "the_opaque_declaration_is_deleted",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "note": "QOU/HeckeAlgebra/Wedderburn.lean. It read 'Using `axiom` keeps the embedding opaque pending concrete construction' and had no body. Deleted 2026-09-05, bean qou-kp2z. Counts DECLARATION lines, not occurrences of the string: the note left where it stood quotes the signature it retired, and a retirement note naming its subject must not read as the subject still being there"
+    },
+    {
+      "name": "no_term_level_use_of_the_name_remains",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "scans every non-.lake Lean source with COMMENTS STRIPPED, for the BARE name. Two earlier versions were wrong in opposite directions: filtering on a leading backtick counted every doc mention as a use (including the retirement note), and a plain substring test would flag the legitimate wedderburnEmbedOf / wedderburnEmbedTotal. Widened deliberately when qou-yos9 added the latter -- the gate means 'the retired opaque has no consumers', not 'no identifier starts with these letters'"
+    },
+    {
+      "name": "the_construction_defines_the_assembly_unconditionally",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "an ordinary def on Sigma lam, Fin (f^lam) x Fin (f^lam) -- no side condition, no opaque"
+    },
+    {
+      "name": "and_proves_it_injective",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "so it is not the zero map. This answers the objection the deleted docstring raised: a stub returning 0 would contradict the Markov-trace structure. The objection was to a stub; the answer is a construction"
+    },
+    {
+      "name": "the_rsk_step_is_isolated_as_a_named_hypothesis",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "Sigma_lam (f^lam)^2 = n! is a HYPOTHESIS on the Fin (n!) landing, discharged by nothing here -- not an assumption folded into the definition"
+    },
+    {
+      "name": "the_signature_still_takes_a_decomposition_and_returns_one_matrix",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "blocks IN, ONE matrix OUT -- the SAME direction and arity the opaque had. The clause needs the opposite: one block's scalar C_{(2,1)} split into three coefficients. Building the map changed its status, not its shape. THIS is the fact that carries the conclusion"
+    },
+    {
+      "name": "the_sibling_wedderburn_objects_are_weights_and_dimensions",
+      "computed": 4,
+      "expected": 4,
+      "passed": true,
+      "note": "none is a map of algebras. So the bridge is unavailable on BOTH readings: this object is opaque and mis-shaped, and anything else is undefined in the corpus"
+    },
+    {
+      "name": "the_block_clause_is_still_marked_an_open_obligation",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "unified-iterative-correction-proof.md's (2,1) clause is ANNOTATED, not deleted -- the claim may well be true, it is simply unsupported, and a reader should not take it as derived"
+    },
+    {
+      "name": "and_says_which_of_its_three_reasons_survived",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the opaque and the fourth-axiom reasons are retired; the shape objection is not. A reader must not read 'the embedding was built' as 'the clause was discharged'"
+    },
+    {
+      "name": "the_linear_no_go_is_a_lean_theorem",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the shape objection is no longer only prose. Under linearity -- already assumed for the Markov trace -- three trace-factoring functionals at one partition are dependent"
+    },
+    {
+      "name": "the_trace_is_provably_lossy",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the ROOM is a theorem too, not only the no-go: distinct decompositions with every block trace equal, so every trace-factoring functional is blind to the difference"
+    },
+    {
+      "name": "the_21_dimension_fact_is_formalised",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "f^{(2,1)}=2 was prose when the no-go was written. Proved via the hook-length formula, so the (2,1) instances are unconditional rather than resting on a classical value the corpus had not written down"
+    },
+    {
+      "name": "and_the_complement_is_constructive",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "three trace-factoring functionals at one partition are DEPENDENT; three block-reading ones at (2,1) are INDEPENDENT. The pair says where a derivation must live. It does NOT identify them with volume/surface/Coulomb -- existence is a necessary condition for such a match, not evidence of one"
+    },
+    {
+      "name": "and_the_boundary_case_is_recorded_too",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "f^{(1,1)}=1, so at the charge shape the block IS its trace and these results say NOTHING. Recorded as a theorem so the limit of the no-go is visible rather than assumed"
+    },
+    {
+      "name": "and_the_block_is_wider_than_its_trace",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "f^{(2,1)}=2 so the block is M_2(R), four dimensions to the trace's one. Recording the ROOM as well as the no-go, so this is not read as the clause being refuted"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "lean_source": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/Wedderburn.lean",
+    "block": "content/quantum-observable-universe/mass-theory/unified-iterative-correction-proof.md",
+    "construction": "content/quantum-observable-universe/lean/QOU/HeckeAlgebra/WedderburnConstruction.lean",
+    "axiom_footprint_before_2026_09_05": "[propext, Classical.choice, Quot.sound, QOU.HeckeAlgebra.Wedderburn.wedderburnEmbed]",
+    "axiom_footprint_now": "[propext, Classical.choice, Quot.sound]",
+    "note": "documentary + mechanical measurement; no Lean theorem is offered, and the docstring says why. Two of the three original facts are retired by construction (beans qou-usol, qou-kp2z); the shape objection stands and is what keeps the (2,1) clause an open obligation"
+  },
+  "data": {
+    "declaration_lines": [
+      "(unconditional, injective) and `wedderburnEmbedOf` (the same map",
+      "`opaque wedderburnEmbed` stood here until 2026-09-05 and is gone;",
+      "(This list previously also advertised `wedderburnEmbed_posSemidef`",
+      "deleting it in favour of `wedderburnEmbedOf` is the clean",
+      "`opaque wedderburnEmbed : ∀ {n}, WedderburnDecomposition n →",
+      "real thing (`blockDiagonal`, and `wedderburnEmbedOf` for the"
+    ],
+    "signature": "noncomputable def wedderburnEmbedOf {n : ℕ} (h : RSKDimIdentity n) (x : WedderburnDecomposition n) : Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ := Matrix.reindex (regIndexEquiv h) (regIndexEquiv h) (blockDiagonal x) /-- And it is injective, so it deserves the name \"embedding\". -/ theorem wedderburnEmbedOf_injective {n"
+  },
+  "provenance": {
+    "headSha": "d1b2aa8e50193d63b75808799c42f024439eb455",
+    "producer": "computations/qbeta/qbeta_wedderburn_bridge_probe.py",
+    "elapsed_s": 20.949
+  }
+}

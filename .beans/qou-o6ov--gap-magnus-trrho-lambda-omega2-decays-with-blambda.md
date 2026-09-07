@@ -1,12 +1,50 @@
 ---
 # qou-o6ov
-title: 'GAP: Magnus tr(rho_lambda Omega2) decays with b(lambda) -- prove it'
+title: 'RESEARCH: does |tr(rho_lambda Omega2^P)|/dim decay in b across the <=2-row column? (NOT a truncation blocker)'
 status: todo
 type: task
 priority: normal
 created_at: 2026-08-30T17:41:56Z
-updated_at: 2026-09-05T07:07:40Z
+updated_at: 2026-09-05T18:59:27Z
 ---
+
+**RESCOPED 2026-09-05 (owner: "rescope and continue"), after PR #6822. Read this header, not the historical one below it.**
+
+**This is OPEN MATHEMATICS, not infrastructure. It blocks nothing.** The original framing --
+"upgrades the poly-size row-truncation from heuristic to a rigorous error bound" -- is DEAD:
+convention D (owner ruling 2026-08-09) sets y_lambda = 0 for l(lambda) > 2, so the excluded
+high-row terms in this bean own rigor gap are multiplied by ZERO and the row truncation is
+already exact. Measured n=3..12: the nonzero-y count is exactly floor(n/2)+1, i.e. LINEAR.
+Corroborated at atom_bond_dimension_measure.py:94. Full argument: PR #6822 +
+docs/audits/2026-09-05-magnus-arc-traced-the-wrong-rho.md.
+
+**THE RESCOPED QUESTION.** Under D the entire sum runs over <=2-row shapes (n-k, k), where
+b = k. So the two-row column is no longer one handle among several -- it is the WHOLE object.
+Does |tr_{(n-k,k)}(rho Omega2^P)|/dim decay in k?
+
+**Two corrections that any attempt must carry:**
+
+1. **rho is the HECKE element, not a braid.** atom_braid_word_3A returns triples (c, d, g)
+   denoting c*sigma_g + d*1. The whole prior arc used [int(t[2]) for t in ...], a bare sigma_g,
+   which at A=3 is the wrong operator for 19 of 35 letters (54%). Every pre-#6822 number in
+   this bean is for the positive braid, NOT the atom.
+2. **The old headline figures are convention-C.** "86->92%" is
+   magnus_sign_row_truncation_probe.py convention-C reflection-rep share; the D-frame value at
+   A=3 is 73.50%. Do not quote 86%.
+
+**What is measured for the TRUE element, n=9, dps 65 (#6822):** the y-weighted mass is monotone
+decreasing in b and b=1 carries 73.50% (better than the braid 70.45%). But the full-census
+envelope is NOT decreasing (peaks at b=3) and its total range is only 2.41x against the braid
+1427x -- so the surviving claim must be stated on the <=2-row column, not the full census.
+
+**Live handle:** the two-row reduction tr_{(n-k,k)}(g) = tr_{W_k}(g) - tr_{W_{k-1}}(g) via
+U_q(sl_2) Schur-Weyl is EXACT for Omega2^P (verified ~1e-139, A=2,3) and is a character identity,
+so it holds for any algebra element g -- rho_true included. That is the tool for the rescoped
+question.
+
+---
+
+HISTORICAL HEADER (superseded above; retained as the record of the original framing):
 
 Open theorem. Measured: |c_lambda|=y_lambda|tr(rho_lambda Omega2_lambda)| concentrates on low b=n-lambda_1 (b=1 reflection rep 86->92% for A=3->4). The naive bound |tr|<=q^L*dim FAILS (Sigma y*dim tail plateaus at 0.5, #6183/#6265) -- concentration is a tr cancellation (tr(Omega2)=0), NOT a weight effect. Route: Kerov-Olshanski shifted-symmetric bounded-degree + traceless cancellation = cluster/cumulant statement (Procacci-Yuhjtman/Rebenko ingested). Proving this upgrades the poly-size row-truncation from heuristic to a rigorous error bound (pins the 60-dps partition count). PRs #6265.
 
@@ -321,3 +359,228 @@ reach). So n=12 confirms the crossover LOCATION and says nothing about minimalit
 Limits: n=9 ranks exact (complete census); n=12 decides maximality only; b=1 excluded
 from the n=12 comparison since (n-1,1) IS both shapes. Nothing BOUNDS anything.
 scope-(a). Nothing wired.
+
+## 2026-09-05 — the chain CLOSES end-to-end, and the majorant route cannot carry the SIZE
+
+COMPOSED, first time end-to-end against the actual signed trace:
+  |tr_λ(ρΩ₂^P)| ≤ Σ|eig(M_λ)| ≤ √(dim_λ·tr_λ(X*X)) ≤ dim_λ·√(E(b))
+Both links hold on all 30 shapes; composed bound strictly decreasing:
+  b=1 68.6922 > 58.977 > 40.8807 > 31.3242 > 24.6086 > 14.5453 > b=7 5.6175
+That IS the arc's target — a derived per-dim bound on the ORIGINAL signed trace that
+falls with b, no fit anywhere. AND IT IS MUCH LESS THAN IT SOUNDS.
+
+TIGHTNESS, the actual result:
+                          b=1      b=7     falls by
+  composed bound √E(b)   68.69    5.62     12.2x
+  actual |tr|/dim env    33.65    0.178    189x
+  actual worst shape     33.65    0.0142(b=6)  2360x
+⇒ THE BOUND CAPTURES 12x OF A 189x EFFECT. Slack per link:
+  link 1 (spectrum→Frobenius): 2.041x at (8,1) b=1  …  550.2x at (3,2,1^4) b=6
+  link 2 (shape→level envelope): 1.0x … 8.513x
+Link 2 is fine — replacing a shape by its level max costs ≤8.5x, the price of wanting a
+bound in b alone. LINK 1 IS WHERE THE BOUND DIES, and its looseness GROWS with b.
+
+WHAT IT MEANS. Link 1 is |tr X| ≤ √(dim·||X||_F²): it replaces a signed trace by a norm,
+discarding all eigenvalue cancellation. That discarded cancellation is the DOMINANT part
+of the effect at large b. So the majorant route — the strategy since #6556 — establishes
+the SHAPE of the decay and structurally CANNOT carry its SIZE. It cannot be repaired by
+tightening links 2/3; link 1 alone accounts for the loss.
+
+CORRECTS MY OWN #6556 FRAMING. There I compared conjugate pairs, found the majorant
+decaying 213x vs 1.4x in the input norm, and wrote the decay is 'overwhelmingly
+output-spectrum collapse, not phase cancellation'. First half STANDS (E falls 149x
+per-dim). 'Overwhelmingly' was TOO STRONG: there IS substantial trace-level cancellation
+on top, reaching 550x. Not a contradiction — #6556 compared a majorant between
+conjugates, this compares a signed trace against its OWN majorant — but this is the first
+time that comparison has been made across a complete census, which is why it only becomes
+visible now.
+
+SETTLES: the b-decay of the signed trace is real, derived, monotone on complete data.
+DOES NOT SETTLE: any quantitative claim — 550x slack cannot support a numerical statement
+about the row-truncation error, which is what this bean wants it for.
+REDIRECTS: a quantitatively useful bound must KEEP THE SIGN INFORMATION.
+
+Limits: complete n=9 only, this atom word; the two exact-zero endpoints excluded; nothing
+proved for general n. scope-(a). Nothing wired.
+
+## 2026-09-05 — the whole arc was on a superseded braid word (PR #6822)
+
+Sibling `7db032fb48` (qou-hu1f, owner ruling, 07:53 UTC today) fixed `atom_braid_word_3A` to emit
+the interleaved beta_Bor where it had been emitting the same letters BUCKETED BY GENERATOR. Different
+element of H_n(q) — the sibling measures 82% apart at q0. Verified at A=3 and A=4: same 35/47 letters,
+different order.
+
+**Recomputed, complete n=9 census, dps 65: every number moves 4–16%, every structural conclusion
+survives, two strengthen.**
+
+- both chain links hold on all 30 shapes; envelope strictly decreasing over all 7 levels
+  (4147.55 > 2527.90 > 955.32 > 495.70 > 265.95 > 62.58 > 2.906)
+- **hook crossing still at b=4** — same interior b under a different operator
+- pointwise violations 6 -> 4, still 4/4 with a hook on the LOW side, 0 high, 0 hookless
+- hook kappa still U-shaped, minimum b=5 -> b=4
+- hooks still best-bounded: median slack 24.51 vs non-hook 100.5 (4.1x, was 3.3x)
+- #6754 STRENGTHENS: worst link-1 slack 550x -> 1217x
+- (8,1) |tr|/dim 33.648 -> 29.00125; hook fall 291.4x -> 263.16x
+
+**Also: Feray-Sniady pruned, scope-(b).** FS Thm 1's only lambda-dependence at a fixed element is
+max(r,c), transpose-INVARIANT; measured |tr|/dim differs 263.16x across the (8,1)/(2,1^7) conjugate
+pair. Loose by >=263x before any constant is fitted. NOT excluded: a q-deformation carrying a
+transpose-ASYMMETRIC shape parameter — that is exactly what such a deformation must supply.
+
+**STILL OPEN / not covered:** the n=12 legs (#6748) are on the OLD word and are unverified. That is
+the one load-bearing claim in the arc not recomputed.
+
+**Follow-up (not done):** no probe in this arc prints the braid word or a hash of it — they all print
+q0, dps and n, the three things never in doubt. Printing `hash(tuple(gens))` beside the dps line
+would make two runs comparable without re-deriving where their inputs came from. Touches every probe
+in the arc.
+
+**Method note:** this surfaced only because a 10% gap appeared between two runs of my own code. At
+3% I would have read it as rounding.
+
+## 2026-09-05 (later) — THE PREMISE IS DISSOLVED, and the arc traced the wrong rho (PR #6822)
+
+Two findings, both measured, the second larger than the first.
+
+### 1. The arc traced the wrong rho (54% of letters)
+
+Every probe here builds `gens = [int(t[2]) for t in atom_braid_word_3A(Z, N)]` and applies a bare
+sigma_g. atom_braid_word_3A does NOT return a braid word (own docstring, capitals, PR #5765; rename
+rejected at 685 call sites) -- each triple (c, d, g) is the HECKE ELEMENT c*sigma_g + d*1. At A=3,
+35 letters: 16 sigma, 12 sigma^-1, 7 averaged => 19/35 = 54% applied as the WRONG operator.
+
+Complete n=9 census under both (magnus_true_hecke_element_probe.py, dps 65):
+
+  E(b) = max_{b(lam)=b} tr(X*X)/dim     rho_bare        rho_true
+    b=1                                 4147.5518       18.758498
+    b=3                                  955.31763      31.352745  <- PEAK
+    b=7                                    2.9063514    13.001647
+  strictly decreasing?                  YES             NO
+  dynamic range over all 7 levels       1427x           2.41x
+
+So the bean's theorem AS STATED is FALSE at n=9 for the atom's Hecke element, and holds cleanly
+for the positive braid the arc substituted. The hook split does not survive either.
+
+BUT the PRACTICAL claim survives and improves: y-weighted mass share at b=1 is 70.45% (bare) ->
+73.50% (TRUE), monotone decreasing in b under both. The defect breaks the theorem, not the practice.
+
+UNAFFECTED: all five arc Lean files are over a generic {R : Type*} [CommRing R] with rho an
+ARBITRARY algebra element -- a 54%-wrong input invalidated no theorem. That is what formalize-first
+bought. The Feray-Sniady prune is also unaffected (structural argument).
+
+### 2. THE BEAN'S RIGOR GAP IS CLOSED BY CONVENTION D
+
+magnus_sign_row_truncation_probe.py -- the probe this bean came from -- states its own gap:
+
+  "a rigorous sign needs Sum_{lam excluded} |y_lam tr(rho_lam Omega2_lam)| < |P_truncated|,
+   i.e. a bound on |tr(rho_lam Omega2_lam)| for the excluded HIGH-ROW lambda"
+
+Under convention D (canonical since the 2026-08-09 owner ruling) y_lam = 0 for l(lam) > 2, so every
+excluded term is zero and the inequality is trivial. The bound this bean exists to prove is
+multiplied by zero. Measured n=3..12: nonzero-y count is EXACTLY floor(n/2)+1 -- 5 of 30 at n=9,
+7 of 77 at n=12, i.e. LINEAR. Independently corroborated in the corpus:
+atom_bond_dimension_measure.py:94, "Under D the <=2-row truncation is already exact".
+
+Also re-scopes active-set-truncation-prototype.witness.json ("truncation is INVALID for
+production", ~1e-3 error vs 1e-15): under D the dropped terms carry weight exactly zero.
+
+Also identifies the 86-92% in this bean's own header: it is that probe's convention-C
+"reflection rep alone 56% -> 86% -> 92%". D-frame value at A=3 is 73.50%. NOT decomposed: how much
+of 86 -> 73.5 is C->D weights versus the 2026-09-05 word-ordering fix.
+
+### DECISION FOR THE OWNER — should this bean stay open?
+
+Not closing it myself; dissolving a GAP bean's premise is your call. The options:
+
+  1. CLOSE as superseded-by-ruling. What it means: the row-truncation rigor gap is gone, so the
+     bean's stated purpose is met. Costs: nothing to run. Risks: if some consumer applies the
+     truncation to a differently-weighted sum, that consumer still needs a bound -- I checked the
+     originating probe and atom_bond_dimension_measure, not every caller. Commits to: not funding
+     more rate work under this framing.
+  2. RESCOPE to the surviving mathematics. What it means: keep it open for "|tr(rho_lam Omega2)|
+     decays in b across the <=2-row column", explicitly NOT as a truncation blocker. Costs: the
+     rate work continues at its current pace. Risks: it is FALSE in the envelope form for the true
+     element, so the rescoped target must be stated carefully or it will be chased as before.
+     Commits to: treating it as pure mathematics, not infrastructure.
+  3. LEAVE AS IS. What it means: the header keeps a premise this session measured to be moot and a
+     convention-C 86% quoted as current. Risks: the next agent re-derives all of the above.
+
+DEFAULT IF YOU SAY NOTHING: option 3 -- the bean stays open with the corrected body appended but
+the stale header intact.
+
+MY RECOMMENDATION (judgement, not a finding): option 2. The truncation question is genuinely
+settled by the ruling, but the b-decay across the <=2-row column is real open mathematics with a
+closed-form hook handle and a two-row sector reduction already built, and it would be a waste to
+close that with the infrastructure framing that no longer applies.
+
+## 2026-09-05 (later still) — THREE three-point trends, three fourth points that refuted them (PR #6842)
+
+The dominant failure mode of this arc, recorded because it recurred three times in ONE session and
+each time the fourth size was cheap enough that there was no excuse:
+
+1. **The y-weighting margin table.** A=2 and A=3 gave margins x1.42 and x1.44 -- two sizes agreeing
+   to 1%, with an exact closed form behind them (y_k/y_k+1 = [n-2k+1]_q/[n-2k-1]_q, verified 1e-50).
+   A=4 refuted it: both its bumps lose, including at the square end where protection is MAXIMAL.
+   The agreement was a column-LENGTH artifact -- those columns were too short for a bump to land
+   anywhere but the protected end.
+2. **The sector reframing.** |tr_W_k|/C(n,k) decayed at A=3 and A=4 where the irrep column did not,
+   and I called it the arc's first constructive direction. A=5 refuted it (rise into k=4, x1.181):
+   2 of 4, failing at the LARGEST size.
+3. **The k=3->4 divergence RATE.** Ratios 1.23869 -> 5.36793 -> 26.4306 looked like ~4.6x/step and
+   I wrote 'fails at a rate, not by a recoverable margin'. A=6 gave 19.2541 -- growth x0.728, margin
+   IMPROVING 0.0503 -> 0.0664.
+
+WHAT SURVIVES ALL THREE CORRECTIONS:
+  * the k=3->4 step FAILS at A=4,5,6 (3 of 4), margins 0.272 / 0.050 / 0.066 vs a required 1
+  * the CEILING argument, because it is FORCED not empirical: [n-2k+1]_q/[n-2k-1]_q -> q^2 at fixed
+    k, capped at [3]_q = 3.0437 anywhere
+  * the CONTROL: plain tr(rho) rises where rho*Omega_2^P decays, so the A=3/A=4 sector behaviour is
+    about the curvature, not the weight filtration
+  * concentration, eroding: k=1 share 77.882 -> 73.499 -> 59.437 %
+
+THE LESSON, and it is not 'measure more sizes'. In every one of the three the probe's OWN OUTPUT
+carried the correct caveat -- 'NOT an asymptotic claim: 3 sizes. Read it as a rate to test, not a
+limit' is printed by magnus_fixed_k_trend_probe.py, and the sector probe's docstring says a property
+holding from the third size is the shape of a small-size artifact. The caveats were right every
+time. The failure was in the PROSE, which promoted each pattern to a mechanism anyway. A caveat
+printed by the tool and contradicted by the sentence quoting it is worth nothing.
+
+Practical rule for the next agent on this arc: an n-point trend here needs its (n+1)th point BEFORE
+it goes in a summary line, not after. The sizes cost 33s / 410s / 3020s at A=4/5/6 -- hours, not
+days, and cheaper than the corrections.
+
+STILL OPEN: whether the k=4 attribution is 'k=4', 'the arriving shape', or 'the square end' -- two
+steps cannot separate them; the A=4->5 step discriminates and comes free from the running A=5
+sector job.
+
+## 2026-09-05 — cross-arc: a sibling proved WHY a trace-based decay statement is fragile
+
+Sibling bean `qou-v7ms` (merged `082b7d9f3c` / `0c24e1d8a3`, session 016hQePZ) proves in Lean,
+sorry-free, in `QOU/HeckeAlgebra/WedderburnTrace.lean`:
+
+  * `traceFunctional_supported_apply` — a trace functional supported at ONE lambda IS
+    `c_lambda * trace(x lambda)`: one coefficient against one number.
+  * `markovTraceOnWedderburn_eq_traceFunctional` — the Markov trace IS such a functional, with
+    `c = y_lambda(q0)`, so the result bites the actual object, not an abstract family.
+  * Its stated consequence: `f^(2,1) = 2`, so that block is `M_2(R)` -- FOUR real dimensions, of
+    which the trace reads ONE. "The information the clause wants is present in the block and
+    destroyed by taking its trace. A derivation that reads the block rather than its trace is not
+    blocked by anything here."
+
+**Why this matters to o6ov.** This whole arc measures `tr_lambda(rho Omega_2^P)` -- one number per
+block, out of `(f^lambda)^2`. The sibling's theorem is about a different question (the (2,1)
+clause's three coefficients), so this is a THEMATIC connection and not a logical implication: it does
+not prove anything about b-decay. What it does supply is a proved reason to expect trace-based decay
+statements to be fragile, which is what this arc measured from the other end -- irrep 0/4, sector
+2/4, y-weighted failing at A=4.
+
+**And the obvious response has already been tried here, with the same outcome.** "Read the block,
+not the trace" is exactly the Frobenius route: `tr_lambda(X*X) = ||X||_F^2` is a different
+functional of the same block, measured in #6754 and in the chain probe. Its envelope
+`max_{b(lambda)=b} tr(X*X)/dim` DOES decrease monotonically for rho_bare and does NOT for the true
+Hecke element (peaks at b=3, total range 2.41x against rho_bare's 1427x, #6822). So moving from the
+trace to a norm of the same block did not rescue the decay for the correct rho.
+
+**Not duplicating.** The sibling's Lean is about trace functionals at a single partition; nothing
+here re-derives or extends it. Recorded so the next agent on o6ov meets the structural reason
+alongside this arc's measurements, rather than rediscovering the connection.

@@ -1,37 +1,37 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T07:22:41.396302+00:00",
-  "commitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-07T10:36:14.856508+00:00",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "assertions": [
     {
       "name": "cumulative_at_max_grade_matches_target[proton]",
-      "computed": "1.1457596924573008696890815957741193059437280619434",
+      "computed": "0.62932840220292191816534574677848592760021940063438",
       "expected": "1.1457596924573008696890815957741193059437280619435",
-      "passed": true,
+      "passed": false,
       "tolerance": "1e-10"
     },
     {
       "name": "cumulative_at_max_grade_matches_target[neutron]",
-      "computed": "0.98774368811580957163402016550129498205504875906272",
+      "computed": "0.47513351715568221250609023267500579955840763470875",
       "expected": "0.98774368811580957163402016550129498205504875906283",
-      "passed": true,
+      "passed": false,
       "tolerance": "1e-10"
     },
     {
       "name": "cumulative_at_max_grade_matches_target[deuteron]",
-      "computed": "0.57517224391777187082653534398618088915249435289275",
+      "computed": "0.15196833920423160759266569775106614127124096465526",
       "expected": "0.3882864715477132",
       "passed": false,
       "tolerance": "1e-10"
     }
   ],
   "allPassed": false,
-  "durationMs": 246,
+  "durationMs": 265,
   "computation": "graded-hecke-energy-probe",
   "scriptFile": "graded_hecke_energy_probe.py",
   "scriptHash": "609562e893a6",
-  "scriptCommitSha": "f95832adb7ab61c3f070bf51065312d704bf1af0",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,9 +43,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -70,8 +71,8 @@
         "num_partitions": 2,
         "num_grades": 2,
         "max_grade": 1,
-        "effective_confinement_level_tight": 1,
-        "effective_confinement_level_loose_1e_minus_3": 1,
+        "effective_confinement_level_tight": -1,
+        "effective_confinement_level_loose_1e_minus_3": -1,
         "per_grade_cumulative": [
           {
             "grade": 0,
@@ -81,9 +82,9 @@
                 3
               ]
             ],
-            "grade_sum_real": "0.69871854491690028191764460373632635715898454124428",
+            "grade_sum_real": "0.69871854491690028191764460373632635715898454124429",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.69871854491690028191764460373632635715898454124428"
+            "cumulative_abs": "0.69871854491690028191764460373632635715898454124429"
           },
           {
             "grade": 1,
@@ -94,9 +95,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "1.1457596924573008696890815957741193059437280619434",
+            "grade_sum_real": "0.62932840220292191816534574677848592760021940063438",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "1.1457596924573008696890815957741193059437280619434"
+            "cumulative_abs": "0.62932840220292191816534574677848592760021940063438"
           }
         ]
       },
@@ -108,8 +109,8 @@
         "num_partitions": 2,
         "num_grades": 2,
         "max_grade": 1,
-        "effective_confinement_level_tight": 1,
-        "effective_confinement_level_loose_1e_minus_3": 1,
+        "effective_confinement_level_tight": -1,
+        "effective_confinement_level_loose_1e_minus_3": -1,
         "per_grade_cumulative": [
           {
             "grade": 0,
@@ -132,9 +133,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.98774368811580957163402016550129498205504875906272",
+            "grade_sum_real": "0.47513351715568221250609023267500579955840763470875",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.98774368811580957163402016550129498205504875906272"
+            "cumulative_abs": "0.47513351715568221250609023267500579955840763470875"
           }
         ]
       },
@@ -170,9 +171,9 @@
                 1
               ]
             ],
-            "grade_sum_real": "0.43382860414478880397880921655730705849330927887046",
+            "grade_sum_real": "0.12602239870219457739769982912196334938267383261745",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.43382860414478880397880921655730705849330927887046"
+            "cumulative_abs": "0.12602239870219457739769982912196334938267383261745"
           },
           {
             "grade": 2,
@@ -183,9 +184,9 @@
                 2
               ]
             ],
-            "grade_sum_real": "0.51090509469300909289583773761878484251180266080457",
+            "grade_sum_real": "0.14117076830873920875105873408702082435276899940877",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.51090509469300909289583773761878484251180266080457"
+            "cumulative_abs": "0.14117076830873920875105873408702082435276899940877"
           },
           {
             "grade": 3,
@@ -196,9 +197,9 @@
                 3
               ]
             ],
-            "grade_sum_real": "0.57517224391777187082653534398618088915249435289275",
+            "grade_sum_real": "0.15196833920423160759266569775106614127124096465526",
             "grade_sum_imag": "0.0",
-            "cumulative_abs": "0.57517224391777187082653534398618088915249435289275"
+            "cumulative_abs": "0.15196833920423160759266569775106614127124096465526"
           }
         ]
       }

@@ -20,7 +20,10 @@ import Mathlib.LinearAlgebra.ExteriorAlgebra.Basic
 # QOU.QuantumGaugeGroup
 
 Extracted from content/quantum-observable-universe/lean/ for content-block co-location.
-Source: content/quantum-observable-universe/lean/QOU/QuantumGaugeGroup.lean (monolithic)
+Source: content/quantum-observable-universe/lean/QOU/QuantumGaugeGroup.lean (monolithic).
+That file no longer exists — the library was split, and `QuantumGaugeGroup` now lives at
+  content/quantum-observable-universe/lean/QOU/Glossary.lean
+  content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/SubstrateParameter.lean
 -/
 
 open scoped Topology Manifold CategoryTheory CategoryTheory.MonoidalCategory

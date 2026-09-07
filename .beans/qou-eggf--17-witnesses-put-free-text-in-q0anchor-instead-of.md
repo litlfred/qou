@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-03T04:57:50Z
-updated_at: 2026-09-04T15:21:43Z
+updated_at: 2026-09-04T22:01:48Z
 ---
 
 ## The finding
@@ -253,3 +253,21 @@ this closes on the next successful run by anyone.
 
 The 1 flip is `hadron-knot-table` (anchor=muon, value = the retired pin A) --
 `qou-tekx` stage 2, not this bean's.
+
+
+### Fourth attempt also died — and it does NOT cleanly fit the idle explanation
+
+Relaunched ~20:45 to run alongside foreground work. Log last written **21:05:07**,
+reaching 14 lines (further than the 6 of earlier attempts), no completion
+recorded, and at 22:01 no python3 process alive (`pgrep -af`, per the trap above).
+
+**The session was NOT idle at 21:05** — there were turns either side of it
+(notifications at 21:03 and 21:06). So the "dies at container reclaim during
+session idle" mechanism, which the three earlier attempts do support, does **not**
+explain this one. Cause undetermined for this instance; do not fold it into the
+idle finding as a fourth confirmation.
+
+What is unchanged: four attempts, zero completions, so the two witnesses
+(`qbeta-derived-w-overdetermined-test`, `qbeta-interface-w-deciding-test`) are not
+reachable in this session by any method tried. Their producers are fixed on
+`main`; a run in an environment that can hold a > 50 min compute closes them.

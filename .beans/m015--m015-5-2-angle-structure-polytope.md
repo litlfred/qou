@@ -1,6 +1,6 @@
 ---
 # m015
-title: 'm015 (5₂) angle-structure polytope — the missing anchor for Casson–Rivin'
+title: m015 (5₂) angle-structure polytope — the missing anchor for Casson–Rivin
 status: in-progress
 type: task
 priority: normal
@@ -8,10 +8,10 @@ tags:
     - lean
     - hyperbolic-volume
     - angle-structures
-    - 5_2
-parent: krvm
+    - "5_2"
 created_at: 2026-08-09T19:15:46Z
-updated_at: 2026-08-10T03:30:00Z
+updated_at: 2026-09-06T08:16:02Z
+parent: krvm
 ---
 
 The corpus has angle-structure polytopes for **m004** (figure-eight,
@@ -445,3 +445,49 @@ No block cites any of this arc's Lean modules — `FiveTwoComplexPentagon`, `Kum
 `RivinConcavity`, `FlatTetrahedra`, `HyperrealLimitTransfer`. The 27 shape fields, the
 5₂ sum rule, Kummer's identity and the gluing results exist only as Lean modules, probes
 and beans. Writing those blocks is the next exposition increment.
+
+
+## Re-checked 2026-09-06 — the deliverable does NOT exist; its MOTIVATION was served another way
+
+Found by `scripts/bean-staleness-triage.py` (9th of 284 artifact beans; oldest
+in the top ten at 2026-08-10).
+
+**The deliverable is genuinely absent.** No `m015` anything —
+`find content computations -iname '*m015*'` returns **zero**. No
+`M015AngleStructure.lean`, no generator beside
+`gen_l6a4_angle_structure_lean.py`. The two precedents this bean cites both
+exist (`M004AngleStructure.lean`, `L6a4AngleStructure.lean`). So on its own
+terms this bean is open and unstarted.
+
+**But its stated purpose has been achieved by a different route, by its own
+siblings.** This bean opens: *"That is the missing anchor on the geometric
+route to `Vol(5₂)`."* Under the same parent `qou-krvm`:
+
+| file | bean | what it does |
+|---|---|---|
+| `Knot/RivinConcavity.lean` | `qou-rvnc` | parent `qou-krvm` **(iv)** — *"the last of the four hypotheses of `SymmetricOptimum.optima_coincide` left untouched, and the gate on the Casson–Rivin route to hyperbolic volume"* |
+| `Knot/FiveTwoShapeBounds.lean` | `qou-f8lit` | certified numeric brackets on the 5₂ shape `y₁` — needed because `fiveTwoShape` is non-constructive by construction (built from `Classical.choose`) |
+| `Knot/FiveTwoVolumeChord.lean` | `qou-52ch` | assembles **`VOL_4_1 < VOL_5_2`** by strict concavity along the line from the regular triple `(π/3,π/3,π/3)` to the 5₂ triple |
+
+`FiveTwoVolumeChord` reaches a `Vol(5₂)` result **by composition, without the
+m015 angle-structure polytope**. So the Casson–Rivin gate this bean was the
+"missing anchor" for is closed, and closed elsewhere.
+
+**That is not "m015 is done" — it is "m015's motivation is spent", which is a
+different and more useful claim.** The polytope and its symmetry group still do
+not exist, and building them would still be real work. What has changed is *why*
+one would: no longer to unblock `Vol(5₂)`, which is unblocked.
+
+**Whether m015 is still wanted is therefore a scoping question**, not a
+staleness one. Its value now would be as an independent third anchor (after
+m004 and L6a4) for the angle-structure machinery itself, not as a gate. Left
+open at unchanged status; the author decides whether that is worth the work.
+
+### The reason a grep missed this, worth carrying
+
+This bean names its subject **`m015`** — the SnapPy census name — while every
+piece of corpus work on the same manifold is filed under **`FiveTwo*`** and
+`5₂`. A `grep m015` over the tree returns nothing at all, so the bean reads as
+untouched territory when three sibling files were closing its motivation. Same
+family as the detector blind spots catalogued this session: right measurement,
+wrong vocabulary. When checking a census-named bean, grep the **knot name** too.

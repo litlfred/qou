@@ -1,0 +1,155 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T08:00:59.748621+00:00",
+  "commitSha": "58acb1d0081fdba808c269c4bfc26532978fc7e2",
+  "assertions": [
+    {
+      "name": "ALL_EIGHT_facts_hold_on_EVERY_monotone_chain_triple",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "each of the 11 facts holds on all 596 monotone chain triples (carrier both branches + random)."
+    },
+    {
+      "name": "EVERY_fact_degrades_off_monotone",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "weakest holds on 18 of 78 non-monotone chain triples. Without this the facts would look like identities rather than consequences of monotonicity."
+    },
+    {
+      "name": "tier_2_signSum_x_eq_u_on_monotone",
+      "computed": "596",
+      "expected": "596",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "the hypothesis `hsum` of eps_eq_of_blocks -- the signed sum of the far component's letters inside the hub longitude IS that pair's linking number."
+    },
+    {
+      "name": "tier_2_blocks_disjoint_x_before_y_on_monotone",
+      "computed": "596",
+      "expected": "596",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "the hypotheses `hA`/`hB` of epsCoeff_append_of_blocks -- the block split that turns the Magnus coefficient into a product."
+    },
+    {
+      "name": "tier_1_each_pair_crosses_at_ONE_generator_on_monotone",
+      "computed": "596",
+      "expected": "596",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "the root braid-word fact: it is what makes each block contiguous, and it is the part still assumed rather than proved."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "eps-eq-decomposition-from-monotonicity",
+  "scriptFile": "eps_eq_decomposition_from_monotonicity_probe.py",
+  "scriptHash": "c229048fa833",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/eps_eq_decomposition_from_monotonicity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/eps_eq_decomposition_from_monotonicity_probe.py"
+  },
+  "description": "EXPLORATORY. Splits ChainTriple.eps_eq -- the one structural hypothesis carrying route 3's chain closure -- into eight sharper facts in two tiers. TIER 1 (braid-word, still assumed in Lean): all hub-x and hub-y crossings each sit in ONE generator's run; the two generators differ; g_x < g_y iff x < y; each run has even length; each length is exactly 2|lk|. TIER 2 (the consequences the Lean consumes): the signed sum of each far component's letters inside lambda_hub equals that pair's linking number; each block is contiguous; the blocks are disjoint with x's before y's. All eight hold on every monotone chain triple measured (carrier, both branches, plus random monotone words) and every one degrades off monotone. QOU/Mass/EpsEqFromMonotonicity.lean then PROVES the step tier 2 -> eps = u*v (epsCoeff_append_of_blocks, a statement about lists with no topology in it) so eps_eq is no longer a bare assumption: it is a theorem given three braid-word hypotheses. What remains assumed is tier 1, whose derivation needs the strand-permutation bookkeeping of a monotone word formalised -- not attempted, and named as borrowed rather than elided. Scope (a): 7 isotopes, both branches, one random-word regime, one RNG consumed sequentially so the arms stay comparable with #6679/#6726. Nothing wired.",
+  "auditOnly": "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md",
+  "data": {
+    "tier_1_braid_word_facts_STILL_ASSUMED": {
+      "why_assumed": "deriving these needs positions, runs and who-passes-under formalised for a monotone word -- a substantially larger object than anything in this arc",
+      "carrier": {
+        "hub_x_one_generator": 62,
+        "hub_y_one_generator": 62,
+        "generators_differ": 62,
+        "generator_order_matches_component_order": 62,
+        "runs_even_length": 62,
+        "run_length_is_twice_lk": 62
+      },
+      "monotone_random": {
+        "hub_x_one_generator": 534,
+        "hub_y_one_generator": 534,
+        "generators_differ": 534,
+        "generator_order_matches_component_order": 534,
+        "runs_even_length": 534,
+        "run_length_is_twice_lk": 534
+      },
+      "non_monotone_random": {
+        "hub_x_one_generator": 56,
+        "hub_y_one_generator": 58,
+        "generators_differ": 37,
+        "generator_order_matches_component_order": 36,
+        "runs_even_length": 40,
+        "run_length_is_twice_lk": 30
+      }
+    },
+    "tier_2_consequences_CONSUMED_BY_THE_LEAN": {
+      "carrier": {
+        "signSum_x_eq_u": 62,
+        "signSum_y_eq_v": 62,
+        "x_block_contiguous": 62,
+        "y_block_contiguous": 62,
+        "blocks_disjoint_x_before_y": 62
+      },
+      "monotone_random": {
+        "signSum_x_eq_u": 534,
+        "signSum_y_eq_v": 534,
+        "x_block_contiguous": 534,
+        "y_block_contiguous": 534,
+        "blocks_disjoint_x_before_y": 534
+      },
+      "non_monotone_random": {
+        "signSum_x_eq_u": 51,
+        "signSum_y_eq_v": 53,
+        "x_block_contiguous": 56,
+        "y_block_contiguous": 67,
+        "blocks_disjoint_x_before_y": 18
+      }
+    },
+    "denominators": {
+      "carrier_chain_triples": 62,
+      "monotone_random_chain_triples": 534,
+      "monotone_combined": 596,
+      "non_monotone_chain_triples": 78
+    },
+    "what_the_lean_proves": {
+      "epsCoeff_append_of_blocks": "a block-split word has eps_{x,y} = (signed sum of block A)(signed sum of block B) and eps_{y,x} = 0 -- the arithmetic of eps_eq, about lists, no topology",
+      "eps_eq_of_blocks": "composes it with the signed-sum facts to give eps = u*v, which IS ChainTriple.eps_eq",
+      "underSum_eq_linking": "the run of 2m crossings alternates, so the hub records m of them at the run's sign; the pair's total signed count is 2*lk; hence lk = m*s",
+      "axioms": "all sorry-free; carrier_shape_gives_four depends on NO axioms, the rest on propext (+ Quot.sound, Classical.choice)"
+    },
+    "sampling_discipline": {
+      "seed": 20260904,
+      "trials_per_arm": 300,
+      "rng": "ONE RNG consumed sequentially, monotone arm first -- matching the merged genericity probe so the arms are comparable",
+      "why_it_is_called_out": "a scratch run with a FRESH per-arm RNG produced a wrong figure twice in this arc: #6679's 251/2080, and a '0 of 71' vacuity claim in #6726 that was really 1 of 78. Quote the witness, never a scratch figure"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "reads no q0. Inputs are braid words, their closures' permutation cycles, integer linking numbers and degree-2 Magnus coefficients. No substrate pin is evaluated on any path."
+}

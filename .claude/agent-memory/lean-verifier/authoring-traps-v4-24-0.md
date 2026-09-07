@@ -469,3 +469,60 @@ Note also the failure text was `rewrite failed: Did not find an occurrence of
 the pattern b ^ 2` — nearly identical in shape to this file's older
 `√(hoefsmit_v21_b_sq q) ^ 2` failure, and a *different* cause. Same message,
 different diagnosis, twice in one file.
+
+## STABLE — `div_le_iff` is GONE; the name is `div_le_iff₀`
+
+Measured 2026-09-05, `QOU/Hecke/GeometricTailBound.lean`:
+`error(lean.unknownIdentifier): Unknown identifier 'div_le_iff'`. Not deprecated
+— **absent**, with no alias to warn you. A `grep` of the whole Mathlib checkout
+for a deprecation of the unprimed name returns nothing.
+
+```
+-- Mathlib/Algebra/Order/GroupWithZero/Unbundled/Basic.lean:1100
+lemma div_le_iff₀ (hc : 0 < c) : b / c ≤ a ↔ b ≤ a * c
+```
+
+So `rw [div_le_iff hpos]` → `rw [div_le_iff₀ hpos]`. Expect the `₀` family
+generally: these moved to the `GroupWithZero` hierarchy in this era.
+
+## TRAP — `rw [h] at *` rewrites nothing and then fails the tactic block
+
+Same file, same run:
+
+```
+Tactic `rewrite` failed: Did not find an occurrence of the pattern
+⊢ (1 - x)⁻¹ < C
+```
+
+The pattern was `tail_eq`'s LHS `(1-x)⁻¹ - (1+x)`, which occurs in **no**
+hypothesis and not in the goal — the goal has `(1-x)⁻¹` alone. `at *` reads as
+"apply wherever it fits" but is "apply everywhere, and fail if it fits nowhere".
+
+The fix is not a better rewrite target — it is to stop rewriting. Build the
+equation you actually want with `have`, then finish linearly:
+
+```lean
+have hinv : (1 - x)⁻¹ = (1 + x) + x ^ 2 / (1 - x) := by
+  have h := tail_eq (x := x) (ne_of_lt h1); linarith
+```
+
+`linarith` treats `(1-x)⁻¹` and `x^2/(1-x)` as atoms, so re-arranging an
+identity into the shape you need is free.
+
+## STABLE — two things I was about to record as traps, and both are FALSE
+
+Recording these because the near-miss is the point (cf. the `ring_nf` retraction
+at the end of this file). Before the run I had convinced myself that:
+
+- **`linarith` cannot prove a `≠` goal.** It can. `have hne : x ≠ 1 := by
+  linarith` from `h1 : x < 1` produced `hne : x ≠ 1` in the very error context
+  that reported the *other* failures — the proof state is the evidence.
+- **`positivity` cannot prove `0 < x^2/(1-x)`** because `1 - x` is not
+  syntactically positive. It can, with `hpos : 0 < 1 - x` in context; `htail`
+  likewise appears in the failing context, established.
+
+Both "fixes" I wrote (`ne_of_lt h1`, `div_pos (pow_pos h0 2) hpos`) are fine and
+more explicit, but neither was necessary. **The error log names every failure it
+found; a tactic that does not appear in it succeeded.** Read the whole log
+before theorising about a tactic — the failing hypotheses printed *above* the
+error are a free proof that everything producing them worked.

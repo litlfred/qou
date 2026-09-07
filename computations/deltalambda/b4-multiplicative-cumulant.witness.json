@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-04T02:44:37.650354+00:00",
-  "commitSha": "852e64fb4e36adc86768b2e30ce554e97b1e065b",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T17:59:17.427540+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "guard_fourthdiff_kills_1body_linear",
@@ -33,8 +33,8 @@
   "durationMs": 0,
   "computation": "b4-multiplicative-cumulant",
   "scriptFile": "b4_multiplicative_cumulant_probe.py",
-  "scriptHash": "4d8bb02ebb37",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "02247f47b65d",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -46,7 +46,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "5df83fbc24b06f8a"
@@ -70,13 +70,13 @@
   },
   "data": {
     "target": {
-      "b4_target_MeV": "9.243387",
-      "B3_isospin_symmetric_MeV": "8.0999205",
+      "b4_target_MeV": "9.24338456",
+      "B3_isospin_symmetric_MeV": "8.09991876",
       "ame_bindings_MeV": {
-        "D": "2.224566",
-        "T": "8.481798",
-        "3He": "7.718043",
-        "4He": "28.295673"
+        "D": "2.2245662",
+        "T": "8.4817962",
+        "3He": "7.71804132",
+        "4He": "28.2956624"
       },
       "note": "B_AME diagnostic-only: forms the finite-difference target, never fits the framework."
     },
@@ -91,7 +91,7 @@
           "5.70540524043"
         ],
         "b4_MeV": "-0.303518900927",
-        "fraction_of_target_pct": "-3.2836329"
+        "fraction_of_target_pct": "-3.2836338"
       },
       "avg": {
         "pn_factor": "z - h/2",
@@ -103,7 +103,7 @@
           "5.81392815195"
         ],
         "b4_MeV": "1.5951892265",
-        "fraction_of_target_pct": "17.257627"
+        "fraction_of_target_pct": "17.257631"
       }
     },
     "verdict": "MULTIPLICATIVE connected 4-body cumulant undershoots: production pn=z gives b₄=-0.3035 MeV = -3.28% of the ⁴He target (9.243 MeV); bar-invariant pn=z−h/2 gives 17.3%. scope-(a): the multiplicative 4-body cumulant, ALONE, reaches only ~6% (production) / ~36% (bar-invariant) of the target. Cause: (1−∏f) saturates, so extra bonds barely grow B; the residual A-growth is the weak τ_p^Z τ_n^N. NOT scope-(b) excluded — the multiplicative form DOES carry connected 4-body content (Lean multBinding_b4_nonvacuous), unlike the additive forms (b₄=0). No fit, nothing wired."

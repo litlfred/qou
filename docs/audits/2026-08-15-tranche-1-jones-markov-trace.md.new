@@ -38,7 +38,7 @@ Sources that lost it and still cannot reach it: **21**
 | `prose:pre-archimedean-derivation-chain` | prose | no | markov trace | *n/a — no .lean* | 3 |
 | `prop:atom-knot-mass-derivation` | proposition | no | no | no | 2 |
 | `def:per-nucleon-channel-decomposition` | definition | no | no | no | 1 |
-| `prop:three-calibration-discipline` | proposition | **YES** | jones-markov-trace, markov trace | no | 2 |
+| `def:three-calibration-discipline` | proposition | **YES** | jones-markov-trace, markov trace | no | 2 |
 | `prop:recursive-atom-knot-atlas` | proposition | no | no | no | 4 |
 | `prop:pieri-photon-shift` | proposition | no | no | no | 1 |
 | `prop:y-lambda-cyclotomic-factorization` | proposition | no | no | no | 1 |
@@ -54,7 +54,7 @@ Sources that lost it and still cannot reach it: **21**
 
 For those, the narrative is sending the reader to `thm:jones-markov-trace` while `uses[]` omits it. That is the editorial relation contradicting itself in the same block, not a matter of taste:
 
-- `prop:three-calibration-discipline`
+- `def:three-calibration-discipline`
 - `prf:atom-knot-mass-derivation`
 Target exists: yes
 Target Lean decl: `QOU.Braiding.JonesMarkovTrace`
@@ -72,7 +72,7 @@ Sources that lost it and still cannot reach it: **21**
 | `prose:pre-archimedean-derivation-chain` | prose | no | markov trace | *n/a — no .lean* | 3 | backward |
 | `prop:atom-knot-mass-derivation` | proposition | no | no | no | 2 | backward |
 | `def:per-nucleon-channel-decomposition` | definition | no | no | no | 1 | backward |
-| `prop:three-calibration-discipline` | proposition | **YES** | jones-markov-trace, markov trace | no | 2 | backward |
+| `def:three-calibration-discipline` | proposition | **YES** | jones-markov-trace, markov trace | no | 2 | backward |
 | `prop:recursive-atom-knot-atlas` | proposition | no | no | no | 4 | backward |
 | `prop:pieri-photon-shift` | proposition | no | no | no | 1 | backward |
 | `prop:y-lambda-cyclotomic-factorization` | proposition | no | no | no | 1 | backward |
@@ -90,5 +90,5 @@ Sources that lost it and still cannot reach it: **21**
 
 For those, the narrative is sending the reader to `thm:jones-markov-trace` while `uses[]` omits it. That is the editorial relation contradicting itself in the same block, not a matter of taste:
 
-- `prop:three-calibration-discipline`
+- `def:three-calibration-discipline`
 - `prf:atom-knot-mass-derivation`

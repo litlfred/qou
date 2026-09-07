@@ -205,7 +205,7 @@ different levels interact non-trivially.
 
 The framework has **categorically exactly three** external
 calibration inputs (per
-[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)):
+[`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md)):
 
 | ID | Calibration | (Co)homology | Role |
 |----|-------------|--------------|------|

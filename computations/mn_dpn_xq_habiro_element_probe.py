@@ -47,7 +47,7 @@ def main():
     print("Result at q_p:", res)
     
     # Let's also include [2]_q and [3]_q and alpha_em
-    alpha_em = mp.mpf(1)/mp.mpf("137.0359991")
+    alpha_em = mp.mpf(1)/mp.mpf("137.035999084")
     basis2 = [mp.mpf(1), h_p**2, h_p**4, h_p**6, alpha_em, alpha_em * h_p**2, alpha_em * h_p**4]
     res2 = mp.pslq(basis2 + [dt], tol=1e-30)
     print("Result2 at q_p:", res2)

@@ -1,0 +1,64 @@
+{
+  "probe": "qbeta_fibre_partial_projection_kills_whole_locus_probe",
+  "bean": "qou-cds1",
+  "strengthens": "my own #6889 \u2014 its scope line described the non-rational phases as open when the reality condition had already excluded them",
+  "question": "does the partial projection exclude only the root-of-unity sublocus, or the whole fibre locus?",
+  "answer": "the whole fibre locus. Reality is a condition at every point of |q| = 1 and has exactly four solutions {0, pi/3, pi, 5pi/3}, all degenerate. With the full projection imposing nothing, route 5's N-selection mechanism predicts nothing under either reading.",
+  "scope": "(a), conditional on the reality assumption route 5's N-selection already rests on (that Q_beta must be real AT the fibre evaluation point, not merely after the archimedean functor). Not a refutation of route 5's underlying fibre-Habiro idea.",
+  "reality_solution_set": "{0, pi/3, pi, 5pi/3}",
+  "im_factored": "-sin(phi) + sin(2*phi)",
+  "scan_points": 20000,
+  "zeros_found": 4,
+  "degeneracy": {
+    "0": {
+      "h": "0.0",
+      "E_0 denominator q(q-1)": "0.0",
+      "verdict": "h = 0 kills Delta(net) AND q(q-1) = 0 is a pole of E_0 \u2014 degenerate twice"
+    },
+    "pi": {
+      "h": "0.0",
+      "verdict": "h = q - 1/q = 0 \u2014 the substrate degenerates"
+    },
+    "pi/3": {
+      "|b^2|": "0.0",
+      "|q^2+1| (denominator)": "1.0",
+      "verdict": "primitive 6th root: q^6-1 = (q^2-1)(q^4+q^2+1) forces q^4+q^2+1 = 0, so Hoefsmit b^2 = 0 and V_(2,1) decouples"
+    },
+    "5pi/3": {
+      "|b^2|": "0.0",
+      "|q^2+1| (denominator)": "1.0",
+      "verdict": "primitive 6th root: q^6-1 = (q^2-1)(q^4+q^2+1) forces q^4+q^2+1 = 0, so Hoefsmit b^2 = 0 and V_(2,1) decouples"
+    }
+  },
+  "q0": "1.1099785827513808076",
+  "q0_pin": "proton (q_at)",
+  "dps": 50,
+  "assertions": [
+    {
+      "name": "reality_is_a_condition_on_the_WHOLE_locus_with_exactly_four_solutions",
+      "passed": true,
+      "detail": "Im[q^2-q] factors as -sin(phi) + sin(2*phi); solveset on [0,2pi) gives [0, pi/3, pi, 5*pi/3] \u2014 exactly the four expected [0, pi/3, pi, 5*pi/3]. This is a condition at EVERY point of |q|=1, not one imposed only at roots of unity, so the non-rational phases are excluded by reality itself."
+    },
+    {
+      "name": "dense_scan_finds_no_fifth_zero",
+      "passed": true,
+      "detail": "scanned 20000 points on [0,2pi) with sign-change bracketing; found 4 zero(s), each within 1e-15 of one of {0, pi/3, pi, 5pi/3}. An independent check that sympy's solveset is complete \u2014 a missed branch would show as an unmatched bracket here."
+    },
+    {
+      "name": "all_four_reality_solutions_are_degenerate",
+      "passed": true,
+      "detail": "phi=0: h = 0 and E_0 has a pole (degenerate twice \u2014 #6889 called it 'the pole' and checked only the second); phi=pi: h = 0; phi=pi/3 and 5pi/3: |b^2| < 1e-35, the V_(2,1) coupling vanishes identically at a primitive 6th root. Sixth-root denominators |q^2+1| are non-zero, so the vanishing is the numerator's, not an indeterminate form."
+    },
+    {
+      "name": "partial_projection_excludes_the_ENTIRE_fibre_locus",
+      "passed": true,
+      "detail": "reality cuts |q| = 1 to four points and non-degeneracy removes all four, so under the block's partial projection NO point of the fibre locus survives \u2014 not merely no root of unity. This strengthens #6889, whose scope line ('|q| = 1 is a great deal more than its roots of unity') described the non-rational phases as still open when reality had already excluded them."
+    },
+    {
+      "name": "full_projection_imposes_nothing_so_route5_predicts_nothing_either_way",
+      "passed": true,
+      "detail": "|Delta(net) * E_0| evaluated at q = e^(i/7), e^(2i) and the proton q_0 is real in every case (it is a modulus), so a full projection imposes no condition and selects no N. Combined with the assertion above: PARTIAL kills the whole locus, FULL selects nothing \u2014 route 5's N-selection mechanism yields no prediction under either reading. Scope-(a) on the MECHANISM; it says nothing about route 5's underlying fibre-Habiro idea."
+    }
+  ],
+  "allPassed": true
+}

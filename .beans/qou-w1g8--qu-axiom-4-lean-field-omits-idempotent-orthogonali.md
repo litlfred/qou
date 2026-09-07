@@ -1,11 +1,11 @@
 ---
 # qou-w1g8
 title: QU axiom 4 Lean field omits idempotent orthogonality + completeness (needs Preadditive)
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T00:23:28Z
-updated_at: 2026-08-16T12:56:04Z
+updated_at: 2026-09-05T19:43:34Z
 ---
 
 
@@ -164,3 +164,80 @@ remaining half of this bean — is expressible.
 axiomatised existence claim with no proof obligation and no checker firing — it
 is not a refactor, it is asserting more. That is exactly why it is the owner's
 decision and not an idle-drain.
+
+
+## The prerequisite question has an answer, and it is in the paper (measured 2026-09-05)
+
+This bean holds the completeness half (`Σ p_b = 𝟙`) behind a question it states
+as *"does the paper's R-linear phrasing already imply it? … Do not add the
+instance without settling that."* Settled, by reading the two blocks it names:
+
+1. **`def:quantum-universe` item 1 ASSERTS it.** *"an $R$-linear braided
+   [monoidal category](#def:rigid-monoidal-category) $\mathbf{C}$ over a
+   commutative ring $R$"*. So $R$-linearity is an **axiom of every quantum
+   universe**, not merely a predicate the corpus defines somewhere. This is the
+   discriminator: a defined-but-unasserted predicate would leave the question
+   genuinely open, and it is not one.
+2. **`def:rigid-monoidal-category:31` DEFINES it as Preadditive plus an
+   $R$-action.** *"We say $\mathbf{C}$ is $R$-linear for a commutative ring $R$
+   … if every hom-set is an $R$-module and composition is $R$-bilinear."* An
+   $R$-module is in particular an `AddCommGroup`; $R$-bilinear composition is in
+   particular biadditive. That is Mathlib's `Preadditive` verbatim — and
+   `CategoryTheory.Linear R C` is *declared* `[Preadditive C]`, so the
+   implication is the library's own, not an argument of mine.
+
+**So adding `[Preadditive C]` to the Lean `QuantumUniverse` does not change what
+a quantum universe IS.** The Lean is currently *weaker* than the paper; the fix
+is claim-**alignment**, not a claim change, and the caveat this bean raised
+against it does not apply.
+
+Reclassifying accordingly: this is agent-actionable Lean work under the paper's
+existing axiom, not an owner ruling. It stays open as *work*, and comes off the
+owner-gated queue.
+
+What is still true and worth keeping: the two gaps cost differently
+(orthogonality needed only `HasZeroMorphisms` and is DONE), and the axiom's name
+still promises more than its type delivers until completeness lands.
+
+
+## ✅ DONE ON MAIN — and my own note above ("still open as work") was wrong
+
+Checked the tree rather than the bean, and this is fully landed. All four
+`QuantumUniverse` carriers now have it:
+
+- `quantum-universes/quantum-universe.lean`
+- `quantum-observable-universes/quantum-observable-universe.lean`
+- `lean/QOU/QuantumObservableUniverse/CategoricalFoundations.lean`
+- `lean/QOU/QuantumObservableUniverse/TrivialWitness.lean` (field **and** its
+  instance, so the completeness axiom is discharged by a witness rather than
+  merely stated)
+
+What is in the class now:
+
+```lean
+[preInst : @CategoryTheory.Preadditive C catInst]
+[linInst : @CategoryTheory.Linear R _ C catInst preInst]
+…
+centralIdem_orthogonal : ∀ b b', b ≠ b' → centralIdem b ≫ centralIdem b' = 0
+centralIdem_complete   : ∑ b, centralIdem b = 𝟙 frobHopf.obj
+frobWeight_isUnit      : ∀ b, IsUnit (frobWeight b)
+```
+
+`Preadditive` **replaces** the bare `HasZeroMorphisms` rather than sitting
+beside it — the docstring records why, and it is a real hazard: two
+`HasZeroMorphisms` instances on `C` would have made `p_b ≫ p_b' = 0`
+ambiguous. `frobWeight_isUnit` also took this bean's other recommendation,
+`IsUnit` over `≠ 0`, with the reason stated (they differ over a ring — `2 ≠ 0`
+in `ℤ` and `2` is not a unit; they coincide only over a field, which is why
+`≠ 0` survived while the base ring was one).
+
+The completeness docstring cites this bean by name and states the gap in this
+bean's own terms: *"This is the field the axiom's NAME promised and its TYPE
+did not deliver."*
+
+**🛑 My reclassification note directly above is wrong and is retracted.** It
+said *"Off the owner-gated queue, still open as agent work."* The first clause
+stands — the `Preadditive` prerequisite really was answered by
+`def:quantum-universe` axiom 1, and this bean really did not need an owner
+ruling. The second clause was asserted without looking at the tree, on a bean
+whose own last update was 2026-08-16. Landed 2026-08-29. Closing.

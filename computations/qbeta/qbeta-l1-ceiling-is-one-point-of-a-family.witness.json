@@ -9,9 +9,9 @@
     },
     {
       "name": "reproduces_committed_ceiling_at_w_eq_1",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true
+      "passed": false
     },
     {
       "name": "second_coordinate_varies_with_the_generator",
@@ -42,7 +42,7 @@
       "note": "so the ceiling DOES bound the centre; the freedom it misses is precisely the non-central part"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736",
     "dps": 50,
@@ -54,17 +54,17 @@
   },
   "data": {
     "validation": {
-      "worst_chi_error_vs_committed": "3.84878e-49",
-      "ceiling_at_w_eq_1": "0.56613739676704101264",
+      "worst_chi_error_vs_committed": "1.41657e-49",
+      "ceiling_at_w_eq_1": "0.14691068057880746525",
       "committed_ceiling_D": "0.5661"
     },
-    "tr_M_beta": "0.5751722439177718708265353",
+    "tr_M_beta": "0.1519683392042316075926657",
     "tr_M_beta_sigma_g": {
-      "sigma_0": "0.75833734955937301195",
-      "sigma_1": "0.19823030607820698274",
-      "sigma_2": "1.2042468586334074508",
-      "sigma_3": "0.78980409740770166098",
-      "sigma_4": "0.14009296120562848999"
+      "sigma_0": "0.12990243443943785938",
+      "sigma_1": "0.30858474134840617471",
+      "sigma_2": "0.31817841878440022255",
+      "sigma_3": "0.12331864281332811577",
+      "sigma_4": "0.36475421479985443219"
     },
     "span": {
       "sampled_words": 36,
@@ -87,7 +87,7 @@
         ],
         "c_lambda": "13.0873225069",
         "max_offdiag": "1.27e-50",
-        "reweighting_residual": "8.553e-50"
+        "reweighting_residual": "6.415e-50"
       },
       {
         "partition": [
@@ -96,7 +96,7 @@
         ],
         "c_lambda": "6.84901673512",
         "max_offdiag": "1.069e-50",
-        "reweighting_residual": "2.138e-49"
+        "reweighting_residual": "1.229e-49"
       },
       {
         "partition": [
@@ -106,7 +106,7 @@
         ],
         "c_lambda": "5.21686474361",
         "max_offdiag": "9.355e-51",
-        "reweighting_residual": "4.811e-50"
+        "reweighting_residual": "2.138e-50"
       },
       {
         "partition": [
@@ -115,7 +115,7 @@
         ],
         "c_lambda": "3.79656930125",
         "max_offdiag": "5.346e-51",
-        "reweighting_residual": "0.0"
+        "reweighting_residual": "5.346e-51"
       },
       {
         "partition": [
@@ -125,7 +125,7 @@
         ],
         "c_lambda": "1.05443872699",
         "max_offdiag": "8.018e-51",
-        "reweighting_residual": "0.0"
+        "reweighting_residual": "2.272e-50"
       },
       {
         "partition": [
@@ -136,7 +136,7 @@
         ],
         "c_lambda": "-1.17122184856",
         "max_offdiag": "6.515e-51",
-        "reweighting_residual": "2.806e-50"
+        "reweighting_residual": "5.346e-51"
       },
       {
         "partition": [
@@ -146,7 +146,7 @@
         ],
         "c_lambda": "-2.32400997667",
         "max_offdiag": "2.673e-51",
-        "reweighting_residual": "3.635e-49"
+        "reweighting_residual": "5.88e-50"
       },
       {
         "partition": [
@@ -157,7 +157,7 @@
         ],
         "c_lambda": "-3.64875226827",
         "max_offdiag": "8.018e-51",
-        "reweighting_residual": "3.742e-50"
+        "reweighting_residual": "2.005e-51"
       },
       {
         "partition": [
@@ -169,7 +169,7 @@
         ],
         "c_lambda": "-6.35613631432",
         "max_offdiag": "3.675e-51",
-        "reweighting_residual": "0.0"
+        "reweighting_residual": "5.346e-51"
       },
       {
         "partition": [
@@ -186,12 +186,12 @@
       }
     ],
     "ceiling_over_family": {
-      "at_w_eq_1": "0.56613739676704101264",
-      "min": "0.091289201372406526328",
-      "max": "2.2867072400122251124",
+      "at_w_eq_1": "0.14691068057880746525",
+      "min": "0.08953563439951688334",
+      "max": "0.81607498810007320119",
       "n_sampled": 36,
-      "n_above_w_eq_1": 21,
-      "n_above_one": 7
+      "n_above_w_eq_1": 31,
+      "n_above_one": 0
     }
   },
   "context": {
@@ -201,14 +201,14 @@
     "anti_fit": "NO w IS SELECTED. The sample is systematic (identity, both crossings of every generator, every ordered pair) and the reported figure is a range. beta_atom . w is a different element of the algebra -- it is not the deuteron -- so a large ceiling(w) is a fact about the algebra, not about binding. This probe does not close the gap and does not identify which functionals are observables.",
     "scope": "Scope-(a). No content block is edited here."
   },
-  "gitCommit": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "gitCommit": "cbbd5df960e97f7f96b46b0bfbfabe8281bfb8c5",
   "durationMs": 0,
   "scriptFile": "qbeta_l1_ceiling_is_one_point_of_a_family_probe.py",
   "scriptHash": "634e4e63f675",
-  "scriptCommitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
-  "commitSha": "c5deb6e9193197bb0369ab3a2e1b7b6ca84aea99",
+  "scriptCommitSha": "c415d81fe7af0de5d6506ddcf99a232844856cb0",
+  "commitSha": "cbbd5df960e97f7f96b46b0bfbfabe8281bfb8c5",
   "engine": "mpmath",
-  "computedAt": "2026-09-04T12:40:12.216471+00:00",
+  "computedAt": "2026-09-06T13:17:56.237375+00:00",
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

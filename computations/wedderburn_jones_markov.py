@@ -355,10 +355,31 @@ def global_wedderburn_sum_jones_markov(
     Drop-in replacement for
     `schur_weyl_symbolic.global_wedderburn_sum_symbolic` that uses the
     correct Wenzl/Jones-Markov weight y_λ rather than the 2-variable
-    Schur s_λ(q, q⁻¹) / H_q(λ).  The 2-variable form vanishes for
-    partitions with > 2 rows, dropping the `(1^p)` sign-rep
-    contribution that `prop:alpha-shift-torus-knot` identifies as the
-    pole-order maximizer.
+    Schur s_λ(q, q⁻¹) / H_q(λ).
+
+    🛑 CONVENTION-C DOCSTRING CORRECTED 2026-09-05 (bean `qou-voa6`).
+    This paragraph used to continue: "The 2-variable form vanishes for
+    partitions with > 2 rows, dropping the `(1^p)` sign-rep contribution
+    that `prop:alpha-shift-torus-knot` identifies as the pole-order
+    maximizer" — i.e. it gave the > 2-row vanishing as the REASON to
+    prefer y_λ, which only makes sense if y_λ does not vanish there.
+    Under convention C it did not. Under convention D, canonical since
+    the owner ruling of 2026-08-15, **y_λ vanishes on exactly the same
+    set** — see the comment in the loop body below, which states it and
+    cites the sorry-free
+    `QOU.QBeta.WenzlWeight.conventionD_weight_eq_zero_iff`. So the
+    docstring and the body of this one function asserted opposite things
+    about y_λ, the docstring being convention-C-era.
+
+    What is still true, and is the live reason to prefer y_λ: it is the
+    Ocneanu/Jones-Markov weight, normalised `Σ y_λ f^λ = 1`, whereas the
+    2-variable Schur form is not a Markov trace weight at all. The
+    `(1^p)` sign-rep contribution is NOT recovered by either — it lies in
+    `ker(H_n ↠ TL_n)` and is zero on the N = 2 physical space by the row
+    cap (`qou-fvzm`), so `prop:alpha-shift-torus-knot`'s pole-order
+    maximizer is not reachable through this sum under D. That is a real
+    open question about that proposition, not a defect in this function;
+    it is recorded in `qou-voa6` rather than fixed here.
 
     Parameters mirror the legacy function; the only addition is
     `q_val` — pass q_0 to enable numerical-q-from-start (recommended

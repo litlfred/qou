@@ -36,7 +36,7 @@ import sys
 import mpmath as mp
 
 mp.mp.dps = 40
-RHO_INF = mp.mpf("0.979796195657")     # merged #5901 IO leading rho_P
+from _m1_io_constants import RHO_INF  # merged #5901 IO leading constants -- single source, see that module
 
 
 def bessel_table(theta, M):

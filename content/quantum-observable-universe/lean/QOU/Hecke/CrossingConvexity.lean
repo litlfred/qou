@@ -154,6 +154,31 @@ theorem pow_coords_spec {h s : K} (hs : IsCrossing h s) :
         rw [this, ← h1, ← h2]; ring
   exact fun k => (step k).1
 
+/-- The `k = 2` case in closed form: `s² = h·s + 1` has `b = -1/h`.
+
+    **Hypothesis dropped and section moved, 2026-09-05.** This was stated in
+    `section Ordered` as `{h : K} (hh : 0 < h)`, and `hh` was never used: the
+    proof is `rfl`, because `toCrossingCoords h c₁ cσ` is *defined* as
+    `(cσ + c₁/h, -(c₁/h))`, so the second component at `c₁ = 1` is `-(1/h)`
+    syntactically, for every `h` — including `h = 0`, where both sides are
+    Lean's junk `-(1/0)`. Carrying `0 < h` made the theorem strictly weaker
+    than what was proved and made it look as though positivity were doing work
+    somewhere. It also forced the whole statement into the ordered section,
+    requiring `[LinearOrder K] [IsStrictOrderedRing K]` for an identity that
+    needs only `[Field K]` — the §7c defect of inheriting archimedean structure
+    a statement does not use.
+
+    Contrast `crossingCoord_snd_neg_of_two_le` immediately below in `Ordered`,
+    which genuinely needs `0 < h`: its conclusion is an *inequality*, and the
+    positivity is what drives the `pow_coords` induction. The two sat adjacent
+    with the same binder, which is presumably how the decorative one arrived.
+
+    Caught by `proof-no-unused-hypothesis-rfl` (ledger entry at the old line
+    191). No consumers: the declaration is referenced nowhere else in the
+    corpus, so widening it breaks nothing. -/
+theorem sq_crossingCoord_snd {h : K} :
+    (toCrossingCoords h (1 : K) h).2 = -(1 / h) := rfl
+
 end Field
 
 section Ordered
@@ -186,10 +211,6 @@ theorem crossingCoord_snd_neg_of_two_le {h : K} (hh : 0 < h) (k : ℕ) :
   have := (pow_coords_fst_pos hh k).1
   have : 0 < (pow_coords h (k + 2)).1 / h := div_pos this hh
   linarith
-
-/-- The `k = 2` case in closed form: `s² = h·s + 1` has `b = -1/h`. -/
-theorem sq_crossingCoord_snd {h : K} (hh : 0 < h) :
-    (toCrossingCoords h (1 : K) h).2 = -(1 / h) := rfl
 
 end Ordered
 

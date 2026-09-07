@@ -121,6 +121,7 @@ def qfact_three(q):
 
 def trM_borromean(q):
     """|tr_M(β_Bor, q)| from BorromeanMarkovTrace.lean closed form."""
+    # convention D — verified by EVALUATION at q0, not by reading: computations/audits/borromean_convention_by_evaluation.py
     h = q - 1 / q
     return abs((4 + h ** 2 - 3 * h ** 4 - h ** 6) / (h ** 2 + 4))
 

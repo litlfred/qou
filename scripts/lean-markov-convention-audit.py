@@ -64,6 +64,28 @@ RE_C_PLAIN = re.compile(
     r"/\s*\(\s*" + _SQ + r"\s*\+\s*(?:1\s*/\s*)?" + _SQ + r"\s*(?:⁻¹)?\s*\)"
 )
 RE_C_SQRTVAR = re.compile(r"(\w+)\s*/\s*\(\s*\1\s*\^\s*2\s*\+\s*1\s*\)")
+
+
+def _sqrtvar_hit(line: str) -> bool:
+    """`RE_C_SQRTVAR` with two guards the bare regex lacks (found 2026-09-06).
+
+    `coneCoordRow5 q := coneRow5Numerator q / (q ^ 2 + 1) ^ 2` matched: `(\w+)`
+    took the APPLIED ARGUMENT `q` of `coneRow5Numerator q` as the numerator, and
+    the trailing `^ 2` on the denominator was ignored.  That is a rational
+    function of q over `(q^2+1)^2` -- convention-D territory -- reported as the
+    sqrt-variable disguise of C.  So: the numerator identifier must be the whole
+    numerator (not preceded, ignoring whitespace, by an identifier character or a
+    closing bracket), and the denominator must carry no exponent.
+    """
+    for m in RE_C_SQRTVAR.finditer(line):
+        before = line[:m.start()].rstrip()
+        if before and (before[-1].isalnum() or before[-1] in "_)]⟩"):
+            continue
+        after = line[m.end():].lstrip()
+        if after.startswith("^"):
+            continue
+        return True
+    return False
 # `√q / (1 + q)` and `√q / (q + 1)` -- convention C written the MOST DIRECT way
 # there is, and the one spelling this file was blind to until 2026-08-31.
 #
@@ -226,7 +248,7 @@ def classify(path: pathlib.Path):
             yield i, decl, "D", _kind(i, def_lines), _deliberate(all_lines, i, decl), stripped[:90]
         elif RE_C_PLAIN.search(line) or RE_C_RATIONAL.search(line):
             yield i, decl, "C-plain", _kind(i, def_lines), _deliberate(all_lines, i, decl), stripped[:90]
-        elif RE_C_SQRTVAR.search(line):
+        elif _sqrtvar_hit(line):
             v = "C-sqrtvar" if file_binds_sqrt else "C-shape-unbound"
             yield i, decl, v, _kind(i, def_lines), _deliberate(all_lines, i, decl), stripped[:90]
 

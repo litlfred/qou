@@ -1,0 +1,959 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-06T10:39:10.015793+00:00",
+  "commitSha": "53c2900b12568a2c1bbad4d9dc87bf25b58a7a51",
+  "assertions": [
+    {
+      "name": "the character DOES move the selection — argmin(t) != argmin(w) on some row, so O3''s choice is NOT a function of the weight alone. This ASSERTS THE REFUTATION of what #6841/#6847 measured on the pre-regeneration caches, where it agreed 6/6",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "same n, different atoms -> DIFFERENT selected block, so the block IS atom-dependent — at n=9 tritium selects [7,2] and helium-3 selects [5,4]. This RESTORES #6752's original reading, which #6841 refuted using the stale caches",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "same n, different atoms -> DIFFERENT price, so the price IS atom-dependent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "the spread-dominance explanation is REFUTED — chi-spread exceeds w-spread on at least one row and the argmin is unmoved anyway, so the mechanism is NOT that w varies more",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "w and chi are NOT anti-correlated — 25/49 concordant against 24.5 expected under independence, i.e. indistinguishable from unrelated. The 9/49 anti-correlation reported in #6847 was an ARTIFACT of the superseded word ordering and does not survive regeneration",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "the product is AMPLIFIED relative to w on every row, not flattened — t-spread EXCEEDS w-spread throughout (flattening 0.20-0.69, all below 1). chi now adds to the weight ordering instead of cancelling it, the opposite of what #6847 measured",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "w is a strictly INCREASING function of the content sum on EVERY row — so ordering the survivors by w IS ordering them by c(lambda)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "conc(w, |chi|) == conc(c(lambda), |chi|) IDENTICALLY on every row — the anti-correlation is a fact about the CONTENT SUM against the character, not about the Markov weight",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "content sums, w and |chi| are TIE-FREE on every row — which is what lets the two exact claims above be read as strict orderings",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "the two atoms sharing a dimension multiset now AGREE on the dim -> |chi| concordance, so this probe's earlier proof that the link is statistical does not reproduce. The link is weak either way (21/48 = 43.8%, below half), but the CLEAN argument for it is gone",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "the p<->n MIRROR FLIP is not a constant rescale — it acts per-partition, which is how two atoms with identical partitions, dimensions and weights can order their characters differently",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "the excess-suppression MECHANISM does not survive regeneration — the mirror ratios of the discordant partitions are now BELOW their references (0.61x, 0.77x) rather than 1.35x above, so substituting the reference ratio no longer removes the inversion. The 35.09% figure in #6854 was measured on the stale ordering",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "the CLASSICAL character bound |chi| <= dim is VIOLATED on every row — so this witness's chi_lambda is not a classical S_n character. Corroborates magnus_fs_transpose_prune_probe, which measures a different normalised quantity up to 29.0 and already scopes Feray-Sniady to q=1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "|chi|/dim is NOT monotone in dim — so 'character = dimension times a slowly varying factor' is refuted, and no better notion of dimension repairs the 89.6% link",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "the selection margin is NO LONGER uniformly thin — it now reaches 10.07x at the proton, where the pre-regeneration data gave 2.11x as the worst case. The thin-margin finding of #6854 was ordering-specific; what survives is that the margin VARIES by 8x across atoms, which the earlier data did not show",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    },
+    {
+      "name": "in a MAJORITY of rows the margin is smaller than that row's OWN character spread — so a flip needs no outlier, just an ordinary ratio between two particular partitions",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "o3prime_selection_is_atom_independent_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "o3prime-selection-is-atom-independent",
+  "scriptFile": "o3prime_selection_is_atom_independent_probe.py",
+  "scriptHash": "8fbaa71198c9",
+  "scriptCommitSha": "03851b82956c2be39ff5b1761ccd354780107349",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/o3prime_selection_is_atom_independent_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/o3prime_selection_is_atom_independent_probe.py"
+  },
+  "description": "POST-REGENERATION (2026-09-05). Written against chi caches built 2026-08-10 under the GROUPED intra ordering; those were 26 days stale to the 2026-09-05 borromean switch (qou-hu1f) and were rebuilt on owner ruling. This probe's ORIGINAL HEADLINE IS REFUTED and its filename is now wrong. SURVIVES (w is a function of the partition and q alone, so w-side facts are invariant -- <=2-row y_lambda agree to 8.4e-50 across the transition): w strictly increasing in the content sum 49/49; conc(w,|chi|)==conc(c,|chi|) identically 6/6; tie-freeness; |chi|<=dim violated 6/6; |chi|/dim non-monotone. REFUTED OR REVERSED: argmin(t)==argmin(w) 6/6 -> 4/6; the block at fixed n goes from SAME to DIFFERENT (tritium [7,2] vs helium-3 [5,4]), which RESTORES #6752's original atom-dependent reading that #6841 refuted on stale data; the anti-correlation 9/49 -> 25/49 against 24.5 expected, i.e. it was an ARTIFACT; the product goes from flattened to AMPLIFIED (t-spread exceeds w-spread on every row); the thin margin 2.11x -> 10.07x; the 35.09% excess-suppression mechanism is gone. Every assertion now states the refutation rather than being deleted. TWO LATENT DEFECTS the regeneration exposed, both fixed: the quotient was selected by `y_lambda != 0`, a proxy that worked only while the old caches serialized SU(2)-suppressed weights as exact 0 (rebuilt ones carry the 1e-73 residual); and argmin(t) read the SIGNED contribution while t_vals used abs, correct by accident until borromean introduced negative characters.",
+  "auditOnly": "docs/proposals/2026-09-05-operator-selection-objective-replacement.md",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "rows": [
+      {
+        "row": 0,
+        "n": 3,
+        "n_survivors": 2,
+        "atom": "proton",
+        "Z": 1,
+        "N": 0,
+        "A": 1,
+        "argmin_t": [
+          2,
+          1
+        ],
+        "argmin_w": [
+          2,
+          1
+        ],
+        "same": true,
+        "price_t_min": "-0.0693901427139783637522988569578404295587651406099240000000000",
+        "w_spread": "2.04370620853252198940201933567738830976821396071355264058991",
+        "chi_spread": "4.92703928635924753077477780962800910609030540984875532424229",
+        "t_spread": "10.0694207792160406594870165837474658487844045599576696098821",
+        "flattening": "0.202961645296506882791931447519550913544927502505260060792737",
+        "n_pairs": 1,
+        "concordant": 1,
+        "tau_tail": "1"
+      },
+      {
+        "row": 1,
+        "n": 3,
+        "n_survivors": 2,
+        "atom": "neutron",
+        "Z": 0,
+        "N": 1,
+        "A": 1,
+        "argmin_t": [
+          2,
+          1
+        ],
+        "argmin_w": [
+          2,
+          1
+        ],
+        "same": true,
+        "price_t_min": "-0.0919840130710994575257964954226079346230521521371230000000000",
+        "w_spread": "2.04370620853252198940201933567738830976821396071355264058991",
+        "chi_spread": "3.01677037588427963773065440936120195479268387800240030445635",
+        "t_spread": "6.16539234691169234737310369723481240448978115612483005120642",
+        "flattening": "0.331480316829509672415540954415686029732370946693001716095643",
+        "n_pairs": 1,
+        "concordant": 1,
+        "tau_tail": "1"
+      },
+      {
+        "row": 2,
+        "n": 6,
+        "n_survivors": 4,
+        "atom": "deuteron",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "argmin_t": [
+          3,
+          3
+        ],
+        "argmin_w": [
+          3,
+          3
+        ],
+        "same": true,
+        "price_t_min": "0.0107975708954923988416069636640453169184719652464950000000000",
+        "w_spread": "7.62534203713249695670141762989255924623136986210034780328572",
+        "chi_spread": "4.74008919471066655673356316041053414751465186611242341524063",
+        "t_spread": "16.6603047531426776926558722888806746414056258641607538252349",
+        "flattening": "0.457695231276853345874881449867157414483190424124838289424850",
+        "n_pairs": 6,
+        "concordant": 4,
+        "tau_tail": "5/6"
+      },
+      {
+        "row": 3,
+        "n": 9,
+        "n_survivors": 5,
+        "atom": "tritium",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "argmin_t": [
+          7,
+          2
+        ],
+        "argmin_w": [
+          5,
+          4
+        ],
+        "same": false,
+        "price_t_min": "0.00314915915153762540869386052250592605223336374396190000000000",
+        "w_spread": "5.91491061780669391433300152304207723128163811452297267925466",
+        "chi_spread": "6.85480940923684420195993048968357516541837875956971875615795",
+        "t_spread": "11.0775383484190622124689886350410183700069178088987894826750",
+        "flattening": "0.533955327597745944033294939513804495630083306898115752419906",
+        "n_pairs": 10,
+        "concordant": 5,
+        "tau_tail": "71/120"
+      },
+      {
+        "row": 4,
+        "n": 9,
+        "n_survivors": 5,
+        "atom": "helium-3",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "argmin_t": [
+          5,
+          4
+        ],
+        "argmin_w": [
+          5,
+          4
+        ],
+        "same": true,
+        "price_t_min": "-0.00619004049584358197116959378714873203118050103562060000000000",
+        "w_spread": "5.91491061780669391433300152304207723128163811452297267925466",
+        "chi_spread": "3.72848634915083480652610623260293928351739812223945377289668",
+        "t_spread": "8.55466047776717535967359405858177470486762536747221089087344",
+        "flattening": "0.691425525674459714502845259838968945834007096811883701789011",
+        "n_pairs": 10,
+        "concordant": 5,
+        "tau_tail": "71/120"
+      },
+      {
+        "row": 5,
+        "n": 12,
+        "n_survivors": 7,
+        "atom": "helium-4",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "argmin_t": [
+          7,
+          5
+        ],
+        "argmin_w": [
+          6,
+          6
+        ],
+        "same": false,
+        "price_t_min": "0.000295866772103979698890689899988833014342983502829120000000000",
+        "w_spread": "17.3381908741281979106997363104612820819989018846406557481007",
+        "chi_spread": "10.0019006278957601871986245216065158934911591652710408530865",
+        "t_spread": "32.4351627660218893154407816543487924760626598204269193875651",
+        "flattening": "0.534549217440375245695801450031663556153059468657883753004352",
+        "n_pairs": 21,
+        "concordant": 9,
+        "tau_tail": "649/1680"
+      }
+    ],
+    "content_sum_reduction": [
+      {
+        "atom": "proton",
+        "Z": 1,
+        "N": 0,
+        "chi": {
+          "[3]": "1.3824944633925928759010066186910068575145333016307",
+          "[2, 1]": "-0.28059335090347205472579085759649577839746521664058"
+        },
+        "dim": {
+          "[3]": 1,
+          "[2, 1]": 2
+        },
+        "discordant": [
+          [
+            2,
+            1
+          ]
+        ],
+        "cs_w": 1,
+        "cs_chi": 1,
+        "cs_dim": 0,
+        "dim_chi": 0,
+        "cs_dim_disc": 1,
+        "dim_chi_disc": 1,
+        "cs_dim_tied": 0,
+        "dim_chi_tied": 0,
+        "tie_free_cs_w": true,
+        "tie_free_cs_chi": true,
+        "dims": [
+          1,
+          2
+        ],
+        "n": 3,
+        "pairs": 1,
+        "w_chi": 1
+      },
+      {
+        "atom": "neutron",
+        "Z": 0,
+        "N": 1,
+        "chi": {
+          "[3]": "1.1221068216024720738277212759029981741187093477827",
+          "[2, 1]": "-0.37195632474134153141629884205128506411028151416031"
+        },
+        "dim": {
+          "[3]": 1,
+          "[2, 1]": 2
+        },
+        "discordant": [
+          [
+            2,
+            1
+          ]
+        ],
+        "cs_w": 1,
+        "cs_chi": 1,
+        "cs_dim": 0,
+        "dim_chi": 0,
+        "cs_dim_disc": 1,
+        "dim_chi_disc": 1,
+        "cs_dim_tied": 0,
+        "dim_chi_tied": 0,
+        "tie_free_cs_w": true,
+        "tie_free_cs_chi": true,
+        "dims": [
+          1,
+          2
+        ],
+        "n": 3,
+        "pairs": 1,
+        "w_chi": 1
+      },
+      {
+        "atom": "deuteron",
+        "Z": 1,
+        "N": 1,
+        "chi": {
+          "[6]": "1.5598701995641515927061666224371716599524918200175",
+          "[5, 1]": "-0.68228501276057044641239950847620023335096905058467",
+          "[4, 2]": "0.32908034753961323775704153752221780532274628165492",
+          "[3, 3]": "0.71394515175138574642252125970790802050354907040101"
+        },
+        "dim": {
+          "[6]": 1,
+          "[5, 1]": 5,
+          "[4, 2]": 9,
+          "[3, 3]": 5
+        },
+        "discordant": [
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "cs_w": 6,
+        "cs_chi": 4,
+        "cs_dim": 1,
+        "dim_chi": 0,
+        "cs_dim_disc": 4,
+        "dim_chi_disc": 5,
+        "cs_dim_tied": 1,
+        "dim_chi_tied": 1,
+        "tie_free_cs_w": true,
+        "tie_free_cs_chi": true,
+        "dims": [
+          1,
+          5,
+          5,
+          9
+        ],
+        "n": 6,
+        "pairs": 6,
+        "w_chi": 4
+      },
+      {
+        "atom": "tritium",
+        "Z": 1,
+        "N": 2,
+        "chi": {
+          "[9]": "1.5769142026206059678899601029121810561841755105317",
+          "[8, 1]": "-1.0523302898545896879468570038658642106176701605433",
+          "[7, 2]": "0.26505255299853592847601499423565014804919380240065",
+          "[6, 3]": "1.8168847342366114061343190364530766699202067351894",
+          "[5, 4]": "-1.4087381126810728208157105093155033150586935890936"
+        },
+        "dim": {
+          "[9]": 1,
+          "[8, 1]": 8,
+          "[7, 2]": 27,
+          "[6, 3]": 48,
+          "[5, 4]": 42
+        },
+        "discordant": [
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            1
+          ]
+        ],
+        "cs_w": 10,
+        "cs_chi": 5,
+        "cs_dim": 1,
+        "dim_chi": 6,
+        "cs_dim_disc": 9,
+        "dim_chi_disc": 4,
+        "cs_dim_tied": 0,
+        "dim_chi_tied": 0,
+        "tie_free_cs_w": true,
+        "tie_free_cs_chi": true,
+        "dims": [
+          1,
+          8,
+          27,
+          42,
+          48
+        ],
+        "n": 9,
+        "pairs": 10,
+        "w_chi": 5
+      },
+      {
+        "atom": "helium-3",
+        "Z": 2,
+        "N": 1,
+        "chi": {
+          "[9]": "2.3936820385526544748822680766148824447018669548521",
+          "[8, 1]": "-0.91566648789088945442984956726905327221227087412063",
+          "[7, 2]": "0.67031471710060441440589616141359293372795973171156",
+          "[6, 3]": "2.4992592723445072094269940827438427778559819037205",
+          "[5, 4]": "-1.6550528618037814647718834957819824488722762744344"
+        },
+        "dim": {
+          "[9]": 1,
+          "[8, 1]": 8,
+          "[7, 2]": 27,
+          "[6, 3]": 48,
+          "[5, 4]": 42
+        },
+        "discordant": [
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            1
+          ]
+        ],
+        "cs_w": 10,
+        "cs_chi": 5,
+        "cs_dim": 1,
+        "dim_chi": 6,
+        "cs_dim_disc": 9,
+        "dim_chi_disc": 4,
+        "cs_dim_tied": 0,
+        "dim_chi_tied": 0,
+        "tie_free_cs_w": true,
+        "tie_free_cs_chi": true,
+        "dims": [
+          1,
+          8,
+          27,
+          42,
+          48
+        ],
+        "n": 9,
+        "pairs": 10,
+        "w_chi": 5
+      },
+      {
+        "atom": "helium-4",
+        "Z": 2,
+        "N": 2,
+        "chi": {
+          "[12]": "2.4198367301370381390315870489209276121289941745398",
+          "[11, 1]": "-1.4820805406851345826369556135634007686099313433823",
+          "[10, 2]": "0.54334127358781385773508079844803274958038419868712",
+          "[9, 3]": "4.1496247980722597956727059223010327849356048805636",
+          "[8, 4]": "-2.9794818844089247155730654432089599813095789021964",
+          "[7, 5]": "0.42498248576096399502361269067665679823070467335753",
+          "[6, 6]": "4.2506325911772867449524745390920484837828091725434"
+        },
+        "dim": {
+          "[12]": 1,
+          "[11, 1]": 11,
+          "[10, 2]": 54,
+          "[9, 3]": 154,
+          "[8, 4]": 275,
+          "[7, 5]": 297,
+          "[6, 6]": 132
+        },
+        "discordant": [
+          [
+            7,
+            5
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "cs_w": 21,
+        "cs_chi": 9,
+        "cs_dim": 3,
+        "dim_chi": 9,
+        "cs_dim_disc": 18,
+        "dim_chi_disc": 12,
+        "cs_dim_tied": 0,
+        "dim_chi_tied": 0,
+        "tie_free_cs_w": true,
+        "tie_free_cs_chi": true,
+        "dims": [
+          1,
+          11,
+          54,
+          132,
+          154,
+          275,
+          297
+        ],
+        "n": 12,
+        "pairs": 21,
+        "w_chi": 9
+      }
+    ],
+    "selection_margin": [
+      {
+        "n": 3,
+        "row": 0,
+        "atom": "proton",
+        "margin": "10.0694207792160406594870165837474658487844045599576696098821",
+        "argmin": [
+          2,
+          1
+        ],
+        "runner_up": [
+          3
+        ],
+        "chi_spread": "4.92703928635924753077477780962800910609030540984875532424229",
+        "thin": false,
+        "discordant_partitions": [
+          [
+            2,
+            1
+          ]
+        ],
+        "runner_is_discordant": false
+      },
+      {
+        "n": 3,
+        "row": 1,
+        "atom": "neutron",
+        "margin": "6.16539234691169234737310369723481240448978115612483005120642",
+        "argmin": [
+          2,
+          1
+        ],
+        "runner_up": [
+          3
+        ],
+        "chi_spread": "3.01677037588427963773065440936120195479268387800240030445635",
+        "thin": false,
+        "discordant_partitions": [
+          [
+            2,
+            1
+          ]
+        ],
+        "runner_is_discordant": false
+      },
+      {
+        "n": 6,
+        "row": 2,
+        "atom": "deuteron",
+        "margin": "1.40294236112573578614130082752617201485266960392929906455884",
+        "argmin": [
+          3,
+          3
+        ],
+        "runner_up": [
+          4,
+          2
+        ],
+        "chi_spread": "4.74008919471066655673356316041053414751465186611242341524063",
+        "thin": true,
+        "discordant_partitions": [
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        "runner_is_discordant": true
+      },
+      {
+        "n": 9,
+        "row": 3,
+        "atom": "tritium",
+        "margin": "1.67308218776395134879672477122067307037215111194267126295989",
+        "argmin": [
+          7,
+          2
+        ],
+        "runner_up": [
+          5,
+          4
+        ],
+        "chi_spread": "6.85480940923684420195993048968357516541837875956971875615795",
+        "thin": true,
+        "discordant_partitions": [
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            1
+          ]
+        ],
+        "runner_is_discordant": true
+      },
+      {
+        "n": 9,
+        "row": 4,
+        "atom": "helium-3",
+        "margin": "1.28661284285571011295258062387080993330805387348270383547509",
+        "argmin": [
+          5,
+          4
+        ],
+        "runner_up": [
+          7,
+          2
+        ],
+        "chi_spread": "3.72848634915083480652610623260293928351739812223945377289668",
+        "thin": true,
+        "discordant_partitions": [
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            1
+          ]
+        ],
+        "runner_is_discordant": true
+      },
+      {
+        "n": 12,
+        "row": 5,
+        "atom": "helium-4",
+        "margin": "3.28609265896199255874068013238828561190853583040638535261197",
+        "argmin": [
+          7,
+          5
+        ],
+        "runner_up": [
+          6,
+          6
+        ],
+        "chi_spread": "10.0019006278957601871986245216065158934911591652710408530865",
+        "thin": true,
+        "discordant_partitions": [
+          [
+            7,
+            5
+          ],
+          [
+            8,
+            4
+          ],
+          [
+            9,
+            3
+          ],
+          [
+            10,
+            2
+          ],
+          [
+            11,
+            1
+          ]
+        ],
+        "runner_is_discordant": false
+      }
+    ],
+    "normalised_character": [
+      {
+        "n": 3,
+        "row": 0,
+        "atom": "proton",
+        "max": "1.38249446339259287590100661869100685751453330163070000000000",
+        "min": "0.140296675451736027362895428798247889198732608320290000000000",
+        "range": "9.85407857271849506154955561925601821218061081969751064848458",
+        "exceeds_classical_bound": true,
+        "monotone_in_dim": true
+      },
+      {
+        "n": 3,
+        "row": 1,
+        "atom": "neutron",
+        "max": "1.12210682160247207382772127590299817411870934778270000000000",
+        "min": "0.185978162370670765708149421025642532055140757080155000000000",
+        "range": "6.03354075176855927546130881872240390958536775600480060891270",
+        "exceeds_classical_bound": true,
+        "monotone_in_dim": true
+      },
+      {
+        "n": 6,
+        "row": 2,
+        "atom": "deuteron",
+        "max": "1.55987019956415159270616662243717165995249182001750000000000",
+        "min": "0.0365644830599570264174490597246908672580829201838800000000000",
+        "range": "42.6608027523959990106020684436948073276318667950118107371657",
+        "exceeds_classical_bound": true,
+        "monotone_in_dim": false
+      },
+      {
+        "n": 9,
+        "row": 3,
+        "atom": "tritium",
+        "max": "1.57691420262060596788996010291218105618417551053170000000000",
+        "min": "0.00981676122216799735096351830502407955737754823706111111111111",
+        "range": "160.634874062094176764643925061460952020983968583939352944940",
+        "exceeds_classical_bound": true,
+        "monotone_in_dim": false
+      },
+      {
+        "n": 9,
+        "row": 4,
+        "atom": "helium-3",
+        "max": "2.39368203855265447488226807661488244470186695485210000000000",
+        "min": "0.0248264710037260894224405985708738123602948048782059259259259",
+        "range": "96.4165240477955116729754952061874466251656902714313737414473",
+        "exceeds_classical_bound": true,
+        "monotone_in_dim": false
+      },
+      {
+        "n": 12,
+        "row": 5,
+        "atom": "helium-4",
+        "max": "2.41983673013703813903158704892092761212899417453980000000000",
+        "min": "0.00143091746047462624587074980025810369774648038167518518518519",
+        "range": "1691.10853489368537284813986910267983242364060857683836247829",
+        "exceeds_classical_bound": true,
+        "monotone_in_dim": false
+      }
+    ],
+    "mirror_pair": [
+      {
+        "neutron_rich": "neutron",
+        "proton_rich": "proton",
+        "ratios": {
+          "[2, 1]": "0.754371769585035827497846409501996212577856593284380513168000",
+          "[3]": "1.23205245416676393126980451353563618484968142291697493439045"
+        },
+        "spread": "1.63321654367380460542980317408237845261748566759032401255696",
+        "outlier": "[3]",
+        "discordant_in_neutron_rich": [
+          [
+            2,
+            1
+          ]
+        ],
+        "discordant_in_proton_rich": [
+          [
+            2,
+            1
+          ]
+        ]
+      },
+      {
+        "neutron_rich": "tritium",
+        "proton_rich": "helium-3",
+        "ratios": {
+          "[7, 2]": "2.52898796679127642159544113741297553379085893960225227306904",
+          "[8, 1]": "0.870132216775225249478115979820572069731473630431329080577860",
+          "[5, 4]": "1.17484779243597589609927656421456746816610536126876421298090",
+          "[9]": "1.51795324981834593754711018277627363962078050951325304729303",
+          "[6, 3]": "1.37557392896176468608802844144503035936700574466181457006435"
+        },
+        "spread": "2.90644101900271436168228515413428303990012195221034159296365",
+        "outlier": "[7, 2]",
+        "discordant_in_neutron_rich": [
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            1
+          ]
+        ],
+        "discordant_in_proton_rich": [
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            8,
+            1
+          ]
+        ]
+      }
+    ],
+    "mirror_counterfactual": [
+      {
+        "atom": "neutron",
+        "partition": "[2, 1]",
+        "reference": "[3]",
+        "dim_partition": 2,
+        "dim_reference": 1,
+        "excess": "0.612288678971234905166308764658196125467805114587310132994150",
+        "actual": "0.371956324741341531416298842051285064110281514160310000000000",
+        "counterfactual": "0.227744646710871664003546674364711002996226893155174783371898",
+        "reference_chi": "1.12210682160247207382772127590299817411870934778270000000000",
+        "inversion_removed": false
+      },
+      {
+        "atom": "tritium",
+        "partition": "[5, 4]",
+        "reference": "[9]",
+        "dim_partition": 42,
+        "dim_reference": 1,
+        "excess": "0.773968363371250329030672447340507904560691710704297775402038",
+        "actual": "1.40873811268107282081571050931550331505869358909360000000000",
+        "counterfactual": "1.09031873149047396006142458995538362305261458297064135596828",
+        "reference_chi": "1.57691420262060596788996010291218105618417551053170000000000",
+        "inversion_removed": false
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

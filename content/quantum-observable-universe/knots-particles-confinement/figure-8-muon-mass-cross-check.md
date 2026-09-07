@@ -14,7 +14,7 @@ $$
 | $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ | $2.0298832128\ldots$ | substrate (figure-8 archimedean image) |
 | $\hbar_q^2 = ((q_0 - 1)/q_0)^2$ at $q_0$ | $9.8174\ldots \times 10^{-3}$ | substrate (CAL-2) |
 | $\mathrm{Vol}(4_1)/\hbar_q^2$ at $q_0$ | $206.76828305\ldots$ | substrate |
-| $m_\mu/m_e$ (CODATA 2022) | $206.7682830\ldots$ | empirical |
+| $m_\mu/m_e$ (CODATA **2018**) | $206.7682830\ldots$ | empirical |
 | relative residual | $1.45 \times 10^{-30}$ ppm | — |
 
 ## Structural vanishing of the residual

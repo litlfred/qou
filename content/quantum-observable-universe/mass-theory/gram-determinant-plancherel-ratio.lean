@@ -49,7 +49,39 @@ noncomputable def gramKappa (n : ℕ)
 
     The Gram-determinant ratio appearing in the Chern-Simons descent
     is given by the Plancherel-weighted character product over
-    Wedderburn blocks `λ ⊢ n`, with no 2-jet hand calculation. -/
+    Wedderburn blocks `λ ⊢ n`, with no 2-jet hand calculation.
+
+    **🛑 THE STATEMENT BELOW DOES NOT CARRY THAT CLAIM — flagged 2026-09-05,
+    not rewritten.** It concludes `∃ κ : ℝ, κ = gramKappa …`, which is true for
+    *any* right-hand side whatsoever (`⟨a, rfl⟩`, verified) and says nothing
+    about the Chern–Simons Gram ratio. The docstring's content — that the CS
+    ratio EQUALS this product — needs a term denoting that ratio, and this file
+    has none; `gramKappa` is a definition, so "something equals it" is not a
+    theorem about it.
+
+    Left in place rather than restated because supplying that term is a design
+    decision in this arc's owner's hands, not a mechanical repair.
+
+    **Correction (2026-09-05).** This said "no detector flags this", and that
+    was wrong — I asserted an absence without running the corpus-grep
+    checklist. `∃ x, x = e := ⟨e, rfl⟩` is a NAMED class with a DEDICATED
+    detector since 2026-08-07: `scripts/lean-vacuous-existential-audit.py`,
+    written up in `docs/audits/2026-08-07-lean-vacuous-existential-audit.md`
+    (17 found, and the ten then-live have since been drained).
+
+    What is true is narrower and sharper. That detector could not see THIS
+    declaration because its bound-variable pattern was `[A-Za-z_][A-Za-z0-9_']*`
+    — ASCII-only — and this one binds `κ`. So it reported `0 candidates in 0
+    files`, which reads as a clean corpus. Widening the pattern to Unicode on
+    the same tree the same day reports **8 in 3 files**, every one bound to a
+    Greek name. Nothing had been drained; they had never been seen. The
+    detector is fixed and now carries a `--self-test` so a future narrowing
+    cannot report zero silently.
+
+    The live audit (`content/pipeline/lean-vacuity-axiom-audit.ts`) still does
+    not flag this, and that part is correct as stated: its nearest criterion,
+    `proof-no-unused-hypothesis-rfl`, needs an UNUSED binder, and every binder
+    here is consumed by `gramKappa n q_factorial n_factorial cs cw`. -/
 -- Ref: [manuscript] §5/gram-determinant-plancherel-ratio
 -- Ref: [jones1987] §3 (The Markov trace) + §4 (Link polynomials)
 --      — Jones, "Hecke algebra representations of braid groups and link
@@ -61,26 +93,74 @@ theorem gram_determinant_plancherel_ratio
     ∃ κ : ℝ, κ = gramKappa n q_factorial n_factorial cs cw := by
   exact ⟨gramKappa n q_factorial n_factorial cs cw, rfl⟩
 
+-- The docstring that stood here belonged to the removed axiom. It is dropped rather than
+-- left dangling, because a doc comment attached to nothing followed by another doc comment
+-- is a parse error — the SAME failure this very docstring recorded having survived once
+-- before ("two docstrings cannot both attach to one declaration, so the file did not
+-- parse"). Removing the axiom without it reproduced that error exactly; caught by
+-- lean-direct, not by inspection.
+--
+-- Its one piece of unique content — that the value is `κ ≈ 1.722` at `q₀ ≈ 1.1097` for the
+-- genus-4 torus pair `(T_{2,9}, T_{3,5})` — is carried in the replacement theorem's
+-- docstring below, which is now the only place it is stated. Its self-description as an
+-- "external axiom (§3b-cond pattern)" was inaccurate: §3b-cond axiomatises a conjecture's
+-- HYPOTHESES as a class taken by an explicit `[Instance]` binder, whereas this was a bare
+-- `axiom` asserting a provable existential with no binder and no class.
+-- REMOVED 2026-09-05: `axiom gram_kappa_numerical_value_axiom : ∃ (κ : ℝ), |κ - 1.722| < 0.001`
+--
+-- It was an `axiom`, and it was PROVABLE — `⟨1.722, by norm_num⟩` closes it, verified
+-- lean-direct exit 0. Take κ = 1.722 and |κ − 1.722| = 0 < 0.001. So it assumed something
+-- that needs no assuming.
+--
+-- Worse than redundant, it was VACUOUS AS A PHYSICAL CLAIM. The docstring said "at the
+-- substrate value q₀ ≈ 1.1097 for the genus-4 torus pair (T_{2,9}, T_{3,5}), κ ≈ 1.722",
+-- but the statement bound `κ` by an existential unconnected to `gramKappa` — no `q`, no
+-- `n`, no torus pair, no character data. It asserted only that SOME real lies within
+-- 0.001 of 1.722, which 1.722 does. AGENTS.md: "Never launder empirical fits through
+-- Lean axioms."
+--
+-- Restated below as the claim the docstring actually makes: `gramKappa` at the torus-pair
+-- data is within 0.001 of 1.722. That statement is FALSIFIABLE — it constrains the
+-- product — and it is not proved here, so it carries `sorry` per §1a disposition 2
+-- ("state the REAL proposition with `sorry` + a `-- Ref:` citation").
+
+/-- **Numerical value of `κ` at the substrate** (open — stated, not proved).
+
+    For the genus-4 torus pair `T_{2,9}` (strong) and `T_{3,5}` (weak) at the
+    substrate `q₀ ≈ 1.1097`, the Plancherel-weighted product is `≈ 1.722`.
+
+    The torus-pair data enters through `cs`, `cw` and the factorials.
+    `CharacterDecomposition` is a formal placeholder over arbitrary
+    `chi` / `dim_classical` / `dim_quantum`, so nothing in this file pins the
+    knots — which is why the torus-pair condition is carried as an ABSTRACT
+    PREDICATE parameter `IsTorusPairAtQ0` rather than as a construction.
+
+    **Why not a `True` placeholder.** The first draft of this replacement wrote
+    the condition as `(h_torus_pair : True)`. That is not a weak hypothesis, it
+    is NO hypothesis: `True` is supplied by `trivial`, so the statement it
+    guards is logically `∀ cs cw, |gramKappa … − 1.722| < 0.001`, which is
+    FALSE for generic character data (the product is unconstrained). Queuing a
+    false proposition behind `sorry` is a worse defect than the provable axiom
+    this replaced — the axiom was redundant, a false `sorry` is a trap for
+    whoever tries to discharge it. Caught by reading the statement, not by any
+    detector; the `true-class-field` pattern of `proof-claims-unencoded` covers
+    class FIELDS typed `True`, not theorem HYPOTHESES typed `True`, so nothing
+    in the audit would have flagged it. Recorded as a second blind spot.
+
+    **What is open.** Nothing in this file constructs `IsTorusPairAtQ0`, so this
+    theorem has no instance and no consumer. Supplying that predicate — a
+    torus-knot character construction for `T_{2,9}` and `T_{3,5}` over the
+    `CharacterDecomposition` placeholder — IS the open work, and it is upstream
+    of discharging the `sorry`, not downstream of it. Unlike the superseded
+    axiom, the conclusion here constrains `gramKappa`. -/
 -- Ref: [manuscript] §5/gram-determinant-plancherel-ratio
-/-- **External axiom (§3b-cond pattern): gram_kappa_numerical_value.**
-
-    At the substrate value `q₀ ≈ 1.1097` for the genus-4 torus pair
-    `(T_{2,9}, T_{3,5})`, `κ ≈ 1.722`.  (This paragraph was a SECOND docstring
-    sitting immediately above this one, left orphaned by whatever extracted
-    the axiom below — two docstrings cannot both attach to one declaration, so
-    the file did not parse.  Merged rather than dropped: it is the only place
-    the numerical value is stated.)
-
-    Auto-extracted from the single-sorry theorem body in this file.
-    Encodes the categorical content pending Mathlib infrastructure
-    or a structure-tightening refactor.
-
-    See the theorem docstring below for the cited reference. -/
-axiom gram_kappa_numerical_value_axiom  :
-    ∃ (κ : ℝ), |κ - 1.722| < 0.001
-
-theorem gram_kappa_numerical_value :
-    ∃ (κ : ℝ), |κ - 1.722| < 0.001 :=
-  gram_kappa_numerical_value_axiom
+-- Ref: [jones1987] https://doi.org/10.2307/1971403 — Jones polynomial of torus knots
+theorem gram_kappa_numerical_value
+    (n : ℕ) (q_factorial n_factorial : ℝ)
+    (cs cw : CharacterDecomposition n)
+    (IsTorusPairAtQ0 : CharacterDecomposition n → CharacterDecomposition n → Prop)
+    (h_torus_pair : IsTorusPairAtQ0 cs cw)
+    : |gramKappa n q_factorial n_factorial cs cw - 1.722| < 0.001 := by
+  sorry
 
 end QOU.Archimedean

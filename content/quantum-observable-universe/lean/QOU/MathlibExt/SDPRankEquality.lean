@@ -66,7 +66,8 @@ chain is fully `sorry`-free.
 ## Decomposition of the proof into independent pieces
 
 The standard textbook proof (Alizadeh-Haeberly-Overton 1997
-§3, Boyd-Vandenberghe §5.5.4) factors into:
+§3; Boyd-Vandenberghe §5.5.2 for the definition of strict
+complementarity) factors into:
 
 * **(R1) Range containment** (proven in
   `QOU.MathlibExt.SDPRealUniqueness.Matrix.PosSemidef.mul_zero_comm`):
@@ -111,7 +112,10 @@ finite-dimensional linear-algebra under Slater (proven from R2).
 
 ## References
 
-- [boyd-vandenberghe-2004] *Convex Optimization* §5.5.4
+- [boyd-vandenberghe-2004] *Convex Optimization* §5.5.2
+  (strict complementarity DEFINED; §5.5.4 is "Mechanics
+  interpretation of KKT" and does not cover the uniqueness
+  result — see the citation note in §4.5 below)
 - [alizadeh-haeberly-overton-1997] *Complementarity and
   nondegeneracy in semidefinite programming*, Math. Programming
 - [todd2001] *Semidefinite optimization*, Acta Numerica §3.4
@@ -186,32 +190,23 @@ The categorical content of strict complementarity:
 slack S.  This is the **single Mathlib gap** isolating the
 multi-week SDP rank-equality work. -/
 
-/-- **Strict-complementarity kernel disjointness** —
-    categorical content of Goldman-Tucker / AHO 1997.
+/-! ## `strict_complementarity_kernel_disjoint` — REMOVED (it was false)
 
-    Under Slater + strict complementarity, the kernels of the
-    primal optimum Φ and the dual slack S are disjoint (only
-    the zero vector lies in both).  Combined with range
-    containment (R1), this forces the orthogonal-direct-sum
-    decomposition `ℝ^n = range(Φ) ⊕ range(S)`.
+This axiom asserted that Slater's condition plus strict complementarity give
+`ker(Φ⋆) ∩ ker(S) = {0}`.  It is **false** and has been deleted.  Refutation:
+`QOU.MathlibExt.SDPUniquenessCounterexamples.not_strict_complementarity_kernel_disjoint`
+— sorry-free, depending on no QOU axiom.  Take `n = 1`, no constraints, zero
+cost: then `Φ⋆ = 0` and `S = 0`, every vector lies in both kernels, and the
+identity is positive-definite so Slater holds.
 
-    For the **general** SDP case, this is the Goldman-Tucker /
-    AHO 1997 theorem and lives as the only remaining axiom.
-    For specific structural cases (dual slack PosDef,
-    active-empty + cost PosDef), it is **proven** from existing
-    Mathlib machinery — see the theorems below. -/
--- Ref: [alizadeh-haeberly-overton-1997] Theorem 3.1
-axiom strict_complementarity_kernel_disjoint
-    {ι : Type*} [Fintype ι]
-    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
-    (h_slater : sdp.IsStrictlyFeasible) :
-    -- For the dual slack S and primal optimum Φstar:
-    -- ker(Φstar) ∩ ker(S) = {0}, equivalently:
-    -- ∀ v : Fin n → ℝ, sc.Φstar *ᵥ v = 0 → (sdp.dualSlack sc.ystar) *ᵥ v = 0 → v = 0
-    ∀ v : Fin n → ℝ,
-      sc.Φstar.mulVec v = 0 →
-      (sdp.dualSlack sc.ystar).mulVec v = 0 →
-      v = 0
+`kernel_disjoint_of_dualSlack_posDef` (below, proven) is the interior case and
+is what `rank_equality_under_strict_complementarity` now uses; that theorem
+consequently carries `(sdp.dualSlack sc.ystar).PosDef` as a hypothesis.  It
+needs it: without one, the same counterexample gives `0 + 0 ≠ 1` and the rank
+equality fails too.
+
+Tracked in bean `qou-i6u4`.
+-/
 
 /-! ### Provable kernel-disjointness instances
 
@@ -525,12 +520,13 @@ theorem rank_sum_le_of_mul_zero
 theorem rank_equality_under_strict_complementarity
     {ι : Type*} [Fintype ι]
     {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
-    (h_slater : sdp.IsStrictlyFeasible) :
+    (_h_slater : sdp.IsStrictlyFeasible)
+    (h_S_posDef : (sdp.dualSlack sc.ystar).PosDef) :
     sc.Φstar.rank + (sdp.dualSlack sc.ystar).rank = n := by
   -- ≤ direction: from `rank_sum_le_of_mul_zero` (proven, this module).
   have h_le := rank_sum_le_of_mul_zero sc
   -- ≥ direction: from kernel disjointness + rank-nullity.
-  have h_disjoint := strict_complementarity_kernel_disjoint sc h_slater
+  have h_disjoint := kernel_disjoint_of_dualSlack_posDef sc h_S_posDef
   -- ker(Φ) ∩ ker(S) = {0} (as Submodule); follows from h_disjoint
   -- (which gives the elementwise statement).
   have h_inf_zero :
@@ -617,6 +613,26 @@ forces uniqueness via finite-dimensional argument:
 
 This is **proven** (modulo §1, §2 axioms). -/
 
+/-! **Citation corrected 2026-09-05 (bean `qou-i6cn`).**  Four sites in this
+file attributed the optimal-face-dimension / uniqueness result to
+Boyd-Vandenberghe §5.5.4.  That section is *"Mechanics interpretation of the
+KKT conditions"* and does not contain it; the authority is
+Alizadeh-Haeberly-Overton (1997) §3, and B-V's contribution is §5.5.2, where
+strict complementarity is defined.
+
+This is not a new diagnosis — the sibling `SDPRealUniqueness.lean` had already
+made it, in its `-- Ref:` lines.  What it had not done is drain the same stale
+section number from its own surrounding prose (6 further sites), so the two
+files disagreed with each other and one disagreed with itself.  All of them are
+corrected together.
+
+It matters here because `affine_slater_rigidity` is an `axiom`, and under bean
+`qou-i6cn`'s discriminator the citation is what separates a legitimate
+Mathlib-gap from a laundered conjecture.  The verdict is unchanged — this is a
+published convex-optimization theorem, and the file carries proven
+sub-instances — but a wrong section number is exactly the evidence that
+discriminator relies on. -/
+
 /-! ### §4.5  Affine-Slater rigidity axiom
 
 The final composition `SDPRankUniqueness_proven_via_rank_equality`
@@ -627,34 +643,31 @@ constraint set restricted to symmetric matrices in ker(S) (where
 the difference D = Φ' − Φstar lives) is a SINGLE POINT.
 
 This is the "active face has dimension zero" content from
-Boyd-Vandenberghe §5.5.4.  Genuinely multi-week categorical
+Alizadeh-Haeberly-Overton 1997 §3.  Genuinely multi-week categorical
 work (active-face dimension theory + Slater's interior-point
 hypothesis); axiomatised here as a NAMED single statement so
 the rest of the chain composes cleanly. -/
 
-/-- **Affine-Slater rigidity** (Boyd-Vandenberghe §5.5.4) —
-    axiomatised categorical content.
+/-! ## `affine_slater_rigidity` — REMOVED (it was false)
 
-    Under Slater + rank equality, any symmetric `D` with:
-    * `S * D = 0` (range(D) ⊆ ker(S))
-    * `tr(A_i · D) = 0` for all constraint indices i
+This axiom asserted that under Slater plus the rank equality
+`rank Φ⋆ + rank S = n`, a Hermitian `D` with `S · D = 0` and vanishing
+constraint traces must be zero.  It is **false** and has been deleted.
+Refutation:
+`QOU.MathlibExt.SDPUniquenessCounterexamples.not_affine_slater_rigidity`
+— sorry-free, depending on no QOU axiom.
 
-    must be `D = 0`.  This is the formal consequence of "the
-    optimal face has dimension zero under Slater + strict
-    complementarity".  Encoded here as a single categorical
-    axiom; replacing this `axiom` with a Mathlib theorem gives
-    the entire SDPSlaterUniqueness chain axiom-free. -/
--- Ref: [manuscript] Ch. braid-knot, prop:operator-selection-lp §"dual program" (affine-Slater rigidity: optimal face has dimension zero under Slater + strict complementarity)
-axiom affine_slater_rigidity
-    {n : ℕ} {ι : Type*} [Fintype ι]
-    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
-    (_h_slater : sdp.IsStrictlyFeasible)
-    (_h_rank_eq : sc.Φstar.rank + (sdp.dualSlack sc.ystar).rank = n)
-    {D : Matrix (Fin n) (Fin n) ℝ}
-    (_h_D_sym : D.IsHermitian)
-    (_h_S_D : sdp.dualSlack sc.ystar * D = 0)
-    (_h_constraint_D : ∀ i : ι, Matrix.trace (sdp.constraint i * D) = 0) :
-    D = 0
+Its rank guard is real but insufficient, which is why this one needs a
+two-dimensional counterexample rather than the one-dimensional one used for
+the other four: take `n = 2`, no constraints, `cost = diag(1,0)`,
+`Φ⋆ = diag(0,1)` and `D = diag(0,1)`.  Then `rank Φ⋆ + rank S = 1 + 1 = 2 = n`
+— the guard is **satisfied** — and `S · D = 0` with `D ≠ 0`.
+
+`affine_slater_rigidity_of_dualSlack_posDef` (below, proven) is the interior
+case and is what `SDPRankUniqueness_proven_via_rank_equality` now uses.
+
+Tracked in bean `qou-i6u4`.
+-/
 
 /-! ### Provable sub-instances of `affine_slater_rigidity`
 
@@ -721,6 +734,7 @@ theorem SDPRankUniqueness_proven_via_rank_equality
     {ι : Type*} [Fintype ι]
     {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
     (h_slater : sdp.IsStrictlyFeasible)
+    (h_S_posDef : (sdp.dualSlack sc.ystar).PosDef)
     {Φ' : Matrix (Fin n) (Fin n) ℝ}
     (h_feas : sdp.IsFeasible Φ')
     (h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0)
@@ -728,7 +742,7 @@ theorem SDPRankUniqueness_proven_via_rank_equality
       ∀ i : ι, Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0) :
     Φ' = sc.Φstar := by
   -- Step 1: rank equality (proven, this module).
-  have h_rank_eq := rank_equality_under_strict_complementarity sc h_slater
+  have _h_rank_eq := rank_equality_under_strict_complementarity sc h_slater h_S_posDef
   -- Step 2: D := Φ' - Φstar is symmetric (difference of Hermitian).
   have h_D_sym : (Φ' - sc.Φstar).IsHermitian := by
     have h1 : Φ'.IsHermitian := h_feas.1.1
@@ -738,7 +752,7 @@ theorem SDPRankUniqueness_proven_via_rank_equality
         show sc.Φstar.transpose = sc.Φstar from h2]
   -- Step 3: invoke affine-Slater rigidity.
   have h_D_zero : Φ' - sc.Φstar = 0 :=
-    affine_slater_rigidity sc h_slater h_rank_eq h_D_sym h_S_diff h_constraint_diff
+    affine_slater_rigidity_of_dualSlack_posDef sc h_S_posDef h_S_diff
   -- Step 4: D = 0 ⟹ Φ' = Φstar.
   exact sub_eq_zero.mp h_D_zero
 
@@ -769,7 +783,8 @@ categorical input is exactly the two named atomic axioms
 def ofSlater_via_rank_equality
     {n : ℕ} {ι : Type*} [Fintype ι]
     {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
-    (h_slater : sdp.IsStrictlyFeasible) :
+    (h_slater : sdp.IsStrictlyFeasible)
+    (h_S_posDef : (sdp.dualSlack sc.ystar).PosDef) :
     QOU.MathlibExt.SDPRealUniqueness.SDPSlaterUniqueness sdp sc where
   unique {Φ'} h_feas h_obj := by
     -- Same 5-step composition as `ofSlater_proven`, but uses
@@ -789,7 +804,7 @@ def ofSlater_via_rank_equality
       rw [h_feas.2 i, sc.primal_feas.2 i]
       ring
     -- Use the proven rank-equality version (not the axiom).
-    exact SDPRankUniqueness_proven_via_rank_equality sc h_slater
+    exact SDPRankUniqueness_proven_via_rank_equality sc h_slater h_S_posDef
       h_feas h_S_diff h_constraint_diff
 
 /-! ## §6  Concrete demonstration: empty-constraint identity SDP

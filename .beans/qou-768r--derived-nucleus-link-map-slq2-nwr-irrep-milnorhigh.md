@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-31T03:46:30Z
-updated_at: 2026-09-04T07:33:12Z
+updated_at: 2026-09-05T19:49:51Z
 ---
 
 Owner picked routes **1** (SLq(2) `(N,w,r)` -> irrep) and **3** (Milnor /
@@ -497,3 +497,434 @@ Also: `arxiv-2106.01332v4` is held but **not registered** in `references.ts`.
 Per-work links (arXiv/DOI + held-copy path + the exact section:line for the two
 load-bearing citations) are in the §Links section of
 `docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md`.
+
+
+## 2026-09-05 — route 3 needs only ONE component separated; the residual is the chain
+
+The Δ = 2 residual was reopened by the cyclic-square perturbation result (#6679). Going
+back to it produced a strengthening of route 3 and an exact location for what is left.
+
+**Route 3's hypothesis was stronger than its argument.** `μ̄_abc` is the `h_a h_b`
+coefficient of the Magnus expansion of `λ_c`. If **one** component splits off from the
+other two, that coefficient vanishes — the remaining pair may be linked to each other
+arbitrarily. The merged `MilnorTriplesAreDefinedExactlyWhereTheyVanish.lean` asks for
+all three pairwise linking numbers to vanish (`Δ = 0`); only two of the three are used.
+
+New Lean `QOU/Mass/OneSeparatedComponentSufficesForMilnorVanishing.lean` — sorry-free,
+`lean`-direct exit 0, and `splitsOff_of_unlinked` depends on **no axioms at all**.
+`allSplitOff_of_delta_zero` recovers the merged result three times over, so the
+strengthening is visibly a strengthening. (Symmetry of `lk` is an explicit hypothesis:
+the merged theorem pairs hypotheses to conclusions in matching index order and never
+needs it; `SplitsOff k i j` fixes `k` first and does.)
+
+**Reclassify by SHAPE, not by Δ.** SEPARABLE = some component unlinked from both
+others; CHAIN = none is. Measured on the carrier, 7 isotopes, **both** branches
+(identical in each):
+
+    SEPARABLE  393   0 nonzero mubar   (of which Delta = 2: 182)
+    CHAIN       31   0 nonzero mubar   (all Delta = 2)
+
+The merged theorem reaches the **211** that are separable *and* `Δ = 0`. The **182**
+separable `Δ = 2` triples are reached for the first time: coverage goes `211 → 393` of
+424, i.e. 49.8 % → 92.7 % — **+42.9 percentage points, or +86.3 % relative**. Both are
+given because "43 % more" reads as the relative figure and is not it. All from deleting
+a hypothesis rather than adding an argument.
+
+**The residual is one shape, verified not inferred.** 31 per branch equals
+`Σ (A−1) = 1+2+2+3+5+7+11`, the count of `{i, i+1, i+2}` on a path of `μ = A+1`
+components — but a count match is corroboration, so the probe checks each triple's
+indices: **62/62** across both branches are consecutive. `splitsOff_or_consecutive`
+proves this is forced (separable or consecutive, no third case) and
+`consecutive_has_no_separable_component` proves the trichotomy sharp. So the residual
+cannot be chipped at further with linking-number bookkeeping.
+
+**What would close it:** `μ̄` of length `k` vanishes unless all `k` indices lie in one
+connected-sum summand. With the measured "each summand touches at most 2 components"
+that closes the chain case *and* subsumes the new file. **Not asserted, not
+formalised** — axiomatising it would be the axiomatisation-is-not-a-proof pattern.
+
+**Empirically the residual vanishes, and generically for monotone words**: 0 over the
+carrier's 31, 0 over 534 monotone-random chain triples (144 at `Δ = 2`). Non-monotone
+control gives nonzero in both shapes (26 separable, 1 chain), so the null is about
+monotonicity, not the scanner.
+
+**Side finding — #6679's null is not vacuous.** `Δ = 1` makes `μ̄ = 0` vacuously
+(`ℤ/1`). Monotone arm splits `{Δ0: 319, Δ1: 870, Δ2: 690}` — 46.3 % vacuous, but 1009
+non-vacuous triples all zero, 690 at exactly `Δ = 2`. The merged null stands.
+
+Probe `computations/probes/milnor_one_separated_component_and_the_chain_residual_probe.py`,
+5/5, idempotent, integer arithmetic throughout.
+
+
+## 2026-09-05 — the chain residual CLOSES, and it needed no connected-sum citation
+
+The entry above left 31 chain triples open and named as their blocker *"`μ̄` of length
+`k` vanishes unless all `k` indices lie in one connected-sum summand"* — a statement no
+held source in this corpus states. **It is not needed.**
+
+**The mechanism.** On a chain, `lk(x,y) = 0`, so with `u = lk(hub,x)`, `v = lk(hub,y)`
+the indeterminacy is `Δ = gcd(u,v,0) = gcd(u,v)`. On a **monotone** closure the two far
+meridians occupy contiguous, **non-interleaved** blocks of the hub's longitude — one run
+per generator is what monotone means — so the degree-2 Magnus coefficient is a product
+of block sums:
+
+    eps_{x,y}(λ_hub) = u·v        eps_{y,x}(λ_hub) = 0
+
+Measured **596/596** monotone (62 carrier, 534 random); **22/78** and **29/78** off
+monotone. Then `gcd(u,v) | u | u·v` **unconditionally** ⇒ `μ̄ = 0`. New sorry-free
+`QOU/Mass/ChainTripleMilnorVanishesByGcdDividesProduct.lean`; `chain_mubar_vanishes`
+depends only on `propext`. **Every triple of the derived carrier is now covered — 393 by
+one separated component, 31 by this.**
+
+**Order-dependence is the point, not a defect.** `u·v` one way, `0` the other. That is
+exactly what the mod-`Δ` indeterminacy absorbs: both are divisible by `Δ`, so the
+invariant is zero either way and nothing rests on a convention.
+
+**The off-monotone control is a REAL counterexample.** Of 78 non-monotone chain triples
+exactly one has `Δ ≥ 2`, and divisibility **fails** on it (77/78). So `eps_eq` is
+load-bearing, not decorative.
+
+### Two of my own errors, both recorded in the probe
+
+1. **I predicted `eps = u·v`, then wrongly recorded it refuted.** The symmetrised sum
+   that `milnor_mubar_vanishes_on_every_triple_probe.py` computes gave an honest integer
+   `0` on 62/62 and 534/534 — because it lands on `eps_{y,x}`, the ordering that *is*
+   zero. A symmetrising scan can turn a general mechanism into what looks like a
+   coincidence; only splitting the sum into its three terms separated them.
+2. **I quoted "all 71 non-monotone chain triples have `Δ = 1`"** — i.e. an entirely
+   vacuous control — from a scratch run building a *fresh* seeded RNG per arm. The probe
+   uses **one** RNG consumed sequentially (matching the #6679 genericity probe so the
+   arms stay comparable): 71 → 78, and the counterexample appears. **Same trap as
+   #6679's `251/2080`, three days later.** The probe's numbers are authoritative.
+
+The stale "what would close it" paragraph in
+`OneSeparatedComponentSufficesForMilnorVanishing.lean` is corrected in place.
+
+Probe `computations/probes/chain_triple_magnus_coefficient_is_the_product_probe.py`,
+5/5, idempotent, integer arithmetic throughout.
+
+
+## 2026-09-05 — `eps_eq` derived: eight sharper facts replace one opaque one
+
+The chain closure rested on `ChainTriple.eps_eq` as a bare measured hypothesis. It is
+now a **theorem given three braid-word hypotheses**, and the arithmetic that makes
+`gcd u v | u·v` applicable is machine-checked.
+
+**Decomposition, measured 596/596 monotone (62 carrier both branches + 534 random), all
+degrading off monotone (78):**
+
+*Tier 1 — braid-word facts, still assumed:* each pair crosses at ONE generator (56/78,
+58/78) · the two generators differ (37/78) · `g_x < g_y ⟺ x < y` (36/78) · runs have
+even length (40/78) · run length is exactly `2|lk|` (30/78).
+
+*Tier 2 — consequences, consumed by the Lean:* signed sum of each far component's
+letters in `λ_hub` equals its linking number (51/78, 53/78) · each block contiguous
+(56/78, 67/78) · blocks disjoint with `x` before `y` (18/78).
+
+**Proved** in `QOU/Mass/EpsEqFromMonotonicity.lean` (sorry-free, 0 errors):
+`epsCoeff_append_of_blocks` — a block-split word has `ε_{x,y} = (Σ block A)(Σ block B)`
+and `ε_{y,x} = 0`. That is the whole arithmetic of `eps_eq`, and it is a statement about
+**lists**, no topology. `eps_eq_of_blocks` composes it to `ε = u·v`.
+`carrier_shape_gives_four` depends on **no axioms at all**.
+
+**Still assumed:** tier 1. Deriving it needs the strand-permutation bookkeeping of a
+monotone word formalised — positions, runs, who passes under whom — a substantially
+larger object than anything in this arc. Named as borrowed in the hypotheses `hA`, `hB`,
+`hsum` rather than elided.
+
+**Do not overstate the gain.** `eps_eq` was one hypothesis about a Magnus coefficient;
+it is now a theorem given three about a braid word. The part that could have been subtly
+wrong is checked; the combinatorics of which strand is where is not.
+
+**Third instance of the same figure trap.** A scratch run against a *per-arm* RNG gave
+`32/78` for the `2|lk|` row; the probe (one RNG consumed sequentially, matching the
+merged siblings) gives **30/78**. After #6679's `251/2080` and #6726's "0 of 71" this is
+three; the probe's numbers are authoritative, always.
+
+Probe `computations/probes/eps_eq_decomposition_from_monotonicity_probe.py`, 5/5,
+idempotent, integer arithmetic throughout.
+
+
+## 2026-09-05 — tier 1 is a THEOREM, and the path linking graph comes with it
+
+`EpsEqFromMonotonicity.lean` left tier 1 assumed, saying it needed "the
+strand-permutation bookkeeping of a monotone word formalised … a substantially larger
+object than anything in this arc". **That was wrong about the size.** It is two one-line
+recursions.
+
+**The argument.** Generator `g` moves only positions `g`, `g+1`, and a monotone word
+runs them ascending — so when run `R_g` begins, **position `g+1` still holds strand
+`g+1`**, untouched. Every crossing of that run is therefore between one *fixed* strand
+pair `(pStart g, g+1)`. An even run restores the pair, an odd run swaps it, so the
+closure permutation is `∏_{e_g odd} σ_g` and its cycles are the maximal consecutive
+blocks of odd-exponent generators. Hence: an **odd** run crosses two strands of the
+**same** component (self-crossings, invisible to linking); an **even** run crosses
+**adjacent** components.
+
+New sorry-free `QOU/Mass/MonotoneWordComponentStructure.lean`. Every tier-1 fact is a
+reading of one theorem, `components_differ_iff_even`: even run length is
+`even_of_components_differ`; one generator per component pair is
+`distinct_even_generators_distinct_pairs`; generator order matching component order is
+`compIdx_mono`.
+
+**It also derives what the whole arc assumed.** `linking_only_between_adjacent` proves
+that only consecutive components can be linked — i.e. the `P_μ` path shape, which
+`PathCarrier` takes as a *hypothesis* and which this arc has carried as a **measurement**
+across 7 isotopes and both crossing-resolution branches since the carrier was derived.
+
+**Five predictions, measured before the Lean was written: 414/414** (400 random monotone
+words + the carrier's 14 branch-isotope pairs) — inter-component crossings only at even
+runs · components are strand intervals · linking graph is exactly the path · `μ = 1 +
+#even runs` · every even run is wholly inter-component.
+
+**The honest remainder, one level lower:** that `pStart`/`compIdx` really describe a
+monotone closure's positions and cycles. That needs braid words and cycle decomposition
+as Lean objects; the probe stands in for it.
+
+Both sibling docstrings corrected in place — `EpsEqFromMonotonicity`'s "still assumed"
+section and `OneSeparatedComponentSufficesForMilnorVanishing`'s `PathCarrier` note.
+
+Probe `computations/probes/monotone_word_component_structure_probe.py`, 6/6, idempotent.
+
+
+## 2026-09-05 — the `pStart` half of the modelling assumption is PROVED
+
+`MonotoneWordComponentStructure.lean` named its own remainder: that `pStart` and
+`compIdx` really describe a monotone closure's positions and cycles, *"not attempted"*.
+The `pStart` half is now done, in `QOU/Mass/MonotoneWordPositionTracking.lean`
+(sorry-free, 0 errors).
+
+**Model.** `posAfter e g` is the position→strand map after runs `0…g-1`. `e_g` crossings
+of one adjacent pair compose to the identity when `e_g` is even and to a single swap when
+odd — which is why only parity survives and why this is a one-step recursion rather than
+an iteration.
+
+- `posAfter_of_le` — every position `≥ g+1` is untouched after `g` runs. **This is where
+  ascending order is used**: run `h < g` moves only positions `h, h+1 ≤ g`.
+- `posAfter_succ_self` — hence position `g+1` still holds **strand `g+1`** when `R_g`
+  begins, so the pair that run will cross is fixed before it starts.
+- `posAfter_self` — position `g` holds `pStart e g`: the recursion is the right one.
+- `crossing_pair_of_run` — run `g` crosses exactly `(pStart e g, g+1)`. That is the
+  sentence tier 1 was resting on, now a theorem.
+
+Non-vacuity exercises both branches: all-odd carries the left strand to `0` (maximally
+fused, matching `allOdd_compIdx`), all-even leaves position `g` holding strand `g`
+(maximally split, matching `allEven_compIdx`).
+
+**What remains is now exactly one thing:** that `compIdx` counts components — the cycle
+decomposition of `∏_{e_g odd} σ_g` into maximal consecutive odd blocks. Separate
+combinatorics, not attempted, and **measured not assumed**: probe P2 (components are
+consecutive strand intervals) and P4 (`μ = 1 + #even runs`), 414/414.
+
+Chain now reads: `pStart` **proved** to model the word · `compIdx` **measured** to model
+the cycles · everything above them proved from those two.
+
+Verified against the dependency compiled **from source** (`lean -o` into a scratch
+LEAN_PATH), not against a restored olean — this is the first file in the arc to import a
+QOU module, so the per-module cache staleness on main would otherwise reach it.
+
+
+## 2026-09-05 — `compIdx` closed: the chain is proved end to end from the braid word
+
+The last gap. `MonotoneWordPositionTracking` said `compIdx` counting components was "not
+attempted" and would need "the cycle decomposition of a product of ascending adjacent
+transpositions". **It needs no such thing** — the lemmas already proved give it.
+
+**The closed form.** With `π = posAfter e N` the closure permutation, for `i < N`:
+
+| `e i` | `π i` | stays in class because |
+|---|---|---|
+| **odd** | `i + 1` | `compIdx (i+1) = compIdx i` — an odd run adds 0 |
+| **even** | `pStart e i` | `compIdx_pStart`, proved in #6775 |
+
+So `π` is the **cyclic shift on each `compIdx` class**. Both inclusions drop out:
+`compIdx_posAfter` puts every cycle inside one class; inside a class every step is odd
+(`step_within_class`), so a class is traversed upward and closed by the even step at its
+top — `pStart e i` being the class minimum (`pStart_le`, `lt_compIdx_of_lt_pStart`).
+**Cycles = classes**, which is what `compIdx` was assumed to compute.
+
+New sorry-free `QOU/Mass/MonotoneWordCycleStructure.lean`, 9 declarations.
+
+**Five predictions, 414/414** (400 random monotone words + the carrier's 14
+branch-isotope pairs). The load-bearing one is **E**: the Lean's `posAfter` recursion,
+transcribed into the probe, reproduces `analyse`'s `perm` array **exactly** — entry for
+entry. That is what stands in for the one step this arc never formalises, and agreeing on
+the permutation is strictly stronger than agreeing on the component partition, which a
+reimplementation could do by sharing an assumption.
+
+**The chain is now proved end to end from the braid word:**
+`posAfter` models positions → `compIdx` counts components → tier 1 of `eps_eq` → `eps_eq`
+→ `μ̄ = 0` on every triple of the derived carrier.
+
+**The remaining floor, and it is a definition not a gap in an argument:** that `posAfter`
+*is* a monotone braid word's position map and the closure's components *are* its cycles.
+"Braid word" and "closure" are not Lean objects anywhere in this arc. Named as such in
+every file of the chain, and measured 414/414.
+
+Both sibling docstrings corrected in place.
+
+
+## 2026-09-05 — CORRECTION to my own framing: the canonical word is NOT monotone
+
+Found while starting `qou-brng`. **No merged number is wrong; one framing claim is.**
+
+**What happened.** `7db032fb48` (today **07:53Z**, `qou-hu1f`) changed
+`atom_canonical_crossings`' default `intra_order` from `grouped` to `borromean`, so each
+nucleon's confinement core is the alternating `(σ₀σ₁⁻¹)³` and each generator's letters are
+**interleaved**. Measured on the current default:
+
+    2H   23 letters, 19 runs over 5 generators   one_run_per_gen=False  ascending=False
+    4He  47 letters, 39 runs over 11 generators  one_run_per_gen=False  ascending=False
+
+Under `grouped` both are monotone (5 runs / 5 gens, 11 / 11, ascending).
+
+**So "the derived carrier is a monotone closure" is FALSE for the current default word**,
+and I used that sentence to carry the Lean theorems onto the carrier. The theorems are
+about monotone words and are unaffected; what fails is the *application* to the canonical
+word as it now stands.
+
+**What is NOT affected — measured, both conventions, 14 branch-isotope pairs:**
+
+    grouped    triples 848  SEP 786  CHAIN 62  nonzero mubar 0  path linking 14/14
+    borromean  triples 848  SEP 786  CHAIN 62  nonzero mubar 0  path linking 14/14
+
+Identical. Every carrier figure in #6560/#6634/#6679/#6726/#6775/#6858/#6872 stands, and
+the `Δ`-classification and chain/separable split are unchanged.
+
+**Prediction E is passing for a reason other than the one its docstring gives.**
+`monotone_word_cycle_structure_probe.py` calls E the validation that `posAfter`/`compIdx`
+model *a monotone closure*. The carrier is not monotone, yet `perm == pi` on **14/14**
+carrier words. That is not luck — on random *non-monotone* words the same test agrees on
+only **22/400 (5.5 %)**. So E is measuring something real about the carrier and mislabels
+what.
+
+**Hypothesis (not established):** the Borromean core contributes an *even* number of
+letters per generator within each nucleon, so per-generator parity — which is what the
+permutation depends on here — is unchanged, leaving components and linking identical while
+destroying contiguity. That would explain both the identical table and the 14/14.
+
+**What this costs.** The chain "proved end to end from the braid word" reaches *monotone*
+words; the canonical word is currently outside it, with its structural consequences intact
+by measurement rather than by the theorem. The honest statement is weaker than the one I
+made this afternoon, and the fix is either to prove the parity hypothesis above (which
+would restore the application) or to scope every carrier sentence to "the grouped word".
+
+Not fixed here — measured and recorded. Follow-up before any further carrier claim.
+
+
+### Same day, hours later — my parity hypothesis is REFUTED; option 1 is dead
+
+The correction above proposed two fixes and said I expected option 1 (prove the
+even-per-generator parity hypothesis, restoring the application). **Measured, and it does
+not hold.**
+
+**H1 — TRUE, and stronger than I guessed.** The per-generator *letter counts* are
+identical between `borromean` and `grouped`. The odd-count generator sets match exactly:
+²H `[0,2,3]`, ³H `[0,2,3,5,6]`, ⁴He `[0,2,3,5,6,8,9]`, ⁶Li `[0,2,3,5,6,8,9,11,12,14,15]`
+— same under both conventions.
+
+**H2 — FALSE.** The permutation is *not* determined by that parity vector. Comparing each
+word's true permutation against the ascending word carrying the same per-generator
+parities: **7/14** carrier words agree (the 7 grouped ones, which are monotone and for
+which this is just the monotone reduction), and **70/400 (17.5 %)** random non-monotone.
+
+So the identical closure structure — 848 triples, 786 separable, 62 chain, 0 nonzero
+`μ̄`, path linking 14/14 under both conventions — is **not** explained by parity
+preservation. My stated mechanism is wrong.
+
+**The surviving candidate, not established:** the two words have *different*
+permutations but the *same orbit partition*. Components are cycles, and two distinct
+permutations can share their orbits — that would give identical components, linking and
+triples while the permutations differ, which is exactly the pattern measured. Testing it
+means comparing the two permutations' orbit partitions directly, not their values.
+
+**Consequence for the correction above:** option 1 is dead as stated. The live options
+are the orbit-partition route (if it holds, it restores the application by a different
+argument) or option 2 — scope every carrier sentence to the grouped word.
+
+Recorded rather than fixed. Noting that I wrote "the outcome I'd expect" against option 1
+about an hour before measuring it to be false.
+
+
+### RESOLVED — same shape, shifted components; and it is the sharper finding
+
+The orbit-partition candidate is **also refuted**, and resolving why reconciles the two
+measurements that looked contradictory.
+
+**Measured, 14 carrier branch-isotope pairs:** permutations identical **0/14**, orbit
+partitions equal **0/14**. Yet the closure table is identical under both conventions
+(848 triples, 786 separable, 62 chain, 0 nonzero `μ̄`, path linking 14/14).
+
+**Not a contradiction — the partitions are SHIFTED BY ONE STRAND:**
+
+    4He grouped     [0,1] [2,3,4] [5,6,7] [8,9,10] [11]
+    4He borromean   [0]   [1,2,3] [4,5,6] [7,8,9]  [10,11]
+
+Same `μ = 5`, same block-size multiset `{1,2,3,3,3}`, different strands. Every count is a
+function of `μ` and the path shape, so every count agrees while no component does. The two
+words are **not the same link**; their linking graphs are **isomorphic**.
+
+**So the correct statement, replacing both my earlier attempts:**
+
+- carrier **counts** are convention-independent — every figure in #6560…#6872 stands under
+  both words, now for a *reason* rather than by coincidence;
+- carrier **component identity** — which strands form which component — is **not**. It
+  shifts by one under the 07:53 default change.
+
+**Why that matters beyond bookkeeping, and it bears on `qou-brng`.** Anything that
+*identifies a component with a nucleon* is convention-dependent. The coordination-graph
+route to the binding term needs exactly that identification: its vertices are supposed to
+be nucleons. Measured here, the vertex↔nucleon assignment is not fixed by the framework —
+it moves with an intra-word convention chosen for unrelated reasons (`qou-hu1f`). That is
+an obstruction of the same family as `qou-m07y`'s arrangement-dependence, reached
+independently and at the level of the *carrier* rather than of a bond ansatz.
+
+**Scope (a)** — 7 isotopes, both crossing-resolution branches, two conventions. Not a
+refutation of the coordination route; a statement that its vertex labelling is not
+currently well-defined.
+
+**Three hypotheses of mine, in order, all refuted by measurement within two hours:** the
+even-per-generator parity route; the shared-orbit-partition route; and before them the
+framing that the carrier is a monotone closure at all. The counts survived all three,
+which is why they are worth more than the framings were.
+
+
+### The relabelling is STRAND REVERSAL — and that restores the application, with one measured step
+
+Chasing the "isomorphic linking graphs" candidate from the entry above.
+
+**Measured, 14/14 carrier branch-isotope pairs:** the borromean closure's component
+partition is *exactly* the grouped one under strand reversal `i ↦ n−1−i`.
+
+    4He grouped              [0,1] [2,3,4] [5,6,7] [8,9,10] [11]
+    4He grouped, reversed    [0]   [1,2,3] [4,5,6] [7,8,9]  [10,11]
+    4He borromean            [0]   [1,2,3] [4,5,6] [7,8,9]  [10,11]
+
+**And the crisper claim I reached for is FALSE — checked before asserting it.** The *words*
+are not related by reversal: identical 0/7, `reverse` 0/7, `reverse + generator flip` 0/7.
+²H grouped is `[0×7, 1×4, 2, 3×7, 4×4]`; borromean is `[0,1,0,1,0,1,0,0,1,0,0,2,…]`. The
+relation is between the **closures' partitions**, not between the words — a much weaker
+statement, and worth stating as such since "the words are reverses" would have made the
+transfer a triviality.
+
+**What it buys, and the transfer step is measured not proved.** The **grouped** word *is*
+monotone, so the whole Lean chain applies to it directly. Every structural conclusion —
+path linking graph, the separable/chain split, `μ̄ = 0` on all triples — then holds for the
+borromean carrier via the reversal relabelling, which is measured on every invariant this
+arc computes (848 triples, 786 separable, 62 chain, 0 nonzero `μ̄`, path linking 14/14, all
+matching).
+
+**So the honest chain today is:** theorems (proved, monotone words) → grouped carrier
+(monotone, so they apply) → borromean carrier (by a *measured* relabelling, 14/14). One
+measured link where this afternoon I claimed none. That is materially better than the two
+options in the correction above — option 1 was refuted, and option 2 (scope everything to
+grouped) turns out to lose nothing, because the transfer exists.
+
+**Not established:** that the two closures are the *same link*. Same partition under
+reversal plus matching linking data on every invariant computed here is evidence, not a
+proof of link equivalence.
+
+**Four of my hypotheses refuted by measurement in one evening** — carrier-is-monotone,
+parity preservation, shared orbit partition, words-are-reverses. The fifth (partitions
+related by reversal) held. The counts survived all five, which is the pattern worth
+keeping.

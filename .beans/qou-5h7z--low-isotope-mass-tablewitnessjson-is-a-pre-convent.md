@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T20:37:31Z
-updated_at: 2026-08-15T21:39:58Z
+updated_at: 2026-09-07T07:08:12Z
 ---
 
 Found by the qou-gscs re-audit witness sweep (16 rows across the corpus carry a recorded braid word for a Z>=1,N>=1 atom; 3 were collapsed, all in this one file).
@@ -78,3 +78,26 @@ FINAL STATE, all five rows regenerated with pyhecke_native present:
   D/T/3He  ctypes gain averaged_weighted 1
   all 5    tr_M migrated C -> D
 Environment: python 3.11.15, numpy 2.4.6, sympy 1.14.0, mpmath 1.3.0 (matched to the committed witness, NOT the 1.4.1 I first installed -- that came from the richer container that writes the q0 audits, and sympy 1.14 rejects it), pyhecke_native 0.9.0, scipy 1.17.1, clarabel 0.11.1, snappy 3.3.2.
+
+## Its precondition is now satisfiable — regenerated 2026-09-07, PR #7007
+
+This bean withheld the commit because `pyhecke_native` was absent and
+`chi_cache_witness` fell back `laurent_q_rust -> laurent_q (auto-fallback)`, a
+method substitution caused by the environment. The title asks for regeneration
+"where pyhecke_native exists".
+
+It exists in this container (**0.9.0**), and the run reports `laurent_q_rust`
+on both A=1 rows, so the substitution does not occur.
+
+**Do not use this bean's predicted values as the check.** It predicts
+`2H 0.38828647 -> 0.57509096`, `3H 0.10407107 -> 0.22931015`,
+`3He 0.20657848 -> 0.40376714` — those are the convention-D **grouped**
+values, predicted 2026-08-09, before the 2026-09-05 ordering ruling. The actual
+regeneration goes further, to the borromean values:
+
+    2H   0.5751722439 -> 0.1519683392
+    3H   0.2293101021 -> 0.0291440424
+    3He  0.4037670369 -> 0.0585962537
+
+i.e. this witness was TWO migrations behind, not one, and the second was
+invisible to this bean because it had not happened yet.

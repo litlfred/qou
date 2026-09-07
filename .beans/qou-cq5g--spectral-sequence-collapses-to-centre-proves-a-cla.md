@@ -1,11 +1,11 @@
 ---
 # qou-cq5g
 title: spectral_sequence_collapses_to_centre proves a class-field projection, not the collapse
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T21:16:54Z
-updated_at: 2026-08-26T03:07:38Z
+updated_at: 2026-09-06T07:25:37Z
 ---
 
 `QOU.WedderburnMass.spectral_sequence_collapses_to_centre`
@@ -128,3 +128,40 @@ authorNote so the block carries its own question.
 Note the underlying mathematics is NOT in doubt for the finite Hecke algebra —
 semisimple at generic q, so Whitehead gives HH^k = 0 for k >= 1. Only the Lean
 statement is missing, and (1) and (2) above block writing one.
+
+
+## ✅ RESOLVED by this bean's own option 1 (checked 2026-09-06)
+
+Found by `scripts/bean-staleness-triage.py` (7th of 284 artifact beans).
+
+`spectral-sequence-collapse.lean:95` now declares **`centralIdempotent_idem`**,
+not `spectral_sequence_collapses_to_centre`. That is precisely the disposition
+this bean listed first and preferred: *"Rename to what it proves
+(`centralIdempotent_idem` or similar) and let the collapse be stated separately
+— cheapest, and removes the mis-citation without asserting anything new."*
+
+The docstring above it now carries the history rather than the claim:
+
+> *"…and a theorem **named** `spectral_sequence_collapses_to_centre`. All true;
+> none of it changed what the theorem proves. Corrected in
+> `docs/audits/2026-06-12-qa-drain-r5r6-findings.md`; rediscovered
+> independently in
+> `docs/audits/2026-08-25-spectral-sequence-is-a-no-go-not-a-tool.md`."*
+
+**The two consequences the bean asked about both follow, and both check out.**
+
+- **Not flagged by the vacuity audit** — 0 hits in a full run made today. That
+  is correct rather than a miss: a theorem *named for what it proves*, proving
+  it by projecting the class field it is named after, is not a mis-citation.
+  The §3b-cond item-5 shape needs a name or docstring promising more than the
+  type delivers, and the rename removed exactly that.
+- **Not in `lean-vacuity-review-ledger.json`** — also correct, and no longer
+  the actionable gap this bean framed it as. The ledger holds agent verdicts on
+  *candidates*; this declaration stopped being one when it was renamed.
+
+Worth noting for the parallel-work discipline: the docstring records that this
+was **found twice independently**, two and a half months apart. That is the
+pattern AGENTS.md endorses rather than a coordination failure — and here the
+second finding is what produced the fix.
+
+Closing.

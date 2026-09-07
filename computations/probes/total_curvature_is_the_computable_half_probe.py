@@ -333,8 +333,24 @@ def jones_closure(k, word):
 # §3  The canonical closure: branches, components, sub-braids, linking
 # ══════════════════════════════════════════════════════════════════
 def resolve(Z, N, avg_sign):
+    """Resolved crossings of the GROUPED chain word (named since 2026-09-05).
+
+    The chain form this probe rests on -- every generator occurring in
+    exactly one contiguous run, so the closure is a linear connected sum of
+    (2,k) torus links -- is a property of the word's ASSEMBLY, not of the
+    chain topology. `atom_braid_word_3A` now defaults to the Borromean
+    `(sigma_0 sigma_1^-1)^3` intra core, which interleaves gens 3k and 3k+1
+    and so is NOT one run per generator: each nucleon block becomes the
+    Borromean braid rather than a torus link. This probe therefore asks for
+    the word whose property it is testing.
+
+    The INTER-nucleon structure is a chain either way -- blocks overlap in
+    one strand -- so connected-sum multiplicativity, and with it every
+    log-ratio quantity, is unaffected (bean `qou-hu1f`; proved in
+    `QOU.Mass.IntraOrdering.chainRatio_eq_of_intra`).
+    """
     return [(g, 1 if kind == "sigma" else (-1 if kind == "sigma_inv" else avg_sign))
-            for g, kind in atom_canonical_crossings(Z, N)]
+            for g, kind in atom_canonical_crossings(Z, N, intra_order="grouped")]
 
 
 def components(n, word):

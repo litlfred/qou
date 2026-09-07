@@ -15,9 +15,12 @@ q-dimensions of the two genus-4 Bring-forced torus knots, and
 [n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹) is the q-integer.
 
 WHAT THIS PROBE DOES. Evaluates the closed form at the canonical substrate
-q₀ (the muon-anchored 50-digit value used by the whole computations/ layer,
+q₀ (the PROTON-anchored 50-digit production default used by the whole
+computations/ layer,
 imported from q_parameter.Q_50_DIGIT_STR — NOT hardcoded), compares to the
-CODATA fine-structure constant α_EM = 1/137.035999206, and reports the
+measured fine-structure constant α_EM = 1/137.035999206 — the Morel et al.
+(2020) Rb-87 recoil determination, NOT a CODATA adjustment (see
+sec:fine-structure-data) — and reports the
 relative error. This is a division-free identity over Z[q,q⁻¹] in the sense
 of the .md ([9]_q, [10]_q are Laurent polynomials); we evaluate the solved
 form at q₀ and check the ~0.2 % archimedean agreement.
@@ -53,7 +56,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 
-# CODATA 2018/2022 fine-structure constant, inverse form (dimensionless).
+# Fine-structure constant, inverse form (dimensionless). This is the Morel et
+# al. (2020) Rb-87 recoil measurement cited in sec:fine-structure-data — the
+# most precise single determination — and NOT a CODATA adjustment: CODATA 2022
+# is 137.035999177(21) and CODATA 2018 is 137.035999084. The name is retained
+# for callers; the two differ by 2.1e-10 relative, against a 5e-3 tolerance and
+# a 1.55e-3 measured error, so nothing about the verdict depends on which.
 CODATA_ALPHA_INV = "137.035999206"
 
 # Force-carrier crossing numbers, forced by the genus-4 Bring classification
@@ -122,14 +130,15 @@ def main() -> None:
         "Verify the categorical fine-structure-constant closed form "
         "α_EM(q) = q⁻¹/([9]_q·[10]_q), where [9]_q = dim_q T_{2,9} and "
         "[10]_q = dim_q T_{3,5} are the q-dimensions of the genus-4 "
-        "Bring-forced torus-knot pair, against CODATA α_EM = 1/137.035999206 "
-        "at the canonical muon-anchored substrate q₀. No fit: q₀, c_s=9, "
+        "Bring-forced torus-knot pair, against the measured α_EM = 1/137.035999206 "
+        "(Morel et al. 2020 Rb-87 recoil, not a CODATA adjustment) "
+        "at the canonical PROTON-anchored substrate q₀ (the production default; the witness q0Anchor field has always said proton). No fit: q₀, c_s=9, "
         "c_w=10 are all forced. Reports the archimedean relative error "
         "(~0.16 %) and asserts agreement < 0.5 %."
     )
     wb.add_data("inputs", {
         "q0": mp.nstr(q, 30),
-        "q0_source": "q_parameter.Q_50_DIGIT_STR (muon-anchored canonical q0)",
+        "q0_source": "q_parameter.Q_50_DIGIT_STR (PROTON-anchored canonical q0, the production default)",
         "c_s_crossing_T_2_9": C_S,
         "c_w_crossing_T_3_5": C_W,
         "CODATA_alpha_inv": CODATA_ALPHA_INV,
@@ -144,7 +153,7 @@ def main() -> None:
         "alpha_pred_inverse": mp.nstr(alpha_inv_pred, 20),
         "alpha_codata": mp.nstr(alpha_codata, 30),
         "rel_error": mp.nstr(rel_err, 12),
-        "rel_error_percent": float(rel_err) * 100,
+        "rel_error_percent": mp.nstr(rel_err * 100, 12),
         "tolerance": mp.nstr(REL_ERR_TOLERANCE, 6),
         "verdict": "PASS" if passed else "FAIL",
     })
@@ -154,7 +163,7 @@ def main() -> None:
         expected="0",
         tolerance=float(REL_ERR_TOLERANCE),
         source="Relative error of α_EM(q₀) = q₀⁻¹/([9]_q·[10]_q) vs CODATA "
-               "α_EM = 1/137.035999206, evaluated at the canonical muon-anchored "
+               "α_EM = 1/137.035999206 (Rb-87), evaluated at the canonical PROTON-anchored "
                "substrate q₀ (50 dps). q-integers [9]_q = dim_q T_{2,9}, "
                "[10]_q = dim_q T_{3,5} forced by genus-4 Bring uniqueness. "
                "Passes iff rel err < 5e-3 (0.5 %); measured ≈ 1.55e-3 (0.16 %).",

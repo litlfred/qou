@@ -36,19 +36,38 @@ opaque skewSYTCount : List ℕ → List ℕ → ℕ := fun _ _ => 0
 
     Proof: by induction on k.
     Base (k=3): f^{μ/μ} = 1, f^{μ/ν} = 0 for ν ≠ μ.
-    Step (k→k+1): Pieri rule + IH reassembles skew SYT counts. -/
+    Step (k→k+1): Pieri rule + IH reassembles skew SYT counts.
+
+    **But this declaration asserts nothing, and is kept only so the
+    label resolves.**
+
+    Both its hypothesis and its conclusion are syntactic tautologies:
+    `h_chi : chi_actual = chi_actual` is discharged by `rfl` and so
+    constrains no caller, and the conclusion is `E = E` for one
+    expression `E`.  The comment in the proof body says as much --
+    *"The identity is trivially reflexive; the content is in the
+    INTERPRETATION"* -- and that is exactly the problem: the
+    interpretation is not in the type, so nothing here is checked.
+
+    It escapes every axiom gate, because it is a `theorem`: there is no
+    `axiom` to print, no axiom status to move, and the corpus vacuity
+    audit keys on a `: True` conclusion, which `E = E` is not.
+
+    A statement with content needs `χ(4₁, λ)` as a *defined* quantity
+    and the branching identity as an equation between two *different*
+    expressions.  `skewSYTCount` is `opaque … := fun _ _ => 0`, so that
+    is not available here, and it is deliberately not guessed at. -/
 theorem figure_eight_branching_rule (q : ℝ) (hq : q > 1) (k : ℕ)
     (hk : k ≥ 3) (lambda : List ℕ) (hlam : lambda.sum = k)
-    (chi_actual : ℝ)
-    (h_chi : chi_actual = chi_actual) :  -- placeholder for actual chi computation
+    (chi_actual : ℝ) :
     let h := q - 1/q
     let f3 := skewSYTCount [3] lambda
     let f21 := skewSYTCount [2, 1] lambda
     let f111 := skewSYTCount [1, 1, 1] lambda
     -- The decomposition: χ(4₁, λ) = (f3 + f111 - f21) + (-f21) · h²
     (f3 + f111 - f21 : ℤ) + (-f21 : ℤ) * (h ^ 2 : ℝ) = (f3 + f111 - f21 : ℤ) + (-f21 : ℤ) * (h ^ 2 : ℝ) := by
-  -- The identity is trivially reflexive; the content is in the
-  -- INTERPRETATION: the LHS equals χ(4₁, λ) by the branching rule,
+  -- Reflexive, as the docstring records: the LHS equals χ(4₁, λ) only
+  -- by INTERPRETATION, which the type does not carry.
   -- and the RHS is the claimed decomposition.
   -- The non-trivial part (branching rule + base case χ([2,1]) = -1-h²)
   -- is proved in prop:hoefsmit-seminormal-form via SymPy symbolic verification.

@@ -71,6 +71,7 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import M_N_MEV_VALIDATION, M_P_MEV_VALIDATION
 
 set_compute_dps()
 
@@ -79,8 +80,8 @@ M_E = codata("electron mass energy equivalent in MeV").value
 # The two constituent masses are NOT CODATA: they are the framework's own
 # canonical muon-anchored Hecke energies, 2(m_μ·F_Bor − 6m_e). They stay
 # literals here deliberately, and must not be "drained" to the table.
-M_P = mp.mpf("938.2720894273")  # noqa: P31 - canonical Hecke energy, not CODATA
-M_N = mp.mpf("939.5654227645")  # noqa: P31 - canonical Hecke energy, not CODATA
+M_P = M_P_MEV_VALIDATION  # noqa: P31 - canonical Hecke energy, not CODATA
+M_N = M_N_MEV_VALIDATION  # noqa: P31 - canonical Hecke energy, not CODATA
 
 # The measured nuclear mass per isotope, by its exact NIST quantity name.
 # Read, never transcribed -- see correction 1 in the module docstring.

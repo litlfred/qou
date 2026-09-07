@@ -1,0 +1,305 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1011.6483v3",
+ "source": {
+  "file": "1011.6483v3.pdf",
+  "sha256": "7a425e51860c37a43daf1d19b07152ab2602948c242ce3343aa9da49c118dc8c",
+  "bytes": 774894,
+  "pages": 60,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1011.6483",
+   "version": "3",
+   "primary_class": "math.QA",
+   "stamp_date": "31 May 2012"
+  },
+  "doi": null,
+  "title": "DERIVED HIGHER HOCHSCHILD HOMOLOGY",
+  "authors_raw": "TOPOLOGICAL CHIRAL HOMOLOGY ANDF ACTORIZATION",
+  "title_lines": [
+   "DERIVED HIGHER HOCHSCHILD HOMOLOGY"
+  ],
+  "abstract": "W e study the higher Hochschild chain functor, factorizatio n alge- bras and their relationship with topological chiral homolo gy. To this end, we emphasize that the higher Hochschild complex is a ( \u221e ,1)-functor sSet\u221e \u00d7 CDGA \u221e where sSet\u221e and CDGA \u221e are the ( \u221e ,1)-categories of simplicial sets and commutative di\ufb00erential graded algebras, and give an axiomatic char- acterization of this functor. From the axioms, we deduce sev eral properties and computational tools for this functor. W e study the relation ship between the higher Hochschild functor and factorization algebras by sh owing that, in good cases, the Hochschild functor determines a constant commut ative factoriza- tion algebra. Conversely, every constant commutative fact orization algebra is naturally equivalent to a Hochschild chain factorization a lgebra. Similarly, we study the relationship between the above concepts and topol ogical chiral ho- mology. In particular, we show that on their common domains o f de\ufb01nition, the higher Hochschild functor is naturally equivalent to topol ogical chiral homol- ogy. A byproduct of our proof yields a similar statement abou t the relationship between the blob complex and topological chiral homology of unoriented man- ifolds. Finally, we prove that topological chiral homology determines a locally constant factorization algebra and, further, that this fun ctor induces an equiv- alence between locally constant factorization algebras on a manifold and (local system of) En-algebras.W e also deduce that Hochschild chains and topolo gical chiral homology satis\ufb01es an exponential law, i.e., a Fubini type Theorem to compute them on products of manifolds.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180523023300-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminary definitions and notation",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Simplicial sets",
+   "page": 7,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Commutative Differential Graded Algebras",
+   "page": 8,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Dwyer-Kan localization and (,1)-categories",
+   "page": 8,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Derived higher Hochschild functor",
+   "page": 10,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Naive axiomatic approach to higher Hochschild homology",
+   "page": 10,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Higher Hochschild as an (, 1)-functor",
+   "page": 15,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Pointed simplicial sets and modules",
+   "page": 22,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Factorization algebras and derived Hochschild functor over spaces",
+   "page": 25,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The Hochschild (,1)-functor in Top",
+   "page": 25,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "(Pre)Factorization algebras",
+   "page": 28,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Locally constant factorization algebras and En-algebras",
+   "page": 37,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Relationship with topological chiral homology",
+   "page": 40,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Review of topological chiral homology \u00e0 la Lurie",
+   "page": 40,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
+   "page": 43,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Relation with the Blob complex",
+   "page": 47,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Topological chiral homology as a factorization algebra",
+   "page": 49,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Some applications",
+   "page": 55,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 59,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 16564,
+   "n_words": 2773
+  },
+  {
+   "id": "sec-001-2-preliminary-definitions-and-notation",
+   "number": "2",
+   "title": "Preliminary definitions and notation",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 232,
+   "n_words": 39
+  },
+  {
+   "id": "sec-002-21-simplicial-sets",
+   "number": "2.1",
+   "title": "Simplicial sets",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 13211,
+   "n_words": 2328
+  },
+  {
+   "id": "sec-003-3-derived-higher-hochschild-functor",
+   "number": "3",
+   "title": "Derived higher Hochschild functor",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-31-naive-axiomatic-approach-to-higher-hochschild",
+   "number": "3.1",
+   "title": "Naive axiomatic approach to higher Hochschild homology",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 22,
+   "n_chars": 32436,
+   "n_words": 6028
+  },
+  {
+   "id": "sec-005-33-pointed-simplicial-sets-and-modules",
+   "number": "3.3",
+   "title": "Pointed simplicial sets and modules",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 37,
+   "n_chars": 37598,
+   "n_words": 7181
+  },
+  {
+   "id": "sec-006-43-locally-constant-factorization-algebras-and-e",
+   "number": "4.3",
+   "title": "Locally constant factorization algebras and En-algebras",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 40,
+   "n_chars": 10069,
+   "n_words": 1782
+  },
+  {
+   "id": "sec-007-5-relationship-with-topological-chiral-homology",
+   "number": "5",
+   "title": "Relationship with topological chiral homology",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 43,
+   "n_chars": 8066,
+   "n_words": 1440
+  },
+  {
+   "id": "sec-008-52-locality-axiom-and-the-equivalence-of-topolog",
+   "number": "5.2",
+   "title": "Locality axiom and the equivalence of topological chiral homology with higher Hochschild functor for CDGAs",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 47,
+   "n_chars": 12789,
+   "n_words": 2437
+  },
+  {
+   "id": "sec-009-53-relation-with-the-blob-complex",
+   "number": "5.3",
+   "title": "Relation with the Blob complex",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 55,
+   "n_chars": 22269,
+   "n_words": 4057
+  },
+  {
+   "id": "sec-010-55-some-applications",
+   "number": "5.5",
+   "title": "Some applications",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 59,
+   "n_chars": 8897,
+   "n_words": 1586
+  },
+  {
+   "id": "sec-011-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 59,
+   "page_end": 60,
+   "n_chars": 4862,
+   "n_words": 734
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 20,
+  "sections": 12,
+  "chars_total": 166993
+ }
+}

@@ -54,9 +54,9 @@ sys.path.insert(0, str(HERE.parent))
 
 from mpmath import mp, mpf, mpc, pi as mp_pi, exp as mp_exp  # noqa: E402
 
-from q_parameter import Q  # noqa: E402 — substrate q ≈ 1.1100
+from q_parameter import Q_MP  # noqa: E402 — substrate q ≈ 1.1100, high-precision mpf
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 
 set_compute_dps()
@@ -83,7 +83,14 @@ def main() -> int:
         engine="mpmath",
     )
 
-    q = mpf(Q)  # substrate q (cast to high-precision mpf)
+    # `Q_MP`, NOT `mpf(Q)`. `q_parameter` carries q_0 as a 70-digit decimal
+    # string and exposes it two ways: `Q = float(_d["q"])`, a float64, and
+    # `Q_MP = mpf(_d["q"])`, the full value. `mpf(Q)` lifts the DOUBLE's binary
+    # expansion, so `fmt()` then serialized 1.10997858275138083783417641825508...
+    # -- correct to 16 digits and binary garbage for the next 44 -- which reads
+    # as measured precision and is what the float64-padding audit exists to
+    # catch (bean `qou-1v29`). The true value is 1.1099785827513808075916690956...
+    q = Q_MP  # substrate q at the module's 50 dps floor
     pi_sq_720 = mp_pi ** 2 / 720
     target_str = f"π²/720 ≈ {float(pi_sq_720):.8e}"
 
@@ -107,8 +114,9 @@ def main() -> int:
             val = pi_sq * num_int / (720 * m_q)
             candidate_q_rationals.append({
                 "form": f"{num_int}·π²/(720·[{m_q_idx}]_q)",
-                "value": float(val),
-                "ratio_to_target": float(val / pi_sq_720),
+                "value": fmt(val),
+                "ratio_to_target": fmt(val / pi_sq_720),
+                "_mp": val,
             })
         # Also try π²/(720·[m]_q²) and ·[m]_q³
         for pow_idx in [2, 3]:
@@ -116,8 +124,9 @@ def main() -> int:
                 val = pi_sq * num_int / (720 * m_q ** pow_idx)
                 candidate_q_rationals.append({
                     "form": f"{num_int}·π²/(720·[{m_q_idx}]_q^{pow_idx})",
-                    "value": float(val),
-                    "ratio_to_target": float(val / pi_sq_720),
+                    "value": fmt(val),
+                    "ratio_to_target": fmt(val / pi_sq_720),
+                    "_mp": val,
                 })
 
     # ─── Family 3b: substrate quantities (ℏ_q, α_em-related) ───
@@ -147,16 +156,18 @@ def main() -> int:
                 )
                 substrate_candidates.append({
                     "form": form,
-                    "value": float(val),
-                    "ratio_to_target": float(val / pi_sq_720),
+                    "value": fmt(val),
+                    "ratio_to_target": fmt(val / pi_sq_720),
+                    "_mp": val,
                 })
         # Also try ratios: π²/(720 · base)
         for coef in [1, 2, 3, 6]:
             val = coef * pi_sq / (720 * base)
             substrate_candidates.append({
                 "form": f"{coef}·π²/(720·{name})",
-                "value": float(val),
-                "ratio_to_target": float(val / pi_sq_720),
+                "value": fmt(val),
+                "ratio_to_target": fmt(val / pi_sq_720),
+                "_mp": val,
             })
 
     # ─── Family 4: closest match across all families ───
@@ -172,24 +183,24 @@ def main() -> int:
         residue = abs(val - pi_sq_720)
         if residue < best_residue:
             best_residue = residue
-            best_match = ("damped_cubic", k, float(val))
+            best_match = ("damped_cubic", k, val)
 
     # Candidate-q-rationals comparison.
     for cand in candidate_q_rationals:
-        residue = abs(mpf(cand["value"]) - pi_sq_720)
+        residue = abs(cand["_mp"] - pi_sq_720)
         if residue < best_residue:
             best_residue = residue
             best_match = (
-                "q_rational", cand["form"], cand["value"],
+                "q_rational", cand["form"], cand["_mp"],
             )
 
     # Substrate-quantity comparison.
     for cand in substrate_candidates:
-        residue = abs(mpf(cand["value"]) - pi_sq_720)
+        residue = abs(cand["_mp"] - pi_sq_720)
         if residue < best_residue:
             best_residue = residue
             best_match = (
-                "substrate_quantity", cand["form"], cand["value"],
+                "substrate_quantity", cand["form"], cand["_mp"],
             )
         cand["nontrivial"] = True  # substrate-quantity candidates are
                                    # never classical-limit-trivial
@@ -226,9 +237,9 @@ def main() -> int:
         if a == m_idx ** p:
             return True  # case (a)
         # case (b): check a / [m]_q^p ≈ 1 at substrate
-        m_q_at_substrate = float(_q_int(m_idx, q))
+        m_q_at_substrate = _q_int(m_idx, q)
         ratio_at_substrate = a / (m_q_at_substrate ** p)
-        return abs(ratio_at_substrate - 1) < 0.02
+        return abs(ratio_at_substrate - 1) < mpf("0.02")
 
     # Count non-trivial sub-1% matches — the actual null-result
     # measurement.  The audit reports a null result if this is 0.
@@ -237,12 +248,12 @@ def main() -> int:
     for cand in candidate_q_rationals + substrate_candidates:
         if _is_classical_trivial(cand["form"]):
             continue
-        residue = abs(mpf(cand["value"]) - pi_sq_720)
+        residue = abs(cand["_mp"] - pi_sq_720)
         if residue < one_percent:
             nontrivial_matches.append({
                 "form": cand["form"],
                 "value": cand["value"],
-                "rel_residue": float(residue / pi_sq_720),
+                "rel_residue": fmt(residue / pi_sq_720),
             })
     n_nontrivial_matches = len(nontrivial_matches)
 
@@ -252,10 +263,19 @@ def main() -> int:
     for cand in candidate_q_rationals + substrate_candidates:
         if _is_classical_trivial(cand["form"]):
             continue
-        residue = abs(mpf(cand["value"]) - pi_sq_720)
+        residue = abs(cand["_mp"] - pi_sq_720)
         if residue < best_nontrivial_residue:
             best_nontrivial_residue = residue
             best_nontrivial_form = cand["form"]
+
+    # `_mp` is the mpf each candidate was RANKED on -- it exists so the residue
+    # comparisons above never round-trip through binary64, which is what the
+    # committed witness previously did (`mpf(cand["value"])` re-read a value
+    # that had already been truncated by `float(...)`). It is working state,
+    # not a witness field: `value` and `ratio_to_target` already carry the same
+    # number losslessly via `fmt`, so drop it before serialization.
+    for cand in candidate_q_rationals + substrate_candidates:
+        cand.pop("_mp", None)
     (
         builder
         .set_description(
@@ -271,15 +291,15 @@ def main() -> int:
             "sub-problem (3) of conj:casimir-epsilon-vacuum."
         )
         .set_content_block("conj:casimir-epsilon-vacuum")
-        .add_parameter("substrate_q", float(q))
-        .add_parameter("target_pi_sq_720", float(pi_sq_720))
+        .add_parameter("substrate_q", fmt(q))
+        .add_parameter("target_pi_sq_720", fmt(pi_sq_720))
         .add_data(
             "zeta_q_values",
-            {str(s): float(v) for s, v in zeta_q_values.items()},
+            {str(s): fmt(v) for s, v in zeta_q_values.items()},
         )
         .add_data(
             "damped_cubic_sums",
-            {str(k): float(v) for k, v in damped_cubic.items()},
+            {str(k): fmt(v) for k, v in damped_cubic.items()},
         )
         .add_data(
             "candidate_q_rationals",
@@ -294,9 +314,9 @@ def main() -> int:
             {
                 "family": best_match[0],
                 "form": str(best_match[1]),
-                "value": best_match[2],
-                "residue": float(best_residue),
-                "ratio": best_match[2] / float(pi_sq_720),
+                "value": fmt(best_match[2]),
+                "residue": fmt(best_residue),
+                "ratio": fmt(best_match[2] / pi_sq_720),
                 "note": (
                     "May be a classical-limit-trivial match (form "
                     "a·π²/(720·[m]_q^p) with a == m^p, recovering "
@@ -309,8 +329,8 @@ def main() -> int:
             "best_nontrivial_match",
             {
                 "form": str(best_nontrivial_form),
-                "residue": float(best_nontrivial_residue),
-                "rel_residue": float(
+                "residue": fmt(best_nontrivial_residue),
+                "rel_residue": fmt(
                     best_nontrivial_residue / pi_sq_720
                 ),
             },
@@ -360,7 +380,7 @@ def main() -> int:
     print("─── Best match ───")
     print(f"  family: {best_match[0]}")
     print(f"  form:   {best_match[1]}")
-    print(f"  value:  {best_match[2]:.10e}")
+    print(f"  value:  {float(best_match[2]):.10e}")
     print(f"  residue: {float(best_residue):.4e}")
     print(f"  rel residue: {float(best_residue/pi_sq_720):.4e}")
     print()

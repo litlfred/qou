@@ -2,7 +2,7 @@ The two admissible pins of the substrate modulus $q_0$ — the lepton relation a
 
 ## The datum
 
-[The calibration discipline](#prop:three-calibration-discipline) pins $q_0$ through the lepton relation
+[The calibration discipline](#def:three-calibration-discipline) pins $q_0$ through the lepton relation
 
 $$
   \frac{m_\mu}{m_e} = \frac{\mathrm{Vol}(4_1)}{\hbar_q^2},

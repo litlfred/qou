@@ -100,7 +100,7 @@ def main() -> int:
     h = q - 1 / q
     h2 = h * h
     G = mp.catalan
-    alpha_em = mp.mpf(1) / mp.mpf("137.0359991")
+    alpha_em = mp.mpf(1) / mp.mpf("137.035999084")
     pi = mp.pi
     n_cells = 8
     dim_H3 = 6

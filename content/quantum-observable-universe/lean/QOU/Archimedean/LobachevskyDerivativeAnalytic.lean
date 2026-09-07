@@ -24,11 +24,21 @@
   (`Real.analyticAt_log`, `hx : 0 < x`), as is `AnalyticAt.log`.  Composing
   them gives `Λ'` analytic on `(0, π)`, where `sin t > 0`.
 
-  WHAT THIS DOES NOT DO.  It does NOT prove `Λ` itself analytic: Mathlib has no
-  antiderivative-of-analytic lemma (`AnalyticOnNhd.deriv` is the forward
-  direction only), so step 1 is not closed here — only its derivative input is.
-  The `Λ`-analyticity closure and steps 2–3 stay open (`qou-w3eg`).  Per that
-  bean's guard, nothing about the obtuse volume is asserted here.
+  WHAT THIS DOES NOT DO.  It does NOT prove `Λ` itself analytic — only its
+  derivative.  Per bean `qou-w3eg`'s guard, nothing about the obtuse volume is
+  asserted here.
+
+  🛑 SUPERSEDED ROUTE (corrected in the same tranche).  This header first said
+  step 1 was blocked here because "Mathlib has no antiderivative-of-analytic
+  lemma".  That is true of Mathlib and was the wrong conclusion: `Λ` does not
+  have to be reached through its derivative at all.  **Step 1 is CLOSED**, by
+  composition rather than antidifferentiation, in
+  `QOU.Archimedean.analyticAt_Lob` / `analyticOnNhd_Lob`
+  (`QOU/Archimedean/LobAnalytic.lean`), using the corpus's own complex-dilog
+  layer: on `(0, π)`, `Λ t = Im cLiTwoExt(e^{2it}) / 2`.  This file remains a
+  correct standalone statement about `Λ'` and is still the natural input for a
+  derivative-side argument; it is simply no longer on the critical path.
+  Steps 2–3 stay open (`qou-w3eg`).
 
   Archimedean (ℝ): `Real.sin`, `Real.log`, ordering — §7c.
 

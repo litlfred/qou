@@ -138,11 +138,25 @@ def S_of(Z, q, y_table, cache, d_blind, inter):
 def main() -> int:
     checks, assertions = [], []
 
-    def check(name, ok, detail):
-        assertions.append({"name": name, "passed": bool(ok), "detail": detail})
-        checks.append(bool(ok))
+    def check(name, ok, detail, on_fail=None):
+        """Record and print one check.
+
+        `detail` is printed ONLY when the check passes. A failing check
+        prints `on_fail` instead, or a neutral marker -- never an
+        affirmative sentence about a comparison that did not hold. The
+        old version printed `detail` unconditionally, so check 1 below
+        announced "agrees to <1e-10" on a run where it did not (observed
+        2026-09-07: committed 2.12836094575708 vs computed
+        0.642115075408566).
+        """
+        ok = bool(ok)
+        shown = detail if ok else (on_fail or
+                                   "the condition above did NOT hold; the "
+                                   "pass-text is withheld deliberately")
+        assertions.append({"name": name, "passed": ok, "detail": shown})
+        checks.append(ok)
         print(f"  [{'PASS' if ok else 'FAIL'}] {name}")
-        print(f"         {detail}")
+        print(f"         {shown}")
 
     q = mp.mpf(Q_50_DIGIT_STR)
     h = q - mp.mpf(1) / q
@@ -203,10 +217,16 @@ def main() -> int:
     print(f"  this probe: {got}")
     check("method validated against the committed number, by a DIFFERENT path",
           agree,
-          f"agrees to <1e-10. Different evaluator (sparse Schur-Weyl vs dense "
-          f"chi_lambda_numerical) and different crossings entry point "
+          f"agrees to <1e-10: computed {got} against committed "
+          f"{COMMITTED_B_PP_A2}. Different evaluator (sparse Schur-Weyl vs "
+          f"dense chi_lambda_numerical) and different crossings entry point "
           f"(atom_canonical_crossings vs atomic_braid_to_crossings). Two "
-          f"independent routes to the committed B_pp_strong_MeV.")
+          f"independent routes to the committed B_pp_strong_MeV.",
+          on_fail=(f"DOES NOT agree: computed {got} against committed "
+                   f"{COMMITTED_B_PP_A2}. Every B_pp value below is on a "
+                   f"different scale from the committed series and must NOT "
+                   f"be used or committed. Check the environment before "
+                   f"reading anything downstream."))
 
     # -------------------------------------------------- 2. the decline
     print("\n" + "-" * 78)
@@ -219,13 +239,20 @@ def main() -> int:
               f"{mp.nstr(100*(1-r), 5):>9}%")
     declining = all(per_bond[_as[i]] > per_bond[_as[i + 1]]
                     for i in range(len(_as) - 1))
-    drop4 = 1 - per_bond[_as[-1]] / per_bond[_as[0]]
-    check("B_pp is NOT A-independent — monotone decline on all three points",
-          declining and drop4 > mp.mpf("0.05"),
-          f"2.128 -> 1.966 -> 1.852 MeV, a {mp.nstr(100*drop4, 4)} % drop by "
-          f"A=4, against a chain bond frozen at 2.0507 for every A. The "
-          f"companion probe's FIRST disjunction branch (trace bond also "
-          f"A-independent) is WITHDRAWN; the second is the true one.")
+    # NAME THE LAST A, do not assume it is 4. This was hardcoded as "by A=4"
+    # while the value is over `_as[-1]`; on a `2 3 4 5` run it printed the
+    # A=5 figure (86.179 %) labelled A=4 (whose true drop is 73.754 %).
+    a_last = _as[-1]
+    drop_last = 1 - per_bond[a_last] / per_bond[_as[0]]
+    ladder = " -> ".join(mp.nstr(per_bond[A], 6) for A in _as)
+    check(f"B_pp is NOT A-independent — monotone decline on all "
+          f"{len(_as)} points",
+          declining and drop_last > mp.mpf("0.05"),
+          f"{ladder} MeV/bond over A = {', '.join(str(A) for A in _as)}, a "
+          f"{mp.nstr(100*drop_last, 4)} % drop by A={a_last}, against a chain "
+          f"bond frozen at 2.0507 for every A. The companion probe's FIRST "
+          f"disjunction branch (trace bond also A-independent) is WITHDRAWN; "
+          f"the second is the true one.")
 
     # -------------------------------------------------- 3. what it does to kappa
     print("\n" + "-" * 78)
@@ -233,44 +260,59 @@ def main() -> int:
     print("-" * 78)
     corr3 = per_bond[_as[0]] / per_bond[_as[1]] if len(_as) > 1 else mp.mpf(1)
     corr4 = per_bond[_as[0]] / per_bond[_as[-1]]
+    a_second = _as[1] if len(_as) > 1 else _as[0]
     print(f"""
   kappa(A) = dB_AME / [ (A-1)/2 * ratio * B_pp ] was computed holding B_pp at
-  its A=2 value. Correcting multiplies by B_pp(2)/B_pp(A):
+  its A={_as[0]} value. Correcting multiplies by B_pp({_as[0]})/B_pp(A):
 
-      A=3  x {mp.nstr(corr3, 8)}        A=4  x {mp.nstr(corr4, 8)}
+      A={a_second}  x {mp.nstr(corr3, 8)}        A={a_last}  x {mp.nstr(corr4, 8)}
 
   Both > 1, so the TRUE kappa is LARGER than the held one, increasingly with A.
   The measured kappa decline (3.45 -> 1.74 over A = 3..39) therefore OVERSTATES
   the invariant's decline: part of it is the bond shrinking — exactly the
   confound qou-gcmn names.
 
-  NOT corrected here. The mirror pairs run to A = 39; B_pp is measured to A = 4.
-  Extrapolating a three-point decline across a factor of ten in A would be a
-  fit. The SIGN and the low-A SCALE are established; A = 5,6 are the obvious
-  continuation by the same route.
+  NOT corrected here. The mirror pairs run to A = 39; B_pp is measured to
+  A = {a_last}. Extrapolating a {len(_as)}-point decline across a factor of ten
+  in A would be a fit. The SIGN and the low-A SCALE are established.
 """)
     check("the correction direction is established; the series is NOT corrected",
           corr3 > 1 and corr4 > corr3,
-          f"B_pp(2)/B_pp(3) = {mp.nstr(corr3, 8)}, B_pp(2)/B_pp(4) = "
-          f"{mp.nstr(corr4, 8)} — both above 1 and growing, so the held-B_pp "
-          f"kappa understates the true kappa and overstates its decline. No "
-          f"extrapolation past A=4 is made.")
+          f"B_pp({_as[0]})/B_pp({a_second}) = {mp.nstr(corr3, 8)}, "
+          f"B_pp({_as[0]})/B_pp({a_last}) = {mp.nstr(corr4, 8)} — both above 1 "
+          f"and growing, so the held-B_pp kappa understates the true kappa and "
+          f"overstates its decline. No extrapolation past A={a_last} is made.",
+          on_fail=(f"the ratios are NOT both above 1 and growing: "
+                   f"B_pp({_as[0]})/B_pp({a_second}) = {mp.nstr(corr3, 8)}, "
+                   f"B_pp({_as[0]})/B_pp({a_last}) = {mp.nstr(corr4, 8)}. The "
+                   f"correction direction is not established by this run."))
 
     # -------------------------------------------------- 4. tractability
     print("\n" + "-" * 78)
     print("  4. 'Intractable' was the dense evaluator, not the object")
     print("-" * 78)
-    slowest = max(r["elapsed_sec"] for r in rows)
-    print(f"\n  Largest case here: A=4, n=12, max dim 297 — {slowest:.0f} s.")
+    # The check NAME claims computability; the old test gated on
+    # `slowest < 300`, i.e. SPEED. On a `2 3 4 5` run the A=5 bond was
+    # computed successfully in 3302 s and this reported FAIL -- a false
+    # negative against its own claim. Gate on completion; report the time.
+    slow_row = max(rows, key=lambda r: r["elapsed_sec"])
+    slowest = slow_row["elapsed_sec"]
+    print(f"\n  Largest case here: A={slow_row['A']}, n={slow_row['n_strands']}, "
+          f"max dim {slow_row.get('max_dim', '?')} — {slowest:.0f} s.")
     print("  Dense chi_lambda_numerical did not return within 600 s.")
     check("the H_2A bond is computable — the intractability claim was stale",
-          slowest < 300,
-          f"A=4 completes in {slowest:.0f} s with the column-sparse Hoefsmit "
-          f"multiply (<=2 nonzeros per row, O(dim^2*nnz) instead of O(dim^3)), "
-          f"machinery that landed 2026-08-30 in "
-          f"colour_weighting_across_mixed_nuclei_probe. "
+          len(per_bond) == len(rows) and all(
+              mp.isfinite(per_bond[A]) for A in per_bond),
+          f"every requested A returned a finite bond; the slowest, "
+          f"A={slow_row['A']} (n={slow_row['n_strands']}), took {slowest:.0f} s with "
+          f"the column-sparse Hoefsmit multiply (<=2 nonzeros per row, "
+          f"O(dim^2*nnz) instead of O(dim^3)), machinery that landed "
+          f"2026-08-30 in colour_weighting_across_mixed_nuclei_probe. "
           f"em_linking_invariant_scoping's 'the A>3 bonds live at H_2A, "
-          f"intractable' predates it.")
+          f"intractable' predates it. NOTE this asserts COMPUTABILITY, not "
+          f"speed: a slow run is a cost, not a refutation.",
+          on_fail=(f"not every requested A returned a finite bond "
+                   f"({len(per_bond)} of {len(rows)} rows)."))
 
     ok = all(checks)
     print("\n" + "=" * 78)
@@ -282,8 +324,8 @@ def main() -> int:
   preferred branch:
 
   - the CHAIN bond is A-independent by construction (companion probe);
-  - the TRACE bond is NOT: 2.128 -> 1.966 -> 1.852 MeV over A = 2,3,4,
-    a {mp.nstr(100*drop4, 4)} % decline;
+  - the TRACE bond is NOT: {ladder} MeV/bond over
+    A = {', '.join(str(A) for A in _as)}, a {mp.nstr(100*drop_last, 4)} % decline;
   - so the confound is real, and the measured kappa decline overstates the
     EM-linking invariant by the amount the bond shrinks.
 
@@ -328,7 +370,12 @@ def main() -> int:
             "rows": rows,
             "B_pp_per_bond": {str(A): mp.nstr(per_bond[A], 25)
                               for A in sorted(per_bond)},
-            "decline_A4_vs_A2": mp.nstr(drop4, 20),
+            # Name kept for consumer compatibility; it is the LAST A in the
+            # run, which is 4 only on the default `2 3 4` invocation.
+            "decline_A4_vs_A2": mp.nstr(drop_last, 20),
+            "decline_last_vs_first": mp.nstr(drop_last, 20),
+            "decline_last_A": a_last,
+            "decline_first_A": _as[0],
             "kappa_correction_A3": mp.nstr(corr3, 20),
             "kappa_correction_A4": mp.nstr(corr4, 20),
             "chain_bond_MeV": "2.050709692381",

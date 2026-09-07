@@ -18,6 +18,7 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 set_compute_dps()
 G = mp.catalan
@@ -25,7 +26,7 @@ eightG = 8 * G                      # = Vol(L6a4) = 7.32772
 me = mp.mpf('0.51099895')           # MeV
 A = 4
 vol = A * eightG
-B_AME = mp.mpf('28.295673')         # ⁴He total binding, MeV (AME2020)
+B_AME = AME_B_HE4_MEV_VALIDATION         # ⁴He total binding, MeV (AME2020)
 
 
 def main() -> int:

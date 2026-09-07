@@ -18,10 +18,18 @@ QOU/Mass/CrossingModelPairLocality.lean (sorry-free, this PR) closes the gap:
   isPairwise_of_pairLocal      pair-local  =>  pairwise-additive
   b3_eq_zero_of_pairLocal      hence b3 == 0
   not_pairLocal_of_b3_ne_zero  hence a nonzero measured b3 REFUTES pair-locality
-  brunnian_not_pairLocal       a Brunnian carrier is exactly that violation
-  b3_eq_neg_tripleMutual_of_brunnian
+  not_pairLocal_of_noIsolatedPairEnergy
+                               a w2 = 0 carrier is exactly that violation
+  b3_eq_neg_tripleMutual_of_noIsolatedPairEnergy
                                with the pair terms gone, b3 IS the triple channel
   tripleMutual_neg_of_b3_pos   so b3 > 0 forces an attractive triple channel
+
+  RENAMED 2026-09-07: the hypothesis above was called `Brunnian`.  It is w2 = 0
+  (a pair carries no mutual energy in isolation), NOT the topological Brunnian
+  property (linking number zero) that L6a4 has -- and the corpus proves the
+  second does not imply the first (BrunnianBindingChannel.brunnian_binding_
+  survives).  So these three theorems are true and their hypothesis is NOT
+  satisfied by the carrier; see QOU.Mass.BrunnianHypothesisNotSatisfied.
 
 WHAT THIS PROBE MEASURES.  The Lean says the measured cumulants refute
 pair-locality.  It does not say by HOW MUCH, which is a question about numbers.
@@ -58,6 +66,12 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from mpmath import mp, mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 try:  # P30 provenance stamp; optional so a bare container still runs
     from qou_substrate.witness import WitnessBuilder as _WitnessBuilder
@@ -70,10 +84,10 @@ set_compute_dps()
 # probes/he4_body_order_shortfall_location_probe.py and
 # probes/mayer_threebody_sign_threshold_probe.py.
 AME = {
-    "D": mpf("2.224566"),
-    "3H": mpf("8.481798"),
-    "3He": mpf("7.718043"),
-    "4He": mpf("28.295673"),
+    "D": AME_B_DEUTERON_MEV_VALIDATION,
+    "3H": AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 # Corpus cross-check values (2026-06-23 audit, via the residual-simplex witness).
@@ -158,9 +172,15 @@ def main():
         {"name": "b3 > 0, so the Lean refutation of pair-locality applies "
                  "(not_pairLocal_of_b3_ne_zero)",
          "passed": bool(b3 > 0)},
-        {"name": "with a Brunnian carrier b3 IS the triple channel, so b3 > 0 "
-                 "forces an ATTRACTIVE (negative) triple mutual energy of exactly "
-                 "|b3| per triple (tripleMutual_neg_of_b3_pos)",
+        {"name": "CONDITIONAL, and its hypothesis is NOT satisfied here: IF a "
+                 "carrier had w2 = 0 (CrossingModel.Brunnian) then b3 would be the "
+                 "triple channel and b3 > 0 would force an ATTRACTIVE triple mutual "
+                 "energy of |b3| per triple (tripleMutual_neg_of_b3_pos). L6a4 is "
+                 "Brunnian TOPOLOGICALLY (linking number 0), which does NOT give "
+                 "w2 = 0: brunnian_binding_survives proves 0 < countChannel for a "
+                 "crossing pair at q > 1, and the b2 != 0 measured right here "
+                 "refutes it a second way. What is asserted below is only b3 > 0. "
+                 "See QOU.Mass.BrunnianHypothesisNotSatisfied (corrected 2026-09-07)",
          "passed": bool(b3 > 0)},
         {"name": "more than half of 4He's binding is irreducibly many-body",
          "passed": bool(he4_frac > mpf("0.5"))},
@@ -200,10 +220,23 @@ def main():
             "b3 = b4 = 0 forced, so its binding ceiling is C(A,2)*b2. Against "
             "AME2020 that ceiling misses 4He by a factor 2.12 -- 52.8% of the "
             "binding is irreducibly many-body and no pairwise assembly reaches "
-            "it, whatever bond functional is applied. With a Brunnian carrier "
-            "the pair terms vanish and b3 is exactly the triple channel, so the "
-            "measured b3 > 0 pins that channel to an attractive 1.4262225 MeV "
-            "per triple."),
+            "it, whatever bond functional is applied. "
+            "CORRECTED 2026-09-07: this description previously continued 'With a "
+            "Brunnian carrier the pair terms vanish and b3 is exactly the triple "
+            "channel, so the measured b3 > 0 pins that channel to an attractive "
+            "1.4262225 MeV per triple.' That reads CrossingModel.Brunnian "
+            "(w2 = 0, pairs carry no mutual energy) as satisfied by L6a4, which "
+            "is topologically Brunnian (linking number 0). The corpus proves the "
+            "first does not follow from the second: BrunnianBindingChannel."
+            "brunnian_binding_survives gives 0 < countChannel m m q for a "
+            "crossing pair at q > 1, so w2 != 0. This witness refutes it a "
+            "second way from its own data -- b2 != 0 -- by the same "
+            "contrapositive the corpus uses for b3. So b3_eq_neg_tripleMutual_"
+            "of_brunnian does NOT apply here and b3 does NOT cleanly pin the "
+            "triple channel; the discarded pair contamination is nonzero. Both "
+            "refutations are sorry-free in QOU.Mass."
+            "BrunnianHypothesisNotSatisfied. The shortfall numbers above are "
+            "unaffected: they use no Brunnian hypothesis."),
         "q0_pin": "not applicable -- consumes no framework quantity",
         "free_parameters": 0,
         "cumulants_MeV": {"b2": mp.nstr(b2, 14), "b3": mp.nstr(b3, 14),

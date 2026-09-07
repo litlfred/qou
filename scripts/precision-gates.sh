@@ -76,6 +76,39 @@ GATES=(
   "mp.dps no-op|computations/mpf_context_dps_audit.py|--strict|yes|yes"
   "module-const precision|computations/module_const_precision_audit.py|--strict|yes|yes"
   "raw-float64 ratchet|computations/witness_raw_float64_audit.py|--strict|yes|yes"
+  # The value-CORRECTNESS gate, as opposed to the value-CARRIAGE gates above.
+  # Every other member of this family asks how a number is carried and
+  # serialized; none asks whether it was RIGHT WHEN TYPED. A hand-copied
+  # CODATA or AME2020 constant that is a short prefix of -- or worse, quietly
+  # disagrees with -- the registry it came from passes all of them, and
+  # wrapping it in mpf() to clear the float64 gate preserves the error while
+  # reading as a fix.
+  #
+  # It was written 2026-08-10 (PR #4960, bean qou-46ke), worked from the start,
+  # and was in NO array -- not here, not in .github/ -- so nothing ran it for
+  # three weeks. That is verbatim the qou-j6gb lesson recorded at the head of
+  # this file, repeated on the very next gate: "a gate outside this array is a
+  # gate nobody runs."
+  #
+  # Ratchet, not --strict: the backlog is 970 findings across ~500 files
+  # (qou-psjm), so a blocking --strict would be red on arrival and get
+  # skipped. --baseline blocks every NEW arrival. The baseline DRAINS.
+  "reference-literal ratchet|computations/codata_truncation_audit.py|--baseline|yes|yes"
+  # The sibling of the gate above, for values with no published registry to
+  # check against. A producer computes a number into its witness; a second
+  # script types that number in rather than reading it. The copy is short (it
+  # loses digits) and, worse, it goes STALE the moment the producer is re-run
+  # -- and nothing in the tree compares a source literal against a witness.
+  #
+  # Confirmed instance that motivated it: 8.481798 / 7.718043 / 28.295673 all
+  # sit in the RETIRED _deprecated/ame-2020-binding-energies.witness.json,
+  # the hand-maintained file codata_constants.py says "had drifted".
+  #
+  # Ratchet on the NARROW class only (a literal in <=3 witnesses is one
+  # producer's output; one in dozens is a shared reference constant the gate
+  # above owns). Blocks NEW copies; the 264 existing await a hand pass,
+  # because some are deliberate freezes. Bean qou-psjm.
+  "witness-value copy ratchet|computations/audits/witness_value_copy_audit.py|--baseline|yes|yes"
   # The OTHER HALF of the ratchet above, split from it on 2026-08-24 (bean
   # qou-xt5l). The ratchet asks "did a value lose digits a double cannot
   # hold?"; an integral float answers no, because integers are exact in
@@ -173,6 +206,23 @@ GATES=(
   #     proton re-pin arc (#5386). Editing it steps on a sibling mid-flight.
   # Drain owners: bean qou-6ort (the dps defect) and the qbeta re-pin arc.
   "witness failed-assertion ratchet|computations/witness_failed_assertion_audit.py|--strict|yes|no"
+  # ADVISORY, red on arrival at 20 — same terms as the entry above, and
+  # deliberately NOT blocking here because the blocking enforcement is
+  # diff-scoped in `.github/workflows/word-provenance-gate.yml`. This entry
+  # exists to keep the backlog visible, not to stop a PR.
+  #
+  # It asks the question no other gate asks: is this hardcoded braid word what
+  # the producer actually emits, or did someone read the producer's source?
+  # Three instances in two days on bean `qou-hu1f`; the third was green in CI
+  # for a day and is why the 5.045e-4 A=1 residual was mis-attributed to the
+  # word ordering when it was ordering and electron nearly cancelling.
+  #
+  # The 20 are essentially all legitimate first-principles constructions
+  # (`(s0 s1^-1)^3` and friends) needing a one-line `# word-literal-ok:`
+  # annotation. They are NOT bulk-annotatable by a passing agent: writing
+  # "trustworthy because ..." for a file you have not read is the same defect
+  # the gate catches. Drain per file, by whoever owns it.
+  "hardcoded braid word|scripts/word-provenance-gate.py|--strict|yes|no"
   # Blocking, and GREEN as of the commit that added it (0 candidates across
   # 273 numpy-importing files) — which is exactly when a gate is safe to make
   # blocking, because it can then only ever fire on a NEW regression.
@@ -511,8 +561,21 @@ for g in "${GATES[@]}"; do
     continue
   fi
   if [ "$selftest" = "yes" ]; then
-    if ! python3 "$script" --self-test >/dev/null 2>&1; then
+    # A gate that spells the flag differently is NOT a gate whose self-test
+    # failed, and reporting it as one accuses a sound detector of being a
+    # no-op. Measured 2026-09-07: 19 of 20 self-testing gates take
+    # --self-test; word-provenance-gate.py took only --selftest, and this
+    # runner called its passing 9/9 self-test a failure. Exit code cannot
+    # discriminate -- that gate returns 2 for a REAL failure too, the same
+    # code argparse uses for a usage error -- so key on argparse's message
+    # and retry the other spelling.
+    st_out=$(python3 "$script" --self-test 2>&1); st_rc=$?
+    if [ $st_rc -ne 0 ] && printf '%s' "$st_out" | grep -q 'unrecognized arguments'; then
+      st_out=$(python3 "$script" --selftest 2>&1); st_rc=$?
+    fi
+    if [ $st_rc -ne 0 ]; then
       echo "  SELF-TEST FAILED — a detector that cannot be shown to fire is a no-op."
+      printf '%s\n' "$st_out" | sed 's/^/    /' | head -6
       blocking_failed+=("$name (self-test)")
       continue
     fi

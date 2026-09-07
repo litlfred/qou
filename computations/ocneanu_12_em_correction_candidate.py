@@ -88,6 +88,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 
 def trM_borromean_closed(q):
+    # convention D — verified by EVALUATION at q0, not by reading: computations/audits/borromean_convention_by_evaluation.py
     h = q - 1 / q
     h2 = h * h
     return (4 + h2 - 3 * h2 ** 2 - h2 ** 3) / (h2 + 4)
@@ -129,7 +130,7 @@ def main() -> int:
           f"({mp.nstr((12 - k_required) / k_required * mp.mpf('1e6'), 6)} ppm)")
 
     # Candidate: k_predicted = 12 - (α_em/π) / dim H_3
-    alpha_em = mp.mpf(1) / mp.mpf("137.0359991")
+    alpha_em = mp.mpf(1) / mp.mpf("137.035999084")
     dim_H_3 = mp.mpf(6)  # = |S_3| = 3! = Σ d²_λ at H_3 = number of cell-strand products
 
     em_correction = alpha_em / mp.pi / dim_H_3
@@ -294,7 +295,7 @@ def main() -> int:
     #     inside CODATA's own 2.1e-8 — but the literal is a registry bypass,
     #     so this is the check that would catch it drifting.
     from experimental_constants import ALPHA_EM_INV  # noqa: E402
-    alpha_registry_gap = abs(mp.mpf("137.0359991") / mp.mpf(str(ALPHA_EM_INV)) - 1)
+    alpha_registry_gap = abs(mp.mpf("137.035999084") / mp.mpf(str(ALPHA_EM_INV)) - 1)
     w.add_assertion(
         name="alpha_em_literal_matches_codata_registry",
         computed=mp.nstr(alpha_registry_gap, 12),

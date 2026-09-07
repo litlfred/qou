@@ -1,32 +1,24 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T19:57:40.417569+00:00",
-  "commitSha": "0289d75f6c6b5c9a260b0dbe0a36fd47779e2c80",
+  "computedAt": "2026-09-07T10:36:10.503751+00:00",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "assertions": [
     {
       "name": "the sparse multiply reproduces the committed dense deuteron blind arm",
-      "computed": "3.27567910391784202960048042975e-41",
+      "computed": "0.73578638258149779728393383996",
       "expected": "0",
-      "passed": true,
+      "passed": false,
       "tolerance": "1e-39",
       "source": "vs colour-weighting-trace-magnitude.witness.json = 0.5750908716298103167516328830255259660632 (40 significant digits — the tolerance is set by that, not by the arithmetic)"
     },
     {
       "name": "the sparse multiply reproduces the committed dense deuteron weighted arm",
-      "computed": "9.81811481609216063604817329148e-42",
+      "computed": "0.73578638258149779728393383996",
       "expected": "0",
-      "passed": true,
+      "passed": false,
       "tolerance": "1e-39",
       "source": "vs colour-weighting-trace-magnitude.witness.json = 0.5751722439177718708265353439861808891525 (40 significant digits — the tolerance is set by that, not by the arithmetic)"
-    },
-    {
-      "name": "the canonical Rust path lands on the colour-BLIND arm for T",
-      "computed": "3.41976058545285215318718729915e-18",
-      "expected": "0",
-      "passed": true,
-      "tolerance": "1e-15",
-      "source": "Rust MPFR chi + witness y_lambda vs Python Hoefsmit sparse route"
     },
     {
       "name": "T: only two-row partitions carry a nonzero y_lambda",
@@ -37,28 +29,12 @@
       "source": "5 contributing of 30 in the y-table"
     },
     {
-      "name": "the canonical Rust path lands on the colour-BLIND arm for 3He",
-      "computed": "3.29002437332885226331392718032e-18",
-      "expected": "0",
-      "passed": true,
-      "tolerance": "1e-15",
-      "source": "Rust MPFR chi + witness y_lambda vs Python Hoefsmit sparse route"
-    },
-    {
       "name": "3He: only two-row partitions carry a nonzero y_lambda",
       "computed": "1",
       "expected": "1",
       "passed": true,
       "tolerance": "0",
       "source": "5 contributing of 30 in the y-table"
-    },
-    {
-      "name": "the canonical Rust path lands on the colour-BLIND arm for 4He",
-      "computed": "4.8151336947207673194934752958e-18",
-      "expected": "0",
-      "passed": true,
-      "tolerance": "1e-15",
-      "source": "Rust MPFR chi + witness y_lambda vs Python Hoefsmit sparse route"
     },
     {
       "name": "4He: only two-row partitions carry a nonzero y_lambda",
@@ -69,12 +45,12 @@
       "source": "7 contributing of 77 in the y-table"
     }
   ],
-  "allPassed": true,
-  "durationMs": 709351,
+  "allPassed": false,
+  "durationMs": 73616,
   "computation": "colour-weighting-across-mixed-nuclei",
   "scriptFile": "colour_weighting_across_mixed_nuclei_probe.py",
   "scriptHash": "291235760743",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -89,7 +65,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -116,13 +92,13 @@
       "partitions_skipped_zero_weight": 7,
       "all_contributing_are_two_row": true,
       "max_contributing_dim": 9,
-      "tr_M_colour_blind": "0.57509087162981031675163288302552596606318116186849",
-      "tr_M_colour_weighted": "0.57517224391777187082653534398618088915249435289287",
-      "delta_absolute": "0.0000813722879615540749024609606549",
+      "tr_M_colour_blind": "0.15194683953767166535184267320498718787056068965625",
+      "tr_M_colour_weighted": "0.15196833920423160759266569775106614127124096465527",
+      "delta_absolute": "0.000021499666559942240823024546079",
       "delta_relative": "0.000141494661062771899920928590957",
-      "rust_canonical": "0.57509087162981031565376396300046787027009654344329",
-      "rust_vs_blind_relative": "1.90903555278784422174824380486e-18",
-      "rust_unavailable_reason": null,
+      "rust_canonical": null,
+      "rust_vs_blind_relative": null,
+      "rust_unavailable_reason": "hecke-canonical-chi binary not built. Build via: cd tools/hecke-engine && cargo build --release --bin hecke-canonical-chi",
       "elapsed_seconds": 0
     },
     "T": {
@@ -136,13 +112,13 @@
       "partitions_skipped_zero_weight": 25,
       "all_contributing_are_two_row": true,
       "max_contributing_dim": 48,
-      "tr_M_colour_blind": "0.2292776605396891787403380757183816171943361184967",
-      "tr_M_colour_weighted": "0.22931010210455650733209081026890887960280163645606",
-      "delta_absolute": "0.0000324415648673285917527345505273",
+      "tr_M_colour_blind": "0.029139919217978920876646776916801836032119050202399",
+      "tr_M_colour_weighted": "0.029144042360972065357254218791869844065838803564739",
+      "delta_absolute": "0.00000412314299314448060744187506801",
       "delta_relative": "0.000141494661062771899920928590957",
-      "rust_canonical": "0.22927766053968917795626336907991385601533654281817",
-      "rust_vs_blind_relative": "3.41976058545285215318718729915e-18",
-      "rust_unavailable_reason": null,
+      "rust_canonical": null,
+      "rust_vs_blind_relative": null,
+      "rust_unavailable_reason": "hecke-canonical-chi binary not built. Build via: cd tools/hecke-engine && cargo build --release --bin hecke-canonical-chi",
       "elapsed_seconds": 1
     },
     "3He": {
@@ -156,13 +132,13 @@
       "partitions_skipped_zero_weight": 25,
       "all_contributing_are_two_row": true,
       "max_contributing_dim": 48,
-      "tr_M_colour_blind": "0.40370991405397142290816009300989545876232380731519",
-      "tr_M_colour_weighted": "0.4037670368514281703686702533334025411550870705919",
-      "delta_absolute": "0.0000571227974567474605101603235071",
+      "tr_M_colour_blind": "0.058587963770360335123692178185237495604668452841067",
+      "tr_M_colour_weighted": "0.058596253654436380218956715452130256830877107284187",
+      "delta_absolute": "0.00000828988407604509526453726689276",
       "delta_relative": "0.000141494661062771899920928590957",
-      "rust_canonical": "0.40370991405397142157994463601783332535992826571501",
-      "rust_vs_blind_relative": "3.29002437332885226331392718032e-18",
-      "rust_unavailable_reason": null,
+      "rust_canonical": null,
+      "rust_vs_blind_relative": null,
+      "rust_unavailable_reason": "hecke-canonical-chi binary not built. Build via: cd tools/hecke-engine && cargo build --release --bin hecke-canonical-chi",
       "elapsed_seconds": 1
     },
     "4He": {
@@ -176,14 +152,14 @@
       "partitions_skipped_zero_weight": 70,
       "all_contributing_are_two_row": true,
       "max_contributing_dim": 297,
-      "tr_M_colour_blind": "0.16095137168262356078215455930035027559197455023721",
-      "tr_M_colour_weighted": "0.16097414544240738182587344098071685392360735413343",
-      "delta_absolute": "0.0000227737597838210437188816803666",
+      "tr_M_colour_blind": "0.011235827850114010029277769977386533196597353895414",
+      "tr_M_colour_weighted": "0.011237417659767421564199549374410607269662696081262",
+      "delta_absolute": "0.00000158980965341153492177939702407",
       "delta_relative": "0.000141494661062771899920928590957",
-      "rust_canonical": "0.16095137168262356000715218629982360874682254901666",
-      "rust_vs_blind_relative": "4.8151336947207673194934752958e-18",
-      "rust_unavailable_reason": null,
-      "elapsed_seconds": 706
+      "rust_canonical": null,
+      "rust_vs_blind_relative": null,
+      "rust_unavailable_reason": "hecke-canonical-chi binary not built. Build via: cd tools/hecke-engine && cargo build --release --bin hecke-canonical-chi",
+      "elapsed_seconds": 71
     }
   },
   "caveats": [

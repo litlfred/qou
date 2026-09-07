@@ -44,7 +44,10 @@ TO that baseline.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
+from codata_constants import (
+    AME_B_HE3_MEV_VALIDATION,
+    M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale,
+)
 import sys
 import math
 from pathlib import Path
@@ -219,7 +222,7 @@ if __name__ == "__main__":
     ATOMS = [
         ("D",    1, 1,  2.22452),
         ("T",    1, 2,  8.481821),
-        ("3He",  2, 1,  7.71804),
+        ("3He",  2, 1,  AME_B_HE3_MEV_VALIDATION),
     ]
     print("=" * 110)
     print("TASK B — UNIFIED MARKOV-STAB + KÄHLER LIFT")

@@ -2,49 +2,49 @@
   "q0Anchor": "independent",
   "q0AnchorReason": "Reads no q0. The family exclusion is decided by the sign of a divided difference over AME2020 data; no substrate quantity enters. Established by import-cone trace (cone=1, no q0 import) and by computations/audits/producer_baked_pin_audit.py, which finds no q0-valued literal in the source. The witness carries no q0 field.",
   "schema": "witness/v1",
-  "computedAt": "2026-09-04T02:58:22.769989+00:00",
+  "computedAt": "2026-09-05T18:03:07.099368+00:00",
   "description": "Two zero-fit consistency tests from QOU.MassTheory.AggregatorFamilyExclusions, run against the AME2020 light-nucleus grid. Result: the volume-minus-surface two-parameter family -- the canonical member of the convex class that survived AggregatorConvexityDichotomy -- is EXCLUDED, as is every other correction shape tried, and no pure power law fits either. The surviving aggregator must be convex with an accelerating local exponent, which neither route supplies.",
   "q0_pin": "not applicable -- consumes no framework quantity",
   "free_parameters": 0,
   "phi_MeV": [
-    "2.224566",
-    "8.0999205",
-    "28.295673"
+    "2.2245662",
+    "8.09991876",
+    "28.2956624"
   ],
   "test1_determinants": [
     {
       "grid": "bond_count",
       "psi": "x^(2/3)  [surface]",
-      "det3": "-9.9031097655378",
-      "normalised": "0.01227950661",
+      "det3": "-9.9031052240171",
+      "normalised": "0.0122795054",
       "family_excluded": true
     },
     {
       "grid": "bond_count",
       "psi": "x^(1/2)",
-      "det3": "-13.889838135063",
-      "normalised": "0.02194111574",
+      "det3": "-13.889831481457",
+      "normalised": "0.02194111312",
       "family_excluded": true
     },
     {
       "grid": "bond_count",
       "psi": "x^(1/3)",
-      "det3": "-17.319968194624",
-      "normalised": "0.03424757592",
+      "det3": "-17.319959601107",
+      "normalised": "0.03424757125",
       "family_excluded": true
     },
     {
       "grid": "bond_count",
       "psi": "log(1+x)",
-      "det3": "-7.2051642659832",
-      "normalised": "0.01446775298",
+      "det3": "-7.2051612652031",
+      "normalised": "0.01446775216",
       "family_excluded": true
     },
     {
       "grid": "bond_count",
       "psi": "x^2",
-      "det3": "46.902987",
-      "normalised": "0.006311570189",
+      "det3": "46.9029864",
+      "normalised": "0.00631157238",
       "family_excluded": true
     },
     {
@@ -57,36 +57,36 @@
     {
       "grid": "mass_number",
       "psi": "x^(2/3)  [surface]",
-      "det3": "-8.1172218091388",
-      "normalised": "0.01405803083",
+      "det3": "-8.117217858985",
+      "normalised": "0.01405802905",
       "family_excluded": true
     },
     {
       "grid": "mass_number",
       "psi": "x^(1/2)",
-      "det3": "-10.673748644698",
-      "normalised": "0.02238397217",
+      "det3": "-10.673743460751",
+      "normalised": "0.02238396935",
       "family_excluded": true
     },
     {
       "grid": "mass_number",
       "psi": "x^(1/3)",
-      "det3": "-12.46638313749",
-      "normalised": "0.0315304651",
+      "det3": "-12.466377093945",
+      "normalised": "0.03153046116",
       "family_excluded": true
     },
     {
       "grid": "mass_number",
       "psi": "log(1+x)",
-      "det3": "-6.8783184901045",
-      "normalised": "0.01809513058",
+      "det3": "-6.8783151325445",
+      "normalised": "0.01809512826",
       "family_excluded": true
     },
     {
       "grid": "mass_number",
       "psi": "x^2",
-      "det3": "66.870102",
-      "normalised": "0.02239164878",
+      "det3": "66.87006864",
+      "normalised": "0.02239164567",
       "family_excluded": true
     },
     {
@@ -101,32 +101,32 @@
     {
       "grid": "bond_count",
       "interval": "1->3",
-      "p": "1.1762952405799"
+      "p": "1.1762949632099"
     },
     {
       "grid": "bond_count",
       "interval": "3->6",
-      "p": "1.804601798433"
+      "p": "1.8046015678922"
     },
     {
       "grid": "bond_count",
       "interval": "spread",
-      "p": "0.6283065578531"
+      "p": "0.62830660468233"
     },
     {
       "grid": "mass_number",
       "interval": "2->3",
-      "p": "3.1871852363143"
+      "p": "3.1871844847771"
     },
     {
       "grid": "mass_number",
       "interval": "3->4",
-      "p": "4.3480451804202"
+      "p": "4.3480446249504"
     },
     {
       "grid": "mass_number",
       "interval": "spread",
-      "p": "1.1608599441059"
+      "p": "1.1608601401733"
     }
   ],
   "assertions": [
@@ -164,9 +164,9 @@
     "probes/mayer-threebody-sign-threshold.witness.json"
   ],
   "source": "AME2020 total nuclear binding energies",
-  "scriptHash": "3dbc601821af",
-  "scriptCommitSha": "c6b8249eb4a85eef5efdb8a0898d66f8cd8ad1ac",
-  "commitSha": "88ca3408d4acc552588470eac31d15ce06084d3d",
+  "scriptHash": "30abe965e1c2",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "engine": "python",
   "durationMs": 0
 }

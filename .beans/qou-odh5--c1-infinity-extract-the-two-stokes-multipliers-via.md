@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-06T23:30:00Z
-updated_at: 2026-08-06T23:30:00Z
+updated_at: 2026-09-07T06:22:35Z
 ---
 
 ## Why this matters
@@ -198,3 +198,89 @@ level d=2) and read the connection matrix between them. Nothing attempted so
 far actually builds those solutions — steps 3 and 4 both tried to shortcut
 past them with asymptotics of the raw coefficients, and both failed for the
 same underlying reason: the sector data is not visible in `b_m` asymptotics.
+
+
+## TAKEOVER 2026-09-07 (stalled-claim protocol)
+
+Claimed under the AGENTS.md stalled-claim rule. Evidence it is stale, not live:
+
+- last commit `2ce063f238` **2026-08-07**, i.e. **31 days** without a commit
+  (threshold is 3 h for the branch backing a live in-progress bean);
+- that commit is **NOT on main** — the work never landed;
+- no `odh5` activity in the last 24 h other than my own bean notes;
+- bean `updated_at` still 2026-08-06 while `status` reads `in-progress`.
+
+Continuing from `main`, not from that branch's tip. **Its branch is not touched
+and will not be force-pushed.**
+
+## Why now: this bean and `qou-hok7` need the SAME object
+
+Three names for one gap:
+
+- **`qou-hok7`** (deuteron q-Borel divisor) needs a **half level**: `Z_n ~ q0^{n^2}`
+  requires exponent `n(n-1) = 2*C(n,2)`, and `qBorelExp d n ~ n^2/(2d)` DECREASES
+  in `d`, so no integer level supplies it. Lean, sorry-free:
+  `QOU.MathlibExt.QBorelKernel.two_mul_qBorelExp_one`.
+- **this bean** records the hull at infinity as the single edge `(0,0) -> (2,-1)`,
+  **slope −1/2**, with the ramification square roots `B_1,B_2` open.
+- **`QBorelKernelLevel.lean:24-27`** names the **ramified level-2 family** as open,
+  for exactly the slope-1/2 case.
+
+Constructing it once unblocks both. That is why this is being taken over now rather
+than left: it is not a second tranche, it is the same one.
+
+
+## 🛑 TAKEOVER RETRACTED SAME DAY (2026-09-07) — the target rests on a retired chain
+
+I claimed this bean above under the stalled-claim rule. **The staleness finding
+stands** (last commit 2026-08-07, 31 days, never landed). **The takeover does not**,
+and I am releasing it without doing the work.
+
+Reading the corpus before building — which is what the discipline is for — turned up
+that this bean's target was superseded a month ago, on the very day its three staged
+sub-beans were scrapped:
+
+- `qou-qbg2` (S1), `qou-qbr3` (S2), `qou-qbs4` (S3) were **all scrapped in one batch
+  at 2026-08-08T11:35:00Z**.
+- [`2026-08-08-rsz-c1-infinity-route-closed.md`](../docs/audits/2026-08-08-rsz-c1-infinity-route-closed.md)
+  is why. The chain this bean runs on —
+  *"C1 has slope ½ ⇒ RSZ level d=2 ⇒ `B_{q,2}` ⇒ `F(P₁,P₂) ≅ ℂ² ⇒ two multipliers`"* —
+  is a **mis-citation**: RSZ §3.3 is titled *"…in the case of **integral slopes**"*,
+  and ½ is not integral. *"Every number in it is right. The reading is not."*
+- This bean's body cites `2026-08-01-c1-inf-slope-half-rsz-stokes.md`, whose framing
+  that closure explicitly supersedes.
+
+Also relevant, and carefully scoped by the corpus itself:
+[`2026-08-08-c1-infinity-has-no-stokes-multiplier.md`](../docs/audits/2026-08-08-c1-infinity-has-no-stokes-multiplier.md)
+retracts the **local isoformal** moduli at `∞` (dimension 0 — C1 is pure isoclinic
+there) while insisting the **connection-matrix** multipliers are a *different object*
+and remain open. So "extract the two C1 Stokes multipliers" is ambiguous between a
+non-existent object and a live one, and this bean does not disambiguate.
+
+**Where the work actually goes**, per the closure audit: **`qou-wgnx`** (theta-normalised
+canonical solutions → the connection matrix and its invariant `χ`, already built) and
+**q-native alien calculus** — right for the reason RSZ was wrong: `F(P₁,…,P_k)` is built
+on the slope filtration and needs `k ≥ 2`, while alien derivations need no filtration.
+
+**Recommended disposition (owner's call, not mine):** re-title this bean to the
+connection-matrix object and fold it into `qou-wgnx`, or scrap it as superseded like its
+three children. I have not changed its status.
+
+
+
+## TAKEN UP 2026-09-07 (owner: "take up idle as relevant")
+
+The owner has ruled that dormancy is not a reason to stand down. Claiming this
+bean under the stalled-claim protocol, with the staleness recorded rather than
+glossed:
+
+- last genuine commit is a month old (see the dormancy table in `qou-hok7`);
+- the whole C1 ∞ arc stopped on 2026-08-08, the day the RSZ route closed;
+- **no sibling branch is touched and none will be force-pushed.**
+
+Work continues from `main` on `claude/alien-calculus-surreal-integration-2t823z`.
+
+**Scope of the takeover is the q-NATIVE ALIEN CALCULUS route**, which is what the
+closure audit names as the successor — NOT the retired RSZ slope-½ chain, and NOT
+the local-isoformal object that `2026-08-08-c1-infinity-has-no-stokes-multiplier.md`
+proves has dimension 0.

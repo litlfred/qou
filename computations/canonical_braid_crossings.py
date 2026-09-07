@@ -142,6 +142,8 @@ def atom_canonical_crossings(
     *,
     include_inter: bool = True,
     m_pp: int = 1, m_pn: int = 1, m_nn: int = 1,
+    intra_order: str = "borromean",
+    ordering: list | None = None,
 ) -> list[tuple[int, str]]:
     """Canonical (gen_idx, ctype) crossings for atomic braid β(Z, N).
 
@@ -154,6 +156,14 @@ def atom_canonical_crossings(
     Replaces the legacy `hecke_character_symbolic.atomic_braid_to_crossings`,
     which used a disjoint-product convention not matching the
     canonical Markov-axiom reducer.
+
+    `intra_order` is forwarded verbatim; see `atom_braid_word_3A`. Since
+    2026-09-05 the default is `"borromean"`, so each nucleon's confinement core
+    is the alternating `(σ₀σ₁⁻¹)³`. Pass `"grouped"` for the pre-2026-09-05
+    word — which is what any caller asserting the PER-GENERATOR factorisation
+    `tr_M = ∏_gen tr₂` must do, since that identity needs each generator's
+    letters contiguous and the Borromean word interleaves them (bean
+    `qou-hu1f`). Log-RATIO consumers need no change: the ratio is invariant.
     """
     from mass_at_3A_proper import atom_braid_word_3A
     from hecke_core import h as h_val  # numeric h = q_0 − q_0⁻¹
@@ -162,6 +172,8 @@ def atom_canonical_crossings(
         Z, N,
         m_pp=m_pp, m_pn=m_pn, m_nn=m_nn,
         include_inter=include_inter,
+        intra_order=intra_order,
+        ordering=ordering,
     )
     out: list[tuple[int, str]] = []
     for run_idx, (c, d, g) in enumerate(triples):

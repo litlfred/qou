@@ -19,7 +19,7 @@ Currently the paper mostly uses "proposition" / "definition" / "remark" without 
 
 ### P-2 — Front-load the cohomological discipline statement
 
-`prop:three-calibration-discipline` (H⁰/H¹/H² calibrations) and `prop:three-parameters-wedderburn` (3 channels) are foundational. They should appear **early in the introduction** as the framework's organizing principle, not buried in later chapters. The "3 inputs ↔ 3 channels" identity is the cleanest way to communicate the framework's parsimony.
+`def:three-calibration-discipline` (H⁰/H¹/H² calibrations) and `prop:three-parameters-wedderburn` (3 channels) are foundational. They should appear **early in the introduction** as the framework's organizing principle, not buried in later chapters. The "3 inputs ↔ 3 channels" identity is the cleanest way to communicate the framework's parsimony.
 
 ### P-3 — Resolve the muon knot identification
 

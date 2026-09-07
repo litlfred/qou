@@ -1,7 +1,7 @@
 {
  "computation": "triton-magnus-omega2-sign",
  "scriptFile": "triton_magnus_omega2_sign_probe.py",
- "computedAt": "2026-09-03T23:45:04.028182+00:00",
+ "computedAt": "2026-09-07T16:32:38.679493+00:00",
  "engine": "mpmath mpf at 140 dps (H\u2089 Hoefsmit seminormal; finite-diff germ; 0 free params)",
  "free_parameters": 0,
  "inputs": {
@@ -12,40 +12,40 @@
   "triton_word_source": "mass_at_3A_proper.atom_braid_word_3A(1,2) \u2014 source of truth",
   "triton_word_gens": [
    0,
+   1,
    0,
+   1,
    0,
-   0,
-   0,
+   1,
    0,
    0,
    1,
-   1,
-   1,
-   1,
+   0,
+   0,
    2,
    3,
+   4,
    3,
+   4,
    3,
-   3,
-   3,
+   4,
    3,
    3,
    4,
-   4,
-   4,
-   4,
+   3,
+   3,
    5,
    6,
+   7,
    6,
+   7,
    6,
-   6,
-   6,
+   7,
    6,
    6,
    7,
-   7,
-   7,
-   7
+   6,
+   6
   ],
   "triton_word_multiplicities": {
    "0": 7,
@@ -82,7 +82,7 @@
     ],
     "dim": 8,
     "y_lambda": "0.000134948642207292287168072643508378668268421981355538262254488",
-    "tr_rho_Omega2": "-2271.09139581790242421519114569182363045137321002134009488275",
+    "tr_rho_Omega2": "-507.730214465623494242693411611618246846442949578717075527023",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -92,7 +92,7 @@
     ],
     "dim": 27,
     "y_lambda": "0.00182775179942575991895909633014782985490427134065006796008202",
-    "tr_rho_Omega2": "-1316.67060955349226658923749995954946711021200597607063387719",
+    "tr_rho_Omega2": "-347.099813348571451058583484294100553480777044895154052008565",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -103,7 +103,7 @@
     ],
     "dim": 28,
     "y_lambda": "0.00194047290110361231343228011111441304575969349357993107348185",
-    "tr_rho_Omega2": "-2851.70731736872817708494113783028379502365423588120454435678",
+    "tr_rho_Omega2": "-414.739107387702021202302371962200614088450797440648140021443",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -113,7 +113,7 @@
     ],
     "dim": 48,
     "y_lambda": "0.00653453013341654057139223955983725486598680108353512470288272",
-    "tr_rho_Omega2": "-902.386736039120500883074000071861606895208464206300760708397",
+    "tr_rho_Omega2": "-96.8870706173023974759145076919020705709967418233957946343912",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -124,7 +124,7 @@
     ],
     "dim": 105,
     "y_lambda": "0.0309801026851379220792997141833409285710390738567083637237077",
-    "tr_rho_Omega2": "-1904.07164780266834120487189417529901336743721531037074185487",
+    "tr_rho_Omega2": "-210.620302214608403272705812419015363294455521503998210005950",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -136,7 +136,7 @@
     ],
     "dim": 56,
     "y_lambda": "0.00854759056033442208858418184407080640661537673686318420575888",
-    "tr_rho_Omega2": "-356.884457040204549441048871293483914687296937840063991528639",
+    "tr_rho_Omega2": "63.7062246621847828767578343293964480101870648081443959525879",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -146,7 +146,7 @@
     ],
     "dim": 42,
     "y_lambda": "0.00538616397532731791950202223730181307147800292201535896807442",
-    "tr_rho_Omega2": "90.1807085152448422538694936062044530205445344474844735116263",
+    "tr_rho_Omega2": "-165.318368562819713994283641346647051694442375279925435734871",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -157,7 +157,7 @@
     ],
     "dim": 162,
     "y_lambda": "0.0802294523920420208698162536124798816908552001237662472569193",
-    "tr_rho_Omega2": "-1128.10837693237828910152653208763698015012082374015354616837",
+    "tr_rho_Omega2": "-76.5573791999492197898619296966626875904212764510811410300128",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -168,7 +168,7 @@
     ],
     "dim": 120,
     "y_lambda": "0.0440401915957928084764889142875329900293786525767373905748258",
-    "tr_rho_Omega2": "603.965016444777186732118642917437812491676464056243797482340",
+    "tr_rho_Omega2": "24.6574689876273696132611371619517246889668151130129798217765",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -180,7 +180,7 @@
     ],
     "dim": 189,
     "y_lambda": "0.106276165851827883194333084486817334278857962851912644195497",
-    "tr_rho_Omega2": "-353.637823372221192839948467042784797749258363799629521728101",
+    "tr_rho_Omega2": "34.9057986714556410720771930730803788685835573190308510571900",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -193,7 +193,7 @@
     ],
     "dim": 70,
     "y_lambda": "0.0137924563094256889995188181341086054223271510622867602148170",
-    "tr_rho_Omega2": "261.675681707712003552377950592745395381434848047270405874561",
+    "tr_rho_Omega2": "16.6143112268076913703472106907610749959784435815734331400307",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -204,7 +204,7 @@
     ],
     "dim": 84,
     "y_lambda": "0.0224965799512542083526583976693102744076196279355721371275911",
-    "tr_rho_Omega2": "-408.564600900863823585951908852430520197283863709281549138386",
+    "tr_rho_Omega2": "-32.6473660848647183802569717595497434690179098440219049892961",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -215,7 +215,7 @@
     ],
     "dim": 168,
     "y_lambda": "0.0909695600196349032121536901623172205913218354965887019862046",
-    "tr_rho_Omega2": "97.5483373960981725960903232741687363684327576973948781231929",
+    "tr_rho_Omega2": "112.200922822142592898340124433486406600936906466959034933998",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -227,7 +227,7 @@
     ],
     "dim": 216,
     "y_lambda": "0.146266507286411387970152490090370590535622638083388208830085",
-    "tr_rho_Omega2": "-41.0102840150919263844449348808654295048867003629672865032744",
+    "tr_rho_Omega2": "6.21110717169766529603999217731027047364653753894181513711049",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -239,7 +239,7 @@
     ],
     "dim": 216,
     "y_lambda": "0.146266507286411387970152490090370590535622638083388208830085",
-    "tr_rho_Omega2": "199.029008329925810461429328691159640591353748674647659697701",
+    "tr_rho_Omega2": "42.9861791734045628261420759283831811287505860190177703008299",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -252,7 +252,7 @@
     ],
     "dim": 189,
     "y_lambda": "0.106276165851827883194333084486817334278857962851912644195497",
-    "tr_rho_Omega2": "273.317830974692458579544039211905212780754737817969265144462",
+    "tr_rho_Omega2": "-36.0792200112150951388517682592011752205693628372184147731204",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -266,7 +266,7 @@
     ],
     "dim": 56,
     "y_lambda": "0.00854759056033442208858418184407080640661537673686318420575888",
-    "tr_rho_Omega2": "-97.0634374686341398772547176691125813768407344745111663858788",
+    "tr_rho_Omega2": "-18.0134275671349541135060333463214578695441429307018356198602",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -277,7 +277,7 @@
     ],
     "dim": 42,
     "y_lambda": "0.00586727041348022783323498102127830231134055830593660973022486",
-    "tr_rho_Omega2": "-17.0183998515110569403844736951081903908032188304763816519172",
+    "tr_rho_Omega2": "-63.3762026065612979416317560870211270761000296549950800746691",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -289,7 +289,7 @@
     ],
     "dim": 168,
     "y_lambda": "0.0909695600196349032121536901623172205913218354965887019862046",
-    "tr_rho_Omega2": "90.3136195421646281568116801216175163113042771437853785642951",
+    "tr_rho_Omega2": "0.0891399567028999537611052693927836022587108036479434075167538",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -302,7 +302,7 @@
     ],
     "dim": 120,
     "y_lambda": "0.0440401915957928084764889142875329900293786525767373905748258",
-    "tr_rho_Omega2": "38.6858834967580048232777783170666780393407420879816049269176",
+    "tr_rho_Omega2": "-13.6428482806000181544626277335962716359286438487932025679887",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -314,7 +314,7 @@
     ],
     "dim": 84,
     "y_lambda": "0.0224965799512542083526583976693102744076196279355721371275911",
-    "tr_rho_Omega2": "81.9224477466446653677593129648789060873104952304453523789403",
+    "tr_rho_Omega2": "22.7300423885321551821725417546852565540149254826604848996970",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -327,7 +327,7 @@
     ],
     "dim": 162,
     "y_lambda": "0.0802294523920420208698162536124798816908552001237662472569193",
-    "tr_rho_Omega2": "28.0856703670588294953638971600012957990035152504681662783211",
+    "tr_rho_Omega2": "10.8805821415519611861076516689992453741913682887229515830696",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -341,7 +341,7 @@
     ],
     "dim": 105,
     "y_lambda": "0.0309801026851379220792997141833409285710390738567083637237077",
-    "tr_rho_Omega2": "16.0768510074058638841730061941167815919829664663418294548075",
+    "tr_rho_Omega2": "-16.8466385955599342566484103662240185396862251552278045356921",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -356,7 +356,7 @@
     ],
     "dim": 28,
     "y_lambda": "0.00194047290110361231343228011111441304575969349357993107348185",
-    "tr_rho_Omega2": "-18.7743597539129698124085161998821417305585909406265132404304",
+    "tr_rho_Omega2": "6.48748968549943041194573564164331387503956060875789456298282",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -369,7 +369,7 @@
     ],
     "dim": 42,
     "y_lambda": "0.00538616397532731791950202223730181307147800292201535896807442",
-    "tr_rho_Omega2": "-70.5171676835308216745074013684092677027676811982777639118253",
+    "tr_rho_Omega2": "11.1051908659054655291381440501861820599324325173230289217268",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -383,7 +383,7 @@
     ],
     "dim": 48,
     "y_lambda": "0.00653453013341654057139223955983725486598680108353512470288272",
-    "tr_rho_Omega2": "73.4409651077570654261171591546371710496376725541741025621168",
+    "tr_rho_Omega2": "-8.23667061486927998766361976243527245732143695005800270415727",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -398,7 +398,7 @@
     ],
     "dim": 27,
     "y_lambda": "0.00182775179942575991895909633014782985490427134065006796008202",
-    "tr_rho_Omega2": "-32.1423475019566552352883806457823885959454227562362141250509",
+    "tr_rho_Omega2": "1.47740816824113688210377708408557089650873250298331509112042",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -414,7 +414,7 @@
     ],
     "dim": 8,
     "y_lambda": "0.000134948642207292287168072643508378668268421981355538262254488",
-    "tr_rho_Omega2": "4.76058813010449194384011603258356133894045120780295704577764",
+    "tr_rho_Omega2": "2.23283070049603076731006857696825780675912995801123647541423",
     "tr_Omega2_ctrl": "0.0"
    },
    {
@@ -435,23 +435,29 @@
     "tr_Omega2_ctrl": "0.0"
    }
   ],
-  "P_total": "-108.146836397091605319458151183823549814359487104922941394853",
-  "P_total_sign": -1,
+  "weight_family": "quantum_plancherel_dq2_over_n_factorial",
+  "weight_family_note": "NOT the Wenzl y_lambda used by the production Markov trace. AGENTS.md forbids conflating y_lambda / w_lambda / w~_lambda, which are distinct at q != 1. Re-weighting this witness's own per-partition tr(rho.Omega2) with the Wenzl bridge weight leaves the sign of P_total unchanged \u2014 measured in magnus_omega2_weight_family_robustness_probe.py.",
+  "headline_pairing": "P_total_wenzl",
+  "P_total_wenzl": "-13.9305624538075731404180552517117496835131199151501772774679",
+  "P_total_wenzl_sign": -1,
+  "P_total_wenzl_note": "Sum over lambda of y_lambda^Wenzl * tr(rho.Omega2), the production Markov weight (row cap at level r=2 zeroes every shape with >=3 rows). tr(1)=1 at every n, so values ARE comparable across A -- which the Plancherel arm is not (tr(1) = 11.1 / 184.2 / 6751.5 at n = 6 / 9 / 12). See docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md.",
+  "P_total": "2.47019270829893338491487511880018646850639746844847340088048",
+  "P_total_sign": 1,
   "P_control_rho_identity": "0.0",
   "control_tr_M_Omega2_vanishes": true,
-  "n_partitions_positive": 13,
-  "n_partitions_negative": 15,
+  "n_partitions_positive": 14,
+  "n_partitions_negative": 14,
   "sign_indefinite_across_partitions": true,
   "A2_P_total_sign": -1,
-  "sign_flip_vs_A2": false
+  "sign_flip_vs_A2": true
  },
- "verdict": "NO FLIP \u2014 P(A=3) has the SAME sign as P(A=2) (both negative). The simple 'negative at A=2 \u2192 positive at A\u22653' reading of the Magnus carrier does NOT hold at the triton: the A-dependence of the pairing sign is not a single flip at A=3. This does not retire the carrier (the A=2 sign stands, control=0, sign-indefinite 13+/15-), but it constrains any story that assumed monotone sign reversal. scope-(a).",
+ "verdict": "SIGN FLIP CONFIRMED \u2014 P(A=3) is POSITIVE while P(A=2) was NEGATIVE. The y-weighted 2nd-order Magnus pairing REVERSES sign between the deuteron (A=2) and the triton (A=3), the signature the merged Magnus-wall audit named for a correction that reduces binding at A=2 and adds it at A\u22653. Control tr_M(\u03a9\u2082)=0 holds; per-partition sign-indefinite (14+/14-). HONEST LIMITS: dimensionless SIGN datum only (scope-a); NOT a MeV (open \u0394_\u03bb gate), NOT a physical binding-sign assertion (that is qou-v7ro/#6077, cited not re-derived). The flip is a fact about the object across A; mapping it to 'binding' still needs the sign convention.",
  "scope": "scope-(a): decides the A=3 SIGN of tr_M(\u03c1\u00b7\u03a9\u2082) and its relation to the A=2 sign. Dimensionless structural datum. Does NOT reproduce any MeV (open \u0394_\u03bb gate \u2014 a number would be a fit). Does NOT assert a physical binding-sign convention (qou-v7ro / PR #6077, cited not re-derived). No fit; nothing inverted; nothing wired.",
  "wired": false,
  "notes": "Thread-A takeover follow-on: the A\u22653 half the merged deuteron-magnus-omega2 audit (2026-08-29) left untested. Same construction as deuteron_magnus_omega2_sign_probe.py (qou-dp32) on the triton (H\u2089). Cites qou-v7ro/#6077 for the sign convention; does not re-derive it.",
- "scriptHash": "9fc4b9d8b17e",
- "scriptCommitSha": "4b5c9cd666fcab7f6f6b6590385cbe2dbc90c165",
- "commitSha": "d13f42345e4235622b730d8a9c42d243a5397a86",
+ "scriptHash": "bcda4a09a7db",
+ "scriptCommitSha": "cc6801d013061ea73cd17e83b1aec909ff1f9298",
+ "commitSha": "cc6801d013061ea73cd17e83b1aec909ff1f9298",
  "durationMs": 0,
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736"

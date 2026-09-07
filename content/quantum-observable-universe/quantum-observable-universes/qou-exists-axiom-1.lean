@@ -28,6 +28,10 @@ LaTeX label: `lem:qou-exists-axiom-1`
 - [kock2004] J. Kock, *Frobenius Algebras and 2D TQFTs*
 -/
 
+-- `QuantumObservableUniverse` is universe-carrying (AGENTS.md §7d U2);
+-- both levels must be named before `.{u, v}` can be applied to it.
+universe u v
+
 namespace QOU.QuantumObservableUniverse
 
 /-- **Axiom 1 — Frobenius pairing (existence form).**

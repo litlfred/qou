@@ -48,6 +48,12 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
 from closed_form_tau_M import markov_z  # noqa: E402 — canonical convention-D z
 from q_parameter import Q_MP  # noqa: E402 — experimental (proton) pin
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
@@ -81,10 +87,10 @@ L = {"pp": mp.log(1 / f_pp), "pn": mp.log(1 / f_pn), "nn": mp.log(1 / f_nn)}
 
 # ── AME 2020 binding targets [MeV] ───────────────────────────────────
 AME = {
-    "D":   mp.mpf("2.224566"),
-    "T":   mp.mpf("8.481798"),
-    "3He": mp.mpf("7.718043"),
-    "4He": mp.mpf("28.295673"),
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
+    "T":   AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
 

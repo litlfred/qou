@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-01T01:43:06Z
-updated_at: 2026-09-05T06:26:42Z
+updated_at: 2026-09-05T08:12:57Z
 ---
 
 
@@ -46,8 +46,10 @@ actually construct that q-difference `D_q` from Σ.
 ## What is missing (the real gap)
 
 Neither Mathlib nor the corpus has a **q-jet bundle / q-D-module prolongation of a
-connection on an algebraic curve**. There is no object `J^n_q E`, no q-difference
-connection lift, no q-symbol calculus at a ramified pole. This is genuine
+connection on an algebraic curve**. There is no object `J^n_q E` and no q-difference
+connection lift.
+
+> 🛑 **Correction (2026-09-06, `qou-p6m1`).** This sentence also said “no q-symbol calculus at a ramified pole”. That half is **false since 2026-09-03**: `QOU.Mathlib.RamifiedShiftCalculus` builds exactly that, sorry-free. `J^n_q E` and the connection lift remain absent, so **this gap stands** — narrowed, not closed. This is genuine
 mathematical-infrastructure construction, not a probe.
 
 ## Existing infra to build on
@@ -111,9 +113,11 @@ no fit, no conjecture-class asserting the identification:
 The **jet-tower lift** `D_q : Jⁿ E → Jⁿ⁺¹ E` over Σ compatible with the SW connection
 is still open, blocked on TWO things:
 
-- **(i) Missing infra.** No q-jet bundle / q-D-module prolongation of a connection on
-  an algebraic curve exists in Mathlib or the corpus (the ingredients above are the
-  *base* operator + the *curve* structure, not the bundle lift).
+- **(i) Missing infra.** No q-jet bundle prolongation of a connection on
+  an algebraic curve exists in Mathlib or the corpus (the ingredients above are
+  the *base* operator + the *curve* structure, not the bundle lift). The
+  *symbol calculus* half of this item's original wording is **PRESENT** since
+  2026-09-03 — `QOU.Mathlib.RamifiedShiftCalculus`, sorry-free; see `qou-p6m1`.
 - **(ii) q-chain-rule obstruction.** The classical jet uses implicit differentiation
   `X' = −(∂_z C)/(∂_X C)` of `C_z(X(z))=0`. The Jackson q-derivative has **no clean
   chain rule** for `D_q(C_z(X(z)))`, so the classical implicit-jet route does not
@@ -155,3 +159,17 @@ brick.
 A rational q-connection on the base z-line (z -> lambda z, lambda not a root of unity) with the three colour sheets as flat sections does NOT exist. Shape: the colour cubic is irreducible over K(z) for every char-0 field K (Lean QOU.Mass.ColorCubicIrreducible.colorCubicAt_ne_zero + colorCubic_no_ratFunc_root, sorry-free) so no sheet is rational in z; each sheet is algebraic hence D-finite (explicit order-3 ODE in the probe, leading coefficient vanishing on the branch sextic); a rational rank-3 q-difference system with the sheets as solutions would make a sheet q-holonomic; D-finite AND q-holonomic => rational (Bezivin 1992 / Ramis 1992 / Schaefke-Singer JEMS 2019). Contradiction.
 
 NOT pruned: non-rational coefficients, operators on Sigma rather than the base, and the LOCAL q-dilation t -> qt at a branch point (the theorem does not apply there — every power series is trivially first-order q-holonomic with a power-series coefficient). Routes 2 and 3 untouched; 3 (RSZ / Sauloy local framework) is the natural next step since the surviving object is local. Audit: docs/audits/2026-09-04-w1-route1-base-qshift-rationality-prune.md.
+
+
+
+## Route 1 prune STRENGTHENED 2026-09-05 (bean qou-7fnr, PR #6738) — it covers the local chart too
+
+The route-1 entry above ends by saying the LOCAL q-dilation t -> mu t at a branch point is not pruned because the theorem does not apply there. That is wrong: the reason given concerned power-series coefficients, the theorem concerns rational ones. In the local coordinate the sheets are still algebraic over K(t) hence D-finite, and still not rational (t^2 = z - z_c makes K(t)/K(z) quadratic, and an irreducible cubic has no root of degree <= 2 — QOU.Mass.IrreducibleCubicNoQuadraticRoot, sorry-free). So a rational q-dilation is excluded in the local chart as well.
+
+Route 1 is now excluded in BOTH coordinates. Routes 2 (root-of-unity fibre monodromy) and 3 (RSZ / Sauloy local framework) remain, and route 3 now has to supply an operator whose coefficients are NOT rational in a coordinate — a sharper requirement than the earlier entry implied. Audit: docs/audits/2026-09-05-w1-local-qdilation-also-excluded-correction.md.
+
+## Route 1 closed on Sigma too (2026-09-05, bean qou-lmnq, PR #6769)
+
+The 2026-09-04 entry above closed route 1 in the base and local COORDINATES, by the coefficient field. It left an operator on Sigma itself untouched. That is now closed for the dilation: no nontrivial z -> lambda z lifts to an automorphism of Sigma at all, because such a lift would permute the six finite branch points and hence satisfy D(lambda z) = c D(z), whose constant and linear coefficients force c = 1 then lambda = 1 (Lean QOU.Mass.DilationBranchLocusRigidity, sorry-free). Holds for every lambda including roots of unity, so it is complementary to Bezivin-Ramis rather than dependent on it.
+
+Route 1 is therefore closed in all three charts. ROUTE 2 (root-of-unity FIBRE monodromy) is untouched — it acts on the fibre, not the z-line — and is now the live route; route 3 (RSZ/Sauloy framework import) likewise.

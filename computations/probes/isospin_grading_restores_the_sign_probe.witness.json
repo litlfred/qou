@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-03T04:47:27.404723+00:00",
-  "commitSha": "56e72932e96614dcd6c693a8e8293e401bfc3abd",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T18:00:53.482204+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "A1_two_blocks_match_the_two_isospin_channels",
@@ -42,7 +42,7 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "max ratio 1.000000000 at beta=0 where both channels are log q to 5.7e-42"
+      "source": "max ratio 1.000000000 at beta=0 where both channels are log q to 4.3e-42"
     },
     {
       "name": "A6_nature_is_asymmetric_beyond_the_models_cap",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 39,
   "computation": "isospin_grading_restores_the_sign_probe",
   "scriptFile": "isospin_grading_restores_the_sign_probe.py",
-  "scriptHash": "892d0358204e",
-  "scriptCommitSha": "1d9d3500f5842b6bb081646430e9cbb5d02ad725",
+  "scriptHash": "8cbb7f05821e",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,10 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -136,7 +136,7 @@
       "max_ratio": "1.000000000000",
       "attained_at_beta": "0",
       "both_channels_equal_log_q": "0.10434072031952",
-      "experimental_ratio": "33.705545",
+      "experimental_ratio": "33.705548",
       "robustness_half_double": [
         "67.4111",
         "16.8528"
@@ -144,7 +144,7 @@
     },
     "magnitudes": {
       "alpha_log_q_MeV": "0.4367683107",
-      "deuteron_MeV": "2.224566",
+      "deuteron_MeV": "2.2245662",
       "factor_low_vs_deuteron": "5.09324",
       "virtual_state_MeV": "0.066",
       "factor_high_vs_1S0": "6.6177"

@@ -72,7 +72,7 @@ needs — a topological invariant of the weak-place projection of
 the substrate — is not yet identified.
 
 This is an audit failure under
-[`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md):
+[`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md):
 $N_v$ functions as a **fourth external calibration** in the current
 code path. Hence 🔴.
 

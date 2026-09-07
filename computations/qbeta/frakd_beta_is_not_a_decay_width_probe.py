@@ -63,9 +63,22 @@ additionally needs the coupling and the phase-space integral, which is exactly
 the content the framework has not supplied -- and exactly what candidate (iii)
 asked for.
 
-So this is a NEGATIVE result about my own earlier positive one, and it hands
-candidate (iii) back its obstacle in sharper form: the missing object is not
-"a decay observable" (the corpus has one) but specifically **the rate**.
+So this is a NEGATIVE result about my own earlier positive one.
+
+CORRECTED 2026-09-05 -- the sentence that stood here was wrong.  It read:
+"the missing object is not 'a decay observable' (the corpus has one) but
+specifically **the rate**."  The corpus HAS a rate: `prop:hadron-half-life`
+states Gamma_beta = |W(q)|^2 mu_0/(2 pi^3) * [2]_q * |M_q|^2 * f(Q) with
+f(Q) ~ Q^5, and its coupling W(q) = q^2(q^12+q^8-1)/(q^2+1)^2 is DERIVED as
+the canonical Markov trace of the T_{3,5} braid word in H_3(q).  I asserted
+an absence I had not measured; a grep of content/ for the rate would have
+found it.  Measured and corrected in `weak_scale_crossing_count_nv_probe.py`.
+
+What is actually missing is the rate's SCALE, not its shape: the weak-scale
+crossing count N_v in v = N_v * E_x * mu_0 is undetermined, so G_F enters
+numerically from experiment.  N_v = 3v/m_e = 1445519.51 +/- 0.37, q-independent.
+
+The arithmetic below is UNAFFECTED and still refutes the reciprocal mechanism.
 
 SCOPE
 -----
@@ -87,6 +100,8 @@ import sys
 from pathlib import Path
 
 import mpmath as mp
+
+from qou_substrate.witness import WitnessBuilder as _WB  # noqa: E402 -- provenance stamp
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
@@ -175,7 +190,14 @@ def main() -> int:
          "passed": True,
          "detail": "the Lean and arithmetic of #6687 stand (two width MECHANISMS, pure "
                    "mathematics); the step from 'D_beta is CAL-2' to 'the framework has "
-                   "a categorical decay width' does not. Candidate (iii) returns to OPEN."},
+                   "a categorical decay width' does not. Candidate (iii) returns to OPEN. "
+                   "CORRECTED 2026-09-05: this probe ALSO concluded that the corpus has "
+                   "no rate at all. It does -- prop:hadron-half-life, with a derived "
+                   "T_{3,5} Markov-trace coupling. What is open is the rate's SCALE "
+                   "(the weak-scale crossing count N_v), not its shape. (iii) still "
+                   "returns to OPEN, but re-scoped: the corpus's rate is real at real "
+                   "q, so it exhibits a width needing no Im(q). See "
+                   "weak_scale_crossing_count_nv_probe.py."},
     ]
     print("\n  assertions:")
     for a in assertions:
@@ -241,6 +263,10 @@ def main() -> int:
         "assertions": assertions,
         "allPassed": ok,
     }
+    _WB.stamp_staleness_metadata(
+        w, script_path=__file__, q0_anchor="proton",
+        q0_anchor_reason=w["q0AnchorReason"], q0_value=w["q0Value"],
+    )
     out.write_text(json.dumps(w, indent=2) + "\n")
     print(f"\n  witness -> {out.relative_to(ROOT)}")
     return 0 if ok else 1

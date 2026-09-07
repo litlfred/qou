@@ -1,0 +1,89 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T17:01:43.538720+00:00",
+  "commitSha": "21a8d76250d2c826430ebb0e65b697ccce0adbfd",
+  "assertions": [
+    {
+      "name": "the CS-tower row the block publishes reproduces at the proton pin",
+      "computed": "137.0359351",
+      "expected": "137.0359351",
+      "passed": true
+    },
+    {
+      "name": "the resummation gain is pin-invariant, so higher orders do not own the residual",
+      "computed": "11.06",
+      "expected": "11.06",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "alpha_em_form_comparison_probe",
+  "scriptFile": "alpha_em_form_comparison_probe.py",
+  "scriptHash": "17922d9e7dbc",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha/alpha_em_form_comparison_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha/alpha_em_form_comparison_probe.py"
+  },
+  "description": "Every alpha_EM closed form the corpus carries, evaluated at both registered pins and scored in ppb against CODATA 2022 read from the NIST table. This is the producer tbl:em-coupling-projection-table1-data names in its own prose and the source of six of that table's seven rows; it previously emitted no witness, leaving those rows with no machine-readable provenance while a different probe claimed the block and computed only the bare form (qou-i229). Records the resummed CS tower (the table's 137.0359351 at the proton pin, -467.6 ppb), the order-2 truncation it supersedes, and the RULED-OUT PSLQ-empirical form -- which has the smallest residual of any form here, the signature of a fit rather than evidence for one.",
+  "contentBlock": "prop:em-coupling-projection",
+  "data": {
+    "forms_at_proton_pin": {
+      "q0": "1.1099785827513808076",
+      "bare  q[9][10]": "136.8232088536",
+      "bare + 2/(3pi)": "137.0354154444",
+      "CS tower resummed": "137.035935094",
+      "45[3](1+d+8qd^2)": "137.0359995317",
+      "bare  q[9][10] [ppb vs CODATA2022]": "-1552806.0",
+      "bare + 2/(3pi) [ppb vs CODATA2022]": "-4259.7028",
+      "CS tower resummed [ppb vs CODATA2022]": "-467.63642",
+      "45[3](1+d+8qd^2) [ppb vs CODATA2022]": "2.5884932"
+    },
+    "forms_at_muon_pin": {
+      "q0": "1.1099785956427390467",
+      "bare  q[9][10]": "136.8232197293",
+      "bare + 2/(3pi)": "137.0354263201",
+      "CS tower resummed": "137.035946015",
+      "45[3](1+d+8qd^2)": "137.0360000014",
+      "bare  q[9][10] [ppb vs CODATA2022]": "-1552726.6",
+      "bare + 2/(3pi) [ppb vs CODATA2022]": "-4180.339",
+      "CS tower resummed [ppb vs CODATA2022]": "-387.94155",
+      "45[3](1+d+8qd^2) [ppb vs CODATA2022]": "6.0159503"
+    },
+    "published_intermediates": {
+      "delta_CS_at_proton_pin": "0.00155060213285",
+      "order2_truncation_at_muon_pin__superseded": "137.035944499",
+      "codata_2022_alpha_inv": "137.035999177",
+      "codata_2022_uncertainty": "0.000000021"
+    },
+    "residual_ownership": {
+      "resummation_gain_ppb": "11.062641",
+      "cs_tower_residual_ppb": "467.63642",
+      "pin_change_muon_to_proton_ppb": "-79.694873",
+      "kappa_needed_for_exact_closure": "1.9153143",
+      "kappa_witten_1988": "1.722"
+    }
+  },
+  "caveats": [
+    "The smallest residual belongs to the RULED-OUT PSLQ-empirical form. That is the signature of a fit, not evidence for it; the form is recorded only so the comparison is legible.",
+    "kappa is still a `sorry`. Exact closure at the proton pin needs 1.9153143 against Witten's 1.722, an 11.2 % gap, and nothing here derives it.",
+    "The muon-pin rows use the converged live pin from q-pinning-50-digit.witness.json, not the retired CODATA-2018 vintage that several content blocks still publish (qou-i229)."
+  ]
+}

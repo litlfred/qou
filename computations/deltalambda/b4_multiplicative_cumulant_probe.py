@@ -75,6 +75,12 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 # ---- derived substrate constants (0-fit) -----------------------------------
 Q0 = mp.mpf(Q_50_DIGIT_STR)
@@ -88,8 +94,8 @@ TRM_D = mp.mpf("0.7280918153466761555460727563")
 TAU_N = TRM_D / (TAU_P * Z_MK)
 
 # AME bindings (DIAGNOSTIC-ONLY — used to form the target, never to fit)
-AME = {"D": mp.mpf("2.224566"), "T": mp.mpf("8.481798"),
-       "3He": mp.mpf("7.718043"), "4He": mp.mpf("28.295673")}
+AME = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION,
+       "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 
 
 def pair_factor(kind: str, pn: str) -> mp.mpf:

@@ -30,6 +30,10 @@ from pathlib import Path
 from mpmath import mpf, mp
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 
 def young_contents(partition):
@@ -74,8 +78,8 @@ mp.dps = 50
 
 # AME binding energies (MeV)
 AME_MeV = {
-    "deuteron":  mpf("2.224566"),
-    "tritium":   mpf("8.481798"),
+    "deuteron":  AME_B_DEUTERON_MEV_VALIDATION,
+    "tritium":   AME_B_TRITIUM_MEV_VALIDATION,
     "helium-3":  mpf("7.71806"),
 }
 

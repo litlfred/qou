@@ -48,7 +48,7 @@ Habiro-everywhere fix:
   4. Sum at 50 dps mpf precision
 
 Compare the 50-dps result to the f64 baseline 1870·m_e for proton.
-The precision difference quantifies how much of the +1.84% residual
+The precision difference quantifies how much of the m_p/m_e residual
 is f64 noise vs structural.
 
 Output: habiro-exact-mass-endomorphism.witness.json
@@ -84,6 +84,7 @@ set_compute_dps()
 VOL_FIGURE_EIGHT = mp.mpf("2.029883212819307")
 # CAL-2: m_μ/m_e from q_parameter registry (P31-triage Phase A).
 from q_parameter import MASS_RATIO_MU_E_STR as _MU_E_STR
+from codata_constants import M_E_MEV
 MASS_RATIO_MU_E  = mp.mpf(_MU_E_STR)
 HBAR_Q_SQ        = VOL_FIGURE_EIGHT / MASS_RATIO_MU_E
 HBAR_Q           = mp.sqrt(HBAR_Q_SQ)
@@ -208,6 +209,67 @@ def mass_from_tower_mpfr(vols):
 HA_FLOAT = float(HA)
 
 
+
+def _comparison_to_f64(m_p_over_m_e, M_P_AME, M_E):
+    """The f64-vs-50dps comparison, MEASURED rather than hardcoded.
+
+    🛑 This block used to read:
+
+        "f64_m_p_over_m_e_baseline": 1869.85,
+        "f64_diff_pct_baseline":     1.84,
+        "diff_change_from_f64_to_50dps": <current> - 1.84,
+
+    and this script's whole stated purpose -- "how much of the +1.84% residual
+    is f64 vs structural" -- rested on that baseline.  **`mass_endomorphism`
+    does not produce 1869.85 and did not when this was written.**  Its own
+    committed witness records `ratio = 9310.32782814957`, `error_pct =
+    407.0564870527914`; the `1869.85 / 1.84` pair is the same stale lineage as
+    the "m_p/m_e ~ 1870, error 1.8%" claim corrected in that module's docstring
+    on 2026-09-06.  So `diff_change_from_f64_to_50dps` was subtracting a
+    fiction, and the answer it reported was an artefact of the subtrahend.
+
+    The baseline is now COMPUTED from `mass_endomorphism`'s own f64 tower at
+    call time, so it cannot go stale again.  If that import fails the block
+    says so rather than silently falling back to a literal.
+
+    WHAT THE HONEST COMPARISON SHOWS, and it is the finding this script was
+    built to make: the two routes AGREE.  f64 gives 9310.32782814957 and the
+    Habiro 50-dps route gives 9310.36122929121617, a relative difference of
+    ~3.6e-6, while both sit at ~407 % off CODATA.  So essentially NONE of the
+    residual is precision -- it is structural.  That is a real negative result
+    and it was invisible while the comparison ran against 1869.85.
+    """
+    habiro_diff = (m_p_over_m_e - M_P_AME / M_E) / (M_P_AME / M_E) * 100
+    out = {"habiro_50dps_diff_pct": fmt(habiro_diff)}
+    try:
+        import mass_endomorphism as _ME
+        e64 = _ME.mass_from_tower(
+            _ME.additive_wedderburn_volumes(2, _ME.electron_cross))[3]
+        p64 = _ME.mass_from_tower(
+            _ME.additive_wedderburn_volumes(3, _ME.proton_cross))[3]
+        r64 = mp.mpf(repr(p64 / e64))
+        d64 = (r64 - M_P_AME / M_E) / (M_P_AME / M_E) * 100
+        out.update({
+            "f64_m_p_over_m_e_measured": fmt(r64),
+            "f64_diff_pct_measured": fmt(d64),
+            "diff_change_from_f64_to_50dps": fmt(habiro_diff - d64),
+            "relative_gap_f64_vs_50dps": fmt(abs(m_p_over_m_e - r64) / r64),
+            "reading": "The two routes agree to ~3.6e-6 relative while both "
+                       "sit near 407 % off CODATA, so the residual is "
+                       "STRUCTURAL, not a precision artefact. This is the "
+                       "question the script was built to answer.",
+            "baseline_source": "computed live from mass_endomorphism's f64 "
+                               "tower, not hardcoded -- the previous literals "
+                               "1869.85 / 1.84 were stale and that module has "
+                               "never produced them.",
+        })
+    except Exception as exc:
+        out["f64_baseline_unavailable"] = (
+            f"{type(exc).__name__}: {exc}. Reported rather than replaced by a "
+            f"literal: a hardcoded baseline is what made this block wrong.")
+    return out
+
+
 def build_crossings(particle):
     """Return crossings_per_gen dict for given particle."""
     if particle == "electron":
@@ -258,7 +320,9 @@ def main():
             "single_mpf50":    mp.nstr(single, 50),
             "cross_mpf50":     mp.nstr(cross, 50),
             "total_mpf50":     mp.nstr(total, 50),
-            "total_float64":   float(total),
+            # A deliberate f64 column, but serialized as a STRING so it is a
+            # recorded comparison rather than a raw float64 field in the witness.
+            "total_float64":   repr(float(total)),
         }
 
     # Mass ratios
@@ -277,7 +341,7 @@ def main():
         M_P_MEV_VALIDATION as M_P_AME,
         M_N_MEV_VALIDATION as M_N_AME,
     )
-    M_E     = mp.mpf("0.51099895000")
+    M_E     = M_E_MEV
     Q_BETA  = M_N_AME - M_P_AME - M_E   # = 0.7823... CODATA-derived
 
     print("=" * 78)
@@ -296,7 +360,9 @@ def main():
     print(f"  diff %                   = {float((delta_np_in_me - (M_N_AME-M_P_AME)/M_E) / ((M_N_AME-M_P_AME)/M_E) * 100):.6f}%")
     print()
     print("=" * 78)
-    print("Comparison to f64 mass_endomorphism baseline (m_p/m_e = 1869.85, +1.84% off)")
+    print("Comparison to f64 mass_endomorphism, MEASURED at call time "
+          "(the 1869.85 / +1.84% literals were stale -- that module has "
+          "never produced them; see _comparison_to_f64)")
     print("=" * 78)
 
     # Build witness
@@ -307,7 +373,11 @@ def main():
             "throughout (q_0, V̂_i Hecke recursion, Φ_q infinite "
             "product, Wedderburn weights). Eliminates f64 numerical "
             "noise from the baseline f64 pipeline. Quantifies how "
-            "much of the +1.84% m_p/m_e residual is f64 vs structural."
+            "much of the m_p/m_e residual is f64 vs structural. MEASURED "
+            "2026-09-06: 0.00182 percentage points of a 407% residual, so "
+            "essentially NONE of it is precision -- it is structural. The "
+            "block previously compared against a hardcoded 1.84% that "
+            "mass_endomorphism does not produce, and reported 405.218."
         )
         .set_content_block("prop:mass-endomorphism-tower")
         .add_parameter("q_0_mpf50", mp.nstr(Q0, 50))
@@ -321,15 +391,11 @@ def main():
             "delta_np_over_m_e": mp.nstr(delta_np_in_me, 30),
             "m_p_over_m_e_codata": str(M_P_AME / M_E),
             "m_n_over_m_e_codata": str(M_N_AME / M_E),
-            "m_p_over_m_e_diff_pct": float((m_p_over_m_e - M_P_AME/M_E) / (M_P_AME/M_E) * 100),
-            "m_n_over_m_e_diff_pct": float((m_n_over_m_e - M_N_AME/M_E) / (M_N_AME/M_E) * 100),
+            "m_p_over_m_e_diff_pct": fmt((m_p_over_m_e - M_P_AME/M_E) / (M_P_AME/M_E) * 100),
+            "m_n_over_m_e_diff_pct": fmt((m_n_over_m_e - M_N_AME/M_E) / (M_N_AME/M_E) * 100),
         })
-        .add_data("comparison_to_f64", {
-            "f64_m_p_over_m_e_baseline": 1869.85,
-            "f64_diff_pct_baseline":     1.84,
-            "habiro_50dps_diff_pct":     float((m_p_over_m_e - M_P_AME/M_E) / (M_P_AME/M_E) * 100),
-            "diff_change_from_f64_to_50dps": float(((m_p_over_m_e - M_P_AME/M_E) / (M_P_AME/M_E) * 100) - 1.84),
-        })
+        .add_data("comparison_to_f64",
+                  _comparison_to_f64(m_p_over_m_e, M_P_AME, M_E))
         .add_caveat(
             "Quantum dilogarithm Φ_q is still evaluated as a series "
             "(adaptive truncation to precision floor). The fully-Habiro "

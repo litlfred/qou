@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T23:12:29.312503+00:00",
-  "commitSha": "2cd62ed2eb1567d5a412fe894fa96dc444dff66d",
+  "computedAt": "2026-09-05T18:00:41.751560+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "trace_ceiling_admits_connected_excess",
@@ -22,8 +22,8 @@
   "durationMs": 0,
   "computation": "b4-iceil-norm-ceiling",
   "scriptFile": "b4_iceil_norm_ceiling_probe.py",
-  "scriptHash": "9568291c7a5e",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
+  "scriptHash": "b5858271082a",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,7 +35,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "5df83fbc24b06f8a"
@@ -50,9 +50,9 @@
   "tier": "structural (parameter-free B_vol ceiling + committed pairwise best)",
   "result": {
     "E0_MeV": "4.1859814",
-    "B_AME_he4_MeV": "28.29567",
+    "B_AME_he4_MeV": "28.295662",
     "best_pairwise_MeV": "13.522857",
-    "needed_connected_excess_MeV": "14.772813",
+    "needed_connected_excess_MeV": "14.772805",
     "a_V_MeV_per_nucleon": "7.5835672",
     "trace_ceiling_B_vol_he4_MeV": "30.334269",
     "max_connected_room_MeV": "16.811412",

@@ -64,11 +64,12 @@ from _li_2_q_util import load_q_50dps  # noqa: E402
 from substrate._precision import set_compute_dps  # noqa: E402
 from substrate.experimental_constants import M_E_MEV  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 set_compute_dps()
 COMP = str(_COMP)
 
-AME_B_2H = mp.mpf("2.224566")
+AME_B_2H = AME_B_DEUTERON_MEV_VALIDATION
 
 
 def main() -> int:

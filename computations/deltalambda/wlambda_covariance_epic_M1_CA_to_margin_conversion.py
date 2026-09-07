@@ -59,8 +59,7 @@ import mpmath as mp
 
 mp.mp.dps = 40
 
-M_INF = mp.mpf('0.300186614161')          # merged #5901 IO leading (CS) margin
-SIG_RATIO_INF = mp.mpf('0.679609581496')  # merged #5901 sigma_D/sigma_A limit
+from _m1_io_constants import M_INF, SIG_RATIO_INF, RHO_INF  # merged #5901 IO leading constants -- single source, see that module
 C_TARGET = M_INF * mp.sqrt(79)            # margin-level requirement (PR #5929 shape)
 
 
@@ -117,7 +116,6 @@ def main():
     print("#")
 
     # The rho_P leg, for scale: it enters the margin LINEARLY, so no conversion factor.
-    RHO_INF = mp.mpf("0.979796195657")
     dev = [(ti, abs(rho - RHO_INF) * ti) for ti, _, rho in rows]
     print("# FOR SCALE -- the rho_P leg enters m LINEARLY (no conversion), and it is the BIGGER one:")
     print("#   |rho_P - rho_inf| * theta = " + " ".join(mp.nstr(v, 4) for _, v in dev))

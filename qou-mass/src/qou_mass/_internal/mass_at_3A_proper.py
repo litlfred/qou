@@ -46,7 +46,11 @@ Key design decisions:
 """
 from __future__ import annotations
 
-from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale
+from codata_constants import (
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    M_P_MEV_VALIDATION  # noqa: E402 — full-precision m_p per-nucleon scale,
+)
 import os
 import sys
 import math
@@ -84,6 +88,25 @@ from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached  # F6
 from hecke_characters import partitions_of, dim_q, qfac
 
 h = HA_VAL
+
+# Canonical-q₀ intra words, one per `intra_order`, built on first use. The
+# `_PROTON_G0`/`_NEUTRON_G0` constants above are the same letters bucketed by
+# generator; they cannot express the interleaving, which is the whole point of
+# `nucleon_word_letters` (bean `qou-hu1f`). Cached for the same reason those
+# constants are: `nucleon_gen_chains` rebuilds at 60 dps on every call.
+_NUCLEON_WORDS_Q0: dict = {}
+
+
+def _nucleon_words_q0(intra_order: str):
+    """`(proton_word, neutron_word)` at the canonical q₀, memoised per order."""
+    if intra_order not in _NUCLEON_WORDS_Q0:
+        from pyhecke.atom import nucleon_word_letters
+        _NUCLEON_WORDS_Q0[intra_order] = (
+            nucleon_word_letters(['u', 'u', 'd'], intra_order=intra_order),
+            nucleon_word_letters(['u', 'd', 'd'], intra_order=intra_order),
+        )
+    return _NUCLEON_WORDS_Q0[intra_order]
+
 
 # Markov parameter z for the Ocneanu trace: z such that tr_M(sigma_i) = z,
 # tr_M(1) = 1.  This is q^3/(q^2+1) — CONVENTION D, canonical per the owner
@@ -432,8 +455,38 @@ def _cached_seminormal(shape: tuple[int, ...], q):
 def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
                          m_nn: int = 1, include_inter: bool = True,
                          pn_convention: str = "bring_color_weighted",
+                         intra_order: str = "borromean",
+                         ordering: list | None = None,
                          q=None, allow_float64: bool = False):
     """Full 3A-strand word as a list of (c, d, gen_idx) triples.
+
+    ⚠ INTRA ORDERING CHANGED 2026-09-05 (bean `qou-hu1f`; owner ruling). Each
+    nucleon's **confinement core** — the six letters `nucleon_gen_chains`
+    comments as `(σ₀·σ₁⁻¹)³` — used to be laid down grouped, three `σ₀` and then,
+    seven letters later, three `σ₁⁻¹`. `σ₀` and `σ₁` are adjacent and do not
+    commute, so that is a different element of `H₃(q)` from the alternating word
+    the comment names, and only the alternating one is `β_Bor` (matched to
+    `5e-60` against the Lean closed form `(4 + h² − 3h⁴ − h⁶)/(h² + 4)`). The
+    core is now alternating.
+
+    **This does NOT make the returned block `β_Bor`, or a braid.** The block is
+    eleven letters per nucleon, two of them averaged (`σ − (h/2)·1`), which is
+    outside the image of `ρ : B_n → H_n(q)` — see the MISNOMER note below, which
+    is unchanged and still governs. Its `|tr_M|` is `1.145759692457300870`
+    grouped and `0.629328402202921918` alternating, against `0.998562163836787266`
+    for the bare six-letter `β_Bor`; none of the three coincide and none was
+    expected to. Only the ordering of six letters inside the block changed.
+
+    **What moved and what could not.** Log-ratio quantities could not move:
+    `tr_M(W_atom)/tr_M(W_free)` is identical under both orderings to `~1e-60`
+    at `A = 2, 3, 4` and equals `∏ᵢ(z + dᵢ)` under both, because connected-sum
+    multiplicativity is blind to letter order inside a summand — so `L` and the
+    three bond constants are untouched. **Absolute** traces moved, by `3.785×`
+    (`2H`), `7.868×` (`3H`), `6.891×` (`3He`), `14.325×` (`4He`), and
+    `binding_canonical`'s difference route moved with them by the same factor.
+    Pass `intra_order="grouped"` to reproduce any pre-2026-09-05 absolute
+    number. Probe:
+    `the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py`.
 
     ⚠ NAME IS A MISNOMER — this does NOT return a braid word (2026-08-25, PR #5765).
     A rename was considered and rejected: 685 call sites across 382 files. So the
@@ -482,8 +535,8 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
 
     The p-n interface is color-weighted by default (owner directive
     2026-06-01: bring_color_weighted is canonical across the compute):
-    its averaged crossing is `σ − h·(1/2 − δ/4)·1`, δ = flavor_split_
-    subleading(q₀), vs the color-blind `σ − h/2·1` (`pn_convention=
+    its averaged crossing is `σ − h·(1/2 − δ/4)·1`, δ =
+    flavor_split_leading(q₀), vs the color-blind `σ − h/2·1` (`pn_convention=
     "strict_averaged"`, kept for empirical-pipeline validation). The
     p-p (σ) and n-n (σ⁻¹) interfaces are already isospin-distinct and
     carry no extra color weight. See
@@ -553,25 +606,48 @@ def atom_braid_word_3A(Z: int, N: int, *, m_pp: int = 1, m_pn: int = 1,
         _X_NN = (mpf(1), -h_loc)                                    # σ⁻¹
         _X_PN_CW = (mpf(1), -h_loc * (mpf(1) / 2 - delta / 4))      # colour-weighted
         _X_PN_BLIND = (mpf(1), -h_loc / 2)                          # colour-blind
+    # The intra word is built AS A WORD (`nucleon_word_letters`), not as two
+    # per-generator chains concatenated. Writing all of `g0` then all of `g1`
+    # emits `σ₀³σ₁⁻³`, and σ₀/σ₁ are adjacent, so that is a DIFFERENT element
+    # of H₃ from the `(σ₀σ₁⁻¹)³` its source comment names — 82 % away at q₀,
+    # and only the interleaved one is β_Bor (Lean closed form, 5e-60).
+    # `intra_order="grouped"` reproduces the pre-2026-09-05 word.
+    from pyhecke.atom import nucleon_word_letters
     if q is None:
-        p_g0, p_g1, n_g0, n_g1 = _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1
+        # Same role the `_PROTON_G0`/`_NEUTRON_G0` constants played: keep the
+        # canonical-q₀ path off the 60-dps rebuild on every call.
+        p_w, n_w = _nucleon_words_q0(intra_order)
     else:
-        from pyhecke.atom import nucleon_gen_chains
-        p_g0, p_g1 = nucleon_gen_chains(['u', 'u', 'd'], q=q,
-                                        allow_float64=allow_float64)
-        n_g0, n_g1 = nucleon_gen_chains(['u', 'd', 'd'], q=q,
-                                        allow_float64=allow_float64)
+        p_w = nucleon_word_letters(['u', 'u', 'd'], q=q, intra_order=intra_order,
+                                   allow_float64=allow_float64)
+        n_w = nucleon_word_letters(['u', 'd', 'd'], q=q, intra_order=intra_order,
+                                   allow_float64=allow_float64)
     word: list = []
-    ordering = ['p'] * Z + ['n'] * N
+    # `ordering` is the INTER-nucleon sequence. Default `None` reproduces the
+    # sorted `p…p n…n` this function has always built, so every existing caller
+    # is unaffected — asserted, not assumed, by
+    # `computations/probes/atom_word_explicit_ordering_probe.py`.
+    #
+    # Why it is a parameter at all: the corpus records that the character ratio
+    # is blind to INTRA-nucleon letter order (this function's own docstring, and
+    # `the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe`). That
+    # says nothing about the inter-nucleon sequence, and until now no unsorted
+    # sequence could be built at all, so the bond model's per-interface product
+    # had never been tested on one. Hand-building such a word is exactly what
+    # this arc's history warns against; parameterising the canonical builder is
+    # the alternative.
+    if ordering is None:
+        ordering = ['p'] * Z + ['n'] * N
+    else:
+        ordering = list(ordering)
+        if sorted(ordering) != sorted(['p'] * Z + ['n'] * N):
+            raise ValueError(
+                f"ordering {ordering!r} does not have the content (Z={Z}, N={N}); "
+                "it must be a permutation of ['p']*Z + ['n']*N")
     for k, nuc in enumerate(ordering):
-        intra = p_g0 if nuc == 'p' else n_g0
-        intra_g1 = p_g1 if nuc == 'p' else n_g1
         base_g0 = 3 * k
-        base_g1 = 3 * k + 1
-        for c, d in intra:
-            word.append((c, d, base_g0))
-        for c, d in intra_g1:
-            word.append((c, d, base_g1))
+        for c, d, off in (p_w if nuc == 'p' else n_w):
+            word.append((c, d, base_g0 + off))
         if include_inter and k < A - 1:
             i_inter = 3 * k + 2
             next_nuc = ordering[k + 1]
@@ -1234,8 +1310,8 @@ if __name__ == "__main__":
     ATOMS = [
         ("D",    1, 1,  2.22452),
         ("T",    1, 2,  8.481821),
-        ("3He",  2, 1,  7.71804),
-        ("4He",  2, 2, 28.295674),
+        ("3He",  2, 1,  AME_B_HE3_MEV_VALIDATION),
+        ("4He",  2, 2, AME_B_HE4_MEV_VALIDATION),
         ("6Li",  3, 3, 32.0),
         ("7Li",  3, 4, 39.244529),
         ("9Be",  4, 5, 58.1650),

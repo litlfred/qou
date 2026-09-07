@@ -9,9 +9,12 @@ This file supplies the Lean link between the **Yekutieli non-abelian Stokes** st
 categorical chain and the lever-1 trace `τ` being a function of the quantum integer `[2]_q`.
 
 **Step 2 of the chain (non-abelian Stokes; `mass-theory/pre-archimedean-derivation-chain.md`,
-`prop:hecke-spectral-sequence`).** The categorical R-matrix connection has curvature 2-form
-`F(σ) = σ² − (q − q⁻¹)σ − 1`; flatness `F = 0` *derives* the Hecke quadratic
-`σ² = (q − q⁻¹)σ + 1` (not imposed externally). The two roots of that characteristic polynomial
+`prop:hecke-spectral-sequence`).** The categorical R-matrix connection is *conjectured* to have
+curvature 2-form `F(σ) = σ² − (q − q⁻¹)σ − 1` — the hypothesis is the §3b class
+`QOU.Mass.HeckeMonodromy` (2026-09-06; cheat-sheet §2a records that the corpus
+stipulates rather than computes this form, and that only its `q = 1` shadow is derived). Granting
+it, flatness `F = 0` gives the Hecke quadratic `σ² = (q − q⁻¹)σ + 1`; the factorisation below is
+unconditional algebra. The two roots of that characteristic polynomial
 are the Hecke eigenvalues — the symmetric (`L₊`) and antisymmetric (`L₋`) braiding channels of
 the Hecke–Skein convention (AGENTS.md §7a):
 

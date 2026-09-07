@@ -35,9 +35,10 @@ set_compute_dps()
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_P_MEV_VALIDATION
 
 # CODATA / PDG anchors.
-M_P = mpf("938.27208816")
+M_P = M_P_MEV_VALIDATION
 M_E = mpf("0.51099895069")
 M_N_CODATA = mpf("939.56542194")
 QB_PDG = mpf("0.78233341")

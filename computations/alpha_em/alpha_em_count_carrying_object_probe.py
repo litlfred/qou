@@ -83,6 +83,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import sympy as sp
+# This producer hand-builds its assertion payload and `json.dump`s it, so
+# `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
+# reached, and a re-run would re-emit the float literals and undo PR #5910's
+# drain for this file alone. `_tol` routes each DECLARED tolerance through
+# that guard; it returns a COMPUTED one unchanged, so those stay floats and
+# stay counted by the raw-float64 ratchet. Bean qou-9tqx.
+from qou_substrate.witness import declared_tolerance as _tol  # noqa: E402
 
 # ----------------------------------------------------------------------------------
 # Bring genus-4 data (fixed topological facts; no fit).
@@ -285,31 +292,31 @@ assertions = [
     {
         "name": "control_intersection_form_unimodular",
         "computed": float(det_abs), "expected": 1.0, "passed": det_abs == 1,
-        "tolerance": 0.5,
+        "tolerance": _tol(0.5),
         "source": "|det((+)^4 [[0,1],[-1,0]])|=1 (Poincare duality => genus-g intersection form unimodular); Smith normal form all 1s => discriminant group A_L=L*/L trivial",
     },
     {
         "name": "abelian_jacobian_theory_gives_one_anyon_not_eight",
         "computed": float(disc_order), "expected": 1.0, "passed": disc_order == 1,
-        "tolerance": 0.5,
+        "tolerance": _tol(0.5),
         "source": "|A_L|=1 => the abelian anyonic theory of Jac(Bring) has ONE simple object, Sd_i^2=1 (FORCED by topology, and forces 1 != 8) -- kills candidate (A)",
     },
     {
         "name": "control_2g_equals_8",
         "computed": float(2 * GENUS), "expected": 8.0, "passed": 2 * GENUS == 8,
-        "tolerance": 0.5,
+        "tolerance": _tol(0.5),
         "source": "b1=2g=8 for genus-4 Bring; this is the Betti NUMBER (distinct from |disc|=1)",
     },
     {
         "name": "control_icosahedral_sum_d2_not_eight",
         "computed": float(ico_sum), "expected": float((5 + sp.sqrt(5)) / 2),
-        "passed": abs(float(ico_sum) - 8) > 1.0, "tolerance": 1e-9,
+        "passed": abs(float(ico_sum) - 8) > 1.0, "tolerance": _tol(1e-9),
         "source": "Sigma(2,3,5) Sd_i^2=1+phi^2=(5+sqrt5)/2~3.618 != 8 (cross-check vs #3889 genuine S-matrix)",
     },
     {
         "name": "no_natural_object_forces_sum_d2_equals_8",
         "computed": 0.0 if not any_forced_8 else 1.0, "expected": 0.0,
-        "passed": not any_forced_8, "tolerance": 0.5,
+        "passed": not any_forced_8, "tolerance": _tol(0.5),
         "source": "(A) forced->1; (B)/(D) fitted (choose level/group); (C) relabels b1 (no categorical content). No candidate FORCES Sd_i^2=8 by topology => scope-(a) NEGATIVE; 1/b1 already derived as the #3834 Betti count zeta_{Delta1}(0)=-b1; only 1/pi remains open.",
     },
 ]

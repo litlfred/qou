@@ -28,6 +28,7 @@ from lean_uniqueness_refs import lean_uniqueness_ref  # noqa: E402
 from mpmath import mpf, mp
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
@@ -36,7 +37,7 @@ mp.dps = 50
 
 
 M_E_MEV = mpf("0.51099895069")
-B_D_AME_MEV = mpf("2.224566")  # deuteron binding (AME), as used in v6/v7
+B_D_AME_MEV = AME_B_DEUTERON_MEV_VALIDATION  # deuteron binding (AME), as used in v6/v7
 # ARCHIVAL: the v9-era substrate literal, 243,000 ppb (0.024 %) from
 # both live pins. NOT migrated on purpose — these files ARE the record
 # of the v1..v9 progression that docs/coordination/option-e.md tracks
@@ -44,6 +45,9 @@ B_D_AME_MEV = mpf("2.224566")  # deuteron binding (AME), as used in v6/v7
 # exists specifically to show the published 0.11 %% near-match was obtained
 # at THIS stale q0. Re-pinning would silently alter a recorded historical
 # result and delete that probe's subject. Do not read it as a live pin.
+# witness-copy-intentional: frozen ON PURPOSE — see the note above.
+# This probe's subject IS the published near-match at this retired
+# pin; re-pointing it at a live value would delete the finding.
 Q_0 = mpf("1.1097090249")
 
 

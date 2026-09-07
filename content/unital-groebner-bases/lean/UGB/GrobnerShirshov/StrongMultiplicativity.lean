@@ -135,53 +135,33 @@ axiom tensor_gs_basis
 
 /-! ## §3  Strong Multiplicativity Theorem -/
 
-/-- **Strong multiplicativity** ([fred2005, Theorem 4.12]):
+/-! ### `strong_multiplicativity_on_generators`, removed 2026-09-07
 
-    Given a commutative formal group `H/𝔽_p` with skewed-Poisson structure,
-    the Gröbner–Shirshov deformation produces a distribution algebra `Dist(G)`
-    whose comultiplication `Δ : Dist(G) → Dist(G) ⊗ Dist(G)` is an algebra
-    homomorphism.
+Until 2026-09-06 this was an `axiom`; it was then converted to a `theorem`,
+which made its conclusion visible: `bialg.comul f = bialg.comul f`, closed by
+`rfl`.  None of `ord`, `sys`, `_hgs`, `bialg` or `_g` did any work.
 
-    **Proof outline** (non-tautological — this is the substantive result):
+**It is now deleted rather than restated, and the reason is worth recording.**
+The real claim — `Δ(f · g) = Δ(f) ·_T Δ(g)` — is already a FIELD of
+`FilteredBialgebra`, namely `comul_is_alg_hom`.  So restating the theorem
+truthfully would have made its body `bialg.comul_is_alg_hom`: a self-assuming
+projection (AGENTS.md §3b-cond item 5), trading one flagged shape for another.
+Taking a `FilteredBialgebra` as a hypothesis *assumes* strong multiplicativity;
+no theorem over such a hypothesis can prove it.
 
-    1. Verify `Δ(g₁ · g₂) = Δ(g₁) · Δ(g₂)` on generators: for each pair
-       of divided-power generators `x^{(a)}, x^{(b)}`, compute `Δ` explicitly
-       from the formal group law and check multiplicativity by direct
-       computation using the q-Serre relations.
+**What [fred2005, Thm 4.12] actually asserts is a CONSTRUCTION, not a property
+of a given bialgebra**: that a Gröbner–Shirshov basis for the rewriting system
+yields a `FilteredBialgebra` on `Dist(G)` — i.e. that `comul_is_alg_hom` can be
+*discharged* from the GS data, via the explicit formal group law, the
+comultiplication on divided-power generators, and six S-polynomial checks on
+the tensor product.  That is the missing infrastructure, and it cannot be
+stated here either: pinning the resulting structure needs a name for the
+divided-power comultiplication, and an unpinned `∃ bialg, …` would be the
+degenerate inhabitation shape this corpus already has an audit about.
 
-    2. Extend to all elements: every element of `Dist(G)` is a k-linear
-       combination of normal-form monomials (by `composition_lemma`).
-       Since `Δ` is k-linear and agrees with the multiplicative extension
-       on generators, it agrees on all normal-form monomials.
+No Lean declaration consumed it; the only references are dated audit docs.
+-/
 
-    3. Uniqueness: the normal-form representation is unique (by
-       `normal_form_unique`), so the identity holds globally.
-
-    The key insight is that the GS basis does triple duty:
-    - It gives normal forms (basis) — `composition_lemma`
-    - It guarantees flatness (no collapse) — `dist_flat_deformation`
-    - It ensures comultiplication compatibility (this theorem)
-
-    Axiomatised because the full verification requires:
-    - The explicit formal group law of G
-    - Computation of Δ on divided-power generators
-    - Six S-polynomial checks on the tensor product
-
-    Reference: [fred2005, Theorem 4.12]. -/
--- Ref: [fred2005] Theorem 4.12 (strong multiplicativity: Δ is an algebra homomorphism on Dist(G))
-axiom strong_multiplicativity_on_generators
-    {G : Type u} {k : Type v} [Field k] [DecidableEq G]
-    (ord : AdmissibleOrder G)
-    (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys)
-    (T : Type*) [Ring (AlgElement G k)] [Ring T]
-    (bialg : FilteredBialgebra (AlgElement G k) T) :
-    -- Δ is an algebra homomorphism on the full algebra
-    ∀ (f _g : AlgElement G k),
-      bialg.comul (f) = bialg.comul (f)  -- placeholder for the proper AlgElement multiplication
-      -- The real statement: ∀ f g, Δ(f · g) = Δ(f) ·_T Δ(g)
-      -- which is bialg.comul_is_alg_hom, but proved from the GS basis
-      -- rather than assumed as an axiom.
 
 /-! ## §4  Frobenius Relation Preservation -/
 

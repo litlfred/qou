@@ -857,11 +857,54 @@ function binderCarriers(sig: string): Map<string, string> {
  * needing real unification is NOT reported, so this under-counts rather than
  * over-counts.
  */
+/**
+ * Head-symbol aliases introduced by a file-local eta-expanded `abbrev`.
+ *
+ * `abbrev qIntSym (q : ℝ) (m : ℤ) : ℝ := QOU.QInteger.qIntBalZ q m` makes
+ * `qIntSym q m` and `QOU.QInteger.qIntBalZ q m` the SAME term — an `abbrev` is
+ * reducible, so a projection whose field type spells the qualified head still
+ * typechecks against a conclusion that spells the alias. The character-exact
+ * comparison below then reports no match, and a verbatim self-assuming
+ * projection escapes.
+ *
+ * Measured instance: `QOU.BraidKnot.volume_perturbation` is
+ * `:= ctx.perturbation_formula` — one field, returned verbatim — and was the
+ * one member of bean `qou-octr`'s eight that this detector did not report,
+ * solely because the class field says `QOU.QInteger.qIntBalZ` where the
+ * theorem says `qIntSym`.
+ *
+ * Deliberately narrow: only an `abbrev` whose body is a dotted head applied to
+ * its own binders, in order, is an alias. Anything else needs real unification
+ * and stays out, per this detector's under-count-rather-than-over-count rule.
+ */
+function fileHeadAliases(decls: Decl[]): Map<string, string> {
+  const out = new Map<string, string>();
+  for (const d of decls) {
+    if (!/^(noncomputable\s+)?abbrev\b/.test(d.kind)) continue;
+    const binders: string[] = [];
+    for (const m of d.sig.matchAll(/\(([^():]+):[^()]*\)/g)) {
+      for (const n of m[1].trim().split(/\s+/)) if (n) binders.push(n);
+    }
+    if (binders.length === 0) continue;
+    const body = d.body.trim().replace(/\s+/g, " ");
+    const head = "([A-Za-z_][\\w'\\.]*)";
+    const re = new RegExp(
+      "^" + head + "\\s+" + binders.map((b) => b.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("\\s+") + "$",
+    );
+    const m = body.match(re);
+    if (!m) continue;
+    if (!m[1].includes(".")) continue; // an unqualified head is not an alias worth normalising
+    out.set(m[1], d.name);
+  }
+  return out;
+}
+
 function projectionTypeMatchesConclusion(
   d: Decl,
   carriers: Map<string, Decl>,
   variable: string,
   fields: string[],
+  aliases: Map<string, string>,
 ): boolean {
   const carrierName = binderCarriers(d.sig).get(variable);
   if (!carrierName) return false;
@@ -881,7 +924,15 @@ function projectionTypeMatchesConclusion(
   }
   const types = fields.map((f) => table.get(f));
   if (types.some((t) => t === undefined)) return false;
-  const ws = (s: string) => s.replace(/\s+/g, " ").trim();
+  const ws = (s: string) => {
+    let t = s.replace(/\s+/g, " ").trim();
+    // Normalise reducible `abbrev` aliases so a field spelling the qualified
+    // head matches a conclusion spelling the alias (see `fileHeadAliases`).
+    for (const [head, alias] of aliases) {
+      t = t.split(head).join(alias);
+    }
+    return t;
+  };
   const concl = conclusionTypeAscription(d.sig);
   if (!concl) return false;
   const nc = ws(concl.replace(new RegExp(`\\b${variable}\\.`, "g"), ""));
@@ -898,6 +949,7 @@ function projectionTypeMatchesConclusion(
 function detectSelfAssuming(
   d: Decl,
   carriers: Map<string, Decl>,
+  aliases: Map<string, string> = new Map(),
 ): Hit | undefined {
   const provable = PROVABLE_KINDS.test(d.kind);
   // A Prop-valued `def` is a disguised provable claim (§1a def-disguised); it
@@ -948,7 +1000,7 @@ function detectSelfAssuming(
     const projVar = body.match(/([a-z][\w']*)\.[A-Za-z_][\w']*/)?.[1];
     if (
       projVar &&
-      projectionTypeMatchesConclusion(d, carriers, projVar, [field])
+      projectionTypeMatchesConclusion(d, carriers, projVar, [field], aliases)
     ) {
       const h = mk(d, "proof-no-self-assuming-projection", pat, true);
       h.exempt_reason =
@@ -2070,6 +2122,83 @@ function detectPropUniverseField(d: Decl, doc: string): Hit | undefined {
   return h;
 }
 
+/** A `Prop`-universe field whose **only** sibling consumption is a field that
+ * asserts it and nothing else — `p : Prop` sitting beside `p_holds : p`.
+ *
+ * This is the fifth shape in the carrier-vacuity family, and it exists in the
+ * blind spot that `detectPropUniverseField` deliberately creates. That detector
+ * fires only on an *unconsumed* `Prop` field, because firing on any `Prop` field
+ * over-reported 6x — declaring an abstract predicate and then consuming it in a
+ * sibling is the correct §3b-cond pattern. Correct, but the exemption is
+ * satisfied by a consumer that adds nothing: if the only sibling mentioning `p`
+ * has type *literally `p`*, the instance still chooses the proposition, and
+ * `⟨True, True.intro⟩` inhabits both fields together. The pair asserts exactly
+ * what a bare `p : Prop` asserts, which is nothing, while looking twice as
+ * populated.
+ *
+ * Exemplar, and it comes with its own proof: `QOU.Mathlib.HeckeAlgebra`'s
+ * `WedderburnDecomposition` declares
+ *
+ *     blocks_sum_to_one : Prop      blocks_sum_holds : blocks_sum_to_one
+ *     blocks_orthogonal : Prop      blocks_orthogonal_holds : blocks_orthogonal
+ *
+ * under docstrings promising `Σ_λ p_λ = 1` and `p_λ · p_μ = 0`, and the SAME
+ * FILE then discharges them at `triv_wedderburn` with `:= True` / `:= True.intro`.
+ * The class asserts nothing about the block projections, so every
+ * `[WedderburnDecomposition]`-conditional result downstream is unconditional.
+ *
+ * Deliberately NARROWER than "has a bare-assertion consumer": a field with a
+ * bare assertion *and* a relating sibling keeps its content and stays silent.
+ * That is what preserves `QOU.Torsion.BraneBoundaryContext`, the counter-example
+ * `detectPropUniverseField` is calibrated against — its `brane_boundary_regular`
+ * carries both `boundary_active : brane_boundary_regular` and an implication
+ * field, so `every` fails and this detector does not fire. This criterion
+ * therefore refines that exemption without overturning its calibration.
+ *
+ * Honest fix: encode the real proposition as the field's type (dropping the
+ * `_holds` field, which then becomes the field itself), or demote per §3b-tax.
+ *
+ * Raised on PR #6097 / #6093 and tracked as bean `qou-qcy6`. */
+function detectSelfDischargedPropField(d: Decl, doc: string): Hit | undefined {
+  if (d.kind !== "class" && d.kind !== "structure") return undefined;
+  const fields = classFields(d);
+  const clean = (s: string) =>
+    s.replace(/--.*$/, "").replace(/\s+/g, " ").trim();
+  const universeFields = fields.filter((f) =>
+    PROP_UNIVERSE_TYPE.test(clean(f.type)),
+  );
+  if (universeFields.length === 0) return undefined;
+  const pairs: { prop: string; holds: string }[] = [];
+  for (const f of universeFields) {
+    const word = new RegExp(`(^|[^\\w.])${f.name}([^\\w]|$)`);
+    const consumers = fields.filter(
+      (g) => g.name !== f.name && word.test(clean(g.type)),
+    );
+    // Unconsumed is `detectPropUniverseField`'s territory, not this one.
+    if (consumers.length === 0) continue;
+    // Every consumer is a bare assertion `g : f` — nothing relates `f` to
+    // anything else, so the pair adds no content over the bare field.
+    if (!consumers.every((g) => clean(g.type) === f.name)) continue;
+    pairs.push({ prop: f.name, holds: consumers.map((g) => g.name).join("/") });
+  }
+  if (pairs.length === 0) return undefined;
+  const names = pairs.map((p) => `${p.prop} + ${p.holds}`).join(", ");
+  if (MARKER_OPT_OUT.test(doc)) {
+    const h = mk(d, "proof-claims-unencoded", "prop-field-self-discharged", true);
+    h.exempt_reason = "explicit @marker / opaque-tag opt-out";
+    h.detail = `self-discharged \`Prop\` field pair(s) (${names}) — honestly framed; tracked not counted`;
+    return h;
+  }
+  const h = mk(d, "proof-claims-unencoded", "prop-field-self-discharged", false);
+  h.detail =
+    `\`Prop\`-universe field(s) whose only consumer asserts them and nothing ` +
+    `else (${names}) — the instance chooses the proposition, so ` +
+    `\`⟨True, True.intro⟩\` inhabits the pair and any [${d.name}]-conditional ` +
+    `result is unconditional. Encode the real proposition as the field's type, ` +
+    `or demote per §3b-tax`;
+  return h;
+}
+
 /** A class/structure field whose Prop is a **tautology about the subject** —
  * neither empty (`proof-no-empty-prop-carrier`) nor literally `: True`
  * (`true-class-field`), but provable for an *arbitrary* substitution of the
@@ -2623,6 +2752,10 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
   // needs the file's `class`/`structure` declarations by name. Same-file only —
   // a carrier declared elsewhere yields no match, which keeps the test
   // conservative rather than guessing.
+  // Reducible `abbrev` head aliases, so the self-assuming type-match test is
+  // not defeated by a field and a conclusion spelling the same term two ways.
+  const headAliases = fileHeadAliases(decls);
+
   const carrierDecls = new Map<string, Decl>(
     decls
       .filter((x) => /^(class|structure)\b/.test(x.kind))
@@ -2655,7 +2788,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
         "docstring asserts a provable claim (Theorem/Lemma/Proposition) while the Lean concludes `True` — a genuine vacuity defect, not an honest open conjecture";
     }
     push(tt);
-    push(detectSelfAssuming(d, carrierDecls));
+    push(detectSelfAssuming(d, carrierDecls, headAliases));
     push(detectBinderEcho(d, origLines));
     push(detectTrivialExistential(d, origLines));
     push(detectDocstringSorryMismatch(d, doc, fileHasSorryCode));
@@ -2674,6 +2807,7 @@ function scanFile(absPath: string, onlyCat: Category | undefined): Hit[] {
     push(detectClaimsUnencoded(d, doc));
     push(detectTrueClassField(d, doc + "\n" + rawSpan));
     push(detectPropUniverseField(d, doc + "\n" + rawSpan));
+    push(detectSelfDischargedPropField(d, doc + "\n" + rawSpan));
     push(detectTautologicalField(d, doc + "\n" + rawSpan));
   }
   const importHit = detectImportOrder(origLines);

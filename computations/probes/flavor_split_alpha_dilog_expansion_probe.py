@@ -46,8 +46,9 @@ set_compute_dps()
 from _li_2_q_util import flavor_split_leading, li_2_q  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import M_P_MEV_VALIDATION
 
-CODATA = mpf("1.29333236") / ((mpf("938.27208816") + mpf("939.56542194")) / 2)
+CODATA = mpf("1.29333236") / ((M_P_MEV_VALIDATION + mpf("939.56542194")) / 2)
 
 
 def _muon_q0() -> "mpf":

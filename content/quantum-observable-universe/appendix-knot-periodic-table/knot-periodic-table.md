@@ -113,7 +113,7 @@ with anomalously high $B/A$.
 $2, 8, 20, 28, 50, 82, 126$ (neutrons).
 
 **Input parameters** (one free parameter):
-$q = q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps), $\hbar_q = 1 - q_0^{-1} \approx 0.09908$,
+$q = q_0 = 1.109978595642739\ldots$ (muon pin, 16 dps), $\hbar_q = 1 - q_0^{-1} \approx 0.09908$,
 $\mathfrak{E}_{\times} = \tfrac{1}{2}(q_0 - q_0^{-1}) \approx 0.10453$,
 $m_{\mathfrak{p}} \approx :val[m_p_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV,
 $m_{\mathfrak{n}} \approx :val[m_n_MeV]{precision=6, witness=computations/codata-masses.witness.json}$ MeV,

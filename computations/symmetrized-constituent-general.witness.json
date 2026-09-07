@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-30T19:25:57.860738+00:00",
-  "commitSha": "3d1a7ae790e4f43bdd34b742c07887bc7fb42257",
+  "computedAt": "2026-09-07T10:41:05.809459+00:00",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "assertions": [
     {
       "name": "frobenius_Z2_matches_newton_h2",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11297,
+  "durationMs": 24261,
   "computation": "symmetrized-constituent-general",
   "scriptFile": "symmetrized_constituent_general.py",
   "scriptHash": "82574eaf40f6",
-  "scriptCommitSha": "cdb64587b885e01ca5d4b5356ca99abbe5b77481",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -49,7 +49,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -64,37 +64,37 @@
   },
   "data": {
     "proton_power_sums": {
-      "1": 1.1457596924573008,
-      "2": 2.2795554479278013,
-      "3": 4.1668824500787895,
-      "4": 8.307083041217547,
-      "5": 17.125336095422547,
-      "6": 36.47498738306271,
-      "7": 79.32859415904906,
-      "8": 174.99834172157352
+      "1": 0.629328402202922,
+      "2": 1.490908208547694,
+      "3": 1.1172467055077442,
+      "4": 2.443953775544584,
+      "5": 2.1617302956778164,
+      "6": 4.2491962347610475,
+      "7": 4.277006499200028,
+      "8": 7.649496077281693
     },
     "neutron_power_sums": {
-      "1": 0.9877436881158096,
-      "2": 1.8572679647768253,
-      "3": 3.2205569742045674,
-      "4": 6.312245064145936,
-      "5": 12.834228233582621,
-      "6": 26.941278579332227,
-      "7": 57.437555033171044,
-      "8": 123.54184106436347
+      "1": 0.4751335171556822,
+      "2": 1.1760437608212688,
+      "3": 0.41932961325663665,
+      "4": 1.4624304309926262,
+      "5": 0.3519611728070197,
+      "6": 1.8880976339347892,
+      "7": 0.24589162038313428,
+      "8": 2.498468001192959
     },
-    "tau_p": 1.1457596924573008,
-    "tau_n": 0.9877436881158096,
+    "tau_p": 0.629328402202922,
+    "tau_n": 0.4751335171556822,
     "rows": [
       {
         "isotope": "D",
         "Z": 1,
         "N": 1,
         "A": 2,
-        "naive_tau_pow": 1.1317169043222102,
-        "bosonic_hZhN": 1.1317169043222102,
+        "naive_tau_pow": 0.2990150171846401,
+        "bosonic_hZhN": 0.2990150171846401,
         "bosonic_over_naive": 1.0,
-        "fermionic_eZeN": 1.1317169043222102,
+        "fermionic_eZeN": 0.2990150171846401,
         "fermionic_over_naive": 1.0
       },
       {
@@ -102,99 +102,99 @@
         "Z": 1,
         "N": 2,
         "A": 3,
-        "naive_tau_pow": 1.1178462289782265,
-        "bosonic_hZhN": 1.6229145005558596,
-        "bosonic_over_naive": 1.4518226733557917,
-        "fermionic_eZeN": -0.5050682715776329,
-        "fermionic_over_naive": -0.4518226733557918
+        "naive_tau_pow": 0.1420720567973048,
+        "bosonic_hZhN": 0.4410948988578346,
+        "bosonic_over_naive": 3.104726635211228,
+        "fermionic_eZeN": -0.29902284206052976,
+        "fermionic_over_naive": -2.104726635211228
       },
       {
         "isotope": "3He",
         "Z": 2,
         "N": 1,
         "A": 3,
-        "naive_tau_pow": 1.296675612244944,
-        "bosonic_hZhN": 1.7741460588228184,
-        "bosonic_over_naive": 1.368226595818538,
-        "fermionic_eZeN": -0.47747044657787435,
-        "fermionic_over_naive": -0.36822659581853806
+        "naive_tau_pow": 0.18817864299948878,
+        "bosonic_hZhN": 0.448279551941516,
+        "bosonic_over_naive": 2.38220206499594,
+        "fermionic_eZeN": -0.2601009089420272,
+        "fermionic_over_naive": -1.3822020649959401
       },
       {
         "isotope": "4He",
         "Z": 2,
         "N": 2,
         "A": 4,
-        "naive_tau_pow": 1.2807831515286463,
-        "bosonic_hZhN": 2.5441763341796135,
-        "bosonic_over_naive": 1.9864223940977643,
-        "fermionic_eZeN": 0.21308789526910563,
-        "fermionic_over_naive": 0.1663731249234345
+        "naive_tau_pow": 0.0894099805019306,
+        "bosonic_hZhN": 0.6612839230799531,
+        "bosonic_over_naive": 7.3960862016480835,
+        "fermionic_eZeN": 0.2601077154808774,
+        "fermionic_over_naive": 2.909157501440916
       },
       {
         "isotope": "5Li",
         "Z": 3,
         "N": 2,
         "A": 5,
-        "naive_tau_pow": 1.4674697097999545,
-        "bosonic_hZhN": 4.172243504015015,
-        "bosonic_over_naive": 2.843154769159614,
-        "fermionic_eZeN": -0.14711546984893248,
-        "fermionic_over_naive": -0.10025111173775932
+        "naive_tau_pow": 0.05626824017027439,
+        "bosonic_hZhN": 0.6189575097533244,
+        "bosonic_over_naive": 11.000122056070802,
+        "fermionic_eZeN": 0.02621784484498771,
+        "fermionic_over_naive": 0.46594392797161227
       },
       {
         "isotope": "6Li",
         "Z": 3,
         "N": 3,
         "A": 6,
-        "naive_tau_pow": 1.4494839433560438,
-        "bosonic_hZhN": 6.3370278195679335,
-        "bosonic_over_naive": 4.371919984774428,
-        "fermionic_eZeN": 0.10575393980320301,
-        "fermionic_over_naive": 0.07295971803478347
+        "naive_tau_pow": 0.02673492685626311,
+        "bosonic_hZhN": 0.38594888731573895,
+        "bosonic_over_naive": 14.43613028719859,
+        "fermionic_eZeN": 0.006717173414132653,
+        "fermionic_over_naive": 0.25125086184999385
       },
       {
         "isotope": "7Li",
         "Z": 3,
         "N": 4,
         "A": 7,
-        "naive_tau_pow": 1.4317186160751458,
-        "bosonic_hZhN": 10.492871285939989,
-        "bosonic_over_naive": 7.328864183316071,
-        "fermionic_eZeN": -0.1668218063810954,
-        "fermionic_over_naive": -0.1165185704146348
+        "naive_tau_pow": 0.012702659828116199,
+        "bosonic_hZhN": 0.5946761731697183,
+        "bosonic_over_naive": 46.81509079330424,
+        "fermionic_eZeN": 0.010514830041182166,
+        "fermionic_over_naive": 0.8277660099114466
       },
       {
         "isotope": "8Be",
         "Z": 4,
         "N": 4,
         "A": 8,
-        "naive_tau_pow": 1.6404054812396516,
-        "bosonic_hZhN": 18.301764045971584,
-        "bosonic_over_naive": 11.15685375065985,
-        "fermionic_eZeN": 0.2559962360921713,
-        "fermionic_over_naive": 0.1560566817289073
+        "naive_tau_pow": 0.007994144613355611,
+        "bosonic_hZhN": 0.8601814759266116,
+        "bosonic_over_naive": 107.60144049552578,
+        "fermionic_eZeN": 0.04570590831640595,
+        "fermionic_over_naive": 5.717423255021716
       },
       {
         "isotope": "12C",
         "Z": 6,
         "N": 6,
         "A": 12,
-        "naive_tau_pow": 2.1010037020469867,
-        "bosonic_hZhN": 200.4294420327455,
-        "bosonic_over_naive": 95.39699612973985,
-        "fermionic_eZeN": 2.255235813643034,
-        "fermionic_over_naive": 1.0734087766936253
+        "naive_tau_pow": 0.0007147563140097387,
+        "bosonic_hZhN": 1.3818752995986645,
+        "bosonic_over_naive": 1933.3516507835093,
+        "fermionic_eZeN": 0.03153223487211068,
+        "fermionic_over_naive": 44.11606341078233
       },
       {
         "isotope": "16O",
         "Z": 8,
         "N": 8,
         "A": 16,
-        "naive_tau_pow": 2.690930142881093,
-        "bosonic_hZhN": 2806.4171923071717,
-        "bosonic_over_naive": 1042.917148827368,
-        "fermionic_eZeN": 28.600167129630417,
-        "fermionic_over_naive": 10.628357337812245
+        "naive_tau_pow": 6.390634809924251e-05,
+        "bosonic_hZhN": 2.4885761497083507,
+        "bosonic_over_naive": 38940.98510908102,
+        "fermionic_eZeN": 0.03348541228721609,
+        "fermionic_over_naive": 523.9763072553507
       }
     ],
     "formula": {

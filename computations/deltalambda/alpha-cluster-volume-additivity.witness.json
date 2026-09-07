@@ -2,7 +2,7 @@
  "computation": "alpha-cluster-volume-additivity",
  "description": "A>=5 atom->knot rule constraint quantification + alpha-cluster volume-additivity test: exact AME2020 back-outs, supra-linearity of the linear-chain cluster measure C(A+1,3) vs linear B, the p^Z n^N ordering gap (unassigned ppp/nnn carriers), and zero-fit additivity predictions for 6Li/7Li/8Be/9Be/11B/12C/14N/16O/19F from A<=4 cluster values. Research-queue item research-atom-to-knot-rule-A5plus.",
  "audit_only": true,
- "computedAt": "2026-07-18T10:28:46.474581+00:00",
+ "computedAt": "2026-09-06T03:13:38.138193+00:00",
  "engine": "mpmath",
  "inputs": {
   "m_e_MeV": {
@@ -16,11 +16,11 @@
     "t": 8.4817962,
     "3He": 7.71804132,
     "4He": 28.2956624,
-    "6Li": 31.993987199999996,
+    "6Li": 31.9939872,
     "7Li": 39.2450807,
     "8Be": 56.4994848,
     "9Be": 58.1640237,
-    "11B": 76.20505529999998,
+    "11B": 76.2050553,
     "12C": 92.1617352,
     "14N": 104.6586072,
     "16O": 127.6193152,
@@ -60,7 +60,7 @@
    "6Li": {
     "A": 6,
     "cluster_measure": 35,
-    "avg_vol_required": 1.7888763152364113
+    "avg_vol_required": 1.7888763152364116
    },
    "7Li": {
     "A": 7,
@@ -91,7 +91,7 @@
     "n3_clusters": 4,
     "B_n3_lo": 29.955677279532882,
     "B_n3_hi": 33.874393591872554,
-    "B_AME": 31.993987199999996,
+    "B_AME": 31.9939872,
     "AME_inside_bracket": true
    },
    "7Li": {
@@ -110,11 +110,11 @@
     "d"
    ],
    "B_add_MeV": 30.5202286,
-   "B_AME_MeV": 31.993987199999996,
-   "rel_err": -0.046063611602620014,
-   "deficit_MeV": 1.473758599999996,
+   "B_AME_MeV": 31.9939872,
+   "rel_err": -0.04606361160262013,
+   "deficit_MeV": 1.4737586,
    "n_intercluster_bonds": 1,
-   "implied_vol_per_bond_GUARDED": 2.8840736326561633
+   "implied_vol_per_bond_GUARDED": 2.8840736326561713
   },
   "7Li": {
    "pieces": [
@@ -160,11 +160,11 @@
     "t"
    ],
    "B_add_MeV": 65.073121,
-   "B_AME_MeV": 76.20505529999998,
-   "rel_err": -0.1460786854123573,
-   "deficit_MeV": 11.13193429999999,
+   "B_AME_MeV": 76.2050553,
+   "rel_err": -0.1460786854123574,
+   "deficit_MeV": 11.1319343,
    "n_intercluster_bonds": 2,
-   "implied_vol_per_bond_GUARDED": 10.892325987136157
+   "implied_vol_per_bond_GUARDED": 10.892325987136168
   },
   "12C": {
    "pieces": [
@@ -217,17 +217,17 @@
    ],
    "B_add_MeV": 121.6644458,
    "B_AME_MeV": 147.8013648,
-   "rel_err": -0.17683814378417692,
-   "deficit_MeV": 26.13691899999998,
+   "rel_err": -0.17683814378417703,
+   "deficit_MeV": 26.136919,
    "n_intercluster_bonds": 4,
-   "implied_vol_per_bond_GUARDED": 12.78716862564365
+   "implied_vol_per_bond_GUARDED": 12.78716862564366
   }
  },
  "tower_level_conditional": {
   "6Li": {
    "B_pred_MeV": 28.2956624,
    "note": "alpha(conditional) + d(Hopf, Vol=0)",
-   "rel_err": -0.11559437018215711
+   "rel_err": -0.11559437018215722
   },
   "7Li": {
    "B_pred_MeV": 36.764260797968134,
@@ -277,9 +277,11 @@
  ],
  "allPassed": true,
  "scriptHash": "990556ad9bc6",
- "scriptCommitSha": "ffeca233cfddd57ef58764212cca940eda62a0a5",
- "commitSha": "2a1c39ec459b3a3576301c3b1e12b4a5db6b2a60",
+ "scriptCommitSha": "d645877e7ca70b97951bcd1ea443a07b2fbb5b39",
+ "commitSha": "75fd0b4c3264868c68924658f00c3e433e01bbcb",
  "durationMs": 0,
- "engineVersion": "mpmath 1.3.0",
+ "engineVersion": "mpmath 1.4.1",
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736",
  "scriptFile": "alpha_cluster_volume_additivity_probe.py"
 }

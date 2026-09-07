@@ -353,7 +353,11 @@ print(f"  Borromean link (nucleon confinement):")
 print(f"    Vol(𝔅₃) = {VOL_BORROMEAN} ± {VOL_BORROMEAN_ERR}")
 print(f"    ℏ_q²    ≈ {HBAR_Q_SQ0:.15f}")
 print(f"    𝔪(𝔅₃)  ≈ {borromean_mass_ratio:.6f} m_e ± {borromean_mass_ratio_err:.2e}")
-print(f"             ≈ {borromean_mass_MeV:.3f} MeV ± {borromean_mass_MeV_err:.3f}")
+# float() for DISPLAY only: mpf has no __format__ for ".3f", and mp.nstr
+# cannot carry the width/alignment these columns need. The VALUES above are
+# untouched mpf. (qou-9q4h)
+print(f"             ≈ {float(borromean_mass_MeV):.3f} MeV "
+      f"± {float(borromean_mass_MeV_err):.3f}")
 print()
 print(f"  Figure-eight knot (Higgs field / muon mass mechanism):")
 print(f"    𝔪(4_1)  = Vol(4_1)/ℏ_q² = m_μ/m_e = {mu_e_from_vol:.6f} (definitional)")
@@ -565,22 +569,44 @@ w.add_assertion(
 
 # ── Assertions: Topological mass formula ─────────────────────────
 
+# Both assertions below used to restate their own left-hand side: `expected`
+# was `VOL_BORROMEAN / HBAR_Q_SQ0`, which is line 246's definition of
+# `borromean_mass_ratio`, and `borromean_mass_ratio * M_E_MEV`, which is line
+# 247's definition of `borromean_mass_MeV`. The residuals were identically
+# zero — the second recorded 0.0 exactly in the witness — so neither
+# tolerance gated anything and no value of either constant could have failed.
+# Bean `qou-t0wm`; detector
+# `computations/audits/tolerance_from_residual_audit.py`.
+#
+# The independent route is through `Q` rather than through the precomputed
+# `HBAR_Q_SQ0`: `ℏ_q = 1 - 1/q` is an exact algebraic identity, so
+# recomputing the denominator from `Q` tests that the imported constant still
+# agrees with its own definition. Verified equal to the bit at the proton pin
+# before being wired in.
+#
+# BE CLEAR WHAT THIS DOES NOT TEST. It does not test the mass formula's
+# physics, and it is not evidence for `𝔪(K) = Vol(K)/ℏ_q²`. It tests that
+# `HBAR_Q_SQ0` is `(1 - 1/Q)²` and that `M_E_MEV` is applied once — a
+# regression guard on the constants, which is strictly more than the previous
+# zero and strictly less than what the `source` field claims.
+_hbar_q_sq_from_q = (1 - 1 / Q0) ** 2
+
 w.add_assertion(
-    "𝔪(𝔅₃) Borromean topological mass",
+    "𝔪(𝔅₃) ratio vs Vol/(1−1/q)² recomputed from q",
     computed=borromean_mass_ratio,
-    expected=VOL_BORROMEAN / HBAR_Q_SQ0,
+    expected=VOL_BORROMEAN / _hbar_q_sq_from_q,
     tolerance=1e-6,
     unit="m_e",
-    source="𝔪(K) = Vol(K) / ℏ_q²",
+    source="regression guard: HBAR_Q_SQ0 == (1 − 1/q)², not a test of 𝔪(K) = Vol(K)/ℏ_q²",
 )
 
 w.add_assertion(
-    "𝔪(𝔅₃) in MeV",
+    "𝔪(𝔅₃) in MeV vs the same ratio recomputed from q",
     computed=borromean_mass_MeV,
-    expected=borromean_mass_ratio * M_E_MEV,
+    expected=(VOL_BORROMEAN / _hbar_q_sq_from_q) * M_E_MEV,
     tolerance=borromean_mass_MeV_err,
     unit="MeV",
-    source="𝔪(K) = Vol(K) / ℏ_q² × m_e",
+    source="regression guard: same, times m_e once",
 )
 
 # ── Assertions: Skein ratio (for Q-value usage) ─────────────────

@@ -132,7 +132,7 @@ class ThreeCalibrationDiscipline (State : Type u) where
           * m_pi ^ (m_pi_degree X)
           * towerValue X
 
-/-- Headline statement ([`prop:three-calibration-discipline`]): under
+/-- Headline statement ([`def:three-calibration-discipline`]): under
     `ThreeCalibrationDiscipline`, every mass factors as
     `m_e^a · m_π^c · Q_ℝ(q_0)` where `Q_ℝ(q_0)` is the realised real value
     (`towerValue`) of the dimensionless `ℚ[q^{±1}]`-tower at the substrate

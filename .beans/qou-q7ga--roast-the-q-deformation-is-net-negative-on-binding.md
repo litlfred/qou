@@ -62,6 +62,18 @@ That is worse news than "top lead", not better — the symmetry energy is a name
 gap with **no available route**, and the tractable open item is back to the
 2.656 scale factor (`qou-59j5`).
 
+> 🛑 **SUPERSEDED 2026-09-05.** There IS a route — the p-n interface count — and
+> it is **sign-locked** rather than absent. A bond sum is additive in
+> `L = −log b`, so it compares `b_pn` against the *geometric* mean of `b_pp`,
+> `b_nn`, while the construction delivers an *arithmetic* one; AM ≥ GM, so the
+> sign is backwards structurally. `√(b_pp·b_nn) = 1/[2]_q` exactly, the AM−GM gap
+> is `h²/(2[2]_q)` (the Hecke parameter itself), and the crossing weight
+> `1/(q²+1)` is `½` only at `q = 1` — the corpus sits **11.7 %** above it.
+> `QOU/Hecke/SymmetrySignAmGm.lean` (7 decls),
+> `qbeta_symmetry_sign_is_am_gm_locked_probe.py`, bean `qou-i01a`. A repair must
+> move ONE quantity: the convex weight `w` below `1/(q²+1)`.
+
+
 ## Independent corroboration from main — `pn-bond-cannot-be-extremal` (merged 2026-09-04)
 
 A sibling landed `content/quantum-observable-universe/mass-theory/pn-bond-cannot-be-extremal.md`
@@ -127,3 +139,19 @@ FIRST-ORDER value. The exact one is `2 ln q_0 = 0.2086814` — from
 
 Full working and the unpinnedness result: `qou-y2np`.
 ## 2026-09-04 (qou-yau0) — one row revised on the artifact-free law: the residual's asymmetry correlation is −0.6965 (not −0.804) and the surface correlation is −0.298 (not −0.178) once the writhe artifact is removed; 'wrong by 4×' becomes 2.3×, and the surface term is a live lead again. Control reproduces the un-normalised numbers to 3 dp. docs/audits/2026-09-04-normalised-law-residual-shape.md.
+
+
+## 2026-09-05 (later) — SECOND supersession: the corpus already HAS a T(T+1)/A term
+
+Independent of the AM-GM finding above. `mass-theory` carries the Wigner energy
+`-Delta_W . T(T+1)/A`, built from SELF-CONJUGATE shadow prices
+(`unified-iterative-correction-proof.md`, `figure-eight-branching-rule-proof.md`).
+The symmetry energy has a derived route -- in the MASS channel. This bean's
+"named gap with no available route" was wrong about the corpus, not just about
+the mechanism.
+
+Tension, stated as one: self-conjugacy forces `l(lambda) = lambda_1`, so the row
+cap `l <= 2` leaves exactly three self-conjugate shapes -- `(1)`, `(2,1)`,
+`(2,2)`, none at any level >= 5. Of the two the mechanism names, `(2,2)`
+survives and `(3,1,1)` has zero Markov weight. **Whether `y_lambda = 0` forces
+`C_lambda = 0` is NOT established** and is not assumed. `qou-a5jk`.

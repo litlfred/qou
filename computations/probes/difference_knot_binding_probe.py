@@ -75,7 +75,7 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 HERE = Path(__file__).resolve().parent
 
 # AME2020 binding energies (MeV) — comparison targets only, nothing tuned.
-B_AME = {"D": 2.224566, "T": 8.481798, "3He": 7.718043, "4He": 28.295673}
+B_AME = {"D": AME_B_DEUTERON_MEV_VALIDATION, "T": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 CASES = [("D", 1, 1), ("T", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 # Hand-assigned census binding-link volumes (binding_link_volumes.py) — the
 # Q3 reference the derived difference knot is asked to reproduce.
@@ -95,6 +95,12 @@ for _p_qp in (_Path_qp(__file__).resolve().parent.parent,
     if str(_p_qp) not in _sys_qp.path:
         _sys_qp.path.insert(0, str(_p_qp))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 # Substrate h = q − q⁻¹ at q₀; the crossing-sign classifier thresholds.
 # q0 read BY NAME (bean qou-9ugp, 2026-09-04). It was the literal

@@ -147,32 +147,32 @@ theorem starSum_dyadic (n : ℕ) (L : List (ℤ × ℕ)) :
 
 /-! ### 3. The closed form -/
 
-/-- `c₁(Z,N) = (21Z + 16N)(2^{−A−1} − 2^{−2A}) − 4(I_pp − I_nn)2^{−2A}`,
-`A = Z + N`, `I_pp = Z − 1`, `I_nn = N − 1` (truncated subtraction in `ℕ`). -/
-def c1Closed (Z N : ℕ) : ℚ :=
-  (21 * (Z : ℚ) + 16 * (N : ℚ)) * ((1 / 2 : ℚ) ^ (Z + N + 1) - (1 / 4 : ℚ) ^ (Z + N))
-    - 4 * (((Z - 1 : ℕ) : ℚ) - ((N - 1 : ℕ) : ℚ)) * (1 / 4 : ℚ) ^ (Z + N)
+/-! The closed form itself lives in `PairwiseChainLeadingOrder` as
+`c1Closed (a b : ℚ) (Z N : ℕ)`; at the Borromean letter weights it is
+`c1Closed 3 (-2)`, and `c1_defs_eq_closed_borromean` there pins it to the six
+values. This file used to carry a second, specialised `c1Closed (Z N : ℕ)` — a
+**duplicate declaration in the same namespace**, and the weaker of the two — so
+it is dropped and everything below uses the parameterised one.
 
-theorem c1Closed_pp : c1Closed 2 0 = 19 / 8 := by norm_num [c1Closed]
-theorem c1Closed_pn : c1Closed 1 1 = 37 / 16 := by norm_num [c1Closed]
-theorem c1Closed_nn : c1Closed 0 2 = 9 / 4 := by norm_num [c1Closed]
-theorem c1Closed_T : c1Closed 1 2 = 163 / 64 := by norm_num [c1Closed]
-theorem c1Closed_He3 : c1Closed 2 1 = 85 / 32 := by norm_num [c1Closed]
-theorem c1Closed_He4 : c1Closed 2 2 = 259 / 128 := by norm_num [c1Closed]
-
-/-- The six measured definitions of `PairwiseChainLeadingOrder` are the closed
-form's values. -/
-theorem c1_defs_eq_closed :
-    c1_pp = c1Closed 2 0 ∧ c1_pn = c1Closed 1 1 ∧ c1_nn = c1Closed 0 2 ∧
-    c1_T = c1Closed 1 2 ∧ c1_He3 = c1Closed 2 1 ∧ c1_He4 = c1Closed 2 2 := by
-  refine ⟨?_, ?_, ?_, ?_, ?_, ?_⟩ <;> norm_num [c1_pp, c1_pn, c1_nn, c1_T, c1_He3, c1_He4, c1Closed]
+⚠ Note for anyone reading an older revision: the per-nucleon coefficients read
+`(21Z + 16N)` until 2026-09-06. Those are the **pre-2026-09-05 (`grouped`) atom
+word's**. Owner ruling `qou-hu1f` reordered each nucleon's confinement core and
+they became `(3Z − 2N)` — the neutron's changes **sign**. Both are
+`(S_p, S_n)/2` for that word's per-nucleon deletion sums, `(42, 32)` grouped and
+`(6, −4)` canonical, and `PairwiseChainLeadingOrder.c1_grouped_values_eq_closed`
+keeps the superseded column as a check. The interface term `−4(I_pp − I_nn)` is
+unchanged, and is unchangeable by an intra-nucleon reordering: interfaces are
+single letters outside the nucleon blocks. See
+`computations/probes/canonical_c1_closed_form_probe.py` (44 isotopes, both halves
+verified separately) and
+`docs/audits/2026-09-06-c1-is-stale-on-the-reordered-atom-word.md`. -/
 
 /-- The `pp` and `nn` bonds differ from the `pn` bond only through the
 interface term: `c₁(pp) − c₁(pn) = (5·(1/8 − 1/16) − 4/16)` and
 `c₁(nn) − c₁(pn) = −5·(1/8 − 1/16) + 4/16`. In particular
 `c₁(pp) + c₁(nn) = 2·c₁(pn)` — the interface contributions cancel in the
 symmetric combination and the census terms average. -/
-theorem c1Closed_bond_symmetry : c1Closed 2 0 + c1Closed 0 2 = 2 * c1Closed 1 1 := by
+theorem c1Closed_bond_symmetry : c1Closed 3 (-2) 2 0 + c1Closed 3 (-2) 0 2 = 2 * c1Closed 3 (-2) 1 1 := by
   norm_num [c1Closed]
 
 /-- At fixed `A`, `c₁` is affine in `Z` with slope `5(2^{−A−1} − 2^{−2A}) − 8·2^{−2A}`
@@ -181,9 +181,9 @@ while both species stay present (`1 ≤ Z`, `2 ≤ N`, so that after the move
 `I_pp − I_nn` by `2`. (At `N = 1` the truncated `I_nn` does not move and the
 shift is `1`; that boundary case is excluded here.) -/
 theorem c1Closed_step (Z N : ℕ) (hZ : 1 ≤ Z) (hN : 2 ≤ N) :
-    c1Closed (Z + 1) (N - 1) - c1Closed Z N
-      = 5 * ((1 / 2 : ℚ) ^ (Z + N + 1) - (1 / 4 : ℚ) ^ (Z + N))
-        - 8 * (1 / 4 : ℚ) ^ (Z + N) := by
+    c1Closed 3 (-2) (Z + 1) (N - 1) - c1Closed 3 (-2) Z N
+      = 5 * ((2⁻¹ : ℚ) ^ (Z + N + 1) - (2⁻¹ : ℚ) ^ (2 * (Z + N)))
+        - 8 * (2⁻¹ : ℚ) ^ (2 * (Z + N)) := by
   obtain ⟨n, rfl⟩ : ∃ n, N = n + 2 := ⟨N - 2, by omega⟩
   obtain ⟨z, rfl⟩ : ∃ z, Z = z + 1 := ⟨Z - 1, by omega⟩
   unfold c1Closed
@@ -205,63 +205,63 @@ in the lists as `(1, c+1)` and `(−1, c−1)` against `c_free = 2A`,
 `c_atom = A+1`, with the single `nn`-interface `σ⁻¹` the one `(−1, c+1)`. -/
 
 /-- Letter data `(w, c(σ⁽ˡ⁾))` of the pp free word, n = 6: [★] = 21/4. -/
-def letters_ppFree : List (ℤ × ℕ) := [(1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 3), (-1, 3), (-1, 3), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 3), (-1, 3), (-1, 3)]
-theorem star_ppFree : starSum 6 letters_ppFree = 21 / 4 := by
+def letters_ppFree : List (ℤ × ℕ) := [(1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (1, 3), (1, 3), (1, 3), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (1, 3), (1, 3), (1, 3)]
+theorem star_ppFree : starSum 6 letters_ppFree = 3 / 4 := by
   simp only [starSum, letters_ppFree, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
 /-- Letter data `(w, c(σ⁽ˡ⁾))` of the pp atom word, n = 6: [★] = 23/8. -/
-def letters_ppAtom : List (ℤ × ℕ) := [(1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (-1, 2), (-1, 2), (-1, 2), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (-1, 2), (-1, 2), (-1, 2)]
-theorem star_ppAtom : starSum 6 letters_ppAtom = 23 / 8 := by
+def letters_ppAtom : List (ℤ × ℕ) := [(1, 2), (-1, 2), (1, 4), (-1, 2), (1, 2), (-1, 4), (1, 2), (1, 2), (1, 2), (1, 4), (1, 2), (-1, 2), (1, 4), (-1, 2), (1, 2), (-1, 4), (1, 2), (1, 2), (1, 2)]
+theorem star_ppAtom : starSum 6 letters_ppAtom = 5 / 8 := by
   simp only [starSum, letters_ppAtom, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
 /-- Letter data `(w, c(σ⁽ˡ⁾))` of the pn free word, n = 6: [★] = 37/8. -/
-def letters_pnFree : List (ℤ × ℕ) := [(1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 3), (-1, 3), (-1, 3), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 3), (-1, 3), (-1, 3), (-1, 3)]
-theorem star_pnFree : starSum 6 letters_pnFree = 37 / 8 := by
+def letters_pnFree : List (ℤ × ℕ) := [(1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (1, 3), (1, 3), (1, 3), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (-1, 5), (1, 3), (1, 3)]
+theorem star_pnFree : starSum 6 letters_pnFree = 1 / 8 := by
   simp only [starSum, letters_pnFree, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
 /-- Letter data `(w, c(σ⁽ˡ⁾))` of the pn atom word, n = 6: [★] = 37/16. -/
-def letters_pnAtom : List (ℤ × ℕ) := [(1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (-1, 2), (-1, 2), (-1, 2), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (-1, 2), (-1, 2), (-1, 2), (-1, 2)]
-theorem star_pnAtom : starSum 6 letters_pnAtom = 37 / 16 := by
+def letters_pnAtom : List (ℤ × ℕ) := [(1, 2), (-1, 2), (1, 4), (-1, 2), (1, 2), (-1, 4), (1, 2), (1, 2), (1, 2), (1, 2), (-1, 2), (1, 4), (-1, 2), (1, 2), (-1, 4), (-1, 4), (1, 2), (1, 2)]
+theorem star_pnAtom : starSum 6 letters_pnAtom = 1 / 16 := by
   simp only [starSum, letters_pnAtom, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
 /-- Letter data `(w, c(σ⁽ˡ⁾))` of the nn free word, n = 6: [★] = 4. -/
-def letters_nnFree : List (ℤ × ℕ) := [(1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 3), (-1, 3), (-1, 3), (-1, 3), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 3), (-1, 3), (-1, 3), (-1, 3)]
-theorem star_nnFree : starSum 6 letters_nnFree = 4 / 1 := by
+def letters_nnFree : List (ℤ × ℕ) := [(1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (-1, 5), (1, 3), (1, 3), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (-1, 5), (1, 3), (1, 3)]
+theorem star_nnFree : starSum 6 letters_nnFree = -1 / 2 := by
   simp only [starSum, letters_nnFree, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
 /-- Letter data `(w, c(σ⁽ˡ⁾))` of the nn atom word, n = 6: [★] = 7/4. -/
-def letters_nnAtom : List (ℤ × ℕ) := [(1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (-1, 2), (-1, 2), (-1, 2), (-1, 2), (-1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (-1, 2), (-1, 2), (-1, 2), (-1, 2)]
-theorem star_nnAtom : starSum 6 letters_nnAtom = 7 / 4 := by
+def letters_nnAtom : List (ℤ × ℕ) := [(1, 2), (-1, 2), (1, 4), (-1, 2), (1, 2), (-1, 4), (-1, 4), (1, 2), (1, 2), (-1, 4), (1, 2), (-1, 2), (1, 4), (-1, 2), (1, 2), (-1, 4), (-1, 4), (1, 2), (1, 2)]
+theorem star_nnAtom : starSum 6 letters_nnAtom = -1 / 2 := by
   simp only [starSum, letters_nnAtom, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
 /-- Letter data `(w, c(σ⁽ˡ⁾))` of the T free word, n = 9: [★] = 53/16. -/
-def letters_TFree : List (ℤ × ℕ) := [(1, 7), (1, 7), (1, 7), (1, 7), (1, 7), (1, 7), (-1, 5), (-1, 5), (-1, 5), (1, 7), (1, 7), (1, 7), (1, 7), (1, 7), (-1, 5), (-1, 5), (-1, 5), (-1, 5), (1, 7), (1, 7), (1, 7), (1, 7), (1, 7), (-1, 5), (-1, 5), (-1, 5), (-1, 5)]
-theorem star_TFree : starSum 9 letters_TFree = 53 / 16 := by
+def letters_TFree : List (ℤ × ℕ) := [(1, 5), (-1, 5), (1, 7), (-1, 5), (1, 5), (-1, 7), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 5), (1, 7), (-1, 5), (1, 5), (-1, 7), (-1, 7), (1, 5), (1, 5), (1, 5), (-1, 5), (1, 7), (-1, 5), (1, 5), (-1, 7), (-1, 7), (1, 5), (1, 5)]
+theorem star_TFree : starSum 9 letters_TFree = -1 / 16 := by
   simp only [starSum, letters_TFree, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
 /-- Letter data `(w, c(σ⁽ˡ⁾))` of the T atom word, n = 9: [★] = 49/64. -/
-def letters_TAtom : List (ℤ × ℕ) := [(1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 3), (-1, 3), (-1, 3), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 3), (-1, 3), (-1, 3), (-1, 3), (-1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 3), (-1, 3), (-1, 3), (-1, 3)]
-theorem star_TAtom : starSum 9 letters_TAtom = 49 / 64 := by
+def letters_TAtom : List (ℤ × ℕ) := [(1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (1, 3), (1, 3), (1, 3), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (-1, 5), (1, 3), (1, 3), (-1, 5), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (-1, 5), (1, 3), (1, 3)]
+theorem star_TAtom : starSum 9 letters_TAtom = -5 / 64 := by
   simp only [starSum, letters_TAtom, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
 /-- Letter data `(w, c(σ⁽ˡ⁾))` of the 3He free word, n = 9: [★] = 29/8. -/
-def letters_He3Free : List (ℤ × ℕ) := [(1, 7), (1, 7), (1, 7), (1, 7), (1, 7), (1, 7), (-1, 5), (-1, 5), (-1, 5), (1, 7), (1, 7), (1, 7), (1, 7), (1, 7), (1, 7), (-1, 5), (-1, 5), (-1, 5), (1, 7), (1, 7), (1, 7), (1, 7), (1, 7), (-1, 5), (-1, 5), (-1, 5), (-1, 5)]
-theorem star_He3Free : starSum 9 letters_He3Free = 29 / 8 := by
+def letters_He3Free : List (ℤ × ℕ) := [(1, 5), (-1, 5), (1, 7), (-1, 5), (1, 5), (-1, 7), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 5), (1, 7), (-1, 5), (1, 5), (-1, 7), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 5), (1, 7), (-1, 5), (1, 5), (-1, 7), (-1, 7), (1, 5), (1, 5)]
+theorem star_He3Free : starSum 9 letters_He3Free = 1 / 4 := by
   simp only [starSum, letters_He3Free, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
 /-- Letter data `(w, c(σ⁽ˡ⁾))` of the 3He atom word, n = 9: [★] = 31/32. -/
-def letters_He3Atom : List (ℤ × ℕ) := [(1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 3), (-1, 3), (-1, 3), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 3), (-1, 3), (-1, 3), (1, 5), (1, 5), (1, 5), (1, 5), (1, 5), (-1, 3), (-1, 3), (-1, 3), (-1, 3)]
-theorem star_He3Atom : starSum 9 letters_He3Atom = 31 / 32 := by
+def letters_He3Atom : List (ℤ × ℕ) := [(1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (1, 3), (1, 3), (1, 3), (1, 5), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (1, 3), (1, 3), (1, 3), (1, 3), (-1, 3), (1, 5), (-1, 3), (1, 3), (-1, 5), (-1, 5), (1, 3), (1, 3)]
+theorem star_He3Atom : starSum 9 letters_He3Atom = 1 / 8 := by
   simp only [starSum, letters_He3Atom, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
 /-- Letter data `(w, c(σ⁽ˡ⁾))` of the 4He free word, n = 12: [★] = 37/16. -/
-def letters_He4Free : List (ℤ × ℕ) := [(1, 9), (1, 9), (1, 9), (1, 9), (1, 9), (1, 9), (-1, 7), (-1, 7), (-1, 7), (1, 9), (1, 9), (1, 9), (1, 9), (1, 9), (1, 9), (-1, 7), (-1, 7), (-1, 7), (1, 9), (1, 9), (1, 9), (1, 9), (1, 9), (-1, 7), (-1, 7), (-1, 7), (-1, 7), (1, 9), (1, 9), (1, 9), (1, 9), (1, 9), (-1, 7), (-1, 7), (-1, 7), (-1, 7)]
-theorem star_He4Free : starSum 12 letters_He4Free = 37 / 16 := by
+def letters_He4Free : List (ℤ × ℕ) := [(1, 7), (-1, 7), (1, 9), (-1, 7), (1, 7), (-1, 9), (1, 7), (1, 7), (1, 7), (1, 7), (-1, 7), (1, 9), (-1, 7), (1, 7), (-1, 9), (1, 7), (1, 7), (1, 7), (1, 7), (-1, 7), (1, 9), (-1, 7), (1, 7), (-1, 9), (-1, 9), (1, 7), (1, 7), (1, 7), (-1, 7), (1, 9), (-1, 7), (1, 7), (-1, 9), (-1, 9), (1, 7), (1, 7)]
+theorem star_He4Free : starSum 12 letters_He4Free = 1 / 16 := by
   simp only [starSum, letters_He4Free, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
 /-- Letter data `(w, c(σ⁽ˡ⁾))` of the 4He atom word, n = 12: [★] = 37/128. -/
-def letters_He4Atom : List (ℤ × ℕ) := [(1, 6), (1, 6), (1, 6), (1, 6), (1, 6), (1, 6), (-1, 4), (-1, 4), (-1, 4), (1, 6), (1, 6), (1, 6), (1, 6), (1, 6), (1, 6), (1, 6), (-1, 4), (-1, 4), (-1, 4), (1, 6), (1, 6), (1, 6), (1, 6), (1, 6), (-1, 4), (-1, 4), (-1, 4), (-1, 4), (-1, 6), (1, 6), (1, 6), (1, 6), (1, 6), (1, 6), (-1, 4), (-1, 4), (-1, 4), (-1, 4)]
-theorem star_He4Atom : starSum 12 letters_He4Atom = 37 / 128 := by
+def letters_He4Atom : List (ℤ × ℕ) := [(1, 4), (-1, 4), (1, 6), (-1, 4), (1, 4), (-1, 6), (1, 4), (1, 4), (1, 4), (1, 6), (1, 4), (-1, 4), (1, 6), (-1, 4), (1, 4), (-1, 6), (1, 4), (1, 4), (1, 4), (1, 4), (-1, 4), (1, 6), (-1, 4), (1, 4), (-1, 6), (-1, 6), (1, 4), (1, 4), (-1, 6), (1, 4), (-1, 4), (1, 6), (-1, 4), (1, 4), (-1, 6), (-1, 6), (1, 4), (1, 4)]
+theorem star_He4Atom : starSum 12 letters_He4Atom = 1 / 128 := by
   simp only [starSum, letters_He4Atom, List.map_cons, List.map_nil, List.sum_cons, List.sum_nil]; norm_num
 
 

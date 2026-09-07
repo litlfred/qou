@@ -1,0 +1,98 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0612592v1",
+ "source": {
+  "file": "0612592v1.pdf",
+  "sha256": "a5d29fa15a0b74ff6ee94ec5e079d7e36892341d0af54c3716fe1bb297ea476b",
+  "bytes": 173905,
+  "pages": 16,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0612592",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "20 Dec 2006"
+  },
+  "doi": null,
+  "title": "Analytic q-difference equations Marius van der Put",
+  "authors_raw": "Department of Mathematics, University of Groningen, P.O.Box 800",
+  "title_lines": [
+   "Analytic q-difference equations",
+   "Marius van der Put"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211102165638-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Difference equations in general",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "First examples of q-difference equations",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Towards a classification of modules",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Moduli spaces for difference modules",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Difference Galois groups",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Universal Picard-Vessiot rings and  universal difference Galois groups",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-document",
+   "number": null,
+   "title": "Document",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 16,
+   "n_chars": 32970,
+   "n_words": 6632
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 1,
+  "chars_total": 32970
+ }
+}

@@ -1,0 +1,135 @@
+{
+  "engine": "python+mpmath+rust",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T07:12:34.281765+00:00",
+  "commitSha": "785f6eb11a735caf866163b0a0d0d53d91505a10",
+  "assertions": [
+    {
+      "name": "C_lambda >= 0 on every partition",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_forced_by_gate_probe"
+    },
+    {
+      "name": "every atom's gated sum is negative",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_forced_by_gate_probe"
+    },
+    {
+      "name": "the gated set is >=90% negative for every atom",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_forced_by_gate_probe"
+    },
+    {
+      "name": "the gated set is MORE negative than the slack set, every atom",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_forced_by_gate_probe"
+    },
+    {
+      "name": "|Tr| >= d is much rarer when Tr <= 0 than when Tr > 0",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "uic_sign_forced_by_gate_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "uic-sign-forced-by-gate",
+  "scriptFile": "uic_sign_forced_by_gate_probe.py",
+  "scriptHash": "382d8af79d39",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/uic_sign_forced_by_gate_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/uic_sign_forced_by_gate_probe.py"
+  },
+  "description": "Gap qou-sv7h: the wrong sign of unified_iterative_correction is forced by the Pass-2 complementary-slackness gate. C_lambda >= 0 on every partition; the gate keeps exactly Tr<=0; and Tr<=0 almost never has |Tr| >= d (3.4% against 34.1%) because Tr(I) = +d. So every gated term is a non-negative scale times a negative log and B < 0 is forced for any nucleus. The near-constant gated-set size explains the measured A-independence too.",
+  "auditOnly": "docs/audits/2026-09-05-uic-sign-forced-by-gate.md",
+  "data": {
+    "per_atom": [
+      {
+        "atom": "2H",
+        "A": 2,
+        "n_gated": 15,
+        "gated_negative": 15,
+        "n_slack": 13,
+        "slack_negative": 8,
+        "gated_sum": "-1.36568481708788027734298877477531935336285597854871963014210"
+      },
+      {
+        "atom": "3H",
+        "A": 3,
+        "n_gated": 9,
+        "gated_negative": 9,
+        "n_slack": 19,
+        "slack_negative": 13,
+        "gated_sum": "-0.970408945618667555955615249086707331905884622230539681193669"
+      },
+      {
+        "atom": "3He",
+        "A": 3,
+        "n_gated": 9,
+        "gated_negative": 9,
+        "n_slack": 19,
+        "slack_negative": 13,
+        "gated_sum": "-0.807940426483001106014580952136063161444283075436726780207677"
+      },
+      {
+        "atom": "4He",
+        "A": 4,
+        "n_gated": 10,
+        "gated_negative": 9,
+        "n_slack": 18,
+        "slack_negative": 12,
+        "gated_sum": "-0.802091711635766065547999516570786965083947724598770591685197"
+      },
+      {
+        "atom": "6Li",
+        "A": 6,
+        "n_gated": 15,
+        "gated_negative": 14,
+        "n_slack": 13,
+        "slack_negative": 8,
+        "gated_sum": "-1.07697056503999882623817655094833650856525652773982186586923"
+      }
+    ],
+    "pooled_big_trace_fraction": {
+      "Tr_pos_total": 82,
+      "Tr_pos_big": 28,
+      "Tr_nonpos_total": 58,
+      "Tr_nonpos_big": 2,
+      "frac_big_when_pos": "0.341463414634146341463414634146341463414634146341463414634146",
+      "frac_big_when_nonpos": "0.0344827586206896551724137931034482758620689655172413793103448"
+    }
+  }
+}

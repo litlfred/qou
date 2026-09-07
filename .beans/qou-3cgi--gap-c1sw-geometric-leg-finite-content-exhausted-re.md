@@ -20,6 +20,9 @@ doc scoped are already PROVED sorry-free on main:
 
 **Residual = irreducibly open geometry (W1–W3, per `docs/audits/2026-07-20-zgeometric-prolongation-symbol-scoping.md`):**
 - W1: construct the q-difference prolongation `D_q` *from Σ* (no q-jet-bundle / q-D-module symbol calculus in Mathlib or corpus).
+
+> 🛑 **Scope correction (2026-09-06, bean `qou-p6m1`).** The claim above bundles two objects. The **q-D-module symbol calculus is PRESENT** — `QOU.Machinery.QuantumTorusSymbol` (QDM-1/2, 19 decls, sorry-free, on `main` by 2026-07-24) and `QOU.Mathlib.RamifiedShiftCalculus` (the same calculus at the ramified pole `z = z_c + t²`, sorry-free, 2026-09-03, and it *imports* `RamificationParityMonodromy`, the file that declared it absent). Only the **q-jet bundle over `Σ`** is absent. **W1 (construct `D_q` from `Σ`) still stands** — this is a scoping split, not a downgrade.
+
 - W2: extract its principal symbol at a ramified pole (Ramis–Sauloy–Zhang local classification — cited only for the obstruction).
 - W3: anti-fit obligation — symbol must be computed from Σ without target-matching C1.
 

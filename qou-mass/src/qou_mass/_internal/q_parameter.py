@@ -68,7 +68,7 @@ from qou_substrate.constants import *  # noqa: F401,F403,E402
 # CAL-LAYER q₀ ANCHOR SELECTION (computations/ layer) — bean `yfvb`, 2026-07-06.
 #
 # Per the two-layer calibration convention (AGENTS.md §"q₀ anchor convention"):
-#   • IDEAL / canonical 3-CAL  → q₀ is MUON-anchored (CAL-2 = 𝔇_β, proxy m_μ/m_e);
+#   • IDEAL / canonical 3-CAL  → q₀ is MUON-anchored (CAL-2 = P_skew^β, proxy m_μ/m_e);
 #     the canonical-derivation producers (~455 muon witnesses).
 #   • PHYSICAL-Observations     → q₀ is PROTON-anchored (m_p/m_e, most precise);
 #     the precision/prediction producers (~279 proton witnesses).

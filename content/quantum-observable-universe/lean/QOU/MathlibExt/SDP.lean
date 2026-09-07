@@ -252,69 +252,37 @@ structure StrictComplementarityPair (sdp : SDPPrimal n R ι)
   /-- Off the active set, the dual variable is exactly zero. -/
   inactive_dual_zero : ∀ i ∉ active, ystar i = 0
 
-/- **Primal-optimum uniqueness from strict complementarity.**
+/-! ## Primal-optimum uniqueness — REMOVED (it was false)
 
-    Given a strict-complementarity pair `sc` for `sdp`, the primal
-    optimum `sc.Φstar` is unique among primal-feasible points
-    achieving the same objective value.
+This module used to carry `strict_complementarity_unique_axiom` and two
+theorems consuming it: `strict_complementarity_unique` and
+`strict_complementarity_optimum_subsingleton`.
 
-    PROOF: standard SDP-duality complementary-slackness argument
-    (Boyd-Vandenberghe §5.5, Todd 2001 §3.4):
-      1. Complementary slackness: any feasible Φ' with `objAt Φ' =
-         objAt Φstar` satisfies `tr(constraint i · Φ') = rhs i` for
-         all active i (since on active set ystar_i > 0).
-      2. The active-constraint-set face F = {Φ : tr(A_i · Φ) = b_i
-         for all i ∈ active} is a non-empty closed convex face of
-         the feasible region.
-      3. The cost `tr(T · Φ)` restricted to F is strictly convex
-         (the inactive-constraint slack acts as a linear
-         distinguishing functional), so it has at most one
-         minimizer on F.
-      4. Both Φstar and Φ' minimize on F (by feasibility +
-         optimal-value match), hence Φ' = Φstar. -/
--- Ref: [boyd-vandenberghe-2004] §5.5 ("Strict complementarity")
--- Ref: [todd2001] §3.4 ("Uniqueness via strict complementarity")
-/-- **External axiom (Boyd-Vandenberghe 2004 §5.5; Todd 2001 §3.4):
-    SDP strict-complementarity uniqueness over a `LinearOrderedField`.**
+**All three asserted false propositions and have been deleted.**  The
+refutation is `QOU.MathlibExt.SDPUniquenessCounterexamples.not_strict_complementarity_unique`
+(sorry-free, depending on no QOU axiom): take `n = 1`, no constraints and
+**zero cost**.  Every PSD matrix is then feasible with the same objective, so
+`Φ⋆ = 0` and `Φ' = 1` both satisfy every hypothesis and the conclusion gives
+`1 = 0`.
 
-    For a SDPPrimal with strict complementarity, the primal optimal
-    is unique.  Proof reduces (per the §3b-cond §5.5.4 pattern) to
-    the kernel-uniqueness step requiring Slater's strict feasibility
-    + Mathlib's SDP rank-deficiency theorem (open Mathlib gap). -/
--- Ref: [boyd-vandenberghe-2004] §5.5
--- Ref: [todd2001] §3.4
-axiom strict_complementarity_unique_axiom :
-    ∀ {n : ℕ} {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R] [StarRing R] {ι : Type*}
-      {sdp : SDPPrimal n R ι}
-      (sc : StrictComplementarityPair sdp)
-      {Φ' : Matrix (Fin n) (Fin n) R}
-      (_h_feas : sdp.IsFeasible Φ')
-      (_h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar),
-        Φ' = sc.Φstar
+Alizadeh-Haeberly-Overton 1997 requires **dual nondegeneracy** for primal
+uniqueness, not strict complementarity alone; the deleted statement omitted it
+and was therefore strictly stronger than the theorem it cited.
 
-theorem strict_complementarity_unique
-    {sdp : SDPPrimal n R ι}
-    (sc : StrictComplementarityPair sdp)
-    {Φ' : Matrix (Fin n) (Fin n) R}
-    (h_feas : sdp.IsFeasible Φ')
-    (h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar) :
-    Φ' = sc.Φstar :=
-  strict_complementarity_unique_axiom sc h_feas h_obj
+**Where uniqueness now lives.**  Uniqueness is an ordered-field fact and is not
+available over the generic `R` of this module, so it belongs downstream at `ℝ`:
 
-/-- **Uniqueness as a `Subsingleton` (typeclass-friendly form).**
+* `QOU.MathlibExt.SDPRealUniqueness.real_strict_complementarity_unique_of_dualSlack_posDef`
+  — the interior case, fully proved, hypothesis `(sdp.dualSlack sc.ystar).PosDef`.
+* `QOU.MathlibExt.SDPRealUniqueness.SDPSlaterUniqueness` — the §3b-cond
+  conditional class, with proven instances for the interior and
+  active-empty-plus-cost-PosDef cases.
 
-    Wraps `strict_complementarity_unique` so downstream code can
-    use `Subsingleton {Φ // sdp.IsFeasible Φ ∧ sdp.objAt Φ =
-    sdp.objAt sc.Φstar}` directly. -/
-theorem strict_complementarity_optimum_subsingleton
-    {sdp : SDPPrimal n R ι}
-    (sc : StrictComplementarityPair sdp) :
-    Subsingleton {Φ : Matrix (Fin n) (Fin n) R //
-      sdp.IsFeasible Φ ∧ sdp.objAt Φ = sdp.objAt sc.Φstar} := by
-  refine ⟨fun ⟨Φ₁, h₁_feas, h₁_obj⟩ ⟨Φ₂, h₂_feas, h₂_obj⟩ => ?_⟩
-  have e₁ := strict_complementarity_unique sc h₁_feas h₁_obj
-  have e₂ := strict_complementarity_unique sc h₂_feas h₂_obj
-  ext1
-  exact e₁.trans e₂.symm
+Every live QOU consumer has `cost = 1` and no constraints, hence
+`dualSlack = 1`, which is positive-definite — so all of them satisfy the
+interior hypothesis and lose nothing by the change.
+
+Tracked in bean `qou-i6u4`.
+-/
 
 end QOU.MathlibExt.SDP

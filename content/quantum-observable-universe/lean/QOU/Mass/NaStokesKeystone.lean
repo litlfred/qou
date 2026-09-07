@@ -19,9 +19,13 @@ that the depth-2 SL₂ binding trace `τ` assembles (sorry-free) to its bar-even
 The keystone is the last link of the categorical derivation chain. The non-abelian
 Stokes step supplies *what* the period integrates to:
 
-1. **Yekutieli non-abelian Stokes (`prop:hecke-spectral-sequence`).** The abelianised
-   Cartan connection on the exceptional divisor `S_c` has curvature 2-form
-   `F(σ) = σ² − (q − q⁻¹)σ − 1`. Flatness `F = 0` *derives* the Hecke quadratic, whose
+1. **Yekutieli non-abelian Stokes (`prop:hecke-spectral-sequence`) — CONJECTURAL, see
+   `QOU.Mass.HeckeMonodromy` (2026-09-06).** The abelianised Cartan
+   connection on the exceptional divisor `S_c` is *conjectured* to have curvature 2-form
+   `F(σ) = σ² − (q − q⁻¹)σ − 1`; the corpus does not construct it (cheat-sheet §2a). Its
+   `q = 1` shadow — a reflection — IS derived (Picard–Lefschetz monodromy of the colour cubic,
+   `HeckeQuadraticClassicalShadow.lean`); only the deformation `1 ↦ q` is the hypothesis.
+   Granting it, flatness `F = 0` gives the Hecke quadratic, whose
    two roots are the Stokes/Hecke eigenvalues `λ₊ = q` (symmetric `L₊`),
    `λ₋ = −q⁻¹` (antisymmetric `L₋`) — `QOU.Mass.HeckeStokes.stokes_curvature_factors`.
 2. **Holonomy = multiplicative surface integral.** The loop holonomy

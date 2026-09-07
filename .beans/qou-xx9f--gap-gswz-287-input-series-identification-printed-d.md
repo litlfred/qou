@@ -1,6 +1,6 @@
 ---
 # qou-xx9f
-title: ""
+title: 'GAP: GSWZ (287) input-series identification — printed digits unreproduced'
 status: completed
 type: task
 priority: normal

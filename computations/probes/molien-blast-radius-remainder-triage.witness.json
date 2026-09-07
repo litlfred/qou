@@ -1,0 +1,237 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T17:18:04.345216+00:00",
+  "commitSha": "851db453267a7c3d071f94bcbd55a7a777433ecc",
+  "assertions": [
+    {
+      "name": "molien_sums_to_one_at_every_n_in_range",
+      "computed": "9.05567907882671236750911929088779178068253119813913818958261e-71",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-40",
+      "unit": "relative",
+      "source": "SUM_lam f^lam q^{-kappa} d_q(lam)/[n]_q! = 1 for n = 2..9, matching the Lean molienSum_eq_qFactorial. This is what makes the transfer-matrix probe's check-1 defect family-specific."
+    },
+    {
+      "name": "dimq2_defect_changes_sign_at_n_equals_7",
+      "computed": "[7]",
+      "expected": "[7]",
+      "passed": true,
+      "source": "Reproduces the transfer-matrix probe's own check 1 on the superseded family, so the contrast above is against that probe's actual behaviour rather than against a paraphrase of it. A different crossing here would mean this triage had mis-modelled the file and should not be trusted."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 52,
+  "computation": "molien-blast-radius-remainder-triage",
+  "scriptFile": "molien_blast_radius_remainder_triage_probe.py",
+  "scriptHash": "4a7c47900a85",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/molien_blast_radius_remainder_triage_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/molien_blast_radius_remainder_triage_probe.py"
+  },
+  "description": "Bean qou-oots. Triages the last three real consumers of the corrected Molien blast radius (11 of 38). Headline: deltalambda/wlambda_transfer_matrix_connected_probe.py builds its transfer matrix from W_lam = d_q^2/[n]_q! and its check 1 measures the NON-NORMALISATION of that family (1 - SUM_lam W_lam = C(n) h^2 + ..., with a Lean-proved cubic and an n=7 sign change). The Molien family sums to EXACTLY 1 at every n, so under the canonical family that defect is identically zero and the n=7 crossing does not exist -- the phenomenon is family-specific, not a moved number. Also tests the q->1 coincidence claim in paper_six_term_shadow_price_sweep.py's w_lambda docstring, which is true of the uncapped Markov weight and false of the SU(2)-specialised one. NOT a claim that either file is wrong.",
+  "parameters": {
+    "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
+    "n_range": "[2, 3, 4, 5, 6, 7, 8, 9]"
+  },
+  "data": {
+    "normalisation_by_family": {
+      "rows": {
+        "2": {
+          "partitions": 2,
+          "Z_dimq2": "0.994581091209831111991678463329739263696381460657025971850452",
+          "defect_1_minus_Z": "0.00541890879016888800832153667026073630361853934297402814954766",
+          "defect_sign": 1,
+          "C_n_lean_cubic": "0.125000000000000000000000000000000000000000000000000000000000",
+          "C_n_sign": 1,
+          "Z_molien": "1.00000000000000000000000000000000000000000000000000000000000",
+          "molien_deviation_from_1": "9.05567907882671236750911929088779178068253119813913818958261e-72"
+        },
+        "3": {
+          "partitions": 3,
+          "Z_dimq2": "0.987440229773687729117875218675544503499448071254574486458660",
+          "defect_1_minus_Z": "0.0125597702263122708821247813244554965005519287454255135413405",
+          "defect_sign": 1,
+          "C_n_lean_cubic": "0.291666666666666666666666666666666666666666666666666666666667",
+          "C_n_sign": 1,
+          "Z_molien": "1.00000000000000000000000000000000000000000000000000000000000",
+          "molien_deviation_from_1": "1.81113581576534247350182385817755835613650623962782763791652e-71"
+        },
+        "4": {
+          "partitions": 5,
+          "Z_dimq2": "0.982165323835610783872076092737614714004675076537133119662281",
+          "defect_1_minus_Z": "0.0178346761643892161279239072623852859953249234628668803377188",
+          "defect_sign": 1,
+          "C_n_lean_cubic": "0.416666666666666666666666666666666666666666666666666666666667",
+          "C_n_sign": 1,
+          "Z_molien": "1.00000000000000000000000000000000000000000000000000000000000",
+          "molien_deviation_from_1": "1.81113581576534247350182385817755835613650623962782763791652e-71"
+        },
+        "5": {
+          "partitions": 7,
+          "Z_dimq2": "0.982224148283254053452615576237827417930881915033038669575642",
+          "defect_1_minus_Z": "0.0177758517167459465473844237621725820691180849669613304243576",
+          "defect_sign": 1,
+          "C_n_lean_cubic": "0.416666666666666666666666666666666666666666666666666666666667",
+          "C_n_sign": 1,
+          "Z_molien": "1.00000000000000000000000000000000000000000000000000000000000",
+          "molien_deviation_from_1": "3.62227163153068494700364771635511671227301247925565527583305e-71"
+        },
+        "6": {
+          "partitions": 11,
+          "Z_dimq2": "0.991079523637350140711333719064374092128516167076231641854768",
+          "defect_1_minus_Z": "0.00892047636264985928866628093562590787148383292376835814523249",
+          "defect_sign": 1,
+          "C_n_lean_cubic": "0.208333333333333333333333333333333333333333333333333333333333",
+          "C_n_sign": 1,
+          "Z_molien": "1.00000000000000000000000000000000000000000000000000000000000",
+          "molien_deviation_from_1": "3.62227163153068494700364771635511671227301247925565527583305e-71"
+        },
+        "7": {
+          "partitions": 15,
+          "Z_dimq2": "1.01242608790563518029852827401751565129778957401593378792780",
+          "defect_1_minus_Z": "-0.0124260879056351802985282740175156512977895740159337879278023",
+          "defect_sign": -1,
+          "C_n_lean_cubic": "-0.291666666666666666666666666666666666666666666666666666666667",
+          "C_n_sign": -1,
+          "Z_molien": "1.00000000000000000000000000000000000000000000000000000000000",
+          "molien_deviation_from_1": "5.43340744729602742050547157453267506840951871888348291374957e-71"
+        },
+        "8": {
+          "partitions": 22,
+          "Z_dimq2": "1.05056014759204468186051942893970098473421544889084261124125",
+          "defect_1_minus_Z": "-0.0505601475920446818605194289397009847342154488908426112412492",
+          "defect_sign": -1,
+          "C_n_lean_cubic": "-1.16666666666666666666666666666666666666666666666666666666667",
+          "C_n_sign": -1,
+          "Z_molien": "1.00000000000000000000000000000000000000000000000000000000000",
+          "molien_deviation_from_1": "5.43340744729602742050547157453267506840951871888348291374957e-71"
+        },
+        "9": {
+          "partitions": 30,
+          "Z_dimq2": "1.11092313495739793519940970273453586672159312269210466822371",
+          "defect_1_minus_Z": "-0.110923134957397935199409702734535866721593122692104668223707",
+          "defect_sign": -1,
+          "C_n_lean_cubic": "-2.50000000000000000000000000000000000000000000000000000000000",
+          "C_n_sign": -1,
+          "Z_molien": "1.00000000000000000000000000000000000000000000000000000000000",
+          "molien_deviation_from_1": "9.05567907882671236750911929088779178068253119813913818958261e-71"
+        }
+      },
+      "dimq2_sign_changes_at_n": [
+        7
+      ],
+      "molien_max_deviation_from_1": "9.05567907882671236750911929088779178068253119813913818958261e-71",
+      "note": "The left family is the transfer-matrix probe's W_lam; the right is the canonical Molien weight. The probe's check 1 tests that sign(1 - Z(n)) tracks sign(C(n)) with the n=7 crossing. Under Molien there is nothing to track: the deviation is at the floor of the arithmetic at every n, so the defect, its cubic and its crossing all cease to exist."
+    },
+    "q_to_one_coincidence_claim": {
+      "per_n": {
+        "3": {
+          "partitions": 3,
+          "sum_w_at_q_eq_1": "1.00000000000000000000000000000000000000000000000000000000000",
+          "y_su2_exact_zeros_at_q_to_1": 1,
+          "zero_shapes": [
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "w_nonzero_on_those_shapes": true
+        },
+        "4": {
+          "partitions": 5,
+          "sum_w_at_q_eq_1": "1.00000000000000000000000000000000000000000000000000000000000",
+          "y_su2_exact_zeros_at_q_to_1": 2,
+          "zero_shapes": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "w_nonzero_on_those_shapes": true
+        },
+        "6": {
+          "partitions": 11,
+          "sum_w_at_q_eq_1": "1.00000000000000000000000000000000000000000000000000000000000",
+          "y_su2_exact_zeros_at_q_to_1": 7,
+          "zero_shapes": [
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              2,
+              2,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "w_nonzero_on_those_shapes": true
+        }
+      },
+      "verdict": "The sweep's docstring claim is TRUE of an uncapped Jones-Markov y_lambda (w_lam -> (f^lam)^2/n! at q=1, which sums to 1 by Burnside) and FALSE of the SU(2)-specialised y_lambda_su_n(n, q, 2), which is exactly zero on every lambda of more than two rows even at q -> 1 -- the row cap is a statement about N, not about q. Scoping refinement, not a refutation: the docstring names Jones-Markov and points at solve_y_lambda, which is the uncapped object."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

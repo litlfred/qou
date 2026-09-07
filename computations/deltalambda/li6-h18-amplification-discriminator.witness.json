@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-30T06:50:57.683661+00:00",
-  "commitSha": "0c1f0f9d8f04990ea2f7b8477eccbd104c7c17b3",
+  "computedAt": "2026-09-07T08:26:45.084901+00:00",
+  "commitSha": "2efe745cab538d0ae07b73098a1c09011c8a4b57",
   "assertions": [
     {
       "name": "anchor_kappaD_reproduced",
-      "computed": "6.41614616239163203857813088973964458360273416038233595673652",
+      "computed": "6.41614616239163203857813088973964458360273416038232247208400",
       "expected": "6.4161462",
       "passed": true,
       "tolerance": "0.01",
@@ -14,7 +14,7 @@
     },
     {
       "name": "anchor_kappa4He_reproduced",
-      "computed": "73.5943002136917302233689907796848835890781910601159069564428",
+      "computed": "73.5943002136917302233689907796848835890781910601123520195736",
       "expected": "73.5943",
       "passed": true,
       "tolerance": "0.1",
@@ -38,7 +38,7 @@
     },
     {
       "name": "lr_free_path_validated_at_4He",
-      "computed": "1.259195952166794583767996943555339490245204391924239776924753017416311e-48",
+      "computed": "4.856919593977752843418766624499505628433860744952107555690912538193532e-49",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-05",
@@ -58,7 +58,7 @@
   "computation": "li6-h18-amplification-discriminator",
   "scriptFile": "li6_h18_amplification_discriminator_probe.py",
   "scriptHash": "3bbcaab5ef5b",
-  "scriptCommitSha": "0859eceadd4942bfa8422c3c11ed3cd8b9debb8d",
+  "scriptCommitSha": "9da2f10ea8cda3dd47d6ad27a1bcb33f5eeb00e3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -73,7 +73,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "4d25408e46482f36"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
@@ -103,11 +103,11 @@
         "tr_M_consistency_rel": "2.12032e-50",
         "free_chi_wall_sec": 0.04,
         "channel_stats": {
-          "rotation_free": 162,
+          "rotation_free": 175,
           "rotation_atom": 169,
-          "growth_free": 14,
+          "growth_free": 1,
           "growth_atom": 7,
-          "channel_flips": 7
+          "channel_flips": 6
         }
       },
       "6Li": {
@@ -115,16 +115,16 @@
         "tr_M_consistency_rel": "1.2549e-51",
         "free_chi_wall_sec": 0.09,
         "channel_stats": {
-          "rotation_free": 366,
+          "rotation_free": 384,
           "rotation_atom": 373,
-          "growth_free": 19,
+          "growth_free": 1,
           "growth_atom": 12,
-          "channel_flips": 7
+          "channel_flips": 11
         }
       }
     },
     "lr_free_vs_he4_witness_max_rel": {
-      "value": "1.2592e-48",
+      "value": "4.85692e-49",
       "bound": 1e-05,
       "note": "convention gap (sign-only nucleon cache vs averaged-crossings free witness); perturbs 𝒜 by ≪ 0.01 %"
     },
@@ -149,16 +149,16 @@
       "4He/3He": "2.995265"
     },
     "li6_measured": {
-      "S_y_dim": "0.5803430179",
-      "S_y": "0.001596073204",
-      "m_e_S_y_dim_MeV": "0.2965546732",
-      "A_li6_y_dim": "107.8856282",
-      "A_li6_y": "39227.94448",
+      "S_y_dim": "0.7556672716",
+      "S_y": "0.001688095717",
+      "m_e_S_y_dim_MeV": "0.3861451829",
+      "A_li6_y_dim": "82.85481373",
+      "A_li6_y": "37089.52662",
       "B_AME_li6_MeV": "31.9939872"
     },
     "geometric_law_test": {
       "pred_composite_q3fact_kash4": "649.7782883",
-      "measured_over_composite_minus_1": "-0.833965",
+      "measured_over_composite_minus_1": "-0.872488",
       "anchor_scatter_band": [
         "394.89015",
         "1804.4794"
@@ -166,17 +166,17 @@
       "inside_anchor_scatter_band": false,
       "within_40pct_outer_gate": false,
       "secondary_point_5Li": {
-        "measured_A_y_dim": "102.5137904",
-        "measured_A_y": "7696.90227",
+        "measured_A_y_dim": "64.10282424",
+        "measured_A_y": "7216.63716",
         "pred_composite_q3fact_kash3": "202.4286733",
-        "measured_over_composite_minus_1": "-0.493581",
+        "measured_over_composite_minus_1": "-0.683331",
         "caveat": "⁵Li is particle-unbound (p+⁴He); its AME total binding is used as the same MEASURED diagnostic numerator as the other atoms"
       },
-      "implied_step_ratio_4He_to_5Li": "1.3929583",
-      "implied_step_ratio_5Li_to_6Li": "1.0524011",
-      "implied_step_ratio_4He_to_6Li": "1.2107646",
-      "composite_absolute_B_pred_MeV": "192.6947879",
-      "composite_absolute_rel_err": "5.02284",
+      "implied_step_ratio_4He_to_5Li": "0.87102974",
+      "implied_step_ratio_5Li_to_6Li": "1.2925298",
+      "implied_step_ratio_4He_to_6Li": "1.0610523",
+      "composite_absolute_B_pred_MeV": "250.908756",
+      "composite_absolute_rel_err": "6.84237",
       "verdict": "BREAKS — the geometric law is a 4-point artifact; it joins the refuted scalar class (scope-(a): this law, alone, does not extend; constrains combinations, not ingredients)",
       "status": "GUARDED-DATUM discrimination test — not a derivation; not wired regardless of verdict"
     },
@@ -185,29 +185,29 @@
         "ratio_value": "3.1415927",
         "pred_A6_anchor_q3fact": "596.20006",
         "pred_A6_anchor_AD": "624.99097",
-        "measured_over_pred_q3fact": "0.18095541"
+        "measured_over_pred_q3fact": "0.13897149"
       },
       "[3]_q": {
         "ratio_value": "3.0437062",
         "pred_A6_anchor_q3fact": "525.29522",
         "pred_A6_anchor_AD": "550.66208",
-        "measured_over_pred_q3fact": "0.20538094"
+        "measured_over_pred_q3fact": "0.15773"
       },
       "mu_0/m_e": {
         "ratio_value": "3.1888726",
         "pred_A6_anchor_q3fact": "632.90893",
         "pred_A6_anchor_AD": "663.47253",
-        "measured_over_pred_q3fact": "0.17045996"
+        "measured_over_pred_q3fact": "0.13091111"
       },
       "exp(Vol(B3)/2pi)": {
         "ratio_value": "3.2099123",
         "pred_A6_anchor_q3fact": "649.77829",
         "pred_A6_anchor_AD": "681.15652",
-        "measured_over_pred_q3fact": "0.16603452"
+        "measured_over_pred_q3fact": "0.12751244"
       }
     },
     "li6_amplification_measured": {
-      "value": "107.8856281624374438353035571801494430543174086484487752424878709899614",
+      "value": "82.85481373386551396794001797804202755131361082822431657270971899431104",
       "meaning": "MEASURED diagnostic 𝒜(⁶Li) under w = y·dim",
       "has_independent_expected_value": false
     },

@@ -55,7 +55,9 @@ class HasHe4TwoRowDominance where
     partition shape.  Empirically verified by the same witness
     (29.0 % of the trace; largest among all 77 partitions). -/
 class HasHe4DominantBlock where
-  /-- The dominant partition. -/
+  /-- The leading NON-TRIVIAL block: the largest `|c_λ|` among the blocks
+      whose character is not fixed by construction.  This is the quantity
+      the magic-shell reading refers to. -/
   dominant_partition : List ℕ
   /-- It is two-row. -/
   dominant_is_two_row : IsTwoRow dominant_partition
@@ -63,6 +65,25 @@ class HasHe4DominantBlock where
   dominant_sums_to_12 : dominant_partition.sum = 12
   /-- The empirical value. -/
   dominant_eq : dominant_partition = [9, 3]
+  /-- The largest block by `|c_λ|` OVERALL, trivial representation included. -/
+  largest_partition : List ℕ
+  /-- It is two-row (a one-row partition has length 1 ≤ 2). -/
+  largest_is_two_row : IsTwoRow largest_partition
+  /-- It sums to 12. -/
+  largest_sums_to_12 : largest_partition.sum = 12
+  /-- The empirical value: the trivial representation. -/
+  largest_eq : largest_partition = [12]
+  /-- **The two are different**, and that is the content of this class.
+      Before the 2026-09-05 intra-nucleon ordering ruling the two notions
+      picked out the same block, so one field expressed both and nothing
+      recorded which was meant.  Under the canonical ordering the trivial
+      representation `[12]` leads at 85.4 % against `(9,3)`'s 64.4 % —
+      not because it rose (its character is a product of per-letter
+      scalars and no reordering can move it) but because every other block
+      fell past it.  It leads in six of the eight atoms tabulated, so it
+      is not a fingerprint of ⁴He; `(9,3)` is.  Carrying both, and
+      asserting they differ, is what keeps the distinction visible. -/
+  leading_ne_largest : dominant_partition ≠ largest_partition
 
 /-- Categorical instance for ⁴He. The `ratio := 866/1000` value is
     documentary only (the actual class axioms are the structural
@@ -81,6 +102,11 @@ instance : HasHe4DominantBlock where
   dominant_is_two_row := by decide
   dominant_sums_to_12 := by decide
   dominant_eq := rfl
+  largest_partition := [12]
+  largest_is_two_row := by decide
+  largest_sums_to_12 := by decide
+  largest_eq := rfl
+  leading_ne_largest := by decide
 
 /-! ## Derived theorems
 
@@ -104,6 +130,24 @@ def dominant_in_two_row_stratum
     [h : HasHe4DominantBlock] :
     TwoRowStratum 12 h.dominant_partition :=
   ⟨h.dominant_sums_to_12, h.dominant_is_two_row⟩
+
+/-- The largest block overall also lies in Λ²(12).  It is the trivial
+    representation `[12]`, a ONE-row partition — `IsTwoRow` is `length ≤ 2`,
+    so Λ²(12) contains it, which is why the stratum ratio is exactly 1 with
+    the trivial block included. -/
+def largest_in_two_row_stratum
+    [h : HasHe4DominantBlock] :
+    TwoRowStratum 12 h.largest_partition :=
+  ⟨h.largest_sums_to_12, h.largest_is_two_row⟩
+
+/-- The leading non-trivial block is not the trivial representation.  Derived
+    from `leading_ne_largest` and `largest_eq`, so it holds for any instance
+    rather than being read off this one. -/
+theorem dominant_ne_trivial_rep
+    [h : HasHe4DominantBlock] :
+    h.dominant_partition ≠ [12] := by
+  rw [← h.largest_eq]
+  exact h.leading_ne_largest
 
 /-- Concrete consequence: the dominant block (9, 3) is in Λ²(12)
     even when stated using the explicit witness value rather than

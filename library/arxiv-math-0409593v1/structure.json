@@ -1,0 +1,352 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0409593v1",
+ "source": {
+  "file": "0409593v1.pdf",
+  "sha256": "ad965f5c808388245c348adfee28f47127cacf09c057110082bb8723d79050cb",
+  "bytes": 318321,
+  "pages": 22,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0409593",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "30 Sep 2004"
+  },
+  "doi": null,
+  "title": "CATEGORIFICATION OF THE BRAID GROUPS RAPHA\u00cbL ROUQUIER 1. Introduction Actions of braid groups on triangulated categories are quite widesp read. They arise for instance in representation theory, for constructible sheaves on flag varieties and for coherent",
+  "authors_raw": null,
+  "title_lines": [
+   "CATEGORIFICATION OF THE BRAID GROUPS",
+   "RAPHA\u00cbL ROUQUIER",
+   "1. Introduction",
+   "Actions of braid groups on triangulated categories are quite widesp read. They arise for",
+   "instance in representation theory, for constructible sheaves on flag varieties and for coherent"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181026123241-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Self-equivalences",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "A general construction",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Applications",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "The 2-braid group",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Coxeter group action",
+   "page": 6,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Braid group action",
+   "page": 6,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Rigidification",
+   "page": 10,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Principal block of a semi-simple complex Lie algebra",
+   "page": 11,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Review of category O",
+   "page": 11,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Link with bimodules",
+   "page": 12,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Flag varieties",
+   "page": 13,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Classical results",
+   "page": 13,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Genuine braid group action",
+   "page": 14,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Link with bimodules",
+   "page": 14,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "Appendix : associativity of kernel transforms",
+   "page": 15,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Classical isomorphisms",
+   "page": 15,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Kernel transforms",
+   "page": 16,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 279,
+   "n_words": 42
+  },
+  {
+   "id": "sec-001-2-self-equivalences",
+   "number": "2",
+   "title": "Self-equivalences",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3787,
+   "n_words": 642
+  },
+  {
+   "id": "sec-002-21-a-general-construction",
+   "number": "2.1",
+   "title": "A general construction",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 5560,
+   "n_words": 1198
+  },
+  {
+   "id": "sec-003-22-applications",
+   "number": "2.2",
+   "title": "Applications",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 4810,
+   "n_words": 1009
+  },
+  {
+   "id": "sec-004-3-the-2-braid-group",
+   "number": "3",
+   "title": "The 2-braid group",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-31-coxeter-group-action",
+   "number": "3.1",
+   "title": "Coxeter group action",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1852,
+   "n_words": 390
+  },
+  {
+   "id": "sec-006-32-braid-group-action",
+   "number": "3.2",
+   "title": "Braid group action",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 11,
+   "n_chars": 12472,
+   "n_words": 2798
+  },
+  {
+   "id": "sec-007-4-principal-block-of-a-semi-simple-complex-lie-a",
+   "number": "4",
+   "title": "Principal block of a semi-simple complex Lie algebra",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-41-review-of-category-o",
+   "number": "4.1",
+   "title": "Review of category O",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 3477,
+   "n_words": 811
+  },
+  {
+   "id": "sec-009-42-link-with-bimodules",
+   "number": "4.2",
+   "title": "Link with bimodules",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2992,
+   "n_words": 588
+  },
+  {
+   "id": "sec-010-5-flag-varieties",
+   "number": "5",
+   "title": "Flag varieties",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-51-classical-results",
+   "number": "5.1",
+   "title": "Classical results",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 1178,
+   "n_words": 231
+  },
+  {
+   "id": "sec-012-52-genuine-braid-group-action",
+   "number": "5.2",
+   "title": "Genuine braid group action",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 904,
+   "n_words": 202
+  },
+  {
+   "id": "sec-013-53-link-with-bimodules",
+   "number": "5.3",
+   "title": "Link with bimodules",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2105,
+   "n_words": 409
+  },
+  {
+   "id": "sec-014-6-appendix-associativity-of-kernel-transforms",
+   "number": "6",
+   "title": "Appendix : associativity of kernel transforms",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-015-61-classical-isomorphisms",
+   "number": "6.1",
+   "title": "Classical isomorphisms",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 21,
+   "n_chars": 9507,
+   "n_words": 1886
+  },
+  {
+   "id": "sec-016-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 3112,
+   "n_words": 462
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 19,
+  "sections": 17,
+  "chars_total": 52035
+ }
+}

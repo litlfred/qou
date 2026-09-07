@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-22T15:29:23Z
-updated_at: 2026-08-23T08:27:15Z
+updated_at: 2026-09-07T07:08:12Z
 ---
 
 ## What
@@ -225,3 +225,93 @@ changed under this bean since I last wrote:
 
 That is a labelling decision (`qou-exsw`'s remaining content work), not a
 method decision, and it does not gate option 3.
+
+## The defect
+
+`computations/bar_pairing_binding_observable.py::_load_or_compute_chi` validates
+its cache key like this (lines ~131):
+
+    cached_q = w.get("q_str", w.get("q_0_50dps_str", w.get("q_inv_50dps_str")))
+
+The canonical producer, `chi_at_q0_via_hoefsmit_mpfr.py::save_witness`, writes
+that field as **`q_0_50dps`** — no `_str` suffix.  Measured on
+`chi-tritium-h9-at-q0-50dps.witness.json`:
+
+    q_str            present? False
+    q_0_50dps_str    present? False
+    q_inv_50dps_str  present? False
+    q_0_50dps        present? True     <- what is actually written
+
+So `cached_q` is always `None`, the `cached_q == q_str` test can never pass, and
+the function falls through to *"Compute fresh"* — **overwriting the canonical
+cache on every single run**.
+
+## What it costs
+
+The replacement payload does not carry `q_0_50dps` or `tr_M_at_q0`.  Measured
+before/after a single run of the script:
+
+    chi-deuteron-h6    q0=1.109978582751380807  ->  None    tr_M=0.15196833...  ->  None
+    chi-tritium-h9     q0=1.109978582751380807  ->  None    tr_M=0.02914404...  ->  None
+    chi-helium-3-h9    q0=1.109978582751380807  ->  None    tr_M=0.05859625...  ->  None
+
+Three canonical caches lose their anchor stamp and their trace value.  Any
+consumer reading `tr_M_at_q0` — `aK_via_lp_dual_hecke_basis.load_tr_M` does,
+directly — gets `None` and raises.
+
+## The irony, which is the reusable part
+
+That guard was **added by a Copilot review on PR #1748** with the stated purpose
+*"the filename alone does NOT encode q_str + dps.  A future q_0 re-pin or a
+different precision request would otherwise silently load a stale witness."*
+The intent was to prevent silently loading stale data.  Because the field name
+does not match, it instead **silently destroys good data, every run**.
+
+**A validation guard that cannot match its key is not inert — it is an
+unconditional cache-invalidation.**  Failing open in a read path costs a stale
+read; failing open in a read-or-recompute-and-persist path costs the file.
+
+## How it was found
+
+Running it as entry 2 of a downstream sweep after the 2026-09-06 chi-cache
+regeneration (`qou-92u9`).  Three caches I had just regenerated came back with
+`None` fields.  Reproduced in isolation twice — once by re-running the sweep's
+entry 1 (`aK_via_lp_dual_hecke_basis`, which turned out to be innocent) and once
+by running this script alone, which reproduced it exactly.
+
+## Not fixed here
+
+The one-line fix is to read `q_0_50dps`/`q_inv_50dps` as well.  But the file it
+writes is *shaped differently* from the canonical producer's, so making the
+guard match would only stop the clobbering — it would not make the two writers
+agree on a payload.  Two producers writing one filename with different schemas
+is the real defect, and choosing which schema wins is not a change to make
+unilaterally inside someone else's arc.
+
+**Until then: do not run `bar_pairing_binding_observable.py` without reverting
+`chi-{deuteron-h6,tritium-h9,helium-3-h9}-at-q0-50dps.witness.json` afterwards.**
+
+## STALE — the defect described here is fixed on main (measured 2026-09-07)
+
+Claimed this to run the regeneration and found the blocker already gone.
+`d4c196c030` ("low-isotope table: stop rewriting the canonical table it
+projects from (qou-7e1t opt 1)") **inverted the flag**: `--rerun-canonical` is
+now opt-IN (`store_true`), where this bean describes `--no-rerun-canonical` as
+an opt-out, and `--target-dps` now defaults to `None` rather than 11 so the
+canonical script uses its own default. The docstring also records that the
+canonical script "refuses a partial write outright".
+
+Verified by running the canonical producer directly: **exactly one file
+written**, no clobber, 9/9 rows, 0 assertions.
+
+**One figure in this bean is also stale.** Its table gives the committed
+canonical as `method: branching`, `target_dps: 60`. Measured on main today the
+committed artifact is `method: **auto**`, `target_dps: 60`. And
+`--method branching` cannot produce the A=1 rows at all — it errors
+"A < 2: branching combiner inapplicable (use direct H_3 path)" — which is why
+`auto` is the default and why quoting `branching` as the committed method would
+send the next agent to a run that fails on its first two rows.
+
+Left OPEN rather than completed: the commit message says "opt 1", so further
+options may have been intended, and closing someone else's bug bean on the
+strength of one measured behaviour is not mine to do.

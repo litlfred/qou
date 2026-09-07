@@ -1,8 +1,8 @@
 {
   "engine": "sympy Poly + sequential cyclotomic division (via closed_form_tau_M closed form)",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-03T04:01:40.572291+00:00",
-  "commitSha": "a1676f177e3e2a0d537ae1b67dd7e8ad569bd682",
+  "computedAt": "2026-09-07T10:12:08.094934+00:00",
+  "commitSha": "791b6c9c21ee3e68f2b9616eefe34d1c46d30339",
   "assertions": [
     {
       "name": "habiro_reconstruction_is_exact",
@@ -27,7 +27,7 @@
     },
     {
       "name": "tr_M_two_route_agreement_within_L1",
-      "computed": "5.95601115591098061094295959131e-30",
+      "computed": "1.94442188008450189805948736668e-30",
       "expected": "0",
       "passed": true,
       "tolerance": "1e-15",
@@ -39,7 +39,7 @@
   "computation": "habiro-coefficients-neutron",
   "scriptFile": "_habiro_coefficient_extract.py",
   "scriptHash": "cfd762ca9f3d",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,7 +54,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -94,49 +94,49 @@
     },
     {
       "m": 1,
-      "a_m": "-34*u - 34",
+      "a_m": "-16*u - 16",
       "deg_a_m": 1,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 2,
-      "a_m": "131*u**2 + 142*u + 153",
+      "a_m": "35*u**2 + 40*u + 45",
       "deg_a_m": 2,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 3,
-      "a_m": "-239*u**3 - 272*u**2 - 299*u - 337",
+      "a_m": "-46*u**3 - 55*u**2 - 61*u - 72",
       "deg_a_m": 3,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 4,
-      "a_m": "228*u**4 + 264*u**3 + 309*u**2 + 354*u + 410",
+      "a_m": "46*u**4 + 53*u**3 + 63*u**2 + 69*u + 83",
       "deg_a_m": 4,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 5,
-      "a_m": "-112*u**5 - 134*u**4 - 165*u**3 - 197*u**2 - 239*u - 283",
+      "a_m": "-36*u**5 - 40*u**4 - 45*u**3 - 54*u**2 - 61*u - 70",
       "deg_a_m": 5,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 6,
-      "a_m": "23*u**6 + 31*u**5 + 40*u**4 + 52*u**3 + 66*u**2 + 85*u + 106",
+      "a_m": "12*u**6 + 15*u**5 + 19*u**4 + 20*u**3 + 26*u**2 + 32*u + 38",
       "deg_a_m": 6,
       "integral": true,
       "remainder_nonzero": false
     },
     {
       "m": 7,
-      "a_m": "-u**7 - 2*u**6 - 3*u**5 - 4*u**4 - 6*u**3 - 9*u**2 - 12*u - 19",
+      "a_m": "-u**7 - 2*u**6 - 3*u**5 - 2*u**4 - 4*u**3 - 5*u**2 - 6*u - 12",
       "deg_a_m": 7,
       "integral": true,
       "remainder_nonzero": false
@@ -154,17 +154,17 @@
   "A": 1,
   "interface_kinds": [],
   "include_inter": true,
-  "tr_M_in_q": "(q**18 - q**16 + 2*q**14 - 2*q**12 + 4*q**10 - 3*q**8 + 3*q**6 - 2*q**4 + q**2 - 1)/(4*q**9)",
+  "tr_M_in_q": "(q**18 - 3*q**16 + 5*q**14 - 7*q**12 + 9*q**10 - 8*q**8 + 8*q**6 - 5*q**4 + 3*q**2 - 1)/(4*q**9)",
   "shift": 0,
   "denom_in_u": "4*u**18",
-  "p_in_u": "u**36 - u**32 + 2*u**28 - 2*u**24 + 4*u**20 - 3*u**16 + 3*u**12 - 2*u**8 + u**4 - 1",
+  "p_in_u": "u**36 - 3*u**32 + 5*u**28 - 7*u**24 + 9*u**20 - 8*u**16 + 8*u**12 - 5*u**8 + 3*u**4 - 1",
   "deg_p_u": 36,
   "n_nonzero": 9,
   "all_integral": true,
   "reconstruction_matches": true,
-  "tr_M_at_q0": 0.9877436881158096,
-  "tr_M_at_q0_via_u_poly": 0.9877436881158096,
-  "tr_M_at_q0_rel_err": 5.9560111559109805e-30,
+  "tr_M_at_q0": 0.4751335171556822,
+  "tr_M_at_q0_via_u_poly": 0.4751335171556822,
+  "tr_M_at_q0_rel_err": 1.944421880084502e-30,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

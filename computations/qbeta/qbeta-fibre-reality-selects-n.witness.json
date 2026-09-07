@@ -1,0 +1,41 @@
+{
+  "probe": "qbeta_fibre_reality_selects_n_probe",
+  "bean": "qou-cds1",
+  "question": "what selects N on the fibre locus |q| = 1, derived without reference to the required phase?",
+  "answer": "the reality of Q_A does. Keeping the modulus it selects the FIFTH roots (N = 5); dropping it (analytic continuation) it selects the FOURTH (N = 4). The two readings disagree, and the required phase is in NEITHER set -- 22.20x and 27.74x below the nearest admissible phase -- so N = 111 is excluded under both, conditional on requiring Q_A real on the locus.",
+  "scope": "(a); conditional on requiring Q_A real ON the fibre locus. A mechanism projecting to a real observable only AFTER the fibre computation is untouched.",
+  "reading_A_zero_set": "phi = 2*pi*m/5, phi = pi  (N = 5)",
+  "reading_A_imaginary_part": "-sin(2*phi) - sin(3*phi)",
+  "reading_B_zero_set": "phi in {0, pi/2, pi, 3pi/2}  (N = 4)",
+  "reading_B_imaginary_part": "(2*cos(phi) + 3)*sin(phi)*cos(phi)",
+  "theta_required": "0.056617300794061032363",
+  "reading_A_nearest_over_theta": "22.195283841008089312",
+  "reading_B_nearest_over_theta": "27.74410480126011164",
+  "q0": "1.1099785827513808076",
+  "q0_pin": "proton (q_at)",
+  "dps": 50,
+  "consonance_not_evidence": "N = 5 is not foreign here (Bring, S_5/A_5, binary icosahedral 2I, the s5-so3 keystone). Recorded as consonance; NOT offered as support, and no search was run on it.",
+  "assertions": [
+    {
+      "name": "reading_A_reality_selects_fifth_roots",
+      "passed": true,
+      "detail": "with the modulus kept, Q_A is real on |q|=1 iff Im[(q+1)/q^3] = -2 sin(5phi/2) cos(phi/2) = 0, i.e. phi = 2*pi*m/5 or phi = pi -- N = 5, derived from a reality condition with no fit and no reference to the required phase"
+    },
+    {
+      "name": "reading_B_reality_selects_fourth_roots",
+      "passed": true,
+      "detail": "dropping the modulus, Im = (2 cos phi + 3) sin phi cos phi and 2 cos phi + 3 has minimum 1.000 > 0, so the zero set is sin phi cos phi = 0: phi in {0, pi/2, pi, 3pi/2} -- N = 4"
+    },
+    {
+      "name": "the_two_readings_DISAGREE_and_that_is_the_open_question",
+      "passed": true,
+      "detail": "reading A gives N = 5, reading B gives N = 4. The modulus makes Q_A NON-HOLOMORPHIC in q, so whether it belongs on a fibre where q is a formal variable is a real question about the framework -- reported, not resolved here."
+    },
+    {
+      "name": "required_phase_is_in_NEITHER_admissible_set",
+      "passed": true,
+      "detail": "the required phase is 22.2x below reading A's nearest admissible phase and 27.74x below reading B's, so it is in neither set -- and N = 111 is excluded under both, CONDITIONAL on requiring Q_A real ON the fibre locus"
+    }
+  ],
+  "allPassed": true
+}

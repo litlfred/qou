@@ -1,0 +1,149 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0803.1227v1",
+ "source": {
+  "file": "0803.1227v1.pdf",
+  "sha256": "cf72e0fcdc7f3ddf37201694d6a3eddefb985dd5f90723ff2d21767b78e8fc77",
+  "bytes": 209057,
+  "pages": 11,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0803.1227",
+   "version": "1",
+   "primary_class": "cs.IT",
+   "stamp_date": "8 Mar 2008"
+  },
+  "doi": null,
+  "title": "Linear programming bounds for unitary space time codes",
+  "authors_raw": "Jean Creignou Herv\u00e9 Diet",
+  "title_lines": [
+   "Linear programming bounds for unitary space",
+   "time codes"
+  ],
+  "abstract": "The linear programming method is applied to the space Un(C) of uni- tary matrices in order to obtain bounds for codes relative to the diversity sum and the diversity product. Theoretical and numerical re sults improv- ing previously known bounds are derived.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181031230130-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The linear programming method on homogeneous spaces",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The case of unitary codes",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Analytic bounds of low degree",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Numerical bounds",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2490,
+   "n_words": 443
+  },
+  {
+   "id": "sec-001-the-linear-programming-method-on-homogeneous-spa",
+   "number": null,
+   "title": "The linear programming method on homogeneous spaces",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2854,
+   "n_words": 603
+  },
+  {
+   "id": "sec-002-the-case-of-unitary-codes",
+   "number": null,
+   "title": "The case of unitary codes",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 3391,
+   "n_words": 719
+  },
+  {
+   "id": "sec-003-analytic-bounds-of-low-degree",
+   "number": null,
+   "title": "Analytic bounds of low degree",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 1849,
+   "n_words": 440
+  },
+  {
+   "id": "sec-004-numerical-bounds",
+   "number": null,
+   "title": "Numerical bounds",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 2795,
+   "n_words": 508
+  },
+  {
+   "id": "sec-005-conclusions",
+   "number": null,
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2795,
+   "n_words": 450
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 6,
+  "chars_total": 16174
+ }
+}

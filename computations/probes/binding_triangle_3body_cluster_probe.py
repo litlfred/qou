@@ -61,6 +61,11 @@ REPO = Path(__file__).resolve().parents[2]
 COMP = REPO / "computations"
 sys.path.insert(0, str(COMP))
 import closed_form_tau_M as C  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 Q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
 M_E = mp.mpf("0.51099895069")
@@ -84,8 +89,8 @@ H_MK = C.hecke_h(Q0)
 # each nucleon's two intra-nucleon `averaged` crossings; bean `qou-qu2w`.)
 TAU_P = C.compute_tau_M_nucleon_H3("p", Q0, dps=50)
 TAU_N = C.compute_tau_M_nucleon_H3("n", Q0, dps=50)
-B2 = mp.mpf("2.224566")
-AME = {"T": mp.mpf("8.481798"), "3He": mp.mpf("7.718043")}
+B2 = AME_B_DEUTERON_MEV_VALIDATION
+AME = {"T": AME_B_TRITIUM_MEV_VALIDATION, "3He": AME_B_HE3_MEV_VALIDATION}
 TRIANGLE = {"T": (1, 2, ["pn", "pn", "nn"]), "3He": (2, 1, ["pp", "pn", "pn"])}
 
 

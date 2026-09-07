@@ -85,7 +85,7 @@ def main() -> int:
     h = q - 1 / q
     h2 = h * h
     G = mp.catalan
-    alpha_em = mp.mpf(1) / mp.mpf("137.0359991")
+    alpha_em = mp.mpf(1) / mp.mpf("137.035999084")
     n_cells = 8     # ideal octahedra in 𝓑_3 tessellation
     dim_H3 = 6      # 1² + 2² + 1² = 6
 

@@ -136,7 +136,36 @@ for f in "${files[@]}"; do
         # contains `|`.
         body=$(sed -E 's@/-([^-]|-+[^-/])*-+/@@g' "$f" \
                | sed '\#/-#,\#-/#d' | sed 's|--.*||')
-        GEN='(\{R\s*:\s*Type|\[CommRing|\[Field\b|\[GroupWithZero|\(R\s*:=)'
+        # FOURTH false-positive class (2026-09-06). `\(R\s*:=` was in GEN, so a
+        # file was counted as declaring a GENERIC result because it contained the
+        # named-argument syntax `(R := ...)`. That is backwards twice over:
+        #
+        #  * `(R := ℝ)` is a USE site, not a binder. It is the exact spelling
+        #    AGENTS.md §7c PRESCRIBES for the archimedean sibling -- "consumes the
+        #    generic result via a `(R := ℝ)` instantiation" -- so a correctly-split
+        #    file was told "§7c MIXED -> split into two files per §7c", which is
+        #    the one edit that cannot help: there is nothing left to split.
+        #  * `R` is just a parameter NAME. Of the 31 occurrences measured, 9 bind
+        #    it to something that is not a ring at all -- a radius in
+        #    `IdealTetEqChimney`/`BorelCaratheodory`/`C1ConnectionPoles`
+        #    (`circleIntegrable_sub_zpow_iff (R := ρ)`), `ℂ` in
+        #    `RootsOfUnityProduct`, and a WORD in UGB's `HeckeCompletion`.
+        #
+        # A generic declaration is announced by a BINDER, and all four binder
+        # forms stay in GEN. Safety argument, matching the three fixes above: a
+        # genuine §7c violation is a file that DECLARES something generic
+        # alongside archimedean content, and declaring requires a binder, so the
+        # narrowing cannot hide one.
+        #
+        # MEASURED before landing, over the 3666 non-`.lake` `.lean` under
+        # content/ (script kept at
+        # docs/audits/2026-09-06-check-sidecars-r-assign-false-positive.md):
+        # 19 files have hasGen set SOLELY by `(R :=`; 15 change verdict, every
+        # one MIXED(action) -> R-JUSTIFIED; and 0 of the 31 occurrences sit on a
+        # declaration line. Zero false clears. Note check-sidecars scans only
+        # CHANGED files, so these were never 15 live flags -- they were 15 files
+        # primed to mis-fire the moment anyone edited one. Found by editing one.
+        GEN='(\{R\s*:\s*Type|\[CommRing|\[Field\b|\[GroupWithZero)'
         RTYPE='(:\s*ℝ|\(ℝ\)|→\s*ℝ|ℝ\s*\))'      # ℝ used as a type
         # Archimedean justification, in two strengths.
         #
@@ -190,14 +219,39 @@ for f in "${files[@]}"; do
         STRONG='(Real\.(sqrt|rpow|log|exp|cos|sin|pi|tan|arctan)|CODATA|MeV)'
         ORDERED='(\blinarith\b|\bpositivity\b|\bnlinarith\b|LinearOrdered)'
         WEAK='(0\s*<|<\s*1|≤|≥)'
+        # A comparison against a NON-INTEGER DECIMAL literal (added 2026-09-05).
+        # `WEAK` deliberately matches only the two idioms `0 < x` and `x < 1`,
+        # because a bare relational operator is NOT archimedean evidence — `a < b`
+        # holds over any `LinearOrder`, ℕ included, and treating it as a signal is
+        # exactly the over-flagging qou-mr3q removed. That reasoning does not
+        # extend to a decimal literal: `1.82 < 2.30` cannot be read in ℕ or ℤ at
+        # all, so an ordered comparison of decimals forces a linear ordered FIELD
+        # and is genuine archimedean content, not a shape coincidence.
+        #
+        # Without this, a file whose entire purpose is to hold decimal empirical
+        # records is told to "generalize to {R}/[Field R]" — which would be wrong,
+        # since generic-`R` has no decimals to compare. Found on
+        # `DepthStratifiedFrobeniusReciprocityVariance.lean`, whose own docstring
+        # explains it sits on the archimedean side by construction.
+        #
+        # MEASURED before landing, over every non-`.lake` `.lean` under content/:
+        # 362 files carry the `base-ring-minimal` flag; this clears 19 of them
+        # (5%), and all 19 were read individually — CODATA comparisons, MeV
+        # binding energies, the muon/electron ratio, proton mass, q₀ ≈ 1.1097
+        # evaluations. Zero false clears. Gated on `hasR` like the other weak
+        # signals, so it can only ever clear a file that already carries ℝ; the
+        # MIXED branch is unaffected because it already required `hasR || hasJ`.
+        DECCMP='([0-9]+\.[0-9]+[[:space:]]*[<>≤≥]|[<>≤≥][[:space:]]*\(?[[:space:]]*[0-9]+\.[0-9]+)'
         printf '%s\n' "$body" | grep -qE "$RTYPE"  && hasR=1  || hasR=0
         printf '%s\n' "$body" | grep -qE "$STRONG" && hasS=1  || hasS=0
         printf '%s\n' "$body" | grep -qE "$ORDERED" && hasO=1 || hasO=0
         printf '%s\n' "$body" | grep -qE "$WEAK"   && hasW=1  || hasW=0
+        printf '%s\n' "$body" | grep -qE "$DECCMP" && hasD=1  || hasD=0
         printf '%s\n' "$body" | grep -qE "$GEN"    && hasGen=1 || hasGen=0
         # A weak operator justifies ℝ only when ℝ is there to justify.
         if [ "$hasS" = 1 ] || { [ "$hasO" = 1 ] && [ "$hasR" = 1 ]; } \
-           || { [ "$hasW" = 1 ] && [ "$hasR" = 1 ]; }; then hasJ=1; else hasJ=0; fi
+           || { [ "$hasW" = 1 ] && [ "$hasR" = 1 ]; } \
+           || { [ "$hasD" = 1 ] && [ "$hasR" = 1 ]; }; then hasJ=1; else hasJ=0; fi
         # §7c `_real`-suffix convention (bean qou-akb4, class 2): a generic
         # declaration `foo` sitting beside its archimedean specialisation
         # `foo_real` is the PRESCRIBED §7c pattern — the generic result and the

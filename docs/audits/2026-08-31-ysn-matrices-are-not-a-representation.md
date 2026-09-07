@@ -245,3 +245,168 @@ published rather than assumed close, and it retires any hope that the braid
 violation was a harmless normalisation. Whether the corrected numbers agree
 better or worse with AME2020 is **unknown and unmeasured** — and that question,
 not the speed, is what the remaining work is for.
+
+---
+
+# CORRECTION — the fix is right, and it moves the binding numbers by ~1e-14 (2026-09-05)
+
+The defect above is real and is now fixed in code (`qou-4m9u` closed into
+`_build_ysn_matrices`; braid defect `0.7315 -> 7.5e-17`,
+[`ysn_braid_relation_audit.py`](../../computations/audits/ysn_braid_relation_audit.py)
+exit 0). **But the "71-221 %" table above does not survive re-measurement, and
+the reason is structural rather than arithmetic: every consumer on the binding
+path takes a TRACE, and the trace is provably blind to this defect.**
+
+## What was measured
+
+Two runs in one process, so nothing can be contaminated by transcription:
+`origin/main`'s `_build_ysn_matrices` is extracted with `git show` and `exec`'d
+over the module dict, varying **only the `a_rho` formula** — same return type,
+same float64 precision, same code path. A control confirms the swap took
+effect (`sigma_2[0][0]`: `-0.403627738351` fixed vs `-0.103963710052` main,
+exactly the two families of §"The finding").
+
+**1. With `pyhecke_native` present — byte-identical, because the Python family
+is never reached.**
+
+```
+unified_iterative_correction(1,1)   fixed: -9.147736231020852
+                                    main:  -9.147736231020852     IDENTICAL
+_lp_kernel_steps: 193 calls, 193 served
+```
+
+`_lp_kernel_steps(partition, chains)` takes the **partition shape**, not
+`entry['ysn']` — Rust rebuilds its own seminormal family — and both consumers
+early-return on it (`hecke_core_legacy.py:1538`, `:1773`). So in an environment
+with the native extension the Python matrices are built (193 builds, 36.6 s) and
+then discarded.
+
+**2. With the kernel forced off — agreement at the float64 floor.** This is the
+configuration a bare container actually runs, since `pyhecke-native` is not on
+PyPI and cannot be `pip install`ed.
+
+| | fixed | main | rel |
+|---|---|---|---|
+| `uic(1,1)` k_exact=4 | `-0.0895596830589507` | `-0.08955968305895065` | `6.2e-16` |
+| `uic(1,1)` k_exact=5 | `-0.7335499391634968` | `-0.7335499391634722` | `3.3e-14` |
+| `uic(1,1)` k_exact=6 | `-1.3656848170878788` | `-1.3656848170878515` | `2.0e-14` |
+| `atom_character_raw(1,1)` (2,1) | `0.22198499898729818` | `0.22198499898729923` | `4.7e-15` |
+| `atom_character_raw(1,1)` (3,1) | `1.569165548376476` | `1.5691655483764773` | `8.3e-16` |
+| `atom_character_raw(1,1)` (2,2) | `1.6538107571632679` | `1.6538107571632668` | `6.7e-16` |
+| `atom_character_raw(1,1)` (3,2,1) | `-0.019884149989698785` | `-0.019884149989699906` | `5.6e-14` |
+
+The chains are not degenerate — every generator `0..n_gens-1` appears, over 11
+and 12 factors per step.
+
+## Why: the trace cannot see this defect
+
+For any `A`, `B` with `A² = hA + I`, `B² = hB + I` and `Tr A = Tr B`:
+
+```
+Tr(ABA) = Tr(A²B) = h·Tr(AB) + Tr(B)
+Tr(BAB) = Tr(B²A) = h·Tr(AB) + Tr(A)
+```
+
+so `Tr(ABA) − Tr(BAB) = Tr(B) − Tr(A) = 0`. **The trace of the braid relation is
+a consequence of the quadratic relation alone, in any dimension.** Measured on
+`lambda = (2,1)` in float64 through the production path: main's family has matrix
+braid defect `0.7315` and trace braid defect **exactly `0.000e+00`**; the fixed
+family gives `5.6e-17`.
+
+Re-run it at MPFR, off the production path and free of the float64 caveat:
+[`computations/audits/ysn_trace_blindness_probe.py`](../../computations/audits/ysn_trace_blindness_probe.py)
+(9/9, exit 0). At `dps = 50` the legacy family's **matrix** braid defect is
+`0.731514` while its **trace** braid defect is `6.68e-52` — i.e. zero to the
+precision carried, not merely below a float64 floor. The probe cross-checks
+itself against the two values this document recorded independently (`a =
+-0.1039637101`, defect `0.7315`), which is what caught its own first version:
+written with `rho = +2` it measured `a = +0.1039` and defect `1.0269`, a family
+the code never built. The axial distance is negative and `[-2]_q = -[2]_q`.
+
+`unified_iterative_correction` accumulates `ln|Tr M_λ|` and
+`atom_character_raw` returns `Tr(M_λ(W_atom))`. Both are trace consumers, so
+neither can distinguish the two families — which is also why this defect sat in
+the corpus undetected: the audit that found it had to compare **matrices**, and
+every character-level check the corpus already ran was structurally incapable of
+firing.
+
+**Scope, per the (a)/(b) discipline.** The proof above is scope-(b) for word
+length 3 — a proved invariant. The length-11/12 agreement is scope-(a): measured
+at the float64 floor, and this run does **not** separate "equal in exact
+arithmetic" from "equal to within float64 rounding". It cannot: the builder is
+float64 by construction (§"Also landed here" item 1), so there is no higher
+precision to re-run at.
+
+## What retires, and what stands
+
+**Retired: the 71-221 % table** of §"What it moves — measured". Its *corrected*
+column is reproduced exactly by today's `main` (`-0.08955968305895065` vs its
+`-0.08955968305895067` at k=4, and likewise at k=5,6) — i.e. `main` **already**
+produces what that table called the corrected value, with the braid-violating
+matrices still in place. Its *current* column (`-0.0319`, `-0.2286`, `-0.7229`)
+is not reproducible on any tree measured here. That table was written at
+`8a3c748ae90` (2026-08-31); the only later commit in the window that touches the
+accumulation is `d943f2acfac` (the COO object fallback ported to
+`atom_character_raw`, same day) — **named as the candidate, not asserted as the
+cause**, since that table also reports k=4,5,6 as carrying 0 sparse partitions,
+which would make the COO path irrelevant to exactly those rows.
+
+**Stands: everything about the mathematics.** The Python family satisfies no
+branch of the braid+determinant system (§SETTLED), so it is not a representation
+under any convention; the derived `a = -1/(q(q²+1))` is correct and is now what
+the code computes; and `h − a = q³/(q²+1) = z_D` remains independent
+corroboration of convention D.
+
+**Stands: the fix is worth landing.** Not for the binding numbers — those move
+by `1e-14` — but because the detector is red on `main`, because the object is
+wrong, and because any consumer that uses the matrices rather than their traces
+would be wrong.
+
+**The one such consumer is dead code, measured.** `q_sweep_sdp_atom` in
+[`sdp_cross_channel.py`](../../computations/sdp_cross_channel.py) is the only
+importer of `_build_ysn_matrices` outside `hecke_core_legacy` itself, and it
+uses the matrices rather than their traces — so it is the single place where
+this defect could have moved a number. It is **defined at line 394 and called
+nowhere**: a repo-wide grep returns its own `def`, and otherwise only the three
+places this session wrote *about* it (two beans and this paragraph). No witness
+references it. So no recorded number in the corpus came from the braid-violating
+family through this path either, and the fix makes it correct before anyone
+calls it. That is a grep, not a run — it establishes there is no caller, not
+that the function would be right if there were.
+
+**`qou-i7ju` is unblocked.** `hadron_knot_table.py` reaches the matrices only
+through `binding_energy`, which is fully kernel-served. Regenerating
+`hadron-knot-table.witness.json` was gated on step 2 of the corrected priority;
+step 2 is now measured and the answer is "nothing moves".
+
+**🛑 "Untouched, deliberately" was the wrong frame, and it is retracted
+(2026-09-05).** This paragraph read: *"The builder is still float64
+(`math.sqrt`, `1.0` literals, no `mp.dps`). Representation first, precision
+third — that is this document's own ordering, and the precision half is
+`qou-sv7h` step 3."* That presents a live NO-FLOAT64 violation as a deliberate
+scope choice. The corpus has no "correct-but-imprecise" state for a
+`computations/` producer; float64 there is a defect, and an ordering between
+two defects is not a licence to leave the second one standing.
+
+**And the float64 was worse than the sentence describes.** It named
+`math.sqrt` and the literals. Measured: `Q`, `Q_INV` and `HA` imported from
+`q_parameter` are Python **floats**, so the family was float64 from its
+*inputs*; `mp.dps` is **15** in a bare import of `hecke_core_legacy`, exactly
+float64's significand, so carrying `mpf` without raising it would have bought
+nothing; and **124 of 193** ysn entries (64 %, max dim 2310) were `scipy`
+`csr_matrix`, which is float64 by construction and whose kernels reject
+`dtype=object`. Three defects, one named.
+
+**Consequence for the section above.** The `1e-14` figure in *"What it
+moves — measured"* was obtained at `k_exact = 4, 5, 6`. Those truncations
+carry **zero** sparse partitions — the threshold is `dim >= 32`, first reached
+at `k = 7` — so that sample never touched the 124 entries where float64 σ
+values met `mpf` coefficients. It measured the dense path only, and its scope
+should be read as such.
+
+**Now fixed.** The builder computes in `mpf` inside
+`mp.workdps(_precision.COMPUTE_DPS)`, and the sparse carrier is `_ExactCOO`
+rather than `csr_matrix`. Against the closed form this document derived
+symbolically (`-1/(q(q²+1))` at `ρ = -2`): **9.5e-52**, was ~1e-16. The audit's
+Python rows moved from `1.49e-16 / 1.52e-16` into the Rust MPFR reference's own
+precision class, `4.0e-50 / 3.2e-50` against `1.2e-50 / 2.0e-50`.

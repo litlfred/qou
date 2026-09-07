@@ -31,12 +31,16 @@ for _p in (str(_HERE), str(_HERE / "substrate")):
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 from mpmath import mp, mpf, fabs  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402  single source of truth (CODATA)
+from codata_constants import (
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    M_E_MEV  # noqa: E402  single source of truth (CODATA,
+)
 from witness_base import WitnessBuilder  # noqa: E402
 
 HERE = str(_HERE)
 m_e = mpf(str(M_E_MEV))
-B_AME = {"D": mpf("2.22452"), "T": mpf("8.48180"), "3He": mpf("7.71804"), "4He": mpf("28.29567")}
+B_AME = {"D": mpf("2.22452"), "T": mpf("8.48180"), "3He": AME_B_HE3_MEV_VALIDATION, "4He": AME_B_HE4_MEV_VALIDATION}
 CHI = {"D": "atom-chi-rust-d.witness.json", "T": "atom-chi-rust-t.witness.json",
        "3He": "atom-chi-rust-3he.witness.json", "4He": "atom-chi-rust-4he.witness.json"}
 # NOTE (2026-08-30, bean qou-gecf): this is the C(A,2) NUCLEON-PAIR count, and

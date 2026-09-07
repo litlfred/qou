@@ -1,25 +1,34 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-19T19:44:11.498117+00:00",
-  "commitSha": "29f06847243a8bd73b90dfa137d7335361558855",
+  "computedAt": "2026-09-07T11:36:23.937707+00:00",
+  "commitSha": "6e9557d5cebd9e0836c6f3228083f7c0e1eca2c2",
   "assertions": [
     {
-      "name": "rust_kernel_loaded",
-      "computed": 11.0,
+      "name": "partition_count_is_p_3A_atom",
+      "computed": 11,
       "expected": 11,
       "passed": true,
       "tolerance": 0,
       "unit": "partition count",
-      "source": "pyhecke_native.partitions_of(3A)"
+      "source": "independent p(3A) = p(6); kernel is pyhecke_native.partitions_of(3A)"
+    },
+    {
+      "name": "partition_count_is_p_3A_free",
+      "computed": 11,
+      "expected": 11,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "partition count",
+      "source": "independent p(3A) = p(6); kernel is pyhecke_native.partitions_of(3A)"
     }
   ],
   "allPassed": true,
-  "durationMs": 134,
+  "durationMs": 9,
   "computation": "atom-chi-rust-d",
   "scriptFile": "compute_atom_chi_rust.py",
-  "scriptHash": "45d51b9cc954",
-  "scriptCommitSha": "399ff7c799682b4371e7f4cfaaf604f5c9324ed9",
+  "scriptHash": "256c48b588d2",
+  "scriptCommitSha": "cf412d98f9c4885f059eb4d03a02ce6903f57f6b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,8 +38,19 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/compute_atom_chi_rust.py",
+      "D"
+    ],
+    "reproduce": "python3 -u computations/compute_atom_chi_rust.py D"
   },
   "description": "Full H_6 chi^λ(β_K) for D (Z=1, N=1), both atom (include_inter=True) and free (include_inter=False) configs. precision=mpfr: MPFR (default) routes through chi_cd_mpfr → pyhecke_native.chi_lambda_all_partitions_mpfr at 50 dps (canonical tier; the color-weighted p-n crossing is expanded by linearity); --f64 is the preview tier only (owner ruling 2026-06-09: no f64 on the canonical path). Consumed by binding_depth_stratified_rust.py.",
   "data": {
@@ -51,7 +71,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "3.2163173422358811759338955425246731048947002364697"
+          "chi_lambda": "-0.68228501276057044641239950847620023335096905058466"
         },
         {
           "partition": [
@@ -59,7 +79,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": "1.6743952620342553431694835773557238376181954233470"
+          "chi_lambda": "0.32908034753961323775704153752221780532274628165492"
         },
         {
           "partition": [
@@ -68,7 +88,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-0.46980588637769473837308852856415666290149919651623"
+          "chi_lambda": "-1.2048051340890402241435135085474942280236731990496"
         },
         {
           "partition": [
@@ -76,7 +96,7 @@
             3
           ],
           "dim": -1,
-          "chi_lambda": "4.2494020229176567667259911311634128827066133542552"
+          "chi_lambda": "0.71394515175138574642252125970790802050354907040102"
         },
         {
           "partition": [
@@ -85,7 +105,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-1.9722724461515496890482348780048965054549544863176"
+          "chi_lambda": "0.38502861152691393838195665216469095029420110137675"
         },
         {
           "partition": [
@@ -95,7 +115,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-0.49012565232303073666832235128570394245375582685736"
+          "chi_lambda": "1.0043722855323384096612245044756104563761342432712"
         },
         {
           "partition": [
@@ -104,7 +124,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": "-3.4972944065129530521750530203693434855047547494649"
+          "chi_lambda": "-1.1804319536021514605302658617433936688365417807772"
         },
         {
           "partition": [
@@ -114,7 +134,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-0.81965494850448376186023302012734637740985741072036"
+          "chi_lambda": "-0.036698171845523450423048631745848489536874060518191"
         },
         {
           "partition": [
@@ -125,7 +145,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "2.1552553374487206414925896059695830811687116707754"
+          "chi_lambda": "-0.33826264068270096746337266047514828305847757668490"
         },
         {
           "partition": [
@@ -140,7 +160,7 @@
           "chi_lambda": "-0.67687668343293797886250168375128986008721472052128"
         }
       ],
-      "compute_time_sec": 0.01132059097290039,
+      "compute_time_sec": 0.013691425323486328,
       "Z": 1,
       "N": 1,
       "A": 2,
@@ -166,7 +186,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "5.9312114883163384201984888991787234313651143600085"
+          "chi_lambda": "0.72222319547663343251347893677940906919180389075582"
         },
         {
           "partition": [
@@ -174,7 +194,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": "9.0059130327583422172036319003343516581353151513828"
+          "chi_lambda": "0.82659166702554648129002182549834801191414346754892"
         },
         {
           "partition": [
@@ -183,7 +203,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "5.3659950340134422901268292665336160115644717880725"
+          "chi_lambda": "-2.8133263317193534457867808083023876346566998957614"
         },
         {
           "partition": [
@@ -191,7 +211,7 @@
             3
           ],
           "dim": -1,
-          "chi_lambda": "4.6260080126424813703451471727122120902639593640027"
+          "chi_lambda": "1.6556749397493906221165470602755228062160981494215"
         },
         {
           "partition": [
@@ -200,7 +220,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "7.6255835144642202916772052984847491936761429085354"
+          "chi_lambda": "-0.089833625420115395706083967429905079519892136322515"
         },
         {
           "partition": [
@@ -210,7 +230,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-1.9176345806380667059232208925371703840424984609009"
+          "chi_lambda": "-1.4537303547896066573929000836158210110173618219250"
         },
         {
           "partition": [
@@ -219,7 +239,7 @@
             2
           ],
           "dim": -1,
-          "chi_lambda": "3.7479584408122173484587067020945960731309017127730"
+          "chi_lambda": "0.77762536791912660023010658965790678908304049819181"
         },
         {
           "partition": [
@@ -229,7 +249,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "0.84423384627656919926714127064594924539528725117974"
+          "chi_lambda": "1.3081380721250292477974620795672986184204238901556"
         },
         {
           "partition": [
@@ -240,7 +260,7 @@
             1
           ],
           "dim": -1,
-          "chi_lambda": "-2.2304676981654345977380017305096789813749135401946"
+          "chi_lambda": "1.2037696005761161990209191908483596756980843133626"
         },
         {
           "partition": [
@@ -255,7 +275,7 @@
           "chi_lambda": "0.67325689637021355145356370093896784636070092139872"
         }
       ],
-      "compute_time_sec": 0.003881216049194336,
+      "compute_time_sec": 0.0012328624725341797,
       "Z": 1,
       "N": 1,
       "A": 2,

@@ -68,6 +68,12 @@ from _li_2_q_util import flavor_split_leading  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
@@ -75,10 +81,10 @@ M_E_MEV = 0.51099895069  # CODATA 2022 CAL-1
 
 # name : (B_AME MeV, Z, N)   — AME2020 total nuclear binding (matches the prune)
 ISOTOPES = {
-    "D":   (2.224566, 1, 1),
-    "T":   (8.481798, 1, 2),
-    "3He": (7.718043, 2, 1),
-    "4He": (28.295673, 2, 2),
+    "D":   (AME_B_DEUTERON_MEV_VALIDATION, 1, 1),
+    "T":   (AME_B_TRITIUM_MEV_VALIDATION, 1, 2),
+    "3He": (AME_B_HE3_MEV_VALIDATION, 2, 1),
+    "4He": (AME_B_HE4_MEV_VALIDATION, 2, 2),
     "6Li": (31.994564, 3, 3),  # A-scaling trend check (chain n=3A consistent)
 }
 

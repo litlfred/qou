@@ -1,0 +1,106 @@
+{
+  "computation": "qbeta-averaging-index-k",
+  "assertions": [
+    {
+      "name": "the_three_forms_agree",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "w_k = 1/(q^2k+1) = 1/(1 + (b_pp/b_nn)^(k/2)). So k/2 is LITERALLY the power of the bond ratio the average is weighted by. Lean: weight_eq_inv_rpow"
+    },
+    {
+      "name": "the_interface_closed_form_is_exact",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "one expression covering AM (k=0), GM (k=1) and HM (k=2). Lean: interface_closed_form"
+    },
+    {
+      "name": "k_maps_to_two_minus_k_inverts_about_the_loop_value",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "f(k).f(2-k) = 1/[2]_q^2 = 0.2472978867480346 for every k. That is WHY delta is odd about k = 1, and why k = 1 -- the only fixed point -- is where it vanishes. Lean: interface_reflection"
+    },
+    {
+      "name": "and_k_one_is_exactly_the_loop_value",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "f_pn(1) = 1/[2]_q = 0.497290545604915556. Lean: interface_one_eq_loop_value"
+    },
+    {
+      "name": "the_flavour_split_pushes_k_negative_away_from_the_SEMF_region",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "k_corpus = -0.006592397579. The corpus's ONE bar-breaking ingredient moves it further from k > 1, not toward it -- and by 1/151 of what the sign needs anyway"
+    },
+    {
+      "name": "no_member_of_the_SEMF_region_has_an_argument",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "k = 0 (derived, wrong sign) and k = 1 (derived, zero) are the only members with arguments. k = 2 gives the SEMF sign and has none -- NOT adopted on that basis"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 40,
+    "family": "w_k = 1/(q^{2k}+1) = 1/(1+(b_pp/b_nn)^(k/2))",
+    "interface": "f_pn(k) = [2]_{q^(2-k)}/([2]_q [2]_{q^k})",
+    "lean": "QOU/Hecke/BarWeightFamily.lean",
+    "note": "k is NOT derived; the result is the ENUMERATION -- only k = 0 and k = 1 have arguments and neither gives the SEMF sign. Nothing wired."
+  },
+  "data": {
+    "bond_ratio_q4": "1.5179532498183459375",
+    "loop_value": "0.497290545604915556",
+    "reflection_product": "0.24729788674803459841",
+    "family": [
+      {
+        "k": "0.0",
+        "w_k": "0.5",
+        "f_pn": "0.50815788774864559388",
+        "delta": "-0.021617747856193093408"
+      },
+      {
+        "k": "0.5",
+        "w_k": "0.47393845993261922942",
+        "f_pn": "0.502709454395084444",
+        "delta": "-0.010837923664833464918"
+      },
+      {
+        "k": "1.0",
+        "w_k": "0.44801814497379492716",
+        "f_pn": "0.497290545604915556",
+        "delta": "-1.1479437019748901445e-41"
+      },
+      {
+        "k": "1.5",
+        "w_k": "0.42237723558681000061",
+        "f_pn": "0.49193004942708057434",
+        "delta": "0.010837923664833464918"
+      },
+      {
+        "k": "2.0",
+        "w_k": "0.39714796137384343438",
+        "f_pn": "0.48665560982172066607",
+        "delta": "0.021617747856193093408"
+      },
+      {
+        "k": "3.0",
+        "w_k": "0.34840801599067254103",
+        "f_pn": "0.47646602227663181815",
+        "delta": "0.042778040405770000276"
+      }
+    ],
+    "corpus_weight": "0.500343927701756774",
+    "corpus_k": "-0.006592397578743054"
+  },
+  "provenance": {
+    "headSha": "746265d837e101bd98c1e5cf1d58c61ebf5e753c",
+    "producer": "computations/qbeta/qbeta_averaging_index_k_probe.py",
+    "elapsed_s": 0.008
+  }
+}

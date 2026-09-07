@@ -1,5 +1,11 @@
 # Closed form for the substrate landmark q* / c₃(q)? — Route B (Habiro / dilog)
 
+> **Notation note.** This document predates the 2026-09-05 calibration rename and uses
+> the superseded symbols `𝔇_β` (CAL-2) and/or `𝔇_π` (CAL-3). Those are now
+> `P_skew^β` (the bar-skew β-channel) and `P_avg^π` (the bar-even π-channel); the
+> `𝔇` family is reserved for genuine decay rates (`𝔇_n`, `𝔇_μ`, `𝔇_K` = ℏ/τ).
+> The analysis below is left as the record of what was analysed at the time.
+
 **Date:** 2026-08-01
 **Status:** CANONICAL for the "is q* a closed-form constant?" question.
 **Branch / PR:** `claude/qstar-closed-form-habiro-dilog-2026-08-01` (PR #4483)

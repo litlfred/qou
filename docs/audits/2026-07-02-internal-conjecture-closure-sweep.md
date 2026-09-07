@@ -54,7 +54,7 @@ checked against the conjecture blocks whose claims overlap:
 | `a9c2d917` self-dual Higgs (4₁) real complex volume | **born `proposition`** (`prop:self-dual-higgs-real-volume`, `braids-and-knots/`), sorry-free `QOU.Knot.SelfDuality.higgs_complex_volume_real` | correctly kinded at birth; no drift |
 | `d9af25c6` self-duality ⇒ CS(4₁)=0 over generic (R,σ) | `Knot/FigureEightSelfDuality.lean` theorems | backs the prop above; corroborates (does **not** discharge) `conj:binding-qbeta-complex-volume` |
 | `5d2da3f3` Vol(4₁) saddle | structure sorry-free; limit carried as `class VolumeConjecture41 : Prop` — hypothesis-only, **no instance** anywhere in tree | sanctioned §3b treatment of the imported-famous Kashaev conjecture; no flip |
-| `b1bb7482` C=bar (H₂) vs C≠bar (H₃) → 3-calibration origin | `Mass/LeptonMesonParitySplit.lean`, sorry-free | backs the already-`proposition` `prop:three-calibration-discipline`; not referenced by any `conj:` block |
+| `b1bb7482` C=bar (H₂) vs C≠bar (H₃) → 3-calibration origin | `Mass/LeptonMesonParitySplit.lean`, sorry-free | backs the already-`proposition` `def:three-calibration-discipline`; not referenced by any `conj:` block |
 | `3b3093da`+`0b7e3716` (+`6b49ccc4` post-sweep) Identity (B) Artin–Wedderburn, now fully sorry-free | `BraidKnot/IdentityBWedderburn.lean` / `IdentityBCentrality.lean` | library lemma — no `conj:` block states this identity; no carrier to flip |
 | `e21bcded` Borel-resummation mechanism | `class BorelTransformConverges : Prop` — hypothesis-only, no instance | §3b conditional carrier, correctly open |
 | `0bc388b6` gen-3 meson φ at 2167 ppm | **born `proposition`** (`prop:gen3-meson-phi-hecke-seifert`) | correctly kinded at birth |

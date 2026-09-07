@@ -1,0 +1,180 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-06T13:25:57.928049+00:00",
+  "commitSha": "99e8e25a28e82017fb939bc9adc3275fae7c21cd",
+  "assertions": [
+    {
+      "name": "three_of_four_are_fkp_hyperbolic",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "three resolutions attain the FKP hyperbolic form after cyclic reduction, so their closures are hyperbolic"
+    },
+    {
+      "name": "one_of_four_is_undecided",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the all-positive resolution is not matched; NOT a proof of non-hyperbolicity, since this test is cyclic rotation only, a proper subset of conjugacy"
+    },
+    {
+      "name": "resolutions_do_NOT_all_agree",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "so §11.3's optimistic branch — 'if all four agree the ambiguity is harmless' — is NOT available"
+    },
+    {
+      "name": "at_least_three_distinct_conjugacy_classes",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exponent sums [1, 3, 5] are distinct; exponent sum is a conjugacy invariant (the abelianisation B_3 -> Z), so the resolutions are genuinely different braids, not presentations of one"
+    },
+    {
+      "name": "matched_forms_escape_the_torus_clause",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "each matched form carries a strictly negative sigma_2 exponent, so none is conjugate to sigma_1^{p0} sigma_2^{q0} — FKP's excluded torus family — discharging the criterion's negative clause"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "protium-fkp-hyperbolicity",
+  "scriptFile": "protium_fkp_hyperbolicity_probe.py",
+  "scriptHash": "446e5860f508",
+  "scriptCommitSha": "ee54886782acc14f2958ed233230b7a584866bcf",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/protium_fkp_hyperbolicity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/protium_fkp_hyperbolicity_probe.py"
+  },
+  "data": {
+    "resolutions": [
+      {
+        "bits": [
+          1,
+          1
+        ],
+        "len_raw": 11,
+        "len_reduced": 11,
+        "word_reduced": "s1 S2 s1 S2 s1 S2 s1 s1 s2 s1 s1",
+        "exponent_sum": 5,
+        "fkp_form_matched": false,
+        "pq": null,
+        "matched_rotation": null
+      },
+      {
+        "bits": [
+          1,
+          -1
+        ],
+        "len_raw": 11,
+        "len_reduced": 11,
+        "word_reduced": "s1 S2 s1 S2 s1 S2 s1 s1 S2 s1 s1",
+        "exponent_sum": 3,
+        "fkp_form_matched": true,
+        "pq": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "matched_rotation": "s1 S2 s1 S2 s1 s1 S2 s1 s1 s1 S2"
+      },
+      {
+        "bits": [
+          -1,
+          1
+        ],
+        "len_raw": 11,
+        "len_reduced": 7,
+        "word_reduced": "s1 S2 s1 S2 s1 s1 s1",
+        "exponent_sum": 3,
+        "fkp_form_matched": true,
+        "pq": [
+          [
+            1,
+            1
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "matched_rotation": "s1 S2 s1 s1 s1 s1 S2"
+      },
+      {
+        "bits": [
+          -1,
+          -1
+        ],
+        "len_raw": 11,
+        "len_reduced": 9,
+        "word_reduced": "s1 S2 s1 S2 s1 S2 S2 s1 s1",
+        "exponent_sum": 1,
+        "fkp_form_matched": true,
+        "pq": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        "matched_rotation": "s1 S2 s1 S2 S2 s1 s1 s1 S2"
+      }
+    ],
+    "n_matched": 3,
+    "n_undecided": 1,
+    "distinct_exponent_sums": [
+      1,
+      3,
+      5
+    ],
+    "criterion": "FKP Thm 5.5 as quoted in library/arxiv-2108.09349v2 §1",
+    "scope": "The test is a SUFFICIENT condition only: it checks cyclic rotations of the reduced word, a proper subset of conjugacy in B_3, and applies no braid relation. A match proves hyperbolic; a non-match proves nothing. Settling the fourth needs a real conjugacy decision procedure (Birman-Ko-Lee / Garside), which is NOT implemented here and is not faked."
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "exact integer braid combinatorics: no q, no anchor"
+}

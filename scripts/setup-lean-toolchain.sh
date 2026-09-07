@@ -159,6 +159,20 @@ fi
 
 # 2. Ensure the extracted toolchain exists on disk. Download if missing.
 if [ ! -d "$EXTRACT_DIR/bin" ]; then
+  # Disk preflight.  Staging needs ~5.0 GB (697 MB zip + 4.3 GB extract).
+  # Without this the download proceeds until the filesystem is full, and a full
+  # filesystem is not a degraded session -- it is a dead one: the agent harness
+  # cannot write a child process's stdout, so EVERY command fails, including the
+  # rm that would fix it.  Measured on this repo 2026-09-06, three times in one
+  # session, twice reaching <100 KB free.  Skipping leaves Lean unavailable,
+  # which is recoverable; filling the disk is not.
+  _free_kb=$(df -k /tmp 2>/dev/null | awk 'NR==2 {print $4}')
+  if [ -n "${_free_kb:-}" ] && [ "$_free_kb" -lt $((6*1024*1024)) ]; then
+    echo "setup-lean-toolchain: only $((_free_kb/1024)) MB free; staging needs ~6 GB." >&2
+    echo "setup-lean-toolchain: SKIPPING toolchain staging to keep the container usable." >&2
+    echo "setup-lean-toolchain: free space, then re-run this script to get Lean." >&2
+    exit 0
+  fi
   if [ ! -f "$ZIP_PATH" ]; then
     echo "setup-lean-toolchain: downloading $ZIP_URL (~730 MB) ..." >&2
     # --fail: error out on non-2xx instead of downloading an HTML error
@@ -193,6 +207,12 @@ if [ ! -d "$EXTRACT_DIR/bin" ]; then
   fi
   mv "$inner" "$EXTRACT_DIR"
   rm -rf "$EXTRACT_DIR.tmp"
+  # The zip is 697 MB and is pure redundancy once the tree is extracted: it is
+  # kept only to skip a re-download if the extract is later removed, and /tmp
+  # does not survive a new container anyway, so that saving is worth far less
+  # than the space.  Measured 2026-09-06: zip 697 MB + extract 4.3 GB = 5.0 GB
+  # staged per session start, in a ~38 GB quota holding a 33 GB repo.
+  rm -f "$ZIP_PATH"
 fi
 
 # 3. Register with elan (idempotent; harmless if already linked).

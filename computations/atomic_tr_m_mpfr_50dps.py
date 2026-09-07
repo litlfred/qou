@@ -522,7 +522,15 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust",
             "ζ_m residues, so the values reported here are the LHS of "
             "the prop's equations (Mittag-Leffler eq. and Habiro eq.) "
             "at q = q_0.",
+        # PROVENANCE ONLY -- not an input. y_λ is recomputed live from q_str by
+        # `tr_M_via_wenzl_bridge_mpfr`, so nothing numeric is read from this
+        # file. Worth stating because the two are at DIFFERENT PINS: this
+        # witness runs at the live muon pin, while y-lambda-mpfr-witness.json
+        # carries q = 1.1099785955573347198997632204832250266562084087802
+        # (the frozen-A pin, though it labels itself `q0Anchor: muon`). Harmless
+        # here; misleading to anyone who follows the pointer. Bean qou-fq0f.
         "y_lambda_witness": "y-lambda-mpfr-witness.json",
+        "y_lambda_witness_role": "provenance pointer; y_λ recomputed live, not read",
         "q_0_50dps": q_str,
         # Same value under the key `q0_anchor_consistency_audit` actually
         # reads. Without it the audit cannot check the pin against the
@@ -535,13 +543,20 @@ def main(also_symbolic: bool = False, method: str = "canonical-rust",
         "q0Value": q_str,
         "symbolic_cross_check_enabled": also_symbolic,
         "precision_caveat": (
-            "y-lambda-mpfr-witness.json was computed with q at f64 "
-            "precision (its 'q' field stores str(float(Q0))); the y_λ "
-            "values inherit f64-limited input. Bridge results agree "
-            "with the prop-table canonical values to ~1e-15. To upgrade "
-            "to full 50-dps precision, regenerate that witness with "
-            "q_str at 50 dps (see y_lambda_mpfr_witness.py)."
+            "None affecting these values: y_λ is recomputed live at q_str "
+            "(50 dps), not read from y-lambda-mpfr-witness.json. Bridge "
+            "results agree with the prop-table canonical values to ~1e-15."
         ),
+        # Superseded 2026-09-06 (qou-fq0f). This field used to read
+        # "y-lambda-mpfr-witness.json was computed with q at f64 precision
+        # (its 'q' field stores str(float(Q0))); the y_λ values inherit
+        # f64-limited input." That described the DEPRECATED witness produced by
+        # _deprecated/y_lambda_mpfr_witness.py. It was replaced on 2026-08-14 by
+        # regenerate_y_lambda_mpfr.py at true 50 dps, and the caveat here was
+        # never updated -- so a stale warning outlived the defect it warned
+        # about by three weeks, in a field a reader would use to discount these
+        # numbers. (It was doubly inert: y_λ was never read from that file.)
+        "precision_caveat_superseded": "2026-08-14 regeneration; see qou-fq0f",
         "results": results,
     }
     sys.path.insert(0, str(HERE))

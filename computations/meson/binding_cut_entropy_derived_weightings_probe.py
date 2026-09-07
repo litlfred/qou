@@ -113,7 +113,10 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent.parent))
 import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    M_E_MEV  # noqa: E402,
+)
 from q_parameter import Q as Q0  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402 — exact mpf, not the f64 twin
 from witness_base import WitnessBuilder  # noqa: E402
@@ -154,7 +157,7 @@ def main() -> int:
     q0 = Q_MP
     me = mp.mpf(str(M_E_MEV))
     E0 = me / (q0 * (q0 - 1))
-    B = mp.mpf("2.224566")
+    B = AME_B_DEUTERON_MEV_VALIDATION
     need = B / E0
 
     def qint(m):

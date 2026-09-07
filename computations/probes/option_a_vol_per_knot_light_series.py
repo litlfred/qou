@@ -414,8 +414,18 @@ def main() -> int:
         # provenance of tr_M (the trace was evaluated on this braid).
         braid_word = atom_braid_word_3A(iso["Z"], iso["N"])
         braid_word_len = len(braid_word)
+        # `_fmt`, not `float`. Each letter is a `(c, d, gen_idx)` triple and
+        # `d` is a computed weight (see `atom_braid_word_3A`'s MISNOMER note --
+        # the block is not a braid and these are not generator indices), so
+        # `map(float, ...)` truncated a computed quantity on the way into the
+        # record. The count grew 7 -> 18 when the intra-ordering changed from
+        # grouped to alternating on 2026-09-05 (bean `qou-hu1f`, owner ruling):
+        # the alternating core carries a non-zero `d` on three letters in six
+        # instead of one, so there is simply more of the same weight to write.
+        # That growth is a wanted upstream change; serializing it losslessly is
+        # the fix, NOT raising the ratchet's floor.
         braid_word_snippet = (
-            [list(map(float, t)) for t in braid_word[:6]]
+            [[_fmt(mp.mpf(v)) for v in t] for t in braid_word[:6]]
             + (["…"] if braid_word_len > 6 else [])
         )
 

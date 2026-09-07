@@ -1,0 +1,242 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0801.3233v4",
+ "source": {
+  "file": "0801.3233v4.pdf",
+  "sha256": "d98f9d4a9ecb4c5eebb0c99d11ef316dd6431f979744dc8962358df14097cfed",
+  "bytes": 741487,
+  "pages": 19,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0801.3233",
+   "version": "4",
+   "primary_class": "math.AG",
+   "stamp_date": "27 Jul 2011"
+  },
+  "doi": null,
+  "title": "Contemporary Mathematics Twisted Deformation Quantization of Algebraic Varieties (Survey) Amnon Yekutieli",
+  "authors_raw": null,
+  "title_lines": [
+   "Contemporary Mathematics",
+   "Twisted Deformation Quantization of Algebraic Varieties",
+   "(Survey)",
+   "Amnon Yekutieli"
+  ],
+  "abstract": "Let X be a smooth algebraic variety over a \ufb01eld of characteristic 0. We introduce the notion of twisted associative (resp. Poisson) deformation of the structure sheafOX. These are stack-like versions of usual deformations. We prove that there is a twisted quantization map from twisted Poisson defor- mations to twisted associative deformations, which is canonical and bijective on equivalence classes. 0. Introduction Let K be a \ufb01eld of characteristic0, and letX be a smooth algebraic variety over K, with structure sheafOX. An associative deformation ofOX is a sheafA of \ufb02at complete associative K[[\u210f]]-algebras onX, with an isomorphismK\u2297K[[\u210f]]A\u223c=OX, called an augmentation. Similarly, aPoisson deformation ofOX is a sheafA of \ufb02at complete commutative PoissonK[[\u210f]]-algebras onX, with an augmentation to OX. In this paper we introduce the notion oftwisted associative (resp. Poisson) deformation ofOX. A twisted deformation (or either kind) is a stack-like version of an ordinary deformation. The precise de\ufb01nition is given in Section 5. But to give an idea, let us say that a twisted deformationA can be described as a collection of locally de\ufb01ned deformationsAi, each living on an open setUi of X, that are glued together in a loose way. We should also say that an associative deformation A is a special kind ofstack of algebroids, in the sense of [Ko2]. Indeed, one reason for introducing twisted deformations is to have a Poisson analogue of a stack of algebroids. There is a notion oftwisted gauge equivalencebetween twisted associative (resp. Poisson) deformation ofOX. A twisted deformationA induces a\ufb01rst order bracket {\u2212,\u2212}A onOX. The main result is Theorem 6.1, which says that there is a",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20180925005535Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.10",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Some background on Deformation Quantization",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Poisson Deformations of Algebraic Varieties",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Associative Deformations of Algebraic Varieties",
+   "page": 4,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Deformation Quantization",
+   "page": 5,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Twisted Deformations of Algebraic Varieties",
+   "page": 6,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Twisted Deformation Quantization",
+   "page": 8,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. DG Lie Algebras and Deformations",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. The Universal Quantization Map",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix C. The L quasi-isomorphism of the Level of Sheaves",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix D. Twisted Deformations and their Gauge Gerbes",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2746,
+   "n_words": 420
+  },
+  {
+   "id": "sec-001-1-some-background-on-deformation-quantization",
+   "number": "1",
+   "title": "Some background on Deformation Quantization",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2681,
+   "n_words": 427
+  },
+  {
+   "id": "sec-002-2-poisson-deformations-of-algebraic-varieties",
+   "number": "2",
+   "title": "Poisson Deformations of Algebraic Varieties",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1663,
+   "n_words": 243
+  },
+  {
+   "id": "sec-003-3-associative-deformations-of-algebraic-varietie",
+   "number": "3",
+   "title": "Associative Deformations of Algebraic Varieties",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1396,
+   "n_words": 205
+  },
+  {
+   "id": "sec-004-4-deformation-quantization",
+   "number": "4",
+   "title": "Deformation Quantization",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2965,
+   "n_words": 475
+  },
+  {
+   "id": "sec-005-5-twisted-deformations-of-algebraic-varieties",
+   "number": "5",
+   "title": "Twisted Deformations of Algebraic Varieties",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 2000,
+   "n_words": 321
+  },
+  {
+   "id": "sec-006-6-twisted-deformation-quantization",
+   "number": "6",
+   "title": "Twisted Deformation Quantization",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 5481,
+   "n_words": 825
+  },
+  {
+   "id": "sec-007-appendix-a-dg-lie-algebras-and-deformations",
+   "number": null,
+   "title": "Appendix A. DG Lie Algebras and Deformations",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 5671,
+   "n_words": 871
+  },
+  {
+   "id": "sec-008-appendix-b-the-universal-quantization-map",
+   "number": null,
+   "title": "Appendix B. The Universal Quantization Map",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 7633,
+   "n_words": 1152
+  },
+  {
+   "id": "sec-009-appendix-d-twisted-deformations-and-their-gauge",
+   "number": null,
+   "title": "Appendix D. Twisted Deformations and their Gauge Gerbes",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 4860,
+   "n_words": 757
+  },
+  {
+   "id": "sec-010-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 5037,
+   "n_words": 729
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 12,
+  "sections": 11,
+  "chars_total": 42133
+ }
+}

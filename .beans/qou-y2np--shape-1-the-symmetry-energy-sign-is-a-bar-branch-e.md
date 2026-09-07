@@ -180,3 +180,22 @@ natural home**. Remaining candidates: the Borromean proton construction, and the
 **And the symmetry energy survives all four laws** (best `-0.691` against the
 corpus's `-0.804`). Removing the asymmetry is worth about a seventh of the
 residual; it is not the missing term.
+
+## 2026-09-05 — the bar branch is the ENDPOINTS of a convex family with a derived crossing
+
+`qou-i01a`. `b_pn = w.b_pp + (1-w).b_nn` for a convex `w` (the sibling's
+`pn-bond-cannot-be-extremal`), and
+
+    delta(w) = L_pn(w) - (L_pp+L_nn)/2
+
+runs continuously from `delta(0) = +2 log q0 = +0.20868144063904` to
+`delta(1) = -2 log q0`. **Those are exactly this bean's two branches.** So the
+"one bit" is the two ENDS of a continuum, and the sign flips in between at the
+derived crossing `w = 1/(q^2+1) = 0.448018`, where the convex combination equals
+the geometric mean `1/[2]_q`.
+
+That reframes the open question usefully. The bar swap was refuted as a repair
+(845 bound violations against 1), and it did not have to be evaluated as a
+binary: the real quantity is `w`, the corpus sits at `0.500344`, and the target
+is anything below `0.448018`. A derivation of `w` is the live item, not a choice
+between two labels.

@@ -24,7 +24,7 @@ namespace QOU
 /-- The degree-lex relation on `List α`: first compare lengths,
     then compare lexicographically at equal length. -/
 -- Ref: [manuscript] §2/braiding-induced-ordering
-def DegLex [LT α] (w w' : List α) : Prop :=
+def DegLex {α : Type*} [LT α] (w w' : List α) : Prop :=
   w.length < w'.length ∨
   (w.length = w'.length ∧ List.Lex (· < ·) w w')
 

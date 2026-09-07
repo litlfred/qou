@@ -69,6 +69,12 @@ sys.path.insert(0, str(COMP))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
@@ -76,10 +82,10 @@ M_E_MEV = 0.51099895069  # CODATA 2022 CAL-1 (matches the sign-prune script)
 
 # name : (chi witness, n=3A key, B_AME MeV, Z, N, A)  — identical to the prune
 ISOTOPES = {
-    "D":   ("atom-chi-rust-d.witness.json",   "6",  2.224566, 1, 1, 2),
-    "T":   ("atom-chi-rust-t.witness.json",   "9",  8.481798, 1, 2, 3),
-    "3He": ("atom-chi-rust-3he.witness.json", "9",  7.718043, 2, 1, 3),
-    "4He": ("atom-chi-rust-4he.witness.json", "12", 28.295673, 2, 2, 4),
+    "D":   ("atom-chi-rust-d.witness.json",   "6",  AME_B_DEUTERON_MEV_VALIDATION, 1, 1, 2),
+    "T":   ("atom-chi-rust-t.witness.json",   "9",  AME_B_TRITIUM_MEV_VALIDATION, 1, 2, 3),
+    "3He": ("atom-chi-rust-3he.witness.json", "9",  AME_B_HE3_MEV_VALIDATION, 2, 1, 3),
+    "4He": ("atom-chi-rust-4he.witness.json", "12", AME_B_HE4_MEV_VALIDATION, 2, 2, 4),
 }
 
 

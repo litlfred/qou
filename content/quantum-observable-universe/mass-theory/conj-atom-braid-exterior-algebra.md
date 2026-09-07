@@ -1,5 +1,5 @@
 **Conjecture (atom-braid exterior-algebra structure).**
-*Let $T_w(Z, N) \in B_{3A}$ denote the canonical atom-braid word. Its image in $H_{3A}(q)$ generates a sub-algebra whose Gröbner-Shirshov normal-form filtration shape is given by:*
+*Let $T_w(Z, N) \in H_{3A}(q)$ denote the canonical atomic Hecke word. It generates a sub-algebra whose Gröbner-Shirshov normal-form filtration shape is given by:*
 
 $$
   \dim_R \bigl(F_k(T_w(Z, N))\bigr) \;=\; \binom{3A - Z}{k - (Z - 1)}.

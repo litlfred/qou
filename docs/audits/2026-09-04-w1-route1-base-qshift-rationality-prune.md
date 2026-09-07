@@ -121,10 +121,25 @@ tests. The exclusion of *all* orders and degrees is the theorem.
 - **Not pruned:** coefficients algebraic in `z` (i.e. in `ℂ(Σ)` — but a base
   dilation does not lift to Σ canonically; which sheet `X_i(λz)` continues to is a
   choice, and the theorem says no choice is rational); operators defined on Σ rather
-  than on the base; the **local** q-dilation `t ↦ qt` at a ramification point, where
-  every power series satisfies a first-order q-equation with a power-series
-  coefficient and the theorem does not apply. The level-reading results of
-  #6628/#6652 live in that local chart, and this prune is why they have to.
+  than on the base.
+
+  > **🛑 CORRECTED 2026-09-05 (bean `qou-7fnr`, PR #6738) — the local q-dilation is
+  > NOT an exception, and this bullet used to say it was.** The removed text read:
+  > *"the **local** q-dilation `t ↦ qt` at a ramification point, where every power
+  > series satisfies a first-order q-equation with a power-series coefficient and the
+  > theorem does not apply."* That reason concerns **power-series** coefficients; the
+  > theorem concerns **rational** ones, so it does not support the claim — and the
+  > claim is false. In the local coordinate the sheets are still algebraic over
+  > `K(t)`, hence still D-finite, and they are still not rational: `t² = z − z_c`
+  > makes `K(t)/K(z)` quadratic, and an irreducible cubic has no root of degree `≤ 2`
+  > (`QOU.Mass.IrreducibleCubicNoQuadraticRoot`, sorry-free). So the same theorem
+  > bites in the local chart and the local rational q-dilation is excluded too.
+  > Full correction:
+  > [`2026-09-05-w1-local-qdilation-also-excluded-correction.md`](2026-09-05-w1-local-qdilation-also-excluded-correction.md).
+  >
+  > The level-reading results of #6628/#6652 do live in that local chart. What this
+  > correction removes is the claim that living there *evades the exclusion* — it
+  > does not; it evades only the base-coordinate form of it.
 - **Not touched:** the conjecture itself. This closes its cheapest global
   realisation, not the identification.
 
@@ -132,11 +147,15 @@ tests. The exclusion of *all* orders and degrees is the theorem.
 
 The three named routes of `qou-d8de` are now: (1) **excluded** as a rational base
 q-connection; (2) root-of-unity fibre monodromy — untouched; (3) import the
-Ramis–Sauloy–Zhang / Sauloy local framework — untouched and, after this, the
-natural next step, since the object that survives is local at the branch point. The
-pattern across #6582 → #6652 → here is consistent: every global or untuned
-realisation of "symbol = `L_K`" fails or is empty, and the content keeps
-retreating to the ramified local chart.
+Ramis–Sauloy–Zhang / Sauloy local framework — untouched. The pattern across
+#6582 → #6652 → here is consistent: every global or untuned realisation of
+"symbol = `L_K`" fails or is empty.
+
+> **Corrected 2026-09-05 (`qou-7fnr`, #6738).** This paragraph closed by calling the
+> local framework "the natural next step, since the object that survives is local at
+> the branch point". Route 1 is now excluded **in the local chart as well**, so what
+> survives is not "local" but "not rational in a coordinate" — a sharper requirement,
+> and route 3 has to meet it.
 
 ## Reproduce
 

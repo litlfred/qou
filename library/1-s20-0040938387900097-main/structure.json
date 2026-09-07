@@ -5,27 +5,28 @@
   "file": "1-s2.0-0040938387900097-main.pdf",
   "sha256": "dae76f3434834382d426c0bfd0b0e4f78255a837e2bf3193888a2ab054701a2e",
   "bytes": 826058,
-  "pages": 13
+  "pages": 13,
+  "text_source": "embedded",
+  "extractor": "pypdf"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "State models and the Jones polynomial",
+  "title": "STATE MODELS AND THE JONES POLYNOMIAL (f&riced in recisrdfirm I Srpremher 1986) $1. INTRODIJ\u2019CTION IN THIS PAPER I construct a state model for the (original) Jones polynomial [5]. (In [6] a state",
   "authors_raw": null,
+  "title_lines": [
+   "STATE MODELS AND THE JONES POLYNOMIAL",
+   "(f&riced in recisrdfirm I Srpremher 1986)",
+   "$1. INTRODIJ\u2019CTION",
+   "IN THIS PAPER I construct a state model for the (original) Jones polynomial [5]. (In [6] a state"
+  ],
   "abstract": null,
   "docinfo": {
    "CreationDate": "D:20011006162647",
    "Producer": "Acrobat 3.0 Import Plug-in\u0000",
-   "Creator": "捁潲慢⁴⸳‰慃瑰牵⁥汐杵椭n",
+   "Creator": "\u6341\u6f72\u6162\u2074\u2e33\u2030\u6143\u7470\u7275\u2065\u6c50\u6775\u692dn",
    "Title": "PII: 0040-9383(87)90009-7"
-  },
-  "title_lines": [
-   "STATE MODELS AND THE JONES POLYNOMIAL",
-   "(f&riced in recisrdfirm I Srpremher 1986)",
-   "$1. INTRODIJ’CTION",
-   "IN THIS PAPER I construct a state model for the (original) Jones polynomial [5]. (In [6] a state"
-  ],
-  "title_prev": "STATE MODELS AND THE JONES POLYNOMIAL (f&riced in recisrdfirm I Srpremher 1986) $1. INTRODIJ’CTION IN THIS PAPER I construct a state model for the (original) Jones polynomial [5]. (In [6] a state"
+  }
  },
  "toc": [
   {
@@ -38,6 +39,16 @@
  ],
  "toc_source": "inferred",
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 13,
+   "n_chars": 25632,
+   "n_words": 4350
+  },
   {
    "id": "sec-000-references",
    "number": null,
@@ -53,7 +64,7 @@
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 1,
-  "sections": 1,
-  "chars_total": 2079
+  "sections": 2,
+  "chars_total": 27711
  }
 }

@@ -2,6 +2,10 @@ import Mathlib.Data.List.Basic
 import Mathlib.Data.Finset.Basic
 import Mathlib.Tactic.Ring
 
+-- `u` is the level of the coefficient ring `R` in the signatures below;
+-- naming it is required once auto-bound universes are off.
+universe u
+
 /-!
 # Recursive symbolic Markov-trace reducer for `H_n(q)`
 

@@ -1,24 +1,24 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-02T03:10:53.132539+00:00",
-  "commitSha": "6871acfab8e73d312ff44676ab0d3a602a3599fe",
+  "computedAt": "2026-09-07T06:18:13.980857+00:00",
+  "commitSha": "a4fcd0bbf680934345573a545e3f6084279ddcff",
   "assertions": [
     {
       "name": "rho_F_required_matches_AME_he4",
       "computed": true,
       "expected": true,
       "passed": true,
-      "tolerance": 0.0,
+      "tolerance": "0.0",
       "source": "B_AME / (m_e · 4 · 8G)"
     }
   ],
   "allPassed": true,
-  "durationMs": 76,
+  "durationMs": 13,
   "computation": "he4-channel-split-categorical-constraint-probe",
   "scriptFile": "he4_channel_split_categorical_constraint_probe.py",
-  "scriptHash": "d0cd10149779",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "15c4010d9c8c",
+  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,74 +30,87 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/he4_channel_split_categorical_constraint_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/he4_channel_split_categorical_constraint_probe.py"
   },
   "description": "⁴He +5.87% channel-split categorical constraint per conj:psd-trace-orthogonality. Tests 3 hypotheses (HC1/HC2/HC3) for the structural rule pinning which ρ_F^λ deviate from 2.",
   "auditOnly": "docs/audits/2026-06-02-yekutieli-A2-qbeta-mn-he4-workplan.md",
   "data": {
-    "rho_F_postulated": 2.0,
-    "rho_F_required": 1.889169373415601,
-    "gap_rho_F": 0.11083062658439907,
+    "rho_F_postulated": "2.00000000000000000000000000000000000000000000000000000000000",
+    "rho_F_required": "1.88916859638709739519890005689015520785449583332188525517924",
+    "gap_rho_F": "0.110831403612902604801099943109844792145504166678114744820762",
     "HC1_uniform_trace_dominant": {
-      "trace_dominant_fraction": 0.9298482413576952,
-      "rho_F_star": 1.8808078333056022,
-      "deviation_from_2": -0.11919216669439783
+      "trace_dominant_fraction": "1.00000000000000000000000000000000000000000000000003245372900",
+      "rho_F_star": "1.88916859638709739519890005689015520785449583332182394461357",
+      "deviation_from_2": "-0.110831403612902604801099943109844792145504166678176055386431"
     },
     "HC2_top_k_localized": [
       {
         "k": 1,
         "top_partitions": [
           [
-            9,
-            3
+            12
           ]
         ],
-        "fraction_of_tr_M": 0.2908905574191559,
-        "rho_F_star_required": 1.61899544774601,
-        "deviation_from_2": -0.38100455225399
+        "fraction_of_tr_M": "0.853976171465776290560387882231153863863619375920738453052081",
+        "rho_F_star_required": "1.87021721762719669393574973212274581131638759051690860342841",
+        "deviation_from_2": "-0.129782782372803306064250267877254188683612409483091396571586"
       },
       {
         "k": 2,
         "top_partitions": [
           [
-            9,
-            3
+            12
           ],
           [
-            8,
-            4
+            9,
+            3
           ]
         ],
-        "fraction_of_tr_M": 0.5273453167858968,
-        "rho_F_star_required": 1.7898329177171843,
-        "deviation_from_2": -0.2101670822828157
+        "fraction_of_tr_M": "1.49803281987557612760629391069351522731811640960797535943749",
+        "rho_F_star_required": "1.92601537019588926033079688993380299896239397893317213677997",
+        "deviation_from_2": "-0.0739846298041107396692031100661970010376060210668278632200345"
       },
       {
         "k": 3,
         "top_partitions": [
           [
+            12
+          ],
+          [
             9,
             3
           ],
           [
-            8,
-            4
-          ],
-          [
-            10,
-            2
+            11,
+            1
           ]
         ],
-        "fraction_of_tr_M": 0.6624063708994304,
-        "rho_F_star_required": 1.832684842034489,
-        "deviation_from_2": -0.167315157965511
+        "fraction_of_tr_M": "1.08913405028733340125599059369427379808563646867215189142941",
+        "rho_F_star_required": "1.89823896922177461836559338056096160495815771620010265535486",
+        "deviation_from_2": "-0.101761030778225381634406619439038395041842283799897344645138"
       },
       {
         "k": 5,
         "top_partitions": [
           [
+            12
+          ],
+          [
             9,
             3
+          ],
+          [
+            11,
+            1
           ],
           [
             8,
@@ -106,26 +119,25 @@
           [
             10,
             2
-          ],
-          [
-            7,
-            5
-          ],
-          [
-            11,
-            1
           ]
         ],
-        "fraction_of_tr_M": 0.8685109129094746,
-        "rho_F_star_required": 1.872390058734989,
-        "deviation_from_2": -0.12760994126501093
+        "fraction_of_tr_M": "0.887152685933727759574177327102506370715802610861634826585233",
+        "rho_F_star_required": "1.87507065540104564101764744295907117277616116101772976268882",
+        "deviation_from_2": "-0.124929344598954358982352557040928827223838838982270237311180"
       },
       {
         "k": 8,
         "top_partitions": [
           [
+            12
+          ],
+          [
             9,
             3
+          ],
+          [
+            11,
+            1
           ],
           [
             8,
@@ -134,37 +146,53 @@
           [
             10,
             2
-          ],
-          [
-            7,
-            5
-          ],
-          [
-            11,
-            1
-          ],
-          [
-            8,
-            3,
-            1
           ],
           [
             6,
             6
           ],
           [
-            12
+            7,
+            5
+          ],
+          [
+            9,
+            2,
+            1
           ]
         ],
-        "fraction_of_tr_M": 0.9704945825411496,
-        "rho_F_star_required": 1.8857998503255944,
-        "deviation_from_2": -0.11420014967440562
+        "fraction_of_tr_M": "1.00000000000000000000000000000000000000000000000003245372900",
+        "rho_F_star_required": "1.88916859638709739519890005689015520785449583332188885207158",
+        "deviation_from_2": "-0.110831403612902604801099943109844792145504166678111147928424"
       }
     ],
     "HC3_bar_pairs": [
       {
         "pair": [
           [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            12
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "0.853976171465776290560387882231153863863619375920738453052081"
+      },
+      {
+        "pair": [
+          [
             2,
             2,
             2,
@@ -180,69 +208,8 @@
             3
           ]
         ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.2908905574191559
-      },
-      {
-        "pair": [
-          [
-            2,
-            2,
-            2,
-            2,
-            1,
-            1,
-            1,
-            1
-          ],
-          [
-            8,
-            4
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.23645475936674082
-      },
-      {
-        "pair": [
-          [
-            2,
-            2,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
-          ],
-          [
-            10,
-            2
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.13506105411353372
-      },
-      {
-        "pair": [
-          [
-            2,
-            2,
-            2,
-            2,
-            2,
-            1,
-            1
-          ],
-          [
-            7,
-            5
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.10333801059125157
+        "n_cached_in_pair": 2,
+        "fraction_total": "0.644056648409799837045906028462361363454497033687236906385410"
       },
       {
         "pair": [
@@ -264,16 +231,16 @@
             1
           ]
         ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.1027665314187925
+        "n_cached_in_pair": 2,
+        "fraction_total": "-0.408898769588242726350303316999241429232479940935823468008077"
       },
       {
         "pair": [
           [
-            3,
             2,
             2,
-            1,
+            2,
+            2,
             1,
             1,
             1,
@@ -281,12 +248,33 @@
           ],
           [
             8,
-            3,
-            1
+            4
           ]
         ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.04064634118345442
+        "n_cached_in_pair": 2,
+        "fraction_total": "-0.316594869292670180299419786946361116479828979172771141205880"
+      },
+      {
+        "pair": [
+          [
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            10,
+            2
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "0.114613504939064538617606520354593689109995121362254076361699"
       },
       {
         "pair": [
@@ -303,31 +291,27 @@
             6
           ]
         ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.03253469478624027
+        "n_cached_in_pair": 2,
+        "fraction_total": "0.0865185986031768525171265959797869600117175456427202782676485"
       },
       {
         "pair": [
           [
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1,
+            2,
+            2,
+            2,
+            2,
+            2,
             1,
             1
           ],
           [
-            12
+            7,
+            5
           ]
         ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.028802633661980336
+        "n_cached_in_pair": 2,
+        "fraction_total": "0.0263287154630953879086960769177066692724798434956773488761220"
       },
       {
         "pair": [
@@ -348,131 +332,8 @@
             1
           ]
         ],
-        "n_cached_in_pair": 1,
-        "fraction_total": -0.028452171537432413
-      },
-      {
-        "pair": [
-          [
-            3,
-            3,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
-          ],
-          [
-            8,
-            2,
-            2
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": -0.021855276253055313
-      },
-      {
-        "pair": [
-          [
-            3,
-            3,
-            2,
-            1,
-            1,
-            1,
-            1
-          ],
-          [
-            7,
-            3,
-            2
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.01781504107835799
-      },
-      {
-        "pair": [
-          [
-            3,
-            3,
-            3,
-            1,
-            1,
-            1
-          ],
-          [
-            6,
-            3,
-            3
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.016601091883256612
-      },
-      {
-        "pair": [
-          [
-            4,
-            2,
-            1,
-            1,
-            1,
-            1,
-            1,
-            1
-          ],
-          [
-            8,
-            2,
-            1,
-            1
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.008095911154621546
-      },
-      {
-        "pair": [
-          [
-            4,
-            2,
-            2,
-            1,
-            1,
-            1,
-            1
-          ],
-          [
-            7,
-            3,
-            1,
-            1
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.007478421561070931
-      },
-      {
-        "pair": [
-          [
-            4,
-            2,
-            2,
-            2,
-            1,
-            1
-          ],
-          [
-            6,
-            4,
-            1,
-            1
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.006999509688362612
+        "n_cached_in_pair": 2,
+        "fraction_total": "-2.27999539517718071580982466119887256465654366305790654892680e-71"
       },
       {
         "pair": [
@@ -494,8 +355,8 @@
             1
           ]
         ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.00608367271706854
+        "n_cached_in_pair": 2,
+        "fraction_total": "-1.40761056811876564072585471029612853061166519113917044155679e-71"
       },
       {
         "pair": [
@@ -514,89 +375,8 @@
             1
           ]
         ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.0038856340631352668
-      },
-      {
-        "pair": [
-          [
-            3,
-            2,
-            2,
-            2,
-            2,
-            1
-          ],
-          [
-            6,
-            5,
-            1
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.003639946797563191
-      },
-      {
-        "pair": [
-          [
-            3,
-            3,
-            2,
-            2,
-            1,
-            1
-          ],
-          [
-            6,
-            4,
-            2
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.0035431002320374695
-      },
-      {
-        "pair": [
-          [
-            4,
-            3,
-            1,
-            1,
-            1,
-            1,
-            1
-          ],
-          [
-            7,
-            2,
-            2,
-            1
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.003098513234399508
-      },
-      {
-        "pair": [
-          [
-            5,
-            2,
-            1,
-            1,
-            1,
-            1,
-            1
-          ],
-          [
-            7,
-            2,
-            1,
-            1,
-            1
-          ]
-        ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.0010292638571182116
+        "n_cached_in_pair": 2,
+        "fraction_total": "-1.34869857290664953195434739798683449946245453944049370240091e-71"
       },
       {
         "pair": [
@@ -618,8 +398,89 @@
             1
           ]
         ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.0009177507168606343
+        "n_cached_in_pair": 2,
+        "fraction_total": "-1.28523220523834941997686980969784089556186129802734055083756e-71"
+      },
+      {
+        "pair": [
+          [
+            3,
+            3,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            7,
+            3,
+            2
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "7.34352289620132236696169513882470553130766544884451052443191e-72"
+      },
+      {
+        "pair": [
+          [
+            4,
+            3,
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            6,
+            3,
+            2,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "3.66206141757309057318712678604598781867683455061684736383228e-72"
+      },
+      {
+        "pair": [
+          [
+            4,
+            2,
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            6,
+            4,
+            1,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "-3.75559684650120631293402708130678621428714051836491572153030e-72"
+      },
+      {
+        "pair": [
+          [
+            5,
+            2,
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            6,
+            3,
+            1,
+            1,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "2.53812553048207516835986538687589475940280977676541062873135e-72"
       },
       {
         "pair": [
@@ -641,8 +502,8 @@
             1
           ]
         ],
-        "n_cached_in_pair": 1,
-        "fraction_total": 0.0007476536413282691
+        "n_cached_in_pair": 2,
+        "fraction_total": "-2.19217752571501538743209277535591430492307910260930425039711e-72"
       },
       {
         "pair": [
@@ -664,13 +525,428 @@
             1
           ]
         ],
-        "n_cached_in_pair": 1,
-        "fraction_total": -0.00012264537584264162
+        "n_cached_in_pair": 2,
+        "fraction_total": "1.97122177785944168826681017662700966960520661043124019881805e-72"
+      },
+      {
+        "pair": [
+          [
+            5,
+            2,
+            2,
+            2,
+            1
+          ],
+          [
+            5,
+            4,
+            1,
+            1,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "-1.56917953346776399854030068053837487757146845104896029401443e-72"
+      },
+      {
+        "pair": [
+          [
+            3,
+            3,
+            2,
+            2,
+            2
+          ],
+          [
+            5,
+            5,
+            2
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "-1.54638715823724495339179101693888201745774141334188903164298e-72"
+      },
+      {
+        "pair": [
+          [
+            4,
+            3,
+            2,
+            2,
+            1
+          ],
+          [
+            5,
+            4,
+            2,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "-1.27323709454172187409901755023467384887892041445665962315822e-72"
+      },
+      {
+        "pair": [
+          [
+            3,
+            2,
+            2,
+            2,
+            2,
+            1
+          ],
+          [
+            6,
+            5,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "1.18919209992485342437078572910570362168108446950342286427208e-72"
+      },
+      {
+        "pair": [
+          [
+            3,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            8,
+            2,
+            2
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "-1.15771552564544481297101393217623237479295824160266596736308e-72"
+      },
+      {
+        "pair": [
+          [
+            4,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            8,
+            2,
+            1,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "1.02754576284969802935027798493869509717013384351781710169108e-72"
+      },
+      {
+        "pair": [
+          [
+            4,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            7,
+            3,
+            1,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "-9.99133660412101217143767482146811566154179511862429665821280e-73"
+      },
+      {
+        "pair": [
+          [
+            5,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            7,
+            2,
+            1,
+            1,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "5.27447689492301323284591960383222008218179027410587156063297e-73"
+      },
+      {
+        "pair": [
+          [
+            3,
+            3,
+            3,
+            1,
+            1,
+            1
+          ],
+          [
+            6,
+            3,
+            3
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "5.33670925359541797157279940230839712871921816857994170689529e-73"
+      },
+      {
+        "pair": [
+          [
+            4,
+            3,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            7,
+            2,
+            2,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "5.01026285818764638768880235237069979866830983795486548596740e-73"
+      },
+      {
+        "pair": [
+          [
+            4,
+            4,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            6,
+            2,
+            2,
+            2
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "4.68599930558951571765233442092384645424728577277928010239363e-73"
+      },
+      {
+        "pair": [
+          [
+            4,
+            2,
+            2,
+            2,
+            2
+          ],
+          [
+            5,
+            5,
+            1,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "1.90233908340531586802435267762475322984950621839865922568917e-73"
+      },
+      {
+        "pair": [
+          [
+            3,
+            3,
+            3,
+            2,
+            1
+          ],
+          [
+            5,
+            4,
+            3
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "1.60756917285013666138274123514496620824671830826833011620313e-73"
+      },
+      {
+        "pair": [
+          [
+            3,
+            3,
+            3,
+            3
+          ],
+          [
+            4,
+            4,
+            4
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "-1.20368518825465878358898839592475992361870529714351790697473e-73"
+      },
+      {
+        "pair": [
+          [
+            3,
+            2,
+            2,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            8,
+            3,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "-1.14832811101580708663990032414813684794599450535218185069310e-73"
+      },
+      {
+        "pair": [
+          [
+            5,
+            3,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            6,
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "9.35674951155543446827326652608174756410906291906387209298860e-74"
+      },
+      {
+        "pair": [
+          [
+            3,
+            3,
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            6,
+            4,
+            2
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "-2.87127107111651804071679299625342380333751816693457976669334e-74"
+      },
+      {
+        "pair": [
+          [
+            4,
+            3,
+            3,
+            1,
+            1
+          ],
+          [
+            5,
+            3,
+            3,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "-2.62655184560603214088068984078770413930973398293865098717600e-74"
+      },
+      {
+        "pair": [
+          [
+            4,
+            3,
+            3,
+            2
+          ],
+          [
+            4,
+            4,
+            3,
+            1
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "-1.68609301000620785703932340779013711587404196012088375605650e-74"
+      },
+      {
+        "pair": [
+          [
+            4,
+            4,
+            2,
+            1,
+            1
+          ],
+          [
+            5,
+            3,
+            2,
+            2
+          ]
+        ],
+        "n_cached_in_pair": 2,
+        "fraction_total": "-1.31735817392507351503914856819545285044737234341047440051609e-74"
       }
     ],
-    "HC3_top_8_pair_half_cached_count": 8,
+    "HC3_top_8_pair_half_cached_count": 0,
     "HC3_top_8_distinct_pairs": 8,
-    "self_conjugate_partitions_cached": [],
-    "verdict": "HC3 STRUCTURAL CONSTRAINT IDENTIFIED — all 8 top trace-dominant bar-pairs are HALF-CACHED: only one of (λ, λᵀ) appears in the trace-dominant family, the other is in the uncached 53-partition tail (contribution ≤ 4e-51 by PR #1675 Probe 2 accounting). This bar-asymmetric distribution is the CATEGORICAL CONSTRAINT that pins the channel split:\n\n  RULE: ρ_F^λ varies on cached trace-dominant partitions; ρ_F^λᵀ = 2 on uncached bar-paired transposes.\n\nUnder HC1 (uniform-on-trace-dominant), ρ_F^* = 1.880808 (deviation -0.1192 from 2). Whether this value has a substrate identification needs a separate PSLQ / categorical-derivation probe."
+    "self_conjugate_partitions_cached": [
+      [
+        6,
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      [
+        4,
+        4,
+        2,
+        2
+      ]
+    ],
+    "verdict": "HC3 MIXED — only 0/8 top-8 pairs are half-cached. The bar-involution structure does NOT cleanly pin the channel split via half-pair asymmetry alone. Under HC1, ρ_F^* = 1.889169 on trace-dominant. Further categorical constraints needed (e.g. Plancherel weight hierarchy, or bar-symmetric vs bar-antisymmetric sector discrimination)."
   }
 }

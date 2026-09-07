@@ -330,11 +330,70 @@ surface the duplicates in step 6) saves a full review cycle.
            LeanSearchClient; do
     LP="$LP:$PWD/.lake/packages/$p/.lake/build/lib/lean"
   done
-  LEAN_PATH="$LP" lean path/to/Changed.lean      # exit 0 = checks, sorry-free
+  # -DautoImplicit=false is NOT optional — see the note below.
+  LEAN_PATH="$LP" lean -DautoImplicit=false -s 65536 path/to/Changed.lean
   ```
 
   Then `#print axioms` on the new declarations to confirm no `sorryAx`. Say in
   the PR that this is what you ran and why.
+
+- **🛑 A BARE `lean` DOES NOT APPLY THE LAKEFILE'S `[leanOptions]`, so it is a
+  strictly WEAKER check than Lake — always pass `-DautoImplicit=false`.**
+  `autoImplicit` defaults to **true** in `lean` and is set **false** in both the
+  root and paper lakefiles. With it on, Lean silently auto-binds an unbound
+  identifier as an implicit argument instead of erroring, so a file Lake rejects
+  can pass `lean`-direct. Measured 2026-09-05 on
+  `QOU/MassTheory/AtomWordShadow.lean`, same file, same `LEAN_PATH`:
+
+  ```
+  lean                        ->  exit 0,  0 errors
+  lean -DautoImplicit=false   ->  exit 1,  6 errors      (lake agrees: 20)
+  ```
+
+  That file was **red on `main`** and three sweeps called it clean. Also pass
+  `-s 65536`, mirroring the paper lakefile's `moreLeanArgs`: one generated module
+  overflows the default elaboration stack and aborts as a bare `exit 134` with no
+  source error. The sweep scripts below now pass both.
+
+- **🛑 AND `lean`-direct against a restored cache verifies against a SNAPSHOT,
+  and `exit 0` from it is a claim about that snapshot — not about the library
+  source your file names.** This is the gate's own blind spot and it has been
+  realised: `descartesWtrace` recorded `lean`-direct `exit 0` and **landed on
+  `main` red**, because the cache was built 2026-08-30 while `794c34897d7`
+  (2026-09-03) retyped `SeminormalRep.wtrace`'s genericity hypothesis and ported
+  only the seven consumers *inside* the package (#6751). The library half of that
+  change was done correctly; a content-block sibling was simply not in it.
+
+  **So when your branch touches any `.lean`, run the matching sweep instead of
+  bare `lean`-direct.** Both build a shadow tree, rebuild from source only the
+  modules whose own olean predates their own last source commit, and compile
+  against that. Neither invokes `lake`, so the restored cache cannot be evicted;
+  Mathlib is never rebuilt.
+
+  ```bash
+  # content-block .lean siblings (content/**/*.lean outside a package tree)
+  scripts/lean-content-sweep.sh [file.lean ...]     # no args = all 261
+
+  # library modules (content/*/lean/QOU/**) — the DIRTY CLOSURE, which is what
+  # a source-change count misses: a NEW file inherits its dependencies'
+  # staleness without ever appearing in one.
+  scripts/lean-library-sweep.py
+  ```
+
+  Measured 2026-09-05, whole corpus: 261 content blocks and 74 dirty library
+  modules, **0 red** — content sweep ~50 min, library sweep 122 s. Pass
+  `SHADOW=<dir>` / `--shadow <dir>` to reuse the ~2.3 GB shadow across runs; the
+  copy is the slow part.
+
+  **Two things the sweeps do not settle, so do not write them into a PR:**
+
+  * **The result is container-scoped.** The dirty closure is computed against
+    *this* container's olean tree. A container restored from an older cache has
+    a larger closure and needs its own run. Two sessions measured the same
+    dependency as stale and as current, and both were right.
+  * **Sibling packages (UGB, Fred2005) are not swept** by either script.
+
+  Bean `qou-56qy`.
 
 - **If the root cache is cold and `cache get` will not fetch, build per-paper
   instead.** Measured in a sandbox with 9.2 GB free: the per-paper Mathlib build
@@ -362,12 +421,53 @@ surface the duplicates in step 6) saves a full review cycle.
 - Run `proof-simplifier` on any proofs that changed on this branch.
 - The Lean build must be green and the audit must report 100%
   coverage before continuing.
+- **Say in the PR which verification you ran, in these words**, so a reader can
+  tell a snapshot-conditional green from a source-verified one:
+  - *"`scripts/lean-library-sweep.py`: N/N dirty modules rebuilt from source,
+    exit 0"* — source-verified.
+  - *"`lean`-direct against the restored cache, exit 0"* — snapshot-conditional;
+    say so, and say why the sweep was not run.
+
+  Never write "CI green" (no run exists — auto-triggers are disabled repo-wide),
+  and never write "verified" unqualified over a bare `lean`-direct run on a
+  branch that touches `.lean`.
 
 ## 4a. Mirror-drift gate (BLOCKING on growth)
 
 ```sh
-bun run <folio-assistant>/scripts/check-mirror-drift.ts --package qou --baseline 35
+python3 scripts/mirror-drift-audit.py --baseline
 ```
+
+> **🛑 The command this section used to name did not exist (corrected 2026-09-05).**
+> It read `bun run <folio-assistant>/scripts/check-mirror-drift.ts --package qou
+> --baseline 35`. Measured: **no such file**, not in this repo and not in the
+> `folio-assistant` clone — so for as long as that line stood, this "BLOCKING"
+> gate could only ever error out, and a section that names a missing script is
+> worse than no section, because it reads as covered.
+>
+> The one audit that sounds adjacent,
+> [`scripts/lean-duplicate-fqn-audit.py`](../../scripts/lean-duplicate-fqn-audit.py),
+> does **not** substitute: its own SCOPE note says it walks the library tree only
+> and that *"a clean run here is not evidence that a name is unambiguous in the
+> corpus."*
+>
+> The replacement, [`scripts/mirror-drift-audit.py`](../../scripts/mirror-drift-audit.py),
+> is the missing half — it reuses that script's parser (so the namespace-stack and
+> comment-stripping calibration is not re-litigated) and measures the sibling
+> surface. Baseline: [`docs/audits/mirror-drift-baseline.json`](../../docs/audits/mirror-drift-baseline.json).
+>
+> **Read the baseline before acting on a hit.** Two things it records that the
+> table below does not:
+> - **A faithful live mirror is NOT a defect.** This gate is on *drift*; a
+>   `definition` block is *required* to carry a sibling (§3), so deleting a
+>   faithful mirror breaks that requirement. Of 12 live shadows, **7** are
+>   actionable.
+> - **Do not assume the library is canonical.** Across the 163 substantive drifts,
+>   **91 have the library edited more recently and 70 the sibling** — and recency
+>   is not canonicality. `QOU.Information.speedOfLight` has the *library* edited
+>   later while the *sibling* is the §7c-compliant one (generic base ring,
+>   division-free, defining relation discharged as a theorem). Every
+>   reconciliation requires reading both sides.
 
 A green Lean build does not mean the checkers looked at the code it compiled.
 Content-block `.lean` siblings compile standalone and cannot import one another,

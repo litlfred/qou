@@ -41,6 +41,7 @@ sys.path[:0] = [str(Path(__file__).resolve().parent),
 from mpmath import mpf  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import M_E_MEV
 
 # Precision must be raised BEFORE the module-scope constants below.  The
 # docstring says precision is the caller's business, and for the FUNCTIONS
@@ -62,7 +63,7 @@ set_compute_dps()
 LEPTON_WINDINGS = (3, 5, 7)
 
 # CODATA / PDG (MeV). Targets only -- nothing is fitted to them.
-M_E = mpf("0.51099895000")
+M_E = M_E_MEV
 M_MU = mpf("105.6583755")
 M_TAU = mpf("1776.86")
 

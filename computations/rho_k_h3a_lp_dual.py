@@ -486,10 +486,23 @@ def main() -> int:
             "n_crossings": len(crossings),
             "n_partitions": len(parts),
             "compute_status": "deuteron",
-            "M_codata_MeV": str(M_D_MEV),
-            "m_e_MeV": str(M_E_MEV),
-            "m_p_MeV": str(M_P_MEV),
-            "m_n_MeV": str(m_n_derived_3input),
+            # `str_at_true_precision`, NOT `str`. These four constants are
+            # imported ABOVE `set_compute_dps()` (line 87), so their mpf values
+            # are built while `mp.dps` is still mpmath's default 15 -- they hold
+            # 53 bits. Rendering them later at 50 dps emits the binary64 dyadic
+            # tail, which reads as measured precision. `m_n_derived_3input` is
+            # the worst because it is a SUM of three such values, so the error
+            # compounds into the 14th digit rather than the 50th:
+            #   939.5654217899999594010296277701854705810546875
+            # against the 939.56542179 the constants actually carry. That is
+            # the float64-padding audit's exact signature (bean `qou-1v29`).
+            # The helper tests each value against its own float64 and shortens
+            # only those that hold nothing more, so a genuinely high-precision
+            # value passing through is untouched.
+            "M_codata_MeV": str_at_true_precision(M_D_MEV),
+            "m_e_MeV": str_at_true_precision(M_E_MEV),
+            "m_p_MeV": str_at_true_precision(M_P_MEV),
+            "m_n_MeV": str_at_true_precision(m_n_derived_3input),
             "primary_cost_choice": args.cost,
             "cost_choices_supported": ["plancherel", "frobenius"],
         },

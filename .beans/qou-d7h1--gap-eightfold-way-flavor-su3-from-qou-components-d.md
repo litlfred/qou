@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-02T17:29:24Z
-updated_at: 2026-08-26T03:24:21Z
+updated_at: 2026-09-05T09:04:52Z
 parent: qou-a0gr
 ---
 
@@ -55,8 +55,34 @@ no z at all -- they build the 9-element colour-pair weight tensor W.
 z_C solves z_r = z_C at r = 2.5995 (no integer). **z_3 appears NOWHERE outside
 one probe** (ocneanu_param_from_fibre_dimension.py, nothing imports it) and one
 audit comparison table.
-Grep warning: the literal 0.44930482320583087 in many witnesses is h_q, NOT
-z_3 (0.449304809090...) -- they differ at the 8th decimal.
+Grep warning [CORRECTED 2026-09-05, bean qou-yk03 -- SEE BELOW, the original
+named the wrong quantity]: the literal 0.44930482320583087 in many witnesses
+is h_q, NOT z_3 (0.449304809090...) -- they differ at the 8th decimal.
+
+CORRECTION. That literal is z_3 AT THE MUON ANCHOR, not h_q. Measured at
+65 dps (probes/z3_muon_pin_vs_hq_misidentification_probe.py, 2/2):
+
+    z_3 @ muon    0.4493048233034703126034   rel 2.17e-10  <- the literal
+    z_3 @ proton  0.4493048090902078605552   rel 3.14e-8
+    h_q = q-1/q   0.2090602987956393154308   rel 0.535     <- 53 % away
+
+h_q is not a near miss; it is off by a FACTOR OF TWO, so 'they differ at the
+8th decimal' is not a small slip inside a true statement -- the quantities are
+not comparable. The 2.17e-10 on the muon row is the literal's own 17-digit
+truncation.
+
+The real content is MORE SERIOUS IN KIND and SMALLER IN EXTENT. These are not
+two lookalike quantities; they are ONE quantity, z_3 = q^3/[3]_q, at the two
+substrate anchors. The 3.14e-8 gap is the mu-p tension through z_3. That is a
+LAYER STRADDLE, which AGENTS.md calls a defect regardless of size -- and the
+warning as written tells an agent a muon-pinned value needs NO anchor check,
+inverting the 2026-08-07 proton-by-default directive.
+
+EXTENT: ZERO live producers. Five files carry the literal -- three under
+computations/_deprecated/, and the other two are this bean and
+docs/audits/2026-08-16-colour-level-and-tln-compute.md, i.e. the two sites
+carrying the misidentification itself. The correct proton value appears in 21
+files. A documentation correction, not a drain; nothing computed is wrong.
 
 **bring_color_weighted implies NO level.** It is a per-bond scalar over the
 A-1 nearest-neighbour bonds: p-p -> z, n-n -> z-h, p-n -> z-h(1/2-delta/4).
@@ -358,3 +384,63 @@ to argue about icosahedra at all -- it needs exactly one thing, that its triple
 is complex type. Everything else follows. Conversely any future candidate that
 is real or quaternionic is dead on arrival at dimension 3, without further
 analysis.
+
+
+---
+
+## 🛑 THE BLOCKER IS ALREADY RULED — this bean is stale, not blocked (2026-09-05)
+
+STATUS above says the `SU(3)_C / SU(3)_F` notation collision "needs an owner
+convention decision before the medium-term work can even be stated
+unambiguously". **That decision exists.**
+
+`content/quantum-observable-universe/notation/notation-collisions.md` carries a
+full ruling, landed **2026-09-03** in `afec87d506` (bean `qou-gght`) with a
+28-site sweep of the eightfold chapter:
+
+> **`SU(3)` alone** = permitted only for a representation-theoretic statement true
+> of any `SU(3)`. The two groups the paper uses are always subscripted:
+> **`SU(3)_c`** (colour — the stabiliser in `G_2 = Aut(O)`, colour tubes, gluon
+> octet) and **`SU(3)_f`** (flavour — meson/baryon octets, decuplet, quark
+> flavour). Roman lowercase subscripts. **The reason is that eightfold-open-problems
+> item 4 asks whether the two are the same, different, or groupoid-dual; a shared
+> glyph presupposes an answer.** Legacy spellings are recorded as legacy and are
+> **not** swept by this ruling.
+
+That reasoning is exactly what this bean wanted. The ruling postdates this bean's
+last update (2026-08-26) by **eight days** — nobody missed it; it arrived from a
+different bean and this one was never updated.
+
+**So the medium-term item — "state the flavour-SU(3) candidate action without
+conflating it with the colour module" — is UNBLOCKED and agent-actionable.**
+
+### Compliance, measured 2026-09-05
+
+    canonical SU(3)_c                          16
+    canonical SU(3)_f                          19
+    legacy _c / _L / _R (declared, NOT swept)   6
+    bare SU(3), no subscript                   45  across 22 files
+
+The 45 bare are mostly the ruling's own carve-out: **20 sit in
+`appendix-standard-model/`**, where they are the standard SM gauge triple
+`SU(3) x SU(2) x U(1)` — universally written bare and true of any `SU(3)`.
+
+### One genuinely NEW question, small and not this bean's
+
+`observations/q-deformed-nuclear-models-comparison.md` uses **Elliott's `SU(3)`**
+(3 sites, `\cite{elliott1958}`) — the harmonic-oscillator shell-model symmetry.
+That is a **third** group: neither colour nor flavour. The register names only two.
+
+It is currently disambiguated by the adjacent word "Elliott", which is the same
+mechanism the register already accepts for `\zeta(s)` vs `\zeta_n`. **Proposed (not
+applied — a register change is a convention claim):** add one line to
+`notation-collisions.md` recording Elliott's `SU(3)` as a third, context-
+disambiguated use, so a future sweep does not "correct" those 3 sites into `_c`
+or `_f`.
+
+### A measurement error of mine, recorded
+
+I first reported **0** bare occurrences. That grep passed both `-E` and `-P`,
+which GNU grep rejects as conflicting matchers — non-zero exit, no output, and
+`wc -l` dutifully printed 0 with stderr suppressed. The true count is 45. A
+suppressed-stderr pipeline reports a failed search as a clean result.

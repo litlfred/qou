@@ -1,0 +1,95 @@
+{
+  "probe": "qbeta_d_eigenphase_projection_through_ladder_probe",
+  "bean": "qou-cds1",
+  "question": "does the derived D eigenphase projection a - h^2/4 re-derive the ladder?",
+  "answer": "No. It improves D substantially (implied c_2 -9.30 -> -1.73, convergence 1.12x -> 2.36x) but leaves the ladder far from self-consistent: C lands implied c_2 within 1.8 % of the structural -1, D-corrected is 73 % off. The projection is necessary-looking and insufficient alone.",
+  "scope": "(a) \u2014 measured at the proton pin with c_2 held at its structural (convention-independent) value. Does NOT refute the projection, which is proved; measures only that it is not by itself the whole C->D move. Identifies nothing about what else is needed.",
+  "arms": {
+    "C": {
+      "c2_implied": "-1.01762379751",
+      "c3": "-2.06934257712",
+      "res_N1": "7.38272225937e-5",
+      "res_N2": "1.27858254211e-6",
+      "convergence_N1_over_N2": "57.7414599074"
+    },
+    "D_naive": {
+      "c2_implied": "-9.29886287065",
+      "c3": "-974.431887747",
+      "res_N1": "0.000675025405582",
+      "res_N2": "0.00060243315264",
+      "convergence_N1_over_N2": "1.12049843642"
+    },
+    "D_corrected": {
+      "c2_implied": "-1.73311882542",
+      "c3": "-86.0809935206",
+      "res_N1": "0.000125741940869",
+      "res_N2": "5.31895347529e-5",
+      "convergence_N1_over_N2": "2.3640353587"
+    }
+  },
+  "sign_variants": {
+    "minus_h2_over_4_DERIVED": {
+      "c2_implied": "-1.73311882542",
+      "c3": "-86.0809935206",
+      "res_N1": "0.000125741940869",
+      "res_N2": "5.31895347529e-5",
+      "convergence_N1_over_N2": "2.3640353587"
+    },
+    "plus_h2_over_4": {
+      "c2_implied": "-15.213270418",
+      "c3": "-1668.88694756",
+      "res_N1": "0.00110483992642",
+      "res_N2": "0.00103221649332",
+      "convergence_N1_over_N2": "1.07035678423"
+    },
+    "minus_h2_over_2": {
+      "c2_implied": "7.48849247161",
+      "c3": "996.697724997",
+      "res_N1": "0.000542944889669",
+      "res_N2": "0.000615448787046",
+      "convergence_N1_over_N2": "0.882193451506"
+    }
+  },
+  "self_consistency_pct_from_structural_c2": {
+    "C": "1.76238",
+    "D_naive": "829.886",
+    "D_corrected": "73.3119"
+  },
+  "q0": "1.1099785827513808076",
+  "q0_pin": "proton (q_at)",
+  "u": "0.00851723455015614",
+  "dps": 50,
+  "assertions": [
+    {
+      "name": "structural_c2_carries_no_markov_parameter",
+      "passed": true,
+      "detail": "the N2 rung is 1 + c_2 u^2 with c_2 = -1, i.e. 1 - (b hbar^2)^2 = 1 - u^2 = 0.9999274567156176265. No z appears, so c_2 = -1 is convention-INDEPENDENT and is legitimately held fixed across all three arms. The 'implied c_2 = -9.3 under D' recorded elsewhere is the INVERTED c_2, a different quantity."
+    },
+    {
+      "name": "derived_correction_substantially_improves_D",
+      "passed": true,
+      "detail": "implied c_2 moves -9.29886 -> -1.73312 and rung convergence 1.1205x -> 2.364x; c_3 moves -974.43189 -> -86.080994. The derived projection is doing real work."
+    },
+    {
+      "name": "but_it_does_NOT_restore_ladder_self_consistency",
+      "passed": true,
+      "detail": "self-consistency = how far the anchor-inverted c_2 sits from the STRUCTURAL c_2 = -1. C: 1.762 %. D corrected: 73.31 %. D naive: 829.9 %. So the corrected D ladder is ~41.6x less self-consistent than C, and its convergence is 2.36x against C's 57.7x. The eigenphase projection alone is NOT the whole of the C->D move. This metric references no candidate value (-2, Vol(4_1), ...) \u2014 only the structural rung and the anchor."
+    },
+    {
+      "name": "sign_is_derived_then_corroborated_not_selected",
+      "passed": true,
+      "detail": "bar(2a)+2a = h^2 forces subtracting h^2/2 from 2a, i.e. h^2/4 from a \u2014 the sign and normalisation come from the algebra, not from scoring. The three candidates happen to rank with the derived one first (convergence minus_h2_over_4_DERIVED: 2.364, plus_h2_over_4: 1.0704, minus_h2_over_2: 0.88219), and that agreement is recorded as corroboration ONLY. Quoting it as the reason would invert the argument."
+    }
+  ],
+  "allPassed": true,
+  "scriptHash": "c5620173f47a",
+  "scriptCommitSha": "bfa317911859d6184c6474573c3dd0869bfe69b6",
+  "commitSha": "af31a017f02ab6c47d0711fa1847deb395c3af3f",
+  "engine": "python+mpmath",
+  "computedAt": "2026-09-07T10:07:27.494334+00:00",
+  "durationMs": 0,
+  "engineVersion": "python 3.11 + mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin; 'physical_proton' is the MANIFEST token, not the witness-field vocabulary"
+}

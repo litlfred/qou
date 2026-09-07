@@ -35,6 +35,10 @@ from pathlib import Path
 from mpmath import mpf, mp, fabs, acos
 import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 
 # Cheat-sheet derived μ₀ = m_e / (3(q-q⁻¹)/2)
@@ -52,14 +56,17 @@ M_E_MEV = mpf("0.51099895069")
 # exists specifically to show the published 0.11 %% near-match was obtained
 # at THIS stale q0. Re-pinning would silently alter a recorded historical
 # result and delete that probe's subject. Do not read it as a live pin.
+# witness-copy-intentional: frozen ON PURPOSE — see the note above.
+# This probe's subject IS the published near-match at this retired
+# pin; re-pointing it at a live value would delete the finding.
 Q_0 = mpf("1.1097090249")
 
 H_Q = Q_0 - 1 / Q_0           # ℏ_q at q_0
 MU_0 = M_E_MEV / (mpf(3) * H_Q / mpf(2))  # ≈ 1.63 MeV
 
 AME_MeV = {
-    "D":     mpf("2.224566"),
-    "T":     mpf("8.481798"),
+    "D":     AME_B_DEUTERON_MEV_VALIDATION,
+    "T":     AME_B_TRITIUM_MEV_VALIDATION,
     "3He":   mpf("7.71806"),
 }
 

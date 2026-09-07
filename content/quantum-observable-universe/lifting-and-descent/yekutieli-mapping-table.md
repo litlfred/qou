@@ -15,15 +15,15 @@ Recursive Brane Tower $\{\mathcal{S}_n\}$
   (Def.~\ref{def:recursive-brane-tower})
   & Central extension of gerbes
     $\mathfrak{G}_{n+1} \to \mathfrak{G}_n$
-  & \cite[Thm.~1.7]{yekutieli2010} \\[6pt]
+  & \cite[Thm.~3.13, \S6]{yekutieli2010} \\[6pt]
 Quantum Characteristic Classes $\kappa_n \in H^2(M, \mathcal{O}_M^{\times})$
   (Def.~\ref{def:quantum-characteristic-classes})
   & Obstruction classes for lifting objects in central extensions
-  & \cite[\S3]{yekutieli2010} \\[6pt]
+  & \cite[\S4, Def.~4.15]{yekutieli2010} \\[6pt]
 Fermionic sectors ($\kappa_n \neq 0$)
   (Rem.~\ref{rem:fermionic-twisted-sectors})
   & Twisted sectors where the lift is obstructed
-  & \cite[Thm.~3.4]{yekutieli2010} \\[6pt]
+  & \cite[Thm.~4.17]{yekutieli2010} \\[6pt]
 Direct Limit Algebra $\mathcal{A}_\infty$
   (Def.~\ref{def:direct-limit-algebra})
   & Global sections of a sheaf of twisted deformation algebras
@@ -31,7 +31,7 @@ Direct Limit Algebra $\mathcal{A}_\infty$
 Global gluing of $\mathcal{A}_\infty$
   (Prop.~\ref{prop:global-gluing})
   & Yekutieli's twisted quantization map on algebraic varieties
-  & \cite[Thm.~4.5]{yekutieli2010} \\[6pt]
+  & \cite[Thm.~0.10.1]{yekutieli2015-twisted-dq} \\[6pt]
 Vacuum State $\tau$
   (Prop.~\ref{prop:vacuum-state})
   & Unique MC element in the pronilpotent DG Lie algebra
@@ -60,7 +60,7 @@ Cosimplicial crossed groupoid
 Twisted $2$-cocycle $d(g_{ijk}) = a \cdot g \cdot a^{-1}$
   (Prop.~\ref{prop:descent-condition})
   & Twisted \v{C}ech cocycle in $H^2(M, \mathcal{O}_M^\times)$
-  & \cite[Thm.~1.7]{yekutieli2010} \\
+  & \cite[Def.~4.15, Thm.~4.17]{yekutieli2010} \\
 \hline
 \end{tabular}
 \caption{Categorical mapping between QOU structures and Yekutieli's results.}

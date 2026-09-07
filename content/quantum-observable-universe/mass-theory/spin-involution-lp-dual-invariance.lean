@@ -21,13 +21,28 @@ exactly equal LP-dual binding-energy shadow prices.
 
 ## Architecture
 
-  FrobeniusTraceAlgebra        — sibling block
-  SpinInvolution               — structure on FrobeniusTraceAlgebra
+  FrobeniusSelfDualityForcesLPDualExtraction A R
+                               — library carrier (`QOU.BraidKnot`):
+                                 the carrier `A` is a *parameter*
+                                 (`[Ring A]`, multiplication is `*`),
+                                 the trace is `F.τ`, cyclicity is
+                                 `F.tau_cyclic`
+  SpinInvolution F             — structure on that carrier
   spin_isometric_pairing       — Step 1
   spin_stabilises_constraints  — Step 2
   spin_invariant_cost          — Step 3
   lp_isomorphism               — Step 4
   spin_invariance_of_y0        — Step 5 (main theorem)
+
+## History
+
+Ported 2026-09-05 (bean `qou-0xrn`) from the superseded sibling class
+`FrobeniusTraceAlgebra`, which bundled the carrier as a *field*
+(`FA.algebra`, `FA.mul`, `FA.trace`) and **assumed** as class fields the
+identity `obs_frame = frob_map` and the bijectivity of the Observation
+Frame — both of which the library structure *derives* (`Obs_eq_pairing`
+is `rfl`). Every theorem below is unchanged in content; only the carrier
+shape moved from field to parameter.
 -/
 
 -- Ref: [kassel1995] §VIII.4, §XII.2
@@ -36,35 +51,34 @@ exactly equal LP-dual binding-energy shadow prices.
 
 namespace QOU.BraidKnot
 
+variable {A R : Type*} [Ring A] [CommRing R]
+
 /-- A spin involution on a Frobenius *-trace algebra.
 
     The fields encode the actual mathematical properties (involution,
     anti-multiplicativity, trace-invariance, *-compatibility) — not
     vacuous `True` placeholders.
 
-    The carrier `FA.algebra` is equipped with multiplication via
-    `FA.mul` (from `FrobeniusTraceAlgebra`).  The *-structure
-    `star` is given as part of this structure (so the pair
-    `(FA, S)` constitutes a Frobenius *-algebra with spin
-    involution). -/
-structure SpinInvolution {R : Type*} [CommRing R]
-    (FA : FrobeniusTraceAlgebra R) where
+    The carrier `A` is the parameter of the library structure
+    `FrobeniusSelfDualityForcesLPDualExtraction A R`; its multiplication is
+    the ring multiplication `*` and its trace is `F.τ`.  The *-structure
+    `star` is given as part of this structure (so the pair `(F, S)`
+    constitutes a Frobenius *-algebra with spin involution). -/
+structure SpinInvolution (F : FrobeniusSelfDualityForcesLPDualExtraction A R) where
   /-- The involution σ : A → A. -/
-  sigma : FA.algebra → FA.algebra
+  sigma : A → A
   /-- The *-anti-automorphism on A. -/
-  star : FA.algebra → FA.algebra
+  star : A → A
   /-- σ ∘ σ = id. -/
   involutive : ∀ a, sigma (sigma a) = a
   /-- σ(ab) = σ(b) σ(a) — anti-multiplicative. -/
-  anti_multiplicative :
-    ∀ a b, sigma (FA.mul a b) = FA.mul (sigma b) (sigma a)
+  anti_multiplicative : ∀ a b, sigma (a * b) = sigma b * sigma a
   /-- τ ∘ σ = τ. -/
-  trace_invariant : ∀ a, FA.trace (sigma a) = FA.trace a
+  trace_invariant : ∀ a, F.τ (sigma a) = F.τ a
   /-- ⋆ ∘ ⋆ = id. -/
   star_involutive : ∀ a, star (star a) = a
   /-- (ab)⋆ = b⋆ a⋆. -/
-  star_anti_multiplicative :
-    ∀ a b, star (FA.mul a b) = FA.mul (star b) (star a)
+  star_anti_multiplicative : ∀ a b, star (a * b) = star b * star a
   /-- σ commutes with ⋆: σ(a⋆) = σ(a)⋆. -/
   star_compatible : ∀ a, sigma (star a) = star (sigma a)
 
@@ -75,85 +89,75 @@ structure SpinInvolution {R : Type*} [CommRing R]
                   = ⟨a, b⟩ (cyclicity).
 
     Concrete proof using the structure-encoded properties. -/
-theorem spin_isometric_pairing {R : Type*} [CommRing R]
-    {FA : FrobeniusTraceAlgebra R} (S : SpinInvolution FA)
-    (a b : FA.algebra) :
-    FA.trace (FA.mul (S.sigma a) (S.sigma b))
-      = FA.trace (FA.mul a b) := by
-  -- σ(ab) = σ(b)σ(a), so τ(σ(a)σ(b)) = τ(σ(ba)) [taking a:=b, b:=a]
-  -- = τ(ba) [trace_invariant]
-  -- = τ(ab) [trace_comm]
-  rw [show FA.mul (S.sigma a) (S.sigma b) = S.sigma (FA.mul b a) by
-        rw [S.anti_multiplicative b a]]
-  rw [S.trace_invariant]
-  exact (FA.trace_comm b a).symm
+theorem spin_isometric_pairing {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
+    (S : SpinInvolution F) (a b : A) :
+    F.τ (S.sigma a * S.sigma b) = F.τ (a * b) := by
+  calc F.τ (S.sigma a * S.sigma b)
+      = F.τ (S.sigma (b * a)) := by rw [S.anti_multiplicative b a]
+    _ = F.τ (b * a) := S.trace_invariant _
+    _ = F.τ (a * b) := F.tau_cyclic b a
+
+/-- Step 1, restated on the library's Frobenius pairing
+    `F.pairing a b = F.τ (a * b)`: σ is a `pairing`-isometry. -/
+theorem spin_isometric_pairing' {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
+    (S : SpinInvolution F) (a b : A) :
+    F.pairing (S.sigma a) (S.sigma b) = F.pairing a b :=
+  spin_isometric_pairing S a b
 
 /-- Step 2.  A σ-stable channel set defines a σ-stable cone.
 
-    Statement: if `Sigma ⊆ FA.algebra` is σ-stable
+    Statement: if `Sigma ⊆ A` is σ-stable
     (`∀ s ∈ Sigma, σ(s) ∈ Sigma`), then the cone
     `{x : ∀ s ∈ Sigma, τ(s · x) ≥ 0}` is σ-stable.
 
     Predicate-level encoding (no order class on R needed for the
     statement; the actual ≥ 0 condition is parameterised by an
     arbitrary predicate `nonneg : R → Prop`). -/
-theorem spin_stabilises_constraints {R : Type*} [CommRing R]
-    {FA : FrobeniusTraceAlgebra R} (S : SpinInvolution FA)
-    (Sigma : FA.algebra → Prop)
+theorem spin_stabilises_constraints {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
+    (S : SpinInvolution F)
+    (Sigma : A → Prop)
     (nonneg : R → Prop)
     (sigma_stable : ∀ s, Sigma s → Sigma (S.sigma s))
-    (x : FA.algebra)
-    (h : ∀ s, Sigma s → nonneg (FA.trace (FA.mul s x))) :
-    ∀ s, Sigma s → nonneg (FA.trace (FA.mul s (S.sigma x))) := by
+    (x : A)
+    (h : ∀ s, Sigma s → nonneg (F.τ (s * x))) :
+    ∀ s, Sigma s → nonneg (F.τ (s * S.sigma x)) := by
   intro s hs
-  -- Use σ-stability + isometry: τ(s · σ(x)) = τ(σ(σ(s)) · σ(x))
-  --                            = τ(σ(σ(s) · x))           (anti_mult flipped)
-  --                            = τ(σ(s) · x)              (trace_inv)
-  -- which is ≥ 0 by hypothesis since σ(s) ∈ Sigma.
-  have hsigma_s : Sigma (S.sigma s) := sigma_stable s hs
-  have key :
-      FA.trace (FA.mul s (S.sigma x))
-        = FA.trace (FA.mul (S.sigma s) x) := by
-    -- τ(s · σ(x)) = τ(σ(σ(s)) · σ(x)) = τ(σ(σ(s) · x)) = τ(σ(s) · x)
-    rw [show s = S.sigma (S.sigma s) by rw [S.involutive]]
-    rw [show FA.mul (S.sigma (S.sigma s)) (S.sigma x)
-            = S.sigma (FA.mul x (S.sigma s)) by
-          rw [S.anti_multiplicative]]
-    rw [S.trace_invariant]
-    rw [FA.trace_comm]
+  -- τ(s · σ(x)) = τ(σ(σ(s)) · σ(x)) = τ(σ(σ(s) · x))^op = τ(σ(s) · x),
+  -- which satisfies `nonneg` by hypothesis since σ(s) ∈ Sigma.
+  have key : F.τ (s * S.sigma x) = F.τ (S.sigma s * x) := by
+    calc F.τ (s * S.sigma x)
+        = F.τ (S.sigma (S.sigma s) * S.sigma x) := by rw [S.involutive]
+      _ = F.τ (S.sigma (x * S.sigma s)) := by rw [S.anti_multiplicative]
+      _ = F.τ (x * S.sigma s) := S.trace_invariant _
+      _ = F.τ (S.sigma s * x) := F.tau_cyclic _ _
   rw [key]
-  exact h (S.sigma s) hsigma_s
+  exact h (S.sigma s) (sigma_stable s hs)
 
 /-- Step 3.  σ-invariant cost is fixed by x ↦ σ(x):
 
       τ(c · σ(x)) = τ(σ(σ(c) · x)) = τ(σ(c · x)) = τ(c · x). -/
-theorem spin_invariant_cost {R : Type*} [CommRing R]
-    {FA : FrobeniusTraceAlgebra R} (S : SpinInvolution FA)
-    (c : FA.algebra) (sigma_c : S.sigma c = c) (x : FA.algebra) :
-    FA.trace (FA.mul c (S.sigma x))
-      = FA.trace (FA.mul c x) := by
-  -- τ(c · σ(x)) = τ(σ(c) · σ(x))   [sigma_c]
-  --             = τ(σ(x · c))      [anti_mult, swapped order]
-  --             = τ(x · c)          [trace_inv]
-  --             = τ(c · x)          [trace_comm]
-  conv_lhs => rw [← sigma_c]
-  rw [show FA.mul (S.sigma c) (S.sigma x)
-          = S.sigma (FA.mul x c) by rw [S.anti_multiplicative]]
-  rw [S.trace_invariant]
-  exact FA.trace_comm x c
+theorem spin_invariant_cost {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
+    (S : SpinInvolution F)
+    (c : A) (sigma_c : S.sigma c = c) (x : A) :
+    F.τ (c * S.sigma x) = F.τ (c * x) := by
+  calc F.τ (c * S.sigma x)
+      = F.τ (S.sigma c * S.sigma x) := by rw [sigma_c]
+    _ = F.τ (S.sigma (x * c)) := by rw [S.anti_multiplicative]
+    _ = F.τ (x * c) := S.trace_invariant _
+    _ = F.τ (c * x) := F.tau_cyclic _ _
 
-/-- Step 4.  σ is a BIJECTION on `FA.algebra` (since σ ∘ σ = id),
+/-- Step 4.  σ is a BIJECTION on `A` (since σ ∘ σ = id),
     so it bijects the feasible set of LP(β) with that of LP(σ(β)).
     Combined with Steps 2 (cone is σ-stable) and 3 (objective is
     σ-invariant), this yields an isomorphism of the two LPs.
 
-    Statement: σ is bijective on `FA.algebra`.  The companion
+    Statement: σ is bijective on `A`.  The companion
     `spin_invariant_cost` (Step 3) gives the objective half;
     `spin_stabilises_constraints` (Step 2) gives the constraint
     half; together with this bijectivity they constitute the
     LP isomorphism. -/
-theorem lp_isomorphism_sigma_bijective {R : Type*} [CommRing R]
-    {FA : FrobeniusTraceAlgebra R} (S : SpinInvolution FA) :
+theorem lp_isomorphism_sigma_bijective {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
+    (S : SpinInvolution F) :
     Function.Bijective S.sigma := by
   refine ⟨?_, ?_⟩
   · -- injective: σ(a) = σ(b) → σ(σ(a)) = σ(σ(b)) → a = b
@@ -179,14 +183,13 @@ theorem lp_isomorphism_sigma_bijective {R : Type*} [CommRing R]
     optima requires Mathlib's LP infrastructure (currently
     nascent); the structural lemmas above (Steps 1–3) are the
     self-contained content. -/
-theorem spin_invariance_of_y0 {R : Type*} [CommRing R]
-    {FA : FrobeniusTraceAlgebra R} (S : SpinInvolution FA)
-    (c beta : FA.algebra) (sigma_c : S.sigma c = c) :
+theorem spin_invariance_of_y0 {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
+    (S : SpinInvolution F)
+    (c beta : A) (sigma_c : S.sigma c = c) :
     -- Statement-level: the σ-invariance of the cost functional
     -- evaluated at any feasible point.  Full y_0* equality is
     -- conditional on Mathlib LP-duality infrastructure.
-    ∀ x, FA.trace (FA.mul c (S.sigma x))
-           = FA.trace (FA.mul c x) := by
+    ∀ x, F.τ (c * S.sigma x) = F.τ (c * x) := by
   -- Ref: [kassel1995] §VIII.4, §XII.2
   intro x
   exact spin_invariant_cost S c sigma_c x
@@ -207,11 +210,9 @@ theorem spin_invariance_of_y0 {R : Type*} [CommRing R]
     is conditional on the Mathlib formalisation of the Hopf
     antipode on H_n(R, q); we record the statement here. -/
 theorem qou_isospin_invariance
-    {R : Type*} [CommRing R]
-    (FA : FrobeniusTraceAlgebra R) (S : SpinInvolution FA)
-    (c beta : FA.algebra) (sigma_c : S.sigma c = c) :
-    ∀ x, FA.trace (FA.mul c (S.sigma x))
-           = FA.trace (FA.mul c x) :=
+    (F : FrobeniusSelfDualityForcesLPDualExtraction A R) (S : SpinInvolution F)
+    (c beta : A) (sigma_c : S.sigma c = c) :
+    ∀ x, F.τ (c * S.sigma x) = F.τ (c * x) :=
   spin_invariance_of_y0 S c beta sigma_c
 
 /-- Mathematical content of "isospin".  Isospin is the Z/2
@@ -222,12 +223,12 @@ theorem qou_isospin_invariance
 
     Note: this lemma is a structural statement about the σ-fixed
     subalgebra; it does not depend on the LP context. -/
-theorem isospin_is_spin_grading_under_spin_involution {R : Type*}
-    [CommRing R] {FA : FrobeniusTraceAlgebra R}
-    (S : SpinInvolution FA) :
+theorem isospin_is_spin_grading_under_spin_involution
+    {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
+    (S : SpinInvolution F) :
     -- σ² = id on the carrier (the structural property that
     -- defines the Z/2 grading).
-    ∀ a : FA.algebra, S.sigma (S.sigma a) = a :=
+    ∀ a : A, S.sigma (S.sigma a) = a :=
   S.involutive
 
 -- ────────────────────────────────────────────────────────────────────────────
@@ -256,11 +257,10 @@ theorem isospin_is_spin_grading_under_spin_involution {R : Type*}
     in `conj:magic-shell-stabilization`. -/
 -- Ref: [manuscript] prop:spin-involution-lp-dual-invariance §"Corollary (pair-knot Z↔N symmetry)"
 theorem pair_knot_Z_N_trace_invariance
-    {R : Type*} [CommRing R]
-    {FA : FrobeniusTraceAlgebra R}
-    (S : SpinInvolution FA)
-    (sigma_pp : FA.algebra) :
-    FA.trace (S.sigma sigma_pp) = FA.trace sigma_pp :=
+    {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
+    (S : SpinInvolution F)
+    (sigma_pp : A) :
+    F.τ (S.sigma sigma_pp) = F.τ sigma_pp :=
   S.trace_invariant sigma_pp
 
 /-- **Mirror-nucleus Markov-trace equality.**  For magic-shell
@@ -277,13 +277,12 @@ theorem pair_knot_Z_N_trace_invariance
     after Coulomb correction, to ~0.03 MeV ≈ 0.5%). -/
 -- Ref: [manuscript] prop:spin-involution-lp-dual-invariance §"Corollary"
 theorem mirror_nucleus_trace_equality
-    {R : Type*} [CommRing R]
-    {FA : FrobeniusTraceAlgebra R}
-    (S : SpinInvolution FA)
-    (sigma_pp sigma_nn : FA.algebra)
+    {F : FrobeniusSelfDualityForcesLPDualExtraction A R}
+    (S : SpinInvolution F)
+    (sigma_pp sigma_nn : A)
     (h_conjugate : S.sigma sigma_pp = sigma_nn) :
-    FA.trace sigma_pp = FA.trace sigma_nn := by
-  have h : FA.trace (S.sigma sigma_pp) = FA.trace sigma_pp :=
+    F.τ sigma_pp = F.τ sigma_nn := by
+  have h : F.τ (S.sigma sigma_pp) = F.τ sigma_pp :=
     S.trace_invariant sigma_pp
   rw [h_conjugate] at h
   exact h.symm

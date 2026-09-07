@@ -1,6 +1,6 @@
 {
   "schema": "witness/v1",
-  "computedAt": "2026-08-29T19:06:50.165383+00:00",
+  "computedAt": "2026-09-05T18:03:20.458042+00:00",
   "description": "The multiplicative assembly W = 1 - PROD f cannot yield a positive 3-body Ursell cumulant while fpn <= 2/3. Bound b3 <= 3*fpn - 2 follows from P3 >= 0 alone, so it is independent of the edge set, the like-pair factors, and the energy scale.",
   "q0_pin": "proton",
   "q0": "1.1099785827513808075916690956107688798744991218736",
@@ -195,29 +195,29 @@
     {
       "convention": "D",
       "pn_typing": "probe2",
-      "b2_MeV": "2.224566",
-      "b3_MeV": "-2.7438574"
+      "b2_MeV": "2.2245662",
+      "b3_MeV": "-2.74385764669"
     },
     {
       "convention": "D",
       "pn_typing": "chi",
-      "b2_MeV": "2.224566",
-      "b3_MeV": "-2.02572019827"
+      "b2_MeV": "2.2245662",
+      "b3_MeV": "-2.0257203804"
     },
     {
       "convention": "C",
       "pn_typing": "probe2",
-      "b2_MeV": "2.224566",
-      "b3_MeV": "-3.22384843403"
+      "b2_MeV": "2.2245662",
+      "b3_MeV": "-3.22384872387"
     },
     {
       "convention": "C",
       "pn_typing": "chi",
-      "b2_MeV": "2.224566",
-      "b3_MeV": "-2.66793656564"
+      "b2_MeV": "2.2245662",
+      "b3_MeV": "-2.6679368055"
     }
   ],
-  "ame_b3_MeV": "1.4262225",
+  "ame_b3_MeV": "1.42622016",
   "assertions": [
     {
       "name": "every measured fpn is strictly below 2/3",
@@ -249,9 +249,9 @@
   ],
   "owner_ruling": "R1 2026-08-15 \u2014 convention D canonical, C excised",
   "allPassed": true,
-  "scriptHash": "5c115ece6e67",
-  "scriptCommitSha": "unknown",
-  "commitSha": "4d38ae39ab7f13f63d9d3800e468c6141cde5e3f",
+  "scriptHash": "c94d1fd7c054",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "engine": "python",
   "durationMs": 0,
   "q0Anchor": "proton",

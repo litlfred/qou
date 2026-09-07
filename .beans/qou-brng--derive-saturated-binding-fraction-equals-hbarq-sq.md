@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:00Z
-updated_at: 2026-09-04T10:28:53Z
+updated_at: 2026-09-07T10:25:43Z
 ---
 
 Arc bk-crossing-coordination, item 3b→1 crux (PR #5346). The mass/binding ℏ_q-rung split was
@@ -2401,3 +2401,93 @@ hypothesis of an interface theorem. Recorded as two arguments rather than merged
 into one claim, because they remain independent.
 
 ## 2026-09-04 later (qou-rp9i) — under #6611's log law the cyclic-triple reorder IS extensive (per-bond constants), so 'not a functional of tr_M' from earlier today is too strong as stated; but the class over-shoots 3–8× with the retracted +N−Z asymmetry sign. Word-level route: closed for this class under both laws.
+
+
+## 2026-09-05 (qou-o43i) — CORRECTION to the 2026-09-04 "Next": a D9 witness cannot settle the equal-scalars question, and the hypothesis is not a corpus claim
+
+The 2026-09-04 entry above names `separable_interface_degenerate`'s equal-scalars
+hypothesis as *"where the residue actually is"* and sets the next step as *"a witness for
+D9 would make the equal-scalars question decidable for the first time."* Two measured
+corrections; the **linking-matrix result is untouched**, as is the sibling's pair-layer
+obstruction.
+
+**1. The theorem has ZERO instantiation sites.** Measured over every tracked file with
+Lean comments stripped: **1 declaration, 0 applications, 28 prose citations in 13 files**
+(`scripts/separable-interface-instantiation-audit.py`, `--selftest` 5/5, `--strict`
+gates, so the claim cannot go stale silently). `fSpin`/`fIso` are arbitrary functions on
+arbitrary types, so `hplus`/`hminus` are the antecedent of a universally-quantified
+implication — not a claim about this corpus that any witness could settle. The
+`μ± ↔ y₂/y₁₁` identification lives in the theorem's **docstring**; the entry above cites
+`InterfaceScalar.lean:365–384` for it, which is `weight_eq_proj_scalar` in a different
+section, about different variables.
+
+**2. D9's carrier was rebuilt around a different claim on the same day.** #6671 replaced
+the content-free `holds : Prop` with three fields — `0 < q`, `q ≠ 1`, and one real
+equation for `Δm/M_N`. Its own header states the categorical half (crystal functional,
+isospin swap) is **NOT encoded**. So an instance supplies a real-number identity while the
+equal-scalars question is about projector scalars of a swap construction: the two objects
+do not touch. Worth knowing before a tranche is spent building the witness.
+
+**3. Formalised — the closure is carried entirely by its hypotheses.** Two sorry-free
+library files, split per §7c (`SeparableInterfaceHypothesesHaveContent.lean` generic +
+`…Real.lean` archimedean): drop the hypotheses and the conclusion is **false**
+(`separability_hypotheses_have_content`); keep them and the residual mathematics is
+`mul_comm` (`degeneracy_is_commutativity`); release them and the channel ratio is
+**unconstrained** — every field element, positivity preserved over `ℝ`, the measured
+**33.7055** among them (`asymmetry_attainable_with_distinct_scalars`,
+`distinct_positive_scalars_reach_any_ratio`, `measured_asymmetry_attainable`). Scope (b)
+on {separable interface, distinct scalar pairs}, invariant: a field has no nontrivial
+multiplicative constraint between two free elements.
+
+**NOT claimed:** that the two SU(2)s carry different scalars — as unestablished as its
+converse. Nothing refuted; `separable_interface_degenerate` is correct. Detail, including
+a `check-sidecars.sh` `(R :=` blind spot deliberately left unswept: `qou-o43i`.
+
+
+---
+**Update 2026-09-07 (session alien-calculus, PR #6988) — the `Brunnian` hypothesis this bean's surviving route leans on is NOT satisfied by L6a4, and the corpus already proved it. Sorry-free both ways.**
+
+Went to compute `w3` for L6a4 — the triple-mutual crossing energy that `b3_eq_neg_tripleMutual_of_brunnian` says *is* `b3` — and the theorem's hypothesis does not hold for the carrier.
+
+**`QOU/Mass/` carries THREE unrelated definitions named `Brunnian`** (`CrossingModelPairLocality:103`, `MilnorIndeterminacyGate:137`, `FreedmanHeGenusHandleNeedsVanishingLinking.BrunnianAt:70`). Two matter here and they are different properties:
+
+| name | condition | true of L6a4? |
+|---|---|---|
+| topological Brunnian | pairwise Gauss linking number `= 0` (`n₊ = n₋`) | **yes** |
+| `CrossingModel.Brunnian` | pairwise mutual **energy** `w₂ = 0` | **no** |
+
+**And this bean's own 2026-08-30 result is what proves the first does not imply the second.** `BrunnianBindingChannel.brunnian_binding_survives` gives `0 < countChannel m m q` for a crossing pair at `q > 1` — *"the mutual energy is nonzero even though the pairwise linking number is zero. This is the crux of `qou-brng`'s surviving route."* Binding **survives** the Brunnian vanishing; that is the whole point.
+
+**A false cross-reference carried the conflation.** `CrossingModelPairLocality`'s docstring read *"(`QOU.Mass.BrunnianBindingChannel` establishes that the ³He/⁴He carrier `L6a4` has this property.)"* — of `w₂ = 0`. It establishes the opposite. Corrected in place.
+
+**Formalised, `QOU.Mass.BrunnianHypothesisNotSatisfied`** (lean-direct exit 0, `-DautoImplicit=false -s 65536`, no `sorryAx`):
+
+- `not_brunnian_of_pair_binding_ne_zero` — **data route**: the pair cumulant is `−w₂`, so the measured `b₂ = 2.2245662 MeV` refutes `CrossingModel.Brunnian`, by the same contrapositive the corpus already uses one theorem over for `b₃`.
+- `not_brunnian_of_countChannel` — **structure route**: a crossing pair at `q > 1` has strictly positive count-channel energy, so `w₂ ≠ 0`, with **no appeal to data**.
+- `brunnian_forces_both` — states what a Brunnian model would need, so the two routes visibly deny one thing.
+
+**Nothing in `CrossingModelPairLocality` is refuted** — every theorem there stays true. What is established is that the hypothesis is unavailable for this carrier, so **`b₃` does not cleanly pin the bare triple channel**; the pair contamination the theorem discards is nonzero.
+
+**The same misreading was committed to a witness and is fixed at the producer.** `pair-locality-shortfall.witness.json` asserted *"With a Brunnian carrier the pair terms vanish and b3 is exactly the triple channel"* while recording `b₂ = 2.2245662` in the same file. Producer description + second assertion re-scoped; the assertion still PASSES because what it tests is `b₃ > 0`. Re-run 6/6, **no numeric change** — text and provenance only. The shortfall figures were never Brunnian-dependent and are untouched.
+
+**What this costs the surviving route.** The route is *"why the coordination count `M` is the binding multiplier while the mass carries the self-linking weight `lw`"*. That is unaffected — it rests on `CrossingEnergy.decomposition` and the count channel, both intact. What is lost is the shortcut that would have read `b₃` off as the triple channel directly. `w₃` still needs computing; it just cannot be obtained by identifying it with the measured `b₃`.
+
+
+**Follow-up same session: renamed, and the forward computation turns out to be ALREADY CLOSED NEGATIVE.**
+
+`CrossingModel.Brunnian` → **`NoIsolatedPairEnergy`** (#6988). Measured first: it and its three downstream theorems have **zero consumers** outside their own file — the four other importers use only the pair-locality half. Renamed rather than deleted because the implications are true and `not_pairLocal_of_noIsolatedPairEnergy` depends on **no axioms at all**; the name was the trap, not the mathematics. There are five `Brunnian`s in the tree and this was the only one meaning *energy* rather than *linking number*, and the only one false of L6a4.
+
+**The file header was the worst of it** and is rewritten. It asserted the corpus "already establishes that the ³He/⁴He carrier L6a4 is Brunnian (`BrunnianBindingChannel`, #6125)" and that `b3_eq_neg_tripleMutual_of_brunnian` "is the falsifiable payoff … Measuring `b₃` therefore pins the Brunnian triple channel to a specific number."
+
+**THE PAYOFF WAS COLLECTED, AND IT IS A NEGATIVE — this is the part that matters for this bean.** `QOU.Mass.BrunnianTripleExhaustion` already computes the count-channel prediction directly, and it is sorry-free:
+
+- `no_carrier_reproduces_b3` — `b₃/b₂ = M − 3` is an **integer** for any total crossing count `M`, while the measured ratio lies strictly in `(0,1)`. **No carrier of any crossing number works.**
+- `gap_increases_beyond_four` — the exhaustion covers **every** `M`; no larger search exists to run.
+- `carrier_gap_bounded_below` — the miss is at least `532229/1483044 ≈ 0.35888`, **55.98 %** of the measured value, attained at `M = 4`.
+- `borromean_is_the_unique_minimal_carrier` + `minimal_carrier_bRatio_eq_zero` — L6a4 itself (`M = 3`) gives `b₃/b₂ = **0** exactly`.
+
+So the forward route I proposed one turn earlier — *compute `w₃` for L6a4 from the count channel, predict `b₃`* — **was already run and is closed**. The count channel predicts `b₃ = 0` for the Borromean carrier against a measured `+1.4262225 MeV`. Reading `b₃` off as the triple mutual energy, via the hypothesis that does not hold, would have concealed exactly this.
+
+**What that means for this bean's surviving route.** The route is *"why the coordination count `M` is the binding multiplier while the mass carries the self-linking weight `lw`"*. It is **not refuted** — `CrossingEnergy.decomposition` and `brunnian_binding_survives` stand. But the count channel **alone**, with a uniform per-crossing weight, provably cannot produce the measured three-body cumulant, for *any* carrier. `pairDependent_weight_not_a_count` in the same file is the shape of the escape: a weight that varies per pair is not a count. So the open question sharpens to whether there is a *derived* per-pair weight — and per the anti-fit rule, a per-pair weight chosen to hit `b₃` is a fit with three free numbers, which is worse than the honest miss.
+
+Verification note for whoever touches this next: a bare `lean`-direct pass is **not** sufficient after a rename — a dependent compiles against the cached olean, which still carries the old name. Build the renamed module into a hardlinked shadow first, then compile the dependents against that. All four are green; axioms unchanged; no `sorryAx`.

@@ -30,9 +30,15 @@ Run:  python3 -u computations/complex_volume_witness.py 2>&1 | tee /tmp/cv.log
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — substrate/ subdir bridge
-from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
-import math
+from _precision import set_compute_dps, fmt  # noqa: E402 — raise dps before any mpmath value
 import sys
+
+import mpmath as mp
+
+# `set_compute_dps()` must run BEFORE any module-level mpf is built: `mp.mpf`
+# rounds to the current `mp.dps` at construction, and `_E0` below is built at
+# module scope.
+set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
 from binding_canonical import binding_canonical  # noqa: E402
@@ -46,21 +52,23 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDA
 
 # canonical energy scale α = E₀ = m_e/(q₀(q₀−1)) ≈ 4.186 MeV (derived,
 # the dashboard scale) — distinct from binding_canonical's Q_β multiplier.
-_E0 = float(_ME) / (float(Q0) * (float(Q0) - 1.0))
+# `_E0` is the calibration constant every binding below is scaled by; it was
+# built by casting BOTH `_ME` and `Q0` to float first. `Q0` is `q_parameter.Q_MP`
+# and `_ME` is the CODATA constant -- both carry full precision until this line.
+_E0 = mp.mpf(str(_ME)) / (mp.mpf(Q0) * (mp.mpf(Q0) - 1))
 
 # bound states to package (Re channel needs the bound-knot trace → A small)
 ISOTOPES = [("2H", 1, 1), ("3H", 1, 2), ("3He", 2, 1), ("4He", 2, 2)]
 
 # AME binding ground truth (MeV) for the Re cross-check
-B_AME = {"2H": float(AME_B_DEUTERON_MEV_VALIDATION), "3H": float(AME_B_TRITIUM_MEV_VALIDATION), "3He": float(AME_B_HE3_MEV_VALIDATION), "4He": float(AME_B_HE4_MEV_VALIDATION)}
+B_AME = {"2H": mp.mpf(str(AME_B_DEUTERON_MEV_VALIDATION)), "3H": mp.mpf(str(AME_B_TRITIUM_MEV_VALIDATION)), "3He": mp.mpf(str(AME_B_HE3_MEV_VALIDATION)), "4He": mp.mpf(str(AME_B_HE4_MEV_VALIDATION))}
 
 
-# This producer never raised working precision, so every mpmath value in
-# it was built at mpmath's default 15 dps and the numbers it emits are
-# HONESTLY float64 — no fake precision to detect, no constant built too
-# early, so the padding / raw-float64 / import-time gates all pass it.
-# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
-set_compute_dps()
+# The header block that stood here said this producer's numbers were
+# "HONESTLY float64 — no fake precision to detect". That was true of the GATES
+# and false of the input: `tr_m_atom_zn` was already being called at dps=50 and
+# the result cast to `float` on the next line. `set_compute_dps()` now runs at
+# the imports, before `_E0` is built. Gate: never_raises_dps_audit.py (qou-j6gb).
 
 def complex_volume(Z: int, N: int):
     """𝔙 = 𝔈_bind + i·𝔔_β for the (Z,N) bound knot. Im is the single
@@ -73,14 +81,18 @@ def complex_volume(Z: int, N: int):
     linear-defect form E₀·(tr_free−tr_atom) (binding_canonical, Q_β-scaled)
     is retained as `re_linear_MeV` for comparison — it under-predicts 5–40×
     and is NOT used for the polar quantities."""
-    import mpmath as mp
     ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
     # bar-involution conjugate trace: tr̆_M = tr_M(q₀⁻¹). The principled
     # mass-modulus is the BAR-NORM ‖tr_M‖² = tr_M(q₀)·tr_M(q₀⁻¹) (bar-even,
     # the cosh / binding channel), NOT the usual |tr_M(q₀)|² = tr_M(q₀)².
     # They coincide on the unit circle (where conjugation = bar-involution)
     # and DIFFER at the real anchor q₀ (q̄₀=q₀≠q₀⁻¹).
-    ta, tf = float(ta), float(tf)
+    # `ta, tf = float(ta), float(tf)` stood here. `tr_m_atom_zn(..., dps=50)`
+    # returns mpf and this threw all 50 digits away one line later, so every
+    # quantity below -- binding, Q_beta, modulus, argument -- was f64 despite a
+    # 50-dps upstream. The file's header calls itself "HONESTLY float64", which
+    # was true of the gates but not of the input: nothing was being approximated
+    # for a reason, the precision was simply dropped on the floor.
     mass_mod_usual = abs(ta)                             # |tr_M(q₀)|
     # bar-norm tr_M(q₀)·tr_M(q₀⁻¹) needs tr_M re-lifted at q₀⁻¹.
     #
@@ -101,20 +113,21 @@ def complex_volume(Z: int, N: int):
     ta_i = None
     mass_mod_bar = None
     try:
-        q_inv = mp.mpf(1) / mp.mpf(str(Q0))
-        ta_i_mp, _, _, _ = tr_m_atom_zn(Z, N, q=q_inv, dps=50)
-        ta_i = float(ta_i_mp)
+        q_inv = mp.mpf(1) / mp.mpf(Q0)
+        ta_i, _, _, _ = tr_m_atom_zn(Z, N, q=q_inv, dps=50)
         bar_prod = ta * ta_i
-        mass_mod_bar = math.sqrt(bar_prod) if bar_prod > 0 else None
+        mass_mod_bar = mp.sqrt(bar_prod) if bar_prod > 0 else None
     except Exception:
         ta_i = None
         mass_mod_bar = None
-    re = _E0 * math.log(tf / ta)                         # binding (Re) — log-trace
-    re_lin = float(binding_canonical(
-        Z, N, use_transfer=True, use_closed_form=False)["B_MeV"])
-    im = q_beta_substrate(float(Q0), float(_ME))         # Q_β     (Im)
-    mod = math.hypot(re, im)                             # |𝔙| (usual)
-    arg = math.atan2(im, re)                             # arg 𝔙 (EM phase)
+    # `math.log` / `math.hypot` / `math.atan2` were the f64 half of the same
+    # defect; mpmath has all three.
+    re = _E0 * mp.log(tf / ta)                           # binding (Re) — log-trace
+    re_lin = mp.mpf(str(binding_canonical(
+        Z, N, use_transfer=True, use_closed_form=False)["B_MeV"]))
+    im = mp.mpf(str(q_beta_substrate(float(Q0), float(_ME))))   # Q_β (Im)
+    mod = mp.hypot(re, im)                               # |𝔙| (usual)
+    arg = mp.atan2(im, re)                               # arg 𝔙 (EM phase)
     return {
         "re_binding_MeV": re,
         "re_linear_MeV": re_lin,
@@ -132,7 +145,7 @@ def complex_volume(Z: int, N: int):
 
 
 def main() -> int:
-    qbeta_codata = float(Q_NEUTRON_MEV)
+    qbeta_codata = mp.mpf(str(Q_NEUTRON_MEV))
     rows = []
     for name, Z, N in ISOTOPES:
         cv = complex_volume(Z, N)
@@ -145,26 +158,26 @@ def main() -> int:
     im_err = abs(im_pred - qbeta_codata) / qbeta_codata
 
     print("\n  COMPLEX-VOLUME WITNESS  𝔙 = 𝔈_bind + i·𝔔_β   (Re = log-trace binding)")
-    print(f"  q₀ = {float(Q0):.10f}   E₀ = {_E0:.4f} MeV   "
+    print(f"  q₀ = {float(Q0):.10f}   E₀ = {float(_E0):.4f} MeV   "
           f"Im(q₀)=0 ⇒ Re,Im both real (fibre caveat)\n")
     print("| iso | Re 𝔙 = binding (MeV) | B_AME | Re err | Im 𝔙 = Q_β (MeV) | |𝔙| | arg 𝔙 (rad) | (re_linear) |")
     print("|---|--:|--:|--:|--:|--:|--:|--:|")
     for name, Z, N, cv, b_ame, re_err in rows:
-        print(f"| {name} | {cv['re_binding_MeV']:.4f} | {b_ame:.4f} "
-              f"| {re_err*100:.2f}% | {cv['im_qbeta_MeV']:.6f} "
-              f"| {cv['modulus_MeV']:.4f} | {cv['arg_rad']:.5f} "
-              f"| {cv['re_linear_MeV']:.4f} |")
+        print(f"| {name} | {float(cv['re_binding_MeV']):.4f} | {float(b_ame):.4f} "
+              f"| {float(re_err)*100:.2f}% | {float(cv['im_qbeta_MeV']):.6f} "
+              f"| {float(cv['modulus_MeV']):.4f} | {float(cv['arg_rad']):.5f} "
+              f"| {float(cv['re_linear_MeV']):.4f} |")
     print("\n  Mass-modulus: usual |tr_M(q₀)| vs bar-norm √(tr_M(q₀)·tr_M(q₀⁻¹))")
     print("  (bar-even; the principled |·|. Coincide on |q|=1; differ at real q₀.)")
     print("| iso | tr_M(q₀) | tr_M(q₀⁻¹) | |tr_M| usual | bar-norm | bar/usual |")
     print("|---|--:|--:|--:|--:|--:|")
     for name, Z, N, cv, b_ame, re_err in rows:
         ti, bn, rt = cv["tr_M_atom_qinv"], cv["mass_mod_bar"], cv["bar_vs_usual_ratio"]
-        ti_s = f"{ti:.6f}" if ti is not None else "n/a*"
-        bn_s = f"{bn:.6f}" if bn is not None else "n/a*"
-        rt_s = f"{rt:.4f}" if rt is not None else "—"
-        print(f"| {name} | {cv['tr_M_atom']:.6f} | {ti_s} "
-              f"| {cv['mass_mod_usual']:.6f} | {bn_s} | {rt_s} |")
+        ti_s = f"{float(ti):.6f}" if ti is not None else "n/a*"
+        bn_s = f"{float(bn):.6f}" if bn is not None else "n/a*"
+        rt_s = f"{float(rt):.4f}" if rt is not None else "—"
+        print(f"| {name} | {float(cv['tr_M_atom']):.6f} | {ti_s} "
+              f"| {float(cv['mass_mod_usual']):.6f} | {bn_s} | {rt_s} |")
     print("  *bar-norm n/a here because tr_M(q₀)·tr_M(q₀⁻¹) is NEGATIVE, so it "
           "has no real square root — NOT because the re-lift fails. The q₀⁻¹ "
           "column above is computed for every row. Corrected 2026-08-19 (bean "
@@ -173,8 +186,8 @@ def main() -> int:
           "does not EXIST for those words, which is stronger than 'not yet "
           "computable' and means the claim should be retired, not repaired.")
 
-    print(f"\n  Im channel: Q_β,pred = {im_pred:.6f} MeV vs CODATA "
-          f"{qbeta_codata:.6f} MeV  (err {im_err*100:.3f}%)")
+    print(f"\n  Im channel: Q_β,pred = {float(im_pred):.6f} MeV vs CODATA "
+          f"{float(qbeta_codata):.6f} MeV  (err {float(im_err)*100:.3f}%)")
     print("  Re channel: log-trace binding E₀·ln(tr_free/tr_atom) (magnitude-"
           "correct); re_linear = E₀·(tr_free−tr_atom) shown for comparison "
           "(under-predicts 5–40×). arg 𝔙 now Re-dominated (physical).")
@@ -194,11 +207,11 @@ def main() -> int:
         "cdc2d867 branch A)."
     )
     w.set_content_block("conj:binding-qbeta-complex-volume")
-    w.add_parameter("q_0", float(Q0))
-    w.add_parameter("m_e_MeV", float(_ME))
-    w.add_parameter("Q_beta_codata_MeV", qbeta_codata)
-    w.add_data("im_qbeta_pred_MeV", str(im_pred))
-    w.add_data("im_qbeta_rel_err", str(im_err))
+    w.add_parameter("q_0", fmt(mp.mpf(Q0)))
+    w.add_parameter("m_e_MeV", fmt(mp.mpf(str(_ME))))
+    w.add_parameter("Q_beta_codata_MeV", fmt(qbeta_codata))
+    w.add_data("im_qbeta_pred_MeV", fmt(im_pred))
+    w.add_data("im_qbeta_rel_err", fmt(im_err))
     w.add_data("fibre_caveat", "Im(q_0)=0; complex structure is fibre-level (pre-tau)")
 
     # Assertions (bean `qou-jqjc`). This witness previously emitted NONE, so a
@@ -213,13 +226,13 @@ def main() -> int:
     # the single-frakV descent asserted — it is the open conjecture.
     w.add_assertion(
         "im_qbeta_matches_codata",
-        computed=str(im_pred), expected=str(qbeta_codata),
-        tolerance=str(0.002 * qbeta_codata), unit="MeV",
+        computed=fmt(im_pred), expected=fmt(qbeta_codata),
+        tolerance=fmt(mp.mpf("0.002") * qbeta_codata), unit="MeV",
         source="CODATA neutron beta-decay Q-value")
     im_spread = max(abs(r[3]["im_qbeta_MeV"] - im_pred) for r in rows)
     w.add_assertion(
         "im_channel_isotope_independent",
-        computed=str(im_spread), expected="0", tolerance="1e-30", unit="MeV",
+        computed=fmt(im_spread), expected="0", tolerance="1e-30", unit="MeV",
         source="Im is the single n->p decay Q-value, so it cannot vary by isotope")
     w.add_caveat(
         "Re channel is NOT asserted: the log-trace binding is 22-69% from AME "
@@ -234,20 +247,28 @@ def main() -> int:
         "Bar-norm sqrt(tr_M(q0)*tr_M(q0^-1)) is n/a for 2H and 3H because the "
         "product is NEGATIVE, not because the re-lift fails; as a real number it "
         "does not exist for those words.")
+    # `_f` rather than a bare `fmt`: `tr_M_atom_q0_inv`, `mass_mod_bar` and
+    # `bar_vs_usual_ratio` are legitimately `None` for 2H and 3H (the bar-norm
+    # has no real square root there — see the caveat above), and that None is
+    # load-bearing: it is what distinguishes "does not exist" from "not
+    # computed".
+    def _f(v):
+        return fmt(v) if isinstance(v, mp.mpf) else v
+
     for name, Z, N, cv, b_ame, re_err in rows:
         w.add_data(f"V_{name}", {
-            "re_binding_MeV": cv["re_binding_MeV"],
-            "re_linear_MeV": cv["re_linear_MeV"],
-            "im_qbeta_MeV": cv["im_qbeta_MeV"],
-            "modulus_MeV": cv["modulus_MeV"],
-            "arg_rad": cv["arg_rad"],
-            "B_AME_MeV": b_ame,
-            "re_rel_err": re_err,
-            "tr_M_atom_q0": cv["tr_M_atom"],
-            "tr_M_atom_q0_inv": cv["tr_M_atom_qinv"],
-            "mass_mod_usual": cv["mass_mod_usual"],
-            "mass_mod_bar": cv["mass_mod_bar"],
-            "bar_vs_usual_ratio": cv["bar_vs_usual_ratio"],
+            "re_binding_MeV": _f(cv["re_binding_MeV"]),
+            "re_linear_MeV": _f(cv["re_linear_MeV"]),
+            "im_qbeta_MeV": _f(cv["im_qbeta_MeV"]),
+            "modulus_MeV": _f(cv["modulus_MeV"]),
+            "arg_rad": _f(cv["arg_rad"]),
+            "B_AME_MeV": _f(b_ame),
+            "re_rel_err": _f(re_err),
+            "tr_M_atom_q0": _f(cv["tr_M_atom"]),
+            "tr_M_atom_q0_inv": _f(cv["tr_M_atom_qinv"]),
+            "mass_mod_usual": _f(cv["mass_mod_usual"]),
+            "mass_mod_bar": _f(cv["mass_mod_bar"]),
+            "bar_vs_usual_ratio": _f(cv["bar_vs_usual_ratio"]),
         })
     w.save()
     print("\n  witness written: complex-volume-unification.witness.json")

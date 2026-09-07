@@ -89,17 +89,38 @@ class NonAbelianStokes (M G : Type u) [Group G] where
   lineIntegral : MultiplicativeLineIntegral M G
   /-- The surface integral. -/
   surfaceIntegral : MultiplicativeSurfaceIntegral M G
-  /-- **Yekutieli-Stokes identity** (placeholder Prop;
-      concrete instances discharge it from the underlying
-      analytic theory). -/
-  stokes_holds : Prop
-  /-- The Stokes identity holds. -/
-  stokes_holds_witness : stokes_holds
-  /-- **Finite-slice axiom**: on a piecewise-affine surface,
-      the multiplicative integral reduces to a finite generator
-      product. -/
-  finite_slice : Prop
-  finite_slice_holds : finite_slice
+  /-- The boundary `∂σ` of a 2-cell, as a path.  A field because this file
+      abstracts the manifold away; stating Stokes needs a boundary and there
+      was none to refer to. -/
+  boundary : (M → M → M) → (M → M)
+  /-- The gauge-covariant derivative `d_α β = dβ + [α, β]` at the level of the
+      group-valued forms this class works with.  (`gaugeCovariantDerivative`
+      below is the Lie-algebra-valued counterpart.) -/
+  covariantD : LieValuedOneForm M G → LieValuedTwoForm M G →
+    LieValuedTwoForm M G
+  /-- The piecewise-affine slicing of a path into finitely many generator
+      actions.  A field for the same reason as `boundary`: the finite-slice
+      axiom is a statement ABOUT such a decomposition. -/
+  slice : (M → M) → List G
+  /-- **Yekutieli-Stokes identity**: `MI₁(α; ∂σ) = MI₂(α, d_α β; σ)`.
+
+      Was `stokes_holds : Prop` with a sibling witness — a field typed with
+      the UNIVERSE `Prop`, so the instance supplied both the proposition and
+      its proof.  Its own docstring called itself a "placeholder Prop". -/
+  stokes : ∀ (α : LieValuedOneForm M G) (β : LieValuedTwoForm M G)
+      (σ : M → M → M),
+    lineIntegral.integrate α (boundary σ)
+      = surfaceIntegral.integrate α (covariantD α β) σ
+  /-- **Finite-slice axiom**: on a piecewise-affine surface the
+      multiplicative integral IS the finite generator product.
+
+      Written as the fold rather than as `piecewiseAffineLineIntegral (slice
+      γ)` only because that definition lands below this class in the file;
+      `finite_slice_eq_piecewiseAffine` immediately after it records that the
+      two are the same, so the link is stated rather than left to the reader
+      to notice. -/
+  finite_slice : ∀ (α : LieValuedOneForm M G) (γ : M → M),
+    lineIntegral.integrate α γ = (slice γ).foldl (· * ·) 1
 
 /-- **Skeleton model** — both multiplicative integrals are constantly
     `1` and both `Prop` fields are `True`.  It encodes no Stokes
@@ -124,10 +145,17 @@ class NonAbelianStokes (M G : Type u) [Group G] where
 def punitInstance (M G : Type u) [Group G] : NonAbelianStokes M G where
   lineIntegral := { integrate := fun _ _ => 1 }
   surfaceIntegral := { integrate := fun _ _ _ => 1 }
-  stokes_holds := True
-  stokes_holds_witness := trivial
-  finite_slice := True
-  finite_slice_holds := True.intro
+  boundary σ := fun m => σ m m
+  covariantD _ β := β
+  -- Every path slices to the empty product, which is the only slicing
+  -- consistent with both integrals being constantly `1`.
+  slice _ := []
+  -- Both relations now have to HOLD rather than be chosen, and they do:
+  -- `1 = 1`, and `piecewiseAffineLineIntegral [] = 1` by
+  -- `piecewiseAffineLineIntegral_nil`.  That is a real (degenerate) model,
+  -- which is a different thing from the `True` it used to write.
+  stokes _ _ _ := rfl
+  finite_slice _ _ := rfl
 
 /-! ### Substrate theorem (S-Yekutieli-finite-slice)
 
@@ -177,6 +205,15 @@ def piecewiseAffineLineIntegral {G : Type u} [Group G]
 /-- The empty path's line integral is the identity. -/
 theorem piecewiseAffineLineIntegral_nil {G : Type u} [Group G] :
     piecewiseAffineLineIntegral ([] : List G) = 1 := rfl
+
+/-- The `NonAbelianStokes.finite_slice` field's right-hand side IS
+    `piecewiseAffineLineIntegral` of the slice.  The field is spelled as the
+    raw fold only because this definition lands below the class; recording the
+    identification here keeps the axiom readable as what it means. -/
+theorem finite_slice_eq_piecewiseAffine {M G : Type u} [Group G]
+    [S : NonAbelianStokes M G] (α : LieValuedOneForm M G) (γ : M → M) :
+    S.lineIntegral.integrate α γ = piecewiseAffineLineIntegral (S.slice γ) :=
+  S.finite_slice α γ
 
 /-- The line integral of a single generator is that generator. -/
 theorem piecewiseAffineLineIntegral_singleton {G : Type u} [Group G]
@@ -366,35 +403,67 @@ class LieValuedStokes (M : Type u) (𝔤 : Type u)
   alpha : LieAlgebraOneForm M 𝔤
   /-- The 2-form `β`. -/
   beta : LieAlgebraTwoForm M 𝔤
-  /-- Yekutieli-Stokes identity Prop. -/
-  stokes_identity : Prop
-  /-- The identity holds. -/
-  stokes_identity_witness : stokes_identity
+  /-- Line integral of a 1-form along a path, valued in `𝔤`. -/
+  lineIntegral : LieAlgebraOneForm M 𝔤 → (M → M) → 𝔤
+  /-- Surface integral of a 2-form over a 2-cell, valued in `𝔤`. -/
+  surfaceIntegral : LieAlgebraTwoForm M 𝔤 → (M → M → M) → 𝔤
+  /-- The boundary `∂σ` of a 2-cell. -/
+  boundary : (M → M → M) → (M → M)
+  /-- **Yekutieli-Stokes, infinitesimal form**: `∫_{∂σ} α = ∫_σ d_α β`, with
+      `d_α β` the `gaugeCovariantDerivative` defined above.
 
-/-! ### Concrete `LieValuedStokes` instance with content-bearing
-    Stokes-identity predicate.
+      This is bean `qou-ewc4`, filed by
+      `UpstreamSubstrateBridge.lean` when it REMOVED a
+      `∃ S : LieValuedStokes M 𝔤, True` rather than restate it: *"making the
+      carrier content-bearing (a real `stokes_identity` field rather than a
+      `Prop` + witness pair)"*.  That is this field.  The three integrals it
+      quantifies over are carried because this class had the forms and no way
+      to integrate them, which is why it could not state its own subject. -/
+  stokes_identity : ∀ σ : M → M → M,
+    lineIntegral alpha (boundary σ)
+      = surfaceIntegral (gaugeCovariantDerivative alpha beta) σ
 
-    Replaces the trivial `stokes_identity := True` with the
-    weakest non-trivial assertion: the gauge-covariant
-    derivative is symmetric (under the Lie-bracket antisymmetry).
-    Holds tautologically once `bracket_antisym` is proved. -/
+/-! ### The zero model of `LieValuedStokes`
 
-/-- **Concrete `LieValuedStokes` instance** with α and β as
-    the constant-zero forms and stokes_identity asserting the
-    bracket antisymmetry property holds for some specific
-    pair.  Non-vacuous (uses a concrete predicate, not True). -/
-instance LieValuedStokes_canonical (M : Type u) (𝔤 : Type u)
+    **This declaration used to claim it was non-vacuous, and it was not.**
+    Its docstring read *"Non-vacuous (uses a concrete predicate, not True)"*
+    over `stokes_identity := (0 : 𝔤) = 0`, witnessed by `rfl`, with an inline
+    comment conceding "Holds tautologically".  `0 = 0` is exactly as vacuous
+    as `True`; the difference is cosmetic, and the docstring asserting
+    otherwise is the more serious half, because a reader who greps for
+    "non-vacuous" finds a false all-clear.
+
+    It was also an **`instance`**, so `[LieValuedStokes M 𝔤]` was discharged
+    globally with that tautology — precisely the defect `punitInstance` was
+    demoted for on 2026-08-24, one class up in this same file, and the reason
+    `UpstreamSubstrateBridge.lean` deleted its `lie_valued_stokes_discharged`
+    rather than restate it (bean `qou-ewc4`).
+
+    With `stokes_identity` now a real equation the zero model still exists —
+    consistency is not the problem — but it holds it rather than choosing it,
+    and it is a `def`. -/
+
+/-- **The zero model**: `α = 0`, `β = 0`, both integrals constantly `0`.
+
+    A `def`, not an `instance`, for the reason recorded at `punitInstance`: a
+    global instance discharges every downstream `[LieValuedStokes …]` behind
+    its author's back.  A caller wanting it writes
+    `letI := LieValuedStokes_canonical M 𝔤`.
+
+    What it establishes is consistency and nothing more.  By the `qou-z9ws`
+    inhabitation discriminator, a model in which every integral is `0` is
+    evidence the axioms can be satisfied and no evidence that they constrain
+    anything; a non-degenerate model needs the analytic theory this file
+    abstracts away, and `qou-ewc4` stays open for it. -/
+def LieValuedStokes_canonical (M : Type u) (𝔤 : Type u)
     [AddCommGroup 𝔤] [LieAlgebraStructure 𝔤] :
     LieValuedStokes M 𝔤 where
   alpha := { eval := fun _ => 0 }
   beta := { eval := fun _ _ => 0 }
-  stokes_identity :=
-    -- Stokes identity: for the constant-zero form, MI₁(0; ∂σ)
-    -- = 1 (trivially) and MI₂(0; σ) = 1 (trivially).
-    -- Non-vacuous shape: zero of the underlying additive group
-    -- equals zero (basic equality), captured below.
-    (0 : 𝔤) = 0
-  stokes_identity_witness := rfl
+  lineIntegral _ _ := 0
+  surfaceIntegral _ _ := 0
+  boundary σ := fun m => σ m m
+  stokes_identity _ := rfl
 
 /-! ### Closed-path holonomy
 
@@ -548,43 +617,33 @@ theorem piecewiseAffineLineIntegral_three_step {G : Type u} [Group G]
     file is `piecewiseAffineLineIntegral` and `braidSurfaceMultTrace`
     below, which compute. -/
 
-/-- **Closed-cell Stokes identity (skeleton form)**: on a
-    boundaryless 2-cell, `MI₁(α; ∂σ) = 1` (trivially) and
-    `MI₂(d_α β; σ) = 1` (trivially), so the Stokes identity
-    reduces to `1 = 1`.  It is a tautology in `G`, and it does not
-    mention any form, path or 2-cell: `(1 : G) = 1` is not the
-    closed-cell case of the Stokes identity, it is what that case
-    degenerates to once both integrals are constants.  A reader
-    should take it as naming the degeneration, not as content. -/
-def closedCellStokesIdentity (G : Type u) [Group G] : Prop :=
-  (1 : G) = 1
+/-! ### `closedCellStokesIdentity` and `content_bearing_stokes` — REMOVED 2026-09-07
 
-/-- The closed-cell Stokes identity holds trivially. -/
-theorem closedCellStokesIdentity_holds (G : Type u) [Group G] :
-    closedCellStokesIdentity G := rfl
+    They existed only to hold a differently-spelled tautology in a `Prop`
+    field, and that field is gone.
 
-/-- **`NonAbelianStokes` model with `1 = 1` in place of `True`.**  Its
-    docstring used to call this *"Substantive"* and *"Non-vacuous (uses
-    an explicit equation, not `True`)"*.  Both claims are withdrawn: an
-    explicit equation whose two sides are the same closed term is a
-    tautology, so this differs from `punitInstance` in the syntax of
-    the `Prop` field and in nothing else.  It is retained because
-    naming the degeneration is more informative than `True`, not
-    because it asserts more.
+    `closedCellStokesIdentity G` was `(1 : G) = 1`, and
+    `content_bearing_stokes` was a second `NonAbelianStokes` model using it
+    for both `stokes_holds` and `finite_slice`. Its own docstring had already
+    withdrawn the "Substantive" / "Non-vacuous (uses an explicit equation, not
+    `True`)" claims a still earlier version made, and said what remained:
+    it *"differs from `punitInstance` in the syntax of the `Prop` field and in
+    nothing else"*.
 
-    **A `def`, not an `instance`, since 2026-08-24**, alongside
-    `punitInstance` and for the same reason — demoting only
-    `punitInstance` would have achieved nothing, since resolution would
-    have fallen through to this one and discharged
-    `[NonAbelianStokes M G]` just as globally. -/
-def content_bearing_stokes (M G : Type u) [Group G] :
-    NonAbelianStokes M G where
-  lineIntegral := { integrate := fun _ _ => 1 }
-  surfaceIntegral := { integrate := fun _ _ _ => 1 }
-  stokes_holds := closedCellStokesIdentity G
-  stokes_holds_witness := closedCellStokesIdentity_holds G
-  finite_slice := closedCellStokesIdentity G
-  finite_slice_holds := closedCellStokesIdentity_holds G
+    Both models carry the same constantly-`1` integrals. Once `stokes` and
+    `finite_slice` became real equations there is no `Prop` field left for the
+    two to differ in, so `content_bearing_stokes` became `punitInstance`
+    under another name — and `punitInstance` now satisfies the real equations
+    by `rfl` rather than by choosing them, which is the whole content the
+    removed pair was reaching for.
+
+    Nothing referenced either declaration outside this file.
+
+    History worth keeping, because the correction happened twice: a
+    tautology re-spelled as an equation reads as content to a detector and to
+    a skimming reader, and both times the docstring claimed more than the Lean
+    did. Encoding the field is what settled it — there is now nowhere for a
+    re-spelling to live. -/
 
 /-- **Continuous-path 2-form pairing (skeleton)**: a placeholder
     for the `MI₂` evaluation on a continuous (non-piecewise-affine)
@@ -711,30 +770,31 @@ theorem braidWordHolonomy_cyclic_one {G : Type u} [Group G]
     explicit axiom with a Volume-Conjecture citation, NOT as a `True`
     stub, so the dependency is honest and auditable. -/
 
-/-- **Chern–Simons / volume correspondence (theorem; was axiom).**
-    There exists a real-valued "geometric reading" `vol` of the
-    boundary holonomy of a hyperbolic knot's braid word such that
-    `vol` is the hyperbolic volume of the knot complement.
+/-! ### Retired: `chernSimons_volume_correspondence` (2026-09-06, bean `qou-85cg`)
 
-    **Theorem** (was previously `chernSimons_volume_correspondence`
-    axiom). Discharged 2026-06-08: as stated, the inner clause
-    `∀ holonomy, vol holonomy = vol holonomy` is reflexive for ANY
-    `vol`, so the existential is tautological — witnessed by e.g.
-    the constant-zero function. The genuine Volume Conjecture
-    content (Kashaev / colored Jones asymptotics → Vol(S³∖K)) is
-    NOT captured by this signature; this `True`-shaped existential
-    is preserved to maintain audit visibility of the dependency
-    point (a stronger statement would carry the actual conjectural
-    relation `vol(holonomy_K) = Vol(S³∖K)` as the inner clause). -/
--- Ref: [kashaev1997] https://doi.org/10.1023/A:1007364912784
---      (Kashaev's volume conjecture: lim of the quantum-dilogarithm
---       invariant recovers Vol(S³∖K));
---      [murakami-murakami2001] https://doi.org/10.1007/BF02392716
---      (colored Jones ↔ simplicial volume);
---      [manuscript] §5.10 prop:geom-yekutieli-alignment
---      (baselineHolonomy = knotVolume join — NEEDS-NEW-INPUT).
-theorem chernSimons_volume_correspondence (G : Type u) [Group G] :
-    ∃ vol : G → ℝ, ∀ holonomy : G, vol holonomy = vol holonomy :=
-  ⟨fun _ => 0, fun _ => rfl⟩
+The theorem that stood here,
+
+    theorem chernSimons_volume_correspondence (G : Type u) [Group G] :
+        ∃ vol : G → ℝ, ∀ holonomy : G, vol holonomy = vol holonomy := ⟨fun _ => 0, fun _ => rfl⟩
+
+was a tautology — the inner clause is reflexive for every `vol`, and the witness was the
+constant-zero function — kept, by its own docstring, "to maintain audit visibility of the
+dependency point". It is **retired rather than upgraded**, because the honest carrier of the
+Volume-Conjecture content it stood in for **already exists**:
+`QOU.MassEndomorphism.VolumeBridge` (§3b-cond, non-degenerate, deliberately **no instance**)
+axiomatises exactly the archimedean bridge `volTerm = descTrace + transient` at `q₀` — the open
+Step 3 of `conj:mass-endomorphism` — and *derives* the manuscript's identities from it. Adding a
+second carrier for the same conjecture here would be the overload trap AGENTS.md warns about
+("attributes do not transfer across overloaded symbols"); the 2026-07-12 audit's §G6 request to
+"upgrade" this tautology is discharged by pointing at `VolumeBridge`, not by building a twin.
+
+Nothing in `content/` consumed the retired name: the only references were two dated audit docs
+(2026-06-01 §"surface-boundary", 2026-07-12 §G6). The Kashaev-asymptotic form of the same
+conjecture, `log‖J_N(K; e^{2πi/N})‖ / N → Vol(S³∖K)/2π`, is expressible with
+`QOU.MathlibExt.ExponentialGrowthRate` (`tendsto_log_norm_model`: the growth rate is `Re ζ`) and
+is deliberately **not** added here for the same reason. Citations for the conjecture itself:
+[kashaev1997] https://doi.org/10.1023/A:1007364912784, [murakami-murakami2001]
+https://doi.org/10.1007/BF02392716 — both held (`arxiv-q-alg-9601025v2`; MM2001 registered).
+-/
 
 end QOU.Mathlib.NonAbelianStokes

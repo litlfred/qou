@@ -1,0 +1,19 @@
+# Raw msolve -g dumps are DIAGNOSTIC output, and must never be committed.
+#
+# Two reasons, and the first is a trap this arc has already sprung.  msolve creates
+# its -o file the moment it STARTS, so while a solve is in flight the file exists at
+# ZERO LENGTH.  Committing that lands something that looks like a result, invites
+# being parsed, and cannot be distinguished later from a real empty answer -- five
+# such zero-length .res files had to be hand-deleted after one round of timeouts,
+# and a commit hook flagged a sixth while msolve still held it open, where neither
+# committing nor deleting it was safe.  An ignored path cannot reach that state.
+#
+# Second, a reduced Groebner basis of a degree-12 ideal in 11 variables is bulk
+# intermediate data, not a finding.  What belongs in the repository is the
+# CONCLUSION read off its staircase -- the dimension, and the degree when the
+# dimension is 0 -- recorded in a witness or a commit message.
+#
+# The verified RUR outputs (L6a4-*-rur-*.res) are deliberately NOT ignored: those
+# land only through run_msolve's scratch-and-move discipline, which writes them
+# elsewhere and moves them into place only after they parse.
+L6a4-*-gb-*.txt

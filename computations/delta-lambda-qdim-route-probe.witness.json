@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-23T09:00:18.133206+00:00",
-  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-05T18:02:46.722447+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 266,
+  "durationMs": 856,
   "computation": "delta-lambda-qdim-route-probe",
   "scriptFile": "delta_lambda_qdim_route_probe.py",
-  "scriptHash": "a5c3eea06313",
-  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "scriptHash": "0988350ab933",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,10 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b9cd89fd1774a84e"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -47,52 +47,52 @@
     "rows": [
       {
         "atom": "D",
-        "B_AME_MeV": 2.224566,
-        "target_units_m_e": 4.353367060727183,
+        "B_AME_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
+        "target_units_m_e": 4.3533674521174195,
         "ceiling_over_target": {
-          "classic": 0.5661375028190097,
-          "balanced": 0.597464284460285,
-          "unbalanced": 0.7296312928436759,
-          "fake_degree": 0.8589882665421585
+          "classic": 0.5661373458683627,
+          "balanced": 0.5974641180745552,
+          "unbalanced": 0.7296310861968409,
+          "fake_degree": 0.8589880208566973
         }
       },
       {
         "atom": "T",
-        "B_AME_MeV": 8.481798,
-        "target_units_m_e": 16.59846461239707,
+        "B_AME_MeV": "8.481796200000000000000000000000000000000000000000009585209925309324894",
+        "target_units_m_e": 16.598461089884943,
         "ceiling_over_target": {
-          "classic": 0.3604123816658089,
-          "balanced": 0.4586840705400347,
-          "unbalanced": 0.7971969392822685,
-          "fake_degree": 1.077199276839094
+          "classic": 0.3604124051868872,
+          "balanced": 0.45868410067578774,
+          "unbalanced": 0.7971969924690109,
+          "fake_degree": 1.0771993492391077
         }
       },
       {
         "atom": "3He",
-        "B_AME_MeV": 7.718043,
-        "target_units_m_e": 15.10383336321602,
+        "B_AME_MeV": "7.718041319999999999999999999999999999999999999999995711041411183331376",
+        "target_units_m_e": 15.103830075538037,
         "ceiling_over_target": {
-          "classic": 0.6924903128282978,
-          "balanced": 0.8781239513609734,
-          "unbalanced": 1.516525991510155,
-          "fake_degree": 2.037612216775865
+          "classic": 0.6924903588350351,
+          "balanced": 0.8781240096394684,
+          "unbalanced": 1.516526092336814,
+          "fake_degree": 2.037612351870146
         }
       },
       {
         "atom": "4He",
-        "B_AME_MeV": 28.295673,
-        "target_units_m_e": 55.37325069218333,
+        "B_AME_MeV": "28.2956623999999999999999999999999999999999999999999915823563342238137",
+        "target_units_m_e": 55.373229948500814,
         "ceiling_over_target": {
-          "classic": 0.43347413162271514,
-          "balanced": 0.7861735529184121,
-          "unbalanced": 2.045958057068908,
-          "fake_degree": 3.103356425483748
+          "classic": 0.4334742302624999,
+          "balanced": 0.7861737314030353,
+          "unbalanced": 2.0459585202562702,
+          "fake_degree": 3.103357126448631
         }
       }
     ],
     "ceiling_span_across_conventions": [
-      0.3604123816658089,
-      3.103356425483748
+      0.3604124051868872,
+      3.103357126448631
     ],
     "some_convention_overshoots_target": true
   },

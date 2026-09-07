@@ -544,3 +544,60 @@ Corollary for serialization: `mp.nstr` is lossy, so a cache persisted as decimal
 strings would make a resumed run *disagree* with an uninterrupted one by a few
 ulp — small enough to pass a tolerance check and large enough to break exactly
 this diff. Persist the internal tuple.
+
+
+---
+
+# Session 2026-09-05 — the tr_M provenance arc (beans `qou-brkp`, `qou-49vn`, `qou-16yn`)
+
+Six traps, every one of them mine, each caught by a measurement rather than
+by review. Summarised as one line in `MEMORY.md`'s session log.
+
+## TRAP — check the input's change date against the consumer's PREVIOUS run, not its new one
+
+Asked why `option_e_multi_isotope_delta_lambda_probe_v3`'s
+`tr_M` jumped +48.1 % on 2026-08-23, I checked whether its chi-* inputs changed
+*at* that regeneration. They had not, and I wrote "stale inputs — REFUTED".
+Wrong endpoint: the inputs changed on **08-10**, and the consumer had last run
+on **08-09**. That test is *guaranteed* to report "unchanged" for exactly the
+drift class being looked for, because a sweep re-runs the consumer without
+touching its inputs. The window is `[consumer.computedAt_prev,
+consumer.computedAt_new]`.
+## TRAP — a commit timestamp is not a compute timestamp
+
+In the same
+investigation I argued from `2c68d7f34a` "landing 19:24:58Z" that the value was
+"already computed from post-convention-D inputs". The witness *inside* that
+commit has `computedAt 2026-08-09T00:41` — 42.7 h earlier, and a day and a half
+*before* the commit I was ordering it against. Read `computedAt`, never `%ad`.
+## TRAP — a data dependency through a witness JSON is invisible to every import-cone audit
+
+`option_e…v3` imports only stdlib, mpmath, `_path_bridge`
+and `_precision`, and takes its `tr_M` from `json.load` of a chi witness (its
+line 129 copies `tr_M_at_q0` verbatim). `witness_import_cone_staleness_audit.py`
+walks Python imports, so it sees none of this. Checking the *consumer's* imports
+for a *data* dependency answers a question nobody asked — and the real drift was
+one level up, in the chi producer's cone (`tr_m_wenzl_bridge_mpfr`).
+## TRAP — a field named `convention` need not carry the convention you mean
+
+The chi-* witnesses' `convention` reads `colour-weighted-averaged-crossing` —
+the **p/n colour** axis, not Markov C-vs-D. I used it to "refute convention D";
+the reading was empty, not exculpatory. Resolve the Markov question from the
+y_λ table's `z` (`0.4993…` = C, `0.6126…` = D).
+## TRAP — never read a truncated numeric string as a value
+
+The ≥3-row weights
+in `y-lambda-mpfr-proton-witness.json` print as `2.188243022053045885…` under a
+40-char slice and are `2.188243…e-72`. I was one commit from filing a live "the
+two y_λ tables disagree on support" defect off that slice. They agree; one
+serialises a vanishing quantity as exact `0.0`, the other keeps the residue.
+## BASELINE (2026-09-05) — the +48.1039 % `tr_M_atom` move is a y_λ WEIGHT-TABLE regeneration
+
+`computations/probes/trm_provenance_chain_probe.py` (11/11).
+Deuteron `0.38835714…` → `0.57517224…` in `7e4d1aa6d0`; every `chi_lambda` and
+every provenance field (`scriptHash c36a8a393fcd`, `q0Anchor`, `q0Value`,
+`dps 50`) byte-identical, every `y_lambda` changed. Trigger: `fcf629cf41`
+switched `_Y_LAMBDA_DEFAULT` 33 s earlier — but the *size* is not the μ–p pin
+(11.5 ppb, three orders too small); both y_λ tables had been regenerated that
+day, moving weight mass onto the ≤2-row partitions ((3,3) ×1.071 → (6,) ×1.948,
+≥3-row → ~1e-72). **`scriptHash`-keyed staleness structurally cannot see this.**

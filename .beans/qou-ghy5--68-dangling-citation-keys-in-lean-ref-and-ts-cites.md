@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:54:24Z
-updated_at: 2026-08-23T08:00:06Z
+updated_at: 2026-09-06T10:03:05Z
 ---
 
 MEASURED 2026-08-21 (found while draining the library registration backlog, bean qou-kqbk).
@@ -269,3 +269,147 @@ of the files changed here.)
 
 Commits: `13617cfa5a` (21 entries), `8170180ca5` (4 retargets), on
 `claude/rag-document-ingestion-options-orasrw` / PR #5502.
+
+
+## Re-measured 2026-09-06 — 68 → 11, and the gate that would catch the rest CANNOT RUN
+
+Found by `scripts/bean-staleness-triage.py` (8th of 284 artifact beans).
+
+### The count drained hard
+
+| path | bean (2026-08-21) | measured 2026-09-06 |
+|---|---|---|
+| `.md \cite{}` | 0 | 0 |
+| `.lean -- Ref: []` | 40 | **8 distinct keys, 38 sites** |
+| `.ts cites: []` | 28 | **3 distinct keys** |
+| distinct total | 68 | **11** |
+
+Method: keys from `ref("…")` / `id: "…"` in `content/schema/references.ts`
+(**827** declared), minus the `manuscript` sentinel and unprefixed block labels,
+matched against `-- Ref: [key]` and `cites: [...]`.
+
+**Two of the eight `.lean` ones are not citation keys at all** —
+`unital-groebner-bases:def:groebner-basis` and
+`unital-groebner-bases:thm:ugb-main-theorem` are **cross-paper block labels**,
+the separate defect this bean already carves out. So the real dangling-citation
+population is **9**:
+
+- `.lean` — `hatcher2002`, `humphreys1990`, `kassel1995quantum`, `litlfred2025`,
+  `matsumoto1964`, `ohtsuki2016-52`
+- `.ts` — `bokut1978`, `faddeev1996`, `milnor1950`
+
+Most are recognisable standard works, but I have **not** added them: typing
+bibliographic metadata from memory into `references.ts` is exactly the kind of
+unverified content the citation rules exist to prevent, and a wrong citation is
+worse than a missing one. They want a source check, not a guess.
+
+### 🔴 "Neither path is checked" is STALE — but the truth is worse
+
+`scripts/run-validate-references.ts` **does** cover the Lean path; its own
+output reaches *"Cross-checking Lean -- Ref: citations…"*. **And it cannot
+complete, by construction, in this repo.**
+
+```
+Cross-checking Lean -- Ref: citations...
+error: 5 papers found (bach2013-double-slit, fred2005-formal-groups,
+       quantum-observable-universe, unital-groebner-bases, visualizer)
+       — name one explicitly.
+  at requirePaper (folio-assistant/content/pipeline/repo-root.ts:118)
+  at folio-assistant/content/pipeline/validate-references.ts:130
+  at requestImportModule
+```
+
+**No invocation can avoid this.** `requirePaper(explicit?, repoRoot?)` takes the
+paper as a **function argument** — it reads no `process.argv` and no env var —
+and `validate-references.ts:130` calls it as bare `requirePaper()` at module
+scope:
+
+```ts
+const leanArchiveDir = join(REPO_ROOT, "content", requirePaper(), "lean");
+```
+
+So the check dies at import, before argument handling, and it dies **exactly at
+the step this bean is about**. That is why 9 dangling keys persist despite a
+gate existing.
+
+**The wrapper's own recipe is stale too.** Its docstring says to pass
+`--paper quantum-observable-universe` and cites the blocker at
+`validate-references.ts:133`; the live line is **:130** and `--paper` does not
+help. The platform moved under the wrapper.
+
+**The fix is one line in `folio-assistant`** — pass the paper into
+`requirePaper()`, or have it fall back to argv/env — and that is the platform
+repo, not this one. Recorded here rather than attempted.
+
+### Two wrong turns of mine, for the next agent
+
+I ran the validator with the paper **positionally** first (wrong), then with
+`--paper` on the strength of the wrapper's docstring (also wrong, because the
+docstring is stale). Both fail identically. Read `requirePaper`'s signature
+before trusting any documented invocation of it.
+
+
+## 2026-09-06 (later) — 9 → 8 keys, 48 → 16 sites, by retiring a fabricated DOI
+
+`litlfred2025` was **not** a missing bibliography entry. Its 32 sites, in
+`tools/hecke-engine/`, all read
+
+    -- Ref: [litlfred2025] https://doi.org/10.xxxx/qou
+
+`10.xxxx` is a literal placeholder. The citation is a **self-citation to this
+manuscript**, which AGENTS.md §1 already provides `[manuscript]` for, so
+registering `litlfred2025` would have meant writing a fabricated identifier
+into `references.ts` in order to make a gate go green.
+
+Fixed at the producer as well as the output — the string is `println!`-ed by
+the Rust generators, so editing only the `.lean` files would have regrown on
+the next run:
+
+| | sites |
+|---|---|
+| `src/bin/v6.rs`, `src/bin/v8.rs` — live generators | 2 |
+| `src/archive/v3,v4,v7.rs` — dead (no `[[bin]]` path points there) | 7 |
+| `witness-*.lean` — emitted output, 22 files | 23 |
+
+Measured with `scripts/check-citation-keys.py` before and after:
+**9 → 8 distinct keys, 48 → 16 sites.** Commit `153acfeb5a`.
+
+### The remaining 8, and what each actually needs
+
+    4  lean-ref   kassel1995quantum
+    4  md+ts      milnor1950
+    2  ts-cites   faddeev1996
+    2  lean-ref   humphreys1990
+    1  ts-cites   bokut1978
+    1  lean-ref   hatcher2002
+    1  lean-ref   matsumoto1964
+    1  lean-ref   ohtsuki2016-52
+
+**Two carry an identifier the author wrote beside the citation** — the route
+that worked in the 2026-08-23 tranche:
+
+* `ohtsuki2016-52` → `doi:10.4171/QT/83`. Prefix `10.4171` is EMS Press and
+  `/QT/` is *Quantum Topology*, so journal and publisher **decode** from the
+  string; the citing prose names Ohtsuki–Takata Prop. 4.9 / Assumption 4.8.
+  One lookup closes it. Not written from memory here.
+* `matsumoto1964` → `DOI 10.1090/S0002-9904-1964-11211-9`. The AMS legacy
+  scheme is `10.1090/S<ISSN>-<year>-<id>`, and `0002-9904` is the **Bulletin
+  of the AMS**. So the author-written DOI decodes to *Bull. AMS, 1964* —
+  which is **not** where the paper usually cited as "Matsumoto 1964" for the
+  word/exchange property appeared (*C. R. Acad. Sci. Paris* 258). Either it is
+  a different Matsumoto item or the DOI at the site is wrong. Flagging rather
+  than guessing: one lookup separates the two, and picking either from here
+  would assert something unchecked.
+
+`hatcher2002` (§4.D, Gysin sequence), `humphreys1990` (§7.1/§7.4),
+`kassel1995quantum` (§X, §XIV) are standard books cited by section, so each is
+one entry away — but typing the ISBN/edition from memory is what these rules
+exist to prevent. `bokut1978`, `faddeev1996`, `milnor1950` remain ambiguous
+against multiple works by the same author, as recorded above.
+
+**Egress re-probed this session and is still closed** — `api.crossref.org`,
+`export.arxiv.org`, `api.semanticscholar.org` all return `000` (no
+connection). `scripts/enrich-dangling-citations.py` still cannot run.
+
+**The `requirePaper()` blocker recorded above is unchanged**; it is a one-line
+fix in `folio-assistant` and outside this repo's scope.

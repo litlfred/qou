@@ -133,6 +133,107 @@ LEAN_ROOT = Path("content/quantum-observable-universe/lean")
 
 # Measured 2026-08-07 by `#print axioms`. Keep sorted by module for readability.
 DEFAULT_REGISTRY = """
+# --- free-field axioms in mass-theory (bean `qou-9yt9`, PR #6933) ---
+# Three more axioms asserting facts about a structure field that the structure
+# leaves FREE:
+#   a_eq_one_three_channels_axiom / additive_wedderburn_missing_partitions_axiom
+#     quantified over every SchurWeylMassDecomposition as though `partitions`
+#     were the complete partition list; `decomposition` is satisfiable for ANY
+#     list by choosing markovTrace to match, so it can be empty.
+#   transfer_matrix_level_independence_axiom asserted the constituent product
+#     equals HadronConfig.compositePolynomial, a field tied to the constituents
+#     by nothing.
+#
+# The last is the corpus's SECOND false axiom of that name: a different one,
+# over CategoricalTransferMatrix, was found false and repaired in
+# categorical-transfer-matrix.lean, and the shared identifier is exactly what
+# let this one survive that fix -- a grep lands on the repaired copy.
+# NOT REGISTERED, and the reason is a coverage gap worth stating: all three
+# refutations live in CONTENT-BLOCK SIBLINGS, which are not library modules and
+# have no olean, so this guard cannot reach them --
+#   `Unknown constant QOU.BraidKnot.not_a_eq_one_three_channels`
+# even with the module column pointed at QOU.BraidKnot.schur_weyl_mass_decomposition
+# (a deliberately empty file that exists only so the block's lean.ref has a
+# second resolution candidate). The guard covers the library; the sibling tree
+# is covered by scripts/lean-content-sweep.sh instead, which type-checks but
+# does not pin axiom status. Registering an unreachable row would make the
+# guard fail rather than protect anything.
+# --- the q-analysis uniqueness family (bean `qou-9yt9`, PR #6933) ---
+# Six axioms across five display siblings, all FALSE, one defect: each of
+# QDilogarithm / QExponential / QLogarithm carries its ambient maps (coproduct,
+# counit, Jackson derivative) as FREE FUNCTION FIELDS with its axioms as proof
+# fields ABOUT those maps -- so choosing coprod := fun x => (x,x), a constant
+# counit and D_q := id satisfies every structure field for EVERY value of the
+# distinguished element. `Li2` is worse still: the `pentagon` field never
+# mentions it, so it is free data and the conclusion was about it.
+#
+# The existence axiom quantified over every carrier with an `Add`, including
+# Empty, where `log_q : H` cannot be supplied; over an AddZeroClass it is true
+# and now proved with no axiom (nonempty_of_addZeroClass).
+#
+# The three `*_of_*_rigid` rows are the REPAIR: each carries, as an explicit
+# hypothesis, the one rigidity step the block's own narrative proof already
+# asserted in prose, plus the additivity that proof silently used. Registered
+# because a future edit that drops a hypothesis back out would move the row.
+QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples | QOU.QAnalysisCounterexamples.not_qDilogarithm_unique | clean
+QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples | QOU.QAnalysisCounterexamples.not_qExponential_unique | clean
+QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples | QOU.QAnalysisCounterexamples.not_qLogarithm_unique | clean
+QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples | QOU.QAnalysisCounterexamples.not_qDilogarithm_exists_over_every_add_carrier | clean
+QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples | QOU.QAnalysisCounterexamples.QDilogarithm.nonempty_of_addZeroClass | clean
+QOU.QuantumObservableUniverses.QAnalysisUniqueness | QOU.QExponential.unique_of_flow_rigid | clean
+QOU.QuantumObservableUniverses.QAnalysisUniqueness | QOU.QLogarithm.unique_of_prim_rigid | clean
+QOU.QuantumObservableUniverses.QAnalysisUniqueness | QOU.QDilogarithm.eval_unique_of_pentagon_rigid | clean
+# --- the ConfinementLevel refactor (bean `qou-9yt9`, PR #6882) ---
+# `ConfinementLevel.level_canonical` asserted that two records agreeing on
+# braidIndex, nStrands and q share a level. It was FALSE -- `level` was a free
+# field -- and its own docstring said the plain-structure encoding did not enforce
+# canonicity. The repair carries the filtration predicate as a PARAMETER with
+# level_valid / level_min as proof fields, after which uniqueness is one line and
+# existence is a real Nat.find construction rather than the junk record <0,1,0,0>
+# that left prop:confinement-level-exists vacuously backed.
+#
+# Registered because all three depend on NO AXIOMS AT ALL -- not even propext or
+# Classical.choice -- which is a property worth a machine re-checking: any future
+# edit that reintroduces a canonicity assumption moves these rows.
+QOU.BraidKnot.ConfinementLevel | QOU.BraidKnot.ConfinementLevel.unique | clean
+QOU.BraidKnot.ConfinementLevel | QOU.BraidKnot.ConfinementLevel.nonempty | clean
+QOU.BraidKnot.ConfinementLevel | QOU.BraidKnot.ConfinementLevel.level_eq_find | clean
+# --- the Jones-Markov normalisation counterexample (bean `qou-i6u4`, PR #6882) ---
+# `JonesMarkovCoefficient_sum_eq_one` asserted the bare sum of the q-deformed
+# Wenzl weights is 1 for ALL n and ALL q. It is false -- at q = 1 the q-integer is
+# 0/0 = 0, so every coefficient of every partition of n >= 1 vanishes and the sum
+# is 0. It had ZERO Lean consumers and is deleted; this row pins the negation.
+#
+# Found by scripts/lean-axiom-degenerate-risk-audit.py, which flagged it at 6 --
+# the audit's first true positive on a live axiom. Note the SAME 2026-09-03 tier
+# triage that cleared the five SDP axioms also lists this one (row 11, tier
+# "literature"): six false axioms cleared by one method in one pass.
+QOU.HeckeAlgebra.JonesMarkovSumCounterexample | QOU.HeckeAlgebra.JonesMarkovSumCounterexample.not_jonesMarkovCoefficient_sum_eq_one | clean
+# --- the SDP uniqueness counterexamples (bean `qou-i6u4`, PR #6882) ---
+# On 2026-09-05 all five SDP uniqueness axioms in QOU/MathlibExt were shown to be
+# FALSE -- each one alone derives `False`. They had been cleared twice by audits
+# that asked "is the citation real?" and "can Mathlib close it?" and never asked
+# whether the Lean statement IS the cited theorem. Alizadeh-Haeberly-Overton 1997
+# requires dual nondegeneracy; none of the five encoded it, and all five fall to a
+# one-dimensional zero-cost SDP whose dual slack is the zero matrix.
+#
+# Registered because the SDP chain was in NO registry at all -- 283 entries and 324
+# modules, including other MathlibExt ones, and not these. The guard's own docstring
+# says a hand-written `#print axioms` outside this registry has no gate, and that is
+# where the five lived.
+#
+# These are the NEGATIONS, not the axioms: proving `not P` rather than `False from P`
+# is what survives deletion of the axiom and re-verifies on every build. Every prior
+# incident in this corpus (B1HyperbolicRowsTheorem, LpDualityHypothesisClass x2,
+# DressedMassFromSubstrateSplit, macroscopic-stability-equivalence x2 -- eleven false
+# axioms across five incidents, all one root cause: over-quantification) recorded
+# itself as a COMMENTED-OUT `theorem X_axiom_is_inconsistent : False`, which cannot
+# be re-run and goes stale silently. A registry row is a claim a machine re-checks.
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_strict_complementarity_unique | clean
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_slater_strict_complementarity_kernel | clean
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_SDPRankUniqueness | clean
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_strict_complementarity_kernel_disjoint | clean
+QOU.MathlibExt.SDPUniquenessCounterexamples | QOU.MathlibExt.SDPUniquenessCounterexamples.not_affine_slater_rigidity | clean
 # --- the Lagrange node-sum family (Pieri corner identity, PR #6098) ---
 # `sum_prod_qratio_corner` is the node-coordinate form of the one identity the
 # Macdonald hook telescope's Pieri step (P) reduces to. It is proved FROM
@@ -178,13 +279,31 @@ QOU.BraidsAndKnots.YoungDiagramTailFirstInstance | QOU.BraidsAndKnots.YoungDiagr
 QOU.BraidKnot.SYTEncodingBridgeTwo | QOU.BraidKnot.SYTEncodingBridge.numSYT_eq_numStandardYoungTableaux | sorryAx-free-expected-clean-alias
 QOU.BraidKnot.SYTEncodingBridgeTwo | QOU.BraidKnot.SYTEncodingBridge.numStandardYoungTableaux_le_numSYT | clean
 
-# --- known-BAD: the RSK identity and everything reindexed from it ---
-# The real gap is upstream (RegularRepBlockTrace's sorry on the specialised
-# lemma, plus the Specht-core cone: 16 of 23 modules carry sorry).
-QOU.BraidKnot.OVTopAssembly | QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial | sorryAx
-QOU.BraidKnot.RSKBurnsideDischarge | QOU.BraidKnot.RSKBurnsideDischarge.rskBurnsideHolds | sorryAx
-QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.sum_sytDim_sq_eq_factorial | sorryAx
-QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.nuV_top_closed_form_unconditional | sorryAx
+# --- the RSK identity and everything reindexed from it: PROMOTED 2026-09-06 ---
+# Recorded `sorryAx` since 2026-08-07, when the gap was upstream
+# (RegularRepBlockTrace's sorry on the specialised lemma, plus the Specht-core
+# cone: 16 of 23 modules carried sorry). That gap is closed. Re-measured
+# 2026-09-06 (bean qou-1knw), all four report exactly
+# [propext, Classical.choice, Quot.sound].
+#
+# READ THE NEXT PARAGRAPH BEFORE CITING ANY OF THESE.
+#
+# All four carry `[SnWedderburnPartitionBridge.SnIsotypicSpechtSplit ℚ]`. That
+# binder now HAS an instance -- `SnIsotypicSpechtSplitInstance.instSnIsotypicSpechtSplit`,
+# itself clean -- so unlike the 2026-08-23 situation these are established and
+# not merely conditional. But the instance is built FROM
+# `QOU.Mathlib.rskBurnsideHolds` (Schensted, unconditional, no binder), so these
+# four are DERIVATIVE: citing one as the source of the RSK identity is circular,
+# as `RSKBurnsideDischarge.lean`'s own docstring says. The independent statement
+# is `QOU.Mathlib.rskBurnsideHolds`.
+#
+# Why this sat stale for a month: the guard could not run at all. It exits 2 when
+# any olean in its cone is missing or stale, and ~104 of its modules were --
+# including two that had NEVER been built. See bean qou-1knw.
+QOU.BraidKnot.OVTopAssembly | QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_factorial | clean
+QOU.BraidKnot.RSKBurnsideDischarge | QOU.BraidKnot.RSKBurnsideDischarge.rskBurnsideHolds | clean
+QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.sum_sytDim_sq_eq_factorial | clean
+QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.nuV_top_closed_form_unconditional | clean
 
 # --- fibration exactness (bean qou-de7r, item 2 of qou-pan0) ---
 # Measured 2026-08-24. The topological half of the homotopy LES, and only the
@@ -998,6 +1117,13 @@ def main() -> int:
              "feed to `lake build` — the gate does NOT need the QOU root",
     )
     ap.add_argument(
+        "--can-run",
+        action="store_true",
+        help="report whether the gate COULD report, and exit -- 0 ready, 3 blind. "
+             "Pure filesystem + source-hash, no Lean and no oleans read, so it is "
+             "cheap enough for a session-start hook. See the READY/BLIND note below",
+    )
+    ap.add_argument(
         "--selftest",
         action="store_true",
         help="exercise the `#print axioms` parser on every known output shape and exit; "
@@ -1029,6 +1155,70 @@ def main() -> int:
         # Deliberately bare stdout: this is consumed by `lake build $(...)`.
         print(" ".join(sorted({m for m, _, _ in entries})))
         return 0
+
+    # `--can-run` answers the question the gate itself cannot: *is this gate
+    # currently capable of producing a verdict at all?*
+    #
+    # Why it exists (bean qou-1knw, 2026-09-06). This gate exits 2 when any olean
+    # in its cone is missing or stale -- correctly, since a verdict from a stale
+    # set is the axiom status of an old snapshot. But nothing surfaced that it was
+    # exiting 2, so it sat unable to report for ~a month while ~104 of its modules
+    # went stale (two were never built at all). It was not red; it was BLIND, and
+    # blind looks like silence. When it was finally restored it immediately
+    # reported a month-old promotion nobody had seen.
+    #
+    # A gate that can go silently non-functional needs a second gate on its
+    # liveness. This is that: no Lean and no olean contents read, just the same
+    # freshness rule the verdict path uses. Exit 3 rather than 2 so a caller can
+    # distinguish "blind" from "environment broken".
+    #
+    # COST, MEASURED PROPERLY. One `git log -1 --format=%ct -- <src>` per module,
+    # ~289 subprocesses. Warm that is ~0.10s (three runs: 0.139, 0.096, 0.097);
+    # on a cold git cache it was 16.4s, against a 2.48 GiB pack. The cold number
+    # is the one a session-start hook pays, so budget for it.
+    #
+    # A BATCHED WALK WAS TRIED AND REJECTED -- on correctness, not on speed.
+    # Replacing the per-file calls with one `git log --format=%ct --name-only`
+    # walk plus a path -> time index was measured to DISAGREE with the per-file
+    # call on 1 of a 40-module sample: `ParticleInteractions/mass_categorical_descent`
+    # came back 7.8 days newer. `git log -- <path>` applies history simplification
+    # and prunes merges that did not change the file; `--name-only` lists the path
+    # at those merges anyway.
+    #
+    # The disagreement errs conservative -- falsely "stale", never falsely "fresh"
+    # -- so it would not have produced a false verdict. It was still reverted: a
+    # freshness rule that two tools compute differently is precisely the deadlock
+    # bean qou-5v24 was opened for. Until 2026-08-26 this gate compared COMMIT
+    # time while the rebuilder compared MTIME, and building before committing
+    # deadlocked the pair.
+    #
+    # And the speed case for it was not real. The batch timed 0.131s against the
+    # per-file 16.4s -- but the 16.4s was the cold run and the 0.131s a warm one,
+    # so that 125x was cold-vs-warm, not batched-vs-per-file. Warm they are the
+    # same to within noise. Recorded because the wrong comparison is easy to make
+    # again and it was briefly the stated reason for a change to shared code.
+    #
+    # If you want this faster, make a batched walk AGREE (`--full-history`, or a
+    # per-path `git log` for paths the walk saw only at a merge) and prove it on a
+    # sample first. Do not just batch it.
+    if args.can_run:
+        stale = check_freshness(entries)
+        n_decls, n_mods = len(entries), len({m for m, _, _ in entries})
+        if not stale:
+            print(f"axiom-guard: READY -- {n_decls} declarations across {n_mods} "
+                  f"modules, olean set matches source.")
+            return 0
+        print(f"axiom-guard: BLIND -- it will exit 2 and produce NO verdict. "
+              f"{len(stale)} module(s) in its cone are stale or missing.")
+        for pr in sorted(stale)[:5]:
+            print("  " + pr)
+        if len(stale) > 5:
+            print(f"  ... and {len(stale) - 5} more")
+        print("  This is not a passing gate and not a failing one -- it is an "
+              "absent one.")
+        print("  Restore it:  scripts/lean-direct-cone.sh "
+              "$(python3 scripts/lean-axiom-guard.py --print-modules) -k -j3")
+        return 3
 
     stale = check_freshness(entries)
     if stale:

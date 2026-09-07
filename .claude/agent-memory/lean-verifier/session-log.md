@@ -287,3 +287,18 @@ collapsed; every distinct lesson from them lives in a TRAP above.)
   *definition* (≠ closed form) is blocked on formalising hook lengths. Other five
   carriers audited by harness §12; all honest, two real side-findings (harness §13,
   and the `BringHyperbolicDecomposition` identical-field bridge).
+
+## 2026-09-05 — `GeometricTailBound.lean`, and a 40-minute `lake build` mistake
+
+New file, 5 decls, all `[propext, Classical.choice, Quot.sound]`, `lean`-direct
+exit 0 in 5.0 s. Two real authoring failures (`div_le_iff` absent;
+`rw [h] at *` finding no occurrence) and two imagined ones — see
+`authoring-traps-v4-24-0.md`, which now ends with the imagined pair, because
+being wrong about a tactic is the expensive kind of memory entry.
+
+The process failure worth carrying: I reached for `lake build` from
+`content/quantum-observable-universe/lean/`, against this file's own standing
+rule, and it ran ~1760 Mathlib modules for 40 minutes before I stopped it. It
+did **not** evict the restore — it was building a *second* mathlib tree local to
+that directory — which is the detail now in `MEMORY.md`. The 5-second
+alternative was one `source scripts/lean-direct-env.sh` away the whole time.

@@ -347,3 +347,128 @@ whole point of bean `qou-3o59`.
 `references.ts library.docId` reconciliation. 828 entries / 394 with docId / 576
 dirs / 23 duplicates — the residual is **not** 182 and was never measured.
 `library/0803219` was found incidentally.
+
+## Tower-series divergence near a singularity (resolved 2026-09-06)
+STABLE. "Is the tower series divergent / where is the singularity" has carriers; do not re-declare open.
+Hecke n-tower binding period `a_D^(n)=S(n)/n`: Gevrey-1/2 at q=1 (Lean `QOU/Mass/BindingGevreyHalf.lean`),
+level-1/2 Borel singularity ξ=1/√2 real positive, non-polar (`docs/audits/2026-07-12-alien-calculus-review-binding-gevrey-half.md` §3,
+`computations/lever1_borel_half_singularity_probe.py`); at q₀ q-Gevrey ~q₀^{n²}, q-Borel radius ≈0.955
+(`deltalambda/deuteron-wall-qborel-resummation.witness.json`); deuteron-wall resummation REOPENED `qou-hok7`.
+Ohtsuki κ-tower: Gevrey-1, singularity Vol(4₁)/π≈0.646, Stokes 3. c_k D-ladder: CONVERGENT (three reversals; do not re-run).
+A→∞ nuclear tower series: unwritten (survey 2026-09-05 §7g). Brane-tower "divergence" = plateau in σ⁻¹ chain length (`qou-20yf`), bean `km42` wording stale.
+TRAP: the 2026-09-05 survey §7g (pre-correction) cited the Gevrey result to AlgebraicSubstrate/{KernelGrowthBound,DominationTowers,PolyhedralDomination}; it lives in QOU/Mass/BindingGevreyHalf.lean.
+
+## 2026-09-06 — hyperbolic surface law `S/V → 2` in `H³`, Yekutieli kites, surface term (bean `qou-j8hp`)
+
+- **Has anyone computed/tested `S/V → 2`, `A_surf/A → const`, or a `(ln A)/A` surface correction?**
+  → **GENUINELY OPEN (grep-open; path 0 down).** The `ln A` *separation law* IS in the corpus, but only
+  as the Coulomb-pairing radius, never as a surface law: `2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md:326-343`
+  + `em_linking_alpha_scaling_provenance_probe.py:170` + witness `law_scores` (`ln A` 9.253 % vs `A^{1/3}` 3.505 %),
+  restated `sm-26-parameter-chip-away.md:193-201`, `sm-eightfold-derivation-cheat-sheet.md:486`,
+  `observations/bw-mass-decomposition-dictionary.md:10`. Sinh-ball VOLUME `π(sinh 2R − 2R)` is stated (prose + probe string);
+  the AREA `4π sinh² R` and the ratio appear nowhere. Zero Lean on hyperbolic ball volume/area
+  (`Real.sinh` only in `FaddeevPhiBRealIntegral.lean`; `HyperbolicMetric.lean` has `dx dy dz/z³` only).
+- **Kites**: three homonyms. (i) Yekutieli's 2-cell (`library/arxiv-1007.1250v4` Def 4.1.1: string `σ` + linear square `τ`;
+  `4^k` square kites per binary tessellation `tes_k I²`) — worked to a verdict in bean `qou-20bk` (completed 2026-09-06) +
+  `LiftingDescent/CrossedModuleSurfaceHolonomy.lean` (sorry-free): no 2-dim Yekutieli object carries a non-abelian 3-body term;
+  the only 3-body object is `∫γ` over a balloon (Thm 8.6.6). (ii) "kite-tail" `(1+r²)^k` cyclotomic factor of `tr_M`
+  (`docs/audits/2026-05-09-kite-tail-reconciliation.md`, `computations/_deprecated/kite_tail_*`) — a braid triangle `σᵢσⱼσᵢ`, NOT Yekutieli.
+  (iii) nothing Penrose/Ptolemy. **Nobody counts kites as a function of A.** "surface of kites" has no corpus meaning.
+- **Stokes surface term**: `2026-08-30-nonabelian-stokes-and-the-surface-term.md` — bad set `|bad(τ,k)| ≤ a₀ + a₁·2^k`
+  (perimeter count, singular points of `σ`); shape only, no magnitude. Lean shadow: `AffineCountIsNotASurfaceTerm.lean`
+  (affine count ≠ `A^{2/3}`), `Sigma1CubedSeifertTessellation.lean` (abelian shadow trivial). No Lean on the singular-locus count.
+- **Library**: Yekutieli surfaces HELD (`arxiv-1007.1250v4`, one 261 KB section file, key `yekutieli2015`); ALL cited Yekutieli
+  keys held since 2026-09-05 (`qou-3pck`). Hyperbolic ball volume HELD in **`arxiv-1010.5321v3` *Formulas on hyperbolic volume*
+  §3.1 Bolyai** `πk³ sinh(2x/k) − 2πk²x` (registered, line ~11661). Ratcliffe / Benedetti–Petronio / Weizsäcker / Bethe1936
+  REGISTERED-ONLY; Martelli, Harborth, Bezdek ABSENT (639 dirs); `library/18` (ball-packing rigidity) cites Kuperberg–Schramm
+  only. Thurston held copy = Ch 1–2, has hyperbolic trig but no ball volume. Isoperimetric/Cheeger hits are all probability
+  (Stein kernels, concentration) — no hyperbolic isoperimetry held.
+- **Q5**: no bean/audit tries or rules out a hyperbolic surface law. The coordination-graph Lean is explicitly Euclidean:
+  `EquilateralBound.lean:2-3,34` (ℝ³), `MaxContactSimplex.lean:184` (kissing 12), `qou-usft` RESULT 6 ("ENTIRE nuclear
+  EM-sector geometry is two lines of classical Euclidean"). Not a refutation of an `H³` cluster — an unexamined import, same class as `A^{1/3}`.
+
+## 2026-09-06 — A-scaling of Yekutieli's bad-set / singular-locus count on the nuclear Seifert surface (bean `qou-yc1m`)
+
+- **Has anyone lower-bounded the singular / cut locus / edge count of the Seifert surface via Euler?**
+  → **GREP-OPEN on all six paths (path 0 down), but the claim SHAPE is wrong before the search.**
+  Held text `library/arxiv-1007.1250v4/sections/sec-000-0-introduction.md`: the 2-dim bad set (Def 4.4.12, l.3964)
+  is keyed on the **FORMS** — `i` bad ⇔ `α|Zᵢ, β|Zᵢ` not smooth; Lemma 4.4.13 (l.3969-3976) `a₀ = 2m`, `a₁ = 2·Σ len(Zⱼ)`
+  with `Z₁..Z_m` segments covering the singular loci of `α, β`. The kite square `τ` is **linear** (Def 4.1.1, l.3278),
+  so it has no singular points; "`|bad(k)| ≤ m`, m = singular points of the map σ" (l.2280) is the **1-dim string case**.
+  `2026-08-30-nonabelian-stokes-and-the-surface-term.md` §2 imported the 1-dim reading into 2-dim. Singular locus of a
+  pws form ⊂ `(n−1)`-skeleton of a triangulation that smooths it (l.765-767) — a SUBSET chosen by the connection, so
+  Euler's `E ≥ 2 − χ` bounds the cell count, never the singular count; smooth `(α,β)` ⇒ `a₀ = a₁ = 0` at every A.
+  And `qou-20bk` (completed): **no `α, β` exist as forms anywhere in the corpus.** So any "singular count ≥ 9A+1" is
+  conditional on (H1) singular locus ⊇ 1-skeleton AND (H2) the measured affine χ — scope (a) unless both are proved.
+- **Seifert cell counts** (`n=3A, c=12A−1, χ=−9A+1, μ=A+1, 2g=8A`): `computations/probes/every_seifert_invariant_is_affine_probe.py`
+  (`74a3e61ab3`, 2026-08-30), six N=Z nuclei A∈{2,4,6,8,12,16}; χ is `n − ℓ` by construction (l.105), not measured.
+  For-all-A: `12A−1` derived in bean `qou-hu1f`:335-351 (`11A + (A−1)`); `μ = A+1` symbolic in
+  `the_canonical_closure_is_a_chain_of_torus_links_probe.py` (probe, not Lean). **TRAP:** `SLq2LabelParity.lean:77` and
+  `TorusKnotPages.lean:82` carry `hmu : mu = A + 1` as a HYPOTHESIS, while `total_curvature_is_the_computable_half_probe.py:43`
+  cites it as "Lean-proved". No Lean proves `χ = n − c`: three encodings only (`SeifertRelation` def, `seifertBettiOne` def,
+  `Sigma1Cubed…seifertEuler` decide). Closest Lean to the affine claim: `TransverseSurfaceCurvature.seifertBettiOne_extensive`
+  (`b₁(3A, ρA) = (ρ−3)A + 1`, symbolic A).
+- **`QOU.MathlibExt.YekutieliIntegration`** = discrete holonomy only (List.prod, telescoping, `holonomy_perm`); header says
+  the surface Stokes theorem is NOT formalised (class `YekutieliStokesNormalisation`). No bad/good set, no kite, no singular point.
+- **Euler's formula uses in corpus**: Bring χ=−6 (`EmCouplingBringZeroMode.lean:213`, bean `qou-1vau` V−E+F=30−60+24);
+  coordination deltahedra `E = 3V − 6` (`geometric_saturation_and_labelling_probe.py:15-33`, bean `t7qv`:873) — Euclidean, not Seifert;
+  spectral-sequence Euler–Poincaré (`Mathlib/EulerCharacteristic.lean`). **No reference key for Euler's formula** (same class as Gauss–Bonnet).
+- **Library, closest held analogue**: `arxiv-0805.1447v2` (Ito, braid ordering) sec-004 Lemma 1 "Euler characteristic formula, Tiled case"
+  `(ΣVᵢ) − E + R = −2g+2, 2R = E, ΣiVᵢ = 2E` on a tiled surface in a closed-braid complement; `0310279v5` (Birman–Menasco MTWS)
+  sec-028 l.713 tile-vertex count `= 4χ(F) + …` on a tiled Seifert surface; `bm-markov-j` ocr p.10 (ocr-only). No `2−2g−μ` verbatim.
+
+## 2026-09-06 — external dialog: Bring's surface as a Lawson minimal surface in `S³`; "the CS 3-form vanishes on a surface"; Gromov norm (parent session on `claude/stokes-singular-count-scaling-2026-09-06`)
+
+- **Bring's surface embedded in `S³` (minimal / Lawson / Karcher–Pinkall–Sterling / Heller / Kapouleas–Wiygul / "minimal index")?** → **0 on all six paths (path 0 down).** Library `lawson` hit = Chanda Floer cohomology (`arxiv-2301.08311v4`); `karcher` = Karcher–Weber (Klein) / Heintze–Karcher; "minimal surface" hits are Rubinstein citations, an alg-geom homonym (`arxiv-1704.01735v4`) and `ihpmay2025:59` ("one cannot use minimal surfaces, since they are much more sparse"). **The corpus embeds KNOTS IN Bring** (`prop:cohomological-embedding`, `thm:embeddability-closure`, `torus-embeddable-complete`), never Bring in `S³`; nearest is topological — Heegaard genus / bridge ≤ 4 in `conj:bring-hyperbolic-knot-bloch-decomposition.md:77-88` (a `conjecture`), and the corpus already adjudicated a genus conflation there (`2026-08-01-tau-knot-discussion-review.md:33`). Metrics on Bring in the corpus are intrinsic: FS restricted from `ℙ⁴` (`brings-qou-4tuple.md:12`) and hyperbolic (2,4,5) (`EmCouplingBringZeroMode.lean`); none induced from `S³`. The QOU's Bring-based 3-manifold `M_S` is provably **not** `S³` (`CircleBundleBettiObstruction.lean`, `b₁ = 8`, sorry-free, scope-(b)). Surface-data → ideal-triangulation dictionary: wall stated in bean **`qou-n2cl`** (todo, 2026-09-06, another agent).
+- **CS / volume.** `prop:topological-mass-formula.md:38-44` states in prose "imaginary part of the Chern–Simons functional … equals Vol(S³∖K)"; its Lean `NonAbelianStokes.chernSimons_volume_correspondence` (`:736`) is a **discharged tautology** (`∃ vol, ∀ h, vol h = vol h`, witness `fun _ => 0`; docstring says the VC content "is NOT captured"). **No bean carries the restatement** (grep `.beans/` = 0; only two 2026-06/07 audits mention it). `𝔙 = Vol + i·CS` lives as §3b class `Mass/ComplexVolumeFibreDescent` + `Knot/FigureEightComplexVolume` (sorry-free, NZ leading form) + `CSEvaluationFaithful` (structure FIELD, `HyperbolicVolumeTranscendence.lean:401`). The corpus's CS **3-form** is the Reeb⌟tetraplectic contraction on `M_S` (`docs/scope/2026-08-01-reeb-tetraplectic-cs-threeform-identification.md`, `CartanContraction.lean`, Cartan formula a HYPOTHESIS) — not on the knot complement. "3-form vanishes on a surface" / transgression / WCS 2-form: **0 everywhere**; the corpus's surface-degree analysis is `CrossedModuleSurfaceHolonomy.lean` + `qou-20bk` (2-holonomy = boundary 1-holonomy × central; 3-body only as abelian `∫γ`).
+- **Gromov norm / simplicial volume:** prose + docstring only — `2026-08-25-vol-trm-division-of-labour-is-sound.md:696-699` (`‖S³∖K‖ = Vol/v₃`, additive, zero on Seifert), `LinearJSJVolume.lean:14-20` (`opaque Vol`, "Gromov norm"), `references.ts:13855` (torus knots ↔ Gromov norm 0). **No Lean object, no compute use**; `gromov1982` REGISTERED-ONLY. Held: `arxiv-1012.1039v2` (proportionality), `0803219`, `arxiv-1002.0126v1`, `arxiv-hep-th-0306165v1` (Gukov). **Simplicial volume of a SURFACE (`‖Σ₄‖ = 2|χ| = 12 = 12π/π`) — 0 on all six paths**; the dialog's "zero on a 2-manifold" is false.
+- **TRAP — NZ 1985 "held 3×" is three copies of the SAME 4-page tail.** All three dirs: `sections` = pp. 22–26, `chars_total 5437`, `likely_scanned False` (`structure.json`). The volume formula / gluing-equation / symplectic pages (307–328) are **not greppable**; `2026-09-04-citation-gap-inventory.md:92`'s H-rating is about registration. Same class as the `thurston1978` partial hold.
+- **BASELINE 2026-09-06:** 639 library dirs, 589 INDEX rows, 23 duplicate-marked ⇒ **27 real docs with no INDEX row** — INDEX.md is behind again (AGENTS.md path-5 trap); tier 1 is not a clean bill until `summarize-library.py --apply` runs.
+- **Uploads `4afe434526`** (on `claude/ingest-uploads-2026-09-06` and `origin/main`, NOT on the stokes branch): Martelli *Intro to Geometric Topology* §13.2 "Simplicial volume" p. 410 (the on-point C2(B) source); Hales et al. Kepler revision + Bezdek–Reid contact graphs (coordination/kissing arc, not C1/C2); Belin–Collier–Eberhardt–Liska–Post 3d gravity, Chris Li TFT/S², Cui thesis, Abbott–Nguyen–Rasmussen, Baldwin–Sivek — no bearing on C1/C2.
+
+## 2026-09-07 — `Σ_{λ⊢n} ∏_{c∈λ} f(h(c))`: sum over partitions of a product over HOOK LENGTHS (`qou-hok7`)
+
+**The object is CLOSED and is a named corpus proposition.** Do not re-open, and do not call it new.
+`prop:binding-period-involution-statistic`
+(`content/quantum-observable-universe/mass-theory/binding-period-involution-statistic.md:8-11`) states
+`S^bal(n;q) = Σ_{λ⊢n} ∏_k[k] / ∏_{c∈λ}[h(c)]`, balanced `[k]=(q^k−q^{-k})/(q−q^{-1})`.
+Since `q^h − q^{-h} = 2 sinh(h ln q) = (q−q^{-1})[h]`, **any** `Σ_λ ∏_c 1/(2 sinh(h ln q))` is
+`S^bal(n;q) / ((q−q^{-1})^n [n]_q!)` exactly — a rescaling, not a new object.
+`Z_n = S^bal·q^{n(n−1)/2}` on `qou-hok7` is the same thing again.
+**ARITY TRAP:** the `.md` is general-`n`; the Lean sibling proves only `n = 3,4,5`
+(`binding_period_involution_statistic_{three,four,five}`, `decide`-backed). General `n` rests on the
+narrative proof via Stanley EC2 + Schützenberger, both **registered-not-ingested**.
+Other carriers: `computations/_deprecated/q_variant_partition_sum.py:86-91` (literally `Σ 1/H_q(λ)`, n=3, refuted);
+`QOU/Mass/QHookDimension.lean` (`lw(c)=(1/(c+1))Σ_{λ⊢c+1} dim_q V_λ`, hook-derived, sorry-free);
+`binding_qhyperbolic_weight_probe.py` (`C_λ/∏[h]_q` over full p(3A), scope-(a) refuted);
+`alpha_em_2I_total_quantum_dimension_gate_test_probe.py` (`D=√(Σ_λ d_q(λ)²)`, hook-content, scope-(a) refuted);
+`docs/coordination/2026-05-18-lambda-scale-falsification.md:29` (Family A `(1/4)Σ_λ dim_q V_λ`, Lean-proved, refuted).
+`H_q(λ) = ∏_c[h(c)]_q` is a **registered notation-register symbol**.
+
+**What is GENUINELY OPEN (0 of 6 paths, path 0 down):**
+- **Nekrasov–Okounkov hook formula / Han's generalisations.** Zero hits corpus-wide AND library-wide.
+  `nekrasov2002` IS held (`library/arxiv-hep-th-0206161v1`, 31pp) but is instanton localisation and contains
+  **zero** occurrences of "hook". Every corpus "Okounkov" is Okounkov–**Vershik** (S_n rep theory) or
+  Borodin–Okounkov(–Olshanski); every "Westbury" is Barrett–Westbury. No "Han". No `∏_k(1−x^k)^{z−1}`,
+  no MacMahon *function*, no Dedekind eta. (Corpus "MacMahon" = the master theorem / driver (x), different object.)
+- **Chern–Simons / topological-string reading of `∏_c 1/(2 sinh(hζ/2))`.** No topological vertex,
+  no Gopakumar–Vafa hook product, no `Z(S³)` sinh formula. Corpus `2 sinh` is always the CROSSING variable
+  `h = q−q⁻¹ = 2 sinh(ln q)` (`QOU.Mass.MassVolDensity.h_crossing_eq_two_sinh_log`) or the Faddeev kernel — never a hook.
+  Nearest existing bridge: `docs/audits/2026-06-16-keystone-infinite-dim-full-hecke-realization.md`
+  (principal spec = gl_∞ infinite-wedge character = Jones II₁ = Habiro ring at q₀).
+- **Littlewood's identity** `Σ_λ s_λ = ∏1/(1−xᵢ)∏_{i<j}1/(1−xᵢxⱼ)`. Named ONCE, as a "classical anchor",
+  in `computations/lever1-kernel-maj-involution-identification.witness.json` — never stated, used or formalized.
+  (Every other "Littlewood" is Littlewood–**Richardson**.)
+
+**FOUND and central (do not re-derive):** the infinite-variable principal specialisation
+`s_λ(1,q,q²,…) = q^{n(λ)}/∏_c(1−q^{h(c)})` (Stanley EC2 7.21.2) at
+`docs/audits/2026-06-16-keystone-infinite-dim-full-hecke-realization.md:20` + its script;
+Stanley q-hook-maj `Σ_T q^{maj} = q^{n(λ)}[n]_q!/∏[h]_q` in `lever1_kernel_maj_involution_identification.py:14`;
+dual Cauchy at principal spec `Σ_λ f^λ s_λ(1,…,q^{N−1}) = [N]_q^n` (`ocneanu_parameter_is_fibre_qdim.py:48`).
+
+**HELD-BUT-UNREGISTERED, on point for the CS/matrix-model angle:**
+`library/arxiv-2105.09342v1` (Dutta et al., *A Unitary Matrix Model for q-deformed Plancherel Growth* — q-deformed
+hook measure ↔ GWW matrix model ↔ free-fermion droplets) and `library/arxiv-1909.06797v5` (*Quantum Mechanics of
+Plancherel Growth*). Neither appears in `references.ts`, so no block can cite them.
+**Registered-but-NOT-ingested** and load-bearing here: `stanley1999`, `macdonald1995`, `sagan2001`, `ooguri-vafa2007`,
+`jones1987`, `wenzl1988`, `macdonald1971` (verified by parsing the `library:` field, not by awk proximity).

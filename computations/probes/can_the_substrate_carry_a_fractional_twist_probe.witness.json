@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-09-03T04:44:50.586855+00:00",
-  "commitSha": "30a1ec51defdbe45fd8be6128d01e6c6e8530f77",
+  "computedAt": "2026-09-05T18:00:44.312157+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [
     {
       "name": "A1_coxeter_is_an_nth_root_of_the_full_twist",
@@ -54,11 +54,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 31,
   "computation": "can_the_substrate_carry_a_fractional_twist_probe",
   "scriptFile": "can_the_substrate_carry_a_fractional_twist_probe.py",
-  "scriptHash": "ed03717188f3",
-  "scriptCommitSha": "4e9d5e6cebda20f29b60b251f853248e62a3230a",
+  "scriptHash": "419e232b513d",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -70,10 +70,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -218,8 +218,8 @@
         "smallest_n": 12
       },
       "nuclear": {
-        "required_t": "0.942372321950",
-        "ratio": "33.705545",
+        "required_t": "0.942372326982",
+        "ratio": "33.705548",
         "available": false,
         "nearest_t": "10/11",
         "nearest_ratio": "21",

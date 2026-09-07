@@ -26,7 +26,8 @@ half-life lands at `≈ 10⁻⁴` of the observed value. The substitution is the
 **This is a negative about the prescribed substitution, not about `W`**: `s²` is a small
 crossing amplitude and `W` is an O(1) normalised trace, and nothing in the corpus derives the
 normalisation that would make one replace the other. Formalised, sorry-free, at the pin:
-`QOU.Braiding.WeakVertexT35.substitutionRateFactor_gt_ten_thousand` and
+`QOU.Braiding.WeakVertexT35.substitutionRateFactor_near_one_hundred_thirty` (this
+audit named the retired `substitutionRateFactor_gt_ten_thousand` and
 `…_lt_twenty_thousand`, with the exact closed form
 `|W|²/s⁴ = q⁶(q¹²+q⁸−1)²/((q²+1)⁴(q−1)⁴)` (`substitutionRateFactor_eq`).
 Producer: `computations/markov/weak_vertex_substitution_scale_probe.py` →
@@ -95,3 +96,30 @@ not a like-for-like substitution. What a correct coupling normalisation would be
 such as `W/W(1)` or `W` against the trefoil trace, or a genuinely different object — is a
 derivation question, not a compute one, and is left as the open item on the bean rather than
 guessed at here.
+
+---
+
+## 🛑 The magnitude in this audit is superseded — the power was wrong (2026-09-05)
+
+Every `1.19·10⁴` / "four orders of magnitude" figure here is high by
+`1/s² = 91.77×`. `substitutionRateFactor` was `(weakVertexTrace q)²/(sSq q)²`, and
+**`sSq` is already `s²`**, so it computed `|W|²/s⁴`. The rate carries `s²` exactly
+once — `prf:trace-ratio-observable`:
+`|ℳ_q|² = |skein_amp|²·|tr(par)/tr(dau)|²` with `skein_amp = q^{1/2} − q^{−1/2}`,
+*"the Skein amplitude at the beta-decay vertex"*.
+
+| | |
+|---|---|
+| `|W|²/s⁴` — as recorded here | `11875.4418937` |
+| `|W|²/s²` — the rate's actual power | **`129.405107404`** |
+
+**The scope-(a) negative of this audit survives, and its evidence is now
+measured rather than asserted.** At `129×` the substituted half-lives land at
+**0.8–0.9 % of observed** — `110×` too short, where a `10–17 %` shortening was
+wanted. What is withdrawn is "four orders of magnitude" and the `< 0.1 %` band;
+what replaces them is "two orders, ~129×" and a two-sided `0.8–0.9 %` band that
+fails if the numbers move.
+
+Bean `qou-xql6`; producer
+[`beta_rate_skein_power_audit.py`](../../computations/markov/beta_rate_skein_power_audit.py)
+(9/9).

@@ -165,14 +165,22 @@ q_0 must agree to at least 1 ppQ (10⁻¹⁵ relative, i.e. 10⁻⁶ ppb).
 **Configuration.** Controlled by `computations/substrate/_precision.py`:
 
 ```python
-COMPUTE_DPS_DEFAULT  = 65    # mpmath working precision (OUTPUT + GUARD)
-OUTPUT_DPS_DEFAULT   = 50    # serialization precision
-PRECISION_GUARD      = 15    # COMPUTE = OUTPUT + GUARD
+COMPUTE_DPS_DEFAULT  = 70    # mpmath working precision (OUTPUT + GUARD)
+OUTPUT_DPS_DEFAULT   = 60    # serialization precision
+PRECISION_GUARD      = 10    # COMPUTE = OUTPUT + GUARD
 ```
 
+**These three numbers read 65 / 50 / 15 until 2026-09-06 and were stale**
+(bean `qou-0z4i`, which measured 70/60/10 live on 2026-08-30). The change was
+a strict tightening, visible in witness diffs as `precisionMetadata`
+65/50/15/1e-50 → 70/60/10/1e-60 when an old producer is re-run; recomputed
+values agree with committed ones over their whole shared prefix, so no
+recorded result was invalidated. Measure rather than quote:
+`python3 -c "import qou_substrate.precision as P; print(P.COMPUTE_DPS, P.OUTPUT_DPS, P.PRECISION_GUARD)"`.
+
 The **1 ppQ target is the *minimum*** — raise via `QOU_COMPUTE_DPS=<n>`
-environment override. At 50 dps output / 65 dps compute, serialization
-truncation is ~10⁻⁵⁰ absolute (10⁻⁴¹ ppb), far exceeding 1 ppQ.
+environment override. At 60 dps output / 70 dps compute, serialization
+truncation is ~10⁻⁶⁰ absolute (10⁻⁵¹ ppb), far exceeding 1 ppQ.
 
 **Q_β is already at 0 ppQ (exact).** The Habiro expansion of the Markov
 trace terminates at $M = 8$ for the proton/neutron (integer coefficients
@@ -228,7 +236,12 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 > landed m_p on CODATA to 0.0004 ppb). m_K/m_π is the one prediction that
 > meets. Earlier versions showed the *muon* pin (m_μ "meets, ratio-derived")
 > and the *fitted* Q_β "5.7 ppb (N=5)" — both stale. Live source:
-> `per-observable-100x-status.witness.json` (`beats_100x_count=2`).
+> `per-observable-100x-status.witness.json` — quote
+> **`beats_100x_scoreable=1` / `scoreable_total=5`**. (This line quoted
+> `beats_100x_count=2` as the live source until 2026-09-07. That field counts
+> the two calibration INPUTS, and both §L2 above and §"For agents" below say
+> in terms that it "must not be quoted as an accuracy result" — so the doc
+> forbade, twice, the figure it handed the reader here.)
 
 | Observable | role | σ_exp_rel | **100× target** | Current pred error | Status |
 |---|---|---:|---:|---:|---|
@@ -237,8 +250,8 @@ is the muon at σ_exp ≈ 22 ppb (100× target 0.22 ppb).
 | m_μ/m_e | prediction (ratio) | 21.8 ppb | **0.22 ppb** | 211 ppb | **misses ~970×** (9.5σ μ-p tension) — ratio, retained |
 | Q_β | prediction (CAL-3 cross-check) | 0.78 ppm | **7.8 ppb** | 1279 ppb (1.28 ppm) | **misses ~164×** (de-fitted; N=5 ladder was a fit) — decay Q-value, retained |
 | ~~m_n~~ (absolute) | ~~prediction (Path C)~~ | — | — | — | **EXCISED** (absolute mass, `qou-exam`; content lives in `Δ_pn` below + the m_e scale) |
-| Δm_pn | prediction (Path C) | 474 ppb | **4.74 ppb** | 774 ppb | **misses ~163×** — splitting, retained |
-| m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | 23.4 ppb (post-#1442 closure via `(3q²−1)/(2q²)`) | **MET** (~11× margin below target) — ratio, retained |
+| Δm_pn | prediction (Path C) | 434 ppb | **4.34 ppb** | 658 ppb | **misses ~151.7×** — splitting, retained. (Read `474 / 4.74 / 774 / ~163×` until 2026-09-07; all four were stale against the witness.) |
+| m_K/m_π | prediction (meson ratio) | 26.4 ppm | **264 ppb** | **51.48 ppb** (witness `err_ppb`; full-series EM factor `1 + log(1+ℏ_q)`, PR #5467) | **MET** (**5.12×** margin, = 1/`miss_factor` 0.1952) — ratio, retained. **This row read `23.4 ppb` / `~11× margin` via `(3q²−1)/(2q²)` until 2026-09-07: that is the TWO-TERM TRUNCATION, excised as a fit on 2026-08-22 because it scored better than the converged series (3 terms 107.00, 4 terms 102.53 ⇒ ~102.9 on the ratio²). The table kept shipping the retired fit for 16 days after §L2 above retired it. §L2 quotes `51.43` / `5.13×` from an earlier read of the same two witness fields; that is rounding on one recompute, not a second measurement. |
 
 **Honest summary: 1/5 SCOREABLE meet — `m_K/m_π` alone.** (Corrected
 2026-08-18. This line previously read "2/7 'meet' — 1 calibration anchor
@@ -249,7 +262,12 @@ score — the same grounds on which the dashboard already excludes `m_p`.)
 m_K/m_π (closed via the merged meson EM correction `(3q²−1)/(2q²)`
 in PR #1442; was previously listed as missing by ~1098× pre-merge).
 m_K/m_π is the first genuine prediction to meet the 100× target; the
-other 5 (m_p, m_μ, Q_β, m_n, Δ_pn) still miss it.** (Was 3/7 through
+other **4 scoreable** (m_μ, Q_β, m_n, Δ_pn) still miss it.** (Read "the
+other 5 (m_p, …)" until 2026-09-07 — which made 1+5=6 against this same
+document's own `scoreable_total = 5`, and counted `m_p`, whose live row is
+`miss_factor: "N/A (anchor round-trip)"`. §L2 above already says in terms
+that `m_p` "does not belong in this list at all"; this sentence was the
+list it does not belong in.)** (Was 3/7 through
 2026-07-04, when the fitted m_p Habiro tower — which landed m_p on CODATA
 to 0.0004 ppb — was dropped; the honest documented-pin round-trip is
 +1.35 ppb, a ~437× miss.)

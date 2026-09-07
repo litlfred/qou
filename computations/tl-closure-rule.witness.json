@@ -1,0 +1,327 @@
+{
+  "description": "Closure of left multiplication on the Jones normal forms, indexed by (I,J). The δ rule is COMPLETE and holds on all 3456 products at n=2..7: loops=1 iff (I',J')=(I,J) iff k in I and k-1 not in I -- a condition on I alone. The (I',J') formula for the loops=0 branch is NOT identified and is recorded as open. Separately: no natural measure on (I,J) is monotone under the rewriting (12 tested, all increase somewhere), and the image of e_k has exactly catalan(n-1) elements for every k -- the tower relation dim(e_k TL_n) = dim TL_{n-1}.",
+  "bean": "qou-cds1",
+  "products_tested": 3456,
+  "arithmetic": "exact integers, sets and tuples; no floating point",
+  "scope": "checked at n <= 7, not proved at general n; the δ rule has a proof sketch (e_k commutes past a block iff its top is <= k-2, then e_k^2 = δ e_k) and is ready to formalise. Wires to nothing.",
+  "checks": [
+    {
+      "check": "delta_rule",
+      "rules": [
+        {
+          "rule": "loops=1 <=> (I',J')=(I,J)",
+          "counterexamples": 0,
+          "of": 3456,
+          "holds": true
+        },
+        {
+          "rule": "loops=1 <=> k in I and k-1 not in I",
+          "counterexamples": 0,
+          "of": 3456,
+          "holds": true
+        },
+        {
+          "rule": "loops=1 <=> k in I",
+          "counterexamples": 650,
+          "of": 3456,
+          "holds": false
+        },
+        {
+          "rule": "loops=1 <=> k in I and k+1 not in I",
+          "counterexamples": 882,
+          "of": 3456,
+          "holds": false
+        },
+        {
+          "rule": "loops=1 <=> k in I and k not in J",
+          "counterexamples": 846,
+          "of": 3456,
+          "holds": false
+        }
+      ],
+      "pass": true,
+      "note": "the δ appears exactly at the fixed points, and the test is on I alone -- J does not enter it"
+    },
+    {
+      "check": "invariants",
+      "results": {
+        "k_in_I_prime": true,
+        "card_I_prime_eq_card_J_prime": true,
+        "loops_at_most_one": true
+      },
+      "pass": true
+    },
+    {
+      "check": "loops_zero_branch_formula",
+      "status": "OPEN -- no candidate fits",
+      "products": 2378,
+      "rejected_candidates": [
+        {
+          "candidate": "I' = I union {k}",
+          "counterexamples": 1821
+        },
+        {
+          "candidate": "I' subset of I union {k}",
+          "counterexamples": 348
+        },
+        {
+          "candidate": "J' subset of J union {k}",
+          "counterexamples": 129
+        }
+      ],
+      "card_I_delta_distribution": {
+        "-1": 302,
+        "0": 1519,
+        "1": 557
+      },
+      "pass": true,
+      "note": "recorded as open. The |I'| decrease is what makes word length non-monotone, so an insertion-shaped rule cannot be right."
+    },
+    {
+      "check": "no_natural_measure_is_monotone",
+      "measures": [
+        {
+          "measure": "card_I",
+          "decreases": 302,
+          "equal": 1519,
+          "increases": 557,
+          "monotone": false
+        },
+        {
+          "measure": "sum_block_lengths_eq_word_length",
+          "decreases": 1300,
+          "equal": 0,
+          "increases": 1078,
+          "monotone": false
+        },
+        {
+          "measure": "sum_I",
+          "decreases": 1171,
+          "equal": 0,
+          "increases": 1207,
+          "monotone": false
+        },
+        {
+          "measure": "sum_J",
+          "decreases": 302,
+          "equal": 1519,
+          "increases": 557,
+          "monotone": false
+        },
+        {
+          "measure": "sum_i_minus_j",
+          "decreases": 1068,
+          "equal": 660,
+          "increases": 650,
+          "monotone": false
+        },
+        {
+          "measure": "max_I",
+          "decreases": 138,
+          "equal": 1946,
+          "increases": 294,
+          "monotone": false
+        },
+        {
+          "measure": "min_I",
+          "decreases": 1012,
+          "equal": 944,
+          "increases": 422,
+          "monotone": false
+        },
+        {
+          "measure": "sum_I_plus_sum_J",
+          "decreases": 1171,
+          "equal": 0,
+          "increases": 1207,
+          "monotone": false
+        },
+        {
+          "measure": "lex_card_then_sum_I",
+          "decreases": 1171,
+          "equal": 0,
+          "increases": 1207,
+          "monotone": false
+        },
+        {
+          "measure": "lex_sum_then_card_I",
+          "decreases": 1171,
+          "equal": 0,
+          "increases": 1207,
+          "monotone": false
+        },
+        {
+          "measure": "tuple_I_lex",
+          "decreases": 1322,
+          "equal": 0,
+          "increases": 1056,
+          "monotone": false
+        },
+        {
+          "measure": "tuple_J_lex",
+          "decreases": 378,
+          "equal": 1519,
+          "increases": 481,
+          "monotone": false
+        }
+      ],
+      "any_monotone": false,
+      "pass": true,
+      "note": "every candidate increases on some product, so the word-length negative is one row of a general pattern rather than special; an induction of that shape does not exist"
+    },
+    {
+      "check": "image_size_is_catalan_n_minus_one",
+      "rows": [
+        {
+          "n": 2,
+          "normal_forms": 2,
+          "image_sizes_per_k": [
+            1
+          ],
+          "catalan_n_minus_1": 1,
+          "image_size_eq_catalan_n_minus_1": true,
+          "image_eq_k_in_I_set": true
+        },
+        {
+          "n": 3,
+          "normal_forms": 5,
+          "image_sizes_per_k": [
+            2,
+            2
+          ],
+          "catalan_n_minus_1": 2,
+          "image_size_eq_catalan_n_minus_1": true,
+          "image_eq_k_in_I_set": false
+        },
+        {
+          "n": 4,
+          "normal_forms": 14,
+          "image_sizes_per_k": [
+            5,
+            5,
+            5
+          ],
+          "catalan_n_minus_1": 5,
+          "image_size_eq_catalan_n_minus_1": true,
+          "image_eq_k_in_I_set": false
+        },
+        {
+          "n": 5,
+          "normal_forms": 42,
+          "image_sizes_per_k": [
+            14,
+            14,
+            14,
+            14
+          ],
+          "catalan_n_minus_1": 14,
+          "image_size_eq_catalan_n_minus_1": true,
+          "image_eq_k_in_I_set": false
+        },
+        {
+          "n": 6,
+          "normal_forms": 132,
+          "image_sizes_per_k": [
+            42,
+            42,
+            42,
+            42,
+            42
+          ],
+          "catalan_n_minus_1": 42,
+          "image_size_eq_catalan_n_minus_1": true,
+          "image_eq_k_in_I_set": false
+        },
+        {
+          "n": 7,
+          "normal_forms": 429,
+          "image_sizes_per_k": [
+            132,
+            132,
+            132,
+            132,
+            132,
+            132
+          ],
+          "catalan_n_minus_1": 132,
+          "image_size_eq_catalan_n_minus_1": true,
+          "image_eq_k_in_I_set": false
+        }
+      ],
+      "pass": true,
+      "note": "dim(e_k · TL_n) = dim TL_{n-1}, the tower relation, visible in the normal-form combinatorics and independent of k; and for n >= 3 the image is a PROPER subset of {(I,J) : k in I}, so membership of k in I' does not cut it out"
+    },
+    {
+      "check": "tower_map_is_not_the_naive_index_surgery",
+      "rows": [
+        {
+          "n": 3,
+          "target_size": 2,
+          "bijection_per_k": {
+            "1": true,
+            "2": false
+          },
+          "only_k_eq_1": true
+        },
+        {
+          "n": 4,
+          "target_size": 5,
+          "bijection_per_k": {
+            "1": true,
+            "2": false,
+            "3": false
+          },
+          "only_k_eq_1": true
+        },
+        {
+          "n": 5,
+          "target_size": 14,
+          "bijection_per_k": {
+            "1": true,
+            "2": false,
+            "3": false,
+            "4": false
+          },
+          "only_k_eq_1": true
+        },
+        {
+          "n": 6,
+          "target_size": 42,
+          "bijection_per_k": {
+            "1": true,
+            "2": false,
+            "3": false,
+            "4": false,
+            "5": false
+          },
+          "only_k_eq_1": true
+        },
+        {
+          "n": 7,
+          "target_size": 132,
+          "bijection_per_k": {
+            "1": true,
+            "2": false,
+            "3": false,
+            "4": false,
+            "5": false,
+            "6": false
+          },
+          "only_k_eq_1": true
+        }
+      ],
+      "pass": true,
+      "note": "dropping k from I' and closing the gap carries the image bijectively onto NF(n-1) for k = 1 ONLY; for every k >= 2 it is neither injective nor onto. Recorded as a caught error: the first run printed only the k = 1 row and read as general."
+    }
+  ],
+  "all_pass": true,
+  "scriptFile": "tl_closure_rule_probe.py",
+  "scriptHash": "e9c091a6a89a",
+  "scriptCommitSha": "7efb90a54a92bacab581c9e653aaf1a69dcc5801",
+  "commitSha": "22de986b3511d5cd0937d1eaf03338dd4a95d36b",
+  "engine": "python",
+  "computedAt": "2026-09-07T17:41:55.947176+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

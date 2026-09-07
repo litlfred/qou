@@ -160,6 +160,7 @@ from hecke_characters import (partitions_of, dim_q, qfac,
 from hecke_3a_weights import partitions_of_n
 from mass_at_3A_proper import atom_braid_word_3A, E_0_CALIBRATION_MEV
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+from codata_constants import AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION
 
 
 # ── Jucys–Murphy eigenvalue averages ─────────────────────────
@@ -550,7 +551,7 @@ def calibrate_E0_tower(pair_mode: str = "full") -> float:
     # `mass_at_3A_proper.E_0_CALIBRATION_MEV` = Q_β. (Two corrections,
     # bean qou-0gqn: there is no `hecke_core` module — the constant lives in
     # `mass_at_3A_proper`; and Q_β is the **CAL-2** proxy, not CAL-3, per the
-    # 2026-06-26 decay-width ruling in AGENTS.md. CAL-3 is 𝔇_π, proxy m_π.)
+    # 2026-06-26 decay-width ruling in AGENTS.md. CAL-3 is P_avg^π, proxy m_π.)
     # This proton-tower-
     # anchored variant is retained for per-block comparison only.
     E0 = float(M_P_MEV) / m_p["total"]
@@ -703,8 +704,8 @@ if __name__ == "__main__":
     ATOMS = [
         ("D",    1, 1,  2.22452),
         ("T",    1, 2,  8.481821),
-        ("3He",  2, 1,  7.71804),
-        ("4He",  2, 2, 28.295674),
+        ("3He",  2, 1,  AME_B_HE3_MEV_VALIDATION),
+        ("4He",  2, 2, AME_B_HE4_MEV_VALIDATION),
     ]
     print("=" * 100)
     print("CANONICAL-WITH-PROPER-TOWER: JM-based V̂ + Φ_q tower "

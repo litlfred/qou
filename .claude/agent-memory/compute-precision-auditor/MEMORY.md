@@ -378,3 +378,13 @@ TRAPs.
     while I lost the race for `.git/index.lock`. The pathspec form never leaves
     anything in the shared index. Also: a sibling's untracked-file cleanup deleted my
     `_headcopy_*.py` mid-run and the producer died at `file_content_hash()`.
+- 2026-09-05 — beans `qou-brkp` / `qou-49vn` / `qou-16yn`: the tr_M provenance arc.
+  **Six traps split into `measurement-hygiene-traps.md`** — all mine, all caught by
+  measurement: comparing an input's change date to the consumer's NEW run instead of
+  its previous one; reading a commit timestamp as a compute timestamp; a data
+  dependency through a witness JSON being invisible to any import-cone audit; a field
+  named `convention` that does not carry the convention you mean; reading a truncated
+  numeric string as a value; and a stale BASELINE sitting in a source comment that
+  reads *"Measured after the fix, with the binary built"*. Plus the BASELINE for the
+  +48.1039 % `tr_M` move (a y_λ weight-table regeneration) and the p–n colour-weight
+  localisation. **Read that file before auditing any witness-to-witness dependency.**

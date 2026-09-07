@@ -64,6 +64,7 @@ set_compute_dps()
 VOL_FIGURE_EIGHT = mp.mpf("2.029883212819307")
 # CAL-2: m_μ/m_e from q_parameter registry (P31-triage Phase A).
 from q_parameter import MASS_RATIO_MU_E_STR as _MU_E_STR  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 MASS_RATIO_MU_E  = mp.mpf(_MU_E_STR)
 HBAR_Q_SQ        = VOL_FIGURE_EIGHT / MASS_RATIO_MU_E
 HBAR_Q           = mp.sqrt(HBAR_Q_SQ)
@@ -202,7 +203,7 @@ def main():
     print("Step 6: Final B(D)")
     print("─" * 78)
     B_pred = T1 + T4 + Dm_shell
-    B_AME = mp.mpf("2.22456612")
+    B_AME = AME_B_DEUTERON_MEV_VALIDATION
     err_pct = (B_pred - B_AME) / B_AME * 100
     err_ppb = err_pct * mp.mpf(10)**7
     print(f"  T1 + T4 + Δm_shell    = {mp.nstr(B_pred, 15)} MeV")

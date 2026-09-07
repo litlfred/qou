@@ -125,4 +125,42 @@ theorem MassCoefficientShadowPrice.coefficient_nuclear_independent
     c.uStar lam * ((s⁻¹ : Rˣ) : R) = c.C lam := by
   rw [c.factor, hS, mul_assoc, s.mul_inv, mul_one]
 
+/-- **A vanishing Wedderburn weight kills the coefficient.** Immediate from
+`C_eq`, and the reason it matters is that convention D's row cap
+(`QOU/Hecke/RowCap.lean`: a column of height `≥ 3` has no injective filling into
+a 2-dimensional fibre) makes `tilde w_λ = 0` for every `ℓ(λ) > 2`. Those blocks
+therefore price nothing — which is the step `qou-a5jk` left open and
+`qou-8na1` had already observed as an instance (`C_[1,1,1] = w̃·h/2 = 0` makes
+`uStar = C·S = 0` consistent rather than contradictory).
+
+The implication is proved here; the antecedent is the corpus's, cited not
+re-derived. -/
+theorem MassCoefficientShadowPrice.coefficient_eq_zero_of_weight_eq_zero
+    {R : Type u} [CommRing R] [Invertible (2 : R)]
+    [c : MassCoefficientShadowPrice R] (lam : Partition)
+    (hw : c.w lam = 0) :
+    c.C lam = 0 := by
+  rw [c.C_eq, hw, zero_mul]
+
+/-- **And therefore kills the shadow price**, whatever the scaling function
+does. So a block the row cap annihilates contributes nothing to
+`B = (Σ_λ C_λ · S_λ) · m_e` — no `S_λ` can rescue it, because the vanishing is
+upstream of the nuclear datum. -/
+theorem MassCoefficientShadowPrice.shadow_price_eq_zero_of_weight_eq_zero
+    {R : Type u} [CommRing R] [Invertible (2 : R)]
+    [c : MassCoefficientShadowPrice R] (lam : Partition)
+    (hw : c.w lam = 0) :
+    c.uStar lam = 0 := by
+  rw [c.factor, coefficient_eq_zero_of_weight_eq_zero lam hw, zero_mul]
+
+/-- Contrapositive, which is how a search uses it: a block that prices anything
+at all must have a nonzero canonical weight — so under convention D it must have
+at most two rows. -/
+theorem MassCoefficientShadowPrice.weight_ne_zero_of_shadow_price_ne_zero
+    {R : Type u} [CommRing R] [Invertible (2 : R)]
+    [c : MassCoefficientShadowPrice R] (lam : Partition)
+    (hu : c.uStar lam ≠ 0) :
+    c.w lam ≠ 0 :=
+  fun hw => hu (shadow_price_eq_zero_of_weight_eq_zero lam hw)
+
 end QOU.BraidKnot

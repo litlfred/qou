@@ -60,7 +60,7 @@ from pathlib import Path
 import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpf
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 set_compute_dps()
 
@@ -171,11 +171,11 @@ def pentagon_residual_h_expansion(u: mpf, v: mpf, n_h_samples: int = 5) -> dict:
         c2, c4, c6 = mp.nan, mp.nan, mp.nan
 
     return {
-        "samples": [(float(h), float(r)) for h, r in samples],
-        "c2": float(c2),
-        "c4": float(c4),
-        "c6": float(c6),
-        "classical_log_term": float(log2_classical),
+        "samples": [(fmt(h), fmt(r)) for h, r in samples],
+        "c2": fmt(c2),
+        "c4": fmt(c4),
+        "c6": fmt(c6),
+        "classical_log_term": fmt(log2_classical),
     }
 
 
@@ -190,11 +190,12 @@ def test_specialization(name: str, u: mpf, v: mpf) -> dict:
     if max(bounds) >= 1:
         return {
             "name": name,
-            "u": float(u),
-            "v": float(v),
+            "u": fmt(u),
+            "v": fmt(v),
             "converges": False,
-            "max_arg_abs": float(max(bounds)),
+            "max_arg_abs": fmt(max(bounds)),
             "result": None,
+            "_mp": {"u": u, "v": v, "max_arg_abs": max(bounds)},
         }
 
     exp = pentagon_residual_h_expansion(u, v)
@@ -205,19 +206,24 @@ def test_specialization(name: str, u: mpf, v: mpf) -> dict:
 
     return {
         "name": name,
-        "u": float(u),
-        "v": float(v),
-        "alpha": float(a),
-        "beta": float(b),
-        "uv": float(uv),
-        "max_arg_abs": float(max(bounds)),
+        "u": fmt(u),
+        "v": fmt(v),
+        "alpha": fmt(a),
+        "beta": fmt(b),
+        "uv": fmt(uv),
+        "max_arg_abs": fmt(max(bounds)),
         "converges": True,
         "h_expansion": exp,
-        "c4_residual": float(c4),
-        "target_h4_borromean": float(target),
-        "absolute_difference": float(diff),
-        "relative_difference_pct": float(rel_diff * 100),
+        "c4_residual": fmt(c4),
+        "target_h4_borromean": fmt(target),
+        "absolute_difference": fmt(diff),
+        "relative_difference_pct": fmt(rel_diff * 100),
         "matches_borromean_target_within_1pct": bool(rel_diff < mpf("0.01")),
+        # working state for the printed table; stripped before the witness
+        "_mp": {"u": u, "v": v, "alpha": a, "beta": b, "uv": uv,
+                "max_arg_abs": max(bounds), "c4_residual": c4,
+                "diff": diff, "rel_pct": rel_diff * 100,
+                "c2": mpf(exp["c2"]), "c6": mpf(exp["c6"])},
     }
 
 
@@ -249,14 +255,19 @@ def main() -> None:
         results.append(r)
 
         if not r["converges"]:
-            print(f"\n{name:<30} | (u={float(u):.4f}, v={float(v):.4f})  DIVERGES (max arg={r['max_arg_abs']:.4f})")
+            print(f"\n{name:<30} | (u={float(u):.4f}, v={float(v):.4f})  "
+                  f"DIVERGES (max arg={float(r['_mp']['max_arg_abs']):.4f})")
             continue
 
         match = "✓ MATCH" if r["matches_borromean_target_within_1pct"] else ""
-        print(f"\n{name:<30} | u={r['u']:.4f}, v={r['v']:.4f}")
-        print(f"  α={r['alpha']:.4f}, β={r['beta']:.4f}, uv={r['uv']:.4f}")
-        print(f"  c₂ = {r['h_expansion']['c2']:+.4f}, c₄ = {r['c4_residual']:+.4f}, c₆ = {r['h_expansion']['c6']:+.4f}")
-        print(f"  vs target −3/4: diff = {r['absolute_difference']:+.4f} ({r['relative_difference_pct']:+.2f}%)  {match}")
+        e = r["_mp"]
+        print(f"\n{name:<30} | u={float(e['u']):.4f}, v={float(e['v']):.4f}")
+        print(f"  α={float(e['alpha']):.4f}, β={float(e['beta']):.4f}, "
+              f"uv={float(e['uv']):.4f}")
+        print(f"  c₂ = {float(e['c2']):+.4f}, c₄ = {float(e['c4_residual']):+.4f}, "
+              f"c₆ = {float(e['c6']):+.4f}")
+        print(f"  vs target −3/4: diff = {float(e['diff']):+.4f} "
+              f"({float(e['rel_pct']):+.2f}%)  {match}")
 
     print("\n" + "=" * 60)
     print("VERDICT SUMMARY")
@@ -265,7 +276,7 @@ def main() -> None:
     print(f"Specializations matching Borromean h⁴ = −3/4 within 1%: {len(matches)} of {len(results)}")
     if matches:
         for m in matches:
-            print(f"  → {m['name']}: c₄ = {m['c4_residual']:.4f}")
+            print(f"  → {m['name']}: c₄ = {float(m['_mp']['c4_residual']):.4f}")
     else:
         print(f"  → None. The Pentagon residual h⁴ at tested (u, v) does not")
         print(f"     match −3/4 within 1% at any standard specialization.")
@@ -277,9 +288,15 @@ def main() -> None:
     # Best-match summary
     converging = [r for r in results if r.get("converges")]
     if converging:
-        best = min(converging, key=lambda r: abs(r["relative_difference_pct"]))
-        print(f"\nClosest match: {best['name']} (c₄ = {best['c4_residual']:.4f}, "
-              f"{best['relative_difference_pct']:+.2f}% from target)")
+        # selected in mpf, not on a truncated column
+        best = min(converging, key=lambda r: abs(r["_mp"]["rel_pct"]))
+        print(f"\nClosest match: {best['name']} "
+              f"(c₄ = {float(best['_mp']['c4_residual']):.4f}, "
+              f"{float(best['_mp']['rel_pct']):+.2f}% from target)")
+
+    # `_mp` is working state -- every value has a lossless `fmt` twin.
+    for r in results:
+        r.pop("_mp", None)
 
     # Witness
     witness = {
@@ -306,11 +323,9 @@ def main() -> None:
             "n_specializations_tested": len(results),
             "n_converging": sum(1 for r in results if r.get("converges")),
             "n_matches_within_1pct": len(matches),
-            "best_match_name": (
-                min((r for r in results if r.get("converges")),
-                    key=lambda r: abs(r["relative_difference_pct"]),
-                    default={"name": "none"})["name"]
-            ),
+            # `best` was selected above in mpf; reuse it rather than
+            # re-minimising on the serialized column.
+            "best_match_name": (best["name"] if converging else "none"),
             "interpretation": (
                 "T2 status: partial. Pentagon residual h⁴ extracted "
                 "empirically at multiple specializations. If a clean "

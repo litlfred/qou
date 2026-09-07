@@ -501,6 +501,18 @@ That is worse news than "top lead", not better — the symmetry energy is a name
 gap with **no available route**, and the tractable open item is back to the
 2.656 scale factor (`qou-59j5`).
 
+> 🛑 **SUPERSEDED 2026-09-05.** There IS a route — the p-n interface count — and
+> it is **sign-locked** rather than absent. A bond sum is additive in
+> `L = −log b`, so it compares `b_pn` against the *geometric* mean of `b_pp`,
+> `b_nn`, while the construction delivers an *arithmetic* one; AM ≥ GM, so the
+> sign is backwards structurally. `√(b_pp·b_nn) = 1/[2]_q` exactly, the AM−GM gap
+> is `h²/(2[2]_q)` (the Hecke parameter itself), and the crossing weight
+> `1/(q²+1)` is `½` only at `q = 1` — the corpus sits **11.7 %** above it.
+> `QOU/Hecke/SymmetrySignAmGm.lean` (7 decls),
+> `qbeta_symmetry_sign_is_am_gm_locked_probe.py`, bean `qou-i01a`. A repair must
+> move ONE quantity: the convex weight `w` below `1/(q²+1)`.
+
+
 What survives of the sharpening: the law *already has* an `(N−Z)` term with the
 opposite sign, so any future route must explain that, not merely add a symmetry
 term. But there is currently no route to explain it with.

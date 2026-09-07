@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T07:03:41.389465+00:00",
-  "commitSha": "8caaf3a73055a704de0a178b562bfda3f12ccce5",
+  "computedAt": "2026-09-06T12:48:23.897527+00:00",
+  "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
   "assertions": [
     {
       "name": "q0_pin_roundtrip",
@@ -36,11 +36,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 24,
+  "durationMs": 20,
   "computation": "deuteron-from-scratch-ledger",
   "scriptFile": "deuteron_from_scratch_ledger.py",
-  "scriptHash": "adce60cf01ae",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptHash": "888efed0df54",
+  "scriptCommitSha": "f521d5da9eda807a9ea8e86fbba845666e436909",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -53,9 +53,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "825fe60e51bf0442"
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -133,17 +131,17 @@
     },
     "S3_trace": {
       "transfer": {
-        "tr_atom": "0.57517224391777187082653534398618088915249435289284",
-        "tr_free": "1.1317169043222100827313075681159639985201502826418",
-        "Delta_tr": "0.55654466040443821190477222412978310936765592974898",
+        "tr_atom": "0.15196833920423160759266569775106614127124096465526",
+        "tr_free": "0.29901501718464007670216042677098383227494947439702",
+        "Delta_tr": "0.14704667798040846910949472901991769100370850974176",
         "ratio_atom_over_free": "0.50822978937673896257799579765589360389830839091657"
       },
       "closed_form": {
-        "tau_p_H3": "1.1457596924573008696890815957741193059437280619434",
-        "tau_n_H3": "0.98774368811580957163402016550129498205504875906267",
-        "tr_free": "1.1317169043222100827313075681159639985201502826415",
-        "tr_atom_bring_color_weighted": "0.57517224391777187082653534398618088915249435289269",
-        "tr_atom_chi_lambda_braid": "0.69338940871464891221705864612176220936633981827889",
+        "tau_p_H3": "0.62932840220292191816534574677848592760021940063433",
+        "tau_n_H3": "0.47513351715568221250609023267500579955840763470872",
+        "tr_free": "0.299015017184640076702160426770983832274949474397",
+        "tr_atom_bring_color_weighted": "0.15196833920423160759266569775106614127124096465525",
+        "tr_atom_chi_lambda_braid": "0.18320292395617370486905580472314233441383777299373",
         "ratio_bring_color_weighted": "0.50822978937673896257799579765589360389830839091656",
         "ratio_chi_lambda_braid": "0.61268803714646525159582986394589924802630839154506"
       },
@@ -172,16 +170,16 @@
     },
     "S5_binding_routes": {
       "R1_tower_level0_E0_dtr": {
-        "B_MeV": "2.3296855762940311685",
-        "err_rel_pct": 4.725387641600919,
-        "ratio_AME_over_pred": 0.9548782988727386,
+        "B_MeV": "0.61553465356035408362",
+        "err_rel_pct": -72.33012649565771,
+        "ratio_AME_over_pred": 3.6140389288121177,
         "tier": "derived (E₀ = m_e/(q₀(q₀−1)), Markov Δtr; convention: transfer)",
         "error_source": "uniform E₀ where a per-λ weight (Δ_λ / FR projector) belongs; +12% overbind is the scalar-collapse signature"
       },
       "R1b_tower_with_pair_negarg": {
-        "B_MeV": "2.9645081315906631758",
-        "err_rel_pct": 33.26230217786565,
-        "ratio_AME_over_pred": 0.7503997632168298,
+        "B_MeV": "0.82408682331808325028",
+        "err_rel_pct": -62.955167469591004,
+        "ratio_AME_over_pred": 2.6994318281210474,
         "tier": "derived (adds z²·(−Li₂^q(−·)) pair term, sign derived)",
         "error_source": "tower ADDS binding — the +33% shows the gap is not a truncation error of the tower"
       },
@@ -207,11 +205,11 @@
         "error_source": "link-volume route: error is the Kashaev linearization (tr ~ exp(Vol)) + the ρ-scale rule not yet derived for A>2"
       },
       "R4_diag_Qbeta_dtr": {
-        "B_MeV": "0.43540348160742938594",
-        "err_rel_pct": -80.42748821736888,
-        "ratio_AME_over_pred": 5.109206274114556,
+        "B_MeV": "0.11503952891212266302",
+        "err_rel_pct": -94.82867585994417,
+        "ratio_AME_over_pred": 19.337407072479582,
         "tier": "DIAGNOSTIC (Q_β scale, self-labeled wrong-scale)",
-        "error_source": "scale mismatch: Q_β = ℏ/𝔇_β vs the E₀ family; the residual B_AME/B_pred IS the Δ_λ(D) object probed symbolically (P1)"
+        "error_source": "scale mismatch: Q_β = ℏ/P_skew^β vs the E₀ family; the residual B_AME/B_pred IS the Δ_λ(D) object probed symbolically (P1)"
       },
       "R5_rotational_mu0": {
         "B_MeV": "2.0195829431320914724",
@@ -228,16 +226,16 @@
         "nucleon_sum_MeV": "1877.8379824951478816",
         "routes": {
           "R1_tower_level0_E0_dtr": {
-            "m_D_MeV": "1875.5082969188538505",
-            "err_m_D_ppm": -55.79407063974467,
+            "m_D_MeV": "1877.2224478415875276",
+            "err_m_D_ppm": 858.1209923284719,
             "error_from_nucleon_masses_MeV": 0.0004711251478816402,
-            "error_from_binding_MeV": -0.10511937629403117
+            "error_from_binding_MeV": 1.6090315464396459
           },
           "R1b_tower_with_pair_negarg": {
-            "m_D_MeV": "1874.8734743635572185",
-            "err_m_D_ppm": -394.2554557506434,
+            "m_D_MeV": "1877.0138956718297984",
+            "err_m_D_ppm": 746.9295173956044,
             "error_from_nucleon_masses_MeV": 0.0004711251478816402,
-            "error_from_binding_MeV": -0.7399419315906631
+            "error_from_binding_MeV": 1.4004793766819168
           },
           "R2_borromean_level0": {
             "m_D_MeV": "1876.2213607569927981",
@@ -258,10 +256,10 @@
             "error_from_binding_MeV": -0.024254597901309065
           },
           "R4_diag_Qbeta_dtr": {
-            "m_D_MeV": "1877.4025790135404523",
-            "err_m_D_ppm": 954.1595553129712,
+            "m_D_MeV": "1877.722942966235759",
+            "err_m_D_ppm": 1124.9644932663648,
             "error_from_nucleon_masses_MeV": 0.0004711251478816402,
-            "error_from_binding_MeV": 1.7891627183925707
+            "error_from_binding_MeV": 2.1095266710878775
           },
           "R5_rotational_mu0": {
             "m_D_MeV": "1875.8183995520157902",
@@ -275,16 +273,16 @@
         "nucleon_sum_MeV": "1877.8375248806867056",
         "routes": {
           "R1_tower_level0_E0_dtr": {
-            "m_D_MeV": "1875.5078393043926744",
-            "err_m_D_ppm": -56.03805192724643,
+            "m_D_MeV": "1877.2219902271263515",
+            "err_m_D_ppm": 857.8770110409702,
             "error_from_nucleon_masses_MeV": 1.351068670557295e-05,
-            "error_from_binding_MeV": -0.10511937629403117
+            "error_from_binding_MeV": 1.6090315464396459
           },
           "R1b_tower_with_pair_negarg": {
-            "m_D_MeV": "1874.8730167490960424",
-            "err_m_D_ppm": -394.49943703814523,
+            "m_D_MeV": "1877.0134380573686223",
+            "err_m_D_ppm": 746.6855361081027,
             "error_from_nucleon_masses_MeV": 1.351068670557295e-05,
-            "error_from_binding_MeV": -0.7399419315906631
+            "error_from_binding_MeV": 1.4004793766819168
           },
           "R2_borromean_level0": {
             "m_D_MeV": "1876.220903142531622",
@@ -305,10 +303,10 @@
             "error_from_binding_MeV": -0.024254597901309065
           },
           "R4_diag_Qbeta_dtr": {
-            "m_D_MeV": "1877.4021213990792762",
-            "err_m_D_ppm": 953.9155740254694,
+            "m_D_MeV": "1877.7224853517745829",
+            "err_m_D_ppm": 1124.720511978863,
             "error_from_nucleon_masses_MeV": 1.351068670557295e-05,
-            "error_from_binding_MeV": 1.7891627183925707
+            "error_from_binding_MeV": 2.1095266710878775
           },
           "R5_rotational_mu0": {
             "m_D_MeV": "1875.8179419375546141",

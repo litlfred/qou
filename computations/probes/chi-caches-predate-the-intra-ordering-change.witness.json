@@ -1,0 +1,437 @@
+{
+  "engine": "python+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-06T03:34:00.025793+00:00",
+  "commitSha": "a5f85e3117bd5195ecce50a86d70ca92e03f987f",
+  "assertions": [
+    {
+      "name": "the two intra orderings give MATERIALLY DIFFERENT words — this is not a relabelling",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "chi_caches_predate_the_intra_ordering_change_probe"
+    },
+    {
+      "name": "the ordering change is NOT a per-atom scalar — |chi| ratios spread by an order of magnitude AND some characters change SIGN, so qou-hu1f's per-atom R_quark factor does not describe this surface",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "chi_caches_predate_the_intra_ordering_change_probe"
+    },
+    {
+      "name": "the committed cache matches exactly ONE of the two orderings, to 1e-40 — it is not corrupt and not some third thing; WHICH one is reported in the witness rather than asserted, so this stays green after a regeneration",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "chi_caches_predate_the_intra_ordering_change_probe"
+    },
+    {
+      "name": "🛑 the ordering change MOVES A PUBLISHED RESULT — argmin(t) == argmin(w) (the O3' atom-independence of #6841/#6847, measured 6/6) holds under grouped and FAILS under borromean on tritium",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "chi_caches_predate_the_intra_ordering_change_probe"
+    },
+    {
+      "name": "the w-SIDE findings are INVARIANT under the ordering — w is a function of the partition and q alone, so content-sum monotonicity and the conc(w,|chi|)==conc(c,|chi|) identity are the same under both, and are the part of the O3' arc that survives",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "chi_caches_predate_the_intra_ordering_change_probe"
+    },
+    {
+      "name": "🛑 the chi-SIDE findings REVERSE — the anti-correlation is the one that matters: strongly ANTI under grouped, above the independence expectation under borromean, so the arc's central structural claim does not merely weaken, it changes sign",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "source": "chi_caches_predate_the_intra_ordering_change_probe"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 16,
+  "computation": "chi-caches-predate-the-intra-ordering-change",
+  "scriptFile": "chi_caches_predate_the_intra_ordering_change_probe.py",
+  "scriptHash": "7975f83d52d9",
+  "scriptCommitSha": "a5f85e3117bd5195ecce50a86d70ca92e03f987f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/chi_caches_predate_the_intra_ordering_change_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/chi_caches_predate_the_intra_ordering_change_probe.py"
+  },
+  "description": "The six chi-<atom>-h<n>-at-q0-50dps caches were computed 2026-08-10; atom_braid_word_3A's intra ordering changed 2026-09-05 (qou-hu1f, owner ruling) and chi_at_q0_via_hoefsmit_mpfr.py:96 calls it with no intra_order, so a fresh run now yields the BORROMEAN word while the committed caches are GROUPED (matched to ~3e-50 against ~1.3 relative for borromean). BOTH self-stale and import-cone stale: the producer itself also changed 3x after the caches were built (2026-08-15, -23, -30), the last being a fix ABOUT these caches that did not regenerate them. NOTHING DETECTS EITHER, because the witnesses carry scriptFile: None and a scriptHash matching no file in the tree, so no checker knows what to hash -- the bare-producer class. The change is NOT a per-atom scalar -- |chi| ratios spread 12.04x (tritium) / 11.29x (helium-3) and [8,1] and [5,4] CHANGE SIGN in both -- so qou-hu1f's R_quark factor does not describe this surface, and that bean does not mention these caches at all (grepped, 0 hits). It moves a published result: argmin(t) == argmin(w), the O3' atom-independence of #6841/#6847 measured 6/6, holds under grouped and FAILS under borromean on tritium (argmin(t) [5,4] -> [7,2] while argmin(w) stays [5,4]); dim~|chi| concordance 9/10 and 10/10 -> 6/10 and 6/10. 84 live scripts read these caches. NOT regenerated here: that is an owner decision (84 consumers plus a 22.5-minute helium-4 recompute), the same boundary qou-hu1f reached the same day.",
+  "auditOnly": "computations/chi_at_q0_via_hoefsmit_mpfr.py",
+  "parameters": {
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "q0_anchor": "proton"
+  },
+  "data": {
+    "words": [
+      {
+        "atom": "proton",
+        "letters": 11,
+        "differing": 8
+      },
+      {
+        "atom": "neutron",
+        "letters": 11,
+        "differing": 8
+      },
+      {
+        "atom": "deuteron",
+        "letters": 23,
+        "differing": 16
+      },
+      {
+        "atom": "tritium",
+        "letters": 35,
+        "differing": 24
+      },
+      {
+        "atom": "helium-3",
+        "letters": 35,
+        "differing": 24
+      }
+    ],
+    "atoms": [
+      {
+        "atom": "proton",
+        "Z": 1,
+        "N": 0,
+        "n": 3,
+        "abs_ratio_min": "0.155220930099521424796470341826203698563969660725742248751951",
+        "abs_ratio_max": "1.00000000000000000000000000000000000000000000000000000000000",
+        "abs_ratio_spread": "6.44243015010179472774793386366011374596964181995212004838349",
+        "sign_flips": [
+          [
+            2,
+            1
+          ]
+        ],
+        "n_two_row": 2,
+        "cache_vs_grouped": "7.44243015010179472774793386366011374596964181995212004838349",
+        "cache_vs_borromean": "0.0",
+        "cache_matches": "borromean",
+        "selection": {
+          "grouped": {
+            "argmin_t": [
+              2,
+              1
+            ],
+            "argmin_w": [
+              2,
+              1
+            ],
+            "agree": true,
+            "margin": "1.56298485891336160490615301714282984103438884083103640028407",
+            "dim_chi_concordance": "1/1",
+            "dim_chi_C": 1,
+            "dim_chi_D": 0,
+            "pairs": 1,
+            "csw_C": 1,
+            "wchi_C": 0,
+            "identity": true,
+            "flattened": true
+          },
+          "borromean": {
+            "argmin_t": [
+              2,
+              1
+            ],
+            "argmin_w": [
+              2,
+              1
+            ],
+            "agree": true,
+            "margin": "10.0694207792160406594870165837474658487844045599578814875247",
+            "dim_chi_concordance": "0/1",
+            "dim_chi_C": 0,
+            "dim_chi_D": 1,
+            "pairs": 1,
+            "csw_C": 1,
+            "wchi_C": 1,
+            "identity": true,
+            "flattened": false
+          }
+        }
+      },
+      {
+        "atom": "neutron",
+        "Z": 0,
+        "N": 1,
+        "n": 3,
+        "abs_ratio_min": "0.218683530127404077777510921362033482926663127180341323693482",
+        "abs_ratio_max": "1.00000000000000000000000000000000000000000000000000000000000",
+        "abs_ratio_spread": "4.57281807833175333270783249909126561490813864486999512311298",
+        "sign_flips": [
+          [
+            2,
+            1
+          ]
+        ],
+        "n_two_row": 2,
+        "cache_vs_grouped": "5.57281807833175333270783249909126561490813864486999512311298",
+        "cache_vs_borromean": "0.0",
+        "cache_matches": "borromean",
+        "selection": {
+          "grouped": {
+            "argmin_t": [
+              2,
+              1
+            ],
+            "argmin_w": [
+              2,
+              1
+            ],
+            "agree": true,
+            "margin": "1.34826976304312960689234439179813355430964938459178076416454",
+            "dim_chi_concordance": "1/1",
+            "dim_chi_C": 1,
+            "dim_chi_D": 0,
+            "pairs": 1,
+            "csw_C": 1,
+            "wchi_C": 0,
+            "identity": true,
+            "flattened": true
+          },
+          "borromean": {
+            "argmin_t": [
+              2,
+              1
+            ],
+            "argmin_w": [
+              2,
+              1
+            ],
+            "agree": true,
+            "margin": "6.16539234691169234737310369723481240448978115612499244498171",
+            "dim_chi_concordance": "0/1",
+            "dim_chi_C": 0,
+            "dim_chi_D": 1,
+            "pairs": 1,
+            "csw_C": 1,
+            "wchi_C": 1,
+            "identity": true,
+            "flattened": false
+          }
+        }
+      },
+      {
+        "atom": "deuteron",
+        "Z": 1,
+        "N": 1,
+        "n": 6,
+        "abs_ratio_min": "0.168010733722291611348901856127065306037164222560141781596220",
+        "abs_ratio_max": "1.00000000000000000000000000000000000000000000000000000000000",
+        "abs_ratio_spread": "5.95200067189112164607968972770196123751074743367047374871028",
+        "sign_flips": [
+          [
+            5,
+            1
+          ]
+        ],
+        "n_two_row": 4,
+        "cache_vs_grouped": "5.71403780250492053909840443368376807813865630973639630893832",
+        "cache_vs_borromean": "6.41078982263660946512859629919680998116531826987282343748643e-50",
+        "cache_matches": "borromean",
+        "selection": {
+          "grouped": {
+            "argmin_t": [
+              3,
+              3
+            ],
+            "argmin_w": [
+              3,
+              3
+            ],
+            "agree": true,
+            "margin": "1.19931398043904432515633435731957733618667616234203661429219",
+            "dim_chi_concordance": "3/5",
+            "dim_chi_C": 3,
+            "dim_chi_D": 2,
+            "pairs": 6,
+            "csw_C": 6,
+            "wchi_C": 1,
+            "identity": true,
+            "flattened": true
+          },
+          "borromean": {
+            "argmin_t": [
+              3,
+              3
+            ],
+            "argmin_w": [
+              3,
+              3
+            ],
+            "agree": true,
+            "margin": "1.40294236112573578614130082752617201485266960392929579768112",
+            "dim_chi_concordance": "0/5",
+            "dim_chi_C": 0,
+            "dim_chi_D": 5,
+            "pairs": 6,
+            "csw_C": 6,
+            "wchi_C": 4,
+            "identity": true,
+            "flattened": false
+          }
+        }
+      },
+      {
+        "atom": "tritium",
+        "Z": 1,
+        "N": 2,
+        "n": 9,
+        "abs_ratio_min": "0.0830666449936161518109145817630040141395117151478450878536818",
+        "abs_ratio_max": "1.00000000000000000000000000000000000000000000000000000000000",
+        "abs_ratio_spread": "12.0385264154685930201785102653499916318310369739278188696196",
+        "sign_flips": [
+          [
+            8,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "n_two_row": 5,
+        "cache_vs_grouped": "11.0385264154685930201785102653499916318310369739282730635626",
+        "cache_vs_borromean": "9.50271991256831870518401361349877928744201868504233384638358e-50",
+        "cache_matches": "borromean",
+        "selection": {
+          "grouped": {
+            "argmin_t": [
+              5,
+              4
+            ],
+            "argmin_w": [
+              5,
+              4
+            ],
+            "agree": true,
+            "margin": "2.10788964963688003000812372509429399113876085174273995107289",
+            "dim_chi_concordance": "9/10",
+            "dim_chi_C": 9,
+            "dim_chi_D": 1,
+            "pairs": 10,
+            "csw_C": 10,
+            "wchi_C": 2,
+            "identity": true,
+            "flattened": true
+          },
+          "borromean": {
+            "argmin_t": [
+              7,
+              2
+            ],
+            "argmin_w": [
+              5,
+              4
+            ],
+            "agree": false,
+            "margin": "1.67308218776395134879672477122067307037215111194259005283526",
+            "dim_chi_concordance": "6/10",
+            "dim_chi_C": 6,
+            "dim_chi_D": 4,
+            "pairs": 10,
+            "csw_C": 10,
+            "wchi_C": 5,
+            "identity": true,
+            "flattened": false
+          }
+        }
+      },
+      {
+        "atom": "helium-3",
+        "Z": 2,
+        "N": 1,
+        "n": 9,
+        "abs_ratio_min": "0.0885590501645044041727256086786294846719121513493437008208658",
+        "abs_ratio_max": "1.00000000000000000000000000000000000000000000000000000000000",
+        "abs_ratio_spread": "11.2919006938583081500902746454003507642294615410111963568010",
+        "sign_flips": [
+          [
+            8,
+            1
+          ],
+          [
+            5,
+            4
+          ]
+        ],
+        "n_two_row": 5,
+        "cache_vs_grouped": "10.2919006938583081500902746454003507642294615410110279000984",
+        "cache_vs_borromean": "1.49183655749857966603922764133770403188322779403394159972647e-50",
+        "cache_matches": "borromean",
+        "selection": {
+          "grouped": {
+            "argmin_t": [
+              5,
+              4
+            ],
+            "argmin_w": [
+              5,
+              4
+            ],
+            "agree": true,
+            "margin": "1.83950996464201267271069994089061847770266407931737472400078",
+            "dim_chi_concordance": "10/10",
+            "dim_chi_C": 10,
+            "dim_chi_D": 0,
+            "pairs": 10,
+            "csw_C": 10,
+            "wchi_C": 1,
+            "identity": true,
+            "flattened": true
+          },
+          "borromean": {
+            "argmin_t": [
+              5,
+              4
+            ],
+            "argmin_w": [
+              5,
+              4
+            ],
+            "agree": true,
+            "margin": "1.28661284285571011295258062387080993330805387348272970040879",
+            "dim_chi_concordance": "6/10",
+            "dim_chi_C": 6,
+            "dim_chi_D": 4,
+            "pairs": 10,
+            "csw_C": 10,
+            "wchi_C": 5,
+            "identity": true,
+            "flattened": false
+          }
+        }
+      }
+    ],
+    "live_consumer_scripts": 84
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

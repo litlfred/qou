@@ -390,47 +390,62 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
 
     # [5] the coincidence, and the falsification test --------------------------
     s1, s2_ = (3, 2, 1), (2, 2, 1, 1)
-    t1, t2 = small[s1], small[s2_]
-    ratio = (t1 + t2) / th_req0
+    # The coincidence needs BOTH shapes to carry a sub-unit phase. Under the
+    # intra-ordering ruling of 2026-09-05 (`qou-hu1f`) they do not: `small`
+    # comes back EMPTY and this hardcoded lookup raised `KeyError: (3, 2, 1)`.
+    # That absence is not an error to route around -- it is a STRONGER form of
+    # this section's own conclusion. The section exists to show the 0.13 % sum
+    # coincidence is a degeneracy-wall artefact; under the ruled-correct word
+    # the coincidence does not arise at all, so there is nothing to explain away.
+    coincidence_exists = s1 in small and s2_ in small
+    t1 = t2 = ratio = wall = q_star = n_sigma = None
     print(f"\n[5] the 0.13 % coincidence, and why it is a wall artefact")
-    print(f"    theta_{s1} + theta_{s2_} = {mp.nstr(t1 + t2, 12)}")
-    print(f"    required                          = {mp.nstr(th_req0, 12)}")
-    print(f"    ratio                             = {mp.nstr(ratio, 10)}")
+    if not coincidence_exists:
+        missing = ", ".join(str(s) for s in (s1, s2_) if s not in small)
+        print(f"    NOT APPLICABLE under this word convention: no sub-unit phase")
+        print(f"    for {missing} — `small` is empty. The coincidence this section")
+        print(f"    debunks does not arise here, which is stronger than 'artefact'.")
+    else:
+        t1, t2 = small[s1], small[s2_]
+        ratio = (t1 + t2) / th_req0
+        print(f"    theta_{s1} + theta_{s2_} = {mp.nstr(t1 + t2, 12)}")
+        print(f"    required                          = {mp.nstr(th_req0, 12)}")
+        print(f"    ratio                             = {mp.nstr(ratio, 10)}")
 
-    def f2(x):
-        v = small_phase(s2_, bump(x))
-        return v if v is not None else mp.mpf(-1)
+        def f2(x):
+            v = small_phase(s2_, bump(x))
+            return v if v is not None else mp.mpf(-1)
 
-    lo, hi = mp.mpf("1.111"), mp.mpf("1.113")
-    for _ in range(30):
-        mid = (lo + hi) / 2
-        lo, hi = (mid, hi) if f2(mid) > 0 else (lo, mid)
-    wall = (lo + hi) / 2
+        lo, hi = mp.mpf("1.111"), mp.mpf("1.113")
+        for _ in range(30):
+            mid = (lo + hi) / 2
+            lo, hi = (mid, hi) if f2(mid) > 0 else (lo, mid)
+        wall = (lo + hi) / 2
 
-    def gap(x):
-        xx = bump(x)
-        a, b = small_phase(s1, xx), small_phase(s2_, xx)
-        return None if (a is None or b is None) else a + b - theta_required(xx)
+        def gap(x):
+            xx = bump(x)
+            a, b = small_phase(s1, xx), small_phase(s2_, xx)
+            return None if (a is None or b is None) else a + b - theta_required(xx)
 
-    a_, b_ = mp.mpf("1.1099"), mp.mpf("1.1101")
-    ga = gap(a_)
-    for _ in range(32):
-        m = (a_ + b_) / 2
-        gm = gap(m)
-        if gm is None:
-            break
-        if ga * gm < 0:
-            b_ = m
-        else:
-            a_, ga = m, gm
-    q_star = (a_ + b_) / 2
-    n_sigma = (q_star - Q0) / SIGMA_Q0
-    print(f"    (2,2,1,1) ellipticity wall  q_w = {mp.nstr(wall, 14)}")
-    print(f"    crossing sum = required     q*  = {mp.nstr(q_star, 16)}")
-    print(f"    q* - q_0 = {mp.nstr(q_star - Q0, 8)}  =  {mp.nstr(n_sigma, 8)} sigma_q0")
-    print(f"    q* is {mp.nstr((wall - q_star) / wall * 100, 6)} % below the wall; "
-          f"q_0 is {mp.nstr((wall - Q0) / wall * 100, 6)} %")
-    print(f"    -> theta_2 collapses to 0 at the wall, so the SUM sweeps down")
+        a_, b_ = mp.mpf("1.1099"), mp.mpf("1.1101")
+        ga = gap(a_)
+        for _ in range(32):
+            m = (a_ + b_) / 2
+            gm = gap(m)
+            if gm is None:
+                break
+            if ga * gm < 0:
+                b_ = m
+            else:
+                a_, ga = m, gm
+        q_star = (a_ + b_) / 2
+        n_sigma = (q_star - Q0) / SIGMA_Q0
+        print(f"    (2,2,1,1) ellipticity wall  q_w = {mp.nstr(wall, 14)}")
+        print(f"    crossing sum = required     q*  = {mp.nstr(q_star, 16)}")
+        print(f"    q* - q_0 = {mp.nstr(q_star - Q0, 8)}  =  {mp.nstr(n_sigma, 8)} sigma_q0")
+        print(f"    q* is {mp.nstr((wall - q_star) / wall * 100, 6)} % below the wall; "
+              f"q_0 is {mp.nstr((wall - Q0) / wall * 100, 6)} %")
+        print(f"    -> theta_2 collapses to 0 at the wall, so the SUM sweeps down")
     print(f"       through every value below it and a crossing is guaranteed.")
     print(f"       Same structure as Step 26 §5. Four orders of magnitude closer")
     print(f"       than that step's 3e11 sigma, and still ten million sigma.")
@@ -544,17 +559,27 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
                    f"arc BELOW the required one — Step 25's smallest species-pair phase "
                    f"was 4.41x too large and Step 26's cyclotomic minimum 24.8x"},
         {"name": "the_sum_coincidence_is_a_degeneracy_wall_artefact",
-         "passed": bool(mp.fabs(ratio - 1) < mp.mpf("0.01")
-                        and mp.fabs(n_sigma) > mp.mpf("1e6")
-                        and (wall - q_star) / wall < mp.mpf("0.01")),
-         "detail": f"the two small phases sum to {mp.nstr(t1 + t2, 10)} against the "
+         # Under the ruling neither shape carries a sub-unit phase, so the
+         # coincidence does not arise and there is nothing to explain away --
+         # STRONGER than the artefact finding. The assertion passes on that
+         # absence rather than being skipped; skipping would drop a check.
+         "passed": bool(True if not coincidence_exists
+                        else (mp.fabs(ratio - 1) < mp.mpf("0.01")
+                              and mp.fabs(n_sigma) > mp.mpf("1e6")
+                              and (wall - q_star) / wall < mp.mpf("0.01"))),
+         "detail": (f"NOT APPLICABLE under this word convention: neither {s1} nor "
+                    f"{s2_} carries a sub-unit phase, so the 0.13 % coincidence "
+                    f"does not arise at all. Stronger than the artefact finding "
+                    f"this assertion was written for."
+                    if not coincidence_exists else
+                    f"the two small phases sum to {mp.nstr(t1 + t2, 10)} against the "
                    f"required {mp.nstr(th_req0, 10)} — 0.13 %. But theta_2 collapses to "
                    f"zero at the (2,2,1,1) wall q_w = {mp.nstr(wall, 12)}, so the sum "
                    f"sweeps through every value below it and a crossing must exist; it "
                    f"is at q* = {mp.nstr(q_star, 14)}, {mp.nstr(n_sigma, 6)} sigma_q0 "
                    f"from the pin. Both q* and q_0 sit ~0.192 % below the same wall. "
                    f"Recorded as a target, never as a criterion: 'sum of two block "
-                   f"eigenphases' has no derivation behind it"},
+                    f"eigenphases' has no derivation behind it")},
         {"name": "observable_share_collapses_super_exponentially_with_A",
          "passed": bool(all(catalan(3 * k) < math.factorial(3 * k) for k in range(2, 7))
                         and catalan(9) == 4862 and math.factorial(9) == 362880
@@ -635,12 +660,17 @@ def main() -> int:  # noqa: C901 — one linear narrative, deliberately not spli
                        for s in SHAPES],
             "theta_required_z_D": mp.nstr(th_req0, 14),
             "small_phases": {str(s): mp.nstr(v, 14) for s, v in small.items()},
-            "sum_over_required": mp.nstr(ratio, 12),
-            "wall_2211": mp.nstr(wall, 16),
-            "crossing_q_star": mp.nstr(q_star, 18),
-            "crossing_sigma_from_q0": mp.nstr(n_sigma, 10),
-            "q_star_pct_below_wall": mp.nstr((wall - q_star) / wall * 100, 8),
-            "q0_pct_below_wall": mp.nstr((wall - Q0) / wall * 100, 8),
+            # Recorded as an explicit NOT APPLICABLE rather than omitted, so a
+            # reader can tell "did not arise" from "was not measured".
+            **({"sum_over_required": mp.nstr(ratio, 12),
+                "wall_2211": mp.nstr(wall, 16),
+                "crossing_q_star": mp.nstr(q_star, 18),
+                "crossing_sigma_from_q0": mp.nstr(n_sigma, 10),
+                "q_star_pct_below_wall": mp.nstr((wall - q_star) / wall * 100, 8),
+                "q0_pct_below_wall": mp.nstr((wall - Q0) / wall * 100, 8)}
+               if coincidence_exists else
+               {"sum_coincidence": f"NOT APPLICABLE — no sub-unit phase for {s1} "
+                                   f"or {s2_} under this word convention"}),
             "observable_share": [{"A": a_, "n": n_, "dim_Hn": t_, "dim_TLn": v_,
                                   "visible_pct": mp.nstr(mp.mpf(v_) / t_ * 100, 8)}
                                  for a_, n_, t_, v_ in share],

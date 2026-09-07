@@ -37,7 +37,9 @@ commutative ring — as
   N(q, z) = (z − q) · ((q²+1)·z − q³),
 ```
 so the two admissible Markov parameters `{q, z_D}` are manifest and `z = 1` is
-excluded on the substrate window `1 < q < ` (plastic number `≈ 1.4656`).
+excluded on the substrate window `1 < q < ` (supergolden ratio `≈ 1.4656`,
+the root of `x³ = x² + 1`; NOT the plastic number `≈ 1.32472`, which is the
+root of `x³ = x + 1`).
 
 **What is cited vs. what is proved.** That `N` *is* the `(1³)`-weight numerator
 is the external input (the exact Markov-character solve; the sympy probe). The
@@ -105,7 +107,7 @@ weight and its numerator share their roots. -/
 theorem q_sq_add_one_ne_zero (q : ℝ) : q ^ 2 + 1 ≠ 0 := by positivity
 
 /-- **`z = 1` is NOT a root on the substrate window** `1 < q` with
-`q³ − q² − 1 < 0` (i.e. `q` below the plastic number `≈ 1.4656`; the substrate
+`q³ − q² − 1 < 0` (i.e. `q` below the supergolden ratio `≈ 1.4656`; the substrate
 `q₀ ≈ 1.110` is well inside). Hence the coordinate-sum functional `net = tr_M`
 at `z = 1` does **not** descend to the two-row quotient — it is neither
 admissible root. `N(q,1) = (1−q)·(q²+1−q³) < 0`. -/
@@ -120,7 +122,7 @@ theorem one_not_root {q : ℝ} (h1 : 1 < q) (hplastic : q ^ 3 - q ^ 2 - 1 < 0) :
 
 /-- **(CAPSTONE) Convention-D base admissibility is closed at exactly two Markov
 parameters, and `z = 1` (the coordinate sum `net`) is excluded.** On the
-substrate window (`1 < q`, `q` below the plastic number), the `(1³)`-weight
+substrate window (`1 < q`, `q` below the supergolden ratio), the `(1³)`-weight
 numerator vanishes at exactly `z = q` and `z = z_D`, and not at `z = 1`. This is
 the Lean form of `qou-99qc`'s measured completeness — the base functional of the
 convention-D Q_β ladder is one of exactly two (augmentation `z = q`, or Markov

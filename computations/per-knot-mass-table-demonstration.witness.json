@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-26T03:50:15.392465+00:00",
-  "commitSha": "3ea8e82193da9ddbc23b7e2dd4ba168d13e15235",
+  "computedAt": "2026-09-06T12:59:17.046908+00:00",
+  "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
   "assertions": [
     {
       "name": "n_atoms_with_per_block_prediction",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 365,
+  "durationMs": 273,
   "computation": "per-knot-mass-table-demonstration",
   "scriptFile": "per_knot_mass_table_demonstration.py",
   "scriptHash": "fa069e8edab0",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptCommitSha": "7768c9d262ae5510c126e523f063aabfe3474f17",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,9 +30,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "clarabel": "0.11.1"
   },
   "invocation": {
     "argv": [
@@ -50,16 +48,16 @@
         "A": 1,
         "knot": "B_3 (Borromean)",
         "vol_K": 0.02263780480881132,
-        "tr_M_K": 1.1457596924573008,
-        "per_knot_density_per_block": 2.6420486558404024,
+        "tr_M_K": 0.629328402202922,
+        "per_knot_density_per_block": 1.4511910918740778,
         "vol_density_uniform_production": 1890.5123448142976,
-        "m_pred_per_block_MeV": 1.3500840908063705,
+        "m_pred_per_block_MeV": 0.7415571251983292,
         "m_pred_production_MeV": 966.0498244665976,
         "m_observed_MeV": 938.27208943,
-        "err_per_block_pct": -99.85610953304318,
+        "err_per_block_pct": -99.92096566299347,
         "err_production_pct": 2.960520231766939,
-        "delta_per_block_vs_production_pct": -102.81662976481012,
-        "delta_abs_per_block_vs_production_pct": 96.89558930127623
+        "delta_per_block_vs_production_pct": -102.8814858947604,
+        "delta_abs_per_block_vs_production_pct": 96.96044543122653
       },
       {
         "atom": "n",
@@ -68,16 +66,16 @@
         "A": 1,
         "knot": "B_3 (Borromean)",
         "vol_K": -0.11929656567536379,
-        "tr_M_K": 0.9877436881158096,
-        "per_knot_density_per_block": -12.002871729956862,
+        "tr_M_K": 0.4751335171556822,
+        "per_knot_density_per_block": -5.773731312727213,
         "vol_density_uniform_production": 1890.5123448142976,
-        "m_pred_per_block_MeV": -6.133454859274622,
+        "m_pred_per_block_MeV": -2.950370642369602,
         "m_pred_production_MeV": 966.0498244665976,
         "m_observed_MeV": 939.56542194,
-        "err_per_block_pct": -100.652796997,
+        "err_per_block_pct": -100.31401439149151,
         "err_production_pct": 2.8187928065629486,
-        "delta_per_block_vs_production_pct": -103.47158980356294,
-        "delta_abs_per_block_vs_production_pct": 97.83400419043704
+        "delta_per_block_vs_production_pct": -103.13280719805446,
+        "delta_abs_per_block_vs_production_pct": 97.49522158492857
       },
       {
         "atom": "D",
@@ -86,16 +84,16 @@
         "A": 2,
         "knot": "6_2",
         "vol_K": -1.1754776225650418,
-        "tr_M_K": 0.5751722439177719,
-        "per_knot_density_per_block": -68.86923305316685,
+        "tr_M_K": 0.1519683392042316,
+        "per_knot_density_per_block": -18.196189193815094,
         "vol_density_uniform_production": 1890.5123448142976,
-        "m_pred_per_block_MeV": -35.19210582499333,
+        "m_pred_per_block_MeV": -9.298233584596229,
         "m_pred_production_MeV": 966.0498244665976,
         "m_observed_MeV": 1875.612945,
-        "err_per_block_pct": -101.87629894103729,
+        "err_per_block_pct": -100.49574373056997,
         "err_production_pct": -48.49418015364585,
-        "delta_per_block_vs_production_pct": -53.38211878739144,
-        "delta_abs_per_block_vs_production_pct": 53.38211878739144
+        "delta_per_block_vs_production_pct": -52.00156357692412,
+        "delta_abs_per_block_vs_production_pct": 52.00156357692412
       },
       {
         "atom": "T",
@@ -104,16 +102,16 @@
         "A": 3,
         "knot": "8_11",
         "vol_K": -2.7409598694596227,
-        "tr_M_K": 0.22931010210455652,
-        "per_knot_density_per_block": -64.02341347571871,
+        "tr_M_K": 0.029144042360972067,
+        "per_knot_density_per_block": -8.137020817249462,
         "vol_density_uniform_production": 1890.5123448142976,
-        "m_pred_per_block_MeV": -32.71589710568427,
+        "m_pred_per_block_MeV": -4.1580090993571615,
         "m_pred_production_MeV": 966.0498244665976,
         "m_observed_MeV": 2808.92113668,
-        "err_per_block_pct": -101.16471397784962,
+        "err_per_block_pct": -100.14802868777839,
         "err_production_pct": -65.6077982449725,
-        "delta_per_block_vs_production_pct": -35.55691573287712,
-        "delta_abs_per_block_vs_production_pct": 35.55691573287712
+        "delta_per_block_vs_production_pct": -34.54023044280589,
+        "delta_abs_per_block_vs_production_pct": 34.54023044280589
       },
       {
         "atom": "3He",
@@ -122,16 +120,16 @@
         "A": 3,
         "knot": "L6a4",
         "vol_K": -1.9635842533032033,
-        "tr_M_K": 0.4037670368514282,
-        "per_knot_density_per_block": -80.75945172856586,
+        "tr_M_K": 0.05859625365443638,
+        "per_knot_density_per_block": -11.72012791183233,
         "vol_density_uniform_production": 1890.5123448142976,
-        "m_pred_per_block_MeV": -41.267995091596866,
+        "m_pred_per_block_MeV": -5.988973064898902,
         "m_pred_production_MeV": 966.0498244665976,
         "m_observed_MeV": 2808.39161112,
-        "err_per_block_pct": -101.4694530110471,
+        "err_per_block_pct": -100.21325277575909,
         "err_production_pct": -65.601313554653,
-        "delta_per_block_vs_production_pct": -35.86813945639409,
-        "delta_abs_per_block_vs_production_pct": 35.86813945639409
+        "delta_per_block_vs_production_pct": -34.61193922110609,
+        "delta_abs_per_block_vs_production_pct": 34.61193922110609
       },
       {
         "atom": "4He",
@@ -140,24 +138,24 @@
         "A": 4,
         "knot": "A·8G magic-A",
         "vol_K": -3.529066500197784,
-        "tr_M_K": 0.16097414544240737,
-        "per_knot_density_per_block": -57.86672859120254,
+        "tr_M_K": 0.01123741765976742,
+        "per_knot_density_per_block": -4.039608944632661,
         "vol_density_uniform_production": 1890.5123448142976,
-        "m_pred_per_block_MeV": -29.56983758996752,
+        "m_pred_per_block_MeV": -2.064235931905228,
         "m_pred_production_MeV": 966.0498244665976,
         "m_observed_MeV": 3727.3794118,
-        "err_per_block_pct": -100.79331439928966,
+        "err_per_block_pct": -100.05538035450242,
         "err_production_pct": -74.08233190835597,
-        "delta_per_block_vs_production_pct": -26.710982490933688,
-        "delta_abs_per_block_vs_production_pct": 26.710982490933688
+        "delta_per_block_vs_production_pct": -25.973048446146453,
+        "delta_abs_per_block_vs_production_pct": 25.973048446146453
       }
     ],
     "summary": {
       "n_atoms_evaluated": 6,
       "n_atoms_total": 6,
-      "mean_abs_err_per_block_pct": 100.96878114321113,
+      "mean_abs_err_per_block_pct": 100.19123093384916,
       "mean_abs_err_production_pct": 43.260822816659534,
-      "worst_abs_err_per_block_pct": 101.87629894103729,
+      "worst_abs_err_per_block_pct": 100.49574373056997,
       "worst_abs_err_production_pct": 74.08233190835597,
       "verdict": "Per-block reading makes predictions worse on average — consistent with the vol_density_per_block_wiring.py RED verdict that H_3 tr_M(K) is NOT the H_4 Family-A linking_weight scalar. To 'wire up properly' for closure requires a per-knot generalization of linking_weight(K), not just per-knot Vol(K). Open research."
     },

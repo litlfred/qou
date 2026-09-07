@@ -15,7 +15,7 @@ Wave 1 = the four most load-bearing, most-attackable claims on the canonical der
 | Block | Verdict | Strongest surviving / open objection | Disposition |
 |-------|---------|--------------------------------------|-------------|
 | [`conj:borromean-baryon-mass-formula`](../../content/quantum-observable-universe/mass-theory/borromean-baryon-mass-formula.md) | **open-objection** | Revives `λ_scale` as a live "conjectural common scale" with "open R&D", contradicting its own sibling (`structurally falsified … Do not revive`), its witness (`RESOLVED post-PR #1080`), and the AGENTS.md standing purge. | **Author-assist** (queue, critical) |
-| [`prop:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md) | survivable-objection | Lean proves a tautological factorisation, not the "exactly three" count; Q_β is asserted "derived" where the corpus labels its key link "POSTULATED, NOT DERIVED". | **Author-assist** (queue, major) |
+| [`def:three-calibration-discipline`](../../content/quantum-observable-universe/observations/three-calibration-discipline.md) | survivable-objection | Lean proves a tautological factorisation, not the "exactly three" count; Q_β is asserted "derived" where the corpus labels its key link "POSTULATED, NOT DERIVED". | **Author-assist** (queue, major) |
 | [`prop:qbeta-ck-truncation-canonical`](../../content/quantum-observable-universe/appendix-qvalues/qbeta-ck-truncation-canonical.md) | survivable-objection | Ships a stale/false witness assertion (`N3_beats_100x … passed:false`); "near-match" framing trails the 2026-06-04 registry that REFUTED real-q `c_3`. | **Author-assist** (queue, major — likely a witness refresh + cite update) |
 | [`alg:per-isotope-binding-delta-lambda-closure`](../../content/quantum-observable-universe/appendix-mass-binding-algorithms/mba-sidecar-delta-lambda-closure.md) | **clean** | (only a stale "current direction" wording vs the post-PROBE-4 frontier; honest open-gate record) | **Defer** (rebutted-as-known) |
 
@@ -33,7 +33,7 @@ Compounding (independent, surviving): the Lean class fields `proton_matches_coda
 
 → **Author ask:** is the `λ_scale` revival intended, or should this block be re-scoped to the absorbed-into-VolDensity / ΔS-only framing (and the `: True` Lean fields + empty-assertion "verified" status fixed)?
 
-### 2. `prop:three-calibration-discipline` — survivable-objection
+### 2. `def:three-calibration-discipline` — survivable-objection
 
 The framework's central anti-numerology defense. Two surviving objections, both conceded *in siblings* but not in this block's assertive prose: (a) the Lean theorem `:= c.mass_factorisation X` projects the conclusion it should derive (self-assuming projection, §3b-cond non-degenerate / proof-statement-integrity) — it encodes neither "exactly three" nor "no fourth"; (b) the corpus carries ≥3 mutually inconsistent calibration triples, so "exactly three" survives relabeling (the L3 worry). The Q_β "derived" claim is a partial overclaim (corpus: "POSTULATED, NOT DERIVED"). `da-hidden-dof` (m_p re-pin) and `da-citation-misuse` are rebutted.
 

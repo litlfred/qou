@@ -134,38 +134,55 @@ structure SpinDecomposition (C : Type u) [CategoryTheory.Category.{v} C]
   /-- `Ad(A) = V_1` (the spin-1 representation). -/
   adjoint_is_one : adjointObj = simpleObj { twice_j := 2 }
 
-/-- **Emergence of SU(2)** (Tannaka–Krein reconstruction):
-
-    The three QOU constraints packaged in `RankOneGaugeData` —
-    dim V = 2, volume non-degeneracy, adjoint vanishing — together
-    force `Aut⊗(τ) ≅ SU(2)` (or `SL(2, ℝ)` by Frobenius pairing
-    signature).
-
-    **Proof sketch**:
-    1. Faithfulness of τ embeds G into GL(τ(V)) = GL(2, k).
-    2. Volume constraint (Λ²V → 𝟙 epi) forces det = 1 → G ⊆ SL(2, k).
-    3. Adjoint vanishing forces trivial centre → G = SL(2, k) or SU(2).
-
-    The reconstruction requires Tannaka duality for rigid monoidal
-    categories with fibre functor + classification of connected
-    subgroups of SL(2) with trivial centre.  Neither is available
-    in Mathlib as of 2026-03.
-
-    The axiom records the downstream consequence: every QOU with
-    rank-1 gauge data admits a `SpinDecomposition` — simple objects
-    indexed by half-integer spin labels with dim = 2j + 1, and the
-    fundamental object matches the QOU's fundamental object.
-
-    LaTeX: `\label{thm:su2-emergence}`
-    Ref: [lusztig1993] https://doi.org/10.1007/978-0-8176-4717-9 -/
 -- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 -- Ref: [deligne1990] Catégories tannakiennes — see content/schema/references.ts
-axiom su2_emergence {k : Type*} [Field k]
+/-- **The former `su2_emergence` axiom asserted nothing, and is now a
+    one-line theorem.**
+
+    It stood as
+
+        axiom su2_emergence … :
+          ∃ (sd : SpinDecomposition data.qou.C),
+            sd.fundamentalObj = data.qou.fundamentalObj
+
+    which is **vacuously true**: `SpinDecomposition` has five fields, of
+    which `simpleObj`, `fundamentalObj` and `adjointObj` are free and the
+    two remaining are equations satisfiable by taking `simpleObj`
+    constant.  The witness below does exactly that, and the whole
+    statement closes by `rfl`.
+
+    This is not a false axiom -- it is worse in one respect and better in
+    another.  Better: nothing unsound was ever derivable from it.  Worse:
+    a false axiom announces itself the moment anyone looks for a
+    counterexample, while this one could stand indefinitely, cited as
+    Tannaka-Krein reconstruction, asserting only that a record with three
+    free fields can be filled in.
+
+    **What the structure does not say.**  The old docstring described the
+    consequence as *"simple objects indexed by half-integer spin labels
+    with dim = 2j + 1"*.  `SpinDecomposition` carries **no** simplicity
+    condition, **no** injectivity of `simpleObj`, and **no** dimension
+    field -- so none of that is in the statement.  Encoding it is a
+    structure refactor and is deliberately not guessed at here; the
+    Tannaka duality and the SL(2) subgroup classification the proof
+    sketch needs are genuinely absent from Mathlib, and that gap is
+    real.  What was not real is the suggestion that an axiom was
+    carrying it.
+
+    LaTeX: `\label{thm:su2-emergence}` -/
+theorem su2_emergence {k : Type*} [Field k]
     (data : RankOneGaugeData.{u, v} k) :
     letI := data.qou.catInst
     letI := data.qou.monInst
     ∃ (sd : SpinDecomposition data.qou.C),
-      sd.fundamentalObj = data.qou.fundamentalObj
+      sd.fundamentalObj = data.qou.fundamentalObj := by
+  letI := data.qou.catInst
+  letI := data.qou.monInst
+  exact ⟨{ simpleObj := fun _ => data.qou.fundamentalObj
+           fundamentalObj := data.qou.fundamentalObj
+           fundamental_is_half := rfl
+           adjointObj := data.qou.fundamentalObj
+           adjoint_is_one := rfl }, rfl⟩
 
 end
 

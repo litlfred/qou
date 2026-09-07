@@ -16,9 +16,28 @@ For any unital `R`-algebra `A`, an element `a : A` acts by left multiplication
 faithfully a genuine module endomorphism `A → A`.
 
 This is the Frobenius-algebra sense of "element as endomorphism"
-(Kock, *Frobenius Algebras and 2D TQFT*).  A second, sharper sense is
-`q`-Schur–Weyl `H_n(q) ≅ End_{U_q 𝔰𝔩_N}(V^⊗ⁿ)` (Jimbo), under which a Hecke
-element is literally an endomorphism of `V^⊗ⁿ`.
+(Kock, *Frobenius Algebras and 2D TQFT*), and it is the sense that holds
+unconditionally, because `a ↦ L_a` is injective.
+
+A second sense is `q`-Schur–Weyl, and it is **weaker, not sharper**: the arrow
+`H_n(q) ↠ End_{U_q 𝔰𝔩_N}(V^⊗ⁿ)` (Jimbo) is a **surjection**, an isomorphism
+only when `N ≥ n`.  Below that its kernel is the span of the blocks with more
+than `N` rows, so a Hecke element in the kernel maps to the *zero* endomorphism
+of `V^⊗ⁿ` — it is not "literally an endomorphism" of it in any faithful sense.
+This framework runs at `N = 2` (convention D) with `n = 3A`, where the image is
+`TL_n(q) = End_{U_q 𝔰𝔩₂}(V^⊗ⁿ)`, of dimension `Catalan(n)` against
+`dim H_n = n!` — a kernel of dimension `n! - Catalan(n)` = 1, 10, 78, 588,
+4611, 38890 at `n = 3..8`.  See `QOU.QBeta.TraceBlindSector` (which states the
+`TL_n` identification) and `QOU.QuantumObservableUniverses.QSchurWeyl` (which
+correctly says *the image of* `H_n(q)`).
+
+The surjectivity is no longer only asserted in prose: `QOU.MathlibExt`'s
+`heckeToTL_surjective` proves `H_n(v^2) ↠ TL_n(δ)` sorry-free at general index
+type, and `heckeTLEquiv` identifies `TL_n(δ)` with `H_n(v^2)` modulo one named
+family of relators.  **Read the scope exactly**: that is the *presentation*
+leg, `H ↠ TL`.  The remaining leg `TL_n(q) = End_{U_q 𝔰𝔩₂}(V^⊗ⁿ)` is *stated*
+in `TraceBlindSector` and is not proved anywhere in this corpus, so the
+Schur–Weyl surjection is not yet closed end to end in Lean.
 
 > **Trace caveat (NOT proved here — deliberately).**  The Markov trace
 > `tr_M : A → R` is the **quantum** trace (Ocneanu weights / ribbon twist),

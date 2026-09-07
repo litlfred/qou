@@ -262,9 +262,41 @@ both derive `Q^r = z_W/(1−Q+z_W) = q⁴ = Q²`, i.e. r = 2 exactly, in the
 **`z_3` appears nowhere outside a probe.** Only two sites: the comparison table
 in `docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md:214`, and
 its producer `computations/ocneanu_param_from_fibre_dimension.py`, which nothing
-imports. *False-positive warning for future greps:* the literal
+imports. *False-positive warning for future greps:* ~~the literal
 `0.44930482320583087` in many witnesses is **`h_q`**, not `z_3`
-(`z_3 = 0.449304809090…`), differing at the 8th decimal.
+(`z_3 = 0.449304809090…`), differing at the 8th decimal.~~
+
+> **🛑 CORRECTED 2026-09-05 — the warning named the wrong quantity, in the
+> direction that suppresses an anchor check** (bean `qou-yk03`;
+> [`z3_muon_pin_vs_hq_misidentification_probe.py`](../../computations/probes/z3_muon_pin_vs_hq_misidentification_probe.py),
+> 2/2, 65 dps). That literal is **`z_3` at the MUON anchor**, not `h_q`:
+>
+> | candidate | value | rel. vs the literal |
+> |---|---|---|
+> | **`z_3` @ muon** | `0.4493048233034703126034` | **2.17e-10** |
+> | `z_3` @ proton | `0.4493048090902078605552` | 3.14e-8 |
+> | `h_q = q − q⁻¹` | `0.2090602987956393154308` | **0.535** |
+> | `ℏ_q = 1 − q⁻¹` | `0.0990817160442585078392` | 0.779 |
+>
+> The muon row's 2.17e-10 residual is the literal's own truncation at 17
+> digits. **`h_q` is not a near miss — it is off by a factor of two**, so
+> *"they differ at the 8th decimal"* is not a small slip inside a true
+> statement; the quantities are not comparable.
+>
+> **The real content is more serious in kind and smaller in extent.** These are
+> not two quantities that resemble each other — they are **one** quantity,
+> `z_3 = q³/[3]_q`, at the two substrate anchors. The 3.14e-8 gap is the μ–p
+> tension (~11.6 ppb on q) propagated through `z_3`, amplified ~2.7×. That is a
+> **layer straddle**, which `AGENTS.md` calls a defect regardless of size — and
+> the warning as written tells an agent a muon-pinned value needs no anchor
+> check, inverting the 2026-08-07 proton-by-default directive.
+>
+> **Extent, measured, not inflated: zero live producers.** Five files carry the
+> literal — three under `computations/_deprecated/`, and the other two are this
+> doc and bean `qou-d7h1`, i.e. the two sites carrying the misidentification
+> itself. The correct proton value `0.4493048090…` appears in 21 files. So this
+> is a documentation correction, **not** a drain, and nothing computed is
+> wrong.
 
 ### 3. What `bring_color_weighted` implies: **nothing about the level**
 

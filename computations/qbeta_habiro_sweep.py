@@ -9,7 +9,10 @@ set_compute_dps()
 HERE = Path('.').resolve()
 sys.path.insert(0, str(HERE))
 import _path_bridge as _pb
-from codata_constants import M_P_MEV_VALIDATION  # noqa: E402 (codata sweep)
+from codata_constants import (
+    M_E_MEV,
+    M_P_MEV_VALIDATION  # noqa: E402 (codata sweep,
+)
 
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 q_data = json.load(Q_PIN.open())["derived_50_digit"]
@@ -26,7 +29,7 @@ def q_fact(n, q):
         res *= q_num(i, q)
     return res
 
-M_e = mpf('0.51099895000')
+M_e = M_E_MEV
 M_p = mpf(M_P_MEV_VALIDATION)
 Q_n = mpf('0.7823432')
 M_n = M_p + M_e + Q_n

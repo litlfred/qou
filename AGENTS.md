@@ -318,6 +318,70 @@ first what each route derives and what it selects.
   that is the moment to stop and say so in the report.
 
 
+## 🟥 ASK THE OWNER BEFORE CHANGING THINGS (owner directive, 2026-09-07) — STRICT
+
+**This OVERRIDES the standing excise / sweep / drain / migrate authorisations
+throughout this document.** Verbatim: *"OVERRIDE / excise guidance.... new
+guidance = ask owner for changes (if changes are not increasing precision /
+derived from corpus)"*.
+
+**Default: ask first.** An agent may no longer start a corpus-wide excision,
+sweep, drain, migration, rename tranche or refactor on the strength of a
+directive written here. Those passages record what the owner *wanted at the
+time*; they are not standing permission to begin one now. Put the change to the
+owner with its measured blast radius and wait.
+
+### The two exemptions, and they are narrow
+
+A change proceeds without asking only if it is one of:
+
+1. **It increases precision.** Removing a float64 path, carrying `mpf` further
+   up the call chain, replacing a hardcoded literal with a derived value,
+   raising `mp.dps` where it was silently truncating. The test is that the
+   change makes a number *more* correct or makes a wrong number *impossible* —
+   not that it tidies something near a number.
+2. **It is derived from the corpus.** The corpus already fixes the answer and
+   you are making the code agree with it: the file's own docstring names the
+   quantity, a notation-register table publishes the value, a sorry-free Lean
+   theorem states the identity, or a producer's own convention is declared and
+   violated one line down. The test is that you can point at the corpus
+   artifact that decides it, and that a reviewer could check your work against
+   that artifact rather than against your reasoning.
+
+Everything else asks. Notably **not** exempt: consolidating onto a "better"
+route, tidying an inconsistency, mass-refreshing witnesses or sidecars,
+regenerating a derived artifact that belongs to someone else's arc, or applying
+a rule from this document across files you were not sent to.
+
+### Why the exemptions are shaped this way
+
+Both are things a reviewer can verify **without reconstructing the agent's
+session**. A precision fix is checkable by running the gate; a corpus-derived
+fix is checkable by opening the artifact it cites. Everything outside them
+requires trusting the agent's judgement about what *should* change, and that is
+the owner's call in a mathematics repository.
+
+### Worked example, the same day
+
+`q_int_at` / `q_int_classical_at` were added to
+`qou_substrate/constants.py` with **float64 fallbacks** in the no-mpmath branch.
+Excising them is exemption 1 (it removes a float64 path) *and* exemption 2 (the
+file's other four fallbacks all `raise`, so the corpus already fixed the
+convention) — so it proceeded without asking. Rewriting the *other* 29
+classical-convention files found by the same audit does **not** qualify: it needs
+a per-file basis determination, and it waits.
+
+### Interaction with the rest of this document
+
+- The **ALWAYS-PR** authorisation (branch, commit, push, open the PR) is
+  unaffected — that is about visibility, not about changing content.
+- **Run commands proactively** is unaffected. Measuring is not changing.
+- The **anti-fit**, **anti-laundering** and **NO-FLOAT64** disciplines are
+  unaffected and still bind; this rule adds a gate, it removes none.
+- When in doubt, **measure it, report the blast radius, and ask.** A measurement
+  the owner did not want costs a few minutes; a sweep they did not want costs a
+  review cycle and can bury a real finding under a thousand mechanical diffs.
+
 ## Critical-distance license (standing red-team permission, 2026-06-10)
 
 Agents have standing permission — and, when asked for assessment, an
@@ -741,6 +805,29 @@ user's last message, not the most recently mentioned file.
       > fourth independent run — **not one self-stale witness in the corpus is
       > safe to refresh**, and an idle pass should spend its budget on sidecars.
       > Recorded in `computations/witness-staleness-triage.witness.json`.
+      >
+      > **FIFTH run, 2026-09-07, and `cosmetic = 0` again — but one bucket
+      > MORE THAN DOUBLED and it is the one that matters.** Quote these:
+      > **603 decided**, **substantive 205 / 34.0 %**, **rewritten 333 /
+      > 55.2 %**, **unresolvable 55**, `cosmetic_env_differs` **1**,
+      > `cosmetic_import_infra_only` **0**, `cosmetic_strips_provenance` **0**,
+      > `unparseable` **0** — and **`cosmetic_import_cone_drift` 4 → 9**.
+      >
+      > The headline is stable across five runs and ~5 weeks: **zero self-stale
+      > witnesses are safe to refresh**, so an idle pass still spends its budget
+      > on sidecars. The *interesting* movement is that import-cone drift is the
+      > only growing bucket, and it is the one whose own label records
+      > "measured 2/2 moved" — a producer whose source is byte-stable while a
+      > NUMERIC-bearing module it calls changed. Those 9 are not "safe to
+      > refresh"; they are the opposite, the cases where a re-run is *expected*
+      > to move a number, and they are invisible to the `git diff <producer>`
+      > check AGENTS.md tells you to run. Everything else held its proportion
+      > (substantive 33.3 → 34.0 %, rewritten 55.3 → 55.2 %), so this is not
+      > drift in the denominator.
+      >
+      > Bean `qou-e9pp`, whose own record stopped at the third run
+      > (2026-08-19) and whose title still reads "~700 self-stale witnesses"
+      > against a decided population that has been 559–628 for a month.
 
       Source-
       identical is necessary but not sufficient, and the two extra gates are
@@ -1122,6 +1209,55 @@ ephemeral.
    options now apply only as the exceptions described above.
    Skill authors updating skill docs should refer to this rule
    rather than restating the policy in their own words.
+
+8a. **Draft → ready: SPACED RETRY ONLY. Never close-and-reopen a
+   PR to get past it** (owner ruling, 2026-09-05). Flipping a draft
+   PR to ready goes through GitHub's GraphQL API, which needs a
+   node-ID lookup, and that lookup is the thing being rate-limited
+   on this repo's shared token. So `mcp__github__update_pull_request`
+   with `draft: false` fails — often for hours — with
+
+       Failed to find pull request: API rate limit already exceeded
+       for user ID 662242
+
+   while every REST path (title, body, state, create, merge, and all
+   reads) keeps working. **Retry the same `draft: false` call, spaced
+   out — typically off a `send_later` check-in — until it lands.**
+
+   **Do NOT close the draft and create a replacement PR for the same
+   head.** It works, which is exactly why it keeps getting
+   reinvented: this session did it three times (#6526 → #6579,
+   #6649 → #6674, #6723 → #6753) before the owner ruled against it.
+   What it costs is not the API call but the record — the review
+   threads, the Copilot request, the comment history and the PR
+   number in every commit message, bean and coordination ledger that
+   already cites it all stay on the abandoned PR, and a reader who
+   follows that number lands on something marked "closed without
+   merging" when the work in fact merged. The agent-harness PR rules
+   independently forbid close-and-reopen; this ruling extends that to
+   the undraft case, which those rules do not name.
+
+   **Two measured traps when retrying.**
+
+   - **The error is not evidence the call did nothing.** A sibling
+     session measured (2026-09-05) that `update_pull_request` calls
+     which set `title` / `body` *alongside* `draft: false` returned
+     that same rate-limit error and **the title and body writes
+     landed anyway** — only the draft flip was dropped. Always
+     confirm with `pull_request_read` before re-sending a mutation,
+     or you will write it twice.
+   - **Retry `draft: false` ALONE.** Bundling other fields makes the
+     partial-success case above harder to read, and none of them need
+     the limiter.
+
+   **The fix that avoids the problem entirely: open the PR non-draft
+   in the first place** where the work is already verified.
+   `create_pull_request` takes `draft` as a plain REST field, so
+   `draft: false` at creation never touches the limiter. Rule 2 of
+   this section asks for the PR immediately, at the first commit,
+   which is usually before verification — so a draft is still the
+   right default for a tranche that is about to grow. It is the wrong
+   default for a PR you are opening at the end of the work.
 
 9. **Never delete closed/merged feature branches** (owner
    directive, 2026-06-12). Do not run `git push origin --delete
@@ -2023,6 +2159,36 @@ All three are the **three real DOF of the single H¹(Bring) = 2W** (rank-2 W-pla
   Most survivors compute the RIGHT value under the WRONG name — e.g. `VOL41 = 2*mp.clsin(2, mp.pi/3)` is `2·Cl₂(π/3) = 2.0299` ✓ annotated `# Vol(4₁) = 2Λ(π/3)` ✗. So a grep for the bad *name* does not imply a bad *number*; check the arithmetic beside it before "fixing" a value.)
 - **Q_β** (the CAL-2 proxy):  `Q_β = ℏ/𝔇_β = m_e·|q₀²−2q₀−1|(q₀+1)/(2q₀³) ≈ 0.784 MeV` (0.17% vs CODATA) — the bar-odd `sinh` partner of the bar-even `cosh` meson scale m_π. 𝔇_β **is** CAL-2; because the modulus is overdetermined and pinned most precisely by m_μ/m_e, Q_β reproduced from q₀ is a 0.17% **cross-check**, not a fourth input.
 
+  > **🛑 SCOPING NOTE (2026-09-05) — the route that produces this number is
+  > under review; the number is unchanged and nothing here is enacted.**
+  > Solving the published closed form against the ansatz shape
+  > `|tr_M^z(Δ_S)|·E₀` gives **`z = 1`**, which is **not** an admissible Markov
+  > parameter under convention D — the admissible roots are `z = q` and
+  > `z_D = q³/(q²+1)`, and `z = 1` leaves the `χ_(1³)` coefficient
+  > `c(1) = q²(q−1)(q³−q²−1)/… ≠ 0`, so it does not annihilate the block the
+  > GNS/TL quotient kills (`ConventionDAdmissibleRoots.lean`, sorry-free; PRs
+  > #6722 / #6763, both routes independent).
+  >
+  > **§NO FITTING, EXCEPT CAL-1/2/3 above counts this as selection against the
+  > target** — it names *a branch* chosen because it reproduces the measured
+  > value, and states that accuracy is not evidence of correctness. So the
+  > 0.17 % is not a point in this route's favour under the directive.
+  >
+  > **The two derived alternatives, neither adopted:** `z = q` (the
+  > augmentation) gives `0.8798906` MeV, **+12.470 %**; `z_D` gives
+  > `0.4447004` MeV, **−43.157 %**, against CODATA `0.7823334` MeV. Choosing
+  > between *them* by residual is the same defect one level down and is equally
+  > forbidden — the choice turns on what `ε` **means** in `Q_β = |ε(Δ)|·E₀`,
+  > which is bean `qou-99qc` and is an owner call.
+  >
+  > **Until it is made, cite this number with its scope**: it is a recorded
+  > cross-check whose functional is inadmissible under the canonical
+  > convention, not a derived prediction. Do **not** quote the 0.17 % as
+  > evidence for the framework, and do **not** replace it on your own
+  > initiative — that picks the option. Full enumeration:
+  > [`docs/audits/2026-09-05-qbeta-functional-decision-options.md`](docs/audits/2026-09-05-qbeta-functional-decision-options.md)
+  > §6.
+
 m_π (139.57 MeV) is genuinely independent of (m_e, q₀) (SDP-validated, Vol(Hopf)=0).
 
 > **Two-layer convention (owner-clarified 2026-06-16).** The table above is the canonical *mathematical* calibration. In the **Physical-Observations** layer one may anchor q₀ on a *derived* quantity with smaller experimental error: live compute (`tools/qou-substrate/python/qou_substrate/constants.py::q_at`) pins q₀ on the **proton** ratio m_p/m_e (0.017 ppb vs the muon ratio's 22 ppb; re-pin 2026-05-28 — the figure read "0.06 ppb" until 2026-08-21; the live CODATA table, `qou_substrate.constants.MASS_RATIO_P_E_ERR = float(_P_E.uncertainty)`, carries the tighter value), making m_μ/m_e a 9.5σ cross-check prediction (the μ–p substrate tension). This precision substitution is **not** a change to the canonical CAL-2 and **not** a fourth calibration / second-q₀-pin.
@@ -2064,11 +2230,40 @@ When working on math-affecting code or content, **trace the change to a step in 
 > for this ladder — so as written the argument does not support its
 > conclusion, even though the conclusion is right.
 >
-> **The sound form is the SIZE MISMATCH.** For an exact series the residual
-> after truncating at `N` tracks the *first omitted* term, so the N=4
-> residual should sit near `|c_5·u^5| = 0.577` ppb. Convention C measured it
-> at **0.055 ppb, ~10× smaller** — an anomalously good landing, which is the
-> fit signature. Use that, not "monotone".
+> **🛑 AND THE REPLACEMENT ARGUMENT WAS ALSO WRONG — corrected 2026-09-05, and
+> it was mine.** This block replaced "monotone" with a SIZE MISMATCH: *"the N=4
+> residual should sit near `|c_5·u^5| = 0.577` ppb; convention C measured it at
+> 0.055 ppb, ~10× smaller — an anomalously good landing, which is the fit
+> signature."* **That figure is computed on the SUPERSEDED `c_5`.**
+>
+> The slot is settled in
+> [`qbeta_ladder_c5_slot_provenance_probe.py`](computations/qbeta/qbeta_ladder_c5_slot_provenance_probe.py)
+> (bean `qou-54g5`): `c_5 = −(b²+½) = −1.2527` is **current** — six carriers,
+> 2.4 % from the SDP extraction `−1.2229`; `c_5 = 3c_3²+b = +12.8676` is
+> **superseded**, wrong sign, ~10× off. And `qbeta_ck_truncation_order_analysis.py`
+> still carries the superseded family at **line 57**, which is the script the
+> 0.577 was read from.
+>
+> With the **live** `c_5`, `|c_5·u^5| = 0.0561` ppb against the measured
+> **0.055** ppb — **2 % apart, exactly what an exact series predicts.** The
+> anomalously-good landing does not exist, and the argument points the other way.
+>
+> **What supports the conclusion is the residual MAGNITUDE.** Recomputed at the
+> proton pin under the live family, `|residual|` runs **6.1698 → 6.2260 ppb**
+> across N=4 → N=5 — it increases, so the signature holds. Under the superseded
+> family it runs 6.1698 → 5.5551 and does not. So the non-monotonicity is real
+> **under the correct coefficient**, while both arguments previously offered for
+> it — "monotone" and the size mismatch — are unsound. Use the magnitude
+> crossing, and note it is the *magnitude*: the signed column goes
+> −6.1698 → −6.2260, which is *decreasing*, and reading it that way is how PR
+> #6424 reached the opposite conclusion.
+>
+> **Caveat, load-bearing:** the crossing is only **0.91 %**, computed with `c_3`
+> hardcoded at the recorded proton extraction and at the proton pin only. It is
+> **not** robust to a large `c_3` move; a full settlement re-extracts `c_3` at
+> both pins. Probe:
+> [`qbeta_ck_c5_slot_and_size_mismatch_probe.py`](computations/qbeta/qbeta_ck_c5_slot_and_size_mismatch_probe.py)
+> (4/4).
 >
 > **The figures `+0.055 → +0.63` ppb are CONVENTION-C.**
 > `qbeta_ck_truncation_order_analysis.py` computes in whatever frame the
@@ -2152,7 +2347,7 @@ Authoritative reference: [`docs/precision-goals.md`](docs/precision-goals.md).
 
 | Leg | Target | Status |
 |-----|--------|--------|
-| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is 65 dps compute / 50 dps serialization (10⁻⁵⁰ absolute truncation) |
+| **L1. Compute precision** | internal cross-method agreement ≤ 1 ppQ (10⁻¹⁵) at substrate q_0 | met — `_precision.py` default is **70 dps compute / 60 dps serialization** (10⁻⁶⁰ absolute truncation, guard 10). **Do not quote 65/50/10⁻⁵⁰** — that was this row until 2026-09-06 and had been stale since at least 2026-08-30 (bean `qou-0z4i`). Measure, do not quote: `python3 -c "import qou_substrate.precision as P; print(P.COMPUTE_DPS, P.OUTPUT_DPS, P.PRECISION_GUARD)"`. The change was a strict tightening — recomputed values agree with committed ones over their whole shared prefix, so no recorded result was invalidated; only this figure was wrong. It reached durable artifacts twice, most recently PR #6937, whose body names "65 dps" and "the 50-dps floor" and thereby **understates** the remaining optimisation headroom (70 → 60 is more than 65 → 50). |
 | **L2. Per-observable accuracy** | for each predicted observable O: `σ_pred(O) ≤ σ_exp(O) / 100` | **1/5 scoreable met (`m_K/m_π` alone) — but that 1 is a truncation-fit + α_em-`sorry`-conditional, so 0/5 UNCONDITIONAL parameter-free (red-team 2026-08-22, see below)** — quote `beats_100x_scoreable`/`scoreable_total`, NOT `beats_100x_count=2`, which counts the calibration inputs `m_p` and `m_e` (corrected 2026-08-18) — see `per-observable-100x-status.witness.json` (`beats_100x_count=2`); the 5 missing observables (m_p, m_μ, Q_β, m_n, Δ_pn) — note **m_p misses by ~437× since 2026-07-04** (the fitted Habiro tower that landed it on CODATA to 0.0004 ppb was dropped; de-fitted round-trip +1.35 ppb — see [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md)) and **m_μ misses by 970.2× post-re-pin**, see below — and the Q_β/m_n/Δ_pn trio share a single root cause documented in [`docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md`](docs/audits/2026-05-30-l2-100x-status-3-failing-shared-root.md) |
 
 **Key distinctions** (avoid agent confusion):
@@ -2643,7 +2838,7 @@ Do not regress either.
 >   reason. Closing one shape does not
 >   close the class —
 >   [`docs/audits/2026-08-15-detector-blindness-taxonomy.md`](docs/audits/2026-08-15-detector-blindness-taxonomy.md)
->   catalogues **thirty-three** rows, and they split SIX ways — only the first
+>   catalogues **thirty-five** rows, and they split SEVEN ways — only the first
 >   group is about conventions at all:
 >
 >   - **1-16** — detector-blind *spellings* of convention C.
@@ -2686,6 +2881,22 @@ Do not regress either.
 >     (payload keys emitted verbatim by `build()`) — and the one live
 >     off-vocabulary producer travels the third. Not about data shape at all,
 >     which is why it is not in the 27-32 family.
+>   - **34** — `qou-t0wm`, and its own group because it blinds a detector by
+>     what an author **NAMED** a quantity rather than by shape or write path.
+>     An identifier matching `delta`/`err`/`resid` that also reaches both sides
+>     of a comparison was taken to mean the quantity IS the residual. An
+>     **error-propagation formula** mentions the measured quantities for
+>     exactly the same reason the residual does —
+>     `borromean_mass_MeV_err = sqrt((ratio_err·m_e)² + (ratio·m_e_err)²)` is a
+>     1σ propagated uncertainty and entirely correct. The discriminator is that
+>     **a residual is a difference**: requiring a `Sub` in the provenance keeps
+>     the `qou-tol0` positive (`delta = M_derived − M_obs`) and drops the class.
+>     Two things make it worth its own row. It was found by running the audit
+>     **on a fix made with that audit** — the repaired producer was still
+>     reported blocking. And the tier had fired on **nothing** on `main`, so
+>     the false positive was latent: **zero hits is not the same as verified
+>     sound**, and the audit doc asserted the second having measured only the
+>     first.
 >
 >   Several were found *by* detectors written to catch the previous blind spot —
 >   row 26 in the output of the audit that introduced it. Quote the split, not
@@ -4014,22 +4225,42 @@ export interface AuthorNote {
 
 `BlockBase.authorNotes?: AuthorNote[]`.
 
-> **🛑 "every block kind accepts it" is FALSE, and the field is dropped in
-> silence (measured 2026-08-30).** This line read *"every block kind accepts
-> it (builders pass through via `Omit<XBlock, "kind">`)"*. Four content-block
-> kinds — **`prose`, `table`, `equation`, `diagram`** — have zod schemas
-> declared as standalone `z.object({...})` rather than
-> `BlockBaseSchema.extend({...})`, so they restate a *subset* of the base
-> fields and `authorNotes` is not among them. Zod strips unknown keys, so a
-> note written on one of those blocks validates clean and **vanishes**.
+> **✅ LIVE STATE (verified 2026-09-05): all four kinds accept every base
+> field. `authorNotes` on a `prose` / `table` / `equation` / `diagram` block
+> WORKS — write it.** The rest of this box is the history of a defect that is
+> now closed in the product; read it for the mechanism, not for the state.
 >
-> **🛑 The `authorNotes` half of this is FIXED, and the standing advice at the
-> bottom was inverted. RE-MEASURED 2026-09-03.** The paragraph below listed
-> six dropped fields, five of them `authorNotes`, and closed by telling agents
-> **not** to put an author note on those four kinds. `folio-assistant`
-> **granted `authorNotes` to all four on 2026-08-24** (bean
-> `folio-assistant-5nle`), so following that advice now suppresses a field
-> that works.
+> Verified by **parse**, not by grep: `ProseSchema` / `EquationSchema` /
+> `DiagramSchema` / `TableSchema` each `safeParse` a block carrying
+> `authorNotes`, `defines`, `cites` and `computation` and **retain** every one.
+> The fix is `folio-assistant` **`a117daa`** (2026-09-03, *"Four block kinds
+> restated BlockBase instead of extending it"*), confirmed an ancestor of that
+> repo's `main`.
+>
+> **🛑 Why this box opened for months with the opposite claim, and why the
+> ordering matters.** The two paragraphs that used to lead were a 🛑 asserting
+> *"every block kind accepts it is FALSE, and the field is dropped in
+> silence"*, retracted nine lines below. An agent reading top-down met the
+> false claim first and stopped — the same *heading-contradicts-its-own-body*
+> defect this document already had to fix once, in the Phase-4 merge-gate
+> table. **The live state now leads; the history follows.** Superseded text,
+> kept because the mechanism is still worth reading: four content-block kinds
+> had zod schemas declared as standalone `z.object({...})` rather than
+> `BlockBaseSchema.extend({...})`, so they restated a *subset* of the base
+> fields; a zod object is non-strict, so a note written on one of those blocks
+> validated clean and **vanished**. `folio-assistant` granted `authorNotes` to
+> all four by hand on 2026-08-24 (bean `folio-assistant-5nle`), which fixed
+> that one field and left the mechanism — see the structural note below.
+>
+> **🛑 And the "fixed" rows in the table below were written AHEAD of the
+> evidence.** That table is dated 2026-09-03 and states its basis as
+> `folio-assistant` `93e476b`. `93e476b` is dated **2026-08-31** and does
+> **not** contain `a117daa` — so at the moment those rows were written, the
+> fix they call *"fixed — folio-assistant#164"* had not landed. The rows are
+> true **today**, and this line is not a retraction of them; it is a note that
+> they were forward-looking claims about an unmerged PR, which is precisely
+> the *"fixed on a branch, not in the product"* move that bean `qou-3v8h`
+> refused to close on. State what has landed, or say it has not.
 >
 > **This document could not have known, and that is the reusable lesson: the
 > validator you ran is the validator in the clone.** The count that produced
@@ -4048,11 +4279,58 @@ export interface AuthorNote {
 > | schema gap: `prose:knot-periodic-table` drops `computation` | 1 | **fixed** — folio-assistant#164 |
 > | `authorNotes` dropped | **0** | fixed upstream 2026-08-24 |
 >
-> The five `authorNotes` rows the table below names — `fine-structure-data`,
-> `tm-interaction-completeness`, `millennium-bounds-via-surreals-intro`,
+> 🛑 **That table measured a platform THIS REPO DOES NOT RUN, and the row above
+> is not true here (corrected 2026-09-06, bean `qou-lq8g`).** `93e476b` is
+> unpinned `folio-assistant` `main`. The platform this repo actually validates
+> against is the SHA in
+> [`.folio-assistant-pin`](.folio-assistant-pin) — **`428ca5c`, dated
+> 2026-08-23 09:52** — and the upstream grant `affcec4` (*"schema: grant
+> `authorNotes` to prose, equation, diagram and table"*) landed **after** it.
+>
+> Measured against the pin on 2026-09-06, on a clone
+> `scripts/setup-folio-assistant.sh` had just created:
+>
+> | class | count against the PIN |
+> |---|---|
+> | `authorNotes` dropped | **5** |
+> | `computation` dropped (`prose:knot-periodic-table`) | **1** |
+>
+> — the same six fields, in the same blocks, that the superseded text below
+> lists. Both halves are true and describe different platforms.
+>
+> **The re-measure instruction three lines up is what produces the
+> disagreement, not what resolves it.** It says to re-run
+> `scripts/setup-folio-assistant.sh` before quoting any figure — and that
+> script installs the **pinned** platform, so an agent following it lands on
+> `428ca5c` and sees five warnings a corpus-grep tells them were fixed.
+>
+> **Do NOT "fix" this by pointing the setup script at `main`.** The pin is
+> deliberate, and its rationale is in that script's own header: the checkers
+> live in the platform repo, so every count this repo quotes is a function of
+> **two** inputs, and defaulting to `main` let two agents on the same corpus
+> commit measure different numbers and each be right (bean `vbase`). Moving the
+> platform is meant to be a reviewable one-line commit to
+> `.folio-assistant-pin`, not a silent consequence of when you cloned.
+>
+> **So the useful rule is: name the platform whenever you quote a count.**
+> "validate: N issues" is meaningless without it, and this row is what that
+> looks like when it goes wrong — the same class as everything else this
+> section documents, one level up.
+>
+> Advancing the pin past `affcec4` would make the all-clear true here, and is
+> its own PR: 169 commits of checker changes move every count this repo quotes,
+> which is exactly the reviewable decision the pin exists to force.
+>
+> Of the six, only one has a downstream consumer: `knot-periodic-table`'s
+> `computation`, its link to its producer. The other five are author-facing
+> prose.
+>
+> Superseded — the five `authorNotes` rows the table below names
+> (`fine-structure-data`, `tm-interaction-completeness`,
+> `millennium-bounds-via-surreals-intro`,
 > `hecke-log-decomposition-table-data`,
-> `q-beta-form-a-n1-symbolic-table-data` — **are no longer dropped**. Kept as
-> a record of what the defect cost, not as a live list.
+> `q-beta-form-a-n1-symbolic-table-data`) were described here as *"no longer
+> dropped"*. Against the pin they still are.
 >
 > **The structural cause outlived the one-field fix, which is why it is worth
 > reading the rest of this box.** That grant added `authorNotes` to the four
@@ -4099,10 +4377,29 @@ export interface AuthorNote {
 > [`scripts/setup-folio-assistant.sh`](scripts/setup-folio-assistant.sh) and
 > check the clone is not behind before trusting a clean validate.
 >
-> **The fix is in `folio-assistant`, not here** — those four schemas should
-> extend `BlockBaseSchema` like the other six. Until they do, do **not** put
-> an author note on a `prose`, `table`, `equation` or `diagram` block: it will
-> be accepted and lost.
+> **The fix was in `folio-assistant`, not here, and it has LANDED** — all four
+> schemas now extend `BlockBaseSchema` like the other eleven (`a117daa`, on
+> that repo's `main`). The advice this paragraph used to give — *"do not put an
+> author note on a `prose`, `table`, `equation` or `diagram` block"* — is
+> **withdrawn and inverted**: write the note, it is kept. Verified by parse on
+> 2026-09-05, and locked upstream by two regression tests
+> (`scripts/tests/block-base-fields.test.ts`, which fails when any block schema
+> falls behind the base, and `scripts/tests/schema-ts-zod-parity.test.ts`), so
+> the next field cannot be forgotten one kind at a time the way `defines`,
+> `cites`, `simulator` and `computation` were.
+>
+> **The one thing that still bites is the CLONE, not the schema.** Everything
+> above is a statement about `folio-assistant` `main`; your validator is the
+> validator in *your* checkout. Measured this session: a qou tree validated
+> against a clone **169 commits behind** reported all six of these fields as
+> dropped — a defect that no longer exists. Before quoting any figure from this
+> box, or filing anything from a validate run, refresh and say what you ran
+> against:
+>
+> ```sh
+> bash scripts/setup-folio-assistant.sh
+> git -C folio-assistant fetch origin main && git -C folio-assistant log --oneline -1
+> ```
 
 **Render behavior**: SKIPPED by default in the LaTeX render
 (clean publication voice). Set environment variable
@@ -4731,7 +5028,7 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
 
 # 🛑 The `trap` above is load-bearing, not boilerplate. This recipe streams every
 # `lake-oleans.tgz.part` into ONE temp file before untarring, so `$TGZ` reaches
-# ~2.4G (27 parts, 2,514,511,602 B — measured 2026-09-04; it was ~1.6G/18 parts
+# ~1.8G (20 parts — reseeded 2026-09-06; was ~2.4G/27 parts on 2026-09-04, and ~1.6G/18 parts
 # before the 2026-08-31 reseed added own-package oleans), and until 2026-08-28
 # nothing deleted it — not the recipe, not a reaper.
 # Measured: a single leaked `/tmp/tmp.4JEBENOn9G` from 2026-08-15 was still on
@@ -4743,10 +5040,45 @@ git fetch --depth=1 origin "lake-cache/qou-$SLUG" \
 
 # 🛑 MEASURE the traces; do NOT assume them either way. This block used to state
 # flatly that "a RESTORED tree has oleans but NO .trace files". That WAS true and
-# is now FALSE for this branch: `lake-cache/qou-v4-24-0` was reseeded 2026-08-31
-# and carries 100.0% PAIRED trace coverage — 6170 of 6172 oleans have their own
-# .trace sibling (the 2 exceptions are QOU own-package oleans). Measured by
-# stream-listing the 27 parts; the seeders have refused a sub-90% seed since
+# is now FALSE for this branch: `lake-cache/qou-v4-24-0` was RESEEDED AGAIN
+# 2026-09-06 from a full `lake build QOU UGB Fred2005`, then GAP-FILLED the same
+# day. Measured on the branch head `a792c46d01b` (part19 of a 20-part seed
+# stamped "fresh f897ebc"; parts 00-19 are 19x94371840 + 28770096 B = 1.70 GiB):
+# **6492 oleans / 6492 PAIRED traces = 100.0% coverage**, 32461 tar entries,
+# 1 orphan trace. Per tree: mathlib 3480, QOU 2702, Aesop 129, Batteries 85,
+# ProofWidgets 34, UGB 28, Qq 12, Plausible 8, LeanSearchClient 3, ImportGraph 2.
+#
+# 🛑 The figures this line carried until 2026-09-06 — seed `1c496980587`,
+# 6483 oleans / 6484 traces, mathlib 3471, 32416 tar entries — are STALE, and
+# the way they went stale is the point. They are the PRE-GAP-FILL seed. The
+# deltas are exactly +9 oleans and +45 tar entries = **9 modules x 5 files**
+# (.olean/.ilean/.trace + 2 build artifacts): the four content-corpus imports
+# that were missing (Topology.FiberBundle.Basic, RingTheory.HopfAlgebra.Basic,
+# Analysis.Complex.UpperHalfPlane.Basic, Analysis.Real.Pi.Bounds) plus five
+# transitive deps. All four verified PRESENT at the head above. So the branch
+# was re-pushed after the figures were written, and the doc silently understated
+# it by 9 — quote the head sha with any count here, and re-measure.
+#
+# 🛑 VERIFYING THIS COSTS ~1.7 GiB OF GIT OBJECTS PER RUN, and that is enough to
+# brick a session. The round-trip check streams the parts (no tarball on disk),
+# but the FETCH is the cost, not the stream: two verification fetches into the
+# repo's own .git took it to 9.0G and the container to 402M free / 99%, where
+# the Bash harness cannot write its output capture and every command fails.
+# Fetch into a THROWAWAY repo so `rm -rf` reclaims it with no gc:
+#   T=/tmp/cachecheck; rm -rf $T; git init -q $T
+#   git -C $T remote add origin https://github.com/litlfred/qou
+#   git -C $T fetch --depth=1 -q origin lake-cache/qou-v4-24-0
+#   C=$(git -C $T rev-parse FETCH_HEAD)
+#   git -C $T ls-tree --name-only $C | grep '^lake-oleans\.tgz\.part' | sort \
+#     | while read -r p; do git -C $T show "$C:$p"; done | tar tzf - > /tmp/listing.txt
+#   rm -rf $T          # <- reclaims fully; a fetch into .git does NOT
+# raw.githubusercontent.com is NOT an alternative: the repo is private, so an
+# unauthenticated raw fetch 404s (measured, not assumed).
+#
+# The prior figures — the 2026-08-31 seed, 6170 of 6172 oleans, 27 parts — are
+# superseded; note that seed was NOT measured before being replaced, so no
+# before/after comparison exists (see lean-environment-setup.md §PRESERVE THE BUILD).
+# Measured by stream-listing the parts; the seeders have refused a sub-90% seed since
 # 2026-08-07. So the unconditional `touch` the recipe used to do now asserts
 # something false in the BLOCKING direction, which is why the line above runs
 # scripts/lake-restore-trace-check.sh instead: it sets the marker from the
@@ -4803,6 +5135,117 @@ is ~2 min vs a 40-min `lake build` storm. If a stray `lake build` already
 dropped the olean count (`find .lake/packages/mathlib -name '*.olean' | wc -l` ≪ 2919),
 re-restore the cache branch before `lean`-direct. Full recipe + recovery:
 [`lean-environment-setup.md` §"VERIFY a single file with lean-direct"](.claude/skills/local/lean-environment-setup.md#verify-a-single-file-with-lean-direct).
+
+> **🛑 A BARE `lean` IS A WEAKER CHECK THAN `lake build` — pass
+> `-DautoImplicit=false` (measured 2026-09-05, bean `qou-56qy`).** `lean`
+> invoked directly does **not** read the lakefile, so it does not apply its
+> `[leanOptions]`. `autoImplicit` defaults **true** in `lean` and is set
+> **false** in both the root and paper lakefiles, and with it on Lean silently
+> auto-binds an unbound identifier as an implicit argument rather than erroring.
+> Same file, same `LEAN_PATH`, on `QOU/MassTheory/AtomWordShadow.lean`:
+>
+> ```
+> lean                        ->  exit 0,  0 errors
+> lean -DautoImplicit=false   ->  exit 1,  6 errors      (lake agrees: 20)
+> ```
+>
+> That file was **red on `main`**, and it was called clean by a bare
+> `lean`-direct run *and* by both sweep scripts before they were fixed. Pass
+> `-s 65536` too, mirroring the paper lakefile's `moreLeanArgs`: one generated
+> module overflows the default elaboration stack and aborts as a bare `exit 134`
+> with no source error. So the recipe above is
+> `lean -DautoImplicit=false -s 65536 <file>`, never bare `lean`.
+>
+> **This is the sharper of the two defects on this line.** The snapshot problem
+> below makes a green *go stale*; this one makes a green *wrong from the start*,
+> on any tree, however fresh.
+
+> **🛑 `exit 0` here is a claim about the SNAPSHOT, not about the library
+> source (measured 2026-09-05, bean `qou-56qy`).** The restored cache is a
+> point-in-time tree. When a library signature moves after it was taken, a file
+> calling the old signature compiles clean *and* is red against the source it
+> names — both at once, with no signal. Realised, not hypothetical:
+> `descartesWtrace` recorded `lean`-direct `exit 0` and **landed on `main`
+> red**, because the cache was built 2026-08-30 while `794c34897d7`
+> (2026-09-03) retyped `SeminormalRep.wtrace`'s genericity hypothesis and
+> ported the seven consumers *inside* the package. The library half was done
+> correctly; a content-block sibling was simply not in it (#6751).
+>
+> **So on a branch that touches `.lean`, run the sweep rather than bare
+> `lean`-direct.** Each builds a shadow tree, rebuilds from source only the
+> modules whose own olean predates their own last source commit, and compiles
+> against that — never invoking `lake`, so the restored cache is not evicted:
+>
+> ```bash
+> scripts/lean-content-sweep.sh [file.lean ...]   # content-block siblings
+> scripts/lean-library-sweep.py                   # library dirty closure
+> ```
+>
+> Whole corpus 2026-09-06: **938** content blocks and 74 dirty library modules;
+> library sweep 122 s, content sweep ~55 min (pass the changed files, and
+> `SHADOW=`/`--shadow` to reuse the ~2.3 GB shadow). Wired into
+> `/prepare-merge` §4 and `prepare-merge-auto` Phases 1 and 4.
+>
+> **This read "261 content blocks and 74 dirty library modules, 0 red" until
+> 2026-09-06, and BOTH halves misled.** The 261 was the pre-coverage-fix
+> population: the sweep once filtered on an `import QOU` line, which reaches
+> **262** of the **938** content-block `.lean` files — the other 675 import only
+> Mathlib, are compiled by nothing else in the repo, and carry the same
+> auto-implicit vacuity class the sweep exists to catch. The script's own header
+> records the fix and calls the old form what it was: *"a 28%-coverage sweep
+> reporting 0 red is the kind of green this whole bean is about."* Quote the
+> figure the script prints, not this line.
+>
+> **🛑 And "0 red" is not the current result — at full scope it is 8 RED, of which
+> ZERO are corpus defects.** All 8 are one class: a **missing Mathlib olean**,
+> named at the block's own `import` line. Exactly **4** of the **252** distinct
+> Mathlib modules the content corpus imports are absent from the restored
+> `lake-cache/qou-v4-24-0` — `Topology.FiberBundle.Basic`,
+> `RingTheory.HopfAlgebra.Basic`, `Analysis.Complex.UpperHalfPlane.Basic`,
+> `Analysis.Real.Pi.Bounds` — and those four account for all 8. Absent from the
+> **paper and root trees alike**, and reproducible with **no shadow and no sweep**
+> on a plain restored cache, so it is the cache branch, not the gate and not the
+> source. So read the corpus result as **930 of 938 verifiable and green, 8
+> unverifiable here**, and do NOT "fix" those blocks: their imports are fine, the
+> cache is short. Fix at the cache branch (reseed those four cones) or give the
+> gate an expected-RED list, so it distinguishes *cannot verify* from *fails*.
+>
+> **🛑 QUIESCE THE SESSIONSTART BUILD BEFORE TRUSTING THE SAFETY INVARIANT.** Both
+> sweeps assert that the hardlinked shadow never writes through into the real
+> olean tree, checked by snapshotting it before and after. Measured 2026-09-06 the
+> QOU tree went **2660 → 2713** across a content sweep — 53 new, 62 rewritten —
+> and **neither sweep did it**: `lean-shadow-verify.sh` writes only inside
+> `$SHADOW` and unlinks first, while `scripts/lean-build-bg.sh`, re-fired by this
+> session's *compaction*, ran `lake build` concurrently (status stamped mid-sweep,
+> `attempts: 5`) and every changed path is under `QOU/`, `QOU.olean` included.
+> Read naively that diff accuses the gate under review of the one thing that would
+> make it worse than the bug. A concurrent `lake build` is also the eviction
+> hazard documented above, so this is not merely a measurement nuisance.
+>
+> **A `lake build` log you did not commission may already hold the answer.**
+> `/tmp/qou-lake-build.log` is the background build's full output and it is kept
+> (only the `/tmp/qou-lean-build-bg.log` *timing report* discards the error
+> bodies it counts). On 2026-09-06 it independently confirmed #6909 from the
+> canonical path — `✖ [6459/6460] QOU.Eightfold.ObstructionClassForcesComplexType`
+> with the same six source positions, sole failure in 6459 modules — on a branch
+> carrying no `.lean` change. Read it before running any build of your own.
+>
+> Full measurement, both count coincidences, and what is NOT established:
+> [`docs/audits/2026-09-06-full-content-sweep-938-and-the-cache-gap.md`](docs/audits/2026-09-06-full-content-sweep-938-and-the-cache-gap.md).
+>
+> **Two limits — do not write either out of a PR.** The dirty closure is
+> computed against *this* container's olean tree, so a result is
+> **container-scoped**: two sessions measured the same dependency as stale and
+> as current, and both were right. And neither script sweeps the **UGB** or
+> **Fred2005** packages.
+>
+> **A source-change count is the wrong population.** Six of those 74 have no
+> olean at all — a *new* file inherits its dependencies' staleness without ever
+> appearing in a drift count keyed on changed sources. Use the closure.
+>
+> This block is an owner-reviewable wording change to the repo's primary
+> verification guidance, added on the evidence above; revert the wording if you
+> disagree — the measurement stands either way.
 
 > **STRICT — route, don't give up, and prefer a sub-agent.** On **any**
 > Lean env/tool failure (LSP "no valid project path", `leansearch` SSL
@@ -5103,6 +5546,16 @@ formalization alike. Violation of any item below is a review failure.**
     candidates are, and what the next honest step would be. Then
     **stop** and report the gap in chat. An honest bean is always
     acceptable; a dishonest "closure" never is.
+13a. **NEVER close a bean whose subject is an open conjecture (owner
+    directive, 2026-09-06, verbatim: *"Don't close beans with open
+    conjectures!!!"*).** A bean that tracks a conjecture, a
+    conditional-class hypothesis, a literature-unsupported identification
+    (e.g. `A_ω → S`, bean `qou-q3np`), or the epistemic tier of a bridge
+    stays `todo` / `in-progress` until the mathematics closes — not until
+    the *recording* of its openness is done. "The scoping sentence is now
+    in the content block" is a body-append, not a completion. Only beans
+    whose whole task is mechanical (a citation key added, a file renamed)
+    may be completed while the conjecture they touch remains open.
 14. **Do NOT try to please.** The owner is a physicist. Fake progress
     is worse than no progress — it wastes time, pollutes the corpus,
     and erodes trust. If the math doesn't work, say so. If a

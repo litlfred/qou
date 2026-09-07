@@ -1,0 +1,163 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-09-06T04:30:09.498686+00:00",
+  "commitSha": "43fc534621224c2faf2f0dd717b5645886d87f49",
+  "assertions": [
+    {
+      "name": "τ(w₃)_for_the_corpus_band_word_matches_the_Lean_closed_form_(4+h²−3h⁴−h⁶)/(h²+4)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "(σ₀σ₁⁻¹)³_has_the_same_Markov_trace_as_w₃_(both_close_to_the_Borromean_rings)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "1_−_τ_Borr_=_h⁴(3+h²)/(h²+4)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "q-adic_order_of_the_Brunnian_deficit_at_q_=_1_is_4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "both_Borromean_words_are_pure_braids:_3_components,_the_unlink's_count",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "τ_Borr(q_=_1)_=_1:_classically_the_Borromean_rings_are_the_unlink_to_the_trace",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "rep_trace_at_q_=_1_is_2^(c(w)−n)_on_all_of_S₃_and_S₄",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "n_=_4_pair:_order_0,_components_1_vs_3,_Δ(1)_=_(2¹_−_2³)/16",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "order-zero_cross_term_vanishes_iff_component_counts_agree_(all_pairs_in_S₄)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "proton_pin:_Brunnian_deficit_<_1e-2_while_the_classical_n=4_cross_term_>_0.5_nat",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "component-count-decides-q-adic-order",
+  "scriptFile": "component_count_decides_q_adic_order_probe.py",
+  "scriptHash": "91b4205ee036",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/component_count_decides_q_adic_order_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/component_count_decides_q_adic_order_probe.py"
+  },
+  "description": "qou-5vhf step 2 (bean qou-0fxk): the order-zero part of any Markov-trace cross term tr(w) − tr(w′) is 2^{c(w)−n} − 2^{c(w′)−n} (the trace at q = 1 is the component-count trace; verified on all of S₃, S₄ in the spin-½ rep), so a cross term has positive q-adic order iff the two closures have the same number of components. Component-changing pairs (the n = 4 trefoil-vs-chain word, order 0, ~0.9 nats at the proton pin) carry a classical cross term; component-preserving pairs — the corpus's Brunnian band word w₃ = [A₀₁,A₁₂] against the 3-unlink — carry a pure q-deformation cross term: 1 − τ_Borr = h⁴(3+h²)/(h²+4), order 4, ~1.4e-3 at the pin. Route B's 'all orders in q' object is exactly the Brunnian class. Magnitudes through E₀ = m_e/(q₀(q₀−1)) are recorded as a diagnostic against the quoted μ₃ = 0.4708 MeV target; nothing is fitted or wired. Scope (a).",
+  "contentBlock": "prop:markov-trace-axiomatic-closed-form",
+  "parameters": {
+    "words": {
+      "brunnian_w3": "s0^2 s1^2 s0^-2 s1^-2 = [A01, A12]",
+      "borromean_alt": "(s0 s1^-1)^3",
+      "n4_interleaved": "s0 s1 s0 s2 s1",
+      "n4_sequential": "s0^2 s1^2 s2"
+    },
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "brunnian": {
+      "tau_closed": "-(q**12 - 3*q**10 + 2*q**8 - 4*q**6 + 2*q**4 - 3*q**2 + 1)/(q**4*(q**2 + 1)**2)",
+      "deficit_closed": "(q - 1)**4*(q + 1)**4*(q**2 - q + 1)*(q**2 + q + 1)/(q**4*(q**2 + 1)**2)",
+      "deficit_q_adic_order": 4,
+      "components": 3
+    },
+    "n4_pair": {
+      "Delta": "-q**3*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**3",
+      "q_adic_order": 0,
+      "components": {
+        "interleaved": 1,
+        "sequential": 3
+      }
+    },
+    "anchor_evaluation": {
+      "q0": "1.1099785827513808075916690956107688798744991218736",
+      "h0": "0.20906029879563931543084621313",
+      "brunnian_deficit_1_minus_tau": "0.00143783616321273404878686485335",
+      "brunnian_nats_minus_log_tau": "0.00143887084154640037308678263117",
+      "n4_classical_nats_minus_log_I_over_S": "0.895202868978016256675244560951",
+      "ratio_n4_over_brunnian_nats": "622.15651546313440409",
+      "m_e_MeV": "0.51099895069",
+      "E0_MeV": "4.18598136329447589694506215876",
+      "E0_times_brunnian_deficit_MeV": "0.0060187553826793390263",
+      "E0_times_brunnian_nats_MeV": "0.0060230865269010708431",
+      "E0_times_n4_classical_nats_MeV": "3.7473025259097225749",
+      "mu3_target_MeV_quoted": "0.4708",
+      "mu3_over_E0_brunnian_deficit": "78.22215227",
+      "E0_n4_classical_over_mu3": "7.959436121"
+    },
+    "verdict": "Component count decides the q-adic order: order 0 iff the closures' component counts differ. The corpus's Brunnian 3-body operator is the component-preserving, order-4 class — the one place route B's 'all orders in q' reading applies — and its magnitude at the pin is ~h⁴ ≈ 1.4e-3 (E₀·deficit ≈ 6e-3 MeV), two orders below the quoted μ₃ target, while a component-changing (classical) cross term is ~0.9 nats (≈ 3.7 MeV), an order above it. The missing 3-body magnitude sits between the two classes; neither class supplies it as it stands. Diagnostic only; not a fit."
+  },
+  "caveats": [
+    "μ₃ = 0.4708 MeV is QUOTED from BorromeanThreeBodyCluster.lean's docstring, not derived here.",
+    "Scope (a): 3- and 4-strand word classes; the general 'iff' is elementary (2^k injective)."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

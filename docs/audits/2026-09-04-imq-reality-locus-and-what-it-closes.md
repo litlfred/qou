@@ -1,5 +1,11 @@
 # `Q_β` real forces `Im q = 0` on the substrate branch — and what that closes in `conj:im-q-physical-role`
 
+> **Notation note.** This document predates the 2026-09-05 calibration rename and uses
+> the superseded symbols `𝔇_β` (CAL-2) and/or `𝔇_π` (CAL-3). Those are now
+> `P_skew^β` (the bar-skew β-channel) and `P_avg^π` (the bar-even π-channel); the
+> `𝔇` family is reserved for genuine decay rates (`𝔇_n`, `𝔇_μ`, `𝔇_K` = ℏ/τ).
+> The analysis below is left as the record of what was analysed at the time.
+
 **Date** 2026-09-04 · **Beans** `qou-c66b` (worked), `qou-kgtf` (session) ·
 **Branch** `claude/im-q-physical-role-2026-09-04`
 

@@ -1,0 +1,102 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0601458v1",
+ "source_sha256": "ef34611620cfd0bd",
+ "brief": "CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON — Interest in combinatorial interpretations of mathematica l entities stems from the convenience of the concrete models they provi de.",
+ "extended": "**CATEGORIFIED ALGEBRA AND QUANTUM MECHANICS JEFFREY MORTON**\n\n68 pp, 16 sections.\n\n**Abstract.** Interest in combinatorial interpretations of mathematica l entities stems from the convenience of the concrete models they provi de. Finding a bijective proof of a seemingly obscure identity can reveal u nsuspected signiﬁ- cance to it. Finding a combinatorial model for some mathemat ical entity is a particular instance of the process called “categoriﬁcatio n”. Examples include the interpretation of /C6 as the Burnside rig of the category of ﬁnite sets with product and coproduct, and the interpretation of /C6 [x] as the category of com- binatorial species. This has interesting applications to q uantum mechanics, and in particular the quantum harmonic oscillator, via Joya l’s “species”, a new generalization called “stuﬀ types”, and operators betw een these, which can be represented as rudimentary Feynman diagrams for the o scillator.\n\n**Outline.** 1 Introduction; 2 Structure Types; 3 Structure Types and the Harmonic Oscillator; 3.1 The Quantum Harmonic Oscillator; 3.2 Structure Types and the Weyl Algebra; 4 Stuff Types; 4.1 Groupoids; 5 Stuff Types And Quantum Mechanics; 7 Conclusions; 7.2 Other Generalizations; 8 Acknowledgements; Appendix A. A Little Higher-Dimensional Algebr; Appendix B. Slice Categories and 2-Categories; Appendix C. Categorical Approaches to Generali; C.1. Generalized Species; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: If F and G are two structure types, then |F +G| =|F| +|G| and\n- Theorem 2: The category Set[Z] is a 2-rig whose monoidal operation ⊗ is the\n- Theorem 3: The structure type operators A and A∗ satisfy\n- Theorem 4: IfG andG′ are tame groupoids, then so are G +G′ andG×G ′, and\n- Theorem 5: The collection of Z0-coloured ﬁnite sets forms the object set of a cat-\n- Theorem 6: The cardinality of the weak quotient of a groupoid G by a group G",
+ "tokens": {
+  "brief": 48,
+  "extended": 481
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-2-structure-types",
+   "title": "Structure Types",
+   "pages": "3-8"
+  },
+  {
+   "id": "sec-002-3-structure-types-and-the-harmonic-oscillator",
+   "title": "Structure Types and the Harmonic Oscillator",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-003-31-the-quantum-harmonic-oscillator",
+   "title": "The Quantum Harmonic Oscillator",
+   "pages": "8-11"
+  },
+  {
+   "id": "sec-004-32-structure-types-and-the-weyl-algebra",
+   "title": "Structure Types and the Weyl Algebra",
+   "pages": "11-14"
+  },
+  {
+   "id": "sec-005-4-stuff-types",
+   "title": "Stuff Types",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-006-41-groupoids",
+   "title": "Groupoids",
+   "pages": "14-30"
+  },
+  {
+   "id": "sec-007-5-stuff-types-and-quantum-mechanics",
+   "title": "Stuff Types And Quantum Mechanics",
+   "pages": "30-56"
+  },
+  {
+   "id": "sec-008-7-conclusions",
+   "title": "Conclusions",
+   "pages": "56-58"
+  },
+  {
+   "id": "sec-009-72-other-generalizations",
+   "title": "Other Generalizations",
+   "pages": "58-60"
+  },
+  {
+   "id": "sec-010-8-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "60-61"
+  },
+  {
+   "id": "sec-011-appendix-a-a-little-higher-dimensional-algebra",
+   "title": "Appendix A. A Little Higher-Dimensional Algebra",
+   "pages": "61-62"
+  },
+  {
+   "id": "sec-012-appendix-b-slice-categories-and-2-categories",
+   "title": "Appendix B. Slice Categories and 2-Categories",
+   "pages": "62-66"
+  },
+  {
+   "id": "sec-013-appendix-c-categorical-approaches-to-generalizin",
+   "title": "Appendix C. Categorical Approaches to Generalizing Species",
+   "pages": "66-66"
+  },
+  {
+   "id": "sec-014-c1-generalized-species",
+   "title": "C.1. Generalized Species",
+   "pages": "66-68"
+  },
+  {
+   "id": "sec-015-references",
+   "title": "References",
+   "pages": "68-68"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

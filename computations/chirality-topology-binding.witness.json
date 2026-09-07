@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-26T15:08:47.017635+00:00",
-  "commitSha": "a1019fbc334e971d44b685eba0ce16487a7237d4",
+  "computedAt": "2026-09-05T18:00:46.134151+00:00",
+  "commitSha": "7082789bfa658c72514e259dd82955acae1bafdb",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 433,
+  "durationMs": 666,
   "computation": "chirality-topology-binding",
   "scriptFile": "chirality_topology_binding_probe.py",
-  "scriptHash": "31a8b8eb040b",
-  "scriptCommitSha": "0c772454cfcf1032e2a06519427d85f56a8f5441",
+  "scriptHash": "a78b8d443fdc",
+  "scriptCommitSha": "4552fa0dd5d1d1efe7a7557c46b0c9dcf9140424",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,10 +19,12 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
   "invocation": {
     "argv": [
@@ -102,21 +104,21 @@
     }
   },
   "ame_B_MeV": {
-    "D": "2.224566",
-    "T": "8.481798",
-    "3He": "7.718043",
-    "4He": "28.295673",
+    "D": "2.224566199999999999999999999999999999999999999999997340954056611765576",
+    "T": "8.481796200000000000000000000000000000000000000000009585209925309324894",
+    "3He": "7.718041319999999999999999999999999999999999999999995711041411183331376",
+    "4He": "28.2956623999999999999999999999999999999999999999999915823563342238137",
     "6Li": "31.99464",
     "7Li": "39.24454"
   },
   "rms_MeV": {
-    "std·chain  (=merged B_sym)": 13.778312013448275,
-    "std·complete (all-pairs)": 11.606587758551592,
-    "Pauli·chain": 21.911409273347683,
-    "Pauli·complete": 7.852578919601708,
-    "Pauli-sym·complete": 24.155378276259505
+    "std·chain  (=merged B_sym)": 13.77830939915597,
+    "std·complete (all-pairs)": 11.60658609040092,
+    "Pauli·chain": 21.911407079677524,
+    "Pauli·complete": 7.852574919971186,
+    "Pauli-sym·complete": 24.155376015046553
   },
-  "he4_alpha_cluster_residual_MeV": 16.963022711981903,
+  "he4_alpha_cluster_residual_MeV": 16.963012111981904,
   "discipline": "EXPLORATORY — derive-or-refute, zero free parameters, no production rewire.",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",

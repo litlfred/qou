@@ -55,6 +55,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 
 def trM_borromean_closed(q):
+    # convention D — verified by EVALUATION at q0, not by reading: computations/audits/borromean_convention_by_evaluation.py
     h = q - 1 / q
     h2 = h * h
     return (4 + h2 - 3 * h2 ** 2 - h2 ** 3) / (h2 + 4)
@@ -94,7 +95,7 @@ def main() -> int:
     G = mp.catalan
 
     # f(q_0) such that correction = (α_em/π) · f(q_0) / 6 = residual
-    alpha_em = mp.mpf(1) / mp.mpf("137.0359991")
+    alpha_em = mp.mpf(1) / mp.mpf("137.035999084")
     f_target = residual / (alpha_em / mp.pi / 6)
     print(f"[Target] f(q_0) = {mp.nstr(f_target, 25)}")
     print(f"         f - 1  = {mp.nstr(f_target - 1, 18)}")

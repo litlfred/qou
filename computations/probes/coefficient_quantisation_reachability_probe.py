@@ -76,6 +76,7 @@ if str(_COMP) not in sys.path:
     sys.path.insert(0, str(_COMP))
 from substrate._precision import set_compute_dps  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import AME_B_HE3_MEV_VALIDATION
 
 set_compute_dps()
 
@@ -89,7 +90,7 @@ ROWS = [
     # atom,  A,  B_AME MeV,      B_chain_log MeV
     ("D",    2, mp.mpf("2.22457"), mp.mpf("2.83316")),
     ("T",    3, mp.mpf("8.4818"),  mp.mpf("6.63095")),
-    ("3He",  3, mp.mpf("7.71804"), mp.mpf("4.88387")),
+    ("3He",  3, AME_B_HE3_MEV_VALIDATION, mp.mpf("4.88387")),
     ("4He",  4, mp.mpf("28.2957"), mp.mpf("8.68166")),
     ("6Li",  6, mp.mpf("31.994"),  mp.mpf("14.5301")),
     ("7Li",  7, mp.mpf("39.2451"), mp.mpf("18.3279")),

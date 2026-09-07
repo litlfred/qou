@@ -42,6 +42,34 @@ variants, which is why the collapse is correct *here*" — is about `averaged`
 vs `averaged_weighted`. It does NOT justify collapsing `averaged -> sigma`,
 which is a different and larger loss.
 
+## The three arms, and what each one guards
+
+Rebuilt 2026-09-07 (bean `qou-o0pa`). All three run on the SAME canonical word,
+so nothing here confounds `d`-dropping with intra ordering:
+
+  * **d-preserving** -- `chi_all_lambda_any` over the word with `d` intact.
+    Reproduces the habiro atomic target to ~1e-50.
+  * **marshalled (current)** -- `compute_tau_M_nucleon_H3`, the PRODUCTION
+    helper. It no longer marshals (`qou-qu2w` removed that), so its agreement
+    with the d-preserving arm is a guard on production's ROUTING: it fires if
+    anyone re-points production back through the lossy path.
+  * **marshalled EXPLICIT** -- marshals on purpose, through
+    `marshal_to_chi_lambda_braid` into `chi_lambda_braid`. This is what
+    measures the loss the title names: 0.282 (p) and 0.126 (n) on the
+    canonical word.
+
+An earlier draft of this note called the probe "weaker than its title" and
+"vacuous" once the production arm stopped marshalling. That OVERSTATED it in
+one direction and understated the fix in the other. The production-agreement
+check is a real regression guard -- it can fail, if production regresses -- it
+simply cannot measure the size of the loss. The explicit arm restores that,
+additively, without disturbing the guard.
+
+Convention note, because getting it wrong is easy and silent:
+`marshal_to_chi_lambda_braid` emits `[(sign, gen_1based)]` FOR
+`hecke_characters.chi_lambda_braid`, NOT for the `chi_all_lambda*` family.
+Feeding it to the wrong kernel raises `unsupported crossing c=-1.0`.
+
 ## What this probe proves
 
 Running the SAME `Sum_lambda y_lambda * chi_lambda` over the SAME nucleon
@@ -50,8 +78,11 @@ habiro values to ~1e-50. So the two producers are not two conventions of one
 object; one is computing the trace of a DIFFERENT Hecke element — the one
 whose averaged crossings have been replaced by sigma.
 
-The d-preserving path is `chi_monotone_transfer.chi_all_lambda`, itself
-validated against `char_fast` at n=6 and four cached oracles to n=12, at 1e-50.
+The d-preserving path is `chi_general_word.chi_all_lambda_any` (the dispatcher;
+it was `chi_monotone_transfer.chi_all_lambda` until 2026-09-07, when the chain
+became the canonical NON-monotone word and the monotone-only kernel refused
+it). The monotone transfer underneath is validated against `char_fast` at n=6
+and four cached oracles to n=12, at 1e-50.
 
 ## What this probe does NOT do
 
@@ -88,12 +119,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 set_compute_dps(50)
 
 import closed_form_tau_M as C  # noqa: E402
-import chi_monotone_transfer as T  # noqa: E402
+from chi_general_word import chi_all_lambda_any  # noqa: E402
+import canonical_braid_marshalling as MM  # noqa: E402
+from hecke_characters import chi_lambda_braid  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from hecke_characters import partitions_of  # noqa: E402
-from hecke_core import (  # noqa: E402
-    _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
-)
+from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from canonical_braid_crossings import classify_crossing  # noqa: E402
 
 
@@ -135,22 +166,82 @@ def main() -> int:
     print("=" * 78)
 
     rows = []
-    for nuc, (g0, g1) in (("p", (_PROTON_G0, _PROTON_G1)),
-                          ("n", (_NEUTRON_G0, _NEUTRON_G1))):
-        chain = [(c, d, 0) for c, d in g0] + [(c, d, 1) for c, d in g1]
+    for nuc, (Z, N) in (("p", (1, 0)), ("n", (0, 1))):
+        # `chain` comes from the ruling's own emitter, 2026-09-07 (bean
+        # `qou-o0pa`). It used to be hand-built GROUPED out of the `hecke_core`
+        # chains -- `[(c,d,0) for ... g0] + [(c,d,1) for ... g1]` -- while the
+        # marshalled arm below was separately pinned to `grouped` to match. Both
+        # halves of that arrangement were wrong once
+        # `habiro-coefficients-atomic` was regenerated to the canonical ordering
+        # in `a4909014a5`, and the probe failed its own assertions on `main`.
+        #
+        # The substitution is SAFE and that is measured, not assumed:
+        # `atom_braid_word_3A` carries the SAME 11 crossings as
+        # `g0 + g1` -- identical `(c, d)` multiset -- and therefore an identical
+        # crossing census, which is what this probe's whole d-dropping argument
+        # rests on:
+        #
+        #     p  same (c,d) multiset=True  census equal=True
+        #        {'sigma': 6, 'averaged': 2, 'sigma_inv': 3}
+        #     n  same (c,d) multiset=True  census equal=True
+        #        {'sigma': 5, 'averaged': 2, 'sigma_inv': 4}
+        #
+        # Only the ORDER differs. Keeping the two arms on different orders made
+        # the probe measure d-dropping CONFOUNDED with ordering -- the two
+        # things it exists to separate.
+        chain = list(atom_braid_word_3A(Z, N))
         census = Counter(classify_crossing(c, d, float(h)) for c, d, _ in chain)
 
         word = [(mp.mpf(str(c)), mp.mpf(str(d)), g) for c, d, g in chain]
-        chi = T.chi_all_lambda(word, 3)
+        # The dispatcher, not `chi_monotone_transfer.chi_all_lambda`: the
+        # canonical word is NON-monotone and the monotone-only transfer refuses
+        # it outright ("non-monotone word: gen 0 after 1"). Same routing
+        # `qou-cvky` applied to its 11 monotone-kernel callers. At H_3 the
+        # general path is `d_lambda <= 2` and costs nothing.
+        chi = chi_all_lambda_any(word, 3)
         preserving = mp.fsum([y[p] * chi.get(p, mp.mpf(0)) for p in parts])
 
+        # `intra_order` UNPINNED, 2026-09-07 (bean `qou-o0pa`). The pin was
+        # added 2026-09-06 reasoning that the borromean default "would swing
+        # `marshalled` to 0.629/0.475 against a 1.146/0.988 target". That target
+        # no longer exists: `habiro-coefficients-atomic.witness.json` was
+        # regenerated to the canonical ordering in `a4909014a5`, the SAME
+        # option-B commit the pin was reacting to. Measured against the live
+        # target, the default matches to 50 digits and the pin misses by 82/108 %:
+        #
+        #     p  grouped    1.14575969245730087    rel 0.821
+        #     p  borromean  0.629328402202921918   rel 6.37e-51
+        #     n  grouped    0.987743688115809572   rel 1.08
+        #     n  borromean  0.475133517155682213   rel 2.39e-50
         marshalled = C.compute_tau_M_nucleon_H3(nuc, q0, dps=50)
         target = targets[nuc]
+
+        # THE EXPLICIT MARSHALLED ARM, restored 2026-09-07 (bean `qou-o0pa`).
+        #
+        # `marshalled` above calls the production helper, which no longer
+        # marshals — `qou-qu2w` removed that — so its agreement with
+        # `preserving` guards PRODUCTION's routing and cannot measure the loss
+        # the title advertises. This arm marshals explicitly and does.
+        #
+        # The convention is the marshaller's own, checked in its source rather
+        # than guessed: it emits `[(sign, gen_1based)]` FOR
+        # `hecke_characters.chi_lambda_braid`, not for `chi_all_lambda*`.
+        # Feeding it to the wrong kernel is what produced `unsupported crossing
+        # c=-1.0` on a first attempt.
+        mword = MM.marshal_to_chi_lambda_braid(chain, float(h))
+        marshalled_explicit = mp.fsum(
+            [y[pp] * mp.mpf(str(chi_lambda_braid(pp, mword, q0,
+                                                 precision="mpfr_50dps")))
+             for pp in parts])
+        rel_lossy = abs(marshalled_explicit - target) / abs(target)
 
         rel_pres = abs(preserving - target) / abs(target)
         rel_marsh = abs(marshalled - target) / abs(target)
 
         print(f"\n  {nuc}: census = {dict(census)}")
+        print(f"     marshalled EXPLICIT    {mp.nstr(marshalled_explicit, 18)}"
+              f"   rel vs habiro = {mp.nstr(rel_lossy, 3)}"
+              f"   (ratio {mp.nstr(marshalled_explicit / preserving, 6)})")
         print(f"     d-preserving           {mp.nstr(preserving, 18)}"
               f"   rel vs habiro = {mp.nstr(rel_pres, 3)}")
         print(f"     habiro atomic (target) {mp.nstr(target, 18)}")
@@ -164,6 +255,8 @@ def main() -> int:
             "d_preserving": str(preserving),
             "habiro_atomic_target": str(target),
             "marshalled_current": str(marshalled),
+            "marshalled_explicit": str(marshalled_explicit),
+            "rel_marshalled_explicit_vs_target": str(rel_lossy),
             "rel_d_preserving_vs_target": str(rel_pres),
             "rel_marshalled_vs_target": str(rel_marsh),
         })
@@ -182,15 +275,48 @@ def main() -> int:
     marsh = {r["nucleon"]: mp.mpf(r["marshalled_current"]) for r in rows}
     he4_ratio = ((marsh["p"] * marsh["n"]) ** 2) / ((pres["p"] * pres["n"]) ** 2)
     print(f"\n  implied 4He ratio (Z=N=2): {mp.nstr(he4_ratio, 10)}")
+    # Re-pointed 2026-09-06 (bean qou-y2o7). This asserted `== 2.157`, the
+    # ratio between the BROKEN marshalled path and the correct d-preserving
+    # one — i.e. it asserted the defect. `qou-qu2w` fixed that marshalling on
+    # 2026-08-26, so the two paths have agreed and the ratio has been 1.0 ever
+    # since; the assertion has been failing on success, and the committed
+    # witness (2.1566, passed: true) predates the fix and has been an
+    # unreproducible green for eleven days.
+    #
+    # The live check is now that the fix HOLDS. 2.157 is kept below as the
+    # historical symptom, which is what it always was.
     w.add_assertion(
-        name="he4_ratio_matches_the_observed_2p157",
+        name="qu2w_fix_holds_marshalled_equals_d_preserving",
         computed=str(he4_ratio),
-        expected="2.157",
-        tolerance="1e-3",
-        source=("(tau_p*tau_n)^2 ratio between the two paths. Matching the "
-                "independently-observed 0.34716 / 0.16097 = 2.157 closes the "
-                "chain from root cause to the reported symptom."),
+        expected="1.0",
+        tolerance="1e-30",
+        source=("(tau_p*tau_n)^2 ratio between the two paths. Before the "
+                "qou-qu2w fix this was 2.157, matching the independently "
+                "observed 0.34716 / 0.16097 and closing the chain from root "
+                "cause to reported symptom. It is 1.0 once the marshaller "
+                "stops dropping `d`, and a drift away from 1.0 means that "
+                "defect has returned."),
     )
+    # The loss is REAL and this is what makes the probe test its own title
+    # again: dropping `d` moves the trace by 28 % (p) and 13 % (n) on the
+    # canonical word. If this ever fell to ~0 the marshaller would have stopped
+    # being lossy, which would mean the `averaged -> sigma` collapse this probe
+    # documents had silently changed.
+    lossy = {r["nucleon"]: mp.mpf(r["marshalled_explicit"]) for r in rows}
+    for nuc in ("p", "n"):
+        w.add_assertion(
+            name=f"explicit_marshalling_is_still_lossy_{nuc}",
+            computed=str(abs(lossy[nuc] - pres[nuc]) / abs(pres[nuc])),
+            expected="0.1",
+            tolerance="0.2",
+            source=("Marshalling explicitly through marshal_to_chi_lambda_braid "
+                    "drops `d` on each nucleon's two `averaged` crossings. On "
+                    "the canonical word that moves the trace by 0.282 (p) / "
+                    "0.126 (n). A collapse toward 0 means the marshaller "
+                    "stopped being lossy; a large jump means the crossing "
+                    "census changed."),
+        )
+    w.add_data("historical_symptom_ratio_before_qu2w", "2.157")
 
     w.add_parameter("q_0", Q_50_DIGIT_STR)
     w.add_parameter("dps", 50)

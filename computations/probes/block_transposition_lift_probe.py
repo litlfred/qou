@@ -208,6 +208,7 @@ import mpmath as mp  # noqa: E402
 from hecke_characters import build_seminormal_matrices_mp  # noqa: E402
 from partition_utils import conjugate_partition  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 mp.mp.dps = 60
 INT_TOL = mp.mpf(10) ** -10          # measured 60-dps deviation is ~1.2e-14
@@ -423,7 +424,7 @@ def main() -> int:
 
     print("\n[4] THE VERDICT — cap broken, ceiling found")
     print("-" * 78)
-    need = mp.mpf("2.224566") / mp.mpf("0.066")
+    need = AME_B_DEUTERON_MEV_VALIDATION / mp.mpf("0.066")
     within = {}
     for lam, ks in exps.items():
         nz = [abs(k) for k in ks if k != 0]

@@ -1,0 +1,151 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T07:23:35.202141+00:00",
+  "commitSha": "5fff9e676a3c682cdf1c1bbe16300aeae42bf8e2",
+  "assertions": [
+    {
+      "name": "monotone_chain_triples_have_eps_xy_EQUAL_to_the_product",
+      "computed": "596",
+      "expected": "596",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "carrier + random monotone. This is the Lean's ChainTriple.eps_eq hypothesis and the only place monotonicity enters."
+    },
+    {
+      "name": "monotone_chain_triples_have_eps_yx_ZERO",
+      "computed": "596",
+      "expected": "596",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "triples",
+      "source": "the reverse ordering. Recorded because it is what a symmetrising scan sees, and what made me record my own correct prediction as refuted."
+    },
+    {
+      "name": "CONTROL_the_product_structure_FAILS_off_monotone",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "22 of 78 non-monotone chain triples satisfy it. Without this the hypothesis would look like an identity rather than a consequence of monotonicity."
+    },
+    {
+      "name": "the_monotone_divisibility_is_NOT_vacuous",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "bool",
+      "source": "Delta >= 2 on 62 carrier and 144 random monotone chain triples. Delta = 1 would make the vanishing trivial, which is exactly the trap the non-monotone arm falls into."
+    },
+    {
+      "name": "CONTROL_off_monotone_a_chain_triple_ACTUALLY_carries_nonzero_mubar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0",
+      "unit": "non-divisible triples",
+      "source": "of the 78 non-monotone chain triples exactly one has Delta >= 2, and divisibility fails on it. Without a counterexample the theorem would be indistinguishable from one whose hypothesis is never needed."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "chain-triple-magnus-coefficient-is-the-product",
+  "scriptFile": "chain_triple_magnus_coefficient_is_the_product_probe.py",
+  "scriptHash": "daa5dcd6d566",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/chain_triple_magnus_coefficient_is_the_product_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/chain_triple_magnus_coefficient_is_the_product_probe.py"
+  },
+  "description": "EXPLORATORY. Closes route 3's LAST residual -- the 31 chain triples the sibling OneSeparatedComponentSufficesForMilnorVanishing.lean isolates -- WITHOUT the connected-sum statement that sibling names as needed and that no held source in this corpus states. MEASURED: on a monotone closure the hub longitude's two far meridians occupy contiguous NON-INTERLEAVED blocks, so eps_{x,y}(lambda_hub) = u*v exactly (u = lk(hub,x), v = lk(hub,y)) and eps_{y,x} = 0 -- 62/62 on the carrier, 534/534 on random monotone words, against 18/71 and 21/71 off monotone. Since lk(x,y) = 0 on a chain, Delta = gcd(u,v), and gcd(u,v) | u | u*v UNCONDITIONALLY, so mubar vanishes. Every triple of the derived carrier is now covered: 393 by one separated component, 31 by this. CAUTION ON THE CONTROL: the non-monotone arm shows the HYPOTHESIS failing, not the CONCLUSION -- Delta = 1 in all 71 non-monotone chain triples, so divisibility is vacuous there; on the monotone side it is not (Delta >= 2 on 62/62 carrier and 144/534 random). Records that I predicted eps = u*v, then wrongly recorded it refuted because the symmetrised sum lands on the eps_{y,x} = 0 ordering. Scope (a) for the measurement; the scope-(b) exclusion lives in the Lean. Nothing wired.",
+  "auditOnly": "docs/audits/2026-09-04-carrier-derivation-held-literature-ledger.md",
+  "data": {
+    "what_this_replaces": {
+      "the_sibling_left_open": "the 31 chain triples of the derived carrier -- {i, i+1, i+2}, verified 62/62 in milnor_one_separated_component_and_the_chain_residual",
+      "what_it_said_would_close_them": "mubar of length k vanishes unless all k indices lie in a single connected-sum summand -- a statement corpus-grep path 5 found in no held source",
+      "what_actually_closes_them": "gcd(u,v) | u*v, an unconditional divisibility, given the measured block structure of a monotone closure's hub longitude",
+      "why_that_is_better": "the input is smaller, more concrete, and checkable by counting -- 596/596, with an off-monotone control -- rather than a citation this corpus cannot supply"
+    },
+    "measured": {
+      "carrier": {
+        "chain_triples": 62,
+        "eps_xy_eq_product": 62,
+        "eps_yx_zero": 62,
+        "both_orderings_divisible_by_delta": 62,
+        "delta_at_least_2": 62
+      },
+      "monotone_random": {
+        "chain_triples": 534,
+        "eps_xy_eq_product": 534,
+        "eps_yx_zero": 534,
+        "both_orderings_divisible_by_delta": 534,
+        "delta_at_least_2": 144
+      },
+      "non_monotone_random": {
+        "chain_triples": 78,
+        "eps_yx_zero": 29,
+        "both_orderings_divisible_by_delta": 77,
+        "eps_xy_eq_product": 22,
+        "delta_at_least_2": 1
+      },
+      "monotone_combined": {
+        "chain_triples": 596,
+        "eps_xy_eq_product": 596
+      }
+    },
+    "the_mechanism": {
+      "chain": "hub linked to both ends x, y; ends unlinked, so lk(x,y) = 0",
+      "delta": "gcd(u, v, 0) = gcd(u, v)",
+      "monotone_gives": "one run per generator puts the two far meridians in contiguous non-interleaved blocks of lambda_hub, so the degree-2 Magnus coefficient is a product of block sums",
+      "eps_xy": "u * v",
+      "eps_yx": "0",
+      "conclusion": "gcd(u,v) | u | u*v, unconditionally in u and v"
+    },
+    "order_dependence_is_the_point": {
+      "the_alarming_fact": "the raw coefficient is u*v one way and 0 the other, which looks fatal for something called an invariant",
+      "the_resolution": "that is exactly what the mod-Delta indeterminacy absorbs -- BOTH values are divisible by Delta, so the invariant is well defined and zero either way",
+      "both_divisible_carrier": 62,
+      "both_divisible_monotone": 534
+    },
+    "my_prediction_and_my_wrong_refutation": {
+      "predicted": "raw mubar = u*v, vanishing only mod Delta",
+      "apparently_refuted_by": "the symmetrised sum computed by milnor_mubar_vanishes_on_every_triple_probe.py gives an honest integer 0 on 62/62 and 534/534",
+      "why_the_refutation_was_wrong": "that symmetrisation lands on eps_{y,x}, the ordering that IS 0. The ordering carrying the content is eps_{x,y} = u*v",
+      "the_lesson": "a scan that symmetrises can turn a general mechanism into what looks like a coincidence; only breaking the sum into its three terms separated them"
+    },
+    "the_off_monotone_control_is_a_REAL_counterexample": {
+      "hypothesis_fails": "eps = u*v on only 22 of 78 non-monotone chain triples",
+      "and_so_does_the_conclusion": "1 of them is NOT divisible by Delta -- a genuine chain triple carrying nonzero mubar. That is what makes eps_eq load-bearing rather than decorative",
+      "non_monotone_delta_at_least_2": 1,
+      "the_rest_are_vacuous": "the other triples have Delta = 1, where 1 divides everything -- report that separately or the control reads as stronger than it is",
+      "monotone_side_is_not_vacuous": {
+        "carrier_delta_ge_2": 62,
+        "random_delta_ge_2": 144
+      },
+      "a_figure_I_got_wrong": "I first recorded 'all 71 non-monotone chain triples have Delta = 1', from a scratch run building a fresh seeded RNG per arm. This probe uses ONE RNG consumed sequentially, matching the #6679 genericity probe so the arms are comparable: 71 -> 78, and the counterexample appears. Same trap as #6679's 251/2080"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "reads no q0. Inputs are braid words, their closures' permutation cycles, integer linking numbers and degree-2 Magnus coefficients. No substrate pin is evaluated on any path."
+}

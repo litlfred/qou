@@ -30,10 +30,11 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE)); sys.path.insert(0, str(HERE / "substrate"))
 
 from borromean_binding_recompute import borromean_binding  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 # AME2020 totals (MeV) — comparison target only.
 AME = {"D": (1, 1, 2.224573), "T": (1, 2, 8.481821), "3He": (2, 1, 7.718058),
-       "4He": (2, 2, 28.295673), "6Li": (3, 3, 31.994564),
+       "4He": (2, 2, AME_B_HE4_MEV_VALIDATION), "6Li": (3, 3, 31.994564),
        "12C": (6, 6, 92.161728), "16O": (8, 8, 127.619), "56Fe": (26, 30, 492.254)}
 
 # canonical flat sgn(w₀)·dim net/target (classic q-dim), read from the

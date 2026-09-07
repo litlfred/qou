@@ -46,6 +46,11 @@ from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 
 def main():
@@ -67,10 +72,10 @@ def main():
 
     # Known knot volumes (m_e units)
     known = [
-        ("²H (D)", 2, 1, 2.224566, "6₂", 10.149),
+        ("²H (D)", 2, 1, AME_B_DEUTERON_MEV_VALIDATION, "6₂", 10.149),
         ("³H (T)", 1, 2, 8.481821, "8₁₁", 18.224),
-        ("³He", 2, 1, 7.718041, "L6a4", 16.356),
-        ("⁴He", 2, 2, 28.29567, "𝓑₃ (8G)", 8 * float(catalan_G)),
+        ("³He", 2, 1, AME_B_HE3_MEV_VALIDATION, "L6a4", 16.356),
+        ("⁴He", 2, 2, AME_B_HE4_MEV_VALIDATION, "𝓑₃ (8G)", 8 * float(catalan_G)),
     ]
 
     print(f"  {'Atom':>8s}  {'Z':>2s}  {'N':>2s}  {'B(AME) MeV':>12s}  {'Knot':>10s}  {'Vol(K)':>10s}  {'B/m_e':>10s}  {'n·Vol':>10s}")
@@ -157,10 +162,10 @@ def main():
     print()
 
     # α+d cluster model for ⁶Li
-    B_he4 = mp.mpf("28.29567")  # AME ⁴He
-    B_d = mp.mpf("2.224566")    # AME D
+    B_he4 = AME_B_HE4_MEV_VALIDATION  # AME ⁴He
+    B_d = AME_B_DEUTERON_MEV_VALIDATION    # AME D
     B_t = mp.mpf("8.481821")    # AME T
-    B_he3 = mp.mpf("7.718041")  # AME ³He
+    B_he3 = AME_B_HE3_MEV_VALIDATION  # AME ³He
     B_li6_ame = mp.mpf("31.99405")
     B_li7_ame = mp.mpf("39.24451")
     B_be7_ame = mp.mpf("37.60040")

@@ -1,0 +1,134 @@
+{
+  "engine": "python+sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T18:22:55.885166+00:00",
+  "commitSha": "c2ca50928f0d89f5159939a87e0d4204ce4afe77",
+  "assertions": [
+    {
+      "name": "no registered q0 produces the published 4.23033920 — so it is a transcription error, not a pin difference",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the proton pin gives 4.23033923, which is the corrected value",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "one exact null direction (the (1^3) Wedderburn block, y = 0 under D)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "four entries at +-0.75270211, three positive and one negative",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the witness agrees with the proton recomputation to 1e-14",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the block now publishes 4.23033923 and no longer 4.23033920",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the C column is internally consistent to 2e-8 — what six figures rounded to 8 decimals should give. This is CONSISTENCY, not verification: convention C is excised and no independent computation of it exists",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe",
+  "scriptFile": "the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe.py",
+  "scriptHash": "fb605057d93e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_gram_block_publishes_a_D_eigenvalue_no_pin_produces_probe.py"
+  },
+  "description": "prop:frobenius-gram-matrix published its largest convention-D Gram eigenvalue as 4.23033920. Its own declared witness (frobenius-gram-matrix-probe, q0Anchor proton) computes 4.230339225030225, which rounds to 4.23033923 -- five half-ulps away. The proton/muon pin gap moves this eigenvalue by ~4e-8 against a 2.5e-8 discrepancy, so magnitude alone could not distinguish a typo from a pin and it had to be computed. Rebuilding the whole 6x6 from the block's own symbolic entries at every registered pin gives 4.23033923 (proton), 4.23033940 (muon live) and 4.23033940 (retired): NO registered q0 produces 4.23033920, so it is a transcription error. Corrected in the block; the other five D entries (-0.75270211, 0, +0.75270211 x3) are right at the proton pin and unchanged. Four of the checker's five flags on this block are the convention-C spectrum, published deliberately as a labelled side-by-side comparison against the production convention D -- a legitimate publication class, not a defect. The C column is left untouched and remains unverified against an independent computation because convention C is excised and none exists; it does pass the one check its own numbers permit, its six eigenvalues multiplying to -0.189205215 against the published det G = -0.189205219144, a 2.0e-8 agreement consistent with six 8-decimal roundings. That is internal consistency, not verification. qou-i229.",
+  "contentBlock": "prop:frobenius-gram-matrix",
+  "data": {
+    "D_spectrum_at_proton": {
+      "q0": "1.1099785827513808075916690956107688798744991218736",
+      "eigenvalues": [
+        "-0.7527021132519654",
+        "-1.752319513770899e-41",
+        "0.7527021132519654",
+        "0.7527021132519654",
+        "0.7527021132519654",
+        "4.230339225030226"
+      ],
+      "largest_to_8dp": "4.23033923"
+    },
+    "D_spectrum_at_muon_live": {
+      "q0": "1.109978595642739046681795129380001752700065561029011556974045769999095",
+      "eigenvalues": [
+        "-0.7527021138491605",
+        "-2.127485555347363e-41",
+        "0.7527021138491605",
+        "0.7527021138491605",
+        "0.7527021138491605",
+        "4.230339401101782"
+      ],
+      "largest_to_8dp": "4.23033940"
+    },
+    "D_spectrum_at_retired": {
+      "q0": "1.1099785955541805752815940796095093779932822799587",
+      "eigenvalues": [
+        "-0.7527021138450581",
+        "-2.391581119318718e-40",
+        "0.7527021138450581",
+        "0.7527021138450581",
+        "0.7527021138450581",
+        "4.230339399892241"
+      ],
+      "largest_to_8dp": "4.23033940"
+    },
+    "correction": {
+      "block": "prop:frobenius-gram-matrix",
+      "was": "4.23033920",
+      "now": "4.23033923",
+      "half_ulps_off_at_8dp": "5.006",
+      "produced_by_any_registered_pin": "no"
+    },
+    "convention_C_column_internal_check": {
+      "relative_agreement_of_eigenvalue_product_with_det": "1.98855e-8",
+      "status": "internal consistency only -- NOT verified, and the C figures are deliberately NOT transcribed into this witness; see the probe docstring"
+    }
+  },
+  "caveats": [
+    "The C column is NOT verified. Convention C is excised, so no independent computation of it exists in the corpus. The 2.0e-8 figure recorded here is the published eigenvalues multiplied against the published determinant -- internal consistency, which a set of wrong-but-consistent numbers would also pass.",
+    "Asserts the CORRECTED state, not the defect. A probe that asserts a defect goes red the moment the fix lands -- the muon_pin_three_values failure qou-i229 already records.",
+    "Says nothing about the signature reading; this block already settled that and withdrew its earlier indefinite/Lorentzian claim in 748ba9b1."
+  ]
+}

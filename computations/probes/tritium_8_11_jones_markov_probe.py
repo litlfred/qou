@@ -83,14 +83,17 @@ sys.path.insert(0, str(HERE.parent))
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from codata_constants import M_E_MEV  # noqa: E402
+from codata_constants import (
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV  # noqa: E402,
+)
 from knot_braid_database import braid_word_for_knot, n_strands_for_knot  # noqa: E402
 from markov_trace_for_knot import markov_trace_for_knot  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 # AME 2020 reference
-AME_BINDING_3H_MEV = 8.481798
+AME_BINDING_3H_MEV = AME_B_TRITIUM_MEV_VALIDATION
 
 
 def main() -> int:

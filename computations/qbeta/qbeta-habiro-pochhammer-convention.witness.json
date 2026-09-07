@@ -1,0 +1,61 @@
+{
+  "probe": "qbeta_habiro_pochhammer_convention_probe",
+  "bean": "qou-cds1",
+  "question": "does the Lean qPochhammer in habiro-precision-ladder-equivalence match the expansion it formalizes?",
+  "answer": "No. It used prod(1-u^{2k}) = (u^2;u^2)_m where the corpus's stored Habiro coefficients are computed against (u;u)_m = prod(1-u^k) at u = sqrt(q). Reconstructing tr_M with the Lean's convention gives 6.9602 instead of 1.1458 (507 %). Corrected in the Lean and the .md.",
+  "scope": "(b) for the discrepancy \u2014 an exact arithmetic mismatch against a stored witness, with the convention declared by the witness itself. (a) for the fix direction. Confined to the FORMALIZATION: the compute layer already used (1-u^k), so no published number was wrong, and the corrected declaration has zero external consumers.",
+  "reconstruction": {
+    "p (proton, A=1)": {
+      "witness_tr_M_at_q0": "0.6293284022029219051444",
+      "pochhammer_1_minus_u_k": "0.6293284022029219181653",
+      "rel_err_1_minus_u_k": "2.069e-17",
+      "pochhammer_1_minus_u_2k": "2.892373666827665779077",
+      "rel_err_1_minus_u_2k": "3.596"
+    },
+    "n (neutron, A=1)": {
+      "witness_tr_M_at_q0": "0.4751335171556822112807",
+      "pochhammer_1_minus_u_k": "0.4751335171556822125061",
+      "rel_err_1_minus_u_k": "2.579e-18",
+      "pochhammer_1_minus_u_2k": "1.432438484041037834848",
+      "rel_err_1_minus_u_2k": "2.015"
+    }
+  },
+  "lean_verification": "lean -DautoImplicit=false -s 65536 -> exit 0, 0 errors (never lake build; restored olean cache intact)",
+  "separate_defect_reported_not_fixed": "computations/habiro/habiro_exact_qbeta.py::eval_a_m_at_u does u = float(u_val) \u2014 float64 \u2014 contradicting a comment 25 lines below in the same file; it emits habiro-exact-qbeta.witness.json.",
+  "q0": "1.1099785827513808076",
+  "q0_pin": "proton (q_at)",
+  "dps": 60,
+  "assertions": [
+    {
+      "name": "witness_declares_the_1_minus_u_k_convention",
+      "passed": true,
+      "detail": "habiro-coefficients-atomic.witness.json description: 'Habiro / cyclotomic expansion tr_M(T_w, q) = \u03a3_m a_m\u00b7(check_q;check_q)_m (check_q = q^{1/2}) for atomic braids p, n (def' \u2014 i.e. the expansion is against (check_q;check_q)_m with check_q = q^{1/2}, which is prod(1-u^k) at u = sqrt(q). The convention is stated by the data itself, not inferred."
+    },
+    {
+      "name": "1_minus_u_k_reproduces_the_stored_trM",
+      "passed": true,
+      "detail": "p (proton, A=1): 2.069e-17; n (neutron, A=1): 2.579e-18 \u2014 both atoms reconstruct to better than 1e-15 at 60 dps, evaluating the a_m through sympy exact rationals rather than the producer's float64 path."
+    },
+    {
+      "name": "1_minus_u_2k_is_off_by_hundreds_of_percent",
+      "passed": true,
+      "detail": "p (proton, A=1): rel 3.596 (2.892373666827665779077 vs 0.6293284022029219051444); n (neutron, A=1): rel 2.015 (1.432438484041037834848 vs 0.4751335171556822112807) \u2014 this is what the Lean definition and the .md both specified. Not a rounding question: 507 % and 362 %."
+    },
+    {
+      "name": "it_was_also_a_notation_error_independently",
+      "passed": true,
+      "detail": "(u;u)_m DENOTES prod(1-u^k); prod(1-u^{2k}) is (u^2;u^2)_m. So the definition disagreed with the name it was given whichever expansion one wants \u2014 the same name-vs-body class as markovZ / markovZC / markovZc (#5972, #6015). Two of the three QOU.BraidKnot.qPochhammer definitions in mass-theory/ (habiro-expansion-atomic, full-pole-structure-mass-trace) already used (1-u^k); the equivalence file was the only one that did not."
+    }
+  ],
+  "allPassed": true,
+  "scriptFile": "qbeta_habiro_pochhammer_convention_probe.py",
+  "scriptHash": "b8de012f0ace",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "commitSha": "791b6c9c21ee3e68f2b9616eefe34d1c46d30339",
+  "engine": "python+sympy+mpmath",
+  "computedAt": "2026-09-07T10:13:54.719112+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "the physical proton pin"
+}

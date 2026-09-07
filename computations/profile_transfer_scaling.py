@@ -24,7 +24,7 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
 
-from chi_monotone_transfer import chi_all_lambda  # noqa: E402
+from chi_general_word import chi_all_lambda_any  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q as Q0  # noqa: E402
@@ -52,7 +52,7 @@ def main() -> int:
         Z, N = representative_zn(A)
         word = atom_braid_word_3A(Z, N, include_inter=True)
         t0 = time.time()
-        chi = chi_all_lambda(word, n)
+        chi = chi_all_lambda_any(word, n)
         t_chi = time.time() - t0
         t1 = time.time()
         y = {tuple(k): mp.mpf(str(v)) for k, v in y_lambda_at(n, Q0).items()}

@@ -57,6 +57,7 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 from _precision import set_compute_dps  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 set_compute_dps()
 HERE = Path(__file__).resolve().parent
@@ -67,7 +68,7 @@ d = json.loads(CACHE.read_text())
 q0 = mp.mpf(d["q_0_50dps"])
 m_e = mp.mpf("0.51099895069")
 E0 = m_e / (q0 * (q0 - 1))                       # SAME E0 as #4392 / rho_F
-B4He = mp.mpf("28.29566")                         # AME full 4He binding, target only
+B4He = AME_B_HE4_MEV_VALIDATION                         # AME full 4He binding, target only
 MU4 = mp.mpf("4.591048")                          # |mu4| 4-body simplex residual, target only
 MU3 = mp.mpf("0.47076896")
 

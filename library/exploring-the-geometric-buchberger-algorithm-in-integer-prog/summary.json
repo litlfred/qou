@@ -1,0 +1,81 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "exploring-the-geometric-buchberger-algorithm-in-integer-prog",
+ "source_sha256": "73854bc5e3bcffb0",
+ "brief": "Exploring the Geometric Buchberger Algorithm in Integer Programming Gabriel Mattos Langeloh gmlangeloh@inf.ufrgs.br — The Geometric Buchberger algorithm is a specialization of the clas- sical",
+ "extended": "**Exploring the Geometric Buchberger Algorithm in Integer Programming Gabriel Mattos Langeloh gmlangeloh@inf.ufrgs.br**\n\n*Instituto de Informatica, Universidade Federal do Rio Grande do Sul*\n\n8 pp, 12 sections.\n\n**Abstract.** The Geometric Buchberger algorithm is a specialization of the clas- sical Buchberger algorithm to the case of toric ideals, with applica- tions in the solution of families of integer programming problems. In this paper, we investigate the performance of the Geometric Buchberger algorithm in a variety of combinatorial optimization problems with both integer and binary variables, introducing algo- rithmic improvements for the latter case in the form of an efficient criterion for detecting S-binomials that can be truncated away. Our experiments show that our implementation, available in the package IPGBs.jl, computes Grébner bases for toric ideals of combi- natorial optimization problems more efficiently than the previous state-of-the-art. ACM Reference Format: Gabriel Mattos Langeloh. 2024. Exploring the Geometric Buchberger Al- gorithm in Integer Programming.\n\n**Outline.** Abstract; 1 INTRODUCTION; 2 BACKGROUND; 3 THE BINARY CASE; 4 EXPERIMENTAL RESULTS; 4.1 Experimental setup; 4.2 Evaluating the binary case; 4.3 IPGBs performance; 4.4 Computing group relaxations; 5 CONCLUSION; Acknowledgments; References",
+ "tokens": {
+  "brief": 47,
+  "extended": 336
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "INTRODUCTION",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-2-background",
+   "title": "BACKGROUND",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-003-3-the-binary-case",
+   "title": "THE BINARY CASE",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-004-4-experimental-results",
+   "title": "EXPERIMENTAL RESULTS",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-005-41-experimental-setup",
+   "title": "Experimental setup",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-006-42-evaluating-the-binary-case",
+   "title": "Evaluating the binary case",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-007-43-ipgbs-performance",
+   "title": "IPGBs performance",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-008-44-computing-group-relaxations",
+   "title": "Computing group relaxations",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-009-5-conclusion",
+   "title": "CONCLUSION",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-010-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-011-references",
+   "title": "References",
+   "pages": "7-8"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,1428 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T18:29:42.517668+00:00",
+  "commitSha": "1939368ba99db0ce43a38da1913c72dbd8a4407a",
+  "assertions": [
+    {
+      "name": "planchereL_subset_is_smaller_than_the_raw_grep",
+      "computed": "12",
+      "expected": "39",
+      "passed": false,
+      "source": "Files the qou-oots choice can move, vs the raw grep count that was quoted as the blast radius. These are EXPECTED TO DIFFER -- the assertion records both numbers side by side rather than testing equality; read the values, not the pass/fail."
+    }
+  ],
+  "allPassed": false,
+  "durationMs": 15051,
+  "computation": "w-lambda-family-consumer-audit",
+  "scriptFile": "w_lambda_family_consumer_audit.py",
+  "scriptHash": "b55a19691646",
+  "scriptCommitSha": "d5746e24c50019c7a5ee205137e6fc3fbeb62eab",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/audits/w_lambda_family_consumer_audit.py"
+    ],
+    "reproduce": "python3 -u computations/audits/w_lambda_family_consumer_audit.py"
+  },
+  "description": "Bean qou-oots option C. Classifies every live (non-_deprecated) computations/ file that references a `w_lambda`-named weight by WHICH family it actually constructs: PLANCHEREL (the dim_q^2/[n]_q!, dim_q^2/D^2 or Molien families -- the ones the qou-oots canonical choice is between), MARKOV (y_lambda, NOT part of that choice), BOTH (a deliberate comparison or an undeclared straddle), or NAME-ONLY (the token appears with no construction -- the files a raw grep over-counts). Purpose is to replace the raw grep count of 43, which was quoted as a blast radius and is the wrong number for it because `w_lambda` names several different objects. LIMITS: classification is by source pattern, so a weight reached through an alias, a factory, or a witness read at runtime is invisible; every bucket is a LOWER BOUND on its own membership and NAME-ONLY is a lower bound on 'computes no weight'. Measured, not complete.",
+  "data": {
+    "name_gate_missed": {
+      "count": 26,
+      "note": "Files carrying a Plancherel-SHAPED d^2/[n]_q! construction that contain NO `w_lambda`-family token, so the name gate never examined them at all. The 13th blindness mode, and a SCOPE defect rather than a pattern one: the PR #6840 provenance repair could not have helped because these files never reached it. 🛑 A ROW HERE IS NOT AUTOMATICALLY IN THE MOLIEN BLAST RADIUS -- do not add this count to the 11 and quote a total. Two spot-checks show the range: q_pinning_50_digit.py:169 computes dim_q^2/[n]_q! correctly and is a real consumer (in the ANCHOR-DEFINING producer), while mass_endomorphism.py:93 divides by the sum of its own weights and is therefore already self-normalised dim_q^2/D^2, which the ruling does not move. Read the construction, and check `shape_only` first.",
+      "files": {
+        "chirality_avg_content.py": [
+          {
+            "line": 249,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "d * d / n_fac_q",
+            "matched_numerator": [
+              "dim_q"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "dim_q",
+              "n",
+              "q_val",
+              "shape"
+            ],
+            "denominator_provenance_sample": [
+              "n",
+              "n_fac_q",
+              "q_factorial",
+              "q_val"
+            ]
+          }
+        ],
+        "chirality_avg_content_atomic.py": [
+          {
+            "line": 229,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dim_q(shape, Q0, n_fac_q) ** 2 / n_fac_q",
+            "matched_numerator": [
+              "dim_q"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "Q0",
+              "Q_50_DIGIT_STR",
+              "atom_data",
+              "dim_q",
+              "mpf",
+              "n",
+              "n_fac_q",
+              "q_factorial"
+            ],
+            "denominator_provenance_sample": [
+              "Q0",
+              "Q_50_DIGIT_STR",
+              "atom_data",
+              "mpf",
+              "n",
+              "n_fac_q",
+              "q_factorial"
+            ]
+          },
+          {
+            "line": 261,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dim_q(shape, Q0, n_fac_q) ** 2 / n_fac_q",
+            "matched_numerator": [
+              "dim_q"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "Q0",
+              "Q_50_DIGIT_STR",
+              "atom_data",
+              "dim_q",
+              "mpf",
+              "n",
+              "n_fac_q",
+              "q_factorial"
+            ],
+            "denominator_provenance_sample": [
+              "Q0",
+              "Q_50_DIGIT_STR",
+              "atom_data",
+              "mpf",
+              "n",
+              "n_fac_q",
+              "q_factorial"
+            ]
+          },
+          {
+            "line": 295,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dim_q(shape, Q0, n_fac_q) ** 2 / n_fac_q",
+            "matched_numerator": [
+              "dim_q"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "Q0",
+              "Q_50_DIGIT_STR",
+              "atom_data",
+              "dim_q",
+              "mpf",
+              "n",
+              "n_fac_q",
+              "q_factorial"
+            ],
+            "denominator_provenance_sample": [
+              "Q0",
+              "Q_50_DIGIT_STR",
+              "atom_data",
+              "mpf",
+              "n",
+              "n_fac_q",
+              "q_factorial"
+            ]
+          }
+        ],
+        "chirality_avg_content_chiral.py": [
+          {
+            "line": 310,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dim_q(shape, Q0, n_fac_q) ** 2 / n_fac_q",
+            "matched_numerator": [
+              "dim_q"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "Q0",
+              "Q_50_DIGIT_STR",
+              "dim_q",
+              "mpf",
+              "n",
+              "n_fac_q",
+              "q_factorial",
+              "shape"
+            ],
+            "denominator_provenance_sample": [
+              "Q0",
+              "Q_50_DIGIT_STR",
+              "mpf",
+              "n",
+              "n_fac_q",
+              "q_factorial"
+            ]
+          }
+        ],
+        "delta_lambda_full_variance_phase5e_1.py": [
+          {
+            "line": 170,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dq * dq / qfact",
+            "matched_numerator": [
+              "dim_q",
+              "dq"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "Q0_PROTON",
+              "dim_q",
+              "dq",
+              "mp",
+              "mpf",
+              "shape",
+              "str",
+              "tuple"
+            ],
+            "denominator_provenance_sample": [
+              "Q0_PROTON",
+              "n_strands",
+              "qfac",
+              "qfact"
+            ]
+          }
+        ],
+        "hh-trefoil-corrected.py": [
+          {
+            "line": 40,
+            "family": "dimq2_over_qfact  [SHAPE-ONLY: numerator built from q-integers, NOT confirmed to be a dim_q]",
+            "shape_only": true,
+            "source": "dim_std ** 2 / nf3",
+            "matched_numerator": [
+              "qint"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "dim_std",
+              "qint"
+            ],
+            "denominator_provenance_sample": [
+              "nf3",
+              "qfact"
+            ]
+          }
+        ],
+        "keystone_index_necessary_conditions.py": [
+          {
+            "line": 43,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "atom.q_dimension(tuple(l)) ** 2 / qn",
+            "matched_numerator": [
+              "q_dimension"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "atom",
+              "l",
+              "q_dimension",
+              "tuple"
+            ],
+            "denominator_provenance_sample": [
+              "atom",
+              "n",
+              "q_factorial",
+              "qn"
+            ]
+          }
+        ],
+        "keystone_wlambda_defect_cn_closedform_crosscheck.py": [
+          {
+            "line": 77,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "qdim(lam, q) ** 2 / fact",
+            "matched_numerator": [
+              "qdim"
+            ],
+            "matched_denominator": [
+              "fact",
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "lam",
+              "q",
+              "qdim"
+            ],
+            "denominator_provenance_sample": [
+              "fact",
+              "n",
+              "q",
+              "qfact"
+            ]
+          }
+        ],
+        "keystone_wlambda_defect_coeff_ladder.py": [
+          {
+            "line": 93,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "qdim(lam, q) ** 2 / fact",
+            "matched_numerator": [
+              "qdim"
+            ],
+            "matched_denominator": [
+              "fact",
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "lam",
+              "q",
+              "qdim"
+            ],
+            "denominator_provenance_sample": [
+              "fact",
+              "n",
+              "q",
+              "qfact"
+            ]
+          }
+        ],
+        "m_p_linking_weight_operator_valued_probe.py": [
+          {
+            "line": 134,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dim_q_lambda(lam, q) ** 2 / n_q_factorial(n)",
+            "matched_numerator": [
+              "dim_q_lambda"
+            ],
+            "matched_denominator": [
+              "n_q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "Q_CANONICAL",
+              "dim_q_lambda",
+              "lam",
+              "mp",
+              "mpf",
+              "q",
+              "str"
+            ],
+            "denominator_provenance_sample": [
+              "n",
+              "n_q_factorial"
+            ]
+          }
+        ],
+        "mass_endomorphism.py": [
+          {
+            "line": 93,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "qdim((3,), 3) ** 2 / nf3",
+            "matched_numerator": [
+              "qdim"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "qdim"
+            ],
+            "denominator_provenance_sample": [
+              "nf3",
+              "qfact"
+            ]
+          },
+          {
+            "line": 94,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "qdim((2, 1), 3) ** 2 / nf3",
+            "matched_numerator": [
+              "qdim"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "qdim"
+            ],
+            "denominator_provenance_sample": [
+              "nf3",
+              "qfact"
+            ]
+          },
+          {
+            "line": 95,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "qdim((1, 1, 1), 3) ** 2 / nf3",
+            "matched_numerator": [
+              "qdim"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "qdim"
+            ],
+            "denominator_provenance_sample": [
+              "nf3",
+              "qfact"
+            ]
+          }
+        ],
+        "metallic_q_n4_character_sweep.py": [
+          {
+            "line": 106,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "d * d / q_factorial(n, q)",
+            "matched_numerator": [
+              "q_dim"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "lam",
+              "q",
+              "q_dim"
+            ],
+            "denominator_provenance_sample": [
+              "n",
+              "q",
+              "q_factorial"
+            ]
+          }
+        ],
+        "metallic_q_quark_bifurcation.py": [
+          {
+            "line": 238,
+            "family": "dimq2_over_qfact  [SHAPE-ONLY: numerator built from q-integers, NOT confirmed to be a dim_q]",
+            "shape_only": true,
+            "source": "d * d / q_factorial(3, q)",
+            "matched_numerator": [
+              "q_int"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "q",
+              "q_int"
+            ],
+            "denominator_provenance_sample": [
+              "q",
+              "q_factorial"
+            ]
+          },
+          {
+            "line": 244,
+            "family": "dimq2_over_qfact  [SHAPE-ONLY: numerator built from q-integers, NOT confirmed to be a dim_q]",
+            "shape_only": true,
+            "source": "d * d / q_factorial(3, q)",
+            "matched_numerator": [
+              "q_int"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "q",
+              "q_int"
+            ],
+            "denominator_provenance_sample": [
+              "q",
+              "q_factorial"
+            ]
+          },
+          {
+            "line": 250,
+            "family": "dimq2_over_qfact  [SHAPE-ONLY: numerator built from q-integers, NOT confirmed to be a dim_q]",
+            "shape_only": true,
+            "source": "d * d / q_factorial(3, q)",
+            "matched_numerator": [
+              "q_int"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "q",
+              "q_int"
+            ],
+            "denominator_provenance_sample": [
+              "q",
+              "q_factorial"
+            ]
+          }
+        ],
+        "metallic_q_wenzl_sign_sweep.py": [
+          {
+            "line": 137,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "d * d / q_factorial(n, q)",
+            "matched_numerator": [
+              "q_dim"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "lam",
+              "q",
+              "q_dim"
+            ],
+            "denominator_provenance_sample": [
+              "n",
+              "q",
+              "q_factorial"
+            ]
+          }
+        ],
+        "probes/alpha5_jm_crossatom_budget_probe.py": [
+          {
+            "line": 162,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "PU.dim_q(q0, s) ** 2 / qfact",
+            "matched_numerator": [
+              "dim_q"
+            ],
+            "matched_denominator": [
+              "q_factorial",
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "PU",
+              "Q_50_DIGIT_STR",
+              "dim_q",
+              "mp",
+              "mpf",
+              "q0",
+              "s"
+            ],
+            "denominator_provenance_sample": [
+              "A",
+              "PU",
+              "Q_50_DIGIT_STR",
+              "mp",
+              "mpf",
+              "n",
+              "q0",
+              "q_factorial"
+            ]
+          }
+        ],
+        "probes/alpha_em_b2_weight_family_triage_probe.py": [
+          {
+            "line": 109,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "d_q ** 2 / qfact",
+            "matched_numerator": [
+              "d_q",
+              "dim_q"
+            ],
+            "matched_denominator": [
+              "q_factorial",
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "LAMBDA",
+              "PU",
+              "Q_50_DIGIT_STR",
+              "d_q",
+              "dim_q",
+              "mp",
+              "mpf",
+              "q0"
+            ],
+            "denominator_provenance_sample": [
+              "N_BOX",
+              "PU",
+              "Q_50_DIGIT_STR",
+              "mp",
+              "mpf",
+              "q0",
+              "q_factorial",
+              "qfact"
+            ]
+          }
+        ],
+        "probes/deuteron_fpn_wlambda_wiring.py": [
+          {
+            "line": 157,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "gate_qdim(lam, q) ** 2 / gate_qfact(sum(lam), q)",
+            "matched_numerator": [
+              "gate_qdim"
+            ],
+            "matched_denominator": [
+              "gate_qfact"
+            ],
+            "numerator_provenance_sample": [
+              "gate_qdim",
+              "lam",
+              "q"
+            ],
+            "denominator_provenance_sample": [
+              "gate_qfact",
+              "lam",
+              "q",
+              "sum"
+            ]
+          },
+          {
+            "line": 134,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "gate_qdim(lam, q) ** 2 / fact",
+            "matched_numerator": [
+              "gate_qdim"
+            ],
+            "matched_denominator": [
+              "fact",
+              "gate_qfact"
+            ],
+            "numerator_provenance_sample": [
+              "gate_qdim",
+              "lam",
+              "q"
+            ],
+            "denominator_provenance_sample": [
+              "fact",
+              "gate_qfact",
+              "n",
+              "q"
+            ]
+          }
+        ],
+        "probes/tower_z_convention_pole_sensitivity_probe.py": [
+          {
+            "line": 106,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "qdim((3,), 3) ** 2 / nf3",
+            "matched_numerator": [
+              "qdim"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "qdim"
+            ],
+            "denominator_provenance_sample": [
+              "nf3",
+              "qfact"
+            ]
+          },
+          {
+            "line": 107,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "qdim((2, 1), 3) ** 2 / nf3",
+            "matched_numerator": [
+              "qdim"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "qdim"
+            ],
+            "denominator_provenance_sample": [
+              "nf3",
+              "qfact"
+            ]
+          },
+          {
+            "line": 108,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "qdim((1, 1, 1), 3) ** 2 / nf3",
+            "matched_numerator": [
+              "qdim"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "qdim"
+            ],
+            "denominator_provenance_sample": [
+              "nf3",
+              "qfact"
+            ]
+          }
+        ],
+        "probes/wenzl_bridge_self_conjugate_premise_is_false.py": [
+          {
+            "line": 172,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dimq_frt(lam, sym_int) ** 2 / qfact(sum(lam), sym_int)",
+            "matched_numerator": [
+              "dimq_frt"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "dimq_frt",
+              "lam",
+              "sym_int"
+            ],
+            "denominator_provenance_sample": [
+              "lam",
+              "qfact",
+              "sum",
+              "sym_int"
+            ]
+          },
+          {
+            "line": 259,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dimq_frt(l, sym_int) ** 2 / qfact(sum(l), sym_int)",
+            "matched_numerator": [
+              "dimq_frt"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "dimq_frt",
+              "l",
+              "sym_int"
+            ],
+            "denominator_provenance_sample": [
+              "l",
+              "qfact",
+              "sum",
+              "sym_int"
+            ]
+          },
+          {
+            "line": 260,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dimq_frt(l, unb_int) ** 2 / qfact(sum(l), unb_int)",
+            "matched_numerator": [
+              "dimq_frt"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "dimq_frt",
+              "l",
+              "unb_int"
+            ],
+            "denominator_provenance_sample": [
+              "l",
+              "qfact",
+              "sum",
+              "unb_int"
+            ]
+          },
+          {
+            "line": 261,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dimq_frt(l, sym_int) ** 2 / qfact(sum(l), unb_int)",
+            "matched_numerator": [
+              "dimq_frt"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "dimq_frt",
+              "l",
+              "sym_int"
+            ],
+            "denominator_provenance_sample": [
+              "l",
+              "qfact",
+              "sum",
+              "unb_int"
+            ]
+          }
+        ],
+        "q_pinning_50_digit.py": [
+          {
+            "line": 170,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "d_q ** 2 / nfact",
+            "matched_numerator": [
+              "d_q"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d_q",
+              "h",
+              "hook_prod_q",
+              "mpf",
+              "n",
+              "nfact",
+              "partition",
+              "q_factorial"
+            ],
+            "denominator_provenance_sample": [
+              "n",
+              "nfact",
+              "partition",
+              "q_factorial",
+              "sum"
+            ]
+          }
+        ],
+        "substrate/wlambda_identity_i_structure_probe.py": [
+          {
+            "line": 155,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dim_q(tuple(lam)) ** 2 / qfact(sum(lam))",
+            "matched_numerator": [
+              "dim_q"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "dim_q",
+              "lam",
+              "tuple"
+            ],
+            "denominator_provenance_sample": [
+              "lam",
+              "qfact",
+              "sum"
+            ]
+          }
+        ],
+        "term7_chi5_basis.py": [
+          {
+            "line": 99,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "d * d / n_fac_q",
+            "matched_numerator": [
+              "dim_q"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "A",
+              "Q_50_DIGIT_STR",
+              "d",
+              "dim_q",
+              "lam",
+              "mpf",
+              "n",
+              "q_0"
+            ],
+            "denominator_provenance_sample": [
+              "A",
+              "Q_50_DIGIT_STR",
+              "mpf",
+              "n",
+              "n_fac_q",
+              "q_0",
+              "q_factorial"
+            ]
+          }
+        ],
+        "term7_height6_partition_enum.py": [
+          {
+            "line": 123,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "d * d / n_factorial_q",
+            "matched_numerator": [
+              "dim_q_of_partition"
+            ],
+            "matched_denominator": [
+              "n_factorial_q",
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "A",
+              "Q_50_DIGIT_STR",
+              "d",
+              "dim_q_of_partition",
+              "lam",
+              "mpf",
+              "n",
+              "q_0"
+            ],
+            "denominator_provenance_sample": [
+              "A",
+              "Q_50_DIGIT_STR",
+              "mpf",
+              "n",
+              "n_factorial_q",
+              "q_0",
+              "q_factorial"
+            ]
+          }
+        ],
+        "three_quark_borromean_lp_sweep.py": [
+          {
+            "line": 72,
+            "family": "dimq2_over_qfact  [SHAPE-ONLY: numerator built from q-integers, NOT confirmed to be a dim_q]",
+            "shape_only": true,
+            "source": "d * d / q_factorial(3, q)",
+            "matched_numerator": [
+              "q_int"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "q",
+              "q_int"
+            ],
+            "denominator_provenance_sample": [
+              "q",
+              "q_factorial"
+            ]
+          },
+          {
+            "line": 77,
+            "family": "dimq2_over_qfact  [SHAPE-ONLY: numerator built from q-integers, NOT confirmed to be a dim_q]",
+            "shape_only": true,
+            "source": "d * d / q_factorial(3, q)",
+            "matched_numerator": [
+              "q_int"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "q",
+              "q_int"
+            ],
+            "denominator_provenance_sample": [
+              "q",
+              "q_factorial"
+            ]
+          },
+          {
+            "line": 82,
+            "family": "dimq2_over_qfact  [SHAPE-ONLY: numerator built from q-integers, NOT confirmed to be a dim_q]",
+            "shape_only": true,
+            "source": "d * d / q_factorial(3, q)",
+            "matched_numerator": [
+              "q_int"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "q",
+              "q_int"
+            ],
+            "denominator_provenance_sample": [
+              "q",
+              "q_factorial"
+            ]
+          }
+        ],
+        "two_quark_hopf_vs_borromean_sdp.py": [
+          {
+            "line": 155,
+            "family": "dimq2_over_qfact  [SHAPE-ONLY: numerator built from q-integers, NOT confirmed to be a dim_q]",
+            "shape_only": true,
+            "source": "d * d / q_factorial(3, q)",
+            "matched_numerator": [
+              "q_int"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "q",
+              "q_int"
+            ],
+            "denominator_provenance_sample": [
+              "q",
+              "q_factorial"
+            ]
+          },
+          {
+            "line": 160,
+            "family": "dimq2_over_qfact  [SHAPE-ONLY: numerator built from q-integers, NOT confirmed to be a dim_q]",
+            "shape_only": true,
+            "source": "d * d / q_factorial(3, q)",
+            "matched_numerator": [
+              "q_int"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "q",
+              "q_int"
+            ],
+            "denominator_provenance_sample": [
+              "q",
+              "q_factorial"
+            ]
+          }
+        ],
+        "two_quark_volume_weighted_clean.py": [
+          {
+            "line": 53,
+            "family": "dimq2_over_qfact  [SHAPE-ONLY: numerator built from q-integers, NOT confirmed to be a dim_q]",
+            "shape_only": true,
+            "source": "d * d / q_factorial(3, q)",
+            "matched_numerator": [
+              "q_int"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "q",
+              "q_int"
+            ],
+            "denominator_provenance_sample": [
+              "q",
+              "q_factorial"
+            ]
+          },
+          {
+            "line": 58,
+            "family": "dimq2_over_qfact  [SHAPE-ONLY: numerator built from q-integers, NOT confirmed to be a dim_q]",
+            "shape_only": true,
+            "source": "d * d / q_factorial(3, q)",
+            "matched_numerator": [
+              "q_int"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "d",
+              "q",
+              "q_int"
+            ],
+            "denominator_provenance_sample": [
+              "q",
+              "q_factorial"
+            ]
+          }
+        ],
+        "wedderburn_beta3_provenance_probe.py": [
+          {
+            "line": 139,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "q_dim(partition) ** 2 / q_factorial(sum(partition))",
+            "matched_numerator": [
+              "q_dim"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "partition",
+              "q_dim"
+            ],
+            "denominator_provenance_sample": [
+              "partition",
+              "q_factorial",
+              "sum"
+            ]
+          }
+        ]
+      }
+    },
+    "ast_provenance_only": {
+      "count": 7,
+      "note": "Files carrying a dim_q^2/<normaliser> construction that the REGEX pass does not see, found by resolving the local name back to the function that produced it. This is the measured blindness of the original detector, whose undercount (4 of 36) was found by bean qou-wapd and not by this audit. An empty list would mean the two passes AGREE -- it would not mean either is complete.",
+      "files": {
+        "alpha/alpha_5_jucys_murphy_central.py": [
+          {
+            "line": 125,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dim_q_num(shape, q_val) ** 2 / q_factorial_num(n, q_val)",
+            "matched_numerator": [
+              "dim_q_num"
+            ],
+            "matched_denominator": [
+              "q_factorial_num"
+            ],
+            "numerator_provenance_sample": [
+              "dim_q_num",
+              "q_val",
+              "shape"
+            ],
+            "denominator_provenance_sample": [
+              "A",
+              "n",
+              "q_factorial_num",
+              "q_val",
+              "shape",
+              "sum"
+            ]
+          }
+        ],
+        "alpha_em/alpha_em_b2_canonical_scale_ratio_probe.py": [
+          {
+            "line": 382,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "q_dimension(shp, q0) ** 2 / q_factorial(N, q0)",
+            "matched_numerator": [
+              "q_dimension"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "q0",
+              "q0_val",
+              "q_dimension",
+              "shp"
+            ],
+            "denominator_provenance_sample": [
+              "N",
+              "q0",
+              "q0_val",
+              "q_factorial"
+            ]
+          }
+        ],
+        "alpha_em_b2_scalar_c_probe.py": [
+          {
+            "line": 126,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "_q_dimension(shape, q) ** 2 / _q_factorial(sum(shape), q)",
+            "matched_numerator": [
+              "_q_dimension"
+            ],
+            "matched_denominator": [
+              "_q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "_q_dimension",
+              "q",
+              "shape"
+            ],
+            "denominator_provenance_sample": [
+              "_q_factorial",
+              "q",
+              "shape",
+              "sum"
+            ]
+          }
+        ],
+        "close_321_weinberg_gap.py": [
+          {
+            "line": 302,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "d_q_lam ** 2 / fact_n",
+            "matched_numerator": [
+              "dim_q"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "Float",
+              "Q_50_DIGIT_STR",
+              "d_q_lam",
+              "dim_q",
+              "float",
+              "lam",
+              "q0",
+              "sp"
+            ],
+            "denominator_provenance_sample": [
+              "Float",
+              "Q_50_DIGIT_STR",
+              "fact_n",
+              "float",
+              "keys",
+              "max",
+              "n",
+              "q0"
+            ]
+          },
+          {
+            "line": 329,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "d_q_lap ** 2 / fact_n",
+            "matched_numerator": [
+              "dim_q"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "Float",
+              "Q_50_DIGIT_STR",
+              "conjugate",
+              "d_q_lap",
+              "dim_q",
+              "float",
+              "lam",
+              "lap"
+            ],
+            "denominator_provenance_sample": [
+              "Float",
+              "Q_50_DIGIT_STR",
+              "fact_n",
+              "float",
+              "keys",
+              "max",
+              "n",
+              "q0"
+            ]
+          }
+        ],
+        "deltalambda/wlambda_transfer_matrix_connected_probe.py": [
+          {
+            "line": 120,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dq[l] ** 2 / fn",
+            "matched_numerator": [
+              "dq"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "dq"
+            ],
+            "denominator_provenance_sample": [
+              "fn",
+              "lam",
+              "n",
+              "q_factorial",
+              "sum"
+            ]
+          }
+        ],
+        "sweeps/paper_six_term_shadow_price_sweep.py": [
+          {
+            "line": 116,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "d ** 2 / q_factorial(n, q)",
+            "matched_numerator": [
+              "dim_q_via_hooks"
+            ],
+            "matched_denominator": [
+              "q_factorial"
+            ],
+            "numerator_provenance_sample": [
+              "A",
+              "N",
+              "Z",
+              "d",
+              "dim_q_via_hooks",
+              "floor",
+              "mp",
+              "n"
+            ],
+            "denominator_provenance_sample": [
+              "A",
+              "N",
+              "Z",
+              "floor",
+              "mp",
+              "n",
+              "q",
+              "q_factorial"
+            ]
+          }
+        ],
+        "yekutieli_volume_join.py": [
+          {
+            "line": 124,
+            "family": "dimq2_over_qfact",
+            "shape_only": false,
+            "source": "dim_q(part) ** 2 / qfact(k)",
+            "matched_numerator": [
+              "dim_q"
+            ],
+            "matched_denominator": [
+              "qfact"
+            ],
+            "numerator_provenance_sample": [
+              "dim_q",
+              "e",
+              "part",
+              "tuple"
+            ],
+            "denominator_provenance_sample": [
+              "e",
+              "k",
+              "part",
+              "qfact",
+              "sum",
+              "tuple"
+            ]
+          }
+        ]
+      }
+    },
+    "files_plancherel": {
+      "count": 4,
+      "files": [
+        "alpha/alpha_5_jucys_murphy_central.py",
+        "alpha_em_b2_scalar_c_probe.py",
+        "probes/molien_feray_meliot_bridge_probe.py",
+        "yekutieli_volume_join.py"
+      ]
+    },
+    "files_markov": {
+      "count": 11,
+      "files": [
+        "fusion_process_joint_h15_lp.py",
+        "h4_markov_weights_closed_form.py",
+        "h_3a_vs_h_3_divergence.py",
+        "log_delta_categorical_derivation.py",
+        "ocneanu_param_from_fibre_dimension.py",
+        "probe_he4_canonical_tr_m_fingerprint.py",
+        "probes/o3prime_quotient_lp_solve_probe.py",
+        "probes/o3prime_selection_is_atom_independent_probe.py",
+        "probes/q_plancherel_vs_y_lambda_probe.py",
+        "qbeta/qbessel_quadratic_binding_wiring_gate.py",
+        "rho_w_crystal_vertex_trace.py"
+      ]
+    },
+    "files_both": {
+      "count": 8,
+      "files": [
+        "alpha_em/alpha_em_b2_canonical_scale_ratio_probe.py",
+        "beta_ew_delta_I_321_and_wedderburn.py",
+        "close_321_weinberg_gap.py",
+        "deltalambda/wlambda_transfer_matrix_connected_probe.py",
+        "fr_pullback_k3_test.py",
+        "probes/molien_blast_radius_remainder_triage_probe.py",
+        "probes/phi_k_weight_family_discriminator.py",
+        "sweeps/paper_six_term_shadow_price_sweep.py"
+      ]
+    },
+    "files_name_only": {
+      "count": 16,
+      "files": [
+        "_exact_trace_engine.py",
+        "atom_level_wedderburn_tower.py",
+        "chirality_braid_average.py",
+        "delta_q_decoration.py",
+        "deltalambda/wlambda_covariance_epic_M1_kerov_clt_leading_kappa.py",
+        "hecke/hecke_wedderburn.py",
+        "hecke/murphy_lead_injectivity_probe.py",
+        "markov_trace_weights_wenzl.py",
+        "meson/zero_weight_sector_is_temperley_lieb_probe.py",
+        "probes/probe_h3_central_idempotents_exact.py",
+        "probes/qbeta_multiblock_ck_lambda_probe.py",
+        "probes/the_binding_arc_was_measured_in_float64_probe.py",
+        "probes/tower_walk_magic_replication_probe.py",
+        "qbeta/qbessel_unblocker_forced_order_refutation.py",
+        "qbeta/qbeta_adjunction_ilp_probe.py",
+        "sweeps/light_isotope_sweep.py"
+      ]
+    },
+    "summary": {
+      "raw_grep_total": 39,
+      "planchereL_family_affected_by_the_qou_oots_choice": 12,
+      "note": "The second figure is what the qou-oots canonical choice can move. BOTH is included in it because a file carrying both families is affected whether it is a deliberate comparison or a straddle -- which of those it is has NOT been triaged here."
+    },
+    "molien_vs_dimq2_lambda_dependence": {
+      "note": "Ratio w_Molien(lam)/w_dimq2(lam) at the substrate q0, normalised to its own mean over partitions of n. A value of 1.0 everywhere would mean the two families differ by a lambda-INDEPENDENT constant, and every same-n ratio built from them would be invariant. They do not: the spread is large and monotone from the single row to the single column, which is the q^{-kappa} factor. So consumers whose reported quantities are same-n ratios -- which is ALL SIX candidates in beta_ew_delta_I_321_and_wedderburn.py -- are invariant under dim_q^2/[n]_q! -> dim_q^2/D^2 (same numerator) but are NOT invariant under the Molien option.",
+      "per_n": {
+        "3": {
+          "max_over_min": "1.87019802674910801799933088389820991409849480764417306011621",
+          "at_single_row": "0.709162986800086942811739405911875624579287239697138772949240",
+          "at_single_column": "1.32627521855702633655518870614692248822146744539231135483580"
+        },
+        "6": {
+          "max_over_min": "22.8790491972892062541446602468063912871337227549089841221796",
+          "at_single_row": "0.155883955587194340763354470509673042028288008211312794110041",
+          "at_single_column": "3.56647668894746496040139452269126451121419441944518750174936"
+        },
+        "9": {
+          "max_over_min": "1830.84312358467976276036249501489969608023426555033210340466",
+          "at_single_row": "0.00748578145049279296582863515856559178903845406373614305996531",
+          "at_single_column": "13.7052914932924798851001791113447437162325914874909067672249"
+        }
+      }
+    }
+  }
+}

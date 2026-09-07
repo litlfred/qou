@@ -247,7 +247,7 @@ def main() -> int:
         "bar_odd_sinh_nonzero_all_k": odd_nonzero_all,
         "conclusion": "S = sigma-antisymmetric (sinh) part of the SAME compact e_k; no modular-dual factor needed"})
     wb.add_data("fibre_saddle_phase_zeta6", {
-        "point": "b^2=1/6, q=zeta_6=e^{i pi/3} (Vol(4_1)=2Lambda(pi/3) angle)",
+        "point": "b^2=1/6, q=zeta_6=e^{i pi/3} (Vol(4_1)=2*Cl_2(pi/3)=6*Lambda(pi/3) angle)",
         "Im_e3_zeta6": mp.nstr(im_e3, 8),
         "arg_phi_b_rows": phase_rows, "note": "corpus-natural point, NOT S-matched"})
     wb.add_data("open_target_S", {

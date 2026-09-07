@@ -1,11 +1,11 @@
 ---
 # qou-octr
 title: Small-instance check the 34 sorries the drain made visible — never reported by any build
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-09T09:57:23Z
-updated_at: 2026-08-14T16:07:49Z
+updated_at: 2026-09-05T17:57:39Z
 ---
 
 
@@ -144,3 +144,80 @@ class `QTurbulenceCascadeModel` + derived `finite_cascade_depth_of_cutoff`
 `mass_categorical_descent` and `np_splitting` (same fix shape: give the
 context class the hypotheses the derivation needs). Status reverted to
 in-progress (a prior update to completed was premature — scope is all 3).
+
+
+## Re-measured 2026-09-05 — the eight are all sorry-free now, and four of the fixes went the WRONG way
+
+I had quoted "8 of 8 context-class sorries unclosable" three times in reports
+without checking it. Checking it.
+
+**First, a tooling correction, because the naive measurement is wrong in both
+directions.** `grep '\bsorry\b'` over these files returns 21 hits. **Zero of
+them are proof terms** — every one is inside a `/-- … -/` docstring or a `--`
+comment, in prose *about* `sorry`. Strip block and line comments first
+(`scratchpad/sorrycount.py`, 30 lines) and the count is **0 real / 21 raw**
+across all eight. A file whose whole docstring explains why a `sorry` would be
+unsound reads, to a naive grep, as the file with the most `sorry`s in the
+corpus. Two of the eight also came back "decl not found" on a first pass: one
+was a `timeout 30` on a recursive grep silently expiring (`skein_mass_from_linking`
+is in `BraidsKnots/`, not `BraidKnot/`), and one was a **rename** the bean's own
+2026-08-14 update records (`finite_cascade_depth` → `finite_cascade_depth_of_cutoff`).
+
+**So the bean's population no longer exists as sorries.** All eight
+declarations are present and every one is sorry-free. But they were
+dispositioned two different ways, and only four honestly:
+
+**Derived — 4.** The conclusion is obtained *from* structure the class carries,
+not returned by it.
+
+| decl | what discharges it |
+|---|---|
+| `mass_categorical_descent` | `descent_decomposition` — splitting a finite sum along a decidable centre predicate. Plus a tranche-2 operator-level centrality (`IsCentral` = membership in `Set.center A`). |
+| `finite_cascade_depth_of_cutoff` | logs of the dissipation cutoff `q^N ≤ Re_q^{3/4}`, divided by `log q > 0`. Real tactic proof. |
+| `neutron_proton_splitting` | pinned numerics + `norm_num`; and the exact-equality conjunct was correctly **demoted to a tolerance** per §7ab rather than kept and dodged. |
+| `skein_mass_from_linking` | demoted to `def … : Prop` (named, not asserted), with a *derived* torus specialisation and a standing counterexample so a later "finish it with a `sorry`" fails against a compiled obstruction. |
+
+**Projected — 4.** Each conjunct of the conclusion is verbatim one class field;
+the proof term is `ctx.field` or `⟨ctx.f₁, …, ctx.fₙ⟩`.
+
+- `volume_perturbation` — `:= ctx.perturbation_formula`
+- `parity_regime_selection` — `⟨ctx.sign_identity, ctx.odd_regime, ctx.even_regime, ctx.neutron_regime⟩`
+- `lp_dual_stability` — `⟨ctx.primal_stable, ctx.dual_price_bound, ctx.partial_unstable, ctx.strong_duality⟩`
+- `confinement_frobenius_reciprocity` — a six-tuple of fields
+
+**That is this bean's own defect, inverted.** The finding here was *"the class
+carries too little — nothing constraining the fields the conclusion names"*.
+The fix for these four moved the class to carrying **exactly the conclusion**,
+which is AGENTS.md §3b-cond item 5's self-assuming projection. The honest
+middle is what the other four did: carry structure the conclusion is *derived*
+from.
+
+**This is not new work, and mostly not new information.** Per §3b a disclosed
+projection is policy-compliant; the defect is an *undisclosed* one, and that
+population is already scoped as epic `qou-5p7n` (125 of 147 undisclosed).
+Measured on these four: `parity_regime_selection` **discloses** in its module
+docstring; `volume_perturbation` half-discloses ("Proved from the upstream
+class field constraint" names the mechanism but reads as a proof claim);
+`lp_dual_stability` and `confinement_frobenius_reciprocity` carry **no
+disclosure at all** — zero hits for any disclosure phrasing. Those two belong
+in `qou-5p7n`'s "98 bare" bucket, not here.
+
+**One thing WAS new: the detector could not see one of them.**
+`volume_perturbation` is the cleanest projection of the four — one field,
+returned verbatim — and `proof-no-self-assuming-projection` reported the other
+three CRITICAL and not this one. Cause: the class field spells the balanced
+q-integer `QOU.QInteger.qIntBalZ`, the theorem spells `qIntSym`, a file-local
+`noncomputable abbrev` for that head applied to its own binders. An `abbrev` is
+reducible so the projection typechecks; the detector's character-exact
+comparison sees two strings. Closed in this branch by `fileHeadAliases`
+(admits an `abbrev` only when its body is a dotted head applied to its binders
+in order, then normalises both sides through the head map). Whole-corpus
+before/after: **exactly one new hit, no other line changed** — 75 defect
+candidates both runs, files 115 → 116, exempt 65 → 66. Blind-spot taxonomy:
+the abbrev-alias row.
+
+**Status.** This bean's stated scope is discharged: all three originally
+ill-posed statements now carry the missing hypotheses or an honest demotion,
+and the 2026-08-14 note's "remaining: `mass_categorical_descent` and
+`np_splitting`" is stale — both are done. The four projections are `qou-5p7n`
+work, not a reopening of this one.

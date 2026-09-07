@@ -75,7 +75,9 @@ left the file unbuildable: the `q₀` binder was deleted while the bodies still
 used it, three declaration *headers* were commented out leaving their bodies
 orphaned, and a `}` was swallowed by a comment. -/
 
-universe u
+-- `v` is the morphism level of `[Category.{v} C]` below; naming it is required
+-- once auto-bound universes are off (AGENTS.md §7d U2).
+universe u v
 
 /-- **Existence of the substrate parameter** (constant field).
 

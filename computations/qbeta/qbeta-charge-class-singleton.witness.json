@@ -1,0 +1,151 @@
+{
+  "computation": "qbeta-charge-class-singleton",
+  "assertions": [
+    {
+      "name": "the_charge_class_is_the_singleton_one_one",
+      "computed": [
+        [
+          1,
+          1
+        ]
+      ],
+      "expected": [
+        [
+          1,
+          1
+        ]
+      ],
+      "passed": true,
+      "note": "2.c(a,b) = a(a-1) + b(b-3); the second row never goes below -2 and a >= 2 already gives +2, so c < 0 forces a <= 1. Lean: contentDoubled_neg_iff"
+    },
+    {
+      "name": "the_selected_singleton_misses_the_coulomb_coefficient",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the row cap's unique charge-type shape gives 1.0275662 MeV, 44.52 % off. The selection principle transfers; the number does not"
+    },
+    {
+      "name": "only_the_wigner_row_is_a_hook_product",
+      "computed": [
+        "delta_S"
+      ],
+      "expected": [
+        "delta_S"
+      ],
+      "passed": true,
+      "note": "the other six carry integer prefactors (2, 2, 3), a bare h = q - 1/q, or a quotient -- none of which a product of [h]_q yields. unified-iterative-correction-proof.md states C_lambda = m_e H_q(lambda) as THE universal constant, with no restriction to a family"
+    },
+    {
+      "name": "and_two_is_not_a_q_integer",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "[2]_q = 2.01089686671, the nearest; so an integer prefactor 2 cannot come from a hook"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "q0": "1.10997858275138080759166909561",
+    "dps": 30,
+    "n_max": 14,
+    "m_e_MeV": "0.51099895069",
+    "a_C_SEMF_MeV": "0.711",
+    "a_C_provenance": "EXTERNAL SEMF reference constant",
+    "lean": "QOU/Hecke/IsospinClassSingleton.lean"
+  },
+  "data": {
+    "charge_class": [
+      {
+        "lambda": [
+          1,
+          1
+        ],
+        "n": 2,
+        "c": -1
+      }
+    ],
+    "isospin_class": [
+      {
+        "lambda": [
+          1
+        ],
+        "n": 1,
+        "c": 0
+      },
+      {
+        "lambda": [
+          2,
+          1
+        ],
+        "n": 3,
+        "c": 0
+      },
+      {
+        "lambda": [
+          2,
+          2
+        ],
+        "n": 4,
+        "c": 0
+      }
+    ],
+    "m_e_H_q_one_one": "1.027566188833148",
+    "corpus_lambda_C": "0.6824366927063629",
+    "partitions_swept": 507,
+    "table_rows": [
+      {
+        "row": "lambda_V",
+        "form": "2[2][7]",
+        "value": "30.66755282008",
+        "hook_product_of": []
+      },
+      {
+        "row": "lambda_S",
+        "form": "2[4]^2",
+        "value": "33.778979041984",
+        "hook_product_of": []
+      },
+      {
+        "row": "lambda_C",
+        "form": "h[6]",
+        "value": "1.3354952916926",
+        "hook_product_of": []
+      },
+      {
+        "row": "a_asym",
+        "form": "3[2][7]",
+        "value": "46.00132923012",
+        "hook_product_of": []
+      },
+      {
+        "row": "delta_P",
+        "form": "[3][7]",
+        "value": "23.209300900604",
+        "hook_product_of": []
+      },
+      {
+        "row": "lambda_ex",
+        "form": "[3]/[2]",
+        "value": "1.5136063211022",
+        "hook_product_of": []
+      },
+      {
+        "row": "delta_S",
+        "form": "[2]^2[3]",
+        "value": "12.307853692392",
+        "hook_product_of": [
+          [
+            2,
+            2
+          ]
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "headSha": "4b56b76c8f8430064d41e77bc11c7f36bab4c7db",
+    "producer": "computations/qbeta/qbeta_charge_class_singleton_probe.py",
+    "elapsed_s": 0.223
+  }
+}

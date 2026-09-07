@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T15:54:31.470885+00:00",
-  "commitSha": "b1d776b09dcefff755e54d11b827168193e7454b",
+  "computedAt": "2026-09-07T08:26:28.709295+00:00",
+  "commitSha": "2efe745cab538d0ae07b73098a1c09011c8a4b57",
   "assertions": [
     {
       "name": "free_lr_matches_witnesses_machine_eps",
-      "computed": "1.259195952166794583767996943555339490245204391924239776924753017416311e-48",
+      "computed": "4.856919593977752843418766624499505628433860744952107555690912538193532e-49",
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-12",
@@ -18,7 +18,7 @@
   "computation": "chi-free-via-lr",
   "scriptFile": "chi_free_via_lr.py",
   "scriptHash": "d9c0b3cdc02c",
-  "scriptCommitSha": "820230f04daccea1088cfaf5025bd624ec287a6c",
+  "scriptCommitSha": "92f4817ab8ca60384edd956b74562920780ca6d7",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,13 +33,17 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "e3fab84c4c1df76a"
   },
   "invocation": {
     "argv": [
-      "computations/chi_free_via_lr.py"
+      "computations/chi_free_via_lr.py",
+      "D",
+      "T",
+      "3He",
+      "4He"
     ],
-    "reproduce": "python3 -u computations/chi_free_via_lr.py"
+    "reproduce": "python3 -u computations/chi_free_via_lr.py D T 3He 4He"
   },
   "description": "FREE-config χ^λ(β_free) via nucleon-cache + active-set LR (parabolic character formula). Validates D/3He/4He against the existing chi-*-free MPFR witnesses and demonstrates the same compute at large A (6Li/7Li) in ms — the d_λ²-free scaling path (docs/audits/2026-06-09-large-A-chi-bottleneck-scaling-plan.md).",
   "data": {
@@ -48,24 +52,30 @@
         "atom": "D",
         "n_strands": 6,
         "n_partitions": 11,
-        "wall_sec": 0.0014,
-        "max_rel_vs_witness": "9.838e-50",
+        "wall_sec": 0.0016,
+        "max_rel_vs_witness": "3.843e-50",
         "validated": true
+      },
+      {
+        "atom": "T",
+        "n_strands": 9,
+        "n_partitions": 30,
+        "wall_sec": 0.0087
       },
       {
         "atom": "3He",
         "n_strands": 9,
         "n_partitions": 30,
-        "wall_sec": 0.0084,
-        "max_rel_vs_witness": "2.865e-49",
+        "wall_sec": 0.0025,
+        "max_rel_vs_witness": "2.97e-49",
         "validated": true
       },
       {
         "atom": "4He",
         "n_strands": 12,
         "n_partitions": 77,
-        "wall_sec": 0.0612,
-        "max_rel_vs_witness": "1.259e-48",
+        "wall_sec": 0.0648,
+        "max_rel_vs_witness": "4.857e-49",
         "validated": true
       }
     ],

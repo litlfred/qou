@@ -11,8 +11,10 @@ all readable off the enumerator's **own recorded output** in
 
 The merged `CarrierCrossingQuantisation` header says the corpus's principle is
 Frobenius-residual minimisation, not minimality, and that reading
-`bindingKMinimalLength` as the criterion is what makes minimality look
-load-bearing. **The first half is right about the code and wrong about the
+the length field as the criterion is what makes minimality look
+load-bearing. (That field was named `bindingKMinimalLength` when this was
+written; the `Prop`-universe copy was deleted 2026-09-07 and the decidable
+`bindingKLengthBounded` is what remains.) **The first half is right about the code and wrong about the
 corpus.** The `sort` key is indeed `(PSD-feasible, residual, length)` — but the
 `bindingKWord = [3,3]` on the Lean instances was taken from the witness's
 `min_length_psd_feasible_candidates` list, **not** from the residual-ranked

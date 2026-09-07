@@ -850,6 +850,36 @@ def _tolerance_literal(t: Any) -> "Optional[str]":
     return s
 
 
+def declared_tolerance(t: Any) -> Any:
+    """`t` as `Assertion.to_dict` would serialize it — for HAND-BUILT payloads.
+
+    `_tolerance_literal` runs inside `Assertion.to_dict`, so it is reached only
+    by a producer that constructs an `Assertion`. A producer that hand-builds
+    its assertion dicts and `json.dump`s them (many do — they import
+    `WitnessBuilder` only for the provenance stamp) never reaches the guard, so
+    PR #5910's drain of 1232 declared tolerances to strings is undone for that
+    file on its next re-run, one file at a time and invisibly.
+
+    Call this at such a site instead of typing the literal:
+
+        "tolerance": declared_tolerance(1e-9),   # -> "1e-09"
+        "tolerance": declared_tolerance(0.0),    # -> 0.0, unchanged by design
+
+    Two properties are the point. It returns the value UNCHANGED when the guard
+    declines — an integral tolerance, or a computed one carrying more than
+    `_TOLERANCE_LITERAL_MAX_SIG` significant digits — so a call site never has
+    to know which case it is in, and a genuinely computed tolerance stays a
+    float and stays counted by the raw-float64 ratchet. And it IMPORTS the rule
+    rather than restating it: the alternative in the corpus is to hand-copy the
+    guard's output string into the source, which is correct today and drifts
+    silently the moment the rule changes.
+
+    Audit: `computations/audits/tolerance_guard_bypass_audit.py`. Bean qou-9tqx.
+    """
+    literal = _tolerance_literal(t)
+    return t if literal is None else literal
+
+
 class Assertion:
     """A single named claim with computed vs expected values."""
 
@@ -1747,9 +1777,10 @@ class WitnessBuilder:
         non-standard and ``wrap_legacy().save()`` cannot be applied
         without breaking consumers).
 
-        Mutates and returns ``payload`` with ``scriptHash``,
-        ``scriptCommitSha``, ``commitSha``, ``engine``, ``engineVersion``,
-        ``computedAt``, and ``durationMs`` set. Avoids the need to
+        Mutates and returns ``payload`` with ``scriptFile`` (``setdefault``,
+        so a caller's own value wins), ``scriptHash``, ``scriptCommitSha``,
+        ``commitSha``, ``engine``, ``engineVersion``, ``computedAt``, and
+        ``durationMs`` set. Avoids the need to
         import the underscore-prefixed ``_git_head_sha`` /
         ``_git_file_sha`` helpers from outside this module.
 
@@ -1813,6 +1844,26 @@ class WitnessBuilder:
         spath = str(script_path)
         if engine is None:
             engine = payload.get("engine") or "python"
+        # `scriptFile` is `setdefault`, not assignment: a caller that already
+        # named its producer keeps that name (a wrapper stamping on behalf of
+        # the real script must be able to say so). Everything else here is
+        # unconditional because it is derived from `script_path` itself.
+        #
+        # It was MISSING entirely until 2026-09-07 (bean qou-4383). The
+        # docstring above promises scriptHash / scriptCommitSha / commitSha /
+        # engine / engineVersion / computedAt / durationMs and delivers them —
+        # but a witness stamped through this helper still came out with no
+        # `scriptFile`, so nothing recorded WHICH script produced it. The
+        # hash identifies the content of a file you must already know the name
+        # of; it cannot tell you the name.
+        #
+        # Measured: `qbeta-habiro-pochhammer-convention.witness.json` calls
+        # this helper correctly and is still unattributable, and the fingerprint
+        # sweep could not re-run it for exactly that reason. A sibling hit the
+        # same gap in `qbeta_delta_vs_deltaTbeta_settled_probe.py` and worked
+        # around it with a local `w.setdefault("scriptFile", ...)` rather than
+        # fixing it here — which is the signal that it belongs here.
+        payload.setdefault("scriptFile", os.path.basename(spath))
         payload["scriptHash"] = file_content_hash(spath)
         payload["scriptCommitSha"] = _git_file_sha(spath)
         payload["commitSha"] = _git_head_sha()

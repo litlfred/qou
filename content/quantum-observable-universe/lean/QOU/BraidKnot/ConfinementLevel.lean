@@ -7,9 +7,28 @@ import QOU.Basic
 the ℓ cheapest knot operators at q.
 
 **Formal-chain version.**  Lives under `lean/QOU/` and is compiled by
-`lake build`.  The co-located documentation stub at
-`braids-and-knots/confinement-level.lean` mirrors this content (per
-`QOU.GroundRingAnnotations`).
+`lake build`.
+
+## Why `valid` is a parameter and not a field (bean `qou-i6u4`)
+
+Until 2026-09-06 this was a plain structure carrying `level : ℕ` as a **free
+field**, with an axiom `ConfinementLevel.level_canonical` asserting that two
+records agreeing on `braidIndex`, `nStrands` and `q` have the same `level`.
+**That axiom was false** — the fields are independent, so `⟨0,0,0,0⟩` and
+`⟨0,0,0,1⟩` refute it — and the axiom's own docstring said why: *"a constraint
+the current plain-structure encoding does not enforce at the type level."*
+
+Carrying the filtration predicate `valid` as a **parameter indexed by the braid
+datum**, together with `level_valid` and `level_min` as proof fields, is the
+repair. It makes `level` genuinely the minimum rather than free data, so
+uniqueness becomes a one-line theorem and existence becomes a real construction
+rather than a junk witness. Nothing here depends on any axiom — `#print axioms`
+reports none at all, not even `propext`.
+
+Note that uniqueness needs only antisymmetry. The narrative block
+`prop:confinement-level-unique` gives three reasons — monotone filtration,
+upward-closed level set, nonempty level set — but the first two do no work in
+the uniqueness argument; nonemptiness is what *existence* needs.
 
 LaTeX: `\label{def:confinement-level}`
 -/
@@ -18,28 +37,67 @@ namespace QOU.BraidKnot
 
 universe u
 
-/-- **Confinement level** of a closed braid at substrate parameter `q`.
-
-    Encodes the filtration position of the NF in the energy-ordered
-    subalgebra. -/
-structure ConfinementLevel (R : Type u) [CommRing R] where
+/-- The braid datum a confinement level is taken at: a closed braid (by its NF
+    permutation index) with a strand count, at a substrate parameter. -/
+structure BraidDatum (R : Type u) [CommRing R] where
   /-- The closed braid (encoded by its NF permutation index). -/
   braidIndex : ℕ
   /-- Number of strands `n(K)`. -/
   nStrands : ℕ
   /-- Substrate parameter. -/
   q : R
+
+/-- **Confinement level** of a closed braid at substrate parameter `q`.
+
+    `valid` is the filtration predicate `fun d ℓ => T_w(d) ∈ J^ℓ(d.q)`, carried
+    as a parameter — a function of the datum — so that `level` is determined by
+    the braid rather than chosen freely alongside it. -/
+structure ConfinementLevel {R : Type u} [CommRing R]
+    (valid : BraidDatum R → ℕ → Prop) (d : BraidDatum R) where
   /-- Confinement level `ℓ ∈ ℕ`. -/
   level : ℕ
+  /-- `level` sits in the filtration. -/
+  level_valid : valid d level
+  /-- and no smaller index does — this is what makes it the *minimum*. -/
+  level_min : ∀ ℓ, valid d ℓ → level ≤ ℓ
 
-/-- **Existence of the confinement level.**
+/-- **Uniqueness of the confinement level** — a theorem, not an axiom.
 
-    The set `{ ℓ : T_w ∈ J^ℓ(q) }` is finite, upward-closed, and
-    nonempty (since `T_w ∈ J^0(q) = H_n(R, q)` trivially), so its
-    minimum exists. -/
+    Two confinement levels for the same braid datum agree, by antisymmetry of
+    `≤` against the two minimality witnesses. -/
 -- Ref: [manuscript] braids-and-knots/confinement-level
-theorem ConfinementLevel.nonempty (R : Type u) [CommRing R] :
-    Nonempty (ConfinementLevel R) :=
-  ⟨{ braidIndex := 0, nStrands := 1, q := 0, level := 0 }⟩
+theorem ConfinementLevel.unique {R : Type u} [CommRing R]
+    {valid : BraidDatum R → ℕ → Prop} {d : BraidDatum R}
+    (L₁ L₂ : ConfinementLevel valid d) : L₁.level = L₂.level :=
+  Nat.le_antisymm (L₁.level_min _ L₂.level_valid) (L₂.level_min _ L₁.level_valid)
+
+/-- **Existence of the confinement level**, by well-ordering of `ℕ`.
+
+    The set `{ ℓ : T_w ∈ J^ℓ(q) }` is nonempty (it contains `m`, since
+    `J^m = H_n`), so it has a least element. -/
+-- Ref: [manuscript] braids-and-knots/confinement-level
+noncomputable def ConfinementLevel.ofExists {R : Type u} [CommRing R]
+    {valid : BraidDatum R → ℕ → Prop} {d : BraidDatum R}
+    [DecidablePred (valid d)] (h : ∃ ℓ, valid d ℓ) : ConfinementLevel valid d :=
+  ⟨Nat.find h, Nat.find_spec h, fun _ hl => Nat.find_min' h hl⟩
+
+/-- **Existence, as a `Nonempty`.**
+
+    Replaces a pre-2026-09-06 `nonempty` that constructed the junk record
+    `⟨0, 1, 0, 0⟩`: that proved the *type* was inhabited, not that any braid has
+    a level, so `prop:confinement-level-exists` was vacuously backed. -/
+-- Ref: [manuscript] braids-and-knots/confinement-level
+theorem ConfinementLevel.nonempty {R : Type u} [CommRing R]
+    {valid : BraidDatum R → ℕ → Prop} {d : BraidDatum R}
+    [DecidablePred (valid d)] (h : ∃ ℓ, valid d ℓ) :
+    Nonempty (ConfinementLevel valid d) :=
+  ⟨ConfinementLevel.ofExists h⟩
+
+/-- The level **is** the minimum: any confinement level equals `Nat.find`. -/
+theorem ConfinementLevel.level_eq_find {R : Type u} [CommRing R]
+    {valid : BraidDatum R → ℕ → Prop} {d : BraidDatum R}
+    [DecidablePred (valid d)] (h : ∃ ℓ, valid d ℓ)
+    (L : ConfinementLevel valid d) : L.level = Nat.find h :=
+  ConfinementLevel.unique L (ConfinementLevel.ofExists h)
 
 end QOU.BraidKnot

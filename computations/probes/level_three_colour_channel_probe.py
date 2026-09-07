@@ -139,6 +139,7 @@ import mpmath as mp  # noqa: E402
 
 from nucleus_real_sdp import load_cost  # noqa: E402
 from q_parameter import q_at  # noqa: E402
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -151,7 +152,7 @@ _Q = q_at(mp.mp.dps)
 _H = _Q - 1 / _Q
 LQ = mp.log(_Q)
 LW = mp.log(1 - _H)
-R_NUC = mp.mpf("2.224566") / mp.mpf("0.066")
+R_NUC = AME_B_DEUTERON_MEV_VALIDATION / mp.mpf("0.066")
 
 
 def qi(m):

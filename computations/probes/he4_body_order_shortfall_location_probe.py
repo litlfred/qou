@@ -78,16 +78,22 @@ from _li_2_q_util import flavor_split_leading  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from closed_form_tau_M import hecke_h, markov_z  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 set_compute_dps()
 
 # AME2020 total nuclear binding, MeV — same literals as
 # interface_4body_assembly_probe.py / su4_connected_1111_magnitude_probe.py.
 AME = {
-    "D": mpf("2.224566"),
-    "3H": mpf("8.481798"),
-    "3He": mpf("7.718043"),
-    "4He": mpf("28.295673"),
+    "D": AME_B_DEUTERON_MEV_VALIDATION,
+    "3H": AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 ATOMS = {"D": (1, 1), "3H": (1, 2), "3He": (2, 1), "4He": (2, 2)}
 

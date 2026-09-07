@@ -40,9 +40,46 @@ name: lean-content-siblings
 #     Infra failures (no toolchain / no olean cache) are NEUTRAL-SKIPPED so a
 #     cold runner never false-blocks; only a genuine `lean` type error fails.
 
+# SCOPE (bean qou-lsib, 2026-09-07) — why this takes an input.
+#
+# Both jobs used to compute their file list from `origin/${{ github.base_ref }}`
+# unconditionally. `github.base_ref` is EMPTY for `workflow_dispatch`, which is
+# this workflow's ONLY trigger, so the diff resolved to `origin/...HEAD` and git
+# answered `fatal: bad revision`. Because the assignment was
+# `files=$(git diff ... | tr ...)`, the pipeline's status was `tr`'s — zero — so
+# `set -e` never fired. Every downstream step was `if: files != ''`, so both
+# jobs reported GREEN having compiled NOTHING. Not "diff-scoped so it misses the
+# known failures": it checked zero files on every run it could ever have.
+#
+# `scope` now selects explicitly, and a run that cannot compute a list FAILS
+# rather than passing empty — a green no-op is the exact bug being fixed here.
+#
+#   scope=all      every content sibling in the tree (the default: dispatch has
+#                  no PR context, so whole-tree is the only meaningful default)
+#   scope=changed  only siblings differing from `base`; requires `base`, or a
+#                  `pull_request` trigger if auto-triggers ever return
+#
+# Auto-triggers stay off (owner directive 2026-06-30, Actions billing). This
+# widens what a dispatch covers; it does not re-enable anything.
+#
+# The STRONGER local check is `scripts/lean-content-sweep.sh` (bean qou-56qy):
+# it compiles against the library SOURCE via a shadow tree, catching siblings
+# that are green against a stale olean snapshot and broken against main. What
+# runs here is the cache-based check, which is what a CI runner can afford.
+
 on:
   # CI auto-triggers disabled (owner directive 2026-06-30): Actions billing.
   workflow_dispatch:
+    inputs:
+      scope:
+        description: "all = every content sibling; changed = only those differing from base"
+        type: choice
+        options: [all, changed]
+        default: all
+      base:
+        description: "Base ref for scope=changed (e.g. origin/main). Ignored when scope=all."
+        type: string
+        default: ""
 
 jobs:
   gate:
@@ -52,23 +89,37 @@ jobs:
         with:
           fetch-depth: 0
       - uses: oven-sh/setup-bun@v2
-      - name: Compute changed .lean files
+      - name: Compute .lean files in scope
         id: changed
+        env:
+          SCOPE: ${{ inputs.scope || 'all' }}
+          BASE_INPUT: ${{ inputs.base }}
+          PR_BASE: ${{ github.base_ref }}
         run: |
-          base="origin/${{ github.base_ref }}"
-          git fetch origin "${{ github.base_ref }}" --depth=1 || true
-          files=$(git diff --name-only --diff-filter=d "$base"...HEAD -- '*.lean' | tr '\n' ' ')
+          set -euo pipefail
+          source scripts/lib/ci-lean-scope.sh
+          files=$(lean_scope_files "$SCOPE" "$BASE_INPUT" "$PR_BASE" all)
           echo "files=$files" >> "$GITHUB_OUTPUT"
-          echo "changed .lean files: ${files:-<none>}"
-      - name: Compile-validity gate (changed files only)
-        if: steps.changed.outputs.files != ''
+          echo "scope=$SCOPE — $(printf '%s' "$files" | wc -w) .lean file(s)"
+      # `--fail-on` only under scope=changed. Whole-tree it is REPORT-ONLY:
+      # ~40 pre-existing import-order defects exist tree-wide
+      # (docs/audits/2026-06-07-conjecture-triage.md §K), so a whole-tree
+      # --fail-on would be red for reasons unrelated to any given run. The
+      # report still prints them; it just does not pretend to be a gate.
+      - name: Compile-validity gate (scope=changed)
+        if: steps.changed.outputs.files != '' && (inputs.scope || 'all') == 'changed'
         run: |
           bun run content/pipeline/lean-vacuity-axiom-audit.ts \
             ${{ steps.changed.outputs.files }} \
             --quiet \
             --fail-on proof-no-trivial-type-mismatch,lean-import-after-content
-      - name: Agent-inspection ledger gate (changed files only)
-        if: steps.changed.outputs.files != ''
+      - name: Compile-validity report (scope=all, not a gate)
+        if: steps.changed.outputs.files != '' && (inputs.scope || 'all') == 'all'
+        run: |
+          bun run content/pipeline/lean-vacuity-axiom-audit.ts \
+            ${{ steps.changed.outputs.files }} || true
+      - name: Agent-inspection ledger gate (scope=changed)
+        if: steps.changed.outputs.files != '' && (inputs.scope || 'all') == 'changed'
         run: |
           # Diff-scoped (like the compile-validity gate above): fail only if a
           # .lean file THIS PR changes carries a vacuity candidate lacking a
@@ -87,17 +138,19 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Compute changed content-sibling .lean files
+      - name: Compute content-sibling .lean files in scope
         id: changed
+        env:
+          SCOPE: ${{ inputs.scope || 'all' }}
+          BASE_INPUT: ${{ inputs.base }}
+          PR_BASE: ${{ github.base_ref }}
         run: |
-          base="origin/${{ github.base_ref }}"
-          git fetch origin "${{ github.base_ref }}" --depth=1 || true
-          # content/**/*.lean siblings, EXCLUDING the lean/ library tree
-          # (which the lake build owns).
-          files=$(git diff --name-only --diff-filter=d "$base"...HEAD -- 'content/**/*.lean' \
-                  | grep -v '/lean/' | tr '\n' ' ' || true)
+          set -euo pipefail
+          source scripts/lib/ci-lean-scope.sh
+          # siblings only — EXCLUDING the lean/ library tree, which lake owns.
+          files=$(lean_scope_files "$SCOPE" "$BASE_INPUT" "$PR_BASE" siblings)
           echo "files=$files" >> "$GITHUB_OUTPUT"
-          echo "changed content-sibling .lean files: ${files:-<none>}"
+          echo "scope=$SCOPE — $(printf '%s' "$files" | wc -w) content-sibling .lean file(s)"
       - name: Install elan
         if: steps.changed.outputs.files != ''
         run: |
@@ -145,4 +198,18 @@ jobs:
           # outside the cached olean cone (the cache ships only QOU's
           # dependency subset, not all of Mathlib) is neutral-skipped with a
           # ::warning so a cache-subset miss never false-blocks the PR.
+          #
+          # Exit 3 = VERIFIED NOTHING (no cache, or every file neutral-skipped).
+          # Mapped to a warning here — a cold runner still must not false-block
+          # a PR, which is unchanged — but the script no longer reports it as 0,
+          # so the "gate went permanently green because the cache broke" case is
+          # legible in the log instead of indistinguishable from a pass.
+          set +e
           scripts/lean-verify-siblings.sh ${{ steps.changed.outputs.files }}
+          rc=$?
+          set -e
+          case "$rc" in
+            0) echo "content siblings verified" ;;
+            3) echo "::warning::content-sibling compile VERIFIED NOTHING (infra: no olean cache, or all neutral-skipped) — not a pass, but not blocking" ;;
+            *) exit "$rc" ;;
+          esac

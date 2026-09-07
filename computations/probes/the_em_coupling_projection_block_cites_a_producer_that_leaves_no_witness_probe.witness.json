@@ -1,0 +1,151 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-05T16:59:28.757359+00:00",
+  "commitSha": "21a8d76250d2c826430ebb0e65b697ccce0adbfd",
+  "assertions": [
+    {
+      "name": "the table's directly-recomputable rows reproduce at the PROTON pin, as the table's own prose states",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the claiming producer declares this block",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the claiming witness carries the BARE form only — the dressed value, delta_CS and kappa are all absent",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the producer the TABLE names emits no witness at all, so six of the seven rows have no machine-readable provenance",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the STRUCTURED fields are correct: q0Anchor says proton and q0Value is the proton pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "no site now calls this proton-pinned computation muon-anchored — the prose agrees with the structured fields (was 4 sites + 3 in the witness)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the producer's constant is neither CODATA adjustment",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "it is the Rb-87 value, cited under that name in sec:fine-structure-data",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "no site now presents the Rb-87 value as a CODATA adjustment; the constant's value is unchanged",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the producer now names Morel et al. 2020 explicitly",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the mislabel is NUMERICALLY INERT — it cannot move the verdict, which is why it survived",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "this block's figure is the proton pin",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "the sibling block's figure is nearest the RETIRED pin — the two blocks disagree on the same quantity in the 11th digit",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    },
+    {
+      "name": "that figure is a TRUNCATION of the retired value, not a rounding — it misses a half-ulp window by 1.12 half-ulps, a documented hazard for any rounding-based matcher",
+      "computed": "1",
+      "expected": "1",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe",
+  "scriptFile": "the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.py",
+  "scriptHash": "02bca6fad446",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/the_em_coupling_projection_block_cites_a_producer_that_leaves_no_witness_probe.py"
+  },
+  "description": "Triages the witness-block-agreement checker's hardest row (6 of 7 published figures absent from the single witness declaring prop:em-coupling-projection). The BLOCK IS CORRECT: every figure reproduces at the proton pin from alpha_em_form_comparison_probe.py, the producer the table names in its own prose, and the table's claim that all rows use the proton pin is accurate. The real finding is that the contentBlock pointer is on the wrong producer -- em_coupling_projection_probe.py claims the block and computes 1 of 7 rows, while the producer of the other 6 emits no witness at all, so the block's machine-readable provenance covers 14 percent of it. Two label defects in the claiming witness, numbers untouched: (a) q0Value and q0Anchor correctly say proton while three prose sites say 'muon-anchored'; (b) CODATA_ALPHA_INV holds 137.035999206, which is the Morel et al. 2020 Rb-87 recoil measurement cited under that name in sec:fine-structure-data, not a CODATA adjustment. Both are numerically inert (Rb-87 vs CODATA 2022 is 2.1e-10 relative against a 5e-3 tolerance), which is why they survived. Third finding, cross-block: q[9]_q[10]_q is published at 136.823209 (proton) here and 136.823219654 (RETIRED vintage) in prop:em-coupling-bring-zero-mode, so two blocks disagree on one quantity in the 11th digit.",
+  "contentBlock": "prop:em-coupling-projection",
+  "data": {
+    "block_rows_at_proton_pin": {
+      "q_dq9_dq10": "136.82320885358258431",
+      "hbar_q_sq": "0.0098171864542750738106",
+      "two_q_over_2": "1.0054484333535611499"
+    },
+    "pointer": {
+      "claiming_producer": "computations/probes/em_coupling_projection_probe.py",
+      "claiming_producer_rows_covered": "1 of 7",
+      "producer_named_by_the_table": "computations/alpha/alpha_em_form_comparison_probe.py",
+      "producer_named_by_the_table_emits_witness": "no"
+    },
+    "label_defects": {
+      "q0_prose_says": "muon-anchored",
+      "q0_structured_says": "proton",
+      "alpha_constant": "137.035999206",
+      "alpha_constant_actually": "Morel et al. 2020, Rb-87 recoil",
+      "alpha_constant_labelled": "CODATA",
+      "rb87_vs_codata2022_relative": "2.11623e-10"
+    },
+    "cross_block_q_dq9_dq10": {
+      "proton": "136.823208853582584",
+      "muon_live": "136.823219729272854",
+      "retired": "136.82321965456121",
+      "em_coupling_projection_publishes": "136.823209",
+      "em_coupling_bring_zero_mode_publishes": "136.823219654"
+    }
+  },
+  "caveats": [
+    "Says nothing about whether the Chern-Simons dressing is the right model of alpha_EM. rem:em-coupling-chern-simons is open, kappa is still a sorry, and the named producer's own output records that the smallest residual belongs to a RULED-OUT PSLQ-empirical form -- the signature of a fit, not evidence for one.",
+    "Says nothing about which pin either block SHOULD take. That is the owner ruling qou-i229 holds. No published figure is changed here."
+  ]
+}

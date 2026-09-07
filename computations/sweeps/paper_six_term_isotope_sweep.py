@@ -84,7 +84,7 @@ from hecke_core import (  # noqa: E402
     Phi_q,
 )
 from experimental_constants import Q_NEUTRON_MEV, M_E_MEV  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 HERE = Path(__file__).parent
 
@@ -127,6 +127,24 @@ DEFERRED_INTRACTABLE_ATOMS = frozenset({
 })
 
 
+def _serialise(obj):
+    """Render the mpf working state to witness JSON at the LAST moment.
+
+    Applied once, to the whole witness dict, immediately before `wrap_legacy`.
+    The rows previously cast to `float` at construction time on the stated
+    grounds that "storage is for reporting and float64 is sufficient for ~16
+    digits" -- but `err_pct` IS the reported result, and a residual is the one
+    quantity in this producer where the digits past the 16th are the point.
+    """
+    if isinstance(obj, dict):
+        return {k: _serialise(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_serialise(v) for v in obj]
+    if isinstance(obj, mp.mpf):
+        return fmt(obj)
+    return obj
+
+
 def abs_mpf(v):
     """Coerce a per-generator volume to abs mpmath float (no f64
     round-trip — preserves precision for callers that pass mpf/sympy)."""
@@ -143,7 +161,16 @@ _T1_CACHE_B: dict | None = None
 
 # Default T1 source.  Set to "model-a" via environment to revert.
 import os as _os  # noqa: E402
+import sys as _sys  # noqa: E402
+_MODEL_B_WARNED = False
 from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+# This producer hand-builds its assertion payload and `json.dump`s it, so
+# `Assertion.to_dict` -- where the declared-tolerance guard runs -- is never
+# reached, and a re-run would re-emit the float literals and undo PR #5910's
+# drain for this file alone. `_tol` routes each DECLARED tolerance through
+# that guard; it returns a COMPUTED one unchanged, so those stay floats and
+# stay counted by the raw-float64 ratchet. Bean qou-9tqx.
+from qou_substrate.witness import declared_tolerance as _tol  # noqa: E402
 _T1_DEFAULT_SOURCE = _os.environ.get("QOU_T1_SOURCE", "model-b")
 
 
@@ -174,18 +201,42 @@ def _load_canonical_t1_model_b() -> dict:
         return _T1_CACHE_B
     path = _pb.witness_path("probe-sdp-canonical-paper-formula.witness.json", HERE)
     if not path.exists():
-        raise FileNotFoundError(
-            f"missing Model B T1 witness: {path}. "
-            f"THE PRODUCER IT USED TO NAME DOES NOT EXIST. "
-            f"`probe_sdp_canonical_paper_formula.py` is not on disk anywhere "
-            f"in this repo, GitHub code search finds it only in these error "
-            f"strings, and no commit in this clone's history touches it — so "
-            f"the old instruction to 'run it first' could not be followed by "
-            f"anyone. Tracked as bean `qou-imkb`, which also records that the "
-            f"registry's deuteron row is blocked on the 2026-08-29 owner "
-            f"ruling retiring the 6_2 assignment. Model B is unavailable; "
-            f"Model A (3A-strand) is the live T1 route."
-        )
+        # Model B is UNAVAILABLE, permanently, and this is not a missing run.
+        # `probe_sdp_canonical_paper_formula.py` is not on disk anywhere in
+        # this repo and no commit in this clone's history touches it, so the
+        # instruction this branch used to raise with ("run it first") could
+        # not be followed by anyone. It cannot be written either: its input,
+        # the 6_2 deuteron assignment, was RETIRED by the owner ruling of
+        # 2026-08-29 (`docs/audits/2026-08-29-deuteron-knot-owner-decision.md`).
+        #
+        # Return EMPTY rather than raise. The caller already falls through to
+        # Model A for any isotope absent from this table, so an empty table is
+        # exactly "no isotope has a Model B value" -- which is the truth. This
+        # matches how the OTHER consumer of this same witness under this same
+        # env var already behaves: `atomic_mass_via_rho_k.py` loads Model A
+        # first and overlays Model B only `if model_b_witness.exists()`.
+        #
+        # This does not override the 2026-05-11 "default to Model B"
+        # directive; it is what that directive means when B is unavailable --
+        # the directive's own wording is "prefer Model B ... fall back to
+        # legacy for atoms not yet in the Model B witness".
+        #
+        # Raising instead made the DEFAULT configuration fail for exactly the
+        # three isotopes Model B covers (D, T, 3He), measured 2026-09-05.
+        # Bean `qou-imkb`.
+        global _MODEL_B_WARNED
+        if not _MODEL_B_WARNED:
+            _MODEL_B_WARNED = True
+            print(
+                "[paper_six_term_isotope_sweep] Model B (SDP-canonical "
+                "low-strand) is unavailable: its producer cannot be written "
+                "because the 6_2 deuteron assignment it needs was retired by "
+                "the owner ruling of 2026-08-29. Falling through to Model A "
+                "(3A-strand) for D, T and 3He. Bean qou-imkb.",
+                file=_sys.stderr,
+            )
+        _T1_CACHE_B = {}
+        return _T1_CACHE_B
     d = json.loads(path.read_text())
     out: dict[str, mp.mpf] = {}
     for atom_name, atom_data in d.get("data", {}).get("results", {}).items():
@@ -415,7 +466,7 @@ def term6_higher_residues(vols):
 
 def paper_six_term_mass(Z, N, include_inter=True,
                           chirality_signs=None,
-                          m_e_hecke: float = 1.0,
+                          m_e_hecke=mp.mpf(1),
                           term5_mode: str = "multiplicative_on_t1",
                           isotope_label: str | None = None,
                           tower_mode: str = "li2q",
@@ -792,17 +843,26 @@ def paper_six_term_mass(Z, N, include_inter=True,
     # and `term6_cyclotomic_tail_MeV` as mpf so the proton calibration
     # `E_0 = (M_P_CODATA - p_t6_MeV) / m_p_hecke` and the final
     # `M_pred = E_0 * total_hecke + t6_MeV` retain 50-dps precision
-    # all the way through. Display fields stay float to keep witness
-    # JSON consumers (which expect numbers, not strings) compatible.
+    # all the way through.
+    #
+    # The other six were `float(...)` here on the grounds that they are
+    # "display fields" and JSON consumers expect numbers. Two things were wrong
+    # with that. They are not display: `term1..term5` are the per-term
+    # decomposition this sweep exists to publish, and `total_hecke` -- which the
+    # same block correctly keeps as mpf -- is their SUM, so the parts were being
+    # recorded at 16 digits while the whole was kept at 50. And the "consumers
+    # expect numbers" half is the convention this corpus dropped: `_precision.fmt`
+    # emits a decimal string and every witness reader in the tree parses one.
+    # They now stay mpf and are rendered by `_serialise` with everything else.
     return {
-        "term1_canonical_tr_M": float(t1),
-        "term2_single_gen_tower": float(t2),
-        "term3_pair_gen_tower": float(t3),
-        "term4_frobenius_codim_raw": float(t4_raw),
-        "term4_frobenius_codim_scaled": float(t4),
-        "term5_chirality_factor_a_K": float(t5_factor),
+        "term1_canonical_tr_M": t1,
+        "term2_single_gen_tower": t2,
+        "term3_pair_gen_tower": t3,
+        "term4_frobenius_codim_raw": t4_raw,
+        "term4_frobenius_codim_scaled": t4,
+        "term5_chirality_factor_a_K": t5_factor,
         "term5_chirality_source": chirality_source,
-        "term5_additive_contribution": float(t5),
+        "term5_additive_contribution": t5,
         "term6_cyclotomic_tail_MeV": t6_MeV,  # mpf — calibration-critical
         "term5_mode": term5_mode,
         "tower_mode": tower_mode,
@@ -811,7 +871,7 @@ def paper_six_term_mass(Z, N, include_inter=True,
         # actually used. Kept in the schema unconditionally so witness
         # consumers don't need to special-case the field's presence.
         "sub_tower_mode": None,
-        "m_e_hecke": float(m_e_hecke),
+        "m_e_hecke": m_e_hecke,
         "total_hecke": total,  # mpf — calibration-critical
     }
 
@@ -929,15 +989,18 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
 
     if verbose:
         print(f"\nMode: {tower_mode}  (e0_mode={e0_mode})")
-        print(f"  Proton: t1={p_terms['term1_canonical_tr_M']:.4e} "
-              f"t2={p_terms['term2_single_gen_tower']:.4e} "
-              f"t3={p_terms['term3_pair_gen_tower']:.4e} "
-              f"t4={p_terms['term4_frobenius_codim_scaled']:.4e} "
+        # `float()` here is DISPLAY only — an mpf has no `%e` format.
+        print(f"  Proton: t1={float(p_terms['term1_canonical_tr_M']):.4e} "
+              f"t2={float(p_terms['term2_single_gen_tower']):.4e} "
+              f"t3={float(p_terms['term3_pair_gen_tower']):.4e} "
+              f"t4={float(p_terms['term4_frobenius_codim_scaled']):.4e} "
               f"t6={float(p_terms['term6_cyclotomic_tail_MeV']):.4f} MeV")
         print(f"  E_0 = {float(E_0):.6e} MeV/Hecke-unit  ({e0_mode})")
 
     rows = []
-    for iso, Z, N, inter, M_codata in isotopes:
+    for iso, Z, N, inter, M_codata_str in isotopes:
+        # The table now carries decimal strings; lift once, here.
+        M_codata = mp.mpf(M_codata_str)
         # ── Deferred-intractable isotopes ───────────────────────────
         # Per atomic_tr_m_mpfr_50dps.py's ⁴He omission note, isotopes
         # at A ≥ 5 need Hecke H_{≥15} with p(n) ≥ 176 partitions and
@@ -1050,21 +1113,18 @@ def run_sweep_for_mode(tower_mode: str, isotopes: list, *, verbose: bool = True,
         # the Habiro residue witness via `_load_canonical_t6_MeV`),
         # so it must NOT be scaled by E_0 — it is added directly.
         M_pred = E_0 * terms["total_hecke"] + terms["term6_cyclotomic_tail_MeV"]
-        err_pct = (M_pred - M_codata) / M_codata * 100 if M_codata else 0.0
-        # Cast mpf-valued fields to float at row-storage time so the
-        # witness JSON contains numeric values for downstream consumers
-        # (the precision-critical work happens above; storage is for
-        # reporting and float64 is sufficient for ~16 digits).
-        terms_for_row = {
-            **terms,
-            "total_hecke": float(terms["total_hecke"]),
-            "term6_cyclotomic_tail_MeV": float(terms["term6_cyclotomic_tail_MeV"]),
-        }
+        err_pct = ((M_pred - M_codata) / M_codata * 100 if M_codata
+                   else mp.mpf(0))
+        # Rows carry `mpf`; `_serialise` renders the whole witness once, at the
+        # end. This block used to cast each field to `float` here, reasoning
+        # that "storage is for reporting and float64 is sufficient for ~16
+        # digits" -- but `err_pct` is not incidental storage, it is the result
+        # this sweep exists to report, and the L1 target is 1e-15.
         rows.append({
             "isotope": iso, "Z": Z, "N": N, "A": Z + N,
-            "M_codata": M_codata, "M_predicted": float(M_pred),
-            "err_pct": float(err_pct),
-            **terms_for_row,
+            "M_codata": M_codata, "M_predicted": M_pred,
+            "err_pct": err_pct,
+            **terms,
         })
     return E_0, rows
 
@@ -1356,19 +1416,25 @@ if __name__ == "__main__":
     # prediction input. The neighbouring entries are plain CODATA floats, which
     # is what this one was meant to be.
     from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
+    # Decimal STRINGS, not floats. These are the validation masses the `err_pct`
+    # column is measured against, and `939.565` as a Python literal is the
+    # binary64 approximation of that decimal, not the decimal -- so every
+    # residual carried a ~1e-17 relative offset that had nothing to do with the
+    # model. `mp.mpf("939.565")` is the decimal. The values are otherwise
+    # unchanged: same digits, lifted losslessly instead of through f64.
     ISOTOPES = [
-        ("p",   1, 0, False,  float(M_P_MEV_VALIDATION)),
-        ("n",   0, 1, False,  939.565),
-        ("D",   1, 1, True,  1876.124),
-        ("T",   1, 2, True,  2809.432),
-        ("3He", 2, 1, True,  2809.413),
-        ("4He", 2, 2, True,  3728.401),
-        ("5Li", 3, 2, True,  4669.151),
-        ("6Li", 3, 3, True,  5603.052),
-        ("7Li", 3, 4, True,  6535.366),
-        ("7Be", 4, 3, True,  6536.227),
-        ("8Be", 4, 4, True,  7456.894),
-        ("9Be", 4, 5, True,  8392.749),
+        ("p",   1, 0, False,  str(M_P_MEV_VALIDATION)),
+        ("n",   0, 1, False,  "939.565"),
+        ("D",   1, 1, True,  "1876.124"),
+        ("T",   1, 2, True,  "2809.432"),
+        ("3He", 2, 1, True,  "2809.413"),
+        ("4He", 2, 2, True,  "3728.401"),
+        ("5Li", 3, 2, True,  "4669.151"),
+        ("6Li", 3, 3, True,  "5603.052"),
+        ("7Li", 3, 4, True,  "6535.366"),
+        ("7Be", 4, 3, True,  "6536.227"),
+        ("8Be", 4, 4, True,  "7456.894"),
+        ("9Be", 4, 5, True,  "8392.749"),
     ]
 
     modes = ["brane-legacy", "drop", "q1-base", "r-side-bare", "li2q", "habiro", "per-partition-k", "combined"]
@@ -1392,7 +1458,8 @@ if __name__ == "__main__":
             elif row.get("deferred"):
                 line += f" {'DEF':>10}"
             else:
-                line += f" {row['err_pct']:>+9.3f}%"
+                # `float()` here is DISPLAY only -- an mpf has no `%f` format.
+                line += f" {float(row['err_pct']):>+9.3f}%"
         print(line)
 
     # Mean and max abs errors per mode (excluding proton calibration anchor)
@@ -1402,9 +1469,10 @@ if __name__ == "__main__":
         non_p_errs = [abs(r["err_pct"]) for r in rows
                        if r["isotope"] != "p" and "err_pct" in r]
         if non_p_errs:
-            mean_e = sum(non_p_errs) / len(non_p_errs)
+            mean_e = mp.fsum(non_p_errs) / len(non_p_errs)
             max_e = max(non_p_errs)
-            print(f"  {mode:<8}: mean |err| = {mean_e:>7.3f}%, max |err| = {max_e:>7.3f}%")
+            print(f"  {mode:<8}: mean |err| = {float(mean_e):>7.3f}%, "
+                  f"max |err| = {float(max_e):>7.3f}%")
 
     # Isospin (T vs 3He) per mode
     print(f"\n  Isospin check (T - ³He, MeV):")
@@ -1414,7 +1482,7 @@ if __name__ == "__main__":
         He_row = next((r for r in sweep_results[mode]["rows"] if r["isotope"] == "3He"), None)
         if T_row and He_row and "M_predicted" in T_row and "M_predicted" in He_row:
             delta = T_row["M_predicted"] - He_row["M_predicted"]
-            print(f"  {mode:<10} {delta:>+14.4f}  {0.019:>10.4f}")
+            print(f"  {mode:<10} {float(delta):>+14.4f}  {0.019:>10.4f}")
 
     # Use li2q mode rows as the primary witness output (canonical corrected form).
     # Back-compat consumers that need the legacy brane-tower form can read
@@ -1470,18 +1538,21 @@ if __name__ == "__main__":
         # claiming a dependency we do not actually wire.
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "q_0": float(Q0_FLOAT),
+            # `Q0` (= `q_parameter.Q_MP`), not `float(Q0_FLOAT)`: the anchor a
+            # witness records should be the anchor the run used, at the
+            # precision it used it. `_serialise` renders it.
+            "q_0": Q0,
             "canonical_mode": CANONICAL_MODE,
-            # E_0 stays mpf through calibration arithmetic (Gemini #5);
-            # cast to float here so the witness JSON contains a numeric
-            # value rather than a 50-dps string, keeping downstream
-            # JSON consumers compatible.
-            "E_0_MeV": float(sweep_results[CANONICAL_MODE]["E_0"]),
-            "E_0_MeV_brane_legacy": float(sweep_results["brane-legacy"]["E_0"]),
+            # E_0 stays mpf all the way to `_serialise`. It was cast to float
+            # here "so the witness JSON contains a numeric value rather than a
+            # 50-dps string" -- but E_0 is the calibration constant every mass
+            # in this witness is scaled by, so truncating it caps every row.
+            "E_0_MeV": sweep_results[CANONICAL_MODE]["E_0"],
+            "E_0_MeV_brane_legacy": sweep_results["brane-legacy"]["E_0"],
         },
         "rows": rows,
         "all_modes": {
-            mode: {"E_0": float(sweep_results[mode]["E_0"]),
+            mode: {"E_0": sweep_results[mode]["E_0"],
                    "rows": sweep_results[mode]["rows"]}
             for mode in modes
         },
@@ -1505,12 +1576,12 @@ if __name__ == "__main__":
         e0_mode_used = _os.environ.get("QOU_E0_MODE", "substrate")
         witness["assertions"].append({
             "name": "proton_anchor_exact",
-            "computed": float(proton_row["err_pct"]),
-            "expected": 0.0,
+            "computed": proton_row["err_pct"],
+            "expected": "0",
             "passed": (e0_mode_used == "proton-fit"
-                       and abs(float(proton_row["err_pct"])) < 1e-6)
+                       and abs(proton_row["err_pct"]) < mp.mpf("1e-6"))
                       or (e0_mode_used == "substrate"),
-            "tolerance": 1e-6,
+            "tolerance": "1e-6",
             "source": "thm:knot-mass-formula-unified § proton calibration",
             "note": ("HARD BREAK 2026-05-12 (P1.A): under substrate "
                      "e0_mode the proton residual is the structural "
@@ -1521,11 +1592,13 @@ if __name__ == "__main__":
         max_err = max(non_p_errs)
         witness["assertions"].append({
             "name": "non_proton_max_err_finite",
-            "computed": float(max_err),
-            "expected": 0.0,
-            "passed": max_err < 1e6,  # massively loose; just rules out NaN/inf
-            "tolerance": 1e6,
+            "computed": max_err,
+            "expected": "0",
+            "passed": max_err < mp.mpf("1e6"),  # loose; just rules out NaN/inf
+            "tolerance": "1e6",
             "source": "this witness",
         })
+    # Render the whole mpf working state to JSON, once, here.
+    witness = _serialise(witness)
     out = WitnessBuilder.wrap_legacy("paper-six-term-isotope-sweep", witness, script_path=__file__, engine="mpmath").save()
     print(f"\nWitness: {out}")

@@ -65,7 +65,12 @@ except ImportError:  # pragma: no cover - portability fallback
         return -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q)
 
     def chi_block_21(q):
-        return (q ** 2 - 1) * (-(q ** 4) - 1) / (4 * q ** 3)
+        # Canonical BORROMEAN intra-nucleon ordering (beans qou-hu1f/qou-eddc,
+        # 2026-09-07). This is the one block the ordering reaches; the other two
+        # are 1-dimensional and provably unmoved. Keep in step with qbeta_utils.
+        P = (2 * q ** 12 - 5 * q ** 10 + 5 * q ** 8 - 5 * q ** 6
+             + 5 * q ** 4 - 5 * q ** 2 + 2)
+        return (q ** 2 - 1) * (q ** 4 + 1) * P / (4 * q ** 9)
 
     def chi_block_111(q):
         return -(q ** 2 - 1) * (q ** 2 + 1) ** 2 / (4 * q ** 5)
@@ -74,6 +79,32 @@ except ImportError:  # pragma: no cover - portability fallback
 
 mp.dps = 60
 I_UNIT = mpc(0, 1)
+
+# `_precision` lives in `computations/substrate/`, and this file sits in the
+# `qbeta/` cluster, so `sys.path[0]` is its own directory and a bare
+# `from _precision import fmt` raises ModuleNotFoundError (the `_path_bridge`
+# bootstrap class, bean `qou-0e1t`). This file already walks up to `substrate/`
+# — at the very BOTTOM, just before it writes the witness. `fmt` is needed at
+# results-assembly time, so the walk is hoisted here and the one below reuses
+# the same already-inserted path.
+import os as _os_boot, sys as _sys_boot  # noqa: E402
+_d_boot = _os_boot.path.dirname(_os_boot.path.abspath(__file__))
+while (_d_boot != _os_boot.path.dirname(_d_boot)
+       and not _os_boot.path.isdir(_os_boot.path.join(_d_boot, "substrate"))):
+    _d_boot = _os_boot.path.dirname(_d_boot)
+_sys_boot.path.insert(0, _os_boot.path.join(_d_boot, "substrate"))
+from _precision import fmt  # noqa: E402
+
+
+def _fmt_or_none(v):
+    """`fmt` an mpf, pass `None` through.
+
+    The four fields this renders are legitimately `None` when the fit does not
+    run, and that `None` is meaningful — it is not the same as a residual of
+    zero.
+    """
+    return fmt(v) if v is not None else None
+
 
 results: dict = {}
 asserts: list[tuple[str, bool]] = []
@@ -117,9 +148,11 @@ check("bar-EVEN cosh(x sinh η) = J₀ + 2 Σ J_{2m} cosh(2mη)  (resid < 1e-40)
 results["jacobi_anger"] = {
     "identity_bar_odd": "sinh(x sinh η) = 2 Σ_{m≥0} J_{2m+1}(x) sinh((2m+1)η)",
     "identity_bar_even": "cosh(x sinh η) = J₀(x) + 2 Σ_{m≥1} J_{2m}(x) cosh(2mη)",
-    "max_residual_gen": float(max_gen),
-    "max_residual_bar_odd": float(max_odd),
-    "max_residual_bar_even": float(max_even),
+    # `float()` here floored the very numbers the VERDICT quotes as "<1e-40" —
+    # a residual asserted below 1e-40 cannot be recorded in f64 and mean it.
+    "max_residual_gen": fmt(max_gen),
+    "max_residual_bar_odd": fmt(max_odd),
+    "max_residual_bar_even": fmt(max_even),
     "truncation_M": M,
 }
 
@@ -162,14 +195,28 @@ def sinh_order_coeffs(expr) -> dict[int, sp.Rational]:
     """Bar-odd part of a Laurent polynomial χ(q), expanded as Σ_k a_k sinh(kη).
 
     bar_odd = (χ(q) − χ(1/q))/2 = Σ_k a_k (q^k − q^{-k})/2, so a_k = 2·[q^k].
-    Powers run |k| ≤ 5 for the H₃ β-characters, so multiply by q^5 and read a
-    genuine polynomial.
+
+    The shift needed to turn the Laurent polynomial into a genuine one is read
+    off the expression rather than hardcoded. It used to be a literal `q**5`,
+    which was right for the grouped-frame characters (|k| ≤ 5) and raised
+    `PolynomialError` the moment the canonical borromean χ_(2,1) arrived with
+    q⁻⁹ in it (beans qou-hu1f / qou-eddc). Failing loudly was the correct
+    behaviour; hardcoding a wider literal instead would just move the wall.
     """
-    bar_odd = sp.expand((expr - expr.subs(q, 1 / q)) / 2)
-    P = sp.Poly(sp.expand(bar_odd * q ** 5), q)
+    bar_odd = sp.cancel(sp.together(sp.expand((expr - expr.subs(q, 1 / q)) / 2)))
+    num, den = sp.fraction(bar_odd)
+    den_poly = sp.Poly(den, q)
+    if len(den_poly.monoms()) != 1:
+        raise ValueError(
+            f"bar-odd denominator is not a monomial in q: {den}. This routine "
+            "reads a_k off a Laurent polynomial and cannot handle a genuine "
+            "rational function.")
+    shift = den_poly.degree()
+    scale = den_poly.LC()
+    P = sp.Poly(sp.expand(num / scale), q)
     out: dict[int, sp.Rational] = {}
-    for k in range(1, 6):
-        c = P.coeff_monomial(q ** (5 + k))
+    for k in range(1, P.degree() - shift + 1):
+        c = P.coeff_monomial(q ** (shift + k))
         if c != 0:
             out[k] = 2 * c
     return out
@@ -196,11 +243,12 @@ for name, chi in blocks.items():
 check("parity-of-order: every n=3 bar-odd block has ONLY odd sinh-orders "
       "(consistent with sinh(x sinh η) structure)", all_orders_odd)
 
-# Over-determination needs ≥3 orders; no single block has 3 (each carries 2),
-# so a single block is exactly-determined by (amplitude, x) — not falsifiable.
-# The unit-weighted block SUM carries all of {1,3,5} — a legitimate 3-order
-# bar-odd truncation (NOT the physical Wenzl-weighted Markov trace) on which the
-# single-x sinh(x sinh η) profile is OVER-determined and thus falsifiable.
+# Over-determination needs ≥3 orders. In the grouped frame no single block had
+# 3 (each carried 2), so only the unit-weighted SUM was falsifiable, at exactly
+# {1,3,5}. Under the canonical borromean ordering χ_(2,1) carries {1,3,5,7,9}
+# on its own, so the sum reaches order 9 and the ordering-dependent block is now
+# individually over-determined — tested separately below. Both are bar-odd
+# truncations, NOT the physical Wenzl-weighted Markov trace.
 comb_orders = sorted(k for k, v in combined.items() if v != 0)
 print(f"  unit-weighted block sum: orders {comb_orders}  coeffs "
       f"{ {k: str(combined[k]) for k in comb_orders} }")
@@ -213,26 +261,63 @@ if {1, 3, 5} <= set(comb_orders):
     # solve a1·J_3(x) = a3·J_1(x) for x, then test the over-determined a_5/a_1
     xb = findroot(lambda xx: a1 * besselj(3, xx) - a3 * besselj(1, xx),
                   mpf("4.5"))
-    single_x_star = float(xb)
+    single_x_star = xb
     pred = besselj(5, xb) / besselj(1, xb)
     act = a5 / a1
-    single_x_resid = float(fabs(pred - act))
-    print(f"  single-x fit: x* = {single_x_star:.6f}  "
+    single_x_resid = fabs(pred - act)
+    print(f"  single-x fit: x* = {float(single_x_star):.6f}  "
           f"J_5/J_1 predicted = {float(pred):.6f}  actual = {float(act):.6f}  "
-          f"residual = {single_x_resid:.4f}")
+          f"residual = {float(single_x_resid):.4f}")
 
-check("single-x Bessel over-determination FAILS on the 3-order truncation "
+check(f"single-x Bessel over-determination FAILS on the "
+      f"{len(comb_orders)}-order unit-weighted truncation "
       "(residual ≫ 0 ⇒ Bessel object is the tower / contraction limit, not "
       "the n=3 trace)",
       single_x_resid is not None and single_x_resid > 1e-3)
+
+# The canonical χ_(2,1) alone now carries {1,3,5,7,9}, so the same falsification
+# runs on the single ordering-dependent block — a test the grouped frame could
+# not support, because there that block carried only two orders and any
+# (amplitude, x) fitted it exactly. Fitting x on (a_1, a_3) and predicting
+# a_5/a_1 is the same protocol as above, on a block rather than a sum.
+block21_resid = None
+block21_star = None
+b21 = spectra["(2,1)"]
+if {1, 3, 5} <= set(b21["orders_present"]):
+    c = {k: mpf(str(sp.Rational(b21["coeffs"][str(k)]).evalf(60)))
+         for k in (1, 3, 5)}
+    xb2 = findroot(lambda xx: c[1] * besselj(3, xx) - c[3] * besselj(1, xx),
+                   mpf("4.5"))
+    block21_star = xb2
+    pred2 = besselj(5, xb2) / besselj(1, xb2)
+    block21_resid = fabs(pred2 - c[5] / c[1])
+    print(f"  χ_(2,1) alone: x* = {float(block21_star):.6f}  "
+          f"J_5/J_1 predicted = {float(pred2):.6f}  "
+          f"actual = {float(c[5] / c[1]):.6f}  residual = {float(block21_resid):.4f}")
+check("single-x Bessel over-determination ALSO fails on the canonical χ_(2,1) "
+      "block alone (newly testable: the borromean form carries 5 odd orders "
+      "where the grouped form carried 2)",
+      block21_resid is not None and block21_resid > 1e-3)
+
 results["n3_bar_odd_spectra"] = {
     "per_block": spectra,
     "unit_weighted_sum_orders": comb_orders,
     "unit_weighted_sum_coeffs": {str(k): str(combined[k]) for k in comb_orders},
-    "single_x_star": single_x_star,
-    "single_x_over_determination_residual": single_x_resid,
-    "note": "unit-weighted block sum is a 3-order bar-odd truncation for the "
-            "over-determination test, NOT the physical Wenzl-weighted Markov trace",
+    # `float()` stood on all four of these where they are BUILT (the `xb` /
+    # `fabs(...)` lines above). They are an over-determination residual and the
+    # x* it is measured at -- the numbers this probe reports -- so they are
+    # carried as mpf and rendered here.
+    "block_21_single_x_star": _fmt_or_none(block21_star),
+    "block_21_over_determination_residual": _fmt_or_none(block21_resid),
+    "single_x_star": _fmt_or_none(single_x_star),
+    "single_x_over_determination_residual": _fmt_or_none(single_x_resid),
+    "intra_nucleon_ordering": "borromean",
+    "note": "Both truncations here are bar-odd, NOT the physical "
+            "Wenzl-weighted Markov trace. Under the canonical borromean "
+            "ordering the unit-weighted sum carries {1,3,5,7,9} and chi_(2,1) "
+            "carries the same five orders on its own; in the superseded "
+            "grouped frame the sum carried exactly {1,3,5} and no single block "
+            "carried more than two, so only the sum was falsifiable.",
 }
 results["chi_source"] = _CHI_SOURCE
 
@@ -240,10 +325,13 @@ results["chi_source"] = _CHI_SOURCE
 # ───────────────────────────────────────────────────────────────────────
 verdict = (
     "JACOBI-ANGER + J/I PROVED (numeric, <1e-40). The n=3 bar-odd character "
-    "spectra are PURE ODD-ORDER (the sinh(x sinh η) structure), but each finite "
-    "2–3-order block does NOT match a single-x Bessel profile (over-determination "
-    "fails) — confirming the Bessel object is the brane-tower / SU_q(2)→E_q(2) "
-    "contraction limit, not the n=3 trace. No fit; nothing wired; c_3 cal-anchored."
+    "spectra are PURE ODD-ORDER (the sinh(x sinh η) structure) — which under the "
+    "canonical borromean ordering now holds out to order 9, where the grouped "
+    "frame only reached 5, and did not have to. But neither the unit-weighted "
+    "sum nor the canonical χ_(2,1) block alone matches a single-x Bessel profile "
+    "(over-determination fails on both) — confirming the Bessel object is the "
+    "brane-tower / SU_q(2)→E_q(2) contraction limit, not the n=3 trace. "
+    "No fit; nothing wired; c_3 cal-anchored."
 )
 print("\nVERDICT:", verdict)
 

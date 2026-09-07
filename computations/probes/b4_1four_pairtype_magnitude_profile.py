@@ -55,12 +55,16 @@ from _li_2_q_util import load_q_50dps  # noqa: E402
 from substrate._precision import set_compute_dps  # noqa: E402
 from substrate.experimental_constants import M_E_MEV  # noqa: E402
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+)
 
 set_compute_dps()
 COMP = str(_COMP)
 
-AME = {"b2_pn": mp.mpf("2.224566"), "b3": mp.mpf("1.4264"),
-       "b4": mp.mpf("9.2431"), "B4He": mp.mpf("28.29566")}
+AME = {"b2_pn": AME_B_DEUTERON_MEV_VALIDATION, "b3": mp.mpf("1.4264"),
+       "b4": mp.mpf("9.2431"), "B4He": AME_B_HE4_MEV_VALIDATION}
 
 
 def det_n(pairs, n):

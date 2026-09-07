@@ -69,6 +69,7 @@ sys.path.insert(0, str(HERE.parent.parent / "tools" / "qou-substrate" / "python"
 from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
+from codata_constants import AME_B_HE4_MEV_VALIDATION
 
 
 def main() -> int:
@@ -97,7 +98,7 @@ def main() -> int:
     m_e = mp.mpf(str(M_E_MEV))
     A = 4
     G = mp.catalan
-    B_AME = mp.mpf("28.295674")
+    B_AME = AME_B_HE4_MEV_VALIDATION
     rho_F_postulated = mp.mpf(2)
     rho_F_required = B_AME / (m_e * A * 8 * G)
     gap_rho_F = rho_F_postulated - rho_F_required
@@ -163,9 +164,9 @@ def main() -> int:
         hc2_results.append({
             "k": k,
             "top_partitions": [list(e["partition"]) for e in top_k],
-            "fraction_of_tr_M": float(frac_k),
-            "rho_F_star_required": float(rho_F_star_k),
-            "deviation_from_2": float(rho_F_star_k - 2),
+            "fraction_of_tr_M": fmt(frac_k),
+            "rho_F_star_required": fmt(rho_F_star_k),
+            "deviation_from_2": fmt(rho_F_star_k - 2),
         })
     print()
 
@@ -213,7 +214,7 @@ def main() -> int:
         pairs_summary.append({
             "pair": [list(p) for p in key],
             "n_cached_in_pair": len(es),
-            "fraction_total": float(pair_frac),
+            "fraction_total": fmt(pair_frac),
         })
     print()
     print(f"  Self-conjugate (λ = λᵀ): "
@@ -280,13 +281,13 @@ def main() -> int:
     print(verdict)
     print()
 
-    builder.add_data("rho_F_postulated", float(rho_F_postulated))
-    builder.add_data("rho_F_required", float(rho_F_required))
-    builder.add_data("gap_rho_F", float(gap_rho_F))
+    builder.add_data("rho_F_postulated", fmt(rho_F_postulated))
+    builder.add_data("rho_F_required", fmt(rho_F_required))
+    builder.add_data("gap_rho_F", fmt(gap_rho_F))
     builder.add_data("HC1_uniform_trace_dominant", {
-        "trace_dominant_fraction": float(frac_TD),
-        "rho_F_star": float(rho_F_star_HC1),
-        "deviation_from_2": float(rho_F_star_HC1 - 2),
+        "trace_dominant_fraction": fmt(frac_TD),
+        "rho_F_star": fmt(rho_F_star_HC1),
+        "deviation_from_2": fmt(rho_F_star_HC1 - 2),
     })
     builder.add_data("HC2_top_k_localized", hc2_results)
     builder.add_data("HC3_bar_pairs", pairs_summary)
@@ -301,7 +302,7 @@ def main() -> int:
         name="rho_F_required_matches_AME_he4",
         computed=abs(float(rho_F_required) - 1.8892) < 1e-3,
         expected=True,
-        tolerance=0.0,
+        tolerance=mp.mpf(0),
         source="B_AME / (m_e · 4 · 8G)",
     )
 

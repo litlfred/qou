@@ -6,20 +6,20 @@
   "description": "Full A=4 (\u2074He/S\u2081\u2082) Option-E binding: B=m_e\u00b7|\u03a3_\u03bb y\u00b7\u03c7\u00b7sgn\u00b7M_\u03bb|, M_\u03bb\u2208{f^\u03bb, KL-Betti B_\u03bb}. \u03c7 77/77 (chi_q_via_gp), B_\u03bb via kl_betti_sum_rust cheapest-cell-first under a wall budget; f^\u03bb fallback for uncomputed deep cells. Tests #2839's single-scalar 'closure' against the full signed sum.",
   "data": {
     "nucleus": "4He (H_12/S_12)",
-    "sum_f_lambda": "0.4857822423459058333917825932006298953970757041548754910540423905247376",
-    "B_he4_f_lambda_MeV": "0.2482342161025931648807508687941290051949501457176342491762141436409201",
-    "B_he4_f_err_pct": -99.12271275487974,
-    "sum_betti_partial": "0.4857822423459058333917825932006298953970757041548754910540423905247376",
-    "B_he4_betti_partial_MeV": "0.2482342161025931648807508687941290051949501457176342491762141436409201",
-    "B_he4_betti_err_pct": -99.12271275487974,
+    "sum_f_lambda": "-1.611882595747172821977486496073394827200505200356535542960081312228487",
+    "B_he4_f_lambda_MeV": "0.8236703150622787685645817702971495619255320276200778763362909671058354",
+    "B_he4_f_err_pct": -97.0890580209132,
+    "sum_betti_partial": "-1.611882595747172821977486496073394827200505200356535542960081312228487",
+    "B_he4_betti_partial_MeV": "0.8236703150622787685645817702971495619255320276200778763362909671058354",
+    "B_he4_betti_err_pct": -97.0890580209132,
     "betti_shapes_computed": 2,
-    "betti_weight_coverage_pct": 2.5990127685315505,
+    "betti_weight_coverage_pct": 5.149868965152767,
     "B_lambda_computed": {
       "12": 1,
       "11,1": 11
     },
-    "AME_he4_MeV": "28.29566",
-    "factor_needed_close": 113.98775094044906
+    "AME_he4_MeV": "28.2956623999999999999999999999999999999999999999999915823563342238137",
+    "factor_needed_close": 34.35314091398393
   },
   "assertions": [
     {
@@ -28,10 +28,10 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "fbbff9471f32",
-  "scriptCommitSha": "c9c12648e419c9d4b2e75b4a6fbce9cb0471dda0",
-  "commitSha": "cb2197ab70f638c1bbedbf7b6850b0faaa071a10",
-  "computedAt": "2026-09-04T03:47:09.055007+00:00",
+  "scriptHash": "cad06b03d9c0",
+  "scriptCommitSha": "70ae502091a8812b80e72e2a7b49aac0fc2b4e7a",
+  "commitSha": "cbbd5df960e97f7f96b46b0bfbfabe8281bfb8c5",
+  "computedAt": "2026-09-06T13:17:54.221427+00:00",
   "durationMs": 0,
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"

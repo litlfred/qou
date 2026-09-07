@@ -1,11 +1,11 @@
 ---
 # qou-lsib
-title: '69 content-block Lean siblings do not compile — nothing builds them, and 66 back a declared lean: ref'
+title: 'Content-block Lean siblings: 34 unverified as of 2026-08-28, and nothing in CI builds them'
 status: in-progress
 type: task
 priority: high
 created_at: 2026-08-22T20:45:00Z
-updated_at: 2026-08-22T20:45:00Z
+updated_at: 2026-09-07T08:42:40Z
 ---
 
 Measured while fixing `qou-rhax`, which was one instance of this population.
@@ -124,3 +124,165 @@ Three findings beyond the count:
 widen the gate. `lean-content-siblings.yml` already compiles content siblings,
 but diff-scoped and `workflow_dispatch:`-only, so it reaches neither the 34 nor
 anything on a push. Widening it — not re-enabling it — is what closes this.
+
+---
+
+## Note from `qou-eddc` / `qou-ox7y` (2026-09-07): "nothing builds them" ≠ "they do not build"
+
+Not a resolution — a correction to the premise, from a session that was
+**blocked by the stronger reading of this bean** and should not have been.
+
+`qbeta-per-block-chi-closed-forms.lean` is one of this population. It compiles
+at **0 errors** in this container, before and after a definition swap, with
+`lean` invoked directly:
+
+```sh
+cd content/quantum-observable-universe/lean
+export PATH="$HOME/.elan/bin:$PATH"
+LP=$(find "$PWD/.lake" -type d -path "*/build/lib/lean" | tr '\n' ':')
+export LEAN_PATH="${LP}${PWD}/.lake/build/lib/lean"
+lean -D autoImplicit=false --root="$PWD" ../mass-endomorphism/<block>.lean
+```
+
+The bean's own measurement is right and unchanged: these files are outside the
+package globs, so `lake build QOU` never touches them and nothing in CI does
+either. What does not follow — and what a reader takes away — is that they are
+broken. At least one is not.
+
+This mattered concretely. `qou-eddc` recorded itself as blocked on Lean, citing
+this bean, and left a definition unmigrated across three attempts. Both halves
+of that were wrong: `lake` was on disk the whole time at `~/.elan/bin`, and the
+sibling built.
+
+**Worth measuring before triaging:** run the invocation above across all 69 and
+split the population into *green but unwired* and *actually broken*. If most are
+green, this is a CI-wiring task, not a repair backlog, and the 66 declared
+`lean:` refs it backs are in better shape than the bean currently implies. I
+have not run that sweep — one file is one file.
+
+---
+
+## 2026-09-07 — the gate half, and a re-measure of the 34
+
+### Correcting my own note above
+
+The note I appended earlier today recommended running a whole-tree sweep. That
+was redundant — the 2026-08-28 update on this bean had already run it (944
+swept, 907/34/3), and even records the `LEAN_PATH` gotcha I rediscovered. What
+misled me is that this bean's **title** still says 69, and a reader takes the
+title, not the fourth section. Retitling is the cheap half of the fix.
+
+### Remedy 2 (widen the gate) — done, and it was worse than recorded
+
+The bean had it as "diff-scoped ... so it reaches neither the 34 nor anything
+on a push". Measured rather than reasoned, it was a **green no-op**. Both jobs
+computed
+
+    base="origin/${{ github.base_ref }}"
+    files=$(git diff --name-only --diff-filter=d "$base"...HEAD -- '*.lean' | tr '\n' ' ')
+
+and `github.base_ref` is **empty for `workflow_dispatch`**, the workflow's only
+trigger. `base` became the literal `origin/`, git answered `fatal: bad revision
+'origin/...HEAD'`, and `files` came back empty. `set -e` did not fire, because
+the assignment's status is the pipeline's and the pipeline ends in `tr`. Every
+downstream step was `if: files != ''`. **Both jobs skipped everything and
+reported green, on every run they were ever capable of.**
+
+Fixed by a `scope` input (all | changed, default all) resolved through a new
+`scripts/lib/ci-lean-scope.sh`. Against this checkout the old idiom yields 0
+files; the new one yields 938 siblings. Auto-triggers stay off — this widens
+what a dispatch covers, it re-enables nothing.
+
+The shared function is not there for DRY. It is there because an *unresolvable*
+scope and a *genuinely empty* scope produced the same output and the caller
+could not tell them apart. Now a scope that cannot be computed fails, an
+unresolvable base fails, and a whole-tree scope that comes back empty fails —
+the tree is never empty. `--self-test` has 11 cases; case 1 reproduces the
+original defect against the old idiom, so the fix is measured against the bug.
+
+`--fail-on` stays scope=changed only. Whole-tree is report-only: ~40
+pre-existing import-order defects exist tree-wide, so a whole-tree `--fail-on`
+would be red for unrelated reasons. It prints them; it does not pretend to gate.
+
+### The same green-no-op one layer down
+
+`scripts/lean-verify-siblings.sh` `exit 0`'d when the olean cache could not be
+restored, printing only a `::warning`. Caught live: re-running the 34 through it
+today, `lean-cache-restore.sh` died (`tar: Unexpected EOF in archive`) and the
+script **reported success over 32 files it never opened**, in a run whose whole
+purpose was to re-check them.
+
+The neutral-skip is right — a cold runner must not false-block a PR — but
+conflated with 0 it means a permanently broken cache makes the gate permanently
+green and useless, silently. Now **exit 3 = VERIFIED NOTHING**, for both the
+no-cache path and the every-file-neutral-skipped path. CI maps 3 to a warning,
+so blocking behaviour is unchanged; an agent running it locally now sees that
+nothing was verified.
+
+### Re-measuring the 34
+
+Direct `lean` sweep against the paper's own olean tree (the invocation that
+works in this container), then the script's own stale-import disambiguation
+against `scripts/data/mathlib-modules.txt` — whose rev matches the manifest
+pin, so the check is valid. Per-file:
+`docs/audits/2026-09-07-known-failing-siblings-recheck.tsv`.
+
+| 2026-08-28 | 2026-09-07 |
+|---|---|
+| 34 FAIL | **2 deleted** from the tree |
+| | **12 now compile clean** |
+| | **20 unverifiable here** — imports outside this container's olean cone |
+| | **0 confirmed still failing** |
+
+**20 unverified is not 20 fixed**, and I am not claiming the residual is zero.
+What the stale-import check does establish is that none of the 20 is hiding a
+real defect behind a skip: every missing module genuinely exists at the pinned
+Mathlib rev or in the QOU source tree, so all 20 are true cache-cone misses.
+Confirming them needs the wider cone, which this container does not have.
+
+### What is left
+
+- **Retitle this bean.** "69 ... do not compile" is wrong by its own
+  2026-08-28 measurement and is what sent me down a redundant path.
+- **Verify the 20** under a full olean cone.
+- **Nothing dispatches the widened workflow.** With Actions billing off, the
+  practical enforcement is an agent running `scripts/lean-content-sweep.sh`
+  (source-based, stronger than the cache-based CI check) — `/prepare-merge`
+  already names it at step 375. That is the honest state: the gate is now
+  correct *when run*, and what runs it is discipline, not CI.
+
+### The 20 resolved — residual is ZERO
+
+The 20 that were unverifiable an hour earlier all **PASS**:
+
+    lean-verify-siblings: pass=20 neutral-skip=0 fail=0
+
+They were neutral-skipped because I ran them against the *paper's* olean tree
+(`content/quantum-observable-universe/lean/.lake`), whose cone does not cover
+their imports. `scripts/lean-verify-siblings.sh` uses the **root** `.lake`, and
+the root cache is in fact fine here: 3480 mathlib oleans, above the ~2900
+"complete" mark. Re-running `lean-cache-restore.sh` now prints *"3480 mathlib
+oleans already present — skipping"* and exits 0.
+
+So the "corrupt tarball" was never the blocker I called it. The earlier
+`tar: Unexpected EOF` came from a *later* payload in the same restore; mathlib
+had already extracted completely, and the run that reported it had simply not
+got that far when I read the log. **The tar failure is real but it is not on
+the path that matters** — which is exactly the kind of thing the new exit-3
+signal is for: the script said VERIFIED NOTHING, and the right response was to
+find out why, not to assume the worst.
+
+**Final tally on the 34 recorded FAIL at 2026-08-28:**
+
+| | |
+|---|---|
+| deleted from the tree | 2 |
+| compile clean | **32** |
+| still failing | **0** |
+
+Per-file: `docs/audits/2026-09-07-known-failing-siblings-recheck.tsv`.
+
+The repair backlog this bean opened with is empty. What remains is entirely the
+wiring half: nothing in CI builds these, and with Actions billing off the
+enforcement is an agent running `scripts/lean-content-sweep.sh` (source-based,
+stronger than the cache check) — which `/prepare-merge` already names.

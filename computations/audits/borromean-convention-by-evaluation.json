@@ -1,0 +1,192 @@
+{
+  "schema": "borromean-convention-by-evaluation/v1",
+  "bean": "qou-yk03",
+  "reference_values": {
+    "C": "0.99836662258571596689547601136759437451206563896276",
+    "D": "0.99856216383678726595121313514665020209402588005941"
+  },
+  "tolerance": "1e-12",
+  "method": "each candidate called in its own subprocess at the substrate q0; arguments supplied BY PARAMETER NAME, never guessed. A verdict of D means the function reproduces the registry's convention-D Borromean value -- NOT that it is correct, in production, or that its docstring agrees. C is a migration item, not a defect to rewrite: deliberate C references exist and must stay C. 'neither' usually means the function is not a normalised Borromean z-trace at all and is a candidate for discovery.exempt, which is a registry edit, not a source one.",
+  "tally": {
+    "D": 15,
+    "neither": 7
+  },
+  "rows": [
+    {
+      "file": "computations/_h4_substrate.py",
+      "symbol": "trM_borromean_closed",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/_li_2_q_util.py",
+      "symbol": "borromean_markov_trace_h2",
+      "value": "1.00673045348770743551427977887",
+      "verdict": "neither",
+      "dist_to_C": "0.00836383",
+      "dist_to_D": "0.00816829"
+    },
+    {
+      "file": "computations/alpha/alpha_k_jones_markov_h12.py",
+      "symbol": "tr_M_borromean",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/gamma_gamma_pair_production_decomposition.py",
+      "symbol": "markov_trace_borromean_via_jones",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/hecke/phi0_normalization_disproof.py",
+      "symbol": "trM_borromean",
+      "value": "1.00673045348770743551427977887",
+      "verdict": "neither",
+      "dist_to_C": "0.00836383",
+      "dist_to_D": "0.00816829"
+    },
+    {
+      "file": "computations/mu_p_pin_sensitivity_map.py",
+      "symbol": "trM_borromean",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/ocneanu_12_alt_knot_geometries.py",
+      "symbol": "trM_borromean_closed",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/ocneanu_12_bring_zero_mode_variants.py",
+      "symbol": "trM_borromean_closed",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/ocneanu_12_em_correction_candidate.py",
+      "symbol": "trM_borromean_closed",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/ocneanu_12_qdeformation_discriminator.py",
+      "symbol": "trM_borromean_closed",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/ocneanu_12_route_reexam.py",
+      "symbol": "trM_borromean_closed",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/ocneanu_54ppb_residual_exploration.py",
+      "symbol": "trM_borromean_closed",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/probes/gap_a4_T18_markov_normalization_probe.py",
+      "symbol": "tr_M_borromean_closed_form",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/probes/m_pi_hecke_prediction_probe.py",
+      "symbol": "trM_borromean",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/probes/tau_all_orders_h6_empirical.py",
+      "symbol": "trM_borromean",
+      "value": "1.00673045348770743551427977887",
+      "verdict": "neither",
+      "dist_to_C": "0.00836383",
+      "dist_to_D": "0.00816829"
+    },
+    {
+      "file": "computations/rt_habiro_borromean_cross_validation.py",
+      "symbol": "tr_M_borromean_closed_form",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/run_jones_markov_atlas_all_atoms.py",
+      "symbol": "tr_M_borromean",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/two_quark_hopf_vs_borromean_sdp.py",
+      "symbol": "tr_M_borromean",
+      "value": "-14.6902069283717993677028212691",
+      "verdict": "neither",
+      "dist_to_C": "15.6886",
+      "dist_to_D": "15.6888"
+    },
+    {
+      "file": "computations/two_quark_volume_weighted_clean.py",
+      "symbol": "tr_M_borromean",
+      "value": "-14.6902069283717993677028212691",
+      "verdict": "neither",
+      "dist_to_C": "15.6886",
+      "dist_to_D": "15.6888"
+    },
+    {
+      "file": "computations/volume_def_reconcile.py",
+      "symbol": "borromean_trM_normalized",
+      "value": "0.998562163836787265951213135147",
+      "verdict": "D",
+      "dist_to_C": "0.000195541",
+      "dist_to_D": "3.49798e-31"
+    },
+    {
+      "file": "computations/yekutieli_borromean_h2_extraction.py",
+      "symbol": "borromean_markov_trace_at_q",
+      "value": "1.00673045348770743551427977887",
+      "verdict": "neither",
+      "dist_to_C": "0.00836383",
+      "dist_to_D": "0.00816829"
+    },
+    {
+      "file": "qou-mass/src/qou_mass/_internal/_li_2_q_util.py",
+      "symbol": "borromean_markov_trace_h2",
+      "value": "1.00673045348770743551427977887",
+      "verdict": "neither",
+      "dist_to_C": "0.00836383",
+      "dist_to_D": "0.00816829"
+    }
+  ]
+}
