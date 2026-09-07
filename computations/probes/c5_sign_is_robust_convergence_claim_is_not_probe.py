@@ -145,7 +145,7 @@ import scipy.sparse as sps  # noqa: E402
 
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from pyhecke.atom import D_PN  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402  (exact q0, not the f64 Q)
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -154,7 +154,13 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 40
-_Q = mp.mpf(str(Q0))
+# Q_MP is already an mpf carrying the anchor's full 50 digits.  This line was
+# `mp.mpf(str(Q0))` off the f64 `Q`, which froze a 17-digit floor into the
+# computation -- 6.8e-18 relative from the exact value, and this probe is ABOUT
+# whether a convergence claim survives, i.e. exactly where trailing digits decide.
+# MEASURED: every displayed number is unchanged; only the wall clock moves
+# (347s -> 416s, exact-q0 arithmetic costs ~20%).  Hygiene, not a result.
+_Q = Q0
 _H = _Q - 1 / _Q
 HF, DPN = float(_H), float(D_PN)
 B_P = (0.0, 0.5, 0.5)

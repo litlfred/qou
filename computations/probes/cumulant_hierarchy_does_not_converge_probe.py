@@ -19,7 +19,17 @@ PRECISION — SEE `the_binding_arc_was_measured_in_float64_probe.py`
 -----------------------------------------------------------------
 Every number below is float64: `build_seminormal_matrices` returns
 `numpy.ndarray(dtype=float)`, and `q` came from `mp.mpf(str(Q0))` off a Python
-float, so it carried 17 digits. Two claims here were read straight off that
+float, so it carried 17 digits.
+
+  FIXED 2026-09-07 (the q half only).  That past tense was aspirational -- the
+  paragraph named the defect while the code below still did it.  `q` now comes
+  from `q_parameter.Q_MP`, the anchor's exact 50 digits; the f64 route was
+  6.8e-18 relative from it.  MEASURED consequence, small and in the right
+  direction: the recursive-vs-direct Mobius residual quoted below moves
+  2.66e-15 -> 1.78e-15.  It does NOT change the epistemic reading -- the
+  matrices are still float64 by construction, so that residual is still a floor
+  and still not evidence.  The `float()` downcasts feeding numpy are deliberate
+  and untouched. Two claims here were read straight off that
 floor and were **not** evidence as stated: the additivity `residual 0.000e+00`,
 and the recursive-vs-direct Mobius agreement at `2.7e-15`. Float64 prints both
 whether or not the identity holds — and note that the paragraph below correctly
@@ -157,7 +167,7 @@ import scipy.sparse as sps  # noqa: E402
 from codata_constants import M_E_MEV as _ME  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from pyhecke.atom import D_PN  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402  (exact q0, not the f64 Q)
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -166,7 +176,9 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 40
-_Q = mp.mpf(str(Q0))
+# Was `mp.mpf(str(Q0))` off the f64 `Q`.  The docstring above already named this
+# defect in the past tense while the code still did it.  Q_MP carries the 50.
+_Q = Q0
 _H = _Q - 1 / _Q
 HF, DPN = float(_H), float(D_PN)
 _MEM = _ME if isinstance(_ME, mp.mpf) else mp.mpf(str(_ME))
