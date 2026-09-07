@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-08T23:54:30Z
-updated_at: 2026-09-06T23:20:46Z
+updated_at: 2026-09-07T04:44:03Z
 ---
 
 
@@ -609,3 +609,61 @@ the same sign-off, not ahead of it.
 **Still not begun.** Recording the correction is the point: the difference
 between the two versions is 12 files that would have been edited as "no risk"
 while feeding up to seventeen consumers each.
+
+
+## 🛑 2026-09-07 — THE STAGE PLAN IS WITHDRAWN. F64_CAST is 105 ports, not one pattern.
+
+PR #6977, `docs/audits/2026-09-07-f64cast-is-not-a-drain.md`. Opened a branch to
+drain stage 1 (29 isolated files / 46 sites) and **drained nothing**, because
+checking the fix before applying it showed the fix does not exist.
+
+### The claim that was wrong
+
+This bean said 74 % of the tranche shares one origin (`q_parameter.Q`) and
+therefore **one repair pattern** — `_Q = q_at(mp.mp.dps)`, the fix `qou-b7cf`
+established. The isolation analysis holds. The repair claim does not:
+**LAUNDERED and F64_CAST are inverse operations.**
+
+    LAUNDERED   mpf(str(Q))     an mpf CONSTRUCTED from a float64
+    F64_CAST    float(Q)        an mpf DESTROYED into a float64
+
+LAUNDERED's float64 is an accident of construction — the code around it is
+already mpmath, so `q_at(dps)` fixes it in place and nothing else moves.
+F64_CAST's cast is **deliberate and load-bearing**: it sits at the boundary of a
+float64 kernel that cannot take an `mpf`. Of the 46 isolated sites, **38 rebind
+the name to float** and **11 pass `float(…)` into a call**; **17 of the 29 files**
+use numpy or a float-typed signature, and `build_seminormal_fast` is declared
+`(shape, q: float)`.
+
+Substituting `q_at(mp.mp.dps)` there raises the precision of nothing. Each site
+is a **port of the kernel behind it** — the job `qou-b7cf` scoped out. That is
+105 ports.
+
+It also explains the rates, which looked inconsistent: LAUNDERED **34 → 0 in a
+day**, F64_CAST **222 → 188 in a month**. Same corpus, same discipline, different
+defect.
+
+### Second finding: 12 of the 29 are fit-search scripts
+
+`derive_b2.py` reads the AME deuteron binding as `target`, casts everything to
+float, and loops products of `quaternion_quantum = 2.277455`, `kashiwara = 1/32`,
+`E0`, `me`, `g8` looking for one that lands on it. Twelve of 29 match that shape.
+Under 🟥 NO FITTING they want a **disposition**, not better arithmetic — raising
+the precision of a search for a coincidence does not make it less of one.
+
+### Corrected disposition
+
+1. Stage plan **withdrawn**. It staged by *risk*; the axis that decides the work
+   is **what sits behind the cast**.
+2. Re-stage by **kernel** if at all — mpmath-capable receivers are small,
+   numpy/float-typed receivers are ports.
+3. Triage the 12 fit-search files on the **anti-fit** axis, separately.
+4. **Do not quote "74 % share one repair pattern."** They share one origin
+   constant; the repair is a property of the receiver.
+
+### Why nothing was edited
+
+A 29-file PR applying `q_at(mp.mp.dps)` would have compiled, **passed the
+F64_CAST gate by removing the matched shape, and changed no result**. A green
+gate over an unchanged defect is precisely what this gate family exists to
+prevent.
