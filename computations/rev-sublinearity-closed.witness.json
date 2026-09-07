@@ -103,13 +103,14 @@
   ],
   "checks_passed": 6,
   "checks_total": 6,
-  "computedAt": "2026-09-07T07:49:44.330526+00:00",
+  "computedAt": "2026-09-07T07:59:20.497260+00:00",
+  "conjecture_retracted": "'REV ~ A sqrt(2n)' was conjectured with this probe and is REFUTED as an asymptotic equality by rev_constant_conjecture_correction_probe.py; A sqrt2 = 5.0959 is a LOWER BOUND on the constant, not its value",
   "dps": 60,
   "probe": "rev_sublinearity_closed_probe",
   "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0_anchor": "physical_proton",
   "repairs": "L2 'H >= 3r^2-3r+1' refuted in rev_sublinearity_proof_probe.py; L2' uses only the first row and first column and assumes nothing about columns 2..r",
   "result": "Omega(sqrt n) <= REV_n <= O(n^{3/4}) -- sub-linearity PROVED",
-  "still_open": "tightness; conjectured REV ~ A sqrt(2n) with A sqrt2 = 5.0959",
+  "still_open": "tightness; the 3/4 exponent is not believed sharp",
   "upper_bound_constant": "5.9923333939318587431"
 }

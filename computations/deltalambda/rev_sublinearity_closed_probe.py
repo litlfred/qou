@@ -55,6 +55,23 @@ energy is exactly zero at triangular `n`):
 
     Omega(sqrt n)  <=  REV_n  <=  O(n^{3/4})        -- SUB-LINEARITY PROVED.
 
+## 🛑 On the CONSTANT: `A sqrt2 = 5.0959` is a LOWER BOUND, not the value
+
+The commit and PR that introduced this probe also conjectured `REV_n ~ A sqrt(2n)` from the
+staircase.  **That conjecture is refuted** (`rev_constant_conjecture_correction_probe.py`), for two
+independent reasons that push the same way:
+
+  1. the staircase is the argmax only up to `k = 6`; from `k = 7` a perturbed shape wins and the
+     excess GROWS (max/R_staircase = 1.00116, 1.00804, 1.00997 at k = 7, 8, 9);
+  2. the entropy term `(REV - max)/sqrt(n)` RISES across the whole measured range
+     (0.754 at n=8 to 1.146 at n=46) rather than decaying, so it contributes at the SAME order.
+
+Hence `lim REV/sqrt(n) > A sqrt2`.  Note also that the measured `REV/sqrt(n) = 4.363` at n=46 sits
+BELOW that bound: convergence is very slow (the staircase ratio is itself only 4.466 at n=435
+against its own limit 5.0959), so the small measured value is not evidence for a small constant.
+
+The bounds proved below are unaffected -- neither uses the conjecture.
+
 ## Checks
 
   R1  L2' holds for every partition with n <= 26 (exhaustive, exact integers).
@@ -245,8 +262,10 @@ def main() -> int:
     print("PROVED:  Omega(sqrt n) <= REV_n <= O(n^{3/4}).  SUB-LINEARITY IS CLOSED.")
     print("         lower bound: predecessor probe (staircase, zero energy at triangular n)")
     print("         upper bound: this probe (L2' repairs the refuted L2)")
-    print(f"OPEN:    tightness. Conjecture REV_n ~ A sqrt(2n), A*sqrt2 = 5.0959, from the")
-    print("         staircase; the upper bound's exponent 3/4 is not believed sharp.")
+    print("OPEN:    tightness; the upper bound's exponent 3/4 is not believed sharp.")
+    print("         A*sqrt2 = 5.0959 is a LOWER BOUND on the constant, NOT its value --")
+    print("         see rev_constant_conjecture_correction_probe.py: the staircase stops")
+    print("         being the argmax at k=7, and the entropy term is itself Theta(sqrt n).")
     print("=" * 78)
 
     payload = {
@@ -261,7 +280,11 @@ def main() -> int:
                     "the first row and first column and assumes nothing about columns 2..r"),
         "result": "Omega(sqrt n) <= REV_n <= O(n^{3/4}) -- sub-linearity PROVED",
         "upper_bound_constant": mp.nstr(target, 20),
-        "still_open": "tightness; conjectured REV ~ A sqrt(2n) with A sqrt2 = 5.0959",
+        "still_open": "tightness; the 3/4 exponent is not believed sharp",
+        "conjecture_retracted": ("'REV ~ A sqrt(2n)' was conjectured with this probe and is "
+                                 "REFUTED as an asymptotic equality by "
+                                 "rev_constant_conjecture_correction_probe.py; A sqrt2 = 5.0959 "
+                                 "is a LOWER BOUND on the constant, not its value"),
         "checks": results,
         "checks_passed": n_ok,
         "checks_total": len(results),
