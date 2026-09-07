@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-09-07T12:34:30Z
+updated_at: 2026-09-07T12:45:48Z
 ---
 
 ## Context
@@ -225,3 +225,35 @@ TowerSpan for reasons unrelated to any of this.
 
 Verification: lean-direct exit 0, no sorry; #print axioms clean on all declarations; import cone
 rebuilt from current main source.
+
+
+2026-09-07 (witness): the constant-filtration objection to towerSpan_unit is CLOSED. New module
+QOU/MathlibExt/InvolutionTowerWitness.lean.
+
+A = MonoidAlgebra R (Multiplicative (N ->_0 ZMod 2)) -- countably many COMMUTING INVOLUTIONS t m.
+Tower H n = adjoin{t m : m < n}, g m = ginv m = t m, trace = augmentation, z = zinv = 1. All
+MarkovTrace axioms hold.
+
+  t_mul_t                    t m * t m = 1, so hquad holds with h = 0
+  sandwichReduces_involution SandwichReduces holds NON-TRIVIALLY: t*c*t = c*(t*t) = c uses
+                             commutativity AND the involution relation -- the local rewriting rule
+                             of TowerSpanReduction doing real work
+  towerSpan_involution       hence TowerSpan, via towerSpan_of_sandwichReduces
+  t_not_mem_shiftedUpTo      THE FILTRATION GROWS: t N is not in shiftedUpTo n M for M < N.
+                             Proved by an algebra endomorphism killN (induced by the coordinate
+                             projection killing index N) that fixes every generator of the stage but
+                             sends t N to 1; if t N were in the stage it would be fixed, forcing
+                             t N = 1, which t_ne_one refutes.
+
+WHAT IT STILL DOES NOT EXERCISE. The trace is an ALGEBRA HOMOMORPHISM, so DisjointBlockMultiplicative
+holds there for EVERY pair a,b -- disjointness plays no part. The witness therefore tests the
+FILTRATION content of TowerSpan and says nothing about its TRACE content. This removes the
+constant-filtration objection and ONLY that one. A witness with a growing filtration AND a
+non-multiplicative trace would essentially be a Hecke or symmetric-group tower, which Mathlib does
+not supply.
+
+SandwichReduces for a Hecke tower remains unproved; the disjoint-block law, and hence the
+bond-product reading of the atom word, remains MEASURED, NOT DERIVED.
+
+Verification: lean-direct exit 0, no sorry; #print axioms clean on involutionTrace,
+sandwichReduces_involution, towerSpan_involution, t_not_mem_shiftedUpTo.
