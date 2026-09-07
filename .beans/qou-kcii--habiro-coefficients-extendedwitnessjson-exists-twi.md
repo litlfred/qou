@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T15:05:02Z
-updated_at: 2026-09-06T16:17:21Z
+updated_at: 2026-09-07T11:47:16Z
 ---
 
 Found 2026-08-21 diagnosing qou-3zby (the red L1 tr_M gate).
@@ -409,3 +409,41 @@ the evaluation point a consumer uses), but it is not obviously right either, and
 I could not find where `stamp_staleness_metadata` sources the anchor. **Whether
 this is correct or a straddle is unresolved**; it is the `qou-aj91` "67 untagged"
 shape, one instance. Not asserted as a defect.
+
+
+## The raw-float64 consequence: both copies are baselined, and only one drains
+
+Found 2026-09-07 from the drain side (`qou-r47m`), and it is a concrete cost of
+this duplication rather than another instance of it. The count is **27** stems
+now, up from the 25 measured above.
+
+`computations/raw-float64-baseline.json` keys witnesses by PATH, so a duplicated
+stem gets **two entries** and the same quantity is counted twice in the backlog.
+Worse, the producer writes only one of them, so re-running drains only that one
+and the other sits at its baselined count forever.
+
+Worked instance, measured:
+
+| path | size | baselined dirty | touched by a re-run? |
+|---|---|---|---|
+| `computations/pentagon-rt-torus-knot-higgs-probe.witness.json` | 29,293 B | **346** | **no** |
+| `computations/probes/pentagon-rt-torus-knot-higgs-probe.witness.json` | 49,364 B | 0 | yes |
+
+The producer is `computations/probes/pentagon_rt_torus_knot_higgs_probe.py` and
+writes beside itself. Running it changed the `probes/` copy and left the
+top-level one untouched — confirmed by `git status`, not inferred. Its source
+already carries the fix (its own comment: *"These were `float()` at
+construction, which is where 389 raw float64 fields entered a witness"*), so the
+top-level copy is a pre-fix artifact that no producer can reach.
+
+Same shape, from the table of duplicated stems: `pentagon-to-borromean-h4-probe`
+(216 dirty top-level, 0 in `probes/`). The other 25 pairs mostly carry EQUAL
+dirty counts on both sides (`adjacent-vs-full-probe` 276/276,
+`ew-couplings-substrate-derivation-probe` 178/176), which is the double-count
+case rather than the orphan case.
+
+**Not proposing a fix here** — which copy is canonical is this bean's open
+question and, per the note above, the owning arc's call rather than a
+bystander's. Recording only that the duplication has a measurable cost in a
+second place, and that any backlog figure quoted from the baseline is inflated
+by the duplicated stems.

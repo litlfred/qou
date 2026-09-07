@@ -5,13 +5,20 @@
   "file": "0406276v1.pdf",
   "sha256": "8fdf4b5950e8b5f5ef32355780c77e8ef297dae078fa8d2bd6742e5550472741",
   "bytes": 575074,
-  "pages": 40
+  "pages": 40,
+  "text_source": "embedded",
+  "extractor": "pypdf"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
   "title": "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC 3-SPACE",
   "authors_raw": "Dennis DeTurck and Herman Gluck",
+  "title_lines": [
+   "The GAUSS LINKING INTEGRAL",
+   "on the 3-SPHERE",
+   "and in HYPERBOLIC 3-SPACE"
+  ],
   "abstract": null,
   "docinfo": {
    "CreationDate": "D:20040612234404-07'00'",
@@ -19,13 +26,7 @@
    "Creator": "PScript5.dll Version 5.2",
    "Title": "Microsoft Word - 40CBFFA7-581D-0875BA.doc",
    "Producer": "http://createpdf.adobe.com V5.1"
-  },
-  "title_prev": "The GAUSS LINKING INTEGRAL on the 3-SPHERE and in HYPERBOLIC3-SPACE",
-  "title_lines": [
-   "The GAUSS LINKING INTEGRAL",
-   "on the 3-SPHERE",
-   "and in HYPERBOLIC 3-SPACE"
-  ]
+  }
  },
  "toc": [
   {
@@ -38,6 +39,16 @@
  ],
  "toc_source": "inferred",
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 38,
+   "n_chars": 49444,
+   "n_words": 8853
+  },
   {
    "id": "sec-000-references",
    "number": null,
@@ -53,7 +64,7 @@
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 1,
-  "sections": 1,
-  "chars_total": 4510
+  "sections": 2,
+  "chars_total": 53954
  }
 }

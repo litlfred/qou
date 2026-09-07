@@ -1,0 +1,275 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-07T12:24:58.106917+00:00",
+  "commitSha": "3e785d42cce2cdacac74ccd8cf26551f14ef7588",
+  "assertions": [
+    {
+      "name": "prediction_is_insensitive_to_the_one_model_input",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "d ln(p)/d ln(V) = 0.10279, so the assumed fibre volume must be wrong by 2.528x to move p by 10%, and by 1965.0x to reach the imported Euclidean p = 1/3 (which is 2.18x the derived 0.15288). The ball-vs-quotient model error is at most a factor of a few, so it CANNOT bridge that gap — the objection this construction most invites does not reach the conclusion."
+    },
+    {
+      "name": "closed_form_matches_quadrature",
+      "computed": "1.56708e-39",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1e-25",
+      "unit": "relative gap",
+      "source": "c0(R) = sinh^2 R/(sinh R cosh R - R) against direct quadrature of <coth> over the ball, at R = 0.25, 0.5, 1.1103, 2, 4. Worst relative gap 1.567e-39."
+    },
+    {
+      "name": "closed_form_has_the_right_limits",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "c0 -> 1 as R -> infinity (got 1.0 at R = 30) — the infinite-volume boundary round 6 identifies as its best admissible member — and diverges as R -> 0 (got 1500.0 at R = 0.001)."
+    },
+    {
+      "name": "every_corpus_volume_lands_admissible_without_being_placed",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "O2 requires c0 >= 1. The three hyperbolic volumes the corpus carries give L6a4 / Borromean (3He) -> 1.56994, knot 8_11 (3H) -> 1.53094, figure-eight 4_1 -> 2.13403. Derived, not imposed: nothing in the construction knows about the admissible region."
+    },
+    {
+      "name": "prediction_is_robust_across_the_two_A3_links",
+      "computed": "0.0254754",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0.05",
+      "unit": "relative spread",
+      "source": "L6a4 and 8_11 differ by 13.08% in volume yet give c0 within 2.548% and p within 1.244% of each other."
+    },
+    {
+      "name": "survives_round_sixs_own_zero_crossing_falsification",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "boolean",
+      "source": "For c0 > 1 the kernel changes sign at a finite A_zero; round 6 contradicted 48 of its 140 scanned members because that crossing fell inside A in [3, 63], where every measured kappa is strictly positive. The derived members put it at 9.09e+3, 9.85e+3, 4.4e+3 — sign-changing as O2 demands, with the crossing beyond the heaviest known nuclide (A = 294)."
+    },
+    {
+      "name": "reproduces_the_one_measured_scalar",
+      "computed": "0.00585018",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "0.05",
+      "unit": "relative gap",
+      "source": "s*p for the derived members against the directly measured -dln(kappa)/dln(A) = 0.26049893. It MUST agree by the degeneracy, so this checks the arithmetic and is NOT independent evidence for the kernel."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "em-linking-zero-mean-closes-c0",
+  "scriptFile": "em_linking_zero_mean_closes_c0_probe.py",
+  "scriptHash": "b61eb0996669",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/em_linking_zero_mean_closes_c0_probe.py"
+    ],
+    "reproduce": "python3 -u computations/em_linking_zero_mean_closes_c0_probe.py"
+  },
+  "data": {
+    "closed_form": {
+      "c0_of_R": "sinh^2(R) / (sinh(R) cosh(R) - R)",
+      "volume_of_R": "pi (sinh 2R - 2R)",
+      "derivation": "zero mean => c0 = <coth>_M; on a geodesic ball coth * sinh^2 = cosh sinh integrates in closed form, giving 2 pi sinh^2(R) / V.",
+      "checks_vs_quadrature": [
+        {
+          "R": "0.25",
+          "volume": "0.06627285676438911725466255664345394393095980829034824377358814642095968",
+          "closed_form": "6.049969991864259077951203335867110268033374836087952243320615338962485",
+          "quadrature": "6.04996999186425907795120333586711026802389405373761937406811169221543",
+          "relative_gap": "1.567079235613105505940382714355198035996912949135246908848170587087655e-39"
+        },
+        {
+          "R": "0.5",
+          "volume": "0.5504107828515294353140854598374362137598493569252437497150027051181536",
+          "closed_form": "3.099754194137351064241928417693865361217139681391565937968775249381709",
+          "quadrature": "3.099754194137351064241928417693865361215998136657535092430328884244884",
+          "relative_gap": "3.682694376831169275781654090866027489347203706450449053472345564144881e-40"
+        },
+        {
+          "R": "1.1103",
+          "volume": "7.324800707658505568460932643525265307437674574357561072284985840270068",
+          "closed_form": "1.570067238151741792214712629170316300495214877957084820353247839151491",
+          "quadrature": "1.570067238151741792214712629170316300495129098349448394826345985038525",
+          "relative_gap": "5.463435294491203966482739716986520154504735552323993335696952835834291e-41"
+        },
+        {
+          "R": "2.0",
+          "volume": "73.16743276921113548311377140544918226162972586569109949792860026806898",
+          "closed_form": "1.129597525544700964229577985861807103955884000394962738392375563592851",
+          "quadrature": "1.129597525544700964229577985861807103955875412987875491849524970219542",
+          "relative_gap": "7.602182983807109925337301252225077161423110624706077485279830826684975e-42"
+        },
+        {
+          "R": "4.0",
+          "volume": "4657.344588202873776491136386273179562791909911208263436705566964751859",
+          "closed_form": "1.004722047519902760846281620828597971029098638299559526668221245923306",
+          "quadrature": "1.004722047519902760846281620828597971029098503390381384793288705593301",
+          "relative_gap": "1.34275124622665839178133916529287193871870698645506822208107381380932e-43"
+        }
+      ],
+      "worst_relative_gap": "1.567079235613105505940382714355198035996912949135246908848170587087655e-39",
+      "limit_R_to_infinity": "1.000000000000000000000001033268269998189399941671556379541792823326628",
+      "limit_R_to_zero": "1500.000199999998095237841269870624611701244136633671305298292517097192"
+    },
+    "measured_scalar": "0.2604989283757977062692501263599057942919181947516129119673661834553306",
+    "derived_per_fibre": [
+      {
+        "fibre": "L6a4 / Borromean (3He)",
+        "volume": "7.3277247534",
+        "ball_radius": "1.110427107581824848426377959369651972341527842058738662901251681939602",
+        "c0_derived": "1.569936919559309635325996800354557827086652262742959362554080658388089",
+        "admissible_under_O2": true,
+        "p_predicted": "0.1528798507578952698758286252449490624809922636523829467131457574654719",
+        "scale": "0.1869208844947481928036359227270724965915434691876580654769287665296707",
+        "kernel_log_slope_s": "1.697329718721435147184606781637588767474185036415735094768884115467956",
+        "product_s_times_p": "0.2594875140850733623249569881624601008688915075720195496867543269563359",
+        "kappa_rms": "0.02869694394216351161952657397471627730270151792831973445158288816173882",
+        "alpha_star_sign_change": "0.7530554727023911228024158692105852877245743183338061489077358114439475",
+        "alpha_min_measured": "0.2121823363442069162674730761482811010794349930208633795476555846192997",
+        "alpha_max_measured": "0.3501155939780587871813300214666681019632280149759470225316779317948704",
+        "A_zero": "9087.87624737478451486830202791054773080866270441737708555135835057929",
+        "crossing_inside_measured_range": false
+      },
+      {
+        "fibre": "knot 8_11 (3H)",
+        "volume": "8.2863168178",
+        "ball_radius": "1.150081082104481527184779493409413073307282262237836646688167453570678",
+        "c0_derived": "1.530935682773331625422831367537499386874431023625054665273258451397418",
+        "admissible_under_O2": true,
+        "p_predicted": "0.1547821159422062824483996057945407444262942610689602228458917097631193",
+        "scale": "0.1881153916253924736020593573476287964877785163772711987747678314701178",
+        "kernel_log_slope_s": "1.676717766136112528928689759414356903398626320423149846483675921202725",
+        "product_s_times_p": "0.2595259236804368882518729623206493605279213617698727954120456764575998",
+        "kappa_rms": "0.02862409175267525608372962498406714795548684549472789864925314097603173",
+        "alpha_star_sign_change": "0.7808517296263043695788808155133773138196585738523487646122594152686634",
+        "alpha_min_measured": "0.2139800632772191950934541272883936261818376152921456186571337488860484",
+        "alpha_max_measured": "0.3551698051617913382612653878247864230436947677852768542872172993230296",
+        "A_zero": "9854.651415621101711653122476760697249471532821978030133249174931380954",
+        "crossing_inside_measured_range": false
+      },
+      {
+        "fibre": "figure-eight 4_1",
+        "volume": "2.029883212819307250042405108549040571883378615060599584034978213553195",
+        "ball_radius": "0.7561703072264575496585062870467651211325640592589013321635259208525992",
+        "c0_derived": "2.134031825831094906311562992080332992409293762838991873931557398692726",
+        "admissible_under_O2": true,
+        "p_predicted": "0.1300366848054209642691768019182562498936945993225216280267357304672315",
+        "scale": "0.1707282600656207917752351757741608626258521151987068551577827754219925",
+        "kernel_log_slope_s": "1.991553098872129576590697090008057733958919544750521352348045871273013",
+        "product_s_times_p": "0.2589749625912944874450360851484810721895131310915598252555196938406847",
+        "kappa_rms": "0.02964598194962900042451950136085560922263731432441616552774932554363336",
+        "alpha_star_sign_change": "0.5082705144416166159975938830288781269761732644672071215605179245620521",
+        "alpha_min_measured": "0.1892286339838235475244411516625663464616296974964038937238079994987719",
+        "alpha_max_measured": "0.2907238163578860276037201068161936423970778029264394729600124493867807",
+        "A_zero": "4400.545002187831058172456390021604210276936047649619899710220895319136",
+        "crossing_inside_measured_range": false
+      }
+    ],
+    "robustness_across_the_A3_links": {
+      "volume_spread": "0.1308171494781134746872709958249016673552502543155908162799088795807061",
+      "c0_spread": "0.02547542475156514006425812281218366228606655520352763597175707353653463",
+      "p_spread": "0.01244287703631717929537228934614109698175407008555453063408145483995744",
+      "reading": "The two A=3 links differ by 13 % in volume and give c0 and p far closer than that, so the prediction does not hinge on which is taken as the fibre."
+    },
+    "volume_sensitivity": {
+      "sweep": [
+        {
+          "volume_factor": "0.25",
+          "volume": "1.83193118835",
+          "c0": "2.193595184742084358158654975829927107910878837572437516250005349367962",
+          "p": "0.128036887190592976077109708327017314988026015086133406184358649579454"
+        },
+        {
+          "volume_factor": "0.5",
+          "volume": "3.6638623767",
+          "c0": "1.83581801678791395222302389767551385114096965010019863128265022414827",
+          "p": "0.1411320059799163943065200077938767235688054699924007526730172906527522"
+        },
+        {
+          "volume_factor": "1.0",
+          "volume": "7.3277247534",
+          "c0": "1.569936919559309635325996800354557827086652262742959362554080658388089",
+          "p": "0.1528798507578952698758286252449490624809922636523829467131457574654719"
+        },
+        {
+          "volume_factor": "2.0",
+          "volume": "14.6554495068",
+          "c0": "1.37754452877816909427192217555694138224344256225592909522643251181609",
+          "p": "0.1627865572803945151746725909732950892162436430021963594821299466583317"
+        },
+        {
+          "volume_factor": "4.0",
+          "volume": "29.3108990136",
+          "c0": "1.242723027567719905967590704911813046840051127507805935620040074187979",
+          "p": "0.1706033412398055268392504286884153860960592277062011613996823551404905"
+        },
+        {
+          "volume_factor": "10.0",
+          "volume": "73.277247534",
+          "c0": "1.129459190858910090088507090049452934691552366993183568322124262831599",
+          "p": "0.1778345274359070560956959552144859621278563403596449624572338208849426"
+        }
+      ],
+      "dln_p_dln_V": "0.1027899744020228494525133342287842256636324080551963503520864424664907",
+      "volume_error_to_move_p_by_10pct": "2.527504002440686606622836996597824993119151730115280990877021529867514",
+      "euclidean_p": "0.3333333333333333333333333333333333333333333333333333333333333333333333",
+      "ratio_euclidean_over_derived": "2.180361451694567351252802328379043340131210771234735147379086543104588",
+      "volume_error_needed_to_reach_euclidean_p": "1965.169145272692796626747956473711356095829409399940476380449937488703",
+      "reading": "The ball-vs-quotient identification is the one model input, and this is its leverage. p depends on the assumed volume only as V^0.103, so the volume would have to be wrong by 2.5x to move p by 10% and by ~2e3 to reconcile the derived p with the imported Euclidean 1/3. The model uncertainty cannot bridge that gap."
+    },
+    "scope": {
+      "what_is_derived": "c0. It was a scanned parameter in round 6 and is now a closed form in the fibre volume, so the kernel is determined once a volume is named.",
+      "what_is_predicted_but_UNTESTABLE_here": "p ~ 0.153. The degeneracy probe establishes that this series constrains only the product s*p, so it cannot check a predicted p. Falsifiable by any INDEPENDENT determination of the separation law; not evidence today.",
+      "model_input_a": "The mean uses a geodesic BALL's distance distribution. A closed quotient, still more a cusped complement, differs.",
+      "model_input_b": "The corpus volumes are CUSPED LINK-COMPLEMENT volumes used as ball volumes — an identification, not a theorem. All three are reported and none selected; picking the best-fitting one would be a fit.",
+      "NOT_claimed": "That the kernel is confirmed. That p = 0.153 is measured. That round 6's structural O2 exclusion of the UNSUBTRACTED coth is affected — it is untouched and this derivation depends on it."
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "em-linking-mirror-series.witness.json",
+        "sha256": "23ff1a347a0b112fea54e7712a47b0e8dd702d52abd577615f3c4e0421ac7b02",
+        "size_bytes": 10833,
+        "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
+        "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+        "computedAt": "2026-08-24T14:40:43.555797+00:00"
+      },
+      {
+        "path": "binding-link-volumes.witness.json",
+        "sha256": "0a3df4871e59629a327f13159ba192a8d1ae87133c1c8c300f097fac81898b5f",
+        "size_bytes": 2704,
+        "commitSha": "4c9a01550e94947b92374ac6610f6c7ed4e946eb",
+        "scriptCommitSha": "59ea22b8210c4ca2fdf86167991901727ada14a8",
+        "computedAt": "2026-08-29T11:04:54.258451+00:00"
+      }
+    ]
+  }
+}

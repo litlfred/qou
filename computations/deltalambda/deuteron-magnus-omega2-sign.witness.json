@@ -1,7 +1,7 @@
 {
  "computation": "deuteron-magnus-omega2-sign",
  "scriptFile": "deuteron_magnus_omega2_sign_probe.py",
- "computedAt": "2026-09-07T11:16:09.789410+00:00",
+ "computedAt": "2026-09-07T16:21:46.023465+00:00",
  "engine": "mpmath mpf at 140 dps (H\u2086 Hoefsmit seminormal; finite-diff germ; 0 free params)",
  "free_parameters": 0,
  "inputs": {
@@ -186,6 +186,10 @@
   ],
   "weight_family": "quantum_plancherel_dq2_over_n_factorial",
   "weight_family_note": "NOT the Wenzl y_lambda used by the production Markov trace. AGENTS.md forbids conflating y_lambda / w_lambda / w~_lambda, which are distinct at q != 1. Re-weighting this witness's own per-partition tr(rho.Omega2) with the Wenzl bridge weight leaves the sign of P_total unchanged \u2014 measured in magnus_omega2_weight_family_robustness_probe.py.",
+  "headline_pairing": "P_total_wenzl",
+  "P_total_wenzl": "-6.92125065297273509910663235394448522642033111261279915338580",
+  "P_total_wenzl_sign": -1,
+  "P_total_wenzl_note": "Sum over lambda of y_lambda^Wenzl * tr(rho.Omega2), the production Markov weight (row cap at level r=2 zeroes every shape with >=3 rows). tr(1)=1 at every n, so values ARE comparable across A -- which the Plancherel arm is not (tr(1) = 11.1 / 184.2 / 6751.5 at n = 6 / 9 / 12). See docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md.",
   "P_total": "-15.0952414446437079252206337315418091482335562779533923530652",
   "P_total_sign": -1,
   "P_interface_only": "-14.6830580096020065113631192556029957393785682562285888128968",
@@ -203,9 +207,9 @@
  "lean": "QOU.QBeta.YekutieliTrefoilDiscretization",
  "wired": false,
  "notes": "Magnus continuation (qou-dp32) of deuteron_interface_handle_curvature_probe.py (qou-jqof). The prior probe established F_q traceless \u21d2 quadrature \u2016F_q\u2016\u00b2\u22650, excluded from the negative-at-A=2 term. This tests whether the LINEAR Magnus pairing escapes that non-negativity.",
- "scriptHash": "516547d5e247",
- "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
- "commitSha": "dc19a937cf0b11d4dfe52f8b2dc36f8abebbce5b",
+ "scriptHash": "2346e378e53a",
+ "scriptCommitSha": "5b2bd421824349e79ce13559752c1a83c4d3e37f",
+ "commitSha": "4e03604e68b897786166db895935d0baa468c84a",
  "durationMs": 0,
  "q0Anchor": "proton",
  "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Does the Magnus Ω₂ sign conclusion depend on WHICH partition-weight family
-is used to aggregate it?  Measured: no, on all three atoms.
+is used to aggregate it?  Measured: **yes at A=3**, no at A=2, undetermined at
+A=4 until its source witness is regenerated.
 
 WHY THIS EXISTS (bean qou-za3q)
 -------------------------------
@@ -28,11 +29,17 @@ sign the answer would be trivial. They do not:
 
     atom      tr(ρΩ₂) > 0    < 0
     deuteron        4         5
-    triton         13        15
+    triton         14        14
     ⁴He            26        49
 
 The sum is a genuine cancellation, and re-weighting redistributes mass across
-terms of both signs while zeroing most of them. The sign was free to flip.
+terms of both signs while zeroing most of them. The sign was free to flip — and
+at A=3 it does:
+
+    atom      source        P_plancherel   P_wenzl     agree?
+    deuteron  canonical         -15.095     -6.921     yes
+    triton    canonical          +2.470    -13.931     NO
+    ⁴He       pre-ruling        -57.803   -100.827     undetermined
 
 METHOD
 ------
@@ -42,7 +49,13 @@ No re-derivation: each sign probe already records its own per-partition
 exact (the traces are shared, not recomputed) and cheap.
 
 NOT CLAIMED: that either measure is the right pairing for a Magnus Ω₂ sign
-question. Only that the published sign does not distinguish them.
+question. Only which atoms the published sign distinguishes them on.
+
+A NOTE ON THE FIRST VERSION OF THIS FILE. It reported robustness on all three
+atoms, because it re-weighted each probe's committed traces without checking
+they were canonical — two of three predated the 2026-09-05 ordering ruling. The
+`ORDERING_RULING` guard below exists so that cannot recur: a stale source is
+excluded from the gate rather than counted as agreement.
 """
 from __future__ import annotations
 
@@ -61,6 +74,18 @@ from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 
 mp.mp.dps = 50
+
+#: The 2026-09-05 intra-nucleon ordering ruling (bean qou-hu1f). A source
+#: witness computed BEFORE this carries grouped-era traces, and re-weighting
+#: those answers a question about a superseded braid word.
+#:
+#: This check exists because its absence produced a wrong answer. The first run
+#: of this probe reported "sign robust on all atoms: True" — but triton's source
+#: witness was dated 2026-09-03, and regenerating it on the canonical word
+#: flipped P_total from -108.147 to +2.470, at which point the two weight
+#: families DISAGREE at A=3. Trusting an input's date is weak, but silently
+#: trusting an undated one is how that claim got published.
+ORDERING_RULING = "2026-09-05"
 
 WITNESSES = [
     ("deuteron", "deuteron-magnus-omega2-sign.witness.json"),
@@ -89,7 +114,10 @@ def main() -> int:
             print(f"  {atom}: MISSING {fname}")
             all_robust = False
             continue
-        per = json.loads(p.read_text()).get("results", {}).get("per_partition") or []
+        _doc = json.loads(p.read_text())
+        _when = (_doc.get("computedAt") or "")[:10]
+        pre_ruling = bool(_when) and _when < ORDERING_RULING
+        per = _doc.get("results", {}).get("per_partition") or []
         p_planch = mp.mpf(0)
         p_wenzl = mp.mpf(0)
         nonzero = 0
@@ -111,9 +139,15 @@ def main() -> int:
             return 0 if x == 0 else (1 if x > 0 else -1)
 
         robust = sgn(p_planch) == sgn(p_wenzl)
-        all_robust = all_robust and robust
+        # A pre-ruling source cannot support a verdict either way: its traces
+        # are for a superseded braid word, so both arms answer the wrong
+        # question. Excluded from the gate rather than counted as agreeing.
+        if not pre_ruling:
+            all_robust = all_robust and robust
         rows.append({
             "atom": atom,
+            "source_computed_at": _when or "unknown",
+            "source_pre_ruling": pre_ruling,
             "partitions": len(per),
             "wenzl_nonzero_partitions": nonzero,
             "trace_sign_split": {"positive": pos, "negative": neg,
@@ -124,8 +158,9 @@ def main() -> int:
             "sign_wenzl": sgn(p_wenzl),
             "sign_robust": robust,
         })
+        _flag = "  [PRE-RULING SOURCE — verdict not counted]" if pre_ruling else ""
         print(f"  {atom:10s} partitions {len(per):3d}  Wenzl-nonzero {nonzero:3d}  "
-              f"traces +{pos}/-{neg}")
+              f"traces +{pos}/-{neg}{_flag}")
         print(f"             P_planch {mp.nstr(p_planch, 10):>16} ({sgn(p_planch):+d})   "
               f"P_wenzl {mp.nstr(p_wenzl, 10):>16} ({sgn(p_wenzl):+d})   "
               f"robust={robust}")
@@ -136,6 +171,15 @@ def main() -> int:
         "wenzl": "y_lambda_wenzl_bridge_numeric — the production Markov weight, "
                  "row-capped at level r = 2 so every shape with >=3 rows is exactly 0",
     })
+    wb.add_caveat(
+        "A source witness computed before the 2026-09-05 ordering ruling carries "
+        "grouped-era traces; re-weighting those compares two contractions of a "
+        "superseded braid word, so its verdict is excluded from the gate. "
+        "`source_pre_ruling` records which. This is not hypothetical: the first "
+        "run of this probe reported robustness on all three atoms because "
+        "triton's source was 2026-09-03, and the canonical regeneration flipped "
+        "its sign."
+    )
     wb.add_caveat(
         "Establishes only that the published SIGN does not distinguish the two "
         "measures. It does NOT establish that either is the correct pairing for "

@@ -7,7 +7,7 @@
   "bytes": 161011,
   "pages": 6,
   "text_source": "embedded",
-  "extractor": "pymupdf"
+  "extractor": "pypdf"
  },
  "metadata": {
   "arxiv": {
@@ -17,24 +17,23 @@
    "stamp_date": "14 Jul 2003"
   },
   "doi": null,
-  "title": "Distribution of the k-th smallest Dirac operator eigenvalue Poul H. Damgaard",
-  "authors_raw": "The Niels Bohr Institute, Blegdamsvej 17, DK-2100 Copenhagen \u00d8, Denmark",
+  "title": "Distribution of the k-th smallest Dirac operator eigenvalu e",
+  "authors_raw": "Poul H. Damgaard",
   "title_lines": [
-   "Distribution of the k-th smallest Dirac operator eigenvalue",
-   "Poul H. Damgaard"
+   "Distribution of the k-th smallest Dirac operator eigenvalu e"
   ],
   "abstract": null,
   "docinfo": {
-   "Title": "arXiv:hep-th/0006111v2  14 Jul 2003",
    "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20190503012705-04'00'",
    "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
-   "CreationDate": "D:20190503012705-04'00'"
+   "Title": "arXiv:hep-th/0006111v2  14 Jul 2003"
   }
  },
  "toc": [
   {
    "level": 1,
-   "title": "(\u03b6, {\u00b5}) = \u03b6",
+   "title": "(\u03b6, {\u00b5 }) = \u03b6",
    "page": 3,
    "source": "inferred",
    "number": "1"
@@ -48,7 +47,7 @@
   },
   {
    "level": 1,
-   "title": "(\u03b6) = const. \u03b6(3\u2212\u03bd)/2e\u2212\u03b62/8 Pf [(i \u2212j)Ii+j+3(\u03b6)] ,",
+   "title": "(\u03b6) = const . \u03b6 (3\u2212\u03bd )/ 2e\u2212\u03b6 2/ 8 Pf [(i \u2212 j)Ii+j+3(\u03b6)] ,",
    "page": 3,
    "source": "inferred",
    "number": "1"
@@ -59,6 +58,13 @@
    "page": 3,
    "source": "inferred",
    "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(\u03b6) + J 2",
+   "page": 5,
+   "source": "inferred",
+   "number": "0"
   },
   {
    "level": 1,
@@ -71,14 +77,24 @@
  "toc_source": "inferred",
  "sections": [
   {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 11799,
+   "n_words": 2334
+  },
+  {
    "id": "sec-000-1-\u03b6-\u00b5-\u03b6",
    "number": "1",
-   "title": "(\u03b6, {\u00b5}) = \u03b6",
+   "title": "(\u03b6, {\u00b5 }) = \u03b6",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 269,
-   "n_words": 69
+   "n_chars": 344,
+   "n_words": 78
   },
   {
    "id": "sec-001-1-\u03b6-\u03b6",
@@ -87,18 +103,18 @@
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 200,
-   "n_words": 34
+   "n_chars": 205,
+   "n_words": 39
   },
   {
-   "id": "sec-002-1-\u03b6-const-\u03b63\u03bd2e\u03b628-pf-i-jiij3\u03b6",
+   "id": "sec-002-1-\u03b6-const-\u03b6-3\u03bd-2e\u03b6-2-8-pf-i-jiij3\u03b6",
    "number": "1",
-   "title": "(\u03b6) = const. \u03b6(3\u2212\u03bd)/2e\u2212\u03b62/8 Pf [(i \u2212j)Ii+j+3(\u03b6)] ,",
+   "title": "(\u03b6) = const . \u03b6 (3\u2212\u03bd )/ 2e\u2212\u03b6 2/ 8 Pf [(i \u2212 j)Ii+j+3(\u03b6)] ,",
    "level": 1,
    "page_start": 3,
    "page_end": 3,
-   "n_chars": 232,
-   "n_words": 56
+   "n_chars": 242,
+   "n_words": 66
   },
   {
    "id": "sec-003-1-\u03b6-1",
@@ -107,8 +123,8 @@
    "level": 1,
    "page_start": 3,
    "page_end": 4,
-   "n_chars": 51,
-   "n_words": 12
+   "n_chars": 54,
+   "n_words": 15
   },
   {
    "id": "sec-004-1-\u03b6",
@@ -116,16 +132,26 @@
    "title": "(\u03b6)",
    "level": 1,
    "page_start": 4,
+   "page_end": 5,
+   "n_chars": 4470,
+   "n_words": 1082
+  },
+  {
+   "id": "sec-005-0-\u03b6-j-2",
+   "number": "0",
+   "title": "(\u03b6) + J 2",
+   "level": 1,
+   "page_start": 5,
    "page_end": 6,
-   "n_chars": 9359,
-   "n_words": 1775
+   "n_chars": 5108,
+   "n_words": 917
   }
  ],
  "diagnostics": {
   "pages_without_text": 0,
   "likely_scanned": false,
-  "toc_entries": 5,
-  "sections": 5,
-  "chars_total": 10111
+  "toc_entries": 6,
+  "sections": 7,
+  "chars_total": 22222
  }
 }

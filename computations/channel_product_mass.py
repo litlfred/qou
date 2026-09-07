@@ -43,17 +43,45 @@ from pathlib import Path
 from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q, Q_INV, HA, q_int, HBAR_Q, Q_ERR
+from q_parameter import Q_MP, Q_INV_MP, HA_MP, q_int, HBAR_Q, Q_ERR
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from experimental_constants import m_n_derived_3input  # noqa: E402
 from witness_base import WitnessBuilder
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
+
+
+def _serialise(obj):
+    """Render the mpf working state to witness JSON at the LAST moment."""
+    if isinstance(obj, dict):
+        return {k: _serialise(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_serialise(v) for v in obj]
+    if isinstance(obj, mp.mpf):
+        return fmt(obj)
+    return obj
 
 # ══════════════════════════════════════════════════════════════
 # §1  PER-NUCLEON CHANNEL SUMS (exact algebraic)
 # ══════════════════════════════════════════════════════════════
 
-q = Q
-qi = Q_INV
+# `Q_MP` / `Q_INV_MP` / `HA_MP`, NOT the float `Q` / `Q_INV` / `HA`.
+#
+# The float versions were the root of this whole file: `a_proton = -HA/2` and
+# `b_neutron = -3(q²-1)(q²+1)²/(4q³)` are the two channel sums the docstring
+# calls "exact algebraic ... All quantities from q₀ alone", and both were being
+# built from a 17-digit q. Measured: `HA` is 0.20906029879563937 against
+# `HA_MP` 0.20906029879563931543084621312967494385975749526302 — they part at
+# the 16th digit.
+#
+# `f64_into_mpmath_audit` caught this on the parameter I wrote as
+# `mp.mpf(str(Q))`, which is the laundering form: it renders 17 good digits as
+# a 60-digit decimal. Fixing only that line would have left the arithmetic
+# above it on f64 and made the witness LOOK more precise than the computation.
+q = Q_MP
+qi = Q_INV_MP
+HA = HA_MP
 me = M_E_MEV
 
 # Knot volumes from canonical knot_volumes module (mpmath 50dps).
@@ -106,14 +134,18 @@ def channel_product_mass(Z, N):
 
     if A == 1:
         if Z == 1:  # hydrogen: single proton
-            B = float(-ALPHA * mp.log(abs(a_proton)))
+            B = -ALPHA * mp.log(abs(a_proton))
         else:  # free neutron
-            B = float(-ALPHA * mp.log(abs(b_neutron)))
+            B = -ALPHA * mp.log(abs(b_neutron))
         return M_free - B
 
     # Exact channel product: Σ_configs Π G_{n_m}(c_m) = a^Z · b^N
     # Binding = -α · ln|a^Z · b^N| = -α · (Z·ln|a| + N·ln|b|)
-    ln_product = float(Z * mp.log(abs(a_proton)) + N * mp.log(abs(b_neutron)))
+    #
+    # The three `float()` casts that stood on these lines took the LOGARITHM
+    # down to f64 before it was multiplied by α, so the binding energy -- the
+    # quantity this producer exists to predict -- was f64 from here on.
+    ln_product = Z * mp.log(abs(a_proton)) + N * mp.log(abs(b_neutron))
     B = -ALPHA * ln_product
 
     return M_free - B
@@ -130,39 +162,39 @@ def observed_mass(Z, N, B_per_A):
 # ══════════════════════════════════════════════════════════════
 
 ATOMS = [
-    ("H",   1,   0,   1,  0.0000),
-    ("He",  2,   2,   4,  7.0739),
-    ("Li",  3,   4,   7,  5.6063),
-    ("Be",  4,   5,   9,  6.4628),
-    ("B",   5,   6,  11,  6.9277),
-    ("C",   6,   6,  12,  7.6801),
-    ("N",   7,   7,  14,  7.4756),
-    ("O",   8,   8,  16,  7.9762),
-    ("F",   9,  10,  19,  7.7790),
-    ("Ne", 10,  10,  20,  8.0325),
-    ("Na", 11,  12,  23,  8.1115),
-    ("Mg", 12,  12,  24,  8.2607),
-    ("Al", 13,  14,  27,  8.3316),
-    ("Si", 14,  14,  28,  8.4477),
-    ("P",  15,  16,  31,  8.4812),
-    ("S",  16,  16,  32,  8.4932),
-    ("Cl", 17,  18,  35,  8.5204),
-    ("Ar", 18,  22,  40,  8.5954),
-    ("K",  19,  20,  39,  8.5570),
-    ("Ca", 20,  20,  40,  8.5513),
-    ("Sc", 21,  24,  45,  8.6190),
-    ("Ti", 22,  26,  48,  8.7229),
-    ("V",  23,  28,  51,  8.7420),
-    ("Cr", 24,  28,  52,  8.7760),
-    ("Mn", 25,  30,  55,  8.7649),
-    ("Fe", 26,  30,  56,  8.7904),
-    ("Co", 27,  32,  59,  8.7680),
-    ("Ni", 28,  30,  58,  8.7322),
-    ("Cu", 29,  34,  63,  8.7522),
-    ("Zn", 30,  34,  64,  8.7356),
-    ("Sn", 50,  70, 120,  8.5050),
-    ("Pb", 82, 126, 208,  7.8675),
-    ("U",  92, 146, 238,  7.5702),
+    ("H",   1,   0,   1,  "0.0000"),
+    ("He",  2,   2,   4,  "7.0739"),
+    ("Li",  3,   4,   7,  "5.6063"),
+    ("Be",  4,   5,   9,  "6.4628"),
+    ("B",   5,   6,  11,  "6.9277"),
+    ("C",   6,   6,  12,  "7.6801"),
+    ("N",   7,   7,  14,  "7.4756"),
+    ("O",   8,   8,  16,  "7.9762"),
+    ("F",   9,  10,  19,  "7.7790"),
+    ("Ne", 10,  10,  20,  "8.0325"),
+    ("Na", 11,  12,  23,  "8.1115"),
+    ("Mg", 12,  12,  24,  "8.2607"),
+    ("Al", 13,  14,  27,  "8.3316"),
+    ("Si", 14,  14,  28,  "8.4477"),
+    ("P",  15,  16,  31,  "8.4812"),
+    ("S",  16,  16,  32,  "8.4932"),
+    ("Cl", 17,  18,  35,  "8.5204"),
+    ("Ar", 18,  22,  40,  "8.5954"),
+    ("K",  19,  20,  39,  "8.5570"),
+    ("Ca", 20,  20,  40,  "8.5513"),
+    ("Sc", 21,  24,  45,  "8.6190"),
+    ("Ti", 22,  26,  48,  "8.7229"),
+    ("V",  23,  28,  51,  "8.7420"),
+    ("Cr", 24,  28,  52,  "8.7760"),
+    ("Mn", 25,  30,  55,  "8.7649"),
+    ("Fe", 26,  30,  56,  "8.7904"),
+    ("Co", 27,  32,  59,  "8.7680"),
+    ("Ni", 28,  30,  58,  "8.7322"),
+    ("Cu", 29,  34,  63,  "8.7522"),
+    ("Zn", 30,  34,  64,  "8.7356"),
+    ("Sn", 50,  70, 120,  "8.5050"),
+    ("Pb", 82, 126, 208,  "7.8675"),
+    ("U",  92, 146, 238,  "7.5702"),
 ]
 
 
@@ -178,7 +210,11 @@ print("  " + "-" * 80)
 results = []
 stats_errors = []
 
-for name, Z, N, A, BperA in ATOMS:
+for name, Z, N, A, BperA_str in ATOMS:
+    # The AME B/A column now holds decimal STRINGS. `8.7904` as a Python literal
+    # is the binary64 approximation of that decimal, not the decimal, and it is
+    # the reference every `error_pct` in this table is measured against.
+    BperA = mp.mpf(BperA_str)
     M_pred = channel_product_mass(Z, N)
     M_obs = observed_mass(Z, N, BperA)
     M_free = Z * M_P_MEV + N * m_n_derived_3input + Z * me
@@ -188,29 +224,35 @@ for name, Z, N, A, BperA in ATOMS:
     if M_obs > 0:
         pct = (M_pred - M_obs) / M_obs * 100
     else:
-        pct = 0.0
+        pct = mp.mpf(0)
 
     print(f"  {name:>3} {Z:>3} {N:>3} {A:>3}"
-          f"  {M_pred:>12.3f} {M_obs:>12.3f} {pct:>+7.3f}%"
-          f"  {B_pred:>10.3f} {B_obs:>10.3f}")
+          f"  {float(M_pred):>12.3f} {float(M_obs):>12.3f} {float(pct):>+7.3f}%"
+          f"  {float(B_pred):>10.3f} {float(B_obs):>10.3f}")
 
+    # These were `round(x, 3)` / `round(x, 4)`, which is WORSE than the f64 the
+    # rest of this drain is about: it does not merely truncate to ~16 digits, it
+    # writes 3 decimal places into the record. `error_pct` at 4 decimals cannot
+    # express a residual below 1e-4 %, and the whole point of the file is that
+    # residual. Display rounding belongs in the `print` above, not in the
+    # witness; values stay mpf and `_serialise` renders them.
     results.append({
         "atom": name, "Z": Z, "N": N, "A": A,
-        "M_pred_MeV": round(M_pred, 3),
-        "M_obs_MeV": round(M_obs, 3),
-        "B_pred_MeV": round(B_pred, 3),
-        "B_obs_MeV": round(B_obs, 3),
-        "error_pct": round(pct, 4),
+        "M_pred_MeV": M_pred,
+        "M_obs_MeV": M_obs,
+        "B_pred_MeV": B_pred,
+        "B_obs_MeV": B_obs,
+        "error_pct": pct,
     })
     if A > 1:
         stats_errors.append(abs(pct))
 
-mae = sum(stats_errors) / len(stats_errors) if stats_errors else 0
-worst = max(stats_errors) if stats_errors else 0
+mae = (mp.fsum(stats_errors) / len(stats_errors)) if stats_errors else mp.mpf(0)
+worst = max(stats_errors) if stats_errors else mp.mpf(0)
 
 print()
-print(f"  Mean absolute error: {mae:.3f}% ({len(stats_errors)} atoms)")
-print(f"  Worst prediction: {worst:.3f}%")
+print(f"  Mean absolute error: {float(mae):.3f}% ({len(stats_errors)} atoms)")
+print(f"  Worst prediction: {float(worst):.3f}%")
 print()
 
 # ══════════════════════════════════════════════════════════════
@@ -259,34 +301,36 @@ w.set_description(
 )
 w.set_content_block("rem:q-integer-mass-table")
 
-w.add_parameter("q₀", Q)
-w.add_parameter("α (MeV)", ALPHA)
-w.add_parameter("a (proton sum)", a_proton)
-w.add_parameter("b (neutron sum)", b_neutron)
-w.add_parameter("ln|a|", float(mp.log(abs(a_proton))))
-w.add_parameter("ln|b|", float(mp.log(abs(b_neutron))))
+w.add_parameter("q₀", fmt(q))
+w.add_parameter("α (MeV)", fmt(ALPHA))
+w.add_parameter("a (proton sum)", fmt(a_proton))
+w.add_parameter("b (neutron sum)", fmt(b_neutron))
+w.add_parameter("ln|a|", fmt(mp.log(abs(a_proton))))
+w.add_parameter("ln|b|", fmt(mp.log(abs(b_neutron))))
 
 for r in results:
     if r["A"] < 2:
         continue
     w.add_assertion(
         f"{r['atom']}-{r['A']} mass",
-        computed=r["M_pred_MeV"],
-        expected=r["M_obs_MeV"],
-        tolerance=r["M_obs_MeV"] * 0.02,  # 2% tolerance (this is a first-principles calc)
+        # Strings, per the convention `WitnessBuilder.add_assertion` documents
+        # (qou-t0rf); `passed` coerces with `float()` either way.
+        computed=fmt(r["M_pred_MeV"]),
+        expected=fmt(r["M_obs_MeV"]),
+        tolerance=fmt(r["M_obs_MeV"] * mp.mpf("0.02")),  # 2% — first-principles calc
         unit="MeV",
         source="AME2020 + CODATA 2022",
     )
 
-w.add_data("results", results)
+w.add_data("results", _serialise(results))
 w.add_data("statistics", {
-    "MAE_pct": round(mae, 4),
-    "worst_pct": round(worst, 4),
+    "MAE_pct": fmt(mae),
+    "worst_pct": fmt(worst),
     "n_atoms": len(stats_errors),
 })
 w.add_data("channel_sums", {
-    "a_proton": a_proton,
-    "b_neutron": b_neutron,
+    "a_proton": fmt(a_proton),
+    "b_neutron": fmt(b_neutron),
     "a_proton_formula": "-HA/2 = -(q-q⁻¹)/2",
     "b_neutron_formula": "-3(q²-1)(q²+1)²/(4q³)",
 })

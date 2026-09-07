@@ -5,13 +5,20 @@
   "file": "kirbycal.pdf",
   "sha256": "8dae9487ed32a3bdbfb8cb00b72b0a6e4f38b301089b45c8fdd32eb45a12311b",
   "bytes": 884245,
-  "pages": 22
+  "pages": 22,
+  "text_source": "embedded",
+  "extractor": "pypdf"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "A Calculus for Framed Links in S^3",
-  "authors_raw": "University of California, Department of Mathematics, Berkeley, Ca. 94720, USA",
+  "title": "Inventiones math. 45, 35- 56 (1978) mathematicae \u000e9 by Springer-Verlag 197 A Calculus for Framed Links in S 3",
+  "authors_raw": "Robion Kirby*",
+  "title_lines": [
+   "Inventiones math. 45, 35- 56 (1978)",
+   "mathematicae \u000e9 by Springer-Verlag 197",
+   "A Calculus for Framed Links in S 3"
+  ],
   "abstract": null,
   "docinfo": {
    "Creator": "009147003.TIF",
@@ -19,14 +26,7 @@
    "Title": "A calculus for framed links in <Emphasis Type=\"Italic\">S </Emphasis> <Superscript>3 </Superscript>",
    "Author": "",
    "Producer": "PageGenie PDFGenerator"
-  },
-  "title_lines": [
-   "Inventiones math. 45, 35- 56 (1978)",
-   "mathematicae \u000e9 by Springer-Verlag 197",
-   "A Calculus for Framed Links in S 3",
-   "Robion Kirby*"
-  ],
-  "title_prev": "Inventiones math. 45, 35- 56 (1978) mathematicae \u000e9 by Springer-Verlag 197 A Calculus for Framed Links in S 3 Robion Kirby*"
+  }
  },
  "toc": [
   {
@@ -53,6 +53,16 @@
  ],
  "toc_source": "inferred",
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 15,
+   "n_chars": 23185,
+   "n_words": 4576
+  },
   {
    "id": "sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to",
    "number": "1",
@@ -88,7 +98,7 @@
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 3,
-  "sections": 3,
-  "chars_total": 11237
+  "sections": 4,
+  "chars_total": 34422
  }
 }

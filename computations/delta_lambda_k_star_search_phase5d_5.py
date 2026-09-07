@@ -48,12 +48,33 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 from witness_base import WitnessBuilder
-from hecke_characters import chi_lambda_braid, partitions_of, dim_q
+from hecke_characters import chi_lambda_braid_mpf, partitions_of, dim_q
 from q_parameter import Q as Q0_FLOAT
-from q_mpmath import set_q, qint, qfac
-from _precision import set_compute_dps  # noqa: E402
-from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
-set_q(Q0_FLOAT)
+from q_mpmath import set_q
+from _precision import set_compute_dps, fmt  # noqa: E402
+from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+
+# `set_q` used to be called HERE, at import time, with the float64 `Q0_FLOAT`.
+# Two defects in one line: the value carried 16 digits, and `set_q` builds its
+# `mpf` at whatever `mp.dps` is current — which at import time is mpmath's
+# default 15, before `set_compute_dps()` has run.  So even a 50-digit string
+# passed at import would have been truncated.  It is now called from `main()`,
+# after the precision is set.
+
+
+def q0_mp() -> mp.mpf:
+    """The proton pin as an `mpf`, built at the CURRENT precision.
+
+    Two things this is not.  It is not `qou_substrate.constants.Q` or
+    `q_parameter.Q` — both are Python floats (measured: `type(Q) is float`), so
+    passing either into the character kernel caps it at f64 whatever `mp.dps`
+    says; `chi_lambda_braid_mpf`'s own docstring says so and names this string
+    as the thing to pass instead.  And it is not a module-level constant,
+    because `mp.mpf` rounds to `mp.dps` at construction and at import time that
+    is mpmath's default 15 — a constant here would be a 15-digit number no
+    matter how many digits the string carries.
+    """
+    return mp.mpf(Q_50_DIGIT_STR)
 
 
 # Candidate knots (braid words on minimal strand count)
@@ -75,22 +96,23 @@ KNOTS = {
 CHI_FAILURES: list[dict] = []
 
 
-def chi_lambda_K(K_word: list[int], n_strands: int, n_target: int, lam: tuple) -> float:
+def chi_lambda_K(K_word: list[int], n_strands: int, n_target: int, lam: tuple):
     """χ^λ(e_K) approximation: evaluate the knot's Markov character on
     partition λ at q_0. Lifts the knot's braid word from H_{n_strands}
     to H_{n_target} via the natural inclusion (extend by identity on
-    extra strands). Returns chi value at q_0.
+    extra strands). Returns an ``mpf`` chi value at q_0.
 
     For λ not in the support of the projector e_K (i.e., partitions
     that "don't see" the knot), this returns 0 or a small value.
     """
     if not K_word:
         # unknot — identity character = dim_q(λ)
-        return float(dim_q(lam, Q0_PROTON))
-    # Lift K's word to n_target strands (identity extension)
-    word_marshalled = [(1 if s > 0 else -1, abs(s)) for s in K_word]
+        return dim_q(lam, q0_mp())
     try:
-        return chi_lambda_braid(lam, word_marshalled, q_value=Q0_FLOAT)
+        # `chi_lambda_braid_mpf` takes the FLAT SIGNED word directly and does
+        # the (sign, generator) marshalling itself, so the hand-rolled
+        # `word_marshalled` that stood here is now redundant.
+        return chi_lambda_braid_mpf(lam, K_word, q_value=Q_50_DIGIT_STR)
     except Exception as exc:
         # A swallowed character evaluation is indistinguishable downstream from
         # a genuine χ^λ(e_K) = 0 ("λ doesn't see the knot"), so a search that
@@ -101,7 +123,26 @@ def chi_lambda_K(K_word: list[int], n_strands: int, n_target: int, lam: tuple) -
             {"n_target": n_target, "lambda": str(lam), "n_strands": n_strands,
              "error": f"{exc.__class__.__name__}: {exc}"}
         )
-        return 0.0
+        return mp.mpf(0)
+
+
+def _serialise(obj):
+    """Render the mpf working state to witness JSON at the LAST moment.
+
+    The character values, the FR weights and `Z_norm` are carried as `mpf`
+    through the whole computation and converted here, once, via `_precision.fmt`
+    (60 dps).  The previous version converted at every step — `float(chi_val)`,
+    `mp.mpf(str(...))` round-trips through f64, `float(w)` — so the mpmath
+    arithmetic in the middle was operating on values that had already been
+    truncated to ~16 digits on the way in.
+    """
+    if isinstance(obj, dict):
+        return {k: _serialise(v) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_serialise(v) for v in obj]
+    if isinstance(obj, mp.mpf):
+        return fmt(obj)
+    return obj
 
 
 def depth_k(partition: tuple) -> int:
@@ -111,6 +152,7 @@ def depth_k(partition: tuple) -> int:
 
 def main() -> int:
     set_compute_dps()
+    set_q(Q_50_DIGIT_STR)   # after set_compute_dps — see the note at the imports
     builder = WitnessBuilder("k-star-search-phase5d-5")
     builder.set_description(
         "Phase 5d.5: empirical search for the depth-stratified "
@@ -122,14 +164,19 @@ def main() -> int:
         "pair minimizing the implied 1.82× variance from PR #801."
     )
     builder.set_content_block("prop:depth-stratified-frobenius-reciprocity")
-    builder.add_parameter("q_0", str(Q0_FLOAT))
+    builder.add_parameter("q_0", Q_50_DIGIT_STR)
 
     # We test the projector at H_n for n ∈ {6, 9, 12} (the atomic-braid
     # ambient algebras). For each n, compute χ^λ(e_K) on every depth-k
     # partition for k ∈ {1, 2, 3}.
-    print(f"  q_0 = {Q0_FLOAT}")
+    print(f"  q_0 = {Q_50_DIGIT_STR}  (mp.dps = {mp.mp.dps})")
     print()
 
+    # The mpfr character kernel is ~8x the cost of the f64 one it replaced
+    # (measured: 1.05 s vs 0.135 s for one call), so this is now a multi-minute
+    # run and gets progress lines per the long-compute logging discipline.
+    t_start = time.time()
+    n_chi = 0
     per_n = {}
     for n in (6, 9, 12):
         per_k = {}
@@ -143,28 +190,29 @@ def main() -> int:
                     continue  # can't embed K into H_n
                 chis = {}
                 for lam in partitions_at_depth_k:
-                    chi_val = chi_lambda_K(K_word, K_strands, n, lam)
-                    chis[str(lam)] = float(chi_val)
+                    chis[str(lam)] = chi_lambda_K(K_word, K_strands, n, lam)
+                    n_chi += 1
+                print(f"    [{time.time() - t_start:7.1f}s] n={n:2d} k={k} "
+                      f"{K_name:<8} {len(partitions_at_depth_k):3d} partitions "
+                      f"({n_chi} chi evaluations so far)", flush=True)
                 # Compute FR weight: w̃_λ^(K) = dim_q²(λ) · χ^λ(e_K) / Z
                 # Z normalises so Σ_λ w̃_λ = 1 over depth-k partitions
                 weights = {}
                 Z_norm = mp.mpf(0)
                 for lam in partitions_at_depth_k:
-                    dq2 = mp.mpf(str(dim_q(lam, Q0_PROTON))) ** 2
-                    chi = mp.mpf(str(chis[str(lam)]))
-                    w = dq2 * chi
-                    weights[str(lam)] = float(w)
+                    dq2 = dim_q(lam, q0_mp()) ** 2
+                    w = dq2 * chis[str(lam)]
+                    weights[str(lam)] = w
                     Z_norm += w
                 if Z_norm != 0:
-                    normalised = {lam: float(mp.mpf(str(w)) / Z_norm)
-                                  for lam, w in weights.items()}
+                    normalised = {lam: w / Z_norm for lam, w in weights.items()}
                 else:
-                    normalised = {lam: 0.0 for lam in weights}
+                    normalised = {lam: mp.mpf(0) for lam in weights}
                 knot_chis[K_name] = {
                     "chi_values": chis,
                     "FR_weights_unnormalised": weights,
                     "FR_weights_normalised": normalised,
-                    "Z_norm": float(Z_norm),
+                    "Z_norm": Z_norm,
                 }
             per_k[k] = knot_chis
         per_n[n] = per_k
@@ -181,10 +229,10 @@ def main() -> int:
             for K_name, data in ranked[:5]:
                 Zn = data["Z_norm"]
                 n_part = len(data["chi_values"])
-                print(f"      {K_name:<8} |Z_norm| = {abs(Zn):>12.4f}  "
+                print(f"      {K_name:<8} |Z_norm| = {float(abs(Zn)):>12.4f}  "
                       f"(over {n_part} depth-{k} partitions of {n})")
 
-    builder.add_data("per_n_per_k_per_knot", per_n)
+    builder.add_data("per_n_per_k_per_knot", _serialise(per_n))
 
     # Was `computed=1.0, expected=1.0` (bean `qou-26f2`). "Completed" is a
     # coverage claim, and the constant asserted none of it: a run in which every

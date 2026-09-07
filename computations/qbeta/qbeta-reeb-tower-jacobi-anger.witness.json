@@ -7,9 +7,9 @@
     "jacobi_anger": {
       "identity_bar_odd": "sinh(x sinh η) = 2 Σ_{m≥0} J_{2m+1}(x) sinh((2m+1)η)",
       "identity_bar_even": "cosh(x sinh η) = J₀(x) + 2 Σ_{m≥1} J_{2m}(x) cosh(2mη)",
-      "max_residual_gen": 1.8669045833583425e-60,
-      "max_residual_bar_odd": 3.111507638930571e-61,
-      "max_residual_bar_even": 3.111507638930571e-61,
+      "max_residual_gen": "1.86690458335834251214321921613403727217707565061635013993033e-60",
+      "max_residual_bar_odd": "3.11150763893057085357203202689006212029512608436058356655056e-61",
+      "max_residual_bar_even": "3.11150763893057085357203202689006212029512608436058356655056e-61",
       "truncation_M": 40
     },
     "rotation_growth_JI": {
@@ -74,10 +74,10 @@
         "7": "-7/2",
         "9": "1"
       },
-      "block_21_single_x_star": 5.345315774283992,
-      "block_21_over_determination_residual": 1.4779514133272553,
-      "single_x_star": 5.271820990375252,
-      "single_x_over_determination_residual": 1.404398744808269,
+      "block_21_single_x_star": "5.34531577428399213318468510643477160325941356449182402419732",
+      "block_21_over_determination_residual": "1.47795141332725530563446146020132191105901331976108976401254",
+      "single_x_star": "5.27182099037525226357211030535520101205179872917683878392504",
+      "single_x_over_determination_residual": "1.40439874480826899510107192593146750361702183815490700966892",
       "intra_nucleon_ordering": "borromean",
       "note": "Both truncations here are bar-odd, NOT the physical Wenzl-weighted Markov trace. Under the canonical borromean ordering the unit-weighted sum carries {1,3,5,7,9} and chi_(2,1) carries the same five orders on its own; in the superseded grouped frame the sum carried exactly {1,3,5} and no single block carried more than two, so only the sum was falsifiable."
     },
@@ -94,14 +94,14 @@
   },
   "allPassed": true,
   "verdict": "JACOBI-ANGER + J/I PROVED (numeric, <1e-40). The n=3 bar-odd character spectra are PURE ODD-ORDER (the sinh(x sinh η) structure) — which under the canonical borromean ordering now holds out to order 9, where the grouped frame only reached 5, and did not have to. But neither the unit-weighted sum nor the canonical χ_(2,1) block alone matches a single-x Bessel profile (over-determination fails on both) — confirming the Bessel object is the brane-tower / SU_q(2)→E_q(2) contraction limit, not the n=3 trace. No fit; nothing wired; c_3 cal-anchored.",
-  "scriptHash": "016897da5e2d",
+  "scriptFile": "qbeta_reeb_tower_jacobi_anger.py",
+  "scriptHash": "2798fbb14059",
   "scriptCommitSha": "f1291a048a6b99a98ee73c9016208bd54cc39955",
-  "commitSha": "f1291a048a6b99a98ee73c9016208bd54cc39955",
+  "commitSha": "4e03604e68b897786166db895935d0baa468c84a",
   "engine": "sympy",
-  "computedAt": "2026-09-07T08:19:24.267569+00:00",
+  "computedAt": "2026-09-07T16:27:31.832979+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
   "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736",
-  "scriptFile": "qbeta_reeb_tower_jacobi_anger.py"
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

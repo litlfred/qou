@@ -24,7 +24,7 @@ fast character evaluation (~50× faster than pure Python for n ≥ 9).
 """
 from __future__ import annotations
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
-import sys, json, warnings
+import sys, json, time, warnings
 from multiprocessing import Pool, cpu_count
 from pathlib import Path
 from datetime import datetime, timezone
@@ -40,25 +40,42 @@ set_compute_dps()
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
 from hecke_characters import (
-    partitions_of, dim_q,
-    chi_lambda_braid as _shared_chi_lambda_braid,
+    partitions_of, dim_q, qfac,
+    chi_lambda_braid_mpf as _shared_chi_lambda_braid_mpf,
     _RUST_CHI_AVAILABLE as _RUST_AVAILABLE,
 )
 from hecke_core_legacy import _step_chain_generic
-from q_mpmath import set_q, qfac
 from witness_base import WitnessBuilder
-from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
+from qou_substrate.constants import Q_50_DIGIT_STR  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
 )
+from _precision import fmt  # noqa: E402
 
-set_q(Q0_FLOAT)
+# `qfac` comes from `hecke_characters`, NOT `q_mpmath`.  Two different functions
+# share the name: `hecke_characters.qfac(n, q=None)` takes an explicit anchor
+# (the `dim_q(shape, q)` idiom, bean `qou-wee5`), `q_mpmath.qfac(n)` takes only
+# `n`.  This file imported the second and called the first, so `main` died at
+# `qfac(n, Q0_PROTON)` with `TypeError: qfac() takes 1 positional argument but 2
+# were given` -- measured, every run.  `set_q` went with it: with the anchor
+# passed explicitly there was no consumer left, and it was being called at
+# import time, where `mp.dps` is still mpmath's default 15.
+
+
+def q0_mp() -> mp.mpf:
+    """The proton pin as an `mpf`, built at the CURRENT precision.
+
+    Replaces `qou_substrate.constants.Q`, a Python float (measured:
+    `type(Q) is float`), which capped every `dim_q` / `qfac` call here at f64
+    whatever `mp.dps` said.  A function rather than a constant because `mp.mpf`
+    rounds at construction and at import time `mp.dps` is 15.
+    """
+    return mp.mpf(Q_50_DIGIT_STR)
 
 Q0 = Q_MP  # was f64 roundtrip
 QI = Q_INV_MP
 H_A = Q0 - QI
-h_val = float(H_A)
 me = mp.mpf(str(M_E_MEV))
 G = mp.catalan
 alpha_bind = me * 8 * G
@@ -89,10 +106,18 @@ def atomic_braid_word(Z, N):
             ordering[k], ordering[:k], n_gens, include_inter=True
         )
         for c, d, g in chain:
-            cf = float(c); df = float(d)
-            if abs(cf - 1.0) < 1e-10 and abs(df) < 1e-10:
+            # Was `float(c)` / `float(d)` against `h_val = float(H_A)`. The
+            # OUTCOME here is discrete -- which sign the crossing carries -- and
+            # a 1e-10 window on O(1) values cannot flip it, so this was not a
+            # wrong answer. It is still an f64 computation in a `computations/`
+            # script, which the NO-FLOAT64 rule covers regardless of whether the
+            # result survives; `H_A` is already an mpf, so carrying it costs
+            # nothing.
+            cf = mp.mpf(str(c)); df = mp.mpf(str(d))
+            tol = mp.mpf("1e-10")
+            if abs(cf - 1) < tol and abs(df) < tol:
                 word.append(('+', g + 1))
-            elif abs(cf - 1.0) < 1e-10 and abs(df + h_val) < 1e-10:
+            elif abs(cf - 1) < tol and abs(df + H_A) < tol:
                 word.append(('-', g + 1))
             else:
                 word.append(('+', g + 1))
@@ -100,19 +125,28 @@ def atomic_braid_word(Z, N):
 
 
 def _process(args):
-    """Worker: evaluate χ_λ(β) and return the per-block summary."""
-    lam_t, word_marshalled, nfac, q0_float = args
+    """Worker: evaluate χ_λ(β) and return the per-block summary.
+
+    Everything here is `mpf`.  `mp.mpf` is picklable, so the multiprocessing
+    boundary is not a reason to drop to f64 -- the previous version marshalled
+    `nfac` and `q0` across it as Python floats and computed the whole worker in
+    f64 as a result.  `dps` is set per worker because `set_compute_dps()` in the
+    parent does not survive the fork on every platform.
+    """
+    lam_t, signed_word, nfac_str, q0_str, dps = args
+    mp.mp.dps = dps
+    nfac = mp.mpf(nfac_str)
     is_chir = is_chirality_cell(lam_t)
     depth = len(lam_t) - 1
     try:
-        chi = _shared_chi_lambda_braid(lam_t, word_marshalled, q_value=q0_float)
+        chi = _shared_chi_lambda_braid_mpf(lam_t, signed_word, q_value=q0_str)
     except Exception:
         return None
     if chi == 0:
         return None
-    dq = float(dim_q(lam_t, Q0_PROTON))
+    dq = dim_q(lam_t, mp.mpf(q0_str))
     w_lam = dq * dq / nfac
-    log_abs_chi = float(mp.log(abs(chi)))
+    log_abs_chi = mp.log(abs(chi))
     sign_chi = 1 if chi > 0 else -1
     return (lam_t, depth, w_lam, chi, log_abs_chi, sign_chi, is_chir)
 
@@ -155,15 +189,33 @@ def main():
         A = Z + N
         n = 3 * A
         word = atomic_braid_word(Z, N)
-        word_marshalled = [(1 if s == '+' else -1, g) for s, g in word]
-        nfac = float(qfac(n, Q0_PROTON))
+        # `chi_lambda_braid_mpf` takes the FLAT SIGNED word and marshals the
+        # (sign, generator) pairs itself, so the hand-rolled `word_marshalled`
+        # that stood here is gone.
+        signed_word = [g if s == '+' else -g for s, g in word]
+        nfac = qfac(n, q0_mp())
 
         jobs = [
-            (tuple(lam), word_marshalled, nfac, float(Q0_FLOAT))
+            (tuple(lam), signed_word, fmt(nfac), Q_50_DIGIT_STR, mp.mp.dps)
             for lam in partitions_of(n)
         ]
+        # `imap_unordered` rather than `map`, purely so the run is observable.
+        # The mpfr character kernel is ~8x the f64 one it replaced, which turns
+        # 4He (n=12, 77 partitions, a 12-strand word) from minutes into tens of
+        # minutes -- a `pool.map` there is a silent wait long enough to look
+        # like a hang, which the long-compute logging discipline exists to
+        # prevent. Order does not matter: every consumer below re-derives the
+        # partition from the returned tuple.
+        t_iso = time.time()
+        results = []
         with Pool(n_workers) as pool:
-            results = pool.map(_process, jobs)
+            for i, r in enumerate(pool.imap_unordered(_process, jobs), 1):
+                results.append(r)
+                if i % 5 == 0 or i == len(jobs):
+                    el = time.time() - t_iso
+                    eta = el / i * (len(jobs) - i)
+                    print(f"    [{name} n={n}] {i}/{len(jobs)} partitions  "
+                          f"{el:6.1f}s elapsed, ~{eta:6.1f}s left", flush=True)
 
         # Per-depth aggregation, with chirality vs. non-chirality split
         per_depth = {}  # depth -> {'chir': [...], 'non_chir': [...]}
@@ -186,9 +238,11 @@ def main():
         Phi_total = {}
         Pi_chir = {}
         for d, bucket in per_depth.items():
-            phi_c = sum(w * lac for _, w, _, lac, _ in bucket['chir'])
-            phi_n = sum(w * lac for _, w, _, lac, _ in bucket['non_chir'])
-            pi_c = sum(w for _, w, _, _, sgn in bucket['chir'] if sgn < 0)
+            # `mp.fsum`, not the builtin `sum`: these run to hundreds of terms
+            # per depth and the builtin accumulates pairwise rounding.
+            phi_c = mp.fsum(w * lac for _, w, _, lac, _ in bucket['chir'])
+            phi_n = mp.fsum(w * lac for _, w, _, lac, _ in bucket['non_chir'])
+            pi_c = mp.fsum(w for _, w, _, _, sgn in bucket['chir'] if sgn < 0)
             Phi_chir[d] = phi_c
             Phi_total[d] = phi_c + phi_n
             Pi_chir[d] = pi_c
@@ -203,31 +257,34 @@ def main():
             n_t = n_c + len(per_depth[d]['non_chir'])
             pc = Phi_chir[d]
             pt = Phi_total[d]
-            ratio = pc / pt if abs(pt) > 1e-12 else 0.0
-            print(f"    {d:>5} {n_c:>6} {n_t:>7} {pc:>14.6f} {pt:>14.6f} "
-                  f"{ratio:>10.4f}")
+            ratio = pc / pt if abs(pt) > mp.mpf("1e-12") else mp.mpf(0)
+            print(f"    {d:>5} {n_c:>6} {n_t:>7} {float(pc):>14.6f} "
+                  f"{float(pt):>14.6f} {float(ratio):>10.4f}")
 
         # Total chirality residue
-        Phi_chir_total = sum(Phi_chir.values())
-        Phi_chir_high = sum(Phi_chir.get(d, 0) for d in range(4, n))
-        Chir_MeV = float(alpha_bind) * Phi_chir_total
-        Chir_high_MeV = float(alpha_bind) * Phi_chir_high
+        Phi_chir_total = mp.fsum(Phi_chir.values())
+        Phi_chir_high = mp.fsum(Phi_chir.get(d, mp.mpf(0)) for d in range(4, n))
+        Chir_MeV = alpha_bind * Phi_chir_total
+        Chir_high_MeV = alpha_bind * Phi_chir_high
+        B_nucl_mp = mp.mpf(str(B_nucl))
 
-        print(f"\n    α · Φ_chir (all depths)         = {Chir_MeV:+.6f} MeV")
-        print(f"    α · Φ_chir (depths ≥ 4 only)    = {Chir_high_MeV:+.6f} MeV")
-        print(f"    Coulomb-corrected B_nucl        = {B_nucl:+.4f} MeV")
-        print(f"    Chirality fraction of B_nucl    = {Chir_MeV / B_nucl:.4f}")
+        print(f"\n    α · Φ_chir (all depths)         = {float(Chir_MeV):+.6f} MeV")
+        print(f"    α · Φ_chir (depths ≥ 4 only)    = {float(Chir_high_MeV):+.6f} MeV")
+        print(f"    Coulomb-corrected B_nucl        = {float(B_nucl_mp):+.4f} MeV")
+        print(f"    Chirality fraction of B_nucl    = {float(Chir_MeV / B_nucl_mp):.4f}")
 
         rows.append({
             'iso': name, 'Z': Z, 'N': N, 'A': A,
-            'B_nucl': B_nucl,
+            'B_nucl': fmt(B_nucl_mp),
             'n_chir_cells': n_chir_cells,
             'n_total_cells': n_total_cells,
-            'Phi_chir_per_depth': {str(k): float(v) for k, v in Phi_chir.items()},
-            'Phi_total_per_depth': {str(k): float(v) for k, v in Phi_total.items()},
-            'Pi_chir_per_depth': {str(k): float(v) for k, v in Pi_chir.items()},
-            'alpha_Phi_chir_total_MeV': Chir_MeV,
-            'alpha_Phi_chir_high_MeV': Chir_high_MeV,
+            'Phi_chir_per_depth': {str(k): fmt(v) for k, v in Phi_chir.items()},
+            'Phi_total_per_depth': {str(k): fmt(v) for k, v in Phi_total.items()},
+            'Pi_chir_per_depth': {str(k): fmt(v) for k, v in Pi_chir.items()},
+            'alpha_Phi_chir_total_MeV': fmt(Chir_MeV),
+            'alpha_Phi_chir_high_MeV': fmt(Chir_high_MeV),
+            # kept as mpf for the assertions below; stripped before `add_data`
+            '_chir_frac_mp': abs(Chir_MeV / B_nucl_mp) if B_nucl_mp else mp.mpf(0),
         })
 
     # ── Emit witness via WitnessBuilder (provenance + assertions) ──
@@ -243,8 +300,9 @@ def main():
         '(D_q² = 0) observables survive, i.e. the chirality channel.'
     )
     builder.set_content_block("prop:confinement-categorical")
-    builder.add_parameter("q0", str(Q0_FLOAT))
+    builder.add_parameter("q0", Q_50_DIGIT_STR)
     builder.add_parameter("kernel", "rust" if _RUST_AVAILABLE else "python")
+    chir_fractions = [r.pop('_chir_frac_mp') for r in rows]
     builder.add_data("isotopes", rows)
 
     # ── Assertions ──
@@ -254,9 +312,12 @@ def main():
     n_iso_with_chir = sum(1 for r in rows if r['n_chir_cells'] > 0)
     builder.add_assertion(
         "all_isotopes_have_chirality_cells",
-        computed=float(n_iso_with_chir),
-        expected=float(len(rows)),
-        tolerance=0.0,
+        # Counts, so `str(int)` -- `float()` made the witness carry `4.0` for a
+        # cardinality and put two raw float64 fields into it. Tolerance 0 is
+        # exact by construction here: this compares two integers.
+        computed=str(n_iso_with_chir),
+        expected=str(len(rows)),
+        tolerance="0",
         unit="count",
         source=(
             "prop:confinement-categorical claims confinement = collapse "
@@ -270,19 +331,17 @@ def main():
     #    interpreted as a sign-coherence cancellation in the gauge background).
     #    A value outside [-2, 2] would indicate the chirality residue
     #    dominates by >2× the actual binding, which is implausible.
-    chir_fractions = [abs(r['alpha_Phi_chir_total_MeV'] / r['B_nucl'])
-                      for r in rows if r['B_nucl']]
-    max_chir_frac = max(chir_fractions) if chir_fractions else 0.0
+    max_chir_frac = max(chir_fractions) if chir_fractions else mp.mpf(0)
     builder.add_assertion(
         "chirality_fraction_bounded",
-        computed=float(max_chir_frac),
-        expected=0.0,
-        tolerance=2.0,
+        computed=fmt(max_chir_frac),
+        expected=fmt(mp.mpf(0)),
+        tolerance="2",    # exact bound; string per the drained convention (qou-t0rf)
         unit="|fraction|",
         source=(
             "|α · Φ_chir(K) / B_nucl(K)| ≤ 2 across all isotopes — "
             "well-formedness check on the chirality-channel contribution. "
-            f"Per-isotope: {[(r['iso'], round(r['alpha_Phi_chir_total_MeV']/r['B_nucl'], 3)) for r in rows if r['B_nucl']]}"
+            f"Per-isotope: {[(r['iso'], mp.nstr(f, 6)) for r, f in zip(rows, chir_fractions)]}"
         ),
     )
 

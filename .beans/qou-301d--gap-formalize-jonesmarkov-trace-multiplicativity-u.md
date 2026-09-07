@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-09-07T04:52:53Z
+updated_at: 2026-09-07T11:25:37Z
 ---
 
 ## Context
@@ -150,3 +150,42 @@ restored. So the artefact is a defect of the UNNORMALISED convention, not an obs
 explains why a Jones-style normalisation carries a level factor at all: it is the closure
 bookkeeping, not decoration. Does NOT assert that any particular corpus computation makes that
 choice — a binding read off closureNorm without δ^level still carries the artefact.
+
+
+2026-09-07 (PR #7067): the gap is RE-LOCATED, and one of its two stated halves was never a gap.
+
+1. TwoSidedMarkov is a THEOREM of MarkovTrace, not an axiom beyond it. Four lines: cyclicity moves
+   y to the front, it merges with x inside H n (a Subalgebra, hence closed under multiplication),
+   and T3 applies to y*x. Global instance registered, so every [TwoSidedMarkov T] theorem in
+   DisjointBlockTraceLaw is UNCONDITIONAL (verified by elaborating three of them with no binder).
+   The file's claim to have "isolated the gap to one axiom" was wrong -- that axiom was free.
+
+2. THE REAL OBSTRUCTION IS REPETITION, NOT DESCENT. For a word w in generators at levels >= n with
+   maximal level M: if g M occurs AT MOST ONCE, cyclicity rotates it to the right end, every other
+   letter then has level < M so lies in H M, and T3 peels it; induction finishes. The blocker is a
+   word of shape g M * x * g M with x below M -- no rotation puts one g M at the end while leaving
+   the other in H M.
+
+   Proved instances: tr_mul_gen_gen_lt / tr_mul_gen_gen_gt (two distinct levels, BOTH orderings --
+   so descent alone is fine), and tr_mul_adjoin_gen (the whole subalgebra adjoin{g n}, not just
+   powers; it escapes only because that subalgebra is 2-dimensional under the quadratic relation,
+   so the induction terminates before repetition bites).
+
+3. WHAT THE GAP ACTUALLY NEEDS, corrected. Not another trace axiom and not E_n alone: a STRUCTURE
+   THEOREM FOR THE TOWER, H(m+1) = H m + H m . g m . H m, which is what rewrites g m x g m back
+   down. That is a statement about the ALGEBRA, not the trace, and nothing in MarkovTrace implies
+   it. (E_n is still the classical packaging, but its content is the independence fact
+   E_n b = tr b . 1 on shifted n, not the stabilisation.)
+
+4. THE PRODUCTION WORD IS ON THE WRONG SIDE OF THE LINE. Measured: one nucleon's generator sequence
+   under qou-hu1f is [0,1,0,1,0,1,0,0,1,0,0] -- maximal level 1 occurs FOUR times, level 0 seven
+   times. So the rotation argument does not cover the atom word at all. The same interleaving that
+   killed the monotone theorem also puts the word past this route's reach. Bond product stays
+   MEASURED, not derived.
+
+NOT ACHIEVED: no counterexample. I tried to build a MarkovTrace violating the law and every small
+model I tried had the axioms force the law to hold -- constant towers make it hold identically
+(if r is in the trace-radical of H then a*r is too, so tr(a r^j) = 0 for all j >= 1), and M_2 is
+excluded outright because Cayley-Hamilton gives every element a quadratic relation, which is exactly
+tr_mul_adjoin_gen's hypothesis. Inconclusive: this is NOT evidence the law is true, only that these
+models cannot separate it. Scope (a).

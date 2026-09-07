@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T21:22:24.691203+00:00",
-  "commitSha": "3291f7beeee528a5671be6c5c82345efbb25ec50",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-07T11:57:11.251894+00:00",
+  "commitSha": "394528e24b220d145345cea6bc3ac52cf9f1d7df",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "convergence-safe-vhat-tower",
   "scriptFile": "convergence_safe_vhat_tower.py",
-  "scriptHash": "4d743add4ba0",
-  "scriptCommitSha": "f9ad94d75089235c9225b3e2598d6c1e3f81d839",
+  "scriptHash": "270294219568",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,10 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -38,7 +38,7 @@
   "z_markov": "0.61268803714646525159582986394589924802630839154506360847205",
   "h": "0.209060298795639315430846213129674943859757495263022562533407",
   "radius_li2q": "1.10997858275138080759166909561076887987449912187357763605672",
-  "generated": "2026-08-24T21:18:04.584225+00:00",
+  "generated": "2026-09-07T11:52:57.967329+00:00",
   "vhat_std_derived": {
     "proton": {
       "g0": "1.28242047007382048125115237083781333579645016139858746389185",
@@ -91,7 +91,7 @@
       "proton": {
         "g0": {
           "vhat": "1.28242047007382048125115237083781333579645016139858746389185",
-          "F": "+inf",
+          "F": "inf",
           "F_imag": "0",
           "finite": false
         },
@@ -105,7 +105,7 @@
       "neutron": {
         "g0": {
           "vhat": "1.13370465125292969907516869866929508644580221109954728089231",
-          "F": "+inf",
+          "F": "inf",
           "F_imag": "0",
           "finite": false
         },
@@ -224,16 +224,16 @@
     "cand1_phi_q": {
       "proton": {
         "T1": "1.14575969245730086968908159577411930594372806194336541931233",
-        "T2": "+inf",
-        "T3": "+inf",
-        "tower_total": "+inf",
+        "T2": "inf",
+        "T3": "inf",
+        "tower_total": "inf",
         "finite": false
       },
       "neutron": {
         "T1": "0.987743688115809571634020165501294982055048759062669965421065",
-        "T2": "+inf",
+        "T2": "inf",
         "T3": "243772.911216128824886806638175616202299290606883084540565597",
-        "tower_total": "+inf",
+        "tower_total": "inf",
         "finite": false
       }
     },
@@ -272,16 +272,16 @@
     "baseline_std_li2q": {
       "proton": {
         "T1": "1.14575969245730086968908159577411930594372806194336541931233",
-        "T2": "+inf",
-        "T3": "+inf",
-        "tower_total": "+inf",
+        "T2": "inf",
+        "T3": "inf",
+        "tower_total": "inf",
         "finite": false
       },
       "neutron": {
         "T1": "0.987743688115809571634020165501294982055048759062669965421065",
-        "T2": "+inf",
+        "T2": "inf",
         "T3": "0.575996138502612639360727559415484374188361737733730831330585",
-        "tower_total": "+inf",
+        "tower_total": "inf",
         "finite": false
       }
     },
