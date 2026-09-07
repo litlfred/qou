@@ -1,0 +1,296 @@
+{
+  "computation": "qbeta-covariance-kernel-class-basis",
+  "assertions": [
+    {
+      "name": "class_basis_is_orthonormal",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "column orthogonality: SUM_lam chi(mu)chi(nu) = delta * k!/|C_mu|, tested as an exact integer identity over every pair of classes"
+    },
+    {
+      "name": "basis_is_complete",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "#classes = p(k) = dim L^2(Plancherel_k), so the orthonormal system is a basis"
+    },
+    {
+      "name": "omega_is_diagonal_with_eigenvalue_sgn",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "e_mu(lam') = sgn(mu) e_mu(lam). THE QUADRATIC TWIST, in the form the Frobenius pairing puts it: one sign per class, not a global symmetry to be exploited separately"
+    },
+    {
+      "name": "variance_is_a_basis_corollary",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "|C_{(p,1^{k-p})}| = (k)_p/p, so (k)_p^2/|C_mu| = p(k)_p with no character sum at all -- the sibling probe's Result 1 and 2 in one line"
+    },
+    {
+      "name": "S_vanishes_on_odd_classes",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "(A) f is omega-even, so its expansion is supported on the sgn = +1 eigenspace. Half the coefficients are zero for free"
+    },
+    {
+      "name": "S_at_identity_is_M",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "(B) S_{1^k} = SUM (f^lam)^3 = M(k), the normaliser of Q"
+    },
+    {
+      "name": "weighted_S_sum_is_k_factorial",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "(C) SUM_mu |C_mu| S_mu = SUM_lam (f^lam)^2 SUM_g chi^lam(g) = k!, since SUM_g chi^lam(g) = k! delta_{lam,(k)} and f^{(k)} = 1"
+    },
+    {
+      "name": "parseval_identity",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "(D) SUM_mu |C_mu| S_mu^2 = k! SUM_lam (f^lam)^4"
+    },
+    {
+      "name": "strengthening_S_mu_le_0_is_FALSE",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "S_{(4,2,1^{k-6})} > 0 for every 7 <= k <= 14, and is the largest positive coefficient in each. (B)+(C) make SUM_{mu != 1^k} |C_mu| S_mu = k! - M(k) < 0, which invites the guess that all of them are <= 0. They are not, so the conjecture cannot be obtained by proving a blanket sign -- it needs the 3-cycle class specifically"
+    },
+    {
+      "name": "three_cycle_is_a_leading_mode",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "rank by |a_mu|^2 among all p(k) modes: {3: 2, 4: 3, 5: 3, 6: 3, 7: 4, 8: 4, 9: 4, 10: 2, 11: 2, 12: 4, 13: 4, 14: 3}. The conjecture's coefficient is a leading term of f^lam, not a tail"
+    },
+    {
+      "name": "even_p_covariance_vanishes_termwise",
+      "computed": [],
+      "expected": [],
+      "passed": true,
+      "note": "Cov_P(log f, Sigma_p) = (k)_p/k! SUM_lam f^lam chi^lam(p,1^{k-p}) log f^lam (the mean drops out because SUM_lam f^lam chi^lam(mu) = 0 for mu != 1^k). Pairing lam with lam' makes the integer weights cancel for even p. Decided on INTEGERS -- and NOT implied by orthogonality, which needs both arguments to be characters; log f is not"
+    },
+    {
+      "name": "float64_headroom_is_adequate_on_odd_p",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "worst measured |gross|/|net| over the ODD-p entries is 5.84e+04; double carries ~16 significant digits and the assertions below need 2, so the guard is quantified rather than asserted. The even-p entries measure 1.69e+17 -- total cancellation, no significant digits left -- which is not a defect but the reason section 4 decides them on exact integers and this table merely displays them"
+    },
+    {
+      "name": "even_p_c_is_numerically_zero",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "the exact integer cancellation of section 4, seen through the float path"
+    },
+    {
+      "name": "c3_is_near_minus_one_quarter_at_k_52",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "c_3(52) = -0.25031. The tempering derivative g'(0) of `qou-f4ye` is exactly this projection, so g'(0) = -1/4 is now a statement about one Plancherel Fourier coefficient of log f"
+    },
+    {
+      "name": "c5_has_not_converged_so_the_pattern_is_UNTESTED",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "c_5/(-1/6) climbs monotonically to 0.617 at k=52 with residual ~k^{-0.64}; 95% would need k ~ 10^3. RETRACTION: reading the k<=28 table I recorded c_p = -1/(p+1) as FALSIFIED because c_5 sat near -0.075 and c_7 was POSITIVE. c_7 turns negative by k=48. The pattern is UNTESTABLE for p >= 5 in reachable k, and consistent with every datum -- not refuted"
+    },
+    {
+      "name": "low_modes_explain_a_shrinking_share",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "20.8% at k=12 -> 14.7% at k=32. Structural: single-cycle classes are k-1 of p(k) basis directions. A mode-by-mode derivation of g'(0) over single cycles works in a shrinking corner"
+    },
+    {
+      "name": "gprime0_is_NOT_monotone",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "c_3(33) = -0.242668 -> c_3(34) = -0.242432 -> c_3(35) = -0.242351: RISING. On a consecutive grid c_3(k) oscillates (turning points near k = 35 and k = 43, quasi-period ~11, amplitude ~3e-4) on top of a downward drift. The merged claim 'monotone from below' in `qbeta_covariance_kernel_tempering_probe` and bean `qou-f4ye` was read off the coarse grid k = 16,24,32,40,44,48, which samples only descending phases"
+    },
+    {
+      "name": "gprime0_CROSSES_minus_one_quarter",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "note": "c_3(48) = -0.248271, c_3(52) = -0.250311, c_3(56) = -0.250614. The sequence passes THROUGH -1/4 between k = 48 and 52 and keeps going. `qou-f4ye` asserted -0.25 < g'(0), true only because its range stopped at 48. CONSEQUENCE: the argument for the limit being exactly -1/4 was 'monotone approach from below', and both halves of that are now false. -1/4 remains a TARGET TO CHECK A DERIVATION AGAINST; it is no longer supported as an infimum, and the data does not separate 'limit = -1/4' from 'limit slightly below -1/4'"
+    }
+  ],
+  "allPassed": true,
+  "parameters": {
+    "epic": "qou-x631",
+    "bean": "qou-igjo",
+    "claim": "{sqrt(|C_mu|) chi^lam(mu)/f^lam} is an orthonormal basis of L^2(Plancherel) diagonalising the omega twist with eigenvalue sgn(mu); T_3(k) is one Fourier coefficient of f^lam"
+  },
+  "data": {
+    "_grade": "decimal strings, float64-grade, 6 dp; see cancellation_ratio_odd_p",
+    "c_p": {
+      "12": {
+        "2": "-0.000000",
+        "3": "-0.221588",
+        "4": "-0.000000",
+        "5": "-0.031894",
+        "7": "0.015824",
+        "9": "-0.003890"
+      },
+      "16": {
+        "2": "0.000000",
+        "3": "-0.231850",
+        "4": "-0.000000",
+        "5": "-0.038535",
+        "7": "0.003418",
+        "9": "-0.000405"
+      },
+      "20": {
+        "2": "-0.000000",
+        "3": "-0.229702",
+        "4": "-0.000000",
+        "5": "-0.058589",
+        "7": "0.013516",
+        "9": "-0.002313"
+      },
+      "24": {
+        "2": "-0.000000",
+        "3": "-0.237852",
+        "4": "-0.000000",
+        "5": "-0.064553",
+        "7": "0.010970",
+        "9": "-0.006557"
+      },
+      "28": {
+        "2": "0.000000",
+        "3": "-0.237746",
+        "4": "0.000000",
+        "5": "-0.074608",
+        "7": "0.009890",
+        "9": "-0.001350"
+      },
+      "32": {
+        "2": "-0.000000",
+        "3": "-0.242699",
+        "4": "0.000000",
+        "5": "-0.079503",
+        "7": "0.007033",
+        "9": "-0.001767"
+      },
+      "36": {
+        "2": "0.000000",
+        "3": "-0.242655",
+        "4": "-0.000000",
+        "5": "-0.087083",
+        "7": "0.006063",
+        "9": "0.000358"
+      },
+      "40": {
+        "2": "0.000000",
+        "3": "-0.246190",
+        "4": "-0.000000",
+        "5": "-0.090403",
+        "7": "0.001689",
+        "9": "0.003139"
+      },
+      "44": {
+        "2": "0.000000",
+        "3": "-0.246865",
+        "4": "-0.000000",
+        "5": "-0.096082",
+        "7": "0.000977",
+        "9": "0.002528"
+      },
+      "48": {
+        "2": "0.000000",
+        "3": "-0.248271",
+        "4": "0.000000",
+        "5": "-0.099678",
+        "7": "-0.002609",
+        "9": "0.005644"
+      },
+      "52": {
+        "2": "0.000000",
+        "3": "-0.250311",
+        "4": "-0.000000",
+        "5": "-0.102834",
+        "7": "-0.005074",
+        "9": "0.005893"
+      }
+    },
+    "sd_log_f": {
+      "12": "0.491886",
+      "16": "0.533088",
+      "20": "0.568261",
+      "24": "0.610986",
+      "28": "0.635083",
+      "32": "0.666711",
+      "36": "0.688613",
+      "40": "0.711517",
+      "44": "0.733481",
+      "48": "0.750422",
+      "52": "0.770196"
+    },
+    "explained_fraction": {
+      "12": "0.208241",
+      "16": "0.194421",
+      "20": "0.174606",
+      "24": "0.163149",
+      "28": "0.154190",
+      "32": "0.146851",
+      "36": "0.140243",
+      "40": "0.135889",
+      "44": "0.130450",
+      "48": "0.127168",
+      "52": "0.123552"
+    },
+    "three_cycle_mass_rank": {
+      "3": 2,
+      "4": 3,
+      "5": 3,
+      "6": 3,
+      "7": 4,
+      "8": 4,
+      "9": 4,
+      "10": 2,
+      "11": 2,
+      "12": 4,
+      "13": 4,
+      "14": 3
+    },
+    "S_4_2_positive": {
+      "7": 1120,
+      "8": 9440,
+      "9": 98964,
+      "10": 1605208,
+      "11": 41900584,
+      "12": 1178021200,
+      "13": 34723228800,
+      "14": 1135492417024
+    },
+    "c3_crossing": {
+      "48": "-0.248271",
+      "52": "-0.250311",
+      "33": "-0.242668",
+      "34": "-0.242432",
+      "35": "-0.242351",
+      "36": "-0.242655",
+      "56": "-0.250614"
+    },
+    "cancellation_ratio_odd_p": "58400.3",
+    "cancellation_ratio_even_p": "1.694e+17"
+  },
+  "provenance": {
+    "headSha": "94c61f283361bae74ba5fdf0c9b3d5ca2b94dc9d",
+    "producer": "computations/qbeta/qbeta_covariance_kernel_class_basis_probe.py",
+    "elapsed_s": "229.559"
+  }
+}

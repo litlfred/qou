@@ -2,17 +2,18 @@
   "computation": "qbeta-covariance-kernel-tempering",
   "assertions": [
     {
-      "name": "gprime0_is_converging_not_drifting",
+      "name": "gprime0_differences_shrink_on_THIS_grid",
       "computed": true,
       "expected": true,
       "passed": true,
-      "note": "successive differences [-0.006, -0.00485, -0.00349, -0.00068, -0.00141] -- decaying, so this is convergence. Approaches -1/4 from below; -1/4 is a TARGET to check a derivation against, not a fit"
+      "note": "successive differences [-0.006, -0.00485, -0.00349, -0.00068, -0.00141]. This is a property OF THIS COARSE GRID and is no longer read as convergence: `qbeta_covariance_kernel_class_basis_probe` section 6 shows g'(0) oscillates on a consecutive grid (quasi-period ~11, amplitude ~3e-4), so shrinking differences here reflect where 16,24,32,40,44,48 happens to sample the oscillation"
     },
     {
-      "name": "gprime0_approaches_quarter_from_below",
+      "name": "gprime0_in_band_over_this_range_only",
       "computed": true,
       "expected": true,
-      "passed": true
+      "passed": true,
+      "note": "RETRACTION (bean `qou-igjo`): this was named `gprime0_approaches_quarter_from_below` and its -0.25 < g'(0) bound was read as evidence that -1/4 is the limit. The bound holds only because this grid stops at k = 48. g'(0) = -0.250311 at k = 52 and -0.250614 at k = 56 -- it CROSSES -1/4. The assertion is kept, scoped to its own range, and must not be quoted as an approach from below"
     },
     {
       "name": "rho_is_stable_near_minus_0_170",
@@ -39,49 +40,50 @@
   "allPassed": true,
   "parameters": {
     "epic": "qou-x631",
-    "claim": "Q ~ P^{3/2}; g'(0) -> about -1/4; rho ~ -0.170; -1/(2 pi) disfavoured"
+    "claim": "Q ~ P^{3/2}; g'(0) near -1/4 at k~50 (CROSSES it by k=52, see qou-igjo); rho ~ -0.170; -1/(2 pi) disfavoured"
   },
+  "_grade": "decimal strings, float64-grade, 6 dp",
   "data": {
     "16": {
-      "sd_logf": 0.533088,
-      "gp0": -0.23185,
-      "corr": -0.434919,
-      "rho": -0.173209
+      "sd_logf": "0.533088",
+      "gp0": "-0.231850",
+      "corr": "-0.434919",
+      "rho": "-0.173209"
     },
     "24": {
-      "sd_logf": 0.610986,
-      "gp0": -0.237852,
-      "corr": -0.389292,
-      "rho": -0.169098
+      "sd_logf": "0.610986",
+      "gp0": "-0.237852",
+      "corr": "-0.389292",
+      "rho": "-0.169098"
     },
     "32": {
-      "sd_logf": 0.666711,
-      "gp0": -0.242699,
-      "corr": -0.364024,
-      "rho": -0.171376
+      "sd_logf": "0.666711",
+      "gp0": "-0.242699",
+      "corr": "-0.364024",
+      "rho": "-0.171376"
     },
     "40": {
-      "sd_logf": 0.711517,
-      "gp0": -0.24619,
-      "corr": -0.346007,
-      "rho": -0.17327
+      "sd_logf": "0.711517",
+      "gp0": "-0.246190",
+      "corr": "-0.346007",
+      "rho": "-0.173270"
     },
     "44": {
-      "sd_logf": 0.733481,
-      "gp0": -0.246865,
-      "corr": -0.336566,
-      "rho": -0.166625
+      "sd_logf": "0.733481",
+      "gp0": "-0.246865",
+      "corr": "-0.336566",
+      "rho": "-0.166625"
     },
     "48": {
-      "sd_logf": 0.750422,
-      "gp0": -0.248271,
-      "corr": -0.330842,
-      "rho": -0.169387
+      "sd_logf": "0.750422",
+      "gp0": "-0.248271",
+      "corr": "-0.330842",
+      "rho": "-0.169387"
     }
   },
   "provenance": {
-    "headSha": "692025c952ca428a349da71e8de7d67443103c2e",
+    "headSha": "94c61f283361bae74ba5fdf0c9b3d5ca2b94dc9d",
     "producer": "computations/qbeta/qbeta_covariance_kernel_tempering_probe.py",
-    "elapsed_s": 7.885
+    "elapsed_s": "4.948"
   }
 }
