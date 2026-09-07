@@ -367,12 +367,24 @@ def main():
         # Provenance stamp (bean qou-4un2): this producer writes its
         # witness directly, so nothing else records which script made
         # it -- and a re-run of an unstamped producer DELETES the
-        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        # scriptFile a downstream pass had added.
+        #
+        # q0 anchor (bean qou-324i class): this witness IS q0-dependent -- Q0 is
+        # read from the anchor (Q_50_DIGIT_STR), and constants.q0_physical and
+        # the whole gram_matrix_at_q0 move under QOU_Q0_ANCHOR=muon vs =proton
+        # (49 substantive fields, ~1e-8 = the mu-p tension). The prior
+        # `q0_anchor=False` (= stamp `independent`) was a copy-paste of the
+        # wrong stamp block (with a stale `# no q0 in this producer's cone`
+        # comment): it declared layer-freedom on a q0-dependent witness, so the
+        # q0-anchor-flip audit skipped it (an audit-escape). This is a distinct
+        # axis from qou-3j5m's convention C->D migration of this file, which is
+        # orthogonal. Resolve the anchor from the manifest: this stem is not in
+        # `ideal_muon`, so it resolves to the PROTON pin (the owner default).
         from qou_substrate.witness import WitnessBuilder as _WB
         import os as _os  # noqa: E402 -- provenance stamp
         witness.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            witness, script_path=__file__, engine=None, q0_anchor=False)
+            witness, script_path=__file__, engine=None, q0_anchor=None)
         json.dump(_serialize(witness), f, indent=2)
 
     print(f"wrote {out_path}")
