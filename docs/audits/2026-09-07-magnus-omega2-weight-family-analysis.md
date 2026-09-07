@@ -74,23 +74,29 @@ Note the largest Wenzl weight, $(6,)$ at 0.45, contributes **nothing**: on a
 Wenzl the entire H₆ signal is carried by three 2-row shapes — (5,1), (4,2),
 (3,3).
 
-### 2.3 The sign is robust; the magnitude is not
+### 2.3 The sign is robust at A=2 and **not** at A=3
 
-Re-weighting each probe's own committed $\operatorname{tr}(\rho\Omega_2)$
-(`magnus_omega2_weight_family_robustness_probe.py`):
+> **Corrected 2026-09-07, later the same day.** The first version of this
+> section claimed the sign was robust on all three atoms. It was not: two of the
+> three source witnesses predated the 2026-09-05 ordering ruling, so the
+> re-weighting compared two contractions of a *superseded braid word*. Triton's
+> witness was 2026-09-03. Regenerating it on the canonical word changed 28 of
+> its 30 per-partition traces — the only two unmoved being the one-dimensional
+> blocks, where a commutator vanishes regardless — and flipped
+> $P_\text{total}$ from −108.147 to **+2.470**.
 
-| atom | partitions | Wenzl-nonzero | $P$ Plancherel | $P$ Wenzl |
-|---|---:|---:|---:|---:|
-| deuteron | 11 | 4 | −15.095 | −6.921 |
-| triton | 30 | 5 | −108.147 | −59.991 |
-| ⁴He | 77 | 7 | −57.803 | −100.827 |
+| atom | source | partitions | Wenzl-nonzero | $P$ Plancherel | $P$ Wenzl | agree? |
+|---|---|---:|---:|---:|---:|:---:|
+| deuteron | canonical | 11 | 4 | −15.095 | −6.921 | yes |
+| triton | canonical | 30 | 5 | **+2.470** | **−13.931** | **no** |
+| ⁴He | *pre-ruling* | 77 | 7 | −57.803 | −100.827 | undetermined |
 
-All negative both ways. This is **not** a consequence of the weights being
-positive: the traces are mixed-sign (deuteron +4/−5, triton +13/−15, ⁴He
-+26/−49), so the sum is a genuine cancellation and the sign was free to flip.
+The traces are mixed-sign (deuteron +4/−5, triton +14/−14, ⁴He +26/−49), so
+each sum is a genuine cancellation. At A=2 both families land negative. **At A=3
+they disagree outright**, and ⁴He cannot be judged until its witness is
+regenerated — its source is 2026-09-04.
 
-Magnitudes move substantially and **not even monotonically** — two shrink, ⁴He
-nearly doubles.
+Magnitudes were never robust and still are not.
 
 ### 2.4 The probe's stated control cannot discriminate
 
@@ -107,8 +113,11 @@ commutators. What does *not* survive is calling it $\operatorname{tr}_M$.)
 
 ## 3. What actually turns on the choice
 
-1. **Nothing published.** Every sign conclusion is unchanged. This is not a
-   correctness emergency.
+1. **A published sign.** This was originally recorded here as "nothing
+   published changes". That is false. At A=3 the two families give opposite
+   signs, so the weight choice determines a headline conclusion. (Separately,
+   the ordering correction alone already moved triton's Plancherel sign from
+   −1 to +1, independent of any weight question.)
 2. **The cross-$A$ programme.** The stated target is a *sign change in $A$* —
    negative at $A=2$, positive at $A\ge3$. Sign is scale-invariant, so the
    existing sign gates are safe. But any comparison of *magnitudes* across $A$
@@ -197,7 +206,23 @@ construction. Adopting Wenzl also collapses the gap between what the code does
 and what its own docstring says it does, which is the smaller repair than
 rewriting the derivation.
 
-It is safe: no published conclusion moves, because the sign is robust (§2.3).
+**It is no longer "safe" in the sense first claimed here, and that strengthens
+rather than weakens the case.** At A=3 the two families disagree, so a choice
+must be made rather than deferred — and when a choice determines a published
+sign, it should be made on principle, not on which answer is wanted.
+
+Which matters here, because the answers are not symmetric. The programme's
+target is negative at A=2 and **positive at A≥3**. Under Plancherel triton is
++2.470 — the wanted sign. Under Wenzl it is −13.931 — the unwanted one. So the
+better-motivated object currently does **not** exhibit the sign change the
+programme is looking for, while the less-motivated one does.
+
+That is a finding about the physics, not a reason to prefer Plancherel. This
+corpus's standing rule is no fitting; choosing a weight family because it
+produces the desired sign would be exactly that. The honest reading is that
+under the principled pairing the A=2→A=3 sign change is **not yet exhibited**,
+and ⁴He — whose witness is still pre-ruling — is needed before even that is
+settled.
 
 **The honest counterweight**, and the reason for keeping the second arm: Option A
 throws away the sector carrying 62 % of the A=2 contribution. That is defensible
