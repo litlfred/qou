@@ -1,0 +1,202 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0705.2975v1",
+ "source": {
+  "file": "0705.2975v1.pdf",
+  "sha256": "683d6bd44cea670426e95e11717cb371716d90c20b72a84518ec929c32b1620b",
+  "bytes": 359609,
+  "pages": 31,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0705.2975",
+   "version": "1",
+   "primary_class": "math.CA",
+   "stamp_date": "21 May 2007"
+  },
+  "doi": null,
+  "title": "On the Definitions of Difference Galois Groups",
+  "authors_raw": "Zo\u00e9 Chatzidakis\u2217, Charlotte Hardouin, Michael F. Singer \u2020",
+  "title_lines": [
+   "On the Definitions of Difference Galois Groups"
+  ],
+  "abstract": "We compare several de\ufb01nitions of the Galois group of a linear di\ufb00erence equation that have arisen in algebra, analysis and model theory and sh ow, that these groups are isomorphic over suitable \ufb01elds. In addition, we study pr operties of Picard-Vessiot extensions over \ufb01elds with not necessarily algebraically c losed sub\ufb01elds of constants.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181119152559-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "A Ring-Theoretic Point of View",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "A Tannakian Point of View",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The action of Aut(CK/C) on \"4266308 \"4266308 MK \"5267309 \"5267309",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Another fiber functor M for \"4266308 \"4266308 MK \"5267309 \"5267309",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Comparison of the Galois groups",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "A Model-Theoretic Point of View",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Preliminary model-theoretic definitions and results",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Galois group",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "More on Picard-Vessiot rings",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Concluding remarks",
+   "page": 25,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 11128,
+   "n_words": 1967
+  },
+  {
+   "id": "sec-001-a-ring-theoretic-point-of-view",
+   "number": null,
+   "title": "A Ring-Theoretic Point of View",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 9,
+   "n_chars": 12070,
+   "n_words": 2426
+  },
+  {
+   "id": "sec-002-a-tannakian-point-of-view",
+   "number": null,
+   "title": "A Tannakian Point of View",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 13,
+   "n_chars": 8272,
+   "n_words": 1628
+  },
+  {
+   "id": "sec-003-comparison-of-the-galois-groups",
+   "number": null,
+   "title": "Comparison of the Galois groups",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4943,
+   "n_words": 987
+  },
+  {
+   "id": "sec-004-a-model-theoretic-point-of-view",
+   "number": null,
+   "title": "A Model-Theoretic Point of View",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 5352,
+   "n_words": 1057
+  },
+  {
+   "id": "sec-005-the-galois-group",
+   "number": null,
+   "title": "The Galois group",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 5568,
+   "n_words": 1133
+  },
+  {
+   "id": "sec-006-more-on-picard-vessiot-rings",
+   "number": null,
+   "title": "More on Picard-Vessiot rings",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 25,
+   "n_chars": 14469,
+   "n_words": 2929
+  },
+  {
+   "id": "sec-007-concluding-remarks",
+   "number": null,
+   "title": "Concluding remarks",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 31,
+   "n_chars": 14791,
+   "n_words": 2565
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 8,
+  "chars_total": 76593
+ }
+}
