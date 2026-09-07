@@ -1431,3 +1431,54 @@ their stated quantity.
 partition-weight basis "ahead of the full $\alpha_5$ fit", and whether the 7–13 % shift
 changes anything it concludes has not been checked — the fix is a one-line bracket change
 and a re-run, which is `qou-263a`'s remaining work, not this section's.
+
+---
+
+# 24. `qou-263a` fixed — and the correction is large, non-uniform, and reverses
+
+§23 established that `computations/term7_chi5_basis.py` computes its Wedderburn weight
+with the **classical** bracket where the quantity requires the **symmetric** one. The fix
+delegates to `qou_substrate.constants.q_int_at`, added in §the `qou-4u10` commit, rather
+than becoming a 367th local copy.
+
+## 24.1 What moved
+
+$\sum_\lambda w_\lambda$ over the height-6 partitions, which the file's own docstring calls
+*"an upper bound on $|\chi_5(T_w)|$"*:
+
+| $A$ ($n$) | before (classical) | after (symmetric) | ratio |
+|---|---|---|---|
+| 2 (6) | 0.000611086655366481 | 0.00119212336908622 | **1.951** |
+| 3 (9) | 0.035772249850015 | 0.0460622233788889 | **1.288** |
+| 4 (12) | 0.281684203814569 | 0.264702806023059 | 0.940 |
+| 5 (15) | 1.32442280501718 | 0.907809483428946 | 0.685 |
+| 6 (18) | 5.48834062818710 | 2.73029928028543 | **0.497** |
+
+**This is not a rescale.** The ratio runs from 1.95 to 0.50 and crosses 1 between $A=3$ and
+$A=4$, so the *shape* of the bound across $A$ changes, not merely its normalisation. At
+$A=6$ the stated upper bound on $|\chi_5|$ **halves**; at $A=2$ it nearly doubles.
+
+Whether that changes anything the $\alpha_5$ fit downstream concludes is **not assessed
+here** — the file computes a basis "ahead of the full $\alpha_5$ fit", and no code imports
+its numbers (§23.2), so nothing recomputes automatically. Flagging the magnitude because a
+correction this size to a committed result should be seen rather than absorbed.
+
+## 24.2 Verification
+
+- **Producer re-run**, witness regenerated; it parses and carries its `wedderburn_weight`
+  fields, now `0.00119212336908621807419756593326` at $A=2$.
+- **Raw-float64 ratchet: 0 NEW dirty witnesses.** The 3 regressed are pre-existing and
+  untouched; the ratchet's own side-effect witness rewrite was restored.
+- The file's assertions still pass (it carries 0).
+- The fix is a **delegation**, so `term7_chi5_basis` now has no q-integer of its own —
+  366 local definitions became 365.
+
+## 24.3 What this does not settle
+
+The other 29 classical-convention files. §22 established that the discriminator is the
+**basis** — T_w/Iwahori takes classical, normalised/quantum-dimension takes symmetric —
+and that at least two of the three checked are correct as written. `term7_chi5_basis` was
+identifiable as wrong only because its own docstring names the quantity ("Wedderburn
+weights"), and because the register publishes a figure to test against. **Neither handle
+exists for most of the rest**, which is why `qou-gl58` is a per-file basis determination
+and not a sweep.
