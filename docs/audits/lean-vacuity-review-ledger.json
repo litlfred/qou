@@ -2244,18 +2244,18 @@
       "category": "proof-claims-unencoded",
       "pattern": "tautological-field",
       "line": 97,
-      "verdict": "needs-agent",
+      "verdict": "legit",
       "file_sha": "cf7f45b9f28e",
       "disposition": "deliberate-reproduction-for-demonstration",
-      "evidence": "RE-VERIFIED 2026-08-30 (prior verdict 2026-08-23, file sha had moved). Declaration byte-identical. Verdict unchanged (legit): this copy of the class is the VACUITY DEMONSTRATION, not a live carrier -- the file proves its own fields empty (`field1_holds_for_any_real (x : R) : -2 <= 2*cos x /\\ 2*cos x <= 2`). A file whose purpose is to exhibit a defect is not itself the defect.",
-      "reviewed_at": "2026-08-30T04:30:08Z",
+      "evidence": "RE-VERIFIED 2026-09-07. Declaration byte-identical to its text at 316c1dcc4, the revision whose file_sha this entry recorded; only the rest of the file moved. Verdict `legit` restored, not re-decided. Evidence: scripts/lean-vacuity-ledger-reverify.py.\n\n--- prior evidence, unchanged ---\nRE-VERIFIED 2026-08-30 (prior verdict 2026-08-23, file sha had moved). Declaration byte-identical. Verdict unchanged (legit): this copy of the class is the VACUITY DEMONSTRATION, not a live carrier -- the file proves its own fields empty (`field1_holds_for_any_real (x : R) : -2 <= 2*cos x /\\ 2*cos x <= 2`). A file whose purpose is to exhibit a defect is not itself the defect.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
       "reviewer": {
         "kind": "agent",
         "id": "local/lean-proof-vacuity-audit",
         "agent_skill": "local/lean-proof-vacuity-audit",
-        "agent_date": "2026-08-30"
-      },
-      "stale_prev_verdict": "legit"
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/QBeta/FMapC3ParityExclusion.lean::barOdd_ne_hopf_value_at_one::proof-borrowed-name": {
       "category": "proof-borrowed-name",
@@ -3783,8 +3783,18 @@
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 29,
-      "verdict": "needs-agent",
-      "file_sha": "39cee179e138"
+      "verdict": "genuine",
+      "file_sha": "39cee179e138",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `horizontal`, `flow_invariant` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[CategoricalQTorsionLeaf]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/glossary/glossary-categorical-transport.lean::CategoricalTransport::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -3801,8 +3811,18 @@
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 18,
-      "verdict": "needs-agent",
-      "file_sha": "d2c03b703e9e"
+      "verdict": "genuine",
+      "file_sha": "1d54836cdd69",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `restriction_exists` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[DescentData]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/glossary/glossary-quantum-flatness.lean::QuantumFlatness::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -3819,29 +3839,69 @@
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 22,
-      "verdict": "needs-agent",
-      "file_sha": "39ece23a44ce"
+      "verdict": "genuine",
+      "file_sha": "39ece23a44ce",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `is_commutative`, `preserves_contact` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[ReebGaugeGroup]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/information-theory/computational-horizon.lean::HorizonStructure::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 243,
-      "verdict": "needs-agent",
-      "file_sha": "275618933ed9"
+      "verdict": "genuine",
+      "file_sha": "275618933ed9",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `degree_zero_blocked`, `degree_one_leaks`, `degree_two_leaks` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[HorizonStructure]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.\n\nNOTE: `horizon_nonempty : degree_zero_blocked → True` does mention `degree_zero_blocked` and constrains nothing — `P → True` is provable for every `P`. A consumer whose conclusion is `True` is not a consumer.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/information-theory/p-vs-np-boundary.lean::ObstructionParallel::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 237,
-      "verdict": "needs-agent",
-      "file_sha": "7dfdf4b1f7cd"
+      "verdict": "genuine",
+      "file_sha": "7dfdf4b1f7cd",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `q_regularized`, `classical_obstruction` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[ObstructionParallel]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/knots-particles-confinement/hadron-fibre-embedding.lean::HadronFibreEmbedding::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 38,
-      "verdict": "needs-agent",
-      "file_sha": "2d8575417b08"
+      "verdict": "genuine",
+      "file_sha": "2d8575417b08",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `integrable`, `confined` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[HadronFibreEmbedding]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/AlgebraicSubstrate/MetallicLPIdentities.lean::GaloisPairCharacterSum::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -3891,43 +3951,103 @@
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 26,
-      "verdict": "needs-agent",
-      "file_sha": "90aa64bcf5a9"
+      "verdict": "genuine",
+      "file_sha": "90aa64bcf5a9",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `diquark_favoured` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[BorromeanHopfEnergyCrossoverContext]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BraidKnot/HeckeAnyonicSubstrate.lean::HeckeAnyonicSubstrate::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 54,
-      "verdict": "needs-agent",
-      "file_sha": "26614979963e"
+      "verdict": "genuine",
+      "file_sha": "26614979963e",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `heckeQuadratic` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[HeckeAnyonicSubstrate]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/BringsSurface/TurningPoints.lean::SaddleTrajectory::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 62,
-      "verdict": "needs-agent",
-      "file_sha": "ef795ccbe425"
+      "verdict": "genuine",
+      "file_sha": "ef795ccbe425",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `isBPS` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[SaddleTrajectory]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.\n\nNOTE: the field line carries a trailing `--` comment; that does not make the type anything other than bare `Prop`.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/FrobeniusHopfData/frobeniusForm.lean::FrobeniusFormContext::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 27,
-      "verdict": "needs-agent",
-      "file_sha": "a8113eac2726"
+      "verdict": "genuine",
+      "file_sha": "a8113eac2726",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `is_iso` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[FrobeniusFormContext]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Information/GeometryOfIncompleteness.lean::DegreeZeroDatum::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 32,
-      "verdict": "needs-agent",
-      "file_sha": "5059b70037b2"
+      "verdict": "genuine",
+      "file_sha": "5059b70037b2",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `formallyProvable` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[DegreeZeroDatum]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean::HasConfinementSDPData::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 46,
-      "verdict": "needs-agent",
-      "file_sha": "5f9c2c7d8543"
+      "verdict": "genuine",
+      "file_sha": "5f9c2c7d8543",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `slaterStrict` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[HasConfinementSDPData]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/lean/QOU/KnotTheory/MetallicPiecewise.lean::DeltaLambdaPiecewise::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -3944,8 +4064,18 @@
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 48,
-      "verdict": "needs-agent",
-      "file_sha": "fc84a9174c21"
+      "verdict": "genuine",
+      "file_sha": "fc84a9174c21",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `substrate_derived` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[RungRule]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/mass-theory/dim-master-pentagon.lean::DimMasterPentagon::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -4017,8 +4147,18 @@
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 16,
-      "verdict": "needs-agent",
-      "file_sha": "87f9ff16a0c5"
+      "verdict": "genuine",
+      "file_sha": "87f9ff16a0c5",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `is_knot` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[KnotOperator]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.\n\nNOTE: the field line carries a trailing `--` comment; that does not make the type anything other than bare `Prop`.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/nuclear-interactions/wigner-su4-from-spin-isospin.lean::WignerSu4FromSpinIsospin::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -4035,8 +4175,18 @@
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 34,
-      "verdict": "needs-agent",
-      "file_sha": "2eb0837b7cd4"
+      "verdict": "genuine",
+      "file_sha": "2eb0837b7cd4",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `s5_stable`, `tau_stable` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[BringPeriodSublattice]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/q-geometric-langlands/mirror-3d-3d-correspondence.lean::Mirror3d3dCorrespondence::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -4053,8 +4203,18 @@
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 31,
-      "verdict": "needs-agent",
-      "file_sha": "79983d129440"
+      "verdict": "genuine",
+      "file_sha": "79983d129440",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `isFundamental` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[MaxIdeal]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/q-geometric-langlands/quantum-langlands-dual.lean::QuantumLanglandsDual::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -4071,29 +4231,69 @@
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 31,
-      "verdict": "needs-agent",
-      "file_sha": "4af76c9e4f86"
+      "verdict": "genuine",
+      "file_sha": "4af76c9e4f86",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `rigidifying_iso`, `finite_inj_dim`, `vdb_duality` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[RigidDualizingComplex]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/quantum-observable-universes/tannaka-krein-reconstruction.lean::TannakaKreinReconstruction::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 74,
-      "verdict": "needs-agent",
-      "file_sha": "0368a46b05a9"
+      "verdict": "genuine",
+      "file_sha": "0368a46b05a9",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `monoidal_equiv`, `universal_property` are typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes them, and the carrier carries no `@marker` opt-out, so `[TannakaKreinReconstruction]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/stochastic-mechanics/classical-limit-functor.lean::ClassicalLimitFunctor::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 34,
-      "verdict": "needs-agent",
-      "file_sha": "6e85b9c80310"
+      "verdict": "genuine",
+      "file_sha": "6e85b9c80310",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `is_exact` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[ClassicalLimitFunctor]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/stochastic-mechanics/classical-riemann-zeta.lean::ClassicalRiemannZeta::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 30,
-      "verdict": "needs-agent",
-      "file_sha": "fd983a67ac3f"
+      "verdict": "genuine",
+      "file_sha": "fd983a67ac3f",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `adelic_assembly` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[ClassicalRiemannZeta]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     },
     "content/quantum-observable-universe/stochastic-mechanics/reverse-limit-q-to-infinity.lean::ReverseLimitQToInfinity::proof-claims-unencoded": {
       "category": "proof-claims-unencoded",
@@ -4110,8 +4310,18 @@
       "category": "proof-claims-unencoded",
       "pattern": "prop-universe-field",
       "line": 31,
-      "verdict": "needs-agent",
-      "file_sha": "0629f3b6869f"
+      "verdict": "genuine",
+      "file_sha": "755a556db15e",
+      "disposition": "encode-the-property-consume-it-or-demote",
+      "evidence": "ADJUDICATED 2026-09-07 (first verdict; this entry carried no prior one). `leadingTermsAgree` is typed with the UNIVERSE `Prop`, not with a proposition — the field holds a proposition as DATA, so the instance chooses it and `True` is a legal choice. No sibling field consumes it, and the carrier carries no `@marker` opt-out, so `[SPolynomial]` constrains nothing and any conditional result over it is unconditional.\n\nVerified mechanically by scripts/lean-prop-universe-field-verify.py (21/21 genuine, 0 legit, 0 unresolved), which strips trailing `--` comments before parsing the field type and rejects a sibling whose consumption concludes `True`. Both were false-`legit` bugs in the first version of that check, measured on this very set.",
+      "reviewed_at": "2026-09-07T09:55:00Z",
+      "reviewer": {
+        "kind": "agent",
+        "id": "local/lean-proof-vacuity-audit",
+        "agent_skill": "local/lean-proof-vacuity-audit",
+        "agent_date": "2026-09-07",
+        "agent_model": "claude-opus-5"
+      }
     }
   }
 }
