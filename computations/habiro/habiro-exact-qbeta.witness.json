@@ -1,23 +1,23 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-06T04:44:30.808564+00:00",
-  "commitSha": "43fc534621224c2faf2f0dd717b5645886d87f49",
+  "computedAt": "2026-09-07T10:03:53.231610+00:00",
+  "commitSha": "59e69d2336607a931fc534fac5cbe16967715d2f",
   "assertions": [
     {
       "name": "habiro_tr_M_proton_matches_direct",
-      "computed": "1.000000000000000046478892172372986541145",
+      "computed": "1.000000000000000020690227491706286517023",
       "expected": "1",
       "passed": true,
       "tolerance": "0.01"
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 9,
   "computation": "habiro-exact-qbeta",
   "scriptFile": "habiro_exact_qbeta.py",
   "scriptHash": "72788cd0e3d1",
-  "scriptCommitSha": "882b6ec336b250b004a20f1626cdfe69289aa559",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -42,10 +42,10 @@
   },
   "data": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
-    "tr_M_proton_habiro_sum": "1.145759692457300869689081595774119305944",
-    "tr_M_neutron_habiro_sum": "0.9877436881158095716340201655012949820550",
-    "tr_M_proton_direct": "1.145759692457300816435440394600000000000",
-    "tr_M_neutron_direct": "0.9877436881158095309830234546360000000000",
+    "tr_M_proton_habiro_sum": "0.6293284022029219181653457467784859276002",
+    "tr_M_neutron_habiro_sum": "0.4751335171556822125060902326750057995584",
+    "tr_M_proton_direct": "0.6293284022029219051443979382080000000000",
+    "tr_M_neutron_direct": "0.4751335171556822112806935070710000000000",
     "Q_A_MeV": "0.7836458273746212130749397513413968905257",
     "Q_N5_MeV": "0.7836448547740296727361249943120923842938",
     "Q_beta_codata_MeV": "0.7823334100000000000000000000000000000000",
@@ -57,11 +57,11 @@
     "upstream_witness_hashes": [
       {
         "path": "habiro-coefficients-atomic.witness.json",
-        "sha256": "d59c76efc7cdc5050df475ad92df9ce3c0370a38ba1268cb80b048ec3be1bd56",
-        "size_bytes": 23294,
-        "commitSha": "8fc0969fb6b9c1c45f86cdeadd7e5f7f5db572e6",
-        "scriptCommitSha": "4761cfd86e0b898cc25732c2430837b199395e6d",
-        "computedAt": "2026-08-26T14:43:07.168940+00:00"
+        "sha256": "4ec945d56ca192a8d4bf0a5890bcddf0fadba045e93d12a816c847f8b4299bf3",
+        "size_bytes": 23838,
+        "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
+        "scriptCommitSha": "126edfa8929a1489af3b7466099d46492545b86f",
+        "computedAt": "2026-09-06T12:47:31.488343+00:00"
       }
     ]
   },

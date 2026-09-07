@@ -80,6 +80,16 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent.parent
 
+# The provenance stamp at the end of main() does
+# `from qou_substrate.witness import WitnessBuilder`, which lives at
+# tools/qou-substrate/python and is NOT on the default path. Without this the
+# script computed everything and then died on the very last line with
+# ModuleNotFoundError — so its witness could never be regenerated, which is why
+# it still carried grouped-era values long after the 2026-09-05 ordering ruling
+# (bean qou-4383). `_path_bridge` already puts qou_substrate within reach.
+sys.path.insert(0, str(ROOT / "computations"))
+import _path_bridge  # noqa: E402, F401
+
 DPS = 40
 mp.mp.dps = DPS
 Q0S = "1.1099785827513808075916690956107688798744991218736"
