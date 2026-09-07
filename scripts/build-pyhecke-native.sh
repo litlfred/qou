@@ -54,6 +54,33 @@ WHL="$(find "$ROOT/tools/pyhecke-native/target/wheels" -name 'pyhecke_native*.wh
 pip install --user --force-reinstall "$WHL"
 python3 -c "import pyhecke_native; print('[pyhecke-native] import OK:', pyhecke_native.__file__)"
 
+# ── LP-kernel presence gate ──────────────────────────────────────────────────
+# A DIFFERENT failure from the convention gate below, and it must be checked
+# separately: that one asks whether the binary computes the right convention,
+# this one asks whether the Hecke path uses the binary at all.
+#
+# `hecke_core_legacy.py:1367` decides with
+#     _HAS_LP_KERNEL = hasattr(_PHN, "lp_accumulator_step_traces_mpfr")
+# and on False falls back to `_build_ysn_matrices`, which VIOLATES the braid
+# relation (audits/ysn_braid_relation_audit.py) -- not a representation of
+# H_n(q), so the products are not Markov traces of braids.
+#
+# Hit on 2026-09-07 in a rebuilt container. It is dangerous because the
+# fallback is silent IN THE NUMBERS: proton, neutron and protium came out
+# byte-identical to a known-good run (0.629328 / 0.475134 / 1.146338) and it
+# only diverges on compounds -- 17.3% at deuterium. A wheel missing this symbol
+# imports fine and passes the convention gate, because markov_z is a separate
+# export. Only asking for the symbol catches it.
+echo "[pyhecke-native] LP-kernel gate: lp_accumulator_step_traces_mpfr must be exported"
+python3 - <<'PYLP' || { echo "[pyhecke-native] ERROR: LP kernel MISSING — Hecke producers would silently use the braid-violating ysn fallback. Do NOT run them with this build." >&2; exit 1; }
+import sys
+import pyhecke_native as pn
+if not hasattr(pn, "lp_accumulator_step_traces_mpfr"):
+    print("  lp_accumulator_step_traces_mpfr: MISSING")
+    sys.exit(1)
+print("  lp_accumulator_step_traces_mpfr: present")
+PYLP
+
 # ── Trace-convention gate ────────────────────────────────────────────────────
 # An import check cannot tell a fresh wheel from a stale one. On 2026-08-09 the
 # INSTALLED .so returned convention C (markov_z(q0) = 0.4993203341836945) while
