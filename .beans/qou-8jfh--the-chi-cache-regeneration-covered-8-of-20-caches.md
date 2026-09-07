@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T06:02:19Z
-updated_at: 2026-09-07T06:03:08Z
+updated_at: 2026-09-07T06:21:08Z
 ---
 
 ## The claim
@@ -95,3 +95,81 @@ Completing the regeneration looks in scope for the standing "regen" ruling —
 these are chi caches the sweep missed, not a new decision. But it moves numbers
 in the bar-pairing observable, so it is recorded here rather than done
 unilaterally in the same turn it was found.
+
+
+## 🛑 CORRECTION to my own denominator — it is 59 caches, not 20
+
+The "8 of 20" above counted only what the glob
+`chi-*-at-q*-50dps.witness.json` matches. The family is **59**
+`computations/chi-*.witness.json`, and it excludes the `-colour-weighted`
+variants, the `-matrix-m` variants and several others. Measured across all 59:
+
+| | count |
+|---|---|
+| on the borromean word (`computedAt` ≥ 2026-09-06) | **21** |
+| dated pre-ruling | **18** |
+| **unstamped** — no `computedAt` at all | **20** |
+
+The 18 dated-stale span **13 producers**, not two. **Do not read all 38 as
+stale-and-wrong**: several are audits, benchmarks or probes on other objects
+(`chi_convention_audit`, `chi_numpy_dtype_fix_benchmark`,
+`chi_witness_completeness_audit`), and whether each is word-dependent is
+**unmeasured**. The finding that stands is the specific one: the *bar-image*
+and *free* caches for the four bound atoms were not regenerated.
+
+## DONE 2026-09-07 — the bar-image half is regenerated
+
+`chi_at_q_inv_via_native_mpfr.py`, all four atoms, **exit 0**, ~7 minutes
+(deuteron/tritium/³He at 06:05, ⁴He at 06:12). **8 of 8** atom bar-image
+caches — the four plain and the four `-colour-weighted` — now carry
+`computedAt 2026-09-07`.
+
+**Safety invariant verified, not assumed.** All 12 at-q0 caches are
+**byte-identical** to a pre-run snapshot (`cmp`), so this producer touched
+exactly the eight files it owns. That is the property `qou-w8rv` was fixed to
+guarantee, checked rather than trusted.
+
+**How far they moved**, per-partition character, old against new:
+
+| cache | partitions | max \|rel move\| | moved |
+|---|---|---|---|
+| deuteron h6 | 11 | 3.0500038 | 10/11 |
+| ³He h9 | 30 | 2.9793666 | 28/30 |
+| tritium h9 | 30 | 4.4092553 | 28/30 |
+| ⁴He h12 | 77 | 5.5656440 | 75/77 |
+
+So the bar-image caches were substantially stale, and the straddle in
+`bar_pairing_binding_observable.compute_atom` was real.
+
+## 🛑 But the move is NOT attributable to the intra-ordering alone
+
+⁴He behaves exactly as the structure predicts: the two partitions that did
+**not** move are the trivial `(12)` and the sign `(1¹²)`, whose characters are
+products of per-letter scalars and therefore order-invariant.
+
+**The deuteron's trivial rep `(6)` DID move**, and pure reordering cannot do
+that. Verified directly: for all four atoms the borromean and grouped words are
+the **same multiset** (`Counter` equality, lengths 23 / 35 / 35 / 47), so a
+reordering leaves any product-of-scalars character fixed.
+
+Two candidate explanations, neither established here:
+
+1. **`_classify_word` is position-dependent.** The at-qinv producer derives its
+   signed word through `_classify_word` / `_avg_shifts_at` — names that suggest
+   a positional shift — so a reordering could change the *classification* and
+   hence the trivial character legitimately.
+2. **The caches were 12 days stale, not 1.** They dated to 2026-08-26 and the
+   window contains other changes to the corpus.
+
+**Consequence: do not quote the 3.05–5.57 figures as "the effect of the
+intra-ordering ruling".** They are the effect of *twelve days of drift, of
+which the ruling is one component*. Separating them needs a run of the old
+producer against the new word, which I did not do.
+
+## Still outstanding
+
+The **free** caches (`chi-*-free-*`, 8 files, 2026-07-19 or unstamped). Their
+producer is `bar_pairing_binding_observable.py`, whose cache key is `q` and
+`dps` — so re-running is a **no-op** and they must be deleted first. That is now
+safe (the `qou-w8rv` ownership refusal protects the at-q0 atom caches), but it
+was not attempted in this pass.
