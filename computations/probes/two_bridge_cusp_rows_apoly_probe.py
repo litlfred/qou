@@ -303,11 +303,20 @@ def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9),
         # its conjugates), where ℓ = 1; on 4₁ that zero is double (A₄₁(L, 1/L)·L⁷ has a double
         # root at L = −1), so divide by (ℓ − 1)² — over-deflation only puts a pole there, which
         # repels the secant instead of attracting it.
+        # The deflator must not decay at ℓ → ∞ or the secant runs off to a spurious zero at
+        # infinity (measured: |g| halving every step while Re s grew without bound). Use
+        # ((ℓ + c)/(ℓ − 1))², c = 3.7: → 1 at both ends, a pole at ℓ = 1, and a spurious zero at
+        # ℓ = −c that the UNDEFLATED verification below rejects.
+        cdef = mp.mpf("3.7")
+
+        def g_raw(s_, z):
+            return rect_eval(mu0_row, z) * mp.exp(k * s_) - 1
+
         def g(s_, z):
             ell = mp.exp(s_)
-            return (rect_eval(mu0_row, z) * mp.exp(k * s_) - 1) / (ell - 1) ** 2
+            return g_raw(s_, z) * ((ell + cdef) / (ell - 1)) ** 2
         far = [t for t in samples if abs(t[1] ** 2 - 1) > mp.mpf("0.2")]
-        seeds = sorted(far, key=lambda t: abs((t[0] * t[1] ** (2 * k) - 1) / (t[1] ** 2 - 1) ** 2))[:seeds_per_k]
+        seeds = sorted(far, key=lambda t: abs((t[0] * t[1] ** (2 * k) - 1) * ((t[1] ** 2 + cdef) / (t[1] ** 2 - 1)) ** 2))[:seeds_per_k]
         sols, lox = [], 0
         for (x0, L, z0) in seeds:
             s0 = 2 * mp.log(-L)
@@ -339,6 +348,8 @@ def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9),
             if found is None:
                 continue
             s_f, z_f = found
+            if abs(g_raw(s_f, z_f)) > mp.mpf(10) ** -34 or abs(mp.exp(s_f) - 1) < mp.mpf(10) ** -20:
+                continue                       # spurious deflator zero, or a parabolic point
             if any(max(abs(z_f[j] - s_[j]) for j in range(N)) < mp.mpf(10) ** -20 for s_ in sols):
                 continue
             sols.append(z_f)
