@@ -1380,6 +1380,24 @@ def _lp_kernel_steps(partition, chains):
     return [(_mp.mpf(t), _mp.mpf(l)) for (t, l) in out]
 
 
+def _exact_log(x):
+    """`log|x|` without narrowing to float64, at `_EXACT_COEFF_DPS`.
+
+    `math.log` returns a Python float WHATEVER it is handed, so calling it on
+    an `mpf` silently discards every digit past the 16th.  Inside an
+    accumulator that is worse than a single narrowing: the loop feeds
+    `log_cur` back through `log_prev` at every step, so the truncation
+    compounds over the whole trajectory.
+
+    The explicit `workdps` matters for the same reason it does at the Rust
+    boundary: mpmath computes at the AMBIENT precision, which is 15 dps in a
+    bare import of this module, so a bare `mp.log` would trade a float64
+    narrowing for a 15-digit one and buy nothing.
+    """
+    with _mp.workdps(_EXACT_COEFF_DPS):
+        return _mp.log(_mp.mpf(x))
+
+
 def _matmul_dim(A, B, dim):
     """Multiply two dim×dim matrices.  Uses numpy for dim ≥ 8.
 
@@ -1739,7 +1757,7 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             M = np.eye(dim)
         else:
             M = _identity(dim)
-        L0 = math.log(dim)
+        L0 = _exact_log(dim)
         # Resolvent-damped scale (def:q-heat-equation,
         # def:categorical-laplace-transform):
         #   C_λ = m_e · H_q(λ) · y_λ · ρ_λ(s_*)
@@ -1900,10 +1918,13 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                     M_rescaled = [[s['M'][i][j] / m_max for j in range(dim)]
                                   for i in range(dim)]
                     s['M'] = tuple(tuple(r) for r in M_rescaled)
-                s['log_norm'] += math.log(m_max)
+                s['log_norm'] += _exact_log(m_max)
             if not _kernel_hit:
                 tr_run = _trace_dim(s['M'], dim)
-            log_cur = (s['log_norm'] + math.log(abs(tr_run))
+            # `_exact_log`, not `math.log`: this value is fed back through
+            # `log_prev` on the next step, so a float64 narrowing here
+            # compounds over the trajectory rather than rounding once.
+            log_cur = (s['log_norm'] + _exact_log(abs(tr_run))
                        if abs(tr_run) > 1e-300 else s['log_prev'])
             raw_delta = s['scale'] * (log_cur - s['log_prev'])
             # LP complementary slackness is a FINAL-STATE condition:
