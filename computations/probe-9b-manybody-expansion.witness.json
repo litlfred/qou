@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T09:27:14.738000+00:00",
-  "commitSha": "ef0189a712b979d1c301c6537cfacb4832b03640",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-07T10:34:52.779902+00:00",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "assertions": [
     {
       "name": "closed_form_B_matches_transfer_D",
-      "computed": 1.8415778626008194e-50,
+      "computed": 4.356271169409119e-51,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-18",
@@ -14,7 +14,7 @@
     },
     {
       "name": "expansion_sums_exactly_to_B_pred_D",
-      "computed": 6.681911775230489e-52,
+      "computed": 0.0,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-40",
@@ -22,7 +22,7 @@
     },
     {
       "name": "closed_form_B_matches_transfer_T",
-      "computed": 3.0759817041413326e-50,
+      "computed": 7.563227566289882e-51,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-18",
@@ -30,7 +30,7 @@
     },
     {
       "name": "expansion_sums_exactly_to_B_pred_T",
-      "computed": 1.3363823550460978e-51,
+      "computed": 0.0,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-40",
@@ -38,7 +38,7 @@
     },
     {
       "name": "closed_form_B_matches_transfer_3He",
-      "computed": 3.443533933015961e-50,
+      "computed": 4.943381636047121e-51,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-18",
@@ -54,7 +54,7 @@
     },
     {
       "name": "closed_form_B_matches_transfer_4He",
-      "computed": 4.1186858139249307e-50,
+      "computed": 1.3657289730857233e-51,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-18",
@@ -62,7 +62,7 @@
     },
     {
       "name": "expansion_sums_exactly_to_B_pred_4He",
-      "computed": 1.3363823550460978e-51,
+      "computed": 0.0,
       "expected": 0.0,
       "passed": true,
       "tolerance": "1e-40",
@@ -78,19 +78,19 @@
     },
     {
       "name": "he4_2body_fraction_matches_ceiling_audit_26pct",
-      "computed": 0.27956244709391825,
+      "computed": 0.01951592891732397,
       "expected": 0.26,
-      "passed": true,
+      "passed": false,
       "tolerance": "0.03",
       "source": "order-1 (pairwise) fraction of B_AME(⁴He) at the E_0 scale vs the 26% pairwise ceiling in docs/audits/2026-06-02-binding-many-body-ceiling.md"
     }
   ],
-  "allPassed": true,
-  "durationMs": 160,
+  "allPassed": false,
+  "durationMs": 1180,
   "computation": "probe-9b-manybody-expansion",
   "scriptFile": "probe_9b_manybody_expansion.py",
   "scriptHash": "2e3efa306abd",
-  "scriptCommitSha": "37fce6c8d2f4e126cc09926fd075df1b4d893d41",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -102,9 +102,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "110b330d42788fa0"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
@@ -124,8 +125,8 @@
   "data": {
     "magic_A_4He_MeV_2_me_4_8G": "29.9556772795328825980939333878",
     "nucleon_traces": {
-      "tr_p": "1.1457596924573008696890815957741193059437280619435",
-      "tr_n": "0.98774368811580957163402016550129498205504875906278"
+      "tr_p": "0.62932840220292191816534574677848592760021940063437",
+      "tr_n": "0.47513351715568221250609023267500579955840763470872"
     },
     "isotope_results": [
       {
@@ -139,26 +140,26 @@
         "g_values": [
           "0.491770210623261037422004202344"
         ],
-        "tr_free": "1.1317169043222100827313075681159639985201502826418",
-        "B_pred_MeV_Qbeta_scale": "0.435403481607480281823181033408",
-        "B_pred_MeV_E0_scale": "2.329685576294031385581003224",
+        "tr_free": "0.29901501718464007670216042677098383227494947439702",
+        "B_pred_MeV_Qbeta_scale": "0.11503952891212265563965671204",
+        "B_pred_MeV_E0_scale": "0.615534653560354033210778647342",
         "B_AME_MeV": "2.2245662",
-        "B_pred_over_B_AME_Qbeta_scale": 0.1957251178263341,
-        "B_pred_over_B_AME_E0_scale": 1.0472538764160093,
+        "B_pred_over_B_AME_Qbeta_scale": 0.0517132414005583,
+        "B_pred_over_B_AME_E0_scale": 0.27669873504342285,
         "orders": [
           {
             "interface_order_k": 1,
             "nucleon_body_counts": [
               2
             ],
-            "T_k_MeV": "0.435403481607480281823181033408",
-            "cumulative_MeV": "0.435403481607480281823181033408",
+            "T_k_MeV": "0.11503952891212265563965671204",
+            "cumulative_MeV": "0.11503952891212265563965671204",
             "frac_of_B_pred": 1.0,
             "cumulative_frac_of_B_pred": 1.0,
-            "frac_of_B_AME_Qbeta_scale": 0.1957251178263341,
-            "cumulative_frac_of_B_AME_Qbeta_scale": 0.1957251178263341,
-            "frac_of_B_AME_E0_scale": 1.0472538764160093,
-            "cumulative_frac_of_B_AME_E0_scale": 1.0472538764160093,
+            "frac_of_B_AME_Qbeta_scale": 0.0517132414005583,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.0517132414005583,
+            "frac_of_B_AME_E0_scale": 0.27669873504342285,
+            "cumulative_frac_of_B_AME_E0_scale": 0.27669873504342285,
             "subsets": [
               {
                 "interfaces": [
@@ -166,7 +167,7 @@
                 ],
                 "nucleon_body_count": 2,
                 "connected": true,
-                "signed_MeV": "0.435403481607480281823181"
+                "signed_MeV": "0.1150395289121226556396567"
               }
             ]
           }
@@ -185,26 +186,26 @@
           "0.491770210623261037422004202344",
           "0.596372261649174063835016349184"
         ],
-        "tr_free": "1.1178462289782265773283413848251415843676477632299",
-        "B_pred_MeV_Qbeta_scale": "0.695131497432180972907040294606",
-        "B_pred_MeV_E0_scale": "3.71939566770703884134442592784",
+        "tr_free": "0.14207205679730479747049860425505585620688877446833",
+        "B_pred_MeV_Qbeta_scale": "0.088347358540585078576081782578",
+        "B_pred_MeV_E0_scale": "0.472714563824338345034276612364",
         "B_AME_MeV": "8.4817962",
-        "B_pred_over_B_AME_Qbeta_scale": 0.08195569441201393,
-        "B_pred_over_B_AME_E0_scale": 0.43851509515249126,
+        "B_pred_over_B_AME_Qbeta_scale": 0.01041611428256023,
+        "B_pred_over_B_AME_E0_scale": 0.055732836851743545,
         "orders": [
           {
             "interface_order_k": 1,
             "nucleon_body_counts": [
               2
             ],
-            "T_k_MeV": "0.951611551179919022467310473846",
-            "cumulative_MeV": "0.951611551179919022467310473846",
+            "T_k_MeV": "0.120944551087122872380497407287",
+            "cumulative_MeV": "0.120944551087122872380497407287",
             "frac_of_B_pred": 1.3689662383235066,
             "cumulative_frac_of_B_pred": 1.3689662383235066,
-            "frac_of_B_AME_Qbeta_scale": 0.11219457868840553,
-            "cumulative_frac_of_B_AME_Qbeta_scale": 0.11219457868840553,
-            "frac_of_B_AME_E0_scale": 0.6003123602589805,
-            "cumulative_frac_of_B_AME_E0_scale": 0.6003123602589805,
+            "frac_of_B_AME_Qbeta_scale": 0.014259308787344226,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.014259308787344226,
+            "frac_of_B_AME_E0_scale": 0.07629637201602905,
+            "cumulative_frac_of_B_AME_E0_scale": 0.07629637201602905,
             "subsets": [
               {
                 "interfaces": [
@@ -212,7 +213,7 @@
                 ],
                 "nucleon_body_count": 2,
                 "connected": true,
-                "signed_MeV": "0.4300670407414366326482315"
+                "signed_MeV": "0.05465913598394962969614757"
               },
               {
                 "interfaces": [
@@ -220,7 +221,7 @@
                 ],
                 "nucleon_body_count": 2,
                 "connected": true,
-                "signed_MeV": "0.521544510438482389819079"
+                "signed_MeV": "0.06628541510317324268434984"
               }
             ]
           },
@@ -229,14 +230,14 @@
             "nucleon_body_counts": [
               3
             ],
-            "T_k_MeV": "-0.25648005374773804956027017924",
-            "cumulative_MeV": "0.695131497432180972907040294606",
+            "T_k_MeV": "-0.0325971925465377938044156247087",
+            "cumulative_MeV": "0.088347358540585078576081782578",
             "frac_of_B_pred": -0.3689662383235065,
             "cumulative_frac_of_B_pred": 1.0,
-            "frac_of_B_AME_Qbeta_scale": -0.030238884276391605,
-            "cumulative_frac_of_B_AME_Qbeta_scale": 0.08195569441201393,
-            "frac_of_B_AME_E0_scale": -0.16179726510648923,
-            "cumulative_frac_of_B_AME_E0_scale": 0.43851509515249126,
+            "frac_of_B_AME_Qbeta_scale": -0.003843194504783998,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.01041611428256023,
+            "frac_of_B_AME_E0_scale": -0.020563535164285517,
+            "cumulative_frac_of_B_AME_E0_scale": 0.055732836851743545,
             "subsets": [
               {
                 "interfaces": [
@@ -245,7 +246,7 @@
                 ],
                 "nucleon_body_count": 3,
                 "connected": true,
-                "signed_MeV": "-0.2564800537477380495602702"
+                "signed_MeV": "-0.03259719254653779380441562"
               }
             ]
           }
@@ -264,26 +265,26 @@
           "0.387311962853534748404170136054",
           "0.491770210623261037422004202344"
         ],
-        "tr_free": "1.2966756122449440177378992952302995978655080144949",
-        "B_pred_MeV_Qbeta_scale": "0.698552209989744382895050920493",
-        "B_pred_MeV_E0_scale": "3.73769865572307778176168858664",
+        "tr_free": "0.18817864299948877926347903714586689992069257358944",
+        "B_pred_MeV_Qbeta_scale": "0.101376632442850654817038143115",
+        "B_pred_MeV_E0_scale": "0.542429466809558008989478016835",
         "B_AME_MeV": "7.71804132",
-        "B_pred_over_B_AME_Qbeta_scale": 0.09050900105698635,
-        "B_pred_over_B_AME_E0_scale": 0.4842807262559561,
+        "B_pred_over_B_AME_Qbeta_scale": 0.013135020692380883,
+        "B_pred_over_B_AME_E0_scale": 0.07028071557532915,
         "orders": [
           {
             "interface_order_k": 1,
             "nucleon_body_counts": [
               2
             ],
-            "T_k_MeV": "0.891769661002646450552553868709",
-            "cumulative_MeV": "0.891769661002646450552553868709",
+            "T_k_MeV": "0.129417105628336743572706650768",
+            "cumulative_MeV": "0.129417105628336743572706650768",
             "frac_of_B_pred": 1.2765970077107605,
             "cumulative_frac_of_B_pred": 1.2765970077107605,
-            "frac_of_B_AME_Qbeta_scale": 0.11554351992023884,
-            "cumulative_frac_of_B_AME_Qbeta_scale": 0.11554351992023884,
-            "frac_of_B_AME_E0_scale": 0.6182313260303474,
-            "cumulative_frac_of_B_AME_E0_scale": 0.6182313260303474,
+            "frac_of_B_AME_Qbeta_scale": 0.016768128112112354,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.016768128112112354,
+            "frac_of_B_AME_E0_scale": 0.08972015120323623,
+            "cumulative_frac_of_B_AME_E0_scale": 0.08972015120323623,
             "subsets": [
               {
                 "interfaces": [
@@ -291,7 +292,7 @@
                 ],
                 "nucleon_body_count": 2,
                 "connected": true,
-                "signed_MeV": "0.392901901821221787149998"
+                "signed_MeV": "0.05701946270789375239931952"
               },
               {
                 "interfaces": [
@@ -299,7 +300,7 @@
                 ],
                 "nucleon_body_count": 2,
                 "connected": true,
-                "signed_MeV": "0.4988677591814246634025559"
+                "signed_MeV": "0.07239764292044299117338713"
               }
             ]
           },
@@ -308,14 +309,14 @@
             "nucleon_body_counts": [
               3
             ],
-            "T_k_MeV": "-0.193217451012902067657502948216",
-            "cumulative_MeV": "0.698552209989744382895050920493",
+            "T_k_MeV": "-0.0280404731854860887556685076526",
+            "cumulative_MeV": "0.101376632442850654817038143115",
             "frac_of_B_pred": -0.27659700771076046,
             "cumulative_frac_of_B_pred": 1.0,
-            "frac_of_B_AME_Qbeta_scale": -0.02503451886325248,
-            "cumulative_frac_of_B_AME_Qbeta_scale": 0.09050900105698635,
-            "frac_of_B_AME_E0_scale": -0.13395059977439133,
-            "cumulative_frac_of_B_AME_E0_scale": 0.4842807262559561,
+            "frac_of_B_AME_Qbeta_scale": -0.0036331074197314727,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.013135020692380883,
+            "frac_of_B_AME_E0_scale": -0.01943943562790708,
+            "cumulative_frac_of_B_AME_E0_scale": 0.07028071557532915,
             "subsets": [
               {
                 "interfaces": [
@@ -324,7 +325,7 @@
                 ],
                 "nucleon_body_count": 3,
                 "connected": true,
-                "signed_MeV": "-0.1932174510129020676575029"
+                "signed_MeV": "-0.02804047318548608875566851"
               }
             ]
           }
@@ -345,26 +346,26 @@
           "0.491770210623261037422004202344",
           "0.596372261649174063835016349184"
         ],
-        "tr_free": "1.2807831515286464106363378671336518462759115691003",
-        "B_pred_MeV_Qbeta_scale": "0.87606399750748986304434975598",
-        "B_pred_MeV_E0_scale": "4.68749962992630690683822795522",
+        "tr_free": "0.089409980501930600382047565819885657048241375217176",
+        "B_pred_MeV_Qbeta_scale": "0.0611570076028097391738287051307",
+        "B_pred_MeV_E0_scale": "0.327228891178261312695788408263",
         "B_AME_MeV": "28.2956624",
-        "B_pred_over_B_AME_Qbeta_scale": 0.030961070468083118,
-        "B_pred_over_B_AME_E0_scale": 0.16566142059732472,
+        "B_pred_over_B_AME_Qbeta_scale": 0.002161356279215776,
+        "B_pred_over_B_AME_E0_scale": 0.011564630880606679,
         "orders": [
           {
             "interface_order_k": 1,
             "nucleon_body_counts": [
               2
             ],
-            "T_k_MeV": "1.47840453179132837137743724935",
-            "cumulative_MeV": "1.47840453179132837137743724935",
+            "T_k_MeV": "0.103205698953537518701203271385",
+            "cumulative_MeV": "0.103205698953537518701203271385",
             "frac_of_B_pred": 1.6875531194040294,
             "cumulative_frac_of_B_pred": 1.6875531194040294,
-            "frac_of_B_AME_Qbeta_scale": 0.052248451048501635,
-            "cumulative_frac_of_B_AME_Qbeta_scale": 0.052248451048501635,
-            "frac_of_B_AME_E0_scale": 0.27956244709391825,
-            "cumulative_frac_of_B_AME_E0_scale": 0.27956244709391825,
+            "frac_of_B_AME_Qbeta_scale": 0.0036474035311340695,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.0036474035311340695,
+            "frac_of_B_AME_E0_scale": 0.01951592891732397,
+            "cumulative_frac_of_B_AME_E0_scale": 0.01951592891732397,
             "subsets": [
               {
                 "interfaces": [
@@ -372,7 +373,7 @@
                 ],
                 "nucleon_body_count": 2,
                 "connected": true,
-                "signed_MeV": "0.3880863735726093256495976"
+                "signed_MeV": "0.02709185786272881835008928"
               },
               {
                 "interfaces": [
@@ -380,7 +381,7 @@
                 ],
                 "nucleon_body_count": 2,
                 "connected": true,
-                "signed_MeV": "0.4927534803359299196162235"
+                "signed_MeV": "0.03439854671457125482429183"
               },
               {
                 "interfaces": [
@@ -388,7 +389,7 @@
                 ],
                 "nucleon_body_count": 2,
                 "connected": true,
-                "signed_MeV": "0.5975646778827891261116162"
+                "signed_MeV": "0.04171529437623744552682217"
               }
             ]
           },
@@ -398,14 +399,14 @@
               3,
               4
             ],
-            "T_k_MeV": "-0.716157773497983278580928729652",
-            "cumulative_MeV": "0.762246758293345092796508519693",
+            "T_k_MeV": "-0.0499941402948167713510653870467",
+            "cumulative_MeV": "0.0532115586587207473501378843382",
             "frac_of_B_pred": -0.8174719832518406,
             "cumulative_frac_of_B_pred": 0.8700811361521888,
-            "frac_of_B_AME_Qbeta_scale": -0.025309807679143898,
-            "cumulative_frac_of_B_AME_Qbeta_scale": 0.02693864336935774,
-            "frac_of_B_AME_E0_scale": -0.13542357004401237,
-            "cumulative_frac_of_B_AME_E0_scale": 0.1441388770499059,
+            "frac_of_B_AME_Qbeta_scale": -0.0017668482040843394,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.00188055532704973,
+            "frac_of_B_AME_E0_scale": -0.009453761741545021,
+            "cumulative_frac_of_B_AME_E0_scale": 0.010062167175778947,
             "subsets": [
               {
                 "interfaces": [
@@ -414,7 +415,7 @@
                 ],
                 "nucleon_body_count": 3,
                 "connected": true,
-                "signed_MeV": "-0.1908493176718196541248689"
+                "signed_MeV": "-0.0133229686473296016102891"
               },
               {
                 "interfaces": [
@@ -423,7 +424,7 @@
                 ],
                 "nucleon_body_count": 4,
                 "connected": false,
-                "signed_MeV": "-0.2314439483227232794584609"
+                "signed_MeV": "-0.01615683254587354449488934"
               },
               {
                 "interfaces": [
@@ -432,7 +433,7 @@
                 ],
                 "nucleon_body_count": 3,
                 "connected": true,
-                "signed_MeV": "-0.2938645075034403449975989"
+                "signed_MeV": "-0.02051433910161362524588695"
               }
             ]
           },
@@ -441,14 +442,14 @@
             "nucleon_body_counts": [
               4
             ],
-            "T_k_MeV": "0.113817239214144770247841236287",
-            "cumulative_MeV": "0.87606399750748986304434975598",
+            "T_k_MeV": "0.00794544894408899182369082079255",
+            "cumulative_MeV": "0.0611570076028097391738287051307",
             "frac_of_B_pred": 0.12991886384781118,
             "cumulative_frac_of_B_pred": 1.0,
-            "frac_of_B_AME_Qbeta_scale": 0.004022427098725378,
-            "cumulative_frac_of_B_AME_Qbeta_scale": 0.030961070468083118,
-            "frac_of_B_AME_E0_scale": 0.021522543547418813,
-            "cumulative_frac_of_B_AME_E0_scale": 0.16566142059732472,
+            "frac_of_B_AME_Qbeta_scale": 0.0002808009521660462,
+            "cumulative_frac_of_B_AME_Qbeta_scale": 0.002161356279215776,
+            "frac_of_B_AME_E0_scale": 0.0015024637048277319,
+            "cumulative_frac_of_B_AME_E0_scale": 0.011564630880606679,
             "subsets": [
               {
                 "interfaces": [
@@ -458,7 +459,7 @@
                 ],
                 "nucleon_body_count": 4,
                 "connected": true,
-                "signed_MeV": "0.1138172392141447702478412"
+                "signed_MeV": "0.007945448944088991823690821"
               }
             ]
           }
@@ -466,11 +467,11 @@
       }
     ],
     "he4_4body_vs_magic_A": {
-      "connected_4body_cross_term_MeV_Qbeta_scale": "0.113817239214144770247841236287",
-      "connected_4body_cross_term_MeV_E0_scale": "0.60899462620706116911890478361",
+      "connected_4body_cross_term_MeV_Qbeta_scale": "0.00794544894408899182369082079255",
+      "connected_4body_cross_term_MeV_E0_scale": "0.042513205760058753085165782159",
       "magic_A_value_MeV": "29.9556772795328825980939333878",
-      "magic_over_4body_Qbeta_scale": 263.19103754723744,
-      "magic_over_4body_E0_scale": 49.188738275250074,
+      "magic_over_4body_Qbeta_scale": 3770.1679905473907,
+      "magic_over_4body_E0_scale": 704.620523058186,
       "order2_disconnected_2plus2_subset": [
         {
           "interfaces": [
@@ -479,16 +480,16 @@
           ],
           "nucleon_body_count": 4,
           "connected": false,
-          "signed_MeV": "-0.2314439483227232794584609"
+          "signed_MeV": "-0.01615683254587354449488934"
         }
       ]
     },
     "verdict": {
       "question_1": "What fraction of B_AME does each exact order capture?",
-      "answer_1": "The FULL closed form captures only 19.6% (D) → 3.1% (⁴He) of B_AME on the Q_β scale (the 10A−5 residual), so every order is bounded by that ceiling. The expansion is ALTERNATING with g_i ≈ 0.5–0.7 (not small): order-1 overshoots B_pred, order-2 corrects down, order-3 up — the many-body 'hierarchy' of the interface product is NOT perturbative.",
+      "answer_1": "The FULL closed form captures only 5.2% (D) → 0.2% (⁴He) of B_AME on the Q_β scale (the 10A−5 residual), so every order is bounded by that ceiling. The expansion is ALTERNATING with g_i ≈ 0.5–0.7 (not small): order-1 overshoots B_pred, order-2 corrects down, order-3 up — the many-body 'hierarchy' of the interface product is NOT perturbative.",
       "question_2": "Does the ⁴He 4-body cross-term land near the magic-A value 2·m_e·4·8G ≈ 29.96 MeV?",
       "answer_2_tier": "REFUTED — scope (a) ONLY",
-      "answer_2": "No. The exact connected 4-body cross-term is 0.113817 MeV (Q_β scale) / 0.608995 MeV (E_0 scale) — a factor ≈263× / ≈49× below the magic-A value. Scope-(a): the multiplicative interface product of the Phase-5q closed form, ALONE, at either canonical scale, does not generate the 4-body α-cooperativity; the probe MEASURES the missing higher-order term (it does not exclude the closed-form factors from a larger closure — no proved invariant, scope-(b) not claimed). Consistent with the many-body-ceiling audit: the α-binding is not reachable from the A−1-interface chain product at any expansion order."
+      "answer_2": "No. The exact connected 4-body cross-term is 0.00794545 MeV (Q_β scale) / 0.0425132 MeV (E_0 scale) — a factor ≈3770× / ≈705× below the magic-A value. Scope-(a): the multiplicative interface product of the Phase-5q closed form, ALONE, at either canonical scale, does not generate the 4-body α-cooperativity; the probe MEASURES the missing higher-order term (it does not exclude the closed-form factors from a larger closure — no proved invariant, scope-(b) not claimed). Consistent with the many-body-ceiling audit: the α-binding is not reachable from the A−1-interface chain product at any expansion order."
     }
   },
   "q0Anchor": "proton",

@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-30T07:54:03.342393+00:00",
-  "commitSha": "076ecc7d3c8539fdcd649bea41dc91dc89dc3b6f",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-07T10:19:49.793413+00:00",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "canonical-tr-m-three-path-comparison",
   "scriptFile": "canonical_tr_m_three_path_comparison.py",
   "scriptHash": "fae62946278b",
-  "scriptCommitSha": "5b3c271315ab3959d7dd258a9809b5d63dba8223",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,10 +21,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e186e42e6d8dd38a"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [

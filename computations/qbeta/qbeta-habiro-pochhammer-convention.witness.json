@@ -6,18 +6,18 @@
   "scope": "(b) for the discrepancy \u2014 an exact arithmetic mismatch against a stored witness, with the convention declared by the witness itself. (a) for the fix direction. Confined to the FORMALIZATION: the compute layer already used (1-u^k), so no published number was wrong, and the corrected declaration has zero external consumers.",
   "reconstruction": {
     "p (proton, A=1)": {
-      "witness_tr_M_at_q0": "1.145759692457300816435",
-      "pochhammer_1_minus_u_k": "1.145759692457300869689",
-      "rel_err_1_minus_u_k": "4.648e-17",
-      "pochhammer_1_minus_u_2k": "6.960179408595493079945",
-      "rel_err_1_minus_u_2k": "5.075"
+      "witness_tr_M_at_q0": "0.6293284022029219051444",
+      "pochhammer_1_minus_u_k": "0.6293284022029219181653",
+      "rel_err_1_minus_u_k": "2.069e-17",
+      "pochhammer_1_minus_u_2k": "2.892373666827665779077",
+      "rel_err_1_minus_u_2k": "3.596"
     },
     "n (neutron, A=1)": {
-      "witness_tr_M_at_q0": "0.987743688115809530983",
-      "pochhammer_1_minus_u_k": "0.987743688115809571634",
-      "rel_err_1_minus_u_k": "4.116e-17",
-      "pochhammer_1_minus_u_2k": "4.564900350080829571584",
-      "rel_err_1_minus_u_2k": "3.622"
+      "witness_tr_M_at_q0": "0.4751335171556822112807",
+      "pochhammer_1_minus_u_k": "0.4751335171556822125061",
+      "rel_err_1_minus_u_k": "2.579e-18",
+      "pochhammer_1_minus_u_2k": "1.432438484041037834848",
+      "rel_err_1_minus_u_2k": "2.015"
     }
   },
   "lean_verification": "lean -DautoImplicit=false -s 65536 -> exit 0, 0 errors (never lake build; restored olean cache intact)",
@@ -34,12 +34,12 @@
     {
       "name": "1_minus_u_k_reproduces_the_stored_trM",
       "passed": true,
-      "detail": "p (proton, A=1): 4.648e-17; n (neutron, A=1): 4.116e-17 \u2014 both atoms reconstruct to better than 1e-15 at 60 dps, evaluating the a_m through sympy exact rationals rather than the producer's float64 path."
+      "detail": "p (proton, A=1): 2.069e-17; n (neutron, A=1): 2.579e-18 \u2014 both atoms reconstruct to better than 1e-15 at 60 dps, evaluating the a_m through sympy exact rationals rather than the producer's float64 path."
     },
     {
       "name": "1_minus_u_2k_is_off_by_hundreds_of_percent",
       "passed": true,
-      "detail": "p (proton, A=1): rel 5.075 (6.960179408595493079945 vs 1.145759692457300816435); n (neutron, A=1): rel 3.622 (4.564900350080829571584 vs 0.987743688115809530983) \u2014 this is what the Lean definition and the .md both specified. Not a rounding question: 507 % and 362 %."
+      "detail": "p (proton, A=1): rel 3.596 (2.892373666827665779077 vs 0.6293284022029219051444); n (neutron, A=1): rel 2.015 (1.432438484041037834848 vs 0.4751335171556822112807) \u2014 this is what the Lean definition and the .md both specified. Not a rounding question: 507 % and 362 %."
     },
     {
       "name": "it_was_also_a_notation_error_independently",
@@ -48,12 +48,14 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "3ffd6185d129",
-  "scriptCommitSha": "unknown",
-  "commitSha": "43fc534621224c2faf2f0dd717b5645886d87f49",
+  "scriptFile": "qbeta_habiro_pochhammer_convention_probe.py",
+  "scriptHash": "b8de012f0ace",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "commitSha": "791b6c9c21ee3e68f2b9616eefe34d1c46d30339",
   "engine": "python+sympy+mpmath",
-  "computedAt": "2026-09-06T04:39:30.092275+00:00",
+  "computedAt": "2026-09-07T10:13:54.719112+00:00",
   "durationMs": 0,
-  "q0Anchor": "physical_proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "the physical proton pin"
 }
