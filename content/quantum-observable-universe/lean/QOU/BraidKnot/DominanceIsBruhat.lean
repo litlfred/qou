@@ -279,7 +279,9 @@ interpolation.
   `bruhatLe_to_dominance`'s recorded blocker is not a blocker on this route.
   It is now **proved** on exactly this route: `rk_le_of_bruhatLe` (easy Ehresmann,
   `Machinery/BruhatRankCriterion`), then `rankAt_eq_rk` to specialise to the row cuts, then
-  `domRel_iff_rankAt`.  `qou-3k66` stays open on its own merits.
+  `domRel_iff_rankAt`.  (`qou-3k66` was open when this was written and a sibling has since
+  closed it — `lean(qou-3k66)`, *the two Bruhat orders are the same relation*.  That does
+  not change this route, which never needed it.)
 * **Forward — PROVED.**  The interpolation bridge (`rk_le_of_rankAt_le`, on
   `BruhatRank.rk_le_of_endpoints` + `dOf_increasingOn_block` + `exists_block`) reduced it to
   the **hard** direction of Ehresmann's criterion, and that is now proved too:
@@ -659,7 +661,8 @@ needs for an `↔`"*.  **That route is not the only one.**  The chain used here 
                  →  at the row cuts      (specialisation, `rankAt_eq_rk`)
                  →  s ⊵ t                (`domRel_iff_rankAt`)
 
-so `qou-3k66` stays open on its own merits and 3.7 is no longer a reason to prioritise it.
+so 3.7 was never a reason to prioritise `qou-3k66`.  A sibling has since closed that bean
+independently; this route did not use it either way.
 
 **The row-standardness hypotheses are not used**, and that is a real observation rather than
 an oversight: `domRel` is a relation on *tabloids* and `dOf` is a bijection on *all*
