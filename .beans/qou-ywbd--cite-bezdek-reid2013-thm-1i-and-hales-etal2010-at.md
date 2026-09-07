@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T13:41:14Z
-updated_at: 2026-09-07T06:13:24Z
+updated_at: 2026-09-07T06:41:23Z
 parent: qou-2akx
 ---
 
@@ -22,3 +22,7 @@ DO NOT. Do not read this as resolving the four recorded objections to the geomet
 
 
 Claimed 2026-09-07 (session cite-wiring, branch claude/cite-wiring-6962-ids-2026-09-07) after #6962 (the ids) and #6964 (candidates + locators) merged. Scope extended per #6964's follow-up list: also [martelli2016] Thm 13.1.3 at the Λ-form Vol(4_1) site in alg:mba-step09a-mass-identity, and [bezdek-reid2013] at the kissing-number-12 mentions in MaxContactSimplex.lean / MaxContactHasBulk.lean.
+
+
+
+PR #6999 (draft) carries the wiring: rem:bk-coordination-multiplicity + alg:mass-identity cites[] and .md clauses, -- Ref: lines in CoordinationSaturation / MaxContactSimplex / MaxContactHasBulk. Both sidecars refreshed; two Mathlib-only Lean files lean-direct exit 0; MaxContactHasBulk awaiting the QOU library sweep (its dependency olean is absent from the restored cache).
