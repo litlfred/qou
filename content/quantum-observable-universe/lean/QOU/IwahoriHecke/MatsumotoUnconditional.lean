@@ -21,9 +21,18 @@ It is not an oversight of the cosine argument; that argument genuinely cannot se
 case. At `m = 0` the convention `π / 0 = 0` gives `c = −cos 0 = −1`, so the Chebyshev parameter is
 `4c² − 2 = 2` and the recursion `x(k+2) = 2·x(k+1) − x k` with `x 0 = x 1 = 1` has the constant
 solution `x k = 1`. The scalar therefore returns to its initial value at every `k` and distinguishes
-nothing — which is correct, since the infinite dihedral group has no relation to detect. Ruling out
-the `m = 0` case in the *descent lemma* (no element of `W_{i,j}` has both `i` and `j` as right
-descents when the bond is infinite) is a different argument and is not made here.
+nothing — which is correct, since the infinite dihedral group has no relation to detect.
+
+✅ **That different argument is now made** — `CoxeterDihedralOrder.reflEnd_pair_pow_ne_one_of_infinite`
+tracks the `αᵢ`-**coefficient** rather than the form value, gets `1 + 2k` from the shear, and so shows
+`fᵢfⱼ` has genuinely infinite order at `m = 0`. That is exactly what the descent lemma needs to
+refute its `m = 0` branch instead of excluding it.
+
+🛑 **It is proved but not yet SPENT, deliberately.** Removing `hfin` means changing 17 theorem
+signatures and 79 call sites across five merged files, one of which a sibling is actively
+extending — against **no** consumer, since every Coxeter matrix in this corpus is
+`CoxeterMatrix.Aₙ` and no infinite bond appears anywhere. So `hfin` stays in these statements until
+someone wants it gone deliberately; the input is ready. Bean `qou-1u90`.
 
 So the honest scope is: **every Coxeter system whose bond orders are all finite** — which includes
 `Bₙ`, `Dₙ`, `E₆₇₈`, `F₄`, `H₃`, `H₄` and every `I₂(m)`, not merely `Aₙ`.
