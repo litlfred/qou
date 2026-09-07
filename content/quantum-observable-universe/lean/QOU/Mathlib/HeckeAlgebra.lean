@@ -114,10 +114,21 @@ class MarkovTrace (R : Type u) [CommRing R] (n : ℕ) (q z : R)
   trace : H.carrier → R
   /-- Normalisation: `tr_M(1) = 1`. -/
   trace_one : trace H.one = 1
-  /-- The Markov axiom (placeholder shape — concrete instances
-      supply the full peel/cyclic content). -/
-  markov_axiom : Prop
-  markov_axiom_holds : markov_axiom
+  /-- **The Markov axiom**: `tr_M(x · σ_{n-1}) = z · tr_M(x)`, for the LAST
+      generator.
+
+      "Last" is a hypothesis on the underlying naturals (`i + 2 = n`) rather
+      than `Fin` arithmetic, for the reason recorded at `IwahoriHeckeAlgebra.braid`:
+      `n - 1` is truncated subtraction and an on-the-nose top index wraps.  At
+      `n ≤ 1` there is no generator and `Fin (n - 1)` is empty, so the field is
+      vacuously true there — correctly, since `H_0` and `H_1` have no Markov
+      peel to perform.
+
+      Was `markov_axiom : Prop` with a sibling `markov_axiom_holds`, i.e. a
+      proposition the instance CHOSE.  Its own docstring called itself a
+      "placeholder shape". -/
+  markov_axiom : ∀ (x : H.carrier) (i : Fin (n - 1)), (i : ℕ) + 2 = n →
+    trace (H.mul x (H.sigma i)) = z * trace x
 
 /-- **Standard-Young-tableau count** `d_λ = #SYT(λ)`, together with the Burnside/RSK identity
 `∑_{λ ⊢ n} d_λ² = n!`.
@@ -161,14 +172,24 @@ class StandardYoungCount (n : ℕ) where
     `p_λ` summing to `1` and pairwise orthogonal. -/
 class WedderburnDecomposition (R : Type u) [CommRing R] (n : ℕ) (q : R)
     [H : IwahoriHeckeAlgebra R n q] where
-  /-- The block-projection idempotents `p_λ ∈ H_n(q)`. -/
-  block_proj : ℕ → H.carrier
-  /-- The sum `Σ_λ p_λ = 1`. -/
-  blocks_sum_to_one : Prop
-  blocks_sum_holds : blocks_sum_to_one
-  /-- Pairwise orthogonality: `p_λ · p_μ = 0` for `λ ≠ μ`. -/
-  blocks_orthogonal : Prop
-  blocks_orthogonal_holds : blocks_orthogonal
+  /-- The block-projection idempotents `p_λ ∈ H_n(q)`.
+
+      Indexed by `Nat.Partition n`, not `ℕ`.  The change is forced by writing
+      the real `blocks_sum` below — a sum over blocks needs a finite index, and
+      `ℕ → H.carrier` cannot express one.  This is the same move the
+      `StandardYoungCount` docstring above records for its own repair; the
+      index is the partition set in both cases because that is what indexes the
+      Wedderburn blocks of `H_n(q)`. -/
+  block_proj : Nat.Partition n → H.carrier
+  /-- **Completeness**: `Σ_λ p_λ = 1`. -/
+  blocks_sum : ∑ lam : Nat.Partition n, block_proj lam = H.one
+  /-- **Pairwise orthogonality**: `p_λ · p_μ = 0` for `λ ≠ μ`. -/
+  blocks_orthogonal : ∀ lam mu : Nat.Partition n, lam ≠ mu →
+    H.mul (block_proj lam) (block_proj mu) = 0
+  /-- **Idempotence**: `p_λ² = p_λ`.  The class docstring called these
+      "idempotents" and nothing said so; now something does. -/
+  blocks_idem : ∀ lam : Nat.Partition n,
+    H.mul (block_proj lam) (block_proj lam) = block_proj lam
 
 /-- The **Wenzl-bridge formula**: `tr_M(T_w) = Σ_λ y_λ ·
     χ_λ(T_w)` with closed-form `y_λ = dim_q(λ) · d_λ / [n]_q!`.
@@ -181,11 +202,21 @@ class WenzlBridge (R : Type u) [CommRing R] (n : ℕ) (q z : R)
     [H : IwahoriHeckeAlgebra R n q]
     [_M : MarkovTrace R n q z]
     [W : WedderburnDecomposition R n q] where
-  /-- The Jones-Markov central coefficient `y_λ : R`. -/
-  y_coeff : ℕ → R
-  /-- The bridge identity (placeholder Prop; instances discharge). -/
-  bridge_identity : Prop
-  bridge_holds : bridge_identity
+  /-- The Jones-Markov central coefficient `y_λ : R`, indexed by partitions to
+      match `WedderburnDecomposition.block_proj`. -/
+  y_coeff : Nat.Partition n → R
+  /-- The irreducible characters `χ_λ : H_n(q) → R`.
+
+      A new field, and it is what writing the real identity costs: the bridge
+      is a statement ABOUT the characters, and the class named them in its
+      docstring while carrying no way to refer to them. -/
+  chi : Nat.Partition n → H.carrier → R
+  /-- **The Wenzl bridge**: `tr_M(x) = Σ_λ y_λ · χ_λ(x)`.
+
+      Was `bridge_identity : Prop` with a sibling witness — the instance chose
+      the identity.  `_M` is now used rather than merely bound. -/
+  bridge : ∀ x : H.carrier,
+    _M.trace x = ∑ lam : Nat.Partition n, y_coeff lam * chi lam x
 
 /-- **Trivial model of the Hecke class** — every field is filled with the
     structurally-trivial value (`carrier := PUnit`, all three relations
@@ -250,19 +281,79 @@ def triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
 
     (A `letI := triv_hecke R n q` in the *type* does not work: it binds for the
     ascription but not for the `where` fields, which elaborate against the
-    class and need the instance again.) -/
+    class and need the instance again.)
+
+    ## 2026-09-07: it is no longer generic in the Hecke model, and that is a
+    ## finding, not an inconvenience
+
+    This used to take an arbitrary `[self : IwahoriHeckeAlgebra R n q]` and set
+    `block_proj _ := self.one`.  It could, because `blocks_sum_to_one` and
+    `blocks_orthogonal` were `Prop` fields it answered with `True`.
+
+    With the real statements it cannot, and the reason is mathematics rather
+    than plumbing: over an arbitrary carrier, `∑_{λ ⊢ n} 1 = 1` says `p(n) · 1
+    = 1`, and `1 · 1 = 0` says `1 = 0`.  Both are false in any Hecke model with
+    more than one element.  **There is no trivial Wedderburn decomposition of a
+    nontrivial algebra** — which is exactly right, and was invisible while the
+    fields were variables.
+
+    So it now carries `[Subsingleton self.carrier]`, which is the precise
+    hypothesis under which a trivial decomposition exists.  The generic form is
+    kept — this is not pinned to `triv_hecke` — but a caller who wants it must
+    now say that their algebra has one element, rather than asserting something
+    false about it without being told.  `triv_hecke` satisfies it; nothing else
+    in the corpus does. -/
 def triv_wedderburn (R : Type u) [CommRing R] (n : ℕ) (q : R)
-    [self : IwahoriHeckeAlgebra R n q] :
+    [self : IwahoriHeckeAlgebra R n q] [Subsingleton self.carrier] :
     WedderburnDecomposition R n q where
-  -- Was `PUnit.unit`, which only type-checked while the carrier was pinned to
-  -- `PUnit` by the global `triv_hecke`. Over an arbitrary Hecke model the
-  -- projector must land in `self.carrier`, and its unit is the only element
-  -- the class provides — which is the honest reading of "trivial projector".
+  -- The projector still lands in `self.carrier`, and its unit is the only
+  -- element the class provides — the honest reading of "trivial projector".
   block_proj _ := self.one
-  blocks_sum_to_one := True
-  blocks_sum_holds := True.intro
-  blocks_orthogonal := True
-  blocks_orthogonal_holds := True.intro
+  blocks_sum := Subsingleton.elim _ _
+  blocks_orthogonal _ _ _ := Subsingleton.elim _ _
+  blocks_idem _ := Subsingleton.elim _ _
+
+/-- The trivial Hecke model does satisfy that hypothesis, so the pair is still
+    constructible — and only there.  Recorded as a `def` so the claim is
+    checked rather than asserted in a docstring. -/
+def triv_hecke_carrier_subsingleton (R : Type u) [CommRing R] (n : ℕ) (q : R) :
+    Subsingleton (triv_hecke R n q).carrier := inferInstanceAs (Subsingleton PUnit)
+
+/-! ### What encoding these three does NOT establish
+
+`IwahoriHeckeAlgebra` got both halves on 2026-09-07: real relations AND
+`H3.heckeAlgebra`, a model on a carrier where `σ₁ ≠ 1`.  **`MarkovTrace`,
+`WedderburnDecomposition` and `WenzlBridge` have only the first half.**
+
+Their only model is the trivial one, and `triv_wedderburn` now says so in its
+type (`[Subsingleton self.carrier]`).  By the `qou-z9ws` inhabitation
+discriminator that means the same thing it meant before: satisfying these
+constraints over a one-element carrier is evidence the axioms are consistent
+and no evidence that they constrain anything, so a `[WedderburnDecomposition
+…]`-conditional theorem is still dischargeable by an algebra with one element.
+
+The encoding is still strictly better than what it replaced — the class now
+*says* which proposition it means, so the statement can be read, cited and
+contradicted, none of which was possible while an instance chose it.  But it is
+half the repair, and calling it done would be the exact over-claim this file's
+own docstrings kept making.
+
+What the missing half needs, concretely:
+
+* **Wedderburn** — the three `H_3` block projectors (`e_[3]`, `e_[2,1]`,
+  `e_[1,1,1]`, the q-symmetrizer family whose formulas are written out below)
+  as elements of `H3Carrier R`, plus `blocks_sum`, `blocks_orthogonal` and
+  `blocks_idem` proved of them in `H3.mul`.  Real work: the projectors carry
+  the Poincaré-polynomial denominators, so it needs `P(q)` invertible.
+* **MarkovTrace** — `H3.markovTrace` already exists in this file with
+  `trace_one` proved; what is missing is the peel identity `tr_M(x · σ₂) = z ·
+  tr_M(x)` for every `x`, which is six coefficient equations.
+* **WenzlBridge** — needs the characters `χ_λ`, so it is downstream of the
+  Wedderburn blocks.
+
+Tracked as bean `qou-9yt9`.  Do not read the tightened fields as a claim that
+these three are now non-vacuous; they are not, and the one carrier that is says
+so by exhibiting a witness rather than by asserting it. -/
 
 /-! **No trivial `MarkovTrace` instance is provided** because over
     a generic `CommRing R`, the normalisation `tr_M(1) = 1`

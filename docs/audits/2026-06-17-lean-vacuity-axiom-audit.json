@@ -1,14 +1,14 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-07T17:09:28.347Z",
+  "generated": "2026-09-07T17:22:59.605Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
-  "scanned_files": 3734,
+  "scanned_files": 3742,
   "files_flagged": 113,
-  "total_defects": 89,
+  "total_defects": 86,
   "total_exempt": 59,
   "total_promoted_from_exempt": 26,
   "categories": {
-    "proof-claims-unencoded": 45,
+    "proof-claims-unencoded": 42,
     "proof-no-self-assuming-projection": 42,
     "proof-no-decide-masking": 1,
     "proof-docstring-sorry-mismatch": 1
@@ -769,7 +769,7 @@
       {
         "name": "LinkEquivalence",
         "file": "content/quantum-observable-universe/lean/QOU/KnotTheory/Brunnian.lean",
-        "line": 94
+        "line": 95
       },
       {
         "name": "LRCoefficientHecke",
@@ -2568,34 +2568,7 @@
     ],
     "content/quantum-observable-universe/lean/QOU/Mathlib/HeckeAlgebra.lean": [
       {
-        "line": 111,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class MarkovTrace (R : Type u) [CommRing R] (n : ℕ) (q z : R)",
-        "decl": "MarkovTrace",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (markov_axiom + markov_axiom_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [MarkovTrace]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      },
-      {
-        "line": 162,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class WedderburnDecomposition (R : Type u) [CommRing R] (n : ℕ) (q : R)",
-        "decl": "WedderburnDecomposition",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (blocks_sum_to_one + blocks_sum_holds, blocks_orthogonal + blocks_orthogonal_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [WedderburnDecomposition]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      },
-      {
-        "line": 180,
-        "category": "proof-claims-unencoded",
-        "pattern": "prop-field-self-discharged",
-        "snippet": "class WenzlBridge (R : Type u) [CommRing R] (n : ℕ) (q z : R)",
-        "decl": "WenzlBridge",
-        "severity": "major",
-        "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (bridge_identity + bridge_holds) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [WenzlBridge]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
-      },
-      {
-        "line": 1257,
+        "line": 1348,
         "category": "proof-claims-unencoded",
         "pattern": "prop-field-self-discharged",
         "snippet": "class MarkovTraceRecursion (R : Type u) [CommRing R] (n : ℕ) (q z : R) where",
@@ -2604,7 +2577,7 @@
         "detail": "`Prop`-universe field(s) whose only consumer asserts them and nothing else (markov_axiom_holds + markov_axiom_witness) — the instance chooses the proposition, so `⟨True, True.intro⟩` inhabits the pair and any [MarkovTraceRecursion]-conditional result is unconditional. Encode the real proposition as the field's type, or demote per §3b-tax"
       },
       {
-        "line": 1389,
+        "line": 1480,
         "category": "proof-claims-unencoded",
         "pattern": "prop-field-self-discharged",
         "snippet": "class HasGeneratorAction (n : ℕ) (q : ℝ) where",
