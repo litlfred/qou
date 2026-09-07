@@ -253,7 +253,7 @@ def identify_mu_lambda(tets, gl, shapes):
                 tau0=t_lam / t_mu0, basis_ok=basis_ok, combo_row=combo_row)
 
 
-def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9), seeds_per_k=14):
+def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9), seeds_per_k=12):
     """Pin the meridian among μ₀ + kλ. A solution of the gluing equations with all shapes
     nondegenerate is a nontrivial representation ρ : π₁(M) → PSL₂(ℂ). If H(μ₀ + kλ) = 1 while
     H(λ) ≠ 1, the cusp subgroup's image is abelian with a loxodromic element, so the element
@@ -264,12 +264,14 @@ def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9),
     surgery on a nontrivial knot has trivial π₁, ref [kronheimer2004]; only k* survives because
     every other frame is certified by an explicit solution).
 
-    Search: Newton (findroot) on {independent edge rows, H(μ₀)·H(λ)^k = 1}, seeded from the
-    points of the deformation curve (`samples`, shape vectors) at which |H(μ₀)H(λ)^k − 1| is
-    smallest — random starts on four shapes almost never converge (measured: 0–4 solutions per
-    frame from 60 starts, seven surviving frames). The certificates for k ≠ k* are constructive;
-    the absence at k* is then checked exactly on the fitted A-polynomial (A(L, ±1) has no root
-    off L = ±1)."""
+    Search: the deformation curve is one-dimensional, parametrised near any sample by
+    s = log H(λ); g_k(s) = H(μ₀)(z(s))·e^{ks} − 1 is holomorphic along the curve, and its zeros
+    are found by a complex secant iteration in s alone, the shapes z(s) re-solved from the
+    previous point at each step (continuation on the sheet the sample lies on). Seeds are the
+    samples with the smallest |g_k|. Four-variable Newton from random starts, and from
+    near-complete seeds, both failed to reach these points (measured: 0–4 solutions per frame,
+    then every frame surviving); the absence at k* is checked exactly afterwards on the fitted
+    A-polynomial (A(L, ±1) has no root off L = ±1)."""
     N = len(tets)
     zs = sp.symbols(f"y0:{N}")
     base, chosen = [], []
@@ -278,27 +280,63 @@ def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9),
         if sp.Matrix(trial).rank() > (sp.Matrix(base).rank() if base else 0):
             base = trial; chosen.append(r)
     chosen = chosen[:N - 1]
+    lsym = sp.symbols("ell")
+    eqs = [rect_expr(r, zs) - 1 for r in chosen] + [rect_expr(lam_row, zs) - lsym]
+    f = sp.lambdify([*zs, lsym], eqs, "mpmath")
+
+    def solve_at(s_, z_guess):
+        ell = mp.exp(s_)
+        try:
+            sol = mp.findroot(lambda *v: f(*v, ell), z_guess, tol=mp.mpf(10) ** -40, maxsteps=40)
+        except (ValueError, ZeroDivisionError, TypeError, IndexError):
+            return None
+        z = [sol[j] for j in range(N)]
+        if any(abs(zj) < mp.mpf(10) ** -8 or abs(zj - 1) < mp.mpf(10) ** -8 or abs(zj) > mp.mpf(10) ** 8 for zj in z):
+            return None
+        if max(abs(e) for e in f(*z, ell)) > mp.mpf(10) ** -30:
+            return None
+        return z
+
     table = {}
     for k in k_range:
-        eqs = [rect_expr(r, zs) - 1 for r in chosen] + \
-              [rect_expr(mu0_row, zs) * rect_expr(lam_row, zs) ** k - 1]
-        f = sp.lambdify(zs, eqs, "mpmath")
-        seeds = sorted(samples, key=lambda z: abs(rect_eval(mu0_row, z) * rect_eval(lam_row, z) ** k - 1))
+        def g(s_, z):
+            return rect_eval(mu0_row, z) * mp.exp(k * s_) - 1
+        seeds = sorted(samples, key=lambda t: abs(t[0] * t[1] ** (2 * k) - 1))[:seeds_per_k]
         sols, lox = [], 0
-        for z0 in seeds[:seeds_per_k]:
-            try:
-                sol = mp.findroot(lambda *v: f(*v), list(z0), tol=mp.mpf(10) ** -40, maxsteps=80)
-            except (ValueError, ZeroDivisionError, TypeError, IndexError):
+        for (x0, L, z0) in seeds:
+            s0 = 2 * mp.log(-L)
+            z_a, s_a = list(z0), s0
+            g_a = g(s_a, z_a)
+            s_b = s_a + mp.mpc("0.05", "0.03")
+            z_b = solve_at(s_b, z_a)
+            if z_b is None:
                 continue
-            z = [sol[j] for j in range(N)]
-            if any(abs(zj) < mp.mpf(10) ** -6 or abs(zj - 1) < mp.mpf(10) ** -6 or abs(zj) > mp.mpf(10) ** 6 for zj in z):
+            g_b = g(s_b, z_b)
+            found = None
+            for _ in range(60):
+                if abs(g_b) < mp.mpf(10) ** -36:
+                    found = (s_b, z_b); break
+                if g_b == g_a:
+                    break
+                step = -g_b * (s_b - s_a) / (g_b - g_a)
+                if abs(step) > mp.mpf("0.7"):
+                    step = step / abs(step) * mp.mpf("0.7")
+                s_n = s_b + step
+                z_n = solve_at(s_n, z_b)
+                tries = 0
+                while z_n is None and tries < 4:
+                    step = step / 2; s_n = s_b + step; z_n = solve_at(s_n, z_b); tries += 1
+                if z_n is None:
+                    break
+                s_a, z_a, g_a = s_b, z_b, g_b
+                s_b, z_b, g_b = s_n, z_n, g(s_n, z_n)
+            if found is None:
                 continue
-            if max(abs(e) for e in f(*z)) > mp.mpf(10) ** -30:
+            s_f, z_f = found
+            if any(max(abs(z_f[j] - s_[j]) for j in range(N)) < mp.mpf(10) ** -20 for s_ in sols):
                 continue
-            if any(max(abs(z[j] - s_[j]) for j in range(N)) < mp.mpf(10) ** -20 for s_ in sols):
-                continue
-            sols.append(z)
-            if abs(rect_eval(lam_row, z) - 1) > mp.mpf(10) ** -20:
+            sols.append(z_f)
+            if abs(mp.exp(s_f) - 1) > mp.mpf(10) ** -20:
                 lox += 1
         table[k] = (len(sols), lox)
     survivors = [k for k, (n, lox) in table.items() if lox == 0]
@@ -324,53 +362,49 @@ def _bezout(a, b):
 # 3. Deformation-curve sampling and the A-polynomial
 # ─────────────────────────────────────────────────────────────────────────────
 def sample_curve(tets, erows, mu_row, lam_row, shapes0, n_samples, seed=1):
-    """Continuation from the complete structure: for m² near 1, solve the independent edge rows
-    and H(μ) = m² for the shapes, then read L² = H(λ). The developing map returns the SQUARED
-    eigenvalues; L itself is tracked by continuity along each walk from the complete point,
-    where it is taken to be −1 (the parabolic holonomy has trace −2 in SL₂; the other lift is
-    L ↦ −L and is checked separately for the 4₁ control). Returns list of (M², L)."""
+    """Continuation from the complete structure along the deformation curve, parametrised by the
+    λ-holonomy ℓ = H(λ) = e^s: for a random target s = log r + iθ (r log-uniform in [0.03, 30],
+    θ uniform) walk s from 0 to the target in straight-line steps, solving the independent edge
+    rows and H(λ) = e^s for the shapes from the previous point. The developing map returns
+    squared eigenvalues; L = −e^{s/2} is then continuous by construction, with L = −1 at the
+    complete point (the parabolic holonomy has trace −2 in SL₂; the other lift is L ↦ −L and is
+    checked separately for the 4₁ control). Wide coverage in ℓ is what the meridian-frame search
+    needs for its seeds: the filling points of a badly framed μ₀ + kλ sit far from the complete
+    structure. Returns (H(μ_row), L, shapes) triples."""
     N = len(tets)
     zs = sp.symbols(f"y0:{N}")
-    # independent edge rows
     base, chosen = [], []
     for r in erows:
         trial = base + [list(r[0]) + list(r[1])]
         if sp.Matrix(trial).rank() > (sp.Matrix(base).rank() if base else 0):
             base = trial; chosen.append(r)
     chosen = chosen[:N - 1]
-    msym = sp.symbols("m2")
-    eqs = [rect_expr(r, zs) - 1 for r in chosen] + [rect_expr(mu_row, zs) - msym]
-    f = sp.lambdify([*zs, msym], eqs, "mpmath")
+    lsym = sp.symbols("ell")
+    eqs = [rect_expr(r, zs) - 1 for r in chosen] + [rect_expr(lam_row, zs) - lsym]
+    f = sp.lambdify([*zs, lsym], eqs, "mpmath")
     random.seed(seed)
     pts = []
     tries = 0
-    nsteps = 5
+    nsteps = 6
     while len(pts) < n_samples and tries < 20 * n_samples:
         tries += 1
-        # random target m² on an annulus around 1; walk there in steps from the complete point,
-        # tracking the square root of L² continuously (start L = −1).
-        target = mp.mpc(random.uniform(0.6, 1.5), random.uniform(-0.6, 0.6))
+        s_t = mp.mpc(random.uniform(mp.log(mp.mpf("0.03")), mp.log(mp.mpf(30))), random.uniform(-mp.pi, mp.pi))
         ok = True
         z = list(shapes0)
-        L_prev = mp.mpc(-1)
         for step in range(1, nsteps + 1):
-            m2 = 1 + (target - 1) * mp.mpf(step) / nsteps
+            s_ = s_t * mp.mpf(step) / nsteps
+            ell = mp.exp(s_)
             try:
-                sol = mp.findroot(lambda *v: f(*v, m2), z, tol=mp.mpf(10) ** -40)
+                sol = mp.findroot(lambda *v: f(*v, ell), z, tol=mp.mpf(10) ** -40)
             except (ValueError, ZeroDivisionError, TypeError, IndexError):
                 ok = False; break
             z = [sol[k] for k in range(N)]
-            if any(abs(zk) < mp.mpf(10) ** -8 or abs(zk - 1) < mp.mpf(10) ** -8 for zk in z):
+            if any(abs(zk) < mp.mpf(10) ** -8 or abs(zk - 1) < mp.mpf(10) ** -8 or abs(zk) > mp.mpf(10) ** 8 for zk in z):
                 ok = False; break
-            L2 = rect_eval(lam_row, z)
-            r = mp.sqrt(L2)
-            L_new = r if abs(r - L_prev) <= abs(-r - L_prev) else -r
-            if abs(L_new - L_prev) > mp.mpf("0.9") * abs(L_prev):
-                ok = False; break          # branch ambiguity: step too big, discard the walk
-            L_prev = L_new
         if not ok:
             continue
-        pts.append((target, L_prev, list(z)))
+        L = -mp.exp(s_t / 2)
+        pts.append((rect_eval(mu_row, z), L, list(z)))
     return pts
 
 
@@ -444,7 +478,9 @@ def run_knot(knot, shapes_hint, check, wb):
     pts0 = sample_curve(tets, info["erows"], info["mu0_row"], info["lam_row"], shapes, 110)
     print(f"  sampled {len(pts0)} points on the deformation curve (μ₀ frame)")
     survivors, table = meridian_frame(tets, info["erows"], info["mu0_row"], info["lam_row"],
-                                      [z for (_, _, z) in pts0])
+                                      pts0)
+    print("  frame search k ↦ (solutions with H(μ₀+kλ)=1, of which loxodromic in λ): " +
+          ", ".join(f"{k}:{v}" for k, v in table.items()))
     check(f"{knot}_meridian_frame_unique", len(survivors) == 1, f"survivors {survivors}")
     if len(survivors) != 1:
         return None
