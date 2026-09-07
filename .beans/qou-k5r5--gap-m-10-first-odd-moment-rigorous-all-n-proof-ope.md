@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-21T16:10:21Z
-updated_at: 2026-09-05T08:54:35Z
+updated_at: 2026-09-07T16:55:24Z
 ---
 
 
@@ -1147,3 +1147,75 @@ sqrt(PQ)` at every n; the reversal identities at every edge.
 target is a finite-n proof of `Q < P` -- both sides are explicit edge sums in `(g, delta)` over
 the Plancherel-weighted up-down chain, so this is where the Kerov-CLT-adjacent analysis should
 now be aimed.
+
+
+--------
+
+## 2026-09-07 — a normalisation hazard for anyone deriving kappa, and the third basis in which Sum_c^2 is ONE mode
+
+Recorded from PR #7061 (the rho_inf derivation). Not a claim about kappa's value;
+a claim about a definition kappa depends on.
+
+### The hazard: kappa is defined through R_4, and the corpus carries two R_4 formulas
+
+This bean's kappa is `Cov(Sum_h, R_4)/(3 n^{5/2})`
+(`wlambda_covariance_epic_M1_IO_mode_decomposition.py`), so it inherits whatever
+normalisation `R_4` carries. Two are live in the corpus and they differ by a
+factor of 3 on `omega3`:
+
+| reading | formula | verdict |
+|---|---|---|
+| Lean `r4Value` | `R_4 = 3*omega3 - n` | **TRUE** |
+| "naive `Sigma_3 = R_4 + R_2`" | `R_4 = omega3 - n` | **FALSE** |
+
+**Already settled in the corpus, by exact rational arithmetic, not by me.**
+`wlambda_covariance_epic_M1_A1_sigmah_in_free_cumulants.py` builds the transition
+measure exactly (Fraction end to end, no float) and reports over all `lam` with
+`n <= 8`:
+
+    R_2 == n for all lam (n<=8):                True
+    R_4 == omega3 - n   (naive Sigma_3=R4+R2):  False
+    R_4 == 3*omega3 - n (Lean r4Value):         True
+
+**The textbook identity is NOT wrong — the trap is which symbol you put in it.**
+Biane/Kerov's `Sigma_3 = R_4 + R_2` is correct as stated. With the corpus's
+`omega3 = Sum_c^2 - C(n,2)` (the class-normalised central character) it gives
+`Sigma_3 = 3*omega3`, which reconciles exactly with the Lean form and with
+`wlambda_covariance_epic_M1_free_cumulant_reframing.py:10` (`omega3 =
+(R_4 + R_2)/3`). The factor 3 is the class-size convention: `Sigma_3` is
+normalised by `(k)_3` while `|C_{(3,1^{k-3})}| = (k)_3/3`.
+
+So "naive" labels the substitution of `omega3` for `Sigma_3`, not the identity.
+This is the normalisation-mistaken-for-a-discrepancy class AGENTS.md names, and
+it is worth flagging here because a factor of 3 in `R_4` puts a factor of 3 in
+kappa — and kappa's open question is a **0.3 %** one (`~0.0591` vs
+`sqrt(2)/24 = 0.058926`). A convention slip therefore does NOT explain that gap;
+it would produce a 3x miss, not a 0.3 % one. Anyone attacking kappa should state
+which `R_4` they used, and should not "explain" the 0.3 % by finding this factor.
+
+### The structural fact, now seen in three independent bases
+
+`Sum_c^2` couples to exactly ONE mode. Three bases, three derivations, no shared
+machinery:
+
+| basis | statement | source |
+|---|---|---|
+| sine / Chebyshev on [-2,2] | `G_k = pi * delta_{k,3}` | `wlambda_covariance_epic_M1_rho_inf_kerov_derivation.py` (PR #7061) |
+| free cumulants | `Sum_c^2 = R_4/3 + const` | `wlambda_covariance_epic_M1_IO_mode_decomposition.py` |
+| class / shifted-symmetric | `Sigma_3` is ONE orthonormal basis vector, so `Cov_P(ln f, Sigma_3)` is a single Fourier coefficient and every `d>=2` mode is orthogonal to it | `cb24799114` on main (bean `qou-vilx`) |
+
+The third arrived on main today from a **different arc** answering a different
+conjecture, which is what makes it worth recording: it is not a re-derivation.
+All three land on the degree-3 / 3-cycle object, and all three say the same
+thing — the higher modes contribute nothing to this covariance.
+
+That is the step the rho_inf closed form turns on (it is why the ratio is a
+finite closed form rather than a ratio of two sums), so it now has independent
+support in two bases the derivation does not use.
+
+### What this does NOT do
+
+It does not pin kappa. `Sum_h`, unlike `Sum_c^2`, is outside Lambda* and its
+fluctuation spreads over the whole even tower `R_4, R_6, R_8, ...` — that
+asymmetry is the actual difficulty and none of the three readings above touches
+it. Gap stays OPEN.
