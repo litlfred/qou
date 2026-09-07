@@ -63,24 +63,43 @@ universe u
 class IwahoriHeckeAlgebra (R : Type u) [CommRing R] (n : ℕ) (q : R) where
   /-- Carrier set of `H_n(q)`. -/
   carrier : Type u
-  /-- Module structure (additive group). -/
-  carrier_addCommGroup : AddCommGroup carrier
+  /-- Module structure (additive group).  **Instance-implicit** so the three
+      relation fields below can be written with `+`; it was a plain field while
+      the relations were `Prop` variables and nothing needed to add. -/
+  [carrier_addCommGroup : AddCommGroup carrier]
   /-- The unit element `1 ∈ H_n(q)`. -/
   one : carrier
   /-- Multiplication. -/
   mul : carrier → carrier → carrier
+  /-- Scalar action of the ground ring.  Added with the relations: the Hecke
+      relation has a coefficient, so it cannot be stated without one. -/
+  smul : R → carrier → carrier
   /-- The `n - 1` braid generators `σ_1, …, σ_{n-1}`. -/
   sigma : Fin (n - 1) → carrier
-  /-- **Hecke relation**: `(σ_i - q)(σ_i + q⁻¹) = 0`,
-      equivalently `σ_i² = (q - q⁻¹) σ_i + 1`. -/
-  hecke_relation : Prop
-  hecke_holds : hecke_relation
-  /-- **Braid relation**: `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`. -/
-  braid_relation : Prop
-  braid_holds : braid_relation
-  /-- **Far commutativity**: `σ_i σ_j = σ_j σ_i` for `|i − j| ≥ 2`. -/
-  far_commute : Prop
-  far_commute_holds : far_commute
+  /-- **Hecke relation**: `(σ_i - q)(σ_i + q⁻¹) = 0`, equivalently
+      `σ_i² = (q - q⁻¹) σ_i + 1` (AGENTS.md §7a, balanced convention).
+
+      `q⁻¹` is `Ring.inverse q`, not `q⁻¹` — the class is over a `CommRing`,
+      which has no `Inv`.  `Ring.inverse` agrees with the field inverse
+      wherever `q` is a unit (`Ring.inverse_eq_inv'`), which it is at every
+      Hecke parameter this corpus evaluates at. -/
+  hecke : ∀ i : Fin (n - 1),
+    mul (sigma i) (sigma i) = smul (q - Ring.inverse q) (sigma i) + one
+  /-- **Braid relation**: `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`.
+
+      Adjacency is a hypothesis on the underlying naturals rather than `Fin`
+      arithmetic: `n - 1` is truncated subtraction, so `i + 1` on the nose
+      would wrap at the top index and quietly assert the wrong equation. -/
+  braid : ∀ i j : Fin (n - 1), (j : ℕ) = (i : ℕ) + 1 →
+    mul (mul (sigma i) (sigma j)) (sigma i)
+      = mul (mul (sigma j) (sigma i)) (sigma j)
+  /-- **Far commutativity**: `σ_i σ_j = σ_j σ_i` for `|i − j| ≥ 2`.  Stated
+      one-sided (`i + 2 ≤ j`); the other side follows by symmetry of the
+      conclusion. -/
+  far_commute : ∀ i j : Fin (n - 1), (i : ℕ) + 2 ≤ (j : ℕ) →
+    mul (sigma i) (sigma j) = mul (sigma j) (sigma i)
+
+attribute [instance] IwahoriHeckeAlgebra.carrier_addCommGroup
 
 /-- Abstract Markov trace on `H_n(q)`.  The class wraps the
     Jones–Wenzl uniqueness theorem: at generic `q`, the unique
@@ -201,13 +220,18 @@ def triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
   carrier_addCommGroup := by infer_instance
   one := PUnit.unit
   mul _ _ := PUnit.unit
+  smul _ _ := PUnit.unit
   sigma _ := PUnit.unit
-  hecke_relation := True
-  hecke_holds := True.intro
-  braid_relation := True
-  braid_holds := True.intro
-  far_commute := True
-  far_commute_holds := True.intro
+  -- The three relations are no longer `Prop` variables an instance may choose,
+  -- so this model has to *satisfy* them.  It does, and honestly: `PUnit` is the
+  -- zero algebra, where every equation between elements holds because there is
+  -- only one element.  That is a real (degenerate) model of the presentation,
+  -- which is exactly what a trivial model should be — and it is a different
+  -- thing from the `hecke_relation := True` it used to write, which satisfied
+  -- nothing because it asserted nothing.
+  hecke _ := Subsingleton.elim _ _
+  braid _ _ _ := Subsingleton.elim _ _
+  far_commute _ _ _ := Subsingleton.elim _ _
 
 /-- Trivial Wedderburn decomposition over the trivial Hecke carrier.
 
@@ -674,6 +698,92 @@ theorem H3.braid_mul {R : Type u} [Field R] (q : R) :
   simp only [H3.mul, H3.sigma1, H3.sigma2, H3.mulSigma1, H3.mulSigma2, H3.smul,
     H3.add, Prod.mk.injEq]
   refine ⟨by ring, by ring, by ring, by ring, by ring, by ring⟩
+
+/-! ### `H_3(q)` as an instance of the class — the class is inhabited by
+    something other than the zero algebra
+
+Until 2026-09-07 the only model of `IwahoriHeckeAlgebra` in the corpus was
+`triv_hecke`, whose carrier is `PUnit`.  That was not merely thin, it was
+uninformative in the specific way `AGENTS.md` §3b-tax warns about: the three
+relations were `Prop` *variables*, so `triv_hecke` chose `hecke_relation :=
+True` and satisfied the class without saying anything.  A hypothesis
+`[IwahoriHeckeAlgebra R n q]` bought a carrier, a `one`, a `mul` and a `sigma`
+family, and nothing Hecke — measured and written up in
+`scripts/lean/probes/prop-field-carrier-vacuity.lean`.
+
+With the relations now stated as equations in the class's own `mul`, `smul`,
+`one` and `sigma`, a model has to satisfy them.  This section supplies one that
+does so non-vacuously: the six-dimensional `H3Carrier R` with the concrete
+`H3.mul`, whose relations were already proved just above and were, until now,
+proved beside a class that could not consume them.
+
+**No genericity hypothesis is needed, and the first draft of this section
+carried one that was unused.**  `q ≠ 0` was written in on the expectation that
+`Ring.inverse q = q⁻¹` would require it; over a `GroupWithZero` the two agree
+unconditionally (`Ring.inverse_eq_inv'`), because both send `0` to `0`.  Since
+`H3.sigma1_sq_mul` and friends are proved for an arbitrary `q : R`, the model
+goes through at every `q`, `0` included.  The hypothesis was dropped rather than
+kept for appearances: a decorative hypothesis makes a statement look more
+careful than it is.
+
+What is lost at `q = 0` is not the *relations* but the *algebra* — at a
+non-generic parameter `H_3(q)` is no longer semisimple with the three
+Wedderburn blocks below.  That content lives in `WedderburnDecomposition`, not
+in the presentation, so it is correctly absent here. -/
+
+/-- The two generators of `H_3(q)`, as a family indexed by `Fin (3 - 1)`. -/
+def H3.sigmaFamily (R : Type u) [CommRing R] : Fin (3 - 1) → H3Carrier R :=
+  fun i => if (i : ℕ) = 0 then H3.sigma1 R else H3.sigma2 R
+
+/-- **`H_3(q)` is a model of `IwahoriHeckeAlgebra R 3 q`** for any field `R` and
+any nonzero `q`.
+
+A `def`, deliberately, not an `instance` — for the reason recorded at
+`triv_hecke`: a global instance discharges every downstream `[IwahoriHeckeAlgebra
+…]` hypothesis behind its author's back.  Use it with
+`letI := H3.heckeAlgebra q`.
+
+What it establishes that `triv_hecke` cannot: the three relation fields are
+*inhabitable at a carrier with more than one element*, so they are satisfiable
+without being vacuous.  Both models are now needed to read the class correctly —
+`triv_hecke` says the axioms are consistent, this one says they are not
+degenerate. -/
+def H3.heckeAlgebra {R : Type u} [Field R] (q : R) :
+    IwahoriHeckeAlgebra R 3 q where
+  carrier := H3Carrier R
+  carrier_addCommGroup := by infer_instance
+  one := H3.one R
+  mul := H3.mul q
+  smul := fun r x => r • x
+  sigma := H3.sigmaFamily R
+  hecke i := by
+    have hinv : Ring.inverse q = q⁻¹ := Ring.inverse_eq_inv' (G₀ := R) ▸ rfl
+    fin_cases i <;>
+      simp only [H3.sigmaFamily, hinv] <;>
+      norm_num [H3.sigma1_sq_mul, H3.sigma2_sq_mul]
+  braid i j hij := by
+    -- `(j : ℕ) = (i : ℕ) + 1` with `i j : Fin 2` forces `i = 0`, `j = 1`.
+    fin_cases i <;> fin_cases j <;>
+      simp_all [H3.sigmaFamily, H3.braid_mul]
+  far_commute i j hij := by
+    -- Vacuous at `n = 3`: `i + 2 ≤ j < 2` is unsatisfiable.
+    exact absurd hij (by have := j.isLt; omega)
+
+/-- **The `H_3` model is non-degenerate**: its first generator is not its unit.
+
+This is the discriminator that separates it from `triv_hecke`, and it is the
+whole point of adding it.  `Subsingleton.elim` discharges every relation over
+`PUnit`, so satisfying the class there is evidence that the axioms are
+consistent and no evidence at all that they constrain anything.  Here the same
+three relations hold over a carrier in which `σ₁ ≠ 1`, so they are satisfiable
+without collapsing.
+
+Stated at `ℚ` rather than a general field because `(1 : R) ≠ 0` needs a
+nontrivial ring, and pinning it removes the hypothesis rather than carrying
+one. -/
+theorem H3.heckeAlgebra_nondegenerate (q : ℚ) :
+    (H3.heckeAlgebra q).sigma ⟨0, by norm_num⟩ ≠ (H3.heckeAlgebra q).one := by
+  simp [H3.heckeAlgebra, H3.sigmaFamily, H3.sigma1, H3.one]
 
 /-! ### H_3 Wedderburn block decomposition (3 blocks)
 
