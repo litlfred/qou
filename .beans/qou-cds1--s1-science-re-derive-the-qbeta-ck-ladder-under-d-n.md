@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T06:59:24Z
+updated_at: 2026-09-07T08:54:22Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7813,3 +7813,36 @@ Recorded in the docstring with the dimension count so the gap is legible.
 - `dim TL₃ ≤ 5` — DONE; the matching lower bound is open
 - general `n`: needs the planar diagram basis — OPEN, and it is the real work
 - semisimplicity of `TL_n(δ)`: OPEN, the deep input
+
+
+## Lean tranche — TL₃ freeness closes (2026-09-07, PR #7001)
+
+`dim TL₃(δ) = 5 = catalan 3`, exactly. `tl3Basis` / `tl3_finrank_eq_five` in
+`QOU/MathlibExt/TemperleyLiebSpanning.lean`, sorry-free, all 34 branch
+declarations `#print axioms`-clean.
+
+**The bound that was called impossible.** Tranche 2 of this PR left a 🛑 on
+`tl3_span_eq_top` saying freeness was not claimable at n = 3, because
+`TemperleyLiebAlgebra`'s `tl3Rep` lands in 2×2 matrices and a 4-dimensional
+target cannot separate five elements however it is chosen. **That obstruction
+is real; the conclusion was too strong.** The fix is not a different 2×2
+family but the SAME one summed with the trivial representation e_i ↦ 0 —
+`tl3Rep5 : TL₃(δ) →ₐ[R] Matrix (Fin 2) (Fin 2) R × R`. Five dimensions is
+exactly enough, and the argument then needs no linear system solved: reading
+entries (1,1) → (0,1) → (1,0) → (0,0) kills each coefficient using only those
+already known.
+
+Recording it because the shape recurs: **a dimension-count obstruction bounds
+the TARGET, not the METHOD.** The right move was to enlarge the target by the
+one dimension the algebra already supplies, not to look for a cleverer family.
+
+**Hypotheses, both load-bearing.** δ a unit (already needed by
+`tl3Fam_adjacent`), and δ²−1 a non-zero-divisor — genuine, since δ = 1 really
+does collapse M₀M₁ onto M₁M₀. Both hold at the substrate with room:
+δ = q + q⁻¹ ≈ 2.01, δ²−1 ≈ 3.05.
+
+**Still open, and it is the same object from both sides.** General n needs the
+planar diagram basis — for the spanning set (upper) and because each lower
+bound so far is a representation exhibited by hand at exactly the right
+dimension. Semisimplicity of TL_n(δ), the input the whole arc is for, is
+downstream of that. NOT closed.
