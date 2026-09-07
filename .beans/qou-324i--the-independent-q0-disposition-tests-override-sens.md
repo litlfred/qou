@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-22T20:27:28Z
-updated_at: 2026-09-07T18:01:29Z
+updated_at: 2026-09-07T18:07:32Z
 ---
 
 Found on `qou-1c4y` / PR #5464 while re-measuring after #5457 merged (`238fc79f6e`).
@@ -315,3 +315,15 @@ DISTINCT AXIS from qou-3j5m. Commit 9ea4f724d4 (qou-3j5m, 2026-08-30) migrated t
 FIX: q0_anchor=False -> q0_anchor=None (resolve). Reads ONE pin (Q_50_DIGIT_STR -> proton default), so `proton` is correct (not `comparison`). Now stamps q0Anchor:proton + q0Value; q0_anchor_consistency_audit does NOT flag it; gram numbers byte-identical (default was already proton, only the producer's own timestamp/git_sha bumped). Stale comment corrected.
 
 RUNNING TALLY of the false-`independent` drain from this session: qbeta-ck-basis-constrained-pslq (ambiguous, reads both), a3-magnitude (proton), toffoli-lp-stability (proton). All three were the identical copy-paste stamp block.
+
+## Tractable 'visible-q0-value' set exhausted; the rest is this bean's detector territory (2026-09-07, session fervent-noether)
+
+After draining qbeta-ck-basis-constrained-pslq / a3-magnitude / toffoli-lp-stability, the set of witnesses stamped q0Anchor:independent AND carrying a visible q0 fingerprint is down to 10, and 9 are known-FP-or-tracked:
+  - 5 AUDITS whose subject IS q0 literals (fitted-labelled-canonical, hardcoded-q0-literal-families, undeclared-muon-pin-flip-risk, q0-value-drift-audit, witness-float64-padding-audit) — legitimately independent.
+  - 2 qbeta (habiro-f-from-shape-collapse, rung1-div25) — qou-o922 PROVED-independent.
+  - markov-identity-symbolic — resolved by the 2026-09-06 sibling pass above (symbolic residual at 5 sample points; independent is correct; only the retired-pin LABEL was fixed).
+  - substrate/knot-volumes — hyperbolic volumes, q0-independent geometry; carries q0 for context.
+
+The 10th, deltalambda/s5so3-geometric-wlambda-a4-helium (NEW, landed in the interim 1289 commits), is INDETERMINATE by anchor-diff and is THIS BEAN'S detector territory, not a bounded fix: boilerplate reason + parameters.q0 = the PROTON value, but the anchor-diff shows 0 substantive fields move — AND even parameters.q0 does not change muon vs proton, so the QOU_Q0_ANCHOR override does NOT reach its q0 (a hardcoded literal or an import path). That is exactly defeater #1/#2: a byte-identical flip does NOT prove independence when the override is not in the path. Needs q0_independence_checker --flip-validity (which names the defeater), not an anchor-diff. Handed here.
+
+CHEAP PRE-FILTER for the systematic sweep: all 3 genuine drains carried the identical copy-paste stamp block — the comment '# no q0 in this producer's cone; stamp provenance only.' + q0_anchor=False. That signature spans 372 producers (grep), MOST legitimately independent (the q0_anchor=False branch exists for the ~196/287 that never reach q0, qou-iph3). It is not a defect list — but it is a cheap first sieve: intersect it with 'producer actually reads q0 / witness carries a load-bearing q0 field' before spending an anchor-diff. The mechanical 372-producer sweep is this bean's single-owner drain; not overlapping it.
