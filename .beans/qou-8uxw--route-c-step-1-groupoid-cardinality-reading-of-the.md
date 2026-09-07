@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T03:31:25Z
-updated_at: 2026-09-07T09:32:18Z
+updated_at: 2026-09-07T09:43:07Z
 parent: qou-2akx
 ---
 
@@ -32,3 +32,7 @@ ODD n RESOLVED same day (checks 24–26, 26/26): take the framework's q itself a
 
 
 2026-09-07: PR #7030 merged (38a4aa45d7). Step 3 (the log-trace question) dispatched to a planning agent (label routec-log); plan to be filed by the parent session.
+
+
+
+2026-09-07 PLAN FILED: docs/audits/2026-09-07-route-c-step3-and-kz-level-plans.md §A (agent routec-log, parent-verified). Queue: A1 = exact-in-q bond factorisation of the canonical non-monotone word at n = 9 (the decisive compute), A2 = Lean quantisation of the classical b3 (E₀·ln2·m), A3 = convolution lemma. PR #7035.
