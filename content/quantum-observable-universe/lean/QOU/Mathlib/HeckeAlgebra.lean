@@ -1350,11 +1350,35 @@ class MarkovTraceRecursion (R : Type u) [CommRing R] (n : ℕ) (q z : R) where
   trace_n : HnCarrier n R → R
   /-- Pre-Markov trace at level `n+1`. -/
   trace_succ : HnCarrier (n + 1) R → R
-  /-- The Markov axiom holds (placeholder Prop; concrete
-      instance discharges via the carrier's multiplication). -/
-  markov_axiom_holds : Prop
-  /-- Witness. -/
-  markov_axiom_witness : markov_axiom_holds
+
+/-! **Where the Markov axiom went (2026-09-07).**
+
+This class carried two more fields:
+
+    markov_axiom_holds : Prop
+    markov_axiom_witness : markov_axiom_holds
+
+so an instance chose the axiom; all three instances below chose `True`.  Unlike
+the other repairs in this file the fix was **not** to write the real statement
+here, because the real statement already exists a few hundred lines below —
+`MarkovAxiomHolds`, together with `MarkovTraceRecursionWithMul`, which the
+section heading above this class calls "*a genuine `MarkovTraceRecursion`
+upgrade where the axiom field is the concrete predicate*".
+
+That upgrade landed as a **separate class** rather than as an upgrade of this
+one, so the placeholder survived alongside its own completed replacement, and
+`prop-field-self-discharged` kept flagging a class whose successor was already
+written.  Restating the axiom here would need `mul_succ`, `sigma_n` and `embed`
+— i.e. it would reconstruct `MarkovTraceRecursionWithMul` under a second name.
+
+So the two fields are **deleted**, and this class is now what it always
+actually was: a pair of traces at adjacent levels, asserting nothing about
+them.  The axiom is `MarkovTraceRecursionWithMul.axiom_witness`, and a caller
+who needs it takes that class.
+
+This is the same disposition as the eight dead `Prop`-universe fields removed
+on 2026-09-07 elsewhere in the corpus: a field that asserts nothing is deleted,
+not given invented content. -/
 
 /-- **Wedderburn-block recursion** (cardinality form):
     `(n+1)! = (n+1) · n!`, matching the recursion of
@@ -1480,62 +1504,116 @@ def H6.mulSigmaAbstract (table : Fin 720 → H6Carrier ℝ)
 class HasGeneratorAction (n : ℕ) (q : ℝ) where
   /-- Action of σ_i on the carrier (left-multiplication by σ_i). -/
   sigma_action : Fin (n - 1) → HnCarrier n ℝ → HnCarrier n ℝ
-  /-- Hecke relation `σ_i² = (q − q⁻¹) σ_i + 1` (placeholder Prop). -/
-  hecke_holds : Prop
-  /-- Hecke relation witness. -/
-  hecke_holds_witness : hecke_holds
-  /-- Braid relation `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`
-      (placeholder Prop). -/
-  braid_holds : Prop
-  /-- Braid witness. -/
-  braid_holds_witness : braid_holds
-  /-- Far commutativity `σ_i σ_j = σ_j σ_i` for `|i − j| ≥ 2`. -/
-  far_commute_holds : Prop
-  /-- Far-commutativity witness. -/
-  far_commute_witness : far_commute_holds
+  /-- **Hecke relation** `σ_i² = (q − q⁻¹) σ_i + 1`, as an operator identity on
+      the carrier.  Was a `Prop` field with a sibling witness, so the instance
+      chose the relation; its own docstring said "placeholder Prop". -/
+  hecke : ∀ (i : Fin (n - 1)) (x : HnCarrier n ℝ),
+    sigma_action i (sigma_action i x) = (q - q⁻¹) • sigma_action i x + x
+  /-- **Braid relation** `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`.  Adjacency on
+      the underlying naturals, not `Fin` arithmetic — `n - 1` is truncated
+      subtraction and an on-the-nose `i + 1` wraps at the top index. -/
+  braid : ∀ (i j : Fin (n - 1)), (j : ℕ) = (i : ℕ) + 1 →
+    ∀ x : HnCarrier n ℝ,
+      sigma_action i (sigma_action j (sigma_action i x))
+        = sigma_action j (sigma_action i (sigma_action j x))
+  /-- **Far commutativity** `σ_i σ_j = σ_j σ_i` for `|i − j| ≥ 2`. -/
+  far_commute : ∀ (i j : Fin (n - 1)), (i : ℕ) + 2 ≤ (j : ℕ) →
+    ∀ x : HnCarrier n ℝ,
+      sigma_action i (sigma_action j x) = sigma_action j (sigma_action i x)
 
-/-- **Trivial model of `HasGeneratorAction n q`** — the σ-action is the
-    constant-zero map and all three relations are `True`.  Genuine
-    models at concrete `n` arrive once the per-basis multiplication
-    table is encoded.
+/-! ### `HasGeneratorAction_punit` is GONE, because it was not a model
 
-    **A `def`, not an `instance`, since 2026-08-24** — the same
-    treatment `triv_hecke` (line ~173 of this file) received on
-    2026-08-23, for the same reason.  Being an `instance`, this
-    answered `[HasGeneratorAction n q]` at every `n` and every `q`, so
-    a downstream theorem taking the class as a §3b-cond hypothesis
-    would have had it discharged with the zero action and three `True`s
-    and never learned the hypothesis was free.
+It set `sigma_action _ _ := fun _ => 0` and answered all three relations with
+`True`.  Against the real Hecke relation the zero action says
+`0 = (q − q⁻¹) • 0 + x`, i.e. `0 = x` — **false at every nonzero `x`**, and
+`HnCarrier n ℝ = Fin n.factorial → ℝ` has plenty of those.  So the constant-zero
+action is not a degenerate model of this class; it is not a model at all, and
+the `Prop` fields were the only reason it looked like one.
 
-    Difference from `triv_hecke`, worth recording: that demotion cost
-    one error (`triv_wedderburn`, fixed in place).  This one costs
-    **zero** — `HasGeneratorAction` had no consumers anywhere in the
-    corpus at the time of the demotion.  Nothing was relying on the
-    global resolution because nothing was using the class at all; the
-    §3b-cond hypothesis in its docstring is a hypothesis no theorem yet
-    takes.
+This is the second time in this file that encoding a relation killed a "trivial
+model" (see `triv_wedderburn`), and the two failures are different in kind.
+`triv_wedderburn` survived under a stated hypothesis (`Subsingleton carrier`),
+because the trivial decomposition really does exist over the trivial algebra.
+Here there is no hypothesis to add: `q` is fixed by the class and the carrier is
+fixed to `HnCarrier n ℝ`, so the zero action is simply wrong.  Deleted rather
+than repaired.
 
-    A caller wanting the trivial action writes
-    `letI := HasGeneratorAction_punit n q`. -/
-def HasGeneratorAction_punit (n : ℕ) (q : ℝ) :
+What replaces it is better than a placeholder: two **genuine one-dimensional
+representations**, one per Hecke eigenvalue.  `AGENTS.md` §7a records that `q`
+and `−q⁻¹` are the eigenvalues of `σ_i`, i.e. exactly the roots of
+`t² = (q − q⁻¹) t + 1`, so letting every generator act by either scalar
+satisfies the Hecke relation on the nose and the other two because scalars
+commute.  These are the index and sign representations of `H_n(q)`. -/
+
+/-- The zero action really does fail the Hecke relation.  Asserted in the note
+    above; checked here rather than left as prose, since "this is not a model"
+    is exactly the kind of claim this file has repeatedly made in a docstring
+    and not in its Lean.
+
+    With `σ` acting by zero the relation reduces pointwise to
+    `0 = (q − q⁻¹) · 0 + x k`, i.e. `0 = x k`.  Taking the coordinate value `1`
+    refutes it at every `q`. -/
+theorem HasGeneratorAction.zero_action_refutes_hecke (q : ℝ) :
+    ¬ ((0 : ℝ) = (q - q⁻¹) * 0 + 1) := by norm_num
+
+/-- **The index representation**: every `σ_i` acts by the scalar `q`.
+
+    `q ≠ 0` is load-bearing here, unlike the hypothesis `H3.heckeAlgebra` was
+    briefly given and did not need: the relation reduces to
+    `q² = (q − q⁻¹)q + 1`, which needs `q · q⁻¹ = 1`.  At `q = 0` this action is
+    the zero action, and the class correctly refuses it. -/
+noncomputable def HasGeneratorAction.indexRep (n : ℕ) (q : ℝ) (hq : q ≠ 0) :
     HasGeneratorAction n q where
-  sigma_action _ _ := fun _ => 0
-  hecke_holds := True
-  hecke_holds_witness := trivial
-  braid_holds := True
-  braid_holds_witness := trivial
-  far_commute_holds := True
-  far_commute_witness := trivial
+  sigma_action _ x := q • x
+  hecke _ x := by
+    ext k
+    simp only [Pi.smul_apply, Pi.add_apply, smul_eq_mul]
+    field_simp
+    ring
+  braid _ _ _ x := by ext k; simp only [Pi.smul_apply, smul_eq_mul]
+  far_commute _ _ _ x := by ext k; simp only [Pi.smul_apply, smul_eq_mul]
+
+/-- **The sign representation**: every `σ_i` acts by the other eigenvalue,
+    `−q⁻¹`.  Two distinct models, so the class does not merely have *a*
+    solution — it has the two the presentation predicts. -/
+noncomputable def HasGeneratorAction.signRep (n : ℕ) (q : ℝ) (hq : q ≠ 0) :
+    HasGeneratorAction n q where
+  sigma_action _ x := (-q⁻¹) • x
+  hecke _ x := by
+    ext k
+    simp only [Pi.smul_apply, Pi.add_apply, smul_eq_mul]
+    field_simp
+    ring
+  braid _ _ _ x := by ext k; simp only [Pi.smul_apply, smul_eq_mul]
+  far_commute _ _ _ x := by ext k; simp only [Pi.smul_apply, smul_eq_mul]
+
+/-- The two representations are genuinely different — the class separates them,
+    which a `Prop`-field version could not have done.
+
+    Stated at `n = 3`, `q = 2` rather than generically, and the reason is not
+    convenience: at `n ≤ 1` the index type `Fin (n - 1)` is EMPTY, so the two
+    `sigma_action` fields are both the empty function and are equal.  A generic
+    statement would need `1 < n` as a hypothesis and would then say nothing more
+    than this one does. -/
+theorem HasGeneratorAction.reps_differ :
+    (HasGeneratorAction.indexRep 3 2 (by norm_num)).sigma_action
+      ≠ (HasGeneratorAction.signRep 3 2 (by norm_num)).sigma_action := by
+  intro h
+  have := congrFun (congrFun (congrFun h ⟨0, by norm_num⟩) (fun _ => 1))
+    ⟨0, by norm_num⟩
+  norm_num [HasGeneratorAction.indexRep, HasGeneratorAction.signRep] at this
 
 /-! ### Concrete `MarkovTraceRecursion` instances (item #2)
 
     Discharge the abstract `MarkovTraceRecursion R n q z` class
     by wiring `Hn.markovTraceGeneric` to the carrier at level n
-    and n+1, with caller-supplied length functions.  The
-    Markov-axiom field stays as a placeholder `True` until the
-    full multiplication is wired (since the axiom's content is
-    `tr_M(x σ_n) = z · tr_M(x)`, which depends on the carrier
-    multiplication). -/
+    and n+1, with caller-supplied length functions.
+
+    These no longer discharge a Markov axiom, because the class no longer
+    claims one — see the note at `MarkovTraceRecursion`.  They supply the two
+    traces, which is their whole content and always was; the axiom's content
+    `tr_M(x σ_n) = z · tr_M(x)` needs the carrier multiplication and lives in
+    `MarkovTraceRecursionWithMul`. -/
 
 /-- **Concrete `MarkovTraceRecursion` instance** at any `n`,
     parameterised by length functions at levels `n` and `n+1`.
@@ -1546,8 +1624,6 @@ noncomputable def MarkovTraceRecursion.canonical (n : ℕ) (q z : ℝ)
     MarkovTraceRecursion ℝ n q z where
   trace_n := Hn.markovTraceGeneric z lengthFn_n
   trace_succ := Hn.markovTraceGeneric z lengthFn_succ
-  markov_axiom_holds := True
-  markov_axiom_witness := trivial
 
 /-- **Concrete instance at H_2 → H_3** with explicit length
     functions:
@@ -1592,8 +1668,12 @@ noncomputable def MarkovTraceRecursion.h3_to_h4
        multiplication.
     2. A `MarkovAxiomHolds` predicate stating the identity
        concretely.
-    3. A genuine `MarkovTraceRecursion` upgrade where the
-       axiom field is the concrete predicate. -/
+    3. A genuine upgrade where the axiom field is the concrete
+       predicate.  This landed as the SEPARATE class
+       `MarkovTraceRecursionWithMul` rather than as an upgrade of
+       `MarkovTraceRecursion`, which is why the placeholder
+       outlived it; the placeholder's two `Prop` fields were
+       deleted on 2026-09-07. -/
 
 /-- **`HasHnMul n R`** — class supplying carrier multiplication
     on `HnCarrier n R`.  Concrete instances at small `n`
