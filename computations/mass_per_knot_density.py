@@ -281,6 +281,20 @@ def _emit_witness() -> None:
     # holds for every q, and a change in EITHER density function breaks it.
     global_reading = per_knot_density_borromean(q)
     per_block_reading = per_knot_density_vd(vol_borromean(), q)
+    # The four candidate tr_M(B3) normalisations, from ONE Jones polynomial.
+    # Computed here rather than quoted, so the table in the data block below
+    # cannot go stale against the functions it describes.
+    _t = q ** 2
+    _V = (-_t ** -3 + 3 * _t ** -2 - 2 * _t ** -1 + 4
+          - 2 * _t + 3 * _t ** 2 - _t ** 3)
+    _qi = 1 / q
+    _trm_jones = _V / (q + 2 + _qi)                    # 1/z_C^2  (convention C)
+    _trm_wenzl = _V / (q ** 2 + 2 + q ** -2)           # [2]_q^2
+    _trm_zd = _V / ((q ** 2 + 1) ** 2 / q ** 6)        # 1/z_D^2  (convention D)
+    _h = 1 - _qi                                       # hbar_q
+    _trm_lean = ((4 + _h ** 2 - 3 * _h ** 4 - _h ** 6)
+                 / (_h ** 2 + 4))                      # QOU.BraidsAndKnots.trM_borromean
+
     su2_gap_ratio = global_reading / per_block_reading
     su2_gap_closed_form = (linking_weight_family_a(q)
                            / borromean_markov_trace_h2(q))
@@ -326,15 +340,64 @@ def _emit_witness() -> None:
     # docstring states the two readings "differ by ≈ 2.38×", and the measured
     # ratio is 2.5158.  Both are in the corpus; neither cites the other.  That
     # is not resolved here and is left open deliberately (bean qou-afjl).
+    # ── WHERE THE DOCSTRING'S 2.38 COMES FROM, and why naming it does not
+    #    close the question (measured 2026-09-07, bean qou-afjl) ──────────
+    #
+    # It is `linking_weight_family_a / 1.065 = 2.37819686`.  So the docstring
+    # is not approximating the measured ratio badly -- it is quoting a
+    # DIFFERENT tr_M(B3), namely 1.065, and 1.065 is claimant #4 in the
+    # qou-soj6 tr_M census, where it is recorded UNEXPLAINED and has not
+    # matched the cache since 2026-08-29.
+    #
+    # Naming it does not settle which tr_M is right, because FOUR candidates
+    # exist and NO TWO AGREE.  Measured at the proton q0 (50 dps), from the
+    # same Jones polynomial V(q^2) over four different normalisers:
+    #
+    #   normalisation                       tr_M(B3)        lw / tr_M
+    #   jones   q+2+q^-1   (= 1/z_C^2)      1.0067304535    2.5158468661
+    #   wenzl   [2]_q^2                     0.9985621638    2.5364266223
+    #   1/z_D^2 (q^2+1)^2/q^6               1.5157706817    1.6709517389
+    #   Lean    trM_borromean(h)            0.9999276581    2.5329630470
+    #   docstring's quoted value            1.065           2.3781968605
+    #
+    # THIS FUNCTION USES THE FIRST, AND THAT IS THE EXCISED CONVENTION C.
+    # `borromean_markov_trace_h2`'s own docstring says so and says it is kept
+    # DELIBERATELY as "the non-canonical column" for a side-by-side audit.  So
+    # the identity asserted above is sound -- both sides call the same function,
+    # so it holds under any normalisation -- but its INTERPRETATION as "the
+    # SU(2) density gap" inherits convention C.  Recorded rather than switched:
+    # moving it to wenzl would swap one unexplained value for another.
+    #
+    # The Lean row is the reason not to declare wenzl canonical and stop.
+    # `QOU.BraidsAndKnots.trM_borromean` is sorry-free and closed-form,
+    # (4 + h^2 - 3h^4 - h^6)/(h^2 + 4) at h = 1 - 1/q, and it agrees with NONE
+    # of the three numerically: wenzl is merely CLOSEST, at 0.137 % relative.
+    # A sorry-free closed form that is 0.137 % from the evaluation it is
+    # supposed to be a closed form OF is a finding, not a rounding.  All four
+    # do coincide at q = 1 (every normaliser equals 4 there and V(1) = 4), so
+    # the whole disagreement is an O(h^2) effect with h ~ 0.0991.
     w.add_data("su2_density_gap", {
         "global_over_per_block": mp.nstr(su2_gap_ratio, 30),
         "closed_form_lw_over_trM": mp.nstr(su2_gap_closed_form, 30),
         "identity_residual": mp.nstr(eq, 6),
+        "normalisation_used": "jones (q + 2 + q^-1 = 1/z_C^2) — CONVENTION C, "
+                              "deliberately the non-canonical column",
         "docstring_claims_approx": "2.38",
-        "note": ("Vol/hbar_q^2 is common to both readings and cancels, so the "
-                 "gap is exactly linking_weight_family_a / "
-                 "borromean_markov_trace_h2. The docstring's 2.38 and this "
-                 "measured 2.5158 disagree; UNRESOLVED, see bean qou-afjl."),
+        "docstring_value_explained": "lw / 1.065 = 2.37819686; 1.065 is "
+                                     "qou-soj6 tr_M claimant #4, UNEXPLAINED",
+        "trM_candidates_at_q0": {
+            "jones_q_plus_2_plus_qinv": mp.nstr(_trm_jones, 20),
+            "wenzl_bracket2_squared": mp.nstr(_trm_wenzl, 20),
+            "inv_zD_squared": mp.nstr(_trm_zd, 20),
+            "lean_trM_borromean_closed_form": mp.nstr(_trm_lean, 20),
+            "docstring_quoted": "1.065",
+        },
+        "note": ("FOUR computed candidates for tr_M(B3) and no two agree; the "
+                 "docstring's 1.065 matches none of them. The identity above "
+                 "holds under any of them (same function both sides), but its "
+                 "reading as the SU(2) density gap is convention-C. The Lean "
+                 "closed form is 0.137%% from its closest numerical sibling "
+                 "(wenzl), which is itself unexplained. UNRESOLVED, qou-afjl."),
     })
     if cmp_pb is not None:
         w.add_data("su2_density_loss", {

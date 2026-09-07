@@ -195,3 +195,61 @@ measured ratio is **2.515846866085011803**
 `su2_density_gap` data block, 8/8). That 5.7 % disagreement between a docstring
 and its own function is UNRESOLVED and is the substance of this bean. Re-triaging
 callers does not touch it.
+
+## The 2.38 is `lw / 1.065` — and naming it does not close the question (2026-09-07)
+
+Measured at the proton q₀, 50 dps. The docstring's "≈ 2.38×" is exactly
+`linking_weight_family_a / 1.065 = 2.37819686`. So it is not a bad
+approximation of the measured 2.5158 — it is quoting a **different tr_M(𝓑₃)**,
+namely **1.065**, which is claimant #4 in the `qou-soj6` tr_M census, recorded
+there as UNEXPLAINED and not matched by the cache since 2026-08-29.
+
+**That does not settle which tr_M is right, because there are four computed
+candidates and no two agree.** All four come from the *same* Jones polynomial
+`V(q²)` of the Borromean rings, over four different normalisers:
+
+| normalisation | tr_M(𝓑₃) | lw / tr_M |
+|---|---|---|
+| jones `q+2+q⁻¹` = `1/z_C²` | 1.0067304535 | 2.5158468661 |
+| wenzl `[2]_q²` | 0.9985621638 | 2.5364266223 |
+| `1/z_D²` = `(q²+1)²/q⁶` | 1.5157706817 | 1.6709517389 |
+| Lean `trM_borromean(h)`, sorry-free closed form | 0.9999276581 | 2.5329630470 |
+| *docstring's quoted value* | *1.065* | *2.3781968605* |
+
+### A defect in my own re-scoping, found by checking the name
+
+`mass_per_knot_density`'s `su2_gap_closed_form` uses **the first row**, and that
+is the **excised convention C**. `borromean_markov_trace_h2`'s own docstring
+says so and says it is kept **deliberately** as "the ALTERNATIVE-normalisation
+comparison column … this function's job IS to be the non-canonical column."
+I reached for it last session because the name contains `borromean_markov_trace`
+and did not read past that.
+
+**The identity itself is sound** — both sides call the same function, so
+`per_knot_density_borromean/per_knot_density_vd == lw/trM` holds under any
+normalisation. What inherits convention C is its *interpretation* as "the SU(2)
+density gap".
+
+**Not switched to wenzl.** That would swap one unexplained value for another,
+and would be exactly the "closest wins" move the anti-fit discipline forbids.
+Recorded instead, with the normalisation named in the witness.
+
+### The Lean row is why "wenzl is canonical" is not the answer either
+
+`QOU.BraidsAndKnots.trM_borromean` is **sorry-free** and closed-form,
+`(4 + h² − 3h⁴ − h⁶)/(h² + 4)` at `h = 1 − 1/q`. It agrees with **none** of the
+three numerically. Wenzl is merely *closest*, at **0.137 %** relative. A
+sorry-free closed form sitting 0.137 % from the evaluation it is supposed to be
+a closed form **of** is a finding, not a rounding.
+
+All five coincide at `q = 1` — every normaliser equals 4 there and `V(1) = 4` —
+so the entire disagreement is an **O(h²) effect** with `h ≈ 0.0991`. That is
+consistent with a genuine normalisation difference rather than an arithmetic
+slip in any one of them, and it means the discriminator has to be structural,
+not numerical.
+
+**Still open**, and now sharper than "a docstring disagrees with its function":
+which normaliser does `tr_M(𝓑₃)` take in the canonical chain, and why does the
+sorry-free Lean closed form not reproduce it? The table is computed in
+`mass_per_knot_density.py` rather than quoted, so it cannot go stale against the
+functions it describes.
