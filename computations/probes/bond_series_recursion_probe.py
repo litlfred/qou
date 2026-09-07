@@ -57,6 +57,31 @@ A GUESS THAT FAILS, recorded so it is not re-tried. `tau, -tau` at orders 2 and 
 suggests a factor `tau*e^2/(1+e)`, whose order-4 term would be `+tau`, i.e.
 `c4 = 1/2, 3/2, 5/2`. Measured `c4` is `1/4, 31/12, 9/4`. Refuted.
 
+TWO NARROWINGS ON THE SURVIVING FACT
+------------------------------------
+Both are cheap, and both constrain what a derivation of `ups = -tau` may use.
+
+**It is BOND-SPECIFIC.** The nucleon series do NOT satisfy `c3 = -c2`
+(`p`: c2 = 23/4, c3 = 75/4; `n`: 3 and 19). So a derivation must appeal to
+something true of INTERFACES and false of BLOCKS — the obvious structural
+difference being that a bond factor is a RATIO of two traces differing by
+exactly one letter, while a nucleon factor is a trace outright. Recorded as the
+direction to look, not as an argument.
+
+**It names a natural object when rewritten.** `ups = -tau` is `c2 + c3 = 0`,
+which is exactly the `eps^3` coefficient of `(1 + eps)*R`. Since `eps = q - 1`:
+
+    the eps^3 coefficient of  q*R  VANISHES, for every bond.
+
+That is an EXACT RESTATEMENT, not a derivation — it says the same thing. Its
+value is that it points at the bond factor times the Hecke parameter rather than
+at a relation between two adjacent coefficients, which is a better place to look
+for a reason. A derivation would have to say why `q*R` is `eps^3`-free; nothing
+here does.
+
+The `eps^4` coefficient of `q*R` is `-1/4, 13/12, -1/4` — pp and nn agree, pn
+does not. Recorded so a two-of-three coincidence is not read as a pattern.
+
 WHAT THIS IS NOT. `c4` is quadratic in `n` by construction — any three points
 are — so fitting a quadratic there has zero content and is not done here.
 

@@ -1,0 +1,670 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-07T09:59:39.424149+00:00",
+  "commitSha": "68301ad0d6e64b88cd30cf8c71ce3e0e4f1cf199",
+  "assertions": [
+    {
+      "name": "Garside/Burau_machinery_self-tests_(braid_relation,_Δ²_central,_SSS(σ₁)_=_{σ₁,σ₂",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    },
+    {
+      "name": "discriminant_and_six_branch_points_reproduce_the_committed_branch-monodromy_witn",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    },
+    {
+      "name": "base_point_z_=_0_is_generic_for_the_projection_x_=_Re(e^{-i/5}_X):_three_distinc",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    },
+    {
+      "name": "every_lasso_word_induces_the_same_permutation_as_direct_root_continuation_(perm_",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    },
+    {
+      "name": "every_lasso_permutation_equals_the_committed_witness's_(departure_order,_k-label",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    },
+    {
+      "name": "(i)_every_lasso_word_induces_a_transposition",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    },
+    {
+      "name": "(ii)_every_lasso_word_has_exponent_sum_±1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    },
+    {
+      "name": "(iii)_every_lasso_word's_reduced-Burau_char_poly_equals_that_of_σ₁^{±1}",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    },
+    {
+      "name": "every_lasso_word's_super_summit_set_is_exactly_{σ₁,_σ₂}_(a_conjugacy_invariant;_",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    },
+    {
+      "name": "every_lasso_word_is_conjugate_to_σ_i^{±1}:_explicit_conjugator_verified_by_norma",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    },
+    {
+      "name": "loop_at_infinity_is_the_positive_full_twist_Δ²_(roots_−z,_±iz_rotate_once)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    },
+    {
+      "name": "product_of_the_six_lasso_words_in_departure_order_equals_the_loop_at_infinity_(n",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    },
+    {
+      "name": "ordered_product_of_the_six_permutations_is_the_identity_(existing_probe's_check)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "mpmath 50 dps continuation / exact sympy"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "colour-cubic-braid-monodromy",
+  "scriptFile": "colour_cubic_braid_monodromy_probe.py",
+  "scriptHash": "e264ce2f6d62",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/colour_cubic_braid_monodromy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/colour_cubic_braid_monodromy_probe.py"
+  },
+  "description": "Step-2 option C, prune P5 (audit 2026-09-07 §B): the braid word in B₃ of each of the six lassos of colour_cubic_branch_monodromy_probe around the simple branch points of the colour cubic, by adaptive analytic continuation of the three roots (mpmath 50 dps, projection x = Re(e^{-i/5}X), positive crossing = counter-clockwise exchange), with exact conjugacy invariants (permutation, exponent sum, reduced-Burau characteristic polynomial) and the Garside left-normal form / super summit set with an explicit verified conjugator to σ_i^{±1}. Global check: the product of the six words in departure order equals the independently continued loop at infinity, which is the full twist Δ². No q₀ read; every number is mpmath or exact sympy.",
+  "contentBlock": "conj:hecke-monodromy-step-two",
+  "parameters": {
+    "cubic": "X^3 + (z+1)X^2 + (z^2+z+1)X + (z^3+z^2+z+1)",
+    "base_point": "z = 0",
+    "projection": "x = Re(e^{-i theta} X), y = Im(e^{-i theta} X), theta = 1/5",
+    "sign_convention": "sigma_i^{+1} iff the strand initially at position i (smaller x) passes behind (smaller y) the strand at position i+1; counter-clockwise exchange is positive; loop at infinity is then +Delta^2",
+    "burau": "reduced Burau of B_3: s1 -> [[-t,1],[0,1]], s2 -> [[1,0],[t,-t]]",
+    "lasso_sampling": "n_rad = 400, n_circ = 800 as in the existing probe, then adaptive bisection",
+    "loop_at_infinity": "0 -> -4 along the negative real axis, counter-clockwise circle |z| = 4, back"
+  },
+  "data": {
+    "lasso_words_in_departure_order": [
+      {
+        "label": "lasso 1 around z_0",
+        "word": "s1^-1 s2 s1",
+        "letters": [
+          -1,
+          2,
+          1
+        ],
+        "length": 3,
+        "perm_from_word": [
+          2,
+          1,
+          0
+        ],
+        "is_transposition": true,
+        "exponent_sum": 1,
+        "exponent_sum_pm1": true,
+        "burau_charpoly": "t*x - t + x**2 - x",
+        "burau_charpoly_sigma1_pow_expsum": "t*x - t + x**2 - x",
+        "burau_charpoly_matches_half_twist": true,
+        "burau_det": "-t",
+        "normal_form": "Δ^-1 · (s1 s2) · (s2 s1)",
+        "inf_sup_canonical_length": [
+          -1,
+          1,
+          2
+        ],
+        "super_summit_set": [
+          "Δ^0 · (s1)",
+          "Δ^0 · (s2)"
+        ],
+        "sss_meets_half_twists": true,
+        "conjugacy_certificate": {
+          "target": "s1",
+          "g": "s2 s1",
+          "verified_normal_form": true,
+          "verified_burau": true
+        },
+        "necessary_conditions_pass": true,
+        "half_twist_established": true,
+        "k": 0,
+        "j": 1,
+        "radius": "0.11150636379232188547",
+        "detour": "0.0",
+        "departure_angle": "-2.91668870825130735286819998763",
+        "z_k": "(-0.9748155329780386030712390939418967983613 - 0.2230127275846437709422265606405869739665j)",
+        "perm_labels_existing_convention": [
+          2,
+          1,
+          0
+        ],
+        "bisections": 0,
+        "min_root_separation": "0.645741569255878",
+        "min_height_gap_at_crossing": "0.689469450423613",
+        "crossing_heights": [
+          [
+            -1,
+            "1.2818889759"
+          ],
+          [
+            2,
+            "0.689469450424"
+          ],
+          [
+            1,
+            "2.0529697134"
+          ]
+        ],
+        "perm_word_consistent_with_continuation": true,
+        "perm_matches_committed_witness": true
+      },
+      {
+        "label": "lasso 2 around z_2",
+        "word": "s1",
+        "letters": [
+          1
+        ],
+        "length": 1,
+        "perm_from_word": [
+          1,
+          0,
+          2
+        ],
+        "is_transposition": true,
+        "exponent_sum": 1,
+        "exponent_sum_pm1": true,
+        "burau_charpoly": "t*x - t + x**2 - x",
+        "burau_charpoly_sigma1_pow_expsum": "t*x - t + x**2 - x",
+        "burau_charpoly_matches_half_twist": true,
+        "burau_det": "-t",
+        "normal_form": "Δ^0 · (s1)",
+        "inf_sup_canonical_length": [
+          0,
+          1,
+          1
+        ],
+        "super_summit_set": [
+          "Δ^0 · (s1)",
+          "Δ^0 · (s2)"
+        ],
+        "sss_meets_half_twists": true,
+        "conjugacy_certificate": {
+          "target": "s1",
+          "g": "e",
+          "verified_normal_form": true,
+          "verified_burau": true
+        },
+        "necessary_conditions_pass": true,
+        "half_twist_established": true,
+        "k": 2,
+        "j": 2,
+        "radius": "0.029310578682225878768",
+        "detour": "0.0",
+        "departure_angle": "-1.45834435412565367643409999382",
+        "z_k": "(0.1058295861882680209909387311570727599005 - 0.9371389378389034369148781152522105760335j)",
+        "perm_labels_existing_convention": [
+          1,
+          0,
+          2
+        ],
+        "bisections": 0,
+        "min_root_separation": "0.45479671806617",
+        "min_height_gap_at_crossing": "0.459650872300026",
+        "crossing_heights": [
+          [
+            1,
+            "0.4596508723"
+          ]
+        ],
+        "perm_word_consistent_with_continuation": true,
+        "perm_matches_committed_witness": true
+      },
+      {
+        "label": "lasso 3 around z_4",
+        "word": "s1^-1 s2 s1",
+        "letters": [
+          -1,
+          2,
+          1
+        ],
+        "length": 3,
+        "perm_from_word": [
+          2,
+          1,
+          0
+        ],
+        "is_transposition": true,
+        "exponent_sum": 1,
+        "exponent_sum_pm1": true,
+        "burau_charpoly": "t*x - t + x**2 - x",
+        "burau_charpoly_sigma1_pow_expsum": "t*x - t + x**2 - x",
+        "burau_charpoly_matches_half_twist": true,
+        "burau_det": "-t",
+        "normal_form": "Δ^-1 · (s1 s2) · (s2 s1)",
+        "inf_sup_canonical_length": [
+          -1,
+          1,
+          2
+        ],
+        "super_summit_set": [
+          "Δ^0 · (s1)",
+          "Δ^0 · (s2)"
+        ],
+        "sss_meets_half_twists": true,
+        "conjugacy_certificate": {
+          "target": "s1",
+          "g": "s2 s1",
+          "verified_normal_form": true,
+          "verified_burau": true
+        },
+        "necessary_conditions_pass": true,
+        "half_twist_established": true,
+        "k": 4,
+        "j": 3,
+        "radius": "0.029310578682225878768",
+        "detour": "0.2",
+        "departure_angle": "-1.25834435412565367643409999382",
+        "z_k": "(0.1189859467897705820803003627848240384608 - 1.053640742712109145029459350650498996145j)",
+        "perm_labels_existing_convention": [
+          2,
+          1,
+          0
+        ],
+        "bisections": 0,
+        "min_root_separation": "0.462679163772051",
+        "min_height_gap_at_crossing": "0.46965789853915",
+        "crossing_heights": [
+          [
+            -1,
+            "1.08209300464"
+          ],
+          [
+            2,
+            "0.469657898539"
+          ],
+          [
+            1,
+            "1.08209300464"
+          ]
+        ],
+        "perm_word_consistent_with_continuation": true,
+        "perm_matches_committed_witness": true
+      },
+      {
+        "label": "lasso 4 around z_3",
+        "word": "s2 s1 s2^-1",
+        "letters": [
+          2,
+          1,
+          -2
+        ],
+        "length": 3,
+        "perm_from_word": [
+          2,
+          1,
+          0
+        ],
+        "is_transposition": true,
+        "exponent_sum": 1,
+        "exponent_sum_pm1": true,
+        "burau_charpoly": "t*x - t + x**2 - x",
+        "burau_charpoly_sigma1_pow_expsum": "t*x - t + x**2 - x",
+        "burau_charpoly_matches_half_twist": true,
+        "burau_det": "-t",
+        "normal_form": "Δ^-1 · (s1 s2) · (s2 s1)",
+        "inf_sup_canonical_length": [
+          -1,
+          1,
+          2
+        ],
+        "super_summit_set": [
+          "Δ^0 · (s1)",
+          "Δ^0 · (s2)"
+        ],
+        "sss_meets_half_twists": true,
+        "conjugacy_certificate": {
+          "target": "s1",
+          "g": "s2 s1",
+          "verified_normal_form": true,
+          "verified_burau": true
+        },
+        "necessary_conditions_pass": true,
+        "half_twist_established": true,
+        "k": 3,
+        "j": 4,
+        "radius": "0.029310578682225878768",
+        "detour": "0.0",
+        "departure_angle": "1.45834435412565367643409999382",
+        "z_k": "(0.1058295861882680209909387311570727599005 + 0.9371389378389034369148781152522105760335j)",
+        "perm_labels_existing_convention": [
+          2,
+          1,
+          0
+        ],
+        "bisections": 0,
+        "min_root_separation": "0.45479671806617",
+        "min_height_gap_at_crossing": "0.470292224262302",
+        "crossing_heights": [
+          [
+            2,
+            "1.76275470347"
+          ],
+          [
+            1,
+            "0.470292224262"
+          ],
+          [
+            -2,
+            "1.76275470347"
+          ]
+        ],
+        "perm_word_consistent_with_continuation": true,
+        "perm_matches_committed_witness": true
+      },
+      {
+        "label": "lasso 5 around z_5",
+        "word": "s2 s2 s2^-1",
+        "letters": [
+          2,
+          2,
+          -2
+        ],
+        "length": 3,
+        "perm_from_word": [
+          0,
+          2,
+          1
+        ],
+        "is_transposition": true,
+        "exponent_sum": 1,
+        "exponent_sum_pm1": true,
+        "burau_charpoly": "t*x - t + x**2 - x",
+        "burau_charpoly_sigma1_pow_expsum": "t*x - t + x**2 - x",
+        "burau_charpoly_matches_half_twist": true,
+        "burau_det": "-t",
+        "normal_form": "Δ^0 · (s2)",
+        "inf_sup_canonical_length": [
+          0,
+          1,
+          1
+        ],
+        "super_summit_set": [
+          "Δ^0 · (s1)",
+          "Δ^0 · (s2)"
+        ],
+        "sss_meets_half_twists": true,
+        "conjugacy_certificate": {
+          "target": "s1",
+          "g": "s1 s2",
+          "verified_normal_form": true,
+          "verified_burau": true
+        },
+        "necessary_conditions_pass": true,
+        "half_twist_established": true,
+        "k": 5,
+        "j": 5,
+        "radius": "0.029310578682225878768",
+        "detour": "0.2",
+        "departure_angle": "1.65834435412565367643409999382",
+        "z_k": "(0.1189859467897705820803003627848240384608 + 1.053640742712109145029459350650498996145j)",
+        "perm_labels_existing_convention": [
+          0,
+          2,
+          1
+        ],
+        "bisections": 0,
+        "min_root_separation": "0.462679163772051",
+        "min_height_gap_at_crossing": "0.475161840118361",
+        "crossing_heights": [
+          [
+            2,
+            "0.588816286365"
+          ],
+          [
+            2,
+            "0.475161840118"
+          ],
+          [
+            -2,
+            "0.588816286365"
+          ]
+        ],
+        "perm_word_consistent_with_continuation": true,
+        "perm_matches_committed_witness": true
+      },
+      {
+        "label": "lasso 6 around z_1",
+        "word": "s1",
+        "letters": [
+          1
+        ],
+        "length": 1,
+        "perm_from_word": [
+          1,
+          0,
+          2
+        ],
+        "is_transposition": true,
+        "exponent_sum": 1,
+        "exponent_sum_pm1": true,
+        "burau_charpoly": "t*x - t + x**2 - x",
+        "burau_charpoly_sigma1_pow_expsum": "t*x - t + x**2 - x",
+        "burau_charpoly_matches_half_twist": true,
+        "burau_det": "-t",
+        "normal_form": "Δ^0 · (s1)",
+        "inf_sup_canonical_length": [
+          0,
+          1,
+          1
+        ],
+        "super_summit_set": [
+          "Δ^0 · (s1)",
+          "Δ^0 · (s2)"
+        ],
+        "sss_meets_half_twists": true,
+        "conjugacy_certificate": {
+          "target": "s1",
+          "g": "e",
+          "verified_normal_form": true,
+          "verified_burau": true
+        },
+        "necessary_conditions_pass": true,
+        "half_twist_established": true,
+        "k": 1,
+        "j": 6,
+        "radius": "0.11150636379232188547",
+        "detour": "0.0",
+        "departure_angle": "2.91668870825130735286819998763",
+        "z_k": "(-0.9748155329780386030712390939418967983613 + 0.2230127275846437709422265606405869739665j)",
+        "perm_labels_existing_convention": [
+          1,
+          0,
+          2
+        ],
+        "bisections": 0,
+        "min_root_separation": "0.645741569255878",
+        "min_height_gap_at_crossing": "0.674066682008178",
+        "crossing_heights": [
+          [
+            1,
+            "0.674066682008"
+          ]
+        ],
+        "perm_word_consistent_with_continuation": true,
+        "perm_matches_committed_witness": true
+      }
+    ],
+    "six_words": [
+      {
+        "j": 1,
+        "k": 0,
+        "word": "s1^-1 s2 s1",
+        "letters": [
+          -1,
+          2,
+          1
+        ]
+      },
+      {
+        "j": 2,
+        "k": 2,
+        "word": "s1",
+        "letters": [
+          1
+        ]
+      },
+      {
+        "j": 3,
+        "k": 4,
+        "word": "s1^-1 s2 s1",
+        "letters": [
+          -1,
+          2,
+          1
+        ]
+      },
+      {
+        "j": 4,
+        "k": 3,
+        "word": "s2 s1 s2^-1",
+        "letters": [
+          2,
+          1,
+          -2
+        ]
+      },
+      {
+        "j": 5,
+        "k": 5,
+        "word": "s2 s2 s2^-1",
+        "letters": [
+          2,
+          2,
+          -2
+        ]
+      },
+      {
+        "j": 6,
+        "k": 1,
+        "word": "s1",
+        "letters": [
+          1
+        ]
+      }
+    ],
+    "product_word": {
+      "word": "s1^-1 s2 s1 s1 s1^-1 s2 s1 s2 s1 s2^-1 s2 s2 s2^-1 s1",
+      "letters": [
+        -1,
+        2,
+        1,
+        1,
+        -1,
+        2,
+        1,
+        2,
+        1,
+        -2,
+        2,
+        2,
+        -2,
+        1
+      ],
+      "normal_form": "Δ^2 · e"
+    },
+    "loop_at_infinity": {
+      "word": "s1^-1 s2 s1 s2 s1 s2 s1 s2 s2^-1 s1",
+      "letters": [
+        -1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        1,
+        2,
+        -2,
+        1
+      ],
+      "normal_form": "Δ^2 · e",
+      "perm_labels": [
+        0,
+        1,
+        2
+      ],
+      "bisections": 0,
+      "min_root_separation": "0.985767256051624"
+    },
+    "burau_charpoly_sigma1": "t*x - t + x**2 - x",
+    "burau_charpoly_sigma1_inv": "x**2 - x + x/t - 1/t",
+    "verdict": "All six lassos lift to half-twists: each word is conjugate in B₃ to σ_i^{±1} (exponent sums [1, 1, 1, 1, 1, 1]), with an explicit conjugator verified by the Garside normal form and the Burau representation. Consequence (Kohno–Drinfeld, not proved here): the monodromy generators of the sl₂ KZ connection pulled back along the root map are conjugates of ϱ(σ_i^{±1}), so they satisfy the Hecke quadratic (σ − q)(σ + q⁻¹) = 0. The loop at infinity is the full twist Δ² and equals the ordered product of the six half-twists."
+  },
+  "caveats": [
+    "(i)-(iii) are NECESSARY conditions for conjugacy to a half-twist; conjugacy is ESTABLISHED only by the explicit conjugator g (g^-1 w g = sigma_i^{+-1} checked in the Garside normal form, a solution of the word problem, and in the Burau representation, faithful for n = 3). A negative Garside verdict would rely on the super-summit-set theory (Elrifai-Morton).",
+    "Continuation is numerical (50 dps) with ambiguity guards and adaptive bisection; the words are discrete data. The projection direction theta = 1/5 is a choice; a different generic projection changes the words by conjugation and the sign convention by global inversion, neither of which affects the verdicts.",
+    "Consequence stated, not proved: Kohno-Drinfeld (kohno1987) gives the Hecke quadratic on rho(sigma_i^{+-1}); this probe only establishes that the lasso lifts are conjugates of such."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "the colour cubic is a fixed integer polynomial; its branch points, lassos and braid words carry no q and no substrate pin is read."
+}

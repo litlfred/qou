@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-07T08:35:25Z
-updated_at: 2026-09-07T08:35:58Z
+updated_at: 2026-09-07T10:08:07Z
 ---
 
 Found while adding a deliberate/actionable split to
@@ -67,3 +67,79 @@ the probe still failed. Caught by running it rather than by reading the diff.
 correct: it is an undeclared grouped word whose guard is broken, not a
 deliberate historical choice. I deliberately did NOT mark it deliberate — the
 marker would have silenced a real defect.
+
+## REBUILT — both arms canonical, 3/3 assertions pass (2026-09-07)
+
+Both defects fixed:
+
+1. **The inverted pin** removed. `compute_tau_M_nucleon_H3` now called at its
+   default, which matches the live target to 6.37e-51 (p) / 2.39e-50 (n).
+2. **The ordering confound** fixed. `chain` now comes from
+   `atom_braid_word_3A` instead of being hand-built grouped. Measured safe:
+   same 11 crossings, identical `(c, d)` multiset, **identical census**
+   (p `{sigma:6, averaged:2, sigma_inv:3}`, n `{sigma:5, averaged:2,
+   sigma_inv:4}`) — only the ORDER differs. Traced through
+   `chi_all_lambda_any`, since the monotone-only kernel refuses the canonical
+   word outright.
+
+`self_built_braid_word_audit` now reports **ACTIONABLE 0, DELIBERATE 0** — and
+by the site becoming genuinely canonical, not by declaring it deliberate.
+
+## STILL OPEN: the probe is weaker than its title
+
+Both arms are now the SAME computation, because `qou-qu2w` removed the
+marshalling from `compute_tau_M_nucleon_H3`. The "marshalled" arm no longer
+marshals, so the divergence in the title cannot be detected by it.
+
+**That vacuity is not from this rebuild.** It arrived with `qou-qu2w`, and a
+sibling had already re-pointed the assertions on 2026-09-06 from "assert the
+defect (== 2.157)" to "assert the fix holds" for exactly that reason. What was
+broken — and is now fixed — was the ordering confound on top of it.
+
+**What restoring a real guard needs.** Marshal explicitly through
+`marshal_to_chi_lambda_braid` rather than through a helper that no longer does.
+It IS still callable on the canonical word (returns 11 pairs). The obstacle is
+a convention mismatch: it emits `(sign, gen)`, this probe uses `(c, d, gen)`,
+and my first bridge attempt produced `unsupported crossing c=-1.0 at gen=2`.
+Resolving that is a small piece of work with a real trap — guessing at another
+module's convention inside a regression guard is how a probe ends up asserting
+something it does not measure — so it is left for someone who can check the
+marshaller's contract rather than infer it.
+
+Left OPEN for that reason.
+
+## GUARD RESTORED — 5/5, and my "vacuous" claim was overstated
+
+I said restoring a real marshalled arm needed "someone who can check the
+marshaller's contract rather than infer it". That was checkable by reading its
+source, so I read it. The contract is explicit:
+
+    marshal_to_chi_lambda_braid -> [(sign, gen_1based)]
+        FOR hecke_characters.chi_lambda_braid, NOT for chi_all_lambda*
+
+Feeding it to the wrong kernel is what produced `unsupported crossing c=-1.0`
+on my first attempt. With the right consumer and `precision="mpfr_50dps"` it
+works, and the loss is real:
+
+    p  d-preserving 0.629328402202921918   MARSHALLED 0.807031394861838756  ratio 1.28237
+    n  d-preserving 0.475133517155682213   MARSHALLED 0.535061853071076283  ratio 1.12613
+
+Added as a THIRD arm, additively. **5 assertions, all passed.**
+
+## Correcting myself
+
+I described the probe as "weaker than its title" and "a tautology" once
+production stopped marshalling. That overstates it. The production-agreement
+check IS a real regression guard — `compute_tau_M_nucleon_H3` could be
+re-pointed back through the lossy path, and then it fires. What it could not do
+is MEASURE the loss. Those are different deficiencies and I conflated them.
+
+The three arms now guard three separate things, all on the same canonical word:
+
+  * d-preserving       -> reproduces the habiro target (~1e-50)
+  * marshalled current -> production's ROUTING has not regressed
+  * marshalled explicit-> the marshaller is STILL lossy (0.282 p / 0.126 n)
+
+The last one is new and is what makes the title honest again. A collapse toward
+0 would mean the marshaller stopped dropping `d`; a large jump would mean the
+crossing census changed.

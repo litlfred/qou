@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-29T10:59:13.537065+00:00",
-  "commitSha": "ee1db89069501ba81d67bc5ba0f7ccffcbfe36d7",
+  "computedAt": "2026-09-07T10:34:53.296164+00:00",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "assertions": [
     {
       "name": "closed_form_matches_measured_slopes",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 9,
   "computation": "b-pred-mirror-slope-closed-form",
   "scriptFile": "b_pred_mirror_slope_closed_form.py",
   "scriptHash": "2c09be73c835",
-  "scriptCommitSha": "879419b0ac831a02657139f4ad7dbe1ea02137ef",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "47b406d9ba6e343f"
+    "pyhecke_native_build": "e87a23f8d6fd6732"
   },
   "invocation": {
     "argv": [
