@@ -1,0 +1,174 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-09-07T04:43:28.035816+00:00",
+  "commitSha": "786b55c4cb0c468f08a614c198b419920456be18",
+  "assertions": [
+    {
+      "name": "D1_degree_second_difference_is_two_minus_triangular_indicator",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "d2(deg Z_n) = 2 - [n triangular] holds with ZERO exceptions over n=2..25; the exceptional n are exactly [3, 6, 10, 15, 21] (T_2..T_6). Computed by an exact max-plus run of the transfer operator, so this is integer arithmetic, not a numerical fit."
+    },
+    {
+      "name": "D2_REV_bounded_by_log_involution_numbers",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "0 <= REV_n <= log I(n) for every n in range (e.g. n=20: 0 <= 14.590383 <= 23.891213). Immediate: every q_0^-(deg-j) is in (0,1] and the coefficients sum to I(n). This is what forces d2 REV = O(1/n) -> 0."
+    },
+    {
+      "name": "D3_slope_two_ln_q0_derived_not_extrapolated",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "at every NON-triangular n the degree already contributes exactly 2 ln q_0 = 0.2086814406; triangular n have density ~sqrt(2/n) -> 0 and REV contributes O(1/n) by D2. Hence d2 log Z_n -> 2 ln q_0 and deg Z_n = n^2 - Theta(n^1.5), i.e. Z_n = q_0^(n^2 + o(n^2)). DERIVED from the degree recursion, not extrapolated from the largest reachable n."
+    },
+    {
+      "name": "D4_n_three_halves_drifts_less_than_n_log_n",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "net drift (last third vs first third, relative to mean): n^1.5 = 5.175%, n log n = 32.2%. The n log n ratio moves monotonically -0.43 -> -0.65 across the range; the n^1.5 ratio oscillates about ~-0.16635 without net drift. So the earlier probe's '-0.65 n log n' was the WRONG FUNCTIONAL FORM and its failure to converge was being read as slow convergence -- a wrong model cannot converge. CLAIM IS COMPARATIVE ONLY: n^1.5 fits better than n log n over this range. It is NOT a claim that n^1.5 is the true form; no exponent was scanned, and D6 keeps the coefficient a fit."
+    },
+    {
+      "name": "D5_degree_part_vanishes_at_nontriangular_n_sampling_trap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "d2 of the degree part of T2 is machine-zero at n=12,18,24 -- not because the degree is irrelevant but because NONE of those n is triangular, and by D1 the degree contributes -ln q_0 at triangular n and exactly nothing elsewhere. Sampling at generic n measures precisely zero of it. Consequence: the whole n^1.5 residual signal belongs to REV, whose asymptotics are NOT derived here."
+    },
+    {
+      "name": "D6_subleading_coefficient_is_still_a_fit_scope_gate",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "NOT derived: the residual coefficient (~-0.166355 against d2(n^1.5)) is an empirical fit and is labelled one. D1-D3 derive the LEADING slope only. No resummation is performed, B_D is not reached, nothing is wired."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "deuteron-qborel-slope-derivation",
+  "scriptFile": "deuteron_qborel_slope_derivation_probe.py",
+  "scriptHash": "3012e9a584e5",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/deuteron_qborel_slope_derivation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/deuteron_qborel_slope_derivation_probe.py"
+  },
+  "description": "DERIVES the deuteron q-Gevrey slope that deuteron_qborel_kernel_level_probe only extrapolated. Exact decomposition log Z_n = deg_n * ln q0 + REV_n. (D1) A max-plus run of the transfer operator gives d2(deg Z_n) = 2 - [n triangular] with ZERO exceptions, the exceptional n being 3,6,10,15,21. (D2) 0 <= REV_n <= log I(n). (D3) Triangular density -> 0 and d2 REV = O(1/n), so d2 log Z_n -> 2 ln q0 and deg Z_n = n^2 - Theta(n^1.5): the slope is a theorem about the degree recursion. The EXACT divisor is q^(deg_n), cheaply computable at any n; q^(n(n-1)) is its leading term, short by Theta(n^1.5). (D4) Corrects the earlier '-0.65 n log n' residual estimate: the form is n^1.5, and n log n drifts 50% where n^1.5 is flat. (D5) The n^1.5 signal is REV's, not the degree's -- sampling d2 of the degree part at non-triangular n returns exactly zero by D1. (D6) The sub-leading coefficient remains an empirical fit and is labelled one. scope-(a); no resummation, nothing wired, no fit in any derived quantity.",
+  "data": {
+    "nmax": 26,
+    "q0_str": "1.1099785827513808075916690956107688798744991218736",
+    "degrees": {
+      "1": 0,
+      "2": 1,
+      "3": 4,
+      "4": 8,
+      "5": 14,
+      "6": 22,
+      "7": 31,
+      "8": 42,
+      "9": 55,
+      "10": 70,
+      "11": 86,
+      "12": 104,
+      "13": 124,
+      "14": 146,
+      "15": 170,
+      "16": 195,
+      "17": 222,
+      "18": 251,
+      "19": 282,
+      "20": 315,
+      "21": 350,
+      "22": 386,
+      "23": 424,
+      "24": 464,
+      "25": 506,
+      "26": 550
+    },
+    "triangular_exceptions": [
+      3,
+      6,
+      10,
+      15,
+      21
+    ],
+    "d2_degree": {
+      "2": 2,
+      "3": 1,
+      "4": 2,
+      "5": 2,
+      "6": 1,
+      "7": 2,
+      "8": 2,
+      "9": 2,
+      "10": 1,
+      "11": 2,
+      "12": 2,
+      "13": 2,
+      "14": 2,
+      "15": 1,
+      "16": 2,
+      "17": 2,
+      "18": 2,
+      "19": 2,
+      "20": 2,
+      "21": 1,
+      "22": 2,
+      "23": 2,
+      "24": 2,
+      "25": 2
+    },
+    "REV": {
+      "1": "0.0",
+      "2": "0.6931471805599453094172321",
+      "3": "1.284674153524289179529782",
+      "4": "2.106930298533583907088262",
+      "5": "2.874045253408692252966056",
+      "6": "3.668485960537654371807265",
+      "7": "4.523312514362040285993983",
+      "8": "5.370762457837650509636224",
+      "9": "6.178070931175190953730743",
+      "10": "6.963729648464525515560219",
+      "11": "7.815716217668197659143325",
+      "12": "8.640033130753568040053329",
+      "13": "9.428152252813996419082366",
+      "14": "10.18637741858622053366557",
+      "15": "10.91021164645317542686472",
+      "16": "11.70813624397290084605606",
+      "17": "12.4734921030172251849967",
+      "18": "13.20917975721176519357082",
+      "19": "13.91409538370262391067213",
+      "20": "14.59038270978522011124978",
+      "21": "15.23762597974144416553183",
+      "22": "15.96182013809660306864691",
+      "23": "16.65859901732646326569933",
+      "24": "17.32928309594860856362455",
+      "25": "17.97406472461260050789959",
+      "26": "18.59402608554778454553766"
+    },
+    "residual_ratio_n32_mean": "-0.16635486841210490783",
+    "durationMs": 1981
+  }
+}
