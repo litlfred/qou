@@ -1131,3 +1131,63 @@ itself.
 canonical one. Some may differ deliberately (a different bracket convention, a symbolic
 rather than numeric form). Checking that is a separate audit and is not done here; what is
 measured is only the count and the absence of a shared import.
+
+---
+
+# 20. Observational programme: which of these actually discriminates
+
+Owner supplied the three standing observational handles on neutron-rich environments.
+§18.3 said they are r-process enrichment rather than a shifted chart; this section asks
+which of them could nonetheless *test* §16's prediction, and quantifies the one that can.
+
+## 20.1 The three handles, and what each can and cannot do
+
+| handle | what it observes | discriminates a shifted chart? |
+|---|---|---|
+| **GW170817 kilonova** — Sr II absorption in the AT2017gfo spectrum (VLT/X-shooter) | r-process nucleosynthesis *in real time* | **Indirectly.** The r-process path depends on masses and $\beta$-rates far from stability, which a shifted $\alpha$ would move. But the event is local — it constrains our own neighbourhood, not a distant domain. |
+| **Reticulum II** — ~70 % of bright members r-process enhanced, extreme $[\mathrm{Eu/Fe}]$ at very low metallicity | one polluting event's yield, preserved | **Only if isotopic.** Elemental overabundance is normal chemistry with anomalous abundances. The test needs *isotope ratios*, which are hard to resolve in metal-poor giants. |
+| **r-II halo stars** — $[\mathrm{Eu/Fe}] > +1$; **actinides detected** in CS 31082-001 (U II 3859.57 Å) | the yield *and* a radioactive clock | **Yes — this is the one.** See §20.2. |
+
+## 20.2 Actinide cosmochronometry is the real probe, and it works differently than I expected
+
+$\alpha$-decay rates are **exponentially** sensitive to $\alpha_{\rm EM}$ through the
+Gamow barrier penetrability, $\ln t_{1/2} \approx 2G + \text{const}$ with $2G \propto
+\alpha$. Calibrating $2G$ against observed half-lives and applying §16's shift factor
+1.23160717:
+
+| nuclide | $t_{1/2}$ (yr) | $2G$ | $2G$ shifted | $t_{1/2}$ ratio |
+|---|---|---|---|---|
+| $^{238}$U | $4.468\times10^{9}$ | 87.8419 | 108.187 | $6.85\times10^{8}$ |
+| $^{232}$Th | $1.405\times10^{10}$ | 88.9876 | 109.598 | $8.93\times10^{8}$ |
+| $^{235}$U | $7.04\times10^{8}$ | 85.994 | 105.911 | $4.46\times10^{8}$ |
+
+**The chronometer does not give a wrong age — it gives no age.** Th/U dating reads
+$(\mathrm{Th/U})(t) = (\mathrm{Th/U})_0 e^{-(\lambda_{\rm U}-\lambda_{\rm Th})t}$, and the
+rate difference collapses from $1.058\times10^{-10}\,\mathrm{yr}^{-1}$ to
+$1.713\times10^{-19}$. Over 13 Gyr the ratio drifts to 0.2527 in our regime and to
+**1.0000** in the shifted one. So a shifted-$\alpha$ region produces a *null drift*, and
+**the fact that r-II stars yield finite, mutually consistent ages is itself evidence that
+$\alpha$ was unshifted where their actinides formed.**
+
+## 20.3 The correction: I expected tighter, and it is looser
+
+I said in the previous turn that Gamow amplification would make this "a far tighter probe
+than the $10^{-6}$ spectroscopic bound". **Wrong.** The amplification is real, but the
+*measurement precision* on stellar ages is only $\sim\pm20\,\%$, so the bound it yields is
+
+$$
+  \lvert\Delta\alpha/\alpha\rvert \lesssim 2.08\times10^{-3},
+$$
+
+which is **~2000× looser** than quasar absorption spectroscopy. §16's 0.2316 exceeds it by
+112×, so it is still an exclusion — just not the tight one I advertised.
+
+**Its value is independence of *location*, not tightness.** Spectroscopic bounds constrain
+$\alpha$ in the intervening gas along a sightline; the actinide clock constrains $\alpha$
+in the *r-process site where the nuclei were forged*. Those are different places, and for
+a proposal whose whole surviving territory is "regions we cannot see spectroscopically",
+the second is the more relevant one.
+
+*Literature recalled — Watson et al. on the AT2017gfo strontium, Ji et al. on Reticulum II,
+Cayrel et al. on the CS 31082-001 uranium line. The library holds none of these, so none
+is checkable in-corpus.*
