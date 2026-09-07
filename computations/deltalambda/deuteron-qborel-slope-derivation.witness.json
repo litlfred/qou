@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-09-07T05:00:51.334012+00:00",
-  "commitSha": "3a435292edf82190a46594a5bf2b6519978e8914",
+  "computedAt": "2026-09-07T05:06:10.015396+00:00",
+  "commitSha": "5ec143eeed7d3ded8e2378d2e9cee25778959b52",
   "assertions": [
     {
       "name": "D1_degree_second_difference_is_two_minus_triangular_indicator",
@@ -54,19 +54,26 @@
       "source": "d2(deg Z_n) = 2 - [n triangular] still has ZERO exceptions extended to n=2..41 (triangular n now [3, 6, 10, 15, 21, 28, 36]). The tropical recursion reaches further than the full sum because it carries one integer per state instead of a 70-dps number -- but it is NOT cheap: the state space is p(n)*n, so n=90 is infeasible."
     },
     {
+      "name": "D9_mean_weight_is_exactly_choose_two",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "source": "<w>_n = C(n,2) = n(n-1)/2 EXACTLY (rational arithmetic) for every n=1..26, zero exceptions -- e.g. n=26 gives <w>=325=C(26,2). So the level-1 q-Borel exponent C(n,2) IS the mean path weight, while the Borel divisor deg_n is the max. Their ratio tends to n^2/(n^2/2) = 2, which is exactly why R2 measured the level-1 kernel as supplying half and why the required divisor is that kernel SQUARED. The 'level-1 kernel' and 'centre on the mean weight' are the same operation."
+    },
+    {
       "name": "D6_subleading_coefficient_is_still_a_fit_scope_gate",
       "computed": "1",
       "expected": "1",
       "passed": true,
-      "source": "NOT derived: REV's asymptotics. The residual coefficient (~-0.166355 against d2(n^1.5)) is an empirical fit and is labelled one. Note it CANNOT be the asymptotic form: REV_n >= 0 by D2, while a fit of shape a*n - b*n^1.5 with b>0 goes negative at finite n. So the n^1.5 model describes the range measured, not the limit. What IS derived: the leading slope (D1-D3) and the deficit coefficient 2sqrt2/3 (D7). No resummation is performed, B_D is not reached, nothing is wired."
+      "source": "NOT derived: REV's asymptotics. The residual coefficient (~-0.166355 against d2(n^1.5)) is an empirical fit and is labelled one. Note it CANNOT be the asymptotic form: REV_n >= 0 by D2, while a fit of shape a*n - b*n^1.5 with b>0 goes negative at finite n. So the n^1.5 model describes the range measured, not the limit. What IS derived: the leading slope (D1-D3) and the deficit coefficient 2sqrt2/3 (D7). No resummation is performed, B_D is not reached, nothing is wired. Also measured and NOT confirmed: the extensivity hypothesis REV ~ n*f(q0) -- Delta REV drifts 0.82 -> 0.61 over n=12..30 rather than settling. And the 2nd-order cumulant expansion about q=1 tracks REV at small n (5.374 vs 5.371 at n=8) but diverges by n=27 (20.63 vs 19.19), so the weight distribution is not Gaussian enough for that route either."
     }
   ],
   "allPassed": true,
-  "durationMs": 8970,
+  "durationMs": 9520,
   "computation": "deuteron-qborel-slope-derivation",
   "scriptFile": "deuteron_qborel_slope_derivation_probe.py",
-  "scriptHash": "f637066e7928",
-  "scriptCommitSha": "3a435292edf82190a46594a5bf2b6519978e8914",
+  "scriptHash": "64d7a261e8ba",
+  "scriptCommitSha": "5ec143eeed7d3ded8e2378d2e9cee25778959b52",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -183,6 +190,6 @@
       "26": "18.59402608554778454553766"
     },
     "residual_ratio_n32_mean": "-0.16635486841210490783",
-    "durationMs": 11202
+    "durationMs": 11750
   }
 }
