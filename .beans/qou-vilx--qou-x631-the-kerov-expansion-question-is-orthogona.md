@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-09-07T11:16:19Z
-updated_at: 2026-09-07T11:16:45Z
+updated_at: 2026-09-07T11:43:09Z
 ---
 
 Probe: `computations/qbeta/qbeta_covariance_kernel_kerov_mode_probe.py`, 10 assertions.
@@ -68,3 +68,14 @@ k = 26**, where **both** fail, by 0.0161 and 0.0011. Not a near-miss to patch: f
 at recurring k with a shrinking gap. The conjecture itself still holds at both
 (checked exactly), so the orders are strictly stronger than needed and strictly
 false. Recorded because they hold at 21 of 23 values and look compelling.
+
+
+
+### Follow-up `qou-dnev`: the eliminated orders were the wrong KIND of tool
+
+FSD and ICV fail here by 0.0161 and 0.0011. Measured in `qou-dnev`: the quantity
+actually wanted, `A/B`, sits at ~0.59 against a threshold of 1 — **~40% slack,
+uniformly over 6 <= k <= 34** — and the cancellation ratio `R ≈ 4` is flat in k.
+So both were tight pointwise conditions on whole distributions applied to a slack
+aggregate inequality, which is why a vanishing local defect killed them while the
+conjecture stood. A lossy bound suffices; exact matching is not needed.
