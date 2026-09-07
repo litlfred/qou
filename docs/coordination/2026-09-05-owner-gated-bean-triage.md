@@ -705,11 +705,21 @@ wrong WITHOUT EVER PRODUCING A WRONG NUMBER."*
 
 **What this does to D7.** Checked rather than assumed:
 
-* **The conclusion stands.** `TemperleyLiebTower.lean` uses no `colLen`/`rowLen`
-  predicate at all — it works concretely with the two-row form
-  `λ = (n − k, k)` and kills the **three-strand antisymmetriser**, whose weight
-  is `y₍₁³₎`. `(1,1,1)` is three rows, so it dies under the ROW reading. D7's
-  citation is on the right side of the collision.
+* **The conclusion stands, and more directly than first written here.**
+  `TemperleyLiebTower.lean` uses no `colLen`/`rowLen` predicate — but it does
+  not merely *imply* the row convention through the two-row form
+  `λ = (n − k, k)`. It **states it in prose**, at line 31:
+
+      1. **`y_λ = 0` exactly when `λ` has three or more rows.**
+
+  and again beside the closed form at line 56:
+
+      y₍ₙ₋ₖ,ₖ₎ = [n − 2k + 1]_q / [2]_q ⁿ,   y_λ = 0 for ≥ 3 rows.
+
+  So the file is unambiguous, and what it kills is the **three-strand
+  antisymmetriser**, weight `y₍₁³₎`. `(1,1,1)` is three rows, so it dies under
+  the ROW reading. D7's citation is on the right side of the collision, and no
+  transposition is needed to read it.
 * **The Catalan table above does NOT establish it.** `dim TL_n = Catalan(n)`,
   and the 83.3 % / 0.043 % retention figures, are **dimension-based**, and the
   sibling proves both readings give the same dimension sums. That table is
