@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T17:09:07Z
+updated_at: 2026-09-07T17:44:11Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -8036,3 +8036,28 @@ Arc state: TL₂/TL₃ Wedderburn done (#7001); general index type done (#7049);
 δ half of closure done (#7096). `dim TL_n = catalan n` NOT closed — it needs the
 loops=0 rule and the general count (bicoloured-Motzkin bijection, which Mathlib
 has nothing for).
+
+
+## Closure-rule measurement arc (2026-09-07, PRs #7096–#7111, all merged)
+
+**PROVED.** The δ half, end to end: `e_mul_elt_eq_smul` — `k ∈ I → (∀ j ∈ I,
+j+1 ≠ k) → e_k · elt(I,J) = δ • elt(I,J)`. Measured on 3456 products, then
+proved through `descRun_le` + `elems_sorted` (#7103) + `threshold_to_pointwise`
+(#7105) + `word_split`/`e_mul_prod_eq_smul` (#7096, #7107).
+
+**🛑 THREE NEGATIVES that close routes**, all measured on the same 3456:
+
+1. **No natural measure is monotone** — 12 candidates, every one increases
+   somewhere. The word-length negative was one row of a general pattern, not
+   special. A rewriting induction of that shape **does not exist**.
+2. **The image of e_k has exactly catalan(n−1) elements, for every k** — the
+   tower relation dim(e_k·TL_n) = dim TL_{n−1}, in the combinatorics. This is
+   the one POSITIVE lead.
+3. **The tower map is not the naive index surgery** — dropping k and closing the
+   gap is a bijection onto NF(n−1) **for k = 1 only**; it fails for every k ≥ 2.
+   Caught after I printed one row and read it as general.
+
+**STILL OPEN, nothing substitutes:** the (I',J') formula for the loops=0 branch
+(2378 products, no candidate); the tower map itself; `card = catalan` at general
+m (route: bicoloured Motzkin, absent from Mathlib); and therefore
+`dim TL_n = catalan n` and the semisimplicity it feeds. NOT closed.
