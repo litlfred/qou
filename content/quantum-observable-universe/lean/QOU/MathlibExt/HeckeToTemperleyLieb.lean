@@ -329,6 +329,217 @@ theorem isTypeADiagram_coxeterFin {n : ℕ} :
 
 end NonVacuous
 
+/-! ## `TL` as an explicit quotient of `H` — the presentation-level isomorphism
+
+The engineering obstruction noted below (no first isomorphism theorem for
+noncommutative rings in Mathlib) is **routed around rather than waited on**, and
+the result is stronger than what it would have given. Instead of quotienting by
+the kernel — an ideal named but not described — we quotient by the *named
+relators*:
+
+    TL_n(δ)  ≅  H_n(q) / ⟨ U_i U_j U_i − q·U_i : i ~ j ⟩ ,      U_i := T_i + 1
+
+which is the classical statement, and says **which relations you add**. The
+quotient is a `RingQuot`, so every instance comes for free and no `Ideal` /
+`TwoSidedIdeal` / `RingCon` machinery is needed.
+-/
+
+section Quotient
+
+variable {R : Type*} [CommRing R] {B : Type*}
+
+variable (R) (v : R) (M : B → B → ℕ)
+
+/-- **`U_i := T_i + 1`.** The Iwahori-normalised Temperley–Lieb generator: it is
+`U_i² = (q+1)·U_i` on the nose in `H`, before any quotient. -/
+noncomputable def U (i : B) : HeckeAlgebra R (v ^ 2) M := T R (v ^ 2) M i + 1
+
+variable {R v M}
+
+/-- **`U_i² = q·U_i + U_i` holds in `H` already** — it is the Iwahori quadratic
+relation rearranged, not an imposed relation. This is why the loop relation
+transports without the quotient. -/
+theorem U_sq (i : B) :
+    U R v M i * U R v M i
+      = algebraMap R (HeckeAlgebra R (v ^ 2) M) (v ^ 2) * U R v M i + U R v M i := by
+  have h := IwahoriHecke.T_quadratic (R := R) (q := v ^ 2) (M := M) i
+  have e : U R v M i * U R v M i
+      - (algebraMap R (HeckeAlgebra R (v ^ 2) M) (v ^ 2) * U R v M i + U R v M i)
+      = (T R (v ^ 2) M i - algebraMap R (HeckeAlgebra R (v ^ 2) M) (v ^ 2))
+        * (T R (v ^ 2) M i + 1) := by
+    simp only [U]; noncomm_ring
+  rw [h] at e
+  exact sub_eq_zero.mp e
+
+variable {Adj : B → B → Prop}
+
+/-- Non-adjacent Hecke generators commute — the braid relation at `M i j = 2`. -/
+theorem T_comm (hd : IsTypeADiagram M Adj) {i j : B} (hij : i ≠ j) (h : ¬ Adj i j) :
+    T R (v ^ 2) M i * T R (v ^ 2) M j = T R (v ^ 2) M j * T R (v ^ 2) M i := by
+  have hji : ¬ Adj j i := fun hx => h (hd.adj_symm j i hx)
+  have hb := IwahoriHecke.T_braid (R := R) (q := v ^ 2) (M := M) i j
+  rw [hd.far i j hij h, hd.far j i (Ne.symm hij) hji,
+    IwahoriHecke.altProd_two, IwahoriHecke.altProd_two] at hb
+  exact hb
+
+/-- …hence so do the `U_i`. -/
+theorem U_comm (hd : IsTypeADiagram M Adj) {i j : B} (hij : i ≠ j) (h : ¬ Adj i j) :
+    U R v M i * U R v M j = U R v M j * U R v M i := by
+  have hT := T_comm (v := v) hd hij h
+  simp only [U]
+  noncomm_ring [hT]
+
+variable (R v M Adj)
+
+/-- **The Temperley–Lieb relator**, as a relation on `H`: `U_i U_j U_i = q·U_i`
+for adjacent `i, j`. This is the *entire* difference between the two algebras. -/
+inductive TLRel : HeckeAlgebra R (v ^ 2) M → HeckeAlgebra R (v ^ 2) M → Prop
+  | adj (i j : B) (h : Adj i j) :
+      TLRel (U R v M i * U R v M j * U R v M i)
+        (algebraMap R (HeckeAlgebra R (v ^ 2) M) (v ^ 2) * U R v M i)
+
+/-- **`H_n(q)` modulo the Temperley–Lieb relators.** -/
+def HeckeTL : Type _ := RingQuot (TLRel R v M Adj)
+
+noncomputable instance : Ring (HeckeTL R v M Adj) :=
+  inferInstanceAs (Ring (RingQuot (TLRel R v M Adj)))
+
+noncomputable instance : Algebra R (HeckeTL R v M Adj) :=
+  inferInstanceAs (Algebra R (RingQuot (TLRel R v M Adj)))
+
+/-- The quotient map `H ↠ H/⟨relators⟩`. -/
+noncomputable def mkTL : HeckeAlgebra R (v ^ 2) M →ₐ[R] HeckeTL R v M Adj :=
+  RingQuot.mkAlgHom R (TLRel R v M Adj)
+
+variable {R v M Adj}
+
+/-- **The relator holds downstairs**, by construction. -/
+theorem mkTL_rel {i j : B} (h : Adj i j) :
+    mkTL R v M Adj (U R v M i * U R v M j * U R v M i)
+      = mkTL R v M Adj (algebraMap R (HeckeAlgebra R (v ^ 2) M) (v ^ 2) * U R v M i) :=
+  RingQuot.mkAlgHom_rel R (TLRel.adj (R := R) (v := v) (M := M) i j h)
+
+/-- **Uniqueness of maps out of the quotient.** `mkTL` is surjective and `H` has
+`hom_ext`, so agreement on the images of the Hecke generators suffices. -/
+theorem heckeTL_hom_ext {A : Type*} [Ring A] [Algebra R A]
+    (φ ψ : HeckeTL R v M Adj →ₐ[R] A)
+    (h : ∀ i : B, φ (mkTL R v M Adj (T R (v ^ 2) M i))
+      = ψ (mkTL R v M Adj (T R (v ^ 2) M i))) : φ = ψ := by
+  have hcomp : φ.comp (mkTL R v M Adj) = ψ.comp (mkTL R v M Adj) :=
+    IwahoriHecke.hom_ext R (v ^ 2) M _ _ h
+  apply AlgHom.ext
+  intro x
+  obtain ⟨y, rfl⟩ := RingQuot.mkAlgHom_surjective R (TLRel R v M Adj) x
+  exact congrArg (fun (α : HeckeAlgebra R (v ^ 2) M →ₐ[R] A) => α y) hcomp
+
+end Quotient
+
+section Equiv
+
+variable {R : Type*} [CommRing R] {B : Type*}
+variable {v δ : R} {M : B → B → ℕ} {Adj : B → B → Prop}
+
+/-- `heckeToTL` sends `U_i = T_i + 1` to `u_i = v·e_i`. -/
+@[simp] theorem heckeToTL_U (hδ : v * δ = v ^ 2 + 1) (hd : IsTypeADiagram M Adj) (i : B) :
+    heckeToTL hδ hd (U R v M i) = u v δ Adj i := by
+  simp only [U]
+  rw [map_add, map_one, heckeToTL_T, sub_add_cancel]
+
+/-- **Forward map** `H/⟨relators⟩ → TL`. Well-defined because `heckeToTL`
+identifies the two sides of each relator — which is `u_adj`. -/
+noncomputable def quotToTL (hδ : v * δ = v ^ 2 + 1) (hd : IsTypeADiagram M Adj) :
+    HeckeTL R v M Adj →ₐ[R] TemperleyLiebAlgebra R δ Adj :=
+  RingQuot.liftAlgHom R ⟨heckeToTL hδ hd, by
+    intro x y hxy
+    cases hxy with
+    | adj i j hij =>
+        rw [map_mul, map_mul, heckeToTL_U, heckeToTL_U, map_mul, AlgHom.commutes,
+          heckeToTL_U]
+        exact u_adj hij⟩
+
+@[simp] theorem quotToTL_mkTL (hδ : v * δ = v ^ 2 + 1) (hd : IsTypeADiagram M Adj)
+    (x : HeckeAlgebra R (v ^ 2) M) :
+    quotToTL hδ hd (mkTL R v M Adj x) = heckeToTL hδ hd x := by
+  show RingQuot.liftAlgHom R _ (RingQuot.mkAlgHom R (TLRel R v M Adj) x) = _
+  rw [RingQuot.liftAlgHom_mkAlgHom_apply]
+
+/-- The image of `U_i` downstairs, as a scalar multiple — the intended `e_i`. -/
+private noncomputable abbrev X (i : B) : HeckeTL R v M Adj := mkTL R v M Adj (U R v M i)
+
+private theorem X_sq (i : B) :
+    (X (R := R) (v := v) (M := M) (Adj := Adj) i) * X i
+      = (v ^ 2) • X (R := R) (v := v) (M := M) (Adj := Adj) i + X i := by
+  show mkTL R v M Adj _ * mkTL R v M Adj _ = _
+  rw [← map_mul, U_sq, map_add, map_mul, AlgHom.commutes, ← Algebra.smul_def]
+
+private theorem X_adj {i j : B} (h : Adj i j) :
+    (X (R := R) (v := v) (M := M) (Adj := Adj) i) * X j * X i
+      = (v ^ 2) • X (R := R) (v := v) (M := M) (Adj := Adj) i := by
+  show mkTL R v M Adj _ * mkTL R v M Adj _ * mkTL R v M Adj _ = _
+  rw [← map_mul, ← map_mul, mkTL_rel h, map_mul, AlgHom.commutes, ← Algebra.smul_def]
+
+/-- **Backward map** `TL → H/⟨relators⟩`, `e_i ↦ w·U_i`.
+
+Each of the three Temperley–Lieb relations is checked: the loop relation from
+`U_sq` (which holds in `H` before quotienting), the adjacency relation from the
+relator (the one place the quotient is used), and commutation from `U_comm`. -/
+noncomputable def tlToQuot (hδ : v * δ = v ^ 2 + 1) (hd : IsTypeADiagram M Adj)
+    {w : R} (hw : v * w = 1) :
+    TemperleyLiebAlgebra R δ Adj →ₐ[R] HeckeTL R v M Adj :=
+  TemperleyLieb.lift R δ Adj (fun i => w • X (R := R) (v := v) (M := M) (Adj := Adj) i)
+    (fun i => by
+      rw [smul_mul_smul_comm, X_sq, smul_add, smul_smul, ← Algebra.smul_def, smul_smul,
+        ← add_smul]
+      congr 1
+      linear_combination (δ * w) * hw - (w * w) * hδ)
+    (fun i j hij => by
+      rw [smul_mul_smul_comm, smul_mul_smul_comm, X_adj hij, smul_smul]
+      show (w * w * w * v ^ 2) • X (R := R) (v := v) (M := M) (Adj := Adj) i
+        = w • X (R := R) (v := v) (M := M) (Adj := Adj) i
+      congr 1
+      linear_combination (w * (w * v + 1)) * hw)
+    (fun i j hij => by
+      by_cases hne : i = j
+      · subst hne; rfl
+      · show (w • mkTL R v M Adj _) * (w • mkTL R v M Adj _) = _
+        rw [smul_mul_smul_comm, smul_mul_smul_comm, ← map_mul, ← map_mul,
+          U_comm hd hne hij])
+
+/-- **`TL_n(δ) ≅ H_n(v²) / ⟨U_i U_j U_i − v²·U_i⟩`**, as `R`-algebras.
+
+The presentation-level Temperley–Lieb theorem: `TL` is `H` with exactly one
+extra family of relations imposed. Stronger than "quotient by the kernel",
+because the ideal is *named by generators* rather than merely named.
+
+Both round trips are `hom_ext` checks on generators: `e_i ↦ w·U_i ↦ w·u_i = e_i`
+one way, and `mk(T_i) ↦ u_i − 1 ↦ mk(U_i) − 1 = mk(T_i)` the other. -/
+noncomputable def heckeTLEquiv (hδ : v * δ = v ^ 2 + 1) (hd : IsTypeADiagram M Adj)
+    {w : R} (hw : v * w = 1) :
+    HeckeTL R v M Adj ≃ₐ[R] TemperleyLiebAlgebra R δ Adj :=
+  AlgEquiv.ofAlgHom (quotToTL hδ hd) (tlToQuot hδ hd hw)
+    (by
+      apply TemperleyLieb.hom_ext
+      intro i
+      show quotToTL hδ hd (tlToQuot hδ hd hw (e R δ Adj i)) = e R δ Adj i
+      rw [tlToQuot, TemperleyLieb.lift_e]
+      show quotToTL hδ hd (w • mkTL R v M Adj (U R v M i)) = e R δ Adj i
+      rw [Algebra.smul_def, map_mul, AlgHom.commutes, quotToTL_mkTL, heckeToTL_U, u,
+        ← Algebra.smul_def, smul_smul, mul_comm w v, hw, one_smul])
+    (by
+      apply heckeTL_hom_ext
+      intro i
+      show tlToQuot hδ hd hw (quotToTL hδ hd (mkTL R v M Adj (T R (v ^ 2) M i)))
+        = mkTL R v M Adj (T R (v ^ 2) M i)
+      rw [quotToTL_mkTL, heckeToTL_T, u, map_sub, map_one, Algebra.smul_def, map_mul,
+        AlgHom.commutes]
+      show algebraMap R (HeckeTL R v M Adj) v * tlToQuot hδ hd hw (e R δ Adj i) - 1 = _
+      rw [tlToQuot, TemperleyLieb.lift_e]
+      show algebraMap R (HeckeTL R v M Adj) v * (w • mkTL R v M Adj (U R v M i)) - 1 = _
+      rw [← Algebra.smul_def, smul_smul, hw, one_smul, U, map_add, map_one,
+        add_sub_cancel_right])
+
+end Equiv
+
 /-! ## The kernel, and exactly what is still open -/
 
 section Kernel
@@ -377,45 +588,58 @@ end Kernel
 /-!
 ## 🛑 What remains open, stated precisely
 
-The paper's claim is `H_n(q)/rad ≅ TL_n(q)`, where `rad` is the null space of
-the Markov trace — `QOU.QBeta.TemperleyLiebTower.traceRadical`, already proved a
-two-sided ideal there (`traceRadical_two_sided`). Against that, this file
-supplies a surjection `H_n(v²) ↠ TL_n(δ)` and names its kernel. **Two things
-stand between that and the claim, and they are of very different kinds.**
+**An isomorphism IS proved here** — `heckeTLEquiv`:
 
-**(1) Mathematics — the ideal is not identified.**
+    TL_n(δ)  ≅  H_n(v²) / ⟨ U_i U_j U_i − v²·U_i : i ~ j ⟩ ,   U_i = T_i + 1
 
-> **Open.** `tlKernel hδ hd = traceRadical tr_M`, for the convention-D Markov
-> trace on `H_n(q)`.
+sorry-free, at general index type. What is **not** proved is that the ideal on
+the right is the **trace radical**, which is what
+`rem:hecke-radical-is-temperley-lieb` asserts.
 
-`⊆` is a computation: the relator of `tlRelator_mem_ker` generates the kernel
-(itself unproved here) and the trace kills it. `⊇` says the trace sees
-*everything* outside the ideal — semisimplicity of `TL_n(δ)` at the relevant
-`δ`, i.e. exactly the Wedderburn input this file was built to avoid needing. The
-corpus has the positivity half of that (`TemperleyLiebTower.yw_pos`,
-`terms_zero_of_weighted_sum_zero`) and does not have the block decomposition it
-would be applied to.
+> **Open.** `⟨U_i U_j U_i − v²·U_i⟩ = traceRadical tr_M`, for the convention-D
+> Markov trace on `H_n(q)` — equivalently `tlKernel hδ hd = traceRadical tr_M`.
 
-**(2) Engineering — the first isomorphism theorem is missing for this setting.**
-Even granting (1), turning "surjective with kernel `I`" into "`H/I ≅ TL`" needs
-a first isomorphism theorem for **noncommutative** rings. Mathlib's
-`Ideal.quotientKerAlgEquivOfSurjective` is stated for `Ideal`, which is
-`Submodule R R` and therefore the commutative notion; the noncommutative
-`TwoSidedIdeal` has `ker` (used above) but no quotient-equivalence under any
-`quotientKerEquivOfSurjective`-shaped name — checked across `TwoSidedIdeal/` and
-`RingTheory/Congruence/`. So that step is `RingCon` plumbing, not mathematics,
-and it is **not** done here rather than being done badly.
+`⊆` is a computation: the trace kills each relator. `⊇` says the trace sees
+*everything* outside the ideal, which is semisimplicity of `TL_n(δ)` at the
+relevant `δ` — exactly the Wedderburn input this construction was built to avoid
+needing. The corpus has the positivity half of that
+(`TemperleyLiebTower.yw_pos`, `terms_zero_of_weighted_sum_zero`) and does not
+have the block decomposition it would be applied to. That is genuine
+mathematics, and it is the whole of what is left.
 
-Nothing above asserts either item. **No class, axiom or `sorry` stands in for
-them**: `tlKernel` is a definition, `tlRelator_mem_ker` is a theorem about it,
-and both open items appear only in this comment. A conditional class asserting
-the ideal equality would satisfy the propagation audit while adding no
-mathematics, which §"Axiomatization is NOT a Proof" forbids.
+### An engineering obstruction that was routed around, not waited on
+
+The first version of this file stopped at surjectivity and recorded a second
+blocker: turning "surjective with kernel `I`" into "`H/I ≅ TL`" needs a first
+isomorphism theorem for **noncommutative** rings, and Mathlib has none usable
+here — `Ideal.quotientKerAlgEquivOfSurjective` is stated for `Ideal`, which is
+`Submodule R R` and therefore the *commutative* notion, while `TwoSidedIdeal`
+has `ker` and no quotient-equivalence under any
+`quotientKerEquivOfSurjective`-shaped name (checked across `TwoSidedIdeal/` and
+`RingTheory/Congruence/`).
+
+That is still true, and it no longer matters: quotienting by the **named
+relators** via `RingQuot` sidesteps it entirely, and gives a *stronger*
+statement than the kernel version would have — the ideal is presented by
+generators rather than merely named. Recorded because the obstruction is real
+and the next agent who wants `H/ker ≅ …` for some other map in this corpus will
+hit it.
+
+**Nothing above is asserted by a class, an axiom or a `sorry`.** `tlKernel` is a
+definition, `tlRelator_mem_ker` a theorem exhibiting one relator inside it, and
+the open item appears only in this comment. A conditional class asserting the
+ideal equality would satisfy the propagation audit while adding no mathematics,
+which §"Axiomatization is NOT a Proof" forbids.
 
 ## What this file does NOT claim
 
-* **Not** that `H_n(q)/rad ≅ TL_n(q)`, for the two reasons above.
-* **Not** that the relators generate `tlKernel` — only that one of them is in it.
+* **Not** that `H_n(q)/rad ≅ TL_n(q)`. The isomorphism proved here is modulo the
+  **relator ideal**; identifying that ideal with the trace radical is the open
+  item above.
+* **Not** that the relators generate `tlKernel` — `heckeTLEquiv` says the
+  relator quotient *is* `TL`, and `heckeToTL_surjective` says `H ↠ TL`, but the
+  equality `tlKernel = ⟨relators⟩` is not separately stated. It follows from
+  `heckeTLEquiv` and is simply not written down.
 * **Not** anything about braid groups, diagram bases, or `dim TL_n = catalan n`.
   `B` here is an arbitrary index type with an adjacency predicate; specialising
   to `Fin (n-1)` with `TemperleyLieb.adjFin` is immediate but is not done,
