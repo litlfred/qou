@@ -688,3 +688,69 @@ a reachable degeneration and the window is *not* bounded above — §10.3 weaken
 statement about the modulus $z$ rather than about $q$. §10.1, §10.2 and the Lean are
 unaffected: they are statements about $z$, and $z = -1$ is a single point regardless of
 how many $q$-preimages are physical.
+
+---
+
+# 14. `qou-kyi3` measured — and it undercuts §12's premise
+
+§12 read the regime table's "symmetric nuclei ($n = p$)" cell literally, and §12.1 flagged
+that the cell has no derivation. Running the machinery at $q<1$ now gives **positive
+evidence against the cell**, not merely an absence of support for it.
+
+## 14.1 The Wedderburn weight sum is exactly bar-even
+
+$\sum_\lambda y_\lambda(H_3)$, computed at `mp.dps` 40 via
+`wedderburn_jones_markov.y_lambda_at`:
+
+| $q$ | $S(q)$ | $S(1/q)$ | $\lvert\text{diff}\rvert$ |
+|---|---|---|---|
+| 1.1099785827513808 | 0.752702113251965401 | 0.752702113251965401 | $0$ |
+| 1.5 | 0.786982248520710059 | 0.786982248520710059 | $0$ |
+| 2.0 | 0.84 | 0.84 | $0$ |
+| 2.618033988749895 | 0.888888888888888898 | 0.888888888888888898 | $1.069\times10^{-50}$ |
+
+**Exactly bar-even**, to the full working precision, at four independent points.
+
+Two exact values fall out. At **both** golden thresholds $q = \varphi^{-2}$ and
+$q = \varphi^{2}$, $S = 8/9$ — consistent with bar-evenness, since they are reciprocal.
+And the interface limit is $S \to 3/4$ (measured $0.75000000000025$ at $q = 1+10^{-6}$,
+$0.75$ at $1+10^{-9}$), confirming §4b independently.
+
+## 14.2 Therefore the $n \neq p$ asymmetry cannot come from the weights
+
+If the weight structure is identical at $q$ and $1/q$, it cannot distinguish the
+Classical band from its bar-image. The regime table's contrast between "symmetric nuclei
+($n=p$)" and "full nuclear chart" must therefore be carried by the **writhe-odd character
+sector**, where $\chi^\lambda(\beta)$ carries $q^{w}$ and bar sends $w \mapsto -w$.
+
+The corpus supplies exactly that object.
+`mba-sidecar-isovector-chiral-residue` states the bar-odd writhe
+$\sigma - \sigma^{-1} = 4Z = 2A + 2(Z-N)$, splitting into an isoscalar part $2A$ and an
+**isovector part $2(Z-N)$**.
+
+## 14.3 The consequent prediction contradicts the table
+
+Under bar, the isovector term $2(Z-N)$ **flips sign**. If in our regime it drives the
+neutron excess ($N > Z$) that the observed chart shows at high $A$, then in the
+bar-image regime it drives the opposite: **proton excess, $Z > N$** — not $n = p$.
+
+**Scope.** The bar-evenness in §14.1 is measured and solid. The inference in §14.2 is
+sound. §14.3 is **conjectural**: it needs the sign convention on the isovector term
+checked against the producer, which has not been done. But it is a *positive* prediction
+that disagrees with the table cell, where §12.1 could only report the cell as
+underived — so §12's three signatures ($^{40}$Ca termination, the $^{8}$Be gap, and
+especially "no hydrogen") should now be treated as **resting on a cell that the
+framework's own isovector mechanism appears to contradict.**
+
+## 14.4 A defect found in passing: the interface point is not computable
+
+`y_lambda_su_n.q_int` evaluates $[m]_q = (q^m - q^{-m})/(q - q^{-1})$, which divides by
+zero at $q = 1$ — a `ZeroDivisionError`, not a guard. The singularity is **removable**
+($[m]_q \to m$), and the limit is approached cleanly from above ($0.75$ by $q = 1+10^{-9}$),
+but it is unimplemented.
+
+So **no producer in the corpus can be evaluated at the interface point itself.** Every
+$q=1$ statement in this document, §4a and §4b included, is a limit taken from one side,
+never an evaluation at the point. That is a fair way to compute the limit and it is not
+the same thing; §4b's "barrier" in particular is a statement about a limit whose
+endpoint the machinery cannot reach.
