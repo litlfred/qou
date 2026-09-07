@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: high
 created_at: 2026-07-03T19:40:00Z
-updated_at: 2026-08-31T17:50:00Z
+updated_at: 2026-09-07T07:15:15Z
 ---
 
 Branch `claude/mass-binding-gap-review-2026-07-03`. Owner: "lots new on main +
@@ -2319,3 +2319,53 @@ summary; `A=3` three-body magnitudes corrected to production's bond order; the
 two-row collapse re-attributed to the corpus's own Lean; and the twist
 quantisation's cumulative form plus the `1/3` coincidence both withdrawn. Every
 superseded probe carries a forward pointer.
+
+
+## 2026-09-07 — the review block's L2 figures are stale; the doc it fixed is now stale too
+
+Surfaced by the staleness ranking (42 commits touching this bean's paths since
+its `updated_at`). **This bean is NOT closed** — its open item, the θ_λ
+`w_n(K)` derive-or-refute, is an open research question and stays open.
+
+**The 2026-07-03 review block above is stale in every L2 figure.** It was
+correct when written; `m_p` was dropped from "meet" on **2026-07-04**, the day
+after. Live, from `per-observable-100x-status.witness.json`:
+
+| bean says | live witness |
+|---|---|
+| L2 **3/7** pass (m_e, m_p anchors + m_K/m_π) | **1/5 scoreable** (`m_K/m_π` alone); `beats_100x_scoreable=1`, `scoreable_total=5` |
+| m_μ **964×** | **970.2×** (CODATA-2018→2022 muon re-pin, `fca08de7d2`) |
+| m_n **181×** | **176.7×** |
+| Q_β **160×** | **164.0×** |
+| Δ_pn **159×** | **151.7×** |
+
+Note the direction: **3/7 counted two calibration ANCHORS as passes**, so the
+bean overstates the framework's standing. AGENTS.md's live reading is 1/5
+scoreable and **0/5 unconditional** (the one pass is truncation-fitted +
+α_em-`sorry`-conditional).
+
+**And the bean's own "currency fix" has itself gone stale — worth recording as
+a class.** The delivered item *"Currency fix (gap #5): precision-goals.md
+self-contradiction … reconciled to witness truth 3/7"* fixed a real
+contradiction, to a figure that has since moved twice. Four defects were live
+in that same document today (fixed on
+`claude/precision-goals-currency-2026-09-07`):
+
+1. The **`m_K/m_π` table row still reported the EXCISED truncation fit** —
+   `23.4 ppb` via `(3q²−1)/(2q²)`, `~11× margin`. That two-term stop was
+   excised as a fit on 2026-08-22 (PR #5467) precisely because it scored
+   better than the converged series. Live: **51.48 ppb, 5.12× margin**. §L2 of
+   the same document retired it 16 days before the table did.
+2. **`Δm_pn` stale on all four numbers** — `474 / 4.74 / 774 / ~163×` against
+   the witness's `434 / 4.34 / 658 / 151.7×`.
+3. *"the other **5** (m_p, m_μ, Q_β, m_n, Δ_pn) still miss it"* — that is
+   1+5=6 against the same document's own `scoreable_total = 5`, and counts
+   `m_p`, whose live row is `N/A (anchor round-trip)`. §L2 says in terms that
+   `m_p` "does not belong in this list at all"; this sentence *was* the list.
+4. A blockquote gave `beats_100x_count=2` as the live source — the one field
+   §L2 and §"For agents" both say "must not be quoted as an accuracy result".
+
+**The class:** a currency fix is not durable. Three of the four defects are the
+document contradicting a correction *it already carries elsewhere* — the fix
+landed in the prose and never reached the table, the summary sentence, or the
+blockquote. A grep that finds the correction reads the file as clean.
