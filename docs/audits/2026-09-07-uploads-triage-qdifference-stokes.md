@@ -153,7 +153,9 @@ entry. Rationale rewritten with the history kept, `add-reference` marked done,
    but not the `sections/`, `summary.json` or `INDEX.md` rows. The ledger rows
    point at `library/<doc-id>/<file>.pdf` as the skill prescribes; they resolve
    once the main session commits its ingestion.
-2. **#4 is un-sectioned.** `library/arxiv-0705.2975v1/` holds only the PDF — no
+2. **#4 is un-sectioned** *(resolved by the main session on the same PR: sectioned with
+   `pdf-structure`, 8 sections, INDEX row added — it was one of the 22 bare-PDF orphans)*.
+   At triage time `library/arxiv-0705.2975v1/` held only the PDF — no
    `structure.json`, no `sections/`, no `INDEX.md` row — so corpus-grep path 5
    is blind to it. Its verdict is from a `pypdf` read of the front matter and
    the theorem statements; nothing I found makes me expect a different verdict
