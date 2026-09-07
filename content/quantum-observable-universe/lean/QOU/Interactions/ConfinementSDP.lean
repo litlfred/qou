@@ -117,13 +117,35 @@ instance hasConfinementSDPStrongDuality_of_fact (n : ℕ)
     HasConfinementSDPStrongDuality n h :=
   ⟨hf.out⟩
 
-/-- **Confinement SDP — primal–dual identity (conditional on Slater).**
+/-- **Confinement SDP — primal–dual identity (conditional on a supplied
+    duality identity; the Slater hypothesis is decorative).**
 
-    Strong duality `⟨T, Φ*⟩ = n_target · y₀*` is derived **from the
-    Slater-strict feasibility hypothesis** `h : slaterStrict n` via the
-    conic-duality theorem (Boyd–Vandenberghe Thm 5.5): under a strictly
-    feasible `Φ ≻ 0` the dual is solvable and primal = dual.  The
-    conic-duality step itself is **not in Mathlib** (no SDP duality API).
+    Strong duality `⟨T, Φ*⟩ = n_target · y₀*` comes from the supplied
+    `[hi : HasConfinementSDPStrongDuality n h]`, not from `h`.  The
+    manuscript argument is the conic-duality theorem (Boyd–Vandenberghe
+    §5.2.3 + §5.3): under a strictly feasible `Φ ≻ 0` the dual is solvable
+    and primal = dual.  That step is **not in Mathlib** (no SDP duality
+    API), so it is supplied rather than derived.
+
+    **`h : slaterStrict n` does no work, and can be discharged for free**
+    (measured 2026-09-07, `lean`-direct exit 0; see
+    `slaterStrict_is_freely_dischargeable` below).  `slaterStrict` is a
+    field typed with the *universe* `Prop`, so the instance chooses the
+    proposition, and `slaterStrict := True` makes `h := trivial`.  The
+    signature therefore reads as Slater-conditional while constraining
+    nothing.
+
+    It is **not** encodable here, which is why it is documented rather
+    than fixed: Slater's condition is `∃ Φ ≻ 0 feasible`, and this class
+    carries no constraint set and no PSD order — `R_q` is
+    `LaurentPolynomial ℤ`, which carries no order at all.  Encoding it
+    needs the constraint data and an ordered evaluation layer.
+
+    **Two sentences here were false and were corrected on 2026-09-03**;
+    the lead sentence above was not among them and asserted, until
+    2026-09-07, that strong duality "is derived **from** the Slater-strict
+    feasibility hypothesis".  It is not, and the paragraph below already
+    said so — the correction reached the body and not the lead.
 
     **Two sentences here were false and are corrected (2026-09-03).** This
     docstring said the step "is discharged by `sorry` here" and that "the
@@ -158,6 +180,28 @@ theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)
   --      programs) — the conic-duality step, which Mathlib has no SDP API for.
   -- Ref: [manuscript] particle-interactions/confinement-sdp
   exact hi.strong_duality
+
+/-- **The Slater hypothesis of `ConfinementSDP` is freely dischargeable.**
+
+    `HasConfinementSDPData.slaterStrict` is typed with the universe `Prop`,
+    so an instance supplies *a proposition* rather than *the* Slater
+    condition — and `True` is a legal choice.  This exhibits such an
+    instance and discharges the hypothesis by `trivial`.
+
+    Note the statement is `∃ inst, slaterStrict` and **not** `∃ _inst,
+    True`: the latter says only that the class is inhabited, which is the
+    weak discriminator this corpus already has an audit about
+    (`2026-08-09-inhabitation-is-a-weak-discriminator`).  What is claimed
+    here is stronger and is the point — an instance whose Slater condition
+    *holds*, by `trivial`.
+
+    Kept in the file deliberately, in the idiom of
+    `TransferMatrixEigenphase`: a demonstration that a field asserts
+    nothing is the honest record while the field cannot yet be encoded. -/
+theorem slaterStrict_is_freely_dischargeable (n : ℕ) :
+    ∃ inst : HasConfinementSDPData n, @slaterStrict n inst :=
+  ⟨{ sdpCost := 0, primalOpt := 0, nTarget := 0, y0Star := 0,
+     slaterStrict := True }, trivial⟩
 
 -- The deprecated universal axiom `ConfinementSDP_axiom` has been
 -- removed. Use `ConfinementSDP` (typeclass-backed) instead.
