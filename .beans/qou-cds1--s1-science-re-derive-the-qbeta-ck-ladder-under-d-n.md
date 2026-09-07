@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T10:24:25Z
+updated_at: 2026-09-07T16:51:35Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7969,3 +7969,30 @@ Dyck-path or binary-tree bijection); `elt` spans at general m (the real content
 of dim TL_n = catalan n — needs the closure lemma on (I,J)); `elt` injective at
 general m. The two `span_range_elt_*` are proved by CITING the m = 1, 2 results
 — consistency checks, not progress on the general case. NOT closed.
+
+
+## 🟧 OWNER RULING 2026-09-07 — D7 = option 1, CHANNEL-SCOPED
+
+Convention **D governs the decay / `Q_β` channel**; the **full tower governs
+mass and binding**. Both prior rulings stand, each in its own domain
+(2026-08-15 "D canonical" → decay; 2026-09-03 "full tower", settled as all `n`
+AND all orders in `q` → mass/binding). "Canonical convention" is
+**channel-local, not corpus-global**.
+
+**What this does and does not change for this bean.** The `c_k` ladder is a
+decay-channel object, so it **stays in D** — and its C-frame results still need
+the re-derivation this bean tracks. The ruling does **not** license a `z_C →
+z_D` substitution: `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` makes the
+C-frame ladder and the mass channel's three-row forcing mutually exclusive, so
+that move is invalid regardless of which convention is canonical.
+
+**D2 is unblocked** — it could not be posed until D7 was settled.
+
+**Implementation trap, and it is this bean's own finding:** label by the
+PREDICATE (`colLen 0 ≤ 2` vs `rowLen 0 ≤ 2`), never by counting survivors. The
+row and column families are equinumerous with **equal dimension sums** (at
+`n = 3` both give 5 = catalan 3), so a count-based labelling is
+transposition-blind and mislabels *without ever producing a wrong number*. Use
+`transposeEquiv` in `QOU/MassTheory/TwoRowTwoColumnCollision.lean`.
+
+Full ruling: `docs/coordination/2026-09-05-owner-gated-bean-triage.md` §D7.
