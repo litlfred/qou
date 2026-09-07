@@ -176,7 +176,8 @@ def main():
         "caveats": [
             "The live ingredient is the FIRST one -- that b3 is carried by the "
             "count channel at all. Owner ruling A fixes the pair carrier; "
-            "dropping Brunnian-ness hits brunnian_not_pairLocal (a pair-local "
+            "dropping Brunnian-ness hits not_pairLocal_of_noIsolatedPairEnergy "
+            "(renamed 2026-09-07 from brunnian_not_pairLocal; a pair-local "
             "carrier forces b3 = 0, refuted by AME); and bRatio_scale_invariant "
             "shows mu ∝ c is not a convention one can relax. So the exclusion "
             "points back to qou-brng's original framing: the extensive term is "

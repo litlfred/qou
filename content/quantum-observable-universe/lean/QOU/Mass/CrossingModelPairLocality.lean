@@ -33,23 +33,41 @@ between two components to depend on what else is present.
   the load-bearing direction: it is a constraint the framework's carrier has to satisfy, derived
   from AME rather than assumed.
 
-## The escape is already in the corpus, and it is not a coincidence
+## The proposed escape, and why it is NOT available — CORRECTED 2026-09-07
 
-A **Brunnian** carrier is precisely a maximal violation of `PairLocal`: every two-component
-sublink is trivial, so the pair weight measured in isolation is zero, while the assembled link is
-not. The corpus already establishes that the `³He`/`⁴He` carrier `L6a4` is Brunnian
-(`QOU.Mass.BrunnianBindingChannel`, #6125), and that its binding survives the vanishing of the
-signed/linking channel through the unsigned count channel.
+This section originally read: *"A **Brunnian** carrier is precisely a maximal violation of
+`PairLocal` … the corpus already establishes that the ³He/⁴He carrier `L6a4` is Brunnian
+(`QOU.Mass.BrunnianBindingChannel`, #6125) … `b3_eq_neg_tripleMutual_of_brunnian` is the
+falsifiable payoff … Measuring `b₃` therefore pins the Brunnian triple channel to a specific
+number."*  **The escape does not work, and the cited file is what rules it out.**
 
-So `brunnian_not_pairLocal` says the Brunnian property is not a curiosity of the carrier — it is
-what saves `binding = −(mutual)` from an immediate `b₃ = 0` refutation. Read the other way: **if
-the carrier were not Brunnian (or otherwise assembly-dependent), R2 plus the AME cumulant would be
-inconsistent.**
+Two different properties were sharing the name `Brunnian`:
 
-`b3_eq_neg_tripleMutual_of_brunnian` is the falsifiable payoff. With the pair weights vanishing,
-the 3-body cumulant is *exactly* the negated triple mutual energy — no pair contamination, no
-free constant. Measuring `b₃` therefore pins the Brunnian triple channel to a specific number, and
-`tripleMutual_neg_of_b3_pos` fixes its sign from the sign of `b₃` alone.
+| | condition | true of `L6a4`? |
+|---|---|---|
+| topological (`QOU.KnotTheory.Brunnian`, `BrunnianBindingChannel`) | pairwise linking number `= 0`, i.e. `n₊ = n₋` | **yes** |
+| the hypothesis below, now `NoIsolatedPairEnergy` | pairwise mutual *energy* `w₂ = 0` | **no** |
+
+`BrunnianBindingChannel` establishes the **first** and then proves
+`brunnian_binding_survives`: for a crossing pair at `q > 1` the count channel is **strictly
+positive**, so `w₂ ≠ 0`.  Its whole point is that binding *survives* the Brunnian vanishing — the
+opposite of what the citation above claimed it established.  Independently, the AME cumulant
+`b₂ = 2.2245662` MeV refutes `w₂ = 0` outright, by the same contrapositive
+`not_pairLocal_of_b3_ne_zero` uses one hypothesis up.  Both refutations are sorry-free in
+`QOU.Mass.BrunnianHypothesisNotSatisfied`.
+
+**So the hypothesis is renamed to say what it is** (`NoIsolatedPairEnergy`), and the theorems
+below are kept and remain true — as implications with a hypothesis this carrier does not satisfy.
+`not_pairLocal_of_noIsolatedPairEnergy` is in any case redundant: `not_pairLocal_of_b3_ne_zero`
+reaches `¬PairLocal` from data with no unsatisfied hypothesis at all.
+
+**And the falsifiable payoff was collected elsewhere, as a negative.**
+`QOU.Mass.BrunnianTripleExhaustion` computes the count-channel prediction directly and gets
+`b₃/b₂ = M − 3`, an *integer* for any total crossing count `M`, against a measured ratio strictly
+inside `(0,1)`: `no_carrier_reproduces_b3` — no carrier of **any** crossing number works, missing
+by at least 55.98 % of the measured value, and the Borromean rings themselves (`M = 3`) give
+`b₃/b₂ = 0` exactly.  That is the honest state of the three-body channel; reading `b₃` off as the
+triple mutual energy would have hidden it.
 
 ## Scope
 
@@ -97,7 +115,8 @@ and the one the measured 3-body cumulant refutes. -/
 def PairLocal : Prop :=
   (∀ i j k, C.w3 i j k = C.w2 i j) ∧ (∀ i j, C.w4 i j = C.w2 i j)
 
-/-- A **Brunnian** crossing model: every two-component sublink is trivial, so a pair measured in
+/-- **`NoIsolatedPairEnergy`** (RENAMED 2026-09-07 from `Brunnian`): a crossing model in which
+a pair measured in
 isolation carries no mutual energy.
 
 **CORRECTED 2026-09-07 — this docstring cited `QOU.Mass.BrunnianBindingChannel` as
@@ -114,7 +133,7 @@ hypothesis **L6a4 does not satisfy**, and the measured `b₃` does not cleanly p
 triple channel. Independently, the measured `b₂ = 2.2245662` MeV refutes this hypothesis
 outright. Both refutations are formalised, sorry-free, in
 `QOU.Mass.BrunnianHypothesisNotSatisfied`. -/
-def Brunnian : Prop := ∀ i j, C.w2 i j = 0
+def NoIsolatedPairEnergy : Prop := ∀ i j, C.w2 i j = 0
 
 /-- The total mutual energy of the triple `{i,j,k}`: its three pairs, each measured inside the
 triple. -/
@@ -185,7 +204,7 @@ theorem not_pairLocal_of_b3_ne_zero {C : CrossingModel R} {i j k : Fin 4}
 the defining content of Brunnian-ness, that the whole is linked while every pair is not. So the
 Brunnian property is not incidental: it is what lets `binding = −(mutual energy)` coexist with a
 nonzero measured 3-body cumulant. -/
-theorem brunnian_not_pairLocal {C : CrossingModel R} (hB : C.Brunnian)
+theorem not_pairLocal_of_noIsolatedPairEnergy {C : CrossingModel R} (hB : C.NoIsolatedPairEnergy)
     {i j k : Fin 4} (h3 : C.w3 i j k ≠ 0) : ¬ C.PairLocal := by
   intro ⟨hw3, _⟩
   exact h3 (by rw [hw3 i j k, hB i j])
@@ -193,7 +212,7 @@ theorem brunnian_not_pairLocal {C : CrossingModel R} (hB : C.Brunnian)
 /-- **With a Brunnian carrier the 3-body cumulant is exactly the negated triple mutual energy.**
 No pair contamination and no free constant: the pair terms vanish identically, so the whole of
 `b₃` is the irreducibly three-body channel. Measuring `b₃` therefore pins that channel. -/
-theorem b3_eq_neg_tripleMutual_of_brunnian {C : CrossingModel R} (hB : C.Brunnian)
+theorem b3_eq_neg_tripleMutual_of_noIsolatedPairEnergy {C : CrossingModel R} (hB : C.NoIsolatedPairEnergy)
     (i j k : Fin 4) :
     C.toBindingMap.b3 i j k = - C.tripleMutual i j k := by
   have hw : ∀ a b : Fin 4, C.w2 a b = 0 := hB
@@ -220,10 +239,10 @@ open CrossingModel
 pair terms gone, `b₃ = −(triple mutual energy)` exactly, so the sign of the measured cumulant
 fixes the sign of the channel with nothing in between. AME gives `b₃ > 0`, hence an attractive
 (negative-energy) three-body mutual channel. -/
-theorem tripleMutual_neg_of_b3_pos {C : CrossingModel R} (hB : C.Brunnian)
+theorem tripleMutual_neg_of_b3_pos {C : CrossingModel R} (hB : C.NoIsolatedPairEnergy)
     {i j k : Fin 4} (hb : 0 < C.toBindingMap.b3 i j k) :
     C.tripleMutual i j k < 0 := by
-  rw [b3_eq_neg_tripleMutual_of_brunnian hB] at hb
+  rw [b3_eq_neg_tripleMutual_of_noIsolatedPairEnergy hB] at hb
   exact neg_pos.mp hb
 
 end QOU.Mass.CrossingModelPairLocality

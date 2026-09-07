@@ -1,7 +1,7 @@
 /-
 Copyright (c) 2026 litlfred. All rights reserved.
 
-# `CrossingModel.Brunnian` is NOT satisfied by the L6a4 carrier — and the corpus already proves it
+# `CrossingModel.NoIsolatedPairEnergy` is NOT satisfied by the L6a4 carrier — and the corpus already proves it
 
 `QOU.Mass.CrossingModelPairLocality` defines
 
@@ -28,7 +28,7 @@ So there are two distinct properties sharing one name:
 | name | condition | true of L6a4? |
 |---|---|---|
 | topological Brunnian | pairwise linking number `= 0`, i.e. `n₊ = n₋` | **yes** |
-| `CrossingModel.Brunnian` | pairwise mutual *energy* `w₂ = 0` | **no** |
+| `CrossingModel.NoIsolatedPairEnergy` | pairwise mutual *energy* `w₂ = 0` | **no** |
 
 and the corpus proves the first does **not** imply the second.  `QOU/Mass/`
 currently carries **three** unrelated `Brunnian` definitions
@@ -48,7 +48,7 @@ The same misreading is committed to a witness:
 `computations/probes/pair-locality-shortfall.witness.json` asserts in its
 `description` that *"With a Brunnian carrier the pair terms vanish and b3 is
 exactly the triple channel"* — while recording, in the same file,
-`b₂ = 2.2245662` MeV.  A nonzero `b₂` refutes `CrossingModel.Brunnian` outright,
+`b₂ = 2.2245662` MeV.  A nonzero `b₂` refutes `CrossingModel.NoIsolatedPairEnergy` outright,
 by exactly the contrapositive the corpus already uses one theorem over for `b₃`.
 
 ## What is here
@@ -78,11 +78,11 @@ variable {R : Type*} [CommRing R]
 AME2020 measures `b₂ = 2.2245662` MeV
 (`computations/probes/pair-locality-shortfall.witness.json`), and the pair
 cumulant of the induced binding map is `−w₂`.  So the measured two-body channel
-refutes `CrossingModel.Brunnian` on the physical carrier — the same move
+refutes `CrossingModel.NoIsolatedPairEnergy` on the physical carrier — the same move
 `not_pairLocal_of_b3_ne_zero` makes for the three-body channel, one hypothesis
 down. -/
-theorem not_brunnian_of_pair_binding_ne_zero {C : CrossingModel R} {i j : Fin 4}
-    (h : C.toBindingMap.pair i j ≠ 0) : ¬ C.Brunnian := by
+theorem not_noIsolatedPairEnergy_of_pair_binding_ne_zero {C : CrossingModel R} {i j : Fin 4}
+    (h : C.toBindingMap.pair i j ≠ 0) : ¬ C.NoIsolatedPairEnergy := by
   intro hB
   exact h (by rw [CrossingModel.toBindingMap_pair, hB i j, neg_zero])
 
@@ -94,11 +94,11 @@ is, the signed channel being empty — then for any actual crossing (`0 < m`) at
 substrate modulus `q > 1` that energy is strictly positive, so `w₂ ≠ 0`.
 
 L6a4 is a crossing pair: its six crossings distribute two to each component pair,
-with `n₊ = n₋ = 1`, so `m = 1 > 0`.  Hence `CrossingModel.Brunnian` fails for it
+with `n₊ = n₋ = 1`, so `m = 1 > 0`.  Hence `CrossingModel.NoIsolatedPairEnergy` fails for it
 on structural grounds alone, with no appeal to data. -/
-theorem not_brunnian_of_countChannel {C : CrossingModel ℝ} {i j : Fin 4}
+theorem not_noIsolatedPairEnergy_of_countChannel {C : CrossingModel ℝ} {i j : Fin 4}
     {m : ℕ} {q : ℝ} (hm : 0 < m) (hq : 1 < q)
-    (hw : C.w2 i j = countChannel m m q) : ¬ C.Brunnian := by
+    (hw : C.w2 i j = countChannel m m q) : ¬ C.NoIsolatedPairEnergy := by
   intro hB
   have hpos : 0 < countChannel m m q := brunnian_binding_survives m hm q hq
   rw [hB i j] at hw
@@ -109,7 +109,7 @@ structural route (a crossing pair has positive count-channel energy) and the
 empirical route (AME measures `b₂ ≠ 0`) independently deny the same hypothesis.
 Stated as the contrapositive: a `Brunnian` model has BOTH a vanishing pair
 binding and no crossing-pair count-channel energy. -/
-theorem brunnian_forces_both {C : CrossingModel ℝ} (hB : C.Brunnian) (i j : Fin 4) :
+theorem noIsolatedPairEnergy_forces_both {C : CrossingModel ℝ} (hB : C.NoIsolatedPairEnergy) (i j : Fin 4) :
     C.toBindingMap.pair i j = 0 ∧ C.w2 i j = 0 :=
   ⟨by rw [CrossingModel.toBindingMap_pair, hB i j, neg_zero], hB i j⟩
 
