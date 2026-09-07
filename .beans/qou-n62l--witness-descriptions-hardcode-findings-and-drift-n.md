@@ -291,3 +291,70 @@ available from re-calibration, and the ~1-in-5 "quoted history" rate stands as
 the reason each one needs reading rather than a rule. Recorded so the next
 agent does not spend the same afternoon confirming it — the measurement is
 five minutes, the implementation is not.
+
+---
+
+## 2026-09-07 — the second obvious automation, also measured, also not built
+
+The first note here retired *recalibration* (judge a prose number against its
+own quoted precision) — 3 of 218. This retires the other obvious idea, and it
+is the one I nearly shipped a wrong number for.
+
+**The idea.** Both findings triaged this session were DERIVED quantities:
+`cumulant_hierarchy`'s `3.49` is the partial sum c₂+c₃, and
+`binding_hbarq`'s `2.961 %` is a percentage gap between two emitted fields.
+Neither is in the data as a field, both are correct. So: for each flagged
+number, search simple combinations of the witness's own data values
+(`a+b`, `a−b`, `a·b`, `a/b`, `100·(a−b)/b`, `1/x`, `x·100`, …) and split the
+backlog into "the producer should emit this field" versus "genuinely
+unaccounted".
+
+**First result: 123 of 214 (57 %) DERIVED.** Which would have been a headline,
+and is worthless.
+
+**The control.** Re-run the identical search against a random number of the
+same magnitude AND the same decimal places — so the same tolerance:
+
+| sig figs | n | real | control | lift |
+|---|---|---|---|---|
+| 1 | 25 | 84 % | 84 % | **+0pp** |
+| 2 | 86 | 78 % | 74 % | +3pp |
+| 3 | 59 | 49 % | 42 % | +7pp |
+| 4 | 29 | 14 % | 7 % | +7pp |
+| 5 | 6 | 17 % | 0 % | +17pp |
+| 6 | 8 | 12 % | 0 % | +12pp |
+| **all** | **213** | **58 %** | **53 %** | **+5pp** |
+
+A +5pp lift on 213 is roughly **11 genuine derivations inside 123 matches** —
+about a 90 % false-positive rate. Every "derived" verdict would still need
+checking by hand, which is the work it existed to save.
+
+**Why, quantitatively.** A candidate quoted to two significant figures has a
+half-ulp tolerance of ~4 % of its own value, and the search covers ~260²
+ordered pairs × 7 operations ≈ 475 000 candidate results. At 4 % tolerance a
+match is close to certain. This is a multiple-comparisons failure, not a bug.
+
+**The structural fact worth keeping.** The discriminating power is entirely in
+the high-precision tail:
+
+* **1–2 significant figures — 111 of 213, 52 % of the backlog — is provably
+  beyond any such method.** 84 %/84 % and 78 %/74 %. Do not try again.
+* ≥4 significant figures (43 candidates) is the only band where the signal
+  clears the control at all (14 % vs 5 %), and even there it is ~4 real hits.
+
+**A confound I introduced and caught**, recorded because the first version of
+that table looked like evidence for the opposite conclusion. I bucketed by the
+REAL candidate's precision but let the control keep its own — and controls
+drawn from the pool skew low-precision, so they carried larger tolerances than
+the bucket. That produced "real 14 % vs control 40 %" at ≥4 sf, i.e. real
+numbers matching LESS often than random ones, which should have been the tell.
+Precision-matched controls give the table above.
+
+**Standing conclusion for this bean, now twice measured: the 172 are
+individual readings.** Neither recalibration nor derived-combination search
+buys a bulk drain. What DOES generalise is the pair of fixes, which sit at
+opposite ends and are both cheap once a candidate is read:
+
+* stale prose → make the description INTERPOLATE the value (`cumulant_hierarchy`)
+* correct prose the data cannot back → make the producer EMIT the field
+  (`binding_hbarq`)
