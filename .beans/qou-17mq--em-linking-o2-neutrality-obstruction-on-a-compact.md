@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T20:31:20Z
-updated_at: 2026-09-07T08:19:14Z
+updated_at: 2026-09-07T12:58:15Z
 ---
 
 ## WORKED 2026-08-25 — O2 applied; it excludes the contest's winner
@@ -286,3 +286,186 @@ The kernel. Round 6's named next step — the zero-mean Green's function of the
 actual fibre — is still worth doing, but this changes what it buys: it would
 fix `s` and therefore PREDICT `p`; it would not adjudicate the contest,
 because the contest has one degree of freedom and its members all fit it.
+
+## Zero mean closes c0 — PR #7080 (2026-09-07)
+
+The one free scalar in the O2-admissible kernel `kappa = coth r - c0` is NOT
+free. O2 IS the zero-mean condition, so it IS the equation for c0:
+
+    c0 = <coth>_M
+
+and on a geodesic ball in H^3 it closes, because coth r * sinh^2 r = cosh r sinh r:
+
+    c0(R) = sinh^2 R / (sinh R cosh R - R),   V = pi (sinh 2R - 2R)
+
+Verified against quadrature to 1.567e-39; limits c0 -> 2/R (R->0, Euclidean)
+and c0 -> 1 (R->inf) both correct.
+
+At the corpus's fibre volumes:
+  L6a4 / Borromean (3He)  Vol 7.3277  c0 1.56994  p 0.15288  A_zero 9.09e3
+  knot 8_11 (3H)          Vol 8.2863  c0 1.53094  p 0.15478  A_zero 9.85e3
+  figure-eight 4_1        Vol 2.0299  c0 2.13403  p 0.13004  A_zero 4.40e3
+
+Three non-circular checks, each its own assertion (7/7 pass):
+ 1. c0 >= 1 is DERIVED, not imposed — admissibility was an INPUT to round 6's
+    scan and is an OUTPUT here.
+ 2. survives round 6's own zero-crossing falsification, which contradicted
+    48 of the 140 kernels round 6 scanned.
+ 3. robust across the two A=3 links: 13.1% volume spread -> 2.55% c0, 1.24% p.
+
+Sensitivity d ln p / d ln V = 0.10279. Volume would have to be wrong 2.53x to
+move p by 10%, and 1965x to reach the Euclidean 1/3.
+
+## WHY THIS BEAN STAYS OPEN
+
+This IDENTIFIES the kernel; it does not CONFIRM it. PR #7020 proved the
+kappa(A) mirror series constrains only the product s*p, so p ~ 0.153 is
+UNFALSIFIABLE on the one measurement that motivated it. Scope (a): no proved
+invariant excludes any other kernel.
+
+Closing this needs a measurement of p independent of s — i.e. something that
+sees the SEPARATION exponent without going through the kernel. That is the
+open item; nothing here supplies it.
+
+Probe: computations/em_linking_zero_mean_closes_c0_probe.py
+Audit: docs/audits/2026-09-07-em-linking-zero-mean-closes-c0.md
+
+## And the derived c0 is INVISIBLE to the series — measured, PR #7080 (2026-09-07)
+
+The 'identifies but does not confirm' note above rested on the degeneracy
+ALGEBRA. That could have been over-modest: a derived c0 sitting at a sharp
+optimum of the fit landscape WOULD be visible to the series. Probe 4 checked.
+
+It is not. Scale-free, R^2 across the whole c0 = 0..7.5 scan spans
+0.9625-0.9800 — a spread of 0.0175, SMALLER than the 0.0200 of variance the
+best member leaves unexplained. Between-model variation below within-model
+residual is the precise sense in which this observable cannot rank these
+kernels. The derived c0 = 1.5699 lands at R^2 = 0.9746: sixth of nine, 0.0054
+from the top of a 0.0175-wide range. Both other fibres sit alongside it.
+
+THE METRIC TRAP, worth carrying forward because it nearly became a claim.
+rms of ln(alpha) on ln(A), with alpha = acoth(kappa + c0), falls monotonically
+0.03461 -> 0.00760 across the scan, a factor of 4.56 — apparently a decisive
+ranking that picks the LARGEST c0. Artifact: as c0 grows, acoth(kappa + c0)
+-> 1/c0, a constant, and a constant lies on a power law trivially with p -> 0.
+The p column collapses in lockstep, 0.3291 -> 0.0550. The metric rewards a
+kernel for flattening the quantity whose variation it is meant to explain.
+Any future scoring on this front must be scale-free (R^2, rms/span) or it will
+reproduce this.
+
+TWO SIDE FINDINGS ON ROUND 6, whose numerical case was computed with p pinned
+at 1/3. With p freed and the metric scale-free: the landscape is FLAT, not
+monotone rising; and its shallow optimum is at c0 ~ 0.25-0.50 — inadmissible
+(below the O2 floor) but NOT at c0 = 0, so it does not favour the unsubtracted
+incumbent either. A LOCATION, not a preference: 0.0054 in R^2 over 29 points
+discriminates nothing. Independent of, and consistent with, #7020's correction
+of the same audit.
+
+ONE TEST BANKED AS VACUOUS. alpha = acoth(kappa + c0) is real only for
+kappa + c0 > 1, which looks like a falsification test. It cannot fail:
+min(kappa) = 1.4020 > 1 over the bound series, so it holds for ANY c0 >= 0.
+
+## WHAT WOULD CLOSE THIS BEAN — sharpened
+
+Unchanged in kind, sharper in degree: a measurement of p independent of s.
+Probe 4 now bounds how badly the kappa(A) series fails to supply one — it
+cannot even rank c0 across a range spanning admissible and inadmissible
+members, so no refinement of THIS observable will help.
+
+Candidate route, NOT yet attempted: inter-cusp geodesic distance in the
+per-atom link complements (L6a4 for 3He, 8_11 for 3H, ...) as a function of A.
+That is a topological invariant of objects the corpus already assigns, and it
+sees the separation without passing through the kernel. Blocked in this
+container: snappy and spherogram are both absent (mpmath/numpy/sympy present,
+scipy absent). A corpus-grep for prior art on this was launched and had not
+returned when this was written.
+
+Probe: computations/em_linking_derived_c0_is_invisible_to_the_series_probe.py
+
+## CORRECTION to my own entry above, and to a corpus-grep report (2026-09-07)
+
+I wrote above that the inter-cusp route is "Blocked in this container: snappy
+and spherogram are both absent". That names the WRONG blocker and would send
+the next agent to install a package. Installing SnapPy would not unblock it.
+
+THE REAL BLOCKER: there is no derived atom->knot map beyond A <= 3. The
+hyperbolic geometry the corpus has sits on HAND-ASSIGNED links (Hopf at A=2,
+8_11 and L6a4 at A=3), and PR #1421 records "no derived atom->knot rule".
+A=4's Vol_4 ~ 8.05 is an INVERSION of the bond tower against AME (a fit,
+he4_vol4_prediction_test_probe.py, and conj:canonical-knot-id-sdp is open);
+A=5 carries nothing at all. So even with SnapPy installed there are at most
+three links at two distinct A values. You cannot measure an exponent in A
+from that, whatever geometry you compute on them.
+
+THE SURFACE IS GENUINELY UNTOUCHED, established vocabulary-independently.
+Enumerating the SnapPy API the corpus actually calls, across all of
+computations/:
+    202 .volume(   50 .num_cusps(   19 .tetrahedra_shapes(
+      8 .complex_volume(   2 .cusp_info(   2 .cusp_areas(
+      1 .cusp_translations(
+and ZERO .length_spectrum / .dirichlet_domain / .horoball_list / .drill /
+.cusp_neighborhood. No geodesic length spectrum, no horoball diagram, no
+drilled or inter-cusp distance has ever been computed here. That is stronger
+than an empty grep because it keys on the API rather than on a chosen word.
+Note also that .cusp_translations measures translation lengths ON the cusp
+torus -- a DIFFERENT object from the geodesic distance BETWEEN two cusps, and
+2026-07-04-em-linking-cusp-geometry-excluded.md is titled as though the whole
+class were closed when what it closes is the RATIO hypothesis at A=3.
+
+## DO NOT CITE THE "TRIPLE REFUTATION" -- ITS THIRD LEG NEVER RAN
+
+computations/probes/binding_volume_difference_probe.py has a description
+claiming a triple refutation, whose observable C is "SnapPy on the derived
+braid closures returns Vol ~ 0 at every A -- closures are non-hyperbolic /
+Seifert-fibred". A corpus-grep report handed me that as settled fact. It is
+not, and the probe SAYS SO in its own add_caveat:
+
+    "Observable C ... was NOT EVALUATED: SnapPy is not installed, and
+     _snappy_braid_vols returns (None, None, False) on ImportError --
+     indistinguishable at the call site from a genuine non-hyperbolic
+     result. vol_free is null in the committed witness as well, so C has
+     never been evaluated in this repo. ... the 'triple refutation' in the
+     description and the 'refuted -- closures non-hyperbolic' conclusion
+     overstate what ran (bean qou-26f2)."
+
+So the derived braid closures are UNMEASURED, not refuted. Anyone reading the
+description alone will treat this route as structurally dead when it is merely
+untested -- and will then not bother installing SnapPy, which is the one thing
+that WOULD settle observable C. Observables A (log-volume, kappa spans 313%)
+and B (cosh-inversion degenerate, all |tr_M| < 2, elliptic, so no real
+translation length) DID run and stand.
+
+Reusable lesson, and it is the corpus-grep discipline one level up: a witness
+DESCRIPTION is not a primary source either. Read the caveats.
+
+## A SECOND BLINDNESS TO THE SEPARATION LAW -- Lean-proved, scope (b)
+
+QOU/Mass/HyperbolicSurfaceLaw.lean:244, sorry-free (verified: the only
+"sorry" string in the file is the phrase "sorry-free" in a docstring about
+CrossedModuleSurfaceHolonomy.lean, so a naive grep -c reads 1 and is wrong):
+
+    theorem hyperbolic_not_hasBulk (Rof : R -> R) (hR : forall A, 0 < Rof A) :
+        not (HasBulk (hypSurfaceCount Rof))
+
+READ THE BINDER: Rof is quantified over ANY positive radius assignment, so the
+surface fraction CANNOT SEE R(A) -- for the same reason, structurally, that the
+kappa(A) series cannot see p (#7020) and cannot see c0 (#7080). That is now
+THREE observables blind to the separation law, and this one carries a proved
+invariant, so unlike the other two it is quotable as a scope-(b) exclusion.
+
+## ALSO NOT NOVEL -- alpha ~ ln A is already in the corpus
+
+The hyperbolic objection to a power law (V(R) ~ (pi/2)e^{2R} so R ~ (1/2)ln V,
+and an extensive carrier then gives alpha ~ ln A rather than A^p) is already
+scored on this series at 9.253% (em_linking_alpha_scaling_provenance_probe),
+and the ADDITIVE form is already in the merged degeneracy probe. Do not
+re-derive it.
+
+## WHAT WOULD ACTUALLY CLOSE THIS BEAN, restated
+
+Not a geometry computation on three hand-assigned links. Either:
+  (i) a DERIVED atom->knot rule at A >= 4 (conj:canonical-knot-id-sdp), which
+      would make a geometric length-vs-A measurable at all; or
+  (ii) an observable outside the {kappa(A), surface-fraction} pair that is not
+      blind to R(A) -- and the Lean above is a warning that blindness here is
+      the rule rather than the exception.
