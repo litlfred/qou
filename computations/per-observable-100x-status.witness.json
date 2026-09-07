@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T11:26:45.189233+00:00",
-  "commitSha": "c33a59d6b5088c9c78434e48bbd0adfb056766e8",
+  "computedAt": "2026-09-07T12:39:23.791629+00:00",
+  "commitSha": "6e310490a1329a86ceb1898669aada8800871d36",
   "assertions": [
     {
       "name": "summary_total_observables",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "per-observable-100x-status",
   "scriptFile": "per_observable_100x_status.py",
-  "scriptHash": "69aae941754c",
-  "scriptCommitSha": "41df0a3d94bc2a2911457ff97fcdfbf5c1cdd078",
+  "scriptHash": "66f1e9466de8",
+  "scriptCommitSha": "d626761a34ecba5c017ee0db5ceab543ccc87a86",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -100,7 +100,7 @@
         "note": null,
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
-        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json. ⚠ CONVENTION FRAME: this prediction was built in Markov convention C, which the owner ruling of 2026-08-15 EXCISED in favour of D (z = q³/(q²+1)). The induced error is NOT quantified here and that is deliberate: qbeta_ck_cache.py raises SystemExit(2) under D, so no D-frame counterpart exists to difference against — this figure is currently UNREPRODUCIBLE under the canonical convention. Re-derivation is tracked as bean qou-cds1 and is not a z-swap (the 2026-08-30 bar-weight prune showed the obstruction is the offset, not z). Applies to the m_n and Δ_pn rows too, which are derived from this value.",
+        "source_witness": "Q_N2 from qbeta-ck-cache.witness.json (deepest DERIVED-tier rung). c_2 = -1 PROVED via qou:QOU.BraidKnot.q_beta_categorical_precision_ladder + Kashiwara N2_factor. Higher c_k are tier='cal-anchored' (extracted from CODATA Q_β, circular, q₀-dependent) — cached for downstream reuse but NOT credited as a prediction. See deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md and qbeta-scaling-bridge-investigation.witness.json. ⚠ CONVENTION FRAME: this prediction was built in Markov convention C, which the owner ruling of 2026-08-15 EXCISED in favour of D (z = q³/(q²+1)). The induced error is NOT quantified here and that is deliberate: qbeta_ck_cache.py raises SystemExit(2) under D, so no D-frame counterpart exists to difference against — this figure is currently UNREPRODUCIBLE under the canonical convention. Re-derivation is tracked as bean qou-cds1 and is not a z-swap (the 2026-08-30 bar-weight prune showed the obstruction is the offset, not z). Applies to the m_n and Δ_pn rows too, which are derived from this value. 🛑 FUNCTIONAL ADMISSIBILITY (separate from, and stronger than, the convention-frame note above): the base closed form this ladder sits on solves to Markov parameter z = 1, which is NOT one of the admissible roots under convention D (q, q**3/(q**2 + 1)) — ConventionDAdmissibleRoots.lean, sorry-free, and qbeta-published-form-is-the-inadmissible-z1.witness.json (15/15, exact over Q(q)). The best ADMISSIBLE cell is 12.470022% (the augmentation on Delta_S) against the published 0.16776% -- 74.3x worse, BASE TO BASE. Do NOT relate either to the value scored here: that is post-ladder, and no ladder exists on an admissible base (qou-cds1), so what it would become is UNKNOWN. Which functional to adopt is an open owner decision (bean qou-99qc).",
         "sigma_source": "codata_constants.Q_BETA_MEV (← cal-3-q-beta.witness.json; CODATA validation value — Q_β is derived, not CAL-3)",
         "compute_truncation_ppb": "1.278e-51",
         "compute_output_dps": 60
@@ -117,7 +117,7 @@
         "miss_factor": "176.7",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
-        "note": null,
+        "note": "INHERITS THE Q_beta CONVENTION FRAME: this value is m_p(substrate) + Q_beta + m_e, and the Q_beta term was built in Markov convention C, excised by the owner ruling of 2026-08-15 in favour of D. Not reproducible under the canonical convention (bean qou-cds1).  INHERITS THE Q_beta FUNCTIONAL ADMISSIBILITY DEFECT: the Q_beta term's base closed form solves to Markov parameter z = 1, which convention D excludes (admissible roots: q, q**3/(q**2 + 1); ConventionDAdmissibleRoots.lean, sorry-free). The best admissible cell is 12.470022% on Delta_S, so the published base of 0.16776% -- 74.3x worse, base to base. So the miss shown here understates the gap by an amount that is NOT yet quantifiable: no c_k ladder has been derived on an admissible base (qou-cds1). Which functional to adopt is an open owner decision (bean qou-99qc).",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=2) + m_e; no flavor-split — per PR #1298 gap diagnostic",
@@ -137,7 +137,7 @@
         "miss_factor": "151.7",
         "roundtrip_residual_ppb": null,
         "is_anchor_roundtrip": false,
-        "note": null,
+        "note": "INHERITS THE Q_beta CONVENTION FRAME: this value is m_p(substrate) + Q_beta + m_e, and the Q_beta term was built in Markov convention C, excised by the owner ruling of 2026-08-15 in favour of D. Not reproducible under the canonical convention (bean qou-cds1).  INHERITS THE Q_beta FUNCTIONAL ADMISSIBILITY DEFECT: the Q_beta term's base closed form solves to Markov parameter z = 1, which convention D excludes (admissible roots: q, q**3/(q**2 + 1); ConventionDAdmissibleRoots.lean, sorry-free). The best admissible cell is 12.470022% on Delta_S, so the published base of 0.16776% -- 74.3x worse, base to base. So the miss shown here understates the gap by an amount that is NOT yet quantifiable: no c_k ladder has been derived on an admissible base (qou-cds1). Which functional to adopt is an open owner decision (bean qou-99qc).",
         "beats_1x_experimental": false,
         "beats_100x_experimental": false,
         "source_witness": "Path C: m_n = m_p(substrate) + Q_β(N=2) + m_e; no flavor-split — per PR #1298 gap diagnostic",
@@ -234,6 +234,24 @@
       "induced_error_unquantifiable_reason": "qbeta_ck_cache.py raises SystemExit(2) under convention D ('convention D has no derived c_k ladder'), so no D-frame counterpart of this prediction exists to difference against.",
       "reproducible_under_canonical_convention": false,
       "tracked_by": "qou-cds1"
+    },
+    "functional_admissibility_qbeta": {
+      "status": "INADMISSIBLE_FUNCTIONAL",
+      "scored_prediction_rests_on_z": "1",
+      "admissible_roots_under_D": [
+        "q",
+        "q**3/(q**2 + 1)"
+      ],
+      "err_pct_by_functional": {
+        "z=1 (published, INADMISSIBLE)": "0.16775687",
+        "z=q (augmentation)": "12.470022",
+        "z=z_D (Markov, convention D)": "-43.157175"
+      },
+      "best_admissible_err_pct": "12.470022",
+      "source_witness": "qbeta-published-form-is-the-inadmissible-z1.witness.json",
+      "lean": "QOU.QBeta.ConventionDAdmissibleRoots (sorry-free)",
+      "probe_assertions_failed": null,
+      "note": "STRONGER THAN THE CONVENTION-FRAME NOTE, AND SEPARATE FROM IT. That note says the c_k LADDER is convention-C. This says the BASE the ladder sits on uses a functional convention D provably excludes: the published closed form solves to z = 1, which is not a root of the (1^3) weight numerator. The best ADMISSIBLE cell is +12.47% (the augmentation on Delta_S) against the published 0.16776% -- 74.3x worse, BASE TO BASE. Do NOT relate either to the 1279 ppb scored here: that is the post-ladder value, and no ladder has been derived on an admissible base, so what it would become is UNKNOWN. Which functional to adopt is an open owner decision (seven options, docs/audits/2026-09-05-qbeta-functional-decision-options.md, bean qou-99qc); that the scored value rests on an excluded one is true under all of them. Applies to the m_n and Delta_pn rows, which are derived from this value -- and unlike the convention note, it is written ONTO those rows rather than cross-referenced from this one."
     },
     "upstream_witness_hashes": [
       {
