@@ -104,7 +104,51 @@ from _precision import fmt, set_compute_dps                # noqa: E402
 set_compute_dps()
 
 SKIP_DIRS = ("_deprecated", "__pycache__", "node_modules", ".git")
+# A decimal number that is NOT part of an identifier.
+#
+# The lookbehind drops digits glued to a preceding character -- `A5.4` (a bean
+# section), `v1.2`. Label words (`Phase 1.3`, `Step 23.5`) cannot go in the
+# same regex: Python's `re` requires a FIXED-WIDTH lookbehind and an
+# alternation is not, so they are filtered afterwards by `prose_numbers`.
+#
+# Both classes came out of reading a 10-witness sample of the findings: 4 of
+# the 10 were false positives and these were half. A detector that reports a
+# section number as a drifted measurement trains its reader to skim.
 NUM = re.compile(r"-?\d+\.\d+(?:[eE][-+]?\d+)?")
+_LABEL_BEFORE = re.compile(
+    r"(?:phase|step|section|item|rule|figure|fig|table|tier|round|part|pr|v)"
+    r"[\s.#-]*$", re.IGNORECASE)
+
+
+def prose_numbers(text: str) -> list[str]:
+    """Decimal numbers in prose, minus the ones that are labels.
+
+    Filters WHOLE matches rather than constraining the pattern. A lookbehind
+    inside the regex looked equivalent and was not: `(?<![0-9A-Za-z.])-?\d...`
+    puts the guard before the OPTIONAL SIGN, so where a `-` follows an
+    alphanumeric the engine is blocked at the sign and RETRIES at the digit --
+    turning `-3.79` into `3.79`. That flips the sign, changes the distance to
+    the nearest data value, and INVENTS findings: two witnesses gained
+    candidates while the population overall fell, and the ratchet refused the
+    rebaseline over it. Deciding to keep or drop the match the plain pattern
+    already found has no retry to exploit.
+
+    Dropped: digits glued to a preceding character (`A5.4`, a bean section) and
+    digits after a label word (`Phase 1.3`, `Step 23.5`, `Rule 14.2`). Both
+    classes came from reading a 10-witness sample of the findings, in which 4
+    of 10 were false positives and these were half of them.
+    """
+    out = []
+    for m in NUM.finditer(text):
+        before = text[:m.start()]
+        if before and (before[-1].isalnum() or before[-1] == "."):
+            continue                       # A5.4, v1.2, 3.14.15
+        if _LABEL_BEFORE.search(before[-12:]):
+            continue                       # Phase 1.3, Step 23.5
+        out.append(m.group(0))
+    return out
+
+
 ROUNDING_REL = 5e-3
 NEAR_REL = 5e-2
 # Above this the prose number is almost certainly a DIFFERENT quantity -- an
@@ -201,7 +245,7 @@ def scan_witness(doc: dict):
     body = json.dumps(rest)
     vals = _numbers_in(rest)
     out = []
-    for raw in dict.fromkeys(NUM.findall(desc)):     # de-dup, keep order
+    for raw in dict.fromkeys(prose_numbers(desc)):     # de-dup, keep order
         try:
             x = float(raw)
         except ValueError:
@@ -289,6 +333,14 @@ def _selftest() -> int:
         ({"description": "value 7.5", "count": 0, "flag": 0.0}, [],
          "ZEROS DROPPED: |0-x|/|x| is exactly 1.0 for every x, which would "
          "otherwise flag every prose number in every witness holding a zero"),
+        ({"description": "A5.4 (bean qou-3yxn) extends it", "x": "1.0"}, [],
+         "IDENTIFIER: digits glued to a letter are a section, not a value"),
+        ({"description": "Phase 1.3 prototype", "x": "1.0"}, [],
+         "LABEL: 'Phase 1.3' is a label, not a measurement"),
+        ({"description": "Step 23.5 said otherwise", "x": "1.0"}, [],
+         "LABEL: same for Step/Rule/Figure/Table/Item/Section"),
+        ({"description": "the ratio is 5.73", "r": "3.8677"}, ["5.73"],
+         "...and a bare number after ordinary words is still reported"),
     ]
     bad = 0
     for doc, want, why in cases:

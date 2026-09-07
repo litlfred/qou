@@ -194,3 +194,63 @@ It found stale DIGITS. Fixing them found a stale COUNT and a stale CONCLUSION,
 neither of which any number-matching rule could reach. The detector's value is
 as a triage pointer to descriptions worth reading — which is what its docstring
 claims and, on this evidence, understates.
+
+---
+
+## 2026-09-07 (later) — sampled the backlog, then fixed what the sample showed
+
+The 183 remaining candidates were unexamined, so the honest question was
+whether that is a backlog or noise. Read a random sample of **10**:
+
+| witness | flagged | verdict |
+|---|---|---|
+| `qbeta-5two-n5-cable-qstar` | 5.4 | **false** — `A5.4`, a bean section |
+| `derived-chi-catalogue-matrix-m-mu-n-prototype` | 1.3 | **false** — `Phase 1.3` |
+| `proton-m_e-derivation` | 1.4283 | **false** — explicitly a DEPRECATED literal being named |
+| `qbeta-level-k-operator-and-real-decays` | 8.9 | **false** — a superseded control being CORRECTED |
+| the other six | — | plausible real quantities (ratios, exponents, residuals) |
+
+**4 of 10 false positives, in two clean classes.**
+
+**Class 1 — identifiers. Fixed.** `A5.4`, `Phase 1.3`, `Step 23.5`, `Rule 14.2`
+are labels, not measurements. A negative lookbehind drops digits glued to a
+preceding character; the label words needed a post-filter instead, because
+Python's `re` requires a FIXED-WIDTH lookbehind and an alternation is not one.
+Population: **183 → 172 witnesses, 234 → 218 numbers.** Selftest 10 → 14 cases.
+
+**Class 2 — deliberately quoted superseded values. NOT fixable statically, and
+should not be.** `proton-m_e-derivation` names the deprecated literal it
+replaced; `qbeta-level-k` quotes the control figure it corrects. Both are
+exactly the shape of this branch's own withdrawal sentences in
+`rho-binding-constancy` and `cancellation-ascaling`. Quoting the number you are
+retiring is GOOD practice, and no rule that reads only digits can tell it from
+a claim that went stale. The docstring already says so; the sample now
+quantifies it at roughly 2 in 10.
+
+**Read that as: the 173 is a triage list of which perhaps a fifth is quoted
+history.** It is not 173 defects, and reporting it as one would be the same
+overstatement this bean exists to catch.
+
+### The ratchet caught my "improvement" regressing
+
+The first version of the identifier filter put the guard inside the pattern:
+`(?<![0-9A-Za-z.])-?\d+\.\d+`. That looked equivalent and was not. The
+lookbehind sits before the **optional sign**, so where a `-` follows an
+alphanumeric the engine is blocked at the sign and **retries at the digit** —
+turning `-3.79` into `3.79`. Flipping the sign changes the distance to the
+nearest data value, so it INVENTED findings: two witnesses gained candidates
+even as the population fell.
+
+`--rebaseline` refused, because per-file counts had gone UP:
+
+    NEW   probes/c5_sign_is_robust_convergence_claim_is_not_probe   (2)
+    GREW  probes/the_intra_ordering_moves_absolute_traces...        5 -> 6
+
+I would have taken the falling total as success. The ratchet's per-file
+accounting is what stopped it, on its first outing against a change of mine —
+which is the argument for `--rebaseline` refusing on any increase rather than
+on a net increase.
+
+Fixed by filtering WHOLE matches the plain pattern already found, which has no
+retry to exploit. Verified against those two witnesses specifically: no
+candidate the old pattern did not also produce.
