@@ -6,7 +6,8 @@ import Mathlib.Data.List.Basic
 # QOU.KnotTheory.Brunnian — Brunnian property of the Borromean rings
 
 The defining property of a Brunnian link is that every proper
-sub-link is the unlink.  For the Borromean rings `𝓑₃`
+sub-link is the unlink.  **This is the TRUE property (tier 1)**; three weaker or
+unrelated conditions elsewhere in the corpus also carry the name — Tier table for the four things this corpus calls `Brunnian`, and which implications hold: `QOU.Mass.BrunnianTierDisambiguation`.  For the Borromean rings `𝓑₃`
 (`borromeanRings` in `QOU.KnotTheory`) this says: removing any
 one of the three components leaves the trivial two-component
 unlink `U₂`.

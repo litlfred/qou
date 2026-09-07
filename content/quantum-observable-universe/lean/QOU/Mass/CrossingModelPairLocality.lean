@@ -132,7 +132,7 @@ Consequently `b3_eq_neg_tripleMutual_of_brunnian` below is a correct theorem who
 hypothesis **L6a4 does not satisfy**, and the measured `b₃` does not cleanly pin the
 triple channel. Independently, the measured `b₂ = 2.2245662` MeV refutes this hypothesis
 outright. Both refutations are formalised, sorry-free, in
-`QOU.Mass.BrunnianHypothesisNotSatisfied`. -/
+`QOU.Mass.BrunnianHypothesisNotSatisfied`.  Tier table for the four things this corpus calls `Brunnian`, and which implications hold: `QOU.Mass.BrunnianTierDisambiguation`. -/
 def NoIsolatedPairEnergy : Prop := ∀ i j, C.w2 i j = 0
 
 /-- The total mutual energy of the triple `{i,j,k}`: its three pairs, each measured inside the
