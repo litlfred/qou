@@ -479,3 +479,53 @@ gauge.  This is a point-level fact about the class-1 point, not an identity of m
 variety; it says nothing yet about whether `rho -> rho^{-T}` on REPRESENTATIONS induces
 `sigma_b` (the remaining content of this bean), and it selects which sigma that
 identification would have to name.  Rule 13a: not closed.
+
+---
+
+## UPDATE 2026-09-07 (sixth pass) — the coboundary test is BLOCKED at the data, not the maths
+
+Issue #7092 asks the falsifiable question: is the duality/sigma ratio a COBOUNDARY?
+snappy supplies exactly the right object -- `_ptolemy_equations_action_by_decoration_change(3)`
+is a **128 x 6** exponent matrix (3 cusps x 2 diagonal entries), so the gauge is
+`c_p -> prod_k z_k^{M[p][k]} c_p`, and the test needs **no unknowns at all**: any integer
+vector in the LEFT KERNEL of `M` forces `prod_t r_t^{n_t} = 1` whatever the gauge is.
+
+**It cannot be run on the recorded point.**  `L6a4-c1-ptolemy-in-K.json` holds 26
+coordinates from `eliminate_fixed_ptolemys=True`.  The {1,1,1,0} duality formula needs 8
+coordinates per tetrahedron; measured, **at most 2 of the 8 are present on any
+tetrahedron**.
+
+### The reconstruction attempt, and why it is unverifiable
+
+Propagating along snappy's 112 identifications takes 26 known coordinates to 98, leaving
+6 unknown, constrained by 27 equations -- apparently determined.  It is not usable:
+
+    identifications relating TWO coordinates I already know:  0
+
+The recorded 26 are exactly **one representative per identification class** -- that is what
+the elimination does.  So no propagated value can be cross-checked against the file, and
+when the 6-unknown solve returns 0 solutions there is no way to attribute it: untwisted
+identifications (snappy returns only `+-1`, while a nontrivial generalized obstruction
+class twists by cube roots of unity), a sign-orientation convention, or something else.
+An unverifiable reconstruction feeding an inconsistent solve is not evidence.
+
+### Two bugs of my own, both surfaced by the solve returning 0
+
+1. The first propagation **ignored the sign field** -- 8 of the 112 relations carry `-1`.
+   With signs honoured all 12 fully-determined equations pass (0 non-zero); the earlier
+   "10 non-zero" was contamination from setting the unknowns to 1.
+2. **`u` was left in the unknowns list** -- the cube root of unity, which is KNOWN -- so it
+   was solved for and substituted at the same time.  6 unknowns, not 7.
+
+Fixing both still leaves the reconstruction unverifiable, so neither bug is the blocker.
+
+### The fix is at the producer
+
+Re-run the exact-point producer with `eliminate_fixed_ptolemys=False` (or record BOTH
+forms) so the full assignment is on disk rather than inferred.  Then the coboundary test
+is short: ratio vector, integer left-kernel of the 128 x 6 matrix, check
+`prod r_t^{n_t} = 1`.  Recorded in
+`computations/ptolemy/ptolemy_full_assignment_reconstruction_blocked.py`.
+
+Bean stays OPEN.  Nothing here bears on whether duality equals the sigma-transport; it is
+a statement about the recorded artifact.
