@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T06:24:35Z
-updated_at: 2026-09-07T06:25:33Z
+updated_at: 2026-09-07T06:27:44Z
 ---
 
 Owner directive 2026-09-07: *"Take up idle as relevant. Do q-native alien calculus.
@@ -118,3 +118,56 @@ Not nothing, and the honest residue is narrow:
 the smallest sequence that would tell us whether that is even the right target, with
 each step falsifiable and cheap, and with the anti-fit gate stated before any constant
 is computed. Plan follows in the next update, after the corpus-grep returns.
+
+
+---
+
+# The acceptance criterion for "q-native" (R7's demand, answered first)
+
+R7 says the plan rots without a falsifiable definition of the target. So here it is,
+**before any lemma**. A construction counts as a **q-native alien derivation** iff all
+four hold:
+
+**(A) Domain.** It is defined for a q-Gevrey series of the corpus's actual class —
+`deg_q(c_n) = n²` (proved for C1, `C1InfDegreeLaw`) — and **not merely** for classical
+Gevrey-1. A construction that needs `n!`-type growth is classical machinery wearing a
+`q`.
+
+**(B) Twisted Leibniz.** Its product rule is stated and proved for the **σ-twisted**
+product — `Δ(fg) = Δ(f)·g + σ(f)·Δ(g)` with `σ` the q-shift `f(z) ↦ f(qz)` — not the
+untwisted classical rule. The classical rule must be recovered only in a limit the
+construction never takes.
+
+**(C) Commutation with the q-difference operator, not `d/dz`.** Classically the
+alien derivative is normalised so `Δ̇_ω = e^{−ωz}Δ_ω` commutes with `d/dz`. The
+q-native statement must commute (up to the analogous twist) with `σ_q`. **This is the
+criterion that RSZ failed** — its machinery is filtration-based, and the closure audit's
+whole point is that alien derivations need no filtration.
+
+**(D) No archimedean or confluence dependence in the import cone.** MECHANICALLY
+CHECKABLE, and this is the one that makes the criterion real rather than rhetorical:
+nothing in the cone may assume continuity in `z`, a `q → 1` limit, or a classical
+Borel-plane geometry. The closure audit states C1 **cannot** be confluenced, so any
+such dependence is a silent falsehood.
+
+## Why (D) is the load-bearing one
+
+(A)–(C) are mathematical judgements a reviewer must make. **(D) is a static analysis a
+script can run**, and it converts R2 — "the classical bricks are attractive and wrong" —
+from a worry into a measurement.
+
+That gives the epic its first brick, and it is deliberately **not** a formalization:
+
+> **Brick 0 — triage the existing alien/Borel surface q-native vs classical-only, by
+> import cone and by whether each statement quantifies over a q-difference operator at
+> all.**
+
+Cheap, falsifiable, no new mathematics, and it either de-risks the largest objection or
+kills the route early. If Brick 0 finds the surface is classical-only, then the corpus's
+"large alien machinery" is a liability rather than an asset, R1 and R2 both bite hard,
+and the honest report is that this frontier is much further away than the file count
+suggests.
+
+**Note what Brick 0 is NOT:** it is not "check the files are sorry-free." They already
+are. Sorry-freeness says the proofs are complete; it says nothing about whether the
+statements apply to a q-difference object. That distinction is the whole of R2.
