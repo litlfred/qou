@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-07T09:31:51Z
+updated_at: 2026-09-07T10:18:58Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -646,3 +646,26 @@ The merged DisjointBlockTraceLaw.tr_mul_gen_comb does NOT cover this: averaged_w
 constant combination of the two generators once delta enters. No Lean claim is made.
 
 STILL OPEN: A >= 6; A=4/A=5 at K=3 (A=4 at K=3 is ~25x A=3); order 5+.
+
+
+2026-09-07 (order 5): all three identities hold one order further, and pp = z is EVIDENCE for the
+TwoSidedMarkov premise. Same probe, section 6 (241-244s per bond, 730s total, recorded).
+
+    pp = z                        HOLDS   (1/2, 1, 1/4, -1/4, 1/8, 0)
+    nn = z' = z - h               HOLDS   (1/2, -1, 5/4, -5/4, 9/8, -1)
+    pn = z + d_averaged_weighted  HOLDS   (1/2, 0, 3/4, -3/4, 31/24, -5/2)
+    pn = z + d_averaged           ruled out again (eps^5: -1/2 vs -5/2)
+
+So the kind determination stands at TWO orders as well as on two objects.
+
+WHY IT MATTERS BEYOND "one more order". pp's letter has d = 0, so pp = z IS the statement
+tr(a.sigma) = tr(a).z -- the premise of TwoSidedMarkov, the class every theorem in
+DisjointBlockTraceLaw is conditional on and which has NO INSTANCE. Six coefficients now, including
+eps^5 where z's own coefficient is 0 (a zero predicted and a zero measured, not vacuous). This is
+EVIDENCE and discharges nothing: conditional-proved is not premise-established, and that rule
+applies to numerical support exactly as to Lean. The route to the premise is still E_n (qou-301d).
+
+PROCESS TRAP, cost me the edits once and worth recording. `git checkout -- computations/` is the
+command used all session to revert the contended audit witnesses that a precision-gates run
+rewrites. It is TREE-WIDE, so it also destroys uncommitted probe work in computations/. Scope it
+(`git checkout -- computations/audits computations/*.witness.json`) or commit before running gates.
