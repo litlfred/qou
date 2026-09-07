@@ -1,7 +1,7 @@
 ---
 # qou-cvx9
 title: migrate-uploads-to-library keys on filename while pdf-structure keys on the arXiv stamp — divergence silently creates orphan doc dirs
-status: todo
+status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T13:48:45Z
