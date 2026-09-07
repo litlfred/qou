@@ -3,7 +3,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:electron-period-base",
   lean: {
-    ref: "qou:QOU.Mass.electron_period_is_base",
+    ref: "qou:QOU.Mass.second_period_contains_me",
     validation: "validated",
   },
   title: "CAL-1 (m_e) is the n=0 base period of the prolongation tower",
