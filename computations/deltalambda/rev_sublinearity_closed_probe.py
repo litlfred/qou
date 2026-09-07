@@ -72,6 +72,39 @@ against its own limit 5.0959), so the small measured value is not evidence for a
 
 The bounds proved below are unaffected -- neither uses the conjecture.
 
+## 🛑 PRIOR WORK: the sinh-hook sum `S_n` is NOT a new object (corpus-grep, 2026-09-07)
+
+The commit and PR introducing this probe described the reformulation
+`REV_n = H_min ln q_0 - sum eps_i + log S_n`, with
+`S_n = sum_{lambda|-n} prod_c 1/(2 sinh(h(c) ln q_0))`, as putting REV "in Nekrasov-Okounkov /
+Chern-Simons hook-product form", and called `S_n` a q-deformation of `I(n)/n!`.  Both readings
+need scoping:
+
+  * `S_n` is a RESCALING of the corpus's own `S^bal(n;q)`, stated as
+    `prop:binding-period-involution-statistic`
+    (`content/quantum-observable-universe/mass-theory/binding-period-involution-statistic.md:8-11`):
+    with `[k] = (q^k - q^{-k})/(q - q^{-1})` and `dim_q^bal(lambda) = prod_k [k] / prod_c [h(c)]`,
+        S_n  =  S^bal(n; q) / ( (q - q^{-1})^n * [n]_q! )
+    verified here to 1e-38 for n = 1..9.  Since `Z_n = S^bal * q^{n(n-1)/2}`, the sinh sum is `Z_n`
+    in a different normalisation -- unsurprising, as it was DERIVED from `Z_n`'s closed form.  It is
+    a change of clothes, not new content.  Cite the proposition.
+  * "q-deformation of `I(n)/n!`" is likewise already the corpus's reading of that object, and its
+    `q = 1` leg (`sum_lambda f^lambda = I(n)`) is Lean-proved.
+
+What the grep did NOT find, on any of the six paths: Nekrasov-Okounkov, Han's or Westbury's hook
+formulas -- and the library does not HOLD them either (`nekrasov2002` is the Seiberg-Witten
+instanton-counting paper, hep-th/0206161, with zero occurrences of "hook"; the NO hook formula is
+hep-th/0306238 and is not held).  So the NO connection is a DERIVATION OBLIGATION, not a citation,
+and the "no product form" negative recorded with this probe is the first measurement of it here.
+Littlewood's identity is named as a classical anchor of exactly this object in
+`computations/lever1-kernel-maj-involution-identification.witness.json:33` and is never stated
+anywhere -- a genuine, cheap gap.
+
+ARITY NOTE, and it bounds what "proved" means upstream of here: the general-`n` proposition rests
+on a NARRATIVE proof citing Stanley EC2 and `sagan2001`, both registered and NOT ingested; its Lean
+sibling proves only the three finite instances `n = 3, 4, 5` by `decide`.  The closed form this
+probe builds on is verified computationally to n <= 11, not proved for general `n` in Lean.
+
 ## Checks
 
   R1  L2' holds for every partition with n <= 26 (exhaustive, exact integers).
