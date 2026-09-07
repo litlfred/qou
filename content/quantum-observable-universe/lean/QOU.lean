@@ -40,6 +40,7 @@ import QOU.MathlibExt.TemperleyLiebNormalForm
 import QOU.MathlibExt.TemperleyLiebClosure
 import QOU.MathlibExt.TemperleyLiebWordBlocks
 import QOU.MathlibExt.TemperleyLiebThresholdBridge
+import QOU.MathlibExt.TemperleyLiebDeltaRule
 import QOU.MathlibExt.MacdonaldTelescope
 import QOU.MathlibExt.QuantumDilogarithm
 import QOU.MathlibExt.QuantumDilogarithmInfinite
