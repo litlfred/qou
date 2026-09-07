@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T08:20:08Z
-updated_at: 2026-09-07T08:55:48Z
+updated_at: 2026-09-07T09:16:39Z
 ---
 
 Found 2026-09-07 by a six-path corpus-grep on the EM-linking front
@@ -122,3 +122,70 @@ running; do not act on the "7" until it lands.
 Detection shape, corrected: NOT chars/page (which measures the extractor).
 The signal is **`chars_total` divided by the raw page-text total** — a
 sectioning-retention ratio. Nothing in the corpus computes it today.
+
+
+## MEASURED, and FIXED upstream: not corpus-wide, but 18 documents keep under 50%
+
+The retraction above left one thing open — whether the `split_sections`
+prefix-drop is 7 documents or the whole library. Measured across **623
+documents**, as the fraction of raw pypdf page text surviving sectioning:
+
+    median 0.977, mean 0.945
+      <50%:  18 docs
+    50-90%:  26 docs
+    90-99%: 499 docs
+     >=99%:  80 docs
+
+**Not systemic** — most documents keep essentially everything. But the tail is
+severe and lands on primary sources: Kauffman's *State models and the Jones
+polynomial* (7.5% kept), DeTurck-Gluck (8.4%), Neumann-Zagier x2 (9.9%),
+`90-1-219` (10.4%), `arxiv-1304.4737v1` (28.9%).
+
+**My chars/page detector was the wrong detector and I said so before measuring
+— now confirmed.** It found 9 documents and MISSED five that lose 70-85%:
+`arxiv-1508.01458v1` (15.5%), `arxiv-1304.4737v1` (28.9%),
+`arxiv-1909.06744v1` (29.2%), `arxiv-alg-geom-9408004v1` (29.6%), `kirbycal`
+(32.5%). They keep enough text to clear 400 chars/page while losing most of
+the document. The retention ratio is the right signal.
+
+**`arxiv-1304.4737v1` is the clearest case and shows the failure compounding.**
+Its TOC is inferred CORRECTLY — six headings, "I Introduction" p2 through
+"References" p15 — but only one is located by the title match, and that one is
+"Acknowledgements" on page 14 of 18. So `sections` is exactly
+`[Acknowledgements 14-18]` and the entire paper is dropped. Marks failing to
+locate (the +/-2-page window, the 44-char prefix match) is a SEPARATE
+weakness; the prefix-drop is what turns it into data loss.
+
+## Fixed upstream
+
+litlfred/folio-assistant#167 (issue #166), commit `f933f87` — emit a leading
+section for everything before `marks[0]`. Id is **`sec-front-matter`,
+deliberately non-numeric**: numbering it `sec-000` would shift every following
+section id, and section ids are cited from `docs/audits/*` in THIS repo.
+
+Verified before -> after `chars_total`: 2079 -> 27711 (13.3x), 4510 -> 53954
+(12.0x), 5437 -> 54993 (10.1x), 4506 -> 43175 (9.6x), 8170 -> 28231 (3.5x).
+On three healthy controls every pre-existing section id is preserved and only
+`sec-front-matter` is added.
+
+**Even healthy documents were losing their abstracts.** The controls recover
+858-6278 chars each — the title/author/abstract block. That is the ~2% the
+0.977 median represents, and it is the part a reader searches for.
+
+End-to-end, the thing this bean was opened for: `grep coth` on the
+DeTurck-Gluck sections now returns the defining line verbatim,
+
+    ϕ0(α)  =  (—1/(4π)) coth α
+
+i.e. Thm 1(3), the kernel the whole EM-linking front reads off. Corpus-grep
+path 5 works on it.
+
+## Still open (do not close)
+
+1. **Re-sectioning the affected library documents in THIS repo.** The upstream
+   fix changes the producer; the committed `library/*/sections/` trees are
+   still the old ones. Mechanical, but it is a real tranche — and it should
+   wait until #167 lands and `.folio-assistant-pin` advances, since this repo
+   validates against the pinned SHA (currently `428ca5c`), not upstream main.
+2. **Marks failing to locate** — 1 of 6 correct headings found on
+   `arxiv-1304.4737v1`. Not addressed by #167 and not measured here.
