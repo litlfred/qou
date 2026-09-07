@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-07T08:35:25Z
-updated_at: 2026-09-07T08:35:58Z
+updated_at: 2026-09-07T10:01:59Z
 ---
 
 Found while adding a deliberate/actionable split to
@@ -67,3 +67,43 @@ the probe still failed. Caught by running it rather than by reading the diff.
 correct: it is an undeclared grouped word whose guard is broken, not a
 deliberate historical choice. I deliberately did NOT mark it deliberate — the
 marker would have silenced a real defect.
+
+## REBUILT — both arms canonical, 3/3 assertions pass (2026-09-07)
+
+Both defects fixed:
+
+1. **The inverted pin** removed. `compute_tau_M_nucleon_H3` now called at its
+   default, which matches the live target to 6.37e-51 (p) / 2.39e-50 (n).
+2. **The ordering confound** fixed. `chain` now comes from
+   `atom_braid_word_3A` instead of being hand-built grouped. Measured safe:
+   same 11 crossings, identical `(c, d)` multiset, **identical census**
+   (p `{sigma:6, averaged:2, sigma_inv:3}`, n `{sigma:5, averaged:2,
+   sigma_inv:4}`) — only the ORDER differs. Traced through
+   `chi_all_lambda_any`, since the monotone-only kernel refuses the canonical
+   word outright.
+
+`self_built_braid_word_audit` now reports **ACTIONABLE 0, DELIBERATE 0** — and
+by the site becoming genuinely canonical, not by declaring it deliberate.
+
+## STILL OPEN: the probe is weaker than its title
+
+Both arms are now the SAME computation, because `qou-qu2w` removed the
+marshalling from `compute_tau_M_nucleon_H3`. The "marshalled" arm no longer
+marshals, so the divergence in the title cannot be detected by it.
+
+**That vacuity is not from this rebuild.** It arrived with `qou-qu2w`, and a
+sibling had already re-pointed the assertions on 2026-09-06 from "assert the
+defect (== 2.157)" to "assert the fix holds" for exactly that reason. What was
+broken — and is now fixed — was the ordering confound on top of it.
+
+**What restoring a real guard needs.** Marshal explicitly through
+`marshal_to_chi_lambda_braid` rather than through a helper that no longer does.
+It IS still callable on the canonical word (returns 11 pairs). The obstacle is
+a convention mismatch: it emits `(sign, gen)`, this probe uses `(c, d, gen)`,
+and my first bridge attempt produced `unsupported crossing c=-1.0 at gen=2`.
+Resolving that is a small piece of work with a real trap — guessing at another
+module's convention inside a regression guard is how a probe ends up asserting
+something it does not measure — so it is left for someone who can check the
+marshaller's contract rather than infer it.
+
+Left OPEN for that reason.
