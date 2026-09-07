@@ -1,18 +1,17 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-07T10:26:24.402Z",
+  "generated": "2026-09-07T10:34:56.538Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3724,
-  "files_flagged": 114,
-  "total_defects": 91,
+  "files_flagged": 113,
+  "total_defects": 90,
   "total_exempt": 59,
   "total_promoted_from_exempt": 26,
   "categories": {
     "proof-claims-unencoded": 46,
     "proof-no-self-assuming-projection": 42,
     "proof-no-decide-masking": 1,
-    "proof-docstring-sorry-mismatch": 1,
-    "proof-no-trivial-true": 1
+    "proof-docstring-sorry-mismatch": 1
   },
   "conjecture_graph": {
     "total": 310,
@@ -3320,16 +3319,6 @@
         "decl": "TannakaKreinReconstruction",
         "severity": "major",
         "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (monoidal_equiv, universal_property) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [TannakaKreinReconstruction]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
-      }
-    ],
-    "content/unital-groebner-bases/lean/UGB/GrobnerShirshov/StrongMultiplicativity.lean": [
-      {
-        "line": 187,
-        "category": "proof-no-trivial-true",
-        "pattern": "reflexive-tautology",
-        "snippet": "theorem strong_multiplicativity_on_generators",
-        "decl": "strong_multiplicativity_on_generators",
-        "severity": "critical"
       }
     ]
   }
