@@ -525,7 +525,15 @@ def fit_apoly(pts, max_du=4, max_dx=14):
             monos = [(i, j) for i in range(du + 1) for j in range(dx + 1)]
             if len(pts) < len(monos) + 8:
                 continue
-            A = mp.matrix([[x ** j * (L ** 2) ** i for (i, j) in monos] for (x, L, *_) in pts])
+            # rows scaled to unit max entry: nullspace-invariant, and without it a far grid point
+            # (|x| ~ 1e10) swamps the singular spectrum so the relative thresholds below
+            # never fire (measured: the 4₁ fit failed on grid samples even lift-free)
+            rows = []
+            for (x, L, *_) in pts:
+                row = [x ** j * (L ** 2) ** i for (i, j) in monos]
+                m = max(abs(v) for v in row)
+                rows.append([v / m for v in row])
+            A = mp.matrix(rows)
             U, S, V = mp.svd_c(A)
             svals = [S[k] for k in range(len(monos))]
             if svals[-1] < mp.mpf(10) ** -30 * svals[0] and svals[-2] > mp.mpf(10) ** -20 * svals[0]:
@@ -596,7 +604,8 @@ def run_knot(knot, shapes_hint, check, wb):
     grid = sample_curve(tets, info["erows"], info["mu0_row"], info["lam_row"], shapes)
     print(f"  continuation grid: {len(grid)} points on the deformation curve (μ₀ frame)")
     random.seed(11)
-    pts0 = random.sample(grid, min(150, len(grid)))
+    moderate = [t for t in grid if mp.mpf("0.1") <= abs(t[1]) ** 2 <= 10 and mp.mpf("0.001") <= abs(t[0]) <= 1000]
+    pts0 = random.sample(moderate, min(150, len(moderate)))
     union = list(grid)
     survivors, table, found = meridian_frame(tets, info["erows"], info["mu0_row"], info["lam_row"], union)
     print("  frame search (sheet of the complete structure, 1225 grid points) "
