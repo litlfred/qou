@@ -40,6 +40,17 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
+# `set_compute_dps()` must run BEFORE `codata_constants` is imported. That
+# module builds its AME constants inside `mp.workdps(max(50, mp.mp.dps))` at
+# import time, and importing `_precision` does not itself set `mp.dps` (its
+# own docstring: "IMPORTING THIS MODULE DOES NOT SET mp.dps"). Left at
+# mpmath's default 15 the guard clamps them to 50 digits, and `fmt` then
+# serializes 60 digits of a 50-digit value: `2.2245662` came out as
+# "2.2245661999999999999999999999999999999999999999999" + "9734095406"
+# — a binary tail reading as measured. Ordering the import is the fix.
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
+
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from closed_form_tau_M import closed_form_ratio  # noqa: E402
 from codata_constants import (  # noqa: E402
@@ -50,14 +61,13 @@ from codata_constants import (  # noqa: E402
     M_E_MEV,
 )
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
 
 
 # AME2020 binding energies (MeV)
 AME = {
     "D":   AME_B_DEUTERON_MEV_VALIDATION,
     "T":   AME_B_TRITIUM_MEV_VALIDATION,
-    "³He": float(AME_B_HE3_MEV_VALIDATION),
+    "³He": AME_B_HE3_MEV_VALIDATION,
     "⁴He": AME_B_HE4_MEV_VALIDATION,
 }
 
@@ -71,6 +81,7 @@ def build_witness() -> dict:
     vol_b3 = 8 * mp.catalan
 
     rows: list[dict] = []
+    raw: dict[str, dict] = {}
     for label, Z, N in [("D", 1, 1), ("T", 1, 2), ("³He", 2, 1), ("⁴He", 2, 2)]:
         r_strict = closed_form_ratio(Z, N, q, pn_convention="strict_averaged")
         r_bring = closed_form_ratio(Z, N, q, pn_convention="bring_color_weighted")
@@ -80,34 +91,40 @@ def build_witness() -> dict:
         # binding_canonical mass-formula path is more involved, but
         # the RELATIVE Bring-vs-strict difference is the structural
         # quantity we want here).
-        b_endo_strict = float(M_E_MEV * vol_b3 * (1 - r_strict))
-        b_endo_bring = float(M_E_MEV * vol_b3 * (1 - r_bring))
+        # Kept in mpf. These were float() -- which capped f_required at 53
+        # bits while it was still serialized at 60 digits, so the tail was
+        # binary64 expansion reading as measured (NO-FLOAT64).
+        b_endo_strict = M_E_MEV * vol_b3 * (1 - r_strict)
+        b_endo_bring = M_E_MEV * vol_b3 * (1 - r_bring)
 
         b_exp = AME[label]
-        f_strict = b_exp / b_endo_strict if b_endo_strict != 0 else float("nan")
-        f_bring = b_exp / b_endo_bring if b_endo_bring != 0 else float("nan")
+        f_strict = b_exp / b_endo_strict if b_endo_strict != 0 else mp.nan
+        f_bring = b_exp / b_endo_bring if b_endo_bring != 0 else mp.nan
 
+        raw[label] = {"f_strict": f_strict, "f_bring": f_bring}
         rows.append({
             "atom": label,
             "Z": Z,
             "N": N,
-            "tau_M_ratio_strict": float(r_strict),
-            "tau_M_ratio_bring": float(r_bring),
-            "tau_M_ratio_delta_ppm": float((r_bring - r_strict) / r_strict * 1e6),
-            "B_endo_strict_MeV": b_endo_strict,
-            "B_endo_bring_MeV": b_endo_bring,
-            "B_AME_MeV": b_exp,
-            "f_required_strict": f_strict,
-            "f_required_bring": f_bring,
+            "tau_M_ratio_strict": fmt(r_strict),
+            "tau_M_ratio_bring": fmt(r_bring),
+            "tau_M_ratio_delta_ppm": fmt(
+                (r_bring - r_strict) / r_strict * mp.mpf("1e6")),
+            "B_endo_strict_MeV": fmt(b_endo_strict),
+            "B_endo_bring_MeV": fmt(b_endo_bring),
+            "B_AME_MeV": fmt(b_exp),
+            "f_required_strict": fmt(f_strict),
+            "f_required_bring": fmt(f_bring),
         })
 
-    # T vs ³He f-spread (the open question)
-    t_row = next(r for r in rows if r["atom"] == "T")
-    he3_row = next(r for r in rows if r["atom"] == "³He")
-    f_spread_strict = abs(t_row["f_required_strict"] - he3_row["f_required_strict"]) \
-        / max(t_row["f_required_strict"], he3_row["f_required_strict"])
-    f_spread_bring = abs(t_row["f_required_bring"] - he3_row["f_required_bring"]) \
-        / max(t_row["f_required_bring"], he3_row["f_required_bring"])
+    # T vs ³He f-spread (the open question). Read from `raw`, not from
+    # `rows`: the latter now holds the serialized strings.
+    t_row = raw["T"]
+    he3_row = raw["³He"]
+    f_spread_strict = abs(t_row["f_strict"] - he3_row["f_strict"]) \
+        / max(t_row["f_strict"], he3_row["f_strict"])
+    f_spread_bring = abs(t_row["f_bring"] - he3_row["f_bring"]) \
+        / max(t_row["f_bring"], he3_row["f_bring"])
 
     summary = (
         f"T vs ³He f-factor spread (single-magic A=3 p/n asymmetry): "
@@ -148,10 +165,10 @@ def build_witness() -> dict:
         "timestamp_utc": datetime.now(timezone.utc).isoformat(),
         "inputs": {
             "q_0_50dps": Q_50_DIGIT_STR,
-            "m_e_MeV": float(M_E_MEV),
-            "delta_flavor_split_leading": float(delta),
-            "vol_borromean_8G": float(vol_b3),
-            "AME": AME,
+            "m_e_MeV": fmt(M_E_MEV),
+            "delta_flavor_split_leading": fmt(delta),
+            "vol_borromean_8G": fmt(vol_b3),
+            "AME": {k: fmt(v) for k, v in AME.items()},
         },
         "predictions": rows,
         "f_spread_summary": summary,
@@ -185,7 +202,9 @@ def main() -> int:
     print(f"witness emitted: {out_path}")
     if args.print:
         print()
-        print(f"  δ = Δm/M_N = {witness['inputs']['delta_flavor_split_leading']:.6e}")
+        # float() below is display-only; see the note on the witness fields.
+        _d = float(mp.mpf(witness["inputs"]["delta_flavor_split_leading"]))
+        print(f"  δ = Δm/M_N = {_d:.6e}")
         print()
         hdr = f"  {'atom':>4} {'arc-comp':<10} {'τ_M strict':>11} {'τ_M Bring':>11} {'Δ (ppm)':>9} {'f strict':>10} {'f Bring':>10}"
         print(hdr)
@@ -196,9 +215,11 @@ def main() -> int:
                 "pp,pn,nn"
             )
             print(
-                f"  {r['atom']:>4} {comp:<10} {r['tau_M_ratio_strict']:>11.6f} "
-                f"{r['tau_M_ratio_bring']:>11.6f} {r['tau_M_ratio_delta_ppm']:>9.2f} "
-                f"{r['f_required_strict']:>10.4f} {r['f_required_bring']:>10.4f}"
+                f"  {r['atom']:>4} {comp:<10} "
+                f"{float(mp.mpf(r['tau_M_ratio_strict'])):>11.6f} "
+                f"{float(mp.mpf(r['tau_M_ratio_bring'])):>11.6f} "
+                f"{float(mp.mpf(r['tau_M_ratio_delta_ppm'])):>9.2f} "
+                f"{float(mp.mpf(r['f_required_strict'])):>10.4f} "f"{float(mp.mpf(r['f_required_bring'])):>10.4f}"
             )
         print()
         print("  " + witness["f_spread_summary"])

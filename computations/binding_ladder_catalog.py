@@ -68,6 +68,8 @@ from codata_constants import (
     AME_B_DEUTERON_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION,
+    AME_B_LI7_MEV_VALIDATION,
     AME_B_TRITIUM_MEV_VALIDATION,
     M_E_MEV as m_e,
 )
@@ -105,11 +107,11 @@ ISOTOPES = [
     # label, Z, N, B_AME, leading_formula, leading_value (MeV)
     ("D",   1, 1,  AME_B_DEUTERON_MEV_VALIDATION, "1·m_e·Vol(6_2)",         m_e * VOLS["6_2"]),
     ("T",   1, 2,  AME_B_TRITIUM_MEV_VALIDATION,   "2·m_e·Vol(8_11)",        2 * m_e * VOLS["8_11"]),
-    ("³He", 2, 1,  float(AME_B_HE3_MEV_VALIDATION),   "2·m_e·Vol(L6a4)",        2 * m_e * VOLS["L6a4"]),
+    ("³He", 2, 1,  AME_B_HE3_MEV_VALIDATION,   "2·m_e·Vol(L6a4)",        2 * m_e * VOLS["L6a4"]),
     ("⁴He", 2, 2, AME_B_HE4_MEV_VALIDATION,    "2·m_e·4·Vol(L6a4)",      2 * m_e * 4 * VOLS["L6a4"]),
     # ⁶Li, ⁷Li — try various ansätze
-    ("⁶Li", 3, 3, 31.99405,    "2·m_e·(4·8G + αα·Vol(7²₁))?  TBD",  None),
-    ("⁷Li", 3, 4, 39.24452,    "2·m_e·(4·8G + αα·Vol(7²₁))?  TBD",  None),
+    ("⁶Li", 3, 3, AME_B_LI6_MEV_VALIDATION, "2·m_e·(4·8G + αα·Vol(7²₁))?  TBD",  None),
+    ("⁷Li", 3, 4, AME_B_LI7_MEV_VALIDATION, "2·m_e·(4·8G + αα·Vol(7²₁))?  TBD",  None),
 ]
 
 
@@ -138,7 +140,10 @@ print()
 
 results = []
 for label, Z, N, B_AME, formula, leading in ISOTOPES:
-    print(f"\n──── {label}  (Z={Z}, N={N}, A={Z+N}, B_AME = {B_AME:.6f} MeV) ────")
+    # float() is display-only here: on mpmath 1.3.0 `f"{mpf:.6f}"` raises
+    # TypeError and the project pins >=1.3,<1.5, so the producer must not
+    # depend on which of the two is installed.
+    print(f"\n──── {label}  (Z={Z}, N={N}, A={Z+N}, B_AME = {float(B_AME):.6f} MeV) ────")
     if leading is not None:
         print(f"  Leading: {formula} = {float(leading):.6f} MeV")
         leading_err_pct = float((leading - mp.mpf(str(B_AME)))/mp.mpf(str(B_AME)) * 100)
@@ -151,7 +156,7 @@ for label, Z, N, B_AME, formula, leading in ISOTOPES:
             print(f"    {f['r']:>3} {f['alpha']:>+10.4f} {f['err_ppb']:>+14.0f}")
         results.append({
             "iso": label, "Z": Z, "N": N, "A": Z+N,
-            "B_AME_MeV": B_AME,
+            "B_AME_MeV": fmt(B_AME),
             "leading_formula": formula,
             "leading_MeV": float(leading),
             "leading_err_pct": leading_err_pct,
@@ -162,7 +167,7 @@ for label, Z, N, B_AME, formula, leading in ISOTOPES:
     else:
         print(f"  (no zero-param leading rule; ⁶Li, ⁷Li would need atom-knot derivation)")
         results.append({
-            "iso": label, "Z": Z, "N": N, "A": Z+N, "B_AME_MeV": B_AME,
+            "iso": label, "Z": Z, "N": N, "A": Z+N, "B_AME_MeV": fmt(B_AME),
             "no_leading_rule": True
         })
 
@@ -177,7 +182,9 @@ for r in results:
     if "no_leading_rule" in r: continue
     f4 = r["best_fit_at_rank_4"]
     if f4 is None: continue
-    a = f4["alpha"]; A = r["A"]; B = r["B_AME_MeV"]
+    # Read back through mpf: the record now carries the serialized form.
+    # The float() is display-only, as above.
+    a = f4["alpha"]; A = r["A"]; B = float(mp.mpf(r["B_AME_MeV"]))
     print(f"  {r['iso']:<6} {A:>3} {B:>10.4f} {r['leading_MeV']:>12.4f} {r['leading_err_pct']:>+13.4f}% {a:>+12.4f} {a/A:>+10.4f} {a/B:>+14.4f}")
 
 # Compare to n→p α₄ = 0.827
