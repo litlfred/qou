@@ -2,20 +2,45 @@
  "_schema": "library-summary/v1",
  "doc_id": "1-s20-0040938385900047-main",
  "source_sha256": "f0db9d97f2ae83c6",
- "brief": "Volumes of hyperbolic three-manifolds — 2 sections: ( ‘A2 35A ,)($)“+ . ..I; References",
- "extended": "**Volumes of hyperbolic three-manifolds**\n\n*WALTER D. NEUMANNt and DON ZAGIER*\n\n26 pp, 2 sections.\n\n**Outline.** 4 ( ‘A2 35A ,)($)“+ . ..I; References",
+ "brief": "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO Printed III Great Britain. C 1985. Pcrgamon Press Ltd. VOLUMES OF HYPERBOLIC THREE-MANIFOLDS — 7 sections: Introduction; Combinatori",
+ "extended": "**ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO Printed III Great Britain. C 1985. Pcrgamon Press Ltd. VOLUMES OF HYPERBOLIC THREE-MANIFOLDS**\n\n*WALTER D. NEUMANNt and DON ZAGIER*\n\n26 pp, 7 sections.\n\n**Outline.** 1 Introduction; 2 Combinatorics of ideal triangulations; 3 Proof of Theorem 2.2; 4 Good parameters for deformation; 5 Volume computations; 6 Examples; References",
  "tokens": {
-  "brief": 21,
-  "extended": 37
+  "brief": 50,
+  "extended": 99
  },
  "sections": [
   {
-   "id": "sec-000-4-a2-35a-i",
-   "title": "( ‘A2 35A ,)($)“+ . ..I",
-   "pages": "22-25"
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
   },
   {
-   "id": "sec-001-references",
+   "id": "sec-001-2-combinatorics-of-ideal-triangulations",
+   "title": "Combinatorics of ideal triangulations",
+   "pages": "4-10"
+  },
+  {
+   "id": "sec-002-3-proof-of-theorem-22",
+   "title": "Proof of Theorem 2.2",
+   "pages": "10-14"
+  },
+  {
+   "id": "sec-003-4-good-parameters-for-deformation",
+   "title": "Good parameters for deformation",
+   "pages": "14-18"
+  },
+  {
+   "id": "sec-004-5-volume-computations",
+   "title": "Volume computations",
+   "pages": "18-21"
+  },
+  {
+   "id": "sec-005-6-examples",
+   "title": "Examples",
+   "pages": "21-25"
+  },
+  {
+   "id": "sec-006-references",
    "title": "References",
    "pages": "25-26"
   }
