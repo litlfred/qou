@@ -52,8 +52,8 @@ This probe therefore closes the δ half of the closure lemma and leaves the
 ## Three further measurements (added after the δ half was proved)
 
 4. **No natural measure is monotone.** A spanning proof would like an induction
-   on some measure of `(I, J)` that the rewriting respects. **Thirteen
-   candidates were tested and every one INCREASES on some product** -- `|I|`,
+   on some measure of `(I, J)` that the rewriting respects. **Twelve candidates
+   were tested and every one INCREASES on some product** -- `|I|`,
    `sum I`, `sum J`, `sum I + sum J`, `sum of block lengths` (= word length),
    `sum (i-j)`, `max I`, `min I`, the lex orders on `(|I|, sum I)` and
    `(sum I, |I|)`, and the lex orders on the tuples `I` and `J`. So the earlier
@@ -301,7 +301,7 @@ def main() -> int:
             "k in I and k-1 not in I -- a condition on I alone. The (I',J') "
             "formula for the loops=0 branch is NOT identified and is recorded as "
             "open. Separately: no natural measure on (I,J) is monotone under the "
-            "rewriting (13 tested, all increase somewhere), and the image of e_k "
+            "rewriting (12 tested, all increase somewhere), and the image of e_k "
             "has exactly catalan(n-1) elements for every k -- the tower relation "
             "dim(e_k TL_n) = dim TL_{n-1}."
         ),
