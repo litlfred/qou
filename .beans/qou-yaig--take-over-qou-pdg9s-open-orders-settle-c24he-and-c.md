@@ -263,3 +263,54 @@ their 9/9 covers 4He. Two routes, same number.
 Their form has its own limits: sorted orderings only, orders 0-2, `A <= 5`, not
 proved. So `c2` is not "solved" — but it is decisively more than "nothing to
 predict from".
+
+## THE PRODUCT REACHES c3 TOO (2026-09-07) — 8/8
+
+The retraction above asked the obvious next question: qou-qqm4's block-and-bond
+product stops at order 2 because each factor is a quadratic. Does it carry `c3`?
+
+**It does.** Add one cubic per factor and change nothing else:
+
+    nucleon   a(1 + r.e + q.e^2 + s.e^3)      s_p = 75/4    s_n = 19
+    bond      (1/2)(1 + rho.e + tau.e^2 + ups.e^3)   ups_pp = -1/2
+
+    case   A     a3 (raw)    c3 = a2+a3    source
+    pp     2       105/32         67/16    live
+    pn     2       149/32          43/8    live
+    nn     2       107/16          27/4    live
+    3p     3     1717/256      2109/256    live
+    T      3      711/128        101/16    live
+    3He    3       349/64       839/128    live
+    3n     3         51/8        219/32    live
+    4He    4     2247/512      1329/256    RECORDED, independent
+    5He    5      675/256     6393/2048    prediction, no target
+
+**8/8, no parameter fitted to any c3.** The five new parameters were measured
+exactly where the originals were — `s` on a ONE-NUCLEON free word at n = 3,
+`ups_b` on a ONE-INTERFACE word at A = 3 — so every multi-interface row is a real
+test.
+
+**The 4He row is the one that counts.** `c3(4He) = 1329/256` was measured in this
+same bean by a 352 s exact series at P = 5, before this form was extended, and
+4He contributes to no input here. Two completely different routes, same rational.
+
+**A cross-check that the extension is honest**: my order-3 bond measurement gives
+`bond pp = (1/2)(1, 2, 1/2, -1/2)`, whose first three entries reproduce
+qou-qqm4's recorded `(1/2)(1, 2, 1/2)` exactly. I am extending their object, not
+re-parameterising it.
+
+## What this settles about my retracted claim
+
+#6966 said multiplicativity is "special to first order and does not propagate up
+the expansion". It propagates to order 2 (qou-qqm4) and now to order 3 (here).
+The claim was not merely mis-scoped — it was wrong in the direction that matters,
+and each order measured since has made it more wrong. Worth recording plainly.
+
+## Scope — inherited, and NOT weakened here
+
+SORTED orderings only; A <= 5; NOT PROVED. `pnp` remains the discriminating
+untested case. This extends the ORDER reach, not the ORDERING reach, and says
+nothing about whether the product survives an unsorted word.
+
+`c4` is the next rung and is untested by this: it would need a quartic per
+factor, and nothing here indicates whether the pattern continues or stops.
