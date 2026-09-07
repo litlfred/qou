@@ -8,7 +8,7 @@ tags:
     - paper-relevance-triage
     - qdiff-stokes
 created_at: 2026-09-07T08:36:06Z
-updated_at: 2026-09-07T09:05:38Z
+updated_at: 2026-09-07T09:14:54Z
 parent: qou-2akx
 ---
 
@@ -21,3 +21,5 @@ What vanderput2006 supplies: Thm 3.4 — E(cz^{t/n}) is pure, irreducible, of sl
 Second use, same document: §5 (1) regular-singular Gal(M) = Hom(L, C*) (× G_a when A is not semisimple), and §5 (5) 1 → U_ξ → Gal(M) → Gal(gr M) → 1 with U_ξ unipotent, a semi-direct product — the torus-extended-by-unipotent shape that QOU/Mathlib/QAlienBridgeEquation.lean asserts as "the Levi decomposition of the local q-difference Galois group" with only [ramis-sauloy-zhang2013] as its source.
 
 What to do: (1) in BindingScalarKernelParityExclusion.lean replace the crmath pointer by "[vanderput-reversat2007] (library/afst-2007-6-16-3-665-0/), stated in English as [vanderput2006] Thm 3.4/3.5", and add the `-- Ref:` lines; mirror in the two .md blocks; (2) add `-- Ref: [vanderput2006] §5 (1), (5)` to QAlienBridgeEquation.lean for the Levi-decomposition sentence.
+
+DONE on PR #7032 (9506827931): the Lean docstring and -- Ref: block now cite vanderput-reversat2007 (afst-2007, Prop. 1.3, E(c z^{t/n})), vanderput2006 (Thm 3.4-3.5), and bugeaud2011 (the E(r,d,b) notation, a USE of the theorem) with their roles, and say the old crmath pointer was a mis-attribution. Both .md blocks gain the same \cite{} set. lean-direct exit 0; validator unchanged. Sources read at the section text before citing. Stays open until #7032 merges.
