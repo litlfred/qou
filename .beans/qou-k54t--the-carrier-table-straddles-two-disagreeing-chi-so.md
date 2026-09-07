@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T11:14:56Z
-updated_at: 2026-09-07T11:15:53Z
+updated_at: 2026-09-07T11:40:28Z
 ---
 
 ## The question this answers
@@ -117,3 +117,71 @@ refreshed. That run was **reverted, not committed**: the container records
 numpy 2.5.0 → 2.4.6, python 3.13.12 → 3.11.15 and scipy 1.18.0 → 1.17.1
 against the witness on disk, and committing it would weaken the provenance
 record for a 1e-6 move.
+
+
+## 🛑 RETRACTION — the `durationMs` argument above is WRONG
+
+I wrote: *"Their recorded `durationMs` is 8–11. Eight milliseconds is not 77
+characters at 50 dps … The payload was never recomputed; only its stamps
+were."* **That reasoning is invalid — I read the wrong field.**
+
+`durationMs` is not the computation time. The committed ⁴He witness records, in
+its own data block:
+
+    atom.compute_time_sec  977.7418208122253   (16.3 min)
+    free.compute_time_sec  454.92478799819946   (7.6 min)
+
+a genuine **~24-minute** computation, alongside `durationMs: 8`. And a
+deuteron run I performed today records `durationMs: 9` while being a real,
+complete run. So `durationMs` measures something else (witness assembly), and
+it **cannot discriminate a computed witness from a refreshed one** in either
+direction.
+
+The claim that the ⁴He payload "was never recomputed" is withdrawn. It was
+recomputed, for 24 minutes.
+
+**Contaminated:** this bean's body above, and commit `6e9557d5ce`, both pushed.
+Nothing else quotes it.
+
+## The CONCLUSION survives — established by the direct test instead
+
+The cheap case settles it. `compute_atom_chi_rust.py D` (n=6, 11 partitions)
+run today, three-way against the canonical borromean cache:
+
+| comparison | exact | max \|rel\| |
+|---|---|---|
+| rust **OLD** (committed) vs canonical | **2 / 11** | 21.335035 |
+| rust **NEW** (run today) vs canonical | **11 / 11** | **1.0924651e-49** |
+| rust OLD vs rust NEW | 2 / 11 | 21.335035 |
+
+So the producer, run today, reproduces the canonical caches **exactly**, and
+the committed values are the grouped word. The straddle is real; only my
+argument for it was wrong. The 2-of-11 that agreed in the OLD comparison are
+again the two one-dimensional reps, so the multiset/order signature holds.
+
+## 🛑 And the MECHANISM is unexplained — my second theory is also wrong
+
+I supposed the runs might have fallen between the two ruling commits. They did
+not. **`7db032fb48` (07:53:55) is the commit that introduced
+`intra_order: str = "borromean"` as the default**, and every rust run is
+stamped 08:59–09:25, *after* it. `deb9ff5728` (09:06:48) only touches
+docstrings.
+
+So a producer defaulting to borromean, run an hour after that default landed,
+wrote grouped values. **I do not know why**, and I am not guessing a third
+time. One untested candidate worth recording, because the same commit
+introduces it: `_NUCLEON_WORDS_Q0` is a **module-level cache**, documented as
+*"built on first use"*. A long-lived process that populated it before the
+change would keep returning grouped words for its whole lifetime regardless of
+the source on disk. That is a hypothesis, not a finding — testing it means
+reproducing the process lifetime, which I have not done.
+
+## Repaired so far
+
+`atom-chi-rust-{d,t,3he}` regenerated today and now match the canonical
+caches. `atom-chi-rust-4he` is in flight (~24 min by its own recorded
+`compute_time_sec`).
+
+Until it lands the rust family is itself split — D/T/³He borromean, ⁴He
+grouped — which is a *worse* straddle than before, so this must not be left
+half-done.
