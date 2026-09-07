@@ -314,3 +314,37 @@ nothing about whether the product survives an unsorted word.
 
 `c4` is the next rung and is untested by this: it would need a quartic per
 factor, and nothing here indicates whether the pattern continues or stops.
+
+## PRE-REGISTERED 2026-09-07 08:45 UTC — before the nn quartic was measured
+
+The bond rows, as measured, written (1/2)(1, rho, tau, ups, chi):
+
+    pp   (1,  2, 1/2, -1/2, 1/4)
+    pn   (1,  0, 3/2, -3/2, 31/12)
+    nn   (1, -2, 5/2, -5/2, ?)      <- chi still measuring
+
+`rho = p_b - n_b` and `tau = 1/2 + n_b` hold in all three (qou-qqm4's pattern).
+`ups = -tau` holds in all three — three hits, no freedom left, and NOT predicted
+by that description.
+
+**The falsifiable part.** Fitting `chi` on the two bonds that have it:
+
+    linear in n     chi = 1/4 + (7/3)n        ->  chi_nn = 59/12
+    linear in tau   chi = -11/12 + (7/3)tau   ->  chi_nn = 59/12
+
+🛑 **THOSE ARE NOT TWO INDEPENDENT RULES AGREEING.** `tau = 1/2 + n` is itself
+linear in `n`, so both are the SAME two-parameter family relabelled, fitted to
+two points, with zero degrees of freedom left over. Their agreement is an
+identity, not evidence. Recording that explicitly because "two different rules
+give the same answer" is precisely how a 2-point fit gets mistaken for a
+derivation, and this bean has already had to retract one over-reading.
+
+**So `chi_nn = 59/12` is a prediction with no support behind it beyond the fit.**
+It is written down here BEFORE the measurement so the running `nn` extraction can
+falsify it on arrival, rather than being "explained" afterwards. If `chi_nn`
+comes back anything else, this family is dead and the quartic has structure the
+cubic did not.
+
+The `ups = -tau` relation is the one worth watching: it was NOT fitted — it fell
+out of three independent measurements — so if a quartic analogue exists it should
+be visible without tuning.
