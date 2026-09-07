@@ -1729,9 +1729,31 @@ corpus — run the **corpus-grep checklist**:
    Plancherel growth (`arxiv-2105.09342v1`) — this corpus's own subject
    matter, including the LP-Plancherel `Δ_λ` ansatz's literature.
 
-   **So check the arithmetic before trusting tier 1**: `directories −
-   index rows` should equal the duplicate count, and when it does not the
-   index is behind. The producer fixes it deterministically and offline —
+   **So check the arithmetic before trusting tier 1** — but use the CORRECT
+   invariant. This read *"`directories − index rows` should equal the duplicate
+   count"* until 2026-09-07, and that is **short by the containers**: a journal
+   issue carries `container: true` in its `structure.json`, gets no index line
+   of its own by design, and has its constituent papers indexed separately
+   (`ant-v14-n7-s` is *Algebra & Number Theory* Vol 14 No. 7 — 170 sections, no
+   row, and all **ten** of its `-p01`…`-p10` children DO have rows). An agent
+   applying the old form finds a gap it cannot explain and concludes the index
+   is broken; I did exactly that, and wrote "`ant-v14-n7-s` carries 170 sections
+   and is invisible to the tier every agent is told to read first" into a bean
+   before checking the design. The invariant is
+
+       directories − index rows  ==  duplicates + containers
+
+   and when *that* fails the index is behind. Measured 2026-09-07 after a
+   regeneration: **661 − 640 = 21 = 20 + 1**, exact.
+
+   Both exclusions are silent, and one is silent in a worse way: `build()`
+   returns `None` for a container or a duplicate with no diagnostic, so a
+   directory that is neither — a genuinely un-indexed document — is
+   indistinguishable from a designed exclusion without opening its
+   `structure.json`. To separate them, classify the missing set by that file
+   rather than by eye. The fix for a real gap is
+   `python3 scripts/summarize-library.py --apply` (extractive, offline, no
+   model; agent-written summaries preserved). The producer fixes it deterministically and offline —
    `python3 scripts/summarize-library.py --apply` (extractive, no model, no
    network; agent-written summaries are preserved). A clean tier-1 scan is
    evidence about the index, not about the library.

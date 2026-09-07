@@ -7,6 +7,7 @@ section_number: null
 pages: 1-3
 source_pdf: 0905.1873v2.pdf
 source_sha256: d4f785469fafdce6
+doc_brief: "Evolution of Nuclear Many-Body Forces with the Similarity Renormalization Group — 3 sections: Front matter; MeV are compared with SRG at ℏΩ = ; Acknowledgments"
 ---
 arXiv:0905.1873v2  [nucl-th]  17 Aug 2009
 Evolution of Nuclear Many-Body Forces
