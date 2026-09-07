@@ -1,0 +1,222 @@
+#!/usr/bin/env python3
+"""The TL closure rule, read off the diagrams and stated on the `(I,J)` index.
+
+Bean `qou-cds1`. `QOU/MathlibExt/TemperleyLiebNormalForm.lean` defines the
+general normal-form index `NormalIdx m` as a pair of subsets `(I, J)`, because
+`tl_normal_form_basis_probe.py` established that word length CANNOT be a
+termination measure. What that file still lacks -- and what blocks
+`dim TL_n = catalan n` -- is the **closure lemma**: a formula for
+
+    e_k · elt(I, J)   =   δ^loops · elt(I', J')
+
+with `(I', J')` and `loops` given as functions of `(k, I, J)`.
+
+This probe does not guess that formula. It computes the product by planar
+diagrams (the ground truth `tl_normal_form_basis_probe` already validated),
+indexes both sides by their `(I, J)` data, and then TESTS candidate rules
+against every product at `n = 2..7` -- 3456 of them.
+
+## What is settled
+
+**The δ rule is complete**, and it is a condition on `I` alone:
+
+    loops = 1   ⟺   (I', J') = (I, J)          [the δ appears exactly at fixed points]
+    loops = 1   ⟺   k ∈ I  ∧  k-1 ∉ I          [and that is the test]
+
+Both hold on all 3456 products. The second is sharp, and the near misses show
+it: `k ∈ I` alone fails 650, `k ∈ I ∧ k+1 ∉ I` fails 882, `k ∈ I ∧ k ∉ J` fails
+846. **`J` does not enter the δ condition at all.**
+
+The reason is visible once stated: `e_k` commutes past an earlier block iff that
+block's top index is `≤ k-2`, i.e. iff `k-1 ∉ I`; it then meets its own block
+top and `e_k² = δ e_k` fires. So this is a lemma with a proof, not a fit.
+
+**Two further invariants**, on all 3456:
+
+    k ∈ I'          always -- every product lands on a normal form whose I contains k
+    |I'| = |J'|     always -- as it must, but it is checked rather than assumed
+
+## 🛑 What is NOT settled
+
+**The `(I', J')` formula for the `loops = 0` branch.** 2378 products, and none
+of the simple candidates fits: `I' = I ∪ {k}` fails 1821, `I' ⊆ I ∪ {k}` fails
+348, `J' ⊆ J ∪ {k}` fails 129. The size moves in both directions --
+`|I'| - |I| ∈ {-1, 0, +1}` with 302 / 1519 / 557 -- and that **decrease is
+exactly the source of the word-length non-monotonicity** the first probe found.
+So the remaining rule is genuinely more intricate than an insertion, which is
+consistent with, and explains, that earlier negative.
+
+This probe therefore closes the δ half of the closure lemma and leaves the
+`(I', J')` half open, with its shape measured rather than guessed.
+
+## Arithmetic
+
+Exact integers, sets and tuples. No floating point anywhere.
+"""
+
+from __future__ import annotations
+
+import json
+import os
+import sys
+from collections import Counter
+from itertools import combinations
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+import tl_normal_form_basis_probe as tlp  # noqa: E402  (guarded by __main__)
+
+WITNESS = Path(__file__).with_name("tl-closure-rule.witness.json")
+
+MAX_N = 7
+
+
+def normal_pairs(m: int) -> list[tuple[tuple[int, ...], tuple[int, ...]]]:
+    """`(I, J)` for `TL_{m+1}`, generators `1..m` to match `tlp.gen`."""
+    out = []
+    for k in range(0, m + 1):
+        for I in combinations(range(1, m + 1), k):
+            for J in combinations(range(1, m + 1), k):
+                if all(J[r] <= I[r] for r in range(k)):
+                    out.append((I, J))
+    return out
+
+
+def pair_word(I: tuple[int, ...], J: tuple[int, ...]) -> tuple[int, ...]:
+    w: list[int] = []
+    for r in range(len(I)):
+        w.extend(range(I[r], J[r] - 1, -1))
+    return tuple(w)
+
+
+def products(n: int):
+    """Every `e_k · elt(I,J)`, as `(k, I, J, I', J', loops)`."""
+    m = n - 1
+    pairs = normal_pairs(m)
+    d2p = {}
+    for (I, J) in pairs:
+        d, l = tlp.word_diagram(n, pair_word(I, J))
+        assert l == 0, f"normal form {(I, J)} is not loop-free"
+        assert d not in d2p, f"two normal forms share a diagram at n={n}"
+        d2p[d] = (I, J)
+    rows = []
+    for k in range(1, n):
+        ek = tlp.gen(n, k)
+        for (I, J) in pairs:
+            dw, _ = tlp.word_diagram(n, pair_word(I, J))
+            d, loops = tlp.mul(n, ek, dw)
+            assert d in d2p, f"e_{k}·{(I, J)} left the normal forms at n={n}"
+            rows.append((k, I, J, *d2p[d], loops))
+    return rows
+
+
+def main() -> int:
+    allrows = {n: products(n) for n in range(2, MAX_N + 1)}
+    flat = [r for rs in allrows.values() for r in rs]
+    total = len(flat)
+    print(f"{total} products e_k · elt(I,J) over n = 2..{MAX_N}\n", flush=True)
+
+    ok = True
+    checks = []
+
+    def rule(name, pred, subset=None):
+        rows = flat if subset is None else subset
+        bad = [r for r in rows if (r[5] == 1) != pred(r)]
+        return {"rule": name, "counterexamples": len(bad), "of": len(rows),
+                "holds": not bad}
+
+    delta_rules = [
+        rule("loops=1 <=> (I',J')=(I,J)", lambda r: (r[3], r[4]) == (r[1], r[2])),
+        rule("loops=1 <=> k in I and k-1 not in I",
+             lambda r: r[0] in r[1] and (r[0] - 1) not in r[1]),
+        rule("loops=1 <=> k in I", lambda r: r[0] in r[1]),
+        rule("loops=1 <=> k in I and k+1 not in I",
+             lambda r: r[0] in r[1] and (r[0] + 1) not in r[1]),
+        rule("loops=1 <=> k in I and k not in J",
+             lambda r: r[0] in r[1] and r[0] not in r[2]),
+    ]
+    for d in delta_rules:
+        verdict = "HOLDS" if d["holds"] else "fails %d" % d["counterexamples"]
+        print("  %-44s %s" % (d["rule"], verdict), flush=True)
+    ok &= delta_rules[0]["holds"] and delta_rules[1]["holds"]
+    checks.append({"check": "delta_rule", "rules": delta_rules,
+                   "pass": delta_rules[0]["holds"] and delta_rules[1]["holds"],
+                   "note": ("the δ appears exactly at the fixed points, and the test "
+                            "is on I alone -- J does not enter it")})
+
+    # invariants on every product
+    inv = {
+        "k_in_I_prime": all(r[0] in r[3] for r in flat),
+        "card_I_prime_eq_card_J_prime": all(len(r[3]) == len(r[4]) for r in flat),
+        "loops_at_most_one": all(r[5] <= 1 for r in flat),
+    }
+    ok &= all(inv.values())
+    print(flush=True)
+    for k_, v in inv.items():
+        print(f"  invariant {k_:32s} {'HOLDS' if v else '*** FAILS ***'}", flush=True)
+    checks.append({"check": "invariants", "results": inv, "pass": all(inv.values())})
+
+    # the open branch
+    zero = [r for r in flat if r[5] == 0]
+    def S(t):
+        return frozenset(t)
+    open_cands = [
+        {"candidate": "I' = I union {k}",
+         "counterexamples": sum(1 for r in zero if S(r[3]) != S(r[1]) | {r[0]})},
+        {"candidate": "I' subset of I union {k}",
+         "counterexamples": sum(1 for r in zero if not S(r[3]) <= S(r[1]) | {r[0]})},
+        {"candidate": "J' subset of J union {k}",
+         "counterexamples": sum(1 for r in zero if not S(r[4]) <= S(r[2]) | {r[0]})},
+    ]
+    dist = Counter(len(r[3]) - len(r[1]) for r in zero)
+    print(flush=True)
+    print(f"  loops=0 branch: {len(zero)} products, formula NOT identified", flush=True)
+    for c in open_cands:
+        print(f"     candidate {c['candidate']:28s} fails {c['counterexamples']}", flush=True)
+    print(f"     |I'|-|I| distribution: {dict(sorted(dist.items()))}"
+          f"   <- the negative entries are the source of the word-length "
+          f"non-monotonicity", flush=True)
+    checks.append({
+        "check": "loops_zero_branch_formula",
+        "status": "OPEN -- no candidate fits",
+        "products": len(zero),
+        "rejected_candidates": open_cands,
+        "card_I_delta_distribution": {str(a): b for a, b in sorted(dist.items())},
+        "pass": True,   # this check RECORDS an open item; it does not assert one
+        "note": ("recorded as open. The |I'| decrease is what makes word length "
+                 "non-monotone, so an insertion-shaped rule cannot be right."),
+    })
+
+    payload = {
+        "description": (
+            "Closure of left multiplication on the Jones normal forms, indexed by "
+            "(I,J). The δ rule is COMPLETE and holds on all "
+            f"{total} products at n=2..{MAX_N}: loops=1 iff (I',J')=(I,J) iff "
+            "k in I and k-1 not in I -- a condition on I alone. The (I',J') "
+            "formula for the loops=0 branch is NOT identified and is recorded as "
+            "open."
+        ),
+        "bean": "qou-cds1",
+        "products_tested": total,
+        "arithmetic": "exact integers, sets and tuples; no floating point",
+        "scope": ("checked at n <= 7, not proved at general n; the δ rule has a "
+                  "proof sketch (e_k commutes past a block iff its top is <= k-2, "
+                  "then e_k^2 = δ e_k) and is ready to formalise. Wires to nothing."),
+        "checks": checks,
+        "all_pass": ok,
+    }
+    payload.setdefault("scriptFile", os.path.basename(__file__))
+    try:
+        from qou_substrate.witness import WitnessBuilder as _WB
+        _WB.stamp_staleness_metadata(payload, script_path=__file__, engine=None,
+                                     q0_anchor=None)
+    except Exception as exc:
+        payload["provenance_note"] = f"stamp unavailable: {exc!r}"
+    WITNESS.write_text(json.dumps(payload, indent=2, ensure_ascii=False))
+    print(f"\nWROTE {WITNESS.name} — all_pass={ok}", flush=True)
+    return 0 if ok else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -37,6 +37,7 @@ import QOU.MathlibExt.TraceRadicalNondegenerate
 import QOU.MathlibExt.TemperleyLiebSpanning
 import QOU.MathlibExt.TemperleyLiebWedderburn
 import QOU.MathlibExt.TemperleyLiebNormalForm
+import QOU.MathlibExt.TemperleyLiebClosure
 import QOU.MathlibExt.MacdonaldTelescope
 import QOU.MathlibExt.QuantumDilogarithm
 import QOU.MathlibExt.QuantumDilogarithmInfinite
