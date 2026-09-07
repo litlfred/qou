@@ -198,6 +198,96 @@ theorem reflEnd_pair_pow_ne_one {i j : B} (hij : i ≠ j) {m : ℕ} (hm : M i j 
   have := (Real.cos_eq_one_iff_of_lt_of_lt (by linarith [Real.pi_pos]) hlt).mp hx
   linarith
 
+/-! ## The infinite-bond case: the order is genuinely infinite
+
+`DihedralExact` is vacuous at `M i j = 0` — there is no `k` with `0 < k < 0` — so the theorems
+above already cover it. But the *stronger* statement is true and is what the descent lemma needs:
+at an infinite bond **no** positive power of `fᵢfⱼ` is the identity.
+
+🛑 **The cosine argument cannot prove this, and it is worth saying why rather than trying.** At
+`m = 0` the convention `π/0 = 0` gives `c = −1`, so the Gram matrix `[[1,c],[c,1]]` is singular and
+the pair `(⟨αᵢ,v⟩, ⟨αⱼ,v⟩)` collapses onto the line `(1,−1)`: `xSeq` and `ySeq` are **constantly**
+`1` and `−1`, for every `k`. They cannot distinguish anything — correctly, since the infinite
+dihedral group has no relation to detect.
+
+What does work is the **coefficient**, not the form value. The composite acts as a shear, and
+
+    (fᵢfⱼ)^k αᵢ = (1 + 2k)·αᵢ + 2k·αⱼ,
+
+so the `αᵢ`-coefficient is `1 + 2k` and is `1` only at `k = 0`.
+
+## What this unlocks, and why it is NOT spent here
+
+`hfin : ∀ i j, i ≠ j → M i j ≠ 0` is the last hypothesis on the Matsumoto/Bruhat arc. It enters at
+one place — `CoxeterDihedralDescent.alternatingWord_reduced_of_both_descents`, which needs
+`M i j ≠ 0` for `not_isReduced_alternatingWord`. `reflEnd_pair_pow_ne_one_of_infinite` **removes
+that need**: the descent lemma already derives `(σᵢσⱼ)^k = 1` with `k ≥ 1`, and at `M i j = 0` that
+is now impossible, so the `m = 0` branch is refuted rather than excluded.
+
+**Measured cost of doing it: 17 theorem signatures and 79 call sites across five merged files**, one
+of which a sibling session is actively extending. **Measured benefit: none today** — every Coxeter
+matrix in this corpus is `CoxeterMatrix.Aₙ`, and a grep finds no infinite bond anywhere. So the
+refactor is left as a deliberate, separately-reviewable change rather than folded in here. The
+input it needs is proved and sitting in this file; bean `qou-1u90`. -/
+
+/-- At an infinite bond the scalar pair is constant, hence blind. -/
+theorem xSeq_ySeq_of_infinite {i j : B} (hij : i ≠ j) (hm : M i j = 0) :
+    ∀ k : ℕ, xSeq M i j k = 1 ∧ ySeq M i j k = -1 := by
+  have hc : bilinCoeff M i j = -1 := by
+    unfold bilinCoeff
+    rw [if_neg hij, hm]
+    norm_num
+  intro k
+  induction k with
+  | zero => exact ⟨xSeq_zero i j, by rw [ySeq_zero, hc]⟩
+  | succ k ih =>
+    refine ⟨?_, ?_⟩
+    · rw [xSeq_succ, ih.1, ih.2, hc]; ring
+    · rw [ySeq_succ, ih.1, ih.2, hc]; ring
+
+/-- **The shear.** At an infinite bond, one step adds `2αᵢ + 2αⱼ` to the orbit vector. -/
+theorem orbit_succ_of_infinite {i j : B} (hij : i ≠ j) (hm : M i j = 0) (k : ℕ) :
+    ((reflEnd M i * reflEnd M j) ^ (k + 1)) (Finsupp.single i 1)
+      = ((reflEnd M i * reflEnd M j) ^ k) (Finsupp.single i 1)
+        + Finsupp.single i 2 + Finsupp.single j 2 := by
+  have hc : bilinCoeff M i j = -1 := by
+    unfold bilinCoeff
+    rw [if_neg hij, hm]
+    norm_num
+  obtain ⟨hx, hy⟩ := xSeq_ySeq_of_infinite hij hm k
+  rw [pow_succ', Module.End.mul_apply, reflEnd_pair_apply]
+  have hxv : formLin M i (((reflEnd M i * reflEnd M j) ^ k) (Finsupp.single i 1)) = 1 := hx
+  have hyv : formLin M j (((reflEnd M i * reflEnd M j) ^ k) (Finsupp.single i 1)) = -1 := hy
+  rw [hxv, hyv, hc]
+  norm_num
+  abel
+
+/-- **The `αᵢ`-coefficient along the orbit is `1 + 2k`.** -/
+theorem orbit_coeff_of_infinite {i j : B} (hij : i ≠ j) (hm : M i j = 0) (k : ℕ) :
+    (((reflEnd M i * reflEnd M j) ^ k) (Finsupp.single i 1)) i = 1 + 2 * k := by
+  induction k with
+  | zero => simp
+  | succ k ih =>
+    rw [orbit_succ_of_infinite hij hm k]
+    simp only [Finsupp.add_apply, Finsupp.single_eq_same, ih]
+    have hzero : (Finsupp.single j (2 : ℝ)) i = 0 := by
+      apply Finsupp.single_eq_of_ne
+      exact hij
+    rw [hzero]
+    push_cast
+    ring
+
+/-- **At an infinite bond, `fᵢfⱼ` has infinite order.** -/
+theorem reflEnd_pair_pow_ne_one_of_infinite {i j : B} (hij : i ≠ j) (hm : M i j = 0)
+    {k : ℕ} (hk : 0 < k) : (reflEnd M i * reflEnd M j) ^ k ≠ 1 := by
+  intro hpow
+  have h0 : ((reflEnd M i * reflEnd M j) ^ k) (Finsupp.single i 1) = Finsupp.single i 1 := by
+    rw [hpow]; rfl
+  have h1 := orbit_coeff_of_infinite hij hm k
+  rw [h0, Finsupp.single_eq_same] at h1
+  have hk' : (0 : ℝ) < k := by exact_mod_cast hk
+  linarith
+
 /-! ## `DihedralExact`, in general -/
 
 variable {W : Type*} [Group W]
