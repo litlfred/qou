@@ -72,6 +72,30 @@ for f in .beans/*.md; do
     grep -q "^$field:" <<<"$fm" || {
       echo "⚠ $f"; echo "    front-matter missing '$field:'"; bad=$((bad+1)); }
   done
+
+  # Shape 5: front-matter READABLE, `title:` present, and EMPTY.
+  #
+  # The four shapes above are all parser failures. This one parses perfectly and
+  # still lands the file in the state this script's header describes — invisible
+  # in `beans list`, unfindable by the corpus-grep checklist's `.beans/` path,
+  # and a false match for the exact-title existence check AGENTS.md requires
+  # before every `beans create` (an empty title matches every other empty one).
+  #
+  # Measured 2026-09-07: 5 of 5053 files, dated 2026-06-14 to 2026-08-10, so it
+  # recurs rather than being a single event. In 4 of the 5 the title had been
+  # moved into the body as an H1 and blanked here, so it was recoverable
+  # exactly; a body H1 is NOT the healthy convention (48 of 5053), which is how
+  # they were told apart.
+  title_val=$(grep -m1 '^title:' <<<"$fm" | sed 's/^title:[[:space:]]*//')
+  case "$title_val" in
+    ""|"''"|'""')
+      echo "⚠ $f"
+      echo "    front-matter parses but 'title:' is EMPTY — invisible in \`beans list\`."
+      echo "    → shape 5: check the body for an '# <H1>' holding the real title and"
+      echo "      lift it into 'title:'. If there is none, de-slugify the filename and"
+      echo "      say in the commit that the title is slug-derived, not recovered."
+      bad=$((bad+1)) ;;
+  esac
   if [ -z "$id" ]; then
     echo "⚠ $f"; echo "    front-matter has no '# <id>' line"; bad=$((bad+1))
   elif [ -n "${idfile[$id]:-}" ]; then
