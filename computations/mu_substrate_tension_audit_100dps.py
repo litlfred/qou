@@ -10,8 +10,9 @@ So m_p matches CODATA by construction (0.0004 ppb).
 
 The muon prediction then becomes:
   m_μ_pred / m_e = Vol(4_1) / ℏ_q²
-where Vol(4_1) = 2·Λ(π/3) is a categorical constant (Lobachevsky
-function at π/3, well-established to arbitrary precision).
+where Vol(4_1) = 2·Cl₂(π/3) = 6·Λ(π/3) is a categorical constant (Clausen
+function at π/3, well-established to arbitrary precision). NOT 2·Λ(π/3),
+which is Cl₂(2π/3) = 0.6766… = Vol(4_1)/3 — see vol_4_1_mathlib below.
 
 Current dashboard reports m_μ at **210 ppb miss** (964× the 100×
 target of 0.22 ppb). This is documented as the "μ-p substrate tension
@@ -26,7 +27,7 @@ precision to rule out 50-dps numerical noise):
 1. Compute m_μ_pred = m_e · Vol(4_1) / ℏ_q² at 100 dps using:
    - m_e = CODATA 2022 (CAL-1 anchor, sub-ppb)
    - q_0 from canonical re-pin (CAL-2 anchor)
-   - Vol(4_1) = 2·Λ(π/3) — Lobachevsky at π/3
+   - Vol(4_1) = 2·Cl₂(π/3) = 6·Λ(π/3) — Clausen at π/3
 
 2. Compute the SAME prediction using the OLD (pre-#1422) q_0 derived
    from m_μ/m_e — should reproduce CODATA m_μ exactly (since q_0
@@ -88,10 +89,11 @@ def vol_4_1_mathlib(dps: int) -> "mp.mpf":
     Equivalent forms:
       Vol(4_1) = 2·Cl₂(π/3) = 4·Λ(π/6) = 2·Im[Li₂(e^{iπ/3})]
 
-    Note: the comment header in m_p_borromean_verification_50dps.py
-    and several audit docs say "Vol(4_1) = 2·Λ(π/3)" — that's
-    INCORRECT (off by factor 3). The correct identity is the one
-    above; 2·Λ(π/3) = Cl₂(2π/3) = 0.6766... = Vol(4_1)/3.
+    Note: "Vol(4_1) = 2·Λ(π/3)" is INCORRECT (off by factor 3) — it is
+    Cl₂(2π/3) = 0.6766... = Vol(4_1)/3. The correct identity is the one
+    above. This file's own header carried the wrong form until 2026-09-07
+    (bean qou-zdz5); m_p_borromean_verification_50dps.py, which this note
+    used to name as an offender, was fixed earlier and reads 2*Cl_2(pi/3).
     """
     mp.mp.dps = dps + 5
     return 2 * mp.clsin(2, mp.pi / 3)
@@ -328,7 +330,7 @@ def main() -> int:
         tolerance="1e-40",
         source="2·Cl₂(π/3) vs 2·Im[Li₂(e^{iπ/3})] for the figure-eight "
                "volume; guards the 2·Λ(π/3) confusion (that form is "
-               "Vol(4_1)/3 = 0.6766…) that this file's header still carries",
+               "Vol(4_1)/3 = 0.6766…)",
     )
     w.add_assertion(
         name="vol_4_1_matches_known_value",
@@ -401,10 +403,10 @@ def main() -> int:
 
     w.add_data("vol_4_1_precision_floor_50_vs_100_dps", mp.nstr(abs(vol_diff), 12))
     w.add_caveat(
-        "This file's header says 'Vol(4_1) = 2·Λ(π/3)'. That is wrong by a "
-        "factor of 3 — 2·Λ(π/3) = Cl₂(2π/3) = 0.6766… = Vol(4_1)/3 — as "
-        "vol_4_1_mathlib's own docstring already records. The computation "
-        "uses the correct 2·Cl₂(π/3); only the header is stale. Separately, "
+        "This file's header used to say 'Vol(4_1) = 2·Λ(π/3)', wrong by a "
+        "factor of 3 — 2·Λ(π/3) = Cl₂(2π/3) = 0.6766… = Vol(4_1)/3. The "
+        "computation always used the correct 2·Cl₂(π/3); the header was "
+        "corrected 2026-09-07 (bean qou-zdz5). Separately, "
         "that helper quotes the SnapPy value as "
         "2.02988321281930725004240510854658…, which is wrong from the 33rd "
         "digit; the correct continuation is …5490405718833786150…, as the "
