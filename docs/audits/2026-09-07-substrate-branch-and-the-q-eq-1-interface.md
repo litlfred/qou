@@ -790,6 +790,12 @@ so §14.3's prediction has no mechanism.
 
 ## 15.2 What replaces it — and it is a better argument against the same cell
 
+> **🛑 ALSO WRONG — see §16.** I wrote "our chart with a rescaled Coulomb-to-nuclear
+> ratio, not $n=p$". In the deep Classical band the rescaling is **four to five orders
+> of magnitude**, which is not a rescale but a switch-off — and with Coulomb off,
+> $n = p$ is exactly right. The regime table's cell is **derived**, not contradicted.
+
+
 §14.2 still stands: the weight sum is bar-even (§14.1, measured), so the Wedderburn
 weights cannot carry an $n \neq p$ distinction. The corpus's answer to *what does* carry
 it is Coulomb — and Coulomb is bar-even in **sign**.
@@ -822,3 +828,97 @@ the first try.
 Aggravating: `corpus_search`, the one path that survives a change of vocabulary, has
 been down all session (the `paper-assistant` MCP server fails to connect). That is a
 reason to grep *more*, not less, and I did the opposite.
+
+
+---
+
+# 16. $\alpha_{\rm EM}$ is symbolic in $q$ — and it derives the regime-table cell
+
+Owner correction: $\alpha_{\rm EM}$ is symbolic in $q$, so the $\alpha_{\rm EM}(q<1)$
+question does not need the `sorry`-conditional route I assumed in §15.2.
+[`bring-residue-resolvent-context.md`](../../content/quantum-observable-universe/mass-theory/bring-residue-resolvent-context.md)
+gives the closed form
+
+$$
+  1/\alpha_{\rm EM} = q\,[9]_q\,[10]_q + \tfrac{2}{3\pi}.
+$$
+
+**Provenance.** The orders 9 and 10 are labelled the **genus-4 pair** and tied to
+`BringResidueAtOrder`, i.e. to Bring's surface, *not* selected to hit 137 — so this is
+not the "selection against the target" failure the NO-FITTING directive names. But it is
+**conditional**: `BringResidueAtOrder` is an open class, so the form is
+conditional-proved, and everything below inherits that.
+
+At $q_0$ it gives $1/\alpha = 137.035415444$ against CODATA $137.035999084$ —
+**4.259 × 10⁻⁶ relative**.
+
+## 16.1 The whole bar-asymmetry is the prefactor
+
+$[n]_q = (q^n - q^{-n})/(q - q^{-1})$ is **exactly bar-even** (numerator and denominator
+both negate; measured difference $7.35\times10^{-40}$ at `mp.dps` 40). So
+$1/\alpha = q\,P(q)$ with $P$ bar-even, and the entire $q \mapsto q^{-1}$ asymmetry sits
+in the prefactor:
+
+$$
+  \tfrac{1}{\alpha(1/q)} - \tfrac{2}{3\pi}
+  = \frac{1}{q^{2}}\Bigl(\tfrac{1}{\alpha(q)} - \tfrac{2}{3\pi}\Bigr)
+  \qquad\text{(verified to } 5\times10^{-29}\text{)}.
+$$
+
+**And unlike `y_lambda_su_n.q_int` (§14.4), this expression is evaluable at $q = 1$**:
+the $q$-integers become the integers, so
+$1/\alpha(1) = 9\cdot 10 + 2/(3\pi) = 90.2122065908$, i.e.
+$\alpha(1) = 0.01108497439$ — **1.519× ours**. The maximum is just below the interface,
+at $q = 0.983351259$ with $\alpha = 0.01117811536$, **1.5318× ours**.
+
+## 16.2 The Classical band splits in two, and only the deep half gives $n = p$
+
+| $q$ | $1/\alpha$ | $\alpha/\alpha(q_0)$ | Coulomb |
+|---|---|---|---|
+| 1.1099786 (ours) | 137.0354154 | 1.0 | — |
+| 1.0 (interface) | 90.21220659 | 1.5190341 | **stronger** |
+| 0.95 | 92.63566229 | 1.4792944 | **stronger** |
+| 0.90091828 (bar of $q_0$) | 111.2652777 | 1.2316099 | **stronger** |
+| 0.85 | 159.3072664 | 0.86019564 | ~ours |
+| 0.8 | 266.2995174 | 0.5145913 | ~ours |
+| 0.75 | 516.9008173 | 0.26510969 | weaker |
+| 0.7 | 1154.29389 | 0.11871796 | weaker |
+| 0.6 | 8653.079795 | 0.015836606 | weaker |
+| 0.5 | 116508.1011 | 0.0011761879 | **off** |
+| 0.38196601 ($\varphi^{-2}$) | 6677056.383 | $2.05\times10^{-5}$ | **off** |
+
+**Deep band, $q \lesssim 0.75$:** $\alpha_{\rm EM}$ collapses by four to five orders of
+magnitude. Coulomb switches off, and with it the only force pushing $N$ above $Z$. What
+remains is the symmetry term, which favours $N = Z$. **The regime table's "symmetric
+nuclei ($n=p$)" is derived here, not asserted.**
+
+**Upper band, $\approx 0.87 < q < 1$:** $\alpha_{\rm EM}$ is *stronger* than ours, up to
+1.53×. Coulomb repulsion is **stronger**, so the chart should carry **more** neutron
+excess than ours — not $n = p$. The crossing where $\alpha$ returns to our value lies
+between $q = 0.85$ and $q = 0.90$ (the root-finder converged back to $q_0$ rather than
+the sub-unity root, so this is bracketed from the table, not solved).
+
+So the cell is **right for the deep band and wrong for the upper band**, and the table
+states it for the whole of $1/\varphi^2 < q < 1$.
+
+## 16.3 What this says about the owner's scenario specifically
+
+**The bar-image of our substrate, $q = 1/q_0 = 0.900918$, sits in the *upper* band**,
+where $\alpha_{\rm EM}$ is **1.2316× ours**. A bar-conjugate domain therefore has
+*stronger* Coulomb and a **more neutron-rich** chart than ours — not a symmetric one, and
+not our chart either. That is a compositional signature, and it is the one that would
+actually apply to the antimatter-domain proposal, rather than the $n=p$ signature of
+§12 which belongs to the deep band.
+
+## 16.4 Two of my own claims retracted, in opposite directions
+
+§14.3 said the bar-image regime has **proton excess** (mechanism: isovector sign flip).
+Retracted in §15 — the split is Coulomb, which does not flip sign.
+
+§15.2 said it has **our chart with a rescaled Coulomb ratio, not $n=p$**. Also wrong:
+in the deep band the "rescale" is $10^{-5}$, which is a switch-off, and $n=p$ is correct
+there.
+
+The third answer came from **evaluating the closed form** rather than reasoning about
+which mechanism ought to dominate. Both wrong answers were mechanism arguments; the right
+one is four lines of arithmetic on a formula that was in the corpus the whole time.
