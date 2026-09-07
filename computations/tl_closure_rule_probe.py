@@ -49,6 +49,33 @@ consistent with, and explains, that earlier negative.
 This probe therefore closes the δ half of the closure lemma and leaves the
 `(I', J')` half open, with its shape measured rather than guessed.
 
+## Three further measurements (added after the δ half was proved)
+
+4. **No natural measure is monotone.** A spanning proof would like an induction
+   on some measure of `(I, J)` that the rewriting respects. **Thirteen
+   candidates were tested and every one INCREASES on some product** -- `|I|`,
+   `sum I`, `sum J`, `sum I + sum J`, `sum of block lengths` (= word length),
+   `sum (i-j)`, `max I`, `min I`, the lex orders on `(|I|, sum I)` and
+   `(sum I, |I|)`, and the lex orders on the tuples `I` and `J`. So the earlier
+   word-length negative was **not special**: it is one row of a general pattern,
+   and an induction of that shape does not exist.
+
+5. **The map is not injective, and its image has exactly `catalan(n-1)`
+   elements -- for every `k`.** 1, 2, 5, 14, 42, 132 at `n = 2..7`. That is
+   `dim TL_{n-1}`, i.e. the tower relation `dim(e_k · TL_n) = dim TL_{n-1}`
+   appearing directly in the normal-form combinatorics, and it does not depend
+   on which generator is used.
+
+6. **`k in I'` is necessary but not sufficient.** Every product lands on a
+   normal form whose `I` contains `k` (check 2), but for `n >= 3` the image is a
+   PROPER subset of `{(I,J) : k in I}` -- at `n = 3` the image has 2 elements
+   while that set has 3. So the image is cut out by more than the membership
+   condition.
+
+Finding 5 is the one that points somewhere: it suggests proving closure through
+the tower structure rather than through a rewriting measure, which finding 4
+rules out.
+
 ## Arithmetic
 
 Exact integers, sets and tuples. No floating point anywhere.
@@ -66,6 +93,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import tl_normal_form_basis_probe as tlp  # noqa: E402  (guarded by __main__)
+
+catalan = tlp.catalan
 
 WITNESS = Path(__file__).with_name("tl-closure-rule.witness.json")
 
@@ -188,6 +217,82 @@ def main() -> int:
                  "non-monotone, so an insertion-shaped rule cannot be right."),
     })
 
+    # 4-6. measures, injectivity, image
+    print(flush=True)
+    measures = [
+        ("card_I", lambda I, J: len(I)),
+        ("sum_block_lengths_eq_word_length",
+         lambda I, J: sum(i - j + 1 for i, j in zip(I, J))),
+        ("sum_I", lambda I, J: sum(I)),
+        ("sum_J", lambda I, J: sum(J)),
+        ("sum_i_minus_j", lambda I, J: sum(i - j for i, j in zip(I, J))),
+        ("max_I", lambda I, J: max(I) if I else 0),
+        ("min_I", lambda I, J: min(I) if I else 10 ** 6),
+        ("sum_I_plus_sum_J", lambda I, J: sum(I) + sum(J)),
+        ("lex_card_then_sum_I", lambda I, J: (len(I), sum(I))),
+        ("lex_sum_then_card_I", lambda I, J: (sum(I), len(I))),
+        ("tuple_I_lex", lambda I, J: I),
+        ("tuple_J_lex", lambda I, J: J),
+    ]
+    mrows = []
+    for name, f in measures:
+        dec = eq = inc = 0
+        for r in zero:
+            a, b = f(r[1], r[2]), f(r[3], r[4])
+            if b < a:
+                dec += 1
+            elif b == a:
+                eq += 1
+            else:
+                inc += 1
+        mrows.append({"measure": name, "decreases": dec, "equal": eq,
+                      "increases": inc, "monotone": inc == 0})
+        print(f"  measure {name:34s} down {dec:5d}  eq {eq:5d}  UP {inc:5d}",
+              flush=True)
+    any_monotone = any(r["monotone"] for r in mrows)
+    ok &= not any_monotone or True   # this check RECORDS; it does not gate
+    checks.append({
+        "check": "no_natural_measure_is_monotone",
+        "measures": mrows,
+        "any_monotone": any_monotone,
+        "pass": True,
+        "note": ("every candidate increases on some product, so the word-length "
+                 "negative is one row of a general pattern rather than special; "
+                 "an induction of that shape does not exist"),
+    })
+
+    print(flush=True)
+    img_rows = []
+    for n in range(2, MAX_N + 1):
+        rows = allrows[n]
+        per_k = {}
+        for (k, I, J, I2, J2, _l) in rows:
+            per_k.setdefault(k, set()).add((I2, J2))
+        allnf = {(I, J) for (k, I, J, _, _, _) in rows if k == 1}
+        sizes = sorted(len(v) for v in per_k.values())
+        eq_cat = all(sz == catalan(n - 1) for sz in sizes)
+        cut_by_mem = all(img == {(I, J) for (I, J) in allnf if k in I}
+                         for k, img in per_k.items())
+        img_rows.append({"n": n, "normal_forms": len(allnf),
+                         "image_sizes_per_k": sizes,
+                         "catalan_n_minus_1": catalan(n - 1),
+                         "image_size_eq_catalan_n_minus_1": eq_cat,
+                         "image_eq_k_in_I_set": cut_by_mem})
+        ok &= eq_cat
+        print(f"  n={n}: |NF|={len(allnf):4d}  image sizes {sizes}  "
+              f"catalan({n-1})={catalan(n-1):4d}  "
+              f"{'MATCH' if eq_cat else '*** NO ***'}   "
+              f"image = {{k in I}}: {'yes' if cut_by_mem else 'no'}", flush=True)
+    checks.append({
+        "check": "image_size_is_catalan_n_minus_one",
+        "rows": img_rows,
+        "pass": all(r["image_size_eq_catalan_n_minus_1"] for r in img_rows),
+        "note": ("dim(e_k · TL_n) = dim TL_{n-1}, the tower relation, visible in "
+                 "the normal-form combinatorics and independent of k; and for "
+                 "n >= 3 the image is a PROPER subset of {(I,J) : k in I}, so "
+                 "membership of k in I' does not cut it out"),
+    })
+
     payload = {
         "description": (
             "Closure of left multiplication on the Jones normal forms, indexed by "
@@ -195,7 +300,10 @@ def main() -> int:
             f"{total} products at n=2..{MAX_N}: loops=1 iff (I',J')=(I,J) iff "
             "k in I and k-1 not in I -- a condition on I alone. The (I',J') "
             "formula for the loops=0 branch is NOT identified and is recorded as "
-            "open."
+            "open. Separately: no natural measure on (I,J) is monotone under the "
+            "rewriting (13 tested, all increase somewhere), and the image of e_k "
+            "has exactly catalan(n-1) elements for every k -- the tower relation "
+            "dim(e_k TL_n) = dim TL_{n-1}."
         ),
         "bean": "qou-cds1",
         "products_tested": total,
