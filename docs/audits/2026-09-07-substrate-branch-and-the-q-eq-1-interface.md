@@ -338,3 +338,172 @@ are branch-and-root algebra and do not depend on $q_0$ at all. `corpus_search` �
 one grep path that survives a change of vocabulary — **did not run**; the
 `paper-assistant` MCP server failed to connect, so every absence claim in §6 is
 grep-shaped: those spellings, on those surfaces.
+
+---
+
+# 9. Adversarial pass on this document's own claims (2026-09-07)
+
+Run under the standing critical-distance licence. Eight assertions made in this
+session, attacked. Three fail, two are badly framed and are restated, three survive.
+
+## 9.1 FAILS — "antimatter cannot be dark matter, five independent reasons" (§6)
+
+Three of the five **presuppose fixed fundamental constants**, which is precisely what
+the varying-$q$ proposal denies. The budget argument ($\Omega_c/\Omega_b = 5.364$), the
+CMB-vs-BBN 3 % agreement, and the pre-recombination photon-coupling argument are all
+inferences made *within* $\Lambda$CDM's assumption that $\alpha$, $m_e$ and $m_p/m_e$ are
+constant in space and time. Using them against a proposal that varies $q$ is circular,
+and I did not flag it.
+
+**Survive cleanly:** the Bullet-Cluster offset (a kinematic fact about collisionality,
+independent of constants) and the luminosity objection *at fixed $q$*. So the honest
+count is **2 of 5**, not 5 of 5.
+
+## 9.2 FAILS — "at $q=1$ there are no particles, so nothing to emit" (§4a)
+
+**False for baryons.** The Jones polynomial at $q=1$ obeys $V_L(1) = (-2)^{c-1}$ for a
+link of $c$ components. Only **knots** trivialise:
+
+| object | components | $V_L(1)$ |
+|---|---|---|
+| trefoil $T_{2,3}$ — electron | 1 | $1$ |
+| Hopf link $\mathcal{L}_H$ | 2 | $-2$ |
+| Borromean $\mathcal{B}_3$ — proton core | 3 | $4$ |
+
+The proton is $\mathcal{B}_3 \oplus \mathcal{L}_H$, a **link**. So §4a's claim holds for
+leptons and fails for baryons. See §10.4 — the corrected statement is more interesting
+than the wrong one.
+
+## 9.3 FAILS AS STATED — "barrier, not door" (§4b)
+
+I made an **absolute-energy** argument in a framework that excises absolute mass
+(AGENTS.md, owner ruling 2026-08-11). What §4b measures is that
+$\mathrm{Vol}(K)\rho(K)/\hbar_q^2$ diverges — a **ratio to $m_e$**. Whether *reaching*
+the layer costs unbounded energy needs $m_e$'s own $q$-scaling, and that is unknown:
+the electron is the trefoil, a **torus** knot with $\mathrm{Vol}(T_{2,3}) = 0$, so its
+mass does **not** come from the volume–density formula at all. Per
+`q-energy-terms-and-limits.md` it arises from quantum-dilogarithm contributions across
+the brane tower — `conj:mass-endomorphism`, **a conjecture**.
+
+So the barrier claim is **conditional on an open conjecture**, not established. The
+divergence of the *ratio* stands; the *barrier* does not.
+
+## 9.4 BADLY FRAMED — "$r$ depends on $s$, not $q$" (§1)
+
+True, and it misses the point. The right statement is that the modulus is
+$z = s - s^{-1}$ — the corpus's own "spacetime ratio" — and $r$ is a clean **polynomial
+in $z$**. Setting $s^2+s-1 = s(z+1)$ and $4s^4-s^3-4s^2+s+4 = s^2(4z^2-z+4)$,
+
+$$
+  s^3 r = \tfrac{5}{27}\,s^3 (z+1)(4z^2-z+4)
+  \quad\Longrightarrow\quad
+  r(z) = \tfrac{5}{27}(z+1)(4z^2-z+4) = \tfrac{5}{27}(4z^3+3z^2+3z+4),
+$$
+
+which is **exactly** the $q_W(z)$ already written in `t-duality-elliptic.md` (verified,
+symbolic difference $0$). I reported a defect where two blocks in fact agree; what is
+actually wrong is one sentence of presentation in a third.
+
+## 9.5 BADLY FRAMED — "the corpus lists half the degeneration locus" (§2)
+
+There is **one** degeneration, at $z = -1$, since $z+1 = 0 \iff s^2+s-1 = 0$. The golden
+ratio appears only on pulling that single condition back along $z = s - s^{-1}$ and
+$q = s^2$, where it acquires two preimages $q \in \{\varphi^{-2}, \varphi^2\}$. So the
+regime table lists **one preimage of one point**, not half of a two-point set. Same
+actionable content, correct frame.
+
+## 9.6 OVERSTATED — the $\theta_{\rm res}^2$ comparison
+
+Corrected in three ways already (normalisation $\times2$; coefficient $3.9162481$, not
+$O(1)$; and the bridge from *crossing energy* to *mass* is asserted, not derived).
+Deeper: `sec:cp-violation-evidence` prefixes the ansatz with **"If"**. I called a hedged
+guess in a remark "the framework's own scale".
+
+## 9.7 UNVERIFIED — the CDG98 bound
+
+Quoted from memory, with a specific number ($\gtrsim 1$ Gpc). The library holds no
+source on antimatter cosmology, so it cannot be checked in-corpus, and §10.2 may make it
+inapplicable anyway.
+
+## 9.8 WEAK — "no B-mode at the interface" (§4a)
+
+Rests on a **remark**'s T/E/B $\leftrightarrow$ jet-degree mapping, which is not derived,
+and holds exactly at $z = 0$, a measure-zero locus.
+
+## Survives the pass
+
+The $z$-modulus reframing (§9.4, new and verified); the bar defect and its vanishing
+locus (§10.1–10.2); the degeneration being $z=-1$ with $4z^2-z+4 > 0$; the measured
+$\sum_\lambda y_\lambda(H_3) \to 3/4$; SN 1987A; the Bullet Cluster.
+
+# 10. Conclusions and implications for QOU
+
+Stated granting that the binding-energy accuracy problems are resolvable, so that they
+are not the objection.
+
+## 10.1 QOU carries a DERIVED matter/antimatter asymmetry at the substrate level
+
+The bar involution $q \mapsto q^{-1}$ is $s \mapsto s^{-1}$, which sends $z \mapsto -z$.
+The Weierstrass coefficient is **not even in $z$**, and the defect is exact:
+
+$$
+  r(z) - r(-z) = \tfrac{10}{27}\,z\,(4z^2+3).
+$$
+
+At $q_0$: $z_0 = 0.104388058259$, $r(z_0) = 0.805630515912$,
+$r(-z_0) = 0.687958595244$, fractional asymmetry
+$\bigl(r(z_0)-r(-z_0)\bigr)/\bigl(r(z_0)+r(-z_0)\bigr) = \mathbf{0.07878466694}$.
+
+**Implication.** The matter and antimatter colour fibres are *different elliptic curves*.
+QOU does not need a Sakharov mechanism to *distinguish* matter from antimatter — the
+distinction is already in the geometry of the colour fibration, derived and unfitted.
+This redirects `sec:cp-violation-evidence`'s stated expectation that "cosmological
+regimes must provide the required enhancement": the asymmetry is not cosmological, it is
+in $\mathcal{E}_z$.
+
+**Do not over-read.** $7.9\%$ is eight orders of magnitude from $\eta \sim 6\times10^{-10}$.
+This is a **curve** asymmetry, not a **number-density** asymmetry, and nothing here
+connects them. It is a relocation of the open problem, not a solution to it.
+
+## 10.2 $q = 1$ is the unique locus where matter and antimatter coincide
+
+$r(z) = r(-z) \iff z = 0 \iff s = s^{-1} \iff q = 1$, since $4z^2+3 > 0$.
+
+**Implication.** The interface is at $q=1$ for a *derived* reason — it is exactly where
+the framework's own asymmetry vanishes — rather than by the continuity argument of §4,
+which only said a path must cross it.
+
+## 10.3 The substrate window is bounded and bar-symmetric
+
+One degeneration at $z=-1$, two $q$-preimages $\varphi^{-2}$ and $\varphi^{2}$. The
+physical window is $(\varphi^{-2}, \varphi^{2}) = (0.381966, 2.618034)$, **bounded above**,
+against the regime table's unbounded $q>1$. A structural constraint the corpus does not
+currently use.
+
+## 10.4 The interface is SELECTIVE: leptons de-particle, baryons do not
+
+From §9.2: at $q=1$ knots trivialise ($V=1$) but links do not ($\mathcal{L}_H \to -2$,
+$\mathcal{B}_3 \to 4$). Leptons lose their invariant at the interface; baryons keep a
+nonzero one.
+
+**Implication, and it is the most striking thing in this document:** a $q=1$ surface
+would treat leptons and baryons differently. **Marked speculative** — "retains a nonzero
+Jones value" is not the same as "is reflected", and no transport calculation has been
+done. But a charge-separating boundary is a strong, unusual prediction and is worth a
+real calculation.
+
+## 10.5 What this does NOT do for dark matter
+
+The budget objection is untouched: nothing here produces $\Omega_c/\Omega_b = 5.364$.
+And this is a **boundary** mechanism, so its energy content scales with interface *area*
+while a halo's scales with *volume* — the arithmetic is entirely different from §6 and
+**has not been computed**. Do not claim it helps; do not claim it cannot.
+
+## 10.6 Bottom line
+
+Granting resolvable binding errors, the session's net gain for QOU is: a derived
+substrate-level matter/antimatter asymmetry, a derived meaning for $q=1$, and a bounded
+bar-symmetric substrate window. Its net loss is three of my own claims, one of which
+(§9.3) was an absolute-mass argument in a framework that forbids them.
+
+**Not gained:** dark matter, the baryon-asymmetry magnitude, absolute masses.
