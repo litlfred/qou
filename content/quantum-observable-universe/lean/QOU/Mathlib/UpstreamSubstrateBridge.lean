@@ -386,7 +386,26 @@ theorem H4_block_dims_discharged :
     itself, `Nonempty` is inhabited for the same reason `∃ _, True` was,
     so the conversion silenced the detector without making the claim
     falsifiable.  The divergence is deliberate, and narrow: the other
-    three keep the sibling's direction and go further. -/
+    three keep the sibling's direction and go further.
+
+    **UPDATE 2026-09-07 — `qou-ewc4` is DONE, and the removal still stands.**
+    `LieValuedStokes.stokes_identity` is now a real equation,
+    `∫_{∂σ} α = ∫_σ d_α β`, quantified over 2-cells, with the three integrals
+    it needs carried as fields; the `Prop` + witness pair is gone, so the
+    carrier no longer certifies itself.  `LieValuedStokes_canonical` was also
+    demoted from `instance` to `def` — as an `instance` it discharged
+    `[LieValuedStokes M 𝔤]` globally with `(0 : 𝔤) = 0`, which is the same
+    defect `punitInstance` was demoted for one class up, and its docstring
+    called that *"Non-vacuous (uses a concrete predicate, not True)"*, which
+    was false.
+
+    **Do NOT restore `lie_valued_stokes_discharged` on the strength of this.**
+    The only model is still the zero one — every integral constantly `0` — so
+    `Nonempty (LieValuedStokes M 𝔤)` remains as empty as the `∃ _, True` it
+    would replace.  What changed is that the carrier can now be *contradicted*
+    by a non-zero model; what has not changed is that no such model exists
+    here.  The obligation is still undischarged, and the reasoning above for
+    deleting rather than restating is unaffected. -/
 
 /-- **Master+ aggregate**: extends `complete_upstream_discharge`
     with Wedderburn iso n=4..8 + H_4 block dims.

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Does the Magnus Ω₂ sign conclusion depend on WHICH partition-weight family
-is used to aggregate it?  Measured: no, on all three atoms.
+is used to aggregate it?  Measured: **yes at A=3**, no at A=2, undetermined at
+A=4 until its source witness is regenerated.
 
 WHY THIS EXISTS (bean qou-za3q)
 -------------------------------
@@ -28,11 +29,17 @@ sign the answer would be trivial. They do not:
 
     atom      tr(ρΩ₂) > 0    < 0
     deuteron        4         5
-    triton         13        15
+    triton         14        14
     ⁴He            26        49
 
 The sum is a genuine cancellation, and re-weighting redistributes mass across
-terms of both signs while zeroing most of them. The sign was free to flip.
+terms of both signs while zeroing most of them. The sign was free to flip — and
+at A=3 it does:
+
+    atom      source        P_plancherel   P_wenzl     agree?
+    deuteron  canonical         -15.095     -6.921     yes
+    triton    canonical          +2.470    -13.931     NO
+    ⁴He       pre-ruling        -57.803   -100.827     undetermined
 
 METHOD
 ------
@@ -42,7 +49,13 @@ No re-derivation: each sign probe already records its own per-partition
 exact (the traces are shared, not recomputed) and cheap.
 
 NOT CLAIMED: that either measure is the right pairing for a Magnus Ω₂ sign
-question. Only that the published sign does not distinguish them.
+question. Only which atoms the published sign distinguishes them on.
+
+A NOTE ON THE FIRST VERSION OF THIS FILE. It reported robustness on all three
+atoms, because it re-weighted each probe's committed traces without checking
+they were canonical — two of three predated the 2026-09-05 ordering ruling. The
+`ORDERING_RULING` guard below exists so that cannot recur: a stale source is
+excluded from the gate rather than counted as agreement.
 """
 from __future__ import annotations
 

@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: high
 created_at: 2026-09-04T11:46:20Z
-updated_at: 2026-09-04T11:46:20Z
+updated_at: 2026-09-05T10:21:00Z
 ---
 
 FOUND 2026-09-04 as a hook-triggered producer re-run in a working tree, NOT by looking for it. Re-run against main at eb2f4588ce. NOT MY BRANCH'S CHANGE - reverted rather than committed, so this bean is the only record. Reproduce with: run the producer for computations/probes/qbeta-ck-basis-constrained-pslq.witness.json on current main and diff.
@@ -26,3 +26,7 @@ while the witness plainly carries q0_canonical AND c3_reproduced_canonical, both
 UNRELATED AND CORRECT, noted so nobody 'fixes' it: the key rename 'Vol(4_1)=2*Lambda(pi/3)' -> 'Vol(4_1)=2*Cl_2(pi/3)=6*Lambda(pi/3)' with the VALUE unchanged (2.02988321281930725004240510855) is the Lambda-vs-Cl_2 naming drain (qou-zdz5) landing properly.
 
 WHY THIS IS NOT MINE TO FIX HERE: PR #6584 is the eightfold/hyperbolic-volume arc; this is the c_k ladder producer, a different domain, and the change that broke it came from main. Fixing it would widen the PR and the reviewer is not loaded on that area. Also do NOT make it green by widening the tolerance or re-baselining - AGENTS.md forbids that explicitly; fix at the producer by reconciling c3_reproduced with the corrected slope.
+
+DEFECT 2 FIXED 2026-09-05 (PR #6824, branch claude/fervent-noether-zssd1k). Producer stamp q0_anchor=False -> q0_anchor='ambiguous' (the manifest's own classification for this stem; reads both pins on purpose, pin undetermined). No bare q0Value. Verified clean: not a flip in q0_anchor_consistency_audit, not listed in q0_value_drift_audit. The stale '# no q0 in this producer's cone' comment corrected.
+
+DEFECT 1 STILL OPEN (deferred): the c3_reproduced_canonical ~ -974 RED. cds1-gated c_k-derivation work: a sibling corrected anchor_slope_dc3_dq 4.66e6 -> 3.84e6 (qou-3nva/qou-kt8o) and c3_reproduced (computed FROM the slope) was not reconciled. Fix by reconciling at the producer under the cds1 c_k re-derivation; do NOT widen tolerance/re-baseline. Bean stays open for defect 1.

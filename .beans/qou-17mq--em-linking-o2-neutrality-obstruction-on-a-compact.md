@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T20:31:20Z
-updated_at: 2026-09-07T13:04:21Z
+updated_at: 2026-09-07T16:20:54Z
 ---
 
 ## WORKED 2026-08-25 — O2 applied; it excludes the contest's winner
@@ -538,3 +538,33 @@ the sake of qou-17mq specifically. (It remains the right thing to do for
 qou-26f2, which is about a probe whose observable C has never been evaluated --
 a different and genuinely open question.) The only thing that unblocks p here
 is a DERIVED atom->knot rule at A >= 4, i.e. conj:canonical-knot-id-sdp.
+
+## MERGED to main as 98dd4f7129 (PR #7080, 2026-09-07)
+
+Rebase-merged on explicit owner permission ("merge"). Landed:
+  computations/em_linking_zero_mean_closes_c0_probe.py                 (7/7)
+  computations/em_linking_derived_c0_is_invisible_to_the_series_probe.py (7/7)
+  computations/em-linking-zero-mean-closes-c0.witness.json
+  computations/em-linking-derived-c0-is-invisible-to-the-series.witness.json
+  docs/audits/2026-09-07-em-linking-zero-mean-closes-c0.md
+
+THIS BEAN STAYS OPEN (AGENTS.md 13a — never close a bean whose subject is an
+open conjecture). What merged is a derivation plus a measurement of its own
+limits; the kernel IDENTIFICATION remains a conjecture.
+
+State of the front after the merge:
+  DERIVED    c0 = <coth>_M = sinh^2 R / (sinh R cosh R - R), quadrature-checked
+             to 1.567e-39, admissible at every corpus volume without being
+             placed there.
+  PREDICTED  p ~ 0.153, and MEASURED to be untestable on the kappa(A) series:
+             R^2 spread 0.0175 across the whole c0 scan against 0.0200 of
+             variance unexplained by the best member.
+  BLOCKED    p has no measurement independent of s. The corpus carries TWO
+             hyperbolic links and both are at A = 3 (Hopf at A=2 is
+             Seifert-fibred, Vol = 0), so exactly ONE distinct A has hyperbolic
+             geometry. No exponent in A is fittable to one A.
+  ONE LIVE   a DERIVED atom->knot rule at A >= 4 (conj:canonical-knot-id-sdp).
+  ROUTE      Put to the owner; not started unilaterally.
+
+No reason to install SnapPy for this bean. (Still worth it for qou-26f2, whose
+observable C has never been evaluated.)

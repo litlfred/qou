@@ -414,12 +414,35 @@ def main():
         # Provenance stamp (bean qou-4un2): this producer writes its
         # witness directly, so nothing else records which script made
         # it -- and a re-run of an unstamped producer DELETES the
-        # scriptFile a downstream pass had added. no q0 in this producer's cone; stamp provenance only.
+        # scriptFile a downstream pass had added.
+        #
+        # q0 anchor (bean qou-v6wz): this witness IS q0-dependent -- it carries
+        # `q0_canonical` and `c3_reproduced_canonical` (computed at the muon
+        # canonical pin) AND `q0_proton` / `anchor_slope_dc3_dq` (the proton
+        # readout and the cross-anchor slope). Both pins are read on purpose
+        # (see Q0_CANONICAL / Q0_PROTON above), so the manifest files this stem
+        # `ambiguous`. The prior `q0_anchor=False` (= stamp `independent`) was
+        # WRONG: it declared layer-freedom on a witness that reads q0 twice, so
+        # the q0-anchor-flip audit skipped it entirely (an audit-escape). Stamp
+        # `ambiguous` -- the manifest's own classification -- with NO bare
+        # q0Value (the pin is undetermined; the values actually used live in
+        # data.q0_canonical / data.q0_proton).
         from qou_substrate.witness import WitnessBuilder as _WB
         import os as _os  # noqa: E402 -- provenance stamp
         out.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
-            out, script_path=__file__, engine=None, q0_anchor=False)
+            out, script_path=__file__, engine=None,
+            q0_anchor="ambiguous",
+            q0_anchor_reason=(
+                "reads BOTH pins on purpose: c3_reproduced_canonical is at the "
+                "muon canonical pin (data.q0_canonical) while the proton readout "
+                "and cross-anchor slope (data.q0_proton, "
+                "data.anchor_slope_dc3_dq) are at the proton pin. The witness "
+                "carries both signatures, so the pin is undetermined and the "
+                "manifest files this stem ambiguous; the values actually used "
+                "are in data.q0_canonical / data.q0_proton. NOT q0-independent "
+                "(bean qou-v6wz)."
+            ))
         json.dump(out, f, indent=2)
     print(f"\n  witness → {wpath}")
     return out

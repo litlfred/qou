@@ -6420,6 +6420,36 @@ export const references: Reference[] = [
       "(\\ref{rem:algebraic-core-survives}).",
   }),
 
+  // ── Dunfield 2001 (revised 2010) — table of boundary slopes of Montesinos knots ──
+  ref({
+    id: "dunfield2001",
+    library: {
+      docId: "arxiv-math-9901120v3",
+      dir: "library/arxiv-math-9901120v3",
+      pdf: "library/arxiv-math-9901120v3/9901120v3.pdf",
+      stage: "sections",
+      pages: 4,
+      sections: 4,
+      arxiv: "math/9901120v3",
+    },
+    type: "article-journal",
+    title: "A table of boundary slopes of Montesinos knots",
+    author: [{ family: "Dunfield", given: "Nathan M." }],
+    issued: { "date-parts": [[2001]] },
+    "container-title": "Topology",
+    volume: "40",
+    page: "309-315",
+    URL: "https://arxiv.org/abs/math/9901120",
+    note:
+      "arXiv:math/9901120v3 (revised June 2010). Owner upload 2026-09-07. " +
+      "Corrects Hatcher–Oertel's table of boundary slopes for Montesinos knots " +
+      "of at most 10 crossings; notation follows [HO] and Rolfsen. Used here for " +
+      "the 5_2 = K(3/7) row, slopes {0, 4, 10}: an independent held source, with " +
+      "Rolfsen's convention, that the two-bridge triangulation derived from the " +
+      "Farey word RL (slopes {-10,-4,0}) is the mirror of the Rolfsen 5_2 " +
+      "(qou-lrvc). The Topology placement is recalled and not verified in-sandbox.",
+  }),
+
   // ── Garoufalidis–Gu–Mariño 2021 (resurgent structure of quantum knot invariants) ──
   ref({
     id: "garoufalidis-gu-marino2021",
@@ -9473,7 +9503,7 @@ export const references: Reference[] = [
     ],
     issued: { "date-parts": [[2006]] },
     URL: "https://arxiv.org/abs/math/0611521",
-    note: "arXiv:math/0611521 (the arXiv listing carries the suffix '(I)'; the document's own title page does not). Registered 2026-09-07 from the title page, owner upload for the Stokes / q-difference arc. Galoisian Stokes operators for irregular linear q-difference equations, parameterised by the points of the elliptic curve E_q minus a finite singular set (Prop 2.5 + eq. (6): the Stokes operator S_{c,d} is the ambiguity between two q-directions of summation c, d in E_q); Thm 3.3: S_{c0,c} lies in the Stokes group St(A); Thm 3.5 DEFINES the q-alien derivations as residues Δ̇_c(A) = Res_{d=c} log S_{c0,d}, valued in the Stokes Lie algebra st(A) and graded by level δ = μ_j − μ_i (eq. 16); Thm 3.6: they are Lie-like ⊗-endomorphisms of the fibre functor; Thm 3.8: a level-δ q-Borel transform B_q^(δ) whose vanishing on the block entries is a complete analytic invariant within the formal class; Thm 3.9: the q-Borel invariants and the alien-derivation invariants are related by left multiplication by a theta power. §4 item 1 states the programme of copying Écalle's alien derivations to the q-case (resurgence lattice replaced by the singularities in the q-Borel planes at the different levels). This is the source for the q-alien-derivation object that QOU/Mathlib/QAlienBridgeEquation.lean models (bean qou-vkg5) and for the level-δ q-Borel kernel (QOU/MathlibExt/QBorelKernel*.lean). Venue placement not verified in-sandbox.",
+    note: "arXiv:math/0611521 (the arXiv listing carries the suffix '(I)'; the document's own title page does not). Registered 2026-09-07 from the title page, owner upload for the Stokes / q-difference arc. Galoisian Stokes operators for irregular linear q-difference equations, parameterised by the points of the elliptic curve E_q minus a finite singular set (Prop 2.5 + eq. (6): the Stokes operator S_{c,d} is the ambiguity between two q-directions of summation c, d in E_q); Thm 3.3: S_{c0,c} lies in the Stokes group St(A); Thm 3.5 DEFINES the q-alien derivations as residues Δ̇_c(A) = Res_{d=c} log S_{c0,d}, valued in the Stokes Lie algebra st(A) and graded by level δ = μ_j − μ_i (eq. 16); Thm 3.6: they are Lie-like ⊗-endomorphisms of the fibre functor; Thm 3.8: a level-δ q-Borel transform B_q^(δ) whose vanishing on the block entries is a complete analytic invariant within the formal class; Thm 3.9: the q-Borel invariants and the alien-derivation invariants are related by left multiplication by a theta power. §4 item 1 states the programme of copying Écalle's alien derivations to the q-case (resurgence lattice replaced by the singularities in the q-Borel planes at the different levels). This is the source for the q-alien-derivation object that QOU/Mathlib/QAlienBridgeEquation.lean models (bean qou-vkg5) and for the level-δ q-Borel kernel (QOU/MathlibExt/QBorelKernel*.lean). Venue placement not verified in-sandbox. TWO SCOPE FACTS ADDED 2026-09-07 (second, independent registration of the same owner upload; the richer theorem-level note above is the sibling's and is kept). (1) SS2.2 verbatim: a module is pure isoclinic of slope mu if S(M) = {mu}; direct sums of pure isoclinic modules are called pure, and 'they are irregular objects WITHOUT WILD MONODROMY'. So purity at a point EXCLUDES q-alien derivations there. This is the same conclusion the Thm 3.5 grading forces from the other side: the alien derivations are graded by level delta = mu_j - mu_i, a DIFFERENCE of two slopes, which has no valid value when there is only one. Applied to the binding kernel L_K in QOU/Mass/BindingNoAlienPlane.lean. (2) The paper restricts THROUGHOUT to the integral-slope case and says so explicitly: 'We do not know what will happen in the non integral slope case.' A slope-1/2 module is therefore outside its machinery even before purity is considered.",
   }),
 
   // ── Sauloy 2004 (algebraic construction of the q-Stokes sheaf) ──

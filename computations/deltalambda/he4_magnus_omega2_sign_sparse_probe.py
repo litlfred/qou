@@ -435,25 +435,36 @@ def _partition_contribution(shape, gens):
     assert hcheck < mp.mpf(10) ** -55, f"germ Hecke check failed {shape}: {mp.nstr(hcheck,3)}"
     A = [csr_to_dict(germ_rows[g]) for g in range(len(germ_rows))]
 
-    # Ω₂ = ½ Σ_{i<j} [A_{g_i}, A_{g_j}] — adjacent generators only (far-commutativity)
-    ccache = {}
-    Om2 = {}
+    # Ω₂ = ½ Σ_{i<j} [A_{g_i}, A_{g_j}] — adjacent generators only
+    # (far-commutativity: [A_a,A_b] = 0 for |a-b| >= 2, and a == b commutes).
+    #
+    # Multiplicities folded BEFORE any matrix is touched. The ⁴He word has 47
+    # letters giving 145 adjacent (i<j) pairs over 14 distinct (a,b) keys — but
+    # only **10** commutators survive with a nonzero net coefficient once
+    # [A_a,A_b] = −[A_b,A_a] is used. The previous loop re-added the same sparse
+    # matrix once per pair occurrence: 145 sparse accumulations where 10
+    # scalar-times-matrix do. (Same fix as the dense deuteron/triton probes,
+    # bean qou-q2q7; verified there bit-identical.)
     L = len(gens)
+    net: dict[tuple[int, int], int] = {}
     for i in range(L):
         a = gens[i]
         for j in range(i + 1, L):
             b = gens[j]
             if abs(a - b) != 1:
-                continue  # [A_a,A_b] = 0 for |a-b|>=2; a==b commutes
-            key = (a, b)
-            C = ccache.get(key)
-            if C is None:
-                C = commutator(A[a], A[b])
-                ccache[key] = C
-            for r, crow in C.items():
-                orow = Om2.setdefault(r, {})
-                for c, v in crow.items():
-                    orow[c] = orow.get(c, mp.mpf(0)) + v
+                continue
+            key = (a, b) if a < b else (b, a)
+            net[key] = net.get(key, 0) + (1 if a < b else -1)
+
+    Om2 = {}
+    for (a, b), n in net.items():
+        if not n:
+            continue
+        C = commutator(A[a], A[b])
+        for r, crow in C.items():
+            orow = Om2.setdefault(r, {})
+            for c, v in crow.items():
+                orow[c] = orow.get(c, mp.mpf(0)) + n * v
     for r in Om2:
         for c in Om2[r]:
             Om2[r][c] = Om2[r][c] / 2

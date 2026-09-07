@@ -1,0 +1,217 @@
+{
+  "engine": "sympy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-07T16:27:42.649126+00:00",
+  "commitSha": "4e03604e68b897786166db895935d0baa468c84a",
+  "assertions": [
+    {
+      "name": "bar_h_is_minus_h",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "bar(h) + h simplifies to 0 over Q(q)"
+    },
+    {
+      "name": "parity_criterion_is_z_minus_bar_z_equals_h",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "solving bar(N) + N = 0 for bar(z) gives exactly z - h"
+    },
+    {
+      "name": "parity_matches_admissibility__z_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z=1 (published): bar-parity fails, admissible=False — they agree"
+    },
+    {
+      "name": "monomial_iff_parity__z_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z=1 (published): bar(Q)/Q monomial=False, parity=False — they agree"
+    },
+    {
+      "name": "parity_matches_admissibility__z_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z=q (augmentation): bar-parity passes, admissible=True — they agree"
+    },
+    {
+      "name": "monomial_iff_parity__z_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z=q (augmentation): bar(Q)/Q monomial=True, parity=True — they agree"
+    },
+    {
+      "name": "parity_matches_admissibility__z_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z_D (Markov, conv D): bar-parity passes, admissible=True — they agree"
+    },
+    {
+      "name": "monomial_iff_parity__z_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z_D (Markov, conv D): bar(Q)/Q monomial=True, parity=True — they agree"
+    },
+    {
+      "name": "parity_matches_admissibility__z_C",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z_C (excised conv C): bar-parity fails, admissible=False — they agree"
+    },
+    {
+      "name": "monomial_iff_parity__z_C",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z_C (excised conv C): bar(Q)/Q monomial=False, parity=False — they agree"
+    },
+    {
+      "name": "counterexample_passes_parity_but_is_not_an_admissible_root",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "z = (3*q**2 + 1)/(2*q) satisfies z - bar(z) = h yet is neither q nor z_D, so bar-parity is necessary-not-sufficient"
+    },
+    {
+      "name": "grid_calibration__z_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "closed form reproduces the recorded 0.16775687 %"
+    },
+    {
+      "name": "grid_calibration__z_q",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "closed form reproduces the recorded 12.470022 %"
+    },
+    {
+      "name": "grid_calibration__z_D",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "closed form reproduces the recorded -43.157175 %"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 1333,
+  "computation": "qbeta-bar-parity-separates-admissible-functionals",
+  "scriptFile": "qbeta_bar_parity_separates_admissible_functionals_probe.py",
+  "scriptHash": "3f7cd1941a64",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e3fab84c4c1df76a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_bar_parity_separates_admissible_functionals_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_bar_parity_separates_admissible_functionals_probe.py"
+  },
+  "description": "Structural discriminator for the Q_beta functional question (qou-99qc). With h = q - 1/q and bar: q -> 1/q, bar(h) = -h identically, so for N(z) = tr_M(Delta_S) = h^2/2 - h z one has bar(N) = -N iff z - bar(z) = h, equivalently iff z - h/2 is bar-INVARIANT. Measured exactly: BOTH admissible roots (z = q the augmentation, z_D = q^3/(q^2+1) the convention-D Markov point) satisfy it and give bar(Q_beta)/Q_beta = q^3; the PUBLISHED functional z = 1 and the excised convention C z_C = sqrt(q)/(q+1) both FAIL it, and fail the same way (both are bar-invariant, bar(z) = z). Also supplies closed forms for all three cells of the Delta_S column, which the corpus carried only as decimals: Q_beta/m_e = (q+1)/(2q^3) * M with M = |q^2-2q-1| (z=1, NOT palindromic), (q^2+1) (z=q), (q^4+1)/(q^2+1) (z_D) -- both admissible M palindromic. SCOPE-(a) PRUNE, NOT a characterisation: 'z - h/2 bar-invariant' defines an INFINITE family (one non-admissible member is exhibited), so a functional failing the test is excluded but one passing it is not thereby admissible. No anchor and no experimental input enter the parity test; the numeric section is calibration only. Nothing wired.",
+  "contentBlock": "rem:qbeta-functional-admissibility",
+  "data": {
+    "functionals": {
+      "z=1 (published)": {
+        "z": "1",
+        "bar_z": "1",
+        "z_minus_bar_z_minus_h": "-(q - 1)*(q + 1)/q",
+        "passes_bar_parity": false,
+        "admissible_under_D": false,
+        "Q_over_me_closed_form": "(q + 1)*(q**2 - 2*q - 1)/(2*q**3)",
+        "bar_Q_over_Q": "-q**3*(q**2 + 2*q - 1)/(q**2 - 2*q - 1)",
+        "bar_Q_over_Q_is_monomial": false
+      },
+      "z=q (augmentation)": {
+        "z": "q",
+        "bar_z": "1/q",
+        "z_minus_bar_z_minus_h": "0",
+        "passes_bar_parity": true,
+        "admissible_under_D": true,
+        "Q_over_me_closed_form": "-(q + 1)*(q**2 + 1)/(2*q**3)",
+        "bar_Q_over_Q": "q**3",
+        "bar_Q_over_Q_is_monomial": true
+      },
+      "z_D (Markov, conv D)": {
+        "z": "q**3/(q**2 + 1)",
+        "bar_z": "1/(q*(q**2 + 1))",
+        "z_minus_bar_z_minus_h": "0",
+        "passes_bar_parity": true,
+        "admissible_under_D": true,
+        "Q_over_me_closed_form": "-(q + 1)*(q**4 + 1)/(2*q**3*(q**2 + 1))",
+        "bar_Q_over_Q": "q**3",
+        "bar_Q_over_Q_is_monomial": true
+      },
+      "z_C (excised conv C)": {
+        "z": "sqrt(q)/(q + 1)",
+        "bar_z": "sqrt(q)/(q + 1)",
+        "z_minus_bar_z_minus_h": "-(q - 1)*(q + 1)/q",
+        "passes_bar_parity": false,
+        "admissible_under_D": false,
+        "Q_over_me_closed_form": "-(-q**(11/2) - q**(9/2) + 2*q**(7/2) + 2*q**(5/2) - q**(3/2) - sqrt(q) + 2*q**4 - 2*q**2)/(2*q**(7/2)*(q - 1)*(q + 1))",
+        "bar_Q_over_Q": "-(2*q**(11/2) + q**7 + q**6 - q**5 - q**4)/(-2*q**(5/2) + q**4 + q**3 - q**2 - q)",
+        "bar_Q_over_Q_is_monomial": false
+      }
+    },
+    "numeric_calibration": {
+      "z=1 (published)": {
+        "Q_beta_MeV": "0.78364582737462121307",
+        "err_pct": "0.16775678474746631042",
+        "recorded_pct": "0.16775687"
+      },
+      "z=q (augmentation)": {
+        "Q_beta_MeV": "0.87989056126011983890",
+        "err_pct": "12.470022373212955190",
+        "recorded_pct": "12.470022"
+      },
+      "z_D (Markov, conv D)": {
+        "Q_beta_MeV": "0.44470040852178040910",
+        "err_pct": "-43.157175337586514540",
+        "recorded_pct": "-43.157175"
+      }
+    },
+    "scope": {
+      "tier": "scope-(a) prune",
+      "established": "both admissible roots satisfy z - bar(z) = h and give bar(Q)/Q = q^3; the published z = 1 and the excised z_C both fail, both by being bar-INVARIANT",
+      "NOT_established": "that bar-parity characterises admissibility — the criterion defines an infinite family and CHECK 4 exhibits a member that is not an admissible root",
+      "use": "a candidate Q_beta functional FAILING the parity is excluded; one passing it is not thereby admissible. Runs with no anchor and no experimental input, so it prunes before any number is computed."
+    }
+  }
+}

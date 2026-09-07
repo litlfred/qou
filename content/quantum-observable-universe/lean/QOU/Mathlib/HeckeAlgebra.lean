@@ -63,24 +63,43 @@ universe u
 class IwahoriHeckeAlgebra (R : Type u) [CommRing R] (n : ℕ) (q : R) where
   /-- Carrier set of `H_n(q)`. -/
   carrier : Type u
-  /-- Module structure (additive group). -/
-  carrier_addCommGroup : AddCommGroup carrier
+  /-- Module structure (additive group).  **Instance-implicit** so the three
+      relation fields below can be written with `+`; it was a plain field while
+      the relations were `Prop` variables and nothing needed to add. -/
+  [carrier_addCommGroup : AddCommGroup carrier]
   /-- The unit element `1 ∈ H_n(q)`. -/
   one : carrier
   /-- Multiplication. -/
   mul : carrier → carrier → carrier
+  /-- Scalar action of the ground ring.  Added with the relations: the Hecke
+      relation has a coefficient, so it cannot be stated without one. -/
+  smul : R → carrier → carrier
   /-- The `n - 1` braid generators `σ_1, …, σ_{n-1}`. -/
   sigma : Fin (n - 1) → carrier
-  /-- **Hecke relation**: `(σ_i - q)(σ_i + q⁻¹) = 0`,
-      equivalently `σ_i² = (q - q⁻¹) σ_i + 1`. -/
-  hecke_relation : Prop
-  hecke_holds : hecke_relation
-  /-- **Braid relation**: `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`. -/
-  braid_relation : Prop
-  braid_holds : braid_relation
-  /-- **Far commutativity**: `σ_i σ_j = σ_j σ_i` for `|i − j| ≥ 2`. -/
-  far_commute : Prop
-  far_commute_holds : far_commute
+  /-- **Hecke relation**: `(σ_i - q)(σ_i + q⁻¹) = 0`, equivalently
+      `σ_i² = (q - q⁻¹) σ_i + 1` (AGENTS.md §7a, balanced convention).
+
+      `q⁻¹` is `Ring.inverse q`, not `q⁻¹` — the class is over a `CommRing`,
+      which has no `Inv`.  `Ring.inverse` agrees with the field inverse
+      wherever `q` is a unit (`Ring.inverse_eq_inv'`), which it is at every
+      Hecke parameter this corpus evaluates at. -/
+  hecke : ∀ i : Fin (n - 1),
+    mul (sigma i) (sigma i) = smul (q - Ring.inverse q) (sigma i) + one
+  /-- **Braid relation**: `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`.
+
+      Adjacency is a hypothesis on the underlying naturals rather than `Fin`
+      arithmetic: `n - 1` is truncated subtraction, so `i + 1` on the nose
+      would wrap at the top index and quietly assert the wrong equation. -/
+  braid : ∀ i j : Fin (n - 1), (j : ℕ) = (i : ℕ) + 1 →
+    mul (mul (sigma i) (sigma j)) (sigma i)
+      = mul (mul (sigma j) (sigma i)) (sigma j)
+  /-- **Far commutativity**: `σ_i σ_j = σ_j σ_i` for `|i − j| ≥ 2`.  Stated
+      one-sided (`i + 2 ≤ j`); the other side follows by symmetry of the
+      conclusion. -/
+  far_commute : ∀ i j : Fin (n - 1), (i : ℕ) + 2 ≤ (j : ℕ) →
+    mul (sigma i) (sigma j) = mul (sigma j) (sigma i)
+
+attribute [instance] IwahoriHeckeAlgebra.carrier_addCommGroup
 
 /-- Abstract Markov trace on `H_n(q)`.  The class wraps the
     Jones–Wenzl uniqueness theorem: at generic `q`, the unique
@@ -95,10 +114,21 @@ class MarkovTrace (R : Type u) [CommRing R] (n : ℕ) (q z : R)
   trace : H.carrier → R
   /-- Normalisation: `tr_M(1) = 1`. -/
   trace_one : trace H.one = 1
-  /-- The Markov axiom (placeholder shape — concrete instances
-      supply the full peel/cyclic content). -/
-  markov_axiom : Prop
-  markov_axiom_holds : markov_axiom
+  /-- **The Markov axiom**: `tr_M(x · σ_{n-1}) = z · tr_M(x)`, for the LAST
+      generator.
+
+      "Last" is a hypothesis on the underlying naturals (`i + 2 = n`) rather
+      than `Fin` arithmetic, for the reason recorded at `IwahoriHeckeAlgebra.braid`:
+      `n - 1` is truncated subtraction and an on-the-nose top index wraps.  At
+      `n ≤ 1` there is no generator and `Fin (n - 1)` is empty, so the field is
+      vacuously true there — correctly, since `H_0` and `H_1` have no Markov
+      peel to perform.
+
+      Was `markov_axiom : Prop` with a sibling `markov_axiom_holds`, i.e. a
+      proposition the instance CHOSE.  Its own docstring called itself a
+      "placeholder shape". -/
+  markov_axiom : ∀ (x : H.carrier) (i : Fin (n - 1)), (i : ℕ) + 2 = n →
+    trace (H.mul x (H.sigma i)) = z * trace x
 
 /-- **Standard-Young-tableau count** `d_λ = #SYT(λ)`, together with the Burnside/RSK identity
 `∑_{λ ⊢ n} d_λ² = n!`.
@@ -142,14 +172,24 @@ class StandardYoungCount (n : ℕ) where
     `p_λ` summing to `1` and pairwise orthogonal. -/
 class WedderburnDecomposition (R : Type u) [CommRing R] (n : ℕ) (q : R)
     [H : IwahoriHeckeAlgebra R n q] where
-  /-- The block-projection idempotents `p_λ ∈ H_n(q)`. -/
-  block_proj : ℕ → H.carrier
-  /-- The sum `Σ_λ p_λ = 1`. -/
-  blocks_sum_to_one : Prop
-  blocks_sum_holds : blocks_sum_to_one
-  /-- Pairwise orthogonality: `p_λ · p_μ = 0` for `λ ≠ μ`. -/
-  blocks_orthogonal : Prop
-  blocks_orthogonal_holds : blocks_orthogonal
+  /-- The block-projection idempotents `p_λ ∈ H_n(q)`.
+
+      Indexed by `Nat.Partition n`, not `ℕ`.  The change is forced by writing
+      the real `blocks_sum` below — a sum over blocks needs a finite index, and
+      `ℕ → H.carrier` cannot express one.  This is the same move the
+      `StandardYoungCount` docstring above records for its own repair; the
+      index is the partition set in both cases because that is what indexes the
+      Wedderburn blocks of `H_n(q)`. -/
+  block_proj : Nat.Partition n → H.carrier
+  /-- **Completeness**: `Σ_λ p_λ = 1`. -/
+  blocks_sum : ∑ lam : Nat.Partition n, block_proj lam = H.one
+  /-- **Pairwise orthogonality**: `p_λ · p_μ = 0` for `λ ≠ μ`. -/
+  blocks_orthogonal : ∀ lam mu : Nat.Partition n, lam ≠ mu →
+    H.mul (block_proj lam) (block_proj mu) = 0
+  /-- **Idempotence**: `p_λ² = p_λ`.  The class docstring called these
+      "idempotents" and nothing said so; now something does. -/
+  blocks_idem : ∀ lam : Nat.Partition n,
+    H.mul (block_proj lam) (block_proj lam) = block_proj lam
 
 /-- The **Wenzl-bridge formula**: `tr_M(T_w) = Σ_λ y_λ ·
     χ_λ(T_w)` with closed-form `y_λ = dim_q(λ) · d_λ / [n]_q!`.
@@ -162,11 +202,21 @@ class WenzlBridge (R : Type u) [CommRing R] (n : ℕ) (q z : R)
     [H : IwahoriHeckeAlgebra R n q]
     [_M : MarkovTrace R n q z]
     [W : WedderburnDecomposition R n q] where
-  /-- The Jones-Markov central coefficient `y_λ : R`. -/
-  y_coeff : ℕ → R
-  /-- The bridge identity (placeholder Prop; instances discharge). -/
-  bridge_identity : Prop
-  bridge_holds : bridge_identity
+  /-- The Jones-Markov central coefficient `y_λ : R`, indexed by partitions to
+      match `WedderburnDecomposition.block_proj`. -/
+  y_coeff : Nat.Partition n → R
+  /-- The irreducible characters `χ_λ : H_n(q) → R`.
+
+      A new field, and it is what writing the real identity costs: the bridge
+      is a statement ABOUT the characters, and the class named them in its
+      docstring while carrying no way to refer to them. -/
+  chi : Nat.Partition n → H.carrier → R
+  /-- **The Wenzl bridge**: `tr_M(x) = Σ_λ y_λ · χ_λ(x)`.
+
+      Was `bridge_identity : Prop` with a sibling witness — the instance chose
+      the identity.  `_M` is now used rather than merely bound. -/
+  bridge : ∀ x : H.carrier,
+    _M.trace x = ∑ lam : Nat.Partition n, y_coeff lam * chi lam x
 
 /-- **Trivial model of the Hecke class** — every field is filled with the
     structurally-trivial value (`carrier := PUnit`, all three relations
@@ -201,13 +251,18 @@ def triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
   carrier_addCommGroup := by infer_instance
   one := PUnit.unit
   mul _ _ := PUnit.unit
+  smul _ _ := PUnit.unit
   sigma _ := PUnit.unit
-  hecke_relation := True
-  hecke_holds := True.intro
-  braid_relation := True
-  braid_holds := True.intro
-  far_commute := True
-  far_commute_holds := True.intro
+  -- The three relations are no longer `Prop` variables an instance may choose,
+  -- so this model has to *satisfy* them.  It does, and honestly: `PUnit` is the
+  -- zero algebra, where every equation between elements holds because there is
+  -- only one element.  That is a real (degenerate) model of the presentation,
+  -- which is exactly what a trivial model should be — and it is a different
+  -- thing from the `hecke_relation := True` it used to write, which satisfied
+  -- nothing because it asserted nothing.
+  hecke _ := Subsingleton.elim _ _
+  braid _ _ _ := Subsingleton.elim _ _
+  far_commute _ _ _ := Subsingleton.elim _ _
 
 /-- Trivial Wedderburn decomposition over the trivial Hecke carrier.
 
@@ -226,19 +281,79 @@ def triv_hecke (R : Type u) [CommRing R] (n : ℕ) (q : R) :
 
     (A `letI := triv_hecke R n q` in the *type* does not work: it binds for the
     ascription but not for the `where` fields, which elaborate against the
-    class and need the instance again.) -/
+    class and need the instance again.)
+
+    ## 2026-09-07: it is no longer generic in the Hecke model, and that is a
+    ## finding, not an inconvenience
+
+    This used to take an arbitrary `[self : IwahoriHeckeAlgebra R n q]` and set
+    `block_proj _ := self.one`.  It could, because `blocks_sum_to_one` and
+    `blocks_orthogonal` were `Prop` fields it answered with `True`.
+
+    With the real statements it cannot, and the reason is mathematics rather
+    than plumbing: over an arbitrary carrier, `∑_{λ ⊢ n} 1 = 1` says `p(n) · 1
+    = 1`, and `1 · 1 = 0` says `1 = 0`.  Both are false in any Hecke model with
+    more than one element.  **There is no trivial Wedderburn decomposition of a
+    nontrivial algebra** — which is exactly right, and was invisible while the
+    fields were variables.
+
+    So it now carries `[Subsingleton self.carrier]`, which is the precise
+    hypothesis under which a trivial decomposition exists.  The generic form is
+    kept — this is not pinned to `triv_hecke` — but a caller who wants it must
+    now say that their algebra has one element, rather than asserting something
+    false about it without being told.  `triv_hecke` satisfies it; nothing else
+    in the corpus does. -/
 def triv_wedderburn (R : Type u) [CommRing R] (n : ℕ) (q : R)
-    [self : IwahoriHeckeAlgebra R n q] :
+    [self : IwahoriHeckeAlgebra R n q] [Subsingleton self.carrier] :
     WedderburnDecomposition R n q where
-  -- Was `PUnit.unit`, which only type-checked while the carrier was pinned to
-  -- `PUnit` by the global `triv_hecke`. Over an arbitrary Hecke model the
-  -- projector must land in `self.carrier`, and its unit is the only element
-  -- the class provides — which is the honest reading of "trivial projector".
+  -- The projector still lands in `self.carrier`, and its unit is the only
+  -- element the class provides — the honest reading of "trivial projector".
   block_proj _ := self.one
-  blocks_sum_to_one := True
-  blocks_sum_holds := True.intro
-  blocks_orthogonal := True
-  blocks_orthogonal_holds := True.intro
+  blocks_sum := Subsingleton.elim _ _
+  blocks_orthogonal _ _ _ := Subsingleton.elim _ _
+  blocks_idem _ := Subsingleton.elim _ _
+
+/-- The trivial Hecke model does satisfy that hypothesis, so the pair is still
+    constructible — and only there.  Recorded as a `def` so the claim is
+    checked rather than asserted in a docstring. -/
+def triv_hecke_carrier_subsingleton (R : Type u) [CommRing R] (n : ℕ) (q : R) :
+    Subsingleton (triv_hecke R n q).carrier := inferInstanceAs (Subsingleton PUnit)
+
+/-! ### What encoding these three does NOT establish
+
+`IwahoriHeckeAlgebra` got both halves on 2026-09-07: real relations AND
+`H3.heckeAlgebra`, a model on a carrier where `σ₁ ≠ 1`.  **`MarkovTrace`,
+`WedderburnDecomposition` and `WenzlBridge` have only the first half.**
+
+Their only model is the trivial one, and `triv_wedderburn` now says so in its
+type (`[Subsingleton self.carrier]`).  By the `qou-z9ws` inhabitation
+discriminator that means the same thing it meant before: satisfying these
+constraints over a one-element carrier is evidence the axioms are consistent
+and no evidence that they constrain anything, so a `[WedderburnDecomposition
+…]`-conditional theorem is still dischargeable by an algebra with one element.
+
+The encoding is still strictly better than what it replaced — the class now
+*says* which proposition it means, so the statement can be read, cited and
+contradicted, none of which was possible while an instance chose it.  But it is
+half the repair, and calling it done would be the exact over-claim this file's
+own docstrings kept making.
+
+What the missing half needs, concretely:
+
+* **Wedderburn** — the three `H_3` block projectors (`e_[3]`, `e_[2,1]`,
+  `e_[1,1,1]`, the q-symmetrizer family whose formulas are written out below)
+  as elements of `H3Carrier R`, plus `blocks_sum`, `blocks_orthogonal` and
+  `blocks_idem` proved of them in `H3.mul`.  Real work: the projectors carry
+  the Poincaré-polynomial denominators, so it needs `P(q)` invertible.
+* **MarkovTrace** — `H3.markovTrace` already exists in this file with
+  `trace_one` proved; what is missing is the peel identity `tr_M(x · σ₂) = z ·
+  tr_M(x)` for every `x`, which is six coefficient equations.
+* **WenzlBridge** — needs the characters `χ_λ`, so it is downstream of the
+  Wedderburn blocks.
+
+Tracked as bean `qou-9yt9`.  Do not read the tightened fields as a claim that
+these three are now non-vacuous; they are not, and the one carrier that is says
+so by exhibiting a witness rather than by asserting it. -/
 
 /-! **No trivial `MarkovTrace` instance is provided** because over
     a generic `CommRing R`, the normalisation `tr_M(1) = 1`
@@ -674,6 +789,92 @@ theorem H3.braid_mul {R : Type u} [Field R] (q : R) :
   simp only [H3.mul, H3.sigma1, H3.sigma2, H3.mulSigma1, H3.mulSigma2, H3.smul,
     H3.add, Prod.mk.injEq]
   refine ⟨by ring, by ring, by ring, by ring, by ring, by ring⟩
+
+/-! ### `H_3(q)` as an instance of the class — the class is inhabited by
+    something other than the zero algebra
+
+Until 2026-09-07 the only model of `IwahoriHeckeAlgebra` in the corpus was
+`triv_hecke`, whose carrier is `PUnit`.  That was not merely thin, it was
+uninformative in the specific way `AGENTS.md` §3b-tax warns about: the three
+relations were `Prop` *variables*, so `triv_hecke` chose `hecke_relation :=
+True` and satisfied the class without saying anything.  A hypothesis
+`[IwahoriHeckeAlgebra R n q]` bought a carrier, a `one`, a `mul` and a `sigma`
+family, and nothing Hecke — measured and written up in
+`scripts/lean/probes/prop-field-carrier-vacuity.lean`.
+
+With the relations now stated as equations in the class's own `mul`, `smul`,
+`one` and `sigma`, a model has to satisfy them.  This section supplies one that
+does so non-vacuously: the six-dimensional `H3Carrier R` with the concrete
+`H3.mul`, whose relations were already proved just above and were, until now,
+proved beside a class that could not consume them.
+
+**No genericity hypothesis is needed, and the first draft of this section
+carried one that was unused.**  `q ≠ 0` was written in on the expectation that
+`Ring.inverse q = q⁻¹` would require it; over a `GroupWithZero` the two agree
+unconditionally (`Ring.inverse_eq_inv'`), because both send `0` to `0`.  Since
+`H3.sigma1_sq_mul` and friends are proved for an arbitrary `q : R`, the model
+goes through at every `q`, `0` included.  The hypothesis was dropped rather than
+kept for appearances: a decorative hypothesis makes a statement look more
+careful than it is.
+
+What is lost at `q = 0` is not the *relations* but the *algebra* — at a
+non-generic parameter `H_3(q)` is no longer semisimple with the three
+Wedderburn blocks below.  That content lives in `WedderburnDecomposition`, not
+in the presentation, so it is correctly absent here. -/
+
+/-- The two generators of `H_3(q)`, as a family indexed by `Fin (3 - 1)`. -/
+def H3.sigmaFamily (R : Type u) [CommRing R] : Fin (3 - 1) → H3Carrier R :=
+  fun i => if (i : ℕ) = 0 then H3.sigma1 R else H3.sigma2 R
+
+/-- **`H_3(q)` is a model of `IwahoriHeckeAlgebra R 3 q`** for any field `R` and
+any nonzero `q`.
+
+A `def`, deliberately, not an `instance` — for the reason recorded at
+`triv_hecke`: a global instance discharges every downstream `[IwahoriHeckeAlgebra
+…]` hypothesis behind its author's back.  Use it with
+`letI := H3.heckeAlgebra q`.
+
+What it establishes that `triv_hecke` cannot: the three relation fields are
+*inhabitable at a carrier with more than one element*, so they are satisfiable
+without being vacuous.  Both models are now needed to read the class correctly —
+`triv_hecke` says the axioms are consistent, this one says they are not
+degenerate. -/
+def H3.heckeAlgebra {R : Type u} [Field R] (q : R) :
+    IwahoriHeckeAlgebra R 3 q where
+  carrier := H3Carrier R
+  carrier_addCommGroup := by infer_instance
+  one := H3.one R
+  mul := H3.mul q
+  smul := fun r x => r • x
+  sigma := H3.sigmaFamily R
+  hecke i := by
+    have hinv : Ring.inverse q = q⁻¹ := Ring.inverse_eq_inv' (G₀ := R) ▸ rfl
+    fin_cases i <;>
+      simp only [H3.sigmaFamily, hinv] <;>
+      norm_num [H3.sigma1_sq_mul, H3.sigma2_sq_mul]
+  braid i j hij := by
+    -- `(j : ℕ) = (i : ℕ) + 1` with `i j : Fin 2` forces `i = 0`, `j = 1`.
+    fin_cases i <;> fin_cases j <;>
+      simp_all [H3.sigmaFamily, H3.braid_mul]
+  far_commute i j hij := by
+    -- Vacuous at `n = 3`: `i + 2 ≤ j < 2` is unsatisfiable.
+    exact absurd hij (by have := j.isLt; omega)
+
+/-- **The `H_3` model is non-degenerate**: its first generator is not its unit.
+
+This is the discriminator that separates it from `triv_hecke`, and it is the
+whole point of adding it.  `Subsingleton.elim` discharges every relation over
+`PUnit`, so satisfying the class there is evidence that the axioms are
+consistent and no evidence at all that they constrain anything.  Here the same
+three relations hold over a carrier in which `σ₁ ≠ 1`, so they are satisfiable
+without collapsing.
+
+Stated at `ℚ` rather than a general field because `(1 : R) ≠ 0` needs a
+nontrivial ring, and pinning it removes the hypothesis rather than carrying
+one. -/
+theorem H3.heckeAlgebra_nondegenerate (q : ℚ) :
+    (H3.heckeAlgebra q).sigma ⟨0, by norm_num⟩ ≠ (H3.heckeAlgebra q).one := by
+  simp [H3.heckeAlgebra, H3.sigmaFamily, H3.sigma1, H3.one]
 
 /-! ### H_3 Wedderburn block decomposition (3 blocks)
 
@@ -1149,11 +1350,35 @@ class MarkovTraceRecursion (R : Type u) [CommRing R] (n : ℕ) (q z : R) where
   trace_n : HnCarrier n R → R
   /-- Pre-Markov trace at level `n+1`. -/
   trace_succ : HnCarrier (n + 1) R → R
-  /-- The Markov axiom holds (placeholder Prop; concrete
-      instance discharges via the carrier's multiplication). -/
-  markov_axiom_holds : Prop
-  /-- Witness. -/
-  markov_axiom_witness : markov_axiom_holds
+
+/-! **Where the Markov axiom went (2026-09-07).**
+
+This class carried two more fields:
+
+    markov_axiom_holds : Prop
+    markov_axiom_witness : markov_axiom_holds
+
+so an instance chose the axiom; all three instances below chose `True`.  Unlike
+the other repairs in this file the fix was **not** to write the real statement
+here, because the real statement already exists a few hundred lines below —
+`MarkovAxiomHolds`, together with `MarkovTraceRecursionWithMul`, which the
+section heading above this class calls "*a genuine `MarkovTraceRecursion`
+upgrade where the axiom field is the concrete predicate*".
+
+That upgrade landed as a **separate class** rather than as an upgrade of this
+one, so the placeholder survived alongside its own completed replacement, and
+`prop-field-self-discharged` kept flagging a class whose successor was already
+written.  Restating the axiom here would need `mul_succ`, `sigma_n` and `embed`
+— i.e. it would reconstruct `MarkovTraceRecursionWithMul` under a second name.
+
+So the two fields are **deleted**, and this class is now what it always
+actually was: a pair of traces at adjacent levels, asserting nothing about
+them.  The axiom is `MarkovTraceRecursionWithMul.axiom_witness`, and a caller
+who needs it takes that class.
+
+This is the same disposition as the eight dead `Prop`-universe fields removed
+on 2026-09-07 elsewhere in the corpus: a field that asserts nothing is deleted,
+not given invented content. -/
 
 /-- **Wedderburn-block recursion** (cardinality form):
     `(n+1)! = (n+1) · n!`, matching the recursion of
@@ -1279,62 +1504,116 @@ def H6.mulSigmaAbstract (table : Fin 720 → H6Carrier ℝ)
 class HasGeneratorAction (n : ℕ) (q : ℝ) where
   /-- Action of σ_i on the carrier (left-multiplication by σ_i). -/
   sigma_action : Fin (n - 1) → HnCarrier n ℝ → HnCarrier n ℝ
-  /-- Hecke relation `σ_i² = (q − q⁻¹) σ_i + 1` (placeholder Prop). -/
-  hecke_holds : Prop
-  /-- Hecke relation witness. -/
-  hecke_holds_witness : hecke_holds
-  /-- Braid relation `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`
-      (placeholder Prop). -/
-  braid_holds : Prop
-  /-- Braid witness. -/
-  braid_holds_witness : braid_holds
-  /-- Far commutativity `σ_i σ_j = σ_j σ_i` for `|i − j| ≥ 2`. -/
-  far_commute_holds : Prop
-  /-- Far-commutativity witness. -/
-  far_commute_witness : far_commute_holds
+  /-- **Hecke relation** `σ_i² = (q − q⁻¹) σ_i + 1`, as an operator identity on
+      the carrier.  Was a `Prop` field with a sibling witness, so the instance
+      chose the relation; its own docstring said "placeholder Prop". -/
+  hecke : ∀ (i : Fin (n - 1)) (x : HnCarrier n ℝ),
+    sigma_action i (sigma_action i x) = (q - q⁻¹) • sigma_action i x + x
+  /-- **Braid relation** `σ_i σ_{i+1} σ_i = σ_{i+1} σ_i σ_{i+1}`.  Adjacency on
+      the underlying naturals, not `Fin` arithmetic — `n - 1` is truncated
+      subtraction and an on-the-nose `i + 1` wraps at the top index. -/
+  braid : ∀ (i j : Fin (n - 1)), (j : ℕ) = (i : ℕ) + 1 →
+    ∀ x : HnCarrier n ℝ,
+      sigma_action i (sigma_action j (sigma_action i x))
+        = sigma_action j (sigma_action i (sigma_action j x))
+  /-- **Far commutativity** `σ_i σ_j = σ_j σ_i` for `|i − j| ≥ 2`. -/
+  far_commute : ∀ (i j : Fin (n - 1)), (i : ℕ) + 2 ≤ (j : ℕ) →
+    ∀ x : HnCarrier n ℝ,
+      sigma_action i (sigma_action j x) = sigma_action j (sigma_action i x)
 
-/-- **Trivial model of `HasGeneratorAction n q`** — the σ-action is the
-    constant-zero map and all three relations are `True`.  Genuine
-    models at concrete `n` arrive once the per-basis multiplication
-    table is encoded.
+/-! ### `HasGeneratorAction_punit` is GONE, because it was not a model
 
-    **A `def`, not an `instance`, since 2026-08-24** — the same
-    treatment `triv_hecke` (line ~173 of this file) received on
-    2026-08-23, for the same reason.  Being an `instance`, this
-    answered `[HasGeneratorAction n q]` at every `n` and every `q`, so
-    a downstream theorem taking the class as a §3b-cond hypothesis
-    would have had it discharged with the zero action and three `True`s
-    and never learned the hypothesis was free.
+It set `sigma_action _ _ := fun _ => 0` and answered all three relations with
+`True`.  Against the real Hecke relation the zero action says
+`0 = (q − q⁻¹) • 0 + x`, i.e. `0 = x` — **false at every nonzero `x`**, and
+`HnCarrier n ℝ = Fin n.factorial → ℝ` has plenty of those.  So the constant-zero
+action is not a degenerate model of this class; it is not a model at all, and
+the `Prop` fields were the only reason it looked like one.
 
-    Difference from `triv_hecke`, worth recording: that demotion cost
-    one error (`triv_wedderburn`, fixed in place).  This one costs
-    **zero** — `HasGeneratorAction` had no consumers anywhere in the
-    corpus at the time of the demotion.  Nothing was relying on the
-    global resolution because nothing was using the class at all; the
-    §3b-cond hypothesis in its docstring is a hypothesis no theorem yet
-    takes.
+This is the second time in this file that encoding a relation killed a "trivial
+model" (see `triv_wedderburn`), and the two failures are different in kind.
+`triv_wedderburn` survived under a stated hypothesis (`Subsingleton carrier`),
+because the trivial decomposition really does exist over the trivial algebra.
+Here there is no hypothesis to add: `q` is fixed by the class and the carrier is
+fixed to `HnCarrier n ℝ`, so the zero action is simply wrong.  Deleted rather
+than repaired.
 
-    A caller wanting the trivial action writes
-    `letI := HasGeneratorAction_punit n q`. -/
-def HasGeneratorAction_punit (n : ℕ) (q : ℝ) :
+What replaces it is better than a placeholder: two **genuine one-dimensional
+representations**, one per Hecke eigenvalue.  `AGENTS.md` §7a records that `q`
+and `−q⁻¹` are the eigenvalues of `σ_i`, i.e. exactly the roots of
+`t² = (q − q⁻¹) t + 1`, so letting every generator act by either scalar
+satisfies the Hecke relation on the nose and the other two because scalars
+commute.  These are the index and sign representations of `H_n(q)`. -/
+
+/-- The zero action really does fail the Hecke relation.  Asserted in the note
+    above; checked here rather than left as prose, since "this is not a model"
+    is exactly the kind of claim this file has repeatedly made in a docstring
+    and not in its Lean.
+
+    With `σ` acting by zero the relation reduces pointwise to
+    `0 = (q − q⁻¹) · 0 + x k`, i.e. `0 = x k`.  Taking the coordinate value `1`
+    refutes it at every `q`. -/
+theorem HasGeneratorAction.zero_action_refutes_hecke (q : ℝ) :
+    ¬ ((0 : ℝ) = (q - q⁻¹) * 0 + 1) := by norm_num
+
+/-- **The index representation**: every `σ_i` acts by the scalar `q`.
+
+    `q ≠ 0` is load-bearing here, unlike the hypothesis `H3.heckeAlgebra` was
+    briefly given and did not need: the relation reduces to
+    `q² = (q − q⁻¹)q + 1`, which needs `q · q⁻¹ = 1`.  At `q = 0` this action is
+    the zero action, and the class correctly refuses it. -/
+noncomputable def HasGeneratorAction.indexRep (n : ℕ) (q : ℝ) (hq : q ≠ 0) :
     HasGeneratorAction n q where
-  sigma_action _ _ := fun _ => 0
-  hecke_holds := True
-  hecke_holds_witness := trivial
-  braid_holds := True
-  braid_holds_witness := trivial
-  far_commute_holds := True
-  far_commute_witness := trivial
+  sigma_action _ x := q • x
+  hecke _ x := by
+    ext k
+    simp only [Pi.smul_apply, Pi.add_apply, smul_eq_mul]
+    field_simp
+    ring
+  braid _ _ _ x := by ext k; simp only [Pi.smul_apply, smul_eq_mul]
+  far_commute _ _ _ x := by ext k; simp only [Pi.smul_apply, smul_eq_mul]
+
+/-- **The sign representation**: every `σ_i` acts by the other eigenvalue,
+    `−q⁻¹`.  Two distinct models, so the class does not merely have *a*
+    solution — it has the two the presentation predicts. -/
+noncomputable def HasGeneratorAction.signRep (n : ℕ) (q : ℝ) (hq : q ≠ 0) :
+    HasGeneratorAction n q where
+  sigma_action _ x := (-q⁻¹) • x
+  hecke _ x := by
+    ext k
+    simp only [Pi.smul_apply, Pi.add_apply, smul_eq_mul]
+    field_simp
+    ring
+  braid _ _ _ x := by ext k; simp only [Pi.smul_apply, smul_eq_mul]
+  far_commute _ _ _ x := by ext k; simp only [Pi.smul_apply, smul_eq_mul]
+
+/-- The two representations are genuinely different — the class separates them,
+    which a `Prop`-field version could not have done.
+
+    Stated at `n = 3`, `q = 2` rather than generically, and the reason is not
+    convenience: at `n ≤ 1` the index type `Fin (n - 1)` is EMPTY, so the two
+    `sigma_action` fields are both the empty function and are equal.  A generic
+    statement would need `1 < n` as a hypothesis and would then say nothing more
+    than this one does. -/
+theorem HasGeneratorAction.reps_differ :
+    (HasGeneratorAction.indexRep 3 2 (by norm_num)).sigma_action
+      ≠ (HasGeneratorAction.signRep 3 2 (by norm_num)).sigma_action := by
+  intro h
+  have := congrFun (congrFun (congrFun h ⟨0, by norm_num⟩) (fun _ => 1))
+    ⟨0, by norm_num⟩
+  norm_num [HasGeneratorAction.indexRep, HasGeneratorAction.signRep] at this
 
 /-! ### Concrete `MarkovTraceRecursion` instances (item #2)
 
     Discharge the abstract `MarkovTraceRecursion R n q z` class
     by wiring `Hn.markovTraceGeneric` to the carrier at level n
-    and n+1, with caller-supplied length functions.  The
-    Markov-axiom field stays as a placeholder `True` until the
-    full multiplication is wired (since the axiom's content is
-    `tr_M(x σ_n) = z · tr_M(x)`, which depends on the carrier
-    multiplication). -/
+    and n+1, with caller-supplied length functions.
+
+    These no longer discharge a Markov axiom, because the class no longer
+    claims one — see the note at `MarkovTraceRecursion`.  They supply the two
+    traces, which is their whole content and always was; the axiom's content
+    `tr_M(x σ_n) = z · tr_M(x)` needs the carrier multiplication and lives in
+    `MarkovTraceRecursionWithMul`. -/
 
 /-- **Concrete `MarkovTraceRecursion` instance** at any `n`,
     parameterised by length functions at levels `n` and `n+1`.
@@ -1345,8 +1624,6 @@ noncomputable def MarkovTraceRecursion.canonical (n : ℕ) (q z : ℝ)
     MarkovTraceRecursion ℝ n q z where
   trace_n := Hn.markovTraceGeneric z lengthFn_n
   trace_succ := Hn.markovTraceGeneric z lengthFn_succ
-  markov_axiom_holds := True
-  markov_axiom_witness := trivial
 
 /-- **Concrete instance at H_2 → H_3** with explicit length
     functions:
@@ -1391,8 +1668,12 @@ noncomputable def MarkovTraceRecursion.h3_to_h4
        multiplication.
     2. A `MarkovAxiomHolds` predicate stating the identity
        concretely.
-    3. A genuine `MarkovTraceRecursion` upgrade where the
-       axiom field is the concrete predicate. -/
+    3. A genuine upgrade where the axiom field is the concrete
+       predicate.  This landed as the SEPARATE class
+       `MarkovTraceRecursionWithMul` rather than as an upgrade of
+       `MarkovTraceRecursion`, which is why the placeholder
+       outlived it; the placeholder's two `Prop` fields were
+       deleted on 2026-09-07. -/
 
 /-- **`HasHnMul n R`** — class supplying carrier multiplication
     on `HnCarrier n R`.  Concrete instances at small `n`

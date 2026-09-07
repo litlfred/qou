@@ -289,3 +289,17 @@ residual is identically zero regardless of `peel`'s normalisation.
 recorded numbers does not land undiagnosed. Whoever picks this up needs to
 identify which upstream changed — note the run costs ~9 min (the deuteron
 bridge alone is 520 s).
+
+## a3-magnitude drained (2026-09-05, session fervent-noether) — a PROTON-pinned false-`independent` this bean's muon-digit scan could not see
+
+While fixing qou-v6wz (the qbeta-ck-basis-constrained-pslq false-`independent`), I re-scanned for the same audit-escape class. Found `a3_magnitude_berezinian_crossterm_probe` stamped `q0Anchor: independent` (boilerplate reason 'no q0-dependent field') with the exact fvk-selection/qou-zk51 comment '# no q0 in this producer's cone; stamp provenance only.' + `q0_anchor=False`.
+
+CONFIRMED genuine by the anchor-diff (QOU_Q0_ANCHOR=muon vs =proton): 24 substantive fields move — inputs.q0/h/hbar_q and every results.natural_readings_scatter[*].correction/rho/abs_err_vs_rstar — at the ~1e-8 mu-p-tension level. It reads the anchor via Q_50_DIGIT_STR (env-sensitive through q_parameter), so the flip-test IS valid here (defeaters #1/#2 don't apply) and the movement proves override-sensitivity + q0-dependence.
+
+WHY THIS BEAN'S SCAN MISSED IT: its still-carrying-muon-digits filter keyed on MUON literals. a3-magnitude is PROTON-pinned (stem not in ideal_muon => Q_50_DIGIT_STR resolves to proton), so it carries PROTON digits and escaped the muon-digit sweep — a genuine sub-case of the false-`independent` class this bean owns: proton-pinned false-independents, not just muon ones.
+
+FIX (rides on PR #6824 with qou-v6wz): q0_anchor=False -> q0_anchor=None (resolve). It reads ONE pin (proton default), so `proton` is correct (NOT `comparison` — unlike fvk-selection which reads both). Now stamps q0Anchor:proton + q0Value; q0_anchor_consistency_audit does NOT flag it as a flip; witness numbers byte-identical (default was already proton). Stale comment corrected.
+
+SEPARATE, NOT FIXED: a3-magnitude computes in float64 (Q0 = float(Q_50_DIGIT_STR), all scatter values ~16-digit) — a NO-FLOAT64 concern needing an mpmath refactor, out of scope for a stamp fix. Its q0-dependence at ~1e-8 is above the float64 floor so the anchor-diff is real, not noise. Worth its own bean.
+
+STILL SUSPECT, unmeasurable here: `toffoli-lp-stability` — same boilerplate-independent + carries q0 in a scan[9].q + constants.q0_physical, but its producer exits non-zero (both pins) in this container, so I could not anchor-diff it. Needs a run in a working env before verdict.

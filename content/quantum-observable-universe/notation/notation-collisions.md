@@ -150,11 +150,19 @@ third is the observable.
   \cite{reshetikhin1991, turaev2010}: a long knot is $V \to V$; **closing** it
   (Markov trace) lands in $\mathrm{End}_{\mathbf{C}}(\mathbf{1}) = k$, a scalar.
 - **$\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$ is an element, not a map.** It
-  *is* an endomorphism of $V^{\otimes n}$ via $q$-Schur–Weyl
-  $H_n(q) \cong \mathrm{End}_{U_q\mathfrak{sl}_N}(V^{\otimes n})$
-  \cite{jimbo1986}, or via the faithful left-regular map
+  *maps to* an endomorphism of $V^{\otimes n}$ via $q$-Schur–Weyl
+  $H_n(q) \twoheadrightarrow \mathrm{End}_{U_q\mathfrak{sl}_N}(V^{\otimes n})$
+  \cite{jimbo1986}, or *is* one faithfully via the left-regular map
   $a \mapsto L_a \in \mathrm{End}_R(H_n)$ \cite{kock2004} — but say which; do not
   write "$\Phi_{\mathrm{mass}}$ is the mass endomorphism" bare.
+  **The Schur–Weyl arrow is a surjection, not an isomorphism, unless $N \ge n$.**
+  Below that it has kernel the blocks with more than $N$ rows, so an element of
+  the kernel maps to the zero endomorphism and the identification is not
+  faithful. This framework runs at $N = 2$ (convention D) with $n = 3A$, where
+  the image is $\mathrm{TL}_n(q) = \mathrm{End}_{U_q\mathfrak{sl}_2}(V^{\otimes n})$
+  of dimension $C_n$, against $\dim H_n = n!$ — a kernel of dimension
+  $n! - C_n$, i.e. $1, 10, 78, 588, 4611, 38890$ at $n = 3,\dots,8$. Only the
+  left-regular map is faithful unconditionally.
 - **$\mathfrak{m}$ is a functional, not an endomorphism.** The Markov trace
   $\mathrm{tr}_M \colon H_n \to R$ is a trace functional \cite{jones1987,
   geckpfeiffer2000}; the modulus collapses $\mathcal{M}$ to a number. Note

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T06:06:25Z
-updated_at: 2026-08-25T06:10:19Z
+updated_at: 2026-09-06T07:17:14Z
 ---
 
 ## RETRACTION — my own committed claim was invalid, in two independent ways
@@ -282,3 +282,42 @@ is a falsifiable check on the implementation, not a path to the binding.
 
 AND DO NOT propose a seventh Delta_lambda ansatz. AGENTS.md names that
 explicitly, and arriving here by a fresh route is not a licence to retry it.
+
+
+### 2026-09-06 — CROSS-REFERENCE from `qou-jgg0`. Not a claim on this bean; status left `todo`.
+
+Flagging one input dependency, because it is invisible from inside this bean and
+it changes which explanation survives. **I am not taking this bean and have not
+touched the p-n sign question.**
+
+`qou-jgg0` measured that **three** strand counts are live for the atomic braid
+with no block saying which is canonical: `A+Z` (7 content blocks, incl.
+`def:atomic-braid`), `3A` (26 blocks, incl. the notation register), `3A+Z`
+(1 block, `mass-endomorphism/atomic-mass-gb-nf.md:3`, which asserts
+`𝓑_K ∈ B_{3A+Z}` while citing the `A+Z` definition). `H_A` is a fourth cell but
+appears only as an explicit "Default-coarse" approximation.
+
+This bean computes `n = A+Z` throughout — correctly, since
+`thm:wedderburn-mass-formula` says `H_{A+Z}(q)`. But the entry above rests on a
+coincidence that is **reading-dependent**. `p(3) = 3` is the only partition count
+equal to the extremal count, so "which atom has `n = 3`" decides it:
+
+| reading | atom at `n = 3` | its verdict in this bean | coincidence |
+|---|---|---|---|
+| `A+Z` | **D** | RIGHT sign (1.448) | **holds** |
+| `3A` | **H-1** | over-specified, 5e5 off | **inverts** |
+| `3A+Z` | *(none)* | — | **evaporates** |
+
+Under `3A` the uniquely-exact `n` lands on this bean's *worst* data point rather
+than its best; under `3A+Z` no neutral atom reaches `n = 3` at all (`3A+Z = 3`
+needs `Z = 0`). The three readings also differ at **every** atom in the sample.
+
+**Your argument is not refuted** — under the reading you use, which your source
+theorem states, it stands. What is added is that its force is contingent on a
+corpus question that is currently open, so the "SUGGESTIVE, not established"
+caveat already recorded above has a second, independent reason to hold.
+
+Measured: `computations/probes/q6pp_unique_n_is_reading_dependent_probe.py`,
+10/10, exit 0, exact integers, no witness. Check 2 reproduces this bean's own
+`n` column at 5 of 5 atoms before departing from it. Naming decision framed for
+the author on PR #6821.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-30T12:29:38Z
-updated_at: 2026-09-07T11:25:37Z
+updated_at: 2026-09-07T12:45:48Z
 ---
 
 ## Context
@@ -189,3 +189,71 @@ model I tried had the axioms force the law to hold -- constant towers make it ho
 excluded outright because Cayley-Hamilton gives every element a quadratic relation, which is exactly
 tr_mul_adjoin_gen's hypothesis. Inconclusive: this is NOT evidence the law is true, only that these
 models cannot separate it. Scope (a).
+
+
+2026-09-07 (PR follow-on): TowerSpan reduced to ONE LOCAL REWRITING RULE. New module
+QOU/MathlibExt/TowerSpanReduction.lean.
+
+TowerSpan is a claim about every element of every filtration step. `SandwichReduces B m` is a claim
+about one element SHAPE:
+
+    for all c in B,   g m * c * g m   in   B + span(sandwich B m)
+
+`towerSpan_of_sandwichReduces` proves the local rule implies the global decomposition, and
+`disjointBlock_of_sandwichReduces` composes it end to end with disjointBlock_of_towerSpan.
+
+WHY THIS IS THE RIGHT REDUCTION. DisjointBlockTraceLaw identified the obstruction as a REPEATED
+maximal-level generator, a word g M * x * g M that no rotation can peel. SandwichReduces is exactly
+the statement that such a word rewrites, and nothing more. Smaller (one shape, not a submodule
+containment), local (one level m, not the tower), and it is where the braid relation lives -- in the
+Hecke case the reduction is the content of g_i g_{i+-1} g_i = g_{i+-1} g_i g_{i+-1} plus the
+quadratic relation.
+
+THE PROOF is multiplication-closure of P = B + span(sandwich), which has exactly one non-trivial
+case:
+    (v g w)(v' g w') = v * (g * (w v') * g) * w'
+whose middle factor is SandwichReduces applied to w v' in B. The rest is mul_base_left /
+mul_base_right. With closure, P becomes a subalgebra via Submodule.toSubalgebra and Algebra.adjoin_le
+finishes.
+
+STILL NOT ESTABLISHED. SandwichReduces is NOT proved for any tower with a growing filtration. This
+moves the hypothesis; it does not discharge it. A reduction between two unproved statements is
+progress in SHAPE only. The disjoint-block law -- and hence the bond-product reading of the atom word
+-- remains MEASURED, NOT DERIVED. The towerSpan_unit inhabitation caveat carries over unchanged: the
+only witness has a constant filtration, and towerSpan_of_constant shows such a witness satisfies
+TowerSpan for reasons unrelated to any of this.
+
+Verification: lean-direct exit 0, no sorry; #print axioms clean on all declarations; import cone
+rebuilt from current main source.
+
+
+2026-09-07 (witness): the constant-filtration objection to towerSpan_unit is CLOSED. New module
+QOU/MathlibExt/InvolutionTowerWitness.lean.
+
+A = MonoidAlgebra R (Multiplicative (N ->_0 ZMod 2)) -- countably many COMMUTING INVOLUTIONS t m.
+Tower H n = adjoin{t m : m < n}, g m = ginv m = t m, trace = augmentation, z = zinv = 1. All
+MarkovTrace axioms hold.
+
+  t_mul_t                    t m * t m = 1, so hquad holds with h = 0
+  sandwichReduces_involution SandwichReduces holds NON-TRIVIALLY: t*c*t = c*(t*t) = c uses
+                             commutativity AND the involution relation -- the local rewriting rule
+                             of TowerSpanReduction doing real work
+  towerSpan_involution       hence TowerSpan, via towerSpan_of_sandwichReduces
+  t_not_mem_shiftedUpTo      THE FILTRATION GROWS: t N is not in shiftedUpTo n M for M < N.
+                             Proved by an algebra endomorphism killN (induced by the coordinate
+                             projection killing index N) that fixes every generator of the stage but
+                             sends t N to 1; if t N were in the stage it would be fixed, forcing
+                             t N = 1, which t_ne_one refutes.
+
+WHAT IT STILL DOES NOT EXERCISE. The trace is an ALGEBRA HOMOMORPHISM, so DisjointBlockMultiplicative
+holds there for EVERY pair a,b -- disjointness plays no part. The witness therefore tests the
+FILTRATION content of TowerSpan and says nothing about its TRACE content. This removes the
+constant-filtration objection and ONLY that one. A witness with a growing filtration AND a
+non-multiplicative trace would essentially be a Hecke or symmetric-group tower, which Mathlib does
+not supply.
+
+SandwichReduces for a Hecke tower remains unproved; the disjoint-block law, and hence the
+bond-product reading of the atom word, remains MEASURED, NOT DERIVED.
+
+Verification: lean-direct exit 0, no sorry; #print axioms clean on involutionTrace,
+sandwichReduces_involution, towerSpan_involution, t_not_mem_shiftedUpTo.

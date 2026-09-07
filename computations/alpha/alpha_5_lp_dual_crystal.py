@@ -404,16 +404,19 @@ def main() -> int:
         if mirror_rs is not None:
             wb.add_assertion(
                 f"mirror_pair_invariance_T_eq_3He_{stratum_name}",
-                float(mirror_rs),
-                0.0,
-                tolerance=1e-6,  # machine precision
+                # STRINGS, not `float(...)` / `0.0` / `1e-6`. The measured
+                # value is ~2e-16 -- a spread asserted AT machine precision is
+                # exactly the quantity f64 cannot record and mean.
+                fmt(mirror_rs) if isinstance(mirror_rs, mp.mpf) else str(mirror_rs),
+                "0",
+                tolerance="1e-6",  # machine precision
             )
 
     # Crystal-limit mirror-pair test: T vs ³He should be equal at
     # every q sampled (this is the headline structural finding).
     # Reports per-q mirror spread; asserts MAX spread is at machine
     # precision.
-    crystal_mirror_max = 0.0
+    crystal_mirror_max = mp.mpf(0)
     for s in sweep:
         mr = mirror_pair_spread(
             [{"atom": p["atom"], "lp": {"y0_star": p["y0_star"],
@@ -424,9 +427,10 @@ def main() -> int:
             crystal_mirror_max = mr
     wb.add_assertion(
         "crystal_limit_mirror_pair_invariance",
-        float(crystal_mirror_max),
-        0.0,
-        tolerance=1e-6,
+        fmt(crystal_mirror_max) if isinstance(crystal_mirror_max, mp.mpf)
+        else str(crystal_mirror_max),
+        "0",
+        tolerance="1e-6",
     )
 
     out = wb.save()
