@@ -179,6 +179,50 @@ theorem bruhatLe_iff_reflLe (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ 
     {u w : W} : BruhatLe cs u w ↔ ReflLe cs u w :=
   ⟨reflLe_of_bruhatLe cs hDE hfin, bruhatLe_of_reflLe cs hDE hfin⟩
 
+/-! ## The left-handed mirror — free, and the form the tableau side needs
+
+`BruhatReflection`'s left-handed section (`LeftReflStep` / `LeftReflLe`) exists because the tableau
+side of Mathas' Prop. 3.7 produces left multiplications, and it closed `LeftReflLe → BruhatLe` by
+transport through `⁻¹`. It recorded the other direction as blocked on `qou-3k66`.
+
+`qou-3k66` is closed above, so the same transport now runs backwards. Nothing here re-proves any
+part of the converse — it mirrors `reflStep`/`reflLe` inversion the other way and composes. -/
+
+/-- A right step inverts to a left step — the mirror of
+`BruhatReflection.reflStep_inv_of_leftReflStep`. -/
+theorem leftReflStep_inv_of_reflStep {v w : W} (h : ReflStep cs v w) :
+    LeftReflStep cs v⁻¹ w⁻¹ := by
+  obtain ⟨t, ht, hw, hl⟩ := h
+  refine ⟨t, ht, ?_, ?_⟩
+  · rw [hw, mul_inv_rev, ht.inv]
+  · rwa [cs.length_inv, cs.length_inv]
+
+/-- The chain version. As on the right-handed side, the chain does **not** reverse: `⁻¹` is applied
+pointwise and `ReflTransGen` is closed under that. -/
+theorem leftReflLe_inv_of_reflLe {v w : W} (h : ReflLe cs v w) :
+    LeftReflLe cs v⁻¹ w⁻¹ := by
+  induction h with
+  | refl => exact Relation.ReflTransGen.refl
+  | tail _ hstep ih => exact ih.tail (leftReflStep_inv_of_reflStep cs hstep)
+
+/-- **`BruhatLe → LeftReflLe`** — the direction `BruhatReflection` recorded as blocked. -/
+theorem leftReflLe_of_bruhatLe (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0)
+    {u w : W} (h : BruhatLe cs u w) : LeftReflLe cs u w := by
+  have h' : BruhatLe cs u⁻¹ w⁻¹ := (bruhatLe_inv_iff cs).mpr h
+  simpa using leftReflLe_inv_of_reflLe cs (reflLe_of_bruhatLe cs hDE hfin h')
+
+/-- `LeftReflLe → BruhatLe` in general — the generic form of
+`BruhatReflection.bruhatLe_of_leftReflLe_An`, which was stated only on type `A`. -/
+theorem bruhatLe_of_leftReflLe (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0)
+    {u w : W} (h : LeftReflLe cs u w) : BruhatLe cs u w :=
+  (bruhatLe_inv_iff cs).mp (bruhatLe_of_reflLe cs hDE hfin (reflLe_inv_of_leftReflLe cs h))
+
+/-- **The subword order and the LEFT-handed reflection order also coincide.** -/
+theorem bruhatLe_iff_leftReflLe (hDE : DihedralExact cs)
+    (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0) {u w : W} :
+    BruhatLe cs u w ↔ LeftReflLe cs u w :=
+  ⟨leftReflLe_of_bruhatLe cs hDE hfin, bruhatLe_of_leftReflLe cs hDE hfin⟩
+
 /-! ## Type `A`: hypothesis-free -/
 
 theorem reflLe_of_bruhatLe_An {n : ℕ} {W : Type*} [Group W]

@@ -101,9 +101,13 @@ and `bruhatLe_of_leftReflLe_An` is the mirrored conclusion, obtained by **transp
 (`IsReflection.inv`), `ℓ w⁻¹ = ℓ w`, and `CoxeterBruhat.bruhatLe_inv_iff` carries the
 conclusion back.  Nothing in the `≤ᵣ → ≤` proof is duplicated.
 
-Note the mirror is **not** available for the open direction: `BruhatLe → LeftReflLe` transports
-to `BruhatLe → ReflLe`, which is `qou-3k66` — still open.  The transport is faithful in both
-directions, so it neither adds nor removes obligations.
+✅ **The open direction is no longer open.** This paragraph read *"`BruhatLe → LeftReflLe`
+transports to `BruhatLe → ReflLe`, which is `qou-3k66` — still open"*, and that was true when it was
+written. `QOU.IwahoriHecke.BruhatConverse` closes `qou-3k66`, so the transport that paragraph
+describes now goes through: `BruhatConverse.leftReflLe_of_bruhatLe_An` and
+`bruhatLe_iff_leftReflLe_An` are the left-handed mirrors, obtained exactly as promised here — by
+`⁻¹`, with nothing re-proved. **The observation that the transport is faithful in both directions is
+what makes it free.**
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, §2.1–2.2 (both definitions, Thm 2.2.2)
 -- Ref: [mathas1999] Iwahori–Hecke Algebras and Schur Algebras of the Symmetric Group, Prop 3.7
