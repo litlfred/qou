@@ -253,27 +253,9 @@ def identify_mu_lambda(tets, gl, shapes):
                 tau0=t_lam / t_mu0, basis_ok=basis_ok, combo_row=combo_row)
 
 
-def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9), seeds_per_k=10):
-    """Pin the meridian among μ₀ + kλ. A solution of the gluing equations with all shapes
-    nondegenerate is a nontrivial representation ρ : π₁(M) → PSL₂(ℂ). If H(μ₀ + kλ) = 1 while
-    H(λ) ≠ 1, the cusp subgroup's image is abelian with a loxodromic element, so the element
-    μ₀ + kλ, of eigenvalue ±1, is the identity in PSL₂(ℂ): ρ factors through the Dehn filling
-    M(μ₀ + kλ), whose fundamental group is therefore nontrivial. The meridian filling is S³, so
-    the meridian's frame k* is the unique k in range for which no such solution exists (that k*
-    exists and is unique in any range uses Property P — Kronheimer–Mrowka 2004: no nontrivial
-    surgery on a nontrivial knot has trivial π₁, ref [kronheimer2004]; only k* survives because
-    every other frame is certified by an explicit solution).
-
-    Search: `samples` is a continuation GRID over the curve in s = log H(λ) (see sample_curve),
-    so g_k(s) = H(μ₀)(z(s))·e^{ks} − 1 is tabulated everywhere the grid reaches; from the grid
-    points with the smallest |g_k| (away from ℓ = 1, where every frame vanishes at the complete
-    point) an undeflated complex secant in s, with the shapes re-solved by continuation at each
-    step, converges to the zero. Earlier variants failed for measurable reasons: four-variable
-    Newton from random starts (0–4 hits per frame); seeds near the complete point (every frame
-    fell onto it); a deflated target (the secant converged to the deflator's own zero — at ℓ = ∞
-    for 1/(ℓ−1)², at ℓ = −3.7 for ((ℓ+3.7)/(ℓ−1))², linearly, while the genuine k = 0 roots of
-    4₁ sit at ℓ = 0.374, 2.675 and four points on the unit circle). The absence at k* is checked
-    exactly afterwards on the fitted A-polynomial (A(L, ±1) has no root off L = ±1)."""
+def _curve_solver(tets, erows, lam_row):
+    """Newton solver for the shapes at a prescribed λ-holonomy ℓ = e^s: the independent edge rows
+    plus H(λ) = ℓ. Returns solve_at(s, z_guess) → shapes or None (degenerate / not converged)."""
     N = len(tets)
     zs = sp.symbols(f"y0:{N}")
     base, chosen = [], []
@@ -298,9 +280,60 @@ def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9),
         if max(abs(e) for e in f(*z, ell)) > mp.mpf(10) ** -30:
             return None
         return z
+    return solve_at
 
+
+def discover_sheets(tets, erows, mu0_row, lam_row, found, known_starts, n_re=22, n_im=22):
+    """Continue each found filling point (s, z) back to ℓ = 1 along a straight line in s; every
+    distinct set of shapes reached at s = 0 is a new sheet of the ℓ-projection over the
+    rectangle, and gets its own continuation grid (coarser than the first). Returns the new
+    grids' points and the updated list of sheet start shapes."""
+    solve_at = _curve_solver(tets, erows, lam_row)
+    N = len(tets)
+    new_pts, starts = [], list(known_starts)
+    for (s_f, z_f) in found:
+        z = list(z_f)
+        ok = True
+        for q in range(1, 9):
+            zn = solve_at(s_f * (1 - mp.mpf(q) / 8), z)
+            if zn is None:
+                ok = False; break
+            z = zn
+        if not ok:
+            continue
+        if any(max(abs(z[j] - st[j]) for j in range(N)) < mp.mpf(10) ** -15 for st in starts):
+            continue
+        starts.append(list(z))
+        new_pts.extend(sample_curve(tets, erows, mu0_row, lam_row, z, n_re=n_re, n_im=n_im))
+    return new_pts, starts
+
+
+def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9), seeds_per_k=10):
+    """Pin the meridian among μ₀ + kλ. A solution of the gluing equations with all shapes
+    nondegenerate is a nontrivial representation ρ : π₁(M) → PSL₂(ℂ). If H(μ₀ + kλ) = 1 while
+    H(λ) ≠ 1, the cusp subgroup's image is abelian with a loxodromic element, so the element
+    μ₀ + kλ, of eigenvalue ±1, is the identity in PSL₂(ℂ): ρ factors through the Dehn filling
+    M(μ₀ + kλ), whose fundamental group is therefore nontrivial. The meridian filling is S³, so
+    the meridian's frame k* is the unique k in range for which no such solution exists (that k*
+    exists and is unique in any range uses Property P — Kronheimer–Mrowka 2004: no nontrivial
+    surgery on a nontrivial knot has trivial π₁, ref [kronheimer2004]; only k* survives because
+    every other frame is certified by an explicit solution).
+
+    Search: `samples` is a continuation GRID over the curve in s = log H(λ) (see sample_curve),
+    so g_k(s) = H(μ₀)(z(s))·e^{ks} − 1 is tabulated everywhere the grid reaches; from the grid
+    points with the smallest |g_k| (away from ℓ = 1, where every frame vanishes at the complete
+    point) an undeflated complex secant in s, with the shapes re-solved by continuation at each
+    step, converges to the zero. Earlier variants failed for measurable reasons: four-variable
+    Newton from random starts (0–4 hits per frame); seeds near the complete point (every frame
+    fell onto it); a deflated target (the secant converged to the deflator's own zero — at ℓ = ∞
+    for 1/(ℓ−1)², at ℓ = −3.7 for ((ℓ+3.7)/(ℓ−1))², linearly, while the genuine k = 0 roots of
+    4₁ sit at ℓ = 0.374, 2.675 and four points on the unit circle). The absence at k* is checked
+    exactly afterwards on the fitted A-polynomial (A(L, ±1) has no root off L = ±1)."""
+    N = len(tets)
+    solve_at = _curve_solver(tets, erows, lam_row)
     far = [t for t in samples if abs(t[1] ** 2 - 1) > mp.mpf("0.15")]
     table = {}
+    found_all = []
     for k in k_range:
         def g(s_, z):
             return rect_eval(mu0_row, z) * mp.exp(k * s_) - 1
@@ -348,10 +381,11 @@ def meridian_frame(tets, erows, mu0_row, lam_row, samples, k_range=range(-8, 9),
             if any(max(abs(z_f[j] - s_[j]) for j in range(N)) < mp.mpf(10) ** -20 for s_ in sols):
                 continue
             sols.append(z_f)
+            found_all.append((s_f, z_f))
             lox += 1
         table[k] = (len(sols), lox)
     survivors = [k for k, (n, lox) in table.items() if lox == 0]
-    return survivors, table
+    return survivors, table, found_all
 
 
 def _bezout(a, b):
@@ -384,30 +418,7 @@ def sample_curve(tets, erows, mu_row, lam_row, shapes0, n_samples=None, seed=1, 
     the other lift is L ↦ −L and is checked separately for the 4₁ control). Returns
     (H(μ_row), L, shapes) triples — all grid points, or a random subset of n_samples."""
     N = len(tets)
-    zs = sp.symbols(f"y0:{N}")
-    base, chosen = [], []
-    for r in erows:
-        trial = base + [list(r[0]) + list(r[1])]
-        if sp.Matrix(trial).rank() > (sp.Matrix(base).rank() if base else 0):
-            base = trial; chosen.append(r)
-    chosen = chosen[:N - 1]
-    lsym = sp.symbols("ell")
-    eqs = [rect_expr(r, zs) - 1 for r in chosen] + [rect_expr(lam_row, zs) - lsym]
-    f = sp.lambdify([*zs, lsym], eqs, "mpmath")
-
-    def solve_at(s_, z_guess):
-        ell = mp.exp(s_)
-        try:
-            sol = mp.findroot(lambda *v: f(*v, ell), z_guess, tol=mp.mpf(10) ** -40, maxsteps=40)
-        except (ValueError, ZeroDivisionError, TypeError, IndexError):
-            return None
-        z = [sol[j] for j in range(N)]
-        if any(abs(zj) < mp.mpf(10) ** -8 or abs(zj - 1) < mp.mpf(10) ** -8 or abs(zj) > mp.mpf(10) ** 8 for zj in z):
-            return None
-        if max(abs(e) for e in f(*z, ell)) > mp.mpf(10) ** -30:
-            return None
-        return z
-
+    solve_at = _curve_solver(tets, erows, lam_row)
     re_max = mp.mpf("3.4")
     re_vals = [re_max * (2 * i / (n_re - 1) - 1) for i in range(n_re)]
     re_vals = sorted(set(re_vals + [mp.mpf(0)]), key=lambda v: v)
@@ -537,9 +548,23 @@ def run_knot(knot, shapes_hint, check, wb):
     print(f"  continuation grid: {len(grid)} points on the deformation curve (μ₀ frame)")
     random.seed(11)
     pts0 = random.sample(grid, min(150, len(grid)))
-    survivors, table = meridian_frame(tets, info["erows"], info["mu0_row"], info["lam_row"], grid)
-    print("  frame search k ↦ (solutions with H(μ₀+kλ)=1, of which loxodromic in λ): " +
-          ", ".join(f"{k}:{v}" for k, v in table.items()))
+    starts = [list(shapes)]
+    union = list(grid)
+    for rnd in range(4):
+        survivors, table, found = meridian_frame(tets, info["erows"], info["mu0_row"], info["lam_row"], union)
+        print(f"  frame search (round {rnd}, {len(starts)} sheet(s), {len(union)} grid points) "
+              "k ↦ (solutions with H(μ₀+kλ)=1, of which loxodromic in λ): " +
+              ", ".join(f"{k}:{v}" for k, v in table.items()))
+        if len(survivors) <= 1:
+            break
+        new_pts, starts2 = discover_sheets(tets, info["erows"], info["mu0_row"], info["lam_row"], found, starts)
+        if len(starts2) == len(starts):
+            print("  no new sheets reached from the found filling points")
+            break
+        print(f"  sheet discovery: {len(starts2) - len(starts)} new sheet(s), {len(new_pts)} grid points")
+        starts = starts2
+        union.extend(new_pts)
+    info["sheets"] = len(starts)
     check(f"{knot}_meridian_frame_unique", len(survivors) == 1, f"survivors {survivors}")
     if len(survivors) != 1:
         return None
@@ -602,6 +627,7 @@ def run_knot(knot, shapes_hint, check, wb):
     wb.add_data(f"{knot}_mu_row", list(info["mu_row"]))
     wb.add_data(f"{knot}_h1_functional_on_cycles", list(info["phi"]))
     wb.add_data(f"{knot}_meridian_frame_kstar", info["kstar"])
+    wb.add_data(f"{knot}_sheets_searched", info["sheets"])
     wb.add_data(f"{knot}_meridian_frame_table", {str(k): list(v) for k, v in info["frame_table"].items()})
     wb.add_data(f"{knot}_mu_in_cycle_basis", list(info["mu"]))
     wb.add_data(f"{knot}_lambda_in_cycle_basis", list(info["lam"]))
