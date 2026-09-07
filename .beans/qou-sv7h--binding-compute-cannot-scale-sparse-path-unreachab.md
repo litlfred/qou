@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-30T15:41:58Z
-updated_at: 2026-09-07T12:11:51Z
+updated_at: 2026-09-07T12:53:29Z
 ---
 
 Full measured analysis: `docs/audits/2026-08-30-binding-compute-scaling-bottleneck.md`.
@@ -529,3 +529,45 @@ numpy is faster at every dim, by 7-18 %. **This is scope-(a), not (b):** the cla
 Two things worth carrying forward regardless of which figure holds. The docstring's "significant speedup" was wrong in *both* measurements — 7-18 % here, negative there, never significant. And object dtype has no BLAS, so numpy on this path is an elementwise Python loop with less interpreter overhead, not a kernel; nobody should expect a large factor from it either way. Both recorded at the docstring.
 
 My first pass at F5 reimplemented the loop branch with an `int` accumulator where `_matmul_dim` seeds with `0.0`; the numbers above are from the faithful version. The reimplementation gave 0.90-0.98x, so the conclusion did not turn on it, but a benchmark of a reimplementation is not a benchmark of the code.
+
+
+## The last row — the accumulator's float64 log — measured (PR #7082), plus a finding that outranks it
+
+### The narrowing is real and now fixed
+
+`unified_iterative_correction` fed every running trace through `math.log`, which returns a Python `float` whatever it is handed, so an `mpf` trace from the Rust MPFR kernel lost every digit past the 16th. `_exact_log` replaces the three sites (`L0`, the `m_max` rescale, `log|tr_run|`) at `_EXACT_COEFF_DPS`. Engaged, checked not assumed: a spy records 30 calls per A=2 run, inputs `{int, mpf}`, outputs all `mpf`.
+
+### What it moves — and where my own framing was wrong TWICE
+
+Each arm in its own process; `float64` reproduces pre-fix behaviour exactly by rebinding `_exact_log` to `math.log`, so both arms come from one tree.
+
+| A | k_exact | float64 | exact | delta |
+|---|---|---|---|---|
+| 2 | 4 | -0.08955968305895068 | -0.08955968305895068 | 0 |
+| 2 | 5 | -0.7335499391634976 | -0.7335499391634976 | 0 |
+| 3 | 4 | -0.10235605915957281 | -0.10235605915957281 | 0 |
+| 3 | 5 | -0.3507860783973744 | -0.3507860783973744 | 0 |
+| 4 | 4 | -0.08058674847769143 | -0.0805867484776914**1** | 2 ULP, 2.5e-16 |
+
+**First wrong framing.** The commit message said the narrowing "compounds over the trajectory rather than rounding once". It does not. Per partition, with `scale` written once at init (1773) and read only at 1929, the loop is `raw_delta = scale*(log_cur - log_prev); cumul_partition += raw_delta; log_prev = log_cur` — it **telescopes** to `scale*(log_last - L0)`, so every intermediate log cancels algebraically and the error cannot grow like N independent truncations.
+
+**Second wrong framing.** I then wrote that the telescoping made the null a *prediction*. Too strong: A=4 moves by 2 ULP. Telescoping BOUNDS the error near the float64 floor; it does not zero it, because `gated_total` still sums hundreds of per-partition endpoints. The correct statement is: the effect is O(float64 floor) and does not grow with trajectory length — which is why A<=3 shows nothing and A=4 shows 2 ULP.
+
+### The finding that outranks it: the q-Gaussian tier is computed and DISCARDED
+
+Chasing a suspected confound (at k_exact=4 the default k_max=11 leaves 169 Gaussian partitions active, and `_q_gaussian_character_approx` is float64 in both arms) I re-ran with `k_max = k_exact`, emptying the tier. Byte-identical results:
+
+    A=2 k=4   gauss=169 -> -0.08955968305895068   gauss=0 -> same
+    A=2 k=5   gauss=164 -> -0.7335499391634976    gauss=0 -> same
+    A=4 k=4   gauss=169 -> -0.08058674847769143   gauss=0 -> same  (and the 2-ULP move survives)
+
+Measured first, then explained by the code. `active = active_exact` (line 1721), so `state` never holds a Gaussian partition. Its contribution lands only in `cumul_total` — and Pass 2 does not use `cumul_total`, it rebuilds the answer as `gated_total = sum over state of cumul_partition`. **Computed, then discarded.**
+
+Two consequences:
+
+- **`k_max` does not affect the return value at all.** Raising it costs compute and changes nothing.
+- **The per-step witness rows disagree with the return value.** `cumulative_MeV` and `raw_total_MeV` carry `cumul_total`, which INCLUDES the Gaussian contribution; the function returns `gated_total`, which excludes it. A witness reader and a caller get different numbers from the same run.
+
+This is stronger than finding 6, which said the tier is unreachable at the defaults. It is also **inert when reachable**, and now has a mechanism rather than just a count.
+
+**Not fixed, deliberately, and this is a decision for the author, not a typo.** Pass 2 gates on `final_tr_sign`, which a Gaussian partition has no matrix to supply, so making the tier contribute requires deciding what its gate should be. Recorded at the code site; behaviour unchanged.

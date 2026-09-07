@@ -1720,6 +1720,36 @@ def unified_iterative_correction(Z, N, return_per_step=False,
                        if k_exact < e['k'] <= k_max and e['dim'] >= 2]
     active = active_exact
 
+    # NOTE (2026-09-07, bean `qou-sv7h`): `active = active_exact` is what makes
+    # the q-Gaussian tier INERT, not merely unreachable at the defaults.
+    #
+    # `state` is built from `active`, so a Gaussian partition never enters it.
+    # Its contribution is computed in Pass 1 and accumulated into `cumul_total`
+    # — and Pass 2 does not use `cumul_total`: it rebuilds the answer as
+    # `gated_total = Σ_{s ∈ state} s['cumul_partition']`. So the Gaussian
+    # contribution is computed and DISCARDED.
+    #
+    # Measured before the code was read, then explained by it. `k_max = k_exact`
+    # empties `active_gaussian`; the results are byte-identical either way:
+    #
+    #     A=2 k=4   gauss=169 -> -0.08955968305895068   gauss=0 -> same
+    #     A=2 k=5   gauss=164 -> -0.7335499391634976    gauss=0 -> same
+    #     A=4 k=4   gauss=169 -> -0.08058674847769143   gauss=0 -> same
+    #
+    # Two consequences worth knowing before touching this:
+    #
+    #  - `k_max` does not affect the return value at all. Raising it costs
+    #    compute and changes nothing.
+    #  - The per-step witness rows DISAGREE with the return value:
+    #    `cumulative_MeV` and `raw_total_MeV` carry `cumul_total`, which
+    #    INCLUDES the Gaussian contribution, while the function returns
+    #    `gated_total`, which excludes it.
+    #
+    # Whether the tier SHOULD contribute is a design question, not a typo:
+    # Pass 2 gates on `final_tr_sign`, which a Gaussian partition has no
+    # matrix to supply. Left as-is deliberately — this note records the
+    # behaviour, it does not change it.
+
     # ═══ TWO-PASS LP-DUAL WITH COMPLEMENTARY SLACKNESS ═════════
     #
     # Pass 1 (forward): accumulate running YSN matrix M_λ for every
