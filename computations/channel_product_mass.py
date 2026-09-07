@@ -43,7 +43,7 @@ from pathlib import Path
 from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q, Q_INV, HA, q_int, HBAR_Q, Q_ERR
+from q_parameter import Q_MP, Q_INV_MP, HA_MP, q_int, HBAR_Q, Q_ERR
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from experimental_constants import m_n_derived_3input  # noqa: E402
 from witness_base import WitnessBuilder
@@ -66,8 +66,22 @@ def _serialise(obj):
 # §1  PER-NUCLEON CHANNEL SUMS (exact algebraic)
 # ══════════════════════════════════════════════════════════════
 
-q = Q
-qi = Q_INV
+# `Q_MP` / `Q_INV_MP` / `HA_MP`, NOT the float `Q` / `Q_INV` / `HA`.
+#
+# The float versions were the root of this whole file: `a_proton = -HA/2` and
+# `b_neutron = -3(q²-1)(q²+1)²/(4q³)` are the two channel sums the docstring
+# calls "exact algebraic ... All quantities from q₀ alone", and both were being
+# built from a 17-digit q. Measured: `HA` is 0.20906029879563937 against
+# `HA_MP` 0.20906029879563931543084621312967494385975749526302 — they part at
+# the 16th digit.
+#
+# `f64_into_mpmath_audit` caught this on the parameter I wrote as
+# `mp.mpf(str(Q))`, which is the laundering form: it renders 17 good digits as
+# a 60-digit decimal. Fixing only that line would have left the arithmetic
+# above it on f64 and made the witness LOOK more precise than the computation.
+q = Q_MP
+qi = Q_INV_MP
+HA = HA_MP
 me = M_E_MEV
 
 # Knot volumes from canonical knot_volumes module (mpmath 50dps).
@@ -287,7 +301,7 @@ w.set_description(
 )
 w.set_content_block("rem:q-integer-mass-table")
 
-w.add_parameter("q₀", fmt(mp.mpf(str(Q))))
+w.add_parameter("q₀", fmt(q))
 w.add_parameter("α (MeV)", fmt(ALPHA))
 w.add_parameter("a (proton sum)", fmt(a_proton))
 w.add_parameter("b (neutron sum)", fmt(b_neutron))
