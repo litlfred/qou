@@ -5,7 +5,7 @@ status: in-progress
 type: milestone
 priority: normal
 created_at: 2026-09-07T06:24:35Z
-updated_at: 2026-09-07T06:34:29Z
+updated_at: 2026-09-07T06:42:42Z
 ---
 
 Owner directive 2026-09-07: *"Take up idle as relevant. Do q-native alien calculus.
@@ -305,3 +305,90 @@ downstream:
 That last one is the honest link between this epic and the deuteron work, and it is a
 warning rather than a synergy: **the thing I failed to characterise five ways this
 session is the same object this plan needs as an index set.**
+
+
+---
+
+# 🛑 CORPUS-GREP RESULT — the plan above needs three corrections, one of them fatal to B4-as-written
+
+The grep returned after the plan was written. Three findings change it.
+
+## C1. The objective this whole route serves DOES NOT EXIST
+
+**There is no Stokes multiplier for C1 at `∞`** — four independent confirmations, and
+this covers the **connection-matrix** multipliers too, not just the local isoformal ones:
+
+1. the isoclinicity invariant (RSZ Thms 2.2.1 / 2.2.4 / 5.5.7, cited by number in
+   `conj:qdifference-kernel-prolongation-symbol` author notes, 2026-07-20);
+2. `Λ_I(M)` trivial ⇒ `H¹(E_q, Λ_I(M₀))` a point (RSZ §5);
+3. DVRSZ: *"pur ⟺ une seule pente"* — `T±` are two **exponents at one slope**;
+4. RSZ Thm 3.3.5's dimension formula is empty at `k = 1` — **Lean**,
+   `RSZIsoformalInterface.lean:148`, `c1_infinity_isoformalDim_eq_zero`.
+
+**So `qou-wgnx`'s target is a non-object too**, not merely dormant — and my B1 note
+naming it as "the live carrier" is itself now corrected. `qou-wgnx`'s own top summary
+said "open" while its entries 21–23 said the opposite; that stale summary already caused
+one agent to re-derive the triviality. **I nearly became the second.**
+
+**Consequence for B4:** it must **NOT** target C1. Aiming the first instance at an object
+whose Stokes data is provably a point would produce a trivially-satisfied instance — the
+`: True := trivial` failure one level up.
+
+**One caveat, recorded by the agent who found it and never discharged:** RSZ's
+constructions are for *integral* slopes; C1's is integral only *after* ramification, and
+"ramify, then apply integral-slope theory" was skipped. van der Put–Reversat
+(`library/afst-2007-6-16-3-665-0/`) is the non-integral text and **is held**.
+
+## C2. My anti-fit gate item 3 was WRONG — two different objects share the glyph `A_ω`
+
+- **even-face** `A_ω = 4√2·e^{−3/8} ≈ 3.8884` at `ω₀ = 1/√2` — the W5 datum (bean
+  `qou-z4x5`, completed, body empty; content lives only in the audit).
+- **odd-face** `A_ω` — the G3 keystone, candidate **integer 3** from the GGM Stokes
+  matrix. **This is the one `qou-q3np` is about.**
+
+`qou-q3np`'s obstruction is **integrality** (integer Stokes constants vs small
+non-integer opposite-signed reals). **That argument does not touch `4√2·e^{−3/8}`**,
+which is neither an integer nor a DT count. My gate item 3 asserted it did.
+
+**Three sharper blocks on the W5 datum do apply**, and replace it:
+1. it is a **`q = 1` object** — at `q=1` the binding EGF `e^{x+x²/2}` is entire, so there
+   is **no equational Stokes phenomenon**; the resurgence is **co-equational**, and the
+   literal Bridge form `Δ_ω f = A_ω·df/dz` does not apply verbatim;
+2. its q-deformation is `O((q−1)²)` and bar-even (measured exponent 1.956) — *stationary
+   at the classical point*, so it carries almost no substrate information at `q₀`;
+3. **`m_e·A_ω = 1.987 MeV` is a hard ceiling below `B_D = 2.225 MeV`** — already a
+   measured negative (`deuteron_wall_alien_resummation_probe.py`).
+
+## C3. B0 is confirmed as the only cheap and genuinely-absent step — and it is done
+
+Measured absences in the Lean tree: `qLaplace`, `qBorelSum`, `qBorelTransform`,
+`qResurgent`, `qStokes`, `qAlien` — **zero occurrences**. Every q-native object in the
+corpus is a **coefficient** statement. There is no summation operator, no sector, no
+singularity support, no alien derivative acting on anything.
+
+And in Mathlib (vendored, 6883 files): `Gevrey` **0 files**, no Borel summation (the 146
+`Borel` hits are `BorelSpace`, measure theory), no q-difference. Only `Derivation` exists.
+
+**A name trap worth recording:** `qBorelCoeff` is declared **three times with three
+different divisors** — `borelCoeff = aₙ/n!`, `QBorel.qBorelCoeff = aₙ/[n]_q!`,
+`QGevreyTaming.qBorelCoeff = aₙ/q^{e n}`. **The `[n]_q!` one is not the RSZ q-Borel and
+cannot tame `q^{n²}` growth.** `QGevreyTaming` and `QBorelResummation` do not import each
+other.
+
+## Revised plan
+
+| brick | status |
+|---|---|
+| **B0** triage | ✅ **done** |
+| **B1** fix the successor pointer | ✅ **done** — but see C1: `qou-wgnx` is *also* a non-object, so the note needs a second pass |
+| **B2** relate the carriers | unchanged, still small |
+| **B3** join growth to algebra | unchanged |
+| **B4** first instance | **MUST NOT TARGET C1** (C1). Target is now: exhibit an *analytic q-difference module* satisfying the q-bridge relation — `qou-vkg5` item 2, the whole remaining gap since 2026-08-08 |
+| **B5** read `weight` | gate stands; **item 3 of the gate is replaced** by the three blocks in C2 |
+
+**The honest scope of the whole epic, after the grep:** there is **no held literature**
+doing alien calculus q-natively — six alien documents have zero q-difference hits, and
+eight q-difference documents have zero alien hits. You would not be extending a
+literature; you would be starting one, in a corpus where the entire existing alien
+surface has **zero consumers**. That is not a reason to refuse, but it is the correct
+size of the claim, and it must appear in any PR body.
