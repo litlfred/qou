@@ -314,3 +314,125 @@ nothing about whether the product survives an unsorted word.
 
 `c4` is the next rung and is untested by this: it would need a quartic per
 factor, and nothing here indicates whether the pattern continues or stops.
+
+## PRE-REGISTERED 2026-09-07 08:45 UTC — before the nn quartic was measured
+
+The bond rows, as measured, written (1/2)(1, rho, tau, ups, chi):
+
+    pp   (1,  2, 1/2, -1/2, 1/4)
+    pn   (1,  0, 3/2, -3/2, 31/12)
+    nn   (1, -2, 5/2, -5/2, ?)      <- chi still measuring
+
+`rho = p_b - n_b` and `tau = 1/2 + n_b` hold in all three (qou-qqm4's pattern).
+`ups = -tau` holds in all three — three hits, no freedom left, and NOT predicted
+by that description.
+
+**The falsifiable part.** Fitting `chi` on the two bonds that have it:
+
+    linear in n     chi = 1/4 + (7/3)n        ->  chi_nn = 59/12
+    linear in tau   chi = -11/12 + (7/3)tau   ->  chi_nn = 59/12
+
+🛑 **THOSE ARE NOT TWO INDEPENDENT RULES AGREEING.** `tau = 1/2 + n` is itself
+linear in `n`, so both are the SAME two-parameter family relabelled, fitted to
+two points, with zero degrees of freedom left over. Their agreement is an
+identity, not evidence. Recording that explicitly because "two different rules
+give the same answer" is precisely how a 2-point fit gets mistaken for a
+derivation, and this bean has already had to retract one over-reading.
+
+**So `chi_nn = 59/12` is a prediction with no support behind it beyond the fit.**
+It is written down here BEFORE the measurement so the running `nn` extraction can
+falsify it on arrival, rather than being "explained" afterwards. If `chi_nn`
+comes back anything else, this family is dead and the quartic has structure the
+cubic did not.
+
+The `ups = -tau` relation is the one worth watching: it was NOT fitted — it fell
+out of three independent measurements — so if a quartic analogue exists it should
+be visible without tuning.
+
+## PREDICTION REFUTED 2026-09-07 09:20 — as pre-registered, and that is the point
+
+    bond nn:  (1/2)(1, -2, 5/2, -5/2, 9/4)      chi_nn = 9/4
+
+**Predicted 59/12 (= 4.917). Measured 9/4 (= 2.25).** The linear-in-n /
+linear-in-tau family is dead. It was written down before the measurement
+precisely so it could die this way rather than be quietly replaced by whatever
+the number turned out to fit.
+
+**The quartic column is not even monotone:**
+
+    pp   1/4      pn   31/12      nn   9/4
+         0.25          2.583           2.25
+
+So `chi` rises then falls across the bonds. No linear rule in `n`, `tau`, or
+anything else two-parameter can produce that, and I will not go looking for a
+three-parameter one — three points and three parameters is not a finding.
+
+**`ups = -tau` SURVIVES, 3/3.** `ups_nn = -5/2` against `tau_nn = 5/2`. The
+relation that was NOT fitted holds; the one that WAS fitted broke. That
+asymmetry is the only thing here worth carrying forward.
+
+## 🛑 AND I FOUND A DEFECT IN MY OWN PROBE, mid-run
+
+At `K = 4` the table printed headers `a4` / `c4` over values that were `a3` /
+`c3`: lines 251, 260, 269 and 270 hardcoded indices 2 and 3 rather than
+`K-1` and `K`. This is the SAME mislabelling class I fixed in this file
+yesterday, reintroduced one commit later in code I wrote to avoid it.
+
+**The verdict is unaffected and the run is not wasted.** The failure check
+compares the FULL coefficient vector (`if d_pred != d_live`), so an order-4
+disagreement is still caught — it is the display and the per-row flag that were
+wrong, not the test. Fixed to derive both indices from `K`; `K = 3` is unchanged
+(`K-1, K` = 2, 3), so #7002's merged result is untouched.
+
+The nn row is now in the `K = 4` input cache, so the corrected table can be
+regenerated without re-earning the 2.7 h of bond measurement — which is exactly
+what that cache was added for, one commit before it was needed.
+
+## DERIVED 2026-09-07 — and the derivation DEFLATES my own claim from an hour ago
+
+Owner asked to try deriving the recursion. It derives, and what it shows is that
+there was less there than I said.
+
+**k=1 is an algebraic identity.** A bond joins exactly TWO nucleons, so
+`p_b + n_b = 2` always. With qou-qqm4's `rho = p - n` and `tau = 1/2 + n`:
+
+    n = 1 - rho/2   =>   tau = 1/2 + (1 - rho/2) = 3/2 - rho/2
+
+and the measured k=1 rung is `tau = -1/2*rho + 3/2`. The same statement. Nothing
+new was found there.
+
+**The general version kills the "overdetermined" framing outright.** Indexing the
+bonds by `n = 0, 1, 2`:
+
+    c0  [1, 1, 1]              2nd diff 0        AFFINE in n
+    c1  [2, 0, -2]             2nd diff 0        AFFINE
+    c2  [1/2, 3/2, 5/2]        2nd diff 0        AFFINE
+    c3  [-1/2, -3/2, -5/2]     2nd diff 0        AFFINE
+    c4  [1/4, 31/12, 9/4]      2nd diff -8/3     NOT affine
+
+If three coefficients are all affine in `n`, the three bonds are COLLINEAR in
+that 3-space and a 2-term relation exists AUTOMATICALLY. **The third equation is
+not independent of the other two**, so "3 equations, 2 unknowns, overdetermined,
+therefore a real test" was wrong. I wrote that in commit `8bf62d2ad6` and it is
+corrected before merge.
+
+It also explains the break for free: k=3 fails because `c4` is the FIRST
+non-affine coefficient. Not a surprise to investigate — a consequence.
+
+## What actually survives
+
+    k=1   DERIVED, identity from rho, tau, p+n=2
+    k=2   NOT derived — equivalent to  ups = -tau  — still OPEN
+    k=3   REFUTED — c4 is the first non-affine coefficient
+
+`ups = -tau` is the one real fact. `c3` being affine in `n` at all is a genuine
+constraint on three measured rationals, and it is NOT supplied by qou-qqm4's
+description, which covers `rho` and `tau` only — correctly called there "three
+values with one spare dof". This is a relation with none.
+
+**A guess that fails, recorded so it is not re-tried.** `tau, -tau` at orders 2
+and 3 suggests a factor `tau*e^2/(1+e)`, whose order-4 term would be `+tau`, i.e.
+`c4 = 1/2, 3/2, 5/2`. Measured is `1/4, 31/12, 9/4`. Refuted.
+
+**And what is NOT a finding:** `c4` is quadratic in `n` by construction — any
+three points are — so fitting a quadratic there has zero content. Not done.

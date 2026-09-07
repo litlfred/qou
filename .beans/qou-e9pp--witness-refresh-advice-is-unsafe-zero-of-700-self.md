@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-19T13:15:18Z
-updated_at: 2026-08-19T13:15:50Z
+updated_at: 2026-09-07T08:58:01Z
 ---
 
 
@@ -112,3 +112,50 @@ cleanup landed mid-run and left the triage witness carrying new-format data
 under provenance hashed from the reverted script — an internally inconsistent
 artifact, the exact corruption class this bean is about. Commit before running,
 and never blanket-revert a tree while a producer is in flight.
+
+
+## 2026-09-07 — FIFTH run. `cosmetic = 0` holds; one bucket more than doubled
+
+Re-measured on `main` (this bean's own advice is a BASELINE — re-run, never
+quote). Full split, five runs:
+
+| run | date | decided | substantive | cosmetic | import_cone_drift | rewritten | unresolvable |
+|---|---|---:|---:|---:|---:|---:|---:|
+| 1 | 2026-08-11 | 678 | 242 | **0** | — | 329 | 107 |
+| 2 | 2026-08-19 | 674 | 239 | **0** | — | 329 | 106 |
+| 3 | 2026-08-19 | 697 | 256 | **0** | — | 338 | 103 |
+| 4 | 2026-08-30 | 559 | 186 (33.3%) | **0** | 4 | 309 (55.3%) | 60 |
+| 5 | **2026-09-07** | **603** | **205 (34.0%)** | **0** | **9** | **333 (55.2%)** | **55** |
+
+**Runs 1-3 report no `decided` total; that column is my arithmetic**
+(substantive + cosmetic + rewritten + unresolvable), and those runs predate the
+`import_cone_drift` bucket existing, which is why it is blank rather than zero
+for them. Runs 4-5 quote the script's own printed total.
+
+Also on run 5: `cosmetic_env_differs` 1, `cosmetic_import_infra_only` 0,
+`cosmetic_strips_provenance` 0, `unparseable` 0.
+
+**The headline holds a fifth time, across ~4 weeks: ZERO self-stale witnesses
+are safe to refresh.** The idle-pass policy that sends the witness half of the
+budget to sidecars instead is confirmed, not merely still-believed.
+
+**The finding is the bucket that GREW.** `cosmetic_import_cone_drift` went
+**4 → 9** while every other proportion held (substantive 33.3 → 34.0 %,
+rewritten 55.3 → 55.2 %), so this is not denominator drift. That bucket's own
+label records **"measured 2/2 moved"**: a producer whose source is byte-stable
+while a **numeric-bearing module it calls** changed. So these 9 are not "safe
+to refresh" — they are the *opposite*, the cases where a re-run is EXPECTED to
+move a number, and they are **invisible to the `git diff <producer>` check**
+that AGENTS.md's idle-pass policy tells agents to run first. It is the only
+bucket trending, and it trends toward more silent wrongness, not less.
+
+**This bean's own title is stale:** "~700 self-stale witnesses" against a
+decided population that has been **559–628** for a month. Left as-is rather
+than rewritten, since the title is how the bean is cited elsewhere; noted here
+so a reader does not carry the 700 forward.
+
+**Its two follow-ups are still open and neither was attempted here:** the
+`rewritten` 333 (55.2 %) has no branch-side fix — rebase-merge destroys the
+recorded `commitSha`, so `git diff the producer first` is *unrunnable* for over
+half the backlog — and the `substantive` 205 is untriaged, needing the runner
+rather than this static gate. **Bean stays open.**

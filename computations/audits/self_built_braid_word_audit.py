@@ -95,6 +95,24 @@ CHI_KERNELS = {
 CANONICAL_EMITTERS = {"atom_braid_word_3A", "atom_braid_word", "braid_word_3A"}
 
 SEARCH_ROOTS = ["computations", "tools", "qou-mass"]
+
+#: A producer that builds the historical grouped word ON PURPOSE says so with
+#: this marker, within `MARKER_WINDOW` lines above the chi-kernel call. Such a
+#: site is reported as DELIBERATE and is not flagged.
+#:
+#: Why a comment marker and not a name. The corpus's nearest precedent,
+#: `convention-c-producer-audit`, declares deliberate-ness by NAME (a
+#: `_HISTORICAL` suffix). That works there and it is also exactly the keying
+#: that made it blind to 21 sites, per the value-audit measurement recorded in
+#: AGENTS.md -- a name can be absent, misspelled, or arrived at by accident,
+#: and a reader cannot tell an undeclared deliberate site from a defect. A
+#: marker has to be typed on purpose.
+#:
+#: It grants nothing. The site still appears in the census with its generator
+#: sequence; the marker moves it out of the ACTIONABLE column and into a column
+#: a reader is expected to read.
+DELIBERATE_MARKER = "audit: deliberate-historical-word"
+MARKER_WINDOW = 25
 SKIP_PARTS = {"_deprecated", ".git", "node_modules", "__pycache__", ".lake"}
 
 
@@ -362,13 +380,21 @@ def _classify(arg, binds, params):
     return _classify_expr(arg, binds, params)
 
 
+def _marked(lines, lineno):
+    """Is the deliberate marker within `MARKER_WINDOW` lines above `lineno`?"""
+    lo = max(0, lineno - 1 - MARKER_WINDOW)
+    return any(DELIBERATE_MARKER in ln for ln in lines[lo:lineno])
+
+
 def audit():
     rows = []
     for path in _iter_py():
         try:
-            tree = ast.parse(path.read_text(encoding="utf-8", errors="replace"))
-        except (SyntaxError, ValueError):
+            src = path.read_text(encoding="utf-8", errors="replace")
+            tree = ast.parse(src)
+        except (SyntaxError, ValueError, OSError):
             continue
+        lines = src.splitlines()
         rel = str(path.relative_to(ROOT))
         for scope in _scopes(tree):
             binds = _bindings(scope)
@@ -389,6 +415,8 @@ def audit():
                 monotone = None
                 if gens is not None:
                     monotone = all(a <= b for a, b in zip(gens, gens[1:]))
+                hit = bool(verdict == "SELF_BUILT" and monotone is True)
+                deliberate = hit and _marked(lines, n.lineno)
                 rows.append({
                     "file": rel,
                     "line": n.lineno,
@@ -396,8 +424,11 @@ def audit():
                     "scope": getattr(scope, "name", "<module>"),
                     "verdict": verdict,
                     "gen_sequence": gens,
-                    "monotone_literal": bool(
-                        verdict == "SELF_BUILT" and monotone is True),
+                    "monotone_literal": hit,
+                    "deliberate": deliberate,
+                    # ACTIONABLE is what a reader must act on. A declared
+                    # historical word is still reported, one column over.
+                    "actionable": hit and not deliberate,
                 })
     return rows
 
@@ -437,6 +468,21 @@ def f(g0):
 def f(word):
     return chi_all_lambda(word, 3)
 """, "INHERITED", False),
+    ("a DECLARED historical word is deliberate, not actionable", """
+def f(g0, g1):
+    # audit: deliberate-historical-word -- this probe compares the marshalled
+    # route against the d-preserving one on the SAME chain, so the historical
+    # word is its subject, not a defect.
+    word = [(mpf(c), mpf(d), 0) for c, d in g0] + [(mpf(c), mpf(d), 1) for c, d in g1]
+    return chi_all_lambda(word, 3)
+""", "SELF_BUILT", False),
+    ("the marker must be NEAR the call -- 30 lines up does not count", """
+def f(g0, g1):
+    # audit: deliberate-historical-word
+""" + "\n".join("    x = %d" % i for i in range(30)) + """
+    word = [(mpf(c), mpf(d), 0) for c, d in g0] + [(mpf(c), mpf(d), 1) for c, d in g1]
+    return chi_all_lambda(word, 3)
+""", "SELF_BUILT", True),
     ("a canonical default WITH a historical branch is MIXED, not a defect --\n"
      "          the repaired compute_tau_M_nucleon_H3 shape (option B)", """
 def f(Z, N, intra_order):
@@ -452,6 +498,7 @@ def f(Z, N, intra_order):
 def _selftest() -> int:
     bad = 0
     for label, src, want_verdict, want_flag in _SELFTEST:
+        lines = src.splitlines()
         tree = ast.parse(src)
         got_v, got_f = None, None
         for scope in _scopes(tree):
@@ -467,7 +514,9 @@ def _selftest() -> int:
                 v, gens = _classify(n.args[0], binds, params)
                 mono = gens is not None and all(
                     a <= b for a, b in zip(gens, gens[1:]))
-                got_v, got_f = v, (v == "SELF_BUILT" and mono)
+                hit = v == "SELF_BUILT" and mono
+                # `got_f` is ACTIONABLE, so a declared site reads False here.
+                got_v, got_f = v, hit and not _marked(lines, n.lineno)
         ok = (got_v == want_verdict and got_f == want_flag)
         bad += 0 if ok else 1
         print(f"  [{'PASS' if ok else 'FAIL'}] {label}\n"
@@ -497,7 +546,8 @@ def main() -> int:
     counts: dict[str, int] = {}
     for r in rows:
         counts[r["verdict"]] = counts.get(r["verdict"], 0) + 1
-    flagged = [r for r in rows if r["monotone_literal"]]
+    flagged = [r for r in rows if r["actionable"]]
+    declared = [r for r in rows if r.get("deliberate")]
 
     print(f"  chi-kernel call sites: {len(rows)}\n")
     for v in ("CANONICAL", "MIXED", "SELF_BUILT", "INHERITED", "OTHER"):
@@ -509,7 +559,9 @@ def main() -> int:
         if r["verdict"] not in ("SELF_BUILT", "MIXED"):
             continue
         seq = r["gen_sequence"]
-        tag = ("  <-- MONOTONE LITERAL" if r["monotone_literal"]
+        tag = ("  <-- DELIBERATE (declared historical word)"
+               if r.get("deliberate")
+               else "  <-- MONOTONE LITERAL" if r["monotone_literal"]
                else ("  (has a canonical path too; branch for a reader)"
                      if r["verdict"] == "MIXED"
                      else ("" if seq is None else "  (non-monotone)")))
@@ -519,7 +571,8 @@ def main() -> int:
         print(f"    {r['file']}:{r['line']}  {r['scope']}()  "
               f"[{r['kernel']}]  {shown}{tag}")
 
-    print(f"\n  MONOTONE_LITERAL: {len(flagged)}")
+    print(f"\n  ACTIONABLE (monotone, undeclared): {len(flagged)}")
+    print(f"  DELIBERATE  (monotone, declared with the marker): {len(declared)}")
     print("  A monotone self-built word IS the grouped (superseded) ordering.\n"
           "  That is a CANDIDATE, not a verdict: legitimate when the producer\n"
           "  deliberately tests a non-atom braid. A human reads these; the\n"

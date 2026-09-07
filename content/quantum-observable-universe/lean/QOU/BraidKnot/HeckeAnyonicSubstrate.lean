@@ -57,7 +57,22 @@ class HeckeAnyonicSubstrate (R : Type u) [CommRing R] (q : R) where
   /-- Action of the `i`-th braid generator on a normal form. -/
   braidAction : ℕ → NormalForm → NormalForm
   /-- The Hecke quadratic relation `(T_{s_i} - q)(T_{s_i} + 1) = 0`,
-      held abstractly as a Prop the concrete instance supplies. -/
+      held abstractly as a Prop the concrete instance supplies.
+
+      **This field asserts nothing** (noted 2026-09-07): its type is the
+      *universe* `Prop`, so the instance chooses the proposition and `True`
+      is a legal choice.  No declaration in the corpus reads
+      `H.heckeQuadratic`, so nothing rests on it today.
+
+      **The real relation already exists**, one module over:
+      `QOU.IwahoriHecke.heckeQuadraticRelation R q S s`
+      (`QOU/IwahoriHecke/Quotient.lean`).  Wiring it in is not a
+      substitution — that definition lives in `FreeAlgebra R S`, and this
+      class carries only an abstract `NormalForm : Type u` with a
+      `braidAction`, no ring structure, so `(T_i - q)(T_i + 1) = 0` cannot
+      be written against it.  Encoding it means giving `NormalForm` the
+      algebra structure first.  Recorded here so the next reader does not
+      re-derive the relation the corpus already holds. -/
   heckeQuadratic : Prop
   /-- **The conjecture itself**: every QOU particle's normal form
       lies in the image of the braid action.  This field plays the

@@ -1,0 +1,241 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1905.02045v3",
+ "source": {
+  "file": "1905.02045v3.pdf",
+  "sha256": "8e7eb17c7d1f4f4e49a7c58e4254973b873e12900a6af4e58908aa0e9c1d89dd",
+  "bytes": 694971,
+  "pages": 39,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1905.02045",
+   "version": "3",
+   "primary_class": "math.NT",
+   "stamp_date": "4 Mar 2020"
+  },
+  "doi": null,
+  "title": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM",
+  "authors_raw": "INV ARIANTS OF HYPERBOLIC KNOTS",
+  "title_lines": [
+   "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM"
+  ],
+  "abstract": "We obtain an exact modularity relation for the q-Pochhammer symbol. Using this formula, we show that Zagier\u2019s modularity conjecture for a knot K essentially reduces to the arithmeticity conjecture for K. In particular, we show that Zagier\u2019s conjecture holds for hyperbolic knots K \u2044= 7 2 with at most seven crossings. For K = 4 1, we also prove a complementary reciprocity formula which allows us to prove a law of large numbers for the values of the colored Jones polynomials at roots of unity. We conjecture a similar formula holds for all knots and we show that this is the case if one assumes a suitable version of Zagier\u2019s conjecture.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20200305014046Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.17",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Outline of the paper and sketch of the proofs",
+   "page": 6,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgment",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Notation",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Two reciprocity formulae for the q-Pochhammer symbol",
+   "page": 8,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Abel-Plana's summation formula",
+   "page": 8,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "First reciprocity formula for the q-Pochhammer symbol",
+   "page": 9,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Sums of cotangents",
+   "page": 14,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Second reciprocity formula for the q-Pochhammer symbol",
+   "page": 19,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem ??",
+   "page": 21,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Lemma ??",
+   "page": 28,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Lemma ??",
+   "page": 31,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorems ??",
+   "page": 34,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem ??",
+   "page": 35,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 13694,
+   "n_words": 2447
+  },
+  {
+   "id": "sec-001-11-outline-of-the-paper-and-sketch-of-the-proofs",
+   "number": "1.1",
+   "title": "Outline of the paper and sketch of the proofs",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 4645,
+   "n_words": 791
+  },
+  {
+   "id": "sec-002-acknowledgment",
+   "number": null,
+   "title": "Acknowledgment",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 690,
+   "n_words": 116
+  },
+  {
+   "id": "sec-003-notation",
+   "number": null,
+   "title": "Notation",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 380,
+   "n_words": 74
+  },
+  {
+   "id": "sec-004-2-two-reciprocity-formulae-for-the-q-pochhammer",
+   "number": "2",
+   "title": "Two reciprocity formulae for the q-Pochhammer symbol",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1847,
+   "n_words": 369
+  },
+  {
+   "id": "sec-005-22-first-reciprocity-formula-for-the-q-pochhamme",
+   "number": "2.2",
+   "title": "First reciprocity formula for the q-Pochhammer symbol",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 8846,
+   "n_words": 2051
+  },
+  {
+   "id": "sec-006-23-sums-of-cotangents",
+   "number": "2.3",
+   "title": "Sums of cotangents",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 19,
+   "n_chars": 9770,
+   "n_words": 2009
+  },
+  {
+   "id": "sec-007-24-second-reciprocity-formula-for-the-q-pochhamm",
+   "number": "2.4",
+   "title": "Second reciprocity formula for the q-Pochhammer symbol",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 38,
+   "n_chars": 34307,
+   "n_words": 7154
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 6682,
+   "n_words": 969
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 9,
+  "chars_total": 80861
+ }
+}

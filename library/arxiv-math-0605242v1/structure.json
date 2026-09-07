@@ -1,0 +1,166 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0605242v1",
+ "source": {
+  "file": "0605242v1.pdf",
+  "sha256": "65fac7285e4a77f43ca418f54b2047a5f635b056f595ac7e1a8ca12bc64e7eb6",
+  "bytes": 192171,
+  "pages": 16,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0605242",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "9 May 2006"
+  },
+  "doi": null,
+  "title": "N-Fold Integer Programming Jes\u00fas A. De Loera\u2217 Raymond Hemmecke \u2020 Shmuel Onn \u2021 Robert Weismantel \u00a7",
+  "authors_raw": null,
+  "title_lines": [
+   "N-Fold Integer Programming",
+   "Jes\u00fas A. De Loera\u2217 Raymond Hemmecke \u2020 Shmuel Onn \u2021 Robert Weismantel \u00a7"
+  ],
+  "abstract": "In this article we study a broad class of integer programming problem s in variable dimension. We show that these so-termed n-fold integer programming problems are polynomial time solvable. Our proof involves two heavy ingredients discovered recently: the equivalence of linear optimization and so-called directed augmentation, and the stabilization of certa in Graver bases. We discuss several applications of our algorithm to multiway transpo rtation problems and to packing problems. One important consequence of our results is a po lynomial time algorithm for the d-dimensional integer transportation problem for long multiway table s. Another interesting application is a new algorithm for the classical cutting stock problem.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181029054554-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Applications",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "High dimensional transportation problems",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Some packing problems",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Graver bases and directed augmentation",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Graver bases of n-fold matrices",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The polynomial time algorithm for n-fold integer programming",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4771,
+   "n_words": 959
+  },
+  {
+   "id": "sec-001-applications",
+   "number": null,
+   "title": "Applications",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 901,
+   "n_words": 158
+  },
+  {
+   "id": "sec-002-high-dimensional-transportation-problems",
+   "number": null,
+   "title": "High dimensional transportation problems",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 6544,
+   "n_words": 1309
+  },
+  {
+   "id": "sec-003-some-packing-problems",
+   "number": null,
+   "title": "Some packing problems",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5112,
+   "n_words": 1126
+  },
+  {
+   "id": "sec-004-graver-bases-and-directed-augmentation",
+   "number": null,
+   "title": "Graver bases and directed augmentation",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 8159,
+   "n_words": 1676
+  },
+  {
+   "id": "sec-005-graver-bases-of-n-fold-matrices",
+   "number": null,
+   "title": "Graver bases of n-fold matrices",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 5186,
+   "n_words": 1236
+  },
+  {
+   "id": "sec-006-the-polynomial-time-algorithm-for-n-fold-integer",
+   "number": null,
+   "title": "The polynomial time algorithm for n-fold integer programming",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 7570,
+   "n_words": 1277
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 7,
+  "chars_total": 38243
+ }
+}

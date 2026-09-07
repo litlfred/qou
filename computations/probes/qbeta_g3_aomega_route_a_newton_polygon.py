@@ -21,14 +21,24 @@ from {3,4}, the corresponding reading is REFUTED.
 
 Honest scoping:
  * 4_1 A-polynomial + C1 operator: exact, self-contained, reliable.
- * 5_2 boundary slopes / connection count: LITERATURE VALUES (labelled), since
-   SnapPy is unavailable here. The 5_2 verdict is conditional on them and says so.
+ * 5_2 boundary slopes / connection count: DERIVED (since 2026-09-07) from the
+   corpus's own A_{5_2} — two_bridge_cusp_rows_apoly_probe.py (#6985, Farey word
+   RL, meridian pinned by the Dehn-filling test) — read from its witness
+   two-bridge-cusp-rows-apoly.witness.json. The literature values this probe
+   first ran on ({0,-4,-10}, 4; SnapPy unavailable then) are kept as a labelled
+   cross-check: derived == recalled is asserted, and the R1/R2 gate runs on the
+   DERIVED values. Lean twin: QOU.QBeta.RouteANewtonPolygonDT (a52_*).
+ * Chirality: the derived data carries a definite frame (sign of the slopes);
+   Route A's inputs — |max slope| and L-degree — are mirror-invariant
+   (RouteANewtonPolygonDT.absSlopeEq_mirror, lProfile_mirror), so the frame
+   adds nothing to this gate. Asserted below on the derived polygon.
  * Nothing fitted; nothing wired; audit-only; scope-(a).
 """
 
 from __future__ import annotations
 
 import json
+from fractions import Fraction
 import os
 import subprocess
 import time
@@ -115,6 +125,14 @@ A41_full_Ldeg = 2 + 1
 C1_op = [(1, 2), (-1, 2), (0, 1), (0, 0)]
 
 
+def _monomials_ML(poly_str):
+    """(M-exp, L-exp) support of a polynomial in L, M given as a sympy string."""
+    import sympy as sp
+    L, M = sp.symbols("L M")
+    P = sp.Poly(sp.sympify(poly_str, locals={"L": L, "M": M}), L, M)
+    return [(int(m), int(l)) for (l, m), c in P.terms() if c != 0]
+
+
 def main():
     t0 = time.time()
     assertions = []
@@ -168,35 +186,73 @@ def main():
                "not the binding carrier.")
 
     # ---- 5_2 cross-knot anti-numerology gate ---------------------------------
-    # LITERATURE VALUES (SnapPy unavailable here — labelled, verify):
-    #  5_2 boundary slopes: {0, -4, -10}  (Hatcher-Oertel / SnapPy census)
-    #  5_2 #boundary-parabolic connections: abelian + 3 geometric-type (block 3×3)
-    FIVE2_boundary_slopes = {0, -4, -10}   # literature
-    FIVE2_max_abs_slope = max(abs(x) for x in FIVE2_boundary_slopes)  # 10
-    FIVE2_num_connections = 4              # literature: 1 abelian + 3 geometric
-    FIVE2_DT = {3, 4}                      # corpus-certified (same pair, split)
+    # DERIVED 5_2 data (2026-09-07): read the A-polynomial the corpus derived
+    # from the Farey word RL (#6985) and recompute the Newton polygon here with
+    # the same lattice geometry used for 4_1 above.  The literature values the
+    # gate first ran on are kept only as a labelled cross-check.
+    FIVE2_boundary_slopes_LIT = {0, -4, -10}   # literature (Hatcher–Oertel / census)
+    FIVE2_num_connections_LIT = 4              # literature: 1 abelian + 3 geometric
+    FIVE2_DT = {3, 4}                          # corpus-certified (same pair, split)
 
-    print("\n[3] 5_2 cross-knot gate (LITERATURE boundary data — verify w/ SnapPy)")
-    print(f"    5_2 boundary slopes (lit) : {sorted(FIVE2_boundary_slopes)}")
-    print(f"    5_2 |max boundary slope|  : {FIVE2_max_abs_slope}")
-    print(f"    5_2 #connections (lit)    : {FIVE2_num_connections}")
-    print(f"    5_2 DT spectrum (corpus)  : {sorted(FIVE2_DT)}")
+    derived_w = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             "two-bridge-cusp-rows-apoly.witness.json")
+    with open(derived_w) as fh:
+        dw = json.load(fh)
+    A52_monomials = _monomials_ML(dw["data"]["fivetwo_apoly"])
+    A52_frame = dw["data"]["fivetwo_chirality_note"]
+    s52, Ldeg52_geom, Mw52, hull52 = boundary_slopes(A52_monomials)
+    FIVE2_boundary_slopes = set(s52)                     # derived, Fraction
+    FIVE2_max_abs_slope = max(abs(x) for x in s52)       # derived
+    FIVE2_num_connections = Ldeg52_geom + 1              # derived: + abelian (L-1)
+
+    print("\n[3] 5_2 cross-knot gate (DERIVED boundary data — #6985 A-polynomial)")
+    print(f"    source witness             : {os.path.basename(derived_w)} "
+          f"(scriptHash {dw.get('scriptHash', '?')[:12]}, {dw.get('computedAt')})")
+    print(f"    A_{{5_2}} monomials (M,L)    : {sorted(A52_monomials)}")
+    print(f"    Newton hull vertices (M,L) : {hull52}")
+    print(f"    5_2 boundary slopes (derived): {sorted(s52)}   [lit {sorted(FIVE2_boundary_slopes_LIT)}]")
+    print(f"    5_2 |max boundary slope|   : {FIVE2_max_abs_slope}")
+    print(f"    5_2 geometric L-degree     : {Ldeg52_geom}  → #connections = {FIVE2_num_connections}   [lit {FIVE2_num_connections_LIT}]")
+    print(f"    5_2 DT spectrum (corpus)   : {sorted(FIVE2_DT)}")
+
+    check("5_2-derived-slopes-match-recalled: derived boundary slopes == literature set",
+          FIVE2_boundary_slopes == {Fraction(x) for x in FIVE2_boundary_slopes_LIT},
+          derived=[str(x) for x in sorted(s52)], literature=sorted(FIVE2_boundary_slopes_LIT),
+          note="In the derived frame (μ by the filling test, λ homological, "
+               "Im(t_λ/t_μ) > 0) the signs agree with the corpus's recalled "
+               "{0,-4,-10}; the literature's {0,4,10} is the mirror.")
+    check("5_2-derived-connections-match-recalled: geometric L-degree 3, full 4",
+          Ldeg52_geom == 3 and FIVE2_num_connections == FIVE2_num_connections_LIT,
+          derived_geom_L_degree=Ldeg52_geom, derived_full=FIVE2_num_connections,
+          literature=FIVE2_num_connections_LIT)
+    # Chirality: mirror negates every slope and fixes the L-profile, so the two
+    # Route-A inputs cannot see the frame.
+    A52_mirror = [(-m, l) for (m, l) in A52_monomials]
+    s52m, Ldeg52m, _, _ = boundary_slopes(A52_mirror)
+    check("5_2-mirror: |max slope| and L-degree are mirror-invariant (frame invisible to Route A)",
+          set(s52m) == {-x for x in s52} and max(abs(x) for x in s52m) == FIVE2_max_abs_slope
+          and Ldeg52m == Ldeg52_geom,
+          mirror_slopes=[str(x) for x in sorted(s52m)],
+          note="The derived frame fixes the SIGN of the slopes; R2 uses |slope| and "
+               "R1 the L-degree, both mirror-invariant (Lean absSlopeEq_mirror, "
+               "lProfile_mirror). So the {4∈S⁺,3∈S⁻} split — an ordered, ι-odd "
+               "datum — is not Newton-polygon data, whatever the frame.")
 
     # R2 cross-knot: does |max boundary slope| land in the DT spectrum for 5_2?
     r2_survives = FIVE2_max_abs_slope in FIVE2_DT
     check("R2-crossknot-5_2: |max boundary slope| in DT spectrum?",
           r2_survives,
-          five2_max_slope=FIVE2_max_abs_slope, five2_dt=sorted(FIVE2_DT),
+          five2_max_slope=str(FIVE2_max_abs_slope), five2_dt=sorted(FIVE2_DT),
           note="5_2 max boundary slope 10 is NOT a DT integer {3,4} — the "
                "'DT integer = boundary slope' reading (R2) is REFUTED on 5_2 "
-               "(scope-(a), conditional on the literature slope 10).")
+               "(scope-(a); the slope 10 is DERIVED from the corpus's A_{5_2}).")
 
     # R1 cross-knot: does #connections track a DT integer consistently?
     r1_survives = FIVE2_num_connections in FIVE2_DT or (A41_full_Ldeg in DT_SPECTRUM)
     check("R1-crossknot-5_2: #connections consistent with a DT integer?",
           FIVE2_num_connections in FIVE2_DT,
           five2_connections=FIVE2_num_connections, five2_dt=sorted(FIVE2_DT),
-          note="4_1 #connections=3∈{3,4}; 5_2 #connections=4∈{3,4} (lit). The "
+          note="4_1 #connections=3∈{3,4}; 5_2 #connections=4∈{3,4} (derived). The "
                "L-degree/#connections reading of the 3↔4 is CONSISTENT across "
                "both knots (both land in {3,4}) — survives where R2 fails.")
 
@@ -213,8 +269,9 @@ def main():
         "Consequence: the internal handle on the DT spectrum is the A-polynomial "
         "L-degree / connection count (an Euler-characteristic datum → Route B), "
         "NOT the Newton-polygon slope; and it needs Â_K, not the binding carrier. "
-        "5_2 boundary data is literature-recalled — verify with SnapPy before "
-        "hardening."
+        "5_2 boundary data is DERIVED (2026-09-07) from the corpus's own "
+        "A_{5_2} (#6985), equal to the literature set; the derived frame's sign "
+        "is invisible to both readings (mirror-invariant inputs)."
     )
     print(f"\n verdict: {verdict}")
 
@@ -248,8 +305,11 @@ def main():
             "A41_geometric_monomials_ML": A41_geom,
             "A41_full_L_degree": A41_full_Ldeg,
             "C1_operator_monomials_ML": C1_op,
-            "five2_boundary_slopes_literature": sorted(FIVE2_boundary_slopes),
-            "five2_num_connections_literature": FIVE2_num_connections,
+            "five2_boundary_slopes_literature": sorted(FIVE2_boundary_slopes_LIT),
+            "five2_num_connections_literature": FIVE2_num_connections_LIT,
+            "five2_source_witness": os.path.basename(derived_w),
+            "five2_source_scriptHash": dw.get("scriptHash"),
+            "five2_source_computedAt": dw.get("computedAt"),
             "dt_spectrum_corpus": sorted(DT_SPECTRUM),
         },
         "data": {
@@ -261,6 +321,14 @@ def main():
             "A41_full_L_degree": A41_full_Ldeg,
             "C1_boundary_slopes": [str(x) for x in sC1],
             "C1_max_abs_slope": str(c1_max),
+            "A52_monomials_ML": sorted(A52_monomials),
+            "A52_newton_hull_ML": hull52,
+            "A52_boundary_slopes_derived": [str(x) for x in sorted(s52)],
+            "A52_max_abs_slope_derived": str(FIVE2_max_abs_slope),
+            "A52_geom_L_degree_derived": Ldeg52_geom,
+            "A52_full_L_degree_derived": FIVE2_num_connections,
+            "A52_mirror_boundary_slopes": [str(x) for x in sorted(s52m)],
+            "A52_frame": A52_frame,
             "R1_survives_crossknot": bool(FIVE2_num_connections in FIVE2_DT),
             "R2_survives_crossknot": bool(r2_survives),
             "verdict": verdict,
@@ -279,7 +347,7 @@ def main():
         witness.setdefault("scriptFile", _os.path.basename(__file__))
         _WB.stamp_staleness_metadata(
             witness, script_path=__file__, engine=None, q0_anchor=False)
-        json.dump(witness, fh, indent=2)
+        json.dump(witness, fh, indent=2, ensure_ascii=False)
         fh.write("\n")
     print(f"\n witness: {out}")
     nfail = sum(1 for a in assertions if not a["passed"])

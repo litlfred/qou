@@ -96,3 +96,166 @@ is broken: it may be fixed while the artifact was never regenerated (re-run to
 tell them apart), or the site may be deliberately historical — three are, and
 pass `intra_order="grouped"` on purpose. A non-hit is not a clean bill either: a
 witness recording only derived quantities carries no |tr_M| to match.
+
+---
+
+## 2026-09-07 — swept, with the stale-vs-live discriminator applied
+
+Re-ran the audit: **89 → 83 witness files**, 84 → 81 candidates.
+
+### The `qou-mass` fork is closed, and the packaging question is answered
+
+The bean's sharpest finding has resolved under it. `atomic-tr-m-mpfr-50dps` and
+`chi-helium-3-h9-at-q0-50dps` are now **identical** across
+`qou-mass/src/qou_mass/` and `computations/`, both dated 2026-09-06, both
+carrying the same values. A sibling closed it.
+
+The packaging question — *"vendored package with its own cadence, or a mirror
+that must track `computations/`?"* — is answerable from evidence rather than an
+owner guess, and I measured it rather than leaving it open:
+
+- `docs/audits/2026-05-19-qou-mass-deprecation-audit.md` already names
+  `computations/` **"Authoritative originals"** and the `_internal/` tree
+  "entirely redundant with computations/".
+- That audit is from May and the package has since gone `0.1.0a1` → `1.0.0`, so
+  I re-measured today: of the 43 vendored modules that are no longer
+  byte-identical, **42 differ only by the folio `_path_bridge` shim** (a
+  path-fixup line meaningless inside the package). The sole real difference is
+  `__init__.py`, which is package boilerplate.
+
+So it is a mirror, maintained to the line, and `computations/` is authoritative.
+The three remaining `qou-mass` hits are **not forks**: each has the *same*
+`computedAt` as its twin (2026-08-19 / 08-29 / 08-30), i.e. both sides are
+pre-ruling stale. They belong to the "59 from 2026-08, expected stale" bucket,
+not to an owner call.
+
+### The eight post-ruling sites, swept
+
+Applied the discriminator the bean named and did not run — *re-run the producer,
+re-scan, diff the hit list* — to seven of the eight:
+
+| site | verdict |
+|---|---|
+| `habiro-exact-qbeta` | **stale artifact** — regenerated, dropped out |
+| `two-row-vs-higher-row-binding-split` | **stale artifact** — regenerated, dropped out |
+| `the_character_closure_..._convention_c_probe` | **deliberate** — its subject *is* the convention-C table `prop:q-hecke-seminormal-character-closure` publishes; added to the audit's `DELIBERATE` set |
+| `derivation-chain-audit` | **live** — still emits grouped after a clean re-run |
+| `atomic-mass-via-rho-k` | **live** |
+| `qbeta-bond-factors-derived` | **live** |
+| `qbeta-mixed-chain-closed-form` | **live** |
+| `qbeta-habiro-pochhammer-convention` | not re-run — witness carries no producer field |
+
+### Why the stale ones were stuck: they crashed *after* computing
+
+Three of the seven died on the **last line of `main()`** with
+
+    ModuleNotFoundError: No module named 'qou_substrate'
+
+in the provenance-stamp block. Everything was computed; nothing was written. So
+their witnesses were **unregenerable**, which is why they still carried
+grouped-era values months after the ruling — not because anyone chose to keep
+them.
+
+`computations/_path_bridge` already puts `qou_substrate`
+(`tools/qou-substrate/python`) within reach; these three simply never imported
+it. Fixed in all three. `two_row_vs_higher_row_binding_split` now exits 0; the
+two `qbeta` probes now run to completion and write their witnesses, exiting 1 on
+their own honest assertion failures (a closed form that does not reproduce every
+atom; two constants extracted rather than derived) — substantive open questions,
+not crashes.
+
+**This is the general lesson for the remaining 81.** A stale witness is not
+evidence that anyone intended a grouped value; it can simply mean the producer
+cannot write. Re-running is cheap and separates the two, and until it is done a
+hit count is an upper bound on the real finding count.
+
+### Remaining
+
+- 4 confirmed-live grouped emitters need per-site reading (why do they reach the
+  grouped frame?).
+- 81 candidates un-swept; the 59 from 2026-08 are pre-ruling and expected stale,
+  so re-running is the first move there too, not reading.
+
+---
+
+## 2026-09-07 (later) — the bulk re-run, and a third category
+
+### Result
+
+    grouped-era hits   83 files / 81 candidates  ->  48 files / 46 candidates
+    dropped            36
+    newly hit           0     (the sweep introduced no regression)
+
+**36 of 81 were purely stale artifacts.** The hypothesis from the morning pass —
+that a stale witness is not evidence anyone intended a grouped value — holds for
+nearly half the population.
+
+The residual splits by what the producer actually did:
+
+| | |
+|---:|---|
+| 27 | completed clean and **still** emit grouped |
+| 13 | timed out at the 120s budget — verdict unknown, re-running at 900s |
+| 4 | exited 1 on their own assertions |
+| 2 | no identifiable producer |
+
+### The taxonomy needs a third category
+
+The bean has "stale artifact" vs "live source defect". Many of the 27 are
+neither. `witness_value_copy_audit` scrapes witnesses for copied values;
+`derivation_chain_validator` classifies every witness it can find;
+`atomic_mass_via_rho_k` globs `atomic-tr-m-*.witness.json`; several more are
+explicit C-vs-D or three-path *comparisons* that hold both frames on purpose.
+
+These are **downstream reflections**. They carry grouped values because their
+inputs do, they resolve when the inputs do, and fixing them at the reflection
+would be wrong. Any future count should exclude them, the way `DELIBERATE`
+already excludes the deliberate ones — otherwise the number never converges,
+because an audit that reports the corpus will always mirror it.
+
+There is also a **dependency order**: re-running a consumer before its inputs is
+wasted work. One bulk pass is not a fixed point.
+
+### Seven witnesses flipped green → red, and that is the finding
+
+    probe-9b-manybody-expansion              he4_2body_fraction_matches_ceiling_audit
+    colour-weighting-across-mixed-nuclei     reproduces the committed dense arm (x2)
+    qbeta-habiro-taylor-investigation        taylor_series_reproduces_delta_tr_at_q0
+    skein-proton-canonical                   atlas |tr_M| cross-check vs Layer-1 table
+    tr-m-algebraic-q                         algebraic_q0_matches_transfer
+    tr-m-atom-via-transfer                   trM_atom_deuteron_matches_canonical_branching
+    tr-m-q-hecke-seminormal                  q_hecke_seminormal_closes_gap[p,n]
+
+All seven were computed 2026-08-21..08-31, **before** the ruling, and all seven
+fail on a **cross-check against a reference**. They were green only because both
+sides were grouped-era. `algebraic_q0_matches_transfer` now reports max
+deviation **0.976 against a 1e-9 tolerance** — a whole-value mismatch of exactly
+the grouped-vs-borromean magnitude, not drift.
+
+Committed red deliberately: a stale green is a false all-clear, and the honest
+state of these seven is red.
+
+### Two source defects found, one fixed
+
+**`stamp_staleness_metadata` never set `scriptFile`** — 948 call sites, and its
+own docstring promised seven fields and delivered them all except the one that
+says *which script produced the witness*. That is why
+`qbeta-habiro-pochhammer-convention` was unattributable and un-re-runnable, and
+a sibling had already worked around it locally rather than fixing the helper.
+Fixed. Same probe also passed an unrecognised `q0_anchor` token, so its witness
+was reported Q0_ANCHOR_UNRECOGNISED and never checked; fixed too.
+
+**Two qbeta probes hardcode grouped-era nucleon traces.** `T_P` /
+`MEASURED["t_p"]` = `1.1457596924573008697` matches the grouped proton to
+~1e-21 and differs from canonical by **82 %**; the neutron by **108 %** — while
+the same probes read *canonical* atom witnesses. Flagged in place with the
+measurement, not flipped: `qbeta_delta_vs_deltaTbeta_settled_probe` is
+deliberately grouped, so a grouped constant is not automatically a defect, and
+`qbeta_bond_factors_derived_probe` is under active edit today (`qou-qqm4`).
+
+### Next
+
+- 13 slow producers re-running at 900s; their verdicts are still unknown.
+- A second pass after that, since consumers whose inputs just moved will only
+  converge on a re-run.
+- Then the residual is small enough to read per-site.

@@ -23,6 +23,19 @@ Method
 2. Extract the declaration's full text at that revision and at HEAD.
 3. Report IDENTICAL / CHANGED / NOT-FOUND per entry.
 
+IDENTICAL IS ONLY MEANINGFUL WHEN THERE IS A PRIOR VERDICT.
+------------------------------------------------------------
+Re-verification restores a verdict.  An entry with no `stale_prev_verdict` has
+none to restore: for it, "the declaration is unchanged since the recorded
+file_sha" means only "unchanged since it was first SEEN", which says nothing
+about whether it is a defect.  Such entries are genuinely unadjudicated and
+need a read.
+
+This distinction was nearly missed on `proof-claims-unencoded`, where the tool
+reported a clean 22/22 IDENTICAL and **21 of the 22 had no prior verdict at
+all** -- so 21 of those greens were about nothing.  Rows are now split
+explicitly, and the summary refuses to present the two as one number.
+
 It writes nothing.  Restoring a verdict is a separate, deliberate edit, and
 this is the evidence for it.
 
@@ -72,12 +85,28 @@ def main() -> int:
     a = ap.parse_args()
 
     d = json.load(open(LEDGER))
+    if a.verdict != "needs-agent":
+        # A RESTORED entry has had `stale_prev_verdict` removed, by the ledger's
+        # own convention -- so pointing this at `genuine`/`legit` reports every
+        # row UNADJUDICATED, which is exactly backwards: those rows are the
+        # adjudicated ones. Measured on `proof-no-self-assuming-projection`
+        # right after its queue was drained, where it read "35 row(s) have NO
+        # prior verdict" about 35 settled verdicts.
+        print(f"REFUSING --verdict {a.verdict}: this tool answers \"does a STALE verdict\n"
+              "still apply\", which is only a question for `needs-agent` rows. A settled\n"
+              "verdict has no `stale_prev_verdict` by design, so every row would read\n"
+              "UNADJUDICATED — the opposite of the truth.", file=sys.stderr)
+        return 2
     rows = [(k, v) for k, v in d["entries"].items()
             if v.get("category") == a.category and v.get("verdict") == a.verdict]
     print(f"{len(rows)} row(s) category={a.category} verdict={a.verdict}\n")
     tally = {"IDENTICAL": 0, "CHANGED": 0, "NO-REV": 0, "NOT-FOUND": 0}
+    unadjudicated = []
     for k, v in rows:
         path, decl, _ = k.split("::")
+        if not v.get("stale_prev_verdict"):
+            unadjudicated.append(decl)
+            continue
         sha = v.get("file_sha", "")
         rev = find_rev(path, sha) if sha else None
         if not rev:
@@ -96,9 +125,16 @@ def main() -> int:
         tally["IDENTICAL" if same else "CHANGED"] += 1
         print(f"  {'IDENTICAL ' if same else 'CHANGED   '}  {decl:<44} reviewed at {rev[:9]}"
               + ("" if same else f"  ({len(o.splitlines())} -> {len(n.splitlines())} lines)"))
-    print("\n" + "  ".join(f"{k}={v}" for k, v in tally.items()))
-    print("\nIDENTICAL means the prior verdict applies unchanged and the entry can be")
-    print("restored with a dated RE-VERIFIED evidence line. Everything else needs a read.")
+    for decl in unadjudicated:
+        print(f"  UNADJUDICATED {decl:<42} no `stale_prev_verdict` — nothing to restore")
+    print("\n" + "  ".join(f"{k}={v}" for k, v in tally.items())
+          + f"  UNADJUDICATED={len(unadjudicated)}")
+    print(f"\n{tally['IDENTICAL']} of {len(rows)} row(s) carry a prior verdict AND an unchanged")
+    print("declaration: those can be restored with a dated RE-VERIFIED evidence line.")
+    if unadjudicated:
+        print(f"\n{len(unadjudicated)} row(s) have NO prior verdict. Byte-identity says nothing")
+        print("about them — they were never adjudicated, so there is nothing to restore and")
+        print("each needs a read. Do NOT report them as part of an IDENTICAL count.")
     return 0
 
 

@@ -1,0 +1,324 @@
+{
+  "description": "Jones normal forms for TL_n(δ) are exactly the planar diagram basis (n<=6, bijectively) and number catalan n (n<=8); left multiplication by a generator closes in them (n<=7) with at most one loop per product. The reduction is NOT word-length monotone (Δ reaches -5 by n=7), so a Lean proof must index by the (I,J) normal-form data rather than induct on length. The general-m count is a bicoloured-Motzkin-to-Catalan bijection, not a Dyck-path one (m<=10).",
+  "bean": "qou-cds1",
+  "arithmetic": "exact integers only; no floating point anywhere in this producer",
+  "scope": "checked at finite n, not proved at general n; establishes which family to formalise and which termination measure fails. Wires to nothing.",
+  "checks": [
+    {
+      "check": "normal_form_count_is_catalan",
+      "range": "n=1..8",
+      "rows": [
+        {
+          "n": 1,
+          "normal_forms": 1,
+          "catalan": 1,
+          "distinct_words": true,
+          "match": true
+        },
+        {
+          "n": 2,
+          "normal_forms": 2,
+          "catalan": 2,
+          "distinct_words": true,
+          "match": true
+        },
+        {
+          "n": 3,
+          "normal_forms": 5,
+          "catalan": 5,
+          "distinct_words": true,
+          "match": true
+        },
+        {
+          "n": 4,
+          "normal_forms": 14,
+          "catalan": 14,
+          "distinct_words": true,
+          "match": true
+        },
+        {
+          "n": 5,
+          "normal_forms": 42,
+          "catalan": 42,
+          "distinct_words": true,
+          "match": true
+        },
+        {
+          "n": 6,
+          "normal_forms": 132,
+          "catalan": 132,
+          "distinct_words": true,
+          "match": true
+        },
+        {
+          "n": 7,
+          "normal_forms": 429,
+          "catalan": 429,
+          "distinct_words": true,
+          "match": true
+        },
+        {
+          "n": 8,
+          "normal_forms": 1430,
+          "catalan": 1430,
+          "distinct_words": true,
+          "match": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "check": "normal_forms_are_the_diagram_basis",
+      "range": "n=1..6",
+      "rows": [
+        {
+          "n": 1,
+          "normal_forms": 1,
+          "distinct_diagrams": 1,
+          "planar_diagrams": 1,
+          "catalan": 1,
+          "bijection": true,
+          "all_loop_free": true
+        },
+        {
+          "n": 2,
+          "normal_forms": 2,
+          "distinct_diagrams": 2,
+          "planar_diagrams": 2,
+          "catalan": 2,
+          "bijection": true,
+          "all_loop_free": true
+        },
+        {
+          "n": 3,
+          "normal_forms": 5,
+          "distinct_diagrams": 5,
+          "planar_diagrams": 5,
+          "catalan": 5,
+          "bijection": true,
+          "all_loop_free": true
+        },
+        {
+          "n": 4,
+          "normal_forms": 14,
+          "distinct_diagrams": 14,
+          "planar_diagrams": 14,
+          "catalan": 14,
+          "bijection": true,
+          "all_loop_free": true
+        },
+        {
+          "n": 5,
+          "normal_forms": 42,
+          "distinct_diagrams": 42,
+          "planar_diagrams": 42,
+          "catalan": 42,
+          "bijection": true,
+          "all_loop_free": true
+        },
+        {
+          "n": 6,
+          "normal_forms": 132,
+          "distinct_diagrams": 132,
+          "planar_diagrams": 132,
+          "catalan": 132,
+          "bijection": true,
+          "all_loop_free": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "check": "left_multiplication_closes_in_normal_forms",
+      "range": "n=2..7",
+      "rows": [
+        {
+          "n": 2,
+          "products": 2,
+          "closed_in_normal_forms": true,
+          "loop_counts": {
+            "0": 1,
+            "1": 1
+          },
+          "word_length_change": {
+            "0": 1,
+            "1": 1
+          }
+        },
+        {
+          "n": 3,
+          "products": 10,
+          "closed_in_normal_forms": true,
+          "loop_counts": {
+            "0": 6,
+            "1": 4
+          },
+          "word_length_change": {
+            "-1": 2,
+            "0": 4,
+            "1": 4
+          }
+        },
+        {
+          "n": 4,
+          "products": 42,
+          "closed_in_normal_forms": true,
+          "loop_counts": {
+            "0": 27,
+            "1": 15
+          },
+          "word_length_change": {
+            "-1": 12,
+            "0": 15,
+            "1": 15
+          }
+        },
+        {
+          "n": 5,
+          "products": 168,
+          "closed_in_normal_forms": true,
+          "loop_counts": {
+            "0": 112,
+            "1": 56
+          },
+          "word_length_change": {
+            "-3": 4,
+            "-1": 52,
+            "0": 56,
+            "1": 56
+          }
+        },
+        {
+          "n": 6,
+          "products": 660,
+          "closed_in_normal_forms": true,
+          "loop_counts": {
+            "0": 450,
+            "1": 210
+          },
+          "word_length_change": {
+            "-3": 32,
+            "-1": 208,
+            "0": 210,
+            "1": 210
+          }
+        },
+        {
+          "n": 7,
+          "products": 2574,
+          "closed_in_normal_forms": true,
+          "loop_counts": {
+            "0": 1782,
+            "1": 792
+          },
+          "word_length_change": {
+            "-5": 20,
+            "-3": 160,
+            "-1": 810,
+            "0": 792,
+            "1": 792
+          }
+        }
+      ],
+      "max_loops_per_product": 1,
+      "min_word_length_change": -5,
+      "length_monotone": false,
+      "pass": true
+    },
+    {
+      "check": "general_count_route_is_bicoloured_motzkin_not_dyck",
+      "range": "m=0..10",
+      "rows": [
+        {
+          "m": 0,
+          "bicoloured_motzkin": 1,
+          "closed_sum": 1,
+          "catalan_m_plus_1": 1,
+          "agree": true
+        },
+        {
+          "m": 1,
+          "bicoloured_motzkin": 2,
+          "closed_sum": 2,
+          "catalan_m_plus_1": 2,
+          "agree": true
+        },
+        {
+          "m": 2,
+          "bicoloured_motzkin": 5,
+          "closed_sum": 5,
+          "catalan_m_plus_1": 5,
+          "agree": true
+        },
+        {
+          "m": 3,
+          "bicoloured_motzkin": 14,
+          "closed_sum": 14,
+          "catalan_m_plus_1": 14,
+          "agree": true
+        },
+        {
+          "m": 4,
+          "bicoloured_motzkin": 42,
+          "closed_sum": 42,
+          "catalan_m_plus_1": 42,
+          "agree": true
+        },
+        {
+          "m": 5,
+          "bicoloured_motzkin": 132,
+          "closed_sum": 132,
+          "catalan_m_plus_1": 132,
+          "agree": true
+        },
+        {
+          "m": 6,
+          "bicoloured_motzkin": 429,
+          "closed_sum": 429,
+          "catalan_m_plus_1": 429,
+          "agree": true
+        },
+        {
+          "m": 7,
+          "bicoloured_motzkin": 1430,
+          "closed_sum": 1430,
+          "catalan_m_plus_1": 1430,
+          "agree": true
+        },
+        {
+          "m": 8,
+          "bicoloured_motzkin": 4862,
+          "closed_sum": 4862,
+          "catalan_m_plus_1": 4862,
+          "agree": true
+        },
+        {
+          "m": 9,
+          "bicoloured_motzkin": 16796,
+          "closed_sum": 16796,
+          "catalan_m_plus_1": 16796,
+          "agree": true
+        },
+        {
+          "m": 10,
+          "bicoloured_motzkin": 58786,
+          "closed_sum": 58786,
+          "catalan_m_plus_1": 58786,
+          "agree": true
+        }
+      ],
+      "note": "a normal form is a 4-letter word (I-only / J-only / both / neither) with a ballot condition on the first two: a bicoloured Motzkin word. The two neutral letters are why it is Motzkin and not Dyck.",
+      "pass": true
+    }
+  ],
+  "all_pass": true,
+  "scriptFile": "tl_normal_form_basis_probe.py",
+  "scriptHash": "3905358c2510",
+  "scriptCommitSha": "30b71962932346f626b7fa28c68afe7d597df673",
+  "commitSha": "c409711caec020e5fc07b5de8ca75dbcc24bb717",
+  "engine": "python",
+  "computedAt": "2026-09-07T10:30:04.438738+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

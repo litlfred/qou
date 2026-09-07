@@ -54,7 +54,7 @@ sys.path.insert(0, str(HERE.parent))
 
 from mpmath import mp, mpf, mpc, pi as mp_pi, exp as mp_exp  # noqa: E402
 
-from q_parameter import Q  # noqa: E402 — substrate q ≈ 1.1100
+from q_parameter import Q_MP  # noqa: E402 — substrate q ≈ 1.1100, high-precision mpf
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps, fmt  # noqa: E402
 
@@ -83,7 +83,14 @@ def main() -> int:
         engine="mpmath",
     )
 
-    q = mpf(Q)  # substrate q (cast to high-precision mpf)
+    # `Q_MP`, NOT `mpf(Q)`. `q_parameter` carries q_0 as a 70-digit decimal
+    # string and exposes it two ways: `Q = float(_d["q"])`, a float64, and
+    # `Q_MP = mpf(_d["q"])`, the full value. `mpf(Q)` lifts the DOUBLE's binary
+    # expansion, so `fmt()` then serialized 1.10997858275138083783417641825508...
+    # -- correct to 16 digits and binary garbage for the next 44 -- which reads
+    # as measured precision and is what the float64-padding audit exists to
+    # catch (bean `qou-1v29`). The true value is 1.1099785827513808075916690956...
+    q = Q_MP  # substrate q at the module's 50 dps floor
     pi_sq_720 = mp_pi ** 2 / 720
     target_str = f"π²/720 ≈ {float(pi_sq_720):.8e}"
 

@@ -33,6 +33,10 @@ import QOU.MathlibExt
 import QOU.MathlibExt.QuadraticIrrationalBadlyApproximable
 import QOU.MathlibExt.MarkovTrace
 import QOU.MathlibExt.HeckeToTemperleyLieb
+import QOU.MathlibExt.TraceRadicalNondegenerate
+import QOU.MathlibExt.TemperleyLiebSpanning
+import QOU.MathlibExt.TemperleyLiebWedderburn
+import QOU.MathlibExt.TemperleyLiebNormalForm
 import QOU.MathlibExt.MacdonaldTelescope
 import QOU.MathlibExt.QuantumDilogarithm
 import QOU.MathlibExt.QuantumDilogarithmInfinite

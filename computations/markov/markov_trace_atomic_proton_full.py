@@ -139,25 +139,33 @@ def main() -> int:
 
     # Numerical at q_0
     from q_parameter import Q_MP
-    q0 = float(Q_MP)
+    import mpmath as mp
+    from _precision import set_compute_dps, fmt
+    set_compute_dps()
+    # Q_MP is the exact 50-digit mpf. It used to be downcast with `float()`
+    # here, which threw away the substrate precision before any arithmetic and
+    # put four raw float64 fields into the witness (bean qou-pdfx).
+    q0 = Q_MP
     f = sp.lambdify(q, tr_M_simplified, modules=["mpmath"])
-    val_at_q0 = float(f(q0))
-    print(f"\n  Numerical at q_0 = {q0:.10f}:")
-    print(f"    tr_M(σ_1^7 σ_2^4)(q_0) = {val_at_q0:.10f}")
+    val_at_q0 = f(q0)
+    print(f"\n  Numerical at q_0 = {mp.nstr(q0, 12)}:")
+    print(f"    tr_M(σ_1^7 σ_2^4)(q_0) = {mp.nstr(val_at_q0, 12)}")
 
-    # Reference: PR #546 closed form gives tr ≈ 0.433 at q_0
-    # char_fast (Markov-axiom-derived y_λ) gives tr ≈ 1.633 at q_0
-    print(f"\n  Reference comparisons:")
+    # HISTORICAL reference values, printed for orientation only — both
+    # predate the convention-D migration and neither is asserted against.
+    # See the cross-check block below for why (bean qou-pdfx).
+    print(f"\n  Historical reference values (convention C, NOT asserted):")
     print(f"    char_fast Markov tr at q_0 ≈ 1.6334")
     print(f"    PR #546 Plancherel tr at q_0 ≈ 0.4331")
 
     # Anti-self-reciprocity check
     tr_M_at_inv_q = sp.cancel(tr_M_simplified.subs(q, 1 / q))
     f_inv = sp.lambdify(q, tr_M_at_inv_q, modules=["mpmath"])
-    val_at_inv_q = float(f_inv(q0))
+    val_at_inv_q = f_inv(q0)
     print(f"\n  At 1/q_0:")
-    print(f"    tr_M(1/q_0) = {val_at_inv_q:.10f}")
-    print(f"    ratio tr_M(1/q)/tr_M(q) = {val_at_inv_q/val_at_q0:.4f}")
+    print(f"    tr_M(1/q_0) = {mp.nstr(val_at_inv_q, 12)}")
+    print(f"    ratio tr_M(1/q)/tr_M(q) = "
+          f"{mp.nstr(val_at_inv_q / val_at_q0, 8)}")
 
     # Try to identify polynomial structure
     print(f"\n  Numerator polynomial structure (after simplification):")
@@ -167,19 +175,36 @@ def main() -> int:
 
     # Categorical mass anchor
     mp_me = 938.272 / 0.51099895  # noqa: P31 — audit ratio display; live values via codata_constants/experimental_constants registry
-    rho_p = mp_me / val_at_q0
+    rho_p = mp.mpf(str(mp_me)) / val_at_q0
     print(f"\n  Categorical mass dimensional bridge:")
     print(f"    m_p / m_e (CODATA) = {mp_me:.6f}")
-    print(f"    ρ_p^CODATA = (m_p/m_e) / |tr_M(σ_1^7σ_2^4)| = {rho_p:.4f}")
+    print(f"    ρ_p^CODATA = (m_p/m_e) / |tr_M(σ_1^7σ_2^4)| = "
+          f"{mp.nstr(rho_p, 10)}")
 
-    # Compare to char_fast value (the genuine Markov trace numerically)
-    char_fast_ref = 1.6334
-    ratio_to_charfast = val_at_q0 / char_fast_ref
-    print(f"\n  Ratio my-Markov / char_fast = {ratio_to_charfast:.4f}")
-    if abs(ratio_to_charfast - 1) < 0.01:
-        print(f"    ✅ Matches char_fast Markov trace.")
-    else:
-        print(f"    Discrepancy from char_fast — investigate convention.")
+    # NO char_fast cross-check (bean qou-pdfx). This block compared the
+    # computed value against a literal `char_fast_ref = 1.6334` and failed at
+    # ratio 1.1536, which is what the bean recorded as a "15.4% divergence".
+    #
+    # 1.6334 is a hardcoded CONVENTION-C decimal. There is no `char_fast`
+    # function anywhere in the live tree to call — the only implementations
+    # are in `computations/_deprecated/` — so this was never a cross-check
+    # against code, only against a transcribed number from a retired path.
+    # Convention C was excised 2026-08-09 (owner ruling R1, 2026-08-15 makes
+    # D canonical), and under D this word gives 1.8843…, which is what the
+    # recursive reducer and `prop:markov-trace-recursive-reducer` both
+    # publish. Three live paths agree; the frozen decimal was the outlier.
+    #
+    # `markov_trace_recursive.py` reached the same conclusion about the same
+    # constant and states it best: "Checking a migrated value against a frozen
+    # pre-migration decimal is worse than not checking it, because the
+    # disagreement it reports is really agreement with the wrong thing."
+    #
+    # So the assertion is REMOVED rather than re-tuned, and its absence is
+    # recorded in the witness. No independent convention-D reference for this
+    # word exists yet; when one does, assert against it here.
+    ratio_to_charfast = val_at_q0 / mp.mpf("1.6334")   # reported, never asserted
+    print(f"\n  Ratio to the historical convention-C decimal = "
+          f"{mp.nstr(ratio_to_charfast, 8)}  (reported, NOT a check — see comment)")
 
     witness = {
         "computation": "markov-trace-atomic-proton-full",
@@ -203,22 +228,34 @@ def main() -> int:
         "hecke_power_b_4": str(b_4_h),
         "tr_M_proton_full_symbolic": str(tr_M_simplified),
         "tr_M_proton_full_factored": str(tr_M_factored),
-        "tr_M_proton_at_q0": val_at_q0,
-        "tr_M_proton_at_inv_q0": val_at_inv_q,
-        "ratio_at_inv_q": val_at_inv_q / val_at_q0,
-        "rho_p_codata": rho_p,
-        "matches_char_fast": abs(ratio_to_charfast - 1) < 0.01,
+        "tr_M_proton_at_q0": fmt(val_at_q0),
+        "tr_M_proton_at_inv_q0": fmt(val_at_inv_q),
+        "ratio_at_inv_q": fmt(val_at_inv_q / val_at_q0),
+        "rho_p_codata": fmt(rho_p),
+        "cross_check": ("none — the only available reference was a frozen "
+                        "convention-C decimal (1.6334); see bean qou-pdfx"),
+        "ratio_to_historical_convention_c_decimal": f"{ratio_to_charfast:.6f}",
     }
-    matches_char_fast = abs(ratio_to_charfast - 1) < 0.01
+    # A LIVE structural check replacing the retired convention-C comparison
+    # (bean qou-pdfx). Under convention C this trace carried half-integer
+    # powers of q — the stale 2026-07-05 witness still records
+    # `2*q**(41/2) + …` — and under D it is a Laurent polynomial in q with
+    # integer exponents only. That is the property the migration turns on, it
+    # is checkable here with no external reference, and it fails loudly if
+    # anything reintroduces a √q atom.
+    half_powers = [
+        a for a in sp.cancel(tr_M_simplified).atoms(sp.Pow)
+        if a.exp.is_Rational and not a.exp.is_Integer and a.base == q
+    ]
     out = (WitnessBuilder.wrap_legacy(
         "markov-trace-atomic-proton-full", witness,
         script_path=__file__, engine="sympy")
         .add_assertion(
-            "matches_char_fast",
-            computed=1.0 if matches_char_fast else 0.0,
-            expected=1.0,
-            tolerance=0.0,
-            source="cross-check vs hecke_character_fast at q0 (1% tol)",
+            "convention_d_form_has_no_half_integer_q_powers",
+            computed=str(len(half_powers)),
+            expected="0",
+            source=("convention D (owner ruling R1, 2026-08-15); the "
+                    "superseded convention-C form carried q**(41/2) etc."),
         )
         .save())
     print(f"\n  Witness: {out}")

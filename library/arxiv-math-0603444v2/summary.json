@@ -1,0 +1,41 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0603444v2",
+ "source_sha256": "46edfcddca963d08",
+ "brief": "QUASIHOMOGENEITY OF ISOLATED HYPERSURF ACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY — W e characterize quasihomogeneity of isolated hypersurfac e singu- larities by the injectivity of the map induced",
+ "extended": "**QUASIHOMOGENEITY OF ISOLATED HYPERSURF ACE SINGULARITIES AND LOGARITHMIC COHOMOLOGY**\n\n*MICHEL GRANGER AND MATHIAS SCHULZE*\n\n5 pp, 4 sections.\n\n**Abstract.** W e characterize quasihomogeneity of isolated hypersurfac e singu- larities by the injectivity of the map induced by the ﬁrst diﬀ erential of the logarithmic diﬀerential complex in the top local cohomolog y supported in the singular point. 1. Formulation of the result We consider the germ of an isolated hypersurface singularity D ⊆ (Cn, 0). Let O = OCn,0 be the ring of germs of holomorphic functions on Cn at the origin with maximal ideal m andf ∈ m2 a reduced deﬁning equation of D. For notational simplicity, we shall write Cn instead of (Cn, 0). In terms of coordinates x1,...,x n on Cn, O = C{x1,...,x n} is the ring of convergent power series and m = ⟨x1,...,x n⟩. We abbreviate by fi = ∂f ∂xi , i = 1,...,n , the partial derivatives of f .\n\n**Outline.** 1 Formulation of the result; 2 Relation to the logarithmic comparison theor; 3 Proof of the theorem; References",
+ "tokens": {
+  "brief": 49,
+  "extended": 258
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-formulation-of-the-result",
+   "title": "Formulation of the result",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-relation-to-the-logarithmic-comparison-theorem",
+   "title": "Relation to the logarithmic comparison theorem",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-3-proof-of-the-theorem",
+   "title": "Proof of the theorem",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-003-references",
+   "title": "References",
+   "pages": "5-5"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
