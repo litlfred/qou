@@ -1567,3 +1567,4 @@ import QOU.Mass.ColourCubicDiscriminantReal
 import QOU.Mass.FigureEightGluingFromMonodromy
 import QOU.Mass.FiveTwoGluingFromFareyWord
 import QOU.Mass.AffineCumulantSecondDifference
+import QOU.Mass.FiveTwoAPolynomialFromFareyWord
