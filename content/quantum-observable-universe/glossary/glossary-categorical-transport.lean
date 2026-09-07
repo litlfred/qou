@@ -18,10 +18,20 @@ namespace QOU
     condition on sections ψ ∈ τ(J¹(A)). The q-correction comes from
     the categorical q-exterior derivative d_q acting on the jet bundle. -/
 -- Ref: [manuscript] Ch. 8 Glossary
-structure CategoricalTransport where
-  /-- The q-deformed connection component. -/
-  q_connection : Prop
-  /-- The transport condition D_∇ψ = 0. -/
-  transport_eq : Prop
+structure CategoricalTransport (E : Type*) [AddCommGroup E] where
+  /-- The q-deformed covariant derivative `D_∇`, acting on sections.
+
+      Was `q_connection : Prop`, which is a typing error rather than a thin
+      statement: a connection is DATA, and a field typed with the universe
+      `Prop` holds a proposition. There was no proposition to hold. -/
+  D : E → E
+  /-- The section `ψ ∈ τ(J¹(A))`. -/
+  psi : E
+  /-- **The transport equation** `D_∇ψ = 0`.
+
+      Was `transport_eq : Prop`, so the instance chose what the equation
+      said and `True` discharged it. It is now the equation the docstring
+      names. -/
+  transport_eq : D psi = 0
 
 end QOU
