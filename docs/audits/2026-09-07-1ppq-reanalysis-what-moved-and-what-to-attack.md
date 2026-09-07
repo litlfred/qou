@@ -123,6 +123,44 @@ Two consequences, and the second is the sharp one.
   currently reproducible in the canonical convention at all.** That is a stronger statement than
   "they miss by 164×", and it is the most important single fact in this reanalysis.
 
+> **🛑 AND I UNDER-REPORTED IT — corrected 2026-09-07, same day, while working §5 item 2.**
+> Everything above is about the **ladder**. There is a separate and stronger fact about the
+> **base the ladder sits on**, which I did not find on the first pass and which the dashboard did
+> not carry either:
+>
+> **The published `Q_β` closed form itself uses a functional convention D excludes.**
+> `m_e·|q²−2q−1|(q+1)/(2q³)` is *exactly* `|tr_M(Δ_S)|·E₀` at Markov parameter **`z = 1`** — the
+> coordinate sum — and the only admissible roots of the `(1³)` weight numerator are `z = q` (the
+> augmentation) and `z_D = q³/(q²+1)`. `z = 1` is not one, and is not one at the substrate pin
+> either: the numerator vanishes at `z = 1` only at the supergolden ratio 1.4656, above
+> `q₀ = 1.10998`. Verified at the source this session — `qbeta_published_form_is_the_inadmissible_z1_probe.py`,
+> **15/15, exact over ℚ(q)**, reproducing byte-identically — rather than taken from the sibling
+> audit that reports it (`2026-09-05-qbeta-functional-decision-options.md`, `qou-99qc`), because a
+> sibling's audit is not a primary source. Lean: `ConventionDAdmissibleRoots.lean`, sorry-free.
+>
+> **The best admissible cell is +12.470 %** (the augmentation on `Δ_S`) against the published
+> **+0.168 %** — **74.3× worse, base to base**.
+>
+> **Compare base to base, and do not relate either to the 1279 ppb in §1.** I first wrote that
+> 12.470 % is "~97× worse than the 1279 ppb scored". Wrong twice: the arithmetic is **97,498**
+> (1279 ppb is 0.0001279 %, not 0.1279 %), and the comparison is invalid regardless — 12.470 % is a
+> base with no ladder on it, while 1279 ppb is post-ladder, and the ladder improves its own base by
+> ~1312×. **What the laddered value would become on an admissible base is unknown**, because no
+> such ladder has been derived. That is precisely `qou-cds1`.
+>
+> **What this changes for §3 W1 and §5 item 2.** W1 said the C-frame ladder is exhausted and the
+> D-frame ladder does not exist. Both stand, and there is now a third leg: *the base is
+> inadmissible too*, so a `Q_β` derivation must replace the functional as well as the ladder.
+> §5 item 2 is therefore **Option E** of the decision document — "keep an admissible functional and
+> find the element it should act on" — which that document independently identifies as the only
+> option that could yield a parameter-free admissible sub-1 % result rather than a choice among
+> existing misses. The other six options are label changes or accept a 12.5 % / −43 % miss.
+>
+> **Landed the same day (PR #7092):** the L2 dashboard now carries a
+> `functional_admissibility_qbeta` block, and the `m_n` / `Δ_pn` rows carry the inherited scope on
+> themselves rather than by cross-reference from the `Q_β` row, where a reader of those rows never
+> saw it.
+
 ### 2b. The binding functional changed, and it is derived, not fitted — a ~1300× residual gain
 
 [`2026-09-05-binding-law-arc-synthesis.md`](2026-09-05-binding-law-arc-synthesis.md). The corpus
