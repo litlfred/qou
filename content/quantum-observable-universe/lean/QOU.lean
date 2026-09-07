@@ -268,6 +268,7 @@ import QOU.MassDerivation
 import QOU.Mass.IntraOrderingInvariance
 import QOU.Mass.FreeEnergyReadingIsSigned
 import QOU.MassTheory.MarginalRatioExtensivity
+import QOU.MassTheory.TwoRowTwoColumnCollision
 import QOU.MassTheory.TraceConventionGate
 import QOU.MassTheory.NeutronProtonEMSign
 import QOU.MassTheory.BarParityExclusion
