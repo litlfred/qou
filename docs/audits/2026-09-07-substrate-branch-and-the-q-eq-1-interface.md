@@ -986,3 +986,91 @@ currently defines; it does not exclude a coupling somebody constructs between th
 geometry and a density. The bean stays open on that residual — the underlying question
 (can QOU produce $\eta$?) is an open conjecture, and AGENTS.md §13a forbids closing a
 bean whose subject is one, however cleanly the present route is excluded.
+
+---
+
+# 18. §16 checked against `main`'s better $\alpha_{\rm EM}$ route, and the observational test
+
+`main` moved 44 commits under this branch. Two of them
+(`aa546b4ba`, `d626761a3`, bean `qou-37j2`) touch $\alpha_{\rm EM}$ directly, and one
+announces that a CODATA edition freeze *"flipped its sign"* — so §16 needed checking
+against them rather than assuming.
+
+## 18.1 The route I used is the ladder's leading term
+
+`alpha_em_schwinger_ladder_probe.py` on `main` defines
+
+$$
+  T(q) = q\,[9]_q\,[10]_q + \tfrac{8}{12\pi}, \qquad H(q) = \tfrac{[2]_q}{8\pi},
+$$
+
+and solves the cubic $-H h^2 \alpha^3 + H\alpha^2 + T\alpha - 1 = 0$ (form B, with the
+derived Schwinger factor). **$8/12 = 2/3$, so $T$ is exactly the closed form §16 used**,
+and §16's $1/\alpha = T$ is the ladder with $H \to 0$.
+
+Reconstructed here, form B at $q_0$ gives $1/\alpha = 137.03599912695$, a residual of
+**−0.36523 ppb** against CODATA 2022 — matching `main`'s stated −0.3652 ppb, so the
+reconstruction is right.
+
+## 18.2 The band structure is unaffected
+
+| $q$ | $1/\alpha$ leading (§16) | $1/\alpha$ form B (full) | rel. diff |
+|---|---|---|---|
+| 1.1099786 | 137.035415444 | 137.035999127 | $4.259\times10^{-6}$ |
+| 1.0 | 90.2122065908 | 90.2130886964 | $9.778\times10^{-6}$ |
+| 0.90091828 | 111.265277741 | 111.265996556 | $6.46\times10^{-6}$ |
+| 0.8 | 266.299517437 | 266.299823501 | $1.149\times10^{-6}$ |
+| 0.7 | 1154.29389007 | 1154.2939634 | $6.354\times10^{-8}$ |
+| 0.5 | 116508.101096 | 116508.101097 | $7.328\times10^{-12}$ |
+| 0.38196601 | 6677056.38306 | 6677056.38306 | $2.677\times10^{-15}$ |
+
+The Schwinger correction is at most $\sim10^{-5}$ and **shrinks to $10^{-15}$ in the deep
+band**, against a band effect of four to five orders of magnitude. §16 stands, and its
+structural claim strengthens: $H = [2]_q/(8\pi)$ is **bar-even**, so in the full ladder
+too the entire bar-asymmetry is the $q$ prefactor of $T$.
+
+**A third instance of the $q=1$ singularity.** At $q = 1$, $h^2 = 0$ kills the cubic's
+leading coefficient and `mp.polyroots` raises `ZeroDivisionError` — the same removable
+degeneration as §14.4, in a different producer. The cubic collapses to form A there; that
+is the correct limit, and it is unguarded.
+
+## 18.3 Do we see neutron-rich patches? Yes — and they are not this.
+
+**Observed, and real:**
+
+- **r-process-enhanced metal-poor stars** (r-II, $[\mathrm{Eu/Fe}] > +1$): CS 22892-052,
+  CS 31082-001.
+- **Reticulum II** — an ultra-faint dwarf where roughly 70 % of member stars are
+  r-process enhanced (Ji, Frebel, Chiti & Simon, *Nature* **531**, 610, 2016). This is a
+  **galaxy-scale** neutron-rich patch, attributed to a single neutron-star merger
+  enriching the dwarf's entire gas reservoir.
+- **GW170817 / AT2017gfo** — direct kilonova observation of r-process ejecta.
+
+**None of these is what a shifted-$\alpha$ domain looks like, and the difference is
+sharp.** r-process enrichment is *more neutron-capture products* on the **same nuclear
+chart** — normal stability, anomalous abundances, because a neutron-rich event happened
+nearby. A bar-conjugate domain would have a **different chart**: different *stable*
+isotopes at higher $N/Z$, with nuclides stable here unstable there.
+
+**So the discriminator is isotopic, not elemental** — isotope ratios inconsistent with
+any known nucleosynthesis, or isotope shifts in absorption lines. That is exactly what
+varying-constants spectroscopy tests.
+
+**And it excludes the prediction along every measured sightline.** §16 gives
+$\alpha(1/q_0)/\alpha(q_0) = 1.23160717$, i.e.
+
+$$
+  \Delta\alpha/\alpha = 0.23160717 = 23.16\,\%,
+$$
+
+against quasar-absorption bounds $\lvert\Delta\alpha/\alpha\rvert \lesssim 10^{-6}$ —
+**exceeded by $2.3\times10^{5}$** — and the Oklo natural-reactor bound $\lesssim10^{-8}$,
+exceeded by $2.3\times10^{7}$. Even the contested Webb *et al.* spatial dipole at
+$\sim10^{-5}$ is four orders too small to accommodate it.
+
+**The standing caveat applies unchanged:** those sightlines are luminous gas. A domain
+that is dark is not probed by any of this, which is the one place the proposal still
+lives.
+
+*Literature here is recalled; the library holds no source on r-process observations or
+varying-constants spectroscopy, so none of it is checkable in-corpus.*
