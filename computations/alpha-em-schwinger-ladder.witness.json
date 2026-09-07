@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-07T11:07:27.872275+00:00",
-  "commitSha": "5b11db4f7a58e2e41677783d25f4459efaadd291",
+  "computedAt": "2026-09-07T11:25:59.529865+00:00",
+  "commitSha": "c33a59d6b5088c9c78434e48bbd0adfb056766e8",
   "assertions": [
     {
       "name": "schwinger_brings_alpha_within_3sigma",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 9,
   "computation": "alpha-em-schwinger-ladder",
   "scriptFile": "alpha_em_schwinger_ladder_probe.py",
-  "scriptHash": "2269c1565151",
-  "scriptCommitSha": "f44d3bf79fa2e971e858e99483235d152ec9a0f3",
+  "scriptHash": "8caaf907ad89",
+  "scriptCommitSha": "1a3f96e72efd999f3eb3b745301c5e7b0ad7b40e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,6 +60,8 @@
       "form_B_sigma": "2.3832898847536809287",
       "form_A_miss_vs_100x": "648.42384524858884698",
       "form_B_miss_vs_100x": "238.32898847536809287",
+      "form_A_alpha_inv": "137.035999313169007502203657865",
+      "form_B_alpha_inv": "137.035999126950912420172700496",
       "q0": "1.1099785827513808075916690956107688798744991218736"
     },
     "codata_reference": {

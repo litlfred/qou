@@ -46,6 +46,7 @@ from codata_constants import (  # noqa: E402
     M_PI_PM_MEV_VALIDATION,
 )
 from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
+from qou_substrate import codata as _codata  # noqa: E402
 
 set_compute_dps()
 
@@ -160,6 +161,34 @@ _M_K_PI_RATIO_ERR = _M_K_PI_RATIO * mp.sqrt(
 OBSERVABLES["m_K/m_pi"] = (
     _M_K_PI_RATIO, _M_K_PI_RATIO_ERR, "validation (meson ratio)",
     "PDG 2024: m_K±/m_π± = 493.677/139.57039; σ propagated in quadrature",
+)
+
+# ── 1/α_EM — dimensionless gauge coupling ────────────────────────────
+#
+# 🛑 WHY THIS ROW DID NOT EXIST UNTIL 2026-09-07.
+#
+# Nothing excluded α_EM. It was simply never added, and the omission was
+# load-bearing: at the proton pin with the derived Schwinger factor the
+# framework predicts 1/α to **238×** its L2 target, which makes it the
+# framework's SECOND-BEST prediction — better than every scored row except
+# `m_K/m_π`, and four times better than `m_μ` (970×). A scorecard that omits
+# its own second-best result because nobody added the row is not a scorecard.
+#
+# Adding it moves the headline from 1/5 to 1/6 scoreable, i.e. it makes the
+# published ratio WORSE while making it more honest. That is the correct
+# direction under the anti-fit rule, and it is the reason to add the row rather
+# than a reason to hesitate.
+#
+# The reference is read from the registry (CODATA 2022), never hand-typed —
+# see alpha_em_schwinger_ladder_probe.py, where the 2018 freeze this corpus
+# carried was found to shift the residual by 2.2× its own size and flip its
+# sign (#7069).
+_ALPHA_INV_ENTRY = _codata.codata("inverse fine-structure constant")
+OBSERVABLES["alpha_em_inv"] = (
+    mpf(_ALPHA_INV_ENTRY.value_str),
+    mpf(_ALPHA_INV_ENTRY.uncertainty_str),
+    "validation (gauge coupling)",
+    "qou_substrate.codata registry — 'inverse fine-structure constant', CODATA 2022",
 )
 
 
@@ -657,6 +686,43 @@ def main() -> dict:
         rows.append({"obs": "m_n", "status": "NO-WITNESS"})
         rows.append({"obs": "Delta_pn", "status": "NO-WITNESS"})
 
+    # ── 1/α_EM — the derived Schwinger ladder at the proton pin ──────
+    #
+    # Read as a VALUE from the producer's witness, not back-computed from a
+    # published residual. See the OBSERVABLES entry above for why this row
+    # did not exist until 2026-09-07 and why adding it makes the headline
+    # ratio worse.
+    #
+    # Scope, carried on the row so it cannot be quoted bare: the construction
+    # is conditional on three unproved classes (ArchimedeanLimit,
+    # BlochSuslinUniqueness, BringZeroModeBlochClass), so this is a
+    # conditional prediction — the same tier caveat `m_K/m_π` carries for its
+    # α_em input. The Schwinger factor itself is DERIVED (RT phase 3), not a
+    # fitted knob.
+    try:
+        _alpha_w = load_witness("alpha-em-schwinger-ladder.witness.json")
+        _alpha_inv_pred = _alpha_w["data"]["ladder_proton"].get("form_B_alpha_inv")
+    except Exception:
+        _alpha_inv_pred = None
+    if _alpha_inv_pred is not None:
+        _row = _row_for(
+            "alpha_em_inv", mpf(str(_alpha_inv_pred)),
+            "alpha-em-schwinger-ladder.witness.json :: data.ladder_proton.form_B_alpha_inv "
+            "(cubic form with the derived Schwinger factor (1-h^2 alpha), proton pin)",
+        )
+        _row["note"] = (
+            "CONDITIONAL on three unproved classes (ArchimedeanLimit, "
+            "BlochSuslinUniqueness, BringZeroModeBlochClass) — a conditional "
+            "prediction, not a proved derivation. The Schwinger factor is derived, "
+            "not fitted. Second-best scoreable row: 238x, against 970x (m_mu) and "
+            "152-177x (the Q_beta trio). NOTE the residual's SIGN depends on the "
+            "CODATA edition (the 2018->2022 shift is 2.2x the residual); the "
+            "reference is read from the registry so the edition is not a choice."
+        )
+        rows.append(_row)
+    else:
+        rows.append({"obs": "alpha_em_inv", "status": "NO-WITNESS"})
+
     # ── m_e — CAL-1 anchor (by definition err = 0) ───────────────────
     codata, sigma_exp, role, sigma_source = OBSERVABLES["m_e"]
     sig_ppb = sigma_rel_ppb(codata, sigma_exp)
@@ -821,16 +887,16 @@ if __name__ == "__main__":
     print(f"\n{'='*128}")
     print(f"Per-observable 100× experimental status (Workplan v7)")
     print(f"{'='*128}")
-    print(f"{'Observable':10}  {'role':22}  {'pred err (ppb)':>16}  "
+    print(f"{'Observable':12}  {'role':26}  {'pred err (ppb)':>16}  "
           f"{'σ_exp (ppb)':>14}  {'100× target (ppb)':>20}  "
           f"{'miss factor':>14}  {'1×?':>3}  {'100×?':>5}")
     print("-" * 128)
     for r in out["rows"]:
         if r.get("status") == "NO-WITNESS":
-            print(f"{r['obs']:10}  NO WITNESS")
+            print(f"{r['obs']:12}  NO WITNESS")
             continue
         print(
-            f"{r['obs']:10}  {r['role']:22}  {r['err_ppb']:>16}  "
+            f"{r['obs']:12}  {r['role']:26}  {r['err_ppb']:>16}  "
             f"{r['sigma_exp_ppb']:>14}  {r['target_100x_ppb']:>20}  "
             f"{r.get('miss_factor', '-'):>14}  "
             f"{('Y' if r['beats_1x_experimental'] else 'N'):>3}  "
