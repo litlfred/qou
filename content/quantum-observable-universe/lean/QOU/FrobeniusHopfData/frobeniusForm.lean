@@ -46,9 +46,20 @@ the underlying map (the snake identities, with a coevaluation
 `FrobeniusFormContext` models `A` and `A_dual` as plain `Type` and the
 pairing as a plain function, so there is no categorical iso in scope to
 put on the other side of the `↔`.  Stating bijectivity alone is weaker
-than the manuscript claim and is what this model supports; the
-categorical half needs the rigid-monoidal apparatus on the specific
-quantum universe.
+than the manuscript claim and is what this model supports.
+
+**The categorical half is BUILDABLE, not blocked** (corrected 2026-09-07;
+this paragraph first said it "needs the rigid-monoidal apparatus", which
+implies a Mathlib gap that does not exist).  Mathlib carries
+`CategoryTheory.Monoidal.Rigid` at the pinned revision — `ExactPairing`,
+`rightDualIso` (`Rigid/Basic.lean:541`) and three further files, verified
+on disk rather than recalled.  What is missing is local: this class does
+not model a category at all.  Restating the two-sided claim means
+re-modelling `FrobeniusFormContext` over a `MonoidalCategory` with an
+`ExactPairing`, which Mathlib supports.  Cf.
+`docs/audits/2026-09-04-mathlib-infrastructure-inventory.md` §U6, which
+records that `Monoidal/Rigid/` and `Monoidal/Braided/` are present while
+pivotal / spherical / ribbon are not.
 
 **What was here until 2026-09-07, and why it went.**  The class carried
 `is_iso : Prop` — a field typed with the *universe* `Prop`, so it held a
