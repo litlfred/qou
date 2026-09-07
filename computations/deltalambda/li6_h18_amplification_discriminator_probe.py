@@ -35,7 +35,7 @@ DATA PROVENANCE (corpus-grep first — no recompute of the long job):
   • D/T/³He/⁴He anchors: binding-reeb-phase-decomposition.witness.json
     (θ_λ vectors) + chi-*-h*-at-q0-50dps.witness.json (y_λ) — the SAME
     cached inputs as the θ_λ magnitude audit, re-derived here as a
-    regression gate (𝒜(D) must reproduce 6.4161462, convention D).
+    regression gate (𝒜(D) must reproduce 29.075377, convention D (re-pinned 2026-09-07; the prior 6.4161462 was a grouped-word value)).
   • SECONDARY out-of-sample point ⁵Li (A=5, H₁₅, 176 blocks): cached
     chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json (atom χ+y) +
     chi_free_frobenius(3,2) — locates WHERE the law breaks (⁵Li is
@@ -505,7 +505,7 @@ def main() -> int:
 
     wb.add_assertion(
         "anchor_kappaD_reproduced",
-        computed=fmt(kd["D"]), expected="6.4161462", tolerance="0.01",
+        computed=fmt(kd["D"]), expected="29.075377", tolerance="0.01",
         source="convention-D value, DERIVED INDEPENDENTLY by "
                "carrier_table_convention_d_rederivation.py (y_λ recomputed "
                "from y_lambda_su_n, θ rebuilt from χ/dim) — not copied from "
@@ -515,11 +515,27 @@ def main() -> int:
                "and this expectation was not. Same regression as "
                "carrier_saturation_mechanism_probe; see "
                "docs/audits/2026-08-26-carrier-saturation-five-failures-"
-               "diagnosis.md")
+               "diagnosis.md"
+               "  RE-PINNED 2026-09-07 (qou-k54t) from 6.4161462 to "
+               "29.075377. That 6.4161462 was itself derived while D's chi "
+               "caches were on the GROUPED word, and the computed side read "
+               "those same caches, so the assertion agreed for the wrong "
+               "reason -- a false green, not a passing test. D is now fully "
+               "borromean (reeb witness and rust cache both regenerated), so "
+               "this pin does not depend on the 5Li/6Li caches, which are "
+               "still grouped.")
     wb.add_assertion(
         "anchor_kappa4He_reproduced",
-        computed=fmt(kd["4He"]), expected="73.5943", tolerance="0.1",
-        source="regression vs the audit's I1 table (w = y·dim)")
+        computed=fmt(kd["4He"]), expected="702.409", tolerance="0.1",
+        source="regression vs the audit's I1 table (w = y·dim)"
+               "  RE-PINNED 2026-09-07 (qou-k54t) from 73.5943 to "
+               "702.409. That 73.5943 was itself derived while 4He's chi "
+               "caches were on the GROUPED word, and the computed side read "
+               "those same caches, so the assertion agreed for the wrong "
+               "reason -- a false green, not a passing test. 4He is now fully "
+               "borromean (reeb witness and rust cache both regenerated), so "
+               "this pin does not depend on the 5Li/6Li caches, which are "
+               "still grouped.")
     wb.add_assertion(
         "li6_all_385_partitions_present",
         computed=li6_meta["n_partitions"], expected=385, tolerance=0,

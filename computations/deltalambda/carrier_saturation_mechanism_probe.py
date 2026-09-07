@@ -517,20 +517,36 @@ def main() -> int:
                "(50-dps serialized y_λ)")
     wb.add_assertion(
         "anchor_kappaD_reproduced",
-        computed=fmt(res["D"]["A_req"]), expected="6.4161462", tolerance="0.01",
+        computed=fmt(res["D"]["A_req"]), expected="29.075377", tolerance="0.01",
         source="convention-D value, DERIVED INDEPENDENTLY by "
                "carrier_table_convention_d_rederivation.py (y_λ recomputed "
                "from y_lambda_su_n, θ rebuilt from χ/dim) — not copied from "
                "this script's own output. The prior 6.0426 was the "
                "convention-C value from the 2026-07-13 audit, correct in its "
                "own frame; see 2026-08-26-carrier-saturation-five-failures-"
-               "diagnosis.md")
+               "diagnosis.md"
+               "  RE-PINNED 2026-09-07 (qou-k54t) from 6.4161462 to "
+               "29.075377. That 6.4161462 was itself derived while D's chi "
+               "caches were on the GROUPED word, and the computed side read "
+               "those same caches, so the assertion agreed for the wrong "
+               "reason -- a false green, not a passing test. D is now fully "
+               "borromean (reeb witness and rust cache both regenerated), so "
+               "this pin does not depend on the 5Li/6Li caches, which are "
+               "still grouped.")
     wb.add_assertion(
         "anchor_kappa4He_reproduced",
-        computed=fmt(res["4He"]["A_req"]), expected="73.5943", tolerance="0.1",
+        computed=fmt(res["4He"]["A_req"]), expected="702.409", tolerance="0.1",
         source="convention-D value, DERIVED INDEPENDENTLY by "
                "carrier_table_convention_d_rederivation.py. The prior 63.05 "
-               "was convention-C (2026-07-13 audit), correct in its frame")
+               "was convention-C (2026-07-13 audit), correct in its frame"
+               "  RE-PINNED 2026-09-07 (qou-k54t) from 73.5943 to "
+               "702.409. That 73.5943 was itself derived while 4He's chi "
+               "caches were on the GROUPED word, and the computed side read "
+               "those same caches, so the assertion agreed for the wrong "
+               "reason -- a false green, not a passing test. 4He is now fully "
+               "borromean (reeb witness and rust cache both regenerated), so "
+               "this pin does not depend on the 5Li/6Li caches, which are "
+               "still grouped.")
     wb.add_assertion(
         "li6_amplification_reproduced",
         computed=fmt(res["6Li"]["A_req"]), expected="82.85481",
