@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-29T02:13:12Z
-updated_at: 2026-09-04T06:44:37Z
+updated_at: 2026-09-07T06:26:31Z
 ---
 
 ---
@@ -92,3 +92,55 @@ silence, which is better, though `independent` + reason is better still.
 
 **Nothing here is `qou-3f7a`'s to repair.** The prior section asked this
 tranche to re-run a producer; that was based on the misidentification. Drop it.
+
+
+---
+
+## MEASURED 2026-09-07, and DELIBERATELY NOT DRAINED — the producer belongs to a live sibling
+
+Worked from litlfred/qou#6971. Fresh gate numbers, because the ones in this bean's
+audit are from 2026-08-29:
+
+    q0-anchor refill ratchet    baseline 1677    drained since 188    NEW 97
+    q0-value drift ratchet      2781 q0-bearing fields
+                                stale 207        baseline 329         NEW 5
+
+Note the shape on the anchor gate: **188 drained and 97 refilled**. That is the
+revolving door `qou-mnrd` names, not a monotone drain, and it is the reason a
+bulk pass here is worth less than it looks.
+
+The 5 drift NEW are all −0.0769 / −0.0798 ppb, i.e. the muon re-pin delta this
+bean exists for. One of them, `hadron-knot-table.witness.json`, is named in
+AGENTS.md as the last file on the retired pin.
+
+### The named regression is still live, and the fix is NOT mine to make
+
+This bean records that `9c2058f0bd` stripped `q0Anchor`/`q0Value` from
+`computations/chi-neutron-h3.witness.json`. Confirmed still stripped today — the
+witness has neither key. The prior agent's judgement ("whoever owns this tranche
+should re-run it") is correct, and there is now a concrete reason:
+
+**`origin/claude/anchor-followups-2026-08-08` is actively editing the very
+producer.** Its diff to `delta_lambda_empirical_tabulation.py` (+12/−5, last
+commit 35 h ago) replaces `q0_float = float(Q_MP)` with `q0_mp = mp.mpf(Q_MP)`
+and lifts the breakdown strings before arithmetic — the same float64-laundering
+class as `qou-1evu` on my own branch.
+
+So re-running that producer from here would emit a witness from the OLD producer
+version, which their change supersedes. That is worse than the no-op.
+
+### The cross-branch finding neither bean carries
+
+**When that sibling re-runs the producer for their own fix, the stripped q0 stamp
+comes back for free** — the producer reads `Q_MP` at line 93, so `q0Anchor:
+proton` was correct and nothing replaced it. One q0-anchor-ratchet entry closes
+as a side effect of a float64 fix, and neither bean mentions the other. Posting
+this to their PR.
+
+### Why the bulk drain is not on #6971
+
+83 `Q0_FLIP` + 165 drift sites is a sweep in a different theme from that PR
+(hardcoded constants), and AGENTS.md forbids widening a PR on the agent's own
+initiative. It stays this bean's, on its own branch. What #6971 does carry is the
+establishment that **none** of the q0 gates' NEW findings intersect its diff —
+checked file by file, empty intersection on all three gates.
