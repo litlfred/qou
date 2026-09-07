@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-09-07T16:51:35Z
+updated_at: 2026-09-07T17:09:07Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -7996,3 +7996,43 @@ transposition-blind and mislabels *without ever producing a wrong number*. Use
 `transposeEquiv` in `QOU/MassTheory/TwoRowTwoColumnCollision.lean`.
 
 Full ruling: `docs/coordination/2026-09-05-owner-gated-bean-triage.md` §D7.
+
+
+## Merged: the δ half of the closure rule (PR #7096, main b7f0ba7902)
+
+`computations/tl_closure_rule_probe.py` + `QOU/MathlibExt/TemperleyLiebClosure.lean`.
+
+**Measured on 3456 products (n = 2..7), then PROVED.** The probe computes
+`e_k · elt(I,J)` by planar diagrams, indexes BOTH sides by their (I,J) data, and
+tests candidates — it does not guess.
+
+```
+loops = 1  ⟺  (I',J') = (I,J)        the δ is exactly at the fixed points
+loops = 1  ⟺  k ∈ I  ∧  k-1 ∉ I      and that is the test — J never enters
+```
+
+Sharp: `k ∈ I` alone fails 650, `k ∈ I ∧ k+1 ∉ I` fails 882, `k ∈ I ∧ k ∉ J`
+fails 846.
+
+**Not a fit — the mechanism is Lean.** `e_comm_prod` (e_k commutes past a word
+all far from k) and `e_mul_prod_eq_smul` (on `pre ++ k :: post` with pre far
+from k, left mult returns the SAME word scaled by δ). `k ∈ I` puts k at a block
+top; `k-1 ∉ I` forces every earlier block ≤ k-2 — exactly the hypothesis. The
+`post` being untouched is why the form comes back UNCHANGED, matching the first
+rule: the two halves cross-check each other.
+
+**🛑 STILL OPEN, nothing substitutes.**
+- **The instantiation** — deriving 'pre far from k' from `k ∈ I ∧ k-1 ∉ I` needs
+  `NormalIdx.word`'s block decomposition. Next concrete step.
+- **The loops=0 branch** — 2378 products, no candidate fits (`I' = I ∪ {k}`
+  fails 1821, `I' ⊆ I ∪ {k}` 348, `J' ⊆ J ∪ {k}` 129). `|I'|-|I|` moves BOTH
+  ways (302 / 1519 / 557) and **that decrease IS the word-length
+  non-monotonicity** — so the rule cannot be insertion-shaped. The two negatives
+  explain each other.
+- Two invariants hold on all 3456 but are recorded, not proved: `k ∈ I'`,
+  `|I'| = |J'|`.
+
+Arc state: TL₂/TL₃ Wedderburn done (#7001); general index type done (#7049);
+δ half of closure done (#7096). `dim TL_n = catalan n` NOT closed — it needs the
+loops=0 rule and the general count (bicoloured-Motzkin bijection, which Mathlib
+has nothing for).
