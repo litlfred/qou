@@ -511,55 +511,75 @@ def sample_curve(tets, erows, mu_row, lam_row, shapes0, n_samples=None, seed=1, 
     return pts
 
 
-def fit_apoly(pts, max_du=4, max_dx=14):
-    """The developing map returns squared eigenvalues, and a continuation grid can jump sheets
-    across a branch point, so the lift L = ±√ℓ of a grid point is not reliable. Fit instead the
-    lift-free polynomial P(u, x) = c·A(L, M)·A(−L, M) with u = L², x = M² (smallest bidegree
-    with a one-dimensional nullspace, integer coefficients), then factor P(L², x) over ℤ and take
-    the factor vanishing at the complete point (L, M) = (−1, 1); if P is irreducible, A is even
-    or odd in L and P itself is A up to sign. Returns (A(L, M) as a sympy expression in L, M,
-    and P as {(deg_u, deg_x): coeff}) or None."""
-    Lsym, Msym, usym, xsym = sp.symbols("L M u x")
-    for du in range(1, max_du + 1):
+def _nullvec_int(pts, monos, term):
+    """Integer null vector of the sample matrix over `monos` (rows scaled to unit max entry —
+    nullspace-invariant; without it a far grid point swamps the singular spectrum). Accepts a
+    one-dimensional nullspace by a GAP criterion (smallest singular value < 1e-30·largest and
+    < 1e-8·second smallest — an absolute 1e-20 floor on the second was measured to fail at
+    bidegree (3,14), where the 60-monomial system is conditioned to ~1e-31) and rounds to
+    integers with denominators up to 200; a wrong rounding cannot survive the fresh-sample
+    verification that follows in run_knot. Returns {mono: int} or None."""
+    rows = []
+    for t in pts:
+        row = [term(t, i, j) for (i, j) in monos]
+        m = max(abs(v) for v in row)
+        rows.append([v / m for v in row])
+    A = mp.matrix(rows)
+    U, S, V = mp.svd_c(A)
+    sv = [S[k] for k in range(len(monos))]
+    if not (sv[-1] < mp.mpf(10) ** -30 * sv[0] and sv[-1] < mp.mpf(10) ** -8 * sv[-2]):
+        return None
+    vec = [mp.conj(V[len(monos) - 1, k]) for k in range(len(monos))]
+    piv = max(range(len(vec)), key=lambda k: abs(vec[k]))
+    vec = [v / vec[piv] for v in vec]
+    for den in range(1, 201):
+        ints = [int(mp.nint(mp.re(v * den))) for v in vec]
+        if all(abs(v * den - ints[k]) < mp.mpf(10) ** -18 for k, v in enumerate(vec)):
+            g = 0
+            for c in ints:
+                g = gcd(g, abs(c))
+            return {(i, j): c // g for (i, j), c in zip(monos, ints) if c != 0}
+    return None
+
+
+def fit_apoly(pts, max_dL=4, max_dx=8, max_du=4, max_dx2=16):
+    """Smallest bidegree (dL, dx) in (L, x = M²) with a one-dimensional nullspace — the direct
+    fit, which at bidegree (3,7) is ~26 orders better conditioned than the lift-free product
+    below on the same samples (measured: 1.0e-16 vs 3.6e-31 second-smallest singular value).
+    The lift L = −e^{s/2} is taken from the continuation grid on the sheet of the complete
+    structure. Fallback if no direct box fits: P(u, x) = c·A(L,M)A(−L,M) with u = L², which
+    needs no lift, factored over ℤ, the factor vanishing at (L, M) = (−1, 1) taken. Returns
+    (A(L, M) as a sympy expression, {(deg_L, deg_x): coeff}, method) or None."""
+    Lsym, Msym = sp.symbols("L M")
+    for dL in range(1, max_dL + 1):
         for dx in range(1, max_dx + 1):
+            monos = [(i, j) for i in range(dL + 1) for j in range(dx + 1)]
+            if len(pts) < len(monos) + 8:
+                continue
+            poly = _nullvec_int(pts, monos, lambda t, i, j: t[0] ** j * t[1] ** i)
+            if poly is not None:
+                Aexpr = sp.expand(sum(c * Lsym ** i * Msym ** (2 * j) for (i, j), c in poly.items()))
+                return Aexpr, poly, "direct"
+    for du in range(1, max_du + 1):
+        for dx in range(1, max_dx2 + 1):
             monos = [(i, j) for i in range(du + 1) for j in range(dx + 1)]
             if len(pts) < len(monos) + 8:
                 continue
-            # rows scaled to unit max entry: nullspace-invariant, and without it a far grid point
-            # (|x| ~ 1e10) swamps the singular spectrum so the relative thresholds below
-            # never fire (measured: the 4₁ fit failed on grid samples even lift-free)
-            rows = []
-            for (x, L, *_) in pts:
-                row = [x ** j * (L ** 2) ** i for (i, j) in monos]
-                m = max(abs(v) for v in row)
-                rows.append([v / m for v in row])
-            A = mp.matrix(rows)
-            U, S, V = mp.svd_c(A)
-            svals = [S[k] for k in range(len(monos))]
-            if svals[-1] < mp.mpf(10) ** -30 * svals[0] and svals[-2] > mp.mpf(10) ** -20 * svals[0]:
-                vec = [mp.conj(V[len(monos) - 1, k]) for k in range(len(monos))]
-                piv = max(range(len(vec)), key=lambda k: abs(vec[k]))
-                vec = [v / vec[piv] for v in vec]
-                for den in range(1, 64):
-                    ints = [int(mp.nint(mp.re(v * den))) for v in vec]
-                    if all(abs(v * den - ints[k]) < mp.mpf(10) ** -25 for k, v in enumerate(vec)):
-                        g = 0
-                        for c in ints:
-                            g = gcd(g, abs(c))
-                        ints = [c // g for c in ints]
-                        P = {(i, j): c for (i, j), c in zip(monos, ints) if c != 0}
-                        Pexpr = sum(c * Lsym ** (2 * i) * Msym ** (2 * j) for (i, j), c in P.items())
-                        facs = sp.factor_list(sp.expand(Pexpr), Lsym, Msym)[1]
-                        cands = [f for (f, m) in facs if sp.degree(f, Lsym) > 0 or sp.degree(f, Msym) > 0]
-                        at_complete = [f for f in cands if f.subs({Lsym: -1, Msym: 1}) == 0]
-                        if len(cands) == 1:
-                            Aexpr = cands[0]
-                        elif len(at_complete) >= 1:
-                            # the two factors are A(L,M) and A(−L,M); take the one that vanishes at (−1, 1)
-                            Aexpr = at_complete[0]
-                        else:
-                            return None
-                        return sp.expand(Aexpr), P
+            Pd = _nullvec_int(pts, monos, lambda t, i, j: t[0] ** j * (t[1] ** 2) ** i)
+            if Pd is None:
+                continue
+            Pexpr = sum(c * Lsym ** (2 * i) * Msym ** (2 * j) for (i, j), c in Pd.items())
+            facs = sp.factor_list(sp.expand(Pexpr), Lsym, Msym)[1]
+            cands = [f for (f, m) in facs if sp.degree(f, Lsym) > 0 or sp.degree(f, Msym) > 0]
+            at_complete = [f for f in cands if f.subs({Lsym: -1, Msym: 1}) == 0]
+            Aexpr = cands[0] if len(cands) == 1 else (at_complete[0] if at_complete else None)
+            if Aexpr is None:
+                return None
+            Aexpr = sp.expand(Aexpr)
+            poly = {}
+            for (i, j2), c in sp.Poly(Aexpr, Lsym, Msym).terms():
+                poly[(i, j2 // 2)] = int(c)
+            return Aexpr, poly, "product"
     return None
 
 
@@ -604,7 +624,7 @@ def run_knot(knot, shapes_hint, check, wb):
     grid = sample_curve(tets, info["erows"], info["mu0_row"], info["lam_row"], shapes)
     print(f"  continuation grid: {len(grid)} points on the deformation curve (μ₀ frame)")
     random.seed(11)
-    moderate = [t for t in grid if mp.mpf("0.1") <= abs(t[1]) ** 2 <= 10 and mp.mpf("0.001") <= abs(t[0]) <= 1000]
+    moderate = [t for t in grid if mp.mpf("0.2") <= abs(t[1]) ** 2 <= 5 and mp.mpf("0.02") <= abs(t[0]) <= 50]
     pts0 = random.sample(moderate, min(150, len(moderate)))
     union = list(grid)
     survivors, table, found = meridian_frame(tets, info["erows"], info["mu0_row"], info["lam_row"], union)
@@ -649,14 +669,9 @@ def run_knot(knot, shapes_hint, check, wb):
     check(f"{knot}_apoly_recovered", fit is not None)
     if fit is None:
         return None
-    Aexpr, P = fit
+    Aexpr, poly, method = fit
     Lsym, Msym = sp.symbols("L M")
-    # {(deg_L, deg_x): coeff} from the recovered A
-    poly = {}
-    for (i, j2), c in sp.Poly(Aexpr, Lsym, Msym).terms():
-        assert j2 % 2 == 0, "odd M-power in the recovered A"
-        poly[(i, j2 // 2)] = int(c)
-    print(f"  A(L, M) = {Aexpr}")
+    print(f"  A(L, M) = {Aexpr}   [fit: {method}]")
     vals = {(sL, sM): int(Aexpr.subs({Lsym: sL, Msym: sM})) for sL in (1, -1) for sM in (1, -1)}
     check(f"{knot}_apoly_vanishes_at_complete_point", any(v == 0 for v in vals.values()), f"A(±1,±1) = {vals}")
     # exact frame certificate on the polynomial: A(L, ±1) vanishes only at L = ±1
@@ -676,8 +691,8 @@ def run_knot(knot, shapes_hint, check, wb):
     random.seed(23)
     fresh_pool = [t for t in grid if t not in pts0]
     fresh = [(x0 * L ** (2 * kstar), L, z) for (x0, L, z) in random.sample(fresh_pool, min(30, len(fresh_pool)))]
-    resid = max(abs(sum(c * (L ** 2) ** i * x ** j for (i, j), c in P.items())) for (x, L, *_) in fresh) if fresh else None
-    scale = max(abs(c) for c in P.values())
+    resid = max(abs(sum(c * L ** i * x ** j for (i, j), c in poly.items())) for (x, L, *_) in fresh) if fresh else None
+    scale = max(abs(c) for c in poly.values())
     check(f"{knot}_apoly_verified_on_fresh_samples", resid is not None and resid < mp.mpf(10) ** -28 * scale,
           f"max residual {mp.nstr(resid, 5) if resid is not None else None}")
     hull, slopes = newton_slopes(poly, None)
@@ -692,9 +707,10 @@ def run_knot(knot, shapes_hint, check, wb):
     wb.add_data(f"{knot}_lambda_in_cycle_basis", list(info["lam"]))
     wb.add_data(f"{knot}_cusp_shape_lambda_over_mu", mp.nstr(info["tau"], 40))
     wb.add_data(f"{knot}_apoly", str(Aexpr))
+    wb.add_data(f"{knot}_apoly_fit_method", method)
     wb.add_data(f"{knot}_newton_hull", [list(p) for p in hull])
     wb.add_data(f"{knot}_newton_slopes", sorted(str(s) for s in slopes))
-    return dict(info=info, Aexpr=Aexpr, poly=poly, P=P, slopes=slopes, hull=hull)
+    return dict(info=info, Aexpr=Aexpr, poly=poly, method=method, slopes=slopes, hull=hull)
 
 
 def main() -> int:
