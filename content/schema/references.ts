@@ -9427,6 +9427,29 @@ export const references: Reference[] = [
     note: "Registered 2026-08-01 (awzero, bean qou-k16h) at METADATA-VERIFICATION level only (full text not retrievable here; proxy 403 on OUP). The paper that names the q-Airy function A_q — the Ramanujan entire function whose zeros carry the KSel-2-ID extremal-support class. No zero-asymptotics theorem is attributed to it: the search-index evidence indicates it proves Plancherel–Rotach asymptotics for q-orthogonal polynomials with unbounded recurrence coefficients, not statements about zeros of A_q.",
   }),
 
+  // ── Ramis–Sauloy 2006 (the q-analogue of the wild fundamental group) ──
+  ref({
+    id: "ramis-sauloy2006",
+    library: {
+      docId: "arxiv-math-0611521v1",
+      dir: "library/arxiv-math-0611521v1",
+      pdf: "library/arxiv-math-0611521v1/0611521v1.pdf",
+      stage: "sections",
+      pages: 22,
+      sections: 16,
+      arxiv: "math/0611521v1",
+    },
+    type: "article",
+    title: "The q-analogue of the wild fundamental group (I)",
+    author: [
+      { family: "Ramis", given: "Jean-Pierre" },
+      { family: "Sauloy", given: "Jacques" },
+    ],
+    issued: { "date-parts": [[2006, 11, 17]] },
+    URL: "https://arxiv.org/abs/math/0611521",
+    note: "Registered 2026-09-07; owner-uploaded (a23d06ce2c) and ingested the same day. Constructs the galoisian Stokes operators for irregular linear q-difference equations explicitly, parameterised by points of an elliptic curve minus a finite set; residues at those singularities are q-analogues of ALIEN DERIVATIONS, and they freely generate the Lie algebra of the Stokes subgroup. This is the literature object that QOU/Mathlib/QAlienBridgeEquation.lean's QBridgeSystem axiomatises. TWO LOAD-BEARING SCOPE FACTS for anyone mapping a corpus module onto it. (1) §2.2 verbatim: a module is pure isoclinic of slope mu if S(M) = {mu}; direct sums of pure isoclinic modules are called pure and 'they are irregular objects without wild monodromy'. So purity at a point EXCLUDES q-alien derivations there — a sharper and more direct statement than the RSZ Thm 3.3.5 dimension count recorded on the Bugeaud entry below, which reaches the same conclusion by arithmetic. (2) The paper restricts THROUGHOUT to the integral-slope case and says so explicitly: 'We do not know what will happen in the non integral slope case.' A slope-1/2 module is therefore outside its machinery even before purity is considered.",
+  }),
+
   // ── Ramis–Sauloy–Zhang 2013 (local analytic classification of q-difference equations) ──
   ref({
     id: "ramis-sauloy-zhang2013",
