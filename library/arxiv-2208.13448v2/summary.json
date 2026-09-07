@@ -1,0 +1,111 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2208.13448v2",
+ "source_sha256": "8bfa244cf7ca867d",
+ "brief": "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS — In this paper we consider the problem of computing the diﬀere nce Galois groups of order three equations for a large",
+ "extended": "**ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS**\n\n*THOMAS DREYFUS AND MARINA POULET*\n\n37 pp, 18 sections.\n\n**Abstract.** In this paper we consider the problem of computing the diﬀere nce Galois groups of order three equations for a large class of diﬀerenc e operators including the shift operator (Case S), the q-diﬀerence operator (Case Q), the Mahler operator (Case M) a nd the elliptic case (Case E). We show that the general problem c an be reduced to several ancillary problems. We prove criteria to detect the irreduc ible and imprimitive Galois groups. Finally, we give a suﬃcient condition of diﬀerentia l transcendence of solutions of order three diﬀerence equations. We also compute the diﬀe rence Galois group of an equation suggested by Wadim Zudilin.\n\n**Outline.** 1 Introduction; 2.1 Galois groups; Notations and conventions; 2 Difference algebra; 2.3 From theory to practice; 3 Galois groups of difference systems; 3.1 The reducible case; 3.2 The imprimitive case; 3.3 The primitive case; 4 Galois groups of equations of order one and ; 4.2 Galois groups of diagonal systems; 5 Galois groups of equations of order two; 6.1 Reducible case; 6 Galois groups of equations of order three; 6.2 Imprimitive case; 6.4 Summary; 7 Application to the differential transcendenc; References",
+ "tokens": {
+  "brief": 48,
+  "extended": 330
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-21-galois-groups",
+   "title": "Galois groups",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-notations-and-conventions",
+   "title": "Notations and conventions",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-2-difference-algebra",
+   "title": "Difference algebra",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-004-23-from-theory-to-practice",
+   "title": "From theory to practice",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-005-3-galois-groups-of-difference-systems",
+   "title": "Galois groups of difference systems",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-006-31-the-reducible-case",
+   "title": "The reducible case",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-007-32-the-imprimitive-case",
+   "title": "The imprimitive case",
+   "pages": "11-19"
+  },
+  {
+   "id": "sec-008-33-the-primitive-case",
+   "title": "The primitive case",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-009-4-galois-groups-of-equations-of-order-one-and-di",
+   "title": "Galois groups of equations of order one and diagonal systems",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-010-42-galois-groups-of-diagonal-systems",
+   "title": "Galois groups of diagonal systems",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-011-5-galois-groups-of-equations-of-order-two",
+   "title": "Galois groups of equations of order two",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-012-61-reducible-case",
+   "title": "Reducible case",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-013-6-galois-groups-of-equations-of-order-three",
+   "title": "Galois groups of equations of order three",
+   "pages": "23-30"
+  },
+  {
+   "id": "sec-014-62-imprimitive-case",
+   "title": "Imprimitive case",
+   "pages": "30-34"
+  },
+  {
+   "id": "sec-015-64-summary",
+   "title": "Summary",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-016-7-application-to-the-differential-transcendence",
+   "title": "Application to the differential transcendence",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-017-references",
+   "title": "References",
+   "pages": "35-37"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

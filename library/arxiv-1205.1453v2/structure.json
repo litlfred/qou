@@ -1,0 +1,129 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1205.1453v2",
+ "source": {
+  "file": "1205.1453v2.pdf",
+  "sha256": "29d1b1fd9466a3d885fab05470c70d7dd07e155afafd5e0e9214165b6a603f4d",
+  "bytes": 142254,
+  "pages": 12,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1205.1453",
+   "version": "2",
+   "primary_class": "math.CA",
+   "stamp_date": "9 May 2012"
+  },
+  "doi": null,
+  "title": "An asymptotic formula of the divergent bilateral basic hypergeometric series Takeshi MORITA\u2217",
+  "authors_raw": null,
+  "title_lines": [
+   "An asymptotic formula of the divergent",
+   "bilateral basic hypergeometric series",
+   "Takeshi MORITA\u2217"
+  ],
+  "abstract": "We show an asymptotic formula of the divergent bilateral bas ic hypergeometric series 1\u03c8 0(a; \u2212;q, \u00b7) with using the q-Borel-Laplace method. We also give the limit q \u2192 1 \u2212 0 of our asymptotic formula.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210921123104-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Basic notations",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "An asymptotic formula of the divergent series 10(a;-;q,x)",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Local solutions of the degenerated equation",
+   "page": 8,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "An asymptotic formula",
+   "page": 9,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "The limit q1-0 of the asymptotic formula",
+   "page": 10,
+   "source": "outline",
+   "number": "4"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 5424,
+   "n_words": 1065
+  },
+  {
+   "id": "sec-001-2-basic-notations",
+   "number": "2",
+   "title": "Basic notations",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 3672,
+   "n_words": 790
+  },
+  {
+   "id": "sec-002-31-local-solutions-of-the-degenerated-equation",
+   "number": "3.1",
+   "title": "Local solutions of the degenerated equation",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 1322,
+   "n_words": 289
+  },
+  {
+   "id": "sec-003-32-an-asymptotic-formula",
+   "number": "3.2",
+   "title": "An asymptotic formula",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 4568,
+   "n_words": 897
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 6,
+  "sections": 4,
+  "chars_total": 14986
+ }
+}
