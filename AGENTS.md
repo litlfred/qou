@@ -318,6 +318,70 @@ first what each route derives and what it selects.
   that is the moment to stop and say so in the report.
 
 
+## 🟥 ASK THE OWNER BEFORE CHANGING THINGS (owner directive, 2026-09-07) — STRICT
+
+**This OVERRIDES the standing excise / sweep / drain / migrate authorisations
+throughout this document.** Verbatim: *"OVERRIDE / excise guidance.... new
+guidance = ask owner for changes (if changes are not increasing precision /
+derived from corpus)"*.
+
+**Default: ask first.** An agent may no longer start a corpus-wide excision,
+sweep, drain, migration, rename tranche or refactor on the strength of a
+directive written here. Those passages record what the owner *wanted at the
+time*; they are not standing permission to begin one now. Put the change to the
+owner with its measured blast radius and wait.
+
+### The two exemptions, and they are narrow
+
+A change proceeds without asking only if it is one of:
+
+1. **It increases precision.** Removing a float64 path, carrying `mpf` further
+   up the call chain, replacing a hardcoded literal with a derived value,
+   raising `mp.dps` where it was silently truncating. The test is that the
+   change makes a number *more* correct or makes a wrong number *impossible* —
+   not that it tidies something near a number.
+2. **It is derived from the corpus.** The corpus already fixes the answer and
+   you are making the code agree with it: the file's own docstring names the
+   quantity, a notation-register table publishes the value, a sorry-free Lean
+   theorem states the identity, or a producer's own convention is declared and
+   violated one line down. The test is that you can point at the corpus
+   artifact that decides it, and that a reviewer could check your work against
+   that artifact rather than against your reasoning.
+
+Everything else asks. Notably **not** exempt: consolidating onto a "better"
+route, tidying an inconsistency, mass-refreshing witnesses or sidecars,
+regenerating a derived artifact that belongs to someone else's arc, or applying
+a rule from this document across files you were not sent to.
+
+### Why the exemptions are shaped this way
+
+Both are things a reviewer can verify **without reconstructing the agent's
+session**. A precision fix is checkable by running the gate; a corpus-derived
+fix is checkable by opening the artifact it cites. Everything outside them
+requires trusting the agent's judgement about what *should* change, and that is
+the owner's call in a mathematics repository.
+
+### Worked example, the same day
+
+`q_int_at` / `q_int_classical_at` were added to
+`qou_substrate/constants.py` with **float64 fallbacks** in the no-mpmath branch.
+Excising them is exemption 1 (it removes a float64 path) *and* exemption 2 (the
+file's other four fallbacks all `raise`, so the corpus already fixed the
+convention) — so it proceeded without asking. Rewriting the *other* 29
+classical-convention files found by the same audit does **not** qualify: it needs
+a per-file basis determination, and it waits.
+
+### Interaction with the rest of this document
+
+- The **ALWAYS-PR** authorisation (branch, commit, push, open the PR) is
+  unaffected — that is about visibility, not about changing content.
+- **Run commands proactively** is unaffected. Measuring is not changing.
+- The **anti-fit**, **anti-laundering** and **NO-FLOAT64** disciplines are
+  unaffected and still bind; this rule adds a gate, it removes none.
+- When in doubt, **measure it, report the blast radius, and ask.** A measurement
+  the owner did not want costs a few minutes; a sweep they did not want costs a
+  review cycle and can bury a real finding under a thousand mechanical diffs.
+
 ## Critical-distance license (standing red-team permission, 2026-06-10)
 
 Agents have standing permission — and, when asked for assessment, an
