@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T09:10:24Z
-updated_at: 2026-09-07T09:11:02Z
+updated_at: 2026-09-07T11:22:14Z
 ---
 
 ## What is established
@@ -74,3 +74,50 @@ Diff the producer against its own recorded `scriptCommitSha` if a deeper clone
 is available (`git fetch --unshallow`), which paths 1-6 of the corpus-grep
 checklist cannot substitute for. Failing that, leave it: a documented
 non-reproducible witness is worth more than a guessed explanation.
+
+
+## A SECOND instance of the same class: `paper-six-term-isotope-sweep`
+
+Found 2026-09-07 while draining the same producer. Same shape as the phase5e
+case above, better characterised.
+
+**The drain is precision-only, and that is measured, not assumed.** The
+UNMODIFIED producer at `8f7e7829218` reproduces the same 15 moved values,
+byte-for-byte (`term5_chirality_factor_a_K` for the proton: 2.3897210637310238
+-> 1.5032359764467356 under both). So the committed witness is stale
+independently of this session's edits.
+
+**Hypotheses tested:**
+
+1. *The braid-ordering ruling (`qou-hu1f`, 2026-09-05) changed the word.*
+   REFUTED, and my first test of it was wrong. `mass_at_3A_proper.py` is the
+   only file in `aK_v2`'s import cone dated after the witness, and
+   `term5_v2_chirality._aK_v2_cached` does call `atom_braid_word_3A` -- so it
+   looked exactly like import-cone drift. Comparing the FULL words (my first
+   attempt compared only the first 6 elements) across `deb9ff5728f~1` -> HEAD:
+   **identical at (1,0), (0,1) and (1,1)**, lengths 11/11/23. Feeding the old
+   word to `aK_v2` gives 1.50323597644673557 -- the new value, not the
+   committed one.
+2. *`aK_v2` is non-deterministic.* Refuted: two separate processes agree to 20
+   digits.
+3. *An upstream witness drifted.* The four upstreams checked
+   (`brane-tower-isospin-diagnosis`, `flavor-dressed-mass-from-substrate-split`,
+   `per-nucleon-shift-derivation`, and the `term5_v2_chirality` /
+   `wedderburn_jones_markov` / `hecke_characters` cone) are ALL dated
+   2026-08-29, older than the witness (2026-08-30).
+
+**Best-supported explanation, marked as inference rather than measurement:**
+the witness was never regenerated as a whole. Its last commit,
+`96a1315ab54` (2026-08-30), changed 62 lines and **did not touch
+`term5_chirality_factor_a_K` at all** -- so those values predate it. The file
+is a partially-updated artifact, and this session's run makes it
+self-consistent for the first time.
+
+**Environment caveat, disclosed rather than argued away.** This container
+records python 3.11.15 / numpy 2.4.6 / scipy 1.17.1 against the committed
+3.13.12 / 2.5.2 / 1.18.1 (mpmath goes the other way, 1.3.0 -> 1.4.1). The
+producer contains **zero** `np.` uses -- numpy is imported `# noqa: F401 (kept
+for downstream consumers)` -- so it does not use the downgraded libraries
+itself. Whether a transitive import does is NOT established here, and the
+HEAD-vs-modified comparison cannot separate environment from staleness because
+both runs share this container.
