@@ -58,4 +58,33 @@ theorem A_involution {F : Type*} [Field F] (L M : F) (hL : L ≠ 0) (hM : M ≠ 
   field_simp
   ring
 
+/-! ## The chirality, pinned against a held table (added 2026-09-07, bean `qou-lrvc`)
+
+Culler's census A-polynomial for `K3_2` (= SnapPy's Rolfsen-table `5_2` = `m015`), read from
+`library/A_census.tgz` in SnapPy's `(μ, λ)` framing, is
+
+    1 + L(M¹⁰ − M⁸ + 2M⁴ + 2M² − 1) + L²(−M¹⁴ + 2M¹² + 2M¹⁰ − M⁶ + M⁴) + L³M¹⁴.
+
+The mirror image of a knot has `A_{K̄}(L, M) = A_K(L⁻¹, M)` up to a unit, so the identity below
+says the derived triangulation is the **mirror** of the census `5_2` — the same conclusion the
+cusp shape (`−conj τ` to 38 digits) and the slopes (`{0,4,10}` against `{−10,−4,0}`) give in
+`fivetwo_chirality_frame_vs_snappy_probe.py`. -/
+
+/-- Culler's `A_{K3_2}`, transcribed from the held census tarball. -/
+def A_census (L M : K) : K :=
+  1 + L * (M ^ 10 - M ^ 8 + 2 * M ^ 4 + 2 * M ^ 2 - 1)
+    + L ^ 2 * (-M ^ 14 + 2 * M ^ 12 + 2 * M ^ 10 - M ^ 6 + M ^ 4) + L ^ 3 * M ^ 14
+
+/-- **The census `5_2` is the derived polynomial under `L ↦ L⁻¹`**: over a field, for `L ≠ 0`,
+`L³ · A(L⁻¹, M) = A_census(L, M)`. -/
+theorem A_census_eq_mirror {F : Type*} [Field F] (L M : F) (hL : L ≠ 0) :
+    L ^ 3 * A L⁻¹ M = A_census L M := by
+  unfold A A_census
+  field_simp
+
+/-- And the derived polynomial is **not** the census one as it stands: at `(L, M) = (2, 0)` the
+derived `A` is `8` and the census polynomial is `1`. -/
+theorem A_ne_A_census : A (2 : ℚ) 0 ≠ A_census (2 : ℚ) 0 := by
+  unfold A A_census; norm_num
+
 end QOU.Mass.FiveTwoAPolynomialFromFareyWord
