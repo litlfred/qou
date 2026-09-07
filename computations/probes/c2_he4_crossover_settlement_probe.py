@@ -20,15 +20,44 @@ WHY IT IS MEASURED AND NOT PREDICTED
 -- which is how `c1(4He) = 7/128` was predicted before it was measured and then
 confirmed twice over (#6931).
 
-**c2 does NOT inherit that shape, and this was checked before the run rather
-than assumed.** An exhaustive search over subsets of a 13-function basis --
-`Z.D, N.D, dI.E, D, E, Z.E, N.E, A.E, A.D, ZZ.D, NN.D, ZN.D, ZZ.E, NN.E, ZN.E`
--- found **ZERO** subsets up to size 5 reproducing all six grouped values AND
-all five known Borromean values. The quadratic terms were included on purpose:
-`tr_M` factorises across the two nucleons (disjoint strand sets), which makes
-the LOG-derivative additive at first order, so second order was expected to
-carry a `phi_p.phi_n` cross term. It does not fit either. So there is nothing to
-predict from, and the number has to be computed.
+**c2 has no closed form IN (Z, N), and that is a narrower fact than this file
+originally claimed.** An exhaustive search over subsets of a 13-function basis
+-- `Z.D, N.D, dI.E, D, E, Z.E, N.E, A.E, A.D, ZZ.D, NN.D, ZN.D, ZZ.E, NN.E,
+ZN.E` -- found **ZERO** subsets up to size 5 reproducing all six grouped values
+AND all five known Borromean values. That measurement stands. The quadratic
+terms were included on purpose: `tr_M` factorises across the two nucleons
+(disjoint strand sets), which makes the LOG-derivative additive at first order,
+so second order was expected to carry a `phi_p.phi_n` cross term. It does not
+fit either.
+
+🛑 **BUT THE CONCLUSION I DREW FROM IT WAS WRONG, AND IS RETRACTED HERE.** This
+file said "there is nothing to predict from, and the number has to be computed",
+and PR #6966 generalised that to "c1's per-letter additivity is special to first
+order and does not propagate up the expansion". **A closed form for c2 exists.**
+`atom_bond_product_closed_form_probe.py` (bean `qou-qqm4`, landed 369f4bb0a7)
+gives
+
+    tr(atom) = PROD_nucleons a(1 + r.e + q.e^2)
+             * PROD_bonds  (1/2)(1 + rho_b.e + tau_b.e^2)
+
+and reproduces **c0, c1 AND c2 for A = 2..5, 9/9, with no free parameter** --
+every factor measured on a smaller object. Verified here by running it directly
+rather than trusting the commit message: `9/9 -- c0, c1 and c2 all reproduced`.
+
+The two results do not conflict; my FRAMING of mine did. In that author's words,
+c2's closed form "is just not a form in (Z, N) alone ... it is a form in the
+ORDERING". Multiplicativity DOES propagate to second order -- over **blocks and
+bonds**, not per letter. My basis had no bond variable in it, so it could not
+have found this however many subsets it enumerated, and a negative result about
+a basis is not a negative result about the quantity.
+
+Their form carries its own scope: sorted orderings only, orders 0-2, A <= 5, and
+not proved. So this is a narrower closed form than "c2 is solved" -- but it is
+decisively more than "nothing to predict from".
+
+**The 439/512 measured below is unaffected and is now independently
+corroborated** -- their 9/9 includes 4He. The number was right; the story I told
+around it was too strong.
 
 WHAT IT DECIDES
 ---------------

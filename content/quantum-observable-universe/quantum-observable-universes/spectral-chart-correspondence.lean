@@ -112,14 +112,31 @@ theorem glue_classical_limit
     (bed.lam_sym⁻¹ : Rˣ) = 1 := by
   rw [hsym, inv_one]
 
-/-- Categorical interpretation: on $\mathbb{P}_q(V)$, the chart-transition
-    coefficient $\kappa$ of `contact_affine_chart` equals
-    $\lambda_{\mathrm{sym}}^{-1}$.  This is the wall — the categorical
-    model of $\mathcal{O}_q(\mathbb{P}^1)$ is not in Mathlib. -/
+/-- **The former `chart_glue_from_spectrum` axiom asserted nothing, and
+    is now a one-line theorem.**
+
+    It stood as an `axiom` for
+
+        ∃ κ : R, κ = ↑bed.lam_sym⁻¹
+
+    which is discharged by `⟨_, rfl⟩`: an existential whose witness is
+    named in its own body is a tautology, for any `R` and any `bed`.
+
+    The docstring called this *"the wall — the categorical model of
+    `O_q(P¹)` is not in Mathlib"*.  The wall is real; this statement was
+    never standing at it.  Nothing here mentions a chart, a transition
+    map, or `P_q(V)` — the categorical interpretation lived entirely in
+    the prose, and the type said only that `λ_sym⁻¹` exists.
+
+    Stating the real claim needs the quantum projective line as an
+    object, which is indeed absent from Mathlib; that gap is deliberately
+    left visible rather than papered over with an axiom that does not
+    reach it. -/
 -- Ref: [kassel1995] https://doi.org/10.1007/978-1-4612-0783-2  §IV.5
-axiom chart_glue_from_spectrum
+theorem chart_glue_from_spectrum
     (bed : SCBraidingEigenvalueData R) :
-    ∃ κ : R, κ = ↑bed.lam_sym⁻¹
+    ∃ κ : R, κ = ↑bed.lam_sym⁻¹ :=
+  ⟨_, rfl⟩
 
 /-- The full spectral–chart correspondence: the chart-glue
     coefficient $\kappa$ of $\mathbb{P}_q(V)$ equals

@@ -261,30 +261,79 @@ OVERQUANT_FIXTURES = [
 ]
 
 
-KNOWN_FALSE = [
-    ("SDP.lean", "strict_complementarity_unique_axiom"),
-    ("SDPRealUniqueness.lean", "slater_strict_complementarity_kernel_axiom"),
-    ("SDPRealUniqueness.lean", "SDPRankUniqueness"),
-    ("SDPRankEquality.lean", "strict_complementarity_kernel_disjoint"),
-    ("SDPRankEquality.lean", "affine_slater_rigidity"),
+KNOWN_FALSE_TEXT = [
+    # The five SDP axioms refuted in PR #6882.  Their text is EMBEDDED, not read
+    # from git, because they no longer exist anywhere on `main` -- the merge that
+    # deleted them is what broke the previous `git show origin/main` self-test the
+    # first time it ran after landing.  A guard whose reference point is the thing
+    # it guards against cannot survive its own success.
+    ("strict_complementarity_unique_axiom", """axiom strict_complementarity_unique_axiom :
+    ∀ {n : ℕ} {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R] [StarRing R] {ι : Type*}
+      {sdp : SDPPrimal n R ι}
+      (sc : StrictComplementarityPair sdp)
+      {Φ' : Matrix (Fin n) (Fin n) R}
+      (_h_feas : sdp.IsFeasible Φ')
+      (_h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar),
+        Φ' = sc.Φstar"""),
+    ("slater_strict_complementarity_kernel_axiom", """axiom slater_strict_complementarity_kernel_axiom :
+    ∀ {n : ℕ} {ι : Type*} [Fintype ι] {sdp : SDPPrimal n ℝ ι}
+      (sc : RealStrictComplementarityPair sdp)
+      {Φ' : Matrix (Fin n) (Fin n) ℝ}
+      (_h_feas : sdp.IsFeasible Φ')
+      (_h_obj : sdp.objAt Φ' = sdp.objAt sc.Φstar)
+      (_h_constraint_diff :
+        ∀ i : ι, Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0)
+      (_h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0)
+      (_h_diff_S : (Φ' - sc.Φstar) * sdp.dualSlack sc.ystar = 0),
+        Φ' = sc.Φstar"""),
+    ("SDPRankUniqueness", """axiom SDPRankUniqueness
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp)
+    (h_slater : sdp.IsStrictlyFeasible)
+    {Φ' : Matrix (Fin n) (Fin n) ℝ}
+    (h_feas : sdp.IsFeasible Φ')
+    (_h_S_diff : sdp.dualSlack sc.ystar * (Φ' - sc.Φstar) = 0)
+    (_h_constraint_diff :
+      ∀ i : ι, Matrix.trace (sdp.constraint i * (Φ' - sc.Φstar)) = 0) :
+    Φ' = sc.Φstar"""),
+    ("strict_complementarity_kernel_disjoint", """axiom strict_complementarity_kernel_disjoint
+    {ι : Type*} [Fintype ι]
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (h_slater : sdp.IsStrictlyFeasible) :
+    ∀ v : Fin n → ℝ,
+      sc.Φstar.mulVec v = 0 →
+      (sdp.dualSlack sc.ystar).mulVec v = 0 →
+      v = 0"""),
+    ("affine_slater_rigidity", """axiom affine_slater_rigidity
+    {n : ℕ} {ι : Type*} [Fintype ι]
+    {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
+    (_h_slater : sdp.IsStrictlyFeasible)
+    (_h_rank_eq : sc.Φstar.rank + (sdp.dualSlack sc.ystar).rank = n)
+    {D : Matrix (Fin n) (Fin n) ℝ}
+    (_h_D_sym : D.IsHermitian)
+    (_h_S_D : sdp.dualSlack sc.ystar * D = 0)
+    (_h_constraint_D : ∀ i : ι, Matrix.trace (sdp.constraint i * D) = 0) :
+    D = 0"""),
 ]
 BASE = "content/quantum-observable-universe/lean/QOU/MathlibExt/"
 THRESHOLD = 5
 
 
 def selftest(rev: str) -> bool:
+    """Score the five refuted SDP axioms from embedded text.
+
+    `rev` is accepted and ignored; it remains only so an older invocation does
+    not fail on an unknown flag.  The fixtures are embedded precisely because
+    reading them from a revision is what broke this self-test the day the
+    refutation merged.
+    """
+    del rev
     ok = True
-    for fname, name in KNOWN_FALSE:
-        try:
-            text = subprocess.run(["git", "show", f"{rev}:{BASE}{fname}"],
-                                  capture_output=True, text=True, check=True).stdout
-        except subprocess.CalledProcessError:
-            print(f"  SELFTEST ERROR: cannot read {fname} at {rev}", file=sys.stderr)
-            ok = False
-            continue
-        found = [a for a in axioms_in(text, fname) if a[0] == name]
+    for name, text in KNOWN_FALSE_TEXT:
+        found = [a for a in axioms_in(text, f"{name}.fixture") if a[0] == name]
         if not found:
-            print(f"  SELFTEST FAIL: parser did not find `{name}` in {fname}@{rev}", file=sys.stderr)
+            print(f"  SELFTEST FAIL: parser did not find `{name}` in its own fixture",
+                  file=sys.stderr)
             ok = False
             continue
         sc, reasons = score(found[0][2])
@@ -309,13 +358,14 @@ def selftest(rev: str) -> bool:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--selftest", action="store_true")
-    ap.add_argument("--rev", default="origin/main",
-                    help="revision holding the five known-false axioms (default origin/main)")
+    ap.add_argument("--rev", default="",
+                    help="accepted and ignored; the known-false axioms are embedded fixtures")
     ap.add_argument("--root", default="content")
     ap.add_argument("--top", type=int, default=25)
     args = ap.parse_args()
 
-    print(f"self-test against the five known-false SDP axioms at {args.rev}:", file=sys.stderr)
+    print("self-test against the five known-false SDP axioms (embedded fixtures):",
+          file=sys.stderr)
     if not selftest(args.rev):
         print("\nSELF-TEST FAILED — the detector no longer flags axioms it is known to need "
               "to flag. Its verdicts are about itself, not the corpus. Aborting.", file=sys.stderr)

@@ -1,0 +1,176 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1210.5756v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "c7546a79a85b8dd532a665a41fe51c62cfa4fd9681c6f23d05efbccc962cee34",
+  "file": "1210.5756v1.pdf"
+ },
+ "provenance": {
+  "title": "Contact Graphs of Unit Sphere Packings Revisited \u2217",
+  "authors": "K\u00e1roly Bezdek\u2020and Samuel Reid \u2021",
+  "arxiv": {
+   "id": "1210.5756",
+   "version": "1",
+   "primary_class": "math.MG",
+   "stamp_date": "21 Oct 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 11,
+  "by_kind": {
+   "theorem": 7,
+   "lemma": 3,
+   "remark": 1
+  },
+  "formalization_candidates": 10
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "(i) The number of touching pairs in an arbitrary packing of n\u2265 2 unit balls in E3 is always less than",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "(i) The number of touching triplets (resp., quadruples) in an arbitrary packing of n\u2265 3 (resp., n\u2265 4) unit",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "The number of touching pairs (resp., triplets) in an arbitrary packing of spherical caps of",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3",
+   "name": null,
+   "statement": "Sections 5 and 6 present our elementary and somewhat computational proof of Theorem 3.",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4",
+   "name": null,
+   "statement": "Let B1, B2,..., B13 be 13 di\ufb00erent members of a packing of unit balls in E3. Assume that each",
+   "section_file": "sections/sec-001-2-proof-of-i-in-theorem-1.md",
+   "section_title": "Proof of (i) in Theorem 1",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "Let T be the convex hull of the points t2, t3,..., t13. Then the radius of the circumscribed circle",
+   "section_file": "sections/sec-001-2-proof-of-i-in-theorem-1.md",
+   "section_title": "Proof of (i) in Theorem 1",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5",
+   "name": null,
+   "statement": "Let B1, B2,..., B14 be 14 di\ufb00erent members of a packing of unit balls in E3. Assume that",
+   "section_file": "sections/sec-001-2-proof-of-i-in-theorem-1.md",
+   "section_title": "Proof of (i) in Theorem 1",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "7",
+   "name": null,
+   "statement": "LetF be an arbitrary (\ufb01nite or in\ufb01nite) family of non-overlapping unit balls in E3 with the unit",
+   "section_file": "sections/sec-001-2-proof-of-i-in-theorem-1.md",
+   "section_title": "Proof of (i) in Theorem 1",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3",
+   "name": null,
+   "statement": "The number of regular triangles (resp., regular tetrahedra) of edge length 2 sharing a vertex in",
+   "section_file": "sections/sec-005-4-proof-of-i-in-theorem-2-using-theorem-3.md",
+   "section_title": "Proof of (i) in Theorem 2 using Theorem 3",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "ensures that neither C6, C\u2032",
+   "section_file": "sections/sec-006-5-the-polygon-lemmas-on-s2-for-theorem-3.md",
+   "section_title": "The Polygon Lemmas on S2 for Theorem 3",
+   "pages": "8-13",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1",
+   "name": null,
+   "statement": "LetX be a point set on S2 with minimum spherical distance \u03c0/3. Then a point in X cannot be",
+   "section_file": "sections/sec-007-6-proof-of-theorem-3.md",
+   "section_title": "Proof of Theorem 3",
+   "pages": "13-13",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

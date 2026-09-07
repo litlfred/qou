@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T09:38:55Z
-updated_at: 2026-09-06T13:54:37Z
+updated_at: 2026-09-07T05:21:40Z
 parent: qou-2akx
 ---
 
@@ -27,3 +27,9 @@ DETECTORS: (row 37) Lean RE_C_SQRTVAR false positive on coneCoordRow5 q := coneR
 STEP 3 SURVEY (from the C surface outward, 147 C files -> 43 strong-verdict citing docs/beans read): outside the c_k ladder arc the corpus's refutations bind both conventions or rest on D (class i/iii); inside it they are C-conditional and the individual docs do not say so (class ii): 2026-06-24 lw2-c2 'does not reproduce'; 2026-07-19 c3 real-routes 'pruned' (also rests on the TR_M[5] bug, qou-dbau); 2026-07-03 eta-singularity 'refuted'; 2026-06-10 ck state-of-play (10x refuted); the c3-hypersensitivity docs' VALUES (the 1/u^3 argument itself is frame-independent); 2026-08-31 imq-elliptic numbers (its |q|>1 refutation is convention-independent); q-beta-cos-resummation numbers. Full table: docs/audits/2026-09-06-convention-c-excision-and-c-conditional-gates.md §4. Not re-scoped in place (dated records); follow-up should add the scoping sentence to each and to citing content blocks.
 NOT TOUCHED: qou-cds1 ladder (not a z-swap, decayLadder_zC_threeRow_ne_zero), qou-pmkh 4 sites, qou-cds2 Gram pair, qou-mass/_internal (computations/ untouched), the shape audit's 13 (renaming to satisfy it is 1a audit-dodging).
 precision-gates.sh --changed: RED on the tree-wide ratchets (q0-anchor flip=1 hadron-knot-table, refill, import-time dps, never-raises-dps, float64-padding, raw-float64, value-copy, q0-drift, hardcoded braid word, mixed mpf/f64); none of this branch's files is under computations/ or named in the output; regenerated audit witnesses reverted, no baseline widened.
+
+
+
+## 2026-09-07 — merged as #6969 (main 1216e1150d); one follow-up left open
+
+Sibling comment on #6969 (from #6968 / qou-p6m1): the comparison ledger EXEMPTS a `deliberate-c-frame` site from `convention-c-value-audit.py`'s blocking count, while `trace-convention-registry.json`'s `blocked_on_rederivation` keeps the same class COUNTED ("a declaration accounts for a site without excusing it"). The two registries have zero overlap (26 vs 13 rows) and opposite accounting rules, so the headline C figure depends on which file a site was written into. Options: (1) keep ledger for provenance but have the value audit still count `deliberate-c-frame` rows (matches the registry rule; headline goes 0 -> 14 blocking, all c_k ladder); (2) move the registry to the ledger rule. Not resolved in #6969.

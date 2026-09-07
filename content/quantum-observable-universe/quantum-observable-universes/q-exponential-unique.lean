@@ -1,65 +1,55 @@
-import Mathlib.Algebra.Polynomial.Laurent
+import QOU.QuantumObservableUniverses.QAnalysisUniqueness
+import QOU.QuantumObservableUniverses.QAnalysisUniquenessCounterexamples
 
 
 /-!
-# QOU.QExponential.unique — uniqueness of the q-exponential grouplike
+# prop:q-exponential-unique — witness extract
 
-Any two grouplikes of H_q satisfying the flow equation D_q e = e and
-the counit condition ε(e) = 1 coincide.  Proof reduces to: the flow
-equation on primitives has only the trivial solution.
+The formalisation lives in the library:
 
-LaTeX: `\label{prop:q-exponential-unique}`
+* `QOU.QExponential.unique_of_flow_rigid`
+  (`QOU/QuantumObservableUniverses/QAnalysisUniqueness.lean`)
 
-## References
+`QExponential` itself was relocated into
+`QOU/QuantumObservableUniverses/QAnalysis.lean` on 2026-09-06; this file
+previously inlined a fourth copy of it.
 
-- [manuscript] §2-quantum-observable-universes/q-exponential-unique
-- [kassel1995] Quantum Groups (Springer GTM 155), §III.3 (grouplikes)
+## What changed 2026-09-06
+
+This file previously held an unconditional
+
+    axiom QExponential.unique_axiom … : e₁.e_q = e₂.e_q
+
+**The axiom is false.**  `coprod := fun x => (x, x)`, a constant counit
+and `D_q := id` satisfy `grouplike`, `counit_eq_one` and
+`flow_invariant` for *every* `e_q`, so two records agree on all three
+hypothesised fields and differ in the concluded one.  Refutation:
+`QOU.QAnalysisCounterexamples.not_qExponential_unique`.
+
+The live statement is conditional on `flow_rigid` -- verbatim the step
+the narrative proof `prf:q-exponential-unique` asserts, *"the flow
+equation on primitives has only the trivial solution"* -- and on the
+additivity that proof silently uses when it forms `e₁ - e₂`.
 -/
 
-namespace QOU
+namespace QOU.QExponentialUniqueWitness
 
-noncomputable section
+open QOU QOU.QAnalysisCounterexamples
 
-abbrev R_q := LaurentPolynomial ℤ
-
-/-- **q-Exponential data** (mirrors the sibling `def:q-exponential`):
-    an abstract grouplike of the q-shuffle Hopf algebra, characterised
-    by the flow equation `D_q g = g`. -/
-structure QExponential (H : Type*) where
-  /-- The grouplike element e_q ∈ H. -/
-  e_q : H
-  /-- Prescribed coproduct `coprod : H → H × H`. -/
-  coprod : H → H × H
-  /-- Counit on e_q. -/
-  counit : H → R_q
-  /-- q-Jackson derivative on H. -/
-  D_q : H → H
-  /-- Grouplike axiom: Δ_q(e_q) = (e_q, e_q). -/
-  grouplike : coprod e_q = (e_q, e_q)
-  /-- Counit: ε(e_q) = 1. -/
-  counit_eq_one : counit e_q = 1
-  /-- Flow equation: D_q e_q = e_q. -/
-  flow_invariant : D_q e_q = e_q
-
-/-- **External axiom (Kassel 1995 §III.3, Milnor–Moore):
-    q-exponential grouplike uniqueness.** -/
--- Ref: [kassel1995] Quantum Groups (Springer GTM 155), §III.3
-axiom QExponential.unique_axiom :
-    ∀ {H : Type*} (e₁ e₂ : QExponential H),
-      e₁.coprod = e₂.coprod →
-      e₁.counit = e₂.counit →
-      e₁.D_q = e₂.D_q →
-      e₁.e_q = e₂.e_q
-
-/-- **Uniqueness of the q-exponential grouplike.** -/
--- Ref: [kassel1995] Quantum Groups, §III.3
-theorem QExponential.unique {H : Type*} (e₁ e₂ : QExponential H)
-    (h_coprod : e₁.coprod = e₂.coprod)
-    (h_counit : e₁.counit = e₂.counit)
-    (h_Dq : e₁.D_q = e₂.D_q) :
+/-- The library statement, conditional on flow rigidity. -/
+example {H : Type*} [AddCommGroup H] (e₁ e₂ : QExponential H)
+    (h_counit : e₁.counit = e₂.counit) (h_Dq : e₁.D_q = e₂.D_q)
+    (hD_sub : ∀ x y : H, e₁.D_q (x - y) = e₁.D_q x - e₁.D_q y)
+    (hε_sub : ∀ x y : H, e₁.counit (x - y) = e₁.counit x - e₁.counit y)
+    (flow_rigid : ∀ x : H, e₁.D_q x = x → e₁.counit x = 0 → x = 0) :
     e₁.e_q = e₂.e_q :=
-  QExponential.unique_axiom e₁ e₂ h_coprod h_counit h_Dq
+  QExponential.unique_of_flow_rigid e₁ e₂ h_counit h_Dq hD_sub hε_sub flow_rigid
 
-end
+/-- The unconditional form that stood here as an axiom is refuted. -/
+example :
+    ¬ (∀ {H : Type} (e₁ e₂ : QExponential H),
+        e₁.coprod = e₂.coprod → e₁.counit = e₂.counit → e₁.D_q = e₂.D_q →
+        e₁.e_q = e₂.e_q) :=
+  not_qExponential_unique
 
-end QOU
+end QOU.QExponentialUniqueWitness

@@ -3,10 +3,10 @@
  "doc_id": "qt2pf5d0mn",
  "source_sha256": "4c8581c3b46398e3",
  "brief": "UC Santa Barbara — 18 sections: Abstract; Introduction; Higher Categories",
- "extended": "**UC Santa Barbara**\n\n*UC Santa Barbara Electronic Theses and Dissertations*\n\n106 pp, 18 sections.\n\n**Outline.** Abstract; Introduction; Higher Categories; Ribbon Fusion Categories; G-crossed Braided Spherical Fusion Categories ; Monoidal 2-categories with Duals; Invariants of 4-manifolds; Partition Function; A Formula for the Partition Function; Examples; Variation: Trivial G-grading; Proof of Invariance; Invariance under Choice of Representatives; Invariance under change of ordering; Pachner Moves; Invariance under Pachner Moves; Future Directions and Open Questions; Bibliography",
+ "extended": "**UC Santa Barbara**\n\n*UC Santa Barbara Electronic Theses and Dissertations*\n\n106 pp, 18 sections.\n\n**Outline.** Abstract; Introduction; Higher Categories; Ribbon Fusion Categories; G-crossed Braided Spherical Fusion Categories ; Monoidal 2-categories with Duals; Invariants of 4-manifolds; Partition Function; A Formula for the Partition Function; Examples; Variation: Trivial G-grading; Proof of Invariance; Invariance under Choice of Representatives; Invariance under change of ordering; Pachner Moves; Invariance under Pachner Moves; Future Directions and Open Questions; Bibliography\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.1.1: [44] If X1,X 2 are any two repre-\n- Theorem 2.1.3: [44] Every monoidal categoryC is monoidal equivalent to a strict monoidal\n- Theorem 2.2.3: [48] LetD be a G-BSFC, then there exist a strict G-BSFCD′ with a\n- Theorem 3.1.4: The partition function ZD(M;T ) is an invariant\n- Theorem 4.1.4: Given a coloring F = (g,f ), we have\n- Theorem 4.2.9: LetT,T′ be two ordered triangulations of M which diﬀer by a reorder-",
  "tokens": {
   "brief": 18,
-  "extended": 147
+  "extended": 266
  },
  "sections": [
   {
@@ -103,7 +103,8 @@
  "provenance": {
   "kind": "extractive",
   "from": [
-   "section-titles"
+   "section-titles",
+   "candidates"
   ],
   "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
  }
