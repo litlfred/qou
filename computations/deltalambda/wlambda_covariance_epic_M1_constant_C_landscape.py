@@ -25,7 +25,7 @@ import sys
 import mpmath as mp
 
 mp.mp.dps = 30
-M_INF = mp.mpf('0.300186614161')      # merged #5901 IO leading (CS) margin
+from _m1_io_constants import M_INF  # merged #5901 IO leading constants -- single source, see that module
 C_TARGET = M_INF * mp.sqrt(79)         # rigorous C must be <= this for N0 <= 79
 
 

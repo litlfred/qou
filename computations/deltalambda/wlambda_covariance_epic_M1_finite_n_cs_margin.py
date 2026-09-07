@@ -32,9 +32,7 @@ import sys
 import mpmath as mp
 
 mp.mp.dps = 30
-LEAD_MARGIN = mp.mpf('0.300186614161')     # from PR #5901 IO computation
-LEAD_SIGRATIO = mp.mpf('0.679609581496')
-LEAD_RHO = mp.mpf('0.979796195657')
+from _m1_io_constants import LEAD_MARGIN, LEAD_SIGRATIO, LEAD_RHO  # merged #5901 IO leading constants -- single source, see that module
 
 
 def partitions(n):

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T05:54:26Z
-updated_at: 2026-09-06T05:54:26Z
+updated_at: 2026-09-06T14:05:22Z
 ---
 
 ## Mechanism (measured 2026-09-06)
@@ -60,3 +60,28 @@ settle their question silently. What is reportable without deciding anything:
 the script's stated contract says READS and its code WRITES, and the write
 loses a computed value. Restoring the owner's content (PR #6904) fixes the
 instance; the collision needs the owning session's call.
+
+
+---
+
+## SUPERSEDED by `qou-w8rv` — which found the ROOT CAUSE (2026-09-06)
+
+A sibling filed *"bar_pairing_binding_observable silently CLOBBERS three
+canonical chi caches on every run — its cache-key guard reads a field name that
+does not exist"*.
+
+That is the diagnosis this bean could not reach. I established the SYMPTOM (the
+script's docstring calls the path an input and its code writes it) and measured
+the shape (the two payloads have DISJOINT key sets — mine `tr_M_at_q0`/`N`/`Z`/
+`convention`/`description`/`producer`/`q_0_50dps`, theirs `_provenance`/`kind`/
+`q_str`/`scriptFile`/`pr_*`/`rust_fn` — so two producers share one path rather
+than one being a stale copy). `qou-w8rv` explains WHY: the guard that should
+prevent the write tests a field that is not there, so it never fires.
+
+**NOT closed.** `qou-w8rv` is `todo`, so the defect is live, and AGENTS.md
+forbids closing a bean whose subject is still open. Work it there; this one is
+the symptom record and the payload-shape measurement.
+
+The restore of `chi-deuteron-h6-at-q0-50dps.witness.json` (PR #6904, on main)
+fixed the one instance. Anyone re-running that producer re-breaks it until
+`qou-w8rv` lands.

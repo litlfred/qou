@@ -58,11 +58,11 @@ def main():
         # Are alpha, beta close to rational numbers or known constants?
         # Let's PSLQ them individually
         print("PSLQ alpha:")
-        res_a = mp.pslq([alpha, 1, mp.mpf(1)/mp.mpf("137.0359991"), mp.catalan, mp.pi], tol=1e-5)
+        res_a = mp.pslq([alpha, 1, mp.mpf(1)/mp.mpf("137.035999084"), mp.catalan, mp.pi], tol=1e-5)
         print(res_a)
         
         print("PSLQ beta:")
-        res_b = mp.pslq([beta, 1, mp.mpf(1)/mp.mpf("137.0359991"), mp.catalan, mp.pi], tol=1e-5)
+        res_b = mp.pslq([beta, 1, mp.mpf(1)/mp.mpf("137.035999084"), mp.catalan, mp.pi], tol=1e-5)
         print(res_b)
 
 if __name__ == "__main__":

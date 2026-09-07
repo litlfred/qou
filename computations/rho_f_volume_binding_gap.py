@@ -177,7 +177,9 @@ def main() -> None:
             for name, vol in LINK_PRIMITIVES.items()
         }
         print(f"{row['isotope']:>8}  {row['A']:>3}  {delta_f:>12.3f}  "
-              + "  ".join(f"{r:>18.3f}" for r in ratios.values()))
+              # float() for DISPLAY only — mpf has no __format__ for
+              # ">18.3f"; the ratios themselves stay mpf. (qou-9q4h)
+              + "  ".join(f"{float(r):>18.3f}" for r in ratios.values()))
         rows_out.append({
             "isotope": row["isotope"],
             "A": row["A"], "Z": row["Z"], "N": row["N"],
@@ -206,10 +208,11 @@ def main() -> None:
     print(f"Candidate (isotope, link) pairs within ±10% of ρ_F ∈ "
           f"{{m_e, 2 m_e}}: {len(matches)}")
     for m in matches:
+        # float() for DISPLAY only, same as the table above. (qou-9q4h)
         print(f"  {m['isotope']:>5} via {m['link']:>20}  "
-              f"ρ_F = {m['rho_over_me']:.3f}·m_e  "
+              f"ρ_F = {float(m['rho_over_me']):.3f}·m_e  "
               f"(target {m['target_rho_over_me']}·m_e, "
-              f"Δ {m['deviation_pct']:+.2f}%)")
+              f"Δ {float(m['deviation_pct']):+.2f}%)")
 
     if not matches:
         print("  (none — every isotope's binding requires a "

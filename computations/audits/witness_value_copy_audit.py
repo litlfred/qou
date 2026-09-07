@@ -79,6 +79,11 @@ def index_witnesses() -> dict[str, set[str]]:
     """decimal literal -> set of witness paths carrying it."""
     idx: dict[str, set[str]] = defaultdict(set)
     for w in COMP.rglob("*.witness.json"):
+        if w.name in REPORT_WITNESSES:
+            # A detector's report, not a producer's output -- see the block on
+            # REPORT_WITNESSES. OWN_WITNESS is in that set; the check below is
+            # kept because its comment carries the self-reference measurement.
+            continue
         if w.name == OWN_WITNESS:
             # SELF-REFERENCE. This audit writes every literal it reports into
             # its own witness, which is then indexed on the next run -- so the
@@ -183,6 +188,116 @@ def _marker_above(lines: list[str], lineno: int) -> bool:
     return False
 
 
+#: Witnesses that are a DETECTOR'S REPORT, not a producer's output.
+#:
+#: This audit's premise is "a producer computed a number and recorded it; a
+#: second script typed it in". An audit's witness TABULATES the literals it
+#: found -- `cal4_disguise_hunt` says so in its own docstring, that it hunts
+#: "hardcoded high-precision literals (>= 10 digits)". Two detectors agreeing
+#: they saw a number is not evidence that a producer computed it, so a report
+#: in the carrier set inflates every count it touches.
+#:
+#: DECLARED rather than pattern-matched, deliberately. A name match on
+#: `audit`/`hunt`/`scan` is the shape AGENTS.md's detector-blindness taxonomy is
+#: largely a catalogue of, and this audit has contributed two rows to it. The
+#: list is validated STRUCTURALLY by `_selftest` -- each entry must exist and
+#: must carry file/line beside its literals -- so it cannot rot into a set of
+#: names that no longer describe reports.
+#:
+#: Measured (bean qou-4kc0): excluding these was blocked for a session because
+#: it promoted alpha_em, m_e and the proton q0 into "one producer's output,
+#: COPIED", which they are not. That was a symptom of the CANON exclusion below
+#: never having been implemented; with canonical constants correctly owned by
+#: the sibling gate, the 10 remaining promotions are all genuine producer
+#: outputs (TAU_P, the extensivity mu targets, VOL_6_1, the Q_beta convention-B
+#: value) and the promotion is correct.
+#: THREE, not six. My first draft of this list had six, chosen because they
+#: were the most frequent carriers -- i.e. pattern-matched on prominence, the
+#: exact failure the paragraph above warns against, committed while writing the
+#: warning. The structural self-test caught it immediately:
+#: deuteron-delta-i-audit, hardcoded-literal-audit and
+#: fitted-labelled-canonical-audit are ordinary PRODUCER witnesses carrying
+#: `assertions`/`data` (the first even carries LP dual fields), not literal
+#: tabulations. Excluding them would have hidden real carriers.
+REPORT_WITNESSES = frozenset({
+    "witness-value-copy-audit.witness.json",       # this audit
+    "cal4-disguise-hunt.witness.json",             # hunts hardcoded literals
+    "codata-truncation-audit.witness.json",        # the sibling gate
+})
+
+
+def _canon_owned() -> set[str]:
+    """Literals the CODATA/AME gate owns, so this audit does not double-report.
+
+    The module docstring has always promised *"anything the CODATA/AME audit
+    already owns -- reported there, not twice"*, and NOTHING implemented it.
+    CANON was never imported. So a shared reference constant reached this audit
+    on the same footing as one producer's output, and the only thing keeping it
+    out of the actionable bucket was the SPREAD heuristic -- "carried by more
+    than 3 witnesses, so probably a constant".
+
+    That proxy is what blocked bean qou-4kc0. Removing report witnesses from the
+    carrier set drops counts below the `<= 3` cut, and alpha_em, m_e and the
+    proton q0 get promoted into "one producer's output, COPIED", which they are
+    not. Asking the authoritative question instead of the proxy makes the
+    exclusion correct rather than incidental, and it only became precise once
+    alpha entered CANON.
+
+    Prefixes are included: a TRUNCATION of a canonical constant is the sibling
+    gate's finding, not a witness-copy.
+    """
+    import sys  # noqa: PLC0415
+    if str(COMP) not in sys.path:
+        # `_path_bridge` puts substrate/ on the path, not computations/ itself,
+        # so a sibling module one directory UP is not importable from here.
+        sys.path.insert(0, str(COMP))
+    try:
+        from codata_truncation_audit import CANON  # noqa: PLC0415
+    except Exception as exc:  # pragma: no cover - reported, never silent
+        # LOUD, not silent. The first version of this returned an empty set on
+        # failure, and the failure duly happened -- ModuleNotFoundError, because
+        # computations/ was not on the path -- so the exclusion silently did
+        # nothing while the counts looked plausible. A guard that cannot say it
+        # is off is the defect this audit exists to catch, one level up.
+        print(f"  !! CANON exclusion UNAVAILABLE ({type(exc).__name__}: {exc})")
+        print("     Canonical constants will be double-reported here.")
+        return set()
+    return {canon for canon, _ in CANON.values()}
+
+
+def _canon_classify():
+    """The sibling gate's own classifier, or None if it cannot be imported."""
+    import sys  # noqa: PLC0415
+    if str(COMP) not in sys.path:
+        sys.path.insert(0, str(COMP))
+    try:
+        from codata_truncation_audit import classify  # noqa: PLC0415
+    except Exception:
+        return None
+    return classify
+
+
+def _is_canon(lit: str, owned: set[str], classify=None) -> bool:
+    """Does this literal belong to the CODATA/AME gate?
+
+    Uses that gate's OWN `classify()` rather than a prefix test here. A prefix
+    test under-matches exactly where it matters: `0.51099895000` is not a
+    prefix of m_e (`0.51099895069`), it is a DIVERGENT value — the sibling
+    gate's most serious verdict — and a prefix-only check would leave it in this
+    audit's actionable bucket to be reported twice under the wrong name.
+
+    Falls back to the prefix test only if that import fails, so this audit still
+    runs standalone.
+    """
+    if classify is not None:
+        try:
+            if classify(lit):
+                return True
+        except Exception:
+            pass
+    return any(c == lit or c.startswith(lit) or lit.startswith(c) for c in owned)
+
+
 def marked_lines(src: str) -> set[int]:
     """Every line covered by a `witness-copy-intentional:` marker.
 
@@ -246,6 +361,8 @@ def comment_cols(src: str) -> dict[int, int]:
 
 def scan(idx: dict[str, set[str]]) -> list[dict]:
     rows: list[dict] = []
+    canon_owned = _canon_owned()
+    canon_classify = _canon_classify()
     provenance: dict[str, str] = {}
     for w in COMP.rglob("*.witness.json"):
         try:
@@ -291,6 +408,8 @@ def scan(idx: dict[str, set[str]]) -> list[dict]:
                 lit = m.group(0)
                 if sig_digits(lit) < MIN_SIG or lit not in idx:
                     continue
+                if _is_canon(lit, canon_owned, canon_classify):
+                    continue  # the CODATA/AME gate owns it — see _canon_owned
                 if (i, lit) in fx:
                     continue
                 if ccol is not None and m.start() >= ccol:
@@ -379,6 +498,32 @@ def _selftest() -> int:
     ok2 = OWN_WITNESS not in {w for w in ()} and OWN_WITNESS.endswith(".witness.json")
     bad += not ok2
     print(f"  [{'ok ' if ok2 else 'FAIL'}] names a witness file")
+
+    # The REPORT_WITNESSES list must be CHECKED, not trusted. A declared list
+    # is auditable but rots; this is the structural half of the recommendation
+    # in qou-4kc0 — each entry must still exist and must still look like a
+    # report, i.e. carry file/line beside its literals. If one stops being a
+    # report, excluding it silently hides real carriers.
+    print("\nselftest — REPORT_WITNESSES are still reports")
+    for name in sorted(REPORT_WITNESSES):
+        hits = list(COMP.rglob(name))
+        if not hits:
+            # Absent is not a failure: an audit may not have run in this
+            # container. It IS worth saying, because an excluded name that
+            # matches nothing is silently doing nothing.
+            print(f"  [--  ] {name:46s} absent here (exclusion inert)")
+            continue
+        try:
+            d = json.loads(hits[0].read_text())
+        except (OSError, ValueError):
+            print(f"  [FAIL] {name:46s} unreadable")
+            bad += 1
+            continue
+        blob = json.dumps(d)
+        looks_like_report = '"file"' in blob and '"line"' in blob
+        bad += not looks_like_report
+        print(f"  [{'ok  ' if looks_like_report else 'FAIL'}] {name:46s} "
+              f"{'carries file/line beside its literals' if looks_like_report else 'NOT a report — remove it'}")
 
     # A number inside a TRAILING comment is prose, not a value.
     cc = comment_cols("X = 14   # muon 1.1099785956..., proton 1.1099785827\n")

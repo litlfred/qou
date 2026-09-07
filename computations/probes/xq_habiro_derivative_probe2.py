@@ -13,7 +13,7 @@ def evaluate_basis(q):
     h = q - 1/q
     q2 = q + 1/q
     hbar = 1 - 1/q
-    alpha_em = mp.mpf(1)/mp.mpf("137.0359991")
+    alpha_em = mp.mpf(1)/mp.mpf("137.035999084")
     
     basis = {
         "h^2": h**2,

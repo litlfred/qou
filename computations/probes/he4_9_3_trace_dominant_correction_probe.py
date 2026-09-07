@@ -205,7 +205,7 @@ def main() -> int:
     h2 = h * h
     hbar_q = 1 - 1 / q
     G_val = mp.catalan
-    alpha_em = mp.mpf(1) / mp.mpf("137.0359991")
+    alpha_em = mp.mpf(1) / mp.mpf("137.035999084")
 
     candidates_str = [
         ("h²", h2),

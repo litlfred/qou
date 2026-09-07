@@ -53,8 +53,7 @@ import mpmath as mp
 
 mp.mp.dps = 30
 
-M_INF = mp.mpf('0.300186614161')            # merged #5901 IO leading (CS) margin
-SIG_RATIO_INF = mp.mpf('0.679609581496')    # merged #5901 sigma_D/sigma_A limit
+from _m1_io_constants import M_INF, SIG_RATIO_INF  # merged #5901 IO leading constants -- single source, see that module
 C_TARGET = M_INF * mp.sqrt(79)              # margin-level requirement (PR #5929 n^-1/2 shape)
 V_A_INF = 8 / (9 * mp.pi ** 2)              # de-poissonized V_A/n^2 limit, PR #5969
 V_D_INF = SIG_RATIO_INF ** 2 * V_A_INF      # forced by sig_ratio_inf = sqrt(v_D/v_A)
