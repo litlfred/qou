@@ -43,3 +43,4 @@ the Z-kernel of the gauge exponent lattice, exactly in K; snappy 3.3.2 had to be
 Full record, scope and the remaining open content are on the parent bean `qou-qjhc` (sixth
 pass), which stays OPEN per rule 13a: this bean's yes/no is answered; the representation-level
 identification is not.
+

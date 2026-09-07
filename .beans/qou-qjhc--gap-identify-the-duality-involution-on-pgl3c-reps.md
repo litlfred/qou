@@ -1,7 +1,7 @@
 ---
 # qou-qjhc
 title: 'GAP: identify the duality involution on PGL(3,C) reps with the sigma-transport on Ptolemy coordinates'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
@@ -403,6 +403,7 @@ Not closed, and specifically not closed as refuted.  Next step is the coboundary
 above, which is a bounded piece of work: pull the vertex incidences from snappy, set up
 the multiplicative linear system, solve.
 
+Claimed 2026-09-07 by claude/stalled-agents-em-linking-jilmbv (takeover of the #7094 session, which ended after opening #7092). Child task qou-zmat runs the coboundary test.
 
 ---
 
