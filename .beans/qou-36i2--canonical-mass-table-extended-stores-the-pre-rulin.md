@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-07T06:18:30Z
-updated_at: 2026-09-07T06:29:40Z
+updated_at: 2026-09-07T08:22:05Z
 ---
 
 Found while draining `qou-wpp2` (the vendor mirror ratchet). The mirror drain
@@ -121,3 +121,36 @@ existed — `joint-tower-sdp-rust` storing an index list `[1,2,...,11]`, and
 the `e[0]` rule flattened into one monotone atom-length sequence. A letter is
 now required to be exactly two slots with a non-integer second. 10/10 selftest,
 including both.
+
+## CLOSED end to end — #7007 + #7016 (2026-09-07)
+
+The shipped package now answers canonically:
+
+    canonical_braid(1,0) = (0, 1, 0, 1, 0, 1, 0, 0, 1, 0, 0)   borromean
+    tr_M(p) = 0.629328402202921918165345   (was 1.145759692457300869...)
+    tr_M(n) = 0.475133517155682212506090   (was 0.987743688115809571...)
+
+matching qou-y2o7's canonical column to TWENTY digits. The producer never
+needed changing — `atom_canonical_crossings` already emitted the borromean
+word; only the 2026-08-28 artifact was stale.
+
+Corpus-level, by the #6995 audit: **28 flagged fields in 8 files -> 5 in 5**.
+
+## Correcting a claim I made in #7016's first body
+
+I called `low-isotope-mass-table` "/dashboard-low's source table". **It is
+not.** `mass_binding_dashboard.py` references neither that witness nor
+`canonical-mass-table-extended` — it computes live. I asserted it first and
+checked afterwards, by running the dashboard and then grepping it.
+
+So neither #7007 nor #7016 changes any dashboard output. Measured, the real
+loaders of the low-isotope witness are three:
+
+    computations/low_isotope_sign_flip_diagnostic.py:77
+    computations/multi_layer_gap_decomposition.py:61
+    computations/m_qclt_approx.py            (nucleon masses, not the word)
+
+The defensible claim is the narrower one: a recorded artifact consumed by three
+diagnostics, two migrations behind. Worth carrying forward because the same
+mistake is easy here — several beans describe this file in terms of the
+dashboard, and the dependency does not exist in code.

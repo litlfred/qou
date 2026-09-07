@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T07:17:23Z
-updated_at: 2026-09-06T07:18:12Z
+updated_at: 2026-09-07T09:13:21Z
 ---
 
 Found while hand-reading the 13 witness-copy findings whose source is a RETIRED
@@ -111,3 +111,70 @@ a constant that could be free. The audit sentence stays wrong in the record.
 gets the float. In-repo, `mass-from-q-symbolic.py` feeds the muon-ratio
 cross-check and `probe_topological_mass_formula.py` the topological mass formula
 -- both quantities a reader sees.
+
+
+---
+
+## 2026-09-07 — the alpha half closed as NOT a defect; two real defects found next door
+
+### ALPHA_EM_INV is not a precision defect
+
+`ALPHA_EM_INV = 137.035999084` is a bare float64 literal, which looks like the
+same class as the `Vol(4_1)` this bean is about. Measured, it is not:
+
+    str(137.035999084)  ->  '137.035999084'      round-trips EXACTLY
+    mpf(str(f)) == mpf('137.035999084')          True
+    mpf(f) direct vs the decimal, relative        2.46e-17
+    experimental relative uncertainty             1.53e-10
+    => the binary gap is 1.6e-07 TIMES the error bar on the quantity
+
+12 digits is the full published precision of the CODATA-2018 Cs determination --
+there is nothing more to store -- and float64 round-trips them. 10 of 11 live
+consumers already do `mp.mpf(str(...))` or `mp.mpf(repr(...))`, which recovers
+the decimal exactly. The eleventh, `b_over_a_evaluator.py:138`, does float64
+arithmetic -- but that file is float64 END TO END by design, so changing one line
+would be cosmetic.
+
+**Unlike `Vol(4_1)`, this constant has no closed form and no more digits to
+recover. Closing that half; the bean's `Vol(4_1)` subject is unaffected.**
+
+### Two real defects in the adjacent rationale probe, both fixed
+
+`computations/audits/experimental_constants_float64_rationale_probe.py` exited 1
+on a live FAIL, and the FAIL could not say what it caught:
+
+    try:
+        _ = x * 3.0, 3.0 / x, x < 1.0, f"{x:.6f}"
+    except Exception:
+        arith_ok = False
+
+Four operations, one except, one boolean. Split them and measured:
+
+    x * 3.0           OK        3.0 / x        OK        x < 1.0   OK
+    f"{x}"            OK        "%.6f" % x     OK
+    f"{x:.6f}"        TypeError: unsupported format string passed to mpf.__format__
+    format(x, ".6f")  same
+
+So **the docstring's claim -- "mpf interoperates with float for arithmetic,
+comparison and f-string formatting" -- is wrong on the last clause**, and it is
+the clause that bites: `{x:.3f}` in a table column is exactly the shape that made
+three producers un-runnable (qou-9q4h, #6971). The same wrong sentence is in
+`experimental_constants.py`'s own header comment. Both corrected, and the check
+is now 6 named rows instead of 1 anonymous boolean.
+
+**A near-miss worth recording.** `"%.6f" % x` works, and I nearly filed it as a
+new gate blind spot -- it is a silent float64 downcast (byte-identical to
+`float(x)` at 36 decimals) with no `float()` call for a gate to see. Corpus-grep
+first: `f64_into_mpmath_audit._is_display_only` **already** classifies `str % x`
+as a display sink, which is correct, and the pattern has zero live occurrences in
+`computations/`. Not a blind spot. Recorded because the claim did not survive the
+check I am supposed to run before making it.
+
+### And the corrected figure had itself decayed
+
+`experimental_constants.py` carried *"~266 importers -- 204 live"*. The probe
+measures **213 live** (+4 generated). That figure is on its second correction:
+"~266" was fixed to "204", and 204 has since decayed to 213. The comment now says
+so and points at the probe instead of restating a number.
+
+Probe now exits 0 with 11 named checks.

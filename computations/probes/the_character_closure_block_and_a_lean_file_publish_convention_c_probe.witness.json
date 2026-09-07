@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-05T19:04:46.079909+00:00",
-  "commitSha": "4062a354b940fac0679567bc5bba3bb6b09190f2",
+  "computedAt": "2026-09-07T10:03:54.855832+00:00",
+  "commitSha": "59e69d2336607a931fc534fac5cbe16967715d2f",
   "assertions": [
     {
       "name": "the declaring probe's five tests are abstract B_3 braids — no nucleon appears, so it structurally cannot carry the block's table",
@@ -30,17 +30,17 @@
     },
     {
       "name": "the block's table and the scanned literal are different strings for the same C-frame quantity, so no literal scan can bridge them — which is why a sweep aimed at exactly these sites returned zero",
-      "computed": "1",
+      "computed": "0",
       "expected": "1",
-      "passed": true
+      "passed": false
     }
   ],
-  "allPassed": true,
-  "durationMs": 3,
+  "allPassed": false,
+  "durationMs": 6,
   "computation": "the_character_closure_block_and_a_lean_file_publish_convention_c_probe",
   "scriptFile": "the_character_closure_block_and_a_lean_file_publish_convention_c_probe.py",
   "scriptHash": "5b0c636d1da6",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -100,7 +100,7 @@
       "states_suffix_after_1.0653062286": "92389333",
       "claims_agreement_with": "atomic-tr-m-mpfr-50dps.witness.json",
       "claimed_gap": "4e-16",
-      "actual_gap": "0.070218518"
+      "actual_gap": "0.69276675"
     },
     "why_the_literal_scan_missed_it": {
       "common_prefix": "1.0653062286",

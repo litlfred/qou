@@ -42,11 +42,11 @@ The construction needs a choice of reduced word per element, which Mathlib suppl
 ✅ **The input is now available.** `QOU.IwahoriHecke.Matsumoto` completes the chain — *exchange*
 (`CoxeterReflectionCocycle.rightExchange`) → *deletion* (`CoxeterDeletion.exists_deletion`) →
 *rank-two structure* (`CoxeterRankTwo`) → *dihedral descent* (`CoxeterDihedralDescent`) →
-Matsumoto. `Matsumoto.exists_Tw_An` discharges `exists_Tw_of_matsumoto` outright for type `A`; in
-general the discharge is conditional on `CoxeterRankTwo.DihedralExact` (the order of `σᵢσⱼ`).
+Matsumoto. `Matsumoto.exists_Tw` discharges `exists_Tw_of_matsumoto` outright, for **every**
+Coxeter system — the order of `σᵢσⱼ` is settled in `CoxeterDihedralOrder`.
 
-The conditional form below is kept: it is what `Matsumoto` feeds, and it is the right statement for
-a system whose bond orders exceed 3.
+The conditional form below is kept: it is what `Matsumoto` feeds, and it names the input rather
+than assuming it, which is what made the discharge auditable.
 
 -- Ref: [matsumoto1964] DOI 10.1090/S0002-9904-1964-11211-9
 -- Ref: [humphreys1990] §7.1, §7.4

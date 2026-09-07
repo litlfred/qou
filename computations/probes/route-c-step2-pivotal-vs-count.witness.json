@@ -1,0 +1,946 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-09-07T09:20:00.674644+00:00",
+  "commitSha": "0595a2a4c65e4982e89a6a0cb1fd3c201fdfeefb",
+  "assertions": [
+    {
+      "name": "z_D_=_q^3/(q^2+1)_(pivotal)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "z_J_=_(3q_-_1/q)/4_(ordinary)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "z_J_-_z_D_=_-(q^2-1)^2/(4q(q^2+1))",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "z_D(1)_=_z_J(1)_=_1/2",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "z_D'(1)_=_z_J'(1)_=_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "second_derivatives_differ_at_q_=_1",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "Markov_property_tr(x_s3)_=_z_tr(x)_holds_for_tr_D_on_all_of_S3",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "Markov_property_FAILS_for_tr_J_(some_x_in_S3)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "partial_trace_of_R_(no_weight)_=_diag(2q_-_1/q,_q):_not_scalar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "a_pivotal_weight_on_the_traced_strand_makes_the_partial_trace_scalar",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "at_q_=_1_the_unweighted_partial_trace_is_scalar_(Burnside_limit)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "2^4_tr_J(w)_in_Z[q,1/q]_for_all_24_words_of_S4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "[2]^4_tr_D(w)_in_Z[q,1/q]_for_all_24_words_of_S4",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "both_reduce_to_the_same_Burnside_count_2^{c(w)}_at_q_=_1,_all_24",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "Delta_D_=_-q^3_Phi3_Phi6_/_Phi4^3_(T1_probe)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "Delta_D(1)_=_Delta_J(1)_=_-3/8_(Burnside_difference)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "Delta_D_and_Delta_J_split_at_order_2_in_(q_-_1)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "q^l(w)_2^n_tr_J_=_sum_k_N_k_and_q^l(w)_[2]^n_tr_D_=_sum_k_q^(n-2k)_N_k,_all_24",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "every_N_k(w)_is_a_polynomial_in_Q_=_q^2_(no_half_powers,_no_negative_powers)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "every_N_k(w)_is_a_non-negative_integer_at_Q_in_{2,3,4,5,7,8,9}",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "N_k(w)_at_q_=_1_=_number_of_w-fixed_colourings_with_k_ones_(refined_Burnside)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "n_=_4:_every_weight_q^(n-2k)_is_an_integer_power_of_Q_(a_cardinality:_F_Q^(n/2-k",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "n_=_3:_the_weights_q^(3-2k)_are_odd_powers_of_q_=_Q^(1/2)_—_not_F_Q_cardinalitie",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "n_=_3:_q^l(w)_[2]^3_tr_D_=_sum_k_q^(3-2k)_N_k_with_N_k_in_Z[Q],_all_6_words",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "n_=_3:_every_N_k(w)_is_a_non-negative_integer_at_Q_=_p^2_in_{4,9,25,49,64}",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "n_=_3:_with_q_=_p_the_weights_p^(3-2k)_are_|F_p^3|,_|F_p|,_|B(F_p)|,_|B(F_p^3)|_",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 8,
+  "computation": "route-c-step2-pivotal-vs-count",
+  "scriptFile": "route_c_step2_pivotal_vs_count_probe.py",
+  "scriptHash": "4ac169a68167",
+  "scriptCommitSha": "e7dd17229695662820972730afa54bc17f4e469a",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/route_c_step2_pivotal_vs_count_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/route_c_step2_pivotal_vs_count_probe.py"
+  },
+  "description": "Route C step 2 (bean qou-8uxw): the framework's q-deformation of the Burnside fixed-point count is the PIVOTAL (K-weighted) trace, not the unweighted count. On V^{⊗4} the ordinary trace (Dipper–James / BHW count-shaped reading, z_J = (3q − q⁻¹)/4) and the convention-D pivotal trace (z_D = q³/(q²+1)) agree at q = 1 and to first order, and differ exactly by z_J − z_D = −(q²−1)²/(4q(q²+1)). The ordinary trace is NOT a Markov trace: the partial trace of R over the last strand is diag(2q − q⁻¹, q), scalar iff q² = 1, and the Markov property fails on S₃; the pivotal weight makes it scalar. Both traces are integer Laurent polynomials on all 24 words of S₄, so integrality does not separate them — the Markov property does. Consequence: an unweighted groupoid cardinality cannot be the framework's q-count; a BHW reading needs a WEIGHTED cardinality (weight q^{#0 − #1} per colouring), which the held BHW paper does not supply. Scope (a): n = 4, spin-½, convention D. Nothing fitted or wired.",
+  "contentBlock": "prop:markov-trace-axiomatic-closed-form",
+  "parameters": {
+    "words": {
+      "n4_interleaved": "s0 s1 s0 s2 s1",
+      "n4_sequential": "s0^2 s1^2 s2"
+    },
+    "R_matrix": "eigenvalues q (Sym^2), -1/q (Lambda^2); K = diag(q, 1/q)",
+    "q0": "1.1099785827513808075916690956107688798744991218736"
+  },
+  "data": {
+    "markov_parameters": {
+      "z_D": "q**3/(q**2 + 1)",
+      "z_J": "(3*q**2 - 1)/(4*q)",
+      "z_J_minus_z_D": "-(q - 1)**2*(q + 1)**2/(4*q*(q**2 + 1))",
+      "values_at_1": [
+        "1/2",
+        "1/2"
+      ],
+      "slopes_at_1": [
+        "1",
+        "1"
+      ],
+      "second_derivatives_at_1": [
+        "1/2",
+        "-1/2"
+      ]
+    },
+    "markov_property": {
+      "tr_D_on_S3": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "tr_J_on_S3": [
+        true,
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      "partial_trace_R_unweighted": "[[2*q - 1/q, 0], [0, q]]",
+      "partial_trace_R_weighted": {
+        "K": "[[q**2 + 1 - 1/q**2, 0], [0, 1]]",
+        "K_inv": "[[q**2, 0], [0, q**2]]"
+      },
+      "scalar_with": [
+        "K^-1",
+        "q**2"
+      ]
+    },
+    "S4_table": {
+      "e": {
+        "cycles": 4,
+        "2^4·tr_J": "16",
+        "[2]^4·tr_D": "q**4 + 4*q**2 + 6 + 4/q**2 + q**(-4)",
+        "tr_J(1)": "16",
+        "tr_D(1)": "16"
+      },
+      "s0": {
+        "cycles": 3,
+        "2^4·tr_J": "12*q - 4/q",
+        "[2]^4·tr_D": "q**5 + 3*q**3 + 3*q + 1/q",
+        "tr_J(1)": "8",
+        "tr_D(1)": "8"
+      },
+      "s1": {
+        "cycles": 3,
+        "2^4·tr_J": "12*q - 4/q",
+        "[2]^4·tr_D": "q**5 + 3*q**3 + 3*q + 1/q",
+        "tr_J(1)": "8",
+        "tr_D(1)": "8"
+      },
+      "s2": {
+        "cycles": 3,
+        "2^4·tr_J": "12*q - 4/q",
+        "[2]^4·tr_D": "q**5 + 3*q**3 + 3*q + 1/q",
+        "tr_J(1)": "8",
+        "tr_D(1)": "8"
+      },
+      "s0s1": {
+        "cycles": 2,
+        "2^4·tr_J": "8*q**2 - 4",
+        "[2]^4·tr_D": "q**6 + 2*q**4 + q**2",
+        "tr_J(1)": "4",
+        "tr_D(1)": "4"
+      },
+      "s0s2": {
+        "cycles": 2,
+        "2^4·tr_J": "9*q**2 - 6 + q**(-2)",
+        "[2]^4·tr_D": "q**6 + 2*q**4 + q**2",
+        "tr_J(1)": "4",
+        "tr_D(1)": "4"
+      },
+      "s1s0": {
+        "cycles": 2,
+        "2^4·tr_J": "8*q**2 - 4",
+        "[2]^4·tr_D": "q**6 + 2*q**4 + q**2",
+        "tr_J(1)": "4",
+        "tr_D(1)": "4"
+      },
+      "s1s2": {
+        "cycles": 2,
+        "2^4·tr_J": "8*q**2 - 4",
+        "[2]^4·tr_D": "q**6 + 2*q**4 + q**2",
+        "tr_J(1)": "4",
+        "tr_D(1)": "4"
+      },
+      "s2s1": {
+        "cycles": 2,
+        "2^4·tr_J": "8*q**2 - 4",
+        "[2]^4·tr_D": "q**6 + 2*q**4 + q**2",
+        "tr_J(1)": "4",
+        "tr_D(1)": "4"
+      },
+      "s0s1s0": {
+        "cycles": 3,
+        "2^4·tr_J": "8*q**3",
+        "[2]^4·tr_D": "q**7 + 2*q**5 + 2*q**3 + 2*q + 1/q",
+        "tr_J(1)": "8",
+        "tr_D(1)": "8"
+      },
+      "s0s1s2": {
+        "cycles": 1,
+        "2^4·tr_J": "5*q**3 - 3*q",
+        "[2]^4·tr_D": "q**7 + q**5",
+        "tr_J(1)": "2",
+        "tr_D(1)": "2"
+      },
+      "s0s2s1": {
+        "cycles": 1,
+        "2^4·tr_J": "5*q**3 - 3*q",
+        "[2]^4·tr_D": "q**7 + q**5",
+        "tr_J(1)": "2",
+        "tr_D(1)": "2"
+      },
+      "s1s0s2": {
+        "cycles": 1,
+        "2^4·tr_J": "5*q**3 - 3*q",
+        "[2]^4·tr_D": "q**7 + q**5",
+        "tr_J(1)": "2",
+        "tr_D(1)": "2"
+      },
+      "s1s2s1": {
+        "cycles": 3,
+        "2^4·tr_J": "8*q**3",
+        "[2]^4·tr_D": "q**7 + 2*q**5 + 2*q**3 + 2*q + 1/q",
+        "tr_J(1)": "8",
+        "tr_D(1)": "8"
+      },
+      "s2s1s0": {
+        "cycles": 1,
+        "2^4·tr_J": "5*q**3 - 3*q",
+        "[2]^4·tr_D": "q**7 + q**5",
+        "tr_J(1)": "2",
+        "tr_D(1)": "2"
+      },
+      "s0s1s0s2": {
+        "cycles": 2,
+        "2^4·tr_J": "5*q**4 - 1",
+        "[2]^4·tr_D": "q**8 + q**6 + q**4 + q**2",
+        "tr_J(1)": "4",
+        "tr_D(1)": "4"
+      },
+      "s0s1s2s1": {
+        "cycles": 2,
+        "2^4·tr_J": "5*q**4 - 1",
+        "[2]^4·tr_D": "q**8 + q**6 + q**4 + q**2",
+        "tr_J(1)": "4",
+        "tr_D(1)": "4"
+      },
+      "s0s2s1s0": {
+        "cycles": 2,
+        "2^4·tr_J": "5*q**4 - 1",
+        "[2]^4·tr_D": "q**8 + q**6 + q**4 + q**2",
+        "tr_J(1)": "4",
+        "tr_D(1)": "4"
+      },
+      "s1s0s2s1": {
+        "cycles": 2,
+        "2^4·tr_J": "5*q**4 + q**2 - 3 + q**(-2)",
+        "[2]^4·tr_D": "q**8 + q**6 + q**4 + q**2",
+        "tr_J(1)": "4",
+        "tr_D(1)": "4"
+      },
+      "s1s2s1s0": {
+        "cycles": 2,
+        "2^4·tr_J": "5*q**4 - 1",
+        "[2]^4·tr_D": "q**8 + q**6 + q**4 + q**2",
+        "tr_J(1)": "4",
+        "tr_D(1)": "4"
+      },
+      "s0s1s0s2s1": {
+        "cycles": 1,
+        "2^4·tr_J": "5*q**5 - 4*q + 1/q",
+        "[2]^4·tr_D": "q**9 + q**7 + q**5 - q",
+        "tr_J(1)": "2",
+        "tr_D(1)": "2"
+      },
+      "s0s1s2s1s0": {
+        "cycles": 3,
+        "2^4·tr_J": "5*q**5 + 3*q**3 - q + 1/q",
+        "[2]^4·tr_D": "q**9 + q**7 + 2*q**5 + 2*q**3 + q + 1/q",
+        "tr_J(1)": "8",
+        "tr_D(1)": "8"
+      },
+      "s1s0s2s1s0": {
+        "cycles": 1,
+        "2^4·tr_J": "5*q**5 - 4*q + 1/q",
+        "[2]^4·tr_D": "q**9 + q**7 + q**5 - q",
+        "tr_J(1)": "2",
+        "tr_D(1)": "2"
+      },
+      "s0s1s0s2s1s0": {
+        "cycles": 2,
+        "2^4·tr_J": "5*q**6 - 3*q**2 + 2",
+        "[2]^4·tr_D": "q**10 + q**8 + q**6 + 1",
+        "tr_J(1)": "4",
+        "tr_D(1)": "4"
+      }
+    },
+    "n4_pair": {
+      "Delta_D": "-q**3*(q**2 - q + 1)*(q**2 + q + 1)/(q**2 + 1)**3",
+      "Delta_J": "-(4*q**6 + 3*q**2 - 1)/(16*q**3)",
+      "I_J": "(q**2 + 1)*(5*q**4 - 5*q**2 + 1)/(16*q)",
+      "S_J": "(5*q**8 + 4*q**6 - 4*q**4 + 4*q**2 - 1)/(16*q**3)",
+      "series_D_in_q_minus_1": "e**3/16 - 5*e**2/16 - 3*e/4 - 3/8",
+      "series_J_in_q_minus_1": "-11*e**3/16 - 9*e**2/16 - 3*e/4 - 3/8",
+      "split_order": 2
+    },
+    "weight_space_decomposition": {
+      "prime_powers_tested": [
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "per_word": {
+        "e": {
+          "N_k(Q)": [
+            "1",
+            "4",
+            "6",
+            "4",
+            "1"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            4,
+            6,
+            4,
+            1
+          ]
+        },
+        "s0": {
+          "N_k(Q)": [
+            "Q",
+            "3*Q - 1",
+            "4*Q - 2",
+            "3*Q - 1",
+            "Q"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "s1": {
+          "N_k(Q)": [
+            "Q",
+            "3*Q - 1",
+            "4*Q - 2",
+            "3*Q - 1",
+            "Q"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "s2": {
+          "N_k(Q)": [
+            "Q",
+            "3*Q - 1",
+            "4*Q - 2",
+            "3*Q - 1",
+            "Q"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "s0s1": {
+          "N_k(Q)": [
+            "Q**2",
+            "2*Q**2 - Q",
+            "2*Q**2 - 2*Q",
+            "2*Q**2 - Q",
+            "Q**2"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s0s2": {
+          "N_k(Q)": [
+            "Q**2",
+            "2*Q**2 - 2*Q",
+            "3*Q**2 - 2*Q + 1",
+            "2*Q**2 - 2*Q",
+            "Q**2"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            2,
+            0,
+            1
+          ]
+        },
+        "s1s0": {
+          "N_k(Q)": [
+            "Q**2",
+            "2*Q**2 - Q",
+            "2*Q**2 - 2*Q",
+            "2*Q**2 - Q",
+            "Q**2"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s1s2": {
+          "N_k(Q)": [
+            "Q**2",
+            "2*Q**2 - Q",
+            "2*Q**2 - 2*Q",
+            "2*Q**2 - Q",
+            "Q**2"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s2s1": {
+          "N_k(Q)": [
+            "Q**2",
+            "2*Q**2 - Q",
+            "2*Q**2 - 2*Q",
+            "2*Q**2 - Q",
+            "Q**2"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s0s1s0": {
+          "N_k(Q)": [
+            "Q**3",
+            "2*Q**3",
+            "2*Q**3",
+            "2*Q**3",
+            "Q**3"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "s0s1s2": {
+          "N_k(Q)": [
+            "Q**3",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "s0s2s1": {
+          "N_k(Q)": [
+            "Q**3",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "s1s0s2": {
+          "N_k(Q)": [
+            "Q**3",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "s1s2s1": {
+          "N_k(Q)": [
+            "Q**3",
+            "2*Q**3",
+            "2*Q**3",
+            "2*Q**3",
+            "Q**3"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "s2s1s0": {
+          "N_k(Q)": [
+            "Q**3",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "s0s1s0s2": {
+          "N_k(Q)": [
+            "Q**4",
+            "Q**4",
+            "Q**4 - Q**2",
+            "Q**4",
+            "Q**4"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s0s1s2s1": {
+          "N_k(Q)": [
+            "Q**4",
+            "Q**4",
+            "Q**4 - Q**2",
+            "Q**4",
+            "Q**4"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s0s2s1s0": {
+          "N_k(Q)": [
+            "Q**4",
+            "Q**4",
+            "Q**4 - Q**2",
+            "Q**4",
+            "Q**4"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s1s0s2s1": {
+          "N_k(Q)": [
+            "Q**4",
+            "Q**4 - Q**2",
+            "Q**4 + Q**3 - Q**2 + Q",
+            "Q**4 - Q**2",
+            "Q**4"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            2,
+            0,
+            1
+          ]
+        },
+        "s1s2s1s0": {
+          "N_k(Q)": [
+            "Q**4",
+            "Q**4",
+            "Q**4 - Q**2",
+            "Q**4",
+            "Q**4"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s0s1s0s2s1": {
+          "N_k(Q)": [
+            "Q**5",
+            "Q**5 - Q**3",
+            "Q**5 - 2*Q**3 + Q**2",
+            "Q**5 - Q**3",
+            "Q**5"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "s0s1s2s1s0": {
+          "N_k(Q)": [
+            "Q**5",
+            "Q**5 + Q**4",
+            "Q**5 + Q**4 - Q**3 + Q**2",
+            "Q**5 + Q**4",
+            "Q**5"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "s1s0s2s1s0": {
+          "N_k(Q)": [
+            "Q**5",
+            "Q**5 - Q**3",
+            "Q**5 - 2*Q**3 + Q**2",
+            "Q**5 - Q**3",
+            "Q**5"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "s0s1s0s2s1s0": {
+          "N_k(Q)": [
+            "Q**6",
+            "Q**6 - Q**4",
+            "Q**6 - Q**4 + 2*Q**3",
+            "Q**6 - Q**4",
+            "Q**6"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            2,
+            0,
+            1
+          ]
+        }
+      },
+      "identity": "q^l(w) [2]^n tr_D(w) = sum_k q^(n-2k) N_k(w), N_k in Z[Q], Q = q^2"
+    },
+    "odd_n_resolution": {
+      "n": 3,
+      "squares_tested": [
+        4,
+        9,
+        25,
+        49,
+        64
+      ],
+      "per_word_N_k(Q)": {
+        "e": [
+          "1",
+          "3",
+          "3",
+          "1"
+        ],
+        "s0": [
+          "Q",
+          "2*Q - 1",
+          "2*Q - 1",
+          "Q"
+        ],
+        "s1": [
+          "Q",
+          "2*Q - 1",
+          "2*Q - 1",
+          "Q"
+        ],
+        "s0s1": [
+          "Q**2",
+          "Q**2 - Q",
+          "Q**2 - Q",
+          "Q**2"
+        ],
+        "s1s0": [
+          "Q**2",
+          "Q**2 - Q",
+          "Q**2 - Q",
+          "Q**2"
+        ],
+        "s0s1s0": [
+          "Q**3",
+          "Q**3",
+          "Q**3",
+          "Q**3"
+        ]
+      },
+      "statement": "with q = p prime power, counts over F_{p^2}, weights p^{n-2k} over F_p: cardinalities for every n"
+    },
+    "anchor_evaluation": {
+      "q0": "1.1099785827513808075916690956107688798744991218736",
+      "z_D": "0.612688037146465251595829863946",
+      "z_J": "0.607254366074600232653546101088",
+      "Delta_D": "-0.461171580324343072688571278874",
+      "Delta_J": "-0.465108030757708222144250749124",
+      "I_D": "0.318525544220975297882460064088",
+      "I_J": "0.305342621095707491386793318544",
+      "S_D": "0.779697124545318370571031342962",
+      "S_J": "0.770450651853415713531044067669",
+      "z_J_minus_z_D": "-0.0054336710718650189423",
+      "Delta_J_over_Delta_D": "1.0085357610948112511",
+      "nats_D_minus_log_I_over_S": "0.89520286897801625668",
+      "nats_J_minus_log_I_over_S": "0.92554111181681388417"
+    },
+    "verdict": "NEGATIVE for the unweighted reading, with the invariant named: a trace on V^{⊗n} is a Markov trace (hence a closure invariant) iff the partial trace of R over the closed strand is scalar; for the unweighted count it is diag(2q − q⁻¹, q), scalar iff q² = 1. So the q-deformation of the fixed-point count that the framework uses is the K-weighted count — route C's step 2 needs a weighted groupoid cardinality, not BHW's unweighted one. The two readings share value and slope at q = 1 and split at second order. REFINED (5b): the K-weight is itself a cardinality — q^{l(w)} [2]^n tr_D(w) = Σ_k q^{n−2k} N_k(w) with N_k(w) ∈ Z[Q] non-negative at every prime power Q = q² tested; taking the framework's q itself as the prime power p (5c), the counts live over F_{p²} and the weights p^{n−2k} over the index-2 subfield F_p as |F_p^{n−2k}| or |B(F_p^{2k−n})|, so the convention-D trace IS a groupoid cardinality of ⊔_k Fix_k(w) × A_k for EVERY n (measured at n = 3, 4). What fails is only the unweighted reading."
+  },
+  "caveats": [
+    "Scope (a): spin-½ (N = 2), n ≤ 4, one word pair for the Δ comparison; the Markov failure is exhibited on S₃ ⊂ H₃ and the partial-trace invariant is general for this R.",
+    "'Not a Markov trace' is a statement about the ORDINARY trace of this R-matrix representation; other H_n-modules (e.g. the Dipper–James permutation modules individually) are not tested here."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

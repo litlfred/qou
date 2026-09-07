@@ -1,0 +1,234 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0806.2317v1",
+ "source": {
+  "file": "0806.2317v1.pdf",
+  "sha256": "c54e80d460413a5e63ba14144065186a96e50c74471d5619f314374a7c97e5cd",
+  "bytes": 283710,
+  "pages": 33,
+  "text_source": "embedded",
+  "extractor": "pypdf"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0806.2317",
+   "version": "1",
+   "primary_class": "math.CO",
+   "stamp_date": "13 Jun 2008"
+  },
+  "doi": null,
+  "title": "Bounds for codes and designs in complex subspaces Aidan Roy \u2217",
+  "authors_raw": "Institute for Quantum Information Science, University of C algary",
+  "title_lines": [
+   "Bounds for codes and designs in complex subspaces",
+   "Aidan Roy \u2217"
+  ],
+  "abstract": "We introduce the concepts of complex Grassmannian codes and designs. Let Gm,n denote the set of m-dimensional subspaces of Cn: then a code is a \ufb01nite subset of Gm,n in which few distances occur, while a design is a \ufb01nite subset of Gm,n that polynomially approximates the entire set. Using Delsa rte\u2019s linear programming techniques, we \ufb01nd upper bounds for the size of a code and lower bounds for the size of a design, and we show that association s chemes can occur when the bounds are tight. These results are motivated by the bounds for real subspaces recently found by Bachoc, Coulangeon and Nebe, an d the bounds generalize those of Delsarte, Goethals and Seidel for codes and designs on the complex unit sphere.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210726124322-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Orbitals",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Representations",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Symmetric spaces",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Zonal polynomials",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Bounds",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Other bounds",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Designs",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Association schemes",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4688,
+   "n_words": 815
+  },
+  {
+   "id": "sec-001-orbitals",
+   "number": null,
+   "title": "Orbitals",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4339,
+   "n_words": 957
+  },
+  {
+   "id": "sec-002-representations",
+   "number": null,
+   "title": "Representations",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 2184,
+   "n_words": 448
+  },
+  {
+   "id": "sec-003-symmetric-spaces",
+   "number": null,
+   "title": "Symmetric spaces",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 6499,
+   "n_words": 1462
+  },
+  {
+   "id": "sec-004-zonal-polynomials",
+   "number": null,
+   "title": "Zonal polynomials",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 14,
+   "n_chars": 4975,
+   "n_words": 1172
+  },
+  {
+   "id": "sec-005-bounds",
+   "number": null,
+   "title": "Bounds",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 4997,
+   "n_words": 1179
+  },
+  {
+   "id": "sec-006-other-bounds",
+   "number": null,
+   "title": "Other bounds",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2574,
+   "n_words": 542
+  },
+  {
+   "id": "sec-007-examples",
+   "number": null,
+   "title": "Examples",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 23,
+   "n_chars": 7096,
+   "n_words": 1525
+  },
+  {
+   "id": "sec-008-designs",
+   "number": null,
+   "title": "Designs",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 27,
+   "n_chars": 6689,
+   "n_words": 1542
+  },
+  {
+   "id": "sec-009-association-schemes",
+   "number": null,
+   "title": "Association schemes",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 32,
+   "n_chars": 8215,
+   "n_words": 1806
+  },
+  {
+   "id": "sec-010-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 3675,
+   "n_words": 599
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 11,
+  "chars_total": 55931
+ }
+}
