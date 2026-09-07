@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T06:47:26.868944+00:00",
-  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
+  "computedAt": "2026-09-07T08:26:46.256561+00:00",
+  "commitSha": "2efe745cab538d0ae07b73098a1c09011c8a4b57",
   "assertions": [
     {
       "name": "markov_normalization_all_atoms",
@@ -54,9 +54,9 @@
     },
     {
       "name": "lr_free_path_validated_at_4He",
-      "computed": "4.84584344534025552543196832628059694072550849683997406441142",
+      "computed": "4.85691959397775284341876662449950562843386074495210755569091e-49",
       "expected": "0",
-      "passed": false,
+      "passed": true,
       "tolerance": "1e-05",
       "source": "chi_free_lr(2,2) vs chi-helium-4-free-h12 MPFR witness (documented sign-only-vs-averaged convention gap)"
     },
@@ -86,7 +86,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 6,
   "computation": "carrier-saturation-mechanism",
   "scriptFile": "carrier_saturation_mechanism_probe.py",
   "scriptHash": "6ae16d9fa53f",
