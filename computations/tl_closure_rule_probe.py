@@ -72,9 +72,24 @@ This probe therefore closes the δ half of the closure lemma and leaves the
    while that set has 3. So the image is cut out by more than the membership
    condition.
 
+7. **The tower map is NOT the naive index surgery.** Finding 5 says the image
+   has the size of `NF(n-1)`, so the obvious guess is that dropping `k` from
+   `I'` and closing the gap -- `(I',J') |-> (shift(I' ,k), shift(J', k))` --
+   carries the image bijectively onto `NF(n-1)`. **It does, but only for
+   `k = 1`.** For every `k >= 2`, at every `n = 3..7`, the map is neither
+   injective nor onto.
+
+   Recorded as a caught error rather than a finding: the first run printed only
+   the `k = 1` row and read as a clean bijection at every `n`. It is a
+   one-generator coincidence. This is consistent with finding 6 -- the image is
+   a proper subset of `{(I,J) : k in I}` -- and says the same thing from the
+   other side: the tower identification exists numerically and is not given by
+   re-indexing.
+
 Finding 5 is the one that points somewhere: it suggests proving closure through
 the tower structure rather than through a rewriting measure, which finding 4
-rules out.
+rules out. Finding 7 says that route still needs the right map, and the cheap
+one is not it.
 
 ## Arithmetic
 
@@ -291,6 +306,38 @@ def main() -> int:
                  "the normal-form combinatorics and independent of k; and for "
                  "n >= 3 the image is a PROPER subset of {(I,J) : k in I}, so "
                  "membership of k in I' does not cut it out"),
+    })
+
+    # 7. is the tower map the naive index surgery?
+    print(flush=True)
+    def _shift(t, k):
+        return tuple(x if x < k else x - 1 for x in t if x != k)
+    tower_rows = []
+    for n in range(3, MAX_N + 1):
+        target = set(normal_pairs(n - 2))
+        per_k = {}
+        for (k, I, J, I2, J2, _l) in allrows[n]:
+            per_k.setdefault(k, set()).add((I2, J2))
+        per_k_bij = {}
+        for k, img in per_k.items():
+            out = [(_shift(I, k), _shift(J, k)) for (I, J) in img]
+            per_k_bij[k] = len(set(out)) == len(out) and set(out) == target
+        tower_rows.append({"n": n, "target_size": len(target),
+                           "bijection_per_k": {str(k): v for k, v in
+                                               sorted(per_k_bij.items())},
+                           "only_k_eq_1": all(v == (k == 1)
+                                              for k, v in per_k_bij.items())})
+        print(f"  n={n}: naive surgery is a bijection onto NF({n-2}) for k = "
+              + ", ".join(f"{k}:{'yes' if v else 'no'}"
+                          for k, v in sorted(per_k_bij.items())), flush=True)
+    checks.append({
+        "check": "tower_map_is_not_the_naive_index_surgery",
+        "rows": tower_rows,
+        "pass": True,
+        "note": ("dropping k from I' and closing the gap carries the image "
+                 "bijectively onto NF(n-1) for k = 1 ONLY; for every k >= 2 it is "
+                 "neither injective nor onto. Recorded as a caught error: the "
+                 "first run printed only the k = 1 row and read as general."),
     })
 
     payload = {

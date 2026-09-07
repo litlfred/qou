@@ -250,15 +250,77 @@
       ],
       "pass": true,
       "note": "dim(e_k · TL_n) = dim TL_{n-1}, the tower relation, visible in the normal-form combinatorics and independent of k; and for n >= 3 the image is a PROPER subset of {(I,J) : k in I}, so membership of k in I' does not cut it out"
+    },
+    {
+      "check": "tower_map_is_not_the_naive_index_surgery",
+      "rows": [
+        {
+          "n": 3,
+          "target_size": 2,
+          "bijection_per_k": {
+            "1": true,
+            "2": false
+          },
+          "only_k_eq_1": true
+        },
+        {
+          "n": 4,
+          "target_size": 5,
+          "bijection_per_k": {
+            "1": true,
+            "2": false,
+            "3": false
+          },
+          "only_k_eq_1": true
+        },
+        {
+          "n": 5,
+          "target_size": 14,
+          "bijection_per_k": {
+            "1": true,
+            "2": false,
+            "3": false,
+            "4": false
+          },
+          "only_k_eq_1": true
+        },
+        {
+          "n": 6,
+          "target_size": 42,
+          "bijection_per_k": {
+            "1": true,
+            "2": false,
+            "3": false,
+            "4": false,
+            "5": false
+          },
+          "only_k_eq_1": true
+        },
+        {
+          "n": 7,
+          "target_size": 132,
+          "bijection_per_k": {
+            "1": true,
+            "2": false,
+            "3": false,
+            "4": false,
+            "5": false,
+            "6": false
+          },
+          "only_k_eq_1": true
+        }
+      ],
+      "pass": true,
+      "note": "dropping k from I' and closing the gap carries the image bijectively onto NF(n-1) for k = 1 ONLY; for every k >= 2 it is neither injective nor onto. Recorded as a caught error: the first run printed only the k = 1 row and read as general."
     }
   ],
   "all_pass": true,
   "scriptFile": "tl_closure_rule_probe.py",
-  "scriptHash": "f81d5f9dfc65",
-  "scriptCommitSha": "2c2f2645d673ace71997764188b2839ad9856099",
-  "commitSha": "2c2f2645d673ace71997764188b2839ad9856099",
+  "scriptHash": "e9c091a6a89a",
+  "scriptCommitSha": "7efb90a54a92bacab581c9e653aaf1a69dcc5801",
+  "commitSha": "22de986b3511d5cd0937d1eaf03338dd4a95d36b",
   "engine": "python",
-  "computedAt": "2026-09-07T17:38:58.181855+00:00",
+  "computedAt": "2026-09-07T17:41:55.947176+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
