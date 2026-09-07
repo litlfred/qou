@@ -561,8 +561,21 @@ for g in "${GATES[@]}"; do
     continue
   fi
   if [ "$selftest" = "yes" ]; then
-    if ! python3 "$script" --self-test >/dev/null 2>&1; then
+    # A gate that spells the flag differently is NOT a gate whose self-test
+    # failed, and reporting it as one accuses a sound detector of being a
+    # no-op. Measured 2026-09-07: 19 of 20 self-testing gates take
+    # --self-test; word-provenance-gate.py took only --selftest, and this
+    # runner called its passing 9/9 self-test a failure. Exit code cannot
+    # discriminate -- that gate returns 2 for a REAL failure too, the same
+    # code argparse uses for a usage error -- so key on argparse's message
+    # and retry the other spelling.
+    st_out=$(python3 "$script" --self-test 2>&1); st_rc=$?
+    if [ $st_rc -ne 0 ] && printf '%s' "$st_out" | grep -q 'unrecognized arguments'; then
+      st_out=$(python3 "$script" --selftest 2>&1); st_rc=$?
+    fi
+    if [ $st_rc -ne 0 ]; then
       echo "  SELF-TEST FAILED — a detector that cannot be shown to fire is a no-op."
+      printf '%s\n' "$st_out" | sed 's/^/    /' | head -6
       blocking_failed+=("$name (self-test)")
       continue
     fi
