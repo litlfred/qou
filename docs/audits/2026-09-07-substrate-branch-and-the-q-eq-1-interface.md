@@ -922,3 +922,67 @@ there.
 The third answer came from **evaluating the closed form** rather than reasoning about
 which mechanism ought to dominate. Both wrong answers were mechanism arguments; the right
 one is four lines of arithmetic on a formula that was in the corpus the whole time.
+
+---
+
+# 17. `qou-fi93` — the curve asymmetry cannot reach a number density
+
+§10.1 found a derived 7.878 % matter/antimatter asymmetry in the colour fibre. The
+question this bean asks is whether it can become the baryon asymmetry
+$\eta \sim 6\times10^{-10}$, or whether the gap can be stated precisely. **It can be
+stated precisely, and the answer is no by an exact invariant.**
+
+## 17.1 Every counting object in the framework is bar-even
+
+A number density is a *count*. The framework's counting objects are the Wedderburn
+dimensions and the measures built on them, and all of them are bar-even. Measured at
+`mp.dps` 40:
+
+| object | bar-parity | worst $\lvert f(q_0) - f(1/q_0)\rvert$ |
+|---|---|---|
+| integer dimension $\dim V_\lambda$ | $q$-independent | $0$ (trivially) |
+| $q$-dimension $d_q(\lambda)$, $n = 3,4$ | **bar-even** | $1.378\times10^{-40}$ |
+| Plancherel measure $\mu(\lambda) = d_q^2/D^2$ | **bar-even** | $3.444\times10^{-41}$ |
+| Markov weight sum $\sum_\lambda y_\lambda(H_3)$ (§14.1) | **bar-even** | $0$ to 40 digits |
+
+And the parity is exact, not numerical. $[n]_q = (q^n - q^{-n})/(q - q^{-1})$ negates
+both numerator and denominator under $q \mapsto q^{-1}$, so $[n]_q$ is **exactly**
+bar-even; $d_q(\lambda)$ is a ratio of products of $[n]_q$ (the $q$-hook-length formula),
+hence bar-even; $\mu$ and $D^2$ inherit it. The residuals above are round-off at 40 digits,
+not structure.
+
+## 17.2 The two sectors do not couple
+
+The 7.878 % asymmetry lives in the **colour geometry** — a difference between the
+Weierstrass coefficients of $\mathcal{E}_z$ and $\mathcal{E}_{-z}$. Every **counting**
+object is bar-even. So matter and antimatter carry *identical statistical weight* in
+every measure the framework defines, and the geometric asymmetry has nothing to multiply
+against.
+
+**Scope (b) — a structural exclusion, with the invariant named:** no quantity built from
+$q$-integers can be bar-odd, and every counting measure in the Hecke tower is built from
+$q$-integers. This is exact algebra, not a numerical probe.
+
+## 17.3 What that buys, which is more than a negative
+
+The exclusion is **constructive about where a solution would have to live**. Baryogenesis
+in QOU would require a counting measure **not built from $q$-integers** — a genuinely new
+structural object, not a tuning of an existing one. That is a sharper statement of the
+corpus's open problem than `sec:cp-violation-evidence`'s "cosmological regimes must
+provide the required enhancement", and it rules out an entire class of attempts:
+re-weighting $y_\lambda$, re-normalising $\mu$, or choosing a different partition measure
+cannot work, because all of them are bar-even by construction.
+
+**It also closes the loop on §10.1's caveat.** That section warned against reading the
+7.878 % as baryogenesis on the grounds that it is eight orders of magnitude off. The
+better reason is this one: it is not eight orders from $\eta$, it is **disconnected** from
+$\eta$ — a magnitude gap invites a search for a suppression factor, and there is no
+channel to suppress.
+
+## 17.4 What is not established
+
+That no *other* route exists. §17.2 excludes the counting measures the framework
+currently defines; it does not exclude a coupling somebody constructs between the colour
+geometry and a density. The bean stays open on that residual — the underlying question
+(can QOU produce $\eta$?) is an open conjecture, and AGENTS.md §13a forbids closing a
+bean whose subject is one, however cleanly the present route is excluded.
