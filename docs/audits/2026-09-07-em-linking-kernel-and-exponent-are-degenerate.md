@@ -23,11 +23,20 @@ So the mirror series constrains **the product only**. Kernel and separation
 law are jointly unidentifiable: fixing either one predicts the other, and
 fixing neither predicts nothing.
 
+**`s` is a span-averaged effective slope, not a constant.** For
+`F = coth - c0` the quantity `-d ln F/d ln a` varies across the window — the
+corpus measures that `coth` over `a` in [0.3165, 0.8732] is within 0.97 % of
+`1/a + a/3`, i.e. the curvature term is resolved. Every `s` below is the OLS
+slope of `ln k` on `ln a` over the 29 pairs, and the identity holds in that
+averaged sense, not pointwise. Stating it pointwise would confuse a family
+with a proposition.
+
 Measured over the 29 bound pairs, `A = 3…63`:
 
 $$-\frac{d\ln\kappa}{d\ln A} \;=\; 0.2604989 \pm 0.00722 \quad (2.77\%,\ \text{1σ OLS}).$$
 
-That is the whole of what the series says.
+That is the whole of what the series says — and, per the penultimate section,
+it is an **upper bound** on `s·p` rather than a measurement of it.
 
 ## What this corrects
 
@@ -115,7 +124,7 @@ Three consequences:
    matched against any small rational, and no kernel is promoted on the
    strength of it.
 
-## The hyperbolic-ball separation law is refuted outright
+## The hyperbolic-ball separation law fails, by hundreds of percent
 
 Round 6's finding 3 scored the **multiplicative** law `α ∝ c·ln A` (free
 slope) at 9.253 % and called geometric self-consistency "a factor 2.64 in
@@ -135,6 +144,14 @@ to meet** (the span and the scale), so it is over-determined. Measured:
 | 1 | 0.13146 | 740.7 % |
 
 Not marginal — wrong by hundreds of percent, at every kernel in the family.
+
+**This is scope (a), not a structural exclusion.** No proved invariant is
+cited, and *both* inputs are assumptions the corpus already flags: `V ∝ A` is
+*"itself an assumption. The corpus cannot check it"*
+([`em_linking_alpha_scaling_provenance_probe.py`](../../computations/em_linking_alpha_scaling_provenance_probe.py)),
+and the one-term subtracted `coth` is *"a model … not the exact Green's
+function of a quotient"* (round 6). What fails is the **conjunction**.
+
 The slope reaches 1 only at **`c₀ = −0.359789`**, which is *anti*-neutralised:
 more positive than the unsubtracted kernel, i.e. **further from admissible
 than the incumbent**.
@@ -150,30 +167,49 @@ Since only the first is a theorem, what is excluded is the **conjunction**:
 the carrier is not a metric ball of extensive hyperbolic volume, *or* κ is not
 a pair-kernel evaluation at all.
 
-## The frozen-`B_pp` confound is an additive bias, not a scatter nuisance
+## The frozen-`B_pp` confound is not a correction — it is ~80 % of the signal
 
-Bean `qou-gcmn` holds the per-pair Coulomb unit at its `A = 3` value across
-the series. Round 6 reads this as bounding "what any scatter comparison can
-establish". It is sharper than that. Writing `B_pp ∝ A^{−δ}`,
+**This front already knows the drift exists.** `bpp_higher_a_sparse_probe.py`
+(merged 2026-08-31, PR #6336, *"B_pp DECLINES with A"*) and its follow-on
+`qou-23dn` establish the sign and the low-`A` scale. New here: the log-slope
+form, the size, and the consequence.
+
+Bean `qou-gcmn` holds the per-pair Coulomb unit at its `A = 3` value. Round 6
+reads this as bounding *"what any scatter comparison can establish"*. Writing
+`B_pp` proportional to `A^{-d}`,
 
 $$\kappa_{\text{meas}} = \kappa_{\text{true}}\,(A/3)^{-\delta}
 \;\Longrightarrow\; s\,p + \delta \;=\; 0.2604989 .$$
 
-The drift enters **the one number the front measures**, additively:
+The drift enters **the one number the front measures**, additively. And from
+that merged probe's own committed corrections — `kappa_correction` 1.0823957827
+at `A = 3` to 1.1494801700 at `A = 4` — the **local** drift is
 
-| `δ` | `s·p` | `p` at `c₀ = 1` |
-|---:|---:|---:|
-| 0 | 0.26050 | 0.18728 |
-| 0.02 | 0.24050 | 0.17290 |
-| 0.05 | 0.21050 | 0.15133 |
+$$\delta(A{=}3 \to 4) \;=\; 0.20903, \qquad \textbf{80.2\%} \text{ of the whole measured } 0.26050 .$$
 
-A drift of only `δ = 0.05` moves the predicted exponent by 6.6× its 1σ
-statistical error. **The systematic dominates the statistic**, so the 2.77 %
-error bar above overstates how well `s·p` is known.
+So `0.26050` is an **upper bound** on `s·p`, and every exponent in the table
+above is an upper bound too.
+
+**That reading is not convenient — it removes the last apparent support for
+the framework's preferred kernel.** `H_coth`'s one coincidence is `c₀ = 0`
+predicting `p = 0.33007`, which is `1/3` to **0.34 σ**. It survives only at
+`δ = 0`:
+
+| | `p` at `c₀ = 0` | distance from 1/3 |
+|---|---:|---:|
+| `δ = 0` | 0.33007 | **0.34 σ** |
+| `δ = 0.20903` (measured, local) | 0.06522 | **28.19 σ** |
+
+**Not extrapolated.** That probe explicitly refuses to carry its three-point
+decline across the series — *"Extrapolating a three-point decline across a
+factor of ten in `A` would be a fit"* — and the refusal is honoured here:
+`δ(A=3→4)` is used as a **measured local scale**, showing the confound is of
+order the signal, never as a value for `δ` over `A = 3…63`. Nothing is
+corrected by it.
 
 `qou-u3vw` supplies a fourth leg — with a fixed local Borromean configuration
-the `A`-dependence could sit in the per-component flux `Φ(A)` rather than in
-the separation at all. One measured scalar, four unknowns.
+the `A`-dependence could sit in the per-component flux rather than in the
+separation at all. One measured scalar, four unknowns.
 
 ## Scope
 
@@ -184,8 +220,12 @@ the separation at all. One measured scalar, four unknowns.
   unit frozen at `A = 3`, cannot rank kernels. This is about what the
   measurement resolves, not about any hypothesis being true or false.
 - **(a) scope-limited negative on the BALL LAW.** The additive hyperbolic-ball
-  law is refuted on this series at every kernel scanned. The ball model is an
-  assumption, so the exclusion is of the conjunction stated above.
+  law fails on this series at every kernel scanned. Both inputs are
+  assumptions, so what is excluded is the **conjunction**; no structural claim
+  is made.
+- **Prior art, cited not claimed.** The `B_pp` drift is established by PR
+  #6336 / `qou-23dn`. New here: its log-slope form, its 80 % share, and what
+  it does to the 1/3 coincidence.
 
 **Not claimed.** That any kernel is correct. That `p = 0.187` is the
 separation exponent. That the metric Coulomb pairing `⟨A₁, J₂⟩` fails — it is
@@ -207,8 +247,10 @@ The constructive form:
 > `s·p + δ = 0.2605`.
 
 That is falsifiable and it replaces "score more kernels". The cheapest leg is
-`δ` — a compute question about `B_pp` at higher `A` (bean `qou-gcmn`), not a
-geometry question, and the section above shows it dominates the error budget.
+`δ` — a compute question about `B_pp` at higher `A`, not a geometry question,
+already answered in sign and low-`A` scale by PR #6336. Extending it to
+`A = 5, 6` (that probe's own named next step) would do more for this front
+than any further kernel.
 
 Round 6's own named next step — the zero-mean Green's function of the actual
 fibre — remains worth doing, but this changes what it would buy. It would fix

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T20:31:20Z
-updated_at: 2026-08-30T13:26:26Z
+updated_at: 2026-09-07T08:19:14Z
 ---
 
 ## WORKED 2026-08-25 — O2 applied; it excludes the contest's winner
@@ -242,3 +242,47 @@ Cross-reference: `qou-o6ml` ROAST 2026-08-30 records that this bean's O2
 requirement is **structurally satisfied** by route (2)'s Möbius/O'Hara energy,
 whose regularising subtraction is intrinsic — so O2 discriminates *between*
 o6ml's routes rather than only damaging the front.
+
+
+## 2026-09-07 — the kappa(A) contest cannot rank kernels: it measures ONE number
+
+`docs/audits/2026-09-07-em-linking-kernel-and-exponent-are-degenerate.md`,
+probe `computations/em_linking_kernel_exponent_degeneracy_probe.py`
+(9 assertions, all passed, two end-to-end against the committed contest).
+
+**This bean's structural (b) result is UNTOUCHED.** O2 neutrality
+`int(Laplacian u) = 0` excluding the unsubtracted `coth(alpha)` is an
+argument with no data in it and stands.
+
+**Round 6's NUMERICAL case against the admissible family does not.** Every
+number in it (scatter 3.505% -> 22.32%, residual `r = -0.904`) holds the
+separation exponent pinned at 1/3: `score(rs, c0)` in
+`em_linking_o2_neutralised_kernel_probe.py:131` hardcodes
+`acoth(kappa + c0) / A**third` for every `c0` in its 140-member scan. The
+same audit's third finding establishes that `alpha ~ A^(1/3)` is imported
+Euclidean phenomenology, and its free-power diagnostic runs at `c0 = 0` only.
+The exponent was freed for the incumbent and pinned for its rivals.
+
+Identically, `-dln(kappa)/dln(A) = s*p` with `s` the span-averaged
+`-dln F/dln alpha`. Across `c0 = 0..7.5`, `p` moves by a factor of 6 while
+`s*p` moves by **1.48%**. Admissible-over-incumbent rms ratio: **5.3742
+pinned -> 0.98143 freed** — with its own exponent the O2-admissible kernel
+fits marginally BETTER. Every member lands within 1.27x of a bare
+2-parameter power law (2.656%), so the series cannot rank them.
+
+The hyperbolic-ball law (additive `alpha = (1/2)lnA + beta`, slope forced by
+`V ~ (pi/2)e^{2R}` with `V ~ A`) fails by 429%/741% in kappa-rms and reaches
+its forced slope only at `c0 = -0.3598`, ANTI-neutralised. O2 needs
+`c0 >= 1`: the two geometric constraints point in opposite directions.
+Scope (a) on the conjunction — both inputs are flagged assumptions.
+
+See `qou-gcmn` for the part that matters most: the frozen-B_pp drift is
+~80% of the measured slope, so `0.26050` is an upper bound and `H_coth`'s
+1/3 coincidence (0.34 sigma) becomes 28.19 sigma at the measured local drift.
+
+## Still open (do not close)
+
+The kernel. Round 6's named next step — the zero-mean Green's function of the
+actual fibre — is still worth doing, but this changes what it buys: it would
+fix `s` and therefore PREDICT `p`; it would not adjudicate the contest,
+because the contest has one degree of freedom and its members all fit it.
