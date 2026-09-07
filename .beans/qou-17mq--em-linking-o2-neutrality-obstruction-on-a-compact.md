@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T20:31:20Z
-updated_at: 2026-09-07T13:02:41Z
+updated_at: 2026-09-07T13:04:21Z
 ---
 
 ## WORKED 2026-08-25 — O2 applied; it excludes the contest's winner
@@ -503,3 +503,38 @@ The genuinely independent leg is the third, and it is the only one carrying a
 proved invariant. So when weighing "is the separation law reachable at all",
 count ONE independent proved blindness plus one twice-measured degeneracy, not
 three.
+
+## SHARPENING the blocker: ONE distinct A, not two (2026-09-07)
+
+I wrote "even with SnapPy installed there are at most three links at two
+distinct A values". Checked at source (binding-link-volumes.witness.json) and
+that UNDERSTATES the blocker. The table holds:
+
+    Hopf_2H         0 (Seifert-fibred)   <- A=2, NOT HYPERBOLIC
+    knot_8_11_3H    8.2863168178         <- A=3, hyperbolic
+    L6a4_3He        7.3277247534         <- A=3, hyperbolic
+    Vol_B3_8G       7.327724753417752    <- same manifold as L6a4, not a 4th
+
+So the corpus carries TWO hyperbolic links and they are BOTH AT A = 3.
+Exactly ONE distinct A value has any hyperbolic geometry attached to it.
+
+That makes the blocker airtight rather than merely severe: an exponent in A
+cannot be fitted to a single A, however perfectly the geometry on those two
+links is computed. Even a flawless inter-cusp geodesic distance for L6a4 and
+8_11 yields two numbers at the same A -- which is a consistency check between
+two A=3 assignments (worth having, and that is what
+2026-07-04-em-linking-cusp-geometry-excluded.md already did with cusp
+translation lengths, finding a 4.3% miss), never a measurement of p.
+
+The other volumes in the corpus do not rescue it. The pion/cusp probe adds
+4_1 (assigned A=1), L6a5 (A=3), and L8a21/L8a20 (A=4) -- but the A=4
+assignments are PRE-REGISTERED CANDIDATES, not derived, and A=4's Vol_4 ~ 8.05
+elsewhere is an inversion of the bond tower against AME. Adding a fitted point
+to a one-point series does not make an exponent measurable; it makes it
+circular.
+
+CONSEQUENCE FOR PRIORITISATION. This removes any reason to install SnapPy for
+the sake of qou-17mq specifically. (It remains the right thing to do for
+qou-26f2, which is about a probe whose observable C has never been evaluated --
+a different and genuinely open question.) The only thing that unblocks p here
+is a DERIVED atom->knot rule at A >= 4, i.e. conj:canonical-knot-id-sdp.
