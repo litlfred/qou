@@ -155,6 +155,14 @@ def main() -> int:
         "form_A_sigma": fmt(abs(rA) / SIGMA_PPB, 20), "form_B_sigma": fmt(abs(rB) / SIGMA_PPB, 20),
         "form_A_miss_vs_100x": fmt(abs(rA) / (SIGMA_PPB / 100), 20),
         "form_B_miss_vs_100x": fmt(abs(rB) / (SIGMA_PPB / 100), 20),
+        # The predicted VALUES, not only their residuals. The witness used to
+        # publish `*_ppb` alone, so a consumer wanting the prediction had to
+        # back it out of a residual against a reference the witness did not
+        # record — the same "publishes a residual with nothing to be a residual
+        # FROM" defect the form-ladder witness was corrected for on 2026-09-04.
+        # per_observable_100x_status.py reads form_B_alpha_inv.
+        "form_A_alpha_inv": fmt(1 / aA, 30),
+        "form_B_alpha_inv": fmt(1 / aB, 30),
         "q0": fmt(q, 50)})
     # The edition shift, recorded so the sign flip is on the record rather than
     # rediscovered. This is provenance, NOT a second scoring.
