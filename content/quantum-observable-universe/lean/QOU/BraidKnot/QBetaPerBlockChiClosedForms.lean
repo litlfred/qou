@@ -78,9 +78,12 @@ noncomputable def chi_block_3 (q : ℝ) : ℝ :=
 /-- Per-block character $\chi_{(2,1)}(\Delta_{T_\beta})(q)$ on the
 2-dim irrep $V_{(2,1)}$.
 
-Closed form: $(q^2 - 1)(-q^4 - 1) / (4q^3)$.
+Closed form: $(q^2-1)(q^4+1)\,P(q) / (4q^9)$ with
+$P(q) = 2q^{12}-5q^{10}+5q^{8}-5q^{6}+5q^{4}-5q^{2}+2$.
 
-⚠ **ORDERING-DEPENDENT — this is the GROUPED-frame form** (bean `qou-eddc`).
+✅ **MIGRATED to the canonical (borromean) ordering, 2026-09-07** (bean
+`qou-eddc`); the superseded grouped-frame form was
+$(q^2 - 1)(-q^4 - 1) / (4q^3)$.
 Of the three blocks in this file, this is the only one the 2026-09-05
 intra-ordering ruling (`qou-hu1f`) can reach. `chi_block_3` and
 `chi_block_111` are the one-dimensional irreps, where the generators act by
@@ -104,10 +107,7 @@ all survive (degree 3 → 9). So `chi_block_vanishing_at_one`, the
 `(q^2-1) * P21` factorisation and the downstream Taylor data are unaffected in
 substance — only `P21` itself would change.
 
-The definition is left in the grouped frame **deliberately**, until the
-migration can be done as one piece: it carries proof obligations here and is
-referenced by seven other files. That work is tracked in `qou-eddc`.
-Derivation and all eight checks:
+Derivation and all nine checks:
 `computations/qbeta/qbeta_per_block_chi_borromean_closed_forms_probe.py`.
 
 Structural note: this collapses to LINEAR in $h = q - 1/q$ — the
@@ -115,7 +115,8 @@ $b^2$ off-diagonal contributions from $\sigma_1$ and
 $\sigma_0\sigma_1$ cancel (cf. `qbeta_per_block_symbolic.py`). -/
 -- Ref: [hoefsmit1974]
 noncomputable def chi_block_21 (q : ℝ) : ℝ :=
-  (q^2 - 1) * (-q^4 - 1) / (4 * q^3)
+  (q^2 - 1) * (q^4 + 1)
+    * (2*q^12 - 5*q^10 + 5*q^8 - 5*q^6 + 5*q^4 - 5*q^2 + 2) / (4 * q^9)
 
 /-- Per-block character $\chi_{(1,1,1)}(\Delta_{T_\beta})(q)$ on the
 sign irrep $V_{(1,1,1)}$.
@@ -183,7 +184,8 @@ theorem chi_blocks_have_q2_minus_1_factor (q : ℝ) (hq : 0 < q) :
       chi_block_111 q = (q^2 - 1) * P111 q := by
   refine ⟨
     fun q' => -(q'^2 + 1)^2 / (4 * q'),
-    fun q' => (-q'^4 - 1) / (4 * q'^3),
+    fun q' => (2*q'^16 - 5*q'^14 + 7*q'^12 - 10*q'^10 + 10*q'^8 - 10*q'^6
+                 + 7*q'^4 - 5*q'^2 + 2) / (4 * q'^9),
     fun q' => -(q'^2 + 1)^2 / (4 * q'^5),
     ?_, ?_, ?_⟩
   · unfold chi_block_3
@@ -241,14 +243,22 @@ noncomputable def y_lambda_surrogate_111 (q : ℝ) : ℝ :=
 
 Source (SymPy): `qbeta_c3_multiblock_recursion_attack.py` Step 1.
 
-Numerator: `−q¹¹ + q¹⁰ − 2q⁹ + q⁸ + q⁶ − q⁵ − q³ + 2q² − q + 1`
-Denominator: `4 q⁵ (q² + q + 1)`
+Numerator: `2q¹⁷ − 2q¹⁶ − 5q¹⁵ + 4q¹⁴ + 8q¹³ − 9q¹² − 8q¹¹ + 9q¹⁰ + 11q⁹
+− 11q⁸ − 9q⁷ + 8q⁶ + 9q⁵ − 8q⁴ − 4q³ + 5q² + 2q − 2`
+Denominator: `4 q⁸ (q² + q + 1)`
+
+Migrated to the canonical ordering 2026-09-07 (`qou-eddc`). The grouped-frame
+numerator was `−q¹¹ + q¹⁰ − 2q⁹ + q⁸ + q⁶ − q⁵ − q³ + 2q² − q + 1` over
+`4 q⁵ (q² + q + 1)`. **Both Taylor coefficients below are unchanged** — the
+order-0, order-1 (−5/6) and order-2 (5/6) values are frame-independent, and the
+first difference appears only at order 3 (−23/9 canonical, −41/9 grouped).
 
 For all `q > 0`, this equals `y_(3)·χ_(3) + y_(2,1)·χ_(2,1) + y_(1,1,1)·χ_(1,1,1)`
 (theorem `delta_tau_M_surrogate_eq_sum` below). -/
 noncomputable def delta_tau_M_surrogate (q : ℝ) : ℝ :=
-  (-q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1) /
-    (4 * q^5 * (q^2 + q + 1))
+  (2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10
+     + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2 + 2*q - 2) /
+    (4 * q^8 * (q^2 + q + 1))
 
 /-- Helper: `1 + q + q² > 0` for any `q : ℝ` (sum of squares form). -/
 lemma one_plus_q_plus_q_sq_pos (q : ℝ) : 0 < 1 + q + q^2 := by
@@ -295,29 +305,38 @@ final numerical identity. -/
 theorem delta_tau_M_surrogate_hasDerivAt_one :
     HasDerivAt delta_tau_M_surrogate (-5/6) 1 := by
   unfold delta_tau_M_surrogate
-  have hden_ne : (4 : ℝ) * (1 : ℝ)^5 * ((1 : ℝ)^2 + 1 + 1) ≠ 0 := by norm_num
-  -- Numerator: −q¹¹ + q¹⁰ − 2q⁹ + q⁸ + q⁶ − q⁵ − q³ + 2q² − q + 1
-  -- N(1) = 0, N'(1) = -10.
+  have hden_ne : (4 : ℝ) * (1 : ℝ)^8 * ((1 : ℝ)^2 + 1 + 1) ≠ 0 := by norm_num
+  -- Numerator (canonical / borromean, bean qou-eddc):
+  --   2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10 + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2 + 2*q - 2
+  -- N(1) = 0, N'(1) = -10 — BOTH unchanged from the grouped-frame numerator.
   have hN : HasDerivAt
-      (fun q : ℝ => -q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
+      (fun q : ℝ => 2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10 + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2 + 2*q - 2)
       (-10 : ℝ) 1 := by
-    have h11 := (hasDerivAt_pow 11 (1 : ℝ)).neg
-    have h10 := hasDerivAt_pow 10 (1 : ℝ)
-    have h9  := (hasDerivAt_pow 9 (1 : ℝ)).const_mul 2
-    have h8  := hasDerivAt_pow 8 (1 : ℝ)
-    have h6  := hasDerivAt_pow 6 (1 : ℝ)
-    have h5  := hasDerivAt_pow 5 (1 : ℝ)
-    have h3  := hasDerivAt_pow 3 (1 : ℝ)
-    have h2  := (hasDerivAt_pow 2 (1 : ℝ)).const_mul 2
-    have h1  := hasDerivAt_id (1 : ℝ)
-    have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 1 := hasDerivAt_const 1 1
-    have hsum := (((((((((h11.add h10).sub h9).add h8).add h6).sub h5).sub h3).add h2).sub h1).add h0)
+    have d0 := (hasDerivAt_pow 17 (1 : ℝ)).const_mul (2 : ℝ)
+    have d1 := (hasDerivAt_pow 16 (1 : ℝ)).const_mul (-2 : ℝ)
+    have d2 := (hasDerivAt_pow 15 (1 : ℝ)).const_mul (-5 : ℝ)
+    have d3 := (hasDerivAt_pow 14 (1 : ℝ)).const_mul (4 : ℝ)
+    have d4 := (hasDerivAt_pow 13 (1 : ℝ)).const_mul (8 : ℝ)
+    have d5 := (hasDerivAt_pow 12 (1 : ℝ)).const_mul (-9 : ℝ)
+    have d6 := (hasDerivAt_pow 11 (1 : ℝ)).const_mul (-8 : ℝ)
+    have d7 := (hasDerivAt_pow 10 (1 : ℝ)).const_mul (9 : ℝ)
+    have d8 := (hasDerivAt_pow 9 (1 : ℝ)).const_mul (11 : ℝ)
+    have d9 := (hasDerivAt_pow 8 (1 : ℝ)).const_mul (-11 : ℝ)
+    have d10 := (hasDerivAt_pow 7 (1 : ℝ)).const_mul (-9 : ℝ)
+    have d11 := (hasDerivAt_pow 6 (1 : ℝ)).const_mul (8 : ℝ)
+    have d12 := (hasDerivAt_pow 5 (1 : ℝ)).const_mul (9 : ℝ)
+    have d13 := (hasDerivAt_pow 4 (1 : ℝ)).const_mul (-8 : ℝ)
+    have d14 := (hasDerivAt_pow 3 (1 : ℝ)).const_mul (-4 : ℝ)
+    have d15 := (hasDerivAt_pow 2 (1 : ℝ)).const_mul (5 : ℝ)
+    have d16 := (hasDerivAt_id (1 : ℝ)).const_mul (2 : ℝ)
+    have d17 : HasDerivAt (fun _ : ℝ => (-2 : ℝ)) 0 (1 : ℝ) := hasDerivAt_const (1 : ℝ) (-2 : ℝ)
+    have hsum := (((((((((((((((((d0.add d1).add d2).add d3).add d4).add d5).add d6).add d7).add d8).add d9).add d10).add d11).add d12).add d13).add d14).add d15).add d16).add d17)
     convert hsum using 1
     norm_num
-  -- Denominator: 4 q^5 (q² + q + 1)
-  -- D(1) = 12, D'(1) = 4·(5·3 + 1·3) = 4·18 = 72.
-  have hD : HasDerivAt (fun q : ℝ => 4 * q^5 * (q^2 + q + 1)) (72 : ℝ) 1 := by
-    have h5  : HasDerivAt (fun q : ℝ => q^5) ((5 : ℝ) * 1^4) 1 := hasDerivAt_pow 5 1
+  -- Denominator: 4 q^8 (q² + q + 1)
+  -- D(1) = 12, D'(1) = 4·(8·3 + 1·3) = 4·27 = 108.
+  have hD : HasDerivAt (fun q : ℝ => 4 * q^8 * (q^2 + q + 1)) (108 : ℝ) 1 := by
+    have h5  : HasDerivAt (fun q : ℝ => q^8) ((8 : ℝ) * 1^7) 1 := hasDerivAt_pow 8 1
     have h2  : HasDerivAt (fun q : ℝ => q^2) ((2 : ℝ) * 1^1) 1 := hasDerivAt_pow 2 1
     have h1  : HasDerivAt (fun q : ℝ => q) (1 : ℝ) 1 := hasDerivAt_id 1
     have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 1 := hasDerivAt_const 1 1
@@ -325,7 +344,7 @@ theorem delta_tau_M_surrogate_hasDerivAt_one :
       have := (h2.add h1).add h0
       convert this using 1
       norm_num
-    have hprod : HasDerivAt (fun q : ℝ => q^5 * (q^2 + q + 1)) (18 : ℝ) 1 := by
+    have hprod : HasDerivAt (fun q : ℝ => q^8 * (q^2 + q + 1)) (27 : ℝ) 1 := by
       have := h5.mul hquad
       convert this using 1
       norm_num
@@ -333,7 +352,10 @@ theorem delta_tau_M_surrogate_hasDerivAt_one :
     convert this using 1
     · funext q; ring
     · norm_num
-  -- Quotient: (N'·D − N·D')/D² = (-10·12 − 0·72)/144 = -120/144 = -5/6
+  -- Quotient: (N'·D − N·D')/D² = (-10·12 − 0·108)/144 = -120/144 = -5/6.
+  -- D' moved 72 → 108 with the ordering, and the result did NOT: N(1) = 0
+  -- annihilates the D' term entirely. That is why the order-1 Taylor
+  -- coefficient is frame-independent.
   have hdiv := hN.div hD hden_ne
   convert hdiv using 1
   norm_num
@@ -343,44 +365,56 @@ explicitly via the quotient rule:
 
   `g'(q) = (N'(q)·D(q) − N(q)·D'(q)) / D(q)²`,
 
-with `N'(q) = -11q¹⁰+10q⁹-18q⁸+8q⁷+6q⁵-5q⁴-3q²+4q-1` and
-`D'(q) = 28q⁶+24q⁵+20q⁴` the numerator and denominator derivatives. -/
+with `N'` the derivative of the canonical numerator and
+`D'(q) = 40q⁹+36q⁸+32q⁷` that of `D(q) = 4q⁸(q²+q+1)`. -/
 noncomputable def delta_tau_M_surrogate_deriv (q : ℝ) : ℝ :=
-  ((-11*q^10 + 10*q^9 - 18*q^8 + 8*q^7 + 6*q^5 - 5*q^4 - 3*q^2 + 4*q - 1)
-      * (4 * q^5 * (q^2 + q + 1))
-    - (-q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
-      * (28*q^6 + 24*q^5 + 20*q^4))
-  / ((4 * q^5 * (q^2 + q + 1)) * (4 * q^5 * (q^2 + q + 1)))
+  ((34*q^16 - 32*q^15 - 75*q^14 + 56*q^13 + 104*q^12 - 108*q^11 - 88*q^10
+      + 90*q^9 + 99*q^8 - 88*q^7 - 63*q^6 + 48*q^5 + 45*q^4 - 32*q^3
+      - 12*q^2 + 10*q + 2)
+      * (4 * q^8 * (q^2 + q + 1))
+    - (2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10
+        + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2
+        + 2*q - 2)
+      * (40*q^9 + 36*q^8 + 32*q^7))
+  / ((4 * q^8 * (q^2 + q + 1)) * (4 * q^8 * (q^2 + q + 1)))
 
 /-- **Theorem (surrogate Δτ_M derivative).** For all `q > 0`, the derivative of
 `delta_tau_M_surrogate` at `q` is equal to `delta_tau_M_surrogate_deriv q`. -/
 theorem delta_tau_M_surrogate_hasDerivAt (q : ℝ) (hq : 0 < q) :
     HasDerivAt delta_tau_M_surrogate (delta_tau_M_surrogate_deriv q) q := by
-  have hden_pos : 0 < 4 * q^5 * (q^2 + q + 1) := by
+  have hden_pos : 0 < 4 * q^8 * (q^2 + q + 1) := by
     have hq5 : 0 < q^5 := pow_pos hq 5
     have hquad : 0 < q^2 + q + 1 := by
       convert one_plus_q_plus_q_sq_pos q using 1
       ring
     positivity
-  have hden_ne : 4 * q^5 * (q^2 + q + 1) ≠ 0 := ne_of_gt hden_pos
+  have hden_ne : 4 * q^8 * (q^2 + q + 1) ≠ 0 := ne_of_gt hden_pos
   have hN : HasDerivAt
-      (fun q : ℝ => -q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
-      (-11*q^10 + 10*q^9 - 18*q^8 + 8*q^7 + 6*q^5 - 5*q^4 - 3*q^2 + 4*q - 1) q := by
-    have h11 := (hasDerivAt_pow 11 q).neg
-    have h10 := hasDerivAt_pow 10 q
-    have h9  := (hasDerivAt_pow 9 q).const_mul 2
-    have h8  := hasDerivAt_pow 8 q
-    have h6  := hasDerivAt_pow 6 q
-    have h5  := hasDerivAt_pow 5 q
-    have h3  := hasDerivAt_pow 3 q
-    have h2  := (hasDerivAt_pow 2 q).const_mul 2
-    have h1  := hasDerivAt_id q
-    have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 q := hasDerivAt_const q (1 : ℝ)
-    have hsum := (((((((((h11.add h10).sub h9).add h8).add h6).sub h5).sub h3).add h2).sub h1).add h0)
+      (fun q : ℝ => 2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10 + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2 + 2*q - 2)
+      (34*q^16 - 32*q^15 - 75*q^14 + 56*q^13 + 104*q^12 - 108*q^11 - 88*q^10 + 90*q^9 + 99*q^8 - 88*q^7 - 63*q^6 + 48*q^5 + 45*q^4 - 32*q^3 - 12*q^2 + 10*q + 2) q := by
+    have d0 := (hasDerivAt_pow 17 q).const_mul (2 : ℝ)
+    have d1 := (hasDerivAt_pow 16 q).const_mul (-2 : ℝ)
+    have d2 := (hasDerivAt_pow 15 q).const_mul (-5 : ℝ)
+    have d3 := (hasDerivAt_pow 14 q).const_mul (4 : ℝ)
+    have d4 := (hasDerivAt_pow 13 q).const_mul (8 : ℝ)
+    have d5 := (hasDerivAt_pow 12 q).const_mul (-9 : ℝ)
+    have d6 := (hasDerivAt_pow 11 q).const_mul (-8 : ℝ)
+    have d7 := (hasDerivAt_pow 10 q).const_mul (9 : ℝ)
+    have d8 := (hasDerivAt_pow 9 q).const_mul (11 : ℝ)
+    have d9 := (hasDerivAt_pow 8 q).const_mul (-11 : ℝ)
+    have d10 := (hasDerivAt_pow 7 q).const_mul (-9 : ℝ)
+    have d11 := (hasDerivAt_pow 6 q).const_mul (8 : ℝ)
+    have d12 := (hasDerivAt_pow 5 q).const_mul (9 : ℝ)
+    have d13 := (hasDerivAt_pow 4 q).const_mul (-8 : ℝ)
+    have d14 := (hasDerivAt_pow 3 q).const_mul (-4 : ℝ)
+    have d15 := (hasDerivAt_pow 2 q).const_mul (5 : ℝ)
+    have d16 := (hasDerivAt_id q).const_mul (2 : ℝ)
+    have d17 : HasDerivAt (fun _ : ℝ => (-2 : ℝ)) 0 q := hasDerivAt_const q (-2 : ℝ)
+    have hsum := (((((((((((((((((d0.add d1).add d2).add d3).add d4).add d5).add d6).add d7).add d8).add d9).add d10).add d11).add d12).add d13).add d14).add d15).add d16).add d17)
     convert hsum using 1
     ring
-  have hD : HasDerivAt (fun q : ℝ => 4 * q^5 * (q^2 + q + 1)) (28*q^6 + 24*q^5 + 20*q^4) q := by
-    have h5  : HasDerivAt (fun q : ℝ => q^5) (5 * q^4) q := hasDerivAt_pow 5 q
+  have hD : HasDerivAt (fun q : ℝ => 4 * q^8 * (q^2 + q + 1)) (40*q^9 + 36*q^8 + 32*q^7) q := by
+    have h5  : HasDerivAt (fun q : ℝ => q^8) (8 * q^7) q := hasDerivAt_pow 8 q
     have h2  : HasDerivAt (fun q : ℝ => q^2) (2 * q^1) q := hasDerivAt_pow 2 q
     have h1  : HasDerivAt (fun q : ℝ => q) (1 : ℝ) q := hasDerivAt_id q
     have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 q := hasDerivAt_const q (1 : ℝ)
@@ -388,7 +422,7 @@ theorem delta_tau_M_surrogate_hasDerivAt (q : ℝ) (hq : 0 < q) :
       have := (h2.add h1).add h0
       convert this using 1
       ring
-    have hprod : HasDerivAt (fun q : ℝ => q^5 * (q^2 + q + 1)) (5 * q^4 * (q^2 + q + 1) + q^5 * (2 * q + 1)) q := h5.mul hquad
+    have hprod : HasDerivAt (fun q : ℝ => q^8 * (q^2 + q + 1)) (8 * q^7 * (q^2 + q + 1) + q^8 * (2 * q + 1)) q := h5.mul hquad
     have := hprod.const_mul 4
     convert this using 1
     · funext q; ring
@@ -419,42 +453,60 @@ theorem delta_tau_M_surrogate_deriv_hasDerivAt_one :
   unfold delta_tau_M_surrogate_deriv
   -- N(q) = -q¹¹+…+1 ;  N(1)=0, N'(1)=-10
   have hN : HasDerivAt
-      (fun q : ℝ => -q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
+      (fun q : ℝ => 2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10 + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2 + 2*q - 2)
       (-10 : ℝ) 1 := by
     have h11 := (hasDerivAt_pow 11 (1 : ℝ)).neg
     have h10 := hasDerivAt_pow 10 (1 : ℝ)
     have h9  := (hasDerivAt_pow 9 (1 : ℝ)).const_mul 2
     have h8  := hasDerivAt_pow 8 (1 : ℝ)
-    have h6  := hasDerivAt_pow 6 (1 : ℝ)
-    have h5  := hasDerivAt_pow 5 (1 : ℝ)
-    have h3  := hasDerivAt_pow 3 (1 : ℝ)
-    have h2  := (hasDerivAt_pow 2 (1 : ℝ)).const_mul 2
-    have h1  := hasDerivAt_id (1 : ℝ)
-    have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 1 := hasDerivAt_const (1 : ℝ) (1 : ℝ)
-    have hsum := (((((((((h11.add h10).sub h9).add h8).add h6).sub h5).sub h3).add h2).sub h1).add h0)
+    have d0 := (hasDerivAt_pow 17 (1 : ℝ)).const_mul (2 : ℝ)
+    have d1 := (hasDerivAt_pow 16 (1 : ℝ)).const_mul (-2 : ℝ)
+    have d2 := (hasDerivAt_pow 15 (1 : ℝ)).const_mul (-5 : ℝ)
+    have d3 := (hasDerivAt_pow 14 (1 : ℝ)).const_mul (4 : ℝ)
+    have d4 := (hasDerivAt_pow 13 (1 : ℝ)).const_mul (8 : ℝ)
+    have d5 := (hasDerivAt_pow 12 (1 : ℝ)).const_mul (-9 : ℝ)
+    have d6 := (hasDerivAt_pow 11 (1 : ℝ)).const_mul (-8 : ℝ)
+    have d7 := (hasDerivAt_pow 10 (1 : ℝ)).const_mul (9 : ℝ)
+    have d8 := (hasDerivAt_pow 9 (1 : ℝ)).const_mul (11 : ℝ)
+    have d9 := (hasDerivAt_pow 8 (1 : ℝ)).const_mul (-11 : ℝ)
+    have d10 := (hasDerivAt_pow 7 (1 : ℝ)).const_mul (-9 : ℝ)
+    have d11 := (hasDerivAt_pow 6 (1 : ℝ)).const_mul (8 : ℝ)
+    have d12 := (hasDerivAt_pow 5 (1 : ℝ)).const_mul (9 : ℝ)
+    have d13 := (hasDerivAt_pow 4 (1 : ℝ)).const_mul (-8 : ℝ)
+    have d14 := (hasDerivAt_pow 3 (1 : ℝ)).const_mul (-4 : ℝ)
+    have d15 := (hasDerivAt_pow 2 (1 : ℝ)).const_mul (5 : ℝ)
+    have d16 := (hasDerivAt_id (1 : ℝ)).const_mul (2 : ℝ)
+    have d17 : HasDerivAt (fun _ : ℝ => (-2 : ℝ)) 0 (1 : ℝ) := hasDerivAt_const (1 : ℝ) (-2 : ℝ)
+    have hsum := (((((((((((((((((d0.add d1).add d2).add d3).add d4).add d5).add d6).add d7).add d8).add d9).add d10).add d11).add d12).add d13).add d14).add d15).add d16).add d17)
     convert hsum using 1
     norm_num
-  -- N'(q) = -11q¹⁰+… ;  N'(1)=-10, N''(1)=-100
+  -- N'(q) = 34q¹⁶−… ;  N'(1)=-10, N''(1)=-160
   have hNp : HasDerivAt
-      (fun q : ℝ => -11*q^10 + 10*q^9 - 18*q^8 + 8*q^7 + 6*q^5 - 5*q^4 - 3*q^2 + 4*q - 1)
-      (-100 : ℝ) 1 := by
-    have h10 := ((hasDerivAt_pow 10 (1 : ℝ)).const_mul 11).neg
-    have h9  := (hasDerivAt_pow 9 (1 : ℝ)).const_mul 10
-    have h8  := (hasDerivAt_pow 8 (1 : ℝ)).const_mul 18
-    have h7  := (hasDerivAt_pow 7 (1 : ℝ)).const_mul 8
-    have h5  := (hasDerivAt_pow 5 (1 : ℝ)).const_mul 6
-    have h4  := (hasDerivAt_pow 4 (1 : ℝ)).const_mul 5
-    have h2  := (hasDerivAt_pow 2 (1 : ℝ)).const_mul 3
-    have h1  := (hasDerivAt_pow 1 (1 : ℝ)).const_mul 4
-    have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 1 := hasDerivAt_const (1 : ℝ) (1 : ℝ)
-    have hsum := (((((((h10.add h9).sub h8).add h7).add h5).sub h4).sub h2).add h1).sub h0
-    convert hsum using 1 <;>
-      first
-        | (funext q; simp only [Pi.add_apply, Pi.sub_apply, Pi.neg_apply]; ring)
-        | norm_num
-  -- D(q) = 4q⁵(q²+q+1) ;  D(1)=12, D'(1)=72
-  have hD : HasDerivAt (fun q : ℝ => 4 * q^5 * (q^2 + q + 1)) (72 : ℝ) 1 := by
-    have h5  : HasDerivAt (fun q : ℝ => q^5) ((5 : ℝ) * 1^4) 1 := hasDerivAt_pow 5 1
+      (fun q : ℝ => 34*q^16 - 32*q^15 - 75*q^14 + 56*q^13 + 104*q^12 - 108*q^11 - 88*q^10 + 90*q^9 + 99*q^8 - 88*q^7 - 63*q^6 + 48*q^5 + 45*q^4 - 32*q^3 - 12*q^2 + 10*q + 2)
+      (-160 : ℝ) 1 := by
+    have e0 := (hasDerivAt_pow 16 (1 : ℝ)).const_mul (34 : ℝ)
+    have e1 := (hasDerivAt_pow 15 (1 : ℝ)).const_mul (-32 : ℝ)
+    have e2 := (hasDerivAt_pow 14 (1 : ℝ)).const_mul (-75 : ℝ)
+    have e3 := (hasDerivAt_pow 13 (1 : ℝ)).const_mul (56 : ℝ)
+    have e4 := (hasDerivAt_pow 12 (1 : ℝ)).const_mul (104 : ℝ)
+    have e5 := (hasDerivAt_pow 11 (1 : ℝ)).const_mul (-108 : ℝ)
+    have e6 := (hasDerivAt_pow 10 (1 : ℝ)).const_mul (-88 : ℝ)
+    have e7 := (hasDerivAt_pow 9 (1 : ℝ)).const_mul (90 : ℝ)
+    have e8 := (hasDerivAt_pow 8 (1 : ℝ)).const_mul (99 : ℝ)
+    have e9 := (hasDerivAt_pow 7 (1 : ℝ)).const_mul (-88 : ℝ)
+    have e10 := (hasDerivAt_pow 6 (1 : ℝ)).const_mul (-63 : ℝ)
+    have e11 := (hasDerivAt_pow 5 (1 : ℝ)).const_mul (48 : ℝ)
+    have e12 := (hasDerivAt_pow 4 (1 : ℝ)).const_mul (45 : ℝ)
+    have e13 := (hasDerivAt_pow 3 (1 : ℝ)).const_mul (-32 : ℝ)
+    have e14 := (hasDerivAt_pow 2 (1 : ℝ)).const_mul (-12 : ℝ)
+    have e15 := (hasDerivAt_id (1 : ℝ)).const_mul (10 : ℝ)
+    have e16 : HasDerivAt (fun _ : ℝ => (2 : ℝ)) 0 (1 : ℝ) := hasDerivAt_const (1 : ℝ) (2 : ℝ)
+    have hsum := ((((((((((((((((e0.add e1).add e2).add e3).add e4).add e5).add e6).add e7).add e8).add e9).add e10).add e11).add e12).add e13).add e14).add e15).add e16)
+    convert hsum using 1
+    norm_num
+  -- D(q) = 4q⁸(q²+q+1) ;  D(1)=12, D'(1)=108
+  have hD : HasDerivAt (fun q : ℝ => 4 * q^8 * (q^2 + q + 1)) (108 : ℝ) 1 := by
+    have h5  : HasDerivAt (fun q : ℝ => q^8) ((8 : ℝ) * 1^7) 1 := hasDerivAt_pow 8 1
     have h2  : HasDerivAt (fun q : ℝ => q^2) ((2 : ℝ) * 1^1) 1 := hasDerivAt_pow 2 1
     have h1  : HasDerivAt (fun q : ℝ => q) (1 : ℝ) 1 := hasDerivAt_id 1
     have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 1 := hasDerivAt_const (1 : ℝ) (1 : ℝ)
@@ -462,7 +514,7 @@ theorem delta_tau_M_surrogate_deriv_hasDerivAt_one :
       have := (h2.add h1).add h0
       convert this using 1
       norm_num
-    have hprod : HasDerivAt (fun q : ℝ => q^5 * (q^2 + q + 1)) (18 : ℝ) 1 := by
+    have hprod : HasDerivAt (fun q : ℝ => q^8 * (q^2 + q + 1)) (27 : ℝ) 1 := by
       have := h5.mul hquad
       convert this using 1
       norm_num
@@ -470,23 +522,23 @@ theorem delta_tau_M_surrogate_deriv_hasDerivAt_one :
     convert this using 1
     · funext q; ring
     · norm_num
-  -- D'(q) = 28q⁶+24q⁵+20q⁴ ;  D'(1)=72, D''(1)=368
+  -- D'(q) = 40q⁹+36q⁸+32q⁷ ;  D'(1)=108, D''(1)=872
   have hDp : HasDerivAt
-      (fun q : ℝ => 28*q^6 + 24*q^5 + 20*q^4) (368 : ℝ) 1 := by
-    have h6 := (hasDerivAt_pow 6 (1 : ℝ)).const_mul 28
-    have h5 := (hasDerivAt_pow 5 (1 : ℝ)).const_mul 24
-    have h4 := (hasDerivAt_pow 4 (1 : ℝ)).const_mul 20
+      (fun q : ℝ => 40*q^9 + 36*q^8 + 32*q^7) (872 : ℝ) 1 := by
+    have h6 := (hasDerivAt_pow 9 (1 : ℝ)).const_mul 40
+    have h5 := (hasDerivAt_pow 8 (1 : ℝ)).const_mul 36
+    have h4 := (hasDerivAt_pow 7 (1 : ℝ)).const_mul 32
     have hsum := (h6.add h5).add h4
     convert hsum using 1
     norm_num
-  -- num = N'·D − N·D' ;  num(1)=-120, num'(1)=N''·D−N·D'' at 1 = -100·12 − 0·368 = -1200
+  -- num = N'·D − N·D' ;  num(1)=-120, num'(1)=N''·D−N·D'' at 1 = -160·12 − 0·872 = -1920
   have hnum := (hNp.mul hD).sub (hN.mul hDp)
-  -- den = D·D ;  den(1)=144, den'(1)=2·D·D' at 1 = 2·12·72 = 1728
+  -- den = D·D ;  den(1)=144, den'(1)=2·D·D' at 1 = 2·12·108 = 2592
   have hden := hD.mul hD
   have hden_ne :
-      (fun q : ℝ => 4 * q^5 * (q^2 + q + 1)) 1
-        * (fun q : ℝ => 4 * q^5 * (q^2 + q + 1)) 1 ≠ 0 := by norm_num
-  -- g''(1) = (num'·den − num·den')/den² = (-1200·144 − (-120)·1728)/144² = 34560/20736 = 5/3
+      (fun q : ℝ => 4 * q^8 * (q^2 + q + 1)) 1
+        * (fun q : ℝ => 4 * q^8 * (q^2 + q + 1)) 1 ≠ 0 := by norm_num
+  -- g''(1) = (num'·den − num·den')/den² = (-1920·144 − (-120)·2592)/144² = 34560/20736 = 5/3
   have hdiv := hnum.div hden hden_ne
   convert hdiv using 1
   norm_num
@@ -513,17 +565,17 @@ where the cross terms in `U' = (N'·D − N·D')'` cancel.  `N''` and `D''`
 are the second derivatives of the numerator / denominator of
 `delta_tau_M_surrogate`. -/
 noncomputable def delta_tau_M_surrogate_deriv2 (q : ℝ) : ℝ :=
-  (((-110*q^9 + 90*q^8 - 144*q^7 + 56*q^6 + 30*q^4 - 20*q^3 - 6*q + 4)
-        * (4 * q^5 * (q^2 + q + 1))
-      - (-q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
-        * (168*q^5 + 120*q^4 + 80*q^3))
-      * ((4 * q^5 * (q^2 + q + 1)) * (4 * q^5 * (q^2 + q + 1)))
-    - ((-11*q^10 + 10*q^9 - 18*q^8 + 8*q^7 + 6*q^5 - 5*q^4 - 3*q^2 + 4*q - 1)
-        * (4 * q^5 * (q^2 + q + 1))
-      - (-q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
-        * (28*q^6 + 24*q^5 + 20*q^4))
-      * (2 * (4 * q^5 * (q^2 + q + 1)) * (28*q^6 + 24*q^5 + 20*q^4)))
-  / (((4 * q^5 * (q^2 + q + 1)) * (4 * q^5 * (q^2 + q + 1))) ^ 2)
+  (((544*q^15 - 480*q^14 - 1050*q^13 + 728*q^12 + 1248*q^11 - 1188*q^10 - 880*q^9 + 810*q^8 + 792*q^7 - 616*q^6 - 378*q^5 + 240*q^4 + 180*q^3 - 96*q^2 - 24*q + 10)
+        * (4 * q^8 * (q^2 + q + 1))
+      - (2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10 + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2 + 2*q - 2)
+        * (360*q^8 + 288*q^7 + 224*q^6))
+      * ((4 * q^8 * (q^2 + q + 1)) * (4 * q^8 * (q^2 + q + 1)))
+    - ((34*q^16 - 32*q^15 - 75*q^14 + 56*q^13 + 104*q^12 - 108*q^11 - 88*q^10 + 90*q^9 + 99*q^8 - 88*q^7 - 63*q^6 + 48*q^5 + 45*q^4 - 32*q^3 - 12*q^2 + 10*q + 2)
+        * (4 * q^8 * (q^2 + q + 1))
+      - (2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10 + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2 + 2*q - 2)
+        * (40*q^9 + 36*q^8 + 32*q^7))
+      * (2 * (4 * q^8 * (q^2 + q + 1)) * (40*q^9 + 36*q^8 + 32*q^7)))
+  / (((4 * q^8 * (q^2 + q + 1)) * (4 * q^8 * (q^2 + q + 1))) ^ 2)
 
 set_option maxHeartbeats 1000000 in
 /-- **Theorem (surrogate Δτ_M second derivative).** For all `q > 0`, the
@@ -531,18 +583,18 @@ derivative of `delta_tau_M_surrogate_deriv` at `q` equals
 `delta_tau_M_surrogate_deriv2 q`. -/
 theorem delta_tau_M_surrogate_deriv_hasDerivAt2 (q : ℝ) (hq : 0 < q) :
     HasDerivAt delta_tau_M_surrogate_deriv (delta_tau_M_surrogate_deriv2 q) q := by
-  have hden_pos : 0 < 4 * q^5 * (q^2 + q + 1) := by
+  have hden_pos : 0 < 4 * q^8 * (q^2 + q + 1) := by
     have hq5 : 0 < q^5 := pow_pos hq 5
     have hquad : 0 < q^2 + q + 1 := by
       convert one_plus_q_plus_q_sq_pos q using 1; ring
     positivity
-  have hden_ne : 4 * q^5 * (q^2 + q + 1) ≠ 0 := ne_of_gt hden_pos
-  have hVne : (4 * q^5 * (q^2 + q + 1)) * (4 * q^5 * (q^2 + q + 1)) ≠ 0 :=
+  have hden_ne : 4 * q^8 * (q^2 + q + 1) ≠ 0 := ne_of_gt hden_pos
+  have hVne : (4 * q^8 * (q^2 + q + 1)) * (4 * q^8 * (q^2 + q + 1)) ≠ 0 :=
     mul_ne_zero hden_ne hden_ne
   -- N and its first derivative N'
   have hN : HasDerivAt
-      (fun q : ℝ => -q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
-      (-11*q^10 + 10*q^9 - 18*q^8 + 8*q^7 + 6*q^5 - 5*q^4 - 3*q^2 + 4*q - 1) q := by
+      (fun q : ℝ => 2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10 + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2 + 2*q - 2)
+      (34*q^16 - 32*q^15 - 75*q^14 + 56*q^13 + 104*q^12 - 108*q^11 - 88*q^10 + 90*q^9 + 99*q^8 - 88*q^7 - 63*q^6 + 48*q^5 + 45*q^4 - 32*q^3 - 12*q^2 + 10*q + 2) q := by
     have h11 := (hasDerivAt_pow 11 q).neg
     have h10 := hasDerivAt_pow 10 q
     have h9  := (hasDerivAt_pow 9 q).const_mul 2
@@ -558,8 +610,8 @@ theorem delta_tau_M_surrogate_deriv_hasDerivAt2 (q : ℝ) (hq : 0 < q) :
     ring
   -- N' and its derivative N''
   have hN' : HasDerivAt
-      (fun q : ℝ => -11*q^10 + 10*q^9 - 18*q^8 + 8*q^7 + 6*q^5 - 5*q^4 - 3*q^2 + 4*q - 1)
-      (-110*q^9 + 90*q^8 - 144*q^7 + 56*q^6 + 30*q^4 - 20*q^3 - 6*q + 4) q := by
+      (fun q : ℝ => 34*q^16 - 32*q^15 - 75*q^14 + 56*q^13 + 104*q^12 - 108*q^11 - 88*q^10 + 90*q^9 + 99*q^8 - 88*q^7 - 63*q^6 + 48*q^5 + 45*q^4 - 32*q^3 - 12*q^2 + 10*q + 2)
+      (544*q^15 - 480*q^14 - 1050*q^13 + 728*q^12 + 1248*q^11 - 1188*q^10 - 880*q^9 + 810*q^8 + 792*q^7 - 616*q^6 - 378*q^5 + 240*q^4 + 180*q^3 - 96*q^2 - 24*q + 10) q := by
     have h10 := ((hasDerivAt_pow 10 q).const_mul 11).neg
     have h9  := (hasDerivAt_pow 9 q).const_mul 10
     have h8  := ((hasDerivAt_pow 8 q).const_mul 18).neg
@@ -573,23 +625,23 @@ theorem delta_tau_M_surrogate_deriv_hasDerivAt2 (q : ℝ) (hq : 0 < q) :
     convert hsum using 1 <;>
       (try (funext q; simp only [Pi.add_apply, Pi.sub_apply, Pi.neg_apply])) <;> ring
   -- D and its first derivative D'
-  have hD : HasDerivAt (fun q : ℝ => 4 * q^5 * (q^2 + q + 1))
-      (28*q^6 + 24*q^5 + 20*q^4) q := by
+  have hD : HasDerivAt (fun q : ℝ => 4 * q^8 * (q^2 + q + 1))
+      (40*q^9 + 36*q^8 + 32*q^7) q := by
     have h5  : HasDerivAt (fun q : ℝ => q^5) (5 * q^4) q := hasDerivAt_pow 5 q
     have h2  : HasDerivAt (fun q : ℝ => q^2) (2 * q^1) q := hasDerivAt_pow 2 q
     have h1  : HasDerivAt (fun q : ℝ => q) (1 : ℝ) q := hasDerivAt_id q
     have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 q := hasDerivAt_const q (1 : ℝ)
     have hquad : HasDerivAt (fun q : ℝ => q^2 + q + 1) (2 * q + 1) q := by
       have := (h2.add h1).add h0; convert this using 1; ring
-    have hprod : HasDerivAt (fun q : ℝ => q^5 * (q^2 + q + 1))
+    have hprod : HasDerivAt (fun q : ℝ => q^8 * (q^2 + q + 1))
         (5 * q^4 * (q^2 + q + 1) + q^5 * (2 * q + 1)) q := h5.mul hquad
     have := hprod.const_mul 4
     convert this using 1
     · funext q; ring
     · ring
   -- D' and its derivative D''
-  have hD' : HasDerivAt (fun q : ℝ => 28*q^6 + 24*q^5 + 20*q^4)
-      (168*q^5 + 120*q^4 + 80*q^3) q := by
+  have hD' : HasDerivAt (fun q : ℝ => 40*q^9 + 36*q^8 + 32*q^7)
+      (360*q^8 + 288*q^7 + 224*q^6) q := by
     have h6 := (hasDerivAt_pow 6 q).const_mul 28
     have h5 := (hasDerivAt_pow 5 q).const_mul 24
     have h4 := (hasDerivAt_pow 4 q).const_mul 20
@@ -631,7 +683,7 @@ theorem delta_tau_M_surrogate_deriv2_hasDerivAt_one :
   unfold delta_tau_M_surrogate_deriv2
   -- N(1)=0, N'(1)=-10
   have hN : HasDerivAt
-      (fun q : ℝ => -q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1)
+      (fun q : ℝ => 2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10 + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2 + 2*q - 2)
       (-10 : ℝ) 1 := by
     have h11 := (hasDerivAt_pow 11 (1 : ℝ)).neg
     have h10 := hasDerivAt_pow 10 (1 : ℝ)
@@ -646,10 +698,10 @@ theorem delta_tau_M_surrogate_deriv2_hasDerivAt_one :
     have hsum := (((((((((h11.add h10).sub h9).add h8).add h6).sub h5).sub h3).add h2).sub h1).add h0)
     convert hsum using 1
     norm_num
-  -- N'(1)=-10, N''(1)=-100
+  -- N'(1)=-10, N''(1)=-160
   have hNp : HasDerivAt
-      (fun q : ℝ => -11*q^10 + 10*q^9 - 18*q^8 + 8*q^7 + 6*q^5 - 5*q^4 - 3*q^2 + 4*q - 1)
-      (-100 : ℝ) 1 := by
+      (fun q : ℝ => 34*q^16 - 32*q^15 - 75*q^14 + 56*q^13 + 104*q^12 - 108*q^11 - 88*q^10 + 90*q^9 + 99*q^8 - 88*q^7 - 63*q^6 + 48*q^5 + 45*q^4 - 32*q^3 - 12*q^2 + 10*q + 2)
+      (-160 : ℝ) 1 := by
     have h10 := ((hasDerivAt_pow 10 (1 : ℝ)).const_mul 11).neg
     have h9  := (hasDerivAt_pow 9 (1 : ℝ)).const_mul 10
     have h8  := (hasDerivAt_pow 8 (1 : ℝ)).const_mul 18
@@ -664,7 +716,7 @@ theorem delta_tau_M_surrogate_deriv2_hasDerivAt_one :
       first | (funext q; simp only [Pi.add_apply, Pi.sub_apply, Pi.neg_apply]; ring) | norm_num
   -- N''(1)=-100, N'''(1)=-888
   have hNpp : HasDerivAt
-      (fun q : ℝ => -110*q^9 + 90*q^8 - 144*q^7 + 56*q^6 + 30*q^4 - 20*q^3 - 6*q + 4)
+      (fun q : ℝ => 544*q^15 - 480*q^14 - 1050*q^13 + 728*q^12 + 1248*q^11 - 1188*q^10 - 880*q^9 + 810*q^8 + 792*q^7 - 616*q^6 - 378*q^5 + 240*q^4 + 180*q^3 - 96*q^2 - 24*q + 10)
       (-888 : ℝ) 1 := by
     have h9 := ((hasDerivAt_pow 9 (1 : ℝ)).const_mul 110).neg
     have h8 := (hasDerivAt_pow 8 (1 : ℝ)).const_mul 90
@@ -678,29 +730,29 @@ theorem delta_tau_M_surrogate_deriv2_hasDerivAt_one :
     convert hsum using 1 <;>
       first | (funext q; simp only [Pi.add_apply, Pi.sub_apply, Pi.neg_apply]; ring) | norm_num
   -- D(1)=12, D'(1)=72
-  have hD : HasDerivAt (fun q : ℝ => 4 * q^5 * (q^2 + q + 1)) (72 : ℝ) 1 := by
-    have h5  : HasDerivAt (fun q : ℝ => q^5) ((5 : ℝ) * 1^4) 1 := hasDerivAt_pow 5 1
+  have hD : HasDerivAt (fun q : ℝ => 4 * q^8 * (q^2 + q + 1)) (108 : ℝ) 1 := by
+    have h5  : HasDerivAt (fun q : ℝ => q^8) ((8 : ℝ) * 1^7) 1 := hasDerivAt_pow 8 1
     have h2  : HasDerivAt (fun q : ℝ => q^2) ((2 : ℝ) * 1^1) 1 := hasDerivAt_pow 2 1
     have h1  : HasDerivAt (fun q : ℝ => q) (1 : ℝ) 1 := hasDerivAt_id 1
     have h0  : HasDerivAt (fun _ : ℝ => (1 : ℝ)) 0 1 := hasDerivAt_const (1 : ℝ) (1 : ℝ)
     have hquad : HasDerivAt (fun q : ℝ => q^2 + q + 1) (3 : ℝ) 1 := by
       have := (h2.add h1).add h0; convert this using 1; norm_num
-    have hprod : HasDerivAt (fun q : ℝ => q^5 * (q^2 + q + 1)) (18 : ℝ) 1 := by
+    have hprod : HasDerivAt (fun q : ℝ => q^8 * (q^2 + q + 1)) (27 : ℝ) 1 := by
       have := h5.mul hquad; convert this using 1; norm_num
     have := hprod.const_mul 4
     convert this using 1
     · funext q; ring
     · norm_num
   -- D'(1)=72, D''(1)=368
-  have hDp : HasDerivAt (fun q : ℝ => 28*q^6 + 24*q^5 + 20*q^4) (368 : ℝ) 1 := by
-    have h6 := (hasDerivAt_pow 6 (1 : ℝ)).const_mul 28
-    have h5 := (hasDerivAt_pow 5 (1 : ℝ)).const_mul 24
-    have h4 := (hasDerivAt_pow 4 (1 : ℝ)).const_mul 20
+  have hDp : HasDerivAt (fun q : ℝ => 40*q^9 + 36*q^8 + 32*q^7) (872 : ℝ) 1 := by
+    have h6 := (hasDerivAt_pow 9 (1 : ℝ)).const_mul 40
+    have h5 := (hasDerivAt_pow 8 (1 : ℝ)).const_mul 36
+    have h4 := (hasDerivAt_pow 7 (1 : ℝ)).const_mul 32
     have hsum := (h6.add h5).add h4
     convert hsum using 1
     norm_num
   -- D''(1)=368, D'''(1)=1560
-  have hDpp : HasDerivAt (fun q : ℝ => 168*q^5 + 120*q^4 + 80*q^3) (1560 : ℝ) 1 := by
+  have hDpp : HasDerivAt (fun q : ℝ => 360*q^8 + 288*q^7 + 224*q^6) (1560 : ℝ) 1 := by
     have h5 := (hasDerivAt_pow 5 (1 : ℝ)).const_mul 168
     have h4 := (hasDerivAt_pow 4 (1 : ℝ)).const_mul 120
     have h3 := (hasDerivAt_pow 3 (1 : ℝ)).const_mul 80
@@ -901,8 +953,8 @@ private lemma iteratedDeriv_polysum_one (c : ℕ → ℝ) (j : ℕ) :
 
 -- ===== APPLICATION to the surrogate =====
 private noncomputable def Nf (q : ℝ) : ℝ :=
-  -q^11 + q^10 - 2*q^9 + q^8 + q^6 - q^5 - q^3 + 2*q^2 - q + 1
-private noncomputable def Df (q : ℝ) : ℝ := 4 * q^5 * (q^2 + q + 1)
+  2*q^17 - 2*q^16 - 5*q^15 + 4*q^14 + 8*q^13 - 9*q^12 - 8*q^11 + 9*q^10 + 11*q^9 - 11*q^8 - 9*q^7 + 8*q^6 + 9*q^5 - 8*q^4 - 4*q^3 + 5*q^2 + 2*q - 2
+private noncomputable def Df (q : ℝ) : ℝ := 4 * q^8 * (q^2 + q + 1)
 private noncomputable def f0 : ℝ → ℝ := delta_tau_M_surrogate
 
 private def cN : ℕ → ℝ := fun m =>
