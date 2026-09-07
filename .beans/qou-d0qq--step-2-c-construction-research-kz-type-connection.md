@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T08:13:53Z
-updated_at: 2026-09-07T10:03:41Z
+updated_at: 2026-09-07T10:13:43Z
 parent: qou-2akx
 ---
 
@@ -22,3 +22,5 @@ parent: qou-2akx
 
 
 2026-09-07 EXECUTED: P2 (SL2QuantumTraceIsZD: z_D is the sl2 quantum trace, sl3 never equals it over any field), P3 (KZFlatnessLevelIndependent + two prose sites reworded), P5 (colour_cubic_braid_monodromy_probe, parent re-run 13/13: all six lassos are positive half-twists, conjugacy ESTABLISHED, product = Δ² = loop at infinity). Remaining: plan step 5 (carry the named hypothesis — substrate connection = sl2 KZ on Conf3 pulled back along the root map at level k+2 = iπ/ln q0 — as a field of conj:hecke-monodromy-step-two) and step 6 (ingest Kohno 1987 / Drinfeld 1985). Audit §0b. PR #7035.
+
+2026-09-07 plan step 5 DONE: QOU/Mass/KZPullbackHypothesis.lean — class KZPullbackGenerators (each substrate generator is conjugate in the tower to a KZ generator satisfying the Hecke quadratic with the level's q; Kohno–Drinfeld cited); quad_of_kz DERIVES HeckeMonodromy.quad from it, heckeMonodromy_of_kz assembles the Step-2 instance given braid / far_comm / shadow (which per-generator conjugacy does not supply — the measured conjugators differ per lasso). No instance provided: constructing the connection is the open remainder. conj:hecke-monodromy-step-two .md names the hypothesis and the three results. Remaining on this bean: plan step 6 (ingest Kohno 1987 / Drinfeld 1985), and the construction itself.
