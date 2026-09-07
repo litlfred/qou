@@ -174,6 +174,35 @@ merely by the `10 ∉ {3,4}` miss.
 to, in the derived `(μ, λ)` frame, is the same convention question as which 5₂ is Rolfsen's; no held
 source settles it, and nothing here needs it. `qou-q3np` and the Route-C programme are untouched.
 
+## 3c. Route C, M3: `H_floor`'s remainder from the derived shape fields (2026-09-07)
+
+**Producer:** [`computations/probes/aomega_m3_floor_remainder_from_derived_shape_fields_probe.py`](../../computations/probes/aomega_m3_floor_remainder_from_derived_shape_fields_probe.py)
+(13/13); **Lean:** `QOU/QBeta/FloorRemainderFromDerivedShapeFields.lean` (sorry-free; the
+real-root theorems over `ℝ`).
+
+Bean `qou-m3ad` Part 4 found that the rival hypothesis `H_floor` — knot-independent core
+`{trivial, geometric, conjugate}`, knot-dependent remainder = number of real embeddings of the
+trace field — reproduces Garoufalidis–Zagier's `|P_K| = 3, 4, 7` and derives the "+1" of 5₂ from
+arithmetic. Its inputs were a transcribed table (`AdjointIndexSetM3.realEmbeddings`). On the two
+knots this corpus derives, they no longer need to be: §2's shape fields are `x² − x + 1` for 4₁
+(no real root, `fourOneShapePoly_ne_zero`) and `θ³ − θ + 1` for 5₂ (exactly one real root,
+`fiveTwoShapeCubic_existsUnique_root`: IVT on `(−2, −1)` for existence; every root lies below
+`−1`, where the cubic is strictly increasing, for uniqueness). So the signatures `(0,1)`, `(1,1)`,
+the sizes `|P_K| = 3, 4` and the remainders `0, 1` follow, and Part 1's forced unit remainder has
+a derived source (`floor_remainders_from_derived_fields`).
+
+The probe adds the piece `H_floor` grades by: every tetrahedron shape pushed through every
+embedding of the field and summed under the Bloch–Wigner dilogarithm gives the Chern–Simons value
+set of the Galois-conjugate structures — `{+V, −V}` for 4₁ (`V = 2·Cl₂(π/3)`, to 1e-40) and
+`{0, +V, −V}` for 5₂ (`V = 2.82812208833…`, the corpus value to 1e-18; the real embedding
+`θ ≈ −1.3247` has real shapes and volume exactly `0`).
+
+**What this does not do.** It does not separate `H_Ad` from `H_floor` — the core is `3` under both
+(`core_is_three_on_all_three`) and Part 3's meridian grading remains `H_Ad`'s only distinct
+content. It does not reach `(−2,3,7)`: that field is not derived here, so the prediction `7` stays
+a prediction. Nothing about `A_ω` is derived; the Hecke-side origin of the extra 5₂ ray
+(`qou-rtec` M3) is untouched.
+
 ## 4. What it does not do
 
 It does not transcribe Guéritaud; the fold is a search result, stated as such, and a reader who
