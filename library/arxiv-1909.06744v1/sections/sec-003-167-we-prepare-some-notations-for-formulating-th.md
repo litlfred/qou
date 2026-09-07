@@ -7,6 +7,7 @@ section_number: 16.7
 pages: 19-24
 source_pdf: 1909.06744v1.pdf
 source_sha256: 82e3980da78c07da
+doc_brief: "Springer correspondence for symmetric spaces — This is a survey on the Springer correspondence for symmetric spa ces."
 ---
 respondence. We deﬁne SGιθ as the set of triples, ( L, O1, E1), up to the conjugation
 action of H, where L is a θ-stable Levi subgroup of a θ-stable parabolic subgroup P ,

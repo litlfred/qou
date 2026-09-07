@@ -7,6 +7,7 @@ section_number: null
 pages: 7-10
 source_pdf: bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf
 source_sha256: 2bc66a26d3901a29
+doc_brief: "RESEARCHARTICLE PSYCHOLOGICALANDCOGNITIVESCIENCEMS The non-Riemannian nature of perceptual color space RoxanaBujacka,1 ,EmilyTeti a,b,JonahMiller a,ElektraCaffrey a,c,andTereceL.Turton a — 2 sections"
 ---
 the various color spaces). It is also a geodesic in the Euclidean
 spaces CIE CAM, CIE RGB, CIE XYZ, CIE LUV, DIN99,

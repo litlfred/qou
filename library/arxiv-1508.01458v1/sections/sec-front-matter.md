@@ -7,6 +7,7 @@ section_number: null
 pages: 1-5
 source_pdf: 1508.01458v1.pdf
 source_sha256: 37cfb89f419c9eab
+doc_brief: "Knotty inflation and the dimensionality of spacetime — 2 sections: Front matter; Acknowledgments"
 ---
 arXiv:1508.01458v1  [hep-ph]  6 Aug 2015
 Knotty inﬂation and the dimensionality of spacetime

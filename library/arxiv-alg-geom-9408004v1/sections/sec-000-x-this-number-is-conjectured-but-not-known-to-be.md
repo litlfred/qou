@@ -7,6 +7,7 @@ section_number: X
 pages: 20-26
 source_pdf: 9408004v1.pdf
 source_sha256: d3bc00265294aa02
+doc_brief: "CUBICS, INTEGRABLE SYSTEMS, AND — 3 sections: Front matter; This number is conjectured, but no; References"
 ---
 parameterq is deﬁned by q :=e2πit , where t is a set of linear coordinates on
 H 2(X, C). Intrinsically, we deﬁne qdk as the function given at t ∈H 2(X, C)

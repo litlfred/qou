@@ -7,6 +7,7 @@ section_number: null
 pages: 1-13
 source_pdf: 1-s2.0-0040938387900097-main.pdf
 source_sha256: dae76f3434834382
+doc_brief: "STATE MODELS AND THE JONES POLYNOMIAL (f&riced in recisrdfirm I Srpremher 1986) $1. INTRODIJ’CTION IN THIS PAPER I construct a state model for the (original) Jones polynomial [5]. (In [6] a state — 2"
 ---
 STATE MODELS AND THE JONES POLYNOMIAL 
 (f&riced in recisrdfirm I Srpremher 1986) 
