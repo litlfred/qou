@@ -1,6 +1,7 @@
 import QOU.Hecke.SymmetricCoxeter
 import QOU.Hecke.PermLength
 import QOU.Machinery.CoxeterBruhat
+import QOU.IwahoriHecke.BruhatReflection
 
 /-!
 # The rank matrix of a permutation, and the easy half of Ehresmann's criterion
@@ -575,33 +576,108 @@ theorem eq_one_of_rk_one_le {u : Perm (Fin n)}
   show u x = x
   exact Fin.ext (by omega)
 
-/-! ### The hard direction — stated, not proved
+/-! ### The hard direction — PROVED
 
-`rk_le_of_bruhatLe` above is the EASY half of Ehresmann's criterion.  Its converse — the rank
-criterion IMPLIES the subword order — is the hard half, and it is the one genuinely
-Mathlib-scale gap in this development.  It is stated here rather than left implicit inside a
-tableau-specific theorem, because it is a standard result about Coxeter groups with nothing
-tableau-theoretic in it, and because isolating it makes every other step machine-checked.
+`rk_le_of_bruhatLe` above is the easy half of Ehresmann's criterion.  This is the hard half:
+the rank criterion IMPLIES the Bruhat (subword) order.  Together they give the criterion in
+full for the symmetric group, and they close the last gap in Dipper-James 3.7.
 
-**This carries a `sorry`, and the `sorry` propagates.**  Anything downstream of
-`bruhatLe_of_rk_le` shows `sorryAx` under `#print axioms`, `DominanceIsBruhat`'s
-`dominance_to_bruhatLe` included.  Naming the gap does not close it. -/
+The induction is on `ℓ(w)`.  At a right descent `s` of `w`, with `w' = w·s`:
 
-/-- **The hard direction of Ehresmann's criterion**: pointwise domination of rank matrices
-implies the Bruhat (subword) order.
+    u descends at s   rk w' ≤ rk u'  (rk_mul_swap_mono_desc)   IH: u' ≤ w'   lift back
+    u ascends  at s   rk w' ≤ rk u   (rk_mul_swap_le_of_asc)   IH: u  ≤ w'   transitivity
 
-Together with `rk_le_of_bruhatLe` this is the criterion in full — `u ≤ w` iff `rk w ≤ rk u`
-pointwise — for the symmetric group.
+Everything it composes with was already in the corpus and none of it was rebuilt:
+`BruhatReflection.bruhatLe_mul_simple_of_isRightDescent` and `BruhatSubword.bruhatLe_trans_An`
+supply the Bruhat side, `Hecke.Inversions.length_mul_swap_eq_succ_iff` is the descent bridge,
+and `Hecke.Inversions.eq_one_of_strictMono` gives the descent's existence.  The two rank
+lemmas and the base case are the only new mathematics. -/
 
-Measured exhaustively at `n ≤ 6` (708 062/708 062, both directions) in
-`computations/hecke/dipper_james_rank_criterion_probe.py`; the statement is not in doubt, only
-unproved here. -/
--- Ref: [bjornerbrenti2005] Björner & Brenti, *Combinatorics of Coxeter Groups*, Graduate
--- Texts in Mathematics 231, Springer 2005, Theorem 2.1.5 (the tableau criterion).
+theorem eq_one_of_all_asc {w : Perm (Fin (n + 1))}
+    (h : ∀ j : Fin n, w j.castSucc < w j.succ) : w = 1 :=
+  QOU.Hecke.Inversions.eq_one_of_strictMono (Fin.strictMono_iff_lt_succ.mpr h)
+
+open QOU.Hecke.SymmetricCoxeter QOU.Machinery.CoxeterBruhat QOU.IwahoriHecke.BruhatReflection
+
+/-- Type-`A` form of `bruhatLe_mul_simple_of_isRightDescent`, hypotheses discharged. -/
+theorem bruhatLe_mul_simple_of_isRightDescent_An {N : ℕ} {W : Type*} [Group W]
+    (cs : CoxeterSystem (CoxeterMatrix.Aₙ N) W) {u w : W} (h : BruhatLe cs u w)
+    {s : Fin N} (hs : cs.IsRightDescent w s) : BruhatLe cs (u * cs.simple s) w :=
+  bruhatLe_mul_simple_of_isRightDescent cs
+    (QOU.Machinery.CoxeterDihedralDescent.dihedralExact_le_three cs (QOU.IwahoriHecke.Matsumoto.An_le_three N))
+    (fun i j hij => QOU.IwahoriHecke.Matsumoto.An_ne_zero N i j hij) h hs
+
+
+
+theorem bruhatLe_of_rk_le_aux : ∀ (N : ℕ) (w u : Perm (Fin (n + 1))),
+    (permCoxeterSystem n).length w ≤ N →
+    (∀ i m, rk w i m ≤ rk u i m) →
+    BruhatLe (permCoxeterSystem n) u w := by
+  intro N
+  induction N with
+  | zero =>
+      intro w u hlen h
+      have hw1 : w = 1 := (permCoxeterSystem n).length_eq_zero_iff.mp (Nat.le_zero.mp hlen)
+      subst hw1
+      have hu1 : u = 1 := eq_one_of_rk_one_le h
+      subst hu1
+      exact bruhatLe_refl _ _
+  | succ N ih =>
+      intro w u hlen h
+      by_cases hzero : (permCoxeterSystem n).length w = 0
+      · have hw1 : w = 1 := (permCoxeterSystem n).length_eq_zero_iff.mp hzero
+        subst hw1
+        have hu1 : u = 1 := eq_one_of_rk_one_le h
+        subst hu1
+        exact bruhatLe_refl _ _
+      · have hex : ¬ (∀ j : Fin n, w j.castSucc < w j.succ) := by
+          intro hall
+          exact hzero (by rw [eq_one_of_all_asc hall]; simp)
+        push_neg at hex
+        obtain ⟨j, hj⟩ := hex
+        have hwdesc : w j.succ < w j.castSucc :=
+          lt_of_le_of_ne hj (fun hc => absurd (w.injective hc) (Fin.castSucc_lt_succ j).ne')
+        set s := (permCoxeterSystem n).simple j with hs
+        have hsw : s = Equiv.swap j.castSucc j.succ := permCoxeterSystem_simple' n j
+        have hnotasc : ¬ ((permCoxeterSystem n).length (w * s)
+            = (permCoxeterSystem n).length w + 1) := by
+          rw [hsw]
+          intro hc
+          exact absurd ((QOU.Hecke.Inversions.length_mul_swap_eq_succ_iff w j).mp hc)
+            (not_lt.mpr hwdesc.le)
+        have hstep := (permCoxeterSystem n).length_mul_simple w j
+        have hdrop : (permCoxeterSystem n).length (w * s) + 1
+            = (permCoxeterSystem n).length w := by
+          rcases hstep with h1 | h1
+          · exact absurd h1 hnotasc
+          · exact h1
+        have hdesc : (permCoxeterSystem n).IsRightDescent w j :=
+          (permCoxeterSystem n).isRightDescent_iff.mpr (by omega)
+        have hlenw' : (permCoxeterSystem n).length (w * s) ≤ N := by omega
+        have hback : (w * s) * s = w := by
+          rw [hs, mul_assoc, CoxeterSystem.simple_mul_simple_self, mul_one]
+        have hw'w : BruhatLe (permCoxeterSystem n) (w * s) w := by
+          have hlen1 : (permCoxeterSystem n).length ((w * s) * s)
+              = (permCoxeterSystem n).length (w * s) + 1 := by rw [hback]; omega
+          have hb := bruhatLe_mul_simple (permCoxeterSystem n) j
+            (bruhatLe_refl (permCoxeterSystem n) (w * s)) hlen1
+          rwa [hback] at hb
+        by_cases hu : u j.succ < u j.castSucc
+        · have hrk : ∀ i m, rk (w * s) i m ≤ rk (u * s) i m := by
+            rw [hsw]; exact fun i m => rk_mul_swap_mono_desc u w j (Fin.lt_def.mp hu) h i m
+          have hus := ih (w * s) (u * s) hlenw' hrk
+          have hle := QOU.IwahoriHecke.BruhatSubword.bruhatLe_trans_An (permCoxeterSystem n) hus hw'w
+          have hfin := bruhatLe_mul_simple_of_isRightDescent_An (permCoxeterSystem n) hle hdesc
+          rwa [hs, mul_assoc, CoxeterSystem.simple_mul_simple_self, mul_one] at hfin
+        · push_neg at hu
+          have huasc : u j.castSucc < u j.succ :=
+            lt_of_le_of_ne hu (fun hc => absurd (u.injective hc) (Fin.castSucc_lt_succ j).ne)
+          have hrk : ∀ i m, rk (w * s) i m ≤ rk u i m := by
+            rw [hsw]; exact fun i m => rk_mul_swap_le_of_asc u w j (Fin.lt_def.mp huasc) h i m
+          exact QOU.IwahoriHecke.BruhatSubword.bruhatLe_trans_An (permCoxeterSystem n) (ih (w * s) u hlenw' hrk) hw'w
+
 theorem bruhatLe_of_rk_le {u w : Perm (Fin (n + 1))}
-    (_h : ∀ i m : ℕ, rk w i m ≤ rk u i m) :
-    QOU.Machinery.CoxeterBruhat.BruhatLe
-      (QOU.Hecke.SymmetricCoxeter.permCoxeterSystem n) u w :=
-  sorry
+    (h : ∀ i m, rk w i m ≤ rk u i m) : BruhatLe (permCoxeterSystem n) u w :=
+  bruhatLe_of_rk_le_aux ((permCoxeterSystem n).length w) w u le_rfl h
 
 end QOU.Machinery.BruhatRank

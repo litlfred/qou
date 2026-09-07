@@ -280,15 +280,13 @@ interpolation.
   It is now **proved** on exactly this route: `rk_le_of_bruhatLe` (easy Ehresmann,
   `Machinery/BruhatRankCriterion`), then `rankAt_eq_rk` to specialise to the row cuts, then
   `domRel_iff_rankAt`.  `qou-3k66` stays open on its own merits.
-* **Forward — reduced to ONE classical theorem.**  The interpolation bridge is proved
-  (`rk_le_of_rankAt_le`, on `BruhatRank.rk_le_of_endpoints` + `dOf_increasingOn_block` +
-  `exists_block`), so `dominance_to_bruhatLe` is now a two-line composition.  Its ONLY
-  remaining input is `BruhatRank.bruhatLe_of_rk_le`, the **hard** direction of Ehresmann's
-  criterion, stated there with a `sorry` and a citation to Björner–Brenti Thm 2.1.5.
-  **`dominance_to_bruhatLe` therefore still depends on `sorryAx`** — this file has no `sorry`
-  token, which is not the same thing, and `#print axioms` is the honest check.  What changed
-  is *where* the gap is: a named, citable statement about Coxeter groups with no tableau
-  content, rather than a tableau selection rule that seven attempts failed to find.
+* **Forward — PROVED.**  The interpolation bridge (`rk_le_of_rankAt_le`, on
+  `BruhatRank.rk_le_of_endpoints` + `dOf_increasingOn_block` + `exists_block`) reduced it to
+  the **hard** direction of Ehresmann's criterion, and that is now proved too:
+  `BruhatRank.bruhatLe_of_rk_le`, sorry-free, by induction on `ℓ(w)` at a right descent.
+  So `dominance_to_bruhatLe` is `[propext, Classical.choice, Quot.sound]` — **no `sorryAx`**,
+  checked with `#print axioms` rather than by the absence of a `sorry` token, which is not
+  the same thing.  Both halves of 3.7 are now unconditional.
 
 What remains free and is not in doubt: swapping two labels **is** the group action
 (`TableauPerm.dOf_smul`, verified), the handedness bridge is landed, the coset-minimality
@@ -610,16 +608,18 @@ theorem rk_le_of_rankAt_le (hn : QOU.BraidKnot.Specht.nOf μ = n + 1) {s t : QOU
 The Bruhat side is `d(s) ≤ d(t)` — **reversing**; see the module docstring, and
 `refTab_dOf_bruhatLe` for the fact that forces it.
 
-**The tableau side is now DONE; one classical Coxeter theorem remains.**  This proof is a
-two-line composition — `domRel_iff_rankAt` turns dominance into a rank comparison at the row
-cuts, `rk_le_of_rankAt_le` interpolates it to every index — and then it applies
-`BruhatRank.bruhatLe_of_rk_le`, the **hard direction of Ehresmann's criterion**, which is
-stated with a `sorry` and a citation to Björner–Brenti Thm 2.1.5.
+**PROVED, unconditionally.**  A two-line composition — `domRel_iff_rankAt` turns dominance
+into a rank comparison at the row cuts, `rk_le_of_rankAt_le` interpolates it to every index —
+applied to `BruhatRank.bruhatLe_of_rk_le`, the **hard direction of Ehresmann's criterion**,
+which is itself now proved sorry-free (induction on `ℓ(w)` at a right descent).
 
-**So this declaration still depends on `sorryAx`**, and `#print axioms` says so.  What has
-changed is *where* the gap is: it is no longer Mathas' broken tableau induction (measured at
-78.8 % on its `s ⊵ v` clause — see the module docstring), but a standard, citable statement
-about Coxeter groups with no tableau content at all.
+`#print axioms` gives `[propext, Classical.choice, Quot.sound]` — **no `sorryAx`**.  Note that
+is the honest check: a file with no `sorry` token can still depend on one, and this
+declaration did until the Ehresmann half landed.
+
+Mathas' own route is not what closed it.  His tableau induction measures **78.8 %** on its
+`s ⊵ v` clause (see the module docstring); the route taken here has no tableau content in it
+at all.
 
 Mathas' own route needed a correct selection rule for the inductive step's transposition; one
 exists (some transposition works for **every** pair, 142 314/142 314) but none of seven tried
