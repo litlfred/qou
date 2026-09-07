@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T11:14:56Z
-updated_at: 2026-09-07T11:40:28Z
+updated_at: 2026-09-07T11:45:28Z
 ---
 
 ## The question this answers
@@ -185,3 +185,41 @@ caches. `atom-chi-rust-4he` is in flight (~24 min by its own recorded
 Until it lands the rust family is itself split — D/T/³He borromean, ⁴He
 grouped — which is a *worse* straddle than before, so this must not be left
 half-done.
+
+
+## 🛑 CORRECTION — "five other consumers" was a truncated grep, not a count
+
+I reported the blast radius as *"at least five further producers"* and listed
+five. That list was the output of a `head -5`; I reported the truncation as the
+count. Measured properly (`git grep -ln atom-chi-rust -- '*.py'`, excluding
+`_deprecated`):
+
+| | count |
+|---|---|
+| files referencing `atom-chi-rust` | **67** |
+| of those, actually pulling χ values (`chi_lambda` / `by_partition`) | **63** |
+| mention-only | 4 — `q0_witness_read_dataflow_audit`, `binding_log_scale_investigation`, `binding_reeb_ratio_rho_free`, `threerow_chi_sparse` |
+| readers that emit a committed witness of their own | **35** |
+| of those 35, dated **pre-ruling** | **34** |
+| dated on/after 2026-09-06 | **1** |
+
+So the surface is **63 producers**, not five — an order of magnitude out, and
+in the direction that matters.
+
+## What that does and does not license
+
+It does **not** license calling 34 witnesses stale-and-wrong. A pre-ruling date
+is expected wherever nobody re-ran a producer, and whether each output *moves*
+is unmeasured.
+
+What is different here from an ordinary staleness date: these 63 read a source
+that is **now measured to have moved**, and moved by a lot — the committed rust
+caches disagreed with canonical on 9 of 11 deuteron blocks (max 21.3) and 75 of
+77 ⁴He blocks (max 827.9). That is stronger evidence than a timestamp, because
+the input change is demonstrated rather than inferred. It still is not a
+per-producer measurement.
+
+The right next step is the dating pass already committed as
+`computations/audits/date_failing_witnesses_against_pre_regeneration.py`,
+pointed at this population rather than at the failing set — it distinguishes
+"would move" from "already recorded as moved" without re-running 63 producers.
