@@ -1,0 +1,373 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2208.13448v2",
+ "source": {
+  "file": "2208.13448v2.pdf",
+  "sha256": "8bfa244cf7ca867d90a5d465df2a3d3c63af08e500fc213a95cecdc6bd52693f",
+  "bytes": 427105,
+  "pages": 37,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2208.13448",
+   "version": "2",
+   "primary_class": "math.NT",
+   "stamp_date": "4 Jul 2023"
+  },
+  "doi": null,
+  "title": "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER THREE EQUATIONS",
+  "authors_raw": "THOMAS DREYFUS AND MARINA POULET",
+  "title_lines": [
+   "ON THE COMPUTATION OF THE DIFFERENCE GALOIS GROUPS OF ORDER",
+   "THREE EQUATIONS"
+  ],
+  "abstract": "In this paper we consider the problem of computing the di\ufb00ere nce Galois groups of order three equations for a large class of di\ufb00erenc e operators including the shift operator (Case S), the q-di\ufb00erence operator (Case Q), the Mahler operator (Case M) a nd the elliptic case (Case E). We show that the general problem c an be reduced to several ancillary problems. We prove criteria to detect the irreduc ible and imprimitive Galois groups. Finally, we give a su\ufb03cient condition of di\ufb00erentia l transcendence of solutions of order three di\ufb00erence equations. We also compute the di\ufb00e rence Galois group of an equation suggested by Wadim Zudilin.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20230705214503-04'00'",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Notations and conventions",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Difference algebra",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Galois groups",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Factorisations of difference operators",
+   "page": 6,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "From theory to practice",
+   "page": 7,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Galois groups of difference systems",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "The reducible case",
+   "page": 9,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The imprimitive case",
+   "page": 11,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "The primitive case",
+   "page": 19,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Galois groups of equations of order one and diagonal systems",
+   "page": 20,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Galois groups of equations of order one",
+   "page": 20,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Galois groups of diagonal systems",
+   "page": 21,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Galois groups of equations of order two",
+   "page": 21,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Galois groups of equations of order three",
+   "page": 23,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Reducible case",
+   "page": 23,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Imprimitive case",
+   "page": 30,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Primitive case",
+   "page": 30,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "Summary",
+   "page": 34,
+   "source": "outline",
+   "number": "6.4"
+  },
+  {
+   "level": 1,
+   "title": "Application to the differential transcendence",
+   "page": 34,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 35,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2320,
+   "n_words": 420
+  },
+  {
+   "id": "sec-001-21-galois-groups",
+   "number": "2.1",
+   "title": "Galois groups",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 4842,
+   "n_words": 877
+  },
+  {
+   "id": "sec-002-notations-and-conventions",
+   "number": null,
+   "title": "Notations and conventions",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 396,
+   "n_words": 79
+  },
+  {
+   "id": "sec-003-2-difference-algebra",
+   "number": "2",
+   "title": "Difference algebra",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 8753,
+   "n_words": 1775
+  },
+  {
+   "id": "sec-004-23-from-theory-to-practice",
+   "number": "2.3",
+   "title": "From theory to practice",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4843,
+   "n_words": 972
+  },
+  {
+   "id": "sec-005-3-galois-groups-of-difference-systems",
+   "number": "3",
+   "title": "Galois groups of difference systems",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 685,
+   "n_words": 124
+  },
+  {
+   "id": "sec-006-31-the-reducible-case",
+   "number": "3.1",
+   "title": "The reducible case",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 3049,
+   "n_words": 698
+  },
+  {
+   "id": "sec-007-32-the-imprimitive-case",
+   "number": "3.2",
+   "title": "The imprimitive case",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 19,
+   "n_chars": 23221,
+   "n_words": 5207
+  },
+  {
+   "id": "sec-008-33-the-primitive-case",
+   "number": "3.3",
+   "title": "The primitive case",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2473,
+   "n_words": 502
+  },
+  {
+   "id": "sec-009-4-galois-groups-of-equations-of-order-one-and-di",
+   "number": "4",
+   "title": "Galois groups of equations of order one and diagonal systems",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2331,
+   "n_words": 514
+  },
+  {
+   "id": "sec-010-42-galois-groups-of-diagonal-systems",
+   "number": "4.2",
+   "title": "Galois groups of diagonal systems",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 1151,
+   "n_words": 274
+  },
+  {
+   "id": "sec-011-5-galois-groups-of-equations-of-order-two",
+   "number": "5",
+   "title": "Galois groups of equations of order two",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 370,
+   "n_words": 77
+  },
+  {
+   "id": "sec-012-61-reducible-case",
+   "number": "6.1",
+   "title": "Reducible case",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2468,
+   "n_words": 570
+  },
+  {
+   "id": "sec-013-6-galois-groups-of-equations-of-order-three",
+   "number": "6",
+   "title": "Galois groups of equations of order three",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 30,
+   "n_chars": 16155,
+   "n_words": 3676
+  },
+  {
+   "id": "sec-014-62-imprimitive-case",
+   "number": "6.2",
+   "title": "Imprimitive case",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 34,
+   "n_chars": 10596,
+   "n_words": 2265
+  },
+  {
+   "id": "sec-015-64-summary",
+   "number": "6.4",
+   "title": "Summary",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 2018,
+   "n_words": 421
+  },
+  {
+   "id": "sec-016-7-application-to-the-differential-transcendence",
+   "number": "7",
+   "title": "Application to the differential transcendence",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 2309,
+   "n_words": 472
+  },
+  {
+   "id": "sec-017-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 7752,
+   "n_words": 1096
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 21,
+  "sections": 18,
+  "chars_total": 95732
+ }
+}
