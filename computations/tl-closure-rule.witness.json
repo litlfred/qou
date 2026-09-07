@@ -1,5 +1,5 @@
 {
-  "description": "Closure of left multiplication on the Jones normal forms, indexed by (I,J). The δ rule is COMPLETE and holds on all 3456 products at n=2..7: loops=1 iff (I',J')=(I,J) iff k in I and k-1 not in I -- a condition on I alone. The (I',J') formula for the loops=0 branch is NOT identified and is recorded as open. Separately: no natural measure on (I,J) is monotone under the rewriting (13 tested, all increase somewhere), and the image of e_k has exactly catalan(n-1) elements for every k -- the tower relation dim(e_k TL_n) = dim TL_{n-1}.",
+  "description": "Closure of left multiplication on the Jones normal forms, indexed by (I,J). The δ rule is COMPLETE and holds on all 3456 products at n=2..7: loops=1 iff (I',J')=(I,J) iff k in I and k-1 not in I -- a condition on I alone. The (I',J') formula for the loops=0 branch is NOT identified and is recorded as open. Separately: no natural measure on (I,J) is monotone under the rewriting (12 tested, all increase somewhere), and the image of e_k has exactly catalan(n-1) elements for every k -- the tower relation dim(e_k TL_n) = dim TL_{n-1}.",
   "bean": "qou-cds1",
   "products_tested": 3456,
   "arithmetic": "exact integers, sets and tuples; no floating point",
@@ -254,11 +254,11 @@
   ],
   "all_pass": true,
   "scriptFile": "tl_closure_rule_probe.py",
-  "scriptHash": "e0a93546825f",
-  "scriptCommitSha": "b7f0ba79028f3c1c710122e80e5b142768a4b5e3",
-  "commitSha": "739975f2e8a3ede533907a4ef5f41a2d27725a5e",
+  "scriptHash": "f81d5f9dfc65",
+  "scriptCommitSha": "2c2f2645d673ace71997764188b2839ad9856099",
+  "commitSha": "2c2f2645d673ace71997764188b2839ad9856099",
   "engine": "python",
-  "computedAt": "2026-09-07T17:36:02.916405+00:00",
+  "computedAt": "2026-09-07T17:38:58.181855+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
