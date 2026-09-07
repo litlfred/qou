@@ -140,9 +140,27 @@ def last_commit_times() -> dict[str, int]:
     return times
 
 
-def dirty_closure(mod2path, imports, oleans):
+def dirty_closure(mod2path, imports, oleans, all_dirty=False):
+    """Modules to compile.  With `all_dirty`, that is EVERY module.
+
+    The freshness rule below decides which modules the *snapshot* cannot vouch
+    for.  It is the right population for a gate run per-branch.  It is the wrong
+    population for one question: **how much of the library actually compiles at
+    all.**  A module the restored cache built weeks ago is "clean" here and has
+    still never been checked against today's source by anything in this repo --
+    `lake build QOU` reaches only the root's import closure, which is 910 of 2773
+    modules (`scripts/lean-root-coverage-audit.py`), so the other 1863 are outside
+    every routine build.  `--all` is for measuring that population; do not make it
+    the default, because it costs hours where the closure costs minutes.
+    """
     times = last_commit_times()
     changed, never_built = set(), set()
+    if all_dirty:
+        for m, p_ in mod2path.items():
+            if not (oleans / (m.replace(".", "/") + ".olean")).exists():
+                never_built.add(m)
+        changed = set(mod2path)
+        return set(mod2path), changed, never_built
     for m, p in mod2path.items():
         o = oleans / (m.replace(".", "/") + ".olean")
         if not o.exists():
@@ -236,6 +254,11 @@ def main() -> int:
                          "TIMEOUT (unverified) and the sweep CONTINUES")
     ap.add_argument("--limit", type=int, default=0,
                     help="stop after N modules (for a smoke test)")
+    ap.add_argument("--all", action="store_true",
+                    help="compile EVERY module, not just the dirty closure -- the "
+                         "measurement for 'how much of the library compiles', since "
+                         "1863 of 2773 are outside the root build and so outside "
+                         "every routine check.  Hours, not minutes.")
     ap.add_argument("--package", action="append", metavar="LIB",
                     help="library name (QOU, UGB, Fred2005); repeatable, "
                          "default all discovered")
@@ -267,13 +290,24 @@ def sweep_one(args) -> int:
     oleans = find_oleans()
     print(f"olean tree: {oleans}")
     mod2path, imports = load_graph()
-    dirty, changed, never_built = dirty_closure(mod2path, imports, oleans)
+    dirty, changed, never_built = dirty_closure(mod2path, imports, oleans,
+                                                all_dirty=args.all)
 
     print(f"library modules        {len(mod2path)}")
-    print(f"  source-changed        {len(changed) - len(never_built)}")
-    print(f"  never built (new)     {len(never_built)}")
-    print(f"  DIRTY CLOSURE         {len(dirty)}")
-    print(f"  snapshot-current      {len(mod2path) - len(dirty)}")
+    if args.all:
+        # Under --all the freshness rule never runs, so `changed` is "everything"
+        # by construction.  Printing it as `source-changed` would report a
+        # fabricated measurement in the same column a real one normally occupies
+        # -- exactly the cannot-verify-vs-fails conflation this sweep exists to
+        # avoid.  `never_built` IS measured (olean presence), so it stays.
+        print(f"  never built (new)     {len(never_built)}   [measured]")
+        print(f"  source-changed        n/a  (--all: freshness rule not consulted)")
+        print(f"  TO COMPILE (--all)    {len(dirty)}   [= every module]")
+    else:
+        print(f"  source-changed        {len(changed) - len(never_built)}")
+        print(f"  never built (new)     {len(never_built)}")
+        print(f"  DIRTY CLOSURE         {len(dirty)}")
+        print(f"  snapshot-current      {len(mod2path) - len(dirty)}")
     if not dirty:
         print("nothing to sweep")
         return 0
