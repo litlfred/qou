@@ -29,6 +29,36 @@ was one revision away from making. Measured over the 450:
   the tree moving; they go stale only when someone proves the thing. Reporting
   them as "not rankable" invites reading them as a tool defect. They are not.
 
+MEASURED HIT RATE, 2026-09-06: 8 actionable findings from 14 ranked beans
+checked. The rate is worth recording because it settles a caution stated above
+in the OTHER direction. The "thirteen of fourteen already handled" figure came
+from the owner-GATED subset and, as noted, does not generalise. On the ranked
+ARTIFACT subset the picture is different and better: over half the checks
+produced real work, and the work was of four distinct kinds —
+
+  a real fix        qou-b7cf   LAUNDERED 3 -> 0, plus one site the gate cannot
+                               see (sp.Float(str(Q), 40), 17 digits padded to 40)
+                    qou-ghy5   32 fabricated-DOI citation sites drained at the
+                               producer, 9 -> 8 keys / 48 -> 16 sites
+                    qou-qcy6   a new carrier-vacuity detector, 17 candidates
+  a stale artifact  qou-aj91   the audit's OWN witness was one producer-
+                               generation behind; reader surface 86 -> 88
+  a verdict         qou-47sx   the blocked producer should NOT be repaired: its
+                               volumes come from a function documented wrong for
+                               five of its six subjects
+  a correction      qou-8iru   three siblings re-derived, overnight, a result
+                               this bean proved in Lean four weeks earlier
+                    qou-b9c3   a sibling's orphan mechanism explains 0 of 22
+
+Six of the fourteen were healthy and needed nothing (qou-2tuv, qou-0c19,
+qou-cds1, qou-p77d, qou-e9pp, qou-9ot5) — which is the ranking working, not
+failing: it costs one check to establish that, and the check is the product.
+
+TWO SELECTION EFFECTS, so the 8/14 is not quotable as a general rate. The
+sample is the TOP of the ranking, i.e. maximum tree movement, and it was
+checked by an agent that reads the bean before deciding — a cheaper triage
+would find less. Re-measure rather than quote this.
+
 THE RANKING CANNOT SEPARATE "resolved by someone else" FROM "actively worked",
 and this is its sharpest limitation. Both produce a high commit count against
 the bean's paths. Worked example from the run that introduced this note:

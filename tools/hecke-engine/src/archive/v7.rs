@@ -529,7 +529,7 @@ fn main() {
     println!("/-- tr_alt for {}{} (Z={}, N={}), exact in t = q^{{1/2}}.", a, sym, z, n);
     println!("    tr_alt(t) = Σ c_w(t) × (−t⁻²)^ℓ(w)");
     println!("    All coefficients in ℤ[t, t⁻¹]. Denominator 2^{}. -/", elem.pn_count);
-    println!("-- Ref: [litlfred2025] https://doi.org/10.xxxx/qou");
+    println!("-- Ref: [manuscript] appendix-mass-binding-algorithms (F_Pauli / Markov-trace witnesses)");
     // Output as a Lean noncomputable def using LaurentPolynomial
     println!("noncomputable def tr_alt_{}{} : LaurentPolynomial ℤ :=", a, lean_sym);
     print!("  ");

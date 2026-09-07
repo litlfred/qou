@@ -157,7 +157,7 @@ import scipy.sparse as sps  # noqa: E402
 from codata_constants import M_E_MEV as _ME  # noqa: E402
 from hecke_characters import build_seminormal_matrices  # noqa: E402
 from pyhecke.atom import D_PN  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import q_at  # noqa: E402
 
 try:
     from witness_base import WitnessBuilder  # noqa: E402
@@ -166,7 +166,7 @@ except Exception:  # pragma: no cover
     _HAVE_WB = False
 
 mp.mp.dps = 40
-_Q = mp.mpf(str(Q0))
+_Q = q_at(mp.mp.dps)
 _H = _Q - 1 / _Q
 HF, DPN = float(_H), float(D_PN)
 _MEM = _ME if isinstance(_ME, mp.mpf) else mp.mpf(str(_ME))

@@ -1,11 +1,11 @@
 ---
 # qou-xz6t
 title: 'Session: §7c stalled-claim takeover (qou-mtcx) + cluster triage + FR split — PR #5113'
-status: in-progress
+status: completed
 type: milestone
 priority: normal
 created_at: 2026-08-15T15:07:04Z
-updated_at: 2026-08-15T15:07:04Z
+updated_at: 2026-09-06T21:54:11Z
 ---
 
 Branch `claude/mtcx-7c-verify-close-2026-08-15`, PR #5113 (+ policy PR #5108).
@@ -33,3 +33,38 @@ Lean is provisioned in this sandbox despite `release.lean-lang.org` returning 40
 ## Forward arc — NOT re-beaned (already covered)
 
 The remaining work already has beans; no new ones were created (see the §Check-before-you-create history). Live options, each with the triage table now attached: `qou-q7cm` (2 large MIXED splits), `qou-e4ri` (`JonesMarkovWenzl` 26 codeℝ), `qou-xbyp` (`MagicNumbersFromQ` 24, highest false-positive risk — mass domain legitimately expects real-positive), `qou-oc4v` (2 remaining CANDIDATEs), `qou-r7qm` (smallest), and structurally `qou-kljb` (795 modules never built).
+
+
+## 2026-09-06 — COMPLETED: every deliverable verified landed, every successor owned
+
+Checked while descending `scripts/bean-staleness-triage.py`. This milestone has
+`updated_at == created_at` (2026-08-15) — never touched after it was opened —
+and has sat `in-progress` for three weeks. Verified rather than assumed:
+
+| deliverable | state on `main` |
+|---|---|
+| stalled-claim takeover policy (PR #5108) | **landed** — `AGENTS.md` ×2, `.claude/skills/local/todo-manager.md` ×1 |
+| `qou-mtcx` closed | **`completed`** |
+| `qou-3bcc` closed | **`completed`** |
+
+And the forward arc it deliberately did **not** re-bean is genuinely owned — all
+six named successors exist, none is a phantom:
+
+    qou-q7cm  completed     qou-kljb  completed
+    qou-e4ri  todo          qou-xbyp  todo
+    qou-oc4v  todo          qou-r7qm  todo
+
+Four live `todo`s carry the remaining §7c cluster work, which is exactly the
+disposition this milestone recorded. Nothing here is waiting on anything.
+
+**One caution in this bean is still current and worth keeping visible** — the
+note that a diff-scoped `lean-vacuity-axiom-audit.ts` run *"rewrites
+`docs/audits/2026-06-17-lean-vacuity-axiom-audit.json` with only the scanned
+files (−3,743 lines), destroying the corpus record."* Independently confirmed
+today: a partial scan now **refuses** to write that file, printing *"a partial
+scan would overwrite it with a smaller count that reads as a clean corpus"*, so
+the trap this bean recorded has since been closed at the tool. Recording that so
+the caution is not read as a live hazard.
+
+Closing as `completed`. Not a conjecture bean — nothing open is being closed
+with it.
