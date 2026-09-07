@@ -42,6 +42,31 @@ variants, which is why the collapse is correct *here*" — is about `averaged`
 vs `averaged_weighted`. It does NOT justify collapsing `averaged -> sigma`,
 which is a different and larger loss.
 
+## 🛑 What it tests TODAY is weaker than its title, and that is not fixed here
+
+After the 2026-09-07 rebuild (bean `qou-o0pa`) both arms are canonical and all
+three assertions pass. They also became the SAME computation, because
+`qou-qu2w` removed the marshalling from `compute_tau_M_nucleon_H3` itself: it
+now takes the canonical word from `atom_braid_word_3A` and traces it with
+`chi_all_lambda_any`, which is exactly what the d-preserving arm does. So the
+"marshalled" arm no longer marshals, and the divergence in this probe's title
+cannot be detected by it.
+
+That vacuity was NOT introduced by the rebuild. It arrived with the `qou-qu2w`
+fix, and a sibling had already re-pointed the assertions on 2026-09-06 from
+"assert the defect (== 2.157)" to "assert the fix holds" for that reason. What
+the rebuild fixed is a different thing: the two arms had been left in DIFFERENT
+intra orderings, so the probe was measuring d-dropping confounded with
+ordering, and failed its own assertions on `main`.
+
+Restoring a guard that can fail means marshalling explicitly through
+`marshal_to_chi_lambda_braid` rather than through a helper that no longer does.
+That is left undone deliberately: the marshaller emits `(sign, gen)` pairs, not
+this probe's `(c, d, gen)`, and a first attempt at bridging the two conventions
+produced `unsupported crossing c=-1.0`. Guessing at another module's convention
+inside a regression guard is how a probe ends up asserting something it does
+not measure. Tracked in `qou-o0pa`.
+
 ## What this probe proves
 
 Running the SAME `Sum_lambda y_lambda * chi_lambda` over the SAME nucleon
@@ -50,8 +75,11 @@ habiro values to ~1e-50. So the two producers are not two conventions of one
 object; one is computing the trace of a DIFFERENT Hecke element — the one
 whose averaged crossings have been replaced by sigma.
 
-The d-preserving path is `chi_monotone_transfer.chi_all_lambda`, itself
-validated against `char_fast` at n=6 and four cached oracles to n=12, at 1e-50.
+The d-preserving path is `chi_general_word.chi_all_lambda_any` (the dispatcher;
+it was `chi_monotone_transfer.chi_all_lambda` until 2026-09-07, when the chain
+became the canonical NON-monotone word and the monotone-only kernel refused
+it). The monotone transfer underneath is validated against `char_fast` at n=6
+and four cached oracles to n=12, at 1e-50.
 
 ## What this probe does NOT do
 
@@ -88,12 +116,10 @@ from witness_base import WitnessBuilder  # noqa: E402
 set_compute_dps(50)
 
 import closed_form_tau_M as C  # noqa: E402
-import chi_monotone_transfer as T  # noqa: E402
+from chi_general_word import chi_all_lambda_any  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from hecke_characters import partitions_of  # noqa: E402
-from hecke_core import (  # noqa: E402
-    _PROTON_G0, _PROTON_G1, _NEUTRON_G0, _NEUTRON_G1,
-)
+from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from canonical_braid_crossings import classify_crossing  # noqa: E402
 
 
@@ -135,31 +161,54 @@ def main() -> int:
     print("=" * 78)
 
     rows = []
-    for nuc, (g0, g1) in (("p", (_PROTON_G0, _PROTON_G1)),
-                          ("n", (_NEUTRON_G0, _NEUTRON_G1))):
-        chain = [(c, d, 0) for c, d in g0] + [(c, d, 1) for c, d in g1]
+    for nuc, (Z, N) in (("p", (1, 0)), ("n", (0, 1))):
+        # `chain` comes from the ruling's own emitter, 2026-09-07 (bean
+        # `qou-o0pa`). It used to be hand-built GROUPED out of the `hecke_core`
+        # chains -- `[(c,d,0) for ... g0] + [(c,d,1) for ... g1]` -- while the
+        # marshalled arm below was separately pinned to `grouped` to match. Both
+        # halves of that arrangement were wrong once
+        # `habiro-coefficients-atomic` was regenerated to the canonical ordering
+        # in `a4909014a5`, and the probe failed its own assertions on `main`.
+        #
+        # The substitution is SAFE and that is measured, not assumed:
+        # `atom_braid_word_3A` carries the SAME 11 crossings as
+        # `g0 + g1` -- identical `(c, d)` multiset -- and therefore an identical
+        # crossing census, which is what this probe's whole d-dropping argument
+        # rests on:
+        #
+        #     p  same (c,d) multiset=True  census equal=True
+        #        {'sigma': 6, 'averaged': 2, 'sigma_inv': 3}
+        #     n  same (c,d) multiset=True  census equal=True
+        #        {'sigma': 5, 'averaged': 2, 'sigma_inv': 4}
+        #
+        # Only the ORDER differs. Keeping the two arms on different orders made
+        # the probe measure d-dropping CONFOUNDED with ordering -- the two
+        # things it exists to separate.
+        chain = list(atom_braid_word_3A(Z, N))
         census = Counter(classify_crossing(c, d, float(h)) for c, d, _ in chain)
 
         word = [(mp.mpf(str(c)), mp.mpf(str(d)), g) for c, d, g in chain]
-        chi = T.chi_all_lambda(word, 3)
+        # The dispatcher, not `chi_monotone_transfer.chi_all_lambda`: the
+        # canonical word is NON-monotone and the monotone-only transfer refuses
+        # it outright ("non-monotone word: gen 0 after 1"). Same routing
+        # `qou-cvky` applied to its 11 monotone-kernel callers. At H_3 the
+        # general path is `d_lambda <= 2` and costs nothing.
+        chi = chi_all_lambda_any(word, 3)
         preserving = mp.fsum([y[p] * chi.get(p, mp.mpf(0)) for p in parts])
 
-        # `intra_order="grouped"` DELIBERATELY, 2026-09-06 (bean qou-y2o7).
+        # `intra_order` UNPINNED, 2026-09-07 (bean `qou-o0pa`). The pin was
+        # added 2026-09-06 reasoning that the borromean default "would swing
+        # `marshalled` to 0.629/0.475 against a 1.146/0.988 target". That target
+        # no longer exists: `habiro-coefficients-atomic.witness.json` was
+        # regenerated to the canonical ordering in `a4909014a5`, the SAME
+        # option-B commit the pin was reacting to. Measured against the live
+        # target, the default matches to 50 digits and the pin misses by 82/108 %:
         #
-        # This probe's whole subject is the qou-qu2w marshalling defect, and its
-        # target is `habiro-coefficients-atomic` — both grouped-era artifacts,
-        # from before the 2026-09-05 intra-ordering ruling. `chain` above is
-        # likewise built monotone (all gen 0, then all gen 1) and traced with
-        # the monotone-only `T.chi_all_lambda`.
-        #
-        # So this comparison is a HISTORICAL one and must stay in the grouped
-        # frame on both sides. Taking the new borromean default here would swing
-        # `marshalled` to 0.629/0.475 against a 1.146/0.988 target and report a
-        # 45 % divergence — a false alarm on a regression guard for a real past
-        # defect, and precisely the failure mode the escape hatch exists to
-        # prevent. Same pattern qou-cvky applied to reduced_block_kernel.
-        marshalled = C.compute_tau_M_nucleon_H3(nuc, q0, dps=50,
-                                                intra_order="grouped")
+        #     p  grouped    1.14575969245730087    rel 0.821
+        #     p  borromean  0.629328402202921918   rel 6.37e-51
+        #     n  grouped    0.987743688115809572   rel 1.08
+        #     n  borromean  0.475133517155682213   rel 2.39e-50
+        marshalled = C.compute_tau_M_nucleon_H3(nuc, q0, dps=50)
         target = targets[nuc]
 
         rel_pres = abs(preserving - target) / abs(target)
