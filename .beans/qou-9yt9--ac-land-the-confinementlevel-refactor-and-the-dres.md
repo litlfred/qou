@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T09:08:06Z
-updated_at: 2026-09-07T09:02:41Z
+updated_at: 2026-09-07T09:16:56Z
 ---
 
 ## Landed (A + C)
@@ -159,3 +159,27 @@ lines with the result type last — and a 0 reads as "uninhabited", the
 interesting answer. Caught by a control on `SkeinMultisetInvariant`, read by
 hand an hour earlier. `scripts/lean-carrier-inhabited-check.py` scans
 declarations, and refuses to report if its control goes missing.
+
+
+### Census + ledger triage (same tranche, PR #7011)
+
+**Census replaces the sample.** `qou-z9ws` checked 12 of 112 and found 0
+legitimate, stating a 25 % ceiling at 95 %. Checking a carrier takes seconds,
+so: **41 candidates, 37 carriers, 11 inhabited / 26 uninhabited = 30 %.** Its
+caution was well calibrated; its sample's zero was not representative.
+
+**But 30 % is an UPPER BOUND, not the legitimate rate** — inhabitation is
+necessary, not sufficient, and `qou-z9ws`'s adjudicator exists to separate
+Fact-wrappers and degenerate slices from substantive instances. The **0/8** on
+the paper-facing subset is untouched: an uninhabited carrier fails the
+necessary condition outright.
+
+**Corrected my own "112" → the live figure is 33.** The ledger holds 61 rows in
+this category today: 33 `genuine`, 14 `legit`, 14 `needs-agent`.
+
+**Bounded next tranche, costed.** The 14 `needs-agent` are re-verification, not
+adjudication — they carry written analyses and `stale_prev_verdict: genuine`
+and are pending only on a moved file sha. Split: **9 uninhabited** (restored
+`genuine` needs only the byte-identity check), **2 inhabited**
+(`shell_closure_monotone`, `he4_strong_duality_value` — real adjudication),
+**3** the `:= ivar.field` resolver cannot reach.
