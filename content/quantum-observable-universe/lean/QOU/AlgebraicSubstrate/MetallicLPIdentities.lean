@@ -316,13 +316,28 @@ theorem hecke_scalar_integer_iff_metallic
     `metallic_q_symbolic_galois_proofs.py`.  Lean discharge requires
     SYT counting + Hoefsmit-Wenzl character machinery from Mathlib. -/
 class GaloisPairCharacterSum where
-  /-- For every q > 0 and every partition λ:
-      χ^λ(σ_i) + χ^{λ'}(σ_i) = dim(λ) · (q − q⁻¹).
-      Empirically verified for partitions of n ∈ {3, 4}.
+  /-- The Hecke character `χ^λ` evaluated at a braid generator, as a function
+      of `q`.  Carried as a field rather than referenced: the Hoefsmit-Wenzl
+      character machinery is not in this framework, and that absence is
+      exactly what makes this class conditional. -/
+  chi : ∀ {n : ℕ}, Nat.Partition n → ℝ → ℝ
+  /-- Conjugate partition `λ ↦ λ'`. -/
+  conj : ∀ {n : ℕ}, Nat.Partition n → Nat.Partition n
+  /-- Wedderburn dimension `dim λ` (the SYT count). -/
+  dim : ∀ {n : ℕ}, Nat.Partition n → ℕ
+  /-- **The conjecture**: for every `q > 0` and every partition `λ`,
+      `χ^λ(σ_i) + χ^{λ'}(σ_i) = dim(λ) · (q − q⁻¹)`.
 
-      Direct consequence of A_λ + A_{λ'} = dim λ from SYT
-      right-of / below counts being swapped under transpose. -/
-  holds : Prop
+      Empirically verified for partitions of `n ∈ {3, 4}`; a direct
+      consequence of `A_λ + A_{λ'} = dim λ`, from SYT right-of / below counts
+      being swapped under transpose.
+
+      Was `holds : Prop` — a field typed with the UNIVERSE `Prop`, so the
+      instance supplied the proposition and `⟨True⟩` inhabited the class.
+      Encoded 2026-09-07 per §3b-tax: an unproved primary is a content-bearing
+      class with no instance. -/
+  holds : ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ), 0 < q →
+    chi lam q + chi (conj lam) q = (dim lam : ℝ) * (q - q⁻¹)
   -- Ref: [manuscript] conj:galois-pair-character-sum
   -- Ref: [manuscript] computations/metallic_q_symbolic_galois_proofs.py
 
@@ -331,10 +346,18 @@ class GaloisPairCharacterSum where
     Conditional on the q-ρ map (substrate-density correspondence not
     yet pinned in the framework). -/
 class CSCSilverIsCFLTransition where
-  /-- The cost-coincidence locus `q = δ_silver` of the n=2 LP equals
-      the density `ρ_c` of the CFL transition predicted by
+  /-- The substrate-density correspondence `q ↦ ρ`.  The class docstring says
+      this map is "not yet pinned in the framework"; carrying it as a field is
+      how that shows up in the type instead of only in prose. -/
+  rho : ℝ → ℝ
+  /-- The CFL transition density `ρ_c` predicted by
       conj:color-superconductivity-borromean. -/
-  holds : Prop
+  rho_c : ℝ
+  /-- **The conjecture**: the cost-coincidence locus `q = δ_silver` of the n=2
+      LP maps to the CFL transition density.
+
+      Was `holds : Prop`, so the instance chose what "equals" meant. -/
+  holds : rho delta_silver = rho_c
   -- Ref: [manuscript] conj:color-superconductivity-borromean
   -- Ref: [manuscript] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
 
@@ -344,8 +367,17 @@ class CSCSilverIsCFLTransition where
     Falsifiable via a second kink in the neutron-star mass-radius
     relation above the silver-density crossover. -/
 class BarMirrorPhi2CFLgCFLTransition where
-  /-- The CFL/gCFL boundary lies at q = φ² (the bar image of q_gold). -/
-  holds : Prop
+  /-- The CFL → gCFL (or CCS) phase boundary, as a value of the substrate
+      modulus `q`.  A field because the framework does not derive it; the
+      conjecture is about where it sits. -/
+  q_boundary : ℝ
+  /-- **The conjecture**: the boundary lies at `q = φ²`, the bar image of
+      `q_gold = 1/φ²`.  `φ` is `metallic 1`.
+
+      Was `holds : Prop`.  Falsifiable via a second kink in the neutron-star
+      mass-radius relation above the silver-density crossover — a falsifiable
+      claim that the `Prop` field could not state. -/
+  holds : q_boundary = metallic 1 ^ 2
   -- Ref: [manuscript] conj:bar-mirror-cfl-gcfl-transition
   -- Ref: [manuscript] docs/audits/2026-06-09-metallic-q-csc-phase-synthesis.md
 
@@ -388,13 +420,43 @@ theorem n2_lp_degenerate_at_silver (n_target : ℝ) :
     optimal-face dimension as a function of q has discontinuities at
     metallic ratios. -/
 class SDPDegeneracyDetectsMetallic where
-  /-- The set of q > 0 where the n=2 LP optimal face has positive
-      dimension equals {δ_silver}.  Generalises to: for the n-strand LP,
-      this set is S(n) ⊆ {δ_1, ..., δ_n}. -/
-  holds : Prop
+  /-- `IsDegenerate n q` — the n-strand LP's optimal face has positive
+      dimension at `q` (strict complementarity fails).  Carried as a field
+      because the parametric-SDP machinery that would define it is not in the
+      framework; that absence is what makes this class conditional, and saying
+      so in the type is the point of the encoding. -/
+  IsDegenerate : ℕ → ℝ → Prop
+  /-- **The bridge hypothesis**: at `n = 2`, degeneracy IS cost coincidence.
+      This is the assumption that connects the SDP notion above to the LP
+      identities this file proves sorry-free. -/
+  degenerate_two : ∀ q : ℝ, 0 < q → (IsDegenerate 2 q ↔ t1_n2 q = t2_n2 q)
+  /-- **The conjecture**: every degenerate locus is a metallic ratio —
+      `S(n) ⊆ {δ_1, …, δ_n}`.
+
+      Was `holds : Prop`, so an instance chose it and `⟨True⟩` discharged the
+      whole class. -/
+  holds : ∀ (n : ℕ) (q : ℝ), 0 < q → IsDegenerate n q →
+    ∃ k, k ≤ n ∧ q = metallic k
   -- Ref: [manuscript] conj:sdp-degeneracy-metallic-locus
   -- Ref: [manuscript] computations/two_quark_active_set_mahler_sweep.py
   --        (empirically confirmed: AT δ_silver active set is empty;
   --         degenerate-vertex signature directly observed)
+
+/-- **The n=2 case is now DERIVED, not assumed** — and this is what the
+    encoding buys beyond legibility.
+
+    §3b-cond item 5 forbids a class that carries its own conclusion as a field
+    with a "theorem" that projects it.  Here the class carries the *bridge*
+    (`degenerate_two`) and this theorem composes it with
+    `silver_lp_coincidence`, which is proved sorry-free above.  So the class
+    supplies a hypothesis and Lean supplies the mathematics — the honest shape.
+
+    Note what is NOT used: the `holds` field.  The `n = 2` locus follows from
+    the bridge alone, which says the general conjecture is doing no work at
+    `n = 2` and is exactly as strong as its `n ≥ 3` content. -/
+theorem sdp_degenerate_locus_two [S : SDPDegeneracyDetectsMetallic]
+    (q : ℝ) (hq : 0 < q) :
+    S.IsDegenerate 2 q ↔ q = delta_silver :=
+  (S.degenerate_two q hq).trans (silver_lp_coincidence hq)
 
 end QOU.AlgebraicSubstrate.MetallicLPIdentities
