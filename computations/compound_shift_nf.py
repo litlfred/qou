@@ -637,7 +637,14 @@ class CompoundShiftResult:
     n_nn: int
     # mpmath fields
     nf_coefficients: list      # 6 mpf values
-    categorical_mass: object   # mpf
+    # Σ_b c_b · tr_M(b): the Frobenius pairing of this atom's NF
+    # coefficient vector against the six Markov-trace weights.
+    # NOT the canonical atomic trace tr_M_atom -- the two disagree
+    # by up to 23.5x and run in OPPOSITE directions in A (canonical
+    # falls 0.575 -> 0.045 over A=2..6; this rises to 2.21 at A=5).
+    # Named categorical_mass until 2026-09-06; renamed because the
+    # old name asserted an identity that does not hold.
+    nf_trace_pairing: object   # mpf
     lp_active_set: list[int]
     lp_y0_star: object
     lp_y_star: list
@@ -681,7 +688,7 @@ def compound_shift(Z: int, N: int, atom: str = "",
     # NF at q_0, mpmath
     nf_mp = build_atom_nf_mp(Z, N, dps=dps)
     tr_w = tr_m_weights_mp(dps=dps)
-    cat_mass = sum(nf_mp[i] * tr_w[i] for i in range(6))
+    nf_pairing = sum(nf_mp[i] * tr_w[i] for i in range(6))
 
     # LP at 50 dps
     lp = solve_operator_selection_lp_mp(nf_mp, dps=dps)
@@ -698,7 +705,7 @@ def compound_shift(Z: int, N: int, atom: str = "",
         n_pn=decomp["n_pn"],
         n_nn=decomp["n_nn"],
         nf_coefficients=nf_mp,
-        categorical_mass=cat_mass,
+        nf_trace_pairing=nf_pairing,
         lp_active_set=lp.active_set,
         lp_y0_star=lp.y0_star,
         lp_y_star=lp.y_star,
@@ -782,7 +789,7 @@ def main(dps: int = 50) -> int:
         print(f"  {row.atom}:")
         for i, c in enumerate(row.nf_coefficients):
             print(f"    c_{NF_NAMES[i]:>3} = {_mpstr(c, 30)}")
-        print(f"    Σ c_b · tr_M(b) = {_mpstr(row.categorical_mass, 30)}")
+        print(f"    Σ c_b · tr_M(b) = {_mpstr(row.nf_trace_pairing, 30)}")
         print()
 
     # §3: LP active sets and duality
@@ -852,7 +859,9 @@ def main(dps: int = 50) -> int:
                 "n_nn": row.n_nn,
                 "nf_coefficients": [_mpstr(c, 50)
                                     for c in row.nf_coefficients],
-                "categorical_mass": _mpstr(row.categorical_mass, 50),
+                # Frobenius pairing Sum_b c_b*tr_M(b); NOT tr_M_atom.
+                # Key was "categorical_mass" before 2026-09-06.
+                "nf_trace_pairing": _mpstr(row.nf_trace_pairing, 50),
                 # LP fields (per AGENTS.md LP/SDP infra rule).  Values
                 # are 50-dps mpmath strings; consumers parse with
                 # mp.mpf(...).

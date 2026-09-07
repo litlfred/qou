@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T03:44:17.471998+00:00",
-  "commitSha": "0867162ff142601c4422eb590dc81f22004454e6",
+  "computedAt": "2026-09-07T11:09:25.709016+00:00",
+  "commitSha": "5b11db4f7a58e2e41677783d25f4459efaadd291",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "rho-k-h3a-lp-dual",
   "scriptFile": "rho_k_h3a_lp_dual.py",
-  "scriptHash": "72250cfbb2c3",
-  "scriptCommitSha": "53a910996c4fcd0f3ed9dfbb550be9a89fea2cdf",
+  "scriptHash": "2e2324362aef",
+  "scriptCommitSha": "f689f12d2d06aee2959002f13b9ac39c1a79e3cf",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -22,7 +22,9 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "e114ae83ee1a611f"
   },
   "invocation": {
     "argv": [
@@ -146,7 +148,7 @@
     "M_codata_MeV": "1875.612945000000000000000000000000000000000000000001078124005989906134",
     "m_e_MeV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
     "m_p_MeV": "938.2720894299999999999999999999999999999999999999994592249096324098442",
-    "m_n_MeV": "939.5654217899999594010296277701854705810546875",
+    "m_n_MeV": "939.56542179",
     "primary_cost_choice": "plancherel",
     "cost_choices_supported": [
       "plancherel",

@@ -21,6 +21,36 @@
 # Override for local testing without editing this file:
 #     FOLIO_ASSISTANT_REF=<branch|tag|sha> scripts/setup-folio-assistant.sh
 #
-# Pinned 2026-08-08. Against this platform, corpus 9d6fa7f2c8 measures
+# Pinned 2026-08-08 at 428ca5c. Against that platform, corpus 9d6fa7f2c8 measured
 # `run-validate content/quantum-observable-universe` → 4 issue(s) (all warnings).
-428ca5c98c107191303878eb98b6bfbc61f2f066
+#
+# BUMPED 2026-09-07 to df28d02. Both platforms measured against the SAME corpus
+# (the 2026-09-07 main, not the 9d6fa7f2c8 above, which is long superseded — a
+# before/after taken at different corpus commits would not be a comparison):
+#
+#     428ca5c  →  6 issue lines printed, "9 issue(s)" reported
+#     df28d02  →  3 issue lines printed, "3 issue(s)" reported
+#
+# The three that clear are the "Unknown field" warnings — `computation` on
+# `knot-periodic-table`, `authorNotes` on `tm-interaction-completeness` and on
+# `millennium-bounds-via-surreals-intro`. Those fields were being SILENTLY
+# DROPPED at the old pin, exactly as AGENTS.md §4d records: four block kinds
+# (prose/equation/diagram/table) declared their zod schemas as standalone
+# `z.object({...})` instead of extending `BlockBaseSchema`, so they restated a
+# subset of the base fields and a non-strict zod object discarded the rest.
+# Upstream `a117daa` makes all four extend the base and adds a regression test
+# (`scripts/tests/block-base-fields.test.ts`) that fails when any block schema
+# falls behind it. So this bump RESTORES author-facing content that the corpus
+# already carries on disk and the pinned platform was throwing away.
+#
+# Note the old platform's print and count DISAGREED by 3 (6 shown, 9 claimed);
+# the new one's agree. That is a second, smaller improvement in the same bump.
+#
+# The 3 remaining are pre-existing and unrelated to the platform: a bibliography
+# info line, one lemma without a Lean declaration, and one undefined
+# cross-reference. Neither platform resolves them and neither is asked to.
+#
+# Also in this bump: litlfred/folio-assistant#167, which stops
+# `split_sections` silently discarding every character before the first located
+# heading. 18 of 623 library documents were keeping under 50% of their text.
+df28d02dcd3e3f51aad4690c56b2348ab52efd4c

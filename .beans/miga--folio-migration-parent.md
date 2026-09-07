@@ -1,6 +1,6 @@
 ---
 # miga
-title: ""
+title: 'Folio-Assistant Infrastructure Migration (Parent)'
 status: completed
 type: parent
 priority: normal

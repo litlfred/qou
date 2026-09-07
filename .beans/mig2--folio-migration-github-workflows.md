@@ -1,6 +1,6 @@
 ---
 # mig2
-title: ""
+title: 'GitHub Workflows & Final Cleanup'
 status: completed
 type: child
 priority: normal

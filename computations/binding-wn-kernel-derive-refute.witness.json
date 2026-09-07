@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T12:25:40.857997+00:00",
-  "commitSha": "d986f99615bf9e458a450cad044e3ea35a844b0d",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-09-07T10:41:10.361607+00:00",
+  "commitSha": "af31a017f02ab6c47d0711fa1847deb395c3af3f",
   "assertions": [
     {
       "name": "wn_kernel_derives_or_refutes",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "1 = no parameter-free derived recursion reproduces w_n (refuted, w_n = \u0394_\u03bb gate); 0 = a kernel closes \u2192 promote."
+      "source": "1 = no parameter-free derived recursion reproduces w_n (refuted, w_n = Δ_λ gate); 0 = a kernel closes → promote."
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 4,
   "computation": "binding-wn-kernel-derive-refute",
   "scriptFile": "binding_wn_kernel_derive_refute.py",
   "scriptHash": "102948c8662d",
-  "scriptCommitSha": "39d3d3730387aba93add427699bf66a68cd98230",
+  "scriptCommitSha": "78c74bc5ed41508eeaae49152a2f301530de648d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,10 +27,21 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
   },
-  "description": "EXPLORATORY: derive-or-refute the jet-filtration residue-weight q-difference kernel R(q,x). Coulomb-corrects AME binding, checks \u00b3H/\u00b3He A=3 universality, extracts universal w_2,w_3,w_4, tests them against ad-hoc parameter-free kernels (all refuted), and derives the na-Stokes kernel a_D^(n)'s OWN eigenfunction relation: the q-involution S(n)=\u03a3 dim_q obeys a q-Hermite / Rogers\u2013Szeg\u0151 three-term recurrence (c_3=[2]_q exact), identifying the correct orthogonal basis for w_n. No fit.",
+  "invocation": {
+    "argv": [
+      "computations/binding_wn_kernel_derive_refute.py"
+    ],
+    "reproduce": "python3 -u computations/binding_wn_kernel_derive_refute.py"
+  },
+  "description": "EXPLORATORY: derive-or-refute the jet-filtration residue-weight q-difference kernel R(q,x). Coulomb-corrects AME binding, checks ³H/³He A=3 universality, extracts universal w_2,w_3,w_4, tests them against ad-hoc parameter-free kernels (all refuted), and derives the na-Stokes kernel a_D^(n)'s OWN eigenfunction relation: the q-involution S(n)=Σ dim_q obeys a q-Hermite / Rogers–Szegő three-term recurrence (c_3=[2]_q exact), identifying the correct orthogonal basis for w_n. No fit.",
   "parameters": {
     "q0_50dps": "1.109978582751380807591669095610768879874499121873578736072814240181799",
     "compute_dps": 70
@@ -44,18 +55,18 @@
     "B_strong_coulomb_corrected": {
       "D": "2.224566199999999999999999999999999999999999999999997340954056611765576",
       "T": "8.481796200000000000000000000000000000000000000000009585209925309324894",
-      "3He": "8.716453820613939999999999999999999999999999999999995711041411183331376",
-      "4He": "29.2027803575033107999999999999999999999999999999999915823563342238137"
+      "3He": "8.565463159291869772831171991598002571740220475799594352701506917980078",
+      "4He": "29.06559623749647229133959227305801768283456902077554162998369981478141"
     },
-    "csb_A3_mirror_residual": "0.02728854625705263877254327198994777630256194299801074922690148469977233",
+    "csb_A3_mirror_residual": "0.009815883894118829770309143124034562696298637492931151141364707866138763",
     "w_universal": {
       "2": "4.353367452117419141544186719629289186319835806784550482323907313301673",
-      "3": "9.330606699365086519749447811437026096689226107993968330442355278944704",
-      "4": "15.9194060016324157715334807922993331833932899063647336736708054563695"
+      "3": "9.220102230114968314362991974037244840903816139792815646477533979159009",
+      "4": "15.87174218340228538364888274577061591756146508403524851783166772698782"
     },
     "w_ratios": {
-      "w3_over_w2": "2.14330786500156457506772861753956223753752125884726712686269602517698",
-      "w4_over_w3": "1.70614907632058618647021625599950390861844668305103734099621000365547"
+      "w3_over_w2": "2.117924188924239578351090183111621419349294275284244629112396426084131",
+      "w4_over_w3": "1.721428004514042758902539230406573798693425740545780424461385145616249"
     },
     "qinvolution_recurrence": {
       "S_n": {
@@ -77,21 +88,21 @@
         "8": "8.174085797660718998001318775495516058964189140932330220456729076712761"
       },
       "c3_eq_2q_exact": true,
-      "basis": "q-Hermite / Rogers\u2013Szeg\u0151 (q-oscillator; QOU.Mass.RogersSzegoInhabited)"
+      "basis": "q-Hermite / Rogers–Szegő (q-oscillator; QOU.Mass.RogersSzegoInhabited)"
     },
     "wn_qhermite_expansion": {
-      "testA_aD_recurrence_err": "0.4229421499451357327488444052743344901706222524849371587333482636764779",
+      "testA_aD_recurrence_err": "0.4202529925249896202225693432241774885606463763315819179306996062867264",
       "testB_rogers_szego_best": {
         "x": "x=1/q",
-        "err": "0.1323604359102040191231082404587526774692573889103963512322101434976768"
+        "err": "0.1223099117267849656109577697399555023893447805795250783915605925678684"
       },
       "wn_is_qhermite_clean": false,
       "ratio_decelerates_subgeometric": true,
-      "note": "w_n neither obeys the a_D recurrence nor matches a Rogers\u2013Szeg\u0151 ratio-shape; sub-geometric deceleration = the gated W_\u03bb fingerprint"
+      "note": "w_n neither obeys the a_D recurrence nor matches a Rogers–Szegő ratio-shape; sub-geometric deceleration = the gated W_λ fingerprint"
     },
-    "verdict": "THREE-PART. (i) REFUTED (scope-(a)) \u2014 the extracted universal residue weights w_2,w_3,w_4 = 4.353,9.331,15.92 (ratios 2.143,1.706) satisfy NO CONSTANT-RATIO / ad-hoc parameter-free kernel to 5% ([n]_q\u00b2 lone 6.9% near-miss, echoing the \u221aC_\u03bb near-miss of PR #3518). (ii) DERIVED BASIS (owner steer) \u2014 the na-Stokes kernel a_D^(n)=S(n)/n has an eigenfunction relation: the q-involution S(n)=\u03a3_{\u03bb\u22a2n} dim_q V_\u03bb obeys S(n)=S(n-1)+c_n\u00b7S(n-2) with c_3=[2]_q EXACT and c_n/[n-1]_q rising \u2014 the q-Hermite / Rogers\u2013Szeg\u0151 recurrence (q-oscillator / q-hyperbolic categorical action; corpus QOU.Mass.RogersSzegoInhabited). (iii) w_n IS NOT q-HERMITE-CLEAN (scope-(a)) \u2014 w_n neither obeys the a_D recurrence (Test A 42.3% off) nor matches any Rogers\u2013Szeg\u0151 H_n(x;q) ratio-shape (Test B closest x=1/q 13.2%). Its ratio DECELERATES (2.143\u21921.706, sub-geometric) whereas every q-Hermite family is near-geometric. So the q-Hermite basis is the right language for the KERNEL a_D^(n), but the MULTIPLIER w_n is the genuinely gated W_\u03bb content \u2014 and its sub-geometric deceleration is the new fingerprint the s5-so3 W_\u03bb projector must reproduce. a_D^(n) stays a permanent correct contribution; next is the hyperbolic-link-volume route (option #1). No production touch; no value wired; no tier change."
+    "verdict": "THREE-PART. (i) REFUTED (scope-(a)) — the extracted universal residue weights w_2,w_3,w_4 = 4.353,9.22,15.87 (ratios 2.118,1.721) satisfy NO CONSTANT-RATIO / ad-hoc parameter-free kernel to 5% ([n]_q² lone 6.9% near-miss, echoing the √C_λ near-miss of PR #3518). (ii) DERIVED BASIS (owner steer) — the na-Stokes kernel a_D^(n)=S(n)/n has an eigenfunction relation: the q-involution S(n)=Σ_{λ⊢n} dim_q V_λ obeys S(n)=S(n-1)+c_n·S(n-2) with c_3=[2]_q EXACT and c_n/[n-1]_q rising — the q-Hermite / Rogers–Szegő recurrence (q-oscillator / q-hyperbolic categorical action; corpus QOU.Mass.RogersSzegoInhabited). (iii) w_n IS NOT q-HERMITE-CLEAN (scope-(a)) — w_n neither obeys the a_D recurrence (Test A 42.0% off) nor matches any Rogers–Szegő H_n(x;q) ratio-shape (Test B closest x=1/q 12.2%). Its ratio DECELERATES (2.118→1.721, sub-geometric) whereas every q-Hermite family is near-geometric. So the q-Hermite basis is the right language for the KERNEL a_D^(n), but the MULTIPLIER w_n is the genuinely gated W_λ content — and its sub-geometric deceleration is the new fingerprint the s5-so3 W_λ projector must reproduce. a_D^(n) stays a permanent correct contribution; next is the hyperbolic-link-volume route (option #1). No production touch; no value wired; no tier change."
   },
   "q0Anchor": "proton",
-  "q0Value": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -5,23 +5,24 @@
   "file": "90-1-219.pdf",
   "sha256": "c2e3f2f8946c6f84c27c4482eb5b8375ce85cc9bd63293c8ce6f41a97c10edce",
   "bytes": 1727173,
-  "pages": 18
+  "pages": 18,
+  "text_source": "embedded",
+  "extractor": "pypdf"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "Quaternions and non-commutative geometry",
+  "title": "Progress of Theoretical Physics, Vol. 90, No.1, July 1993",
   "authors_raw": "Quaternions and Non-Commutative Geometry",
+  "title_lines": [
+   "Progress of Theoretical Physics, Vol. 90, No.1, July 1993"
+  ],
   "abstract": null,
   "docinfo": {
    "CreationDate": "D:20001121162306+09'00'",
    "Creator": "Acrobat 4.0 Import Plug-in for Macintosh",
    "Producer": "Adobe Acrobat 9.0 Paper Capture Plug-in; modified using iTextSharp.LGPLv2.Core 3.7.4.0"
-  },
-  "title_lines": [
-   "Progress of Theoretical Physics, Vol. 90, No.1, July 1993"
-  ],
-  "title_prev": "Progress of Theoretical Physics, Vol. 90, No.1, July 1993"
+  }
  },
  "toc": [
   {
@@ -48,6 +49,16 @@
  ],
  "toc_source": "inferred",
  "sections": [
+  {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 16,
+   "n_chars": 38669,
+   "n_words": 6495
+  },
   {
    "id": "sec-000-acknowledgements",
    "number": null,
@@ -83,7 +94,7 @@
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 3,
-  "sections": 3,
-  "chars_total": 4506
+  "sections": 4,
+  "chars_total": 43175
  }
 }

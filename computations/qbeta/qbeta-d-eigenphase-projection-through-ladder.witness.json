@@ -82,13 +82,14 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "6d5dbca7153c",
-  "scriptCommitSha": "unknown",
-  "commitSha": "9462d1b41cab1da3f3d68189b5128aa313f9d1d3",
+  "scriptHash": "c5620173f47a",
+  "scriptCommitSha": "bfa317911859d6184c6474573c3dd0869bfe69b6",
+  "commitSha": "af31a017f02ab6c47d0711fa1847deb395c3af3f",
   "engine": "python+mpmath",
-  "computedAt": "2026-09-06T08:20:47.642186+00:00",
+  "computedAt": "2026-09-07T10:07:27.494334+00:00",
   "durationMs": 0,
   "engineVersion": "python 3.11 + mpmath 1.4.1",
-  "q0Anchor": "physical_proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "experimental pin (Physical-Observations layer): q0 read at the proton m_p/m_e pin; 'physical_proton' is the MANIFEST token, not the witness-field vocabulary"
 }

@@ -116,7 +116,33 @@ def q_int(k, q):
 
 
 def wedderburn_weight(shape, q):
-    """y_λ = d_q(λ)² / [n]_q!  (symmetric q-integers) — identical to A=2/A=3 probes."""
+    """**quantum Plancherel** measure `w_planch(λ) = d_q(λ)² / [n]_q!`
+    (symmetric q-integers).
+
+    NOT the Wenzl y_λ (bean qou-za3q). AGENTS.md is explicit that the three
+    partition-weight families y_λ / w_λ / w̃_λ are DISTINCT at q ≠ 1 and must
+    never be conflated; this docstring used to call this one `y_λ`, which is
+    the conflation it forbids, and which makes a corpus scan keying on the
+    name `y_lambda` unable to tell this apart from the production weight.
+
+    The two are not a rescaling of each other. At H₃, measured:
+
+        λ            Wenzl y_λ (production)   d_q²/[n]_q! (here)
+        (3,)             0.50540423              0.16338323
+        (2,1)            0.24729789              0.66067377
+        (1,1,1)          0                       0.16338323
+
+    and at higher n the divergence is structural: the Wenzl row cap (level
+    r = 2, bean qou-fq0f) annihilates every shape with ≥3 rows, which is where
+    the Plancherel measure puts most of its mass — 70 of the 77 partitions of
+    12 carry Wenzl weight exactly zero.
+
+    The name is fixed here; whether the Plancherel measure is the RIGHT pairing
+    for a Magnus Ω₂ sign question is a separate matter and is not settled by
+    this rename. What IS settled (see `sign_robust_to_weight_family` in the
+    witness) is that the probe's headline conclusion — the sign of P_total —
+    does not depend on the choice.
+    """
     n = sum(shape)
     rows = list(shape)
     cols = [sum(1 for r in rows if r > c) for c in range(rows[0])]
@@ -660,6 +686,20 @@ def run_he4(workers=1, checkpoint=None):
         },
         "results": {
             "per_partition": res["rows"],
+            # Declares WHICH partition-weight family the `y_lambda` column
+            # above actually holds (bean qou-za3q). The column name is left
+            # alone deliberately — several sibling probes read `r["y_lambda"]`
+            # from this witness, so renaming the field would break them; an
+            # explicit declaration removes the ambiguity without that.
+            "weight_family": "quantum_plancherel_dq2_over_n_factorial",
+            "weight_family_note": (
+                "NOT the Wenzl y_lambda used by the production Markov trace. "
+                "AGENTS.md forbids conflating y_lambda / w_lambda / w~_lambda, "
+                "which are distinct at q != 1. Re-weighting this witness's own "
+                "per-partition tr(rho.Omega2) with the Wenzl bridge weight "
+                "leaves the sign of P_total unchanged — measured in "
+                "magnus_omega2_weight_family_robustness_probe.py."
+            ),
             "P_total": fmt(P_total),
             "P_total_sign": P_sign,
             "P_control_rho_identity": fmt(P_ctrl),

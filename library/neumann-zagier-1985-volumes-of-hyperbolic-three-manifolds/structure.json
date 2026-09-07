@@ -5,30 +5,31 @@
   "file": "neumann-zagier-1985-volumes-of-hyperbolic-three-manifolds.pdf",
   "sha256": "e52b539e0f06c019f7414c5ff54fb78fd9f3dec5614664dbe1b207f50e850e72",
   "bytes": 1764423,
-  "pages": 26
+  "pages": 26,
+  "text_source": "embedded",
+  "extractor": "pypdf"
  },
  "metadata": {
   "arxiv": null,
   "doi": null,
-  "title": "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO Printed III Great Britain. C 1985. Pcrgamon Press Ltd. VOLUMES OF HYPERBOLIC THREE-MANIFOLDS",
-  "authors_raw": "WALTER D. NEUMANNt and DON ZAGIER",
+  "title": "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO Printed III Great Britain. C 1985. Pcrgamon Press Ltd",
+  "authors_raw": "VOLUMES OF HYPERBOLIC THREE-MANIFOLDS",
+  "title_lines": [
+   "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO",
+   "Printed III Great Britain. C 1985. Pcrgamon Press Ltd"
+  ],
   "abstract": null,
   "docinfo": {
    "CreationDate": "D:20011031120931",
    "Producer": "Acrobat 3.0 Import Plug-in\u0000",
-   "Creator": "捁潲慢⁴⸳‰慃瑰牵⁥汐杵椭n",
+   "Creator": "\u6341\u6f72\u6162\u2074\u2e33\u2030\u6143\u7470\u7275\u2065\u6c50\u6775\u692dn",
    "Title": "PII: 0040-9383(85)90004-7"
-  },
-  "title_lines": [
-   "ToporoPy Vol. 24, No. 3, pp. 307-332. 1985. 0040-9383185 s3.00+ .OO",
-   "Printed III Great Britain. C 1985. Pcrgamon Press Ltd",
-   "VOLUMES OF HYPERBOLIC THREE-MANIFOLDS"
-  ]
+  }
  },
  "toc": [
   {
    "level": 1,
-   "title": "( ‘A2 35A ,)($)“+ . ..I",
+   "title": "( \u2018A2 35A ,)($)\u201c+ . ..I",
    "page": 22,
    "source": "inferred",
    "number": "4"
@@ -44,9 +45,19 @@
  "toc_source": "inferred",
  "sections": [
   {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 22,
+   "n_chars": 49556,
+   "n_words": 9502
+  },
+  {
    "id": "sec-000-4-a2-35a-i",
    "number": "4",
-   "title": "( ‘A2 35A ,)($)“+ . ..I",
+   "title": "( \u2018A2 35A ,)($)\u201c+ . ..I",
    "level": 1,
    "page_start": 22,
    "page_end": 25,
@@ -68,9 +79,7 @@
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 2,
-  "sections": 2,
-  "chars_total": 5437
- },
- "duplicate_of": "1-s20-0040938385900047-main",
- "duplicate_note": "Same work as library/1-s20-0040938385900047-main/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+  "sections": 3,
+  "chars_total": 54993
+ }
 }
