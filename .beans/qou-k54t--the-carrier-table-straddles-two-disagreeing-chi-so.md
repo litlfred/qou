@@ -422,3 +422,44 @@ source carries the warning this arc keeps re-deriving:
 That last clause explains the missing `computedAt`: a re-run *touches* these
 files without recomputing them, so their git date is evidence about stamping,
 not about the numbers.
+
+## `computedAt` after a ruling does NOT mean computed on post-ruling data (2026-09-07)
+
+Blast radius of the stale ⁵Li/⁶Li caches, measured. A grep for `matrix-m`
+returns **24** files, but that matches the whole matrix-M producer family. Only
+**4** name the Li caches specifically:
+
+- `deltalambda/carrier_table_convention_d_rederivation.py`  ← the chain
+- `deltalambda/carrier_saturation_mechanism_probe.py`       ← the chain
+- `deltalambda/li6_h18_amplification_discriminator_probe.py` ← the chain
+- **`delta_lambda_empirical_tabulation.py`** ← not previously in scope
+
+So the radius is contained, which is the good news. The fourth one carries the
+finding.
+
+`delta-lambda-empirical-tabulation.witness.json` has
+`computedAt: 2026-09-06T06:47:25Z` — **after** the intra-ordering ruling
+(`7db032fb48`, 2026-09-05 07:53:55). By the ordinary staleness test it is fresh.
+It is not: it reads
+`chi-lithium-{5,6}-h{15,18}-at-q0-50dps-matrix-m.witness.json`, which were last
+touched **2026-08-15** and are still on the grouped word.
+
+**So the producer ran after the ruling and consumed pre-ruling data, and
+`computedAt` cannot tell those apart.** It records when the *producer* ran, not
+when its *inputs* were computed. This is the `scriptCommitSha` confusion one
+level out: a timestamp on the wrong object.
+
+The general form, worth carrying: **a witness is only as fresh as the oldest
+cache in its read cone**, and no field in the witness schema records that. The
+existing import-cone audit
+(`witness_import_cone_staleness_audit.py`) keys on *module* drift, not on
+*witness-input* drift, so it does not cover this either.
+
+**Second, smaller observation on the same file:** it reports
+`allPassed: True` with `assertions: 0`. A witness asserting nothing is vacuously
+green. That may be deliberate for a tabulation rather than a test, but it means
+its green says nothing about the staleness above, and a sweep counting green
+witnesses counts it.
+
+It needs re-running once the Li caches land; it is not in the chain I have been
+re-running, and nothing would have flagged it.
