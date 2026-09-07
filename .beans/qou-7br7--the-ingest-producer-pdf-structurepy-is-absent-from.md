@@ -1,105 +1,86 @@
 ---
 # qou-7br7
-title: The ingest producer pdf-structure.py is absent from BOTH repos here, and migrate's orphan fallback is exactly what fires when it has not run
+title: 'RETRACTED: pdf-structure.py IS present (find does not follow the folio-assistant symlink). Kept as: the dangling-path selector needs a symlink class.'
 status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T23:25:01Z
-updated_at: 2026-09-06T23:25:53Z
+updated_at: 2026-09-07T00:13:08Z
 ---
 
-Found 2026-09-06 by a **new selector**: beans naming repo paths that no longer
-exist. That is the complement of `scripts/bean-staleness-triage.py`, which ranks
-by *"the tree moved UNDER the bean"*; this asks *"did the tree move OUT FROM
-UNDER it"*. The ranking structurally cannot see this class — a deleted path has
-no commits touching it after the bean's `updated_at`, so it scores **zero** and
-sorts to the bottom.
+## 🛑 RETRACTED, same day, before anyone acted on it
 
-## The finding
+**The headline was wrong.** `scripts/pdf-structure.py` and
+`extract-candidates.py` **are** present and executable in this container:
 
-`scripts/pdf-structure.py` and `extract-candidates.py` — the producers of every
-`structure.json`, `sections/*.md` and `candidates.json` in `library/`, i.e. the
-whole of corpus-grep path 5 — are **absent from both repos reachable here**,
-verified at full depth:
+    -rwxr-xr-x  folio-assistant/scripts/pdf-structure.py       33406 bytes
+    -rwxr-xr-x  folio-assistant/scripts/extract-candidates.py  11343 bytes
 
-    find . -name 'pdf-structure*'                 -> nothing   (qou)
-    find folio-assistant -name 'pdf-structure*'   -> nothing   (pinned 428ca5c)
+**Why I concluded otherwise: `folio-assistant` is a SYMLINK, and `find` does
+not follow symlinks by default.**
 
-`AGENTS.md:5243` attributes them to *"folio-assistant's
-`scripts/pdf-structure.py` + `extract-candidates.py`"*, and
-`scripts/migrate-uploads-to-library.py:7` says the same. They are in neither.
+    ls -ld folio-assistant
+      folio-assistant -> ../folio-assistant
 
-## Why it is worse than a missing tool
+    find    folio-assistant -name 'pdf-structure*'   ->  0 results
+    find -L folio-assistant -name 'pdf-structure*'   ->  folio-assistant/scripts/pdf-structure.py
 
-`migrate-uploads-to-library.py` does **not** key the doc-id on the filename by
-design. `build_mapping()` is documented *"basename.pdf -> doc-id, **from the
-generated `structure.json` files**"* — it reads `pdf-structure.py`'s **output**
-and only falls back to the basename when no `structure.json` claims the PDF. Its
-own comment calls that fallback benign:
+I ran the unflagged form twice, once at `-maxdepth 3` and once full-depth, and
+read two empty results as corroboration. They were the same error twice.
+`ls folio-assistant/` worked throughout — the shell resolves the symlink — which
+is why the directory listing in the original body looks like evidence the clone
+was real. It was; my traversal of it was not.
 
-> Fallback for PDFs no structure.json claims. Two causes, **both benign**: a
-> duplicate upload (`X (1).pdf` beside `X.pdf`) and an alternate filename for
-> the same arXiv id — in both cases another PDF wrote the directory and won the
-> `source.file` field.
+**The pin hypothesis was also wrong, and checkable.** I guessed the pinned
+`428ca5c` predated the producer. Measured against a fresh clone of
+`folio-assistant` at `main`: `pdf-structure.py` was added **2026-08-15**
+(`0def499`), and `git cat-file -e 428ca5c:scripts/pdf-structure.py` **succeeds**
+— it is present at the pin, which is dated 2026-08-23. So there was never a
+version gap to bump.
 
-**It does not anticipate the third cause: `pdf-structure.py` never ran.** Then
-*no* `structure.json` exists, the mapping is **empty**, and **every** PDF takes
-the fallback — which is precisely the orphan-minting path. The comment's
-"benign" reasoning assumes a sibling directory that, in that case, does not
-exist.
+### What does NOT survive
 
-## Relation to `qou-cvx9` — sharpened, not contradicted
+* "The ingest producer is absent from both repos here." **False.**
+* "No agent in this container can complete an ingest." **False.**
+* The causal story that `migrate`'s empty-mapping fallback is *guaranteed* to
+  fire here. Its precondition was the producer's absence, which does not hold.
 
-`qou-cvx9` diagnoses the two scripts as keying on different things
-(filename vs page-1 arXiv stamp) and is right about the **effect**. The causal
-story is one step short: `migrate` *consumes* the stamp-derived id and degrades
-to the basename only in the producer's absence. So the precondition is not "two
-conventions disagree", it is **"the producer has not run"** — which here is
-guaranteed, because the producer is not present.
+### What survives, and it is small
 
-That also means the guard `qou-cvx9` proposes (reconcile the two keys) treats
-the symptom. The stronger guard is: **`migrate` should refuse when
-`build_mapping()` comes back empty**, rather than silently rewriting every path
-to a basename.
+* **The code reading stands.** `build_mapping()` really does derive the doc-id
+  *from* the generated `structure.json` files and fall back to the basename when
+  none claims a PDF, and its comment really does call that fallback benign while
+  naming only two causes. A guard on an empty mapping is still a reasonable
+  cheap hardening — it is just not urgent and not load-bearing for the 22
+  orphans.
+* **The bare-path ambiguity is real but minor.** Five beans write
+  `scripts/pdf-structure.py`, which reads qou-relative; the file is at
+  `folio-assistant/scripts/`. Worth a qualifier, not a bean.
 
-## Scoped honestly: this is about THIS container
+### The part worth keeping — a FOURTH false-positive class for the selector
 
-Siblings demonstrably ingested **17 PDFs** today (`2c567cca9c`, INDEX 589 → 606),
-so the capability exists somewhere — a different container, a newer
-`folio-assistant`, or a local copy. **This is not a claim that ingest is broken
-corpus-wide.** It is a claim that an agent in a container provisioned like this
-one cannot complete an ingest, and that if it runs `migrate` alone it will mint
-orphans without warning.
+The dangling-path selector (open beans naming a repo path that no longer exists)
+now has four classes, not three:
 
-## Five open beans cite the bare path as if it were qou-relative
+1. **placeholders** — `computations/X.witness.json`, `computations/substrate/x.py`
+2. **moved, not deleted** — `computations/_deprecated/hecke_core_legacy.py` is
+   now `computations/hecke_core_legacy.py`
+3. **elided paths** — `content/.../lean/...` fragments the regex mangles
+4. **🆕 symlink-hidden** — the path exists, under `folio-assistant/`, which is a
+   symlink that `os.path.exists` resolves but `find` does not traverse
 
-`qou-cvx9`, `qou-k1hs`, `qou-qad3`, `qou-47nf`, `qou-b9c3` — each carries an
-ingest recipe naming `scripts/pdf-structure.py`. **I propagated it too**, in
-coordination comments on #6962 and #6964 today, without checking it resolved.
-The bare form reads as qou-relative and is not.
+Measured: of **100** distinct missing paths across open beans, **14 are
+symlink-hidden** — `content/pipeline/{validate,qa-sweep,qa-utils,qa-checkers-python,conjectural-propagation-audit}.ts`,
+`schemas/{types,constraints,block-qa}.ts` and more. Those are all platform files
+that moved to `folio-assistant` in the miga migration and are reachable through
+the symlink. A selector that does not resolve it reports every one of them as
+deleted.
 
-## Next steps, none taken
+So the rule for anyone generalising this: **resolve `folio-assistant/` (and any
+other symlink) before calling a path missing** — `find -L`, or `os.path.exists`,
+which already does the right thing. The Python selector used
+`os.path.exists` and was correct; my shell follow-up used `find` and was not,
+and the shell result is what I believed.
 
-1. **Guard `migrate`** — refuse (or warn loudly) on an empty mapping. Small,
-   local, and it converts a silent orphan into an error. The best value here.
-2. **Fix the path in the five beans and in `AGENTS.md:5243`** to say where the
-   producer actually lives, once that is known.
-3. **Establish where it lives.** It is not in `folio-assistant` at the pinned
-   `428ca5c`; `.folio-assistant-pin` may simply predate it, since that pin is
-   169 commits behind `main` per the AGENTS.md §4d note. Checking a newer
-   folio-assistant is the cheapest next measurement and I have not done it.
-
-## Detector note, for whoever generalises the selector
-
-The raw run reports **80** open beans naming a vanished path, and that
-over-reports. Three classes, and only the third is a finding:
-
-* **placeholders** — `computations/X.witness.json`, `computations/substrate/x.py`
-  are metasyntactic examples in prose;
-* **moved, not deleted** — `computations/_deprecated/hecke_core_legacy.py` is now
-  `computations/hecke_core_legacy.py`; several hits are elided paths (`.../`)
-  that the regex mangled;
-* **genuinely absent** — this one.
-
-Do not quote the 80. The selector is worth keeping, but it wants the first two
-classes filtered before it is a gate.
+Left open rather than scrapped, because class 4 is a real improvement to a
+selector worth keeping. The original claim is dead.
