@@ -329,3 +329,71 @@ reporting `allPassed: true` on its two real assertions.
       Revisit ONLY if a specific producer is found where the top-level write is
       genuinely unintended. The list is kept at `.work/import-time-writers.txt`
       for exactly that lookup.
+
+---
+
+## 2026-09-07 — misfire #7, the fatal one, and the gate that ends the class
+
+Status left **completed**: the original defect is fixed and this is fixed too.
+Recorded here because it belongs to this transform and because the *class* is
+the durable finding.
+
+Six misfires were known (2 imports injected into module docstrings, 2 reads
+wrapped as writes, 2 `X.tmp.tmp` double-temps). The seventh was found by
+running a producer during the 435-commit main merge, not by reading a diff.
+
+**The transform inserted `import os as _os_sidu` as LINE 1 — above the module
+docstring — in 35 files.** Two consequences, and the second is fatal:
+
+1. The docstring is no longer the first statement, so it stops being `__doc__`
+   and becomes a bare string expression. (Measured: none of the 35 reference
+   `__doc__`, so this alone cost only `help()`.)
+2. Any `from __future__ import annotations` below it is then not at the
+   beginning of the file — a **SyntaxError**. **Twelve producers could not be
+   compiled or imported at all.**
+
+### Why nothing caught it for weeks
+
+**`ast.parse` accepts it. `compile` does not.** Future-statement placement is
+enforced at compile time, not at parse time — and every static audit in this
+corpus validates with `ast.parse`. All of them reported the twelve as fine.
+
+`producer_importability_audit` would have caught all twelve, and did not, for
+two reasons neither of which is fixed by pointing at it harder: it is **wired
+into no gate array** (mentioned only inside a comment in
+`scripts/precision-gates.sh` — the shape AGENTS.md records for
+`witness_hollowness_audit.py`), and its own docstring records an earlier pass
+that reported **24 bogus SyntaxErrors**. A check with a false-positive history
+is one people learn to skim.
+
+### What the twelve cost
+
+`qbeta-row-cap-sweep-of-physical-numbers.witness.json` kept a committed
+`allPassed: true` for 435 commits. Re-run, it reports `allPassed: false` with
+three failing assertions. **It had not lied — it had become impossible to
+ask.** That is a distinct failure mode from the one `qou-qe81` gates (a
+witness that records a failure and serialises green), and no detector here
+covers it: every staleness mechanism compares a witness to its producer's
+HASH, and the hash was perfectly current on a file that could not run.
+
+### The fix, and the gate
+
+All 35 imports relocated below the docstring and below every `__future__`.
+Verified across all 376 files containing `_os_sidu`: 0 fail to compile, 0
+docstrings still demoted, 0 uses left unbound.
+
+Then a corpus-wide sweep, because a transform that misfired seven times is
+not evidence that only my files are affected: **5183 tracked `.py`, 0 files
+where `ast.parse` and `compile` disagree.** So the blind spot is real but has
+no other live instance — a negative result, and the reason the new gate is
+blocking at zero rather than baselined.
+
+`computations/audits/python_compile_gate.py`, wired into `precision-gates.sh`.
+It runs `compile()`, imports nothing, executes nothing, reads no environment.
+`compile()` failing IS the defect, so it has no judgement in it and therefore
+no false positives — which is exactly what the importability audit could not
+offer. Self-test 10/10, including the case that pins the boundary: a hoisted
+import with no `__future__` below it demotes the docstring but is legal
+Python, and this gate must not claim it. Verified to FIRE rather than assumed
+to: a canary carrying the misfire shape exits 1 and is labelled as accepted by
+`ast.parse`.
