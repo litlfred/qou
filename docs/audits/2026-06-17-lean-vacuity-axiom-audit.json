@@ -1,6 +1,6 @@
 {
   "audit": "lean-vacuity-axiom-audit",
-  "generated": "2026-09-07T10:05:29.227Z",
+  "generated": "2026-09-07T10:16:51.954Z",
   "script": "content/pipeline/lean-vacuity-axiom-audit.ts",
   "scanned_files": 3722,
   "files_flagged": 120,
@@ -2348,7 +2348,7 @@
         "detail": "field(s) typed with the universe `Prop` rather than a proposition, and consumed by no sibling field (slaterStrict) — the instance chooses the proposition, so `⟨True⟩` inhabits the carrier and any [HasConfinementSDPData]-conditional result is unconditional. Encode the real property as the field type, consume it in a sibling, or demote per §3b-tax"
       },
       {
-        "line": 148,
+        "line": 170,
         "category": "proof-no-self-assuming-projection",
         "pattern": "exact-field-projection",
         "snippet": "theorem ConfinementSDP (n : ℕ) [HasConfinementSDPData n] (h : slaterStrict n)",
@@ -2359,7 +2359,7 @@
         "detail": "the projected field `hi.strong_duality` has a declared type character-identical to the conclusion — the theorem returns its own claim. Named outside `CONCLUSION_FIELD`, so the name gate misses it."
       },
       {
-        "line": 209,
+        "line": 253,
         "category": "proof-no-self-assuming-projection",
         "pattern": "field-projection",
         "snippet": "theorem sdp_lp_projection (n : ℕ)",
