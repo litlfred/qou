@@ -333,3 +333,44 @@ rate, not the legitimate rate itself. The **0 / 8** on the paper-facing subset
 is unaffected: an uninhabited carrier fails the necessary condition outright,
 so no adjudication can rescue it. State it that way — the contrast is between
 a bound and a certainty, and only the certainty carries the finding.
+
+---
+
+## Addendum 4 (same day) — the ledger's `needs-agent` backlog is 9/14 mechanically decidable
+
+The 14 `needs-agent` rows in `proof-no-self-assuming-projection` are **not
+unadjudicated**. Read one and the shape is clear:
+`ConfinementPhaseStratification_open` carries a full written analysis
+concluding *"On the merits it is the ordinary item-5 shape"* and
+`stale_prev_verdict: "genuine"`. It is `needs-agent` because the **file sha
+moved** — a verdict goes stale the moment the file changes, by design.
+
+So draining them is re-verification, not adjudication: confirm the declaration
+is byte-identical to what was reviewed, then restore the verdict. That is the
+pattern the surviving `genuine` rows already use (*"RE-VERIFIED 2026-08-30 …
+Declaration byte-identical against the recorded revision. Verdict
+unchanged."*).
+
+The inhabitation discriminator gives an **independent** second signal for most
+of them:
+
+| | count | what it means |
+|---|---|---|
+| **uninhabited carrier** | **9** | fails the necessary condition outright; no adjudication can rescue it, so a restored `genuine` needs only the byte-identity check |
+| inhabited carrier | 2 | `shell_closure_monotone` (`ShellClosureMonotone`), `he4_strong_duality_value` (`HasHe4ChannelActiveSet`) — these need the real `qou-z9ws` adjudication: Fact-wrapper vs degenerate slice vs substantive |
+| carrier unresolved | 3 | `ConfinementSDP`, `whitehead_volume_conjecture`, `four_term_pair_nucleon` — the resolver handles `:= ivar.field` and these are not that shape |
+
+The nine uninhabited: `ConfinementPhaseStratification_open`,
+`sdp_lp_projection`, `base_mass_is_norm_of_base_trace`,
+`descended_trace_is_base_trace`, `jet_prolongation_C`,
+`mass_anchor_stable_forward`, `mass_direction_sanity_forward`,
+`bar_even_kernel_implies_direction_sanity`,
+`bar_even_kernel_implies_radius_of_convergence`.
+
+**Not drained here, deliberately.** Restoring a verdict writes a `file_sha`
+and a dated reviewer block per entry, and the byte-identity check against each
+recorded revision is per-entry work that should not be batched behind one
+mechanical signal — the inhabitation result is a *second* witness, not a
+substitute for the check the ledger's own contract asks for. It is a bounded,
+well-specified next tranche, and this is what it costs: 9 re-verifications, 2
+genuine adjudications, 3 resolver extensions.
