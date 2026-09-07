@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T18:10:16.390438+00:00",
-  "commitSha": "20b1cce1cb1f5ba41b33bb43b615d2687efe342c",
+  "computedAt": "2026-09-07T18:23:39.308292+00:00",
+  "commitSha": "b72a624f84ebc1a7f744ac971b23b2ad6b19dc54",
   "assertions": [
     {
       "name": "split_Casimir_eigenvalues_on_Sym2_/_Lambda2_are_1/4_/_-3/4",
@@ -121,7 +121,7 @@
   "durationMs": 1,
   "computation": "kz-pullback-monodromy-exact",
   "scriptFile": "kz_pullback_monodromy_exact_probe.py",
-  "scriptHash": "165c74f576ba",
+  "scriptHash": "4ddc83bd71b6",
   "scriptCommitSha": "492ad4221f6a8dc4f4f8f9d9f32d13e4fab12276",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -143,7 +143,7 @@
     ],
     "reproduce": "python3 -u computations/probes/kz_pullback_monodromy_exact_probe.py"
   },
-  "description": "qou-d0qq, the construction half of Step-2 option C, as far as it is computable. (1) The level is fixed convention-free by the eigenvalue RATIO of the KZ half-twist: split Casimir 1/4 on Sym², −3/4 on Λ² ⇒ ratio −e^{iπħ}; matching the Hecke ratio −q² gives q² = e^{iπħ}, i.e. ħ = (2/iπ) ln q — purely imaginary at the real proton pin (the 'imaginary level'); the two levels on the bean are the conventions ħ = 2/(k+2) and 1/(k+2). (2) The pulled-back monodromy ϱ: F₆ → B₃ → End(V^{⊗3}) is explicit from the six measured lasso words: every ϱ(w_j) satisfies the Hecke quadratic and has pivotal trace z_D; the image is that of B₃; ϱ(w₁⋯w₆) = ϱ(Δ²) is central with two distinct eigenvalues (the two isotypic blocks). (3) Nothing here evaluates the framework side: no connection object exists there; KZPullbackGenerators is the interface. q₀ is an input only; nothing outputs a q₀.",
+  "description": "qou-d0qq, the construction half of Step-2 option C, as far as it is computable. (1) The level is fixed convention-free by the eigenvalue RATIO of the KZ half-twist: split Casimir 1/4 on Sym², −3/4 on Λ² ⇒ ratio −e^{iπħ}; matching the Hecke ratio −q² gives q² = e^{iπħ}, i.e. ħ = (2/iπ) ln q — purely imaginary at the real proton pin (the 'imaginary level'), conditional on the §7a Skein normalisation (H) — under (J) the ratio is −q and ħ halves; k+2 = 15.05 i / 30.1 i / 60.2 i for ħ = 1/(k+2), 2/(k+2), 4/(k+2). (2) The pulled-back monodromy ϱ: F₆ → B₃ → End(V^{⊗3}) is explicit from the six measured lasso words: every ϱ(w_j) satisfies the Hecke quadratic and has pivotal trace z_D; the image is that of B₃; ϱ(w₁⋯w₆) = ϱ(Δ²) is central with two distinct eigenvalues (the two isotypic blocks). (3) Nothing here evaluates the framework side: no connection object exists there; KZPullbackGenerators is the interface. q₀ is an input only; nothing outputs a q₀.",
   "contentBlock": "conj:hecke-monodromy-step-two",
   "parameters": {
     "lasso_words": {
@@ -177,6 +177,7 @@
         "hbar_is_purely_imaginary": true,
         "k_plus_2_if_hbar_eq_1_over_k_plus_2": "(0.0 + 15.0544899631197995188319328322j)",
         "k_plus_2_if_hbar_eq_2_over_k_plus_2": "(0.0 + 30.1089799262395990376638656644j)",
+        "k_plus_2_if_hbar_eq_4_over_k_plus_2_ie_q_eq_exp_2pi_i_over_k_plus_2": "(0.0 + 60.2179598524791980753277313288j)",
         "route5_form_hbar_eq_2_ln_q": "0.208681440639039024631812559946"
       }
     },
