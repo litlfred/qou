@@ -1,11 +1,11 @@
 ---
 # qou-brfy
-title: 'Does an H_4 Farey layering exist? — the one search that decides the Bring route'
-status: todo
+title: Does an H_4 Farey layering exist? — the one search that decides the Bring route
+status: in-progress
 type: task
 priority: high
 created_at: 2026-09-06T11:52:20Z
-updated_at: 2026-09-06T11:59:31Z
+updated_at: 2026-09-07T04:30:54Z
 ---
 
 OPENED 2026-09-06 from the owner proposal: "if we fix on brings, then every
@@ -75,4 +75,3 @@ TWO ACQUISITION REQUESTS, neither held:
     cited only indirectly via FKP arxiv-0808.2716v4. Note `futer-gueritaud-
     angled` is already a references.ts key, so the author is cited but this
     paper is not held.
-
