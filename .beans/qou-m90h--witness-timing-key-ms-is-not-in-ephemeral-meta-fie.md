@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-07T11:01:32Z
-updated_at: 2026-09-07T11:04:24Z
+updated_at: 2026-09-07T11:10:00Z
 ---
 
 Found on PR #7061 while classifying witness churn from verification runs.
@@ -74,3 +74,29 @@ witnesses (`m1-kappa-structure`, `m1-kendall-route`, and re-runs of
 background sweep after the first revert, and their diffs were **also `"ms"`
 alone** — 4 changed lines, all of them `ms`. That is ten independent
 confirmations and zero counter-examples. The other 18 remain UNVERIFIED.
+
+
+UPDATE 2: the spot-check is **12 of 28**. Two further witnesses
+(`m1-limit-closed-form`, `m1-monovary-route`) were dirtied by the same
+background sweep and differed in **`"ms"` alone** — `157334 -> 144842` and
+`439 -> 580`. Twelve independent confirmations, zero counter-examples; 16 of
+the 28 remain unverified.
+
+Note the second value went **down** (157334 -> 144842). A staleness reader
+looking only at direction cannot use that either — it is wall-clock jitter in
+both directions, not a monotone counter.
+
+### Methodological trap, worth more than the extra two samples
+
+The repeated re-dirtying was NOT the producers being nondeterministic. A
+background sweep kept running after `TaskStop` reported it stopped:
+`TaskStop` terminated the task wrapper, and the child `for f in ...; do
+timeout 300 python3 "$f"; done` loop survived it and went on writing
+witnesses. It took `pgrep -af` + `kill -9` on the child PIDs to actually
+stop, and the task only reported `failed` afterwards.
+
+Consequence for anyone measuring witness churn: **`git status` is not a
+stable observation while a sweep may still be alive.** Check `pgrep` for the
+producers before concluding that a revert held, or you will attribute your own
+still-running loop to a nondeterministic producer. This cost three revert
+rounds here.
