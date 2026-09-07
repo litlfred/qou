@@ -1,0 +1,117 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-9901120v3",
+ "source": {
+  "file": "9901120v3.pdf",
+  "sha256": "782034b674f958af57632cf8cab5c42015ed7cd01702930740b8d541141c0051",
+  "bytes": 36934,
+  "pages": 4,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/9901120",
+   "version": "3",
+   "primary_class": null,
+   "stamp_date": "18 Jun 2010"
+  },
+  "doi": null,
+  "title": "A table of boundary slopes of Montesinos knots Nathan M. Dunfield1 Revised version of June 2010 email: nathan@dunfield.info",
+  "authors_raw": null,
+  "title_lines": [
+   "A table of boundary slopes of",
+   "Montesinos knots",
+   "Nathan M. Dunfield1",
+   "Revised version of June 2010",
+   "email: nathan@dunfield.info"
+  ],
+  "abstract": "This note corrects errors in Hatcher and Oertel\u2019s table of boundary slopes of Montesinos knots which have projec- tions with 10 or fewer crossings.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211116121228-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Revised table",
+   "page": 1,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Preparing the table",
+   "page": 3,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Getting the program",
+   "page": 4,
+   "source": "outline",
+   "number": "4"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1082,
+   "n_words": 180
+  },
+  {
+   "id": "sec-001-2-revised-table",
+   "number": "2",
+   "title": "Revised table",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 10323,
+   "n_words": 2768
+  },
+  {
+   "id": "sec-002-3-preparing-the-table",
+   "number": "3",
+   "title": "Preparing the table",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2110,
+   "n_words": 363
+  },
+  {
+   "id": "sec-003-4-getting-the-program",
+   "number": "4",
+   "title": "Getting the program",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 606,
+   "n_words": 88
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "sections": 4,
+  "chars_total": 14121
+ }
+}
