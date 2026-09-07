@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Bar-oddness discriminates the two candidate Q_beta ELEMENTS — Delta_S carries
-it under exactly the admissible functionals, Delta_L under none of the four.
+it on the WHOLE admissible trace space, Delta_L on none of it but the zero trace.
 
 WHY THIS IS A PHYSICS TEST AND NOT AN AESTHETIC ONE. The corpus establishes,
 measured rather than posited, that the bar involution q -> 1/q IS proton<->neutron
@@ -41,23 +41,49 @@ both taken from committed corpus artifacts, not rebuilt here.
     Delta_L:  bar(N) = -N  <=>  bar(z) = -z  OR  bar(z) = (q^4 z + 2q^3 - 2q + z)/(q^4+1)
               satisfied by  NONE of the four, the ADMISSIBLE PAIR INCLUDED
 
-So under the isospin reading, `Delta_S` paired with an admissible functional is
-bar-odd and `Delta_L` paired with an admissible functional is not. That is a
+AND THE WHOLE SPAN, WHICH IS THE STATEMENT THAT MATTERS. Testing only the two
+Markov points UNDER-CLAIMS: the decision document records (section 2, fact 3) that
+the admissible TRACES form a 2-DIMENSIONAL space which those two points span. So
+the real question is whether ANY combination is bar-odd. Measured:
+
+    Delta_S   bar(A) + A = 0  AND  bar(B) + B = 0
+              => EVERY admissible trace on Delta_S is bar-odd
+
+    Delta_L   bar(A) + A = -(q-1)^2 (q+1)^2 (q^2+1)^3 / (4q^5)
+              bar(B) + B = -(q-1)^2 (q+1)^2 (q^2+1)(q^4+1) / (4q^5)
+              ratio = (q^2+1)^2/(q^4+1), which is q-DEPENDENT, so the two defects
+              are NOT proportional over Q and a*dA + b*dB = 0 forces a = b = 0
+              => ONLY THE ZERO TRACE on Delta_L is bar-odd
+
+So under the isospin reading, `Delta_S` carries bar-oddness on the entire
+admissible trace space and `Delta_L` carries it nowhere but at zero. That is a
 structural preference for `Delta_S` in a question the decision document records as
 open, and it is reached without touching a number.
 
-🛑 SCOPE — (a), NOT (b). This does NOT exclude Delta_L.
+🛑 SCOPE — what the span result does and does not settle.
 
-  * The first Delta_L branch `bar(z) = -z` is impossible for a positive Markov
-    parameter, so it is vacuous.
-  * The second branch is INVOLUTION-CONSISTENT: `Bbar(B(z)) - z = 0` identically,
-    so the functional equation is not self-contradictory and a solution z(q) may
-    exist. This probe did not search for one.
+  ESTABLISHED, and it is a complete statement over the admissible span with
+  CONSTANT coefficients: no nonzero rational combination of the two canonical
+  admissible Markov traces is bar-odd on Delta_L, while every one is on Delta_S.
+  That is stronger than the four-point test and is not a sampling argument -- it
+  follows from the two bar-odd defects being non-proportional over Q.
 
-  The honest claim is therefore: **these four functionals, alone, do not make
-  Delta_L bar-odd** — a scope-(a) negative in the AGENTS.md sense, constraining
-  the (element, functional) combination rather than excluding the element. A
-  scope-(b) exclusion would need branch 2 shown to have no admissible solution.
+  NOT ESTABLISHED, and both matter:
+
+  * COEFFICIENTS IN Q(q) were not tested. If the span is taken over Q(q) rather
+    than Q, `bar` acts on the coefficients too and the condition becomes a
+    functional equation in two unknowns, generically solvable. Note that scaling
+    a trace by f(q) rescales Q_beta itself, so it is a different physical claim,
+    not merely a wider search -- but it is untested either way.
+  * NON-ADMISSIBLE z. Delta_L's second branch is INVOLUTION-CONSISTENT
+    (`Bbar(B(z)) - z = 0` identically), so some z outside the admissible set may
+    make it bar-odd. Irrelevant to the physics -- an inadmissible functional is
+    excluded on other grounds -- but it means "Delta_L can never be bar-odd" is
+    NOT what was shown.
+
+  So: within the admissible span over Q this is a genuine exclusion of Delta_L;
+  outside it, it is untested. The first branch `bar(z) = -z` is vacuous for a
+  positive Markov parameter throughout.
 
 CALIBRATION, AND A DEFECT FOUND BY IT. The Delta_L closed form reproduces the
 committed fork-pricing witness's own Q_pred to 8.5e-51 at 60 dps — byte-exact.
@@ -144,13 +170,19 @@ def main() -> int:
         "Delta_L (eleven-crossing word difference, tr_M QUADRATIC in z): two branches, "
         "satisfied by NONE of the four, the admissible pair included. So under the "
         "isospin reading Delta_S + admissible functional is bar-odd and Delta_L + "
-        "admissible functional is not — a structural preference for Delta_S in a "
-        "question the decision document records as open, reached with NO anchor and NO "
-        "experimental input. SCOPE-(a), NOT (b): Delta_L is NOT excluded. Its first "
-        "branch bar(z) = -z is vacuous for positive z, but the second is "
-        "involution-consistent (Bbar(B(z)) - z = 0 identically), so a solution may "
-        "exist and none was searched for. Nothing wired, no functional adopted, no "
-        "element declared canonical."
+        "admissible functional is not. AND THE WHOLE SPAN, which is the statement that "
+        "matters: the admissible TRACES are 2-dimensional and the two Markov points "
+        "span them, so testing only those points under-claims. Measured, on Delta_S "
+        "BOTH basis traces have vanishing bar-odd defect => EVERY admissible trace is "
+        "bar-odd; on Delta_L neither does and the two defects are NOT proportional over "
+        "Q (ratio (q^2+1)^2/(q^4+1) is q-dependent) => a*dA + b*dB = 0 forces a = b = 0, "
+        "so ONLY THE ZERO TRACE is bar-odd. That is a genuine exclusion of Delta_L "
+        "WITHIN the admissible span over Q, not a sampling argument. NOT established: "
+        "coefficients in Q(q) (bar acts on them too; scaling by f(q) rescales Q_beta, a "
+        "different physical claim) and non-admissible z (Delta_L's second branch is "
+        "involution-consistent, so some inadmissible z may work). Reached with NO anchor "
+        "and NO experimental input. Nothing wired, no functional adopted, no element "
+        "declared canonical."
     )
     wb.set_content_block("rem:qbeta-functional-admissibility")
 
@@ -208,6 +240,51 @@ def main() -> int:
                             "the functional equation is not self-contradictory and Delta_L "
                             "is NOT excluded — this is scope-(a), not scope-(b)")
 
+    # ── the WHOLE admissible trace space, not just the two points ───────
+    #
+    # The decision document records (section 2, fact 3) that the admissible TRACES
+    # form a 2-DIMENSIONAL space which the two Markov points span. Testing only
+    # those two points therefore under-claims: the honest question is whether ANY
+    # combination is bar-odd. Answering it strengthens the result substantially.
+    print("\n=== The whole admissible span (2-dim, spanned by the two Markov points) ===")
+    span = {}
+    for key, N in (("Delta_S", N_S), ("Delta_L", N_L)):
+        A = sp.simplify(N.subs(z, q))                    # augmentation
+        B = sp.simplify(N.subs(z, q**3 / (q**2 + 1)))    # Markov at z_D
+        dA = sp.simplify(sp.factor(bar_of(A) + A))       # bar-odd defect of each
+        dB = sp.simplify(sp.factor(bar_of(B) + B))
+        both_odd = (dA == 0 and dB == 0)
+        if both_odd:
+            verdict = "EVERY combination is bar-odd"
+            ratio_str, ratio_const = "0/0 (both defects vanish)", None
+        else:
+            ratio = sp.simplify(sp.cancel(dA / dB)) if dB != 0 else None
+            ratio_const = (ratio is not None
+                           and sp.simplify(sp.diff(ratio, q)) == 0)
+            ratio_str = str(sp.factor(ratio)) if ratio is not None else "dB = 0"
+            verdict = ("some nonzero constant combination is bar-odd" if ratio_const
+                       else "ONLY the zero trace is bar-odd")
+        print(f"    {key}:  bar(A)+A = {sp.factor(dA)}")
+        print(f"    {' ' * len(key)}   bar(B)+B = {sp.factor(dB)}")
+        print(f"    {' ' * len(key)}   defect ratio = {ratio_str}   -> {verdict}")
+        span[key] = {"defect_augmentation": str(sp.factor(dA)),
+                     "defect_z_D": str(sp.factor(dB)),
+                     "defects_proportional_over_Q": bool(ratio_const) if ratio_const is not None else True,
+                     "every_combination_bar_odd": bool(both_odd),
+                     "verdict": verdict}
+    wb.add_assertion("Delta_S_whole_admissible_span_is_bar_odd",
+                     computed=("1" if span["Delta_S"]["every_combination_bar_odd"] else "0"),
+                     expected="1", tolerance="0.5",
+                     source="both basis traces have vanishing bar-odd defect, so every "
+                            "admissible combination on Delta_S is bar-odd")
+    wb.add_assertion("Delta_L_no_nonzero_constant_combination_is_bar_odd",
+                     computed=("1" if not span["Delta_L"]["defects_proportional_over_Q"] else "0"),
+                     expected="1", tolerance="0.5",
+                     source="the two bar-odd defects on Delta_L are NOT proportional over Q "
+                            "(ratio (q^2+1)^2/(q^4+1) is q-dependent), so a*dA + b*dB = 0 "
+                            "forces a = b = 0 for constant a, b — only the zero trace")
+    wb.add_data("admissible_span", span)
+
     # ── calibration against the committed fork-pricing witness ──────────
     print("\n=== CALIBRATION against qbeta-delta-element-fork-pricing.witness.json ===")
     wpath = _ROOT / "computations/qbeta/qbeta-delta-element-fork-pricing.witness.json"
@@ -247,21 +324,27 @@ def main() -> int:
         "reference_rel_diff": fmt(ref_rel, 10),
     })
     wb.add_data("scope", {
-        "tier": "scope-(a)",
-        "established": ("Delta_S is bar-odd under EXACTLY the two admissible functionals; "
-                        "Delta_L is bar-odd under NONE of the four tested, the admissible "
-                        "pair included"),
-        "NOT_established": ("that Delta_L can never be bar-odd — its second branch is "
-                            "involution-consistent, so a solution z(q) may exist and none "
-                            "was searched for"),
+        "tier": "exclusion within the admissible span over Q; scope-(a) outside it",
+        "established": ("Delta_S is bar-odd under EXACTLY the two admissible functionals "
+                        "and, more strongly, on the WHOLE admissible trace span; Delta_L is "
+                        "bar-odd under none of the four and, on the span with constant "
+                        "coefficients, ONLY at the zero trace (the two bar-odd defects are "
+                        "non-proportional over Q). A genuine exclusion within the span."),
+        "NOT_established": ("(i) coefficients in Q(q) — bar acts on them too, and scaling a "
+                            "trace by f(q) rescales Q_beta, so it is a different physical "
+                            "claim, untested either way; (ii) that Delta_L can never be "
+                            "bar-odd for ANY z — its second branch is involution-consistent, "
+                            "so some INADMISSIBLE z may work, which is irrelevant to the "
+                            "physics but means the universal claim was not shown"),
         "premise": ("bar is p<->n conjugation, measured in qou-e58e over 11 nuclei; a p<->n "
                     "DIFFERENCE should therefore be bar-odd. If that reading is wrong, the "
                     "criterion loses its motivation and this becomes an observation about "
                     "two rational functions."),
     })
     wb.save()
-    print("\n  RESULT: Delta_S bar-odd under exactly the admissible pair; Delta_L under none "
-          "of the four. Scope-(a) — Delta_L is NOT excluded.")
+    print("\n  RESULT: on the WHOLE admissible trace span, Delta_S is bar-odd everywhere "
+          "and\n          Delta_L only at zero. Exclusion within the span over Q; "
+          "Q(q) coefficients\n          and non-admissible z are untested.")
     return 0
 
 

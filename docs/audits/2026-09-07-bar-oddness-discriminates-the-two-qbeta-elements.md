@@ -1,13 +1,15 @@
-# Bar-oddness discriminates the two `Q_β` elements — `Δ_S` carries it under exactly the admissible functionals, `Δ_L` under none
+# Bar-oddness discriminates the two `Q_β` elements — `Δ_S` carries it on the whole admissible span, `Δ_L` only at zero
 
 **Date:** 2026-09-07 · **Beans:** `qou-99qc` (Option E), `qou-avt5`, `qou-e58e`, `qou-37j2`
-**Probe:** [`qbeta_bar_odd_element_discriminator_probe.py`](../../computations/qbeta/qbeta_bar_odd_element_discriminator_probe.py) — 11/11, exact over ℚ(q)
-**Tier:** scope-(a). **Nothing wired, no functional adopted, no element declared canonical.**
+**Probe:** [`qbeta_bar_odd_element_discriminator_probe.py`](../../computations/qbeta/qbeta_bar_odd_element_discriminator_probe.py) — 13/13, exact over ℚ(q)
+**Tier:** an exclusion of `Δ_L` **within the admissible span over ℚ** (§4); scope-(a) outside it (§4a).
+**Nothing wired, no functional adopted, no element declared canonical.**
 
 Continues [the bar-parity finding](2026-09-07-bar-parity-separates-the-admissible-qbeta-functionals.md),
 which closed the *functional* column for `Δ_S`. That document's own "what was NOT done" said the
 `Δ_L` column had not been recomputed. This does it, and the answer is stronger than expected: the
-same parity **also separates the two elements.**
+same parity **also separates the two elements**, and on the whole admissible span rather than at
+the two sampled points.
 
 ---
 
@@ -67,17 +69,35 @@ That is a structural preference for `Δ_S` in a question the decision document r
 independent of the functional question** — reached without touching a number, and therefore not a
 selection against the data.
 
-## 4. 🛑 Scope — (a), not (b). `Δ_L` is NOT excluded
+## 4. The whole admissible span — and this is the statement that matters
 
-The probe proves its own limit rather than conceding it:
+Testing only the two Markov points **under-claims**. The decision document records (§2, fact 3)
+that the admissible **traces** form a **2-dimensional space** which those two points span. So the
+real question is whether *any* combination is bar-odd. Measured:
 
-- **Branch `bar(z) = −z` is vacuous** for a positive Markov parameter.
-- **Branch 2 is involution-consistent**: `B̄(B(z)) − z = 0` identically. The functional equation is
-  not self-contradictory, so a solution `z(q)` may exist. **This probe did not search for one.**
+| element | `bar(A) + A` (augmentation defect) | `bar(B) + B` (`z_D` defect) | verdict |
+|---|---|---|---|
+| **`Δ_S`** | `0` | `0` | **every** admissible trace is bar-odd |
+| **`Δ_L`** | `−(q−1)²(q+1)²(q²+1)³/(4q⁵)` | `−(q−1)²(q+1)²(q²+1)(q⁴+1)/(4q⁵)` | **only the zero trace** |
 
-So the claim is: **these four functionals, alone, do not make `Δ_L` bar-odd** — a scope-(a)
-negative constraining the *(element, functional)* combination, not excluding the element. Upgrading
-to scope-(b) needs branch 2 shown to admit no admissible solution.
+The `Δ_L` row is an exclusion, not a sample: the two defects have ratio `(q²+1)²/(q⁴+1)`, which is
+**q-dependent**, so they are not proportional over ℚ and `a·dA + b·dB = 0` forces `a = b = 0`.
+
+> **`Δ_S` carries bar-oddness on the entire admissible trace space; `Δ_L` carries it nowhere but
+> at zero.**
+
+## 4a. 🛑 What is still not settled
+
+**Coefficients in `ℚ(q)` were not tested.** If the span is taken over `ℚ(q)` rather than `ℚ`, `bar`
+acts on the coefficients too and the condition becomes a functional equation in two unknowns,
+generically solvable. Scaling a trace by `f(q)` rescales `Q_β` itself, so it is a *different
+physical claim* rather than merely a wider search — but it is untested either way.
+
+**Non-admissible `z`.** `Δ_L`'s second branch is **involution-consistent** (`B̄(B(z)) − z = 0`
+identically), so some `z` outside the admissible set may make it bar-odd. Irrelevant to the physics
+— an inadmissible functional is excluded on other grounds — but it means *"`Δ_L` can never be
+bar-odd"* is **not** what was shown. Branch `bar(z) = −z` is vacuous for a positive Markov
+parameter throughout.
 
 **And the premise is load-bearing.** If bar is *not* p↔n conjugation, the criterion loses its
 motivation and this reduces to an observation about two rational functions. That reading is
@@ -106,7 +126,7 @@ is a `codata_constants` question, not this probe's.
 
 - **No functional adopted, no element declared canonical.** The seven-option decision is the
   owner's (`qou-99qc`), and this changes none of the arithmetic in its grid.
-- **No search for a branch-2 solution** on `Δ_L` — §4.
+- **No search for a branch-2 solution** on `Δ_L`, and no test of `ℚ(q)` coefficients — §4a.
 - **No claim that bar-oddness is sufficient** for admissibility; the sibling document already
   refuted that on `Δ_S` by exhibiting a passing non-root.
 - **`Q_BETA_MEV` not touched.**
