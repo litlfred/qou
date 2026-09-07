@@ -1,11 +1,11 @@
 ---
 # qou-8dlq
 title: Remark interpreting 2205.01282v2.pdf at QOU.QBeta.StokesDTBPSBridge
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-08T23:35:19Z
-updated_at: 2026-09-06T09:10:25Z
+updated_at: 2026-09-07T08:53:45Z
 ---
 
 Record what would have to be checked before this changes any epistemic tier: whether the knot complements / 3-manifolds the folio's A_omega argument uses fall inside this document's plumbed, negative-definite-linking-matrix class. If they do not, the GPPV identification stays conjectural for the folio's purposes and the bridge's class fields must remain as they are.
@@ -27,3 +27,13 @@ STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `refere
 The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [murakami-y2022] as the citation key when you do it.
 
 2026-09-06: RECORDED in stokes-dt-bps-bridge.md, citing [murakami-y2022]. The class check: Murakami-Y's theorem is for CLOSED plumbed 3-manifolds with negative-definite linking matrix; S³∖K for hyperbolic K is cusped and not plumbed, so 4₁ and 5₂ are OUTSIDE the class and dt_eq_bps stays an assumed class field. Epistemic tier unchanged. Bean stays OPEN per owner rule (AGENTS.md 13a): its subject is the bridge's tier, which is an open conjecture.
+
+
+
+## 2026-09-07 — the check the body asked for, measured against the corpus and a held source
+
+The conjecture block `conj:stokes-dt-bps-bridge` already carries the interpreting paragraph (mass-theory/stokes-dt-bps-bridge.md, lines 30–35): Murakami 2022 proves WRT = radial limit of Ẑ for plumbed 3-manifolds with negative-definite linking matrix; that class is closed manifolds, S³∖K for hyperbolic K is cusped and not plumbed, so the theorem does not reach the objects the conjecture quantifies over and `dt_eq_bps` stays an assumption.
+
+Sharpening, with the source held: Li–Wang (library/arxiv-math-0604057v2 §5, `sec-012-5-an-example-the-figure-eight-knot.md` lines 197–263) record the TEN exceptional surgery slopes of 4₁ (0, ±1, ±2, ±3, ±4, ∞) and that M(0) is toroidal with non-abelian infinite π₁ — so some closed fillings of 4₁ are graph/Seifert manifolds that MAY lie in the plumbed negative-definite class (that 4₁(±1) is the Brieskorn sphere Σ(2,3,7), a Seifert manifold, is RECALLED, not held). This does not change the tier: the A_ω argument uses the state integral of the cusped complement (GGM Conj 3(d) for 4₁ itself), not a WRT invariant of a closed filling.
+
+Verdict: citation recorded (already in the block), no hypothesis discharged, bridge class fields unchanged. Completed as the remark/citation task it is; the conjecture it interprets stays open in its own block (AGENTS.md 13a does not apply: the bean's subject is the citation, not the conjecture).
