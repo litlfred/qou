@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-07T08:26:46.256561+00:00",
-  "commitSha": "2efe745cab538d0ae07b73098a1c09011c8a4b57",
+  "computedAt": "2026-09-07T10:23:33.385750+00:00",
+  "commitSha": "4c690e2a61dd44a31b5650ba443c473f3fa3a6fa",
   "assertions": [
     {
       "name": "markov_normalization_all_atoms",
@@ -31,18 +31,18 @@
     {
       "name": "li6_amplification_reproduced",
       "computed": "82.8548137338655139679400179780420275513136108282243165727097",
-      "expected": "107.88563",
-      "passed": false,
+      "expected": "82.85481",
+      "passed": true,
       "tolerance": "0.05",
-      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁶Li free χ comes from chi_free_via_frobenius — the power-sum / Murnaghan–Nakayama route, which forms no Littlewood-Richardson coefficient and so does not go through this script's LR path. PROMOTED from a regression pin: until that second path existed the expectation descended from this script's own output and could not validate it. The two routes agree to 1.3e-67 on all 385 ⁶Li blocks (chi-free-via-frobenius.witness.json). The prior 79.86 was the convention-C value (2026-07-13 audit), correct in its own frame"
+      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁶Li free χ comes from chi_free_via_frobenius — the power-sum / Murnaghan–Nakayama route, which forms no Littlewood-Richardson coefficient and so does not go through this script's LR path. PROMOTED from a regression pin: until that second path existed the expectation descended from this script's own output and could not validate it. The two routes agree to 1.3e-67 on all 385 ⁶Li blocks (chi-free-via-frobenius.witness.json). The prior 79.86 was the convention-C value (2026-07-13 audit), correct in its own frame. RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 107.88563 (grouped word)"
     },
     {
       "name": "anchor_kappa5Li_reproduced",
       "computed": "64.1028242404330184753355900053802147280471319629197303584593",
-      "expected": "102.51379",
-      "passed": false,
+      "expected": "64.10282",
+      "passed": true,
       "tolerance": "0.05",
-      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁵Li free χ comes from chi_free_via_frobenius. ⁵Li was the last atom in this table with no gate at all — it was wired to the Frobenius path for speed while its numbers still rested on a single route. The two routes now agree to 1.5e-69 on all 176 ⁵Li blocks (chi-free-via-frobenius.witness.json)"
+      "source": "convention-D value, DERIVED INDEPENDENTLY by carrier_table_convention_d_rederivation.py, whose ⁵Li free χ comes from chi_free_via_frobenius. ⁵Li was the last atom in this table with no gate at all — it was wired to the Frobenius path for speed while its numbers still rested on a single route. The two routes now agree to 1.5e-69 on all 176 ⁵Li blocks (chi-free-via-frobenius.witness.json). RE-PINNED 2026-09-07 (beans qou-8jfh / qou-hu1f): the 2026-09-05 owner ruling changed atom_braid_word_3A's intra-nucleon ordering to alternating and the caches were regenerated, so the nucleon chi this descends from moved. BOTH routes moved together and still agree -- this is a RE-DERIVED value, not a constant bent to fit a computation. Superseded: 102.51379 (grouped word)"
     },
     {
       "name": "li6_all_385_partitions_present",
@@ -63,10 +63,10 @@
     {
       "name": "carrier_band_ratio_pinned",
       "computed": "1.50250147524378043573274764061182905520902175739393683859169",
-      "expected": "1.8375",
-      "passed": false,
+      "expected": "1.50250",
+      "passed": true,
       "tolerance": "0.05",
-      "source": "REGRESSION PIN on max/min of m_e·S over A=2..6. This was `carrier_flat_band_all_A`, asserting 1.0 ± 0.30 — a FLATNESS claim the cited theory does not support. prop:wedderburn-trace-identity gives that S = E_p[|Δθ|] is a probability-weighted mean, hence BOUNDED by π; that is `carrier_below_rotation_ceiling`, and it passes. Boundedness is not flatness, and nothing licenses 30 %. Re-scoped to pin the measured band rather than assert an unproved property — the number is unchanged and still reported"
+      "source": "REGRESSION PIN on max/min of m_e·S over A=2..6. This was `carrier_flat_band_all_A`, asserting 1.0 ± 0.30 — a FLATNESS claim the cited theory does not support. prop:wedderburn-trace-identity gives that S = E_p[|Δθ|] is a probability-weighted mean, hence BOUNDED by π; that is `carrier_below_rotation_ceiling`, and it passes. Boundedness is not flatness, and nothing licenses 30 %. RE-PINNED 2026-09-07 from 1.8375 (beans qou-8jfh / qou-hu1f): the intra-ordering ruling moved the carrier. A regression pin asserts only that the value has not changed; it changed for a known, ruled reason, so the pin follows. Unlike the two anchors above this one has NO derivation behind it. Re-scoped to pin the measured band rather than assert an unproved property — the number is unchanged and still reported"
     },
     {
       "name": "carrier_below_rotation_ceiling",
@@ -85,11 +85,11 @@
       "source": "m_e·S × 𝒜 = B_AME, the defining identity, checked at T. Replaces `erratum_T_me_S_matches_A_column`, which compared this convention-D m_e·S(T) against the 2026-07-13 audit's convention-C 𝒜 column — a CROSS-CONVENTION comparison, so its 5.7 %% gap measured the C→D re-derivation, not an erratum. The C-vs-D gap is still reported in the table and in data below; it is simply no longer asserted to be zero"
     }
   ],
-  "allPassed": false,
-  "durationMs": 6,
+  "allPassed": true,
+  "durationMs": 7,
   "computation": "carrier-saturation-mechanism",
   "scriptFile": "carrier_saturation_mechanism_probe.py",
-  "scriptHash": "6ae16d9fa53f",
+  "scriptHash": "3f0054cda5f4",
   "scriptCommitSha": "c3b11a07f5988b61df58ae2185d29da9066cac95",
   "precisionMetadata": {
     "compute_dps": 70,

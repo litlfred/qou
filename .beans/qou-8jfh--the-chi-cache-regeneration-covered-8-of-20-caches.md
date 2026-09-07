@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T06:02:19Z
-updated_at: 2026-09-07T06:21:08Z
+updated_at: 2026-09-07T10:24:09Z
 ---
 
 ## The claim
@@ -173,3 +173,64 @@ producer is `bar_pairing_binding_observable.py`, whose cache key is `q` and
 `dps` — so re-running is a **no-op** and they must be deleted first. That is now
 safe (the `qou-w8rv` ownership refusal protects the at-q0 atom caches), but it
 was not attempted in this pass.
+
+
+
+## Q3 RESOLVED 2026-09-07 — provenance investigated, then re-pinned
+
+Owner disposition: investigate provenance first, then re-derive and re-pin.
+**The investigation inverted the framing for two of the three**, which is
+exactly what it was for.
+
+### What the three anchors actually are
+
+I had called all three "stale pinned anchors". Reading
+`carrier_saturation_mechanism_probe.py` and
+[`2026-08-26-carrier-saturation-five-failures-diagnosis.md`](docs/audits/2026-08-26-carrier-saturation-five-failures-diagnosis.md):
+
+| assertion | what it is |
+|---|---|
+| `li6_amplification_reproduced` | **DERIVED INDEPENDENTLY** — "PROMOTED from a regression pin"; ⁶Li free χ via `chi_free_via_frobenius`, the power-sum / Murnaghan–Nakayama route, which **forms no Littlewood–Richardson coefficient** and so does not go through the probe's own LR path. The two agree to **1.3e-67 on all 385 ⁶Li blocks**. |
+| `anchor_kappa5Li_reproduced` | **DERIVED INDEPENDENTLY**, same second route, agreeing to **1.5e-69 on all 176 ⁵Li blocks**. |
+| `carrier_band_ratio_pinned` | an admitted **REGRESSION PIN** on max/min of `m_e·S` over A=2..6, with no derivation behind it. |
+
+So two of the three were **not** stale constants — they were live two-route
+cross-validations, and blind re-pinning would have destroyed the check while
+leaving the assertion green.
+
+### The decisive test, and it came out clean
+
+`carrier_table_convention_d_rederivation.py` — the independent MN route — had
+last run **2026-08-26**, before the regeneration, while the
+`chi-free-via-frobenius` witness it consumes was re-run 2026-09-06. Re-running
+it:
+
+| atom | LR route (the probe) | MN route (independent) |
+|---|---|---|
+| ⁵Li | 64.1028242404330184753… | **64.102824** |
+| ⁶Li | 82.8548137338655139679… | **82.854814** |
+
+**Both routes moved together and still agree.** That makes these *re-derived
+values*, not constants bent to match a computation — the distinction the
+provenance check existed to draw. `W = Σp = 1.0` to **1.81114e-71** across all
+six atoms, so the normalisation identity is intact.
+
+### Re-pinned
+
+    anchor_kappa5Li_reproduced    102.51379 -> 64.10282
+    li6_amplification_reproduced  107.88563 -> 82.85481
+    carrier_band_ratio_pinned        1.8375 -> 1.50250
+
+Each `source` string now records the superseded value, the ruling that moved
+it, and — for the two derived ones — that both routes moved together. The
+regression pin's note says explicitly that it, unlike the other two, has **no
+derivation behind it**.
+
+**Probe: 10 assertions, all passed.**
+
+### An observation I cannot explain and am not claiming to
+
+`anchor_kappaD_reproduced` (6.4161462) and `anchor_kappa4He_reproduced`
+(73.5943) are **unchanged** and pass, while ⁵Li and ⁶Li moved by ~30 %. The D
+and ⁴He caches were regenerated, so their inputs did move. Why 𝒜 is stable for
+A ≤ 4 and not for A ≥ 5 is **unmeasured**.
