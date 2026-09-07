@@ -152,3 +152,83 @@ so. That is a follow-up, and it is a `.md` repair, not a Lean one.
 - `scripts/lean-class-hypothesis-vacuity-probe.py` (new)
 - `scripts/lean-self-assuming-content-join.py` (new)
 - `scripts/lean-self-assuming-audit.py` (detector fixes landed in `e674c94003`)
+
+---
+
+## Addendum 1 (same day) — the discriminator this should have used, and what it says
+
+Two things were missed in the sections above, both found by following the
+corpus-grep checklist *after* the fact rather than before.
+
+### The corpus already sized this, and the number is 112, not 41
+
+[`docs/audits/2026-08-30-sizing-the-self-assuming-projection-drain.md`](2026-08-30-sizing-the-self-assuming-projection-drain.md)
+(bean `qou-z9ws`, completed) measures **112** self-assuming projections and
+sizes them at ~102 independent fixes. The "41" above is not a correction of it
+and is not a regression — **they count different populations**:
+
+| | population | date |
+|---|---|---|
+| **112** | `proof-no-self-assuming-projection` verdicts adjudicated **`genuine`** in the vacuity review ledger, of 191 entries | 2026-08-30 |
+| **41** | raw candidates `scripts/lean-self-assuming-audit.py` reports **today**, after the three detector fixes in `e674c94003` | 2026-09-07 |
+
+Quote the number *with its population and its date*, or the next reader
+reconciles a 2.7× gap that is not there.
+
+### The discriminator: is the bundle ever BUILT?
+
+That audit's test is sharper than anything used above — sharper than field
+count, sharper than the banner regex — and it is the ledger's own:
+
+> *"A projection like this is the legitimate Mathlib accessor idiom ONLY when
+> something builds the bundle."*
+
+An accessor on an inhabited structure exposes an axiom of a thing that exists.
+An accessor on an uninhabited one exposes an axiom of a thing nobody has
+produced. Applied to the eight paper-facing claims
+(`scripts/lean-carrier-inhabited-check.py`):
+
+| block | carrier | builders |
+|---|---|---|
+| `strong-multiplicativity` | `NoncommutativeFormalGroup` | **0** |
+| `sw-period-residue-sum` | `SWPeriodResidue` | **0** |
+| `flavor-dressed-mass-from-substrate-split` | `DressedMassSubstrateSplit` | **0** |
+| `categorical-self-duality` | `CategoricalInstanton` | **0** |
+| `categorical-jet-prolongation` | `CategoricalJetProlongation` | **0** |
+| `jet-prolongation-C` | `JetProlongationQOU` | **0** |
+| `electron-period-base` | `ElectronBaseTower` | **0** |
+| `quantum-observable-universe-exists` | `QuantumObservableUniverseExistsContext` | **0** |
+
+**All eight. So by the ledger's own rule, none of the eight is the legitimate
+accessor idiom** — each is a paper claim of provable kind resting on a
+hypothesis nothing in the corpus has ever witnessed. That is honest §3b-cond
+*only where the block says so*, which is what this tranche repairs.
+
+### Correcting the "honest §3b-cond carriers" claim above
+
+The main audit says reading three single-field classes showed "honest §3b-cond
+carriers" and that field count does not decide it. **The second half stands;
+the first was a generalisation from an unmeasured sample.** Under the
+inhabitation test the three split: `SkeinMultisetInvariant` has an instance,
+`HasStrongDuality` has one, and `FiberAdjointInvolutionContext` has **none** —
+its docstring says why, which is the honest form, but it is not the accessor
+idiom. Two of three, not three of three.
+
+### The detector that produced this table was wrong first, and the control caught it
+
+The obvious line-anchored grep
+
+    grep -E "^\s*(instance|def)[^:]*:\s*<Carrier>\b"
+
+returns **zero for every carrier including the known-inhabited controls**,
+because this corpus writes instance headers across four lines with the result
+type last. That false zero points the *finding-shaped* way — it reports a
+carrier as uninhabited, which is the interesting answer — and it was believed
+for one tool call, until a positive control run on `SkeinMultisetInvariant`
+(read by hand an hour earlier, so known to have an instance) came back empty.
+
+`scripts/lean-carrier-inhabited-check.py` scans declarations, not lines, and
+its `--selftest` fails unless all four known-inhabited carriers are found; it
+also refuses to report at all if its built-in control goes missing. This is the
+fifteenth-odd entry in the same taxonomy the convention work keeps adding to,
+and the first one in this arc that was mine.
