@@ -365,6 +365,128 @@ def _convention_frame_check(cache: dict) -> dict:
     }
 
 
+def _functional_admissibility_check() -> dict:
+    """Is the functional the Q_β prediction rests on admissible under convention D?
+
+    Why this exists, and why it is NOT the same as `_convention_frame_check`.
+
+    That check asks whether the **`c_k` ladder** was built in convention C. This
+    one asks a strictly stronger question about the thing the ladder sits on:
+    whether the **base closed form's functional** is one convention D permits at
+    all.
+
+    It is not. `qbeta_published_form_is_the_inadmissible_z1_probe.py` (15/15,
+    exact over ℚ(q), re-run and reproduced 2026-09-07) shows the published
+    closed form `m_e·|q²−2q−1|(q+1)/(2q³)` is EXACTLY `|tr_M(Δ_S)|·E₀` at Markov
+    parameter **`z = 1`** — the coordinate sum — and `ConventionDAdmissibleRoots.lean`
+    (sorry-free) shows the only roots of the `(1³)` weight numerator are `z = q`
+    (the augmentation) and `z_D = q³/(q²+1)`. `z = 1` is not one, and is not one
+    AT the substrate pin either (the numerator vanishes at `z = 1` only at the
+    supergolden ratio 1.4656, above `q₀ = 1.10998`).
+
+    So the 164× this dashboard scores is the miss of a functional the canonical
+    convention excludes. The best admissible cell is **+12.470 %** (the
+    augmentation on `Δ_S`) against the published **+0.168 %** — **74.3× worse,
+    base to base**. That is the number a reader needs in order to size the gap,
+    and until 2026-09-07 the dashboard carried no trace of it.
+
+    🛑 COMPARE BASE TO BASE, and do not relate either to the 1279 ppb scored
+    here. The 1279 ppb is the value AFTER the `c_k` ladder, which improves its
+    own base by ~1312×; the 12.470 % is a base with no ladder on it, because no
+    ladder has been derived on an admissible base — that is precisely what
+    `qou-cds1` is. Dividing one by the other gives 97,498, a number that means
+    nothing, and I wrote "~97×" for it before catching the slip. What the
+    laddered value would become on an admissible base is **unknown**, and saying
+    so is the honest statement.
+
+    This does NOT decide which functional the framework should adopt — seven
+    options are open and the choice is the owner's
+    (`docs/audits/2026-09-05-qbeta-functional-decision-options.md`, `qou-99qc`).
+    It records that the scored value rests on an excluded one, which is true
+    under every one of those options.
+
+    Everything is read from the committed probe witness; no figure is hardcoded
+    here, so this cannot go stale against the probe the way a pasted number would.
+    """
+    path = COMPUTE_DIR / "qbeta" / "qbeta-published-form-is-the-inadmissible-z1.witness.json"
+    try:
+        w = json.loads(path.read_text())
+    except Exception:
+        return {"status": "NO-WITNESS", "witness": str(path.name)}
+    solved = w.get("solved_markov_parameter", {})
+    errs = w.get("err_pct_at_proton_pin", {})
+    failed = [a["name"] for a in w.get("assertions", []) if not a.get("passed")]
+    return {
+        "status": "INADMISSIBLE_FUNCTIONAL" if not failed else "PROBE-FAILED",
+        "scored_prediction_rests_on_z": solved.get("positive_branch"),
+        "admissible_roots_under_D": solved.get("admissible_roots"),
+        "err_pct_by_functional": errs,
+        "best_admissible_err_pct": errs.get("z=q (augmentation)"),
+        "source_witness": path.name,
+        "lean": "QOU.QBeta.ConventionDAdmissibleRoots (sorry-free)",
+        "probe_assertions_failed": failed or None,
+        "note": (
+            "STRONGER THAN THE CONVENTION-FRAME NOTE, AND SEPARATE FROM IT. That "
+            "note says the c_k LADDER is convention-C. This says the BASE the "
+            "ladder sits on uses a functional convention D provably excludes: the "
+            "published closed form solves to z = 1, which is not a root of the "
+            "(1^3) weight numerator. The best ADMISSIBLE cell is +12.47% (the "
+            "augmentation on Delta_S) against the published 0.16776% -- 74.3x "
+            "worse, BASE TO BASE. Do NOT relate either to the 1279 ppb scored "
+            "here: that is the post-ladder value, and no ladder has been derived "
+            "on an admissible base, so what it would become is UNKNOWN. "
+            "Which functional to adopt is an open owner decision (seven "
+            "options, docs/audits/2026-09-05-qbeta-functional-decision-options.md, "
+            "bean qou-99qc); that the scored value rests on an excluded one is "
+            "true under all of them. Applies to the m_n and Delta_pn rows, which "
+            "are derived from this value -- and unlike the convention note, it is "
+            "written ONTO those rows rather than cross-referenced from this one."
+        ),
+    }
+
+
+def _inherited_qbeta_scope(conv: dict, adm: dict) -> str | None:
+    """The scope `m_n` and `Δ_pn` inherit from `Q_β`, written onto their own rows.
+
+    `m_n = m_p + Q_β + m_e` and `Δ_pn = Q_β + m_e`, so every caveat on `Q_β`
+    is a caveat on both. The `Q_β` row's convention note already says so — but
+    it says so *on the `Q_β` row*, and a reader who lands on `m_n` sees a bare
+    176.7× with nothing attached. That is the failure mode this corpus keeps
+    recording under a different name each time: a correction applied at one
+    site while the sites that inherit it stay clean.
+
+    Returns None when neither scope applies, so a future state in which the
+    ladder is re-derived under D on an admissible functional silently drops
+    the note rather than leaving a stale one.
+    """
+    parts = []
+    if conv.get("status") == "INHERITED_C":
+        parts.append(
+            f"INHERITS THE Q_beta CONVENTION FRAME: this value is "
+            f"m_p(substrate) + Q_beta + m_e, and the Q_beta term was built in "
+            f"Markov convention {conv.get('cache_convention')}, excised by the "
+            f"owner ruling of 2026-08-15 in favour of {conv.get('canonical')}. "
+            f"Not reproducible under the canonical convention "
+            f"(bean {conv.get('tracked_by')})."
+        )
+    if adm.get("status") == "INADMISSIBLE_FUNCTIONAL":
+        parts.append(
+            f"INHERITS THE Q_beta FUNCTIONAL ADMISSIBILITY DEFECT: the Q_beta "
+            f"term's base closed form solves to Markov parameter "
+            f"z = {adm.get('scored_prediction_rests_on_z')}, which convention D "
+            f"excludes (admissible roots: "
+            f"{', '.join(adm.get('admissible_roots_under_D') or [])}; "
+            f"ConventionDAdmissibleRoots.lean, sorry-free). The best admissible "
+            f"cell is {adm.get('best_admissible_err_pct')}% on Delta_S, so the "
+            f"published base of 0.16776% -- 74.3x worse, base to base. So the "
+            f"miss shown here understates the gap by an amount that is NOT yet "
+            f"quantifiable: no c_k ladder has been derived on an admissible base "
+            f"(qou-cds1). Which functional to adopt is an open owner decision "
+            f"(bean qou-99qc)."
+        )
+    return "  ".join(parts) if parts else None
+
+
 #: Observables whose "prediction" is a re-evaluation of the quantity that
 #: pinned q_0, so the framework content cancels and the residual is CODATA's
 #: own rounding. They are reported with their numbers but NOT scored — a
@@ -596,6 +718,26 @@ def main() -> dict:
                     f"offset, not z). Applies to the m_n and Δ_pn rows too, which "
                     f"are derived from this value."
                 )
+            _adm = _functional_admissibility_check()
+            _adm_note = ""
+            if _adm.get("status") == "INADMISSIBLE_FUNCTIONAL":
+                _adm_note = (
+                    f" 🛑 FUNCTIONAL ADMISSIBILITY (separate from, and stronger "
+                    f"than, the convention-frame note above): the base closed form "
+                    f"this ladder sits on solves to Markov parameter z = "
+                    f"{_adm['scored_prediction_rests_on_z']}, which is NOT one of "
+                    f"the admissible roots under convention D "
+                    f"({', '.join(_adm['admissible_roots_under_D'])}) — "
+                    f"ConventionDAdmissibleRoots.lean, sorry-free, and "
+                    f"{_adm['source_witness']} (15/15, exact over Q(q)). The best "
+                    f"ADMISSIBLE cell is {_adm['best_admissible_err_pct']}% (the "
+                    f"augmentation on Delta_S) against the published 0.16776% -- "
+                    f"74.3x worse, BASE TO BASE. Do NOT relate either to the value "
+                    f"scored here: that is post-ladder, and no ladder exists on an "
+                    f"admissible base (qou-cds1), so what it would become is "
+                    f"UNKNOWN. Which functional to adopt is an open owner decision "
+                    f"(bean qou-99qc)."
+                )
             if qbeta_anchor.get("status") == "STRADDLE":
                 _anchor_note = (
                     f" ⚠ ANCHOR STRADDLE: this prediction was built at the "
@@ -620,7 +762,7 @@ def main() -> dict:
                 f"for downstream reuse but NOT credited as a prediction. See "
                 f"deep audit docs/audits/2026-05-30-qbeta-ck-mp-dk-deep-audit.md "
                 f"and qbeta-scaling-bridge-investigation.witness.json."
-                + _anchor_note + _conv_note,
+                + _anchor_note + _conv_note + _adm_note,
             ))
             # Guard with teeth: while the layers disagree by more than the
             # entire L2 target, a 100× PASS on this row would be an artefact of
@@ -668,8 +810,18 @@ def main() -> dict:
             f"Path C: m_n = m_p(substrate) + Q_β({q_beta_rung}) + m_e; "
             "no flavor-split — per PR #1298 gap diagnostic"
         )
-        rows.append(_row_for("m_n", m_n_path_c, path_c_source))
-        rows.append(_row_for("Delta_pn", delta_pn_path_c, path_c_source))
+        # The Q_beta row's convention caveat says "applies to the m_n and
+        # Delta_pn rows too" -- but it is written on the Q_beta row, and a
+        # reader of THESE rows sees nothing. That is the "fixed in one place,
+        # survives in the others" failure this corpus keeps recording. Write
+        # the inherited scope onto the derived rows themselves.
+        _inherited = _inherited_qbeta_scope(qbeta_convention,
+                                            _functional_admissibility_check())
+        for _obs, _val in (("m_n", m_n_path_c), ("Delta_pn", delta_pn_path_c)):
+            _r = _row_for(_obs, _val, path_c_source)
+            if _inherited:
+                _r["note"] = _inherited
+            rows.append(_r)
     elif sub is not None:
         sub_data_fb = sub.get("data", {})
         m_n_str = sub_data_fb.get("predictions", {}).get("m_n_MeV")
@@ -829,6 +981,7 @@ def main() -> dict:
         "rows": rows,
         "anchor_layer_qbeta": qbeta_anchor,
         "convention_frame_qbeta": qbeta_convention,
+        "functional_admissibility_qbeta": _functional_admissibility_check(),
         "summary": {
             "total": len(rows),
             "beats_1x_count": sum(1 for r in rows if r.get("beats_1x_experimental")),
@@ -942,6 +1095,7 @@ if __name__ == "__main__":
     w.add_data("summary", out["summary"])
     w.add_data("anchor_layer_qbeta", out["anchor_layer_qbeta"])
     w.add_data("convention_frame_qbeta", out["convention_frame_qbeta"])
+    w.add_data("functional_admissibility_qbeta", out["functional_admissibility_qbeta"])
     if out["convention_frame_qbeta"].get("status") == "INHERITED_C":
         w.add_caveat(
             "Q_β / m_n / Δ_pn rows: these figures were built in Markov "
