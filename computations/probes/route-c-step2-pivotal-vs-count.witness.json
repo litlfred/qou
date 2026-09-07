@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-09-07T08:58:35.845675+00:00",
-  "commitSha": "d36a0bf8c61f68c02b56b1374151d6aff8478880",
+  "computedAt": "2026-09-07T09:20:00.674644+00:00",
+  "commitSha": "0595a2a4c65e4982e89a6a0cb1fd3c201fdfeefb",
   "assertions": [
     {
       "name": "z_D_=_q^3/(q^2+1)_(pivotal)",
@@ -139,14 +139,86 @@
       "passed": true,
       "tolerance": "0.5",
       "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "q^l(w)_2^n_tr_J_=_sum_k_N_k_and_q^l(w)_[2]^n_tr_D_=_sum_k_q^(n-2k)_N_k,_all_24",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "every_N_k(w)_is_a_polynomial_in_Q_=_q^2_(no_half_powers,_no_negative_powers)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "every_N_k(w)_is_a_non-negative_integer_at_Q_in_{2,3,4,5,7,8,9}",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "N_k(w)_at_q_=_1_=_number_of_w-fixed_colourings_with_k_ones_(refined_Burnside)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "n_=_4:_every_weight_q^(n-2k)_is_an_integer_power_of_Q_(a_cardinality:_F_Q^(n/2-k",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "n_=_3:_the_weights_q^(3-2k)_are_odd_powers_of_q_=_Q^(1/2)_—_not_F_Q_cardinalitie",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "n_=_3:_q^l(w)_[2]^3_tr_D_=_sum_k_q^(3-2k)_N_k_with_N_k_in_Z[Q],_all_6_words",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "n_=_3:_every_N_k(w)_is_a_non-negative_integer_at_Q_=_p^2_in_{4,9,25,49,64}",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
+    },
+    {
+      "name": "n_=_3:_with_q_=_p_the_weights_p^(3-2k)_are_|F_p^3|,_|F_p|,_|B(F_p)|,_|B(F_p^3)|_",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "exact (sympy) / mpmath 50 dps at the pin"
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 8,
   "computation": "route-c-step2-pivotal-vs-count",
   "scriptFile": "route_c_step2_pivotal_vs_count_probe.py",
-  "scriptHash": "cbd236143147",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4ac169a68167",
+  "scriptCommitSha": "e7dd17229695662820972730afa54bc17f4e469a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -401,6 +473,453 @@
       "series_J_in_q_minus_1": "-11*e**3/16 - 9*e**2/16 - 3*e/4 - 3/8",
       "split_order": 2
     },
+    "weight_space_decomposition": {
+      "prime_powers_tested": [
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9
+      ],
+      "per_word": {
+        "e": {
+          "N_k(Q)": [
+            "1",
+            "4",
+            "6",
+            "4",
+            "1"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            4,
+            6,
+            4,
+            1
+          ]
+        },
+        "s0": {
+          "N_k(Q)": [
+            "Q",
+            "3*Q - 1",
+            "4*Q - 2",
+            "3*Q - 1",
+            "Q"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "s1": {
+          "N_k(Q)": [
+            "Q",
+            "3*Q - 1",
+            "4*Q - 2",
+            "3*Q - 1",
+            "Q"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "s2": {
+          "N_k(Q)": [
+            "Q",
+            "3*Q - 1",
+            "4*Q - 2",
+            "3*Q - 1",
+            "Q"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "s0s1": {
+          "N_k(Q)": [
+            "Q**2",
+            "2*Q**2 - Q",
+            "2*Q**2 - 2*Q",
+            "2*Q**2 - Q",
+            "Q**2"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s0s2": {
+          "N_k(Q)": [
+            "Q**2",
+            "2*Q**2 - 2*Q",
+            "3*Q**2 - 2*Q + 1",
+            "2*Q**2 - 2*Q",
+            "Q**2"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            2,
+            0,
+            1
+          ]
+        },
+        "s1s0": {
+          "N_k(Q)": [
+            "Q**2",
+            "2*Q**2 - Q",
+            "2*Q**2 - 2*Q",
+            "2*Q**2 - Q",
+            "Q**2"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s1s2": {
+          "N_k(Q)": [
+            "Q**2",
+            "2*Q**2 - Q",
+            "2*Q**2 - 2*Q",
+            "2*Q**2 - Q",
+            "Q**2"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s2s1": {
+          "N_k(Q)": [
+            "Q**2",
+            "2*Q**2 - Q",
+            "2*Q**2 - 2*Q",
+            "2*Q**2 - Q",
+            "Q**2"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s0s1s0": {
+          "N_k(Q)": [
+            "Q**3",
+            "2*Q**3",
+            "2*Q**3",
+            "2*Q**3",
+            "Q**3"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "s0s1s2": {
+          "N_k(Q)": [
+            "Q**3",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "s0s2s1": {
+          "N_k(Q)": [
+            "Q**3",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "s1s0s2": {
+          "N_k(Q)": [
+            "Q**3",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "s1s2s1": {
+          "N_k(Q)": [
+            "Q**3",
+            "2*Q**3",
+            "2*Q**3",
+            "2*Q**3",
+            "Q**3"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "s2s1s0": {
+          "N_k(Q)": [
+            "Q**3",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3 - Q**2",
+            "Q**3"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "s0s1s0s2": {
+          "N_k(Q)": [
+            "Q**4",
+            "Q**4",
+            "Q**4 - Q**2",
+            "Q**4",
+            "Q**4"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s0s1s2s1": {
+          "N_k(Q)": [
+            "Q**4",
+            "Q**4",
+            "Q**4 - Q**2",
+            "Q**4",
+            "Q**4"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s0s2s1s0": {
+          "N_k(Q)": [
+            "Q**4",
+            "Q**4",
+            "Q**4 - Q**2",
+            "Q**4",
+            "Q**4"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s1s0s2s1": {
+          "N_k(Q)": [
+            "Q**4",
+            "Q**4 - Q**2",
+            "Q**4 + Q**3 - Q**2 + Q",
+            "Q**4 - Q**2",
+            "Q**4"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            2,
+            0,
+            1
+          ]
+        },
+        "s1s2s1s0": {
+          "N_k(Q)": [
+            "Q**4",
+            "Q**4",
+            "Q**4 - Q**2",
+            "Q**4",
+            "Q**4"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        "s0s1s0s2s1": {
+          "N_k(Q)": [
+            "Q**5",
+            "Q**5 - Q**3",
+            "Q**5 - 2*Q**3 + Q**2",
+            "Q**5 - Q**3",
+            "Q**5"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "s0s1s2s1s0": {
+          "N_k(Q)": [
+            "Q**5",
+            "Q**5 + Q**4",
+            "Q**5 + Q**4 - Q**3 + Q**2",
+            "Q**5 + Q**4",
+            "Q**5"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            2,
+            2,
+            2,
+            1
+          ]
+        },
+        "s1s0s2s1s0": {
+          "N_k(Q)": [
+            "Q**5",
+            "Q**5 - Q**3",
+            "Q**5 - 2*Q**3 + Q**2",
+            "Q**5 - Q**3",
+            "Q**5"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        "s0s1s0s2s1s0": {
+          "N_k(Q)": [
+            "Q**6",
+            "Q**6 - Q**4",
+            "Q**6 - Q**4 + 2*Q**3",
+            "Q**6 - Q**4",
+            "Q**6"
+          ],
+          "fixed_colourings_by_k": [
+            1,
+            0,
+            2,
+            0,
+            1
+          ]
+        }
+      },
+      "identity": "q^l(w) [2]^n tr_D(w) = sum_k q^(n-2k) N_k(w), N_k in Z[Q], Q = q^2"
+    },
+    "odd_n_resolution": {
+      "n": 3,
+      "squares_tested": [
+        4,
+        9,
+        25,
+        49,
+        64
+      ],
+      "per_word_N_k(Q)": {
+        "e": [
+          "1",
+          "3",
+          "3",
+          "1"
+        ],
+        "s0": [
+          "Q",
+          "2*Q - 1",
+          "2*Q - 1",
+          "Q"
+        ],
+        "s1": [
+          "Q",
+          "2*Q - 1",
+          "2*Q - 1",
+          "Q"
+        ],
+        "s0s1": [
+          "Q**2",
+          "Q**2 - Q",
+          "Q**2 - Q",
+          "Q**2"
+        ],
+        "s1s0": [
+          "Q**2",
+          "Q**2 - Q",
+          "Q**2 - Q",
+          "Q**2"
+        ],
+        "s0s1s0": [
+          "Q**3",
+          "Q**3",
+          "Q**3",
+          "Q**3"
+        ]
+      },
+      "statement": "with q = p prime power, counts over F_{p^2}, weights p^{n-2k} over F_p: cardinalities for every n"
+    },
     "anchor_evaluation": {
       "q0": "1.1099785827513808075916690956107688798744991218736",
       "z_D": "0.612688037146465251595829863946",
@@ -416,7 +935,7 @@
       "nats_D_minus_log_I_over_S": "0.89520286897801625668",
       "nats_J_minus_log_I_over_S": "0.92554111181681388417"
     },
-    "verdict": "NEGATIVE for the unweighted reading, with the invariant named: a trace on V^{⊗n} is a Markov trace (hence a closure invariant) iff the partial trace of R over the closed strand is scalar; for the unweighted count it is diag(2q − q⁻¹, q), scalar iff q² = 1. So the q-deformation of the fixed-point count that the framework uses is the K-weighted count — route C's step 2 needs a weighted groupoid cardinality, not BHW's unweighted one. The two readings share value and slope at q = 1 and split at second order."
+    "verdict": "NEGATIVE for the unweighted reading, with the invariant named: a trace on V^{⊗n} is a Markov trace (hence a closure invariant) iff the partial trace of R over the closed strand is scalar; for the unweighted count it is diag(2q − q⁻¹, q), scalar iff q² = 1. So the q-deformation of the fixed-point count that the framework uses is the K-weighted count — route C's step 2 needs a weighted groupoid cardinality, not BHW's unweighted one. The two readings share value and slope at q = 1 and split at second order. REFINED (5b): the K-weight is itself a cardinality — q^{l(w)} [2]^n tr_D(w) = Σ_k q^{n−2k} N_k(w) with N_k(w) ∈ Z[Q] non-negative at every prime power Q = q² tested; taking the framework's q itself as the prime power p (5c), the counts live over F_{p²} and the weights p^{n−2k} over the index-2 subfield F_p as |F_p^{n−2k}| or |B(F_p^{2k−n})|, so the convention-D trace IS a groupoid cardinality of ⊔_k Fix_k(w) × A_k for EVERY n (measured at n = 3, 4). What fails is only the unweighted reading."
   },
   "caveats": [
     "Scope (a): spin-½ (N = 2), n ≤ 4, one word pair for the Δ comparison; the Markov failure is exhibited on S₃ ⊂ H₃ and the partial-trace invariant is general for this R.",
