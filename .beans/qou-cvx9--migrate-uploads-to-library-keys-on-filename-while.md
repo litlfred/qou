@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T13:48:45Z
-updated_at: 2026-09-06T14:15:06Z
+updated_at: 2026-09-07T04:56:58Z
 ---
 
 Found pre-merge on #6955 while probing its merge ordering against #6942. **A defect
@@ -141,3 +141,63 @@ is a bound journal **issue** — `container: true`, ten `container_children` car
 the content — and `summarize-library.py:98` skips containers and duplicates by
 design. A correct omission was counted as a defect because my scan did not know
 containers existed. The other 7 now have rows.
+
+
+---
+
+## 2026-09-07 — the ORPHAN half duplicates `qou-b9c3`, which was first. This bean keeps the GUARD.
+
+A dispatched agent reported that `qou-b9c3` "does not exist" and posted that as a
+correction on #6964. **That was wrong and is retracted on that PR.** Verified
+against `origin/main`:
+
+  .beans/qou-b9c3--22-pdfs-sit-in-library-never-sectioned-a-third-un.md
+    title:  22 PDFs sit in library/ never sectioned — a third un-ingested
+            population, invisible to every path-5 tier
+    status: todo,  created 2026-09-06T09:42:46Z,  landed d00bb1ba45
+
+The agent searched the stem `b9c3` and hit `.beans/b9c3--author-prove-
+chi21-garside-zero-...`, an unrelated COMPLETED Lean bean from 2026-07-05,
+rather than searching the full id `qou-b9c3`. Two beans whose ids differ only by
+the `qou-` prefix. **A stem-only grep in `.beans/` is not an existence check** —
+worth remembering, since the corpus-grep checklist's path 6 is exactly this
+directory.
+
+### Consequence: split the ownership
+
+`qou-b9c3` found the same 22 orphans **about eleven minutes before** this bean's
+finding (their own commit message records the priority). So:
+
+  * **`qou-b9c3` owns the DRAIN** — ingesting the 22. It was first, and a
+    mechanical job has one owner (AGENTS.md).
+  * **`qou-cvx9` (this bean) owns the GUARD** — the identity divergence between
+    `migrate-uploads-to-library.py` (keys on FILENAME) and `pdf-structure.py`
+    (keys on the page-1 arXiv stamp), which is what CREATES orphans. A different
+    defect: the drain clears the existing 22, the guard prevents the next ones.
+
+Part A (the guard) landed in **#6978**. Part B (the drain) is **withdrawn from
+this bean** rather than merely gated — it belongs to `qou-b9c3`.
+
+### Measurements that stand, independent of the retraction
+
+  * orphan count stable at **22** across `origin/main` at `805f11d62d` and
+    `3036bf171a`; `comm` on the two sets shows no additions, no removals. The
+    defect is NOT actively producing.
+  * index arithmetic closes with no residual:
+    **655 dirs − 609 rows = 46 = 23 duplicates + 22 orphans + 1 container**.
+  * the guard's `--selftest` was calibrated by reverting each of its three
+    changes ALONE and confirming three distinct failure signatures — not merely
+    by observing it pass.
+
+### Two further findings from that work, both live
+
+  * **`pdf-structure.py` is NOT in this repo.** It is
+    `folio-assistant/scripts/pdf-structure.py`, so any drain has a second
+    prerequisite: a folio-assistant clone with `scripts/fix-python-pdf-deps.sh`
+    run. Whoever takes `qou-b9c3` needs this.
+  * **Which half carries the measured case.** In the incident that opened this
+    bean the sectioned copy was on the OTHER branch, so the arXiv-id fallback
+    could not have recovered those two — **the refusal is what carries it.** The
+    fallback covers a larger latent class (226 of 633 `structure.json` have a
+    `doc_id` that is neither the stem nor `arxiv-<stem>`), but it is not what
+    fixed the observed failure.
