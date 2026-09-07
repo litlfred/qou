@@ -124,6 +124,80 @@ def _series(Z, N, *, inter, **mk):
     return list(c)[:K + 1]
 
 
+# ---------------------------------------------------------------------------
+# Measured inputs, recorded so a killed run does not have to re-earn them.
+#
+# 🛑 THIS IS A RESUME AID, NOT A SOURCE OF TRUTH. Nothing reads it unless
+# `--inputs-from-cache` is passed explicitly, and the run says so in its output
+# when it does. The default path always MEASURES. That asymmetry is deliberate:
+# a cache that is consulted silently is how a stale number becomes a result, and
+# this corpus has a documented history of exactly that.
+#
+# Cost being preserved: at K = 4 the three bonds took 2452 s, 2437 s and ~2400 s
+# — about 2.7 h — and the log they were printed to lives in /tmp, which does not
+# survive the container. At K = 3 the same three were ~190 s each and hardly
+# worth caching; at K = 4 they dominate the run.
+#
+# Provenance: measured 2026-09-07 by this file at the stated order, one nucleon
+# at n = 3 (free word) and one interface at A = 3, exact Fraction throughout.
+#
+# OBSERVED IN THE BOND ROWS, recorded and NOT built on. Writing each bond as
+# (1/2)(1, rho, tau, ups, ...):
+#
+#     pp   (1,  2, 1/2, -1/2, 1/4)
+#     pn   (1,  0, 3/2, -3/2, 31/12)
+#     nn   (1, -2, 5/2, -5/2, ?)
+#
+# rho = p_b - n_b and tau = 1/2 + n_b are qou-qqm4's noted pattern, which that
+# author correctly called a DESCRIPTION of three values with one spare dof. The
+# cubic adds something that description did not predict: **ups = -tau exactly,
+# in all three bonds**. That is three hits with no freedom left, which is more
+# than a redescription — but it is still three data points, and the quartic
+# column (1/4, 31/12, ?) shows no comparable relation to tau, so nothing here
+# says the pattern continues. A derivation would have to produce it; this file
+# does not, and does not use it: `predict` reads the MEASURED factors.
+_INPUT_CACHE = {
+    3: {
+        "nuc": {"p": ["1/2", "3/4", "23/8", "75/8"],
+                "n": ["1/2", "-1/2", "3/2", "19/2"]},
+        "bond": {"pp": ["1/2", "1", "1/4", "-1/4"],
+                 "pn": ["1/2", "0", "3/4", "-3/4"],
+                 "nn": ["1/2", "-1", "5/4", "-5/4"]},
+    },
+    4: {
+        "nuc": {"p": ["1/2", "3/4", "23/8", "75/8", "-37/4"],
+                "n": ["1/2", "-1/2", "3/2", "19/2", "-57/4"]},
+        "bond": {"pp": ["1/2", "1", "1/4", "-1/4", "1/8"],
+                 "pn": ["1/2", "0", "3/4", "-3/4", "31/24"],
+                 "nn": None},
+    },
+}
+
+
+def _cached_inputs(log):
+    """Load recorded inputs for order K. Returns None unless the table is
+    COMPLETE for this order — a partial row is refused rather than silently
+    padded, because a missing high-order term is exactly the coefficient the
+    question turns on."""
+    tab = _INPUT_CACHE.get(K)
+    if tab is None:
+        log(f"    no recorded inputs for K = {K}; measuring")
+        return None
+    out = {}
+    for kind in ("nuc", "bond"):
+        out[kind] = {}
+        for key, row in tab[kind].items():
+            if row is None or len(row) != K + 1 or any(v is None for v in row):
+                log(f"    recorded inputs INCOMPLETE at K = {K} ({kind} {key});"
+                    f" measuring instead")
+                return None
+            out[kind][key] = [F(v) for v in row]
+    log(f"    USING RECORDED INPUTS for K = {K} (--inputs-from-cache). These "
+        f"were measured by this file on 2026-09-07; nothing here re-derives "
+        f"them. Drop the flag to measure.")
+    return out["nuc"], out["bond"]
+
+
 def measure_inputs(log=print):
     nuc = {}
     for key, Z, N in (("p", 1, 0), ("n", 0, 1)):
@@ -166,8 +240,9 @@ def main() -> int:
     print("=" * 78)
     print(f"  Does the block-and-bond product reach c{K}?")
     print("=" * 78)
-    log(f"order K = {K}; measuring inputs (2 nucleons x {K+1}, 3 bonds x {K+1}) …")
-    nuc, bond = measure_inputs(log)
+    log(f"order K = {K}; inputs (2 nucleons x {K+1}, 3 bonds x {K+1}) …")
+    cached = _cached_inputs(log) if "--inputs-from-cache" in sys.argv else None
+    nuc, bond = cached if cached else measure_inputs(log)
 
     rows, failures = [], []
     for name, (Z, N) in ZN.items():
