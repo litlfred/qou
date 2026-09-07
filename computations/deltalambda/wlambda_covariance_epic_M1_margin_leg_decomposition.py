@@ -41,9 +41,7 @@ import mpmath as mp
 
 mp.mp.dps = 30
 
-M_INF = mp.mpf('0.300186614161')
-RHO_INF = mp.mpf('0.979796195657')          # = 2 sqrt(6)/5
-SIG_RATIO_INF = mp.mpf('0.679609581496')
+from _m1_io_constants import M_INF, RHO_INF, SIG_RATIO_INF  # merged #5901 IO leading constants -- single source, see that module
 
 
 def _load_partitions_and_stats():
