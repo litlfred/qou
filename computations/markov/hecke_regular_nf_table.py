@@ -10,6 +10,17 @@ h = q - q^{-1}):
 and the Ocneanu/Markov trace: tr(1)=1, tr(x·T_{s_{n-1}}·y)=z·tr(xy) for x,y∈H_{n-1}.
 VALIDATION: reproduces the hardcoded H_3 mulσ₀/mulσ₁/TRM before emitting H_4.
 """
+# `_HERE_W` is used by the witness write below (`_HERE_W / "hecke-regular-nf-h4
+# .witness.json"`), and these two lines defining it were pasted INSIDE
+# `LEAN_TEMPLATE` instead of into the module -- between the Mathlib imports and
+# the `/-!` doc block. One bad paste, two defects: the name was undefined here,
+# so writing the witness raised NameError; and the emitted QOU.Machinery.H4
+# carried two lines of Python, which is not valid Lean. Moving them out fixes
+# both. Same shape as the `import os as _os_sidu` that a bulk rewrite dropped
+# into a docstring (bean qou-lejl) -- a definition landing inside a string.
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 import sympy as sp
 from itertools import permutations
 h, z = sp.symbols('h z')
@@ -218,9 +229,6 @@ LEAN_TEMPLATE = r'''import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Data.Fin.VecNotation
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FinCases
-
-from pathlib import Path as _PathW  # noqa: E402 — witness output root
-_HERE_W = _PathW(__file__).resolve().parent
 
 /-!
 # QOU.Machinery.H4 — the H₄(q) Markov trace on the Fin-24 GB normal-form module

@@ -57,12 +57,29 @@ def hkt():
 
 
 # Values chosen to break a decimal round-trip: a non-terminating binary
-# fraction, a denormal-ish exponent, an irrational, and a `round()`ed mpf —
-# `round(mpf, n)` returns mpf, which is exactly what `compute_atom` stores.
+# fraction, a denormal-ish exponent, an irrational, and a short-decimal mpf.
+#
+# The last case used to be written `round(mp.mpf(1) / 7, 12)`, on the stated
+# grounds that "`round(mpf, n)` returns mpf, which is exactly what
+# `compute_atom` stores". BOTH halves of that are now wrong:
+#
+#   * `round(mpf, n)` returns **float** on mpmath 1.3.0, and this project pins
+#     `mpmath>=1.3,<1.5` — so the case fed a FLOAT into a test of mpf
+#     round-tripping and failed `isinstance(back, mp.mpf)`. It passed only on
+#     whichever 1.4.x an earlier container happened to resolve. A test whose
+#     verdict depends on which supported version is installed is not testing
+#     the codec.
+#   * `compute_atom` no longer rounds at all — it serialises with
+#     `_precision.fmt` (bean qou-uiut, NO-FLOAT64), so no `round()`ed mpf ever
+#     reaches this codec now.
+#
+# The short-decimal case is kept, because a value carrying few significant
+# digits is still exactly what the producer stores; it is just constructed so
+# it IS an mpf on every version in the pin range.
 def _mpf_cases():
     with mp.workdps(50):
         return [mp.mpf(1) / 7, mp.mpf("-1e-300"), mp.mpf(0), mp.mpf(1),
-                mp.log(mp.mpf(3)) / 9, round(mp.mpf(1) / 7, 12),
+                mp.log(mp.mpf(3)) / 9, mp.mpf(mp.nstr(mp.mpf(1) / 7, 12)),
                 -mp.pi, mp.mpf("1e300")]
 
 

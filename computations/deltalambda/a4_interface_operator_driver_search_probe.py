@@ -74,6 +74,14 @@ def q0_mp() -> mp.mpf:
         # q0 read BY NAME (bean qou-9ugp, 2026-09-04). This was a 17-digit
         # hardcoded PROTON literal in a RETURN -- right value, wrong
         # mechanism, and a shape an assignment-keyed scan does not match.
+        #
+        # The import was missing (bean qou-lejl): the `try` above imports Q_MP
+        # locally, and reading q0 BY NAME here replaced the literal without
+        # adding the matching import -- so this FALLBACK raised NameError
+        # instead of falling back, and only on the path taken when the `try`
+        # fails. Mirrors the try's local-import shape; the canonical form
+        # `from q_parameter import Q_50_DIGIT_STR` appears 619 times in tree.
+        from q_parameter import Q_50_DIGIT_STR  # noqa: E402
         return mp.mpf(Q_50_DIGIT_STR)
 
 

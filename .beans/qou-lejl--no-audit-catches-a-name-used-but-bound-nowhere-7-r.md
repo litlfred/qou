@@ -157,3 +157,79 @@ Fixed in two places, because one of them is the recurrence:
 
 Verified by EXECUTING all 22 gates that declare `selftest=yes`: 22/22 pass.
 Before this, one was failing and the two added today would have made three.
+
+---
+
+## 2026-09-07 — 7 → 5, and the graft splits the rest three ways
+
+Worked the detector's own findings. First the clone had to be deepened
+(`git fetch --depth=2000`): at `--depth 1` **every** `git log` answer is a graft
+artifact, so the recovery method that settled `RAIL`/`H` — read the definition
+back from the commit where the name WAS bound — could not run at all. After
+deepening: 16184 commits, one boundary at `3f2744fc13` (2026-07-18).
+
+That boundary is what makes the results honest, because it splits the seven:
+
+**Full history available — the "never defined" verdict is trustworthy (3)**
+
+| file | name | outcome |
+|---|---|---|
+| `markov/hecke_regular_nf_table.py` | `_HERE_W` | **FIXED** |
+| `deltalambda/a4_interface_operator_driver_search_probe.py` | `Q_50_DIGIT_STR` | **FIXED** |
+| `qou-mass/.../schur_principal_mpmath.py` | `_pb` | needs a decision |
+
+**History truncated at the graft — verdict UNKNOWN, not "never defined" (4)**
+
+`crt_markov.py:_q_sym`, `from_scratch/derive_he3.py:tr_M_q0`,
+`probes/finite_q_volume_conjecture_probe.py:vol41`,
+`fluid_part2.py:append_to_file`. Their oldest reachable commit IS the boundary,
+so "the name was never bound" is exactly what a truncated history says whether
+or not it is true. Left alone.
+
+### `_HERE_W` — one bad paste, two defects
+
+The definition existed, inside `LEAN_TEMPLATE`:
+
+    import Mathlib.Tactic.FinCases
+
+    from pathlib import Path as _PathW  # noqa: E402 — witness output root
+    _HERE_W = _PathW(__file__).resolve().parent
+
+    /-!
+    # QOU.Machinery.H4 — ...
+
+Two lines of Python pasted into a Lean source string, between the Mathlib
+imports and the doc block. So (i) `_HERE_W` was undefined in Python and the
+witness write `json.dump(open(_HERE_W / "...witness.json","w"))` raised
+NameError, and (ii) the emitted `QOU.Machinery.H4` carried two lines of Python,
+which is not valid Lean. Moving them out fixes both.
+
+Same shape as the `import os as _os_sidu` a bulk rewrite dropped into a
+docstring: **a definition that landed inside a string literal**. Verified by
+parsing `LEAN_TEMPLATE` as an AST string constant, not by grepping — a text
+search matches the explanatory comment I added and reports a false positive.
+
+### `Q_50_DIGIT_STR` — a fallback that could not fall back
+
+    try:
+        from q_parameter import Q_MP
+        return mp.mpf(Q_MP)
+    except Exception:
+        return mp.mpf(Q_50_DIGIT_STR)      # never imported
+
+Reading q0 BY NAME (bean qou-9ugp) replaced a hardcoded literal here without
+adding the matching import, so the `except` raised NameError instead of falling
+back — and only on the path taken when the `try` already failed. Fixed with the
+local import the `try` itself models; the canonical form appears 619 times.
+
+### `_pb` — NOT fixed, deliberately
+
+`_pb.witness_path(...)` clearly means `computations/_path_bridge`, the only
+module defining `witness_path`. But this file is in `qou-mass`, whose `__main__`
+puts only its own directory on `sys.path` — `_path_bridge` is not reachable
+there, and `qou-mass` has no `witness_path` of its own (its convention is a
+local `_WITNESS_DIR`). So the fix is a **decision** — should `qou-mass` depend
+on `computations/_path_bridge`, or use its own convention — not a missing line.
+That is the case this audit's docstring describes: a finding is a question.
+
+Baseline drained 7 → 5; the ratchet is green at the new baseline.
