@@ -26,6 +26,26 @@ these are lower bounds on the per-λ cost, not averages:
 **Word length grows LINEARLY (23 → 35 → 47) while time grows by 19x then 212x**,
 so the driver is not the word.  It is `n`, the rank of the Hecke algebra.
 
+BOTH RUST ROUTES EXPLODE — THERE IS NO FASTER PATH IN THIS REPO
+----------------------------------------------------------------
+The corpus has a second Rust entry point, the BATCHED
+`chi_cd_mpfr.chi_all_partitions_cd_mpfr` -> `pyhecke_native.chi_lambda_all_partitions_mpfr`,
+which `compute_atom_chi_rust.py` uses and which did 4He's 77 partitions in
+799.71 s this session.  It was checked before concluding anything was infeasible,
+because a batched kernel scaling better would have collapsed the whole question:
+
+    producer                      n=6        n=9         n=12      step ratios
+    chi_q_via_gp      (per λ)    1.2 ms    26.4 ms     5646 ms     23x -> 214x
+    ..._cd_mpfr       (per λ)    0.3 ms    15.3 ms    10386 ms     51x -> 679x
+
+Both explode, and the batched one is **worse** per λ at n=12, not better.  So the
+choice of route does not rescue n=15; extrapolating either gives days to weeks
+for one 5Li cache.
+
+(The n=6 row of the batched producer reads 0.00 s total and should not be
+over-read — at that size it may be measuring startup rather than work.  The
+load-bearing comparison is n=9 -> n=12, where both routes are unambiguous.)
+
 WHAT THIS MAKES INFEASIBLE
 --------------------------
 Extrapolating the last ratio one step to n=15 gives ~21 minutes for ONE
