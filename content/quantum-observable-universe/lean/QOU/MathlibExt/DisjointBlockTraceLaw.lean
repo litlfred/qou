@@ -435,6 +435,77 @@ theorem tr_mul_adjoin_gen (n : ℕ) (h : R) (hq : T.g n * T.g n = h • T.g n + 
     simp [smul_eq_mul]
   rw [hleft, hright]; ring
 
+/-! ### Two generators at distinct levels — and where the rotation argument dies
+
+The two theorems below prove the law for `b = g m * g k` with `m ≠ k`. Together
+with `tr_mul_adjoin_gen` they exhibit the general mechanism, and — more usefully —
+they show exactly where it stops.
+
+**The mechanism.** Let `w` be a word in generators at levels `≥ n` and let `M` be
+the *maximal* level occurring in it. If `g M` occurs **at most once**, cyclicity
+rotates it to the right-hand end; every remaining letter then has level `< M`, so
+it lies in `H M`, as does `a ∈ H n`. Their product is in `H M` because `H M` is a
+subalgebra, and T3 peels `g M` off. Induction on the length finishes it.
+
+🛑 **The obstruction is a repeated maximal-level generator**, i.e. a word of shape
+
+    g M * x * g M          with `x` of level `< M`
+
+Here no rotation puts one `g M` at the end while leaving the other inside `H M`,
+and T3 never applies. `tr_mul_adjoin_gen` escapes this only because a *single*
+generator's subalgebra is 2-dimensional under the quadratic relation, so the
+induction terminates before the problem arises.
+
+**This is a sharper localisation than "use `E_n`", and it is not good news.**
+What the general law needs is not another trace axiom but a *structure theorem
+for the tower* — the Hecke fact `H (m+1) = H m + H m · g m · H m`, which is
+precisely what rewrites `g m * x * g m` back down. Nothing in `MarkovTrace`
+implies it, and it is a statement about the algebra, not about the trace.
+
+🛑 **And the production word sits on the wrong side of this line.** Measured, not
+assumed: one nucleon's generator sequence under owner ruling `qou-hu1f` is
+`[0,1,0,1,0,1,0,0,1,0,0]`, in which the maximal level `1` occurs **four times**
+(and level `0` seven times). So the theorems below, and the rotation argument
+generally, do **not** cover the atom word — the interleaving that made the
+*monotone* theorem inapplicable also puts the word past this file's reach. The
+bond product remains measured, not derived. -/
+
+/-- Ascending pair: `m < k`, so `g m ∈ H k` and T3 at level `k` peels directly. -/
+theorem tr_mul_gen_gen_lt (n m k : ℕ) (hnm : n ≤ m) (hmk : m < k)
+    (a : A) (ha : a ∈ T.H n) :
+    T.tr (a * T.g m * T.g k) = T.tr a * T.tr (T.g m * T.g k) := by
+  have hgm : T.g m ∈ T.H k := T.H_mono (by omega) (T.g_mem m)
+  have haK : a ∈ T.H k := T.H_mono (by omega) ha
+  have h1 : T.tr (a * T.g m * T.g k) = T.z * T.tr (a * T.g m) :=
+    T.markov k _ ((T.H k).mul_mem haK hgm)
+  have h2 : T.tr (a * T.g m) = T.z * T.tr a := T.markov m a (T.H_mono hnm ha)
+  have h3 : T.tr (T.g m * T.g k) = T.z * T.tr (T.g m) := T.markov k _ hgm
+  rw [h1, h2, h3, T.tr_gen]
+  ring
+
+/-- Descending pair: `k < m`. Cyclicity rotates `g k` to the **front**, where it
+merges with `a` inside `H m`; T3 at level `m` then peels `g m`.
+
+This is the case the ascending-word theorem
+(`MonotoneWordFactorizes.tr_stabWord_eq_prod_tr`) cannot reach, and it is the
+smallest instance showing that *descent by itself* is not the obstruction —
+repetition is. -/
+theorem tr_mul_gen_gen_gt (n m k : ℕ) (hnk : n ≤ k) (hkm : k < m)
+    (a : A) (ha : a ∈ T.H n) :
+    T.tr (a * T.g m * T.g k) = T.tr a * T.tr (T.g m * T.g k) := by
+  have hgk : T.g k ∈ T.H m := T.H_mono (by omega) (T.g_mem k)
+  have haM : a ∈ T.H m := T.H_mono (by omega) ha
+  have hka : T.g k * a ∈ T.H m := (T.H m).mul_mem hgk haM
+  have h1 : T.tr (a * T.g m * T.g k) = T.tr (T.g k * a * T.g m) := by
+    rw [T.tr_mul_comm (a * T.g m) (T.g k), mul_assoc]
+  have h2 : T.tr (T.g k * a * T.g m) = T.z * T.tr (T.g k * a) := T.markov m _ hka
+  have h3 : T.tr (T.g k * a) = T.tr (a * T.g k) := T.tr_mul_comm _ _
+  have h4 : T.tr (a * T.g k) = T.z * T.tr a := T.markov k a (T.H_mono hnk ha)
+  have h5 : T.tr (T.g m * T.g k) = T.tr (T.g k * T.g m) := T.tr_mul_comm _ _
+  have h6 : T.tr (T.g k * T.g m) = T.z * T.tr (T.g k) := T.markov m _ hgk
+  rw [h1, h2, h3, h4, h5, h6, T.tr_gen]
+  ring
+
 /-- **A statement of what remains, so the gap is in the file rather than only in
 the bean.**
 
