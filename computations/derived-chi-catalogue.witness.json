@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-09-07T09:54:01.799250+00:00",
-  "commitSha": "b90d4a3bc8bee6ebf31d9f3a1d9f089fc47a95c0",
+  "computedAt": "2026-09-07T10:21:45.535726+00:00",
+  "commitSha": "ecdcc0f4ac1e4628b27d56f678dfa8b1f1233eb8",
   "assertions": [
     {
       "name": "borromean_chi_21_reproduces_t17",
@@ -40,11 +40,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1146,
+  "allPassedBasis": "assertions",
+  "durationMs": 934,
+  "durationMsBaseline": "caller",
   "computation": "derived-chi-catalogue",
   "scriptFile": "derived_chi_catalogue_build.py",
   "scriptHash": "ec16199be5ff",
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "scriptCommitSha": "dd10455cfad0a83da6b3518a2f3b2350d5a0b0ec",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -59,7 +61,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e87a23f8d6fd6732"
+    "pyhecke_native_build": "7ccb4c94148958c4"
   },
   "invocation": {
     "argv": [
@@ -59795,21 +59797,10 @@
     },
     "merge_outcome": {
       "added": 0,
-      "unchanged": 2,
-      "replaced": 10
+      "unchanged": 12,
+      "replaced": 0
     },
-    "merge_replaced_cells": [
-      "borromean/(3,)/borromean-baryon",
-      "borromean/(1, 1, 1)/borromean-baryon",
-      "figure-eight/(3,)/higgs-pion-half",
-      "figure-eight/(1, 1, 1)/higgs-pion-half",
-      "hopf/(2,)/diquark",
-      "hopf/(1, 1)/diquark",
-      "trefoil/(2,)/electron",
-      "trefoil/(1, 1)/electron",
-      "cinquefoil/(2,)/muon",
-      "cinquefoil/(1, 1)/muon"
-    ],
+    "merge_replaced_cells": [],
     "idempotence_second_pass": {
       "added": 0,
       "unchanged": 12,

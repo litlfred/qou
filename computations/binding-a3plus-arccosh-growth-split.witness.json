@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T06:41:11.154521+00:00",
-  "commitSha": "5cc05ecd4fbac0e09e29ae9621621be580bb5e89",
+  "computedAt": "2026-09-07T10:21:30.854055+00:00",
+  "commitSha": "ecdcc0f4ac1e4628b27d56f678dfa8b1f1233eb8",
   "assertions": [
     {
       "name": "he3_v1_rotation_plus_growth_does_not_close",
@@ -14,7 +14,9 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3,
+  "allPassedBasis": "failed-assertions",
+  "durationMs": 4,
+  "durationMsBaseline": "builder-construction",
   "computation": "binding-a3plus-arccosh-growth-split",
   "scriptFile": "binding_a3plus_arccosh_growth_split.py",
   "scriptHash": "fd1491a88b76",
@@ -33,7 +35,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "7ccb4c94148958c4"
   },
   "invocation": {
     "argv": [

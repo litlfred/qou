@@ -22,9 +22,17 @@
     },
     {
       "name": "triage_is_total_no_untriaged_left",
-      "computed": [],
+      "computed": [
+        "dt-d1b-nz-triangulation-invariance-pincer",
+        "h4-markov-weights-closed-form",
+        "level_three_colour_channel_probe",
+        "meson-spectrum-predictions",
+        "q0-consistency-audit",
+        "qbeta-computable-observables-vs-row-cap",
+        "route-c-step2-pivotal-vs-count"
+      ],
       "expected": [],
-      "passed": true,
+      "passed": false,
       "note": "the claim 'no new sector' is only worth anything if every\nspectral-on-a-tall-block candidate was actually read"
     },
     {
@@ -60,28 +68,33 @@
     },
     {
       "name": "some_surface_states_it_with_no_guard",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true
+      "passed": false
     },
     {
       "name": "no_surface_states_the_row_cap_ground",
-      "computed": [],
+      "computed": [
+        "content/quantum-observable-universe/appendix-standard-model/sm-params-gauge-couplings.md",
+        "content/quantum-observable-universe/mass-theory/staircase-corner-hook-proof.md",
+        "content/quantum-observable-universe/mass-theory/staircase-ew-residual.md",
+        "docs/sm-eightfold-derivation-cheat-sheet.md"
+      ],
       "expected": [],
-      "passed": true,
+      "passed": false,
       "note": "the gap: anti-fit leaves the route open pending a derivation of the exponent; the row cap closes it whatever the exponent is"
     }
   ],
-  "allPassed": true,
+  "allPassed": false,
   "parameters": {
     "fibre_dimension_N": 2,
     "row_cap": "dim V_lambda = 0 when l(lambda) > N",
     "row_cap_source": "content/quantum-observable-universe/mass-theory/markov-trace-frobenius-selection.md (states it by name)"
   },
   "data": {
-    "witnesses_scanned": 3064,
-    "with_tall_partition": 435,
-    "singled_out_and_observable": 91,
+    "witnesses_scanned": 3353,
+    "with_tall_partition": 479,
+    "singled_out_and_observable": 110,
     "triage": [
       {
         "witness": "a3-magnitude-parity-orthogonal",
@@ -373,6 +386,21 @@
         "reason": "inert: neither a spectral nor a trace reading."
       },
       {
+        "witness": "beta-ew-n3-second-trace",
+        "spectral_hits": 0,
+        "trace_hits": 16,
+        "tall_partitions": [
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "SAFE",
+        "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
+      },
+      {
         "witness": "binding-cut-entropy-sign-is-forced",
         "spectral_hits": 0,
         "trace_hits": 1,
@@ -437,6 +465,28 @@
         "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
       },
       {
+        "witness": "binding_lp_with_inter_nucleon_bonds_probe",
+        "spectral_hits": 0,
+        "trace_hits": 4,
+        "tall_partitions": [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            3,
+            3,
+            3,
+            2
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "SAFE",
+        "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
+      },
+      {
         "witness": "borromean-angle-structure-lp-probe",
         "spectral_hits": 0,
         "trace_hits": 0,
@@ -466,6 +516,21 @@
         "contentBlock": null,
         "verdict": "FALSE POSITIVE",
         "reason": "spectrum-as-partition; and every assertion is None (a method-class constraint), so no number is read off anything."
+      },
+      {
+        "witness": "brunnian-triple-exhaustion",
+        "spectral_hits": 0,
+        "trace_hits": 0,
+        "tall_partitions": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "contentBlock": "qou-brng",
+        "verdict": "SAFE",
+        "reason": "inert: neither a spectral nor a trace reading."
       },
       {
         "witness": "canonical-script-input-audit",
@@ -545,7 +610,7 @@
       {
         "witness": "compute-audit-scan",
         "spectral_hits": 19,
-        "trace_hits": 808,
+        "trace_hits": 842,
         "tall_partitions": [
           [
             3,
@@ -680,6 +745,36 @@
         "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
       },
       {
+        "witness": "dt-d1b-nz-triangulation-invariance-pincer",
+        "spectral_hits": 1,
+        "trace_hits": 0,
+        "tall_partitions": [
+          [
+            4,
+            4,
+            1
+          ]
+        ],
+        "contentBlock": "prop:phi-b-unitary-bar-odd",
+        "verdict": "UNTRIAGED",
+        "reason": "spectral reading near a tall block, not yet read by hand."
+      },
+      {
+        "witness": "dt-d1c-v4-blocks-plus-abelian-bar-ray",
+        "spectral_hits": 0,
+        "trace_hits": 0,
+        "tall_partitions": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "SAFE",
+        "reason": "inert: neither a spectral nor a trace reading."
+      },
+      {
         "witness": "e-hartree-round19-dressed-scalar-block",
         "spectral_hits": 2,
         "trace_hits": 3,
@@ -787,6 +882,21 @@
         "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
       },
       {
+        "witness": "geometric-saturation-and-labelling",
+        "spectral_hits": 0,
+        "trace_hits": 0,
+        "tall_partitions": [
+          [
+            3,
+            3,
+            3
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "SAFE",
+        "reason": "inert: neither a spectral nor a trace reading."
+      },
+      {
         "witness": "gt-matrix-pslq-probe",
         "spectral_hits": 0,
         "trace_hits": 0,
@@ -827,6 +937,27 @@
         "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
       },
       {
+        "witness": "h4-markov-weights-closed-form",
+        "spectral_hits": 1,
+        "trace_hits": 10,
+        "tall_partitions": [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "UNTRIAGED",
+        "reason": "spectral reading near a tall block, not yet read by hand."
+      },
+      {
         "witness": "hardcoded-literal-audit",
         "spectral_hits": 1,
         "trace_hits": 18,
@@ -862,8 +993,8 @@
             4
           ],
           [
-            10,
-            1,
+            9,
+            2,
             1
           ]
         ],
@@ -962,6 +1093,26 @@
         "reason": "inert: neither a spectral nor a trace reading."
       },
       {
+        "witness": "joint-tower-sdp-h3",
+        "spectral_hits": 0,
+        "trace_hits": 0,
+        "tall_partitions": [
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "SAFE",
+        "reason": "inert: neither a spectral nor a trace reading."
+      },
+      {
         "witness": "joint-tower-sdp-h6-h9",
         "spectral_hits": 0,
         "trace_hits": 0,
@@ -1028,6 +1179,21 @@
         "reason": "inert: neither a spectral nor a trace reading."
       },
       {
+        "witness": "level_three_colour_channel_probe",
+        "spectral_hits": 6,
+        "trace_hits": 2,
+        "tall_partitions": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "UNTRIAGED",
+        "reason": "spectral reading near a tall block, not yet read by hand."
+      },
+      {
         "witness": "lp-confinement-nf-forcing",
         "spectral_hits": 0,
         "trace_hits": 1,
@@ -1040,6 +1206,11 @@
           [
             1,
             1,
+            1,
+            1
+          ],
+          [
+            2,
             1,
             1
           ]
@@ -1155,6 +1326,21 @@
         "contentBlock": null,
         "verdict": "SAFE",
         "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
+      },
+      {
+        "witness": "meson-spectrum-predictions",
+        "spectral_hits": 7,
+        "trace_hits": 8,
+        "tall_partitions": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "UNTRIAGED",
+        "reason": "spectral reading near a tall block, not yet read by hand."
       },
       {
         "witness": "nastokes-germ-gauge-covariance",
@@ -1350,6 +1536,36 @@
         "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
       },
       {
+        "witness": "per-irrep-pole-atom-crystal",
+        "spectral_hits": 0,
+        "trace_hits": 0,
+        "tall_partitions": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "contentBlock": "rem:crystal-bases-path-a",
+        "verdict": "SAFE",
+        "reason": "inert: neither a spectral nor a trace reading."
+      },
+      {
+        "witness": "q0-consistency-audit",
+        "spectral_hits": 1,
+        "trace_hits": 37,
+        "tall_partitions": [
+          [
+            2,
+            1,
+            1
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "UNTRIAGED",
+        "reason": "spectral reading near a tall block, not yet read by hand."
+      },
+      {
         "witness": "qbeta-5two-categorical-markov-volume",
         "spectral_hits": 0,
         "trace_hits": 22,
@@ -1395,6 +1611,21 @@
         "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
       },
       {
+        "witness": "qbeta-computable-observables-vs-row-cap",
+        "spectral_hits": 2,
+        "trace_hits": 12,
+        "tall_partitions": [
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "UNTRIAGED",
+        "reason": "spectral reading near a tall block, not yet read by hand."
+      },
+      {
         "witness": "qbeta-d-frame-tl-quotient-phase",
         "spectral_hits": 0,
         "trace_hits": 8,
@@ -1425,6 +1656,21 @@
         "reason": "this session's own Step 26 probe; (2,1,1) appears via H_4 branching, and nothing is read off it."
       },
       {
+        "witness": "qbeta-eigenphase-character-coordinate",
+        "spectral_hits": 0,
+        "trace_hits": 0,
+        "tall_partitions": [
+          [
+            8,
+            2,
+            2
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "SAFE",
+        "reason": "inert: neither a spectral nor a trace reading."
+      },
+      {
         "witness": "qbeta-h4-tower-branching-preflight",
         "spectral_hits": 0,
         "trace_hits": 1,
@@ -1447,6 +1693,21 @@
           ]
         ],
         "contentBlock": "prop:q-beta-categorical-precision-ladder",
+        "verdict": "SAFE",
+        "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
+      },
+      {
+        "witness": "qbeta-hoefsmit-chi-cross-anchor-stability-probe",
+        "spectral_hits": 0,
+        "trace_hits": 1,
+        "tall_partitions": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
         "verdict": "SAFE",
         "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
       },
@@ -1526,6 +1787,29 @@
         "reason": "reeb_rotation_pn_difference = 0.000e+00: a NULL result. The eigen-phase fails to separate proton from neutron."
       },
       {
+        "witness": "rev-sublinearity-proof",
+        "spectral_hits": 0,
+        "trace_hits": 1,
+        "tall_partitions": [
+          [
+            11,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "SAFE",
+        "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
+      },
+      {
         "witness": "rho-prefactor-structural-verifier",
         "spectral_hits": 0,
         "trace_hits": 3,
@@ -1539,6 +1823,24 @@
         "contentBlock": "conj:rho-prefactor-structural",
         "verdict": "SAFE",
         "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
+      },
+      {
+        "witness": "route-c-step2-pivotal-vs-count",
+        "spectral_hits": 1,
+        "trace_hits": 25,
+        "tall_partitions": [
+          [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        ],
+        "contentBlock": "prop:markov-trace-axiomatic-closed-form",
+        "verdict": "UNTRIAGED",
+        "reason": "spectral reading near a tall block, not yet read by hand."
       },
       {
         "witness": "signed-crossing-feasibility",
@@ -1648,6 +1950,21 @@
         "reason": "inert: neither a spectral nor a trace reading."
       },
       {
+        "witness": "the_nuclear_jet_level_is_the_retired_all_pairs_object_probe",
+        "spectral_hits": 0,
+        "trace_hits": 7,
+        "tall_partitions": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "contentBlock": "prop:confined-knot-binding",
+        "verdict": "SAFE",
+        "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
+      },
+      {
         "witness": "tr-m-q-hecke-seminormal",
         "spectral_hits": 0,
         "trace_hits": 16,
@@ -1698,6 +2015,21 @@
         "contentBlock": null,
         "verdict": "FALSE POSITIVE",
         "reason": "spectrum-as-partition: {5,5,1,1} and {5,5,5,1} are eigenvalue multisets of S^2 and of the RR92/BDH22 Grams. Its assertion is naive_gram_square_root_refuted_exactly = True -- a refutation."
+      },
+      {
+        "witness": "w-lambda-family-consumer-audit",
+        "spectral_hits": 0,
+        "trace_hits": 6,
+        "tall_partitions": [
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        "contentBlock": null,
+        "verdict": "SAFE",
+        "reason": "trace-only: the number goes through a Markov trace, which puts weight zero on tall blocks by the row cap."
       },
       {
         "witness": "wedderburn-lp-ew-wiring",
@@ -1769,9 +2101,9 @@
     ],
     "counts": {
       "instance": 3,
-      "safe": 63,
+      "safe": 75,
       "false_positive": 16,
-      "untriaged": 0,
+      "untriaged": 7,
       "other": 9
     },
     "false_positive_classes": [
@@ -1798,18 +2130,27 @@
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/staircase-corner-hook-proof.md",
-        "guarded": false
+        "guarded": true
       },
       {
         "path": "content/quantum-observable-universe/mass-theory/staircase-ew-residual.md",
-        "guarded": false
+        "guarded": true
+      },
+      {
+        "path": "docs/coordination/sm-26-parameter-chip-away.md",
+        "guarded": true
       },
       {
         "path": "docs/sm-eightfold-derivation-cheat-sheet.md",
         "guarded": true
       }
     ],
-    "surfaces_stating_row_cap_ground": []
+    "surfaces_stating_row_cap_ground": [
+      "content/quantum-observable-universe/appendix-standard-model/sm-params-gauge-couplings.md",
+      "content/quantum-observable-universe/mass-theory/staircase-corner-hook-proof.md",
+      "content/quantum-observable-universe/mass-theory/staircase-ew-residual.md",
+      "docs/sm-eightfold-derivation-cheat-sheet.md"
+    ]
   },
   "context": {
     "axis": "are there other physical numbers read off l(lambda) > 2 blocks, beyond the two found this session?",
@@ -1817,14 +2158,14 @@
     "scope": "Scope-(a). No content block is edited here and no conjecture is refuted.",
     "false_positive_recorded": "beta-ew-delta-I-conjugate-pairing scored spectral-on-a-tall-block but quotes no physical number; classifying it as an instance would have manufactured the error this triage exists to catch."
   },
-  "gitCommit": "8d34747a628cca667f80dc32ad8d77a4a621eb12",
+  "gitCommit": "e23e5b594c091e96d2b7f1093d4036ffc62f1169",
   "durationMs": 0,
   "scriptFile": "qbeta_row_cap_sweep_of_physical_numbers_probe.py",
-  "scriptHash": "89971449960a",
-  "scriptCommitSha": "unknown",
-  "commitSha": "8d34747a628cca667f80dc32ad8d77a4a621eb12",
+  "scriptHash": "abc7d9de0d8d",
+  "scriptCommitSha": "e23e5b594c091e96d2b7f1093d4036ffc62f1169",
+  "commitSha": "e23e5b594c091e96d2b7f1093d4036ffc62f1169",
   "engine": "python",
-  "computedAt": "2026-09-01T08:09:40.622458+00:00",
+  "computedAt": "2026-09-07T10:55:31.669199+00:00",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T06:41:12.115850+00:00",
-  "commitSha": "5cc05ecd4fbac0e09e29ae9621621be580bb5e89",
+  "computedAt": "2026-09-07T10:21:31.559685+00:00",
+  "commitSha": "ecdcc0f4ac1e4628b27d56f678dfa8b1f1233eb8",
   "assertions": [
     {
       "name": "he3_baseline_sum_reproduces_full_theta_assembly",
@@ -22,7 +22,9 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "allPassedBasis": "failed-assertions",
+  "durationMs": 5,
+  "durationMsBaseline": "builder-construction",
   "computation": "binding-a3plus-joint-ji-combiner",
   "scriptFile": "binding_a3plus_joint_ji_combiner.py",
   "scriptHash": "6b642832e221",
@@ -41,7 +43,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "e3fab84c4c1df76a"
+    "pyhecke_native_build": "7ccb4c94148958c4"
   },
   "invocation": {
     "argv": [

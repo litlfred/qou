@@ -156,22 +156,22 @@
       {
         "n": 6,
         "atom": "deuteron",
-        "worst_y_diff": "1.00229e-50"
+        "worst_y_diff": "0.0"
       },
       {
         "n": 9,
         "atom": "helium-3",
-        "worst_y_diff": "6.89072e-52"
+        "worst_y_diff": "3.13215e-52"
       },
       {
         "n": 9,
         "atom": "tritium",
-        "worst_y_diff": "6.89072e-52"
+        "worst_y_diff": "3.13215e-52"
       },
       {
         "n": 12,
         "atom": "helium-4",
-        "worst_y_diff": "1.20066e-52"
+        "worst_y_diff": "3.65417e-53"
       }
     ],
     "worst_chi_diffs": [
@@ -183,17 +183,17 @@
       {
         "n": 9,
         "atom": "helium-3",
-        "worst_chi_diff": "36.6859"
+        "worst_chi_diff": "43.7431"
       },
       {
         "n": 9,
         "atom": "tritium",
-        "worst_chi_diff": "41.0642"
+        "worst_chi_diff": "43.9899"
       },
       {
         "n": 12,
         "atom": "helium-4",
-        "worst_chi_diff": "305.151"
+        "worst_chi_diff": "132.41"
       }
     ],
     "skipped_pairs": [
@@ -283,14 +283,14 @@
     "capability_wall": "The colour-weighted route builds seminormal matrices; max Specht dim is 7,700 at n = 12 but 292,864 at n = 15 and 16,336,320 at n = 18. So the A-scan cannot be extended past A = 4 in the calibration convention with current tooling — a 6Li attempt was killed at 5h03m without finishing one word. sign-only reaches n = 18 because chi_q_via_gp is character-theoretic and never forms a matrix.",
     "scope": "Scope-(a). Nothing refuted, no witness edited. The convention field is present and correct everywhere; the hazard is that nothing forces a consumer to compare it."
   },
-  "gitCommit": "22c48fdf9905c87213d2e3f4019023b62b8b089a",
+  "gitCommit": "e23e5b594c091e96d2b7f1093d4036ffc62f1169",
   "durationMs": 0,
   "scriptFile": "qbeta_chi_witness_convention_split_probe.py",
-  "scriptHash": "209bf349778b",
-  "scriptCommitSha": "22c48fdf9905c87213d2e3f4019023b62b8b089a",
-  "commitSha": "22c48fdf9905c87213d2e3f4019023b62b8b089a",
+  "scriptHash": "c0409c536ae8",
+  "scriptCommitSha": "e23e5b594c091e96d2b7f1093d4036ffc62f1169",
+  "commitSha": "e23e5b594c091e96d2b7f1093d4036ffc62f1169",
   "engine": "mpmath",
-  "computedAt": "2026-09-03T15:46:03.091154+00:00",
+  "computedAt": "2026-09-07T10:47:03.321924+00:00",
   "engineVersion": "mpmath 1.4.1",
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-09-06T12:59:11.832659+00:00",
-  "commitSha": "647a6b4cff291f0c9c650c5a1320451745bc53fe",
+  "computedAt": "2026-09-07T10:29:41.097921+00:00",
+  "commitSha": "ecdcc0f4ac1e4628b27d56f678dfa8b1f1233eb8",
   "assertions": [
     {
       "name": "all_A_leq_4_masses_computed",
@@ -14,11 +14,13 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 646337,
+  "allPassedBasis": "assertions",
+  "durationMs": 475123,
+  "durationMsBaseline": "caller",
   "computation": "mass-table-comprehensive",
   "scriptFile": "mass_table_comprehensive.py",
-  "scriptHash": "be59355ec6a4",
-  "scriptCommitSha": "f608a5e3e461ad85464318eae6289f795e2d5423",
+  "scriptHash": "e3c19d171ca8",
+  "scriptCommitSha": "c3c2033d4ab1bed5a3198f05ddc129c10ba1646d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +33,9 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "7ccb4c94148958c4"
   },
   "invocation": {
     "argv": [
@@ -121,8 +125,8 @@
         "m_err_pct_sym": "0.1057",
         "B_pred_MeV": "5.514391",
         "B_qCLT_MeV": "10.262622",
-        "B_AME_MeV": "8.481821",
-        "B_err_pct": "-34.9858",
+        "B_AME_MeV": "8.481796",
+        "B_err_pct": "-34.9856",
         "binding_method": "Exact symbolic (-alpha * ln|tau_M|)",
         "atlas_methodology_tag": "principled-derivation (Q-CLT proxy)",
         "caveats": [

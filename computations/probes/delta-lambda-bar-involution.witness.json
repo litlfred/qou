@@ -1,7 +1,7 @@
 {
   "engine": "python3/mpmath+numpy",
   "engineVersion": "50dps",
-  "computedAt": "2026-09-06T06:49:31.151798+00:00",
+  "computedAt": "2026-09-07T10:21:33.686119+00:00",
   "computation": "delta-lambda-bar-involution-multi-atom",
   "scriptFile": "delta_lambda_bar_involution_probe.py",
   "description": "\u0394_\u03bb with bar-involution (\u0394_\u03bb = \u0394_{\u03bb^T}) + minimum-norm selection on the deuteron. Reduces 11 free params to 8 via conjugate-pair identification. Single-atom minimum-norm gives the unique smallest-L2 bar-symmetric \u0394.",
@@ -82,14 +82,14 @@
     ],
     "delta_star": {
       "(3, 2, 1)": 0.0,
-      "(6,)": -7.324715276794827,
-      "(5, 1)": -10.339726822242627,
-      "(4, 2)": -3.138366607176609,
+      "(6,)": -7.32471945846113,
+      "(5, 1)": -10.339732725173402,
+      "(4, 2)": -3.138368398864257,
       "(4, 1, 1)": 0.0,
-      "(3, 3)": -2.616801486819755
+      "(3, 3)": -2.6168029807468476
     },
     "mass_eq_residual": 0.0,
-    "B_D_predicted_MeV": "-2952.138983789766282205815457473363494500517845153809560999768246365795",
+    "B_D_predicted_MeV": "-1382.610210886556981057507016430463409051299095153809560999768246365795",
     "B_D_AME_MeV": 2.22452
   },
   "assertions": [
@@ -103,9 +103,9 @@
     }
   ],
   "allPassed": true,
-  "scriptHash": "693a7dfc2ed9",
-  "scriptCommitSha": "9949f304b17358b42742196f8733edac681fd82f",
-  "commitSha": "14f16b7d05582cbc533dfa96bbf9a624c728ae5d",
+  "scriptHash": "a839af254ef9",
+  "scriptCommitSha": "d36af9e0d56c8f8e1516602b42bd2417f5bdaf2a",
+  "commitSha": "ecdcc0f4ac1e4628b27d56f678dfa8b1f1233eb8",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

@@ -292,5 +292,13 @@
     ]
   },
   "verdict": "DERIVED (not fitted): all 24 identities hold identically in (q, z). Five equations determine the weights; the other 19 are independent checks that could have failed. The q=1 specialisation reproduces the S4 character table, and every weight is singular exactly on the wedderburn_4 genericity locus (q, A=q^2+1, B=q^4+q^2+1, C=q^4+1).",
-  "scope": "Establishes the arithmetic input to the Lean bridge. It does NOT by itself make trM4_cyclic independent of the ASCII Gram chain — the 24 identities still have to be discharged IN Lean as `hbasis`."
+  "scope": "Establishes the arithmetic input to the Lean bridge. It does NOT by itself make trM4_cyclic independent of the ASCII Gram chain — the 24 identities still have to be discharged IN Lean as `hbasis`.",
+  "scriptFile": "h4_markov_character_decomposition.py",
+  "scriptHash": "7574e1cebe24",
+  "scriptCommitSha": "d36af9e0d56c8f8e1516602b42bd2417f5bdaf2a",
+  "commitSha": "ecdcc0f4ac1e4628b27d56f678dfa8b1f1233eb8",
+  "computedAt": "2026-09-07T10:32:02.904757+00:00",
+  "durationMs": 0,
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }
