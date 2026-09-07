@@ -124,6 +124,25 @@ Three consequences:
    matched against any small rational, and no kernel is promoted on the
    strength of it.
 
+## The move has a precedent in the held literature
+
+Not corpus coverage of this finding — corpus-grep found none, across all six
+paths — but worth citing if "jointly unidentifiable" reads as an unusual
+claim. Garoufalidis–Zagier, *Knots, Perturbative Series and Quantum
+Modularity* (`garoufalidis-zagier-2024`,
+`library/arxiv-2111.06645v3/sections/sec-035-…md:48`), on the asymptotic
+series of the Kashaev invariant:
+
+> `C^(K,σ)_α` and `Ã^(K,σ)_α(k)` are **not canonically defined numbers, only
+> their product is**.
+
+Different objects entirely — a normalisation ambiguity, nothing to do with a
+kernel or a separation exponent. But it is the same logical move, stated in
+this corpus's own subject area: the product is canonical while its factors
+individually are not, so quoting either factor alone is meaningless without a
+convention. Here the convention is the separation law, and the corpus does not
+supply one.
+
 ## The hyperbolic-ball separation law fails, by hundreds of percent
 
 Round 6's finding 3 scored the **multiplicative** law `α ∝ c·ln A` (free
