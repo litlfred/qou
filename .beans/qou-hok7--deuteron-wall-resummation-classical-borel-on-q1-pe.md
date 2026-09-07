@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-21T15:02:55Z
-updated_at: 2026-09-07T06:43:27Z
+updated_at: 2026-09-07T10:28:27Z
 ---
 
 
@@ -195,3 +195,66 @@ counterexample (statExponents_three, max exponent 4).
 
 Probes: zn_hook_length_closed_form_probe.py (6/6), rev_free_energy_over_shapes_probe.py (3/3),
 hmin_closed_form_and_rev_sublinearity_probe.py (5/5). Exact integer / 60-dps mpmath, no float64.
+
+## 2026-09-07 — tightness attacked; the r-route MEASURED, and the data cannot yet decide
+
+Attacked the one open piece (is the 3/4 exponent sharp?). No closure. Recording what was measured
+so the next agent does not re-walk it.
+
+### The gap has a specific cause
+
+The upper bound composes two facts: R_lambda <= C*r (from L1) and r <= sqrt(H) (from L2, proved in
+Lean as H >= r^2, PR #7018). The second is TIGHT for hook shapes — the hook (m,1^{m-1}) has
+H = m^2+m-1 against r = m — but very LOOSE where it is actually used, at H = H_min, because
+minimal-H shapes are staircase-like with r ~ sqrt(2n) while sqrt(H_min) ~ 0.97 n^{3/4}.
+
+### Measured: max r as a function of the energy budget D = H - H_min
+
+    n     sqrt(2n)   D<=0   D<=5   D<=20   D<=50   D<=inf   sqrt(H_min)
+    12      4.90       5      6       6       6        6        6.32
+    24      6.93       7      8      10      12       12       10.58
+    36      8.49       8      9      11      14       18       14.28
+    44      9.38       9     10      12      15       22       16.61
+
+At D = 0 the maximum r tracks sqrt(2n) closely (9 vs 9.38 at n=44) — so minimal-energy shapes ARE
+confined to r = O(sqrt n), as expected. r then grows with the budget, locally about sqrt(2n) + D/8
+over the measured range, reaching n/2 at D = infinity (the hook shape).
+
+**A tempting inference I checked and did NOT make.** With alpha = 1/8, C*alpha = 0.771 far exceeds
+ln q0 = 0.1043, which suggests the energy can never pay for the r-growth and the route is dead. That
+argument is WRONG: the linear model is a local fit at small D and does not extend. Globally r <=
+sqrt(H), and at large H the energy does dominate — which is exactly why the O(n^{3/4}) bound closes
+at all. Do not quote the alpha = 1/8 slope outside the measured range.
+
+### How loose the composition is
+
+    n     TRUE max(R-E)   max(C*r - E)   ratio
+    16       8.0802          48.0148     5.94
+    24      12.4052          69.2572     5.58
+    32      16.2765          88.0997     5.41
+    40      19.7497         104.4381     5.29
+    44      21.1462         111.5639     5.28
+
+The bound over-states by ~5.3x and the ratio decreases only slowly. So the exponent is not going to
+be fixed by a constant; a sharper bound on R_lambda ITSELF is needed, not a sharper r-vs-H relation.
+
+### 🛑 The data cannot yet distinguish sqrt(n) from n^{3/4}
+
+    TRUE max(R-E) / sqrt(n) :  2.02  2.53  2.88  3.12  3.19   (n = 16,24,32,40,44) — still RISING
+    TRUE max(R-E) / n^{3/4} :  1.01  1.15  1.21  1.24  1.24   — flattening, but not flat
+
+Neither has converged. A rising sqrt(n) ratio is consistent BOTH with Theta(n^{3/4}) and with
+Theta(sqrt n) approaching a constant slowly — and slow convergence is established for this object:
+the staircase ratio is still only 4.466 at n=435 against its own limit A*sqrt2 = 5.0959. So n <= 44
+is simply too small to separate the two, and no conclusion about sharpness is drawn here.
+
+### What would decide it
+
+Larger n on the max alone: M_n needs a full scan over p(n) partitions (p(60) = 966,467,
+p(80) = 15.8M), which is feasible to n ~ 60 in this container and would extend the trend by half a
+decade — probably still not enough. The structural route is a bound on R_lambda = sum_m eps_m
+N_m(lambda) that uses more than N_m <= r; the two moment constraints (sum N_m = n, sum m N_m = H)
+are NOT enough on their own, since the LP relaxation over those alone has supremum n*eps_1, which is
+linear and useless.
+
+Status unchanged: Omega(sqrt n) <= REV <= O(n^{3/4}) both proved (#7014, #7018); tightness open.
