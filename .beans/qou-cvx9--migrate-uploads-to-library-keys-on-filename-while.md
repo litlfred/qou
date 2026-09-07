@@ -289,10 +289,11 @@ It is prefix-agnostic: has_structure() keys on structure.json PRESENCE, not on t
 My stated reason for expecting a miss was wrong about what the guard keys on. (Note also that with
 no ingested artefacts at all the script bails before any move — an even stronger refusal.)
 
-**So the orphan came in by another route.** 588ed02d5fc created it at 11:38 as
- with no structure.json
-— two hours AFTER the guard landed at 09:21 (08d1fa9d4fd, verified an ancestor via
-git merge-base --is-ancestor). A hand git mv, or a tool that is not this script.
+**So the orphan came in by another route.** 588ed02d5fc created it at 11:38 as a
+plain rename — "R100 uploads/0705.2975v1.pdf -> library/arxiv-0705.2975v1/0705.2975v1.pdf"
+— with no structure.json in the commit, two hours AFTER the guard landed at 09:21
+(08d1fa9d4fd, verified an ancestor via git merge-base --is-ancestor). A hand git mv,
+or a tool that is not this script.
 
 That is the row-33 class in the detector-blindness taxonomy: **a guard installed on one of an API's
 several write paths** (bean qou-3ral). The repair is not a second entry-point guard.
