@@ -34,6 +34,12 @@ So #6992's kind table is a **full three determinations after all**, not the "two
 PRs (correctly, at the time) reported. The amendment those bodies carry is now itself superseded,
 and this probe is the reason to say so.
 
+**And it is settled twice, on different objects.** The held-out `A = 3` word (check 5 below)
+discriminates the same two candidates independently: carrying the ruled-out plain-average bond
+through the product gives `3745/512` at `ε⁴` against the measured `11299/1536`. That word
+contributed nothing to the bond extraction, so it is a second determination rather than a
+restatement of the first.
+
 ## What that costs the "average" reading — it is exactly an order-≤3 fact
 
 #7000's headline was that the three bonds are `z`, `(z + z′)/2`, `z′`. Two thirds of that survives
@@ -93,8 +99,11 @@ _spec.loader.exec_module(_D)
 
 K = 4
 
-# Held-out: 3He at K = 4. ~16 min per word, so recorded; --verify-live re-measures.
-TARGET_3HE: dict[str, list[F]] = {}
+# Held-out: 3He at K = 4. 1470 s free + 1785 s atom, so recorded; --verify-live re-measures.
+TARGET_3HE: dict[str, list[F]] = {
+    "free": [F(1, 8), F(1, 4), F(55, 32), F(69, 8), F(1077, 128)],
+    "atom": [F(1, 32), F(1, 8), F(79, 128), F(203, 64), F(11299, 1536)],
+}
 
 
 def pmul(a: list[F], b: list[F]) -> list[F]:
@@ -215,7 +224,19 @@ def main() -> int:
     print(f"     ⇒ {hits}/{tot} " + ("— the bond product holds at order 4 on a held-out word."
                                      if ok4 else "— the product FAILS at order 4. Report it as the finding."))
 
-    ok = ok1 and ok2 and ok4
+    # ---- 5. the held-out word RE-DISCRIMINATES the kind, independently -------------------
+    print(f"\n  5. SECOND, INDEPENDENT CONFIRMATION — the A=3 word discriminates the kind too")
+    alt = pmul(pmul(free, bond["pp"]), avg)      # the ruled-out plain-average pn bond
+    ok5 = alt != tgt["atom"] and atom == tgt["atom"]
+    print(f"     atom with `averaged_weighted` pn  {[str(x) for x in atom]}")
+    print(f"     atom with the plain-average pn    {[str(x) for x in alt]}")
+    print(f"     measured                          {[str(x) for x in tgt['atom']]}")
+    print(f"     ⇒ {'the two candidates differ HERE as well (ε⁴: ' + str(alt[K]) + ' vs ' + str(tgt['atom'][K]) + '), and the measurement' if ok5 else 'the two candidates do NOT differ on this word — check 5 adds nothing here.'}")
+    if ok5:
+        print("       picks `averaged_weighted` again. So the kind is settled on TWO different")
+        print("       objects: the A=2 extraction (check 1) and this A=3 product — not once.")
+
+    ok = ok1 and ok2 and ok4 and ok5
     print(f"\n  SCOPE. Order 4 for the bond factors (A=2) and one held-out A=3 word. The pn kind is")
     print("  now SETTLED as `averaged_weighted`; the plain-average reading of the mixed bond is an")
     print("  order-≤3 fact and is refuted at order 4. No q₀, no float, no witness, no Lean — and the")

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-09-03T15:51:43Z
-updated_at: 2026-09-07T07:12:18Z
+updated_at: 2026-09-07T09:31:51Z
 ---
 
 Successor to qou-pdg9 (c1 derived, PR #6492). Exact c2 = [eps^1]+[eps^2] of Dtr(1+eps) is in c1-leading-coefficient-derived-probe.witness.json: pp 357/32, pn 403/32, nn 217/16, T 3285/128, 3He 3451/128 (4He pending, order-4 series). Observation from that data: chain/atom at SECOND order is 3348/3285 = 1.019 (T) and 3040/3451 = 0.881 (3He), against 292/163 = 1.79 and 30/17 = 1.76 at first order -- the over-count nearly cancels one order up. qou-zrx2 called the q0 agreement 'higher-order terms partially cancelling'; this quantifies it exactly. Goal: (1) 4He c2 exact; (2) derive c2 by extending the [star] expansion to second order (the Y-terms Tr(Y P Y P') no longer vanish; K'' and the normaliser's second derivative enter); (3) explain the near-additivity structurally or refute it as coincidence at A=4.
@@ -604,3 +604,45 @@ kind -- both establish only that it is NOT sigma and NOT sigma_inv. ORDER 4 is w
 averaged_weighted predicts a DEVIATION from the plain average, and is the measurement that would
 settle it. Cost: A=3 at K=4 is ~4x the K=3 word cost. Also open: A >= 6, and A=4/A=5 at K=3
 (A=4 at K=3 is ~25x A=3, i.e. ~1h/word).
+
+
+2026-09-07 (order 4): THE pn KIND IS SETTLED -- `averaged_weighted`, twice over. Probe:
+computations/probes/bond_pn_kind_order_four_discriminator_probe.py (exit 0, 122s). This CLOSES the
+open item the order-3 entry above left, and supersedes the "two-and-a-half determinations" caveat
+posted on #6992 and #7000.
+
+MY COST ESTIMATE ABOVE WAS WRONG. The entry above says "A=3 at K=4 is ~4x the K=3 word cost" and
+both PR bodies costed the discriminator as an A=3 word (~17 min). Wrong object: the bond factors are
+EXTRACTED at A=2, so the discriminator is an A=2 measurement -- 41 seconds. Do not repeat that
+estimate; ask which object carries the quantity before costing a measurement.
+
+THE DISCRIMINATOR. At eps^4 the two candidate kinds separate for the first time:
+    d_averaged           (0, -1, 1/2, -1/2, 1/2 )
+    d_averaged_weighted  (0, -1, 1/2, -1/2, 7/6 )
+    z + d_averaged       (1/2, 0, 3/4, -3/4,  5/8 )   RULED OUT
+    z + d_averaged_wtd   (1/2, 0, 3/4, -3/4, 31/24)   matches
+    measured pn bond     (1/2, 0, 3/4, -3/4, 31/24)
+
+SETTLED ON TWO DIFFERENT OBJECTS, not one. The held-out 3He word at K=4 re-discriminates the same
+pair independently: carrying the ruled-out plain-average bond through the product gives 3745/512 at
+eps^4 against the measured 11299/1536. That word contributed nothing to the extraction.
+
+WHAT IT COSTS THE ORDER-3 HEADLINE. Two thirds of "the bonds are z, (z+z')/2, z'" survive order 4
+and one third does not:
+    pp   z            STILL EXACT at order 4
+    nn   z' = z - h   STILL EXACT at order 4
+    pn   (z+z')/2     BREAKS at eps^4  (5/8 predicted vs 31/24 measured)
+The mixed bond is the plain mean only through order 3. pp and nn take NO correction, so the entire
+delta weighting lives in the one interface where a (p,n) asymmetry could enter. The `upsilon = -tau`
+corollary also stops -- the order-3 entry called it inherited from z and h rather than structural,
+and this is the measurement showing the inheritance ends (order-4 normalised: 1/4, 31/12, 9/4).
+
+HELD OUT: 10/10 at order 4 -- 3He free and atom, all five coefficients each, predicted from A<=1
+nucleon and A<=2 bond factors. Cost 1470s free + 1785s atom.
+
+NOT FITTED, NOT LEAN. d_averaged_weighted and delta = (q-1)^2(1-q^-4)/3 are the corpus's own
+letter_d_series, untouched; a previously untested BRANCH of that function is now tested and passed.
+The merged DisjointBlockTraceLaw.tr_mul_gen_comb does NOT cover this: averaged_weighted is not a
+constant combination of the two generators once delta enters. No Lean claim is made.
+
+STILL OPEN: A >= 6; A=4/A=5 at K=3 (A=4 at K=3 is ~25x A=3); order 5+.
