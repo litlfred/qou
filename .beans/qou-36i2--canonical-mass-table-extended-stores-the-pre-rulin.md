@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-07T06:18:30Z
-updated_at: 2026-09-07T06:19:09Z
+updated_at: 2026-09-07T06:29:40Z
 ---
 
 Found while draining `qou-wpp2` (the vendor mirror ratchet). The mirror drain
@@ -73,3 +73,51 @@ vendor-drain branch would collide with both.
 
 Note the row count is now **9**, so `qou-3wqg`'s '5 of 7 rows' figure is
 itself stale — re-measure before quoting it.
+
+## MEASURED: it is 6 files, not 1 (2026-09-07)
+
+Built the data-side selector this bean names as missing —
+`computations/audits/witness_braid_word_ordering_audit.py`, on branch
+`claude/witness-braid-word-audit-2026-09-07`. The class is not a single
+instance.
+
+    stored word fields: 3355 in 96 witness files
+    of atom length (12A-1): 128
+    and atom-SHAPED (2 <= generator span <= 3A-1): 29
+    ATOM-LENGTH AND MONOTONE (the superseded order): 28, in 8 files
+
+Six distinct sources after deduplicating two qou-mass mirrors, and only the
+first was known:
+
+| file | fields | |
+|---|---|---|
+| `canonical-mass-table-extended.witness.json` | 9 | this bean |
+| `low-isotope-mass-table.witness.json` | 5 | **NEW** |
+| `deltalambda/he4-magnus-omega2-sign.witness.json` | 1 | **NEW** |
+| `deltalambda/triton-magnus-omega2-sign.witness.json` | 1 | **NEW** |
+| `markov/markov-trace-axiomatic-multi-atom.witness.json` | 1 | **NEW**, 1-indexed |
+| `markov/markov-trace-recursive.witness.json` | 1 | **NEW**, 1-indexed |
+
+`low-isotope-mass-table` is the table behind `/dashboard-low`, and it already
+carries two other beans (`qou-5h7z` pre-convention, `qou-7e1t` clobbering) — so
+that file now has three independent reasons to be regenerated, which is an
+argument for doing them in one pass rather than three.
+
+The two 1-indexed hits matter for anyone writing a follow-up scan: the corpus
+writes the same grouped word as both `[0]*7+[1]*4` and `[1]*7+[2]*4`, so a
+grep for the 0-indexed literal finds under half the carriers.
+
+### The discriminator, and what it cost
+
+An atom word has exactly `12A-1` letters (verified A=1 -> 11, A=2 -> 23,
+A=3 -> 35 against this bean's own shard) and lives on 3A strands, so its
+generators span 2..3A-1 values. Both facts are about strand count, not
+ordering, so neither can hide a grouped word. Monotone then means grouped,
+because the ruling's word is non-monotone by construction.
+
+Both parts were bought by false positives the audit produced before they
+existed — `joint-tower-sdp-rust` storing an index list `[1,2,...,11]`, and
+`hecke-agtb-lineage-schedule` storing **23 words of 14 letters** at n=17, which
+the `e[0]` rule flattened into one monotone atom-length sequence. A letter is
+now required to be exactly two slots with a non-integer second. 10/10 selftest,
+including both.
