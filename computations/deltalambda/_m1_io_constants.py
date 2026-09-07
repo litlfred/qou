@@ -38,22 +38,39 @@ _DPS = 50
 # --- merged PR #5901, IO leading constants -----------------------------------------------------
 
 
-#: IO leading rho_P.
+#: IO leading rho_P.  DERIVED, not extrapolated.
 #:
-#: A CONJECTURED closed form 2*sqrt(6)/5 = sqrt(24/25) is annotated in the arc.  It is neither
-#: confirmed nor refuted by this literal, and the arithmetic is worth stating so nobody re-derives
-#: it as a refutation:
+#:     RHO_INF = 2*sqrt(6)/5,   RHO_INF**2 = 24/25   (EXACT)
 #:
-#:     RHO_INF**2      = 0.96000058502393...
-#:     24/25           = 0.96
-#:     relative gap    = 6.09e-07   (3.05e-07 on RHO_INF itself)
+#: Derived from Kerov's central limit theorem for the Plancherel measure (Ivanov-Olshanski,
+#: library/arxiv-math-0304010v1, eq. 0.3): the fluctuation field Delta(2 cos theta) =
+#: (1/pi) sum_{k>=2} (xi_k/sqrt(k)) sin(k theta) with xi_k iid N(0,1).  Expanding the two
+#: observables in that sine basis on the support [-2,2] gives G_k = pi*delta_{k,3} for x**2
+#: (it couples to ONE mode) and F_k = 8*(-1)**((k-3)/2)/(k**2-4) for odd k>=3 for |x|; the
+#: covariance sum telescopes to S = 8/9, and rho = ((8/5)pi/3)/sqrt((8/9)pi**2/3) = 2*sqrt(6)/5.
+#: The k>=2 start of Kerov's sum is what encodes conditioning on the box count, which is the
+#: arc's own `cond = cXY - cXN*cYN/VN`.  Producer, 8/8 PASS, exact symbolic throughout:
+#: computations/deltalambda/wlambda_covariance_epic_M1_rho_inf_kerov_derivation.py
 #:
-#: i.e. the literal agrees with the candidate through SIX significant digits and departs at the
-#: seventh -- exactly the signature of a 6-7-digit extrapolation written to 12.  The discriminator
-#: is whether digits 7-12 of the extrapolation are converged, which the arc has not established.
-#: Until it does, write the identification with `approx`, never `=` (AGENTS.md section 7ab).
+#: SUPERSEDES the literal 0.979796195657 recorded by merged PR #5901, which was a numerical
+#: extrapolation.  The two agree through six significant digits and depart at the seventh:
+#:
+#:     extrapolated  0.979796195657
+#:     2*sqrt(6)/5   0.979795897113
+#:     relative gap  3.047e-07   (6.09e-07 on the square)
+#:
+#: The former comment here said the discriminator was "whether digits 7-12 of the extrapolation
+#: are converged".  The derivation answers it from the other side and the answer is NO: digits
+#: 7-12 of that literal are extrapolation error, not signal.  Consequently the `approx`-not-`=`
+#: instruction that used to close this comment is DISCHARGED for rho_inf -- it may now be written
+#: with `=`, because it is exact.  It still binds SIG_RATIO_INF below, which remains extrapolated.
+#:
+#: Two consumers deliberately keep their own copy of the old literal and must NOT be "drained"
+#: into this import: wlambda_covariance_epic_M1_rho_inf_closed_form_resolvability.py line 58
+#: (RHO_LITERAL, "as recorded") studies that extrapolation as its object, so importing the exact
+#: value would make it circular.
 with mp.workdps(_DPS):
-    RHO_INF = mp.mpf('0.979796195657')
+    RHO_INF = 2 * mp.sqrt(6) / 5
 
 #: IO limit of sigma_D / sigma_A.
 with mp.workdps(_DPS):
@@ -63,6 +80,12 @@ with mp.workdps(_DPS):
 #:
 #: DERIVED, not a fourth literal.  The three numbers PR #5901 reports are not independent: to all
 #: twelve recorded digits, 0.979796195657 - 0.679609581496 = 0.300186614161 EXACTLY in decimal.
+#:
+#: MIXED TIER as of the rho_inf derivation above.  M_INF is now an EXACT value minus an
+#: EXTRAPOLATED one, so it is no better than SIG_RATIO_INF and inherits that leg's ~1e-6.  It
+#: moved 0.300186614161 -> 0.300186315617 (9.945e-07 relative) when RHO_INF was made exact; any
+#: probe output differing from a pre-derivation record at the sixth decimal has THAT cause and is
+#: not a regression.  Deriving SIG_RATIO_INF is what would make M_INF exact; that is still open.
 #: That is the arc's own definition m_inf = rho_inf - (sigma_D/sigma_A)_inf, and typing it as a
 #: separate literal made an identity look like a coincidence.  Deriving it has two consequences
 #: worth knowing:
