@@ -1,0 +1,219 @@
+{
+  "engine": "mpmath+sympy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-09-07T16:46:39.747496+00:00",
+  "commitSha": "b3e05ed6f35521d775c83edffe8d4cf6aada665d",
+  "assertions": [
+    {
+      "name": "push-down_sum_j_X_j_=_-(z+1)_(Vieta),_a_polynomial_in_z",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sympy exact / mpmath 50 dps trapezoid on the circle"
+    },
+    {
+      "name": "polynomial_1-form_p1(z)_dz_is_exact:_primitive_-(z^2/2_+_z)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sympy exact / mpmath 50 dps trapezoid on the circle"
+    },
+    {
+      "name": "six_branch_points_obtained",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sympy exact / mpmath 50 dps trapezoid on the circle"
+    },
+    {
+      "name": "every_small_circle_induces_a_transposition_(matches_the_branch_probe)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sympy exact / mpmath 50 dps trapezoid on the circle"
+    },
+    {
+      "name": "fixed-sheet_circle_integral_vanishes_at_every_branch_point_(<_1e-30,_50_dps)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sympy exact / mpmath 50 dps trapezoid on the circle"
+    },
+    {
+      "name": "exchanged-pair_circle_integral_vanishes_at_every_branch_point_(<_1e-30)",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sympy exact / mpmath 50 dps trapezoid on the circle"
+    },
+    {
+      "name": "closed_loop_on_the_curve_(lasso_twice):_integral_<_1e-30_on_every_sheet_⇒_holono",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sympy exact / mpmath 50 dps trapezoid on the circle"
+    },
+    {
+      "name": "trapezoid_rule_converged_on_the_fixed-sheet_and_pair_integrals_(N_=_800_vs_1600_",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "sympy exact / mpmath 50 dps trapezoid on the circle"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "colour-cubic-abelian-twist-holonomy",
+  "scriptFile": "colour_cubic_abelian_twist_holonomy_probe.py",
+  "scriptHash": "4c53bc703001",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "5df83fbc24b06f8a"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/colour_cubic_abelian_twist_holonomy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/colour_cubic_abelian_twist_holonomy_probe.py"
+  },
+  "description": "qou-d0qq, framework-side plan step 2 (candidate C3): the abelianised Cartan connection A⁰ = X dz on the colour cubic supplies NO twist on ℂ∖Δ. Push-down Σ_j X_j dz = −(z+1) dz is exact (Vieta); around every branch point the fixed sheet's circle integral and the exchanged pair's sum both vanish to 1e-30 at 50 dps (trapezoid, geometric convergence, N doubled), so the closed loop on the curve (lasso twice) has zero integral on every sheet and holonomy exp(∮A⁰) = 1. Scope (b) — invariant: holomorphy of the fixed sheet inside the circle + Vieta. The deformation 1 ↦ q₀ therefore cannot come from the framework's own abelian connection; it enters as an external twist exponent (C3′), i.e. the KZ level. Nothing reads q₀; anchor independent.",
+  "contentBlock": "conj:hecke-monodromy-step-two",
+  "parameters": {
+    "branch_points_source": "witness",
+    "circle_radius": "0.055753181896160942735",
+    "q0Anchor_reason": "independent: no q0 is read; the cubic, its branch points and A⁰ are q-free"
+  },
+  "data": {
+    "push_down": {
+      "p1": "-z - 1",
+      "primitive": "-(z^2/2 + z)"
+    },
+    "per_branch_point": [
+      {
+        "z_k": "(-0.974815532978038603071239093942 - 0.223012727584643770942226560641j)",
+        "radius": "0.055753181896160942735",
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "is_transposition": true,
+        "fixed_sheet_integral_abs": "4.196641291e-51",
+        "exchanged_pair_integral_abs": "9.097013995e-52",
+        "total_abs": "4.184838359e-51",
+        "closed_loop_on_curve_abs": "8.393282581e-51",
+        "trapezoid_N800_vs_N1600_fixed_and_pair": "2.527971702e-51",
+        "min_root_separation": "0.4652958574",
+        "holonomy_exp_closed_loop_minus_1_abs": "8.01829413e-51"
+      },
+      {
+        "z_k": "(-0.974815532978038603071239093942 + 0.223012727584643770942226560641j)",
+        "radius": "0.055753181896160942735",
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "is_transposition": true,
+        "fixed_sheet_integral_abs": "3.093856725e-51",
+        "exchanged_pair_integral_abs": "2.035761137e-51",
+        "total_abs": "2.749789538e-51",
+        "closed_loop_on_curve_abs": "6.18771345e-51",
+        "trapezoid_N800_vs_N1600_fixed_and_pair": "2.265106831e-51",
+        "min_root_separation": "0.4652958574",
+        "holonomy_exp_closed_loop_minus_1_abs": "5.34552942e-51"
+      },
+      {
+        "z_k": "(0.105829586188268020990938731157 - 0.937138937838903436914878115252j)",
+        "radius": "0.055753181896160942735",
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "is_transposition": true,
+        "fixed_sheet_integral_abs": "1.924217304e-51",
+        "exchanged_pair_integral_abs": "1.594568667e-51",
+        "total_abs": "2.674487761e-51",
+        "closed_loop_on_curve_abs": "3.848434609e-51",
+        "trapezoid_N800_vs_N1600_fixed_and_pair": "8.015726016e-52",
+        "min_root_separation": "0.6118682636",
+        "holonomy_exp_closed_loop_minus_1_abs": "2.67276471e-51"
+      },
+      {
+        "z_k": "(0.105829586188268020990938731157 + 0.937138937838903436914878115252j)",
+        "radius": "0.055753181896160942735",
+        "permutation": [
+          1,
+          0,
+          2
+        ],
+        "is_transposition": true,
+        "fixed_sheet_integral_abs": "1.387809716e-51",
+        "exchanged_pair_integral_abs": "1.064724954e-51",
+        "total_abs": "3.688235433e-52",
+        "closed_loop_on_curve_abs": "2.775619432e-51",
+        "trapezoid_N800_vs_N1600_fixed_and_pair": "6.218709898e-52",
+        "min_root_separation": "0.6118682636",
+        "holonomy_exp_closed_loop_minus_1_abs": "2.67276471e-51"
+      },
+      {
+        "z_k": "(0.118985946789770582080300362785 - 1.05364074271210914502945935065j)",
+        "radius": "0.055753181896160942735",
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "is_transposition": true,
+        "fixed_sheet_integral_abs": "2.143591444e-51",
+        "exchanged_pair_integral_abs": "1.847110733e-52",
+        "total_abs": "2.175839854e-51",
+        "closed_loop_on_curve_abs": "4.287182889e-51",
+        "trapezoid_N800_vs_N1600_fixed_and_pair": "1.116125025e-51",
+        "min_root_separation": "0.6322035305",
+        "holonomy_exp_closed_loop_minus_1_abs": "5.34552942e-51"
+      },
+      {
+        "z_k": "(0.118985946789770582080300362785 + 1.05364074271210914502945935065j)",
+        "radius": "0.055753181896160942735",
+        "permutation": [
+          0,
+          2,
+          1
+        ],
+        "is_transposition": true,
+        "fixed_sheet_integral_abs": "1.533489068e-51",
+        "exchanged_pair_integral_abs": "1.900233196e-51",
+        "total_abs": "2.88010352e-51",
+        "closed_loop_on_curve_abs": "3.066978136e-51",
+        "trapezoid_N800_vs_N1600_fixed_and_pair": "9.690816226e-52",
+        "min_root_separation": "0.6322035305",
+        "holonomy_exp_closed_loop_minus_1_abs": "2.67276471e-51"
+      }
+    ],
+    "verdict": "NEGATIVE, scope (b): the framework's abelian connection A⁰ = λ_SW has trivial holonomy around every ramification point and a trivial push-down, so it is not the twist; candidate C3 is dead and C3′ (external exponent μ with e^{2πiμ} = −q₀²) is the survivor. Combined with UntwistedMonodromyPrune (finite-order eigenvalues are never > 1), no framework geometry in the corpus produces the deformation 1 ↦ q₀ — it is an input."
+  },
+  "caveats": [
+    "The prolongation jets λ_SW^{(n)} ~ (z − z_k)^{1/2 − n} carry square-root monodromy −1 (NaStokesKeystone.lean); a root of unity, not a real q₀ > 1 — covered by UntwistedMonodromyPrune, not re-measured here."
+  ]
+}
