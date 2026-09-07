@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-09T12:42:32Z
-updated_at: 2026-09-07T09:23:33Z
+updated_at: 2026-09-07T09:35:42Z
 ---
 
 
@@ -401,3 +401,63 @@ The convention-C content of that mirror is still real; what is wrong is the
 **Bean stays open** — the `computations/` surface is untouched here, and
 AGENTS.md's value-audit figure (85 confirmed C bindings, 21 of them invisible
 to the shape audit) is the live scope.
+
+
+## 2026-09-07 (2) — the `computations/` shape audit: 13 actionable, and the growth is LEGITIMATE
+
+`scripts/convention-c-producer-audit.py` on `main`:
+
+    6 sites / 6 files   probes / exploratory
+    6 sites / 6 files   computations/qbeta — BLOCKED on the qou-cds1 re-derivation (registry, still actionable)
+    1 site  / 1 file    computations/probes — BLOCKED on C by design (registry)
+    1 site  / 1 file    computations — live producers
+  113 sites             deliberately C-named — labelled comparisons, not defects
+
+  ACTIONABLE (excludes blocked-by-design): 13
+
+AGENTS.md records **9** on 2026-08-29. So the count went **up**.
+
+**The detector-vs-corpus confound is RESOLVED, not assumed.** The script itself
+changed on 2026-08-29 (`a6f785390c`, *"a D arm written as a CALL defeated both
+detectors"*), so 9 → 13 could have been detector inflation. Measured both ways
+on today's tree:
+
+| detector | actionable today |
+|---|---:|
+| pre-`a6f785390c` | **15** |
+| current | **13** |
+
+The newer detector reports **fewer**, because it correctly stopped
+false-positiving two D arms written as calls. A change that lowers the count
+cannot explain a rise — so the **corpus** grew, by at least 4.
+
+**But "regression" is the wrong word, and this is the useful part.** **12 of
+the 13** sit in the `c_k` ladder cone — `computations/qbeta/` plus qbeta-axis
+probes — and the single **live producer** is `qbeta_ck_cache.py:140`
+(`z = sqrt(q) / (1 + q)`), the canonical `c_k` extractor, which AGENTS.md
+records **refuses to run under convention D**. Per
+`QOU.QBeta.decayLadder_zC_threeRow_ne_zero` the C-frame ladder and the mass
+channel's three-row forcing are mutually exclusive, so `z_C → z_D` is not a
+valid substitution there.
+
+So the growth is **new C-frame `c_k` research continuing while the D
+re-derivation is open** — which is correct, not sloppy. What is wrong is the
+*label*: 6 qbeta sites are registered `blocked_on_rederivation` and the newer
+siblings are not, so identical work is split across two buckets.
+
+**Recommendation (judgement, not a finding):** register the newer qbeta sites
+under the same `blocked_on_rederivation` entry as the existing 6. It does not
+suppress them — that bucket is explicitly "still actionable" — it just stops
+the headline implying an unexplained drift. Not done here: it is a registry
+edit affecting what every future agent reads, and it should be visible rather
+than folded into a Lean-labelling PR.
+
+**The non-qbeta remainder is the genuinely unattributed part** — 4 probes
+(`markov_reduction_h3_to_h4_verify.py:84`,
+`nucleon-lp-convention-probe.py:87`,
+`ocneanu_weights_are_sl_n_quantum_dimensions.py:207`,
+`the_qbeta_bridge_table_and_its_witness_compute_different_z_probe.py:108`).
+Three of those four have C in their *purpose* (a convention probe, an
+old-vs-new comparison, a two-`z` discrepancy probe), so they are likely
+deliberate-but-undeclared, the same shape as the Lean site fixed above. Not
+triaged individually here.
