@@ -1,11 +1,11 @@
 ---
 # qou-igjo
 title: 'qou-x631: the class basis diagonalises the quadratic twist — the conjecture is one Fourier coefficient of f^lam'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-07T08:40:49Z
-updated_at: 2026-09-07T09:06:38Z
+updated_at: 2026-09-07T09:35:26Z
 ---
 
 Branch `claude/q407-self-assuming-projections-2026-08-21`.
@@ -64,3 +64,11 @@ specifically; no blanket sign is available.
 Also exact: `c_p = 0` for **even p**, decided on integers (0 violations, k=4..12).
 Not subsumed by orthogonality, which needs both arguments to be characters — and
 log f is not one.
+
+
+**Landed** `565e51c07b` on `claude/q407-self-assuming-projections-2026-08-21`.
+18 assertions, all pass. Precision gates: baseline (HEAD~1) RED on 12 gates; this
+commit RED on the same 12 **minus `raw-float64 ratchet`**, which this change turns
+green by draining both witnesses (98 -> 0 new, 25 -> 0 tempering). Verified by
+running `scripts/precision-gates.sh` in a detached worktree at the parent commit,
+so 'pre-existing' is measured rather than assumed.
