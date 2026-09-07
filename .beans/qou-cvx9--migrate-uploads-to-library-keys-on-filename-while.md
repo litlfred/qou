@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: high
 created_at: 2026-09-06T13:48:45Z
-updated_at: 2026-09-07T04:56:58Z
+updated_at: 2026-09-07T09:58:38Z
 ---
 
 Found pre-merge on #6955 while probing its merge ordering against #6942. **A defect
@@ -271,3 +271,39 @@ this bean** rather than merely gated — it belongs to `qou-b9c3`.
     fallback covers a larger latent class (226 of 633 `structure.json` have a
     `doc_id` that is neither the stem nor `arxiv-<stem>`), but it is not what
     fixed the observed failure.
+
+
+## 2026-09-07 — the guard is SOUND and was BYPASSED; my prediction was wrong
+
+I predicted this bean's guard would miss the canonically-named orphan shape (arxiv-0705.2975v1,
+a dir already named canonically, holding only its PDF). **Tested; the prediction is refuted.**
+
+**The guard works.** Reproduced the exact shape in a synthetic repo — 2 ingested artefact dirs plus
+one bare skipped PDF, the same mix as the real commit:
+
+    REFUSED 1 move(s) — target has no structure.json:
+        uploads/0705.2975v1.pdf
+            target library/0705.2975v1/ has no structure.json
+
+It is prefix-agnostic: has_structure() keys on structure.json PRESENCE, not on the arxiv- prefix.
+My stated reason for expecting a miss was wrong about what the guard keys on. (Note also that with
+no ingested artefacts at all the script bails before any move — an even stronger refusal.)
+
+**So the orphan came in by another route.** 588ed02d5fc created it at 11:38 as
+ with no structure.json
+— two hours AFTER the guard landed at 09:21 (08d1fa9d4fd, verified an ancestor via
+git merge-base --is-ancestor). A hand git mv, or a tool that is not this script.
+
+That is the row-33 class in the detector-blindness taxonomy: **a guard installed on one of an API's
+several write paths** (bean qou-3ral). The repair is not a second entry-point guard.
+
+**Added: scripts/library-orphan-audit.py** — checks the INVARIANT over library/ itself, which no
+write path can bypass: (1) no dir lacks both sections/ and ocr/; (2) dirs - INDEX rows ==
+duplicates + containers + orphans with residual 0.
+
+Live on main: 661 dirs, 637 rows, gap 24 = 23 dup + 1 container + 0 orphans, residual 0 — OK.
+Replayed against history via git ls-tree: 23 orphans at 588ed02d5fc, 0 on main now. It would have
+caught all 23, including the one the write-path guard could not.
+
+--selftest is calibrated by REVERTING the condition (plant orphan -> must be DETECTED and report()
+must return non-zero; remove it -> must be clean), not by observing a pass.
