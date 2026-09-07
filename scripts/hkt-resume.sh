@@ -32,9 +32,28 @@ CKPT="$ROOT/.work/hkt-uiut-ckpt.json"
 MEMO="$ROOT/.work/kernel-memo"
 LOG="${HKT_LOG:-$ROOT/.work/hkt-run.log}"
 
+commit_checkpoint() {
+  # Deliberately callable on BOTH paths. The first version put this after the
+  # "already running" early exit, so `--commit` was skipped exactly when the
+  # run was healthy -- the checkpoint went uncommitted for as long as nothing
+  # went wrong, which is the opposite of what it is for. Found by using it.
+  [ "${1:-}" = "--commit" ] || return 0
+  [ -f "$CKPT" ] || return 0
+  if git -C "$ROOT" diff --quiet -- "$CKPT" 2>/dev/null && \
+     git -C "$ROOT" ls-files --error-unmatch "$CKPT" >/dev/null 2>&1; then
+    echo "[hkt] checkpoint unchanged — nothing to commit"
+    return 0
+  fi
+  n=$(python3 -c "import json,sys; print(len(json.load(open(sys.argv[1]))['atoms']))" "$CKPT")
+  git -C "$ROOT" add -f "$CKPT"
+  git -C "$ROOT" commit -q -m "chore(qou-uiut): checkpoint ${n}/19" && \
+    echo "[hkt] committed checkpoint at ${n}/19"
+}
+
 if pgrep -x python3 >/dev/null 2>&1 && \
    ps -eo cmd --no-headers | grep -q "^python3 computations/hadron_knot_table.py"; then
   echo "[hkt] already running — not starting a second producer in one checkout."
+  commit_checkpoint "${1:-}"
   exit 0
 fi
 
@@ -81,14 +100,4 @@ if grep -q "WARNING: pyhecke_native" "$LOG" 2>/dev/null; then
 fi
 echo "[hkt] no fallback warning in the started run"
 
-if [ "${1:-}" = "--commit" ] && [ -f "$CKPT" ]; then
-  if ! git -C "$ROOT" diff --quiet -- "$CKPT" 2>/dev/null || \
-     ! git -C "$ROOT" ls-files --error-unmatch "$CKPT" >/dev/null 2>&1; then
-    n=$(python3 -c "import json,sys; print(len(json.load(open(sys.argv[1]))['atoms']))" "$CKPT")
-    git -C "$ROOT" add -f "$CKPT"
-    git -C "$ROOT" commit -q -m "chore(qou-uiut): checkpoint ${n}/19" && \
-      echo "[hkt] committed checkpoint at ${n}/19"
-  else
-    echo "[hkt] checkpoint unchanged — nothing to commit"
-  fi
-fi
+commit_checkpoint "${1:-}"
