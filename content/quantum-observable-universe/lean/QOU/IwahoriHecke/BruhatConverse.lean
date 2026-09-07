@@ -40,8 +40,10 @@ said it would be. It resolves the descent case of the chain, not the branch itse
 
 ## Scope
 
-`DihedralExact` and `M i j ≠ 0` are carried exactly as `Matsumoto` carries them, since the subword
-property is used throughout; the type-`A` corollaries are hypothesis-free.
+Nothing here is conditional. `DihedralExact` and `M i j ≠ 0` used to be carried exactly as
+`Matsumoto` carried them, since the subword property is used throughout; `CoxeterDihedralOrder`
+proves both from the geometric representation, so the two order equivalences hold for **every**
+Coxeter system.
 
 -- Ref: [bjornerbrenti2005] Combinatorics of Coxeter Groups, Thm 2.2.2 (the two orders agree)
 -- Ref: [humphreys1990] Reflection Groups and Coxeter Groups, §5.10
@@ -79,8 +81,7 @@ below `N` and `ℓ(y) < N`.
 Note there is **no hypothesis that `s` is an ascent of `x`**: the first draft carried one and the
 compiler reported it unused. In the `refl` case `x = y` supplies it, and neither the ascent nor the
 descent case of the chain refers to `x`'s own length. -/
-theorem reflLe_mul_simple_of_ascent (hDE : DihedralExact cs)
-    (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0) {N : ℕ} (IH : ConverseBelow cs N) {s : B} {x : W} :
+theorem reflLe_mul_simple_of_ascent {N : ℕ} (IH : ConverseBelow cs N) {s : B} {x : W} :
     ∀ {y : W}, ReflLe cs x y → ℓ y < N → ℓ y < ℓ (y * cs.simple s) →
       ReflLe cs (x * cs.simple s) (y * cs.simple s) := by
   intro y h
@@ -94,9 +95,9 @@ theorem reflLe_mul_simple_of_ascent (hDE : DihedralExact cs)
     have hzN : ℓ z < N := by omega
     by_cases hdesc : cs.IsRightDescent z s
     · -- `s` is a descent at `z`: drop to the subword order, lift there, and come back.
-      have hxz' : BruhatLe cs x z := bruhatLe_of_reflLe cs hDE hfin hxz
+      have hxz' : BruhatLe cs x z := bruhatLe_of_reflLe cs hxz
       have hlift : BruhatLe cs (x * cs.simple s) z :=
-        bruhatLe_mul_simple_of_isRightDescent cs hDE hfin hxz' hdesc
+        bruhatLe_mul_simple_of_isRightDescent cs hxz' hdesc
       have hxsz : ReflLe cs (x * cs.simple s) z := IH z hzN _ hlift
       have hstep : ReflStep cs y' (y' * cs.simple s) :=
         ⟨cs.simple s, cs.isReflection_simple s, rfl, hy'⟩
@@ -109,7 +110,7 @@ theorem reflLe_mul_simple_of_ascent (hDE : DihedralExact cs)
 
 /-! ## The converse -/
 
-private theorem reflLe_aux (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0) :
+private theorem reflLe_aux :
     ∀ (n : ℕ) (w : W), ℓ w = n → ∀ u : W, BruhatLe cs u w → ReflLe cs u w := by
   intro n
   induction n using Nat.strong_induction_on with
@@ -132,7 +133,7 @@ private theorem reflLe_aux (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j
         have : ℓ (w * cs.simple s) < ℓ w := hs
         omega
       -- A reduced subword of `ω₁ ++ [s]` with product `u`.
-      obtain ⟨ω', hsub, hu⟩ := subword_property cs hDE hfin hle hredc hprodc
+      obtain ⟨ω', hsub, hu⟩ := subword_property cs hle hredc hprodc
       obtain ⟨ω'', hsub'', hred'', hprod''⟩ := QOU.Machinery.CoxeterDeletion.exists_reduced_sublist' cs ω'
       have hsubω : ω'' <+ ω₁ ++ [s] := hsub''.trans hsub
       have huω : π ω'' = u := by rw [hprod'', hu]
@@ -162,22 +163,22 @@ private theorem reflLe_aux (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j
         have hascw : ℓ (w * cs.simple s) < ℓ (w * cs.simple s * cs.simple s) := by
           rw [mul_assoc, cs.simple_mul_simple_self, mul_one]
           exact hs
-        have := reflLe_mul_simple_of_ascent cs hDE hfin IH (s := s) hru hwsN hascw
+        have := reflLe_mul_simple_of_ascent cs IH (s := s) hru hwsN hascw
         rwa [mul_assoc, cs.simple_mul_simple_self, mul_one, mul_assoc,
           cs.simple_mul_simple_self, mul_one] at this
 
 /-- **`BruhatLe → ReflLe`.** The converse bridge, closed. -/
-theorem reflLe_of_bruhatLe (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0)
+theorem reflLe_of_bruhatLe
     {u w : W} (h : BruhatLe cs u w) : ReflLe cs u w :=
-  reflLe_aux cs hDE hfin (ℓ w) w rfl u h
+  reflLe_aux cs (ℓ w) w rfl u h
 
 /-- **The two Bruhat orders are the same relation.**
 
 The corpus's subword `BruhatLe` and the reflection-generated `ReflLe` of Mathas / Dipper–James agree
 on the nose, so a statement proved against either may be cited for the other. -/
-theorem bruhatLe_iff_reflLe (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0)
+theorem bruhatLe_iff_reflLe
     {u w : W} : BruhatLe cs u w ↔ ReflLe cs u w :=
-  ⟨reflLe_of_bruhatLe cs hDE hfin, bruhatLe_of_reflLe cs hDE hfin⟩
+  ⟨reflLe_of_bruhatLe cs, bruhatLe_of_reflLe cs⟩
 
 /-! ## The left-handed mirror — free, and the form the tableau side needs
 
@@ -206,37 +207,34 @@ theorem leftReflLe_inv_of_reflLe {v w : W} (h : ReflLe cs v w) :
   | tail _ hstep ih => exact ih.tail (leftReflStep_inv_of_reflStep cs hstep)
 
 /-- **`BruhatLe → LeftReflLe`** — the direction `BruhatReflection` recorded as blocked. -/
-theorem leftReflLe_of_bruhatLe (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0)
+theorem leftReflLe_of_bruhatLe
     {u w : W} (h : BruhatLe cs u w) : LeftReflLe cs u w := by
   have h' : BruhatLe cs u⁻¹ w⁻¹ := (bruhatLe_inv_iff cs).mpr h
-  simpa using leftReflLe_inv_of_reflLe cs (reflLe_of_bruhatLe cs hDE hfin h')
+  simpa using leftReflLe_inv_of_reflLe cs (reflLe_of_bruhatLe cs h')
 
 /-- `LeftReflLe → BruhatLe` in general — the generic form of
 `BruhatReflection.bruhatLe_of_leftReflLe_An`, which was stated only on type `A`. -/
-theorem bruhatLe_of_leftReflLe (hDE : DihedralExact cs) (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0)
+theorem bruhatLe_of_leftReflLe
     {u w : W} (h : LeftReflLe cs u w) : BruhatLe cs u w :=
-  (bruhatLe_inv_iff cs).mp (bruhatLe_of_reflLe cs hDE hfin (reflLe_inv_of_leftReflLe cs h))
+  (bruhatLe_inv_iff cs).mp (bruhatLe_of_reflLe cs (reflLe_inv_of_leftReflLe cs h))
 
 /-- **The subword order and the LEFT-handed reflection order also coincide.** -/
-theorem bruhatLe_iff_leftReflLe (hDE : DihedralExact cs)
-    (hfin : ∀ i j : B, i ≠ j → M i j ≠ 0) {u w : W} :
+theorem bruhatLe_iff_leftReflLe {u w : W} :
     BruhatLe cs u w ↔ LeftReflLe cs u w :=
-  ⟨leftReflLe_of_bruhatLe cs hDE hfin, bruhatLe_of_leftReflLe cs hDE hfin⟩
+  ⟨leftReflLe_of_bruhatLe cs, bruhatLe_of_leftReflLe cs⟩
 
 /-! ## Type `A`: hypothesis-free -/
 
 theorem reflLe_of_bruhatLe_An {n : ℕ} {W : Type*} [Group W]
     (cs : CoxeterSystem (CoxeterMatrix.Aₙ n) W) {u w : W} (h : BruhatLe cs u w) :
     ReflLe cs u w :=
-  reflLe_of_bruhatLe cs (QOU.Machinery.CoxeterDihedralDescent.dihedralExact_le_three cs
-    (An_le_three n)) (fun i j hij => An_ne_zero n i j hij) h
+  reflLe_of_bruhatLe cs h
 
 /-- **The two orders coincide on type `A`**, with no hypothesis — the symmetric group, hence the
 form a consumer of Mathas / Dipper–James works in. -/
 theorem bruhatLe_iff_reflLe_An {n : ℕ} {W : Type*} [Group W]
     (cs : CoxeterSystem (CoxeterMatrix.Aₙ n) W) {u w : W} :
     BruhatLe cs u w ↔ ReflLe cs u w :=
-  bruhatLe_iff_reflLe cs (QOU.Machinery.CoxeterDihedralDescent.dihedralExact_le_three cs
-    (An_le_three n)) (fun i j hij => An_ne_zero n i j hij)
+  bruhatLe_iff_reflLe cs
 
 end QOU.IwahoriHecke.BruhatConverse

@@ -29,9 +29,10 @@ by braid moves — runs *exchange → deletion → Matsumoto*. The first was alr
 file supplies the second.
 
 ✅ **The third landed the same day** (2026-09-06): `QOU.IwahoriHecke.Matsumoto`, via
-`CoxeterRankTwo` and `CoxeterDihedralDescent`. It is hypothesis-free for `M i j ≤ 3` and
-otherwise conditional on `CoxeterRankTwo.DihedralExact`. The paragraph below saying "nothing
-here closes Matsumoto" is still an accurate statement about *this file*.
+`CoxeterRankTwo` and `CoxeterDihedralDescent`. It is hypothesis-free for every Coxeter system
+as of 2026-09-07, `CoxeterRankTwo.DihedralExact` having been proved in
+`CoxeterDihedralOrder`. The paragraph below saying "nothing here closes Matsumoto" is still an
+accurate statement about *this file*.
 
 The conditional that consumes it is `QOU.IwahoriHecke.TwMatsumoto.exists_Tw_of_matsumoto`.
 Not `BraidWordInvariance.exists_Tw_of_braidEquiv`, which quantifies over *all* words and whose
