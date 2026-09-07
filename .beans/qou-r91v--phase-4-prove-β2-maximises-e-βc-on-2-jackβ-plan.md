@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-07-24T16:31:07Z
-updated_at: 2026-09-07T10:25:25Z
+updated_at: 2026-09-07T11:16:45Z
 parent: qou-x631
 ---
 
@@ -60,3 +60,21 @@ here already eliminated at ~77%. **Read `qou-r91v`, `qou-h4fe` and `qou-4hq0`
 before opening any new route on this epic;** between them they eliminate exact
 evaluation, first-order genus expansion, FKG, Chebyshev, and now Kerov-mode
 ln-dim expansion.
+
+
+
+### 2026-09-07 correction + two more eliminations (`qou-vilx`)
+
+The Kerov-mode elimination I added above was **under-evidenced**: it read the
+single-cycle share only, and the mass of `ln f` is at **d=2** (50–66%), not d=1.
+The conclusion stands on the full expansion (d<=2 falls 90.5% -> 69.4%), but more
+to the point it is **irrelevant** — `Sigma_3` is ONE orthonormal basis vector, so
+`Cov_P(ln f, Sigma_3)` is a single Fourier coefficient and the d>=2 mass is
+orthogonal to it. The expansion's convergence has no bearing on this bean's open
+item.
+
+Two further routes **eliminated** for the open item, exact on Fractions,
+`10 <= k <= 32`: on the sign-split `G(s) = W(E_{nu+}[f^s] - E_{nu-}[f^s])`, both
+**first-order** and **increasing-concave** stochastic dominance of `nu-` over
+`nu+` fail at **k = 18 and k = 26** (gaps 0.0161, 0.0011) and hold at the other
+21 values. The conjecture holds at both. Details on `qou-vilx`.
