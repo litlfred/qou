@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-07T09:08:15Z
+updated_at: 2026-09-07T12:23:01Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -134,3 +134,87 @@ because the bug was OVER-substitution. **A guard against a missing substitution 
 structurally blind to an extra one.** Both directions are asserted now. This is the same
 detector-blindness class the tranche has hit repeatedly, in a new spelling: the check was
 correct about the question it asked and the question was the wrong half.
+
+
+---
+
+## UPDATE 2026-09-07 (second pass) — the DUALITY INDEX MAP is measured, and it is a partial negative
+
+The bean asked whether duality `rho -> rho^{-T}` induces the sigma-transport.  This pass
+does not settle that, but it settles the prerequisite: **what duality does to Ptolemy
+coordinates at all.**
+
+### From the primary source
+
+GGZ arXiv:1207.6711 Lemma 8.8 defines the Ptolemy coordinate as a DETERMINANT of
+decoration columns:
+
+    c_t = det( {g0}_{t0} u {g1}_{t1} u {g2}_{t2} u {g3}_{t3} ),   sum t_i = n
+
+with `{g}_i` the first `i` columns of `g`.  Duality sends `g -> g^{-T}`, whose columns are
+the DUAL BASIS (`w_i^T v_j = delta_ij`), so `{g^{-T}}_k` spans the annihilator of
+`span(v_{k+1},...,v_n)`: duality carries the flag to the ANNIHILATOR FLAG.
+
+**It needs a `w0` twist to even be defined.**  `g^{-T}` maps upper-unipotent `N` to
+LOWER-unipotent, so `g^{-T}N` is not a coset of `G/N`.  The map is `g -> g^{-T} w0`,
+giving `{g}_k -> ({g}_{n-k})^perp` in increasing order.
+
+### Measured (`computations/ptolemy/ptolemy_duality_index_map_probe.py`)
+
+Both assignments computed on generic decorations over Q, intersecting the |ratio| = 1
+index pairs across SIX independent decorations.  Ten indices get a unique surviving
+partner, the map is an involution, and all ten obey one rule:
+
+    0 -> 0,   1 -> 2,   2 -> 1,   3 -> 3     entrywise
+
+### The negative, which is the useful part
+
+For n = 3 the index shapes are `{3,0,0,0}`, `{2,1,0,0}`, `{1,1,1,0}`.
+
+- `{2,1,0,0}` -- the rule exchanges a 1 and a 2, so `sum t_i = 3` is PRESERVED.  These
+  are the ten.
+- `{3,0,0,0}` -- vertex points, all equal 1 by GGZ Remark 5.3.  Degenerate; they carry
+  no information and are correctly excluded.
+- `{1,1,1,0}` -- the rule would give `{2,2,2,0}`, sum 6.  **NOT A VALID PTOLEMY INDEX.**
+
+So **duality is NOT a relabelling of the whole variety**: it is one on the `{2,1,0,0}`
+coordinates and provably cannot be on the `{1,1,1,0}` ones.  Anything that identifies
+duality with the sigma-transport has to say what happens on the `{1,1,1,0}` coordinates,
+where the image is not +- a Ptolemy coordinate.
+
+### A guess of mine that this REFUTES
+
+I had reasoned that the natural candidate `t_i -> n - t_i` fails on arithmetic
+(`sum (n - t_i) = 4n - n = 3n`).  That is right as far as it goes, but the measured map
+is NOT "t_i -> n - t_i restricted somehow" -- it agrees with it on the interior values
+{1,2} and DISAGREES on the boundary values {0,3}, where it is the identity rather than
+the swap 0 <-> 3.  Do not describe the result as a complementation.
+
+### Also settled this pass: Gal(K/Q) explicitly
+
+`computations/ptolemy/ptolemy_class1_galois_group.py` computes sigma by reducing to a
+QUADRATIC over Q(zeta_3) instead of a quartic over Q (since [K:Q(u)] = 2 and {1,T} is a
+Q(u)-basis).  The quartic system did not finish; the quadratic route does, in seconds.
+Two automorphisms invert zeta_3, both verified EXACTLY (`f(sigma T) = 0 mod f`):
+
+    sigma_a: T -> -64 T^3/101015625 - T + 760000/1293
+    sigma_b: T -> -T^3/625000 + 19 T^2/8000 - 1293 T/512 + 11875/8
+
+Exactly two is the right count: |Gal(K/Q)| = 4 and the subgroup fixing Q(zeta_3) has
+index 2.
+
+### A near-vacuous test, recorded so it is not re-run as evidence
+
+Before having sigma I checked the 6 coordinates lying in the quadratic subfield Q(zeta_3)
+and found all 6 map to another coordinate under sigma, 0 misses.  **That is not
+evidence.**  Those 6 take only TWO distinct values, both non-rational; sigma is the unique
+non-trivial involution of that subfield so it cannot fix either, and the only place it can
+send them is the other one.  Landing back on a coordinate was forced by pigeonhole.  A
+test satisfied identically is not a confirmation.
+
+### Still open
+
+Whether duality INDUCES the sigma-transport.  The index map above is a necessary
+ingredient, not the identification.  Next: work out what duality does to the
+`{1,1,1,0}` coordinates, since that is where it stops being a relabelling and is
+therefore where the content is.
