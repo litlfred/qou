@@ -1,13 +1,14 @@
 ---
 # qou-86p5
 title: Cite [vanderput2006] at QOU/Mass/BindingScalarKernelParityExclusion.lean — fix the E(r,d,b) pointer (crmath-2011 is Bugeaud, not van der Put–Reversat); Thm 3.4/3.5 state it in English
-status: todo
+status: in-progress
 type: task
+priority: normal
 tags:
     - paper-relevance-triage
     - qdiff-stokes
 created_at: 2026-09-07T08:36:06Z
-updated_at: 2026-09-07T08:36:06Z
+updated_at: 2026-09-07T09:05:38Z
 parent: qou-2akx
 ---
 
