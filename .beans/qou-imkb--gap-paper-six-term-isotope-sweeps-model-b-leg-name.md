@@ -310,3 +310,43 @@ to the explicit `model-a` route**, so the fall-through introduces no new
 numbers — it removes a crash. Precision gates `--changed`: verdict
 byte-identical to `main`'s (same nine blocking gates, same four advisories) and
 **zero mentions of this file**.
+
+---
+
+## 2026-09-07 — correction: the producer DID exist (shallow-clone artifact)
+
+Not my bean; adding a finding, not resolving it.
+
+This bean and the two producers that quote it assert that
+`probe_sdp_canonical_paper_formula.py` "has never existed" and that "no commit
+in this clone's history touches it". **The second clause is the tell.** That
+was measured on a clone at `--depth`, where every commit older than the graft
+is unreachable, so "the oldest reachable commit is the boundary" and "it never
+existed" return the same answer. `git fetch --unshallow` gives **36771 commits
+and one real root** (`2e1c6929e0`, no graft), and against that history:
+
+| | |
+|---|---|
+| added | `e99554d9912` — "D end-to-end audit: paper formula REFUTED on SDP-canonical T_w" |
+| modified | `d2553e83c5b` |
+| moved to `_deprecated/probes/` | `aac4f0050a4` — a pure rename, `\| 0` in `--stat` |
+| untracked with the root scratch dirs | `0763606e4f0` |
+| size | 163 lines |
+
+    git show aac4f0050a4:_deprecated/probes/probe_sdp_canonical_paper_formula.py
+
+Its docstring says what it was: a **refutation** probe — "paper formula fails
+by 87-100 % on all three atoms regardless of convention. Multi-term
+decomposition … is required; single-term ρ·tr_M is structurally inadequate."
+So it was deprecated on purpose, having done its job.
+
+**None of this changes the verdict.** Model B stays unavailable for the reason
+this bean gives second and which has nothing to do with history: its input,
+the **6_2 deuteron assignment, was retired by the owner ruling of
+2026-08-29**. A recovered producer would compute from a retired assignment.
+Reviving it is a decision, and it is yours.
+
+What changes is that the recovery path is written down. The three source sites
+now say "recoverable at `<sha>`" instead of "does not exist", so the next agent
+weighing a revival is not told the source is gone. Commit `3b87ba5558d`;
+sibling finding on `qou-nk3h`, whose claim failed the same way.

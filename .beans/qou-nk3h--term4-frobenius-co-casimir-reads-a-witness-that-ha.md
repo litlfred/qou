@@ -176,3 +176,53 @@ deuterium by 10⁷ %, one isotope landing on target is noise finding a target, a
 its T1 is 0.0000 there. Do not quote it. The predictor's stale witness
 (`qou-syit`) is now *more* stale, and still cannot be refreshed until its 70
 raw-float64 payload fields are fixed at the producer.
+
+---
+
+## 2026-09-07 — correction: the witness AND its producer both existed
+
+Not my bean; adding a finding, not resolving it.
+
+`mass_formula_6term._load_sigma_3A_table` carried this in bold: "**That witness
+has never existed in this repository and no producer in the tree writes it**"
+(measured 2026-08-26, cited to this bean). Both halves are false. The
+measurement was taken on a shallow clone, where a negative claim about history
+is only as good as the depth. Against the full **36771-commit** history:
+
+    computations/probe_term4_conventions.py
+    computations/probe-term4-conventions.witness.json
+    folio-assistant/computations/probe_term4_conventions.py       (earlier path)
+    folio-assistant/computations/probe-term4-conventions.witness.json
+    _deprecated/probes/probe_term4_conventions.py                 (final path)
+    _deprecated/probes/probe-term4-conventions.witness.json
+
+    git show 530e326cab3:computations/probe-term4-conventions.witness.json
+
+**And it fits the loader exactly.** The recovered payload is
+`data.sigma_inv_dim_q_at_q0`, keyed `n=3, 6, 9, … 24` (A = 1…8) as 49-digit
+decimal strings, plus `n_partitions`. That is precisely the shape
+`_load_sigma_3A_table` reads — including the `data`-nesting the 2026-08-26
+note says the pre-fix loader would have missed. So the loader would work
+against this file verbatim, with no adaptation.
+
+    n=3   2.4972905456049155559958392316648696318481907303285
+    n=6   3.2021340012217462447876888457263824407351830058928
+    n=9   2.5438838469814623740414261832455538873537132874296
+    n=12  2.2519340480390228235777192335579209844500138474823
+     …    (through n=24)
+
+**Deliberately not restored.** Two reasons, and the first is absolute: placing
+a witness recovered from history is hand-placing numbers that no producer ran
+in this tree, which is the one move this corpus forbids outright. Second, it
+is a numbers-move — Term 4 would switch from the caller's fallback to the real
+Σ_{λ⊢3A} 1/dim_q(λ) table inside a live mass formula, so it wants sequencing,
+not a side effect of a docstring fix.
+
+**The supported route is to revive `probe_term4_conventions.py` from
+`_deprecated/` and RE-RUN it**, which produces a witness with today's q₀
+anchor and precision rather than a 2026-05 artifact. Note the recovered
+witness predates the q₀-anchor work entirely, so its values should be treated
+as a schema reference, not as an answer.
+
+The docstring now says all of the above instead of "never existed". Commit
+`3b87ba5558d`; sibling finding on `qou-imkb`, whose claim failed the same way.
