@@ -105,3 +105,39 @@ drive-by change to their write path deserves its own review.
 single write at the end. That is a plausible contributor to the cost not being
 "independent of dim V_λ" as documented, though it is not established as *the*
 cause.
+
+## HARD BOUND: >30 minutes, i.e. >450× — the run hit its timeout unfinished
+
+`EXIT=124`. The `timeout 1800` fired with ⁵Li **still on its first atom**, having
+never printed a second line. So the earlier ">150×" is superseded by a measured
+lower bound of **>450×** against the documented 4 s, and ⁶Li — 385 partitions to
+⁵Li's 176 — was never reached at all.
+
+Two figures for the record, both wall clock at 100 % CPU throughout:
+
+    documented   5Li H15 (176 λ)   ~4 s
+    measured     5Li H15 (176 λ)   >1800 s, did not complete
+
+Per-λ that is **>10 s**, against a documented **~20 ms** — and the docstring
+attributes the 20 ms to `chi_q_via_gp` being *"independent of dim V_λ"*, which is
+the clause the measurement is pointed at.
+
+**RSS grew monotonically the whole time**: 198 MB at 7:45 → 310 MB at 29:36,
+~5 MB/min, on a single atom. Consistent with every partition's result being held
+until the single write at the end (see the write-path note above), and a
+plausible contributor to the cost — not established as the cause.
+
+## The kill was clean, as predicted, and that is worth having confirmed
+
+The write-path analysis above said a mid-compute kill would leave the caches
+untouched because the producer writes once at the end. Verified after `EXIT=124`:
+`git status computations/` is empty, and both files still parse with their full
+partition counts (176 and 385). So a `timeout` on this producer costs the run and
+nothing else — useful to know before committing to a multi-hour budget.
+
+## Restarted at `timeout 14400`
+
+Four hours, both atoms in one invocation. ⁵Li's result is written before ⁶Li
+begins, so an interruption during ⁶Li still banks ⁵Li. Extrapolating the >10 s/λ
+rate, ⁶Li's 385 λ is on the order of an hour by itself; the 4 h budget is sized so
+the pair is not the binding constraint again.
