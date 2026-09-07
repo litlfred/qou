@@ -1311,3 +1311,60 @@ here (`pip install -e tools/qou-substrate --no-deps`), which clears the gate
 suite's PREFLIGHT and makes a full 27-gate run possible in this container for
 the first time — but it is DEFERRED until the table is idle. The install is
 ephemeral and needs repeating in a fresh container.
+
+---
+
+## 2026-09-07 — container reset: what was lost, and the two traps in rebuilding
+
+The container was replaced. Everything committed survived (branch is at
+`0bc0813ad`); **`.work/` did not**, taking the 16-atom checkpoint and a
+9914-entry kernel memo — roughly 9.5 h of compute.
+
+**That was avoidable and the cause is mine.** `.work/kernel-memo/` is
+gitignored (line 287, added deliberately — 37 MB of derived data). But
+`.work/hkt-uiut-ckpt.json` is **23 KB and was never ignored at all**. It showed
+as `?? .work/hkt-uiut-ckpt.json` in every `git status` I ran across the whole
+session, and I never committed it. The one artifact whose entire purpose is to
+survive a process that outlives its container was left untracked.
+
+**Fix, applied here:** the checkpoint is committed as it advances, so a reset
+costs at most the atom in flight rather than all of them.
+
+### Trap 1 — the fresh container has none of the numeric stack
+
+`mpmath`, `numpy`, `scipy`, `gmpy2`, `sympy`, `qou_substrate` were all absent;
+the previous container had them preinstalled. All install cleanly
+(`pip install mpmath numpy scipy gmpy2 sympy`, plus
+`pip install -e tools/qou-substrate --no-deps`).
+
+### Trap 2 — the one that would have produced WRONG NUMBERS
+
+With the stack installed the table runs, and *starts producing a table*:
+
+    *** WARNING: pyhecke_native.lp_accumulator_step_traces_mpfr is UNAVAILABLE.
+    *** Falling back to _build_ysn_matrices, which VIOLATES the braid relation
+    *** ... not a representation of H_n(q) ... Any binding number from this run
+    *** is NOT the framework's value -- measured 17.3 % off at deuterium.
+    *** Do not commit a witness from it.
+
+This is the defect this bean is NAMED for, arriving as an environment
+condition. `pyhecke-native` is not on PyPI, so a default container carries a
+stale wheel or none, and the fallback is **silent in the numbers**: proton,
+neutron and protium came out at 0.629328 / 0.475134 / 1.146338, byte-identical
+to the good run. It only diverges on compounds. A run left going would have
+written a checkpoint and a witness that look entirely normal.
+
+Killed it and deleted the checkpoint it had written. The fix is in the warning:
+
+    cd tools/pyhecke-native && maturin build --release \
+      && pip install --force-reinstall --no-deps target/wheels/*.whl
+
+Rust is present (cargo 1.94.1); only `maturin` needed installing. Build 3m34s.
+Verified `lp_accumulator_step_traces_mpfr` is AVAILABLE and the restarted run
+emits **zero** fallback warnings before trusting it.
+
+### Restarting from zero
+
+19 atoms again, with an empty memo. The three that matter — si28, ca40, fe56 —
+are the ones `qou-3uvs` cannot settle without mpf, so the run still has to
+happen; ne20's verdict from yesterday is already committed and stands.
