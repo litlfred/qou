@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-07T11:01:32Z
-updated_at: 2026-09-07T11:02:14Z
+updated_at: 2026-09-07T11:04:24Z
 ---
 
 Found on PR #7061 while classifying witness churn from verification runs.
@@ -66,3 +66,11 @@ Only `ms` was measured. Whether OTHER unmasked volatile keys exist in the
 corpus was not checked, and the reasoning above says to expect some. A
 systematic pass would diff a sample of witnesses across two no-op re-runs and
 report every key that moved — that finds the class, not one member of it.
+
+
+UPDATE, same session: the spot-check is now **10 of 28**, not 6. Four further
+witnesses (`m1-kappa-structure`, `m1-kendall-route`, and re-runs of
+`m1-kappa-large-n-sampler` / `m1-kappa-n-exact`) were dirtied by a still-running
+background sweep after the first revert, and their diffs were **also `"ms"`
+alone** — 4 changed lines, all of them `ms`. That is ten independent
+confirmations and zero counter-examples. The other 18 remain UNVERIFIED.
