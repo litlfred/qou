@@ -1,13 +1,12 @@
 ---
 doc_id: kirbycal
-doc_title: "A Calculus for Framed Links in S^3"
+doc_title: "Inventiones math. 45, 35- 56 (1978) mathematicae 9 by Springer-Verlag 197 A Calculus for Framed Links in S 3"
 section_id: sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to
 section_title: "A and 1 B, we can change the left end of A to"
 section_number: 1
 pages: 15-20
 source_pdf: kirbycal.pdf
 source_sha256: 8dae9487ed32a3bd
-doc_brief: "Kirby, A calculus for framed links in S³ (Invent. Math. 45, 35–56, 1978) — the two moves generating equivalence of framed-link surgery presentations of a 3-manifold."
 ---
 1 -1 -2 -2 
 Fig. 4.11 

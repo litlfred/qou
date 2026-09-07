@@ -5,7 +5,9 @@
   "file": "0409040v2.pdf",
   "sha256": "986093ee95b94b241d0bd0147d8769ea42a3c23486c9a8d849af0d5155d7f9a2",
   "bytes": 125643,
-  "pages": 7
+  "pages": 7,
+  "text_source": "embedded",
+  "extractor": "pypdf"
  },
  "metadata": {
   "arxiv": {
@@ -15,22 +17,21 @@
    "stamp_date": "22 Nov 2004"
   },
   "doi": null,
-  "title": "On the correlation between the binding energies of the triton and the alpha-particle",
-  "authors_raw": "Forschungszentrum Jülich, Institut für Kernphysik, D-52425 Jülich, Germany and",
-  "abstract": "We consider the correlation between the binding energies of the triton and the α-particle which is empirically observed in calculations employing diﬀerent phenomenological nucleon-nucleon in- teractions. Using an eﬀective quantum mechanics approach fo r short-range interactions with large scattering length |a| ≫ ℓ, where ℓ is the natural low-energy length scale, we construct the eﬀec tive interaction potential at leading order in ℓ/|a|. In order to renormalize the four-nucleon system, it is suﬃcient to include a SU (4)-symmetric one-parameter three-nucleon interaction i n addition to the S-wave nucleon-nucleon interactions. The absence of a f our-nucleon force at this order explains the empirically observed correlation between the binding e nergies of the triton and the α-particle. We calculate this correlation and obtain a prediction for th e α-particle binding energy. Corrections to our results are suppressed by ℓ/|a|. PACS numbers: 21.45.+v, 21.10.Dr, 03.65.Ge ∗ Electronic address: l.platter@fz-juelich.de †Electronic address: hammer@phys.washington.edu ‡Electronic address: meissner@itkp.uni-bonn.de 1",
+  "title": "On the correlation between the binding energies of the trito n and the \u03b1-particle L. Platter \u2217",
+  "authors_raw": "Forschungszentrum J\u00fclich, Institut f\u00fcr Kernphysik, D-52425 J\u00fclich, Germany and",
+  "title_lines": [
+   "On the correlation between the binding energies of the trito n and",
+   "the \u03b1-particle",
+   "L. Platter \u2217"
+  ],
+  "abstract": "We consider the correlation between the binding energies of the triton and the \u03b1-particle which is empirically observed in calculations employing di\ufb00erent phenomenological nucleon-nucleon in- teractions. Using an e\ufb00ective quantum mechanics approach fo r short-range interactions with large scattering length |a| \u226b \u2113, where \u2113 is the natural low-energy length scale, we construct the e\ufb00ec tive interaction potential at leading order in \u2113/|a|. In order to renormalize the four-nucleon system, it is su\ufb03cient to include a SU (4)-symmetric one-parameter three-nucleon interaction i n addition to the S-wave nucleon-nucleon interactions. The absence of a f our-nucleon force at this order explains the empirically observed correlation between the binding e nergies of the triton and the \u03b1-particle. We calculate this correlation and obtain a prediction for th e \u03b1-particle binding energy. Corrections to our results are suppressed by \u2113/|a|. PACS numbers: 21.45.+v, 21.10.Dr, 03.65.Ge \u2217 Electronic address: l.platter@fz-juelich.de \u2020Electronic address: hammer@phys.washington.edu \u2021Electronic address: meissner@itkp.uni-bonn.de 1",
   "docinfo": {
    "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
    "CreationDate": "D:20181112102201-05'00'",
    "Creator": "LaTeX with hyperref package",
    "Title": "",
    "Author": ""
-  },
-  "title_lines": [
-   "On the correlation between the binding energies of the trito n and",
-   "the α-particle",
-   "L. Platter ∗"
-  ],
-  "title_prev": "On the correlation between the binding energies of the trito n and the α-particle L. Platter ∗"
+  }
  },
  "toc": [
   {
@@ -51,6 +52,16 @@
  "toc_source": "outline",
  "sections": [
   {
+   "id": "sec-front-matter",
+   "number": null,
+   "title": "Front matter",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 6,
+   "n_chars": 18489,
+   "n_words": 3093
+  },
+  {
    "id": "sec-000-acknowledgments",
    "number": null,
    "title": "Acknowledgments",
@@ -65,7 +76,7 @@
   "pages_without_text": 0,
   "likely_scanned": false,
   "toc_entries": 2,
-  "sections": 1,
-  "chars_total": 2213
+  "sections": 2,
+  "chars_total": 20702
  }
 }

@@ -1,13 +1,12 @@
 ---
 doc_id: arxiv-1508.01458v1
-doc_title: "Knotty inﬂation and the dimensionality of spacetime"
+doc_title: "Knotty inflation and the dimensionality of spacetime"
 section_id: sec-000-acknowledgments
 section_title: "Acknowledgments"
 section_number: null
 pages: 5-5
 source_pdf: 1508.01458v1.pdf
 source_sha256: 37cfb89f419c9eab
-doc_brief: "Knotty inflation and the dimensionality of spacetime — 1 sections: Acknowledgments"
 ---
 AB is supported by STFC. The work of TWK
 was supported by US DOE grant de-sc0010504.
