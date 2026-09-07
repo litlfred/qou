@@ -223,12 +223,64 @@ digitised table (SnapPy's `LinkExteriors`, triangulations by Joe Christy); the b
 held, and the identification of SnapPy's table with the book's diagrams is SnapPy's claim, recorded
 as such. The mirror is obtained by conjugating the shapes, as §3 said.
 
+**Two more held sources, same answer (owner uploads of 2026-09-07).** Dunfield's revised
+Hatcher–Oertel table (`library/arxiv-math-9901120v3` §2, *notation follows [HO] and [Rol]*) gives
+`5₂ = K(3/7) : 0, 4, 10` — the negatives of the derived slopes, from a source independent of SnapPy
+and in Rolfsen's own notation (probe assertion 9/9). And Garoufalidis–Zagier state their convention
+outright (`arxiv-2111.06645v3` §10, *Orientation conventions*): *"We will be using the consistent
+orientation convention for `M_K` of the SnapPy program"*, with the trace field and complex volume
+taken from SnapPy — so every `5₂` quantity in GZ (the `Φ^{(5₂,σ)}` series, the Habiro-like functions,
+Appendix A's numerics) refers to SnapPy's `5_2`, i.e. the **mirror** of the derived triangulation.
+SnapPy's complex volume of `5_2` is `2.82812… − 3.02413… i` and of its mirror `+3.02413… i`; that
+sign is the invariant a source has to print to be pinned.
+
 **What remains open on the bean.** Which of GGM's `S⁺`/`S⁻` (the `(96)`/`(97)` factorisations,
-`FiveTwoDTSpectrumSplit`) attaches to which chirality: GGM state no table-relative orientation, and
-the three held resurgence papers (`arxiv-2012.00062v3`, `arxiv-2111.04763v2`, `arxiv-2208.14188v2`)
-treat only 4₁ and 5₂. That half stays a source question; the library cannot be built out for it
-from this sandbox (arXiv, publisher and author hosts all return no route; only GitHub, PyPI and the
-GitHub API are open).
+`FiveTwoDTSpectrumSplit`) attaches to which chirality. GGM build on GZ and cite their conventions,
+but none of the four held GGM papers (`arxiv-2007.10190v2`, `arxiv-2012.00062v3`,
+`arxiv-2111.04763v2`, `arxiv-2208.14188v2`) states an orientation or prints a signed complex volume
+or an A-polynomial for `5₂` in its sectioned text; inheritance by citation is not a held statement.
+What would close it: a signed `v(5₂)` or an `A_{5₂}(x, y)` in a GGM text, matched against SnapPy's
+`5_2` (`−3.02413… i`; Culler's `A_{K3_2}`) — one line, if a source carries it.
+
+## 3e. Route C, M3: the third knot's `H_floor` inputs, from the solved Ptolemy varieties (2026-09-07)
+
+**Producer:** [`computations/probes/aomega_m3_pretzel_remainder_from_ptolemy_probe.py`](../../computations/probes/aomega_m3_pretzel_remainder_from_ptolemy_probe.py)
+(10/10); **Lean:** `QOU/QBeta/PretzelRemainderFromPtolemy.lean` (sorry-free).
+
+`qou-m3ad` Part 4 had the `(−2,3,7)` row of Garoufalidis–Zagier's table as a transcription and called
+the count `7` *a prediction, not a check*, the Ptolemy database being firewalled. The variety is small
+enough to solve here. SnapPy's census `m016` (= `K12n242` = `(−2,3,7)` = Culler's `K3_1`; 3
+tetrahedra; the volume `2.82812…` it shares with `5₂`) has two `N = 2` obstruction classes, each with
+three Ptolemy coordinates and four equations; a lex Gröbner basis (sympy, exact) reduces each to one
+cubic:
+
+| class | cubic | disc | real roots | field |
+|---|---|---|---|---|
+| 1 | `c³ − c − 1` | `−23` | 1 | `ℚ(ξ)` — the `5₂` shape cubic in `−c` |
+| 0 | `c³ + 4c² + 3c − 1` | `49` | 3 | splits over `ℚ(η)`, `η³ + η² − 2η − 1 = 0` (checked by factoring over that field) |
+
+Boundary-unipotent representations are the nontrivial elements of `P_K`, one per solution, so
+`|P_K| = 1 + 3 + 3 = 7`, real embeddings `1 + 3 = 4`, one complex pair, `H_floor` remainder `4` —
+GZ §2.1 reproduced from a held triangulation and exact algebra, and `R1`'s count `7` matched by
+Culler's `A_{K3_1}` (geometric `L`-degree `6`, irreducible over `ℚ`: one curve carries both fields).
+The real-root counts are theorems (`geoCubic_existsUnique_root` inherits the `5₂` proof;
+`realCubic_three_real_roots` by IVT on `(−3,−2)`, `(−2,−1)`, `(−1,1)`), linked to the transcribed
+`realEmbeddings pretzel237 = 4`.
+
+**Honest scoring.** This is the third knot's *provenance*, not a discriminator: the core is `3` under
+both `H_Ad` and `H_floor`, and the pretzel's `q → 0` Stokes matrix — the one datum that could test
+`H_Ad`'s polynomial one-sidedly — is in no held source (GGM 2012.00062 §1.5 record that the pretzel
+has *level 2*, entries in `q^{1/2}`, so even that test would need the level-2 form of the claim). The
+triangulation is SnapPy's, not a Farey-word derivation: the pretzel is not two-bridge.
+
+**On the plan that prompted this** (a suggested attack, taken critically): GZ do *not* print the
+pretzel's Habiro-like matrix — §4.2 says explicitly that for `(−2,3,7)` they *"cannot give even
+conjectural explicit formulas"*; what they print is the seven-term modularity relation (4.3) with the
+periodic functions `Q_j` at roots of unity and Appendix A's series coefficients, which are not a
+`q → 0` Stokes matrix. The pretzel has six non-abelian boundary-parabolic representations, not
+five (`rank 6`, `|P_K| = 7`). Retrieving Ptolemy solutions from the database is blocked, but solving
+the variety is not, as above. And `H_Ad` versus `H_floor` is not decided by any count — they agree on
+every count — only by whether the Stokes entries are built from `s(x) = x + 1 + x⁻¹`.
 
 ## 4. What it does not do
 

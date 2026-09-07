@@ -4,7 +4,7 @@
   "computation": "fivetwo-chirality-frame-vs-snappy",
   "engine": "python+snappy",
   "scriptFile": "fivetwo_chirality_frame_vs_snappy_probe.py",
-  "computedAt": "2026-09-07T10:26:37.637032+00:00",
+  "computedAt": "2026-09-07T11:08:12.666623+00:00",
   "durationMs": 0,
   "auditOnly": true,
   "auditDoc": "docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md",
@@ -36,6 +36,11 @@
       "5_2(0,0)",
       "K3_2(0,0)",
       "K5a1(0,0)"
+    ],
+    "dunfield_5_2_slopes": [
+      0,
+      4,
+      10
     ],
     "relation": "mirror"
   },
@@ -95,11 +100,25 @@
       "name": "fourone-snappy-shape-2sqrt3i-matches-derived",
       "passed": true,
       "snappy": "(3.65728297727833858282096779222e-64 + 3.46410161513775458705489268301j)"
+    },
+    {
+      "name": "dunfield-rolfsen-convention-5_2-slopes-{0,4,10}-are-negatives-of-derived",
+      "passed": true,
+      "dunfield": [
+        0,
+        4,
+        10
+      ],
+      "derived": [
+        -10,
+        -4,
+        0
+      ]
     }
   ],
-  "scriptHash": "cfdc5196248c",
-  "scriptCommitSha": "unknown",
-  "commitSha": "febdd3dca33ada590dc542f6751cb18cb7763c0c",
+  "scriptHash": "f5ffdd4b71db",
+  "scriptCommitSha": "6f2730e3a851c1b59acc3b4f254e602eb8eece0b",
+  "commitSha": "78885540e574d870a10b588ebe0915393407faee",
   "q0Anchor": "independent",
   "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
 }
