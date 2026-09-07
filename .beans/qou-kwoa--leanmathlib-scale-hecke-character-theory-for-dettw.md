@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-07T19:02:45Z
+updated_at: 2026-09-07T19:12:58Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -1068,3 +1068,37 @@ defined and made `TraceIsWeighted` possible.
 That is the step that connects centrality to the abstract Schur element of
 `TauSchurElement.lean`, and after it `s_λ` as a character sum. Wenzl's
 hook-length product remains the far end.
+
+
+### 2026-09-07 — the Casimir's block scalar, and it is `d_i / c_i`
+
+`QOU/MathlibExt/CasimirBlockScalar.lean` (`5d29586033`), 5 declarations, all
+`[propext, Classical.choice, Quot.sound]`, `lean`-direct exit 0 no warnings.
+On PR #7136.
+
+`τ(E_ab E_cd) = δ_{ij} c_i δ_{bc} δ_{ad}` ⟹ the dual of `E^{(i)}_{ab}` is
+`c_i⁻¹ E^{(i)}_{ba}`, and
+
+```
+Σ_{a,b} E_ab · c_i⁻¹ E_ba  =  c_i⁻¹ Σ_{a,b} E_aa  =  (d_i / c_i) · 1
+```
+
+**The dimension factor is easy to drop by eye**, so it is called out twice in
+the file. It comes from the `b`-summation:
+`blockUnit_mul_blockUnitDual_block` shows the summand does **not depend on `b`
+at all**, so each `E_aa` is counted `d_i` times. Writing `1 / c_i` would be
+wrong by the block dimension.
+
+**What it deliberately does NOT claim.** `TauDualBasis` proves the
+`T_w`-Casimir is *central*; this file computes what a Casimir *is*, in the one
+basis where it is a finite calculation. Connecting them needs
+**basis-independence** — that `Σ b_i b_i^∨` is the same element for any dual
+pair — which is **not** proved and is the next brick. Its proof is two lines
+given both expansions, and both are available on the `T_w` side; what is
+missing is the matching pair for the pulled-back matrix units. Assembling the
+per-block results into a single element of the product is also left, for the
+same reason: nothing consumes it until basis-independence lands.
+
+**Arc status.** dual basis ✅ → Casimir central ✅ → block scalar: **arithmetic
+✅, connection ❌** → `s_λ` as a character sum ❌ → Wenzl's hook-length product ❌.
+`SchurElementCriterion` still has no instance.
