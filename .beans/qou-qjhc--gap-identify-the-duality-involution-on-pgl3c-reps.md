@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-07T08:42:32Z
-updated_at: 2026-09-07T12:37:06Z
+updated_at: 2026-09-07T16:20:36Z
 ---
 
 OPENED 2026-09-07 on branch `claude/8-fold-way-qou-derivation-qj9uzv` (PR #6898), as the
@@ -296,3 +296,66 @@ identification LESS likely than it looked two passes ago -- but that is a heuris
 a refutation, and it must not be recorded as one.  What would settle it: push the fit to
 degree 3, or find the intrinsic characterisation of `c*_{1110}` (it is a Plucker-type
 bracket in the dual flags) and compare that with sigma directly.
+
+
+---
+
+## UPDATE 2026-09-07 (fourth pass) — DERIVED, and it CORRECTS the third pass
+
+Owner directive this pass: **NO fitting.**  The third pass ended by proposing "push the
+fit to degree 3", which is exactly a hypothesis-class search and is refused.  Derivation
+instead -- and the derivation both answers the question and overturns the third pass's
+headline.
+
+### The identity
+
+`c*_1110 = det(A, C, E)` with `A = a^b`, `C = c^d`, `E = e^f` read as covectors via
+`Lambda^2 V = V*`.  For covectors,
+
+    det(A,C,E) * det(x,y,z) = det( <A,x> <A,y> <A,z> ; <C,...> ; <E,...> ),
+    <A,x> = det(a,b,x)
+
+Take `x,y,z` = the FIRST COLUMNS of `g1,g2,g3`.  Every pairing is then a Ptolemy
+coordinate, `det(x,y,z) = c_0111`, and two entries vanish for free (`C` annihilates `c`,
+`E` annihilates `e`):
+
+    c*_1110 * c_0111 = det [[c_2100, c_2010, c_2001],
+                            [0,      c_0210, c_0201],
+                            [c_0120, 0,      c_0021]]
+
+**Confirmed 300/300, 0 refutations**, on SL(3) decorations with GGZ (5.2) gated at 0/100.
+Producer: `computations/ptolemy/ptolemy_duality_1110_plucker_identity.py`.
+
+Nothing is fitted: the identity is written down from the Plucker pairing and then checked.
+No hypothesis class searched, no coefficient solved for, no object chosen for matching.
+
+### 🛑 This CORRECTS the third pass
+
+The third pass's headline was "duality takes the {1,1,1,0} coordinates OUT of the
+coordinate ring".  **Retracted -- too strong.**  `c*_1110` IS a rational function of the
+Ptolemy coordinates; it is simply of **bidegree (1,3)**.
+
+The third pass's actual measurement stands exactly as scoped: there is no (2,2) form, and
+a (2,2) search space **cannot contain a (1,3) relation**.  So the negative was sound and
+the headline over-read it.  The failure was the SHAPE OF THE SEARCH SPACE, not the
+mathematics -- and the fix was a derivation, not a wider search.  That is the reusable
+lesson: an exhaustive search at one bidegree is silent about every other, and
+"exhaustively searched X and found nothing" must never be reported as "not in the ring".
+
+This is the fourth self-correction in this arc and the second where a NEGATIVE was
+over-read (the first being the near-vacuous subfield test read as support).
+
+### Where the bean stands -- still OPEN
+
+Duality is now characterised on BOTH index shapes:
+
+- `{2,1,0,0}` -- a relabelling: entrywise `0->0, 1->2, 2->1, 3->3`.
+- `{1,1,1,0}` -- not a relabelling, but rational of bidegree (1,3), formula above.
+
+So duality IS a rational self-map of the Ptolemy variety, explicitly.  What is still not
+established is that it is the SAME map as the sigma-transport.  The two are now
+comparable in a way they were not before: sigma acts coordinate-wise as a field
+automorphism of K, while duality acts by the explicit rational formulas above.  The next
+step is a direct comparison on the exact class-1 point -- apply both and see whether they
+agree -- which needs no new theory, only the sigma from the second pass and the formulas
+from this one.
