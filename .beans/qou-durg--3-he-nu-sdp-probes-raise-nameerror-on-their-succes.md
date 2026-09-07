@@ -1,7 +1,7 @@
 ---
 # qou-durg
 title: 3 he_nu_sdp probes raise NameError on their success path yet publish witnesses
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-09-06T03:37:41Z
@@ -120,3 +120,47 @@ was repaired. Whether the published verdicts still hold is open until they run.
 
 Not run here: the `hadron_knot_table` regeneration (bean qou-uiut) holds the
 checkout. Queued.
+
+---
+
+## 2026-09-07 — RE-RUN. All three verdicts hold. Closing.
+
+With `RAIL` and `H` restored, all three producers run (1–2 s each, exit 0) and
+emit fresh witnesses. Compared field-by-field against the committed ones:
+
+| witness | verdict | conclusion | data |
+|---|---|---|---|
+| `he-nu-sdp-barfold-h9-test` | **unchanged** | unchanged | provenance only (4 lines) |
+| `he-nu-sdp-psd-count-test` | **unchanged** | — | provenance only (4 lines) |
+| `he-nu-sdp-saturation-obstruction` | **unchanged** | unchanged | `q1_saturation_sizes` MOVED |
+
+**The published findings survive.** `#2552` stands and sharpens; the
+self-conjugate count match remains a coincidence with the weaker fact intact;
+ρ_F=2 for ⁴He remains an underived input.
+
+### The one real data change, and why it is not this bean's defect
+
+`q1_saturation_sizes` went `{D:1, T:0, ³He:0}` → `{D:0, T:0, ³He:1}` — the
+saturating atom moved from D to ³He, with D's `support` going from one entry to
+empty.
+
+That is **not** the NameError. The committed witness was computed 2026-08-30 at
+a `scriptCommitSha` where `RAIL` WAS bound, so it took the success path too —
+both runs did. What changed in between is `atom_canonical_crossings`, which
+this probe consumes and which bean qou-hu1f rewrote to the interleaved
+Borromean word. A probe in that cone moving is the ruling working, not a bug.
+
+### Summary of Changes
+
+- Established the witnesses were records of WORKING code, by AST-checking each
+  producer at the `scriptCommitSha` its own witness records (8706 / 7582 /
+  10202 ancestors — real commits, checked for graft boundaries).
+- Traced the breakage to the q0-anchor migration rewriting the
+  `Q0 = …` / `RAIL = …` block and taking the second line with it.
+- Restored `RAIL = 1e5` and `H = Q0 - 1.0 / Q0` **verbatim from those commits**,
+  not invented, and kept them float to match each module's documented
+  deliberate `float(Q_50_DIGIT_STR)` pin.
+- Re-ran all three: verdicts unchanged, one data field moved for an unrelated
+  and understood reason.
+
+Nothing outstanding.
