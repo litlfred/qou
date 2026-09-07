@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-09-07T10:07:36.594589+00:00",
-  "commitSha": "59e69d2336607a931fc534fac5cbe16967715d2f",
+  "computedAt": "2026-09-07T10:46:52.212166+00:00",
+  "commitSha": "e0fa8d7e50029b30e2e972daf610417359aee37d",
   "assertions": [
     {
       "name": "scan_completed",
@@ -12,11 +12,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "intra_ordering_value_fingerprint_audit",
   "scriptFile": "intra_ordering_value_fingerprint_audit.py",
   "scriptHash": "10d33efab559",
-  "scriptCommitSha": "613f9d8821ae2076c87b933a958cf85c2b092759",
+  "scriptCommitSha": "4b40a0f9fd664167e09bae1035d6f173aa1621f2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,27 +42,8 @@
   "description": "Scans every committed witness for grouped-era |tr_M| values, matched to 15 significant digits against fingerprints computed live from atom_braid_word_3A under both orderings at both documented pins. Keys on the VALUE rather than on a symptom, because the ordering ruling has escaped three symptom-keyed sweeps.",
   "data": {
     "significant_digits_required": 15,
-    "witness_files_scanned": 3565,
+    "witness_files_scanned": 3572,
     "grouped_candidates": {
-      "computations/a-K-via-lp-dual-hecke-basis.witness.json": [
-        [
-          "/data/rows[0]/tr_M_atom",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/alpha/alpha-5-lp-dual-crystal.witness.json": [
-        [
-          "/data/at_q0_per_stratum/two_row/per_atom[1]/n_target",
-          "tritium",
-          "proton"
-        ],
-        [
-          "/data/at_q0_per_stratum/two_row/per_atom[1]/lp/x_star[4]",
-          "tritium",
-          "proton"
-        ]
-      ],
       "computations/atomic-mass-via-rho-k.witness.json": [
         [
           "/data/rows[0]/tr_M_at_q0",
@@ -113,12 +94,12 @@
       ],
       "computations/audits/fitted-labelled-canonical-audit.witness.json": [
         [
-          "/data/rows[8]/issues[0]/literal",
+          "/data/rows[6]/issues[0]/literal",
           "proton",
           "proton"
         ],
         [
-          "/data/rows[11]/issues[0]/literal",
+          "/data/rows[9]/issues[0]/literal",
           "proton",
           "proton"
         ]
@@ -161,28 +142,6 @@
           "proton"
         ]
       ],
-      "computations/canonical-tr-m-via-chi-cache.witness.json": [
-        [
-          "/results[0]/tr_M_q0",
-          "proton",
-          "proton"
-        ],
-        [
-          "/results[0]/abs_tr_M_q0",
-          "proton",
-          "proton"
-        ],
-        [
-          "/results[4]/tr_M_q0",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/results[4]/abs_tr_M_q0",
-          "helium-3",
-          "proton"
-        ]
-      ],
       "computations/chain-binding-closed-form.witness.json": [
         [
           "/data/species/pp/g_free_trace_growth",
@@ -192,18 +151,6 @@
         [
           "/data/S_off_A1/pp",
           "proton",
-          "proton"
-        ]
-      ],
-      "computations/complex-volume-unification.witness.json": [
-        [
-          "/data/V_3He/tr_M_atom_q0",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/data/V_3He/mass_mod_usual",
-          "helium-3",
           "proton"
         ]
       ],
@@ -237,28 +184,6 @@
           "/raw_towers_dimensionless/cand3_bar_sym/proton/T1",
           "proton",
           "proton"
-        ]
-      ],
-      "computations/cross-check-trM-1ppb.witness.json": [
-        [
-          "/data/deltas[0]/hoefsmit_50dps",
-          "deuteron",
-          "muon-live"
-        ],
-        [
-          "/data/deltas[1]/hoefsmit_50dps",
-          "helium-3",
-          "muon-live"
-        ],
-        [
-          "/data/deltas[3]/hoefsmit_50dps",
-          "neutron",
-          "muon-live"
-        ],
-        [
-          "/data/deltas[5]/hoefsmit_50dps",
-          "tritium",
-          "muon-live"
         ]
       ],
       "computations/cross-check-trM-cw-seminormal.witness.json": [
@@ -305,13 +230,6 @@
           "proton"
         ]
       ],
-      "computations/deltalambda/he4-binding-k-presentation-correction.witness.json": [
-        [
-          "/end_to_end/proton/combiner_target",
-          "proton",
-          "proton"
-        ]
-      ],
       "computations/deltalambda/ka-additive-cluster-derivation.witness.json": [
         [
           "/data/joint_traces_q0/p",
@@ -343,82 +261,6 @@
         [
           "/data/chain_results[29]/computed_value",
           "proton",
-          "proton"
-        ]
-      ],
-      "computations/derived-bond-graph-binding.witness.json": [
-        [
-          "/data/rows[2]/tr_atom_meas",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/emitted-particle-tracker.witness.json": [
-        [
-          "/data/step_p/tr_q0",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/step_3He/tr_q0",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/habiro-coefficients-helium-3.witness.json": [
-        [
-          "/tr_M_at_q0",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/tr_M_at_q0_via_u_poly",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/habiro-coefficients-proton.witness.json": [
-        [
-          "/tr_M_at_q0",
-          "proton",
-          "proton"
-        ],
-        [
-          "/tr_M_at_q0_via_u_poly",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/habiro/habiro-interpolate-cross-validation.witness.json": [
-        [
-          "/assertions[2]/computed",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/checks[2]/atomic_tr_M_q0",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/he-nu-sdp-saturation-obstruction.witness.json": [
-        [
-          "/regimes/q₀ (indefinite)/T/support[0][1]",
-          "tritium",
-          "proton"
-        ]
-      ],
-      "computations/he3-pairknot-composite-lp.witness.json": [
-        [
-          "/parameters/n_target_proton",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/log-ratio-binding-prototype.witness.json": [
-        [
-          "/data/rows[2]/tr_atom",
-          "helium-3",
           "proton"
         ]
       ],
@@ -502,19 +344,7 @@
           "proton"
         ]
       ],
-      "computations/markov/markov-substrate-realization.witness.json": [
-        [
-          "/data/results[0]/realizations[0]/tr_M_at_q0",
-          "proton",
-          "proton"
-        ]
-      ],
       "computations/markov/markov_weights_symbolic.witness.json": [
-        [
-          "/tr_M_proton_at_q0",
-          "proton",
-          "proton"
-        ],
         [
           "/tr_M_proton_markov_peel_reference",
           "proton",
@@ -551,13 +381,6 @@
         ],
         [
           "/data/positive_norm_subspace_solve/x_star_str[0]",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/per-knot-density-per-block-wiring.witness.json": [
-        [
-          "/data/per_knot/proton/tr_M_at_q0",
           "proton",
           "proton"
         ]
@@ -601,29 +424,10 @@
           "proton"
         ]
       ],
-      "computations/probe-9b-manybody-expansion.witness.json": [
-        [
-          "/data/nucleon_traces/tr_p",
-          "proton",
-          "proton"
-        ]
-      ],
       "computations/probes/b-pred-mirror-slope-closed-form.witness.json": [
         [
           "/parameters/tau_p",
           "proton",
-          "proton"
-        ]
-      ],
-      "computations/probes/binding-closed-form-c-vs-d.witness.json": [
-        [
-          "/data/tau_H3_D/p",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/per_isotope[2]/tr_M_atom_D",
-          "helium-3",
           "proton"
         ]
       ],
@@ -641,102 +445,7 @@
           "proton"
         ]
       ],
-      "computations/probes/colour-weighting-across-mixed-nuclei.witness.json": [
-        [
-          "/data/3He/tr_M_colour_weighted",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/probes/gap-a4-He3-residual-probe-perknot-rerun.witness.json": [
-        [
-          "/parameters/tr_M_He3",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/parameters/tr_M_p",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/candidates[3]/value_at_q0",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/probes/gap-a4-L1-light-series-probe-perknot-rerun.witness.json": [
-        [
-          "/data/density_swap/tr_M_per_atom/p",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/density_swap/tr_M_per_atom/3He",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/data/rows[0]/tr_M_K",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/rows[0]/candidates/L1a_perknot/prediction",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/rows[0]/candidates/L1c_perknot/prediction",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/rows[4]/tr_M_K",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/data/rows[4]/candidates/L1a_perknot/prediction",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/probes/gap-a4-S-K-additive-probe-perknot-rerun.witness.json": [
-        [
-          "/data/tr_M_per_atom/p",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/tr_M_per_atom/3He",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/data/perknot_trM/rows[0]/lambda_K",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/perknot_trM/rows[4]/lambda_K",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/probes/gap-a4-T4-schur-weyl-icosahedral-probe-perknot-rerun.witness.json": [
-        [
-          "/data/targets/tr_M_proton_chi_cache",
-          "proton",
-          "proton"
-        ]
-      ],
       "computations/probes/graded-hecke-energy-probe.witness.json": [
-        [
-          "/assertions[0]/computed",
-          "proton",
-          "proton"
-        ],
         [
           "/assertions[0]/expected",
           "proton",
@@ -746,41 +455,12 @@
           "/data/results/proton/target_tr_M",
           "proton",
           "proton"
-        ],
-        [
-          "/data/results/proton/per_grade_cumulative[1]/grade_sum_real",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/results/proton/per_grade_cumulative[1]/cumulative_abs",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/probes/gram-norm-binding-probe.witness.json": [
-        [
-          "/data/rows[1]/tr_atom",
-          "tritium",
-          "proton"
         ]
       ],
       "computations/probes/mirror-parity-linear-trace-probe.witness.json": [
         [
           "/data/rows[2]/tr_atom_q0",
           "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/probes/nastokes-orbit-symmetric-readout.witness.json": [
-        [
-          "/data/part_B/T/values/nnp",
-          "tritium",
-          "proton"
-        ],
-        [
-          "/data/part_B/T/values/pnn",
-          "tritium",
           "proton"
         ]
       ],
@@ -801,47 +481,6 @@
           "proton"
         ]
       ],
-      "computations/probes/path-b-habiro-mass-probe.witness.json": [
-        [
-          "/rows[0]/tr_M_via_habiro_sum",
-          "proton",
-          "proton"
-        ],
-        [
-          "/rows[0]/tr_M_in_witness",
-          "proton",
-          "proton"
-        ],
-        [
-          "/rows[4]/tr_M_via_habiro_sum",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/rows[4]/tr_M_in_witness",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/probes/qbeta-habiro-element-probe.witness.json": [
-        [
-          "/data/subtask_A_habiro_reproduction/p/tr_M_habiro",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/subtask_A_habiro_reproduction/p/tr_M_witness",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/probes/rho-k-h3a-co-casimir-perknot-rerun.witness.json": [
-        [
-          "/data/tr_M_proton_H3",
-          "proton",
-          "proton"
-        ]
-      ],
       "computations/qbeta/qbeta-bond-factors-derived.witness.json": [
         [
           "/data/constants[0]/at_q0",
@@ -850,32 +489,6 @@
         ],
         [
           "/data/constants[0]/measured",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/qbeta/qbeta-chain-closed-form.witness.json": [
-        [
-          "/parameters/t_p",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/qbeta/qbeta-habiro-pochhammer-convention.witness.json": [
-        [
-          "/reconstruction/p (proton, A=1)/witness_tr_M_at_q0",
-          "proton",
-          "proton"
-        ],
-        [
-          "/reconstruction/p (proton, A=1)/pochhammer_1_minus_u_k",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/qbeta/qbeta-habiro-taylor-investigation.witness.json": [
-        [
-          "/data/numerical_sanity_at_q0/tr_M_proton_at_q0",
           "proton",
           "proton"
         ]
@@ -906,22 +519,7 @@
       ],
       "computations/skein-proton-canonical.witness.json": [
         [
-          "/data/markov_trace_proton/tr_M_q_0_canonical",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/markov_trace_proton/abs_tr_M",
-          "proton",
-          "proton"
-        ],
-        [
           "/data/atlas_cross_check/atlas_layer_1_value",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/atlas_cross_check/this_compute",
           "proton",
           "proton"
         ]
@@ -968,48 +566,10 @@
           "proton"
         ]
       ],
-      "computations/symmetrized-binding-probe.witness.json": [
-        [
-          "/data/rows[2]/tr_atom",
-          "helium-3",
-          "proton"
-        ]
-      ],
-      "computations/symmetrized-constituent-general.witness.json": [
-        [
-          "/data/proton_power_sums/1",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/tau_p",
-          "proton",
-          "proton"
-        ]
-      ],
-      "computations/term6-full-pole-sum.witness.json": [
-        [
-          "/data/atoms[0]/tr_M_at_q0_polynomial",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/atoms[0]/tr_M_polynomial/value_at_q0",
-          "proton",
-          "proton"
-        ]
-      ],
       "computations/tr-m-algebraic-q.witness.json": [
         [
           "/data/rows[0]/tr_atom_q0_algebraic",
           "deuteron",
-          "proton"
-        ]
-      ],
-      "computations/tr-m-atom-via-transfer.witness.json": [
-        [
-          "/data/rows[2]/tr_M_atom",
-          "helium-3",
           "proton"
         ]
       ],
@@ -1027,27 +587,7 @@
           "proton"
         ],
         [
-          "/data/cross_check_table[0]/q_hecke_partition_sum",
-          "proton",
-          "proton"
-        ],
-        [
-          "/data/cross_check_table[0]/q_hecke_abs",
-          "proton",
-          "proton"
-        ],
-        [
           "/data/cross_check_table[4]/canonical_abs_tr_M",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/data/cross_check_table[4]/q_hecke_partition_sum",
-          "helium-3",
-          "proton"
-        ],
-        [
-          "/data/cross_check_table[4]/q_hecke_abs",
           "helium-3",
           "proton"
         ]
@@ -1090,22 +630,22 @@
       ],
       "computations/witness-value-copy-audit.witness.json": [
         [
-          "/findings[411]/literal",
+          "/findings[195]/literal",
           "proton",
           "proton"
         ],
         [
-          "/findings[415]/literal",
+          "/findings[199]/literal",
           "helium-3",
           "proton"
         ],
         [
-          "/findings[608]/literal",
+          "/findings[311]/literal",
           "proton",
           "proton"
         ],
         [
-          "/findings[674]/literal",
+          "/findings[336]/literal",
           "proton",
           "proton"
         ]
@@ -1173,22 +713,50 @@
     ],
     "borromean_hits": [
       "computations/a-K-via-lp-dual-full.witness.json",
+      "computations/a-K-via-lp-dual-hecke-basis.witness.json",
       "computations/a-K-via-lp-dual.witness.json",
       "computations/atomic-tr-m-helium4-canonical.witness.json",
       "computations/atomic-tr-m-mpfr-50dps.witness.json",
       "computations/binding-triangle-3body-cluster.witness.json",
       "computations/canonical-mass-table-extended.witness.json",
+      "computations/canonical-tr-m-via-chi-cache.witness.json",
       "computations/chi-neutron-h3-at-q0-50dps.witness.json",
+      "computations/cross-check-trM-1ppb.witness.json",
       "computations/delta-lambda-empirical-tabulation.witness.json",
+      "computations/deltalambda/he4-binding-k-presentation-correction.witness.json",
       "computations/deuteron-from-scratch-ledger.witness.json",
+      "computations/emitted-particle-tracker.witness.json",
+      "computations/habiro-coefficients-neutron.witness.json",
+      "computations/habiro-coefficients-proton.witness.json",
       "computations/habiro/habiro-coefficients-atomic.witness.json",
       "computations/habiro/habiro-exact-qbeta.witness.json",
+      "computations/habiro/habiro-interpolate-cross-validation.witness.json",
       "computations/low-isotope-mass-table.witness.json",
+      "computations/markov/markov-substrate-realization.witness.json",
+      "computations/markov/markov_weights_symbolic.witness.json",
+      "computations/per-knot-density-per-block-wiring.witness.json",
       "computations/per-knot-mass-table-demonstration.witness.json",
+      "computations/probe-9b-manybody-expansion.witness.json",
+      "computations/probes/binding-closed-form-c-vs-d.witness.json",
+      "computations/probes/gap-a4-He3-residual-probe-perknot-rerun.witness.json",
+      "computations/probes/gap-a4-L1-light-series-probe-perknot-rerun.witness.json",
       "computations/probes/gap-a4-L1-light-series-probe.witness.json",
+      "computations/probes/gap-a4-S-K-additive-probe-perknot-rerun.witness.json",
       "computations/probes/gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json",
+      "computations/probes/gap-a4-T4-schur-weyl-icosahedral-probe-perknot-rerun.witness.json",
+      "computations/probes/graded-hecke-energy-probe.witness.json",
+      "computations/probes/gram-norm-binding-probe.witness.json",
+      "computations/probes/nastokes-orbit-symmetric-readout.witness.json",
       "computations/probes/nucleon-h3-marshalling-divergence.witness.json",
       "computations/probes/option-a-vol-per-knot-light-series.witness.json",
+      "computations/probes/path-b-habiro-mass-probe.witness.json",
+      "computations/probes/qbeta-habiro-element-probe.witness.json",
+      "computations/probes/rho-k-h3a-co-casimir-perknot-rerun.witness.json",
+      "computations/qbeta/qbeta-habiro-pochhammer-convention.witness.json",
+      "computations/qbeta/qbeta-habiro-taylor-investigation.witness.json",
+      "computations/symmetrized-constituent-general.witness.json",
+      "computations/term6-full-pole-sum.witness.json",
+      "computations/tr-m-q-hecke-seminormal.witness.json",
       "qou-mass/src/qou_mass/atomic-tr-m-mpfr-50dps.witness.json",
       "qou-mass/src/qou_mass/data/canonical-mass-table-extended.witness.json",
       "qou-mass/src/qou_mass/habiro-coefficients-atomic.witness.json"
