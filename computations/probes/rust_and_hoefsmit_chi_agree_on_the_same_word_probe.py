@@ -32,28 +32,37 @@ before the repair, rust-committed against canonical:
     T    n=30  max rel 1.169077e-49  at (5,3,1)
     3He  n=30  max rel 8.872588e-50  at (3,2,1,1,1,1)
 
-4He IS EXPECTED TO FAIL RIGHT NOW, AND THE SHAPE OF ITS FAILURE IS THE PROOF
+4He FAILED WHEN THIS WAS WRITTEN, AND THE SHAPE OF THAT FAILURE WAS THE PROOF
 -----------------------------------------------------------------------------
-As of 2026-09-07 the rust family is SPLIT: D / T / 3He were repaired, 4He's
-regeneration is still running.  So this probe currently reports
+RESOLVED 2026-09-07, hours after the paragraph this replaces.  Recorded because
+the failure is more informative than the pass, and because a docstring asserting
+a live state is exactly the staleness this probe exists to catch -- leaving it
+would have been the same defect one level up.
+
+While 4He's regeneration was still running the rust family was SPLIT, and this
+probe reported
 
     4He   n=77   max rel 5.562231e+00   75/77 over tolerance
 
-and the two blocks that DO agree are
+with the two agreeing blocks being
 
     (12,)  and  (1,1,1,1,1,1,1,1,1,1,1,1)
 
 -- EXACTLY the two 1-dimensional representations of S_12, and nothing else.
-That is not a coincidence and it is worth more than the failure itself: a 1-dim
-character is a PRODUCT of per-letter scalars, so it is fixed by the letter
-multiset and blind to the order.  Two blocks surviving, and those two, is the
-signature of a REORDERING of the same letters rather than a change of letters.
+That is the part worth keeping.  A 1-dim character is a PRODUCT of per-letter
+scalars, so it is fixed by the letter multiset and blind to the order; two
+blocks surviving, and precisely those two, is the signature of a REORDERING of
+the same letters rather than a change of letters.  Nobody told this probe to
+expect that set -- it fell out of a cache pair.
 
-So this probe and `one_dim_reps_are_blind_to_intra_order_probe.py` confirm each
-other from opposite directions: that one measures the invariance across a known
-reorder, this one recovers the same invariant set from a cache pair nobody told
-it about.  When 4He's regeneration lands this row joins the other three at
-~1e-49 and the 4/4 is the real all-clear.
+So this probe and `one_dim_reps_are_blind_to_intra_order_probe.py` confirmed
+each other from opposite directions: that one measures the invariance across a
+known reorder, this one recovered the same invariant set from data it was given
+no ruling about.
+
+After the regeneration, 4He joins the other three:
+
+    4He  n=77  max rel 8.416279e-49  at (8,3,1)   0/77 over tolerance
 
 WHAT A FAILURE HERE MEANS, AND WHAT IT DOES NOT
 ------------------------------------------------
