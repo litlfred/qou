@@ -1,5 +1,6 @@
 import Mathlib.Combinatorics.Young.YoungDiagram
 import QOU.Mathlib.TwoRowDimCatalan
+import Mathlib.Algebra.BigOperators.Intervals
 
 /-!
 # ≤ 2 rows and ≤ 2 columns are different families, and nothing in this corpus said so
@@ -41,31 +42,30 @@ not the identity.
 involution, it carries each family onto the other, and the two families are
 genuinely distinct.
 
-**Proved at `n = 3, 4, 5, 6` only:** that the two families have equal
-*dimension* sums, and that the transposed pairs have equal dimension
-(`dim_eq_dim_transpose_three_to_six`, `sq_sum_agree_three`, `sq_sum_agree_six`).
-Every value there is computed by `decide` from `dimHLF`'s definition, so the
-`Σ dim² = 5` column above is a theorem at that size rather than hand arithmetic.
+**Proved, at general `n`:** the dimension half as well. `dimHLF_two_col_eq_two_row`
+gives `dim λ' = dim λ` for exactly this family — the two-column shape
+`2^k 1^{n−2k}` has the same Frame–Robinson–Thrall dimension as the two-row shape
+`(n−k, k)` it transposes to — and `dimHLF_two_col_sq_sum` carries
+`Σ dim² = catalan n` across to the column family, which
+`QOU.Mathlib.TwoRowDimCatalan` had only for the row family.
 
-**Not proved at general `n`:** `dim λ = dim λ'` — invariance of the
-standard-tableau count under conjugation. `QOU.Mathlib.TwoRowDimCatalan` proves
-`Σ dim² = catalan n` for the ≤ 2-**row** family at every `n`, via
-`dimHLF_two_row_eq_ballot`; there is no ≤ 2-column counterpart, so the column
-family's total is known only at the sizes decided above. Naming that one lemma is
-deliberate: it is the entire remaining gap between the two halves of the corpus,
-and it is a Mathlib-shaped statement rather than a QOU-shaped one.
-
-The route is not mysterious, and is recorded so the next attempt does not start
-cold. Both hook products factor into the *same three* products. For the two-row
-shape `(a, b)` with `a = k + m`, `b = k`, and its transpose `2^k 1^m`:
+So the `Σ dim² = 5` column of the table above is a theorem, at every `n`, not
+hand arithmetic. The proof needs **no factorials**: both hook products factor
+into the *same three* products, termwise. For `(a, b)` with `a = k+m`, `b = k`,
+against its transpose `2^k 1^m`,
 
     two-row:     ∏_{j<b}(a−j+1) · ∏_{b≤j<a}(a−j) · ∏_{j<b}(b−j)
     two-column:  ∏_{i<k}(k+m−i+1) · ∏_{k≤i<k+m}(k+m−i) · ∏_{i<k}(k−i)
 
-which are termwise identical under `a = k+m`, `b = k`. So `prodHooks` agrees and
-therefore so does `n!/prodHooks` — no factorial manipulation is needed, only the
-`colLen` evaluation on `List.replicate k 2 ++ List.replicate m 1` and a
-`List.range` split. Tracked as a bean; not attempted here.
+are the same three factors in a different association, so `prodHooks` agrees on
+the nose and `n!/prodHooks` follows. That is why this is ~120 lines rather than a
+hook-length development.
+
+**Still not proved:** `dim λ = dim λ'` for a *general* partition. Nothing here
+touches shapes with three or more rows and three or more columns; the argument
+above is specific to this family and does not generalise as written. That is a
+Mathlib-shaped statement and remains open — but it is no longer what stands
+between the two halves of this corpus.
 
 -- Ref: [manuscript] rem:hecke-radical-is-temperley-lieb — the block this
 -- collision was found in; see also QOU.MathlibExt.WenzlSchurElement.
@@ -222,30 +222,178 @@ Everything above is about `YoungDiagram`. The corpus's standard-tableau count,
 `QOU.BraidKnot.IdentityI.dimHLF` (Frame–Robinson–Thrall, `n!/∏ h_c`), is about
 `List ℕ`. That is a third encoding alongside `Nat.Partition`, and the gap between
 them is part of why the two conventions were never related: the transpose is
-cheap on `YoungDiagram` (Mathlib has it) and the dimensions are cheap on
-`List ℕ` (this corpus has them), and no file held both.
-
-What follows is the dimension side, on lists, at the sizes where the trap
-actually bites — `n = 3` is `A = 1` in the mass channel, which indexes at
-`n = 3A`. Every value is **computed by `decide`** from `dimHLF`'s definition, not
-quoted from a table: a transcription slip cannot survive.
-
-These are finite decidable checks, not the general theorem. The general theorem
-is `dimHLF λ = dimHLF λ'`, and it is **not proved anywhere in this corpus** — see
-the file header. What these establish is that the trap is real at the sizes in
-use, which is what a reader needs before wiring anything.
+cheap on `YoungDiagram` (Mathlib has it), the dimensions are cheap on `List ℕ`
+(this corpus has them), and no file held both.
 -/
 
-open QOU.BraidKnot.IdentityI (dimHLF)
+open QOU.BraidKnot.IdentityI (dimHLF prodHooks sz)
 
-/-- **Transposed shapes have equal dimension at `n = 3, 4, 5, 6`.**
+/-! `colLen` is deliberately **not** opened. `YoungDiagram.colLen` and
+`QOU.BraidKnot.IdentityI.colLen` are both in scope in this file and Lean reports
+the bare name as ambiguous — the encoding straddle described above, biting inside
+the file that documents it. Written out in full below rather than disambiguated by
+an alias, so the reader can see which of the two is meant at every use. -/
 
-Left column: the ≤ 2-row shapes. Right column: their transposes, which are
-exactly the ≤ 2-column shapes. Each pair is one instance of the unproved general
-`dim λ = dim λ'`.
+/-- The two-column shape `2^k 1^m`: `k` rows of two cells, then `m` rows of one.
+It is the transpose of the two-row shape `(k+m, k)`. -/
+def twoCol (k m : ℕ) : List ℕ := List.replicate k 2 ++ List.replicate m 1
 
-Note `(2,1)` at `n = 3` and `(2,2)` at `n = 4` are **self**-conjugate — they lie in
-*both* families. That is why the two shape sets overlap rather than being
+@[simp] theorem twoCol_length (k m : ℕ) : (twoCol k m).length = k + m := by
+  simp [twoCol]
+
+/-- Column `0` of `2^k 1^m` meets every row. -/
+theorem twoCol_colLen_zero (k m : ℕ) : QOU.BraidKnot.IdentityI.colLen (twoCol k m) 0 = k + m := by
+  simp [QOU.BraidKnot.IdentityI.colLen, twoCol]
+
+/-- Column `1` meets only the rows of length two. -/
+theorem twoCol_colLen_one (k m : ℕ) : QOU.BraidKnot.IdentityI.colLen (twoCol k m) 1 = k := by
+  simp [QOU.BraidKnot.IdentityI.colLen, twoCol]
+
+theorem twoCol_getD_lt (k m i : ℕ) (h : i < k) : (twoCol k m).getD i 0 = 2 := by
+  have hlen : i < (List.replicate k (2 : ℕ)).length := by simpa using h
+  rw [twoCol, List.getD_eq_getElem?_getD, List.getElem?_append_left hlen,
+    List.getElem?_replicate]
+  simp [h]
+
+theorem twoCol_getD_ge (k m i : ℕ) (h1 : k ≤ i) (h2 : i < k + m) :
+    (twoCol k m).getD i 0 = 1 := by
+  have hlen : (List.replicate k (2 : ℕ)).length ≤ i := by simpa using h1
+  rw [twoCol, List.getD_eq_getElem?_getD, List.getElem?_append_right hlen,
+    List.length_replicate, List.getElem?_replicate]
+  have : i - k < m := by omega
+  simp [this]
+
+/-- Column lengths of the two-row shape `(a, b)`: column `j` meets row `0` when
+`j < a` and row `1` when `j < b`. Unconditional — `b ≤ a` is not needed. -/
+theorem twoRow_colLen (a b j : ℕ) :
+    QOU.BraidKnot.IdentityI.colLen [a, b] j = (if j < a then 1 else 0) + (if j < b then 1 else 0) := by
+  by_cases h1 : j < a <;> by_cases h2 : j < b <;> simp [QOU.BraidKnot.IdentityI.colLen, h1, h2]
+
+/-- `prodHooks` as a `Finset` product. Definitionally the same object; the
+`Finset` form is what the interval-splitting API works on. -/
+theorem prodHooks_eq (l : List ℕ) :
+    prodHooks l = ∏ i ∈ Finset.range l.length,
+      (∏ j ∈ Finset.range (l.getD i 0), ((l.getD i 0 - j) + (QOU.BraidKnot.IdentityI.colLen l j - i) - 1)) := rfl
+
+/-- **The hook product of the two-column shape**, split at the row where the
+rows of length two run out. -/
+theorem prodHooks_twoCol (k m : ℕ) :
+    prodHooks (twoCol k m)
+      = ((∏ i ∈ Finset.range k, (k + m - i + 1)) * ∏ i ∈ Finset.range k, (k - i))
+        * ∏ i ∈ Finset.Ico k (k + m), (k + m - i) := by
+  rw [prodHooks_eq, twoCol_length,
+    ← Finset.prod_range_mul_prod_Ico _ (Nat.le_add_right k m)]
+  congr 1
+  · rw [← Finset.prod_mul_distrib]
+    refine Finset.prod_congr rfl fun i hi => ?_
+    have hik : i < k := Finset.mem_range.mp hi
+    rw [twoCol_getD_lt k m i hik, show (2 : ℕ) = 1 + 1 from rfl,
+      Finset.prod_range_succ, Finset.prod_range_one,
+      twoCol_colLen_zero, twoCol_colLen_one]
+    congr 1 <;> omega
+  · refine Finset.prod_congr rfl fun i hi => ?_
+    obtain ⟨h1, h2⟩ := Finset.mem_Ico.mp hi
+    rw [twoCol_getD_ge k m i h1 h2, Finset.prod_range_one, twoCol_colLen_zero]
+    omega
+
+/-- **The hook product of the two-row shape**, split at the column where the
+second row runs out. -/
+theorem prodHooks_twoRow (a b : ℕ) (hab : b ≤ a) :
+    prodHooks [a, b]
+      = ((∏ j ∈ Finset.range b, (a - j + 1)) * ∏ j ∈ Finset.Ico b a, (a - j))
+        * ∏ j ∈ Finset.range b, (b - j) := by
+  rw [prodHooks_eq, show ([a, b] : List ℕ).length = 2 from rfl,
+    show (2 : ℕ) = 1 + 1 from rfl, Finset.prod_range_succ, Finset.prod_range_one,
+    show ([a, b] : List ℕ).getD 0 0 = a from rfl,
+    show ([a, b] : List ℕ).getD 1 0 = b from rfl]
+  congr 1
+  · rw [← Finset.prod_range_mul_prod_Ico _ hab]
+    congr 1
+    · refine Finset.prod_congr rfl fun j hj => ?_
+      have hjb : j < b := Finset.mem_range.mp hj
+      rw [twoRow_colLen a b j]
+      simp only [if_pos (lt_of_lt_of_le hjb hab), if_pos hjb]
+      omega
+    · refine Finset.prod_congr rfl fun j hj => ?_
+      obtain ⟨hbj, hja⟩ := Finset.mem_Ico.mp hj
+      rw [twoRow_colLen a b j]
+      simp only [if_pos hja, if_neg (by omega : ¬ j < b)]
+      omega
+  · refine Finset.prod_congr rfl fun j hj => ?_
+    have hjb : j < b := Finset.mem_range.mp hj
+    rw [twoRow_colLen a b j]
+    simp only [if_pos (lt_of_lt_of_le hjb hab), if_pos hjb]
+    omega
+
+/-- **The two hook products are equal.**
+
+Not by a factorial computation on each side — the three factors of
+`prodHooks_twoCol` and `prodHooks_twoRow` are *termwise the same*, under
+`a = k+m`, `b = k`. Only the association differs, so `ring` closes it. This is
+the whole reason the general statement is cheap. -/
+theorem prodHooks_twoCol_eq_twoRow (k m : ℕ) :
+    prodHooks (twoCol k m) = prodHooks [k + m, k] := by
+  rw [prodHooks_twoCol, prodHooks_twoRow (k + m) k (Nat.le_add_right k m)]
+  ring
+
+theorem sz_twoCol (k m : ℕ) : sz (twoCol k m) = sz [k + m, k] := by
+  simp [sz, twoCol, List.sum_append]
+  omega
+
+/-- **`dim (2^k 1^m) = dim (k+m, k)`** — the transposed shapes have equal
+Frame–Robinson–Thrall dimension. -/
+theorem dimHLF_twoCol (k m : ℕ) : dimHLF (twoCol k m) = dimHLF [k + m, k] := by
+  unfold dimHLF
+  rw [prodHooks_twoCol_eq_twoRow, sz_twoCol]
+
+/-- **`dim λ' = dim λ` for the two-row/two-column family, at every `n`.**
+
+This is the lemma the row half and the column half of the corpus needed in order
+to be about each other. `QOU.MathlibExt.WenzlSchurElement` and
+`QOU.MassTheory.SelfConjugateStratumVanishes` stratify by `μ.rowLen 0 ≤ 2` (at
+most two columns); `QOU.QBeta.TemperleyLiebTower` and
+`QOU.QBeta.TwoRowNormalisation` stratify by two rows. Combined with
+`transposeEquiv` above — which matches the *shapes* — this matches the
+*dimensions*, so a statement in either convention now transports.
+
+It is **not** the general `dim λ = dim λ'`: nothing here touches shapes with
+three or more rows *and* three or more columns. -/
+theorem dimHLF_two_col_eq_two_row (n k : ℕ) (hk : 2 * k ≤ n) :
+    dimHLF (List.replicate k 2 ++ List.replicate (n - 2 * k) 1) = dimHLF [n - k, k] := by
+  have h : k + (n - 2 * k) = n - k := by omega
+  have hd := dimHLF_twoCol k (n - 2 * k)
+  rw [twoCol] at hd
+  rw [hd, h]
+
+/-- **`Σ dim² = catalan n` over the ≤ 2-COLUMN family, at every `n`.**
+
+`QOU.Mathlib.TwoRowDimCatalan.dimHLF_two_row_sq_sum` had this for the ≤ 2-row
+family only. The two families are different sets (`shape_sets_differ`) and this
+says their squared-dimension totals agree at every `n`, not just where they were
+decided — so the dimension check provably cannot separate the conventions, at
+any size. That is the trap stated as a theorem instead of as a warning. -/
+theorem dimHLF_two_col_sq_sum (n : ℕ) :
+    ∑ k ∈ Finset.range (n / 2 + 1),
+        ((dimHLF (List.replicate k 2 ++ List.replicate (n - 2 * k) 1) : ℕ) : ℤ) ^ 2
+      = (catalan n : ℤ) := by
+  rw [← QOU.Mathlib.dimHLF_two_row_sq_sum n]
+  refine Finset.sum_congr rfl fun k hk => ?_
+  have h2k : 2 * k ≤ n := by have := Finset.mem_range.mp hk; omega
+  rw [dimHLF_two_col_eq_two_row n k h2k]
+
+/-! ### Small cases, kept as corroboration
+
+These predate the general theorems above and are retained deliberately: each is
+computed by `decide` from `dimHLF`'s definition, so they are an independent check
+that the general proof's `prodHooks` bookkeeping did not go wrong somewhere that
+still typechecks. `dim_eq_dim_transpose_three_to_six` is
+`dimHLF_two_col_eq_two_row` at twelve concrete shapes, arrived at a different
+way. -/
+
+/-- Transposed shapes have equal dimension at `n = 3, 4, 5, 6`, by evaluation.
+
+Note `(2,1)` at `n = 3` and `(2,2)` at `n = 4` are **self**-conjugate — they lie
+in *both* families. That is why the two shape sets overlap rather than being
 disjoint, and it is what makes the collision hard to notice by inspection. -/
 theorem dim_eq_dim_transpose_three_to_six :
     (dimHLF [3] = dimHLF [1, 1, 1] ∧ dimHLF [2, 1] = dimHLF [2, 1]) ∧
@@ -257,22 +405,16 @@ theorem dim_eq_dim_transpose_three_to_six :
       dimHLF [4, 2] = dimHLF [2, 2, 1, 1] ∧ dimHLF [3, 3] = dimHLF [2, 2, 2]) := by
   decide
 
-/-- **Both readings give `catalan n`, over different shape sets** — `n = 3`.
-
-`catalan 3 = 5` is Mathlib's `catalan_three`; the two sums are computed. The
-row family is `{(3), (2,1)}` and the column family `{(2,1), (1,1,1)}`: they share
-only `(2,1)`, and both total `5`. A check that compares totals therefore passes
-under either reading, which is the whole trap. -/
+/-- Both readings total `catalan 3 = 5`, over sets sharing only `(2,1)`. -/
 theorem sq_sum_agree_three :
     dimHLF [3] ^ 2 + dimHLF [2, 1] ^ 2 = catalan 3 ∧
     dimHLF [2, 1] ^ 2 + dimHLF [1, 1, 1] ^ 2 = catalan 3 := by
   rw [catalan_three]
   exact ⟨by decide, by decide⟩
 
-/-- The same at `n = 6`, i.e. `A = 2` in the mass channel: both total
-`catalan 6 = 132` over shape sets sharing **nothing at all** — at even `n` the
-self-conjugate shape can be absent, and here the two families are disjoint.
-Totals still agree. -/
+/-- The same at `n = 6` — `A = 2` in the mass channel — where the two families
+share **nothing at all** and the totals still agree. The disjoint case is the
+sharper one. -/
 theorem sq_sum_agree_six :
     dimHLF [6] ^ 2 + dimHLF [5, 1] ^ 2 + dimHLF [4, 2] ^ 2 + dimHLF [3, 3] ^ 2
         = catalan 6 ∧
@@ -285,15 +427,27 @@ theorem sq_sum_agree_six :
 
 /-- **The shape sets are different**, as lists, at `n = 3` and `n = 6`.
 
-Trivial to check and worth stating next to the equal totals: it is the
-conjunction of "different sets" with "same total" that is dangerous, and a
-theorem asserting only one half of it invites the reader to supply the wrong
-other half. -/
+Worth stating next to the equal totals: it is the conjunction of "different sets"
+with "same total" that is dangerous, and a theorem asserting only one half
+invites the reader to supply the wrong other half. -/
 theorem shape_sets_differ :
     ([[3], [2, 1]] : List (List ℕ)) ≠ [[2, 1], [1, 1, 1]] ∧
     ([[6], [5, 1], [4, 2], [3, 3]] : List (List ℕ))
       ≠ [[1, 1, 1, 1, 1, 1], [2, 1, 1, 1, 1], [2, 2, 1, 1], [2, 2, 2]] := by
   exact ⟨by decide, by decide⟩
+
+/-- **Cross-check: the two routes meet.**
+
+`twoCol k m` is *asserted* to be the transpose of `(k+m, k)`; that assertion is
+where the general proof could silently be about the wrong shape while still
+typechecking. These evaluate `twoCol` at the three sizes the decided cases cover
+and confirm it produces exactly the lists those cases used — so
+`dimHLF_twoCol 2 2 : dimHLF (twoCol 2 2) = dimHLF [4, 2]` and the decided
+`dimHLF [4, 2] = dimHLF [2, 2, 1, 1]` are statements about one shape, not two. -/
+theorem twoCol_agrees_with_decided_shapes :
+    twoCol 1 1 = [2, 1] ∧ twoCol 2 2 = [2, 2, 1, 1] ∧
+      twoCol 0 6 = [1, 1, 1, 1, 1, 1] ∧ twoCol 1 4 = [2, 1, 1, 1, 1] := by
+  refine ⟨by decide, by decide, by decide, by decide⟩
 
 end Dimensions
 
