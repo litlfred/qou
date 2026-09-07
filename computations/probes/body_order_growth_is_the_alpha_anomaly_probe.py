@@ -52,8 +52,29 @@ substrate -- they are two points of textbook nuclear shell structure, the
 alpha-particle binding maximum and the A = 5 gap.  Any framework term aimed at
 "the growing body-order coefficients" would be aiming at those two points.
 
-What remains genuinely small and robust is `mu_3 = +1.4262`, which no
-interpolation at A = 4, 5 can move.
+What no interpolation at A = 4, 5 can move is `mu_3 = +1.4262`.
+
+## 🛑 But `mu_3` is NOT "robust" in the sense that matters — corrected
+
+An earlier draft of this docstring, and the PR comment written from it, called
+`mu_3` the robust survivor.  That conflates two different robustnesses, and the
+corpus had already measured the one that matters.
+
+`binding_magnitude_is_not_validatable_probe.py` computes the whole tower under
+ALL 27 mirror conventions -- A=3 (3H/3He), A=5 (5He/5Li), A=7 (7Li/7Be) -- and
+finds `b_3` has a **53.6% band, 0.271 significant digits**.  Reproduced
+independently here: 3He alone gives 1.04435, 3H alone gives 1.80810, and the
+1.42622 used throughout is the mirror AVERAGE.
+
+So `mu_3` is invariant under *this* probe's A=4,5 interpolation and is the
+**least determined magnitude in the tower** under the mirror conventions.  Those
+are different axes, and only the second one bears on testing a mechanism.
+
+That probe also inverts the natural next step: resolution IMPROVES with order,
+and `b_7/b_6 = 2.2468 +- 5.0%` (1.305 digits) is the best-determined quantity in
+the tower -- while `b_4/b_3`, which the arc has actually been scoring candidates
+against, spans 4.267..10.314, a 93.3% band.  The high-order ratio is the target
+with resolution, not `mu_3`.
 
 ## Scope
 
@@ -148,6 +169,19 @@ check("null growth rate falls inside the smooth-toy band",
 check("measured growth rate does NOT", abs(MU[7]) / abs(MU[4]) > F(11), True,
       f"measured |mu7/mu4| = {float(abs(MU[7]) / abs(MU[4])):.2f}")
 
+print("\n5. CORRECTION — mu_3 is NOT robust under the mirror conventions")
+B2 = F("2.224566"); H3 = F("8.481798"); He3 = F("7.718043")
+lo, hi = He3 - 3 * B2, H3 - 3 * B2
+mid = (lo + hi) / 2
+check("mirror average reproduces the quoted mu_3", abs(mid - MU[3]) < F(1, 1000), True,
+      f"{float(mid):.5f} vs {float(MU[3]):.5f}")
+check("mu_3 band exceeds 50%", (hi - lo) / mid > F(1, 2), True,
+      f"{float(lo):.5f}..{float(hi):.5f} = {float((hi - lo) / mid) * 100:.1f}%")
+print("       -> 0.271 significant digits; the LEAST determined magnitude in the")
+print("          tower.  Reproduces binding_magnitude_is_not_validatable_probe.py,")
+print("          which measured it first.  Invariance under A=4,5 interpolation and")
+print("          invariance under the mirror conventions are DIFFERENT axes.")
+
 ok = all(CHECKS)
 print("\n" + "=" * 78)
 print(f"{sum(CHECKS)}/{len(CHECKS)} checks pass")
@@ -170,7 +204,13 @@ VERDICT (scope-(a) localisation; nothing refuted):
 
   CONSEQUENCE: a framework term aimed at "the growing body-order coefficients"
   would be aiming at the alpha-particle binding maximum and the mass-5 gap --
-  textbook shell structure.  The residue that no A=4,5 interpolation can move
-  is mu_3 = +1.4262, and it is small.
+  textbook shell structure.
+
+  BUT DO NOT READ mu_3 AS THE ROBUST RESIDUE.  It is invariant under THIS
+  probe's A=4,5 interpolation and has a 53.6% band (0.271 digits) across the 27
+  mirror conventions -- the least determined magnitude in the tower.  See
+  binding_magnitude_is_not_validatable_probe.py, which measured that first and
+  whose numbers are reproduced here.  The quantity with resolution is
+  b_7/b_6 = 2.2468 +- 5.0%, at the OTHER end of the tower.
 """)
 sys.exit(0 if ok else 1)
