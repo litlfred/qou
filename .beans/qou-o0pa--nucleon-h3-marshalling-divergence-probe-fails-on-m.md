@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-09-07T08:35:25Z
-updated_at: 2026-09-07T10:01:59Z
+updated_at: 2026-09-07T10:08:07Z
 ---
 
 Found while adding a deliberate/actionable split to
@@ -107,3 +107,39 @@ something it does not measure — so it is left for someone who can check the
 marshaller's contract rather than infer it.
 
 Left OPEN for that reason.
+
+## GUARD RESTORED — 5/5, and my "vacuous" claim was overstated
+
+I said restoring a real marshalled arm needed "someone who can check the
+marshaller's contract rather than infer it". That was checkable by reading its
+source, so I read it. The contract is explicit:
+
+    marshal_to_chi_lambda_braid -> [(sign, gen_1based)]
+        FOR hecke_characters.chi_lambda_braid, NOT for chi_all_lambda*
+
+Feeding it to the wrong kernel is what produced `unsupported crossing c=-1.0`
+on my first attempt. With the right consumer and `precision="mpfr_50dps"` it
+works, and the loss is real:
+
+    p  d-preserving 0.629328402202921918   MARSHALLED 0.807031394861838756  ratio 1.28237
+    n  d-preserving 0.475133517155682213   MARSHALLED 0.535061853071076283  ratio 1.12613
+
+Added as a THIRD arm, additively. **5 assertions, all passed.**
+
+## Correcting myself
+
+I described the probe as "weaker than its title" and "a tautology" once
+production stopped marshalling. That overstates it. The production-agreement
+check IS a real regression guard — `compute_tau_M_nucleon_H3` could be
+re-pointed back through the lossy path, and then it fires. What it could not do
+is MEASURE the loss. Those are different deficiencies and I conflated them.
+
+The three arms now guard three separate things, all on the same canonical word:
+
+  * d-preserving       -> reproduces the habiro target (~1e-50)
+  * marshalled current -> production's ROUTING has not regressed
+  * marshalled explicit-> the marshaller is STILL lossy (0.282 p / 0.126 n)
+
+The last one is new and is what makes the title honest again. A collapse toward
+0 would mean the marshaller stopped dropping `d`; a large jump would mean the
+crossing census changed.

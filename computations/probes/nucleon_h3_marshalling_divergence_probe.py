@@ -42,30 +42,33 @@ variants, which is why the collapse is correct *here*" — is about `averaged`
 vs `averaged_weighted`. It does NOT justify collapsing `averaged -> sigma`,
 which is a different and larger loss.
 
-## 🛑 What it tests TODAY is weaker than its title, and that is not fixed here
+## The three arms, and what each one guards
 
-After the 2026-09-07 rebuild (bean `qou-o0pa`) both arms are canonical and all
-three assertions pass. They also became the SAME computation, because
-`qou-qu2w` removed the marshalling from `compute_tau_M_nucleon_H3` itself: it
-now takes the canonical word from `atom_braid_word_3A` and traces it with
-`chi_all_lambda_any`, which is exactly what the d-preserving arm does. So the
-"marshalled" arm no longer marshals, and the divergence in this probe's title
-cannot be detected by it.
+Rebuilt 2026-09-07 (bean `qou-o0pa`). All three run on the SAME canonical word,
+so nothing here confounds `d`-dropping with intra ordering:
 
-That vacuity was NOT introduced by the rebuild. It arrived with the `qou-qu2w`
-fix, and a sibling had already re-pointed the assertions on 2026-09-06 from
-"assert the defect (== 2.157)" to "assert the fix holds" for that reason. What
-the rebuild fixed is a different thing: the two arms had been left in DIFFERENT
-intra orderings, so the probe was measuring d-dropping confounded with
-ordering, and failed its own assertions on `main`.
+  * **d-preserving** -- `chi_all_lambda_any` over the word with `d` intact.
+    Reproduces the habiro atomic target to ~1e-50.
+  * **marshalled (current)** -- `compute_tau_M_nucleon_H3`, the PRODUCTION
+    helper. It no longer marshals (`qou-qu2w` removed that), so its agreement
+    with the d-preserving arm is a guard on production's ROUTING: it fires if
+    anyone re-points production back through the lossy path.
+  * **marshalled EXPLICIT** -- marshals on purpose, through
+    `marshal_to_chi_lambda_braid` into `chi_lambda_braid`. This is what
+    measures the loss the title names: 0.282 (p) and 0.126 (n) on the
+    canonical word.
 
-Restoring a guard that can fail means marshalling explicitly through
-`marshal_to_chi_lambda_braid` rather than through a helper that no longer does.
-That is left undone deliberately: the marshaller emits `(sign, gen)` pairs, not
-this probe's `(c, d, gen)`, and a first attempt at bridging the two conventions
-produced `unsupported crossing c=-1.0`. Guessing at another module's convention
-inside a regression guard is how a probe ends up asserting something it does
-not measure. Tracked in `qou-o0pa`.
+An earlier draft of this note called the probe "weaker than its title" and
+"vacuous" once the production arm stopped marshalling. That OVERSTATED it in
+one direction and understated the fix in the other. The production-agreement
+check is a real regression guard -- it can fail, if production regresses -- it
+simply cannot measure the size of the loss. The explicit arm restores that,
+additively, without disturbing the guard.
+
+Convention note, because getting it wrong is easy and silent:
+`marshal_to_chi_lambda_braid` emits `[(sign, gen_1based)]` FOR
+`hecke_characters.chi_lambda_braid`, NOT for the `chi_all_lambda*` family.
+Feeding it to the wrong kernel raises `unsupported crossing c=-1.0`.
 
 ## What this probe proves
 
@@ -117,6 +120,8 @@ set_compute_dps(50)
 
 import closed_form_tau_M as C  # noqa: E402
 from chi_general_word import chi_all_lambda_any  # noqa: E402
+import canonical_braid_marshalling as MM  # noqa: E402
+from hecke_characters import chi_lambda_braid  # noqa: E402
 from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from hecke_characters import partitions_of  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
@@ -211,10 +216,32 @@ def main() -> int:
         marshalled = C.compute_tau_M_nucleon_H3(nuc, q0, dps=50)
         target = targets[nuc]
 
+        # THE EXPLICIT MARSHALLED ARM, restored 2026-09-07 (bean `qou-o0pa`).
+        #
+        # `marshalled` above calls the production helper, which no longer
+        # marshals — `qou-qu2w` removed that — so its agreement with
+        # `preserving` guards PRODUCTION's routing and cannot measure the loss
+        # the title advertises. This arm marshals explicitly and does.
+        #
+        # The convention is the marshaller's own, checked in its source rather
+        # than guessed: it emits `[(sign, gen_1based)]` FOR
+        # `hecke_characters.chi_lambda_braid`, not for `chi_all_lambda*`.
+        # Feeding it to the wrong kernel is what produced `unsupported crossing
+        # c=-1.0` on a first attempt.
+        mword = MM.marshal_to_chi_lambda_braid(chain, float(h))
+        marshalled_explicit = mp.fsum(
+            [y[pp] * mp.mpf(str(chi_lambda_braid(pp, mword, q0,
+                                                 precision="mpfr_50dps")))
+             for pp in parts])
+        rel_lossy = abs(marshalled_explicit - target) / abs(target)
+
         rel_pres = abs(preserving - target) / abs(target)
         rel_marsh = abs(marshalled - target) / abs(target)
 
         print(f"\n  {nuc}: census = {dict(census)}")
+        print(f"     marshalled EXPLICIT    {mp.nstr(marshalled_explicit, 18)}"
+              f"   rel vs habiro = {mp.nstr(rel_lossy, 3)}"
+              f"   (ratio {mp.nstr(marshalled_explicit / preserving, 6)})")
         print(f"     d-preserving           {mp.nstr(preserving, 18)}"
               f"   rel vs habiro = {mp.nstr(rel_pres, 3)}")
         print(f"     habiro atomic (target) {mp.nstr(target, 18)}")
@@ -228,6 +255,8 @@ def main() -> int:
             "d_preserving": str(preserving),
             "habiro_atomic_target": str(target),
             "marshalled_current": str(marshalled),
+            "marshalled_explicit": str(marshalled_explicit),
+            "rel_marshalled_explicit_vs_target": str(rel_lossy),
             "rel_d_preserving_vs_target": str(rel_pres),
             "rel_marshalled_vs_target": str(rel_marsh),
         })
@@ -268,6 +297,25 @@ def main() -> int:
                 "stops dropping `d`, and a drift away from 1.0 means that "
                 "defect has returned."),
     )
+    # The loss is REAL and this is what makes the probe test its own title
+    # again: dropping `d` moves the trace by 28 % (p) and 13 % (n) on the
+    # canonical word. If this ever fell to ~0 the marshaller would have stopped
+    # being lossy, which would mean the `averaged -> sigma` collapse this probe
+    # documents had silently changed.
+    lossy = {r["nucleon"]: mp.mpf(r["marshalled_explicit"]) for r in rows}
+    for nuc in ("p", "n"):
+        w.add_assertion(
+            name=f"explicit_marshalling_is_still_lossy_{nuc}",
+            computed=str(abs(lossy[nuc] - pres[nuc]) / abs(pres[nuc])),
+            expected="0.1",
+            tolerance="0.2",
+            source=("Marshalling explicitly through marshal_to_chi_lambda_braid "
+                    "drops `d` on each nucleon's two `averaged` crossings. On "
+                    "the canonical word that moves the trace by 0.282 (p) / "
+                    "0.126 (n). A collapse toward 0 means the marshaller "
+                    "stopped being lossy; a large jump means the crossing "
+                    "census changed."),
+        )
     w.add_data("historical_symptom_ratio_before_qu2w", "2.157")
 
     w.add_parameter("q_0", Q_50_DIGIT_STR)
