@@ -1364,3 +1364,70 @@ thing.**
 
 Reported "20 need review". The defensible figure is **at most 28 unclassified**, with
 **1 confirmed ambiguous** (`helium_four_body_cluster_probe`) and **2 confirmed fine**.
+
+---
+
+# 23. `qou-263a` settled — a confirmed discrepancy, with no live consumer, in a class the corpus had already flagged
+
+## 23.1 The test, and it discriminates
+
+`computations/term7_chi5_basis.py` computes the Wedderburn weight
+$w_\lambda = \dim_q(\lambda)^2/[n]_q!$ with the **classical** bracket. AGENTS.md's notation
+register records measured values of $\sum_\lambda w_\lambda(q)$ at the proton $q_0$, so
+the two brackets can be tested against a figure the corpus itself publishes:
+
+| $n$ | symmetric | register | classical |
+|---|---|---|---|
+| 3 | 0.9874402298 | **0.987** | 0.9149692115 |
+| 4 | 0.9821653238 | **0.982** | 0.8828744266 |
+| 5 | 0.9822241483 | **0.982** | 0.8682545738 |
+| 6 | 0.9910795236 | **0.991** | 0.8746417166 |
+
+**Four for four to the recorded precision for the symmetric bracket**; the classical one
+is 7–13 % low and matches none. So `term7_chi5_basis` uses the wrong bracket for the
+quantity it says it is computing.
+
+**The test had to be at $q_0$.** At $q = 1$ both brackets give exactly 1 (Burnside,
+$\sum_\lambda (f^\lambda)^2 = n!$), verified — so a $q=1$ check would have discriminated
+nothing. Recorded because the natural instinct is to test at the easy point.
+
+## 23.2 Blast radius: the witness only
+
+The file emits a witness (`WitnessBuilder.wrap_legacy`) carrying a `wedderburn_weight`
+field per partition, so **the committed numbers are off by 7–13 %**. But its two apparent
+importers are **comment references, not imports**:
+
+- `partition_utils.py` names it in a docstring about 1-indexed cells;
+- `unified_low_isotope_predictor.py` names it in a comment listing several conflicting
+  `dim_q` conventions.
+
+**No code takes its numbers.** The defect is confined to the witness.
+
+## 23.3 And the corpus had already flagged the class — fourth instance
+
+That second comment reads, in full: *"…so building the table is a choice among
+conventions, not a computation — and choosing one silently is the failure this guard
+exists…"*, and it names `term7_chi5_basis.dim_q` explicitly as one of the conflicting
+conventions.
+
+So the corpus already knows multiple `dim_q` conventions exist, already names this file as
+one of them, and already carries a guard against silent selection. What §21–§23 add is the
+*measurement* — which one is right, by how much, against a published figure — not the
+discovery.
+
+**This is the session's fourth instance of the same failure**: §15.3 (proposed a mechanism
+the corpus had refuted), §19 (miscounted a surface I had already measured), §22.4 (called a
+documented three-family distinction a "normalisation convention"), and now this. Each time
+the answer was in a file I had already read or quoted. The corpus-grep checklist is
+per-claim, and I have now failed to re-run it four times in one session.
+
+## 23.4 What this does and does not license
+
+**Established:** the symmetric bracket reproduces the register's four recorded sums;
+the classical one does not; `term7_chi5_basis`'s witness numbers are consequently wrong for
+their stated quantity.
+
+**Not established:** that the file's *conclusion* is wrong. It computes a $\chi_5$
+partition-weight basis "ahead of the full $\alpha_5$ fit", and whether the 7–13 % shift
+changes anything it concludes has not been checked — the fix is a one-line bracket change
+and a re-run, which is `qou-263a`'s remaining work, not this section's.
