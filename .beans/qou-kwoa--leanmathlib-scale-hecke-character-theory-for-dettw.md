@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-02T21:39:20Z
-updated_at: 2026-09-07T19:18:01Z
+updated_at: 2026-09-07T19:28:23Z
 ---
 
 Successor to qou-0y6h, split out on owner instruction 2026-09-02 because that
@@ -1138,3 +1138,42 @@ types — the expansions carry all of it.
 **Next** is the transport: build the pulled-back matrix-unit pair's
 left-expansion so `casimir_eq_of_dual_pair` fires. `SchurElementCriterion` still
 has no instance.
+
+
+### 2026-09-07 — the Casimir chain CLOSES (`50e16b3beb`)
+
+`QOU/MathlibExt/CasimirTransport.lean` + `QOU/Hecke/CasimirBlockValue.lean`.
+All sorry-free, `lean`-direct exit 0. On PR #7136.
+
+```
+casimir_apply_block        E (casimir) j = (d_j / c_j) • 1
+casimir_apply_block_schur  the same as (d_j · s_j) • 1
+```
+
+for **every** splitting `E : H_n(q) ≃ₐ[K] ∏_λ M_{d_λ}(K)` and every `q ≠ 0`.
+
+**Five pieces; three carry content, two are bookkeeping.**
+
+| # | piece | |
+|---|---|---|
+| 1 | `tau_Tw_mul_Tw` — structure constants | content |
+| 2 | `TwDual`, both expansions, `mul_casimir_comm` | content |
+| 3 | `casimir_eq_of_expansions` — basis-independence | bookkeeping |
+| 4 | matrix-unit pair, its expansion, per-block `d/c` | content |
+| 5 | transport of 4 along `E` | bookkeeping |
+
+The transport's only contentful step: `E` is an **algebra** equivalence, so
+`t(E.symm u · y) = weightedTrace c (u · E y)` — the product survives, which is
+what lets the product-side expansion be applied at `E y` and pulled back.
+
+**The dimension factor, once more.** The block value is `d_λ / c_λ`, **not**
+`1/c_λ = s_λ`. `casimir_apply_block_schur` states the `s`-form explicitly as
+`(d_λ · s_λ)` so neither reading is left to inference.
+
+**Arc status.** dual basis ✅ → Casimir central ✅ → **block scalar ✅ (proved,
+not just arithmetic)** → `s_λ` as a character sum ❌ → Wenzl's hook-length
+product ❌.
+
+That is **three of the five** classical steps to the Geck–Pfeiffer Schur
+element. `SchurElementCriterion` still has no instance, and the Wenzl
+identification is verified only for `n ≤ 3`.
