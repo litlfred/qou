@@ -13,6 +13,29 @@ for ARBITRARY, unrelated `F₁`, `F₂`. No hypothesis links them — in the
 measurement they differ by up to 14.325× — so the invariance is cancellation,
 not coincidence.
 
+PRIOR WORK, AND WHAT IS ACTUALLY NEW HERE (read this before quoting anything)
+-----------------------------------------------------------------------------
+`the_intra_ordering_moves_absolute_traces_not_the_bond_model_probe.py` (beans
+`qou-hu1f`, `qou-gpb5`) already measured the trace-level half of this, and
+measured it BETTER: it reports `tr_M(W_atom)/tr_M(W_free)` identical under the
+two orderings to **~1e-60** at 2H, 3H, 3He and 4He, and equal to
+`∏ᵢ (z + dᵢ)` under both.  It also carries the `R_quark` factors (3.785 →
+14.325), the closed form for why a difference route scales while a log-ratio
+route does not, and the finding that the per-GENERATOR factorisation is
+grouped-specific.
+
+**So the trace-ratio row below is a coarser re-derivation of a known result, not
+a new one.**  It is retained only as the control the per-block row is contrasted
+against, and its ~1e-18 is an artefact of HOW it is computed here: this probe
+forms `tr_M = Σ_λ y_λ χ_λ` from the cached per-block χ, which loses ~30 digits to
+cancellation between mixed-sign terms.  The prior probe gets 1e-60 by not going
+through the blocks at all.  **Quote 1e-60, not 1e-18.**
+
+What is new is the row above it.  Neither the Lean nor the prior probe says
+anything about **per-block** `χ^λ_atom / χ^λ_free`, because both work with the
+trace of a whole word.  That gap is exactly where a false all-clear comes from,
+which is why it is worth measuring separately.
+
 WHY THIS PROBE EXISTS
 ---------------------
 That file's header says "**the ratio** cannot see the intra ordering", and an
@@ -30,7 +53,7 @@ borromean (regenerated under the `qou-hu1f` ruling):
     quantity                              max relative change
     per-block χ, absolute                 5.562e+0   (4He)
     per-block ratio χ_atom / χ_free       4.332e+1   (T, at λ=(3,2,2,2))
-    aggregate tr_M(atom) / tr_M(free)     5.425e-18  (T)
+    aggregate tr_M(atom) / tr_M(free)     5.425e-18  (T)  [prior probe: ~1e-60]
 
 Nineteen orders between the last two rows, on the same underlying numbers.
 
