@@ -1,0 +1,252 @@
+{
+  "name": "aomega-m3-rotated-index-three-knots",
+  "description": "Rotated 3D-index families Ind^rot(m,zeta;q) of 4_1, 5_2 and (-2,3,7) from SnapPy triangulations via the corpus GHHR engine; GGM (102) gate; the pretzel's Stokes data up to GL(r,Z(x,q)).",
+  "computation": "aomega-m3-rotated-index-three-knots",
+  "engine": "python+snappy",
+  "scriptFile": "aomega_m3_rotated_index_three_knots_probe.py",
+  "computedAt": "2026-09-07T17:02:40.358115+00:00",
+  "durationMs": 0,
+  "auditOnly": true,
+  "auditDoc": "docs/audits/2026-09-06-two-bridge-layering-from-farey-word.md",
+  "parameters": {
+    "snappy_version": "3.3.2",
+    "q_read": 3,
+    "q_computed": 7,
+    "m_range": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ],
+    "e_range": [
+      -12,
+      12
+    ],
+    "convention": "e multiplies the meridian, m the longitude (decided by the gate)"
+  },
+  "data": {
+    "rotated_index": {
+      "m004": {
+        "-2": {
+          "q^2": "zeta**8"
+        },
+        "-1": {
+          "q^1": "zeta**4 + zeta**(-4)",
+          "q^2": "zeta**3 + zeta**(-3)",
+          "q^3": "-zeta**5 + zeta**3 + 2*zeta**2 + zeta + 1 + 1/zeta + 2/zeta**2 + zeta**(-3) - 1/zeta**5"
+        },
+        "0": {
+          "q^0": "1",
+          "q^1": "-zeta**2 - 2*zeta - 2 - 2/zeta - 1/zeta**2",
+          "q^2": "-zeta**2 - 2*zeta - 3 - 2/zeta - 1/zeta**2",
+          "q^3": "zeta**4 + 2*zeta**3 + 3*zeta**2 + 2*zeta + 2 + 2/zeta + 3/zeta**2 + 2/zeta**3 + zeta**(-4)"
+        },
+        "1": {
+          "q^1": "zeta**(-4)",
+          "q^2": "zeta**3 + zeta**(-3)",
+          "q^3": "zeta**3 + 2*zeta**2 + zeta + 1 + 1/zeta + 2/zeta**2 + zeta**(-3) - 1/zeta**5"
+        },
+        "2": {}
+      },
+      "m015": {
+        "-2": {
+          "q^2": "zeta**(-4)"
+        },
+        "-1": {
+          "q^1": "zeta**2 + zeta**(-2)",
+          "q^2": "2*zeta + 1 + 2/zeta + zeta**(-3)",
+          "q^3": "-2*zeta**3 + 2*zeta + 5 + 2/zeta + 2/zeta**2 - 1/zeta**3 - 1/zeta**5 - 1/zeta**6"
+        },
+        "0": {
+          "q^0": "1",
+          "q^1": "-zeta**2 - 3*zeta - 4 - 3/zeta - 1/zeta**2",
+          "q^2": "zeta**3 + zeta**2 - 1 + zeta**(-2) + zeta**(-3)",
+          "q^3": "zeta**4 + 4*zeta**3 + 10*zeta**2 + 14*zeta + 16 + 14/zeta + 10/zeta**2 + 4/zeta**3 + zeta**(-4)"
+        },
+        "1": {
+          "q^1": "zeta**2 + zeta**(-2)",
+          "q^2": "zeta**3 + 2*zeta + 1 + 2/zeta",
+          "q^3": "-zeta**5 - zeta**3 + 2*zeta**2 + 2*zeta + 5 + 2/zeta - 2/zeta**3"
+        },
+        "2": {}
+      },
+      "m016": {
+        "-2": {
+          "q^1": "zeta",
+          "q^3": "1"
+        },
+        "-1": {
+          "q^1": "zeta**2 - zeta - 1 + zeta**(-2)",
+          "q^2": "3*zeta + 1 + 2/zeta",
+          "q^3": "-2*zeta**3 + 2*zeta**2 + 7*zeta + 10 + 4/zeta - 2/zeta**3"
+        },
+        "0": {
+          "q^0": "1",
+          "q^1": "-2*zeta - 4 - 2/zeta",
+          "q^2": "zeta**2 + zeta - 1 + 1/zeta + zeta**(-2)",
+          "q^3": "5*zeta**2 + 12*zeta + 16 + 12/zeta + 5/zeta**2"
+        },
+        "1": {
+          "q^1": "zeta**2 - 1 - 1/zeta + zeta**(-2)",
+          "q^2": "2*zeta + 1 + 3/zeta",
+          "q^3": "-2*zeta**3 + 4*zeta + 10 + 7/zeta + 2/zeta**2"
+        },
+        "2": {
+          "q^1": "1/zeta",
+          "q^3": "1"
+        }
+      }
+    },
+    "m0_as_polynomial_in_s": {
+      "m004": {
+        "q^0": "1",
+        "q^1": "-(s - 1)*(s + 1)",
+        "q^2": "-s**2",
+        "q^3": "s**2*(s**2 - 2*s - 1)"
+      },
+      "m015": {
+        "q^0": "1",
+        "q^1": "-s*(s + 1)",
+        "q^2": "s*(s**2 - 2*s - 2)",
+        "q^3": "s**4 - 2*s - 1"
+      },
+      "m016": {
+        "q^0": "1",
+        "q^1": "-2*(s + 1)",
+        "q^2": "s**2 - s - 3",
+        "q^3": "5*s**2 + 2*s - 1"
+      }
+    }
+  },
+  "verdict": "The corpus 3D-index engine on SnapPy's triangulations reproduces GGM's printed Ind^rot_{5_2}(0,1;q) = 1-12q+3q^2+74q^3+90q^4 (eq 102) exactly, and the DGG 4_1 index; the (-2,3,7) rotated-index family Ind^rot(m,zeta;q), m=-2..2, is now DERIVED to q^3 (exact integers). By GGM Conjecture 4 this family determines the pretzel's Stokes matrix S^+(x;q) up to GL(r, Z(x,q)) and gives S^+_{sigma1 sigma1}(x;q) exactly; the printed q->0 integer matrices (the {3,4} of 4_1/5_2) sit in GGM's holomorphic-block normalisation, which the pretzel lacks in print, so qou-m3ad item 1 ('are the Stokes entries built from s(x)?') cannot be run AS POSED — it is not GL-invariant. Recorded: at order q^1 the m=0 coefficients are -(s-1)(s+1), -s(s+1), -2(s+1) for 4_1, 5_2, (-2,3,7) — a common factor (s+1) — and at q^2 the 4_1 coefficient is -s^2, so that factor is not universal. A basis-invariant restatement of H_Ad is the open piece.",
+  "assertions": [
+    {
+      "name": "gate-m015-total-index-matches-held-to-q4",
+      "passed": true,
+      "computed": [
+        1,
+        -12,
+        3,
+        74,
+        90
+      ],
+      "reference": [
+        1,
+        -12,
+        3,
+        74,
+        90
+      ],
+      "source": "GGM 2007.10190 eq (102), held"
+    },
+    {
+      "name": "gate-m004-total-index-matches-recalled-to-q4",
+      "passed": true,
+      "computed": [
+        1,
+        -8,
+        -9,
+        18,
+        46
+      ],
+      "reference": [
+        1,
+        -8,
+        -9,
+        18,
+        46
+      ],
+      "source": "DGG total index of 4_1 (recalled, NOT held)"
+    },
+    {
+      "name": "m004-m0-q^0-coefficient-is-zeta<->1/zeta-symmetric",
+      "passed": true,
+      "poly": "1"
+    },
+    {
+      "name": "m004-m0-q^1-coefficient-is-zeta<->1/zeta-symmetric",
+      "passed": true,
+      "poly": "-zeta**2 - 2*zeta - 2 - 2/zeta - 1/zeta**2"
+    },
+    {
+      "name": "m004-m0-q^2-coefficient-is-zeta<->1/zeta-symmetric",
+      "passed": true,
+      "poly": "-zeta**2 - 2*zeta - 3 - 2/zeta - 1/zeta**2"
+    },
+    {
+      "name": "m004-m0-q^3-coefficient-is-zeta<->1/zeta-symmetric",
+      "passed": true,
+      "poly": "zeta**4 + 2*zeta**3 + 3*zeta**2 + 2*zeta + 2 + 2/zeta + 3/zeta**2 + 2/zeta**3 + zeta**(-4)"
+    },
+    {
+      "name": "m015-m0-q^0-coefficient-is-zeta<->1/zeta-symmetric",
+      "passed": true,
+      "poly": "1"
+    },
+    {
+      "name": "m015-m0-q^1-coefficient-is-zeta<->1/zeta-symmetric",
+      "passed": true,
+      "poly": "-zeta**2 - 3*zeta - 4 - 3/zeta - 1/zeta**2"
+    },
+    {
+      "name": "m015-m0-q^2-coefficient-is-zeta<->1/zeta-symmetric",
+      "passed": true,
+      "poly": "zeta**3 + zeta**2 - 1 + zeta**(-2) + zeta**(-3)"
+    },
+    {
+      "name": "m015-m0-q^3-coefficient-is-zeta<->1/zeta-symmetric",
+      "passed": true,
+      "poly": "zeta**4 + 4*zeta**3 + 10*zeta**2 + 14*zeta + 16 + 14/zeta + 10/zeta**2 + 4/zeta**3 + zeta**(-4)"
+    },
+    {
+      "name": "m016-m0-q^0-coefficient-is-zeta<->1/zeta-symmetric",
+      "passed": true,
+      "poly": "1"
+    },
+    {
+      "name": "m016-m0-q^1-coefficient-is-zeta<->1/zeta-symmetric",
+      "passed": true,
+      "poly": "-2*zeta - 4 - 2/zeta"
+    },
+    {
+      "name": "m016-m0-q^2-coefficient-is-zeta<->1/zeta-symmetric",
+      "passed": true,
+      "poly": "zeta**2 + zeta - 1 + 1/zeta + zeta**(-2)"
+    },
+    {
+      "name": "m016-m0-q^3-coefficient-is-zeta<->1/zeta-symmetric",
+      "passed": true,
+      "poly": "5*zeta**2 + 12*zeta + 16 + 12/zeta + 5/zeta**2"
+    },
+    {
+      "name": "order-q1-m0-coefficients-are--(s-1)(s+1), -s(s+1), -2(s+1) [recorded, not interpreted]",
+      "passed": true,
+      "observed": {
+        "m004": "-(s - 1)*(s + 1)",
+        "m015": "-s*(s + 1)",
+        "m016": "-2*(s + 1)"
+      }
+    },
+    {
+      "name": "order-q2-4_1-coefficient-is--s^2 (the (s+1) factor is NOT universal beyond q^1)",
+      "passed": true,
+      "observed": "-s**2"
+    },
+    {
+      "name": "pretzel-index-has-no-half-integer-q-powers-at-m0-to-q3 (level-2 structure not visible in the m=0 index at this order)",
+      "passed": true,
+      "powers": [
+        0,
+        2,
+        4,
+        6
+      ]
+    }
+  ],
+  "scriptHash": "b3405b65dc33",
+  "scriptCommitSha": "unknown",
+  "commitSha": "43d46fc05d4cc45bdd1e0b0fd7fba21750974155",
+  "q0Anchor": "independent",
+  "q0AnchorReason": "producer declared q0-independent at the stamp site (q0_anchor=False): no q0-dependent field in this witness"
+}
