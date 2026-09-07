@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-09-06T22:32:32Z
-updated_at: 2026-09-07T05:14:01Z
+updated_at: 2026-09-07T05:19:20Z
 ---
 
 ## The finding
@@ -139,3 +139,56 @@ My recommendation, marked as judgement: **measure first** -- run the sweep acros
 rather than the dirty closure, get the actual RED count, and decide scope from that.  The
 no-op is that `lake build QOU` keeps silently covering a third of the library, which is the
 status quo and is safe but means the root build's green is worth much less than it looks.
+
+
+## The cheap proxy for "how many of the 1845 fail" DOES NOT WORK — negative recorded
+
+Immediately after recommending "measure first", I tried the obvious cheap proxy and it is
+invalid.  Recording it so the next agent does not spend the same hour.
+
+**The proxy.** A module with a built `.olean` compiled at some point; so count how many of the
+1845 have one, and compare olean mtime against source mtime for staleness.  It gives a
+tempting answer:
+
+    of the 1845 modules outside the root:
+       have a built olean : 1842   (100%)
+          of those, olean older than source : 36
+       NO olean at all    : 3   -- and they are EXACTLY the three the sweep flagged
+                                  (Eightfold.ObstructionClassForcesComplexType,
+                                   MassTheory.LeadingOrderTraceCoefficient,
+                                   MassTheory.MirrorAsymmetrySign)
+
+Read naively that says the uncertain set is ~39 rather than 1845, and the whole decision
+collapses to something tractable.  **Do not report it.  Both halves are unsound.**
+
+**Why.** Olean mtimes are not build times here:
+
+    olean mtimes by day:  2026-08-23  1
+                          2026-08-24  2
+                          2026-08-29  8
+                          2026-08-30  1
+                          2026-08-31  1
+                          2026-09-06  2722
+
+**2722 of 2735 share one timestamp** -- the bulk cache restore.  So:
+
+- **"1842 have an olean" attests to the state at the cache's build, not to current source.**
+  It is the same snapshot-conditionality that `qou-56qy` is about, one level up: the whole
+  olean population is one snapshot, so counting it cannot discriminate current from stale.
+- **"36 older than source" is meaningless**, and worse than merely weak.  In a fresh clone
+  the SOURCE mtimes are checkout times too, so that comparison is between two artificial
+  timestamps, neither of which is a build or an edit.  36 is not a lower bound on anything.
+
+**What the data does support, stated at its real strength:** whatever build seeded the cache
+on 2026-09-06 produced oleans for all but three of these modules, and those three are the
+three independently known to be red.  That is suggestive -- the corpus largely compiled as of
+that build -- and it is not evidence about `main` today.
+
+**What would actually answer it:** compile them, or determine which sources have changed in
+commits after the cache's build commit (by `git log`, never by mtime) and compile only those.
+The first is the honest measurement; the second is a genuine shortcut but needs the cache's
+commit, which is not recorded in the tree.
+
+So the recommendation is unchanged and its cost estimate stands: **a real compute, not a
+five-minute job.**  I now have direct evidence for that rather than an assumption, which is
+the one thing this attempt was worth.
