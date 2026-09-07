@@ -1,5 +1,5 @@
 {
-  "description": "Closure of left multiplication on the Jones normal forms, indexed by (I,J). The δ rule is COMPLETE and holds on all 3456 products at n=2..7: loops=1 iff (I',J')=(I,J) iff k in I and k-1 not in I -- a condition on I alone. The (I',J') formula for the loops=0 branch is NOT identified and is recorded as open.",
+  "description": "Closure of left multiplication on the Jones normal forms, indexed by (I,J). The δ rule is COMPLETE and holds on all 3456 products at n=2..7: loops=1 iff (I',J')=(I,J) iff k in I and k-1 not in I -- a condition on I alone. The (I',J') formula for the loops=0 branch is NOT identified and is recorded as open. Separately: no natural measure on (I,J) is monotone under the rewriting (13 tested, all increase somewhere), and the image of e_k has exactly catalan(n-1) elements for every k -- the tower relation dim(e_k TL_n) = dim TL_{n-1}.",
   "bean": "qou-cds1",
   "products_tested": 3456,
   "arithmetic": "exact integers, sets and tuples; no floating point",
@@ -76,15 +76,189 @@
       },
       "pass": true,
       "note": "recorded as open. The |I'| decrease is what makes word length non-monotone, so an insertion-shaped rule cannot be right."
+    },
+    {
+      "check": "no_natural_measure_is_monotone",
+      "measures": [
+        {
+          "measure": "card_I",
+          "decreases": 302,
+          "equal": 1519,
+          "increases": 557,
+          "monotone": false
+        },
+        {
+          "measure": "sum_block_lengths_eq_word_length",
+          "decreases": 1300,
+          "equal": 0,
+          "increases": 1078,
+          "monotone": false
+        },
+        {
+          "measure": "sum_I",
+          "decreases": 1171,
+          "equal": 0,
+          "increases": 1207,
+          "monotone": false
+        },
+        {
+          "measure": "sum_J",
+          "decreases": 302,
+          "equal": 1519,
+          "increases": 557,
+          "monotone": false
+        },
+        {
+          "measure": "sum_i_minus_j",
+          "decreases": 1068,
+          "equal": 660,
+          "increases": 650,
+          "monotone": false
+        },
+        {
+          "measure": "max_I",
+          "decreases": 138,
+          "equal": 1946,
+          "increases": 294,
+          "monotone": false
+        },
+        {
+          "measure": "min_I",
+          "decreases": 1012,
+          "equal": 944,
+          "increases": 422,
+          "monotone": false
+        },
+        {
+          "measure": "sum_I_plus_sum_J",
+          "decreases": 1171,
+          "equal": 0,
+          "increases": 1207,
+          "monotone": false
+        },
+        {
+          "measure": "lex_card_then_sum_I",
+          "decreases": 1171,
+          "equal": 0,
+          "increases": 1207,
+          "monotone": false
+        },
+        {
+          "measure": "lex_sum_then_card_I",
+          "decreases": 1171,
+          "equal": 0,
+          "increases": 1207,
+          "monotone": false
+        },
+        {
+          "measure": "tuple_I_lex",
+          "decreases": 1322,
+          "equal": 0,
+          "increases": 1056,
+          "monotone": false
+        },
+        {
+          "measure": "tuple_J_lex",
+          "decreases": 378,
+          "equal": 1519,
+          "increases": 481,
+          "monotone": false
+        }
+      ],
+      "any_monotone": false,
+      "pass": true,
+      "note": "every candidate increases on some product, so the word-length negative is one row of a general pattern rather than special; an induction of that shape does not exist"
+    },
+    {
+      "check": "image_size_is_catalan_n_minus_one",
+      "rows": [
+        {
+          "n": 2,
+          "normal_forms": 2,
+          "image_sizes_per_k": [
+            1
+          ],
+          "catalan_n_minus_1": 1,
+          "image_size_eq_catalan_n_minus_1": true,
+          "image_eq_k_in_I_set": true
+        },
+        {
+          "n": 3,
+          "normal_forms": 5,
+          "image_sizes_per_k": [
+            2,
+            2
+          ],
+          "catalan_n_minus_1": 2,
+          "image_size_eq_catalan_n_minus_1": true,
+          "image_eq_k_in_I_set": false
+        },
+        {
+          "n": 4,
+          "normal_forms": 14,
+          "image_sizes_per_k": [
+            5,
+            5,
+            5
+          ],
+          "catalan_n_minus_1": 5,
+          "image_size_eq_catalan_n_minus_1": true,
+          "image_eq_k_in_I_set": false
+        },
+        {
+          "n": 5,
+          "normal_forms": 42,
+          "image_sizes_per_k": [
+            14,
+            14,
+            14,
+            14
+          ],
+          "catalan_n_minus_1": 14,
+          "image_size_eq_catalan_n_minus_1": true,
+          "image_eq_k_in_I_set": false
+        },
+        {
+          "n": 6,
+          "normal_forms": 132,
+          "image_sizes_per_k": [
+            42,
+            42,
+            42,
+            42,
+            42
+          ],
+          "catalan_n_minus_1": 42,
+          "image_size_eq_catalan_n_minus_1": true,
+          "image_eq_k_in_I_set": false
+        },
+        {
+          "n": 7,
+          "normal_forms": 429,
+          "image_sizes_per_k": [
+            132,
+            132,
+            132,
+            132,
+            132,
+            132
+          ],
+          "catalan_n_minus_1": 132,
+          "image_size_eq_catalan_n_minus_1": true,
+          "image_eq_k_in_I_set": false
+        }
+      ],
+      "pass": true,
+      "note": "dim(e_k · TL_n) = dim TL_{n-1}, the tower relation, visible in the normal-form combinatorics and independent of k; and for n >= 3 the image is a PROPER subset of {(I,J) : k in I}, so membership of k in I' does not cut it out"
     }
   ],
   "all_pass": true,
   "scriptFile": "tl_closure_rule_probe.py",
-  "scriptHash": "9d33f38395e9",
-  "scriptCommitSha": "unknown",
-  "commitSha": "ef8adcf235e553e11eaf7275f5d82153463c635f",
+  "scriptHash": "e0a93546825f",
+  "scriptCommitSha": "b7f0ba79028f3c1c710122e80e5b142768a4b5e3",
+  "commitSha": "739975f2e8a3ede533907a4ef5f41a2d27725a5e",
   "engine": "python",
-  "computedAt": "2026-09-07T16:55:18.252062+00:00",
+  "computedAt": "2026-09-07T17:36:02.916405+00:00",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"
