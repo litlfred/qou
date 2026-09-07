@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-09T12:42:32Z
-updated_at: 2026-08-25T21:47:54Z
+updated_at: 2026-09-07T09:23:33Z
 ---
 
 
@@ -337,3 +337,67 @@ back-substituted the same way.
 The other carried-forward closed form (`_li_2_q_util.borromean_markov_trace_h2`)
 is already resolved in-source as the deliberate non-canonical jones-normalisation
 comparison column and no longer appears in the report.
+
+
+## 2026-09-07 — Lean surface re-measured; "0 actionable" had REGRESSED to 1, now back to 0
+
+This bean was last updated 2026-08-25 and its headline figures do not reproduce.
+Re-measured with `scripts/lean-markov-convention-audit.py` on `main`:
+
+| | bean (2026-08-25) | AGENTS.md (2026-08-29) | **now (2026-09-07)** |
+|---|---|---|---|
+| `.lean` convention-C **defs** | "61 lean files" | 14 | **23** |
+| of those, actionable / deliberate | — | 0 / 14 | **0 / 23** (was **1 / 22** before this commit) |
+| `.lean` convention-D defs | — | 38 | **50** |
+
+**The finding: AGENTS.md's "The Lean surface reaching 0 actionable is real
+progress" had SILENTLY REGRESSED to 1.** Both conventions are accreting
+definitions (C 14 → 23, D 38 → 50), and one of the new C ones arrived
+undeclared.
+
+**The site**
+`QOU/BraidKnot/QBetaPerBlockChiClosedForms.lean:1233 markov_parameter`:
+
+    noncomputable def markov_parameter (q : ℝ) : ℝ := Real.sqrt q / (1 + q)
+
+`√q/(1+q)` **is** `z_C` exactly, and it is **consumed** —
+`QBetaCanonicalMarkovWeightsInstance.lean:54-56` builds `y3`, `y21`, `y111`
+from it.
+
+**It was NOT migrated, deliberately, and swapping in `z_D` would be wrong
+twice over:**
+
+1. Its only consumer says in its own header that it exists to prove
+   `CanonicalMarkovWeightsH3` **inhabitable** — making the §3b-cond
+   conditional theorems non-vacuous — and is "**NOT** a claim that this is THE
+   canonical Wenzl–Markov instance". Inhabitation does not need the canonical
+   `z`.
+2. `markov_parameter_symmetric_form` proves
+   `√q/(1+q) = 1/(√q + 1/√q)` — a **true, sorry-free identity about `z_C`**.
+   Substituting `z_D` would falsify a theorem, not migrate it.
+
+So the audit's `actionable` verdict means **undeclared**, not **wrong**. Fixed
+by declaring it, which is what the other 22 deliberate sites already do.
+Re-derivation under D remains a separate tranche (`qou-cds1`); per
+`QOU.QBeta.decayLadder_zC_threeRow_ne_zero` a plain `z_C → z_D` substitution is
+not valid there either.
+
+**Verified:** `lean`-direct with `-DautoImplicit=false -s 65536` and
+`LEAN_PATH` over the restored oleans — **0 errors, 0 sorries, 32 warnings**,
+and the pre-edit baseline is **identical** (0 / 32), so the edit adds nothing.
+Never `lake build`: `.lake/RESTORED-NO-TRACES` is present.
+
+## Also: the "SHIPPED PYTHON PACKAGE" in this bean's headline is not shipped
+
+Item 7 calls `qou-mass 0.1.0a1` "a SHIPPED PACKAGE", and the HEADLINE counts it
+as an aggravating factor. Measured today: `pypi.org/pypi/qou-mass/json` →
+**HTTP 404**. AGENTS.md already records this for all four in-repo packages
+(`qou-mass`, `qou-substrate`, `pyhecke`, `pyhecke-native` — none published).
+The convention-C content of that mirror is still real; what is wrong is the
+*severity*, since there are **no external consumers**. And the mirror is
+**generated** — fix `computations/`, then `scripts/sync-qou-mass-vendor.py
+--apply`; never hand-edit `qou-mass/src/qou_mass/_internal/`.
+
+**Bean stays open** — the `computations/` surface is untouched here, and
+AGENTS.md's value-audit figure (85 confirmed C bindings, 21 of them invisible
+to the shape audit) is the live scope.

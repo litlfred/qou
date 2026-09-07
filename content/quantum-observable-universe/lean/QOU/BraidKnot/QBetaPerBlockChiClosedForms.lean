@@ -1229,7 +1229,27 @@ pole; Δτ_M's vanishing is the `(q²−1)` factor in each per-block
 `chi_block_λ`). -/
 
 /-- The Markov parameter `z(q) = √q / (1 + q)`. Pure archimedean
-construction — depends on `Real.sqrt`. Source: Wenzl. -/
+construction — depends on `Real.sqrt`. Source: Wenzl.
+
+**CONVENTION C, deliberately, and this is the declaration that says so.**
+`√q / (1 + q)` is exactly `z_C`; canonical is convention D,
+`z_D = q³ / (q² + 1)` (owner ruling 2026-08-15). Two reasons this site is
+not migrated:
+
+* Its only consumer, `QBetaCanonicalMarkovWeightsInstance`, exists to prove
+  `CanonicalMarkovWeightsH3` INHABITABLE — so that the §3b-cond conditional
+  theorems are non-vacuous — and says in its own header that it is "NOT a
+  claim that this is THE canonical Wenzl–Markov instance". Inhabitation does
+  not need the canonical `z`.
+* `markov_parameter_symmetric_form` below proves
+  `√q / (1 + q) = 1 / (√q + 1 / √q)`, which is a TRUE identity about `z_C`.
+  Substituting `z_D` would falsify a sorry-free theorem, not migrate it.
+
+Re-deriving the C-frame objects under D is a separate tranche (bean
+`qou-cds1`); per `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` a plain
+`z_C → z_D` substitution is not a valid move there either. Until this
+docstring existed the site was the ONE `actionable` (undeclared) Lean
+convention-C definition in the corpus — see `scripts/lean-markov-convention-audit.py`. -/
 noncomputable def markov_parameter (q : ℝ) : ℝ :=
   Real.sqrt q / (1 + q)
 
