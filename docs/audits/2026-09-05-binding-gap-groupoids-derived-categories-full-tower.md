@@ -1157,15 +1157,50 @@ property, not integrality.
 the same classical cross term differ by under one percent there, which is the size of the
 second-order term.
 
+**The refinement that turns the negative into a two-sided answer (same probe, checks 18–23).**
+Write `V^{⊗n} = ⊕_k V_k` with `k` the number of colour-1 strands. The Hecke action preserves `k`
+(the R-matrix preserves the pair of colours), `K^{⊗n}` acts on `V_k` by `q^{n−2k}`, and with the
+`𝔽_Q` Hecke normalisation `T_w = q^{l(w)}σ_w`, `Q = q²` (the §7a relation `(σ−q)(σ+q⁻¹) = 0` is
+`(T−Q)(T+1) = 0`), the per-weight traces `N_k(w) := q^{l(w)}·tr(P_k σ_w)` are the count-shaped
+objects and **both** traces are combinations of them:
+
+    q^{l(w)}·2^n·tr_J(w)     = Σ_k N_k(w)                    (unweighted: the sum of the counts)
+    q^{l(w)}·[2]_q^n·tr_D(w) = Σ_k q^{n−2k}·N_k(w)           (pivotal: the counts, weighted)
+
+Measured on all 24 words of `S₄`: every `N_k(w)` is a polynomial in `Q` with no half or negative
+powers, a **non-negative integer at every prime power `Q ∈ {2,3,4,5,7,8,9}`**, and at `q = 1` it is
+the number of `w`-fixed colourings with exactly `k` ones (refined Burnside). Examples:
+`N_k(s₀) = (Q, 3Q−1, 4Q−2, 3Q−1, Q)`; for the interleaved word
+`N_k = (Q⁵, Q⁵−Q³, Q⁵−2Q³+Q², Q⁵−Q³, Q⁵)` — point-count shapes, symmetric under `k ↔ n−k`.
+
+So the weight is the only thing at issue, and `q^{n−2k} = Q^{(n−2k)/2}` **is itself a groupoid
+cardinality when `n` is even**: `|𝔽_Q^{\,n/2−k}|` for `k ≤ n/2` and `|B(𝔽_Q^{\,k−n/2})| = Q^{−(k−n/2)}`
+for `k > n/2`. Cardinality is multiplicative on products and additive on disjoint unions, hence
+
+    q^{l(w)}·[2]_q^n·tr_D(w) = | ⊔_k  Fix_k(w) × A_k |,   A_k = 𝔽_Q^{n/2−k} or B(𝔽_Q^{k−n/2}),
+
+**a groupoid cardinality in the BHW sense, for even `n`.** For odd `n` the weights are odd powers of
+`Q^{1/2}` (checked at `n = 3`), and the `𝔽_Q` reading fails at the *weight*, not at the count — the
+same `v = Q^{1/2}` that Beilinson–Lusztig–MacPherson need for the Cartan element in the
+flag-variety realisation of `U_v(𝔤𝔩₂)`, which is what `K` is here.
+
 **Consequence for route C.** Step 1's positive reading (the classical part is a groupoid
-cardinality) stands. Step 2 is answered negatively for the *unweighted* groupoidification: BHW's
-degroupoidification produces unweighted cardinalities, and no unweighted trace on this
-representation is a Markov trace. What a groupoidified route C would need is a **weighted**
-(graded) groupoid cardinality — each object counted with the weight `q^{grading}` that the pivotal
-element `K` assigns — and that construction is not in the held BHW paper (`library/arxiv-0908.4305`).
-Whether it exists in the literature is a §8-style acquisition question, not a computation; it is
-left open on `qou-8uxw`. Scope (a): `N = 2`, `n ≤ 4`, one word pair for `Δ`; the partial-trace
-invariant is general for this R-matrix. Nothing fitted, nothing wired.
+cardinality) stands. Step 2 is now two-sided, and both halves are exact:
+
+* the **unweighted** groupoidification (BHW's degroupoidification applied to the fixed-point
+  groupoid alone) is **not** the framework's object — no unweighted trace on this representation
+  is a Markov trace, so it is not a closure invariant;
+* the framework's convention-D trace **is** a groupoid cardinality once the Cartan weight is
+  realised as an affine space or its classifying groupoid — canonically, and for **even strand
+  number only**. The odd-`n` obstruction is a half-integer power of `Q`, exactly BLM's `v`.
+
+What this does *not* do: it says nothing about `b₃`. It identifies what kind of object the
+framework's `q`-count is (a `K`-graded point count over `𝔽_{q²}`), which is the prerequisite for
+any route-C construction, and it fixes the parity condition such a construction inherits. Whether
+the `n = 3A`-strand nuclear words (odd `n` for odd `A`) can be given an `𝔽_Q` reading through a
+quadratic extension, or only through the `v`-form, is the next question and is left open on
+`qou-8uxw`. Scope (a): `N = 2`, `n ≤ 4`, one word pair for `Δ`; the weight-space identity and the
+partial-trace invariant are general for this R-matrix. Nothing fitted, nothing wired.
 
 ## 8. Literature to download — prioritised, with links and one-line justification
 
