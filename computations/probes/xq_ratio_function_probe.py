@@ -58,7 +58,7 @@ def main():
         print(f"  diff: {v_m - v_p}")
         
         # Test if it's a multiple of 1/alpha or something
-        alpha = mp.mpf(1)/mp.mpf("137.0359991")
+        alpha = mp.mpf(1)/mp.mpf("137.035999084")
         print(f"  v_p * alpha: {v_p * alpha}")
 
 if __name__ == "__main__":

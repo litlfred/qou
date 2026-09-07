@@ -54,7 +54,7 @@ set_compute_dps()
 SHAPE = (4, 1)
 DIM = 4
 TAU0_IM = mp.mpf("0.186676")
-ALPHA_EM = mp.mpf("1") / mp.mpf("137.035999")
+ALPHA_EM = mp.mpf("1") / mp.mpf("137.035999084")
 
 
 def _q0():
