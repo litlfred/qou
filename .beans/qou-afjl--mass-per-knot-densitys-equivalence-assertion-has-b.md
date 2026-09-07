@@ -157,3 +157,41 @@ The **29 callers** of `per_knot_density_borromean`. The name resolves to the
 global-scalar function and emits a `DeprecationWarning`; whether each caller
 wants that reading is untriaged, and files written after the meaning changed
 may be correct as they stand.
+
+## The 29 callers are 17, and my own first classification of them was wrong (2026-09-07)
+
+Two corrections, both to figures I was carrying.
+
+**"29 callers" is 29 files MENTIONING THE NAME.** By an AST test — an
+`ImportFrom` of the name, a `Call` on it, or a `FunctionDef` of it — the real
+figure is **17**. The other **12** carry the name only in a docstring or a
+comment, and several do so *precisely because they are documenting that it is
+deprecated for absolute mass*: `canonical_mass.py`,
+`noncanonical_reentry_audit.py`, `canonical_mass_status_guard.py`. Counting
+those as callers inverts what they are. Checked for the forms a bare-name AST
+test would miss — attribute calls (`mod.per_knot_density_borromean(...)`),
+aliased imports, `getattr` — and there are **0**, so 17 is not an undercount
+from that direction.
+
+**My first classification of the 29 was a regex, and it over-flagged.** It put
+5 in an "absolute-mass, deprecated route" bucket. Spot-checking three of them
+dissolved the bucket:
+
+| flagged file | what it actually is |
+|---|---|
+| `entanglement_emitted_energy.py` | **self-declaring** — its own header says "DEPRECATED for absolute mass by the 2026-06-24 ruling … it is not the framework's live m_p". Not a defect; the file is honest about exactly this. |
+| `casimir_hoefsmit_additivity_probe.py` | **not a caller at all** — the name appears once, in a docstring. |
+| `per_knot_density_borromean_q_locality_probe.py` | divides it out: `per_knot_density_borromean(q) / geom_leading`. That is a **ratio**, extracting the linking weight. Flagged only because the file mentions MeV. |
+| `vol_density_borromean_q_locality_probe.py` | same shape, same division. |
+
+So the "5 on the deprecated absolute-mass route" figure is **withdrawn**. What
+the classifier keyed on was the *word* MeV, not the *use*, which is the same
+name-versus-use error as the paragraph above, one level up.
+
+**What remains genuinely open is unchanged and is not a caller question.** The
+docstring asserts the global and per-block readings differ by "≈ 2.38×"; the
+measured ratio is **2.515846866085011803**
+(`su2_density_gap_eq_lw_over_trM` in `mass_per_knot_density.py`, recorded in the
+`su2_density_gap` data block, 8/8). That 5.7 % disagreement between a docstring
+and its own function is UNRESOLVED and is the substance of this bean. Re-triaging
+callers does not touch it.
