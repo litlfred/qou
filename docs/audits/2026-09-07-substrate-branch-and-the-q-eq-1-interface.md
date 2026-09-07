@@ -507,3 +507,122 @@ bar-symmetric substrate window. Its net loss is three of my own claims, one of w
 (§9.3) was an absolute-mass argument in a framework that forbids them.
 
 **Not gained:** dark matter, the baryon-asymmetry magnitude, absolute masses.
+
+---
+
+# 11. The area-vs-volume arithmetic — §10.5 computed, and §10.5 roasted
+
+§10.5 said "do not claim it helps; do not claim it cannot." **That was a punt dressed as
+caution.** The answer takes five lines of geometry, is decisive, and needed no QOU
+microphysics. Deferring it transferred the work to a reader who types with difficulty.
+
+## 11.1 The scaling argument — geometric, and it alone is decisive
+
+A codimension-1 surface stretched by the expansion has area $\propto a^2$ inside a
+volume $\propto a^3$, so
+
+$$
+  \rho_{\text{interface}} \propto a^{-1}, \qquad \rho_{\rm DM} \propto a^{-3},
+$$
+
+and the ratio evolves as $a^{2}$. **This follows from the codimension alone** — no
+surface tension, no substrate dynamics, nothing QOU-specific.
+
+| matched at | consequence |
+|---|---|
+| today | at recombination ($z = 1100$) the interface supplies $8.24946\times10^{-7}$ of the dark matter the CMB third peak requires |
+| recombination | today the interface exceeds $\rho_{\rm DM}$ by $1.2122\times10^{6}$ |
+
+The CMB acoustic-peak heights measure $\Omega_c$ *at* $z \approx 1100$. A component six
+orders of magnitude short there cannot be dark matter, whatever it does today.
+
+## 11.2 Surface tension, independently
+
+Matching $\Omega_{\rm DM}$ today at Hubble-scale separation ($\rho = \sigma/L$,
+$L = c/H_0 = 1.37332\times10^{26}$ m, $\rho_{\rm DM} = 2.25852\times10^{-27}$ kg m$^{-3}$)
+requires
+
+$$
+  \sigma = 0.310168\ \mathrm{kg\,m^{-2}} = 2.78765\times10^{16}\ \mathrm{J\,m^{-2}}
+        = 6.77486\times10^{21}\ \mathrm{eV}^3,
+  \qquad \sigma^{1/3} = 18.922\ \mathrm{MeV}.
+$$
+
+The Zel'dovich–Kobzarev–Okun domain-wall bound is $\sigma^{1/3} \lesssim 1$ MeV.
+**Violated by $18.9\times$ in the scale, $6775\times$ in $\sigma$** — the classic
+domain-wall problem, arrived at from the other end.
+
+## 11.3 Clustering, independently again
+
+Flat rotation curves need $\rho(r) \sim r^{-2}$ in halos. A wall network is
+$\rho \sim \sigma/L$, roughly uniform on scales below $L$. Even at the right budget it
+produces the wrong profile.
+
+## 11.4 Verdict, and what it does NOT kill
+
+**Interfaces cannot be dark matter.** Scope-(b): the excluding invariant is the
+**codimension**, which fixes the $a^{-1}$ scaling independently of any microphysics.
+
+It does **not** touch the *bulk* proposal — matter at $q \neq q_0$ filling a volume
+still scales $a^{-3}$ and is subject only to the §6/§9.1 objections. Interfaces as dark
+matter was a possibility **I** raised in §10.5, not the original proposal; this closes my
+own suggestion, not the owner's.
+
+# 12. `qou-kyi3` — what a Classical-band domain is made of
+
+`rem:golden-ratio-degeneration`'s regime table gives $1/\varphi^2 < q < 1$ as
+"symmetric nuclei ($n = p$)". Taking that literally:
+
+| nuclide | $Z$ | $N$ | status |
+|---|---|---|---|
+| $^{1}$H | 1 | 0 | **excluded** — a bare proton has $N \neq Z$ |
+| $^{2}$H | 1 | 1 | stable |
+| $^{4}$He | 2 | 2 | stable, doubly magic |
+| $^{6}$Li | 3 | 3 | stable |
+| $^{8}$Be | 4 | 4 | **unstable** — $\to 2\alpha$ in $\sim 8\times10^{-17}$ s |
+| $^{12}$C … $^{40}$Ca | | | the $\alpha$ ladder, all stable |
+| $^{44}$Ti, $^{48}$Cr, $^{52}$Fe, $^{56}$Ni | | | **unstable** ($N=Z$ but $\beta^+$/EC) |
+| $^{56}$Fe | 26 | 30 | **excluded** — the iron peak has $N \neq Z$ |
+
+**Three signatures, in decreasing confidence.**
+
+1. **The ladder terminates at $^{40}$Ca**, the heaviest stable $N=Z$ nuclide. No iron
+   peak, no $s$- or $r$-process, nothing with $Z > 20$. A Classical-band domain has no
+   heavy elements at all.
+2. **The $^{8}$Be gap persists**, so the triple-$\alpha$ bottleneck is still there and
+   whether a Hoyle-like resonance exists at $q<1$ is unknown.
+3. **No hydrogen.** $^{1}$H has $N=0 \neq Z=1$. This is the sharpest and least secure
+   of the three — see the caveat — and if it holds it is remarkable: **we survey the
+   universe through hydrogen** (21 cm, Ly-$\alpha$ forest, H$\alpha$, the Balmer series).
+   A hydrogen-free domain is nearly invisible to every standard survey, for a reason
+   entirely separate from the §4a band-shift.
+
+**This distinguishes the proposal from generic mirror dark matter**, which duplicates our
+periodic table wholesale and predicts no compositional signature at all.
+
+## 12.1 Roast of §12
+
+The whole section rests on **one unexplained cell of one table in one remark**.
+`rem:golden-ratio-degeneration` asserts "symmetric nuclei ($n=p$)" for the Classical band
+with no derivation and no citation, and the corpus's binding machinery is not run at
+$q<1$ anywhere. The "no hydrogen" reading in particular turns on whether the rule is
+about *nuclei* (so $N=0$ fails) or about *isospin balance in bound states* (where a lone
+proton might be exempt). **Nothing here is a QOU derivation; it is the consequence of
+taking a table cell literally**, and it should be labelled that way wherever it is used.
+The honest next step is to run the binding calculation at $q < 1$ rather than to reason
+from the cell.
+
+# 13. Owner ruling on `qou-ndt5`, and what depends on it
+
+Recorded 2026-09-07, verbatim: *"not sure. don't exclude but maybe not observable."*
+
+So the negative branch $s = -\sqrt q$ stays **open, not excluded**, with the live
+possibility that the two sheets are physically identified and the branch carries no
+observable. The bean stays open (AGENTS.md §13a).
+
+**What this gates.** §10.3's bounded window $(\varphi^{-2}, \varphi^{2})$ **depends on
+this ruling.** If the negative branch is not physically reachable, $q = \varphi^2$ is not
+a reachable degeneration and the window is *not* bounded above — §10.3 weakens to a
+statement about the modulus $z$ rather than about $q$. §10.1, §10.2 and the Lean are
+unaffected: they are statements about $z$, and $z = -1$ is a single point regardless of
+how many $q$-preimages are physical.
