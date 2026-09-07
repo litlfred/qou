@@ -1,11 +1,11 @@
 ---
 # qou-b9c3
 title: 22 PDFs sit in library/ never sectioned — a third un-ingested population, invisible to every path-5 tier
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-09-06T09:42:46Z
-updated_at: 2026-09-06T23:00:00Z
+updated_at: 2026-09-07T08:58:30Z
 ---
 
 ## What was found
@@ -186,3 +186,35 @@ the corpus-grep discipline applies to a **PR thread**, not only to `content/`,
 `docs/`, `computations/`, `library/` and `.beans/`. I checked five corpora and
 not the two comments already sitting on the PR I was about to comment on.
 Posted the correction as `5562781339`.
+
+
+## 2026-09-07 — DRAINED. 23, not 22 — and the defect IS still producing
+
+Claimed and drained on branch claude/library-ingest-invisible-23-2026-09-07.
+
+**The count was 23, not the 22 this bean lists.** The extra is arxiv-0705.2975v1, which arrived
+TODAY in 588ed02d5fc (11:38, 'ingest: five q-difference Stokes / difference-Galois uploads') —
+after the stability measurement recorded in qou-cvx9, which concluded 'the defect is NOT actively
+producing'. That conclusion is now falsified: a 23rd orphan appeared after it was written. Note
+this one has the CANONICAL dir name already (arxiv-0705.2975v1 holding 0705.2975v1.pdf), so it is
+a different shape from the 22 filename-keyed ones and would not be caught by a guard keyed on the
+arxiv- prefix divergence alone.
+
+**Result: 23 ingested, 0 failed.** 18 PDFs moved into their canonical doc dirs, 18 orphan dirs
+removed; 5 were already canonically named. INDEX.md 614 -> 637 rows.
+
+**The index arithmetic now closes exactly, residual 0:**
+
+    661 dirs - 637 rows = 24 = 23 duplicates + 1 container (ant-v14-n7-s) + 0 orphans
+
+(was 46 = 23 + 22 orphans + 1 container).
+
+**🛑 ONE of the 23 is NOT actually searchable, and is now WORSE than absent.**
+exploring-the-geometric-buchberger-algorithm-in-integer-prog is a SCANNED pdf with no text layer:
+pdf-structure reports '0kc SCANNED?' and its single section file is 295 bytes of FRONT-MATTER with
+ZERO body text. Measured: grep -c Buchberger on that file = 1, and on the body with front-matter
+stripped = 0. So the ingest gave it a sections/ dir that produces a grep HIT ON ITS OWN FILENAME
+while containing nothing — a false positive, which is a worse failure than being invisible. It
+needs OCR (the ocr/ tier), not sectioning. Tracked as the remaining work.
+
+The other 22 carry real body text (24kB to 390kB each; m4-24 alone is 111 sections / 390kB).

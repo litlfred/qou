@@ -1,0 +1,66 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1905.02045v3",
+ "source_sha256": "8e7eb17c7d1f4f4e",
+ "brief": "MODULARITY AND VALUE DISTRIBUTION OF QUANTUM — We obtain an exact modularity relation for the q-Pochhammer symbol.",
+ "extended": "**MODULARITY AND VALUE DISTRIBUTION OF QUANTUM**\n\n*INV ARIANTS OF HYPERBOLIC KNOTS*\n\n39 pp, 9 sections.\n\n**Abstract.** We obtain an exact modularity relation for the q-Pochhammer symbol. Using this formula, we show that Zagier’s modularity conjecture for a knot K essentially reduces to the arithmeticity conjecture for K. In particular, we show that Zagier’s conjecture holds for hyperbolic knots K ⁄= 7 2 with at most seven crossings. For K = 4 1, we also prove a complementary reciprocity formula which allows us to prove a law of large numbers for the values of the colored Jones polynomials at roots of unity. We conjecture a similar formula holds for all knots and we show that this is the case if one assumes a suitable version of Zagier’s conjecture.\n\n**Outline.** 1 Introduction; 1.1 Outline of the paper and sketch of the pro; Acknowledgment; Notation; 2 Two reciprocity formulae for the q-Pochhamme; 2.2 First reciprocity formula for the q-Pochha; 2.3 Sums of cotangents; 2.4 Second reciprocity formula for the q-Pochh; References",
+ "tokens": {
+  "brief": 28,
+  "extended": 260
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-6"
+  },
+  {
+   "id": "sec-001-11-outline-of-the-paper-and-sketch-of-the-proofs",
+   "title": "Outline of the paper and sketch of the proofs",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-002-acknowledgment",
+   "title": "Acknowledgment",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-003-notation",
+   "title": "Notation",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-004-2-two-reciprocity-formulae-for-the-q-pochhammer",
+   "title": "Two reciprocity formulae for the q-Pochhammer symbol",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-005-22-first-reciprocity-formula-for-the-q-pochhamme",
+   "title": "First reciprocity formula for the q-Pochhammer symbol",
+   "pages": "9-14"
+  },
+  {
+   "id": "sec-006-23-sums-of-cotangents",
+   "title": "Sums of cotangents",
+   "pages": "14-19"
+  },
+  {
+   "id": "sec-007-24-second-reciprocity-formula-for-the-q-pochhamm",
+   "title": "Second reciprocity formula for the q-Pochhammer symbol",
+   "pages": "19-38"
+  },
+  {
+   "id": "sec-008-references",
+   "title": "References",
+   "pages": "38-39"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
