@@ -72,3 +72,36 @@ not the three timings that follow from it.
 Found while regenerating the ⁵Li/⁶Li chi caches under `qou-k54t` — they were
 last touched 2026-08-15, before the intra-ordering ruling (`qou-hu1f`,
 2026-09-05), so `carrier_band_ratio_pinned` was straddling two braid words.
+
+## Related: the write is safe against a mid-compute kill, but not against a mid-write one
+
+Checked while deciding whether a `timeout` kill could corrupt a cache. The
+producer accumulates in memory and writes **once**, at
+`chi_via_rust_lossless.py:238`, after the whole partition loop:
+
+```python
+out.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
+```
+
+So a kill **during the computation** is harmless — the file keeps its previous
+contents, and the run is simply lost. That is the case that matters here and it
+is fine.
+
+The residual gap is that this is **not an atomic write**: there is no
+`tmp + os.replace`. A kill landing inside `write_text` itself truncates the
+witness to whatever bytes reached disk, producing a JSON that no consumer can
+parse and that no staleness check will recognise as a cache at all. The window
+is small for ⁵Li and larger for ⁶Li (385 partitions at 50 dps is megabytes), and
+it is exactly the window a `timeout` is most likely to land in for a long run —
+because the run ends at the write.
+
+Cheap fix if anyone is in the file: write to `out.with_suffix('.tmp')` then
+`os.replace`. Not done here — it is a different concern from the cost model this
+bean is about, and this producer's caches are load-bearing enough that a
+drive-by change to their write path deserves its own review.
+
+**This also explains the in-memory growth** noted above (RSS 198 MB at 7:45 →
+247 MB at 15:37 on a single atom): every partition's result is held until the
+single write at the end. That is a plausible contributor to the cost not being
+"independent of dim V_λ" as documented, though it is not established as *the*
+cause.
