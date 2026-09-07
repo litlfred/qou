@@ -31,6 +31,7 @@
 -/
 
 import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.NormNum
 
 namespace QOU.QBeta.BarEvenKernelTypeclass
 
@@ -194,5 +195,65 @@ theorem direction_threshold_positive :
     directionThreshold > 0 := by
   unfold directionThreshold
   norm_num
+
+/-! ## The gate ACCEPTS at its intended point
+
+    This file proved that `BarEvenKernel` can **reject**
+    (`bar_even_kernel_reject_wrong_c2_shadow`) and never that it can
+    **accept**, and the two are not the same evidence.
+
+    Why the missing half matters here specifically: the three lifting lemmas
+    above are *projections* — `bar_even_kernel_implies_radius_of_convergence`
+    is literally `hK.pole_at_u_substrate`, and the §4(c) one says so in its own
+    docstring ("Assumed, not derived here"). Under the `qou-z9ws` inhabitation
+    discriminator a projection is the legitimate Mathlib accessor idiom **only
+    when something builds the bundle**; with no witness, a `[BarEvenKernel …]`
+    binder and its three unbundlers are indistinguishable from a `Fact` wrapper
+    around an assumption nobody can meet.
+
+    The witness existed and was in the wrong place. Bean `qou-z9ws` built it in
+    `docs/audits/2026-08-30-gate-classes-admit-zero.lean`, which — as its own
+    header explains — **has no imports and is imported by nothing**: these
+    classes live in content-block siblings rather than the `QOU` library tree,
+    so that probe is reachable only by concatenating the files and handing the
+    result to `lean`. A non-degeneracy witness a reader cannot follow from the
+    class is not doing the job. It is reproduced here, at the class. -/
+
+/-- **`BarEvenKernel` accepts at its intended point** — `pole = u_substrate`,
+    `c₂ ≡ -1`, `c₃ ≡ J_Hopf(1) = -2`, `magnitude = directionTarget`.
+
+    A genuine instance, not a degenerate one: three of the four fields are
+    exact equalities or a 1e-6 relative tolerance, and the parameters are the
+    substrate values the gates were written for rather than values chosen to
+    pass. Together with `bar_even_kernel_reject_wrong_c2_shadow` this makes the
+    class a gate in both directions — it admits something and refuses
+    something — which is the property the three lifting lemmas need in order to
+    be accessors rather than assumptions.
+
+    A `def`, not an `instance`. It would only ever fire at these exact
+    arguments, so global resolution is not the hazard it is for a
+    parameter-free carrier; but a caller should still say
+    `letI := barEvenKernelAtIntendedPoint` and have the dependence visible at
+    the use site. -/
+-- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
+noncomputable def barEvenKernelAtIntendedPoint :
+    BarEvenKernel uSubstrate (fun _ => -1) (fun _ => jonesHopfAtQOne)
+      directionTarget where
+  pole_at_u_substrate := by
+    simp only [sub_self, abs_zero]
+    unfold radiusTolerance uSubstrate; norm_num
+  c2_shadow := rfl
+  c3_shadow := rfl
+  direction_match := by
+    simp only [sub_self, abs_zero]
+    unfold directionThreshold directionTarget; norm_num
+
+/-- The class is inhabited — the statement the three lifting lemmas rest on,
+    now available at the class rather than only in an unimported probe. -/
+-- Ref: [manuscript] prop:q-beta-bar-even-kernel-typeclass
+theorem barEvenKernel_nonempty :
+    Nonempty (BarEvenKernel uSubstrate (fun _ => -1)
+      (fun _ => jonesHopfAtQOne) directionTarget) :=
+  ⟨barEvenKernelAtIntendedPoint⟩
 
 end QOU.QBeta.BarEvenKernelTypeclass

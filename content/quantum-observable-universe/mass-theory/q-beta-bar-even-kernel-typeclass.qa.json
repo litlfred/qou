@@ -10,8 +10,8 @@
   "source_hashes": {
     "md": "e6f5cb7a5d21",
     "ts": "ee7e010b8d9b",
-    "lean": "c227b32fac9a",
-    "lean_statement": "a86daf5ab2e8"
+    "lean": "aef8d4c64cbc",
+    "lean_statement": "15fa1e348d0e"
   },
   "criteria": {
     "bib-cite-resolves": [
@@ -98,6 +98,22 @@
         "reviewed_at": "2026-08-31T12:11:21.355Z",
         "reviewed_sha": "2536d930fb364494915dc71f124a19f65bf473b0",
         "notes": "The block's own claim is an EQUIVALENCE ('instantiating BarEvenKernel is equivalent to clearing all four gates simultaneously' / 'requires clearing all four mass-side gates simultaneously'), and only the forward half had Lean. The three lifting lemmas each return the class field their type restates -- the accessor idiom (Group.mul_assoc), one direction of the equivalence, not a derivation. The converse was never stated. Added barEvenKernel_iff / massSideKernel_iff, so the equivalence the .md asserts is now in the Lean and the accessors are one half of it. RETRACTION of a hypothesis of mine: I suspected the theorem->def conversion in 7e9230d39a9 ('remediate 310 lean vacuity findings', 82 conversions across 69 files) had HIDDEN bar_even_kernel_implies_q_one_shadow from the detector, on the evidence that its two neighbours have vacuity-ledger entries and it has none. Measured: FALSE. A fresh lean-vacuity-axiom-audit run flags it at L122 as proof-no-self-assuming-projection despite being a def; it is absent from the ledger because it is EXEMPT ('canonical 3b placeholder projection (tracked; derivation pending)'), and exempt findings get no ledger entry. The kind change does not evade the detector. Bean qou-z9ws."
+      },
+      {
+        "field_hash": {
+          "md": "e6f5cb7a5d21",
+          "ts": "ee7e010b8d9b",
+          "lean": "aef8d4c64cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:qou-z9ws-acceptance-witness",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-09-07T18:10:00.000Z",
+        "reviewed_sha": "e14d064a258443cd14dede248171c520e6b22cce",
+        "notes": "Re-verified after adding barEvenKernelAtIntendedPoint + barEvenKernel_nonempty. The 2026-08-31 pass STANDS and this entry does not revise it: its finding -- that the block claims an EQUIVALENCE, that the three lifting lemmas are the accessor idiom giving one direction, and that barEvenKernel_iff supplies the other -- is still exactly what the Lean says. Re-adjudicated only because the .lean hash drifted (b4470b4cb092 -> aef8d4c64cbc); nothing in the prior verdict is withdrawn. What this change adds is orthogonal to the equivalence and to proof-statement-integrity: an ACCEPTANCE witness. The file proved the gate can reject (bar_even_kernel_reject_wrong_c2_shadow) and never that it can accept, and those are not the same evidence. Under the qou-z9ws inhabitation discriminator a projection is the legitimate accessor idiom ONLY when something builds the bundle; the witness existed but lived in docs/audits/2026-08-30-gate-classes-admit-zero.lean, which has no imports and is imported by nothing (these classes are content-block siblings, not library modules), so it was unreachable from the class it certifies. Reproduced at the class as a def, not an instance. Verified lean-direct exit 0 with -DautoImplicit=false -s 65536. NOT claimed: the three projections are still projections and the detector still flags them -- correctly; what changed is that their legitimacy is now checkable from this file rather than from an unimported probe."
       }
     ],
     "proof-no-self-assuming-projection": [
@@ -2138,6 +2154,6 @@
       }
     ]
   },
-  "updated_at": "2026-08-31T12:11:21.355Z",
+  "updated_at": "2026-09-07T18:05:21.954Z",
   "$expired": "Entries whose notes begin with [EXPIRED-NO-FIELD-HASH] carry no field_hash, so they record no block version and adjudicate nothing. They are retained as a historical record, not as live verdicts. The drain queue already treats them as not-fresh and has re-queued the block. See bean qou-pwut."
 }
