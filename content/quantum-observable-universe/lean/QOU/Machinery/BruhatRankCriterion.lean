@@ -473,6 +473,55 @@ theorem IncreasingOn.mono_right {u : Perm (Fin n)} {a b b' : ℕ}
     (hu : IncreasingOn u a b) (h : b' ≤ b) : IncreasingOn u a b' :=
   fun x y hax hxy hyb => hu x y hax hxy (lt_of_lt_of_le hyb h)
 
+/-! ### The DESCENT direction — what the hard half of Ehresmann's induction needs
+
+`rk_mul_swap_le` / `rk_mul_swap_mono` above are stated for `w` ASCENDING across the cut, which
+is what the easy half consumes.  The hard half inducts on a right DESCENT of `w`, and needs the
+two facts below.  Both were measured before being written (`n <= 6`, 141939/141939 for the
+descent-restricted form) and then measured again UNRESTRICTED once the proofs came in without
+using the `w` hypothesis at all (`n <= 5`: 6204/6204 and 8920/8920).
+
+**Only `u` carries a hypothesis; `w` is arbitrary.**  That is not an oversight in the statement
+-- `omega` closes both without the `w` side, and the wider measurement confirms it.  It is the
+same asymmetry as `rk_le_of_endpoints` further down: in this rank calculus the DOMINATING side
+(`u`, the larger) is the one that must be constrained, and the dominated side is free.
+
+Both proofs turn on the hypothesis at cut `j + 2`, never at `j` or `j + 1` -- the same place
+`rk_mul_swap_mono`'s step B is rescued from. -/
+
+/-- **Descent-direction monotonicity.**  If `u` descends across the cut, right multiplication by
+`s_j` preserves rank domination.  Nothing is assumed of `w`. -/
+theorem rk_mul_swap_mono_desc (u w : Perm (Fin (n + 1))) (j : Fin n)
+    (hu : ((u j.succ : Fin (n + 1)) : ℕ) < ((u j.castSucc : Fin (n + 1)) : ℕ))
+    (h : ∀ i m, rk w i m ≤ rk u i m) (i m : ℕ) :
+    rk (w * Equiv.swap j.castSucc j.succ) i m
+      ≤ rk (u * Equiv.swap j.castSucc j.succ) i m := by
+  by_cases hi : i = (j : ℕ) + 1
+  · subst hi
+    rw [rk_mul_swap_cut, rk_mul_swap_cut]
+    have h0 := h (j : ℕ) m
+    have h2 := h ((j : ℕ) + 2) m
+    rw [rk_succ_succ, rk_succ_succ, rk_castSucc_succ, rk_castSucc_succ] at h2
+    split_ifs at h0 h2 ⊢ <;> omega
+  · rw [rk_mul_swap_of_ne _ _ _ _ (by omega), rk_mul_swap_of_ne _ _ _ _ (by omega)]
+    exact h i m
+
+/-- **The mixed case.**  If `u` ASCENDS across the cut, right multiplication of `w` by `s_j`
+stays under `u` unchanged.  Nothing is assumed of `w`. -/
+theorem rk_mul_swap_le_of_asc (u w : Perm (Fin (n + 1))) (j : Fin n)
+    (hu : ((u j.castSucc : Fin (n + 1)) : ℕ) < ((u j.succ : Fin (n + 1)) : ℕ))
+    (h : ∀ i m, rk w i m ≤ rk u i m) (i m : ℕ) :
+    rk (w * Equiv.swap j.castSucc j.succ) i m ≤ rk u i m := by
+  by_cases hi : i = (j : ℕ) + 1
+  · subst hi
+    rw [rk_mul_swap_cut, rk_castSucc_succ]
+    have h0 := h (j : ℕ) m
+    have h2 := h ((j : ℕ) + 2) m
+    rw [rk_succ_succ, rk_succ_succ, rk_castSucc_succ, rk_castSucc_succ] at h2
+    split_ifs at h0 h2 ⊢ <;> omega
+  · rw [rk_mul_swap_of_ne _ _ _ _ (by omega)]
+    exact h i m
+
 /-! ### The hard direction — stated, not proved
 
 `rk_le_of_bruhatLe` above is the EASY half of Ehresmann's criterion.  Its converse — the rank
