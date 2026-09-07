@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T20:31:20Z
-updated_at: 2026-09-07T12:58:15Z
+updated_at: 2026-09-07T13:02:41Z
 ---
 
 ## WORKED 2026-08-25 — O2 applied; it excludes the contest's winner
@@ -469,3 +469,37 @@ Not a geometry computation on three hand-assigned links. Either:
   (ii) an observable outside the {kappa(A), surface-fraction} pair that is not
       blind to R(A) -- and the Lean above is a warning that blindness here is
       the rule rather than the exception.
+
+## CORRECTION to the entry above: TWO observables, not three (2026-09-07)
+
+I wrote "That is now THREE observables blind to the separation law". Wrong on
+the word OBSERVABLES. There are two, carrying three findings:
+
+  finding                                observable          mechanism
+  ---------------------------------------------------------------------------
+  #7020: series constrains only s*p      kappa(A)            chain rule on a
+                                                             composition; the
+                                                             SLOPE is a product
+  #7080: fit quality cannot rank c0      kappa(A) -- SAME    residual structure
+                                                             also fails to
+                                                             discriminate
+  hyperbolic_not_hasBulk                 surface fraction    in H^3 volume and
+                                         -- DIFFERENT        boundary area grow
+                                                             at the same rate,
+                                                             so the ratio
+                                                             forgets R
+
+"Three independent blindnesses" reads as strong convergent evidence. Two
+observables, one measured twice, is weaker, and is the honest version.
+
+WHAT THIS DOES NOT DO is collapse the first two into one fact. They are
+logically independent, which is why the second was worth measuring: a
+degenerate SLOPE does not imply flat FIT QUALITY. A wrong kernel could match
+s*p and still leave systematic curvature in the residuals, and that would have
+been visible. It is not -- R^2 spread 0.0175 against 0.0200 unexplained -- so
+the second finding is real and does not follow from the first.
+
+The genuinely independent leg is the third, and it is the only one carrying a
+proved invariant. So when weighing "is the separation law reachable at all",
+count ONE independent proved blindness plus one twice-measured degeneracy, not
+three.
