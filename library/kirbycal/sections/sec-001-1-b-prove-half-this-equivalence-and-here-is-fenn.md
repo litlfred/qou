@@ -1,13 +1,12 @@
 ---
 doc_id: kirbycal
-doc_title: "A Calculus for Framed Links in S^3"
+doc_title: "Inventiones math. 45, 35- 56 (1978) mathematicae 9 by Springer-Verlag 197 A Calculus for Framed Links in S 3"
 section_id: sec-001-1-b-prove-half-this-equivalence-and-here-is-fenn
 section_title: "B prove half this equivalence and here is Fenn and Rourke's argument for the"
 section_number: 1
 pages: 20-21
 source_pdf: kirbycal.pdf
 source_sha256: 8dae9487ed32a3bd
-doc_brief: "Kirby, A calculus for framed links in S³ (Invent. Math. 45, 35–56, 1978) — the two moves generating equivalence of framed-link surgery presentations of a 3-manifold."
 ---
 other half. 
 Their operation, which they call a K-move, consists of introducing or removing 

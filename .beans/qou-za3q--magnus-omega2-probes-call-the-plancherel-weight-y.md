@@ -144,3 +144,40 @@ question is NOT settled here.** The rename makes the corpus honest about which
 object is in play; it does not choose the object. What the robustness result
 buys is that the choice is not urgent: no published sign conclusion moves either
 way.
+
+---
+
+## 2026-09-07 — decision 1: full analysis, options beaned
+
+Analysis: [`docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md`](../docs/audits/2026-09-07-magnus-omega2-weight-family-analysis.md)
+
+Three measurements settle what the earlier notes could only frame:
+
+1. **`tr(1)` is the decisive discriminator.** Wenzl gives exactly **1.0** at
+   n = 6, 9, 12. Plancherel gives **11.139 / 184.233 / 6751.541** — it is not a
+   normalised trace, and its scale drifts ~600× from A=2 to A=4. Since the
+   programme's target claim is a *sign change in A*, that drift makes any
+   cross-A magnitude statement meaningless under Plancherel.
+2. **The divergence is structural, and quantified.** Plancherel puts 81.8 % of
+   its H₆ mass on ≥3-row shapes where the Wenzl cap puts 0 %; 62.4 % of the A=2
+   |contribution| comes from shapes Wenzl annihilates. Under Wenzl the whole H₆
+   signal is three 2-row shapes — and the largest Wenzl weight, (6,) at 0.45,
+   contributes nothing, because a commutator vanishes on a 1-dimensional block.
+3. **The probes' own control cannot discriminate.** `ρ=I ⇒ tr(Ω₂)=0` holds
+   *blockwise* — every per-λ control trace is exactly 0 — so it is weight-blind.
+   It is evidence for cyclicity and none at all for the weight choice. Worth
+   knowing, because the docstrings present it as validating the setup.
+
+**Recommendation: option A as headline + option C as a permanent guard.**
+
+Options beaned:
+
+| bean | option | verdict |
+|---|---|---|
+| `qou-q2q7` | A — adopt Wenzl | **recommended** (headline) |
+| `qou-smvw` | C — report both | **recommended** (guard) |
+| `qou-94yt` | B — keep Plancherel, justify | not recommended alone |
+| `qou-ia4w` | D — normalise Plancherel | not recommended |
+| `qou-gba1` | E — derive the pairing | worth doing; must not block A |
+
+Safe either way: no published conclusion moves, because the sign is robust.
