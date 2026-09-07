@@ -76,9 +76,22 @@ places where a proved basis exists, the general construction lands on it.
       catalan (m+1)  =  ∑_k  C(m, 2k) · catalan k · 2^(m-2k)
 
   Both formulations were checked against `catalan (m+1)` for `m ≤ 10` before
-  being written down here. Mathlib has `DyckWord`, `DyckWord.semilength` and
-  `catalan_succ`; it does **not** appear to have bicoloured Motzkin words, so
-  that bijection is the work.
+  being written down here.
+
+  Mathlib has `DyckWord`, `DyckWord.semilength` and `catalan_succ`. It has **no
+  Motzkin words at all** — checked by enumerating
+  `Mathlib/Combinatorics/Enumerative/` (Bell, Catalan, Composition,
+  DoubleCounting, DyckWord, IncidenceAlgebra, InclusionExclusion, Partition,
+  Stirling) and by searching the whole library for `*motzkin*`, whose only hit
+  is `Tactic/Linarith/Oracle/FourierMotzkin`, an unrelated linear-arithmetic
+  oracle. So the bijection is the work, and it starts from nothing.
+
+  That is stated from a search rather than from the shape of the difficulty —
+  the distinction a sibling branch had to correct on `main` the same day
+  (`0e18f7b954`, *"I wrote a 'Mathlib lacks X' claim from the shape of the
+  difficulty — Mathlib has it"*), and the same class as this file's own
+  `Matrix.ext_iff_trace_mul_right` correction, where the lemma existed under the
+  shape it was used for rather than the name it was known by.
 * **`elt` is not proved to span `TL_{m+1}(δ)` for general `m`**, and that is the
   real content of `dim TL_n = catalan n`. It needs the closure lemma, on the
   `(I, J)` index and not on word length. `span_range_elt_two` is the `m = 2`

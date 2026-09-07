@@ -47,6 +47,11 @@ tells you which shape it must take.
    because "bijection to Dyck paths" was this agent's first guess and it is
    wrong.
 
+   Mathlib has no Motzkin words at all: checked by enumerating
+   `Mathlib/Combinatorics/Enumerative/` and by searching the library for
+   `*motzkin*`, whose only hit is an unrelated Fourier-Motzkin linarith oracle.
+   Stated from a search, not from the shape of the difficulty.
+
 ## The finding that changes the Lean design
 
 Closure holds -- and it is **NOT length-monotone**. The word length changes by
